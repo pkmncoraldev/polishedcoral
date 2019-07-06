@@ -1,0 +1,57 @@
+WRAM0
+	org $c000
+	"Stack"
+	align 8
+	"Audio RAM"
+	"WRAM 0"
+	org $c308
+	"Sprite Animations"
+	"Music Player RAM"
+	org $c400
+	align 8
+	"Sprites"
+	org $c4a0
+	"Tilemap"
+	"Battle"
+	org $c800
+	"Overworld Map"
+	org $cd20
+	"Video"
+
+WRAMX $1
+	org $d000
+	"WRAM 1"
+	"Enemy Party"
+	"Game Data"
+	"Party"
+
+WRAMX $2
+	org $d000
+	"Pic Animations RAM"
+	align 8
+	"Battle Tower"
+	"Sound Stack"
+	align 8
+	"Music Player Notes"
+
+WRAMX $3
+	org $d000
+	"Metatiles"
+
+WRAMX $4
+	org $d000
+	"Attributes"
+
+WRAMX $5
+	org $d000
+	"GBC Video"
+	org $d300
+	"Battle Animations RAM"
+
+WRAMX $6
+	org $d000
+	"WRAM 6"
+
+WRAMX $7
+	org $d000
+	"Window Stack"

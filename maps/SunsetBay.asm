@@ -26,7 +26,7 @@ SunsetBay_MapScriptHeader:
 	coord_event 37, 16, 0, SunsetGrampsStopsYou3
 	coord_event 37, 17, 0, SunsetGrampsStopsYou4
 
-	db 17 ; bg events
+	db 19 ; bg events
 	bg_event 11, 13, SIGNPOST_READ, PlayersHouseSign
 	bg_event 27, 15, SIGNPOST_READ, SunsetCafeSign
 	bg_event 26,  9, SIGNPOST_READ, SunsetBayPokeCenterSign

@@ -78,10 +78,10 @@ ENDM
 	connection north, GlintCity, GLINT_CITY, -2, 0, 18
 	connection south, DaybreakVillage, DAYBREAK_VILLAGE, 2, -4, 14
 
-	map_attributes GlintCity, GLINT_CITY, $5, NORTH | SOUTH | EAST
+	map_attributes GlintCity, GLINT_CITY, $5, NORTH | SOUTH ;| EAST
 	connection north, GlintGroveEntrance, GLINT_GROVE_ENTRANCE, 1, 0, 10
 	connection south, Route2, ROUTE_2, 3, 1, 12
-	connection east, Route43, ROUTE_43, 0, 0, 10
+;	connection east, Route43, ROUTE_43, 0, 0, 10
 
 	map_attributes CianwoodCity, CIANWOOD_CITY, $35, EAST
 	connection east, Route41, ROUTE_41, 0, 0, 27

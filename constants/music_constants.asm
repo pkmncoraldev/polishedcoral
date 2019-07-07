@@ -47,6 +47,7 @@
 	const MUSIC_LUSTER_SEWER
 	const MUSIC_SNOW_TOWN
 	const MUSIC_LAVA
+	const MUSIC_DODRIO_RACE
 	
 NUM_SONGS EQU const_value
 

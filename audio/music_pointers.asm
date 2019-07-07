@@ -47,4 +47,5 @@ Music:
 	dba Music_LusterSewer
 	dba Music_SnowTown
 	dba Music_Lava
+	dba Music_DodrioRace
 	

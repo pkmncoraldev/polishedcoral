@@ -60,12 +60,12 @@ TilesetGlintAnim::
 	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw WaterfallFrames, AnimateWaterfallTiles
-    dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+    dw Waterfall2Frames, AnimateWaterfallTiles
+    dw Waterfall3Frames, AnimateWaterfallTiles
+	dw VTiles2 tile $36, AnimateTopofWaterfall
+	dw ShorelineFrames3,  AnimateWaterfallTiles
+	dw ShorelineFrames,  AnimateWaterfallTiles
+	dw ShorelineFrames2,  AnimateWaterfallTiles
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -922,9 +922,8 @@ AnimateWaterfallTiles: ; fc56d
 	ld a, [wTileAnimationTimer]
     and %111 ; 8 frames x2
     swap a  ; * 16 bytes per tile
-	sla a   ; * 2 tiles
-	sla a
-	
+    sla a   ; * 2 tiles
+
     add [hl]
     inc hl
     ld h, [hl]
@@ -939,7 +938,7 @@ AnimateWaterfallTiles: ; fc56d
     ld l, e
     ld h, d
 
-    jp WriteFourTiles
+    jp WriteTwoTiles
 
 WaterfallFrames: dw VTiles2 tile $30, WaterfallTiles
 
@@ -1002,26 +1001,6 @@ rept 8
 	ld [hl], d
 endr
 	jp _FinishWritingSecondTile
-	
-WriteFourTiles:
-; Write two 8x8 tile ($20 bytes) from sp to hl.
-
-; Warning: sp is saved in bc so we can abuse pop.
-; sp is restored to address bc. Save sp in bc before calling.
-
-	pop de
-	ld [hl], e
-	inc hl
-	ld [hl], d
-
-rept 16
-	pop de
-	inc hl
-	ld [hl], e
-	inc hl
-	ld [hl], d
-endr
-	jp _FinishWritingForthTile
 	
 	
 SafariFountainAnim1: ; fc5cc
@@ -1281,21 +1260,6 @@ endr
 	ld sp, hl
 	ret
 ; fc6d7
-
-_FinishWritingForthTile:
-rept 15
-	pop de
-	inc hl
-	ld [hl], e
-	inc hl
-	ld [hl], d
-endr
-
-; restore sp
-	ld h, b
-	ld l, c
-	ld sp, hl
-	ret
 
 TileAnimationPaletteStarglow: ; fc6d7
 ; Transition between color values 0-2 for color 0 in palette 3.

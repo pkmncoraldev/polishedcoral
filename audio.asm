@@ -72,6 +72,7 @@ INCLUDE "audio/music/lustersewer.asm"
 INCLUDE "audio/music/snowtown.asm"
 INCLUDE "audio/music/wildbattle.asm"
 INCLUDE "audio/music/trainerbattle.asm"
+INCLUDE "audio/music/dodriorace.asm"
 
 
 

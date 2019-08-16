@@ -149,7 +149,7 @@ endc
 	const BATTLETYPE_INVERSE
 	const BATTLETYPE_TRAP
 	const BATTLETYPE_FORCEITEM
-	const BATTLETYPE_RED_GYARADOS
+	const BATTLETYPE_SHINY
 	const BATTLETYPE_LEGENDARY
 
 ; attack failure modes, higher gives priority
@@ -218,6 +218,7 @@ ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | (1 << TOX) | 
 	enum SUBSTATUS_ENCORED
 	enum SUBSTATUS_TRANSFORMED
 	enum SUBSTATUS_MAGIC_BOUNCE
+	enum SUBSTATUS_FAKE_OUT
 
 	enum_start 7, -1
 	enum SUBSTATUS_CONFUSED

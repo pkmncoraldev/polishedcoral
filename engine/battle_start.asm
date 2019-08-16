@@ -15,6 +15,7 @@ Predef_StartBattle: ; 8c20f
 
 .loop
 	call FlashyTransitionToBattle
+;	ld c, 150
 	call DelayFrame
 .handleLoop
 	ld a, [wJumptableIndex]
@@ -643,8 +644,6 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	call .copy
 	ld de, wUnknBGPals palette PAL_BG_TEXT
 	call .copy
-	ld de, wUnknOBPals palette PAL_OW_PINK
-	call .copy
 	ld de, wUnknOBPals palette PAL_OW_SILVER
 
 .copy ; 8c698 (23:4698)
@@ -674,8 +673,8 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 .timepals
 if !DEF(MONOCHROME)
 ; morn
-	RGB 31, 24, 18
-	RGB 31, 15, 17
+	RGB 31, 18, 29
+	RGB 31, 11, 15
 	RGB 31, 05, 05
 	RGB 07, 07, 07
 ; day
@@ -684,15 +683,15 @@ if !DEF(MONOCHROME)
 	RGB 31, 05, 05
 	RGB 07, 07, 07
 ; nite
-	RGB 15, 09, 22
-	RGB 15, 05, 11
-	RGB 15, 02, 04
-	RGB 00, 00, 00
+	RGB 31, 18, 29
+	RGB 31, 11, 15
+	RGB 31, 05, 05
+	RGB 07, 07, 07
 ; dark
-	RGB 11, 07, 07
-	RGB 07, 03, 03
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 18, 29
+	RGB 31, 11, 15
+	RGB 31, 05, 05
+	RGB 07, 07, 07
 else
 	MONOCHROME_RGB_FOUR
 	MONOCHROME_RGB_FOUR

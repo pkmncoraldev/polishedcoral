@@ -1663,22 +1663,8 @@ _DeleteSaveData: ; 4d54c
 	ld a, [wMenuCursorY]
 	cp $1
 	ret z
-	farjp EmptyAllSRAMBanks
-
-.Text_ClearAllSaveData: ; 0x4d580
-	; Clear all save data?
-	text_jump UnknownText_0x1c564a
-	db "@"
-
-_ResetInitialOptions:
 	farcall BlankScreen
-	ld b, CGB_DIPLOMA
-	call GetCGBLayout
-	call LoadStandardFont
-	call LoadFontsExtra
-	ld de, MUSIC_NONE
-	call PlayMusic
-	ld hl, .Text_ResetInitialOptions
+	ld hl, .Text_ClearAllSaveDataPositive
 	call PrintText
 	ld hl, TitleScreenNoYesMenuDataHeader
 	call CopyMenuDataHeader
@@ -1687,20 +1673,26 @@ _ResetInitialOptions:
 	ld a, [wMenuCursorY]
 	cp $1
 	ret z
-	ld a, [wInitialOptions]
-	set RESET_INIT_OPTS, a
-	ld [wInitialOptions], a
-	ld a, BANK(sOptions)
-	call GetSRAMBank
-	ld a, [wInitialOptions]
-	ld [sOptions + 6], a ; sInitialOptions
-	jp CloseSRAM
+	farcall BlankScreen
+	ld hl, .Text_ClearAllSaveDataDone
+	call PrintText
+	farjp EmptyAllSRAMBanks
 
-.Text_ResetInitialOptions: ; 0x4d580
-	; Reset the initial game options?
-	text_jump ResetInitialOptionsText
+.Text_ClearAllSaveData: ; 0x4d580
+	; Clear all save data?
+	text_jump UnknownText_0x1c564a
+	db "@"
+	
+.Text_ClearAllSaveDataPositive: ; 0x4d580
+	; Are you sure?
+	text_jump Text_ClearAllSaveDataPositive
 	db "@"
 
+.Text_ClearAllSaveDataDone:
+	; All save data cleared.
+	text_jump Text_ClearAllSaveDataDone
+	db "@"
+	
 TitleScreenNoYesMenuDataHeader: ; 0x4d585
 	db $00 ; flags
 	db 07, 14 ; start coords
@@ -2653,7 +2645,7 @@ INCLUDE "engine/bsod.asm"
 INCLUDE "engine/events/stats_judge.asm"
 
 INCLUDE "engine/events/poisonstep.asm"
-INCLUDE "engine/events/squirtbottle.asm"
+INCLUDE "engine/events/pokeflute.asm"
 INCLUDE "engine/events/card_key.asm"
 INCLUDE "engine/events/basement_key.asm"
 INCLUDE "engine/events/sacred_ash.asm"
@@ -4426,7 +4418,7 @@ SECTION "Phone Text 3", ROMX
 
 INCLUDE "data/phone/text/mom.asm"
 INCLUDE "data/phone/text/bill.asm"
-INCLUDE "data/phone/text/elm.asm"
+INCLUDE "data/phone/text/spruce.asm"
 INCLUDE "data/phone/text/trainers1.asm"
 INCLUDE "data/phone/text/liz_overworld.asm"
 

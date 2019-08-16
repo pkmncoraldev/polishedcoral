@@ -4,6 +4,8 @@ StartMenu:: ; 125cd
 
 	ld de, SFX_MENU
 	call PlaySFX
+	xor a
+	ld [wLandmarkSignTimer], a
 
 	farcall ReanchorBGMap_NoOAMUpdate
 

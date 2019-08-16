@@ -297,7 +297,7 @@
 	db 24, MURKROW
 	db 24, MURKROW
 
-	map_id BURNED_TOWER_1F
+	map_id ROUTE_3_STARGLOW
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 13, RATTATA
@@ -459,32 +459,32 @@
 	db 5, UNOWN
 	db 5, UNOWN
 
-	map_id UNION_CAVE_1F
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+;	map_id STARGLOW_CAVERN_1F
+;	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	db 6, GEODUDE
-	db 6, SANDSHREW
-	db 5, ZUBAT
-	db 4, RATTATA
-	db 7, ZUBAT
-	db 6, ONIX
-	db 6, ONIX
+;	db 6, GEODUDE
+;	db 6, SANDSHREW
+;	db 5, ZUBAT
+;	db 4, RATTATA
+;	db 7, ZUBAT
+;	db 6, ONIX
+;	db 6, ONIX
 	; day
-	db 6, GEODUDE
-	db 6, SANDSHREW
-	db 5, ZUBAT
-	db 4, RATTATA
-	db 7, ZUBAT
-	db 6, ONIX
-	db 6, ONIX
+;	db 6, GEODUDE
+;	db 6, SANDSHREW
+;	db 5, ZUBAT
+;	db 4, RATTATA
+;	db 7, ZUBAT
+;	db 6, ONIX
+;	db 6, ONIX
 	; nite
-	db 6, GEODUDE
-	db 6, RATTATA
-	db 5, WOOPER
-	db 4, RATTATA
-	db 7, ZUBAT
-	db 6, ONIX
-	db 6, ONIX
+;	db 6, GEODUDE
+;	db 6, RATTATA
+;	db 5, WOOPER
+;	db 4, RATTATA
+;	db 7, ZUBAT
+;	db 6, ONIX
+;	db 6, ONIX
 
 	map_id UNION_CAVE_B1F_NORTH
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
@@ -540,32 +540,32 @@
 	db 22, ONIX
 	db 22, ONIX
 
-	map_id UNION_CAVE_B2F
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+;	map_id STARGLOW_CAVERN_2F
+;	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	db 22, ZUBAT
-	db 22, GOLBAT
-	db 22, ZUBAT
-	db 21, RATICATE
-	db 20, GEODUDE
-	db 23, ONIX
-	db 23, ONIX
+;	db 22, ZUBAT
+;	db 22, GOLBAT
+;	db 22, ZUBAT
+;	db 21, RATICATE
+;	db 20, GEODUDE
+;	db 23, ONIX
+;	db 23, ONIX
 	; day
-	db 22, ZUBAT
-	db 22, GOLBAT
-	db 22, ZUBAT
-	db 21, RATICATE
-	db 20, GEODUDE
-	db 23, ONIX
-	db 23, ONIX
+;	db 22, ZUBAT
+;	db 22, GOLBAT
+;	db 22, ZUBAT
+;	db 21, RATICATE
+;	db 20, GEODUDE
+;	db 23, ONIX
+;	db 23, ONIX
 	; nite
-	db 22, ZUBAT
-	db 22, GOLBAT
-	db 22, QUAGSIRE
-	db 21, RATICATE
-	db 20, GEODUDE
-	db 23, ONIX
-	db 23, ONIX
+;	db 22, ZUBAT
+;	db 22, GOLBAT
+;	db 22, QUAGSIRE
+;	db 21, RATICATE
+;	db 20, GEODUDE
+;	db 23, ONIX
+;	db 23, ONIX
 
 	map_id SLOWPOKE_WELL_B1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
@@ -1404,7 +1404,7 @@
 	db 7, ODDISH
 	db 7, ODDISH
 
-	map_id ROUTE_34
+	map_id ROUTE_4
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 10, SNUBBULL

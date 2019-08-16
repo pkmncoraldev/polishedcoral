@@ -1,9 +1,10 @@
 SECTION "Special Map Blockdata", ROMX
 
 SunsetPokeCenter_BlockData:
-CherrygrovePokeCenter1F_BlockData:
 DaybreakPokeCenter_BlockData:
-AzaleaPokeCenter1F_BlockData:
+GlintPokeCenter_BlockData:
+StarglowPokeCenter_BlockData:
+CherrygrovePokeCenter1F_BlockData:
 EcruteakPokeCenter1F_BlockData:
 OlivinePokeCenter1F_BlockData:
 CianwoodPokeCenter1F_BlockData:
@@ -26,8 +27,9 @@ ShamoutiPokeCenter1F_BlockData:
 KantoPokeCenter2F_BlockData:
 	INCBIN "maps/PokeCenter.ablk.lz"
 
+GlintMart_BlockData:
+StarglowMart_BlockData:
 CherrygroveMart_BlockData:
-AzaleaMart_BlockData:
 EcruteakMart_BlockData:
 OlivineMart_BlockData:
 BlackthornMart_BlockData:
@@ -42,13 +44,13 @@ GenericMart_BlockData:: ; used by tilesets/palettes.asm:LoadSpecialMapPalette
 	INCBIN "maps/Mart.ablk.lz"
 
 Route1Gate_BlockData:
+Route5Gate_BlockData:
 Route34IlexForestGate_BlockData:
 Route35GoldenrodGate_BlockData:
 Route36RuinsOfAlphGate_BlockData:
 Route40BattleTowerGate_BlockData:
 YellowForestGate_BlockData:
 Route43Gate_BlockData:
-Route43MahoganyGate_BlockData:
 	INCBIN "maps/NorthSouthGate.ablk.lz"
 
 Route1ViridianGate_BlockData:
@@ -66,7 +68,6 @@ Route12Gate_BlockData:
 
 Route31VioletGate_BlockData:
 Route36VioletGate_BlockData:
-Route32RuinsOfAlphGate_BlockData:
 IlexForestAzaleaGate_BlockData:
 GoldenrodHarborGate_BlockData:
 Route38EcruteakGate_BlockData:
@@ -132,17 +133,22 @@ ManiasHouse_BlockData:
 CianwoodLugiaSpeechHouse_BlockData:
 StatsJudgesHouse_BlockData:
 Route39Farmhouse_BlockData:
-LakeOfRageHiddenPowerHouse_BlockData:
 Route28FamousSpeechHouse_BlockData:
 SunsetWaterGrassHouse_BlockData:
 Route30BerrySpeechHouse_BlockData:
 ValenciaHouse_BlockData:
+StarglowGrandpaHouse_BlockData:
 	INCBIN "maps/NormalHouse1.ablk.lz"
 	
 SunsetGengarHouse_BlockData:
+GlintRivalHouse_BlockData:
+StarglowTogepiHouse_BlockData:
+StarglowFishingGuruHouse_BlockData:
 	INCBIN "maps/NormalHouse2.ablk.lz"
 	
 SunsetLegendsHouse_BlockData:
+GlintEvoHouse_BlockData:
+StarglowNoPokemonHouse_BlockData:
 	INCBIN "maps/NormalHouse3.ablk.lz"
 
 EcruteakLugiaSpeechHouse_BlockData:
@@ -309,9 +315,9 @@ MystriStage_BlockData:
 SinjohRuinsHouse_BlockData:
 	INCBIN "maps/SinjohRuinsHouse.ablk.lz"
 
-UnionCave1F_BlockData:
+StarglowCavern1F_BlockData:
 GiovannisCave_BlockData:
-	INCBIN "maps/UnionCave1F.ablk.lz"
+	INCBIN "maps/StarglowCavern1F.ablk.lz"
 
 
 SECTION "Map Blockdata 2", ROMX
@@ -322,11 +328,11 @@ UnionCaveB1FNorth_BlockData:
 UnionCaveB1FSouth_BlockData:
 	INCBIN "maps/UnionCaveB1FSouth.ablk.lz"
 
-UnionCaveB2F_BlockData:
-	INCBIN "maps/UnionCaveB2F.ablk.lz"
+StarglowCavern2F_BlockData:
+	INCBIN "maps/StarglowCavern2F.ablk.lz"
 
-AzaleaGym_BlockData:
-	INCBIN "maps/AzaleaGym.ablk.lz"
+GlintGym_BlockData:
+	INCBIN "maps/GlintGym.ablk.lz"
 
 GlintCity_BlockData:
 	INCBIN "maps/GlintCity.ablk.lz"
@@ -334,11 +340,17 @@ GlintCity_BlockData:
 AzaleaTownRaining_BlockData:
 	INCBIN "maps/AzaleaTownRaining.ablk.lz"
 
-CharcoalKiln_BlockData:
-	INCBIN "maps/CharcoalKiln.ablk.lz"
-
-KurtsHouse_BlockData:
-	INCBIN "maps/KurtsHouse.ablk.lz"
+GlintApartmentLeft1F_BlockData:
+	INCBIN "maps/Apartment1F1.ablk.lz"
+	
+GlintApartmentLeft2F_BlockData:
+	INCBIN "maps/Apartment2F1.ablk.lz"
+	
+GlintApartmentRight1F_BlockData:
+	INCBIN "maps/Apartment1F2.ablk.lz"
+	
+GlintApartmentRight2F_BlockData:
+	INCBIN "maps/Apartment2F2.ablk.lz"
 
 SlowpokeWellB1F_BlockData:
 	INCBIN "maps/SlowpokeWellB1F.ablk.lz"
@@ -518,8 +530,8 @@ TinTower10F_BlockData:
 TinTowerRoof_BlockData:
 	INCBIN "maps/TinTowerRoof.ablk.lz"
 
-BurnedTower1F_BlockData:
-	INCBIN "maps/BurnedTower1F.ablk.lz"
+Route3Starglow_BlockData:
+	INCBIN "maps/Route3Starglow.ablk.lz"
 
 BurnedTowerB1F_BlockData:
 	INCBIN "maps/BurnedTowerB1F.ablk.lz"
@@ -540,35 +552,11 @@ OlivinePortPassage_BlockData:
 VermilionPortPassage_BlockData:
 	INCBIN "maps/PortPassage.ablk.lz"
 
-OlivineLighthouse1F_BlockData:
-	INCBIN "maps/OlivineLighthouse1F.ablk.lz"
-
-OlivineLighthouse2F_BlockData:
-	INCBIN "maps/OlivineLighthouse2F.ablk.lz"
-
-OlivineLighthouse3F_BlockData:
-	INCBIN "maps/OlivineLighthouse3F.ablk.lz"
-
-OlivineLighthouse4F_BlockData:
-	INCBIN "maps/OlivineLighthouse4F.ablk.lz"
-
-OlivineLighthouse5F_BlockData:
-	INCBIN "maps/OlivineLighthouse5F.ablk.lz"
-
-OlivineLighthouse6F_BlockData:
-	INCBIN "maps/OlivineLighthouse6F.ablk.lz"
-
 OlivineLighthouseRoof_BlockData:
 	INCBIN "maps/OlivineLighthouseRoof.ablk.lz"
 
-BattleTower1F_BlockData:
-	INCBIN "maps/BattleTower1F.ablk.lz"
-
 BattleTower2F_BlockData:
 	INCBIN "maps/BattleTower2F.ablk.lz"
-
-BattleTowerBattleRoom_BlockData:
-	INCBIN "maps/BattleTowerBattleRoom.ablk.lz"
 
 BattleTowerElevator_BlockData:
 	INCBIN "maps/BattleTowerElevator.ablk.lz"
@@ -655,8 +643,8 @@ MahoganyGym_BlockData:
 MahoganyTown_BlockData:
 	INCBIN "maps/MahoganyTown.ablk.lz"
 
-LakeOfRage_BlockData:
-	INCBIN "maps/LakeOfRage.ablk.lz"
+StarglowValley_BlockData:
+	INCBIN "maps/StarglowValley.ablk.lz"
 
 LakeOfRageFlooded_BlockData:
 	INCBIN "maps/LakeOfRageFlooded.ablk.lz"
@@ -709,8 +697,8 @@ VictoryRoad2F_BlockData:
 VictoryRoad3F_BlockData:
 	INCBIN "maps/VictoryRoad3F.ablk.lz"
 
-TohjoFalls_BlockData:
-	INCBIN "maps/TohjoFalls.ablk.lz"
+HuntersThicket_BlockData:
+	INCBIN "maps/HuntersThicket.ablk.lz"
 
 IndigoPlateau_BlockData:
 	INCBIN "maps/IndigoPlateau.ablk.lz"
@@ -1159,8 +1147,8 @@ CinnabarVolcanoB1F_BlockData:
 CinnabarVolcanoB2F_BlockData:
 	INCBIN "maps/CinnabarVolcanoB2F.ablk.lz"
 
-SeafoamGym_BlockData:
-	INCBIN "maps/SeafoamGym.ablk.lz"
+StarglowGym_BlockData:
+	INCBIN "maps/StarglowGym.ablk.lz"
 
 SeafoamIslandsB1F_BlockData:
 	INCBIN "maps/SeafoamIslandsB1F.ablk.lz"
@@ -1214,9 +1202,6 @@ ShamoutiHotel3F_BlockData:
 
 ShamoutiHotelRestaurant_BlockData:
 	INCBIN "maps/ShamoutiHotelRestaurant.ablk.lz"
-
-BeautifulBeach_BlockData:
-	INCBIN "maps/BeautifulBeach.ablk.lz"
 
 BeautifulBeachVilla_BlockData:
 	INCBIN "maps/BeautifulBeachVilla.ablk.lz"
@@ -1292,6 +1277,9 @@ Route4_BlockData:
 Route5_BlockData:
 	INCBIN "maps/Route5.ablk.lz"
 
+Route5Deep_BlockData:
+	INCBIN "maps/Route5Deep.ablk.lz"
+	
 Route6_BlockData:
 	INCBIN "maps/Route6.ablk.lz"
 
@@ -1396,6 +1384,9 @@ Route31_BlockData:
 
 GlintGrove_BlockData:
 	INCBIN "maps/GlintGrove.ablk.lz"
+	
+GlintGroveDeep_BlockData:
+	INCBIN "maps/GlintGroveDeep.ablk.lz"
 
 GlintGroveEntrance_BlockData:
 	INCBIN "maps/GlintGroveEntrance.ablk.lz"
@@ -1435,9 +1426,6 @@ Route39_BlockData:
 
 Route39Barn_BlockData:
 	INCBIN "maps/Route39Barn.ablk.lz"
-
-Route40_BlockData:
-	INCBIN "maps/Route40.ablk.lz"
 
 Route41_BlockData:
 	INCBIN "maps/Route41.ablk.lz"

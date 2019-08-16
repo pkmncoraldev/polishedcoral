@@ -21,8 +21,8 @@ NUM_SPRITEHEADER_FIELDS EQU const_value
 	const PAL_OW_GREEN  ; 2
 	const PAL_OW_BROWN  ; 3
 	const PAL_OW_PURPLE ; 4
-	const PAL_OW_PINK   ; 5
-	const PAL_OW_YELLOW ; 6
+	const PAL_OW_TEAL   ; 5
+	const PAL_OW_PINK	; 6
 	const PAL_OW_SILVER	; 7
 
 ; for object_events
@@ -32,12 +32,10 @@ NUM_SPRITEHEADER_FIELDS EQU const_value
 	const PAL_NPC_GREEN  ; a
 	const PAL_NPC_BROWN  ; b
 	const PAL_NPC_PURPLE ; c
-	const PAL_NPC_PINK   ; d
-	const PAL_NPC_YELLOW ; e
+	const PAL_NPC_TEAL   ; d
+	const PAL_NPC_PINK	 ; e
 	const PAL_NPC_SILVER ; f
 
 ; for party menu icons
 	const_def PAL_OW_SILVER
-	const PAL_OW_GRAY   ; 5
-	const_def PAL_OW_PINK   ; 6
-	const PAL_OW_TEAL   ; 7
+	const PAL_OW_GRAY   ; 7

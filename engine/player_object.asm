@@ -66,11 +66,11 @@ SpawnPlayer: ; 8029
 	ld a, [wPlayerInitialPalette]
 	cp 6
 	jp nz, .cont6
-	ln e, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT
+	ln e, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT
 	jp .ok
 	
 .cont6
-	ln e, (1 << 3) | PAL_OW_YELLOW, PERSONTYPE_SCRIPT
+	ln e, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT
 
 .ok
 	ld [hl], e

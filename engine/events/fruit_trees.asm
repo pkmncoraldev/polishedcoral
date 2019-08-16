@@ -20,32 +20,13 @@ FruitTreeScript:: ; 44000
 
 PickBerryScript:
 	copybytetovar wCurFruit
-	ifless NUM_APRICORNS+1, PickApricornScript
 	itemtotext $0, $0
 	writetext HeyItsFruitText
-	callasm GetFruitTreeCount
-	ifequal $1, .try_one
-	ifequal $2, .try_two
-	copybytetovar wCurFruit
-	giveitem ITEM_FROM_MEM, 3
-	iffalse .try_two
-	buttonsound
-	writetext ObtainedThreeFruitText
-	jump .continue
-.try_two
-	copybytetovar wCurFruit
-	giveitem ITEM_FROM_MEM, 2
-	iffalse .try_one
-	buttonsound
-	writetext ObtainedTwoFruitText
-	jump .continue
-.try_one
 	copybytetovar wCurFruit
 	giveitem ITEM_FROM_MEM
 	iffalse .packisfull
 	buttonsound
-	writetext ObtainedOneFruitText
-.continue
+	writetext ObtainedFruitText
 	callasm PickedFruitTree
 	specialsound
 	itemnotify
@@ -56,51 +37,6 @@ PickBerryScript:
 	buttonsound
 	jumpopenedtext FruitPackIsFullText
 ; 44041
-
-PickApricornScript:
-	checkitem APRICORN_BOX
-	iffalse_jumpopenedtext NoApricornBoxText
-	copybytetovar wCurFruit
-	callasm .get_name
-	writetext HeyItsFruitText
-	callasm GetFruitTreeCount
-	ifequal $1, .try_one
-	ifequal $2, .try_two
-	copybytetovar wCurFruit
-	giveapricorn ITEM_FROM_MEM, 3
-	iffalse .try_two
-	buttonsound
-	writetext ObtainedThreeFruitText
-	jump .continue
-.try_two
-	copybytetovar wCurFruit
-	giveapricorn ITEM_FROM_MEM, 2
-	iffalse .try_one
-	buttonsound
-	writetext ObtainedTwoFruitText
-	jump .continue
-.try_one
-	copybytetovar wCurFruit
-	giveapricorn ITEM_FROM_MEM
-	iffalse .packisfull
-	buttonsound
-	writetext ObtainedOneFruitText
-.continue
-	callasm PickedFruitTree
-	specialsound
-	jumpopenedtext PutAwayTheApricornText
-
-.packisfull
-	buttonsound
-	jumpopenedtext FruitPackIsFullText
-
-.get_name:
-	ld a, [wScriptVar]
-	ld [wd265], a
-	call GetApricornName
-	ld de, wStringBuffer1
-	ld hl, wStringBuffer3
-	jp CopyName2
 
 TryResetFruitTrees: ; 4404c
 	ld hl, wDailyFlags
@@ -146,12 +82,12 @@ GetFruitTreeFlag: ; 44078
 	ret
 ; 4408a
 
-GetFruitTreeCount:
-	ld a, 3
-	call RandomRange
-	inc a
-	ld [wScriptVar], a
-	ret
+;GetFruitTreeCount:
+;	ld a, 3
+;	call RandomRange
+;	inc a
+;	ld [wScriptVar], a
+;	ret
 
 FruitBearingTreeText: ; 440b5
 	text_jump _FruitBearingTreeText
@@ -163,18 +99,10 @@ HeyItsFruitText: ; 440ba
 	db "@"
 ; 440bf
 
-ObtainedOneFruitText: ; 440bf
-	text_jump _ObtainedOneFruitText
+ObtainedFruitText: ; 440bf
+	text_jump _ObtainedFruitText
 	db "@"
 ; 440c4
-
-ObtainedTwoFruitText:
-	text_jump _ObtainedTwoFruitText
-	db "@"
-
-ObtainedThreeFruitText:
-	text_jump _ObtainedThreeFruitText
-	db "@"
 
 FruitPackIsFullText: ; 440c4
 	text_jump _FruitPackIsFullText

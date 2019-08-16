@@ -6,33 +6,9 @@ ENDM
 
 SpawnPoints: ; 0x152ab
 	spawn PLAYER_HOUSE_2F,              3,  3
-
-;	spawn PALLET_TOWN,                 5,  6
-;	spawn VIRIDIAN_CITY,              23, 26
-;	spawn PEWTER_CITY,                13, 26
-;	spawn ROUTE_3,                    61,  4
-;	spawn CERULEAN_CITY,              19, 18
-;	spawn ROUTE_10_NORTH,             11, 36
-;	spawn VERMILION_CITY,              9,  6
-;	spawn LAVENDER_TOWN,               5,  8
-;	spawn SAFFRON_CITY,                9, 30
-;	spawn CELADON_CITY,               33, 10
-;	spawn FUCHSIA_CITY,               19, 28
-;	spawn CINNABAR_ISLAND,            11, 16
-;	spawn INDIGO_PLATEAU,              9,  6
-
-	spawn SUNSET_BAY,                 15,  6
-;	spawn CHERRYGROVE_CITY,           29,  4
-	spawn DAYBREAK_VILLAGE,           31, 30
-;	spawn GLINT_GROVE,                   11, 74
-;	spawn GLINT_CITY,                15, 10
-;	spawn CIANWOOD_CITY,              23, 44
-;	spawn GOLDENROD_CITY,             18, 28
-;	spawn OLIVINE_CITY,               13, 18
-;	spawn ECRUTEAK_CITY,              23, 28
-;	spawn MAHOGANY_TOWN,              15, 14
-;	spawn LAKE_OF_RAGE,               21, 29
-;	spawn BLACKTHORN_CITY,            21, 30
-;	spawn SILVER_CAVE_OUTSIDE,        23, 14
-;	spawn FAST_SHIP_CABINS_SW_SSW_NW,  6,  2
+	spawn SUNSET_BAY,                  25, 10
+	spawn DAYBREAK_VILLAGE,            13,  8
+	spawn GLINT_CITY,                  27, 16
+	spawn STARGLOW_VALLEY,			   17, 18
+	
 	spawn N_A,                        -1, -1

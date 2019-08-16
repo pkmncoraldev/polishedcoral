@@ -324,6 +324,7 @@ AI_Smart: ; 386be
 	jr .checkmove
 
 .table_386f2
+	dbw EFFECT_FAKE_OUT,		  AI_Smart_FakeOut
 	dbw EFFECT_SLEEP,             AI_Smart_Sleep
 	dbw EFFECT_LEECH_HIT,         AI_Smart_LeechHit
 	dbw EFFECT_EXPLOSION,         AI_Smart_Explosion
@@ -360,7 +361,6 @@ AI_Smart: ; 386be
 	dbw EFFECT_MEAN_LOOK,         AI_Smart_MeanLook
 	dbw EFFECT_FLAME_WHEEL,       AI_Smart_FlameWheel
 	dbw EFFECT_FLARE_BLITZ,       AI_Smart_FlameWheel
-	dbw EFFECT_SACRED_FIRE,       AI_Smart_FlameWheel
 	dbw EFFECT_CURSE,             AI_Smart_Curse
 	dbw EFFECT_PROTECT,           AI_Smart_Protect
 	dbw EFFECT_FORESIGHT,         AI_Smart_Foresight
@@ -391,6 +391,22 @@ AI_Smart: ; 386be
 	dbw EFFECT_ROOST,             AI_Smart_Roost
 	db $ff
 ; 387e3
+
+
+AI_Smart_FakeOut:
+; Don't use Thief unless it's the only move available.
+
+	ld b, EFFECT_FAKE_OUT
+	call AIHasMoveEffect
+	ret nc
+	
+	ld a, [wEnemySubStatus2]
+	bit SUBSTATUS_FAKE_OUT, a
+	ret nz
+	
+	dec [hl]
+	dec [hl]
+	ret
 
 
 AI_Smart_Sleep: ; 387e3
@@ -2114,7 +2130,6 @@ SunnyDayMoves: ; 39134
 	db FLAMETHROWER
 	db FIRE_SPIN
 	db FIRE_BLAST
-	db SACRED_FIRE
 	db FLARE_BLITZ
 	db HEALINGLIGHT
 	db $ff

@@ -45,6 +45,14 @@ TilesetCafeAnim::
 TilesetLighthouseAnim::
 TilesetGateAnim::
 TilesetLabAnim::
+TilesetMartAnim::
+TilesetLibraryAnim::
+TilesetSnowAnim::
+TilesetParkAnim::
+TilesetMall1Anim::
+TilesetMall2Anim::
+TilesetSewerAnim::
+TilesetTrainAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -74,10 +82,10 @@ TilesetGlintAnim::
 	dw NULL,  DoneTileAnimation
 	
 TilesetGroveAnim::
-Tileset12Anim::
-Tileset14Anim::
-Tileset16Anim::
-Tileset23Anim::
+TilesetMountainAnim::
+TilesetSpookyAnim::
+TilesetRanchAnim::
+TilesetLusterAnim::
 	dw VTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft
@@ -99,7 +107,7 @@ Tileset23Anim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 	
-Tileset13Anim::
+TilesetJungleAnim::
     dw VTiles2 tile $14, WriteTileToBuffer
     dw NULL,  WaitTileAnimation
     dw wTileAnimBuffer, ScrollTileRightLeft
@@ -123,7 +131,7 @@ Tileset13Anim::
     dw NULL,  DoneTileAnimation
 	
 TilesetCaveAnim::
-Tileset19Anim::
+TilesetLavaCaveAnim::
 	dw NULL,  LavaAnim2
 	dw NULL,  WaitTileAnimation
 	dw WaterfallFrames, AnimateWaterfallTiles
@@ -139,7 +147,7 @@ Tileset19Anim::
 	dw VTiles2 tile $14, WriteTileFromBuffer
 	dw NULL,  DoneTileAnimation
 	
-Tileset20Anim::
+TilesetStarglowCavernAnim::
 	dw VTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileRightLeft
@@ -161,7 +169,7 @@ Tileset20Anim::
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  DoneTileAnimation
 	
-Tileset15Anim::
+TilesetHauntedAnim::
 	dw NULL,  FlickeringLightbulbPalette
 	dw NULL,  WaitTileAnimation
 	dw NULL,  FlickeringLightbulbPalette
@@ -404,7 +412,7 @@ Tileset15Anim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 	
-Tileset21Anim::
+TilesetHauntedTVAnim::
 	dw NULL,  FlickeringTVPalette
 	dw NULL,  FlickeringTVPalette
 	dw NULL,  FlickeringTVPalette

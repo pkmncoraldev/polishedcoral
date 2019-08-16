@@ -270,7 +270,7 @@
 	db 44, STEELIX
 	db 43, RHYDON
 
-	map_id TOHJO_FALLS
+	map_id HUNTERS_THICKET
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 22, ZUBAT

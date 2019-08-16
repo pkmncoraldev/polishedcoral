@@ -193,7 +193,7 @@ class Attributes(object):
 		'maps/ScaryCave1F.blk': lambda: load_palette('gfx/tilesets/scary_cave.pal'),
 		'maps/ScaryCaveB1F.blk': lambda: load_palette('gfx/tilesets/scary_cave.pal'),
 		'maps/ScaryCaveShipwreck.blk': lambda: load_palette('gfx/tilesets/scary_cave.pal'),
-		'maps/SeafoamGym.blk': lambda: PaletteMap.day_palette(),
+		'maps/StarglowGym.blk': lambda: PaletteMap.day_palette(),
 		'maps/SilverCaveRoom1.blk': lambda: load_palette('gfx/tilesets/silver_cave.pal'),
 		'maps/SilverCaveRoom2.blk': lambda: load_palette('gfx/tilesets/silver_cave.pal'),
 		'maps/SilverCaveRoom3.blk': lambda: load_palette('gfx/tilesets/silver_cave.pal'),

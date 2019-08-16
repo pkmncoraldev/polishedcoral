@@ -244,8 +244,6 @@ BattleCommand_checkturn:
 	call GetBattleVar
 	cp FLAME_WHEEL
 	jr z, .thaw
-	cp SACRED_FIRE
-	jr z, .thaw
 	cp SCALD
 	jr z, .thaw
 	cp FLARE_BLITZ
@@ -643,30 +641,30 @@ BattleCommand_checkobedience: ; 343db
 
 .obeylevel
 	; The maximum obedience level is constrained by owned badges:
-	ld hl, wJohtoBadges
+	ld hl, wOnwaBadges
 
 	; risingbadge
-	bit RISINGBADGE, [hl]
+	bit EIGHTHBADGE, [hl]
 	ld a, MAX_LEVEL + 1
 	jr nz, .getlevel
 
 	; mineralbadge
-	bit MINERALBADGE, [hl]
+	bit FIFTHBADGE, [hl]
 	ld a, 70
 	jr nz, .getlevel
 
 	; fogbadge
-	bit FOGBADGE, [hl]
+	bit FOURTHBADGE, [hl]
 	ld a, 50
 	jr nz, .getlevel
 
 	; hivebadge
-	bit HIVEBADGE, [hl]
+	bit SECONDBADGE, [hl]
 	ld a, 30
 	jr nz, .getlevel
 
 	; zephyrbadge
-	bit ZEPHYRBADGE, [hl]
+	bit FIRSTBADGE, [hl]
 	ld a, 20
 	jr nz, .getlevel
 
@@ -6380,7 +6378,7 @@ BattleCommand_teleport: ; 36778
 ; teleport
 
 	ld a, [wBattleType]
-	cp BATTLETYPE_TRAP ; or BATTLETYPE_FORCEITEM, BATTLETYPE_RED_GYARADOS, BATTLETYPE_LEGENDARY
+	cp BATTLETYPE_TRAP ; or BATTLETYPE_FORCEITEM, BATTLETYPE_SHINY, BATTLETYPE_LEGENDARY
 	jr nc, .failed
 
 ; Switch, don't run, in trainer battles
@@ -6479,7 +6477,7 @@ BattleCommand_forceswitch: ; 3680f
 ; forceswitch
 
 	ld a, [wBattleType]
-	cp BATTLETYPE_TRAP ; or BATTLETYPE_FORCEITEM, BATTLETYPE_RED_GYARADOS, BATTLETYPE_LEGENDARY
+	cp BATTLETYPE_TRAP ; or BATTLETYPE_FORCEITEM, BATTLETYPE_SHINY, BATTLETYPE_LEGENDARY
 	jr nc, .but_it_failed
 	call GetOpponentAbilityAfterMoldBreaker
 	cp SUCTION_CUPS
@@ -8563,6 +8561,33 @@ BattleCommand_checksafeguard: ; 37972
 	jp EndMoveEffect
 
 ; 37991
+
+
+BattleCommand_fakeout: ; 37683
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	bit SUBSTATUS_FAKE_OUT, [hl]
+	jr nz, .failed
+	call CheckIfTargetIsGhostType
+	jr z, .failed
+
+	jp FlinchTarget
+	
+
+.failed
+	ld a, 1
+	ld [wAttackMissed], a
+	call BattleCommand_movedelay
+	ld hl, ButItFailedText
+	call StdBattleTextBox
+	jp EndMoveEffect
+	
+	
+BattleCommand_cantusefakeout: ; 37683
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_FAKE_OUT, [hl]
+	ret
 
 
 BattleCommand_getmagnitude: ; 37991

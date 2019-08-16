@@ -49,9 +49,9 @@ SunsetBay_MapScriptHeader:
 
 	db 13 ; object events
 	person_event SPRITE_CUTE_GIRL, 15, 32, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetNPC1, -1
-	object_event 32, 13, SPRITE_POKEMANIAC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_COMMAND, jumptextfaceplayer, SunsetNPCmellowText, -1
+	object_event 32, 13, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_COMMAND, jumptextfaceplayer, SunsetNPCmellowText, -1
 	person_event SPRITE_GRAMPS, 14, 37, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetNPC3, -1
-	person_event SPRITE_ACE_TRAINER_F, 11, 18, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunsetNPC4, -1
+	person_event SPRITE_COOLTRAINER_F, 11, 18, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunsetNPC4, -1
 	person_event SPRITE_FAT_GUY, 18, 15, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunsetNPC5, -1
 	person_event SPRITE_SUPER_NERD, 18, 33, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetNPC6, -1
 	object_event 26, 29, SPRITE_ROWBOAT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, jumptext, SunsetBroatText, -1
@@ -216,7 +216,7 @@ SunsetNPC5_2:
 
 	
 SunsetGrampsStopsYou1:
-	callasm .StopRunning
+	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	spriteface SUNSET_NPC3, UP
 	showemote EMOTE_SHOCK, SUNSET_NPC3, 15
@@ -232,18 +232,8 @@ SunsetGrampsStopsYou1:
 	applymovement SUNSET_NPC3, Movement_GrampsReset1
 	end
 	
-	
-.StopRunning:
-	ld a, [wPlayerState]
-	cp PLAYER_RUN
-	ret nz
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	ret
-	
 SunsetGrampsStopsYou2:
-	callasm .StopRunning
+	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	spriteface SUNSET_NPC3, DOWN
 	showemote EMOTE_SHOCK, SUNSET_NPC3, 15
@@ -257,18 +247,8 @@ SunsetGrampsStopsYou2:
 	stopfollow
 	end
 	
-	
-.StopRunning:
-	ld a, [wPlayerState]
-	cp PLAYER_RUN
-	ret nz
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	ret
-	
 SunsetGrampsStopsYou3:
-	callasm .StopRunning
+	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	spriteface SUNSET_NPC3, DOWN
 	showemote EMOTE_SHOCK, SUNSET_NPC3, 15
@@ -284,18 +264,8 @@ SunsetGrampsStopsYou3:
 	applymovement SUNSET_NPC3, Movement_GrampsReset2
 	end
 	
-	
-.StopRunning:
-	ld a, [wPlayerState]
-	cp PLAYER_RUN
-	ret nz
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	ret
-	
 SunsetGrampsStopsYou4:
-	callasm .StopRunning
+	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	spriteface SUNSET_NPC3, DOWN
 	showemote EMOTE_SHOCK, SUNSET_NPC3, 15
@@ -310,16 +280,6 @@ SunsetGrampsStopsYou4:
 	stopfollow
 	applymovement SUNSET_NPC3, Movement_GrampsReset3
 	end
-
-	
-.StopRunning:
-	ld a, [wPlayerState]
-	cp PLAYER_RUN
-	ret nz
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	ret
 	
 SunsetNPC6:
 	jumptextfaceplayer SunsetNPC6Text

@@ -80,11 +80,11 @@ _BillsPC: ; e3fd
 	dw .strings
 
 .strings ; e47f
-	db "Withdraw <PK><MN>@"
-	db "Deposit <PK><MN>@"
-	db "Change Box@"
-	db "Move <PK><MN> w/o Mail@"
-	db "See ya!@"
+	db "WITHDRAW <PK><MN>@"
+	db "DEPOSIT <PK><MN>@"
+	db "CHANGE BOX@"
+	db "MOVE <PK><MN> W/O MAIL@"
+	db "SEE YA!@"
 
 .Jumptable: ; e4ba (3:64ba)
 	dw BillsPC_WithdrawMenu

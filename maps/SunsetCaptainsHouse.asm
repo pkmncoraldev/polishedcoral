@@ -28,7 +28,7 @@ SunsetCaptainsHouseTrigger1:
 	end
 
 SunsetCaptainsHouseTrigger0Event:
-	callasm .StopRunning
+	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	spriteface SUNSET_CAPTAINS_HOUSE_CAPTAIN, DOWN
 	showemote EMOTE_SHOCK, SUNSET_CAPTAINS_HOUSE_CAPTAIN, 15
@@ -58,15 +58,6 @@ SunsetCaptainsHouseTrigger0Event:
 .day:
 	writetext SunsetCaptainText1_Day
 	jump .cont
-	
-.StopRunning:
-	ld a, [wPlayerState]
-	cp PLAYER_RUN
-	ret nz
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	ret
 	
 SunsetCaptain:
 ;	jump SunsetCaptainFirstRidetoIsland

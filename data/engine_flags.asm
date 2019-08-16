@@ -52,23 +52,14 @@ EngineFlags: ; 80462
 	engine_flag wOWState, OWSTATE_WATERFALL
 	engine_flag wOWState, OWSTATE_CUT
 
-	engine_flag wJohtoBadges, ZEPHYRBADGE
-	engine_flag wJohtoBadges, HIVEBADGE
-	engine_flag wJohtoBadges, PLAINBADGE
-	engine_flag wJohtoBadges, FOGBADGE
-	engine_flag wJohtoBadges, MINERALBADGE
-	engine_flag wJohtoBadges, STORMBADGE
-	engine_flag wJohtoBadges, GLACIERBADGE
-	engine_flag wJohtoBadges, RISINGBADGE
-
-	engine_flag wKantoBadges, BOULDERBADGE
-	engine_flag wKantoBadges, CASCADEBADGE
-	engine_flag wKantoBadges, THUNDERBADGE
-	engine_flag wKantoBadges, RAINBOWBADGE
-	engine_flag wKantoBadges, MARSHBADGE
-	engine_flag wKantoBadges, SOULBADGE
-	engine_flag wKantoBadges, VOLCANOBADGE
-	engine_flag wKantoBadges, EARTHBADGE
+	engine_flag wOnwaBadges, FIRSTBADGE
+	engine_flag wOnwaBadges, SECONDBADGE
+	engine_flag wOnwaBadges, THIRDBADGE
+	engine_flag wOnwaBadges, FOURTHBADGE
+	engine_flag wOnwaBadges, FIFTHBADGE
+	engine_flag wOnwaBadges, SIXTHBADGE
+	engine_flag wOnwaBadges, SEVENTHBADGE
+	engine_flag wOnwaBadges, EIGHTHBADGE
 
 	; unown sets
 	engine_flag wUnlockedUnowns, 0 ; 1
@@ -233,36 +224,17 @@ EngineFlags: ; 80462
 
 	engine_flag wSwarmFlags, 2 ; dunsparce swarm
 	engine_flag wSwarmFlags, 3 ; yanma swarm
+	
+	engine_flag wGotHMFlags, 0 ; rock smash
+	engine_flag wGotHMFlags, 1 ; cut
 
-	engine_flag wPokemonJournals, 0  ; falkner
-	engine_flag wPokemonJournals, 1  ; bugsy
-	engine_flag wPokemonJournals, 2  ; whitney
-	engine_flag wPokemonJournals, 3  ; morty
-	engine_flag wPokemonJournals, 4  ; chuck
-	engine_flag wPokemonJournals, 5  ; jasmine
-	engine_flag wPokemonJournals, 6  ; pryce
-	engine_flag wPokemonJournals, 7  ; clair
-	engine_flag wPokemonJournals, 8  ; brock
-	engine_flag wPokemonJournals, 9  ; misty
-	engine_flag wPokemonJournals, 10 ; lt.surge
-	engine_flag wPokemonJournals, 11 ; erika
-	engine_flag wPokemonJournals, 12 ; janine
-	engine_flag wPokemonJournals, 13 ; sabrina
-	engine_flag wPokemonJournals, 14 ; blaine
-	engine_flag wPokemonJournals, 15 ; blue
-	engine_flag wPokemonJournals, 16 ; will
-	engine_flag wPokemonJournals, 17 ; koga
-	engine_flag wPokemonJournals, 18 ; bruno
-	engine_flag wPokemonJournals, 19 ; karen
-	engine_flag wPokemonJournals, 20 ; lance
-	engine_flag wPokemonJournals, 21 ; red
-	engine_flag wPokemonJournals, 22 ; green
-	engine_flag wPokemonJournals, 23 ; prof.oak
-	engine_flag wPokemonJournals, 24 ; prof.elm
-	engine_flag wPokemonJournals, 25 ; prof.ivy
-	engine_flag wPokemonJournals, 26 ; giovanni
-	engine_flag wPokemonJournals, 27 ; lorelei
-	engine_flag wPokemonJournals, 28 ; agatha
-	engine_flag wPokemonJournals, 29 ; bill
-	engine_flag wPokemonJournals, 30 ; kurt
-	engine_flag wPokemonJournals, 31 ; mr.fuji
+	engine_flag wMetGymLeaderFlags, 0  ; stanley
+	engine_flag wMetGymLeaderFlags, 1  ; rodney
+	engine_flag wMetGymLeaderFlags, 2  ; leilani
+	engine_flag wMetGymLeaderFlags, 3  ; morty
+	engine_flag wMetGymLeaderFlags, 4  ; chuck
+	engine_flag wMetGymLeaderFlags, 5  ; jasmine
+	engine_flag wMetGymLeaderFlags, 6  ; pryce
+	engine_flag wMetGymLeaderFlags, 7  ; clair
+	
+	engine_flag wSnareFlags, 0	; starglow

@@ -4,6 +4,7 @@ PokemonCenterPC: ; 1559a
 	call PC_PlayBootSound
 	ld hl, PokeCenterPCText_BootedUpPC
 	call PC_DisplayText
+	call WaitSFX
 	ld hl, PokeCenterPCText_AccessWhosePC
 	call PC_DisplayTextWaitMenu
 	ld hl, .TopMenu
@@ -42,44 +43,31 @@ PokemonCenterPC: ; 1559a
 .JumpTable:
 	dw PlayersPC, .String_PlayersPC
 	dw BillsPC, .String_BillsPC
-	dw OaksPC, .String_OaksPC
 	dw HallOfFamePC, .String_HallOfFame
 	dw TurnOffPC, .String_TurnOff
 
 .String_PlayersPC:  db "<PLAYER>'s PC@"
-.String_BillsPC:    db "Bill's PC@"
-.String_OaksPC:     db "Prof.Oak's PC@"
-.String_HallOfFame: db "Hall of Fame@"
-.String_TurnOff:    db "Turn Off@"
+.String_BillsPC:    db "BILL's PC@"
+.String_HallOfFame: db "HALL OF FAME@"
+.String_TurnOff:    db "TURN OFF@"
 
 .WhichPC:
-	; before pokedex
-	db  3 ; items
-	db  1, 0, 4 ; bill's, player's, turn off
-	db -1
-
 	; before Hall Of Fame
-	db  4 ; items
-	db  1, 0, 2, 4 ; bill's, player's, oak's, turn off
+	db  3 ; items
+	db  1, 0, 3 ; bill's, player's, turn off
 	db -1
 
 	; postgame
-	db  5 ; items
-	db  1, 0, 2, 3, 4 ; bill's, player's, oak's, hall of fame, turn off
+	db  4 ; items
+	db  1, 0, 2, 3 ; bill's, player's, oak's, turn off
 	db -1
 
 .ChooseWhichPCListToUse:
-	call CheckReceivedDex
-	jr nz, .got_dex
-	xor a
-	ret
-
-.got_dex
 	ld a, [wHallOfFameCount]
 	and a
-	ld a, $1
+	ld a, $0
 	ret z
-	ld a, $2
+	ld a, $1
 	ret
 ; 15650
 
@@ -118,15 +106,6 @@ PlayersPC: ; 15679
 	and a
 	ret
 ; 15689
-
-OaksPC: ; 15689
-	call PC_PlayChoosePCSound
-	ld hl, PokeCenterPCText_AccessedOaksPC
-	call PC_DisplayText
-	farcall ProfOaksPC
-	and a
-	ret
-; 1569a
 
 HallOfFamePC: ; 1569a
 	call PC_PlayChoosePCSound

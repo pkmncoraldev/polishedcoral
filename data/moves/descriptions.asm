@@ -219,7 +219,7 @@ MoveDescriptions::
 	dw BugBuzzDescription
 	dw SafeguardDescription
 	dw PainSplitDescription
-	dw SacredFireDescription
+	dw FakeOutDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -347,10 +347,13 @@ EmberDescription:
 FlamethrowerDescription:
 FireBlastDescription:
 FlameWheelDescription:
-SacredFireDescription:
 ScaldDescription:
 	db   "An attack that may"
 	next "inflict a burn.@"
+	
+FakeOutDescription:
+	db   "Causes flinching."
+	next "Only usable once.@"
 
 BodySlamDescription:
 ThundershockDescription:

@@ -5,7 +5,7 @@ ENDM
 
 ; trainer groups
 	enum_start
-CHRIS EQU __enum__
+PLAYER_M EQU __enum__
 	trainerclass TRAINER_NONE ; 0
 	const PHONECONTACT_MOM
 	const PHONECONTACT_BIKESHOP
@@ -14,7 +14,7 @@ CHRIS EQU __enum__
 	const PHONECONTACT_LYRA
 	const PHONECONTACT_BUENA
 
-KRIS EQU __enum__
+PLAYER_F EQU __enum__
 
 	trainerclass PLAYER_MALE
 
@@ -36,7 +36,7 @@ KRIS EQU __enum__
 
 	trainerclass CLAIR
 
-	trainerclass WILL
+	trainerclass WILL_OLD
 
 	trainerclass KOGA
 
@@ -61,28 +61,92 @@ KRIS EQU __enum__
 	const RIVAL2_6
 
 	trainerclass YOUNGSTER
-
+	const JOEY
+	const BILLY
+	const CHRIS
+	const TOMMY
 
 	trainerclass BUG_CATCHER
-
+	const BARNEY
+	const JOSH
+	const ARNOLD
 
 	trainerclass CAMPER
-
+	const BART
+	const DENNY
+	const TREVOR
+	const VINCENT
 
 	trainerclass PICNICKER
-
+	const MOLLY
+	const ERIN
+	const TRISTA
+	const SHAUNA
+	const BETH
 
 	trainerclass TWINS
+	const JENJAN
+	const JANJEN
 
 
 	trainerclass FISHER
+	const DAVE
+	const GERALD_2
+	const GERALD_3
+	const GERALD_4
+	const GERALD_5
+	const GERALD_6
+	const GERALD_7
+	const GERALD_8
+	const WALTER_2
+	const WALTER_3
+	const WALTER_4
+	const WALTER_5
+	const WALTER_6
+	const WALTER_7
+	const WALTER_8
+	const BORRIS_2
+	const BORRIS_3
+	const BORRIS_4
+	const BORRIS_5
+	const BORRIS_6
+	const BORRIS_7
+	const BORRIS_8
+	const CLINT_2
+	const CLINT_3
+	const CLINT_4
+	const CLINT_5
+	const CLINT_6
+	const CLINT_7
+	const CLINT_8
+	const HOMER
+	const HUE
+	const DARREN
+	const LESLIE
 
 
 	trainerclass BIRD_KEEPER
+	const BRYANT
+	const TODD
+	const RANDY
 
 
 	trainerclass HIKER
-
+	const DOUG
+	const WILL
+	const ROB
+	const BENJAMIN
+	const LANDON
+	const SIMON
+	const STEVEN
+	const GILL
+	const HARVEY
+	const TED
+	const LEROY
+	const SAMSON
+	const DARRYL
+	const HENRY
+	
 
 	trainerclass GRUNTM
 
@@ -91,9 +155,16 @@ KRIS EQU __enum__
 
 
 	trainerclass POKEFANM
-
+	const RON
+	const SID
+	const RICK
+	const REG
+	
 
 	trainerclass POKEFANF
+	const SUSAN
+	const JILL
+	const WENDY
 
 
 	trainerclass OFFICERM
@@ -112,18 +183,52 @@ KRIS EQU __enum__
 
 
 	trainerclass LASS
+	const LIBBY
+	const VERONICA
+	const CHARLOTTE
+	const JUNE
+	const MELANIE
+	const SARAH
+	const MARSHA
 
 
 	trainerclass BEAUTY
 
 
 	trainerclass FIREBREATHER
+	const MORT
+	const FRITZ
+	const MEL
+	const DOM
+	const JOB
+	const WIZ
+	const GARTH
+	const ART
 
 
 	trainerclass JUGGLER
+	const ERNIE
+	const WILLY
+	const QUINN
 
 
 	trainerclass SCHOOLBOY
+	const TIMMY_1
+	const TIMMY_2
+	const TIMMY_3
+	const TIMMY_4
+	const TIMMY_5
+	const TIMMY_6
+	const TIMMY_7
+	const TIMMY_8
+	const DAMIAN_1
+	const DAMIAN_2
+	const DAMIAN_3
+	const DAMIAN_4
+	const DAMIAN_5
+	const DAMIAN_6
+	const DAMIAN_7
+	const DAMIAN_8
 
 
 	trainerclass SCHOOLGIRL
@@ -136,15 +241,18 @@ KRIS EQU __enum__
 
 
 	trainerclass COUPLE
+	const JDMEG
 
 
 	trainerclass GENTLEMAN
+	const DURWOOD
 
 
 	trainerclass RICH_BOY
 
 
 	trainerclass LADY
+	const RUTH
 
 
 	trainerclass SAILOR
@@ -163,9 +271,12 @@ KRIS EQU __enum__
 
 
 	trainerclass BOARDER
+	const TOBY
 
 
 	trainerclass SKIER
+	const DEBBIE
+	const RHONDA
 
 
 	trainerclass BLACKBELT_T
@@ -190,9 +301,14 @@ KRIS EQU __enum__
 
 
 	trainerclass COOLTRAINERM
+	const CODY
+	const SAMMY
 
 
 	trainerclass COOLTRAINERF
+	const CASEY
+	const SALLY
+	const HAILEY
 
 
 	trainerclass PROF_SPRUCE
@@ -214,8 +330,8 @@ KRIS EQU __enum__
 	const TRIO_YELLOW
 
 	
-	trainerclass DISGUISEMAN
-	const MASTER1
+	trainerclass DISGUISE
+	const MASTER_1
 
 	
 	trainerclass BIKINIP
@@ -234,6 +350,10 @@ KRIS EQU __enum__
 
 
 	trainerclass SAFARI
+	const JULIAN
+	const YANCY
+	const PAUL
+	const PHILLIP
 
 
 	trainerclass TOWERTYCOON ; 1

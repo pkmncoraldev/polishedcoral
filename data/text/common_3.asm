@@ -545,10 +545,14 @@ UnknownText_0x1c564a::
 	line "data?"
 	done
 
-ResetInitialOptionsText::
-	text "Reset the initial"
-	line "game options?"
+Text_ClearAllSaveDataPositive::
+	text "Are you sure?"
 	done
+	
+Text_ClearAllSaveDataDone::
+	text "All save data"
+	line "cleared."
+	prompt
 
 UnknownText_0x1c5660::
 	text_from_ram wMonOrItemNameBuffer

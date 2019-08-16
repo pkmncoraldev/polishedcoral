@@ -15,6 +15,7 @@ HMENURETURN_ASM    EQU %11111111
 
 MORN_HOUR EQU 4
 DAY_HOUR EQU 10
+DUSK_HOUR EQU 18
 NITE_HOUR EQU 20
 
 if DEF(NO_RTC)
@@ -42,6 +43,7 @@ CHARMED_SHINY_NUMERATOR EQU 48 ; 48/65536 = 3/4096
 	const STEP_WALK_IN_PLACE
 	const STEP_SPIN
 	const STEP_FAST ; same as STEP_RUN but without doubling animation speed
+	const STEP_SURF
 
 const_value = 1
 	const HAPPINESS_GAINLEVEL         ; 01

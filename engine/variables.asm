@@ -147,43 +147,43 @@ _GetVarAction:: ; 80648 (20:4648)
 ; 80730
 
 .CountPokemonJournals:
-	ld hl, wPokemonJournals
-	ld b, wPokemonJournalsEnd - wPokemonJournals
-	call CountSetBits
-	ld a, [wd265]
+;	ld hl, wPokemonJournals
+;	ld b, wPokemonJournalsEnd - wPokemonJournals
+;	call CountSetBits
+;	ld a, [wd265]
 	jp .loadstringbuffer2
 
 .CountTrainerStars:
 	ld b, 0
-	; star for beating the Elite Four
-	eventflagcheck EVENT_BEAT_ELITE_FOUR
-	jr z, .nostar1
-	inc b
-.nostar1
-	; star for beating Leaf
-	eventflagcheck EVENT_BEAT_LEAF
-	jr z, .nostar2
-	inc b
-.nostar2
-	; star for completing the Pokédex
-	push bc
-	ld hl, wPokedexCaught
-	ld b, wEndPokedexCaught - wPokedexCaught
-	call CountSetBits
-	pop bc
-	cp NUM_POKEMON
-	jr c, .nostar3
-	inc b
-.nostar3
-	; star for reading all Pokémon Journals
-	push bc
-	ld hl, wPokemonJournals
-	ld b, wPokemonJournalsEnd - wPokemonJournals
-	call CountSetBits
-	pop bc
-	cp NUM_POKEMON_JOURNALS
-	jr c, .nostar4
-	inc b
-.nostar4
+;	; star for beating the Elite Four
+;	eventflagcheck EVENT_BEAT_ELITE_FOUR
+;	jr z, .nostar1
+;	inc b
+;.nostar1
+;	; star for beating Leaf
+;	eventflagcheck EVENT_BEAT_LEAF
+;	jr z, .nostar2
+;	inc b
+;.nostar2
+;	; star for completing the Pokédex
+;	push bc
+;	ld hl, wPokedexCaught
+;	ld b, wEndPokedexCaught - wPokedexCaught
+;	call CountSetBits
+;	pop bc
+;	cp NUM_POKEMON
+;	jr c, .nostar3
+;	inc b
+;.nostar3
+;	; star for reading all Pokémon Journals
+;	push bc
+;	ld hl, wPokemonJournals
+;	ld b, wPokemonJournalsEnd - wPokemonJournals
+;	call CountSetBits
+;	pop bc
+;	cp NUM_POKEMON_JOURNALS
+;	jr c, .nostar4
+;	inc b
+;.nostar4
 	ld a, b
 	jp .loadstringbuffer2

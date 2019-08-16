@@ -439,7 +439,7 @@ MoldBreakerSuppressedAbilities:
 	db -1
 
 ContactMoves::
-	db AERIAL_ACE
+	db 0
 	db AQUA_TAIL
 	db ASTONISH
 	db BITE

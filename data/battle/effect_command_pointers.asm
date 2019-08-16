@@ -187,6 +187,8 @@ BattleCommandPointers:
 	command checkpowder             ; ad
 	command lowkick                 ; ae
 	command brickbreak              ; ae
+	command fakeout					; af - coral
+	command cantusefakeout			; b0 - coral
 
 	enum_start -1, -1
 	commandonly endmove

@@ -604,7 +604,6 @@ wMonTriedToEvolve:: ds 1
 
 wTimeOfDay:: ds 1
 
-duskflag::
 	ds 1
 
 wOtherTrainerType:: ds 1
@@ -867,12 +866,17 @@ wMomSavingMoney:: ds 1
 wCoins:: ds 2
 
 wBadges::
-wJohtoBadges:: flag_array NUM_JOHTO_BADGES
-wKantoBadges:: flag_array NUM_KANTO_BADGES
+wOnwaBadges:: flag_array NUM_ONWA_BADGES
 wBadgesEnd::
 
-wPokemonJournals:: flag_array NUM_POKEMON_JOURNALS
-wPokemonJournalsEnd::
+wGotHMFlags:: flag_array NUM_GOT_HM_FLAGS
+wGotHMFlagsEnd::
+
+wMetGymLeaderFlags:: flag_array NUM_GYM_LEADERS_MET
+wMetGymLeaderFlagsEnd::
+
+wSnareFlags:: flag_array NUM_SNARE_FLAGS
+wSnareFlagsEnd::
 
 wTMsHMs:: flag_array NUM_TMS + NUM_HMS
 wTMsHMsEnd::
@@ -929,8 +933,16 @@ wSunsetCaptainsHouseTrigger:: ds 1
 wSunsetLighthouseTrigger:: ds 1
 wRoute1GateTrigger:: ds 1
 wDaybreakVillageTrigger:: ds 1
-
-ds 83
+wGlintGroveEntranceTrigger:: ds 1
+wGlintGroveTrigger:: ds 1
+wGlintApartmentLeft2FTrigger:: ds 1
+wGlintGymTrigger:: ds 1
+wStarglowCavern1F:: ds 1
+wStarglowValley:: ds 1
+wStarglowTogepiHouse:: ds 1
+wStarglowPokeCenter:: ds 1
+wRoute6Trigger:: ds 1
+ds 74
 
 ; fight counts
 wJackFightCount::    ds 1
@@ -1300,7 +1312,9 @@ wColorVaryShiny:: ds 1
 wPalFadeDelayFrames:: ds 1
 wPalFadeDelay:: ds 1
 
-	ds 100 ; unused
+	ds 99 ; unused
+	
+wMusicPlayerMusic:: ds 1
 
 wLYOverridesBackup:: ds SCREEN_HEIGHT_PX
 wLYOverridesBackupEnd::

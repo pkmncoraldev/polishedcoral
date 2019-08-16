@@ -601,8 +601,10 @@ GetTimeOfDayString: ; 90b58 (24:4b58)
 	jr c, .nite
 	cp DAY_HOUR
 	jr c, .morn
-	cp NITE_HOUR
+	cp DUSK_HOUR
 	jr c, .day
+	cp NITE_HOUR
+	jr c, .dusk
 .nite
 	ld de, .NITE
 	ret
@@ -612,11 +614,15 @@ GetTimeOfDayString: ; 90b58 (24:4b58)
 .day
 	ld de, .DAY
 	ret
+.dusk
+	ld de, .DUSK
+	ret
 ; 90b71 (24:4b71)
 
 .NITE: db "NITE@"
 .MORN: db "MORN@"
 .DAY: db "DAY@"
+.DUSK: db "DUSK@"
 ; 90b7f
 
 AdjustHourForAMorPM:

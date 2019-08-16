@@ -67,7 +67,7 @@ TrainerGroups: ; 0x39999
 	dba TrioBroRGroup
 	dba TrioBroBGroup
 	dba TrioBroYGroup
-	dba DisguiseManGroup
+	dba DisguiseGroup
 	dba BikiniPGroup
 	dba BikiniRGroup
 	dba BikiniYGroup

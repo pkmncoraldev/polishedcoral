@@ -125,13 +125,59 @@ NamingScreen: ; 116c1
 ; 1178d
 
 .Player: ; 1178d (4:578d)
+	ld hl, PlayerOBPals
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5
+	call FarCopyWRAM
+	
 	farcall GetPlayerIcon
-	ld a, [wPlayerGender]
-	bit 0, a
+	
+	ld a, [wPlayerInitialPalette]
+	cp 0
+	jp nz, .cont1
 	ld c, SPRITE_ANIM_INDEX_RED_WALK
-	jr z, .got_player_walk
+	jp .ok
+
+.cont1
+	ld a, [wPlayerInitialPalette]
+	cp 1
+	jp nz, .cont2
 	ld c, SPRITE_ANIM_INDEX_BLUE_WALK
-.got_player_walk
+	jp .ok
+	
+.cont2
+	ld a, [wPlayerInitialPalette]
+	cp 2
+	jp nz, .cont3
+	ld c, SPRITE_ANIM_INDEX_GREEN_WALK
+	jp .ok
+
+.cont3
+	ld a, [wPlayerInitialPalette]
+	cp 3
+	jp nz, .cont4
+	ld c, SPRITE_ANIM_INDEX_BROWN_WALK
+	jp .ok
+	
+.cont4
+	ld a, [wPlayerInitialPalette]
+	cp 4
+	jp nz, .cont5
+	ld c, SPRITE_ANIM_INDEX_PURPLE_WALK
+	jp .ok
+	
+.cont5
+	ld a, [wPlayerInitialPalette]
+	cp 5
+	jp nz, .cont6
+	ld c, SPRITE_ANIM_INDEX_TEAL_WALK
+	jp .ok
+	
+.cont6
+	ld c, SPRITE_ANIM_INDEX_PINK_WALK
+	
+.ok
 	call .LoadSprite
 	hlcoord 5, 2
 	ld de, .PlayerNameString
@@ -147,7 +193,7 @@ NamingScreen: ; 116c1
 
 .Rival: ; 117ae (4:57ae)
 	ld de, SilverSpriteGFX
-	lb bc, BANK(SilverSpriteGFX), SPRITE_ANIM_INDEX_RED_WALK
+	lb bc, BANK(SilverSpriteGFX), SPRITE_ANIM_INDEX_BLUE_WALK
 	call .LoadSprite
 	hlcoord 5, 2
 	ld de, .RivalNameString
@@ -248,6 +294,54 @@ NamingScreen: ; 116c1
 	ld [wNamingScreenStringEntryCoord + 1], a
 	ret
 
+PlayerOBPals:
+if !DEF(MONOCHROME)
+;Red
+	RGB 27, 31, 27
+	RGB 31, 19, 10
+	RGB 31, 05, 00
+	RGB 00, 00, 00
+;Blue
+	RGB 27, 31, 27
+	RGB 31, 19, 10
+	RGB 10, 09, 31
+	RGB 00, 00, 00
+;Green
+	RGB 27, 31, 27
+	RGB 31, 19, 10
+	RGB 07, 21, 02
+	RGB 00, 00, 00
+;Brown
+	RGB 27, 31, 27
+	RGB 31, 19, 10
+	RGB 15, 10, 03
+	RGB 00, 00, 00
+;Purple
+	RGB 27, 31, 27
+	RGB 31, 21, 09
+	RGB 21, 06, 21
+	RGB 00, 00, 00
+;Teal
+	RGB 27, 31, 27
+	RGB 31, 19, 10
+	RGB 03, 23, 21
+	RGB 00, 00, 00
+;Pink
+	RGB 27, 31, 27
+	RGB 31, 19, 10
+	RGB 31, 12, 13
+	RGB 00, 00, 00
+;Silver
+	RGB 20, 31, 11
+	RGB 02, 26, 07
+	RGB 00, 14, 05
+	RGB 07, 07, 07
+else
+rept 8
+	MONOCHROME_RGB_FOUR_OW
+endr
+endc	
+	
 NamingScreen_IsTargetBox: ; 1189c
 	push bc
 	push af
@@ -445,7 +539,6 @@ NamingScreenJoypadLoop: ; 11915
 	ret nz
 	ld a, [wNamingScreenCurrNameLength]
 	dec a ; 1?
-	jr z, .select
 	ret
 
 .start

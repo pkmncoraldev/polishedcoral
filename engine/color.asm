@@ -810,19 +810,19 @@ LoadMapPals:
 .got_pals
 	
 	ld a, [wMapGroup]
-	cp GROUP_ROUTE_11
+	cp GROUP_ROUTE_11	;RANCH
 	jr z, .ranch
-	cp GROUP_PEWTER_CITY
+	cp GROUP_PEWTER_CITY	;SNOW TOWN
 	jr z, .snow
-	cp GROUP_ROUTE_3
+	cp GROUP_BATTLE_TOWER_HALLWAY ;SNOW TENT
 	jr z, .snow2
 	cp GROUP_SUNSET_BAY
 	jp z, .sailboat
-	cp MAP_RUINS_OF_ALPH_HO_OH_ITEM_ROOM
+	cp MAP_RUINS_OF_ALPH_HO_OH_ITEM_ROOM	;RANCH RACE
 	jp nz, .normal
 .ranch
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_11
+	cp MAP_ROUTE_11	;RANCH
 	jp nz, .normal
 	ld a, [wTimeOfDayPal]
 	and 3
@@ -833,30 +833,19 @@ LoadMapPals:
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	
-	ld a, [hHours]
-	cp 17 ; 5:00 PM to 5:59 PM = dusk
-	jp nz, .notdusk
-	ld hl, MapObjectPalsRanchDusk
-	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	jp .duskcont
-;	ret
+	jp .outside
 	
 .snow
 	ld a, [wMapNumber]
-	cp MAP_PEWTER_CITY
+	cp MAP_PEWTER_CITY	;SNOW TOWN
 	jr z, .snowcont
-	cp MAP_ROUTE_2
+	cp MAP_BATTLE_TOWER_HALLWAY ;SNOW TENT
 	jr z, .snowcont
 	jp .normal
 	
 .snow2
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_3
+	cp MAP_BATTLE_TOWER_HALLWAY ;SNOW TENT
 	jr z, .snowtentcont
 	jp .normal
 	
@@ -870,17 +859,7 @@ LoadMapPals:
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	
-	ld a, [hHours]
-	cp 17 ; 5:00 PM to 5:59 PM = dusk
-	jp nz, .notdusk
-	ld hl, MapObjectPalsSnowDusk
-	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	jp .duskcont
+	ret
 	
 .snowtentcont
 	ld a, [wTimeOfDayPal]
@@ -892,24 +871,12 @@ LoadMapPals:
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	
-	ld a, [hHours]
-	cp 17 ; 5:00 PM to 5:59 PM = dusk
-	jp nz, .notdusk
-	ld hl, MapObjectPalsSnowFireDusk
-	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	jp .duskcont
+	ret
 	
 .sailboat
 	ld a, [wMapNumber]
 	cp MAP_SUNSET_BAY
 	jr z, .sailboatcont
-;	cp MAP_SUNSET_CAPE
-;	jr nz, .normal
 	jr .normal
 	
 .sailboatcont
@@ -922,19 +889,8 @@ LoadMapPals:
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	
-	ld a, [hHours]
-	cp 17 ; 5:00 PM to 5:59 PM = dusk
-	jp nz, .notdusk
-	ld hl, MapObjectPalsSailboatDusk
-	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	jr .duskcont
+	jr .outside
 
-	
 .normal
 	ld a, [wTimeOfDayPal]
 	and 3
@@ -950,51 +906,20 @@ LoadMapPals:
 	jr z, .outside
 	cp TILESET_JUNGLE
 	jr z, .outside
-	cp TILESET_LAVA_CAVE
-	jr z, .dusk
 	ld a, [wPermission]
 	cp TOWN
 	jr z, .outside
 	cp ROUTE
 	ret nz
 .outside
-	ld a, [hHours]
-	cp 17 ; 5:00 PM to 5:59 PM = dusk
-	jr nz, .notdusk
-;	ld bc, 8 palettes
-.dusk
-	ld hl, MapObjectPals2
-	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-.duskcont
 	ld a, [wTileset]
 	cp TILESET_MOUNTAIN
 	ret z
-	cp TILESET_SNOW
-	ret z
-	ld a, [wMapGroup]
-	ld l, a
-	ld h, 0
-	add hl, hl
-	add hl, hl
-	add hl, hl
-	ld de, RoofPals2
-	add hl, de
-	ld de, wUnknBGPals + 6 palettes + 2
-	ld bc, 4
-	ld a, $5
-	call FarCopyWRAM
-	ret
 	
-.notdusk
-	ld a, [wTileset]
-	cp TILESET_MOUNTAIN
-	ret z
-	cp TILESET_SNOW
-	ret z
+	ld a, [wTimeOfDayPal]
+	and 3
+	cp DUSK
+	jr z, .dusk
 	ld a, [wMapGroup]
 	ld l, a
 	ld h, 0
@@ -1003,6 +928,18 @@ LoadMapPals:
 	add hl, hl
 	ld de, RoofPals
 	add hl, de
+	jr .controof	
+.dusk
+	ld a, [wMapGroup]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld de, RoofPalsDusk
+	add hl, de
+	jr .morn_day
+.controof
 	ld a, [wTimeOfDayPal]
 	and 3
 	cp NITE
@@ -1065,43 +1002,28 @@ Palette_b311: ; b311 not mobile
 	RGB 00, 00, 00
 
 TilesetBGPalette:
-INCLUDE "gfx/tilesets/palettes/bg.pal"
+INCLUDE "maps/palettes/bgpals/bg.pal"
 
 MapObjectPals::
-INCLUDE "gfx/tilesets/palettes/ob.pal"
-
-MapObjectPals2::
-INCLUDE "gfx/tilesets/palettes/obdusk.pal"
+INCLUDE "maps/palettes/obpals/ob.pal"
 
 MapObjectPalsRanch:
-INCLUDE "gfx/tilesets/palettes/outsidepals/spritepals/obranch.pal"
-
-MapObjectPalsRanchDusk:
-INCLUDE "gfx/tilesets/palettes/outsidepals/spritepals/obranchdusk.pal"
+INCLUDE "maps/palettes/obpals/obranch.pal"
 
 MapObjectPalsSnow:
-INCLUDE "gfx/tilesets/palettes/outsidepals/spritepals/obsnow.pal"
-
-MapObjectPalsSnowDusk:
-INCLUDE "gfx/tilesets/palettes/outsidepals/spritepals/obsnowdusk.pal"
+INCLUDE "maps/palettes/obpals/obsnow.pal"
 
 MapObjectPalsSnowFire:
-INCLUDE "gfx/tilesets/palettes/outsidepals/spritepals/obsnowfire.pal"
-
-MapObjectPalsSnowFireDusk:
-INCLUDE "gfx/tilesets/palettes/outsidepals/spritepals/obsnowfiredusk.pal"
+INCLUDE "maps/palettes/obpals/obsnowfire.pal"
 
 MapObjectPalsSailboat:
-INCLUDE "gfx/tilesets/palettes/outsidepals/spritepals/obsailboat.pal"
-
-MapObjectPalsSailboatDusk:
-INCLUDE "gfx/tilesets/palettes/outsidepals/spritepals/obsailboatdusk.pal"
+INCLUDE "maps/palettes/obpals/obsailboat.pal"
 
 RoofPals:
-INCLUDE "gfx/tilesets/palettes/roof.pal"
+INCLUDE "maps/palettes/roofpals/roof.pal"
 
-RoofPals2:
-INCLUDE "gfx/tilesets/palettes/roof2.pal"
+RoofPalsDusk:
+INCLUDE "maps/palettes/roofpals/roofdusk.pal"
 
 
 INCLUDE "data/pokemon/palettes.asm"

@@ -13,14 +13,14 @@ DaybreakVillage_MapScriptHeader:
 	db 0 ; coord events
 
 	db 4 ; bg events
-	bg_event 11, 11, SIGNPOST_JUMPTEXT, DaybreakVillageSignText
-	bg_event 13,  5, SIGNPOST_JUMPTEXT, DaybreakTrainerSchoolSignText
-	bg_event  7, 14, SIGNPOST_JUMPSTD, pokecentersign
-	bg_event  4, 19, SIGNPOST_ITEM + SUPER_POTION, EVENT_DAYBREAK_HIDDEN_SUPER_POTION
+	bg_event 11, 10, SIGNPOST_JUMPTEXT, DaybreakVillageSignText
+	bg_event  5, 13, SIGNPOST_JUMPTEXT, DaybreakTrainerSchoolSignText
+	bg_event 14,  7, SIGNPOST_JUMPSTD, pokecentersign
+	bg_event 19,  4, SIGNPOST_ITEM + SUPER_POTION, EVENT_DAYBREAK_HIDDEN_SUPER_POTION
 
 	db 2 ; object events
 	person_event SPRITE_GRANNY, 8, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, DaybreakNPC1, -1
-	itemball_event -1, -1, RARE_CANDY, 1, EVENT_DAYBREAK_RARE_CANDY
+	itemball_event  5,  4, RARE_CANDY, 1, EVENT_DAYBREAK_RARE_CANDY
 
 	
 DaybreakVillageFlypointCallback:

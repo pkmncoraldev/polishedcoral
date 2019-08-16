@@ -47,6 +47,11 @@ SpriteAnimFrameData: ; 8d6e6
 	dw .Frameset_3f ; SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F
 	dw .Frameset_40 ; SPRITE_ANIM_FRAMESET_CELEBI_LEFT
 	dw .Frameset_41 ; SPRITE_ANIM_FRAMESET_CELEBI_RIGHT
+	dw .Frameset_42
+	dw .Frameset_43
+	dw .Frameset_44
+	dw .Frameset_45
+	dw .Frameset_46
 ; 8d76a
 
 ; OAM idx (see SpriteAnimOAMData), flip flags/duration
@@ -322,4 +327,39 @@ SpriteAnimFrameData: ; 8d6e6
 	frame SPRITE_ANIM_FRAME_IDX_7F,  8, OAM_X_FLIP
 	frame SPRITE_ANIM_FRAME_IDX_80,  8, OAM_X_FLIP
 	endanim
+	
+.Frameset_42
+	frame SPRITE_ANIM_FRAME_IDX_8C,  8
+	frame SPRITE_ANIM_FRAME_IDX_8D,  8
+	frame SPRITE_ANIM_FRAME_IDX_8C,  8
+	frame SPRITE_ANIM_FRAME_IDX_8D,  8, OAM_X_FLIP
+	dorestart
+	
+.Frameset_43
+	frame SPRITE_ANIM_FRAME_IDX_8E,  8
+	frame SPRITE_ANIM_FRAME_IDX_8F,  8
+	frame SPRITE_ANIM_FRAME_IDX_8E,  8
+	frame SPRITE_ANIM_FRAME_IDX_8F,  8, OAM_X_FLIP
+	dorestart
+	
+.Frameset_44
+	frame SPRITE_ANIM_FRAME_IDX_90,  8
+	frame SPRITE_ANIM_FRAME_IDX_91,  8
+	frame SPRITE_ANIM_FRAME_IDX_90,  8
+	frame SPRITE_ANIM_FRAME_IDX_91,  8, OAM_X_FLIP
+	dorestart
+	
+.Frameset_45
+	frame SPRITE_ANIM_FRAME_IDX_92,  8
+	frame SPRITE_ANIM_FRAME_IDX_93,  8
+	frame SPRITE_ANIM_FRAME_IDX_92,  8
+	frame SPRITE_ANIM_FRAME_IDX_93,  8, OAM_X_FLIP
+	dorestart
+	
+.Frameset_46
+	frame SPRITE_ANIM_FRAME_IDX_94,  8
+	frame SPRITE_ANIM_FRAME_IDX_95,  8
+	frame SPRITE_ANIM_FRAME_IDX_94,  8
+	frame SPRITE_ANIM_FRAME_IDX_95,  8, OAM_X_FLIP
+	dorestart
 ; 8d94d

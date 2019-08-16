@@ -6,7 +6,7 @@ SunsetCape_MapScriptHeader:
 	db 3 ; warp events
 	warp_event  3, 27, SUNSET_LIGHTHOUSE, 1
 	warp_event 5, 5, ROUTE_1_GATE, 4
-	warp_event 15, 16, PLAYER_HOUSE_1F, 2 ;DAYBREAK_GROTTO_WATERWAY
+	warp_event 15, 15, PLAYER_HOUSE_1F, 2 ;DAYBREAK_GROTTO_WATERWAY
 
 	db 0 ; coord events
 
@@ -16,8 +16,8 @@ SunsetCape_MapScriptHeader:
 
 	db 8 ; object events
 	person_event SPRITE_GRAMPS, 32, 6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, 1<<MORN, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunsetCapeNpc1, -1
-	person_event SPRITE_RAICHU, 32, 5, SPRITEMOVEDATA_POKEMON, 0, 0, -1, 1<<MORN, (1 << 3) | PAL_OW_YELLOW, PERSONTYPE_SCRIPT, 0, SunsetCapeNpc2, -1
-	person_event SPRITE_POKEFAN_F, 32,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, 1<<DAY, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetCapeNpc3, -1
+	person_event SPRITE_RAICHU, 32, 5, SPRITEMOVEDATA_POKEMON, 0, 0, -1, 1<<MORN, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SunsetCapeNpc2, -1
+	person_event SPRITE_LADY, 32,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, 1<<DAY, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetCapeNpc3, -1
 	person_event SPRITE_POKEMANIAC, 32,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, 1<<NITE, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetCapeNpc4, -1
 	person_event SPRITE_CUTE_GIRL, 32, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, 1<<NITE, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunsetCapeNpc4, -1
 	person_event SPRITE_SWIMMER_GIRL, 32, 19, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_TRAINER, 3, TrainerSunsetCape, -1

@@ -1,8 +1,8 @@
 Marts: ; 160a9
 	dw SunsetMart
-	dw CherrygroveMartAfterDex
-	dw DaybreakGrotto1
-	dw AzaleaMart
+	dw GlintMart
+	dw StarglowMart
+	dw Nope2
 	dw Goldenrod2FMart1
 	dw Goldenrod2FMart2
 	dw Goldenrod2FMart2Eevee
@@ -53,10 +53,9 @@ SunsetMart: ; 160ed
 	db -1
 ; 160f3
 
-CherrygroveMartAfterDex: ; 160f3
-	db 6 ; # items
+GlintMart: ; 160f3
+	db 5 ; # items
 	db POKE_BALL
-	db HEAL_BALL
 	db POTION
 	db ANTIDOTE
 	db PARALYZEHEAL
@@ -64,23 +63,20 @@ CherrygroveMartAfterDex: ; 160f3
 	db -1
 ; 160fa
 
-DaybreakGrotto1: ; 160fa
-	db 11 ; # items
+StarglowMart: ; 160fa
+	db 8 ; # items
 	db POKE_BALL
 	db REPEAT_BALL
 	db POTION
 	db ESCAPE_ROPE
+	db REPEL
 	db ANTIDOTE
 	db PARALYZEHEAL
 	db AWAKENING
-	db X_ATTACK
-	db X_DEFEND
-	db X_SPEED
-	db FLOWER_MAIL
 	db -1
 ; 16106
 
-AzaleaMart: ; 16106
+Nope2: ; 16106
 	db 10 ; # items
 	db CHARCOAL
 	db POKE_BALL

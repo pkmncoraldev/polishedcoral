@@ -82,6 +82,36 @@ SprucePhoneScript1: ; 0xbd00d
 	end
 
 SprucePhoneScript2: ; 0xbd081
+	checkcode VAR_SPECIALPHONECALL
+	if_equal SPECIALCALL_COMETOISLAND, .cometoisland
+	checkevent EVENT_GOT_POKEFLUTE
+	iffalse .cometoisland2
+	farwritetext SprucePhoneNormalText
+	special ProfOaksPCBoot
+	farwritetext SprucePhoneNormalText2
+	waitbutton
+	end
+.cometoisland
+	farwritetext SprucePhoneComeToIslandText
+	specialphonecall SPECIALCALL_NONE
+	setevent EVENT_SPRUCE_CALLED_COME_TO_ISLAND
+	addcellnum PHONE_SPRUCE
+	end
+.cometoisland2
+	checkevent EVENT_CAN_GET_PASS_FROM_MOM
+	iftrue .cometoisland3
+	farwritetext SprucePhoneComeToIsland2Text
+	waitbutton
+	end
+.cometoisland3
+	checkevent EVENT_CALLED_SPRUCE_CANT_GET_ON_ISLAND
+	iftrue .cometoisland4
+	farwritetext SprucePhoneComeToIsland3Text
+	waitbutton
+	end
+.cometoisland4
+	farwritetext SprucePhoneComeToIsland4Text
+	waitbutton
 	end
 
 PhoneScript_Random2:

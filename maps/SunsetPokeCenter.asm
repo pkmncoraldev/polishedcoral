@@ -11,20 +11,19 @@ SunsetPokeCenter_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 5 ; object events
 	pc_nurse_event  4, 1
-	object_event  5,  3, SPRITE_CHILD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SunsetPokeCenterYoungin, -1
-	object_event  8,  6, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetPokeCenterFireGuy, -1
-	object_event  0,  4, SPRITE_CUTE_GIRL, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunsetPokeCenterFairyGirl, -1
+	object_event  3,  3, SPRITE_CHILD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SunsetPokeCenterYoungin, -1
+	object_event  9,  6, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetPokeCenterFireGuy, -1
+	object_event 10,  3, SPRITE_CUTE_GIRL, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunsetPokeCenterFairyGirl, -1
+	object_event  5,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunsetPokeCenterChansey, -1
 	
 	const_def 1 ; object constants
 	const SUNSET_POKECENTER_NURSE
 	const SUNSET_POKECENTER_NPC1
 	const SUNSET_POKECENTER_NPC2
 	const SUNSET_POKECENTER_NPC3
-	
-SunsetPokeCenterNurse:
-	jumpstd pokecenternurse
+	const SUNSET_POKECENTER_CHANSEY
 
 SunsetPokeCenterYoungin:
 	jumptextfaceplayer SunsetPokeCenterSunsetPokeCenterYounginText
@@ -34,6 +33,14 @@ SunsetPokeCenterFireGuy:
 
 SunsetPokeCenterFairyGirl:
 	jumptextfaceplayer SunsetPokeCenterFairyGirlText
+	
+SunsetPokeCenterChansey:
+	opentext
+	writetext SunsetPokeCenterChanseyText
+	cry CHANSEY
+	waitbutton
+	closetext
+	end
 
 SunsetPokeCenterSunsetPokeCenterYounginText:
 	text "I want to be a"
@@ -68,3 +75,8 @@ SunsetPokeCenterFairyGirlText:
 	para "They're great and"
 	line "all so adorable!"
 	done
+	
+SunsetPokeCenterChanseyText:
+	text "CHANSEY: Sii!"
+	done
+	

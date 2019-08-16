@@ -1,58 +1,50 @@
 ItemFinder: ; 12580
-	farcall CheckForHiddenItems
-	jr c, .found_something
-	ld hl, .Script_FoundNothing
-	jr .resume
-
-.found_something
-	ld hl, .Script_FoundSomething
-
-.resume
+	ld hl, .scriptmenutest
 	call QueueScript
 	ld a, $1
 	ld [wItemEffectSucceeded], a
 	ret
-; 12599
 
-.ItemfinderSound: ; 12599
-	ld c, 4
-.sfx_loop
-	push bc
-	ld de, SFX_SECOND_PART_OF_ITEMFINDER
-	call WaitPlaySFX
-	ld de, SFX_TRANSACTION
-	call WaitPlaySFX
-	pop bc
-	dec c
-	jr nz, .sfx_loop
-	ret
-; 125ad
-
-.Script_FoundSomething: ; 0x125ad
-	reloadmappart
-	special UpdateTimePals
-	callasm .ItemfinderSound
-	writetext .Text_FoundSomething
+.scriptmenutest
+	refreshscreen $0
+	loadmenudata .MenuDataHeader
+	verticalmenu
+	closewindow
+	if_equal $1, .end
+	if_equal $2, .end
+	if_equal $3, .end
+	if_equal $4, .end
+	if_equal $5, .end
+	if_equal $6, .end
+	if_equal $7, .end
+	endtext
+	
+.end
+	opentext
+	writetext ItemFinderFinishedText
+	waitbutton
 	closetext
 	end
-; 0x125ba
+	
+.MenuDataHeader: ; 0x48dfc
+	db $40 ; flags
+	db 00, 05 ; start coords
+	db 16, 15 ; end coords
+	dw .MenuData2
+	db 1 ; default option
+; 0x48e04
 
-.Script_FoundNothing: ; 0x125ba
-	reloadmappart
-	special UpdateTimePals
-	writetext .Text_FoundNothing
-	closetext
-	end
-; 0x125c3
-
-.Text_FoundSomething: ; 0x125c3
-	; Yes! ITEMFINDER indicates there's an item nearby.
-	text_jump UnknownText_0x1c0a77
-	db "@"
-; 0x125c8
-
-.Text_FoundNothing: ; 0x125c8
-	; Nope! ITEMFINDER isn't responding.
-	text_jump UnknownText_0x1c0aa9
-	db "@"
-; 0x125cd
+.MenuData2: ; 0x48e04
+	db $80 ; flags
+	db 7 ; items
+	db "Red@"
+	db "Blue@"
+	db "Green@"
+	db "Brown@"
+	db "Purple@"
+	db "Pink@"
+	db "Yellow@"
+	
+ItemFinderFinishedText:
+	text "done"
+	done

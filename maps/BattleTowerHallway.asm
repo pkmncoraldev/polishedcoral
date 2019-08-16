@@ -9,11 +9,11 @@ BattleTowerHallway_MapScriptHeader:
 
 	db 6 ; warp events
 	warp_event 11,  1, BATTLE_TOWER_ELEVATOR, 1
-	warp_event  5,  0, BATTLE_TOWER_BATTLE_ROOM, 1
-	warp_event  7,  0, BATTLE_TOWER_BATTLE_ROOM, 1
-	warp_event  9,  0, BATTLE_TOWER_BATTLE_ROOM, 1
-	warp_event 13,  0, BATTLE_TOWER_BATTLE_ROOM, 1
-	warp_event 15,  0, BATTLE_TOWER_BATTLE_ROOM, 1
+	warp_event  5,  0, GLINT_RIVAL_HOUSE, 1
+	warp_event  7,  0, GLINT_RIVAL_HOUSE, 1
+	warp_event  9,  0, GLINT_RIVAL_HOUSE, 1
+	warp_event 13,  0, GLINT_RIVAL_HOUSE, 1
+	warp_event 15,  0, GLINT_RIVAL_HOUSE, 1
 
 	db 0 ; coord events
 

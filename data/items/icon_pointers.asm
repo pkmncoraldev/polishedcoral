@@ -91,8 +91,8 @@ ItemIconPointers:
 	dw CoinCaseIcon
 	dw ItemfinderIcon
 	dw ExpShareIcon
-	dw MysteryEggIcon
-	dw SquirtBottleIcon
+	dw LibraryCardIcon
+	dw PokeFluteIcon
 	dw SecretPotionIcon
 	dw RedScaleIcon
 	dw CardKeyIcon
@@ -101,7 +101,7 @@ ItemIconPointers:
 	dw PassIcon
 	dw MachinePartIcon
 	dw LostItemIcon
-	dw RainbowWingIcon
+	dw RivalPokedexIcon
 	dw SilverWingIcon
 	dw ClearBellIcon
 	dw GSBallIcon

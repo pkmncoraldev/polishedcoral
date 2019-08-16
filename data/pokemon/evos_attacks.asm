@@ -4789,7 +4789,7 @@ EnteiEvosAttacks:
 	db 71, FIRE_BLAST
 	db 78, CALM_MIND
 	db 85, FLARE_BLITZ ; Eruption → event move
-	db 92, SACRED_FIRE
+;	db 92, SACRED_FIRE
 	db 99, HIDDEN_POWER ; TM move
 	db 0 ; no more level-up moves
 
@@ -4907,7 +4907,7 @@ HoOhEvosAttacks:
 	db 29, SUNNY_DAY
 	db 37, FIRE_BLAST
 	db 43, SOLAR_BEAM ; Sacred Fire → Solar Beam
-	db 50, SACRED_FIRE ; Punishment → Sacred Fire
+;	db 50, SACRED_FIRE ; Punishment → Sacred Fire
 	db 57, ANCIENTPOWER
 	db 65, SAFEGUARD
 	db 71, RECOVER

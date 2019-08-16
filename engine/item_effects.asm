@@ -105,8 +105,8 @@ ItemEffects: ; e73c
 	dw CoinCase         ; COIN_CASE
 	dw Itemfinder       ; ITEMFINDER
 	dw NoEffect         ; EXP_SHARE
-	dw NoEffect         ; MYSTERY_EGG
-	dw SquirtBottle     ; SQUIRTBOTTLE
+	dw NoEffect         ; LIBRARY_CARD
+	dw PokeFlute	    ; POKE_FLUTE
 	dw NoEffect         ; SECRETPOTION
 	dw NoEffect         ; RED_SCALE
 	dw CardKey          ; CARD_KEY
@@ -2833,8 +2833,8 @@ UnknownText_0xf739: ; 0xf739
 ; 0xf73e
 
 
-SquirtBottle: ; f73e
-	farjp _Squirtbottle
+PokeFlute: ; f73e
+	farjp _PokeFlute
 ; f745
 
 

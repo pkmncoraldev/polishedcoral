@@ -568,3 +568,13 @@ BillBoxSwitch:
 	ld bc, (wMiscEnd - wMisc)
 	ld a, BANK(wDecompressScratch)
 	jp FarCopyWRAM
+
+Special_StopRunning:
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	ret nz
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret
+	

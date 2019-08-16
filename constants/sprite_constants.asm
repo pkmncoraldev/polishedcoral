@@ -13,9 +13,9 @@
 	const SPRITE_DAD ; 08
 	const SPRITE_LYRA ; 09
 	const SPRITE_SILVER ; 0a
-	const SPRITE_FALKNER ; 0b
-	const SPRITE_BUGSY ; 0c
-	const SPRITE_WHITNEY ; 0d
+	const SPRITE_STANLEY ; 0b
+	const SPRITE_RODNEY ; 0c
+	const SPRITE_LEILANI ; 0d
 	const SPRITE_MORTY ; 0e
 	const SPRITE_CHUCK ; 0f
 	const SPRITE_JASMINE ; 10
@@ -82,8 +82,8 @@
 	const SPRITE_BUENA ; 4d
 	const SPRITE_CAPTAIN ; 4e
 	const SPRITE_MATSUMOTO ; 4f
-	const SPRITE_ACE_TRAINER_F ; 50
-	const SPRITE_ACE_TRAINER_M ; 51
+	const SPRITE_COOLTRAINER_F ; 50
+	const SPRITE_COOLTRAINER_M ; 51
 	const SPRITE_AROMA_LADY ; 52
 	const SPRITE_ARTIST ; 53
 	const SPRITE_BAKER ; 54
@@ -131,8 +131,8 @@
 	const SPRITE_PSYCHIC ; 7e
 	const SPRITE_RICH_BOY ; 7f
 	const SPRITE_ROCKER ; 80
-	const SPRITE_ROCKET ; 81
-	const SPRITE_ROCKET_GIRL ; 82
+	const SPRITE_SNARE ; 81
+	const SPRITE_SNARE_GIRL ; 82
 	const SPRITE_ROUGHNECK ; 83
 	const SPRITE_SAGE ; 84
 	const SPRITE_SAILOR ; 85
@@ -199,55 +199,54 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_RAICHU ; bf
 	const SPRITE_LEDYBA ; c0
 	const SPRITE_BRELOOM ; c1
-	const SPRITE_PIDGEOTTO ; c2
-	const SPRITE_RATTATA ; c3
-	const SPRITE_PIKACHU ; c4
-	const SPRITE_NOPE2
-	const SPRITE_NIDORAN_F ; c5
-	const SPRITE_NIDORAN_M ; c6
-	const SPRITE_NIDORINO ; c7
-	const SPRITE_JIGGLYPUFF ; c8
-	const SPRITE_ODDISH ; c9
-	const SPRITE_VILEPLUME ; ca
-	const SPRITE_DIGLETT ; cb
-	const SPRITE_MEOWTH ; cc
-	const SPRITE_PERSIAN ; cd
-	const SPRITE_PSYDUCK ; ce
-	const SPRITE_POLIWRATH ; cf
-	const SPRITE_ABRA ; d0
-	const SPRITE_MACHOKE ; d1
-	const SPRITE_SLOWPOKE ; d2
-	const SPRITE_SLOWBRO ; d3
-	const SPRITE_DODRIO ; d4
-	const SPRITE_NOPE1 ; d5
-	const SPRITE_ELECTRODE ; d6
-	const SPRITE_RHYDON ; d7
-	const SPRITE_CHANSEY ; d8
-	const SPRITE_MAGIKARP ; d9
-	const SPRITE_ARTICUNO ; da
-	const SPRITE_ZAPDOS ; db
-	const SPRITE_MOLTRES ; dc
-	const SPRITE_DRATINI ; dd
-	const SPRITE_MEWTWO ; de
-	const SPRITE_FURRET ; df
-	const SPRITE_HOOTHOOT ; e0
-	const SPRITE_AMPHAROS ; e1
-	const SPRITE_MARILL ; e2
-	const SPRITE_MURKROW ; e3
-	const SPRITE_SLOWKING ; e4
-	const SPRITE_HERACROSS ; e5
-	const SPRITE_URSARING ; e6
-	const SPRITE_SKARMORY ; e7
-	const SPRITE_SMEARGLE ; e8
-	const SPRITE_MILTANK ; e9
-	const SPRITE_BLISSEY ; ea
-	const SPRITE_RAIKOU ; eb
-	const SPRITE_ENTEI ; ec
-	const SPRITE_SUICUNE ; ed
-	const SPRITE_LUGIA ; ee
-	const SPRITE_HO_OH ; ef
-	const SPRITE_EGG ; f0
-	const SPRITE_RATTATA_BACK ; f1
+	const SPRITE_PIKIPEK ; c2
+	const SPRITE_GROWLITHE ; c3
+	const SPRITE_CUBONE ; c4
+	const SPRITE_SMEARGLE ; c5
+	const SPRITE_POLIWHIRL ; c6
+	const SPRITE_CHANSEY ; c7
+	const SPRITE_TOGEPI ; c8
+	const SPRITE_PSYDUCK ; c9
+	const SPRITE_UNUSED4 ; ca
+	const SPRITE_UNUSED5 ; cb
+	const SPRITE_UNUSED6 ; cc
+	const SPRITE_UNUSED7 ; cd
+	const SPRITE_UNUSED8 ; ce
+	const SPRITE_UNUSED9 ; cf
+	const SPRITE_UNUSED10 ; d0
+	const SPRITE_UNUSED11 ; d1
+	const SPRITE_UNUSED12 ; d2
+	const SPRITE_UNUSED13 ; d3
+	const SPRITE_UNUSED14 ; d4
+	const SPRITE_UNUSED15 ; d5
+	const SPRITE_UNUSED16 ; d6
+	const SPRITE_UNUSED17 ; d7
+	const SPRITE_UNUSED18 ; d8
+	const SPRITE_UNUSED19 ; d9
+	const SPRITE_UNUSED20 ; da
+	const SPRITE_UNUSED21 ; db
+	const SPRITE_UNUSED22 ; dc
+	const SPRITE_UNUSED23 ; dd
+	const SPRITE_UNUSED24 ; de
+	const SPRITE_UNUSED25 ; df
+	const SPRITE_UNUSED26 ; e0
+	const SPRITE_UNUSED27 ; e1
+	const SPRITE_UNUSED28 ; e2
+	const SPRITE_UNUSED29 ; e3
+	const SPRITE_UNUSED30 ; e4
+	const SPRITE_UNUSED31 ; e5
+	const SPRITE_UNUSED32 ; e6
+	const SPRITE_UNUSED33 ; e7
+	const SPRITE_UNUSED34 ; e8
+	const SPRITE_UNUSED35 ; e9
+	const SPRITE_UNUSED36 ; ea
+	const SPRITE_UNUSED37 ; eb
+	const SPRITE_UNUSED38 ; ec
+	const SPRITE_UNUSED39 ; ed
+	const SPRITE_UNUSED40 ; ee
+	const SPRITE_UNUSED41 ; ef
+	const SPRITE_UNUSED42 ; f0
+	const SPRITE_UNUSED43 ; f1
 
 	const SPRITE_MON_DOLL_1 ; f2
 	const SPRITE_MON_DOLL_2 ; f3
@@ -260,7 +259,7 @@ SPRITE_VARS EQU const_value
 	const SPRITE_DOLL_1 ; f8
 	const SPRITE_DOLL_2 ; f9
 	const SPRITE_BIG_DOLL ; fa
-	const SPRITE_FUCHSIA_GYM_1 ; fb
+	const SPRITE_DISGUISEMAN ; fb
 	const SPRITE_FUCHSIA_GYM_2 ; fc
 	const SPRITE_FUCHSIA_GYM_3 ; fd
 	const SPRITE_FUCHSIA_GYM_4 ; fe

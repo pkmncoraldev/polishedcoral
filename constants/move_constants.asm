@@ -220,7 +220,7 @@
 	const BUG_BUZZ     ; $da
 	const SAFEGUARD    ; $db
 	const PAIN_SPLIT   ; $dc
-	const SACRED_FIRE  ; $dd
+	const FAKE_OUT	   ; $dd
 	const MAGNITUDE    ; $de
 	const DYNAMICPUNCH ; $df
 	const MEGAHORN     ; $e0
@@ -249,9 +249,6 @@
 	const SHADOW_BALL  ; $f7
 	const FUTURE_SIGHT ; $f8
 	const ROCK_SMASH   ; $f9
-if !DEF(FAITHFUL)
-BRICK_BREAK EQU ROCK_SMASH
-endc
 	const WHIRLPOOL    ; $fa
 	const DARK_PULSE   ; $fb
 	const MOONBLAST    ; $fc

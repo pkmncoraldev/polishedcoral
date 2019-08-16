@@ -137,7 +137,7 @@ WildFled_EnemyFled_LinkBattleCanceled: ; 3c0e5
 	ld a, [wBattleType]
 	cp BATTLETYPE_ROAMING
 	jr z, .print_text
-	cp BATTLETYPE_RED_GYARADOS
+	cp BATTLETYPE_SHINY
 	jr nc, .print_text ; also BATTLETYPE_LEGENDARY
 
 	ld hl, BattleText_WildFled
@@ -5139,6 +5139,10 @@ BattleMenu_SafariBall:
 ; 3e234
 
 .UseItem: ; 3e234
+
+	ld hl, wPlayerSubStatus2
+	set SUBSTATUS_FAKE_OUT, [hl]
+
 	ld a, [wWildMon]
 	and a
 	jr nz, .run
@@ -5436,6 +5440,8 @@ EnemyMonEntrance:
 	ld a, $1
 	ld [wEnemyIsSwitching], a
 	ld [wEnemyGoesFirst], a
+	ld hl, wEnemySubStatus2
+	res SUBSTATUS_FAKE_OUT, [hl]
 	ld hl, wEnemySubStatus4
 	res SUBSTATUS_RAGE, [hl]
 	xor a
@@ -5488,6 +5494,9 @@ BattleMonEntrance: ; 3e40b
 	ld c, 50
 	call DelayFrames
 
+	ld hl, wPlayerSubStatus2
+	res SUBSTATUS_FAKE_OUT, [hl]
+	
 	ld hl, wPlayerSubStatus4
 	res SUBSTATUS_RAGE, [hl]
 
@@ -5588,7 +5597,7 @@ CheckRunSpeed:
 	jp z, .can_escape
 	cp BATTLETYPE_GHOST
 	jp z, .can_escape
-	cp BATTLETYPE_TRAP ; or BATTLETYPE_FORCEITEM, BATTLETYPE_RED_GYARADOS, BATTLETYPE_LEGENDARY
+	cp BATTLETYPE_TRAP ; or BATTLETYPE_FORCEITEM, BATTLETYPE_SHINY, BATTLETYPE_LEGENDARY
 	jp nc, .cant_escape
 
 	ld a, [wLinkMode]
@@ -5719,6 +5728,10 @@ CheckRunSpeed:
 	jr .print_inescapable_text
 
 .cant_escape
+
+	ld hl, wPlayerSubStatus2
+	set SUBSTATUS_FAKE_OUT, [hl]
+
 	ld hl, BattleText_CantEscape
 	jr .print_inescapable_text
 
@@ -5969,7 +5982,7 @@ MoveSelectionScreen:
 	add hl, bc
 	ld a, [hl]
 	ld [wCurPlayerMove], a
-	xor a
+	xor a	
 	ret
 
 .move_disabled
@@ -6784,8 +6797,8 @@ endc
 	; Random shininess
 	; 1/4096 chance to be shiny, 3/4096 with Shiny Charm
 	ld a, [wBattleType]
-	cp BATTLETYPE_RED_GYARADOS
-	jr z, .not_shiny
+	cp BATTLETYPE_SHINY
+	jr z, .shiny
 	cp BATTLETYPE_GROTTO
 	jr z, .not_shiny
 	call BattleRandom
@@ -6874,7 +6887,7 @@ endc
 
 	; Form
 	ld a, [wBattleType]
-	cp BATTLETYPE_RED_GYARADOS
+	cp BATTLETYPE_SHINY
 	ld a, GYARADOS_RED_FORM
 	jr z, .red_form
 	ld a, 1 ; default form 1
@@ -6983,21 +6996,21 @@ endr
 	jp nc, .GenerateDVs
 
 .CheckMagikarpArea:
-	ld a, [wMapGroup]
-	cp GROUP_LAKE_OF_RAGE
-	jr nz, .Happiness
-	ld a, [wMapNumber]
-	cp MAP_LAKE_OF_RAGE
-	jr nz, .Happiness
-.LakeOfRageMagikarp
-	; 40% chance of not flooring
-	call Random
-	cp $64 ; / $100
-	jr c, .Happiness
-	; Floor at length 1024
-	ld a, [wMagikarpLengthMmHi]
-	cp 1024 >> 8
-	jp c, .GenerateDVs ; try again
+;	ld a, [wMapGroup]
+;	cp GROUP_LAKE_OF_RAGE
+;	jr nz, .Happiness
+;	ld a, [wMapNumber]
+;	cp MAP_LAKE_OF_RAGE
+;	jr nz, .Happiness
+;.LakeOfRageMagikarp
+;	; 40% chance of not flooring
+;	call Random
+;	cp $64 ; / $100
+;	jr c, .Happiness
+;	; Floor at length 1024
+;	ld a, [wMagikarpLengthMmHi]
+;	cp 1024 >> 8
+;	jp c, .GenerateDVs ; try again
 
 
 	; Finally done with DVs
@@ -8594,13 +8607,13 @@ DropEnemySub: ; 3f486
 ; 3f4b4
 
 GetFrontpic_DoAnim: ; 3f4b4
-	ld a, [hBattleTurn]
-	push af
-	call SetEnemyTurn
-	ld a, BANK(BattleAnimCommands)
-	call FarCall_hl
-	pop af
-	ld [hBattleTurn], a
+;	ld a, [hBattleTurn]
+;	push af
+;	call SetEnemyTurn
+;	ld a, BANK(BattleAnimCommands)
+;	call FarCall_hl
+;	pop af
+;	ld [hBattleTurn], a
 	ret
 ; 3f4c1
 
@@ -8841,8 +8854,8 @@ HandleNuzlockeFlags:
 	ret nz
 
 	; Only flag landmarks for Nuzlocke runs after getting Poké Balls
-	eventflagcheck EVENT_LEARNED_TO_CATCH_POKEMON
-	ret z
+;	eventflagcheck EVENT_LEARNED_TO_CATCH_POKEMON
+;	ret z
 
 	; Get current landmark
 	ld a, [wMapGroup]
@@ -9663,7 +9676,7 @@ BattleStartMessage: ; 3fc8b
 	ld hl, LegendaryAppearedText
 	cp BATTLETYPE_ROAMING
 	jr z, .PlaceBattleStartText
-	cp BATTLETYPE_RED_GYARADOS ; or BATTLETYPE_LEGENDARY
+	cp BATTLETYPE_SHINY ; or BATTLETYPE_LEGENDARY
 	jr nc, .PlaceBattleStartText
 	ld hl, WildPokemonAppearedText
 

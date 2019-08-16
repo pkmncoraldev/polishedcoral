@@ -58,7 +58,7 @@ Route1OfficerScript3:
 SunsetOfficerStopsYou1:
 	checkevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	iftrue SunsetOfficerStopsYou1_2
-	callasm .StopRunning
+	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, ROUTE1GATE_OFFICER, 15
 	pause 7
@@ -73,17 +73,8 @@ SunsetOfficerStopsYou1:
 	closetext
 	end
 	
-.StopRunning:
-	ld a, [wPlayerState]
-	cp PLAYER_RUN
-	ret nz
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	ret
-	
 SunsetOfficerStopsYou1_2:
-	callasm .StopRunning
+	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, ROUTE1GATE_OFFICER, 15
 	pause 7
@@ -97,20 +88,11 @@ SunsetOfficerStopsYou1_2:
 	waitbutton
 	closetext
 	end
-	
-.StopRunning:
-	ld a, [wPlayerState]
-	cp PLAYER_RUN
-	ret nz
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	ret
 	
 SunsetOfficerStopsYou2:
 	checkevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	iftrue SunsetOfficerStopsYou2_2
-	callasm .StopRunning
+	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, ROUTE1GATE_OFFICER, 15
 	pause 7
@@ -125,17 +107,8 @@ SunsetOfficerStopsYou2:
 	closetext
 	end
 	
-.StopRunning:
-	ld a, [wPlayerState]
-	cp PLAYER_RUN
-	ret nz
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	ret
-	
 SunsetOfficerStopsYou2_2:
-	callasm .StopRunning
+	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, ROUTE1GATE_OFFICER, 15
 	pause 7
@@ -149,15 +122,6 @@ SunsetOfficerStopsYou2_2:
 	waitbutton
 	closetext
 	end
-
-.StopRunning:
-	ld a, [wPlayerState]
-	cp PLAYER_RUN
-	ret nz
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	ret
 	
 Movement_SunsetOfficerStopsYou1:
 	step_down

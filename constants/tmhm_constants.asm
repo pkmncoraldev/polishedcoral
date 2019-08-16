@@ -53,11 +53,6 @@ ENDM
 	add_tm DIG          ; $1b
 	add_tm PSYCHIC      ; $1c
 	add_tm SHADOW_BALL  ; $1d
-	add_tm ROCK_SMASH   ; $1e
-if !DEF(FAITHFUL)
-TM_BRICK_BREAK    EQU TM_ROCK_SMASH
-BRICK_BREAK_TMNUM EQU ROCK_SMASH_TMNUM
-endc
 	add_tm DOUBLE_TEAM  ; $1f
 	add_tm REFLECT      ; $20
 	add_tm FLASH_CANNON ; $21
@@ -66,7 +61,7 @@ endc
 	add_tm SANDSTORM    ; $24
 	add_tm FIRE_BLAST   ; $25
 	add_tm SWIFT        ; $26
-	add_tm AERIAL_ACE   ; $27
+	add_tm FAKE_OUT		; $27
 	add_tm SUBSTITUTE   ; $28
 	add_tm FACADE       ; $29
 	add_tm WILD_CHARGE  ; $2a
@@ -110,6 +105,7 @@ NUM_TMS = const_value - TM01
 	add_hm STRENGTH     ; $4e
 	add_hm WHIRLPOOL    ; $4f
 	add_hm WATERFALL    ; $50
+	add_hm ROCK_SMASH   ; $1e
 NUM_HMS = const_value - HM01
 
 	add_mt AQUA_TAIL    ; $51

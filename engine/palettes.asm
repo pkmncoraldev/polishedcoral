@@ -539,12 +539,12 @@ if !DEF(MONOCHROME)
 ; EXP SHARE
 	RGB 21, 23, 21
 	RGB 13, 15, 13
-; MYSTERY EGG
+; LIBRARY_CARD
 	RGB 29, 26, 18
 	RGB 08, 19, 11
-; SQUIRTBOTTLE
-	RGB 10, 15, 31
-	RGB 22, 18, 08
+; POKE_FLUTE
+	RGB 31, 19, 04
+	RGB 30, 10, 06
 ; SECRETPOTION
 	RGB 23, 13, 04
 	RGB 28, 27, 02
@@ -569,9 +569,9 @@ if !DEF(MONOCHROME)
 ; LOST ITEM
 	RGB 31, 20, 25
 	RGB 28, 15, 23
-; RAINBOW WING
-	RGB 29, 09, 08
-	RGB 17, 24, 13
+; RIVAL_POKEDEX
+	RGB 27, 06, 06
+	RGB 08, 17, 25
 ; SILVER WING
 	RGB 21, 24, 30
 	RGB 16, 19, 24
@@ -1134,11 +1134,7 @@ TMHMTypes:
 	db ICE      ; HAIL
 	db FIGHTING ; BULK_UP
 	db POISON   ; VENOSHOCK
-if DEF(FAITHFUL)
 	db NORMAL   ; HIDDEN_POWER
-else
-	db UNKNOWN_T ; HIDDEN_POWER
-endc
 	db FIRE     ; SUNNY_DAY
 	db DARK     ; HONE_CLAWS
 	db ICE      ; ICE_BEAM
@@ -1159,7 +1155,6 @@ endc
 	db GROUND   ; DIG
 	db PSYCHIC  ; PSYCHIC_M
 	db GHOST    ; SHADOW_BALL
-	db FIGHTING ; ROCK_SMASH
 	db NORMAL   ; DOUBLE_TEAM
 	db PSYCHIC  ; REFLECT
 	db STEEL    ; FLASH_CANNON
@@ -1168,7 +1163,7 @@ endc
 	db GROUND   ; SANDSTORM
 	db FIRE     ; FIRE_BLAST
 	db NORMAL   ; SWIFT
-	db FLYING   ; AERIAL_ACE
+	db FLYING   ; 0
 	db NORMAL   ; SUBSTITUTE
 	db NORMAL   ; FACADE
 	db ELECTRIC ; WILD_CHARGE
@@ -1204,64 +1199,62 @@ endc
 	db ELECTRIC ; THUNDER_WAVE
 	db STEEL    ; GYRO_BALL
 	db NORMAL   ; SWORDS_DANCE
-if DEF(FAITHFUL)
 	db NORMAL   ; CUT
-else
-	db STEEL    ; CUT
-endc
 	db FLYING   ; FLY
 	db WATER    ; SURF
-if DEF(FAITHFUL)
 	db NORMAL   ; STRENGTH
-else
-	db FIGHTING ; STRENGTH
-endc
 	db WATER    ; WHIRLPOOL
 	db WATER    ; WATERFALL
+	db FIGHTING ; ROCK_SMASH
 
 
 PokegearPals:
 if !DEF(MONOCHROME)
-; male interface and text
-	RGB 31, 31, 31
-	RGB 31, 15, 00
-	RGB 15, 07, 00
+; ???
 	RGB 00, 00, 00
-; border and Mt. Silver
-	RGB 29, 17, 10
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+; map 1
+	RGB 28, 31, 20
 	RGB 21, 21, 21
 	RGB 13, 13, 13
 	RGB 00, 00, 00
-; water and shores
-	RGB 20, 13, 08
-	RGB 00, 24, 15
-	RGB 00, 17, 19
-	RGB 00, 20, 22
-; land and mountains
-	RGB 00, 20, 12
-	RGB 00, 24, 15
-	RGB 29, 17, 10
-	RGB 20, 13, 08
-; water routes
-	RGB 17, 27, 30
-	RGB 00, 11, 19
-	RGB 00, 17, 19
-	RGB 00, 20, 22
-; cities
-	RGB 31, 05, 09
-	RGB 00, 24, 15
-	RGB 24, 00, 04
-	RGB 04, 04, 04
-; land routes
-	RGB 31, 31, 31
-	RGB 00, 24, 15
-	RGB 00, 16, 10
-	RGB 04, 04, 04
-; decorations
-	RGB 31, 22, 05
-	RGB 00, 24, 15
-	RGB 29, 17, 10
-	RGB 04, 04, 04
+; map 2
+	RGB 28, 31, 20
+	RGB 00, 31, 00
+	RGB 00, 00, 31
+	RGB 00, 00, 00
+; map 3
+	RGB 28, 31, 20
+	RGB 00, 31, 00
+	RGB 15, 07, 00
+	RGB 00, 00, 31
+; map 4
+	RGB 28, 31, 20
+	RGB 31, 15, 00
+	RGB 15, 07, 00
+	RGB 00, 00, 00
+; map 5
+	RGB 28, 31, 20
+	RGB 00, 31, 00
+	RGB 00, 00, 31
+	RGB 31, 00, 00
+; map 6
+	RGB 28, 31, 20
+	RGB 00, 31, 00
+	RGB 15, 07, 00
+	RGB 31, 00, 00
+; ???
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+; ???
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 else
 	MONOCHROME_RGB_FOUR
 
@@ -1295,11 +1288,71 @@ else
 endc
 
 
-FemalePokegearInterfacePalette:
+RedPokegearInterfacePalette:
 if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 10, 18, 31
-	RGB 13, 06, 31
+	RGB 28, 31, 20
+	RGB 21, 21, 21
+	RGB 13, 13, 13
+	RGB 00, 00, 00
+else
+	MONOCHROME_RGB_FOUR
+endc
+
+BluePokegearInterfacePalette:
+if !DEF(MONOCHROME)
+	RGB 28, 31, 20
+	RGB 21, 21, 21
+	RGB 13, 13, 13
+	RGB 00, 00, 00
+else
+	MONOCHROME_RGB_FOUR
+endc
+
+GreenPokegearInterfacePalette:
+if !DEF(MONOCHROME)
+	RGB 28, 31, 20
+	RGB 21, 21, 21
+	RGB 13, 13, 13
+	RGB 00, 00, 00
+else
+	MONOCHROME_RGB_FOUR
+endc
+
+BrownPokegearInterfacePalette:
+if !DEF(MONOCHROME)
+	RGB 28, 31, 20
+	RGB 21, 21, 21
+	RGB 13, 13, 13
+	RGB 00, 00, 00
+else
+	MONOCHROME_RGB_FOUR
+endc
+
+PurplePokegearInterfacePalette:
+if !DEF(MONOCHROME)
+	RGB 28, 31, 20
+	RGB 21, 21, 21
+	RGB 13, 13, 13
+	RGB 00, 00, 00
+else
+	MONOCHROME_RGB_FOUR
+endc
+
+TealPokegearInterfacePalette:
+if !DEF(MONOCHROME)
+	RGB 28, 31, 20
+	RGB 21, 21, 21
+	RGB 13, 13, 13
+	RGB 00, 00, 00
+else
+	MONOCHROME_RGB_FOUR
+endc
+
+PinkPokegearInterfacePalette:
+if !DEF(MONOCHROME)
+	RGB 28, 31, 20
+	RGB 21, 21, 21
+	RGB 13, 13, 13
 	RGB 00, 00, 00
 else
 	MONOCHROME_RGB_FOUR
@@ -1605,21 +1658,22 @@ if !DEF(MONOCHROME)
 	RGB 31, 19, 10
 	RGB 18, 04, 18
 	RGB 00, 00, 00
+; teal
+	RGB 27, 31, 27
+	RGB 31, 19, 10
+	RGB 03, 21, 19
+	RGB 00, 00, 00
+; pink
+	RGB 27, 31, 27
+	RGB 31, 19, 10
+	RGB 31, 12, 13
+	RGB 00, 00, 00
 ; gray
 	RGB 27, 31, 27
 	RGB 31, 19, 10
 	RGB 13, 13, 13
 	RGB 00, 00, 00
-; pink
-	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 31, 10, 11
-	RGB 00, 00, 00
-; teal
-	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 03, 23, 21
-	RGB 00, 00, 00
+
 else
 rept 8
 	MONOCHROME_RGB_FOUR_OW

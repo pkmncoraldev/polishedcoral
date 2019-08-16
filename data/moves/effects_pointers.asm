@@ -114,7 +114,7 @@ MoveEffectsPointers:
 	dw ConditionalBoostHit
 	dw Attract
 	dw Return
-	dw SacredFire
+	dw FakeOut
 	dw Magnitude
 	dw BatonPass
 	dw Pursuit

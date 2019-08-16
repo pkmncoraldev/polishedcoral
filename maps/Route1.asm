@@ -10,13 +10,13 @@ Route1_MapScriptHeader:
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event 21, 25, SIGNPOST_JUMPTEXT, Route1SignText
+	bg_event 21, 26, SIGNPOST_JUMPTEXT, Route1SignText
 ;	bg_event 31, 15, SIGNPOST_READ, Route1Clue
 
 	db 2 ; object events
 	object_event 10,  9, SPRITE_POKEMANIAC, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, Route1NPCScript, -1
 	fruittree_event  2,  6, FRUITTREE_ROUTE_1, PECHA_BERRY
-		
+	
 	const_def 1 ; object constants
 	const ROUTE1_NPC
 	

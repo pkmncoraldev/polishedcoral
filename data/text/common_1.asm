@@ -4,35 +4,21 @@ _FruitBearingTreeText::
 	done
 
 _HeyItsFruitText::
-	text "Hey! It's"
+	text "Hey! It's a"
 	line "@"
 	text_from_ram wStringBuffer3
 	text "!"
 	done
 
-_ObtainedOneFruitText::
-	text "Obtained a"
-	line "@"
-	text_from_ram wStringBuffer3
-	text "!"
-	done
-
-_ObtainedTwoFruitText::
-	text "Obtained two"
-	line "@"
-	text_from_ram wStringBuffer3
-	text "!"
-	done
-
-_ObtainedThreeFruitText::
-	text "Obtained three"
+_ObtainedFruitText::
+	text "Obtained the"
 	line "@"
 	text_from_ram wStringBuffer3
 	text "!"
 	done
 
 _FruitPackIsFullText::
-	text "But the Bag is"
+	text "But the BAG is"
 	line "full…"
 	done
 
@@ -42,8 +28,8 @@ _NoApricornBoxText::
 	done
 
 _ApricornBoxIsFullText::
-	text "But the Apricorn"
-	line "Box is full…"
+	text "But the APRICORN"
+	line "BOX is full…"
 	done
 
 _PutAwayTheApricornText::
@@ -51,7 +37,7 @@ _PutAwayTheApricornText::
 	line "@"
 	text_from_ram wStringBuffer3
 	text " in"
-	cont "the Apricorn Box."
+	cont "the APRICORN BOX."
 	done
 
 _NothingHereText::
@@ -61,19 +47,19 @@ _NothingHereText::
 
 _WantToUseMulchText::
 	text "Want to use"
-	line "Mulch?"
+	line "MULCH?"
 	done
 
 _UsedMulchText::
 	text "<PLAYER> used"
-	line "Mulch!"
+	line "MULCH!"
 
 	para "The tree was"
 	line "fertilized!"
 	done
 
 UnknownText_0x1bc06b::
-	text "Which Apricorn"
+	text "Which APRICORN"
 	line "should I use?"
 	done
 

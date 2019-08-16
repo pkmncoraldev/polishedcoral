@@ -15,7 +15,7 @@ TrainerClassAttributes: ; 3959c
 ; Stanley
 	db 0, 0 ; items
 	db 30 ; base reward
-	dw AI_BASIC + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw AI_BASIC + AI_SMART + AI_STATUS + AI_SETUP + AI_TYPES
 	dw CONTEXT_USE
 
 ; Rodney

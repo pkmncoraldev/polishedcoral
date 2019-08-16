@@ -108,8 +108,8 @@
 	const COIN_CASE    ; 59
 	const ITEMFINDER   ; 5a
 	const EXP_SHARE    ; 5b
-	const MYSTERY_EGG  ; 5c
-	const SQUIRTBOTTLE ; 5d
+	const LIBRARY_CARD ; 5c
+	const POKE_FLUTE ; 5d
 	const SECRETPOTION ; 5e
 	const RED_SCALE    ; 5f
 	const CARD_KEY     ; 60
@@ -118,7 +118,7 @@
 	const PASS         ; 63
 	const MACHINE_PART ; 64
 	const LOST_ITEM    ; 65
-	const RIVAL_POKEDEX ; 66
+	const RIVAL_POKEDEX; 66
 	const SILVER_WING  ; 67
 	const CLEAR_BELL   ; 68
 	const GS_BALL      ; 69
@@ -433,7 +433,7 @@
 	const NAM_MULCH        ; 88
 	const NAM_MUSCLE_BAND  ; 89
 	const NAM_MUSIC_MAIL   ; 8a
-	const NAM_MYSTERY_EGG  ; 8b
+	const NAM_LIBRARY_CARD ; 8b
 	const NAM_MYSTIC_WATER ; 8c
 	const NAM_MYSTICTICKET ; 8d
 	const NAM_NEST_BALL    ; 8e

@@ -20,80 +20,100 @@ endc
 LoadSpecialMapPalette: ; 494ac
 	ld a, [wTileset]
 	cp TILESET_GLINT
-	jp z, .outside
+	jp z, .glint
 	cp TILESET_CAVE
 	jr z, .cave
+	cp TILESET_STARGLOW_CAVERN
+	jr z, .starglow_cavern
+	cp TILESET_LAVA_CAVE
+	jr z, .lavacave
 	cp TILESET_GROVE
 	jp z, .grove
+	cp TILESET_MOUNTAIN
+	jp z, .mountain
+	cp TILESET_JUNGLE
+	jp z, .jungle
+	cp TILESET_SPOOKY
+	jp z, .spookyforest
+	cp TILESET_SNOW
+	jp z, .checktent
+	cp TILESET_RANCH
+	jp z, .ranch
 	jp .do_nothing
 	
-.outside
+.checktent
+	ld a, [wMapGroup]
+	cp GROUP_ROUTE_3
+	jp z, .snowtent
+	jp .snow
+	
+.glint
 	ld a, [wMapGroup]
 	cp GROUP_SUNSET_BAY
 	jr z, .deepblueocean
-	ld a, [hHours]
-	cp 17 ; 5:00 PM to 5:59 PM = dusk
-	jp nz, .do_nothing
-	ld hl, OutsideDuskPalette
-	jp LoadEightBGPalettes
+	jp .do_nothing
 	
 .deepblueocean
-	ld a, [wTimeOfDay]
-	cp NITE
-	jr z, .deepbluenite
-	cp MORN
-	jr z, .deepbluemorn
-	ld a, [hHours]
-	cp 17 ; 5:00 PM to 5:59 PM = dusk
-	jr z, .deepbluedusk
-	ld hl, OutsideDayDeepBluePalette
-	jp LoadEightBGPalettes
-	
-.deepbluemorn
-	ld hl, OutsideMornDeepBluePalette
-	jp LoadEightBGPalettes
-	
-.deepbluenite
-	ld hl, OutsideNitePalette
-	jp LoadEightBGPalettes
-	
-.deepbluedusk
-	ld hl, OutsideDuskPalette
-	jp LoadEightBGPalettes
+	ld hl, OutsideDeepBluePalette
+	jp LoadEightTimeOfDayBGPalettes
 	
 .cave
 	ld hl, CavePalette
 	jp LoadEightBGPalettes
 	
+.starglow_cavern
+	ld hl, StarglowCavernPalette
+	jp LoadEightBGPalettes
+	
+.lavacave
+	ld hl, LavaCavePalette
+	jp LoadEightBGPalettes
+	
 .grove
-	ld a, [wTimeOfDay]
-	cp NITE
-	jr z, .grovenite
-	cp MORN
-	jr z, .grovemorn
-	ld a, [hHours]
-	cp 17 ; 5:00 PM to 5:59 PM = dusk
-	jr z, .grovedusk
-	ld hl, OutsideDayGrovePalette
+	ld hl, OutsideGrovePalette
+	jp LoadEightTimeOfDayBGPalettes
+	
+.mountain
+	ld hl, OutsideMountainPalette
+	jp LoadEightTimeOfDayBGPalettes
+	
+.jungle
+	ld hl, OutsideJunglePalette
+	jp LoadEightTimeOfDayBGPalettes
+	
+.spookyforest
+	ld hl, SpookyForestPalette
 	jr LoadEightBGPalettes
 	
-.grovemorn
-	ld hl, OutsideMornGrovePalette
-	jr LoadEightBGPalettes
+.snow
+	ld hl, OutsideSnowPalette
+	jp LoadEightTimeOfDayBGPalettes
 	
-.grovenite
-	ld hl, OutsideNiteGrovePalette
-	jr LoadEightBGPalettes
+.snowtent
+	ld hl, OutsideSnowTentPalette
+	jp LoadEightTimeOfDayBGPalettes
 	
-.grovedusk
-	ld hl, OutsideDuskGrovePalette
-	jr LoadEightBGPalettes
+.ranch
+	ld hl, OutsideRanchPalette
+	jp LoadEightTimeOfDayBGPalettes
 
 .do_nothing
 	and a
 	ret
 	
 LoadEightBGPalettes: ; 494f2
+	ld a, $5
+	ld de, wUnknBGPals
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	scf
+	ret
+	
+LoadEightTimeOfDayBGPalettes:
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	rst AddNTimes
 	ld a, $5
 	ld de, wUnknBGPals
 	ld bc, 8 palettes
@@ -186,29 +206,36 @@ LoadLinkTradePalette: ; 49811
 LoadSpecialMapOBPalette:
 	ret
 	
-OutsideMornDeepBluePalette:
-INCLUDE "gfx/tilesets/palettes/outsidepals/deepblue/morndeepblue.pal"
-	
-OutsideDayDeepBluePalette:
-INCLUDE "gfx/tilesets/palettes/outsidepals/deepblue/daydeepblue.pal"
-	
-OutsideDuskPalette:
-INCLUDE "gfx/tilesets/palettes/outsidepals/dusk.pal"
 
-OutsideNitePalette:
-INCLUDE "gfx/tilesets/palettes/outsidepals/nite.pal"
+OutsideDeepBluePalette:
+INCLUDE "maps/palettes/bgpals/bgdeepblue.pal"
 
 CavePalette:
-INCLUDE "gfx/tilesets/palettes/cave.pal"
+INCLUDE "maps/palettes/bgpals/cave.pal"
 
-OutsideMornGrovePalette:
-INCLUDE "gfx/tilesets/palettes/outsidepals/grove/morngrove.pal"
+StarglowCavernPalette:
+INCLUDE "maps/palettes/bgpals/starglow_cavern.pal"
 
-OutsideDayGrovePalette:
-INCLUDE "gfx/tilesets/palettes/outsidepals/grove/daygrove.pal"
+LavaCavePalette:
+INCLUDE "maps/palettes/bgpals/lavacave.pal"
 
-OutsideDuskGrovePalette:
-INCLUDE "gfx/tilesets/palettes/outsidepals/grove/duskgrove.pal"
+OutsideGrovePalette:
+INCLUDE "maps/palettes/bgpals/bggrove.pal"
 
-OutsideNiteGrovePalette:
-INCLUDE "gfx/tilesets/palettes/outsidepals/grove/nitegrove.pal"
+OutsideMountainPalette:
+INCLUDE "maps/palettes/bgpals/bgmountain.pal"
+
+OutsideJunglePalette:
+INCLUDE "maps/palettes/bgpals/bgjungle.pal"
+
+SpookyForestPalette:
+INCLUDE "maps/palettes/bgpals/spookyforest.pal"
+
+OutsideSnowPalette:
+INCLUDE "maps/palettes/bgpals/bgsnow.pal"
+
+OutsideSnowTentPalette:
+INCLUDE "maps/palettes/bgpals/bgsnowtent.pal"
+
+OutsideRanchPalette:
+INCLUDE "maps/palettes/bgpals/bgranch.pal"

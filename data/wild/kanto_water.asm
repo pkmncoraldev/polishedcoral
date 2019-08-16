@@ -1,6 +1,6 @@
 ; Kanto Pokémon in water
 
-	map_id TOHJO_FALLS
+	map_id HUNTERS_THICKET
 	db 4 percent ; encounter rate
 	db 20, POLIWAG
 	db 20, SLOWPOKE

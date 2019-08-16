@@ -15,10 +15,6 @@ _TimeOfDayPals:: ; 8c011
 	ld hl, wTimeOfDayPalFlags
 	bit 7, [hl]
 	jr nz, .dontchange
-	
-	ld a, [hHours]
-	cp 17 ; 5:00 PM to 5:59 PM = dusk
-	jr z, .dusk
 
 ; do we need to bother updating?
 	ld a, [wTimeOfDay]
@@ -40,15 +36,6 @@ _TimeOfDayPals:: ; 8c011
 
 ; update palette id
 	ld [wTimeOfDayPal], a
-	jr .change
-
-.dusk
-	ld a, [duskflag]
-	cp 1
-	jr z, .dontchange
-	ld a, 1
-	ld [duskflag], a
-	jr .change
 
 .change
 ; save bg palette 7

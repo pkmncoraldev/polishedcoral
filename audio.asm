@@ -24,26 +24,15 @@ INCLUDE "audio/music/wildpokemonvictory.asm" ; shares with successfulcapture.asm
 INCLUDE "audio/music/successfulcapture.asm" ; shares with wildpokemonvictory.asm
 INCLUDE "audio/music/pokemoncenter.asm"
 INCLUDE "audio/music/healpokemon.asm"
-INCLUDE "audio/music/lookyoungster.asm"
 INCLUDE "audio/music/trainervictory.asm"
-INCLUDE "audio/music/looksage.asm"
-INCLUDE "audio/music/lookrival.asm" ; shares with aftertherivalfight.asm
 INCLUDE "audio/music/rivalbattle.asm"
-INCLUDE "audio/music/aftertherivalfight.asm" ; shares with lookrival.asm
 INCLUDE "audio/music/evolution.asm"
 INCLUDE "audio/music/gym.asm"
 INCLUDE "audio/music/gymleadervictory.asm"
-INCLUDE "audio/music/looklass.asm"
-INCLUDE "audio/music/lookkimonogirl.asm"
-INCLUDE "audio/music/lookmysticalman.asm"
-INCLUDE "audio/music/lookpokemaniac.asm"
-INCLUDE "audio/music/lookbeauty.asm"
 INCLUDE "audio/music/halloffame.asm"
-INCLUDE "audio/music/lookhiker.asm"
-INCLUDE "audio/music/lookofficer.asm"
 INCLUDE "audio/music/credits.asm"
 INCLUDE "audio/music/postcredits.asm"
-INCLUDE "audio/music/elmslab.asm"
+INCLUDE "audio/music/sprucelab.asm"
 
 
 SECTION "Music 2", ROMX
@@ -53,11 +42,10 @@ INCLUDE "audio/music/route2.asm"
 INCLUDE "audio/music/daybreakvillage.asm"
 INCLUDE "audio/music/snes_smw.asm"
 INCLUDE "audio/music/snes_kirby.asm"
-INCLUDE "audio/music/wildbattleshiny.asm"
-INCLUDE "audio/music/wildbattleshinyintro.asm"
 INCLUDE "audio/music/daybreakgrotto.asm"
 INCLUDE "audio/music/gymbattle.asm"
-
+INCLUDE "audio/music/snareinvasion.asm"
+INCLUDE "audio/music/starglowvalley.asm"
 
 
 SECTION "Music 3", ROMX
@@ -73,7 +61,7 @@ INCLUDE "audio/music/snowtown.asm"
 INCLUDE "audio/music/wildbattle.asm"
 INCLUDE "audio/music/trainerbattle.asm"
 INCLUDE "audio/music/dodriorace.asm"
-
+INCLUDE "audio/music/encountergymleader.asm"
 
 
 SECTION "Music 4", ROMX
@@ -217,8 +205,16 @@ SECTION "Stadium Music", ROMX
 
 
 
-SECTION "Movie 2000 Music", ROMX
-
+SECTION "Encounter Music", ROMX
+INCLUDE "audio/music/encounter/aftertherivalfight.asm" ; shares with lookrival.asm
+INCLUDE "audio/music/encounter/rival_encounter.asm" ; shares with aftertherivalfight.asm
+INCLUDE "audio/music/encounter/youngster_encounter.asm"
+INCLUDE "audio/music/encounter/lass_encounter.asm"
+INCLUDE "audio/music/encounter/hiker_encounter.asm"
+INCLUDE "audio/music/encounter/pokemaniac_encounter.asm"
+INCLUDE "audio/music/encounter/gentleman_encounter.asm"
+INCLUDE "audio/music/encounter/hardcore_encounter.asm"
+INCLUDE "audio/music/encounter/teamsnare_encounter.asm"
 
 
 SECTION "Sound Effects", ROMX

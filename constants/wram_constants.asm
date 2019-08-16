@@ -81,7 +81,7 @@ FACE_RIGHT EQU 1
 MORN     EQU 0
 DAY      EQU 1
 NITE     EQU 2
-DARKNESS EQU 3
+DUSK EQU 3
 
 ; wScriptFlags: ; d434
 SCRIPT_RUNNING EQU 2
@@ -173,59 +173,33 @@ PALFADE_SKIP_LAST EQU 1 << PALFADE_SKIP_LAST_F
 	const GROTTO_EMPTY
 
 	const_def
-	const ZEPHYRBADGE
-	const HIVEBADGE
-	const PLAINBADGE
-	const FOGBADGE
-	const MINERALBADGE
-	const STORMBADGE
-	const GLACIERBADGE
-	const RISINGBADGE
-NUM_JOHTO_BADGES EQU const_value
-	const_def
-	const BOULDERBADGE
-	const CASCADEBADGE
-	const THUNDERBADGE
-	const RAINBOWBADGE
-	const MARSHBADGE
-	const SOULBADGE
-	const VOLCANOBADGE
-	const EARTHBADGE
-NUM_KANTO_BADGES EQU const_value
-NUM_BADGES EQU NUM_JOHTO_BADGES + NUM_KANTO_BADGES
+	const FIRSTBADGE
+	const SECONDBADGE
+	const THIRDBADGE
+	const FOURTHBADGE
+	const FIFTHBADGE
+	const SIXTHBADGE
+	const SEVENTHBADGE
+	const EIGHTHBADGE
+NUM_ONWA_BADGES EQU const_value
+NUM_BADGES EQU NUM_ONWA_BADGES
 
 	const_def
-	const FALKNER_JOURNAL ; Violet Pokémon Center
-	const BUGSY_JOURNAL ; Azalea Pokémon Center
-	const WHITNEY_JOURNAL ; Goldenrod PokéCom Center
+	const GOT_ROCK_SMASH
+	const GOT_CUT
+NUM_GOT_HM_FLAGS EQU const_value
+
+	const_def
+	const MET_STANLEY
+	const MET_RODNEY
+	const MET_LEILANI
 	const MORTY_JOURNAL ; Ecruteak Pokémon Center
 	const CHUCK_JOURNAL ; Cianwood Pokémon Center
 	const JASMINE_JOURNAL ; Olivine Pokémon Center
 	const PRYCE_JOURNAL ; Mahogany Pokémon Center
 	const CLAIR_JOURNAL ; Blackthorn Pokémon Center
-	const BROCK_JOURNAL ; Pewter Pokémon Center
-	const MISTY_JOURNAL ; Cerulean Pokémon Center
-	const LT_SURGE_JOURNAL ; Vermilion Pokémon Center
-	const ERIKA_JOURNAL ; Celadon Pokémon Center
-	const JANINE_JOURNAL ; Fuchsia Pokémon Center
-	const SABRINA_JOURNAL ; Saffron Pokémon Center
-	const BLAINE_JOURNAL ; Cinnabar Pokémon Center
-	const BLUE_JOURNAL ; Viridian Pokémon Center
-	const WILL_JOURNAL ; Earl's Pokémon Academy
-	const KOGA_JOURNAL ; Safari Zone rest houses
-	const BRUNO_JOURNAL ; Pokémon Trainer Fan Club
-	const KAREN_JOURNAL ; Mt. Moon Pokémon Center
-	const LANCE_JOURNAL ; Silver Cave Pokémon Center
-	const RED_JOURNAL ; Cherrygrove Pokémon Center
-	const GREEN_JOURNAL ; Pokémon Fan Club
-	const PROF_OAK_JOURNAL ; Red's house, Blue's house
-	const PROF_ELM_JOURNAL ; Kris's house, Lyra's house
-	const PROF_IVY_JOURNAL ; Ivy's lab
-	const PROF_WESTWOOD_JOURNAL ; Kurt's house
-	const GIOVANNI_JOURNAL ; Indigo Plateau Pokémon Center
-	const LORELEI_JOURNAL ; Shamouti Island Pokémon Center
-	const AGATHA_JOURNAL ; Rock Tunnel Pokémon Center
-	const BILL_JOURNAL ; Bill's house
-	const KURT_JOURNAL ; Union Cave Pokémon Center
-	const MR_FUJI_JOURNAL ; Lavender Town Pokémon Center
-NUM_POKEMON_JOURNALS EQU const_value
+NUM_GYM_LEADERS_MET EQU const_value
+
+	const_def
+	const PUNKS_IN_STARGLOW
+NUM_SNARE_FLAGS EQU const_value

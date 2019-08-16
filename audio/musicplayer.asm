@@ -253,7 +253,9 @@ RenderMusicPlayer:
 	and a
 	jr nz, _RedrawMusicPlayer
 .bad_selection
-	ld a, MUSIC_NONE
+	call GetMapHeaderMusic
+
+	ld a, [wMapMusic]
 ; fallthrough
 
 _RedrawMusicPlayer:
@@ -269,15 +271,15 @@ MusicPlayerLoop:
 
 	call MPUpdateUIAndGetJoypad
 	ld hl, hJoyDown
-	jrheldbutton D_UP, .up, 12
-	jrheldbutton D_DOWN, .down, 12
-	jrheldbutton D_LEFT, .left, 12
-	jrheldbutton D_RIGHT, .right, 12
+	jpheldbutton D_UP, .up, 12
+	jpheldbutton D_DOWN, .down, 12
+	jpheldbutton D_LEFT, .left, 12
+	jpheldbutton D_RIGHT, .right, 12
 	ld hl, hJoyPressed
 	jrbutton A_BUTTON, .a
-	jrbutton B_BUTTON, .b
-	jrbutton START, .start
-	jpbutton SELECT, .select
+	jpbutton B_BUTTON, .b
+	jpbutton START, .start
+;	jpbutton SELECT, .select
 
 	; prioritize refreshing the note display
 	ld a, 2
@@ -323,7 +325,15 @@ MusicPlayerLoop:
 
 .a:
 ; restart playing song
+	ld a, [wMapMusic]
+	ld c, a
 	ld a, [wSongSelection]
+	cp c
+	jr z, .stopmusic
+	xor a
+	ld c, a
+	ld a, [wSongSelection]
+	ld [wMapMusic], a
 	ld e, a
 	ld d, 0
 	farcall PlayMusic2
@@ -339,6 +349,24 @@ MusicPlayerLoop:
 	ld [hl], a
 	jp MusicPlayerLoop
 
+.stopmusic:
+	ld a, MUSIC_NONE
+	ld [wMapMusic], a
+	ld e, a
+	ld d, 0
+	farcall PlayMusic2
+	ld hl, wChLastNotes
+	xor a
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	inc a
+	ld hl, wNoteEnded
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	jp MusicPlayerLoop
+	
 .b:
 ; exit music player
 	xor a
@@ -351,8 +379,9 @@ MusicPlayerLoop:
 	res 2, [hl] ; 8x8 sprites
 	ld hl, rIE
 	res LCD_STAT, [hl]
-	farjp _OptionsMenu
-;	ret
+	call PlayMapMusic
+	scf
+	ret
 
 .start:
 ; open song selector
@@ -363,23 +392,15 @@ MusicPlayerLoop:
 	call SongSelector
 	jp RenderMusicPlayer
 
-.select:
-	xor a
-	ld [wChannelSelector], a
-	hlcoord 3, MP_HUD_TOP
-	ld a, "◀"
-	ld [hl], a
-; fallthrough
-
 SongEditor:
 	call MPUpdateUIAndGetJoypad
 	ld hl, hJoyDown
-	jrheldbutton D_UP, .up, 10
+	jpheldbutton D_UP, .up, 10
 	jpheldbutton D_DOWN, .down, 10
 	ld hl, hJoyPressed
 	jrbutton D_LEFT, .left
 	jrbutton D_RIGHT, .right
-	jrbutton A_BUTTON, .a
+	jpbutton A_BUTTON, .a
 	jpbutton START, .start
 	jpbutton SELECT | B_BUTTON, .select_b
 
@@ -612,14 +633,14 @@ AdjustTempo:
 .loop:
 	call MPUpdateUIAndGetJoypad
 	ld hl, hJoyDown
-	jrheldbutton D_UP, .up, 6
-	jrheldbutton D_DOWN, .down, 6
-	jrheldbutton D_RIGHT, .right, 18
-	jrheldbutton D_LEFT, .left, 18
+	jpheldbutton D_UP, .up, 6
+	jpheldbutton D_DOWN, .down, 6
+	jpheldbutton D_RIGHT, .right, 18
+	jpheldbutton D_LEFT, .left, 18
 	ld hl, hJoyPressed
 	jrbutton A_BUTTON, .a
-	jrbutton B_BUTTON, .b
-	jrbutton START, .start
+	jpbutton B_BUTTON, .b
+	jpbutton START, .start
 
 	; prioritize refreshing the note display
 	ld a, 2
@@ -680,6 +701,7 @@ AdjustTempo:
 	ld a, [wSongSelection]
 	ld e, a
 	ld d, 0
+	ld [wMapMusic], a
 	farcall PlayMusic2
 	jr .exit
 
@@ -1652,18 +1674,19 @@ SongSelector:
 	call DelayFrame
 	call MPGetJoypad
 	ld hl, hJoyDown
-	jrheldbutton D_UP, .up, 6
-	jrheldbutton D_DOWN, .down, 6
-	jrheldbutton D_LEFT, .left, 18
-	jrheldbutton D_RIGHT, .right, 18
+	jpheldbutton D_UP, .up, 6
+	jpheldbutton D_DOWN, .down, 6
+	jpheldbutton D_LEFT, .left, 18
+	jpheldbutton D_RIGHT, .right, 18
 	ld hl, hJoyPressed
 	jrbutton A_BUTTON, .a
-	jrbutton START | B_BUTTON, .start_b
+	jpbutton START | B_BUTTON, .start_b
 	jr .loop
 
 .a:
 ; select song
 	ld a, [wSongSelection]
+	ld [wMapMusic], a
 	cp NUM_SONGS - MP_LIST_CURSOR_Y + 1
 	jr c, .no_overflow
 	sub NUM_SONGS - MP_LIST_CURSOR_Y

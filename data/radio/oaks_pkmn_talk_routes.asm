@@ -5,7 +5,7 @@ OaksPkmnTalkRoutes:
 	map_id ROUTE_30
 	map_id ROUTE_31
 	map_id GLINT_GROVE
-	map_id ROUTE_34
+	map_id ROUTE_4
 	map_id ROUTE_35
 	map_id ROUTE_36
 	map_id ROUTE_37

@@ -123,11 +123,11 @@ DoPlayerMovement:: ; 80000
 	jr z, .Standing
 
 ; Walking into an edge warp won't bump.
-	ld a, [wEngineBuffer4]
-	and a
-	jr nz, .CantMove
+;	ld a, [wEngineBuffer4]
+;	and a
+;	jr nz, .CantMove
 	call .BumpSound
-.CantMove:
+;.CantMove:
 	call ._WalkInPlace
 	xor a
 	ret
@@ -365,7 +365,7 @@ DoPlayerMovement:: ; 80000
 	ld a, [wOWState]
 	set OWSTATE_SURF, a
 	ld [wOWState], a
-	ld a, STEP_FAST
+	ld a, STEP_SURF
 	call .DoStep
 	scf
 	ret
@@ -373,7 +373,7 @@ DoPlayerMovement:: ; 80000
 .ExitWater:
 	call .GetOutOfWater
 	call PlayMapMusic
-	ld a, STEP_WALK
+	ld a, STEP_SLOW
 	call .DoStep
 	ld a, 6
 	scf
@@ -528,6 +528,7 @@ DoPlayerMovement:: ; 80000
 	dw .InPlace
 	dw .SpinStep
 	dw .Fast ; x2
+	dw .SurfStep
 
 .SlowStep:
 	slow_step_down
@@ -584,6 +585,11 @@ DoPlayerMovement:: ; 80000
 	fast_step_up
 	fast_step_left
 	fast_step_right
+.SurfStep
+	step_down
+	step_up
+	step_left
+	step_right
 
 .StandInPlace: ; 802b3
 	ld a, movement_step_sleep_1

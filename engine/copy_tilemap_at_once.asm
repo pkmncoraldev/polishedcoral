@@ -41,8 +41,7 @@ _SafeCopyTilemapAtOnce::
 	jr nz, .waitLYAndUpdateMusic
 	xor a
 	ld [hBGMapHalf], a
-	inc a
-	call SkipMusic
+	call UpdateSound
 	bit 2, b
 	jr z, .noForceOAMUpdate
 	xor a

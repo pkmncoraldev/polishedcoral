@@ -2142,12 +2142,8 @@ GetMapHeaderMusic:: ; 2cbd
 	ld de, 6 ; music
 	call GetMapHeaderMember
 	ld a, c
-	cp MUSIC_RADIO_TOWER
-	jr z, .radiotower
-	cp MUSIC_MAHOGANY_MART
-	jr z, .mahoganymart
-	cp MUSIC_LAVENDER
-	jr z, .lavender
+	cp MUSIC_STARGLOW
+	jr z, .starglow
 	call Function8b342
 	ld e, c
 	ld d, 0
@@ -2156,37 +2152,15 @@ GetMapHeaderMusic:: ; 2cbd
 	pop hl
 	ret
 
-.radiotower
-	ld a, [wStatusFlags2]
+.starglow
+	ld a, [wSnareFlags]
 	bit 0, a ; ENGINE_ROCKETS_IN_RADIO_TOWER
-	jr z, .clearedradiotower
-	ld de, MUSIC_EVOLUTION
+	jr z, .clearedstarglow
+	ld de, MUSIC_SNARE_INVASION
 	jr .done
 
-.clearedradiotower
-	ld de, MUSIC_EVOLUTION
-	jr .done
-
-.mahoganymart
-	ld a, [wStatusFlags2]
-	bit 7, a ; ENGINE_ROCKETS_IN_MAHOGANY
-	jr z, .clearedmahogany
-	ld de, MUSIC_EVOLUTION
-	jr .done
-
-.clearedmahogany
-	ld de, MUSIC_EVOLUTION
-	jr .done
-
-.lavender
-	ld a, [wStatusFlags2]
-	bit 6, a ; ENGINE_EXORCISED_LAV_RADIO_TOWER
-	jr z, .exorcisedlavradiotower
-	ld de, MUSIC_EVOLUTION
-	jr .done
-
-.exorcisedlavradiotower
-	ld de, MUSIC_EVOLUTION
+.clearedstarglow
+	ld de, MUSIC_STARGLOW_VALLEY
 	jr .done
 ; 2cff
 

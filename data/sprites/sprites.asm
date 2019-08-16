@@ -17,9 +17,9 @@ SpriteHeaders:
 	overworld_sprite DadSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite LyraSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite SilverSpriteGFX, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite FalknerSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite BugsySpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite WhitneySpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite StanleySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite RodneySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite LeilaniSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite MortySpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ChuckSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite JasmineSpriteGFX, WALKING_SPRITE, PAL_OW_RED

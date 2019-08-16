@@ -207,9 +207,9 @@ SetFacingBounce: ; 4590
 	add hl, bc
 	ld a, [hl]
 	inc a
-	and %00001111
+	and %00011111
 	ld [hl], a
-	and %00001000
+	and %00010000
 	ld a, FACING_STEP_UP_0
 	jp nz, SetFixedFacing
 SetFacingFreezeBounce: ; 45a4

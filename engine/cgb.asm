@@ -230,16 +230,54 @@ _CGB_PokegearPals: ; 8eb9
 	ld a, $5
 	call FarCopyWRAM
 
-	ld a, [wPlayerGender]
-	bit 0, a
-	jr z, .male
-	ld hl, FemalePokegearInterfacePalette
+	ld a, [wPlayerPalette]
+	cp 0
+	jp nz, .cont1
+	ld hl, RedPokegearInterfacePalette
+	jp .ok
+
+.cont1
+	ld a, [wPlayerPalette]
+	cp 1
+	jp nz, .cont2
+	ld hl, BluePokegearInterfacePalette
+	jp .ok
+	
+.cont2
+	ld a, [wPlayerPalette]
+	cp 2
+	jp nz, .cont3
+	ld hl, GreenPokegearInterfacePalette
+	jp .ok
+
+.cont3
+	ld a, [wPlayerPalette]
+	cp 3
+	jp nz, .cont4
+	ld hl, BrownPokegearInterfacePalette
+	jp .ok
+	
+.cont4
+	ld a, [wPlayerPalette]
+	cp 4
+	jp nz, .cont5
+	ld hl, PurplePokegearInterfacePalette
+	jp .ok
+	
+.cont5
+	ld a, [wPlayerPalette]
+	cp 5
+	jp nz, .cont6
+	ld hl, TealPokegearInterfacePalette
+	jp .ok
+	
+.cont6
+	ld hl, PinkPokegearInterfacePalette
+.ok
 	ld de, wUnknBGPals palette 0
 	ld bc, 1 palettes
 	ld a, $5
 	call FarCopyWRAM
-.male
-
 	call ApplyPals
 	ld a, $1
 	ld [hCGBPalUpdate], a
@@ -890,9 +928,9 @@ LoadFirstTwoTrainerCardPals:
 	; player sprite
 	ld a, [wPlayerGender]
 	and a
-	ld a, CHRIS
+	ld a, PLAYER_M
 	jr z, .got_gender
-	ld a, KRIS
+	ld a, PLAYER_F
 .got_gender
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black

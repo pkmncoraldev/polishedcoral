@@ -8,7 +8,7 @@ MapGroupRoofs:
 	db  1 ; group 4 (Ecruteak City)
 	db  2 ; group 5 (Blackthorn City)
 	db -1 ; group 6
-	db -1 ; group 7
+	db  3 ; group 7
 	db  2 ; group 8 (Azalea Town)
 	db  2 ; group 9 (Lake of Rage)
 	db  2 ; group 10 (Violet City)

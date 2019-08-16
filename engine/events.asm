@@ -231,7 +231,17 @@ PlayerEvents: ; 9681f
 	jr z, .ok2
 	cp PLAYEREVENT_JOYCHANGEFACING
 	jr z, .ok2
+	ld a, [wMapGroup]
+	cp GROUP_STARGLOW_VALLEY
+	jr nz, .ok3
+	ld a, [wMapNumber]
+	cp MAP_STARGLOW_VALLEY
+	jr nz, .ok3
+	ld de, EVENT_STARGLOW_HELPED_LITTLEGIRL
+	call CheckEventFlag
+	jr z, .ok2
 
+.ok3
 	xor a
 	ld [wLandmarkSignTimer], a
 
@@ -239,6 +249,17 @@ PlayerEvents: ; 9681f
 	scf
 	ret
 ; 96867
+
+CheckEventFlag:
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	jr z, .false
+	ld a, TRUE
+.false
+	ld [wScriptVar], a
+	ret
 
 CheckTrainerBattle3: ; 96867
 	call CheckTrainerBattle2
@@ -474,8 +495,8 @@ PlayTalkObject: ; 969ac
 	call PlaySFX
 	pop de
 	push bc
-;	ld c, 3
-;	call SFXDelayFrames
+	ld c, 3
+	call SFXDelayFrames
 	pop bc
 .nope
 	ret
@@ -1036,12 +1057,14 @@ Invalid_0x96c2d: ; 96c2d
 ; 96c34
 
 WarpToNewMapScript: ; 96c34
+	callasm StopLandmarkTimer
 	warpsound
 	newloadmap MAPSETUP_DOOR
 	end
 ; 96c38
 
 FallIntoMapScript: ; 96c38
+	callasm StopLandmarkTimer
 	newloadmap MAPSETUP_FALL
 	playsound SFX_KINESIS
 	applymovement PLAYER, MovementData_0x96c48
@@ -1049,6 +1072,11 @@ FallIntoMapScript: ; 96c38
 	scall LandAfterPitfallScript
 	end
 ; 96c48
+
+StopLandmarkTimer:
+	xor a
+	ld [wLandmarkSignTimer], a
+	ret
 
 MovementData_0x96c48: ; 96c48
 	skyfall
@@ -1135,6 +1163,10 @@ CheckFacingTileEvent: ; 97c5f
 	jr z, .waterfall
 	cp COLL_HEADBUTT_TREE
 	jr z, .headbutt
+	cp COLL_DODRIO_JUMP
+	jr z, .dodriojump
+	cp COLL_DODRIO_JUMP_NO_RL
+	jr z, .dodriojump2
 	farcall TrySurfOW
 	jr nc, .noevent
 .done
@@ -1153,6 +1185,14 @@ CheckFacingTileEvent: ; 97c5f
 
 .headbutt
 	farcall TryHeadbuttOW
+	jr .done
+	
+.dodriojump
+	farcall TryDodrioJumpOW
+	jr .done
+	
+.dodriojump2
+	farcall TryDodrioJump2OW
 	jr c, .done
 .noevent
 	xor a

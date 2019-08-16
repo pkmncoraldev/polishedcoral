@@ -43,6 +43,7 @@ AI_Redundant: ; 2c41a
 	dbw EFFECT_FUTURE_SIGHT,  .FutureSight
 	dbw EFFECT_BATON_PASS,    .BatonPass
 	dbw EFFECT_ROOST,         .Roost
+	dbw EFFECT_FAKE_OUT,	  .FakeOut
 	db -1
 
 .Confuse:
@@ -96,6 +97,11 @@ AI_Redundant: ; 2c41a
 .PerishSong:
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_PERISH, a
+	ret
+	
+.FakeOut:
+	ld a, [wEnemySubStatus2]
+	bit SUBSTATUS_FAKE_OUT, a
 	ret
 
 .Reflect:
@@ -180,7 +186,7 @@ AI_Redundant: ; 2c41a
 .NotRedundant:
 	xor a
 	ret
-
+	
 .Heal:
 .HealingLight:
 .Roost:

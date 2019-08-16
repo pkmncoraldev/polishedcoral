@@ -78,23 +78,20 @@ ENDM
 	connection north, GlintCity, GLINT_CITY, -2, 0, 18
 	connection south, DaybreakVillage, DAYBREAK_VILLAGE, 2, -4, 14
 
-	map_attributes GlintCity, GLINT_CITY, $5, NORTH | SOUTH ;| EAST
+	map_attributes GlintCity, GLINT_CITY, $5, NORTH | SOUTH | EAST
 	connection north, GlintGroveEntrance, GLINT_GROVE_ENTRANCE, 1, 0, 10
 	connection south, Route2, ROUTE_2, 3, 1, 12
-;	connection east, Route43, ROUTE_43, 0, 0, 10
+	connection east, Route3, ROUTE_3, 0, 0, 10
 
 	map_attributes CianwoodCity, CIANWOOD_CITY, $35, EAST
 	connection east, Route41, ROUTE_41, 0, 0, 27
 
 	map_attributes GoldenrodCity, GOLDENROD_CITY, $35, NORTH | SOUTH | EAST
 	connection north, Route35, ROUTE_35, 5, 0, 12
-	connection south, Route34, ROUTE_34, 7, 0, 10
+	connection south, Route4, ROUTE_4, 7, 0, 10
 	connection east, MagnetTunnelWest, MAGNET_TUNNEL_WEST, 0, 0, 11
 
-	map_attributes OlivineCity, OLIVINE_CITY, $35, NORTH | SOUTH | WEST
-	connection north, Route39, ROUTE_39, 5, 0, 10
-	connection south, Route35Coast, ROUTE_35_COAST, 0, -7, 32
-	connection west, Route40, ROUTE_40, 7, 0, 12
+	map_attributes OlivineCity, OLIVINE_CITY, $0, 0
 
 	map_attributes EcruteakCity, ECRUTEAK_CITY, $5, SOUTH | WEST | EAST
 	connection south, Route37, ROUTE_37, 5, 0, 10
@@ -106,8 +103,13 @@ ENDM
 	connection west, Route42, ROUTE_42, 0, 0, 9
 	connection east, Route44, ROUTE_44, 0, 0, 9
 
-	map_attributes LakeOfRage, LAKE_OF_RAGE, $5, SOUTH
-	connection south, Route43, ROUTE_43, 5, 0, 10
+	map_attributes Route3Starglow, ROUTE_3_STARGLOW, $5, SOUTH
+	connection south, StarglowValley, STARGLOW_VALLEY, -3, 0, 10
+	
+	map_attributes StarglowValley, STARGLOW_VALLEY, 5, NORTH | EAST
+	connection north, Route3Starglow, ROUTE_3_STARGLOW, 3, 0, 5
+;	connection west, ROUTE_12, Route12, 4, 0, 4, LAKE_OF_RAGE
+	connection east, Route4, ROUTE_4, 6, 0, 11
 
 	map_attributes BlackthornCity, BLACKTHORN_CITY, $71, SOUTH
 	connection south, Route45, ROUTE_45, -2, 0, 12
@@ -131,19 +133,24 @@ ENDM
 
 	map_attributes Route31, ROUTE_31, $5, 0
 
-	map_attributes GlintGrove, GLINT_GROVE, $5, 0
+	map_attributes GlintGrove, GLINT_GROVE, $20, 0
 
 	map_attributes GlintGroveEntrance, GLINT_GROVE_ENTRANCE, 5, SOUTH
 	connection south, GlintCity, GLINT_CITY, 1, 2, 7
 
-	map_attributes Route34, ROUTE_34, $5, NORTH | WEST | EAST
-	connection north, GoldenrodCity, GOLDENROD_CITY, -3, 4, 16
-	connection west, Route34Coast, ROUTE_34_COAST, 0, 0, 27
-	connection east, GlintCity, GLINT_CITY, 18, 0, 9
+	map_attributes Route4, ROUTE_4, 5, NORTH | SOUTH | WEST
+	connection north, HuntersThicket, HUNTERS_THICKET, 3, 1, 7, ROUTE_4
+	connection south, Route5, ROUTE_5, 7, 10, 7
+	connection west, StarglowValley, STARGLOW_VALLEY, -2, 4, 13
+	
+	map_attributes HuntersThicket, HUNTERS_THICKET, $5, SOUTH
+	connection south, Route4, ROUTE_4, 1, 3, 7
+	
+	map_attributes Route34, ROUTE_34, 0, 0
 
 	map_attributes Route34Coast, ROUTE_34_COAST, $35, SOUTH | EAST
 	connection south, StormyBeach, STORMY_BEACH, 0, 0, 9
-	connection east, Route34, ROUTE_34, 0, 0, 27
+	connection east, Route4, ROUTE_4, 0, 0, 27
 
 	map_attributes StormyBeach, STORMY_BEACH, $35, NORTH
 	connection north, Route34Coast, ROUTE_34_COAST, 0, 0, 9
@@ -170,19 +177,14 @@ ENDM
 	connection south, OlivineCity, OLIVINE_CITY, -3, 2, 16
 	connection east, Route38, ROUTE_38, 0, 0, 9
 
-	map_attributes Route40, ROUTE_40, $35, SOUTH | EAST
-	connection south, Route41, ROUTE_41, -3, 12, 13
-	connection east, OlivineCity, OLIVINE_CITY, -3, 4, 12
+	map_attributes Route5Deep, ROUTE_5_DEEP, $7, 0
 
-	map_attributes Route41, ROUTE_41, $35, NORTH | WEST | EAST
-	connection north, Route40, ROUTE_40, 15, 0, 10
-	connection west, CianwoodCity, CIANWOOD_CITY, 0, 0, 27
-	connection east, GoldenrodHarbor, GOLDENROD_HARBOR, 3, 0, 20
+	map_attributes Route41, ROUTE_41, $0, 0
 
 	map_attributes Route42, ROUTE_42, $5, 0
 
 	map_attributes Route43, ROUTE_43, $5, NORTH | SOUTH
-	connection north, LakeOfRage, LAKE_OF_RAGE, -3, 2, 16
+	connection north, StarglowValley, STARGLOW_VALLEY, -3, 2, 16
 	connection south, MahoganyTown, MAHOGANY_TOWN, 0, 0, 10
 
 	map_attributes Route44, ROUTE_44, $71, WEST
@@ -329,9 +331,9 @@ ENDM
 	connection north, Route6, ROUTE_6, 3, 0, 15
 	connection east, Route11, ROUTE_11, 5, 0, 9
 
-	map_attributes Route6, ROUTE_6, $f, NORTH | SOUTH
-	connection north, SaffronCity, SAFFRON_CITY, -3, 0, 18
-	connection south, VermilionCity, VERMILION_CITY, -3, 0, 18
+	map_attributes Route6, ROUTE_6, 7, NORTH | SOUTH
+	connection north, Route41, ROUTE_41, -1, 0, 20
+	connection south, Route29, ROUTE_29, 1, 12, 30
 
 	map_attributes SaffronCity, SAFFRON_CITY, $f, NORTH | SOUTH | WEST | EAST
 	connection north, Route5, ROUTE_5, 5, 0, 10
@@ -339,9 +341,8 @@ ENDM
 	connection west, Route7, ROUTE_7, 6, 0, 9
 	connection east, Route8, ROUTE_8, 4, 0, 11
 
-	map_attributes Route5, ROUTE_5, $f, NORTH | SOUTH
-	connection north, CeruleanCity, CERULEAN_CITY, -3, 2, 16
-	connection south, SaffronCity, SAFFRON_CITY, -3, 2, 16
+	map_attributes Route5, ROUTE_5, 7, NORTH
+	connection north, Route4, ROUTE_4, 11, 8, 5
 
 	map_attributes CeruleanCity, CERULEAN_CITY, $f, NORTH | SOUTH | WEST | EAST
 	connection north, Route24, ROUTE_24, 0, 0, 14
@@ -360,11 +361,9 @@ ENDM
 	map_attributes CeruleanCape, CERULEAN_CAPE, $2c, WEST
 	connection west, Route25, ROUTE_25, 0, 0, 20
 
-	map_attributes Route3, ROUTE_3, $2c, WEST
-	connection west, PewterCity, PEWTER_CITY, -3, 2, 15
-
-	map_attributes Route4, ROUTE_4, $2c, EAST
-	connection east, CeruleanCity, CERULEAN_CITY, -2, 0, 16
+	map_attributes Route3, ROUTE_3, 5, SOUTH | WEST
+	connection south, Route12North, ROUTE_12_NORTH, 1, 0, 25
+	connection west, GlintCity, GLINT_CITY, 0, 0, 36
 
 	map_attributes Route8, ROUTE_8, $2c, WEST | EAST
 	connection west, SaffronCity, SAFFRON_CITY, -2, 2, 14
@@ -421,12 +420,7 @@ ENDM
 	map_attributes IndigoPlateau, INDIGO_PLATEAU, $2c, SOUTH
 	connection south, Route23, ROUTE_23, 0, 0, 10
 
-	map_attributes ShamoutiIsland, SHAMOUTI_ISLAND, $35, NORTH | EAST
-	connection north, RockyBeach, ROCKY_BEACH, 0, 0, 18
-	connection east, BeautifulBeach, BEAUTIFUL_BEACH, 0, 0, 15
-
-	map_attributes BeautifulBeach, BEAUTIFUL_BEACH, $35, WEST
-	connection west, ShamoutiIsland, SHAMOUTI_ISLAND, 0, 0, 15
+	map_attributes ShamoutiIsland, SHAMOUTI_ISLAND, $0, 0
 
 	map_attributes WarmBeach, WARM_BEACH, $35, SOUTH
 	connection south, ShamoutiCoast, SHAMOUTI_COAST, 0, 0, 12
@@ -456,7 +450,6 @@ ENDM
 	map_attributes TinTower8F, TIN_TOWER_8F, $0, 0
 	map_attributes TinTower9F, TIN_TOWER_9F, $0, 0
 	map_attributes TinTower10F, TIN_TOWER_10F, $0, 0
-	map_attributes BurnedTower1F, BURNED_TOWER_1F, $0, 0
 	map_attributes BurnedTowerB1F, BURNED_TOWER_B1F, $9, 0
 	map_attributes NationalPark, NATIONAL_PARK, $0, 0
 	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $0, 0
@@ -482,18 +475,18 @@ ENDM
 	map_attributes RuinsOfAlphAerodactylWordRoom, RUINS_OF_ALPH_AERODACTYL_WORD_ROOM, $0, 0
 	map_attributes RuinsOfAlphSinjohChamber, RUINS_OF_ALPH_SINJOH_CHAMBER, $0, 0
 	map_attributes Route22Past, ROUTE_22_PAST, $2c, 0
-	map_attributes UnionCave1F, UNION_CAVE_1F, $9, 0
+	map_attributes StarglowCavern1F, STARGLOW_CAVERN_1F, $9, 0
+	map_attributes StarglowCavern2F, STARGLOW_CAVERN_2F, $9, 0
 	map_attributes UnionCaveB1FNorth, UNION_CAVE_B1F_NORTH, $9, 0
 	map_attributes UnionCaveB1FSouth, UNION_CAVE_B1F_SOUTH, $9, 0
-	map_attributes UnionCaveB2F, UNION_CAVE_B2F, $9, 0
 	map_attributes SlowpokeWellB1F, SLOWPOKE_WELL_B1F, $9, 0
 	map_attributes SlowpokeWellB2F, SLOWPOKE_WELL_B2F, $9, 0
-	map_attributes OlivineLighthouse1F, OLIVINE_LIGHTHOUSE_1F, $0, 0
-	map_attributes OlivineLighthouse2F, OLIVINE_LIGHTHOUSE_2F, $0, 0
-	map_attributes OlivineLighthouse3F, OLIVINE_LIGHTHOUSE_3F, $0, 0
-	map_attributes OlivineLighthouse4F, OLIVINE_LIGHTHOUSE_4F, $0, 0
-	map_attributes OlivineLighthouse5F, OLIVINE_LIGHTHOUSE_5F, $0, 0
-	map_attributes OlivineLighthouse6F, OLIVINE_LIGHTHOUSE_6F, $0, 0
+	map_attributes StarglowTogepiHouse, STARGLOW_TOGEPI_HOUSE, $0, 0
+	map_attributes StarglowNoPokemonHouse, STARGLOW_NO_POKEMON_HOUSE, $0, 0
+	map_attributes StarglowGrandpaHouse, STARGLOW_GRANDPA_HOUSE, $0, 0
+	map_attributes StarglowFishingGuruHouse, STARGLOW_FISHING_GURU_HOUSE, $0, 0
+	map_attributes StarglowPokeCenter, STARGLOW_POKECENTER, $0, 0
+	map_attributes StarglowMart, STARGLOW_MART, $0, 0
 	map_attributes OlivineLighthouseRoof, OLIVINE_LIGHTHOUSE_ROOF, $c, 0
 	map_attributes MahoganyMart1F, MAHOGANY_MART_1F, $0, 0
 	map_attributes TeamRocketBaseB1F, TEAM_ROCKET_BASE_B1F, $0, 0
@@ -532,7 +525,6 @@ ENDM
 	map_attributes DragonsDen1F, DRAGONS_DEN_1F, $9, 0
 	map_attributes DragonsDenB1F, DRAGONS_DEN_B1F, $71, 0
 	map_attributes DragonShrine, DRAGON_SHRINE, $0, 0
-	map_attributes TohjoFalls, TOHJO_FALLS, $9, 0
 	map_attributes GiovannisCave, GIOVANNIS_CAVE, $9, 0
 	map_attributes OlivinePokeCenter1F, OLIVINE_POKECENTER_1F, $0, 0
 	map_attributes OlivineGym, OLIVINE_GYM, $0, 0
@@ -582,7 +574,7 @@ ENDM
 	map_attributes CinnabarPokeCenter1F, CINNABAR_POKECENTER_1F, $0, 0
 	map_attributes Route19FuchsiaGate, ROUTE_19_FUCHSIA_GATE, $0, 0
 	map_attributes SeafoamIslands1F, SEAFOAM_ISLANDS_1F, $9, 0
-	map_attributes SeafoamGym, SEAFOAM_GYM, $9, 0
+	map_attributes StarglowGym, STARGLOW_GYM, $0, 0
 	map_attributes SeafoamIslandsB1F, SEAFOAM_ISLANDS_B1F, $9, 0
 	map_attributes SeafoamIslandsB2F, SEAFOAM_ISLANDS_B2F, $9, 0
 	map_attributes SeafoamIslandsB3F, SEAFOAM_ISLANDS_B3F, $9, 0
@@ -602,14 +594,15 @@ ENDM
 	map_attributes PowerPlant, POWER_PLANT, $0, 0
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0
-	map_attributes AzaleaPokeCenter1F, AZALEA_POKECENTER_1F, $0, 0
-	map_attributes CharcoalKiln, CHARCOAL_KILN, $0, 0
-	map_attributes AzaleaMart, AZALEA_MART, $0, 0
-	map_attributes KurtsHouse, KURTS_HOUSE, $0, 0
-	map_attributes AzaleaGym, AZALEA_GYM, $0, 0
-	map_attributes LakeOfRageHiddenPowerHouse, LAKE_OF_RAGE_HIDDEN_POWER_HOUSE, $0, 0
+	map_attributes GlintPokeCenter, GLINT_POKECENTER, $0, 0
+	map_attributes GlintApartmentLeft1F, GLINT_APARTMENT_LEFT_1F, $0, 0
+	map_attributes GlintApartmentLeft2F, GLINT_APARTMENT_LEFT_2F, $0, 0
+	map_attributes GlintApartmentRight1F, GLINT_APARTMENT_RIGHT_1F, $0, 0
+	map_attributes GlintApartmentRight2F, GLINT_APARTMENT_RIGHT_2F, $0, 0
+	map_attributes GlintMart, GLINT_MART, $0, 0
+	map_attributes GlintGym, GLINT_GYM, $0, 0
 	map_attributes LakeOfRageMagikarpHouse, LAKE_OF_RAGE_MAGIKARP_HOUSE, $0, 0
-	map_attributes Route43MahoganyGate, ROUTE_43_MAHOGANY_GATE, $0, 0
+	map_attributes Route5Gate, ROUTE_5_GATE, $0, 0
 	map_attributes Route43Gate, ROUTE_43_GATE, $0, 0
 	map_attributes SinjohRuins, SINJOH_RUINS, $d5, 0
 	map_attributes SinjohRuinsHouse, SINJOH_RUINS_HOUSE, $0, 0
@@ -620,7 +613,7 @@ ENDM
 	map_attributes DaybreakMarcusHouse, DAYBREAK_MARCUS_HOUSE, $0, 0
 	map_attributes DaybreakPokeCenter, DAYBREAK_POKECENTER, $0, 0
 	map_attributes DaybreakAlexHouse, DAYBREAK_ALEX_HOUSE, $0, 0
-	map_attributes Route32RuinsOfAlphGate, ROUTE_32_RUINS_OF_ALPH_GATE, $0, 0
+	map_attributes GlintGroveDeep, GLINT_GROVE_DEEP, $20, 0
 	map_attributes SunsetPokeCenter, SUNSET_POKECENTER, $0, 0
 	map_attributes Route32CoastHouse, ROUTE_32_COAST_HOUSE, $0, 0
 	map_attributes Route35GoldenrodGate, ROUTE_35_GOLDENROD_GATE, $0, 0
@@ -797,9 +790,9 @@ ENDM
 	map_attributes CianwoodCityPhotoStudio, CIANWOOD_CITY_PHOTO_STUDIO, $0, 0
 	map_attributes CianwoodLugiaSpeechHouse, CIANWOOD_LUGIA_SPEECH_HOUSE, $0, 0
 	map_attributes StatsJudgesHouse, STATS_JUDGES_HOUSE, $0, 0
-	map_attributes BattleTower1F, BATTLE_TOWER_1F, $0, 0
+	map_attributes GlintEvoHouse, GLINT_EVO_HOUSE, $0, 0
 	map_attributes BattleTower2F, BATTLE_TOWER_2F, $0, 0
-	map_attributes BattleTowerBattleRoom, BATTLE_TOWER_BATTLE_ROOM, $0, 0
+	map_attributes GlintRivalHouse, GLINT_RIVAL_HOUSE, $0, 0
 	map_attributes BattleTowerElevator, BATTLE_TOWER_ELEVATOR, $0, 0
 	map_attributes BattleTowerHallway, BATTLE_TOWER_HALLWAY, $0, 0
 	map_attributes Route40BattleTowerGate, ROUTE_40_BATTLE_TOWER_GATE, $0, 0

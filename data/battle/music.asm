@@ -74,12 +74,12 @@ PlayBattleMusic: ; 2ee6c
 	dbw BRUNO,            MUSIC_EVOLUTION
 	dbw KAREN,            MUSIC_EVOLUTION
 	dbw CHAMPION,         MUSIC_EVOLUTION
-	dbw RIVAL,            MUSIC_EVOLUTION
+	dbw RIVAL,            MUSIC_RIVAL_BATTLE
 	dbw GRUNTM,           MUSIC_EVOLUTION
 	dbw GRUNTF,           MUSIC_EVOLUTION
-	dbw STANLEY,		  MUSIC_EVOLUTION
-	dbw RODNEY,		  	  MUSIC_EVOLUTION
-	dbw LEILANI,		  MUSIC_EVOLUTION
+	dbw STANLEY,		  MUSIC_GYM_BATTLE
+	dbw RODNEY,		  	  MUSIC_GYM_BATTLE
+	dbw LEILANI,		  MUSIC_GYM_BATTLE
 	db -1
 
 .legendaries

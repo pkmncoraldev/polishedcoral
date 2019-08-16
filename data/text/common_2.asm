@@ -1,16 +1,16 @@
 UnknownText_0x1c0043::
 	text "Hello, hello! I'm"
-	line "the Name Rater."
+	line "the NAME RATER."
 
 	para "I rate the names"
-	line "of #mon."
+	line "of #MON."
 
 	para "Would you like me"
 	line "to rate names?"
 	done
 
 UnknownText_0x1c00a0::
-	text "Which #mon's"
+	text "Which #MON's"
 	line "nickname should I"
 	cont "rate for you?"
 	prompt
@@ -63,7 +63,7 @@ UnknownText_0x1c01be::
 
 UnknownText_0x1c0208::
 	text "Whoa… That's just"
-	line "an Egg."
+	line "an EGG."
 	done
 
 UnknownText_0x1c0222::
@@ -78,7 +78,7 @@ UnknownText_0x1c0222::
 
 UnknownText_0x1c0272::
 	text "All right. This"
-	line "#mon is now"
+	line "#MON is now"
 	cont "named @"
 	text_from_ram wStringBuffer1
 	text "."
@@ -93,14 +93,14 @@ Text_ABoostedStringBuffer2ExpPoints::
 	line "a boosted"
 	cont "@"
 	deciram wStringBuffer2, 2, 5
-	text " Exp. Points!"
+	text " EXP. POINTS!"
 	prompt
 
 Text_StringBuffer2ExpPoints::
 	text ""
 	line "@"
 	deciram wStringBuffer2, 2, 5
-	text " Exp. Points!"
+	text " EXP. POINTS!"
 	prompt
 
 Text_GoPkmn::
@@ -160,7 +160,7 @@ UnknownText_0x1c0396::
 	para "Teach @"
 	text_from_ram wStringBuffer2
 	text ""
-	line "to a #mon?"
+	line "to a #MON?"
 	done
 
 UnknownText_0x1c03c2::
@@ -178,7 +178,7 @@ UnknownText_0x1c03c2::
 	prompt
 
 _BadgeRequiredText::
-	text "Sorry! A new Badge"
+	text "Sorry! A new BADGE"
 	line "is required."
 	prompt
 
@@ -190,16 +190,16 @@ UnknownText_0x1c05c8::
 UnknownText_0x1c05dd::
 	text_from_ram wStringBuffer2
 	text " used"
-	line "Cut!"
+	line "CUT!"
 	prompt
 
 UnknownText_0x1c05ec::
 	text "There's nothing to"
-	line "Cut here."
+	line "CUT here."
 	prompt
 
 UnknownText_0x1c0609::
-	text "A blinding Flash"
+	text "A blinding FLASH"
 	line "lights the area!@"
 	text_waitbutton
 	db "@@"
@@ -207,28 +207,28 @@ UnknownText_0x1c0609::
 _UsedSurfText::
 	text_from_ram wStringBuffer2
 	text " used"
-	line "Surf!"
+	line "SURF!"
 	done
 
 _CantSurfText::
-	text "You can't Surf"
+	text "You can't SURF"
 	line "here."
 	prompt
 
 _AlreadySurfingText::
 	text "You're already"
-	line "Surfing."
+	line "SURFing."
 	prompt
 
 _AskSurfText::
 	text "The water is calm."
-	line "Want to Surf?"
+	line "Want to SURF?"
 	done
 
 UnknownText_0x1c068e::
 	text_from_ram wStringBuffer2
 	text " used"
-	line "Waterfall!"
+	line "WATERFALL!"
 	done
 
 UnknownText_0x1c06a3::
@@ -238,18 +238,18 @@ UnknownText_0x1c06a3::
 
 UnknownText_0x1c06bf::
 	text "Do you want to use"
-	line "Waterfall?"
+	line "WATERFALL?"
 	done
 
 UnknownText_0x1c06de::
 	text_from_ram wStringBuffer2
 	text " used"
-	line "Dig!"
+	line "DIG!"
 	done
 
 UnknownText_0x1c06ed::
 	text "<PLAYER> used an"
-	line "Escape Rope."
+	line "ESCAPE ROPE."
 	done
 
 UnknownText_0x1c0705::
@@ -267,7 +267,7 @@ UnknownText_0x1c073b::
 UnknownText_0x1c0774::
 	text_from_ram wStringBuffer2
 	text " used"
-	line "Strength!"
+	line "STRENGTH!"
 	done
 
 UnknownText_0x1c0788::
@@ -277,11 +277,11 @@ UnknownText_0x1c0788::
 	prompt
 
 UnknownText_0x1c07a0::
-	text "A #mon may be"
+	text "A #MON may be"
 	line "able to move this."
 
 	para "Want to use"
-	line "Strength?"
+	line "STRENTGH?"
 	done
 
 UnknownText_0x1c07d8::
@@ -290,21 +290,21 @@ UnknownText_0x1c07d8::
 	done
 
 UnknownText_0x1c07f4::
-	text "A #mon may be"
+	text "A #MON may be"
 	line "able to move this."
 	done
 
 UnknownText_0x1c0816::
 	text_from_ram wStringBuffer2
 	text " used"
-	line "Whirlpool!"
+	line "WHIRLPOOL!"
 	prompt
 
 UnknownText_0x1c082b::
 	text "It's a vicious"
 	line "whirlpool!"
 
-	para "A #mon may be"
+	para "A #MON may be"
 	line "able to pass it."
 	done
 
@@ -313,13 +313,13 @@ UnknownText_0x1c0864::
 	line "the way."
 
 	para "Want to use"
-	line "Whirlpool?"
+	line "WHIRLPOOL?"
 	done
 
 UnknownText_0x1c0897::
 	text_from_ram wStringBuffer2
 	text " did a"
-	line "Headbutt!"
+	line "HEADBUTT!"
 	prompt
 
 UnknownText_0x1c08ac::
@@ -327,39 +327,30 @@ UnknownText_0x1c08ac::
 	done
 
 UnknownText_0x1c08bc::
-	text "A #mon could be"
+	text "A #MON could be"
 	line "in this tree."
 
-	para "Want to Headbutt"
+	para "Want to HEADBUTT"
 	line "it?"
 	done
 
 UnknownText_0x1c08f0::
 	text_from_ram wStringBuffer2
 	text " used"
-if DEF(FAITHFUL)
-	line "Rock Smash!"
-else
-	line "Brick Break!"
-endc
+	line "ROCK SMASH!"
 	prompt
 
 UnknownText_0x1c0906::
-	text "Maybe a #mon"
+	text "Maybe a #MON"
 	line "can break this."
 	done
 
 UnknownText_0x1c0924::
 	text "This rock looks"
 	line "breakable."
-
-if DEF(FAITHFUL)
-	para "Want to use Rock"
-	line "Smash?"
-else
-	para "Want to use Brick"
-	line "Break?"
-endc
+	
+	para "Want to use ROCK"
+	line "SMASH?"
 	done
 
 UnknownText_0x1c0958::
@@ -392,14 +383,14 @@ UnknownText_0x1c09c7::
 
 UnknownText_0x1c09dd::
 	text "This tree can be"
-	line "Cut!"
+	line "CUT!"
 
-	para "Want to use Cut?"
+	para "Want to use CUT?"
 	done
 
 UnknownText_0x1c0a05::
 	text "This tree can be"
-	line "Cut!"
+	line "CUT!"
 	done
 
 UnknownText_0x1c0a1c::
@@ -411,7 +402,7 @@ UnknownText_0x1c0a1c::
 
 WhiteoutText::
 	text "<PLAYER> is out of"
-	line "useable #mon!"
+	line "useable #MON!"
 
 	para "<PLAYER> blacked"
 	line "out!"
@@ -419,7 +410,7 @@ WhiteoutText::
 
 WhiteoutToWildText::
 	text "<PLAYER> is out of"
-	line "useable #mon!"
+	line "useable #MON!"
 
 	para "<PLAYER> panicked"
 	line "and dropped"
@@ -436,7 +427,7 @@ WhiteoutToWildText::
 
 WhiteoutToTrainerText::
 	text "<PLAYER> is out of"
-	line "useable #mon!"
+	line "useable #MON!"
 
 	para "<PLAYER> paid"
 	line "¥@"
@@ -452,13 +443,13 @@ WhiteoutToTrainerText::
 	done
 
 UnknownText_0x1c0a77::
-	text "Yes! Itemfinder"
+	text "Yes! ITEMFINDER"
 	line "indicates there's"
 	cont "an item nearby."
 	prompt
 
 UnknownText_0x1c0aa9::
-	text "Nope! Itemfinder"
+	text "Nope! ITEMFINDER"
 	line "isn't responding."
 	prompt
 
@@ -478,12 +469,12 @@ UnknownText_0x1c0b3b::
 	done
 
 UnknownText_0x1c0b65::
-	text "<PLAYER>'s #mon"
+	text "<PLAYER>'s #MON"
 	line "were all healed!"
 	done
 
 Text_AnEGGCantHoldAnItem::
-	text "An Egg can't hold"
+	text "An EGG can't hold"
 	line "an item."
 	prompt
 
@@ -509,14 +500,14 @@ UnknownText_0x1c0bd8::
 	prompt
 
 UnknownText_0x1c0bee::
-	text "Oak: <PLAYER>!"
+	text "OAK: <PLAYER>!"
 	line "This isn't the"
 	cont "time to use that!"
 	prompt
 
 Text_YouDontHaveAPkmn::
 	text "You don't have a"
-	line "#mon!"
+	line "#MON!"
 	prompt
 
 UnknownText_0x1c0c2e::
@@ -541,16 +532,16 @@ UnknownText_0x1c0c83::
 	done
 
 Text_AreYouABoyOrAreYouAGirl::
-	text "Are you a boy?"
-	line "Or are you a girl?"
+	text "Are you a BOY?"
+	line "Or are you a GIRL?"
 	done
 
 Text_SoYoureABoy::
-	text "So you're a boy?"
+	text "So you're a BOY?"
 	done
 
 Text_SoYoureAGirl::
-	text "So you're a girl?"
+	text "So you're a GIRL?"
 	done
 
 UnknownText_0x1c0cc6::
@@ -612,7 +603,7 @@ UnknownText_0x1c0db8::
 UnknownText_0x1c0dba::
 	text_from_ram wStringBuffer1
 	text " came"
-	line "out of its Egg!@"
+	line "out of its EGG!@"
 	sound_caught_mon
 	text_waitbutton
 	db "@@"
@@ -629,7 +620,7 @@ UnknownText_0x1c0df3::
 	text_from_ram wBreedMon2Nick
 	text ""
 	line "that was left with"
-	cont "the Day-Care Lady."
+	cont "the DAY-CARE LADY."
 	done
 
 UnknownText_0x1c0e24::
@@ -637,7 +628,7 @@ UnknownText_0x1c0e24::
 	text_from_ram wBreedMon1
 	text ""
 	line "that was left with"
-	cont "the Day-Care Man."
+	cont "the DAY-CARE MAN."
 	done
 
 UnknownText_0x1c0e6f::
@@ -669,21 +660,21 @@ UnknownText_0x1c0ec6::
 	prompt
 
 _EmptyMailboxText::
-	text "There's no Mail"
+	text "There's no MAIL"
 	line "here."
 	prompt
 
 ClearedMailPutAwayText::
-	text "The cleared Mail"
+	text "The cleared MAIL"
 	line "was put away."
 	prompt
 
 MailPackFullText::
-	text "The Bag is full."
+	text "The BAG is full."
 	prompt
 
 MailMessageLostText::
-	text "The Mail's message"
+	text "The MAIL's message"
 	line "will be lost. OK?"
 	done
 
@@ -693,36 +684,37 @@ MailAlreadyHoldingItemText::
 	prompt
 
 MailEggText::
-	text "An Egg can't hold"
-	line "any Mail."
+	text "An EGG can't hold"
+	line "any MAIL."
 	prompt
 
 MailMovedFromBoxText::
-	text "The Mail was moved"
-	line "from the Mailbox."
+	text "The MAIL was moved"
+	line "from the MAILBOX."
 	prompt
 
 Text_WasSentToBillsPC::
 	text_from_ram wStringBuffer1
 	text " was"
-	line "sent to Bill's PC."
+	line "sent to BILL's PC."
 	prompt
 
 UnknownText_0x1c1006::
 	text "You gotta have"
-	line "#mon to call!"
+	line "#MON to call!"
 	prompt
 
 UnknownText_0x1c1024::
-	text "What?"
+	text "What do you want"
+	line "to do?"
 	done
 
 UnknownText_0x1c102b::
-	text "There is a #mon"
-	line "holding Mail."
+	text "There is a #MON"
+	line "holding MAIL."
 
 	para "Please remove the"
-	line "Mail."
+	line "MAIL."
 	prompt
 
 UnknownText_0x1c10c0::
@@ -732,7 +724,7 @@ UnknownText_0x1c10c0::
 	prompt
 
 UnknownText_0x1c10cf::
-	text "Switch #mon?"
+	text "Switch #MON?"
 	done
 
 UnknownText_0x1c10dd::
@@ -803,7 +795,7 @@ ContestJudging_ThirdPlaceScoreText::
 
 UnknownText_0x1c1203::
 	text "Let me measure"
-	line "that Magikarp."
+	line "that MAGIKARP."
 
 	para "…Hm, it measures"
 	line "@"
@@ -855,7 +847,7 @@ UnknownText_0x1c12fc::
 
 UnknownText_0x1c1328::
 	text "Bzzzzt! You must"
-	line "have a #mon to"
+	line "have a #MON to"
 	cont "use this!"
 	prompt
 
@@ -919,14 +911,14 @@ _KrissPCNoRoomDepositText::
 UnknownText_0x1c144d::
 	text "<PLAYER> turned on"
 	line "the PC."
-	prompt
+	done
 
 UnknownText_0x1c1462::
 	text "Access whose PC?"
 	done
 
 UnknownText_0x1c1474::
-	text "Bill's PC"
+	text "BILL's PC"
 	line "accessed."
 
 	para "#mon Storage"
@@ -941,10 +933,10 @@ UnknownText_0x1c14a4::
 	prompt
 
 UnknownText_0x1c14d2::
-	text "Prof.Oak's PC"
+	text "PROF.OAK's PC"
 	line "accessed."
 
-	para "#dex Rating"
+	para "#DEX Rating"
 	line "System opened."
 	prompt
 
@@ -955,34 +947,34 @@ UnknownText_0x1c1505::
 
 _OakPCText1::
 	text "Want to get your"
-	line "#dex rated?"
+	line "#DEX rated?"
 	done
 
 _OakPCText2::
-	text "Current #dex"
+	text "Current #DEX"
 	line "completion level:"
 	prompt
 
 _OakPCText3::
 	text_from_ram wStringBuffer3
-	text " #mon seen"
+	text " #MON seen"
 	line "@"
 	text_from_ram wStringBuffer4
-	text " #mon owned"
+	text " #MON owned"
 
-	para "Prof.Oak's"
+	para "PROF.SPRUCE's"
 	line "Rating:"
 	done
 
 _OakRating01::
-	text "Look for #mon"
+	text "Look for #MON"
 	line "in grassy areas!"
 	done
 
 _OakRating02::
 	text "Good. I see you"
 	line "understand how to"
-	cont "use # Balls."
+	cont "use # BALLS."
 	done
 
 _OakRating03::
@@ -995,33 +987,33 @@ _OakRating03::
 
 _OakRating04::
 	text "You need to fill"
-	line "up the #dex."
+	line "up the #DEX."
 
 	para "Catch different"
-	line "kinds of #mon!"
+	line "kinds of #MON!"
 	done
 
 _OakRating05::
 	text "You're trying--I"
 	line "can see that."
 
-	para "Your #dex is"
+	para "Your #DEX is"
 	line "coming together."
 	done
 
 _OakRating06::
 	text "To evolve, some"
-	line "#mon grow,"
+	line "#MON grow,"
 
 	para "others use the"
-	line "effects of Stones."
+	line "effects of STONES."
 	done
 
 _OakRating07::
 	text "Have you gotten a"
-	line "fishing Rod? You"
+	line "fishing ROD? You"
 
-	para "can catch #mon"
+	para "can catch #MON"
 	line "by fishing."
 	done
 
@@ -1032,7 +1024,7 @@ _OakRating08::
 	done
 
 _OakRating09::
-	text "Some #mon only"
+	text "Some #MON only"
 	line "appear during"
 
 	para "certain times of"
@@ -1040,7 +1032,7 @@ _OakRating09::
 	done
 
 _OakRating10::
-	text "Your #dex is"
+	text "Your #DEX is"
 	line "filling up. Keep"
 	cont "up the good work!"
 	done
@@ -1049,27 +1041,29 @@ _OakRating11::
 	text "I'm impressed."
 	line "You're evolving"
 
-	para "#mon, not just"
+	para "#MON, not just"
 	line "catching them."
 	done
 
 _OakRating12::
-	text "Have you met Kurt?"
-	line "His custom Balls"
-	cont "should help."
+	text "Make sure to use"
+	line "different BALLS."
+	
+	para "It should really"
+	line "help."
 	done
 
 _OakRating13::
 	text "Wow. You've found"
-	line "more #mon than"
+	line "over 150?"
 
-	para "the last #dex"
-	line "research project."
+	para "Keep up the good"
+	line "work!"
 	done
 
 _OakRating14::
 	text "Are you trading"
-	line "your #mon?"
+	line "your #MON?"
 
 	para "It's tough to do"
 	line "this alone!"
@@ -1077,13 +1071,13 @@ _OakRating14::
 
 _OakRating15::
 	text "Wow! You've hit"
-	line "200! Your #dex"
+	line "200! Your #DEX"
 	cont "is looking great!"
 	done
 
 _OakRating16::
 	text "You've found so"
-	line "many #mon!"
+	line "many #MON!"
 
 	para "You've really"
 	line "helped my studies!"
@@ -1093,12 +1087,12 @@ _OakRating17::
 	text "Magnificent! You"
 	line "could become a"
 
-	para "#mon professor"
-	line "right now!"
+	para "#MON PROF."
+	line "yourself!"
 	done
 
 _OakRating18::
-	text "Your #dex is"
+	text "Your #DEX is"
 	line "amazing! You're"
 
 	para "ready to turn"
@@ -1107,15 +1101,17 @@ _OakRating18::
 
 _OakRating19::
 	text "Whoa! A perfect"
-	line "#dex! I've"
+	line "#DEX!"
 
-	para "dreamt about this!"
-	line "Congratulations!"
+	para "I've dreamt about"
+	line "this!"
+	
+	para "Congratulations!"
 	done
 
 _OakPCText4::
-	text "The link to Prof."
-	line "Oak's PC closed."
+	text "The link to PROF."
+	line "SPRUCE's PC closed."
 	done
 
 UnknownText_0x1c1a5b::
@@ -1160,9 +1156,8 @@ UnknownText_0x1c1adf::
 	prompt
 
 UnknownText_0x1c1b03::
-	text "Oak: <PLAYER>!"
-	line "This isn't the"
-	cont "time to use that!"
+	text "This isn't the"
+	line "time to use that!"
 	done
 
 UnknownText_0x1c1b2c::
@@ -1190,7 +1185,7 @@ UnknownText_0x1c1b57::
 
 UnknownText_0x1c1b6f::
 	text "Please remove the"
-	line "Mail first."
+	line "MAIL first."
 	prompt
 
 UnknownText_0x1c1b8e::
@@ -1230,12 +1225,12 @@ UnknownText_0x1c1c09::
 	prompt
 
 UnknownText_0x1c1c22::
-	text "The Mail will lose"
+	text "The MAIL will lose"
 	line "its message. OK?"
 	done
 
 UnknownText_0x1c1c47::
-	text "Mail detached from"
+	text "MAIL detached from"
 	line "@"
 	text_from_ram wStringBuffer1
 	text "."
@@ -1243,21 +1238,21 @@ UnknownText_0x1c1c47::
 
 UnknownText_0x1c1c62::
 	text "There's no space"
-	line "for removing Mail."
+	line "for removing MAIL."
 	prompt
 
 UnknownText_0x1c1c86::
 	text "Send the removed"
-	line "Mail to your PC?"
+	line "MAIL to your PC?"
 	done
 
 UnknownText_0x1c1ca9::
-	text "Your PC's Mailbox"
+	text "Your PC's MAILBOX"
 	line "is full."
 	prompt
 
 UnknownText_0x1c1cc4::
-	text "The Mail was sent"
+	text "The MAIL was sent"
 	line "to your PC."
 	prompt
 
@@ -1267,10 +1262,10 @@ UnknownText_0x1c1ce3::
 
 UnknownText_0x1c1cf3::
 	text "An item in your"
-	line "Bag may be"
+	line "BAG may be"
 
 	para "registered for use"
-	line "on Select Button."
+	line "on SELECT BUTTON."
 	done
 
 _InitialOptionsText::

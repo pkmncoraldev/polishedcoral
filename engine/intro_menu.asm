@@ -220,8 +220,7 @@ endr
 	xor a
 	ld [wMonType], a
 
-	ld [wJohtoBadges], a
-	ld [wKantoBadges], a
+	ld [wOnwaBadges], a
 
 	ld [wCoins], a
 	ld [wCoins + 1], a
@@ -381,11 +380,6 @@ Continue: ; 5d65
 	jp CloseWindow
 
 .Check2Pass:
-	call Continue_CheckEGO_ResetInitialOptions
-;	jr nc, .Check3Pass
-;	jp CloseWindow
-
-;.Check3Pass:
 	ld a, $8
 	ld [wMusicFade], a
 	ld a, MUSIC_NONE % $100
@@ -454,15 +448,6 @@ Continue_CheckRTC_RestartClock: ; 5e48
 	xor a
 	ret
 ; 5e5d
-
-Continue_CheckEGO_ResetInitialOptions:
-	ld a, [wInitialOptions]
-	bit RESET_INIT_OPTS, a
-	jr z, .pass
-	farcall SetInitialOptions
-.pass
-	xor a
-	ret
 
 FinishContinueFunction: ; 5e5d
 .loop
@@ -610,7 +595,7 @@ Continue_UnknownGameTime: ; 5f48
 
 Continue_DisplayBadgeCount: ; 5f58
 	push hl
-	ld hl, wJohtoBadges
+	ld hl, wOnwaBadges
 	ld b, 2
 	call CountSetBits
 	pop hl
@@ -654,7 +639,7 @@ ProfSpruceSpeech: ; 0x5f99
 	call FadeToBlack
 	call ClearTileMap
 
-	ld de, MUSIC_POKEMON_CENTER
+	ld de, MUSIC_ROUTE_2
 	call PlayMusic
 
 	
@@ -790,13 +775,13 @@ ProfSpruceSpeech: ; 0x5f99
 .MenuData2Pal: ; 0x48e04
 	db $a1 ; flags
 	db 7 ; items
-	db "Red@"
-	db "Blue@"
-	db "Green@"
-	db "Brown@"
-	db "Purple@"
-	db "Pink@"
-	db "Yellow@"
+	db "RED@"
+	db "BLUE@"
+	db "GREEN@"
+	db "BROWN@"
+	db "PURPLE@"
+	db "TEAL@"
+	db "PINK@"
 	
 .cancel 
 	ld c, 15
@@ -1177,7 +1162,6 @@ StartTitleScreen: ; 6219
 	dw CrystalIntroSequence
 	dw CrystalIntroSequence
 	dw ResetClock
-	dw ResetInitialOptions
 ; 6274
 
 
@@ -1272,7 +1256,7 @@ TitleScreenEntrance: ; 62bc
 ;	ld hl, wStatusFlags
 ;	bit 6, [hl] ; hall of fame
 ;	jr z, .ok
-	ld de, MUSIC_EVOLUTION
+;	ld de, MUSIC_EVOLUTION
 ;.ok
 	call PlayMusic
 
@@ -1340,15 +1324,9 @@ TitleScreenMain: ; 6304
 
 ; The clock can be reset by pressing Down + B.
 	ld a, [hl]
-	and D_DOWN + B_BUTTON
-	cp  D_DOWN + B_BUTTON
+	and D_DOWN + B_BUTTON + SELECT
+	cp  D_DOWN + B_BUTTON + SELECT
 	jr z, .clock_reset
-
-; The early game options can be reset by pressing Left + B.
-	ld a, [hl]
-	and D_LEFT + B_BUTTON
-	cp  D_LEFT + B_BUTTON
-	jr z, .early_option_reset
 
 ; Press Start or A to start the game.
 .check_start
@@ -1392,10 +1370,6 @@ TitleScreenMain: ; 6304
 	ld a, 4
 	jr .done
 
-.early_option_reset
-	ld a, 5
-	jr .done
-
 ; 6375
 
 TitleScreenEnd: ; 6375
@@ -1427,10 +1401,6 @@ ResetClock: ; 6392
 	farcall _ResetClock
 	jp Init
 ; 639b
-
-ResetInitialOptions:
-	farcall _ResetInitialOptions
-	jp Init
 
 Copyright: ; 63e2
 	call ClearTileMap

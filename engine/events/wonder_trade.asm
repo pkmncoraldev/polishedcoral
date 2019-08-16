@@ -66,8 +66,8 @@ WonderTrade::
 	cp b
 	ret nz
 
-	eventflagset EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
-	eventflagset EVENT_CAN_GIVE_GS_BALL_TO_KURT
+;	eventflagset EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
+;	eventflagset EVENT_CAN_GIVE_GS_BALL_TO_KURT
 	ld de, MUSIC_EVOLUTION
 	call PlayMusic
 	ld hl, .Text_WonderTradeForGSBallPichuText
@@ -123,14 +123,14 @@ DoWonderTrade:
 	ld [wPlayerTrademonSpecies], a
 
 	; If you've beaten the Elite Four...
-	eventflagcheck EVENT_BEAT_ELITE_FOUR
-	jr z, .random_trademon
+;	eventflagcheck EVENT_BEAT_ELITE_FOUR
+;	jr z, .random_trademon
 	; ...and haven't gotten the GS Ball Pichu yet...
-	eventflagcheck EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
-	jr nz, .random_trademon
+;	eventflagcheck EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
+;	jr nz, .random_trademon
 	; ...then receive a spiky-eared Pichu holding a GS Ball
-	call GetGSBallPichu
-	jp .compute_trademon_stats
+;	call GetGSBallPichu
+;	jp .compute_trademon_stats
 
 .random_trademon
 	ld a, NUM_POKEMON

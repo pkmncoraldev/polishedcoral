@@ -313,7 +313,7 @@ _GetSpritePalette:: ; 142c4
 	cp MAP_ROUTE_34
 	jr nz, .not_daycare
 	farcall GetMonIconPalette
-	cp PAL_OW_GRAY
+	cp PAL_OW_PINK
 	ld c, PAL_OW_BROWN
 	ret z
 	cp PAL_OW_PINK

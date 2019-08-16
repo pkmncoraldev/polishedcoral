@@ -6,9 +6,11 @@ ENDM
 Flypoints:
 ; landmark, spawn point
 	const_def
-	flypoint SUNSET,    SUNSET_BAY
-	flypoint DAYBREAK,   DAYBREAK_VILLAGE
-	flypoint LASTFLYPOINT,   SUNSET_BAY
+	flypoint SUNSET,			SUNSET_BAY
+	flypoint DAYBREAK,			DAYBREAK_VILLAGE
+	flypoint GLINT,				GLINT_CITY
+	flypoint STARGLOW,			STARGLOW_VALLEY
+	flypoint LASTFLYPOINT,		SUNSET_BAY
 KANTO_FLYPOINT EQU const_value
 	
 	flypoint KANTO,      CINNABAR_LAB

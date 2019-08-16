@@ -6,39 +6,28 @@ Music:
 	dba Music_Mom
 	dba Music_PokemonCenter
 	dba Music_HealPokemon
-	dba Music_ElmsLab
-	dba Music_LookRival
+	dba Music_SpruceLab
 	dba Music_RivalBattle
-	dba Music_AfterTheRivalFight
 	dba Music_TrainerVictory
 	dba Music_Route1
 	dba Music_WildBattle
 	dba Music_SuccessfulCapture
 	dba Music_WildPokemonVictory
 	dba Music_DayBreakVillage
-	dba Music_LookYoungster
 	dba Music_TrainerBattle
-	dba Music_LookSage
 	dba Music_Evolution
 	dba Music_Gym
 	dba Music_GymLeaderVictory
-	dba Music_LookLass
-	dba Music_LookKimonoGirl
-	dba Music_LookMysticalMan
-	dba Music_LookPokemaniac
-	dba Music_LookBeauty
 	dba Music_HallOfFame
-	dba Music_LookHiker
-	dba Music_LookOfficer
 	dba Music_Credits
 	dba Music_PostCredits
 	dba Music_Snes_Kirby
 	dba Music_Snes_Smw
-	dba Music_WildBattle_Shiny
-	dba Music_WildBattle_Shiny_Intro
 	dba Music_DayBreakGrotto
 	dba Music_GymBattle
 	dba Music_GlintCity
+	dba Music_SnareInvasion
+	dba Music_StarglowValley
 	dba Music_Route4
 	dba Music_Coraldev1
 	dba Music_GlintGrove
@@ -48,4 +37,14 @@ Music:
 	dba Music_SnowTown
 	dba Music_Lava
 	dba Music_DodrioRace
+	dba Music_EncounterGymLeader
+	dba Music_RivalEncounter
+	dba Music_AfterTheRivalFight
+	dba Music_YoungsterEncounter
+	dba Music_LassEncounter
+	dba Music_HikerEncounter
+	dba Music_PokemaniacEncounter
+	dba Music_GentlemanEncounter
+	dba Music_HardcoreEncounter
+	dba Music_TeamSnareEncounter
 	

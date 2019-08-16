@@ -5,28 +5,93 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 1 ; warp events
-	warp_event  7,  0, PLAYER_HOUSE_1F, 3
+	db 6 ; warp events
+	warp_event  9,  0, PLAYER_HOUSE_1F, 3
+	warp_event  5, 10, SUNSET_BAY, 1
+	warp_event  7, 10, DAYBREAK_VILLAGE, 1
+	warp_event  9, 10, GLINT_CITY, 1
+	warp_event 11, 10, STARGLOW_VALLEY, 1
+	warp_event 13, 10, ROUTE_6, 1
 
 	db 0 ; coord events
 
-	db 4 ; bg events
-	bg_event  2,  1, SIGNPOST_UP, PlayerHousePC
-	bg_event  3,  1, SIGNPOST_READ, PlayerHouseRadio
-	bg_event  5,  1, SIGNPOST_READ, PlayerHouseBookshelf
-	bg_event  1,  1, SIGNPOST_READ, PlayerHouseCloset
+	db 9 ; bg events
+	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
+	bg_event  5,  1, SIGNPOST_READ, PlayerHouseRadio
+	bg_event  7,  1, SIGNPOST_READ, PlayerHouseBookshelf
+	bg_event  3,  1, SIGNPOST_READ, PlayerHouseCloset
+;	powergap
+	bg_event  2, 10, SIGNPOST_READ, PlayerHouseMap
+	bg_event  4, 10, SIGNPOST_JUMPTEXT, PlayerHouseSunset
+	bg_event  6, 10, SIGNPOST_JUMPTEXT, PlayerHouseDaybreak
+	bg_event  8, 10, SIGNPOST_JUMPTEXT, PlayerHouseGlint
+	bg_event 10, 10, SIGNPOST_JUMPTEXT, PlayerHouseStarglow
+	bg_event 12, 10, SIGNPOST_JUMPTEXT, PlayerHouseLakeOnwa
 
 	db 1 ; object events
-	object_event  4,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, -1
+	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, -1
 
 	const_def 1 ; object constants
 	const PLAYERHOUSE2F_SNES
+	
+PlayerHouseMap:
+	opentext
+	writetext PlayerHouseMapsText
+	waitbutton
+	setflag ENGINE_POKEGEAR
+	setflag ENGINE_PHONE_CARD
+	setflag ENGINE_MAP_CARD
+;	setflag ENGINE_FIRSTBADGE
+;	setflag ENGINE_SECONDBADGE
+;	setflag ENGINE_THIRDBADGE
+;	setflag ENGINE_FOURTHBADGE
+;	setflag ENGINE_SIXTHBADGE
+;	setflag ENGINE_FIFTHBADGE
+;	setflag ENGINE_SEVENTHBADGE
+;	setflag ENGINE_EIGHTHBADGE
+	addcellnum PHONE_MOM
+	setevent EVENT_MOM_GOT_POKEGEAR
+	givepoke CORSOLA, 100
+	giveitem LIBRARY_CARD
+	giveitem POKE_FLUTE
+x = 0
+rept NUM_TMS + NUM_HMS
+	givetmhm x
+x = x + 1
+endr
+	closetext
+	end
+	
+PlayerHouseMapsText:
+	text "TEST EVENT"
+	done
+	
+PlayerHouseSunset:
+	text "SUNSET BAY"
+	done
+	
+PlayerHouseDaybreak:
+	text "DAYBREAK VILLAGE"
+	done
+	
+PlayerHouseGlint:
+	text "GLINT CITY"
+	done
+	
+PlayerHouseStarglow:
+	text "STARGLOW VALLEY"
+	done
+	
+PlayerHouseLakeOnwa:
+	text "LAKE ONWA"
+	done
 	
 PlayerHouse2FInitializeRoom:
 ;	special ToggleDecorationsVisibility
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	checkevent EVENT_INITIALIZED_EVENTS
 	iftrue .SkipInizialization
+	callasm FixPlayerPalKrisHouse
 	jumpstd initializeevents
 	return
 
@@ -48,9 +113,9 @@ GameConsole:
 	waitbutton
 	closetext
 	special RestartMapMusic
-	giveitem BICYCLE
+	giveitem ITEMFINDER
 	end
-
+	
 PlayerHouseRadio:
 
 if DEF(DEBUG)
@@ -100,14 +165,14 @@ endr
 	givecoins 50000
 	loadvar wBattlePoints, 250
 	; all badges
-	setflag ENGINE_ZEPHYRBADGE
-	setflag ENGINE_HIVEBADGE
-	setflag ENGINE_PLAINBADGE
-	setflag ENGINE_FOGBADGE
-	setflag ENGINE_STORMBADGE
-	setflag ENGINE_MINERALBADGE
-	setflag ENGINE_GLACIERBADGE
-	setflag ENGINE_RISINGBADGE
+	setflag ENGINE_FIRSTBADGE
+	setflag ENGINE_SECONDBADGE
+	setflag ENGINE_THIRDBADGE
+	setflag ENGINE_FOURTHBADGE
+	setflag ENGINE_SIXTHBADGE
+	setflag ENGINE_FIFTHBADGE
+	setflag ENGINE_SEVENTHBADGE
+	setflag ENGINE_EIGHTHBADGE
 	setflag ENGINE_BOULDERBADGE
 	setflag ENGINE_CASCADEBADGE
 	setflag ENGINE_THUNDERBADGE
@@ -138,31 +203,9 @@ endr
 	clearevent EVENT_BATTLE_TOWER_CLOSED
 	; fly anywhere
 	setflag ENGINE_FLYPOINT_SUNSET
-	setflag ENGINE_FLYPOINT_CHERRYGROVE
-	setflag ENGINE_FLYPOINT_VIOLET
-	setflag ENGINE_FLYPOINT_UNION_CAVE
-	setflag ENGINE_FLYPOINT_AZALEA
-	setflag ENGINE_FLYPOINT_GOLDENROD
-	setflag ENGINE_FLYPOINT_ECRUTEAK
-	setflag ENGINE_FLYPOINT_OLIVINE
-	setflag ENGINE_FLYPOINT_CIANWOOD
-	setflag ENGINE_FLYPOINT_MAHOGANY
-	setflag ENGINE_FLYPOINT_LAKE_OF_RAGE
-	setflag ENGINE_FLYPOINT_BLACKTHORN
-	setflag ENGINE_FLYPOINT_SILVER_CAVE
-	setflag ENGINE_FLYPOINT_INDIGO_PLATEAU
-	setflag ENGINE_FLYPOINT_PALLET
-	setflag ENGINE_FLYPOINT_VIRIDIAN
-	setflag ENGINE_FLYPOINT_PEWTER
-	setflag ENGINE_FLYPOINT_MT_MOON
-	setflag ENGINE_FLYPOINT_CERULEAN
-	setflag ENGINE_FLYPOINT_VERMILION
-	setflag ENGINE_FLYPOINT_CELADON
-	setflag ENGINE_FLYPOINT_ROCK_TUNNEL
-	setflag ENGINE_FLYPOINT_LAVENDER
-	setflag ENGINE_FLYPOINT_FUCHSIA
-	setflag ENGINE_FLYPOINT_SAFFRON
-	setflag ENGINE_FLYPOINT_CINNABAR
+	setflag ENGINE_FLYPOINT_DAYBREAK
+	setflag ENGINE_FLYPOINT_GLINT
+	setflag ENGINE_FLYPOINT_STARGLOW
 	; magnet train works
 	setevent EVENT_RESTORED_POWER_TO_KANTO
 	; post-e4
@@ -268,6 +311,7 @@ PlayerHouseCloset:
 	loadmenu .PlayerHouseChangeColorMenuData
 	verticalmenu
 	closewindow
+	iffalse .end
 	pause 10
 	applymovement PLAYER, ChangeColorMovement1
 	playsound SFX_TWINKLE
@@ -290,15 +334,15 @@ PlayerHouseCloset:
 ; 0x48e04
 
 .MenuData2PalKrisHouse: ; 0x48e04
-	db $a1 ; flags
+	db $80 ; flags
 	db 7 ; items
-	db "Red@"
-	db "Blue@"
-	db "Green@"
-	db "Brown@"
-	db "Purple@"
-	db "Pink@"
-	db "Yellow@"
+	db "RED@"
+	db "BLUE@"
+	db "GREEN@"
+	db "BROWN@"
+	db "PURPLE@"
+	db "TEAL@"
+	db "PINK@"
 
 ChangeColorMovement1:
 	turn_head_right
@@ -381,9 +425,16 @@ KrisRadioText4:
 	line "#MON CHANNEL…"
 	done
 
+FixPlayerPalKrisHouse:
+;	ld a, [wPlayerPalette]
+;	add $1
+;	ld [wPlayerInitialPalette], a
+	ret
+	
 SetPlayerPalKrisHouse:
 	ld a, [wMenuCursorY] ; 1 - 8
 	sub $1
 	ld [wPlayerPalette], a
+	add $1	;prevents respawn as another color when fainting. why?????
 	ld [wPlayerInitialPalette], a
 	ret

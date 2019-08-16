@@ -174,5 +174,9 @@ SpecialsPointers::
 	add_special Special_HiddenPowerGuru
 	add_special Special_GetOvercastIndex
 	add_special Special_SetCopycatPalette
+	
+; Coral
+	add_special Special_StopRunning
+	add_special SpecialGiveShinyTogepi
 
 	add_special SpecialNone

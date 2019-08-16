@@ -108,7 +108,7 @@ ItemNameOrder:
 	db NAM_COIN_CASE    ; 29
 	db NAM_ITEMFINDER   ; 5d
 	db NAM_EXP_SHARE    ; 3d
-	db NAM_MYSTERY_EGG  ; 8b
+	db NAM_LIBRARY_CARD	; 8b
 	db NAM_SQUIRTBOTTLE ; df
 	db NAM_SECRETPOTION ; cc
 	db NAM_RED_SCALE    ; bf

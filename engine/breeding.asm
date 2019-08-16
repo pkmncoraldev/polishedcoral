@@ -266,11 +266,11 @@ HatchEggs: ; 16f70 (5:6f70)
 	and $ff - IS_EGG_MASK
 	ld [hl], a
 
-	ld a, [wCurPartySpecies]
-	cp TOGEPI
-	jr nz, .nottogepi
-	eventflagset EVENT_TOGEPI_HATCHED
-.nottogepi
+;	ld a, [wCurPartySpecies]
+;	cp TOGEPI
+;	jr nz, .nottogepi
+;	eventflagset EVENT_TOGEPI_HATCHED
+;.nottogepi
 
 	pop de
 

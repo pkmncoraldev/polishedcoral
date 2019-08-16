@@ -90,8 +90,8 @@ ItemDescriptions:
 	dw CoinCaseDesc
 	dw ItemfinderDesc
 	dw ExpShareDesc
-	dw MysteryEggDesc
-	dw SquirtBottleDesc
+	dw LibraryCardDesc
+	dw PokeFluteDesc
 	dw SecretPotionDesc
 	dw RedScaleDesc
 	dw CardKeyDesc
@@ -593,13 +593,13 @@ ExpShareDesc:
 	db   "Shares battle EXP."
 	next "POINTS. (Hold)@"
 
-MysteryEggDesc:
-	db   "An EGG obtained"
-	next "from MR.#MON.@"
+LibraryCardDesc:
+	db   "Allows entry to"
+	next "the GLINT GYM.@"
 
-SquirtBottleDesc:
-	db   "A bottle used for"
-	next "watering plants.@"
+PokeFluteDesc:
+	db   "A flute that"
+	next "awakens #MON.@"
 
 SecretPotionDesc:
 	db   "Fully heals any"

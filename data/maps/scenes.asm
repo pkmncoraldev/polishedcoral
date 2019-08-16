@@ -12,4 +12,13 @@ MapTriggers::
 	scene_var SUNSET_LIGHTHOUSE,     	       	      wSunsetLighthouseTrigger
 	scene_var ROUTE_1_GATE,							  wRoute1GateTrigger
 	scene_var DAYBREAK_VILLAGE,						  wDaybreakVillageTrigger
+	scene_var GLINT_GROVE_ENTRANCE,					  wGlintGroveEntranceTrigger
+	scene_var GLINT_GROVE,							  wGlintGroveTrigger
+	scene_var GLINT_APARTMENT_LEFT_2F,				  wGlintApartmentLeft2FTrigger
+	scene_var GLINT_GYM,							  wGlintGymTrigger
+	scene_var STARGLOW_CAVERN_1F,					  wStarglowCavern1F
+	scene_var STARGLOW_VALLEY,						  wStarglowValley
+	scene_var STARGLOW_TOGEPI_HOUSE,				  wStarglowTogepiHouse
+	scene_var STARGLOW_POKECENTER,					  wStarglowPokeCenter
+	scene_var ROUTE_6,							  	  wRoute6Trigger
 	db -1

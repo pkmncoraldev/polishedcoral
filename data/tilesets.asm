@@ -178,18 +178,30 @@ INCLUDE "data/tilesets/lab_collision.asm"
 SECTION "Tileset Data - cave", ROMX
 
 TilesetCaveGFX::
+TilesetStarglowCavernGFX::
+TilesetLavaCaveGFX::
 INCBIN "gfx/tilesets/cave.2bpp.lz"
 
 TilesetCaveGFX2 EQU 0
+TilesetStarglowCavernGFX2 EQU 0
+TilesetLavaCaveGFX2 EQU 0
 
 TilesetCaveMeta::
+TilesetStarglowCavernMeta::
+TilesetLavaCaveMeta::
 INCBIN "data/tilesets/cave_metatiles.bin.lz"
 
 TilesetCaveAttr::
+TilesetLavaCaveAttr::
 INCBIN "data/tilesets/cave_attributes.bin.lz"
 
 TilesetCaveColl::
+TilesetStarglowCavernColl:
+TilesetLavaCaveColl::
 INCLUDE "data/tilesets/cave_collision.asm"
+
+TilesetStarglowCavernAttr::
+INCBIN "data/tilesets/starglow_cavern_attributes.bin.lz"
 
 
 SECTION "Tileset Data - grove", ROMX
@@ -209,6 +221,233 @@ TilesetGroveColl::
 INCLUDE "data/tilesets/grove_collision.asm"
 
 
+SECTION "Tileset Data - mart", ROMX
+
+TilesetMartGFX::
+INCBIN "gfx/tilesets/mart.2bpp.lz"
+
+TilesetMartGFX2 EQU 0
+
+TilesetMartMeta::
+INCBIN "data/tilesets/mart_metatiles.bin.lz"
+
+TilesetMartAttr::
+INCBIN "data/tilesets/mart_attributes.bin.lz"
+
+TilesetMartColl::
+INCLUDE "data/tilesets/mart_collision.asm"
+
+
+SECTION "Tileset Data - mountain", ROMX
+
+TilesetMountainGFX::
+INCBIN "gfx/tilesets/mountain.2bpp.lz"
+
+TilesetMountainGFX2 EQU 0
+
+TilesetMountainMeta::
+INCBIN "data/tilesets/mountain_metatiles.bin.lz"
+
+TilesetMountainAttr::
+INCBIN "data/tilesets/mountain_attributes.bin.lz"
+
+TilesetMountainColl::
+INCLUDE "data/tilesets/mountain_collision.asm"
+
+
+SECTION "Tileset Data - jungle", ROMX
+
+TilesetJungleGFX::
+INCBIN "gfx/tilesets/jungle.2bpp.lz"
+
+TilesetJungleGFX2 EQU 0
+
+TilesetJungleMeta::
+INCBIN "data/tilesets/jungle_metatiles.bin.lz"
+
+TilesetJungleAttr::
+INCBIN "data/tilesets/jungle_attributes.bin.lz"
+
+TilesetJungleColl::
+INCLUDE "data/tilesets/jungle_collision.asm"
+
+
+SECTION "Tileset Data - spooky", ROMX
+
+TilesetSpookyGFX::
+INCBIN "gfx/tilesets/spooky.2bpp.lz"
+
+TilesetSpookyGFX2 EQU 0
+
+TilesetSpookyMeta::
+INCBIN "data/tilesets/spooky_metatiles.bin.lz"
+
+TilesetSpookyAttr::
+INCBIN "data/tilesets/spooky_attributes.bin.lz"
+
+TilesetSpookyColl::
+INCLUDE "data/tilesets/spooky_collision.asm"
+
+
+SECTION "Tileset Data - haunted", ROMX
+
+TilesetHauntedGFX::
+TilesetHauntedTVGFX::
+INCBIN "gfx/tilesets/haunted.2bpp.lz"
+
+TilesetHauntedGFX2 EQU 0
+
+TilesetHauntedTVGFX2 EQU 0
+
+TilesetHauntedMeta::
+TilesetHauntedTVMeta::
+INCBIN "data/tilesets/haunted_metatiles.bin.lz"
+
+TilesetHauntedAttr::
+TilesetHauntedTVAttr::
+INCBIN "data/tilesets/haunted_attributes.bin.lz"
+
+TilesetHauntedColl::
+TilesetHauntedTVColl::
+INCLUDE "data/tilesets/haunted_collision.asm"
+
+
+SECTION "Tileset Data - ranch", ROMX
+
+TilesetRanchGFX::
+INCBIN "gfx/tilesets/ranch.2bpp.lz"
+
+TilesetRanchGFX2 EQU 0
+
+TilesetRanchMeta::
+INCBIN "data/tilesets/ranch_metatiles.bin.lz"
+
+TilesetRanchAttr::
+INCBIN "data/tilesets/ranch_attributes.bin.lz"
+
+TilesetRanchColl::
+INCLUDE "data/tilesets/ranch_collision.asm"
+
+
+SECTION "Tileset Data - luster", ROMX
+
+TilesetLusterGFX::
+INCBIN "gfx/tilesets/luster.2bpp.lz"
+
+TilesetLusterGFX2 EQU 0
+
+TilesetLusterMeta::
+INCBIN "data/tilesets/luster_metatiles.bin.lz"
+
+TilesetLusterAttr::
+INCBIN "data/tilesets/luster_attributes.bin.lz"
+
+TilesetLusterColl::
+INCLUDE "data/tilesets/luster_collision.asm"
+
+
+SECTION "Tileset Data - snow", ROMX
+
+TilesetSnowGFX::
+INCBIN "gfx/tilesets/snow.2bpp.lz"
+
+TilesetSnowGFX2 EQU 0
+
+TilesetSnowMeta::
+INCBIN "data/tilesets/snow_metatiles.bin.lz"
+
+TilesetSnowAttr::
+INCBIN "data/tilesets/snow_attributes.bin.lz"
+
+TilesetSnowColl::
+INCLUDE "data/tilesets/snow_collision.asm"
+
+
+SECTION "Tileset Data - park", ROMX
+
+TilesetParkGFX::
+INCBIN "gfx/tilesets/park.2bpp.lz"
+
+TilesetParkGFX2 EQU 0
+
+TilesetParkMeta::
+INCBIN "data/tilesets/park_metatiles.bin.lz"
+
+TilesetParkAttr::
+INCBIN "data/tilesets/park_attributes.bin.lz"
+
+TilesetParkColl::
+INCLUDE "data/tilesets/park_collision.asm"
+
+
+SECTION "Tileset Data - mall1", ROMX
+
+TilesetMall1GFX::
+INCBIN "gfx/tilesets/mall1.2bpp.lz"
+
+TilesetMall1GFX2 EQU 0
+
+TilesetMall1Meta::
+INCBIN "data/tilesets/mall1_metatiles.bin.lz"
+
+TilesetMall1Attr::
+INCBIN "data/tilesets/mall1_attributes.bin.lz"
+
+TilesetMall1Coll::
+INCLUDE "data/tilesets/mall1_collision.asm"
+
+
+SECTION "Tileset Data - mall2", ROMX
+
+TilesetMall2GFX::
+INCBIN "gfx/tilesets/mall2.2bpp.lz"
+
+TilesetMall2GFX2 EQU 0
+
+TilesetMall2Meta::
+INCBIN "data/tilesets/mall2_metatiles.bin.lz"
+
+TilesetMall2Attr::
+INCBIN "data/tilesets/mall2_attributes.bin.lz"
+
+TilesetMall2Coll::
+INCLUDE "data/tilesets/mall2_collision.asm"
+
+
+SECTION "Tileset Data - sewer", ROMX
+
+TilesetSewerGFX::
+INCBIN "gfx/tilesets/sewer.2bpp.lz"
+
+TilesetSewerGFX2 EQU 0
+
+TilesetSewerMeta::
+INCBIN "data/tilesets/sewer_metatiles.bin.lz"
+
+TilesetSewerAttr::
+INCBIN "data/tilesets/sewer_attributes.bin.lz"
+
+TilesetSewerColl::
+INCLUDE "data/tilesets/sewer_collision.asm"
+
+
+SECTION "Tileset Data - train", ROMX
+
+TilesetTrainGFX::
+INCBIN "gfx/tilesets/train.2bpp.lz"
+
+TilesetTrainGFX2 EQU 0
+
+TilesetTrainMeta::
+INCBIN "data/tilesets/train_metatiles.bin.lz"
+
+TilesetTrainAttr::
+INCBIN "data/tilesets/train_attributes.bin.lz"
+
+TilesetTrainColl::
+INCLUDE "data/tilesets/train_collision.asm"
+
+
 SECTION "Tileset Headers", ROMX
 
 tileset: macro
@@ -225,9 +464,25 @@ Tilesets::
 	tileset TilesetHouse1
 	tileset TilesetHouse2
 	tileset TilesetPokeCenter
+	tileset TilesetMart
 	tileset TilesetCafe
 	tileset TilesetLighthouse
 	tileset TilesetGate
 	tileset TilesetLab
 	tileset TilesetCave
+	tileset TilesetStarglowCavern
+	tileset TilesetLavaCave
 	tileset TilesetGrove
+	tileset TilesetMountain
+	tileset TilesetJungle
+	tileset TilesetSpooky
+	tileset TilesetHaunted
+	tileset TilesetHauntedTV
+	tileset TilesetRanch
+	tileset TilesetLuster
+	tileset TilesetSnow
+	tileset TilesetPark
+	tileset TilesetMall1
+	tileset TilesetMall2
+	tileset TilesetSewer
+	tileset TilesetTrain

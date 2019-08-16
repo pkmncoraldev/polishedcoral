@@ -220,7 +220,7 @@ BattleAnimations::
 	dw BattleAnim_BugBuzz
 	dw BattleAnim_Safeguard
 	dw BattleAnim_PainSplit
-	dw BattleAnim_SacredFire
+	dw BattleAnim_FakeOut
 	dw BattleAnim_Magnitude
 	dw BattleAnim_Dynamicpunch
 	dw BattleAnim_Megahorn
@@ -4195,28 +4195,15 @@ BattleAnim_PainSplit:
 	anim_wait 1
 	anim_ret
 
-BattleAnim_SacredFire:
-	anim_1gfx ANIM_GFX_FIRE
-	anim_bgeffect ANIM_BG_06, $0, $2, $0
-	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
-.loop
-	anim_sound 0, 0, SFX_EMBER
-	anim_obj ANIM_OBJ_80,   6, 0,  13, 0, $0
+BattleAnim_FakeOut:
+	anim_1gfx ANIM_GFX_OBJECTS
+	anim_obj ANIM_OBJ_99,   -15, 0,  5, 0, $a0
+	anim_obj ANIM_OBJ_99,   -15, 0,  5, 0, $20
 	anim_wait 8
-	anim_loop 8, .loop
-	anim_wait 96
-	anim_call BattleAnim_FollowEnemyFeet_0
-	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
-	anim_wait 4
-	anim_sound 0, 1, SFX_EMBER
-	anim_obj ANIM_OBJ_0F, -15, 0,   6, 0, $1
-	anim_obj ANIM_OBJ_0F, -15, 0,   6, 0, $4
-	anim_obj ANIM_OBJ_0F, -15, 0,   6, 0, $5
-	anim_wait 8
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
-	anim_wait 4
-	anim_incobj  9
-	anim_wait 8
+	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_obj ANIM_OBJ_9A,   -15, 0,  4, 0, $2c
+	anim_wait 32
 	anim_ret
 
 BattleAnim_FlareBlitz:

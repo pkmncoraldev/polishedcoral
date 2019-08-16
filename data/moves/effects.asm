@@ -63,6 +63,7 @@ XScissor:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 SuckerPunch:
@@ -85,6 +86,7 @@ SuckerPunch:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 LeechHit:
@@ -113,6 +115,7 @@ DrainPunch:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 UTurn:
@@ -137,6 +140,7 @@ SwitchHit:
 	posthiteffects
 	pickpocket
 	switchout
+	cantusefakeout
 	endmove
 
 
@@ -173,6 +177,7 @@ FuryStrikes:
 	endloop
 	pickpocket
 	raisesub
+	cantusefakeout
 	endmove
 
 RecoilHit:
@@ -200,6 +205,7 @@ BraveBird:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 FlinchHit:
@@ -235,6 +241,7 @@ ZenHeadbutt:
 	posthiteffects
 	flinchtarget
 	pickpocket
+	cantusefakeout
 	endmove
 
 PoisonHit:
@@ -262,6 +269,7 @@ GunkShot:
 	posthiteffects
 	poisontarget
 	pickpocket
+	cantusefakeout
 	endmove
 
 BurnHit:
@@ -289,6 +297,7 @@ FireBlast:
 	posthiteffects
 	burntarget
 	pickpocket
+	cantusefakeout
 	endmove
 
 ParalyzeHit:
@@ -319,6 +328,7 @@ ZapCannon:
 	posthiteffects
 	paralyzetarget
 	pickpocket
+	cantusefakeout
 	endmove
 
 BodySlam:
@@ -343,6 +353,7 @@ BodySlam:
 	posthiteffects
 	paralyzetarget
 	pickpocket
+	cantusefakeout
 	endmove
 
 SleepHit:
@@ -366,6 +377,7 @@ SleepHit:
 	posthiteffects
 	sleeptarget
 	pickpocket
+	cantusefakeout
 	endmove
 
 FreezeHit:
@@ -392,6 +404,7 @@ Blizzard:
 	posthiteffects
 	freezetarget
 	pickpocket
+	cantusefakeout
 	endmove
 
 ConfuseHit:
@@ -421,6 +434,7 @@ Hurricane:
 	posthiteffects
 	confusetarget
 	pickpocket
+	cantusefakeout
 	endmove
 
 AttackUpHit:
@@ -446,6 +460,7 @@ MetalClaw:
 	attackup
 	statupmessage
 	pickpocket
+	cantusefakeout
 	endmove
 
 DefenseUpHit:
@@ -471,6 +486,7 @@ SteelWing:
 	defenseup
 	statupmessage
 	pickpocket
+	cantusefakeout
 	endmove
 
 AllUpHit:
@@ -495,6 +511,7 @@ Ancientpower:
 	posthiteffects
 	allstatsup
 	pickpocket
+	cantusefakeout
 	endmove
 
 AttackDownHit:
@@ -520,6 +537,7 @@ AuroraBeam:
 	attackdown
 	statdownmessage
 	pickpocket
+	cantusefakeout
 	endmove
 
 DefenseDownHit:
@@ -546,6 +564,7 @@ IronTail:
 	defensedown
 	statdownmessage
 	pickpocket
+	cantusefakeout
 	endmove
 
 BrickBreak:
@@ -572,6 +591,7 @@ BrickBreak:
 	defensedown
 	statdownmessage
 	pickpocket
+	cantusefakeout
 	endmove
 
 SpeedDownHit:
@@ -599,6 +619,7 @@ Bulldoze:
 	speeddown
 	statdownmessage
 	pickpocket
+	cantusefakeout
 	endmove
 
 SpecialAttackDownHit:
@@ -624,6 +645,7 @@ Moonblast:
 	specialattackdown
 	statdownmessage
 	pickpocket
+	cantusefakeout
 	endmove
 
 SpecialDefenseDownHit:
@@ -656,6 +678,7 @@ ShadowBall:
 	specialdefensedown
 	statdownmessage
 	pickpocket
+	cantusefakeout
 	endmove
 
 AccuracyDownHit:
@@ -682,6 +705,7 @@ Octazooka:
 	accuracydown
 	statdownmessage
 	pickpocket
+	cantusefakeout
 	endmove
 
 EvasionDownHit:
@@ -706,6 +730,7 @@ EvasionDownHit:
 	evasiondown
 	statdownmessage
 	pickpocket
+	cantusefakeout
 	endmove
 
 CloseCombat:
@@ -729,6 +754,7 @@ CloseCombat:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 StaticDamage:
@@ -750,6 +776,7 @@ SuperFang:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 DoPoison:
@@ -764,6 +791,7 @@ Poisonpowder:
 	stab
 	checksafeguard
 	poison
+	cantusefakeout
 	endmove
 
 Toxic:
@@ -776,6 +804,7 @@ Toxic:
 	stab
 	checksafeguard
 	toxic
+	cantusefakeout
 	endmove
 
 DoBurn:
@@ -789,6 +818,7 @@ WillOWisp:
 	stab
 	checksafeguard
 	burn
+	cantusefakeout
 	endmove
 
 DoParalyze:
@@ -804,6 +834,7 @@ Glare:
 	bounceback
 	checksafeguard
 	paralyze
+	cantusefakeout
 	endmove
 
 DoSleep:
@@ -820,6 +851,7 @@ Spore:
 	bounceback
 	checksafeguard
 	sleeptarget
+	cantusefakeout
 	endmove
 
 DoFreeze:
@@ -831,6 +863,7 @@ DoFreeze:
 	bounceback
 	checksafeguard
 	freezetarget
+	cantusefakeout
 	endmove
 
 DoConfuse:
@@ -845,6 +878,7 @@ SweetKiss:
 	bounceback
 	checksafeguard
 	confuse
+	cantusefakeout
 	endmove
 
 AttackUp:
@@ -857,6 +891,7 @@ AttackUp:
 	raisesub
 	statupmessage
 	statupfailtext
+	cantusefakeout
 	endmove
 
 DefenseUp:
@@ -869,6 +904,7 @@ DefenseUp:
 	raisesub
 	statupmessage
 	statupfailtext
+	cantusefakeout
 	endmove
 
 SpeedUp:
@@ -881,6 +917,7 @@ SpeedUp:
 	raisesub
 	statupmessage
 	statupfailtext
+	cantusefakeout
 	endmove
 
 SpecialAttackUp:
@@ -893,6 +930,7 @@ SpecialAttackUp:
 	raisesub
 	statupmessage
 	statupfailtext
+	cantusefakeout
 	endmove
 
 SpecialDefenseUp:
@@ -905,6 +943,7 @@ SpecialDefenseUp:
 	raisesub
 	statupmessage
 	statupfailtext
+	cantusefakeout
 	endmove
 
 AccuracyUp:
@@ -917,6 +956,7 @@ AccuracyUp:
 	raisesub
 	statupmessage
 	statupfailtext
+	cantusefakeout
 	endmove
 
 EvasionUp:
@@ -931,6 +971,7 @@ DoubleTeam:
 	raisesub
 	statupmessage
 	statupfailtext
+	cantusefakeout
 	endmove
 
 CriticalUp:
@@ -939,6 +980,7 @@ FocusEnergy:
 	usedmovetext
 	doturn
 	focusenergy
+	cantusefakeout
 	endmove
 
 AttackUp2:
@@ -952,6 +994,7 @@ SwordsDance:
 	raisesub
 	statupmessage
 	statupfailtext
+	cantusefakeout
 	endmove
 
 DefenseUp2:
@@ -965,6 +1008,7 @@ Barrier:
 	raisesub
 	statupmessage
 	statupfailtext
+	cantusefakeout
 	endmove
 
 SpeedUp2:
@@ -978,6 +1022,7 @@ Agility:
 	raisesub
 	statupmessage
 	statupfailtext
+	cantusefakeout
 	endmove
 
 SpecialAttackUp2:
@@ -991,6 +1036,7 @@ NastyPlot:
 	raisesub
 	statupmessage
 	statupfailtext
+	cantusefakeout
 	endmove
 
 SpecialDefenseUp2:
@@ -1004,6 +1050,7 @@ Amnesia:
 	raisesub
 	statupmessage
 	statupfailtext
+	cantusefakeout
 	endmove
 
 AccuracyUp2:
@@ -1016,6 +1063,7 @@ AccuracyUp2:
 	raisesub
 	statupmessage
 	statupfailtext
+	cantusefakeout
 	endmove
 
 EvasionUp2:
@@ -1029,6 +1077,7 @@ Minimize:
 	raisesub
 	statupmessage
 	statupfailtext
+	cantusefakeout
 	endmove
 
 BulkUp:
@@ -1036,6 +1085,7 @@ BulkUp:
 	usedmovetext
 	doturn
 	bulkup
+	cantusefakeout
 	endmove
 
 CalmMind:
@@ -1043,6 +1093,7 @@ CalmMind:
 	usedmovetext
 	doturn
 	calmmind
+	cantusefakeout
 	endmove
 
 Growth:
@@ -1050,6 +1101,7 @@ Growth:
 	usedmovetext
 	doturn
 	growth
+	cantusefakeout
 	endmove
 
 DragonDance:
@@ -1057,6 +1109,7 @@ DragonDance:
 	usedmovetext
 	doturn
 	dragondance
+	cantusefakeout
 	endmove
 
 HoneClaws:
@@ -1064,6 +1117,7 @@ HoneClaws:
 	usedmovetext
 	doturn
 	honeclaws
+	cantusefakeout
 	endmove
 
 AttackDown:
@@ -1080,6 +1134,7 @@ Growl:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	cantusefakeout
 	endmove
 
 DefenseDown:
@@ -1096,6 +1151,7 @@ Leer:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	cantusefakeout
 	endmove
 
 SpeedDown:
@@ -1112,6 +1168,7 @@ StringShot:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	cantusefakeout
 	endmove
 
 SpecialAttackDown:
@@ -1127,6 +1184,7 @@ SpecialAttackDown:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	cantusefakeout
 	endmove
 
 SpecialDefenseDown:
@@ -1142,6 +1200,7 @@ SpecialDefenseDown:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	cantusefakeout
 	endmove
 
 AccuracyDown:
@@ -1159,6 +1218,7 @@ Flash:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	cantusefakeout
 	endmove
 
 EvasionDown:
@@ -1174,6 +1234,7 @@ EvasionDown:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	cantusefakeout
 	endmove
 
 AttackDown2:
@@ -1190,6 +1251,7 @@ Charm:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	cantusefakeout
 	endmove
 
 DefenseDown2:
@@ -1206,6 +1268,7 @@ Screech:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	cantusefakeout
 	endmove
 
 SpeedDown2:
@@ -1222,6 +1285,7 @@ ScaryFace:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	cantusefakeout
 	endmove
 
 SpecialAttackDown2:
@@ -1237,6 +1301,7 @@ SpecialAttackDown2:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	cantusefakeout
 	endmove
 
 SpecialDefenseDown2:
@@ -1252,6 +1317,7 @@ SpecialDefenseDown2:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	cantusefakeout
 	endmove
 
 AccuracyDown2:
@@ -1267,6 +1333,7 @@ AccuracyDown2:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	cantusefakeout
 	endmove
 
 EvasionDown2:
@@ -1282,6 +1349,7 @@ EvasionDown2:
 	raisesub
 	statdownmessage
 	statdownfailtext
+	cantusefakeout
 	endmove
 
 ResetStats:
@@ -1290,6 +1358,7 @@ Haze:
 	usedmovetext
 	doturn
 	resetstats
+	cantusefakeout
 	endmove
 
 Safeguard:
@@ -1297,6 +1366,7 @@ Safeguard:
 	usedmovetext
 	doturn
 	safeguard
+	cantusefakeout
 	endmove
 
 Screen:
@@ -1306,6 +1376,7 @@ LightScreen:
 	usedmovetext
 	doturn
 	screen
+	cantusefakeout
 	endmove
 
 Heal:
@@ -1317,6 +1388,7 @@ MilkDrink:
 	usedmovetext
 	doturn
 	heal
+	cantusefakeout
 	endmove
 
 Roost:
@@ -1325,6 +1397,7 @@ Roost:
 	doturn
 	heal
 	roost
+	cantusefakeout
 	endmove
 
 Rampage:
@@ -1352,6 +1425,7 @@ Outrage:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 Trap:
@@ -1379,6 +1453,7 @@ Whirlpool:
 	posthiteffects
 	traptarget
 	pickpocket
+	cantusefakeout
 	endmove
 
 Selfdestruct:
@@ -1401,6 +1476,7 @@ Explosion:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	cantusefakeout
 	endmove
 
 DreamEater:
@@ -1423,6 +1499,7 @@ DreamEater:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 Roar:
@@ -1433,6 +1510,7 @@ Roar:
 	checkhit
 	bounceback
 	forceswitch
+	cantusefakeout
 	endmove
 
 SkillSwap:
@@ -1441,6 +1519,7 @@ SkillSwap:
 	doturn
 	pressure
 	skillswap
+	cantusefakeout
 	endmove
 
 Trick:
@@ -1450,6 +1529,7 @@ Trick:
 	pressure
 	checkhit
 	trick
+	cantusefakeout
 	endmove
 
 Conversion:
@@ -1457,6 +1537,7 @@ Conversion:
 	usedmovetext
 	doturn
 	conversion
+	cantusefakeout
 	endmove
 
 PayDay:
@@ -1479,6 +1560,7 @@ PayDay:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 KnockOff:
@@ -1502,6 +1584,7 @@ KnockOff:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 BugBite:
@@ -1524,6 +1607,7 @@ BugBite:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	cantusefakeout
 	endmove
 
 TriAttack:
@@ -1546,6 +1630,7 @@ TriAttack:
 	posthiteffects
 	tristatuschance
 	pickpocket
+	cantusefakeout
 	endmove
 
 Transform:
@@ -1554,6 +1639,7 @@ Transform:
 	doturn
 	pressure
 	transform
+	cantusefakeout
 	endmove
 
 Substitute:
@@ -1561,6 +1647,7 @@ Substitute:
 	usedmovetext
 	doturn
 	substitute
+	cantusefakeout
 	endmove
 
 HyperBeam:
@@ -1584,6 +1671,7 @@ GigaImpact:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 Rage:
@@ -1606,6 +1694,7 @@ Rage:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 Metronome:
@@ -1613,6 +1702,7 @@ Metronome:
 	usedmovetext
 	doturn
 	metronome
+	cantusefakeout
 	endmove
 
 LeechSeed:
@@ -1623,6 +1713,7 @@ LeechSeed:
 	checkhit
 	bounceback
 	leechseed
+	cantusefakeout
 	endmove
 
 Splash:
@@ -1630,6 +1721,7 @@ Splash:
 	usedmovetext
 	doturn
 	splash
+	cantusefakeout
 	endmove
 
 Disable:
@@ -1640,6 +1732,7 @@ Disable:
 	checkhit
 	bounceback
 	disable
+	cantusefakeout
 	endmove
 
 Counter:
@@ -1652,6 +1745,7 @@ Counter:
 	checkfaint
 	postfainteffects
 	posthiteffects
+	cantusefakeout
 	endmove
 
 Encore:
@@ -1662,6 +1756,7 @@ Encore:
 	checkhit
 	bounceback
 	encore
+	cantusefakeout
 	endmove
 
 PainSplit:
@@ -1671,6 +1766,7 @@ PainSplit:
 	pressure
 	checkhit
 	painsplit
+	cantusefakeout
 	endmove
 
 Sketch:
@@ -1679,6 +1775,7 @@ Sketch:
 	doturn
 	pressure
 	sketch
+	cantusefakeout
 	endmove
 
 SleepTalk:
@@ -1686,6 +1783,7 @@ SleepTalk:
 	usedmovetext
 	doturn
 	sleeptalk
+	cantusefakeout
 	endmove
 
 DestinyBond:
@@ -1694,6 +1792,7 @@ DestinyBond:
 	doturn
 	pressure
 	destinybond
+	cantusefakeout
 	endmove
 
 Reversal:
@@ -1711,6 +1810,7 @@ Reversal:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 FalseSwipe:
@@ -1733,6 +1833,7 @@ FalseSwipe:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 HealBell:
@@ -1740,6 +1841,7 @@ HealBell:
 	usedmovetext
 	doturn
 	healbell
+	cantusefakeout
 	endmove
 
 TripleKick:
@@ -1769,6 +1871,7 @@ TripleKick:
 	endloop
 	raisesub
 	pickpocket
+	cantusefakeout
 	endmove
 
 Thief:
@@ -1793,6 +1896,7 @@ Thief:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 MeanLook:
@@ -1802,6 +1906,7 @@ MeanLook:
 	pressure
 	bounceback
 	arenatrap
+	cantusefakeout
 	endmove
 
 FlameWheel:
@@ -1826,6 +1931,7 @@ FlameWheel:
 	posthiteffects
 	burntarget
 	pickpocket
+	cantusefakeout
 	endmove
 
 Curse:
@@ -1833,6 +1939,7 @@ Curse:
 	usedmovetext
 	doturn
 	curse
+	cantusefakeout
 	endmove
 
 Protect:
@@ -1840,6 +1947,7 @@ Protect:
 	usedmovetext
 	doturn
 	protect
+	cantusefakeout
 	endmove
 
 Spikes:
@@ -1849,6 +1957,7 @@ Spikes:
 	pressure
 	bounceback
 	spikes
+	cantusefakeout
 	endmove
 
 ToxicSpikes:
@@ -1858,6 +1967,7 @@ ToxicSpikes:
 	pressure
 	bounceback
 	toxicspikes
+	cantusefakeout
 	endmove
 
 Foresight:
@@ -1868,6 +1978,7 @@ Foresight:
 	checkhit
 	bounceback
 	foresight
+	cantusefakeout
 	endmove
 
 PerishSong:
@@ -1875,6 +1986,7 @@ PerishSong:
 	usedmovetext
 	doturn
 	perishsong
+	cantusefakeout
 	endmove
 
 Sandstorm:
@@ -1882,6 +1994,7 @@ Sandstorm:
 	usedmovetext
 	doturn
 	startsandstorm
+	cantusefakeout
 	endmove
 
 Hail:
@@ -1889,6 +2002,7 @@ Hail:
 	usedmovetext
 	doturn
 	starthail
+	cantusefakeout
 	endmove
 
 Endure:
@@ -1896,6 +2010,7 @@ Endure:
 	usedmovetext
 	doturn
 	endure
+	cantusefakeout
 	endmove
 
 Rollout:
@@ -1919,6 +2034,7 @@ Rollout:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 Swagger:
@@ -1939,6 +2055,7 @@ Swagger:
 	statupmessage
 	switchturn
 	confusetarget
+	cantusefakeout
 	endmove
 
 Avalanche:
@@ -1966,6 +2083,7 @@ ConditionalBoostHit:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 Attract:
@@ -1976,6 +2094,7 @@ Attract:
 	checkhit
 	bounceback
 	attract
+	cantusefakeout
 	endmove
 
 Return:
@@ -1998,30 +2117,30 @@ Return:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
-SacredFire:
+FakeOut:
 	checkobedience
 	usedmovetext
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
 	damagevariation
 	checkhit
+	fakeout
 	hittarget
 	failuretext
 	checkfaint
 	criticaltext
 	supereffectivetext
-	defrost
 	postfainteffects
 	posthiteffects
-	burntarget
 	pickpocket
+	cantusefakeout
 	endmove
 
 Magnitude:
@@ -2045,6 +2164,7 @@ Magnitude:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 GyroBall:
@@ -2067,6 +2187,7 @@ GyroBall:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 LowKick:
@@ -2089,6 +2210,7 @@ LowKick:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 BatonPass:
@@ -2096,6 +2218,7 @@ BatonPass:
 	usedmovetext
 	doturn
 	batonpass
+	cantusefakeout
 	endmove
 
 Pursuit:
@@ -2118,6 +2241,7 @@ Pursuit:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 RapidSpin:
@@ -2140,6 +2264,7 @@ RapidSpin:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 HealingLight:
@@ -2147,6 +2272,7 @@ HealingLight:
 	usedmovetext
 	doturn
 	healweather
+	cantusefakeout
 	endmove
 
 HiddenPower:
@@ -2168,6 +2294,7 @@ HiddenPower:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 RainDance:
@@ -2175,6 +2302,7 @@ RainDance:
 	usedmovetext
 	doturn
 	startrain
+	cantusefakeout
 	endmove
 
 SunnyDay:
@@ -2182,6 +2310,7 @@ SunnyDay:
 	usedmovetext
 	doturn
 	startsun
+	cantusefakeout
 	endmove
 
 BellyDrum:
@@ -2189,6 +2318,7 @@ BellyDrum:
 	usedmovetext
 	doturn
 	bellydrum
+	cantusefakeout
 	endmove
 
 MirrorCoat:
@@ -2201,6 +2331,7 @@ MirrorCoat:
 	checkfaint
 	postfainteffects
 	posthiteffects
+	cantusefakeout
 	endmove
 
 Earthquake:
@@ -2224,6 +2355,7 @@ Earthquake:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 FutureSight:
@@ -2242,6 +2374,7 @@ FutureSight:
 	checkfaint
 	postfainteffects
 	posthiteffects
+	cantusefakeout
 	endmove
 
 Gust:
@@ -2264,6 +2397,7 @@ Gust:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 Stomp:
@@ -2288,6 +2422,7 @@ Stomp:
 	posthiteffects
 	flinchtarget
 	pickpocket
+	cantusefakeout
 	endmove
 
 SolarBeam:
@@ -2312,6 +2447,7 @@ SolarBeam:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 Thunder:
@@ -2336,6 +2472,7 @@ Thunder:
 	posthiteffects
 	paralyzetarget
 	pickpocket
+	cantusefakeout
 	endmove
 
 Teleport:
@@ -2343,6 +2480,7 @@ Teleport:
 	usedmovetext
 	doturn
 	teleport
+	cantusefakeout
 	endmove
 
 Fly:
@@ -2368,6 +2506,7 @@ Dig:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
 	endmove
 
 DefenseCurl:
@@ -2381,6 +2520,7 @@ DefenseCurl:
 	raisesub
 	statupmessage
 	statupfailtext
+	cantusefakeout
 	endmove
 
 FlareBlitz:
@@ -2406,4 +2546,5 @@ FlareBlitz:
 	posthiteffects
 	burntarget
 	pickpocket
+	cantusefakeout
 	endmove

@@ -1,4 +1,5 @@
 MovePriorities:
+	db FAKE_OUT,	  5
 	db PROTECT,       4
 	db ENDURE,        4
 	db EXTREMESPEED,  2

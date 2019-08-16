@@ -22,8 +22,8 @@ PlayerHouse1F_MapScriptHeader:
 	bg_event  4,  1, SIGNPOST_UP, TVScript
 
 	db 2 ; object events
-	object_event  7,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SunsetMomScript, EVENT_PLAYER_HOUSE_MOM_1
-	object_event  2,  2, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SunsetMomScript, EVENT_PLAYER_HOUSE_MOM_2
+	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunsetMomScript, EVENT_PLAYER_HOUSE_MOM_1
+	object_event  2,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunsetMomScript, EVENT_PLAYER_HOUSE_MOM_2
 	
 	const_def 1 ; object constants
 	const PLAYERHOUSE1F_MOM1
@@ -41,7 +41,7 @@ PlayerHouse1FTrigger2:
 SunsetMomStopsYou:
 	checkevent EVENT_TALKED_TO_MOM
 	iftrue SunsetMomStopsYouEnd
-	callasm .StopRunning
+	special Special_StopRunning
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iffalse .boy
 ;	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_KRIS_CUTSCENE
@@ -62,15 +62,6 @@ SunsetMomStopsYou:
 	setevent EVENT_TALKED_TO_MOM
 	dotrigger $1
 	end
-	
-.StopRunning:
-	ld a, [wPlayerState]
-	cp PLAYER_NORMAL	;PLAYER_RUN
-	ret nz
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	ret
 
 SunsetMomScript:
 	checkevent EVENT_CAN_GET_PASS_FROM_MOM

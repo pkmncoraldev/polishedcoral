@@ -52,7 +52,7 @@ AlreadyGotPokemonScript:
 	end
 	
 LighthouseStartGetStarterScene:
-	callasm .StopRunning
+	special Special_StopRunning
 	special Special_FadeOutMusic
 	pause 5
 	dotrigger $1
@@ -106,16 +106,6 @@ LighthouseStartGetStarterScene:
 	opentext
 	writetext PickStarterText
 	waitbutton
-	jump LighthousePokeMenu
-	
-.StopRunning:
-	ld a, [wPlayerState]
-	cp PLAYER_RUN
-	ret nz
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	ret
 	
 LighthousePokeMenu:
 	refreshscreen $0
@@ -128,7 +118,7 @@ LighthousePokeMenu:
 	if_equal $4, .Cyndaquil
 	if_equal $5, .Totodile
 	if_equal $6, .Chikorita
-		
+
 .Charmander:
 	refreshscreen $0
 	pokepic CHARMANDER
@@ -529,7 +519,7 @@ LighthouseGetStarterScene_part2:
 .totodile
 	winlosstext LighthouseRivalWinText, LighthouseRivalLoseText
 	setlasttalked LIGHTHOUSE_RIVAL
-	loadtrainer RIVAL, 6
+	loadtrainer RIVAL, RIVAL1_6
 	writecode VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -537,10 +527,10 @@ LighthouseGetStarterScene_part2:
 	iffalse .LighthouseAfterVictorious
 	jump .LighthouseAfterYourDefeat
 	
-.cyndaquil
+.chikorita
 	winlosstext LighthouseRivalWinText, LighthouseRivalLoseText
 	setlasttalked LIGHTHOUSE_RIVAL
-	loadtrainer RIVAL, 5
+	loadtrainer RIVAL, RIVAL1_5
 	writecode VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -548,21 +538,21 @@ LighthouseGetStarterScene_part2:
 	iffalse .LighthouseAfterVictorious
 	jump .LighthouseAfterYourDefeat
 
-.chikorita
+.cyndaquil
 	winlosstext LighthouseRivalWinText, LighthouseRivalLoseText
 	setlasttalked LIGHTHOUSE_RIVAL
-	loadtrainer RIVAL, 4
+	loadtrainer RIVAL, RIVAL1_4
 	writecode VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
 	reloadmap
 	iffalse .LighthouseAfterVictorious
 	jump .LighthouseAfterYourDefeat
-		
+	
 .squirtle
 	winlosstext LighthouseRivalWinText, LighthouseRivalLoseText
 	setlasttalked LIGHTHOUSE_RIVAL
-	loadtrainer RIVAL, 3
+	loadtrainer RIVAL, RIVAL1_3
 	writecode VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -573,7 +563,7 @@ LighthouseGetStarterScene_part2:
 .bulbasaur
 	winlosstext LighthouseRivalWinText, LighthouseRivalLoseText
 	setlasttalked LIGHTHOUSE_RIVAL
-	loadtrainer RIVAL, 2
+	loadtrainer RIVAL, RIVAL1_2
 	writecode VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -584,14 +574,14 @@ LighthouseGetStarterScene_part2:
 .charmander
 	winlosstext LighthouseRivalWinText, LighthouseRivalLoseText
 	setlasttalked LIGHTHOUSE_RIVAL
-	loadtrainer RIVAL, 1
+	loadtrainer RIVAL, RIVAL1_1
 	writecode VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
 	reloadmap
 	iffalse .LighthouseAfterVictorious
 	jump .LighthouseAfterYourDefeat
-		
+	
 .LighthouseAfterVictorious:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
@@ -645,7 +635,7 @@ LighthouseGetStarterScene_part2:
 	pause 5
 	playmapmusic
 	end	
-		
+	
 LighthouseAbner:
 	checkevent EVENT_MOM_SPEECH_LOOP
 	iftrue LighthouseAbnerPostPokeGear

@@ -46,7 +46,7 @@ CheckEngineFlag: ; c721
 	ret
 
 CheckBadge: ; c731
-; Check engine flag a (ENGINE_ZEPHYRBADGE thru ENGINE_EARTHBADGE)
+; Check engine flag a (ENGINE_FIRSTBADGE thru ENGINE_EARTHBADGE)
 ; Display "Badge required" text and return carry if the badge is not owned
 	call CheckEngineFlag
 	ret nc
@@ -60,6 +60,50 @@ CheckBadge: ; c731
 	; is required.
 	text_jump _BadgeRequiredText
 	db "@"
+	
+CheckPartyCanLearnMove: ; c742
+; Check if a monster in your party can learn move d.
+
+    ld e, 0
+    xor a
+    ld [wCurPartyMon], a
+.loop
+    ld c, e
+    ld b, 0
+    ld hl, wPartySpecies
+    add hl, bc
+    ld a, [hl]
+    and a
+    jr z, .no
+    cp a, -1
+    jr z, .no
+    cp a, EGG
+    jr z, .next
+    
+    ld [wCurPartySpecies], a
+    ld a, d
+    ld [wPutativeTMHMMove], a
+    push de
+    farcall CanLearnTMHMMove
+    pop de
+.check
+
+    ld a, c
+    and a
+    jr nz, .yes
+
+.next
+    inc e
+    jr .loop
+
+.yes
+    ld a, e
+    ld [wCurPartyMon], a ; which mon can learn the move
+    xor a
+    ret
+.no
+    scf
+    ret
 
 CheckPartyMove: ; c742
 ; Check if a monster in your party has move d.
@@ -107,7 +151,8 @@ CheckPartyMove: ; c742
 
 CheckForSurfingPikachu:
 	ld d, SURF
-	call CheckPartyMove
+;	call CheckPartyMove
+	call CheckPartyCanLearnMove
 	jr c, .no
 	ld a, [wCurPartyMon]
 	ld e, a
@@ -129,7 +174,7 @@ CheckForSurfingPikachu:
 FieldMovePokepicScript:
 	copybytetovar wBuffer6
 	refreshscreen
-	pokepic 0, 1
+	pokepic 0, 0
 	cry 0
 	waitsfx
 	closepokepic
@@ -162,7 +207,7 @@ CutFunction: ; c785
 	dw .FailCut
 
 .CheckAble: ; c79c (3:479c)
-	ld de, ENGINE_HIVEBADGE
+	ld de, ENGINE_SECONDBADGE
 	call CheckBadge
 	jr c, .nohivebadge
 	call CheckMapForSomethingToCut
@@ -420,7 +465,7 @@ SurfFunction: ; c909
 	dw .AlreadySurfing
 
 .TrySurf: ; c922 (3:4922)
-	ld de, ENGINE_FOGBADGE
+	ld de, ENGINE_FOURTHBADGE
 	call CheckBadge
 	jr c, .asm_c956
 	ld hl, wOWState
@@ -576,12 +621,13 @@ TrySurfOW:: ; c9e7
 	call CheckDirection
 	jr c, .quit
 
-	ld de, ENGINE_FOGBADGE
-	call CheckEngineFlag
-	jr c, .quit
+;	ld de, ENGINE_FOURTHBADGE
+;	call CheckEngineFlag
+;	jr c, .quit
 
 	ld d, SURF
-	call CheckPartyMove
+;	call CheckPartyMove
+	call CheckPartyCanLearnMove
 	jr c, .quit
 
 	ld hl, wOWState
@@ -664,7 +710,7 @@ FlyFunction: ; ca3b
 
 .TryFly: ; ca52
 ; Fly
-	ld de, ENGINE_STORMBADGE
+	ld de, ENGINE_SIXTHBADGE
 	call CheckBadge
 	jr c, .nostormbadge
 	call CheckFlyAllowedOnMap
@@ -753,7 +799,7 @@ WaterfallFunction: ; cade
 
 .TryWaterfall: ; cae7
 ; Waterfall
-	ld de, ENGINE_RISINGBADGE
+	ld de, ENGINE_EIGHTHBADGE
 	farcall CheckBadge
 	ld a, $80
 	ret c
@@ -829,9 +875,10 @@ Script_AutoWaterfall:
 
 TryWaterfallOW:: ; cb56
 	ld d, WATERFALL
-	call CheckPartyMove
+;	call CheckPartyMove
+	call CheckPartyCanLearnMove
 	jr c, .failed
-	ld de, ENGINE_RISINGBADGE
+	ld de, ENGINE_EIGHTHBADGE
 	call CheckEngineFlag
 	jr c, .failed
 	call CheckMapCanWaterfall
@@ -1086,7 +1133,7 @@ StrengthFunction: ; cce5
 
 .TryStrength: ; ccee
 ; Strength
-	ld de, ENGINE_PLAINBADGE
+	ld de, ENGINE_THIRDBADGE
 	call CheckBadge
 	jr c, .Failed
 	jr .UseStrength
@@ -1172,10 +1219,11 @@ UnknownText_0xcd73: ; 0xcd73
 
 TryStrengthOW: ; cd78
 	ld d, STRENGTH
-	call CheckPartyMove
+;	call CheckPartyMove
+	call CheckPartyCanLearnMove
 	jr c, .nope
 
-	ld de, ENGINE_PLAINBADGE
+	ld de, ENGINE_THIRDBADGE
 	call CheckEngineFlag
 	jr c, .nope
 
@@ -1214,7 +1262,7 @@ Jumptable_cdae: ; cdae
 	dw .FailWhirlpool
 
 .TryWhirlpool: ; cdb4
-	ld de, ENGINE_GLACIERBADGE
+	ld de, ENGINE_SEVENTHBADGE
 	call CheckBadge
 	jr c, .noglacierbadge
 	call TryWhirlpoolMenu
@@ -1327,9 +1375,10 @@ Script_AutoWhirlpool:
 
 TryWhirlpoolOW:: ; ce3e
 	ld d, WHIRLPOOL
-	call CheckPartyMove
+;	call CheckPartyMove
+	call CheckPartyCanLearnMove
 	jr c, .failed
-	ld de, ENGINE_GLACIERBADGE
+	ld de, ENGINE_SEVENTHBADGE
 	call CheckEngineFlag
 	jr c, .failed
 	call TryWhirlpoolMenu
@@ -1433,7 +1482,8 @@ AutoHeadbuttScript:
 
 TryHeadbuttOW:: ; cec9
 	ld d, HEADBUTT
-	call CheckPartyMove
+;	call CheckPartyMove
+	call CheckPartyCanLearnMove
 	jr c, .no
 
 	ld a, BANK(AskHeadbuttScript)
@@ -1459,7 +1509,93 @@ UnknownText_0xcee6: ; 0xcee6
 	; A #MON could be in this tree. Want to HEADBUTT it?
 	text_jump UnknownText_0x1c08bc
 	db "@"
+	
+TryDodrioJumpOW:: ; cec9
+	ld a, [wPlayerState]
+	cp PLAYER_DODRIO
+	jr nz, .no
 
+	ld a, BANK(DodrioJumpScript)
+	ld hl, DodrioJumpScript
+	call CallScript
+	scf
+	ret
+
+.no
+	xor a
+	ret
+	
+DodrioJumpScript:
+	playsound SFX_JUMP_OVER_LEDGE
+	checkcode VAR_FACING
+	if_equal DOWN, .YouAreFacingDown
+	if_equal UP, .YouAreFacingUp
+	if_equal RIGHT, .YouAreFacingRight
+	applymovement PLAYER, Movement_DodrioJumpLeft
+	jump .end
+.YouAreFacingDown
+	applymovement PLAYER, Movement_DodrioJumpDown
+	jump .end
+.YouAreFacingUp
+	applymovement PLAYER, Movement_DodrioJumpUp
+	jump .end
+.YouAreFacingRight
+	applymovement PLAYER, Movement_DodrioJumpRight
+	
+.end
+	end
+
+TryDodrioJump2OW:: ; cec9
+	ld a, [wPlayerState]
+	cp PLAYER_DODRIO
+	jr nz, .no
+
+	ld a, BANK(DodrioJump2Script)
+	ld hl, DodrioJump2Script
+	call CallScript
+	scf
+	ret
+
+.no
+	xor a
+	ret
+	
+DodrioJump2Script:
+	checkcode VAR_FACING
+	if_equal DOWN, .YouAreFacingDown
+	if_equal UP, .YouAreFacingUp
+	if_equal RIGHT, .YouAreFacingRight
+	jump .end
+.YouAreFacingDown
+	playsound SFX_JUMP_OVER_LEDGE
+	applymovement PLAYER, Movement_DodrioJumpDown
+	jump .end
+.YouAreFacingUp
+	playsound SFX_JUMP_OVER_LEDGE
+	applymovement PLAYER, Movement_DodrioJumpUp
+	jump .end
+.YouAreFacingRight
+	
+.end
+	end
+	
+Movement_DodrioJumpLeft:
+	jump_step_left
+	step_end
+	
+Movement_DodrioJumpDown:
+	jump_step_down
+	step_end
+	
+Movement_DodrioJumpUp:
+	jump_step_up
+	step_end
+	
+Movement_DodrioJumpRight:
+	jump_step_right
+	step_end
+	
+	
 RockSmashFunction: ; ceeb
 	call TryRockSmashFromMenu
 	and $7f
@@ -1573,7 +1709,8 @@ UnknownText_0xcf77: ; 0xcf77
 
 HasRockSmash: ; cf7c
 	ld d, ROCK_SMASH
-	call CheckPartyMove
+;	call CheckPartyMove
+	call CheckPartyCanLearnMove
 	ld a, 1
 	jr c, .done
 	xor a
@@ -1958,10 +2095,11 @@ GotOffTheBikeText: ; 0xd181
 
 HasCutAvailable:: ; d186
 	ld d, CUT
-	call CheckPartyMove
+;	call CheckPartyMove
+	call CheckPartyCanLearnMove
 	jr c, .no
 
-	ld de, ENGINE_HIVEBADGE
+	ld de, ENGINE_SECONDBADGE
 	call CheckEngineFlag
 	jr c, .no
 

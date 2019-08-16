@@ -74,6 +74,16 @@ SpriteAnimOAMData: ; 8d94d
 	dbw $08, .OAMData_84 ; SPRITE_ANIM_FRAME_IDX_89
 	dbw $04, .OAMData_84 ; SPRITE_ANIM_FRAME_IDX_8A
 	dbw $00, .OAMData_84 ; SPRITE_ANIM_FRAME_IDX_8B
+	dbw $00, .OAMData_86
+	dbw $04, .OAMData_86
+	dbw $00, .OAMData_87
+	dbw $04, .OAMData_87
+	dbw $00, .OAMData_88
+	dbw $04, .OAMData_88
+	dbw $00, .OAMData_89
+	dbw $04, .OAMData_89
+	dbw $00, .OAMData_90
+	dbw $04, .OAMData_90
 
 .OAMData_02:
 	db 1
@@ -629,4 +639,44 @@ SpriteAnimOAMData: ; 8d94d
 	dsprite  0,  0, -1,  4, $51, $1
 	dsprite  0,  0,  0,  4, $52, $1
 	dsprite  0,  0,  1,  4, $53, $1
+	
+.OAMData_86:
+; green walk
+	db 4
+	dsprite -1,  0, -1,  0, $00, $2
+	dsprite -1,  0,  0,  0, $01, $2
+	dsprite  0,  0, -1,  0, $02, $2
+	dsprite  0,  0,  0,  0, $03, $2
+	
+.OAMData_87:
+; brown walk
+	db 4
+	dsprite -1,  0, -1,  0, $00, $3
+	dsprite -1,  0,  0,  0, $01, $3
+	dsprite  0,  0, -1,  0, $02, $3
+	dsprite  0,  0,  0,  0, $03, $3
+	
+.OAMData_88:
+; purple walk
+	db 4
+	dsprite -1,  0, -1,  0, $00, $4
+	dsprite -1,  0,  0,  0, $01, $4
+	dsprite  0,  0, -1,  0, $02, $4
+	dsprite  0,  0,  0,  0, $03, $4
+	
+.OAMData_89:
+; pink walk
+	db 4
+	dsprite -1,  0, -1,  0, $00, $5
+	dsprite -1,  0,  0,  0, $01, $5
+	dsprite  0,  0, -1,  0, $02, $5
+	dsprite  0,  0,  0,  0, $03, $5
+	
+.OAMData_90:
+; yellow walk
+	db 4
+	dsprite -1,  0, -1,  0, $00, $6
+	dsprite -1,  0,  0,  0, $01, $6
+	dsprite  0,  0, -1,  0, $02, $6
+	dsprite  0,  0,  0,  0, $03, $6
 ; 8e706

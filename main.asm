@@ -4471,6 +4471,14 @@ PrintTMHMDescription:
 	predef PrintMoveDesc
 	ret
 
+MoveReminderNoMovesText:
+	text "Sorry… There isn't"
+	line "any move I can"
+
+	para "make that #mon"
+	line "remember."
+	done
+	
 INCLUDE "data/items/descriptions.asm"
 INCLUDE "data/items/apricorn_names.asm"
 

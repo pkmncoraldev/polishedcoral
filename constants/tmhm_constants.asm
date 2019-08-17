@@ -53,6 +53,7 @@ ENDM
 	add_tm DIG          ; $1b
 	add_tm PSYCHIC      ; $1c
 	add_tm SHADOW_BALL  ; $1d
+	add_tm ROCK_SMASH	; $1e
 	add_tm DOUBLE_TEAM  ; $1f
 	add_tm REFLECT      ; $20
 	add_tm FLASH_CANNON ; $21
@@ -97,6 +98,9 @@ ENDM
 	add_tm THUNDER_WAVE ; $48
 	add_tm GYRO_BALL    ; $49
 	add_tm SWORDS_DANCE ; $4a
+	add_tm THUNDERPUNCH
+	add_tm FIRE_PUNCH
+	add_tm ICE_PUNCH
 NUM_TMS = const_value - TM01
 
 	add_hm CUT          ; $4b

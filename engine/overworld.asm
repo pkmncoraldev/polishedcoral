@@ -296,36 +296,36 @@ _GetSpritePalette:: ; 142c4
 	ret
 
 .is_pokemon
-	ld a, [wMapGroup]
-	cp GROUP_PLAYER_HOUSE_2F
-	jr nz, .not_doll
-	ld a, [wMapNumber]
-	cp MAP_PLAYER_HOUSE_2F
-	jr nz, .not_doll
-	farcall GetMonIconPalette
-	ld c, a
-	ret
+;	ld a, [wMapGroup]
+;	cp GROUP_PLAYER_HOUSE_2F
+;	jr nz, .not_doll
+;	ld a, [wMapNumber]
+;	cp MAP_PLAYER_HOUSE_2F
+;	jr nz, .not_doll
+;	farcall GetMonIconPalette
+;	ld c, a
+;	ret
 
-.not_doll
-	cp GROUP_ROUTE_34
-	jr nz, .not_daycare
-	ld a, [wMapNumber]
-	cp MAP_ROUTE_34
-	jr nz, .not_daycare
-	farcall GetMonIconPalette
-	cp PAL_OW_PINK
-	ld c, PAL_OW_BROWN
-	ret z
-	cp PAL_OW_PINK
-	ld c, PAL_OW_RED
-	ret z
-	cp PAL_OW_TEAL
-	ld c, PAL_OW_GREEN
-	ret z
-	ld c, a
-	ret
+;.not_doll
+;	cp GROUP_ROUTE_34
+;	jr nz, .not_daycare
+;	ld a, [wMapNumber]
+;	cp MAP_ROUTE_34
+;	jr nz, .not_daycare
+;	farcall GetMonIconPalette
+;	cp PAL_OW_PINK
+;	ld c, PAL_OW_BROWN
+;	ret z
+;	cp PAL_OW_PINK
+;	ld c, PAL_OW_RED
+;	ret z
+;	cp PAL_OW_TEAL
+;	ld c, PAL_OW_GREEN
+;	ret z
+;	ld c, a
+;	ret
 
-.not_daycare
+;.not_daycare
 	ld c, PAL_OW_RED
 	ret
 ; 142db

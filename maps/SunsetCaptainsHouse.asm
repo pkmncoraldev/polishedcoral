@@ -109,8 +109,8 @@ SunsetCaptain:
 	setevent EVENT_JUST_TOOK_BOAT
 	clearevent EVENT_LAKE_BOAT_LEFT_GONE
 	clearevent EVENT_LAKE_STRAND
-	domaptrigger ROUTE_30, $3
-	warp ROUTE_30, $18, $1a
+	domaptrigger LAKE_ONWA, $3
+	warp LAKE_ONWA, $18, $1a
 	end
 	
 .LakeR
@@ -127,8 +127,8 @@ SunsetCaptain:
 	setevent EVENT_JUST_TOOK_BOAT
 	clearevent EVENT_LAKE_BOAT_RIGHT_GONE
 	clearevent EVENT_LAKE_STRAND
-	domaptrigger ROUTE_30, $3
-	warp ROUTE_30, $27, $20
+	domaptrigger LAKE_ONWA, $3
+	warp LAKE_ONWA, $27, $20
 	end
 	
 .Sunbeam
@@ -141,8 +141,8 @@ SunsetCaptain:
 	special FadeOutPalettes
 	special Special_FadeOutMusic
 	clearevent EVENT_ISLAND_STRAND
-	domaptrigger CHERRYGROVE_CITY, $0
-	warp CHERRYGROVE_CITY, 2, 49
+;	domaptrigger CHERRYGROVE_CITY, $0
+;	warp CHERRYGROVE_CITY, 2, 49
 	end
 	
 .end
@@ -199,8 +199,8 @@ CaptainGoToIsland:
 	closetext
 	special FadeOutPalettes
 	special Special_FadeOutMusic
-	domaptrigger CHERRYGROVE_CITY, $0
-	warp CHERRYGROVE_CITY, 2, 49
+;	domaptrigger CHERRYGROVE_CITY, $0
+;	warp CHERRYGROVE_CITY, 2, 49
 	end
 	
 SunsetCaptainRidetoIsland:

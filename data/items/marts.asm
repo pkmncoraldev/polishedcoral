@@ -163,15 +163,8 @@ Celadon5FMart1: ; 161da
 ; 1613b
 
 Goldenrod5FTMMart: ; 1613b
-	db 8 ; # items
-	dbw TM_PROTECT,       10000
-	dbw TM_REFLECT,       10000
-	dbw TM_LIGHT_SCREEN,  10000
-	dbw TM_SOLAR_BEAM,    25000
-	dbw TM_THUNDER,       30000
-	dbw TM_FIRE_BLAST,    30000
-	dbw TM_BLIZZARD,      30000
-	dbw TM_HYPER_BEAM,    50000
+	db 1 ; # items
+	dbw POTION,       10000
 	db -1
 ; 16140
 

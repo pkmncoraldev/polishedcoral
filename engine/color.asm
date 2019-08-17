@@ -810,19 +810,19 @@ LoadMapPals:
 .got_pals
 	
 	ld a, [wMapGroup]
-	cp GROUP_ROUTE_11	;RANCH
+;	cp GROUP_ROUTE_11	;RANCH
 	jr z, .ranch
-	cp GROUP_PEWTER_CITY	;SNOW TOWN
+;	cp GROUP_PEWTER_CITY	;SNOW TOWN
 	jr z, .snow
-	cp GROUP_BATTLE_TOWER_HALLWAY ;SNOW TENT
+;	cp GROUP_BATTLE_TOWER_HALLWAY ;SNOW TENT
 	jr z, .snow2
 	cp GROUP_SUNSET_BAY
 	jp z, .sailboat
-	cp MAP_RUINS_OF_ALPH_HO_OH_ITEM_ROOM	;RANCH RACE
+;	cp MAP_RUINS_OF_ALPH_HO_OH_ITEM_ROOM	;RANCH RACE
 	jp nz, .normal
 .ranch
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_11	;RANCH
+;	cp MAP_ROUTE_11	;RANCH
 	jp nz, .normal
 	ld a, [wTimeOfDayPal]
 	and 3
@@ -837,15 +837,15 @@ LoadMapPals:
 	
 .snow
 	ld a, [wMapNumber]
-	cp MAP_PEWTER_CITY	;SNOW TOWN
+;	cp MAP_PEWTER_CITY	;SNOW TOWN
 	jr z, .snowcont
-	cp MAP_BATTLE_TOWER_HALLWAY ;SNOW TENT
+;	cp MAP_BATTLE_TOWER_HALLWAY ;SNOW TENT
 	jr z, .snowcont
 	jp .normal
 	
 .snow2
 	ld a, [wMapNumber]
-	cp MAP_BATTLE_TOWER_HALLWAY ;SNOW TENT
+;	cp MAP_BATTLE_TOWER_HALLWAY ;SNOW TENT
 	jr z, .snowtentcont
 	jp .normal
 	

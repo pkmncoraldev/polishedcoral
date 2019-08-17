@@ -22,6 +22,7 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, Route5Name
 	landmark   0,   0, Route6Name
 	landmark   0,   0, Route7Name
+	landmark   0,   0, LakeOnwaName
 
 
 SunsetBayName:         db "SUNSET¯BAY@"
@@ -41,4 +42,5 @@ HuntersThicketName:	   db "HUNTERS¯THICKET@"
 Route5Name:            db "ROUTE 5@"
 Route6Name:            db "ROUTE 6@"
 Route7Name:            db "ROUTE 7@"
+LakeOnwaName:          db "LAKE¯ONWA@"
 SpecialMapName:        db "?","@"

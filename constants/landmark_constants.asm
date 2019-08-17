@@ -25,6 +25,7 @@
 	const ROUTE_5			 ; 15
 	const ROUTE_6			 ; 16
 	const ROUTE_7			 ; 17
+	const LAKE_ONWA			 ; 18
 
 KANTO_LANDMARK EQU const_value
 

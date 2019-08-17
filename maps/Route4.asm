@@ -3,9 +3,9 @@ Route4_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 2 ; warp events
-	warp_def 6, 39, 1, ROUTE_34_ILEX_FOREST_GATE
-	warp_def 7, 39, 2, ROUTE_34_ILEX_FOREST_GATE
+	db 0 ; warp events
+;	warp_def 6, 39, 1, ROUTE_34_ILEX_FOREST_GATE
+;	warp_def 7, 39, 2, ROUTE_34_ILEX_FOREST_GATE
 
 	db 0 ; coord events
 

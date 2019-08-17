@@ -514,20 +514,20 @@ music_map: MACRO
 	map_id \1
 	dw \2
 ENDM
-	music_map ROUTE_23, GetMapHeaderMusic
-	music_map INDIGO_PLATEAU, GetMapHeaderMusic
-	music_map QUIET_CAVE_1F, GetMapHeaderMusic
-	music_map QUIET_CAVE_B1F, GetMapHeaderMusic
-	music_map QUIET_CAVE_B2F, GetMapHeaderMusic
-	music_map QUIET_CAVE_B3F, GetMapHeaderMusic
-	music_map SCARY_CAVE_SHIPWRECK, GetMapHeaderMusic
-	music_map WHIRL_ISLAND_LUGIA_CHAMBER, GetMapHeaderMusic
-	music_map TIN_TOWER_ROOF, GetMapHeaderMusic
-	music_map ROUTE_16_SOUTH, GetCyclingRoadMusic
-	music_map ROUTE_17, GetCyclingRoadMusic
-	music_map ROUTE_18_WEST, GetCyclingRoadMusic
-	music_map ROUTE_35_NATIONAL_PARK_GATE, GetBugCatchingContestMusic
-	music_map ROUTE_36_NATIONAL_PARK_GATE, GetBugCatchingContestMusic
+;	music_map ROUTE_23, GetMapHeaderMusic
+;	music_map INDIGO_PLATEAU, GetMapHeaderMusic
+;	music_map QUIET_CAVE_1F, GetMapHeaderMusic
+;	music_map QUIET_CAVE_B1F, GetMapHeaderMusic
+;	music_map QUIET_CAVE_B2F, GetMapHeaderMusic
+;	music_map QUIET_CAVE_B3F, GetMapHeaderMusic
+;	music_map SCARY_CAVE_SHIPWRECK, GetMapHeaderMusic
+;	music_map WHIRL_ISLAND_LUGIA_CHAMBER, GetMapHeaderMusic
+;	music_map TIN_TOWER_ROOF, GetMapHeaderMusic
+;	music_map ROUTE_16_SOUTH, GetCyclingRoadMusic
+;	music_map ROUTE_17, GetCyclingRoadMusic
+;	music_map ROUTE_18_WEST, GetCyclingRoadMusic
+;	music_map ROUTE_35_NATIONAL_PARK_GATE, GetBugCatchingContestMusic
+;	music_map ROUTE_36_NATIONAL_PARK_GATE, GetBugCatchingContestMusic
 	db 0 ; end
 
 CheckSFX:: ; 3dde

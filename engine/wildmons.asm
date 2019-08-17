@@ -69,21 +69,21 @@ FindNest: ; 2a01f
 	push hl
 
 	; assume that navel rock is the first off-screen map, and end the search early
-	ld a, [hli]
-	cp GROUP_NAVEL_ROCK_INSIDE
-	jr nz, .not_navel_rock_group
-	ld b, a
-	ld a, [hli]
-	cp MAP_NAVEL_ROCK_INSIDE
-	jr nz, .not_navel_rock_map
-	pop hl
-	ret
+;	ld a, [hli]
+;	cp GROUP_NAVEL_ROCK_INSIDE
+;	jr nz, .not_navel_rock_group
+;	ld b, a
+;	ld a, [hli]
+;	cp MAP_NAVEL_ROCK_INSIDE
+;	jr nz, .not_navel_rock_map
+;	pop hl
+;	ret
 
-	ld a, [hli]
-.not_navel_rock_group
+;	ld a, [hli]
+;.not_navel_rock_group
 	ld b, a
 	ld a, [hli]
-.not_navel_rock_map
+;.not_navel_rock_map
 	ld c, a
 	inc hl
 	inc hl
@@ -475,20 +475,20 @@ _ChooseWildEncounter:
 	ld a, b
 	ld [wTempWildMonSpecies], a
 
-	ld a, [wMapGroup]
-	cp GROUP_SOUL_HOUSE_B1F ; Soul House or Lavender Radio Tower
-	jr nz, .not_ghost
-	ld a, [wMapNumber]
-	cp MAP_SOUL_HOUSE_B1F ; first Ghost map in its group
-	jr c, .not_ghost
-	ld a, SILPHSCOPE2
-	ld [wCurItem], a
-	ld hl, wNumKeyItems
-	call CheckItem
-	jr c, .not_ghost
-	ld a, BATTLETYPE_GHOST
-	ld [wBattleType], a
-.not_ghost
+;	ld a, [wMapGroup]
+;	cp GROUP_SOUL_HOUSE_B1F ; Soul House or Lavender Radio Tower
+;	jr nz, .not_ghost
+;	ld a, [wMapNumber]
+;	cp MAP_SOUL_HOUSE_B1F ; first Ghost map in its group
+;	jr c, .not_ghost
+;	ld a, SILPHSCOPE2
+;	ld [wCurItem], a
+;	ld hl, wNumKeyItems
+;	call CheckItem
+;	jr c, .not_ghost
+;	ld a, BATTLETYPE_GHOST
+;	ld [wBattleType], a
+;.not_ghost
 
 .startwildbattle
 	xor a
@@ -733,30 +733,30 @@ InitRoamMons: ; 2a2a0
 ; initialize wRoamMon structs
 
 ; species
-	ld a, RAIKOU
-	ld [wRoamMon1Species], a
-	ld a, ENTEI
-	ld [wRoamMon2Species], a
+;	ld a, RAIKOU
+;	ld [wRoamMon1Species], a
+;	ld a, ENTEI
+;	ld [wRoamMon2Species], a
 ;	ld a, SUICUNE
 ;	ld [wRoamMon3Species], a
 
 ; level
-	ld a, 40
-	ld [wRoamMon1Level], a
-	ld [wRoamMon2Level], a
+;	ld a, 40
+;	ld [wRoamMon1Level], a
+;	ld [wRoamMon2Level], a
 ;	ld [wRoamMon3Level], a
 
 ; raikou starting map
-	ld a, GROUP_ROUTE_42
-	ld [wRoamMon1MapGroup], a
-	ld a, MAP_ROUTE_42
-	ld [wRoamMon1MapNumber], a
+;	ld a, GROUP_ROUTE_42
+;	ld [wRoamMon1MapGroup], a
+;	ld a, MAP_ROUTE_42
+;	ld [wRoamMon1MapNumber], a
 
 ; entei starting map
-	ld a, GROUP_ROUTE_37
-	ld [wRoamMon2MapGroup], a
-	ld a, MAP_ROUTE_37
-	ld [wRoamMon2MapNumber], a
+;	ld a, GROUP_ROUTE_37
+;	ld [wRoamMon2MapGroup], a
+;	ld a, MAP_ROUTE_37
+;	ld [wRoamMon2MapNumber], a
 
 ; suicune starting map
 ;	ld a, GROUP_ROUTE_38
@@ -765,9 +765,9 @@ InitRoamMons: ; 2a2a0
 ;	ld [wRoamMon3MapNumber], a
 
 ; hp
-	xor a ; generate new stats
-	ld [wRoamMon1HP], a
-	ld [wRoamMon2HP], a
+;	xor a ; generate new stats
+;	ld [wRoamMon1HP], a
+;	ld [wRoamMon2HP], a
 ;	ld [wRoamMon3HP], a
 
 	ret

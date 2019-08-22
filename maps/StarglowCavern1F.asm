@@ -16,7 +16,7 @@ StarglowCavern1F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 9 ; object events
+	db 12 ; object events
 	person_event SPRITE_HIKER, 22, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, TrainerStarglowCavern_1, -1
 	person_event SPRITE_HIKER, 11, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, TrainerStarglowCavern_2, -1
 	person_event SPRITE_HIKER, 5, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerStarglowCavern_3, -1
@@ -26,7 +26,10 @@ StarglowCavern1F_MapScriptHeader:
 	person_event SPRITE_FISHER, 19, 30, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_STARGLOW_CAVERN_DISGUISEMAN
 	person_event SPRITE_FISHER, 0, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_STARGLOW_CAVERN_DISGUISEMAN_2
 	person_event SPRITE_FISHER, 20, 34, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_STARGLOW_CAVERN_DISGUISEMAN_2
-
+	smashrock_event 13, 24
+	smashrock_event 15, 16
+	smashrock_event 16,  7
+	
 	const_def 1 ; object constants
 	const STARGLOWCAVERN_TRAINER1
 	const STARGLOWCAVERN_TRAINER2

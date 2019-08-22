@@ -125,6 +125,8 @@ ENDM
 	map_attributes GlintGroveDeep, GLINT_GROVE_DEEP, $20, 0
 	map_attributes StarglowCavern1F, STARGLOW_CAVERN_1F, $9, 0
 	map_attributes StarglowCavern2F, STARGLOW_CAVERN_2F, $9, 0
+	map_attributes MtOnwa1F, MT_ONWA_1F, $09, 0
+	map_attributes MtOnwa2F, MT_ONWA_2F, $09, 0
 	
 	map_attributes SunsetPokeCenter, SUNSET_POKECENTER, $0, 0
 	map_attributes SunsetLighthouse, SUNSET_LIGHTHOUSE, $0, 0
@@ -155,6 +157,11 @@ ENDM
 	map_attributes StarglowPokeCenter, STARGLOW_POKECENTER, $0, 0
 	map_attributes StarglowMart, STARGLOW_MART, $0, 0
 	map_attributes StarglowGym, STARGLOW_GYM, $0, 0
+	map_attributes LakeOnwaBoatHouseRight, LAKE_ONWA_BOAT_HOUSE_RIGHT, $0, 0
+	map_attributes LakeOnwaNameRaterHouse, LAKE_ONWA_NAME_RATER_HOUSE, $0, 0
+	map_attributes LakeOnwaBoatHouseLeft, LAKE_ONWA_BOAT_HOUSE_LEFT, $0, 0
+	map_attributes LakeOnwaItemHouse, LAKE_ONWA_ITEM_HOUSE, $0, 0
+	map_attributes LakeOnwaPokeCenter, LAKE_ONWA_POKECENTER, $0, 0
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $7, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0

@@ -4,6 +4,7 @@ SunsetPokeCenter_BlockData:
 DaybreakPokeCenter_BlockData:
 GlintPokeCenter_BlockData:
 StarglowPokeCenter_BlockData:
+LakeOnwaPokeCenter_BlockData:
 	INCBIN "maps/PokeCenter.ablk.lz"
 
 GlintMart_BlockData:
@@ -11,9 +12,16 @@ StarglowMart_BlockData:
 GenericMart_BlockData:: ; used by tilesets/palettes.asm:LoadSpecialMapPalette
 	INCBIN "maps/Mart.ablk.lz"
 
+LakeOnwaBoatHouseRight_BlockData:
+LakeOnwaBoatHouseLeft_BlockData:
+	INCBIN "maps/BoatHouse.ablk.lz"
+	
 Route1Gate_BlockData:
 Route5Gate_BlockData:
 	INCBIN "maps/NorthSouthGate.ablk.lz"
+
+
+	INCBIN "maps/EastWestGate.ablk.lz"
 
 SunsetWaterGrassHouse_BlockData:
 StarglowGrandpaHouse_BlockData:
@@ -29,14 +37,18 @@ SunsetLegendsHouse_BlockData:
 GlintEvoHouse_BlockData:
 StarglowNoPokemonHouse_BlockData:
 	INCBIN "maps/NormalHouse3.ablk.lz"
+	
+LakeOnwaItemHouse_BlockData:
+	INCBIN "maps/RusticHouse.ablk.lz"
 
+SunsetCaptainsHouse_BlockData:
 DaybreakAlexHouse_BlockData:
 DaybreakMarcusHouse_BlockData:
-SunsetCaptainsHouse_BlockData:
 	INCBIN "maps/TraditionalHouse.ablk.lz"
 
 
 SECTION "Map Blockdata 1", ROMX
+
 
 PlayerHouse1F_BlockData:
 	INCBIN "maps/PlayerHouse1F.ablk.lz"
@@ -97,13 +109,13 @@ Route3Starglow_BlockData:
 	
 StarglowValley_BlockData:
 	INCBIN "maps/StarglowValley.ablk.lz"
-
-HuntersThicket_BlockData:
-	INCBIN "maps/HuntersThicket.ablk.lz"
 	
 StarglowGym_BlockData:
 	INCBIN "maps/StarglowGym.ablk.lz"
-
+	
+HuntersThicket_BlockData:
+	INCBIN "maps/HuntersThicket.ablk.lz"
+	
 Route1_BlockData:
 	INCBIN "maps/Route1.ablk.lz"
 
@@ -128,6 +140,15 @@ Route6_BlockData:
 Route7_BlockData:
 	INCBIN "maps/Route7.ablk.lz"
 
+LakeOnwa_BlockData:
+	INCBIN "maps/LakeOnwa.ablk.lz"
+	
+MtOnwa1F_BlockData:
+	INCBIN "maps/MtOnwa1F.ablk.lz"
+	
+MtOnwa2F_BlockData:
+	INCBIN "maps/MtOnwa2F.ablk.lz"
+
 GlintGrove_BlockData:
 	INCBIN "maps/GlintGrove.ablk.lz"
 	
@@ -137,29 +158,5 @@ GlintGroveDeep_BlockData:
 GlintGroveEntrance_BlockData:
 	INCBIN "maps/GlintGroveEntrance.ablk.lz"
 	
-LakeOnwa_BlockData:
-	INCBIN "maps/LakeOnwa.ablk.lz"
-
-
-SECTION "Map Blockdata 2", ROMX
-
-	
-SECTION "Map Blockdata 3", ROMX
-
-
-SECTION "Map Blockdata 4", ROMX
-	
-
-SECTION "Map Blockdata 5", ROMX
-
-
-SECTION "Map Blockdata 6", ROMX
-
-
-SECTION "Map Blockdata 7", ROMX
-
-
-SECTION "Map Blockdata 8", ROMX
-
-
-SECTION "Map Blockdata 9", ROMX
+LakeOnwaNameRaterHouse_BlockData:
+	INCBIN "maps/LakeOnwaNameRaterHouse.ablk.lz"

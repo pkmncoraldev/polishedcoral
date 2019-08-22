@@ -2,17 +2,17 @@ MapGroupRoofs:
 ; entries correspond to map groups
 ; values are indexes for Roofs (see below)
 	db -1 ; group 0
-	db  3 ; group 1 (Olivine City)
-	db  2 ; group 2 (Mahogany Town)
-	db -1 ; group 3
-	db  1 ; group 4 (Ecruteak City)
-	db  2 ; group 5 (Blackthorn City)
-	db -1 ; group 6
-	db  3 ; group 7
-	db  2 ; group 8 (Azalea Town)
-	db  2 ; group 9 (Lake of Rage)
-	db  2 ; group 10 (Violet City)
-	db -1 ; group 11 (Goldenrod City)
+	db -1 ; group 1 (Dungeons)
+	db  0 ; group 2 (Sunset)
+	db  2 ; group 3 (Daybreak)
+	db  2 ; group 4 (Glint)
+	db  3 ; group 5 (Starglow)
+	db  3 ; group 6 (Lake Onwa)
+	db -1 ; group 7
+	db -1 ; group 8
+	db -1 ; group 9
+	db -1 ; group 10
+	db -1 ; group 11
 	db -1 ; group 12
 	db -1 ; group 13
 	db -1 ; group 14
@@ -20,22 +20,22 @@ MapGroupRoofs:
 	db -1 ; group 16
 	db -1 ; group 17
 	db -1 ; group 18
-	db  0 ; group 19 (Route 28)
-	db -1 ; group 20 (Ecruteak Shrine)
+	db -1 ; group 19
+	db -1 ; group 20
 	db -1 ; group 21
-	db  3 ; group 22 (Cianwood City)
+	db -1 ; group 22
 	db -1 ; group 23
-	db  0 ; group 24 (New Bark Town)
+	db -1 ; group 24
 	db -1 ; group 25
-	db  0 ; group 26 (Cherrygrove City)
+	db -1 ; group 26
 	db -1 ; group 27
 	db -1 ; group 28
-	db  3 ; group 29 (Goldenrod Harbor)
-	db  0 ; group 30 (Ruins of Alph)
+	db -1 ; group 29
+	db -1 ; group 30
 	db -1 ; group 31
 	db -1 ; group 32
 	db -1 ; group 33
-	db  2 ; group 34 (Sinjoh Ruins)
+	db -1 ; group 34
 	db -1 ; group 35
 
 Roofs:

@@ -942,7 +942,8 @@ wStarglowValley:: ds 1
 wStarglowTogepiHouse:: ds 1
 wStarglowPokeCenter:: ds 1
 wRoute6Trigger:: ds 1
-ds 74
+wLakeOnwaTrigger:: ds 1
+ds 73
 
 ; fight counts
 wJackFightCount::    ds 1

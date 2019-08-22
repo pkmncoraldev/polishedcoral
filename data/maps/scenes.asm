@@ -21,4 +21,5 @@ MapTriggers::
 	scene_var STARGLOW_TOGEPI_HOUSE,				  wStarglowTogepiHouse
 	scene_var STARGLOW_POKECENTER,					  wStarglowPokeCenter
 	scene_var ROUTE_6,							  	  wRoute6Trigger
+	scene_var LAKE_ONWA,							  wLakeOnwaTrigger
 	db -1

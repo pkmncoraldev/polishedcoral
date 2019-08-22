@@ -5,13 +5,14 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 6 ; warp events
+	db 7 ; warp events
 	warp_event  9,  0, PLAYER_HOUSE_1F, 3
 	warp_event  5, 10, SUNSET_BAY, 1
 	warp_event  7, 10, DAYBREAK_VILLAGE, 1
 	warp_event  9, 10, GLINT_CITY, 1
 	warp_event 11, 10, STARGLOW_VALLEY, 1
-	warp_event 13, 10, ROUTE_6, 1
+	warp_event 13, 10, LAKE_ONWA, 1
+	warp_event 15, 10, LAKE_ONWA, 2
 
 	db 0 ; coord events
 
@@ -26,7 +27,8 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event  6, 10, SIGNPOST_JUMPTEXT, PlayerHouseDaybreak
 	bg_event  8, 10, SIGNPOST_JUMPTEXT, PlayerHouseGlint
 	bg_event 10, 10, SIGNPOST_JUMPTEXT, PlayerHouseStarglow
-	bg_event 12, 10, SIGNPOST_JUMPTEXT, PlayerHouseLakeOnwa
+	bg_event 12, 10, SIGNPOST_JUMPTEXT, PlayerHouseLakeOnwaR
+	bg_event 14, 10, SIGNPOST_JUMPTEXT, PlayerHouseLakeOnwaL
 
 	db 1 ; object events
 	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, -1
@@ -50,6 +52,7 @@ PlayerHouseMap:
 ;	setflag ENGINE_SEVENTHBADGE
 ;	setflag ENGINE_EIGHTHBADGE
 	addcellnum PHONE_MOM
+	addcellnum PHONE_SPRUCE
 	setevent EVENT_MOM_GOT_POKEGEAR
 	givepoke CORSOLA, 100
 	giveitem LIBRARY_CARD
@@ -82,8 +85,14 @@ PlayerHouseStarglow:
 	text "STARGLOW VALLEY"
 	done
 	
-PlayerHouseLakeOnwa:
+PlayerHouseLakeOnwaR:
 	text "LAKE ONWA"
+	line "RIGHT SIDE"
+	done
+	
+PlayerHouseLakeOnwaL:
+	text "LAKE ONWA"
+	line "LEFT SIDE"
 	done
 	
 PlayerHouse2FInitializeRoom:

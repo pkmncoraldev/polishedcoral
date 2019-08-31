@@ -809,21 +809,78 @@ LoadMapPals:
 
 .got_pals
 	
+	ld a, [wTileset]
+	cp TILESET_CAVE
+	jp z, .rocks
+	cp TILESET_LAVA_CAVE
+	jp z, .rocks
+	cp TILESET_STARGLOW_CAVERN
+	jp z, .starglow
 	ld a, [wMapGroup]
+	cp GROUP_LAKE_ONWA
+	jr z, .rockscheck
+	cp GROUP_SUNBEAM_ISLAND
+	jr z, .umbrellacheck
 ;	cp GROUP_ROUTE_11	;RANCH
-	jr z, .ranch
+;	jr z, .ranch
 ;	cp GROUP_PEWTER_CITY	;SNOW TOWN
-	jr z, .snow
+;	jr z, .snow
 ;	cp GROUP_BATTLE_TOWER_HALLWAY ;SNOW TENT
-	jr z, .snow2
+;	jp z, .snow2
 	cp GROUP_SUNSET_BAY
 	jp z, .sailboat
 ;	cp MAP_RUINS_OF_ALPH_HO_OH_ITEM_ROOM	;RANCH RACE
-	jp nz, .normal
-.ranch
+;	jp nz, .normal
+	jp .normal
+.umbrellacheck
 	ld a, [wMapNumber]
-;	cp MAP_ROUTE_11	;RANCH
+	cp MAP_SUNBEAM_BEACH
 	jp nz, .normal
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPalsUmbrella
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	jp .outside
+.rockscheck
+	ld a, [wMapNumber]
+	cp MAP_LAKE_ONWA
+	jp nz, .normal
+.rocks
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPalsRocks
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ld a, [wTileset]
+	cp TILESET_GLINT
+	jp z, .outside
+	cp TILESET_JUNGLE
+	jp z, .outside
+	ld a, [wPermission]
+	cp TOWN
+	jp z, .outside
+	cp ROUTE
+	ret nz
+.starglow
+	ld hl, MapObjectPalsStarglow
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+.ranch
+;	ld a, [wMapNumber]
+;	cp MAP_ROUTE_11	;RANCH
+;	jp nz, .normal
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes
@@ -836,17 +893,17 @@ LoadMapPals:
 	jp .outside
 	
 .snow
-	ld a, [wMapNumber]
+;	ld a, [wMapNumber]
 ;	cp MAP_PEWTER_CITY	;SNOW TOWN
-	jr z, .snowcont
+;	jr z, .snowcont
 ;	cp MAP_BATTLE_TOWER_HALLWAY ;SNOW TENT
-	jr z, .snowcont
+;	jr z, .snowcont
 	jp .normal
 	
 .snow2
-	ld a, [wMapNumber]
+;	ld a, [wMapNumber]
 ;	cp MAP_BATTLE_TOWER_HALLWAY ;SNOW TENT
-	jr z, .snowtentcont
+;	jr z, .snowtentcont
 	jp .normal
 	
 .snowcont
@@ -1007,6 +1064,15 @@ INCLUDE "maps/palettes/bgpals/bg.pal"
 MapObjectPals::
 INCLUDE "maps/palettes/obpals/ob.pal"
 
+MapObjectPalsRocks::
+INCLUDE "maps/palettes/obpals/obrocks.pal"
+
+MapObjectPalsUmbrella::
+INCLUDE "maps/palettes/obpals/obumbrella.pal"
+
+MapObjectPalsStarglow::
+INCLUDE "maps/palettes/obpals/obstarglow.pal"
+
 MapObjectPalsRanch:
 INCLUDE "maps/palettes/obpals/obranch.pal"
 
@@ -1033,5 +1099,3 @@ INCLUDE "data/trainers/palettes.asm"
 INCLUDE "data/events/paintings/palettes.asm"
 
 INCLUDE "engine/palettes.asm"
-
-INCLUDE "engine/sgb_border.asm"

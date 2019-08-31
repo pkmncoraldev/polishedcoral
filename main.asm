@@ -4499,3 +4499,25 @@ SECTION "Crystal Data", ROMX
 
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
 INCLUDE "data/events/odd_eggs.asm"
+INCLUDE "engine/sgb_border.asm"
+
+
+SECTION "Coral Data 1", ROMX
+
+CoralDevScreenGFX:: ; e4000
+INCBIN "gfx/intro/splash/coraldev.2bpp"
+
+CoralDevScreenWinkGFX:: ; e4000
+INCBIN "gfx/intro/splash/coraldevwink.2bpp"
+
+CoralDevScreenWink2GFX:: ; e4000
+INCBIN "gfx/intro/splash/coraldevwink2.2bpp"
+
+DisclaimerScreenGFX:: ; e4000
+INCBIN "gfx/intro/splash/disclaimer.2bpp"
+
+DisclaimerScreenGFX2:: ; e4000
+INCBIN "gfx/intro/splash/disclaimer2.2bpp"
+
+OriginalGameByGFX:: ; e4000
+INCBIN "gfx/splash/originalgameby.2bpp"

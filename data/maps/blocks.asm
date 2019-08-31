@@ -116,6 +116,12 @@ StarglowGym_BlockData:
 HuntersThicket_BlockData:
 	INCBIN "maps/HuntersThicket.ablk.lz"
 	
+SunbeamIsland_BlockData:
+	INCBIN "maps/SunbeamIsland.ablk.lz"
+	
+SunbeamBeach_BlockData:
+	INCBIN "maps/SunbeamBeach.ablk.lz"
+	
 Route1_BlockData:
 	INCBIN "maps/Route1.ablk.lz"
 
@@ -148,6 +154,21 @@ MtOnwa1F_BlockData:
 	
 MtOnwa2F_BlockData:
 	INCBIN "maps/MtOnwa2F.ablk.lz"
+	
+MtOnwaB1F_BlockData:
+	INCBIN "maps/MtOnwaB1F.ablk.lz"
+	
+MtOnwaB2F_BlockData:
+	INCBIN "maps/MtOnwaB2F.ablk.lz"
+	
+MtOnwaB3F_BlockData:
+	INCBIN "maps/MtOnwaB3F.ablk.lz"
+	
+MtOnwaCliff_BlockData:
+	INCBIN "maps/MtOnwaCliff.ablk.lz"
+	
+MtOnwaLowerCliff_BlockData:
+	INCBIN "maps/MtOnwaLowerCliff.ablk.lz"
 
 GlintGrove_BlockData:
 	INCBIN "maps/GlintGrove.ablk.lz"

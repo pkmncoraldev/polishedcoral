@@ -5,7 +5,7 @@ MtOnwa1F_MapScriptHeader:
 
 	db 3 ; warp events
 	warp_def 23, 19, 3, LAKE_ONWA
-	warp_def 1, 9, 1, ROUTE_1 ;DANCE_THEATRE
+	warp_def 1, 9, 1, MT_ONWA_CLIFF
 	warp_def 11, 5, 3, MT_ONWA_2F
 
 	db 0 ; coord events

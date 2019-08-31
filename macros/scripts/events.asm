@@ -1235,6 +1235,11 @@ checkegg: macro
 	db checkegg_command
 	endm
 
+	enum waitbuttonsilent_command
+waitbuttonsilent: macro
+	db waitbuttonsilent_command
+	endm
+	
 thisasm: macro
 	callasm .asm\@
 	end

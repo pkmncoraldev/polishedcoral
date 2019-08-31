@@ -131,7 +131,6 @@ TilesetJungleAnim::
     dw NULL,  DoneTileAnimation
 	
 TilesetCaveAnim::
-TilesetLavaCaveAnim::
 	dw NULL,  LavaAnim2
 	dw NULL,  WaitTileAnimation
 	dw WaterfallFrames, AnimateWaterfallTiles
@@ -144,6 +143,22 @@ TilesetLavaCaveAnim::
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw NULL,  FlickeringCaveEntrancePalette
+	dw VTiles2 tile $14, WriteTileFromBuffer
+	dw NULL,  DoneTileAnimation
+	
+TilesetLavaCaveAnim::
+	dw NULL,  LavaAnim2
+	dw NULL,  WaitTileAnimation
+	dw WaterfallFrames, AnimateWaterfallTiles
+	dw Waterfall2Frames, AnimateWaterfallTiles
+	dw Waterfall3Frames, AnimateWaterfallTiles
+	dw VTiles2 tile $36, AnimateTopofWaterfall
+	dw NULL,  LavaAnim1
+	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $14, WriteTileToBuffer
+	dw NULL,  WaitTileAnimation
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw NULL,  WaitTileAnimation
 	dw VTiles2 tile $14, WriteTileFromBuffer
 	dw NULL,  DoneTileAnimation
 	

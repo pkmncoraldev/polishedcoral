@@ -530,6 +530,7 @@ UsedSurfScript: ; c986
 	scall FieldMovePokepicScript
 
 AutoSurfScript:
+	playsound SFX_READ_TEXT
 	copybytetovar wBuffer2
 	writevarcode VAR_MOVEMENT
 
@@ -1482,8 +1483,8 @@ AutoHeadbuttScript:
 
 TryHeadbuttOW:: ; cec9
 	ld d, HEADBUTT
-;	call CheckPartyMove
-	call CheckPartyCanLearnMove
+	call CheckPartyMove
+;	call CheckPartyCanLearnMove
 	jr c, .no
 
 	ld a, BANK(AskHeadbuttScript)

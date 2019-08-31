@@ -72,4 +72,4 @@ BTTrainerClassSprites:
 	db SPRITE_CHRIS         ; Delinquentm
 	db SPRITE_CHRIS         ; Delinquentf
 	db SPRITE_CHRIS         ; Safari
-	db SPRITE_PALMER        ; TOWERTYCOON
+	db SPRITE_CHRIS        ; TOWERTYCOON

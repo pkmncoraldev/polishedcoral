@@ -45,6 +45,8 @@ Facings:
 	dw FacingArchTreeRight  ; FACING_ARCH_TREE_RIGHT
 	dw FacingSailboatTop    ; FACING_SAILBOAT_TOP
 	dw FacingSailboatBottom ; FACING_SAILBOAT_BOTTOM
+	dw FacingUmbrellaLeft
+	dw FacingUmbrellaRight
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -398,3 +400,20 @@ FacingSailboatBottom:
 	db 16,  32, 0, $89
 	db 24,  24, 0, $8a
 	db 24,  32, 0, $8b
+
+FacingUmbrellaLeft:
+	db 5 ; #
+	db  0,  8, 0, $08
+	db  8,  0, 0, $00
+	db  8,  8, 0, $01
+	db 16,  0, 0, $02
+	db 16,  8, 0, $03
+
+FacingUmbrellaRight:
+	db 5 ; #
+	db  0,  0, 0, $09
+	db  8,  0, 0, $04
+	db  8,  8, 0, $05
+	db 16,  0, 0, $06
+	db 16,  8, 0, $07
+	

@@ -3,7 +3,7 @@ SpriteMons:
 	db GENGAR
 	db RAICHU
 	db LEDYBA
-	db ABRA
+	db ABRA ; BRELOOM
 	db CATERPIE
 	db GROWLITHE
 	db CUBONE
@@ -12,8 +12,8 @@ SpriteMons:
 	db CHANSEY
 	db TOGEPI
 	db PSYDUCK
-	db ABRA
-	db ABRA
+	db ABRA ; LARVESTA
+	db DONPHAN
 	db ABRA
 	db ABRA
 	db ABRA

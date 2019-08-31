@@ -119,6 +119,12 @@ ENDM
 	connection north, Route1, ROUTE_1, 0, 0, 32
 	connection east, Route7, ROUTE_7, 11, 0, 9
 	
+	map_attributes SunbeamIsland, SUNBEAM_ISLAND, $35, WEST
+	connection west, SunbeamBeach, SUNBEAM_BEACH, 0, 0, 29
+	
+	map_attributes SunbeamBeach, SUNBEAM_BEACH, $35, EAST
+	connection east, SunbeamIsland, SUNBEAM_ISLAND, 0, 0, 29
+	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0
 	map_attributes GlintGrove, GLINT_GROVE, $20, 0
@@ -127,6 +133,11 @@ ENDM
 	map_attributes StarglowCavern2F, STARGLOW_CAVERN_2F, $9, 0
 	map_attributes MtOnwa1F, MT_ONWA_1F, $09, 0
 	map_attributes MtOnwa2F, MT_ONWA_2F, $09, 0
+	map_attributes MtOnwaB1F, MT_ONWA_B1F, $09, 0
+	map_attributes MtOnwaB2F, MT_ONWA_B2F, $09, 0
+	map_attributes MtOnwaB3F, MT_ONWA_B3F, $09, 0
+	map_attributes MtOnwaCliff, MT_ONWA_CLIFF, $00, 0
+	map_attributes MtOnwaLowerCliff, MT_ONWA_LOWER_CLIFF, $00, 0
 	
 	map_attributes SunsetPokeCenter, SUNSET_POKECENTER, $0, 0
 	map_attributes SunsetLighthouse, SUNSET_LIGHTHOUSE, $0, 0

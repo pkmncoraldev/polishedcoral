@@ -943,7 +943,8 @@ wStarglowTogepiHouse:: ds 1
 wStarglowPokeCenter:: ds 1
 wRoute6Trigger:: ds 1
 wLakeOnwaTrigger:: ds 1
-ds 73
+wSunbeamIslandTrigger:: ds 1
+ds 72
 
 ; fight counts
 wJackFightCount::    ds 1

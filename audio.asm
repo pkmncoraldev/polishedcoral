@@ -54,6 +54,7 @@ INCLUDE "audio/music/route4.asm"
 INCLUDE "audio/music/coraldev1.asm"
 INCLUDE "audio/music/glintgrove.asm"
 INCLUDE "audio/music/lava.asm"
+INCLUDE "audio/music/sunbeamisland.asm"
 INCLUDE "audio/music/route10.asm"
 INCLUDE "audio/music/luster.asm"
 INCLUDE "audio/music/lustersewer.asm"
@@ -61,12 +62,11 @@ INCLUDE "audio/music/snowtown.asm"
 INCLUDE "audio/music/wildbattle.asm"
 INCLUDE "audio/music/trainerbattle.asm"
 INCLUDE "audio/music/dodriorace.asm"
-INCLUDE "audio/music/encountergymleader.asm"
 
 
 SECTION "Music 4", ROMX
-
-
+INCLUDE "audio/music/encountergymleader.asm"
+INCLUDE "audio/music/gscgamecorner.asm"
 
 
 SECTION "Music 5", ROMX

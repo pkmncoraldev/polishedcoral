@@ -36,9 +36,9 @@ SunsetCaptainsHouseTrigger0Event:
 	applymovement SUNSET_CAPTAINS_HOUSE_CAPTAIN, SunsetCaptainMovement
 	spriteface SUNSET_CAPTAINS_HOUSE_CAPTAIN, DOWN
 	opentext
-	checkmorn
+	checktime 1<<MORN
 	iftrue .morn
-	checkday
+	checktime 1<<DAY
 	iftrue .day
 	writetext SunsetCaptainText1_Night
 .cont:

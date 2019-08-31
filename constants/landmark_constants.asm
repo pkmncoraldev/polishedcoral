@@ -27,6 +27,7 @@
 	const ROUTE_7			 ; 17
 	const LAKE_ONWA			 ; 18
 	const MT_ONWA			 ; 19
+	const SUNBEAM_ISLAND	 ; 20
 
 KANTO_LANDMARK EQU const_value
 

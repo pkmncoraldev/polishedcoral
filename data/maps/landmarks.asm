@@ -24,6 +24,7 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, Route7Name
 	landmark   0,   0, LakeOnwaName
 	landmark   0,   0, MtOnwaName
+	landmark   0,   0, SunbeamIslandName
 
 
 SunsetBayName:         db "SUNSET¯BAY@"
@@ -45,4 +46,5 @@ Route6Name:            db "ROUTE 6@"
 Route7Name:            db "ROUTE 7@"
 LakeOnwaName:          db "LAKE¯ONWA@"
 MtOnwaName:			   db "MT. ONWA@"
+SunbeamIslandName:	   db "SUNBEAM¯ISLAND@"
 SpecialMapName:        db "?","@"

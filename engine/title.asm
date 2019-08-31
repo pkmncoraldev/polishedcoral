@@ -18,14 +18,16 @@ _TitleScreen: ; 10ed67
 ; Turn LCD off
 	call DisableLCD
 
-
+	ld a, $90
+	ld [hWY], a
+	
 ; VRAM bank 1
 	ld a, 1
 	ld [rVBK], a
 
 
-; Decompress running Suicune gfx
-	ld hl, TitleSuicuneGFX
+; Decompress background
+	ld hl, TitleLogoGFX
 	ld de, VTiles1
 	call Decompress
 
@@ -53,50 +55,43 @@ _TitleScreen: ; 10ed67
 ; Apply logo gradient:
 
 ; lines 3-4
-	hlbgcoord 0, 3
+	hlbgcoord 0, 1
 	ld bc, 2 * BG_MAP_WIDTH
-	ld a, 2
+	ld a, 1
 	call ByteFill
 ; line 5
+	hlbgcoord 0, 3
+	ld bc, BG_MAP_WIDTH
+	ld a, 1
+	call ByteFill
+; line 6
+	hlbgcoord 0, 4
+	ld bc, BG_MAP_WIDTH
+	ld a, 2
+	call ByteFill
+; line 7
 	hlbgcoord 0, 5
 	ld bc, BG_MAP_WIDTH
 	ld a, 3
 	call ByteFill
-; line 6
+; lines 8-9
 	hlbgcoord 0, 6
-	ld bc, BG_MAP_WIDTH
+	ld bc, 2 * BG_MAP_WIDTH
 	ld a, 4
 	call ByteFill
-; line 7
-	hlbgcoord 0, 7
-	ld bc, BG_MAP_WIDTH
-	ld a, 5
-	call ByteFill
-; lines 8-9
-	hlbgcoord 0, 8
-	ld bc, 2 * BG_MAP_WIDTH
-	ld a, 6
-	call ByteFill
 
-
-; 'CRYSTAL VERSION'
-	hlbgcoord 5, 9
-	ld bc, NAME_LENGTH ; length of version text
-	ld a, 1
-	call ByteFill
 
 ; Suicune gfx
-	hlbgcoord 0, 12
-	ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
+	hlbgcoord 0, 8
+	ld bc, 11 * BG_MAP_WIDTH ; the rest of the screen
 	ld a, 8
 	call ByteFill
-
-
+	
+	
 ; Back to VRAM bank 0
 	xor a
 	ld [rVBK], a
-
-
+	
 ; Decompress logo
 	ld hl, TitleLogoGFX
 	ld de, VTiles1
@@ -106,39 +101,36 @@ _TitleScreen: ; 10ed67
 	ld hl, TitleCrystalGFX
 	ld de, VTiles0
 	call Decompress
-
-
+	
 ; Clear screen tiles
 	hlbgcoord 0, 0
 	ld bc, 64 * BG_MAP_WIDTH
 	ld a, " "
 	call ByteFill
-
-; Draw Pokemon logo
-	hlcoord 0, 3
+	
+; Draw logo
+	hlcoord 0, 1
 	lb bc, 7, SCREEN_WIDTH
 	lb de, $80, SCREEN_WIDTH
 	call DrawTitleGraphic
 
 ; Draw copyright text
-	hlbgcoord 4, 0, VBGMap1
-	lb bc, 1, 13
+	hlbgcoord 0, 0, VBGMap1
+	lb bc, 1, 9
 	lb de, $0c, 0
 	call DrawTitleGraphic
-
-IF DEF(FAITHFUL)
-	hlbgcoord 17, 0, VBGMap1
-	lb bc, 1, 1
-	lb de, $19, 0
+	
+	hlcoord 0, 8
+	lb bc, 11, SCREEN_WIDTH
+	lb de, $80, SCREEN_WIDTH
 	call DrawTitleGraphic
-endc
-
+	
 ; Initialize running Suicune?
-	ld d, $0
-	call LoadSuicuneFrame
+;	ld d, $80
+;	call LoadSuicuneFrame
 
 ; Initialize background crystal
-	call InitializeBackground
+;	call InitializeBackground
 
 ; Save WRAM bank
 	ld a, [rSVBK]
@@ -147,59 +139,12 @@ endc
 	ld a, 5
 	ld [rSVBK], a
 
-; Update palette colors
-	ld hl, TitleScreenPalettes
-	ld de, wUnknBGPals
-	ld bc, 16 palettes
-	rst CopyBytes
-
-	ld hl, TitleScreenPalettes
-	ld de, wBGPals
-	ld bc, 16 palettes
-	rst CopyBytes
-
 ; Restore WRAM bank
 	pop af
 	ld [rSVBK], a
 
 
-; LY/SCX trickery starts here
-
-	ld a, [rSVBK]
-	push af
-	ld a, BANK(wLYOverrides)
-	ld [rSVBK], a
-
-; Make sure the LYOverrides buffer is empty
-	ld hl, wLYOverrides
-	xor a
-	ld bc, wLYOverridesEnd - wLYOverrides
-	call ByteFill
-
-; Let LCD Stat know we're messing around with SCX
-	ld a, rSCX - rJOYP
-	ld [hLCDCPointer], a
-
-	pop af
-	ld [rSVBK], a
-
-
-; Reset audio
-	call ChannelsOff
 	call EnableLCD
-
-	ld a, [rLCDC]
-	set 2, a ; 8x16 sprites
-	ld [rLCDC], a
-
-	ld a, +112
-	ld [hSCX], a
-	ld a, 8
-	ld [hSCY], a
-	ld a, 7
-	ld [hWX], a
-	ld a, -112
-	ld [hWY], a
 
 	ld a, $1
 	ld [hCGBPalUpdate], a
@@ -209,63 +154,62 @@ endc
 
 	xor a
 	ld [wUnknBGPals palette 0 + 2], a
-
+	
 ; Play starting sound effect
-	call SFXChannelsOff
-	ld de, SFX_TITLE_SCREEN_ENTRANCE
-	call PlaySFX
-
+;	call SFXChannelsOff
+;	ld de, SFX_TITLE_SCREEN_ENTRANCE
+;	call PlaySFX
 	ret
 ; 10eea7
 
-SuicuneFrameIterator: ; 10eea7
-	ld hl, wUnknBGPals palette 0 + 2
-	ld a, [hl]
-	ld c, a
-	inc [hl]
+;SuicuneFrameIterator: ; 10eea7
+;	ld hl, wUnknBGPals palette 0 + 2
+;	ld a, [hl]
+;	ld c, a
+;	inc [hl]
 
 ; Only do this once every eight frames
-	and (1 << 3) - 1
-	ret nz
+;	and (1 << 3) - 1
+;	ret nz
 
-	ld a, c
-	and 3 << 3
-	sla a
-	swap a
-	ld e, a
-	ld d, $0
-	ld hl, .Frames
-	add hl, de
-	ld d, [hl]
-	xor a
-	ld [hBGMapMode], a
-	call LoadSuicuneFrame
-	ld a, $1
-	ld [hBGMapMode], a
-	ld [hBGMapHalf], a
-	ret
+;	ld a, c
+;	and 3 << 3
+;	sla a
+;	swap a
+;	ld e, a
+;	ld d, $0
+;	ld hl, .Frames
+;	add hl, de
+;	ld d, [hl]
+;	xor a
+;	ld [hBGMapMode], a
+;	call LoadSuicuneFrame
+;	ld a, $1
+;	ld [hBGMapMode], a
+;	ld [hBGMapHalf], a
+;	ret
 ; 10eece
 
-.Frames: ; 10eece
-	db $80 ; VTiles4 tile $00
-	db $88 ; VTiles4 tile $08
-	db $00 ; VTiles5 tile $00
-	db $08 ; VTiles5 tile $08
+;.Frames: ; 10eece
+;	db $80 ; VTiles4 tile $00
+;	db $88 ; VTiles4 tile $08
+;	db $00 ; VTiles5 tile $00
+;	db $08 ; VTiles5 tile $08
 ; 10eed2
 
 
 LoadSuicuneFrame: ; 10eed2
-	hlcoord 6, 12
+	hlcoord 0, 8
 	ld b, 6
 .bgrows
-	ld c, 8
+	ld c, 20
 .col
 	ld a, d
 	ld [hli], a
 	inc d
 	dec c
 	jr nz, .col
-	ld a, SCREEN_WIDTH - 8
+	ld a, SCREEN_WIDTH; - 8
 	add l
 	ld l, a
 	ld a, 0 ; not xor a; preserve carry flag
@@ -309,9 +253,38 @@ DrawTitleGraphic: ; 10eeef
 	ret
 ; 10ef06
 
+DrawTitleGraphic2: ; 10eeef
+; input:
+;   hl: draw location
+;   b: height
+;   c: width
+;   d: tile to start drawing from
+;   e: number of tiles to advance for each bgrows
+.bgrows
+	push de
+	push bc
+	push hl
+.col
+	ld a, d
+	ld [hli], a
+	inc d
+	dec c
+	jr nz, .col
+	pop hl
+	ld bc, SCREEN_WIDTH - 8
+	add hl, bc
+	pop bc
+	pop de
+	ld a, e
+	add d
+	ld d, a
+	dec b
+	jr nz, .bgrows
+	ret
+
 InitializeBackground: ; 10ef06
 	ld hl, wSprites
-	lb de, -$22, $0
+	lb de, $24, $0
 	ld c, 5
 .loop
 	push bc
@@ -326,7 +299,7 @@ InitializeBackground: ; 10ef06
 ; 10ef1c
 
 .InitColumn: ; 10ef1c
-	lb bc, $40, $6
+	lb bc, $7a, $6
 .loop2
 	ld a, d
 	ld [hli], a
@@ -371,8 +344,8 @@ AnimateTitleCrystal: ; 10ef32
 	ret
 ; 10ef46
 
-TitleSuicuneGFX: ; 10ef46
-INCBIN "gfx/title/suicune.w128.2bpp.lz"
+TitleBackgroundGFX: ; 10ef46
+INCBIN "gfx/title/titlebackground.2bpp.lz"
 ; 10f326
 
 TitleLogoGFX: ; 10f326
@@ -383,167 +356,43 @@ TitleCrystalGFX: ; 10fcee
 INCBIN "gfx/title/crystal.w48.interleave.2bpp.lz"
 ; 10fede
 
-TitleScreenPalettes:
-; BG
-if !DEF(MONOCHROME)
+TitleScreenOBPalettes:
 	RGB 00, 00, 00
-	RGB 19, 00, 00
-	RGB 15, 08, 31
-	RGB 15, 08, 31
-
-	RGB 00, 00, 00
+	RGB 23, 03, 06
+	RGB 30, 13, 21
 	RGB 31, 31, 31
-	RGB 15, 16, 31
-	RGB 31, 01, 13
-
-	RGB 00, 00, 00
-	RGB 07, 07, 07
-	RGB 31, 31, 31
-	RGB 02, 03, 30
-
-	RGB 00, 00, 00
-	RGB 13, 13, 13
-	RGB 31, 31, 18
-	RGB 02, 03, 30
-
-	RGB 00, 00, 00
-	RGB 19, 19, 19
-	RGB 29, 28, 12
-	RGB 02, 03, 30
-
-	RGB 00, 00, 00
-	RGB 25, 25, 25
-	RGB 28, 25, 06
-	RGB 02, 03, 30
-
-	RGB 00, 00, 00
-	RGB 31, 31, 31
-	RGB 26, 21, 00
-	RGB 02, 03, 30
-
-	RGB 00, 00, 00
-	RGB 11, 11, 19
-	RGB 31, 31, 31
-	RGB 00, 00, 00
-
-; OBJ
-	RGB 00, 00, 00
-	RGB 10, 00, 15
-	RGB 17, 05, 22
-	RGB 19, 09, 31
 
 	RGB 31, 31, 31
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
 
 	RGB 31, 31, 31
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
 
 	RGB 31, 31, 31
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
 
 	RGB 31, 31, 31
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
 
 	RGB 31, 31, 31
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
 
 	RGB 31, 31, 31
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
 
 	RGB 31, 31, 31
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-else
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_LIGHT
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_LIGHT
-	RGB_MONOCHROME_DARK
-
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_LIGHT
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_LIGHT
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_LIGHT
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_LIGHT
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_LIGHT
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_BLACK
-
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_LIGHT
-	RGB_MONOCHROME_WHITE
-
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-endc
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31

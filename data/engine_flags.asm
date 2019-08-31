@@ -73,36 +73,36 @@ EngineFlags: ; 80462
 
 	; fly
 	engine_flag wVisitedSpawns, 0  ; your house
-	engine_flag wVisitedSpawns, 1  ; pallet
-	engine_flag wVisitedSpawns, 2  ; viridian
-	engine_flag wVisitedSpawns, 3  ; pewter
-	engine_flag wVisitedSpawns, 4  ; mt moon
-	engine_flag wVisitedSpawns, 5  ; cerulean
-	engine_flag wVisitedSpawns, 6  ; rock tunnel
-	engine_flag wVisitedSpawns, 7  ; vermilion
-	engine_flag wVisitedSpawns, 8  ; lavender
-	engine_flag wVisitedSpawns, 9  ; saffron
-	engine_flag wVisitedSpawns, 10 ; celadon
-	engine_flag wVisitedSpawns, 11 ; fuchsia
-	engine_flag wVisitedSpawns, 12 ; cinnabar
-	engine_flag wVisitedSpawns, 13 ; indigo plateau
-	engine_flag wVisitedSpawns, 14 ; new bark
-	engine_flag wVisitedSpawns, 15 ; cherrygrove
-	engine_flag wVisitedSpawns, 16 ; violet
-	engine_flag wVisitedSpawns, 17 ; union cave
-	engine_flag wVisitedSpawns, 18 ; azalea
-	engine_flag wVisitedSpawns, 19 ; cianwood
-	engine_flag wVisitedSpawns, 20 ; goldenrod
-	engine_flag wVisitedSpawns, 21 ; olivine
-	engine_flag wVisitedSpawns, 22 ; ecruteak
-	engine_flag wVisitedSpawns, 23 ; mahogany
-	engine_flag wVisitedSpawns, 24 ; lake of rage
-	engine_flag wVisitedSpawns, 25 ; blackthorn
-	engine_flag wVisitedSpawns, 26 ; silver cave
+	engine_flag wVisitedSpawns, 1  ; sunset
+	engine_flag wVisitedSpawns, 2  ; daybreak
+	engine_flag wVisitedSpawns, 3  ; glint
+	engine_flag wVisitedSpawns, 4  ; starglow
+	engine_flag wVisitedSpawns, 5  ; lake
+	engine_flag wVisitedSpawns, 6  ; sunbeam
+	engine_flag wVisitedSpawns, 7  ; flicker
+	engine_flag wVisitedSpawns, 8  ; unused
+	engine_flag wVisitedSpawns, 9  ; unused
+	engine_flag wVisitedSpawns, 10 ; unused
+	engine_flag wVisitedSpawns, 11 ; unused
+	engine_flag wVisitedSpawns, 12 ; unused
+	engine_flag wVisitedSpawns, 13 ; unused
+	engine_flag wVisitedSpawns, 14 ; unused
+	engine_flag wVisitedSpawns, 15 ; unused
+	engine_flag wVisitedSpawns, 16 ; unused
+	engine_flag wVisitedSpawns, 17 ; unused
+	engine_flag wVisitedSpawns, 18 ; unused
+	engine_flag wVisitedSpawns, 19 ; unused
+	engine_flag wVisitedSpawns, 20 ; unused
+	engine_flag wVisitedSpawns, 21 ; unused
+	engine_flag wVisitedSpawns, 22 ; unused
+	engine_flag wVisitedSpawns, 23 ; unused
+	engine_flag wVisitedSpawns, 24 ; unused
+	engine_flag wVisitedSpawns, 25 ; unused
+	engine_flag wVisitedSpawns, 26 ; unused
 
 	engine_flag wLuckyNumberShowFlag, 0 ; lucky number show
 
-	engine_flag wDailyFlags, 0 ; kurt making balls
+	engine_flag wDailyFlags, 0 ; daily bikini contest
 	engine_flag wDailyFlags, 1 ; daily bug contest?
 	engine_flag wDailyFlags, 2 ; special wilddata?
 	engine_flag wDailyFlags, 3 ; valeries morning walk

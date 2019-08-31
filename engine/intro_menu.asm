@@ -44,17 +44,17 @@ PrintDayOfWeek: ; 5b05
 ; 5b1c
 
 .Days: ; 5b1c
-	db "Sun@"
-	db "Mon@"
-	db "Tues@"
-	db "Wednes@"
-	db "Thurs@"
-	db "Fri@"
-	db "Satur@"
+	db "SUN@"
+	db "MON@"
+	db "TUES@"
+	db "WEDNES@"
+	db "THURS@"
+	db "FRI@"
+	db "SATUR@"
 ; 5b40
 
 .Day: ; 5b40
-	db "day@"
+	db "DAY@"
 ; 5b44
 
 NewGame_ClearTileMapEtc: ; 5b44
@@ -1100,8 +1100,8 @@ Intro_PlacePlayerSprite: ; 61cd
 
 CrystalIntroSequence: ; 620b
 	farcall Copyright_GFPresents
-	jr c, StartTitleScreen
-	farcall CrystalIntro
+;	jr c, StartTitleScreen
+;	farcall CrystalIntro
 
 StartTitleScreen: ; 6219
 	ld hl, rIE
@@ -1113,6 +1113,7 @@ StartTitleScreen: ; 6219
 
 	farcall _TitleScreen
 	call DelayFrame
+	
 .loop
 	call RunTitleScreen
 	jr nc, .loop
@@ -1170,7 +1171,7 @@ RunTitleScreen: ; 627b
 	bit 7, a
 	jr nz, .done_title
 	call TitleScreenScene
-	farcall SuicuneFrameIterator
+;	farcall SuicuneFrameIterator
 	call DelayFrame
 	and a
 	ret
@@ -1201,39 +1202,15 @@ TitleScreenScene: ; 62a3
 
 
 TitleScreenEntrance: ; 62bc
+	ld a, 0
+	ld [wMagnetTrainDirection], a
 
-; Animate the logo:
-; Move each line by 4 pixels until our count hits 0.
-	ld a, [hSCX]
-	and a
-	jr z, .done
-	sub 4
-	ld [hSCX], a
+	call SetBlackPals
+	ld c, 0
+	call FadePalettes
+	ld c, 60
+	call DelayFrames
 
-; Lay out a base (all lines scrolling together).
-	ld e, a
-	ld hl, wLYOverrides
-	ld bc, 8 * 10 ; logo height
-	call ByteFill
-
-; Reversed signage for every other line's position.
-; This is responsible for the interlaced effect.
-	ld a, e
-	cpl
-	inc a
-
-	ld b, 8 * 10 / 2 ; logo height / 2
-	ld hl, wLYOverrides + 1
-.loop
-	ld [hli], a
-	inc hl
-	dec b
-	jr nz, .loop
-
-	farjp AnimateTitleCrystal
-
-.done
-; Next scene
 	ld hl, wJumptableIndex
 	inc [hl]
 
@@ -1248,20 +1225,45 @@ TitleScreenEntrance: ; 62bc
 	ld [de], a
 	call CloseSRAM
 
+
+	ld a, BANK(wUnknBGPals)
+	call StackCallInWRAMBankA
+
+	ld hl, TitleScreenPalettes
+	ld de, wUnknBGPals
+	ld bc, 16 palettes
+	rst CopyBytes
+	
+	ld c, 30
+	call FadePalettes
+
 ; Play the title screen music.
 	ld de, MUSIC_TITLE
-;	ld a, [wSaveFileExists]
-;	and a
-;	jr z, .ok
-;	ld hl, wStatusFlags
-;	bit 6, [hl] ; hall of fame
-;	jr z, .ok
-;	ld de, MUSIC_EVOLUTION
-;.ok
 	call PlayMusic
 
 	ld a, $88
 	ld [hWY], a
+	
+	ld c, 30
+	call DelayFrames
+	
+;	ld de, SFX_TITLE_SCREEN_ENTRANCE
+;	call PlaySFX
+	
+	call SetWhitePals
+	ld c, 6
+	call FadePalettes
+	
+	ld a, BANK(wUnknBGPals)
+	call StackCallInWRAMBankA
+
+	ld hl, TitleScreenPalettes2
+	ld de, wUnknBGPals
+	ld bc, 16 palettes
+	rst CopyBytes
+	
+	ld c, 6
+	call FadePalettes
 	ret
 ; 62f6
 
@@ -1299,6 +1301,42 @@ TitleScreenTimer: ; 62f6
 
 TitleScreenMain: ; 6304
 
+	ld hl, wUnknBGPals palette 0 + 2
+	ld a, [hl]
+	ld c, a
+	inc [hl]
+
+; Only do this once every eight frames
+	and (1 << 3) - 1
+	jr nz, .cont
+
+	ld a, [wMagnetTrainDirection]
+	inc a
+	ld [wMagnetTrainDirection], a
+
+	ld a, LOW(rSCX)
+	ldh [hLCDCPointer], a
+
+	ld hl, wLYOverridesBackup
+	ld c, 50 - 1
+	xor a ; same as ld a, 0
+	ldh [hSCX], a
+	call .loadloop
+	ld c, 44
+	ld a, [wMagnetTrainDirection]
+	call .loadloop
+	ld c, 50 + 1
+	xor a
+	call .loadloop
+	call PushLYOverrides
+	jr .cont
+.loadloop
+	ld [hli], a
+	dec c
+	jr nz, .loadloop
+	ret
+
+.cont
 ; Run the timer down.
 	ld hl, wcf65
 	ld e, [hl]
@@ -1340,6 +1378,7 @@ TitleScreenMain: ; 6304
 ; Return to the intro sequence.
 	ld hl, wJumptableIndex
 	set 7, [hl]
+	
 	ret
 
 .end
@@ -1404,31 +1443,379 @@ ResetClock: ; 6392
 
 Copyright: ; 63e2
 	call ClearTileMap
-	call LoadFontsExtra
 	ld de, CopyrightGFX
 	ld hl, VTiles2 tile $60
 	lb bc, BANK(CopyrightGFX), $1d
 	call Request2bpp
-	hlcoord 2, 7
+	
+	ld de, OriginalGameByGFX
+	ld hl, VTiles2 tile $01
+	lb bc, BANK(OriginalGameByGFX), $0c
+	call Request2bpp
+	
+	hlcoord 2, 5
 	ld de, CopyrightString
-	jp PlaceString
+	call PlaceString
+	
+	hlcoord 2, 7
+	lb bc, 1, 13
+	lb de, $60, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 2, 9
+	lb bc, 1, 7
+	lb de, $60, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 9, 9
+	lb bc, 1, 6
+	lb de, $6d, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 15, 9
+	lb bc, 1, 3
+	lb de, $7a, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 2, 11
+	lb bc, 1, 7
+	lb de, $60, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 9, 11
+	lb bc, 1, 10
+	lb de, $73, 0
+	farcall DrawTitleGraphic
+	
+	ret
 ; 63fd
 
 CopyrightString: ; 63fd
 	; ©1995-2001 Nintendo
-	db   $60, $61, $62, $63, $64, $65, $66
-	db   $67, $68, $69, $6a, $6b, $6c
-
-	; ©1995-2001 Creatures inc.
-	next $60, $61, $62, $63, $64, $65, $66
-	db   $6d, $6e, $6f, $70, $71, $72, $7a, $7b, $7c
-
-	; ©1995-2001 GAME FREAK inc.
-	next $60, $61, $62, $63, $64, $65, $66
-	db   $73, $74, $75, $76, $77, $78, $79, $7a, $7b, $7c
+	db   $01, $02, $03, $04, $05, $06, $07
+	db   $08, $09
 
 	db "@"
 ; 642e
+
+CoralSplashScreen:
+	call ClearTileMap
+	ld de, DisclaimerScreenGFX
+	ld hl, VTiles1 tile $00
+	lb bc, BANK(DisclaimerScreenGFX), $7f
+	call Request2bpp
+	ld de, DisclaimerScreenGFX2
+	ld hl, VTiles2 tile $00
+	lb bc, BANK(DisclaimerScreenGFX2), $7f
+	call Request2bpp
+	
+	hlcoord 7, 1
+	lb bc, 1, 6
+	lb de, $80, 0
+	farcall DrawTitleGraphic
+	hlcoord 7, 2
+	lb bc, 1, 6
+	lb de, $94, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 0, 5
+	lb bc, 1, SCREEN_WIDTH
+	lb de, $a8, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 0, 6
+	lb bc, 1, SCREEN_WIDTH
+	lb de, $bc, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 0, 7
+	lb bc, 1, SCREEN_WIDTH
+	lb de, $d0, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 0, 8
+	lb bc, 1, SCREEN_WIDTH
+	lb de, $e4, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 0, 9
+	lb bc, 1, 7
+	lb de, $f8, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 7, 9
+	lb bc, 1, 1
+	lb de, $73, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 8, 9
+	lb bc, 1, 12
+	lb de, $00, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 0, 10
+	lb bc, 1, SCREEN_WIDTH
+	lb de, $0c, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 0, 11
+	lb bc, 1, SCREEN_WIDTH
+	lb de, $20, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 0, 12
+	lb bc, 1, SCREEN_WIDTH
+	lb de, $34, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 0, 13
+	lb bc, 1, SCREEN_WIDTH
+	lb de, $48, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 0, 14
+	lb bc, 1, SCREEN_WIDTH
+	lb de, $5b, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 0, 15
+	lb bc, 1, 1
+	lb de, $70, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 1, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 2, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 3, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 4, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 5, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 6, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 7, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 8, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 9, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 10, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 11, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 12, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 13, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 14, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 15, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 16, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 17, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 18, 15
+	lb bc, 1, 1
+	lb de, $71, 1
+	farcall DrawTitleGraphic
+	
+	hlcoord 19, 15
+	lb bc, 1, 1
+	lb de, $72, 1
+	farcall DrawTitleGraphic
+	
+;	hlcoord 3, 16
+;	lb bc, 1, 9
+;	lb de, $86, 0
+;	farcall DrawTitleGraphic
+	
+;	hlcoord 3, 17
+;	lb bc, 1, 9
+;	lb de, $9a, 0
+;	farcall DrawTitleGraphic
+	ret
+
+CoralDevScreen:
+	call ClearTileMap
+	ld de, CoralDevScreenGFX
+	ld hl, VTiles2 tile $60
+	lb bc, BANK(CoralDevScreenGFX), $1d
+	call Request2bpp
+	hlcoord 0, 0
+	ld de, CoralDevScreenString
+	jp PlaceString
+
+CoralDevScreenWink:
+	ld de, CoralDevScreenWinkGFX
+	ld hl, VTiles2 tile $6a
+	lb bc, BANK(CoralDevScreenWinkGFX), $1
+	call Request2bpp
+	ret
+	
+CoralDevScreenWink2:
+	ld de, CoralDevScreenWink2GFX
+	ld hl, VTiles2 tile $6a
+	lb bc, BANK(CoralDevScreenWink2GFX), $1
+	call Request2bpp
+	ret
+	
+CoralDevScreenString:		
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	
+	db   $60, $61, $62, $63
+	
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70	
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	
+	db   $64, $65, $66, $67
+	
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	
+	db   $68, $69, $6a, $6b
+	
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	
+	db   $6c, $6d, $6e, $6f
+	
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70
+	
+	db   $71, $72, $73, $74, $75, $76
+	
+	db   $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	db   $70, $70, $70, $70
+	
+	db "@"
 
 GameInit:: ; 642e
 	farcall TryLoadSaveData
@@ -1447,3 +1834,87 @@ GameInit:: ; 642e
 	call ApplyTilemapInVBlank
 	jp CrystalIntroSequence
 ; 6454
+
+TitleScreenPalettes:
+; BG
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+
+	RGB 00, 00, 00
+	RGB 23, 03, 06
+	RGB 30, 13, 21
+	RGB 31, 31, 31
+	
+	RGB 00, 00, 00
+	RGB 23, 03, 06
+	RGB 30, 16, 23
+	RGB 31, 31, 31
+	
+	RGB 00, 00, 00
+	RGB 23, 03, 06
+	RGB 30, 19, 24
+	RGB 31, 31, 31
+	
+	RGB 00, 00, 00
+	RGB 23, 03, 06
+	RGB 31, 21, 25
+	RGB 31, 31, 31
+	
+	RGB 00, 00, 00
+	RGB 23, 03, 06
+	RGB 31, 23, 27
+	RGB 31, 31, 31
+	
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 31, 31, 31
+	
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 31, 31, 31
+
+TitleScreenPalettes2:
+; BG
+	RGB 06, 19, 28
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 06, 19, 28
+	RGB 23, 03, 06
+	RGB 30, 13, 21
+	RGB 31, 31, 31
+	
+	RGB 06, 19, 28
+	RGB 23, 03, 06
+	RGB 30, 16, 23
+	RGB 31, 31, 31
+	
+	RGB 06, 19, 28
+	RGB 23, 03, 06
+	RGB 30, 19, 24
+	RGB 31, 31, 31
+	
+	RGB 06, 19, 28
+	RGB 23, 03, 06
+	RGB 31, 21, 25
+	RGB 31, 31, 31
+	
+	RGB 06, 19, 28
+	RGB 23, 03, 06
+	RGB 31, 23, 27
+	RGB 31, 31, 31
+	
+	RGB 06, 19, 28
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 31, 31, 31
+	
+	RGB 06, 19, 28
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 31, 31, 31

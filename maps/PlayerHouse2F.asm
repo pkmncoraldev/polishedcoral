@@ -5,18 +5,19 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 7 ; warp events
+	db 8 ; warp events
 	warp_event  9,  0, PLAYER_HOUSE_1F, 3
 	warp_event  5, 10, SUNSET_BAY, 1
 	warp_event  7, 10, DAYBREAK_VILLAGE, 1
 	warp_event  9, 10, GLINT_CITY, 1
 	warp_event 11, 10, STARGLOW_VALLEY, 1
 	warp_event 13, 10, LAKE_ONWA, 1
-	warp_event 15, 10, LAKE_ONWA, 2
+	warp_event 15, 10, MT_ONWA_CLIFF, 1 
+	warp_event 17, 10, SUNBEAM_ISLAND, 9
 
 	db 0 ; coord events
 
-	db 9 ; bg events
+	db 10 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
 	bg_event  5,  1, SIGNPOST_READ, PlayerHouseRadio
 	bg_event  7,  1, SIGNPOST_READ, PlayerHouseBookshelf
@@ -29,6 +30,7 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event 10, 10, SIGNPOST_JUMPTEXT, PlayerHouseStarglow
 	bg_event 12, 10, SIGNPOST_JUMPTEXT, PlayerHouseLakeOnwaR
 	bg_event 14, 10, SIGNPOST_JUMPTEXT, PlayerHouseLakeOnwaL
+	bg_event 16, 10, SIGNPOST_JUMPTEXT, PlayerHouseSunbeamIsland
 
 	db 1 ; object events
 	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, -1
@@ -95,12 +97,27 @@ PlayerHouseLakeOnwaL:
 	line "LEFT SIDE"
 	done
 	
+PlayerHouseSunbeamIsland:
+	text "SUNBEAM ISLAND"
+	done
+	
 PlayerHouse2FInitializeRoom:
 ;	special ToggleDecorationsVisibility
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	checkevent EVENT_INITIALIZED_EVENTS
 	iftrue .SkipInizialization
 	callasm FixPlayerPalKrisHouse
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .girl
+	setevent EVENT_PLAYER_IS_MALE
+	clearevent EVENT_PLAYER_IS_FEMALE
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CHRIS
+	jump .done
+.girl
+	setevent EVENT_PLAYER_IS_FEMALE
+	clearevent EVENT_PLAYER_IS_MALE
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_KRIS
+.done
 	jumpstd initializeevents
 	return
 

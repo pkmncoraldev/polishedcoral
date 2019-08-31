@@ -715,7 +715,7 @@ TownMap_ConvertLineBreakCharacters: ; 1de2c5
 	jp PlaceString
 
 TownMap_GetJohtoLandmarkLimits:
-	lb de, STARGLOW_VALLEY, SUNSET_BAY
+	lb de, LAKE_ONWA, SUNSET_BAY
 	ret
 
 TownMap_GetKantoLandmarkLimits: ; 910e8
@@ -2202,7 +2202,7 @@ FlyMap: ; 91c90
 ; Flypoints begin at New Bark Town...
 	ld [wStartFlypoint], a
 ; ..and end at Silver Cave
-	ld a, FLY_STARGLOW
+	ld a, FLY_LAKE
 	ld [wEndFlypoint], a
 ; Fill out the map
 	call FillJohtoMap

@@ -539,6 +539,8 @@ MapObjectMovementPattern:
 	dw .MovementArchTree             ; SPRITEMOVEFN_ARCH_TREE
 	dw .MovementSailboatTop          ; SPRITEMOVEFN_SAILBOAT_TOP
 	dw .MovementSailboatBottom       ; SPRITEMOVEFN_SAILBOAT_BOTTOM
+	dw .MovementUmbrellaLeft ; 17
+	dw .MovementUmbrellaRight ; 18
 
 .RandomWalkY:
 	call Random
@@ -750,6 +752,32 @@ MapObjectMovementPattern:
 .MovementSailboatBottom:
 	ld a, PERSON_ACTION_SAILBOAT_BOTTOM
 	jr ._ActionA_StepType04
+	
+.MovementUmbrellaLeft:
+	call EndSpriteMovement
+	ld hl, OBJECT_DIRECTION_WALKING
+	add hl, bc
+	ld [hl], STANDING
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], PERSON_ACTION_UMBRELLA_LEFT
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_04
+	ret
+
+.MovementUmbrellaRight:
+	call EndSpriteMovement
+	ld hl, OBJECT_DIRECTION_WALKING
+	add hl, bc
+	ld [hl], STANDING
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], PERSON_ACTION_UMBRELLA_RIGHT
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_04
+	ret
 
 .StandingFlip:
 	ld a, PERSON_ACTION_STAND_FLIP

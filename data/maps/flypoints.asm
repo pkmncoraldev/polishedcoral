@@ -10,6 +10,7 @@ Flypoints:
 	flypoint DAYBREAK,			DAYBREAK_VILLAGE
 	flypoint GLINT,				GLINT_CITY
 	flypoint STARGLOW,			STARGLOW_VALLEY
+	flypoint LAKE,				LAKE_ONWA
 	flypoint LASTFLYPOINT,		SUNSET_BAY
 KANTO_FLYPOINT EQU const_value
 	

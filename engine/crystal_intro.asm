@@ -12,12 +12,27 @@ Copyright_GFPresents: ; e4579
 	ld [hSCY], a
 	ld a, $90
 	ld [hWY], a
+	ld b, CGB_SPLASH_SCREEN
+	call GetCGBLayout
+	farcall CoralSplashScreen
+	call ApplyTilemapInVBlank
+	ld c, 15
+	call FadePalettes
+	ld c, 250
+	call DelayFrames
+	ld c, 150
+	call DelayFrames
+	call SetBlackPals
+	ld c, 15
+	call FadePalettes
 	ld b, CGB_GAMEFREAK_LOGO
 	call GetCGBLayout
+	ld c, 60
+	call DelayFrames
 	farcall Copyright
 	farcall BSOD
 	call ApplyTilemapInVBlank
-	ld c, 15
+	ld c, 0
 	call FadePalettes
 	ld c, 80
 	call DelayFrames
@@ -25,31 +40,31 @@ Copyright_GFPresents: ; e4579
 	ld c, 15
 	call FadePalettes
 	call ClearTileMap
-	ld b, CGB_GAMEFREAK_LOGO
+	ld c, 60
+	call DelayFrames
+	ld b, CGB_CORALDEV_LOGO
 	call GetCGBLayout
-	call SetPalettes
-	call .GetGFLogoGFX
-.joy_loop
-	call JoyTextDelay
-	ld a, [hJoyLast]
-	and BUTTONS
-	jr nz, .pressed_button
-	ld a, [wJumptableIndex]
-	bit 7, a
-	jr nz, .finish
-	call PlaceGameFreakPresents
-	farcall PlaySpriteAnimations
-	call DelayFrame
-	jr .joy_loop
-
-.pressed_button
-	call .StopGamefreakAnim
-	scf
-	ret
-
-.finish
-	call .StopGamefreakAnim
-	and a
+	farcall CoralDevScreen
+	call ApplyTilemapInVBlank
+	ld c, 15
+	call FadePalettes
+	ld c, 15
+	call DelayFrames
+	ld de, MUSIC_CORALDEV_1
+	call PlayMusic
+	ld c, 110
+	call DelayFrames
+	farcall CoralDevScreenWink
+	ld c, 15
+	call DelayFrames
+	farcall CoralDevScreenWink2
+	ld c, 60
+	call DelayFrames
+	call SetWhitePals
+	ld c, 15
+	call FadePalettes
+	ld c, 60
+	call DelayFrames
 	ret
 ; e45e8
 

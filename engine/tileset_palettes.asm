@@ -25,8 +25,6 @@ LoadSpecialMapPalette: ; 494ac
 	jr z, .cave
 	cp TILESET_STARGLOW_CAVERN
 	jr z, .starglow_cavern
-	cp TILESET_LAVA_CAVE
-	jr z, .lavacave
 	cp TILESET_GROVE
 	jp z, .grove
 	cp TILESET_MOUNTAIN
@@ -63,10 +61,6 @@ LoadSpecialMapPalette: ; 494ac
 	
 .starglow_cavern
 	ld hl, StarglowCavernPalette
-	jp LoadEightBGPalettes
-	
-.lavacave
-	ld hl, LavaCavePalette
 	jp LoadEightBGPalettes
 	
 .grove
@@ -215,9 +209,6 @@ INCLUDE "maps/palettes/bgpals/cave.pal"
 
 StarglowCavernPalette:
 INCLUDE "maps/palettes/bgpals/starglow_cavern.pal"
-
-LavaCavePalette:
-INCLUDE "maps/palettes/bgpals/lavacave.pal"
 
 OutsideGrovePalette:
 INCLUDE "maps/palettes/bgpals/bggrove.pal"

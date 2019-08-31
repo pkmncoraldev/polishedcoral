@@ -40,10 +40,10 @@ BattleMenuDataHeader: ; 24f2c
 ; 0x24f3d
 
 .Strings: ; 0x24f3d
-	db "Fight@"
+	db "FIGHT@"
 	db "<PK><MN>@"
-	db "Bag@"
-	db "Run@"
+	db "BAG@"
+	db "RUN@"
 ; 24f4e
 
 ContestBattleMenuDataHeader: ; 24f89
@@ -63,10 +63,10 @@ ContestBattleMenuDataHeader: ; 24f89
 ; 24f9a
 
 .Strings: ; 24f9a
-	db "Fight@"
+	db "FIGHT@"
 	db "<PK><MN>@"
-	db "ParkBall×  @"
-	db "Run@"
+	db "BALLS×  @"
+	db "RUN@"
 ; 24fb2
 
 ShowParkBallsRemaining: ; 24fb2
@@ -91,10 +91,10 @@ SafariBattleMenuDataHeader:
 	dba ShowSafariBallsRemaining
 
 .Strings:
-	db "Ball×  @"
-	db "Bait@"
-	db "Throw Rock@"
-	db "Run@"
+	db "BALLS×  @"
+	db "BAIT@"
+	db "THROW ROCK@"
+	db "RUN@"
 
 ShowSafariBallsRemaining:
 	hlcoord 7, 14

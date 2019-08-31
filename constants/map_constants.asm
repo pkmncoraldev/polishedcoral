@@ -28,6 +28,11 @@ MAP_NONE   EQU 0
 	map_const STARGLOW_CAVERN_2F,                         14, 13 ;  6
 	map_const MT_ONWA_1F,                       		  14, 13 ;  7
 	map_const MT_ONWA_2F,                                 17, 14 ;  8
+	map_const MT_ONWA_B1F,								  18, 20 ;  9
+	map_const MT_ONWA_B2F,								  23, 15 ; 10
+	map_const MT_ONWA_B3F,								  11, 14 ; 11
+	map_const MT_ONWA_CLIFF,							  20, 20 ; 12
+	map_const MT_ONWA_LOWER_CLIFF,						  13, 12 ; 13
 
 	newgroup                                                     ;  2
 
@@ -88,7 +93,7 @@ MAP_NONE   EQU 0
 
 	newgroup                                                     ;  6
 
-	map_const ROUTE_6,                                    37, 18 ;  1
+	map_const ROUTE_6,                                    37, 19 ;  1
 	map_const ROUTE_7,                                    20, 12 ;  2
 	map_const LAKE_ONWA,                                  31, 26 ;  3
 	map_const LAKE_ONWA_BOAT_HOUSE_RIGHT,                  4,  3 ;  4
@@ -96,3 +101,8 @@ MAP_NONE   EQU 0
 	map_const LAKE_ONWA_NAME_RATER_HOUSE,                  4,  4 ;  6
 	map_const LAKE_ONWA_ITEM_HOUSE,                 	   4,  4 ;  7
 	map_const LAKE_ONWA_POKECENTER,						   6,  4 ;  8
+	
+	newgroup                                                     ;  7
+
+	map_const SUNBEAM_ISLAND,                             25, 29 ;  1
+	map_const SUNBEAM_BEACH,                               8, 29 ;  2

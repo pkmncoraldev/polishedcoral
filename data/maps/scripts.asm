@@ -17,6 +17,11 @@ INCLUDE "maps/StarglowCavern1F.asm"
 INCLUDE "maps/StarglowCavern2F.asm"
 INCLUDE "maps/MtOnwa1F.asm"
 INCLUDE "maps/MtOnwa2F.asm"
+INCLUDE "maps/MtOnwaB1F.asm"
+INCLUDE "maps/MtOnwaB2F.asm"
+INCLUDE "maps/MtOnwaB3F.asm"
+INCLUDE "maps/MtOnwaCliff.asm"
+INCLUDE "maps/MtOnwaLowerCliff.asm"
 
 
 SECTION "Routes Scripts", ROMX
@@ -89,3 +94,9 @@ INCLUDE "maps/LakeOnwaBoatHouseRight.asm"
 INCLUDE "maps/LakeOnwaBoatHouseLeft.asm"
 INCLUDE "maps/LakeOnwaNameRaterHouse.asm"
 INCLUDE "maps/LakeOnwaItemHouse.asm"
+
+
+SECTION "Sunbeam Island Scripts", ROMX
+
+INCLUDE "maps/SunbeamIsland.asm"
+INCLUDE "maps/SunbeamBeach.asm"

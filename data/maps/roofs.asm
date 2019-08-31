@@ -3,12 +3,12 @@ MapGroupRoofs:
 ; values are indexes for Roofs (see below)
 	db -1 ; group 0
 	db -1 ; group 1 (Dungeons)
-	db  0 ; group 2 (Sunset)
+	db  3 ; group 2 (Sunset)
 	db  2 ; group 3 (Daybreak)
 	db  2 ; group 4 (Glint)
 	db  3 ; group 5 (Starglow)
 	db  3 ; group 6 (Lake Onwa)
-	db -1 ; group 7
+	db  3 ; group 7 (Sunbeam Island)
 	db -1 ; group 8
 	db -1 ; group 9
 	db -1 ; group 10

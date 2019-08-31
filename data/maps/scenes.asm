@@ -22,4 +22,5 @@ MapTriggers::
 	scene_var STARGLOW_POKECENTER,					  wStarglowPokeCenter
 	scene_var ROUTE_6,							  	  wRoute6Trigger
 	scene_var LAKE_ONWA,							  wLakeOnwaTrigger
+	scene_var SUNBEAM_ISLAND,						  wSunbeamIslandTrigger
 	db -1

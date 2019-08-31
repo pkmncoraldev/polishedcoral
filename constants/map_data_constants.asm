@@ -63,6 +63,7 @@ const_value = -1
 	const SPAWN_DAYBREAK
 	const SPAWN_GLINT
 	const SPAWN_STARGLOW
+	const SPAWN_LAKE
 	const SPAWN_LASTFLYPOINT
 	const SPAWN_KANTO
 NUM_SPAWNS EQU const_value

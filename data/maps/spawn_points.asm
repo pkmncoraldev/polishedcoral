@@ -10,5 +10,6 @@ SpawnPoints: ; 0x152ab
 	spawn DAYBREAK_VILLAGE,            13,  8
 	spawn GLINT_CITY,                  27, 16
 	spawn STARGLOW_VALLEY,			   17, 18
+	spawn LAKE_ONWA,					1,  1
 	
 	spawn N_A,                        -1, -1

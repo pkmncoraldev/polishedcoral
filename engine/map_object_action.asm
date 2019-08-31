@@ -24,6 +24,8 @@ Pointers445f: ; 445f
 	dw SetFacingRun,                   SetFacingCurrent           ; PERSON_ACTION_RUN
 	dw SetFacingSailboatTop,           SetFacingSailboatTop       ; PERSON_ACTION_SAILBOAT_TOP
 	dw SetFacingSailboatBottom,        SetFacingSailboatBottom    ; PERSON_ACTION_SAILBOAT_BOTTOM
+	dw SetFacingUmbrellaLeft,          SetFacingUmbrellaLeft   ; PERSON_ACTION_UMBRELLA_LEFT
+	dw SetFacingUmbrellaRight,         SetFacingUmbrellaRight  ; PERSON_ACTION_UMBRELLA_RIGHT
 ; 44a3
 
 SetFacingStanding: ; 44a3
@@ -62,6 +64,18 @@ SetFacingSailboatBottom:
 	ld a, FACING_SAILBOAT_BOTTOM
 	jr SetFixedFacing
 
+SetFacingUmbrellaLeft:
+	ld hl, OBJECT_FACING_STEP
+	add hl, bc
+	ld [hl], FACING_UMBRELLA_LEFT
+	ret
+
+SetFacingUmbrellaRight:
+	ld hl, OBJECT_FACING_STEP
+	add hl, bc
+	ld [hl], FACING_UMBRELLA_RIGHT
+	ret
+	
 SetFacingBigDoll: ; 45c5
 	ld a, [wVariableSprites + SPRITE_BIG_DOLL - SPRITE_VARS]
 	cp SPRITE_BIG_ONIX
@@ -134,7 +148,7 @@ SetFacingSkyfall:
 	ld hl, OBJECT_FLAGS1
 	add hl, bc
 	bit SLIDING, [hl]
-	jr nz, SetFacingCurrent
+	jp nz, SetFacingCurrent
 
 	ld hl, OBJECT_STEP_FRAME
 	add hl, bc

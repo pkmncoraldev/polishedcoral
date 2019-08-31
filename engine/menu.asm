@@ -400,15 +400,7 @@ _2DMenuInterpretJoypad: ; 24270
 ; 24318
 
 .b_button
-	ld a, [wIsBattleMenu]
-	and a ; should B move to Run?
-	jr z, .no_b_run
-	; Run is the bottom-right item
-	ld a, $2
-	ld [wMenuCursorX], a
-	ld [wMenuCursorY], a
 .a_start_select
-.no_b_run
 	xor a
 	ret
 

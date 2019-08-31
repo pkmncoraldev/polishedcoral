@@ -12,6 +12,7 @@ SeenByTrainerScript:: ; 0xbe675
 	encountermusic
 	showemote EMOTE_SHOCK, LAST_TALKED, 30
 	callasm TrainerWalkToPlayer
+	pause 1
 	applymovement2 wMovementBuffer
 	writepersonxy LAST_TALKED
 	faceobject PLAYER, LAST_TALKED
@@ -20,7 +21,7 @@ SeenByTrainerScript:: ; 0xbe675
 StartBattleWithMapTrainerScript: ; 0xbe68a
 	opentext
 	trainertext $0
-	waitbutton
+	waitbuttonsilent
 	closetext
 	loadmemtrainer
 	callasm CheckTrainerClass

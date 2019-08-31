@@ -260,6 +260,7 @@ ScriptCommandTable:
 	dw Script_giveapricorn               ; c5
 	dw Script_paintingpic                ; c6
 	dw Script_checkegg                   ; c7
+	dw Script_waitbuttonsilent
 
 StartScript:
 	ld hl, wScriptFlags
@@ -492,6 +493,11 @@ Script_repeattext:
 	jp MapTextbox
 
 Script_waitbutton:
+	call WaitButton
+	ld de, SFX_READ_TEXT
+	jp PlaySFX
+	
+Script_waitbuttonsilent:
 	jp WaitButton
 
 Script_buttonsound:
@@ -1283,7 +1289,7 @@ ShowEmoteScript:
 	applymovement2 .Show
 	pause 0
 	applymovement2 .Hide
-;	callasm .makegreen
+	callasm .makegreen
 	end
 
 .Show:
@@ -1312,6 +1318,45 @@ ShowEmoteScript:
 	RGB 13, 13, 13
 	RGB 00, 00, 00
 
+.makegreen
+	ld a, [wTimeOfDay]
+	cp NITE
+	jr z, .standardnite
+	cp MORN
+	jr z, .standardmorn
+	cp DUSK
+	jr z, .standarddusk
+	ld hl, StandardGrassDayPalette
+	jr .cont
+.standardnite
+	ld hl, StandardGrassNitePalette
+	jr .cont
+.standardmorn
+	ld hl, StandardGrassMornPalette
+	jr .cont
+.standarddusk
+	ld hl, StandardGrassDuskPalette
+	jr .cont
+.cont
+	ld de, wOBPals + 8 * 7
+	ld bc, 8
+	ld a, $5
+	call FarCopyWRAM
+	ld a, $1
+	ld [hCGBPalUpdate], a
+	ret
+	
+StandardGrassMornPalette: ; 4959f
+INCLUDE "maps/palettes/bgpals/grass/standard/morn.pal"
+	
+StandardGrassDayPalette: ; 4959f
+INCLUDE "maps/palettes/bgpals/grass/standard/day.pal"
+
+StandardGrassDuskPalette: ; 4959f
+INCLUDE "maps/palettes/bgpals/grass/standard/dusk.pal"
+
+StandardGrassNitePalette: ; 4959f
+INCLUDE "maps/palettes/bgpals/grass/standard/nite.pal"
 	
 Script_earthquake:
 ; parameters:

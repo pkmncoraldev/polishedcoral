@@ -4,10 +4,10 @@ MtOnwa2F_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 4 ; warp events
-	warp_def 13, 31, 2, ROUTE_1 ;DANCE_THEATRE
-	warp_def 1, 9, 1, ROUTE_1 ;ROUTE_19
+	warp_def 13, 31, 2, MT_ONWA_CLIFF
+	warp_def 1, 9, 1, MT_ONWA_LOWER_CLIFF
 	warp_def 25, 19, 3, MT_ONWA_1F
-	warp_def 23, 19, 1, ROUTE_1 ;ROUTE_46
+	warp_def 23, 19, 1, MT_ONWA_B1F
 
 	db 0 ; coord events
 

@@ -33,7 +33,6 @@ StarglowValley_MapScriptHeader:
 	signpost 17, 32, SIGNPOST_READ, StarglowMartSign
 	bg_event  6, 16, SIGNPOST_ITEM + RARE_CANDY, EVENT_STARGLOW_HIDDEN_RARE_CANDY
 	bg_event 35, 13, SIGNPOST_ITEM + GREAT_BALL, EVENT_STARGLOW_HIDDEN_GREAT_BALL
-;	signpost 27, 26, SIGNPOST_READ, FruitTreeScript_Starglow
 ;	signpost 8, 14, SIGNPOST_READ, StarglowClue
 
 	db 18 ; object events

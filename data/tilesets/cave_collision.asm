@@ -119,7 +119,7 @@
 	tilecoll WALL, WALL, WALL, FLOOR ; 76
 	tilecoll WALL, WALL, FLOOR, WALL ; 77
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 78
-	tilecoll WALL, WALL, WALL, WALL ; 79
+	tilecoll TOP_WALL, TOP_WALL, FLOOR, FLOOR ; 79
 	tilecoll WALL, WALL, WALL, WALL ; 7a
 	tilecoll WALL, WALL, WALL, WALL ; 7b
 	tilecoll WALL, WALL, WALL, WALL ; 7c

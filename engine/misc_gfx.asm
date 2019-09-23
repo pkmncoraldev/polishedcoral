@@ -224,7 +224,7 @@ CutAndPasteMap: ; 104265 (41:4265)
 	ld [hMapObjectIndexBuffer], a
 	ret
 
-HDMATransfer_OnlyTopFourRows: ; 104303
+HDMATransfer_OnlyTopFourRows:: ; 104303
 	call CallInSafeGFXMode
 
 .Function:

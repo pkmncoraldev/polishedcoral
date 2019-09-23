@@ -240,7 +240,6 @@ DoPlayerMovement:: ; 80000
 ; 8016b
 
 .TryStep: ; 8016b
-
 ; Surfing actually calls .TrySurf directly instead of passing through here.
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
@@ -249,13 +248,13 @@ DoPlayerMovement:: ; 80000
 	jp z, .TrySurf
 
 	call .CheckLandPerms
-	jr c, .bump
+	jp c, .bump
 
 	call .CheckNPC
 	and a
-	jr z, .bump
+	jp z, .bump
 	cp 2
-	jr z, .bump
+	jp z, .bump
 
 	ld a, [wSpinning]
 	and a
@@ -272,7 +271,7 @@ DoPlayerMovement:: ; 80000
 	call .RunCheck
 	jr z, .run
 	jp .DoNotRun
-
+	
 .RunByDefault
 	call .RunCheck
 	jr nz, .run
@@ -302,6 +301,19 @@ DoPlayerMovement:: ; 80000
 	ret
 
 .walk
+	ld a, [wTileset]
+	cp TILESET_HAUNTED_TV
+	jp nz, .walkcont
+
+	ld a, [wSnareFlags]
+	bit 0, a ; Team Snare in Starglow Valley. Reusing this flag for convenience.
+	jr z, .walkcont
+	
+	ld a, [wWalkingDirection]
+	cp UP
+	jr z, .slowwalk
+	
+.walkcont
 	ld a, STEP_WALK
 	call .DoStep
 	scf
@@ -313,6 +325,12 @@ DoPlayerMovement:: ; 80000
 	scf
 	ret
 
+.slowwalk
+	ld a, STEP_SLOW
+	call .DoStep
+	scf
+	ret
+	
 .run
 	ld a, STEP_RUN
 	call .DoStep

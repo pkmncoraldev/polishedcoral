@@ -6,7 +6,8 @@ GlintGroveEntrance_MapScriptHeader:
 	scene_script GlintGroveEntranceTrigger2
 	scene_script GlintGroveEntranceTrigger3
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, GlintGroveEntrancePiles
 
 	db 2 ; warp events
 	warp_def 4, 9, 1, GLINT_GROVE
@@ -14,13 +15,13 @@ GlintGroveEntrance_MapScriptHeader:
 
 	db 8 ; coord events
 	xy_trigger 0, 12, 8, 0, GlintContactsScriptL, 0, 0
-	xy_trigger 0, 12, 9, 0, GlintContactsScriptR, 0, 0
+	xy_trigger 0, 12, 10, 0, GlintContactsScriptR, 0, 0
 	xy_trigger 1, 5, 8, 0, GlintRival_L, 0, 0
-	xy_trigger 1, 5, 9, 0, GlintRival_R, 0, 0
+	xy_trigger 1,  5, 10, 0, GlintRival_R, 0, 0
 	xy_trigger 3, 17, 9, 0, GlintContactsScriptSquish, 0, 0
 	xy_trigger 3, 17, 8, 0, GlintContactsScriptSquish, 0, 0
 	xy_trigger 3, 12, 8, 0, GlintContactsScriptL, 0, 0
-	xy_trigger 3, 12, 9, 0, GlintContactsScriptR, 0, 0
+	xy_trigger 3, 12, 10, 0, GlintContactsScriptR, 0, 0
 
 	db 1 ; bg events
 	signpost 10, 10, SIGNPOST_READ, GlintGroveSign
@@ -46,6 +47,16 @@ GlintGroveEntranceTrigger2:
 
 GlintGroveEntranceTrigger3:
 	end
+	
+GlintGroveEntrancePiles:
+	clearflag ENGINE_GLINT_GROVE_PILE_1
+	clearflag ENGINE_GLINT_GROVE_PILE_2
+	clearflag ENGINE_GLINT_GROVE_PILE_3
+	clearflag ENGINE_GLINT_GROVE_PILE_4
+	clearflag ENGINE_GLINT_GROVE_PILE_5
+	clearflag ENGINE_GLINT_GROVE_PILE_6
+	clearflag ENGINE_GLINT_GROVE_PILE_7
+	return
 	
 GlintContactsScriptSquish:
 	special Special_StopRunning

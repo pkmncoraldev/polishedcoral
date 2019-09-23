@@ -1619,7 +1619,7 @@ TryRockSmashFromMenu: ; cef4
 	call FieldMoveFailed
 	ld a, $80
 	ret
-
+	
 GetFacingObject:: ; cf0d
 	farcall CheckFacingObject
 	jr nc, .fail

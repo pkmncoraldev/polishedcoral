@@ -816,21 +816,19 @@ LoadMapPals:
 	jp z, .rocks
 	cp TILESET_STARGLOW_CAVERN
 	jp z, .starglow
+	cp TILESET_RANCH
+	jp z, .ranch
 	ld a, [wMapGroup]
 	cp GROUP_LAKE_ONWA
 	jr z, .rockscheck
 	cp GROUP_SUNBEAM_ISLAND
 	jr z, .umbrellacheck
-;	cp GROUP_ROUTE_11	;RANCH
-;	jr z, .ranch
 ;	cp GROUP_PEWTER_CITY	;SNOW TOWN
 ;	jr z, .snow
 ;	cp GROUP_BATTLE_TOWER_HALLWAY ;SNOW TENT
 ;	jp z, .snow2
 	cp GROUP_SUNSET_BAY
 	jp z, .sailboat
-;	cp MAP_RUINS_OF_ALPH_HO_OH_ITEM_ROOM	;RANCH RACE
-;	jp nz, .normal
 	jp .normal
 .umbrellacheck
 	ld a, [wMapNumber]
@@ -878,9 +876,11 @@ LoadMapPals:
 	call FarCopyWRAM
 	ret
 .ranch
-;	ld a, [wMapNumber]
-;	cp MAP_ROUTE_11	;RANCH
-;	jp nz, .normal
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_9
+	jr z, .ranchcont
+	jp .normal
+.ranchcont
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes
@@ -900,12 +900,6 @@ LoadMapPals:
 ;	jr z, .snowcont
 	jp .normal
 	
-.snow2
-;	ld a, [wMapNumber]
-;	cp MAP_BATTLE_TOWER_HALLWAY ;SNOW TENT
-;	jr z, .snowtentcont
-	jp .normal
-	
 .snowcont
 	ld a, [wTimeOfDayPal]
 	and 3
@@ -917,6 +911,12 @@ LoadMapPals:
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	ret
+	
+.snow2
+;	ld a, [wMapNumber]
+;	cp MAP_BATTLE_TOWER_HALLWAY ;SNOW TENT
+;	jr z, .snowtentcont
+	jp .normal
 	
 .snowtentcont
 	ld a, [wTimeOfDayPal]
@@ -962,6 +962,8 @@ LoadMapPals:
 	cp TILESET_GLINT
 	jr z, .outside
 	cp TILESET_JUNGLE
+	jr z, .outside
+	cp TILESET_SPOOKY
 	jr z, .outside
 	ld a, [wPermission]
 	cp TOWN

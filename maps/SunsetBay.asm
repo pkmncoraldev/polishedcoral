@@ -49,7 +49,7 @@ SunsetBay_MapScriptHeader:
 
 	db 13 ; object events
 	person_event SPRITE_CUTE_GIRL, 15, 32, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetNPC1, -1
-	object_event 32, 13, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_COMMAND, jumptextfaceplayer, SunsetNPCmellowText, -1
+	object_event 32, 13, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_GRAMPS, 14, 37, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetNPC3, -1
 	person_event SPRITE_COOLTRAINER_F, 11, 18, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunsetNPC4, -1
 	person_event SPRITE_FAT_GUY, 18, 15, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunsetNPC5, -1
@@ -184,9 +184,6 @@ SunsetNPC1:
 	closetext
 	end
 
-SunsetNPCmellow:
-	jumptextfaceplayer SunsetNPCmellowText
-
 SunsetGuyOnDate:
 	jumptext SunsetGuyOnDateText
 	
@@ -317,12 +314,6 @@ Movement_GrampsReset3:
 SunsetNPC1Text:
 	text "Do you mind?"
 	line "I'm on a date."
-	done
-	
-SunsetNPCmellowText:
-	text "It's me."
-	
-	para "THE BEAN DADDY."
 	done
 	
 PlayersHouseSignText:

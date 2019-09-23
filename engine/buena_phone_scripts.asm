@@ -66,12 +66,12 @@ BuenaPhoneScript_Rocket:
 	end
 
 BuenaPhoneScript_Random2:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .PostE4
-	random 11
-	jump .Jumptable
+;	checkevent EVENT_BEAT_ELITE_FOUR
+;	iftrue .PostE4
+;	random 11
+;	jump .Jumptable
 
-.PostE4:
+;.PostE4:
 	random 14
 
 .Jumptable:

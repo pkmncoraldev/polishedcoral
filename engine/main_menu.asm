@@ -89,21 +89,21 @@ MainMenu_GetWhichMenu: ; 49da4
 	ret
 
 .next
-	ld a, BANK(sPlayerData)
-	call GetSRAMBank
-	ld hl, sPlayerData + (wEventFlags + (EVENT_BEAT_LEAF >> 3)) - wPlayerData
-	ld de, wEventFlags + (EVENT_BEAT_LEAF >> 3)
-	ld a, [hl]
-	ld [de], a
-	call CloseSRAM
-	eventflagcheck EVENT_BEAT_LEAF
-	jr nz, .next2
+;	ld a, BANK(sPlayerData)
+;	call GetSRAMBank
+;	ld hl, sPlayerData + (wEventFlags + (EVENT_BEAT_LEAF >> 3)) - wPlayerData
+;	ld de, wEventFlags + (EVENT_BEAT_LEAF >> 3)
+;	ld a, [hl]
+;	ld [de], a
+;	call CloseSRAM
+;	eventflagcheck EVENT_BEAT_LEAF
+;	jr nz, .next2
 	ld a, $1 ; Continue
 	ret
 
-.next2
-	ld a, $2 ; New Game+
-	ret
+;.next2
+;	ld a, $2 ; New Game+
+;	ret
 ; 49de4
 
 MainMenuJoypadLoop: ; 49de4

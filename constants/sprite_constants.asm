@@ -24,8 +24,8 @@
 	const SPRITE_BRUNO ; 15
 	const SPRITE_KAREN ; 16
 	const SPRITE_LANCE ; 17
-	const SPRITE_BROCK ; 18
-	const SPRITE_MISTY ; 19
+	const SPRITE_BIKINI_1 ; 18
+	const SPRITE_BIKINI_3 ; 19
 	const SPRITE_SURGE ; 1a
 	const SPRITE_ERIKA ; 1b
 	const SPRITE_JANINE ; 1c
@@ -33,7 +33,7 @@
 	const SPRITE_BLAINE ; 1e
 	const SPRITE_BLUE ; 1f
 	const SPRITE_RED ; 20
-	const SPRITE_OAK ; 23
+	const SPRITE_SPRUCE ; 23
 	const SPRITE_ELM ; 24
 	const SPRITE_IVY ; 25
 	const SPRITE_WESTWOOD ; 26
@@ -165,15 +165,15 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_PSYDUCK ; c9
 	const SPRITE_LARVESTA ; ca
 	const SPRITE_DONPHAN ; cb
-	const SPRITE_UNUSED6 ; cc
-	const SPRITE_UNUSED7 ; cd
-	const SPRITE_UNUSED8 ; ce
-	const SPRITE_UNUSED9 ; cf
-	const SPRITE_UNUSED10 ; d0
-	const SPRITE_UNUSED11 ; d1
-	const SPRITE_UNUSED12 ; d2
-	const SPRITE_UNUSED13 ; d3
-	const SPRITE_UNUSED14 ; d4
+	const SPRITE_MEOWTH ; cc
+	const SPRITE_DODUO ; cd
+	const SPRITE_MUNCHLAX ; ce
+	const SPRITE_NIDOQUEEN ; cf
+	const SPRITE_NIDORANM ; d0
+	const SPRITE_NIDORANF ; d1
+	const SPRITE_LOPUNNY ; d2
+	const SPRITE_ALTARIA ; d3
+	const SPRITE_DODRIO ; d4
 	const SPRITE_UNUSED15 ; d5
 	const SPRITE_UNUSED16 ; d6
 	const SPRITE_UNUSED17 ; d7

@@ -94,7 +94,7 @@ ItemDescriptions:
 	dw PokeFluteDesc
 	dw SecretPotionDesc
 	dw RedScaleDesc
-	dw CardKeyDesc
+	dw OldKeyDesc
 	dw BasementKeyDesc
 	dw SSTicketDesc
 	dw PassDesc
@@ -110,8 +110,8 @@ ItemDescriptions:
 	dw OldSeaMapDesc
 	dw ShinyCharmDesc
 	dw OvalCharmDesc
-	dw SilphScope2Desc
-	dw ApricornBoxDesc
+	dw FlowerPetalDesc
+	dw BlossomTeaDesc
 	dw TeruSamaDesc
 	dw CheriBerryDesc
 	dw ChestoBerryDesc
@@ -609,9 +609,9 @@ RedScaleDesc:
 	db   "A scale from the"
 	next "red Gyarados.@"
 
-CardKeyDesc:
-	db   "Opens shutters in"
-	next "the Radio Tower.@"
+OldKeyDesc:
+	db   "Opens doors in"
+	next "the OLD MANOR.@"
 
 BasementKeyDesc:
 	db   "Opens doors.@"
@@ -669,13 +669,13 @@ OvalCharmDesc:
 	db   "A charm for find-"
 	next "ing EGGs.@"
 
-SilphScope2Desc:
-	db   "A scope to see in-"
-	next "visible #MON.@"
+FlowerPetalDesc:
+	db   "A fragrant, pink"
+	next "flower petal.@"
 
-ApricornBoxDesc:
-	db   "Holds up to 99 of"
-	next "each Apricorn.@"
+BlossomTeaDesc:
+	db   "A self-restore"
+	next "item. (25HP, Hold)@"
 
 CheriBerryDesc:
 	db   "A self-cure for"

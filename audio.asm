@@ -28,6 +28,7 @@ INCLUDE "audio/music/trainervictory.asm"
 INCLUDE "audio/music/rivalbattle.asm"
 INCLUDE "audio/music/evolution.asm"
 INCLUDE "audio/music/gym.asm"
+INCLUDE "audio/music/gymbattle.asm"
 INCLUDE "audio/music/gymleadervictory.asm"
 INCLUDE "audio/music/halloffame.asm"
 INCLUDE "audio/music/credits.asm"
@@ -43,9 +44,9 @@ INCLUDE "audio/music/daybreakvillage.asm"
 INCLUDE "audio/music/snes_smw.asm"
 INCLUDE "audio/music/snes_kirby.asm"
 INCLUDE "audio/music/daybreakgrotto.asm"
-INCLUDE "audio/music/gymbattle.asm"
 INCLUDE "audio/music/snareinvasion.asm"
 INCLUDE "audio/music/starglowvalley.asm"
+INCLUDE "audio/music/eventide.asm"
 
 
 SECTION "Music 3", ROMX

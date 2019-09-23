@@ -229,11 +229,11 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; e4
 	tilecoll FLOOR, FLOOR, WALL, WALL ; e5
 	tilecoll FLOOR, FLOOR, WALL, WALL ; e6
-	tilecoll WALL, WALL, WALL, WALL ; e7
+	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; e7
 	tilecoll WALL, WALL, FLOOR, FLOOR ; e8
 	tilecoll WALL, WALL, FLOOR, FLOOR ; e9
 	tilecoll WALL, WALL, FLOOR, FLOOR ; ea
-	tilecoll WALL, WALL, WALL, WALL ; eb
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; eb
 	tilecoll WALL, WALL, WALL, WALL ; ec
 	tilecoll WALL, WALL, WALL, WALL ; ed
 	tilecoll WALL, WALL, WALL, WALL ; ee

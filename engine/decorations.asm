@@ -1225,15 +1225,16 @@ ToggleMaptileDecorations: ; 26feb
 ; 27027
 
 SetPosterVisibility: ; 27027
-	ld b, SET_FLAG
-	ld a, [wPoster]
-	and a
-	jr nz, .ok
-	ld b, RESET_FLAG
+;	ld b, SET_FLAG
+;	ld a, [wPoster]
+;	and a
+;	jr nz, .ok
+;	ld b, RESET_FLAG
 
-.ok
-	ld de, EVENT_KRISS_ROOM_POSTER
-	jp EventFlagAction
+;.ok
+;	ld de, EVENT_KRISS_ROOM_POSTER
+;	jp EventFlagAction
+	ret
 ; 27037
 
 SetDecorationTile: ; 27037

@@ -5,37 +5,48 @@ DaybreakPokeCenter_BlockData:
 GlintPokeCenter_BlockData:
 StarglowPokeCenter_BlockData:
 LakeOnwaPokeCenter_BlockData:
+SunbeamPokeCenter_BlockData:
 	INCBIN "maps/PokeCenter.ablk.lz"
 
 GlintMart_BlockData:
 StarglowMart_BlockData:
+SunbeamMart_BlockData:
 GenericMart_BlockData:: ; used by tilesets/palettes.asm:LoadSpecialMapPalette
 	INCBIN "maps/Mart.ablk.lz"
 
 LakeOnwaBoatHouseRight_BlockData:
 LakeOnwaBoatHouseLeft_BlockData:
+SunbeamBoatHouse_BlockData:
 	INCBIN "maps/BoatHouse.ablk.lz"
+	
+SunbeamSurfShop_BlockData:
+	INCBIN "maps/SunbeamSurfShop.ablk.lz"
 	
 Route1Gate_BlockData:
 Route5Gate_BlockData:
 	INCBIN "maps/NorthSouthGate.ablk.lz"
 
-
+Route4EventideGate_BlockData:
+Route9EventideGate_BlockData:
 	INCBIN "maps/EastWestGate.ablk.lz"
 
 SunsetWaterGrassHouse_BlockData:
 StarglowGrandpaHouse_BlockData:
+SunbeamDodrioHouse_BlockData:
 	INCBIN "maps/NormalHouse1.ablk.lz"
 	
 SunsetGengarHouse_BlockData:
 GlintRivalHouse_BlockData:
 StarglowTogepiHouse_BlockData:
 StarglowFishingGuruHouse_BlockData:
+SunbeamOldCouplesHouse_BlockData:
+SunbeamTradeHouse_BlockData:
 	INCBIN "maps/NormalHouse2.ablk.lz"
 	
 SunsetLegendsHouse_BlockData:
 GlintEvoHouse_BlockData:
 StarglowNoPokemonHouse_BlockData:
+SunbeamBlueWaterHouse_BlockData:
 	INCBIN "maps/NormalHouse3.ablk.lz"
 	
 LakeOnwaItemHouse_BlockData:
@@ -122,6 +133,18 @@ SunbeamIsland_BlockData:
 SunbeamBeach_BlockData:
 	INCBIN "maps/SunbeamBeach.ablk.lz"
 	
+SunbeamBikiniContest_BlockData:
+	INCBIN "maps/SunbeamBikiniContest.ablk.lz"
+	
+SprucesLab_BlockData:
+	INCBIN "maps/SprucesLab.ablk.lz"
+	
+SunbeamGym_BlockData:
+	INCBIN "maps/SunbeamGym.ablk.lz"
+	
+SunbeamGymCave_BlockData:
+	INCBIN "maps/SunbeamGymCave.ablk.lz"
+	
 Route1_BlockData:
 	INCBIN "maps/Route1.ablk.lz"
 
@@ -145,7 +168,10 @@ Route6_BlockData:
 
 Route7_BlockData:
 	INCBIN "maps/Route7.ablk.lz"
-
+	
+Route9_BlockData:
+	INCBIN "maps/Route9.ablk.lz"
+	
 LakeOnwa_BlockData:
 	INCBIN "maps/LakeOnwa.ablk.lz"
 	
@@ -181,3 +207,58 @@ GlintGroveEntrance_BlockData:
 	
 LakeOnwaNameRaterHouse_BlockData:
 	INCBIN "maps/LakeOnwaNameRaterHouse.ablk.lz"
+	
+EventideForest_BlockData:
+	INCBIN "maps/EventideForest.ablk.lz"
+	
+SpookyForest1_BlockData:
+	INCBIN "maps/SpookyForest1.ablk.lz"
+	
+SpookyForest2_BlockData:
+	INCBIN "maps/SpookyForest2.ablk.lz"
+	
+SpookyForest3_BlockData:
+	INCBIN "maps/SpookyForest3.ablk.lz"
+	
+SpookyForest4_BlockData:
+	INCBIN "maps/SpookyForest4.ablk.lz"
+	
+SpookyForest5_BlockData:
+	INCBIN "maps/SpookyForest5.ablk.lz"
+	
+SpookyForest6_BlockData:
+	INCBIN "maps/SpookyForest6.ablk.lz"
+	
+SpookyForest7_BlockData:
+	INCBIN "maps/SpookyForest7.ablk.lz"
+	
+SpookyForest8_BlockData:
+	INCBIN "maps/SpookyForest8.ablk.lz"
+	
+SpookyForest9_BlockData:
+	INCBIN "maps/SpookyForest9.ablk.lz"
+	
+OldManorExterior_BlockData:
+	INCBIN "maps/OldManorExterior.ablk.lz"
+	
+SpookhouseLivingRoom_BlockData:
+	INCBIN "maps/SpookhouseLivingRoom.ablk.lz"
+	
+SpookhouseDiningRoom_BlockData:
+	INCBIN "maps/SpookhouseDiningRoom.ablk.lz"
+	
+SpookhouseBedroom_BlockData:
+	INCBIN "maps/SpookhouseBedroom.ablk.lz"
+	
+SpookhouseHallway1_BlockData:
+SpookhouseHallway2_BlockData:
+	INCBIN "maps/SpookhouseHallway1.ablk.lz"
+	
+SpookhouseHallway3_BlockData:
+	INCBIN "maps/SpookhouseHallway3.ablk.lz"
+	
+SpookhouseTVRoom_BlockData:
+	INCBIN "maps/SpookhouseTVRoom.ablk.lz"
+	
+DodrioRanchBarn_BlockData:
+	INCBIN "maps/DodrioRanchBarn.ablk.lz"

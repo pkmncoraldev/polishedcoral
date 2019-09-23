@@ -24,7 +24,13 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, Route7Name
 	landmark   0,   0, LakeOnwaName
 	landmark   0,   0, MtOnwaName
+	landmark   0,   0, Route8Name
 	landmark   0,   0, SunbeamIslandName
+	landmark   0,   0, EventideForestName
+	landmark   0,   0, OldManorName
+	landmark   0,   0, Route9Name
+	landmark   0,   0, DodrioRanchName
+	landmark   0,   0, FlickerStationName
 
 
 SunsetBayName:         db "SUNSET¯BAY@"
@@ -46,5 +52,11 @@ Route6Name:            db "ROUTE 6@"
 Route7Name:            db "ROUTE 7@"
 LakeOnwaName:          db "LAKE¯ONWA@"
 MtOnwaName:			   db "MT. ONWA@"
+Route8Name:  		   db "ROUTE 8@"
 SunbeamIslandName:	   db "SUNBEAM¯ISLAND@"
+EventideForestName:	   db "EVENTIDE¯FOREST@"
+OldManorName:		   db "OLD MANOR@"
+Route9Name:			   db "ROUTE 9@"
+DodrioRanchName:	   db "DODRIO¯RANCH@"
+FlickerStationName:	   db "FLICKER¯STATION@"
 SpecialMapName:        db "?","@"

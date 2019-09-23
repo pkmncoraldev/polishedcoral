@@ -15,7 +15,7 @@ SunsetCaptainsHouse_MapScriptHeader:
 	bg_event  2,  1, SIGNPOST_JUMPSTD, radio2
 
 	db 1 ; object events
-	object_event  5,  4, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SunsetCaptain, -1
+	object_event  5,  4, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunsetCaptain, -1
 
 	const_def 1 ; object constants
 	const SUNSET_CAPTAINS_HOUSE_CAPTAIN
@@ -60,6 +60,7 @@ SunsetCaptainsHouseTrigger0Event:
 	jump .cont
 	
 SunsetCaptain:
+	jump .captaingivesallrides
 ;	jump SunsetCaptainFirstRidetoIsland
 	checkevent EVENT_LEFT_ISLAND
 	iftrue .captaingivesallrides
@@ -110,7 +111,7 @@ SunsetCaptain:
 	clearevent EVENT_LAKE_BOAT_LEFT_GONE
 	clearevent EVENT_LAKE_STRAND
 	domaptrigger LAKE_ONWA, $3
-	warp LAKE_ONWA, $18, $1a
+	warpfacing UP, LAKE_ONWA, $18, $1a
 	end
 	
 .LakeR
@@ -128,7 +129,7 @@ SunsetCaptain:
 	clearevent EVENT_LAKE_BOAT_RIGHT_GONE
 	clearevent EVENT_LAKE_STRAND
 	domaptrigger LAKE_ONWA, $3
-	warp LAKE_ONWA, $27, $20
+	warpfacing UP, LAKE_ONWA, $27, $20
 	end
 	
 .Sunbeam
@@ -141,8 +142,8 @@ SunsetCaptain:
 	special FadeOutPalettes
 	special Special_FadeOutMusic
 	clearevent EVENT_ISLAND_STRAND
-;	domaptrigger CHERRYGROVE_CITY, $0
-;	warp CHERRYGROVE_CITY, 2, 49
+	domaptrigger SUNBEAM_ISLAND, $0
+	warpfacing UP, SUNBEAM_ISLAND, $8, $31
 	end
 	
 .end
@@ -199,8 +200,8 @@ CaptainGoToIsland:
 	closetext
 	special FadeOutPalettes
 	special Special_FadeOutMusic
-;	domaptrigger CHERRYGROVE_CITY, $0
-;	warp CHERRYGROVE_CITY, 2, 49
+	domaptrigger SUNBEAM_ISLAND, $0
+	warpfacing UP, SUNBEAM_ISLAND, $8, $31
 	end
 	
 SunsetCaptainRidetoIsland:

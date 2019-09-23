@@ -83,14 +83,8 @@ LeilaniGroup:
 	db "LEILANI@"
 	db TRAINERTYPE_ITEM | TRAINERTYPE_EVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
 	; party
-	db 19, CLEFAIRY, NO_ITEM, 48, ABILITY_1 | QUIRKY, FEMALE
-		db METRONOME, DISARM_VOICE, DOUBLE_SLAP, ATTRACT
-	db 20, TEDDIURSA, NO_ITEM, 48, ABILITY_1 | QUIRKY, FEMALE
-		db SCRATCH, ATTRACT, LICK, FEINT_ATTACK
-	db 19, MUNCHLAX, NO_ITEM, 48, ABILITY_1 | QUIRKY, FEMALE
-		db ATTRACT, METRONOME, DEFENSE_CURL, ROLLOUT
-	db 21, MILTANK, LUM_BERRY, 48, ABILITY_2 | QUIRKY, FEMALE ; Scrappy
-		db DEFENSE_CURL, STOMP, MILK_DRINK, ROLLOUT
+	db 1, BULBASAUR, NO_ITEM, 48, ABILITY_1 | QUIRKY, FEMALE
+		db TACKLE, 0, 0, 0
 	db -1 ; end
 
 ; ================
@@ -491,6 +485,15 @@ CamperGroup:
 	db -1 ; end
 
 ; ================
+
+; CAMPER
+	db "DANTE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -536,6 +539,15 @@ PicnickerGroup:
 
 	; PICNICKER
 	db "BETH@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; PICNICKER
+	db "TINA@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -2151,15 +2163,6 @@ SafariGroup:
 
 	; SAFARI
 	db "JULIAN@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SAFARI
-	db "YANCY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

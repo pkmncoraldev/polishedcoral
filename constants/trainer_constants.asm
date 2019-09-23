@@ -76,6 +76,7 @@ PLAYER_F EQU __enum__
 	const DENNY
 	const TREVOR
 	const VINCENT
+	const DANTE
 
 	trainerclass PICNICKER
 	const MOLLY
@@ -83,6 +84,7 @@ PLAYER_F EQU __enum__
 	const TRISTA
 	const SHAUNA
 	const BETH
+	const TINA
 
 	trainerclass TWINS
 	const JENJAN
@@ -351,7 +353,6 @@ PLAYER_F EQU __enum__
 
 	trainerclass SAFARI
 	const JULIAN
-	const YANCY
 	const PAUL
 	const PHILLIP
 

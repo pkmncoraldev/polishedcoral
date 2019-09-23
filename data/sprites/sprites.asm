@@ -28,8 +28,8 @@ SpriteHeaders:
 	overworld_sprite BrunoSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite KarenSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite LanceSpriteGFX, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite BrockSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite MistySpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite Bikini1SpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite Bikini3SpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite SurgeSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ErikaSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite JanineSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
@@ -37,7 +37,7 @@ SpriteHeaders:
 	overworld_sprite BlaineSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite BlueSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite RedSpriteGFX, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite OakSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite SpruceSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ElmSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite IvySpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite WestwoodSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN

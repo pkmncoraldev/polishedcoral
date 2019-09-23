@@ -143,7 +143,8 @@ _TitleScreen: ; 10ed67
 	pop af
 	ld [rSVBK], a
 
-
+; Reset audio
+	call ChannelsOff
 	call EnableLCD
 
 	ld a, $1
@@ -252,35 +253,6 @@ DrawTitleGraphic: ; 10eeef
 	jr nz, .bgrows
 	ret
 ; 10ef06
-
-DrawTitleGraphic2: ; 10eeef
-; input:
-;   hl: draw location
-;   b: height
-;   c: width
-;   d: tile to start drawing from
-;   e: number of tiles to advance for each bgrows
-.bgrows
-	push de
-	push bc
-	push hl
-.col
-	ld a, d
-	ld [hli], a
-	inc d
-	dec c
-	jr nz, .col
-	pop hl
-	ld bc, SCREEN_WIDTH - 8
-	add hl, bc
-	pop bc
-	pop de
-	ld a, e
-	add d
-	ld d, a
-	dec b
-	jr nz, .bgrows
-	ret
 
 InitializeBackground: ; 10ef06
 	ld hl, wSprites

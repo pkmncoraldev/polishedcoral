@@ -2105,6 +2105,8 @@ GetWorldMapLocation:: ; 0x2caf
 ; 0x2cbd
 
 GetCurrentLandmark::
+	eventflagcheck EVENT_NOT_ON_DODRIO_RANCH
+	jr z, SetLandmarkRanch
 	ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]
@@ -2121,6 +2123,11 @@ GetBackupLandmark::
 	ld c, a
 	jp GetWorldMapLocation
 
+SetLandmarkRanch:
+	ld a, DODRIO_RANCH
+	ld [wCurrentLandmark], a
+	ret
+	
 RegionCheck::
 ; Checks if the player is in Kanto or Johto.
 ; If in Johto, returns 0 in e.

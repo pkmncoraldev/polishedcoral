@@ -1,4 +1,6 @@
 ReturnFromMapSetupScript:: ; b8000
+	eventflagcheck EVENT_NOT_ON_DODRIO_RANCH
+	ret z
 	ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]
@@ -16,7 +18,7 @@ ReturnFromMapSetupScript:: ; b8000
 	ld a, -1
 	ld [wCurrentLandmark], a
 
-.not_gate
+.not_gate::
 	ld hl, wEnteredMapFromContinue
 	bit 1, [hl]
 	res 1, [hl]
@@ -175,7 +177,7 @@ PlaceMapNameSign:: ; b8098 (2e:4098)
 	ld [hLCDCPointer], a
 	ret
 
-LoadMapNameSignGFX: ; b80c6
+LoadMapNameSignGFX:: ; b80c6
 	; load opaque space
 	ld hl, VTiles0 tile POPUP_MAP_FRAME_SPACE
 	call GetOpaque1bppSpaceTile
@@ -286,7 +288,7 @@ endr
 	jr .loop
 ; b80d3
 
-InitMapNameFrame: ; b80d3
+InitMapNameFrame:: ; b80d3
 ; InitMapSignAttrMap
 	hlcoord 0, 0
 	ld de, wAttrMap - wTileMap
@@ -591,6 +593,33 @@ RockMonEncounter: ; b8219
 	xor a
 	ret
 ; b823e
+
+PetalMonEncounter:: ; b8219
+
+	xor a
+	ld [wTempWildMonSpecies], a
+	ld [wCurPartyLevel], a
+
+	ld hl, PetalMonMaps
+	call GetTreeMonSet
+	jr nc, .no_battle
+
+	call GetTreeMons
+	jr nc, .no_battle
+
+;	ld a, 10
+;	call RandomRange
+;	cp 4
+;	jr nc, .no_battle
+
+	call SelectTreeMon
+	jr nc, .no_battle
+
+	ret
+
+.no_battle
+	xor a
+	ret
 
 	db $05 ; ????
 

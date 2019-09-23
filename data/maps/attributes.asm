@@ -114,6 +114,9 @@ ENDM
 	map_attributes Route7, ROUTE_7, 7, SOUTH | WEST
 	connection south, Route6, ROUTE_6, 6, 5, 11
 	connection west, LakeOnwa, LAKE_ONWA, -3, 8, 10
+	
+	map_attributes Route9, ROUTE_9, 5, 0
+;	connection north, FlickerStation, FLICKER_STATION, 8, 4, 12
 
 	map_attributes LakeOnwa, LAKE_ONWA, 7, NORTH | EAST
 	connection north, Route1, ROUTE_1, 0, 0, 32
@@ -124,6 +127,63 @@ ENDM
 	
 	map_attributes SunbeamBeach, SUNBEAM_BEACH, $35, EAST
 	connection east, SunbeamIsland, SUNBEAM_ISLAND, 0, 0, 29
+	
+	map_attributes EventideForest, EVENTIDE_FOREST, $7, NORTH
+	connection north, SpookyForest1, SPOOKY_FOREST_1, 5, 0, 8
+	
+	map_attributes SpookyForest1, SPOOKY_FOREST_1, 92, NORTH | SOUTH | WEST | EAST
+	connection north, SpookyForest2, SPOOKY_FOREST_2, 0, 0, 8
+	connection south, EventideForest, EVENTIDE_FOREST, -1, 4, 8
+	connection west, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection east, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	
+	map_attributes SpookyForest2, SPOOKY_FOREST_2, 92, NORTH | SOUTH | WEST | EAST
+	connection north, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection south, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection west, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection east, SpookyForest3, SPOOKY_FOREST_3, 0, 0, 8
+	
+	map_attributes SpookyForest3, SPOOKY_FOREST_3, 92, NORTH | SOUTH | WEST | EAST
+	connection north, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection south, SpookyForest4, SPOOKY_FOREST_4, 0, 0, 8
+	connection west, SpookyForest2, SPOOKY_FOREST_2, 0, 0, 8
+	connection east, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	
+	map_attributes SpookyForest4, SPOOKY_FOREST_4, 92, NORTH | SOUTH | WEST | EAST
+	connection north, SpookyForest3, SPOOKY_FOREST_3, 0, 0, 8
+	connection south, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection west, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection east, SpookyForest5, SPOOKY_FOREST_5, 0, 0, 8
+	
+	map_attributes SpookyForest5, SPOOKY_FOREST_5, 92, NORTH | SOUTH | WEST | EAST
+	connection north, SpookyForest6, SPOOKY_FOREST_6, 0, 0, 8
+	connection south, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection west, SpookyForest4, SPOOKY_FOREST_4, 0, 0, 8
+	connection east, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	
+	map_attributes SpookyForest6, SPOOKY_FOREST_6, 92, NORTH | SOUTH | WEST | EAST
+	connection north, SpookyForest7, SPOOKY_FOREST_7, 0, 0, 8
+	connection south, SpookyForest5, SPOOKY_FOREST_5, 0, 0, 8
+	connection west, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection east, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	
+	map_attributes SpookyForest7, SPOOKY_FOREST_7, 92, NORTH | SOUTH | WEST | EAST
+	connection north, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection south, SpookyForest6, SPOOKY_FOREST_6, 0, 0, 8
+	connection west, SpookyForest8, SPOOKY_FOREST_8, 0, 0, 8
+	connection east, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	
+	map_attributes SpookyForest8, SPOOKY_FOREST_8, 92, NORTH | SOUTH | WEST | EAST
+	connection north, OldManorExterior, OLD_MANOR_EXTERIOR, 0, 4, 8
+	connection south, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection west, SpookyForest9, SPOOKY_FOREST_9, 0, 0, 8
+	connection east, SpookyForest7, SPOOKY_FOREST_7, 0, 0, 8
+	
+	map_attributes SpookyForest9, SPOOKY_FOREST_9, 92, EAST
+	connection east, SpookyForest8, SPOOKY_FOREST_8, 0, 0, 8
+	
+	map_attributes OldManorExterior, OLD_MANOR_EXTERIOR, 92, SOUTH
+	connection south, SpookyForest8, SPOOKY_FOREST_8, 4, 0, 8
 	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0
@@ -173,7 +233,29 @@ ENDM
 	map_attributes LakeOnwaBoatHouseLeft, LAKE_ONWA_BOAT_HOUSE_LEFT, $0, 0
 	map_attributes LakeOnwaItemHouse, LAKE_ONWA_ITEM_HOUSE, $0, 0
 	map_attributes LakeOnwaPokeCenter, LAKE_ONWA_POKECENTER, $0, 0
+	map_attributes SunbeamPokeCenter, SUNBEAM_POKECENTER, $0, 0
+	map_attributes SunbeamMart, SUNBEAM_MART, $0, 0
+	map_attributes SunbeamBoatHouse, SUNBEAM_BOAT_HOUSE, $0, 0
+	map_attributes SunbeamSurfShop, SUNBEAM_SURF_SHOP, $0, 0
+	map_attributes SunbeamBikiniContest, SUNBEAM_BIKINI_CONTEST, $0, 0
+	map_attributes SunbeamDodrioHouse, SUNBEAM_DODRIO_HOUSE, $0, 0
+	map_attributes SunbeamOldCouplesHouse, SUNBEAM_OLD_COUPLES_HOUSE, $0, 0
+	map_attributes SunbeamBlueWaterHouse, SUNBEAM_BLUE_WATER_HOUSE, $0, 0
+	map_attributes SunbeamTradeHouse, SUNBEAM_TRADE_HOUSE, $0, 0
+	map_attributes SprucesLab, SPRUCES_LAB, $0, 0
+	map_attributes SunbeamGym, SUNBEAM_GYM, $07, 0
+	map_attributes SunbeamGymCave, SUNBEAM_GYM_CAVE, $09, 0
+	map_attributes SpookhouseLivingRoom, SPOOKHOUSE_LIVING_ROOM, $00, 0
+	map_attributes SpookhouseDiningRoom, SPOOKHOUSE_DINING_ROOM, $00, 0
+	map_attributes SpookhouseBedroom, SPOOKHOUSE_BEDROOM, $00, 0
+	map_attributes SpookhouseHallway1, SPOOKHOUSE_HALLWAY_1, $00, 0
+	map_attributes SpookhouseHallway2, SPOOKHOUSE_HALLWAY_2, $00, 0
+	map_attributes SpookhouseHallway3, SPOOKHOUSE_HALLWAY_3, $00, 0
+	map_attributes SpookhouseTVRoom, SPOOKHOUSE_TV_ROOM, $00, 0
+	map_attributes DodrioRanchBarn, DODRIO_RANCH_BARN, $00, 0
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $7, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0
 	map_attributes Route5Gate, ROUTE_5_GATE, $0, 0
+	map_attributes Route4EventideGate, ROUTE_4_EVENTIDE_GATE, $0, 0
+	map_attributes Route9EventideGate, ROUTE_9_EVENTIDE_GATE, $0, 0

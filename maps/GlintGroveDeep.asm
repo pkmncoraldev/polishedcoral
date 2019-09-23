@@ -56,7 +56,7 @@ GlintSecretTrioYellow:
 	jumptextfaceplayer GlintSecretTrioYellowText
 	
 GlintSecretSmeargleText:
-	text "Gooahh!"
+	text "SMEARGLE: Gooahh!"
 	done
 
 GlintSecretTrioRedText:

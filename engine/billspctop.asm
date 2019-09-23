@@ -24,7 +24,7 @@ _BillsPC: ; e3fd
 	ld [hBGMapMode], a
 	call LoadStandardMenuDataHeader
 	call ClearPCItemScreen
-	ld hl, wOptions1
+	ld hl, wOptions1 ;
 	ld a, [hl]
 	push af
 	set NO_TEXT_SCROLL, [hl]

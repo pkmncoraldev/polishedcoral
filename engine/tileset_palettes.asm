@@ -31,12 +31,14 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .mountain
 	cp TILESET_JUNGLE
 	jp z, .jungle
-	cp TILESET_SPOOKY
-	jp z, .spookyforest
 	cp TILESET_SNOW
 	jp z, .checktent
 	cp TILESET_RANCH
 	jp z, .ranch
+	cp TILESET_HAUNTED
+	jp z, .spookhouse
+	cp TILESET_HAUNTED_TV
+	jp z, .spookhousetv
 	jp .do_nothing
 	
 .checktent
@@ -46,14 +48,7 @@ LoadSpecialMapPalette: ; 494ac
 	jp .snow
 	
 .glint
-	ld a, [wMapGroup]
-	cp GROUP_SUNSET_BAY
-	jr z, .deepblueocean
 	jp .do_nothing
-	
-.deepblueocean
-	ld hl, OutsideDeepBluePalette
-	jp LoadEightTimeOfDayBGPalettes
 	
 .cave
 	ld hl, CavePalette
@@ -75,10 +70,6 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, OutsideJunglePalette
 	jp LoadEightTimeOfDayBGPalettes
 	
-.spookyforest
-	ld hl, SpookyForestPalette
-	jr LoadEightBGPalettes
-	
 .snow
 	ld hl, OutsideSnowPalette
 	jp LoadEightTimeOfDayBGPalettes
@@ -91,6 +82,14 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, OutsideRanchPalette
 	jp LoadEightTimeOfDayBGPalettes
 
+.spookhouse
+	ld hl, SpookhousePalette
+	jp LoadEightBGPalettes
+	
+.spookhousetv
+	ld hl, SpookhouseTVPalette
+	jp LoadEightBGPalettes
+	
 .do_nothing
 	and a
 	ret
@@ -199,16 +198,18 @@ LoadLinkTradePalette: ; 49811
 
 LoadSpecialMapOBPalette:
 	ret
-	
-
-OutsideDeepBluePalette:
-INCLUDE "maps/palettes/bgpals/bgdeepblue.pal"
 
 CavePalette:
 INCLUDE "maps/palettes/bgpals/cave.pal"
 
 StarglowCavernPalette:
 INCLUDE "maps/palettes/bgpals/starglow_cavern.pal"
+
+SpookhousePalette:
+INCLUDE "maps/palettes/bgpals/spookhouse.pal"
+
+SpookhouseTVPalette:
+INCLUDE "maps/palettes/bgpals/spookhousetv.pal"
 
 OutsideGrovePalette:
 INCLUDE "maps/palettes/bgpals/bggrove.pal"
@@ -218,9 +219,6 @@ INCLUDE "maps/palettes/bgpals/bgmountain.pal"
 
 OutsideJunglePalette:
 INCLUDE "maps/palettes/bgpals/bgjungle.pal"
-
-SpookyForestPalette:
-INCLUDE "maps/palettes/bgpals/spookyforest.pal"
 
 OutsideSnowPalette:
 INCLUDE "maps/palettes/bgpals/bgsnow.pal"

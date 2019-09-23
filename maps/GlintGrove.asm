@@ -4,7 +4,8 @@ GlintGrove_MapScriptHeader:
 	scene_script GlintGroveTrigger1
 	scene_script GlintGroveTrigger2
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, GlintGrovePiles
 
 	db 4 ; warp events
 	warp_def 57, 27, 1, GLINT_GROVE_ENTRANCE
@@ -12,14 +13,21 @@ GlintGrove_MapScriptHeader:
 	warp_def 46, 49, 1, GLINT_GROVE_DEEP
 	warp_def 46, 48, 2, GLINT_GROVE_DEEP
 
-	db 2 ; coord events
+	db 9 ; coord events
 	xy_trigger 0, 47, 48, 0, GlintGroveTrioTrigger1, 0, 0
 	xy_trigger 0, 47, 49, 0, GlintGroveTrioTrigger2, 0, 0
+	xy_trigger 0, 44, 24, 0, GlintGrovePile1, 0, 0
+	xy_trigger 0, 38,  9, 0, GlintGrovePile2, 0, 0
+	xy_trigger 0, 38, 32, 0, GlintGrovePile3, 0, 0
+	xy_trigger 0, 26, 17, 0, GlintGrovePile4, 0, 0
+	xy_trigger 0, 22, 26, 0, GlintGrovePile5, 0, 0
+	xy_trigger 0, 46, 12, 0, GlintGrovePile6, 0, 0
+	xy_trigger 0,  8, 29, 0, GlintGrovePile7, 0, 0
 
 	db 0 ; bg events
 ;	signpost 50, 22, SIGNPOST_READ, GlintGroveClue
 
-	db 15 ; object events
+	db 17 ; object events
 	person_event SPRITE_LASS, 40, 34, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, TrainerGlintGrove_1, -1
 	person_event SPRITE_PICNICKER, 46, 6, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerGlintGrove_2, -1
 	person_event SPRITE_CAMPER, 17, 7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerGlintGrove_3, -1
@@ -35,6 +43,8 @@ GlintGrove_MapScriptHeader:
 	person_event SPRITE_ROCKER, 48, 51, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintGroveTrioBlue, EVENT_TRIO_BROS
 	person_event SPRITE_ROCKER, 48, 46, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, GlintGroveTrioYellow, EVENT_TRIO_BROS
 	itemball_event  11, 17, PARALYZEHEAL, 1, EVENT_GLINT_GROVE_POKE_BALL
+	person_event SPRITE_ELDER, 44, 29, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintGrovePetalMan, -1
+	person_event SPRITE_MISC_OVERHEAD, -1, -1, SPRITEMOVEDATA_POKECOM_NEWS, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_GENERICTRAINER, 1, 0, -1
 	
 	const_def 1 ; object constants
 	const GLINTGROVE_TRAINER1
@@ -52,6 +62,8 @@ GlintGrove_MapScriptHeader:
 	const GLINTGROVE_TRIO_BLUE
 	const GLINTGROVE_TRIO_YELLOW
 	const GLINTGROVE_POKEBALL
+	const GLINTGROVE_PETALMAN
+	const GLINTGROVE_PETALS
 	
 GlintGroveTrigger0:
 	end
@@ -61,6 +73,324 @@ GlintGroveTrigger1:
 	
 GlintGroveTrigger2:
 	end
+	
+GlintGrovePetalMan:
+	jumptextfaceplayer GlintGrovePetalManText
+	
+GlintGrovePetalManText:
+	text "Have you seen"
+	line "piles of FLOWER"
+	cont "PETALS around?"
+	
+	para "People collect"
+	line "those petals to"
+	cont "make into tea."
+	
+	para "Watch out, though."
+	
+	para "Sometimes they'll"
+	line "blow away before"
+	cont "you get the chance"
+	cont "to grab any."
+	
+	para "#MON have also"
+	line "been known to hide"
+	cont "in them!"
+	done
+	
+PetalsAsm:
+	call Random
+	cp $7f ; 50 percent
+	jr c, PetalsAsmItem
+	call Random
+	cp $7f ; 50 percent
+	jr c, PetalsAsmBattle
+	jr PetalsAsmText
+	ret
+	
+PetalsAsm2:
+	call Random
+	cp $7f ; 50 percent
+	jr c, PetalsAsmBattle
+	call Random
+	cp $7f ; 50 percent
+	jr c, PetalsAsmItem
+	jr PetalsAsmText
+	ret
+	
+PetalsAsm3:
+	call Random
+	cp $7f ; 50 percent
+	jr c, PetalsAsmText
+	call Random
+	cp $7f ; 50 percent
+	jr c, PetalsAsmBattle
+	jr PetalsAsmItem
+	ret
+	
+PetalsAsmBattle:
+	farcall PetalMonEncounter
+	ld a, BANK(GlintPetalsWildBattleScript)
+	ld hl, GlintPetalsWildBattleScript
+	call CallScript
+	scf
+	ret
+	
+PetalsAsmText:
+	ld hl, GroveTestText1
+	call PrintText
+	ret
+	
+PetalsAsmItem:
+	ld b, BANK(GlintGivePetalScript)
+	ld de, GlintGivePetalScript
+	push de
+	ld hl, wScriptStackSize
+	ld e, [hl]
+	inc [hl]
+	ld d, $0
+	ld hl, wScriptStack
+	add hl, de
+	add hl, de
+	add hl, de
+	pop de
+	ld a, [wScriptBank]
+	ld [hli], a
+	ld a, [wScriptPos]
+	ld [hli], a
+	ld a, [wScriptPos + 1]
+	ld [hl], a
+	ld a, b
+	ld [wScriptBank], a
+	ld a, e
+	ld [wScriptPos], a
+	ld a, d
+	ld [wScriptPos + 1], a
+	ret
+	
+GroveTestText1: ; 0x6045
+	text_jump GlintGrove_TestText
+	start_asm
+	ld hl, GroveTestText2
+	ret
+	
+GroveTestText2:
+	text_waitbutton
+	db "@@"
+	
+GlintGivePetalScript:
+	verbosegiveitem FLOWER_PETAL
+	end
+	
+GlintPetalsWildBattleScript:
+	copybytetovar wTempWildMonSpecies
+	randomwildmon
+	startbattle
+	reloadmapafterbattle
+	end
+	
+GlintGrove_TestText:
+	text "The petals blew"
+	line "away…"
+	done
+	
+GlintGrovePile1:
+	checkflag ENGINE_GLINT_GROVE_PILE_1
+	iftrue .end
+	special Special_StopRunning
+	disappear GLINTGROVE_PETALS
+	moveperson GLINTGROVE_PETALS, $18, $2c
+	appear GLINTGROVE_PETALS
+	refreshscreen
+	callasm MakePalPink
+	playsound SFX_POWDER
+	changeblock $18, $2c, $7e
+	reloadmappart
+	pause 3
+	disappear GLINTGROVE_PETALS
+	setflag ENGINE_GLINT_GROVE_PILE_1
+	callasm PetalsAsm2
+	closetext
+	callasm MakePalGreen
+.end
+	end
+	
+GlintGrovePile2:
+	checkflag ENGINE_GLINT_GROVE_PILE_2
+	iftrue .end
+	special Special_StopRunning
+	disappear GLINTGROVE_PETALS
+	moveperson GLINTGROVE_PETALS, $9, $26
+	appear GLINTGROVE_PETALS
+	refreshscreen
+	callasm MakePalPink
+	playsound SFX_POWDER
+	changeblock $8, $26, $7e
+	reloadmappart
+	pause 3
+	disappear GLINTGROVE_PETALS
+	setflag ENGINE_GLINT_GROVE_PILE_2
+	callasm PetalsAsm
+	closetext
+	callasm MakePalGreen
+.end
+	end
+	
+GlintGrovePile3:
+	checkflag ENGINE_GLINT_GROVE_PILE_3
+	iftrue .end
+	special Special_StopRunning
+	disappear GLINTGROVE_PETALS
+	moveperson GLINTGROVE_PETALS, $20, $26
+	appear GLINTGROVE_PETALS
+	refreshscreen
+	callasm MakePalPink
+	playsound SFX_POWDER
+	changeblock $20, $26, $7e
+	reloadmappart
+	pause 3
+	disappear GLINTGROVE_PETALS
+	verbosegiveitem FLOWER_PETAL
+	closetext
+	setflag ENGINE_GLINT_GROVE_PILE_3
+	callasm MakePalGreen
+.end
+	end
+	
+GlintGrovePile4:
+	checkflag ENGINE_GLINT_GROVE_PILE_4
+	iftrue .end
+	special Special_StopRunning
+	disappear GLINTGROVE_PETALS
+	moveperson GLINTGROVE_PETALS, $11, $1a
+	appear GLINTGROVE_PETALS
+	refreshscreen
+	callasm MakePalPink
+	playsound SFX_POWDER
+	changeblock $10, $1a, $7e
+	reloadmappart
+	pause 3
+	disappear GLINTGROVE_PETALS
+	setflag ENGINE_GLINT_GROVE_PILE_4
+	callasm PetalsAsm3
+	closetext
+	callasm MakePalGreen
+.end
+	end
+	
+GlintGrovePile5:
+	checkflag ENGINE_GLINT_GROVE_PILE_5
+	iftrue .end
+	special Special_StopRunning
+	disappear GLINTGROVE_PETALS
+	moveperson GLINTGROVE_PETALS, $1a, $16
+	appear GLINTGROVE_PETALS
+	refreshscreen
+	callasm MakePalPink
+	playsound SFX_POWDER
+	changeblock $1a, $16, $7e
+	reloadmappart
+	pause 3
+	disappear GLINTGROVE_PETALS
+	verbosegiveitem FLOWER_PETAL
+	closetext
+	setflag ENGINE_GLINT_GROVE_PILE_5
+	callasm MakePalGreen
+.end
+	end
+	
+GlintGrovePile6:
+	checkflag ENGINE_GLINT_GROVE_PILE_6
+	iftrue .end
+	special Special_StopRunning
+	disappear GLINTGROVE_PETALS
+	moveperson GLINTGROVE_PETALS, $c, $2e
+	appear GLINTGROVE_PETALS
+	refreshscreen
+	callasm MakePalPink
+	playsound SFX_POWDER
+	changeblock $c, $2e, $7e
+	reloadmappart
+	pause 3
+	disappear GLINTGROVE_PETALS
+	setflag ENGINE_GLINT_GROVE_PILE_6
+	callasm PetalsAsm3
+	closetext
+	callasm MakePalGreen
+.end
+	end
+	
+GlintGrovePile7:
+	checkflag ENGINE_GLINT_GROVE_PILE_7
+	iftrue .end
+	special Special_StopRunning
+	disappear GLINTGROVE_PETALS
+	moveperson GLINTGROVE_PETALS, $1d, $8
+	appear GLINTGROVE_PETALS
+	refreshscreen
+	callasm MakePalPink
+	playsound SFX_POWDER
+	changeblock $1c, $8, $7e
+	reloadmappart
+	pause 3
+	disappear GLINTGROVE_PETALS
+	setflag ENGINE_GLINT_GROVE_PILE_7
+	callasm PetalsAsm
+	closetext
+	callasm MakePalGreen
+.end
+	end
+	
+GlintGrovePiles:
+	checkflag ENGINE_GLINT_GROVE_PILE_1
+	iftrue .GlintGrovePile1
+.cont1
+	checkflag ENGINE_GLINT_GROVE_PILE_2
+	iftrue .GlintGrovePile2
+.cont2
+	checkflag ENGINE_GLINT_GROVE_PILE_3
+	iftrue .GlintGrovePile3
+.cont3
+	checkflag ENGINE_GLINT_GROVE_PILE_4
+	iftrue .GlintGrovePile4
+.cont4
+	checkflag ENGINE_GLINT_GROVE_PILE_5
+	iftrue .GlintGrovePile5
+.cont5
+	checkflag ENGINE_GLINT_GROVE_PILE_6
+	iftrue .GlintGrovePile6
+.cont6
+	checkflag ENGINE_GLINT_GROVE_PILE_7
+	iftrue .GlintGrovePile7
+	return
+
+.GlintGrovePile1:
+	changeblock $18, $2c, $7e
+	jump .cont1
+
+.GlintGrovePile2:
+	changeblock $8, $26, $7e
+	jump .cont2
+	
+.GlintGrovePile3:
+	changeblock $20, $26, $7e
+	jump .cont3
+	
+.GlintGrovePile4:
+	changeblock $10, $1a, $7e
+	jump .cont4
+	
+.GlintGrovePile5:
+	changeblock $1a, $16, $7e
+	jump .cont5
+	
+.GlintGrovePile6:
+	changeblock $c, $2e, $7e
+	jump .cont6
+	
+.GlintGrovePile7:
+	changeblock $1c, $8, $7e
+	return
 	
 TrainerGlintGrove_1:
 	generictrainer LASS, VERONICA, EVENT_BEAT_GLINT_GROVE_TRAINER_1, .SeenText, .BeatenText
@@ -237,6 +567,13 @@ GlintGroveStanley:
 ;	ret
 	
 GlintGroveNPC1:
+	setflag ENGINE_GLINT_GROVE_PILE_1
+	setflag ENGINE_GLINT_GROVE_PILE_2
+	setflag ENGINE_GLINT_GROVE_PILE_3
+	setflag ENGINE_GLINT_GROVE_PILE_4
+	setflag ENGINE_GLINT_GROVE_PILE_5
+	setflag ENGINE_GLINT_GROVE_PILE_6
+	setflag ENGINE_GLINT_GROVE_PILE_7
 	jumptextfaceplayer GlintGroveNPC1Text
 	
 GlintGroveNPC2:
@@ -421,7 +758,7 @@ GlintGrove_TrioText8:
 	
 	para "special-colored"
 	line "SMEARGLE that"
-	cont "hangs sround here."
+	cont "hangs around here."
 	done
 	
 GlintGrove_TrioText9:
@@ -774,6 +1111,7 @@ GlintGroveTrioRed:
 	writecode VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap
+	playmusic MUSIC_GLINT_GROVE
 	iffalse .GlintGroveTrioRedYouWon
 	jump .GlintGroveTrioRedYouLost
 	
@@ -804,6 +1142,7 @@ GlintGroveTrioBlue:
 	writecode VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap
+	playmusic MUSIC_GLINT_GROVE
 	iffalse .GlintGroveTrioBlueYouWon
 	jump .GlintGroveTrioBlueYouLost
 	
@@ -834,6 +1173,7 @@ GlintGroveTrioYellow:
 	writecode VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap
+	playmusic MUSIC_GLINT_GROVE
 	iffalse .GlintGroveTrioYellowYouWon
 	jump .GlintGroveTrioYellowYouLost
 	

@@ -5,6 +5,7 @@ INCLUDE "maps/DaybreakPokeCenter.asm"
 INCLUDE "maps/GlintPokeCenter.asm"
 INCLUDE "maps/StarglowPokeCenter.asm"
 INCLUDE "maps/LakeOnwaPokeCenter.asm"
+INCLUDE "maps/SunbeamPokeCenter.asm"
 
 
 SECTION "Dungeon Scripts", ROMX
@@ -37,6 +38,8 @@ INCLUDE "maps/Route5Deep.asm"
 INCLUDE "maps/Route5Gate.asm"
 INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route7.asm"
+INCLUDE "maps/Route9.asm"
+INCLUDE "maps/DodrioRanchBarn.asm"
 
 
 SECTION "Sunset Bay Scripts", ROMX
@@ -100,3 +103,40 @@ SECTION "Sunbeam Island Scripts", ROMX
 
 INCLUDE "maps/SunbeamIsland.asm"
 INCLUDE "maps/SunbeamBeach.asm"
+INCLUDE "maps/SunbeamMart.asm"
+INCLUDE "maps/SunbeamBoatHouse.asm"
+INCLUDE "maps/SunbeamSurfShop.asm"
+INCLUDE "maps/SunbeamBikiniContest.asm"
+INCLUDE "maps/SunbeamDodrioHouse.asm"
+INCLUDE "maps/SunbeamOldCouplesHouse.asm"
+INCLUDE "maps/SunbeamBlueWaterHouse.asm"
+INCLUDE "maps/SunbeamTradeHouse.asm"
+INCLUDE "maps/SprucesLab.asm"
+INCLUDE "maps/SunbeamGym.asm"
+INCLUDE "maps/SunbeamGymCave.asm"
+
+SECTION "Eventide Forest Scripts", ROMX
+
+INCLUDE "maps/Route4EventideGate.asm"
+INCLUDE "maps/EventideForest.asm"
+INCLUDE "maps/Route9EventideGate.asm"
+INCLUDE "maps/SpookyForest1.asm"
+INCLUDE "maps/SpookyForest2.asm"
+INCLUDE "maps/SpookyForest3.asm"
+INCLUDE "maps/SpookyForest4.asm"
+INCLUDE "maps/SpookyForest5.asm"
+INCLUDE "maps/SpookyForest6.asm"
+INCLUDE "maps/SpookyForest7.asm"
+INCLUDE "maps/SpookyForest8.asm"
+INCLUDE "maps/SpookyForest9.asm"
+INCLUDE "maps/OldManorExterior.asm"
+
+SECTION "Old Manor Scripts", ROMX
+
+INCLUDE "maps/SpookhouseLivingRoom.asm"
+INCLUDE "maps/SpookhouseDiningRoom.asm"
+INCLUDE "maps/SpookhouseBedroom.asm"
+INCLUDE "maps/SpookhouseHallway1.asm"
+INCLUDE "maps/SpookhouseHallway2.asm"
+INCLUDE "maps/SpookhouseHallway3.asm"
+INCLUDE "maps/SpookhouseTVRoom.asm"

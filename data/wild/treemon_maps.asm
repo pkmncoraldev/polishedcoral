@@ -8,5 +8,9 @@ TreeMonMaps:
 	db -1
 
 RockMonMaps:
-	treemon_map SUNSET_BAY, 7
+	treemon_map SUNSET_BAY, 6
+	db -1
+	
+PetalMonMaps:
+	treemon_map GLINT_GROVE, 7
 	db -1

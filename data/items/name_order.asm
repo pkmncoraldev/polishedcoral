@@ -112,7 +112,7 @@ ItemNameOrder:
 	db NAM_SQUIRTBOTTLE ; df
 	db NAM_SECRETPOTION ; cc
 	db NAM_RED_SCALE    ; bf
-	db NAM_CARD_KEY     ; 1f
+	db NAM_OLD_KEY      ; 1f
 	db NAM_BASEMENT_KEY ; 0c
 	db NAM_S_S_TICKET   ; c6
 	db NAM_PASS         ; 9b
@@ -128,8 +128,8 @@ ItemNameOrder:
 	db NAM_OLD_SEA_MAP  ; 95
 	db NAM_SHINY_CHARM  ; d0
 	db NAM_OVAL_CHARM   ; 98
-	db NAM_SILPHSCOPE2  ; d3
-	db NAM_APRICORN_BOX ; 06
+	db NAM_FLOWER_PETAL ; d3
+	db NAM_BLOSSOM_TEA  ; 06
 
 	db NAM_TERU_SAMA    ; e9
 

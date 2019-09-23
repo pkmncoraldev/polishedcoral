@@ -1,13 +1,12 @@
 TreeMons:
 	dw TreeMons1
-	dw TreeMons1
 	dw TreeMons2
 	dw TreeMons3
 	dw TreeMons4
 	dw TreeMons5
 	dw TreeMons6
 	dw RockMons
-	dw TreeMons1
+	dw PetalMons
 
 ; Two tables each (normal, rare).
 ; Structure:
@@ -118,4 +117,10 @@ TreeMons6:
 RockMons:
 	db 70, KRABBY,     15
 	db 30, GEODUDE,    15
+	db -1
+	
+PetalMons:
+	db 50, SQUIRTLE,   1
+	db 25, CHARMANDER, 1
+	db 25, BULBASAUR,  1
 	db -1

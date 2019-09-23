@@ -132,6 +132,13 @@ LoadEmoteGFX::
 	call GetMapPermission
 	call CheckOutdoorMapOrPerm5
 	jr z, .outdoor
+	ld a, [wTileset]
+	cp TILESET_GLINT
+	jp z, .outdoor
+	cp TILESET_JUNGLE
+	jp z, .outdoor
+	cp TILESET_SPOOKY
+	jp z, .outdoor
 	ld c, EMOTE_BOULDER_DUST
 	jp LoadEmote
 

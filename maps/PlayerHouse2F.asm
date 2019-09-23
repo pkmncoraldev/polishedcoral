@@ -5,19 +5,21 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 8 ; warp events
+	db 9 ; warp events
 	warp_event  9,  0, PLAYER_HOUSE_1F, 3
 	warp_event  5, 10, SUNSET_BAY, 1
 	warp_event  7, 10, DAYBREAK_VILLAGE, 1
 	warp_event  9, 10, GLINT_CITY, 1
 	warp_event 11, 10, STARGLOW_VALLEY, 1
 	warp_event 13, 10, LAKE_ONWA, 1
-	warp_event 15, 10, MT_ONWA_CLIFF, 1 
-	warp_event 17, 10, SUNBEAM_ISLAND, 9
+	warp_event 15, 10, MT_ONWA_CLIFF, 1
+	warp_event 19, 10, EVENTIDE_FOREST, 1
+	warp_event  5, 14, ROUTE_9, 1
 
-	db 0 ; coord events
+	db 1 ; coord events
+	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
 
-	db 10 ; bg events
+	db 14 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
 	bg_event  5,  1, SIGNPOST_READ, PlayerHouseRadio
 	bg_event  7,  1, SIGNPOST_READ, PlayerHouseBookshelf
@@ -31,6 +33,8 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event 12, 10, SIGNPOST_JUMPTEXT, PlayerHouseLakeOnwaR
 	bg_event 14, 10, SIGNPOST_JUMPTEXT, PlayerHouseLakeOnwaL
 	bg_event 16, 10, SIGNPOST_JUMPTEXT, PlayerHouseSunbeamIsland
+	bg_event 18, 10, SIGNPOST_JUMPTEXT, PlayerHouseEventideForest
+	bg_event  4, 14, SIGNPOST_JUMPTEXT, PlayerHouseRoute9
 
 	db 1 ; object events
 	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, -1
@@ -58,7 +62,7 @@ PlayerHouseMap:
 	setevent EVENT_MOM_GOT_POKEGEAR
 	givepoke CORSOLA, 100
 	giveitem LIBRARY_CARD
-	giveitem POKE_FLUTE
+;	giveitem POKE_FLUTE
 x = 0
 rept NUM_TMS + NUM_HMS
 	givetmhm x
@@ -89,16 +93,22 @@ PlayerHouseStarglow:
 	
 PlayerHouseLakeOnwaR:
 	text "LAKE ONWA"
-	line "RIGHT SIDE"
 	done
 	
 PlayerHouseLakeOnwaL:
-	text "LAKE ONWA"
-	line "LEFT SIDE"
+	text "MT. ONWA CLIFF"
 	done
 	
 PlayerHouseSunbeamIsland:
 	text "SUNBEAM ISLAND"
+	done
+	
+PlayerHouseEventideForest:
+	text "EVENTIDE FOREST"
+	done
+	
+PlayerHouseRoute9:
+	text "ROUTE 9"
 	done
 	
 PlayerHouse2FInitializeRoom:
@@ -143,188 +153,12 @@ GameConsole:
 	end
 	
 PlayerHouseRadio:
-
-if DEF(DEBUG)
-
-	opentext
-	; time
-	special Special_SetDayOfWeek
-	special Special_InitialClearDSTFlag
-	; full pokegear
-	setflag ENGINE_POKEGEAR
-	setflag ENGINE_PHONE_CARD
-	setflag ENGINE_MAP_CARD
-	setflag ENGINE_RADIO_CARD
-	setflag ENGINE_EXPN_CARD
-	; pokedex
-	setflag ENGINE_POKEDEX
-	setflag ENGINE_UNOWN_DEX
-	; all tms+hms
-x = 0
-rept NUM_TMS + NUM_HMS
-	givetmhm x
-x = x + 1
-endr
-	; all items
-x = 1
-rept $fe
-	giveitem x, 99
-x = x + 1
-endr
-	; all decorations
-x = EVENT_DECO_BED_1
-rept EVENT_DECO_BIG_LAPRAS_DOLL - EVENT_DECO_BED_1 + 1
-	setevent x
-x = x + 1
-endr
-	; max money
-	givemoney $0, 1000000
-	givemoney $0, 1000000
-	givemoney $0, 1000000
-	givemoney $0, 1000000
-	givemoney $0, 1000000
-	givemoney $0, 1000000
-	givemoney $0, 1000000
-	givemoney $0, 1000000
-	givemoney $0, 1000000
-	givemoney $0, 999999
-	givecoins 50000
-	loadvar wBattlePoints, 250
-	; all badges
-	setflag ENGINE_FIRSTBADGE
-	setflag ENGINE_SECONDBADGE
-	setflag ENGINE_THIRDBADGE
-	setflag ENGINE_FOURTHBADGE
-	setflag ENGINE_SIXTHBADGE
-	setflag ENGINE_FIFTHBADGE
-	setflag ENGINE_SEVENTHBADGE
-	setflag ENGINE_EIGHTHBADGE
-	setflag ENGINE_BOULDERBADGE
-	setflag ENGINE_CASCADEBADGE
-	setflag ENGINE_THUNDERBADGE
-	setflag ENGINE_RAINBOWBADGE
-	setflag ENGINE_MARSHBADGE
-	setflag ENGINE_SOULBADGE
-	setflag ENGINE_VOLCANOBADGE
-	setflag ENGINE_EARTHBADGE
-	setevent EVENT_BEAT_FALKNER
-	setevent EVENT_BEAT_BUGSY
-	setevent EVENT_BEAT_WHITNEY
-	setevent EVENT_BEAT_MORTY
-	setevent EVENT_BEAT_CHUCK
-	setevent EVENT_BEAT_JASMINE
-	setevent EVENT_BEAT_PRYCE
-	setevent EVENT_BEAT_CLAIR
-	setevent EVENT_BEAT_BROCK
-	setevent EVENT_BEAT_MISTY
-	setevent EVENT_BEAT_LTSURGE
-	setevent EVENT_BEAT_ERIKA
-	setevent EVENT_BEAT_JANINE
-	setevent EVENT_BEAT_SABRINA
-	setevent EVENT_BEAT_BLAINE
-	setevent EVENT_BEAT_BLUE
-	setevent EVENT_BEAT_ELITE_FOUR
-	setevent EVENT_BEAT_ELITE_FOUR_AGAIN
-	setevent EVENT_BATTLE_TOWER_OPEN
-	clearevent EVENT_BATTLE_TOWER_CLOSED
-	; fly anywhere
-	setflag ENGINE_FLYPOINT_SUNSET
-	setflag ENGINE_FLYPOINT_DAYBREAK
-	setflag ENGINE_FLYPOINT_GLINT
-	setflag ENGINE_FLYPOINT_STARGLOW
-	; magnet train works
-	setevent EVENT_RESTORED_POWER_TO_KANTO
-	; post-e4
-	setflag ENGINE_CREDITS_SKIP
-	setflag ENGINE_HAVE_SHINY_CHARM
-	; good party
-	givepoke MEWTWO, 100, ARMOR_SUIT
-	loadvar wPartyMon1EVs+0, 252
-	loadvar wPartyMon1EVs+1, 252
-	loadvar wPartyMon1EVs+2, 252
-	loadvar wPartyMon1EVs+3, 252
-	loadvar wPartyMon1EVs+4, 252
-	loadvar wPartyMon1EVs+5, 252
-	loadvar wPartyMon1DVs+0, $ff
-	loadvar wPartyMon1DVs+1, $ff
-	loadvar wPartyMon1DVs+2, $ff
-	loadvar wPartyMon1Personality, ABILITY_2 | MODEST
-	loadvar wPartyMon1Stats+0, 999 / $100
-	loadvar wPartyMon1Stats+1, 999 % $100
-	loadvar wPartyMon1Stats+2, 999 / $100
-	loadvar wPartyMon1Stats+3, 999 % $100
-	loadvar wPartyMon1Stats+4, 999 / $100
-	loadvar wPartyMon1Stats+5, 999 % $100
-	loadvar wPartyMon1Stats+6, 999 / $100
-	loadvar wPartyMon1Stats+7, 999 % $100
-	loadvar wPartyMon1Stats+8, 999 / $100
-	loadvar wPartyMon1Stats+9, 999 % $100
-	; hm slaves
-	givepoke MEW, 100, LEFTOVERS
-	givepoke MEW, 100, LEFTOVERS
-	loadvar wPartyMon2Moves+0, FLY
-	loadvar wPartyMon2Moves+1, SURF
-	loadvar wPartyMon2Moves+2, STRENGTH
-	loadvar wPartyMon2Moves+3, CUT
-	loadvar wPartyMon2PP+0, 15
-	loadvar wPartyMon2PP+1, 15
-	loadvar wPartyMon2PP+2, 15
-	loadvar wPartyMon2PP+3, 30
-	loadvar wPartyMon3Moves+0, FLASH
-	loadvar wPartyMon3Moves+1, ROCK_SMASH
-	loadvar wPartyMon3Moves+2, WHIRLPOOL
-	loadvar wPartyMon3Moves+3, WATERFALL
-	loadvar wPartyMon3PP+0, 20
-	loadvar wPartyMon3PP+1, 15
-	loadvar wPartyMon3PP+2, 15
-	loadvar wPartyMon3PP+3, 15
-	; fill pokedex
-	callasm FillPokedex
-	; intro events
-	addcellnum PHONE_MOM
-	setmapscene PLAYER_HOUSE_1F, $1
-	setevent EVENT_PLAYER_HOUSE_MOM_1
-	clearevent EVENT_PLAYER_HOUSE_MOM_2
-	closetext
-	end
-
-FillPokedex:
-	ld a, 1
-	ld [wUnlockedUnownMode], a
-	ld [wFirstUnownSeen], a
-	ld [wFirstMagikarpSeen], a
-	ld hl, wUnownDex
-	ld a, 1
-rept NUM_UNOWN
-	ld [hli], a
-	inc a
-endr
-	ld hl, wPokedexSeen
-	call .Fill
-	ld hl, wPokedexCaught
-.Fill:
-	ld a, %11111111
-	ld bc, 31 ; 001-248
-	call ByteFill
-	ld a, %00011111
-	ld [hl], a ; 249-253
-	ret
-
-else
-
 	jumpstd radio1
-
-endc
-
 
 PlayerHousePC:
 	opentext
 	special Special_PlayerHousePC
-	iftrue .Warp
 	endtext
-.Warp:
-	warp NONE, 0, 0
-	end
 
 PlayerHouseCloset:
 	opentext
@@ -400,6 +234,11 @@ ChangeColorMovement1:
 	turn_head_down
 	step_sleep 12
 	step_end
+	
+SunbeamWarp:
+	domaptrigger SUNBEAM_ISLAND, $0
+	warp SUNBEAM_ISLAND, 8, 49
+	end
 	
 GameConsoleText_SMW:
 	text "It's an SNES."

@@ -95,7 +95,7 @@ ItemIconPointers:
 	dw PokeFluteIcon
 	dw SecretPotionIcon
 	dw RedScaleIcon
-	dw CardKeyIcon
+	dw OldKeyIcon
 	dw BasementKeyIcon
 	dw SSTicketIcon
 	dw PassIcon
@@ -111,8 +111,8 @@ ItemIconPointers:
 	dw OldSeaMapIcon
 	dw ShinyCharmIcon
 	dw OvalCharmIcon
-	dw SilphScope2Icon
-	dw ApricornBoxIcon
+	dw FlowerPetalIcon
+	dw BlossomTeaIcon
 	dw NoItemIcon
 	dw CheriBerryIcon
 	dw ChestoBerryIcon

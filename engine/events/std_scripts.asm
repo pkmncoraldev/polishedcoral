@@ -72,43 +72,16 @@ PokeCenterNurseScript:
 	jump .ok
 
 .morn
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .morn_center
-	checkevent EVENT_WELCOMING_TO_POKECOM_CENTER
-	iffalse .morn_center
-	farwritetext PokeComNurseMornText
-	buttonsound
-	setevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	jump .ok
-.morn_center
 	farwritetext NurseMornText
 	buttonsound
 	jump .ok
 
 .day
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .day_center
-	checkevent EVENT_WELCOMING_TO_POKECOM_CENTER
-	iffalse .day_center
-	farwritetext PokeComNurseDayText
-	buttonsound
-	setevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	jump .ok
-.day_center
 	farwritetext NurseDayText
 	buttonsound
 	jump .ok
 
 .nite
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .nite_center
-	checkevent EVENT_WELCOMING_TO_POKECOM_CENTER
-	iffalse .nite_center
-	farwritetext PokeComNurseNiteText
-	buttonsound
-	setevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	jump .ok
-.nite_center
 	farwritetext NurseNiteText
 	buttonsound
 	jump .ok
@@ -354,149 +327,149 @@ DayToTextScript:
 	db "Saturday@"
 
 GoldenrodRocketsScript:
-	clearevent EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
+;	clearevent EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
 	end
 
 RadioTowerRocketsScript:
 	end
 
 BugContestResultsWarpScript:
-	special ClearBGPalettes
-	scall BugContestResults_CopyContestantsToResults
-	setevent EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY
-	clearevent EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY
-	setevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
+;	special ClearBGPalettes
+;	scall BugContestResults_CopyContestantsToResults
+;	setevent EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY
+;	clearevent EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY
+;	setevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
 ;	warp ROUTE_36_NATIONAL_PARK_GATE, $0, $4
-	applymovement PLAYER, Movement_ContestResults_WalkAfterWarp
+;	applymovement PLAYER, Movement_ContestResults_WalkAfterWarp
 	; fallthrough
 
 BugContestResultsScript:
-	clearflag ENGINE_BUG_CONTEST_TIMER
-	clearevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
-	clearevent EVENT_CONTEST_OFFICER_HAS_PRIZE
-	opentext
-	farwritetext ContestResults_ReadyToJudgeText
-	waitbutton
-	special BugContestJudging
-	RAM2MEM $0
-	ifequal 1, .FirstPlace
-	ifequal 2, .SecondPlace
-	ifequal 3, .ThirdPlace
-	copybytetovar wBugContestOfficerPrize
-	itemtotext $0, $1
-	farwritetext ContestResults_ConsolationPrizeText
-	buttonsound
-	waitsfx
-	copybytetovar wBugContestOfficerPrize
-	verbosegiveitem ITEM_FROM_MEM
-	iftrue .GotConsolationPrize
-	farwritetext BugContestPrizeNoRoomText
-	buttonsound
-	setevent EVENT_CONTEST_OFFICER_HAS_PRIZE
-.GotConsolationPrize
-	farwritetext ContestResults_DidNotWinText
-	buttonsound
-	jump .FinishUp
+;	clearflag ENGINE_BUG_CONTEST_TIMER
+;	clearevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
+;	clearevent EVENT_CONTEST_OFFICER_HAS_PRIZE
+;	opentext
+;	farwritetext ContestResults_ReadyToJudgeText
+;	waitbutton
+;	special BugContestJudging
+;	RAM2MEM $0
+;	ifequal 1, .FirstPlace
+;	ifequal 2, .SecondPlace
+;	ifequal 3, .ThirdPlace
+;	copybytetovar wBugContestOfficerPrize
+;	itemtotext $0, $1
+;	farwritetext ContestResults_ConsolationPrizeText
+;	buttonsound
+;	waitsfx
+;	copybytetovar wBugContestOfficerPrize
+;	verbosegiveitem ITEM_FROM_MEM
+;	iftrue .GotConsolationPrize
+;	farwritetext BugContestPrizeNoRoomText
+;	buttonsound
+;	setevent EVENT_CONTEST_OFFICER_HAS_PRIZE
+;.GotConsolationPrize
+;	farwritetext ContestResults_DidNotWinText
+;	buttonsound
+;	jump .FinishUp
 
-.FirstPlace
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-.SecondPlace
-.ThirdPlace
-	copybytetovar wBugContestOfficerPrize
-	itemtotext $0, $1
-	farwritetext ContestResults_PlayerWonAPrizeText
-	waitbutton
-	copybytetovar wBugContestOfficerPrize
-	verbosegiveitem ITEM_FROM_MEM
-	iftrue .GotWinnersPrize
-	farwritetext BugContestPrizeNoRoomText
-	buttonsound
-	setevent EVENT_CONTEST_OFFICER_HAS_PRIZE
-.GotWinnersPrize
-	farwritetext ContestResults_JoinUsNextTimeText
-	buttonsound
-.FinishUp
-	checkevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER
-	iffalse .DidNotLeaveMons
-	farwritetext ContestResults_ReturnPartyText
-	waitbutton
-	special ContestReturnMons
-.DidNotLeaveMons
-	special CheckPartyFullAfterContest
-	ifequal $0, .CleanUp
-	ifequal $2, .CleanUp
-	farwritetext ContestResults_PartyFullText
-	waitbutton
-.CleanUp
-	closetext
-	setscene $0
+;.FirstPlace
+;	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+;.SecondPlace
+;.ThirdPlace
+;	copybytetovar wBugContestOfficerPrize
+;	itemtotext $0, $1
+;	farwritetext ContestResults_PlayerWonAPrizeText
+;	waitbutton
+;	copybytetovar wBugContestOfficerPrize
+;	verbosegiveitem ITEM_FROM_MEM
+;	iftrue .GotWinnersPrize
+;	farwritetext BugContestPrizeNoRoomText
+;	buttonsound
+;	setevent EVENT_CONTEST_OFFICER_HAS_PRIZE
+;.GotWinnersPrize
+;	farwritetext ContestResults_JoinUsNextTimeText
+;	buttonsound
+;.FinishUp
+;	checkevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER
+;	iffalse .DidNotLeaveMons
+;	farwritetext ContestResults_ReturnPartyText
+;	waitbutton
+;	special ContestReturnMons
+;.DidNotLeaveMons
+;	special CheckPartyFullAfterContest
+;	ifequal $0, .CleanUp
+;	ifequal $2, .CleanUp
+;	farwritetext ContestResults_PartyFullText
+;	waitbutton
+;.CleanUp
+;	closetext
+;	setscene $0
 ;	setmapscene ROUTE_35_NATIONAL_PARK_GATE, $0
-	setevent EVENT_BUG_CATCHING_CONTESTANT_1A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_2A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_3A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_4A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_5A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_6A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_7A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_8A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_9A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_10A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_1B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_2B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_3B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_4B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_5B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_6B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_7B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_8B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_9B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_10B
-	setflag ENGINE_DAILY_BUG_CONTEST
-	special PlayMapMusic
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_1A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_2A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_3A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_4A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_5A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_6A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_7A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_8A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_9A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_10A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_1B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_2B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_3B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_4B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_5B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_6B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_7B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_8B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_9B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_10B
+;	setflag ENGINE_DAILY_BUG_CONTEST
+;	special PlayMapMusic
 	end
 ; 0xbc31e
 
 BugContestResults_CopyContestantsToResults ; 0xbc380
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_1A
-	iftrue .skip1
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_1B
-.skip1
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_2A
-	iftrue .skip2
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_2B
-.skip2
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_3A
-	iftrue .skip3
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_3B
-.skip3
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_4A
-	iftrue .skip4
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_4B
-.skip4
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_5A
-	iftrue .skip5
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_5B
-.skip5
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_6A
-	iftrue .skip6
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_6B
-.skip6
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_7A
-	iftrue .skip7
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_7B
-.skip7
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_8A
-	iftrue .skip8
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_8B
-.skip8
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_9A
-	iftrue .skip9
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_9B
-.skip9
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_10A
-	iftrue .skip10
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_10B
-.skip10
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_1A
+;	iftrue .skip1
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_1B
+;.skip1
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_2A
+;	iftrue .skip2
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_2B
+;.skip2
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_3A
+;	iftrue .skip3
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_3B
+;.skip3
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_4A
+;	iftrue .skip4
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_4B
+;.skip4
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_5A
+;	iftrue .skip5
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_5B
+;.skip5
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_6A
+;	iftrue .skip6
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_6B
+;.skip6
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_7A
+;	iftrue .skip7
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_7B
+;.skip7
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_8A
+;	iftrue .skip8
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_8B
+;.skip8
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_9A
+;	iftrue .skip9
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_9B
+;.skip9
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_10A
+;	iftrue .skip10
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_10B
+;.skip10
 	end
 
 InitializeEventsScript:
@@ -528,6 +501,7 @@ InitializeEventsScript:
 	setevent EVENT_STARGLOW_MAIN_PUNK_2
 	setevent EVENT_PUNKS_HAVENT_LEFT_STARGLOW
 	setevent EVENT_ALWAY_SET
+	setevent EVENT_NOT_ON_DODRIO_RANCH
 	setflag ENGINE_PUNKS_IN_STARGLOW
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER

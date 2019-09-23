@@ -928,6 +928,7 @@ wFarfetchdPosition:: ds 1
 ; map triggers
 wAlways0Trigger:: ds 1
 wPlayerHouse1FTrigger:: ds 1
+wPlayerHouse2FTrigger:: ds 1
 wSunsetBayTrigger:: ds 1
 wSunsetCaptainsHouseTrigger:: ds 1
 wSunsetLighthouseTrigger:: ds 1
@@ -944,7 +945,17 @@ wStarglowPokeCenter:: ds 1
 wRoute6Trigger:: ds 1
 wLakeOnwaTrigger:: ds 1
 wSunbeamIslandTrigger:: ds 1
-ds 72
+wSunbeamSurfShopTrigger:: ds 1
+wSunbeamBikiniContestTrigger:: ds 1
+wSprucesLabTrigger:: ds 1
+wEventideForestTrigger:: ds 1
+wSpookhouseLivingRoomTrigger:: ds 1
+wSpookhouseHallway1Trigger:: ds 1
+wSpookhouseHallway2Trigger:: ds 1
+wSpookhouseHallway3Trigger:: ds 1
+wSpookhouseTVRoomTrigger:: ds 1
+wRoute9Trigger:: ds 1
+ds 61
 
 ; fight counts
 wJackFightCount::    ds 1

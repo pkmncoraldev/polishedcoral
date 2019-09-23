@@ -61,6 +61,7 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_HARDCORE_ENCOUNTER		; cueball
 	db MUSIC_HARDCORE_ENCOUNTER		; cooltrainerm
 	db MUSIC_HARDCORE_ENCOUNTER		; cooltrainerf
+	db MUSIC_NONE					; profspruce
 	db MUSIC_NONE			 		; teacherfast
 	db MUSIC_NONE			 		; triobror
 	db MUSIC_NONE			 		; triobrob

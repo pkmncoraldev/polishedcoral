@@ -1064,6 +1064,7 @@ WarpToNewMapScript: ; 96c34
 ; 96c38
 
 FallIntoMapScript: ; 96c38
+	special Special_StopRunning
 	callasm StopLandmarkTimer
 	newloadmap MAPSETUP_FALL
 	playsound SFX_KINESIS

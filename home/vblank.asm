@@ -110,6 +110,7 @@ VBlank0::
 	; These have their own timing checks.
 
 	call Serve2bppRequest
+	call LYOverrideStackCopy
 	call Serve1bppRequest
 	call AnimateTileset
 
@@ -180,6 +181,7 @@ VBlank4::
 ; sound
 	call UpdateBGMap
 	call Serve2bppRequest
+	call LYOverrideStackCopy
 	call PushOAM
 	call Joypad
 	call AskSerial
@@ -283,6 +285,7 @@ VBlank5::
 
 	call UpdateBGMap
 	call Serve2bppRequest
+	call LYOverrideStackCopy
 .done
 	call Joypad
 

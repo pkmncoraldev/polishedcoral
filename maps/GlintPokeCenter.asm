@@ -11,12 +11,13 @@ GlintPokeCenter_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 5 ; object events
+	db 6 ; object events
 	pc_nurse_event  4, 1
 	person_event SPRITE_FISHING_GURU, 5, 6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintPokeCenterNpc1, -1
 	person_event SPRITE_GENTLEMAN, 4, 1, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintPokeCenterNpc2, -1
 	person_event SPRITE_SCHOOLBOY,  2,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintPokeCenterNpc3, -1
 	object_event  5,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintCenterChansey, -1
+	person_event SPRITE_GRANNY,  6,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintPokeCenterTeaLady, -1
 
 	const_def 1 ; object constants
 	const GLINT_POKECENTER_NURSE
@@ -24,6 +25,63 @@ GlintPokeCenter_MapScriptHeader:
 	const GLINT_POKECENTER_NPC2
 	const GLINT_POKECENTER_NPC3
 	const GLINT_POKECENTER_CHANSEY
+	const GLINT_POKECENTER_TEA_LADY
+	
+GlintPokeCenterTeaLady:
+	faceplayer
+	opentext
+	checkevent EVENT_GLINT_CENTER_TALKED_TO_OLD_LADY
+	iftrue .alreadytalked
+	writetext GlintPokeCenterTeaLadyText5
+	jump .cont
+.alreadytalked
+	writetext GlintPokeCenterTeaLadyText1
+.cont
+	yesorno
+	iffalse .no
+	checkitem FLOWER_PETAL
+	iffalse .none
+	takeitem FLOWER_PETAL
+	checkitem FLOWER_PETAL
+	iffalse .one
+	takeitem FLOWER_PETAL
+	checkitem FLOWER_PETAL
+	iffalse .two
+	takeitem FLOWER_PETAL
+	checkitem FLOWER_PETAL
+	iffalse .three
+	takeitem FLOWER_PETAL
+	writetext GlintPokeCenterTeaLadyText3
+	waitbutton
+	closetext
+	spriteface GLINT_POKECENTER_TEA_LADY, RIGHT
+	pause 20
+	spriteface GLINT_POKECENTER_TEA_LADY, LEFT
+	opentext
+	writetext GlintPokeCenterTeaLadyText6
+	waitbutton
+	verbosegiveitem BLOSSOM_TEA
+	setevent EVENT_GLINT_CENTER_TALKED_TO_OLD_LADY
+.no
+	writetext GlintPokeCenterTeaLadyText7
+	waitbutton
+	closetext
+	end
+.three
+	giveitem FLOWER_PETAL
+.two
+	giveitem FLOWER_PETAL
+.one
+	giveitem FLOWER_PETAL
+	writetext GlintPokeCenterTeaLadyText4
+	waitbutton
+	closetext
+	end
+.none
+	writetext GlintPokeCenterTeaLadyText2
+	waitbutton
+	closetext
+	end
 	
 GlintCenterChansey:
 	opentext
@@ -46,6 +104,75 @@ GlintPokeCenterNpc2:
 GlintPokeCenterNpc3:
 	jumptextfaceplayer GlintPokeCenterNpc3Text
 
+GlintPokeCenterTeaLadyText1:
+	text "Care for some more"
+	line "tea, sweetie?"
+	
+	para "I'd be happy to"
+	line "make you some if"
+	cont "you have 4 FLOWER"
+	cont "PETALS."
+	done
+	
+GlintPokeCenterTeaLadyText2:
+	text "Oh! You don't have"
+	line "any!"
+	
+	para "Off to the GROVE"
+	line "to find some!"
+	done
+	
+GlintPokeCenterTeaLadyText3:
+	text "Alright, sweetie!"
+	
+	para "Coming right up!"
+	done
+	
+GlintPokeCenterTeaLadyText4:
+	text "Sorry sweetie…"
+	
+	para "I need 4 FLOWER"
+	line "PETALS to make"
+	cont "you some tea."
+	
+	para "Off to the GROVE"
+	line "to find some more!"
+	done
+	
+GlintPokeCenterTeaLadyText5:
+	text "The FLOWER PETALS"
+	line "from the trees in"
+	
+	para "GLINT GROVE can be"
+	line "brewed into a"
+	
+	para "tasty tea that"
+	line "#MON love!"
+	
+	para "I often go to the"
+	line "grove to collect"
+	cont "them myself."
+	
+	para "If you bring me 4"
+	line "FLOWER PETALS from"
+	
+	para "the grove, I'd be"
+	line "more then happy to"
+	cont "make you some."
+	
+	para "How about it?"
+	done
+	
+GlintPokeCenterTeaLadyText6:
+	text "Here we go!"
+	done
+	
+GlintPokeCenterTeaLadyText7:
+	text "I'll be here if you"
+	line "ever want some"
+	cont "tea."
+	done
+	
 GlintPokeCenterNpc1Text:
 	text "Our GYM LEADER"
 	line "specializes in"

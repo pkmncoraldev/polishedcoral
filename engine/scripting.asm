@@ -958,7 +958,13 @@ Script_warpsound:
 	jr z, .play
 	ld de, SFX_EXIT_BUILDING
 .play
-	jp PlaySFX
+	call PlaySFX
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	ret nz
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	jp ReplaceKrisSprite
 
 Script_cry:
 ; parameters:
@@ -1284,12 +1290,12 @@ Script_showemote:
 	jp ScriptCall
 
 ShowEmoteScript:
-	callasm .makegray
+	callasm MakePalGray
 	loademote EMOTE_MEM
 	applymovement2 .Show
 	pause 0
 	applymovement2 .Hide
-	callasm .makegreen
+	callasm MakePalGreen
 	end
 
 .Show:
@@ -1302,7 +1308,7 @@ ShowEmoteScript:
 	step_sleep_1
 	step_end
 
-.makegray
+MakePalGray::
 	ld hl, .palettesgray
 	ld de, wOBPals palette PAL_OW_SILVER
 	ld bc, 1 palettes
@@ -1318,24 +1324,52 @@ ShowEmoteScript:
 	RGB 13, 13, 13
 	RGB 00, 00, 00
 
-.makegreen
-	ld a, [wTimeOfDay]
+MakePalGreen::
+	ld a, [wTimeOfDayPal]
 	cp NITE
-	jr z, .standardnite
+	jr z, .nite
 	cp MORN
-	jr z, .standardmorn
+	jr z, .morn
 	cp DUSK
-	jr z, .standarddusk
+	jr z, .dusk
 	ld hl, StandardGrassDayPalette
 	jr .cont
-.standardnite
+.nite
 	ld hl, StandardGrassNitePalette
 	jr .cont
-.standardmorn
+.morn
 	ld hl, StandardGrassMornPalette
 	jr .cont
-.standarddusk
+.dusk
 	ld hl, StandardGrassDuskPalette
+	jr .cont
+.cont
+	ld de, wOBPals + 8 * 7
+	ld bc, 8
+	ld a, $5
+	call FarCopyWRAM
+	ld a, $1
+	ld [hCGBPalUpdate], a
+	ret
+	
+MakePalPink::
+	ld a, [wTimeOfDayPal]
+	cp NITE
+	jr z, .nite
+	cp MORN
+	jr z, .morn
+	cp DUSK
+	jr z, .dusk
+	ld hl, PinkGrassDayPalette
+	jr .cont
+.nite
+	ld hl, PinkGrassNitePalette
+	jr .cont
+.morn
+	ld hl, PinkGrassMornPalette
+	jr .cont
+.dusk
+	ld hl, PinkGrassDuskPalette
 	jr .cont
 .cont
 	ld de, wOBPals + 8 * 7
@@ -1357,6 +1391,18 @@ INCLUDE "maps/palettes/bgpals/grass/standard/dusk.pal"
 
 StandardGrassNitePalette: ; 4959f
 INCLUDE "maps/palettes/bgpals/grass/standard/nite.pal"
+
+PinkGrassMornPalette: ; 4959f
+INCLUDE "maps/palettes/bgpals/grass/pink/morn.pal"
+	
+PinkGrassDayPalette: ; 4959f
+INCLUDE "maps/palettes/bgpals/grass/pink/day.pal"
+
+PinkGrassDuskPalette: ; 4959f
+INCLUDE "maps/palettes/bgpals/grass/pink/dusk.pal"
+
+PinkGrassNitePalette: ; 4959f
+INCLUDE "maps/palettes/bgpals/grass/pink/nite.pal"
 	
 Script_earthquake:
 ; parameters:

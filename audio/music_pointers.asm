@@ -37,6 +37,7 @@ Music:
 	dba Music_SnowTown
 	dba Music_Lava
 	dba Music_SunbeamIsland
+	dba Music_Eventide
 	dba Music_GscGameCorner
 	dba Music_DodrioRace
 	dba Music_EncounterGymLeader

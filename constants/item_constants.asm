@@ -112,7 +112,7 @@
 	const POKE_FLUTE ; 5d
 	const SECRETPOTION ; 5e
 	const RED_SCALE    ; 5f
-	const CARD_KEY     ; 60
+	const OLD_KEY      ; 60
 	const BASEMENT_KEY ; 61
 	const S_S_TICKET   ; 62
 	const PASS         ; 63
@@ -128,8 +128,8 @@
 	const OLD_SEA_MAP  ; 6d
 	const SHINY_CHARM  ; 6e
 	const OVAL_CHARM   ; 6f
-	const SILPHSCOPE2  ; 70
-	const APRICORN_BOX ; 71
+	const FLOWER_PETAL ; 70
+	const BLOSSOM_TEA  ; 71
 
 	const TERU_SAMA    ; 72
 
@@ -300,7 +300,7 @@
 	const NAM_AMULET_COIN  ; 03
 	const NAM_ANTIDOTE     ; 04
 	const NAM_UNUSED5      ; 05
-	const NAM_APRICORN_BOX ; 06
+	const NAM_BLOSSOM_TEA  ; 06
 	const NAM_ARMOR_SUIT   ; 07
 	const NAM_ASPEAR_BERRY ; 08
 	const NAM_ASSAULT_VEST ; 09
@@ -325,7 +325,7 @@
 	const NAM_BURN_HEAL    ; 1c
 	const NAM_CALCIUM      ; 1d
 	const NAM_CARBOS       ; 1e
-	const NAM_CARD_KEY     ; 1f
+	const NAM_OLD_KEY     ; 1f
 	const NAM_CHARCOAL     ; 20
 	const NAM_CHERI_BERRY  ; 21
 	const NAM_CHERISH_BALL ; 22
@@ -505,7 +505,7 @@
 	const NAM_SHINY_CHARM  ; d0
 	const NAM_SHINY_STONE  ; d1
 	const NAM_SILK_SCARF   ; d2
-	const NAM_SILPHSCOPE2  ; d3
+	const NAM_FLOWER_PETAL ; d3
 	const NAM_SILVER_LEAF  ; d4
 	const NAM_SILVER_WING  ; d5
 	const NAM_SILVERPOWDER ; d6

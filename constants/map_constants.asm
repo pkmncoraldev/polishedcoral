@@ -106,3 +106,43 @@ MAP_NONE   EQU 0
 
 	map_const SUNBEAM_ISLAND,                             25, 29 ;  1
 	map_const SUNBEAM_BEACH,                               8, 29 ;  2
+	map_const SUNBEAM_POKECENTER,                          6,  4 ;  3
+	map_const SUNBEAM_MART,								   6,  4 ;  4
+	map_const SUNBEAM_BOAT_HOUSE,                   	   4,  3 ;  5
+	map_const SUNBEAM_SURF_SHOP,						   4,  4 ;  6
+	map_const SUNBEAM_BIKINI_CONTEST,					   6,  5 ;  7
+	map_const SUNBEAM_DODRIO_HOUSE,               		   4,  4 ;  8
+	map_const SUNBEAM_OLD_COUPLES_HOUSE,               	   4,  4 ;  9
+	map_const SUNBEAM_BLUE_WATER_HOUSE,               	   4,  4 ; 10
+	map_const SUNBEAM_TRADE_HOUSE,						   4,  4 ; 11
+	map_const SPRUCES_LAB, 								   5,  4 ; 12
+	map_const SUNBEAM_GYM,  			             	  16, 16 ; 13
+	map_const SUNBEAM_GYM_CAVE,  			               3,  4 ; 14
+	
+	newgroup                                                     ;  8
+	
+	map_const ROUTE_4_EVENTIDE_GATE,					   5,  4 ; 1
+	map_const EVENTIDE_FOREST,							  30, 24 ; 2
+	map_const ROUTE_9_EVENTIDE_GATE,					   5,  4 ; 3
+	map_const SPOOKY_FOREST_1, 							   8,  8 ; 4
+	map_const SPOOKY_FOREST_2, 							   8,  8 ; 5
+	map_const SPOOKY_FOREST_3, 							   8,  8 ; 6
+	map_const SPOOKY_FOREST_4, 							   8,  8 ; 7
+	map_const SPOOKY_FOREST_5, 							   8,  8 ; 8
+	map_const SPOOKY_FOREST_6, 							   8,  8 ; 9
+	map_const SPOOKY_FOREST_7, 							   8,  8 ; 10
+	map_const SPOOKY_FOREST_8, 							   8,  8 ; 11
+	map_const SPOOKY_FOREST_9, 							   8,  8 ; 12
+	map_const OLD_MANOR_EXTERIOR,						  15, 11 ; 13
+	map_const SPOOKHOUSE_LIVING_ROOM,					   5,  6 ; 14
+	map_const SPOOKHOUSE_DINING_ROOM,					   7,  4 ; 15
+	map_const SPOOKHOUSE_BEDROOM,						   6,  4 ; 16
+	map_const SPOOKHOUSE_HALLWAY_1,						   21, 2 ; 17
+	map_const SPOOKHOUSE_HALLWAY_2,						   21, 2 ; 18
+	map_const SPOOKHOUSE_HALLWAY_3,						   21, 2 ; 19
+	map_const SPOOKHOUSE_TV_ROOM,							3, 5 ; 20
+
+	newgroup
+	
+	map_const ROUTE_9,		 							   19, 17 ; 1
+	map_const DODRIO_RANCH_BARN,							7,  4 ; 2

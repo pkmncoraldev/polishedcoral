@@ -9,7 +9,7 @@ MapGroupRoofs:
 	db  3 ; group 5 (Starglow)
 	db  3 ; group 6 (Lake Onwa)
 	db  3 ; group 7 (Sunbeam Island)
-	db -1 ; group 8
+	db  2 ; group 8 (Eventide Forest)
 	db -1 ; group 9
 	db -1 ; group 10
 	db -1 ; group 11

@@ -129,14 +129,14 @@ EngineFlags: ; 80462
 	engine_flag wDailyFlags3, 6 ; mira done today
 	engine_flag wDailyFlags3, 7 ; anabel done today
 
-	engine_flag wDailyFlags4, 0 ; seashore shell bell
-	engine_flag wDailyFlags4, 1 ; shamouti restaurant challenge
-	engine_flag wDailyFlags4, 2 ; fought psychic inver
-	engine_flag wDailyFlags4, 3 ; bought moomoo milk
-	engine_flag wDailyFlags4, 4 ; changed trendy phrase
-	engine_flag wDailyFlags4, 5 ; all hidden grottoes
-	engine_flag wDailyFlags4, 6 ; daily unused
-	engine_flag wDailyFlags4, 7 ; daily unused
+	engine_flag wDailyFlags4, 0 ; glint grove pile 1
+	engine_flag wDailyFlags4, 1 ; glint grove pile 2
+	engine_flag wDailyFlags4, 2 ; glint grove pile 3
+	engine_flag wDailyFlags4, 3 ; glint grove pile 4
+	engine_flag wDailyFlags4, 4 ; glint grove pile 5
+	engine_flag wDailyFlags4, 5 ; glint grove pile 6
+	engine_flag wDailyFlags4, 6 ; glint grove pile 7
+	engine_flag wDailyFlags4, 7 ; unused
 
 	engine_flag wWeeklyFlags, 0 ; mt moon square clefairy
 	engine_flag wWeeklyFlags, 1 ; union cave lapras

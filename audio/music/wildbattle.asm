@@ -66,11 +66,13 @@ Music_WildBattle_Ch1:
 	note F#, 2
 	note F_, 2
 	note __, 4
+	dutycycle 1
 	note D_, 2
 	note __, 2
 	note C_, 2
 	octave 2
 	note G_, 4
+	dutycycle 2
 	octave 4
 	note C_, 2
 	note __, 4
@@ -590,10 +592,12 @@ Music_WildBattle_Ch2:
 	note B_, 2
 	note A#, 2
 	note __, 4
+	dutycycle 1
 	note F_, 2
 	note __, 2
 	note E_, 2
 	note C_, 4
+	dutycycle 2
 	octave 4
 	note E_, 2
 	note __, 4

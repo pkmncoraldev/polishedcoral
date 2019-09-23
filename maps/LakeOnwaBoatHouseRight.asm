@@ -69,7 +69,7 @@ LakeBoatMan1:
 	clearevent EVENT_LAKE_BOAT_LEFT_GONE
 	clearevent EVENT_BOAT_BOYS_BEGONE
 	domaptrigger LAKE_ONWA, $2
-	warp LAKE_ONWA, $18, $1a
+	warpfacing UP, LAKE_ONWA, $18, $1a
 	end
 .nomoney
 	checkevent EVENT_TAKEN_LAKE_BOAT_ONCE
@@ -122,7 +122,7 @@ LakeBoatMan1:
 	special Special_FadeOutMusic
 	clearevent EVENT_SUNSET_STRAND
 	domaptrigger SUNSET_BAY, $4
-	warp SUNSET_BAY, 16, 29
+	warpfacing UP, SUNSET_BAY, $1a, $1d
 	end
 	
 .LakeL
@@ -151,8 +151,9 @@ LakeBoatMan1:
 	special FadeOutPalettes
 	special Special_FadeOutMusic
 	clearevent EVENT_ISLAND_STRAND
-;	domaptrigger CHERRYGROVE_CITY, $0
-;	warp CHERRYGROVE_CITY, 2, 49
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
+	domaptrigger SUNBEAM_ISLAND, $3
+	warpfacing UP, SUNBEAM_ISLAND, $8, $31
 	end
 	
 LakeBoatHouseRMenuData:

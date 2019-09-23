@@ -125,8 +125,8 @@ ItemEffects: ; e73c
 	dw NoEffect         ; OLD_SEA_MAP
 	dw NoEffect         ; SHINY_CHARM
 	dw NoEffect         ; OVAL_CHARM
-	dw NoEffect         ; SILPHSCOPE2
-	dw ApricornBox      ; APRICORN_BOX
+	dw NoEffect         ; FLOWER_PETAL
+	dw RestoreHPEffect  ; BLOSSOM_TEA
 	dw NoEffect         ; TERU_SAMA
 	dw HealStatusEffect ; CHERI_BERRY
 	dw HealStatusEffect ; CHESTO_BERRY
@@ -148,7 +148,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; UNUSED7
 	dw NoEffect         ; UNUSED8
 	dw NoEffect         ; UNUSED9
-	dw RestoreHPEffect ; BERRY_JUICE
+	dw RestoreHPEffect  ; BERRY_JUICE
 	dw NoEffect         ; SILK_SCARF
 	dw NoEffect         ; BLACK_BELT
 	dw NoEffect         ; SHARP_BEAK

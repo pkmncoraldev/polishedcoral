@@ -17,17 +17,23 @@
 	const DAYBREAK_GROTTO    ; 07
 	const GLINT_CITY		 ; 08
 	const GLINT_GROVE		 ; 09
-	const ROUTE_3			 ; 10
-	const STARGLOW_CAVERN	 ; 11
-	const STARGLOW_VALLEY	 ; 12
-	const ROUTE_4			 ; 13
-	const HUNTERS_THICKET	 ; 14
-	const ROUTE_5			 ; 15
-	const ROUTE_6			 ; 16
-	const ROUTE_7			 ; 17
-	const LAKE_ONWA			 ; 18
-	const MT_ONWA			 ; 19
-	const SUNBEAM_ISLAND	 ; 20
+	const ROUTE_3			 ; 0a
+	const STARGLOW_CAVERN	 ; 0b
+	const STARGLOW_VALLEY	 ; 0c
+	const ROUTE_4			 ; 0d
+	const HUNTERS_THICKET	 ; 0e
+	const ROUTE_5			 ; 0f
+	const ROUTE_6			 ; 10
+	const ROUTE_7			 ; 11
+	const LAKE_ONWA			 ; 12
+	const MT_ONWA			 ; 13
+	const ROUTE_8			 ; 14
+	const SUNBEAM_ISLAND	 ; 15
+	const EVENTIDE_FOREST	 ; 16
+	const OLD_MANOR			 ; 17
+	const ROUTE_9			 ; 18
+	const DODRIO_RANCH		 ; 19
+	const FLICKER_STATION	 ; 1a
 
 KANTO_LANDMARK EQU const_value
 

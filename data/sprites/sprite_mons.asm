@@ -14,15 +14,15 @@ SpriteMons:
 	db PSYDUCK
 	db ABRA ; LARVESTA
 	db DONPHAN
-	db ABRA
-	db ABRA
-	db ABRA
-	db ABRA
-	db ABRA
-	db ABRA
-	db ABRA
-	db ABRA
-	db ABRA
+	db MEOWTH
+	db DODUO
+	db MUNCHLAX
+	db NIDOQUEEN
+	db NIDORAN_M
+	db NIDORAN_F
+	db ABRA ; LOPUNNY
+	db ABRA ; ALTARIA
+	db DODRIO
 	db ABRA
 	db ABRA
 	db ABRA

@@ -662,7 +662,7 @@ ProfSpruceSpeech: ; 0x5f99
 	call FadeToWhite
 	call ClearTileMap
 
-	ld a, LUGIA
+	ld a, MUNCHLAX
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 	call GetBaseData
@@ -1110,6 +1110,10 @@ StartTitleScreen: ; 6219
 	push af
 	ld a, $5
 	ld [rSVBK], a
+;	ld a, [hVBlank]
+;	push af
+;	ld a, $1
+;	ld [hVBlank], a
 
 	farcall _TitleScreen
 	call DelayFrame
@@ -1121,6 +1125,8 @@ StartTitleScreen: ; 6219
 	call ClearSprites
 	call ClearBGPalettes
 
+;	pop af
+;	ld [hVBlank], a
 	pop af
 	ld [rSVBK], a
 
@@ -1214,8 +1220,16 @@ TitleScreenEntrance: ; 62bc
 	ld hl, wJumptableIndex
 	inc [hl]
 
-	xor a
-	ld [hLCDCPointer], a
+	ld hl, wLYOverrides
+	ld bc, wLYOverridesEnd - wLYOverrides
+	ld a, [wMagnetTrainDirection]
+	call ByteFill
+	ld hl, wLYOverridesBackup
+	ld bc, wLYOverridesBackupEnd - wLYOverridesBackup
+	ld a, [wMagnetTrainDirection]
+	call ByteFill
+	ld a, LOW(rSCX)
+	ldh [hLCDCPointer], a
 
 	ld a, BANK(sPlayerData)
 	call GetSRAMBank
@@ -1300,43 +1314,6 @@ TitleScreenTimer: ; 62f6
 ; 6304
 
 TitleScreenMain: ; 6304
-
-	ld hl, wUnknBGPals palette 0 + 2
-	ld a, [hl]
-	ld c, a
-	inc [hl]
-
-; Only do this once every eight frames
-	and (1 << 3) - 1
-	jr nz, .cont
-
-	ld a, [wMagnetTrainDirection]
-	inc a
-	ld [wMagnetTrainDirection], a
-
-	ld a, LOW(rSCX)
-	ldh [hLCDCPointer], a
-
-	ld hl, wLYOverridesBackup
-	ld c, 50 - 1
-	xor a ; same as ld a, 0
-	ldh [hSCX], a
-	call .loadloop
-	ld c, 44
-	ld a, [wMagnetTrainDirection]
-	call .loadloop
-	ld c, 50 + 1
-	xor a
-	call .loadloop
-	call PushLYOverrides
-	jr .cont
-.loadloop
-	ld [hli], a
-	dec c
-	jr nz, .loadloop
-	ret
-
-.cont
 ; Run the timer down.
 	ld hl, wcf65
 	ld e, [hl]
@@ -1371,6 +1348,19 @@ TitleScreenMain: ; 6304
 	ld a, [hl]
 	and START | A_BUTTON
 	jr nz, .start_game
+	
+	ld hl, wUnknBGPals palette 0 + 2
+	ld a, [hl]
+	ld c, a
+	inc [hl]
+
+; Only do this once every eight frames
+	and %111111
+	jr nz, .cont
+
+	call TitleScreenScroll
+
+.cont
 	ret
 
 .done
@@ -1430,6 +1420,30 @@ TitleScreenEnd: ; 6375
 	set 7, [hl]
 	ret
 ; 6389
+
+TitleScreenScroll:
+	ld a, [wMagnetTrainDirection]
+	inc a
+	ld [wMagnetTrainDirection], a
+
+	ld hl, wLYOverridesBackup
+	ld c, 66 - 1
+	xor a ; same as ld a, 0
+	ldh [hSCX], a
+	call .loadloop
+	ld c, 70
+	ld a, [wMagnetTrainDirection]
+	call .loadloop
+	ld c, 8 + 1
+	xor a
+	call .loadloop
+	call PushLYOverrides
+	ret
+.loadloop
+	ld [hli], a
+	dec c
+	jr nz, .loadloop
+	ret
 
 DeleteSaveData: ; 6389
 	farcall _DeleteSaveData

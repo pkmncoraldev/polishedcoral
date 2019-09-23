@@ -1,13 +1,13 @@
-Music_Spooky: ; f6e23
-	musicheader 3, 1, Music_Spooky_Ch1
-	musicheader 1, 2, Music_Spooky_Ch2
-	musicheader 1, 3, Music_Spooky_Ch3
+Music_Eventide: ; f6e23
+	musicheader 3, 1, Music_Eventide_Ch1
+	musicheader 1, 2, Music_Eventide_Ch2
+	musicheader 1, 3, Music_Eventide_Ch3
 
-Music_Spooky_Ch1:
+Music_Eventide_Ch1:
 	tempo $87
 	volume $77
 	stereopanning $77
-Music_Spooky_Ch1_loop:
+Music_Eventide_Ch1_loop:
 	dutycycle 1
 	tone $0001
 	vibrato $00, $07
@@ -76,10 +76,10 @@ Music_Spooky_Ch1_loop:
 	note C_, 16
 	note D_, 16
 	note F_, 16
-	loopchannel 0, Music_Spooky_Ch1_loop
+	loopchannel 0, Music_Eventide_Ch1_loop
 
-Music_Spooky_Ch2:
-Music_Spooky_Ch2_loop:
+Music_Eventide_Ch2:
+Music_Eventide_Ch2_loop:
 	dutycycle 1
 	tone $0001
 	vibrato $00, $07
@@ -169,9 +169,9 @@ Music_Spooky_Ch2_loop:
 	note B_, 16
 	octave 4
 	note D_, 16
-	loopchannel 0, Music_Spooky_Ch2_loop
+	loopchannel 0, Music_Eventide_Ch2_loop
 
-Music_Spooky_Ch3:
+Music_Eventide_Ch3:
 	dutycycle 4
 	octave 3
 	notetype $C, $14
@@ -221,7 +221,7 @@ Music_Spooky_Ch3:
 	note G_, 1
 	intensity $34
 	note G_, 1
-Music_Spooky_Ch3_loop:
+Music_Eventide_Ch3_loop:
 	note __, 8
 	intensity $14
 	octave 2
@@ -834,5 +834,5 @@ Music_Spooky_Ch3_loop:
 	intensity $24
 	note C_, 4
 	note __, 16
-	loopchannel 0, Music_Spooky_Ch3_loop
+	loopchannel 0, Music_Eventide_Ch3_loop
 

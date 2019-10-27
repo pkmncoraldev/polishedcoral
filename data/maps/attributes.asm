@@ -115,9 +115,12 @@ ENDM
 	connection south, Route6, ROUTE_6, 6, 5, 11
 	connection west, LakeOnwa, LAKE_ONWA, -3, 8, 10
 	
-	map_attributes Route9, ROUTE_9, 5, 0
-;	connection north, FlickerStation, FLICKER_STATION, 8, 4, 12
+	map_attributes Route9, ROUTE_9, 5, NORTH
+	connection north, FlickerStation, FLICKER_STATION, 8, 20, 6
 
+	map_attributes FlickerStation, FLICKER_STATION, 113, SOUTH
+	connection south, Route9, ROUTE_9, 18, 6, 10
+	
 	map_attributes LakeOnwa, LAKE_ONWA, 7, NORTH | EAST
 	connection north, Route1, ROUTE_1, 0, 0, 32
 	connection east, Route7, ROUTE_7, 11, 0, 9
@@ -252,7 +255,14 @@ ENDM
 	map_attributes SpookhouseHallway2, SPOOKHOUSE_HALLWAY_2, $00, 0
 	map_attributes SpookhouseHallway3, SPOOKHOUSE_HALLWAY_3, $00, 0
 	map_attributes SpookhouseTVRoom, SPOOKHOUSE_TV_ROOM, $00, 0
+	map_attributes DodrioRanchHouse, DODRIO_RANCH_HOUSE, $00, 0
 	map_attributes DodrioRanchBarn, DODRIO_RANCH_BARN, $00, 0
+	map_attributes DodrioRanchRaceTrack, DODRIO_RANCH_RACETRACK, 5, 0
+	map_attributes FlickerSoundSpeechHouse, FLICKER_SOUND_SPEECH_HOUSE, 0, 0
+	map_attributes FlickerNameSpeechHouse, FLICKER_NAME_SPEECH_HOUSE, 0, 0
+	map_attributes FlickerPokeCenter, FLICKER_POKECENTER, 0, 0
+	map_attributes FlickerMart, FLICKER_MART, 0, 0
+	map_attributes FlickerTrainStation, FLICKER_TRAIN_STATION, 0, 0
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $7, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0

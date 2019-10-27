@@ -955,7 +955,9 @@ wSpookhouseHallway2Trigger:: ds 1
 wSpookhouseHallway3Trigger:: ds 1
 wSpookhouseTVRoomTrigger:: ds 1
 wRoute9Trigger:: ds 1
-ds 61
+wDodrioRanchRaceTrackTrigger:: ds 1
+wFlickerStationTrigger:: ds 1
+ds 59
 
 ; fight counts
 wJackFightCount::    ds 1

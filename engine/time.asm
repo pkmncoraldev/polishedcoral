@@ -165,6 +165,15 @@ endc
 	jp CopyDayHourMinSecToHL
 ; 114a4
 
+StartRanchRaceTimer: ; 11490
+	ld a, 0
+	ld [wBugContestMinsRemaining], a
+	ld a, 60
+	ld [wBugContestSecsRemaining], a
+	call UpdateTime
+	ld hl, wBugContestStartTime
+	call CopyDayHourMinSecToHL
+	ret
 
 CheckBugContestTimer:: ; 114a4 (4:54a4)
 	ld hl, wBugContestStartTime

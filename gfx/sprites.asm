@@ -12,9 +12,7 @@ KrisBikeSpriteGFX::            INCBIN "gfx/sprites/kris_bike.2bpp"
 KrisSurfSpriteGFX::            INCBIN "gfx/sprites/kris_surf.2bpp"
 KrisRunSpriteGFX::             INCBIN "gfx/sprites/kris_run.2bpp"
 MomSpriteGFX::                 INCBIN "gfx/sprites/mom.2bpp"
-DadSpriteGFX::                 INCBIN "gfx/sprites/dad.2bpp"
-LyraSpriteGFX::                INCBIN "gfx/sprites/lyra.2bpp"
-SilverSpriteGFX::              INCBIN "gfx/sprites/silver.2bpp"
+ColbySpriteGFX::               INCBIN "gfx/sprites/colby.2bpp"
 StanleySpriteGFX::             INCBIN "gfx/sprites/stanley.2bpp"
 RodneySpriteGFX::              INCBIN "gfx/sprites/rodney.2bpp"
 LeilaniSpriteGFX::             INCBIN "gfx/sprites/leilani.2bpp"
@@ -23,88 +21,23 @@ ChuckSpriteGFX::               INCBIN "gfx/sprites/chuck.2bpp"
 JasmineSpriteGFX::             INCBIN "gfx/sprites/jasmine.2bpp"
 PryceSpriteGFX::               INCBIN "gfx/sprites/pryce.2bpp"
 ClairSpriteGFX::               INCBIN "gfx/sprites/clair.2bpp"
-WillSpriteGFX::                INCBIN "gfx/sprites/will.2bpp"
-KogaSpriteGFX::                INCBIN "gfx/sprites/koga.2bpp"
-BrunoSpriteGFX::               INCBIN "gfx/sprites/bruno.2bpp"
+Bikini1SpriteGFX::             INCBIN "gfx/sprites/bikini1.2bpp"
+Bikini3SpriteGFX::             INCBIN "gfx/sprites/bikini3.2bpp"
 
 
 SECTION "Overworld Sprites 2", ROMX
 
-KarenSpriteGFX::               INCBIN "gfx/sprites/karen.2bpp"
-LanceSpriteGFX::               INCBIN "gfx/sprites/lance.2bpp"
-Bikini1SpriteGFX::             INCBIN "gfx/sprites/bikini1.2bpp"
-Bikini3SpriteGFX::             INCBIN "gfx/sprites/bikini3.2bpp"
-SurgeSpriteGFX::               INCBIN "gfx/sprites/surge.2bpp"
-ErikaSpriteGFX::               INCBIN "gfx/sprites/erika.2bpp"
-JanineSpriteGFX::              INCBIN "gfx/sprites/janine.2bpp"
-SabrinaSpriteGFX::             INCBIN "gfx/sprites/sabrina.2bpp"
-BlaineSpriteGFX::              INCBIN "gfx/sprites/blaine.2bpp"
-BlueSpriteGFX::                INCBIN "gfx/sprites/blue.2bpp"
-RedSpriteGFX::                 INCBIN "gfx/sprites/red.2bpp"
-LeafSpriteGFX::                INCBIN "gfx/sprites/leaf.2bpp"
-YellowSpriteGFX::              INCBIN "gfx/sprites/yellow.2bpp"
+DelinquentMSpriteGFX::         INCBIN "gfx/sprites/delinquentm.2bpp"
+DelinquentFSpriteGFX::         INCBIN "gfx/sprites/delinquentf.2bpp"
 SpruceSpriteGFX::              INCBIN "gfx/sprites/spruce.2bpp"
-ElmSpriteGFX::                 INCBIN "gfx/sprites/elm.2bpp"
-IvySpriteGFX::                 INCBIN "gfx/sprites/ivy.2bpp"
-WestwoodSpriteGFX::            INCBIN "gfx/sprites/westwood.2bpp"
-WillowSpriteGFX::              INCBIN "gfx/sprites/willow.2bpp"
-AndySpriteGFX::                INCBIN "gfx/sprites/andy.2bpp"
-BillSpriteGFX::                INCBIN "gfx/sprites/bill.2bpp"
-EusineSpriteGFX::              INCBIN "gfx/sprites/eusine.2bpp"
-
-
-SECTION "Overworld Sprites 3", ROMX
-
-KurtSpriteGFX::                INCBIN "gfx/sprites/kurt.2bpp"
+InvisibleSpriteGFX::           INCBIN "gfx/sprites/invisible.2bpp"
+DodrioRunSpriteGFX::           INCBIN "gfx/sprites/dodriorun.2bpp"
 RedsMomSpriteGFX::             INCBIN "gfx/sprites/reds_mom.2bpp"
-DaisySpriteGFX::               INCBIN "gfx/sprites/daisy.2bpp"
-LoreleiSpriteGFX::             INCBIN "gfx/sprites/lorelei.2bpp"
-AgathaSpriteGFX::              INCBIN "gfx/sprites/agatha.2bpp"
-PalmerSpriteGFX::              INCBIN "gfx/sprites/palmer.2bpp"
-WalkerSpriteGFX::              INCBIN "gfx/sprites/walker.2bpp"
-ImakuniSpriteGFX::             INCBIN "gfx/sprites/imakuni.2bpp"
-LawrenceSpriteGFX::            INCBIN "gfx/sprites/lawrence.2bpp"
-JamesSpriteGFX::               INCBIN "gfx/sprites/james.2bpp"
-JessieSpriteGFX::              INCBIN "gfx/sprites/jessie.2bpp"
-ProtonSpriteGFX::              INCBIN "gfx/sprites/proton.2bpp"
-PetrelSpriteGFX::              INCBIN "gfx/sprites/petrel.2bpp"
-ArcherSpriteGFX::              INCBIN "gfx/sprites/archer.2bpp"
-ArianaSpriteGFX::              INCBIN "gfx/sprites/ariana.2bpp"
-GiovanniSpriteGFX::            INCBIN "gfx/sprites/giovanni.2bpp"
-CherylSpriteGFX::              INCBIN "gfx/sprites/cheryl.2bpp"
-RileySpriteGFX::               INCBIN "gfx/sprites/riley.2bpp"
-BuckSpriteGFX::                INCBIN "gfx/sprites/buck.2bpp"
-MarleySpriteGFX::              INCBIN "gfx/sprites/marley.2bpp"
-MiraSpriteGFX::                INCBIN "gfx/sprites/mira.2bpp"
-
-
-SECTION "Overworld Sprites 4", ROMX
-
-AnabelSpriteGFX::              INCBIN "gfx/sprites/anabel.2bpp"
-FlannerySpriteGFX::            INCBIN "gfx/sprites/flannery.2bpp"
-MayleneSpriteGFX::             INCBIN "gfx/sprites/maylene.2bpp"
-SkylaSpriteGFX::               INCBIN "gfx/sprites/skyla.2bpp"
-ValerieSpriteGFX::             INCBIN "gfx/sprites/valerie.2bpp"
-KukuiSpriteGFX::               INCBIN "gfx/sprites/kukui.2bpp"
-CaitlinSpriteGFX::             INCBIN "gfx/sprites/caitlin.2bpp"
-DarachSpriteGFX::              INCBIN "gfx/sprites/darach.2bpp"
-StevenSpriteGFX::              INCBIN "gfx/sprites/steven.2bpp"
-CynthiaSpriteGFX::             INCBIN "gfx/sprites/cynthia.2bpp"
-CandelaSpriteGFX::             INCBIN "gfx/sprites/candela.2bpp"
-BlancheSpriteGFX::             INCBIN "gfx/sprites/blanche.2bpp"
-SparkSpriteGFX::               INCBIN "gfx/sprites/spark.2bpp"
-BuenaSpriteGFX::               INCBIN "gfx/sprites/buena.2bpp"
-CaptainSpriteGFX::             INCBIN "gfx/sprites/captain.2bpp"
-MatsumotoSpriteGFX::           INCBIN "gfx/sprites/matsumoto.2bpp"
-AceTrainerFSpriteGFX::         INCBIN "gfx/sprites/ace_trainer_f.2bpp"
-AceTrainerMSpriteGFX::         INCBIN "gfx/sprites/ace_trainer_m.2bpp"
+CoolTrainerFSpriteGFX::        INCBIN "gfx/sprites/cool_trainer_f.2bpp"
+CoolTrainerMSpriteGFX::        INCBIN "gfx/sprites/cool_trainer_m.2bpp"
 AromaLadySpriteGFX::           INCBIN "gfx/sprites/aroma_lady.2bpp"
 ArtistSpriteGFX::              INCBIN "gfx/sprites/artist.2bpp"
 BakerSpriteGFX::               INCBIN "gfx/sprites/baker.2bpp"
-
-
-SECTION "Overworld Sprites 5", ROMX
-
 BattleGirlSpriteGFX::          INCBIN "gfx/sprites/battle_girl.2bpp"
 BeautySpriteGFX::              INCBIN "gfx/sprites/beauty.2bpp"
 BikerSpriteGFX::               INCBIN "gfx/sprites/biker.2bpp"
@@ -114,6 +47,10 @@ BoarderSpriteGFX::             INCBIN "gfx/sprites/boarder.2bpp"
 BreederSpriteGFX::             INCBIN "gfx/sprites/breeder.2bpp"
 BugCatcherSpriteGFX::          INCBIN "gfx/sprites/bug_catcher.2bpp"
 BugManiacSpriteGFX::           INCBIN "gfx/sprites/bug_maniac.2bpp"
+
+
+SECTION "Overworld Sprites 3", ROMX
+
 BurglarSpriteGFX::             INCBIN "gfx/sprites/burglar.2bpp"
 CamperSpriteGFX::              INCBIN "gfx/sprites/camper.2bpp"
 ChildSpriteGFX::               INCBIN "gfx/sprites/child.2bpp"
@@ -126,10 +63,6 @@ ElderSpriteGFX::               INCBIN "gfx/sprites/elder.2bpp"
 EngineerSpriteGFX::            INCBIN "gfx/sprites/engineer.2bpp"
 FatGuySpriteGFX::              INCBIN "gfx/sprites/fat_guy.2bpp"
 FirebreatherSpriteGFX::        INCBIN "gfx/sprites/firebreather.2bpp"
-
-
-SECTION "Overworld Sprites 6", ROMX
-
 FisherSpriteGFX::              INCBIN "gfx/sprites/fisher.2bpp"
 GentlemanSpriteGFX::           INCBIN "gfx/sprites/gentleman.2bpp"
 GrampsSpriteGFX::              INCBIN "gfx/sprites/gramps.2bpp"
@@ -138,6 +71,10 @@ HexManiacSpriteGFX::           INCBIN "gfx/sprites/hex_maniac.2bpp"
 HikerSpriteGFX::               INCBIN "gfx/sprites/hiker.2bpp"
 JugglerSpriteGFX::             INCBIN "gfx/sprites/juggler.2bpp"
 KimonoGirlSpriteGFX::          INCBIN "gfx/sprites/kimono_girl.2bpp"
+
+
+SECTION "Overworld Sprites 4", ROMX
+
 LadySpriteGFX::                INCBIN "gfx/sprites/lady.2bpp"
 LassSpriteGFX::                INCBIN "gfx/sprites/lass.2bpp"
 MatronSpriteGFX::              INCBIN "gfx/sprites/matron.2bpp"
@@ -151,17 +88,17 @@ PokefanMSpriteGFX::            INCBIN "gfx/sprites/pokefan_m.2bpp"
 PokefanFSpriteGFX::            INCBIN "gfx/sprites/pokefan_f.2bpp"
 PokemaniacSpriteGFX::          INCBIN "gfx/sprites/pokemaniac.2bpp"
 PsychicSpriteGFX::             INCBIN "gfx/sprites/psychic.2bpp"
-
-
-SECTION "Overworld Sprites 7", ROMX
-
 RichBoySpriteGFX::             INCBIN "gfx/sprites/rich_boy.2bpp"
 RockerSpriteGFX::              INCBIN "gfx/sprites/rocker.2bpp"
-RocketSpriteGFX::              INCBIN "gfx/sprites/rocket.2bpp"
-RocketGirlSpriteGFX::          INCBIN "gfx/sprites/rocket_girl.2bpp"
+SnareSpriteGFX::               INCBIN "gfx/sprites/snare.2bpp"
+SnareGirlSpriteGFX::           INCBIN "gfx/sprites/snare_girl.2bpp"
 RoughneckSpriteGFX::           INCBIN "gfx/sprites/roughneck.2bpp"
 SageSpriteGFX::                INCBIN "gfx/sprites/sage.2bpp"
 SailorSpriteGFX::              INCBIN "gfx/sprites/sailor.2bpp"
+
+
+SECTION "Overworld Sprites 5", ROMX
+
 SchoolboySpriteGFX::           INCBIN "gfx/sprites/schoolboy.2bpp"
 SchoolgirlSpriteGFX::          INCBIN "gfx/sprites/schoolgirl.2bpp"
 ScientistSpriteGFX::           INCBIN "gfx/sprites/scientist.2bpp"
@@ -176,16 +113,16 @@ TeacherSpriteGFX::             INCBIN "gfx/sprites/teacher.2bpp"
 TwinSpriteGFX::                INCBIN "gfx/sprites/twin.2bpp"
 VeteranMSpriteGFX::            INCBIN "gfx/sprites/veteran_m.2bpp"
 VeteranFSpriteGFX::            INCBIN "gfx/sprites/veteran_f.2bpp"
-
-
-SECTION "Overworld Sprites 8", ROMX
-
 WaitressSpriteGFX::            INCBIN "gfx/sprites/waitress.2bpp"
 YoungsterSpriteGFX::           INCBIN "gfx/sprites/youngster.2bpp"
 BowingNurseSpriteGFX::         INCBIN "gfx/sprites/bowing_nurse.2bpp"
 ClerkSpriteGFX::               INCBIN "gfx/sprites/clerk.2bpp"
 ReceptionistSpriteGFX::        INCBIN "gfx/sprites/receptionist.2bpp"
 LinkReceptionistSpriteGFX::    INCBIN "gfx/sprites/link_receptionist.2bpp"
+
+
+SECTION "Overworld Sprites 6", ROMX
+
 GymGuySpriteGFX::              INCBIN "gfx/sprites/gym_guy.2bpp"
 FishingGuruSpriteGFX::         INCBIN "gfx/sprites/fishing_guru.2bpp"
 GameboyKidSpriteGFX::          INCBIN "gfx/sprites/gameboy_kid.2bpp"
@@ -194,19 +131,7 @@ SilphEmployeeSpriteGFX::       INCBIN "gfx/sprites/silph_employee.2bpp"
 SafariOfficerSpriteGFX::       INCBIN "gfx/sprites/safari_officer.2bpp"
 SwimmingOfficerSpriteGFX::     INCBIN "gfx/sprites/swimming_officer.2bpp"
 SwimmingOfficerFSpriteGFX::    INCBIN "gfx/sprites/swimming_officer_f.2bpp"
-ClefairyWalkSpriteGFX::        INCBIN "gfx/sprites/clefairy.2bpp"
-FarfetchDSpriteGFX::           INCBIN "gfx/sprites/farfetch_d.2bpp"
-LaprasSpriteGFX::              INCBIN "gfx/sprites/lapras.2bpp"
-EeveeSpriteGFX::               INCBIN "gfx/sprites/eevee.2bpp"
-DragoniteSpriteGFX::           INCBIN "gfx/sprites/dragonite.2bpp"
-MewSpriteGFX::                 INCBIN "gfx/sprites/mew.2bpp"
-CelebiSpriteGFX::              INCBIN "gfx/sprites/celebi.2bpp"
-
-
-SECTION "Overworld Sprites 9", ROMX
-
 SurfingPikachuSpriteGFX::      INCBIN "gfx/sprites/surf_pikachu.2bpp"
-ArmoredMewtwoSpriteGFX::       INCBIN "gfx/sprites/armored_mewtwo.2bpp"
 BigSnorlaxSpriteGFX::          INCBIN "gfx/sprites/big_snorlax.2bpp"
 BigLaprasSpriteGFX::           INCBIN "gfx/sprites/big_lapras.2bpp"
 BigOnixSpriteGFX::             INCBIN "gfx/sprites/big_onix.2bpp"
@@ -218,12 +143,14 @@ BoulderRockFossilSpriteGFX::   INCBIN "gfx/sprites/boulder_rock_fossil.2bpp"
 BookPaperPokedexSpriteGFX::    INCBIN "gfx/sprites/book_paper_pokedex.2bpp"
 SnesSpriteGFX::                INCBIN "gfx/sprites/snes.2bpp"
 N64SpriteGFX::                 INCBIN "gfx/sprites/n64.2bpp"
+
+
+SECTION "Overworld Sprites 7", ROMX
+
 GameCubeSpriteGFX::            INCBIN "gfx/sprites/gamecube.2bpp"
 WiiSpriteGFX::                 INCBIN "gfx/sprites/wii.2bpp"
 SilverTrophySpriteGFX::        INCBIN "gfx/sprites/silver_trophy.2bpp"
 GoldTrophySpriteGFX::          INCBIN "gfx/sprites/gold_trophy.2bpp"
-ElectricFenceLeftSpriteGFX::   INCBIN "gfx/sprites/electric_fence_left.2bpp"
-ElectricFenceRightSpriteGFX::  INCBIN "gfx/sprites/electric_fence_right.2bpp"
 SailboatSpriteGFX::            INCBIN "gfx/sprites/sailboat.2bpp"
 MiscOverheadSpriteGFX::        INCBIN "gfx/sprites/misc_overhead.2bpp"
 RowboatSpriteGFX::             INCBIN "gfx/sprites/rowboat.2bpp"

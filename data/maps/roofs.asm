@@ -2,16 +2,16 @@ MapGroupRoofs:
 ; entries correspond to map groups
 ; values are indexes for Roofs (see below)
 	db -1 ; group 0
-	db -1 ; group 1 (Dungeons)
-	db  3 ; group 2 (Sunset)
-	db  2 ; group 3 (Daybreak)
-	db  2 ; group 4 (Glint)
-	db  3 ; group 5 (Starglow)
-	db  3 ; group 6 (Lake Onwa)
-	db  3 ; group 7 (Sunbeam Island)
-	db  2 ; group 8 (Eventide Forest)
-	db -1 ; group 9
-	db -1 ; group 10
+	db -1 ; group 1  (Dungeons)
+	db  3 ; group 2  (Sunset)
+	db  2 ; group 3  (Daybreak)
+	db  2 ; group 4  (Glint)
+	db  3 ; group 5  (Starglow)
+	db  3 ; group 6  (Lake Onwa)
+	db  3 ; group 7  (Sunbeam Island)
+	db  2 ; group 8  (Eventide Forest)
+	db  2 ; group 9  (Dodrio Ranch)
+	db  2 ; group 10 (Flicker Station)
 	db -1 ; group 11
 	db -1 ; group 12
 	db -1 ; group 13

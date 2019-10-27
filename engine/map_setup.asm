@@ -233,13 +233,19 @@ CheckReplaceKrisSprite: ; 154f7
 
 .CheckSurfing2: ; 1551a (5:551a)
 	ld a, [wPlayerState]
-	and a ; cp PLAYER_NORMAL
+	cp PLAYER_NORMAL
+	jr z, .nope
+	cp PLAYER_RUN
 	jr z, .nope
 	cp PLAYER_SLIP
+	jr z, .nope
+	cp PLAYER_DODRIO
 	jr z, .nope
 	cp PLAYER_SURF
 	jr z, .surfing
 	cp PLAYER_SURF_PIKA
+	jr z, .surfing
+	cp PLAYER_SURF_LAVA
 	jr z, .surfing
 	call GetMapPermission
 	cp INDOOR

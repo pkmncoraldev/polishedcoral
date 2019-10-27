@@ -5,7 +5,7 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 9 ; warp events
+	db 10 ; warp events
 	warp_event  9,  0, PLAYER_HOUSE_1F, 3
 	warp_event  5, 10, SUNSET_BAY, 1
 	warp_event  7, 10, DAYBREAK_VILLAGE, 1
@@ -14,12 +14,13 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event 13, 10, LAKE_ONWA, 1
 	warp_event 15, 10, MT_ONWA_CLIFF, 1
 	warp_event 19, 10, EVENTIDE_FOREST, 1
-	warp_event  5, 14, ROUTE_9, 1
+	warp_event  5, 14, ROUTE_9, 3
+	warp_event  7, 14, FLICKER_STATION, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
 
-	db 14 ; bg events
+	db 15 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
 	bg_event  5,  1, SIGNPOST_READ, PlayerHouseRadio
 	bg_event  7,  1, SIGNPOST_READ, PlayerHouseBookshelf
@@ -35,6 +36,7 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event 16, 10, SIGNPOST_JUMPTEXT, PlayerHouseSunbeamIsland
 	bg_event 18, 10, SIGNPOST_JUMPTEXT, PlayerHouseEventideForest
 	bg_event  4, 14, SIGNPOST_JUMPTEXT, PlayerHouseRoute9
+	bg_event  6, 14, SIGNPOST_JUMPTEXT, PlayerHouseFlickerStation
 
 	db 1 ; object events
 	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, -1
@@ -62,7 +64,10 @@ PlayerHouseMap:
 	setevent EVENT_MOM_GOT_POKEGEAR
 	givepoke CORSOLA, 100
 	giveitem LIBRARY_CARD
-;	giveitem POKE_FLUTE
+	giveitem POKE_FLUTE
+	giveitem BICYCLE
+	giveitem OLD_ROD
+	giveitem GOOD_ROD
 x = 0
 rept NUM_TMS + NUM_HMS
 	givetmhm x
@@ -108,7 +113,11 @@ PlayerHouseEventideForest:
 	done
 	
 PlayerHouseRoute9:
-	text "ROUTE 9"
+	text "DODRIO RANCH"
+	done
+	
+PlayerHouseFlickerStation:
+	text "FLICKER STATION"
 	done
 	
 PlayerHouse2FInitializeRoom:

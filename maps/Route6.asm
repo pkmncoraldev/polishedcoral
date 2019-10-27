@@ -74,6 +74,7 @@ Route6PokeFanM:
 	loadtrainer POKEFANM, 1
 	startbattle
 	reloadmapafterbattle
+	playmusic MUSIC_ROUTE_4
 	setevent EVENT_BEAT_ROUTE_6_TRAINER_3
 .end
 	end
@@ -94,6 +95,7 @@ Route6PokeFanF:
 	loadtrainer POKEFANF, 1
 	startbattle
 	reloadmapafterbattle
+	playmusic MUSIC_ROUTE_4
 	setevent EVENT_BEAT_ROUTE_6_TRAINER_4
 .end
 	end

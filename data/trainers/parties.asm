@@ -2154,6 +2154,33 @@ DelinquentfGroup:
 	db -1 ; end
 
 ; ================
+
+	; DELINQUENT_F
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DELINQUENT_F
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DELINQUENT_F
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 

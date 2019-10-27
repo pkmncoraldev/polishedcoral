@@ -6,6 +6,14 @@ LoadBlindingFlashPalette:: ; 49409
 	jp FarCopyWRAM
 ; 49418
 
+LoadRegularSignPalette::
+	ld a, $5
+	ld de, wUnknBGPals palette PAL_BG_TEXT
+	ld hl, RegularSignPalette
+	ld bc, 1 palettes
+	call FarCopyWRAM
+	ret
+
 BlindingFlashPalette: ; 49418
 if !DEF(MONOCHROME)
 	RGB 31, 31, 31
@@ -16,6 +24,16 @@ else
 	MONOCHROME_RGB_FOUR
 endc
 ; 49420
+
+RegularSignPalette: ; 49418
+if !DEF(MONOCHROME)
+	RGB 31, 31, 16
+	RGB 31, 31, 16
+	RGB 14, 09, 00
+	RGB 00, 00, 00
+else
+	MONOCHROME_RGB_FOUR
+endc
 
 LoadSpecialMapPalette: ; 494ac
 	ld a, [wTileset]

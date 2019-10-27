@@ -1,4 +1,8 @@
 StartMenu:: ; 125cd
+	farcall LoadBlindingFlashPalette
+    farcall ApplyPals
+	ld a, 1
+	ldh [hCGBPalUpdate], a
 
 	call ClearWindowData
 
@@ -26,12 +30,12 @@ StartMenu:: ; 125cd
 	call BGMapAnchorTopLeft
 	farcall LoadFonts_NoOAMUpdate
 	call .DrawBugContestStatus
-	call UpdateTimePals
+;	call UpdateTimePals
 	jr .Select
 
 .Reopen:
 	call UpdateSprites
-	call UpdateTimePals
+;	call UpdateTimePals
 	call .SetUpMenuItems
 	ld a, [wBattleMenuCursorBuffer]
 	ld [wMenuCursorBuffer], a
@@ -77,8 +81,8 @@ StartMenu:: ; 125cd
 .ReturnEnd:
 	call ExitMenu
 .ReturnEnd2:
-	call CloseText
-	jp UpdateTimePals
+	jp CloseText
+;	jp UpdateTimePals
 
 .GetInput:
 ; Return carry on exit, and no-carry on selection.

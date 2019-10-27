@@ -14,7 +14,7 @@ SpriteHeaders:
 	overworld_sprite KrisSurfSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisRunSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite MomSpriteGFX, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite SilverSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite ColbySpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite StanleySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite RodneySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite LeilaniSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
@@ -23,36 +23,16 @@ SpriteHeaders:
 	overworld_sprite JasmineSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite PryceSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ClairSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite WillSpriteGFX, STANDING_SPRITE, PAL_OW_PURPLE
-	overworld_sprite KogaSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
-	overworld_sprite BrunoSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite KarenSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
-	overworld_sprite LanceSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite Bikini1SpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite Bikini3SpriteGFX, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite SurgeSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite ErikaSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite JanineSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
-	overworld_sprite SabrinaSpriteGFX, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite BlaineSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite BlueSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite RedSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite DelinquentMSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite DelinquentFSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite SpruceSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite ElmSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite IvySpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
-	overworld_sprite WestwoodSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
-	overworld_sprite WillowSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
-	overworld_sprite AndySpriteGFX, STANDING_SPRITE, PAL_OW_RED
-	overworld_sprite BillSpriteGFX, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite EusineSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
-	overworld_sprite KurtSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite InvisibleSpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite DodrioRunSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite RedsMomSpriteGFX, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite DaisySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite LoreleiSpriteGFX, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite AgathaSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite GiovanniSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite AceTrainerFSpriteGFX, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite AceTrainerMSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite CoolTrainerFSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite CoolTrainerMSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite AromaLadySpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite ArtistSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BakerSpriteGFX, WALKING_SPRITE, PAL_OW_RED
@@ -100,8 +80,8 @@ SpriteHeaders:
 	overworld_sprite PsychicSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite RichBoySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite RockerSpriteGFX, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite RocketSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite RocketGirlSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite SnareSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite SnareGirlSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite RoughneckSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SageSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SailorSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
@@ -147,8 +127,6 @@ SpriteHeaders:
 	overworld_sprite N64SpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite SilverTrophySpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite GoldTrophySpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
-	overworld_sprite ElectricFenceLeftSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
-	overworld_sprite ElectricFenceRightSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite SailboatSpriteGFX, STANDING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite MiscOverheadSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite RowboatSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN

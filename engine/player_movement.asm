@@ -32,7 +32,7 @@ DoPlayerMovement:: ; 80000
 
 .TranslateIntoMovement:
 	ld a, [wPlayerState]
-	and a ; cp PLAYER_NORMAL
+	cp PLAYER_NORMAL
 	jr z, .Normal
 	cp PLAYER_RUN
 	jr z, .Running
@@ -40,7 +40,11 @@ DoPlayerMovement:: ; 80000
 	jr z, .Surf
 	cp PLAYER_SURF_PIKA
 	jr z, .Surf
+	cp PLAYER_SURF_LAVA
+	jr z, .Surf
 	cp PLAYER_BIKE
+	jr z, .Normal
+	cp PLAYER_DODRIO
 	jr z, .Normal
 	cp PLAYER_SLIP
 	jr z, .Ice
@@ -95,6 +99,8 @@ DoPlayerMovement:: ; 80000
 	ret c
 	jr .NotMoving
 
+.Dodrio
+	
 .Ice:
 	call .CheckForced
 	call .GetAction
@@ -256,6 +262,10 @@ DoPlayerMovement:: ; 80000
 	cp 2
 	jp z, .bump
 
+	ld a, [wPlayerState]
+	cp PLAYER_DODRIO
+	jp z, .dodrio
+	
 	ld a, [wSpinning]
 	and a
 	jr nz, .spin
@@ -294,6 +304,12 @@ DoPlayerMovement:: ; 80000
 	scf
 	ret
 
+.dodrio
+	ld a, STEP_FAST
+	call .DoStep
+	scf
+	ret
+	
 .fast
 	ld a, STEP_BIKE
 	call .DoStep

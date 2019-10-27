@@ -6,6 +6,7 @@ INCLUDE "maps/GlintPokeCenter.asm"
 INCLUDE "maps/StarglowPokeCenter.asm"
 INCLUDE "maps/LakeOnwaPokeCenter.asm"
 INCLUDE "maps/SunbeamPokeCenter.asm"
+INCLUDE "maps/FlickerPokeCenter.asm"
 
 
 SECTION "Dungeon Scripts", ROMX
@@ -39,7 +40,6 @@ INCLUDE "maps/Route5Gate.asm"
 INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route7.asm"
 INCLUDE "maps/Route9.asm"
-INCLUDE "maps/DodrioRanchBarn.asm"
 
 
 SECTION "Sunset Bay Scripts", ROMX
@@ -115,6 +115,14 @@ INCLUDE "maps/SprucesLab.asm"
 INCLUDE "maps/SunbeamGym.asm"
 INCLUDE "maps/SunbeamGymCave.asm"
 
+SECTION "Flicker Station Scripts", ROMX
+
+INCLUDE "maps/FlickerStation.asm"
+INCLUDE "maps/FlickerSoundSpeechHouse.asm"
+INCLUDE "maps/FlickerNameSpeechHouse.asm"
+INCLUDE "maps/FlickerMart.asm"
+INCLUDE "maps/FlickerTrainStation.asm"
+
 SECTION "Eventide Forest Scripts", ROMX
 
 INCLUDE "maps/Route4EventideGate.asm"
@@ -140,3 +148,9 @@ INCLUDE "maps/SpookhouseHallway1.asm"
 INCLUDE "maps/SpookhouseHallway2.asm"
 INCLUDE "maps/SpookhouseHallway3.asm"
 INCLUDE "maps/SpookhouseTVRoom.asm"
+
+SECTION "Dodrio Ranch Scripts", ROMX
+
+INCLUDE "maps/DodrioRanchHouse.asm"
+INCLUDE "maps/DodrioRanchBarn.asm"
+INCLUDE "maps/DodrioRanchRaceTrack.asm"

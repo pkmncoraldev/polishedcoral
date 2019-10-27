@@ -168,4 +168,6 @@ hRequestOpaque1bpp EQU $fffb
 
 hTilesetGFXBank EQU $fffc
 
+hLCDTrain		   EQU $fffd
+
 HRAM_END EQU $ffff

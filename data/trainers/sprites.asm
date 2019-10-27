@@ -9,12 +9,12 @@ BTTrainerClassSprites:
 	db SPRITE_JASMINE       ; JASMINE
 	db SPRITE_PRYCE         ; PRYCE
 	db SPRITE_CLAIR         ; CLAIR
-	db SPRITE_WILL          ; WILL
-	db SPRITE_KOGA          ; KOGA
-	db SPRITE_BRUNO         ; BRUNO
-	db SPRITE_KAREN         ; KAREN
-	db SPRITE_LANCE         ; CHAMPION
-	db SPRITE_SILVER        ; RIVAL
+	db SPRITE_CHRIS         ; WILL
+	db SPRITE_CHRIS         ; KOGA
+	db SPRITE_CHRIS         ; BRUNO
+	db SPRITE_CHRIS         ; KAREN
+	db SPRITE_CHRIS         ; CHAMPION
+	db SPRITE_COLBY         ; RIVAL
 	db SPRITE_YOUNGSTER     ; YOUNGSTER
 	db SPRITE_BUG_CATCHER   ; BUG_CATCHER
 	db SPRITE_CAMPER        ; CAMPER
@@ -23,8 +23,8 @@ BTTrainerClassSprites:
 	db SPRITE_FISHER        ; FISHER
 	db SPRITE_BIRD_KEEPER   ; BIRD_KEEPER
 	db SPRITE_HIKER         ; HIKER
-	db SPRITE_SNARE        ; GRUNTM
-	db SPRITE_SNARE_GIRL   ; GRUNTF
+	db SPRITE_SNARE         ; GRUNTM
+	db SPRITE_SNARE_GIRL    ; GRUNTF
 	db SPRITE_POKEFAN_M     ; POKEFANM
 	db SPRITE_POKEFAN_F     ; POKEFANF
 	db SPRITE_OFFICER       ; OFFICERM
@@ -60,7 +60,7 @@ BTTrainerClassSprites:
 	db SPRITE_ROUGHNECK     ; CUE_BALL
 	db SPRITE_COOLTRAINER_M ; COOLTRAINERM
 	db SPRITE_COOLTRAINER_F ; COOLTRAINERF
-	db SPRITE_ELM           ; PROF_SPRUCE
+	db SPRITE_SPRUCE        ; PROF_SPRUCE
 	db SPRITE_CHRIS         ; TeacherFast
 	db SPRITE_CHRIS         ; TrioBroR
 	db SPRITE_CHRIS         ; TrioBroB
@@ -72,4 +72,4 @@ BTTrainerClassSprites:
 	db SPRITE_CHRIS         ; Delinquentm
 	db SPRITE_CHRIS         ; Delinquentf
 	db SPRITE_CHRIS         ; Safari
-	db SPRITE_CHRIS        ; TOWERTYCOON
+	db SPRITE_CHRIS         ; TOWERTYCOON

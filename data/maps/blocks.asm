@@ -6,11 +6,13 @@ GlintPokeCenter_BlockData:
 StarglowPokeCenter_BlockData:
 LakeOnwaPokeCenter_BlockData:
 SunbeamPokeCenter_BlockData:
+FlickerPokeCenter_BlockData:
 	INCBIN "maps/PokeCenter.ablk.lz"
 
 GlintMart_BlockData:
 StarglowMart_BlockData:
 SunbeamMart_BlockData:
+FlickerMart_BlockData:
 GenericMart_BlockData:: ; used by tilesets/palettes.asm:LoadSpecialMapPalette
 	INCBIN "maps/Mart.ablk.lz"
 
@@ -41,15 +43,18 @@ StarglowTogepiHouse_BlockData:
 StarglowFishingGuruHouse_BlockData:
 SunbeamOldCouplesHouse_BlockData:
 SunbeamTradeHouse_BlockData:
+FlickerNameSpeechHouse_BlockData:
 	INCBIN "maps/NormalHouse2.ablk.lz"
 	
 SunsetLegendsHouse_BlockData:
 GlintEvoHouse_BlockData:
 StarglowNoPokemonHouse_BlockData:
 SunbeamBlueWaterHouse_BlockData:
+FlickerSoundSpeechHouse_BlockData:
 	INCBIN "maps/NormalHouse3.ablk.lz"
 	
 LakeOnwaItemHouse_BlockData:
+DodrioRanchHouse_BlockData:
 	INCBIN "maps/RusticHouse.ablk.lz"
 
 SunsetCaptainsHouse_BlockData:
@@ -136,6 +141,12 @@ SunbeamBeach_BlockData:
 SunbeamBikiniContest_BlockData:
 	INCBIN "maps/SunbeamBikiniContest.ablk.lz"
 	
+FlickerStation_BlockData:
+	INCBIN "maps/FlickerStation.ablk.lz"
+	
+FlickerTrainStation_BlockData:
+	INCBIN "maps/FlickerTrainStation.ablk.lz"
+	
 SprucesLab_BlockData:
 	INCBIN "maps/SprucesLab.ablk.lz"
 	
@@ -171,6 +182,9 @@ Route7_BlockData:
 	
 Route9_BlockData:
 	INCBIN "maps/Route9.ablk.lz"
+	
+DodrioRanchRaceTrack_BlockData:
+	INCBIN "maps/DodrioRanchRaceTrack.ablk.lz"
 	
 LakeOnwa_BlockData:
 	INCBIN "maps/LakeOnwa.ablk.lz"

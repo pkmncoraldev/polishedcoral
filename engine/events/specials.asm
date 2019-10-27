@@ -455,3 +455,7 @@ Special_StopRunning:
 	call ReplaceKrisSprite
 	ret
 	
+;Special_StartRanchRaceTimer:
+;	callba StartRanchRaceTimer
+;	ret
+	

@@ -4,9 +4,9 @@ Route9_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 4 ; warp events
-	warp_def 24, 6, 3, ROUTE_9_EVENTIDE_GATE
-	warp_def 25, 6, 4, ROUTE_9_EVENTIDE_GATE
-	warp_def 23, 17, 1, ROUTE_1 ;POKEMON_FAN_CLUB
+	warp_def 24,  6, 3, ROUTE_9_EVENTIDE_GATE
+	warp_def 25,  6, 4, ROUTE_9_EVENTIDE_GATE
+	warp_def 23, 17, 1, DODRIO_RANCH_HOUSE
 	warp_def 9, 27, 1, DODRIO_RANCH_BARN
 
 	db 8 ; coord events
@@ -32,7 +32,7 @@ Route9_MapScriptHeader:
 	signpost 23, 8, SIGNPOST_READ, Route9Sign
 
 	db 13 ; object events
-	person_event SPRITE_SNES, 13, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchScarecrow, -1
+	person_event SPRITE_SNES, 13, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchScarecrow, -1
 	person_event SPRITE_DODRIO, 18, 15, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio1, -1
 	person_event SPRITE_DODRIO, 10, 22, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio2, -1
 	person_event SPRITE_DODUO, 15, 16, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
@@ -41,36 +41,24 @@ Route9_MapScriptHeader:
 	person_event SPRITE_DODUO, 20, 23, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
 	itemball_event  28, 2, CARBOS, 1, EVENT_ROUTE_9_POKE_BALL_1
 	itemball_event  26, 16, FULL_RESTORE, 1, EVENT_ROUTE_9_POKE_BALL_2
-	person_event SPRITE_BIRD_KEEPER, 16, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_1, -1
+	person_event SPRITE_BIRD_KEEPER, 16, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_1, -1
 	person_event SPRITE_BIRD_KEEPER, 11, 9, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRanch_2, -1
 	person_event SPRITE_BIRD_KEEPER, 7, 17, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRanch_3, -1
-	fruittree_event  8,  9, FRUITTREE_ROUTE_9, ASPEAR_BERRY
+	fruittreeinvis_event  8,  9, FRUITTREE_ROUTE_9, ASPEAR_BERRY
 
-Route9MapSignThing:
+Route9MapSignThing::
 	dotrigger $0
-	setevent EVENT_NOT_ON_DODRIO_RANCH
-	callasm Route9Landmark
+	clearevent EVENT_ON_DODRIO_RANCH
 	loadvar wEnteredMapFromContinue, 0
-	callasm ReturnFromMapSetupScript.not_gate
+	callasm ReturnFromMapSetupScript
     end
 
-DodrioRanchMapSignThing:
+DodrioRanchMapSignThing::
 	dotrigger $1
-	clearevent EVENT_NOT_ON_DODRIO_RANCH
-	callasm DodrioRanchLandmark
+	setevent EVENT_ON_DODRIO_RANCH
 	loadvar wEnteredMapFromContinue, 0
-	callasm ReturnFromMapSetupScript.not_gate
+	callasm ReturnFromMapSetupScript
     end
-	
-DodrioRanchLandmark:
-	ld a, DODRIO_RANCH
-	ld [wCurrentLandmark], a
-	ret
-	
-Route9Landmark:
-	ld a, ROUTE_9
-	ld [wCurrentLandmark], a
-	ret
 	
 Route9Sign:
 	jumptext Route9SignText
@@ -179,6 +167,9 @@ Route9SignText:
 	para "NORTH: FLICKER"
 	line "STATION"
 	
+	para "EAST: DODRIO"
+	line "RANCH"
+	
 	para "WEST: EVENTIDE"
 	line "FOREST"
 	done
@@ -202,7 +193,7 @@ RanchDoduoText:
 	
 RanchScarecrowText:
 	text "It's a SCARE-"
-	line "MURKROW!"
+	line "MURKROW."
 	
 	para "It's so life-like!"
 	done

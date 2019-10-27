@@ -3,6 +3,9 @@ LCD:: ; 552
 	ld a, [hMPState]
 	and a
 	jr nz, .musicplayer
+	ld a, [hLCDTrain]
+	and a
+	jr nz, .train
 	ld a, [hLCDCPointer]
 	and a
 	jr z, .done
@@ -74,6 +77,20 @@ endc
 	pop af
 	reti
 ; 568
+
+.train
+	cp 150 + 1
+    jp c, .lower
+; higher
+    ld a, $90
+    ldh [rLY], a
+	pop af
+    reti
+.lower
+    xor a
+    ldh [rLY], a
+	pop af
+    reti
 
 
 DisableLCD:: ; 568

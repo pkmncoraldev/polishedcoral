@@ -121,15 +121,15 @@ MAP_NONE   EQU 0
 	
 	newgroup                                                     ;  8
 	
-	map_const ROUTE_4_EVENTIDE_GATE,					   5,  4 ; 1
-	map_const EVENTIDE_FOREST,							  30, 24 ; 2
-	map_const ROUTE_9_EVENTIDE_GATE,					   5,  4 ; 3
-	map_const SPOOKY_FOREST_1, 							   8,  8 ; 4
-	map_const SPOOKY_FOREST_2, 							   8,  8 ; 5
-	map_const SPOOKY_FOREST_3, 							   8,  8 ; 6
-	map_const SPOOKY_FOREST_4, 							   8,  8 ; 7
-	map_const SPOOKY_FOREST_5, 							   8,  8 ; 8
-	map_const SPOOKY_FOREST_6, 							   8,  8 ; 9
+	map_const ROUTE_4_EVENTIDE_GATE,					   5,  4 ;  1
+	map_const EVENTIDE_FOREST,							  30, 24 ;  2
+	map_const ROUTE_9_EVENTIDE_GATE,					   5,  4 ;  3
+	map_const SPOOKY_FOREST_1, 							   8,  8 ;  4
+	map_const SPOOKY_FOREST_2, 							   8,  8 ;  5
+	map_const SPOOKY_FOREST_3, 							   8,  8 ;  6
+	map_const SPOOKY_FOREST_4, 							   8,  8 ;  7
+	map_const SPOOKY_FOREST_5, 							   8,  8 ;  8
+	map_const SPOOKY_FOREST_6, 							   8,  8 ;  9
 	map_const SPOOKY_FOREST_7, 							   8,  8 ; 10
 	map_const SPOOKY_FOREST_8, 							   8,  8 ; 11
 	map_const SPOOKY_FOREST_9, 							   8,  8 ; 12
@@ -137,12 +137,24 @@ MAP_NONE   EQU 0
 	map_const SPOOKHOUSE_LIVING_ROOM,					   5,  6 ; 14
 	map_const SPOOKHOUSE_DINING_ROOM,					   7,  4 ; 15
 	map_const SPOOKHOUSE_BEDROOM,						   6,  4 ; 16
-	map_const SPOOKHOUSE_HALLWAY_1,						   21, 2 ; 17
-	map_const SPOOKHOUSE_HALLWAY_2,						   21, 2 ; 18
-	map_const SPOOKHOUSE_HALLWAY_3,						   21, 2 ; 19
-	map_const SPOOKHOUSE_TV_ROOM,							3, 5 ; 20
+	map_const SPOOKHOUSE_HALLWAY_1,						  21,  2 ; 17
+	map_const SPOOKHOUSE_HALLWAY_2,						  21,  2 ; 18
+	map_const SPOOKHOUSE_HALLWAY_3,						  21,  2 ; 19
+	map_const SPOOKHOUSE_TV_ROOM,						   3,  5 ; 20
 
-	newgroup
+	newgroup													 ;  9
 	
-	map_const ROUTE_9,		 							   19, 17 ; 1
-	map_const DODRIO_RANCH_BARN,							7,  4 ; 2
+	map_const ROUTE_9,		 							  19, 17 ; 1
+	map_const DODRIO_RANCH_HOUSE,						   4,  4 ; 2
+	map_const DODRIO_RANCH_BARN,						   7,  4 ; 3
+	map_const DODRIO_RANCH_RACETRACK,					  25, 17 ; 4
+
+	newgroup													 ; 10
+	
+	map_const FLICKER_STATION,							  35, 19 ; 1
+	map_const FLICKER_SOUND_SPEECH_HOUSE,				   4,  4 ; 2
+	map_const FLICKER_NAME_SPEECH_HOUSE,				   4,  4 ; 3
+	map_const FLICKER_POKECENTER,                          6,  4 ; 4
+	map_const FLICKER_MART,								   6,  4 ; 5
+	map_const FLICKER_TRAIN_STATION,					   8,  6 ; 6
+	

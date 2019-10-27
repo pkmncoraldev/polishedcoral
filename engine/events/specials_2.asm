@@ -429,3 +429,6 @@ endr
 .Nickname:
 	db "EGGY@"
 	
+Special_StartRanchRaceTimer: ; 11490
+	farjp StartRanchRaceTimer
+	

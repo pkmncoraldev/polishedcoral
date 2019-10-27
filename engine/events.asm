@@ -231,6 +231,18 @@ PlayerEvents: ; 9681f
 	jr z, .ok2
 	cp PLAYEREVENT_JOYCHANGEFACING
 	jr z, .ok2
+	
+	ld hl, wScriptBank
+	ld de, .Route9MapSignThing
+	ld c, 3
+	call StringCmp
+	jr z, .ok2
+	ld hl, wScriptBank
+	ld de, .DodrioRanchMapSignThing
+	ld c, 3
+	call StringCmp
+	jr z, .ok2
+	
 	ld a, [wMapGroup]
 	cp GROUP_STARGLOW_VALLEY
 	jr nz, .ok3
@@ -249,6 +261,11 @@ PlayerEvents: ; 9681f
 	scf
 	ret
 ; 96867
+
+.Route9MapSignThing:
+	dba Route9MapSignThing
+.DodrioRanchMapSignThing:
+	dba DodrioRanchMapSignThing
 
 CheckEventFlag:
 	ld b, CHECK_FLAG

@@ -1,14 +1,12 @@
 ReturnFromMapSetupScript:: ; b8000
-	eventflagcheck EVENT_NOT_ON_DODRIO_RANCH
-	ret z
 	ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
 	ld [wCurrentLandmark], a
-	call .CheckNationalParkGate
-	jr z, .nationalparkgate
+;	call .CheckNationalParkGate
+;	jr z, .nationalparkgate
 
 	call GetMapPermission
 	cp GATE
@@ -118,7 +116,7 @@ ReturnFromMapSetupScript:: ; b8000
 	ret
 ; b8089
 
-.CheckNationalParkGate: ; b8089
+;.CheckNationalParkGate: ; b8089
 ;	ld a, [wMapGroup]
 ;	cp GROUP_ROUTE_35_NATIONAL_PARK_GATE
 ;	ret nz
@@ -126,7 +124,7 @@ ReturnFromMapSetupScript:: ; b8000
 ;	cp MAP_ROUTE_35_NATIONAL_PARK_GATE
 ;	ret z
 ;	cp MAP_ROUTE_36_NATIONAL_PARK_GATE
-	ret
+;	ret
 ; b8098
 
 
@@ -178,6 +176,11 @@ PlaceMapNameSign:: ; b8098 (2e:4098)
 	ret
 
 LoadMapNameSignGFX:: ; b80c6
+	farcall LoadRegularSignPalette
+	farcall ApplyPals
+	ld a, 1
+	ldh [hCGBPalUpdate], a
+
 	; load opaque space
 	ld hl, VTiles0 tile POPUP_MAP_FRAME_SPACE
 	call GetOpaque1bppSpaceTile

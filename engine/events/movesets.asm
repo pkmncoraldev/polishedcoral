@@ -20,6 +20,18 @@ TeachMagikarpDragonRage:
 	db DRAGON_RAGE
 	db 0
 
+TeachDoduoExtremeSpeed: ; 0x8b170
+	call GetLastPartyMonMoveset
+	ld hl, .Moveset
+	jp GiveSpecialMoveset
+
+.Moveset:
+	db EXTREMESPEED
+	db THUNDER_WAVE
+	db AQUA_JET
+	db DRAGON_RAGE
+	db 0
+	
 GetLastPartyMon: ; 0x8b1ce
 	ld bc, wPartyCount
 	ld a, [bc]

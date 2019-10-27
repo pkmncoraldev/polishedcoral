@@ -26,8 +26,6 @@ StartBattleWithMapTrainerScript: ; 0xbe68a
 	loadmemtrainer
 	callasm CheckTrainerClass
 	iffalse .nobattle
-	checkcode VAR_PARTYCOUNT
-	if_equal 0, .nobattle
 	startbattle
 	reloadmapafterbattle
 	trainerflagaction SET_FLAG

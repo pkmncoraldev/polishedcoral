@@ -178,5 +178,7 @@ SpecialsPointers::
 ; Coral
 	add_special Special_StopRunning
 	add_special SpecialGiveShinyTogepi
+	add_special Special_StartRanchRaceTimer
+	add_special TeachDoduoExtremeSpeed
 
 	add_special SpecialNone

@@ -34,4 +34,6 @@ MapTriggers::
 	scene_var SPOOKHOUSE_HALLWAY_3,					  wSpookhouseHallway3Trigger
 	scene_var SPOOKHOUSE_TV_ROOM,					  wSpookhouseTVRoomTrigger
 	scene_var ROUTE_9,								  wRoute9Trigger
+	scene_var DODRIO_RANCH_RACETRACK,				  wDodrioRanchRaceTrackTrigger
+	scene_var FLICKER_STATION,						  wFlickerStationTrigger
 	db -1

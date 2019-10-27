@@ -99,7 +99,7 @@ MtOnwaPanNPC:
 	pause 15
 	special Special_FadeOutMusic
 	pause 20
-	applymovement PLAYER, MtOnwaCutsceneHidePersonMovement
+	applyonemovement PLAYER, hide_person
 	applymovement PLAYER, Movement_MtOnwaCutscene1
 	pause 40
 	opentext
@@ -121,7 +121,7 @@ MtOnwaPanNPC:
 
 	applymovement PLAYER, Movement_MtOnwaCutscene2
 	spriteface PLAYER, UP
-	applymovement PLAYER, MtOnwaCutsceneShowPersonMovement
+	applyonemovement PLAYER, show_person
 	disappear MT_ONWA_CUTSCENE1
 	disappear MT_ONWA_CUTSCENE2
 	disappear MT_ONWA_CUTSCENE3

@@ -2468,7 +2468,7 @@ SetCopycatPalette:
 	ld bc, wObject1Struct
 	jr SetSpritePalette
 
-SetPlayerPalette: ; 57e2
+SetPlayerPalette:: ; 57e2
 	ld bc, wPlayerStruct
 SetSpritePalette:
 	and %10000000

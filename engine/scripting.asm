@@ -1380,28 +1380,28 @@ MakePalPink::
 	ld [hCGBPalUpdate], a
 	ret
 	
-StandardGrassMornPalette: ; 4959f
+StandardGrassMornPalette:
 INCLUDE "maps/palettes/bgpals/grass/standard/morn.pal"
 	
-StandardGrassDayPalette: ; 4959f
+StandardGrassDayPalette:
 INCLUDE "maps/palettes/bgpals/grass/standard/day.pal"
 
-StandardGrassDuskPalette: ; 4959f
+StandardGrassDuskPalette:
 INCLUDE "maps/palettes/bgpals/grass/standard/dusk.pal"
 
-StandardGrassNitePalette: ; 4959f
+StandardGrassNitePalette:
 INCLUDE "maps/palettes/bgpals/grass/standard/nite.pal"
 
-PinkGrassMornPalette: ; 4959f
+PinkGrassMornPalette:
 INCLUDE "maps/palettes/bgpals/grass/pink/morn.pal"
 	
-PinkGrassDayPalette: ; 4959f
+PinkGrassDayPalette:
 INCLUDE "maps/palettes/bgpals/grass/pink/day.pal"
 
-PinkGrassDuskPalette: ; 4959f
+PinkGrassDuskPalette:
 INCLUDE "maps/palettes/bgpals/grass/pink/dusk.pal"
 
-PinkGrassNitePalette: ; 4959f
+PinkGrassNitePalette:
 INCLUDE "maps/palettes/bgpals/grass/pink/nite.pal"
 	
 Script_earthquake:

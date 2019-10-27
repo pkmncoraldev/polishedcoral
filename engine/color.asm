@@ -879,6 +879,8 @@ LoadMapPals:
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_9
 	jr z, .ranchcont
+	cp MAP_DODRIO_RANCH_RACETRACK
+	jr z, .ranchcont
 	jp .normal
 .ranchcont
 	ld a, [wTimeOfDayPal]

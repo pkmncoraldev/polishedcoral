@@ -79,18 +79,19 @@ endc
 ; 568
 
 .train
-	cp 150 + 1
-    jp c, .lower
+	ld a, [rLY]
+	cp 94 + 1
+	jp c, .lower
 ; higher
-    ld a, $90
-    ldh [rLY], a
+	ld a, $B0
+	ldh [rWX], a
 	pop af
-    reti
+	reti
 .lower
-    xor a
-    ldh [rLY], a
+	ld a, 7
+	ldh [rWX], a
 	pop af
-    reti
+	reti
 
 
 DisableLCD:: ; 568

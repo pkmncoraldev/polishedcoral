@@ -16,7 +16,7 @@ FlickerStation_MapScriptHeader:
 	warp_def 13, 59, 1, FLICKER_NAME_SPEECH_HOUSE
 	warp_def 25, 53, 1, FLICKER_TRAIN_STATION
 	warp_def 25, 54, 2, FLICKER_TRAIN_STATION
-	warp_def 19, 55, 3, FLICKER_TRAIN_STATION
+	warp_def 18, 55, 3, FLICKER_TRAIN_STATION
 
 	db 2 ; coord events
 	xy_trigger 0, 26,  9, 0, FlickerStation3Girls, 0, 0
@@ -87,15 +87,16 @@ FlickerStationGirlMove:
 	return
 	
 FlickerStationTrainThing:
-	ld hl, rLCDC
-	set 5, [hl]
+	ld hl, rIE
+	set LCD_STAT, [hl]
 	xor a
 	ld [hWX], a
-	ld a, 100
+	ld a, 64
 	ld [hWY], a
 	ld a, 1
 	ld [hLCDTrain], a
 	ret
+	nop
 	
 FlickerStation3Girls:
 	special Special_StopRunning

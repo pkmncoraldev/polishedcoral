@@ -129,6 +129,8 @@ ReturnFromMapSetupScript:: ; b8000
 
 
 PlaceMapNameSign:: ; b8098 (2e:4098)
+	ld a, [hLCDTrain]
+	ret nz
 	; Sign is slightly delayed to move it away from the map connection setup
 	ld hl, wLandmarkSignTimer
 	ld a, [hl]

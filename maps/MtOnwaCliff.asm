@@ -101,7 +101,10 @@ MtOnwaPanNPC:
 	pause 20
 	applyonemovement PLAYER, hide_person
 	applymovement PLAYER, Movement_MtOnwaCutscene1
-	pause 40
+	playmusic MUSIC_NONE
+	pause 20
+	playmusic MUSIC_MOUNTAINTOP
+	pause 20
 	opentext
 	writetext MtOnwaPanNPCText2
 	waitbutton
@@ -118,8 +121,8 @@ MtOnwaPanNPC:
 	closetext
 	waitbuttonsilent
 	closetext
-
 	applymovement PLAYER, Movement_MtOnwaCutscene2
+	special Special_FadeOutMusic
 	spriteface PLAYER, UP
 	applyonemovement PLAYER, show_person
 	disappear MT_ONWA_CUTSCENE1
@@ -129,6 +132,7 @@ MtOnwaPanNPC:
 	disappear MT_ONWA_CUTSCENE5
 	disappear MT_ONWA_CUTSCENE6
 	disappear MT_ONWA_CUTSCENE7
+	pause 20
 	special RestartMapMusic
 	spriteface MT_ONWA_NPC2, LEFT
 	spriteface PLAYER, RIGHT

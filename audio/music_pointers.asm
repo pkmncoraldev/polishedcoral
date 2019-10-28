@@ -50,4 +50,5 @@ Music:
 	dba Music_GentlemanEncounter
 	dba Music_HardcoreEncounter
 	dba Music_TeamSnareEncounter
+	dba Music_Mountaintop
 	

@@ -5,6 +5,7 @@ Drumkits: ; e8e52
 	dw Drumkit3
 	dw Drumkit4
 	dw Drumkit5
+	dw Drumkit6
 ; e8e5e
 
 Drumkit0: ; e8e5e
@@ -84,6 +85,20 @@ Drumkit5: ; e8ee0
 	dw Snare11
 	dw Drum27
 	dw Drum28
+	dw Drum29
+	dw Drum05
+	dw Triangle1
+	dw Crash1
+	dw Snare14
+	dw Snare13
+	dw Kick2
+Drumkit6:
+	dw Drum00
+	dw Woosh1
+	dw Woosh2
+	dw Hiss1
+	dw Hiss2
+	dw Woosh3
 	dw Drum29
 	dw Drum05
 	dw Triangle1
@@ -299,3 +314,24 @@ Kick2: ; e8fbb
 	noise C#,  1, $71, $00
 	endchannel
 ; e8fc2
+
+Woosh1: 
+	noise A_,  16, $1f, $36
+	endchannel
+	
+	
+Woosh2: 
+	noise A_, 16, $87, $36
+	endchannel	
+	
+Hiss1:	
+	noise C#,  16, $18, $36
+	endchannel
+
+Hiss2:
+	noise C#,  4, $0f, $36
+	endchannel
+	
+Woosh3:
+	noise A_,   4, $88, $36
+	endchannel

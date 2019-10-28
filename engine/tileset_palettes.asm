@@ -57,6 +57,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .spookhouse
 	cp TILESET_HAUNTED_TV
 	jp z, .spookhousetv
+	cp TILESET_TRAIN
+	jp z, .train
 	jp .do_nothing
 	
 .checktent
@@ -106,6 +108,10 @@ LoadSpecialMapPalette: ; 494ac
 	
 .spookhousetv
 	ld hl, SpookhouseTVPalette
+	jp LoadEightBGPalettes
+	
+.train
+	ld hl, TrainPalette
 	jp LoadEightBGPalettes
 	
 .do_nothing
@@ -228,6 +234,9 @@ INCLUDE "maps/palettes/bgpals/spookhouse.pal"
 
 SpookhouseTVPalette:
 INCLUDE "maps/palettes/bgpals/spookhousetv.pal"
+
+TrainPalette:
+INCLUDE "maps/palettes/bgpals/train.pal"
 
 OutsideGrovePalette:
 INCLUDE "maps/palettes/bgpals/bggrove.pal"

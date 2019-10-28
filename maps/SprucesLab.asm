@@ -76,11 +76,8 @@ SpruceLabSpruce:
 	applymovement SPRUCELAB_SPRUCE1, Movement_SpruceLabSpruce4
 	spriteface SPRUCELAB_SPRUCE1, LEFT
 	applymovement PLAYER, Movement_SpruceLabPlayer1
-	playsound SFX_EXIT_BUILDING
-	special FadeOutPalettes
-	waitsfx
 	domaptrigger SUNBEAM_ISLAND, $4
-	warpfacing UP, SUNBEAM_ISLAND, $10, $b
+	warpcheck
 	end
 .alreadytalked
 	faceplayer

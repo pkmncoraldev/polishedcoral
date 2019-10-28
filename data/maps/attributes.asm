@@ -118,7 +118,7 @@ ENDM
 	map_attributes Route9, ROUTE_9, 5, NORTH
 	connection north, FlickerStation, FLICKER_STATION, 8, 20, 6
 
-	map_attributes FlickerStation, FLICKER_STATION, 113, SOUTH
+	map_attributes FlickerStation, FLICKER_STATION, 5, SOUTH
 	connection south, Route9, ROUTE_9, 18, 6, 10
 	
 	map_attributes LakeOnwa, LAKE_ONWA, 7, NORTH | EAST

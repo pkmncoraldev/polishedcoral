@@ -144,14 +144,14 @@ MAP_NONE   EQU 0
 
 	newgroup													 ;  9
 	
-	map_const ROUTE_9,		 							  19, 17 ; 1
+	map_const ROUTE_9,		 							  19, 18 ; 1
 	map_const DODRIO_RANCH_HOUSE,						   4,  4 ; 2
 	map_const DODRIO_RANCH_BARN,						   7,  4 ; 3
 	map_const DODRIO_RANCH_RACETRACK,					  25, 17 ; 4
 
 	newgroup													 ; 10
 	
-	map_const FLICKER_STATION,							  35, 19 ; 1
+	map_const FLICKER_STATION,							  52, 17 ; 1
 	map_const FLICKER_SOUND_SPEECH_HOUSE,				   4,  4 ; 2
 	map_const FLICKER_NAME_SPEECH_HOUSE,				   4,  4 ; 3
 	map_const FLICKER_POKECENTER,                          6,  4 ; 4

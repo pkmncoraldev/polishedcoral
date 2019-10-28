@@ -35,11 +35,11 @@ FlickerTrainStation_MapScriptHeader:
 	const FLICKER_TRAIN_STATION_CLERK
 	
 FlickerTrainStationClerk:
-	applyonemovement PLAYER, show_person
 	faceplayer
 	opentext
 	writetext FlickerTrainStationClerkText1
-	waitbutton
+	yesorno
+	iffalse .end
 	closetext
 	follow FLICKER_TRAIN_STATION_CLERK, PLAYER
 	applymovement FLICKER_TRAIN_STATION_CLERK, Movement_FlickerTrainStationClerk
@@ -53,6 +53,11 @@ FlickerTrainStationClerk:
 	applyonemovement PLAYER, step_up
 	domaptrigger FLICKER_STATION, $3
 	warpcheck
+	end
+.end
+	writetext FlickerTrainStationClerkText3
+	waitbutton
+	closetext
 	end
 	
 	
@@ -102,11 +107,17 @@ FlickerTrainStationScheduleBack:
 	jumptext FlickerTrainStationScheduleBackText
 	
 FlickerTrainStationClerkText1:
-	text "TEXT 1"
+	text "Take the train to"
+	line "LUSTER CITY?"
 	done
 	
 FlickerTrainStationClerkText2:
-	text "TEXT 2"
+	text "Right through"
+	line "here."
+	done
+	
+FlickerTrainStationClerkText3:
+	text "Have a nice day."
 	done
 	
 FlickerTrainStationNPC1Text:

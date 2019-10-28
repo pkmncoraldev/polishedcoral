@@ -31,6 +31,7 @@ SunbeamBikiniContest_MapScriptHeader:
 	const SUNBEAMCONTESTCROWD5
 	
 SunbeamBikiniContestTrigger0:
+	playmusic MUSIC_GSC_GAME_CORNER
 	setflag ENGINE_DAILY_BIKINI_CONTEST
 	pause 7
 	opentext
@@ -74,6 +75,7 @@ SunbeamBikiniContestTrigger0:
 	loadtrainer BIKINIY, 1
 	startbattle
 	reloadmapafterbattle
+	playmusic MUSIC_GSC_GAME_CORNER
 	opentext
 	writetext SunbeamContestText2
 	waitbutton
@@ -117,6 +119,7 @@ SunbeamBikiniContestTrigger0:
 	loadtrainer BIKINIR, 1
 	startbattle
 	reloadmapafterbattle
+	playmusic MUSIC_GSC_GAME_CORNER
 	opentext
 	writetext SunbeamContestText4
 	waitbutton
@@ -159,6 +162,7 @@ SunbeamBikiniContestTrigger0:
 	loadtrainer BIKINIP, 1
 	startbattle
 	reloadmapafterbattle
+	playmusic MUSIC_GSC_GAME_CORNER
 	opentext
 	writetext SunbeamContestText6
 	waitbutton

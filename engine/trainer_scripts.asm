@@ -21,7 +21,8 @@ SeenByTrainerScript:: ; 0xbe675
 StartBattleWithMapTrainerScript: ; 0xbe68a
 	opentext
 	trainertext $0
-	waitbuttonsilent
+	waitbutton
+	waitsfx
 	closetext
 	loadmemtrainer
 	callasm CheckTrainerClass

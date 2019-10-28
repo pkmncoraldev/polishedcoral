@@ -63,8 +63,8 @@ SunbeamIslandSurfShopNPC1:
 	if_equal UP, .pleaseleave
 	faceplayer
 	opentext
-;	checkevent EVENT_SAW_FIRST_BIKINI_CONTEST
-;	iffalse .haventseenfirstcontest
+	checkevent EVENT_SAW_FIRST_BIKINI_CONTEST
+	iffalse .haventseenfirstcontest
 	checkflag ENGINE_DAILY_BIKINI_CONTEST
 	iftrue .donebikinicontest
 	writetext SunbeamIslandSurfShopNPC1Text1

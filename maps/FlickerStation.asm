@@ -26,12 +26,12 @@ FlickerStation_MapScriptHeader:
 	signpost 25, 40, SIGNPOST_READ, FlickerCenterSign
 	signpost 11, 38, SIGNPOST_READ, FlickerMartSign
 	signpost 31, 43, SIGNPOST_READ, FlickerSign
-	signpost 17, 22, SIGNPOST_READ, FlickerTrainDoor
-	signpost 17, 19, SIGNPOST_READ, FlickerTrainDoor
-	signpost 14, 23, SIGNPOST_READ, FlickerTrainDoor
-	signpost 14, 20, SIGNPOST_READ, FlickerTrainDoor
-	signpost 11, 22, SIGNPOST_READ, FlickerTrainDoor
-	signpost 11, 19, SIGNPOST_READ, FlickerTrainDoor
+	signpost 17, 22, SIGNPOST_UP, FlickerTrainDoor
+	signpost 17, 19, SIGNPOST_UP, FlickerTrainDoor
+	signpost 14, 23, SIGNPOST_UP, FlickerTrainDoor
+	signpost 14, 20, SIGNPOST_UP, FlickerTrainDoor
+	signpost 11, 22, SIGNPOST_UP, FlickerTrainDoor
+	signpost 11, 19, SIGNPOST_UP, FlickerTrainDoor
 
 	db 11 ; object events
 	person_event SPRITE_FAT_GUY, 26, 56, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC1, -1

@@ -69,6 +69,7 @@ Route6PokeFanM:
 	writetext TrainerRoute6_3SeenText2
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext TrainerRoute6_3BeatenText, 0
 	setlasttalked ROUTE6TRAINER3
 	loadtrainer POKEFANM, 1
@@ -90,6 +91,7 @@ Route6PokeFanF:
 	writetext TrainerRoute6_4SeenText2
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext TrainerRoute6_4BeatenText, 0
 	setlasttalked ROUTE6TRAINER4
 	loadtrainer POKEFANF, 1

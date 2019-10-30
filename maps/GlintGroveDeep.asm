@@ -34,6 +34,7 @@ GlintSecretSmeargle:
 	cry SMEARGLE
 	waitbutton
 	closetext
+	waitsfx
 	loadwildmon SMEARGLE, 10
 	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle

@@ -75,8 +75,8 @@ PlayBattleMusic: ; 2ee6c
 	dbw KAREN,            MUSIC_EVOLUTION
 	dbw CHAMPION,         MUSIC_EVOLUTION
 	dbw RIVAL,            MUSIC_RIVAL_BATTLE
-	dbw GRUNTM,           MUSIC_EVOLUTION
-	dbw GRUNTF,           MUSIC_EVOLUTION
+	dbw GRUNTM,           MUSIC_SNARE_BATTLE
+	dbw GRUNTF,           MUSIC_SNARE_BATTLE
 	dbw STANLEY,		  MUSIC_GYM_BATTLE
 	dbw RODNEY,		  	  MUSIC_GYM_BATTLE
 	dbw LEILANI,		  MUSIC_GYM_BATTLE

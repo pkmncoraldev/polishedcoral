@@ -78,6 +78,7 @@ GlintGymStanley:
 	writetext GlintGymStanleyTextBeforeBattle2
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext GlintGymStanleyTextWin, GlintGymStanleyTextLoss
 	loadtrainer STANLEY, 1
 	startbattle
@@ -134,6 +135,7 @@ GlintGymStanleyRematch:
 	writetext GlintGymStanleyTextBeforeBattle2
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext GlintGymStanleyTextWinRematch, GlintGymStanleyTextLoss
 	checkflag ENGINE_SECONDBADGE
 	iftrue .twobadges
@@ -242,6 +244,7 @@ GlintGymTrainer1Rematch:
 	writetext GlintGymTrainer1RematchSeenText
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext GlintGymTrainer1RematchBeatenText, 0
 	checkflag ENGINE_SECONDBADGE
 	iftrue .twobadges
@@ -322,6 +325,7 @@ GlintGymTrainer2Rematch:
 	writetext GlintGymTrainer2RematchSeenText
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext GlintGymTrainer2RematchBeatenText, 0
 	checkflag ENGINE_SECONDBADGE
 	iftrue .twobadges

@@ -70,6 +70,7 @@ SunbeamBikiniContestTrigger0:
 	writetext SunBeamContestBikiniPText1
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext SunBeamContestBikiniPWinText, SunBeamContestBikiniPWinText
 	setlasttalked SUNBEAMCONTESTBIKINIP
 	loadtrainer BIKINIY, 1
@@ -114,6 +115,7 @@ SunbeamBikiniContestTrigger0:
 	writetext SunBeamContestBikiniRText1
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext SunBeamContestBikiniRWinText, SunBeamContestBikiniRWinText
 	setlasttalked SUNBEAMCONTESTBIKINIR
 	loadtrainer BIKINIR, 1
@@ -157,6 +159,7 @@ SunbeamBikiniContestTrigger0:
 	writetext SunBeamContestBikiniYText1
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext SunBeamContestBikiniYWinText, SunBeamContestBikiniYWinText
 	setlasttalked SUNBEAMCONTESTBIKINIY
 	loadtrainer BIKINIP, 1

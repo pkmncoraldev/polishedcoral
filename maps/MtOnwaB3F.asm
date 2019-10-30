@@ -27,6 +27,7 @@ LavaCaveBF3Larvesta:
 	cry BULBASAUR
 	waitbutton
 	closetext
+	waitsfx
 	loadwildmon BULBASAUR, 20
 	startbattle
 	if_equal $1, LavaCaveBF3Larvesta2

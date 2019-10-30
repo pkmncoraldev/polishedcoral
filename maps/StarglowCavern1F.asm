@@ -202,6 +202,7 @@ StarglowCavern1FNPC2:
 	writetext StarglowCavern_DisguiseMan1Text2
 	waitbutton
 	closetext
+	waitsfx
 	setevent EVENT_STARGLOW_CAVERN_DISGUISEMAN
 	setevent EVENT_STARGLOW_CAVERN_DISGUISEMAN_2
 	setevent EVENT_STARGLOW_CAVERN_1F_POKE_BALL2

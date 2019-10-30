@@ -154,6 +154,7 @@ GlintRival_L:
 	writetext GlintRivalText1
 	waitbutton
 	closetext
+	waitsfx
 	checkevent EVENT_GOT_TOTODILE_FROM_SPRUCE
 	iftrue .totodile
 	checkevent EVENT_GOT_CYNDAQUIL_FROM_SPRUCE

@@ -31,6 +31,7 @@ StarglowGymRodneyScript:
 	writetext StarglowGymRodneyTextBeforeBattle
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext StarglowGymRodneyTextWin, StarglowGymRodneyTextLoss
 	loadtrainer RODNEY, 1
 	startbattle
@@ -88,6 +89,7 @@ StarglowGymRodneyRematch:
 	writetext StarglowGymRodneyTextBeforeBattle2Rematch
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext StarglowGymRodneyTextWinRematch, StarglowGymRodneyTextLoss
 	checkflag ENGINE_THIRDBADGE
 	iftrue .threebadges
@@ -253,6 +255,7 @@ StarglowGymTrainer1Rematch:
 	writetext StarglowGymTrainer1RematchSeenText
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext StarglowGymTrainer1RematchBeatenText, 0
 	checkflag ENGINE_THIRDBADGE
 	iftrue .threebadges
@@ -323,6 +326,7 @@ StarglowGymTrainer2Rematch:
 	writetext StarglowGymTrainer2RematchSeenText
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext StarglowGymTrainer2RematchBeatenText, 0
 	checkflag ENGINE_THIRDBADGE
 	iftrue .threebadges
@@ -396,6 +400,7 @@ StarglowGymTrainer3Rematch:
 	writetext StarglowGymTrainer3RematchSeenText
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext StarglowGymTrainer3RematchBeatenText, 0
 	checkflag ENGINE_THIRDBADGE
 	iftrue .threebadges
@@ -467,6 +472,7 @@ StarglowGymTrainer4Rematch:
 	writetext StarglowGymTrainer4RematchSeenText
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext StarglowGymTrainer4RematchBeatenText, 0
 	checkflag ENGINE_THIRDBADGE
 	iftrue .threebadges

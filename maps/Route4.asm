@@ -147,6 +147,7 @@ Route4PlayedFluteForSnorlax::
 	cry SNORLAX
 	waitbutton
 	closetext
+	waitsfx
 	loadwildmon SNORLAX, 30
 	startbattle
 	if_equal $2, DidntBeatSnorlaxRoute4

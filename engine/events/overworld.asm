@@ -1483,8 +1483,8 @@ AutoHeadbuttScript:
 
 TryHeadbuttOW:: ; cec9
 	ld d, HEADBUTT
-	call CheckPartyMove
-;	call CheckPartyCanLearnMove
+;	call CheckPartyMove
+	call CheckPartyCanLearnMove
 	jr c, .no
 
 	ld a, BANK(AskHeadbuttScript)

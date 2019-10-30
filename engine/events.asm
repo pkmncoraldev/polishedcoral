@@ -1207,15 +1207,19 @@ CheckFacingTileEvent: ; 97c5f
 	
 .dodriojump
 	farcall TryDodrioJumpOW
-	jr .done
+	jr .done2
 	
 .dodriojump2
 	farcall TryDodrioJump2OW
-	jr c, .done
+	jr c, .done2
 .noevent
 	xor a
 	ret
 ; 97cc0
+.done2
+	ld a, $ff
+	scf
+	ret
 
 
 RandomEncounter:: ; 97cc0

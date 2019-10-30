@@ -255,6 +255,9 @@ StarglowSnare1:
 	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
 	writetext StarglowSnare1Text4
 	waitbutton
+	closetext
+	waitsfx
+	playmusic MUSIC_NONE
 	winlosstext StarglowSnare1WinText, 0
 	setlasttalked STARGLOWSNARE1
 	loadtrainer GRUNTM, 2
@@ -292,6 +295,9 @@ StarglowSnare2:
 	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
 	writetext StarglowSnare2Text4
 	waitbutton
+	closetext
+	waitsfx
+	playmusic MUSIC_NONE
 	winlosstext StarglowSnare2WinText, 0
 	setlasttalked STARGLOWSNARE2
 	loadtrainer GRUNTF, 1

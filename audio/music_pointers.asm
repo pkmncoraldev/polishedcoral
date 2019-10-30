@@ -27,6 +27,7 @@ Music:
 	dba Music_GymBattle
 	dba Music_GlintCity
 	dba Music_SnareInvasion
+	dba Music_SnareBattle
 	dba Music_StarglowValley
 	dba Music_Route4
 	dba Music_Coraldev1

@@ -1104,6 +1104,8 @@ GlintGroveTrioRed:
 	iffalse GlintGroveTrioRedNo
 	writetext GlintGrove_TrioRedBattleText2
 	waitbutton
+	closetext
+	waitsfx
 	
 	winlosstext GlintGrove_TrioRedWinText, GlintGrove_TrioRedLoseText
 	setlasttalked GLINTGROVE_TRIO_RED
@@ -1135,6 +1137,8 @@ GlintGroveTrioBlue:
 	iffalse GlintGroveTrioBlueNo
 	writetext GlintGrove_TrioBlueBattleText2
 	waitbutton
+	closetext
+	waitsfx
 	
 	winlosstext GlintGrove_TrioBlueWinText, GlintGrove_TrioBlueLoseText
 	setlasttalked GLINTGROVE_TRIO_BLUE
@@ -1166,6 +1170,8 @@ GlintGroveTrioYellow:
 	iffalse GlintGroveTrioYellowNo
 	writetext GlintGrove_TrioYellowBattleText2
 	waitbutton
+	closetext
+	waitsfx
 	
 	winlosstext GlintGrove_TrioYellowWinText, GlintGrove_TrioYellowLoseText
 	setlasttalked GLINTGROVE_TRIO_YELLOW

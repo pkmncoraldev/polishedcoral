@@ -245,6 +245,8 @@ StarglowHouse1Rocket:
 	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
 	writetext StarglowHouse1RocketText3_2
 	waitbutton
+	closetext
+	waitsfx
 	winlosstext StarglowHouse1RocketWinText, 0
 	setlasttalked STARGLOWHOUSE1_ROCKET
 	loadtrainer GRUNTM, 1

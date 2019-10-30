@@ -69,6 +69,7 @@ SECTION "Music 4", ROMX
 INCLUDE "audio/music/encountergymleader.asm"
 INCLUDE "audio/music/gscgamecorner.asm"
 INCLUDE "audio/music/mountaintop.asm"
+INCLUDE "audio/music/snarebattle.asm"
 
 
 SECTION "Music 5", ROMX

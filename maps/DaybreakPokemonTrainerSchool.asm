@@ -46,6 +46,8 @@ DaybreakPokemonTrainerSchoolTeacher:
 .Battle:
 	writetext DaybreakPokemonTrainerSchoolTeacherText3
 	waitbutton
+	closetext
+	waitsfx
 	winlosstext DaybreakPokemonTrainerSchoolTeacherWinText, 0
 	setlasttalked DAYBREAK_POKEMON_TRAINER_SCHOOL_TEACHER
 	loadtrainer TEACHERFAST, KATE

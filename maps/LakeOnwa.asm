@@ -232,6 +232,7 @@ LakePlayedFluteForSudowoodo::
 	cry SUDOWOODO
 	waitbutton
 	closetext
+	waitsfx
 	loadwildmon SUDOWOODO, 30
 	startbattle
 	if_equal $2, DidntBeatLakeSudowoodo

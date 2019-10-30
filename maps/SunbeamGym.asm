@@ -248,6 +248,7 @@ SunbeamGymLeilani:
 	writetext SunbeamGymLeilaniTextBeforeBattle2
 	waitbutton
 	closetext
+	waitsfx
 	winlosstext SunbeamGymLeilaniTextWin, SunbeamGymLeilaniTextLoss
 	loadtrainer LEILANI, 1
 	startbattle

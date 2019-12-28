@@ -34,6 +34,7 @@
 	const ROUTE_9			 ; 18
 	const DODRIO_RANCH		 ; 19
 	const FLICKER_STATION	 ; 1a
+	const LUSTER_CITY		 ; 1b
 
 KANTO_LANDMARK EQU const_value
 

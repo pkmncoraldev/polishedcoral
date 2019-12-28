@@ -99,8 +99,8 @@ Drumkit6:
 	dw Hiss1
 	dw Hiss2
 	dw Woosh3
-	dw Drum29
-	dw Drum05
+	dw Woosh4
+	dw Woosh5
 	dw Triangle1
 	dw Crash1
 	dw Snare14
@@ -335,3 +335,11 @@ Hiss2:
 Woosh3:
 	noise A_,   4, $88, $36
 	endchannel
+	
+Woosh4:
+	noise A_,   4, $88, $12
+	endchannel
+	
+Woosh5: 
+	noise A_, 16, $87, $12
+	endchannel		

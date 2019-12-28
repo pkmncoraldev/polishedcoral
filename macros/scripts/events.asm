@@ -1240,6 +1240,16 @@ waitbuttonsilent: macro
 	db waitbuttonsilent_command
 	endm
 	
+	enum killsfx_command
+killsfx: macro
+	db killsfx_command
+	endm
+	
+	enum waitbuttonseat_command
+waitbuttonseat: macro
+	db waitbuttonseat_command
+	endm
+	
 thisasm: macro
 	callasm .asm\@
 	end

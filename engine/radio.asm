@@ -1,19 +1,19 @@
 PlayRadioShow:
 ; If we're already in the radio program proper, we don't need to be here.
-	ld a, [wCurrentRadioLine]
-	cp POKE_FLUTE_RADIO
-	jr nc, .ok
+;	ld a, [wCurrentRadioLine]
+;	cp POKE_FLUTE_RADIO
+;	jr nc, .ok
 ; If Team Rocket is not occupying the radio tower, we don't need to be here.
-	ld a, [wStatusFlags2]
-	bit 0, a ; ENGINE_ROCKETS_IN_RADIO_TOWER
-	jr z, .ok
+;	ld a, [wStatusFlags2]
+;	bit 0, a ; ENGINE_ROCKETS_IN_RADIO_TOWER
+;	jr z, .ok
 ; If we're in Kanto, we don't need to be here.
-	call IsInJohto
-	jr nz, .ok
+;	call IsInJohto
+;	jr nz, .ok
 ; Team Rocket broadcasts on all stations.
-	ld a, ROCKET_RADIO
-	ld [wCurrentRadioLine], a
-.ok
+;	ld a, ROCKET_RADIO
+;	ld [wCurrentRadioLine], a
+;.ok
 ; Jump to the currently loaded station.  The index to which we need to jump is in wCurrentRadioLine.
 	ld a, [wCurrentRadioLine]
 	ld e, a

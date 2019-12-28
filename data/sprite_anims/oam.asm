@@ -12,7 +12,7 @@ SpriteAnimOAMData: ; 8d94d
 	dbw $10, .OAMData_2c ; SPRITE_ANIM_FRAME_IDX_2C
 	dbw $10, .OAMData_2d ; SPRITE_ANIM_FRAME_IDX_2D
 	dbw $3a, .OAMData_02 ; SPRITE_ANIM_FRAME_IDX_2E
-	dbw $00, .OAMData_00 ; SPRITE_ANIM_FRAME_IDX_2F
+	dbw $00, .OAMData_arrow ; SPRITE_ANIM_FRAME_IDX_2F
 	dbw $00, .OAMData_30 ; SPRITE_ANIM_FRAME_IDX_30
 	dbw $02, .OAMData_31 ; SPRITE_ANIM_FRAME_IDX_31
 	dbw $06, .OAMData_19 ; SPRITE_ANIM_FRAME_IDX_32
@@ -145,6 +145,14 @@ SpriteAnimOAMData: ; 8d94d
 	dsprite  0,  0, -1,  0, $02, $0
 	dsprite  0,  0,  0,  0, $03, $0
 
+.OAMData_arrow:
+; pokegear arrow
+	db 4
+	dsprite -1,  0, -1,  0, $00, $7
+	dsprite -1,  0,  0,  0, $01, $7
+	dsprite  0,  0, -1,  0, $02, $7
+	dsprite  0,  0,  0,  0, $03, $7
+	
 .OAMData_85:
 ; new party menu icons
 	db 4

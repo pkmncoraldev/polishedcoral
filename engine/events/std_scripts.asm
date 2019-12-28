@@ -73,19 +73,12 @@ PokeCenterNurseScript:
 
 .morn
 	farwritetext NurseMornText
-	buttonsound
 	jump .ok
-
 .day
 	farwritetext NurseDayText
-	buttonsound
 	jump .ok
-
 .nite
 	farwritetext NurseNiteText
-	buttonsound
-	jump .ok
-
 .ok
 ;	checkcode VAR_TRAINER_STARS
 ;	ifnotequal 4, .ask_heal
@@ -94,6 +87,9 @@ PokeCenterNurseScript:
 ;	jump .answer_heal
 
 ;.ask_heal
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
 	farwritetext NurseAskHealText
 .answer_heal
 	yesorno
@@ -128,20 +124,18 @@ PokeCenterNurseScript:
 	special SpecialCheckPokerus
 	iftrue .pokerus
 .no
-
 	farwritetext NurseReturnPokemonText
 	pause 20
-
 .done
+	farwritetext StdBlankText
+	pause 6
 	farwritetext NurseGoodbyeText
-
 	turnobject LAST_TALKED, UP
 	pause 10
 	turnobject LAST_TALKED, DOWN
 	pause 10
-	
+	spriteface PLAYER, DOWN
 	callasm ResetPalsAfterNurse
-
 	waitendtext
 	
 .nopokemon
@@ -500,7 +494,8 @@ InitializeEventsScript:
 	setevent EVENT_LAKE_STRAND
 	setevent EVENT_STARGLOW_MAIN_PUNK_2
 	setevent EVENT_PUNKS_HAVENT_LEFT_STARGLOW
-	setevent EVENT_ALWAY_SET
+	setevent EVENT_BEAT_EAST_TRAIN_CABIN_1_SNARE_1
+	setevent EVENT_ALWAYS_SET
 	setflag ENGINE_PUNKS_IN_STARGLOW
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER

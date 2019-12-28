@@ -23,7 +23,7 @@ SpriteMons:
 	db ABRA ; LOPUNNY
 	db ABRA ; ALTARIA
 	db DODRIO
-	db ABRA
+	db PIKACHU
 	db ABRA
 	db ABRA
 	db ABRA

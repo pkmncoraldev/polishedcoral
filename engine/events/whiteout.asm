@@ -8,6 +8,7 @@ Script_OverworldWhiteout:: ; 0x124c8
 	callasm OverworldWhiteoutFade
 
 Script_Whiteout: ; 0x124ce
+	call WhiteoutHandleEvents
 	callasm LoseMoney
 	iffalse .whiteout_text
 	callasm DetermineWildBattlePanic
@@ -50,6 +51,11 @@ Script_Whiteout: ; 0x124ce
 	text_jump WhiteoutToTrainerText
 	db "@"
 
+WhiteoutHandleEvents:
+	setevent EVENT_ALWAYS_SET
+	clearevent EVENT_ON_DODRIO_RANCH
+	end
+	
 OverworldWhiteoutFade
 	farcall FadeOutPalettes
 	call ClearTileMap

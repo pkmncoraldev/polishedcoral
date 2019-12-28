@@ -50,7 +50,7 @@ StarglowValley_MapScriptHeader:
 	person_event SPRITE_SCHOOLBOY, 20, 31, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, StarglowYoungster2, EVENT_PUNKS_HAVENT_LEFT_STARGLOW
 	person_event SPRITE_POLIWHIRL, 20, 32, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowPoliwhirl, EVENT_PUNKS_HAVENT_LEFT_STARGLOW
 	person_event SPRITE_COOLTRAINER_F, 18, 13, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, StarglowLass2, EVENT_PUNKS_HAVENT_LEFT_STARGLOW
-	person_event SPRITE_RODNEY, 21,  6, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowLass, EVENT_ALWAY_SET
+	person_event SPRITE_RODNEY, 21,  6, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowLass, EVENT_ALWAYS_SET
 	person_event SPRITE_SNARE, 22, 6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowSnare3, EVENT_STARGLOW_MAIN_PUNK_2
 	fruittree_event 26, 27, FRUITTREE_STARGLOW_VALLEY, PERSIM_BERRY
 	cuttree_event 17, 25, EVENT_STARGLOW_VALLEY_CUT_TREE
@@ -257,14 +257,14 @@ StarglowSnare1:
 	waitbutton
 	closetext
 	waitsfx
-	playmusic MUSIC_NONE
+	special SaveMusic
 	winlosstext StarglowSnare1WinText, 0
 	setlasttalked STARGLOWSNARE1
 	loadtrainer GRUNTM, 2
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
-	playmusic MUSIC_SNARE_INVASION
+	special RestoreMusic
 	opentext
 	writetext StarglowSnare1Text2
 	waitbutton
@@ -297,14 +297,14 @@ StarglowSnare2:
 	waitbutton
 	closetext
 	waitsfx
-	playmusic MUSIC_NONE
+	special SaveMusic
 	winlosstext StarglowSnare2WinText, 0
 	setlasttalked STARGLOWSNARE2
 	loadtrainer GRUNTF, 1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
-	playmusic MUSIC_SNARE_INVASION
+	special RestoreMusic
 	opentext
 	writetext StarglowSnare2Text2
 	waitbutton

@@ -9,10 +9,12 @@ SpriteHeaders:
 	overworld_sprite ChrisBikeSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite ChrisSurfSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite ChrisRunSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite ChrisMiscSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite KrisSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisBikeSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisSurfSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisRunSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite KrisMiscSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite MomSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite ColbySpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite StanleySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
@@ -131,3 +133,11 @@ SpriteHeaders:
 	overworld_sprite MiscOverheadSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite RowboatSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite UmbrellaSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite SittingYoungsterGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite SittingBirdKeeperGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite SittingGuyGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite SittingGentlemanGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite SittingTwinGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite SittingPonytailGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite SittingPokeFanGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite SittingLadyGFX, STANDING_SPRITE, PAL_OW_RED

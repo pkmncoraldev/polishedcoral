@@ -147,6 +147,20 @@ FlickerStation_BlockData:
 FlickerTrainStation_BlockData:
 	INCBIN "maps/FlickerTrainStation.ablk.lz"
 	
+EastTrainCabin1_BlockData:
+EastTrainCabin2_BlockData:
+EastTrainCabin3_BlockData:
+	INCBIN "maps/TrainCabin.ablk.lz"
+	
+EastTrainCaboose_BlockData:
+	INCBIN "maps/EastTrainCaboose.ablk.lz"
+	
+LusterCityResidential_BlockData:
+	INCBIN "maps/LusterCityResidential.ablk.lz"
+	
+LusterCityShopping_BlockData:
+	INCBIN "maps/LusterCityShopping.ablk.lz"
+	
 SprucesLab_BlockData:
 	INCBIN "maps/SprucesLab.ablk.lz"
 	

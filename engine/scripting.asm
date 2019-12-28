@@ -261,6 +261,8 @@ ScriptCommandTable:
 	dw Script_paintingpic                ; c6
 	dw Script_checkegg                   ; c7
 	dw Script_waitbuttonsilent
+	dw Script_killsfx
+	dw Script_waitbuttonseat
 
 StartScript:
 	ld hl, wScriptFlags
@@ -500,6 +502,9 @@ Script_waitbutton:
 Script_waitbuttonsilent:
 	jp WaitButton
 
+Script_waitbuttonseat:
+	jp WaitButtonLeft
+	
 Script_buttonsound:
 	ld a, [hOAMUpdate]
 	push af
@@ -3067,3 +3072,16 @@ Script_paintingpic:
 .ok
 	ld [wTrainerClass], a
 	farjp Paintingpic
+	
+Script_killsfx:
+    call KillSFXEntryPoint
+    jp DelayFrame
+
+KillSFXEntryPoint::
+    xor a
+    ld [wChannel5Flags], a
+    ld [wChannel6Flags], a
+    ld [wChannel7Flags], a
+    ld [wChannel8Flags], a
+    ret
+	

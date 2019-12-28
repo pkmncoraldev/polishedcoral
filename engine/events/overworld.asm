@@ -771,6 +771,7 @@ FlyFunction: ; ca3b
 	ret
 
 .FlyScript: ; 0xcaa3
+	clearevent EVENT_ON_DODRIO_RANCH
 	reloadmappart
 	callasm HideSprites
 	special UpdateTimePals
@@ -1527,21 +1528,22 @@ TryDodrioJumpOW:: ; cec9
 	ret
 	
 DodrioJumpScript:
+	killsfx
 	playsound SFX_JUMP_OVER_LEDGE
 	checkcode VAR_FACING
 	if_equal DOWN, .YouAreFacingDown
 	if_equal UP, .YouAreFacingUp
 	if_equal RIGHT, .YouAreFacingRight
-	applymovement PLAYER, Movement_DodrioJumpLeft
+	applyonemovement PLAYER, jump_step_left
 	jump .end
 .YouAreFacingDown
-	applymovement PLAYER, Movement_DodrioJumpDown
+	applyonemovement PLAYER, jump_step_down
 	jump .end
 .YouAreFacingUp
-	applymovement PLAYER, Movement_DodrioJumpUp
+	applyonemovement PLAYER, jump_step_up
 	jump .end
 .YouAreFacingRight
-	applymovement PLAYER, Movement_DodrioJumpRight
+	applyonemovement PLAYER, jump_step_right
 	
 .end
 	end
@@ -1562,40 +1564,21 @@ TryDodrioJump2OW:: ; cec9
 	ret
 	
 DodrioJump2Script:
+	killsfx
+	playsound SFX_JUMP_OVER_LEDGE
 	checkcode VAR_FACING
 	if_equal DOWN, .YouAreFacingDown
 	if_equal UP, .YouAreFacingUp
-	if_equal RIGHT, .YouAreFacingRight
 	jump .end
 .YouAreFacingDown
-	playsound SFX_JUMP_OVER_LEDGE
-	applymovement PLAYER, Movement_DodrioJumpDown
+	applyonemovement PLAYER, jump_step_down
 	jump .end
 .YouAreFacingUp
-	playsound SFX_JUMP_OVER_LEDGE
-	applymovement PLAYER, Movement_DodrioJumpUp
+	applyonemovement PLAYER, jump_step_up
 	jump .end
-.YouAreFacingRight
 	
 .end
-	end
-	
-Movement_DodrioJumpLeft:
-	jump_step_left
-	step_end
-	
-Movement_DodrioJumpDown:
-	jump_step_down
-	step_end
-	
-Movement_DodrioJumpUp:
-	jump_step_up
-	step_end
-	
-Movement_DodrioJumpRight:
-	jump_step_right
-	step_end
-	
+	end	
 	
 RockSmashFunction: ; ceeb
 	call TryRockSmashFromMenu

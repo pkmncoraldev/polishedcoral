@@ -274,6 +274,18 @@ JoyWaitAorB::
 	ret nz
 	call RTC
 	jr .loop
+	
+JoyWaitLeft::
+.loop
+	call DelayFrame
+	call GetJoypad
+	ld a, [hJoyPressed]
+	and D_LEFT
+	ret nz
+	call CheckAutoscroll
+	ret nz
+	call RTC
+	jr .loop
 
 CheckIfAOrBPressed:
 	call JoyTextDelay
@@ -318,6 +330,17 @@ WaitButton:: ; a46
 	ld [hOAMUpdate], a
 	ret
 ; a57
+
+WaitButtonLeft::
+	ld a, [hOAMUpdate]
+	push af
+	ld a, 1
+	ld [hOAMUpdate], a
+	call ApplyTilemapInVBlank
+	call JoyWaitLeft
+	pop af
+	ld [hOAMUpdate], a
+	ret
 
 JoyTextDelay:: ; a57
 	call GetJoypad

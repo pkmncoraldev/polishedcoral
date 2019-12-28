@@ -144,10 +144,10 @@ MAP_NONE   EQU 0
 
 	newgroup													 ;  9
 	
-	map_const ROUTE_9,		 							  19, 17 ; 1
+	map_const ROUTE_9,		 							  19, 18 ; 1
 	map_const DODRIO_RANCH_HOUSE,						   4,  4 ; 2
 	map_const DODRIO_RANCH_BARN,						   7,  4 ; 3
-	map_const DODRIO_RANCH_RACETRACK,					  25, 18 ; 4
+	map_const DODRIO_RANCH_RACETRACK,					  25, 17 ; 4
 
 	newgroup													 ; 10
 	
@@ -157,4 +157,16 @@ MAP_NONE   EQU 0
 	map_const FLICKER_POKECENTER,                          6,  4 ; 4
 	map_const FLICKER_MART,								   6,  4 ; 5
 	map_const FLICKER_TRAIN_STATION,					   8,  6 ; 6
+	
+	newgroup													 ; 11
+	
+	map_const EAST_TRAIN_CABIN_1,						   8,  4 ; 1
+	map_const EAST_TRAIN_CABIN_2,						   8,  4 ; 2
+	map_const EAST_TRAIN_CABIN_3,						   8,  4 ; 3
+	map_const EAST_TRAIN_CABOOSE,						   2,  2 ; 4
+	
+	newgroup													 ; 12
+	
+	map_const LUSTER_CITY_RESIDENTIAL,					  15, 36 ; 1
+	map_const LUSTER_CITY_SHOPPING,					      13, 36 ; 2
 	

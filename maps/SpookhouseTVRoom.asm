@@ -38,6 +38,11 @@ SpookhouseTVRoomTrigger0:
 	end
 	
 SpookhouseTVRoomTrigger1:
+	checkevent EVENT_SPOOKHOUSE_GHOSTBEGONE
+	iftrue .tvoff
+	end
+.tvoff
+	changeblock $2, $2, $73
 	end
 	
 SpookHouseTVRoom1:

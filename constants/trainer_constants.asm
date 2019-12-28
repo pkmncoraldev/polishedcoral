@@ -65,6 +65,7 @@ PLAYER_F EQU __enum__
 	const BILLY
 	const CHRIS
 	const TOMMY
+	const JIMMY
 
 	trainerclass BUG_CATCHER
 	const BARNEY
@@ -131,6 +132,7 @@ PLAYER_F EQU __enum__
 	const BRYANT
 	const TODD
 	const RANDY
+	const JAZZ
 
 
 	trainerclass HIKER
@@ -167,6 +169,7 @@ PLAYER_F EQU __enum__
 	const SUSAN
 	const JILL
 	const WENDY
+	const URSALA
 
 
 	trainerclass OFFICERM
@@ -248,6 +251,7 @@ PLAYER_F EQU __enum__
 
 	trainerclass GENTLEMAN
 	const DURWOOD
+	const HOWARD
 
 
 	trainerclass RICH_BOY
@@ -255,6 +259,7 @@ PLAYER_F EQU __enum__
 
 	trainerclass LADY
 	const RUTH
+	const GRETCHEN
 
 
 	trainerclass SAILOR

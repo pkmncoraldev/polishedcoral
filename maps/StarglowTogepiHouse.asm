@@ -186,7 +186,7 @@ StarglowHouse1LittleGirl:
 	iffalse .end
 	checkcode VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .PartyFull
-	special SpecialGiveShinyTogepi
+;	special SpecialGiveShinyTogepi
 	disappear STARGLOWHOUSE1_TOGEPI2
 	writetext StarglowHouse1GotTogepiText
 	playsound SFX_CAUGHT_MON
@@ -205,7 +205,7 @@ StarglowHouse1LittleGirl:
 	iffalse .end
 	checkcode VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .PartyFull
-	special SpecialGiveShinyTogepi
+;	special SpecialGiveShinyTogepi
 	disappear STARGLOWHOUSE1_TOGEPI2
 	writetext StarglowHouse1GotTogepiText
 	playsound SFX_CAUGHT_MON

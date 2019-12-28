@@ -15,7 +15,7 @@ SpookhouseLivingRoom_MapScriptHeader:
 	warp_def 1, 5, 2, SPOOKHOUSE_BEDROOM
 	warp_def 3, 0, 2, SPOOKHOUSE_HALLWAY_1
 	warp_def 2, 0, 2, SPOOKHOUSE_HALLWAY_1
-	warp_def 3, 9, 1, SPOOKHOUSE_HALLWAY_1
+	warp_def  3,  9, 1, SPOOKHOUSE_HALLWAY_1
 	warp_def 2, 9, 2, SPOOKHOUSE_HALLWAY_1
 
 	db 2 ; coord events

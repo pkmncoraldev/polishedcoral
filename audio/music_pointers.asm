@@ -51,5 +51,9 @@ Music:
 	dba Music_GentlemanEncounter
 	dba Music_HardcoreEncounter
 	dba Music_TeamSnareEncounter
+	dba Music_AfterTeamSnareEncounter
 	dba Music_Mountaintop
+	dba Music_Train
+	dba Music_TrainStartup
+	dba Music_SnareTheme
 	

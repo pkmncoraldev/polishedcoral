@@ -52,11 +52,20 @@ TilesetParkAnim::
 TilesetMall1Anim::
 TilesetMall2Anim::
 TilesetSewerAnim::
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
+
 TilesetTrainAnim::
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $0, WriteTileToBuffer
+;	dw NULL,  WaitTileAnimation
+	dw wTileAnimBuffer, ScrollTileRightLeft
+;	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $0, WriteTileFromBuffer
+	dw TrainWindowFrames, AnimateWaterfallTiles
 	dw NULL,  DoneTileAnimation
 	
 TilesetGlintAnim::
@@ -963,6 +972,10 @@ AnimateWaterfallTiles: ; fc56d
 
     jp WriteTwoTiles
 
+TrainWindowFrames: dw VTiles2 tile $28, TrainWindowTiles
+
+TrainWindowTiles: INCBIN "gfx/tilesets/trainwindows/1.2bpp"
+	
 WaterfallFrames: dw VTiles2 tile $30, WaterfallTiles
 
 WaterfallTiles: INCBIN "gfx/tilesets/waterfall/1.2bpp"

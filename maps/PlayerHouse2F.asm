@@ -5,7 +5,7 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 10 ; warp events
+	db 11 ; warp events
 	warp_event  9,  0, PLAYER_HOUSE_1F, 3
 	warp_event  5, 10, SUNSET_BAY, 1
 	warp_event  7, 10, DAYBREAK_VILLAGE, 1
@@ -16,6 +16,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event 19, 10, EVENTIDE_FOREST, 1
 	warp_event  5, 14, ROUTE_9, 3
 	warp_event  7, 14, FLICKER_STATION, 1
+	warp_event  9, 14, LUSTER_CITY_RESIDENTIAL, 6
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
@@ -158,7 +159,6 @@ GameConsole:
 	waitbutton
 	closetext
 	special RestartMapMusic
-	giveitem ITEMFINDER
 	end
 	
 PlayerHouseRadio:

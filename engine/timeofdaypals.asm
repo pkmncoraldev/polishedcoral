@@ -95,7 +95,8 @@ _TimeOfDayPals:: ; 8c011
 	ld [rSVBK], a
 
 ; update palettes
-	call _UpdateTimePals
+;	call _UpdateTimePals
+	call FadeInPalettes
 	call DelayFrame
 
 ; successful change

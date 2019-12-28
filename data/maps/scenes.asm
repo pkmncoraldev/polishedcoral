@@ -36,4 +36,6 @@ MapTriggers::
 	scene_var ROUTE_9,								  wRoute9Trigger
 	scene_var DODRIO_RANCH_RACETRACK,				  wDodrioRanchRaceTrackTrigger
 	scene_var FLICKER_STATION,						  wFlickerStationTrigger
+	scene_var EAST_TRAIN_CABIN_1,					  wEastTrainCabin1Trigger
+	scene_var EAST_TRAIN_CABOOSE,					  wEastTrainCabooseTrigger
 	db -1

@@ -231,6 +231,12 @@ _CGB_PokegearPals: ; 8eb9
 	ld bc, 8 palettes
 	ld a, $5
 	call FarCopyWRAM
+	
+	ld hl, PokegearObjectPals
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5
+	call FarCopyWRAM
 
 	ld a, [wPlayerPalette]
 	cp 0

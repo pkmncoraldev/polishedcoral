@@ -188,6 +188,12 @@ ENDM
 	map_attributes OldManorExterior, OLD_MANOR_EXTERIOR, 92, SOUTH
 	connection south, SpookyForest8, SPOOKY_FOREST_8, 4, 0, 8
 	
+	map_attributes LusterCityResidential, LUSTER_CITY_RESIDENTIAL, 71, EAST
+	connection east, LusterCityShopping, LUSTER_CITY_SHOPPING, 0, 0, 0
+	
+	map_attributes LusterCityShopping, LUSTER_CITY_SHOPPING, 71, WEST
+	connection west, LusterCityResidential, LUSTER_CITY_RESIDENTIAL, 0, 0, 0
+	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0
 	map_attributes GlintGrove, GLINT_GROVE, $20, 0
@@ -263,6 +269,10 @@ ENDM
 	map_attributes FlickerPokeCenter, FLICKER_POKECENTER, 0, 0
 	map_attributes FlickerMart, FLICKER_MART, 0, 0
 	map_attributes FlickerTrainStation, FLICKER_TRAIN_STATION, 0, 0
+	map_attributes EastTrainCabin1, EAST_TRAIN_CABIN_1, 0, 0
+	map_attributes EastTrainCabin2, EAST_TRAIN_CABIN_2, 0, 0
+	map_attributes EastTrainCabin3, EAST_TRAIN_CABIN_3, 0, 0
+	map_attributes EastTrainCaboose, EAST_TRAIN_CABOOSE, 0, 0
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $7, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0

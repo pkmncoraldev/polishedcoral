@@ -220,11 +220,11 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 	cp MAP_CARD
 	jr nz, .not_town_map
 	ld a, [wJumptableIndex]
-	cp 3 ; Johto
-	call z, TownMapJohtoFlips
+	cp 3 ; NorthOnwa
+	call z, TownMapNorthOnwaFlips
 	ld a, [wJumptableIndex]
-	cp 5 ; Kanto
-	call z, TownMapKantoFlips
+	cp 5 ; SouthOnwa
+	call z, TownMapSouthOnwaFlips
 	ld a, [wJumptableIndex]
 	cp 7 ; Orange
 	call z, TownMapOrangeFlips
@@ -405,9 +405,9 @@ PokegearJumptable: ; 90f04 (24:4f04)
 	dw PokegearClock_Joypad
 	dw PokegearMap_CheckRegion
 	dw PokegearMap_Init
-	dw PokegearMap_JohtoMap
+	dw PokegearMap_NorthOnwaMap
 	dw PokegearMap_Init
-	dw PokegearMap_KantoMap
+	dw PokegearMap_SouthOnwaMap
 	dw PokegearMap_Init
 	dw PokegearMap_OrangeMap
 	dw PokegearPhone_Init
@@ -524,12 +524,12 @@ PokegearMap_Init: ; 90fcd (24:4fcd)
 	inc [hl]
 	ret
 
-PokegearMap_JohtoMap: ; 90fee (24:4fee)
-	call TownMap_GetJohtoLandmarkLimits
+PokegearMap_NorthOnwaMap: ; 90fee (24:4fee)
+	call TownMap_GetNorthOnwaLandmarkLimits
 	jr PokegearMap_ContinueMap
 
-PokegearMap_KantoMap: ; 90fe9 (24:4fe9)
-	call TownMap_GetKantoLandmarkLimits
+PokegearMap_SouthOnwaMap: ; 90fe9 (24:4fe9)
+	call TownMap_GetSouthOnwaLandmarkLimits
 	jr PokegearMap_ContinueMap
 
 PokegearMap_OrangeMap:
@@ -617,12 +617,51 @@ PokegearMap_ContinueMap: ; 90ff2 (24:4ff2)
 PokegearMap_InitPlayerIcon: ; 9106a
 	push af
 	depixel 0, 0
+	ld a, [wPlayerPalette]
+	cp 0
+	jp nz, .cont1
 	ld b, SPRITE_ANIM_INDEX_RED_WALK
-	ld a, [wPlayerGender]
-	bit 0, a
-	jr z, .got_gender
+	jp .ok
+
+.cont1
+	ld a, [wPlayerPalette]
+	cp 1
+	jp nz, .cont2
 	ld b, SPRITE_ANIM_INDEX_BLUE_WALK
-.got_gender
+	jp .ok
+	
+.cont2
+	ld a, [wPlayerPalette]
+	cp 2
+	jp nz, .cont3
+	ld b, SPRITE_ANIM_INDEX_GREEN_WALK
+	jp .ok
+
+.cont3
+	ld a, [wPlayerPalette]
+	cp 3
+	jp nz, .cont4
+	ld b, SPRITE_ANIM_INDEX_BROWN_WALK
+	jp .ok
+	
+.cont4
+	ld a, [wPlayerPalette]
+	cp 4
+	jp nz, .cont5
+	ld b, SPRITE_ANIM_INDEX_PURPLE_WALK
+	jp .ok
+	
+.cont5
+	ld a, [wPlayerPalette]
+	cp 5
+	jp nz, .cont6
+	ld b, SPRITE_ANIM_INDEX_TEAL_WALK
+	jp .ok
+	
+.cont6
+	ld b, SPRITE_ANIM_INDEX_PINK_WALK
+	
+.ok
 	ld a, b
 	call _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
@@ -714,11 +753,11 @@ TownMap_ConvertLineBreakCharacters: ; 1de2c5
 	hlcoord 9, 0
 	jp PlaceString
 
-TownMap_GetJohtoLandmarkLimits:
+TownMap_GetNorthOnwaLandmarkLimits:
 	lb de, LAKE_ONWA, SUNSET_BAY
 	ret
 
-TownMap_GetKantoLandmarkLimits: ; 910e8
+TownMap_GetSouthOnwaLandmarkLimits: ; 910e8
 	lb de, SUNSET_BAY, SUNSET_BAY
 ;	ld a, [wStatusFlags]
 ;	bit 6, a
@@ -1474,7 +1513,7 @@ RadioChannels:
 ; Pokédex Show in the morning
 
 ; Oak's Pokémon Talk in the afternoon and evening
-	call .InJohto
+	call .InNorthOnwa
 	jr nc, .NoSignal
 	ld a, [wTimeOfDay]
 	and a
@@ -1482,17 +1521,17 @@ RadioChannels:
 	jp LoadStation_OaksPokemonTalk
 
 .PokemonMusic:
-	call .InJohto
+	call .InNorthOnwa
 	jr nc, .NoSignal
 	jp LoadStation_PokemonMusic
 
 .LuckyChannel:
-	call .InJohto
+	call .InNorthOnwa
 	jr nc, .NoSignal
 	jp LoadStation_LuckyChannel
 
 .BuenasPassword:
-	call .InJohto
+	call .InNorthOnwa
 	jr nc, .NoSignal
 	jp LoadStation_BuenasPassword
 
@@ -1503,7 +1542,7 @@ RadioChannels:
 ;	jp LoadStation_UnownRadio
 
 .PlacesAndPeople:
-	call .InJohto
+	call .InNorthOnwa
 	jr c, .NoSignal
 	ld a, [wPokegearFlags]
 	bit 3, a
@@ -1511,7 +1550,7 @@ RadioChannels:
 	jp LoadStation_PlacesAndPeople
 
 .LetsAllSing:
-	call .InJohto
+	call .InNorthOnwa
 	jr c, .NoSignal
 	ld a, [wPokegearFlags]
 	bit 3, a
@@ -1519,7 +1558,7 @@ RadioChannels:
 	jp LoadStation_LetsAllSing
 
 .PokeFluteRadio:
-	call .InJohto
+	call .InNorthOnwa
 	jr c, .NoSignal
 	ld a, [wPokegearFlags]
 	bit 3, a
@@ -1544,8 +1583,8 @@ RadioChannels:
 .NoSignal:
 	jp NoRadioStation
 
-.InJohto:
-; if in Johto or on the S.S. Aqua, set carry
+.InNorthOnwa:
+; if in NorthOnwa or on the S.S. Aqua, set carry
 ; otherwise clear carry
 	ld a, [wPokegearMapPlayerIconLandmark]
 	cp KANTO_LANDMARK
@@ -1748,10 +1787,10 @@ _TownMap: ; 9191c
 	jr nc, .orange
 	cp KANTO_LANDMARK
 	jr nc, .kanto
-	call TownMap_GetJohtoLandmarkLimits
+	call TownMap_GetNorthOnwaLandmarkLimits
 	jr .resume
 .kanto
-	call TownMap_GetKantoLandmarkLimits
+	call TownMap_GetSouthOnwaLandmarkLimits
 	jr .resume
 .orange
 	call TownMap_GetOrangeLandmarkLimits
@@ -1856,8 +1895,8 @@ _TownMap: ; 9191c
 	cp SHAMOUTI_LANDMARK
 	jp nc, TownMapOrangeFlips
 	cp KANTO_LANDMARK
-	jp nc, TownMapKantoFlips
-	jp TownMapJohtoFlips
+	jp nc, TownMapSouthOnwaFlips
+	jp TownMapNorthOnwaFlips
 ; 91a53
 
 PlayRadio: ; 91a53
@@ -1937,7 +1976,7 @@ PlayRadio: ; 91a53
 ; 91acb
 
 .OakOrPnP: ; 91acb
-	call IsInJohto
+	call IsInNorthOnwa
 	jr nz, .kanto_or_orange
 	call UpdateTime
 	ld a, [wTimeOfDay]
@@ -1956,8 +1995,8 @@ PokegearMap: ; 91ae1
 	cp SHAMOUTI_LANDMARK
 	jp nc, FillOrangeMap
 	cp KANTO_LANDMARK
-	jp nc, FillKantoMap
-	jp FillJohtoMap
+	jp nc, FillSouthOnwaMap
+	jp FillNorthOnwaMap
 ; 91af3
 
 _FlyMap: ; 91af3
@@ -2190,11 +2229,11 @@ INCLUDE "data/maps/flypoints.asm"
 
 FlyMap: ; 91c90
 	;call GetCurrentLandmark
-; The first 46 locations are part of Johto. The rest are in Kanto
+; The first 46 locations are part of NorthOnwa. The rest are in SouthOnwa
 	;cp KANTO_LANDMARK
-	;jr nc, .KantoFlyMap
-;.JohtoFlyMap:
-; Note that .NoKanto should be modified in tandem with this branch
+	;jr nc, .SouthOnwaFlyMap
+;.NorthOnwaFlyMap:
+; Note that .NoSouthOnwa should be modified in tandem with this branch
 	push af
 ; Start from New Bark Town
 	ld a, FLY_SUNSET
@@ -2205,15 +2244,15 @@ FlyMap: ; 91c90
 	ld a, FLY_LAKE
 	ld [wEndFlypoint], a
 ; Fill out the map
-	call FillJohtoMap
+	call FillNorthOnwaMap
 	call TownMapBubble
 	call TownMapPals
-	call TownMapJohtoFlips
+	call TownMapNorthOnwaFlips
 	call .MapHud
 	pop af
 	jp TownMapPlayerIcon
 
-;.KantoFlyMap:
+;.SouthOnwaFlyMap:
 ; The event that there are no flypoints enabled in a map is not
 
 ; accounted for. As a result, if you attempt to select a flypoint
@@ -2223,15 +2262,15 @@ FlyMap: ; 91c90
 ; can be flown to even if none are enabled
 
 ; To prevent both of these things from happening when the player
-; enters Kanto, fly access is restricted until Indigo Plateau is
+; enters SouthOnwa, fly access is restricted until Indigo Plateau is
 
 ; visited and its flypoint enabled
 	;push af
 	;ld c, SPAWN_INDIGO
 	;call HasVisitedSpawn
 	;and a
-	;jr z, .NoKanto
-; Kanto's map is only loaded if we've visited Indigo Plateau
+	;jr z, .NoSouthOnwa
+; SouthOnwa's map is only loaded if we've visited Indigo Plateau
 
 ; Flypoints begin at Pallet Town...
 	;ld a, FLY_PALLET
@@ -2244,16 +2283,16 @@ FlyMap: ; 91c90
 ; visits, it's made the default flypoint
 	;ld [wTownMapPlayerIconLandmark], a
 ; Fill out the map
-	;call FillKantoMap
+	;call FillSouthOnwaMap
 	;call TownMapBubble
 	;call TownMapPals
-	;call TownMapKantoFlips
+	;call TownMapSouthOnwaFlips
 	;call .MapHud
 	;pop af
 	;jp TownMapPlayerIcon
 
-;.NoKanto:
-; If Indigo Plateau hasn't been visited, we use Johto's map instead
+;.NoSouthOnwa:
+; If Indigo Plateau hasn't been visited, we use NorthOnwa's map instead
 
 ; Start from New Bark Town
 	;ld a, FLY_SUNSET
@@ -2263,11 +2302,11 @@ FlyMap: ; 91c90
 ; ..and end at Silver Cave
 	;ld a, FLY_STARGLOW
 	;ld [wEndFlypoint], a
-	;call FillJohtoMap
+	;call FillNorthOnwaMap
 	;pop af
 	;call TownMapBubble
 	;call TownMapPals
-	;call TownMapJohtoFlips
+	;call TownMapNorthOnwaFlips
 .MapHud:
 	hlbgcoord 0, 0 ; BG Map 0
 	call TownMapBGUpdate
@@ -2396,13 +2435,13 @@ _Area: ; 91d11
 	farcall _Pokedex_JustBlackOutBG
 	ld a, [wTownMapCursorLandmark]
 	cp KANTO_REGION
-	jr z, .KantoGFX
+	jr z, .SouthOnwaGFX
 	cp ORANGE_REGION
 	jr z, .OrangeGFX
-	call FillJohtoMap
+	call FillNorthOnwaMap
 	call .PlaceString_MonsNest
 	call TownMapPals
-	call TownMapJohtoFlips
+	call TownMapNorthOnwaFlips
 .FinishGFX
 	hlbgcoord 0, 0
 	call TownMapBGUpdate
@@ -2413,11 +2452,11 @@ _Area: ; 91d11
 	ld [hBGMapMode], a
 	ret
 
-.KantoGFX:
-	call FillKantoMap
+.SouthOnwaGFX:
+	call FillSouthOnwaMap
 	call .PlaceString_MonsNest
 	call TownMapPals
-	call TownMapKantoFlips
+	call TownMapSouthOnwaFlips
 	jr .FinishGFX
 
 .OrangeGFX:
@@ -2651,8 +2690,8 @@ TownMapBGUpdate: ; 91ee4
 
 ; 91eff
 
-FillJohtoMap: ; 91eff
-	ld de, JohtoMap
+FillNorthOnwaMap: ; 91eff
+	ld de, NorthOnwaMap
 	jr FillTownMap
 
 FillOrangeMap:
@@ -2683,8 +2722,8 @@ FillOrangeMap:
 ;	ld [hl], a
 ;	ret
 
-FillKantoMap: ; 91f04
-	ld de, KantoMap
+FillSouthOnwaMap: ; 91f04
+	ld de, SouthOnwaMap
 FillTownMap: ; 91f07
 	hlcoord 0, 0
 .loop
@@ -2768,12 +2807,12 @@ endm
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 
-TownMapJohtoFlips:
-	decoord 0, 0, JohtoMap
+TownMapNorthOnwaFlips:
+	decoord 0, 0, NorthOnwaMap
 	jr TownMapFlips
 
-TownMapKantoFlips:
-	decoord 0, 0, KantoMap
+TownMapSouthOnwaFlips:
+	decoord 0, 0, SouthOnwaMap
 	jr TownMapFlips
 
 TownMapOrangeFlips:
@@ -2880,12 +2919,12 @@ LoadTownMapGFX: ; 91ff2
 
 ; 91fff
 
-JohtoMap: ; 91fff
-INCBIN "gfx/town_map/johto.bin"
+NorthOnwaMap: ; 91fff
+INCBIN "gfx/town_map/north_onwa.bin"
 ; 92168
 
-KantoMap: ; 92168
-INCBIN "gfx/town_map/kanto.bin"
+SouthOnwaMap: ; 92168
+INCBIN "gfx/town_map/south_onwa.bin"
 ; 922d1
 
 OrangeMap:

@@ -123,6 +123,18 @@ INCLUDE "maps/FlickerNameSpeechHouse.asm"
 INCLUDE "maps/FlickerMart.asm"
 INCLUDE "maps/FlickerTrainStation.asm"
 
+SECTION "Luster City Scripts", ROMX
+
+INCLUDE "maps/LusterCityResidential.asm"
+INCLUDE "maps/LusterCityShopping.asm"
+
+SECTION "Train Scripts", ROMX
+
+INCLUDE "maps/EastTrainCabin1.asm"
+INCLUDE "maps/EastTrainCabin2.asm"
+INCLUDE "maps/EastTrainCabin3.asm"
+INCLUDE "maps/EastTrainCaboose.asm"
+
 SECTION "Eventide Forest Scripts", ROMX
 
 INCLUDE "maps/Route4EventideGate.asm"

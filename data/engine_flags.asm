@@ -238,3 +238,4 @@ EngineFlags: ; 80462
 	engine_flag wMetGymLeaderFlags, 7  ; clair
 	
 	engine_flag wSnareFlags, 0	; starglow
+	engine_flag wSnareFlags, 1  ; train

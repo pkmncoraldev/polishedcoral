@@ -70,7 +70,7 @@ EnableSpriteUpdates:: ; 2ee4
 
 INCLUDE "home/string.asm"
 
-IsInJohto:: ; 2f17
+IsInNorthOnwa:: ; 2f17
 ; Return z if the player is in Johto, and nz in Kanto or Shamouti Island.
 	call GetCurrentLandmark
 	cp KANTO_LANDMARK

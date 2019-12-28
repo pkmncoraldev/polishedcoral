@@ -26,6 +26,11 @@ Music_TeamSnareEncounter_Ch1:
 	note C_, 1
 	note B_, 4
 Music_TeamSnareEncounter_Ch1_loop:
+	tempo $93
+	volume $77
+	stereopanning $77
+	octave 5
+	notetype $C, $C8
 	dutycycle 0
 	note __, 1
 	octave 3
@@ -114,6 +119,8 @@ Music_TeamSnareEncounter_Ch2:
 	octave 4
 	note C#, 4
 Music_TeamSnareEncounter_Ch2_loop:
+	octave 4
+	notetype $C, $C8
 	dutycycle 0
 	note __, 1
 	intensity $A3
@@ -201,6 +208,7 @@ Music_TeamSnareEncounter_Ch3:
 	note C_, 1
 	note G_, 4
 Music_TeamSnareEncounter_Ch3_loop:
+	notetype $C, $14
 	dutycycle 4
 	intensity $14
 	octave 3

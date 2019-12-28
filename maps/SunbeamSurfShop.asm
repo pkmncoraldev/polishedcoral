@@ -6,9 +6,10 @@ SunbeamSurfShop_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, SunbeamSurfShopCounter
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_def 7, 3, 9, SUNBEAM_ISLAND
 	warp_def 7, 4, 9, SUNBEAM_ISLAND
+	warp_def  7,  7, 14, SUNBEAM_ISLAND
 
 	db 0 ; coord events
 
@@ -101,11 +102,11 @@ SunbeamIslandSurfShopNPC1:
 	opentext
 	writetext SunbeamIslandSurfShopNPC1Text8
 	waitbutton
+	changeblock $6, $6, $34
 	closetext
-	playsound SFX_ENTER_DOOR
 	special FadeOutPalettes
-	waitsfx
-	warp SUNBEAM_ISLAND, $11, $28
+	applyonemovement PLAYER, big_step_down
+	warpcheck
 	end
 	
 SunbeamIslandSurfShopNPC2:

@@ -405,3 +405,7 @@ HiddenGrottoText:
 	para "Will you follow"
 	line "it?"
 	done
+	
+StdBlankText:
+	text " "
+	done

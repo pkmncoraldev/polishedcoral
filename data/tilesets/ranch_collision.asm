@@ -84,7 +84,7 @@
 	tilecoll FLOOR, FLOOR, LEDGE_DOWN, LEDGE_DOWN ; 53
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 54
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 55
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 56
+	tilecoll WALL, WALL, WALL, FLOOR ; 56
 	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; 57
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 58
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 59
@@ -178,7 +178,7 @@
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; b1
 	tilecoll WALL, WALL, WALL, DOOR ; b2
 	tilecoll WALL, WALL, WALL, WALL ; b3
-	tilecoll WALL, WALL, WALL, WALL ; b4
+	tilecoll WALL, WALL, FLOOR, FLOOR ; b4
 	tilecoll WALL, FLOOR, WALL, FLOOR ; b5
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; b6
 	tilecoll WALL, FLOOR, WALL, FLOOR ; b7

@@ -12,8 +12,8 @@ MapGroupRoofs:
 	db  2 ; group 8  (Eventide Forest)
 	db  2 ; group 9  (Dodrio Ranch)
 	db  2 ; group 10 (Flicker Station)
-	db -1 ; group 11
-	db -1 ; group 12
+	db -1 ; group 11 (Train)
+	db  0 ; group 12 (Luster City)
 	db -1 ; group 13
 	db -1 ; group 14
 	db -1 ; group 15

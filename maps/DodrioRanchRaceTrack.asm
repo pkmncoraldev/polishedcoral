@@ -91,6 +91,7 @@ DodrioRanchRaceTrackTrigger2:
 	writetext RanchRideRaceText5
 	waitbutton
 	closetext
+	setevent EVENT_JUST_FAILED_RANCH_RACE
 	dotrigger $0
 	end
 	
@@ -192,6 +193,7 @@ RanchRideRaceFinishLine:
 ;	checkcode VAR_CONTESTMINUTES
 ;	RAM2MEM $0
 	writetext RanchRideRaceText4
+	clearevent EVENT_JUST_FAILED_RANCH_RACE
 	pause 20
 	checkevent EVENT_FINISHED_RANCH_RACE_ONCE
 	iffalse .firsttime
@@ -239,8 +241,8 @@ RanchRideRaceFinishLine:
 	writetext RanchRideGotDoduoText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke DODUO, 10
-	special TeachDoduoExtremeSpeed
+;	givepoke DODUO, 10
+;	special TeachDoduoExtremeSpeed
 	writetext RanchRideRaceText7
 	waitbutton
 	closetext
@@ -314,6 +316,7 @@ RanchRideRaceOffTrack:
 	opentext
 	writetext RanchRideRaceOffTrackText
 	waitbutton
+	special FadeOutPalettes
 	warp DODRIO_RANCH_RACETRACK, $1d, $11
 	end
 	
@@ -342,8 +345,8 @@ RanchRideRaceGuy:
 	writetext RanchRideGotDoduoText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke DODUO, 10
-	special TeachDoduoExtremeSpeed
+;	givepoke DODUO, 10
+;	special TeachDoduoExtremeSpeed
 	writetext RanchRideRaceText7
 	waitbutton
 	closetext
@@ -359,7 +362,13 @@ RanchRideRaceGuy:
 .trytostartracecont
 	checkflag ENGINE_DONE_RANCH_RACE_TODAY
 	iftrue .doneracetoday
+	checkevent EVENT_JUST_FAILED_RANCH_RACE
+	iftrue .justfailed
 	writetext RanchRideRaceText1
+	jump .trytostartracecont2
+.justfailed
+	writetext RanchRideRaceText10
+.trytostartracecont2
 	yesorno
 	iffalse .pickednoranchrace
 	writetext RanchRideRaceText3
@@ -545,6 +554,11 @@ RanchRideRaceText8:
 	
 RanchRideRaceText9:
 	text "Made some room?"
+	done
+	
+RanchRideRaceText10:
+	text "You want to try"
+	line "again?"
 	done
 	
 RanchRideRaceWhatAreYouDoingText:

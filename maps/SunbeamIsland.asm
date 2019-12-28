@@ -6,11 +6,10 @@ SunbeamIsland_MapScriptHeader:
 	scene_script SunbeamIslandTrigger3
 	scene_script SunbeamIslandTrigger4
 
-	db 2 ; callbacks
+	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, SunbeamIslandFlyPoint
-	callback MAPCALLBACK_TILES, SunbeamIslandSlowpokeGirlCallback
 
-	db 13 ; warp events
+	db 14 ; warp events
 	warp_def 29, 27, 2, SUNBEAM_MART
 	warp_def 33, 17, 1, SUNBEAM_POKECENTER
 	warp_def 18, 40, 1, SUNBEAM_GYM
@@ -24,6 +23,7 @@ SunbeamIsland_MapScriptHeader:
 	warp_def 11, 17, 3, SPRUCES_LAB
 	warp_def 18, 41, 2, SUNBEAM_GYM
 	warp_def 47,  7, 1, SUNBEAM_BOAT_HOUSE
+	warp_def 40, 17, 1, SUNBEAM_SURF_SHOP
 
 	db 4 ; coord events
 	xy_trigger 1, 40, 20, 0, SunbeamStartFirstContest1, 0, 0
@@ -171,10 +171,6 @@ SunbeamIslandTrigger4:
 	
 SunbeamIslandFlyPoint:
 	setflag ENGINE_FLYPOINT_SUNBEAM
-	return
-	
-SunbeamIslandSlowpokeGirlCallback:
-	clearevent EVENT_TALKED_TO_SLOWPOKE_GIRL
 	return
 	
 JustRodeBoatSunbeam:

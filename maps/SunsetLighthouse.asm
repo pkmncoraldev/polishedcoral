@@ -138,7 +138,7 @@ LighthousePokeMenu:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	waitbutton
-	givepoke CHARMANDER, 5, ORAN_BERRY
+	;givepoke CHARMANDER, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	jump LighthouseGetStarterScene_part2
@@ -162,7 +162,7 @@ LighthousePokeMenu:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke SQUIRTLE, 5, ORAN_BERRY
+	;givepoke SQUIRTLE, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	jump LighthouseGetStarterScene_part2
@@ -186,7 +186,7 @@ LighthousePokeMenu:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke BULBASAUR, 5, ORAN_BERRY
+	;givepoke BULBASAUR, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	jump LighthouseGetStarterScene_part2
@@ -210,7 +210,7 @@ LighthousePokeMenu:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke CYNDAQUIL, 5, ORAN_BERRY
+	;givepoke CYNDAQUIL, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	jump LighthouseGetStarterScene_part2
@@ -235,7 +235,7 @@ LighthousePokeMenu:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke TOTODILE, 5, ORAN_BERRY
+	;givepoke TOTODILE, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	jump LighthouseGetStarterScene_part2
@@ -260,7 +260,7 @@ LighthousePokeMenu:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke CHIKORITA, 5, ORAN_BERRY
+	;givepoke CHIKORITA, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	jump LighthouseGetStarterScene_part2
@@ -612,6 +612,7 @@ LighthouseGetStarterScene_part2:
 	writetext LighthouseAbnerText4
 	waitbutton
 	closetext
+	pause 10
 	opentext
 	writetext LighthouseAbnerTextGiveDex
 	waitbutton

@@ -48,6 +48,7 @@ MtOnwaPanNPC:
 	writetext MtOnwaPanNPCText1
 	waitbutton
 	closetext
+	spriteface MT_ONWA_NPC1, UP
 	spriteface MT_ONWA_NPC2, UP
 	checkcode VAR_FACING
 	if_equal RIGHT, .cont
@@ -95,6 +96,7 @@ MtOnwaPanNPC:
 	appear MT_ONWA_CUTSCENE7
 
 .cont2
+	spriteface MT_ONWA_NPC1, UP
 	spriteface MT_ONWA_NPC2, UP
 	pause 15
 	special Special_FadeOutMusic
@@ -134,18 +136,21 @@ MtOnwaPanNPC:
 	disappear MT_ONWA_CUTSCENE7
 	pause 20
 	special RestartMapMusic
+	spriteface MT_ONWA_NPC1, LEFT
 	spriteface MT_ONWA_NPC2, LEFT
 	spriteface PLAYER, RIGHT
 	opentext
 	writetext MtOnwaPanNPCText3
 	waitbutton
 	closetext
+	spriteface MT_ONWA_NPC1, UP
 	spriteface MT_ONWA_NPC2, UP
 	end
 .end
 	writetext MtOnwaPanNPCText4
 	waitbutton
 	closetext
+	spriteface MT_ONWA_NPC1, UP
 	spriteface MT_ONWA_NPC2, UP
 	end
 	

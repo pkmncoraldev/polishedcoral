@@ -70,6 +70,9 @@ INCLUDE "audio/music/encountergymleader.asm"
 INCLUDE "audio/music/gscgamecorner.asm"
 INCLUDE "audio/music/mountaintop.asm"
 INCLUDE "audio/music/snarebattle.asm"
+INCLUDE "audio/music/train.asm"
+INCLUDE "audio/music/trainstartup.asm"
+INCLUDE "audio/music/snaretheme.asm"
 
 
 SECTION "Music 5", ROMX
@@ -218,6 +221,7 @@ INCLUDE "audio/music/encounter/pokemaniac_encounter.asm"
 INCLUDE "audio/music/encounter/gentleman_encounter.asm"
 INCLUDE "audio/music/encounter/hardcore_encounter.asm"
 INCLUDE "audio/music/encounter/teamsnare_encounter.asm"
+INCLUDE "audio/music/encounter/afterteamsnare_encounter.asm"
 
 
 SECTION "Sound Effects", ROMX

@@ -2,12 +2,16 @@ FruitTreeScript:: ; 44000
 	opentext
 	writetext FruitBearingTreeText
 	buttonsound
+	farwritetext StdBlankText
+	pause 6
 	callasm TryResetFruitTrees
 	copybytetovar wCurFruit
 	callasm CheckFruitTree
 	iffalse PickBerryScript
 	writetext NothingHereText
 	buttonsound
+	farwritetext StdBlankText
+	pause 6
 	checkitem MULCH
 	iffalse_endtext
 	writetext WantToUseMulchText
@@ -26,6 +30,8 @@ PickBerryScript:
 	giveitem ITEM_FROM_MEM
 	iffalse .packisfull
 	buttonsound
+	farwritetext StdBlankText
+	pause 6
 	writetext ObtainedFruitText
 	callasm PickedFruitTree
 	specialsound
@@ -35,6 +41,8 @@ PickBerryScript:
 
 .packisfull
 	buttonsound
+	farwritetext StdBlankText
+	pause 6
 	jumpopenedtext FruitPackIsFullText
 ; 44041
 

@@ -2151,6 +2151,8 @@ GetMapHeaderMusic:: ; 2cbd
 	ld a, c
 	cp MUSIC_STARGLOW
 	jr z, .starglow
+	cp MUSIC_TRAIN_RIDE
+	jr z, .train
 	call Function8b342
 	ld e, c
 	ld d, 0
@@ -2161,13 +2163,25 @@ GetMapHeaderMusic:: ; 2cbd
 
 .starglow
 	ld a, [wSnareFlags]
-	bit 0, a ; ENGINE_ROCKETS_IN_RADIO_TOWER
+	bit 0, a ; PUNKS_IN_STARGLOW
 	jr z, .clearedstarglow
 	ld de, MUSIC_SNARE_INVASION
 	jr .done
 
 .clearedstarglow
 	ld de, MUSIC_STARGLOW_VALLEY
+	jr .done
+; 2cff
+
+.train
+	ld a, [wSnareFlags]
+	bit 1, a ; PUNKS_ON_TRAIN
+	jr z, .clearedtrain
+	ld de, MUSIC_SNARE_THEME
+	jr .done
+
+.clearedtrain
+	ld de, MUSIC_TRAIN
 	jr .done
 ; 2cff
 

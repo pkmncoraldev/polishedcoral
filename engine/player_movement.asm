@@ -37,18 +37,19 @@ DoPlayerMovement:: ; 80000
 	cp PLAYER_RUN
 	jr z, .Running
 	cp PLAYER_SURF
-	jr z, .Surf
+	jp z, .Surf
 	cp PLAYER_SURF_PIKA
-	jr z, .Surf
+	jp z, .Surf
 	cp PLAYER_SURF_LAVA
-	jr z, .Surf
+	jp z, .Surf
 	cp PLAYER_BIKE
 	jr z, .Normal
 	cp PLAYER_DODRIO
 	jr z, .Normal
 	cp PLAYER_SLIP
-	jr z, .Ice
-
+	jp z, .Ice
+	cp PLAYER_SITTING
+	jp z, .Standing
 .Normal:
 	call .CheckForced
 	call .GetAction
@@ -98,8 +99,6 @@ DoPlayerMovement:: ; 80000
 	call .TrySurf
 	ret c
 	jr .NotMoving
-
-.Dodrio
 	
 .Ice:
 	call .CheckForced
@@ -122,7 +121,7 @@ DoPlayerMovement:: ; 80000
 	call .StandInPlace
 	xor a
 	ret
-
+	
 .NotMoving:
 	ld a, [wWalkingDirection]
 	cp STANDING
@@ -140,6 +139,7 @@ DoPlayerMovement:: ; 80000
 
 .Standing:
 	call .StandInPlace
+.Sitting:
 	xor a
 	ret
 ; 800b7
@@ -246,6 +246,17 @@ DoPlayerMovement:: ; 80000
 ; 8016b
 
 .TryStep: ; 8016b
+	ld a, [wTileset]
+	cp TILESET_TRAIN
+	jp nz, .cont
+
+.train
+	ld a, [wSnareFlags]
+	bit 0, a ; Team Snare in Starglow Valley. Reusing this flag for convenience.
+	jr z, .cont
+	ret
+	
+.cont
 ; Surfing actually calls .TrySurf directly instead of passing through here.
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
@@ -268,7 +279,7 @@ DoPlayerMovement:: ; 80000
 	
 	ld a, [wSpinning]
 	and a
-	jr nz, .spin
+	jp nz, .spin
 
 	ld a, [wPlayerStandingTile]
 	cp COLL_ICE
@@ -305,7 +316,15 @@ DoPlayerMovement:: ; 80000
 	ret
 
 .dodrio
+	ld a, [hJoypadDown]
+	and B_BUTTON
+	cp B_BUTTON
+	jp z, .dodrioslow
 	ld a, STEP_FAST
+	jr .dodriocont
+.dodrioslow
+	ld a, STEP_SURF
+.dodriocont
 	call .DoStep
 	scf
 	ret
@@ -317,10 +336,16 @@ DoPlayerMovement:: ; 80000
 	ret
 
 .walk
-	ld a, [wTileset]
 	cp TILESET_HAUNTED_TV
-	jp nz, .walkcont
+	jp z, .tvroom
 
+.walkcont
+	ld a, STEP_WALK
+	call .DoStep
+	scf
+	ret
+	
+.tvroom
 	ld a, [wSnareFlags]
 	bit 0, a ; Team Snare in Starglow Valley. Reusing this flag for convenience.
 	jr z, .walkcont
@@ -328,12 +353,7 @@ DoPlayerMovement:: ; 80000
 	ld a, [wWalkingDirection]
 	cp UP
 	jr z, .slowwalk
-	
-.walkcont
-	ld a, STEP_WALK
-	call .DoStep
-	scf
-	ret
+	jr .walkcont
 
 .ice
 	ld a, STEP_ICE

@@ -25,7 +25,7 @@ FlickerStation_MapScriptHeader:
 	db 9 ; bg events
 	signpost 25, 40, SIGNPOST_READ, FlickerCenterSign
 	signpost 11, 38, SIGNPOST_READ, FlickerMartSign
-	signpost 31, 43, SIGNPOST_READ, FlickerSign
+	signpost 31, 42, SIGNPOST_READ, FlickerSign
 	signpost 17, 22, SIGNPOST_UP, FlickerTrainDoor
 	signpost 17, 19, SIGNPOST_UP, FlickerTrainDoor
 	signpost 14, 23, SIGNPOST_UP, FlickerTrainDoor
@@ -33,7 +33,7 @@ FlickerStation_MapScriptHeader:
 	signpost 11, 22, SIGNPOST_UP, FlickerTrainDoor
 	signpost 11, 19, SIGNPOST_UP, FlickerTrainDoor
 
-	db 11 ; object events
+	db 12 ; object events
 	person_event SPRITE_FAT_GUY, 26, 56, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 28, 45, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationNPC2, -1
 	person_event SPRITE_BUG_CATCHER, 14, 51, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC3, -1
@@ -44,6 +44,7 @@ FlickerStation_MapScriptHeader:
 	person_event SPRITE_DELINQUENT_F, 24,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationGirl2, -1
 	person_event SPRITE_DELINQUENT_F, 27,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationGirl3, -1
 	person_event SPRITE_OFFICER, 20, 55, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	tmhmball_event  7, 26, TM_THUNDERPUNCH, 1, EVENT_FLICKER_STATION_
 
 
 	const_def 1 ; object constants
@@ -84,25 +85,43 @@ FlickerStationTrigger3:
 	waitsfx
 	pause 20
 	special Special_FadeOutMusic
-	pause 20
+	pause 20	
 	applymovement PLAYER, Movement_FlickerStationTrainCamera
 	pause 20
 	spriteface FLICKER_STATION_NPC3, RIGHT
 	pause 10
 	spriteface FLICKER_STATION_NPC4, LEFT
+	playmusic MUSIC_TRAIN_STARTUP
 	pause 10
 	spriteface FLICKER_STATION_NPC3, DOWN
 	pause 10
 	spriteface FLICKER_STATION_NPC4, DOWN
-	pause 10
 	callasm FlickerStationTrainThing
 	pause 20
+	earthquake 5
+	pause 5
 	applymovement PLAYER, Movement_FlickerStationTrainLeaves
 	playsound SFX_EXIT_BUILDING
 	special FadeOutPalettes
 	waitsfx
 	dotrigger $2
+	callasm FlickerStationPlayerSeatAsm
+	warpfacing LEFT, EAST_TRAIN_CABIN_1, $7, $2
 	end
+	
+FlickerStationPlayerSeatAsm:
+	ld hl, rIE
+    res LCD_STAT, [hl]
+    xor a
+    ld [hLCDTrain], a
+    ld a, $B0
+    ld [hWY], a
+	ld a, 7
+    ld [hWX], a
+	ld a, PLAYER_SITTING
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret
 	
 FlickerStationFlypointCallback:
 	setflag ENGINE_FLYPOINT_FLICKER
@@ -314,7 +333,8 @@ FlickerStationNPC2Text:
 FlickerStationNPC3Text:
 	text "Woah!"
 
-	para "Look a the trains!"
+	para "Look at the"
+	line "trains!"
 	
 	para "So cool!"
 	done
@@ -342,8 +362,9 @@ FlickerStationNPC5Text:
 FlickerStationAllAboardText:
 	text "All aboard!"
 	
-	para "Next stop:"
-	line "LUSTER CITY!"
+	para "Train heading to"
+	line "LUSTER CITY is"
+	cont "now departing!"
 	done
 	
 TrainerFlickerStation_1SeenText:

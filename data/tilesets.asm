@@ -334,7 +334,8 @@ SECTION "Tileset Data - luster", ROMX
 TilesetLusterGFX::
 INCBIN "gfx/tilesets/luster.2bpp.lz"
 
-TilesetLusterGFX2 EQU 0
+TilesetLusterGFX2::
+INCBIN "gfx/tilesets/lustertower.2bpp.lz"
 
 TilesetLusterMeta::
 INCBIN "data/tilesets/luster_metatiles.bin.lz"

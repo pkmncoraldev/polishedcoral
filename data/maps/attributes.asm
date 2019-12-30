@@ -12,187 +12,218 @@ CURRENT_MAP_HEIGHT = \2_HEIGHT
 	db \4
 ENDM
 
+; Connections go in order: north, south, west, east
 connection: MACRO
 ;\1: direction
-;\2: map label
+;\2: map name
 ;\3: map id
-;\4: x (east/west) or y (north/south)
-;\5: offset?
-;\6: strip length
-if "\1" == "north"
-	map_id \3
-	dw wDecompressScratch + \3_WIDTH * (\3_HEIGHT - 3) + \5
-	dw wOverworldMap + \4 + 3
-	db \6
-	db \3_WIDTH
-	db \3_HEIGHT * 2 - 1
-	db (\4 - \5) * -2
-	dw wOverworldMap + \3_HEIGHT * (\3_WIDTH + 6) + 1
-elif "\1" == "south"
-	map_id \3
-	dw wDecompressScratch + \5
-	dw wOverworldMap + (CURRENT_MAP_HEIGHT + 3) * (CURRENT_MAP_WIDTH + 6) + \4 + 3
-	db \6
-	db \3_WIDTH
-	db 0
-	db (\4 - \5) * -2
-	dw wOverworldMap + \3_WIDTH + 7
-elif "\1" == "west"
-	map_id \3
-	dw wDecompressScratch + (\3_WIDTH * \5) + \3_WIDTH - 3
-	dw wOverworldMap + (CURRENT_MAP_WIDTH + 6) * (\4 + 3)
-	db \6
-	db \3_WIDTH
-	db (\4 - \5) * -2
-	db \3_WIDTH * 2 - 1
-	dw wOverworldMap + \3_WIDTH * 2 + 6
-elif "\1" == "east"
-	map_id \3
-	dw wDecompressScratch + (\3_WIDTH * \5)
-	dw wOverworldMap + (CURRENT_MAP_WIDTH + 6) * (\4 + 3 + 1) - 3
-	db \6
-	db \3_WIDTH
-	db (\4 - \5) * -2
-	db 0
-	dw wOverworldMap + \3_WIDTH + 7
+;\4: offset of the target map relative to the current map
+;    (x offset for east/west, y offset for north/south)
+
+; Calculate tile offsets for source (current) and target maps
+_src = 0
+_tgt = (\4) + 3
+if _tgt < 0
+_src = -_tgt
+_tgt = 0
 endc
+
+if "\1" == "north"
+_blk = \3_WIDTH * (\3_HEIGHT + -3) + _src
+_map = _tgt
+_win = (\3_WIDTH + 6) * \3_HEIGHT + 1
+_y = \3_HEIGHT * 2 - 1
+_x = (\4) * -2
+_len = CURRENT_MAP_WIDTH + 3 - (\4)
+if _len > \3_WIDTH
+_len = \3_WIDTH
+endc
+
+elif "\1" == "south"
+_blk = _src
+_map = (CURRENT_MAP_WIDTH + 6) * (CURRENT_MAP_HEIGHT + 3) + _tgt
+_win = \3_WIDTH + 7
+_y = 0
+_x = (\4) * -2
+_len = CURRENT_MAP_WIDTH + 3 - (\4)
+if _len > \3_WIDTH
+_len = \3_WIDTH
+endc
+
+elif "\1" == "west"
+_blk = (\3_WIDTH * _src) + \3_WIDTH + -3
+_map = (CURRENT_MAP_WIDTH + 6) * _tgt
+_win = (\3_WIDTH + 6) * 2 + -6
+_y = (\4) * -2
+_x = \3_WIDTH * 2 - 1
+_len = CURRENT_MAP_HEIGHT + 3 - (\4)
+if _len > \3_HEIGHT
+_len = \3_HEIGHT
+endc
+
+elif "\1" == "east"
+_blk = (\3_WIDTH * _src)
+_map = (CURRENT_MAP_WIDTH + 6) * _tgt + CURRENT_MAP_WIDTH + 3
+_win = \3_WIDTH + 7
+_y = (\4) * -2
+_x = 0
+_len = CURRENT_MAP_HEIGHT + 3 - (\4)
+if _len > \3_HEIGHT
+_len = \3_HEIGHT
+endc
+
+else
+fail "Invalid direction for 'connection'."
+endc
+
+	map_id \3
+	dw wDecompressScratch + _blk
+	dw wOverworldMap + _map
+	db _len - _src
+	db \3_WIDTH
+	db _y, _x
+	dw wOverworldMap + _win
 ENDM
 
 
 	map_attributes SunsetBay, SUNSET_BAY, $71, EAST
-	connection east, SunsetCape, SUNSET_CAPE, 4, 2, 14, SUNSET_BAY
+	connection east, SunsetCape, SUNSET_CAPE, 2
 	
 	map_attributes SunsetCape, SUNSET_CAPE, 53, WEST
-	connection west, SunsetBay, SUNSET_BAY, -2, 0, 19, SUNSET_CAPE
+	connection west, SunsetBay, SUNSET_BAY, -2
 
 	map_attributes Route1, ROUTE_1, $71, NORTH
-	connection north, DaybreakVillage, DAYBREAK_VILLAGE, 1, -4, 14
+	connection north, DaybreakVillage, DAYBREAK_VILLAGE, 5
 	
 	map_attributes DaybreakVillage, DAYBREAK_VILLAGE, $71, NORTH | SOUTH
-	connection north, Route2, ROUTE_2, -1, 5, 13
-	connection south, Route1, ROUTE_1, 0, 5, 13
+	connection north, Route2, ROUTE_2, -6
+	connection south, Route1, ROUTE_1, -5
 	
 	map_attributes Route2, ROUTE_2, 5, NORTH | SOUTH
-	connection north, GlintCity, GLINT_CITY, -2, 0, 18
-	connection south, DaybreakVillage, DAYBREAK_VILLAGE, 2, -4, 14
+	connection north, GlintCity, GLINT_CITY, -2
+	connection south, DaybreakVillage, DAYBREAK_VILLAGE, 6
 
 	map_attributes GlintCity, GLINT_CITY, $5, NORTH | SOUTH | EAST
-	connection north, GlintGroveEntrance, GLINT_GROVE_ENTRANCE, 1, 0, 10
-	connection south, Route2, ROUTE_2, 3, 1, 12
-	connection east, Route3, ROUTE_3, 0, 0, 10
+	connection north, GlintGroveEntrance, GLINT_GROVE_ENTRANCE, 1
+	connection south, Route2, ROUTE_2, 2
+	connection east, Route3, ROUTE_3, 0
 	
 	map_attributes GlintGroveEntrance, GLINT_GROVE_ENTRANCE, 5, SOUTH
-	connection south, GlintCity, GLINT_CITY, 1, 2, 7
+	connection south, GlintCity, GLINT_CITY, -1
 	
 	map_attributes Route3, ROUTE_3, 5, WEST ;SOUTH | WEST
-;	connection south, Route12North, ROUTE_12_NORTH, 1, 0, 25
-	connection west, GlintCity, GLINT_CITY, 0, 0, 36
+;	connection south, Route12North, ROUTE_12_NORTH, 1
+	connection west, GlintCity, GLINT_CITY, 0
 
 	map_attributes Route3Starglow, ROUTE_3_STARGLOW, $5, SOUTH
-	connection south, StarglowValley, STARGLOW_VALLEY, -3, 0, 10
+	connection south, StarglowValley, STARGLOW_VALLEY, -3
 	
 	map_attributes StarglowValley, STARGLOW_VALLEY, 5, NORTH | EAST
-	connection north, Route3Starglow, ROUTE_3_STARGLOW, 3, 0, 5
-;	connection west, ROUTE_12, Route12, 4, 0, 4, LAKE_OF_RAGE
-	connection east, Route4, ROUTE_4, 6, 0, 11
+	connection north, Route3Starglow, ROUTE_3_STARGLOW, 3
+;	connection west, ROUTE_12, Route12, 4
+	connection east, Route4, ROUTE_4, 6
 	
 	map_attributes Route4, ROUTE_4, 5, NORTH | SOUTH | WEST
-	connection north, HuntersThicket, HUNTERS_THICKET, 3, 1, 7, ROUTE_4
-	connection south, Route5, ROUTE_5, 7, 10, 7
-	connection west, StarglowValley, STARGLOW_VALLEY, -2, 4, 13
+	connection north, HuntersThicket, HUNTERS_THICKET, 2
+	connection south, Route5, ROUTE_5, -3
+	connection west, StarglowValley, STARGLOW_VALLEY, -6
 	
 	map_attributes HuntersThicket, HUNTERS_THICKET, $5, SOUTH
-	connection south, Route4, ROUTE_4, 1, 3, 7
+	connection south, Route4, ROUTE_4, -2
 	
 	map_attributes Route5, ROUTE_5, 7, NORTH
-	connection north, Route4, ROUTE_4, 11, 8, 5
+	connection north, Route4, ROUTE_4, 3
 	
 	map_attributes Route6, ROUTE_6, 7, NORTH ;| SOUTH
-	connection north, Route7, ROUTE_7, -1, 0, 20
-;	connection south, Route29, ROUTE_29, 1, 12, 30
+	connection north, Route7, ROUTE_7, -1
+;	connection south, Route29, ROUTE_29, -11
 	
 	map_attributes Route7, ROUTE_7, 7, SOUTH | WEST
-	connection south, Route6, ROUTE_6, 6, 5, 11
-	connection west, LakeOnwa, LAKE_ONWA, -3, 8, 10
+	connection south, Route6, ROUTE_6, 1
+	connection west, LakeOnwa, LAKE_ONWA, -11
 	
 	map_attributes Route9, ROUTE_9, 5, NORTH
-	connection north, FlickerStation, FLICKER_STATION, 8, 20, 6
+	connection north, FlickerStation, FLICKER_STATION, -12
 
 	map_attributes FlickerStation, FLICKER_STATION, 5, SOUTH
-	connection south, Route9, ROUTE_9, 18, 6, 10
+	connection south, Route9, ROUTE_9, 12
 	
 	map_attributes LakeOnwa, LAKE_ONWA, 7, NORTH | EAST
-	connection north, Route1, ROUTE_1, 0, 0, 32
-	connection east, Route7, ROUTE_7, 11, 0, 9
+	connection north, Route1, ROUTE_1, 0
+	connection east, Route7, ROUTE_7, 11
 	
 	map_attributes SunbeamIsland, SUNBEAM_ISLAND, $35, WEST
-	connection west, SunbeamBeach, SUNBEAM_BEACH, 0, 0, 29
+	connection west, SunbeamBeach, SUNBEAM_BEACH, 0
 	
 	map_attributes SunbeamBeach, SUNBEAM_BEACH, $35, EAST
-	connection east, SunbeamIsland, SUNBEAM_ISLAND, 0, 0, 29
+	connection east, SunbeamIsland, SUNBEAM_ISLAND, 0
 	
 	map_attributes EventideForest, EVENTIDE_FOREST, $7, NORTH
-	connection north, SpookyForest1, SPOOKY_FOREST_1, 5, 0, 8
+	connection north, SpookyForest1, SPOOKY_FOREST_1, 5
 	
 	map_attributes SpookyForest1, SPOOKY_FOREST_1, 92, NORTH | SOUTH | WEST | EAST
-	connection north, SpookyForest2, SPOOKY_FOREST_2, 0, 0, 8
-	connection south, EventideForest, EVENTIDE_FOREST, -1, 4, 8
-	connection west, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
-	connection east, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection north, SpookyForest2, SPOOKY_FOREST_2, 0
+	connection south, EventideForest, EVENTIDE_FOREST, -5
+	connection west, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection east, SpookyForest1, SPOOKY_FOREST_1, 0
 	
 	map_attributes SpookyForest2, SPOOKY_FOREST_2, 92, NORTH | SOUTH | WEST | EAST
-	connection north, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
-	connection south, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
-	connection west, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
-	connection east, SpookyForest3, SPOOKY_FOREST_3, 0, 0, 8
+	connection north, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection south, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection west, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection east, SpookyForest3, SPOOKY_FOREST_3, 0
 	
 	map_attributes SpookyForest3, SPOOKY_FOREST_3, 92, NORTH | SOUTH | WEST | EAST
-	connection north, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
-	connection south, SpookyForest4, SPOOKY_FOREST_4, 0, 0, 8
-	connection west, SpookyForest2, SPOOKY_FOREST_2, 0, 0, 8
-	connection east, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection north, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection south, SpookyForest4, SPOOKY_FOREST_4, 0
+	connection west, SpookyForest2, SPOOKY_FOREST_2, 0
+	connection east, SpookyForest1, SPOOKY_FOREST_1, 0
 	
 	map_attributes SpookyForest4, SPOOKY_FOREST_4, 92, NORTH | SOUTH | WEST | EAST
-	connection north, SpookyForest3, SPOOKY_FOREST_3, 0, 0, 8
-	connection south, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
-	connection west, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
-	connection east, SpookyForest5, SPOOKY_FOREST_5, 0, 0, 8
+	connection north, SpookyForest3, SPOOKY_FOREST_3, 0
+	connection south, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection west, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection east, SpookyForest5, SPOOKY_FOREST_5, 0
 	
 	map_attributes SpookyForest5, SPOOKY_FOREST_5, 92, NORTH | SOUTH | WEST | EAST
-	connection north, SpookyForest6, SPOOKY_FOREST_6, 0, 0, 8
-	connection south, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
-	connection west, SpookyForest4, SPOOKY_FOREST_4, 0, 0, 8
-	connection east, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection north, SpookyForest6, SPOOKY_FOREST_6, 0
+	connection south, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection west, SpookyForest4, SPOOKY_FOREST_4, 0
+	connection east, SpookyForest1, SPOOKY_FOREST_1, 0
 	
 	map_attributes SpookyForest6, SPOOKY_FOREST_6, 92, NORTH | SOUTH | WEST | EAST
-	connection north, SpookyForest7, SPOOKY_FOREST_7, 0, 0, 8
-	connection south, SpookyForest5, SPOOKY_FOREST_5, 0, 0, 8
-	connection west, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
-	connection east, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection north, SpookyForest7, SPOOKY_FOREST_7, 0
+	connection south, SpookyForest5, SPOOKY_FOREST_5, 0
+	connection west, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection east, SpookyForest1, SPOOKY_FOREST_1, 0
 	
 	map_attributes SpookyForest7, SPOOKY_FOREST_7, 92, NORTH | SOUTH | WEST | EAST
-	connection north, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
-	connection south, SpookyForest6, SPOOKY_FOREST_6, 0, 0, 8
-	connection west, SpookyForest8, SPOOKY_FOREST_8, 0, 0, 8
-	connection east, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
+	connection north, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection south, SpookyForest6, SPOOKY_FOREST_6, 0
+	connection west, SpookyForest8, SPOOKY_FOREST_8, 0
+	connection east, SpookyForest1, SPOOKY_FOREST_1, 0
 	
 	map_attributes SpookyForest8, SPOOKY_FOREST_8, 92, NORTH | SOUTH | WEST | EAST
-	connection north, OldManorExterior, OLD_MANOR_EXTERIOR, 0, 4, 8
-	connection south, SpookyForest1, SPOOKY_FOREST_1, 0, 0, 8
-	connection west, SpookyForest9, SPOOKY_FOREST_9, 0, 0, 8
-	connection east, SpookyForest7, SPOOKY_FOREST_7, 0, 0, 8
+	connection north, OldManorExterior, OLD_MANOR_EXTERIOR, -4
+	connection south, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection west, SpookyForest9, SPOOKY_FOREST_9, 0
+	connection east, SpookyForest7, SPOOKY_FOREST_7, 0
 	
 	map_attributes SpookyForest9, SPOOKY_FOREST_9, 92, EAST
-	connection east, SpookyForest8, SPOOKY_FOREST_8, 0, 0, 8
+	connection east, SpookyForest8, SPOOKY_FOREST_8, 0
 	
 	map_attributes OldManorExterior, OLD_MANOR_EXTERIOR, 92, SOUTH
-	connection south, SpookyForest8, SPOOKY_FOREST_8, 4, 0, 8
+	connection south, SpookyForest8, SPOOKY_FOREST_8, 4
 	
-	map_attributes LusterCityResidential, LUSTER_CITY_RESIDENTIAL, 71, EAST
-	connection east, LusterCityShopping, LUSTER_CITY_SHOPPING, 0, 0, 0
+	map_attributes LusterCityResidential, LUSTER_CITY_RESIDENTIAL, 113, EAST
+	connection east, LusterCityShopping, LUSTER_CITY_SHOPPING, 0
 	
-	map_attributes LusterCityShopping, LUSTER_CITY_SHOPPING, 71, WEST
-	connection west, LusterCityResidential, LUSTER_CITY_RESIDENTIAL, 0, 0, 0
+	map_attributes LusterCityShopping, LUSTER_CITY_SHOPPING, 113, WEST | EAST
+	connection west, LusterCityResidential, LUSTER_CITY_RESIDENTIAL, 0
+	connection east, LusterCityBusiness, LUSTER_CITY_BUSINESS, 12
+	
+	map_attributes LusterCityBusiness, LUSTER_CITY_BUSINESS, 113, WEST
+	connection west, LusterCityShopping, LUSTER_CITY_SHOPPING, -12
 	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0

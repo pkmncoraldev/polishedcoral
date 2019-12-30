@@ -168,5 +168,6 @@ MAP_NONE   EQU 0
 	newgroup													 ; 12
 	
 	map_const LUSTER_CITY_RESIDENTIAL,					  15, 36 ; 1
-	map_const LUSTER_CITY_SHOPPING,					      13, 36 ; 2
+	map_const LUSTER_CITY_SHOPPING,					      10, 36 ; 2
+	map_const LUSTER_CITY_BUSINESS,					      24, 24 ; 3
 	

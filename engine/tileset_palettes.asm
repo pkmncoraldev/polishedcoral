@@ -77,6 +77,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .spookhousetv
 	cp TILESET_TRAIN
 	jp z, .train
+	cp TILESET_LUSTER
+	jp z, .luster
 	jp .do_nothing
 	
 .checktent
@@ -131,6 +133,14 @@ LoadSpecialMapPalette: ; 494ac
 .train
 	ld hl, TrainPalette
 	jp LoadEightBGPalettes
+	
+.luster
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_CITY_BUSINESS
+	jr nz, .ranch
+	ld hl, OutsideLusterBusinessPalette
+	jp LoadEightTimeOfDayBGPalettes
+	
 	
 .do_nothing
 	and a
@@ -273,3 +283,6 @@ INCLUDE "maps/palettes/bgpals/bgsnowtent.pal"
 
 OutsideRanchPalette:
 INCLUDE "maps/palettes/bgpals/bgranch.pal"
+
+OutsideLusterBusinessPalette:
+INCLUDE "maps/palettes/bgpals/bglusterbusiness.pal"

@@ -127,6 +127,7 @@ SECTION "Luster City Scripts", ROMX
 
 INCLUDE "maps/LusterCityResidential.asm"
 INCLUDE "maps/LusterCityShopping.asm"
+INCLUDE "maps/LusterCityBusiness.asm"
 
 SECTION "Train Scripts", ROMX
 

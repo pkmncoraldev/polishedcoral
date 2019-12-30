@@ -161,6 +161,9 @@ LusterCityResidential_BlockData:
 LusterCityShopping_BlockData:
 	INCBIN "maps/LusterCityShopping.ablk.lz"
 	
+LusterCityBusiness_BlockData:
+	INCBIN "maps/LusterCityBusiness.ablk.lz"
+	
 SprucesLab_BlockData:
 	INCBIN "maps/SprucesLab.ablk.lz"
 	

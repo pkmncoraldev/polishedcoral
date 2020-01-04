@@ -47,7 +47,7 @@ SpookHouseHallwayGhost1:
 	special Special_StopRunning
 	applymovement SPOOKHOUSE_HALLWAY1_NPC1, Movement_SpookHouseGhost2
 	disappear SPOOKHOUSE_HALLWAY1_NPC1
-	wait 32
+	wait 16
 	setevent EVENT_SPOOKHOUSE_SAW_GHOST_2
 	dotrigger $1
 	end

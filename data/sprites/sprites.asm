@@ -141,3 +141,4 @@ SpriteHeaders:
 	overworld_sprite SittingPonytailGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite SittingPokeFanGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite SittingLadyGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite MallSignGFX, STANDING_SPRITE, PAL_OW_RED

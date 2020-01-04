@@ -40,6 +40,7 @@ INCLUDE "maps/Route5Gate.asm"
 INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route7.asm"
 INCLUDE "maps/Route9.asm"
+INCLUDE "maps/Route10.asm"
 
 
 SECTION "Sunset Bay Scripts", ROMX
@@ -122,6 +123,8 @@ INCLUDE "maps/FlickerSoundSpeechHouse.asm"
 INCLUDE "maps/FlickerNameSpeechHouse.asm"
 INCLUDE "maps/FlickerMart.asm"
 INCLUDE "maps/FlickerTrainStation.asm"
+INCLUDE "maps/FlickerTrainCutscene.asm"
+INCLUDE "maps/FlickerPassOutside.asm"
 
 SECTION "Luster City Scripts", ROMX
 

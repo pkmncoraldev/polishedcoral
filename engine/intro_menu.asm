@@ -1245,7 +1245,7 @@ TitleScreenEntrance: ; 62bc
 
 	ld hl, TitleScreenPalettes
 	ld de, wUnknBGPals
-	ld bc, 16 palettes
+	ld bc, 8 palettes
 	rst CopyBytes
 	
 	ld c, 30
@@ -1273,7 +1273,12 @@ TitleScreenEntrance: ; 62bc
 
 	ld hl, TitleScreenPalettes2
 	ld de, wUnknBGPals
-	ld bc, 16 palettes
+	ld bc, 8 palettes
+	rst CopyBytes
+	
+	ld hl, TitleScreenOBPalettes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
 	rst CopyBytes
 	
 	ld c, 6
@@ -1932,3 +1937,46 @@ TitleScreenPalettes2:
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 31, 31, 31
+	
+TitleScreenOBPalettes:
+;OB
+	RGB 00, 00, 00
+	RGB 23, 03, 06
+	RGB 30, 13, 21
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+

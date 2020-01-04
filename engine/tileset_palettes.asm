@@ -135,10 +135,7 @@ LoadSpecialMapPalette: ; 494ac
 	jp LoadEightBGPalettes
 	
 .luster
-	ld a, [wMapNumber]
-	cp MAP_LUSTER_CITY_BUSINESS
-	jr nz, .ranch
-	ld hl, OutsideLusterBusinessPalette
+	ld hl, OutsideLusterPalette
 	jp LoadEightTimeOfDayBGPalettes
 	
 	
@@ -284,5 +281,5 @@ INCLUDE "maps/palettes/bgpals/bgsnowtent.pal"
 OutsideRanchPalette:
 INCLUDE "maps/palettes/bgpals/bgranch.pal"
 
-OutsideLusterBusinessPalette:
-INCLUDE "maps/palettes/bgpals/bglusterbusiness.pal"
+OutsideLusterPalette:
+INCLUDE "maps/palettes/bgpals/bgluster.pal"

@@ -31,6 +31,8 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, Route9Name
 	landmark   0,   0, DodrioRanchName
 	landmark   0,   0, FlickerStationName
+	landmark   0,   0, FlickerPassName
+	landmark   0,   0, Route10Name
 	landmark   0,   0, LusterCityName
 
 
@@ -60,5 +62,7 @@ OldManorName:		   db "OLD MANOR@"
 Route9Name:			   db "ROUTE 9@"
 DodrioRanchName:	   db "DODRIO¯RANCH@"
 FlickerStationName:	   db "FLICKER¯STATION@"
+FlickerPassName:	   db "FLICKER¯PASS@"
+Route10Name:		   db "ROUTE 10@"
 LusterCityName:		   db "LUSTER¯CITY@"
 SpecialMapName:        db "?","@"

@@ -1,50 +1,51 @@
 FlickerStation_MapScriptHeader:
-	db 4 ; scene scripts
+	db 3 ; scene scripts
 	scene_script FlickerStationTrigger0
 	scene_script FlickerStationTrigger1
 	scene_script FlickerStationTrigger2
-	scene_script FlickerStationTrigger3
 
 	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, FlickerStationFlypointCallback
 	callback MAPCALLBACK_OBJECTS, FlickerStationGirlMove
 
 	db 7 ; warp events
-	warp_def 25, 39, 1, FLICKER_POKECENTER
-	warp_def 11, 37, 1, FLICKER_MART
-	warp_def 11, 45, 1, FLICKER_SOUND_SPEECH_HOUSE
-	warp_def 11, 55, 1, FLICKER_NAME_SPEECH_HOUSE
-	warp_def 25, 53, 1, FLICKER_TRAIN_STATION
-	warp_def 19, 61, 2, FLICKER_TRAIN_STATION
-	warp_def 20, 54, 3, FLICKER_TRAIN_STATION
+	warp_def 27, 37, 1, FLICKER_POKECENTER
+	warp_def 13, 35, 1, FLICKER_MART
+	warp_def 13, 43, 1, FLICKER_SOUND_SPEECH_HOUSE
+	warp_def 13, 53, 1, FLICKER_NAME_SPEECH_HOUSE
+	warp_def 27, 51, 1, FLICKER_TRAIN_STATION
+	warp_def 27, 52, 2, FLICKER_TRAIN_STATION
+	warp_def  5, 51, 1, ROUTE_10
+	
 
 	db 2 ; coord events
-	xy_trigger 0, 24,  9, 0, FlickerStation3Girls, 0, 0
-	xy_trigger 1, 24, 14, 0, FlickerStation3GirlsExtra, 0, 0
+	xy_trigger 0, 26,  9, 0, FlickerStation3Girls, 0, 0
+	xy_trigger 1, 26, 14, 0, FlickerStation3GirlsExtra, 0, 0
 
 	db 9 ; bg events
-	signpost 25, 40, SIGNPOST_READ, FlickerCenterSign
-	signpost 11, 38, SIGNPOST_READ, FlickerMartSign
-	signpost 31, 42, SIGNPOST_READ, FlickerSign
-	signpost 17, 22, SIGNPOST_UP, FlickerTrainDoor
-	signpost 17, 19, SIGNPOST_UP, FlickerTrainDoor
-	signpost 14, 23, SIGNPOST_UP, FlickerTrainDoor
-	signpost 14, 20, SIGNPOST_UP, FlickerTrainDoor
-	signpost 11, 22, SIGNPOST_UP, FlickerTrainDoor
-	signpost 11, 19, SIGNPOST_UP, FlickerTrainDoor
+	signpost 27, 38, SIGNPOST_READ, FlickerCenterSign
+	signpost 13, 36, SIGNPOST_READ, FlickerMartSign
+	signpost 33, 40, SIGNPOST_READ, FlickerSign
+	signpost 19, 20, SIGNPOST_UP, FlickerTrainDoor
+	signpost 19, 17, SIGNPOST_UP, FlickerTrainDoor
+	signpost 16, 21, SIGNPOST_UP, FlickerTrainDoor
+	signpost 16, 18, SIGNPOST_UP, FlickerTrainDoor
+	signpost 13, 20, SIGNPOST_UP, FlickerTrainDoor
+	signpost 13, 17, SIGNPOST_UP, FlickerTrainDoor
 
 	db 12 ; object events
-	person_event SPRITE_FAT_GUY, 26, 56, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC1, -1
-	person_event SPRITE_COOLTRAINER_F, 28, 45, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationNPC2, -1
-	person_event SPRITE_BUG_CATCHER, 14, 51, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC3, -1
-	person_event SPRITE_SCHOOLGIRL, 14, 52, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC4, -1
-	person_event SPRITE_YOUNGSTER, 12, 40, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, FlickerStationNPC5, -1
-	person_event SPRITE_COOL_DUDE, 31, 57, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, FlickerStationNPC6, -1
-	person_event SPRITE_DELINQUENT_F, 22,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationGirl1, -1
-	person_event SPRITE_DELINQUENT_F, 24,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationGirl2, -1
-	person_event SPRITE_DELINQUENT_F, 27,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationGirl3, -1
-	person_event SPRITE_OFFICER, 20, 55, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	tmhmball_event  7, 26, TM_THUNDERPUNCH, 1, EVENT_FLICKER_STATION_
+	person_event SPRITE_FAT_GUY, 28, 54, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC1, -1
+	person_event SPRITE_COOLTRAINER_F, 30, 43, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationNPC2, -1
+	person_event SPRITE_CHILD, 16, 49, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC3, -1
+	person_event SPRITE_SCHOOLGIRL, 16, 50, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC4, -1
+	person_event SPRITE_YOUNGSTER, 14, 38, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, FlickerStationNPC5, -1
+	person_event SPRITE_COOL_DUDE, 33, 55, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, FlickerStationNPC6, -1
+	person_event SPRITE_HIKER, 11, 48, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC7, -1
+	person_event SPRITE_DELINQUENT_F, 24,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationGirl1, -1
+	person_event SPRITE_DELINQUENT_F, 26,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationGirl2, -1
+	person_event SPRITE_DELINQUENT_F, 29,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationGirl3, -1
+	tmhmball_event  7, 28, TM_THUNDERPUNCH, 1, EVENT_FLICKER_STATION_
+	itemball_event 41,  8, POTION, 1, EVENT_FLICKER_STATION_POKEBALL
 
 
 	const_def 1 ; object constants
@@ -54,10 +55,10 @@ FlickerStation_MapScriptHeader:
 	const FLICKER_STATION_NPC4
 	const FLICKER_STATION_NPC5
 	const FLICKER_STATION_NPC6
+	const FLICKER_STATION_NPC7
 	const FLICKER_STATION_TRAINER1
 	const FLICKER_STATION_TRAINER2
 	const FLICKER_STATION_TRAINER3
-	const FLICKER_STATION_OFFICER
 	
 FlickerStationTrigger0:
 	end
@@ -66,47 +67,6 @@ FlickerStationTrigger1:
 	end
 	
 FlickerStationTrigger2:
-	end
-	
-FlickerStationTrigger3:
-	applymovement PLAYER, Movement_FlickerStation3Girls2
-	playsound SFX_ENTER_DOOR
-	applyonemovement PLAYER, hide_person
-	waitsfx
-	applymovement FLICKER_STATION_OFFICER, Movement_FlickerStationOfficer
-	spriteface FLICKER_STATION_OFFICER, DOWN
-	opentext
-	writetext FlickerStationAllAboardText
-	waitbutton
-	closetext
-	applyonemovement FLICKER_STATION_OFFICER, step_up
-	playsound SFX_ENTER_DOOR
-	applyonemovement FLICKER_STATION_OFFICER, hide_person
-	waitsfx
-	pause 20
-	special Special_FadeOutMusic
-	pause 20	
-	applymovement PLAYER, Movement_FlickerStationTrainCamera
-	pause 20
-	spriteface FLICKER_STATION_NPC3, RIGHT
-	pause 10
-	spriteface FLICKER_STATION_NPC4, LEFT
-	playmusic MUSIC_TRAIN_STARTUP
-	pause 10
-	spriteface FLICKER_STATION_NPC3, DOWN
-	pause 10
-	spriteface FLICKER_STATION_NPC4, DOWN
-	callasm FlickerStationTrainThing
-	pause 20
-	earthquake 5
-	pause 5
-	applymovement PLAYER, Movement_FlickerStationTrainLeaves
-	playsound SFX_EXIT_BUILDING
-	special FadeOutPalettes
-	waitsfx
-	dotrigger $2
-	callasm FlickerStationPlayerSeatAsm
-	warpfacing LEFT, EAST_TRAIN_CABIN_1, $7, $2
 	end
 	
 FlickerStationPlayerSeatAsm:
@@ -223,6 +183,7 @@ FlickerSign:
 	jumptext FlickerSignText
 	
 FlickerCenterSign:
+	playsound SFX_READ_TEXT
 	jumpstd pokecentersign
 
 FlickerMartSign:
@@ -284,6 +245,9 @@ FlickerStationNPC5:
 	
 FlickerStationNPC6:
 	jumptextfaceplayer FlickerStationNPC6Text
+	
+FlickerStationNPC7:
+	jumptextfaceplayer FlickerStationNPC7Text
 	
 FlickerTrainDoorText:
 	text "It's shut tight."
@@ -357,6 +321,16 @@ FlickerStationNPC5Text:
 	
 	para "I just want to go"
 	line "to the city!"
+	done
+	
+FlickerStationNPC7Text:
+	text "That cave leads"
+	line "up higher in the"
+	cont "mountains."
+	
+	para "It gets pretty"
+	line "chilly up there,"
+	cont "so be prepared."
 	done
 	
 FlickerStationAllAboardText:

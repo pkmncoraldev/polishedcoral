@@ -818,6 +818,8 @@ LoadMapPals:
 	jp z, .starglow
 	cp TILESET_RANCH
 	jp z, .ranch
+	cp TILESET_LUSTER
+	jp z, .luster
 	ld a, [wMapGroup]
 	cp GROUP_LAKE_ONWA
 	jr z, .rockscheck
@@ -887,6 +889,18 @@ LoadMapPals:
 	and 3
 	ld bc, 8 palettes
 	ld hl, MapObjectPalsRanch
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	jp .outside
+	
+.luster
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPalsLuster
 	call AddNTimes
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
@@ -1077,22 +1091,25 @@ INCLUDE "maps/palettes/obpals/obumbrella.pal"
 MapObjectPalsStarglow::
 INCLUDE "maps/palettes/obpals/obstarglow.pal"
 
-MapObjectPalsRanch:
+MapObjectPalsRanch::
 INCLUDE "maps/palettes/obpals/obranch.pal"
 
-MapObjectPalsSnow:
+MapObjectPalsSnow::
 INCLUDE "maps/palettes/obpals/obsnow.pal"
 
-MapObjectPalsSnowFire:
+MapObjectPalsSnowFire::
 INCLUDE "maps/palettes/obpals/obsnowfire.pal"
 
-MapObjectPalsSailboat:
+MapObjectPalsSailboat::
 INCLUDE "maps/palettes/obpals/obsailboat.pal"
 
-RoofPals:
+MapObjectPalsLuster::
+INCLUDE "maps/palettes/obpals/obluster.pal"
+
+RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"
 
-RoofPalsDusk:
+RoofPalsDusk::
 INCLUDE "maps/palettes/roofpals/roofdusk.pal"
 
 

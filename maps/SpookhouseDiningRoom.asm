@@ -31,7 +31,7 @@ FloatBall:
 	playsound SFX_SHARPEN
 	checkevent EVENT_SPOOKHOUSE_BALL_WILL_MOVE_LEFT
 	iftrue .left
-	applyonemovement SPOOKHOUSE_FLOATBALL, slow_jump_step_right
+	applymovement SPOOKHOUSE_FLOATBALL, Movement_SpookHouseFloatRight
 	opentext
 	writetext SpookHouseBallFloatText
 	waitbutton
@@ -40,7 +40,7 @@ FloatBall:
 	end
 	
 .left:
-	applyonemovement SPOOKHOUSE_FLOATBALL, slow_jump_step_left
+	applymovement SPOOKHOUSE_FLOATBALL, Movement_SpookHouseFloatLeft
 	opentext
 	writetext SpookHouseBallFloatText
 	waitbutton
@@ -82,3 +82,19 @@ SpookHouseRottonFoodText:
 	para "A plate of rotten"
 	line "food!"
 	done
+	
+Movement_SpookHouseFloatLeft:
+	fix_facing
+	set_sliding
+	slow_jump_step_left
+	remove_sliding
+	remove_fixed_facing
+	step_end
+	
+Movement_SpookHouseFloatRight:
+	fix_facing
+	set_sliding
+	slow_jump_step_right
+	remove_sliding
+	remove_fixed_facing
+	step_end

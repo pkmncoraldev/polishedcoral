@@ -957,9 +957,10 @@ wSpookhouseTVRoomTrigger:: ds 1
 wRoute9Trigger:: ds 1
 wDodrioRanchRaceTrackTrigger:: ds 1
 wFlickerStationTrigger:: ds 1
+wFlickerTrainCutsceneTrigger:: ds 1
 wEastTrainCabin1Trigger:: ds 1
 wEastTrainCabooseTrigger:: ds 1
-ds 57
+ds 56
 
 ; fight counts
 wJackFightCount::    ds 1

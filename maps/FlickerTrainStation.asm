@@ -6,7 +6,7 @@ FlickerTrainStation_MapScriptHeader:
 	db 3 ; warp events
 	warp_event  7, 11, FLICKER_STATION, 5
 	warp_event  8, 11, FLICKER_STATION, 6
-	warp_event  8,  1, FLICKER_STATION, 7
+	warp_event  8,  1, FLICKER_TRAIN_CUTSCENE, 1
 
 	db 0 ; coord events
 
@@ -51,7 +51,7 @@ FlickerTrainStationClerk:
 	waitbutton
 	closetext
 	applyonemovement PLAYER, step_up
-	domaptrigger FLICKER_STATION, $3
+	domaptrigger FLICKER_TRAIN_CUTSCENE, $1
 	warpcheck
 	end
 .end

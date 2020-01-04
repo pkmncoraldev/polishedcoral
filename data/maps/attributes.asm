@@ -143,10 +143,16 @@ ENDM
 	connection west, LakeOnwa, LAKE_ONWA, -11
 	
 	map_attributes Route9, ROUTE_9, 5, NORTH
-	connection north, FlickerStation, FLICKER_STATION, -12
+	connection north, FlickerStation, FLICKER_STATION, -11
+	
+	map_attributes Route10, ROUTE_10, 5, 0
 
-	map_attributes FlickerStation, FLICKER_STATION, 5, SOUTH
-	connection south, Route9, ROUTE_9, 12
+	map_attributes FlickerStation, FLICKER_STATION, 5, NORTH | SOUTH
+	connection north, FlickerPassOutside, FLICKER_PASS_OUTSIDE, 21
+	connection south, Route9, ROUTE_9, 11
+	
+	map_attributes FlickerPassOutside, FLICKER_PASS_OUTSIDE, 113, SOUTH
+	connection south, FlickerStation, FLICKER_STATION, -21
 	
 	map_attributes LakeOnwa, LAKE_ONWA, 7, NORTH | EAST
 	connection north, Route1, ROUTE_1, 0
@@ -220,10 +226,10 @@ ENDM
 	
 	map_attributes LusterCityShopping, LUSTER_CITY_SHOPPING, 113, WEST | EAST
 	connection west, LusterCityResidential, LUSTER_CITY_RESIDENTIAL, 0
-	connection east, LusterCityBusiness, LUSTER_CITY_BUSINESS, 12
+	connection east, LusterCityBusiness, LUSTER_CITY_BUSINESS, 6
 	
 	map_attributes LusterCityBusiness, LUSTER_CITY_BUSINESS, 113, WEST
-	connection west, LusterCityShopping, LUSTER_CITY_SHOPPING, -12
+	connection west, LusterCityShopping, LUSTER_CITY_SHOPPING, -6
 	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0
@@ -300,6 +306,7 @@ ENDM
 	map_attributes FlickerPokeCenter, FLICKER_POKECENTER, 0, 0
 	map_attributes FlickerMart, FLICKER_MART, 0, 0
 	map_attributes FlickerTrainStation, FLICKER_TRAIN_STATION, 0, 0
+	map_attributes FlickerTrainCutscene, FLICKER_TRAIN_CUTSCENE, 0, 0
 	map_attributes EastTrainCabin1, EAST_TRAIN_CABIN_1, 0, 0
 	map_attributes EastTrainCabin2, EAST_TRAIN_CABIN_2, 0, 0
 	map_attributes EastTrainCabin3, EAST_TRAIN_CABIN_3, 0, 0

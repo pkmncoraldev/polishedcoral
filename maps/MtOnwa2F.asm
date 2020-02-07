@@ -28,9 +28,8 @@ TrainerMtOnwa2_1:
 .SeenText:
 	text "It's really hard"
 	line "juggling work,"
-	
-	para "responsibilities,"
-	line "and #MON train-"
+	cont "responsibilities,"
+	cont "and #MON train-"
 	cont "ing."
 	
 	para "It gets exhausting"

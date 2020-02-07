@@ -53,19 +53,19 @@
 	RGB 09, 09, 00
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-;11 - Train
-	RGB 14, 15, 01
-	RGB 09, 09, 00
+;11 - Starshine
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-;12 - Luster City
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+;12 - Train
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+;13 - Luster City
 	RGB 19, 16, 11
 	RGB 14, 12, 10
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-;13
-	RGB 00, 00, 00
-	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 ;14

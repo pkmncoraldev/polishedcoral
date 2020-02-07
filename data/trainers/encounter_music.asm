@@ -2,6 +2,7 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_NONE
 	db MUSIC_NONE			 		; playerm
 	db MUSIC_NONE			 		; playerf
+	db MUSIC_NONE			 		; playerp
 	db MUSIC_NONE					; stanley
 	db MUSIC_NONE					; rodney
 	db MUSIC_NONE					; leilani

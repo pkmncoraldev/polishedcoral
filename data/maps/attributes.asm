@@ -145,7 +145,12 @@ ENDM
 	map_attributes Route9, ROUTE_9, 5, NORTH
 	connection north, FlickerStation, FLICKER_STATION, -11
 	
-	map_attributes Route10, ROUTE_10, 5, 0
+	map_attributes Route10, ROUTE_10, 5, NORTH | EAST
+	connection north, TwinkleTown, TWINKLE_TOWN, 4
+	connection east, Route10East, ROUTE_10_EAST, -1
+	
+	map_attributes Route10East, ROUTE_10_EAST, 5, WEST
+	connection west, Route10, ROUTE_10, 1
 
 	map_attributes FlickerStation, FLICKER_STATION, 5, NORTH | SOUTH
 	connection north, FlickerPassOutside, FLICKER_PASS_OUTSIDE, 21
@@ -221,6 +226,9 @@ ENDM
 	map_attributes OldManorExterior, OLD_MANOR_EXTERIOR, 92, SOUTH
 	connection south, SpookyForest8, SPOOKY_FOREST_8, 4
 	
+	map_attributes TwinkleTown, TWINKLE_TOWN, 5, SOUTH
+	connection south, Route10, ROUTE_10, -4
+	
 	map_attributes LusterCityResidential, LUSTER_CITY_RESIDENTIAL, 113, EAST
 	connection east, LusterCityShopping, LUSTER_CITY_SHOPPING, 0
 	
@@ -244,6 +252,8 @@ ENDM
 	map_attributes MtOnwaB3F, MT_ONWA_B3F, $09, 0
 	map_attributes MtOnwaCliff, MT_ONWA_CLIFF, $00, 0
 	map_attributes MtOnwaLowerCliff, MT_ONWA_LOWER_CLIFF, $00, 0
+	map_attributes FlickerPass1F, FLICKER_PASS_1F, $9, 0
+	map_attributes FlickerPass2F, FLICKER_PASS_2F, $9, 0
 	
 	map_attributes SunsetPokeCenter, SUNSET_POKECENTER, $0, 0
 	map_attributes SunsetLighthouse, SUNSET_LIGHTHOUSE, $0, 0
@@ -307,6 +317,7 @@ ENDM
 	map_attributes FlickerMart, FLICKER_MART, 0, 0
 	map_attributes FlickerTrainStation, FLICKER_TRAIN_STATION, 0, 0
 	map_attributes FlickerTrainCutscene, FLICKER_TRAIN_CUTSCENE, 0, 0
+	map_attributes Route10Tent, ROUTE_10_TENT, 0, 0
 	map_attributes EastTrainCabin1, EAST_TRAIN_CABIN_1, 0, 0
 	map_attributes EastTrainCabin2, EAST_TRAIN_CABIN_2, 0, 0
 	map_attributes EastTrainCabin3, EAST_TRAIN_CABIN_3, 0, 0

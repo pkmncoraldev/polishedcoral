@@ -22,10 +22,10 @@ SpriteMons:
 	db NIDORAN_F
 	db ABRA ; LOPUNNY
 	db ABRA ; ALTARIA
+	db MAGMAR
+	db ELECTABUZZ
 	db DODRIO
 	db PIKACHU
-	db ABRA
-	db ABRA
 	db ABRA
 	db ABRA
 	db ABRA

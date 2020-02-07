@@ -144,6 +144,8 @@ NextOverworldFrame:
 	ret
 
 HandleMapTimeAndJoypad: ; 967c1
+	farcall OWFadePalettesStep
+
 	ld a, [wMapEventStatus]
 	cp 1 ; no events
 	ret z
@@ -507,6 +509,8 @@ PlayTalkObject: ; 969ac
 	jr z, .nope
 	cp SPRITEMOVEDATA_SAILBOAT_BOTTOM
 	jr z, .nope
+	cp SPRITEMOVEDATA_SMASHABLE_ROCK
+	jr z, .nope
 	push de
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX
@@ -515,6 +519,7 @@ PlayTalkObject: ; 969ac
 	ld c, 3
 	call SFXDelayFrames
 	pop bc
+	ret
 .nope
 	ret
 ; 969b5
@@ -1008,6 +1013,7 @@ DoRepelStep: ; 96bd7
 ; 96beb
 
 RepelWoreOffScript: ; 0x13619
+	special Special_StopRunning
 	thistext
 
 	; REPEL's effect wore off.
@@ -1195,19 +1201,19 @@ CheckFacingTileEvent: ; 97c5f
 
 .whirlpool
 	farcall TryWhirlpoolOW
-	jr .done
+	jr c, .done
 
 .waterfall
 	farcall TryWaterfallOW
-	jr .done
+	jr c, .done
 
 .headbutt
 	farcall TryHeadbuttOW
-	jr .done
+	jr c, .done
 	
 .dodriojump
 	farcall TryDodrioJumpOW
-	jr .done2
+	jr c, .done2
 	
 .dodriojump2
 	farcall TryDodrioJump2OW

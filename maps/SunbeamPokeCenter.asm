@@ -43,9 +43,8 @@ SunbeamPokecenterNPC3:
 SunbeamPokecenterNPC1Text:
 	text "CORSOLA used to"
 	line "gather near the"
-	
-	para "beach on the WEST"
-	line "of the island."
+	cont "beach on the WEST"
+	cont "of the island."
 	
 	para "You don't see them"
 	line "very much anymore."

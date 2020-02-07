@@ -164,9 +164,8 @@ TrainerStarglowGym_1:
 .SeenText:
 	text "RODNEY is the best"
 	line "fisherman the"
-	
-	para "world has ever"
-	line "seen!"
+	cont "world has ever"
+	cont "seen!"
 	
 	para "If he deemed you"
 	line "worthy, you must"
@@ -188,9 +187,8 @@ TrainerStarglowGym_2:
 .SeenText:
 	text "Did you know that"
 	line "WATER TYPE is the"
-	
-	para "most common #-"
-	line "MON TYPE?"
+	cont "most common #-"
+	cont "MON TYPE?"
 	
 	para "That doesn't mean"
 	line "they're weak!"
@@ -205,9 +203,8 @@ TrainerStarglowGym_3:
 
 	text "As well as train-"
 	line "ing, I also get my"
-	
-	para "fishing supplies"
-	line "here."
+	cont "fishing supplies"
+	cont "here."
 	done
 
 .SeenText:
@@ -216,9 +213,8 @@ TrainerStarglowGym_3:
 	
 	para "it only makes"
 	line "sense for the GYM"
-	
-	para "to be a tackle"
-	line "shop!"
+	cont "to be a tackle"
+	cont "shop!"
 	done
 
 .BeatenText:
@@ -380,10 +376,10 @@ StarglowGymTrainer2RematchRegularText:
 
 StarglowGymTrainer2RematchSeenText:
 	text "WATER TYPES are"
-	line "very common, but"
+	line "very common,"
 	
-	para "I won't give up"
-	line "on mine!"
+	para "but I won't give"
+	line "up on mine!"
 	done
 
 StarglowGymTrainer2RematchBeatenText:
@@ -528,9 +524,8 @@ StarglowGymTrainer4RematchRegularText:
 StarglowGymTrainer4RematchSeenText:
 	text "You have to beat"
 	line "everyone to get"
-	
-	para "another shot at"
-	line "the GYM LEADER!"
+	cont "another shot at"
+	cont "the GYM LEADER!"
 	done
 
 StarglowGymTrainer4RematchBeatenText:
@@ -557,21 +552,18 @@ StarglowGymRodneyTextBeforeBattle:
 	
 	para "My grandfather was"
 	line "the founder of"
-	
-	para "this little fish-"
-	line "ing town!"
+	cont "this little fish-"
+	cont "ing town!"
 	
 	para "He trained me to"
 	line "become the master"
-	
-	para "fisherman you see"
-	line "before you."
+	cont "fisherman you see"
+	cont "before you."
 	
 	para "I, in turn, use"
 	line "those skills train"
-	
-	para "my own WATER-type"
-	line "#MON!"
+	cont "my own WATER-type"
+	cont "#MON!"
 	
 	para "Let me show you"
 	line "the raw power of"
@@ -615,9 +607,8 @@ StarglowGymRodneyTextAfterBattle:
 	
 	para "It also allows"
 	line "your #MON to"
-	
-	para "use the move CUT"
-	line "outside of battle."
+	cont "use the move CUT"
+	cont "outside of battle."
 	
 	para "You should also"
 	line "take this."
@@ -629,9 +620,8 @@ StarglowGymRodneyTextTMSpeech:
 	
 	para "Using it, your"
 	line "#MON can summon"
-	
-	para "a downpour at any"
-	line "time!"
+	cont "a downpour at any"
+	cont "time!"
 	
 	para "WATER-type moves"
 	line "are boosted in the"
@@ -643,9 +633,8 @@ StarglowGymRodneyTextTMSpeech:
 	
 	para "When I was young,"
 	line "my grandfather"
-	
-	para "always told me to"
-	line "push myself and"
+	cont "always told me to"
+	cont "push myself and"
 	cont "reach for the"
 	cont "stars."
 	
@@ -664,9 +653,8 @@ StarglowGymRodneyTextTMSpeech:
 StarglowGymRodneyTextLoop:
 	text "When I was young,"
 	line "my grandfather"
-	
-	para "always told me to"
-	line "push myself and"
+	cont "always told me to"
+	cont "push myself and"
 	cont "reach for the"
 	cont "stars."
 	
@@ -701,9 +689,8 @@ StarglowGymGuyText:
 	
 	para "Hit 'em with an"
 	line "ELECTRIC or GRASS"
-	
-	para "TYPE move to take"
-	line "'em out easily."
+	cont "TYPE move to take"
+	cont "'em out easily."
 	
 	para "You won't get very"
 	line "far with a FIRE or"

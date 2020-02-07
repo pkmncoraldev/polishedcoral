@@ -528,7 +528,17 @@ UsedSurfScript: ; c986
 
 	setflag ENGINE_AUTOSURF_ACTIVE
 	scall FieldMovePokepicScript
+	jump AutoSurfScript
 
+UsedLavaSurfScript: ; c986
+	callasm PrepareOverworldMove
+	writetext UsedLavaSurfText
+	waitbutton
+	closetext
+
+	setflag ENGINE_AUTOSURF_ACTIVE
+	scall FieldMovePokepicScript
+	
 AutoSurfScript:
 	playsound SFX_READ_TEXT
 	copybytetovar wBuffer2
@@ -545,6 +555,10 @@ UsedSurfText: ; c9a9
 	text_jump _UsedSurfText
 	db "@"
 
+UsedLavaSurfText: ; c9a9
+	text_jump _UsedLavaSurfText
+	db "@"
+	
 CantSurfText: ; c9ae
 	text_jump _CantSurfText
 	db "@"
@@ -608,9 +622,9 @@ TrySurfOW:: ; c9e7
 ; Don't ask to surf if already fail.
 	ld a, [wPlayerState]
 	cp PLAYER_SURF_PIKA
-	jr z, .quit
+	jp z, .quit
 	cp PLAYER_SURF
-	jr z, .quit
+	jp z, .quit
 
 ; Must be facing water.
 	ld a, [wEngineBuffer1]
@@ -626,6 +640,10 @@ TrySurfOW:: ; c9e7
 ;	call CheckEngineFlag
 ;	jr c, .quit
 
+	ld a, [wMapMusic]
+	cp MUSIC_LAVA
+	jr z, .lava
+
 	ld d, SURF
 ;	call CheckPartyMove
 	call CheckPartyCanLearnMove
@@ -638,7 +656,7 @@ TrySurfOW:: ; c9e7
 	call GetSurfType
 	ld [wBuffer2], a
 	call GetPartyNick
-
+	
 	ld a, BANK(AskSurfScript)
 	ld hl, AskSurfScript
 	call CallScript
@@ -646,10 +664,68 @@ TrySurfOW:: ; c9e7
 	scf
 	ret
 
+.lava
+	ld e, 0
+    xor a
+    ld [wCurPartyMon], a
+.loop
+    ld c, e
+    ld b, 0
+    ld hl, wPartySpecies
+    add hl, bc
+    ld a, [hl]
+    and a
+    jr z, .quit
+    cp a, -1
+    jr z, .quit
+;	CheckFireType:
+	dec a
+    ld hl, BaseData + 7
+    ld bc, BaseData1 - BaseData0
+    call AddNTimes
+    ld a, BANK(BaseData)
+    call GetFarHalfword
+    ld a, FIRE
+    cp h
+    jr z, .cont
+    cp l
+    jr z, .cont
+	
+.next
+	inc e
+	jr .loop
+.no
+	scf
+	ret
+
+.cont
+	ld a, e
+	ld [wCurPartyMon], a
+	xor a
+
+	ld hl, wOWState
+	bit OWSTATE_BIKING_FORCED, [hl]
+	jr nz, .quit
+
+	call GetSurfType
+	ld [wBuffer2], a
+	call GetPartyNick
+
+	ld a, BANK(AskLavaSurfScript)
+	ld hl, AskLavaSurfScript
+	call CallScript
+
+	scf
+	ret
+	
 .quit
 	xor a
 	ret
 
+.cantsurflavayet
+	scf
+	ret
+	
 AskSurfScript: ; ca2c
 	checkflag ENGINE_AUTOSURF_ACTIVE
 	iftrue AutoSurfScript
@@ -662,6 +738,19 @@ AskSurfScript: ; ca2c
 AskSurfText: ; ca36
 	text_jump _AskSurfText ; The water is calm.
 	db "@"              ; Want to SURF?
+	
+AskLavaSurfScript: ; ca2c
+	checkflag ENGINE_AUTOSURF_ACTIVE
+	iftrue AutoSurfScript
+	opentext
+	writetext AskLavaSurfText
+	yesorno
+	iftrue UsedLavaSurfScript
+	endtext
+
+AskLavaSurfText: ; ca36
+	text_jump _AskLavaSurfText ; The lava is bubbling.
+	db "@"              ; Want to ride?
 
 CheckFlyAllowedOnMap:
 ; returns z is fly is allowed
@@ -1671,6 +1760,7 @@ AskRockSmashScript: ; 0xcf5d
 	callasm HasRockSmash
 	ifequal 1, .no
 
+	playsound SFX_READ_TEXT_2
 	checkflag ENGINE_ROCK_SMASH_ACTIVE
 	iftrue AutoRockSmashScript
 	opentext
@@ -1679,7 +1769,7 @@ AskRockSmashScript: ; 0xcf5d
 	iftrue RockSmashScript
 	endtext
 .no
-	jumptext UnknownText_0xcf72
+	end
 
 UnknownText_0xcf72: ; 0xcf72
 	; Maybe a #MON can break this.

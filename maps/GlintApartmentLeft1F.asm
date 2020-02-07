@@ -55,18 +55,16 @@ GlintApt11FNpc2:
 GlintApt11FNpc1Text:
 	text "Moves are more"
 	line "powerful if used"
-	
-	para "by a #MON that"
-	line "is the same type."
+	cont "by a #MON that"
+	cont "is the same type."
 	
 	para "For example,"
-	line "a FIGHTING TYPE"
 	
-	para "move will be"
-	line "stronger if used"
-	
-	para "by a FIGHTING TYPE"
-	line "#MON!"
+	para "a FIGHTING TYPE"
+	line "move will be"
+	cont "stronger if used"
+	cont "by a FIGHTING TYPE"
+	cont "#MON!"
 	done
 	
 GlintApt11FNpc2Text1:
@@ -90,35 +88,32 @@ GlintApt11FNpc2Text2:
 	text "That's an HM."
 	
 	para "That's short for"
-	line "Hidden Machine."
+	line "HIDDEN MACHINE."
 	
 	para "HMs teach your"
 	line "#MON new moves."
 	
 	para "You can also"
 	line "use HMs outside of"
-	
-	para "battle to reach"
-	line "new areas if you"
-	
-	para "have the right"
-	line "GYM BADGE."
+	cont "battle to reach"
+	cont "new areas if you"
+	cont "have the right"
+	cont "GYM BADGE."
 	
 	para "Your #MON"
 	line "doesn't even need"
-	
-	para "to learn the move"
-	line "to use it outside"
+	cont "to learn the move"
+	cont "to use it outside"
 	cont "of battle."
 	
 	para "That HM teachs the"
 	line "move ROCK SMASH."
 	
 	para "It's a FIGHTING"
-	line "TYPE move, so it"
+	line "TYPE move,"
 	
-	para "might come in"
-	line "handy against"
+	para "so it might come"
+	line "in handy against"
 	cont "NORMAL TYPE"
 	cont "#MON."
 	
@@ -132,13 +127,12 @@ GlintApt11FNpc2Text3:
 	line "move ROCK SMASH."
 	
 	para "It's a FIGHTING"
-	line "TYPE move, so it"
+	line "TYPE move,"
 	
-	para "might come in"
-	line "handy against"
-	
-	para "NORMAL TYPE"
-	line "#MON."
+	para "so it might come"
+	line "in handy against"
+	cont "NORMAL TYPE"
+	cont "#MON."
 	
 	para "Now get out there"
 	line "and prove yourself"

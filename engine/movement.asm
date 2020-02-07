@@ -89,14 +89,14 @@ MovementPointers:
 	dw Movement_rock_smash            ; 57
 	dw Movement_return_dig            ; 58
 	dw Movement_skyfall_top           ; 59
-	dw Movement_playerwalk_step_down  ; 5a
-	dw Movement_playerwalk_step_up    ; 5b
-	dw Movement_playerwalk_step_left  ; 5c
-	dw Movement_playerwalk_step_right ; 5d
-	dw Movement_playerrun_step_down   ; 5e
-	dw Movement_playerrun_step_up     ; 5f
-	dw Movement_playerrun_step_left   ; 60
-	dw Movement_playerrun_step_right  ; 61
+	dw Movement_player_walk_step_down ; 5a
+	dw Movement_player_walk_step_up   ; 5b
+	dw Movement_player_walk_step_left ; 5c
+	dw Movement_player_walk_step_right; 5d
+	dw Movement_player_run_step_down  ; 5e
+	dw Movement_player_run_step_up    ; 5f
+	dw Movement_player_run_step_left  ; 60
+	dw Movement_player_run_step_right ; 61
 	dw Movement_run_step_down         ; 62
 	dw Movement_run_step_up           ; 63
 	dw Movement_run_step_left         ; 64
@@ -105,6 +105,14 @@ MovementPointers:
 	dw Movement_fast_step_up          ; 67
 	dw Movement_fast_step_left        ; 68
 	dw Movement_fast_step_right       ; 69
+	dw Movement_pippi_run_step_down   ; 6a
+	dw Movement_pippi_run_step_up     ; 6b
+	dw Movement_pippi_run_step_left   ; 6c
+	dw Movement_pippi_run_step_right  ; 6d
+	dw Movement_pippi_fast_step_down  ; 6f
+	dw Movement_pippi_fast_step_up    ; 70
+	dw Movement_pippi_fast_step_left  ; 71
+	dw Movement_pippi_fast_step_right ; 72
 
 Movement_teleport_from: ; 5129
 	ld hl, OBJECT_STEP_TYPE
@@ -457,15 +465,15 @@ TurnHead: ; 52ee
 
 Movement_slow_step_down:
 	ld a, STEP_SLOW << 2 | DOWN
-	jr Movement_do_step
+	jp Movement_do_step
 
 Movement_slow_step_up:
 	ld a, STEP_SLOW << 2 | UP
-	jr Movement_do_step
+	jp Movement_do_step
 
 Movement_slow_step_left:
 	ld a, STEP_SLOW << 2 | LEFT
-	jr Movement_do_step
+	jp Movement_do_step
 
 Movement_slow_step_right:
 	ld a, STEP_SLOW << 2 | RIGHT
@@ -503,6 +511,58 @@ Movement_fast_step_right:
 	ld a, STEP_RUN << 2 | RIGHT
 	jr Movement_do_step
 
+Movement_pippi_run_step_down:
+	push bc
+	ld a, PLAYER_RUN
+	ld [wPlayerState], a
+	call ReplaceKrisSprite ; UpdateSprites
+	pop bc
+	ld a, STEP_RUN << 2 | DOWN  ; STEP_RUN
+	jp Movement_do_run
+
+Movement_pippi_run_step_up:
+	push bc
+	ld a, PLAYER_RUN
+	ld [wPlayerState], a
+	call ReplaceKrisSprite ; UpdateSprites
+	pop bc
+	ld a, STEP_RUN << 2 | UP    ; STEP_RUN
+	jp Movement_do_run
+
+Movement_pippi_run_step_left:
+	push bc
+	ld a, PLAYER_RUN
+	ld [wPlayerState], a
+	call ReplaceKrisSprite ; UpdateSprites
+	pop bc
+	ld a, STEP_RUN << 2 | LEFT  ; STEP_RUN
+	jp Movement_do_run
+
+Movement_pippi_run_step_right:
+	push bc
+	ld a, PLAYER_RUN
+	ld [wPlayerState], a
+	call ReplaceKrisSprite ; UpdateSprites
+	pop bc
+	ld a, STEP_RUN << 2 | RIGHT ; STEP_RUN
+	jp Movement_do_run
+	
+Movement_pippi_fast_step_down:
+	ld a, STEP_BIKE << 2 | DOWN
+	jp Movement_do_run
+	
+Movement_pippi_fast_step_up:
+	ld a, STEP_BIKE << 2 | UP
+	jp Movement_do_run
+	
+Movement_pippi_fast_step_left:
+	ld a, STEP_BIKE << 2 | LEFT
+	jp Movement_do_run
+	
+Movement_pippi_fast_step_right:
+	ld a, STEP_BIKE << 2 | RIGHT
+	jp Movement_do_run
+	
 Movement_big_step_down:
 	ld a, STEP_BIKE << 2 | DOWN
 	jr Movement_do_step
@@ -522,43 +582,59 @@ Movement_do_step:
 Movement_normal_step:
 	jp NormalStep
 
-Movement_playerwalk_step_down:
+Movement_player_walk_step_down:
 	push bc
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .skip
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite ; UpdateSprites
+.skip
 	pop bc
 	ld a, STEP_WALK << 2 | DOWN
 	jp Movement_do_step
 
-Movement_playerwalk_step_up:
+Movement_player_walk_step_up:
 	push bc
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .skip
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite ; UpdateSprites
+.skip
 	pop bc
 	ld a, STEP_WALK << 2 | UP
 	jp Movement_do_step
 
-Movement_playerwalk_step_left:
+Movement_player_walk_step_left:
 	push bc
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .skip
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite ; UpdateSprites
+.skip
 	pop bc
 	ld a, STEP_WALK << 2 | LEFT
 	jp Movement_do_step
 
-Movement_playerwalk_step_right:
+Movement_player_walk_step_right:
 	push bc
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .skip
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite ; UpdateSprites
+.skip
 	pop bc
 	ld a, STEP_WALK << 2 | RIGHT
 	jp Movement_do_step
 	
-Movement_playerrun_step_down:
+Movement_player_run_step_down:
 	push bc
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
@@ -567,7 +643,7 @@ Movement_playerrun_step_down:
 	ld a, STEP_RUN << 2 | DOWN  ; STEP_RUN
 	jp Movement_do_step
 
-Movement_playerrun_step_up:
+Movement_player_run_step_up:
 	push bc
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
@@ -576,7 +652,7 @@ Movement_playerrun_step_up:
 	ld a, STEP_RUN << 2 | UP    ; STEP_RUN
 	jp Movement_do_step
 
-Movement_playerrun_step_left:
+Movement_player_run_step_left:
 	push bc
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
@@ -585,7 +661,7 @@ Movement_playerrun_step_left:
 	ld a, STEP_RUN << 2 | LEFT  ; STEP_RUN
 	jp Movement_do_step
 
-Movement_playerrun_step_right:
+Movement_player_run_step_right:
 	push bc
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
@@ -855,7 +931,14 @@ NormalStep: ; 5412
 	jr .skip_effect
 
 .shake_grass
+	ld a, [wTileset]
+	cp TILESET_SNOW
+	jr z, .snow
 	call ShakeGrass
+	jr .skip_effect
+	
+.snow
+	call ShakeSnow
 
 .skip_effect
 	ld hl, wCenteredObject

@@ -76,16 +76,15 @@ GlintRivalMomText1:
 	line "me all about you."
 	
 	para "I know he can be"
-	line "a bit much to deal"
+	line "a bit to deal with,"
 	
-	para "with, but don't"
-	line "let it get to you."
+	para "but don't let it"
+	line "get to you."
 	
 	para "I'm hoping that"
 	line "going on a journey"
-	
-	para "with his #MON"
-	line "will help him"
+	cont "with his #MON"
+	cont "will help him"
 	cont "mature a bit."
 	
 	para "Oh?"
@@ -105,9 +104,8 @@ GlintRivalMomText1:
 GlintRivalMomText2:
 	text "That MAP CARD lets"
 	line "you view a map of"
-	
-	para "the ONWA region"
-	line "from your #-"
+	cont "the ONWA region"
+	cont "from your #-"
 	cont "GEAR."
 	
 	para "It's really handy!"

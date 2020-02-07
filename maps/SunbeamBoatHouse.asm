@@ -241,9 +241,8 @@ SunbeamBoatHouseStrandText3:
 	
 	para "but it might be"
 	line "quicker for you"
-	
-	para "if I just took"
-	line "you back to LAKE"
+	cont "if I just took"
+	cont "you back to LAKE"
 	cont "ONWA."
 	
 	para "So, which will it"

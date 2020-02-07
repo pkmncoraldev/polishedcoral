@@ -247,12 +247,13 @@ GlintNPC2Text:
 	
 	para "He graduated top"
 	line "of his class at"
-	
-	para "the TRAINER SCHOOL"
-	line "in DAYBREAK"
+	cont "the TRAINER SCHOOL"
+	cont "in DAYBREAK"
 	cont "VILLAGE."
 	
-	para "Still, he's just a"
+	para "Still,"
+	
+	para "he's just a"
 	line "kid."
 	
 	para "Is he ready to be"
@@ -279,9 +280,8 @@ GlintNPC4Text:
 GlintNPC5Text:
 	text "My parents forced"
 	line "me to stop playing"
-	
-	para "video games and go"
-	line "outside."
+	cont "video games and go"
+	cont "outside."
 	
 	para "Good thing I can "
 	line "play video games"
@@ -295,9 +295,8 @@ GlintNPC6Text:
 	
 	para "Make sure to stock"
 	line "up before you"
-	
-	para "challange the GYM"
-	line "LEADER."
+	cont "challange the GYM"
+	cont "LEADER."
 	
 	para "Here."
 	
@@ -307,9 +306,8 @@ GlintNPC6Text:
 GlintNPC6Text2:
 	text "It's always a good"
 	line "idea to have a"
-	
-	para "POTION or two with"
-	line "you."
+	cont "POTION or two with"
+	cont "you."
 	
 	para "If you need more,"
 	line "you should stop by"
@@ -318,16 +316,16 @@ GlintNPC6Text2:
 	
 GlintNPC7Text:
 	text "Back when I was"
-	line "young, the boys"
+	line "young,"
 	
-	para "would flock to me"
-	line "for my looks."
+	para "the boys would"
+	line "flock to me for"
+	cont "my looks."
 	
 	para "Nowadays the only"
 	line "ones flocking to"
-	
-	para "me are the bird"
-	line "#MON."
+	cont "me are the bird"
+	cont "#MON."
 	
 	para "Sigh…"
 	done

@@ -303,9 +303,8 @@ GlintGymTrainer1RematchRegularText:
 GlintGymTrainer1RematchSeenText:
 	text "I'm still reading"
 	line "through the entire"
-	
-	para "set of"
-	line "encyclopedias."
+	cont "set of"
+	cont "encyclopedias."
 	
 	para "I'm making some"
 	line "real progress!"
@@ -641,9 +640,8 @@ GlintGymStanleyTextBeforeBattle1:
 	
 	para "I knew you were"
 	line "something special"
-	
-	para "when I met you in"
-	line "the grove."
+	cont "when I met you in"
+	cont "the grove."
 	
 	para "I'm STANLEY."
 	
@@ -652,9 +650,8 @@ GlintGymStanleyTextBeforeBattle1:
 	
 	para "I graduated top of"
 	line "my class at the"
-	
-	para "DAYBREAK #MON"
-	line "TRAINER SCHOOL."
+	cont "DAYBREAK #MON"
+	cont "TRAINER SCHOOL."
 	
 	para "NORMAL-types are"
 	line "vastly underrated."
@@ -671,9 +668,8 @@ GlintGymStanleyTextBeforeBattle1:
 GlintGymStanleyTextBeforeBattle2:
 	text "I'll show you that"
 	line "sound strategy is"
-	
-	para "far more important"
-	line "than pure power!"
+	cont "far more important"
+	cont "than pure power!"
 	done
 	
 GlintGymStanleyTextWin
@@ -714,9 +710,8 @@ GlintGymStanleyTextAfterBattle:
 	
 	para "It also allows you"
 	line "to use the HM"
-	
-	para "ROCK SMASH outside"
-	line "of battle."
+	cont "ROCK SMASH outside"
+	cont "of battle."
 	
 	para "Your #MON"
 	line "doesn't even need"
@@ -724,7 +719,8 @@ GlintGymStanleyTextAfterBattle:
 	
 	para "As long as they"
 	line "can learn it,"
-	cont "you're good to go!"
+	
+	para "you're good to go!"
 	
 	para "You'll need to"
 	line "find the HM your-"
@@ -743,15 +739,13 @@ GlintGymStanleyTextTMSpeech:
 	
 	para "FAKE OUT always"
 	line "goes first and"
-	
-	para "always makes your"
-	line "opponent flinch."
+	cont "always makes your"
+	cont "opponent flinch."
 	
 	para "You can only use"
 	line "it on the first"
-	
-	para "turn that your"
-	line "#MON is in"
+	cont "turn that your"
+	cont "#MON is in"
 	cont "battle, however."
 	
 	para "It's a great strat-"
@@ -765,9 +759,8 @@ GlintGymStanleyTextTMSpeech:
 	
 	para "Come back and beat"
 	line "all the TRAINERS"
-	
-	para "in the GYM if you"
-	line "want a rematch."
+	cont "in the GYM if you"
+	cont "want a rematch."
 	
 	para "I'll be waiting!"
 	done
@@ -781,9 +774,8 @@ GlintGymStanleyTextLoop:
 	
 	para "Come back and beat"
 	line "all the TRAINERS"
-	
-	para "in the GYM if you"
-	line "want a rematch."
+	cont "in the GYM if you"
+	cont "want a rematch."
 	
 	para "I'll be waiting!"
 	done
@@ -811,16 +803,16 @@ GlintGymGuyText:
 	
 	para "The TRAINERS here"
 	line "specialize in"
-	
-	para "NORMAL-type #-"
-	line "MON."
+	cont "NORMAL-type #-"
+	cont "MON."
 	
 	para "They can't take a"
 	line "hit from FIGHTING-"
+	cont "type moves,"
 	
-	para "type moves, but"
-	line "GHOST moves can't"
-	cont "touch them at all."
+	para "but GHOST moves"
+	line "can't touch them at"
+	cont "all."
 	
 	para "You should be"
 	line "ready for"
@@ -834,9 +826,8 @@ GlintGymGuyWinText:
 	
 	para "That's your first"
 	line "step to becoming"
-	
-	para "the CHAMPION of"
-	line "the ONWA REGION!"
+	cont "the CHAMPION of"
+	cont "the ONWA REGION!"
 	
 	para "Keep it up, kid!"
 	done
@@ -851,10 +842,10 @@ GlintGymLibrarianText1:
 	cont "MON GYM."
 	
 	para "The GYM doubles as"
-	line "a library, so"
+	line "a library,"
 	
-	para "please keep your"
-	line "voice down."
+	para "so please keep"
+	line "your voice down."
 	
 	para "You need a LIBRARY"
 	line "CARD to enter."
@@ -869,10 +860,10 @@ GlintGymLibrarianText2:
 	cont "MON GYM."
 	
 	para "The GYM doubles as"
-	line "a library, so"
+	line "a library,"
 	
-	para "please keep your"
-	line "voice down."
+	para "so please keep"
+	line "your voice down."
 	
 	para "You need a LIBRARY"
 	line "CARD to enter."
@@ -890,10 +881,10 @@ GlintGymLibrarianText3:
 	cont "MON GYM."
 	
 	para "The GYM doubles as"
-	line "a library, so"
+	line "a library,"
 	
-	para "please keep your"
-	line "voice down."
+	para "so please keep"
+	line "your voice down."
 	
 	para "Have a nice visit."
 	done
@@ -1009,32 +1000,27 @@ GlintGymBookText2:
 	
 	para "No one is quite"
 	line "sure where the"
-	
-	para "word #MON comes"
-	line "from."
+	cont "word #MON comes"
+	cont "from."
 	
 	para "Some scholars be-"
 	line "lieve the word has"
-	
-	para "origins in a"
-	line "foreign word"
-	
-	para "“boku” for “I” or"
-	line "“my”, and “man”."
+	cont "origins in a"
+	cont "foreign word"
+	cont "“boku” for “I” or"
+	cont "“my”, and “man”."
 	
 	para "The word would"
 	line "essentially mean"
-	
-	para "“my man”, or"
-	line "“friend”."
+	cont "“my man”, or"
+	cont "“friend”."
 	done
 	
 GlintGymBookText3:
 	text "A children's novel"
 	line "where people can"
-	
-	para "morph into #-"
-	line "MON."
+	cont "morph into #-"
+	cont "MON."
 	
 	para "You remember"
 	line "reading these when"
@@ -1132,15 +1118,13 @@ GlintGymBookText12_1:
 GlintGymBookText12_2:
 	text "A young man,"
 	line "callow and foolish"
-	
-	para "in innocence, came"
-	line "to own a sword."
+	cont "in innocence, came"
+	cont "to own a sword."
 	
 	para "With it, he smote"
 	line "#MON, which"
-	
-	para "gave sustenance,"
-	line "with carefree"
+	cont "gave sustenance,"
+	cont "with carefree"
 	cont "abandon."
 	
 	para "Those not taken as"
@@ -1174,24 +1158,23 @@ GlintGymBookText12_2:
 	
 	para "“If you bear your"
 	line "sword to bring"
+	cont "harm upon us,"
 	
-	para "harm upon us, with"
-	line "claws and fangs,"
-	
-	para "we will exact a"
-	line "toll."
+	para "claws and fangs,"
+	line "we will exact a"
+	cont "toll."
 	
 	para "From your kind we"
 	line "will take our"
+	cont "toll,"
 	
-	para "toll, for it must"
-	line "be done."
+	para "for it must"
+	cont "be done."
 	
 	para "Done it must be"
 	line "to guard ourselves"
-	
-	para "and for it, I"
-	line "apologize."
+	cont "and for it,"
+	cont "I apologize."
 	
 	para "To the skies, the"
 	line "young man shouted"
@@ -1219,9 +1202,8 @@ GlintGymBookText12_2:
 	
 	para "So saying this,"
 	line "the young man"
-	
-	para "hurled the sword"
-	line "to the ground,"
+	cont "hurled the sword"
+	cont "to the ground,"
 	cont "snapping it."
 	
 	para "Seeing this, the"
@@ -1237,20 +1219,18 @@ GlintGymBookText12_3:
 GlintGymBookText13:
 	text "A story about a"
 	line "young boy being"
-	
-	para "saved from drown-"
-	line "ing by a CORSOLA."
+	cont "saved from drown-"
+	cont "ing by a CORSOLA."
 	
 	para "“Some people treat"
 	line "them like simple"
+	cont "creatures,"
 	
-	para "creatures, but I"
-	line "think #MON can"
-	
-	para "have just as much"
-	line "heart as us if you"
-	cont "give them the"
-	cont "chance.”"
+	para "but I think #MON"
+	line "can have just as"
+	cont "much heart as us"
+	cont "if you give them"
+	cont "the chance.”"
 	done
 	
 GlintGymBookText14:
@@ -1352,22 +1332,18 @@ GlintGymBookText16:
 	
 	para "“Many believe that"
 	line "the trees in the"
-	
-	para "grove give off a"
-	line "special form of"
+	cont "grove give off a"
+	cont "special form of"
 	cont "energy."
 	
 	para "This energy is"
 	line "said to be what"
-	
-	para "attracts FAIRY-"
-	line "type #MON to"
-	
-	para "the grove and"
-	line "gives the trees "
-	
-	para "their distinct"
-	line "year-round pink"
+	cont "attracts FAIRY-"
+	cont "type #MON to"
+	cont "the grove and"
+	cont "gives the trees "
+	cont "their distinct"
+	cont "year-round pink"
 	cont "color.”"
 	
 	para "It goes on for"

@@ -32,11 +32,11 @@ Route9GateOfficer:
 Route9GateOfficerText:
 	text "There have been"
 	line "reports of a small"
+	cont "girl being sighted"
+	cont "in the forest,"
 	
-	para "girl being sighted"
-	line "in the forest, but"
-	
-	para "we haven't seen"
-	line "anything suggest-"
-	cont "ing that's true."
+	para "but we haven't"
+	line "seen anything"
+	cont "suggesting that's"
+	cont "true."
 	done

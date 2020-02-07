@@ -341,11 +341,11 @@ JustRodeBoatText:
 	
 LakeNpc1Text:
 	text "Unless you have a"
-	line "#MON that can"
+	line "#MON that can tra-"
+	cont "vel across water,"
 	
-	para "travel across"
-	line "water, you'll have"
-	cont "to take a boat."
+	para "you'll have to take"
+	line "a boat."
 	
 	para "It's not even free!"
 	
@@ -404,9 +404,8 @@ LakeNpc4Text2:
 	
 	para "the power of it's"
 	line "GRASS-type moves"
-	
-	para "will grow as beau-"
-	line "tifully as my"
+	cont "will grow as beau-"
+	cont "tifully as my"
 	cont "flowers."
 	done
 	
@@ -470,21 +469,18 @@ JustRodeBoatTextLakeStrand:
 	
 	para "From now on, the"
 	line "boats should be"
-	
-	para "running to the"
-	line "island again."
+	cont "running to the"
+	cont "island again."
 	
 	para "If you need to get"
 	line "back, you can take"
-	
-	para "the boat from the"
-	line "here."
+	cont "the boat from the"
+	cont "here."
 	
 	para "Of course, I could"
 	line "always give you a"
-	
-	para "ride for free if"
-	line "you need it."
+	cont "ride for free if"
+	cont "you need it."
 	
 	para "Take care."
 	done

@@ -1,72 +1,41 @@
-Sfx_Pokeflute2: ; f09f8
-	musicheader 4, 7, Sfx_Pokeflute2_Ch7
-	musicheader 1, 5, Sfx_Pokeflute2_Ch5
-	musicheader 1, 6, Sfx_Pokeflute2_Ch6
-	musicheader 1, 8, Sfx_Pokeflute2_Ch8
+Sfx_SnowstormIntro:
+	musicheader 1, 8, Sfx_SnowstormIntro_Ch8
 
-Sfx_Pokeflute2_Ch7: ; f1cda
-	tempo 256
-	volume $77
+Sfx_SnowstormIntro_Ch8: ; f1317
 	togglesfx
-	vibrato $10, $14
-	notetype $c, $10
-	octave 5
+	notetype $C
+	sfxtogglenoise 6
+	note D#, 1
+	note C_, 6
+	callchannel Sfx_Snowstorm_Ch8_loop
+	
+Sfx_Snowstorm:
+	musicheader 1, 8, Sfx_Snowstorm_Ch8
+	
+Sfx_Snowstorm_Ch8:
+	togglesfx
+	notetype $C
+	sfxtogglenoise 6
+Sfx_Snowstorm_Ch8_loop:
+	note E_, 16
+	note C#, 6
+	note C_, 6
+	loopchannel 0, Sfx_Snowstorm_Ch8_loop
+	
+Sfx_Bump_Snowstorm: ; f09aa
+	musicheader 2, 5, Sfx_Bump_Snowstorm_Ch5
+	musicheader 1, 8, Sfx_Bump_Snowstorm_Ch8
+	
+Sfx_Bump_Snowstorm_Ch5: ; f1d6f
+	dutycycle $2
+	soundinput $5a
+	sound __, 16, $f1, $0300
+	soundinput $8
+	endchannel
+	
+Sfx_Bump_Snowstorm_Ch8:
+	togglesfx
+	notetype $C
+	sfxtogglenoise 6
 	note E_, 2
-	note F_, 2
-	note G_, 4
-	note A_, 2
-	note G_, 2
-	octave 6
-	note C_, 4
-	note C_, 2
-	note D_, 2
-	note C_, 2
-	octave 5
-	note G_, 2
-	note A_, 2
-	note F_, 2
-	note G_, 8
-	note __, 2
-	endchannel
-	
-	togglesfx
-	
-Sfx_Pokeflute2_Ch5:
-	tempo 256
-	volume $77
-	togglesfx
-	vibrato $10, $14
-	notetype $c, $10
-	note __, 12
-	note __, 12
-	note __, 12
-	note __, 2
-	endchannel
-	
-	togglesfx
-	
-Sfx_Pokeflute2_Ch6:
-	tempo 256
-	volume $77
-	togglesfx
-	vibrato $10, $14
-	notetype $c, $10
-	note __, 12
-	note __, 12
-	note __, 12
-	note __, 2
-	endchannel
-	
-	togglesfx
-	
-Sfx_Pokeflute2_Ch8:
-	tempo 256
-	volume $77
-	togglesfx
-	vibrato $10, $14
-	notetype $c, $10
-	note __, 12
-	note __, 12
-	note __, 12
-	note __, 2
 	endchannel

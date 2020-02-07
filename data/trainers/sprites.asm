@@ -1,6 +1,7 @@
 BTTrainerClassSprites:
 	db SPRITE_CHRIS         ; PLAYER_MALE
 	db SPRITE_KRIS          ; PLAYER_FEMALE
+	db SPRITE_PIPPI         ; PLAYER_PIPPI
 	db SPRITE_STANLEY       ; STANLEY
 	db SPRITE_RODNEY        ; RODNEY
 	db SPRITE_LEILANI       ; LEILANI

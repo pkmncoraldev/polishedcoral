@@ -7,8 +7,8 @@ DoPlayerMovement:: ; 80000
 	ld c, a
 	ld a, [wMovementAnimation]
 	ld [wPlayerNextMovement], a
-	ret
-
+	ret	
+	
 .GetDPad:
 
 	ld a, [hJoyDown]
@@ -32,7 +32,7 @@ DoPlayerMovement:: ; 80000
 
 .TranslateIntoMovement:
 	ld a, [wPlayerState]
-	cp PLAYER_NORMAL
+	and a ; cp PLAYER_NORMAL
 	jr z, .Normal
 	cp PLAYER_RUN
 	jr z, .Running
@@ -42,8 +42,6 @@ DoPlayerMovement:: ; 80000
 	jp z, .Surf
 	cp PLAYER_SURF_LAVA
 	jp z, .Surf
-	cp PLAYER_BIKE
-	jr z, .Normal
 	cp PLAYER_DODRIO
 	jr z, .Normal
 	cp PLAYER_SLIP
@@ -283,25 +281,95 @@ DoPlayerMovement:: ; 80000
 
 	ld a, [wPlayerStandingTile]
 	cp COLL_ICE
-	jr z, .ice
+	jp z, .ice
 
 	ld a, [wOptions2]
 	and 1 << RUNNING_SHOES
 	jr nz, .RunByDefault
 
+	ld a, [wTileset]
+	cp TILESET_SNOW
+	jp z, .snowruncheck
+	
+.donesnowcheck
 	call .RunCheck
-	jr z, .run
+	jp z, .run
 	jp .DoNotRun
 	
 .RunByDefault
 	call .RunCheck
-	jr nz, .run
+	jp nz, .run
 
+.snowruncheck
+	ld a, [wWalkingDirection]
+	cp UP
+	jr z, .snowupruncheck
+	cp DOWN
+	jr z, .snowdownruncheck
+	cp LEFT
+	jr z, .snowleftruncheck
+	cp RIGHT
+	jr z, .snowrightruncheck
+.snowupruncheck
+	ld a, [wTileUp]
+	cp COLL_TALL_GRASS
+	jr z, .DoNotRun
+	jr .donesnowcheck
+.snowdownruncheck
+	ld a, [wTileDown]
+	cp COLL_TALL_GRASS
+	jr z, .DoNotRun
+	jr .donesnowcheck
+.snowleftruncheck
+	ld a, [wTileLeft]
+	cp COLL_TALL_GRASS
+	jr z, .DoNotRun
+	jr .donesnowcheck
+.snowrightruncheck
+	ld a, [wTileRight]
+	cp COLL_TALL_GRASS
+	jr z, .DoNotRun
+	jr .donesnowcheck
+	
 .DoNotRun
 ; Downhill riding is slower when not moving down.
 	call .BikeCheck
-	jr nz, .walk
+	jp nz, .walk
 
+	ld a, [wTileset]
+	cp TILESET_SNOW
+	jp nz, .DoNotRun2
+	
+	ld a, [wWalkingDirection]
+	cp UP
+	jr z, .snowupbikecheck
+	cp DOWN
+	jr z, .snowdownbikecheck
+	cp LEFT
+	jr z, .snowleftbikecheck
+	cp RIGHT
+	jr z, .snowrightbikecheck
+.snowupbikecheck
+	ld a, [wTileUp]
+	cp COLL_TALL_GRASS
+	jr z, .bikeslowstep
+	jr .DoNotRun2
+.snowdownbikecheck
+	ld a, [wTileDown]
+	cp COLL_TALL_GRASS
+	jr z, .bikeslowstep
+	jr .DoNotRun2
+.snowleftbikecheck
+	ld a, [wTileLeft]
+	cp COLL_TALL_GRASS
+	jr z, .bikeslowstep
+	jr .DoNotRun2
+.snowrightbikecheck
+	ld a, [wTileRight]
+	cp COLL_TALL_GRASS
+	jr z, .bikeslowstep
+	
+.DoNotRun2
 	ld hl, wOWState
 	bit OWSTATE_BIKING_DOWNHILL, [hl]
 	jr z, .fast
@@ -315,6 +383,12 @@ DoPlayerMovement:: ; 80000
 	scf
 	ret
 
+.bikeslowstep
+	ld a, STEP_SLOW
+	call .DoStep
+	scf
+	ret
+	
 .dodrio
 	ld a, [hJoypadDown]
 	and B_BUTTON
@@ -336,8 +410,12 @@ DoPlayerMovement:: ; 80000
 	ret
 
 .walk
+	ld a, [wTileset]
 	cp TILESET_HAUNTED_TV
 	jp z, .tvroom
+	
+	cp TILESET_SNOW
+	jp z, .snow
 
 .walkcont
 	ld a, STEP_WALK
@@ -361,7 +439,41 @@ DoPlayerMovement:: ; 80000
 	scf
 	ret
 
+.snow
+	ld a, [wWalkingDirection]
+	cp UP
+	jr z, .snowup
+	cp DOWN
+	jr z, .snowdown
+	cp LEFT
+	jr z, .snowleft
+	cp RIGHT
+	jr z, .snowright
+.snowup
+	ld a, [wTileUp]
+	cp COLL_TALL_GRASS
+	jr z, .slowwalk
+	jr .walkcont
+.snowdown
+	ld a, [wTileDown]
+	cp COLL_TALL_GRASS
+	jr z, .slowwalk
+	jr .walkcont
+.snowleft
+	ld a, [wTileLeft]
+	cp COLL_TALL_GRASS
+	jr z, .slowwalk
+	jr .walkcont
+.snowright
+	ld a, [wTileRight]
+	cp COLL_TALL_GRASS
+	jr z, .slowwalk
+	jr .walkcont
+	
 .slowwalk
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
 	ld a, STEP_SLOW
 	call .DoStep
 	scf
@@ -546,7 +658,16 @@ DoPlayerMovement:: ; 80000
 .DoStep:
 	ld e, a
 	ld d, 0
-	ld hl, .Steps
+	
+	ld a, [wPlayerGender]
+	cp PIPPI
+	jr nz, .DoStepNotPippi
+	ld hl, .StepsPippi
+	jr .DoStepCont
+	
+.DoStepNotPippi
+ 	ld hl, .Steps
+.DoStepCont
 	add hl, de
 	add hl, de
 	ld a, [hli]
@@ -583,6 +704,20 @@ DoPlayerMovement:: ; 80000
 	dw .SpinStep
 	dw .Fast ; x2
 	dw .SurfStep
+	
+.StepsPippi:
+	dw .SlowStep ; x0.5
+	dw .NormalStep ; x1
+	dw .PippiFast ; x4
+	dw .PippiRun ; x2, doubles animation speed
+	dw .JumpStep
+	dw .SlideStep
+	dw .TurningStep
+	dw .BackJumpStep
+	dw .InPlace
+	dw .SpinStep
+	dw .Fast ; x2
+	dw .SurfStep
 
 .SlowStep:
 	slow_step_down
@@ -590,20 +725,30 @@ DoPlayerMovement:: ; 80000
 	slow_step_left
 	slow_step_right
 .NormalStep:
-	playerwalk_step_down
-	playerwalk_step_up
-	playerwalk_step_left
-	playerwalk_step_right
+	player_walk_step_down
+	player_walk_step_up
+	player_walk_step_left
+	player_walk_step_right
 .FastStep:
 	big_step_down
 	big_step_up
 	big_step_left
 	big_step_right
 .Run
-	playerrun_step_down
-	playerrun_step_up
-	playerrun_step_left
-	playerrun_step_right
+	player_run_step_down
+	player_run_step_up
+	player_run_step_left
+	player_run_step_right
+.PippiFast
+	pippi_fast_step_down
+	pippi_fast_step_up
+	pippi_fast_step_left
+	pippi_fast_step_right
+.PippiRun
+	pippi_run_step_down
+	pippi_run_step_up
+	pippi_run_step_left
+	pippi_run_step_right
 .JumpStep:
 	jump_step_down
 	jump_step_up
@@ -937,12 +1082,25 @@ DoPlayerMovement:: ; 80000
 ; 803ee
 
 .BumpSound: ; 803ee
-
+	eventflagcheck EVENT_SNOWSTORM_HAPPENING
+	jr nz, .snowstorm
 	call CheckSFX
 	ret c
 	ld de, SFX_BUMP
 	jp PlaySFX
 ; 803f9
+
+.snowstorm
+	ld a, [wCurSFX]
+	cp SFX_SNOWSTORM_INTRO
+	jr z, .skip
+	cp SFX_SNOWSTORM
+	jr z, .skip
+	call CheckSFX
+	ret c
+.skip
+	ld de, SFX_BUMP_SNOWSTORM
+	jp PlaySFX
 
 .GetOutOfWater: ; 803f9
 	push bc
@@ -967,6 +1125,13 @@ CheckStandingOnIce:: ; 80404
 	jr nz, .not_ice
 
 .ice
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .endice
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite ; UpdateSprites
+.endice
 	scf
 	ret
 

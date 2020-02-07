@@ -86,9 +86,8 @@ GlintApt12FNpc1Text:
 	
 	para "It's probably a"
 	line "good idea to talk"
-	
-	para "to every person"
-	line "you see."
+	cont "to every person"
+	cont "you see."
 	
 	para "Except for me that"
 	line "is."

@@ -231,9 +231,8 @@ SunsetCaptainFirstRidetoIslandText1:
 	
 	para "Your mother told"
 	line "me that you need"
-	
-	para "a ride to SUNBEAM"
-	line "ISLAND."
+	cont "a ride to SUNBEAM"
+	cont "ISLAND."
 	
 	para "Of course I can"
 	line "take you there!"
@@ -306,9 +305,8 @@ SunsetCaptainText1_Morn:
 	
 	para "We weren't going"
 	line "to stand outside"
-	
-	para "on the pier and"
-	line "waste the whole"
+	cont "on the pier and"
+	cont "waste the whole"
 	cont "morning."
 	
 	para "He needed to get"
@@ -331,9 +329,8 @@ SunsetCaptainText1_Day:
 	
 	para "We weren't going"
 	line "to stand outside"
-	
-	para "on the pier all"
-	line "day and get"
+	cont "on the pier all"
+	cont "day and get"
 	cont "sunburned."
 	
 	para "He needed to get"
@@ -356,9 +353,8 @@ SunsetCaptainText1_Night:
 	
 	para "We weren't going"
 	line "to stand outside"
-	
-	para "on the pier all"
-	line "night and freeze."
+	cont "on the pier all"
+	cont "night and freeze."
 	
 	para "He needed to get"
 	line "back to tending"

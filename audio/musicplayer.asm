@@ -117,16 +117,16 @@ MusicPlayer::
 	set LCD_STAT, [hl]
 	ld a, [rSVBK]
 	push af
-	ld a, BANK(wBGPals)
+	ld a, BANK(wUnknBGPals)
 	ld [rSVBK], a
 
 	ld hl, MusicPlayerPals
-	ld de, wBGPals
+	ld de, wUnknBGPals
 	ld bc, 4 palettes
 	rst CopyBytes
 
 	ld hl, MusicPlayerNotePals
-	ld de, wOBPals
+	ld de, wUnknOBPals
 	ld bc, 1 palettes
 	rst CopyBytes
 
@@ -242,9 +242,12 @@ RenderMusicPlayer:
 	jr nz, .ch_label_loop
 
 	call DelayFrame
-
+	
 	ld a, [rSVBK]
 	ld [hMPBuffer], a
+	
+	ld c, 5
+	farcall FadeInPalettes
 
 	ld a, [wSongSelection]
 	; let's see if a song is currently selected
@@ -253,9 +256,7 @@ RenderMusicPlayer:
 	and a
 	jr nz, _RedrawMusicPlayer
 .bad_selection
-	call GetMapHeaderMusic
-
-	ld a, [wMapMusic]
+	ld a, 1
 ; fallthrough
 
 _RedrawMusicPlayer:
@@ -263,6 +264,7 @@ _RedrawMusicPlayer:
 	ld a, -1
 	ld [wChannelSelector], a
 	call DrawPianoRollOverlay
+	
 ; fallthrough
 
 MusicPlayerLoop:
@@ -278,8 +280,8 @@ MusicPlayerLoop:
 	ld hl, hJoyPressed
 	jrbutton A_BUTTON, .a
 	jpbutton B_BUTTON, .b
-	jpbutton START, .start
-;	jpbutton SELECT, .select
+	jpbutton START, .a
+	jpbutton SELECT, .b
 
 	; prioritize refreshing the note display
 	ld a, 2
@@ -379,6 +381,7 @@ MusicPlayerLoop:
 	res 2, [hl] ; 8x8 sprites
 	ld hl, rIE
 	res LCD_STAT, [hl]
+	call WaitSFX
 	call PlayMapMusic
 	scf
 	ret

@@ -177,10 +177,10 @@ EastTrainCabooseSnareGruntText1:
 	para "Alright."
 	
 	para "Hand over your"
-	line "#MON, and we"
+	line "#MON,"
 	
-	para "won't hurt you too"
-	line "bad."
+	para "and we won't hurt"
+	line "you too bad."
 	done
 	
 EastTrainCabooseSnareGruntText2:

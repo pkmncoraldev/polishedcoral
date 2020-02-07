@@ -148,9 +148,8 @@ OfficerStopsYouText2:
 	
 	para "I'm sorry, but I"
 	line "can't let you go"
-	
-	para "out there without"
-	line "a #MON!"
+	cont "out there without"
+	cont "a #MON!"
 	
 	para "I could lose my"
 	line "job!"
@@ -162,9 +161,8 @@ OfficerStopsYouText3:
 	
 	para "I'm sorry, but I"
 	line "can't let you go"
-	
-	para "out there without"
-	line "a #GEAR!"
+	cont "out there without"
+	cont "a #GEAR!"
 	
 	para "I could lose my"
 	line "job!"
@@ -173,9 +171,8 @@ OfficerStopsYouText3:
 Route1OfficerText1:
 	text "You can't leave"
 	line "out through those"
-	
-	para "doors without a"
-	line "#MON."
+	cont "doors without a"
+	cont "#MON."
 	
 	para "Come back when you"
 	line "have one."
@@ -184,9 +181,8 @@ Route1OfficerText1:
 Route1OfficerText2:
 	text "You can't leave"
 	line "out through those"
-	
-	para "doors without a"
-	line "#GEAR."
+	cont "doors without a"
+	cont "#GEAR."
 	
 	para "Come back when you"
 	line "have one."

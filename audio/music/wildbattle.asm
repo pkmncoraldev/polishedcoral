@@ -66,13 +66,11 @@ Music_WildBattle_Ch1:
 	note F#, 2
 	note F_, 2
 	note __, 4
-	dutycycle 1
 	note D_, 2
 	note __, 2
 	note C_, 2
 	octave 2
 	note G_, 4
-	dutycycle 2
 	octave 4
 	note C_, 2
 	note __, 4
@@ -92,10 +90,9 @@ Music_WildBattle_Ch1:
 	note __, 2
 	note C_, 2
 	note __, 4
-	octave 3
-	note G_, 2
+	note E_, 2
 	note __, 4
-	dutycycle 0
+	dutycycle 1
 	octave 2
 	note G_, 2
 	octave 3
@@ -104,9 +101,7 @@ Music_WildBattle_Ch1:
 	note __, 4
 	note F_, 2
 	note __, 2
-	dutycycle 1
 	intensity $A8
-	octave 3
 	note E_, 2
 	note D_, 2
 	note D#, 2
@@ -127,8 +122,8 @@ Music_WildBattle_Ch1:
 Music_WildBattle_Ch1_loop:
 	notetype $C, $A7
 	dutycycle 1
-	intensity $A7
 	octave 3
+	intensity $A7
 	note E_, 8
 	note G_, 4
 	note C_, 4
@@ -418,6 +413,7 @@ Music_WildBattle_Ch1_loop:
 	note E_, 2
 	note __, 4
 	note F_, 4
+	intensity $87
 	octave 2
 	note A#, 1
 	note A_, 1
@@ -592,12 +588,10 @@ Music_WildBattle_Ch2:
 	note B_, 2
 	note A#, 2
 	note __, 4
-	dutycycle 1
 	note F_, 2
 	note __, 2
 	note E_, 2
 	note C_, 4
-	dutycycle 2
 	octave 4
 	note E_, 2
 	note __, 4
@@ -613,9 +607,9 @@ Music_WildBattle_Ch2:
 	note __, 2
 	note E_, 2
 	note __, 4
-	note C_, 2
+	note G_, 2
 	note __, 4
-	dutycycle 0
+	dutycycle 1
 	octave 3
 	note C_, 2
 	note E_, 2
@@ -623,8 +617,6 @@ Music_WildBattle_Ch2:
 	note __, 4
 	note G#, 2
 	note __, 2
-	dutycycle 1
-	octave 3
 	note G_, 2
 	note F_, 2
 	note F#, 2
@@ -655,11 +647,10 @@ Music_WildBattle_Ch2:
 	note E_, 4
 	note F_, 4
 Music_WildBattle_Ch2_loop:
-	octave 3
-	dutycycle 1
-	vibrato $00, $23
-	intensity $C7
 	notetype $6, $C7
+	dutycycle 1
+	octave 3
+	intensity $C7
 	note G_, 12
 	note C_, 12
 	note D#, 1
@@ -815,6 +806,7 @@ Music_WildBattle_Ch2_loop:
 	note F#, 4
 	dutycycle 0
 	intensity $4F
+	octave 3
 	note G_, 16
 	intensity $C8
 	note G_, 16
@@ -826,17 +818,31 @@ Music_WildBattle_Ch2_loop:
 	note A#, 16
 	intensity $C8
 	note A#, 16
-	intensity $5F
+	intensity $87
 	octave 4
-	note C_, 16
-	intensity $C8
-	note D_, 8
+	note C_, 2
+	octave 3
+	note B_, 2
+	note A#, 2
+	note A_, 2
+	intensity $97
+	note A#, 2
+	note B_, 2
+	octave 4
+	note C_, 2
+	note C#, 2
 	dutycycle 1
-	intensity $C7
-	note D#, 2
+	intensity $A7
+	note D_, 2
+	note C#, 2
+	note C_, 2
+	note C#, 2
+	intensity $B7
+	note D_, 2
 	note E_, 2
 	note F_, 2
 	note F#, 2
+	intensity $C7
 	note G_, 12
 	note C_, 12
 	octave 5
@@ -1050,8 +1056,8 @@ Music_WildBattle_Ch3:
 	note D_, 2
 	note E_, 2
 Music_WildBattle_Ch3_loop:
+	octave 3
 	notetype $C, $14
-	octave 3
 	note C_, 2
 	note G_, 2
 	note C_, 2
@@ -1314,14 +1320,12 @@ Music_WildBattle_Ch3_loop:
 	note F_, 2
 	octave 3
 	note F_, 2
+	note D#, 2
+	note C_, 2
 	octave 2
-	note F_, 2
+	note A_, 2
 	octave 3
-	note F_, 2
-	octave 2
-	note F_, 2
-	octave 3
-	note F_, 2
+	note C_, 2
 	octave 2
 	note F#, 2
 	octave 3
@@ -1408,10 +1412,15 @@ Music_WildBattle_Ch3_loop:
 	note A#, 8
 	note F_, 8
 	note G_, 8
-	note A_, 8
-	note F_, 8
+	note A_, 2
+	note F_, 2
+	note C_, 2
+	note F_, 2
+	note C_, 2
+	note F_, 2
+	note A_, 2
+	note F_, 2
 	loopchannel 0, Music_WildBattle_Ch3_loop
 
 Music_WildBattle_Ch4:
 	endchannel 0
-

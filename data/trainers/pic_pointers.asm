@@ -1,6 +1,7 @@
 TrainerPicPointers::
 	dba PlayermPic
 	dba PlayerfPic
+	dba PlayerpPic
 	dba StanleyPic
 	dba RodneyPic
 	dba LeilaniPic

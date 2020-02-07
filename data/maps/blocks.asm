@@ -150,6 +150,12 @@ FlickerTrainStation_BlockData:
 FlickerTrainCutscene_BlockData:
 	INCBIN "maps/FlickerTrainCutscene.ablk.lz"
 	
+Route10Tent_BlockData:
+	INCBIN "maps/Route10Tent.ablk.lz"
+	
+TwinkleTown_BlockData:
+	INCBIN "maps/TwinkleTown.ablk.lz"
+	
 EastTrainCabin1_BlockData:
 EastTrainCabin2_BlockData:
 EastTrainCabin3_BlockData:
@@ -206,8 +212,17 @@ Route9_BlockData:
 Route10_BlockData:
 	INCBIN "maps/Route10.ablk.lz"
 	
+Route10East_BlockData:
+	INCBIN "maps/Route10East.ablk.lz"
+	
 FlickerPassOutside_BlockData:
 	INCBIN "maps/FlickerPassOutside.ablk.lz"
+	
+FlickerPass1F_BlockData:
+	INCBIN "maps/FlickerPass1F.ablk.lz"
+	
+FlickerPass2F_BlockData:
+	INCBIN "maps/FlickerPass2F.ablk.lz"
 	
 DodrioRanchRaceTrack_BlockData:
 	INCBIN "maps/DodrioRanchRaceTrack.ablk.lz"

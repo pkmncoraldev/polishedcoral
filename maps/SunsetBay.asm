@@ -406,9 +406,8 @@ SunsetNPC4Text:
 SunsetNPC5Text:
 	text "They say you can"
 	line "sometimes find"
-	
-	para "things that people"
-	line "drop on the beach."
+	cont "things that people"
+	cont "drop on the beach."
 	
 	para "I don't know,"
 	line "though."
@@ -435,12 +434,11 @@ SunsetNPC5Text2:
 SunsetNPC6Text:
 	text "SUNSET BAY doesn't"
 	line "have a #MART"
+	cont "like most towns,"
 	
-	para "like most towns,"
-	line "but you can buy"
-	
-	para "most of what you"
-	line "need at the CAFE."
+	para "but you can buy"
+	line "most of what you"
+	cont "need at the CAFE."
 	done
 	
 SunsetJustRodeBoatText:
@@ -462,21 +460,19 @@ SunsetJustRodeBoatText3:
 	
 	para "From now on, the"
 	line "boats should be"
-	
-	para "running to the"
-	line "island again."
+	cont "running to the"
+	cont "island again."
 	
 	para "If you need to get"
-	line "back, you can take"
+	line "back,"
 	
-	para "the boat from the"
-	line "lake."
+	para "you can take the"
+	line "boat from the lake"
 	
 	para "Of course, I could"
 	line "always give you a"
-	
-	para "ride for free if"
-	line "you need it."
+	cont "ride for free if"
+	cont "you need it."
 	
 	para "Take care."
 	done

@@ -117,15 +117,13 @@ SunbeamIslandSurfShopNPC1Text1:
 	
 	para "We're looking for"
 	line "judges for the"
-	
-	para "BEACH BATTLE"
-	line "BEAUTY CONTEST!"
+	cont "BEACH BATTLE"
+	cont "BEAUTY CONTEST!"
 	
 	para "You'll fight some"
-	line "tough TRAINERS,"
-	
-	para "and get a prize"
-	line "for participating!"
+	line "tough TRAINERS"
+	cont "and get a prize"
+	cont "for participating!"
 	
 	para "So, what do you"
 	line "say?"
@@ -167,9 +165,8 @@ SunbeamIslandSurfShopNPC1Text5:
 SunbeamIslandSurfShopNPC1Text6:
 	text "Make sure to come"
 	line "back tomorrow to"
-	
-	para "judge the next"
-	line "contest!"	
+	cont "judge the next"
+	cont "contest!"	
 	done
 	
 SunbeamIslandSurfShopNPC1Text7:

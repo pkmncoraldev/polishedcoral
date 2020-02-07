@@ -99,15 +99,13 @@ TrainerSunsetCapeNormalText:
 SunsetCapeNpc1Text:
 	text "I had my first"
 	line "date with my wife"
-	
-	para "at this very"
-	line "spot."
+	cont "at this very"
+	cont "spot."
 	
 	para "I come here every-"
 	line "day with my RAICHU"
-	
-	para "to watch the"
-	line "sunrise."
+	cont "to watch the"
+	cont "sunrise."
 	done
 	
 SunsetCapeNpc2Text:

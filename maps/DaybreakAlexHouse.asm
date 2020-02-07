@@ -26,9 +26,8 @@ DaybreakAlexDadText:
 
 	para "She's already left"
 	line "for GLINT CITY to"
-	
-	para "get her first GYM"
-	line "BADGE."
+	cont "get her first GYM"
+	cont "BADGE."
 	
 	para "If you see her,"
 	line "tell her I said"

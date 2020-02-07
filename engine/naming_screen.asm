@@ -30,7 +30,7 @@ NamingScreen: ; 116c1
 	push af
 	ld a, $1
 	ld [hInMenu], a
-	call .SetUpNamingScreen
+	call SetUpNamingScreen
 	call DelayFrame
 .loop
 	call NamingScreenJoypadLoop
@@ -45,7 +45,7 @@ NamingScreen: ; 116c1
 
 ; 116f8
 
-.SetUpNamingScreen: ; 116f8
+SetUpNamingScreen: ; 116f8
 	call ClearBGPalettes
 	ld b, CGB_DIPLOMA
 	call GetCGBLayout
@@ -520,13 +520,13 @@ NamingScreenJoypadLoop: ; 11915
 	jr nz, .start
 	ld a, [hl]
 	and SELECT
-	jr nz, .select
+	jp nz, .select
 	ret
 
 .a
 	call .GetCursorPosition
 	cp $1
-	jr z, .select
+	jp z, .select
 	cp $2
 	jr z, .b
 	cp $3
@@ -562,10 +562,48 @@ NamingScreenJoypadLoop: ; 11915
 
 .end
 	call NamingScreen_StoreEntry
+	
+	ld a, [wNamingScreenType]
+	cp 1
+	jr nz, .endcont
+	
+	ld hl, .PIPPI
+	ld de, wPlayerName
+	ld c, PLAYER_NAME_LENGTH
+	call StringCmp
+	jr z, .endclef
+	
+	ld hl, .Pippi
+	ld de, wPlayerName
+	ld c, PLAYER_NAME_LENGTH
+	call StringCmp
+	jr nz, .endcont
+	
+.endclef
+	ld a, PIPPI
+	ld [wPlayerGender], a
+	ld de, .PippiModeString
+	hlcoord 5, 2
+	call PlaceString
+;	call DelayFrame
+	ld a, CLEFAIRY
+	call PlayCry
+	call WaitSFX
+	
+.endcont
 	ld hl, wJumptableIndex
 	set 7, [hl]
 	ret
 
+.PippiModeString: ; 117a3
+	db "PIPPI MODE!@"
+	
+.PIPPI: ; 4e5da
+	db "PIPPI@@@@@@"
+	
+.Pippi: ; 4e5da
+	db "Pippi@@@@@@"
+	
 .select
 	ld hl, wcf64
 	ld a, [hl]

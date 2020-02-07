@@ -1,6 +1,7 @@
 TrainerClassNames::
 	db "#MON TRAINER@"     ; PLAYER_MALE
 	db "#MON TRAINER@"     ; PLAYER_FEMALE
+	db "CUTIE PIE@"    	   ; PLAYER_PIPPI
 	db "LEADER@"           ; STANLEY
 	db "LEADER@"           ; RODNEY
 	db "LEADER@"           ; LEILANI

@@ -65,17 +65,15 @@ DaybreakPokeCenterNPC1Text:
 	
 	para "They may not look"
 	line "like much now,"
-	
-	para "but looks can be"
-	line "deceiving."
+	cont "but looks can be"
+	cont "deceiving."
 	done
 
 DaybreakPokeCenterNPC2Text:
 	text "My grandpa says"
 	line "that weak #MON"
-	
-	para "can turn into"
-	line "strong #MON."
+	cont "can turn into"
+	cont "strong #MON."
 	
 	para "That's why I named"
 	line "my LEDYBA CRUSHER!"

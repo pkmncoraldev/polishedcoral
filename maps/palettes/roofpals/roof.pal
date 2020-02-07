@@ -53,21 +53,21 @@
 	RGB 10, 13, 00
 	RGB 08, 11, 02
 	RGB 05, 08, 00
-;11 - Train
+;11 - Starshine
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-;12 - Luster City
+;12 - Train
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+;13 - Luster City
 	RGB 18, 19, 31
 	RGB 13, 12, 31
 	RGB 10, 09, 20
 	RGB 04, 03, 18
-;13
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
 ;14
 	RGB 00, 00, 00
 	RGB 00, 00, 00

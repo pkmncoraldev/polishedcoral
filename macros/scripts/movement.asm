@@ -457,47 +457,46 @@ skyfall_top: macro
 	endm
 
 	
-	enum movement_playerwalk_step_down
-playerwalk_step_down: macro
-	db movement_playerwalk_step_down ; $5a
+	enum movement_player_walk_step_down
+player_walk_step_down: macro
+	db movement_player_walk_step_down ; $5a
 	endm
 
-	enum movement_playerwalk_step_up
-playerwalk_step_up: macro
-	db movement_playerwalk_step_up ; $5b
+	enum movement_player_walk_step_up
+player_walk_step_up: macro
+	db movement_player_walk_step_up ; $5b
 	endm
 
-	enum movement_playerwalk_step_left
-playerwalk_step_left: macro
-	db movement_playerwalk_step_left ; $5c
+	enum movement_player_walk_step_left
+player_walk_step_left: macro
+	db movement_player_walk_step_left ; $5c
 	endm
 
-	enum movement_playerwalk_step_right
-playerwalk_step_right: macro
-	db movement_playerwalk_step_right ; $5d
+	enum movement_player_walk_step_right
+player_walk_step_right: macro
+	db movement_player_walk_step_right ; $5d
 	endm
 	
 	
-	enum movement_playerrun_step_down
-playerrun_step_down: macro
-	db movement_playerrun_step_down ; $5a
+	enum movement_player_run_step_down
+player_run_step_down: macro
+	db movement_player_run_step_down ; $5a
 	endm
 
-	enum movement_playerrun_step_up
-playerrun_step_up: macro
-	db movement_playerrun_step_up ; $5b
+	enum movement_player_run_step_up
+player_run_step_up: macro
+	db movement_player_run_step_up ; $5b
 	endm
 
-	enum movement_playerrun_step_left
-playerrun_step_left: macro
-	db movement_playerrun_step_left ; $5c
+	enum movement_player_run_step_left
+player_run_step_left: macro
+	db movement_player_run_step_left ; $5c
 	endm
 
-	enum movement_playerrun_step_right
-playerrun_step_right: macro
-	db movement_playerrun_step_right ; $5d
+	enum movement_player_run_step_right
+player_run_step_right: macro
+	db movement_player_run_step_right ; $5d
 	endm
-	
 	
 	enum movement_run_step_down
 run_step_down: macro
@@ -537,4 +536,44 @@ fast_step_left: macro
 	enum movement_fast_step_right
 fast_step_right: macro
 	db movement_fast_step_right ; $61
+	endm
+	
+	enum movement_pippi_run_step_down
+pippi_run_step_down: macro
+	db movement_pippi_run_step_down ; $5e
+	endm
+
+	enum movement_pippi_run_step_up
+pippi_run_step_up: macro
+	db movement_pippi_run_step_up ; $5f
+	endm
+
+	enum movement_pippi_run_step_left
+pippi_run_step_left: macro
+	db movement_pippi_run_step_left ; $60
+	endm
+
+	enum movement_pippi_run_step_right
+pippi_run_step_right: macro
+	db movement_pippi_run_step_right ; $61
+	endm
+	
+	enum movement_pippi_fast_step_down
+pippi_fast_step_down: macro
+	db movement_pippi_fast_step_down ; $5e
+	endm
+
+	enum movement_pippi_fast_step_up
+pippi_fast_step_up: macro
+	db movement_pippi_fast_step_up ; $5f
+	endm
+
+	enum movement_pippi_fast_step_left
+pippi_fast_step_left: macro
+	db movement_pippi_fast_step_left ; $60
+	endm
+
+	enum movement_pippi_fast_step_right
+pippi_fast_step_right: macro
+	db movement_pippi_fast_step_right ; $61
 	endm

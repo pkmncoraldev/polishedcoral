@@ -80,9 +80,8 @@ LakeItemHouseNPC1Text1:
 LakeItemHouseNPC1Text2:
 	text "I make CHARCOAL,"
 	line "my wife makes"
-	
-	para "jewelry, and my"
-	line "mom grows flowers!"
+	cont "jewelry, and my"
+	cont "mom grows flowers!"
 	
 	para "We all stay busy."
 	done
@@ -105,9 +104,8 @@ LakeItemHouseNPC2Text1:
 LakeItemHouseNPC2Text2:
 	text "My husband and I"
 	line "recently moved"
-	
-	para "here from the city"
-	line "to take care of"
+	cont "here from the city"
+	cont "to take care of"
 	cont "his mother."
 	
 	para "I try not to show"

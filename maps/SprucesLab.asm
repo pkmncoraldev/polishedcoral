@@ -20,7 +20,7 @@ SprucesLab_MapScriptHeader:
 
 	db 5 ; object events
 	person_event SPRITE_SPRUCE, 3, 3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE1_GONE
-	person_event SPRITE_SNES, 5, 9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlaxSleep, EVENT_SPRUCELAB_MUNCH1_GONE
+	person_event SPRITE_SNES, 5, 9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlaxSleep, EVENT_SPRUCELAB_MUNCH1_GONE
 	person_event SPRITE_SPRUCE, 0, 5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE2_GONE
 	person_event SPRITE_MUNCHLAX, 5, 9, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlax, EVENT_SPRUCELAB_MUNCH2_GONE
 	person_event SPRITE_MUNCHLAX, 4, 0, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlax, EVENT_SPRUCELAB_MUNCH3_GONE
@@ -385,9 +385,8 @@ SpruceLabSpruceText6:
 	
 	para "A SNORLAX is"
 	line "sleeping and"
-	
-	para "blocking the path"
-	line "near STARGLOW"
+	cont "blocking the path"
+	cont "near STARGLOW"
 	cont "VALLEY?"
 	
 	para "The #FLUTE"
@@ -409,16 +408,14 @@ SpruceLabSpruceText7:
 	
 	para "After all, it was"
 	line "I who set your"
-	
-	para "journey across"
-	line "ONWA into motion,"
+	cont "journey across"
+	cont "ONWA into motion,"
 	cont "was it not?"
 	
 	para "Surely it would"
 	line "fall to me to"
-	
-	para "assist you in any"
-	line "way I can."
+	cont "assist you in any"
+	cont "way I can."
 	
 	para "Use it with care."
 	done
@@ -439,9 +436,8 @@ SpruceLabSpruceText8:
 SpruceLabSpruceText9:
 	text "Feel free to"
 	line "return any time"
-	
-	para "you want your"
-	line "#DEX reviewed."
+	cont "you want your"
+	cont "#DEX reviewed."
 
 	para "Good luck on the"
 	line "rest of your"
@@ -455,9 +451,8 @@ SpruceLabSpruceText11:
 	
 	para "A song played on"
 	line "this will wake any"
-	
-	para "#MON from even"
-	line "the deepest"
+	cont "#MON from even"
+	cont "the deepest"
 	cont "slumber."
 	done
 	
@@ -470,9 +465,8 @@ SpruceLabSpruceText12:
 	
 	para "Well, there's no"
 	line "need for you to"
-	
-	para "wait around here"
-	line "while I look for"
+	cont "wait around here"
+	cont "while I look for"
 	cont "it."
 	
 	para "Why don't you go"
@@ -482,9 +476,8 @@ SpruceLabSpruceText12:
 	
 	para "Just come back in"
 	line "a while and I'll"
-	
-	para "introduce you to"
-	line "my friend here."
+	cont "introduce you to"
+	cont "my friend here."
 	done
 	
 SpruceLabSpruceText13:
@@ -526,7 +519,7 @@ SpruceLabPokeFluteText3:
 	done
 	
 SpruceLabMunchlaxText1:
-	text "MUNCHLAX: Muuunch…"
+	text "Muuunch…"
 	
 	para "It's sleeping"
 	line "soundly."

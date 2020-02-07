@@ -35,8 +35,7 @@ SunsetLegendsHouseNPCText:
 
 	para "The ONWA region"
 	line "doesn't seem to"
-	
-	para "have LEGENDARY"
-	line "#MON like"
+	cont "have LEGENDARY"
+	cont "#MON like most"
 	cont "other regions do."
 	done

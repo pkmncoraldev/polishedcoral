@@ -77,9 +77,9 @@ GlintSecretTrioBlueText:
 	
 GlintSecretTrioYellowText:
 	text "It might not seem"
-	line "like it, but our"
+	line "like it,"
 	
-	para "research here is"
-	line "really quite"
-	cont "important."
+	para "but our research"
+	line "here is really"
+	cont "quite important."
 	done

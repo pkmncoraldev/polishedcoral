@@ -726,9 +726,9 @@ wPlayerData::
 wPlayerID:: ds 2
 
 wPlayerGender::
-; bit 0:
-;	0 male
-;	1 female
+; 0 male
+; 1 female
+; 2 pippi
 	ds 1
 
 wPlayerName:: ds NAME_LENGTH
@@ -919,7 +919,7 @@ wPlayerState:: ds 1
 wHallOfFameCount:: ds 2
 wTradeFlags:: flag_array PARTY_LENGTH
 
-	ds 1 ; unused
+ds 1 ; unused
 
 wMooMooBerries:: ds 1
 wUndergroundSwitchPositions:: ds 1
@@ -938,10 +938,10 @@ wGlintGroveEntranceTrigger:: ds 1
 wGlintGroveTrigger:: ds 1
 wGlintApartmentLeft2FTrigger:: ds 1
 wGlintGymTrigger:: ds 1
-wStarglowCavern1F:: ds 1
-wStarglowValley:: ds 1
-wStarglowTogepiHouse:: ds 1
-wStarglowPokeCenter:: ds 1
+wStarglowCavern1FTrigger:: ds 1
+wStarglowValleyTrigger:: ds 1
+wStarglowTogepiHouseTrigger:: ds 1
+wStarglowPokeCenterTrigger:: ds 1
 wRoute6Trigger:: ds 1
 wLakeOnwaTrigger:: ds 1
 wSunbeamIslandTrigger:: ds 1
@@ -957,10 +957,14 @@ wSpookhouseTVRoomTrigger:: ds 1
 wRoute9Trigger:: ds 1
 wDodrioRanchRaceTrackTrigger:: ds 1
 wFlickerStationTrigger:: ds 1
+wFlickerPass2FTrigger:: ds 1
 wFlickerTrainCutsceneTrigger:: ds 1
+wRoute10Trigger:: ds 1
+wRoute10EastTrigger:: ds 1
+wTwinkleTownTrigger:: ds 1
 wEastTrainCabin1Trigger:: ds 1
 wEastTrainCabooseTrigger:: ds 1
-ds 56
+ds 52
 
 ; fight counts
 wJackFightCount::    ds 1

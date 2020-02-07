@@ -85,31 +85,31 @@ CheckLusterTrashcans:
 	return
 
 .OpenSesame1:
-	changeblock $c, $1e, $52
+	changeblock $c, $12, $52
 	jump .cont1
 
 .OpenSesame2:
-	changeblock $e, $1e, $53
+	changeblock $e, $12, $53
 	jump .cont2
 	
 .OpenSesame3:
-	changeblock $e, $2e, $4d
+	changeblock $e, $22, $4d
 	jump .cont3
 	
 .OpenSesame4:
-	changeblock $14, $2e, $4c
+	changeblock $14, $22, $4c
 	jump .cont4
 	
 .OpenSesame5:
-	changeblock $e, $38, $4d
+	changeblock $e, $2c, $4d
 	jump .cont5
 	
 .OpenSesame6:
-	changeblock $14, $38, $4c
+	changeblock $14, $2c, $4c
 	jump .cont6
 	
 .OpenSesameSewer:
-	changeblock $e, $20, $5a
+	changeblock $e, $14, $5a
 	return
 	
 LusterSign1:
@@ -187,8 +187,6 @@ Luster1NPC11:
 	cry MEOWTH
 	waitbutton
 	closetext
-	setevent EVENT_LUSTER_SEWER_OPEN
-	changeblock $e, $20, $5a
 	end
 	
 Luster1NPC12:
@@ -200,15 +198,17 @@ Luster1NPC12:
 	end
 	
 LusterTrashcan1:
-	changeblock $c, $1e, $52
+	changeblock $c, $12, $52
 	opentext
+	writetext LusterTrashcan1Text
+	waitbutton
 	reloadmappart
 	closetext
 	setevent EVENT_LUSTER_TRASHCAN_1
 	end
 	
 LusterTrashcan2:
-	changeblock $e, $1e, $53
+	changeblock $e, $12, $53
 	opentext
 	reloadmappart
 	closetext
@@ -216,7 +216,7 @@ LusterTrashcan2:
 	end
 	
 LusterTrashcan3:
-	changeblock $e, $2e, $4d
+	changeblock $e, $22, $4d
 	opentext
 	reloadmappart
 	closetext
@@ -224,7 +224,7 @@ LusterTrashcan3:
 	end
 	
 LusterTrashcan4:
-	changeblock $14, $2e, $4c
+	changeblock $14, $22, $4c
 	opentext
 	reloadmappart
 	closetext
@@ -232,7 +232,7 @@ LusterTrashcan4:
 	end
 	
 LusterTrashcan5:
-	changeblock $e, $38, $4d
+	changeblock $e, $2c, $4d
 	opentext
 	reloadmappart
 	closetext
@@ -240,7 +240,7 @@ LusterTrashcan5:
 	end
 	
 LusterTrashcan6:
-	changeblock $14, $38, $4c
+	changeblock $14, $2c, $4c
 	opentext
 	reloadmappart
 	closetext
@@ -320,6 +320,9 @@ LusterPunk2:
 	end
 	
 LusterPunk3:
+;	setevent EVENT_LUSTER_SEWER_OPEN
+;	changeblock $e, $14, $5a
+
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_LUSTER_PUNK_3
@@ -354,6 +357,11 @@ LusterPunk3:
 	closetext
 	spriteface LUSTERPUNK3, LEFT
 	end
+	
+LusterTrashcan1Text:
+	text "Stinky…"
+	line "Just like Star!"
+	done
 	
 LusterSign1Text:
 	text "LUSTER TRAIN"
@@ -433,14 +441,7 @@ Luster1NPC1Text:
 	done
 	
 Luster1NPC2Text:
-	text "It looks like I"
-	line "can get down from"
-	cont "here, but it seems"
-	cont "a bit dangerous."
-	
-	para "I might be better"
-	line "off using a #-"
-	cont "MON to get down…"
+	text "TEXT 2"
 	done
 	
 Luster1NPC3Text:

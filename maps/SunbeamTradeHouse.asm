@@ -21,5 +21,19 @@ SunbeamTradeHouseNpc:
 	jumptextfaceplayer SunbeamTradeHouseNpcText
 
 SunbeamTradeHouseNpcText:
-	text "Unfinished."
+	text "UNFINISHED"
+
+	para "I caught that"
+	line "EXEGGCUTE on a"
+	cont "little island off"
+	cont "the coast."
+
+	para "EXEGGCUTE caught"
+	line "around here are"
+	cont "known to evolve"
+	cont "into a taller form"
+	cont "than usual."
+	
+	para "Some say it's their"
+	line "natural form!"
 	done

@@ -210,3 +210,7 @@
 	const SFX_TWINKLE                     ; ce
 
 	const SFX_PUDDLE                      ; cf
+	
+	const SFX_BUMP_SNOWSTORM			  ; d0
+	const SFX_SNOWSTORM_INTRO			  ; d1
+	const SFX_SNOWSTORM 				  ; d2

@@ -83,10 +83,10 @@ TrainerSunbeamGym_2:
 
 .SeenText:
 	text "When I took this"
-	line "job, I thought I"
+	line "job," 
 	
-	para "would be inside"
-	line "all day."
+	para "I thought I would"
+	line "be inside all day."
 	
 	para "I'm burning up out"
 	line "here!"
@@ -128,9 +128,8 @@ TrainerSunbeamGym_4:
 
 	text "You should be"
 	line "tough enough to"
-	
-	para "take on the GYM"
-	line "LEADER."
+	cont "take on the GYM"
+	cont "LEADER."
 	
 	para "I still need to"
 	line "train more."
@@ -144,9 +143,8 @@ TrainerSunbeamGym_4:
 	
 	para "Training in a"
 	line "jungle toughens"
-	
-	para "your #MON up"
-	line "quick!"
+	cont "your #MON up"
+	cont "quick!"
 	done
 
 .BeatenText:
@@ -160,9 +158,8 @@ TrainerSunbeamGym_5:
 
 	text "I thought this"
 	line "would be a good"
-	
-	para "place to study"
-	line "#MON."
+	cont "place to study"
+	cont "#MON."
 	
 	para "However, I haven't"
 	line "been able to"
@@ -173,9 +170,8 @@ TrainerSunbeamGym_5:
 .SeenText:
 	text "This lush jungle"
 	line "is the perfect"
-	
-	para "place to study "
-	line "#MON."
+	cont "place to study "
+	cont "#MON."
 	done
 
 .BeatenText:
@@ -189,9 +185,8 @@ SunbeamGymGuyText:
 	
 	para "This jungle is"
 	line "where you'll get"
-	
-	para "your next GYM"
-	line "BADGE."
+	cont "your next GYM"
+	cont "BADGE."
 	
 	para "I guess you could"
 	line "call it a"
@@ -203,12 +198,11 @@ SunbeamGymGuyText:
 	
 	para "They can't take a"
 	line "hit from FIRE or"
+	cont "FLYING moves,"
 	
-	para "FLYING moves, but"
-	line "using WATER or"
-	
-	para "ROCK is probably a"
-	line "bad idea."
+	para "but using WATER or"
+	line "ROCK is probably a"
+	cont "bad idea."
 	
 	para "Good luck, kid!"
 	done
@@ -218,9 +212,8 @@ SunbeamGymGuyWinText:
 
 	para "You braved the"
 	line "dangers of the"
-	
-	para "jungle, and came"
-	line "out victorious!"
+	cont "jungle, and came"
+	cont "out victorious!"
 	
 	para "That's 3 BADGES"
 	line "down!"
@@ -302,35 +295,31 @@ SunbeamGymLeilaniTextBeforeBattle2:
 	
 	para "The harsh climate"
 	line "and tough TRAINERS"
-	
-	para "usually weed out"
-	line "the serious chal-"
-	
-	para "lengers from the"
-	line "rest."
+	cont "usually weed out"
+	cont "the serious chal-"
+	cont "lengers from the"
+	cont "rest."
 	
 	para "You know, all my"
 	line "life I've been told"
-	cont "I'm beautiful, but"
+	cont "I'm beautiful,"
 	
-	para "sometimes I feel"
-	line "like that's all"
-	cont "people see in me."
+	para "but sometimes I"
+	line "feel like that's"
+	cont "all people see in"
+	cont "me."
 	
 	para "I've spent so much"
 	line "time and effort"
-	
-	para "refining not only"
-	line "my appearance, but"
-	
-	para "also my battle"
-	line "skills!"
+	cont "refining not only"
+	cont "my appearance, but"
+	cont "also my battle"
+	cont "skills!"
 	
 	para "Now it's time to"
 	line "prove once and for"
-	
-	para "all that I'm more"
-	line "than just a pretty"
+	cont "all that I'm more"
+	cont "than just a pretty"
 	cont "face!"
 	done
 	
@@ -358,7 +347,7 @@ SunbeamGymLeilaniTextAfterBattle:
 	cont "would be so tough."
 	
 	para "I judged you based"
-	line "on you looks just"
+	line "on your looks just"
 	cont "like others judge"
 	cont "me."
 	
@@ -381,9 +370,8 @@ SunbeamGymLeilaniTextTMSpeech:
 	
 	para "The harsh sunlight"
 	line "powers up FIRE-"
-	
-	para "type moves, but"
-	line "also can assist"
+	cont "type moves, but"
+	cont "also can assist"
 	cont "GRASS-types."
 	
 	para "It even works in"
@@ -392,9 +380,8 @@ SunbeamGymLeilaniTextTMSpeech:
 	
 	para "Go out and prove"
 	line "your worth by"
-	
-	para "taking on the rest"
-	line "of the GYMs."
+	cont "taking on the rest"
+	cont "of the GYMs."
 	
 	para "I'll stay here and"
 	line "better myself as"
@@ -405,9 +392,8 @@ SunbeamGymLeilaniTextTMSpeech:
 SunbeamGymLeilaniTextLoop:
 	text "Go out and prove"
 	line "your worth by"
-	
-	para "taking on the rest"
-	line "of the GYMs."
+	cont "taking on the rest"
+	cont "of the GYMs."
 	
 	para "I'll stay here and"
 	line "better myself as"

@@ -21,11 +21,11 @@ FlickerMartNPC1:
 FlickerMartNPC1Text:
 	text "I've heard that"
 	line "when the trains"
+	cont "aren't running,"
 	
-	para "aren't running,"
-	line "some people try to"
-	cont "walk the tracks."
+	para "some people try to"
+	line "walk the tracks."
 	
-	para "Seems really dan-"
-	line "gerous."
+	para "Seems really"
+	line "dangerous."
 	done

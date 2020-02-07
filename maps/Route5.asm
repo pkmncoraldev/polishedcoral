@@ -34,9 +34,8 @@ TrainerRoute5_1:
 
 	text "There are so many"
 	line "different types of"
-	
-	para "#MON in these"
-	line "woods."
+	cont "#MON in these"
+	cont "woods."
 	
 	para "I just wanna catch"
 	line "'em all!"
@@ -186,9 +185,8 @@ Route5NPC6Text:
 	
 	para "That's good for"
 	line "me, because I'm"
-	
-	para "looking for a new"
-	line "team member."
+	cont "looking for a new"
+	cont "team member."
 	
 	para "You might want to"
 	line "avoid it, though."
@@ -209,15 +207,12 @@ Route5NPC7Text:
 Route5NPC8Text:
 	text "I've heard there is"
 	line "a place deep in"
-	
-	para "these woods where"
-	line "you can catch a"
-	
-	para "rare #MON that"
-	line "can evolve into"
-	
-	para "several different"
-	line "#MON!"
+	cont "these woods where"
+	cont "you can catch a"
+	cont "rare #MON that"
+	cont "can evolve into"
+	cont "several different"
+	cont "#MON!"
 	
 	para "Pretty cool, huh?"
 	done

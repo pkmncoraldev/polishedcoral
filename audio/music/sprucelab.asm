@@ -972,6 +972,7 @@ Music_SpruceLab_Ch3_loop:
 	note C#, 2
 	note __, 2
 	note D_, 4
+	octave 4
 	note D_, 12
 	octave 2
 	note G_, 4

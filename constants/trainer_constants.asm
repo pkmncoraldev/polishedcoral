@@ -20,6 +20,8 @@ PLAYER_F EQU __enum__
 
 	trainerclass PLAYER_FEMALE
 	
+	trainerclass PLAYER_PIPPI
+	
 	trainerclass STANLEY
 
 	trainerclass RODNEY
@@ -182,6 +184,10 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass POKEMANIAC
+	const CARLOS
+	const TRISTEN
+	const SIMION
+	const THOMAS
 
 
 	trainerclass SUPER_NERD

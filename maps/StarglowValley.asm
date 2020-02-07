@@ -43,12 +43,12 @@ StarglowValley_MapScriptHeader:
 	person_event SPRITE_SNARE, 19, 36, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowSnare4, EVENT_PUNKS_LEAVE_STARGLOW
 	person_event SPRITE_GRAMPS, 10, 6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowGramps, -1
 	person_event SPRITE_YOUNGSTER, 14, 26, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowYoungster, -1
-	person_event SPRITE_CUTE_GIRL, 19, 29, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, StarglowLass, EVENT_PUNKS_LEAVE_STARGLOW
+	person_event SPRITE_LASS, 19, 29, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, StarglowLass, EVENT_PUNKS_LEAVE_STARGLOW
 	person_event SPRITE_FISHER, 16, 7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowFisher1, EVENT_PUNKS_HAVENT_LEFT_STARGLOW
 	person_event SPRITE_FISHER, 9, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowFisher2, EVENT_PUNKS_HAVENT_LEFT_STARGLOW
 	person_event SPRITE_FISHER, 26, 30, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowFisher3, EVENT_PUNKS_HAVENT_LEFT_STARGLOW
-	person_event SPRITE_SCHOOLBOY, 20, 31, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, StarglowYoungster2, EVENT_PUNKS_HAVENT_LEFT_STARGLOW
-	person_event SPRITE_POLIWHIRL, 20, 32, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowPoliwhirl, EVENT_PUNKS_HAVENT_LEFT_STARGLOW
+	person_event SPRITE_SCHOOLBOY, 20, 31, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, StarglowYoungster2, -1
+	person_event SPRITE_POLIWHIRL, 20, 32, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowPoliwhirl, -1
 	person_event SPRITE_COOLTRAINER_F, 18, 13, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, StarglowLass2, EVENT_PUNKS_HAVENT_LEFT_STARGLOW
 	person_event SPRITE_RODNEY, 21,  6, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowLass, EVENT_ALWAYS_SET
 	person_event SPRITE_SNARE, 22, 6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowSnare3, EVENT_STARGLOW_MAIN_PUNK_2
@@ -151,7 +151,7 @@ StarglowFisher1
 	iftrue .gotcut
 	writetext StarglowFisher1Text1
 	buttonsound
-	verbosegiveitem HM_CUT
+	verbosegivetmhm HM_CUT
 	setevent EVENT_GOT_HM01_CUT
 	setflag ENGINE_GOT_CUT
 .gotcut
@@ -595,9 +595,8 @@ StarglowLittleGirl:
 StarglowFisher1Text1:
 	text "Sometimes, when"
 	line "fishing, my line"
-	
-	para "will get caught"
-	line "on something in"
+	cont "will get caught"
+	cont "on something in"
 	cont "the water."
 	
 	para "When that happens,"
@@ -617,27 +616,25 @@ StarglowFisher1Text2:
 	
 	para "but you could use"
 	line "it to cut down"
-	
-	para "small trees that"
-	line "are in your way."
+	cont "small trees that"
+	cont "are in your way."
 	
 	para "You need the BADGE"
 	line "from this town's"
-	
-	para "GYM LEADER to use"
-	line "it outside of"
+	cont "GYM LEADER to use"
+	cont "it outside of"
 	cont "battle, though."
 	done
 	
 StarglowFisher2Text:
 	text "I've fished in"
 	line "hundreds of lakes"
+	cont "and rivers in my"
+	cont "day,"
 	
-	para "and rivers in my"
-	line "day, and none of"
-	
-	para "them are as good"
-	line "as STARGLOW"
+	para "and none of them"
+	line "are as good as"
+	cont "as STARGLOW"
 	cont "VALLEY."
 	done
 	
@@ -685,9 +682,8 @@ StarglowYoungsterText1:
 
 	para "I've heard that"
 	line "they're trying to"
-	
-	para "steal people's"
-	line "#MON."
+	cont "steal people's"
+	cont "#MON."
 	
 	para "I'd steer clear of"
 	line "them if I were"
@@ -721,26 +717,22 @@ StarglowYoungster2Text:
 	
 	para "I'd rather just"
 	line "sit here on this"
-	
-	para "bench with my"
-	line "#MON."
+	cont "bench with my"
+	cont "#MON."
 	done
 	
 StarglowLass2Text:
 	text "There's a lot of"
 	line "people around here"
-	
-	para "that are super"
-	line "into fishing."
+	cont "that are super"
+	cont "into fishing."
 	
 	para "I've heard that"
 	line "there's one person"
-	
-	para "in town who even"
-	line "takes it more"
-	
-	para "seriously than the"
-	line "GYM LEADER!"
+	cont "in town who even"
+	cont "takes it more"
+	cont "seriously than the"
+	cont "GYM LEADER!"
 	done
 	
 StarglowPoliwhirlText1:
@@ -752,16 +744,16 @@ StarglowPoliwhirlText2:
 	line "very bored."
 	done
 	
-StarglowGetSuperPotionsText:
-	text "<PLAYER> received"
-	line "2 SUPER POTIONS!"
-	done
+;StarglowGetSuperPotionsText:
+;	text "<PLAYER> received"
+;	line "2 SUPER POTIONS!"
+;	done
 	
-StarglowPutAwaySuperPotionsText:
-	text "<PLAYER> put the"
-	line "SUPER POTIONS in"
-	cont "the ITEM POCKET."
-	done
+;StarglowPutAwaySuperPotionsText:
+;	text "<PLAYER> put the"
+;	line "SUPER POTIONS in"
+;	cont "the ITEM POCKET."
+;	done
 	
 StarglowValleySignText:
 	text "STARGLOW VALLEY"
@@ -866,9 +858,8 @@ StarglowSnare3Text2:
 	
 	para "but if you beat"
 	line "all those other"
-	
-	para "guys, then I can't"
-	line "take any chances."
+	cont "guys, then I can't"
+	cont "take any chances."
 	
 	para "BOYS!"
 	done
@@ -913,9 +904,8 @@ StarglowSnare3Text8:
 	
 	para "I have sent the"
 	line "others to start"
-	
-	para "taking the people's"
-	line "#MON now."
+	cont "taking the people's"
+	cont "#MON now."
 	done
 	
 StarglowRodneyText1:
@@ -941,9 +931,8 @@ StarglowRodneyText3:
 StarglowRodneyText4:
 	text "???: Now that"
 	line "THAT business is"
-	
-	para "done, I should"
-	line "introduce myself."
+	cont "done, I should"
+	cont "introduce myself."
 	
 	para "I'm RODNEY."
 	
@@ -953,9 +942,8 @@ StarglowRodneyText4:
 	
 	para "You took out all"
 	line "of the other goons"
-	
-	para "around town all"
-	line "by yourself?"
+	cont "around town all"
+	cont "by yourself?"
 	
 	para "You must be quite"
 	line "the TRAINER!"
@@ -1002,9 +990,8 @@ StarglowLittleGirlText2:
 	
 	para "I ran for help,"
 	line "but another man"
-	
-	para "won't let me see"
-	line "the GYM LEADER."
+	cont "won't let me see"
+	cont "the GYM LEADER."
 	
 	para "My MOMMY is still"
 	line "in the house!"

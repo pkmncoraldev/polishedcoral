@@ -21,10 +21,10 @@ GlintApt22FNpc1:
 	
 GlintApt22FNpc1Text:
 	text "GLINT CITY is nice"
-	line "and all, but I"
+	line "and all,"
 	
-	para "want to go some-"
-	line "where bigger!"
+	para "but I want to go"
+	line "somewhere bigger!"
 	
 	para "I've always dreamed"
 	line "of living in"
@@ -32,8 +32,7 @@ GlintApt22FNpc1Text:
 	
 	para "I've heard they"
 	line "have a huge mall"
-	
-	para "with a GYM and a"
-	line "#MON CENTER in"
+	cont "with a GYM and a"
+	cont "#MON CENTER in"
 	cont "it!"
 	done

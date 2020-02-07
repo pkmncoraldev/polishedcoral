@@ -15,7 +15,7 @@ FlickerStation_MapScriptHeader:
 	warp_def 13, 53, 1, FLICKER_NAME_SPEECH_HOUSE
 	warp_def 27, 51, 1, FLICKER_TRAIN_STATION
 	warp_def 27, 52, 2, FLICKER_TRAIN_STATION
-	warp_def  5, 51, 1, ROUTE_10
+	warp_def  5, 51, 1, FLICKER_PASS_1F
 	
 
 	db 2 ; coord events
@@ -273,9 +273,8 @@ FlickerStationNPC6Text:
 FlickerStationNPC1Text:
 	text "This town may"
 	line "seem sleepy, but"
-	
-	para "the trains here"
-	line "are no joke."
+	cont "the trains here"
+	cont "are no joke."
 	
 	para "They're seriously"
 	line "fast!"
@@ -288,9 +287,8 @@ FlickerStationNPC2Text:
 	
 	para "This little town"
 	line "is kinda like a"
-	
-	para "gateway to the"
-	line "biggest city in"
+	cont "gateway to the"
+	cont "biggest city in"
 	cont "ONWA!"
 	done
 	

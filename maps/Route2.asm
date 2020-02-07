@@ -119,9 +119,8 @@ Route2PokeballDummy:
 Route2NPC1Text:
 	text "I've heard that"
 	line "there is a cave"
-	
-	para "around here where"
-	line "you can see some"
+	cont "around here where"
+	cont "you can see some"
 	cont "rare #MON!"
 	
 	para "I can't find it,"

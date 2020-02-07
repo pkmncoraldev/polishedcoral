@@ -222,7 +222,25 @@ _AlreadySurfingText::
 
 _AskSurfText::
 	text "The water is calm."
-	line "Want to SURF?"
+	
+	para "Want to SURF?"
+	done
+	
+_AskLavaSurfText::
+	text "The lava is"
+	line "bubbling."
+	
+	para "Want to ride on"
+	line "@"
+	text_from_ram wStringBuffer2
+	text "?"
+	done
+	
+_UsedLavaSurfText::
+	text "<PLAYER> got on"
+	line "@"
+	text_from_ram wStringBuffer2
+	text "."
 	done
 
 UnknownText_0x1c068e::

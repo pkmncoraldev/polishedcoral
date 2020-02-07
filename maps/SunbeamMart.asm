@@ -42,6 +42,6 @@ SunbeamMartNPC2Text:
 	
 	para "It was gross!"
 	
-	para "Now I know why it's"
+	para "I'm glad it's"
 	line "so rare."
 	done

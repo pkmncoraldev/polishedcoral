@@ -33,7 +33,6 @@ UnknownText_0x19ab1f:
 
 	para "The #MON PROF."
 	line "conductes his"
-	
-	para "research on the"
-	line "island."
+	cont "research on the"
+	cont "island."
 	done

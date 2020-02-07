@@ -452,9 +452,8 @@ StarglowHouse1MommyText3:
 	
 	para "I can't bear the"
 	line "thought of little"
-	
-	para "EGGY here being"
-	line "taken away by that"
+	cont "EGGY here being"
+	cont "taken away by that"
 	cont "horrible man."
 	done
 	
@@ -465,15 +464,13 @@ StarglowHouse1MommyText4:
 	
 	para "There's a whole"
 	line "gang of those men"
-	
-	para "terrorizing every-"
-	line "one in town."
+	cont "terrorizing every-"
+	cont "one in town."
 	
 	para "The only TRAINER"
 	line "around here strong"
-	
-	para "enough to kick"
-	line "them out is the"
+	cont "enough to kick"
+	cont "them out is the"
 	cont "GYM LEADER."
 	done
 	
@@ -516,9 +513,8 @@ StarglowHouse1RocketText3:
 	
 	para "You think you can"
 	line "stop me from"
-	
-	para "taking this"
-	line "#MON?"
+	cont "taking this"
+	cont "#MON?"
 	done
 	
 StarglowHouse1RocketText3_2:

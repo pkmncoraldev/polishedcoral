@@ -37,8 +37,9 @@ GlintEvoHouseCubone:
 	
 GlintEvoHouseNPC1Text:
 	text "If you battle with"
-	line "your #MON, they"
-	cont "grow stronger!"
+	line "your #MON,"
+	
+	para "they grow stronger!"
 	
 	para "They might even"
 	line "evolve!"
@@ -47,12 +48,10 @@ GlintEvoHouseNPC1Text:
 GlintEvoHouseNPC2Text:
 	text "Some #MON"
 	line "evolve into"
-	
-	para "different #MON"
-	line "depending on the"
-	
-	para "time of day they're"
-	line "trained."
+	cont "different #MON"
+	cont "depending on the"
+	cont "time of day they're"
+	cont "trained."
 	done
 	
 GlintEvoHouseCuboneText:

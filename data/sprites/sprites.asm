@@ -15,6 +15,9 @@ SpriteHeaders:
 	overworld_sprite KrisSurfSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisRunSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisMiscSpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite PippiSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite PippiRunSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite PippiBikeSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite MomSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite ColbySpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite StanleySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
@@ -141,4 +144,5 @@ SpriteHeaders:
 	overworld_sprite SittingPonytailGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite SittingPokeFanGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite SittingLadyGFX, STANDING_SPRITE, PAL_OW_RED
-	overworld_sprite MallSignGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite MallSignGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite CampfireGFX, STANDING_SPRITE, PAL_OW_SILVER

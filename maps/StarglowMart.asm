@@ -29,9 +29,8 @@ StarglowMartNPC1Text:
 	
 	para "You should always"
 	line "check the #MART"
-	
-	para "in every town you"
-	line "visit."
+	cont "in every town you"
+	cont "visit."
 	done
 	
 StarglowMartNPC2Text:
@@ -41,7 +40,6 @@ StarglowMartNPC2Text:
 	
 	para "I guess I'll have"
 	line "to take the trek"
-	
-	para "over to the next"
-	line "town."
+	cont "over to the next"
+	cont "town."
 	done

@@ -79,8 +79,9 @@ EastTrainCabin2NPC2:
 	iftrue .snare
 	checkevent EVENT_BEAT_EAST_TRAIN_CABIN_2_TRAINER_2
 	iftrue .afterbattle
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .girl
+	readvar VAR_PLAYER_GENDER
+	if_equal FEMALE, .girl
+	if_equal PIPPI, .girl
 	writetext EastTrainCabin2NPC2Text1Boy
 	jump .cont
 .girl
@@ -105,8 +106,9 @@ EastTrainCabin2NPC2:
 	setevent EVENT_BEAT_EAST_TRAIN_CABIN_2_TRAINER_2
 	end
 .afterbattle
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .girl2
+	readvar VAR_PLAYER_GENDER
+	if_equal FEMALE, .girl
+	if_equal PIPPI, .girl
 	writetext EastTrainCabin2NPC2AfterBattleTextBoy
 	jump .cont2
 .girl2
@@ -223,9 +225,8 @@ EastTrainCabin2Snare1:
 	
 	para "I'm the second"
 	line "highest ranked"
-	
-	para "grunt on this"
-	line "train!"
+	cont "grunt on this"
+	cont "train!"
 	done
 
 .SeenText:
@@ -233,9 +234,8 @@ EastTrainCabin2Snare1:
 	
 	para "I'm the second"
 	line "highest ranked"
-	
-	para "grunt on this"
-	line "train!"
+	cont "grunt on this"
+	cont "train!"
 	
 	para "You'd better"
 	line "respect that!"
@@ -258,9 +258,10 @@ EastTrainCabin2Snare2:
 	
 	para "If I take you out"
 	line "and steal your"
+	cont "#MON,"
 	
-	para "#MON, I might"
-	line "get a raise!"
+	para "I might get a"
+	line "raise!"
 	done
 
 .BeatenText:
@@ -279,9 +280,8 @@ EastTrainCabin2NPC1Text1:
 EastTrainCabin2NPC1Text2:
 	text "They've gotta be"
 	line "crazy if they"
-	
-	para "think they can"
-	line "take my #MON!"
+	cont "think they can"
+	cont "take my #MON!"
 	done
 
 EastTrainCabin2NPC1StartBattleText:

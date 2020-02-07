@@ -473,9 +473,8 @@ RanchRideRaceText3:
 	
 	para "Remember to press"
 	line "the A Button to"
-	
-	para "jump over the"
-	line "hurdles."
+	cont "jump over the"
+	cont "hurdles."
 	
 	para "Oh, and stay on"
 	line "the track."
@@ -658,9 +657,8 @@ RanchRideReturnGirlText4:
 	
 	para "Press the A button"
 	line "to jump down"
-
-	para "ledges or over"
-	line "hurdles."
+	cont "ledges or over"
+	cont "hurdles."
 	
 	para "You can also hold"
 	line "the B Button to"

@@ -55,10 +55,10 @@ endc
 
 LoadSpecialMapPalette: ; 494ac
 	ld a, [wTileset]
-	cp TILESET_GLINT
-	jp z, .glint
-	cp TILESET_CAVE
-	jr z, .cave
+;	cp TILESET_GLINT
+;	jp z, .glint
+;	cp TILESET_CAVE
+;	jr z, .cave
 	cp TILESET_STARGLOW_CAVERN
 	jr z, .starglow_cavern
 	cp TILESET_GROVE
@@ -82,17 +82,20 @@ LoadSpecialMapPalette: ; 494ac
 	jp .do_nothing
 	
 .checktent
-	ld a, [wMapGroup]
-	cp GROUP_ROUTE_3
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_10_EAST
 	jp z, .snowtent
 	jp .snow
 	
-.glint
-	jp .do_nothing
+;.glint
+;	jp .do_nothing
 	
-.cave
-	ld hl, CavePalette
-	jp LoadEightBGPalettes
+;.cave
+;	ld a, [wMapGroup]
+;	cp GROUP_MT_ONWA_B1F
+;	jr z, .glint
+;	ld hl, CavePalette
+;	jp LoadEightBGPalettes
 	
 .starglow_cavern
 	ld hl, StarglowCavernPalette
@@ -111,11 +114,27 @@ LoadSpecialMapPalette: ; 494ac
 	jp LoadEightTimeOfDayBGPalettes
 	
 .snow
+	ld a, [wTimeOfDayPalFlags]
+	and $3F
+	cp 1
+	jr z, .snowstorm
 	ld hl, OutsideSnowPalette
+	jp LoadEightTimeOfDayBGPalettes
+
+.snowstorm
+	ld hl, OutsideSnowStormPalette
 	jp LoadEightTimeOfDayBGPalettes
 	
 .snowtent
+	ld a, [wTimeOfDayPalFlags]
+	and $3F
+	cp 1
+	jr z, .snowstormtent
 	ld hl, OutsideSnowTentPalette
+	jp LoadEightTimeOfDayBGPalettes
+	
+.snowstormtent
+	ld hl, OutsideSnowStormTentPalette
 	jp LoadEightTimeOfDayBGPalettes
 	
 .ranch
@@ -277,6 +296,10 @@ INCLUDE "maps/palettes/bgpals/bgsnow.pal"
 
 OutsideSnowTentPalette:
 INCLUDE "maps/palettes/bgpals/bgsnowtent.pal"
+
+OutsideSnowStormTentPalette:
+OutsideSnowStormPalette:
+INCLUDE "maps/palettes/bgpals/bgsnowstorm.pal"
 
 OutsideRanchPalette:
 INCLUDE "maps/palettes/bgpals/bgranch.pal"

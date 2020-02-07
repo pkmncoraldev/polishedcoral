@@ -45,15 +45,14 @@ SunbeamIsland_MapScriptHeader:
 
 	db 20 ; object events
 	person_event SPRITE_DONPHAN,  6, 19, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_SLOWPOKETAIL, 13,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandSlowpoke, -1
+	person_event SPRITE_SLOWPOKETAIL, 14,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandSlowpoke, -1
 	person_event SPRITE_COOL_DUDE, 41, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_FIRST_BIKINI_CONTEST
 	person_event SPRITE_BATTLE_GIRL, 42, 25, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_FIRST_BIKINI_CONTEST
-	person_event SPRITE_CHRIS, 41, 28, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_FIRST_BIKINI_CONTEST
 	person_event SPRITE_GENERAL_VARIABLE_1, 48,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ISLAND_STRAND
 	person_event SPRITE_MATRON, 20, 24, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC1, -1
-	person_event SPRITE_POKEFAN_M, 10, 30, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC2, -1
+	person_event SPRITE_POKEFAN_M, 10, 28, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC2, -1
 	person_event SPRITE_CUTE_GIRL, 16,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC3, -1
-	person_event SPRITE_GRANNY, 26, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC4, -1
+	person_event SPRITE_VARIABLE_SUNBEAM, 26, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC4, -1
 	person_event SPRITE_CUTE_GIRL, 42, 14, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC5, -1
 	person_event SPRITE_SUPER_NERD, 43,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC6, -1
 	person_event SPRITE_ROWBOAT, 49,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandBoat, -1
@@ -63,7 +62,8 @@ SunbeamIsland_MapScriptHeader:
 	person_event SPRITE_NIDORANF,  5, 14, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNidoranF, -1
 	person_event SPRITE_LOPUNNY,  9,  8, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandLopunny, -1
 	person_event SPRITE_ALTARIA, 10, 12, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SunbeamIslandAltaria, -1
-	person_event SPRITE_DODRIO,  4, 17, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandDodrio, -1
+	person_event SPRITE_MAGMAR, 13, 13, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandMagmar, -1
+	person_event SPRITE_ELECTABUZZ, 11, 20, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandElectabuzz, -1
 
 	
 	const_def 1 ; object constants
@@ -71,7 +71,6 @@ SunbeamIsland_MapScriptHeader:
 	const SUNBEAM_SLOWPOKE
 	const SUNBEAM_CROWD1
 	const SUNBEAM_CROWD2
-	const SUNBEAM_CROWD3
 	const SUNBEAM_LEILANI
 	const SUNBEAM_NPC1
 	const SUNBEAM_NPC2
@@ -231,6 +230,10 @@ SunbeamStartFirstContest1:
 	moveperson SUNBEAM_NPC2, $1a, $29
 	appear SUNBEAM_NPC2
 	spriteface SUNBEAM_NPC2, UP
+	disappear SUNBEAM_NPC4
+	moveperson SUNBEAM_NPC4, $1c, $29
+	appear SUNBEAM_NPC4
+	variablesprite SPRITE_VARIABLE_SUNBEAM, SPRITE_CHRIS
 	playmusic MUSIC_GSC_GAME_CORNER
 	opentext
 	writetext SunbeamFirstContestText1
@@ -238,6 +241,8 @@ SunbeamStartFirstContest1:
 	closetext
 ;	special MapCallbackSprites_LoadUsedSpritesGFX
 	closetext
+	applymovement PLAYER, Movement_SunbeamFirstContest1
+	spriteface SUNBEAM_NPC4, UP
 	applymovement PLAYER, Movement_SunbeamFirstContest1_1
 	jump SunbeamStartFirstContestCont
 	
@@ -250,12 +255,19 @@ SunbeamStartFirstContest2:
 	moveperson SUNBEAM_NPC2, $1a, $29
 	appear SUNBEAM_NPC2
 	spriteface SUNBEAM_NPC2, UP
+	disappear SUNBEAM_NPC4
+	moveperson SUNBEAM_NPC4, $1c, $29
+	appear SUNBEAM_NPC4
+	variablesprite SPRITE_VARIABLE_SUNBEAM, SPRITE_CHRIS
 	playmusic MUSIC_GSC_GAME_CORNER
 	opentext
 	writetext SunbeamFirstContestText1
 	waitbutton
 	closetext
 ;	special MapCallbackSprites_LoadUsedSpritesGFX
+	closetext
+	applymovement PLAYER, Movement_SunbeamFirstContest1
+	spriteface SUNBEAM_NPC4, UP
 	applymovement PLAYER, Movement_SunbeamFirstContest1_2
 	jump SunbeamStartFirstContestCont
 	
@@ -268,6 +280,10 @@ SunbeamStartFirstContest3:
 	moveperson SUNBEAM_NPC2, $1a, $29
 	appear SUNBEAM_NPC2
 	spriteface SUNBEAM_NPC2, UP
+	disappear SUNBEAM_NPC4
+	moveperson SUNBEAM_NPC4, $1c, $29
+	appear SUNBEAM_NPC4
+	variablesprite SPRITE_VARIABLE_SUNBEAM, SPRITE_CHRIS
 	playmusic MUSIC_GSC_GAME_CORNER
 	opentext
 	writetext SunbeamFirstContestText1
@@ -275,6 +291,8 @@ SunbeamStartFirstContest3:
 	closetext
 ;	special MapCallbackSprites_LoadUsedSpritesGFX
 	closetext
+	applymovement PLAYER, Movement_SunbeamFirstContest1
+	spriteface SUNBEAM_NPC4, UP
 	applymovement PLAYER, Movement_SunbeamFirstContest1_3
 	jump SunbeamStartFirstContestCont
 	
@@ -287,6 +305,10 @@ SunbeamStartFirstContest4:
 	moveperson SUNBEAM_NPC2, $1a, $29
 	appear SUNBEAM_NPC2
 	spriteface SUNBEAM_NPC2, UP
+	disappear SUNBEAM_NPC4
+	moveperson SUNBEAM_NPC4, $1c, $29
+	appear SUNBEAM_NPC4
+	variablesprite SPRITE_VARIABLE_SUNBEAM, SPRITE_CHRIS
 	playmusic MUSIC_GSC_GAME_CORNER
 	opentext
 	writetext SunbeamFirstContestText1
@@ -294,8 +316,9 @@ SunbeamStartFirstContest4:
 	closetext
 ;	special MapCallbackSprites_LoadUsedSpritesGFX
 	closetext
+	applymovement PLAYER, Movement_SunbeamFirstContest1
+	spriteface SUNBEAM_NPC4, UP
 	applymovement PLAYER, Movement_SunbeamFirstContest1_4
-	jump SunbeamStartFirstContestCont
 	
 SunbeamStartFirstContestCont
 	callasm .MetLeilani
@@ -311,7 +334,7 @@ SunbeamStartFirstContestCont
 	pause 10
 	spriteface SUNBEAM_NPC3, LEFT
 	pause 10
-	spriteface SUNBEAM_CROWD3, RIGHT
+	spriteface SUNBEAM_NPC4, RIGHT
 	pause 10
 	spriteface SUNBEAM_NPC2, LEFT
 	pause 10
@@ -319,7 +342,7 @@ SunbeamStartFirstContestCont
 	pause 10
 	spriteface SUNBEAM_CROWD1, UP
 	pause 10
-	spriteface SUNBEAM_CROWD3, UP
+	spriteface SUNBEAM_NPC4, UP
 	pause 10
 	spriteface SUNBEAM_NPC2, UP
 	pause 10
@@ -354,13 +377,16 @@ SunbeamStartFirstContestCont
 	special Special_ReloadSpritesNoPalettes
 	disappear SUNBEAM_CROWD1
 	disappear SUNBEAM_CROWD2
-	disappear SUNBEAM_CROWD3
+	disappear SUNBEAM_NPC4
 	disappear SUNBEAM_NPC2
 	disappear SUNBEAM_NPC3
 	moveperson SUNBEAM_NPC2, $1e, $a
 	moveperson SUNBEAM_NPC3, $6, $10
+	moveperson SUNBEAM_NPC4, $f, $1a
 	appear SUNBEAM_NPC2
 	appear SUNBEAM_NPC3
+	appear SUNBEAM_NPC4	
+	variablesprite SPRITE_VARIABLE_SUNBEAM, SPRITE_GRANNY
 	waitsfx
 	special Special_FadeOutMusic
 	pause 20
@@ -558,9 +584,8 @@ SunbeamLeilaniText:
 	
 	para "The GYM on the"
 	line "island is in the"
-	
-	para "jungle, so you"
-	line "can't miss it!"
+	cont "jungle, so you"
+	cont "can't miss it!"
 	
 	para "I'll see you"
 	line "around."
@@ -569,29 +594,22 @@ SunbeamLeilaniText:
 SunbeamIslandNPC1Text:
 	text "SUNBEAM ISLAND'S"
 	line "GYM isn't in a"
-	
-	para "building like most"
-	line "GYMS."
+	cont "building like most"
+	cont "GYMS."
 	
 	para "Instead, TRAINERS"
 	line "have to journey"
-	
-	para "through the jungle"
-	line "to reach the GYM"
+	cont "through the jungle"
+	cont "to reach the GYM"
 	cont "LEADER."
 	done
 	
 SunbeamIslandNPC2Text:
-	text "SUNBEAM ISLAND"
-	line "is known for it's"
-	
-	para "bright sunshine,"
-	line "and deep blue"
-	cont "waters."
-
-	para "There's really no"
-	line "place like it in"
-	cont "all of ONWA!"
+	text "The bright sun-"
+	line "shine around here"
+	cont "makes a certain"
+	cont "#MON evolve"
+	cont "differently."
 	done
 	
 SunbeamIslandNPC3Text1:
@@ -637,9 +655,8 @@ SunbeamIslandNPC5Text:
 SunbeamIslandNPC6Text:
 	text "Someday I'm going"
 	line "to sail the seas"
-	
-	para "with my #MON,"
-	line "and find out what's"
+	cont "with my #MON"
+	cont "and find out what's"
 	cont "out there…"
 	done
 	
@@ -668,9 +685,12 @@ Movement_SunbeamDontLeave2:
 	step_right
 	step_end
 	
+Movement_SunbeamFirstContest1:
+	step_right
+	step_right
+	step_end
+	
 Movement_SunbeamFirstContest1_1:
-	step_right
-	step_right
 	step_right
 	step_down
 	step_down
@@ -683,8 +703,6 @@ Movement_SunbeamFirstContest1_1:
 	
 Movement_SunbeamFirstContest1_2:
 	step_right
-	step_right
-	step_right
 	step_down
 	step_down
 	step_right
@@ -695,8 +713,6 @@ Movement_SunbeamFirstContest1_2:
 	
 Movement_SunbeamFirstContest1_3:
 	step_right
-	step_right
-	step_right
 	step_down
 	step_right
 	step_right
@@ -705,8 +721,6 @@ Movement_SunbeamFirstContest1_3:
 	step_end
 	
 Movement_SunbeamFirstContest1_4:
-	step_right
-	step_right
 	step_right
 	step_right
 	step_right
@@ -771,12 +785,10 @@ SunbeamIslandSpruceText3:
 SunbeamIslandSpruceText4:
 	text "I let the #MON"
 	line "live their lives"
-	
-	para "as they would in"
-	line "the wild, and"
-	
-	para "study their behav-"
-	line "iors."
+	cont "as they would in"
+	cont "the wild and"
+	cont "study their behav-"
+	cont "iors."
 	done
 	
 SunbeamIslandSpruceText5:
@@ -787,15 +799,12 @@ SunbeamIslandSpruceText5:
 SunbeamIslandSpruceText6:
 	text "Recently, I have"
 	line "experimented with"
-	
-	para "letting TRAINERS"
-	line "catch some of the"
-	
-	para "#MON in the"
-	line "habitat to see how"
-	
-	para "they react to"
-	line "being trained."
+	cont "letting TRAINERS"
+	cont "catch some of the"
+	cont "#MON in the"
+	cont "habitat to see how"
+	cont "they react to"
+	cont "being trained."
 	
 	para "Feel free to catch"
 	line "a few yourself."
@@ -862,10 +871,18 @@ SunbeamIslandDonphan:
 	closetext
 	end
 	
-SunbeamIslandDodrio:
+SunbeamIslandMagmar:
 	opentext
-	writetext SunbeamIslandDodrioText
-	cry DODRIO
+	writetext SunbeamIslandMagmarText
+	cry MAGMAR
+	waitbutton
+	closetext
+	end
+	
+SunbeamIslandElectabuzz:
+	opentext
+	writetext SunbeamIslandElectabuzzText
+	cry ELECTABUZZ
 	waitbutton
 	closetext
 	end
@@ -907,9 +924,14 @@ SunbeamIslandDonphanText:
 	text "DONPHAN: Phan…"
 	done
 	
-SunbeamIslandDodrioText:
-	text "DODRIO: Drio!"
-	line "Drio! Drio!"
+SunbeamIslandMagmarText:
+	text "MAGMAR: MAG!"
+	line "MAR!"
+	done
+	
+SunbeamIslandElectabuzzText:
+	text "ELECTABUZZ: BUZZ!"
+	line "LECTA!"
 	done
 	
 Movement_SunbeamIslandSpruce:
@@ -958,8 +980,8 @@ Movement_SunbeamSpruce8:
 	step_down
 	step_down
 	step_down
-	step_left
 	step_down
+	step_left
 	step_left
 	step_left
 	step_down
@@ -968,8 +990,8 @@ Movement_SunbeamSpruce8:
 Movement_SunbeamSpruce9:
 	step_right
 	step_right
-	step_right
 	step_up
+	step_right
 	step_up
 	step_right
 	step_right

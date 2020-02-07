@@ -52,9 +52,8 @@ TrainerStarglowCavern_1:
 
 	text "GRASS or WATER"
 	line "#MON would"
-	
-	para "probably do great"
-	line "around here."
+	cont "probably do great"
+	cont "around here."
 	done
 
 .SeenText:
@@ -213,8 +212,9 @@ StarglowCavern1FNPC2:
 	loadtrainer DISGUISE, MASTER_1
 	startbattle
 	reloadmapafterbattle
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .girl
+	readvar VAR_PLAYER_GENDER
+	if_equal FEMALE, .girl
+	if_equal PIPPI, .girl
 	opentext
 	writetext StarglowCavern_DisguiseMan1Text3_boy
 	waitbutton
@@ -252,7 +252,7 @@ StarglowCavern_DisguiseMan1Text2:
 	line "ize your mistake."
 	
 	para "If you'd talked to"
-	line "him, over there,"
+	line "him over there,"
 	
 	para "you could've passed"
 	line "without a care."
@@ -313,7 +313,7 @@ StarglowCavern_DisguiseMan1Text5:
 	line "before your eyes!"
 	
 	para "It's I, the MASTER"
-	line"OF DISGUISE!"
+	line "OF DISGUISE!"
 	done
 	
 StarglowCavern_DisguiseMan1Text6:
@@ -325,9 +325,9 @@ StarglowCavern_DisguiseMan1Text6:
 	cont "go?"
 	
 	para "You saw the item"
-	line "over there, but"
+	line "over there."
 	
-	para "it seems like you"
+	para "It seems like you"
 	line "just didn't care."
 	
 	para "To this man you"
@@ -359,9 +359,8 @@ StarglowCavern_NuggetManText1:
 	
 	para "I'm not sure why,"
 	line "but most people"
-	
-	para "who pass by here"
-	line "go on the other"
+	cont "who pass by here"
+	cont "go on the other"
 	cont "side."
 	
 	para "Is it because they"
@@ -370,15 +369,14 @@ StarglowCavern_NuggetManText1:
 	
 	para "Anyway, you're the"
 	line "first person I've"
-	
-	para "talked to in quite"
-	line "some time."
+	cont "talked to in quite"
+	cont "some time."
 	
 	para "As thanks for you"
-	line "stopping by, I"
+	line "stopping by,"
 	
-	para "want you to take"
-	line "this."
+	para "I want you to"
+	line "have this."
 	done
 	
 StarglowCavern_NuggetManText2:
@@ -406,13 +404,12 @@ StarglowCavern_NuggetManText5:
 	
 	para "I was going to"
 	line "give you something"
+	cont "if you came and"
+	cont "talked to me,"
 	
-	para "if you came and"
-	line "talked to me, but"
-	
-	para "someone else came"
-	line "along and I gave"
-	cont "it to them."
+	para "but someone else"
+	line "came along and I"
+	cont "gave it to them."
 	
 	para "Sorry, kid."
 	done

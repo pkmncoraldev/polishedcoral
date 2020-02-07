@@ -373,16 +373,16 @@ GlintRivalText1:
 	
 	para "I bet you aren't"
 	line "even any stronger"
-	
-	para "than you were when"
-	line "you first got your"
+	cont "than you were when"
+	cont "you first got your"
 	cont "#MON!"
 	
 	para "I was heading"
-	line "home, but I could"
+	line "home,"
 	
-	para "take you down real"
-	line "quick."
+	para "but I could take"
+	line "you down real"
+	cont "quick."
 	done
 
 GlintRivalText2:
@@ -452,8 +452,10 @@ GlintGroveEntranceContactsGuy1Text2:
 	
 GlintGroveEntranceContactsGuyText:
 	text "I found my contact"
-	line "lens, but it's all"
-	cont "squished!"
+	line "lens,"
+	
+	para "but it's all"
+	line "squished!"
 	
 	para "I still can't see"
 	line "anything!"
@@ -466,9 +468,8 @@ GlintGroveEntranceContactsGuyText2:
 	
 	para "I'm lucky someone"
 	line "didn't walk by"
-	
-	para "while I was look-"
-	line "ing for it."
+	cont "while I was look-"
+	cont "ing for it."
 	
 	para "It could have been"
 	line "squished!"

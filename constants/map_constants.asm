@@ -33,6 +33,8 @@ MAP_NONE   EQU 0
 	map_const MT_ONWA_B3F,								  11, 14 ; 11
 	map_const MT_ONWA_CLIFF,							  20, 20 ; 12
 	map_const MT_ONWA_LOWER_CLIFF,						  13, 12 ; 13
+	map_const FLICKER_PASS_1F,							  21, 18 ; 14
+	map_const FLICKER_PASS_2F,							  25, 26 ; 15
 
 	newgroup                                                     ;  2
 
@@ -163,17 +165,20 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 11
 	
+	map_const ROUTE_10,									  28, 26 ; 1
+	map_const ROUTE_10_EAST,							  12, 14 ; 2
+	map_const ROUTE_10_TENT,							   2,  3 ; 3
+	map_const TWINKLE_TOWN,								  24, 28 ; 4
+	
+	newgroup													 ; 12
+	
 	map_const EAST_TRAIN_CABIN_1,						   8,  4 ; 1
 	map_const EAST_TRAIN_CABIN_2,						   8,  4 ; 2
 	map_const EAST_TRAIN_CABIN_3,						   8,  4 ; 3
 	map_const EAST_TRAIN_CABOOSE,						   2,  2 ; 4
 	
-	newgroup													 ; 12
+	newgroup													 ; 13
 	
 	map_const LUSTER_CITY_RESIDENTIAL,					  15, 30 ; 1
 	map_const LUSTER_CITY_SHOPPING,					      10, 30 ; 2
-	
-	newgroup
-	
-	map_const ROUTE_10,									  28, 26 ; 1
 	

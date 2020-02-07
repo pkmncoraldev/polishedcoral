@@ -104,9 +104,8 @@ TrainerRoute4_4:
 .SeenText:
 	text "I knew someone"
 	line "would come along"
-	
-	para "looking for a"
-	line "battle."
+	cont "looking for a"
+	cont "battle."
 	
 	para "Hook, line, and"
 	line "sinker!"
@@ -255,9 +254,8 @@ Route4NPC5Text:
 	
 	para "and now a SNORLAX"
 	line "decided this would"
-	
-	para "be the perfect"
-	line "place to take a"
+	cont "be the perfect"
+	cont "place to take a"
 	cont "nap."
 	
 	para "I'm just trying to"
@@ -284,16 +282,16 @@ Route4NPC7Text:
 Route4NPC8Text:
 	text "I wonder if"
 	line "SNORLAX realizes"
-	
-	para "all the trouble"
-	line "it's caused."
+	cont "all the trouble"
+	cont "it's caused."
 	
 	para "I can't blame it,"
 	line "though."
 	
 	para "If I was as big"
-	line "as it, I'd probably"
+	line "as it,"
 	
-	para "lay around all day"
-	line "too!"
+	para "I'd probably lay"
+	line "around all day,"
+	cont "too!"
 	done

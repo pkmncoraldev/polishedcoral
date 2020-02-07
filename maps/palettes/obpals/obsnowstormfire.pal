@@ -1,0 +1,199 @@
+; Morn
+
+; Red
+	RGB 28, 31, 16
+	RGB 30, 26, 22
+	RGB 30, 21, 19
+	RGB 19, 19, 19
+
+; Blue
+	RGB 28, 31, 16
+	RGB 30, 26, 22
+	RGB 22, 20, 30
+	RGB 19, 19, 19
+
+; Green
+	RGB 28, 31, 16
+	RGB 30, 26, 22
+	RGB 23, 27, 20
+	RGB 19, 19, 19
+
+; Brown
+	RGB 28, 31, 16
+	RGB 30, 26, 22
+	RGB 24, 22, 20
+	RGB 19, 19, 19
+
+; Purple
+	RGB 28, 31, 16
+	RGB 30, 26, 22
+	RGB 26, 21, 26
+	RGB 19, 19, 19
+
+; Teal
+	RGB 28, 31, 16
+	RGB 30, 26, 22
+	RGB 20, 27, 26
+	RGB 19, 19, 19
+	
+; Pink
+	RGB 28, 31, 16
+	RGB 30, 26, 22
+	RGB 30, 24, 23
+	RGB 19, 19, 19
+
+; Silver
+	RGB 00, 00, 00
+	RGB 31, 28, 00
+	RGB 31, 05, 00
+	RGB 27, 31, 27
+
+; Day
+	
+; Red
+	RGB 28, 31, 16
+	RGB 30, 26, 22
+	RGB 30, 21, 19
+	RGB 19, 19, 19
+
+; Blue
+	RGB 28, 31, 16
+	RGB 30, 26, 22
+	RGB 22, 20, 30
+	RGB 19, 19, 19
+
+; Green
+	RGB 28, 31, 16
+	RGB 30, 26, 22
+	RGB 23, 27, 20
+	RGB 19, 19, 19
+
+; Brown
+	RGB 28, 31, 16
+	RGB 30, 26, 22
+	RGB 24, 22, 20
+	RGB 19, 19, 19
+
+; Purple
+	RGB 28, 31, 16
+	RGB 30, 26, 22
+	RGB 26, 21, 26
+	RGB 19, 19, 19
+
+; Teal
+	RGB 28, 31, 16
+	RGB 30, 26, 22
+	RGB 20, 27, 26
+	RGB 19, 19, 19
+	
+; Pink
+	RGB 28, 31, 16
+	RGB 30, 26, 22
+	RGB 30, 24, 23
+	RGB 19, 19, 19
+
+;Silver
+	RGB 00, 00, 00
+	RGB 31, 28, 00
+	RGB 31, 05, 00
+	RGB 27, 31, 27
+
+; Nite
+	
+; Red
+	RGB 15, 14, 24
+	RGB 21, 19, 23
+	RGB 21, 16, 20
+	RGB 15, 15, 18
+
+; Blue
+	RGB 15, 14, 24
+	RGB 21, 19, 23
+	RGB 17, 16, 24
+	RGB 15, 15, 18
+	
+; Green
+	RGB 15, 14, 24
+	RGB 21, 19, 23
+	RGB 16, 19, 21
+	RGB 15, 15, 18
+
+; Brown
+	RGB 15, 14, 24
+	RGB 21, 19, 23
+	RGB 18, 16, 19
+	RGB 15, 15, 18
+
+; Purple
+	RGB 15, 14, 24
+	RGB 21, 19, 23
+	RGB 20, 15, 22
+	RGB 15, 15, 18
+
+; Teal
+	RGB 15, 14, 24
+	RGB 21, 19, 23
+	RGB 16, 19, 23
+	RGB 15, 15, 18
+	
+; Pink
+	RGB 15, 14, 24
+	RGB 21, 19, 23
+	RGB 21, 18, 22
+	RGB 15, 15, 18
+
+; Silver
+	RGB 00, 00, 00
+	RGB 31, 28, 00
+	RGB 31, 05, 00
+	RGB 27, 31, 27
+
+; Dusk
+	
+; Red
+	RGB 27, 22, 11
+	RGB 28, 23, 16
+	RGB 28, 18, 15
+	RGB 18, 17, 14
+
+; Blue
+	RGB 27, 22, 11
+	RGB 28, 23, 16
+	RGB 22, 21, 17
+	RGB 18, 17, 14
+
+; Green
+	RGB 27, 22, 11
+	RGB 28, 23, 16
+	RGB 21, 21, 15
+	RGB 18, 17, 14
+
+; Brown
+	RGB 27, 22, 11
+	RGB 28, 23, 16
+	RGB 23, 19, 15
+	RGB 18, 17, 14
+
+; Purple
+	RGB 27, 22, 11
+	RGB 28, 23, 16
+	RGB 25, 20, 17
+	RGB 18, 17, 14
+
+; Teal
+	RGB 27, 22, 11
+	RGB 28, 23, 16
+	RGB 22, 23, 19
+	RGB 18, 17, 14
+	
+; Pink
+	RGB 27, 22, 11
+	RGB 28, 23, 16
+	RGB 28, 21, 17
+	RGB 18, 17, 14
+
+; Silver
+	RGB 00, 00, 00
+	RGB 31, 28, 00
+	RGB 31, 05, 00
+	RGB 27, 31, 27

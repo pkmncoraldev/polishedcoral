@@ -460,6 +460,10 @@ GetPlayerOrMonPalettePointer:
 	and a
 	jp nz, GetMonNormalOrShinyPalettePointer
 	dec a
+	
+	ld a, [wPlayerGender]
+	cp PIPPI
+	jr z, .pippi
 	ld a, [wPlayerPalette]
 	cp $0
 	jp nz, .cont1
@@ -503,6 +507,10 @@ GetPlayerOrMonPalettePointer:
 	
 .cont6
 	ld hl, PlayerPalette7
+	ret
+	
+.pippi
+	ld hl, ClefairyPalette
 	ret
 
 GetFrontpicPalettePointer:
@@ -812,12 +820,12 @@ LoadMapPals:
 	ld a, [wTileset]
 	cp TILESET_CAVE
 	jp z, .rocks
-	cp TILESET_LAVA_CAVE
-	jp z, .rocks
 	cp TILESET_STARGLOW_CAVERN
 	jp z, .starglow
 	cp TILESET_RANCH
 	jp z, .ranch
+	cp TILESET_SNOW
+	jp z, .snow
 	cp TILESET_LUSTER
 	jp z, .luster
 	ld a, [wMapGroup]
@@ -825,10 +833,6 @@ LoadMapPals:
 	jr z, .rockscheck
 	cp GROUP_SUNBEAM_ISLAND
 	jr z, .umbrellacheck
-;	cp GROUP_PEWTER_CITY	;SNOW TOWN
-;	jr z, .snow
-;	cp GROUP_BATTLE_TOWER_HALLWAY ;SNOW TENT
-;	jp z, .snow2
 	cp GROUP_SUNSET_BAY
 	jp z, .sailboat
 	jp .normal
@@ -909,14 +913,13 @@ LoadMapPals:
 	jp .outside
 	
 .snow
-;	ld a, [wMapNumber]
-;	cp MAP_PEWTER_CITY	;SNOW TOWN
-;	jr z, .snowcont
-;	cp MAP_BATTLE_TOWER_HALLWAY ;SNOW TENT
-;	jr z, .snowcont
-	jp .normal
-	
-.snowcont
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_10_EAST
+	jr z, .snowtent
+	ld a, [wTimeOfDayPalFlags]
+	and $3F
+	cp 1
+	jr z, .snowstorm
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes
@@ -928,17 +931,39 @@ LoadMapPals:
 	call FarCopyWRAM
 	ret
 	
-.snow2
-;	ld a, [wMapNumber]
-;	cp MAP_BATTLE_TOWER_HALLWAY ;SNOW TENT
-;	jr z, .snowtentcont
-	jp .normal
+.snowstorm
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPalsSnowstorm
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
 	
-.snowtentcont
+.snowtent
+	ld a, [wTimeOfDayPalFlags]
+	and $3F
+	cp 1
+	jr z, .snowstormtent
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes
 	ld hl, MapObjectPalsSnowFire
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+	
+.snowstormtent
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPalsSnowstormFire
 	call AddNTimes
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
@@ -989,6 +1014,8 @@ LoadMapPals:
 .outside
 	ld a, [wTileset]
 	cp TILESET_MOUNTAIN
+	ret z
+	cp TILESET_SNOW
 	ret z
 	
 	ld a, [wTimeOfDayPal]
@@ -1097,8 +1124,14 @@ INCLUDE "maps/palettes/obpals/obranch.pal"
 MapObjectPalsSnow::
 INCLUDE "maps/palettes/obpals/obsnow.pal"
 
+MapObjectPalsSnowstorm::
+INCLUDE "maps/palettes/obpals/obsnowstorm.pal"
+
 MapObjectPalsSnowFire::
 INCLUDE "maps/palettes/obpals/obsnowfire.pal"
+
+MapObjectPalsSnowstormFire::
+INCLUDE "maps/palettes/obpals/obsnowstormfire.pal"
 
 MapObjectPalsSailboat::
 INCLUDE "maps/palettes/obpals/obsailboat.pal"

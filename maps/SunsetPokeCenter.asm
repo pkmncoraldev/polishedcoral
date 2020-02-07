@@ -57,9 +57,8 @@ SunsetPokeCenterSunsetPokeCenterYounginText:
 SunsetPokeCenterFireGuyText:
 	text "Have you talked"
 	line "to my sister and"
-	
-	para "her husband in the"
-	line "house next door?"
+	cont "her husband in the"
+	cont "house next door?"
 	
 	para "Don't listen to"
 	line "them!"

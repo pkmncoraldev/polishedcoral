@@ -28,23 +28,20 @@ SunbeamIslandHouse2NPC2:
 SunbeamIslandHouse2NPC1Text:
 	text "SUNBEAM ISLAND is"
 	line "known for it's"
-	
-	para "sunny skies and"
-	line "bright blue water."
+	cont "sunny skies and"
+	cont "bright blue water."
 	
 	para "GRASS TYPE #MON"
 	line "thrive in this"
-	
-	para "island's sunny"
-	line "weather!"
+	cont "island's sunny"
+	cont "weather!"
 	done
 	
 SunbeamIslandHouse2NPC2Text:
 	text "Our GYM LEADER,"
 	line "LEILANI, is just"
-	
-	para "as strong as she"
-	line "is beautiful!"
+	cont "as strong as she"
+	cont "is beautiful!"
 	
 	para "Hehehe…"
 	done

@@ -24,6 +24,8 @@ INCLUDE "maps/MtOnwaB2F.asm"
 INCLUDE "maps/MtOnwaB3F.asm"
 INCLUDE "maps/MtOnwaCliff.asm"
 INCLUDE "maps/MtOnwaLowerCliff.asm"
+INCLUDE "maps/FlickerPass1F.asm"
+INCLUDE "maps/FlickerPass2F.asm"
 
 
 SECTION "Routes Scripts", ROMX
@@ -41,6 +43,8 @@ INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route7.asm"
 INCLUDE "maps/Route9.asm"
 INCLUDE "maps/Route10.asm"
+INCLUDE "maps/Route10East.asm"
+INCLUDE "maps/Route10Tent.asm"
 
 
 SECTION "Sunset Bay Scripts", ROMX
@@ -125,6 +129,10 @@ INCLUDE "maps/FlickerMart.asm"
 INCLUDE "maps/FlickerTrainStation.asm"
 INCLUDE "maps/FlickerTrainCutscene.asm"
 INCLUDE "maps/FlickerPassOutside.asm"
+
+SECTION "Twinkle Town Scripts", ROMX
+
+INCLUDE "maps/TwinkleTown.asm"
 
 SECTION "Luster City Scripts", ROMX
 

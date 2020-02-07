@@ -743,16 +743,15 @@ LighthouseAbnerText1:
 	
 	para "and knowing him,"
 	line "we could be here"
+	cont "for hours waiting,"
 	
-	para "for hours waiting,"
-	line "so let's just get"
-	cont "started…"
+	para "so let's just get"
+	line "started…"
 	
 	para "Today marks the"
 	line "first day in your"
-	
-	para "journey as #MON"
-	line "TRAINERS!"
+	cont "journey as #MON"
+	cont "TRAINERS!"
 	
 	para "This is a very im-"
 	line "portant day for"
@@ -848,15 +847,13 @@ LighthouseAbnerText8:
 LighthouseAbnerText9:
 	text "We don't live"
 	line "close to PROF."
-	
-	para "SPRUCE's #MON"
-	line "RESEARCH LAB."
+	cont "SPRUCE's #MON"
+	cont "RESEARCH LAB."
 	
 	para "Because of this,"
 	line "my brother and I"
-	
-	para "are filling in"
-	line "for him."
+	cont "are filling in"
+	cont "for him."
 	
 	para "I have in this"
 	line "bag, six rare"
@@ -864,9 +861,8 @@ LighthouseAbnerText9:
 
 	para "They were sent"
 	line "from the PROF.'s"
-	
-	para "lab especially"
-	line "for all of you."
+	cont "lab especially"
+	cont "for all of you."
 	
 	para "You only get one,"
 	line "so choose wisely."
@@ -879,9 +875,8 @@ LighthouseAbnerText9:
 	
 	para "One of you might"
 	line "even become the"
-	
-	para "next #MON"
-	line "LEAGUE CHAMPION!"
+	cont "next #MON"
+	cont "LEAGUE CHAMPION!"
 	
 	para "Ohohohoho!"
 	
@@ -900,12 +895,10 @@ LighthouseAbnerText10:
 	
 	para "You're just lucky"
 	line "<PLAYER> was also"
-	
-	para "running late or"
-	line "you might have"
-	
-	para "missed your chance"
-	line "to get a #MON."
+	cont "running late or"
+	cont "you might have"
+	cont "missed your chance"
+	cont "to get a #MON."
 	done
 	
 LighthouseAbnerText:
@@ -985,9 +978,8 @@ LighthouseRivalText_YouLost:
 	
 	para "You'd better stay"
 	line "out of my way if"
-	
-	para "you know what's"
-	line "good for you."
+	cont "you know what's"
+	cont "good for you."
 	done
 	
 RivalPicksCharmanderText:

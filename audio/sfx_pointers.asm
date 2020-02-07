@@ -213,3 +213,9 @@ SFX:
 ; Polished Crystal adds the following SFX:
 
 	dba Sfx_Puddle
+	
+; Coral adds the following SFX.
+
+	dba Sfx_Bump_Snowstorm
+	dba Sfx_SnowstormIntro
+	dba Sfx_Snowstorm

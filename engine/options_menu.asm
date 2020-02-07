@@ -286,6 +286,16 @@ Options_MusicPlayer:
 .gotomusicplayer:
 ;	scf
 ;	ret
+	ld de, SFX_TRANSACTION
+	call PlaySFX
+	ld c, 5
+	call FadeToWhite
+	call WaitSFX
+	ld a, MUSIC_NONE
+	ld [wMapMusic], a
+	ld e, a
+	ld d, 0
+	farcall PlayMusic2
 	farjp MusicPlayer
 	
 

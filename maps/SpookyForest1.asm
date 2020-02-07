@@ -19,13 +19,12 @@ SpookyForest1SignText:
 	text "BEWARE!"
 	
 	para "If you don't want"
-	line "to get lost, you"
+	line "to get lost,"
 	
-	para "must pay very"
-	line "close attention"
-	
-	para "to your surround-"
-	line "ings."
+	para "you must pay"
+	line "very close atten-"
+	cont "tion to your"
+	cont "surroundings."
 	
 	para "Watch carefully"
 	line "for clues."

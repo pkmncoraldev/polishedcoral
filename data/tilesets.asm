@@ -179,25 +179,20 @@ SECTION "Tileset Data - cave", ROMX
 
 TilesetCaveGFX::
 TilesetStarglowCavernGFX::
-TilesetLavaCaveGFX::
 INCBIN "gfx/tilesets/cave.2bpp.lz"
 
 TilesetCaveGFX2 EQU 0
 TilesetStarglowCavernGFX2 EQU 0
-TilesetLavaCaveGFX2 EQU 0
 
 TilesetCaveMeta::
 TilesetStarglowCavernMeta::
-TilesetLavaCaveMeta::
 INCBIN "data/tilesets/cave_metatiles.bin.lz"
 
 TilesetCaveAttr::
-TilesetLavaCaveAttr::
 INCBIN "data/tilesets/cave_attributes.bin.lz"
 
 TilesetCaveColl::
 TilesetStarglowCavernColl:
-TilesetLavaCaveColl::
 INCLUDE "data/tilesets/cave_collision.asm"
 
 TilesetStarglowCavernAttr::
@@ -332,10 +327,10 @@ INCLUDE "data/tilesets/ranch_collision.asm"
 SECTION "Tileset Data - luster", ROMX
 
 TilesetLusterGFX::
-INCBIN "gfx/tilesets/luster.2bpp.lz"
+INCBIN "gfx/tilesets/luster.2bpp.vram0.lz"
 
 TilesetLusterGFX2::
-INCBIN "gfx/tilesets/lustertower.2bpp.lz"
+INCBIN "gfx/tilesets/luster.2bpp.vram1.lz"
 
 TilesetLusterMeta::
 INCBIN "data/tilesets/luster_metatiles.bin.lz"
@@ -472,7 +467,6 @@ Tilesets::
 	tileset TilesetLab
 	tileset TilesetCave
 	tileset TilesetStarglowCavern
-	tileset TilesetLavaCave
 	tileset TilesetGrove
 	tileset TilesetMountain
 	tileset TilesetJungle

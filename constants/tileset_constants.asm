@@ -12,21 +12,20 @@
 	const TILESET_LAB				;11
 	const TILESET_CAVE				;12
 	const TILESET_STARGLOW_CAVERN	;13
-	const TILESET_LAVA_CAVE			;14
-	const TILESET_GROVE				;15
-	const TILESET_MOUNTAIN			;16
-	const TILESET_JUNGLE			;17
-	const TILESET_SPOOKY			;18
-	const TILESET_HAUNTED			;19
-	const TILESET_HAUNTED_TV		;20
-	const TILESET_RANCH				;21
-	const TILESET_LUSTER			;22
-	const TILESET_SNOW				;23
-	const TILESET_PARK				;24
-	const TILESET_MALL_1			;25
-	const TILESET_MALL_2			;26
-	const TILESET_SEWER				;27
-	const TILESET_TRAIN				;28
+	const TILESET_GROVE				;14
+	const TILESET_MOUNTAIN			;15
+	const TILESET_JUNGLE			;16
+	const TILESET_SPOOKY			;17
+	const TILESET_HAUNTED			;18
+	const TILESET_HAUNTED_TV		;19
+	const TILESET_RANCH				;20
+	const TILESET_LUSTER			;21
+	const TILESET_SNOW				;22
+	const TILESET_PARK				;23
+	const TILESET_MALL_1			;24
+	const TILESET_MALL_2			;25
+	const TILESET_SEWER				;26
+	const TILESET_TRAIN				;27
 	
 
 	const_def

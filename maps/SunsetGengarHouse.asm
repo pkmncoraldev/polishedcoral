@@ -47,15 +47,13 @@ SunsetGengarHouseNPC1Text:
 SunsetGengarHouseNPC2Text:
 	text "So, you're"
 	line "starting your"
-	
-	para "#MON journey,"
-	line "eh?"
+	cont "#MON journey,"
+	cont "eh?"
 	
 	para "Come back here"
 	line "when you become"
-	
-	para "the ONWA #MON"
-	line "LEAGUE CHAMPION."
+	cont "the ONWA #MON"
+	cont "LEAGUE CHAMPION."
 	
 	para "I'll make sure"
 	line "to give you"

@@ -26,31 +26,30 @@ FlickerHouse2NPC2:
 FlickerHouse2NPC1Text:
 	text "I used to work the"
 	line "railroad as a"
+	cont "young man."
 	
-	para "young man when"
+	para "That was back when"
 	line "they first built"
 	cont "the station."
 	
 	para "Since then, this"
-	line "little town has"
-	
-	para "gotten a lot"
-	line "bigger."
+	line "little town hasn't"
+	cont "gotten much bigger."
 	done
 	
 FlickerHouse2NPC2Text:
 	text "FLICKER STATION is"
 	line "the name of this"
+	cont "town,"
 	
-	para "town, but it's"
-	line "also the name of"
-	cont "the train station."
+	para "but it's, also the"
+	line "name of the train"
+	cont "station."
 	
 	para "Apparently the"
 	line "town was built"
-	
-	para "around the"
-	line "station."
+	cont "around the"
+	cont "station."
 	
 	para "I guess that would"
 	line "explain the weird"
@@ -58,7 +57,6 @@ FlickerHouse2NPC2Text:
 	
 	para "Still doesn't"
 	line "make it any less"
-	
-	para "confusing in con-"
-	line "versation."
+	cont "confusing in con-"
+	cont "versation."
 	done

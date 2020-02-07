@@ -32,17 +32,15 @@ SunbeamIslandHouse1NPC1Text:
 	
 	para "We have great wea-"
 	line "ther, and it isn't"
-	
-	para "too quiet or too"
-	line "busy."
+	cont "too quiet or too"
+	cont "busy."
 	done
 	
 SunbeamIslandHouse1NPC2Text:
 	text "I try and take a"
 	line "walk to the beach"
-	
-	para "at least once a"
-	line "day."
+	cont "at least once a"
+	cont "day."
 	
 	para "It's good exercise,"
 	line "and the sunlight's"

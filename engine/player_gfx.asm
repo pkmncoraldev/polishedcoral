@@ -1,6 +1,15 @@
 GetPlayerIcon: ; 8832c
 ; Get the player icon corresponding to gender
 
+; Pippi Mode
+	ld a, [wPlayerGender]
+	cp PIPPI
+	jr nz, .notpippi
+	ld de, PippiSpriteGFX
+	ld b, BANK(PippiSpriteGFX)
+	ret	
+	
+.notpippi
 ; Male
 	ld de, ChrisSpriteGFX
 	ld b, BANK(ChrisSpriteGFX)
@@ -16,6 +25,12 @@ GetPlayerIcon: ; 8832c
 
 
 GetCardPic: ; 8833e
+	ld a, [wPlayerGender]
+	cp PIPPI
+	jr nz, .notpippi
+	ld hl, PippiCardPic
+	jr .GotClass
+.notpippi
 	ld hl, ChrisCardPic
 	ld a, [wPlayerGender]
 	bit 0, a
@@ -33,8 +48,17 @@ INCBIN "gfx/trainer_card/chris_card.5x7.2bpp"
 KrisCardPic: ; 88595
 INCBIN "gfx/trainer_card/kris_card.5x7.2bpp"
 
+PippiCardPic:
+INCBIN "gfx/trainer_card/pippi_card.5x7.2bpp"
+
 
 GetPlayerBackpic: ; 88825
+	ld a, [wPlayerGender]
+	cp PIPPI
+	jr nz, .notpippi
+	ld hl, PippiBackpic
+	jr .ok
+.notpippi
 	ld hl, ChrisBackpic
 	ld a, [wPlayerGender]
 	bit 0, a
@@ -52,8 +76,8 @@ INCBIN "gfx/player/chris_back.6x6.2bpp.lz"
 KrisBackpic: ; 88ed6
 INCBIN "gfx/player/kris_back.6x6.2bpp.lz"
 
-LyraBackpic: ; 2bbaa
-INCBIN "gfx/battle/lyra_back.6x6.2bpp.lz"
+PippiBackpic: ; 2bbaa
+INCBIN "gfx/battle/pippi_back.6x6.2bpp.lz"
 
 
 HOF_LoadTrainerFrontpic: ; 88840
@@ -69,6 +93,12 @@ HOF_LoadTrainerFrontpic: ; 88840
 .GotClass:
 	ld a, e
 	ld [wTrainerClass], a
+	ld a, [wPlayerGender]
+	cp PIPPI
+	jr nz, .notpippi
+	ld de, PippiCardPic
+	jr .GotPic
+.notpippi
 	ld de, ChrisCardPic
 	ld a, [wPlayerGender]
 	bit 0, a

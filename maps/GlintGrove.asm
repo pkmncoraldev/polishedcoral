@@ -396,10 +396,10 @@ TrainerGlintGrove_1:
 	generictrainer LASS, VERONICA, EVENT_BEAT_GLINT_GROVE_TRAINER_1, .SeenText, .BeatenText
 	
 	text "Even when it"
-	line "loses, my CLEFAIRY"
+	line "loses,"
 	
-	para "is still super"
-	line "cute."
+	para "my CLEFAIRY is"
+	line "still super cute."
 	done
 
 .SeenText:
@@ -449,10 +449,10 @@ TrainerGlintGrove_3:
 	text "I think I'm lost."
 	
 	para "I lost track of my"
-	line "girlfriend, and"
+	line "girlfriend,"
 	
-	para "now I can't find"
-	line "my way back."
+	para "and now I can't"
+	line "find my way back."
 	done
 
 .BeatenText:
@@ -513,9 +513,8 @@ TrainerGlintGrove_6:
 .SeenText:
 	text "I figured I could"
 	line "catch some cool"
-	
-	para "BUG TYPE #MON"
-	line "around here,"
+	cont "BUG TYPE #MON"
+	cont "around here,"
 	
 	para "but all I can find"
 	line "are WEEDLE!"
@@ -736,11 +735,11 @@ GlintGrove_TrioText3:
 	done
 	
 GlintGrove_TrioText4:
-	text "My name is RED."
+	text "My name is ED."
 	done
 	
 GlintGrove_TrioText5:
-	text "I'm BLUE."
+	text "I'm LOU."
 	done
 	
 GlintGrove_TrioText6:
@@ -755,9 +754,8 @@ GlintGrove_TrioText7:
 GlintGrove_TrioText8:
 	text "We've heard rumors"
 	line "that there is a"
-	
-	para "special-colored"
-	line "SMEARGLE that"
+	cont "special-colored"
+	cont "SMEARGLE that"
 	cont "hangs around here."
 	done
 	
@@ -803,10 +801,10 @@ GlintGrove_TrioText16:
 	
 	para "If that elusive"
 	line "SMEARGLE deemed"
+	cont "you worthy,"
 	
-	para "you worthy, then"
-	line "you must be some-"
-	cont "thing else."
+	para "then you must be"
+	line "something else."
 	done
 	
 GlintGrove_TrioText17:
@@ -859,9 +857,8 @@ GlintGrove_TrioRedAfterBattleText1:
 	
 	para "It's pretty clear"
 	line "why SMEARGLE"
-	
-	para "revealed itself"
-	line "to you."
+	cont "revealed itself"
+	cont "to you."
 	
 	para "You're no joke."
 	
@@ -875,9 +872,8 @@ GlintGrove_TrioRedAfterBattleText2:
 	
 	para "I can see why"
 	line "SMEARGLE chose"
-	
-	para "to reveal itself"
-	line "to you."
+	cont "to reveal itself"
+	cont "to you."
 	done
 	
 GlintGrove_TrioBlueBattleText1:
@@ -916,9 +912,8 @@ GlintGrove_TrioBlueAfterBattleText2:
 	
 	para "I wonder why"
 	line "SMEARGLE would"
-	
-	para "reveal itself to"
-	line "you."
+	cont "reveal itself to"
+	cont "you."
 	done
 	
 GlintGrove_TrioYellowBattleText1:
@@ -960,9 +955,8 @@ GlintGrove_TrioYellowAfterBattleText2:
 	
 	para "Perhaps that's the"
 	line "reason SMEARGLE"
-	
-	para "revealed itself to"
-	line "you."
+	cont "revealed itself to"
+	cont "you."
 	done
 	
 GlintGrove_TrioAfterBattleText1:
@@ -1003,9 +997,8 @@ GlintGroveStanleyText2:
 	
 	para "I believe that"
 	line "energy is what"
-	
-	para "attracts FAIRY"
-	line "TYPE #MON to"
+	cont "attracts FAIRY"
+	cont "TYPE #MON to"
 	cont "this forest."
 	done
 	
@@ -1034,13 +1027,12 @@ GlintGroveStanleyText4:
 	
 GlintGroveNPC1Text:
 	text "You didn't hear it"
-	line "from me, but they"
+	line "from me,"
 	
-	para "say there's a"
-	line "secret spot some-"
-	
-	para "where in this"
-	line "forest."
+	para "but they say"
+	line "there's a secret"
+	cont "spot somewhere in"
+	cont "this forest."
 	
 	para "Where?"
 	
@@ -1057,8 +1049,9 @@ GlintGroveNPC2Text:
 	cont "in the grass!"
 	
 	para "My mom won't"
-	line "believe me, but I"
-	cont "saw it!"
+	line "believe me,"
+	
+	para "but I saw it!"
 	
 	para "Honest!"
 	done
@@ -1079,8 +1072,9 @@ GlintGroveNPC4Text1:
 	cont "trees down river."
 	
 	para "I wish I could"
-	line "explore it, but"
-	cont "I can't swim!"
+	line "explore it,"
+	
+	para "but I can't swim!"
 	done
 	
 GlintGroveNPC4Text2:

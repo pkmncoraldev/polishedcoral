@@ -11,8 +11,13 @@ UpdateTimeOfDayPal:: ; 8c001
 _TimeOfDayPals:: ; 8c011
 ; return carry if pals are changed
 
-; forced pals?
+; force updating pals
 	ld hl, wTimeOfDayPalFlags
+	bit 6, [hl]
+	res 6, [hl]
+	jr nz, .change
+
+; force keeping pals
 	bit 7, [hl]
 	jr nz, .dontchange
 
@@ -95,9 +100,7 @@ _TimeOfDayPals:: ; 8c011
 	ld [rSVBK], a
 
 ; update palettes
-;	call _UpdateTimePals
-	call FadeInPalettes
-	call DelayFrame
+	farcall OWFadePalettesInit
 
 ; successful change
 	scf
@@ -190,6 +193,9 @@ brightlevel: MACRO
 ENDM
 
 ReplaceTimeOfDayPals: ; 8c0e5
+;	xor a
+;	ld [wTimeOfDayPalFlags], a
+
 	ld hl, .BrightnessLevels
 	ld a, [wMapTimeOfDay]
 	cp PALETTE_DARK ; needs Flash

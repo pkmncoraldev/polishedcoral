@@ -893,6 +893,7 @@ SafariPic:				  INCBIN "gfx/trainers/safari.2bpp.lz"
 TowerTycoonPic:
 PlayermPic:				  INCBIN "gfx/trainers/player_m.2bpp.lz"
 PlayerfPic:				  INCBIN "gfx/trainers/player_f.2bpp.lz"
+PlayerpPic:				  INCBIN "gfx/trainers/player_p.2bpp.lz"
 
 
 SECTION "Painting Pics", ROMX

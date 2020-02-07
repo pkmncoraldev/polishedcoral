@@ -2030,6 +2030,17 @@ ShakeGrass: ; 5556
 	db $80, PAL_OW_SILVER, SPRITEMOVEDATA_GRASS
 ; 5565
 
+ShakeSnow:
+	push bc
+	ld de, .snow_data
+	call CopyTempObjectData
+	call InitTempObject
+	pop bc
+	ret
+
+.snow_data
+	db $80, PAL_OW_SILVER, SPRITEMOVEDATA_PUDDLE
+
 SplashPuddle:
 	push bc
 	ld de, .puddle_data

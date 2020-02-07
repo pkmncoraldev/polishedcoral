@@ -122,15 +122,13 @@ StarglowCenterGirl:
 StarglowCenterGameboyKidText:
 	text "Some #MON only"
 	line "evolve if you"
-	
-	para "trade them with"
-	line "another person."
+	cont "trade them with"
+	cont "another person."
 	
 	para "I've heard that"
 	line "they've recently"
-	
-	para "developed another"
-	line "way to evolve"
+	cont "developed another"
+	cont "way to evolve"
 	cont "them, though!"
 	
 	para "How cool is that?"
@@ -143,10 +141,11 @@ StarglowCenterGrampsText:
 	
 	para "Plenty of fisher-"
 	line "men still swear by"
+	cont "the fishing around"
+	cont "here,"
 	
-	para "the fishing around"
-	line "here, but I'm not"
-	cont "so sure."
+	para "but I'm not so"
+	line "sure."
 	done
 	
 StarglowCenterGirlText:
@@ -170,9 +169,8 @@ StarglowCenterRocketText1:
 	
 	para "No one goes in or"
 	line "out of here until"
-	
-	para "I have all of the"
-	line "#MON in this"
+	cont "I have all of the"
+	cont "#MON in this"
 	cont "#MON CENTER!"
 	
 	para "Hand 'em over,"

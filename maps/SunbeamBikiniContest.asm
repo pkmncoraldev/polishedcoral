@@ -445,25 +445,21 @@ SunBeamContestBikiniY:
 SunbeamContestText1:
 	text "Welcome ladies and"
 	line "gentleman to the"
-	
-	para "SUNBEAM ISLAND"
-	line "BEACH BATTLE"
+	cont "SUNBEAM ISLAND"
+	cont "BEACH BATTLE"
 	cont "BEAUTY CONTEST!"
 	
 	para "Each of our three"
 	line "competitors will"
-	
-	para "come out one by"
-	line "one to strut their"
-	
-	para "stuff on the run-"
-	line "way and in battle!"
+	cont "come out one by"
+	cont "one to strut their"
+	cont "stuff on the run-"
+	cont "way and in battle!"
 	
 	para "But first, give it"
 	line "up for our judge"
-	
-	para "for today,"
-	line "<PLAYER>!"
+	cont "for today,"
+	cont "<PLAYER>!"
 	done
 	
 SunbeamContestText2:
@@ -536,19 +532,19 @@ SunbeamContestText11:
 	
 	para "We'll announce the"
 	line "winners as soon as"
-	
-	para "the results are"
-	line "in."
+	cont "the results are"
+	cont "in."
 	done
 	
 SunbeamContestText12:
 	text "PA: Alright!"
 	
 	para "Without further"
-	line "ado, let's get"
+	line "ado,"
 	
-	para "this started with"
-	line "contestant 1, the"
+	para "let's get this"
+	line "started with con-"
+	cont "testant No. 1, the"
 	cont "heavenly HAZEL!"
 	done
 	
@@ -612,10 +608,10 @@ SunBeamContestBikiniYWinText:
 	
 SunBeamContestBikiniRText1:
 	text "This is a bit"
-	line "embarassing, but"
+	line "embarassing,"
 	
-	para "I'll still give it"
-	line "my all!"
+	para "but I'll still give"
+	line "it my all!"
 	done
 	
 SunBeamContestBikiniRText2:

@@ -90,9 +90,8 @@ TrainerEventide_2:
 	
 	para "but I feel like"
 	line "I've been walking"
-
-	para "around these woods"
-	line "for hours."
+	cont "around these woods"
+	cont "for hours."
 	done
 
 .SeenText:
@@ -137,9 +136,8 @@ TrainerEventide_4:
 
 	text "I heard someone"
 	line "even saw a little"
-	
-	para "girl who was"
-	line "wandering, lost"
+	cont "girl who was"
+	cont "wandering, lost"
 	cont "around here."
 	done
 
@@ -210,122 +208,6 @@ EventideForestSignText:
 	
 EventideForestSign2Text:
 	text "ROUTE 5 AHEAD"
-	done
-	
-TrainerEventide_1TextSeen:
-	text "AH!"
-	
-	para "You scared me!"
-	done
-	
-TrainerEventide_1TextBeaten:
-	text "Eeep!"
-	done
-	
-TrainerEventide_1TextAfterBattle:
-	text "I-I'm not afraid of"
-	line "the dark or any-"
-	cont "thing."
-	
-	para "Honest!"
-	done
-	
-TrainerEventide_2TextSeen:
-	text "Oh no!"
-	
-	para "I think I'm lost!"
-	
-	para "What'll I do if I"
-	line "can't find my way"
-	cont "out?"
-	done
-	
-TrainerEventide_2TextBeaten:
-	text "Lost. Lost."
-	line "Lost."
-	done
-	
-TrainerEventide_2TextAfterBattle:
-	text "I found a weird"
-	line "house up NORTH,"
-	
-	para "but I feel like"
-	line "I've been walking"
-
-	para "around these woods"
-	line "for hours."
-	done
-	
-TrainerEventide_3TextSeen:
-	text "Are you keeping an"
-	line "eye out for items?"
-	done
-	
-TrainerEventide_3TextBeaten:
-	text "Nice battle."
-	done
-	
-TrainerEventide_3TextAfterBattle:
-	text "People often drop"
-	line "things in the dark"
-	cont "around here."
-	
-	para "That just means"
-	line "free stuff for"
-	cont "people like me!"
-	done
-	
-TrainerEventide_4TextSeen:
-	text "They really need"
-	line "to install some"
-	cont "lamps or some-"
-	cont "thing."
-	
-	para "This place is too"
-	line "dangerous for kids"
-	cont "to be exploring!"
-	done
-	
-TrainerEventide_4TextBeaten:
-	text "You seem like you"
-	line "can hold your own."
-	done
-	
-TrainerEventide_4TextAfterBattle:
-	text "I've heard that a"
-	line "little girl has"
-	
-	para "already gotten"
-	line "lost somewhere in"
-	cont "this forest."
-	done
-	
-TrainerEventide_5TextSeen:
-	text "They say these"
-	line "woods are haunted"
-	
-	para "by the ghost of a"
-	line "small girl."
-	
-	para "She sneaks up on"
-	line "unsuspecting young"
-	cont "TRAINERs, and…"
-	
-	para "…"
-	
-	para "BOO!"
-	done
-	
-TrainerEventide_5TextBeaten:
-	text "She gets you!"
-	done
-	
-TrainerEventide_5TextAfterBattle:
-	text "Did I spook you?"
-	
-	para "Haha!"
-	
-	para "It's just a story!"
 	done
 	
 Movement_ForestGhostGirl:

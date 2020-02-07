@@ -42,14 +42,6 @@ SunsetMomStopsYou:
 	checkevent EVENT_TALKED_TO_MOM
 	iftrue SunsetMomStopsYouEnd
 	special Special_StopRunning
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iffalse .boy
-;	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_KRIS_CUTSCENE
-	setevent EVENT_PLAYER_IS_FEMALE
-	jump .cont
-.boy
-	setevent EVENT_PLAYER_IS_MALE
-.cont
 	playmusic MUSIC_MOM
 	showemote EMOTE_SHOCK, PLAYERHOUSE1F_MOM1, 15
 	applymovement PLAYERHOUSE1F_MOM1, SunsetMomStopsYouMovement
@@ -296,15 +288,13 @@ MomAfterGearText:
 	
 	para "Make sure you"
 	line "have everything"
-	
-	para "you need before"
-	line "you leave town."
+	cont "you need before"
+	cont "you leave town."
 	
 	para "You can stop by"
 	line "the CAFE if you"
-	
-	para "want to get some"
-	line "items for your"
+	cont "want to get some"
+	cont "items for your"
 	cont "#MON."
 	
 	para "Good luck out"
@@ -409,9 +399,8 @@ SunsetMomText4:
 	
 	para "Anyway, since"
 	line "you're going to"
-	
-	para "challenge the ONWA"
-	line "#MON LEAGUE,"
+	cont "challenge the ONWA"
+	cont "#MON LEAGUE,"
 	
 	para "I thought you"
 	line "could use this."
@@ -464,12 +453,10 @@ FridgeText:
 TVText:
 	text "There's a movie on"
 	line "TV: A crazy old"
-
-	para "man and a kid in a"
-	line "vest are speeding"
-	
-	para "through an empty"
-	line "parking lot."
+	cont "man and a kid in a"
+	cont "vest are speeding"
+	cont "through an empty"
+	cont "parking lot."
 
 	para "I'd better get"
 	line "rolling too!"

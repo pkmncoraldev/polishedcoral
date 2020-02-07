@@ -252,9 +252,8 @@ LakeBoatManText8:
 	
 	para "The best I can"
 	line "do is give you"
-	
-	para "a ride to the"
-	line "other side of"
+	cont "a ride to the"
+	cont "other side of"
 	cont "the lake."
 	
 	para "Maybe you could"
@@ -284,9 +283,8 @@ LakeBoatManText10:
 	
 	para "The best I can"
 	line "do is give you"
-	
-	para "a ride to the"
-	line "other side of the"
+	cont "a ride to the"
+	cont "other side of the"
 	cont "lake."
 	
 	para "Would you like a"
@@ -334,9 +332,8 @@ LakeBoatManText15:
 	
 	para "The best I can"
 	line "do is give you"
-	
-	para "a ride to the"
-	line "other side of the"
+	cont "a ride to the"
+	cont "other side of the"
 	cont "lake."
 	
 	para "Would you like a"

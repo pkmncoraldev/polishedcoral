@@ -61,9 +61,8 @@ StarglowHouse4FishingGuruText1:
 	
 	para "That's the only"
 	line "conceivable way"
-	
-	para "you'd have never"
-	line "heard of my many"
+	cont "you'd have never"
+	cont "heard of my many"
 	cont "exploits!"
 	
 	para "Of all the fisher-"
@@ -72,9 +71,8 @@ StarglowHouse4FishingGuruText1:
 	
 	para "There's not man nor"
 	line "mon out there that"
-	
-	para "could ever best my"
-	line "fishing abilities!"
+	cont "could ever best my"
+	cont "fishing abilities!"
 	
 	para "Hahahahah!"
 	
@@ -88,17 +86,16 @@ StarglowHouse4FishingGuruText1:
 	line "self at your age."
 	
 	para "Tell you what."
-	line "Prove your mettle"
 	
-	para "as a fisherman by"
-	line "catching me a"
+	para "Prove your mettle"
+	line "as a fisherman by"
+	cont "catching me a"
 	cont "MAGIKARP."
 	
 	para "MAGIKARP can be"
 	line "found everywhere"
-	
-	para "around here, so"
-	line "it shouldn't be"
+	cont "around here, so"
+	cont "it shouldn't be"
 	cont "too tough."
 	prompt
 	

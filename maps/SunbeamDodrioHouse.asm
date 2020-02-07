@@ -49,8 +49,10 @@ SunbeamIslandHouse4NPC1Text:
 SunbeamIslandHouse4NPC2Text:
 	text "Our DODUO isn't"
 	line "from the DODRIO"
-	cont "RANCH, but we love"
-	cont "it just the same."
+	cont "RANCH,"
+	
+	para "but we love it"
+	line "just the same."
 	done
 	
 SunbeamIslandHouse4NPC3Text:

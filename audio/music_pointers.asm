@@ -33,9 +33,9 @@ Music:
 	dba Music_Coraldev1
 	dba Music_GlintGrove
 	dba Music_Route10
-	dba Music_Luster
+	dba Music_LusterCity
 	dba Music_LusterSewer
-	dba Music_SnowTown
+	dba Music_TwinkleTown
 	dba Music_Lava
 	dba Music_SunbeamIsland
 	dba Music_Eventide
@@ -56,4 +56,5 @@ Music:
 	dba Music_Train
 	dba Music_TrainStartup
 	dba Music_SnareTheme
+	dba Music_Water
 	

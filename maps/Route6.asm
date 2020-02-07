@@ -177,7 +177,7 @@ TrainerRoute6_3:
 TrainerRoute6_4:
 	generictrainer POKEFANF, SUSAN, EVENT_BEAT_ROUTE_6_TRAINER_4, .SeenText, .BeatenText
 
-	text "Leave!"
+	text "Just leave!"
 	
 	para "You've done"
 	line "enough!"
@@ -205,9 +205,8 @@ TrainerRoute6_5:
 
 	text "Can you believe"
 	line "they won't let me"
-	
-	para "on the boat to"
-	line "the island?"
+	cont "on the boat to"
+	cont "the island?"
 	
 	para "Me!?"
 	done
@@ -215,16 +214,16 @@ TrainerRoute6_5:
 .SeenText:
 	text "My fool of a"
 	line "husband lost our"
-	cont "ISLAND TICKETS!"
+	cont "tickets!"
 	
 	para "Now they won't let"
 	line "us on the boat!"
 	
 	para "A LADY must keep"
-	line "composure, but a"
+	line "composure,"
 	
-	para "TRAINER can freely"
-	line "vent their"
+	para "but a TRAINER can"
+	line "freely vent their"
 	cont "frustrations!"	
 	done
 
@@ -274,9 +273,8 @@ TrainerRoute6_7:
 .SeenText:
 	text "My wife threw a"
 	line "fit when she found"
-	
-	para "out I lost our"
-	line "tickets to the"
+	cont "out I lost our"
+	cont "tickets to the"
 	cont "island."
 	done
 
@@ -313,29 +311,10 @@ Route45HouseSign:
 Route45LakeSign:
 	jumptext Route45LakeSignText
 	
-TrainerRoute6_3SeenText1:
-	text "Huh?"
-	
-	para "Oh, wow."
-	
-	para "You actually want"
-	line "to battle me?"
-	
-	para "Well, that's a"
-	line "first!"	
-	done
-	
 TrainerRoute6_3BeatenText:
 	text "HAHA- Wait…"
 	
 	para "What?"
-	done
-	
-TrainerRoute6_3NormalText:
-	text "Hey, you're pretty"
-	line "good!"
-	
-	para "Have any tips?"
 	done
 	
 TrainerRoute6_3SeenText2:
@@ -346,29 +325,12 @@ TrainerRoute6_3SeenText2:
 	para "Well, now you have"
 	line "to battle me!"
 	done
-		
-TrainerRoute6_4SeenText1:
-	text "Hello, there."
-	
-	para "I see you're a"
-	line "TRAINER too."
-	
-	para "Do you want to"
-	line "battle?"
-	done
 	
 TrainerRoute6_4BeatenText:
 	text "No!"
 	
 	para "My beautiful"
 	line "#MON!"
-	done
-	
-TrainerRoute6_4NormalText:
-	text "Leave!"
-	
-	para "You've done"
-	line "enough!"
 	done
 	
 TrainerRoute6_4SeenText2:
@@ -388,11 +350,11 @@ TrainerRoute6_4SeenText2:
 	
 Route6Lass2Text:
 	text "I walked all the"
-	line "way here, and"
+	line "way here,"
 	
-	para "there isn't even a"
-	line "bridge to the"
-	cont "island!"
+	para "and there isn't"
+	line "even a bridge to"
+	cont "the island!"
 	
 	para "I can see it off"
 	line "in the distance."
@@ -417,8 +379,9 @@ Route6Lass3Text:
 	
 Route6FisherText:
 	text "If you go NORTH"
-	line "from here, you'll"
-	cont "reach LAKE ONWA."
+	line "from here,"
+	cont "you'll reach LAKE"
+	cont "ONWA."
 	
 	para "There's a little"
 	line "town set up on the"

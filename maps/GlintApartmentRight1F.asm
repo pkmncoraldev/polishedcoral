@@ -44,9 +44,8 @@ GlintApt21FNpc1Text:
 GlintApt21FNpc2Text:
 	text "#MON don't know"
 	line "how to use manmade"
-	
-	para "items like POTIONS"
-	line "or ANTIDOTE,"
+	cont "items like POTIONS"
+	cont "or ANTIDOTE,"
 	
 	para "so don't bother"
 	line "making them hold"

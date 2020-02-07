@@ -5,7 +5,7 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 11 ; warp events
+	db 12 ; warp events
 	warp_event  9,  0, PLAYER_HOUSE_1F, 3
 	warp_event  5, 10, SUNSET_BAY, 1
 	warp_event  7, 10, DAYBREAK_VILLAGE, 1
@@ -16,18 +16,19 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event 19, 10, EVENTIDE_FOREST, 1
 	warp_event  5, 14, ROUTE_9, 3
 	warp_event  7, 14, FLICKER_STATION, 1
-	warp_event  9, 14, LUSTER_CITY_RESIDENTIAL, 6
+	warp_event  9, 14, ROUTE_10_EAST, 1
+	warp_event 11, 14, LUSTER_CITY_RESIDENTIAL, 6
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
 
-	db 15 ; bg events
+	db 17 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
 	bg_event  5,  1, SIGNPOST_READ, PlayerHouseRadio
 	bg_event  7,  1, SIGNPOST_READ, PlayerHouseBookshelf
 	bg_event  3,  1, SIGNPOST_READ, PlayerHouseCloset
 ;	powergap
-	bg_event  2, 10, SIGNPOST_READ, PlayerHouseMap
+	bg_event  2, 10, SIGNPOST_READ, PlayerHouseDebugPoster
 	bg_event  4, 10, SIGNPOST_JUMPTEXT, PlayerHouseSunset
 	bg_event  6, 10, SIGNPOST_JUMPTEXT, PlayerHouseDaybreak
 	bg_event  8, 10, SIGNPOST_JUMPTEXT, PlayerHouseGlint
@@ -38,6 +39,8 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event 18, 10, SIGNPOST_JUMPTEXT, PlayerHouseEventideForest
 	bg_event  4, 14, SIGNPOST_JUMPTEXT, PlayerHouseRoute9
 	bg_event  6, 14, SIGNPOST_JUMPTEXT, PlayerHouseFlickerStation
+	bg_event  8, 14, SIGNPOST_JUMPTEXT, PlayerHouseTwinkle
+	bg_event 10, 14, SIGNPOST_JUMPTEXT, PlayerHouseLuster
 
 	db 1 ; object events
 	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, -1
@@ -45,8 +48,10 @@ PlayerHouse2F_MapScriptHeader:
 	const_def 1 ; object constants
 	const PLAYERHOUSE2F_SNES
 	
-PlayerHouseMap:
+PlayerHouseDebugPoster:
 	opentext
+	waitsfx
+	playsound SFX_BUMP_SNOWSTORM
 	writetext PlayerHouseMapsText
 	waitbutton
 	setflag ENGINE_POKEGEAR
@@ -64,6 +69,7 @@ PlayerHouseMap:
 	addcellnum PHONE_SPRUCE
 	setevent EVENT_MOM_GOT_POKEGEAR
 	givepoke CORSOLA, 100
+	givepoke CHARMANDER, 100
 	giveitem LIBRARY_CARD
 	giveitem POKE_FLUTE
 	giveitem BICYCLE
@@ -121,22 +127,39 @@ PlayerHouseFlickerStation:
 	text "FLICKER STATION"
 	done
 	
+PlayerHouseTwinkle:
+	text "TWINKLE TOWN"
+	done
+	
+PlayerHouseLuster:
+	text "LUSTER CITY"
+	done
+	
 PlayerHouse2FInitializeRoom:
 ;	special ToggleDecorationsVisibility
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	checkevent EVENT_INITIALIZED_EVENTS
 	iftrue .SkipInizialization
 	callasm FixPlayerPalKrisHouse
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .girl
+	readvar VAR_PLAYER_GENDER
+	if_equal FEMALE, .girl
+	if_equal PIPPI, .pippi
 	setevent EVENT_PLAYER_IS_MALE
 	clearevent EVENT_PLAYER_IS_FEMALE
+	clearevent EVENT_PLAYER_IS_PIPPI
 	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CHRIS
 	jump .done
 .girl
 	setevent EVENT_PLAYER_IS_FEMALE
+	clearevent EVENT_PLAYER_IS_PIPPI
 	clearevent EVENT_PLAYER_IS_MALE
 	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_KRIS
+	jump .done
+.pippi
+	setevent EVENT_PLAYER_IS_PIPPI
+	clearevent EVENT_PLAYER_IS_MALE
+	clearevent EVENT_PLAYER_IS_FEMALE
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_PIPPI
 .done
 	jumpstd initializeevents
 	return
@@ -171,6 +194,8 @@ PlayerHousePC:
 
 PlayerHouseCloset:
 	opentext
+	readvar VAR_PLAYER_GENDER
+	if_equal PIPPI, .pippi
 	writetext ChangeColorQuestionText
 	yesorno
 	iffalse .end
@@ -189,7 +214,9 @@ PlayerHouseCloset:
 	waitbutton
 	closetext
 	end
-	
+.pippi
+	writetext PlayerHouseClosetPippiText
+	waitbutton
 .end
 	closetext
 	end
@@ -277,6 +304,13 @@ ChangeColorText2:
 ChangeColorQuestionText:
 	text "Change your"
 	line "clothes?"
+	done
+	
+PlayerHouseClosetPippiText:
+	text "Don't be silly!"
+	
+	para "You aren't wearing"
+	line "any clothes!"
 	done
 	
 KrisRadioText1:

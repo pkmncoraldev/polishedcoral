@@ -179,9 +179,8 @@ FlickerTrainStationFlowersText:
 FlickerTrainStationWindowText:
 	text "You see the"
 	line "reflection of"
-	
-	para "yourself sitting"
-	line "backwards in a"
+	cont "yourself sitting"
+	cont "backwards in a"
 	cont "chair."
 	
 	para "…"

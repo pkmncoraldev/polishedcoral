@@ -82,10 +82,10 @@ TrainerRoute3_3:
 	generictrainer CAMPER, DENNY, EVENT_BEAT_ROUTE_3_TRAINER_3, .SeenText, .BeatenText
 
 	text "I don't have many"
-	line "friends, so I hang"
+	line "friends,"
 	
-	para "here, with the"
-	line "trees."
+	para "so I hang out here"
+	line "with the trees."
 	done
 
 .SeenText:
@@ -93,9 +93,8 @@ TrainerRoute3_3:
 
 	para "I feel at one with"
 	line "nature when I"
-	
-	para "stand among the"
-	line "trees."
+	cont "stand among the"
+	cont "trees."
 	done
 
 .BeatenText:
@@ -213,132 +212,6 @@ Route3_sign:
 Route3_sign2:
 	jumptext Route3_sign2text
 	
-TrainerRoute3_1SeenText:
-	text "You beat STANLEY?"
-	
-	para "That's so cool!"
-	
-	para "Can I see your"
-	line "badge?"	
-	done
-	
-TrainerRoute3_1BeatenText:
-	text "You really ARE"
-	line "strong!"
-	done
-	
-TrainerRoute3_1NormalText:
-	text "Someday I'm gonna"
-	line "beat STANLEY and"
-	cont "get my own badge."
-	done
-	
-TrainerRoute3_2SeenText:
-	text "Freshwater or"
-	line "saltwater fishing?"
-	
-	para "Which do you"
-	line "prefer?"
-	done
-	
-TrainerRoute3_2BeatenText:
-	text "Personally, I pre-"
-	line "fer freshwater."
-	done
-	
-TrainerRoute3_2NormalText:
-	text "I caught my WOOPER"
-	line "right in this very"
-	cont "river."
-	done	
-	
-TrainerRoute3_3SeenText:
-	text "I love this spot."
-
-	para "I feel at one with"
-	line "nature when I"
-	
-	para "stand among the"
-	line "trees."
-	done
-	
-TrainerRoute3_3BeatenText:
-	text "You didn't have"
-	line "to cut me down."
-	done
-	
-TrainerRoute3_3NormalText:
-	text "I don't have many"
-	line "friends, so I hang"
-	
-	para "here, with the"
-	line "trees."
-	done	
-	
-TrainerRoute3_4SeenText:
-	text "Do you want this"
-	line "item?"
-	
-	para "You're gonna have"
-	line "to battle me for"
-	cont "it!"
-	done
-	
-TrainerRoute3_4BeatenText:
-	text "Fine."
-	
-	para "If you want it so"
-	line "bad, you can have"
-	cont "it."
-	done
-	
-TrainerRoute3_4NormalText:
-	text "I didn't want it"
-	line "that much anyway…"
-	done	
-	
-TrainerRoute3_5SeenText:
-	text "I shouldn't have"
-	line "worn a skirt out"
-	cont "here in the grass."
-	
-	para "I keep getting bug"
-	line "bites on my legs."
-	done
-	
-TrainerRoute3_5BeatenText:
-	text "Itchy…"
-	done
-	
-TrainerRoute3_5NormalText:
-	text "I gotta get home"
-	line "and change."
-	done	
-	
-TrainerRoute3_6SeenText:
-	text "SEEN TEXT"
-	done
-	
-TrainerRoute3_6BeatenText:
-	text "BEATEN TEXT"
-	done
-	
-TrainerRoute3_6NormalText:
-	text "NORMAL TEXT"
-	done
-	
-TrainerRoute3_7SeenText:
-	text "SEEN TEXT"
-	done
-	
-TrainerRoute3_7BeatenText:
-	text "BEATEN TEXT"
-	done
-	
-TrainerRoute3_7NormalText:
-	text "NORMAL TEXT"
-	done
-	
 Route3RodmanText1:
 	text "Hmm?"
 	
@@ -365,17 +238,17 @@ Route3RodmanText2:
 	
 	para "You won't find"
 	line "much with that"
-	
-	para "piece of junk,"
-	line "though."
+	cont "piece of junk,"
+	cont "though."
 	done
 	
 Route3RodmanText3:
 	text "I gave you my"
-	line "OLD ROD, now will"
+	line "OLD ROD,"
 	
-	para "you please leave"
-	line "me alone?"
+	para "now will you"
+	line "please leave me"
+	cont "alone?"
 	
 	para "Kids these days."
 	done

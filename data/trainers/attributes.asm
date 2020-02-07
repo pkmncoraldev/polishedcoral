@@ -11,6 +11,12 @@ TrainerClassAttributes: ; 3959c
 	db 30 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE
+	
+; Playerp
+	db 0, 0 ; items
+	db 30 ; base reward
+	dw AI_BASIC + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE
 
 ; Stanley
 	db 0, 0 ; items

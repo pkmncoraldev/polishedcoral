@@ -15,6 +15,14 @@ GetPlayerSprite: ; 14183
 	ld a, [wPlayerSpriteSetupFlags]
 	bit 2, a
 	jr nz, .go
+	
+	ld a, [wPlayerGender]
+	cp PIPPI
+	jr nz, .notpippi
+	ld hl, .Pippi
+	jr .go
+	
+.notpippi
 	ld a, [wPlayerGender]
 	bit 0, a
 	jr z, .go
@@ -65,6 +73,17 @@ GetPlayerSprite: ; 14183
 	db PLAYER_SURF_LAVA, SPRITE_KRIS_SURF
 	db PLAYER_DODRIO,	 SPRITE_DODRIO_RUN
 	db PLAYER_SITTING,   SPRITE_KRIS_MISC
+	db $ff
+	
+.Pippi:
+	db PLAYER_NORMAL,    SPRITE_PIPPI
+	db PLAYER_BIKE,      SPRITE_PIPPI_BIKE
+	db PLAYER_SURF,      SPRITE_SURFING_PIKACHU
+	db PLAYER_SURF_PIKA, SPRITE_SURFING_PIKACHU
+	db PLAYER_RUN,       SPRITE_PIPPI_RUN
+	db PLAYER_SURF_LAVA, SPRITE_SURFING_PIKACHU
+	db PLAYER_DODRIO,	 SPRITE_DODRIO_RUN
+	db PLAYER_SITTING,   SPRITE_PIPPI
 	db $ff
 ; 141c9
 

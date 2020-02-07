@@ -3,7 +3,8 @@ TrainerPalettes:
 if !DEF(MONOCHROME)
 DummyPalette:			 INCLUDE "gfx/trainers/player1.pal"
 ChrisDummyPalette:		 INCLUDE "gfx/trainers/player1.pal"
-KrisDummyPalette:		 INCLUDE "gfx/trainers/player2.pal"
+KrisDummyPalette:		 INCLUDE "gfx/trainers/player1.pal"
+PippiPalette:			 INCLUDE "gfx/trainers/player_p.pal"
 StanleyPalette:          INCLUDE "gfx/trainers/stanley.pal"
 RodneyPalette:           INCLUDE "gfx/trainers/rodney.pal"
 LeilaniPalette:          INCLUDE "gfx/trainers/leilani.pal"

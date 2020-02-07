@@ -775,13 +775,13 @@ ProfSpruceSpeech: ; 0x5f99
 .MenuData2Pal: ; 0x48e04
 	db $a1 ; flags
 	db 7 ; items
-	db "RED@"
-	db "BLUE@"
-	db "GREEN@"
-	db "BROWN@"
-	db "PURPLE@"
-	db "TEAL@"
-	db "PINK@"
+	db "Red@"
+	db "Blue@"
+	db "Green@"
+	db "Brown@"
+	db "Purple@"
+	db "Teal@"
+	db "Pink@"
 	
 .cancel 
 	ld c, 15
@@ -789,7 +789,7 @@ ProfSpruceSpeech: ; 0x5f99
 	call ClearTileMap
 	jp .ChooseGender
 
-.ContinueOpening	
+.ContinueOpening
 	ld hl, SpruceText6
 	call PrintText
 	call NamePlayer
@@ -798,11 +798,11 @@ ProfSpruceSpeech: ; 0x5f99
 	call ClearTileMap
 	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
-	
+
 	xor a
 	ld [wCurPartySpecies], a
 	farcall DrawIntroPlayerPic
-	
+
 	call Intro_RotatePalettesLeftFrontpic
 	ld hl, SpruceText8
 	call PrintText
@@ -850,6 +850,20 @@ ProfSpruceSpeech: ; 0x5f99
 	call Intro_RotatePalettesLeftFrontpic
 	ld hl, SpruceTextA
 	call PrintText
+	
+	ld a, [wPlayerGender]
+	cp PIPPI
+	jr nz, .notpippi
+	ld a, 7
+	add $1
+	ld [wPlayerPalette], a
+	ld [wPlayerInitialPalette], a
+;	ld a, 0
+;	add $1
+;	ld [wPlayerGender], a
+	ret
+	
+.notpippi
 	ld a, [wPlayerPalette]
 	add $1
 	ld [wPlayerPalette], a
@@ -1024,6 +1038,12 @@ IntroFadePalettesEnd
 DrawIntroPlayerPic:
 	xor a
 	ld [wCurPartySpecies], a
+	ld a, [wPlayerGender]
+	cp PIPPI
+	jr nz, .notpippi
+	ld a, PLAYER_PIPPI
+	jr .ok
+.notpippi
 	ld a, [wPlayerGender]
 	bit 0, a
 	jr z, .male

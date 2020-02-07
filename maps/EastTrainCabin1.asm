@@ -185,10 +185,10 @@ EastTrainCabin1Snare3:
 
 .SeenText:
 	text "We've taken over"
-	line "this train, so"
+	line "this train,"
 	
-	para "you'd better listen"
-	line "to us!"
+	para "so you'd better"
+	line "listen to us!"
 	done
 
 .BeatenText:
@@ -253,8 +253,9 @@ EastTrainCabin1NPC2:
 	opentext
 	checkevent EVENT_GOT_EAST_TRAIN_CABIN_1_NUGGET
 	iftrue .gotnugget
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .girl
+	readvar VAR_PLAYER_GENDER
+	if_equal FEMALE, .girl
+	if_equal PIPPI, .girl
 	writetext EastTrainCabin1NPC2Text3Boy
 	jump .cont
 .girl
@@ -340,8 +341,9 @@ EastTrainCabin1Officer:
 EastTrainCabin1SnareOfficer:
 	faceplayer
 	opentext
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .girl
+	readvar VAR_PLAYER_GENDER
+	if_equal FEMALE, .girl
+	if_equal PIPPI, .girl
 	writetext EastTrainCabin1SnareOfficerTextBoy
 	jump .end
 .girl
@@ -470,10 +472,9 @@ EastTrainCabin1PlayersSeatText3:
 	
 EastTrainCabin1HealerText1:
 	text "Most folks who"
-	line "take this train"
-	
-	para "love friendly"
-	line "conversation."
+	line "ride this train"
+	cont "love friendly"
+	cont "conversation."
 	
 	para "Some passengers"
 	line "might even want"
@@ -481,9 +482,8 @@ EastTrainCabin1HealerText1:
 	
 	para "Remember to take"
 	line "a seat over there"
-	
-	para "and rest if your"
-	line "#MON need a"
+	cont "and rest if your"
+	cont "#MON need a"
 	cont "breather."
 	done
 	
@@ -496,9 +496,8 @@ EastTrainCabin1HealerText2:
 	
 	para "Remember to take"
 	line "a seat over there"
-	
-	para "and rest if your"
-	line "#MON need a"
+	cont "and rest if your"
+	cont "#MON need a"
 	cont "breather."
 	done
 	
@@ -627,9 +626,8 @@ EastTrainCabin1NPC2Text3Boy:
 	
 	para "There was no way"
 	line "I was giving that"
-	
-	para "ruffian my prized"
-	line "#MON."
+	cont "ruffian my prized"
+	cont "#MON."
 	
 	para "Please, take this"
 	line "as thanks."
@@ -641,9 +639,8 @@ EastTrainCabin1NPC2Text3Girl:
 	
 	para "There was no way"
 	line "I was giving that"
-	
-	para "ruffian my prized"
-	line "#MON."
+	cont "ruffian my prized"
+	cont "#MON."
 	
 	para "Please, take this"
 	line "as thanks."

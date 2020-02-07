@@ -36,7 +36,8 @@
 	const FLICKER_STATION	 ; 1a
 	const FLICKER_PASS		 ; 1b
 	const ROUTE_10			 ; 1c
-	const LUSTER_CITY		 ; 1d
+	const TWINKLE_TOWN		 ; 1d
+	const LUSTER_CITY		 ; 1e
 
 KANTO_LANDMARK EQU const_value
 

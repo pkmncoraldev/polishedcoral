@@ -44,21 +44,21 @@ LakeOwnaCenterNPC1Text:
 	
 	para "There were so many"
 	line "TRAINERs whose"
+	cont "#MON were get-"
+	cont "ting injured in"
+	cont "MT. ONWA,"
 	
-	para "#MON were get-"
-	line "ting injured in"
-	
-	para "MT. ONWA, that"
-	line "they had to build"
-	cont "one."
+	para "that they had to"
+	line "build one."
 	done
 	
 LakeOwnaCenterNPC2Text:
 	text "I got partway up"
-	line "the mountain, but"
+	line "the mountain,"
 	
-	para "my #MON was too"
-	line "tired to continue."
+	para "but my #MON was"
+	line "too tired to cont-"
+	cont "inue."
 	
 	para "I had to come back"
 	line "down here and"

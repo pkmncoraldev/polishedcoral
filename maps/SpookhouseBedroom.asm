@@ -68,9 +68,8 @@ SpookHouseBedText:
 	
 	para "Its neatly made,"
 	line "but seems like it"
-	
-	para "hasn't been used in"
-	line "years."
+	cont "hasn't been used in"
+	cont "years."
 	done
 	
 SpookHouseTrashcanText:
@@ -108,9 +107,8 @@ SpookHouseJournalText3:
 	
 	para "Perhaps the mem-"
 	line "ories of her will"
-	
-	para "stay behind as"
-	line "well…"
+	cont "stay behind as"
+	cont "well…"
 	
 	para "I try not to dwell"
 	line "on what happened,"
@@ -139,10 +137,11 @@ SpookHouseJournalText4:
 	
 	para "I thought moving"
 	line "to a new house"
+	cont "would help," 
 	
-	para "would help, but it"
-	line "only seems to have"
-	cont "gotten worse…"
+	para "but it only seems"
+	line "to have gotten"
+	cont "worse…"
 	
 	para "My husband tells"
 	line "me I just need to"
@@ -222,7 +221,7 @@ SpookHouseJournalText6:
 	cont "far away."
 	
 	para "Maybe then we will"
-	line "be able to escape-"
+	line "be able to esca-"
 	
 	para "The entry ends"
 	line "there."
@@ -250,6 +249,9 @@ SpookHouseJournalText7:
 	para "…"
 	
 	para "…"
+	
+	para "NEVERALONENEVER"
+	line "ALONENEVERALONE"
 	
 	para "NEVERALONENEVER"
 	line "ALONENEVERALONE"

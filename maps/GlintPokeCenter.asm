@@ -142,12 +142,10 @@ GlintPokeCenterTeaLadyText4:
 GlintPokeCenterTeaLadyText5:
 	text "The FLOWER PETALS"
 	line "from the trees in"
-	
-	para "GLINT GROVE can be"
-	line "brewed into a"
-	
-	para "tasty tea that"
-	line "#MON love!"
+	cont "GLINT GROVE can be"
+	cont "brewed into a"
+	cont "tasty tea that"
+	cont "#MON love!"
 	
 	para "I often go to the"
 	line "grove to collect"
@@ -155,10 +153,11 @@ GlintPokeCenterTeaLadyText5:
 	
 	para "If you bring me 4"
 	line "FLOWER PETALS from"
+	cont "the grove,"
 	
-	para "the grove, I'd be"
-	line "more then happy to"
-	cont "make you some."
+	para "I'd be more then"
+	line "happy to make you"
+	cont "some."
 	
 	para "How about it?"
 	done
@@ -176,15 +175,15 @@ GlintPokeCenterTeaLadyText7:
 GlintPokeCenterNpc1Text:
 	text "Our GYM LEADER"
 	line "specializes in"
-	
-	para "NORMAL TYPE"
-	line "#MON."
+	cont "NORMAL TYPE"
+	cont "#MON."
 	
 	para "NORMAL doesn't"
 	line "have many"
+	cont "strengths,"
 	
-	para "strengths, but it"
-	line "doesn't have many"
+	para "but it doesn't"
+	line "have many"
 	cont "weaknesses either."
 	done
 
@@ -203,19 +202,17 @@ GlintPokeCenterNpc2Text:
 GlintPokeCenterNpc3Text:
 	text "You can store you"
 	line "#MON in the PCs"
-	
-	para "at every #MON"
-	line "CENTER."
+	cont "at every #MON"
+	cont "CENTER."
 	
 	para "Each box can store"
 	line "up to 20 #MON."
 	
 	para "Make sure to"
 	line "change boxes when"
+	cont "they get full,"
 	
-	para "they get full, or"
-	line "you won't be able"
-	
-	para "to catch anymore"
-	line "#MON."
+	para "or you won't be"
+	line "able to catch"
+	cont "anymore #MON."
 	done

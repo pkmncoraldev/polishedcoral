@@ -3,6 +3,7 @@
 TrainerGroups: ; 0x39999
 	dba PlayermGroup
 	dba PlayerfGroup
+	dba PlayerpGroup
 	dba StanleyGroup
 	dba RodneyGroup
 	dba LeilaniGroup

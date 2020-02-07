@@ -30,15 +30,13 @@ GlintMartNpc2:
 GlintMartNpc1Text:
 	text "I'm on my way to"
 	line "GLINT GROVE to"
-	
-	para "catch some FAIRY"
-	line "#MON."
+	cont "catch some FAIRY"
+	cont "#MON."
 	
 	para "I just needed to"
 	line "stop by the MART"
-	
-	para "to grab some #-"
-	line "BALLS."
+	cont "to grab some #-"
+	cont "BALLS."
 	
 	para "You should grab"
 	line "some too."

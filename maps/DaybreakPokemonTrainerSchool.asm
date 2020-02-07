@@ -220,9 +220,8 @@ DaybreakPokemonTrainerSchoolTeacherText1:
 	
 	para "That way the other"
 	line "kids can see how a"
-	
-	para "real battle plays"
-	line "out."
+	cont "real battle plays"
+	cont "out."
 	done
 	
 DaybreakPokemonTrainerSchoolTeacherText2:
@@ -257,31 +256,30 @@ DaybreakPokemonTrainerSchoolTeacherText5:
 	
 	para "That QUICK CLAW"
 	line "won't magically"
+	cont "make your #MON"
+	cont "as fast as my"
+	cont "MEOWTH,"
 	
-	para "make your #MON"
-	line "as fast as my"
-	
-	para "MEOWTH, but it"
-	line "will sometimes"
-	
-	para "allow your #MON"
-	line "to attack first."
+	para "but it will"
+	line "sometimes allow"
+	cont "your #MON to"
+	cont "attack first."
 	
 	para "If you want a"
 	line "refresher on the"
+	cont "basics of battle,"
 	
-	para "basics of battle"
-	line "just look at the"
-	cont "chalkboard."
+	para "just look at the"
+	line "chalkboard."
 	done
 	
 DaybreakPokemonTrainerSchoolTeacherText6:
 	text "If you want a"
 	line "refresher on the"
+	cont "basics of battle,"
 	
-	para "basics of battle"
-	line "just look at the"
-	cont "chalkboard."
+	para "just look at the"
+	line "chalkboard."
 	done
 	
 DaybreakPokemonTrainerSchoolTeacherWinText:
@@ -303,11 +301,13 @@ DaybreakPokemonTrainerSchoolNPC1Text1:
 	line "this course again."
 	
 	para "My parents got me"
-	line "these, but since"
+	line "these,"
 	
-	para "I can't use them"
-	line "why don't you take"
-	cont "them?"
+	para "but since I can't"
+	line "use them,"
+	
+	para "why don't you take"
+	line "them?"
 	done
 
 DaybreakPokemonTrainerSchoolNPC1Text2:
@@ -320,12 +320,11 @@ DaybreakPokemonTrainerSchoolNPC1Text2:
 	
 	para "You should"
 	line "probably weaken"
+	cont "them first."
 	
-	para "them first,"
-	line "otherwise you'll"
-	
-	para "have a hard time"
-	line "keeping them from"
+	para "Otherwise you'll"
+	line "have a hard time"
+	cont "keeping them from"
 	cont "breaking out."
 	done
 	
@@ -351,8 +350,7 @@ DaybreakPokemonTrainerSchoolNPC3Text:
 AcademyBlackboardText:
 	text "The blackboard"
 	line "describes #MON"
-
-	para "status changes in"
+	cont "status changes in"
 	line "battle."
 	done
 
@@ -368,9 +366,8 @@ AcademyPoisonText:
 
 	para "Poison lingers"
 	line "after the battle,"
-
-	para "and HP is lost as"
-	line "you walk."
+	cont "and HP is lost as"
+	cont "you walk."
 
 	para "To cure it, use an"
 	line "ANTIDOTE."
@@ -468,21 +465,14 @@ AcademyNotebookText2:
 AcademyNotebookText3:
 	text "People who catch"
 	line "and use #MON"
-
-	para "in battle are"
-	line "#MON trainers."
+	cont "in battle are"
+	cont "#MON trainers."
 
 	para "They are expected"
 	line "to visit #MON"
-
-	para "GYMS and defeat"
-	line "other trainers."
+	cont"GYMS and defeat"
+	cont "other trainers."
 
 	para "The next page"
 	line "is… Blank!"
-
-	para "Boy: E-he-he…"
-
-	para "I haven't written"
-	line "anymore…"
 	done

@@ -29,16 +29,14 @@ FlickerCenterNPC1Text:
 	
 	para "Turns out it"
 	line "wasn't the same"
-	
-	para "kind of training"
-	line "I thought it was…"
+	cont "kind of training"
+	cont "I thought it was…"
 	done
 	
 FlickerCenterNPC2Text:
 	text "There's a group of"
 	line "kids that hang out"
-	
-	para "in the train"
-	line "tunnel and cause"
+	cont "in the train"
+	cont "tunnel and cause"
 	cont "problems."
 	done

@@ -201,9 +201,8 @@ SpookHouseGhostText3:
 	
 	para "Actually, you"
 	line "should stay"
-	
-	para "and play with"
-	line "me…"
+	cont "and play with"
+	cont "me…"
 	done
 	
 SpookHouseGhostText4:

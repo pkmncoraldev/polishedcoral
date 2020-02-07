@@ -66,8 +66,8 @@ MtOnwaPanNPC:
     if_equal 2, .green
 	if_equal 3, .brown
 	if_equal 4, .purple
-	if_equal 5, .pink
-	if_equal 6, .yellow
+	if_equal 5, .teal
+	if_equal 6, .pink
 .red:	
 	appear MT_ONWA_CUTSCENE1
 	jump .cont2
@@ -88,11 +88,11 @@ MtOnwaPanNPC:
 	appear MT_ONWA_CUTSCENE5
 	jump .cont2
 	
-.pink
+.teal
 	appear MT_ONWA_CUTSCENE6
 	jump .cont2
 	
-.yellow
+.pink
 	appear MT_ONWA_CUTSCENE7
 
 .cont2
@@ -167,9 +167,8 @@ TrainerMtOnwaOutside_1:
 	
 	para "The air out here"
 	line "is so refreshing"
-	
-	para "after being in"
-	line "that cave for so"
+	cont "after being in"
+	cont "that cave for so"
 	cont "long."
 	
 	para "Now I'm itching for"

@@ -23,9 +23,8 @@ TrainerMtOnwa_1:
 
 	text "Seems like my"
 	line "battling could use"
-	
-	para "just as much work"
-	line "as my act!"
+	cont "just as much work"
+	cont "as my act!"
 	done
 
 .SeenText:

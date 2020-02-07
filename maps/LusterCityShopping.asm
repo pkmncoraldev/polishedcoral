@@ -132,9 +132,8 @@ Luster2NPC3Text:
 Luster2NPC4Text:
 	text "This is the only"
 	line "place in this city"
-	
-	para "that I could des-"
-	line "cribe as pretty."
+	cont "that I could des-"
+	cont "cribe as pretty."
 	
 	para "Well, there is the"
 	line "park, I guess."
@@ -148,9 +147,8 @@ Luster2NPC5Text:
 	
 	para "I can't wait to"
 	line "buy my boyfriend"
-	
-	para "all sorts of cute"
-	line "outfits!"
+	cont "all sorts of cute"
+	cont "outfits!"
 	done
 	
 Luster2NPC6Text:

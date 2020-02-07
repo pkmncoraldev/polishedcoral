@@ -26,11 +26,11 @@ SunsetWaterGrassHouseNPC2:
 	
 SunsetWaterGrassHouseNPC1Text:
 	text "I prefer WATER"
-	line "#MON, but you'll"
+	line "#MON,"
 	
-	para "be more successful"
-	line "with a well-"
-	cont "balanced team."
+	para "but you'll be more"
+	line "successful with a"
+	cont "well-balanced team."
 	done
 	
 SunsetWaterGrassHouseNPC2Text:
@@ -39,7 +39,6 @@ SunsetWaterGrassHouseNPC2Text:
 	
 	para "I love them, but"
 	line "I just wish they"
-	
-	para "didn't have so many"
-	line "weaknesses."
+	cont "didn't have so many"
+	cont "weaknesses."
 	done

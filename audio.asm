@@ -57,9 +57,8 @@ INCLUDE "audio/music/glintgrove.asm"
 INCLUDE "audio/music/lava.asm"
 INCLUDE "audio/music/sunbeamisland.asm"
 INCLUDE "audio/music/route10.asm"
-INCLUDE "audio/music/luster.asm"
+INCLUDE "audio/music/lustercity.asm"
 INCLUDE "audio/music/lustersewer.asm"
-INCLUDE "audio/music/snowtown.asm"
 INCLUDE "audio/music/wildbattle.asm"
 INCLUDE "audio/music/trainerbattle.asm"
 INCLUDE "audio/music/dodriorace.asm"
@@ -73,6 +72,8 @@ INCLUDE "audio/music/snarebattle.asm"
 INCLUDE "audio/music/train.asm"
 INCLUDE "audio/music/trainstartup.asm"
 INCLUDE "audio/music/snaretheme.asm"
+INCLUDE "audio/music/twinkletown.asm"
+INCLUDE "audio/music/water.asm"
 
 
 SECTION "Music 5", ROMX
@@ -232,6 +233,11 @@ INCLUDE "audio/sfx.asm"
 SECTION "Crystal Sound Effects", ROMX
 
 INCLUDE "audio/sfx_crystal.asm"
+
+
+SECTION "Coral Sound Effects", ROMX
+
+INCLUDE "audio/sfx_coral.asm"
 
 
 SECTION "Cries", ROMX

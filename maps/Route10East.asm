@@ -68,6 +68,26 @@ Route10EastDark:
 	end
 	
 Route10EastLightasm:
+;	farcall FadeOutPalettes
+	ld a, %01010101 ; 1, 1, 1, 1
+	ld [wTimeOfDayPalset], a
+	farcall UpdateTimeOfDayPal
+	ld b, CGB_MAPPALS
+	call GetCGBLayout
+;	farcall LoadBlindingFlashPalette
+	farjp FadeInPalettes
+
+;.BrightnessLevels: ; 8c10f
+;	brightlevel 3, 2, 1, 0 ; PALETTE_AUTO
+;	brightlevel 1, 1, 1, 1 ; PALETTE_DAY
+;	brightlevel 2, 2, 2, 2 ; PALETTE_NITE
+;	brightlevel 0, 0, 0, 0 ; PALETTE_MORN
+;	brightlevel 3, 3, 3, 3 ; PALETTE_DARK
+;	brightlevel 3, 2, 1, 0
+;	brightlevel 3, 2, 1, 0
+;	brightlevel 3, 2, 1, 0
+
+
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes
@@ -82,6 +102,14 @@ Route10EastLightasm:
 	ret
 	
 Route10EastDarkasm:
+	ld a, %11100100 ; 3, 2, 1, 0
+	ld [wTimeOfDayPalset], a
+	farcall UpdateTimeOfDayPal
+	ld b, CGB_MAPPALS
+	call GetCGBLayout
+;	farcall LoadBlindingFlashPalette
+	farjp FadeInPalettes
+
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes

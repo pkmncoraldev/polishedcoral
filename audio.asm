@@ -73,7 +73,7 @@ INCLUDE "audio/music/train.asm"
 INCLUDE "audio/music/trainstartup.asm"
 INCLUDE "audio/music/snaretheme.asm"
 INCLUDE "audio/music/twinkletown.asm"
-INCLUDE "audio/music/water.asm"
+INCLUDE "audio/music/waterroute.asm"
 
 
 SECTION "Music 5", ROMX

@@ -463,58 +463,28 @@ GetMapMusic::
 	inc hl
 	jr .loop
 
-GetCyclingRoadMusic:
-	ld de, MUSIC_EVOLUTION
-	ld a, [wPlayerState]
-	cp PLAYER_BIKE
-	ret z
-	jr GetPlayerStateMusic
-
-GetBugCatchingContestMusic:
-	ld de, MUSIC_EVOLUTION
-	ld a, [wStatusFlags2]
-	bit 2, a ; ENGINE_BUG_CONTEST_TIMER
-	ret nz
-	; fallthrough
-
 GetPlayerStateMusic:
-	ld a, [wPlayerState]
-	cp PLAYER_BIKE
-	jr z, .bike
-	cp PLAYER_SURF
-	jr z, .surf
-	cp PLAYER_SURF_PIKA
-	jr z, .surf_pikachu
+;	ld a, [wPlayerState]
+;	cp PLAYER_BIKE
+;	jr z, .bike
 	jp GetMapHeaderMusic
 
-.bike:
-	call RegionCheck
-	ld a, e
-	ld de, MUSIC_EVOLUTION
-	cp KANTO_REGION
-	ret z
-	ld de, MUSIC_EVOLUTION
+TestSurfMusic:
+	ld a, [wPlayerState]
+	cp PLAYER_SURF
+	jr z, .surf
+	jp GetMapHeaderMusic
+	
+.surf
+	ld de, MUSIC_WATER_ROUTE
 	ret
-
-.surf:
-	call RegionCheck
-	ld a, e
-	ld de, MUSIC_EVOLUTION
-	cp KANTO_REGION
-	ret z
-	ld de, MUSIC_EVOLUTION
-	ret
-
-.surf_pikachu:
-	ld de, MUSIC_EVOLUTION
-	ret
-
+	
 SpecialMusicMaps:
 music_map: MACRO
 	map_id \1
 	dw \2
 ENDM
-;	music_map ROUTE_23, GetMapHeaderMusic
+	music_map SUNSET_BAY, TestSurfMusic
 ;	music_map INDIGO_PLATEAU, GetMapHeaderMusic
 ;	music_map QUIET_CAVE_1F, GetMapHeaderMusic
 ;	music_map QUIET_CAVE_B1F, GetMapHeaderMusic

@@ -1,10 +1,10 @@
-Music_Water:
-	musicheader 3, 1, Music_Water_Ch1
-	musicheader 1, 2, Music_Water_Ch2
-	musicheader 1, 3, Music_Water_Ch3
-	musicheader 1, 4, Music_Water_Ch4
+Music_WaterRoute:
+	musicheader 3, 1, Music_WaterRoute_Ch1
+	musicheader 1, 2, Music_WaterRoute_Ch2
+	musicheader 1, 3, Music_WaterRoute_Ch3
+	musicheader 1, 4, Music_WaterRoute_Ch4
 
-Music_Water_Ch1:
+Music_WaterRoute_Ch1:
 	tempo $96
 	volume $77
 	stereopanning $77
@@ -23,7 +23,7 @@ Music_Water_Ch1:
 	note F#, 1
 	note D#, 1
 	note C_, 1
-Music_Water_Ch1_loop:
+Music_WaterRoute_Ch1_loop:
 	notetype $C, $83
 	dutycycle 1
 	octave 4
@@ -570,9 +570,9 @@ Music_Water_Ch1_loop:
 	note __, 1
 	note G#, 1
 	note __, 1
-	loopchannel 0, Music_Water_Ch1_loop
+	loopchannel 0, Music_WaterRoute_Ch1_loop
 
-Music_Water_Ch2:
+Music_WaterRoute_Ch2:
 	notetype $9, $00
 	note __, 2
 	dutycycle 2
@@ -598,7 +598,7 @@ Music_Water_Ch2:
 	intensity $B8
 	octave 4
 	note C_, 2
-Music_Water_Ch2_loop:
+Music_WaterRoute_Ch2_loop:
 	vibrato $00, $23
 	octave 3
 	notetype $6, $C8
@@ -887,16 +887,16 @@ Music_Water_Ch2_loop:
 	note F#, 6
 	note A_, 6
 	note B_, 6
-	loopchannel 0, Music_Water_Ch2_loop
+	loopchannel 0, Music_WaterRoute_Ch2_loop
 
-Music_Water_Ch3:
+Music_WaterRoute_Ch3:
 	octave 2
 	notetype $C, $10
 	note B_, 12
 	octave 3
 	note E_, 3
 	note D#, 3
-Music_Water_Ch3_loop:
+Music_WaterRoute_Ch3_loop:
 	notetype $6, $10
 	note D_, 1
 	note __, 5
@@ -1174,8 +1174,8 @@ Music_Water_Ch3_loop:
 	octave 3
 	note E_, 6
 	note D#, 3
-	loopchannel 0, Music_Water_Ch3_loop
+	loopchannel 0, Music_WaterRoute_Ch3_loop
 
-Music_Water_Ch4:
+Music_WaterRoute_Ch4:
 	endchannel 0
 

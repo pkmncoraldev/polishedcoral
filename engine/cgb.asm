@@ -557,7 +557,6 @@ _CGB_MapPals: ; 91c8
 	ret
 ; 91d1
 
-
 _CGB_PartyMenu: ; 91d1
 	ld de, wUnknBGPals
 	ld hl, .PartyMenuBGPalette
@@ -1313,7 +1312,6 @@ endr
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 ; 9529
-
 
 _CGB_FinishLayout:
 	call ApplyAttrMap

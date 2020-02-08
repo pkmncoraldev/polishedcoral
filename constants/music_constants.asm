@@ -56,7 +56,7 @@
 	const MUSIC_TRAIN
 	const MUSIC_TRAIN_STARTUP
 	const MUSIC_SNARE_THEME
-	const MUSIC_WATER
+	const MUSIC_WATER_ROUTE
 	
 NUM_SONGS EQU const_value
 

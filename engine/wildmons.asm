@@ -27,7 +27,7 @@ LoadWildMonData: ; 29ff8
 
 FindNest: ; 2a01f
 ; Parameters:
-; e: 0 = Johto, 1 = Kanto, 2 = Orange
+; e: 0 = North Onwa, 1 = South Onwa
 ; wNamedObjectIndexBuffer: species
 	hlcoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
@@ -35,32 +35,22 @@ FindNest: ; 2a01f
 	call ByteFill
 	ld a, e
 	cp KANTO_REGION
-	jr z, .kanto
-	cp ORANGE_REGION
-	jr z, .orange
+	jr z, .south
 	decoord 0, 0
-	ld hl, JohtoGrassWildMons
+	ld hl, NorthOnwaGrassWildMons
 	call .FindGrass
-	ld hl, JohtoWaterWildMons
+	ld hl, NorthOnwaWaterWildMons
 	call .FindWater
 	call .RoamMon1
 	call .RoamMon2
 	jp .RoamMon3
 
-.kanto
+.south
 	decoord 0, 0
-	ld hl, KantoGrassWildMons
+	ld hl, SouthOnwaGrassWildMons
 	call .FindGrass
-	ld hl, KantoWaterWildMons
+	ld hl, SouthOnwaWaterWildMons
 	jp .FindWater
-
-.orange
-	decoord 0, 0
-	ld hl, OrangeGrassWildMons
-	call .FindGrass
-	ld hl, OrangeWaterWildMons
-	jp .FindWater
-; 2a052
 
 .FindGrass: ; 2a052
 	ld a, [hl]
@@ -625,25 +615,19 @@ _WaterWildmonLookup: ; 2a21d
 _GetGrassWildmonPointer:
 	call RegionCheck
 	ld a, e
-	ld hl, JohtoGrassWildMons
+	ld hl, NorthOnwaGrassWildMons
 	and a ; cp JOHTO_REGION
 	ret z
-	ld hl, KantoGrassWildMons
-	dec a ; cp KANTO_REGION
-	ret z
-	ld hl, OrangeGrassWildMons
+	ld hl, SouthOnwaGrassWildMons
 	ret
 
 _GetWaterWildmonPointer:
 	call RegionCheck
 	ld a, e
-	ld hl, JohtoWaterWildMons
+	ld hl, NorthOnwaWaterWildMons
 	and a ; cp JOHTO_REGION
 	ret z
-	ld hl, KantoWaterWildMons
-	dec a ; cp KANTO_REGION
-	ret z
-	ld hl, OrangeWaterWildMons
+	ld hl, SouthOnwaWaterWildMons
 	ret
 
 _SwarmWildmonCheck
@@ -1023,11 +1007,11 @@ RandomPhoneRareWildMon: ; 2a4ab
 	farcall GetCallerLocation
 	ld d, b
 	ld e, c
-	ld hl, JohtoGrassWildMons
+	ld hl, NorthOnwaGrassWildMons
 	ld bc, GRASS_WILDDATA_LENGTH
 	call LookUpWildmonsForMapDE
 	jr c, .GetGrassmon
-	ld hl, KantoGrassWildMons
+	ld hl, SouthOnwaGrassWildMons
 	call LookUpWildmonsForMapDE
 	jr nc, .done
 
@@ -1096,11 +1080,11 @@ RandomPhoneWildMon: ; 2a51f
 	farcall GetCallerLocation
 	ld d, b
 	ld e, c
-	ld hl, JohtoGrassWildMons
+	ld hl, NorthOnwaGrassWildMons
 	ld bc, GRASS_WILDDATA_LENGTH
 	call LookUpWildmonsForMapDE
 	jr c, .ok
-	ld hl, KantoGrassWildMons
+	ld hl, SouthOnwaGrassWildMons
 	call LookUpWildmonsForMapDE
 
 .ok
@@ -1254,23 +1238,17 @@ RandomPhoneMon: ; 2a567
 ; 2a5e9
 
 
-JohtoGrassWildMons: ; 0x2a5e9
-INCLUDE "data/wild/johto_grass.asm"
+NorthOnwaGrassWildMons: ; 0x2a5e9
+INCLUDE "data/wild/north_onwa_grass.asm"
 
-JohtoWaterWildMons: ; 0x2b11d
-INCLUDE "data/wild/johto_water.asm"
+NorthOnwaWaterWildMons: ; 0x2b11d
+INCLUDE "data/wild/north_onwa_water.asm"
 
-KantoGrassWildMons: ; 0x2b274
-INCLUDE "data/wild/kanto_grass.asm"
+SouthOnwaGrassWildMons: ; 0x2b274
+INCLUDE "data/wild/south_onwa_grass.asm"
 
-KantoWaterWildMons: ; 0x2b7f7
-INCLUDE "data/wild/kanto_water.asm"
-
-OrangeGrassWildMons:
-INCLUDE "data/wild/orange_grass.asm"
-
-OrangeWaterWildMons:
-INCLUDE "data/wild/orange_water.asm"
+SouthOnwaWaterWildMons: ; 0x2b7f7
+INCLUDE "data/wild/south_onwa_water.asm"
 
 SwarmGrassWildMons: ; 0x2b8d0
 INCLUDE "data/wild/swarm_grass.asm"

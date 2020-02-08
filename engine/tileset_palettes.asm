@@ -55,10 +55,6 @@ endc
 
 LoadSpecialMapPalette: ; 494ac
 	ld a, [wTileset]
-;	cp TILESET_GLINT
-;	jp z, .glint
-;	cp TILESET_CAVE
-;	jr z, .cave
 	cp TILESET_STARGLOW_CAVERN
 	jr z, .starglow_cavern
 	cp TILESET_GROVE
@@ -86,16 +82,6 @@ LoadSpecialMapPalette: ; 494ac
 	cp MAP_ROUTE_10_EAST
 	jp z, .snowtent
 	jp .snow
-	
-;.glint
-;	jp .do_nothing
-	
-;.cave
-;	ld a, [wMapGroup]
-;	cp GROUP_MT_ONWA_B1F
-;	jr z, .glint
-;	ld hl, CavePalette
-;	jp LoadEightBGPalettes
 	
 .starglow_cavern
 	ld hl, StarglowCavernPalette
@@ -154,9 +140,15 @@ LoadSpecialMapPalette: ; 494ac
 	jp LoadEightBGPalettes
 	
 .luster
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_CITY_BUSINESS
+	jp z, .lusterbusiness
 	ld hl, OutsideLusterPalette
 	jp LoadEightTimeOfDayBGPalettes
 	
+.lusterbusiness
+	ld hl, OutsideLusterBusinessPalette
+	jp LoadEightTimeOfDayBGPalettes
 	
 .do_nothing
 	and a
@@ -306,3 +298,6 @@ INCLUDE "maps/palettes/bgpals/bgranch.pal"
 
 OutsideLusterPalette:
 INCLUDE "maps/palettes/bgpals/bgluster.pal"
+
+OutsideLusterBusinessPalette:
+INCLUDE "maps/palettes/bgpals/bglusterbusiness.pal"

@@ -192,7 +192,7 @@ brightlevel: MACRO
 	db (\1 << 6) | (\2 << 4) | (\3 << 2) | \4
 ENDM
 
-ReplaceTimeOfDayPals: ; 8c0e5
+ReplaceTimeOfDayPals:: ; 8c0e5
 ;	xor a
 ;	ld [wTimeOfDayPalFlags], a
 

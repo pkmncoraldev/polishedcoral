@@ -72,7 +72,7 @@ TrainerRanch_1:
 
 .SeenText:
 	text "This ranch is"
-	line "known for it's"
+	line "known for its"
 	cont "DODUO."
 	
 	para "I just got one"
@@ -183,7 +183,7 @@ RanchDodrioText1:
 	done
 	
 RanchDodrioText2:
-	text "DODRIO stomps it's"
+	text "DODRIO stomps its"
 	line "foot impatiently."
 	done
 	
@@ -195,7 +195,7 @@ RanchScarecrowText:
 	text "It's a SCARE-"
 	line "MURKROW."
 	
-	para "It's so life-like!"
+	para "So life-like…"
 	done
 	
 RanchLogsText:

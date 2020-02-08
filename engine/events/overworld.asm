@@ -540,7 +540,7 @@ UsedLavaSurfScript: ; c986
 	scall FieldMovePokepicScript
 	
 AutoSurfScript:
-	playsound SFX_READ_TEXT
+;	playsound SFX_READ_TEXT
 	copybytetovar wBuffer2
 	writevarcode VAR_MOVEMENT
 

@@ -68,26 +68,10 @@ Route10EastDark:
 	end
 	
 Route10EastLightasm:
-;	farcall FadeOutPalettes
-	ld a, %01010101 ; 1, 1, 1, 1
-	ld [wTimeOfDayPalset], a
-	farcall UpdateTimeOfDayPal
-	ld b, CGB_MAPPALS
-	call GetCGBLayout
-;	farcall LoadBlindingFlashPalette
-	farjp FadeInPalettes
-
-;.BrightnessLevels: ; 8c10f
-;	brightlevel 3, 2, 1, 0 ; PALETTE_AUTO
-;	brightlevel 1, 1, 1, 1 ; PALETTE_DAY
-;	brightlevel 2, 2, 2, 2 ; PALETTE_NITE
-;	brightlevel 0, 0, 0, 0 ; PALETTE_MORN
-;	brightlevel 3, 3, 3, 3 ; PALETTE_DARK
-;	brightlevel 3, 2, 1, 0
-;	brightlevel 3, 2, 1, 0
-;	brightlevel 3, 2, 1, 0
-
-
+	ld a, [wTimeOfDayPalFlags]
+	and $3F
+	cp 1
+	jr z, .snowstorm
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes
@@ -100,16 +84,25 @@ Route10EastLightasm:
 	ld a, $1
 	ld [hCGBPalUpdate], a
 	ret
+.snowstorm
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPalsRoute10SnowstormLight
+	call AddNTimes
+	ld de, wOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ld a, $1
+	ld [hCGBPalUpdate], a
+	ret
 	
 Route10EastDarkasm:
-	ld a, %11100100 ; 3, 2, 1, 0
-	ld [wTimeOfDayPalset], a
-	farcall UpdateTimeOfDayPal
-	ld b, CGB_MAPPALS
-	call GetCGBLayout
-;	farcall LoadBlindingFlashPalette
-	farjp FadeInPalettes
-
+	ld a, [wTimeOfDayPalFlags]
+	and $3F
+	cp 1
+	jr z, .snowstorm
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes
@@ -122,9 +115,28 @@ Route10EastDarkasm:
 	ld a, $1
 	ld [hCGBPalUpdate], a
 	ret
+.snowstorm
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPalsRoute10SnowstormDark
+	call AddNTimes
+	ld de, wOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ld a, $1
+	ld [hCGBPalUpdate], a
+	ret
 	
 MapObjectPalsRoute10Light:
 INCLUDE "maps/palettes/obpals/obsnowfirelight.pal"
 
-MapObjectPalsRoute10Dark:
+MapObjectPalsRoute10SnowstormLight:
+INCLUDE "maps/palettes/obpals/obsnowfiresnowstormlight.pal"
+
+MapObjectPalsRoute10Dark::
 INCLUDE "maps/palettes/obpals/obsnowfire.pal"
+
+MapObjectPalsRoute10SnowstormDark::
+INCLUDE "maps/palettes/obpals/obsnowstormfire.pal"

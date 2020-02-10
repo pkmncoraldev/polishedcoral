@@ -289,9 +289,11 @@ INCLUDE "maps/palettes/bgpals/bgsnow.pal"
 OutsideSnowTentPalette:
 INCLUDE "maps/palettes/bgpals/bgsnowtent.pal"
 
-OutsideSnowStormTentPalette:
 OutsideSnowStormPalette:
 INCLUDE "maps/palettes/bgpals/bgsnowstorm.pal"
+
+OutsideSnowStormTentPalette:
+INCLUDE "maps/palettes/bgpals/bgsnowstormtent.pal"
 
 OutsideRanchPalette:
 INCLUDE "maps/palettes/bgpals/bgranch.pal"

@@ -58,85 +58,11 @@ Route10EastCampfireText:
 	done
 
 Route10EastLight:
-	callasm Route10EastLightasm
+	setflag ENGINE_NEAR_CAMPFIRE
 	dotrigger $1
 	end
 	
 Route10EastDark:
-	callasm Route10EastDarkasm
+	clearflag ENGINE_NEAR_CAMPFIRE
 	dotrigger $0
 	end
-	
-Route10EastLightasm:
-	ld a, [wTimeOfDayPalFlags]
-	and $3F
-	cp 1
-	jr z, .snowstorm
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 8 palettes
-	ld hl, MapObjectPalsRoute10Light
-	call AddNTimes
-	ld de, wOBPals
-	ld bc, 8 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ld a, $1
-	ld [hCGBPalUpdate], a
-	ret
-.snowstorm
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 8 palettes
-	ld hl, MapObjectPalsRoute10SnowstormLight
-	call AddNTimes
-	ld de, wOBPals
-	ld bc, 8 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ld a, $1
-	ld [hCGBPalUpdate], a
-	ret
-	
-Route10EastDarkasm:
-	ld a, [wTimeOfDayPalFlags]
-	and $3F
-	cp 1
-	jr z, .snowstorm
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 8 palettes
-	ld hl, MapObjectPalsRoute10Dark
-	call AddNTimes
-	ld de, wOBPals
-	ld bc, 8 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ld a, $1
-	ld [hCGBPalUpdate], a
-	ret
-.snowstorm
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 8 palettes
-	ld hl, MapObjectPalsRoute10SnowstormDark
-	call AddNTimes
-	ld de, wOBPals
-	ld bc, 8 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ld a, $1
-	ld [hCGBPalUpdate], a
-	ret
-	
-MapObjectPalsRoute10Light:
-INCLUDE "maps/palettes/obpals/obsnowfirelight.pal"
-
-MapObjectPalsRoute10SnowstormLight:
-INCLUDE "maps/palettes/obpals/obsnowfiresnowstormlight.pal"
-
-MapObjectPalsRoute10Dark::
-INCLUDE "maps/palettes/obpals/obsnowfire.pal"
-
-MapObjectPalsRoute10SnowstormDark::
-INCLUDE "maps/palettes/obpals/obsnowstormfire.pal"

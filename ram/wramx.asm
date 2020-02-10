@@ -912,7 +912,8 @@ wPokegearFlags::
 wRadioTuningKnob:: ds 1
 wLastDexMode:: ds 1
 
-	ds 2 ; unused
+wIsNearCampfire:: ds 1
+	ds 1 ; unused
 
 wPlayerState:: ds 1
 

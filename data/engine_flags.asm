@@ -237,3 +237,5 @@ EngineFlags: ; 80462
 	
 	engine_flag wSnareFlags, 0	; starglow
 	engine_flag wSnareFlags, 1  ; train
+	
+	engine_flag wIsNearCampfire, 0  ; used to light up player on Route 10 East

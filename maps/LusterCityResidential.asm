@@ -26,7 +26,7 @@ LusterCityResidential_MapScriptHeader:
 	signpost  0,  0, SIGNPOST_READ, LusterSign1
 	signpost 15, 23, SIGNPOST_READ, LusterSign2
 
-	db 15 ; object events
+	db 17 ; object events
 	person_event SPRITE_OFFICER,  0,  0, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC1, -1
 	person_event SPRITE_COOLTRAINER_F,  0,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster1NPC2, -1
 	person_event SPRITE_GENTLEMAN,  0,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Luster1NPC3, -1
@@ -42,6 +42,8 @@ LusterCityResidential_MapScriptHeader:
 	person_event SPRITE_DELINQUENT_M, 20, 15, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterPunk1, -1
 	person_event SPRITE_DELINQUENT_F, 21, 14, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterPunk2, -1
 	person_event SPRITE_DELINQUENT_M, 20, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterPunk3, -1
+	person_event SPRITE_MALL_SIGN_2, 44, 31, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MALL_SIGN_2, 44, 32, SPRITEMOVEDATA_POKECOM_NEWS, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 
 
 	const_def 1 ; object constants

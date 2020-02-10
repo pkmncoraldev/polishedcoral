@@ -511,6 +511,8 @@ PlayTalkObject: ; 969ac
 	jr z, .nope
 	cp SPRITEMOVEDATA_SMASHABLE_ROCK
 	jr z, .nope
+	cp SPRITEMOVEDATA_CUTTABLE_TREE
+	jr z, .nope
 	push de
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX

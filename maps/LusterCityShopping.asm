@@ -9,7 +9,7 @@ LusterCityShopping_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 10 ; object events
+	db 12 ; object events
 	person_event SPRITE_LASS, 36,  7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster2NPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 36,  6, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster2NPC2, -1
 	person_event SPRITE_BUG_CATCHER, 36,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Luster2NPC3, -1
@@ -20,6 +20,8 @@ LusterCityShopping_MapScriptHeader:
 	person_event SPRITE_YOUNGSTER, 29, 18, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster2NPC8, -1
 	person_event SPRITE_MALL_SIGN, 31,  9, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_MALL_SIGN, 31, 10, SPRITEMOVEDATA_POKECOM_NEWS, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MALL_SIGN_2, 44,  1, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Luster2MallSign, -1
+	person_event SPRITE_MALL_SIGN_2, 44,  2, SPRITEMOVEDATA_POKECOM_NEWS, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 
 	const_def 1 ; object constants
 	const LUSTER2NPC1
@@ -101,6 +103,9 @@ Luster2NPC8:
 	waitbutton
 	closetext
 	spriteface LUSTER2NPC8, UP
+	end
+	
+Luster2MallSign:
 	end
 	
 Luster2NPC1Text:

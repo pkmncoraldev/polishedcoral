@@ -2190,6 +2190,7 @@ HasCutAvailable:: ; d186
 AskCutTreeScript: ; 0xd1a9
 	callasm HasCutAvailable
 	ifequal 1, .no
+	playsound SFX_READ_TEXT_2
 	checkflag ENGINE_AUTOCUT_ACTIVE
 	iftrue AutoCutTreeScript
 	opentext
@@ -2199,7 +2200,7 @@ AskCutTreeScript: ; 0xd1a9
 	endtext
 
 .no ; 0xd1cd
-	jumptext UnknownText_0xd1d0
+	end
 
 UnknownText_0xd1c8: ; 0xd1c8
 	; This tree can be CUT! Want to use CUT?

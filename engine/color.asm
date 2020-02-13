@@ -816,7 +816,16 @@ LoadMapPals:
 	ld [rSVBK], a
 
 .got_pals
-	
+	ld a, [wMapGroup]
+	cp GROUP_LAKE_ONWA
+	jr z, .rockscheck
+	cp GROUP_LUSTER_SEWERS_FLOODED
+	jr z, .rockscheck
+	cp GROUP_SUNBEAM_ISLAND
+	jr z, .umbrellacheck
+	cp GROUP_SUNSET_BAY
+	jp z, .sailboat
+.got_pals_cont
 	ld a, [wTileset]
 	cp TILESET_CAVE
 	jp z, .rocks
@@ -828,13 +837,8 @@ LoadMapPals:
 	jp z, .snow
 	cp TILESET_LUSTER
 	jp z, .luster
-	ld a, [wMapGroup]
-	cp GROUP_LAKE_ONWA
-	jr z, .rockscheck
-	cp GROUP_SUNBEAM_ISLAND
-	jr z, .umbrellacheck
-	cp GROUP_SUNSET_BAY
-	jp z, .sailboat
+	cp TILESET_SEWER
+	jp z, .sewer
 	jp .normal
 .umbrellacheck
 	ld a, [wMapNumber]
@@ -853,7 +857,10 @@ LoadMapPals:
 .rockscheck
 	ld a, [wMapNumber]
 	cp MAP_LAKE_ONWA
-	jp nz, .normal
+	jp z, .rocks
+	cp MAP_LUSTER_SEWERS_FLOODED
+	jp z, .rocks
+	jp .got_pals_cont
 .rocks
 	ld a, [wTimeOfDayPal]
 	and 3
@@ -911,6 +918,14 @@ LoadMapPals:
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	jp .outside
+	
+.sewer
+	ld hl, MapObjectPalsSewer
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
 	
 .snow
 	ld a, [wMapNumber]
@@ -1117,6 +1132,9 @@ INCLUDE "maps/palettes/obpals/obumbrella.pal"
 
 MapObjectPalsStarglow::
 INCLUDE "maps/palettes/obpals/obstarglow.pal"
+
+MapObjectPalsSewer::
+INCLUDE "maps/palettes/obpals/obsewer.pal"
 
 MapObjectPalsRanch::
 INCLUDE "maps/palettes/obpals/obranch.pal"

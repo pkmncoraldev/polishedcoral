@@ -24,8 +24,11 @@ Pointers445f: ; 445f
 	dw SetFacingRun,                   SetFacingCurrent           ; PERSON_ACTION_RUN
 	dw SetFacingSailboatTop,           SetFacingSailboatTop       ; PERSON_ACTION_SAILBOAT_TOP
 	dw SetFacingSailboatBottom,        SetFacingSailboatBottom    ; PERSON_ACTION_SAILBOAT_BOTTOM
-	dw SetFacingUmbrellaLeft,          SetFacingUmbrellaLeft   ; PERSON_ACTION_UMBRELLA_LEFT
-	dw SetFacingUmbrellaRight,         SetFacingUmbrellaRight  ; PERSON_ACTION_UMBRELLA_RIGHT
+	dw SetFacingUmbrellaLeft,          SetFacingUmbrellaLeft      ; PERSON_ACTION_UMBRELLA_LEFT
+	dw SetFacingUmbrellaRight,         SetFacingUmbrellaRight     ; PERSON_ACTION_UMBRELLA_RIGHT
+	dw SetFacingBridgeBob,             SetFacingFreezeBridgeBob   ; PERSON_ACTION_BRIDGE_BOB
+	dw SetFacingBoatBob,               SetFacingFreezeBoatBob     ; PERSON_ACTION_BOAT_BOB
+	dw SetFacingValve,                 SetFacingValve             ; PERSON_ACTION_VALVE
 ; 44a3
 
 SetFacingStanding: ; 44a3
@@ -231,6 +234,38 @@ SetFacingFreezeBounce: ; 45a4
 	jp SetFixedFacing
 ; 45ab
 
+SetFacingBridgeBob: ; 4590
+	ld hl, OBJECT_STEP_FRAME
+	add hl, bc
+	ld a, [hl]
+	inc a
+	and %01111111
+	ld [hl], a
+	and %01000000
+	ld a, FACING_BRIDGE_BOB_1
+	jp nz, SetFixedFacing
+SetFacingFreezeBridgeBob: ; 45a4
+	ld a, FACING_BRIDGE_BOB_2
+	jp SetFixedFacing
+	
+SetFacingBoatBob: ; 4590
+	ld hl, OBJECT_STEP_FRAME
+	add hl, bc
+	ld a, [hl]
+	inc a
+	and %01111111
+	ld [hl], a
+	and %01000000
+	ld a, FACING_BOAT_BOB_1
+	jp nz, SetFixedFacing
+SetFacingFreezeBoatBob: ; 45a4
+	ld a, FACING_BOAT_BOB_2
+	jp SetFixedFacing
+
+SetFacingValve:
+	ld a, FACING_VALVE
+	jp SetFixedFacing
+	
 SetFacingBigGyarados:
 	ld hl, OBJECT_STEP_FRAME
 	add hl, bc

@@ -173,6 +173,15 @@ LusterCityShopping_BlockData:
 LusterCityBusiness_BlockData:
 	INCBIN "maps/LusterCityBusiness.ablk.lz"
 	
+LusterSewersFlooded_BlockData:
+	INCBIN "maps/LusterSewersFlooded.ablk.lz"
+	
+LusterSewersEmpty_BlockData:
+	INCBIN "maps/LusterSewersEmpty.ablk.lz"
+	
+LusterSewersValveRoom_BlockData:
+	INCBIN "maps/LusterSewersValveRoom.ablk.lz"
+	
 SprucesLab_BlockData:
 	INCBIN "maps/SprucesLab.ablk.lz"
 	

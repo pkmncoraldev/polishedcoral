@@ -7,17 +7,17 @@
 	tilecoll LADDER, LADDER, LADDER, LADDER ; 06
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 07
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 08
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 09
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 09
 	tilecoll WALL, WALL, WALL, WALL ; 0a
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 0b
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 0b
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0c
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0d
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 0d
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0e
 	tilecoll WALL, WALL, WALL, WALL ; 0f
 	tilecoll WALL, WALL, WALL, WALL ; 10
 	tilecoll WALL, WALL, WALL, WALL ; 11
 	tilecoll WALL, WALL, WALL, WALL ; 12
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 13
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 13
 	tilecoll WALL, WALL, WALL, WALL ; 14
 	tilecoll WALL, WALL, WALL, WALL ; 15
 	tilecoll WALL, WALL, WALL, WALL ; 16
@@ -36,15 +36,15 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 23
 	tilecoll WALL, WALL, WALL, WALL ; 24
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 25
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 26
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 26
 	tilecoll WALL, WALL, WALL, WALL ; 27
 	tilecoll WALL, WALL, WALL, WALL ; 28
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 29
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2a
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 2a
 	tilecoll WALL, WALL, FLOOR, WALL ; 2b
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 2c
-	tilecoll WALL, WALL, WALL, WALL ; 2d
-	tilecoll WALL, WALL, WALL, WALL ; 2e
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 2d
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 2e
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2f
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 30
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 31
@@ -88,7 +88,7 @@
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 57
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 58
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; 59
-	tilecoll STAIRCASE, FLOOR, FLOOR, FLOOR ; 5a
+	tilecoll LADDER, FLOOR, FLOOR, FLOOR ; 5a
 	tilecoll WALL, WALL, FLOOR, WALL ; 5b
 	tilecoll WALL, WALL, WALL, FLOOR ; 5c
 	tilecoll WALL, WALL, WALL, WALL ; 5d

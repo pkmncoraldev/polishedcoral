@@ -147,3 +147,6 @@ SpriteHeaders:
 	overworld_sprite MallSignGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite MallSign2GFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite CampfireGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite Valve1GFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite Valve2GFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite PlankBridgeGFX, STANDING_SPRITE, PAL_OW_SILVER

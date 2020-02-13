@@ -38,6 +38,7 @@
 	const ROUTE_10			 ; 1c
 	const TWINKLE_TOWN		 ; 1d
 	const LUSTER_CITY		 ; 1e
+	const LUSTER_SEWERS		 ; 1f
 
 KANTO_LANDMARK EQU const_value
 

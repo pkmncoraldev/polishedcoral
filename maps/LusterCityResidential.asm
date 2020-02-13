@@ -4,15 +4,10 @@ LusterCityResidential_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, CheckLusterTrashcans
 
-	db 8 ; warp events
-	warp_def  4,  2, 1, ROUTE_1 ;FAST_SHIP_1F
-	warp_def  5,  2, 6, ROUTE_1 ;VERMILION_CITY
-	warp_def  6,  2, 7, ROUTE_1 ;VERMILION_CITY
-	warp_def  7,  2, 8, ROUTE_1 ;VERMILION_CITY
-	warp_def  0,  0, 1, ROUTE_1 ;ROCK_TUNNEL_1F
+	db 3 ; warp events
 	warp_def 11, 28, 1, ROUTE_1 ;ROUTE_6_SAFFRON_GATE
 	warp_def 11, 29, 2, ROUTE_1 ;ROUTE_6_SAFFRON_GATE
-	warp_def 20, 14, 1, ROUTE_1 ;KOGAS_ROOM
+	warp_def 20, 14, 1, LUSTER_SEWERS_FLOODED
 
 	db 0 ; coord events
 
@@ -23,7 +18,7 @@ LusterCityResidential_MapScriptHeader:
 	signpost 35, 20, SIGNPOST_READ, LusterTrashcan4
 	signpost 45, 14, SIGNPOST_READ, LusterTrashcan5
 	signpost 45, 20, SIGNPOST_READ, LusterTrashcan6
-	signpost  0,  0, SIGNPOST_READ, LusterSign1
+	signpost 12, 27, SIGNPOST_READ, LusterSign1
 	signpost 15, 23, SIGNPOST_READ, LusterSign2
 
 	db 17 ; object events
@@ -34,7 +29,7 @@ LusterCityResidential_MapScriptHeader:
 	person_event SPRITE_COOLTRAINER_F, 33, 21, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Luster1NPC5, -1
 	person_event SPRITE_YOUNGSTER, 39, 16, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Luster1NPC6, -1
 	person_event SPRITE_LASS, 26, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC7, -1
-	person_event SPRITE_FISHER, 33,  9, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC8, -1
+	person_event SPRITE_FAT_GUY, 33,  9, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC8, -1
 	person_event SPRITE_BUG_CATCHER, 47,  7, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC9, -1
 	person_event SPRITE_YOUNGSTER, 52, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster1NPC10, -1
 	person_event SPRITE_MEOWTH, 44, 14, SPRITEMOVEDATA_POKEMON, 2, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster1NPC11, -1
@@ -82,8 +77,9 @@ CheckLusterTrashcans:
 	checkevent EVENT_LUSTER_TRASHCAN_6
 	iftrue .OpenSesame6
 .cont6
-	checkevent EVENT_LUSTER_SEWER_OPEN
-	iftrue .OpenSesameSewer
+;	checkevent EVENT_LUSTER_SEWER_OPEN
+;	iftrue .OpenSesameSewer
+	jump .OpenSesameSewer
 	return
 
 .OpenSesame1:
@@ -202,7 +198,7 @@ Luster1NPC12:
 LusterTrashcan1:
 	changeblock $c, $12, $52
 	opentext
-	writetext LusterTrashcan1Text
+	writetext LusterTrashcanText
 	waitbutton
 	reloadmappart
 	closetext
@@ -212,6 +208,8 @@ LusterTrashcan1:
 LusterTrashcan2:
 	changeblock $e, $12, $53
 	opentext
+	writetext LusterTrashcanText
+	waitbutton
 	reloadmappart
 	closetext
 	setevent EVENT_LUSTER_TRASHCAN_2
@@ -220,6 +218,8 @@ LusterTrashcan2:
 LusterTrashcan3:
 	changeblock $e, $22, $4d
 	opentext
+	writetext LusterTrashcanText
+	waitbutton
 	reloadmappart
 	closetext
 	setevent EVENT_LUSTER_TRASHCAN_3
@@ -228,6 +228,8 @@ LusterTrashcan3:
 LusterTrashcan4:
 	changeblock $14, $22, $4c
 	opentext
+	writetext LusterTrashcanText
+	waitbutton
 	reloadmappart
 	closetext
 	setevent EVENT_LUSTER_TRASHCAN_4
@@ -236,6 +238,8 @@ LusterTrashcan4:
 LusterTrashcan5:
 	changeblock $e, $2c, $4d
 	opentext
+	writetext LusterTrashcanText
+	waitbutton
 	reloadmappart
 	closetext
 	setevent EVENT_LUSTER_TRASHCAN_5
@@ -244,6 +248,8 @@ LusterTrashcan5:
 LusterTrashcan6:
 	changeblock $14, $2c, $4c
 	opentext
+	writetext LusterTrashcanText
+	waitbutton
 	reloadmappart
 	closetext
 	setevent EVENT_LUSTER_TRASHCAN_6
@@ -256,33 +262,36 @@ LusterPunk1:
 	iftrue .end
 	writetext LusterPunk1Text1
 	waitbutton
+	special SaveMusic
 	winlosstext LusterPunk1WinText, 0
 	setlasttalked LUSTERPUNK1
 	loadtrainer DELINQUENT_M, 1
 	startbattle
 	reloadmapafterbattle
-	opentext
+	special RestoreMusic
 	checkevent EVENT_BEAT_LUSTER_PUNK_2
 	iffalse .notlast
 	checkevent EVENT_BEAT_LUSTER_PUNK_3
 	iffalse .notlast
+	setevent EVENT_LUSTER_SEWER_OPEN
+	changeblock $e, $14, $5a
+	opentext
 	writetext LusterPunk1Text4
 	waitbutton
 	closetext
-	spriteface LUSTERPUNK1, LEFT
 	end
 .notlast
+	opentext
 	writetext LusterPunk1Text2
 	waitbutton
 	closetext
-	spriteface LUSTERPUNK1, LEFT
 	setevent EVENT_BEAT_LUSTER_PUNK_1
 	end
 .end
+	opentext
 	writetext LusterPunk1Text3
 	waitbutton
 	closetext
-	spriteface LUSTERPUNK1, LEFT
 	end
 	
 LusterPunk2:
@@ -292,77 +301,79 @@ LusterPunk2:
 	iftrue .end
 	writetext LusterPunk2Text1
 	waitbutton
+	special SaveMusic
 	winlosstext LusterPunk2WinText, 0
 	setlasttalked LUSTERPUNK2
 	loadtrainer DELINQUENT_F, 1
 	startbattle
 	reloadmapafterbattle
-	opentext
+	special RestoreMusic
 	checkevent EVENT_BEAT_LUSTER_PUNK_1
 	iffalse .notlast
 	checkevent EVENT_BEAT_LUSTER_PUNK_3
 	iffalse .notlast
+	setevent EVENT_LUSTER_SEWER_OPEN
+	changeblock $e, $14, $5a
+	opentext
 	writetext LusterPunk2Text4
 	waitbutton
 	closetext
-	spriteface LUSTERPUNK2, LEFT
 	end
 .notlast
+	opentext
 	writetext LusterPunk2Text2
 	waitbutton
 	closetext
-	spriteface LUSTERPUNK2, LEFT
 	setevent EVENT_BEAT_LUSTER_PUNK_2
 	end
 .end
+	opentext
 	writetext LusterPunk2Text3
 	waitbutton
 	closetext
-	spriteface LUSTERPUNK2, LEFT
 	end
 	
 LusterPunk3:
-;	setevent EVENT_LUSTER_SEWER_OPEN
-;	changeblock $e, $14, $5a
-
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_LUSTER_PUNK_3
 	iftrue .end
 	writetext LusterPunk3Text1
 	waitbutton
+	special SaveMusic
 	winlosstext LusterPunk3WinText, 0
 	setlasttalked LUSTERPUNK3
 	loadtrainer DELINQUENT_M, 2
 	startbattle
 	reloadmapafterbattle
-	opentext
+	special RestoreMusic
 	checkevent EVENT_BEAT_LUSTER_PUNK_1
 	iffalse .notlast
 	checkevent EVENT_BEAT_LUSTER_PUNK_2
 	iffalse .notlast
+	setevent EVENT_LUSTER_SEWER_OPEN
+	changeblock $e, $14, $5a
+	opentext
 	writetext LusterPunk3Text4
 	waitbutton
 	closetext
-	spriteface LUSTERPUNK3, LEFT
 	end
 .notlast
+	opentext
 	writetext LusterPunk3Text2
 	waitbutton
 	closetext
-	spriteface LUSTERPUNK3, LEFT
 	setevent EVENT_BEAT_LUSTER_PUNK_3
 	end
 .end
+	opentext
 	writetext LusterPunk3Text3
 	waitbutton
 	closetext
-	spriteface LUSTERPUNK3, LEFT
 	end
 	
-LusterTrashcan1Text:
-	text "Stinky…"
-	line "Just like Star!"
+LusterTrashcanText:
+	text "El trasho can!"
 	done
 	
 LusterSign1Text:

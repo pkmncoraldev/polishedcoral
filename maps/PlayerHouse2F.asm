@@ -17,7 +17,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event  5, 14, ROUTE_9, 3
 	warp_event  7, 14, FLICKER_STATION, 1
 	warp_event  9, 14, ROUTE_10_EAST, 1
-	warp_event 11, 14, LUSTER_CITY_RESIDENTIAL, 6
+	warp_event 11, 14, LUSTER_CITY_RESIDENTIAL, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0

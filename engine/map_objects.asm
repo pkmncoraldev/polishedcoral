@@ -164,7 +164,7 @@ HandleMapObjectAction_Stationary:
 	ld hl, OBJECT_FLAGS1
 	add hl, bc
 	bit INVISIBLE, [hl]
-	jr nz, SetFacingStanding
+	jp nz, SetFacingStanding
 asm_4448: ; use second column
 	ld de, Pointers445f + 2
 	; fallthrough
@@ -541,6 +541,9 @@ MapObjectMovementPattern:
 	dw .MovementSailboatBottom       ; SPRITEMOVEFN_SAILBOAT_BOTTOM
 	dw .MovementUmbrellaLeft ; 17
 	dw .MovementUmbrellaRight ; 18
+	dw .MovementBridgeBob
+	dw .MovementBoatBob
+	dw .MovementValve
 
 .RandomWalkY:
 	call Random
@@ -728,7 +731,7 @@ MapObjectMovementPattern:
 .MovementBouncing:
 	ld a, PERSON_ACTION_BOUNCE
 	jr ._ActionA_StepType04
-
+	
 .MovementBigGyarados:
 	ld a, PERSON_ACTION_BIG_GYARADOS
 	jr ._ActionA_StepType04
@@ -792,7 +795,19 @@ MapObjectMovementPattern:
 	add hl, bc
 	ld [hl], STEP_TYPE_04
 	ret
+	
+.MovementBridgeBob
+	ld a, PERSON_ACTION_BRIDGE_BOB
+	jr ._ActionA_StepType04
+	
+.MovementBoatBob
+	ld a, PERSON_ACTION_BOAT_BOB
+	jr ._ActionA_StepType04
 
+.MovementValve:
+	ld a, PERSON_ACTION_VALVE
+	jr ._ActionA_StepType04
+	
 .MovementSpinCounterclockwise:
 	call MovementAnonymousJumptable
 	dw .MovementSpinInit

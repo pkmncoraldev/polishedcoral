@@ -47,6 +47,12 @@ Facings:
 	dw FacingSailboatBottom ; FACING_SAILBOAT_BOTTOM
 	dw FacingUmbrellaLeft
 	dw FacingUmbrellaRight
+	dw FacingBridgeBob1
+	dw FacingBridgeBob2
+	dw FacingBoatBob1
+	dw FacingBoatBob2
+	dw FacingValve1
+	dw FacingValve2
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -412,6 +418,64 @@ FacingUmbrellaLeft:
 FacingUmbrellaRight:
 	db 5 ; #
 	db  0,  0, 0, $09
+	db  8,  0, 0, $04
+	db  8,  8, 0, $05
+	db 16,  0, 0, $06
+	db 16,  8, 0, $07
+	
+FacingBridgeBob1:
+	db 8 ; #
+	db  4,  0, 0, $00
+	db  4,  8, 0, $01
+	db 12,  0, 0, $02
+	db 12,  8, 0, $03
+	db 20,  0, 0, $04
+	db 20,  8, 0, $05
+	db 28,  0, 0, $06
+	db 28,  8, 0, $07
+	
+FacingBridgeBob2:
+	db 8 ; #
+	db  5,  0, 0, $00
+	db  5,  8, 0, $01
+	db 13,  0, 0, $02
+	db 13,  8, 0, $03
+	db 21,  0, 0, $04
+	db 21,  8, 0, $05
+	db 29,  0, 0, $06
+	db 29,  8, 0, $07
+	
+FacingBoatBob1:
+	db 8 ; #
+	db  4,  0, 0, $04
+	db  4,  8, 0, $05
+	db 12,  0, 0, $06
+	db 12,  8, 0, $07
+	db  4, -8, 0, $01
+	db  4, -16, 0, $00
+	db 12, -8, 0, $03
+	db 12, -16, 0, $02
+	
+FacingBoatBob2:
+	db 8 ; #
+	db  5,  0, 0, $04
+	db  5,  8, 0, $05
+	db 13,  0, 0, $06
+	db 13,  8, 0, $07
+	db  5, -8, 0, $01
+	db  5, -16, 0, $00
+	db 13, -8, 0, $03
+	db 13, -16, 0, $02
+	
+FacingValve1:
+	db 4 ; #
+	db  8,  0, 0, $00
+	db  8,  8, 0, $01
+	db 16,  0, 0, $02
+	db 16,  8, 0, $03
+	
+FacingValve2:
+	db 4 ; #
 	db  8,  0, 0, $04
 	db  8,  8, 0, $05
 	db 16,  0, 0, $06

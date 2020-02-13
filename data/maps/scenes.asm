@@ -43,4 +43,6 @@ MapTriggers::
 	scene_var TWINKLE_TOWN,							  wTwinkleTownTrigger
 	scene_var EAST_TRAIN_CABIN_1,					  wEastTrainCabin1Trigger
 	scene_var EAST_TRAIN_CABOOSE,					  wEastTrainCabooseTrigger
+	scene_var LUSTER_SEWERS_FLOODED,				  wLusterSewersFloodedTrigger
+	scene_var LUSTER_SEWERS_VALVE_ROOM,				  wLusterSewersValveRoomTrigger
 	db -1

@@ -254,6 +254,9 @@ ENDM
 	map_attributes MtOnwaLowerCliff, MT_ONWA_LOWER_CLIFF, $00, 0
 	map_attributes FlickerPass1F, FLICKER_PASS_1F, $9, 0
 	map_attributes FlickerPass2F, FLICKER_PASS_2F, $9, 0
+	map_attributes LusterSewersFlooded, LUSTER_SEWERS_FLOODED, 0, 0
+	map_attributes LusterSewersEmpty, LUSTER_SEWERS_EMPTY, 0, 0
+	map_attributes LusterSewersValveRoom, LUSTER_SEWERS_VALVE_ROOM, 0, 0
 	
 	map_attributes SunsetPokeCenter, SUNSET_POKECENTER, $0, 0
 	map_attributes SunsetLighthouse, SUNSET_LIGHTHOUSE, $0, 0

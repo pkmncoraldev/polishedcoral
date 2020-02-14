@@ -630,7 +630,7 @@ TrySurfOW:: ; c9e7
 	ld a, [wEngineBuffer1]
 	call GetTileCollision
 	cp WATERTILE ; surfable
-	jr nz, .quit
+	jp nz, .quit
 
 ; Check tile permissions.
 	call CheckDirection
@@ -656,6 +656,10 @@ TrySurfOW:: ; c9e7
 	call GetSurfType
 	ld [wBuffer2], a
 	call GetPartyNick
+	
+	ld a, [wTileset]
+	cp TILESET_SEWER
+	jr z, .sewer
 	
 	ld a, BANK(AskSurfScript)
 	ld hl, AskSurfScript
@@ -726,6 +730,15 @@ TrySurfOW:: ; c9e7
 	scf
 	ret
 	
+.sewer
+	ld a, BANK(SewerSurfScript)
+	ld hl, SewerSurfScript
+	call CallScript
+
+	scf
+	ret
+	
+	
 AskSurfScript: ; ca2c
 	checkflag ENGINE_AUTOSURF_ACTIVE
 	iftrue AutoSurfScript
@@ -752,6 +765,16 @@ AskLavaSurfText: ; ca36
 	text_jump _AskLavaSurfText ; The lava is bubbling.
 	db "@"              ; Want to ride?
 
+SewerSurfScript:
+	opentext
+	writetext SewerSurfText
+	waitbutton
+	endtext
+	
+SewerSurfText:
+	text_jump _SewerSurfText
+	db "@"
+	
 CheckFlyAllowedOnMap:
 ; returns z is fly is allowed
 	call GetMapPermission

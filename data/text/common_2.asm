@@ -243,6 +243,14 @@ _UsedLavaSurfText::
 	text "."
 	done
 
+_SewerSurfText::
+	text "The water smells"
+	line "disgusting."
+	
+	para "Better not touch"
+	line "it…"
+	done
+	
 UnknownText_0x1c068e::
 	text_from_ram wStringBuffer2
 	text " used"

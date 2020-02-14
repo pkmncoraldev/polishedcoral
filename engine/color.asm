@@ -819,7 +819,7 @@ LoadMapPals:
 	ld a, [wMapGroup]
 	cp GROUP_LAKE_ONWA
 	jr z, .rockscheck
-	cp GROUP_LUSTER_SEWERS_FLOODED
+	cp GROUP_LUSTER_SEWERS_B1F_FLOODED
 	jr z, .rockscheck
 	cp GROUP_SUNBEAM_ISLAND
 	jr z, .umbrellacheck
@@ -858,7 +858,9 @@ LoadMapPals:
 	ld a, [wMapNumber]
 	cp MAP_LAKE_ONWA
 	jp z, .rocks
-	cp MAP_LUSTER_SEWERS_FLOODED
+	cp MAP_LUSTER_SEWERS_B1F_FLOODED
+	jp z, .rocks
+	cp MAP_LUSTER_SEWERS_B2F_FLOODED
 	jp z, .rocks
 	jp .got_pals_cont
 .rocks

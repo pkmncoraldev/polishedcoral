@@ -901,15 +901,6 @@ DoPlayerMovement:: ; 80000
 ; Returns 0 if there is an NPC in front that you can't move
 ; Returns 1 if there is no NPC in front
 ; Returns 2 if there is a movable NPC in front
-	ld a, [wMapGroup]
-	cp GROUP_LUSTER_SEWERS_VALVE_ROOM
-	jr nz, .CheckNPCcont
-	ld a, [wMapNumber]
-	cp MAP_LUSTER_SEWERS_VALVE_ROOM
-	jr nz, .CheckNPCcont
-	ld a, 1
-	ret
-.CheckNPCcont
 	xor a
 	ld [hMapObjectIndexBuffer], a
 ; Load the next X coordinate into d

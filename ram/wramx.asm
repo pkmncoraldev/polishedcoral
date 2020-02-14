@@ -965,8 +965,8 @@ wRoute10EastTrigger:: ds 1
 wTwinkleTownTrigger:: ds 1
 wEastTrainCabin1Trigger:: ds 1
 wEastTrainCabooseTrigger:: ds 1
-wLusterSewersFloodedTrigger:: ds 1
-wLusterSewersValveRoomTrigger:: ds 1
+wLusterSewersB1FFloodedTrigger:: ds 1
+wLusterSewersB2FFloodedTrigger:: ds 1
 ds 50
 
 ; fight counts

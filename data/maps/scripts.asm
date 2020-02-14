@@ -26,9 +26,13 @@ INCLUDE "maps/MtOnwaCliff.asm"
 INCLUDE "maps/MtOnwaLowerCliff.asm"
 INCLUDE "maps/FlickerPass1F.asm"
 INCLUDE "maps/FlickerPass2F.asm"
-INCLUDE "maps/LusterSewersFlooded.asm"
-INCLUDE "maps/LusterSewersEmpty.asm"
-INCLUDE "maps/LusterSewersValveRoom.asm"
+INCLUDE "maps/LusterSewersB1FFlooded.asm"
+INCLUDE "maps/LusterSewersB1FEmpty.asm"
+INCLUDE "maps/LusterSewersB2FFlooded.asm"
+INCLUDE "maps/LusterSewersB2FEmpty.asm"
+INCLUDE "maps/LusterSewersValveRoom1.asm"
+INCLUDE "maps/LusterSewersValveRoom2.asm"
+INCLUDE "maps/LusterSewersValveRoom3.asm"
 
 
 SECTION "Routes Scripts", ROMX

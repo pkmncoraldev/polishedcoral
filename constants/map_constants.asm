@@ -35,9 +35,13 @@ MAP_NONE   EQU 0
 	map_const MT_ONWA_LOWER_CLIFF,						  13, 12 ; 13
 	map_const FLICKER_PASS_1F,							  21, 18 ; 14
 	map_const FLICKER_PASS_2F,							  25, 26 ; 15
-	map_const LUSTER_SEWERS_FLOODED,					  14, 12 ; 16
-	map_const LUSTER_SEWERS_EMPTY,						  14, 12 ; 17
-	map_const LUSTER_SEWERS_VALVE_ROOM,					   4,  3 ; 18
+	map_const LUSTER_SEWERS_B1F_FLOODED,				  13, 12 ; 16
+	map_const LUSTER_SEWERS_B1F_EMPTY,					  13, 12 ; 17
+	map_const LUSTER_SEWERS_B2F_FLOODED,				  10, 12 ; 18
+	map_const LUSTER_SEWERS_B2F_EMPTY,					  10, 12 ; 19
+	map_const LUSTER_SEWERS_VALVE_ROOM_1,				   4,  3 ; 20
+	map_const LUSTER_SEWERS_VALVE_ROOM_2,				   4,  3 ; 21
+	map_const LUSTER_SEWERS_VALVE_ROOM_3,				   4,  3 ; 22
 
 	newgroup                                                     ;  2
 

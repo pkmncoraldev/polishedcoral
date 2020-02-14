@@ -7,7 +7,7 @@ LusterCityResidential_MapScriptHeader:
 	db 3 ; warp events
 	warp_def 11, 28, 1, ROUTE_1 ;ROUTE_6_SAFFRON_GATE
 	warp_def 11, 29, 2, ROUTE_1 ;ROUTE_6_SAFFRON_GATE
-	warp_def 20, 14, 1, LUSTER_SEWERS_FLOODED
+	warp_def 20, 14, 1, LUSTER_SEWERS_B1F_FLOODED
 
 	db 0 ; coord events
 

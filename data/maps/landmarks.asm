@@ -36,6 +36,9 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, TwinkleTownName
 	landmark   0,   0, LusterCityName
 	landmark   0,   0, LusterSewersName
+	landmark   0,   0, ResidentialName
+	landmark   0,   0, ShoppingName
+	landmark   0,   0, BusinessName
 
 
 SunsetBayName:         db "SUNSET¯BAY@"
@@ -69,4 +72,7 @@ Route10Name:		   db "ROUTE 10@"
 TwinkleTownName: 	   db "TWINKLE¯TOWN@"
 LusterCityName:		   db "LUSTER¯CITY@"
 LusterSewersName:	   db "LUSTER¯SEWERS@"
+ResidentialName:	   db "HOUSING¯DISTRICT@"
+ShoppingName:		   db "SHOPPING¯DISTRICT@"
+BusinessName:	 	   db "BUSINESS¯DISTRICT@"
 SpecialMapName:        db "?","@"

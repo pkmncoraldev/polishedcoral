@@ -27,6 +27,7 @@ MapTriggers::
 	scene_var SUNBEAM_SURF_SHOP,					  wSunbeamSurfShopTrigger
 	scene_var SUNBEAM_BIKINI_CONTEST,				  wSunbeamBikiniContestTrigger
 	scene_var SPRUCES_LAB,							  wSprucesLabTrigger
+	scene_var SUNBEAM_RESERVE,						  wSunbeamReserveTrigger
 	scene_var EVENTIDE_FOREST,						  wEventideForestTrigger
 	scene_var SPOOKHOUSE_LIVING_ROOM,				  wSpookhouseLivingRoomTrigger
 	scene_var SPOOKHOUSE_HALLWAY_1,					  wSpookhouseHallway1Trigger
@@ -43,6 +44,7 @@ MapTriggers::
 	scene_var TWINKLE_TOWN,							  wTwinkleTownTrigger
 	scene_var EAST_TRAIN_CABIN_1,					  wEastTrainCabin1Trigger
 	scene_var EAST_TRAIN_CABOOSE,					  wEastTrainCabooseTrigger
+	scene_var LUSTER_CITY_SHOPPING,					  wLusterCityShoppingTrigger
 	scene_var LUSTER_SEWERS_B1F_FLOODED,			  wLusterSewersB1FFloodedTrigger
 	scene_var LUSTER_SEWERS_B2F_FLOODED,			  wLusterSewersB2FFloodedTrigger
 	db -1

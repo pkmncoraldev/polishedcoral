@@ -1272,8 +1272,8 @@ TitleScreenEntrance: ; 62bc
 	call FadePalettes
 
 ; Play the title screen music.
-	ld de, MUSIC_TITLE
-	call PlayMusic
+;	ld de, MUSIC_TITLE
+;	call PlayMusic
 
 	ld a, $88
 	ld [hWY], a
@@ -1380,12 +1380,12 @@ TitleScreenMain: ; 6304
 	inc [hl]
 
 ; Only do this once every eight frames
-	and %111111
-	jr nz, .cont
+;	and %111111
+;	jr nz, .cont
 
-	call TitleScreenScroll
+;	call TitleScreenScroll
 
-.cont
+;.cont
 	ret
 
 .done
@@ -1452,7 +1452,7 @@ TitleScreenScroll:
 	ld [wMagnetTrainDirection], a
 
 	ld hl, wLYOverridesBackup
-	ld c, 66 - 1
+	ld c, 64 - 1
 	xor a ; same as ld a, 0
 	ldh [hSCX], a
 	call .loadloop
@@ -1883,80 +1883,80 @@ TitleScreenPalettes:
 
 	RGB 00, 00, 00
 	RGB 23, 03, 06
-	RGB 30, 13, 21
+	RGB 31, 13, 21
 	RGB 31, 31, 31
 	
 	RGB 00, 00, 00
 	RGB 23, 03, 06
-	RGB 30, 16, 23
+	RGB 31, 13, 21
 	RGB 31, 31, 31
 	
 	RGB 00, 00, 00
 	RGB 23, 03, 06
-	RGB 30, 19, 24
+	RGB 31, 13, 21
 	RGB 31, 31, 31
 	
 	RGB 00, 00, 00
 	RGB 23, 03, 06
-	RGB 31, 21, 25
+	RGB 31, 17, 24
 	RGB 31, 31, 31
 	
 	RGB 00, 00, 00
 	RGB 23, 03, 06
-	RGB 31, 23, 27
+	RGB 31, 20, 25
+	RGB 31, 31, 31
+	
+	RGB 00, 00, 00
+	RGB 23, 03, 06
+	RGB 31, 22, 26
 	RGB 31, 31, 31
 	
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-	RGB 31, 31, 31
-	
 	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 31, 31, 31
 
 TitleScreenPalettes2:
 ; BG
-	RGB 06, 19, 28
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
+	RGB 15, 24, 31
+	RGB 21, 27, 31
+	RGB 11, 20, 29
+	RGB 08, 18, 28
 
-	RGB 06, 19, 28
+	RGB 21, 27, 31
 	RGB 23, 03, 06
-	RGB 30, 13, 21
+	RGB 31, 13, 21
 	RGB 31, 31, 31
 	
-	RGB 06, 19, 28
+	RGB 19, 26, 31
 	RGB 23, 03, 06
-	RGB 30, 16, 23
+	RGB 31, 13, 21
 	RGB 31, 31, 31
 	
-	RGB 06, 19, 28
+	RGB 17, 25, 31
 	RGB 23, 03, 06
-	RGB 30, 19, 24
+	RGB 31, 13, 21
 	RGB 31, 31, 31
 	
-	RGB 06, 19, 28
+	RGB 15, 24, 31
 	RGB 23, 03, 06
-	RGB 31, 21, 25
+	RGB 31, 17, 24
 	RGB 31, 31, 31
 	
-	RGB 06, 19, 28
+	RGB 15, 24, 31
 	RGB 23, 03, 06
-	RGB 31, 23, 27
+	RGB 31, 20, 25
 	RGB 31, 31, 31
 	
-	RGB 06, 19, 28
+	RGB 15, 24, 31
+	RGB 23, 03, 06
+	RGB 31, 22, 26
+	RGB 31, 31, 31
+	
+	RGB 23, 28, 31
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-	RGB 31, 31, 31
-	
-	RGB 06, 19, 28
 	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 31, 31, 31
 	
 TitleScreenOBPalettes:
 ;OB

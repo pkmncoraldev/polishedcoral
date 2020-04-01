@@ -202,14 +202,14 @@ SpriteAnimOAMData: ; 8d94d
 
 .OAMData_4f:
 	db 1
-	dsprite -1,  4, -1,  4, $00, $6
+	dsprite -1,  4, -1,  4, $00, $7
 
 .OAMData_50:
 	db 4
-	dsprite -1,  0, -1,  0, $00, $6
-	dsprite -1,  0,  0,  0, $01, $6
-	dsprite  0,  0, -1,  0, $02, $6
-	dsprite  0,  0,  0,  0, $03, $6
+	dsprite -1,  0, -1,  0, $00, $7
+	dsprite -1,  0,  0,  0, $01, $7
+	dsprite  0,  0, -1,  0, $02, $7
+	dsprite  0,  0,  0,  0, $03, $7
 
 .OAMData_20:
 	db 4

@@ -23,7 +23,7 @@ ReturnFromMapSetupScript:: ; b8000
 	jr nz, .dont_do_map_sign
 
 	call .CheckMovingWithinLandmark
-	jr z, .dont_do_map_sign
+	jr z, .check_landmark_timer_from_withen_same_landmark
 	ld a, [wCurrentLandmark]
 	ld [wPreviousLandmark], a
 
@@ -43,6 +43,7 @@ ReturnFromMapSetupScript:: ; b8000
 ; $6c-$5d: Sliding in
 ; $5c-$10: Remains visible
 ; $0f-$00: Sliding out
+.landmark_sign
 	ld a, [wLandmarkSignTimer]
 	sub $70
 	jr nc, .sliding_out
@@ -53,7 +54,7 @@ ReturnFromMapSetupScript:: ; b8000
 	jr c, .visible
 	cp $10
 	jr c, .sliding_in
-
+	
 	; was loading new graphics -- just reload them again
 	ld a, $70
 	jr .value_ok
@@ -71,6 +72,12 @@ ReturnFromMapSetupScript:: ; b8000
 	add $70
 .value_ok
 	ld [wLandmarkSignTimer], a
+	ret
+
+.check_landmark_timer_from_withen_same_landmark
+	ld a, [wLandmarkSignTimer]
+	cp $00
+	jr z, .dont_do_map_sign
 	ret
 
 .dont_do_map_sign
@@ -176,6 +183,17 @@ PlaceMapNameSign:: ; b8098 (2e:4098)
 	sub $90
 	ret nz
 	ld [hLCDCPointer], a
+	
+	ld a, [wCurrentLandmark]
+	cp LUSTER_CITY
+	jr nz, .end
+	ld a, [wLandmarkSignTimer]
+	cp $00
+	jr nz, .end
+	eventflagset EVENT_IN_RESIDENTIAL_DISTRICT
+	eventflagset EVENT_DOUBLE_LANDMARK_SIGN
+	jp ReturnFromMapSetupScript
+.end
 	ret
 
 LoadMapNameSignGFX:: ; b80c6

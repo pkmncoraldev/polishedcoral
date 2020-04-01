@@ -2097,6 +2097,18 @@ GetWorldMapLocation:: ; 0x2caf
 	eventflagcheck EVENT_ON_DODRIO_RANCH
 	ld a, DODRIO_RANCH
 	jr nz, .end
+	
+	eventflagcheck EVENT_IN_RESIDENTIAL_DISTRICT
+	ld a, RESIDENTIAL_DISTRICT
+	jr nz, .end
+	
+	eventflagcheck EVENT_IN_SHOPPING_DISTRICT
+	ld a, SHOPPING_DISTRICT
+	jr nz, .end
+	
+	eventflagcheck EVENT_IN_BUSINESS_DISTRICT
+	ld a, BUSINESS_DISTRICT
+	jr nz, .end
 
 	pop bc
 	push bc

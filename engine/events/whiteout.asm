@@ -54,6 +54,10 @@ Script_Whiteout: ; 0x124ce
 WhiteoutHandleEvents:
 	setevent EVENT_ALWAYS_SET
 	clearevent EVENT_ON_DODRIO_RANCH
+	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
+	clearevent EVENT_IN_SHOPPING_DISTRICT
+	clearevent EVENT_IN_BUSINESS_DISTRICT
+	clearevent EVENT_DOUBLE_LANDMARK_SIGN
 	end
 	
 OverworldWhiteoutFade

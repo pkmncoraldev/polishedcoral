@@ -7,7 +7,7 @@ SprucesLab_MapScriptHeader:
 	db 3 ; warp events
 	warp_def 7, 4, 6, SUNBEAM_ISLAND
 	warp_def 7, 5, 6, SUNBEAM_ISLAND
-	warp_def 0, 5, 10, SUNBEAM_ISLAND
+	warp_def 0, 5, 1, SUNBEAM_RESERVE
 
 	db 1 ; coord events
 	xy_trigger 2, 1, 5, 0, SpruceLabComeBackInside, 0, 0
@@ -20,15 +20,16 @@ SprucesLab_MapScriptHeader:
 
 	db 5 ; object events
 	person_event SPRITE_SPRUCE, 3, 3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE1_GONE
-	person_event SPRITE_SNES, 5, 9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlaxSleep, EVENT_SPRUCELAB_MUNCH1_GONE
 	person_event SPRITE_SPRUCE, 0, 5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE2_GONE
+	person_event SPRITE_SPRUCE,  5,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE3_GONE
+	person_event SPRITE_SNES, 5, 9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlaxSleep, EVENT_SPRUCELAB_MUNCH1_GONE
 	person_event SPRITE_MUNCHLAX, 5, 9, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlax, EVENT_SPRUCELAB_MUNCH2_GONE
 	person_event SPRITE_MUNCHLAX, 4, 0, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlax, EVENT_SPRUCELAB_MUNCH3_GONE
 
 	const_def 1 ; object constants
 	const SPRUCELAB_SPRUCE1
-	const SPRUCELAB_MUNCHLAX1
 	const SPRUCELAB_SPRUCE2
+	const SPRUCELAB_MUNCHLAX1
 	const SPRUCELAB_MUNCHLAX2
 	const SPRUCELAB_MUNCHLAX3
 
@@ -65,7 +66,6 @@ SpruceLabSpruce:
 	pause 7
 	playsound SFX_WALL_OPEN
 	pause 7
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_SPRUCE
 	faceplayer
 	opentext
 	writetext SpruceLabSpruceText2
@@ -76,7 +76,6 @@ SpruceLabSpruce:
 	applymovement SPRUCELAB_SPRUCE1, Movement_SpruceLabSpruce4
 	spriteface SPRUCELAB_SPRUCE1, LEFT
 	applymovement PLAYER, Movement_SpruceLabPlayer1
-	domaptrigger SUNBEAM_ISLAND, $4
 	warpcheck
 	end
 .alreadytalked
@@ -175,7 +174,6 @@ SpruceLabComeBackInside:
 	appear SPRUCELAB_SPRUCE2
 	spriteface PLAYER, UP
 	pause 7
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
 	applymovement SPRUCELAB_SPRUCE2, Movement_SpruceLabSpruce5
 	spriteface PLAYER, DOWN
 	spriteface SPRUCELAB_SPRUCE2, UP
@@ -219,8 +217,9 @@ SpruceLabComeBackInside:
 	setevent EVENT_SUNBEAM_SPRUCE_GONE
 	setevent EVENT_SPRUCELAB_SPRUCE2_GONE
 	setevent EVENT_SPRUCELAB_MUNCH2_GONE
-	clearevent EVENT_SPRUCELAB_SPRUCE1_GONE
+	clearevent EVENT_SPRUCELAB_SPRUCE3_GONE
 	domaptrigger SUNBEAM_ISLAND, $2
+	domaptrigger SUNBEAM_RESERVE, $1
 	dotrigger $1
 	end
 .havebadge
@@ -283,8 +282,10 @@ SpruceLabComeBackInside:
 	setevent EVENT_SPRUCELAB_MUNCH2_GONE
 	clearevent EVENT_SPRUCELAB_MUNCH3_GONE
 	clearevent EVENT_SPRUCELAB_SPRUCE1_GONE
+	setevent EVENT_SPRUCELAB_SPRUCE3_GONE
 	setevent EVENT_GOT_POKEFLUTE
 	domaptrigger SUNBEAM_ISLAND, $2
+	domaptrigger SUNBEAM_RESERVE, $1
 	dotrigger $1
 	end
 

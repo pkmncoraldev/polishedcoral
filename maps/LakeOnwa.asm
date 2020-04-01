@@ -339,8 +339,9 @@ JustRodeBoatText:
 	
 LakeNpc1Text:
 	text "Unless you have a"
-	line "#MON that can tra-"
-	cont "vel across water,"
+	line "#MON that can"
+	cont "travel across"
+	cont "water,"
 	
 	para "you'll have to take"
 	line "a boat."

@@ -46,6 +46,8 @@ SpeechTextBox::
 	lb bc, TEXTBOX_INNERH, TEXTBOX_INNERW
 
 TextBox::
+	xor a
+	ld [wLandmarkSignTimer], a
 ; Draw a text box at hl with room for
 ; b lines of c characters each.
 ; Places a border around the textbox,

@@ -535,7 +535,10 @@ MapObjectMovementPattern:
 	dw .MovementCutTree              ; SPRITEMOVEFN_CUT_TREE
 	dw .MovementBigGyarados          ; SPRITEMOVEFN_BIG_GYARADOS
 	dw .StandingFlip                 ; SPRITEMOVEFN_STANDING_FLIP
-	dw .MovementPokecomNews          ; SPRITEMOVEFN_POKECOM_NEWS
+	dw .MovementTileDown   			 ; SPRITEMOVEFN_TILE_DOWN
+	dw .MovementTileUp     			 ; SPRITEMOVEFN_TILE_UP
+	dw .MovementTileLeft   			 ; SPRITEMOVEFN_TILE_LEFT
+	dw .MovementTileRight  			 ; SPRITEMOVEFN_TILE_RIGHT
 	dw .MovementArchTree             ; SPRITEMOVEFN_ARCH_TREE
 	dw .MovementSailboatTop          ; SPRITEMOVEFN_SAILBOAT_TOP
 	dw .MovementSailboatBottom       ; SPRITEMOVEFN_SAILBOAT_BOTTOM
@@ -736,8 +739,20 @@ MapObjectMovementPattern:
 	ld a, PERSON_ACTION_BIG_GYARADOS
 	jr ._ActionA_StepType04
 
-.MovementPokecomNews:
-	ld a, PERSON_ACTION_POKECOM_NEWS
+.MovementTileDown:
+	ld a, PERSON_ACTION_TILE_DOWN
+	jr ._ActionA_StepType04
+	
+.MovementTileUp:
+	ld a, PERSON_ACTION_TILE_UP
+	jr ._ActionA_StepType04
+	
+.MovementTileLeft:
+	ld a, PERSON_ACTION_TILE_LEFT
+	jr ._ActionA_StepType04
+	
+.MovementTileRight:
+	ld a, PERSON_ACTION_TILE_RIGHT
 	jr ._ActionA_StepType04
 
 .MovementCutTree:

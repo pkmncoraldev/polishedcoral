@@ -180,5 +180,9 @@ SpecialsPointers::
 	add_special SpecialGiveShinyTogepi
 	add_special Special_StartRanchRaceTimer
 	add_special TeachDoduoExtremeSpeed
+	add_special Special_NewFadeBlack
+	add_special Special_NewFadeIn
+	add_special Special_StopLandmarkTimer
+	add_special Special_StartLandmarkTimer
 
 	add_special SpecialNone

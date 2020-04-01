@@ -1,7 +1,8 @@
 LusterCityBusiness_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, BusinessCallback
 
 	db 0 ; warp events
 
@@ -10,3 +11,11 @@ LusterCityBusiness_MapScriptHeader:
 	db 0 ; bg events
 
 	db 0 ; object events
+
+	
+BusinessCallback:
+	setevent EVENT_DOUBLE_LANDMARK_SIGN
+	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
+	clearevent EVENT_IN_SHOPPING_DISTRICT
+	setevent EVENT_IN_BUSINESS_DISTRICT
+	return

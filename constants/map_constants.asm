@@ -37,11 +37,9 @@ MAP_NONE   EQU 0
 	map_const FLICKER_PASS_2F,							  25, 26 ; 15
 	map_const LUSTER_SEWERS_B1F_FLOODED,				  13, 12 ; 16
 	map_const LUSTER_SEWERS_B1F_EMPTY,					  13, 12 ; 17
-	map_const LUSTER_SEWERS_B2F_FLOODED,				  10, 12 ; 18
-	map_const LUSTER_SEWERS_B2F_EMPTY,					  10, 12 ; 19
-	map_const LUSTER_SEWERS_VALVE_ROOM_1,				   4,  3 ; 20
-	map_const LUSTER_SEWERS_VALVE_ROOM_2,				   4,  3 ; 21
-	map_const LUSTER_SEWERS_VALVE_ROOM_3,				   4,  3 ; 22
+	map_const LUSTER_SEWERS_B2F_FLOODED,				  15, 12 ; 18
+	map_const LUSTER_SEWERS_B2F_EMPTY,					  15, 12 ; 19
+	map_const LUSTER_SEWERS_VALVE_ROOM,				      16,  3 ; 20
 
 	newgroup                                                     ;  2
 
@@ -125,8 +123,9 @@ MAP_NONE   EQU 0
 	map_const SUNBEAM_BLUE_WATER_HOUSE,               	   4,  4 ; 10
 	map_const SUNBEAM_TRADE_HOUSE,						   4,  4 ; 11
 	map_const SPRUCES_LAB, 								   5,  4 ; 12
-	map_const SUNBEAM_GYM,  			             	  16, 16 ; 13
-	map_const SUNBEAM_GYM_CAVE,  			               3,  4 ; 14
+	map_const SUNBEAM_RESERVE,                            25, 10 ; 13
+	map_const SUNBEAM_GYM,  			             	  16, 16 ; 14
+	map_const SUNBEAM_GYM_CAVE,  			               3,  4 ; 15
 	
 	newgroup                                                     ;  8
 	

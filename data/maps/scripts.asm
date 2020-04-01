@@ -30,9 +30,7 @@ INCLUDE "maps/LusterSewersB1FFlooded.asm"
 INCLUDE "maps/LusterSewersB1FEmpty.asm"
 INCLUDE "maps/LusterSewersB2FFlooded.asm"
 INCLUDE "maps/LusterSewersB2FEmpty.asm"
-INCLUDE "maps/LusterSewersValveRoom1.asm"
-INCLUDE "maps/LusterSewersValveRoom2.asm"
-INCLUDE "maps/LusterSewersValveRoom3.asm"
+INCLUDE "maps/LusterSewersValveRoom.asm"
 
 
 SECTION "Routes Scripts", ROMX
@@ -124,6 +122,7 @@ INCLUDE "maps/SunbeamOldCouplesHouse.asm"
 INCLUDE "maps/SunbeamBlueWaterHouse.asm"
 INCLUDE "maps/SunbeamTradeHouse.asm"
 INCLUDE "maps/SprucesLab.asm"
+INCLUDE "maps/SunbeamReserve.asm"
 INCLUDE "maps/SunbeamGym.asm"
 INCLUDE "maps/SunbeamGymCave.asm"
 

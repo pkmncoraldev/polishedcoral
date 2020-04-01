@@ -437,12 +437,12 @@ Script_ReceivePhoneCall: ; 0x90241
 ; 0x90255
 
 Script_SpecialBillCall:: ; 0x90255
-	callasm .LoadBillScript
-	jump Script_ReceivePhoneCall
+;	callasm .LoadBillScript
+;	jump Script_ReceivePhoneCall
 
-.LoadBillScript:
-	ld e, PHONE_BILL
-	jp LoadCallerScript
+;.LoadBillScript:
+;	ld e, PHONE_BILL
+;	jp LoadCallerScript
 ; 90261
 
 RingTwice_StartCall: ; 9026f
@@ -587,10 +587,10 @@ CheckCanDeletePhoneNumber: ; 9038a (24:438a)
 	ld a, b
 	cp PHONECONTACT_MOM
 	ret z
-	cp PHONECONTACT_ELM
+	cp PHONECONTACT_SPRUCE
 	ret z
-	cp PHONECONTACT_LYRA
-	ret z
+;	cp PHONECONTACT_LYRA
+;	ret z
 	ld c, $1
 	ret
 
@@ -663,19 +663,15 @@ GetCallerName: ; 903a9 (24:43a9)
 NonTrainerCallerNames: ; 903d6
 	dw .none
 	dw .mom
-	dw .bikeshop
-	dw .bill
-	dw .elm
-	dw .lyra
-	dw .buena
+	dw .spruce
+;	dw .bill
+;	dw .elm
+;	dw .lyra
+;	dw .buena
 
 .none db "@"
-.mom db "Mom:@"
-.bill db "Bill:<LNBRK>   #maniac@"
-.elm db "Prof.Elm:<LNBRK>   #mon Prof.@"
-.bikeshop db "Miracle Cycle:@"
-.lyra db "Lyra:<LNBRK>   <PK><MN> Trainer@"
-.buena db "Buena:<LNBRK>   Disc Jockey@"
+.mom db "MOM:@"
+.spruce db "PROF.SPRUCE:<LNBRK>   #MON PROF.@"
 ; 90423
 
 Phone_GetTrainerName: ; 90423 (24:4423)

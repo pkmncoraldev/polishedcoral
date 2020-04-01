@@ -57,12 +57,7 @@ ShakeHeadbuttTree: ; 8c80a
 	ld bc, wSpritesEnd - (wSprites + 36 * 4)
 	xor a
 	call ByteFill
-	farcall LoadStandardFontPointer
-	ld d, h
-	ld e, l
-	ld hl, VTiles1
-	lb bc, BANK(FontNormal), 12
-	call Get1bpp
+	call DelayFrame
 	jp ReplaceKrisSprite
 ; 8c893
 
@@ -84,7 +79,7 @@ HideHeadbuttTree: ; 8c913
 	ld h, [hl]
 	ld l, a
 
-	ld a, $2 ; grass tile
+	ld a, $5 ; grass tile
 	ld [hli], a
 	ld [hld], a
 	ld bc, SCREEN_WIDTH

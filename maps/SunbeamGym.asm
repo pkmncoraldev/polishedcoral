@@ -247,6 +247,8 @@ SunbeamGymLeilani:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_LEILANI
+	clearevent EVENT_SPRUCELAB_SPRUCE1_GONE
+	setevent EVENT_SPRUCELAB_SPRUCE3_GONE
 	opentext
 	writetext Text_ReceivedThirdBadge
 	playsound SFX_GET_BADGE

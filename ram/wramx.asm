@@ -949,6 +949,7 @@ wSunbeamIslandTrigger:: ds 1
 wSunbeamSurfShopTrigger:: ds 1
 wSunbeamBikiniContestTrigger:: ds 1
 wSprucesLabTrigger:: ds 1
+wSunbeamReserveTrigger:: ds 1
 wEventideForestTrigger:: ds 1
 wSpookhouseLivingRoomTrigger:: ds 1
 wSpookhouseHallway1Trigger:: ds 1
@@ -965,9 +966,10 @@ wRoute10EastTrigger:: ds 1
 wTwinkleTownTrigger:: ds 1
 wEastTrainCabin1Trigger:: ds 1
 wEastTrainCabooseTrigger:: ds 1
+wLusterCityShoppingTrigger:: ds 1
 wLusterSewersB1FFloodedTrigger:: ds 1
 wLusterSewersB2FFloodedTrigger:: ds 1
-ds 50
+ds 48
 
 ; fight counts
 wJackFightCount::    ds 1

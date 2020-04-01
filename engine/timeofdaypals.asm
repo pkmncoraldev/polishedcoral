@@ -338,3 +338,14 @@ GetTimePalFade: ; 8c17c
 	db %01000000, %01000000, %01000000
 	db %00000000, %00000000, %00000000
 ; 8c20f
+
+Special_NewFadeBlack::
+	ld c, 10
+	call FadeToBlack
+	ret
+	
+Special_NewFadeIn::
+	ld b, CGB_MAPPALS
+	call GetCGBLayout
+	farcall LoadRegularTextboxPalette
+	farjp FadeInPalettes

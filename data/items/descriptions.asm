@@ -92,7 +92,7 @@ ItemDescriptions:
 	dw ExpShareDesc
 	dw LibraryCardDesc
 	dw PokeFluteDesc
-	dw SecretPotionDesc
+	dw TheThingDesc
 	dw RedScaleDesc
 	dw OldKeyDesc
 	dw BasementKeyDesc
@@ -601,9 +601,9 @@ PokeFluteDesc:
 	db   "A flute that"
 	next "awakens #MON.@"
 
-SecretPotionDesc:
-	db   "Fully heals any"
-	next "#MON.@"
+TheThingDesc:
+	db   "A shady package."
+	next "Best not to ask…@"
 
 RedScaleDesc:
 	db   "A scale from the"

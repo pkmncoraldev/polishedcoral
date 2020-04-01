@@ -5,23 +5,35 @@ LusterCityShopping_MapScriptHeader:
 
 	db 0 ; warp events
 
-	db 0 ; coord events
+	db 10 ; coord events
+	xy_trigger 0, 46,  0, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 47,  0, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 48,  0, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 49,  0, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 52,  0, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 53,  0, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 46, 23, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 47, 23, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 48, 23, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 49, 23, 0, LusterShoppingSignThing, 0, 0
 
 	db 0 ; bg events
 
-	db 12 ; object events
+	db 14 ; object events
 	person_event SPRITE_LASS, 36,  7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster2NPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 36,  6, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster2NPC2, -1
 	person_event SPRITE_BUG_CATCHER, 36,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Luster2NPC3, -1
 	person_event SPRITE_LASS, 46,  8, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster2NPC4, -1
-	person_event SPRITE_COOLTRAINER_F, 34, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster2NPC5, -1
-	person_event SPRITE_YOUNGSTER, 34, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Luster2NPC6, -1
+	person_event SPRITE_COOLTRAINER_F, 33, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster2NPC5, -1
+	person_event SPRITE_YOUNGSTER, 33, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Luster2NPC6, -1
 	person_event SPRITE_FISHER, 40,  9, SPRITEMOVEDATA_STANDING_LEFT, 2, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster2NPC7, -1
 	person_event SPRITE_YOUNGSTER, 29, 18, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster2NPC8, -1
-	person_event SPRITE_MALL_SIGN, 31,  9, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_MALL_SIGN, 31, 10, SPRITEMOVEDATA_POKECOM_NEWS, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_MALL_SIGN_2, 44,  1, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Luster2MallSign, -1
-	person_event SPRITE_MALL_SIGN_2, 44,  2, SPRITEMOVEDATA_POKECOM_NEWS, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MALL_SIGN, 31,  9, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
+	person_event SPRITE_MALL_SIGN, 31, 10, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
+	person_event SPRITE_MALL_SIGN_2, 44,  1, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
+	person_event SPRITE_MALL_SIGN_2, 44,  2, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
+	person_event SPRITE_VALVE_1, 11,  2, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
+	person_event SPRITE_VALVE_1, 31, 16, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
 
 	const_def 1 ; object constants
 	const LUSTER2NPC1
@@ -33,6 +45,20 @@ LusterCityShopping_MapScriptHeader:
 	const LUSTER2NPC7
 	const LUSTER2NPC8
 
+LusterShoppingSignThing:
+	setevent EVENT_DOUBLE_LANDMARK_SIGN
+	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
+	setevent EVENT_IN_SHOPPING_DISTRICT
+	clearevent EVENT_IN_BUSINESS_DISTRICT
+	loadvar wEnteredMapFromContinue, 0
+	callasm ReturnFromMapSetupScript
+	end
+	
+;ShoppingCallback:
+;	setevent EVENT_DOUBLE_LANDMARK_SIGN
+;	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
+;	return
+	
 Luster2NPC1:
 	faceplayer
 	opentext
@@ -103,9 +129,6 @@ Luster2NPC8:
 	waitbutton
 	closetext
 	spriteface LUSTER2NPC8, UP
-	end
-	
-Luster2MallSign:
 	end
 	
 Luster2NPC1Text:

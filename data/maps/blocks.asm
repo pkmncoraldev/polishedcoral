@@ -133,6 +133,7 @@ HuntersThicket_BlockData:
 	INCBIN "maps/HuntersThicket.ablk.lz"
 	
 SunbeamIsland_BlockData:
+SunbeamReserve_BlockData:
 	INCBIN "maps/SunbeamIsland.ablk.lz"
 	
 SunbeamBeach_BlockData:
@@ -185,9 +186,7 @@ LusterSewersB2FFlooded_BlockData:
 LusterSewersB2FEmpty_BlockData:
 	INCBIN "maps/LusterSewersB2FEmpty.ablk.lz"
 	
-LusterSewersValveRoom1_BlockData:
-LusterSewersValveRoom2_BlockData:
-LusterSewersValveRoom3_BlockData:
+LusterSewersValveRoom_BlockData:
 	INCBIN "maps/LusterSewersValveRoom.ablk.lz"
 	
 SprucesLab_BlockData:

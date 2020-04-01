@@ -884,6 +884,10 @@ FlyFunction: ; ca3b
 
 .FlyScript: ; 0xcaa3
 	clearevent EVENT_ON_DODRIO_RANCH
+	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
+	clearevent EVENT_IN_SHOPPING_DISTRICT
+	clearevent EVENT_IN_BUSINESS_DISTRICT
+	clearevent EVENT_DOUBLE_LANDMARK_SIGN
 	reloadmappart
 	callasm HideSprites
 	special UpdateTimePals
@@ -1147,6 +1151,11 @@ dig_incave
 	scall FieldMovePokepicScript
 
 .UsedDigOrEscapeRopeScript: ; 0xcc3c
+	clearevent EVENT_ON_DODRIO_RANCH
+	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
+	clearevent EVENT_IN_SHOPPING_DISTRICT
+	clearevent EVENT_IN_BUSINESS_DISTRICT
+	clearevent EVENT_DOUBLE_LANDMARK_SIGN
 	playsound SFX_WARP_TO
 	applymovement PLAYER, .DigOut
 	farscall Script_AbortBugContest
@@ -1219,6 +1228,11 @@ TeleportFunction: ; cc61
 	db "@"
 
 .TeleportScript: ; 0xccbb
+	clearevent EVENT_ON_DODRIO_RANCH
+	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
+	clearevent EVENT_IN_SHOPPING_DISTRICT
+	clearevent EVENT_IN_BUSINESS_DISTRICT
+	clearevent EVENT_DOUBLE_LANDMARK_SIGN
 	reloadmappart
 	special UpdateTimePals
 	playsound SFX_WARP_TO
@@ -1957,6 +1971,7 @@ Script_NotEvenANibble: ; 0xd01e
 
 Script_GotAnItem:
 	scall Script_FishCastRod
+	callasm MakePalGray
 	iffalse .NotFacingUp
 	applymovement PLAYER, Movement_HookedItemFacingUp
 	jump .GetTheHookedItem
@@ -1973,6 +1988,7 @@ Script_GotAnItem:
 
 Script_GotABite: ; 0xd035
 	scall Script_FishCastRod
+	callasm MakePalGray
 	callasm Fishing_CheckFacingUp
 	iffalse .NotFacingUp
 	applymovement PLAYER, Movement_BiteFacingUp

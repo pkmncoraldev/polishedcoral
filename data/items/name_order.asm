@@ -110,7 +110,7 @@ ItemNameOrder:
 	db NAM_EXP_SHARE    ; 3d
 	db NAM_LIBRARY_CARD	; 8b
 	db NAM_SQUIRTBOTTLE ; df
-	db NAM_SECRETPOTION ; cc
+	db NAM_THE_THING    ; cc
 	db NAM_RED_SCALE    ; bf
 	db NAM_OLD_KEY      ; 1f
 	db NAM_BASEMENT_KEY ; 0c

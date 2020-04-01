@@ -42,5 +42,5 @@ LakeNameRaterRockTownText:
 	
 	para "The picture is"
 	line "labelled:"
-	cont "“ROCK TOWN.”"
+	cont "“ROCK TOWN”."
 	done

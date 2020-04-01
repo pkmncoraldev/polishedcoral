@@ -818,9 +818,7 @@ LoadMapPals:
 .got_pals
 	ld a, [wMapGroup]
 	cp GROUP_LAKE_ONWA
-	jr z, .rockscheck
-	cp GROUP_LUSTER_SEWERS_B1F_FLOODED
-	jr z, .rockscheck
+	jr z, .rockscheck1
 	cp GROUP_SUNBEAM_ISLAND
 	jr z, .umbrellacheck
 	cp GROUP_SUNSET_BAY
@@ -840,6 +838,18 @@ LoadMapPals:
 	cp TILESET_SEWER
 	jp z, .sewer
 	jp .normal
+.sewer
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_SEWERS_B1F_FLOODED
+	jp z, .rocks
+	cp MAP_LUSTER_SEWERS_B2F_FLOODED
+	jp z, .rocks
+	ld hl, MapObjectPalsSewer
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
 .umbrellacheck
 	ld a, [wMapNumber]
 	cp MAP_SUNBEAM_BEACH
@@ -854,13 +864,9 @@ LoadMapPals:
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	jp .outside
-.rockscheck
+.rockscheck1
 	ld a, [wMapNumber]
 	cp MAP_LAKE_ONWA
-	jp z, .rocks
-	cp MAP_LUSTER_SEWERS_B1F_FLOODED
-	jp z, .rocks
-	cp MAP_LUSTER_SEWERS_B2F_FLOODED
 	jp z, .rocks
 	jp .got_pals_cont
 .rocks
@@ -920,14 +926,6 @@ LoadMapPals:
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	jp .outside
-	
-.sewer
-	ld hl, MapObjectPalsSewer
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
 	
 .snow
 	ld a, [wMapNumber]

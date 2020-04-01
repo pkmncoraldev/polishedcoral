@@ -258,9 +258,7 @@ ENDM
 	map_attributes LusterSewersB1FEmpty, LUSTER_SEWERS_B1F_EMPTY, 0, 0
 	map_attributes LusterSewersB2FFlooded, LUSTER_SEWERS_B2F_FLOODED, 0, 0
 	map_attributes LusterSewersB2FEmpty, LUSTER_SEWERS_B2F_EMPTY, 0, 0
-	map_attributes LusterSewersValveRoom1, LUSTER_SEWERS_VALVE_ROOM_1, 0, 0
-	map_attributes LusterSewersValveRoom2, LUSTER_SEWERS_VALVE_ROOM_2, 0, 0
-	map_attributes LusterSewersValveRoom3, LUSTER_SEWERS_VALVE_ROOM_3, 0, 0
+	map_attributes LusterSewersValveRoom, LUSTER_SEWERS_VALVE_ROOM, 0, 0
 	
 	map_attributes SunsetPokeCenter, SUNSET_POKECENTER, $0, 0
 	map_attributes SunsetLighthouse, SUNSET_LIGHTHOUSE, $0, 0
@@ -306,6 +304,7 @@ ENDM
 	map_attributes SunbeamBlueWaterHouse, SUNBEAM_BLUE_WATER_HOUSE, $0, 0
 	map_attributes SunbeamTradeHouse, SUNBEAM_TRADE_HOUSE, $0, 0
 	map_attributes SprucesLab, SPRUCES_LAB, $0, 0
+	map_attributes SunbeamReserve, SUNBEAM_RESERVE, $35, 0
 	map_attributes SunbeamGym, SUNBEAM_GYM, $07, 0
 	map_attributes SunbeamGymCave, SUNBEAM_GYM_CAVE, $09, 0
 	map_attributes SpookhouseLivingRoom, SPOOKHOUSE_LIVING_ROOM, $00, 0

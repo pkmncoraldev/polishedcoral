@@ -38,7 +38,10 @@ Facings:
 	dw FacingBigGyarados2   ; FACING_BIG_GYARADOS_2
 	dw FacingStepDownFlip   ; FACING_STEP_DOWN_FLIP
 	dw FacingStepUpFlip     ; FACING_STEP_UP_FLIP
-	dw FacingPokecomNews    ; FACING_POKECOM_NEWS
+	dw FacingTileDown  		; FACING_TILE_DOWN
+	dw FacingTileUp   		; FACING_TILE_UP
+	dw FacingTileLeft  		; FACING_TILE_LEFT
+	dw FacingTileRight	    ; FACING_TILE_RIGHT
 	dw FacingArchTreeDown   ; FACING_ARCH_TREE_DOWN
 	dw FacingArchTreeUp     ; FACING_ARCH_TREE_UP
 	dw FacingArchTreeLeft   ; FACING_ARCH_TREE_LEFT
@@ -352,12 +355,33 @@ FacingStepUpFlip:
 	db  8,  0, 2 | X_FLIP, $07
 	db  8,  8, 2 | X_FLIP, $06
 
-FacingPokecomNews:
+FacingTileDown:
 	db 4 ; #
 	db  4,  0, 0, $00
 	db  4,  8, 0, $01
 	db 12,  0, 0, $02
 	db 12,  8, 0, $03
+	
+FacingTileUp:
+	db 4 ; #
+	db  4,  0, 0, $04
+	db  4,  8, 0, $05
+	db 12,  0, 0, $06
+	db 12,  8, 0, $07
+	
+FacingTileLeft:
+	db 4 ; #
+	db  4,  0, 0, $08
+	db  4,  8, 0, $09
+	db 12,  0, 0, $0a
+	db 12,  8, 0, $0b
+	
+FacingTileRight:
+	db 4 ; #
+	db  4,  0, 0, $0c
+	db  4,  8, 0, $0d
+	db 12,  0, 0, $0e
+	db 12,  8, 0, $0f
 
 FacingArchTreeDown:
 	db 2 ; #

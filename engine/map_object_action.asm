@@ -19,7 +19,10 @@ Pointers445f: ; 445f
 	dw SetFacingSkyfall,               SetFacingCurrent           ; PERSON_ACTION_SKYFALL
 	dw SetFacingBigGyarados,           SetFacingFreezeBigGyarados ; PERSON_ACTION_BIG_GYARADOS
 	dw SetFacingStandFlip,             SetFacingStandFlip         ; PERSON_ACTION_STAND_FLIP
-	dw SetFacingPokecomNews,           SetFacingPokecomNews       ; PERSON_ACTION_POKECOM_NEWS
+	dw SetFacingTileDown,          	   SetFacingTileDown		  ; PERSON_ACTION_TILE_DOWN
+	dw SetFacingTileUp,          	   SetFacingTileUp			  ; PERSON_ACTION_TILE_UP
+	dw SetFacingTileLeft,      		   SetFacingTileLeft		  ; PERSON_ACTION_TILE_LEFT
+	dw SetFacingTileRight,         	   SetFacingTileRight		  ; PERSON_ACTION_TILE_RIGHT
 	dw SetFacingArchTree,              SetFacingArchTree          ; PERSON_ACTION_ARCH_TREE
 	dw SetFacingRun,                   SetFacingCurrent           ; PERSON_ACTION_RUN
 	dw SetFacingSailboatTop,           SetFacingSailboatTop       ; PERSON_ACTION_SAILBOAT_TOP
@@ -53,10 +56,6 @@ SetFacingEmote: ; 4582 emote
 
 SetFacingCutTree:
 	ld a, FACING_CUT_TREE
-	jr SetFixedFacing
-
-SetFacingPokecomNews:
-	ld a, FACING_POKECOM_NEWS
 	jr SetFixedFacing
 
 SetFacingSailboatTop:
@@ -351,3 +350,19 @@ SetFacingRun:
 	add hl, bc
 	ld [hl], a
 	ret
+	
+SetFacingTileDown:
+	ld a, FACING_TILE_DOWN
+	jp SetFixedFacing
+	
+SetFacingTileUp:
+	ld a, FACING_TILE_UP
+	jp SetFixedFacing
+	
+SetFacingTileLeft:
+	ld a, FACING_TILE_LEFT
+	jp SetFixedFacing
+	
+SetFacingTileRight:
+	ld a, FACING_TILE_RIGHT
+	jp SetFixedFacing

@@ -27,7 +27,7 @@ _TitleScreen: ; 10ed67
 
 
 ; Decompress background
-	ld hl, TitleLogoGFX
+	ld hl, TitleLighthouseGFX
 	ld de, VTiles1
 	call Decompress
 
@@ -46,38 +46,47 @@ _TitleScreen: ; 10ed67
 ; line 0 (copyright)
 	hlbgcoord 0, 0, VBGMap1
 	ld bc, BG_MAP_WIDTH
-	ld a, 7 ; palette
+	ld a, 1 ; palette
 	call ByteFill
 
 
 ; BG Map 0:
 
 ; Apply logo gradient:
-
-; lines 3-4
-	hlbgcoord 0, 1
-	ld bc, 2 * BG_MAP_WIDTH
-	ld a, 1
+; line 0
+	hlbgcoord 0, 0
+	ld bc, BG_MAP_WIDTH
+	ld a, 7
 	call ByteFill
-; line 5
-	hlbgcoord 0, 3
+; line 1
+	hlbgcoord 0, 1
 	ld bc, BG_MAP_WIDTH
 	ld a, 1
 	call ByteFill
-; line 6
-	hlbgcoord 0, 4
+; line 2
+	hlbgcoord 0, 2
 	ld bc, BG_MAP_WIDTH
 	ld a, 2
 	call ByteFill
-; line 7
-	hlbgcoord 0, 5
+; line 3
+	hlbgcoord 0, 3
 	ld bc, BG_MAP_WIDTH
 	ld a, 3
 	call ByteFill
-; lines 8-9
+; line 4
+	hlbgcoord 0, 4
+	ld bc, BG_MAP_WIDTH
+	ld a, 4
+	call ByteFill
+; line 5
+	hlbgcoord 0, 5
+	ld bc, BG_MAP_WIDTH
+	ld a, 5
+	call ByteFill
+; lines 6-7
 	hlbgcoord 0, 6
 	ld bc, 2 * BG_MAP_WIDTH
-	ld a, 4
+	ld a, 6
 	call ByteFill
 
 
@@ -95,11 +104,6 @@ _TitleScreen: ; 10ed67
 ; Decompress logo
 	ld hl, TitleLogoGFX
 	ld de, VTiles1
-	call Decompress
-
-; Decompress background crystal
-	ld hl, TitleCrystalGFX
-	ld de, VTiles0
 	call Decompress
 	
 ; Clear screen tiles
@@ -120,8 +124,9 @@ _TitleScreen: ; 10ed67
 	lb de, $0c, 0
 	call DrawTitleGraphic
 	
-	hlcoord 0, 8
-	lb bc, 11, SCREEN_WIDTH
+; Draw Lighthouse
+	hlcoord 0, 10
+	lb bc, 7, SCREEN_WIDTH
 	lb de, $80, SCREEN_WIDTH
 	call DrawTitleGraphic
 	
@@ -256,7 +261,7 @@ DrawTitleGraphic: ; 10eeef
 
 InitializeBackground: ; 10ef06
 	ld hl, wSprites
-	lb de, $24, $0
+	lb de, $0, $0
 	ld c, 5
 .loop
 	push bc
@@ -271,7 +276,7 @@ InitializeBackground: ; 10ef06
 ; 10ef1c
 
 .InitColumn: ; 10ef1c
-	lb bc, $7a, $6
+	lb bc, $40, $1
 .loop2
 	ld a, d
 	ld [hli], a
@@ -316,14 +321,9 @@ AnimateTitleCrystal: ; 10ef32
 	ret
 ; 10ef46
 
-TitleBackgroundGFX: ; 10ef46
-INCBIN "gfx/title/titlebackground.2bpp.lz"
-; 10f326
-
 TitleLogoGFX: ; 10f326
 INCBIN "gfx/title/logo.w160.t4.2bpp.lz"
 ; 10fcee
 
-TitleCrystalGFX: ; 10fcee
-INCBIN "gfx/title/crystal.w48.interleave.2bpp.lz"
-; 10fede
+TitleLighthouseGFX:
+INCBIN "gfx/title/lighthouse.2bpp.lz"

@@ -1,10 +1,9 @@
 SunbeamIsland_MapScriptHeader:
-	db 5 ; scene scripts
+	db 4 ; scene scripts
 	scene_script SunbeamIslandTrigger0
 	scene_script SunbeamIslandTrigger1
 	scene_script SunbeamIslandTrigger2
 	scene_script SunbeamIslandTrigger3
-	scene_script SunbeamIslandTrigger4
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, SunbeamIslandFlyPoint
@@ -12,16 +11,16 @@ SunbeamIsland_MapScriptHeader:
 	db 14 ; warp events
 	warp_def 29, 27, 2, SUNBEAM_MART
 	warp_def 33, 17, 1, SUNBEAM_POKECENTER
-	warp_def 18, 40, 1, SUNBEAM_GYM
+	warp_def 16, 40, 1, SUNBEAM_GYM
 	warp_def  9, 25, 1, SUNBEAM_TRADE_HOUSE
 	warp_def  9, 31, 1, SUNBEAM_DODRIO_HOUSE
 	warp_def 15, 16, 1, SPRUCES_LAB
 	warp_def 25, 11, 1, SUNBEAM_OLD_COUPLES_HOUSE
 	warp_def 25, 17, 1, SUNBEAM_BLUE_WATER_HOUSE
 	warp_def 39, 17, 1, SUNBEAM_SURF_SHOP
-	warp_def 11, 16, 3, SPRUCES_LAB
-	warp_def 11, 17, 3, SPRUCES_LAB
-	warp_def 18, 41, 2, SUNBEAM_GYM
+	warp_def -1, -1, 3, SPRUCES_LAB
+	warp_def -1, -1, 3, SPRUCES_LAB
+	warp_def 16, 41, 2, SUNBEAM_GYM
 	warp_def 47,  7, 1, SUNBEAM_BOAT_HOUSE
 	warp_def 40, 17, 1, SUNBEAM_SURF_SHOP
 
@@ -31,7 +30,7 @@ SunbeamIsland_MapScriptHeader:
 	xy_trigger 1, 42, 20, 0, SunbeamStartFirstContest3, 0, 0
 	xy_trigger 1, 43, 20, 0, SunbeamStartFirstContest4, 0, 0
 
-	db 10 ; bg events
+	db 9 ; bg events
 	signpost 29, 21, SIGNPOST_READ, SunBeamSign
 	signpost 16, 18, SIGNPOST_READ, SunBeamLabSign
 	signpost 19, 29, SIGNPOST_READ, SunBeamGymSign
@@ -41,11 +40,10 @@ SunbeamIsland_MapScriptHeader:
 	signpost 33, 18, SIGNPOST_READ, SunBeamPokeSign
 	signpost 29, 28, SIGNPOST_READ, SunBeamMartSign
 	signpost 45, 12, SIGNPOST_READ, SunBeamBoatSign
-	signpost 15,  6, SIGNPOST_READ, SunBeamSlowpokeGirlSign
 
-	db 19 ; object events
-	person_event SPRITE_DONPHAN,  6, 19, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_SLOWPOKETAIL, 14,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandSlowpoke, -1
+	db 14 ; object events
+	person_event SPRITE_DONPHAN,  6, 19, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveDonphan, -1
+	person_event SPRITE_SLOWPOKETAIL, 14,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveSlowpoke, -1
 	person_event SPRITE_COOL_DUDE, 41, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_FIRST_BIKINI_CONTEST
 	person_event SPRITE_BATTLE_GIRL, 42, 25, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_FIRST_BIKINI_CONTEST
 	person_event SPRITE_GENERAL_VARIABLE_1, 48,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ISLAND_STRAND
@@ -56,13 +54,8 @@ SunbeamIsland_MapScriptHeader:
 	person_event SPRITE_CUTE_GIRL, 42, 14, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC5, -1
 	person_event SPRITE_SUPER_NERD, 43,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC6, -1
 	person_event SPRITE_ROWBOAT, 49,  8, SPRITEMOVEDATA_BOAT_BOB, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandBoat, -1
-	person_event SPRITE_NIDOQUEEN,  6, 13, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNidoqueen, -1
-	person_event SPRITE_NIDORANM,  7, 15, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNidoranM, -1
-	person_event SPRITE_NIDORANF,  5, 14, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNidoranF, -1
-	person_event SPRITE_LOPUNNY,  9,  8, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandLopunny, -1
-	person_event SPRITE_ALTARIA, 10, 12, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SunbeamIslandAltaria, -1
-	person_event SPRITE_MAGMAR, 13, 13, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandMagmar, -1
-	person_event SPRITE_ELECTABUZZ, 11, 20, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandElectabuzz, -1
+	person_event SPRITE_MAGMAR, 13, 13, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveMagmar, -1
+	person_event SPRITE_ELECTABUZZ, 11, 20, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamReserveElectabuzz, -1
 
 	
 	const_def 1 ; object constants
@@ -77,8 +70,6 @@ SunbeamIsland_MapScriptHeader:
 	const SUNBEAM_NPC4
 	const SUNBEAM_NPC5
 	const SUNBEAM_NPC6
-	const SUNBEAM_BOAT_L
-	const SUNBEAM_BOAT_R
 	
 SunbeamIslandTrigger0:
 	priorityjump JustRodeBoatSunbeam
@@ -94,85 +85,13 @@ SunbeamIslandTrigger3:
 	priorityjump JustRodeBoatSunbeam2
 	end
 	
-SunbeamIslandTrigger4:
-	playsound SFX_EXIT_BUILDING
-	moveperson SUNBEAM_LEILANI, $11, $b
-	appear SUNBEAM_LEILANI
-	domaptrigger SPRUCES_LAB, $2
-	pause 5
-	applymovement SUNBEAM_LEILANI, Movement_SunbeamIslandSpruce
-	spriteface SUNBEAM_LEILANI, DOWN
-	opentext
-	writetext SunbeamIslandSpruceText1
-	waitbutton
-	closetext
-	follow SUNBEAM_LEILANI, PLAYER
-	applymovement SUNBEAM_LEILANI, Movement_SunbeamSpruce2
-	stopfollow
-	spriteface SUNBEAM_LEILANI, RIGHT
-	spriteface PLAYER, RIGHT
-	opentext
-	writetext SunbeamIslandSpruceText2
-	waitbutton
-	closetext
-	applymovement SUNBEAM_LEILANI, Movement_SunbeamSpruce3
-	spriteface SUNBEAM_LEILANI, DOWN
-	opentext
-	writetext SunbeamIslandSpruceText3
-	waitbutton
-	writetext SunbeamIslandDonphanText
-	cry DONPHAN
-	waitbutton
-	closetext
-	applymovement SUNBEAM_LEILANI, Movement_SunbeamSpruce4
-	follow SUNBEAM_LEILANI, PLAYER
-	applymovement SUNBEAM_LEILANI, Movement_SunbeamSpruce5
-	stopfollow
-	spriteface SUNBEAM_LEILANI, UP
-	spriteface PLAYER, UP
-	opentext
-	writetext SunbeamIslandSpruceText4
-	waitbutton
-	closetext
-	applymovement SUNBEAM_LEILANI, Movement_SunbeamSpruce6
-	opentext
-	writetext SunbeamIslandSpruceText5
-	waitbutton
-	writetext SunbeamIslandNidoqueenText
-	cry NIDOQUEEN
-	waitbutton
-	closetext
-	applymovement SUNBEAM_LEILANI, Movement_SunbeamSpruce7
-	follow SUNBEAM_LEILANI, PLAYER
-	applymovement SUNBEAM_LEILANI, Movement_SunbeamSpruce8
-	stopfollow
-	spriteface SUNBEAM_LEILANI, LEFT
-	opentext
-	writetext SunbeamIslandSpruceText6
-	waitbutton
-	closetext
-	follow SUNBEAM_LEILANI, PLAYER
-	applymovement SUNBEAM_LEILANI, Movement_SunbeamSpruce9
-	stopfollow
-	spriteface SUNBEAM_LEILANI, LEFT
-	opentext
-	writetext SunbeamIslandSpruceText7
-	waitbutton
-	closetext
-;	applymovement PLAYER, Movement_SunbeamSpruce7
-	spriteface PLAYER, DOWN
-	playsound SFX_ENTER_DOOR
-	special FadeOutPalettes
-	waitsfx
-	warpfacing DOWN, SPRUCES_LAB, $5, $0
-	end
-	
 SunbeamIslandFlyPoint:
 	setflag ENGINE_FLYPOINT_SUNBEAM
 	return
 	
 JustRodeBoatSunbeam:
 	special Special_StopRunning
+	special Special_StopLandmarkTimer
 	applymovement PLAYER, Movement_SunbeamPlayerStepOffBoat
 	spriteface PLAYER, LEFT
 	opentext
@@ -182,6 +101,7 @@ JustRodeBoatSunbeam:
 	applymovement SUNBEAM_LEILANI, Movement_SunbeamPlayerStepOffBoat
 	playsound SFX_EXIT_BUILDING
 	disappear SUNBEAM_LEILANI
+	special Special_StartLandmarkTimer
 	waitsfx
 	setevent EVENT_ISLAND_STRAND
 	checkevent EVENT_SAW_FIRST_BIKINI_CONTEST
@@ -420,7 +340,7 @@ SunbeamIslandNPC2:
 	
 SunbeamIslandNPC3:
 	faceplayer
-SunBeamSlowpokeGirlSign:
+SunbeamSlowpokeGirlSign:
 	opentext
 	checkevent EVENT_TALKED_TO_SLOWPOKE_GIRL
 	iftrue .talked
@@ -453,6 +373,9 @@ SunbeamIslandNPC6:
 	end
 	
 SunBeamLabSign:
+	setflag ENGINE_THIRDBADGE
+	clearevent EVENT_SPRUCELAB_SPRUCE1_GONE
+	setevent EVENT_SPRUCELAB_SPRUCE3_GONE
 	jumptext SunBeamLabSignText
 	
 SunBeamGymSign:
@@ -759,241 +682,4 @@ Movement_SunbeamFirstContest5:
 	step_up
 	step_up
 	step_up
-	step_end
-	
-SunbeamIslandSpruceText1:
-	text "My research"
-	line "involves #MON"
-	cont "conservation."
-	
-	para "As such, I run a"
-	line "#MON reserve."
-	done
-	
-SunbeamIslandSpruceText2:
-	text "The #MON here"
-	line "are all very"
-	cont "docile."
-	done
-	
-SunbeamIslandSpruceText3:
-	text "Isn't that right,"
-	line "DONPHAN?"
-	done
-	
-SunbeamIslandSpruceText4:
-	text "I let the #MON"
-	line "live their lives"
-	cont "as they would in"
-	cont "the wild and"
-	cont "study their behav-"
-	cont "iors."
-	done
-	
-SunbeamIslandSpruceText5:
-	text "How are the young"
-	line "ones, NIDOQUEEN?"
-	done
-	
-SunbeamIslandSpruceText6:
-	text "Recently, I have"
-	line "experimented with"
-	cont "letting TRAINERS"
-	cont "catch some of the"
-	cont "#MON in the"
-	cont "habitat to see how"
-	cont "they react to"
-	cont "being trained."
-	
-	para "Feel free to catch"
-	line "a few yourself."
-	done
-	
-SunbeamIslandSpruceText7:
-	text "Let's head back"
-	line "inside."
-	done
-	
-SunbeamIslandNidoqueen:
-	opentext
-	writetext SunbeamIslandNidoqueenText
-	cry NIDOQUEEN
-	waitbutton
-	closetext
-	end
-	
-SunbeamIslandNidoranM:
-	opentext
-	writetext SunbeamIslandNidoranMText
-	cry NIDORAN_M
-	waitbutton
-	closetext
-	end
-	
-SunbeamIslandNidoranF
-	opentext
-	writetext SunbeamIslandNidoranFText
-	cry NIDORAN_F
-	waitbutton
-	closetext
-	end
-	
-SunbeamIslandSlowpoke:
-	opentext
-	writetext SunbeamIslandSlowpokeText
-	cry SLOWPOKE
-	waitbutton
-	closetext
-	end
-	
-SunbeamIslandLopunny:
-	opentext
-	writetext SunbeamIslandLopunnyText
-	cry BULBASAUR ;LOPUNNY
-	waitbutton
-	closetext
-	end
-	
-SunbeamIslandAltaria:
-	opentext
-	writetext SunbeamIslandAltariaText
-	cry BULBASAUR ;ALTARIA
-	waitbutton
-	closetext
-	end
-	
-SunbeamIslandDonphan:
-	opentext
-	writetext SunbeamIslandDonphanText
-	cry DONPHAN
-	waitbutton
-	closetext
-	end
-	
-SunbeamIslandMagmar:
-	opentext
-	writetext SunbeamIslandMagmarText
-	cry MAGMAR
-	waitbutton
-	closetext
-	end
-	
-SunbeamIslandElectabuzz:
-	opentext
-	writetext SunbeamIslandElectabuzzText
-	cry ELECTABUZZ
-	waitbutton
-	closetext
-	end
-	
-SunbeamIslandNidoqueenText:
-	text "NIDOQUEEN: Nido!"
-	done
-	
-SunbeamIslandNidoranMText:
-	text "NIDORAN♂: Ran!"
-	done
-	
-SunbeamIslandNidoranFText:
-	text "NIDORAN♀: Ran…"
-	line "Ran…"
-	done
-	
-SunbeamIslandSlowpokeText:
-	text "SLOWPOKE: Sloooow…"
-	
-	para "…"
-	
-	para "…"
-	
-	para "…"
-	
-	para "…poke?"
-	done
-	
-SunbeamIslandLopunnyText:
-	text "LOPUNNY: Lop! Lop!"
-	done
-	
-SunbeamIslandAltariaText:
-	text "ALTARIA: …Taria?"
-	done
-	
-SunbeamIslandDonphanText:
-	text "DONPHAN: Phan…"
-	done
-	
-SunbeamIslandMagmarText:
-	text "MAGMAR: MAG!"
-	line "MAR!"
-	done
-	
-SunbeamIslandElectabuzzText:
-	text "ELECTABUZZ: BUZZ!"
-	line "LECTA!"
-	done
-	
-Movement_SunbeamIslandSpruce:
-	step_up
-	step_left
-	step_end
-	
-Movement_SunbeamSpruce2:
-	step_right
-	step_right
-	step_up
-	step_up
-	step_up
-	step_up
-	step_up
-	step_end
-	
-Movement_SunbeamSpruce3:
-	step_right
-	step_end
-	
-Movement_SunbeamSpruce4:
-	step_left
-	step_end
-	
-Movement_SunbeamSpruce5:
-	step_left
-	step_left
-	step_left
-	step_down
-	step_left
-	step_down
-	step_down
-	step_left
-	step_end
-	
-Movement_SunbeamSpruce6:
-	step_up
-	step_end
-	
-Movement_SunbeamSpruce7:
-	step_down
-	step_end
-	
-Movement_SunbeamSpruce8:
-	step_down
-	step_down
-	step_down
-	step_down
-	step_left
-	step_left
-	step_left
-	step_down
-	step_end
-	
-Movement_SunbeamSpruce9:
-	step_right
-	step_right
-	step_up
-	step_right
-	step_up
-	step_right
-	step_right
-	step_right
-	step_right
 	step_end

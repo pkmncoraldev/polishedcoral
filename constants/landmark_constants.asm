@@ -39,6 +39,9 @@
 	const TWINKLE_TOWN		 ; 1d
 	const LUSTER_CITY		 ; 1e
 	const LUSTER_SEWERS		 ; 1f
+	const RESIDENTIAL_DISTRICT
+	const SHOPPING_DISTRICT
+	const BUSINESS_DISTRICT
 
 KANTO_LANDMARK EQU const_value
 

@@ -109,8 +109,8 @@
 	const ITEMFINDER   ; 5a
 	const EXP_SHARE    ; 5b
 	const LIBRARY_CARD ; 5c
-	const POKE_FLUTE ; 5d
-	const SECRETPOTION ; 5e
+	const POKE_FLUTE   ; 5d
+	const THE_THING    ; 5e
 	const RED_SCALE    ; 5f
 	const OLD_KEY      ; 60
 	const BASEMENT_KEY ; 61
@@ -479,7 +479,7 @@
 	const NAM_QUICK_CLAW   ; b6
 	const NAM_QUICK_POWDER ; b7
 	const NAM_RAGECANDYBAR ; b8
-	const NAM_RIVAL_POKEDEX ; b9
+	const NAM_RIVAL_POKEDEX; b9
 	const NAM_RARE_BONE    ; ba
 	const NAM_RARE_CANDY   ; bb
 	const NAM_RAWST_BERRY  ; bc
@@ -498,7 +498,7 @@
 	const NAM_SAFE_GOGGLES ; c9
 	const NAM_UNUSED3      ; ca
 	const NAM_SCOPE_LENS   ; cb
-	const NAM_SECRETPOTION ; cc
+	const NAM_THE_THING    ; cc
 	const NAM_SHARP_BEAK   ; cd
 	const NAM_SHED_SHELL   ; ce
 	const NAM_SHELL_BELL   ; cf

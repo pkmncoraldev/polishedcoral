@@ -47,18 +47,20 @@ BillPhoneScript1: ; 0xbcfc5
 	jump BillPhoneScriptCheckForBoxes
 
 BillPhoneScript2: ; 0xbd007
-	checkcode VAR_SPECIALPHONECALL
-	ifequal SPECIALCALL_SECONDBADGE, BillPhoneScriptSecondBadge
-	farwritetext BillPhoneNewlyFullText
+	ret
+;	checkcode VAR_SPECIALPHONECALL
+;	ifequal SPECIALCALL_SECONDBADGE, BillPhoneScriptSecondBadge
+;	farwritetext BillPhoneNewlyFullText
 BillPhoneScriptCheckForBoxes:
-	special BillBoxSwitchCheck
-	ifequal 0, BillPhoneWholePCFull
-	farwritetext BillWantNextBox
-	farwritetext UnknownText_0x1c462a
-	yesorno
-	iffalse .refused
-	special BillBoxSwitch
-	jump .hang_up
+	ret
+;	special BillBoxSwitchCheck
+;	ifequal 0, BillPhoneWholePCFull
+;	farwritetext BillWantNextBox
+;	farwritetext UnknownText_0x1c462a
+;	yesorno
+;	iffalse .refused
+;	special BillBoxSwitch
+;	jump .hang_up
 
 .refused
 	farwritetext BillCallMeToSwitch

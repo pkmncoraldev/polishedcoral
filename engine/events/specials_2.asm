@@ -432,3 +432,13 @@ endr
 Special_StartRanchRaceTimer: ; 11490
 	farjp StartRanchRaceTimer
 	
+Special_StopLandmarkTimer:
+	xor a
+	ld [wLandmarkSignTimer], a
+	ret
+	
+Special_StartLandmarkTimer:
+	ld a, $6f
+	ld [wLandmarkSignTimer], a
+	ret
+	

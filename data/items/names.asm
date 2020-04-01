@@ -92,7 +92,7 @@ ItemNames::
 	db "EXP.SHARE@"
 	db "LIBRARY CARD@"
 	db "POKE FLUTE@"
-	db "SECRETPOTION@"
+	db "“THE THING”@"
 	db "RED SCALE@"
 	db "OLD KEY@"
 	db "BASEMENT KEY@"

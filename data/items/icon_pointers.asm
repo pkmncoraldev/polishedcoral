@@ -93,7 +93,7 @@ ItemIconPointers:
 	dw ExpShareIcon
 	dw LibraryCardIcon
 	dw PokeFluteIcon
-	dw SecretPotionIcon
+	dw TheThingIcon
 	dw RedScaleIcon
 	dw OldKeyIcon
 	dw BasementKeyIcon

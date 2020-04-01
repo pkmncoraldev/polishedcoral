@@ -4,9 +4,7 @@ LusterCityResidential_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, ResidentialCallback
 
-	db 3 ; warp events
-	warp_def 11, 28, 1, ROUTE_1 ;ROUTE_6_SAFFRON_GATE
-	warp_def 11, 29, 2, ROUTE_1 ;ROUTE_6_SAFFRON_GATE
+	db 1 ; warp events
 	warp_def 20, 13, 1, LUSTER_SEWERS_B1F_FLOODED
 
 	db 0 ; coord events
@@ -31,7 +29,7 @@ LusterCityResidential_MapScriptHeader:
 	person_event SPRITE_LASS, 26, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC7, -1
 	person_event SPRITE_FAT_GUY, 33,  9, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC8, -1
 	person_event SPRITE_BUG_CATCHER, 47,  7, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC9, -1
-	person_event SPRITE_YOUNGSTER, 51, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster1NPC10, -1
+	person_event SPRITE_YOUNGSTER, 51, 21, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster1NPC10, -1
 	person_event SPRITE_MEOWTH, 44, 14, SPRITEMOVEDATA_POKEMON, 2, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster1NPC11, -1
 	person_event SPRITE_PIKACHU, 25, 14, SPRITEMOVEDATA_POKEMON, 2, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster1NPC12, -1
 	person_event SPRITE_DELINQUENT_M, 20, 14, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterPunkLeader, -1
@@ -130,33 +128,7 @@ LusterSign2:
 	jumptext LusterSign2Text
 	
 Luster1NPC1:
-	checkcode VAR_FACING
-	if_equal UP, .YouAreFacingUP
-;	checkitem TRAIN_TICKET
-;	iffalse .noticket
-	
-	faceplayer
-	opentext
-	writetext Luster1NPC1TextRideTrain1
-	yesorno
-	iffalse .end
-	writetext Luster1NPC1TextRideTrain2
-	waitbutton
-	closetext
-	applymovement LUSTER1NPC1, Movement_LusterTrainGuy
-	spriteface LUSTER1NPC1, DOWN
-	applymovement PLAYER, Movement_LusterTrainPlayer
-	spriteface PLAYER, DOWN
-	
-.end
-.noticket
-	writetext Luster1NPC1TextRideTrain3
-	waitbutton
-	closetext
-	end
-	
-.YouAreFacingUP
-	jumptextfaceplayer Luster1NPC1TextGetOffTracks
+	jumptextfaceplayer Luster1NPC1Text
 		
 Luster1NPC2:
 	jumptextfaceplayer Luster1NPC2Text
@@ -752,32 +724,4 @@ Luster1NPC11Text:
 Luster1NPC12Text:
 	text "TEXT 12"
 	done
-	
-Luster1NPC1TextRideTrain1:
-	text "TEXT 1"
-	done
-	
-Luster1NPC1TextRideTrain2:
-	text "TEXT 2"
-	done
-	
-Luster1NPC1TextRideTrain3:
-	text "TEXT 3"
-	done
-	
-Luster1NPC1TextGetOffTracks:
-	text "TEXT"
-	done
-	
-Movement_LusterTrainGuy:
-	step_down
-	step_right
-	step_end
-	
-Movement_LusterTrainPlayer:
-	step_down
-	step_down
-	step_right
-	step_right
-	step_end
 	

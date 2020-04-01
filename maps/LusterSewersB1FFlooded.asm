@@ -8,7 +8,7 @@ LusterSewersB1FFlooded_MapScriptHeader:
 	callback MAPCALLBACK_OBJECTS, LusterSewersB1FChangeBlocks
 
 	db 3 ; warp events
-	warp_def  3,  8, 3, LUSTER_CITY_RESIDENTIAL
+	warp_def  3,  8, 1, LUSTER_CITY_RESIDENTIAL
 	warp_def 19,  3, 1, LUSTER_SEWERS_VALVE_ROOM
 	warp_def  3, 25, 1, LUSTER_SEWERS_B2F_FLOODED
 	

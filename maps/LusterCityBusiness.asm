@@ -14,6 +14,7 @@ LusterCityBusiness_MapScriptHeader:
 
 	
 BusinessCallback:
+	domaptrigger LUSTER_CITY_SHOPPING, $0
 	setevent EVENT_DOUBLE_LANDMARK_SIGN
 	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
 	clearevent EVENT_IN_SHOPPING_DISTRICT

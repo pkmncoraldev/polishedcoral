@@ -64,6 +64,7 @@ LusterCityResidential_MapScriptHeader:
 ResidentialCallback:
 	checkevent EVENT_DOUBLE_LANDMARK_SIGN
 	iffalse .cont
+	domaptrigger LUSTER_CITY_SHOPPING, $0
 	setevent EVENT_IN_RESIDENTIAL_DISTRICT
 	clearevent EVENT_IN_SHOPPING_DISTRICT
 	clearevent EVENT_IN_BUSINESS_DISTRICT

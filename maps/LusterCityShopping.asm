@@ -7,11 +7,13 @@ LusterCityShopping_MapScriptHeader:
 	warp_def 11,  0, 1, ROUTE_1 ;ROUTE_6_SAFFRON_GATE
 	warp_def 11,  1, 2, ROUTE_1 ;ROUTE_6_SAFFRON_GATE
 
-	db 10 ; coord events
+	db 12 ; coord events
 	xy_trigger 0, 46,  0, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 47,  0, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 48,  0, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 49,  0, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 50,  0, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 51,  0, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 52,  0, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 53,  0, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 46, 25, 0, LusterShoppingSignThing, 0, 0
@@ -48,6 +50,7 @@ LusterCityShopping_MapScriptHeader:
 	const LUSTER2NPC8
 
 LusterShoppingSignThing:
+	dotrigger $1
 	setevent EVENT_DOUBLE_LANDMARK_SIGN
 	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
 	setevent EVENT_IN_SHOPPING_DISTRICT

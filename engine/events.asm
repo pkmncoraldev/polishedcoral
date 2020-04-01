@@ -504,7 +504,6 @@ CheckAPressOW: ; 96999
 
 PlayTalkObject: ; 969ac
 	farcall GetFacingObject
-	ld a, d
 	cp SPRITEMOVEDATA_SAILBOAT_TOP
 	jr z, .nope
 	cp SPRITEMOVEDATA_SAILBOAT_BOTTOM
@@ -521,7 +520,6 @@ PlayTalkObject: ; 969ac
 	ld c, 3
 	call SFXDelayFrames
 	pop bc
-	ret
 .nope
 	ret
 ; 969b5

@@ -183,7 +183,6 @@ FlickerSign:
 	jumptext FlickerSignText
 	
 FlickerCenterSign:
-	playsound SFX_READ_TEXT
 	jumpstd pokecentersign
 
 FlickerMartSign:
@@ -305,8 +304,10 @@ FlickerStationNPC4Text:
 	text "All he talks about"
 	line "is trains…"
 	
-	para "I'm so bored of"
+	para "Trains, trains,"
 	line "trains!"
+	
+	para "I hate trains!"
 	done
 	
 FlickerStationNPC5Text:

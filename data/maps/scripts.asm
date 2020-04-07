@@ -7,6 +7,7 @@ INCLUDE "maps/StarglowPokeCenter.asm"
 INCLUDE "maps/LakeOnwaPokeCenter.asm"
 INCLUDE "maps/SunbeamPokeCenter.asm"
 INCLUDE "maps/FlickerPokeCenter.asm"
+INCLUDE "maps/TwinklePokeCenter.asm"
 
 
 SECTION "Dungeon Scripts", ROMX
@@ -139,6 +140,10 @@ INCLUDE "maps/FlickerPassOutside.asm"
 SECTION "Twinkle Town Scripts", ROMX
 
 INCLUDE "maps/TwinkleTown.asm"
+INCLUDE "maps/TwinkleHouse1.asm"
+INCLUDE "maps/TwinkleHouse2.asm"
+INCLUDE "maps/TwinkleHouse3.asm"
+INCLUDE "maps/TwinkleMart.asm"
 
 SECTION "Luster City Scripts", ROMX
 

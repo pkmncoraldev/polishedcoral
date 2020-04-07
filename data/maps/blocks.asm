@@ -7,12 +7,14 @@ StarglowPokeCenter_BlockData:
 LakeOnwaPokeCenter_BlockData:
 SunbeamPokeCenter_BlockData:
 FlickerPokeCenter_BlockData:
+TwinklePokeCenter_BlockData:
 	INCBIN "maps/PokeCenter.ablk.lz"
 
 GlintMart_BlockData:
 StarglowMart_BlockData:
 SunbeamMart_BlockData:
 FlickerMart_BlockData:
+TwinkleMart_BlockData:
 GenericMart_BlockData:: ; used by tilesets/palettes.asm:LoadSpecialMapPalette
 	INCBIN "maps/Mart.ablk.lz"
 
@@ -55,6 +57,9 @@ FlickerSoundSpeechHouse_BlockData:
 	
 LakeOnwaItemHouse_BlockData:
 DodrioRanchHouse_BlockData:
+TwinkleHouse1_BlockData:
+TwinkleHouse2_BlockData:
+TwinkleHouse3_BlockData:
 	INCBIN "maps/RusticHouse.ablk.lz"
 
 SunsetCaptainsHouse_BlockData:

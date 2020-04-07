@@ -159,28 +159,28 @@ PlaceMapNameSign:: ; b8098 (2e:4098)
 	pop hl
 .graphics_ok
 	ld a, [hl]
-	cp $5d
+	cp $5d ;$5d
 	jr nc, .sliding_in
 	cp $10
 	jr c, .sliding_out
-	ld a, $70
+	ld a, $78 ;$70
 	jr .got_value
 .sliding_in
-	sub $5d
+	sub $5d ;$5d
 	add a
-	add $70
+	add $78 ;$70
 	jr .got_value
 .sliding_out
 	push bc
 	ld b, a
-	ld a, $90
+	ld a, $98 ;$90
 	sub b
 	sub b
 	pop bc
 .got_value
 	ld [rWY], a
 	ld [hWY], a
-	sub $90
+	sub $98 ;$90
 	ret nz
 	ld [hLCDCPointer], a
 	
@@ -324,7 +324,7 @@ InitMapNameFrame:: ; b80d3
 	or X_FLIP
 	ld [hli], a
 	; middle rows
-rept 2
+rept 1
 	and $ff - X_FLIP
 	ld [hli], a
 	ld bc, SCREEN_WIDTH - 2
@@ -352,13 +352,13 @@ endr
 	; left, first line
 	ld a, POPUP_MAP_FRAME_START + 3 ; $fb
 	ld [hli], a
-	; first line
-	call .FillUpperMiddle
-	; right, first line
-	ld [hli], a
-	; left, second line
+;	; first line
+;	call .FillUpperMiddle
+;	; right, first line
+;	ld [hli], a
+;	; left, second line
 	inc a ; $fc
-	ld [hli], a
+;	ld [hli], a
 	; second line
 	call .FillLowerMiddle
 	; right, second line

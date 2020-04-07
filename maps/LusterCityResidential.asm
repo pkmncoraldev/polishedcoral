@@ -19,11 +19,14 @@ LusterCityResidential_MapScriptHeader:
 	signpost 12, 27, SIGNPOST_READ, LusterSign1
 	signpost 15, 23, SIGNPOST_READ, LusterSign2
 
-	db 19 ; object events
+	db 20 ; object events
+	person_event SPRITE_MALL_SIGN_2, 44, 31, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
+	person_event SPRITE_MALL_SIGN_2, 44, 32, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
+	person_event SPRITE_VALVE_1, 11, 32, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
 	person_event SPRITE_OFFICER, 39,  6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 29, 12, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster1NPC2, -1
-	person_event SPRITE_GENTLEMAN, 30, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Luster1NPC3, -1
-	person_event SPRITE_YOUNGSTER, 25, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster1NPC4, -1
+	person_event SPRITE_BIRD_KEEPER, 30, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Luster1NPC3, -1
+	person_event SPRITE_YOUNGSTER, 25, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Luster1NPC4, -1
 	person_event SPRITE_COOLTRAINER_F, 33, 21, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Luster1NPC5, -1
 	person_event SPRITE_YOUNGSTER, 39, 16, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Luster1NPC6, -1
 	person_event SPRITE_LASS, 26, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC7, -1
@@ -32,16 +35,17 @@ LusterCityResidential_MapScriptHeader:
 	person_event SPRITE_YOUNGSTER, 51, 21, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster1NPC10, -1
 	person_event SPRITE_MEOWTH, 44, 14, SPRITEMOVEDATA_POKEMON, 2, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster1NPC11, -1
 	person_event SPRITE_PIKACHU, 25, 14, SPRITEMOVEDATA_POKEMON, 2, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster1NPC12, -1
-	person_event SPRITE_DELINQUENT_M, 20, 14, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterPunkLeader, -1
-	person_event SPRITE_DELINQUENT_F, 21, 14, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterPunk1, -1
-	person_event SPRITE_DELINQUENT_M, 19, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterPunk2, -1
+	person_event SPRITE_GENTLEMAN,  9, 22, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC13, -1
+	person_event SPRITE_DELINQUENT_M, 20, 14, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunkLeader, -1
+	person_event SPRITE_DELINQUENT_F, 21, 14, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunk1, -1
+	person_event SPRITE_DELINQUENT_M, 19, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunk2, -1
 	person_event SPRITE_BURGLAR, 34, 14, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterShadyGuy, -1
-	person_event SPRITE_MALL_SIGN_2, 44, 31, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
-	person_event SPRITE_MALL_SIGN_2, 44, 32, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
-	person_event SPRITE_VALVE_1, 11, 32, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
 
 
 	const_def 1 ; object constants
+	const LUSTERMALLSIGN1
+	const LUSTERMALLSIGN2
+	const LUSTER1VENDING
 	const LUSTER1NPC1
 	const LUSTER1NPC2
 	const LUSTER1NPC3
@@ -54,12 +58,11 @@ LusterCityResidential_MapScriptHeader:
 	const LUSTER1NPC10
 	const LUSTER1NPC11
 	const LUSTER1NPC12
+	const LUSTER1NPC13
 	const LUSTERPUNKLEADER
 	const LUSTERPUNK1
 	const LUSTERPUNK2
 	const LUSTERSHADYGUY
-	const LUSTERMALLSIGN1
-	const LUSTERMALLSIGN2
 	
 ResidentialCallback:
 	checkevent EVENT_DOUBLE_LANDMARK_SIGN
@@ -134,15 +137,8 @@ Luster1NPC1:
 Luster1NPC2:
 	jumptextfaceplayer Luster1NPC2Text
 	
-	
 Luster1NPC3:
-	faceplayer
-	opentext
-	writetext Luster1NPC3Text
-	waitbutton
-	closetext
-	spriteface LUSTER1NPC3, DOWN
-	end
+	jumptextfaceplayer Luster1NPC3Text
 	
 Luster1NPC4:
 	jumptextfaceplayer Luster1NPC4Text
@@ -181,59 +177,122 @@ Luster1NPC12:
 	closetext
 	end
 	
+Luster1NPC13:
+	faceplayer
+	opentext
+	writetext Luster1NPC13Text
+	waitbutton
+	closetext
+	spriteface LUSTER1NPC13, DOWN
+	end
+	
 LusterTrashcan1:
+	checkevent EVENT_LUSTER_TRASHCAN_1
+	iftrue LusterTrashcanOnlyTrash
 	changeblock $c, $12, $52
 	opentext
-	writetext LusterTrashcanText
+	writetext LusterTrashcanText1
+	playsound SFX_SANDSTORM
+	waitsfx
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterTrashcanTextOnlyTrash
 	waitbutton
 	closetext
 	setevent EVENT_LUSTER_TRASHCAN_1
 	end
 	
 LusterTrashcan2:
+	checkevent EVENT_LUSTER_TRASHCAN_2
+	iftrue LusterTrashcanOnlyTrash
 	changeblock $e, $12, $53
 	opentext
-	writetext LusterTrashcanText
+	writetext LusterTrashcanText1
+	playsound SFX_SANDSTORM
+	waitsfx
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterTrashcanTextOnlyTrash
 	waitbutton
 	closetext
 	setevent EVENT_LUSTER_TRASHCAN_2
 	end
 	
 LusterTrashcan3:
+	checkevent EVENT_LUSTER_TRASHCAN_3
+	iftrue LusterTrashcanOnlyTrash
 	changeblock $e, $22, $4d
 	opentext
-	writetext LusterTrashcanText
+	writetext LusterTrashcanText1
+	playsound SFX_SANDSTORM
+	waitsfx
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterTrashcanTextOnlyTrash
 	waitbutton
 	closetext
 	setevent EVENT_LUSTER_TRASHCAN_3
 	end
 	
 LusterTrashcan4:
+	checkevent EVENT_LUSTER_TRASHCAN_4
+	iftrue LusterTrashcanOnlyTrash
 	changeblock $14, $22, $4c
 	opentext
-	writetext LusterTrashcanText
+	writetext LusterTrashcanText1
+	playsound SFX_SANDSTORM
+	waitsfx
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterTrashcanTextOnlyTrash
 	waitbutton
 	closetext
 	setevent EVENT_LUSTER_TRASHCAN_4
 	end
 	
 LusterTrashcan5:
+	checkevent EVENT_LUSTER_TRASHCAN_5
+	iftrue LusterTrashcanOnlyTrash
 	changeblock $e, $2c, $4d
 	opentext
-	writetext LusterTrashcanText
+	writetext LusterTrashcanText1
+	playsound SFX_SANDSTORM
+	waitsfx
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterTrashcanTextOnlyTrash
 	waitbutton
 	closetext
 	setevent EVENT_LUSTER_TRASHCAN_5
 	end
 	
 LusterTrashcan6:
+	checkevent EVENT_LUSTER_TRASHCAN_6
+	iftrue LusterTrashcanOnlyTrash
 	changeblock $14, $2c, $4c
 	opentext
-	writetext LusterTrashcanText
+	writetext LusterTrashcanText1
+	playsound SFX_SANDSTORM
+	waitsfx
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterTrashcanTextOnlyTrash
 	waitbutton
 	closetext
 	setevent EVENT_LUSTER_TRASHCAN_6
 	end
+	
+LusterTrashcanEmpty:
+	jumptext LusterTrashcanTextEmpty
+	
+LusterTrashcanOnlyTrash:
+	jumptext LusterTrashcanTextOnlyTrash
 	
 LusterPunkLeader:
 	checkevent EVENT_CAN_GET_THE_THING
@@ -338,16 +397,62 @@ LusterPunkLeader:
 	opentext
 	writetext LusterPunkLeaderText2
 	waitbutton
+	writetext LusterPunkLeaderTextGiveThing
+	playsound SFX_LEVEL_UP 
+	waitsfx
 	closetext
+	pause 10
+	spriteface LUSTERPUNKLEADER, LEFT
+	opentext
+	writetext LusterPunkLeaderText8
+	waitbutton
+	closetext
+	pause 30
+	spriteface LUSTERPUNKLEADER, RIGHT
+	pause 10
+	opentext
+	writetext LusterPunkLeaderText9
+.yesnoloop
+	yesorno
+	iffalse .saidno
+	writetext LusterPunkLeaderTextYes
+	waitbutton
+	closetext
+	pause 10
+	
 	special Special_NewFadeBlack
+	disappear LUSTERPUNKLEADER
+	disappear LUSTERPUNK2
+	disappear LUSTERPUNK1
+	moveperson LUSTERPUNKLEADER, $10, $14
+	moveperson LUSTERPUNK2, $10, $13
+	moveperson LUSTERPUNK1, $10, $15
+	appear LUSTERPUNKLEADER
+	appear LUSTERPUNK2
+	appear LUSTERPUNK1
 	changeblock $c, $14, $5a
 	closetext
 	takeitem THE_THING
 	setevent EVENT_LUSTER_SEWER_OPEN
+	spriteface LUSTERPUNKLEADER, LEFT
+	spriteface PLAYER, RIGHT
+	pause 10
+	opentext
+	writetext LusterPunkLeaderTextOpen1
+	pause 20
+	writetext LusterPunkLeaderTextOpen2
+	playsound SFX_SLUDGE_BOMB
+	waitsfx
+	closetext
+	pause 10
 	special Special_NewFadeIn
-	end
+	pause 10
+	jumptext LusterPunkLeaderText10
 .speechloop
 	jumptextfaceplayer LusterPunkLeaderText3
+.saidno
+	writetext LusterPunkLeaderTextNo
+	jump .yesnoloop
 	
 LusterPunk1:
 	checkevent EVENT_CAN_GET_THE_THING
@@ -371,18 +476,20 @@ LusterPunk1:
 	spriteface LUSTERPUNK1, LEFT
 	end
 .gogetpackage
+	faceplayer
 	opentext
 	writetext LusterPunk1Text5
 	waitbutton
 	closetext
-	spriteface LUSTERPUNK1, LEFT
+	spriteface LUSTERPUNK1, UP
 	end
 .havethething
+	faceplayer
 	opentext
 	writetext LusterPunk1Text6
 	waitbutton
 	closetext
-	spriteface LUSTERPUNK1, LEFT
+	spriteface LUSTERPUNK1, UP
 	end
 .speechloop
 	jumptextfaceplayer LusterPunk1Text7
@@ -409,18 +516,20 @@ LusterPunk2:
 	spriteface LUSTERPUNK2, LEFT
 	end
 .gogetpackage
+	faceplayer
 	opentext
 	writetext LusterPunk2Text5
 	waitbutton
 	closetext
-	spriteface LUSTERPUNK2, LEFT
+	spriteface LUSTERPUNK2, DOWN
 	end
 .havethething
+	faceplayer
 	opentext
 	writetext LusterPunk2Text6
 	waitbutton
 	closetext
-	spriteface LUSTERPUNK2, LEFT
+	spriteface LUSTERPUNK2, DOWN
 	end
 .speechloop
 	jumptextfaceplayer LusterPunk2Text7
@@ -450,7 +559,23 @@ LusterShadyGuy:
 .seweropen
 	jumptextfaceplayer LusterShadyGuyText4
 	
-LusterTrashcanText:
+LusterTrashcanText1:
+	text "<PLAYER> dug"
+	line "through the trash…"
+	
+	para "Rustle… rustle…"
+	done
+	
+LusterTrashcanTextOnlyTrash:
+	text "Nope, there's"
+	line "only trash here."
+	done
+	
+LusterTrashcanTextEmpty:
+	text "It's empty…"
+	done
+	
+LusterTrashcanText2:
 	text "It's empty…"
 	done
 	
@@ -475,11 +600,17 @@ LusterPunkLeaderText1:
 	done
 	
 LusterPunkLeaderText2:
-	text "Give “THE THING”."
+	text "Did you get that"
+	line "uh…"
+	cont "“THING”?"
+	
+	para "Hand it over!"
 	done
 	
 LusterPunkLeaderText3:
-	text "Go into the sewer."
+	text "You got this, kid."
+	
+	para "I hope…"
 	done
 	
 LusterPunkLeaderText4:
@@ -545,6 +676,138 @@ LusterPunkLeaderText7:
 	
 	para "What are you"
 	line "waiting for?"
+	done
+	
+LusterPunkLeaderText8:
+	text "Hmm…"
+	
+	para "Uh huh…"
+	
+	para "Mhmm…"
+	done
+	
+LusterPunkLeaderText9:
+	text "It's all here."
+	
+	para "You did good, kid."
+	
+	para "Maybe you DO have"
+	line "what it takes to"
+	cont "help me out."
+	
+	para "Alright, here's"
+	line "what's up."
+	
+	para "We're known around"
+	line "these parts as"
+	cont "“THE NIDOKINGS”!"
+	
+	para "“You'll wish you"
+	line "NIDO-RAN while you"
+	cont "could."
+	
+	para "But now there's"
+	line "NIDORI-NO escape!"
+	
+	para "Cuz we're THE"
+	line "NIDOKINGS!”"
+	
+	para "We strike fear in"
+	line "the hearts of kids"
+	cont "and little old"
+	cont "ladies everywhere!"
+	
+	para "…"
+	
+	para "At least we DID…"
+	
+	para "Ya see, the sewers"
+	line "here used to be"
+	cont "our turf."
+	
+	para "That is until a"
+	line "few days ago."
+	
+	para "Those no-good"
+	line "thugs, the"
+	cont "“BUNEARY BOYS”"
+	cont "came in and forced"
+	cont "us out!"
+	
+	para "There's only room"
+	line "for one group of"
+	cont "no-good thugs"
+	cont "around here,"
+	cont "and that's us!"
+	
+	para "“THE NIDOKINGS”!"
+	
+	para "So what I need"
+	line "ya to do is go"
+	cont "down there and"
+	cont "knock some sense"
+	cont "into those losers."
+	
+	para "I'd do it myself,"
+	line "but I have this"
+	cont "trick knee and…"
+	
+	para "Anyway, if you"
+	line "can take out their"
+	cont "leader FRANKIE,"
+	
+	para "I'm sure the rest"
+	line "of those rotten"
+	cont "“BUNEARYS” will"
+	cont "turn tail and run."
+	
+	para "I'll make it worth"
+	line "your while."
+	
+	para "What do ya say,"
+	line "kid?"
+	done
+	
+LusterPunkLeaderText10:
+	text "Alright, now get"
+	line "down there and"
+	cont "do it for “THE"
+	cont "NIDOKINGS”!"
+
+	para "You got this, kid."
+	
+	para "I hope…"
+	done
+	
+	
+LusterPunkLeaderTextGiveThing:
+	text "<PLAYER> handed"
+	line "over “THE THING”."
+	done
+	
+LusterPunkLeaderTextYes:
+	text "That's it!"
+	
+	para "You won't regret"
+	line "it."
+	done
+	
+LusterPunkLeaderTextNo:
+	text "What's that?"
+	
+	para "Couldn't quite hear"
+	line "ya."
+	
+	para "You wanna repeat"
+	line "that?"
+	done
+	
+LusterPunkLeaderTextOpen1:
+	text "Rattle… rattle…"
+	done
+	
+LusterPunkLeaderTextOpen2:
+	text "CLANG!"
 	done
 	
 LusterPunk1Text1:
@@ -724,5 +987,9 @@ Luster1NPC11Text:
 	
 Luster1NPC12Text:
 	text "TEXT 12"
+	done
+	
+Luster1NPC13Text:
+	text "TEXT 13"
 	done
 	

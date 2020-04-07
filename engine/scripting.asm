@@ -2688,6 +2688,13 @@ Script_reloadandreturn:
 	jp Script_end
 
 Script_opentext:
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .cont
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+.cont
 	jp OpenText
 
 Script_refreshscreen:

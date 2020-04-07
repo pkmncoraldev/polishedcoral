@@ -959,11 +959,16 @@ LoadMapPals:
 	ret
 	
 .snowtent
-	ld a, [wTimeOfDayPalFlags]
-	and $3F
-	cp 1
-	jr z, .snowstormtent
+	eventflagcheck EVENT_SNOWSTORM_HAPPENING
+	jr nz, .snowstormtent
+	ld a, [wIsNearCampfire]
+	bit 0, a
+	jr nz, .snowtentcont1
 	ld a, [wTimeOfDayPal]
+	jr .snowtentcont2
+.snowtentcont1
+	ld a, 1
+.snowtentcont2
 	and 3
 	ld bc, 8 palettes
 	ld hl, MapObjectPalsSnowFire
@@ -975,7 +980,14 @@ LoadMapPals:
 	ret
 	
 .snowstormtent
+	ld a, [wIsNearCampfire]
+	bit 0, a
+	jr nz, .snowstormtentcont1
 	ld a, [wTimeOfDayPal]
+	jr .snowstormtentcont2
+.snowstormtentcont1
+	ld a, 1
+.snowstormtentcont2
 	and 3
 	ld bc, 8 palettes
 	ld hl, MapObjectPalsSnowstormFire

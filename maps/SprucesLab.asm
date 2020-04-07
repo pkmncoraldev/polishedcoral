@@ -326,6 +326,8 @@ SpruceLabSpruceText1:
 	para "I'm so glad you"
 	line "made it!"
 	
+	para "I'm PROF. SPRUCE."
+	
 	para "How is the #MON"
 	line "I sent for you?"
 	

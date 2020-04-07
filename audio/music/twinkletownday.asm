@@ -1,11 +1,12 @@
-Music_TwinkleTown:
-	musicheader 4, 1, Music_TwinkleTown_Ch1
-	musicheader 1, 2, Music_TwinkleTown_Ch2
-	musicheader 1, 3, Music_TwinkleTown_Ch3
-	musicheader 1, 4, Music_TwinkleTown_Ch4
+Music_TwinkleTownDay:
+	musicheader 4, 1, Music_TwinkleTownDay_Ch1
+	musicheader 1, 2, Music_TwinkleTownDay_Ch2
+	musicheader 1, 3, Music_TwinkleTownDay_Ch3
+	musicheader 1, 4, Music_TwinkleTownDay_Ch4
 
-Music_TwinkleTown_Ch1:
+Music_TwinkleTownDay_Ch1:
 	tempo $B3
+.pasttempo
 	volume $77
 	stereopanning $77
 	notetype $6, $00
@@ -15,7 +16,7 @@ Music_TwinkleTown_Ch1:
 	note __, 16
 	note __, 16
 	note __, 8
-Music_TwinkleTown_Ch1_loop:
+Music_TwinkleTownDay_Ch1_loop:
 	notetype $6, $00
 	dutycycle 2
 	intensity $97
@@ -306,9 +307,9 @@ Music_TwinkleTown_Ch1_loop:
 	note F#, 2
 	note E_, 16
 	note __, 5
-	loopchannel 0, Music_TwinkleTown_Ch1_loop
+	loopchannel 0, Music_TwinkleTownDay_Ch1_loop
 
-Music_TwinkleTown_Ch2:
+Music_TwinkleTownDay_Ch2:
 	notetype $6, $00
 	note __, 16
 	note __, 16
@@ -316,7 +317,7 @@ Music_TwinkleTown_Ch2:
 	note __, 16
 	note __, 16
 	note __, 8
-Music_TwinkleTown_Ch2_loop:
+Music_TwinkleTownDay_Ch2_loop:
 	notetype $6, $00
 	dutycycle 2
 	intensity $C7
@@ -516,9 +517,9 @@ Music_TwinkleTown_Ch2_loop:
 	octave 3
 	note A_, 8
 	note __, 13
-	loopchannel 0, Music_TwinkleTown_Ch2_loop
+	loopchannel 0, Music_TwinkleTownDay_Ch2_loop
 
-Music_TwinkleTown_Ch3:
+Music_TwinkleTownDay_Ch3:
 	octave 4
 	notetype $C, $10
 	note D_, 2
@@ -588,7 +589,7 @@ Music_TwinkleTown_Ch3:
 	note A_, 2
 	intensity $20
 	note A_, 1
-Music_TwinkleTown_Ch3_loop:
+Music_TwinkleTownDay_Ch3_loop:
 	intensity $10
 	octave 3
 	note D_, 2
@@ -1140,13 +1141,13 @@ Music_TwinkleTown_Ch3_loop:
 	note E_, 2
 	octave 3
 	note E_, 1
-	loopchannel 0, Music_TwinkleTown_Ch3_loop
+	loopchannel 0, Music_TwinkleTownDay_Ch3_loop
 
-Music_TwinkleTown_Ch4:
+Music_TwinkleTownDay_Ch4:
 	togglenoise 3
-Music_TwinkleTown_Ch4_loop:
+Music_TwinkleTownDay_Ch4_loop:
 	notetype $C
 	note D#, 3
 	note F#, 3
-	loopchannel 0, Music_TwinkleTown_Ch4_loop
+	loopchannel 0, Music_TwinkleTownDay_Ch4_loop
 

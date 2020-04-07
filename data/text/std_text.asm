@@ -406,6 +406,6 @@ HiddenGrottoText:
 	line "it?"
 	done
 	
-StdBlankText:
+StdBlankText::
 	text " "
 	done

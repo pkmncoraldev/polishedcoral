@@ -148,9 +148,6 @@ LoadEmoteGFX::
 
 	ld c, EMOTE_SHADOW
 	call LoadEmote
-	call GetMapPermission
-	call CheckOutdoorMapOrPerm5
-	jr z, .outdoor
 	ld a, [wTileset]
 	cp TILESET_GLINT
 	jp z, .outdoor
@@ -158,6 +155,11 @@ LoadEmoteGFX::
 	jp z, .outdoor
 	cp TILESET_SPOOKY
 	jp z, .outdoor
+	cp TILESET_SNOW
+	jp z, .snow
+	call GetMapPermission
+	call CheckOutdoorMapOrPerm5
+	jr z, .outdoor
 	ld c, EMOTE_BOULDER_DUST
 	jp LoadEmote
 
@@ -168,6 +170,11 @@ LoadEmoteGFX::
 	jp LoadEmote
 ; 14236
 
+.snow
+	ld c, EMOTE_SHAKING_SNOW
+	call LoadEmote
+	ld c, EMOTE_PUDDLE_SPLASH
+	jp LoadEmote
 
 
 SafeGetSprite: ; 14236

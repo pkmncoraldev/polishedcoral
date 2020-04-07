@@ -19,3 +19,4 @@ EmotesPointers:
 	emote BoulderDustGFX,  2, $7e ; EMOTE_BOULDER_DUST
 	emote ShakingGrassGFX, 1, $7e ; EMOTE_SHAKING_GRASS
 	emote PuddleSplashGFX, 1, $7f ; EMOTE_PUDDLE_SPLASH
+	emote ShakingSnowGFX,  1, $7e ; EMOTE_SHAKING_SNOW

@@ -2069,7 +2069,7 @@ ShakeSnow:
 	ret
 
 .snow_data
-	db $80, PAL_OW_SILVER, SPRITEMOVEDATA_PUDDLE
+	db $80, PAL_OW_SILVER, SPRITEMOVEDATA_GRASS
 
 SplashPuddle:
 	push bc

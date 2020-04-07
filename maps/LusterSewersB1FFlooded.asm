@@ -37,6 +37,10 @@ LusterSewersB1FFloodedTrigger2:
 	end
 	
 LusterSewersB1FChangeBlocks:
+	clearevent EVENT_DOUBLE_LANDMARK_SIGN
+	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
+	clearevent EVENT_IN_SHOPPING_DISTRICT
+	clearevent EVENT_IN_BUSINESS_DISTRICT
 	checkevent EVENT_LUSTER_SEWERS_EMPTY
 	iffalse .endcallback
 	changemap LusterSewersB1FEmpty_BlockData

@@ -10,6 +10,7 @@ UpdateTimeOfDayPal:: ; 8c001
 
 _TimeOfDayPals:: ; 8c011
 ; return carry if pals are changed
+	farcall FadeToMapMusic
 
 ; force updating pals
 	ld hl, wTimeOfDayPalFlags
@@ -101,7 +102,7 @@ _TimeOfDayPals:: ; 8c011
 
 ; update palettes
 	farcall OWFadePalettesInit
-
+	
 ; successful change
 	scf
 	ret

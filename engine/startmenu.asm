@@ -1,4 +1,11 @@
 StartMenu:: ; 125cd
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .cont
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+.cont
 	farcall LoadBlindingFlashPalette
     farcall ApplyPals
 	ld a, 1

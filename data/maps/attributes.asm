@@ -324,6 +324,11 @@ ENDM
 	map_attributes FlickerTrainStation, FLICKER_TRAIN_STATION, 0, 0
 	map_attributes FlickerTrainCutscene, FLICKER_TRAIN_CUTSCENE, 0, 0
 	map_attributes Route10Tent, ROUTE_10_TENT, 0, 0
+	map_attributes TwinkleHouse1, TWINKLE_HOUSE_1, 0, 0
+	map_attributes TwinkleHouse2, TWINKLE_HOUSE_2, 0, 0
+	map_attributes TwinkleHouse3, TWINKLE_HOUSE_3, 0, 0
+	map_attributes TwinklePokeCenter, TWINKLE_POKECENTER, 0, 0
+	map_attributes TwinkleMart, TWINKLE_MART, 0, 0
 	map_attributes EastTrainCabin1, EAST_TRAIN_CABIN_1, 0, 0
 	map_attributes EastTrainCabin2, EAST_TRAIN_CABIN_2, 0, 0
 	map_attributes EastTrainCabin3, EAST_TRAIN_CABIN_3, 0, 0

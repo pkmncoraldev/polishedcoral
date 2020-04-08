@@ -102,10 +102,6 @@ LoadSpecialMapPalette: ; 494ac
 	jp LoadEightTimeOfDayBGPalettes
 	
 .snow
-	ld a, [wTimeOfDayPalFlags]
-	and $3F
-	cp 1
-	jr z, .snowstorm
 	eventflagcheck EVENT_SNOWSTORM_HAPPENING
 	jr nz, .snowstorm
 	ld hl, OutsideSnowPalette

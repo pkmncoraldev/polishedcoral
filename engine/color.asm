@@ -931,10 +931,6 @@ LoadMapPals:
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_10_EAST
 	jr z, .snowtent
-	ld a, [wTimeOfDayPalFlags]
-	and $3F
-	cp 1
-	jr z, .snowstorm
 	eventflagcheck EVENT_SNOWSTORM_HAPPENING
 	jr nz, .snowstorm
 	ld a, [wTimeOfDayPal]

@@ -65,6 +65,6 @@ Route10EastLight:
 	
 Route10EastDark:
 	clearflag ENGINE_NEAR_CAMPFIRE
-	loadvar wTimeOfDayPalFlags, $40 | 1
+	loadvar wTimeOfDayPalFlags, $40 | 0
 	dotrigger $0
 	end

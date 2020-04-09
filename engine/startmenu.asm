@@ -374,6 +374,7 @@ StartMenu_Option: ; 1291c
 
 	call FadeToMenu
 	farcall OptionsMenu
+;	call EnableSpriteUpdates
 	ld a, 6
 	ret
 ; 12928
@@ -384,6 +385,7 @@ StartMenu_Status: ; 12928
 
 	call FadeToMenu
 	farcall TrainerCard
+;	call EnableSpriteUpdates
 	call CloseSubmenu
 	xor a
 	ret
@@ -398,6 +400,7 @@ StartMenu_Pokedex: ; 12937
 
 	call FadeToMenu
 	farcall Pokedex
+;	call EnableSpriteUpdates
 	call CloseSubmenu
 
 .asm_12949
@@ -411,6 +414,7 @@ StartMenu_Pokegear: ; 1294c
 	call FadeToMenu
 	farcall InitPokegearPalettes
 	farcall PokeGear
+;	call EnableSpriteUpdates
 	call CloseSubmenu
 	call ApplyTilemapInVBlank
 	call SetPalettes
@@ -427,11 +431,13 @@ StartMenu_Pack: ; 1295b
 	ld a, [wcf66]
 	and a
 	jr nz, .used_item
+;	call EnableSpriteUpdates
 	call CloseSubmenu
 	xor a
 	ret
 
 .used_item
+;	call EnableSpriteUpdates
 	call ExitAllMenus
 	ld a, 4
 	ret
@@ -479,6 +485,7 @@ StartMenu_Pokemon: ; 12976
 	jr z, .quit
 
 .return
+;	call EnableSpriteUpdates
 	call CloseSubmenu
 	xor a
 	ret
@@ -486,6 +493,7 @@ StartMenu_Pokemon: ; 12976
 .quit
 	ld a, b
 	push af
+	call EnableSpriteUpdates
 	call ExitAllMenus
 	pop af
 	ret

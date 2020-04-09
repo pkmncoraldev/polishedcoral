@@ -150,3 +150,4 @@ SpriteHeaders:
 	overworld_sprite Valve1GFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite Valve2GFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite PlankBridgeGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite TrafficLightGFX, STANDING_SPRITE, PAL_OW_SILVER

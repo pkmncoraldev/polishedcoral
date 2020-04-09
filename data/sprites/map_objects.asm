@@ -60,3 +60,4 @@ SpriteMovementData::
 	sprite_movement_data SPRITEMOVEFN_BRIDGE_BOB,            DOWN,   PERSON_ACTION_BRIDGE_BOB,      $8e,    $00,    %0000 ; SPRITEMOVEDATA_BRIDGE_BOB
 	sprite_movement_data SPRITEMOVEFN_BOAT_BOB,              DOWN,   PERSON_ACTION_BOAT_BOB,        $8e,    $00,    %0000 ; SPRITEMOVEDATA_BOAT_BOB
 	sprite_movement_data SPRITEMOVEFN_VALVE,                 DOWN,   PERSON_ACTION_VALVE,           $0c,    $00,    %0000 ; SPRITEMOVEDATA_VALVE
+	sprite_movement_data SPRITEMOVEFN_TILE_HORIZONTAL,       DOWN,   PERSON_ACTION_TILE_HORIZONTAL, $8e,    $00,    %0000 ; SPRITEMOVEDATA_TILE_HORIZONTAL

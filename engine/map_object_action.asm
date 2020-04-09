@@ -32,6 +32,7 @@ Pointers445f: ; 445f
 	dw SetFacingBridgeBob,             SetFacingFreezeBridgeBob   ; PERSON_ACTION_BRIDGE_BOB
 	dw SetFacingBoatBob,               SetFacingFreezeBoatBob     ; PERSON_ACTION_BOAT_BOB
 	dw SetFacingValve,                 SetFacingValve             ; PERSON_ACTION_VALVE
+	dw SetFacingTileHorizontal,        SetFacingTileHorizontal	  ; PERSON_ACTION_TILE_HORIZONTAL
 ; 44a3
 
 SetFacingStanding: ; 44a3
@@ -366,3 +367,8 @@ SetFacingTileLeft:
 SetFacingTileRight:
 	ld a, FACING_TILE_RIGHT
 	jp SetFixedFacing
+
+SetFacingTileHorizontal:
+	ld a, FACING_TILE_HORIZONTAL
+	jp SetFixedFacing
+	

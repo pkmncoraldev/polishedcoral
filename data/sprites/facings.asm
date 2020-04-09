@@ -55,7 +55,7 @@ Facings:
 	dw FacingBoatBob1
 	dw FacingBoatBob2
 	dw FacingValve1
-	dw FacingValve2
+	dw FacingTileHorizontal ; FACING_TILE_HORIZONTAL
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -383,6 +383,11 @@ FacingTileRight:
 	db 12,  0, 0, $0e
 	db 12,  8, 0, $0f
 
+FacingTileHorizontal:
+	db 2 ; #
+	db 12,  8, 0, $07
+	db 12, 16, 0, $02
+	
 FacingArchTreeDown:
 	db 2 ; #
 	db 12, 0, 0, $08
@@ -497,11 +502,4 @@ FacingValve1:
 	db  8,  8, 0, $01
 	db 16,  0, 0, $02
 	db 16,  8, 0, $03
-	
-FacingValve2:
-	db 4 ; #
-	db  8,  0, 0, $04
-	db  8,  8, 0, $05
-	db 16,  0, 0, $06
-	db 16,  8, 0, $07
 	

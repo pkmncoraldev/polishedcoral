@@ -200,7 +200,7 @@ LoadMapNameSignGFX:: ; b80c6
 	ldh [hCGBPalUpdate], a
 	; load opaque space
 	ld hl, VTiles0 tile POPUP_MAP_FRAME_SPACE
-	call Get1bppSpaceTile
+	call GetOpaque1bppSpaceTile
 	; load sign frame
 	ld hl, VTiles0 tile POPUP_MAP_FRAME_START
 	ld de, MapEntryFrameGFX
@@ -212,7 +212,7 @@ LoadMapNameSignGFX:: ; b80c6
 .clear_loop
 	push hl
 	push de
-	call Get1bppSpaceTile
+	call GetOpaque1bppSpaceTile
 	pop de
 	pop hl
 	ld bc, LEN_2BPP_TILE
@@ -294,7 +294,7 @@ endr
 	ld l, e
 	pop de
 	; get font tile into vram
-	call Get1bppFontTile
+	call GetOpaque1bppFontTile
 	; restore hl = position in vram
 	pop hl
 	; increment position in vram

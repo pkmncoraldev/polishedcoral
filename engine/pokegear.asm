@@ -766,7 +766,7 @@ TownMap_ConvertLineBreakCharacters: ; 1de2c5
 	jp PlaceString
 
 TownMap_GetNorthOnwaLandmarkLimits:
-	lb de, LAKE_ONWA, SUNSET_BAY
+	lb de, LUSTER_SEWERS, SUNSET_BAY
 	ret
 
 TownMap_GetSouthOnwaLandmarkLimits: ; 910e8

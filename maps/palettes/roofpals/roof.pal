@@ -9,10 +9,10 @@
 	RGB 09, 11, 22
 	RGB 04, 09, 18
 ;2 - Sunset
-	RGB 07, 11, 15
 	RGB 14, 17, 31
-	RGB 05, 07, 13
+	RGB 07, 11, 15
 	RGB 09, 09, 17
+	RGB 05, 07, 13
 ;3 - Daybreak
 	RGB 20, 10, 22
 	RGB 14, 05, 17
@@ -24,20 +24,20 @@
 	RGB 18, 05, 09
 	RGB 09, 09, 08
 ;5 - Starglow
-	RGB 20, 09, 11
 	RGB 31, 08, 04
-	RGB 10, 03, 06
+	RGB 20, 09, 11
 	RGB 18, 05, 09
+	RGB 10, 03, 06
 ;6 - Lake Onwa
-	RGB 16, 10, 00
 	RGB 20, 14, 04
-	RGB 07, 03, 02
+	RGB 16, 10, 00
 	RGB 11, 06, 02
+	RGB 07, 03, 02
 ;7 - Sunbeam Island
-	RGB 20, 17, 08
 	RGB 29, 29, 00
-	RGB 10, 09, 05
+	RGB 20, 17, 08
 	RGB 14, 14, 00
+	RGB 10, 09, 05
 ;8 - Eventide Forest
 	RGB 11, 10, 16
 	RGB 05, 06, 07

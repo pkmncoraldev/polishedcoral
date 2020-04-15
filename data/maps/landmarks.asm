@@ -39,6 +39,7 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, ResidentialName
 	landmark   0,   0, ShoppingName
 	landmark   0,   0, BusinessName
+	landmark   0,   0, GateName
 
 
 SunsetBayName:         db "SUNSET¯BAY@"
@@ -75,4 +76,5 @@ LusterSewersName:	   db "LUSTER¯SEWERS@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"
 ShoppingName:		   db "SHOPPING¯DISTRICT@"
 BusinessName:	 	   db "BUSINESS¯DISTRICT@"
+GateName:	 	 	   db "ERROR!@"
 SpecialMapName:        db "?","@"

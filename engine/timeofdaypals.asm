@@ -120,11 +120,33 @@ _UpdateTimePals:: ; 8c070
 	jp DmgToCgbTimePals
 ; 8c079
 
+FadeInPalettesSign::
+	xor a
+	ld [wLandmarkSignTimer], a
+	ld a, $90
+	ld [rWY], a
+	ld [hWY], a
+	xor a
+	ld [hLCDCPointer], a
+	call GetMapPermission
+	cp GATE
+	jr z, .cont
+	call CheckMovingWithinLandmarkFade
+	jr z, .cont
+	ld a, $70
+	ld [wLandmarkSignTimer], a
+.cont
 FadeInPalettes::
 	ld c, 10
 	jp FadePalettes
 
 FadeOutPalettes::
+;	ld a, [wLandmarkSignTimer]
+;	cp $00
+;	jr z, .cont
+;	ld a, $70
+;	ld [wLandmarkSignTimer], a
+
 	ld c, 10
 	jp FadeToWhite
 
@@ -350,3 +372,12 @@ Special_NewFadeIn::
 	call GetCGBLayout
 	farcall LoadRegularTextboxPalette
 	farjp FadeInPalettes
+
+CheckMovingWithinLandmarkFade:
+	ld a, [wCurrentLandmark]
+	ld c, a
+	ld a, [wPreviousLandmark]
+	cp c
+	ret z
+	and a ; cp SPECIAL_MAP
+	ret

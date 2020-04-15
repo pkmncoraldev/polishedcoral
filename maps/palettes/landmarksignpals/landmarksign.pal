@@ -1,0 +1,70 @@
+;0
+	RGB 31, 00, 31
+	RGB 31, 00, 31
+	RGB 31, 00, 31
+	RGB 31, 00, 31
+;1 - Dungeons
+	RGB 31, 00, 31
+	RGB 31, 00, 31
+	RGB 31, 00, 31
+	RGB 31, 00, 31
+;2 - Sunset
+	RGB 31, 00, 31
+	RGB 28, 30, 31
+	RGB 14, 17, 31
+	RGB 00, 00, 00
+;3 - Daybreak
+	RGB 31, 00, 31
+	RGB 31, 28, 31
+	RGB 20, 10, 22
+	RGB 00, 00, 00
+;4 - Glint
+	RGB 31, 00, 31
+	RGB 31, 30, 28
+	RGB 31, 16, 08
+	RGB 00, 00, 00
+;5 - Starglow
+	RGB 31, 00, 31
+	RGB 31, 28, 28
+	RGB 31, 08, 04
+	RGB 00, 00, 00
+;6 - Lake Onwa
+	RGB 31, 00, 31
+	RGB 30, 30, 28
+	RGB 20, 14, 04
+	RGB 00, 00, 00
+;7 - Sunbeam Island
+	RGB 31, 00, 31
+	RGB 30, 31, 28
+	RGB 29, 29, 00
+	RGB 00, 00, 00
+;8 - Eventide Forest
+	RGB 31, 00, 31
+	RGB 31, 00, 31
+	RGB 31, 00, 31
+	RGB 31, 00, 31
+;9 - Route 9
+	RGB 31, 00, 31
+	RGB 31, 00, 31
+	RGB 31, 00, 31
+	RGB 31, 00, 31
+;10 - Flicker Station
+	RGB 31, 00, 31
+	RGB 28, 31, 28
+	RGB 16, 20, 02
+	RGB 00, 00, 00
+;11 - Twinkle
+	RGB 31, 00, 31
+	RGB 31, 31, 31
+	RGB 21, 21, 21
+	RGB 00, 00, 00
+;12 - Train
+	RGB 31, 00, 31
+	RGB 31, 00, 31
+	RGB 31, 00, 31
+	RGB 31, 00, 31
+;13 - Luster City
+	RGB 31, 00, 31
+	RGB 31, 31, 31
+	RGB 21, 21, 21
+	RGB 00, 00, 00

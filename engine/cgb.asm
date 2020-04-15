@@ -6,7 +6,13 @@ Predef_LoadCGBLayout: ; 8d59
 .not_ram
 	cp CGB_PARTY_MENU_HP_PALS
 	jp z, ApplyPartyMenuHPPals
+	cp CGB_MAPPALS
+	jp nz, .not_map
+	call Reset7BGPals
+	jr .cont
+.not_map
 	call ResetBGPals
+.cont
 	ld l, a
 	ld h, 0
 	add hl, hl

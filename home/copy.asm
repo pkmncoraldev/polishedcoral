@@ -156,6 +156,10 @@ CopyOpaque1bpp:
 	ld [hRequestOpaque1bpp], a
 	jr _Copy1bpp
 
+Get1bppSpaceTile::
+	ld de, TextBoxSpaceGFX
+Get1bppFontTile::
+	lb bc, BANK(FontTiles), 1
 Get1bpp:: ; f9d
 	ld a, [rLCDC]
 	bit 7, a ; lcd on?

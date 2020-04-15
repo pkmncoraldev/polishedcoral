@@ -1,22 +1,14 @@
 ReturnFromMapSetupScript:: ; b8000
+	ld a, [wCurrentLandmark]
+	ld [wPreviousLandmark], a
 	ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]
 	ld c, a
+
 	call GetWorldMapLocation
 	ld [wCurrentLandmark], a
-;	call .CheckNationalParkGate
-;	jr z, .nationalparkgate
 
-	call GetMapPermission
-	cp GATE
-	jr nz, .not_gate
-
-.nationalparkgate
-	ld a, -1
-	ld [wCurrentLandmark], a
-
-.not_gate::
 	ld hl, wEnteredMapFromContinue
 	bit 1, [hl]
 	res 1, [hl]
@@ -24,8 +16,6 @@ ReturnFromMapSetupScript:: ; b8000
 
 	call .CheckMovingWithinLandmark
 	jr z, .check_landmark_timer_from_withen_same_landmark
-	ld a, [wCurrentLandmark]
-	ld [wPreviousLandmark], a
 
 	call .CheckSpecialMap
 	jr z, .dont_do_map_sign
@@ -197,14 +187,20 @@ PlaceMapNameSign:: ; b8098 (2e:4098)
 	ret
 
 LoadMapNameSignGFX:: ; b80c6
+	ld a, [wPermission]
+	cp TOWN
+	jr nz, .not_town
+	farcall LoadColorSignPalette
+	jr .cont
+.not_town
 	farcall LoadRegularSignPalette
+.cont
 	farcall ApplyPals
 	ld a, 1
 	ldh [hCGBPalUpdate], a
-
 	; load opaque space
 	ld hl, VTiles0 tile POPUP_MAP_FRAME_SPACE
-	call GetOpaque1bppSpaceTile
+	call Get1bppSpaceTile
 	; load sign frame
 	ld hl, VTiles0 tile POPUP_MAP_FRAME_START
 	ld de, MapEntryFrameGFX
@@ -216,7 +212,7 @@ LoadMapNameSignGFX:: ; b80c6
 .clear_loop
 	push hl
 	push de
-	call GetOpaque1bppSpaceTile
+	call Get1bppSpaceTile
 	pop de
 	pop hl
 	ld bc, LEN_2BPP_TILE
@@ -298,7 +294,7 @@ endr
 	ld l, e
 	pop de
 	; get font tile into vram
-	call GetOpaque1bppFontTile
+	call Get1bppFontTile
 	; restore hl = position in vram
 	pop hl
 	; increment position in vram
@@ -318,66 +314,44 @@ InitMapNameFrame:: ; b80d3
 	ld de, wAttrMap - wTileMap
 	add hl, de
 	; top row
+rept 3
 	ld a, BEHIND_BG | PAL_BG_TEXT
-	ld bc, SCREEN_WIDTH - 1
+	ld bc, SCREEN_WIDTH
 	call ByteFill
-	or X_FLIP
-	ld [hli], a
-	; middle rows
-rept 1
-	and $ff - X_FLIP
-	ld [hli], a
-	ld bc, SCREEN_WIDTH - 2
-	call ByteFill
-	or X_FLIP
 	ld [hli], a
 endr
-	; bottom row
-	and $ff - X_FLIP
-	ld bc, SCREEN_WIDTH - 1
-	call ByteFill
-	or X_FLIP
-	ld [hl], a
 ; PlaceMapNameFrame
 	hlcoord 0, 0
 	; top left
-	ld a, POPUP_MAP_FRAME_START ; $f8
+	ld a, $f3 ;tile
 	ld [hli], a
 	; top row
-	inc a ; $f9
-	call .FillTopBottom
+	call .FillTopRow
 	; top right
-	dec a ; $f8
+	ld a, $f4 ;tile
 	ld [hli], a
-	; left, first line
-	ld a, POPUP_MAP_FRAME_START + 3 ; $fb
+	; left middle
+	ld a, $f6 ;tile
 	ld [hli], a
-;	; first line
-;	call .FillUpperMiddle
-;	; right, first line
-;	ld [hli], a
-;	; left, second line
-	inc a ; $fc
-;	ld [hli], a
 	; second line
-	call .FillLowerMiddle
-	; right, second line
+	call .FillMiddleRow
+	; right middle
+	ld a, $fa ;tile
 	ld [hli], a
 	; bottom left
-	inc a ; $fd
+	ld a, $f7 ;tile
 	ld [hli], a
-	; bottom
-	inc a ; $fe
-	call .FillTopBottom
+	; bottom row
+	call .FillBottomRow
 	; bottom right
-	dec a ; $fd
+	ld a, $f8 ;tile
 	ld [hl], a
 	ret
 ; b815b
 
-.FillUpperMiddle: ; b815b
+.FillTopRow: ; b815b
 	push af
-	ld a, POPUP_MAP_FRAME_SPACE
+	ld a, $f5 ;tile
 	ld c, SCREEN_WIDTH - 2
 .loop
 	ld [hli], a
@@ -386,7 +360,7 @@ endr
 	pop af
 	ret
 
-.FillLowerMiddle:
+.FillMiddleRow:
 	push af
 	ld a, POPUP_MAP_NAME_START
 	ld c, SCREEN_WIDTH - 2
@@ -397,26 +371,17 @@ endr
 	jr nz, .loop2
 	pop af
 	ret
-; b8164
-
-.FillTopBottom: ; b8164
-	ld c, 5
-	jr .enterloop
-
-.continueloop
+	
+.FillBottomRow: ; b815b
+	push af
+	ld a, $f9 ;tile
+	ld c, SCREEN_WIDTH - 2
+.loop3
 	ld [hli], a
-	ld [hli], a
-
-.enterloop
-	inc a
-	ld [hli], a
-	ld [hli], a
-	dec a
 	dec c
-	jr nz, .continueloop
+	jr nz, .loop3
+	pop af
 	ret
-; b8172
-
 
 CheckForHiddenItems: ; b8172
 ; Checks to see if there are hidden items on the screen that have not yet been found.  If it finds one, returns carry.

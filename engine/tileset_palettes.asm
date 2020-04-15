@@ -14,6 +14,21 @@ LoadRegularSignPalette::
 	call FarCopyWRAM
 	ret
 	
+LoadColorSignPalette::
+	ld a, [wMapGroup]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld de, LandmarkSignPals
+	add hl, de
+	ld a, $5
+	ld de, wUnknBGPals palette PAL_BG_TEXT
+	ld bc, 1 palettes
+	call FarCopyWRAM
+	ret
+	
 LoadRegularTextboxPalette::
 	ld a, $5
 	ld de, wUnknBGPals palette PAL_BG_TEXT
@@ -33,11 +48,11 @@ else
 endc
 ; 49420
 
-RegularSignPalette: ; 49418
+RegularSignPalette:: ; 49418
 if !DEF(MONOCHROME)
-	RGB 31, 31, 16
-	RGB 31, 31, 16
-	RGB 14, 09, 00
+	RGB 31, 00, 31
+	RGB 31, 31, 31
+	RGB 21, 21, 21
 	RGB 00, 00, 00
 else
 	MONOCHROME_RGB_FOUR
@@ -87,91 +102,91 @@ LoadSpecialMapPalette: ; 494ac
 	
 .starglow_cavern
 	ld hl, StarglowCavernPalette
-	jp LoadEightBGPalettes
+	jp LoadSevenBGPalettes
 	
 .grove
 	ld hl, OutsideGrovePalette
-	jp LoadEightTimeOfDayBGPalettes
+	jp LoadSevenTimeOfDayBGPalettes
 	
 .mountain
 	ld hl, OutsideMountainPalette
-	jp LoadEightTimeOfDayBGPalettes
+	jp LoadSevenTimeOfDayBGPalettes
 	
 .jungle
 	ld hl, OutsideJunglePalette
-	jp LoadEightTimeOfDayBGPalettes
+	jp LoadSevenTimeOfDayBGPalettes
 	
 .snow
 	eventflagcheck EVENT_SNOWSTORM_HAPPENING
 	jr nz, .snowstorm
 	ld hl, OutsideSnowPalette
-	jp LoadEightTimeOfDayBGPalettes
+	jp LoadSevenTimeOfDayBGPalettes
 
 .snowstorm
 	ld hl, OutsideSnowStormPalette
-	jp LoadEightTimeOfDayBGPalettes
+	jp LoadSevenTimeOfDayBGPalettes
 	
 .snowtent
 	eventflagcheck EVENT_SNOWSTORM_HAPPENING
 	jr nz, .snowstormtent
 	ld hl, OutsideSnowTentPalette
-	jp LoadEightTimeOfDayBGPalettes
+	jp LoadSevenTimeOfDayBGPalettes
 	
 .snowstormtent
 	ld hl, OutsideSnowStormTentPalette
-	jp LoadEightTimeOfDayBGPalettes
+	jp LoadSevenTimeOfDayBGPalettes
 	
 .ranch
 	ld hl, OutsideRanchPalette
-	jp LoadEightTimeOfDayBGPalettes
+	jp LoadSevenTimeOfDayBGPalettes
 
 .spookhouse
 	ld hl, SpookhousePalette
-	jp LoadEightBGPalettes
+	jp LoadSevenBGPalettes
 	
 .spookhousetv
 	ld hl, SpookhouseTVPalette
-	jp LoadEightBGPalettes
+	jp LoadSevenBGPalettes
 	
 .train
 	ld hl, TrainPalette
-	jp LoadEightBGPalettes
+	jp LoadSevenBGPalettes
 	
 .luster
 	ld a, [wMapNumber]
 	cp MAP_LUSTER_CITY_BUSINESS
 	jp z, .lusterbusiness
 	ld hl, OutsideLusterPalette
-	jp LoadEightTimeOfDayBGPalettes
+	jp LoadSevenTimeOfDayBGPalettes
 	
 .lusterbusiness
 	ld hl, OutsideLusterBusinessPalette
-	jp LoadEightTimeOfDayBGPalettes
+	jp LoadSevenTimeOfDayBGPalettes
 	
 .sewer
 	ld hl, LusterSewerPalette
-	jp LoadEightBGPalettes
+	jp LoadSevenBGPalettes
 	
 .do_nothing
 	and a
 	ret
 	
-LoadEightBGPalettes: ; 494f2
+LoadSevenBGPalettes: ; 494f2
 	ld a, $5
 	ld de, wUnknBGPals
-	ld bc, 8 palettes
+	ld bc, 7 palettes
 	call FarCopyWRAM
 	scf
 	ret
 	
-LoadEightTimeOfDayBGPalettes:
+LoadSevenTimeOfDayBGPalettes:
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes
 	rst AddNTimes
 	ld a, $5
 	ld de, wUnknBGPals
-	ld bc, 8 palettes
+	ld bc, 7 palettes
 	call FarCopyWRAM
 	scf
 	ret
@@ -261,6 +276,9 @@ LoadLinkTradePalette: ; 49811
 LoadSpecialMapOBPalette:
 	ret
 
+LandmarkSignPals::
+INCLUDE "maps/palettes/landmarksignpals/landmarksign.pal"
+	
 CavePalette:
 INCLUDE "maps/palettes/bgpals/cave.pal"
 

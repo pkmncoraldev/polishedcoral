@@ -309,29 +309,16 @@ ResetBGPals:
 	ld hl, wUnknBGPals
 	ld c, 8
 .loop
-if !DEF(MONOCHROME)
-	ld a, $ff ; RGB 31, 31, 31
-rept 4
+	ld a, $ff
 	ld [hli], a
-endr
-	xor a ; RGB 00, 00, 00
-rept 4
 	ld [hli], a
-endr
-else
-rept 2
-	ld a, PAL_MONOCHROME_WHITE % $100
 	ld [hli], a
-	ld a, PAL_MONOCHROME_WHITE / $100
 	ld [hli], a
-endr
-rept 2
-	ld a, PAL_MONOCHROME_BLACK % $100
+	xor a
 	ld [hli], a
-	ld a, PAL_MONOCHROME_BLACK / $100
 	ld [hli], a
-endr
-endc
+	ld [hli], a
+	ld [hli], a
 	dec c
 	jr nz, .loop
 
@@ -344,6 +331,42 @@ endc
 	pop af
 	ret
 
+Reset7BGPals:
+	push af
+	push bc
+	push de
+	push hl
+
+	ld a, [rSVBK]
+	push af
+	ld a, $5
+	ld [rSVBK], a
+
+	ld hl, wUnknBGPals
+	ld c, 7
+.loop
+	ld a, $ff
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	xor a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	dec c
+	jr nz, .loop
+
+	pop af
+	ld [rSVBK], a
+
+	pop hl
+	pop de
+	pop bc
+	pop af
+	ret
+	
 WipeAttrMap:
 	hlcoord 0, 0, wAttrMap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
@@ -786,7 +809,7 @@ LoadMapPals:
 	ld a, $5
 	ld [rSVBK], a
 	ld hl, wUnknBGPals
-	ld b, 8
+	ld b, 7
 .outer_loop
 	ld a, [de] ; lookup index for TilesetBGPalette
 	push de

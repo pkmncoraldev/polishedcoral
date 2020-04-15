@@ -8,6 +8,7 @@ TalkToTrainerScript:: ; 0xbe66a
 
 SeenByTrainerScript:: ; 0xbe675
 	special Special_StopRunning
+	callasm SeenByTrainerLandmarkTimer
 	loadmemtrainer
 	encountermusic
 	showemote EMOTE_SHOCK, LAST_TALKED, 30
@@ -43,4 +44,8 @@ AlreadyBeatenTrainerScript:
 CheckTrainerClass:
 	ld a, [wTempTrainerClass]
 	ld [wScriptVar], a
+	ret
+SeenByTrainerLandmarkTimer:
+	xor a
+	ld [wLandmarkSignTimer], a
 	ret

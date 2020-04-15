@@ -218,7 +218,7 @@ SpruceLabComeBackInside:
 	setevent EVENT_SPRUCELAB_SPRUCE2_GONE
 	setevent EVENT_SPRUCELAB_MUNCH2_GONE
 	clearevent EVENT_SPRUCELAB_SPRUCE3_GONE
-	domaptrigger SUNBEAM_ISLAND, $2
+;	domaptrigger SUNBEAM_ISLAND, $2
 	domaptrigger SUNBEAM_RESERVE, $1
 	dotrigger $1
 	end
@@ -284,7 +284,7 @@ SpruceLabComeBackInside:
 	clearevent EVENT_SPRUCELAB_SPRUCE1_GONE
 	setevent EVENT_SPRUCELAB_SPRUCE3_GONE
 	setevent EVENT_GOT_POKEFLUTE
-	domaptrigger SUNBEAM_ISLAND, $2
+;	domaptrigger SUNBEAM_ISLAND, $2
 	domaptrigger SUNBEAM_RESERVE, $1
 	dotrigger $1
 	end

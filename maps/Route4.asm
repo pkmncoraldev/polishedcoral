@@ -288,10 +288,8 @@ Route4NPC8Text:
 	para "I can't blame it,"
 	line "though."
 	
-	para "If I was as big"
-	line "as it,"
-	
-	para "I'd probably lay"
-	line "around all day,"
+	para "If I was that big"
+	line "I'd probably lay"
+	cont "around all day,"
 	cont "too!"
 	done

@@ -182,6 +182,8 @@ AnimatePokegearModeIndicatorArrow: ; 90d41 (24:4d41)
 
 TownMap_InitCursorAndPlayerIconPositions: ; 90d70 (24:4d70)
 	call GetCurrentLandmark
+	cp GATE_LANDMARK
+	jr z, .gate
 	cp RESIDENTIAL_DISTRICT
 	jr z, .luster
 	cp SHOPPING_DISTRICT
@@ -192,6 +194,12 @@ TownMap_InitCursorAndPlayerIconPositions: ; 90d70 (24:4d70)
 	ld [wPokegearMapCursorLandmark], a
 	ret
 
+.gate
+	ld a, [wPreviousLandmark]
+	ld [wPokegearMapPlayerIconLandmark], a
+	ld [wPokegearMapCursorLandmark], a
+	ret
+	
 .luster
 	ld a, LUSTER_CITY
 	ld [wPokegearMapPlayerIconLandmark], a

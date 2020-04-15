@@ -1,9 +1,8 @@
 SunbeamIsland_MapScriptHeader:
-	db 4 ; scene scripts
+	db 3 ; scene scripts
 	scene_script SunbeamIslandTrigger0
 	scene_script SunbeamIslandTrigger1
 	scene_script SunbeamIslandTrigger2
-	scene_script SunbeamIslandTrigger3
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, SunbeamIslandFlyPoint
@@ -24,11 +23,7 @@ SunbeamIsland_MapScriptHeader:
 	warp_def 47,  7, 1, SUNBEAM_BOAT_HOUSE
 	warp_def 40, 17, 1, SUNBEAM_SURF_SHOP
 
-	db 4 ; coord events
-	xy_trigger 1, 40, 20, 0, SunbeamStartFirstContest1, 0, 0
-	xy_trigger 1, 41, 20, 0, SunbeamStartFirstContest2, 0, 0
-	xy_trigger 1, 42, 20, 0, SunbeamStartFirstContest3, 0, 0
-	xy_trigger 1, 43, 20, 0, SunbeamStartFirstContest4, 0, 0
+	db 0 ; coord events
 
 	db 9 ; bg events
 	signpost 29, 21, SIGNPOST_READ, SunBeamSign
@@ -42,47 +37,47 @@ SunbeamIsland_MapScriptHeader:
 	signpost 45, 12, SIGNPOST_READ, SunBeamBoatSign
 
 	db 14 ; object events
-	person_event SPRITE_DONPHAN,  6, 19, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveDonphan, -1
-	person_event SPRITE_SLOWPOKETAIL, 14,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveSlowpoke, -1
-	person_event SPRITE_COOL_DUDE, 41, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_FIRST_BIKINI_CONTEST
-	person_event SPRITE_BATTLE_GIRL, 42, 25, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_FIRST_BIKINI_CONTEST
-	person_event SPRITE_GENERAL_VARIABLE_1, 48,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ISLAND_STRAND
 	person_event SPRITE_MATRON, 20, 24, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC1, -1
 	person_event SPRITE_POKEFAN_M, 10, 28, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC2, -1
 	person_event SPRITE_CUTE_GIRL, 16,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC3, -1
-	person_event SPRITE_VARIABLE_SUNBEAM, 26, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC4, -1
+	person_event SPRITE_GRANNY, 26, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC4, -1
 	person_event SPRITE_CUTE_GIRL, 42, 14, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC5, -1
 	person_event SPRITE_SUPER_NERD, 43,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC6, -1
+	person_event SPRITE_GENERAL_VARIABLE_1, 48,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ISLAND_STRAND
+	person_event SPRITE_COOL_DUDE, 41, 25, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_BATTLE_GIRL, 42, 26, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_ROWBOAT, 49,  8, SPRITEMOVEDATA_BOAT_BOB, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandBoat, -1
+	person_event SPRITE_DONPHAN,  6, 19, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveDonphan, -1
+	person_event SPRITE_SLOWPOKETAIL, 14,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveSlowpoke, -1
 	person_event SPRITE_MAGMAR, 13, 13, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveMagmar, -1
 	person_event SPRITE_ELECTABUZZ, 11, 20, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamReserveElectabuzz, -1
 
 	
 	const_def 1 ; object constants
-	const SUNBEAM_DONPHAN
-	const SUNBEAM_SLOWPOKE
-	const SUNBEAM_CROWD1
-	const SUNBEAM_CROWD2
-	const SUNBEAM_LEILANI
 	const SUNBEAM_NPC1
 	const SUNBEAM_NPC2
 	const SUNBEAM_NPC3
 	const SUNBEAM_NPC4
 	const SUNBEAM_NPC5
 	const SUNBEAM_NPC6
+	const SUNBEAM_BOAT_MAN
+	const SUNBEAM_CROWD1
+	const SUNBEAM_CROWD2
+	const SUNBEAM_ROWBOAT
+	const SUNBEAM_DONPHAN
+	const SUNBEAM_SLOWPOKE
+	const SUNBEAM_MAGMAR
+	const SUNBEAM_ELECTABUZZ
 	
 SunbeamIslandTrigger0:
 	priorityjump JustRodeBoatSunbeam
 	end
 	
 SunbeamIslandTrigger1:
+	priorityjump JustRodeBoatSunbeam2
 	end
 	
 SunbeamIslandTrigger2:
-	end
-	
-SunbeamIslandTrigger3:
-	priorityjump JustRodeBoatSunbeam2
 	end
 	
 SunbeamIslandFlyPoint:
@@ -98,17 +93,12 @@ JustRodeBoatSunbeam:
 	writetext SunbeamJustRodeBoatText
 	waitbutton
 	closetext
-	applymovement SUNBEAM_LEILANI, Movement_SunbeamPlayerStepOffBoat
+	applymovement SUNBEAM_BOAT_MAN, Movement_SunbeamPlayerStepOffBoat
 	playsound SFX_EXIT_BUILDING
-	disappear SUNBEAM_LEILANI
+	disappear SUNBEAM_BOAT_MAN
 	special Special_StartLandmarkTimer
 	waitsfx
 	setevent EVENT_ISLAND_STRAND
-	checkevent EVENT_SAW_FIRST_BIKINI_CONTEST
-	iftrue .sawbikinicontest
-	dotrigger $1
-	end
-.sawbikinicontest
 	dotrigger $2
 	end
 	
@@ -119,9 +109,9 @@ JustRodeBoatSunbeam2:
 	writetext SunbeamJustRodeBoatText2
 	waitbutton
 	closetext
-	applymovement SUNBEAM_LEILANI, Movement_SunbeamPlayerStepOffBoat
+	applymovement SUNBEAM_BOAT_MAN, Movement_SunbeamPlayerStepOffBoat
 	playsound SFX_EXIT_BUILDING
-	disappear SUNBEAM_LEILANI
+	disappear SUNBEAM_BOAT_MAN
 	waitsfx
 	setevent EVENT_ISLAND_STRAND
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
@@ -139,198 +129,6 @@ SunBeamSign:
 	
 SunBeamBoatSign:
 	jumptext SunBeamBoatSignText
-	
-SunbeamStartFirstContest1:
-	special Special_StopRunning
-	disappear SUNBEAM_NPC3
-	moveperson SUNBEAM_NPC3, $1d, $29
-	appear SUNBEAM_NPC3
-	disappear SUNBEAM_NPC2
-	moveperson SUNBEAM_NPC2, $1a, $29
-	appear SUNBEAM_NPC2
-	spriteface SUNBEAM_NPC2, UP
-	disappear SUNBEAM_NPC4
-	moveperson SUNBEAM_NPC4, $1c, $29
-	appear SUNBEAM_NPC4
-	variablesprite SPRITE_VARIABLE_SUNBEAM, SPRITE_CHRIS
-	playmusic MUSIC_GSC_GAME_CORNER
-	opentext
-	writetext SunbeamFirstContestText1
-	waitbutton
-	closetext
-;	special MapCallbackSprites_LoadUsedSpritesGFX
-	closetext
-	applymovement PLAYER, Movement_SunbeamFirstContest1
-	spriteface SUNBEAM_NPC4, UP
-	applymovement PLAYER, Movement_SunbeamFirstContest1_1
-	jump SunbeamStartFirstContestCont
-	
-SunbeamStartFirstContest2:
-	special Special_StopRunning
-	disappear SUNBEAM_NPC3
-	moveperson SUNBEAM_NPC3, $1d, $29
-	appear SUNBEAM_NPC3
-	disappear SUNBEAM_NPC2
-	moveperson SUNBEAM_NPC2, $1a, $29
-	appear SUNBEAM_NPC2
-	spriteface SUNBEAM_NPC2, UP
-	disappear SUNBEAM_NPC4
-	moveperson SUNBEAM_NPC4, $1c, $29
-	appear SUNBEAM_NPC4
-	variablesprite SPRITE_VARIABLE_SUNBEAM, SPRITE_CHRIS
-	playmusic MUSIC_GSC_GAME_CORNER
-	opentext
-	writetext SunbeamFirstContestText1
-	waitbutton
-	closetext
-;	special MapCallbackSprites_LoadUsedSpritesGFX
-	closetext
-	applymovement PLAYER, Movement_SunbeamFirstContest1
-	spriteface SUNBEAM_NPC4, UP
-	applymovement PLAYER, Movement_SunbeamFirstContest1_2
-	jump SunbeamStartFirstContestCont
-	
-SunbeamStartFirstContest3:
-	special Special_StopRunning
-	disappear SUNBEAM_NPC3
-	moveperson SUNBEAM_NPC3, $1d, $29
-	appear SUNBEAM_NPC3
-	disappear SUNBEAM_NPC2
-	moveperson SUNBEAM_NPC2, $1a, $29
-	appear SUNBEAM_NPC2
-	spriteface SUNBEAM_NPC2, UP
-	disappear SUNBEAM_NPC4
-	moveperson SUNBEAM_NPC4, $1c, $29
-	appear SUNBEAM_NPC4
-	variablesprite SPRITE_VARIABLE_SUNBEAM, SPRITE_CHRIS
-	playmusic MUSIC_GSC_GAME_CORNER
-	opentext
-	writetext SunbeamFirstContestText1
-	waitbutton
-	closetext
-;	special MapCallbackSprites_LoadUsedSpritesGFX
-	closetext
-	applymovement PLAYER, Movement_SunbeamFirstContest1
-	spriteface SUNBEAM_NPC4, UP
-	applymovement PLAYER, Movement_SunbeamFirstContest1_3
-	jump SunbeamStartFirstContestCont
-	
-SunbeamStartFirstContest4:
-	special Special_StopRunning
-	disappear SUNBEAM_NPC3
-	moveperson SUNBEAM_NPC3, $1d, $29
-	appear SUNBEAM_NPC3
-	disappear SUNBEAM_NPC2
-	moveperson SUNBEAM_NPC2, $1a, $29
-	appear SUNBEAM_NPC2
-	spriteface SUNBEAM_NPC2, UP
-	disappear SUNBEAM_NPC4
-	moveperson SUNBEAM_NPC4, $1c, $29
-	appear SUNBEAM_NPC4
-	variablesprite SPRITE_VARIABLE_SUNBEAM, SPRITE_CHRIS
-	playmusic MUSIC_GSC_GAME_CORNER
-	opentext
-	writetext SunbeamFirstContestText1
-	waitbutton
-	closetext
-;	special MapCallbackSprites_LoadUsedSpritesGFX
-	closetext
-	applymovement PLAYER, Movement_SunbeamFirstContest1
-	spriteface SUNBEAM_NPC4, UP
-	applymovement PLAYER, Movement_SunbeamFirstContest1_4
-	
-SunbeamStartFirstContestCont
-	callasm .MetLeilani
-;	disappear SUNBEAM_LEILANI
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_LEILANI
-	special MapCallbackSprites_LoadUsedSpritesGFX
-;	pause 7
-	opentext
-	writetext SunbeamFirstContestText2
-	playmusic MUSIC_NONE
-	
-	spriteface SUNBEAM_CROWD1, RIGHT
-	pause 10
-	spriteface SUNBEAM_NPC3, LEFT
-	pause 10
-	spriteface SUNBEAM_NPC4, RIGHT
-	pause 10
-	spriteface SUNBEAM_NPC2, LEFT
-	pause 10
-	spriteface SUNBEAM_NPC3, UP
-	pause 10
-	spriteface SUNBEAM_CROWD1, UP
-	pause 10
-	spriteface SUNBEAM_NPC4, UP
-	pause 10
-	spriteface SUNBEAM_NPC2, UP
-	pause 10
-	
-	writetext SunbeamFirstContestText3
-	playmusic MUSIC_GSC_GAME_CORNER
-	playsound SFX_DEX_FANFARE_230_PLUS
-	waitsfx
-	playmusic MUSIC_GSC_GAME_CORNER
-	waitbutton
-	closetext
-	pause 7
-	moveperson SUNBEAM_LEILANI, $1b, $27
-	appear SUNBEAM_LEILANI
-	playsound SFX_EXIT_BUILDING
-	applymovement SUNBEAM_LEILANI, Movement_SunbeamFirstContest2
-	spriteface SUNBEAM_LEILANI, DOWN
-	opentext
-	writetext SunbeamFirstContestText4
-	waitbutton
-	closetext
-	applymovement SUNBEAM_LEILANI, Movement_SunbeamFirstContest3
-	pause 14
-	opentext
-	writetext SunbeamFirstContestText5
-	waitbutton
-	closetext
-	pause 7
-	
-	playsound SFX_EXIT_BUILDING
-	special Special_FadeBlackQuickly
-	special Special_ReloadSpritesNoPalettes
-	disappear SUNBEAM_CROWD1
-	disappear SUNBEAM_CROWD2
-	disappear SUNBEAM_NPC4
-	disappear SUNBEAM_NPC2
-	disappear SUNBEAM_NPC3
-	moveperson SUNBEAM_NPC2, $1e, $a
-	moveperson SUNBEAM_NPC3, $6, $10
-	moveperson SUNBEAM_NPC4, $f, $1a
-	appear SUNBEAM_NPC2
-	appear SUNBEAM_NPC3
-	appear SUNBEAM_NPC4	
-	variablesprite SPRITE_VARIABLE_SUNBEAM, SPRITE_GRANNY
-	waitsfx
-	special Special_FadeOutMusic
-	pause 20
-	special RestartMapMusic
-	special Special_FadeInQuickly
-	applymovement SUNBEAM_LEILANI, Movement_SunbeamFirstContest4
-	spriteface SUNBEAM_LEILANI, DOWN
-	opentext
-	writetext SunbeamLeilaniText
-	waitbutton
-	closetext
-	applymovement SUNBEAM_LEILANI, Movement_SunbeamFirstContest5
-	disappear SUNBEAM_LEILANI
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
-	special MapCallbackSprites_LoadUsedSpritesGFX
-	setevent EVENT_SAW_FIRST_BIKINI_CONTEST
-	setflag ENGINE_DAILY_BIKINI_CONTEST
-	domaptrigger SUNBEAM_GYM, $1
-	dotrigger $2
-	end
-	
-.MetLeilani
-	ld hl, wMetGymLeaderFlags
-	set 2, [hl] ; metleilani
-	ret
 	
 SunbeamIslandNPC1:
 	jumptextfaceplayer SunbeamIslandNPC1Text

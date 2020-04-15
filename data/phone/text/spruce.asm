@@ -42,9 +42,8 @@ SprucePhoneComeToIslandText:
 	
 	para "I'm very sorry I"
 	line "couldn't be there"
-	
-	para "in person to pre-"
-	line "sent the #MON"
+	cont "in person to pre-"
+	cont "sent the #MON"
 	cont "to you children."
 	
 	para "My research keeps"
@@ -65,21 +64,20 @@ SprucePhoneComeToIslandText:
 	
 	para "My lab on SUNBEAM"
 	line "ISLAND isn't too"
-	
-	para "far from there by"
-	line "boat."
+	cont "far from there by"
+	cont "boat."
 	
 	para "Why don't you stop"
 	line "by and I'll give"
-	
-	para "you the grand"
-	line "tour."
+	cont "you the grand"
+	cont "tour."
 	
 	para "You can catch a"
 	line "ride to at the"
+	cont "BOAT HOUSE at LAKE"
+	cont "OWNA."
 	
-	para "boat house on LAKE"
-	line "OWNA to the SOUTH"
+	para "It's to the SOUTH"
 	cont "of STARGLOW"
 	cont "VALLEY."
 	
@@ -100,9 +98,10 @@ SprucePhoneComeToIsland2Text:
 	
 	para "You can catch a"
 	line "ride to at the"
+	cont "BOAT HOUSE at LAKE"
+	cont "OWNA."
 	
-	para "boat house on LAKE"
-	line "OWNA to the SOUTH"
+	para "It's to the SOUTH"
 	cont "of STARGLOW"
 	cont "VALLEY."
 	
@@ -132,17 +131,15 @@ SprucePhoneComeToIsland3Text:
 	
 	para "I'd love to help,"
 	line "but my research"
-	
-	para "has me tied up as"
-	line "of now."
+	cont "has me tied up as"
+	cont "of now."
 	
 	para "Ah!"
 	
 	para "Perhaps your"
 	line "MOTHER might"
-	
-	para "know someone who"
-	line "can help you?"
+	cont "know someone who"
+	cont "can help you?"
 	
 	para "If you'll excuse"
 	line "me, I really must"
@@ -158,15 +155,13 @@ SprucePhoneComeToIsland4Text:
 	
 	para "I'd love to help,"
 	line "but my research"
-	
-	para "has me tied up as"
-	line "of now."
+	cont "has me tied up as"
+	cont "of now."
 	
 	para "Perhaps your"
 	line "MOTHER might"
-	
-	para "know someone who"
-	line "can help you?"
+	cont "know someone who"
+	cont "can help you?"
 	
 	para "If you'll excuse"
 	line "me, I really must"

@@ -33,6 +33,9 @@ SunbeamBikiniContest_MapScriptHeader:
 SunbeamBikiniContestTrigger0:
 	playmusic MUSIC_GSC_GAME_CORNER
 	setflag ENGINE_DAILY_BIKINI_CONTEST
+	clearevent EVENT_BEAT_SUNBEAM_CONTEST_BIKINIP
+	clearevent EVENT_BEAT_SUNBEAM_CONTEST_BIKINIR
+	clearevent EVENT_BEAT_SUNBEAM_CONTEST_BIKINIY
 	pause 7
 	opentext
 	writetext SunbeamContestText1
@@ -263,8 +266,6 @@ SunbeamBikiniContestTrigger0:
 	
 .Lilac
 	setevent EVENT_BEAT_SUNBEAM_CONTEST_BIKINIP
-	clearevent EVENT_BEAT_SUNBEAM_CONTEST_BIKINIR
-	clearevent EVENT_BEAT_SUNBEAM_CONTEST_BIKINIY
 	domaptrigger SUNBEAM_SURF_SHOP, $1
 	writetext SunbeamContestText14
 	playmusic MUSIC_GSC_GAME_CORNER
@@ -314,9 +315,7 @@ SunbeamBikiniContestTrigger0:
 	warpfacing RIGHT, SUNBEAM_SURF_SHOP, $5, $5
 	end
 .Rose
-	clearevent EVENT_BEAT_SUNBEAM_CONTEST_BIKINIP
 	setevent EVENT_BEAT_SUNBEAM_CONTEST_BIKINIR
-	clearevent EVENT_BEAT_SUNBEAM_CONTEST_BIKINIY
 	domaptrigger SUNBEAM_SURF_SHOP, $1
 	writetext SunbeamContestText15
 	playmusic MUSIC_GSC_GAME_CORNER
@@ -366,8 +365,6 @@ SunbeamBikiniContestTrigger0:
 	warpfacing RIGHT, SUNBEAM_SURF_SHOP, $5, $5
 	end
 .Hazel
-	clearevent EVENT_BEAT_SUNBEAM_CONTEST_BIKINIP
-	clearevent EVENT_BEAT_SUNBEAM_CONTEST_BIKINIR
 	setevent EVENT_BEAT_SUNBEAM_CONTEST_BIKINIY
 	domaptrigger SUNBEAM_SURF_SHOP, $1
 	writetext SunbeamContestText16

@@ -152,7 +152,7 @@ LakeBoatMan2:
 	special Special_FadeOutMusic
 	clearevent EVENT_ISLAND_STRAND
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
-	domaptrigger SUNBEAM_ISLAND, $3
+	domaptrigger SUNBEAM_ISLAND, $1
 	warpfacing UP, SUNBEAM_ISLAND, $8, $31
 	end
 	
@@ -250,15 +250,22 @@ LakeBoatManText8:
 	line "running to the"
 	cont "island today."
 	
+	para "The SUNBEAM BOAT"
+	line "HOUSE won't give"
+	cont "us the 10-4 to"
+	cont "ship out for"
+	cont "some reason…"
+	
 	para "The best I can"
 	line "do is give you"
-	cont "a ride to the"
-	cont "other side of"
+	cont "a ride across"
 	cont "the lake."
 	
-	para "Maybe you could"
-	line "call someone for"
-	cont "some help…"
+	para "Maybe you should"
+	line "call the person"
+	cont "you were supposed"
+	cont "to meet, and let"
+	cont "them know…"
 	done
 	
 LakeBoatManText9:
@@ -273,22 +280,21 @@ LakeBoatManText10:
 
 	para "Sorry kid."
 	
-	para "The boats aren't"
-	line "running to the"
-	cont "island today."
-	
-	para "Maybe you could"
-	line "call someone for"
-	cont "some help…"
-	
 	para "The best I can"
 	line "do is give you"
-	cont "a ride to the"
-	cont "other side of the"
-	cont "lake."
+	cont "a ride across"
+	cont "the lake."
 	
-	para "Would you like a"
-	line "ride for ¥500?"
+	para "Maybe you should"
+	line "call the person"
+	cont "you were supposed"
+	cont "to meet, and let"
+	cont "them know…"
+	
+	para "Anyway, would"
+	line "you like a ride"
+	cont "across the lake"
+	cont "for ¥500?"
 	done
 	
 LakeBoatManText11:

@@ -64,8 +64,6 @@ SunbeamIslandSurfShopNPC1:
 	if_equal UP, .pleaseleave
 	faceplayer
 	opentext
-	checkevent EVENT_SAW_FIRST_BIKINI_CONTEST
-	iffalse .haventseenfirstcontest
 	checkflag ENGINE_DAILY_BIKINI_CONTEST
 	iftrue .donebikinicontest
 	writetext SunbeamIslandSurfShopNPC1Text1
@@ -86,11 +84,6 @@ SunbeamIslandSurfShopNPC1:
 	end
 .donebikinicontest:
 	writetext SunbeamIslandSurfShopNPC1Text4
-	waitbutton
-	closetext
-	end
-.haventseenfirstcontest:
-	writetext SunbeamIslandSurfShopNPC1Text7
 	waitbutton
 	closetext
 	end
@@ -167,17 +160,6 @@ SunbeamIslandSurfShopNPC1Text6:
 	line "back tomorrow to"
 	cont "judge the next"
 	cont "contest!"	
-	done
-	
-SunbeamIslandSurfShopNPC1Text7:
-	text "Hey dude!"
-	
-	para "Today's contest is"
-	line "already going on."
-	
-	para "If you want to be"
-	line "a judge, come back"
-	cont "tomorrow."
 	done
 	
 SunbeamIslandSurfShopNPC1Text8:

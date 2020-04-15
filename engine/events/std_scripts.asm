@@ -501,7 +501,6 @@ InitializeEventsScript:
 	setflag ENGINE_PUNKS_IN_STARGLOW
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
-	variablesprite SPRITE_VARIABLE_SUNBEAM, SPRITE_GRANNY
 	return
 
 AskNumber1MScript:

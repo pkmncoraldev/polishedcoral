@@ -52,13 +52,13 @@ StarglowTogepiHouseTrigger2:
 StarglowHouse1RocketEvent:
 	spriteface STARGLOWHOUSE1_ROCKET, RIGHT
 	special Special_StopRunning
+	playmusic MUSIC_SNARE_THEME
 	applymovement PLAYER, Movement_StarglowHouse1Player
 	spriteface PLAYER, RIGHT
 	appear STARGLOWHOUSE1_LITTLEGIRL
 	playsound SFX_ENTER_DOOR
 	applymovement STARGLOWHOUSE1_LITTLEGIRL, Movement_StarglowHouse1LittleGirl
 	spriteface STARGLOWHOUSE1_LITTLEGIRL, RIGHT
-	playmusic MUSIC_SNARE_THEME
 	opentext
 	writetext StarglowHouse1MommyText1
 	waitbutton

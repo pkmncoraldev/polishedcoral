@@ -152,7 +152,7 @@ LakeBoatMan1:
 	special Special_FadeOutMusic
 	clearevent EVENT_ISLAND_STRAND
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
-	domaptrigger SUNBEAM_ISLAND, $3
+	domaptrigger SUNBEAM_ISLAND, $1
 	warpfacing UP, SUNBEAM_ISLAND, $8, $31
 	end
 	

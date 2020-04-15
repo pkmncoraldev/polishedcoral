@@ -431,7 +431,7 @@ StarglowSnare3:
 	clearevent EVENT_PUNKS_HAVENT_LEFT_STARGLOW
 	special Special_FadeOutMusic
 	pause 10
-	special PlayMapMusic
+	playmapmusic
 	spriteface STARGLOWRODNEY, RIGHT
 	opentext
 	writetext StarglowRodneyText4

@@ -58,6 +58,7 @@ StarglowHouse1RocketEvent:
 	playsound SFX_ENTER_DOOR
 	applymovement STARGLOWHOUSE1_LITTLEGIRL, Movement_StarglowHouse1LittleGirl
 	spriteface STARGLOWHOUSE1_LITTLEGIRL, RIGHT
+	playmusic MUSIC_SNARE_THEME
 	opentext
 	writetext StarglowHouse1MommyText1
 	waitbutton
@@ -242,6 +243,7 @@ StarglowHouse1Rocket:
 	opentext
 	writetext StarglowHouse1RocketText3
 	buttonsound
+	special SaveMusic
 	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
 	writetext StarglowHouse1RocketText3_2
 	waitbutton
@@ -252,9 +254,8 @@ StarglowHouse1Rocket:
 	loadtrainer GRUNTM, 1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
-	dontrestartmapmusic
 	reloadmapafterbattle
-	playmapmusic
+	special RestoreMusic
 	opentext
 	writetext StarglowHouse1RocketText4
 	waitbutton
@@ -271,6 +272,9 @@ StarglowHouse1Rocket:
 	applymovement STARGLOWHOUSE1_ROCKET, Movement_StarglowHouse1Rocket5
 	disappear STARGLOWHOUSE1_ROCKET
 	playsound SFX_EXIT_BUILDING
+	special Special_FadeOutMusic
+	pause 10
+	playmusic MUSIC_SNARE_INVASION
 	applymovement STARGLOWHOUSE1_MOMMY, Movement_StarglowHouse1Mommy2
 	opentext
 	writetext StarglowHouse1MommyText3

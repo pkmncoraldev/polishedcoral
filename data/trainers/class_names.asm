@@ -4,7 +4,7 @@ TrainerClassNames::
 	db "CUTIE PIE@"    	   ; PLAYER_PIPPI
 	db "LEADER@"           ; STANLEY
 	db "LEADER@"           ; RODNEY
-	db "LEADER@"           ; LEILANI
+	db "LEADER@"           ; WHITNEY
 	db "LEADER@"           ; MORTY
 	db "LEADER@"           ; CHUCK
 	db "LEADER@"           ; JASMINE

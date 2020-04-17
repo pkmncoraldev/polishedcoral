@@ -30,16 +30,16 @@ SunbeamSurfShopTrigger1:
 	opentext 
 	writetext SunbeamIslandSurfShopNPC1Text5
 	waitbutton
-	checkevent EVENT_BEAT_SUNBEAM_CONTEST_BIKINIP
-	iftrue .lilacwon
-	checkevent EVENT_BEAT_SUNBEAM_CONTEST_BIKINIR
-	iftrue .rosewon
-	checkevent EVENT_BEAT_SUNBEAM_CONTEST_BIKINIY
-	iftrue .hazelwon
+	checkevent EVENT_BIKINIP
+	iffalse .lilacwon
+	checkevent EVENT_BIKINIBL
+	iffalse .asterwon
+	checkevent EVENT_BIKINIBR
+	iffalse .hazelwon
 .lilacwon
 	verbosegiveitem RARE_CANDY
 	jump .end
-.rosewon
+.asterwon
 	verbosegiveitem PP_UP
 	jump .end
 .hazelwon

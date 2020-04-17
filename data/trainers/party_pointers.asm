@@ -6,7 +6,7 @@ TrainerGroups: ; 0x39999
 	dba PlayerpGroup
 	dba StanleyGroup
 	dba RodneyGroup
-	dba LeilaniGroup
+	dba WhitneyGroup
 	dba MortyGroup
 	dba ChuckGroup
 	dba JasmineGroup
@@ -69,9 +69,9 @@ TrainerGroups: ; 0x39999
 	dba TrioBroBGroup
 	dba TrioBroYGroup
 	dba DisguiseGroup
+	dba BikiniBRGroup
+	dba BikiniBLGroup
 	dba BikiniPGroup
-	dba BikiniRGroup
-	dba BikiniYGroup
 	dba DelinquentmGroup
 	dba DelinquentfGroup
 	dba SafariGroup

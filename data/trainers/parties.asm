@@ -82,12 +82,12 @@ RodneyGroup:
 ; ================================
 
 
-LeilaniGroup:
+WhitneyGroup:
 ; ================================
 ; ================
 
-	; LEILANI
-	db "LEILANI@"
+	; WHITNEY
+	db "UNUSED@"
 	db TRAINERTYPE_ITEM | TRAINERTYPE_EVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
 	; party
 	db 1, BULBASAUR, NO_ITEM, 48, ABILITY_1 | QUIRKY, FEMALE
@@ -2197,7 +2197,7 @@ DisguiseGroup:
 ; ================================
 
 
-BikiniPGroup:
+BikiniBRGroup:
 ; ================================
 ; ================
 
@@ -2212,7 +2212,7 @@ BikiniPGroup:
 ; ================================
 
 
-BikiniRGroup:
+BikiniBLGroup:
 ; ================================
 ; ================
 
@@ -2227,7 +2227,7 @@ BikiniRGroup:
 ; ================================
 
 
-BikiniYGroup:
+BikiniPGroup:
 ; ================================
 ; ================
 

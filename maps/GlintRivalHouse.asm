@@ -75,8 +75,8 @@ GlintRivalMomText1:
 	para "<RIVAL> has told"
 	line "me all about you."
 	
-	para "I know he can be"
-	line "a bit to deal with,"
+	para "I know he can be a"
+	line "bit to deal with,"
 	
 	para "but don't let it"
 	line "get to you."

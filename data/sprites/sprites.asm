@@ -22,14 +22,15 @@ SpriteHeaders:
 	overworld_sprite ColbySpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite StanleySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite RodneySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite LeilaniSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite MortySpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ChuckSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite JasmineSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite PryceSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ClairSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite Bikini1SpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite Bikini3SpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite Bikini2SpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite Bikini3SpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
+	overworld_sprite TrunksSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite DelinquentMSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite DelinquentFSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite SpruceSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN

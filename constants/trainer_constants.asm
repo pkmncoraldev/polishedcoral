@@ -22,7 +22,7 @@ PLAYER_F EQU __enum__
 
 	trainerclass RODNEY
 
-	trainerclass LEILANI
+	trainerclass WHITNEY
 
 	trainerclass MORTY
 
@@ -343,13 +343,13 @@ PLAYER_F EQU __enum__
 	const MASTER_1
 
 	
+	trainerclass BIKINIBR
+
+	
+	trainerclass BIKINIBL
+
+	
 	trainerclass BIKINIP
-
-	
-	trainerclass BIKINIR
-
-	
-	trainerclass BIKINIY
 
 
 	trainerclass DELINQUENT_M

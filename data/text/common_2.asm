@@ -182,6 +182,11 @@ _BadgeRequiredText::
 	line "is required."
 	prompt
 
+_DebugFieldMoveText::
+	text "SUPER DEBUG POWER"
+	line "ACTIVATE!"
+	prompt
+	
 UnknownText_0x1c05c8::
 	text "Can't use that"
 	line "here."

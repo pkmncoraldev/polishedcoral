@@ -228,7 +228,7 @@ EngineFlags: ; 80462
 
 	engine_flag wMetGymLeaderFlags, 0  ; stanley
 	engine_flag wMetGymLeaderFlags, 1  ; rodney
-	engine_flag wMetGymLeaderFlags, 2  ; leilani
+	engine_flag wMetGymLeaderFlags, 2  ; whitney
 	engine_flag wMetGymLeaderFlags, 3  ; morty
 	engine_flag wMetGymLeaderFlags, 4  ; chuck
 	engine_flag wMetGymLeaderFlags, 5  ; jasmine

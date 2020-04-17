@@ -60,13 +60,9 @@ SunsetCaptainsHouseTrigger0Event:
 	jump .cont
 	
 SunsetCaptain:
-	jump .captaingivesallrides
-;	jump SunsetCaptainFirstRidetoIsland
-	checkevent EVENT_LEFT_ISLAND
-	iftrue .captaingivesallrides
 	checkevent EVENT_CAPTAIN_GIVES_RIDES_TO_ISLAND
 	iftrue SunsetCaptainRidetoIsland
-	checkevent EVENT_CAN_GET_PASS_FROM_MOM
+	checkevent EVENT_CAN_GET_FIRST_RIDE_TO_ISLAND
 	iftrue SunsetCaptainFirstRidetoIsland
 	checkevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	iftrue SunsetCaptain2
@@ -172,15 +168,11 @@ SunsetCaptain2:
 	jumptextfaceplayer SunsetCaptainText3
 	
 SunsetCaptainFirstRidetoIsland:
-	clearevent EVENT_CAN_GET_PASS_FROM_MOM
-	clearevent EVENT_CALLED_SPRUCE_CANT_GET_ON_ISLAND
 	setevent EVENT_PLAYER_HOUSE_MOM_2
 	clearevent EVENT_PLAYER_HOUSE_MOM_1
-	setevent EVENT_CALLED_SPRUCE_CANT_GET_ON_ISLAND
-	setevent EVENT_CAPTAIN_GIVES_RIDES_TO_ISLAND
 	faceplayer
 	opentext
-	checkevent EVENT_TALKED_TO_MOM_ABOUT_PASS_PHONE
+	checkevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
 	iffalse .howdidyouknow
 	writetext SunsetCaptainFirstRidetoIslandText1
 	jump CaptainGoToIsland
@@ -194,6 +186,14 @@ CaptainGoToIsland:
 	closetext
 	end
 .yes
+	setevent EVENT_FIRST_TRIP_TO_ISLAND
+	setevent EVENT_CAPTAIN_GIVES_RIDES_TO_ISLAND
+	clearevent EVENT_CAN_GET_FIRST_RIDE_TO_ISLAND
+	clearevent EVENT_CALLED_SPRUCE_CANT_GET_ON_ISLAND
+	clearevent EVENT_CAN_CALL_SPRUCE_ABOUT_ISLAND
+	clearevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
+	clearevent EVENT_CAN_CALL_MOM_ABOUT_ISLAND
+	clearevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_STRAND
 	clearevent EVENT_ISLAND_STRAND
 	writetext SunsetCaptainRidetoIslandTextYes
 	waitbutton
@@ -245,8 +245,7 @@ SunsetCaptainFirstRidetoIslandText1:
 	done
 	
 SunsetCaptainFirstRidetoIslandText2:
-	text "CAP'N STRAND: Ah,"
-	line "<PLAYER>!"
+	text "Ah, <PLAYER>!"
 	
 	para "What are you doing"
 	line "here?"

@@ -1,7 +1,7 @@
 BossTrainers:
 	db STANLEY
 	db RODNEY
-	db LEILANI
+	db WHITNEY
 	db MORTY
 	db CHUCK
 	db JASMINE

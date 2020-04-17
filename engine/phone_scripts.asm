@@ -5,8 +5,25 @@ UnusedPhoneScript: ; 0xbcea5
 ; Mom
 
 MomPhoneScript: ; 0xbceaa
+	checkevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
+	iftrue .callaboutisland2
+
+	checkevent EVENT_CAN_CALL_MOM_ABOUT_ISLAND
+	iftrue .callaboutisland1
+
+.normal
+	farwritetext MomPhoneNormalText
 	end
 
+.callaboutisland1
+	farwritetext MomPhoneGoToIsland1Text
+	setevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
+	end
+
+.callaboutisland2
+	farwritetext MomPhoneGoToIsland2Text
+	end
+	
 ; Bill
 
 BillPhoneScript1: ; 0xbcfc5
@@ -78,20 +95,29 @@ BillPhoneWholePCFull:
 	waitbutton
 	end
 
-; Elm
+; Spruce
 
-SprucePhoneScript1: ; 0xbd00d
-	end
-
-SprucePhoneScript2: ; 0xbd081
+SprucePhoneScript: ; 0xbd081
 	checkcode VAR_SPECIALPHONECALL
 	if_equal SPECIALCALL_COMETOISLAND, .cometoisland
-	checkevent EVENT_GOT_POKEFLUTE
-	iffalse .cometoisland2
+	if_equal SPECIALCALL_POKERUS, .pokerus
+	
+	checkevent EVENT_FIRST_TRIP_TO_ISLAND
+	iftrue .onisland
+	
+	checkevent EVENT_CALLED_SPRUCE_CANT_GET_ON_ISLAND
+	iftrue .cometoisland4
+	
+	checkevent EVENT_CAN_CALL_SPRUCE_ABOUT_ISLAND
+	iftrue .cometoisland3
+	
+	checkevent EVENT_SPRUCE_CALLED_COME_TO_ISLAND
+	iftrue .cometoisland2
+
+.normal
 	farwritetext SprucePhoneNormalText
 	special ProfOaksPCBoot
 	farwritetext SprucePhoneNormalText2
-	waitbutton
 	end
 .cometoisland
 	farwritetext SprucePhoneComeToIslandText
@@ -100,20 +126,20 @@ SprucePhoneScript2: ; 0xbd081
 	addcellnum PHONE_SPRUCE
 	end
 .cometoisland2
-	checkevent EVENT_CAN_GET_PASS_FROM_MOM
-	iftrue .cometoisland3
 	farwritetext SprucePhoneComeToIsland2Text
-	waitbutton
 	end
 .cometoisland3
-	checkevent EVENT_CALLED_SPRUCE_CANT_GET_ON_ISLAND
-	iftrue .cometoisland4
 	farwritetext SprucePhoneComeToIsland3Text
-	waitbutton
+	setevent EVENT_CALLED_SPRUCE_CANT_GET_ON_ISLAND
 	end
 .cometoisland4
 	farwritetext SprucePhoneComeToIsland4Text
-	waitbutton
+	end
+.onisland
+	farwritetext SprucePhoneOnIslandText
+	end
+	
+.pokerus
 	end
 
 PhoneScript_Random2:

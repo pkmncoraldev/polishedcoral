@@ -15,13 +15,13 @@ GlintGroveEntrance_MapScriptHeader:
 
 	db 8 ; coord events
 	xy_trigger 0, 12, 8, 0, GlintContactsScriptL, 0, 0
-	xy_trigger 0, 12, 10, 0, GlintContactsScriptR, 0, 0
+	xy_trigger 0, 12,  9, 0, GlintContactsScriptR, 0, 0
 	xy_trigger 1, 5, 8, 0, GlintRival_L, 0, 0
-	xy_trigger 1,  5, 10, 0, GlintRival_R, 0, 0
-	xy_trigger 3, 17, 9, 0, GlintContactsScriptSquish, 0, 0
+	xy_trigger 1,  5,  9, 0, GlintRival_R, 0, 0
+	xy_trigger 3, 17,  9, 0, GlintContactsScriptSquish, 0, 0
 	xy_trigger 3, 17, 8, 0, GlintContactsScriptSquish, 0, 0
 	xy_trigger 3, 12, 8, 0, GlintContactsScriptL, 0, 0
-	xy_trigger 3, 12, 10, 0, GlintContactsScriptR, 0, 0
+	xy_trigger 3, 12,  9, 0, GlintContactsScriptR, 0, 0
 
 	db 1 ; bg events
 	signpost 10, 10, SIGNPOST_READ, GlintGroveSign
@@ -239,7 +239,7 @@ GlintRival_L:
 	disappear GLINT_RIVAL
 	special Special_FadeOutMusic
 	pause 15
-	playmapmusic
+	playmusic MUSIC_GLINT_GROVE
 	setevent EVENT_GLINT_RIVAL_WILL_BUMP
 	dotrigger $2
 	end
@@ -342,7 +342,7 @@ GlintRival_R:
 	disappear GLINT_RIVAL
 	special Special_FadeOutMusic
 	pause 15
-	playmapmusic
+	playmusic MUSIC_GLINT_GROVE
 	setevent EVENT_GLINT_RIVAL_WILL_BUMP
 	dotrigger $2
 	end

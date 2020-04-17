@@ -78,7 +78,7 @@ SprucePhoneComeToIslandText:
 	cont "OWNA."
 	
 	para "It's to the SOUTH"
-	cont "of STARGLOW"
+	line "of STARGLOW"
 	cont "VALLEY."
 	
 	para "I look forward to"
@@ -102,7 +102,7 @@ SprucePhoneComeToIsland2Text:
 	cont "OWNA."
 	
 	para "It's to the SOUTH"
-	cont "of STARGLOW"
+	line "of STARGLOW"
 	cont "VALLEY."
 	
 	para "I look forward to"
@@ -168,4 +168,26 @@ SprucePhoneComeToIsland4Text:
 	cont "be going."
 	
 	para "Goodbye, for now."
+	done
+	
+SprucePhoneOnIslandText:
+	text "Hello?"
+	
+	para "Ah, <PLAYER>!"
+	
+	para "You made it onto"
+	line "SUNBEAM ISLAND?"
+	
+	para "That's great to"
+	line "hear!"
+	
+	para "Come see me in my"
+	line "lab."
+	
+	para "It's the big"
+	line "building on the"
+	cont "NORTH side of the"
+	cont "island."
+	
+	para "See you soon!"
 	done

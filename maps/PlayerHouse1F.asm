@@ -53,11 +53,12 @@ SunsetMomStopsYou:
 	special RestartMapMusic
 	setevent EVENT_TALKED_TO_MOM
 	dotrigger $1
+	domaptrigger SUNSET_BAY, $6
 	end
 
 SunsetMomScript:
-	checkevent EVENT_CAN_GET_PASS_FROM_MOM
-	iftrue SunsetMomGetPass
+	checkevent EVENT_CAN_CALL_MOM_ABOUT_ISLAND
+	iftrue SunsetMomRetellsYouAboutStrand
 	checkevent EVENT_MOM_SPEECH_LOOP
 	iftrue SunsetMomSpeech
 	checkevent EVENT_MOM_GOT_POKEGEAR
@@ -68,10 +69,10 @@ SunsetMomScript:
 	iftrue SunsetMomGoToLighthouse
 	jumptextfaceplayer SunsetMomText2
 	
-SunsetMomGetPass:
-	checkevent EVENT_TALKED_TO_MOM_ABOUT_PASS
+SunsetMomRetellsYouAboutStrand:
+	checkevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_STRAND
 	iftrue .islandmomtalkloop
-	checkevent EVENT_TALKED_TO_MOM_ABOUT_PASS_PHONE
+	checkevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
 	iffalse .howdidyouknow
 	faceplayer
 	opentext
@@ -79,7 +80,9 @@ SunsetMomGetPass:
 	waitbutton
 	closetext
 	spriteface PLAYERHOUSE1F_MOM1, LEFT
-	setevent EVENT_TALKED_TO_MOM_ABOUT_PASS
+	setevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_STRAND
+	clearevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
+	clearevent EVENT_CAN_CALL_MOM_ABOUT_ISLAND
 	end
 .howdidyouknow
 	faceplayer
@@ -88,7 +91,9 @@ SunsetMomGetPass:
 	waitbutton
 	closetext
 	spriteface PLAYERHOUSE1F_MOM1, LEFT
-	setevent EVENT_TALKED_TO_MOM_ABOUT_PASS
+	setevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_STRAND
+	clearevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
+	clearevent EVENT_CAN_CALL_MOM_ABOUT_ISLAND
 	end
 .islandmomtalkloop
 	faceplayer

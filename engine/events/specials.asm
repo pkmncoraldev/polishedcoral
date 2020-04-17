@@ -455,3 +455,8 @@ Special_StopRunning:
 	call ReplaceKrisSprite
 	ret
 	
+Special_ForcePlayerStateNormal
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret

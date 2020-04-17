@@ -635,7 +635,7 @@ LighthouseGetStarterScene_part2:
 	closetext
 	special Special_FadeOutMusic
 	pause 5
-	playmapmusic
+	playmusic MUSIC_SUNSET_BAY
 	end	
 	
 LighthouseAbner:

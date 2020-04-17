@@ -845,7 +845,7 @@ _CGB_TrainerCard2: ; 9289
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld a, LEILANI
+	ld a, WHITNEY
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
@@ -880,7 +880,7 @@ _CGB_TrainerCard2: ; 9289
 	ld a, $3
 	call FillBoxCGB
 
-	; Leilani
+	; Whitney
 	hlcoord 11, 10, wAttrMap
 	lb bc, 3, 3
 	ld a, $4

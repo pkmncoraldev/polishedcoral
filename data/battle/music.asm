@@ -69,17 +69,11 @@ PlayBattleMusic: ; 2ee6c
 	ret
 
 .trainers
-	dbw WILL,             MUSIC_EVOLUTION
-	dbw KOGA,             MUSIC_EVOLUTION
-	dbw BRUNO,            MUSIC_EVOLUTION
-	dbw KAREN,            MUSIC_EVOLUTION
-	dbw CHAMPION,         MUSIC_EVOLUTION
 	dbw RIVAL,            MUSIC_RIVAL_BATTLE
 	dbw GRUNTM,           MUSIC_SNARE_BATTLE
 	dbw GRUNTF,           MUSIC_SNARE_BATTLE
 	dbw STANLEY,		  MUSIC_GYM_BATTLE
 	dbw RODNEY,		  	  MUSIC_GYM_BATTLE
-	dbw LEILANI,		  MUSIC_GYM_BATTLE
 	db -1
 
 .legendaries

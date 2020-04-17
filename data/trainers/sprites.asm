@@ -4,12 +4,12 @@ BTTrainerClassSprites:
 	db SPRITE_PIPPI         ; PLAYER_PIPPI
 	db SPRITE_STANLEY       ; STANLEY
 	db SPRITE_RODNEY        ; RODNEY
-	db SPRITE_LEILANI       ; LEILANI
-	db SPRITE_MORTY         ; MORTY
-	db SPRITE_CHUCK         ; CHUCK
-	db SPRITE_JASMINE       ; JASMINE
-	db SPRITE_PRYCE         ; PRYCE
-	db SPRITE_CLAIR         ; CLAIR
+	db SPRITE_CHRIS      	; WHITNEY
+	db SPRITE_CHRIS         ; MORTY
+	db SPRITE_CHRIS         ; CHUCK
+	db SPRITE_CHRIS      	; JASMINE
+	db SPRITE_CHRIS         ; PRYCE
+	db SPRITE_CHRIS         ; CLAIR
 	db SPRITE_CHRIS         ; WILL
 	db SPRITE_CHRIS         ; KOGA
 	db SPRITE_CHRIS         ; BRUNO

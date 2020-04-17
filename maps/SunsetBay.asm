@@ -1,11 +1,12 @@
 SunsetBay_MapScriptHeader:
-	db 6 ; scene scripts
+	db 7 ; scene scripts
 	scene_script SunsetBayTrigger0
 	scene_script SunsetBayTrigger1
 	scene_script SunsetBayTrigger2
 	scene_script SunsetBayTrigger3
 	scene_script SunsetBayTrigger4
 	scene_script SunsetBayTrigger5
+	scene_script SunsetBayTrigger6
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, SunsetBayFlyPoint
@@ -98,6 +99,11 @@ SunsetBayTrigger5:
 	priorityjump JustRodeBoatSunset3
 	end
 	
+SunsetBayTrigger6:
+	special Special_StartLandmarkTimer
+	dotrigger $0
+	end
+	
 SunsetBayFlyPoint:
 	setflag ENGINE_FLYPOINT_SUNSET
 	return
@@ -114,7 +120,6 @@ JustRodeBoatSunset:
 	disappear SUNSET_STRAND
 	waitsfx
 	setevent EVENT_SUNSET_STRAND
-;	variablesprite SPRITE_LEILANI_PSYDUCK, SPRITE_PSYDUCK
 	dotrigger $1
 	end
 	
@@ -125,7 +130,6 @@ JustRodeBoatSunset2:
 	writetext SunsetJustRodeBoatText2
 	waitbutton
 	closetext
-;	applymovement SUNSET_STRAND, Movement_GrampsStart2
 	spriteface SUNSET_STRAND, DOWN
 	pause 5
 	playsound SFX_EXIT_BUILDING
@@ -135,7 +139,6 @@ JustRodeBoatSunset2:
 	waitsfx
 	special Special_FadeInQuickly
 	setevent EVENT_SUNSET_STRAND
-;	variablesprite SPRITE_LEILANI_PSYDUCK, SPRITE_PSYDUCK
 	dotrigger $1
 	end
 	
@@ -151,7 +154,6 @@ JustRodeBoatSunset3:
 	disappear SUNSET_STRAND
 	waitsfx
 	setevent EVENT_SUNSET_STRAND
-;	variablesprite SPRITE_LEILANI_PSYDUCK, SPRITE_PSYDUCK
 	dotrigger $1
 	end
 	

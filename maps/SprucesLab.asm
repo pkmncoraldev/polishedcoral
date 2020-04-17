@@ -81,84 +81,6 @@ SpruceLabSpruce:
 .alreadytalked
 	faceplayer
 	opentext
-	checkitem POKE_FLUTE
-	iftrue .gotflute
-	checkflag ENGINE_THIRDBADGE
-	iftrue .getflutecutscene
-	writetext SpruceLabSpruceText12
-	waitbutton
-	closetext
-	end
-.getflutecutscene
-	writetext SpruceLabSpruceText13
-	waitbutton
-	closetext
-	follow SPRUCELAB_SPRUCE1, PLAYER
-	applymovement SPRUCELAB_SPRUCE1, Movement_SpruceLabSpruce10
-	stopfollow
-	spriteface PLAYER, DOWN
-	spriteface SPRUCELAB_SPRUCE1, UP
-	opentext
-	writetext SpruceLabSpruceText11
-	waitbutton
-	closetext
-	spriteface PLAYER, RIGHT
-	spriteface SPRUCELAB_SPRUCE1, RIGHT
-	pause 20
-	opentext
-	writetext SpruceLabPokeFluteText1
-	playsound SFX_POKEFLUTE
-	waitsfx
-	buttonsound
-	writetext SpruceLabPokeFluteText2
-	appear SPRUCELAB_MUNCHLAX2
-	waitbutton
-	closetext
-	wait 5
-	disappear SPRUCELAB_MUNCHLAX1
-	opentext
-	writetext SpruceLabMunchlaxText2
-	cry SNORLAX
-	waitsfx
-	buttonsound
-	writetext SpruceLabPokeFluteText3
-	waitbutton
-	closetext
-	pause 5
-	spriteface PLAYER, DOWN
-	spriteface SPRUCELAB_SPRUCE1, UP
-	pause 5
-	opentext
-	writetext SpruceLabSpruceText6
-	waitbutton
-	closetext
-	spriteface SPRUCELAB_SPRUCE1, DOWN
-	pause 70
-	spriteface SPRUCELAB_SPRUCE1, UP
-	opentext
-	writetext SpruceLabSpruceText7
-	waitbutton
-	verbosegiveitem POKE_FLUTE
-	closetext
-	follow SPRUCELAB_SPRUCE1, PLAYER
-	applymovement SPRUCELAB_SPRUCE1, Movement_SpruceLabSpruce7
-	spriteface SPRUCELAB_SPRUCE1, DOWN
-	stopfollow
-	pause 5
-	opentext
-	writetext SpruceLabSpruceText8
-	waitbutton
-	special ProfOaksPCBoot
-	writetext SpruceLabSpruceText9
-	waitbutton
-	closetext
-	setevent EVENT_SPRUCELAB_MUNCH1_GONE
-	setevent EVENT_SPRUCELAB_MUNCH2_GONE
-	clearevent EVENT_SPRUCELAB_MUNCH3_GONE
-	setevent EVENT_GOT_POKEFLUTE
-	end
-	
-.gotflute
 	writetext SpruceLabDexCheckText
 	waitbutton
 	special ProfOaksPCBoot
@@ -209,21 +131,7 @@ SpruceLabComeBackInside:
 	applymovement SPRUCELAB_SPRUCE2, Movement_SpruceLabSpruce9
 	spriteface SPRUCELAB_SPRUCE2, UP
 	opentext
-	checkflag ENGINE_THIRDBADGE
-	iftrue .havebadge
-	writetext SpruceLabSpruceText12
-	waitbutton
-	closetext
-	setevent EVENT_SUNBEAM_SPRUCE_GONE
-	setevent EVENT_SPRUCELAB_SPRUCE2_GONE
-	setevent EVENT_SPRUCELAB_MUNCH2_GONE
-	clearevent EVENT_SPRUCELAB_SPRUCE3_GONE
-;	domaptrigger SUNBEAM_ISLAND, $2
-	domaptrigger SUNBEAM_RESERVE, $1
-	dotrigger $1
-	end
-.havebadge
-	writetext SpruceLabSpruceText11
+	writetext SpruceLabSpruceText10
 	waitbutton
 	closetext
 	spriteface PLAYER, RIGHT
@@ -283,8 +191,7 @@ SpruceLabComeBackInside:
 	clearevent EVENT_SPRUCELAB_MUNCH3_GONE
 	clearevent EVENT_SPRUCELAB_SPRUCE1_GONE
 	setevent EVENT_SPRUCELAB_SPRUCE3_GONE
-	setevent EVENT_GOT_POKEFLUTE
-;	domaptrigger SUNBEAM_ISLAND, $2
+	clearevent EVENT_FIRST_TRIP_TO_ISLAND
 	domaptrigger SUNBEAM_RESERVE, $1
 	dotrigger $1
 	end
@@ -447,7 +354,7 @@ SpruceLabSpruceText9:
 	cont "adventure."
 	done
 	
-SpruceLabSpruceText11:
+SpruceLabSpruceText10:
 	text "Here we are."
 	
 	para "The #FLUTE."
@@ -457,44 +364,6 @@ SpruceLabSpruceText11:
 	cont "#MON from even"
 	cont "the deepest"
 	cont "slumber."
-	done
-	
-SpruceLabSpruceText12:
-	text "Hmm…"
-	
-	para "I can't seem to"
-	line "find what I'm look-"
-	cont "ing for."
-	
-	para "Well, there's no"
-	line "need for you to"
-	cont "wait around here"
-	cont "while I look for"
-	cont "it."
-	
-	para "Why don't you go"
-	line "have a look around"
-	cont "the rest of the"
-	cont "island?"
-	
-	para "Just come back in"
-	line "a while and I'll"
-	cont "introduce you to"
-	cont "my friend here."
-	done
-	
-SpruceLabSpruceText13:
-	text "Ah!"
-	
-	para "<PLAYER>!"
-	
-	para "You came at the"
-	line "perfect time!"
-	
-	para "I just found what"
-	line "I was looking for."
-	
-	para "Follow me."
 	done
 	
 SpruceLabDexCheckText:

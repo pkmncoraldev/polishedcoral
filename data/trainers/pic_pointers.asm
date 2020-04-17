@@ -4,7 +4,7 @@ TrainerPicPointers::
 	dba PlayerpPic
 	dba StanleyPic
 	dba RodneyPic
-	dba LeilaniPic
+	dba WhitneyPic
 	dba MortyPic
 	dba ChuckPic
 	dba JasminePic
@@ -67,9 +67,9 @@ TrainerPicPointers::
 	dba TrioBroBPic
 	dba TrioBroYPic
 	dba DisguiseManPic
+	dba BikiniBRPic
+	dba BikiniBLPic
 	dba BikiniPPic
-	dba BikiniRPic
-	dba BikiniYPic
 	dba DelinquentmPic
 	dba DelinquentfPic
 	dba SafariPic

@@ -419,7 +419,7 @@ TrainerCard_Page2_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	bit 3, a
 	jp nz, .leader4
 	bit 2, a
-	jp nz, .leilani
+	jp nz, .leader3
 	bit 1, a
 	jp nz, .rodney
 	bit 0, a
@@ -466,12 +466,12 @@ TrainerCard_Page2_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	ld de, .Leader42Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	
-.leilani
+.leader3
 	hlcoord $b, $b
-	ld de, .Leilani1Tilemap
+	ld de, .Leader31Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	hlcoord $b, $c
-	ld de, .Leilani2Tilemap
+	ld de, .Leader32Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	
 .rodney
@@ -521,10 +521,10 @@ TrainerCard_Page2_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 .Rodney2Tilemap:
 	db $3a, $3b, $3c, $ff
 	
-.Leilani1Tilemap:
+.Leader31Tilemap:
 	db $3e, $3f, $40, $ff
 	
-.Leilani2Tilemap:
+.Leader32Tilemap:
 	db $41, $42, $43, $ff
 	
 .Leader41Tilemap:

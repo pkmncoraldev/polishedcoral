@@ -1,11 +1,11 @@
 LakeOnwa_MapScriptHeader:
-	db 4 ; scene scripts
+	db 3 ; scene scripts
 	scene_script LakeOnwaTrigger0
 	scene_script LakeOnwaTrigger1
 	scene_script LakeOnwaTrigger2
-	scene_script LakeOnwaTrigger3
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, LakeOnwaCallback
 
 	db 6 ; warp events
 	warp_def 29, 43, 1, LAKE_ONWA_BOAT_HOUSE_RIGHT
@@ -25,11 +25,11 @@ LakeOnwa_MapScriptHeader:
 	signpost 17, 18, SIGNPOST_READ, LakeCenterSign
 	signpost 8, 30, SIGNPOST_READ, MtOnwaSign
 
-	db 18 ; object events
-	person_event SPRITE_FAT_GUY, 30, 39, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LakeBoatManDummy, EVENT_BOAT_BOYS_BEGONE
-	person_event SPRITE_FAT_GUY, 24, 24, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LakeBoatManDummy, EVENT_BOAT_BOYS_BEGONE
-	person_event SPRITE_ROWBOAT, 32, 40, SPRITEMOVEDATA_BOAT_BOB, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
-	person_event SPRITE_ROWBOAT, 26, 24, SPRITEMOVEDATA_BOAT_BOB, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
+	db 16 ; object events
+	person_event SPRITE_FAT_GUY, 30, 39, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_BOAT_BOYS_BEGONE
+	person_event SPRITE_FAT_GUY, 24, 24, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_BOAT_BOYS_BEGONE
+	person_event SPRITE_ROWBOAT, 32, 40, SPRITEMOVEDATA_BOAT_BOB, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LakeBoat, EVENT_LAKE_BOAT_RIGHT_GONE
+	person_event SPRITE_ROWBOAT, 26, 24, SPRITEMOVEDATA_BOAT_BOB, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LakeBoat, EVENT_LAKE_BOAT_LEFT_GONE
 	person_event SPRITE_COOL_DUDE, 32, 46, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LakeNpc1, -1
 	person_event SPRITE_FISHER, 26, 10, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LakeNpc2, -1
 	person_event SPRITE_CUTE_GIRL, 12, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LakeNpc3, -1
@@ -38,8 +38,6 @@ LakeOnwa_MapScriptHeader:
 	tmhmball_event  26, 6, TM_ICE_PUNCH, 1, EVENT_LAKE_ONWA_POKE_BALL2
 	person_event SPRITE_HIKER, 8, 60, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerLake, -1
 	person_event SPRITE_WEIRD_TREE, 22, 56, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeSudowoodo, EVENT_FOUGHT_SUDOWOODO
-	person_event SPRITE_ELDER, 30, 39, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LakeBoatManDummy, EVENT_LAKE_STRAND
-	person_event SPRITE_ELDER, 24, 24, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LakeBoatManDummy, EVENT_LAKE_STRAND
 	smashrock_event 22, 10
 	smashrock_event 20, 13
 	smashrock_event 26,  9
@@ -61,8 +59,6 @@ LakeOnwa_MapScriptHeader:
 	const LAKEPOKEBALL2
 	const LAKETRAINER
 	const LAKESUDOWOODO
-	const LAKESTRAND
-	const LAKESTRAND2
 	const LAKEROCK1
 	const LAKEROCK2
 	const LAKEROCK3
@@ -79,9 +75,14 @@ LakeOnwaTrigger2:
 	priorityjump JustRodeBoatL
 	end
 	
-LakeOnwaTrigger3:
-	priorityjump JustRodeBoatL2
-	end
+LakeOnwaCallback:
+	checkevent EVENT_BOAT_BOYS_BEGONE
+	iftrue .skip
+	changeblock $26, $20, $b1
+	changeblock $18, $1a, $b1
+.skip
+	return
+	
 	
 JustRodeBoatR:
 	applymovement PLAYER, Movement_PlayerStepOffBoat
@@ -96,6 +97,8 @@ JustRodeBoatR:
 	disappear LAKEBOATMANOUTSIDEL
 	waitsfx
 	setevent EVENT_BOAT_BOYS_BEGONE
+	changeblock $26, $20, $43
+	changeblock $18, $1a, $43
 	dotrigger $0
 	end
 	
@@ -112,30 +115,8 @@ JustRodeBoatL:
 	disappear LAKEBOATMANOUTSIDEL
 	waitsfx
 	setevent EVENT_BOAT_BOYS_BEGONE
-	dotrigger $0
-	end
-	
-JustRodeBoatL2:
-	applymovement PLAYER, Movement_PlayerStepOffBoat
-	opentext
-	checkevent EVENT_LEFT_ISLAND
-	iftrue .notfirsttime
-	writetext JustRodeBoatTextLakeStrand
-	jump .contin
-.notfirsttime
-	writetext JustRodeBoatTextLakeStrand2
-.contin
-	waitbutton
-	closetext
-	playsound SFX_EXIT_BUILDING
-	special Special_FadeBlackQuickly
-	special Special_ReloadSpritesNoPalettes
-	disappear LAKESTRAND
-	disappear LAKESTRAND2
-	waitsfx
-	special Special_FadeInQuickly
-	setevent EVENT_LAKE_STRAND
-	setevent EVENT_LEFT_ISLAND
+	changeblock $26, $20, $43
+	changeblock $18, $1a, $43
 	dotrigger $0
 	end
 	
@@ -189,10 +170,6 @@ LakeCenterSign:
 	
 LakeBoat:
 	jumptext LakeBoatText
-	
-LakeBoatManDummy:
-	setevent EVENT_LAKE_STRAND
-	end
 
 TrainerLake:
 	generictrainer HIKER, DARRYL, EVENT_BEAT_LAKE_TRAINER, .SeenText, .BeatenText
@@ -461,42 +438,6 @@ LakeSudowoodoTextSudowoodoGone:
 	line "longer blocking"
 	cont "the path!"
 	done
-
-JustRodeBoatTextLakeStrand:
-	text "Here we are,"
-	line "LAKE ONWA."
-	
-	para "From now on, the"
-	line "boats should be"
-	cont "running to the"
-	cont "island again."
-	
-	para "If you need to get"
-	line "back, you can take"
-	cont "the boat from the"
-	cont "here."
-	
-	para "Of course, I could"
-	line "always give you a"
-	cont "ride for free if"
-	cont "you need it."
-	
-	para "Take care."
-	done
-	
-JustRodeBoatTextLakeStrand2:
-	text "Here we are,"
-	line "LAKE ONWA."
-	
-	para "Take care."
-	done
-	
-Movement_LakeSnareWalk:
-	step_right
-	step_right
-	step_right
-	step_right
-	step_end
 	
 Movement_PlayerStepOffBoat:
 	step_up

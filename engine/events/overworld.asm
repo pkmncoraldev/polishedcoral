@@ -151,7 +151,6 @@ CheckPartyMove: ; c742
 
 CheckForSurfingPikachu:
 	ld d, SURF
-;	call CheckPartyMove
 	call CheckPartyCanLearnMove
 	jr c, .no
 	ld a, [wCurPartyMon]
@@ -551,6 +550,12 @@ AutoSurfScript:
 	applymovement PLAYER, wMovementBuffer ; PLAYER, MovementBuffer
 	end
 
+DebugSurfScript:
+	opentext
+	writetext DebugFieldMoveText
+	closetext
+	jump AutoSurfScript
+	
 UsedSurfText: ; c9a9
 	text_jump _UsedSurfText
 	db "@"
@@ -567,6 +572,10 @@ AlreadySurfingText: ; c9b3
 	text_jump _AlreadySurfingText
 	db "@"
 
+DebugFieldMoveText:
+	text_jump _DebugFieldMoveText
+	db "@"
+	
 GetSurfType: ; c9b8
 ; Surfing on Pikachu uses an alternate sprite.
 ; This is done by using a separate movement type.
@@ -634,20 +643,21 @@ TrySurfOW:: ; c9e7
 
 ; Check tile permissions.
 	call CheckDirection
-	jr c, .quit
-
-;	ld de, ENGINE_FOURTHBADGE
-;	call CheckEngineFlag
-;	jr c, .quit
+	jp c, .quit
 
 	ld a, [wMapMusic]
 	cp MUSIC_LAVA
 	jr z, .lava
 
+	ld de, ENGINE_FOURTHBADGE
+	call CheckEngineFlag
+	jr c, .debugsurf ;debug
+;	jr c, .quit
+
 	ld d, SURF
-;	call CheckPartyMove
 	call CheckPartyCanLearnMove
-	jr c, .quit
+	jr c, .debugsurf ;debug
+;	jr c, .quit
 
 	ld hl, wOWState
 	bit OWSTATE_BIKING_FORCED, [hl]
@@ -670,30 +680,31 @@ TrySurfOW:: ; c9e7
 
 .lava
 	ld e, 0
-    xor a
-    ld [wCurPartyMon], a
+	xor a
+	ld [wCurPartyMon], a
 .loop
-    ld c, e
-    ld b, 0
-    ld hl, wPartySpecies
-    add hl, bc
-    ld a, [hl]
-    and a
-    jr z, .quit
-    cp a, -1
-    jr z, .quit
-;	CheckFireType:
+	ld c, e
+	ld b, 0
+	ld hl, wPartySpecies
+	add hl, bc
+	ld a, [hl]
+	and a
+;	jr z, .quit
+	jr z, .debugsurf ;debug
+	cp a, -1
+;	jr z, .quit
+	jr z, .debugsurf ;debug
 	dec a
-    ld hl, BaseData + 7
-    ld bc, BaseData1 - BaseData0
-    call AddNTimes
-    ld a, BANK(BaseData)
-    call GetFarHalfword
-    ld a, FIRE
-    cp h
-    jr z, .cont
-    cp l
-    jr z, .cont
+	ld hl, BaseData + 7
+	ld bc, BaseData1 - BaseData0
+	call AddNTimes
+	ld a, BANK(BaseData)
+	call GetFarHalfword
+	ld a, FIRE
+	cp h
+	jr z, .cont
+	cp l
+	jr z, .cont
 	
 .next
 	inc e
@@ -724,6 +735,16 @@ TrySurfOW:: ; c9e7
 	
 .quit
 	xor a
+	ret
+	
+.debugsurf
+	ld a, PLAYER_SURF
+	ld [wBuffer2], a
+	ld a, BANK(DebugSurfScript)
+	ld hl, DebugSurfScript
+	call CallScript
+
+	scf
 	ret
 
 .cantsurflavayet
@@ -993,7 +1014,6 @@ Script_AutoWaterfall:
 
 TryWaterfallOW:: ; cb56
 	ld d, WATERFALL
-;	call CheckPartyMove
 	call CheckPartyCanLearnMove
 	jr c, .failed
 	ld de, ENGINE_EIGHTHBADGE
@@ -1347,13 +1367,12 @@ UnknownText_0xcd73: ; 0xcd73
 
 TryStrengthOW: ; cd78
 	ld d, STRENGTH
-;	call CheckPartyMove
 	call CheckPartyCanLearnMove
 	jr c, .nope
 
-	ld de, ENGINE_THIRDBADGE
-	call CheckEngineFlag
-	jr c, .nope
+;	ld de, ENGINE_THIRDBADGE
+;	call CheckEngineFlag
+;	jr c, .nope
 
 	ld hl, wOWState
 	bit OWSTATE_STRENGTH, [hl]
@@ -1503,7 +1522,6 @@ Script_AutoWhirlpool:
 
 TryWhirlpoolOW:: ; ce3e
 	ld d, WHIRLPOOL
-;	call CheckPartyMove
 	call CheckPartyCanLearnMove
 	jr c, .failed
 	ld de, ENGINE_SEVENTHBADGE
@@ -1610,7 +1628,6 @@ AutoHeadbuttScript:
 
 TryHeadbuttOW:: ; cec9
 	ld d, HEADBUTT
-;	call CheckPartyMove
 	call CheckPartyCanLearnMove
 	jr c, .no
 
@@ -1767,23 +1784,25 @@ AutoRockSmashScript:
 	earthquake 84
 	applymovement2 MovementData_0xcf55
 	disappear -2
-
-	callasm RockMonEncounter
-	copybytetovar wTempWildMonSpecies
-	iffalse .no_battle
-	randomwildmon
-	startbattle
-	reloadmapafterbattle
 	end
 
-.no_battle
-	callasm RockItemEncounter
-	iffalse .no_item
-	opentext
-	verbosegiveitem ITEM_FROM_MEM
-	closetext
-.no_item
-	end
+;possibly undummy later
+;	callasm RockMonEncounter
+;	copybytetovar wTempWildMonSpecies
+;	iffalse .no_battle
+;	randomwildmon
+;	startbattle
+;	reloadmapafterbattle
+;	end
+
+;.no_battle
+;	callasm RockItemEncounter
+;	iffalse .no_item
+;	opentext
+;	verbosegiveitem ITEM_FROM_MEM
+;	closetext
+;.no_item
+;	end
 
 MovementData_0xcf55: ; 0xcf55
 	rock_smash 10
@@ -1795,8 +1814,8 @@ UnknownText_0xcf58: ; 0xcf58
 
 AskRockSmashScript: ; 0xcf5d
 	callasm HasRockSmash
-	ifequal 1, .no
-
+	ifequal 1, .debugrocksmash
+;	ifequal 1, .no
 	playsound SFX_READ_TEXT_2
 	checkflag ENGINE_ROCK_SMASH_ACTIVE
 	iftrue AutoRockSmashScript
@@ -1807,6 +1826,13 @@ AskRockSmashScript: ; 0xcf5d
 	endtext
 .no
 	end
+	
+.debugrocksmash
+	playsound SFX_READ_TEXT_2
+	opentext
+	writetext DebugFieldMoveText
+	closetext
+	jump AutoRockSmashScript
 
 UnknownText_0xcf72: ; 0xcf72
 	; Maybe a #MON can break this.
@@ -1820,11 +1846,19 @@ UnknownText_0xcf77: ; 0xcf77
 
 HasRockSmash: ; cf7c
 	ld d, ROCK_SMASH
-;	call CheckPartyMove
 	call CheckPartyCanLearnMove
-	ld a, 1
-	jr c, .done
+	jr c, .no
+	
+	ld de, ENGINE_FIRSTBADGE
+	call CheckEngineFlag
+	jr c, .no
+	
+.yes
 	xor a
+	jr .done
+
+.no
+	ld a, 1
 .done
 	ld [wScriptVar], a
 	ret
@@ -2208,7 +2242,6 @@ GotOffTheBikeText: ; 0xd181
 
 HasCutAvailable:: ; d186
 	ld d, CUT
-;	call CheckPartyMove
 	call CheckPartyCanLearnMove
 	jr c, .no
 
@@ -2228,7 +2261,8 @@ HasCutAvailable:: ; d186
 
 AskCutTreeScript: ; 0xd1a9
 	callasm HasCutAvailable
-	ifequal 1, .no
+	ifequal 1, .debugcut
+;	ifequal 1, .no
 	playsound SFX_READ_TEXT_2
 	checkflag ENGINE_AUTOCUT_ACTIVE
 	iftrue AutoCutTreeScript
@@ -2241,6 +2275,12 @@ AskCutTreeScript: ; 0xd1a9
 .no ; 0xd1cd
 	end
 
+.debugcut
+	playsound SFX_READ_TEXT_2
+	opentext
+	writetext DebugFieldMoveText
+	jump AutoCutTreeScript
+	
 UnknownText_0xd1c8: ; 0xd1c8
 	; This tree can be CUT! Want to use CUT?
 	text_jump UnknownText_0x1c09dd

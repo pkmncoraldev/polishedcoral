@@ -184,5 +184,6 @@ SpecialsPointers::
 	add_special Special_NewFadeIn
 	add_special Special_StopLandmarkTimer
 	add_special Special_StartLandmarkTimer
+	add_special Special_ForcePlayerStateNormal
 
 	add_special SpecialNone

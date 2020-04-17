@@ -804,7 +804,7 @@ SECTION "Trainer Pics 1", ROMX
 
 StanleyPic:               INCBIN "gfx/trainers/stanley.2bpp.lz"
 RodneyPic:                INCBIN "gfx/trainers/rodney.2bpp.lz"
-LeilaniPic:               INCBIN "gfx/trainers/leilani.2bpp.lz"
+WhitneyPic:               INCBIN "gfx/trainers/whitney.2bpp.lz"
 MortyPic:                 INCBIN "gfx/trainers/morty.2bpp.lz"
 ChuckPic:                 INCBIN "gfx/trainers/chuck.2bpp.lz"
 JasminePic:               INCBIN "gfx/trainers/jasmine.2bpp.lz"
@@ -880,9 +880,9 @@ TrioBroRPic:
 TrioBroBPic:
 TrioBroYPic:			  INCBIN "gfx/trainers/triobro.2bpp.lz"
 DisguiseManPic:			  INCBIN "gfx/trainers/disguiseman.2bpp.lz"
+BikiniBRPic:			  INCBIN "gfx/trainers/bikinibr.2bpp.lz"
+BikiniBLPic:			  INCBIN "gfx/trainers/bikinibl.2bpp.lz"
 BikiniPPic:				  INCBIN "gfx/trainers/bikinip.2bpp.lz"
-BikiniRPic:				  INCBIN "gfx/trainers/bikinir.2bpp.lz"
-BikiniYPic:				  INCBIN "gfx/trainers/bikiniy.2bpp.lz"
 
 
 SECTION "Trainer Pics 5", ROMX

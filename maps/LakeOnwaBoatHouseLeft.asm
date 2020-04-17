@@ -23,37 +23,14 @@ LakeBoat2Trashcan:
 	
 LakeBoatMan2:
 	opentext
-	checkevent EVENT_LEFT_ISLAND
-	iftrue .normal2
-	checkevent EVENT_CAPTAIN_GIVES_RIDES_TO_ISLAND
+	checkevent EVENT_SAVED_SUNBEAM
 	iftrue .normal
-	checkevent EVENT_CALLED_SPRUCE_CANT_GET_ON_ISLAND
-	iftrue .talkedbeforeandcalled
-	checkevent EVENT_TALKED_TO_MOM_ABOUT_PASS
-	iftrue .talkedbeforeandcalled
-	checkevent EVENT_TALKED_TO_BOAT_MAN_CANT_GET_ON_ISLAND
-	iftrue .talkedbefore
-	writetext LakeBoatManText8
-	setevent EVENT_CAN_GET_PASS_FROM_MOM
-	setevent EVENT_TALKED_TO_BOAT_MAN_CANT_GET_ON_ISLAND
-	waitbutton
-	closetext
-	end
-.talkedbefore
-	writetext LakeBoatManText10
-	jump .cont
-.talkedbeforeandcalled
 	writetext LakeBoatManText15
-	jump .cont
-.normal
-	opentext
-	writetext LakeBoatManText1
-.cont
 	special PlaceMoneyTopRight
 	yesorno
 	iffalse .end
 	checkmoney $0, 500
-	if_equal $2, .nomoney
+	if_equal $2, .noride
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
@@ -71,12 +48,6 @@ LakeBoatMan2:
 	domaptrigger LAKE_ONWA, $1
 	warpfacing UP, LAKE_ONWA, $27, $20
 	end
-.nomoney
-	checkevent EVENT_TAKEN_LAKE_BOAT_ONCE
-	iftrue .noride
-	writetext LakeBoatManText6
-	waitbutton
-	jump .doit
 .noride
 	writetext LakeBoatManText7
 	waitbutton
@@ -86,7 +57,7 @@ LakeBoatMan2:
 	closetext
 	end
 	
-.normal2
+.normal
 	opentext
 	writetext LakeBoatManText11
 	special PlaceMoneyTopRight
@@ -111,7 +82,7 @@ LakeBoatMan2:
 	yesorno
 	iffalse .return
 	checkmoney $0, 500
-	if_equal $2, .nomoney
+	if_equal $2, .noride
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
@@ -130,7 +101,7 @@ LakeBoatMan2:
 	yesorno
 	iffalse .return
 	checkmoney $0, 500
-	if_equal $2, .nomoney
+	if_equal $2, .noride
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
@@ -141,7 +112,7 @@ LakeBoatMan2:
 	yesorno
 	iffalse .return
 	checkmoney $0, 500
-	if_equal $2, .nomoney
+	if_equal $2, .noride
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight

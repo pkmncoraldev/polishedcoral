@@ -4,8 +4,9 @@ SunbeamIsland_MapScriptHeader:
 	scene_script SunbeamIslandTrigger1
 	scene_script SunbeamIslandTrigger2
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, SunbeamIslandFlyPoint
+	callback MAPCALLBACK_TILES, SunbeamIslandCallback
 
 	db 14 ; warp events
 	warp_def 29, 27, 2, SUNBEAM_MART
@@ -16,12 +17,12 @@ SunbeamIsland_MapScriptHeader:
 	warp_def 15, 16, 1, SPRUCES_LAB
 	warp_def 25, 11, 1, SUNBEAM_OLD_COUPLES_HOUSE
 	warp_def 25, 17, 1, SUNBEAM_BLUE_WATER_HOUSE
-	warp_def 39, 17, 1, SUNBEAM_SURF_SHOP
-	warp_def -1, -1, 3, SPRUCES_LAB
-	warp_def -1, -1, 3, SPRUCES_LAB
+	warp_def 41, 17, 1, SUNBEAM_SURF_SHOP
+	warp_def 11, 16, 3, SPRUCES_LAB
+	warp_def 11, 17, 3, SPRUCES_LAB
 	warp_def 16, 41, 2, SUNBEAM_GYM
 	warp_def 47,  7, 1, SUNBEAM_BOAT_HOUSE
-	warp_def 40, 17, 1, SUNBEAM_SURF_SHOP
+	warp_def 42, 17, 1, SUNBEAM_SURF_SHOP
 
 	db 0 ; coord events
 
@@ -29,23 +30,26 @@ SunbeamIsland_MapScriptHeader:
 	signpost 29, 21, SIGNPOST_READ, SunBeamSign
 	signpost 16, 18, SIGNPOST_READ, SunBeamLabSign
 	signpost 19, 29, SIGNPOST_READ, SunBeamGymSign
-	signpost 40, 16, SIGNPOST_READ, SunBeamSurfSign
-	signpost 39, 18, SIGNPOST_READ, SunBeamSurfboards
-	signpost 39, 19, SIGNPOST_READ, SunBeamSurfboards
+	signpost 42, 16, SIGNPOST_READ, SunBeamSurfSign
+	signpost 41, 18, SIGNPOST_READ, SunBeamSurfboards
+	signpost 41, 19, SIGNPOST_READ, SunBeamSurfboards
 	signpost 33, 18, SIGNPOST_READ, SunBeamPokeSign
 	signpost 29, 28, SIGNPOST_READ, SunBeamMartSign
 	signpost 45, 12, SIGNPOST_READ, SunBeamBoatSign
 
-	db 14 ; object events
-	person_event SPRITE_MATRON, 20, 24, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC1, -1
-	person_event SPRITE_POKEFAN_M, 10, 28, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC2, -1
+	db 17 ; object events
+	person_event SPRITE_MATRON, 26, 15, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC1, -1
+	person_event SPRITE_FAT_GUY, 10, 28, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC2, -1
 	person_event SPRITE_CUTE_GIRL, 16,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC3, -1
-	person_event SPRITE_GRANNY, 26, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC4, -1
-	person_event SPRITE_CUTE_GIRL, 42, 14, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC5, -1
+	person_event SPRITE_GRANNY, 20, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC4, -1
+	person_event SPRITE_CUTE_GIRL, 43, 19, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC5, -1
 	person_event SPRITE_SUPER_NERD, 43,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC6, -1
 	person_event SPRITE_GENERAL_VARIABLE_1, 48,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ISLAND_STRAND
-	person_event SPRITE_COOL_DUDE, 41, 25, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_BATTLE_GIRL, 42, 26, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_TRUNKS, 41, 29, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SUNBEAM_CROWD_GONE
+	person_event SPRITE_COOL_DUDE, 41, 25, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SUNBEAM_CROWD_GONE
+	person_event SPRITE_BIKINI_3, 41, 28, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SUNBEAM_CROWD_GONE
+	person_event SPRITE_POKEFAN_M, 42, 29, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SUNBEAM_CROWD_GONE
+	person_event SPRITE_BATTLE_GIRL, 42, 26, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SUNBEAM_CROWD_GONE
 	person_event SPRITE_ROWBOAT, 49,  8, SPRITEMOVEDATA_BOAT_BOB, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandBoat, -1
 	person_event SPRITE_DONPHAN,  6, 19, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveDonphan, -1
 	person_event SPRITE_SLOWPOKETAIL, 14,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveSlowpoke, -1
@@ -63,6 +67,9 @@ SunbeamIsland_MapScriptHeader:
 	const SUNBEAM_BOAT_MAN
 	const SUNBEAM_CROWD1
 	const SUNBEAM_CROWD2
+	const SUNBEAM_CROWD3
+	const SUNBEAM_CROWD4
+	const SUNBEAM_CROWD5
 	const SUNBEAM_ROWBOAT
 	const SUNBEAM_DONPHAN
 	const SUNBEAM_SLOWPOKE
@@ -70,11 +77,11 @@ SunbeamIsland_MapScriptHeader:
 	const SUNBEAM_ELECTABUZZ
 	
 SunbeamIslandTrigger0:
-	priorityjump JustRodeBoatSunbeam
+	priorityjump JustRodeBoatSunbeamStrand
 	end
 	
 SunbeamIslandTrigger1:
-	priorityjump JustRodeBoatSunbeam2
+	priorityjump JustRodeBoatSunbeamNormal
 	end
 	
 SunbeamIslandTrigger2:
@@ -84,7 +91,16 @@ SunbeamIslandFlyPoint:
 	setflag ENGINE_FLYPOINT_SUNBEAM
 	return
 	
-JustRodeBoatSunbeam:
+SunbeamIslandCallback:
+	checkflag ENGINE_DAILY_BIKINI_CONTEST
+	iftrue .donebikinicontest
+	clearevent EVENT_SUNBEAM_CROWD_GONE
+	return
+.donebikinicontest
+	setevent EVENT_SUNBEAM_CROWD_GONE
+	return
+	
+JustRodeBoatSunbeamStrand:
 	special Special_StopRunning
 	special Special_StopLandmarkTimer
 	applymovement PLAYER, Movement_SunbeamPlayerStepOffBoat
@@ -93,16 +109,22 @@ JustRodeBoatSunbeam:
 	writetext SunbeamJustRodeBoatText
 	waitbutton
 	closetext
-	applymovement SUNBEAM_BOAT_MAN, Movement_SunbeamPlayerStepOffBoat
+	spriteface SUNBEAM_BOAT_MAN, DOWN
 	playsound SFX_EXIT_BUILDING
+	special Special_FadeBlackQuickly
+	special Special_ReloadSpritesNoPalettes
 	disappear SUNBEAM_BOAT_MAN
+	waitsfx
+	special Special_FadeInQuickly
 	special Special_StartLandmarkTimer
 	waitsfx
 	setevent EVENT_ISLAND_STRAND
 	dotrigger $2
 	end
 	
-JustRodeBoatSunbeam2:
+JustRodeBoatSunbeamNormal:
+	special Special_StopRunning
+	special Special_StopLandmarkTimer
 	applymovement PLAYER, Movement_SunbeamPlayerStepOffBoat
 	spriteface PLAYER, LEFT
 	opentext
@@ -219,11 +241,7 @@ SunBeamLabSignText:
 	done
 
 SunBeamGymSignText:
-	text "SUNBEAM ISLAND"
-	line "#MON GYM"
-	cont "LEADER: LEILANI"
-
-	para "The brutal beauty."
+	text "UNFINISHED"
 	done
 
 SunbeamDontLeaveText1:
@@ -251,77 +269,8 @@ SunBeamSurfboardsText:
 	cont "wall of the shop."
 	done
 	
-SunbeamFirstContestText1:
-	text "And now, the mom-"
-	line "ent you've all been"
-	cont "waiting for…"
-	done
-	
-SunbeamFirstContestText2:
-	text "And the winner of"
-	line "the BEACH BATTLE"
-	cont "BEAUTY CONTEST is…"	
-	done
-	
-SunbeamFirstContestText3:
-	text "LEILANI!"
-	done
-	
-SunbeamFirstContestText4:
-	text "Thank you so much,"
-	line "everyone!"
-	done
-	
-SunbeamFirstContestText5:
-	text "Well folks, that's"
-	line "all for today!"
-	
-	para "Join us next time"
-	line "for another fierce"
-	cont "competition!"
-	done
-	
-SunbeamLeilaniText:
-	text "Thanks for coming"
-	line "out to the show!"
-	
-	para "I'm LEILANI!"
-	
-	para "I'm the GYM LEADER"
-	line "of SUNBEAM ISLAND,"
-	
-	para "and I guess I'm"
-	line "the latest BEACH"
-	cont "BATTLE BEAUTY!"
-	
-	para "And you are?"
-	
-	para "<PLAYER>!"
-	
-	para "Well, you should"
-	line "come by sometime"
-	cont "and have a battle."
-	
-	para "The GYM on the"
-	line "island is in the"
-	cont "jungle, so you"
-	cont "can't miss it!"
-	
-	para "I'll see you"
-	line "around."
-	done
-	
 SunbeamIslandNPC1Text:
-	text "SUNBEAM ISLAND'S"
-	line "GYM isn't in a"
-	cont "building like most"
-	cont "GYMS."
-	
-	para "Instead, TRAINERS"
-	line "have to journey"
-	cont "through the jungle"
-	cont "to reach the GYM"
-	cont "LEADER."
+	text "UNFINISHED"
 	done
 	
 SunbeamIslandNPC2Text:
@@ -357,9 +306,8 @@ SunbeamIslandNPC4Text:
 	para "I know it might be"
 	line "hard to believe,"
 	
-	para "but this island"
-	line "used to be very"
-	cont "quiet."
+	para "but it used to be"
+	line "very around here."
 	done
 	
 SunbeamIslandNPC5Text:

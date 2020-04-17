@@ -192,7 +192,7 @@ NUM_GOT_HM_FLAGS EQU const_value
 	const_def
 	const MET_STANLEY
 	const MET_RODNEY
-	const MET_LEILANI
+	const MET_WHITNEY
 	const MORTY_JOURNAL ; Ecruteak Pokémon Center
 	const CHUCK_JOURNAL ; Cianwood Pokémon Center
 	const JASMINE_JOURNAL ; Olivine Pokémon Center

@@ -38,10 +38,12 @@ SunbeamIslandHouse2NPC1Text:
 	done
 	
 SunbeamIslandHouse2NPC2Text:
-	text "Our GYM LEADER,"
-	line "LEILANI, is just"
-	cont "as strong as she"
-	cont "is beautiful!"
+	text "The water around"
+	line "here looks good"
+	cont "enough to drink!"
 	
-	para "Hehehe…"
+	para "But you shouldn't."
+	
+	para "Take my word for"
+	line "it…"
 	done

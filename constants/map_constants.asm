@@ -124,14 +124,14 @@ MAP_NONE   EQU 0
 	map_const SUNBEAM_TRADE_HOUSE,						   4,  4 ; 11
 	map_const SPRUCES_LAB, 								   5,  4 ; 12
 	map_const SUNBEAM_RESERVE,                            25, 10 ; 13
-	map_const SUNBEAM_GYM,  			             	  16, 16 ; 14
-	map_const SUNBEAM_GYM_CAVE,  			               3,  4 ; 15
+	map_const SUNBEAM_JUNGLE,  			             	  16, 16 ; 14
+	map_const SUNBEAM_JUNGLE_CAVE,  			           4,  4 ; 15
 	
 	newgroup                                                     ;  8
 	
 	map_const ROUTE_4_EVENTIDE_GATE,					   5,  4 ;  1
 	map_const EVENTIDE_FOREST,							  30, 24 ;  2
-	map_const ROUTE_9_EVENTIDE_GATE,					   5,  4 ;  3
+	map_const EVENTIDE_VILLAGE_GATE,					   5,  4 ;  3
 	map_const SPOOKY_FOREST_1, 							   8,  8 ;  4
 	map_const SPOOKY_FOREST_2, 							   8,  8 ;  5
 	map_const SPOOKY_FOREST_3, 							   8,  8 ;  6
@@ -152,10 +152,16 @@ MAP_NONE   EQU 0
 
 	newgroup													 ;  9
 	
-	map_const ROUTE_9,		 							  19, 18 ; 1
-	map_const DODRIO_RANCH_HOUSE,						   4,  4 ; 2
-	map_const DODRIO_RANCH_BARN,						   7,  4 ; 3
-	map_const DODRIO_RANCH_RACETRACK,					  25, 17 ; 4
+	map_const EVENTIDE_VILLAGE,							  20, 22 ; 1
+	map_const EVENTIDE_HOUSE_1,       		         	   4,  4 ; 2
+	map_const EVENTIDE_HOUSE_2,       		         	   4,  4 ; 3
+	map_const EVENTIDE_BIKE_SHOP,       		           4,  4 ; 4
+	map_const EVENTIDE_POKECENTER,                         6,  4 ; 5
+	map_const EVENTIDE_MART,							   6,  4 ; 6
+	map_const ROUTE_9,		 							  16, 18 ; 7
+	map_const DODRIO_RANCH_HOUSE,						   4,  4 ; 8
+	map_const DODRIO_RANCH_BARN,						   7,  4 ; 9
+	map_const DODRIO_RANCH_RACETRACK,					  25, 17 ; 10
 
 	newgroup													 ; 10
 	

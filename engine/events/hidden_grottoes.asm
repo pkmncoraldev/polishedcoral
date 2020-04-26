@@ -103,15 +103,15 @@ GetHiddenGrottoTableEntry:
 	ret
 
 TryResetHiddenGrottoes:
-	ld hl, wDailyFlags4
-	bit 5, [hl] ; ENGINE_ALL_HIDDEN_GROTTOES
-	ret nz
-	xor a
-	ld hl, wHiddenGrottoContents
-	ld bc, NUM_HIDDEN_GROTTOES * 2
-	call ByteFill
-	ld hl, wDailyFlags4
-	set 5, [hl] ; ENGINE_ALL_HIDDEN_GROTTOES
+;	ld hl, wDailyFlags4
+;	bit 5, [hl] ; ENGINE_ALL_HIDDEN_GROTTOES
+;	ret nz
+;	xor a
+;	ld hl, wHiddenGrottoContents
+;	ld bc, NUM_HIDDEN_GROTTOES * 2
+;	call ByteFill
+;	ld hl, wDailyFlags4
+;	set 5, [hl] ; ENGINE_ALL_HIDDEN_GROTTOES
 	ret
 
 EmptiedHiddenGrotto:

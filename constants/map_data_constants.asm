@@ -64,6 +64,11 @@ const_value = -1
 	const SPAWN_GLINT
 	const SPAWN_STARGLOW
 	const SPAWN_LAKE
+	const SPAWN_SUNBEAM
+	const SPAWN_EVENTIDE
+	const SPAWN_FLICKER
+	const SPAWN_TWINKLE
+	const SPAWN_LUSTER
 	const SPAWN_LASTFLYPOINT
 	const SPAWN_KANTO
 NUM_SPAWNS EQU const_value

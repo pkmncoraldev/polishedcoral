@@ -24,9 +24,9 @@ SpriteMons:
 	db ABRA ; ALTARIA
 	db MAGMAR
 	db ELECTABUZZ
+	db MILTANK
 	db DODRIO
 	db PIKACHU
-	db ABRA
 	db ABRA
 	db ABRA
 	db ABRA

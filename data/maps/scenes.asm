@@ -24,6 +24,7 @@ MapTriggers::
 	scene_var ROUTE_6,							  	  wRoute6Trigger
 	scene_var LAKE_ONWA,							  wLakeOnwaTrigger
 	scene_var SUNBEAM_ISLAND,						  wSunbeamIslandTrigger
+	scene_var SUNBEAM_JUNGLE,						  wSunbeamJungleTrigger
 	scene_var SUNBEAM_SURF_SHOP,					  wSunbeamSurfShopTrigger
 	scene_var SUNBEAM_BIKINI_CONTEST,				  wSunbeamBikiniContestTrigger
 	scene_var SPRUCES_LAB,							  wSprucesLabTrigger

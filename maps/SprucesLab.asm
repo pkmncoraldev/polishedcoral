@@ -29,6 +29,7 @@ SprucesLab_MapScriptHeader:
 	const_def 1 ; object constants
 	const SPRUCELAB_SPRUCE1
 	const SPRUCELAB_SPRUCE2
+	const SPRUCELAB_SPRUCE3
 	const SPRUCELAB_MUNCHLAX1
 	const SPRUCELAB_MUNCHLAX2
 	const SPRUCELAB_MUNCHLAX3
@@ -90,6 +91,7 @@ SpruceLabSpruce:
 	end
 	
 SpruceLabComeBackInside:
+	setevent EVENT_ISLAND_STRAND
 	applymovement PLAYER, Movement_SpruceLabPlayer2
 	pause 14
 	playsound SFX_ENTER_DOOR
@@ -162,6 +164,11 @@ SpruceLabComeBackInside:
 	pause 5
 	opentext
 	writetext SpruceLabSpruceText6
+	waitbutton
+	closetext
+	pause 10
+	opentext
+	writetext SpruceLabSpruceText11
 	waitbutton
 	closetext
 	spriteface SPRUCELAB_SPRUCE2, DOWN
@@ -249,7 +256,7 @@ SpruceLabSpruceText1:
 SpruceLabSpruceText2:
 	text "We'll start outside"
 	line "with the #MON"
-	cont "habitats."
+	cont "reserve."
 	
 	para "After you."
 	done
@@ -291,24 +298,26 @@ SpruceLabSpruceText5:
 	done
 	
 SpruceLabSpruceText6:
-	text "What's that?"
+	text "A song played on"
+	line "this will wake any"
+	cont "#MON from even"
+	cont "the deepest"
+	cont "slumber."
 	
-	para "A SNORLAX is"
-	line "sleeping and"
-	cont "blocking the path"
-	cont "near STARGLOW"
-	cont "VALLEY?"
+	para "Strangely though,"
+	line "some people say"
+	cont "that the soothing"
+	cont "sound actually"
+	cont "makes them MORE"
+	cont "sleepy!"
 	
-	para "The #FLUTE"
-	line "would surely wake"
-	cont "it and clear the"
-	cont "path."
-	
-	para "Hmm…"
+	para "It truly is a"
+	line "mysterious instru-"
+	cont "ment!"
 	done
 	
 SpruceLabSpruceText7:
-	text "Well!"
+	text "Well then!"
 	
 	para "It's decided!"
 	
@@ -359,11 +368,24 @@ SpruceLabSpruceText10:
 	
 	para "The #FLUTE."
 	
-	para "A song played on"
-	line "this will wake any"
-	cont "#MON from even"
-	cont "the deepest"
-	cont "slumber."
+	para "Watch this!"
+	done
+
+SpruceLabSpruceText11:
+	text "What's that?"
+	
+	para "A SNORLAX is"
+	line "sleeping and"
+	cont "blocking the path"
+	cont "near STARGLOW"
+	cont "VALLEY?"
+	
+	para "The #FLUTE"
+	line "would surely wake"
+	cont "it and clear the"
+	cont "path."
+	
+	para "Hmm…"
 	done
 	
 SpruceLabDexCheckText:

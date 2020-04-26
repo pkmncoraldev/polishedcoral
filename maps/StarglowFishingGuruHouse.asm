@@ -4,8 +4,8 @@ StarglowFishingGuruHouse_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 2, 4, STARGLOW_VALLEY
 	warp_def 7, 3, 4, STARGLOW_VALLEY
+	warp_def 7, 2, 4, STARGLOW_VALLEY
 
 	db 0 ; coord events
 

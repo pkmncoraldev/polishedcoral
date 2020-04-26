@@ -946,6 +946,7 @@ wStarglowPokeCenterTrigger:: ds 1
 wRoute6Trigger:: ds 1
 wLakeOnwaTrigger:: ds 1
 wSunbeamIslandTrigger:: ds 1
+wSunbeamJungleTrigger:: ds 1
 wSunbeamSurfShopTrigger:: ds 1
 wSunbeamBikiniContestTrigger:: ds 1
 wSprucesLabTrigger:: ds 1
@@ -969,7 +970,7 @@ wEastTrainCabooseTrigger:: ds 1
 wLusterCityShoppingTrigger:: ds 1
 wLusterSewersB1FFloodedTrigger:: ds 1
 wLusterSewersB2FFloodedTrigger:: ds 1
-ds 48
+ds 47
 
 ; fight counts
 wJackFightCount::    ds 1
@@ -1049,13 +1050,14 @@ wDailyResetTimer:: ds 2
 wDailyFlags:: ds 1
 wDailyFlags2:: ds 1
 wDailyFlags3:: ds 1
-wDailyFlags4:: ds 1
 wWeeklyFlags:: ds 1
 wWeeklyFlags2:: ds 1
 wSwarmFlags:: ds 1
 wTimerStartDay:: ds 1
 
 wFruitTreeFlags:: flag_array NUM_FRUIT_TREES
+
+wFlowerPileFlags:: ds 1
 
 wNuzlockeLandmarkFlags:: flag_array NUM_LANDMARKS
 

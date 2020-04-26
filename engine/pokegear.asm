@@ -2255,13 +2255,13 @@ FlyMap: ; 91c90
 ;.NorthOnwaFlyMap:
 ; Note that .NoSouthOnwa should be modified in tandem with this branch
 	push af
-; Start from New Bark Town
+; Start from Sunset Bay
 	ld a, FLY_SUNSET
 	ld [wTownMapPlayerIconLandmark], a
-; Flypoints begin at New Bark Town...
+; Flypoints begin at Sunset Bay...
 	ld [wStartFlypoint], a
-; ..and end at Silver Cave
-	ld a, FLY_LAKE
+; ..and end at Luster City
+	ld a, FLY_LUSTER
 	ld [wEndFlypoint], a
 ; Fill out the map
 	call FillNorthOnwaMap

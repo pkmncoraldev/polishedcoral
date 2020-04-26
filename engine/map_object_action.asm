@@ -32,7 +32,9 @@ Pointers445f: ; 445f
 	dw SetFacingBridgeBob,             SetFacingFreezeBridgeBob   ; PERSON_ACTION_BRIDGE_BOB
 	dw SetFacingBoatBob,               SetFacingFreezeBoatBob     ; PERSON_ACTION_BOAT_BOB
 	dw SetFacingValve,                 SetFacingValve             ; PERSON_ACTION_VALVE
-	dw SetFacingTileHorizontal,        SetFacingTileHorizontal	  ; PERSON_ACTION_TILE_HORIZONTAL
+	dw SetFacingMallSign,    		   SetFacingMallSign	 	  ; PERSON_ACTION_MALL_SIGN
+	dw SetFacingHangarLeft,    		   SetFacingHangarLeft	 	  ; PERSON_ACTION_HANGAR_LEFT
+	dw SetFacingHangarRight,    	   SetFacingHangarRight	 	  ; PERSON_ACTION_HANGAR_RIGHT
 ; 44a3
 
 SetFacingStanding: ; 44a3
@@ -192,7 +194,7 @@ CounterclockwiseSpinAction:
 	inc a
 	and %00001111
 	ld d, a
-	cp 2
+	cp 4
 	jr c, .ok
 
 	ld d, 0
@@ -368,7 +370,15 @@ SetFacingTileRight:
 	ld a, FACING_TILE_RIGHT
 	jp SetFixedFacing
 
-SetFacingTileHorizontal:
-	ld a, FACING_TILE_HORIZONTAL
+SetFacingMallSign:
+	ld a, FACING_MALL_SIGN
+	jp SetFixedFacing
+	
+SetFacingHangarLeft:
+	ld a, FACING_HANGAR_LEFT
+	jp SetFixedFacing
+	
+SetFacingHangarRight:
+	ld a, FACING_HANGAR_RIGHT
 	jp SetFixedFacing
 	

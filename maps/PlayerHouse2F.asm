@@ -14,7 +14,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event 13, 10, LAKE_ONWA, 1
 	warp_event 15, 10, MT_ONWA_CLIFF, 1
 	warp_event 19, 10, EVENTIDE_FOREST, 1
-	warp_event  5, 14, ROUTE_9, 3
+	warp_event  5, 14, EVENTIDE_VILLAGE, 1
 	warp_event  7, 14, FLICKER_STATION, 1
 	warp_event  9, 14, TWINKLE_TOWN, 1
 	warp_event 11, 14, LUSTER_CITY_SHOPPING, 1
@@ -37,7 +37,7 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event 14, 10, SIGNPOST_JUMPTEXT, PlayerHouseLakeOnwaL
 	bg_event 16, 10, SIGNPOST_JUMPTEXT, PlayerHouseSunbeamIsland
 	bg_event 18, 10, SIGNPOST_JUMPTEXT, PlayerHouseEventideForest
-	bg_event  4, 14, SIGNPOST_JUMPTEXT, PlayerHouseRoute9
+	bg_event  4, 14, SIGNPOST_JUMPTEXT, PlayerHouseEventideVillage
 	bg_event  6, 14, SIGNPOST_JUMPTEXT, PlayerHouseFlickerStation
 	bg_event  8, 14, SIGNPOST_JUMPTEXT, PlayerHouseTwinkle
 	bg_event 10, 14, SIGNPOST_JUMPTEXT, PlayerHouseLuster
@@ -119,8 +119,8 @@ PlayerHouseEventideForest:
 	text "EVENTIDE FOREST"
 	done
 	
-PlayerHouseRoute9:
-	text "DODRIO RANCH"
+PlayerHouseEventideVillage:
+	text "EVENTIDE VILLAGE"
 	done
 	
 PlayerHouseFlickerStation:

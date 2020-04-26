@@ -218,7 +218,7 @@ EastTrainCabin2Officer:
 	jumptextfaceplayer EastTrainCabin2OfficerText
 	
 EastTrainCabin2Snare1:
-	generictrainer GRUNTM, 8, EVENT_BEAT_EAST_TRAIN_CABIN_2_SNARE_1, .SeenText, .BeatenText
+	generictrainer GRUNTM, TRAIN_GRUNTM_5, EVENT_BEAT_EAST_TRAIN_CABIN_2_SNARE_1, .SeenText, .BeatenText
 
 	text "I don't deserve"
 	line "this!"
@@ -247,7 +247,7 @@ EastTrainCabin2Snare1:
 	end
 	
 EastTrainCabin2Snare2:
-	generictrainer GRUNTF, 3, EVENT_BEAT_EAST_TRAIN_CABIN_2_SNARE_2, .SeenText, .BeatenText
+	generictrainer GRUNTF, TRAIN_GRUNTF_2, EVENT_BEAT_EAST_TRAIN_CABIN_2_SNARE_2, .SeenText, .BeatenText
 
 	text "There goes my"
 	line "raise…"

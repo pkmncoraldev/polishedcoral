@@ -114,7 +114,6 @@ CheckDailyResetTimer:: ; 11452
 	ld [hli], a ; wDailyFlags
 	ld [hli], a ; wDailyFlags2
 	ld [hli], a ; wDailyFlags3
-	ld [hli], a ; wDailyFlags4
 	ld [hli], a ; wWeeklyFlags
 	ld [hli], a ; wWeeklyFlags2
 	ld [hl], a ; wSwarmFlags

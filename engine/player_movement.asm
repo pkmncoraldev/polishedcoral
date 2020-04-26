@@ -171,7 +171,7 @@ DoPlayerMovement:: ; 80000
 	add hl, bc
 	ld a, [hl]
 	ld [wWalkingDirection], a
-	ld a, STEP_BIKE
+	ld a, STEP_WALK
 	jr .finish
 
 .water_table
@@ -262,6 +262,10 @@ DoPlayerMovement:: ; 80000
 	cp PLAYER_SURF_PIKA
 	jp z, .TrySurf
 
+	ld a, [wPlayerStandingTile]
+	cp COLL_CONVEYOR
+	jp z, .conveyor
+	
 	call .CheckLandPerms
 	jp c, .bump
 
@@ -296,6 +300,71 @@ DoPlayerMovement:: ; 80000
 	jp z, .run
 	jp .DoNotRun
 	
+.conveyor
+	ld a, [wPlayerState]
+	cp PLAYER_BIKE
+	jr z, .conveyorbike
+	push bc
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite ; UpdateSprites
+	pop bc
+	
+;	call .force
+	
+	ld a, [wWalkingDirection]
+	cp DOWN
+	jr z, .conveyordown
+	ld a, c
+	and 3
+	ld c, a
+	ld b, 0
+	ld hl, DOWN
+	add hl, bc
+	ld a, [hl]
+	ld [wWalkingDirection], a
+	ld a, STEP_SLIDE
+	call .DoStep
+	scf
+	ret	
+	
+.conveyordown
+	ld a, STEP_FAST
+	call .DoStep
+	scf
+	ret
+
+.conveyorbike
+	ld a, [wWalkingDirection]
+	cp DOWN
+	jr z, .conveyordownbike
+	cp UP
+	jr z, .conveyorupbike
+	ld a, c
+	and 3
+	ld c, a
+	ld b, 0
+	ld hl, DOWN
+	add hl, bc
+	ld a, [hl]
+	ld [wWalkingDirection], a
+	ld a, STEP_SLIDE
+	call .DoStep
+	scf
+	ret	
+
+.conveyordownbike
+	ld a, STEP_BIKE
+	call .DoStep
+	scf
+	ret
+	
+.conveyorupbike
+	ld a, STEP_SLOW
+	call .DoStep
+	scf
+	ret
+	
 .RunByDefault
 	call .RunCheck
 	jp nz, .run
@@ -314,22 +383,22 @@ DoPlayerMovement:: ; 80000
 	ld a, [wTileUp]
 	cp COLL_TALL_GRASS
 	jr z, .DoNotRun
-	jr .donesnowcheck
+	jp .donesnowcheck
 .snowdownruncheck
 	ld a, [wTileDown]
 	cp COLL_TALL_GRASS
 	jr z, .DoNotRun
-	jr .donesnowcheck
+	jp .donesnowcheck
 .snowleftruncheck
 	ld a, [wTileLeft]
 	cp COLL_TALL_GRASS
 	jr z, .DoNotRun
-	jr .donesnowcheck
+	jp .donesnowcheck
 .snowrightruncheck
 	ld a, [wTileRight]
 	cp COLL_TALL_GRASS
 	jr z, .DoNotRun
-	jr .donesnowcheck
+	jp .donesnowcheck
 	
 .DoNotRun
 ; Downhill riding is slower when not moving down.
@@ -697,13 +766,14 @@ DoPlayerMovement:: ; 80000
 	dw .FastStep ; x4
 	dw .Run ; x2, doubles animation speed
 	dw .JumpStep
-	dw .SlideStep
+	dw .FastSlideStep
 	dw .TurningStep
 	dw .BackJumpStep
 	dw .InPlace
 	dw .SpinStep
 	dw .Fast ; x2
 	dw .SurfStep
+	dw .SlideStep
 	
 .StepsPippi:
 	dw .SlowStep ; x0.5
@@ -711,13 +781,14 @@ DoPlayerMovement:: ; 80000
 	dw .PippiFast ; x4
 	dw .PippiRun ; x2, doubles animation speed
 	dw .JumpStep
-	dw .SlideStep
+	dw .FastSlideStep
 	dw .TurningStep
 	dw .BackJumpStep
 	dw .InPlace
 	dw .SpinStep
 	dw .Fast ; x2
 	dw .SurfStep
+	dw .SlideStep
 
 .SlowStep:
 	slow_step_down
@@ -754,7 +825,7 @@ DoPlayerMovement:: ; 80000
 	jump_step_up
 	jump_step_left
 	jump_step_right
-.SlideStep:
+.FastSlideStep:
 	fast_slide_step_down
 	fast_slide_step_up
 	fast_slide_step_left
@@ -789,6 +860,11 @@ DoPlayerMovement:: ; 80000
 	step_up
 	step_left
 	step_right
+.SlideStep:
+	slide_step_down
+	slide_step_up
+	slide_step_left
+	slide_step_right
 
 .StandInPlace: ; 802b3
 	ld a, movement_step_sleep_1

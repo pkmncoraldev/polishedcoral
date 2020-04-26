@@ -4,8 +4,8 @@ SunbeamBlueWaterHouse_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 2, 8, SUNBEAM_ISLAND
 	warp_def 7, 3, 8, SUNBEAM_ISLAND
+	warp_def 7, 2, 8, SUNBEAM_ISLAND
 
 	db 0 ; coord events
 

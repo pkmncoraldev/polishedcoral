@@ -26,6 +26,7 @@ TrainerClassNames::
 	db "HIKER@"            ; HIKER
 	db "TEAM SNARE@"       ; GRUNTM
 	db "TEAM SNARE@"       ; GRUNTF
+	db "SNARE EXEC.@"	   ; KAGE
 	db "#FAN@"             ; POKEFANM
 	db "#FAN@"             ; POKEFANF
 	db "OFFICER@"          ; OFFICERM

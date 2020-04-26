@@ -532,9 +532,9 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 
 	ld a, [wOtherTrainerClass]
 	ld de, 1
-	ld hl, .RocketTrainerClasses
+	ld hl, .SnareTrainerClasses
 	call IsInArray
-	ld de, RocketTransition
+	ld de, SnareTransition
 	jr c, .got_transition
 	ld de, PokeBallTransition
 .got_transition
@@ -590,7 +590,14 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	jr nz, .loop2
 
 	
+	ld a, [wOtherTrainerClass]
+	ld de, 1
+	ld hl, .SnareTrainerClasses
+	call IsInArray
+	ld hl, .snaretimepals
+	jr c, .got_colors
 	ld hl, .timepals
+.got_colors
 	ld a, [wTimeOfDayPal]
 	and %00000011
 	sla a
@@ -654,9 +661,10 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	ret
 ; 8c6a1 (23:46a1)
 
-.RocketTrainerClasses
+.SnareTrainerClasses
 	db GRUNTM
 	db GRUNTF
+	db KAGE
 
 	db -1
 
@@ -677,7 +685,7 @@ if !DEF(MONOCHROME)
 	RGB 31, 11, 15
 	RGB 31, 05, 05
 	RGB 07, 07, 07
-; dark
+; dusk
 	RGB 31, 18, 29
 	RGB 31, 11, 15
 	RGB 31, 05, 05
@@ -689,14 +697,33 @@ else
 	MONOCHROME_RGB_FOUR_NIGHT
 endc
 
-.armored_mewtwo_pals
+.snaretimepals
 if !DEF(MONOCHROME)
-	RGB 29, 18, 31
-	RGB 21, 11, 31
-	RGB 13, 05, 31
+; morn
+	RGB 11, 31, 15
+	RGB 05, 31, 05
+	RGB 04, 27, 04
+	RGB 07, 07, 07
+; day
+	RGB 11, 31, 15
+	RGB 05, 31, 05
+	RGB 04, 27, 04
+	RGB 07, 07, 07
+; nite
+	RGB 11, 31, 15
+	RGB 05, 31, 05
+	RGB 04, 27, 04
+	RGB 07, 07, 07
+; dusk
+	RGB 11, 31, 15
+	RGB 05, 31, 05
+	RGB 04, 27, 04
 	RGB 07, 07, 07
 else
 	MONOCHROME_RGB_FOUR
+	MONOCHROME_RGB_FOUR
+	MONOCHROME_RGB_FOUR
+	MONOCHROME_RGB_FOUR_NIGHT
 endc
 
 PokeBallTransition:
@@ -717,23 +744,23 @@ PokeBallTransition:
 	db %00001111, %11110000
 	db %00000011, %11000000
 
-RocketTransition:
-	db %11111111, %11110000
-	db %11111111, %11111100
-	db %11111111, %11111110
-	db %11111111, %11111110
-	db %11111000, %00111111
-	db %11111000, %00011111
-	db %11111000, %00111111
-	db %11111111, %11111110
-	db %11111111, %11111110
-	db %11111111, %11111100
-	db %11111111, %11111000
-	db %11111000, %01111100
-	db %11111000, %01111100
-	db %11111000, %00111110
-	db %11111000, %00011111
-	db %11111000, %00011111
+SnareTransition:
+	db %00000000, %00000000
+	db %00011111, %11100000
+	db %00111111, %11110000
+	db %01111000, %01111000
+	db %01110000, %00011100
+	db %01111000, %00000000
+	db %00111111, %00000000
+	db %00001111, %11000000
+	db %00000011, %11110000
+	db %00000000, %11111000
+	db %00000000, %00111100
+	db %01110000, %00011100
+	db %00111100, %00111100
+	db %00011111, %11111000
+	db %00001111, %11110000
+	db %00000000, %00000000
 
 WipeLYOverrides: ; 8c6d8
 	ld a, [rSVBK]

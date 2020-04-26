@@ -547,7 +547,9 @@ MapObjectMovementPattern:
 	dw .MovementBridgeBob
 	dw .MovementBoatBob
 	dw .MovementValve
-	dw .MovementTileHorizontal
+	dw .MovementMallSign
+	dw .MovementHangarLeft
+	dw .MovementHangarRight
 
 .RandomWalkY:
 	call Random
@@ -756,8 +758,16 @@ MapObjectMovementPattern:
 	ld a, PERSON_ACTION_TILE_RIGHT
 	jr ._ActionA_StepType04
 
-.MovementTileHorizontal:
-	ld a, PERSON_ACTION_TILE_HORIZONTAL
+.MovementMallSign:
+	ld a, PERSON_ACTION_MALL_SIGN
+	jr ._ActionA_StepType04
+	
+.MovementHangarLeft:
+	ld a, PERSON_ACTION_HANGAR_LEFT
+	jr ._ActionA_StepType04
+	
+.MovementHangarRight:
+	ld a, PERSON_ACTION_HANGAR_RIGHT
 	jr ._ActionA_StepType04
 	
 .MovementCutTree:

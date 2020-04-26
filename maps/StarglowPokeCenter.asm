@@ -75,7 +75,7 @@ StarglowCenterRocketStopsYou:
 	waitsfx
 	winlosstext StarglowCenterRocketWinText, 0
 	setlasttalked STARGLOWCENTER_ROCKET
-	loadtrainer GRUNTM, 3
+	loadtrainer GRUNTM, STARGLOW_GRUNTM_2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

@@ -9,95 +9,95 @@ Music_SnareTheme_Ch1:
 	volume $77
 	stereopanning $77
 	dutycycle 1
-	octave 5
-	notetype $C, $C7
-	note C_, 1
 	octave 4
-	note A#, 1
-	note __, 1
+	notetype $C, $C7
 	note G_, 1
-	note __, 1
-	note F#, 1
-	note __, 1
 	note F_, 1
 	note __, 1
+	note D_, 1
+	note __, 1
+	note C#, 1
+	note __, 1
+	note C_, 1
+	note __, 1
+	octave 3
+	note A#, 1
+	note __, 1
+	note G_, 1
+	vibrato $00, $21
+	octave 4
+	note C#, 8
+	intensity $2D
+	note C#, 4
+	intensity $C8
+	note C#, 4
+Music_SnareTheme_Ch1_loop:
+	note __, 1
+	intensity $A3
+	octave 3
+	note D#, 1
+	note __, 1
+	note D#, 1
+	note __, 1
+	note D#, 1
+	note C_, 1
+	note D#, 1
+	note D#, 1
+	note __, 1
+	note D#, 1
+	note __, 1
 	note D#, 1
 	note __, 1
 	note C_, 1
-	vibrato $00, $21
-	note B_, 8
-	intensity $2D
-	note B_, 4
-	intensity $C8
-	slidepitchto 8, 6, F_
-	note B_, 4
-Music_SnareTheme_Ch1_loop:
-	intensity $C8
-	note __, 1
-	octave 3
-	note G_, 1
-	note __, 1
-	note G_, 1
-	note __, 1
-	note G_, 1
 	note D#, 1
-	note G_, 1
-	note G#, 1
-	note __, 1
-	note G#, 1
-	note __, 1
-	note G#, 1
 	note __, 1
 	note D#, 1
-	note G#, 1
-	note __, 1
-	note A_, 1
-	note __, 1
-	note A_, 1
-	note __, 1
-	note A_, 1
-	note D#, 1
-	note A_, 1
-	note G#, 1
-	note __, 1
-	note G#, 1
-	note __, 1
-	note G#, 1
 	note __, 1
 	note D#, 1
-	note G#, 1
-	note __, 1
-	note G_, 1
-	note __, 1
-	note G_, 1
-	note __, 1
-	note G_, 1
-	note D#, 1
-	note G_, 1
-	note G#, 1
-	note __, 1
-	note G#, 1
-	note __, 1
-	note G#, 1
 	note __, 1
 	note D#, 1
-	note G#, 1
-	note __, 1
-	note A_, 1
-	note __, 1
-	note A_, 1
-	note __, 1
-	note A_, 1
+	note C_, 1
 	note D#, 1
-	note A_, 1
-	note A#, 1
-	note __, 1
-	note A#, 1
-	note __, 1
-	note B_, 1
+	note D#, 1
 	note __, 1
 	note D#, 1
-	note B_, 1
+	note __, 1
+	note D#, 1
+	note __, 1
+	note C_, 1
+	note D#, 1
+	note __, 1
+	note D#, 1
+	note __, 1
+	note D#, 1
+	note __, 1
+	note D#, 1
+	note C_, 1
+	note D#, 1
+	note D#, 1
+	note __, 1
+	note D#, 1
+	note __, 1
+	note D#, 1
+	note __, 1
+	note C_, 1
+	note D#, 1
+	note __, 1
+	note D#, 1
+	note __, 1
+	note D#, 1
+	note __, 1
+	note D#, 1
+	note C_, 1
+	note D#, 1
+	note D#, 1
+	note __, 1
+	note D#, 1
+	note __, 1
+	note D#, 1
+	note __, 1
+	note C_, 1
+	note D#, 1
 	intensity $A7
 	vibrato $00, $23
 	note G_, 4
@@ -266,95 +266,94 @@ Music_SnareTheme_Ch1_loop:
 
 Music_SnareTheme_Ch2:
 	dutycycle 1
-	octave 4
+	octave 5
 	notetype $C, $C7
-	note G_, 1
-	note F_, 1
-	note __, 1
-	note D_, 1
-	note __, 1
-	note C#, 1
-	note __, 1
 	note C_, 1
-	note __, 1
-	octave 3
+	octave 4
 	note A#, 1
 	note __, 1
 	note G_, 1
+	note __, 1
+	note F#, 1
+	note __, 1
+	note F_, 1
+	note __, 1
+	note D#, 1
+	note __, 1
+	note C_, 1
 	vibrato $00, $21
-	octave 4
-	note C#, 8
+	note B_, 8
 	intensity $2D
-	note C#, 4
+	note B_, 4
 	intensity $C8
-	note C#, 4
+	note B_, 4	
 Music_SnareTheme_Ch2_loop:
+	intensity $C8
 	note __, 1
-	intensity $A3
 	octave 3
+	note G_, 1
+	note __, 1
+	note G_, 1
+	note __, 1
+	note G_, 1
 	note D#, 1
+	note G_, 1
+	note G#, 1
+	note __, 1
+	note G#, 1
+	note __, 1
+	note G#, 1
 	note __, 1
 	note D#, 1
+	note G#, 1
+	note __, 1
+	note A_, 1
+	note __, 1
+	note A_, 1
+	note __, 1
+	note A_, 1
+	note D#, 1
+	note A_, 1
+	note G#, 1
+	note __, 1
+	note G#, 1
+	note __, 1
+	note G#, 1
 	note __, 1
 	note D#, 1
-	note C_, 1
+	note G#, 1
+	note __, 1
+	note G_, 1
+	note __, 1
+	note G_, 1
+	note __, 1
+	note G_, 1
 	note D#, 1
-	note D#, 1
+	note G_, 1
+	note G#, 1
+	note __, 1
+	note G#, 1
+	note __, 1
+	note G#, 1
 	note __, 1
 	note D#, 1
+	note G#, 1
+	note __, 1
+	note A_, 1
+	note __, 1
+	note A_, 1
+	note __, 1
+	note A_, 1
+	note D#, 1
+	note A_, 1
+	note A#, 1
+	note __, 1
+	note A#, 1
+	note __, 1
+	note B_, 1
 	note __, 1
 	note D#, 1
-	note __, 1
-	note C_, 1
-	note D#, 1
-	note __, 1
-	note D#, 1
-	note __, 1
-	note D#, 1
-	note __, 1
-	note D#, 1
-	note C_, 1
-	note D#, 1
-	note D#, 1
-	note __, 1
-	note D#, 1
-	note __, 1
-	note D#, 1
-	note __, 1
-	note C_, 1
-	note D#, 1
-	note __, 1
-	note D#, 1
-	note __, 1
-	note D#, 1
-	note __, 1
-	note D#, 1
-	note C_, 1
-	note D#, 1
-	note D#, 1
-	note __, 1
-	note D#, 1
-	note __, 1
-	note D#, 1
-	note __, 1
-	note C_, 1
-	note D#, 1
-	note __, 1
-	note D#, 1
-	note __, 1
-	note D#, 1
-	note __, 1
-	note D#, 1
-	note C_, 1
-	note D#, 1
-	note D#, 1
-	note __, 1
-	note D#, 1
-	note __, 1
-	note D#, 1
-	note __, 1
-	note C_, 1
-	note D#, 1
+	note B_, 1
 	dutycycle 2
 	intensity $C7
 	vibrato $00, $23
@@ -543,7 +542,11 @@ Music_SnareTheme_Ch3:
 	note __, 1
 	note C_, 1
 	vibrato $00, $11
-	note G_, 16
+	note G_, 4
+	intensity $25
+	note G_, 8
+	intensity $15
+	note G_, 4
 Music_SnareTheme_Ch3_loop:
 	dutycycle 4
 	intensity $14

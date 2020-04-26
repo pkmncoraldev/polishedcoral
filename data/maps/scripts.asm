@@ -6,6 +6,7 @@ INCLUDE "maps/GlintPokeCenter.asm"
 INCLUDE "maps/StarglowPokeCenter.asm"
 INCLUDE "maps/LakeOnwaPokeCenter.asm"
 INCLUDE "maps/SunbeamPokeCenter.asm"
+INCLUDE "maps/EventidePokeCenter.asm"
 INCLUDE "maps/FlickerPokeCenter.asm"
 INCLUDE "maps/TwinklePokeCenter.asm"
 
@@ -67,7 +68,7 @@ INCLUDE "maps/SunsetLegendsHouse.asm"
 INCLUDE "maps/SunsetCafe.asm"
 
 
-SECTION "Daybreak Valley Scripts", ROMX
+SECTION "Daybreak Village Scripts", ROMX
 
 INCLUDE "maps/DaybreakVillage.asm"
 INCLUDE "maps/DaybreakMarcusHouse.asm"
@@ -124,8 +125,15 @@ INCLUDE "maps/SunbeamBlueWaterHouse.asm"
 INCLUDE "maps/SunbeamTradeHouse.asm"
 INCLUDE "maps/SprucesLab.asm"
 INCLUDE "maps/SunbeamReserve.asm"
-INCLUDE "maps/SunbeamGym.asm"
-INCLUDE "maps/SunbeamGymCave.asm"
+INCLUDE "maps/SunbeamJungle.asm"
+INCLUDE "maps/SunbeamJungleCave.asm"
+
+SECTION "Eventide Village Scripts", ROMX
+INCLUDE "maps/EventideVillage.asm"
+INCLUDE "maps/EventideHouse1.asm"
+INCLUDE "maps/EventideHouse2.asm"
+INCLUDE "maps/EventideBikeShop.asm"
+INCLUDE "maps/EventideMart.asm"
 
 SECTION "Flicker Station Scripts", ROMX
 
@@ -162,7 +170,7 @@ SECTION "Eventide Forest Scripts", ROMX
 
 INCLUDE "maps/Route4EventideGate.asm"
 INCLUDE "maps/EventideForest.asm"
-INCLUDE "maps/Route9EventideGate.asm"
+INCLUDE "maps/EventideVillageGate.asm"
 INCLUDE "maps/SpookyForest1.asm"
 INCLUDE "maps/SpookyForest2.asm"
 INCLUDE "maps/SpookyForest3.asm"

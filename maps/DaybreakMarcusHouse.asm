@@ -4,8 +4,8 @@ DaybreakMarcusHouse_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event 3, 7, DAYBREAK_VILLAGE, 3
 	warp_event 4, 7, DAYBREAK_VILLAGE, 3
+	warp_event 3, 7, DAYBREAK_VILLAGE, 3
 
 	db 0 ; coord events
 

@@ -7,8 +7,8 @@ SunbeamSurfShop_MapScriptHeader:
 	callback MAPCALLBACK_TILES, SunbeamSurfShopCounter
 
 	db 3 ; warp events
-	warp_def 7, 3, 9, SUNBEAM_ISLAND
 	warp_def 7, 4, 9, SUNBEAM_ISLAND
+	warp_def 7, 3, 9, SUNBEAM_ISLAND
 	warp_def  7,  7, 14, SUNBEAM_ISLAND
 
 	db 0 ; coord events

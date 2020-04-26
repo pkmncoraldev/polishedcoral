@@ -151,9 +151,30 @@ PLAYER_F EQU __enum__
 	
 
 	trainerclass GRUNTM
+	const STARGLOW_GRUNTM_1
+	const STARGLOW_GRUNTM_2
+	const STARGLOW_GRUNTM_3
+	const SUNBEAM_GRUNTM_1
+	const SUNBEAM_GRUNTM_2
+	const SUNBEAM_GRUNTM_3
+	const SUNBEAM_GRUNTM_4
+	const TRAIN_GRUNTM_1
+	const TRAIN_GRUNTM_2
+	const TRAIN_GRUNTM_3
+	const TRAIN_GRUNTM_4
+	const TRAIN_GRUNTM_5
 
 
 	trainerclass GRUNTF
+	const STARGLOW_GRUNTF_1
+	const SUNBEAM_GRUNTF_1
+	const SUNBEAM_GRUNTF_2
+	const TRAIN_GRUNTF_1
+	const TRAIN_GRUNTF_2
+
+
+	trainerclass KAGE
+	const SUNBEAM_KAGE
 
 
 	trainerclass POKEFANM

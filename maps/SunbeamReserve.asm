@@ -247,9 +247,8 @@ SunbeamReserveSpruceText4:
 	text "I let the #MON"
 	line "live their lives"
 	cont "as they would in"
-	cont "the wild and"
-	cont "study their behav-"
-	cont "iors."
+	cont "the wild and study"
+	cont "behavior."
 	done
 	
 SunbeamReserveSpruceText5:

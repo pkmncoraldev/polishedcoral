@@ -9,8 +9,8 @@ EventideForest_MapScriptHeader:
 	db 4 ; warp events
 	warp_def 44, 6, 3, ROUTE_4_EVENTIDE_GATE
 	warp_def 45, 6, 4, ROUTE_4_EVENTIDE_GATE
-	warp_def 8, 53, 1, ROUTE_9_EVENTIDE_GATE
-	warp_def 9, 53, 2, ROUTE_9_EVENTIDE_GATE
+	warp_def 8, 53, 1, EVENTIDE_VILLAGE_GATE
+	warp_def 9, 53, 2, EVENTIDE_VILLAGE_GATE
 
 	db 11 ; coord events
 	xy_trigger 0, 15, 28, 0, ForestGhostGirlTrigger, 0, 0

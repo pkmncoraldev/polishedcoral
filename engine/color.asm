@@ -925,12 +925,54 @@ LoadMapPals:
 	jr z, .ranchcont
 	cp MAP_DODRIO_RANCH_RACETRACK
 	jr z, .ranchcont
-	jp .normal
+	jp .hangar
 .ranchcont
+	ld a, [wTimeOfDayPalFlags]
+	and $3F
+	cp 1
+	jr z, .ranchyellow
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes
 	ld hl, MapObjectPalsRanch
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	jp .outside
+.ranchyellow
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPalsRanchYellow
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	jp .outside
+	
+.hangar
+	ld a, [wPlayerPalette]
+	cp 4
+	jr z, .hangar2
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPalsHangar
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	jp .outside
+	
+.hangar2
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPalsHangar2
 	call AddNTimes
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
@@ -1169,8 +1211,17 @@ INCLUDE "maps/palettes/obpals/obstarglow.pal"
 MapObjectPalsSewer::
 INCLUDE "maps/palettes/obpals/obsewer.pal"
 
-MapObjectPalsRanch::
+MapObjectPalsRanch:
 INCLUDE "maps/palettes/obpals/obranch.pal"
+
+MapObjectPalsRanchYellow::
+INCLUDE "maps/palettes/obpals/obranchyellow.pal"
+
+MapObjectPalsHangar::
+INCLUDE "maps/palettes/obpals/obranchhangar.pal"
+
+MapObjectPalsHangar2::
+INCLUDE "maps/palettes/obpals/obranchhangar2.pal"
 
 MapObjectPalsSnow::
 INCLUDE "maps/palettes/obpals/obsnow.pal"

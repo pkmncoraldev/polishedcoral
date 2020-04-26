@@ -105,7 +105,7 @@ EngineFlags: ; 80462
 	engine_flag wDailyFlags, 0 ; daily bikini contest
 	engine_flag wDailyFlags, 1 ; daily bug contest?
 	engine_flag wDailyFlags, 2 ; special wilddata?
-	engine_flag wDailyFlags, 3 ; valeries morning walk
+	engine_flag wDailyFlags, 3 ; unused
 	engine_flag wDailyFlags, 4 ; all fruit trees
 	engine_flag wDailyFlags, 5 ; daily dodrio race
 	engine_flag wDailyFlags, 6 ; goldenrod underground merchant closed
@@ -129,15 +129,6 @@ EngineFlags: ; 80462
 	engine_flag wDailyFlags3, 6 ; mira done today
 	engine_flag wDailyFlags3, 7 ; anabel done today
 
-	engine_flag wDailyFlags4, 0 ; glint grove pile 1
-	engine_flag wDailyFlags4, 1 ; glint grove pile 2
-	engine_flag wDailyFlags4, 2 ; glint grove pile 3
-	engine_flag wDailyFlags4, 3 ; glint grove pile 4
-	engine_flag wDailyFlags4, 4 ; glint grove pile 5
-	engine_flag wDailyFlags4, 5 ; glint grove pile 6
-	engine_flag wDailyFlags4, 6 ; glint grove pile 7
-	engine_flag wDailyFlags4, 7 ; unused
-
 	engine_flag wWeeklyFlags, 0 ; mt moon square clefairy
 	engine_flag wWeeklyFlags, 1 ; union cave lapras
 	engine_flag wWeeklyFlags, 2 ; goldenrod underground haircut used
@@ -147,6 +138,15 @@ EngineFlags: ; 80462
 	engine_flag wWeeklyFlags, 6 ; indigo plateau lyra fight
 	engine_flag wWeeklyFlags, 7 ; buenas password
 
+	engine_flag wFlowerPileFlags, 0 ; glint grove pile 1
+	engine_flag wFlowerPileFlags, 1 ; glint grove pile 2
+	engine_flag wFlowerPileFlags, 2 ; glint grove pile 3
+	engine_flag wFlowerPileFlags, 3 ; glint grove pile 4
+	engine_flag wFlowerPileFlags, 4 ; glint grove pile 5
+	engine_flag wFlowerPileFlags, 5 ; glint grove pile 6
+	engine_flag wFlowerPileFlags, 6 ; glint grove pile 7
+	engine_flag wFlowerPileFlags, 7 ; unused
+	
 	engine_flag wSwarmFlags, 0 ; buenas password 2
 	engine_flag wSwarmFlags, 1 ; goldenrod dept store sale is on
 
@@ -236,6 +236,7 @@ EngineFlags: ; 80462
 	engine_flag wMetGymLeaderFlags, 7  ; clair
 	
 	engine_flag wSnareFlags, 0	; starglow
-	engine_flag wSnareFlags, 1  ; train
+	engine_flag wSnareFlags, 1	; sunbeam
+	engine_flag wSnareFlags, 2  ; train
 	
 	engine_flag wIsNearCampfire, 0  ; used to light up player on Route 10 East

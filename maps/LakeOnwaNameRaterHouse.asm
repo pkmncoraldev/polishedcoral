@@ -4,8 +4,8 @@ LakeOnwaNameRaterHouse_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 2, 4, LAKE_ONWA
 	warp_def 7, 3, 4, LAKE_ONWA
+	warp_def 7, 2, 4, LAKE_ONWA
 
 	db 0 ; coord events
 

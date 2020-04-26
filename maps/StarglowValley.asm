@@ -260,7 +260,7 @@ StarglowSnare1:
 	special SaveMusic
 	winlosstext StarglowSnare1WinText, 0
 	setlasttalked STARGLOWSNARE1
-	loadtrainer GRUNTM, 2
+	loadtrainer GRUNTM, STARGLOW_GRUNTM_3
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
@@ -300,7 +300,7 @@ StarglowSnare2:
 	special SaveMusic
 	winlosstext StarglowSnare2WinText, 0
 	setlasttalked STARGLOWSNARE2
-	loadtrainer GRUNTF, 1
+	loadtrainer GRUNTF, STARGLOW_GRUNTF_1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle

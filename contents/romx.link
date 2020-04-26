@@ -204,7 +204,7 @@ ROMX $31
 
 ROMX $32
 	org $4000
-	"Daybreak Valley Scripts"
+	"Daybreak Village Scripts"
 
 ROMX $33
 	org $4000

@@ -31,14 +31,15 @@
 	const SUNBEAM_ISLAND	 ; 15
 	const EVENTIDE_FOREST	 ; 16
 	const OLD_MANOR			 ; 17
-	const ROUTE_9			 ; 18
-	const DODRIO_RANCH		 ; 19
-	const FLICKER_STATION	 ; 1a
-	const FLICKER_PASS		 ; 1b
-	const ROUTE_10			 ; 1c
-	const TWINKLE_TOWN		 ; 1d
-	const LUSTER_CITY		 ; 1e
-	const LUSTER_SEWERS		 ; 1f
+	const EVENTIDE_VILLAGE	 ; 18
+	const ROUTE_9			 ; 19
+	const DODRIO_RANCH		 ; 1a
+	const FLICKER_STATION	 ; 1b
+	const FLICKER_PASS		 ; 1c
+	const ROUTE_10			 ; 1d
+	const TWINKLE_TOWN		 ; 1e
+	const LUSTER_CITY		 ; 1f
+	const LUSTER_SEWERS		 ; 20
 	const RESIDENTIAL_DISTRICT
 	const SHOPPING_DISTRICT
 	const BUSINESS_DISTRICT

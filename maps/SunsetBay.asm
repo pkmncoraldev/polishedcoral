@@ -131,7 +131,7 @@ JustRodeBoatSunset2:
 	waitbutton
 	closetext
 	spriteface SUNSET_STRAND, DOWN
-	pause 5
+	wait 5
 	playsound SFX_EXIT_BUILDING
 	special Special_FadeBlackQuickly
 	special Special_ReloadSpritesNoPalettes
@@ -218,7 +218,6 @@ SunsetGrampsStopsYou1:
 	spriteface SUNSET_NPC3, UP
 	showemote EMOTE_SHOCK, SUNSET_NPC3, 15
 	spriteface PLAYER, DOWN
-	pause 7
 	applymovement SUNSET_NPC3, Movement_GrampsStart1
 	opentext
 	writetext SunsetGrampsText
@@ -235,7 +234,6 @@ SunsetGrampsStopsYou2:
 	spriteface SUNSET_NPC3, DOWN
 	showemote EMOTE_SHOCK, SUNSET_NPC3, 15
 	spriteface PLAYER, UP
-	pause 7
 	opentext
 	writetext SunsetGrampsText
 	waitbutton
@@ -250,7 +248,6 @@ SunsetGrampsStopsYou3:
 	spriteface SUNSET_NPC3, DOWN
 	showemote EMOTE_SHOCK, SUNSET_NPC3, 15
 	spriteface PLAYER, UP
-	pause 7
 	applymovement SUNSET_NPC3, Movement_GrampsStart2
 	opentext
 	writetext SunsetGrampsText
@@ -267,7 +264,6 @@ SunsetGrampsStopsYou4:
 	spriteface SUNSET_NPC3, DOWN
 	showemote EMOTE_SHOCK, SUNSET_NPC3, 15
 	spriteface PLAYER, UP
-	pause 7
 	applymovement SUNSET_NPC3, Movement_GrampsStart3
 	opentext
 	writetext SunsetGrampsText

@@ -28,6 +28,7 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, SunbeamIslandName
 	landmark   0,   0, EventideForestName
 	landmark   0,   0, OldManorName
+	landmark   0,   0, EventideVillageName
 	landmark   0,   0, Route9Name
 	landmark   0,   0, DodrioRanchName
 	landmark   0,   0, FlickerStationName
@@ -65,6 +66,7 @@ Route8Name:  		   db "ROUTE 8@"
 SunbeamIslandName:	   db "SUNBEAM¯ISLAND@"
 EventideForestName:	   db "EVENTIDE¯FOREST@"
 OldManorName:		   db "OLD MANOR@"
+EventideVillageName:   db "EVENTIDE¯VILLAGE@"
 Route9Name:			   db "ROUTE 9@"
 DodrioRanchName:	   db "DODRIO¯RANCH@"
 FlickerStationName:	   db "FLICKER¯STATION@"

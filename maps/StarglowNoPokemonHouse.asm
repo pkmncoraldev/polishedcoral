@@ -4,8 +4,8 @@ StarglowNoPokemonHouse_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 2, 2, STARGLOW_VALLEY
 	warp_def 7, 3, 2, STARGLOW_VALLEY
+	warp_def 7, 2, 2, STARGLOW_VALLEY
 
 	db 0 ; coord events
 

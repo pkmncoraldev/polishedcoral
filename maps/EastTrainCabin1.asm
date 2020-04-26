@@ -135,7 +135,7 @@ EastTrainCabin1Snare1:
 	waitsfx
 	winlosstext EastTrainCabin1Snare1WinText, 0
 	setlasttalked EAST_TRAIN_CABIN_1_SNARE_OFFICER
-	loadtrainer GRUNTF, 2
+	loadtrainer GRUNTF, TRAIN_GRUNTF_1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
@@ -153,7 +153,7 @@ EastTrainCabin1Snare1:
 	end
 	
 EastTrainCabin1Snare2:
-	generictrainer GRUNTM, 6, EVENT_BEAT_EAST_TRAIN_CABIN_1_SNARE_2, .SeenText, .BeatenText
+	generictrainer GRUNTM, TRAIN_GRUNTM_3, EVENT_BEAT_EAST_TRAIN_CABIN_1_SNARE_2, .SeenText, .BeatenText
 
 	text "Ok. Ok."
 	
@@ -173,7 +173,7 @@ EastTrainCabin1Snare2:
 	end
 	
 EastTrainCabin1Snare3:
-	generictrainer GRUNTM, 7, EVENT_BEAT_EAST_TRAIN_CABIN_1_SNARE_3, .SeenText, .BeatenText
+	generictrainer GRUNTM, TRAIN_GRUNTM_4, EVENT_BEAT_EAST_TRAIN_CABIN_1_SNARE_3, .SeenText, .BeatenText
 
 	text "There's still"
 	line "plenty of us to"

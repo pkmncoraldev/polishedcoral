@@ -61,6 +61,7 @@ Route6Trigger2:
 Route6PokeFanM:
 	checkevent EVENT_BEAT_ROUTE_6_TRAINER_3
 	iftrue .end
+	special SaveMusic
 	playmusic MUSIC_HIKER_ENCOUNTER
 	showemote EMOTE_SHOCK, ROUTE6TRAINER3,  30
 	applymovement ROUTE6TRAINER3, Movement_Route6_PokeFanM
@@ -75,7 +76,7 @@ Route6PokeFanM:
 	loadtrainer POKEFANM, 1
 	startbattle
 	reloadmapafterbattle
-	playmusic MUSIC_ROUTE_4
+	special RestoreMusic
 	setevent EVENT_BEAT_ROUTE_6_TRAINER_3
 .end
 	end
@@ -83,6 +84,7 @@ Route6PokeFanM:
 Route6PokeFanF:
 	checkevent EVENT_BEAT_ROUTE_6_TRAINER_4
 	iftrue .end
+	special SaveMusic
 	playmusic MUSIC_GENTLEMAN_ENCOUNTER
 	showemote EMOTE_SHOCK, ROUTE6TRAINER4,  30
 	applymovement ROUTE6TRAINER4, Movement_Route6_PokeFanF
@@ -97,7 +99,7 @@ Route6PokeFanF:
 	loadtrainer POKEFANF, 1
 	startbattle
 	reloadmapafterbattle
-	playmusic MUSIC_ROUTE_4
+	special RestoreMusic
 	setevent EVENT_BEAT_ROUTE_6_TRAINER_4
 .end
 	end

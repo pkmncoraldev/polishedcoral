@@ -4,8 +4,8 @@ SunbeamDodrioHouse_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 2, 5, SUNBEAM_ISLAND
 	warp_def 7, 3, 5, SUNBEAM_ISLAND
+	warp_def 7, 2, 5, SUNBEAM_ISLAND
 
 	db 0 ; coord events
 

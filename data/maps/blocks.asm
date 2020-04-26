@@ -6,6 +6,7 @@ GlintPokeCenter_BlockData:
 StarglowPokeCenter_BlockData:
 LakeOnwaPokeCenter_BlockData:
 SunbeamPokeCenter_BlockData:
+EventidePokeCenter_BlockData:
 FlickerPokeCenter_BlockData:
 TwinklePokeCenter_BlockData:
 	INCBIN "maps/PokeCenter.ablk.lz"
@@ -13,6 +14,7 @@ TwinklePokeCenter_BlockData:
 GlintMart_BlockData:
 StarglowMart_BlockData:
 SunbeamMart_BlockData:
+EventideMart_BlockData:
 FlickerMart_BlockData:
 TwinkleMart_BlockData:
 GenericMart_BlockData:: ; used by tilesets/palettes.asm:LoadSpecialMapPalette
@@ -31,7 +33,7 @@ Route5Gate_BlockData:
 	INCBIN "maps/NorthSouthGate.ablk.lz"
 
 Route4EventideGate_BlockData:
-Route9EventideGate_BlockData:
+EventideVillageGate_BlockData:
 	INCBIN "maps/EastWestGate.ablk.lz"
 
 SunsetWaterGrassHouse_BlockData:
@@ -65,7 +67,12 @@ TwinkleHouse3_BlockData:
 SunsetCaptainsHouse_BlockData:
 DaybreakAlexHouse_BlockData:
 DaybreakMarcusHouse_BlockData:
+EventideHouse1_BlockData:
+EventideHouse2_BlockData:
 	INCBIN "maps/TraditionalHouse.ablk.lz"
+	
+EventideBikeShop_BlockData:
+	INCBIN "maps/EventideBikeShop.ablk.lz"
 
 
 SECTION "Map Blockdata 1", ROMX
@@ -147,6 +154,9 @@ SunbeamBeach_BlockData:
 SunbeamBikiniContest_BlockData:
 	INCBIN "maps/SunbeamBikiniContest.ablk.lz"
 	
+EventideVillage_BlockData:
+	INCBIN "maps/EventideVillage.ablk.lz"
+	
 FlickerStation_BlockData:
 	INCBIN "maps/FlickerStation.ablk.lz"
 	
@@ -197,11 +207,11 @@ LusterSewersValveRoom_BlockData:
 SprucesLab_BlockData:
 	INCBIN "maps/SprucesLab.ablk.lz"
 	
-SunbeamGym_BlockData:
-	INCBIN "maps/SunbeamGym.ablk.lz"
+SunbeamJungle_BlockData:
+	INCBIN "maps/SunbeamJungle.ablk.lz"
 	
-SunbeamGymCave_BlockData:
-	INCBIN "maps/SunbeamGymCave.ablk.lz"
+SunbeamJungleCave_BlockData:
+	INCBIN "maps/SunbeamJungleCave.ablk.lz"
 	
 Route1_BlockData:
 	INCBIN "maps/Route1.ablk.lz"

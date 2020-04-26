@@ -4,8 +4,8 @@ DodrioRanchBarn_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 3, 4, ROUTE_9
-	warp_def 7, 4, 4, ROUTE_9
+	warp_def 7, 3, 2, ROUTE_9
+	warp_def 7, 4, 2, ROUTE_9
 
 	db 0 ; coord events
 

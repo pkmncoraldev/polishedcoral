@@ -1087,8 +1087,8 @@ GruntMGroup:
 ; ================================
 ; ================
 
-	; GRUNTM (1)
-	db "GRUNT@"
+	; STARGLOW_GRUNTM_1
+	db "STARGLOWM1@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1096,8 +1096,8 @@ GruntMGroup:
 
 ; ================
 
-	; GRUNTM (2)
-	db "GRUNT@"
+	; STARGLOW_GRUNTM_2
+	db "STARGLOWM2@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1105,8 +1105,8 @@ GruntMGroup:
 
 ; ================
 
-	; GRUNTM (3)
-	db "GRUNT@"
+	; STARGLOW_GRUNTM_3
+	db "STARGLOWM3@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1114,8 +1114,8 @@ GruntMGroup:
 
 ; ================
 
-	; GRUNTM (4)
-	db "GRUNT@"
+	; SUNBEAM_GRUNTM_1
+	db "SUNBEAMM1@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1123,8 +1123,8 @@ GruntMGroup:
 
 ; ================
 
-	; GRUNTM (5)
-	db "GRUNT@"
+	; SUNBEAM_GRUNTM_2
+	db "SUNBEAMM2@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1132,8 +1132,8 @@ GruntMGroup:
 
 ; ================
 
-	; GRUNTM (6)
-	db "GRUNT@"
+	; SUNBEAM_GRUNTM_3
+	db "SUNBEAMM3@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1141,8 +1141,8 @@ GruntMGroup:
 
 ; ================
 
-	; GRUNTM (7)
-	db "GRUNT@"
+	; SUNBEAM_GRUNTM_4
+	db "SUNBEAMM4@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1150,8 +1150,44 @@ GruntMGroup:
 
 ; ================
 
-	; GRUNTM (8)
-	db "GRUNT@"
+	; TRAIN_GRUNTM_1
+	db "TRAINM1@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; TRAIN_GRUNTM_2
+	db "TRAINM2@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; TRAIN_GRUNTM_3
+	db "TRAINM3@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; TRAIN_GRUNTM_4
+	db "TRAINM4@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; TRAIN_GRUNTM_5
+	db "TRAINM5@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1165,8 +1201,8 @@ GruntFGroup:
 ; ================================
 ; ================
 
-	; GRUNTF (1)
-	db "GRUNT@"
+	; STARGLOW_GRUNTF_1
+	db "STARGLOWF1@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1174,8 +1210,8 @@ GruntFGroup:
 
 ; ================
 
-	; GRUNTF (2)
-	db "GRUNT@"
+	; SUNBEAM_GRUNTF_1
+	db "SUNBEAMF1@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1183,8 +1219,41 @@ GruntFGroup:
 
 ; ================
 
-	; GRUNTF (3)
-	db "GRUNT@"
+	; SUNBEAM_GRUNTF_2
+	db "SUNBEAMF2@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; TRAIN_GRUNTF_1
+	db "TRAINF1@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; TRAIN_GRUNTF_2
+	db "TRAINF2@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+
+KageGroup:
+; ================================
+; ================
+
+	; SUNBEAM_KAGE
+	db "KAGE1@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

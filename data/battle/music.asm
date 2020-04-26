@@ -72,6 +72,7 @@ PlayBattleMusic: ; 2ee6c
 	dbw RIVAL,            MUSIC_RIVAL_BATTLE
 	dbw GRUNTM,           MUSIC_SNARE_BATTLE
 	dbw GRUNTF,           MUSIC_SNARE_BATTLE
+	dbw KAGE,			  MUSIC_SNARE_ADMIN_BATTLE
 	dbw STANLEY,		  MUSIC_GYM_BATTLE
 	dbw RODNEY,		  	  MUSIC_GYM_BATTLE
 	db -1

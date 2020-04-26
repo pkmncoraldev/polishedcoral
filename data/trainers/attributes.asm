@@ -152,13 +152,19 @@ TrainerClassAttributes: ; 3959c
 
 ; Gruntm
 	db 0, 0 ; items
-	db 10 ; base reward
+	db 15 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_RARELY
 
 ; Gruntf
 	db 0, 0 ; items
-	db 10 ; base reward
+	db 15 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_RARELY
+	
+; Executive Kage
+	db 0, 0 ; items
+	db 20 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_RARELY
 

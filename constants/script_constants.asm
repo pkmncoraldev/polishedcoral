@@ -35,7 +35,9 @@ LAST_TALKED EQU -2
 	const VAR_PKMN_JOURNALS    ; 1c
 	const VAR_TRAINER_STARS    ; 1d
 	const VAR_PLAYER_GENDER	   ; 1e
-NUM_VARS EQU const_value       ; 1f
+	const VAR_PLAYER_COLOR	   ; 1f
+	const VAR_SCRIPT_VAR	   ; 20
+NUM_VARS EQU const_value       ; 21
 
 RETVAR_STRBUF2 EQU (0 << 6)
 RETVAR_ADDR_DE EQU (1 << 6)

@@ -11,6 +11,12 @@ Flypoints:
 	flypoint GLINT,				GLINT_CITY
 	flypoint STARGLOW,			STARGLOW_VALLEY
 	flypoint LAKE,				LAKE_ONWA
+	flypoint SUNBEAM,			SUNBEAM_ISLAND
+	flypoint EVENTIDE,			EVENTIDE_VILLAGE
+	flypoint FLICKER,			FLICKER_STATION
+	flypoint TWINKLE,			TWINKLE_TOWN
+	flypoint LUSTER,			LUSTER_CITY
+	
 	flypoint LASTFLYPOINT,		SUNSET_BAY
 KANTO_FLYPOINT EQU const_value
 	

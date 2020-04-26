@@ -11,5 +11,10 @@ SpawnPoints: ; 0x152ab
 	spawn GLINT_CITY,                  27, 16
 	spawn STARGLOW_VALLEY,			   17, 18
 	spawn LAKE_ONWA,					1,  1
+	spawn SUNBEAM_ISLAND,				1,  1
+	spawn EVENTIDE_VILLAGE,				1,  1
+	spawn FLICKER_STATION,				1,  1
+	spawn TWINKLE_TOWN,					1,  1
+	spawn LUSTER_CITY_RESIDENTIAL,		1,  1
 	
 	spawn N_A,                        -1, -1

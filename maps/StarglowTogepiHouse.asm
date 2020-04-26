@@ -251,7 +251,7 @@ StarglowHouse1Rocket:
 	waitsfx
 	winlosstext StarglowHouse1RocketWinText, 0
 	setlasttalked STARGLOWHOUSE1_ROCKET
-	loadtrainer GRUNTM, 1
+	loadtrainer GRUNTM, STARGLOW_GRUNTM_1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle

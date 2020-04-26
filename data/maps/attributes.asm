@@ -142,8 +142,9 @@ ENDM
 	connection south, Route6, ROUTE_6, 1
 	connection west, LakeOnwa, LAKE_ONWA, -11
 	
-	map_attributes Route9, ROUTE_9, 5, NORTH
-	connection north, FlickerStation, FLICKER_STATION, -11
+	map_attributes Route9, ROUTE_9, 5, NORTH | WEST
+	connection north, FlickerStation, FLICKER_STATION, -13
+	connection west, EventideVillage, EVENTIDE_VILLAGE, 5
 	
 	map_attributes Route10, ROUTE_10, 5, NORTH | EAST
 	connection north, TwinkleTown, TWINKLE_TOWN, 4
@@ -152,9 +153,12 @@ ENDM
 	map_attributes Route10East, ROUTE_10_EAST, 5, WEST
 	connection west, Route10, ROUTE_10, 1
 
+	map_attributes EventideVillage, EVENTIDE_VILLAGE, $d9, EAST
+	connection east, Route9, ROUTE_9, -5
+
 	map_attributes FlickerStation, FLICKER_STATION, 5, NORTH | SOUTH
 	connection north, FlickerPassOutside, FLICKER_PASS_OUTSIDE, 21
-	connection south, Route9, ROUTE_9, 11
+	connection south, Route9, ROUTE_9, 13
 	
 	map_attributes FlickerPassOutside, FLICKER_PASS_OUTSIDE, 113, SOUTH
 	connection south, FlickerStation, FLICKER_STATION, -21
@@ -305,8 +309,8 @@ ENDM
 	map_attributes SunbeamTradeHouse, SUNBEAM_TRADE_HOUSE, $0, 0
 	map_attributes SprucesLab, SPRUCES_LAB, $0, 0
 	map_attributes SunbeamReserve, SUNBEAM_RESERVE, $35, 0
-	map_attributes SunbeamGym, SUNBEAM_GYM, $07, 0
-	map_attributes SunbeamGymCave, SUNBEAM_GYM_CAVE, $09, 0
+	map_attributes SunbeamJungle, SUNBEAM_JUNGLE, $07, 0
+	map_attributes SunbeamJungleCave, SUNBEAM_JUNGLE_CAVE, $09, 0
 	map_attributes SpookhouseLivingRoom, SPOOKHOUSE_LIVING_ROOM, $00, 0
 	map_attributes SpookhouseDiningRoom, SPOOKHOUSE_DINING_ROOM, $00, 0
 	map_attributes SpookhouseBedroom, SPOOKHOUSE_BEDROOM, $00, 0
@@ -314,6 +318,11 @@ ENDM
 	map_attributes SpookhouseHallway2, SPOOKHOUSE_HALLWAY_2, $00, 0
 	map_attributes SpookhouseHallway3, SPOOKHOUSE_HALLWAY_3, $00, 0
 	map_attributes SpookhouseTVRoom, SPOOKHOUSE_TV_ROOM, $00, 0
+	map_attributes EventideHouse1, EVENTIDE_HOUSE_1, 0, 0
+	map_attributes EventideHouse2, EVENTIDE_HOUSE_2, 0, 0
+	map_attributes EventideBikeShop, EVENTIDE_BIKE_SHOP, 0, 0
+	map_attributes EventidePokeCenter, EVENTIDE_POKECENTER, 0, 0
+	map_attributes EventideMart, EVENTIDE_MART, 0, 0
 	map_attributes DodrioRanchHouse, DODRIO_RANCH_HOUSE, $00, 0
 	map_attributes DodrioRanchBarn, DODRIO_RANCH_BARN, $00, 0
 	map_attributes DodrioRanchRaceTrack, DODRIO_RANCH_RACETRACK, 5, 0
@@ -338,4 +347,4 @@ ENDM
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0
 	map_attributes Route5Gate, ROUTE_5_GATE, $0, 0
 	map_attributes Route4EventideGate, ROUTE_4_EVENTIDE_GATE, $0, 0
-	map_attributes Route9EventideGate, ROUTE_9_EVENTIDE_GATE, $0, 0
+	map_attributes EventideVillageGate, EVENTIDE_VILLAGE_GATE, $0, 0

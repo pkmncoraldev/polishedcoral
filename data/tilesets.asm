@@ -42,9 +42,10 @@ INCLUDE "data/tilesets/playerhouse_collision.asm"
 SECTION "Tileset Data - glint", ROMX
 
 TilesetGlintGFX::
-INCBIN "gfx/tilesets/glint.2bpp.lz"
+INCBIN "gfx/tilesets/glint.2bpp.vram0.lz"
 
-TilesetGlintGFX2 EQU 0
+TilesetGlintGFX2::
+INCBIN "gfx/tilesets/glint.2bpp.vram1.lz"
 
 TilesetGlintMeta::
 INCBIN "data/tilesets/glint_metatiles.bin.lz"
@@ -310,9 +311,10 @@ INCLUDE "data/tilesets/haunted_collision.asm"
 SECTION "Tileset Data - ranch", ROMX
 
 TilesetRanchGFX::
-INCBIN "gfx/tilesets/ranch.2bpp.lz"
+INCBIN "gfx/tilesets/ranch.2bpp.vram0.lz"
 
-TilesetRanchGFX2 EQU 0
+TilesetRanchGFX2::
+INCBIN "gfx/tilesets/ranch.2bpp.vram1.lz"
 
 TilesetRanchMeta::
 INCBIN "data/tilesets/ranch_metatiles.bin.lz"

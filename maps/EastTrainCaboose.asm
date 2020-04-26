@@ -13,8 +13,8 @@ EastTrainCaboose_MapScriptHeader:
 	db 0 ; bg events
 
 	db 2 ; object events
-	person_event SPRITE_DISGUISEMAN,  2,  3, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, EastTrainCabooseSnareOfficer, EVENT_EAST_TRAIN_CABIN_1_SNARE_OFFICER
-	person_event SPRITE_SNARE,  2,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, EastTrainCabooseSnareGrunt, EVENT_EAST_TRAIN_CABOOSE_SNARE_GRUNT
+	person_event SPRITE_DISGUISEMAN,  2,  3, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_EAST_TRAIN_CABIN_1_SNARE_OFFICER
+	person_event SPRITE_SNARE,  2,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_EAST_TRAIN_CABOOSE_SNARE_GRUNT
 
 	const_def 1 ; object constants
 	const EAST_TRAIN_CABOOSE_SNARE_OFFICER
@@ -56,7 +56,7 @@ EastTrainCabooseTrigger0:
 	special SaveMusic
 	winlosstext EastTrainCabooseSnareOfficerWinText, 0
 	setlasttalked EAST_TRAIN_CABOOSE_SNARE_OFFICER
-	loadtrainer GRUNTM, 4
+	loadtrainer GRUNTM, TRAIN_GRUNTM_1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
@@ -77,7 +77,7 @@ EastTrainCabooseTrigger0:
 	special SaveMusic
 	winlosstext EastTrainCabooseSnareGruntWinText, 0
 	setlasttalked EAST_TRAIN_CABOOSE_SNARE_GRUNT
-	loadtrainer GRUNTM, 5
+	loadtrainer GRUNTM, TRAIN_GRUNTM_2
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
@@ -120,12 +120,6 @@ EastTrainCabooseTrigger0:
 	end
 	
 EastTrainCabooseTrigger1:
-	end
-	
-EastTrainCabooseSnareOfficer:
-	end
-	
-EastTrainCabooseSnareGrunt:
 	end
 	
 EastTrainCaboosePAText1:

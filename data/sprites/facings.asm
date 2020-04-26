@@ -55,7 +55,9 @@ Facings:
 	dw FacingBoatBob1
 	dw FacingBoatBob2
 	dw FacingValve1
-	dw FacingTileHorizontal ; FACING_TILE_HORIZONTAL
+	dw FacingMallSign 		; FACING_MALL_SIGN
+	dw FacingHangarLeft 	; FACING_HANGAR_LEFT
+	dw FacingHangarRight 	; FACING_HANGAR_RIGHT
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -383,10 +385,29 @@ FacingTileRight:
 	db 12,  0, 0, $0e
 	db 12,  8, 0, $0f
 
-FacingTileHorizontal:
+FacingMallSign:
 	db 2 ; #
 	db 12,  8, 0, $07
 	db 12, 16, 0, $02
+	
+FacingHangarLeft:
+	db 6 ; #
+	db 12,  0, 0, $00
+	db 12,  8, 0, $01
+	db  4, 16, 0, $04
+	db  4, 24, 0, $05
+	db  4, 32, 0, $06
+	db  4, 40, 0, $07
+	
+	
+FacingHangarRight:
+	db 6 ; #
+	db  4,  0, 0, $08
+	db  4,  8, 0, $09
+	db  4, 16, 0, $0a
+	db  4, 24, 0, $0b
+	db 12, 32, 0, $02
+	db 12, 40, 0, $03
 	
 FacingArchTreeDown:
 	db 2 ; #

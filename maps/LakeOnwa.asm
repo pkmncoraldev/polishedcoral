@@ -47,10 +47,8 @@ LakeOnwa_MapScriptHeader:
 	const_def 1 ; object constants
 	const LAKEBOATMANOUTSIDER
 	const LAKEBOATMANOUTSIDEL
-	const LAKEBOAT1L
-	const LAKEBOAT1R
-	const LAKEBOAT2L
-	const LAKEBOAT2R
+	const LAKEBOAT1
+	const LAKEBOAT2
 	const LAKENPC1
 	const LAKENPC2
 	const LAKENPC3
@@ -63,18 +61,18 @@ LakeOnwa_MapScriptHeader:
 	const LAKEROCK2
 	const LAKEROCK3
 	const LAKEROCK4
-	
+
 LakeOnwaTrigger0:
 	end
-	
+
 LakeOnwaTrigger1:
 	priorityjump JustRodeBoatR
 	end
-	
+
 LakeOnwaTrigger2:
 	priorityjump JustRodeBoatL
 	end
-	
+
 LakeOnwaCallback:
 	checkevent EVENT_BOAT_BOYS_BEGONE
 	iftrue .skip
@@ -82,8 +80,7 @@ LakeOnwaCallback:
 	changeblock $18, $1a, $b1
 .skip
 	return
-	
-	
+
 JustRodeBoatR:
 	applymovement PLAYER, Movement_PlayerStepOffBoat
 	opentext
@@ -101,7 +98,7 @@ JustRodeBoatR:
 	changeblock $18, $1a, $43
 	dotrigger $0
 	end
-	
+
 JustRodeBoatL:
 	applymovement PLAYER, Movement_PlayerStepOffBoat
 	opentext
@@ -119,19 +116,19 @@ JustRodeBoatL:
 	changeblock $18, $1a, $43
 	dotrigger $0
 	end
-	
+
 MtOnwaSign:
 	jumptext MtOnwaSignText
-	
+
 LakeNpc1:
 	jumptextfaceplayer LakeNpc1Text
-	
+
 LakeNpc2:
 	jumptextfaceplayer LakeNpc2Text
-	
+
 LakeNpc3:
 	jumptextfaceplayer LakeNpc3Text
-	
+
 LakeNpc4:
 	faceplayer
 	opentext
@@ -152,22 +149,22 @@ LakeNpc4:
 	waitbutton
 	closetext
 	end
-	
+
 LakeSign:
 	jumptext LakeSignText
-	
+
 LakeBoatHouseSignR:
 	jumptext LakeBoatHouseSignRText
-	
+
 LakeBoatHouseSignL:
 	jumptext LakeBoatHouseSignLText
-	
+
 LakeNameRaterSign:
 	jumptext LakeNameRaterSignText
-	
+
 LakeCenterSign:
 	jumpstd pokecentersign
-	
+
 LakeBoat:
 	jumptext LakeBoatText
 
@@ -189,7 +186,7 @@ TrainerLake:
 .BeatenText:
 	text "My new #MON!"
 	done
-	
+
 LakeSudowoodo:
 	checkitem POKE_FLUTE
 	iffalse noflutelake
@@ -219,26 +216,26 @@ LakePlayedFluteForSudowoodo::
 	closetext
 	setevent EVENT_FOUGHT_SUDOWOODO
 	end
-	
+
 dontuseflutelake:
 	writetext LakeSudowoodoTextDontUseFlute
 	waitbutton
 	closetext
 	end
-	
+
 noflutelake:
 	opentext
 	writetext LakeSudowoodoTextNoFlute
 	waitbutton
 	closetext
 	end
-	
+
 DidntBeatLakeSudowoodo:
 	reloadmapafterbattle
 	applymovement LAKESUDOWOODO, WeirdTreeMovement_Flee
 	disappear LAKESUDOWOODO
 	end
-	
+
 TrainerLakeSeenText:
 	text "I found a weird"
 	line "tree earlier."
@@ -246,27 +243,27 @@ TrainerLakeSeenText:
 	para "Turns out it was"
 	line "a #MON!"
 	done
-	
+
 TrainerLakeBeatenText:
 	text "My new #MON!"
 	done
-	
+
 TrainerLakeNormalText:
 	text "Guess it needs"
 	line "more training…"
 	done
-	
+
 MtOnwaSignText:
 	text "MT. ONWA ahead."
 	done
-	
+
 LakeSnareWalkText:
 	text "Roger."
 	
 	para "Heading to the"
 	line "island now."
 	done
-	
+
 LakeSignText:
 	text "LAKE ONWA"
 	
@@ -276,7 +273,7 @@ LakeSignText:
 	para "EAST:"
 	line "ROUTE 7"
 	done
-	
+
 LakeBoatHouseSignRText:
 	text "LAKE ONWA BOAT"
 	line "HOUSE 1"
@@ -284,7 +281,7 @@ LakeBoatHouseSignRText:
 	para "Inquire inside"
 	line "for a ride."
 	done
-	
+
 LakeBoatHouseSignLText:
 	text "LAKE ONWA BOAT"
 	line "HOUSE 2"
@@ -299,7 +296,7 @@ LakeNameRaterSignText:
 	para "Get your #MON"
 	line "nicknames rated."
 	done
-	
+
 LakeBoatText:
 	text "It's a rowboat."
 	
@@ -307,13 +304,13 @@ LakeBoatText:
 	line "but it's still in"
 	cont "good shape."
 	done
-	
+
 JustRodeBoatText:
 	text "Thanks for riding."
 	
 	para "Come again."
 	done
-	
+
 LakeNpc1Text:
 	text "Unless you have a"
 	line "#MON that can"
@@ -327,7 +324,7 @@ LakeNpc1Text:
 	
 	para "What a rip off…"
 	done
-	
+
 LakeNpc2Text:
 	text "I love this quiet"
 	line "little town."
@@ -338,7 +335,7 @@ LakeNpc2Text:
 	para "We don't even have"
 	line "a GYM or #MART."
 	done
-	
+
 LakeNpc3Text:
 	text "Alright."
 	
@@ -352,7 +349,7 @@ LakeNpc3Text:
 	para "I think I'm good"
 	line "to go."
 	done
-	
+
 LakeNpc4Text1:
 	text "Aren't these"
 	line "flowers just"
@@ -373,7 +370,7 @@ LakeNpc4Text1:
 	para "Why don't you take"
 	line "this?"
 	done
-	
+
 LakeNpc4Text2:
 	text "If you give that"
 	line "seed to a #MON,"
@@ -384,7 +381,7 @@ LakeNpc4Text2:
 	cont "tifully as my"
 	cont "flowers."
 	done
-	
+
 LakeNpc4Text3:
 	text "You don't seem to"
 	line "have enough space"
@@ -394,7 +391,7 @@ LakeNpc4Text3:
 	line "you've made some"
 	cont "room."
 	done
-	
+
 LakeSudowoodoTextHaveFlute:
 	text "A weird tree"
 	line "blocks the path."
@@ -406,7 +403,7 @@ LakeSudowoodoTextHaveFlute:
 	para "Play the"
 	line "# FLUTE?"
 	done
-	
+
 LakeSudowoodoTextNoFlute:
 	text "A weird tree"
 	line "blocks the path."
@@ -415,34 +412,34 @@ LakeSudowoodoTextNoFlute:
 	
 	para "Sleeping?"
 	done
-	
+
 LakeSudowoodoTextWakeUp:
 	text "The tree woke up!?"
 	
 	para "It attacked in a"
 	line "grumpy rage!"
 	done
-	
+
 LakeSudowoodoTextDontUseFlute:
 	text "Better not wake it"
 	line "now…"
 	done
-	
+
 LakeSudowoodoTextUseFlute:
 	text "<PLAYER> played the"
 	line "# FLUTE."
 	done
-	
+
 LakeSudowoodoTextSudowoodoGone:
-	text "The tree is no"
+	text "SUDOWOODO is no"
 	line "longer blocking"
 	cont "the path!"
 	done
-	
+
 Movement_PlayerStepOffBoat:
 	step_up
 	step_end
-	
+
 Movement_JustRodeBoatR:
 	step_right
 	step_right
@@ -450,7 +447,7 @@ Movement_JustRodeBoatR:
 	step_right
 	step_up
 	step_end
-	
+
 Movement_JustRodeBoatL:
 	step_left
 	step_left
@@ -459,7 +456,7 @@ Movement_JustRodeBoatL:
 	step_left
 	step_up
 	step_end
-	
+
 SudowoodoShakeMovement:
 	tree_shake ; shake
 	step_end

@@ -28,6 +28,7 @@ TrainerGroups: ; 0x39999
 	dba HikerGroup
 	dba GruntMGroup
 	dba GruntFGroup
+	dba KageGroup
 	dba PokefanMGroup
 	dba PokefanFGroup
 	dba OfficerMGroup

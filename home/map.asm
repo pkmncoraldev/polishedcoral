@@ -2163,6 +2163,8 @@ GetMapHeaderMusic:: ; 2cbd
 	ld a, c
 	cp MUSIC_STARGLOW
 	jr z, .starglow
+	cp MUSIC_SUNBEAM
+	jr z, .sunbeam
 	cp MUSIC_TRAIN_RIDE
 	jr z, .train
 	cp MUSIC_TWINKLE_TOWN
@@ -2185,11 +2187,21 @@ GetMapHeaderMusic:: ; 2cbd
 .clearedstarglow
 	ld de, MUSIC_STARGLOW_VALLEY
 	jr .done
-; 2cff
+
+.sunbeam
+	ld a, [wSnareFlags]
+	bit 1, a ; PUNKS_ON_SUNBEAM
+	jr z, .clearedsunbeam
+	ld de, MUSIC_SNARE_INVASION
+	jr .done
+
+.clearedsunbeam
+	ld de, MUSIC_SUNBEAM_ISLAND
+	jr .done
 
 .train
 	ld a, [wSnareFlags]
-	bit 1, a ; PUNKS_ON_TRAIN
+	bit 2, a ; PUNKS_ON_TRAIN
 	jr z, .clearedtrain
 	ld de, MUSIC_SNARE_THEME
 	jr .done
@@ -2197,7 +2209,6 @@ GetMapHeaderMusic:: ; 2cbd
 .clearedtrain
 	ld de, MUSIC_TRAIN
 	jr .done
-; 2cff
 
 .twinkle
 	ld a, [wTimeOfDay]

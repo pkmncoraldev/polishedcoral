@@ -25,7 +25,7 @@ _PokeFlute: ; 50730
 	ld a, [hl]
 	and b
 	ld [hl], a
-	
+
 	ld hl, .PlayedTheFlute
 	call PrintText
 	push de
@@ -40,7 +40,7 @@ _PokeFlute: ; 50730
 	ld hl, .CatchyTune
 	call PrintText
 	ret
-	
+
 .sleeping
 	ld hl, .AllSleepingMonWokeUp
 	jp PrintText
@@ -78,7 +78,24 @@ _PokeFlute: ; 50730
 	special UpdateTimePals
 	callasm .CheckCanUsePokeflute
 	iffalse .NothingHappenedScript
+
+	checkcode VAR_SCRIPT_VAR
+	if_equal 1, .snorlax_script
+	if_equal 2, .sudowoodo_script
+	if_equal 3, .sunbeam_sleepy_snare_script
+	if_equal 4, .sunbeam_sleeping_beauty_script
+.snorlax_script
 	farjump Route4PlayedFluteForSnorlax
+.sudowoodo_script
+	farjump LakePlayedFluteForSudowoodo
+.sunbeam_sleepy_snare_script
+	checkevent EVENT_SNARE_ASLEEP
+	iftrue .NothingHappenedScript
+	farjump SunbeamPlayedFluteForSleepySnare
+.sunbeam_sleeping_beauty_script
+	checktime 1<<NITE
+	iffalse .NothingHappenedScript
+	farjump SunbeamPlayedFluteForSleepingBeauty
 
 .NothingHappenedScript:
 	opentext
@@ -97,18 +114,53 @@ _PokeFlute: ; 50730
 
 	ld a, d
 	cp SPRITEMOVEDATA_SNORLAX
-	jr nz, .nope
+	jr z, .snorlax
 
-	ld a, 1
-	ld [wScriptVar], a
-	ret
+	cp SPRITEMOVEDATA_SUDOWOODO
+	jr z, .sudowoodo
 
+	ld a, [wMapGroup]
+	cp GROUP_SUNBEAM_ISLAND
+	jr z, .sunbeamgroup
+	
 .nope
 	xor a
 	ld [wScriptVar], a
 	ret
 
+.snorlax
+	ld a, 1
+	ld [wScriptVar], a
+	ret
 
+.sudowoodo
+	ld a, 2
+	ld [wScriptVar], a
+	ret	
+
+.sunbeamgroup
+	callba GetFacingObject
+	ld a, d
+	cp SPRITEMOVEDATA_STANDING_LEFT
+	jr nz, .nope
+
+	ld a, [wMapNumber]
+	cp MAP_SUNBEAM_ISLAND
+	jr z, .sunbeam_sleepy_snare
+	cp MAP_SUNBEAM_BEACH
+	jr z, .sunbeam_sleeping_beauty
+	jr .nope
+	
+.sunbeam_sleepy_snare
+	ld a, 3
+	ld [wScriptVar], a
+	ret	
+
+.sunbeam_sleeping_beauty
+	ld a, 4
+	ld [wScriptVar], a
+	ret	
+	
 .CatchyTune: ; 0xf56c
 	; Now, that's a catchy tune!
 	text_jump PokefluteText2

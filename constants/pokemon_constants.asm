@@ -260,6 +260,11 @@ NUM_POKEMON EQU const_value +- 1
 
 ; form values
 
+; generic
+NO_FORM EQU 0
+PLAIN_FORM EQU 1
+ALOLAN_FORM EQU 2
+
 ; unown
 	const_def 1
 	const UNOWN_A_FORM

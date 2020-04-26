@@ -27,6 +27,7 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_HIKER_ENCOUNTER		; hiker
 	db MUSIC_TEAM_SNARE_ENCOUNTER	; gruntm
 	db MUSIC_TEAM_SNARE_ENCOUNTER	; gruntf
+	db MUSIC_TEAM_SNARE_ENCOUNTER	; kage
 	db MUSIC_HIKER_ENCOUNTER		; pokefanm
 	db MUSIC_GENTLEMAN_ENCOUNTER	; pokefanf
 	db MUSIC_HIKER_ENCOUNTER		; officerm

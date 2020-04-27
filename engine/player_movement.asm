@@ -263,8 +263,14 @@ DoPlayerMovement:: ; 80000
 	jp z, .TrySurf
 
 	ld a, [wPlayerStandingTile]
-	cp COLL_CONVEYOR
-	jp z, .conveyor
+	cp COLL_CONVEYOR_UP
+	jp z, .conveyorup
+	cp COLL_CONVEYOR_DOWN
+	jp z, .conveyordown
+	cp COLL_CONVEYOR_LEFT
+	jp z, .conveyorleft
+	cp COLL_CONVEYOR_RIGHT
+	jp z, .conveyorright
 	
 	call .CheckLandPerms
 	jp c, .bump
@@ -287,88 +293,215 @@ DoPlayerMovement:: ; 80000
 	cp COLL_ICE
 	jp z, .ice
 
-	ld a, [wOptions2]
-	and 1 << RUNNING_SHOES
-	jr nz, .RunByDefault
-
 	ld a, [wTileset]
 	cp TILESET_SNOW
 	jp z, .snowruncheck
-	
+
 .donesnowcheck
 	call .RunCheck
 	jp z, .run
 	jp .DoNotRun
-	
-.conveyor
+
+.conveyorup
 	ld a, [wPlayerState]
 	cp PLAYER_BIKE
-	jr z, .conveyorbike
+	jr z, .conveyorup_bike
 	push bc
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
-	
-;	call .force
-	
 	ld a, [wWalkingDirection]
-	cp DOWN
-	jr z, .conveyordown
-	ld a, c
-	and 3
-	ld c, a
-	ld b, 0
-	ld hl, DOWN
-	add hl, bc
-	ld a, [hl]
+	cp UP
+	jr z, .conveyorup_up
+	ld a, UP
 	ld [wWalkingDirection], a
 	ld a, STEP_SLIDE
 	call .DoStep
 	scf
 	ret	
-	
-.conveyordown
+
+.conveyorup_up
 	ld a, STEP_FAST
 	call .DoStep
 	scf
 	ret
 
-.conveyorbike
+.conveyorup_bike
 	ld a, [wWalkingDirection]
-	cp DOWN
-	jr z, .conveyordownbike
 	cp UP
-	jr z, .conveyorupbike
-	ld a, c
-	and 3
-	ld c, a
-	ld b, 0
-	ld hl, DOWN
-	add hl, bc
-	ld a, [hl]
+	jr z, .conveyorup_up_bike
+	cp DOWN
+	jr z, .conveyorup_down_bike
+	ld a, UP
 	ld [wWalkingDirection], a
 	ld a, STEP_SLIDE
 	call .DoStep
 	scf
 	ret	
 
-.conveyordownbike
+.conveyorup_up_bike
+	ld a, STEP_BIKE
+	call .DoStep
+	scf
+	ret
+
+.conveyorup_down_bike
+	ld a, STEP_SLOW
+	call .DoStep
+	scf
+	ret
+
+.conveyordown
+	ld a, [wPlayerState]
+	cp PLAYER_BIKE
+	jr z, .conveyordown_bike
+	push bc
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite ; UpdateSprites
+	pop bc
+	ld a, [wWalkingDirection]
+	cp DOWN
+	jr z, .conveyordown_down
+	ld a, DOWN
+	ld [wWalkingDirection], a
+	ld a, STEP_SLIDE
+	call .DoStep
+	scf
+	ret	
+	
+.conveyordown_down
+	ld a, STEP_FAST
+	call .DoStep
+	scf
+	ret
+
+.conveyordown_bike
+	ld a, [wWalkingDirection]
+	cp DOWN
+	jr z, .conveyordown_down_bike
+	cp UP
+	jr z, .conveyordown_up_bike
+	ld a, DOWN
+	ld [wWalkingDirection], a
+	ld a, STEP_SLIDE
+	call .DoStep
+	scf
+	ret	
+
+.conveyordown_down_bike
 	ld a, STEP_BIKE
 	call .DoStep
 	scf
 	ret
 	
-.conveyorupbike
+.conveyordown_up_bike
+	ld a, STEP_SLOW
+	call .DoStep
+	scf
+	ret
+
+.conveyorleft
+	ld a, [wPlayerState]
+	cp PLAYER_BIKE
+	jr z, .conveyorleft_bike
+	push bc
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite ; UpdateSprites
+	pop bc
+	ld a, [wWalkingDirection]
+	cp LEFT
+	jr z, .conveyorleft_left
+	ld a, LEFT
+	ld [wWalkingDirection], a
+	ld a, STEP_SLIDE
+	call .DoStep
+	scf
+	ret	
+	
+.conveyorleft_left
+	ld a, STEP_FAST
+	call .DoStep
+	scf
+	ret
+
+.conveyorleft_bike
+	ld a, [wWalkingDirection]
+	cp LEFT
+	jr z, .conveyorleft_left_bike
+	cp RIGHT
+	jr z, .conveyorleft_right_bike
+	ld a, LEFT
+	ld [wWalkingDirection], a
+	ld a, STEP_SLIDE
+	call .DoStep
+	scf
+	ret	
+
+.conveyorleft_left_bike
+	ld a, STEP_BIKE
+	call .DoStep
+	scf
+	ret
+
+.conveyorleft_right_bike
+	ld a, STEP_SLOW
+	call .DoStep
+	scf
+	ret
+
+.conveyorright
+	ld a, [wPlayerState]
+	cp PLAYER_BIKE
+	jr z, .conveyorright_bike
+	push bc
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite ; UpdateSprites
+	pop bc
+	ld a, [wWalkingDirection]
+	cp RIGHT
+	jr z, .conveyorright_right
+	ld a, RIGHT
+	ld [wWalkingDirection], a
+	ld a, STEP_SLIDE
+	call .DoStep
+	scf
+	ret	
+	
+.conveyorright_right
+	ld a, STEP_FAST
+	call .DoStep
+	scf
+	ret
+
+.conveyorright_bike
+	ld a, [wWalkingDirection]
+	cp RIGHT
+	jr z, .conveyorright_right_bike
+	cp LEFT
+	jr z, .conveyorright_left_bike
+	ld a, RIGHT
+	ld [wWalkingDirection], a
+	ld a, STEP_SLIDE
+	call .DoStep
+	scf
+	ret	
+
+.conveyorright_right_bike
+	ld a, STEP_BIKE
+	call .DoStep
+	scf
+	ret
+
+.conveyorright_left_bike
 	ld a, STEP_SLOW
 	call .DoStep
 	scf
 	ret
 	
-.RunByDefault
-	call .RunCheck
-	jp nz, .run
-
 .snowruncheck
 	ld a, [wWalkingDirection]
 	cp UP

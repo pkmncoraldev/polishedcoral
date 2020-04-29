@@ -864,6 +864,16 @@ PlayerMovement: ; 96af0
 ; 96b30
 
 CheckMenuOW: ; 96b30
+	ld a, [wPlayerStandingTile]
+	cp COLL_CONVEYOR_UP
+	jp z, .NoMenu
+	cp COLL_CONVEYOR_DOWN
+	jp z, .NoMenu
+	cp COLL_CONVEYOR_LEFT
+	jp z, .NoMenu
+	cp COLL_CONVEYOR_RIGHT
+	jp z, .NoMenu
+
 	xor a
 	ld [hMenuReturn], a
 	ld [hMenuReturn + 1], a

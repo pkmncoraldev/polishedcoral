@@ -323,6 +323,7 @@ ENDM
 	map_attributes EventideBikeShop, EVENTIDE_BIKE_SHOP, 0, 0
 	map_attributes EventidePokeCenter, EVENTIDE_POKECENTER, 0, 0
 	map_attributes EventideMart, EVENTIDE_MART, 0, 0
+	map_attributes EventideGym, EVENTIDE_GYM, 0, 0
 	map_attributes DodrioRanchHouse, DODRIO_RANCH_HOUSE, $00, 0
 	map_attributes DodrioRanchBarn, DODRIO_RANCH_BARN, $00, 0
 	map_attributes DodrioRanchRaceTrack, DODRIO_RANCH_RACETRACK, 5, 0

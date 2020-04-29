@@ -77,9 +77,10 @@ INCLUDE "data/tilesets/house1_collision.asm"
 SECTION "Tileset Data - house2", ROMX
 
 TilesetHouse2GFX::
-INCBIN "gfx/tilesets/house2.2bpp.lz"
+INCBIN "gfx/tilesets/house2.2bpp.vram0.lz"
 
-TilesetHouse2GFX2 EQU 0
+TilesetHouse2GFX2::
+INCBIN "gfx/tilesets/house2.2bpp.vram1.lz"
 
 TilesetHouse2Meta::
 INCBIN "data/tilesets/house2_metatiles.bin.lz"

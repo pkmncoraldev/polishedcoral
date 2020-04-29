@@ -70,10 +70,6 @@ DaybreakMarcusHouse_BlockData:
 EventideHouse1_BlockData:
 EventideHouse2_BlockData:
 	INCBIN "maps/TraditionalHouse.ablk.lz"
-	
-EventideBikeShop_BlockData:
-	INCBIN "maps/EventideBikeShop.ablk.lz"
-
 
 SECTION "Map Blockdata 1", ROMX
 
@@ -156,6 +152,12 @@ SunbeamBikiniContest_BlockData:
 	
 EventideVillage_BlockData:
 	INCBIN "maps/EventideVillage.ablk.lz"
+	
+EventideBikeShop_BlockData:
+	INCBIN "maps/EventideBikeShop.ablk.lz"
+	
+EventideGym_BlockData:
+	INCBIN "maps/EventideGym.ablk.lz"
 	
 FlickerStation_BlockData:
 	INCBIN "maps/FlickerStation.ablk.lz"

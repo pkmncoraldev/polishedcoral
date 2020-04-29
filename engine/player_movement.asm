@@ -271,7 +271,10 @@ DoPlayerMovement:: ; 80000
 	jp z, .conveyorleft
 	cp COLL_CONVEYOR_RIGHT
 	jp z, .conveyorright
+	cp COLL_NO_BIKE
+	jp z, .nobike
 	
+.contreturn
 	call .CheckLandPerms
 	jp c, .bump
 
@@ -501,7 +504,16 @@ DoPlayerMovement:: ; 80000
 	call .DoStep
 	scf
 	ret
-	
+
+.nobike
+	ld a, [wPlayerState]
+	cp PLAYER_BIKE
+	jp nz, .contreturn
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite ; UpdateSprites
+	jp .contreturn
+
 .snowruncheck
 	ld a, [wWalkingDirection]
 	cp UP

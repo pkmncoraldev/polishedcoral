@@ -2121,6 +2121,10 @@ BikeFunction: ; d0b3
 	ret
 
 .TryBike: ; d0bc
+	ld a, [wPlayerStandingTile]
+	cp COLL_NO_BIKE
+	jp z, .floortoobumpy
+	
 	call .CheckEnvironment
 	jr c, .CannotUseBike
 	ld a, [wPlayerState]
@@ -2153,6 +2157,10 @@ BikeFunction: ; d0b3
 	xor a
 	ret
 
+.floortoobumpy
+	ld hl, Script_FloorTooBumpy
+	jr .done
+	
 .done
 	call QueueScript
 	ld a, $1
@@ -2238,6 +2246,14 @@ GotOnTheBikeText: ; 0xd17c
 GotOffTheBikeText: ; 0xd181
 	; got off the @ .
 	text_jump UnknownText_0x1c09c7
+	db "@"
+
+Script_FloorTooBumpy: ; 0xd171
+	writetext .FloorTooBumpyBikeText
+	waitendtext
+
+.FloorTooBumpyBikeText
+	text_jump FloorTooBumpyText_Text
 	db "@"
 
 HasCutAvailable:: ; d186

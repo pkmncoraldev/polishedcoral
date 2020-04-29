@@ -4,7 +4,7 @@ EventideVillage_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, EventideVillageFlypointCallback
 
-	db 7 ; warp events
+	db 9 ; warp events
 	warp_event  6, 20, EVENTIDE_VILLAGE_GATE, 3
 	warp_event  6, 21, EVENTIDE_VILLAGE_GATE, 4
 	warp_event 13, 17, EVENTIDE_POKECENTER, 1
@@ -12,6 +12,8 @@ EventideVillage_MapScriptHeader:
 	warp_event 23, 13, EVENTIDE_BIKE_SHOP, 1
 	warp_event 13, 25, EVENTIDE_HOUSE_1, 1
 	warp_event 35, 13, EVENTIDE_HOUSE_2, 1
+	warp_event 31, 35, EVENTIDE_GYM, 1
+	warp_event 32, 35, EVENTIDE_GYM, 2
 
 	db 0 ; coord events
 

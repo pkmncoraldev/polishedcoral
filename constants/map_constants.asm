@@ -158,10 +158,11 @@ MAP_NONE   EQU 0
 	map_const EVENTIDE_BIKE_SHOP,       		           4,  4 ; 4
 	map_const EVENTIDE_POKECENTER,                         6,  4 ; 5
 	map_const EVENTIDE_MART,							   6,  4 ; 6
-	map_const ROUTE_9,		 							  16, 18 ; 7
-	map_const DODRIO_RANCH_HOUSE,						   4,  4 ; 8
-	map_const DODRIO_RANCH_BARN,						   7,  4 ; 9
-	map_const DODRIO_RANCH_RACETRACK,					  25, 17 ; 10
+	map_const EVENTIDE_GYM,								  23, 11 ; 7
+	map_const ROUTE_9,		 							  16, 18 ; 8
+	map_const DODRIO_RANCH_HOUSE,						   4,  4 ; 9
+	map_const DODRIO_RANCH_BARN,						   7,  4 ; 10
+	map_const DODRIO_RANCH_RACETRACK,					  25, 17 ; 11
 
 	newgroup													 ; 10
 	

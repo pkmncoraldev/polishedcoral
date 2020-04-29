@@ -412,6 +412,13 @@ UnknownText_0x1c09c7::
 	text "."
 	done
 
+FloorTooBumpyText_Text::
+	text "No good!"
+	
+	para "The floor is too"
+	line "bumpy!"
+	done
+	
 UnknownText_0x1c09dd::
 	text "This tree can be"
 	line "CUT!"

@@ -39,7 +39,6 @@ Tileset00Anim::
 TilesetPlayerRoomAnim::
 TilesetPlayerHouseAnim::
 TilesetHouse1Anim::
-TilesetHouse2Anim::
 TilesetPokeCenterAnim::
 TilesetCafeAnim::
 TilesetLighthouseAnim::
@@ -57,6 +56,16 @@ TilesetMall2Anim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 	
+TilesetHouse2Anim::
+	dw VTiles2 tile $6c, WriteTileToBuffer
+	dw wTileAnimBuffer, ScrollTileDown2
+	dw VTiles2 tile $6c, WriteTileFromBuffer
+	dw VTiles2 tile $6d, WriteTileToBuffer
+	dw wTileAnimBuffer, ScrollTileRight2
+	dw VTiles2 tile $6d, WriteTileFromBuffer
+	dw NULL,  AnimateConveyorTile
+	dw NULL,  DoneTileAnimation
+
 TilesetSewerAnim::
 	dw VTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
@@ -78,7 +87,6 @@ TilesetSewerAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
-	
 
 TilesetTrainAnim::
 	dw VTiles2 tile $0, WriteTileToBuffer
@@ -480,9 +488,19 @@ ScrollTileRightLeft: ; fc309
 	and 7
 	ld [wTileAnimationTimer], a
 	and 4
-	jr nz, ScrollTileLeft
-	jr ScrollTileRight
+	jr nz, ScrollTileRight
+	jr ScrollTileLeft
 ; fc318
+
+ScrollTileRight2: ; fc309
+; Scroll right for 4 ticks, then left for 4 ticks.
+	ld a, [wTileAnimationTimer]
+	inc a
+	and 7
+	ld [wTileAnimationTimer], a
+	and 4
+	jr nz, ScrollTileRight
+	jr ScrollTileRight
 
 ScrollTileUpDown: ; fc318
 ; Scroll up for 4 ticks, then down for 4 ticks.
@@ -494,6 +512,16 @@ ScrollTileUpDown: ; fc318
 	jr nz, ScrollTileDown
 	jr ScrollTileUp
 ; fc327
+
+ScrollTileDown2: ; fc318
+; Scroll up for 4 ticks, then down for 4 ticks.
+	ld a, [wTileAnimationTimer]
+	inc a
+	and 7
+	ld [wTileAnimationTimer], a
+	and 4
+	jr nz, ScrollTileDown
+	jr ScrollTileDown
 
 ScrollTileLeft: ; fc327
 	ld h, d
@@ -925,11 +953,41 @@ AnimateFlowerTile2: ; fc56d
 	jp WriteTile
 ; fc58c
 
-;FlowerTileFrames2: ; fc58c
-;	INCBIN "gfx/tilesets/flower/dmg_1.2bpp"
-;	INCBIN "gfx/tilesets/flower2/cgb_1.2bpp"
-;	INCBIN "gfx/tilesets/flower/dmg_2.2bpp"
-;	INCBIN "gfx/tilesets/flower2/cgb_2.2bpp"
+AnimateConveyorTile: ; fc56d
+; No parameters.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; Alternate tile graphic every other frame
+	ld a, [wTileAnimationTimer]
+	and 1 << 1
+	ld e, a
+
+; CGB has different color mappings for flowers.
+	ld a, [hCGB]
+	and 1
+
+	add e
+	swap a ; << 4 (16 bytes)
+	ld e, a
+	ld d, 0
+	ld hl, ConveyorTileFrames
+	add hl, de
+	ld sp, hl
+
+	ld hl, VTiles2 + $30 ; tile 4
+
+	jp WriteTile
+; fc58c
+
+ConveyorTileFrames: ; fc58c
+	INCBIN "gfx/tilesets/conveyor/1.2bpp"
+	INCBIN "gfx/tilesets/conveyor/1.2bpp"
+	INCBIN "gfx/tilesets/conveyor/2.2bpp"
+	INCBIN "gfx/tilesets/conveyor/2.2bpp"
 
 AnimateWaterfallTiles: ; fc56d
 ; Draw two waterfall tiles for the current frame in VRAM tile at de.
@@ -976,7 +1034,7 @@ AnimateWaterfallTiles: ; fc56d
     ld h, d
 
     jp WriteTwoTiles
-
+	
 TrainWindowFrames: dw VTiles2 tile $28, TrainWindowTiles
 
 TrainWindowTiles: INCBIN "gfx/tilesets/trainwindows/1.2bpp"

@@ -134,6 +134,7 @@ INCLUDE "maps/EventideHouse1.asm"
 INCLUDE "maps/EventideHouse2.asm"
 INCLUDE "maps/EventideBikeShop.asm"
 INCLUDE "maps/EventideMart.asm"
+INCLUDE "maps/EventideGym.asm"
 
 SECTION "Flicker Station Scripts", ROMX
 

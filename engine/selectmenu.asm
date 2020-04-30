@@ -119,7 +119,7 @@ UseRegisteredItem:
 	ret
 
 .Overworld:
-	call RefreshScreen
+;	call RefreshScreen
 	ld a, 1
 	ld [wUsingItemWithSelect], a
 	call DoItemEffect
@@ -137,6 +137,7 @@ UseRegisteredItem:
 	call RefreshScreen
 
 ._cantuse
+	call RefreshScreen
 	call CantUseItem
 	call CloseText
 	and a
@@ -147,6 +148,8 @@ GetRegisteredItem:
 	ld de, SFX_MENU
 	call PlaySFX
 
+	xor a
+	ld [wLandmarkSignTimer], a
 	call ClearWindowData
 	farcall ReanchorBGMap_NoOAMUpdate
 	call SafeUpdateSprites

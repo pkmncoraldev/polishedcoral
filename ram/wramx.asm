@@ -1092,7 +1092,9 @@ wYanmaMapNumber:: ds 1
 wVermilionGymTrashCan1:: ds 1
 wVermilionGymTrashCan2:: ds 1
 
-	ds 2 ; unused
+wBikeGear:: ds 1
+
+	ds 1 ; unused
 
 wBattlePoints:: ds 1
 

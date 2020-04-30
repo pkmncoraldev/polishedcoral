@@ -286,7 +286,7 @@ DoPlayerMovement:: ; 80000
 
 	ld a, [wPlayerState]
 	cp PLAYER_DODRIO
-	jp z, .dodrio
+	jp z, .fast
 	
 	ld a, [wSpinning]
 	and a
@@ -586,7 +586,7 @@ DoPlayerMovement:: ; 80000
 .DoNotRun2
 	ld hl, wOWState
 	bit OWSTATE_BIKING_DOWNHILL, [hl]
-	jr z, .fast
+	jr z, .checkbikegear
 
 	ld a, [wWalkingDirection]
 	cp DOWN
@@ -603,16 +603,11 @@ DoPlayerMovement:: ; 80000
 	scf
 	ret
 	
-.dodrio
-	ld a, [hJoypadDown]
-	and B_BUTTON
-	cp B_BUTTON
-	jp z, .dodrioslow
+.checkbikegear
+	ld hl, wBikeGear
+	bit 0, [hl] ; ENGINE_BIKE_GEAR
+	jr z, .fast
 	ld a, STEP_FAST
-	jr .dodriocont
-.dodrioslow
-	ld a, STEP_SURF
-.dodriocont
 	call .DoStep
 	scf
 	ret

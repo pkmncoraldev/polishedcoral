@@ -2130,6 +2130,8 @@ BikeFunction: ; d0b3
 	ld a, [wPlayerState]
 	and a ; cp PLAYER_NORMAL
 	jr z, .GetOnBike
+	cp PLAYER_RUN
+	jr z, .GetOnBike
 	cp PLAYER_BIKE
 	jr z, .GetOffBike
 	jr .CannotUseBike
@@ -2203,8 +2205,8 @@ Script_GetOnBike: ; 0xd13e
 	writecode VAR_MOVEMENT, PLAYER_BIKE
 	writetext GotOnTheBikeText
 	waitbutton
-FinishGettingOnBike:
 	closetext
+FinishGettingOnBike:
 	special ReplaceKrisSprite
 	special PlayMapMusic
 	end
@@ -2219,8 +2221,8 @@ Script_GetOffBike: ; 0xd158
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
 	writetext GotOffTheBikeText
 	waitbutton
-FinishGettingOffBike:
 	closetext
+FinishGettingOffBike:
 	special ReplaceKrisSprite
 	special PlayMapMusic
 	end

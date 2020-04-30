@@ -51,7 +51,10 @@ EngineFlags: ; 80462
 	engine_flag wOWState, OWSTATE_WHIRLPOOL
 	engine_flag wOWState, OWSTATE_WATERFALL
 	engine_flag wOWState, OWSTATE_CUT
+	engine_flag wOWState, OWSTATE_BIKE_GEAR
 
+	engine_flag wBikeGear, 0
+	
 	engine_flag wOnwaBadges, FIRSTBADGE
 	engine_flag wOnwaBadges, SECONDBADGE
 	engine_flag wOnwaBadges, THIRDBADGE

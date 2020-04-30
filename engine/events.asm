@@ -472,6 +472,9 @@ OWPlayerInput: ; 96974
 
 	call CheckAPressOW
 	jr c, .Action
+	
+	call CheckBPressOW
+	jr c, .Action
 
 	call CheckMenuOW
 	jr c, .Action
@@ -501,6 +504,29 @@ CheckAPressOW: ; 96999
 	xor a
 	ret
 ; 969ac
+
+CheckBPressOW: ; 96999
+	ld a, [wPlayerState]
+	cp PLAYER_BIKE
+	jr nz, .not_on_bike
+	ld a, [hJoyPressed]
+	and B_BUTTON
+	ret z
+	
+	ld de, SFX_SQUEAK
+	call PlaySFX
+	ld hl, wBikeGear
+	bit 0, [hl] ; ENGINE_BIKE_GEAR
+	jr z, .notset
+	res 0, [hl] ; ENGINE_BIKE_GEAR
+	ret
+.notset
+	set 0, [hl] ; ENGINE_BIKE_GEAR
+	ret
+
+.not_on_bike
+	xor a
+	ret
 
 PlayTalkObject: ; 969ac
 	farcall GetFacingObject

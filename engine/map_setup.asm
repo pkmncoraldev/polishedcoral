@@ -303,13 +303,13 @@ RotatePalettesRightMapAndMusic:
 	farjp FadeOutPalettes
 
 ForceMapMusic: ; 15587
-	ld a, [wPlayerState]
-	cp PLAYER_BIKE
-	jr nz, .notbiking
-	call VolumeOff
-	ld a, $88
-	ld [wMusicFade], a
-.notbiking
+;	ld a, [wPlayerState]
+;	cp PLAYER_BIKE
+;	jr nz, .notbiking
+;	call VolumeOff
+;	ld a, $88
+;	ld [wMusicFade], a
+;.notbiking
 	jp TryRestartMapMusic
 
 DecompressMetatiles:

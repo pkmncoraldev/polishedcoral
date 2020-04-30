@@ -61,9 +61,9 @@ EventideGymRedSwitchScript:
 	yesorno
 	iffalse EventideGymNoSwitchScript
 	writetext EventideGymYesSwitchText
-	waitbutton
+	playsound SFX_PUSH_BUTTON
+	waitsfx
 	closetext
-	playsound SFX_WALL_OPEN
 	checkevent EVENT_EVENTIDE_GYM_RED_SWITCH
 	iftrue .turn_off
 	changeblock $14, $a, $9a
@@ -78,7 +78,6 @@ EventideGymRedSwitchScript:
 	changeblock $22, $e, $c3
 	reloadmappart
 	closetext
-	waitsfx
 	setevent EVENT_EVENTIDE_GYM_RED_SWITCH
 	end
 .turn_off
@@ -102,9 +101,9 @@ EventideGymBlueSwitchScript:
 	yesorno
 	iffalse EventideGymNoSwitchScript
 	writetext EventideGymYesSwitchText
-	waitbutton
+	playsound SFX_PUSH_BUTTON
+	waitsfx
 	closetext
-	playsound SFX_WALL_OPEN
 	checkevent EVENT_EVENTIDE_GYM_BLUE_SWITCH
 	iftrue .turn_off
 	changeblock $6, $6, $a1
@@ -114,7 +113,6 @@ EventideGymBlueSwitchScript:
 	changeblock $20, $a, $a1
 	reloadmappart
 	closetext
-	waitsfx
 	setevent EVENT_EVENTIDE_GYM_BLUE_SWITCH
 	end
 .turn_off
@@ -125,7 +123,6 @@ EventideGymBlueSwitchScript:
 	changeblock $20, $a, $a0
 	reloadmappart
 	closetext
-	waitsfx
 	clearevent EVENT_EVENTIDE_GYM_BLUE_SWITCH
 	end
 	
@@ -136,22 +133,20 @@ EventideGymYellowSwitchScript:
 	yesorno
 	iffalse EventideGymNoSwitchScript
 	writetext EventideGymYesSwitchText
-	waitbutton
+	playsound SFX_PUSH_BUTTON
+	waitsfx
 	closetext
-	playsound SFX_WALL_OPEN
 	checkevent EVENT_EVENTIDE_GYM_YELLOW_SWITCH
 	iftrue .turn_off
 	changeblock $18, $6, $97
 	reloadmappart
 	closetext
-	waitsfx
 	setevent EVENT_EVENTIDE_GYM_YELLOW_SWITCH
 	end
 .turn_off
 	changeblock $18, $6, $96
 	reloadmappart
 	closetext
-	waitsfx
 	clearevent EVENT_EVENTIDE_GYM_YELLOW_SWITCH
 	end
 

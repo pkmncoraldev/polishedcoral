@@ -306,6 +306,18 @@ CheckTileEvent: ; 96874
 	jr c, .warp_tile
 
 .connections_disabled
+
+	ld a, [wPlayerStandingTile]
+	cp COLL_NO_BIKE
+	jr nz, .cont
+	ld a, [wPlayerState]
+	cp PLAYER_BIKE
+	jr nz, .cont
+	ld a, BANK(NoBikeScript)
+	ld hl, NoBikeScript
+	jp CallScript
+
+.cont
 	call CheckCoordEventScriptFlag
 	jr z, .coord_events_disabled
 
@@ -356,6 +368,18 @@ CheckTileEvent: ; 96874
 	ld a, [wMapScriptHeaderBank]
 	jp CallScript
 ; 968c7
+
+NoBikeScript:
+	opentext
+	writetext .text
+	waitbutton
+	closetext
+	special Special_ForcePlayerStateNormal
+	end
+
+.text:
+	text_jump _NoBikeText
+	db "@"
 
 CheckWildEncounterCooldown: ; 968c7
 	ld hl, wWildEncounterCooldown
@@ -478,6 +502,9 @@ OWPlayerInput: ; 96974
 
 	call CheckMenuOW
 	jr c, .Action
+	
+;	call CheckNoBikeTile
+;	jr nc, .Action
 
 .NoAction:
 	xor a
@@ -527,7 +554,7 @@ CheckBPressOW: ; 96999
 .not_on_bike
 	xor a
 	ret
-
+	
 PlayTalkObject: ; 969ac
 	farcall GetFacingObject
 	cp SPRITEMOVEDATA_SAILBOAT_TOP

@@ -271,8 +271,6 @@ DoPlayerMovement:: ; 80000
 	jp z, .conveyorleft
 	cp COLL_CONVEYOR_RIGHT
 	jp z, .conveyorright
-	cp COLL_NO_BIKE
-	jp z, .nobike
 	
 .contreturn
 	call .CheckLandPerms
@@ -308,12 +306,13 @@ DoPlayerMovement:: ; 80000
 .conveyorup
 	ld a, [wPlayerState]
 	cp PLAYER_BIKE
-	jr z, .conveyorup_bike
+	jr z, .conveyorup_bike_gear_check
 	push bc
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
+.conveyorup_return
 	ld a, [wWalkingDirection]
 	cp UP
 	jr z, .conveyorup_up
@@ -330,6 +329,10 @@ DoPlayerMovement:: ; 80000
 	scf
 	ret
 
+.conveyorup_bike_gear_check
+	call CheckBikeGear
+	jr nz, .conveyorup_return
+	
 .conveyorup_bike
 	ld a, [wWalkingDirection]
 	cp UP
@@ -358,12 +361,13 @@ DoPlayerMovement:: ; 80000
 .conveyordown
 	ld a, [wPlayerState]
 	cp PLAYER_BIKE
-	jr z, .conveyordown_bike
+	jr z, .conveyordown_bike_gear_check
 	push bc
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
+.conveyordown_return
 	ld a, [wWalkingDirection]
 	cp DOWN
 	jr z, .conveyordown_down
@@ -380,6 +384,10 @@ DoPlayerMovement:: ; 80000
 	scf
 	ret
 
+.conveyordown_bike_gear_check
+	call CheckBikeGear
+	jr nz, .conveyordown_return
+	
 .conveyordown_bike
 	ld a, [wWalkingDirection]
 	cp DOWN
@@ -408,12 +416,13 @@ DoPlayerMovement:: ; 80000
 .conveyorleft
 	ld a, [wPlayerState]
 	cp PLAYER_BIKE
-	jr z, .conveyorleft_bike
+	jr z, .conveyorleft_bike_gear_check
 	push bc
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
+.conveyorleft_return
 	ld a, [wWalkingDirection]
 	cp LEFT
 	jr z, .conveyorleft_left
@@ -430,6 +439,10 @@ DoPlayerMovement:: ; 80000
 	scf
 	ret
 
+.conveyorleft_bike_gear_check
+	call CheckBikeGear
+	jr nz, .conveyorleft_return
+	
 .conveyorleft_bike
 	ld a, [wWalkingDirection]
 	cp LEFT
@@ -458,12 +471,13 @@ DoPlayerMovement:: ; 80000
 .conveyorright
 	ld a, [wPlayerState]
 	cp PLAYER_BIKE
-	jr z, .conveyorright_bike
+	jr z, .conveyorright_bike_gear_check
 	push bc
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
+.conveyorright_return
 	ld a, [wWalkingDirection]
 	cp RIGHT
 	jr z, .conveyorright_right
@@ -480,6 +494,10 @@ DoPlayerMovement:: ; 80000
 	scf
 	ret
 
+.conveyorright_bike_gear_check
+	call CheckBikeGear
+	jr nz, .conveyorright_return
+	
 .conveyorright_bike
 	ld a, [wWalkingDirection]
 	cp RIGHT
@@ -512,8 +530,8 @@ DoPlayerMovement:: ; 80000
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite ; UpdateSprites
-	jp .contreturn
-
+	ret
+	
 .snowruncheck
 	ld a, [wWalkingDirection]
 	cp UP
@@ -604,8 +622,7 @@ DoPlayerMovement:: ; 80000
 	ret
 	
 .checkbikegear
-	ld hl, wBikeGear
-	bit 0, [hl] ; ENGINE_BIKE_GEAR
+	call CheckBikeGear
 	jr z, .fast
 	ld a, STEP_FAST
 	call .DoStep
@@ -1389,3 +1406,10 @@ StopPlayerForEvent:: ; 80422
 	ld [wPlayerTurningDirection], a
 	ret
 ; 80430
+
+CheckBikeGear::
+	ld hl, wBikeGear
+	bit 0, [hl] ; ENGINE_BIKE_GEAR
+	ret nz
+	ld a, 1
+	ret

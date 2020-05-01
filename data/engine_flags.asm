@@ -51,7 +51,6 @@ EngineFlags: ; 80462
 	engine_flag wOWState, OWSTATE_WHIRLPOOL
 	engine_flag wOWState, OWSTATE_WATERFALL
 	engine_flag wOWState, OWSTATE_CUT
-	engine_flag wOWState, OWSTATE_BIKE_GEAR
 
 	engine_flag wBikeGear, 0
 	
@@ -82,10 +81,10 @@ EngineFlags: ; 80462
 	engine_flag wVisitedSpawns, 4  ; starglow
 	engine_flag wVisitedSpawns, 5  ; lake
 	engine_flag wVisitedSpawns, 6  ; sunbeam
-	engine_flag wVisitedSpawns, 7  ; flicker
-	engine_flag wVisitedSpawns, 8  ; unused
-	engine_flag wVisitedSpawns, 9  ; unused
-	engine_flag wVisitedSpawns, 10 ; unused
+	engine_flag wVisitedSpawns, 7  ; eventide
+	engine_flag wVisitedSpawns, 8  ; flicker
+	engine_flag wVisitedSpawns, 9  ; twinkle
+	engine_flag wVisitedSpawns, 10 ; luster
 	engine_flag wVisitedSpawns, 11 ; unused
 	engine_flag wVisitedSpawns, 12 ; unused
 	engine_flag wVisitedSpawns, 13 ; unused

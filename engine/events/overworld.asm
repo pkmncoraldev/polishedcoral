@@ -2160,6 +2160,7 @@ BikeFunction: ; d0b3
 	ret
 
 .floortoobumpy
+	call RefreshScreen
 	ld hl, Script_FloorTooBumpy
 	jr .done
 	
@@ -2255,7 +2256,7 @@ Script_FloorTooBumpy: ; 0xd171
 	waitendtext
 
 .FloorTooBumpyBikeText
-	text_jump FloorTooBumpyText_Text
+	text_jump _NoBikeText
 	db "@"
 
 HasCutAvailable:: ; d186

@@ -411,13 +411,6 @@ UnknownText_0x1c09c7::
 	text_from_ram wStringBuffer2
 	text "."
 	done
-
-FloorTooBumpyText_Text::
-	text "No good!"
-	
-	para "The floor is too"
-	line "bumpy!"
-	done
 	
 UnknownText_0x1c09dd::
 	text "This tree can be"
@@ -1367,3 +1360,11 @@ _SpruceText5::
 	line "#MON story to"
 	cont "discover!"
 	prompt
+	
+_NoBikeText::
+	text "The floor is too"
+	line "bumpy!"
+
+	para "You can't BIKE"
+	line "here."
+	done

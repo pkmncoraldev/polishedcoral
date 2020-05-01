@@ -43,8 +43,7 @@ LusterCityResidential_MapScriptHeader:
 
 
 	const_def 1 ; object constants
-	const LUSTERMALLSIGN1
-	const LUSTERMALLSIGN2
+	const LUSTERMALLSIGN
 	const LUSTER1STREETLIGHT1
 	const LUSTER1STREETLIGHT2
 	const LUSTER1NPC1

@@ -1,7 +1,8 @@
 LusterCityShopping_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, ShoppingCallback
 
 	db 2 ; warp events
 	warp_def 11,  0, 1, ROUTE_1 ;ROUTE_6_SAFFRON_GATE
@@ -24,8 +25,8 @@ LusterCityShopping_MapScriptHeader:
 	db 0 ; bg events
 
 	db 13 ; object events
-	person_event SPRITE_MALL_SIGN_2, 44,  3, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
 	person_event SPRITE_TRAFFIC_LIGHT, 44, -3, SPRITEMOVEDATA_TILE_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
+	person_event SPRITE_MALL_SIGN_2, 44,  3, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
 	person_event SPRITE_MALL_SIGN_2, 44,  4, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
 	person_event SPRITE_MALL_SIGN, 31, 11, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
 	person_event SPRITE_MALL_SIGN, 31, 12, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
@@ -39,9 +40,9 @@ LusterCityShopping_MapScriptHeader:
 	person_event SPRITE_YOUNGSTER, 29, 20, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster2NPC8, -1
 
 	const_def 1 ; object constants
+	const LUSTER2STREETLIGHT
 	const LUSTER2MALLSIGN1_1
 	const LUSTER2MALLSIGN1_2
-	const LUSTER2STREETLIGHT
 	const LUSTER2MALLSIGN2_1
 	const LUSTER2MALLSIGN2_2
 	const LUSTER2NPC1
@@ -63,10 +64,12 @@ LusterShoppingSignThing:
 	callasm ReturnFromMapSetupScript
 	end
 	
-;ShoppingCallback:
-;	setevent EVENT_DOUBLE_LANDMARK_SIGN
-;	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
-;	return
+ShoppingCallback:
+	checktime 1<<NITE
+	iffalse .notnite
+	changeblock -4, 20, $84
+.notnite
+	return
 	
 Luster2NPC1:
 	faceplayer

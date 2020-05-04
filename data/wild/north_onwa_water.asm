@@ -1,4 +1,4 @@
-; Johto Pokémon in water
+; N. Onwa Pokémon in water
 
 	map_id SUNSET_BAY
 	db 0 percent ; encounter rate

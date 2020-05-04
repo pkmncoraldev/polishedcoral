@@ -1,4 +1,4 @@
-; Kanto Pokémon in water
+; S. Onwa Pokémon in water
 
 	
 

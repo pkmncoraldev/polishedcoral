@@ -1,4 +1,4 @@
-; Kanto Pokémon in grass
+; S. Onwa Pokémon in grass
 
 	
 

@@ -17,6 +17,8 @@ ResetOWMapState:
 	cp ROUTE
 	jr z, .reset_flash
 	cp TOWN
+	jr z, .reset_flash
+	cp FOREST
 	jr nz, .keep_flash
 .reset_flash
 	ld hl, wStatusFlags

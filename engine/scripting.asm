@@ -263,6 +263,7 @@ ScriptCommandTable:
 	dw Script_waitbuttonsilent
 	dw Script_killsfx
 	dw Script_waitbuttonseat
+	dw Script_warp2
 
 StartScript:
 	ld hl, wScriptFlags
@@ -3091,4 +3092,48 @@ KillSFXEntryPoint::
     ld [wChannel7Flags], a
     ld [wChannel8Flags], a
     ret
+	
+Script_warp2:
+; parameters:
+;     map_group (MapGroupParam)
+;     map_id (MapIdParam)
+;     x (SingleByteParam)
+;     y (SingleByteParam)
+	call GetScriptByte
+	and $3
+	ld c, a
+	ld a, [wPlayerSpriteSetupFlags]
+	set 5, a
+	or c
+	ld [wPlayerSpriteSetupFlags], a
+
+	call GetScriptByte
+	and a
+	jr z, .not_ok
+	ld [wMapGroup], a
+	call GetScriptByte
+	ld [wMapNumber], a
+	call GetScriptByte
+	ld [wXCoord], a
+	call GetScriptByte
+	ld [wYCoord], a
+	ld a, -1
+	ld [wDefaultSpawnpoint], a
+	ld a, MAPSETUP_BADWARP
+	ld [hMapEntryMethod], a
+	ld a, 1
+	call LoadMapStatus
+	jp StopScript
+
+.not_ok
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	ld a, -1
+	ld [wDefaultSpawnpoint], a
+	ld a, MAPSETUP_BADWARP
+	ld [hMapEntryMethod], a
+	ld a, 1
+	call LoadMapStatus
+	jp StopScript
 	

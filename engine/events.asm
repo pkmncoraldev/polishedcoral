@@ -502,9 +502,6 @@ OWPlayerInput: ; 96974
 
 	call CheckMenuOW
 	jr c, .Action
-	
-;	call CheckNoBikeTile
-;	jr nc, .Action
 
 .NoAction:
 	xor a

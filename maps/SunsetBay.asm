@@ -391,12 +391,12 @@ SunsetGrampsText2:
 	done
 	
 SunsetNPC4Text:
-	text "Nice running"
-	line "shoes!"
+	text "Nice RUNNING"
+	line "SHOES!"
 	
 	para "You can run if"
 	line "you hold the"
-	cont "B button, right?"
+	cont "B BUTTON, right?"
 	done
 	
 SunsetNPC5Text:

@@ -1134,6 +1134,9 @@ DoPlayerMovement:: ; 80000
 ; Returns 0 if there is an NPC in front that you can't move
 ; Returns 1 if there is no NPC in front
 ; Returns 2 if there is a movable NPC in front
+	ld hl, wHaveFollower
+	bit 0, [hl] ; ENGINE_BIKE_GEAR
+	jr nz, .is_npc ;set
 	xor a
 	ld [hMapObjectIndexBuffer], a
 ; Load the next X coordinate into d
@@ -1260,6 +1263,9 @@ DoPlayerMovement:: ; 80000
 ; Routine by Victoria Lacroix
 ; https://github.com/VictoriaLacroix/pokecrystal/commit/ed7f525d642cb02e84e856f2e506d2a6425d95db
 .RunCheck:
+	ld hl, wHaveFollower
+	bit 0, [hl] ; ENGINE_BIKE_GEAR
+	ret nz ;set
 	ld a, [wWalkingDirection]
 	cp STANDING
 	ret z

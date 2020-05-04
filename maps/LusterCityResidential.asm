@@ -5,9 +5,22 @@ LusterCityResidential_MapScriptHeader:
 	callback MAPCALLBACK_TILES, ResidentialCallback
 
 	db 1 ; warp events
-	warp_def 20, 13, 1, LUSTER_SEWERS_B1F_FLOODED
+	warp_def 20, 12, 1, LUSTER_SEWERS_B1F_FLOODED
 
-	db 0 ; coord events
+	db 13 ; coord events
+	xy_trigger 0, 41, 21, 0, LusterCityResidentialLight, 0, 0
+	xy_trigger 0,  0,  0, 0, LusterCityResidentialLight, 0, 0
+	xy_trigger 0, 33,  5, 0, LusterCityResidentialLight, 0, 0
+	xy_trigger 0, 21, 24, 0, LusterCityResidentialLight, 0, 0
+	xy_trigger 1, 20, 24, 0, LusterCityResidentialDark, 0, 0
+	xy_trigger 1, 21, 23, 0, LusterCityResidentialDark, 0, 0
+	xy_trigger 1, 22, 24, 0, LusterCityResidentialDark, 0, 0
+	xy_trigger 1, 32,  5, 0, LusterCityResidentialDark, 0, 0
+	xy_trigger 1, 33,  6, 0, LusterCityResidentialDark, 0, 0
+	xy_trigger 1, 34,  5, 0, LusterCityResidentialDark, 0, 0
+	xy_trigger 1, 40, 21, 0, LusterCityResidentialDark, 0, 0
+	xy_trigger 1, 41, 22, 0, LusterCityResidentialDark, 0, 0
+	xy_trigger 1, 42, 21, 0, LusterCityResidentialDark, 0, 0
 
 	db 8 ; bg events
 	signpost 18, 13, SIGNPOST_READ, LusterTrashcan1
@@ -20,31 +33,32 @@ LusterCityResidential_MapScriptHeader:
 	signpost 15, 23, SIGNPOST_READ, LusterSign2
 
 	db 20 ; object events
-	person_event SPRITE_MALL_SIGN_2, 44, 31, SPRITEMOVEDATA_MALL_SIGN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
-	person_event SPRITE_TRAFFIC_LIGHT, 24, 20, SPRITEMOVEDATA_TILE_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
-	person_event SPRITE_TRAFFIC_LIGHT, 44, 25, SPRITEMOVEDATA_TILE_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
-	person_event SPRITE_OFFICER, 39,  6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC1, -1
+	person_event SPRITE_TRAFFIC_LIGHT, 44, 25, SPRITEMOVEDATA_TILE_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MALL_SIGN_2, 44, 31, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MALL_SIGN_2, 44, 32, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_TRAFFIC_LIGHT, 24, 20, SPRITEMOVEDATA_TILE_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_FAT_GUY, 39,  6, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 29, 12, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster1NPC2, -1
 	person_event SPRITE_BIRD_KEEPER, 30, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Luster1NPC3, -1
 	person_event SPRITE_YOUNGSTER, 25, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Luster1NPC4, -1
 	person_event SPRITE_COOLTRAINER_F, 33, 21, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Luster1NPC5, -1
 	person_event SPRITE_YOUNGSTER, 39, 16, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Luster1NPC6, -1
-	person_event SPRITE_LASS, 26, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC7, -1
-	person_event SPRITE_FAT_GUY, 33,  9, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC8, -1
-	person_event SPRITE_BUG_CATCHER, 47,  7, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC9, -1
-	person_event SPRITE_YOUNGSTER, 51, 21, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster1NPC10, -1
-	person_event SPRITE_MEOWTH, 44, 14, SPRITEMOVEDATA_POKEMON, 2, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster1NPC11, -1
-	person_event SPRITE_PIKACHU, 25, 14, SPRITEMOVEDATA_POKEMON, 2, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster1NPC12, -1
-	person_event SPRITE_GENTLEMAN,  9, 22, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC13, -1
-	person_event SPRITE_DELINQUENT_M, 20, 14, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunkLeader, -1
-	person_event SPRITE_DELINQUENT_F, 21, 14, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunk1, -1
-	person_event SPRITE_DELINQUENT_M, 19, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunk2, -1
+	person_event SPRITE_LASS, 26, 19, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC7, -1
+	person_event SPRITE_BUG_CATCHER, 47,  7, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC8, -1
+	person_event SPRITE_YOUNGSTER, 51, 21, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster1NPC9, -1
+	person_event SPRITE_MEOWTH, 44, 14, SPRITEMOVEDATA_POKEMON, 2, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster1NPC10, -1
+	person_event SPRITE_PIKACHU, 25, 14, SPRITEMOVEDATA_POKEMON, 2, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster1NPC11, -1
+	person_event SPRITE_GENTLEMAN,  9, 22, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC12, -1
+	person_event SPRITE_DELINQUENT_M, 20, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunkLeader, -1
+	person_event SPRITE_DELINQUENT_F, 21, 13, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunk1, -1
+	person_event SPRITE_DELINQUENT_M, 19, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunk2, -1
 	person_event SPRITE_BURGLAR, 34, 14, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterShadyGuy, -1
 
 
 	const_def 1 ; object constants
-	const LUSTERMALLSIGN
 	const LUSTER1STREETLIGHT1
+	const LUSTERMALLSIGN1
+	const LUSTERMALLSIGN2
 	const LUSTER1STREETLIGHT2
 	const LUSTER1NPC1
 	const LUSTER1NPC2
@@ -58,19 +72,26 @@ LusterCityResidential_MapScriptHeader:
 	const LUSTER1NPC10
 	const LUSTER1NPC11
 	const LUSTER1NPC12
-	const LUSTER1NPC13
 	const LUSTERPUNKLEADER
 	const LUSTERPUNK1
 	const LUSTERPUNK2
 	const LUSTERSHADYGUY
 	
 ResidentialCallback:
+	checktime 1<<NITE
+	iffalse .notnite
+	changeblock $18, $14, $84
+	changeblock $4, $20, $85
+	changeblock $14, $28, $85
+
+.notnite
 	checkevent EVENT_DOUBLE_LANDMARK_SIGN
 	iffalse .cont
 	domaptrigger LUSTER_CITY_SHOPPING, $0
 	setevent EVENT_IN_RESIDENTIAL_DISTRICT
 	clearevent EVENT_IN_SHOPPING_DISTRICT
 	clearevent EVENT_IN_BUSINESS_DISTRICT
+
 .cont
 	checkevent EVENT_LUSTER_TRASHCAN_1
 	iftrue .OpenSesame1
@@ -125,6 +146,87 @@ ResidentialCallback:
 	changeblock $c, $14, $5a
 	return
 	
+	
+LusterCityResidentialLight:
+	checktime 1<<NITE
+	iffalse .notnite
+	setflag ENGINE_NEAR_CAMPFIRE
+	callasm UpdatePalsAsm
+;	loadvar wTimeOfDayPalFlags, $40 | 1
+	dotrigger $1
+.notnite
+	end
+	
+LusterCityResidentialDark:
+	clearflag ENGINE_NEAR_CAMPFIRE
+	callasm UpdatePalsAsm
+;	loadvar wTimeOfDayPalFlags, $40 | 0
+	dotrigger $0
+	end
+	
+UpdatePalsAsm:
+	ld hl, wUnknBGPals palette 7
+
+; save wram bank
+	ld a, [rSVBK]
+	ld b, a
+; wram bank 5
+	ld a, 5
+	ld [rSVBK], a
+
+; push palette
+	ld c, 4 ; NUM_PAL_COLORS
+.push
+	ld d, [hl]
+	inc hl
+	ld e, [hl]
+	inc hl
+	push de
+	dec c
+	jr nz, .push
+
+; restore wram bank
+	ld a, b
+	ld [rSVBK], a
+
+
+; update cgb pals
+	ld b, CGB_MAPPALS
+	call GetCGBLayout
+	
+; restore bg palette 7
+	ld hl, wUnknBGPals palette 7 + 1 palettes - 1 ; last byte in UnknBGPals
+
+; save wram bank
+	ld a, [rSVBK]
+	ld d, a
+; wram bank 5
+	ld a, 5
+	ld [rSVBK], a
+
+; pop palette
+	ld e, 4 ; NUM_PAL_COLORS
+.pop
+	pop bc
+	ld [hl], c
+	dec hl
+	ld [hl], b
+	dec hl
+	dec e
+	jr nz, .pop
+
+; restore wram bank
+	ld a, d
+	ld [rSVBK], a
+
+; update palettes
+	farcall _UpdateTimePals
+;	farcall DelayFrame
+	
+; successful change
+	scf
+	ret
+	
 LusterSign1:
 	jumptext LusterSign1Text
 	
@@ -157,33 +259,30 @@ Luster1NPC8:
 	
 Luster1NPC9:
 	jumptextfaceplayer Luster1NPC9Text
-	
-Luster1NPC10:
-	jumptextfaceplayer Luster1NPC10Text
 		
-Luster1NPC11:
+Luster1NPC10:
 	opentext
-	writetext Luster1NPC11Text
+	writetext Luster1NPC10Text
 	cry MEOWTH
 	waitbutton
 	closetext
 	end
 	
-Luster1NPC12:
+Luster1NPC11:
 	opentext
-	writetext Luster1NPC12Text
+	writetext Luster1NPC11Text
 	cry PIKACHU
 	waitbutton
 	closetext
 	end
 	
-Luster1NPC13:
+Luster1NPC12:
 	faceplayer
 	opentext
-	writetext Luster1NPC13Text
+	writetext Luster1NPC12Text
 	waitbutton
 	closetext
-	spriteface LUSTER1NPC13, DOWN
+	spriteface LUSTER1NPC12, DOWN
 	end
 	
 LusterTrashcan1:
@@ -421,6 +520,7 @@ LusterPunkLeader:
 	pause 10
 	
 	special Special_NewFadeBlack
+	applyonemovement PLAYER, step_right
 	disappear LUSTERPUNKLEADER
 	disappear LUSTERPUNK2
 	disappear LUSTERPUNK1
@@ -965,16 +1065,16 @@ Luster1NPC7Text:
 	done
 	
 Luster1NPC8Text:
-	text "TEXT 8"
-	done
-	
-Luster1NPC9Text:
 	text "I'm not supposed to"
 	line "play in the"
 	cont "street."
 	
 	para "Don't tell my"
 	line "parents."
+	done
+	
+Luster1NPC9Text:
+	text "TEXT 13"
 	done
 	
 Luster1NPC10Text:
@@ -987,9 +1087,5 @@ Luster1NPC11Text:
 	
 Luster1NPC12Text:
 	text "TEXT 12"
-	done
-	
-Luster1NPC13Text:
-	text "TEXT 13"
 	done
 	

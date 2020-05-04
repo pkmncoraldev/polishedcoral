@@ -144,7 +144,17 @@ PlaceMapNameSign:: ; b8098 (2e:4098)
 	jr c, .graphics_ok
 	jp nz, LoadMapNameSignGFX
 	push hl
+	
+	ld a, [wPermission]
+	cp FOREST
+	jr z, .forestcave
+	cp CAVE
+	jr z, .forestcave
 	call InitMapNameFrame
+	jr .cont
+.forestcave
+	call InitMapNameFrame2
+.cont
 	farcall HDMATransfer_OnlyTopFourRows
 	pop hl
 .graphics_ok
@@ -188,13 +198,15 @@ PlaceMapNameSign:: ; b8098 (2e:4098)
 
 LoadMapNameSignGFX:: ; b80c6
 	ld a, [wPermission]
+	cp ROUTE
+	jp z, .route
 	cp TOWN
-	jr nz, .not_town
-	farcall LoadColorSignPalette
-	jr .cont
-.not_town
-	farcall LoadRegularSignPalette
-.cont
+	jp z, .town
+	cp CAVE
+	jp z, .cave
+	cp FOREST
+	jp z, .forest
+	farcall LoadRouteSignPalette
 	farcall ApplyPals
 	ld a, 1
 	ldh [hCGBPalUpdate], a
@@ -203,9 +215,66 @@ LoadMapNameSignGFX:: ; b80c6
 	call GetOpaque1bppSpaceTile
 	; load sign frame
 	ld hl, VTiles0 tile POPUP_MAP_FRAME_START
-	ld de, MapEntryFrameGFX
-	lb bc, BANK(MapEntryFrameGFX), POPUP_MAP_FRAME_SIZE
+	ld de, MapEntryFrameTownGFX
+	lb bc, BANK(MapEntryFrameTownGFX), POPUP_MAP_FRAME_SIZE
 	call Get2bpp
+	jr .cont
+.route
+	farcall LoadRouteSignPalette
+	farcall ApplyPals
+	ld a, 1
+	ldh [hCGBPalUpdate], a
+	; load opaque space
+	ld hl, VTiles0 tile POPUP_MAP_FRAME_SPACE
+	call GetOpaque1bppSpaceTile
+	; load sign frame
+	ld hl, VTiles0 tile POPUP_MAP_FRAME_START
+	ld de, MapEntryFrameRouteGFX
+	lb bc, BANK(MapEntryFrameRouteGFX), POPUP_MAP_FRAME_SIZE
+	call Get2bpp
+	jr .cont
+.town
+	farcall LoadTownSignPalette
+	farcall ApplyPals
+	ld a, 1
+	ldh [hCGBPalUpdate], a
+	; load opaque space
+	ld hl, VTiles0 tile POPUP_MAP_FRAME_SPACE
+	call GetOpaque1bppSpaceTile
+	; load sign frame
+	ld hl, VTiles0 tile POPUP_MAP_FRAME_START
+	ld de, MapEntryFrameTownGFX
+	lb bc, BANK(MapEntryFrameTownGFX), POPUP_MAP_FRAME_SIZE
+	call Get2bpp
+	jr .cont
+.cave
+	farcall LoadCaveSignPalette
+	farcall ApplyPals
+	ld a, 1
+	ldh [hCGBPalUpdate], a
+	; load opaque space
+	ld hl, VTiles0 tile POPUP_MAP_FRAME_SPACE
+	call GetOpaque1bppSpaceTile
+	; load sign frame
+	ld hl, VTiles0 tile POPUP_MAP_FRAME_START
+	ld de, MapEntryFrameCaveGFX
+	lb bc, BANK(MapEntryFrameCaveGFX), POPUP_MAP_FRAME_SIZE
+	call Get2bpp
+	jr .cont
+.forest
+	farcall LoadForestSignPalette
+	farcall ApplyPals
+	ld a, 1
+	ldh [hCGBPalUpdate], a
+	; load opaque space
+	ld hl, VTiles0 tile POPUP_MAP_FRAME_SPACE
+	call GetOpaque1bppSpaceTile
+	; load sign frame
+	ld hl, VTiles0 tile POPUP_MAP_FRAME_START
+	ld de, MapEntryFrameForestGFX
+	lb bc, BANK(MapEntryFrameForestGFX), POPUP_MAP_FRAME_SIZE
+	call Get2bpp
+.cont
 	; clear landmark name area
 	ld hl, VTiles0 tile POPUP_MAP_NAME_START
 	ld e, POPUP_MAP_NAME_SIZE
@@ -383,6 +452,106 @@ endr
 	pop af
 	ret
 
+InitMapNameFrame2:: ; b80d3
+; InitMapSignAttrMap
+	hlcoord 0, 0
+	ld de, wAttrMap - wTileMap
+	add hl, de
+	; top row
+	ld a, BEHIND_BG | PAL_BG_TEXT
+	ld bc, SCREEN_WIDTH - 1
+	call ByteFill
+	or X_FLIP
+	ld [hli], a
+	; middle rows
+rept 1
+	and $ff - X_FLIP
+	ld [hli], a
+	ld bc, SCREEN_WIDTH - 2
+	call ByteFill
+	or X_FLIP
+	ld [hli], a
+endr
+	; bottom row
+	and $ff - X_FLIP
+	ld bc, SCREEN_WIDTH - 1
+	call ByteFill
+	or X_FLIP
+	ld [hl], a
+; PlaceMapNameFrame
+	hlcoord 0, 0
+	; top left
+	ld a, POPUP_MAP_FRAME_START ; $f8
+	ld [hli], a
+	; top row
+	inc a ; $f9
+	call .FillTopBottom
+	; top right
+	dec a ; $f8
+	ld [hli], a
+	; left, first line
+	ld a, POPUP_MAP_FRAME_START + 3 ; $fb
+	ld [hli], a
+;	; left, second line
+	inc a ; $fc
+;	ld [hli], a
+	; second line
+	call .FillLowerMiddle
+	; right, second line
+	ld [hli], a
+	; bottom left
+	inc a ; $fd
+	ld [hli], a
+	; bottom
+	inc a ; $fe
+	call .FillTopBottom
+	; bottom right
+	dec a ; $fd
+	ld [hl], a
+	ret
+; b815b
+
+.FillUpperMiddle: ; b815b
+	push af
+	ld a, POPUP_MAP_FRAME_SPACE
+	ld c, SCREEN_WIDTH - 2
+.loop
+	ld [hli], a
+	dec c
+	jr nz, .loop
+	pop af
+	ret
+
+.FillLowerMiddle:
+	push af
+	ld a, POPUP_MAP_NAME_START
+	ld c, SCREEN_WIDTH - 2
+.loop2
+	ld [hli], a
+	inc a
+	dec c
+	jr nz, .loop2
+	pop af
+	ret
+; b8164
+
+.FillTopBottom: ; b8164
+	ld c, 5
+	jr .enterloop
+
+.continueloop
+	ld [hli], a
+	ld [hli], a
+
+.enterloop
+	inc a
+	ld [hli], a
+	ld [hli], a
+	dec a
+	dec c
+	jr nz, .continueloop
+	ret
+	
 CheckForHiddenItems: ; b8172
 ; Checks to see if there are hidden items on the screen that have not yet been found.  If it finds one, returns carry.
 	ld a, [wMapScriptHeaderBank]

@@ -847,20 +847,11 @@ FlyFunction: ; ca3b
 	ld de, ENGINE_SIXTHBADGE
 	call CheckBadge
 	jr c, .nostormbadge
+	ld a, [wTileset]
+	cp TILESET_SPOOKY
+	jr z, .outdoors
 	call CheckFlyAllowedOnMap
 	jr nz, .indoors
-
-;	ld a, [wMapGroup]
-;	cp GROUP_SHAMOUTI_ISLAND
-;	jr z, .indoors
-;	cp GROUP_VALENCIA_ISLAND
-;	jr z, .indoors
-;	cp GROUP_SHAMOUTI_SHRINE_RUINS
-;	jr nz, .outdoors
-;	ld a, [wMapNumber]
-;	cp MAP_SHAMOUTI_SHRINE_RUINS
-;	jr z, .indoors
-
 .outdoors
 	xor a
 	ld [hMapAnims], a
@@ -1081,6 +1072,9 @@ dig_incave
 	dw .FailDig
 
 .CheckCanDig: ; cbb8
+	ld a, [wTileset]
+	cp TILESET_SPOOKY
+	jr z, .fail
 	call GetMapPermission
 	cp CAVE
 	jr z, .incave
@@ -2121,6 +2115,9 @@ BikeFunction: ; d0b3
 	ret
 
 .TryBike: ; d0bc
+	ld hl, wHaveFollower
+	bit 0, [hl] ; ENGINE_BIKE_GEAR
+	jr nz, .CannotUseBike ;set
 	ld a, [wPlayerStandingTile]
 	cp COLL_NO_BIKE
 	jp z, .floortoobumpy

@@ -27,7 +27,7 @@ SunbeamIsland_MapScriptHeader:
 	warp_def 42, 17, 1, SUNBEAM_SURF_SHOP
 
 	db 2 ; coord events
-	xy_trigger 2, 22, 32, 0, SunbeamSnareStopsYouD, 0, 0
+	xy_trigger 2, 21, 32, 0, SunbeamSnareStopsYouD, 0, 0
 	xy_trigger 3, 20, 32, 0, SunbeamSnareStopsYouU, 0, 0
 
 	db 9 ; bg events
@@ -47,7 +47,7 @@ SunbeamIsland_MapScriptHeader:
 	person_event SPRITE_CUTE_GIRL, 16,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC3, -1
 	person_event SPRITE_GRANNY, 15, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC4, -1
 	person_event SPRITE_CUTE_GIRL, 43, 19, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC5, -1
-	person_event SPRITE_SUPER_NERD, 43,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC6, -1
+	person_event SPRITE_SUPER_NERD, 45,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC6, -1
 	person_event SPRITE_GENERAL_VARIABLE_1, 48,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ISLAND_STRAND
 	person_event SPRITE_ROWBOAT, 49,  8, SPRITEMOVEDATA_BOAT_BOB, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandBoat, -1
 	person_event SPRITE_DONPHAN,  6, 19, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveDonphan, -1
@@ -240,7 +240,6 @@ SunbeamIslandNPC2:
 
 SunbeamIslandNPC3:
 	faceplayer
-SunbeamSlowpokeGirlSign:
 	opentext
 	checkevent EVENT_TALKED_TO_SLOWPOKE_GIRL
 	iftrue .talked
@@ -413,7 +412,8 @@ SunbeamIslandNPC4Text:
 	line "hard to believe,"
 
 	para "but it used to be"
-	line "very around here."
+	line "very quiet around"
+	cont "here."
 	done
 
 SunbeamIslandNPC5Text:
@@ -462,7 +462,7 @@ SunbeamSnareFallAsleepText:
 	para "…"
 
 	para "He's sleeping"
-	line "soundly…"
+	line "soundly!"
 	done
 
 SunbeamSnareSleepyText:
@@ -486,7 +486,7 @@ SunbeamSnareAsleepText:
 	para "…"
 
 	para "He's sleeping"
-	line "soundly…"
+	line "soundly!"
 	done
 
 SunbeamSnareText1:

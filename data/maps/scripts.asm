@@ -181,6 +181,8 @@ INCLUDE "maps/SpookyForest6.asm"
 INCLUDE "maps/SpookyForest7.asm"
 INCLUDE "maps/SpookyForest8.asm"
 INCLUDE "maps/SpookyForest9.asm"
+INCLUDE "maps/SpookyForestBlank.asm"
+INCLUDE "maps/SpookyForestEscort.asm"
 INCLUDE "maps/OldManorExterior.asm"
 
 SECTION "Old Manor Scripts", ROMX

@@ -141,14 +141,16 @@ MAP_NONE   EQU 0
 	map_const SPOOKY_FOREST_7, 							   8,  8 ; 10
 	map_const SPOOKY_FOREST_8, 							   8,  8 ; 11
 	map_const SPOOKY_FOREST_9, 							   8,  8 ; 12
-	map_const OLD_MANOR_EXTERIOR,						  15, 11 ; 13
-	map_const SPOOKHOUSE_LIVING_ROOM,					   5,  6 ; 14
-	map_const SPOOKHOUSE_DINING_ROOM,					   7,  4 ; 15
-	map_const SPOOKHOUSE_BEDROOM,						   6,  4 ; 16
-	map_const SPOOKHOUSE_HALLWAY_1,						  21,  2 ; 17
-	map_const SPOOKHOUSE_HALLWAY_2,						  21,  2 ; 18
-	map_const SPOOKHOUSE_HALLWAY_3,						  21,  2 ; 19
-	map_const SPOOKHOUSE_TV_ROOM,						   3,  5 ; 20
+	map_const SPOOKY_FOREST_BLANK,						   8,  8 ; 13
+	map_const SPOOKY_FOREST_ESCORT,						  24, 16 ; 14
+	map_const OLD_MANOR_EXTERIOR,						  15, 11 ; 15
+	map_const SPOOKHOUSE_LIVING_ROOM,					   5,  6 ; 16
+	map_const SPOOKHOUSE_DINING_ROOM,					   7,  4 ; 17
+	map_const SPOOKHOUSE_BEDROOM,						   6,  4 ; 18
+	map_const SPOOKHOUSE_HALLWAY_1,						  21,  2 ; 19
+	map_const SPOOKHOUSE_HALLWAY_2,						  21,  2 ; 20
+	map_const SPOOKHOUSE_HALLWAY_3,						  21,  2 ; 21
+	map_const SPOOKHOUSE_TV_ROOM,						   3,  5 ; 22
 
 	newgroup													 ;  9
 	

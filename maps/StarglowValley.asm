@@ -252,12 +252,12 @@ StarglowSnare1:
 	writetext StarglowSnare1Text1
 	yesorno
 	iffalse .end
+	special SaveMusic
 	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
 	writetext StarglowSnare1Text4
 	waitbutton
 	closetext
 	waitsfx
-	special SaveMusic
 	winlosstext StarglowSnare1WinText, 0
 	setlasttalked STARGLOWSNARE1
 	loadtrainer GRUNTM, STARGLOW_GRUNTM_3
@@ -292,12 +292,12 @@ StarglowSnare2:
 	writetext StarglowSnare2Text1
 	yesorno
 	iffalse .end
+	special SaveMusic
 	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
 	writetext StarglowSnare2Text4
 	waitbutton
 	closetext
 	waitsfx
-	special SaveMusic
 	winlosstext StarglowSnare2WinText, 0
 	setlasttalked STARGLOWSNARE2
 	loadtrainer GRUNTF, STARGLOW_GRUNTF_1

@@ -1365,6 +1365,6 @@ _NoBikeText::
 	text "The floor is too"
 	line "bumpy!"
 
-	para "You can't BIKE"
+	para "You can't bike"
 	line "here."
 	done

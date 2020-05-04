@@ -1,4 +1,11 @@
 SelectMenu::
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .skip
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+.skip
 	call CheckRegisteredItem
 	jr z, .NotRegistered
 	jp UseRegisteredItem

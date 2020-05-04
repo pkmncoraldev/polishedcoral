@@ -326,6 +326,12 @@ SpookyForest8_BlockData:
 SpookyForest9_BlockData:
 	INCBIN "maps/SpookyForest9.ablk.lz"
 	
+SpookyForestBlank_BlockData:
+	INCBIN "maps/SpookyForestBlank.ablk.lz"
+
+SpookyForestEscort_BlockData:
+	INCBIN "maps/SpookyForestEscort.ablk.lz"
+
 OldManorExterior_BlockData:
 	INCBIN "maps/OldManorExterior.ablk.lz"
 	

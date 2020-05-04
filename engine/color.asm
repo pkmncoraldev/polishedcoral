@@ -762,11 +762,6 @@ LoadMapPals:
 	jr c, .got_pals
 
 	; Which palette group is based on whether we're outside or inside
-	ld a, [wTileset]
-	cp TILESET_GLINT
-	jr z, .island
-	cp TILESET_JUNGLE
-	jr z, .island
 	ld a, [wPermission]
 	and 7
 	ld e, a
@@ -777,21 +772,6 @@ LoadMapPals:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	jr .cont
-	
-	
-.island
-	ld a, 1
-	ld e, a
-	ld d, 0
-	ld hl, .TilesetColorsPointers
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-
-.cont
 	; Futher refine by time of day
 	ld a, [wTimeOfDayPal]
 	and 3
@@ -902,12 +882,9 @@ LoadMapPals:
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	ld a, [wTileset]
-	cp TILESET_GLINT
-	jp z, .outside
-	cp TILESET_JUNGLE
-	jp z, .outside
 	ld a, [wPermission]
+	cp FOREST
+	jp z, .outside
 	cp TOWN
 	jp z, .outside
 	cp ROUTE
@@ -981,7 +958,14 @@ LoadMapPals:
 	jp .outside
 	
 .luster
+	ld a, [wIsNearCampfire]
+	bit 0, a
+	jr nz, .lustercont1
 	ld a, [wTimeOfDayPal]
+	jr .lustercont2
+.lustercont1
+	ld a, 1
+.lustercont2
 	and 3
 	ld bc, 8 palettes
 	ld hl, MapObjectPalsLuster
@@ -1090,13 +1074,11 @@ LoadMapPals:
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	ld a, [wTileset]
-	cp TILESET_GLINT
-	jr z, .outside
-	cp TILESET_JUNGLE
-	jr z, .outside
 	cp TILESET_SPOOKY
 	jr z, .outside
 	ld a, [wPermission]
+	cp FOREST
+	jr z, .outside
 	cp TOWN
 	jr z, .outside
 	cp ROUTE
@@ -1155,6 +1137,7 @@ endr
 	dw .Perm5Colors ; PERM_5
 	dw .IndoorColors ; GATE
 	dw .DungeonColors ; DUNGEON
+	dw .OutdoorColors ; FOREST
 
 ; Valid indices: $00 - $29
 .OutdoorColors:

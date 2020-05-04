@@ -1250,6 +1250,15 @@ waitbuttonseat: macro
 	db waitbuttonseat_command
 	endm
 	
+		enum warp2_command
+warp2: macro
+	db warp2_command
+	db \1 ; facing
+	map_id \2 ; map
+	db \3 ; x
+	db \4 ; y
+	endm
+	
 thisasm: macro
 	callasm .asm\@
 	end

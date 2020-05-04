@@ -301,6 +301,8 @@ CheckSpecialPhoneCall:: ; 90136 (24:4136)
 
 SpecialCallOnlyWhenOutside: ; 90188
 	ld a, [wPermission]
+	cp FOREST
+	jr z, .outside
 	cp TOWN
 	jr z, .outside
 	cp ROUTE

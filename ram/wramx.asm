@@ -967,10 +967,12 @@ wRoute10EastTrigger:: ds 1
 wTwinkleTownTrigger:: ds 1
 wEastTrainCabin1Trigger:: ds 1
 wEastTrainCabooseTrigger:: ds 1
+wLusterCityResidentialTrigger:: ds 1
 wLusterCityShoppingTrigger:: ds 1
 wLusterSewersB1FFloodedTrigger:: ds 1
 wLusterSewersB2FFloodedTrigger:: ds 1
-ds 47
+wSpookyForestEscortTrigger:: ds 1
+ds 45
 
 ; fight counts
 wJackFightCount::    ds 1
@@ -1094,7 +1096,7 @@ wVermilionGymTrashCan2:: ds 1
 
 wBikeGear:: ds 1
 
-	ds 1 ; unused
+wHaveFollower::	ds 1
 
 wBattlePoints:: ds 1
 

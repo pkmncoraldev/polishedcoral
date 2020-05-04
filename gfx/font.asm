@@ -55,9 +55,17 @@ TextBoxSpaceGFX:: ; f9204
 INCBIN "gfx/frames/space.1bpp"
 ; f9214
 
-MapEntryFrameGFX: ; f9344
-INCBIN "gfx/frames/map_entry_sign.2bpp"
-; f9424
+MapEntryFrameTownGFX:
+INCBIN "gfx/frames/map_entry_sign_town.2bpp"
+
+MapEntryFrameRouteGFX:
+INCBIN "gfx/frames/map_entry_sign_route.2bpp"
+
+MapEntryFrameCaveGFX:
+INCBIN "gfx/frames/map_entry_sign_cave.2bpp"
+
+MapEntryFrameForestGFX:
+INCBIN "gfx/frames/map_entry_sign_forest.2bpp"
 
 PaintingFrameGFX:
 INCBIN "gfx/frames/painting.2bpp"

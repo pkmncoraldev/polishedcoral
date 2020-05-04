@@ -6,15 +6,31 @@ LoadBlindingFlashPalette:: ; 49409
 	jp FarCopyWRAM
 ; 49418
 
-LoadRegularSignPalette::
+LoadRouteSignPalette::
 	ld a, $5
 	ld de, wUnknBGPals palette PAL_BG_TEXT
-	ld hl, RegularSignPalette
+	ld hl, RouteSignPalette
 	ld bc, 1 palettes
 	call FarCopyWRAM
 	ret
 	
-LoadColorSignPalette::
+LoadCaveSignPalette::
+	ld a, $5
+	ld de, wUnknBGPals palette PAL_BG_TEXT
+	ld hl, CaveSignPalette
+	ld bc, 1 palettes
+	call FarCopyWRAM
+	ret
+	
+LoadForestSignPalette::
+	ld a, $5
+	ld de, wUnknBGPals palette PAL_BG_TEXT
+	ld hl, ForestSignPalette
+	ld bc, 1 palettes
+	call FarCopyWRAM
+	ret
+	
+LoadTownSignPalette::
 	ld a, [wMapGroup]
 	ld l, a
 	ld h, 0
@@ -48,11 +64,31 @@ else
 endc
 ; 49420
 
-RegularSignPalette:: ; 49418
+RouteSignPalette::
 if !DEF(MONOCHROME)
 	RGB 31, 00, 31
+	RGB 00, 15, 09
+	RGB 00, 00, 00
 	RGB 31, 31, 31
-	RGB 21, 21, 21
+else
+	MONOCHROME_RGB_FOUR
+endc
+
+CaveSignPalette::
+if !DEF(MONOCHROME)
+	RGB 31, 00, 31
+	RGB 27, 23, 20
+	RGB 15, 10, 07
+	RGB 00, 00, 00
+else
+	MONOCHROME_RGB_FOUR
+endc
+
+ForestSignPalette::
+if !DEF(MONOCHROME)
+	RGB 31, 31, 00
+	RGB 31, 28, 18
+	RGB 14, 09, 00
 	RGB 00, 00, 00
 else
 	MONOCHROME_RGB_FOUR

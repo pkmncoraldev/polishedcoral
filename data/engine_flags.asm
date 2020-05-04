@@ -54,6 +54,8 @@ EngineFlags: ; 80462
 
 	engine_flag wBikeGear, 0
 	
+	engine_flag wHaveFollower, 0
+	
 	engine_flag wOnwaBadges, FIRSTBADGE
 	engine_flag wOnwaBadges, SECONDBADGE
 	engine_flag wOnwaBadges, THIRDBADGE

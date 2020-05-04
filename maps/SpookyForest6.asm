@@ -5,9 +5,13 @@ SpookyForest6_MapScriptHeader:
 
 	db 0 ; warp events
 
-	db 0 ; coord events
+	db 4 ; coord events
+	coord_event  0,  6, 0, SpookyForestReset
+	coord_event  0,  7, 0, SpookyForestReset
+	coord_event 13,  6, 0, SpookyForestReset
+	coord_event 13,  7, 0, SpookyForestReset
 
 	db 0 ; bg events
 
-	db 0 ; object events
-	
+	db 1 ; object events
+	person_event SPRITE_CHILD, 18,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAVED_BIKESHOP_OWNERS_SON

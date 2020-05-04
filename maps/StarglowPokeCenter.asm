@@ -76,10 +76,10 @@ StarglowCenterRocketStopsYou:
 	winlosstext StarglowCenterRocketWinText, 0
 	setlasttalked STARGLOWCENTER_ROCKET
 	loadtrainer GRUNTM, STARGLOW_GRUNTM_2
+	special SaveMusic
 	startbattle
-	dontrestartmapmusic
 	reloadmapafterbattle
-	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
+	special RestoreMusic
 	opentext
 	writetext StarglowCenterRocketText2
 	waitbutton
@@ -90,8 +90,8 @@ StarglowCenterRocketStopsYou:
 	disappear STARGLOWCENTER_ROCKET
 	pause 8
 	special Special_FadeOutMusic
-	pause 15
-	playmapmusic
+	pause 10
+	playmusic MUSIC_POKEMON_CENTER
 	setevent EVENT_BEAT_STARGLOW_SNARE_3
 	dotrigger $0
 	end

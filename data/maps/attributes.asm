@@ -179,53 +179,61 @@ ENDM
 	map_attributes SpookyForest1, SPOOKY_FOREST_1, 92, NORTH | SOUTH | WEST | EAST
 	connection north, SpookyForest2, SPOOKY_FOREST_2, 0
 	connection south, EventideForest, EVENTIDE_FOREST, -5
-	connection west, SpookyForest1, SPOOKY_FOREST_1, 0
-	connection east, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection west, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
+	connection east, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
 	
 	map_attributes SpookyForest2, SPOOKY_FOREST_2, 92, NORTH | SOUTH | WEST | EAST
-	connection north, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection north, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
 	connection south, SpookyForest1, SPOOKY_FOREST_1, 0
-	connection west, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection west, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
 	connection east, SpookyForest3, SPOOKY_FOREST_3, 0
 	
 	map_attributes SpookyForest3, SPOOKY_FOREST_3, 92, NORTH | SOUTH | WEST | EAST
-	connection north, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection north, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
 	connection south, SpookyForest4, SPOOKY_FOREST_4, 0
 	connection west, SpookyForest2, SPOOKY_FOREST_2, 0
-	connection east, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection east, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
 	
 	map_attributes SpookyForest4, SPOOKY_FOREST_4, 92, NORTH | SOUTH | WEST | EAST
 	connection north, SpookyForest3, SPOOKY_FOREST_3, 0
-	connection south, SpookyForest1, SPOOKY_FOREST_1, 0
-	connection west, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection south, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
+	connection west, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
 	connection east, SpookyForest5, SPOOKY_FOREST_5, 0
 	
 	map_attributes SpookyForest5, SPOOKY_FOREST_5, 92, NORTH | SOUTH | WEST | EAST
 	connection north, SpookyForest6, SPOOKY_FOREST_6, 0
-	connection south, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection south, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
 	connection west, SpookyForest4, SPOOKY_FOREST_4, 0
-	connection east, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection east, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
 	
 	map_attributes SpookyForest6, SPOOKY_FOREST_6, 92, NORTH | SOUTH | WEST | EAST
 	connection north, SpookyForest7, SPOOKY_FOREST_7, 0
 	connection south, SpookyForest5, SPOOKY_FOREST_5, 0
-	connection west, SpookyForest1, SPOOKY_FOREST_1, 0
-	connection east, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection west, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
+	connection east, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
 	
 	map_attributes SpookyForest7, SPOOKY_FOREST_7, 92, NORTH | SOUTH | WEST | EAST
-	connection north, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection north, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
 	connection south, SpookyForest6, SPOOKY_FOREST_6, 0
 	connection west, SpookyForest8, SPOOKY_FOREST_8, 0
-	connection east, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection east, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
 	
 	map_attributes SpookyForest8, SPOOKY_FOREST_8, 92, NORTH | SOUTH | WEST | EAST
 	connection north, OldManorExterior, OLD_MANOR_EXTERIOR, -4
-	connection south, SpookyForest1, SPOOKY_FOREST_1, 0
+	connection south, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
 	connection west, SpookyForest9, SPOOKY_FOREST_9, 0
 	connection east, SpookyForest7, SPOOKY_FOREST_7, 0
 	
 	map_attributes SpookyForest9, SPOOKY_FOREST_9, 92, EAST
 	connection east, SpookyForest8, SPOOKY_FOREST_8, 0
+	
+	map_attributes SpookyForestBlank, SPOOKY_FOREST_BLANK, 92, 0
+	
+	map_attributes SpookyForestEscort, SPOOKY_FOREST_ESCORT, 92, NORTH | SOUTH | WEST | EAST
+	connection north, SpookyForestEscort, SPOOKY_FOREST_ESCORT, 0
+	connection south, SpookyForestEscort, SPOOKY_FOREST_ESCORT, 0
+	connection west, SpookyForestEscort, SPOOKY_FOREST_ESCORT, 0
+	connection east, SpookyForestEscort, SPOOKY_FOREST_ESCORT, 0
 	
 	map_attributes OldManorExterior, OLD_MANOR_EXTERIOR, 92, SOUTH
 	connection south, SpookyForest8, SPOOKY_FOREST_8, 4

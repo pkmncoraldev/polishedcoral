@@ -7,6 +7,7 @@
 	const PERM_5
 	const GATE
 	const DUNGEON
+	const FOREST
 
 	const_def
 	const PALETTE_AUTO

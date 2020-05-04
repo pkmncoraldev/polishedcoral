@@ -5,7 +5,9 @@ SpookyForest8_MapScriptHeader:
 
 	db 0 ; warp events
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event  6, 13, 0, SpookyForestReset
+	coord_event  7, 13, 0, SpookyForestReset
 
 	db 1 ; bg events
 	signpost 7, 10, SIGNPOST_READ, SpookyForest8Sign
@@ -21,9 +23,8 @@ SpookyForest8SignText:
 	
 	para "There's something"
 	line "just not right"
-	
-	para "about that house"
-	line "in the clearing"
+	cont "about that house"
+	cont "in the clearing"
 	cont "to the NORTH."
 	
 	para "Be careful around"

@@ -104,6 +104,21 @@ SunbeamReserveTrigger0:
 SunbeamReserveTrigger1:
 	end
 	
+SunbeamSlowpokeGirlSign:
+	opentext
+	checkevent EVENT_TALKED_TO_SLOWPOKE_GIRL
+	iftrue .talked
+	writetext SunbeamIslandNPC3Text1
+	waitbutton
+	closetext
+	setevent EVENT_TALKED_TO_SLOWPOKE_GIRL
+	end
+.talked
+	writetext SunbeamIslandNPC3Text2
+	waitbutton
+	closetext
+	end
+	
 SunbeamReserveNidoqueen:
 	opentext
 	writetext SunbeamReserveNidoqueenText

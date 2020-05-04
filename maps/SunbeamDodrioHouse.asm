@@ -41,8 +41,8 @@ SunbeamIslandHouse4NPC1Text:
 	line "RANCH to the NORTH"
 	cont "EAST."
 	
-	para "They say the DODUO"
-	line "bred there are the"
+	para "The DODUO bred"
+	line "there are the"
 	cont "fastest around."
 	done
 	

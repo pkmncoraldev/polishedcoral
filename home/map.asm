@@ -225,6 +225,8 @@ CheckOutdoorMap:: ; 22ee
 	cp ROUTE
 	ret z
 	cp TOWN
+	ret z
+	cp FOREST
 	ret
 ; 22f4
 

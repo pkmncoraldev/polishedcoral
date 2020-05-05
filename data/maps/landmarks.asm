@@ -1,45 +1,45 @@
 landmark: MACRO
-	db \1, \2
+	db \1 + 8, \2 + 16
 	dw \3
 ENDM
 
 Landmarks: ; 0x1ca8c3
 	landmark   0,   0, SpecialMapName
-	landmark  28, 116, SunsetBayName
-	landmark  36, 116, SunsetCapeName
-	landmark  36, 124, LighthouseName
-	landmark  36, 109, Route1Name
-	landmark  36, 100, DaybreakVillageName
-	landmark  36,  88, Route2Name
-	landmark  44,  92, DaybreakGrottoName
-	landmark  36,  76, GlintCityName
-	landmark  36,  68, GlintGroveName
-	landmark  52,  76, Route3Name
-	landmark  68,  68, StarglowCavernName
-	landmark  68,  84, StarglowValleyName
-	landmark   0,   0, Route4Name
-	landmark   0,   0, HuntersThicketName
-	landmark   0,   0, Route5Name
-	landmark   0,   0, Route6Name
-	landmark   0,   0, Route7Name
-	landmark   0,   0, LakeOnwaName
-	landmark   0,   0, MtOnwaName
-	landmark   0,   0, Route8Name
-	landmark   0,   0, SunbeamIslandName
-	landmark   0,   0, EventideForestName
-	landmark   0,   0, OldManorName
-	landmark   0,   0, EventideVillageName
-	landmark   0,   0, Route9Name
-	landmark   0,   0, DodrioRanchName
-	landmark   0,   0, FlickerStationName
-	landmark   0,   0, FlickerPassName
-	landmark   0,   0, Route10Name
-	landmark   0,   0, TwinkleTownName
-	landmark   0,   0, LusterCityName
-	landmark   0,   0, LusterSewersName
-	landmark   0,   0, ResidentialName
-	landmark   0,   0, ShoppingName
-	landmark   0,   0, BusinessName
+	landmark  20, 100, SunsetBayName
+	landmark  28, 100, SunsetCapeName
+	landmark  28, 108, LighthouseName
+	landmark  28,  92, Route1Name
+	landmark  28,  84, DaybreakVillageName
+	landmark  28,  72, Route2Name
+	landmark  36,  84, DaybreakGrottoName
+	landmark  28,  60, GlintCityName
+	landmark  28,  52, GlintGroveName
+	landmark  48,  60, Route3Name
+	landmark  60,  52, StarglowCavernName
+	landmark  60,  68, StarglowValleyName
+	landmark  72,  68, Route4Name
+	landmark  68,  60, HuntersThicketName
+	landmark  68,  84, Route5Name
+	landmark  60, 100, Route6Name
+	landmark  52,  92, Route7Name
+	landmark  44,  92, LakeOnwaName
+	landmark  44,  84, MtOnwaName
+	landmark  68, 124, SunbeamIslandName
+	landmark  52,  76, Route8Name
+	landmark  84,  68, EventideForestName
+	landmark  84,  52, OldManorName
+	landmark  92,  68, EventideVillageName
+	landmark 100,  64, Route9Name
+	landmark 108,  60, DodrioRanchName
+	landmark 100,  52, FlickerStationName
+	landmark 100,  44, FlickerPassName
+	landmark 108,  36, Route10Name
+	landmark 108,  28, TwinkleTownName
+	landmark 132,  52, LusterCityName
+	landmark 132,  52, LusterSewersName
+	landmark 132,  52, ResidentialName
+	landmark 132,  52, ShoppingName
+	landmark 132,  52, BusinessName
 	landmark   0,   0, GateName
 
 
@@ -62,8 +62,8 @@ Route6Name:            db "ROUTE 6@"
 Route7Name:            db "ROUTE 7@"
 LakeOnwaName:          db "LAKE ONWA@"
 MtOnwaName:			   db "MT. ONWA@"
-Route8Name:  		   db "ROUTE 8@"
 SunbeamIslandName:	   db "SUNBEAM¯ISLAND@"
+Route8Name:  		   db "ROUTE 8@"
 EventideForestName:	   db "EVENTIDE¯FOREST@"
 OldManorName:		   db "OLD MANOR@"
 EventideVillageName:   db "EVENTIDE¯VILLAGE@"

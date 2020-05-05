@@ -51,12 +51,12 @@
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 32
 	tilecoll WALL, WALL, WALL, WALL ; 33
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 34
-	tilecoll WALL, WALL, WALL, WALL ; 35
-	tilecoll WALL, WALL, WALL, WALL ; 36
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 35
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 36
 	tilecoll WALL, WALL, DOOR, DOOR ; 37
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 38
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 39
-	tilecoll WALL, WALL, WALL, WALL ; 3a
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 3a
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 3b
 	tilecoll WALL, WALL, WALL, WALL ; 3c
 	tilecoll WALL, WALL, WALL, WALL ; 3d
@@ -128,13 +128,13 @@
 	tilecoll WALL, WALL, DOOR, DOOR ; 7f
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 80
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 81
-	tilecoll WALL, WALL, WALL, WALL ; 82
-	tilecoll WALL, WALL, WALL, WALL ; 83
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 82
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 83
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 84
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 85
-	tilecoll WALL, WALL, WALL, WALL ; 86
-	tilecoll WALL, WALL, WALL, WALL ; 87
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 88
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 86
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 87
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 88
 	tilecoll WALL, WALL, WALL, WALL ; 89
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8a
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 8b
@@ -160,7 +160,7 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 9f
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a0
 	tilecoll WALL, WALL, WALL, WALL ; a1
-	tilecoll WALL, WALL, WALL, WALL ; a2
+	tilecoll WALL, FLOOR, WALL, FLOOR ; a2
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a3
 	tilecoll WALL, WALL, WALL, WALL ; a4
 	tilecoll WALL, FLOOR, WALL, FLOOR ; a5
@@ -246,8 +246,8 @@
 	tilecoll DOOR, WALL, FLOOR, WALL ; f5
 	tilecoll FLOOR, WALL, FLOOR, WALL ; f6
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; f7
-	tilecoll WALL, WALL, WALL, DOOR ; f8
-	tilecoll WALL, WALL, DOOR, WALL ; f9
+	tilecoll WALL, WALL, WALL, WALL ; f8
+	tilecoll WALL, WALL, WALL, WALL ; f9
 	tilecoll WALL, WALL, WALL, WALL ; fa
 	tilecoll WALL, WALL, WALL, WALL ; fb
 	tilecoll FLOOR, WALL, FLOOR, WALL ; fc

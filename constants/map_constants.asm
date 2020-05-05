@@ -161,7 +161,7 @@ MAP_NONE   EQU 0
 	map_const EVENTIDE_POKECENTER,                         6,  4 ; 5
 	map_const EVENTIDE_MART,							   6,  4 ; 6
 	map_const EVENTIDE_GYM,								  23, 11 ; 7
-	map_const ROUTE_9,		 							  16, 18 ; 8
+	map_const ROUTE_9,		 							  19, 28 ; 8
 	map_const DODRIO_RANCH_HOUSE,						   4,  4 ; 9
 	map_const DODRIO_RANCH_BARN,						   7,  4 ; 10
 	map_const DODRIO_RANCH_RACETRACK,					  25, 17 ; 11
@@ -200,5 +200,5 @@ MAP_NONE   EQU 0
 	newgroup													 ; 13
 	
 	map_const LUSTER_CITY_RESIDENTIAL,					  14, 30 ; 1
-	map_const LUSTER_CITY_SHOPPING,					      13, 30 ; 2
+	map_const LUSTER_CITY_SHOPPING,					      15, 30 ; 2
 	

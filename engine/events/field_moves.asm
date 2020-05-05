@@ -408,7 +408,7 @@ FlyFunction_InitGFX: ; 8cb9b (23:4b9b)
 	ret
 
 FlyFunction_FrameTimer: ; 8cbc8 (23:4bc8)
-	call .SpawnLeaf
+;	call .SpawnLeaf
 	ld hl, wcf64
 	ld a, [hl]
 	and a

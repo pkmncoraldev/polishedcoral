@@ -576,6 +576,10 @@ DebugFieldMoveText:
 	text_jump _DebugFieldMoveText
 	db "@"
 	
+UsedFlyText: ; c9a9
+	text_jump _UsedFlyText
+	db "@"
+	
 GetSurfType: ; c9b8
 ; Surfing on Pikachu uses an alternate sprite.
 ; This is done by using a separate movement type.
@@ -800,32 +804,7 @@ CheckFlyAllowedOnMap:
 ; returns z is fly is allowed
 	call GetMapPermission
 	call CheckOutdoorMap
-	ret z
-; assumes all special roof maps are in different groups
-;	ld a, [wMapGroup]
-;	cp GROUP_GOLDENROD_DEPT_STORE_ROOF
-;	jr z, .goldenrod_dept_store_roof_group
-;	cp GROUP_CELADON_MANSION_ROOF
-;	jr z, .celadon_mansion_roof_group
-;	cp GROUP_TIN_TOWER_ROOF
-;	jr z, .tin_tower_roof_group
-;	cp GROUP_OLIVINE_LIGHTHOUSE_ROOF
-;	ret nz
-;	ld a, [wMapNumber]
-;	cp MAP_OLIVINE_LIGHTHOUSE_ROOF
-;	ret
-;.goldenrod_dept_store_roof_group
-;	ld a, [wMapNumber]
-;	cp MAP_GOLDENROD_DEPT_STORE_ROOF
-;	ret
-;.celadon_mansion_roof_group
-;	ld a, [wMapNumber]
-;	cp MAP_CELADON_MANSION_ROOF
-;	ret
-;.tin_tower_roof_group
-;	ld a, [wMapNumber]
-;	cp MAP_TIN_TOWER_ROOF
-;	ret
+	ret
 
 FlyFunction: ; ca3b
 	call FieldMoveJumptableReset
@@ -844,9 +823,9 @@ FlyFunction: ; ca3b
 
 .TryFly: ; ca52
 ; Fly
-	ld de, ENGINE_SIXTHBADGE
-	call CheckBadge
-	jr c, .nostormbadge
+;	ld de, ENGINE_SIXTHBADGE		;debug
+;	call CheckBadge					;debug
+;	jr c, .nobadge					;debug
 	ld a, [wTileset]
 	cp TILESET_SPOOKY
 	jr z, .outdoors
@@ -869,9 +848,9 @@ FlyFunction: ; ca3b
 	ld a, $1
 	ret
 
-.nostormbadge
-	ld a, $82
-	ret
+;.nobadge
+;	ld a, $82
+;	ret
 
 .indoors
 	ld a, $2
@@ -895,29 +874,32 @@ FlyFunction: ; ca3b
 	ret
 
 .FlyScript: ; 0xcaa3
-	clearevent EVENT_ON_DODRIO_RANCH
-	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
-	clearevent EVENT_IN_SHOPPING_DISTRICT
-	clearevent EVENT_IN_BUSINESS_DISTRICT
-	clearevent EVENT_DOUBLE_LANDMARK_SIGN
+	scall HandleEventsFly
 	reloadmappart
-	callasm HideSprites
+;	callasm HideSprites
 	special UpdateTimePals
 	callasm PrepareOverworldMove
+	opentext
+	writetext UsedFlyText ; "used FLY!"
+	wait 5
+	closetext
 	scall FieldMovePokepicScript
-	callasm FlyFromAnim
+;	callasm FlyFromAnim
 	farscall Script_AbortBugContest
+	special FadeOutPalettes
+	playsound SFX_FLY
+	special WaitSFX
 	special WarpToSpawnPoint
-	callasm DelayLoadingNewSprites
+;	callasm DelayLoadingNewSprites
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
 	newloadmap MAPSETUP_FLY
-	callasm FlyToAnim
+;	callasm FlyToAnim
 	special WaitSFX
 	callasm .ReturnFromFly
 	end
 
 .ReturnFromFly: ; cacb
-	farcall ReturnFromFly_SpawnOnlyPlayer
+;	farcall ReturnFromFly_SpawnOnlyPlayer
 	call DelayFrame
 	jp ReplaceKrisSprite
 
@@ -1165,11 +1147,7 @@ dig_incave
 	scall FieldMovePokepicScript
 
 .UsedDigOrEscapeRopeScript: ; 0xcc3c
-	clearevent EVENT_ON_DODRIO_RANCH
-	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
-	clearevent EVENT_IN_SHOPPING_DISTRICT
-	clearevent EVENT_IN_BUSINESS_DISTRICT
-	clearevent EVENT_DOUBLE_LANDMARK_SIGN
+	scall HandleEventsFly
 	playsound SFX_WARP_TO
 	applymovement PLAYER, .DigOut
 	farscall Script_AbortBugContest
@@ -1242,11 +1220,7 @@ TeleportFunction: ; cc61
 	db "@"
 
 .TeleportScript: ; 0xccbb
-	clearevent EVENT_ON_DODRIO_RANCH
-	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
-	clearevent EVENT_IN_SHOPPING_DISTRICT
-	clearevent EVENT_IN_BUSINESS_DISTRICT
-	clearevent EVENT_DOUBLE_LANDMARK_SIGN
+	scall HandleEventsFly
 	reloadmappart
 	special UpdateTimePals
 	playsound SFX_WARP_TO
@@ -1843,6 +1817,10 @@ HasRockSmash: ; cf7c
 	call CheckPartyCanLearnMove
 	jr c, .no
 	
+	ld de, ENGINE_GOT_ROCK_SMASH
+	call CheckEngineFlag
+	jr c, .no
+	
 	ld de, ENGINE_FIRSTBADGE
 	call CheckEngineFlag
 	jr c, .no
@@ -2260,6 +2238,10 @@ HasCutAvailable:: ; d186
 	ld d, CUT
 	call CheckPartyCanLearnMove
 	jr c, .no
+	
+	ld de, ENGINE_GOT_CUT
+	call CheckEngineFlag
+	jr c, .no
 
 	ld de, ENGINE_SECONDBADGE
 	call CheckEngineFlag
@@ -2306,3 +2288,16 @@ UnknownText_0xd1d0: ; 0xd1d0
 	; This tree can be CUT!
 	text_jump UnknownText_0x1c0a05
 	db "@"
+
+HandleEventsFly:
+	clearevent EVENT_SNOWSTORM_HAPPENING
+	loadvar wTimeOfDayPalFlags, $40 | 0
+	domaptrigger ROUTE_10, $0
+	clearevent EVENT_ON_DODRIO_RANCH
+	clearflag ENGINE_NEAR_CAMPFIRE
+	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
+	clearevent EVENT_IN_SHOPPING_DISTRICT
+	clearevent EVENT_IN_BUSINESS_DISTRICT
+	clearevent EVENT_DOUBLE_LANDMARK_SIGN
+	end
+	

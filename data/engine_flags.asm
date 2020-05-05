@@ -229,6 +229,7 @@ EngineFlags: ; 80462
 	
 	engine_flag wGotHMFlags, 0 ; rock smash
 	engine_flag wGotHMFlags, 1 ; cut
+	engine_flag wGotHMFlags, 2 ; fly
 
 	engine_flag wMetGymLeaderFlags, 0  ; stanley
 	engine_flag wMetGymLeaderFlags, 1  ; rodney

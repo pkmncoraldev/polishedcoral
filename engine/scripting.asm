@@ -701,7 +701,7 @@ GetTMHMPocketName:
 	jp CopyName2
 
 .TMHMPocket:
-	db "TM Pocket@"
+	db "TM POCKET@"
 
 CurItemName:
 	ld a, [wCurItem]
@@ -715,6 +715,10 @@ CurTMHMName:
 
 PutItemInPocketText:
 	text_jump UnknownText_0x1c472c
+	db "@"
+	
+PutTmHmInPocketText:
+	text_jump UnknownText_tmhmtext
 	db "@"
 
 PocketIsFullText:
@@ -2933,8 +2937,8 @@ GiveTMHMScript:
 Script_tmhmnotify:
 	call GetTMHMPocketName
 	call CurTMHMName
-	ld b, BANK(PutItemInPocketText)
-	ld hl, PutItemInPocketText
+	ld b, BANK(PutTmHmInPocketText)
+	ld hl, PutTmHmInPocketText
 	jp MapTextbox
 
 Script_tmhmtotext:

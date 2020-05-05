@@ -3,7 +3,8 @@ TwinkleTown_MapScriptHeader:
 	scene_script TwinkleTownTrigger0
 	scene_script TwinkleTownTrigger1
 
-	db 1 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_NEWMAP, TwinkleTownFlypointCallback
 	callback MAPCALLBACK_OBJECTS, TwinkleTownStopSnowstorm
 
 	db 5 ; warp events
@@ -19,19 +20,18 @@ TwinkleTown_MapScriptHeader:
 
 	db 0 ; object events
 
+TwinkleTownFlypointCallback:
+	setflag ENGINE_FLYPOINT_TWINKLE
+	return
+	
 TwinkleTownStopSnowstorm:
-	checkevent EVENT_SNOWSTORM_HAPPENING
-	iffalse .endcallback
-	dotrigger $1
-.endcallback
+	clearevent EVENT_SNOWSTORM_HAPPENING
+	loadvar wTimeOfDayPalFlags, $40 | 0
+	domaptrigger ROUTE_10, $0
 	return
 	
 TwinkleTownTrigger0:
 	end
 
 TwinkleTownTrigger1:
-	clearevent EVENT_SNOWSTORM_HAPPENING
-	loadvar wTimeOfDayPalFlags, $40 | 0
-	domaptrigger ROUTE_10, $0
-	dotrigger $0
 	end

@@ -33,16 +33,15 @@ FlickerPass2F_MapScriptHeader:
 
 	
 FlickerPass2FStopSnowstorm:
-	dotrigger $1
+	clearevent EVENT_SNOWSTORM_HAPPENING
+	loadvar wTimeOfDayPalFlags, $40 | 0
+	domaptrigger ROUTE_10, $0
 	return
 	
 FlickerPass2FTrigger0:
 	end
 
 FlickerPass2FTrigger1:
-	loadvar wTimeOfDayPalFlags, $40 | 0
-	domaptrigger ROUTE_10, $0
-	dotrigger $0
 	end
 	
 TrainerFlickerPass2F_1:

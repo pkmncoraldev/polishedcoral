@@ -4,7 +4,7 @@ flypoint: MACRO
 ENDM
 
 Flypoints:
-; landmark, spawn point
+; spawn point, landmark
 	const_def
 	flypoint SUNSET,			SUNSET_BAY
 	flypoint DAYBREAK,			DAYBREAK_VILLAGE
@@ -17,7 +17,7 @@ Flypoints:
 	flypoint TWINKLE,			TWINKLE_TOWN
 	flypoint LUSTER,			LUSTER_CITY
 	
-	flypoint LASTFLYPOINT,		SUNSET_BAY
+	flypoint LASTFLYPOINT,		LUSTER_CITY
 KANTO_FLYPOINT EQU const_value
 	
 	flypoint KANTO,      CINNABAR_LAB

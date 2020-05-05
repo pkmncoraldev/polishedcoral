@@ -47,6 +47,7 @@ MapTriggers::
 	scene_var EAST_TRAIN_CABOOSE,					  wEastTrainCabooseTrigger
 	scene_var LUSTER_CITY_RESIDENTIAL,				  wLusterCityResidentialTrigger
 	scene_var LUSTER_CITY_SHOPPING,					  wLusterCityShoppingTrigger
+	scene_var LUSTER_CITY_BUSINESS,					  wLusterCityBusinessTrigger
 	scene_var LUSTER_SEWERS_B1F_FLOODED,			  wLusterSewersB1FFloodedTrigger
 	scene_var LUSTER_SEWERS_B2F_FLOODED,			  wLusterSewersB2FFloodedTrigger
 	scene_var SPOOKY_FOREST_1,						  wSpookyForestEscortTrigger

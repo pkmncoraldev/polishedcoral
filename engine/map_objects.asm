@@ -2092,8 +2092,7 @@ SplashPuddle:
 	call CopyTempObjectData
 	call InitTempObject
 	pop bc
-	ld de, SFX_PUDDLE
-	jp PlaySFX
+	ret
 
 .puddle_data
 	db $80, PAL_OW_BLUE, SPRITEMOVEDATA_PUDDLE

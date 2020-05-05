@@ -143,8 +143,8 @@ ENDM
 	connection west, LakeOnwa, LAKE_ONWA, -11
 	
 	map_attributes Route9, ROUTE_9, 5, NORTH | WEST
-	connection north, FlickerStation, FLICKER_STATION, -13
-	connection west, EventideVillage, EVENTIDE_VILLAGE, 5
+	connection north, FlickerStation, FLICKER_STATION, -9
+	connection west, EventideVillage, EVENTIDE_VILLAGE, 16
 	
 	map_attributes Route10, ROUTE_10, 5, NORTH | EAST
 	connection north, TwinkleTown, TWINKLE_TOWN, 4
@@ -154,11 +154,11 @@ ENDM
 	connection west, Route10, ROUTE_10, 1
 
 	map_attributes EventideVillage, EVENTIDE_VILLAGE, $d9, EAST
-	connection east, Route9, ROUTE_9, -5
+	connection east, Route9, ROUTE_9, -16
 
 	map_attributes FlickerStation, FLICKER_STATION, 5, NORTH | SOUTH
 	connection north, FlickerPassOutside, FLICKER_PASS_OUTSIDE, 21
-	connection south, Route9, ROUTE_9, 13
+	connection south, Route9, ROUTE_9, 9
 	
 	map_attributes FlickerPassOutside, FLICKER_PASS_OUTSIDE, 113, SOUTH
 	connection south, FlickerStation, FLICKER_STATION, -21

@@ -969,10 +969,11 @@ wEastTrainCabin1Trigger:: ds 1
 wEastTrainCabooseTrigger:: ds 1
 wLusterCityResidentialTrigger:: ds 1
 wLusterCityShoppingTrigger:: ds 1
+wLusterCityBusinessTrigger:: ds 1
 wLusterSewersB1FFloodedTrigger:: ds 1
 wLusterSewersB2FFloodedTrigger:: ds 1
 wSpookyForestEscortTrigger:: ds 1
-ds 45
+ds 44
 
 ; fight counts
 wJackFightCount::    ds 1

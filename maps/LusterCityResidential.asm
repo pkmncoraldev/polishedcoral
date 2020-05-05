@@ -7,9 +7,8 @@ LusterCityResidential_MapScriptHeader:
 	db 1 ; warp events
 	warp_def 20, 12, 1, LUSTER_SEWERS_B1F_FLOODED
 
-	db 13 ; coord events
+	db 12 ; coord events
 	xy_trigger 0, 41, 21, 0, LusterCityResidentialLight, 0, 0
-	xy_trigger 0,  0,  0, 0, LusterCityResidentialLight, 0, 0
 	xy_trigger 0, 33,  5, 0, LusterCityResidentialLight, 0, 0
 	xy_trigger 0, 21, 24, 0, LusterCityResidentialLight, 0, 0
 	xy_trigger 1, 20, 24, 0, LusterCityResidentialDark, 0, 0
@@ -34,9 +33,7 @@ LusterCityResidential_MapScriptHeader:
 
 	db 20 ; object events
 	person_event SPRITE_TRAFFIC_LIGHT, 44, 25, SPRITEMOVEDATA_TILE_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_MALL_SIGN_2, 44, 31, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_MALL_SIGN_2, 44, 32, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_TRAFFIC_LIGHT, 24, 20, SPRITEMOVEDATA_TILE_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_TRAFFIC_LIGHT, 24, 20, SPRITEMOVEDATA_TILE_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_FAT_GUY, 39,  6, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 29, 12, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster1NPC2, -1
 	person_event SPRITE_BIRD_KEEPER, 30, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Luster1NPC3, -1
@@ -44,11 +41,13 @@ LusterCityResidential_MapScriptHeader:
 	person_event SPRITE_COOLTRAINER_F, 33, 21, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Luster1NPC5, -1
 	person_event SPRITE_YOUNGSTER, 39, 16, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Luster1NPC6, -1
 	person_event SPRITE_LASS, 26, 19, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC7, -1
-	person_event SPRITE_BUG_CATCHER, 47,  7, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC8, -1
+	person_event SPRITE_SCHOOLGIRL, 47,  7, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC8, -1
 	person_event SPRITE_YOUNGSTER, 51, 21, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster1NPC9, -1
 	person_event SPRITE_MEOWTH, 44, 14, SPRITEMOVEDATA_POKEMON, 2, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster1NPC10, -1
 	person_event SPRITE_PIKACHU, 25, 14, SPRITEMOVEDATA_POKEMON, 2, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster1NPC11, -1
 	person_event SPRITE_GENTLEMAN,  9, 22, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC12, -1
+	person_event SPRITE_CUTE_GIRL, 26,  5, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC13, -1
+	person_event SPRITE_COOL_DUDE, 49, 13, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Luster1NPC14, -1
 	person_event SPRITE_DELINQUENT_M, 20, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunkLeader, -1
 	person_event SPRITE_DELINQUENT_F, 21, 13, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunk1, -1
 	person_event SPRITE_DELINQUENT_M, 19, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunk2, -1
@@ -57,8 +56,6 @@ LusterCityResidential_MapScriptHeader:
 
 	const_def 1 ; object constants
 	const LUSTER1STREETLIGHT1
-	const LUSTERMALLSIGN1
-	const LUSTERMALLSIGN2
 	const LUSTER1STREETLIGHT2
 	const LUSTER1NPC1
 	const LUSTER1NPC2
@@ -72,6 +69,8 @@ LusterCityResidential_MapScriptHeader:
 	const LUSTER1NPC10
 	const LUSTER1NPC11
 	const LUSTER1NPC12
+	const LUSTER1NPC13
+	const LUSTER1NPC14
 	const LUSTERPUNKLEADER
 	const LUSTERPUNK1
 	const LUSTERPUNK2
@@ -284,6 +283,12 @@ Luster1NPC12:
 	closetext
 	spriteface LUSTER1NPC12, DOWN
 	end
+	
+Luster1NPC13:
+	jumptextfaceplayer Luster1NPC13Text
+	
+Luster1NPC14:
+	jumptextfaceplayer Luster1NPC14Text
 	
 LusterTrashcan1:
 	checkevent EVENT_LUSTER_TRASHCAN_1
@@ -1007,14 +1012,14 @@ LusterShadyGuyText2:
 	para "Take it and get"
 	line "outta here."
 	done
-	
+
 LusterShadyGuyText3:
 	text "Scram!"
 	
 	para "We don't know each"
 	line "other, capiche?"
 	done
-	
+
 LusterShadyGuyText4:
 	text "What do you want"
 	line "now?"
@@ -1024,46 +1029,45 @@ LusterShadyGuyText4:
 	para "We don't know each"
 	line "other, capiche?"
 	done
-	
-	
+
 Luster1NPC1Text:
 	text "TEXT 1"
 	done
-	
+
 Luster1NPC2Text:
 	text "TEXT 2"
 	done
-	
+
 Luster1NPC3Text:
 	text "TEXT 3"
 	done
-	
+
 Luster1NPC4Text:
 	text "LUSTER CITY has"
 	line "two #MON"
 	cont "CENTERS."
-	
+
 	para "There's this one"
 	line "here, and also one"
 	cont "in the SHOPPING"
 	cont "MALL."
-	
+
 	para "Pretty convenient"
 	line "if you ask me!"
 	done
-	
+
 Luster1NPC5Text:
 	text "TEXT 5"
 	done
-	
+
 Luster1NPC6Text:
 	text "TEXT 6"
 	done
-	
+
 Luster1NPC7Text:
 	text "TEXT 7"
 	done
-	
+
 Luster1NPC8Text:
 	text "I'm not supposed to"
 	line "play in the"
@@ -1072,20 +1076,27 @@ Luster1NPC8Text:
 	para "Don't tell my"
 	line "parents."
 	done
-	
+
 Luster1NPC9Text:
 	text "TEXT 13"
 	done
-	
+
 Luster1NPC10Text:
 	text "TEXT 10"
 	done
-	
+
 Luster1NPC11Text:
 	text "TEXT 11"
 	done
-	
+
 Luster1NPC12Text:
 	text "TEXT 12"
 	done
-	
+
+Luster1NPC13Text:
+	text "TEXT 13"
+	done
+
+Luster1NPC14Text:
+	text "TEXT 14"
+	done

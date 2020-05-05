@@ -126,30 +126,36 @@ GetMonSubmenuItems: ; 24dd4
 	ld a, [wLinkMode]
 	and a
 	jr nz, .skip_moves
-	ld a, MON_MOVES
-	call GetPartyParamLocation
-	ld d, h
-	ld e, l
-	ld c, NUM_MOVES
-.loop
-	push bc
-	push de
-	ld a, [de]
-	and a
-	jr z, .next
-	push hl
-	call IsFieldMove
-	pop hl
-	jr nc, .next
+;	ld a, MON_MOVES
+;	call GetPartyParamLocation
+;	ld d, h
+;	ld e, l
+;	ld c, NUM_MOVES
+;.loop
+;	push bc
+;	push de
+;	ld a, [de]
+;	and a
+;	jr z, .next
+;	push hl
+;	call IsFieldMove
+;	pop hl
+;	jr nc, .next
+;	call AddMonMenuItem
+
+;.next
+;	pop de
+;	inc de
+;	pop bc
+;	dec c
+;	jr nz, .loop
+
+;	ld hl, wGotHMFlags
+;	bit 2, [hl] ; ENGINE_GOT_FLY
+;	jr z, .skip_fly ;not set
+	ld a, MONMENU_FLY
 	call AddMonMenuItem
-
-.next
-	pop de
-	inc de
-	pop bc
-	dec c
-	jr nz, .loop
-
+.skip_fly
 .skip_moves
 	ld a, MONMENU_STATS
 	call AddMonMenuItem

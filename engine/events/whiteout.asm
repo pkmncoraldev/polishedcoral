@@ -8,7 +8,7 @@ Script_OverworldWhiteout:: ; 0x124c8
 	callasm OverworldWhiteoutFade
 
 Script_Whiteout: ; 0x124ce
-	call WhiteoutHandleEvents
+	scall WhiteoutHandleEvents
 	callasm LoseMoney
 	iffalse .whiteout_text
 	callasm DetermineWildBattlePanic
@@ -52,8 +52,11 @@ Script_Whiteout: ; 0x124ce
 	db "@"
 
 WhiteoutHandleEvents:
-	setevent EVENT_ALWAYS_SET
+	clearevent EVENT_SNOWSTORM_HAPPENING
+	loadvar wTimeOfDayPalFlags, $40 | 0
+	domaptrigger ROUTE_10, $0
 	clearevent EVENT_ON_DODRIO_RANCH
+	clearflag ENGINE_NEAR_CAMPFIRE
 	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
 	clearevent EVENT_IN_SHOPPING_DISTRICT
 	clearevent EVENT_IN_BUSINESS_DISTRICT

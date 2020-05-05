@@ -12,17 +12,18 @@ DodrioRanchRaceTrack_MapScriptHeader:
 	warp_event 3, 7, DAYBREAK_VILLAGE, 4
 	warp_event 4, 7, DAYBREAK_VILLAGE, 4
 
-	db 28 ; coord events
+	db 39 ; coord events
 	xy_trigger 1, 11, 31, 0, RanchRideRaceCheckpoint1, 0, 0
+	xy_trigger 1, 10, 31, 0, RanchRideRaceCheckpoint1, 0, 0
 	xy_trigger 1, 12, 40, 0, RanchRideRaceCheckpoint2, 0, 0
 	xy_trigger 1, 13, 40, 0, RanchRideRaceCheckpoint2, 0, 0
 	xy_trigger 1, 24, 31, 0, RanchRideRaceCheckpoint3, 0, 0
+	xy_trigger 1, 25, 31, 0, RanchRideRaceCheckpoint3, 0, 0
 	xy_trigger 1, 17, 29, 0, RanchRideRaceFinishLine, 0, 0
 	xy_trigger 1, 17, 28, 0, RanchRideRaceFinishLine, 0, 0
 	xy_trigger 1, 18, 29, 0, RanchRideRaceBackwards, 0, 0
 	xy_trigger 1, 18, 28, 0, RanchRideRaceBackwards, 0, 0
 	xy_trigger 1, 12, 27, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 13, 27, 0, RanchRideRaceOffTrack, 0, 0
 	xy_trigger 1, 14, 27, 0, RanchRideRaceOffTrack, 0, 0
 	xy_trigger 1, 15, 27, 0, RanchRideRaceOffTrack, 0, 0
 	xy_trigger 1, 16, 27, 0, RanchRideRaceOffTrack, 0, 0
@@ -41,6 +42,16 @@ DodrioRanchRaceTrack_MapScriptHeader:
 	xy_trigger 1, 25, 37, 0, RanchRideRaceOffTrack, 0, 0
 	xy_trigger 1, 22, 40, 0, RanchRideRaceOffTrack, 0, 0
 	xy_trigger 1, 24, 36, 0, RanchRideRaceOffTrack, 0, 0
+	xy_trigger 1, 26, 28, 0, RanchRideRaceOffTrack, 0, 0
+	xy_trigger 1, 26, 29, 0, RanchRideRaceOffTrack, 0, 0
+	xy_trigger 1, 26, 30, 0, RanchRideRaceOffTrack, 0, 0
+	xy_trigger 1, 26, 31, 0, RanchRideRaceOffTrack, 0, 0
+	xy_trigger 1, 26, 32, 0, RanchRideRaceOffTrack, 0, 0
+	xy_trigger 1, 26, 33, 0, RanchRideRaceOffTrack, 0, 0
+	xy_trigger 1, 26, 34, 0, RanchRideRaceOffTrack, 0, 0
+	xy_trigger 1, 26, 35, 0, RanchRideRaceOffTrack, 0, 0
+	xy_trigger 1, 10, 27, 0, RanchRideRaceOffTrack, 0, 0
+	xy_trigger 1, 25, 27, 0, RanchRideRaceOffTrack, 0, 0
 
 	db 8 ; bg events
 	signpost 18, 16, SIGNPOST_READ, RanchRideRaceLogs
@@ -52,7 +63,7 @@ DodrioRanchRaceTrack_MapScriptHeader:
 	signpost 10, 18, SIGNPOST_READ, RanchRideRaceLogs
 	signpost 6, 17, SIGNPOST_READ, RanchRideRaceLogs
 
-	db 11 ; object events
+	db 12 ; object events
 	person_event SPRITE_SNES, 9, 9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideScarecrow, -1
 	person_event SPRITE_YOUNGSTER, 17, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RanchRideRaceGuy, -1
 	person_event SPRITE_COOLTRAINER_F, 14, 7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RanchRideReturnGirl, -1
@@ -66,6 +77,8 @@ DodrioRanchRaceTrack_MapScriptHeader:
 	person_event SPRITE_BIRD_KEEPER, 12, 5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
 	person_event SPRITE_BIRD_KEEPER, 6, 1, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
 	person_event SPRITE_BIRD_KEEPER, 3, 9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
+	person_event SPRITE_BALL_CUT_FRUIT, 30, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RanchRidePokeballFly, EVENT_GOT_HM02_FLY
+
 
 	const_def 1 ; object constants
 	const RANCHRACESCARECROW
@@ -107,6 +120,26 @@ DodrioRanchRaceTrackMakeBrown:
 	writebyte (1 << 7) | (PAL_OW_BROWN << 4)
 	special Special_SetPlayerPalette
 	return
+	
+RanchRidePokeballFly:
+	disappear LAST_TALKED
+	opentext
+	writetext ReceivedFlyText1
+	waitsfx
+	specialsound
+	waitbutton
+	writetext ReceivedFlyText2
+	waitbutton
+	closetext
+	setevent EVENT_GOT_HM02_FLY
+	setflag ENGINE_GOT_FLY
+	end
+;	opentext
+;	writetext .text_found
+;	playsound SFX_ITEM
+;	pause 60
+;	tmhmnotify
+;	closetext
 	
 RanchRideScarecrow:
 	jumptext RanchRideScarecrowText
@@ -676,6 +709,16 @@ RanchRideScarecrowText:
 	line "MURKROW!"
 	
 	para "It's so life-like!"
+	done
+	
+ReceivedFlyText1:
+	text "<PLAYER> found"
+	line "HM02 FLY!"
+	done
+	
+ReceivedFlyText2:
+	text "<PLAYER> put HM02"
+	line "in the TM POCKET."
 	done
 	
 Movement_RanchRideMovement1:

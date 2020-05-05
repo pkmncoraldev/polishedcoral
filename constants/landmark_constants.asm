@@ -27,8 +27,8 @@
 	const ROUTE_7			 ; 11
 	const LAKE_ONWA			 ; 12
 	const MT_ONWA			 ; 13
-	const ROUTE_8			 ; 14
-	const SUNBEAM_ISLAND	 ; 15
+	const SUNBEAM_ISLAND	 ; 14
+	const ROUTE_8			 ; 15
 	const EVENTIDE_FOREST	 ; 16
 	const OLD_MANOR			 ; 17
 	const EVENTIDE_VILLAGE	 ; 18

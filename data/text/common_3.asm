@@ -191,6 +191,15 @@ UnknownText_0x1c472c::
 	text_from_ram wStringBuffer3
 	text "."
 	prompt
+	
+UnknownText_tmhmtext::
+	text "<PLAYER> put @"
+	text_from_ram wStringBuffer1
+	text " "
+	line "in the @"
+	text_from_ram wStringBuffer3
+	text "."
+	prompt
 
 UnknownText_0x1c474b::
 	text "The @"

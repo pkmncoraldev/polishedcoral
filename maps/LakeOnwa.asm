@@ -4,7 +4,8 @@ LakeOnwa_MapScriptHeader:
 	scene_script LakeOnwaTrigger1
 	scene_script LakeOnwaTrigger2
 
-	db 1 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_NEWMAP, LakeOnwaFlypointCallback
 	callback MAPCALLBACK_TILES, LakeOnwaCallback
 
 	db 6 ; warp events
@@ -73,6 +74,10 @@ LakeOnwaTrigger2:
 	priorityjump JustRodeBoatL
 	end
 
+LakeOnwaFlypointCallback:
+	setflag ENGINE_FLYPOINT_LAKE_ONWA
+	return
+	
 LakeOnwaCallback:
 	checkevent EVENT_BOAT_BOYS_BEGONE
 	iftrue .skip

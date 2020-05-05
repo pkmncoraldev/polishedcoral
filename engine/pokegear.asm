@@ -2132,43 +2132,36 @@ TownMapBubble: ; 91bb5
 ; Draw the bubble containing the location text in the town map HUD
 
 ; Top-left corner
-	hlcoord 1, 0
-	ld a, $37
+	hlcoord 0, 0
+	ld a, $30
 	ld [hli], a
 ; Top row
-	ld bc, 16
-	ld a, " "
-	call ByteFill
-; Top-right corner
-	ld a, $38
-	ld [hl], a
-	hlcoord 1, 1
-
-; Middle row
 	ld bc, 18
 	ld a, " "
 	call ByteFill
+; Top-right corner
+	ld a, $31
+	ld [hli], a
 
 ; Bottom-left corner
-	hlcoord 1, 2
-	ld a, $39
+	ld a, $32
 	ld [hli], a
 ; Bottom row
-	ld bc, 16
+	ld bc, 18
 	ld a, " "
 	call ByteFill
 ; Bottom-right corner
-	ld a, $3a
+	ld a, $33
 	ld [hl], a
 
 ; Print "Where?"
-	hlcoord 2, 0
+	hlcoord 1, 0
 	ld de, .Where
 	call PlaceString
 ; Print the name of the default flypoint
 	call .Name
 ; Up/down arrows
-	hlcoord 18, 1
+	hlcoord 19, 1
 	ld [hl], "<UPDN>"
 	ret
 
@@ -2248,11 +2241,11 @@ HasVisitedSpawn: ; 91c50
 INCLUDE "data/maps/flypoints.asm"
 
 FlyMap: ; 91c90
-	;call GetCurrentLandmark
+	call GetCurrentLandmark
 ; The first 46 locations are part of NorthOnwa. The rest are in SouthOnwa
 	;cp KANTO_LANDMARK
 	;jr nc, .SouthOnwaFlyMap
-;.NorthOnwaFlyMap:
+.NorthOnwaFlyMap:
 ; Note that .NoSouthOnwa should be modified in tandem with this branch
 	push af
 ; Start from Sunset Bay
@@ -2905,12 +2898,53 @@ TownMapPlayerIcon: ; 91fa6
 	call Request2bpp
 ; Animation/palette
 	depixel 0, 0
-	ld b, SPRITE_ANIM_INDEX_RED_WALK ; Male
-	ld a, [wPlayerGender]
-	bit 0, a
-	jr z, .got_gender
-	ld b, SPRITE_ANIM_INDEX_BLUE_WALK ; Female
-.got_gender
+
+	ld a, [wPlayerPalette]
+	cp 0
+	jp nz, .cont1
+	ld b, SPRITE_ANIM_INDEX_RED_WALK
+	jp .ok
+
+.cont1
+	ld a, [wPlayerPalette]
+	cp 1
+	jp nz, .cont2
+	ld b, SPRITE_ANIM_INDEX_BLUE_WALK
+	jp .ok
+	
+.cont2
+	ld a, [wPlayerPalette]
+	cp 2
+	jp nz, .cont3
+	ld b, SPRITE_ANIM_INDEX_GREEN_WALK
+	jp .ok
+
+.cont3
+	ld a, [wPlayerPalette]
+	cp 3
+	jp nz, .cont4
+	ld b, SPRITE_ANIM_INDEX_BROWN_WALK
+	jp .ok
+	
+.cont4
+	ld a, [wPlayerPalette]
+	cp 4
+	jp nz, .cont5
+	ld b, SPRITE_ANIM_INDEX_PURPLE_WALK
+	jp .ok
+	
+.cont5
+	ld a, [wPlayerPalette]
+	cp 5
+	jp nz, .cont6
+	ld b, SPRITE_ANIM_INDEX_TEAL_WALK
+	jp .ok
+	
+.cont6
+	ld b, SPRITE_ANIM_INDEX_PINK_WALK
+	
+.ok
+	
 	ld a, b
 	call _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_TILE_ID

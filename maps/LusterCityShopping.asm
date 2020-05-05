@@ -1,43 +1,42 @@
 LusterCityShopping_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_NEWMAP, LusterCityFlypointCallback
 	callback MAPCALLBACK_TILES, ShoppingCallback
 
 	db 2 ; warp events
 	warp_def 11,  0, 1, ROUTE_1 ;ROUTE_6_SAFFRON_GATE
 	warp_def 11,  1, 2, ROUTE_1 ;ROUTE_6_SAFFRON_GATE
 
-	db 12 ; coord events
+	db 10 ; coord events
 	xy_trigger 0, 46,  0, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 47,  0, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 48,  0, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 49,  0, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 50,  0, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 51,  0, 0, LusterShoppingSignThing, 0, 0
-	xy_trigger 0, 52,  0, 0, LusterShoppingSignThing, 0, 0
-	xy_trigger 0, 53,  0, 0, LusterShoppingSignThing, 0, 0
-	xy_trigger 0, 46, 25, 0, LusterShoppingSignThing, 0, 0
-	xy_trigger 0, 47, 25, 0, LusterShoppingSignThing, 0, 0
-	xy_trigger 0, 48, 25, 0, LusterShoppingSignThing, 0, 0
-	xy_trigger 0, 49, 25, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 46, 29, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 47, 29, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 48, 29, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 49, 29, 0, LusterShoppingSignThing, 0, 0
 
 	db 0 ; bg events
 
 	db 13 ; object events
 	person_event SPRITE_TRAFFIC_LIGHT, 44, -3, SPRITEMOVEDATA_TILE_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
-	person_event SPRITE_MALL_SIGN_2, 44,  3, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
-	person_event SPRITE_MALL_SIGN_2, 44,  4, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
-	person_event SPRITE_MALL_SIGN, 31, 11, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
-	person_event SPRITE_MALL_SIGN, 31, 12, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
-	person_event SPRITE_LASS, 36,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster2NPC1, -1
-	person_event SPRITE_COOLTRAINER_F, 36,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster2NPC2, -1
-	person_event SPRITE_BUG_CATCHER, 36, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Luster2NPC3, -1
-	person_event SPRITE_LASS, 46, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster2NPC4, -1
-	person_event SPRITE_COOLTRAINER_F, 33, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster2NPC5, -1
-	person_event SPRITE_YOUNGSTER, 33, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Luster2NPC6, -1
-	person_event SPRITE_FISHER, 40, 11, SPRITEMOVEDATA_STANDING_LEFT, 2, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster2NPC7, -1
-	person_event SPRITE_YOUNGSTER, 29, 20, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster2NPC8, -1
+	person_event SPRITE_MALL_SIGN_2, 44,  7, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
+	person_event SPRITE_MALL_SIGN_2, 44,  8, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
+	person_event SPRITE_MALL_SIGN, 31, 15, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
+	person_event SPRITE_MALL_SIGN, 31, 16, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
+	person_event SPRITE_LASS, 36, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster2NPC1, -1
+	person_event SPRITE_COOLTRAINER_F, 36, 12, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster2NPC2, -1
+	person_event SPRITE_BUG_CATCHER, 36, 14, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Luster2NPC3, -1
+	person_event SPRITE_LASS, 46, 14, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster2NPC4, -1
+	person_event SPRITE_COOLTRAINER_F, 33, 20, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster2NPC5, -1
+	person_event SPRITE_YOUNGSTER, 33, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Luster2NPC6, -1
+	person_event SPRITE_FISHER, 40, 15, SPRITEMOVEDATA_STANDING_LEFT, 2, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster2NPC7, -1
+	person_event SPRITE_YOUNGSTER, 29, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster2NPC8, -1
 
 	const_def 1 ; object constants
 	const LUSTER2STREETLIGHT
@@ -63,6 +62,10 @@ LusterShoppingSignThing:
 	loadvar wEnteredMapFromContinue, 0
 	callasm ReturnFromMapSetupScript
 	end
+	
+LusterCityFlypointCallback:
+	setflag ENGINE_FLYPOINT_LUSTER
+	return
 	
 ShoppingCallback:
 	checktime 1<<NITE

@@ -209,6 +209,12 @@ UnknownText_0x1c0609::
 	text_waitbutton
 	db "@@"
 
+_UsedFlyText::
+	text_from_ram wStringBuffer2
+	text " used"
+	line "FLY!"
+	done
+	
 _UsedSurfText::
 	text_from_ram wStringBuffer2
 	text " used"

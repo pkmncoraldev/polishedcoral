@@ -79,11 +79,11 @@ MAP_NONE   EQU 0
 	map_const GLINT_CITY,                                 19, 11 ;  9
 	map_const GLINT_RIVAL_HOUSE,                  		   4,  4 ; 10
 	map_const GLINT_EVO_HOUSE,                             4,  4 ; 11
-	map_const ROUTE_3,                                    30, 17 ; 12
+	map_const ROUTE_3,                                    30, 16 ; 12
 
 	newgroup                                                     ;  5
 
-	map_const ROUTE_3_STARGLOW,                            6,  8 ;  1
+	map_const ROUTE_3_STARGLOW,                            7, 10 ;  1
 	map_const STARGLOW_VALLEY,                            19, 17 ;  2
 	map_const STARGLOW_TOGEPI_HOUSE,                       4,  4 ;  3
 	map_const STARGLOW_NO_POKEMON_HOUSE,                   4,  4 ;  4
@@ -108,6 +108,7 @@ MAP_NONE   EQU 0
 	map_const LAKE_ONWA_NAME_RATER_HOUSE,                  4,  4 ;  6
 	map_const LAKE_ONWA_ITEM_HOUSE,                 	   4,  4 ;  7
 	map_const LAKE_ONWA_POKECENTER,						   6,  4 ;  8
+	map_const ROUTE_8,                                    30, 20 ;  9
 	
 	newgroup                                                     ;  7
 
@@ -164,7 +165,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_9,		 							  19, 28 ; 8
 	map_const DODRIO_RANCH_HOUSE,						   4,  4 ; 9
 	map_const DODRIO_RANCH_BARN,						   7,  4 ; 10
-	map_const DODRIO_RANCH_RACETRACK,					  25, 17 ; 11
+	map_const DODRIO_RANCH_RACETRACK,					  25, 16 ; 11
 
 	newgroup													 ; 10
 	

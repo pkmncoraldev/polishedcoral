@@ -84,12 +84,12 @@
 	tilecoll MART_SHELF, FLOOR, MART_SHELF, FLOOR ; 53
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 54
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 55
-	tilecoll WALL, WALL, WALL, WALL ; 56
-	tilecoll NO_BIKE, WALL, NO_BIKE, NO_BIKE ; 57
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 56
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 57
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 58
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 59
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 5a
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 5b
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 5a
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 5b
 	tilecoll WALL, WALL, WALL, FLOOR ; 5c
 	tilecoll WALL, FLOOR, WALL, WALL ; 5d
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 5e
@@ -156,7 +156,7 @@
 	tilecoll CONVEYOR_RIGHT, CONVEYOR_RIGHT, WALL, WALL ; 9b
 	tilecoll LEFT_WALL, FLOOR, LEFT_WALL, FLOOR ; 9c
 	tilecoll FLOOR, RIGHT_WALL, FLOOR, RIGHT_WALL ; 9d
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 9e
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9e
 	tilecoll NO_BIKE, WALL, NO_BIKE, NO_BIKE ; 9f
 	tilecoll CONVEYOR_LEFT, CONVEYOR_LEFT, WALL, WALL ; a0
 	tilecoll CONVEYOR_RIGHT, CONVEYOR_RIGHT, WALL, WALL ; a1
@@ -198,3 +198,7 @@
 	tilecoll NO_BIKE, NO_BIKE, FLOOR, WALL ; c5
 	tilecoll LEFT_WALL, FLOOR, LEFT_WALL, FLOOR ; c6
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c7
+	tilecoll WALL, WALL, WALL, WALL ; c8
+	tilecoll NO_BIKE, WALL, NO_BIKE, NO_BIKE ; c9
+	tilecoll FLOOR, WALL, FLOOR, WALL ; ca
+	tilecoll WALL, FLOOR, WALL, FLOOR ; cb

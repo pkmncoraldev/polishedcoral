@@ -111,15 +111,17 @@ ENDM
 	map_attributes GlintGroveEntrance, GLINT_GROVE_ENTRANCE, 5, SOUTH
 	connection south, GlintCity, GLINT_CITY, -1
 	
-	map_attributes Route3, ROUTE_3, 5, WEST ;SOUTH | WEST
-;	connection south, Route12North, ROUTE_12_NORTH, 1
+	map_attributes Route3, ROUTE_3, 5, SOUTH | WEST | EAST
+	connection south, Route8, ROUTE_8, 4
 	connection west, GlintCity, GLINT_CITY, 0
+	connection east, Route3Starglow, ROUTE_3_STARGLOW, 6
 
-	map_attributes Route3Starglow, ROUTE_3_STARGLOW, $5, SOUTH
-	connection south, StarglowValley, STARGLOW_VALLEY, -3
+	map_attributes Route3Starglow, ROUTE_3_STARGLOW, $5, SOUTH | WEST
+	connection south, StarglowValley, STARGLOW_VALLEY, -4
+	connection west, Route3, ROUTE_3, -6
 	
 	map_attributes StarglowValley, STARGLOW_VALLEY, 5, NORTH | EAST
-	connection north, Route3Starglow, ROUTE_3_STARGLOW, 3
+	connection north, Route3Starglow, ROUTE_3_STARGLOW, 4
 ;	connection west, ROUTE_12, Route12, 4
 	connection east, Route4, ROUTE_4, 6
 	
@@ -141,6 +143,10 @@ ENDM
 	map_attributes Route7, ROUTE_7, 7, SOUTH | WEST
 	connection south, Route6, ROUTE_6, 1
 	connection west, LakeOnwa, LAKE_ONWA, -11
+	
+	map_attributes Route8, ROUTE_8, 7, NORTH | SOUTH
+	connection north, Route3, ROUTE_3, -4
+	connection south, LakeOnwa, LAKE_ONWA, -14
 	
 	map_attributes Route9, ROUTE_9, 5, NORTH | WEST
 	connection north, FlickerStation, FLICKER_STATION, -9
@@ -164,7 +170,7 @@ ENDM
 	connection south, FlickerStation, FLICKER_STATION, -21
 	
 	map_attributes LakeOnwa, LAKE_ONWA, 7, NORTH | EAST
-	connection north, Route1, ROUTE_1, 0
+	connection north, Route8, ROUTE_8, 14
 	connection east, Route7, ROUTE_7, 11
 	
 	map_attributes SunbeamIsland, SUNBEAM_ISLAND, $35, WEST

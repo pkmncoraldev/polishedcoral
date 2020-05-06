@@ -64,14 +64,14 @@ DodrioRanchRaceTrack_MapScriptHeader:
 	signpost 6, 17, SIGNPOST_READ, RanchRideRaceLogs
 
 	db 12 ; object events
-	person_event SPRITE_SNES, 9, 9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideScarecrow, -1
+	person_event SPRITE_SNES,  7,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideScarecrow, -1
 	person_event SPRITE_YOUNGSTER, 17, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RanchRideRaceGuy, -1
-	person_event SPRITE_COOLTRAINER_F, 14, 7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RanchRideReturnGirl, -1
+	person_event SPRITE_BATTLE_GIRL, 14,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RanchRideReturnGirl, -1
 	person_event SPRITE_DODRIO, 6, 14, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideDodrio, -1
 	person_event SPRITE_DODUO, 16, 15, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
 	person_event SPRITE_DODUO, 12, 15, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
 	person_event SPRITE_DODUO, 11, 8, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
-	person_event SPRITE_DODUO, 8, 11, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
+	person_event SPRITE_DODUO,  9, 11, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
 ;	person_event SPRITE_POKE_BALL, 30, 27, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, RanchRacePokeBall1, EVENT_RANCH_RACE_POKE_BALL
 ;	person_event SPRITE_POKE_BALL, 12, 18, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, RanchRacePokeBall2, EVENT_RANCH_POKE_BALL_2
 	person_event SPRITE_BIRD_KEEPER, 12, 5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
@@ -688,14 +688,10 @@ RanchRideReturnGirlText4:
 	para "And she's just a"
 	line "darlin', too."
 	
-	para "Press the A button"
+	para "Press the A BUTTON"
 	line "to jump down"
 	cont "ledges or over"
 	cont "hurdles."
-	
-	para "You can also hold"
-	line "the B Button to"
-	cont "slow down."
 	
 	para "When you're done"
 	line "ridin', just come"

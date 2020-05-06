@@ -239,6 +239,9 @@ Route6_BlockData:
 Route7_BlockData:
 	INCBIN "maps/Route7.ablk.lz"
 	
+Route8_BlockData:
+	INCBIN "maps/Route8.ablk.lz"
+	
 Route9_BlockData:
 	INCBIN "maps/Route9.ablk.lz"
 	

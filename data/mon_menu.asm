@@ -7,6 +7,8 @@ MonMenuOptionStrings: ; 24caf
 	db "MAIL@"
 	db "Error!@"
 	db "FLY@"
+	db "ROCK SMASH@"
+	db "CUT@"
 ; 24cd9
 
 MonMenuOptions: ; 24cd9
@@ -33,6 +35,8 @@ MonMenuOptions: ; 24cd9
 	db MONMENU_MENUOPTION, MONMENU_MAIL,       6 ; MAIL
 	db MONMENU_MENUOPTION, MONMENU_ERROR,      7 ; ERROR!
 	db MONMENU_MENUOPTION, MONMENU_FLY,        8 ; FLY
+	db MONMENU_MENUOPTION, MONMENU_ROCKSMASH,  9 ; ROCK_SMASH
+	db MONMENU_MENUOPTION, MONMENU_CUT,       10 ; CUT
 	
 	db -1
 ; 24d19

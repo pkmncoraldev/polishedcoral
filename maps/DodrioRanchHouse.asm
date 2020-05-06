@@ -12,7 +12,7 @@ DodrioRanchHouse_MapScriptHeader:
 	db 0 ; bg events
 
 	db 1 ; object events
-	person_event SPRITE_COOLTRAINER_F, 3, 2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RanchHouseDodrioGirl, -1
+	person_event SPRITE_BATTLE_GIRL, 3, 2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RanchHouseDodrioGirl, -1
 	
 RanchHouseDodrioGirl:
 	faceplayer

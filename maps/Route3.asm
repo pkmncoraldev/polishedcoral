@@ -12,7 +12,7 @@ Route3_MapScriptHeader:
 	signpost 10, 51, SIGNPOST_READ, Route3_sign
 	signpost 9, 0, SIGNPOST_READ, Route3_sign2
 
-	db 11 ; object events
+	db 14 ; object events
 	person_event SPRITE_YOUNGSTER, 8, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute3_1, -1
 	person_event SPRITE_FISHER, 16, 19, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRoute3_2, -1
 	person_event SPRITE_CAMPER, 15, 33, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute3_3, -1
@@ -24,6 +24,9 @@ Route3_MapScriptHeader:
 	itemball_event  34, 6, GREAT_BALL, 1, EVENT_ROUTE_3_GREAT_BALL
 	itemball_event  43, 23, RARE_CANDY, 1, EVENT_ROUTE_3_RARE_CANDY
 	fruittree_event 41,  7, FRUITTREE_ROUTE_3, LEPPA_BERRY
+	cuttree_event 52, 13, EVENT_ROUTE_3_CUT_TREE_1
+	cuttree_event 16, 25, EVENT_ROUTE_3_CUT_TREE_2
+	cuttree_event 18, 31, EVENT_ROUTE_3_CUT_TREE_3
 
 	const_def 1 ; object constants
 	const ROUTE3_TRAINER1

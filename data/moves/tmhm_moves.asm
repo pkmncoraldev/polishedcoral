@@ -29,7 +29,7 @@ TMHMMoves:
 	db DIG          ; TM28
 	db PSYCHIC_M    ; TM29
 	db SHADOW_BALL  ; TM30
-	db ROCK_SMASH   ; TM31
+	db TACKLE   ; TM31
 	db DOUBLE_TEAM  ; TM32
 	db REFLECT      ; TM33
 	db FLASH_CANNON ; TM34

@@ -126,36 +126,10 @@ GetMonSubmenuItems: ; 24dd4
 	ld a, [wLinkMode]
 	and a
 	jr nz, .skip_moves
-;	ld a, MON_MOVES
-;	call GetPartyParamLocation
-;	ld d, h
-;	ld e, l
-;	ld c, NUM_MOVES
-;.loop
-;	push bc
-;	push de
-;	ld a, [de]
-;	and a
-;	jr z, .next
-;	push hl
-;	call IsFieldMove
-;	pop hl
-;	jr nc, .next
-;	call AddMonMenuItem
 
-;.next
-;	pop de
-;	inc de
-;	pop bc
-;	dec c
-;	jr nz, .loop
-
-;	ld hl, wGotHMFlags
-;	bit 2, [hl] ; ENGINE_GOT_FLY
-;	jr z, .skip_fly ;not set
-	ld a, MONMENU_FLY
-	call AddMonMenuItem
-.skip_fly
+	call TryLoadFlyMenu
+	call TryLoadRockSmashMenu
+	call TryLoadCutMenu
 .skip_moves
 	ld a, MONMENU_STATS
 	call AddMonMenuItem
@@ -253,3 +227,85 @@ AddMonMenuItem: ; 24e83
 	pop hl
 	ret
 ; 24e99
+
+TryLoadFlyMenu:
+	ld d, FLY
+	ld a, d
+	ld [wPutativeTMHMMove], a
+	push de
+	farcall CanLearnTMHMMove
+	pop de
+	ld a, c
+	and a
+	ret z
+	
+	ld de, ENGINE_GOT_FLY
+	farcall CheckEngineFlag
+	ld a, c
+	and a
+	ret z
+	
+	ld de, ENGINE_THIRDBADGE
+	farcall CheckEngineFlag
+	ld a, c
+	and a
+	ret z
+	
+	ld a, MONMENU_FLY
+	call AddMonMenuItem
+	ret
+
+TryLoadRockSmashMenu:
+	ld d, ROCK_SMASH
+	ld a, d
+	ld [wPutativeTMHMMove], a
+	push de
+	farcall CanLearnTMHMMove
+	pop de
+	ld a, c
+	and a
+	ret z
+	
+	ld de, ENGINE_GOT_ROCK_SMASH
+	farcall CheckEngineFlag
+	ld a, c
+	and a
+	ret z
+	
+	ld de, ENGINE_FIRSTBADGE
+	farcall CheckEngineFlag
+	ld a, c
+	and a
+	ret z
+	
+	ld a, MONMENU_ROCKSMASH
+	call AddMonMenuItem
+	ret
+	
+TryLoadCutMenu:
+	ld d, CUT
+	ld a, d
+	ld [wPutativeTMHMMove], a
+	push de
+	farcall CanLearnTMHMMove
+	pop de
+	ld a, c
+	and a
+	ret z
+	
+	ld de, ENGINE_GOT_CUT
+	farcall CheckEngineFlag
+	ld a, c
+	and a
+	ret z
+	
+	ld de, ENGINE_SECONDBADGE
+	farcall CheckEngineFlag
+	ld a, c
+	and a
+	ret z
+	
+	ld a, MONMENU_CUT
+	call AddMonMenuItem
+	ret
+	

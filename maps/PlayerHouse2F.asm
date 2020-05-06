@@ -51,40 +51,73 @@ PlayerHouse2F_MapScriptHeader:
 PlayerHouseDebugPoster:
 	opentext
 	waitsfx
-	playsound SFX_BUMP_SNOWSTORM
-	writetext PlayerHouseMapsText
-	waitbutton
+	writetext PlayerHouseDebugText1
+	yesorno
+	iffalse .skip1
+	givepoke MEW, 100
+.skip1
+	writetext PlayerHouseDebugText2
+	yesorno
+	iffalse .skip2
 	setflag ENGINE_POKEGEAR
 	setflag ENGINE_PHONE_CARD
 	setflag ENGINE_MAP_CARD
-;	setflag ENGINE_FIRSTBADGE
-;	setflag ENGINE_SECONDBADGE
-;	setflag ENGINE_THIRDBADGE
-;	setflag ENGINE_FOURTHBADGE
-;	setflag ENGINE_SIXTHBADGE
-;	setflag ENGINE_FIFTHBADGE
-;	setflag ENGINE_SEVENTHBADGE
-;	setflag ENGINE_EIGHTHBADGE
 	addcellnum PHONE_MOM
 	addcellnum PHONE_SPRUCE
 	setevent EVENT_MOM_GOT_POKEGEAR
-	givepoke CORSOLA, 100
-	givepoke CHARMANDER, 100
 	giveitem LIBRARY_CARD
 	giveitem POKE_FLUTE
 	giveitem BICYCLE
 	giveitem OLD_ROD
 	giveitem GOOD_ROD
-x = 0
-rept NUM_TMS + NUM_HMS
-	givetmhm x
-x = x + 1
-endr
+.skip2
+	writetext PlayerHouseDebugText3
+	yesorno
+	iffalse .skip3
+	setflag ENGINE_FIRSTBADGE
+	setflag ENGINE_SECONDBADGE
+	setflag ENGINE_THIRDBADGE
+	setflag ENGINE_FOURTHBADGE
+	setflag ENGINE_SIXTHBADGE
+	setflag ENGINE_FIFTHBADGE
+	setflag ENGINE_SEVENTHBADGE
+	setflag ENGINE_EIGHTHBADGE
+.skip3
+	writetext PlayerHouseDebugText4
+	yesorno
+	iffalse .skip4
+	setflag ENGINE_GOT_ROCK_SMASH
+	setflag ENGINE_GOT_CUT
+	setflag ENGINE_GOT_FLY
+	givetmhm HM_ROCK_SMASH
+	givetmhm HM_CUT
+	givetmhm HM_FLY
+.skip4
+	writetext PlayerHouseDebugText5
+	waitbutton
 	closetext
 	end
 	
-PlayerHouseMapsText:
-	text "TEST EVENT"
+PlayerHouseDebugText1:
+	text "DEBUG POSTER"
+	
+	para "#MON?"
+	done
+	
+PlayerHouseDebugText2:
+	text "KEY ITEMS?"
+	done
+	
+PlayerHouseDebugText3:
+	text "BADGES?"
+	done
+	
+PlayerHouseDebugText4:
+	text "HMs?"
+	done
+	
+PlayerHouseDebugText5:
+	text "DONE"
 	done
 	
 PlayerHouseSunset:

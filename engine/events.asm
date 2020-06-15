@@ -1247,6 +1247,8 @@ CheckFacingTileEvent: ; 97c5f
 	jr c, .done
 
 	ld a, [wEngineBuffer1]
+	cp COLL_ROCK_CLIMB
+	jr z, .rockclimb
 	cp COLL_WHIRLPOOL
 	jr z, .whirlpool
 	cp COLL_WATERFALL
@@ -1265,6 +1267,10 @@ CheckFacingTileEvent: ; 97c5f
 	scf
 	ret
 
+.rockclimb
+	farcall TryRockClimbOW
+	jr c, .done
+	
 .whirlpool
 	farcall TryWhirlpoolOW
 	jr c, .done

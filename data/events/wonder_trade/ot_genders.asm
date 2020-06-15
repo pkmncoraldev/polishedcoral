@@ -25,7 +25,7 @@ WonderTradeOTGenders1:
 	genders MALE,    MALE,    MALE,    FEMALE,  MALE,    FEMALE,  FEMALE,  FEMALE
 	;       Blaine,  Giovani, Lorelei, Bruno,   Agatha,  Lance,   Cissy,   Danny
 	genders MALE,    MALE,    FEMALE,  MALE,    FEMALE,  MALE,    FEMALE,  MALE,
-	;       Rudy,    Luana,   Prima,   Falkner, Bugsy,   Whitney, Morty,   Chuck
+	;       Rudy,    Luana,   Prima,   Stanley, Rodney,  Wendy,   Morty,   Chuck
 	genders MALE,    FEMALE,  FEMALE,  MALE,    MALE,    FEMALE,  MALE,    MALE,
 	;       Jasmine, Pryce,   Clair,   Will,    Koga,    Karen,   Roxanne, Brawly
 	genders FEMALE,  MALE,    FEMALE,  MALE,    MALE,    FEMALE,  FEMALE,  MALE,

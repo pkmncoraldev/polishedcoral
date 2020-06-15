@@ -4,12 +4,12 @@ Route3Starglow_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 1 ; warp events
-	warp_def  9,  4, 2, STARGLOW_CAVERN_1F
+	warp_def  9,  6, 2, STARGLOW_CAVERN_1F
 
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event  5, 10, SIGNPOST_JUMPTEXT, Route3SignText
+	bg_event  7, 10, SIGNPOST_JUMPTEXT, Route3SignText
 
 	db 0 ; object events
 	

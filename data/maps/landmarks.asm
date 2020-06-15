@@ -40,7 +40,7 @@ Landmarks: ; 0x1ca8c3
 	landmark 132,  52, ResidentialName
 	landmark 132,  52, ShoppingName
 	landmark 132,  52, BusinessName
-	landmark   0,   0, GateName
+	landmark -16, -16, GateName
 
 
 SunsetBayName:         db "SUNSET BAY@"
@@ -78,5 +78,5 @@ LusterSewersName:	   db "LUSTER¯SEWERS@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"
 ShoppingName:		   db "SHOPPING¯DISTRICT@"
 BusinessName:	 	   db "BUSINESS¯DISTRICT@"
-GateName:	 	 	   db "ERROR!@"
+GateName:	 	 	   db "UNKOWN@"
 SpecialMapName:        db "?","@"

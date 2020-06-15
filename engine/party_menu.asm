@@ -13,7 +13,7 @@ SelectMonFromParty: ; 50000
 
 
 SelectTradeOrDaycareMon: ; 5001d
-	ld a, b
+	xor a
 	ld [wPartyMenuActionText], a
 	call DisableSpriteUpdates
 	call ClearBGPalettes
@@ -26,6 +26,21 @@ SelectTradeOrDaycareMon: ; 5001d
 	call PartyMenuSelect
 	jp ReturnToMapWithSpeechTextbox
 ; 5003f
+
+SelectEncounterHouseMon::
+	ld a, 6
+	ld [wPartyMenuActionText], a
+	call DisableSpriteUpdates
+	call ClearBGPalettes
+	call InitPartyMenuLayout
+	call ApplyTilemapInVBlank
+	ld b, CGB_PARTY_MENU
+	call GetCGBLayout
+	call SetPalettes
+	call DelayFrame
+	call PartyMenuSelect
+	jp ReturnToMapWithSpeechTextbox
+
 
 InitPartyMenuLayout: ; 5003f
 	call LoadPartyMenuGFX
@@ -755,7 +770,7 @@ PartyMenuStrings: ; 0x504d2
 	dw TeachWhichPKMNString
 	dw MoveToWhereString
 	dw UseOnWhichPKMNString
-	dw ChooseAMonString ; Probably used to be ChooseAFemalePKMNString
+	dw ShowHerAPKMNString ; Probably used to be ChooseAFemalePKMNString
 	dw ChooseAMonString ; Probably used to be ChooseAMalePKMNString
 	dw ToWhichPKMNString
 	dw TutorWhichPKMNString
@@ -774,6 +789,8 @@ MoveToWhereString: ; 0x5051e
 	db "Move to where?@"
 ToWhichPKMNString: ; 0x50549
 	db "To which <PK><MN>?@"
+ShowHerAPKMNString:
+	db "Show her a <PK><MN>!@"
 
 YouHaveNoPKMNString: ; 0x50556
 	db "You have no <PK><MN>!@"

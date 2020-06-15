@@ -293,24 +293,24 @@ SpriteAnimOAMData: ; 8d94d
 
 .OAMData_51:
 	db 4
-	dsprite -1,  0, -2,  6, $00, $6
-	dsprite -1,  0,  0,  2, $01, $6
-	dsprite  0,  0, -2,  6, $02, $6
-	dsprite  0,  0,  0,  2, $03, $6
+	dsprite -1,  0, -2,  6, $00, $7
+	dsprite -1,  0,  0,  2, $01, $7
+	dsprite  0,  0, -2,  6, $02, $7
+	dsprite  0,  0,  0,  2, $03, $7
 
 .OAMData_52:
 	db 4
-	dsprite -1,  0, -2,  4, $00, $6
-	dsprite -1,  0,  0,  4, $01, $6
-	dsprite  0,  0, -2,  4, $02, $6
-	dsprite  0,  0,  0,  4, $03, $6
+	dsprite -1,  0, -2,  4, $00, $7
+	dsprite -1,  0,  0,  4, $01, $7
+	dsprite  0,  0, -2,  4, $02, $7
+	dsprite  0,  0,  0,  4, $03, $7
 
 .OAMData_53:
 	db 4
-	dsprite -1,  0, -2,  0, $00, $6
-	dsprite -1,  0,  1,  0, $01, $6
-	dsprite  0,  0, -2,  0, $02, $6
-	dsprite  0,  0,  1,  0, $03, $6
+	dsprite -1,  0, -2,  0, $00, $7
+	dsprite -1,  0,  1,  0, $01, $7
+	dsprite  0,  0, -2,  0, $02, $7
+	dsprite  0,  0,  1,  0, $03, $7
 
 .OAMData_63:
 	db 4

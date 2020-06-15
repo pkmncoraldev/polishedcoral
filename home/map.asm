@@ -1277,6 +1277,8 @@ LoadTileset:: ; 2821
 	jr z, .load_roof
 	cp TILESET_SPOOKY
 	jr z, .load_roof
+	cp TILESET_GROVE
+	jr z, .load_roof
 	jr .skip_roof
 
 .load_roof

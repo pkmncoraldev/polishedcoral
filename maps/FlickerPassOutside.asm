@@ -3,7 +3,8 @@ FlickerPassOutside_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 0 ; warp events
+	db 1 ; warp events
+	warp_def  1, 11, 5, FLICKER_PASS_2F
 
 	db 0 ; coord events
 

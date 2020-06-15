@@ -822,6 +822,8 @@ LoadMapPals:
 	ld a, [wMapGroup]
 	cp GROUP_LAKE_ONWA
 	jr z, .rockscheck1
+	cp GROUP_ROUTE_3_EAST
+	jr z, .rockscheck2
 	cp GROUP_SUNBEAM_ISLAND
 	jr z, .umbrellacheck
 	cp GROUP_SUNSET_BAY
@@ -870,8 +872,12 @@ LoadMapPals:
 .rockscheck1
 	ld a, [wMapNumber]
 	cp MAP_LAKE_ONWA
-	jp z, .rocks
-	jp .got_pals_cont
+	jp nz, .got_pals_cont
+	jr .rocks
+.rockscheck2
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_3_EAST
+	jp nz, .got_pals_cont
 .rocks
 	ld a, [wTimeOfDayPal]
 	and 3
@@ -888,7 +894,8 @@ LoadMapPals:
 	cp TOWN
 	jp z, .outside
 	cp ROUTE
-	ret nz
+	jp z, .outside
+	ret
 .starglow
 	ld hl, MapObjectPalsStarglow
 	ld de, wUnknOBPals
@@ -949,7 +956,7 @@ LoadMapPals:
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes
-	ld hl, MapObjectPalsHangar2
+	ld hl, MapObjectPalsHangarPurple
 	call AddNTimes
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
@@ -977,12 +984,19 @@ LoadMapPals:
 	jp .outside
 	
 .snow
-	ld a, [wMapNumber]
-	cp MAP_ROUTE_10_EAST
-	jr z, .snowtent
+	ld a, [wPlayerPalette]
+	cp 4
+	jr z, .snowpurple
 	eventflagcheck EVENT_SNOWSTORM_HAPPENING
 	jr nz, .snowstorm
+	ld a, [wIsNearCampfire]
+	bit 0, a
+	jr nz, .snowcont1
 	ld a, [wTimeOfDayPal]
+	jr .snowcont2
+.snowcont1
+	ld a, 1
+.snowcont2
 	and 3
 	ld bc, 8 palettes
 	ld hl, MapObjectPalsSnow
@@ -993,8 +1007,36 @@ LoadMapPals:
 	call FarCopyWRAM
 	ret
 	
-.snowstorm
+.snowpurple
+	eventflagcheck EVENT_SNOWSTORM_HAPPENING
+	jr nz, .snowstormpurple
+	ld a, [wIsNearCampfire]
+	bit 0, a
+	jr nz, .snowpurplecont1
 	ld a, [wTimeOfDayPal]
+	jr .snowpurplecont2
+.snowpurplecont1
+	ld a, 1
+.snowpurplecont2
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPalsSnowPurple
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+	
+.snowstorm
+	ld a, [wIsNearCampfire]
+	bit 0, a
+	jr nz, .snowstormcont1
+	ld a, [wTimeOfDayPal]
+	jr .snowstormcont2
+.snowstormcont1
+	ld a, 1
+.snowstormcont2
 	and 3
 	ld bc, 8 palettes
 	ld hl, MapObjectPalsSnowstorm
@@ -1005,39 +1047,18 @@ LoadMapPals:
 	call FarCopyWRAM
 	ret
 	
-.snowtent
-	eventflagcheck EVENT_SNOWSTORM_HAPPENING
-	jr nz, .snowstormtent
+.snowstormpurple
 	ld a, [wIsNearCampfire]
 	bit 0, a
-	jr nz, .snowtentcont1
+	jr nz, .snowstormpurplecont1
 	ld a, [wTimeOfDayPal]
-	jr .snowtentcont2
-.snowtentcont1
+	jr .snowstormpurplecont2
+.snowstormpurplecont1
 	ld a, 1
-.snowtentcont2
+.snowstormpurplecont2
 	and 3
 	ld bc, 8 palettes
-	ld hl, MapObjectPalsSnowFire
-	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
-	
-.snowstormtent
-	ld a, [wIsNearCampfire]
-	bit 0, a
-	jr nz, .snowstormtentcont1
-	ld a, [wTimeOfDayPal]
-	jr .snowstormtentcont2
-.snowstormtentcont1
-	ld a, 1
-.snowstormtentcont2
-	and 3
-	ld bc, 8 palettes
-	ld hl, MapObjectPalsSnowstormFire
+	ld hl, MapObjectPalsSnowstormPurple
 	call AddNTimes
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
@@ -1203,20 +1224,20 @@ INCLUDE "maps/palettes/obpals/obranchyellow.pal"
 MapObjectPalsHangar::
 INCLUDE "maps/palettes/obpals/obranchhangar.pal"
 
-MapObjectPalsHangar2::
-INCLUDE "maps/palettes/obpals/obranchhangar2.pal"
+MapObjectPalsHangarPurple::
+INCLUDE "maps/palettes/obpals/obranchhangarpurple.pal"
 
 MapObjectPalsSnow::
 INCLUDE "maps/palettes/obpals/obsnow.pal"
 
+MapObjectPalsSnowPurple::
+INCLUDE "maps/palettes/obpals/obsnowpurple.pal"
+
 MapObjectPalsSnowstorm::
 INCLUDE "maps/palettes/obpals/obsnowstorm.pal"
 
-MapObjectPalsSnowFire::
-INCLUDE "maps/palettes/obpals/obsnowfire.pal"
-
-MapObjectPalsSnowstormFire::
-INCLUDE "maps/palettes/obpals/obsnowstormfire.pal"
+MapObjectPalsSnowstormPurple::
+INCLUDE "maps/palettes/obpals/obsnowstormpurple.pal"
 
 MapObjectPalsSailboat::
 INCLUDE "maps/palettes/obpals/obsailboat.pal"

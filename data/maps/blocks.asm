@@ -30,6 +30,7 @@ SunbeamSurfShop_BlockData:
 	
 Route1Gate_BlockData:
 Route5Gate_BlockData:
+Route8Gate_BlockData:
 	INCBIN "maps/NorthSouthGate.ablk.lz"
 
 Route4EventideGate_BlockData:
@@ -53,13 +54,13 @@ FlickerNameSpeechHouse_BlockData:
 SunsetLegendsHouse_BlockData:
 GlintEvoHouse_BlockData:
 StarglowNoPokemonHouse_BlockData:
-SunbeamBlueWaterHouse_BlockData:
+SunbeamSoftSandHouse_BlockData:
 FlickerSoundSpeechHouse_BlockData:
 	INCBIN "maps/NormalHouse3.ablk.lz"
 	
 LakeOnwaItemHouse_BlockData:
 DodrioRanchHouse_BlockData:
-TwinkleHouse1_BlockData:
+TwinkleRockHouse_BlockData:
 TwinkleHouse2_BlockData:
 TwinkleHouse3_BlockData:
 	INCBIN "maps/RusticHouse.ablk.lz"
@@ -67,8 +68,8 @@ TwinkleHouse3_BlockData:
 SunsetCaptainsHouse_BlockData:
 DaybreakAlexHouse_BlockData:
 DaybreakMarcusHouse_BlockData:
-EventideHouse1_BlockData:
-EventideHouse2_BlockData:
+EventideGymSpeechHouse_BlockData:
+EventideSootheBellHouse_BlockData:
 	INCBIN "maps/TraditionalHouse.ablk.lz"
 
 SECTION "Map Blockdata 1", ROMX
@@ -168,6 +169,9 @@ FlickerTrainStation_BlockData:
 FlickerTrainCutscene_BlockData:
 	INCBIN "maps/FlickerTrainCutscene.ablk.lz"
 	
+LusterTrainCutscene_BlockData:
+	INCBIN "maps/LusterTrainCutscene.ablk.lz"
+	
 Route10Tent_BlockData:
 	INCBIN "maps/Route10Tent.ablk.lz"
 	
@@ -176,8 +180,10 @@ TwinkleTown_BlockData:
 	
 EastTrainCabin1_BlockData:
 EastTrainCabin2_BlockData:
-EastTrainCabin3_BlockData:
 	INCBIN "maps/TrainCabin.ablk.lz"
+	
+EastTrainCab_BlockData:
+	INCBIN "maps/EastTrainCab.ablk.lz"
 	
 EastTrainCaboose_BlockData:
 	INCBIN "maps/EastTrainCaboose.ablk.lz"
@@ -223,6 +229,9 @@ Route2_BlockData:
 
 Route3_BlockData:
 	INCBIN "maps/Route3.ablk.lz"
+	
+Route3East_BlockData:
+	INCBIN "maps/Route3East.ablk.lz"
 
 Route4_BlockData:
 	INCBIN "maps/Route4.ablk.lz"
@@ -240,6 +249,7 @@ Route7_BlockData:
 	INCBIN "maps/Route7.ablk.lz"
 	
 Route8_BlockData:
+Route8Garden_BlockData:
 	INCBIN "maps/Route8.ablk.lz"
 	
 Route9_BlockData:
@@ -298,6 +308,9 @@ GlintGroveEntrance_BlockData:
 	
 LakeOnwaNameRaterHouse_BlockData:
 	INCBIN "maps/LakeOnwaNameRaterHouse.ablk.lz"
+	
+Route8EncounterHouse_BlockData:
+	INCBIN "maps/Route8EncounterHouse.ablk.lz"
 	
 EventideForest_BlockData:
 	INCBIN "maps/EventideForest.ablk.lz"

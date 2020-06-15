@@ -112,16 +112,20 @@ ENDM
 	connection south, GlintCity, GLINT_CITY, -1
 	
 	map_attributes Route3, ROUTE_3, 5, SOUTH | WEST | EAST
-	connection south, Route8, ROUTE_8, 4
+	connection south, Route8, ROUTE_8, 8
 	connection west, GlintCity, GLINT_CITY, 0
-	connection east, Route3Starglow, ROUTE_3_STARGLOW, 6
+	connection east, Route3East, ROUTE_3_EAST, 2
+	
+	map_attributes Route3East, ROUTE_3_EAST, 5, WEST | EAST
+	connection west, Route3, ROUTE_3, -2
+	connection east, Route3Starglow, ROUTE_3_STARGLOW, 4
 
 	map_attributes Route3Starglow, ROUTE_3_STARGLOW, $5, SOUTH | WEST
-	connection south, StarglowValley, STARGLOW_VALLEY, -4
-	connection west, Route3, ROUTE_3, -6
+	connection south, StarglowValley, STARGLOW_VALLEY, -3
+	connection west, Route3East, ROUTE_3_EAST, -4
 	
 	map_attributes StarglowValley, STARGLOW_VALLEY, 5, NORTH | EAST
-	connection north, Route3Starglow, ROUTE_3_STARGLOW, 4
+	connection north, Route3Starglow, ROUTE_3_STARGLOW, 3
 ;	connection west, ROUTE_12, Route12, 4
 	connection east, Route4, ROUTE_4, 6
 	
@@ -136,17 +140,16 @@ ENDM
 	map_attributes Route5, ROUTE_5, 7, NORTH
 	connection north, Route4, ROUTE_4, 3
 	
-	map_attributes Route6, ROUTE_6, 7, NORTH ;| SOUTH
+	map_attributes Route6, ROUTE_6, 7, NORTH
 	connection north, Route7, ROUTE_7, -1
-;	connection south, Route29, ROUTE_29, -11
 	
 	map_attributes Route7, ROUTE_7, 7, SOUTH | WEST
 	connection south, Route6, ROUTE_6, 1
 	connection west, LakeOnwa, LAKE_ONWA, -11
 	
-	map_attributes Route8, ROUTE_8, 7, NORTH | SOUTH
-	connection north, Route3, ROUTE_3, -4
-	connection south, LakeOnwa, LAKE_ONWA, -14
+	map_attributes Route8, ROUTE_8, 5, NORTH | SOUTH
+	connection north, Route3, ROUTE_3, -8
+	connection south, LakeOnwa, LAKE_ONWA, -6
 	
 	map_attributes Route9, ROUTE_9, 5, NORTH | WEST
 	connection north, FlickerStation, FLICKER_STATION, -9
@@ -170,7 +173,7 @@ ENDM
 	connection south, FlickerStation, FLICKER_STATION, -21
 	
 	map_attributes LakeOnwa, LAKE_ONWA, 7, NORTH | EAST
-	connection north, Route8, ROUTE_8, 14
+	connection north, Route8, ROUTE_8, 6
 	connection east, Route7, ROUTE_7, 11
 	
 	map_attributes SunbeamIsland, SUNBEAM_ISLAND, $35, WEST
@@ -312,6 +315,8 @@ ENDM
 	map_attributes LakeOnwaBoatHouseLeft, LAKE_ONWA_BOAT_HOUSE_LEFT, $0, 0
 	map_attributes LakeOnwaItemHouse, LAKE_ONWA_ITEM_HOUSE, $0, 0
 	map_attributes LakeOnwaPokeCenter, LAKE_ONWA_POKECENTER, $0, 0
+	map_attributes Route8Garden, ROUTE_8_GARDEN, $5, 0
+	map_attributes Route8EncounterHouse, ROUTE_8_ENCOUNTER_HOUSE, $0, 0
 	map_attributes SunbeamPokeCenter, SUNBEAM_POKECENTER, $0, 0
 	map_attributes SunbeamMart, SUNBEAM_MART, $0, 0
 	map_attributes SunbeamBoatHouse, SUNBEAM_BOAT_HOUSE, $0, 0
@@ -319,7 +324,7 @@ ENDM
 	map_attributes SunbeamBikiniContest, SUNBEAM_BIKINI_CONTEST, $0, 0
 	map_attributes SunbeamDodrioHouse, SUNBEAM_DODRIO_HOUSE, $0, 0
 	map_attributes SunbeamOldCouplesHouse, SUNBEAM_OLD_COUPLES_HOUSE, $0, 0
-	map_attributes SunbeamBlueWaterHouse, SUNBEAM_BLUE_WATER_HOUSE, $0, 0
+	map_attributes SunbeamSoftSandHouse, SUNBEAM_SOFT_SAND_HOUSE, $0, 0
 	map_attributes SunbeamTradeHouse, SUNBEAM_TRADE_HOUSE, $0, 0
 	map_attributes SprucesLab, SPRUCES_LAB, $0, 0
 	map_attributes SunbeamReserve, SUNBEAM_RESERVE, $35, 0
@@ -332,8 +337,8 @@ ENDM
 	map_attributes SpookhouseHallway2, SPOOKHOUSE_HALLWAY_2, $00, 0
 	map_attributes SpookhouseHallway3, SPOOKHOUSE_HALLWAY_3, $00, 0
 	map_attributes SpookhouseTVRoom, SPOOKHOUSE_TV_ROOM, $00, 0
-	map_attributes EventideHouse1, EVENTIDE_HOUSE_1, 0, 0
-	map_attributes EventideHouse2, EVENTIDE_HOUSE_2, 0, 0
+	map_attributes EventideGymSpeechHouse, EVENTIDE_GYM_SPEECH_HOUSE, 0, 0
+	map_attributes EventideSootheBellHouse, EVENTIDE_SOOTHE_BELL_HOUSE, 0, 0
 	map_attributes EventideBikeShop, EVENTIDE_BIKE_SHOP, 0, 0
 	map_attributes EventidePokeCenter, EVENTIDE_POKECENTER, 0, 0
 	map_attributes EventideMart, EVENTIDE_MART, 0, 0
@@ -347,19 +352,21 @@ ENDM
 	map_attributes FlickerMart, FLICKER_MART, 0, 0
 	map_attributes FlickerTrainStation, FLICKER_TRAIN_STATION, 0, 0
 	map_attributes FlickerTrainCutscene, FLICKER_TRAIN_CUTSCENE, 0, 0
+	map_attributes LusterTrainCutscene, LUSTER_TRAIN_CUTSCENE, $12, 0
 	map_attributes Route10Tent, ROUTE_10_TENT, 0, 0
-	map_attributes TwinkleHouse1, TWINKLE_HOUSE_1, 0, 0
+	map_attributes TwinkleRockHouse, TWINKLE_ROCK_HOUSE, 0, 0
 	map_attributes TwinkleHouse2, TWINKLE_HOUSE_2, 0, 0
 	map_attributes TwinkleHouse3, TWINKLE_HOUSE_3, 0, 0
 	map_attributes TwinklePokeCenter, TWINKLE_POKECENTER, 0, 0
 	map_attributes TwinkleMart, TWINKLE_MART, 0, 0
 	map_attributes EastTrainCabin1, EAST_TRAIN_CABIN_1, 0, 0
 	map_attributes EastTrainCabin2, EAST_TRAIN_CABIN_2, 0, 0
-	map_attributes EastTrainCabin3, EAST_TRAIN_CABIN_3, 0, 0
+	map_attributes EastTrainCab, EAST_TRAIN_CAB, 0, 0
 	map_attributes EastTrainCaboose, EAST_TRAIN_CABOOSE, 0, 0
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $7, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0
 	map_attributes Route5Gate, ROUTE_5_GATE, $0, 0
+	map_attributes Route8Gate, ROUTE_8_GATE, $0, 0
 	map_attributes Route4EventideGate, ROUTE_4_EVENTIDE_GATE, $0, 0
 	map_attributes EventideVillageGate, EVENTIDE_VILLAGE_GATE, $0, 0

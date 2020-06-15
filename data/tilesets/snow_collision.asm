@@ -11,7 +11,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 0a
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 0b
 	tilecoll WALL, WALL, WALL, WALL ; 0c
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 0d
+	tilecoll FLOOR, WALL, ROCK_CLIMB, WALL ; 0d
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 0e
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 0f
 	tilecoll WALL, WALL, WALL, DOOR ; 10
@@ -36,8 +36,8 @@
 	tilecoll WALL, WALL, WALL, WALL ; 23
 	tilecoll WALL, ICE, ICE, ICE ; 24
 	tilecoll ICE, ICE, ICE, WALL ; 25
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 26
-	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 27
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 26
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 27
 	tilecoll ICE, WALL, ICE, ICE ; 28
 	tilecoll WALL, HEADBUTT_TREE, WALL, FLOOR ; 29
 	tilecoll WALL, WALL, WALL, WALL ; 2a
@@ -77,7 +77,7 @@
 	tilecoll WALL, TALL_GRASS, WALL, TALL_GRASS ; 4c
 	tilecoll WALL, WALL, WALL, WALL ; 4d
 	tilecoll WALL, FLOOR, WALL, WALL ; 4e
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 4f
+	tilecoll ROCK_CLIMB, WALL, ROCK_CLIMB, WALL ; 4f
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 50
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 51
 	tilecoll WALL, WALL, WALL, WALL ; 52
@@ -115,25 +115,25 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 72
 	tilecoll FLOOR, FLOOR, DOOR, WALL ; 73
 	tilecoll TOP_WALL, WALL, FLOOR, FLOOR ; 74
-	tilecoll LADDER, LADDER, LADDER, LADDER ; 75
+	tilecoll ICE, WALL, WALL, WALL ; 75
 	tilecoll ICE, ICE, ICE, ICE ; 76
-	tilecoll LADDER, LADDER, LADDER, LADDER ; 77
-	tilecoll LADDER, LADDER, LADDER, LADDER ; 78
+	tilecoll ICE, WALL, ICE, WALL ; 77
+	tilecoll ICE, ICE, ROCK_CLIMB, WALL ; 78
 	tilecoll ICE, ICE, ICE, ICE ; 79
 	tilecoll ICE, ICE, ICE, ICE ; 7a
-	tilecoll LADDER, LADDER, LADDER, LADDER ; 7b
-	tilecoll LADDER, LADDER, LADDER, LADDER ; 7c
-	tilecoll LADDER, LADDER, LADDER, LADDER ; 7d
+	tilecoll ICE, WALL, ICE, WALL ; 7b
+	tilecoll WALL, HEADBUTT_TREE, WALL, FLOOR ; 7c
+	tilecoll HEADBUTT_TREE, WALL, FLOOR, WALL ; 7d
 	tilecoll LADDER, LADDER, LADDER, LADDER ; 7e
-	tilecoll LADDER, LADDER, LADDER, LADDER ; 7f
+	tilecoll WALL, ICE, WALL, ICE ; 7f
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; 80
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; 81
 	tilecoll LADDER, LADDER, LADDER, LADDER ; 82
-	tilecoll LADDER, LADDER, LADDER, LADDER ; 83
+	tilecoll WALL, ICE, WALL, ICE ; 83
 	tilecoll LADDER, LADDER, LADDER, LADDER ; 84
 	tilecoll LADDER, LADDER, LADDER, LADDER ; 85
 	tilecoll LADDER, LADDER, LADDER, LADDER ; 86
-	tilecoll LADDER, LADDER, LADDER, LADDER ; 87
+	tilecoll WALL, ICE, WALL, WALL ; 87
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 88
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 89
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 8a

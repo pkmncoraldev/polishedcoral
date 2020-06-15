@@ -30,7 +30,7 @@ Route9_MapScriptHeader:
 	signpost 47,  2, SIGNPOST_READ, Route9Sign
 	signpost 35,  8, SIGNPOST_READ, Route9Sign2
 
-	db 13 ; object events
+	db 15 ; object events
 	person_event SPRITE_SNES, 13, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchScarecrow, -1
 	person_event SPRITE_DODRIO, 20, 19, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio1, -1
 	person_event SPRITE_DODRIO, 12, 26, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio2, -1
@@ -40,10 +40,12 @@ Route9_MapScriptHeader:
 	person_event SPRITE_DODUO, 22, 27, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
 	itemball_event 31,  5, CARBOS, 1, EVENT_ROUTE_9_POKE_BALL_1
 	itemball_event 30, 18, FULL_RESTORE, 1, EVENT_ROUTE_9_POKE_BALL_2
-	person_event SPRITE_BIRD_KEEPER, 18, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_1, -1
-	person_event SPRITE_BIRD_KEEPER, 13, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRanch_2, -1
-	person_event SPRITE_BIRD_KEEPER,  9, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRanch_3, -1
-	fruittreeinvis_event  4, 10, FRUITTREE_ROUTE_9, ASPEAR_BERRY
+	person_event SPRITE_BIRD_KEEPER, 41, 15, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_1, -1
+	person_event SPRITE_BIRD_KEEPER, 34,  3, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerRanch_2, -1
+	person_event SPRITE_BEAUTY, 18, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_3, -1
+	person_event SPRITE_BUG_CATCHER, 12, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_4, -1
+	person_event SPRITE_BIRD_KEEPER,  9, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRanch_5, -1
+	fruittreeinvis_event  12, 10, FRUITTREE_ROUTE_9, ASPEAR_BERRY
 
 Route9MapSignThing::
 	loadvar wTimeOfDayPalFlags, $40 | 0
@@ -75,12 +77,9 @@ TrainerRanch_1:
 	done
 
 .SeenText:
-	text "This ranch is"
-	line "known for its"
-	cont "DODUO."
-	
-	para "I just got one"
-	line "myself."
+	text "I just got myself"
+	line "a DODUO from the"
+	cont "DODRIO RANCH!"
 	
 	para "Let's test this"
 	line "little guy out!"
@@ -109,7 +108,53 @@ TrainerRanch_2:
 	done
 	
 TrainerRanch_3:
-	generictrainer BIRD_KEEPER, RANDY, EVENT_BEAT_ROUTE_9_TRAINER_3, .SeenText, .BeatenText
+	generictrainer BEAUTY, SANDRA, EVENT_BEAT_ROUTE_9_TRAINER_3, .SeenText, .BeatenText
+
+	text "I just wanna go"
+	line "hooome…"
+	done
+
+.SeenText:
+	text "Ugh!"
+	
+	para "This ranch is so"
+	line "smelly…"
+	
+	para "My feet hurt…"
+	
+	para "It's too hot…"
+	done
+
+.BeatenText:
+	text "And now I even"
+	line "lost a battle?"
+	done
+	
+TrainerRanch_4:
+	generictrainer BUG_CATCHER, CHARLIE, EVENT_BEAT_ROUTE_9_TRAINER_4, .SeenText, .BeatenText
+
+	text "What a bad place"
+	line "for a BUG CATCHER"
+	cont "to train…"
+	done
+
+.SeenText:
+	text "This place is"
+	line "dangerous for"
+	cont "BUG-type #MON!"
+	
+	para "I've gotta watch my"
+	line "back!"
+	done
+
+.BeatenText:
+	text "AAAAH!"
+	
+	line "My #MON!"
+	done
+	
+TrainerRanch_5:
+	generictrainer BIRD_KEEPER, RANDY, EVENT_BEAT_ROUTE_9_TRAINER_5, .SeenText, .BeatenText
 
 	text "I'm a disgrace to"
 	line "my whole lineage…"

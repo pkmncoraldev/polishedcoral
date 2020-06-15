@@ -296,7 +296,10 @@ wMailboxItems:: ds MAILBOX_CAPACITY
 wMailboxEnd:: ds 1
 ENDU
 
-	ds 5 ; unused
+wEncounterHouse:: ds 1
+wEncounterHouseMon:: ds 1
+
+	ds 3 ; unused
 
 wCurIconMonHasItemOrMail:: ds 1
 
@@ -967,13 +970,15 @@ wRoute10EastTrigger:: ds 1
 wTwinkleTownTrigger:: ds 1
 wEastTrainCabin1Trigger:: ds 1
 wEastTrainCabooseTrigger:: ds 1
+wEastTrainCabTrigger:: ds 1
+wLusterTrainCutsceneTrigger:: ds 1
 wLusterCityResidentialTrigger:: ds 1
 wLusterCityShoppingTrigger:: ds 1
 wLusterCityBusinessTrigger:: ds 1
 wLusterSewersB1FFloodedTrigger:: ds 1
 wLusterSewersB2FFloodedTrigger:: ds 1
 wSpookyForestEscortTrigger:: ds 1
-ds 44
+ds 42
 
 ; fight counts
 wJackFightCount::    ds 1

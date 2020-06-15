@@ -462,6 +462,18 @@ _ChooseWildEncounter:
 	ret
 
 .loadwildmon
+	ld hl, wEncounterHouse
+	bit 0, [hl] ; ENGINE_ENCOUNTER_HOUSE
+	jr z, .skipencounterhouse
+
+	call Random
+	cp 50 percent
+	jr c, .skipencounterhouse
+	
+	ld a, [wEncounterHouseMon]
+	ld b, a
+
+.skipencounterhouse
 	ld a, b
 	ld [wTempWildMonSpecies], a
 

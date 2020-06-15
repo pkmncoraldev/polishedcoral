@@ -4,7 +4,7 @@ FlickerPass1F_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 3 ; warp events
-	warp_def 33, 19, 3, FLICKER_STATION
+	warp_def 33, 19, 7, FLICKER_STATION
 	warp_def  5, 29, 1, FLICKER_PASS_2F
 	warp_def 11, 39, 2, FLICKER_PASS_2F
 

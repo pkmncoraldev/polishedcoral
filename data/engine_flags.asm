@@ -56,6 +56,8 @@ EngineFlags: ; 80462
 	
 	engine_flag wHaveFollower, 0
 	
+	engine_flag wEncounterHouse, 0
+	
 	engine_flag wOnwaBadges, FIRSTBADGE
 	engine_flag wOnwaBadges, SECONDBADGE
 	engine_flag wOnwaBadges, THIRDBADGE
@@ -109,7 +111,7 @@ EngineFlags: ; 80462
 	engine_flag wDailyFlags, 0 ; daily bikini contest
 	engine_flag wDailyFlags, 1 ; daily bug contest?
 	engine_flag wDailyFlags, 2 ; special wilddata?
-	engine_flag wDailyFlags, 3 ; unused
+	engine_flag wDailyFlags, 3 ; daily route 8 garden
 	engine_flag wDailyFlags, 4 ; all fruit trees
 	engine_flag wDailyFlags, 5 ; daily dodrio race
 	engine_flag wDailyFlags, 6 ; goldenrod underground merchant closed
@@ -233,7 +235,7 @@ EngineFlags: ; 80462
 
 	engine_flag wMetGymLeaderFlags, 0  ; stanley
 	engine_flag wMetGymLeaderFlags, 1  ; rodney
-	engine_flag wMetGymLeaderFlags, 2  ; whitney
+	engine_flag wMetGymLeaderFlags, 2  ; wendy
 	engine_flag wMetGymLeaderFlags, 3  ; morty
 	engine_flag wMetGymLeaderFlags, 4  ; chuck
 	engine_flag wMetGymLeaderFlags, 5  ; jasmine

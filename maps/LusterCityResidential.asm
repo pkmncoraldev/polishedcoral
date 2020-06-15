@@ -150,82 +150,17 @@ LusterCityResidentialLight:
 	checktime 1<<NITE
 	iffalse .notnite
 	setflag ENGINE_NEAR_CAMPFIRE
-	callasm UpdatePalsAsm
-;	loadvar wTimeOfDayPalFlags, $40 | 1
+	special Special_UpdatePalsInstant
 	dotrigger $1
 .notnite
 	end
 	
 LusterCityResidentialDark:
 	clearflag ENGINE_NEAR_CAMPFIRE
-	callasm UpdatePalsAsm
-;	loadvar wTimeOfDayPalFlags, $40 | 0
+	special Special_UpdatePalsInstant
 	dotrigger $0
 	end
-	
-UpdatePalsAsm:
-	ld hl, wUnknBGPals palette 7
 
-; save wram bank
-	ld a, [rSVBK]
-	ld b, a
-; wram bank 5
-	ld a, 5
-	ld [rSVBK], a
-
-; push palette
-	ld c, 4 ; NUM_PAL_COLORS
-.push
-	ld d, [hl]
-	inc hl
-	ld e, [hl]
-	inc hl
-	push de
-	dec c
-	jr nz, .push
-
-; restore wram bank
-	ld a, b
-	ld [rSVBK], a
-
-
-; update cgb pals
-	ld b, CGB_MAPPALS
-	call GetCGBLayout
-	
-; restore bg palette 7
-	ld hl, wUnknBGPals palette 7 + 1 palettes - 1 ; last byte in UnknBGPals
-
-; save wram bank
-	ld a, [rSVBK]
-	ld d, a
-; wram bank 5
-	ld a, 5
-	ld [rSVBK], a
-
-; pop palette
-	ld e, 4 ; NUM_PAL_COLORS
-.pop
-	pop bc
-	ld [hl], c
-	dec hl
-	ld [hl], b
-	dec hl
-	dec e
-	jr nz, .pop
-
-; restore wram bank
-	ld a, d
-	ld [rSVBK], a
-
-; update palettes
-	farcall _UpdateTimePals
-;	farcall DelayFrame
-	
-; successful change
-	scf
-	ret
-	
 LusterSign1:
 	jumptext LusterSign1Text
 	

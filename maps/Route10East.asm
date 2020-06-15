@@ -3,7 +3,8 @@ Route10East_MapScriptHeader:
 	scene_script Route10EastTrigger0
 	scene_script Route10EastTrigger1
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, Route10EastCallback
 
 	db 1 ; warp events
 	warp_event 11, 21, ROUTE_10_TENT, 1
@@ -32,8 +33,9 @@ Route10East_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event 11, 24, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Route10EastCampfire, -1
+	db 2 ; object events
+	object_event 11, 24, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route10EastCampfire, EVENT_HIDE_OW_OBJECTS_PURPLE
+	object_event 11, 24, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Route10EastCampfire, EVENT_HIDE_OW_OBJECTS_TEAL
 
 	
 Route10EastTrigger0:
@@ -49,6 +51,17 @@ Route10EastTrigger1:
 	callasm Route10SfxAsm
 .end
 	end
+	
+Route10EastCallback:
+	readvar VAR_PLAYER_COLOR
+	if_equal 4, .purple
+	setevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	return
+.purple
+	setevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
+	return
 	
 Route10EastCampfire:
 	jumptext Route10EastCampfireText

@@ -4,7 +4,7 @@ TrainerPicPointers::
 	dba PlayerpPic
 	dba StanleyPic
 	dba RodneyPic
-	dba WhitneyPic
+	dba WendyPic
 	dba MortyPic
 	dba ChuckPic
 	dba JasminePic

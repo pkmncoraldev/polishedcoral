@@ -17,8 +17,8 @@ Route6_MapScriptHeader:
 	xy_trigger 1, 7, 44, 0, Route6PokeFanF, 0, 0
 
 	db 3 ; bg events
-	signpost 6, 60, SIGNPOST_READ, Route45HouseSign
-	signpost 3, 26, SIGNPOST_READ, Route45LakeSign
+	signpost 6, 60, SIGNPOST_READ, Route6Sign
+	signpost 3, 26, SIGNPOST_READ, Route6LakeSign
 	bg_event 8, 4, SIGNPOST_ITEM + ULTRA_BALL, EVENT_ROUTE_6_HIDDEN_ULTRA_BALL
 
 	db 12 ; object events
@@ -307,11 +307,11 @@ Route6Lass3:
 Route6Fisher:
 	jumptextfaceplayer Route6FisherText
 	
-Route45HouseSign:
-	jumptext Route45HouseSignText
+Route6Sign:
+	jumptext Route6SignText
 	
-Route45LakeSign:
-	jumptext Route45LakeSignText
+Route6LakeSign:
+	jumptext Route6LakeSignText
 	
 TrainerRoute6_3BeatenText:
 	text "HAHA- Wait…"
@@ -394,7 +394,7 @@ Route6FisherText:
 	cont "though…"
 	done
 	
-Route45HouseSignText:
+Route6SignText:
 	text "ROUTE 6"
 	
 	para "NORTH:"
@@ -404,7 +404,7 @@ Route45HouseSignText:
 	line "LAKE OWNA"
 	done
 	
-Route45LakeSignText:
+Route6LakeSignText:
 	text "LAKE ONWA ahead."
 	done
 	

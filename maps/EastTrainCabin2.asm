@@ -5,19 +5,21 @@ EastTrainCabin2_MapScriptHeader:
 
 	db 2 ; warp events
 	warp_event 1,  4, EAST_TRAIN_CABIN_1, 2
-	warp_event 14,  4, EAST_TRAIN_CABIN_3, 1
+	warp_event 14,  4, EAST_TRAIN_CAB, 1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 8 ; object events
+	db 11 ; object events
 	person_event SPRITE_SITTING_BIRD_KEEPER,  6,  2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EastTrainCabin2NPC1, -1
-	person_event SPRITE_SITTING_POKEFAN,  2, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, EastTrainCabin2NPC2, -1
+	person_event SPRITE_SITTING_POKEFANF,  2, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, EastTrainCabin2NPC2, -1
 	person_event SPRITE_SITTING_TWIN,  2, 11, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, EastTrainCabin2NPC3, -1
 	person_event SPRITE_SITTING_LADY,  2,  7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EastTrainCabin2NPC4, -1
-	person_event SPRITE_SITTING_GENTLEMAN,  6,  7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EastTrainCabin2NPC5, -1
-	person_event SPRITE_OFFICER,  3,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EastTrainCabin2Officer, EVENT_SNARE_ON_TRAIN
+	person_event SPRITE_SITTING_GENTLEMAN,  6, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EastTrainCabin2NPC5, -1
+	person_event SPRITE_SITTING_TWIN,  6,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EastTrainCabin2NPC6, -1
+	person_event SPRITE_SITTING_TWIN,  6,  7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EastTrainCabin2NPC7, -1
+	person_event SPRITE_OFFICER,  4, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EastTrainCabin2Officer, EVENT_SNARE_ON_TRAIN
 	person_event SPRITE_SNARE,  2,  3, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, EastTrainCabin2Snare1, EVENT_ALWAYS_SET
 	person_event SPRITE_SNARE_GIRL,  6,  9, SPRITEMOVEDATA_STANDING_UP, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, EastTrainCabin2Snare2, EVENT_ALWAYS_SET
 
@@ -27,6 +29,8 @@ EastTrainCabin2_MapScriptHeader:
 	const EAST_TRAIN_CABIN_2_NPC3
 	const EAST_TRAIN_CABIN_2_NPC4
 	const EAST_TRAIN_CABIN_2_NPC5
+	const EAST_TRAIN_CABIN_2_NPC6
+	const EAST_TRAIN_CABIN_2_NPC7
 	
 EastTrainCabin2NPC1:
 	opentext
@@ -214,6 +218,88 @@ EastTrainCabin2NPC5:
 	closetext
 	end
 	
+EastTrainCabin2NPC6:
+	opentext
+	checkflag ENGINE_PUNKS_ON_TRAIN
+	iftrue .snare
+	checkevent EVENT_BEAT_EAST_TRAIN_CABIN_2_TRAINER_4
+	iftrue .afterbattle
+	writetext EastTrainCabin2NPC6Text1
+	yesorno
+	iffalse .saidno
+	special SaveMusic
+	playmusic MUSIC_LASS_ENCOUNTER
+	writetext EastTrainCabin2NPC6StartBattleText
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext EastTrainCabin2NPC6WinText, 0
+	setlasttalked EAST_TRAIN_CABIN_2_NPC6
+	loadtrainer TWINS, TIAMIA
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	special RestoreMusic
+	setevent EVENT_BEAT_EAST_TRAIN_CABIN_2_TRAINER_4
+	end
+.afterbattle
+	writetext EastTrainCabin2NPC6AfterBattleText
+	waitbutton
+	closetext
+	end
+.saidno
+	writetext EastTrainCabin2NPC6SaidNoText
+	waitbutton
+	closetext
+	end
+.snare
+	writetext EastTrainCabin2NPC6Text2
+.end
+	waitbutton
+	closetext
+	end
+	
+EastTrainCabin2NPC7:
+	opentext
+	checkflag ENGINE_PUNKS_ON_TRAIN
+	iftrue .snare
+	checkevent EVENT_BEAT_EAST_TRAIN_CABIN_2_TRAINER_4
+	iftrue .afterbattle
+	writetext EastTrainCabin2NPC7Text1
+	yesorno
+	iffalse .saidno
+	special SaveMusic
+	playmusic MUSIC_LASS_ENCOUNTER
+	writetext EastTrainCabin2NPC7StartBattleText
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext EastTrainCabin2NPC7WinText, 0
+	setlasttalked EAST_TRAIN_CABIN_2_NPC7
+	loadtrainer TWINS, MIATIA
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	special RestoreMusic
+	setevent EVENT_BEAT_EAST_TRAIN_CABIN_2_TRAINER_4
+	end
+.afterbattle
+	writetext EastTrainCabin2NPC7AfterBattleText
+	waitbutton
+	closetext
+	end
+.saidno
+	writetext EastTrainCabin2NPC7SaidNoText
+	waitbutton
+	closetext
+	end
+.snare
+	writetext EastTrainCabin2NPC7Text2
+.end
+	waitbutton
+	closetext
+	end	
+	
 EastTrainCabin2Officer:
 	jumptextfaceplayer EastTrainCabin2OfficerText
 	
@@ -223,7 +309,7 @@ EastTrainCabin2Snare1:
 	text "I don't deserve"
 	line "this!"
 	
-	para "I'm the second"
+	para "I'm the forth"
 	line "highest ranked"
 	cont "grunt on this"
 	cont "train!"
@@ -232,7 +318,7 @@ EastTrainCabin2Snare1:
 .SeenText:
 	text "Listen here."
 	
-	para "I'm the second"
+	para "I'm the forth"
 	line "highest ranked"
 	cont "grunt on this"
 	cont "train!"
@@ -343,9 +429,8 @@ EastTrainCabin2NPC2AfterBattleTextGirl:
 	done
 
 EastTrainCabin2NPC2SaidNoText:
-	text "Aww…"
-	
-	para "No fun!"
+	text "That's ok I"
+	line "guess…"
 	done
 
 EastTrainCabin2NPC3Text1:
@@ -413,12 +498,94 @@ EastTrainCabin2NPC5Text2:
 	done
 
 EastTrainCabin2OfficerText:
-	text "This uniform is"
-	line "so stuffy."
+	text "This is the CAB."
 	
-	para "This stupid hat"
-	line "is too tall."
+	para "It's where the"
+	line "CONDUCTOR drives"
+	cont "the train."
 	
-	para "I'm seriously"
-	line "upset here…"
+	para "Passengers aren't"
+	line "allowed in here."
 	done
+	
+EastTrainCabin2NPC6Text1:
+	text "Are we there yet?"
+	
+	para "I'm so bored!"
+	
+	para "Wanna battle with"
+	line "us?"
+	done
+	
+EastTrainCabin2NPC6Text2:
+	text "WAAAHH!"
+	
+	para "Please don't take"
+	line "my #MON!"
+	done
+	
+EastTrainCabin2NPC6StartBattleText:
+	text "YAY!"
+	
+	para "Come on, MIA!"
+	done
+	
+EastTrainCabin2NPC6WinText:
+	text "TIA: WAAAHH!"
+	
+	para "MIA: It's alright,"
+	line "TIA."
+	done
+
+EastTrainCabin2NPC6AfterBattleText:
+	text "Sniff… sniff…"
+	
+	para "We lost…"
+	done
+
+EastTrainCabin2NPC6SaidNoText:
+	text "Aww…"
+	
+	para "No fun!"
+	done
+	
+EastTrainCabin2NPC7Text1:
+	text "Hi."
+	
+	para "Do you want to"
+	line "battle with my"
+	cont "sister and I?"
+	done
+	
+EastTrainCabin2NPC7Text2:
+	text "TIA!"
+	
+	para "Please stop"
+	line "crying…"
+	done
+	
+EastTrainCabin2NPC7StartBattleText:
+	text "Ok!"
+	
+	para "Let's go, TIA!"
+	done
+	
+EastTrainCabin2NPC7WinText:
+	text "TIA: WAAAHH!"
+	
+	para "MIA: It's alright,"
+	line "TIA."
+	done
+
+EastTrainCabin2NPC7AfterBattleText:
+	text "Sorry about my"
+	line "sister."
+	
+	para "She can be so"
+	line "childish."
+	done
+
+EastTrainCabin2NPC7SaidNoText:
+	text "I see…"
+	done
+	

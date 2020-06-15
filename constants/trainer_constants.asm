@@ -22,7 +22,7 @@ PLAYER_F EQU __enum__
 
 	trainerclass RODNEY
 
-	trainerclass WHITNEY
+	trainerclass WENDY
 
 	trainerclass MORTY
 
@@ -69,6 +69,7 @@ PLAYER_F EQU __enum__
 	const BARNEY
 	const JOSH
 	const ARNOLD
+	const CHARLIE
 
 	trainerclass CAMPER
 	const BART
@@ -88,6 +89,8 @@ PLAYER_F EQU __enum__
 	trainerclass TWINS
 	const JENJAN
 	const JANJEN
+	const TIAMIA
+	const MIATIA
 
 
 	trainerclass FISHER
@@ -180,14 +183,14 @@ PLAYER_F EQU __enum__
 	trainerclass POKEFANM
 	const RON
 	const SID
-	const RICK
 	const REG
+	const RICK
 	
 
 	trainerclass POKEFANF
 	const SUSAN
 	const JILL
-	const WENDY
+	const NICHOLE
 	const URSALA
 
 
@@ -221,6 +224,8 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass BEAUTY
+	const BRITNEY
+	const SANDRA
 
 
 	trainerclass FIREBREATHER
@@ -338,7 +343,7 @@ PLAYER_F EQU __enum__
 	trainerclass COOLTRAINERF
 	const CASEY
 	const SALLY
-	const HAILEY
+	const JULES
 
 
 	trainerclass PROF_SPRUCE

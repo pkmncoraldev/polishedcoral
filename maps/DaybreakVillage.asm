@@ -14,7 +14,7 @@ DaybreakVillage_MapScriptHeader:
 
 	db 4 ; bg events
 	bg_event 11, 10, SIGNPOST_JUMPTEXT, DaybreakVillageSignText
-	bg_event  5, 13, SIGNPOST_JUMPTEXT, DaybreakTrainerSchoolSignText
+	bg_event  5, 12, SIGNPOST_JUMPTEXT, DaybreakTrainerSchoolSignText
 	bg_event 14,  7, SIGNPOST_JUMPSTD, pokecentersign
 	bg_event 19,  4, SIGNPOST_ITEM + SUPER_POTION, EVENT_DAYBREAK_HIDDEN_SUPER_POTION
 

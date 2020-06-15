@@ -18,7 +18,7 @@ SunbeamIsland_MapScriptHeader:
 	warp_def  9, 31, 1, SUNBEAM_DODRIO_HOUSE
 	warp_def 15, 16, 1, SPRUCES_LAB
 	warp_def 25, 11, 1, SUNBEAM_OLD_COUPLES_HOUSE
-	warp_def 25, 17, 1, SUNBEAM_BLUE_WATER_HOUSE
+	warp_def 25, 17, 1, SUNBEAM_SOFT_SAND_HOUSE
 	warp_def 41, 17, 1, SUNBEAM_SURF_SHOP
 	warp_def 11, 16, 3, SPRUCES_LAB
 	warp_def 11, 17, 3, SPRUCES_LAB

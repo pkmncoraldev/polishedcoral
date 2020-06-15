@@ -5,7 +5,7 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_NONE			 		; playerp
 	db MUSIC_NONE					; stanley
 	db MUSIC_NONE					; rodney
-	db MUSIC_NONE					; whitney
+	db MUSIC_NONE					; wendy
 	db MUSIC_NONE					; morty
 	db MUSIC_NONE					; chuck
 	db MUSIC_NONE					; jasmine

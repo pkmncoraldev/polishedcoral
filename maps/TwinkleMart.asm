@@ -4,8 +4,8 @@ TwinkleMart_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 2, 1, TWINKLE_TOWN
-	warp_def 7, 3, 1, TWINKLE_TOWN
+	warp_def 7, 2, 2, TWINKLE_TOWN
+	warp_def 7, 3, 2, TWINKLE_TOWN
 
 	db 0 ; coord events
 

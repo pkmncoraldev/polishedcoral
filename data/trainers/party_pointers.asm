@@ -6,7 +6,7 @@ TrainerGroups: ; 0x39999
 	dba PlayerpGroup
 	dba StanleyGroup
 	dba RodneyGroup
-	dba WhitneyGroup
+	dba WendyGroup
 	dba MortyGroup
 	dba ChuckGroup
 	dba JasmineGroup

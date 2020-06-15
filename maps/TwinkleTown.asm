@@ -10,7 +10,7 @@ TwinkleTown_MapScriptHeader:
 	db 5 ; warp events
 	warp_def 47, 11, 1, TWINKLE_POKECENTER
 	warp_def 41, 17, 1, TWINKLE_MART
-	warp_def 31, 17, 1, TWINKLE_HOUSE_1
+	warp_def 31, 17, 1, TWINKLE_ROCK_HOUSE
 	warp_def 39,  7, 1, TWINKLE_HOUSE_2
 	warp_def 49, 21, 1, TWINKLE_HOUSE_3
 
@@ -25,13 +25,18 @@ TwinkleTownFlypointCallback:
 	return
 	
 TwinkleTownStopSnowstorm:
-	clearevent EVENT_SNOWSTORM_HAPPENING
-	loadvar wTimeOfDayPalFlags, $40 | 0
-	domaptrigger ROUTE_10, $0
+	checkevent EVENT_SNOWSTORM_HAPPENING
+	iffalse .endcallback
+	dotrigger $1
+.endcallback
 	return
 	
 TwinkleTownTrigger0:
 	end
 
 TwinkleTownTrigger1:
+	clearevent EVENT_SNOWSTORM_HAPPENING
+	loadvar wTimeOfDayPalFlags, $40 | 0
+	domaptrigger ROUTE_10, $0
+	dotrigger $0
 	end

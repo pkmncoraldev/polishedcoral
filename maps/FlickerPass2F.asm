@@ -6,10 +6,12 @@ FlickerPass2F_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, FlickerPass2FStopSnowstorm
 
-	db 3 ; warp events
+	db 5 ; warp events
 	warp_def 43, 27, 2, FLICKER_PASS_1F
 	warp_def 49, 37, 3, FLICKER_PASS_1F
 	warp_def  1, 19, 1, ROUTE_10
+	warp_def  9,  9, 2, ROUTE_10
+	warp_def 17,  3, 1, FLICKER_PASS_OUTSIDE
 
 	db 0 ; coord events
 

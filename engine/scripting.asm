@@ -1362,6 +1362,34 @@ MakePalGreen::
 	ld [hCGBPalUpdate], a
 	ret
 	
+MakePalRanchGreen::
+	ld a, [wTimeOfDayPal]
+	cp NITE
+	jr z, .nite
+	cp MORN
+	jr z, .morn
+	cp DUSK
+	jr z, .dusk
+	ld hl, RanchGrassDayPalette
+	jr .cont
+.nite
+	ld hl, RanchGrassNitePalette
+	jr .cont
+.morn
+	ld hl, RanchGrassMornPalette
+	jr .cont
+.dusk
+	ld hl, RanchGrassDuskPalette
+	jr .cont
+.cont
+	ld de, wOBPals + 8 * 7
+	ld bc, 8
+	ld a, $5
+	call FarCopyWRAM
+	ld a, $1
+	ld [hCGBPalUpdate], a
+	ret
+	
 MakePalPink::
 	ld a, [wTimeOfDayPal]
 	cp NITE
@@ -1390,6 +1418,64 @@ MakePalPink::
 	ld [hCGBPalUpdate], a
 	ret
 	
+MakePalSnow::
+	eventflagcheck EVENT_SNOWSTORM_HAPPENING
+	jr nz, MakePalSnowstorm
+	ld a, [wTimeOfDayPal]
+	cp NITE
+	jr z, .nite
+	cp MORN
+	jr z, .morn
+	cp DUSK
+	jr z, .dusk
+	ld hl, SnowGrassDayPalette
+	jr .cont
+.nite
+	ld hl, SnowGrassNitePalette
+	jr .cont
+.morn
+	ld hl, SnowGrassMornPalette
+	jr .cont
+.dusk
+	ld hl, SnowGrassDuskPalette
+	jr .cont
+.cont
+	ld de, wOBPals + 8 * 7
+	ld bc, 8
+	ld a, $5
+	call FarCopyWRAM
+	ld a, $1
+	ld [hCGBPalUpdate], a
+	ret
+	
+MakePalSnowstorm:
+	ld a, [wTimeOfDayPal]
+	cp NITE
+	jr z, .nite
+	cp MORN
+	jr z, .morn
+	cp DUSK
+	jr z, .dusk
+	ld hl, SnowstormGrassDayPalette
+	jr .cont
+.nite
+	ld hl, SnowstormGrassNitePalette
+	jr .cont
+.morn
+	ld hl, SnowstormGrassMornPalette
+	jr .cont
+.dusk
+	ld hl, SnowstormGrassDuskPalette
+	jr .cont
+.cont
+	ld de, wOBPals + 8 * 7
+	ld bc, 8
+	ld a, $5
+	call FarCopyWRAM
+	ld a, $1
+	ld [hCGBPalUpdate], a
+	ret
+	
 StandardGrassMornPalette:
 INCLUDE "maps/palettes/bgpals/grass/standard/morn.pal"
 	
@@ -1402,6 +1488,18 @@ INCLUDE "maps/palettes/bgpals/grass/standard/dusk.pal"
 StandardGrassNitePalette:
 INCLUDE "maps/palettes/bgpals/grass/standard/nite.pal"
 
+RanchGrassMornPalette:
+INCLUDE "maps/palettes/bgpals/grass/ranch/morn.pal"
+	
+RanchGrassDayPalette:
+INCLUDE "maps/palettes/bgpals/grass/ranch/day.pal"
+
+RanchGrassDuskPalette:
+INCLUDE "maps/palettes/bgpals/grass/ranch/dusk.pal"
+
+RanchGrassNitePalette:
+INCLUDE "maps/palettes/bgpals/grass/ranch/nite.pal"
+
 PinkGrassMornPalette:
 INCLUDE "maps/palettes/bgpals/grass/pink/morn.pal"
 	
@@ -1413,6 +1511,30 @@ INCLUDE "maps/palettes/bgpals/grass/pink/dusk.pal"
 
 PinkGrassNitePalette:
 INCLUDE "maps/palettes/bgpals/grass/pink/nite.pal"
+
+SnowGrassMornPalette:
+INCLUDE "maps/palettes/bgpals/grass/snow/morn.pal"
+	
+SnowGrassDayPalette:
+INCLUDE "maps/palettes/bgpals/grass/snow/day.pal"
+
+SnowGrassDuskPalette:
+INCLUDE "maps/palettes/bgpals/grass/snow/dusk.pal"
+
+SnowGrassNitePalette:
+INCLUDE "maps/palettes/bgpals/grass/snow/nite.pal"
+
+SnowstormGrassMornPalette:
+INCLUDE "maps/palettes/bgpals/grass/snowstorm/morn.pal"
+	
+SnowstormGrassDayPalette:
+INCLUDE "maps/palettes/bgpals/grass/snowstorm/day.pal"
+
+SnowstormGrassDuskPalette:
+INCLUDE "maps/palettes/bgpals/grass/snowstorm/dusk.pal"
+
+SnowstormGrassNitePalette:
+INCLUDE "maps/palettes/bgpals/grass/snowstorm/nite.pal"
 	
 Script_earthquake:
 ; parameters:

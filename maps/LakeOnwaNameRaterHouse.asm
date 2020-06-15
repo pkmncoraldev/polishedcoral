@@ -15,7 +15,7 @@ LakeOnwaNameRaterHouse_MapScriptHeader:
 	signpost 0, 2, SIGNPOST_READ, LakeNameRaterRockTown
 
 	db 1 ; object events
-	person_event SPRITE_GENTLEMAN, 4, 2, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, 0, PERSONTYPE_SCRIPT, 0, LakeNameRater, -1
+	person_event SPRITE_GENTLEMAN,  4,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, 0, PERSONTYPE_SCRIPT, 0, LakeNameRater, -1
 
 LakeNameRater:
 	faceplayer

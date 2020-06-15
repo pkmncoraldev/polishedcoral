@@ -1,4 +1,13 @@
 Predef_StartBattle: ; 8c20f
+
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .not_running
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+
+.not_running
 	call .InitGFX
 	ld a, [rBGP]
 	ld [wBGP], a

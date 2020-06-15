@@ -1623,6 +1623,141 @@ UnknownText_0xcee6: ; 0xcee6
 	text_jump UnknownText_0x1c08bc
 	db "@"
 	
+RockClimbFunction: ; cade
+	call .TryRockClimb
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.TryRockClimb: ; cae7
+; RockClimb
+	ld de, ENGINE_EIGHTHBADGE
+	farcall CheckBadge
+	ld a, $80
+	ret c
+	call CheckMapCanRockClimb
+	jr c, .failed
+	ld hl, Script_RockClimbFromMenu
+	call QueueScript
+	ld a, $81
+	ret
+
+.failed
+	call FieldMoveFailed
+	ld a, $80
+	ret
+
+CheckMapCanRockClimb: ; cb07
+	ld a, [wPlayerDirection]
+	and FACE_UP | FACE_DOWN
+	cp FACE_UP
+	jr nz, .failed
+	ld a, [wTilePermissions]
+	and FACE_UP
+	jr nz, .failed
+	ld a, [wTileUp]
+	cp COLL_WATERFALL
+	jr nz, .failed
+	xor a
+	ret
+
+.failed
+	scf
+	ret
+
+Script_RockClimbFromMenu: ; 0xcb1c
+	reloadmappart
+	special UpdateTimePals
+
+Script_UsedRockClimb: ; 0xcb20
+	callasm PrepareOverworldMove
+	writetext .Text_UsedRockClimb
+	waitbutton
+	closetext
+	scall FieldMovePokepicScript
+;	setflag ENGINE_AUTOWATERFALL_ACTIVE
+	jump Script_AutoRockClimb
+
+.Text_UsedRockClimb:
+	text_jump UsedRockClimbText
+	db "@"
+
+Script_AutoRockClimb:
+	callasm .RockClimbSurf
+.loop
+	playsound SFX_BITE
+	checkcode VAR_FACING
+	if_equal DOWN, .youarefacingdown
+	applyonemovement PLAYER, step_up
+	callasm .CheckContinueRockClimb
+	iffalse .loop
+	special Special_ForcePlayerStateNormal
+	end
+.youarefacingdown
+	applyonemovement PLAYER, step_down
+	callasm .CheckContinueRockClimb
+	iffalse .loop
+	special Special_ForcePlayerStateNormal
+	end
+
+.CheckContinueRockClimb: ; cb38
+	xor a
+	ld [wScriptVar], a
+	ld a, [wPlayerStandingTile]
+	cp COLL_ROCK_CLIMB
+	ret z
+	ld a, $1
+	ld [wScriptVar], a
+	ret
+	
+.RockClimbSurf:
+	ld a, PLAYER_SURF
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret
+
+TryRockClimbOW:: ; cb56
+	ld d, WATERFALL
+	call CheckPartyCanLearnMove
+	jr c, .failed
+;	ld de, ENGINE_EIGHTHBADGE
+;	call CheckEngineFlag
+;	jr c, .failed
+;	call CheckMapCanRockClimb
+;	jr c, .failed
+	ld a, BANK(Script_AskRockClimb)
+	ld hl, Script_AskRockClimb
+	call CallScript
+	scf
+	ret
+
+.failed
+	ld a, BANK(Script_CantDoRockClimb)
+	ld hl, Script_CantDoRockClimb
+	call CallScript
+	scf
+	ret
+
+Script_CantDoRockClimb: ; 0xcb7e
+	jumptext .Text_CantDoRockClimb
+
+.Text_CantDoRockClimb: ; 0xcb81
+	text_jump CantDoRockClimbText
+	db "@"
+
+Script_AskRockClimb: ; 0xcb86
+;	checkflag ENGINE_AUTOWATERFALL_ACTIVE
+;	iftrue Script_AutoRockClimb
+	opentext
+	writetext .AskUseRockClimb
+	yesorno
+	iftrue Script_UsedRockClimb
+	endtext
+
+.AskUseRockClimb: ; 0xcb90
+	text_jump AskUseRockClimbText
+	db "@"
+	
 TryDodrioJumpOW:: ; cec9
 	ld a, [wPlayerState]
 	cp PLAYER_DODRIO
@@ -1655,7 +1790,6 @@ DodrioJumpScript:
 	jump .end
 .YouAreFacingRight
 	applyonemovement PLAYER, jump_step_right
-	
 .end
 	end
 
@@ -2184,7 +2318,7 @@ Script_GetOnBike: ; 0xd13e
 	closetext
 FinishGettingOnBike:
 	special ReplaceKrisSprite
-	special PlayMapMusic
+;	special PlayMapMusic
 	end
 
 Script_GetOnBike_Register: ; 0xd14e
@@ -2200,7 +2334,7 @@ Script_GetOffBike: ; 0xd158
 	closetext
 FinishGettingOffBike:
 	special ReplaceKrisSprite
-	special PlayMapMusic
+;	special PlayMapMusic
 	end
 
 Script_GetOffBike_Register: ; 0xd16b
@@ -2299,5 +2433,6 @@ HandleEventsFly:
 	clearevent EVENT_IN_SHOPPING_DISTRICT
 	clearevent EVENT_IN_BUSINESS_DISTRICT
 	clearevent EVENT_DOUBLE_LANDMARK_SIGN
+	clearflag ENGINE_ENCOUNTER_HOUSE
 	end
 	

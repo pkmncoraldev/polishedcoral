@@ -336,7 +336,11 @@ EastTrainCabin1NPC4:
 	end
 	
 EastTrainCabin1Officer:
+	checkevent EVENT_SAVED_TRAIN
+	iftrue .saved
 	jumptextfaceplayer EastTrainCabin1OfficerText
+.saved
+	jumptextfaceplayer EastTrainCabin1OfficerText2
 	
 EastTrainCabin1SnareOfficer:
 	faceplayer
@@ -440,7 +444,7 @@ EastTrainCabin1ArrivingSoonText:
 	text "PA: Ding-dong!"
 	
 	para "This is your"
-	line "engineer speaking."
+	line "CONDUCTOR."
 	
 	para "Next stop:"
 	line "LUSTER CITY!"
@@ -711,6 +715,17 @@ EastTrainCabin1OfficerText:
 	
 	para "Why is his uniform"
 	line "a different color?"
+	done
+	
+EastTrainCabin1OfficerText2:
+	text "This uniform is"
+	line "so stuffy."
+	
+	para "This stupid hat"
+	line "is too tall."
+	
+	para "I'm seriously"
+	line "upset here…"
 	done
 	
 EastTrainCabin1Snare1Text1:

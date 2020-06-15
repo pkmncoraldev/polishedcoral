@@ -195,7 +195,7 @@ NameRaterIntroText: ; 0xfb80f
 	db "@"
 ; 0xfb814
 
-NameRaterWhichMonText: ; 0xfb814
+NameRaterWhichMonText:: ; 0xfb814
 	; Which #MON's nickname should I rate for you?
 	text_jump UnknownText_0x1c00a0
 	db "@"

@@ -31,7 +31,7 @@ DaybreakPokemonTrainerSchool_MapScriptHeader:
 	
 DaybreakPokemonTrainerSchoolTeacher:
 	checkevent EVENT_BEAT_TEACHER
-	iftrue .normaltext
+	iftrue .checkquickclaw
 	faceplayer
 	opentext
 	writetext DaybreakPokemonTrainerSchoolTeacherText1
@@ -54,21 +54,32 @@ DaybreakPokemonTrainerSchoolTeacher:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_TEACHER
+.getquickclaw
 	opentext
 	writetext DaybreakPokemonTrainerSchoolTeacherText4
 	waitbutton
 	verbosegiveitem QUICK_CLAW
+	iffalse .NoRoom
 	writetext DaybreakPokemonTrainerSchoolTeacherText5
 	waitbutton
 	spriteface DAYBREAK_POKEMON_TRAINER_SCHOOL_TEACHER, DOWN
 	closetext
+	setevent EVENT_GOT_QUICK_CLAW
 	end
+.checkquickclaw
+	checkevent EVENT_GOT_QUICK_CLAW
+	iffalse .getquickclaw
 .normaltext:
 	faceplayer
 	opentext
 	writetext DaybreakPokemonTrainerSchoolTeacherText6
 	waitbutton
 	spriteface DAYBREAK_POKEMON_TRAINER_SCHOOL_TEACHER, DOWN
+	closetext
+	end
+.NoRoom:
+	writetext DaybreakPokemonTrainerSchoolTeacherText7
+	waitbutton
 	closetext
 	end
 	
@@ -280,6 +291,15 @@ DaybreakPokemonTrainerSchoolTeacherText6:
 	
 	para "just look at the"
 	line "chalkboard."
+	done
+	
+DaybreakPokemonTrainerSchoolTeacherText7:
+	text "Oh!"
+	
+	para "You seem to be"
+	line "carrying too much!"
+	
+	para "Come back later."
 	done
 	
 DaybreakPokemonTrainerSchoolTeacherWinText:

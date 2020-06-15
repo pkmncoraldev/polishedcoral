@@ -278,6 +278,27 @@ UnknownText_0x1c06bf::
 	line "WATERFALL?"
 	done
 
+AskUseRockClimbText::
+	text "Looks like a #-"
+	line "MON could climb"
+	cont "the rocks here!"
+	
+	para "Do you want to use"
+	line "ROCK CLIMB?"
+	done
+	
+UsedRockClimbText::
+	text_from_ram wStringBuffer2
+	text " used"
+	line "ROCK CLIMB!"
+	done
+	
+CantDoRockClimbText::
+	text "Looks like a #-"
+	line "MON could climb"
+	cont "the rocks here!"
+	done
+	
 UnknownText_0x1c06de::
 	text_from_ram wStringBuffer2
 	text " used"

@@ -93,7 +93,6 @@ EastTrainCabooseTrigger0:
 	applymovement EAST_TRAIN_CABOOSE_SNARE_GRUNT, Movement_EastTrainCabooseGruntRunAway3
 	disappear EAST_TRAIN_CABOOSE_SNARE_GRUNT
 	playsound SFX_ENTER_DOOR
-	setflag ENGINE_PUNKS_ON_TRAIN
 	setevent EVENT_SNARE_ON_TRAIN
 	clearevent EVENT_ALWAYS_SET
 	clearevent EVENT_BEAT_EAST_TRAIN_CABIN_1_SNARE_1
@@ -105,6 +104,7 @@ EastTrainCabooseTrigger0:
 	buttonsound
 	writetext EastTrainCaboosePAText4
 	waitsfx
+	setflag ENGINE_PUNKS_ON_TRAIN
 	playmapmusic
 	writetext EastTrainCaboosePAText2
 	pause 80
@@ -126,7 +126,7 @@ EastTrainCaboosePAText1:
 	text "PA: Ding-dong!"
 	
 	para "This is your"
-	line "engineer speaking."
+	line "CONDUCTOR."
 	
 	para "HAH!"
 	
@@ -146,7 +146,7 @@ EastTrainCaboosePAText3:
 	line "shortly to take"
 	cont "your #MON."
 	
-	para "Boss!"
+	para "MS. LOCKE!"
 	
 	para "We're in the cab"
 	line "at the front of"

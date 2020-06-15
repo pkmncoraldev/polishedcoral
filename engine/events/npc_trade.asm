@@ -15,7 +15,6 @@ NPCTrade:: ; fcba8
 	jr c, .done
 
 ; Select givemon from party
-	ld b, 6
 	farcall SelectTradeOrDaycareMon
 	ld a, TRADE_CANCEL
 	jr c, .done

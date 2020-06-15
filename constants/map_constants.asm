@@ -79,11 +79,16 @@ MAP_NONE   EQU 0
 	map_const GLINT_CITY,                                 19, 11 ;  9
 	map_const GLINT_RIVAL_HOUSE,                  		   4,  4 ; 10
 	map_const GLINT_EVO_HOUSE,                             4,  4 ; 11
-	map_const ROUTE_3,                                    30, 16 ; 12
+	map_const ROUTE_3,                                    27, 16 ; 12
+	map_const ROUTE_3_EAST,                		          14, 14 ; 13
+	map_const ROUTE_8,                                    30, 20 ; 14
+	map_const ROUTE_8_ENCOUNTER_HOUSE,                     4,  4 ; 15
+	map_const ROUTE_8_GARDEN,                             30, 20 ; 16
+	map_const ROUTE_8_GATE,                                4,  4 ; 17
 
 	newgroup                                                     ;  5
 
-	map_const ROUTE_3_STARGLOW,                            7, 10 ;  1
+	map_const ROUTE_3_STARGLOW,                            8, 10 ;  1
 	map_const STARGLOW_VALLEY,                            19, 17 ;  2
 	map_const STARGLOW_TOGEPI_HOUSE,                       4,  4 ;  3
 	map_const STARGLOW_NO_POKEMON_HOUSE,                   4,  4 ;  4
@@ -108,7 +113,6 @@ MAP_NONE   EQU 0
 	map_const LAKE_ONWA_NAME_RATER_HOUSE,                  4,  4 ;  6
 	map_const LAKE_ONWA_ITEM_HOUSE,                 	   4,  4 ;  7
 	map_const LAKE_ONWA_POKECENTER,						   6,  4 ;  8
-	map_const ROUTE_8,                                    30, 20 ;  9
 	
 	newgroup                                                     ;  7
 
@@ -121,7 +125,7 @@ MAP_NONE   EQU 0
 	map_const SUNBEAM_BIKINI_CONTEST,					   6,  5 ;  7
 	map_const SUNBEAM_DODRIO_HOUSE,               		   4,  4 ;  8
 	map_const SUNBEAM_OLD_COUPLES_HOUSE,               	   4,  4 ;  9
-	map_const SUNBEAM_BLUE_WATER_HOUSE,               	   4,  4 ; 10
+	map_const SUNBEAM_SOFT_SAND_HOUSE,               	   4,  4 ; 10
 	map_const SUNBEAM_TRADE_HOUSE,						   4,  4 ; 11
 	map_const SPRUCES_LAB, 								   5,  4 ; 12
 	map_const SUNBEAM_RESERVE,                            25, 10 ; 13
@@ -155,9 +159,9 @@ MAP_NONE   EQU 0
 
 	newgroup													 ;  9
 	
-	map_const EVENTIDE_VILLAGE,							  20, 22 ; 1
-	map_const EVENTIDE_HOUSE_1,       		         	   4,  4 ; 2
-	map_const EVENTIDE_HOUSE_2,       		         	   4,  4 ; 3
+	map_const EVENTIDE_VILLAGE,							  20, 23 ; 1
+	map_const EVENTIDE_GYM_SPEECH_HOUSE,       		       4,  4 ; 2
+	map_const EVENTIDE_SOOTHE_BELL_HOUSE,  		       	   4,  4 ; 3
 	map_const EVENTIDE_BIKE_SHOP,       		           4,  4 ; 4
 	map_const EVENTIDE_POKECENTER,                         6,  4 ; 5
 	map_const EVENTIDE_MART,							   6,  4 ; 6
@@ -177,15 +181,16 @@ MAP_NONE   EQU 0
 	map_const FLICKER_TRAIN_STATION,					   8,  6 ; 6
 	map_const FLICKER_PASS_OUTSIDE,						  12,  9 ; 7
 	map_const FLICKER_TRAIN_CUTSCENE,					  27,  7 ; 8
-	map_const LUSTER_CITY_BUSINESS,					      24, 24 ; 9
+	map_const LUSTER_TRAIN_CUTSCENE,					  33,  4 ; 9
+	map_const LUSTER_CITY_BUSINESS,					      24, 24 ; 10
 	
 	newgroup													 ; 11
 	
-	map_const ROUTE_10,									  28, 26 ; 1
+	map_const ROUTE_10,									  29, 26 ; 1
 	map_const ROUTE_10_EAST,							  12, 14 ; 2
 	map_const ROUTE_10_TENT,							   2,  3 ; 3
 	map_const TWINKLE_TOWN,								  24, 28 ; 4
-	map_const TWINKLE_HOUSE_1,							   4,  4 ; 5
+	map_const TWINKLE_ROCK_HOUSE,						   4,  4 ; 5
 	map_const TWINKLE_HOUSE_2,							   4,  4 ; 6
 	map_const TWINKLE_HOUSE_3,							   4,  4 ; 7
 	map_const TWINKLE_POKECENTER,                          6,  4 ; 8
@@ -195,11 +200,10 @@ MAP_NONE   EQU 0
 	
 	map_const EAST_TRAIN_CABIN_1,						   8,  4 ; 1
 	map_const EAST_TRAIN_CABIN_2,						   8,  4 ; 2
-	map_const EAST_TRAIN_CABIN_3,						   8,  4 ; 3
+	map_const EAST_TRAIN_CAB,							   3,  2 ; 3
 	map_const EAST_TRAIN_CABOOSE,						   2,  2 ; 4
 	
 	newgroup													 ; 13
-	
 	map_const LUSTER_CITY_RESIDENTIAL,					  14, 30 ; 1
 	map_const LUSTER_CITY_SHOPPING,					      15, 30 ; 2
 	

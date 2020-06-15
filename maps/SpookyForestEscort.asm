@@ -124,7 +124,8 @@ SpookyForestEscortLostKidText2:
 	done
 
 SpookyForestEscortLostKidText3:
-	text "Hi."
+	text "Thank you for"
+	line "helping me!"
 	done
 
 SpookyForestEscortLostKidText4:
@@ -139,7 +140,24 @@ SpookyForestEscortLostKidText4:
 	done
 	
 SpookyForestEscortLostKidText5:
-	text "TEXT 5"
+	text "Wait a second!"
+	
+	para "I know where I am"
+	line "now!"
+	
+	para "I can make it home"
+	line "from here."
+	
+	para "Thank you for"
+	line "helping me!"
+	
+	para "My MOM runs the"
+	line "BIKE SHOP in"
+	cont "EVENTIDE VILLAGE."
+	
+	para "Make sure to stop"
+	line "by if you're in"
+	cont "town."
 	done
 
 Movement_SpookyForestSavedKidLeft:

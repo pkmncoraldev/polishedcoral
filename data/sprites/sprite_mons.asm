@@ -27,7 +27,7 @@ SpriteMons:
 	db MILTANK
 	db DODRIO
 	db PIKACHU
-	db ABRA
+	db TOGETIC
 	db ABRA
 	db ABRA
 	db ABRA

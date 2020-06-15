@@ -4,7 +4,7 @@ BTTrainerClassSprites:
 	db SPRITE_PIPPI         ; PLAYER_PIPPI
 	db SPRITE_STANLEY       ; STANLEY
 	db SPRITE_RODNEY        ; RODNEY
-	db SPRITE_CHRIS      	; WHITNEY
+	db SPRITE_CHRIS      	; WENDY
 	db SPRITE_CHRIS         ; MORTY
 	db SPRITE_CHRIS         ; CHUCK
 	db SPRITE_CHRIS      	; JASMINE

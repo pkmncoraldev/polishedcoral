@@ -51,7 +51,8 @@ FlickerTrainStationClerk:
 	waitbutton
 	closetext
 	applyonemovement PLAYER, step_up
-	domaptrigger FLICKER_TRAIN_CUTSCENE, $1
+	domaptrigger FLICKER_TRAIN_CUTSCENE, $0
+	domaptrigger LUSTER_TRAIN_CUTSCENE, $0
 	warpcheck
 	end
 .end

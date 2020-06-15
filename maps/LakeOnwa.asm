@@ -8,13 +8,14 @@ LakeOnwa_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, LakeOnwaFlypointCallback
 	callback MAPCALLBACK_TILES, LakeOnwaCallback
 
-	db 6 ; warp events
+	db 7 ; warp events
 	warp_def 29, 43, 1, LAKE_ONWA_BOAT_HOUSE_RIGHT
 	warp_def 23, 19, 1, LAKE_ONWA_BOAT_HOUSE_LEFT
 	warp_def  5, 36, 1, MT_ONWA_1F
 	warp_def 22,  5, 1, LAKE_ONWA_NAME_RATER_HOUSE
 	warp_def 16, 11, 1, LAKE_ONWA_ITEM_HOUSE
 	warp_def 17, 17, 1, LAKE_ONWA_POKECENTER
+	warp_def  1, 55, 3, ROUTE_8_GATE
 
 	db 0 ; coord events
 
@@ -37,7 +38,7 @@ LakeOnwa_MapScriptHeader:
 	person_event SPRITE_GRANNY, 20, 8, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeNpc4, -1
 	itemball_event 39, 16, POKE_BALL, 1, EVENT_LAKE_ONWA_POKE_BALL
 	tmhmball_event  26, 6, TM_ICE_PUNCH, 1, EVENT_LAKE_ONWA_POKE_BALL2
-	person_event SPRITE_HIKER, 8, 60, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerLake, -1
+	person_event SPRITE_HIKER,  7, 61, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerLake, -1
 	person_event SPRITE_WEIRD_TREE, 22, 55, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeSudowoodo, EVENT_FOUGHT_SUDOWOODO
 	smashrock_event 22, 10
 	smashrock_event 20, 13

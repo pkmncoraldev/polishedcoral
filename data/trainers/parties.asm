@@ -82,12 +82,12 @@ RodneyGroup:
 ; ================================
 
 
-WhitneyGroup:
+WendyGroup:
 ; ================================
 ; ================
 
-	; WHITNEY
-	db "UNUSED@"
+	; WENDY
+	db "WENDY@"
 	db TRAINERTYPE_ITEM | TRAINERTYPE_EVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
 	; party
 	db 1, BULBASAUR, NO_ITEM, 48, ABILITY_1 | QUIRKY, FEMALE
@@ -459,6 +459,15 @@ BugCatcherGroup:
 	db -1 ; end
 
 ; ================
+
+	; BUG_CATCHER
+	db "CHARLIE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -588,6 +597,24 @@ TwinsGroup:
 
 	; TWINS
 	db "JAN & JEN@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; TWINS
+	db "TIA & MIA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; TWINS
+	db "MIA & TIA@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1286,7 +1313,7 @@ PokefanMGroup:
 ; ================
 
 	; POKEFANM
-	db "RICK@"
+	db "REG@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1295,7 +1322,7 @@ PokefanMGroup:
 ; ================
 
 	; POKEFANM
-	db "REG@"
+	db "RICK@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1328,7 +1355,7 @@ PokefanFGroup:
 ; ================
 
 	; POKEFANF
-	db "WENDY@"
+	db "NICHOLE@" ;UNUSED
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1496,7 +1523,16 @@ BeautyGroup:
 ; ================
 
 	; BEAUTY
-	db "UNUSED@"
+	db "BRITNEY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BEAUTY
+	db "SANDRA@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -2160,7 +2196,7 @@ CooltrainerFGroup:
 ; ================
 
 	; COOLTRAINERF
-	db "HAILEY@"
+	db "JULES@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

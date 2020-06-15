@@ -12,15 +12,13 @@ Route3_MapScriptHeader:
 	signpost 10, 51, SIGNPOST_READ, Route3_sign
 	signpost 9, 0, SIGNPOST_READ, Route3_sign2
 
-	db 14 ; object events
+	db 12 ; object events
 	person_event SPRITE_YOUNGSTER, 8, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute3_1, -1
 	person_event SPRITE_FISHER, 16, 19, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRoute3_2, -1
 	person_event SPRITE_CAMPER, 15, 33, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute3_3, -1
 	person_event SPRITE_PICNICKER, 6, 35, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute3_4, -1
 	person_event SPRITE_LASS, 16, 45, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute3_5, -1
-	person_event SPRITE_FISHER, 9, 20, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route3Rodman, -1
-	person_event SPRITE_YOUNGSTER, 30, 34, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute3_6, -1
-	person_event SPRITE_LASS, 24, 26, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute3_7, -1
+	person_event SPRITE_FISHER,  9, 20, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route3Rodman, -1
 	itemball_event  34, 6, GREAT_BALL, 1, EVENT_ROUTE_3_GREAT_BALL
 	itemball_event  43, 23, RARE_CANDY, 1, EVENT_ROUTE_3_RARE_CANDY
 	fruittree_event 41,  7, FRUITTREE_ROUTE_3, LEPPA_BERRY
@@ -147,34 +145,6 @@ TrainerRoute3_5:
 
 .BeatenText:
 	text "Itchy…"
-	done
-	
-TrainerRoute3_6:
-	generictrainer COOLTRAINERM, SAMMY, EVENT_BEAT_ROUTE_3_TRAINER_6, .SeenText, .BeatenText
-
-	text "NORMAL TEXT"
-	done	
-
-.SeenText:
-	text "SEEN TEXT"
-	done
-
-.BeatenText:
-	text "BEATEN TEXT"
-	done
-	
-TrainerRoute3_7:
-	generictrainer COOLTRAINERF, HAILEY, EVENT_BEAT_ROUTE_3_TRAINER_7, .SeenText, .BeatenText
-
-	text "NORMAL TEXT"
-	done	
-
-.SeenText:
-	text "SEEN TEXT"
-	done
-
-.BeatenText:
-	text "BEATEN TEXT"
 	done
 	
 Route3Rodman:

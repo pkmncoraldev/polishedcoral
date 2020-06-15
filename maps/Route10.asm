@@ -9,54 +9,55 @@ Route10_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, Route10Random
 
-	db 1 ; warp events
-	warp_def 35, 11, 3, FLICKER_PASS_2F
+	db 2 ; warp events
+	warp_def 35, 13, 3, FLICKER_PASS_2F
+	warp_def 47,  7, 4, FLICKER_PASS_2F
 
 	db 44 ; coord events
-	xy_trigger 1, 30, 17, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 1, 31, 18, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 1, 32, 17, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 1, 33, 18, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 1, 34, 19, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 1, 35, 18, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 31, 26, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 32, 27, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 33, 28, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 34, 29, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 36, 30, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 37, 31, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 38, 32, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 39, 31, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 40, 32, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 41, 31, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 42, 30, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 43, 31, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 3, 30, 42, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 3, 16, 45, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 3, 26, 31, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 3, 32, 35, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 3, 36, 25, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 3, 32, 22, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 3, 21, 37, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 3, 15, 40, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 3, 14, 31, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 3, 27, 48, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 1,  3,  8, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 1,  4,  9, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 1,  5, 12, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 1,  4, 13, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 1, 30, 19, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 1, 31, 20, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 1, 32, 19, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 1, 33, 20, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 1, 34, 21, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 1, 35, 20, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 31, 28, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 32, 29, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 33, 30, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 34, 31, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 36, 32, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 37, 33, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 38, 34, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 39, 33, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 40, 34, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 41, 33, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 42, 32, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 43, 33, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 3, 30, 44, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 3, 16, 47, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 3, 26, 33, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 3, 32, 37, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 3, 36, 27, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 3, 32, 24, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 3, 21, 39, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 3, 15, 42, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 3, 14, 33, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 3, 27, 50, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 1,  3, 10, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 1,  4, 11, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 1,  5, 14, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 1,  4, 15, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 1,  5, 16, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 1,  4, 17, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 13, 18, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 14, 19, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 1,  5, 18, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 1,  4, 19, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 2, 13, 20, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 12, 21, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 1, 22, 53, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 1, 23, 53, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 22, 53, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 23, 53, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 14, 21, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 13, 22, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 12, 23, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 1, 22, 55, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 1, 23, 55, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 22, 55, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 23, 55, 0, Route10StartSnowstorm, 0, 0
 
 	db 0 ; bg events
 

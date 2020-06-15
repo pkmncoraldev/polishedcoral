@@ -11,16 +11,19 @@ SunbeamTradeHouse_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	person_event SPRITE_POKEFAN_M, 4, 5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SunbeamTradeHouseNpc, -1
+	db 2 ; object events
+	person_event SPRITE_POKEFAN_M, 4, 5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SunbeamTradeHouseNpc1, -1
+	person_event SPRITE_REDS_MOM, 4, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamTradeHouseNpc2, -1
 
 	const_def 1 ; object constants
-	const SUNBEAM_TRADE_HOUSE_NPC
 	
-SunbeamTradeHouseNpc:
-	jumptextfaceplayer SunbeamTradeHouseNpcText
+SunbeamTradeHouseNpc1:
+	jumptextfaceplayer SunbeamTradeHouseNpc1Text
+	
+SunbeamTradeHouseNpc2:
+	jumptextfaceplayer SunbeamTradeHouseNpc2Text
 
-SunbeamTradeHouseNpcText:
+SunbeamTradeHouseNpc1Text:
 	text "UNFINISHED"
 
 	para "I caught that"
@@ -36,4 +39,16 @@ SunbeamTradeHouseNpcText:
 	
 	para "Some say it's their"
 	line "natural form!"
+	done
+
+SunbeamTradeHouseNpc2Text:
+	text "SUNBEAM ISLAND is"
+	line "known for it's"
+	cont "sunny skies and"
+	cont "bright blue water."
+	
+	para "GRASS TYPE #MON"
+	line "thrive in this"
+	cont "island's sunny"
+	cont "weather!"
 	done

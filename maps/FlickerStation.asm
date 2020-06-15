@@ -95,26 +95,6 @@ FlickerStationGirlMove:
 .end
 	return
 	
-FlickerStationTrainThing:
-	ld hl, rIE
-	set LCD_STAT, [hl]
-	ld a, 7
-	ld [hWX], a
-	ld a, 64
-	ld [hWY], a
-	ld a, 1
-	ld [hLCDTrain], a
-	hlcoord 0, 8
-	decoord 0, 0
-	ld bc, 4 * BG_MAP_WIDTH
-	call CopyBytes
-	hlcoord 0, 8, wAttrMap
-	decoord 0, 0, wAttrMap
-	ld bc, 4 * BG_MAP_WIDTH
-	call CopyBytes
-	farcall HDMATransfer_OnlyTopFourRows
-	ret
-	
 FlickerStation3Girls:
 	special Special_StopRunning
 	checkevent EVENT_BEAT_TRAINGRAVEYARD_TRAINER_1
@@ -408,51 +388,5 @@ Movement_FlickerStation3Girls3:
 	step_right
 	step_right
 	step_right
-	step_end
-
-Movement_FlickerStationTrainLeaves:
-	slow_step_right
-	slow_step_right
-	step_right
-	step_right
-	step_right
-	step_right
-	fast_step_right
-	fast_step_right
-	fast_step_right
-	fast_step_right
-	fast_step_right
-	fast_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
 	step_end
 	

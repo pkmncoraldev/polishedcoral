@@ -23,9 +23,6 @@ FlickerTrainCutscene_MapScriptHeader:
 	const FLICKER_TRAIN_CUTSCENE_NPC3
 	
 FlickerTrainCutsceneTrigger0:
-	end
-	
-FlickerTrainCutsceneTrigger1:
 	applymovement PLAYER, Movement_FlickerStation3Girls2
 	playsound SFX_ENTER_DOOR
 	applyonemovement PLAYER, hide_person
@@ -65,3 +62,73 @@ FlickerTrainCutsceneTrigger1:
 	callasm FlickerStationPlayerSeatAsm
 	warpfacing LEFT, EAST_TRAIN_CABIN_1, $7, $2
 	end
+	
+FlickerTrainCutsceneTrigger1:
+	end
+	
+FlickerStationTrainThing:
+	ld hl, rIE
+	set LCD_STAT, [hl]
+	ld a, 7
+	ld [hWX], a
+	ld a, 64
+	ld [hWY], a
+	ld a, 1
+	ld [hLCDTrain], a
+	hlcoord 0, 8
+	decoord 0, 0
+	ld bc, 4 * BG_MAP_WIDTH
+	call CopyBytes
+	hlcoord 0, 8, wAttrMap
+	decoord 0, 0, wAttrMap
+	ld bc, 4 * BG_MAP_WIDTH
+	call CopyBytes
+	farcall HDMATransfer_OnlyTopFourRows
+	ret
+
+Movement_FlickerStationTrainLeaves:
+	slow_step_right
+	slow_step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	step_end
+	

@@ -340,6 +340,9 @@ SkipMusic::
 	ret
 
 FadeToMapMusic:: ; 3cbc
+	call GetCurrentLandmark
+	cp GATE_LANDMARK
+	ret z
 	push hl
 	push de
 	push bc

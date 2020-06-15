@@ -16,10 +16,31 @@ ShakeHeadbuttTree: ; 8c80a
 	ld hl, VTiles1
 	lb bc, BANK(CutGrassGFX), 4
 	call Request2bpp
+	ld a, [wTileset]
+	cp TILESET_SNOW
+	jp z, .snow
+	cp TILESET_RANCH
+	jp z, .ranch
 	ld de, HeadbuttTreeGFX
 	ld hl, VTiles1 tile $04
 	lb bc, BANK(HeadbuttTreeGFX), 8
 	call Request2bpp
+	farcall MakePalGreen
+	jr .cont
+.snow
+	ld de, HeadbuttTreeSnowGFX
+	ld hl, VTiles1 tile $04
+	lb bc, BANK(HeadbuttTreeSnowGFX), 8
+	call Request2bpp
+	farcall MakePalSnow
+	jr .cont
+.ranch
+	ld de, HeadbuttTreeGFX
+	ld hl, VTiles1 tile $04
+	lb bc, BANK(HeadbuttTreeGFX), 8
+	call Request2bpp
+	farcall MakePalRanchGreen
+.cont
 	call Cut_Headbutt_GetPixelFacing
 	ld a, SPRITE_ANIM_INDEX_HEADBUTT
 	call _InitSpriteAnimStruct
@@ -56,13 +77,16 @@ ShakeHeadbuttTree: ; 8c80a
 	ld hl, wSprites + 36 * 4
 	ld bc, wSpritesEnd - (wSprites + 36 * 4)
 	xor a
-	call ByteFill
+	call ByteFill	
 	call DelayFrame
 	jp ReplaceKrisSprite
 ; 8c893
 
 HeadbuttTreeGFX: ; 8c893
 INCBIN "gfx/overworld/headbutt_tree.2bpp"
+
+HeadbuttTreeSnowGFX: ; 8c893
+INCBIN "gfx/overworld/headbutt_tree_snow.2bpp"
 ; 8c913
 
 HideHeadbuttTree: ; 8c913
@@ -78,8 +102,16 @@ HideHeadbuttTree: ; 8c913
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+	
+	ld a, [wTileset]
+	cp TILESET_SNOW
+	jp z, .snow
 
 	ld a, $5 ; grass tile
+	jr .cont
+.snow
+	ld a, $c ; snow tile
+.cont
 	ld [hli], a
 	ld [hld], a
 	ld bc, SCREEN_WIDTH

@@ -307,11 +307,18 @@ PLAYER_F EQU __enum__
 
 	trainerclass BOARDER
 	const TOBY
+	const FRANK
+	const JOSE
+	const PETER
+	const GLENN
 
 
 	trainerclass SKIER
 	const DEBBIE
 	const RHONDA
+	const KIM
+	const SHERRY
+	const LAURA
 
 
 	trainerclass BLACKBELT_T
@@ -388,7 +395,9 @@ PLAYER_F EQU __enum__
 	const JULIAN
 	const PAUL
 	const PHILLIP
-
+	
+	trainerclass MALL_COP
+	const PHIL
 
 	trainerclass TOWERTYCOON ; 1
 

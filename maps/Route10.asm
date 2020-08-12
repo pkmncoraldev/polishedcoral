@@ -40,7 +40,7 @@ Route10_MapScriptHeader:
 	xy_trigger 3, 32, 24, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 3, 21, 39, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 3, 15, 42, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 3, 14, 33, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 3, 14, 32, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 3, 27, 50, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 1,  3, 10, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 1,  4, 11, 0, Route10StartSnowstorm, 0, 0
@@ -61,7 +61,14 @@ Route10_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 7 ; object events
+	person_event SPRITE_BOARDER, 35, 21, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_1, -1
+	person_event SPRITE_SKIER, 33, 27, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_2, -1
+	person_event SPRITE_BOARDER, 29, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_3, -1
+	person_event SPRITE_SKIER, 39, 38, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_4, -1
+	person_event SPRITE_BOARDER, 22, 42, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_5, -1
+	person_event SPRITE_BOARDER, 24, 50, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_6, -1
+	person_event SPRITE_SKIER, 12, 33, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute10_7, -1
 
 Route10Trigger0:
 	end
@@ -78,6 +85,104 @@ Route10Trigger3:
 Route10Trigger4:
 	callasm Route10SfxAsm
 	end
+	
+TrainerRoute10_1:
+	generictrainer BOARDER, FRANK, EVENT_BEAT_ROUTE_10_TRAINER_1, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "BEATEN TEXT"
+	done
+	
+TrainerRoute10_2:
+	generictrainer SKIER, KIM, EVENT_BEAT_ROUTE_10_TRAINER_2, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "BEATEN TEXT"
+	done
+	
+TrainerRoute10_3:
+	generictrainer BOARDER, JOSE, EVENT_BEAT_ROUTE_10_TRAINER_3, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "BEATEN TEXT"
+	done
+	
+TrainerRoute10_4:
+	generictrainer SKIER, SHERRY, EVENT_BEAT_ROUTE_10_TRAINER_4, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "BEATEN TEXT"
+	done
+	
+TrainerRoute10_5:
+	generictrainer BOARDER, PETER, EVENT_BEAT_ROUTE_10_TRAINER_5, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "BEATEN TEXT"
+	done
+	
+TrainerRoute10_6:
+	generictrainer BOARDER, GLENN, EVENT_BEAT_ROUTE_10_TRAINER_6, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "BEATEN TEXT"
+	done
+	
+TrainerRoute10_7:
+	generictrainer SKIER, LAURA, EVENT_BEAT_ROUTE_10_TRAINER_7, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "BEATEN TEXT"
+	done
 	
 Route10Random:
 	checkevent EVENT_SNOWSTORM_HAPPENING

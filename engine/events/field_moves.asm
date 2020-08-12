@@ -32,7 +32,7 @@ ShakeHeadbuttTree: ; 8c80a
 	ld hl, VTiles1 tile $04
 	lb bc, BANK(HeadbuttTreeSnowGFX), 8
 	call Request2bpp
-	farcall MakePalSnow
+	farcall MakePalSnowTree
 	jr .cont
 .ranch
 	ld de, HeadbuttTreeGFX

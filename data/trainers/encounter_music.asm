@@ -75,6 +75,7 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_POKEMANIAC_ENCOUNTER	; delinquentm
 	db MUSIC_POKEMANIAC_ENCOUNTER	; delinquentf
 	db MUSIC_HIKER_ENCOUNTER		; safari
+	db MUSIC_NONE					; mall cop
 	db MUSIC_NONE			 		; towertycoon
 
 ; e906e

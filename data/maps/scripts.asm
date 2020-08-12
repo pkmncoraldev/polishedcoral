@@ -9,6 +9,17 @@ INCLUDE "maps/SunbeamPokeCenter.asm"
 INCLUDE "maps/EventidePokeCenter.asm"
 INCLUDE "maps/FlickerPokeCenter.asm"
 INCLUDE "maps/TwinklePokeCenter.asm"
+INCLUDE "maps/LusterPokeCenter.asm"
+INCLUDE "maps/LusterMallPokeCenter.asm"
+
+SECTION "Pokemon Mart Scripts 1", ROMX
+INCLUDE "maps/GlintMart.asm"
+INCLUDE "maps/StarglowMart.asm"
+INCLUDE "maps/SunbeamMart.asm"
+INCLUDE "maps/EventideMart.asm"
+INCLUDE "maps/FlickerMart.asm"
+INCLUDE "maps/TwinkleMart.asm"
+INCLUDE "maps/LusterMart.asm"
 
 
 SECTION "Dungeon Scripts", ROMX
@@ -85,7 +96,6 @@ SECTION "Glint City Scripts", ROMX
 
 INCLUDE "maps/GlintCity.asm"
 INCLUDE "maps/GlintGroveEntrance.asm"
-INCLUDE "maps/GlintMart.asm"
 INCLUDE "maps/GlintGym.asm"
 INCLUDE "maps/GlintApartmentLeft1F.asm"
 INCLUDE "maps/GlintApartmentLeft2F.asm"
@@ -103,7 +113,6 @@ INCLUDE "maps/StarglowTogepiHouse.asm"
 INCLUDE "maps/StarglowNoPokemonHouse.asm"
 INCLUDE "maps/StarglowGrandpaHouse.asm"
 INCLUDE "maps/StarglowFishingGuruHouse.asm"
-INCLUDE "maps/StarglowMart.asm"
 INCLUDE "maps/StarglowGym.asm"
 
 
@@ -120,7 +129,6 @@ SECTION "Sunbeam Island Scripts", ROMX
 
 INCLUDE "maps/SunbeamIsland.asm"
 INCLUDE "maps/SunbeamBeach.asm"
-INCLUDE "maps/SunbeamMart.asm"
 INCLUDE "maps/SunbeamBoatHouse.asm"
 INCLUDE "maps/SunbeamSurfShop.asm"
 INCLUDE "maps/SunbeamBikiniContest.asm"
@@ -138,7 +146,6 @@ INCLUDE "maps/EventideVillage.asm"
 INCLUDE "maps/EventideGymSpeechHouse.asm"
 INCLUDE "maps/EventideSootheBellHouse.asm"
 INCLUDE "maps/EventideBikeShop.asm"
-INCLUDE "maps/EventideMart.asm"
 INCLUDE "maps/EventideGym.asm"
 
 SECTION "Flicker Station Scripts", ROMX
@@ -146,7 +153,6 @@ SECTION "Flicker Station Scripts", ROMX
 INCLUDE "maps/FlickerStation.asm"
 INCLUDE "maps/FlickerSoundSpeechHouse.asm"
 INCLUDE "maps/FlickerNameSpeechHouse.asm"
-INCLUDE "maps/FlickerMart.asm"
 INCLUDE "maps/FlickerTrainStation.asm"
 INCLUDE "maps/FlickerTrainCutscene.asm"
 INCLUDE "maps/FlickerPassOutside.asm"
@@ -157,7 +163,6 @@ INCLUDE "maps/TwinkleTown.asm"
 INCLUDE "maps/TwinkleRockHouse.asm"
 INCLUDE "maps/TwinkleHouse2.asm"
 INCLUDE "maps/TwinkleHouse3.asm"
-INCLUDE "maps/TwinkleMart.asm"
 
 SECTION "Luster City Scripts", ROMX
 
@@ -165,6 +170,26 @@ INCLUDE "maps/LusterTrainCutscene.asm"
 INCLUDE "maps/LusterCityResidential.asm"
 INCLUDE "maps/LusterCityShopping.asm"
 INCLUDE "maps/LusterCityBusiness.asm"
+INCLUDE "maps/LusterApartment1_1F.asm"
+INCLUDE "maps/LusterApartment1_2F.asm"
+INCLUDE "maps/LusterApartment2_1F.asm"
+INCLUDE "maps/LusterApartment2_2F.asm"
+INCLUDE "maps/LusterApartment3_1F.asm"
+INCLUDE "maps/LusterApartment3_2F.asm"
+INCLUDE "maps/LusterApartment4_1F.asm"
+INCLUDE "maps/LusterApartment4_2F.asm"
+INCLUDE "maps/LusterApartment5_1F.asm"
+INCLUDE "maps/LusterApartment5_2F.asm"
+INCLUDE "maps/LusterApartment6_1F.asm"
+INCLUDE "maps/LusterApartment6_2F.asm"
+INCLUDE "maps/LusterMall.asm"
+INCLUDE "maps/LusterMallElectronicsShop.asm"
+INCLUDE "maps/LusterMallCoffeeShop.asm"
+INCLUDE "maps/LusterMallSkateShop.asm"
+INCLUDE "maps/LusterMallAntiqueShop.asm"
+INCLUDE "maps/LusterMallHerbShop.asm"
+INCLUDE "maps/LusterMallStoneShop.asm"
+INCLUDE "maps/LusterMallBallShop.asm"
 
 SECTION "Train Scripts", ROMX
 

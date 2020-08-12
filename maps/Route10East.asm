@@ -34,7 +34,7 @@ Route10East_MapScriptHeader:
 	db 0 ; bg events
 
 	db 2 ; object events
-	object_event 11, 24, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route10EastCampfire, EVENT_HIDE_OW_OBJECTS_PURPLE
+	object_event 11, 24, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route10EastCampfire, EVENT_HIDE_OW_OBJECTS_BROWN
 	object_event 11, 24, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Route10EastCampfire, EVENT_HIDE_OW_OBJECTS_TEAL
 
 	
@@ -54,13 +54,15 @@ Route10EastTrigger1:
 	
 Route10EastCallback:
 	readvar VAR_PLAYER_COLOR
-	if_equal 4, .purple
+	if_equal 3, .brown
 	setevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	return
-.purple
-	setevent EVENT_HIDE_OW_OBJECTS_PURPLE
+.brown
+	setevent EVENT_HIDE_OW_OBJECTS_BROWN
 	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	return
 	
 Route10EastCampfire:

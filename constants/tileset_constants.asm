@@ -26,6 +26,7 @@
 	const TILESET_MALL_2			;25
 	const TILESET_SEWER				;26
 	const TILESET_TRAIN				;27
+	const TILESET_ICE_TEMPLE		;28
 	
 
 	const_def

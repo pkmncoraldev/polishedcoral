@@ -382,9 +382,10 @@ INCLUDE "data/tilesets/park_collision.asm"
 SECTION "Tileset Data - mall1", ROMX
 
 TilesetMall1GFX::
-INCBIN "gfx/tilesets/mall1.2bpp.lz"
+INCBIN "gfx/tilesets/mall1.2bpp.vram0.lz"
 
-TilesetMall1GFX2 EQU 0
+TilesetMall1GFX2::
+INCBIN "gfx/tilesets/mall1.2bpp.vram1.lz"
 
 TilesetMall1Meta::
 INCBIN "data/tilesets/mall1_metatiles.bin.lz"
@@ -399,9 +400,10 @@ INCLUDE "data/tilesets/mall1_collision.asm"
 SECTION "Tileset Data - mall2", ROMX
 
 TilesetMall2GFX::
-INCBIN "gfx/tilesets/mall2.2bpp.lz"
+INCBIN "gfx/tilesets/mall2.2bpp.vram0.lz"
 
-TilesetMall2GFX2 EQU 0
+TilesetMall2GFX2::
+INCBIN "gfx/tilesets/mall2.2bpp.vram1.lz"
 
 TilesetMall2Meta::
 INCBIN "data/tilesets/mall2_metatiles.bin.lz"
@@ -445,6 +447,23 @@ INCBIN "data/tilesets/train_attributes.bin.lz"
 
 TilesetTrainColl::
 INCLUDE "data/tilesets/train_collision.asm"
+
+
+SECTION "Tileset Data - icetemple", ROMX
+
+TilesetIceTempleGFX::
+INCBIN "gfx/tilesets/ice_temple.2bpp.lz"
+
+TilesetIceTempleGFX2 EQU 0
+
+TilesetIceTempleMeta::
+INCBIN "data/tilesets/ice_temple_metatiles.bin.lz"
+
+TilesetIceTempleAttr::
+INCBIN "data/tilesets/ice_temple_attributes.bin.lz"
+
+TilesetIceTempleColl::
+INCLUDE "data/tilesets/ice_temple_collision.asm"
 
 
 SECTION "Tileset Headers", ROMX

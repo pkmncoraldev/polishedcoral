@@ -34,7 +34,7 @@ GlintGrove_MapScriptHeader:
 	person_event SPRITE_TWIN, 17, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, TrainerGlintGrove_4, -1
 	person_event SPRITE_TWIN, 16, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, TrainerGlintGrove_5, -1
 	person_event SPRITE_BUG_CATCHER, 8, 4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerGlintGrove_6, -1
-	person_event SPRITE_STANLEY, 9, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintGroveStanley, EVENT_GLINT_GROVE_STANLEY
+	person_event SPRITE_STANLEY,  8, 16, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintGroveStanley, EVENT_GLINT_GROVE_STANLEY
 	person_event SPRITE_BATTLE_GIRL, 50, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveNPC1, -1
 	person_event SPRITE_CHILD, 53, 22, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveNPC2, -1
 	person_event SPRITE_BATTLE_GIRL, 33, 16, SPRITEMOVEDATA_WANDER, 1, 3, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintGroveNPC3, -1
@@ -706,7 +706,6 @@ Movement_GlintGroveStanley2:
 	step_down
 	step_right
 	step_right
-	step_up
 	step_right
 	step_right
 	step_right

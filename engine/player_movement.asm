@@ -271,6 +271,12 @@ DoPlayerMovement:: ; 80000
 	jp z, .conveyorleft
 	cp COLL_CONVEYOR_RIGHT
 	jp z, .conveyorright
+	cp COLL_WALL
+	jp z, .wall
+	jr .contreturn
+	
+.wall
+	eventflagset EVENT_YOU_CHEATED
 	
 .contreturn
 	call .CheckLandPerms
@@ -313,9 +319,23 @@ DoPlayerMovement:: ; 80000
 	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
 .conveyorup_return
+	ld a, [wMapMusic]
+	cp MUSIC_LUSTER_CITY
+	jr nz, .conveyorup_notinmall
+	
+	eventflagset EVENT_ON_ESCALATOR
+	
+	ld a, [wWalkingDirection]
+	cp DOWN
+	jr z, .conveyorup_down_bike
+	jr .conveyorup_cont
+
+.conveyorup_notinmall
 	ld a, [wWalkingDirection]
 	cp UP
 	jr z, .conveyorup_up
+	
+.conveyorup_cont
 	ld a, UP
 	ld [wWalkingDirection], a
 	ld a, STEP_SLIDE
@@ -368,9 +388,23 @@ DoPlayerMovement:: ; 80000
 	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
 .conveyordown_return
+	ld a, [wMapMusic]
+	cp MUSIC_LUSTER_CITY
+	jr nz, .conveyordown_notinmall
+	
+	eventflagset EVENT_ON_ESCALATOR
+	
+	ld a, [wWalkingDirection]
+	cp UP
+	jr z, .conveyordown_up_bike
+	jr .conveyordown_cont
+
+.conveyordown_notinmall
 	ld a, [wWalkingDirection]
 	cp DOWN
 	jr z, .conveyordown_down
+
+.conveyordown_cont
 	ld a, DOWN
 	ld [wWalkingDirection], a
 	ld a, STEP_SLIDE

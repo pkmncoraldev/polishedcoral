@@ -76,4 +76,5 @@ TrainerGroups: ; 0x39999
 	dba DelinquentmGroup
 	dba DelinquentfGroup
 	dba SafariGroup
+	dba MallCopGroup
 	dba TowerTycoonGroup

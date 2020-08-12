@@ -114,3 +114,11 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 71
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 72
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 73
+	tilecoll TOWN_MAP, WALL, FLOOR, LEFT_WALL ; 74
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 75
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 76
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 77
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 78
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 79
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 7a
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 7b

@@ -462,6 +462,12 @@ TrainerClassAttributes: ; 3959c
 	dw AI_BASIC + AI_SETUP + AI_OFFENSIVE + AI_AGGRESSIVE + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 	
+;MallCop
+	db 0, 0 ; items
+	db 10 ; base reward
+	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
 ; TowerTycoon
 	db FULL_HEAL, FULL_RESTORE ; items
 	db 25 ; base reward

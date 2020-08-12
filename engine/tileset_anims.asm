@@ -48,12 +48,20 @@ TilesetMartAnim::
 TilesetLibraryAnim::
 TilesetSnowAnim::
 TilesetParkAnim::
-TilesetMall1Anim::
 TilesetMall2Anim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
+TilesetMall1Anim::
+	dw VTiles2 tile $08, WriteTileToBuffer
+	dw wTileAnimBuffer, ScrollTileUp2
+	dw VTiles2 tile $08, WriteTileFromBuffer
+	dw VTiles2 tile $09, WriteTileToBuffer
+	dw wTileAnimBuffer, ScrollTileDown2
+	dw VTiles2 tile $09, WriteTileFromBuffer
 	dw NULL,  DoneTileAnimation
 	
 TilesetHouse2Anim::
@@ -284,6 +292,16 @@ ScrollTileDown2: ; fc318
 	and 4
 	jr nz, ScrollTileDown
 	jr ScrollTileDown
+	
+ScrollTileUp2: ; fc318
+; Scroll up for 4 ticks, then down for 4 ticks.
+	ld a, [wTileAnimationTimer]
+	inc a
+	and 7
+	ld [wTileAnimationTimer], a
+	and 4
+	jr nz, ScrollTileUp
+	jr ScrollTileUp
 
 ScrollTileLeft: ; fc327
 	ld h, d

@@ -5,6 +5,8 @@ Marts: ; 160a9
 	dw SunbeamMart
 	dw EventideMart
 	dw FlickerMart
+	dw TwinkleMart
+	dw LusterMart
 MartsEnd
 
 
@@ -77,4 +79,14 @@ FlickerMart: ; 16118
 	db AWAKENING
 	db BURN_HEAL
 	db ICE_HEAL
+	db -1
+	
+TwinkleMart: ; 16118
+	db 1 ; # items
+	db POTION
+	db -1
+	
+LusterMart: ; 16118
+	db 1 ; # items
+	db POTION
 	db -1

@@ -105,6 +105,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  32, $AA, $AA, $AA, ABILITY_1 | QUIRKY, MALE   ; gruntm
 	db  32, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE ; gruntf
 	db  24, $99, $99, $99, ABILITY_1 | QUIRKY, MALE   ; safari
+	db   0, $66, $66, $66, ABILITY_1 | QUIRKY, MALE   ; mall cop
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; towertycoon
 
 ; 2715c

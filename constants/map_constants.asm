@@ -204,6 +204,30 @@ MAP_NONE   EQU 0
 	map_const EAST_TRAIN_CABOOSE,						   2,  2 ; 4
 	
 	newgroup													 ; 13
+	
 	map_const LUSTER_CITY_RESIDENTIAL,					  14, 30 ; 1
 	map_const LUSTER_CITY_SHOPPING,					      15, 30 ; 2
+	map_const LUSTER_APARTMENT_1_1F,             	       4,  4 ; 3
+	map_const LUSTER_APARTMENT_1_2F,             	       4,  4 ; 4
+	map_const LUSTER_APARTMENT_2_1F,             	       4,  4 ; 5
+	map_const LUSTER_APARTMENT_2_2F,             	       4,  4 ; 6
+	map_const LUSTER_APARTMENT_3_1F,             	       4,  4 ; 7
+	map_const LUSTER_APARTMENT_3_2F,             	       4,  4 ; 8
+	map_const LUSTER_APARTMENT_4_1F,             	       4,  4 ; 9
+	map_const LUSTER_APARTMENT_4_2F,             	       4,  4 ; 10
+	map_const LUSTER_APARTMENT_5_1F,             	       4,  4 ; 11
+	map_const LUSTER_APARTMENT_5_2F,             	       4,  4 ; 12
+	map_const LUSTER_APARTMENT_6_1F,             	       4,  4 ; 13
+	map_const LUSTER_APARTMENT_6_2F,             	       4,  4 ; 14
+	map_const LUSTER_POKECENTER,                           6,  4 ; 15
+	map_const LUSTER_MART,								   6,  4 ; 16
+	map_const LUSTER_MALL,								  17, 13 ; 17
+	map_const LUSTER_MALL_POKECENTER,                      6,  4 ; 18
+	map_const LUSTER_MALL_ELECTRONICS_SHOP,				   5,  3 ; 19
+	map_const LUSTER_MALL_COFFEE_SHOP,					   5,  4 ; 20
+	map_const LUSTER_MALL_ANTIQUE_SHOP,					   4,  4 ; 21
+	map_const LUSTER_MALL_SKATE_SHOP,					   4,  3 ; 22
+	map_const LUSTER_MALL_HERB_SHOP,					   4,  3 ; 23
+	map_const LUSTER_MALL_STONE_SHOP,					   4,  4 ; 24
+	map_const LUSTER_MALL_BALL_SHOP,					   4,  4 ; 25
 	

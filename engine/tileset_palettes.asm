@@ -126,6 +126,10 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .train
 	cp TILESET_LUSTER
 	jp z, .luster
+	cp TILESET_MALL_1
+	jp z, .mall1
+	cp TILESET_MALL_2
+	jp z, .mall1
 	cp TILESET_SEWER
 	jp z, .sewer
 	jp .do_nothing
@@ -198,6 +202,10 @@ LoadSpecialMapPalette: ; 494ac
 .lusterbusiness
 	ld hl, OutsideLusterBusinessPalette
 	jp LoadSevenTimeOfDayBGPalettes
+	
+.mall1
+	ld hl, Mall1Palette
+	jp LoadSevenBGPalettes
 	
 .sewer
 	ld hl, LusterSewerPalette
@@ -329,6 +337,9 @@ INCLUDE "maps/palettes/bgpals/spookhousetv.pal"
 
 TrainPalette:
 INCLUDE "maps/palettes/bgpals/train.pal"
+
+Mall1Palette:
+INCLUDE "maps/palettes/bgpals/lustermall1.pal"
 
 LusterSewerPalette:
 INCLUDE "maps/palettes/bgpals/lustersewer.pal"

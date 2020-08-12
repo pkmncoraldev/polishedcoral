@@ -76,7 +76,6 @@ GlintCityStanleyRematch:
 	return
 	
 GlintCitySign:
-	setflag ENGINE_SECONDBADGE
 	jumptext GlintCitySignText
 
 GlintGymSign:

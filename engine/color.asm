@@ -985,8 +985,8 @@ LoadMapPals:
 	
 .snow
 	ld a, [wPlayerPalette]
-	cp 4
-	jr z, .snowpurple
+	cp 3
+	jr z, .snowbrown
 	eventflagcheck EVENT_SNOWSTORM_HAPPENING
 	jr nz, .snowstorm
 	ld a, [wIsNearCampfire]
@@ -1007,20 +1007,20 @@ LoadMapPals:
 	call FarCopyWRAM
 	ret
 	
-.snowpurple
+.snowbrown
 	eventflagcheck EVENT_SNOWSTORM_HAPPENING
-	jr nz, .snowstormpurple
+	jr nz, .snowstormbrown
 	ld a, [wIsNearCampfire]
 	bit 0, a
-	jr nz, .snowpurplecont1
+	jr nz, .snowbrowncont1
 	ld a, [wTimeOfDayPal]
-	jr .snowpurplecont2
-.snowpurplecont1
+	jr .snowbrowncont2
+.snowbrowncont1
 	ld a, 1
-.snowpurplecont2
+.snowbrowncont2
 	and 3
 	ld bc, 8 palettes
-	ld hl, MapObjectPalsSnowPurple
+	ld hl, MapObjectPalsSnowBrown
 	call AddNTimes
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
@@ -1047,18 +1047,18 @@ LoadMapPals:
 	call FarCopyWRAM
 	ret
 	
-.snowstormpurple
+.snowstormbrown
 	ld a, [wIsNearCampfire]
 	bit 0, a
-	jr nz, .snowstormpurplecont1
+	jr nz, .snowstormbrowncont1
 	ld a, [wTimeOfDayPal]
-	jr .snowstormpurplecont2
-.snowstormpurplecont1
+	jr .snowstormbrowncont2
+.snowstormbrowncont1
 	ld a, 1
-.snowstormpurplecont2
+.snowstormbrowncont2
 	and 3
 	ld bc, 8 palettes
-	ld hl, MapObjectPalsSnowstormPurple
+	ld hl, MapObjectPalsSnowstormBrown
 	call AddNTimes
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
@@ -1230,14 +1230,14 @@ INCLUDE "maps/palettes/obpals/obranchhangarpurple.pal"
 MapObjectPalsSnow::
 INCLUDE "maps/palettes/obpals/obsnow.pal"
 
-MapObjectPalsSnowPurple::
-INCLUDE "maps/palettes/obpals/obsnowpurple.pal"
+MapObjectPalsSnowBrown::
+INCLUDE "maps/palettes/obpals/obsnowbrown.pal"
 
 MapObjectPalsSnowstorm::
 INCLUDE "maps/palettes/obpals/obsnowstorm.pal"
 
-MapObjectPalsSnowstormPurple::
-INCLUDE "maps/palettes/obpals/obsnowstormpurple.pal"
+MapObjectPalsSnowstormBrown::
+INCLUDE "maps/palettes/obpals/obsnowstormbrown.pal"
 
 MapObjectPalsSailboat::
 INCLUDE "maps/palettes/obpals/obsailboat.pal"

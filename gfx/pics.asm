@@ -891,6 +891,7 @@ SECTION "Trainer Pics 5", ROMX
 DelinquentmPic:			  INCBIN "gfx/trainers/delinquent_m.2bpp.lz"
 DelinquentfPic:			  INCBIN "gfx/trainers/delinquent_f.2bpp.lz"
 SafariPic:				  INCBIN "gfx/trainers/safari.2bpp.lz"
+MallCopPic:				  INCBIN "gfx/trainers/player_m.2bpp.lz"
 TowerTycoonPic:
 PlayermPic:				  INCBIN "gfx/trainers/player_m.2bpp.lz"
 PlayerfPic:				  INCBIN "gfx/trainers/player_f.2bpp.lz"

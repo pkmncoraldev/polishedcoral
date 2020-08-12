@@ -363,6 +363,29 @@ ENDM
 	map_attributes EastTrainCabin2, EAST_TRAIN_CABIN_2, 0, 0
 	map_attributes EastTrainCab, EAST_TRAIN_CAB, 0, 0
 	map_attributes EastTrainCaboose, EAST_TRAIN_CABOOSE, 0, 0
+	map_attributes LusterApartment1_1F, LUSTER_APARTMENT_1_1F, $0, 0
+	map_attributes LusterApartment1_2F, LUSTER_APARTMENT_1_2F, $0, 0
+	map_attributes LusterApartment2_1F, LUSTER_APARTMENT_2_1F, $0, 0
+	map_attributes LusterApartment2_2F, LUSTER_APARTMENT_2_2F, $0, 0
+	map_attributes LusterApartment3_1F, LUSTER_APARTMENT_3_1F, $0, 0
+	map_attributes LusterApartment3_2F, LUSTER_APARTMENT_3_2F, $0, 0
+	map_attributes LusterApartment4_1F, LUSTER_APARTMENT_4_1F, $0, 0
+	map_attributes LusterApartment4_2F, LUSTER_APARTMENT_4_2F, $0, 0
+	map_attributes LusterApartment5_1F, LUSTER_APARTMENT_5_1F, $0, 0
+	map_attributes LusterApartment5_2F, LUSTER_APARTMENT_5_2F, $0, 0
+	map_attributes LusterApartment6_1F, LUSTER_APARTMENT_6_1F, $0, 0
+	map_attributes LusterApartment6_2F, LUSTER_APARTMENT_6_2F, $0, 0
+	map_attributes LusterPokeCenter, LUSTER_POKECENTER, 0, 0
+	map_attributes LusterMart, LUSTER_MART, 0, 0
+	map_attributes LusterMall, LUSTER_MALL, 0, 0
+	map_attributes LusterMallPokeCenter, LUSTER_MALL_POKECENTER, 0, 0
+	map_attributes LusterMallElectronicsShop, LUSTER_MALL_ELECTRONICS_SHOP, 0, 0
+	map_attributes LusterMallCoffeeShop, LUSTER_MALL_COFFEE_SHOP, 0, 0
+	map_attributes LusterMallSkateShop, LUSTER_MALL_SKATE_SHOP, 0, 0
+	map_attributes LusterMallAntiqueShop, LUSTER_MALL_ANTIQUE_SHOP, 0, 0
+	map_attributes LusterMallHerbShop, LUSTER_MALL_HERB_SHOP, 0, 0
+	map_attributes LusterMallStoneShop, LUSTER_MALL_STONE_SHOP, 0, 0
+	map_attributes LusterMallBallShop, LUSTER_MALL_BALL_SHOP, 0, 0
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $7, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0

@@ -1305,7 +1305,7 @@ ShowEmoteScript:
 	applymovement2 .Show
 	pause 0
 	applymovement2 .Hide
-	callasm MakePalGreen
+	callasm CheckMakePal
 	end
 
 .Show:
@@ -1334,6 +1334,13 @@ MakePalGray::
 	RGB 13, 13, 13
 	RGB 00, 00, 00
 
+CheckMakePal::
+	ld a, [wTileset]
+	cp TILESET_SNOW
+	jp z, MakePalSnow
+	cp TILESET_RANCH
+	jp z, MakePalRanchGreen
+;fallthrough
 MakePalGreen::
 	ld a, [wTimeOfDayPal]
 	cp NITE
@@ -1476,6 +1483,64 @@ MakePalSnowstorm:
 	ld [hCGBPalUpdate], a
 	ret
 	
+MakePalSnowTree::
+	eventflagcheck EVENT_SNOWSTORM_HAPPENING
+	jr nz, MakePalSnowstormTree
+	ld a, [wTimeOfDayPal]
+	cp NITE
+	jr z, .nite
+	cp MORN
+	jr z, .morn
+	cp DUSK
+	jr z, .dusk
+	ld hl, SnowTreeDayPalette
+	jr .cont
+.nite
+	ld hl, SnowTreeNitePalette
+	jr .cont
+.morn
+	ld hl, SnowTreeMornPalette
+	jr .cont
+.dusk
+	ld hl, SnowTreeDuskPalette
+	jr .cont
+.cont
+	ld de, wOBPals + 8 * 7
+	ld bc, 8
+	ld a, $5
+	call FarCopyWRAM
+	ld a, $1
+	ld [hCGBPalUpdate], a
+	ret
+	
+MakePalSnowstormTree:
+	ld a, [wTimeOfDayPal]
+	cp NITE
+	jr z, .nite
+	cp MORN
+	jr z, .morn
+	cp DUSK
+	jr z, .dusk
+	ld hl, SnowstormTreeDayPalette
+	jr .cont
+.nite
+	ld hl, SnowstormTreeNitePalette
+	jr .cont
+.morn
+	ld hl, SnowstormTreeMornPalette
+	jr .cont
+.dusk
+	ld hl, SnowstormTreeDuskPalette
+	jr .cont
+.cont
+	ld de, wOBPals + 8 * 7
+	ld bc, 8
+	ld a, $5
+	call FarCopyWRAM
+	ld a, $1
+	ld [hCGBPalUpdate], a
+	ret
+	
 StandardGrassMornPalette:
 INCLUDE "maps/palettes/bgpals/grass/standard/morn.pal"
 	
@@ -1535,6 +1600,30 @@ INCLUDE "maps/palettes/bgpals/grass/snowstorm/dusk.pal"
 
 SnowstormGrassNitePalette:
 INCLUDE "maps/palettes/bgpals/grass/snowstorm/nite.pal"
+
+SnowTreeMornPalette:
+INCLUDE "maps/palettes/bgpals/grass/snow/tree/morn.pal"
+	
+SnowTreeDayPalette:
+INCLUDE "maps/palettes/bgpals/grass/snow/tree/day.pal"
+
+SnowTreeDuskPalette:
+INCLUDE "maps/palettes/bgpals/grass/snow/tree/dusk.pal"
+
+SnowTreeNitePalette:
+INCLUDE "maps/palettes/bgpals/grass/snow/tree/nite.pal"
+
+SnowstormTreeMornPalette:
+INCLUDE "maps/palettes/bgpals/grass/snowstorm/tree/morn.pal"
+	
+SnowstormTreeDayPalette:
+INCLUDE "maps/palettes/bgpals/grass/snowstorm/tree/day.pal"
+
+SnowstormTreeDuskPalette:
+INCLUDE "maps/palettes/bgpals/grass/snowstorm/tree/dusk.pal"
+
+SnowstormTreeNitePalette:
+INCLUDE "maps/palettes/bgpals/grass/snowstorm/tree/nite.pal"
 	
 Script_earthquake:
 ; parameters:

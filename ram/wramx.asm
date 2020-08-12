@@ -978,7 +978,8 @@ wLusterCityBusinessTrigger:: ds 1
 wLusterSewersB1FFloodedTrigger:: ds 1
 wLusterSewersB2FFloodedTrigger:: ds 1
 wSpookyForestEscortTrigger:: ds 1
-ds 42
+wLusterMallTrigger:: ds 1
+ds 41
 
 ; fight counts
 wJackFightCount::    ds 1

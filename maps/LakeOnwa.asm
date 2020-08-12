@@ -350,7 +350,7 @@ LakeNpc3Text:
 	cont "dangerous."
 	
 	para "I've got my POTIONS"
-	line "and #BALLS."
+	line "and # BALLS."
 	
 	para "I think I'm good"
 	line "to go."

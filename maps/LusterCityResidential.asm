@@ -4,8 +4,16 @@ LusterCityResidential_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, ResidentialCallback
 
-	db 1 ; warp events
+	db 9 ; warp events
 	warp_def 20, 12, 1, LUSTER_SEWERS_B1F_FLOODED
+	warp_def 25, 11, 1, LUSTER_MART
+	warp_def 25, 17, 1, LUSTER_POKECENTER
+	warp_def 24,  7, 1, LUSTER_APARTMENT_1_1F
+	warp_def 34, 11, 1, LUSTER_APARTMENT_2_1F
+	warp_def 34, 17, 1, LUSTER_APARTMENT_3_1F
+	warp_def 44,  6, 1, LUSTER_APARTMENT_4_1F
+	warp_def 44, 11, 1, LUSTER_APARTMENT_5_1F
+	warp_def 44, 17, 1, LUSTER_APARTMENT_6_1F
 
 	db 12 ; coord events
 	xy_trigger 0, 41, 21, 0, LusterCityResidentialLight, 0, 0
@@ -593,11 +601,24 @@ LusterShadyGuy:
 	closetext
 	setevent EVENT_GOT_THE_THING
 	clearevent EVENT_CAN_GET_THE_THING
+	spriteface LUSTERSHADYGUY, UP
 	end
 .alreadygotpackage
-	jumptextfaceplayer LusterShadyGuyText3
+	faceplayer
+	opentext
+	writetext LusterShadyGuyText3
+	waitbutton
+	closetext
+	spriteface LUSTERSHADYGUY, UP
+	end
 .seweropen
-	jumptextfaceplayer LusterShadyGuyText4
+	faceplayer
+	opentext
+	writetext LusterShadyGuyText4
+	waitbutton
+	closetext
+	spriteface LUSTERSHADYGUY, UP
+	end
 	
 LusterTrashcanText1:
 	text "<PLAYER> dug"

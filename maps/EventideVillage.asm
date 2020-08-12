@@ -47,10 +47,12 @@ EventideVillageFlypointCallback:
 	if_equal 4, .purple
 	setevent EVENT_HIDE_OW_OBJECTS_TEAL
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	return
 .purple
 	setevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	return
 	
 EventideVillageNPC1:

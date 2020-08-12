@@ -2013,6 +2013,42 @@ BoarderGroup:
 	db -1 ; end
 
 ; ================
+
+	; BOARDER
+	db "FRANK@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BOARDER
+	db "JOSE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BOARDER
+	db "PETER@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BOARDER
+	db "FRANK@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2031,6 +2067,33 @@ SkierGroup:
 
 	; SKIER
 	db "RHONDA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SKIER
+	db "KIM@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SKIER
+	db "SHERRY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SKIER
+	db "LAURA@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -2435,6 +2498,20 @@ SafariGroup:
 
 ; ================
 ; ================================
+
+
+MallCopGroup:
+; ================================
+; ================
+
+	; PHIL
+	db "PHIL@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 
 
 TowerTycoonGroup:

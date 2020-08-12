@@ -9,6 +9,8 @@ SunbeamPokeCenter_BlockData:
 EventidePokeCenter_BlockData:
 FlickerPokeCenter_BlockData:
 TwinklePokeCenter_BlockData:
+LusterPokeCenter_BlockData:
+LusterMallPokeCenter_BlockData:
 	INCBIN "maps/PokeCenter.ablk.lz"
 
 GlintMart_BlockData:
@@ -17,6 +19,7 @@ SunbeamMart_BlockData:
 EventideMart_BlockData:
 FlickerMart_BlockData:
 TwinkleMart_BlockData:
+LusterMart_BlockData:
 GenericMart_BlockData:: ; used by tilesets/palettes.asm:LoadSpecialMapPalette
 	INCBIN "maps/Mart.ablk.lz"
 
@@ -118,16 +121,32 @@ GlintCity_BlockData:
 	INCBIN "maps/GlintCity.ablk.lz"
 
 GlintApartmentLeft1F_BlockData:
-	INCBIN "maps/Apartment1F1.ablk.lz"
+LusterApartment4_1F_BlockData:
+LusterApartment6_1F_BlockData:
+	INCBIN "maps/Apartment1FRed.ablk.lz"
 	
 GlintApartmentLeft2F_BlockData:
-	INCBIN "maps/Apartment2F1.ablk.lz"
+LusterApartment4_2F_BlockData:
+LusterApartment6_2F_BlockData:
+	INCBIN "maps/Apartment2FRed.ablk.lz"
 	
 GlintApartmentRight1F_BlockData:
-	INCBIN "maps/Apartment1F2.ablk.lz"
+LusterApartment2_1F_BlockData:
+LusterApartment5_1F_BlockData:
+	INCBIN "maps/Apartment1FBlue.ablk.lz"
 	
 GlintApartmentRight2F_BlockData:
-	INCBIN "maps/Apartment2F2.ablk.lz"
+LusterApartment2_2F_BlockData:
+LusterApartment5_2F_BlockData:
+	INCBIN "maps/Apartment2FBlue.ablk.lz"
+	
+LusterApartment1_1F_BlockData:
+LusterApartment3_1F_BlockData:
+	INCBIN "maps/Apartment1FGreen.ablk.lz"
+	
+LusterApartment1_2F_BlockData:
+LusterApartment3_2F_BlockData:
+	INCBIN "maps/Apartment2FGreen.ablk.lz"
 	
 Route3Starglow_BlockData:
 	INCBIN "maps/Route3Starglow.ablk.lz"
@@ -196,6 +215,30 @@ LusterCityShopping_BlockData:
 	
 LusterCityBusiness_BlockData:
 	INCBIN "maps/LusterCityBusiness.ablk.lz"
+	
+LusterMall_BlockData:
+	INCBIN "maps/LusterMall.ablk.lz"
+
+LusterMallElectronicsShop_BlockData:
+	INCBIN "maps/LusterMallElectronicsShop.ablk.lz"
+	
+LusterMallCoffeeShop_BlockData:
+	INCBIN "maps/LusterMallCoffeeShop.ablk.lz"
+	
+LusterMallSkateShop_BlockData:
+	INCBIN "maps/LusterMallSkateShop.ablk.lz"
+	
+LusterMallAntiqueShop_BlockData:
+	INCBIN "maps/LusterMallAntiqueShop.ablk.lz"
+	
+LusterMallHerbShop_BlockData:
+	INCBIN "maps/LusterMallHerbShop.ablk.lz"
+	
+LusterMallStoneShop_BlockData:
+	INCBIN "maps/LusterMallStoneShop.ablk.lz"
+	
+LusterMallBallShop_BlockData:
+	INCBIN "maps/LusterMallBallShop.ablk.lz"
 	
 LusterSewersB1FFlooded_BlockData:
 	INCBIN "maps/LusterSewersB1FFlooded.ablk.lz"

@@ -30,9 +30,13 @@ endr
 TrainerClassDVsAndPersonality: ; 270d6
 	;  EVs  HP   Def  SAt  Ability  Gender
 	;  *    Atk  Spd  SDf  Nature   Form
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; playerm
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; playerf
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; playerp
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; cory
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; cora
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; pippi
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; red
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; leaf
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; gold
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; kris
 	db 252, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; stanley
 	db 252, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; rodney
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE ; wendy

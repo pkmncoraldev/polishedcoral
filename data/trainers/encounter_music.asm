@@ -1,8 +1,12 @@
 TrainerEncounterMusic: ; e9027
 	db MUSIC_NONE
-	db MUSIC_NONE			 		; playerm
-	db MUSIC_NONE			 		; playerf
-	db MUSIC_NONE			 		; playerp
+	db MUSIC_NONE			 		; cory
+	db MUSIC_NONE			 		; cora
+	db MUSIC_NONE			 		; pippi
+	db MUSIC_NONE			 		; red
+	db MUSIC_NONE			 		; leaf
+	db MUSIC_NONE			 		; gold
+	db MUSIC_NONE			 		; kris
 	db MUSIC_NONE					; stanley
 	db MUSIC_NONE					; rodney
 	db MUSIC_NONE					; wendy

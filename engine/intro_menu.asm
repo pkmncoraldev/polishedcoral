@@ -1047,10 +1047,10 @@ DrawIntroPlayerPic:
 	ld a, [wPlayerGender]
 	bit 0, a
 	jr z, .male
-	ld a, PLAYER_FEMALE
+	ld a, PLAYER_CORA
 	jr .ok
 .male
-	ld a, PLAYER_MALE
+	ld a, PLAYER_CORY
 .ok
 	ld [wTrainerClass], a
 Intro_PrepTrainerPic: ; 619c

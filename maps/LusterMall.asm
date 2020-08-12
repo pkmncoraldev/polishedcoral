@@ -5,7 +5,7 @@ LusterMall_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 20 ; warp events
+	db 22 ; warp events
 	warp_def 25, 14, 3, LUSTER_CITY_SHOPPING
 	warp_def 25, 15, 4, LUSTER_CITY_SHOPPING
 	warp_def 25, 18, 5, LUSTER_CITY_SHOPPING
@@ -26,6 +26,8 @@ LusterMall_MapScriptHeader:
 	warp_def 15,  9, 2, LUSTER_MALL_STONE_SHOP
 	warp_def 15, 24, 1, LUSTER_MALL_BALL_SHOP
 	warp_def 15, 25, 2, LUSTER_MALL_BALL_SHOP
+	warp_def 15, 30, 1, LUSTER_MALL_CLOTHES_SHOP
+	warp_def 15, 31, 2, LUSTER_MALL_CLOTHES_SHOP
 
 	db 8 ; coord events
 	coord_event 11, 17, 0, LusterMallEscalator1
@@ -51,8 +53,10 @@ LusterMall_MapScriptHeader:
 	signpost 16, 32, SIGNPOST_JUMPTEXT, LusterMallClothesSignText
 	
 
-	db 1 ; object events
+	db 3 ; object events
 	person_event SPRITE_OFFICER, 0, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_KOFFING_BEAN,  5,  8, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_KOFFING_BEAN,  5,  9, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 
 	const_def 1 ; object constants
 	const LUSTERMALLCOP
@@ -165,9 +169,10 @@ LusterMallEscalator3:
 	closetext
 	pause 5
 	disappear LUSTERMALLCOP
-	moveperson LUSTERMALLCOP, $15, $5
+	moveperson LUSTERMALLCOP, $14, $5
 	appear LUSTERMALLCOP
 	applymovement LUSTERMALLCOP, Movement_LusterMallCop3
+	spriteface LUSTERMALLCOP, DOWN
 	pause 5
 	opentext
 	checkevent EVENT_KICKED_OUT_OF_MALL_3
@@ -211,7 +216,7 @@ LusterMallEscalator4:
 	closetext
 	pause 5
 	disappear LUSTERMALLCOP
-	moveperson LUSTERMALLCOP, $15, $5
+	moveperson LUSTERMALLCOP, $14, $5
 	appear LUSTERMALLCOP
 	applymovement LUSTERMALLCOP, Movement_LusterMallCop3
 	applyonemovement LUSTERMALLCOP, step_right
@@ -332,8 +337,8 @@ LusterMallAntiqueSignText:
 	text "BATON PASS"
 	
 	para "“Passing on old"
-	line "treasures to"
-	cont "today.”"
+	line "treasures to new"
+	cont "generations.”"
 	done
 
 LusterMallHerbSignText:
@@ -483,4 +488,5 @@ Movement_LusterMallCop3:
 	step_down
 	step_down
 	step_down
+	step_right
 	step_end

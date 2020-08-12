@@ -33,7 +33,15 @@ CHARMED_SHINY_NUMERATOR EQU 48 ; 48/65536 = 3/4096
 ; gender values
 MALE   EQU 0
 FEMALE EQU 1
+
+; playergender values
+CORY   EQU 0
+CORA   EQU 1
 PIPPI  EQU 2
+RED    EQU 3
+LEAF   EQU 4
+GOLD   EQU 5
+KRIS   EQU 6
 
 ; movement
 	const_def

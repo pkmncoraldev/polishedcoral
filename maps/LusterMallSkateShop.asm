@@ -28,6 +28,6 @@ LusterMallSkateShopShelfText:
 	done
 	
 LusterMallSkateShopSkateboardText:
-	text "A variety of skate-"
-	line "board decks."
+	text "A variety of cool"
+	line "skateboard decks."
 	done

@@ -11,21 +11,52 @@ _ReplaceKrisSprite:: ; 14135
 
 GetPlayerSprite: ; 14183
 ; Get Chris or Kris's sprite.
-	ld hl, .Chris
-	ld a, [wPlayerSpriteSetupFlags]
-	bit 2, a
-	jr nz, .go
+;	ld hl, .Chris
+;	ld a, [wPlayerSpriteSetupFlags]
+;	bit 2, a
+;	jr nz, .go
 	
 	ld a, [wPlayerGender]
+	cp CORY
+	jr z, .loadcory
+	cp CORA
+	jr z, .loadcora
 	cp PIPPI
-	jr nz, .notpippi
+	jr z, .loadpippi
+	cp RED
+	jr z, .loadred
+	cp LEAF
+	jr z, .loadleaf
+	cp GOLD
+	jr z, .loadgold
+	cp KRIS
+	jr z, .loadkris
+	
+.loadcory
+	ld hl, .Cory
+	jr .go
+	
+.loadcora
+	ld hl, .Cora
+	jr .go
+	
+.loadpippi
 	ld hl, .Pippi
 	jr .go
 	
-.notpippi
-	ld a, [wPlayerGender]
-	bit 0, a
-	jr z, .go
+.loadred
+	ld hl, .Red
+	jr .go
+	
+.loadleaf
+	ld hl, .Leaf
+	jr .go
+	
+.loadgold
+	ld hl, .Gold
+	jr .go
+	
+.loadkris
 	ld hl, .Kris
 
 .go
@@ -42,7 +73,7 @@ GetPlayerSprite: ; 14183
 ; Any player state not in the array defaults to Chris's sprite.
 	xor a ; ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
-	ld a, SPRITE_CHRIS
+	ld a, SPRITE_CORY
 	jr .finish
 
 .good
@@ -53,28 +84,28 @@ GetPlayerSprite: ; 14183
 	ld [wPlayerObjectSprite], a
 	ret
 
-.Chris:
-	db PLAYER_NORMAL,    SPRITE_CHRIS
-	db PLAYER_BIKE,      SPRITE_CHRIS_BIKE
-	db PLAYER_SURF,      SPRITE_CHRIS_SURF
+.Cory:
+	db PLAYER_NORMAL,    SPRITE_CORY
+	db PLAYER_BIKE,      SPRITE_CORY_BIKE
+	db PLAYER_SURF,      SPRITE_CORY_SURF
 	db PLAYER_SURF_PIKA, SPRITE_SURFING_PIKACHU
-	db PLAYER_RUN,       SPRITE_CHRIS_RUN
-	db PLAYER_SURF_LAVA, SPRITE_CHRIS_SURF
+	db PLAYER_RUN,       SPRITE_CORY_RUN
+	db PLAYER_SURF_LAVA, SPRITE_CORY_SURF
 	db PLAYER_DODRIO,	 SPRITE_DODRIO_RUN
-	db PLAYER_SITTING,   SPRITE_CHRIS_MISC
-	db $ff
-
-.Kris:
-	db PLAYER_NORMAL,    SPRITE_KRIS
-	db PLAYER_BIKE,      SPRITE_KRIS_BIKE
-	db PLAYER_SURF,      SPRITE_KRIS_SURF
-	db PLAYER_SURF_PIKA, SPRITE_SURFING_PIKACHU
-	db PLAYER_RUN,       SPRITE_KRIS_RUN
-	db PLAYER_SURF_LAVA, SPRITE_KRIS_SURF
-	db PLAYER_DODRIO,	 SPRITE_DODRIO_RUN
-	db PLAYER_SITTING,   SPRITE_KRIS_MISC
+	db PLAYER_SITTING,   SPRITE_CORY_MISC
 	db $ff
 	
+.Cora:
+	db PLAYER_NORMAL,    SPRITE_CORA
+	db PLAYER_BIKE,      SPRITE_CORA_BIKE
+	db PLAYER_SURF,      SPRITE_CORA_SURF
+	db PLAYER_SURF_PIKA, SPRITE_SURFING_PIKACHU
+	db PLAYER_RUN,       SPRITE_CORA_RUN
+	db PLAYER_SURF_LAVA, SPRITE_CORA_SURF
+	db PLAYER_DODRIO,	 SPRITE_DODRIO_RUN
+	db PLAYER_SITTING,   SPRITE_CORA_MISC
+	db $ff
+
 .Pippi:
 	db PLAYER_NORMAL,    SPRITE_PIPPI
 	db PLAYER_BIKE,      SPRITE_PIPPI_BIKE
@@ -85,6 +116,51 @@ GetPlayerSprite: ; 14183
 	db PLAYER_DODRIO,	 SPRITE_DODRIO_RUN
 	db PLAYER_SITTING,   SPRITE_PIPPI
 	db $ff
+	
+.Red:
+	db PLAYER_NORMAL,    SPRITE_RED
+	db PLAYER_BIKE,      SPRITE_RED_BIKE
+	db PLAYER_SURF,      SPRITE_RED_SURF
+	db PLAYER_SURF_PIKA, SPRITE_SURFING_PIKACHU
+	db PLAYER_RUN,       SPRITE_RED_RUN
+	db PLAYER_SURF_LAVA, SPRITE_RED_SURF
+	db PLAYER_DODRIO,	 SPRITE_DODRIO_RUN
+	db PLAYER_SITTING,   SPRITE_RED_MISC
+	db $ff
+	
+.Leaf:
+	db PLAYER_NORMAL,    SPRITE_LEAF
+	db PLAYER_BIKE,      SPRITE_LEAF_BIKE
+	db PLAYER_SURF,      SPRITE_LEAF_SURF
+	db PLAYER_SURF_PIKA, SPRITE_SURFING_PIKACHU
+	db PLAYER_RUN,       SPRITE_LEAF_RUN
+	db PLAYER_SURF_LAVA, SPRITE_LEAF_SURF
+	db PLAYER_DODRIO,	 SPRITE_DODRIO_RUN
+	db PLAYER_SITTING,   SPRITE_LEAF_MISC
+	db $ff
+	
+.Gold:
+	db PLAYER_NORMAL,    SPRITE_GOLD
+	db PLAYER_BIKE,      SPRITE_GOLD_BIKE
+	db PLAYER_SURF,      SPRITE_GOLD_SURF
+	db PLAYER_SURF_PIKA, SPRITE_SURFING_PIKACHU
+	db PLAYER_RUN,       SPRITE_GOLD_RUN
+	db PLAYER_SURF_LAVA, SPRITE_GOLD_SURF
+	db PLAYER_DODRIO,	 SPRITE_DODRIO_RUN
+	db PLAYER_SITTING,   SPRITE_GOLD_MISC
+	db $ff
+	
+.Kris:
+	db PLAYER_NORMAL,    SPRITE_KRIS
+	db PLAYER_BIKE,      SPRITE_KRIS_BIKE
+	db PLAYER_SURF,      SPRITE_KRIS_SURF
+	db PLAYER_SURF_PIKA, SPRITE_SURFING_PIKACHU
+	db PLAYER_RUN,       SPRITE_KRIS_RUN
+	db PLAYER_SURF_LAVA, SPRITE_KRIS_SURF
+	db PLAYER_DODRIO,	 SPRITE_DODRIO_RUN
+	db PLAYER_SITTING,   SPRITE_KRIS_MISC
+	db $ff
+
 ; 141c9
 
 

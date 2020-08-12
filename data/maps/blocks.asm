@@ -240,6 +240,9 @@ LusterMallStoneShop_BlockData:
 LusterMallBallShop_BlockData:
 	INCBIN "maps/LusterMallBallShop.ablk.lz"
 	
+LusterMallClothesShop_BlockData:
+	INCBIN "maps/LusterMallClothesShop.ablk.lz"
+	
 LusterSewersB1FFlooded_BlockData:
 	INCBIN "maps/LusterSewersB1FFlooded.ablk.lz"
 	

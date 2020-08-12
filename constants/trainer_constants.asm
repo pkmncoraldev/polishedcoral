@@ -12,11 +12,19 @@ PLAYER_M EQU __enum__
 
 PLAYER_F EQU __enum__
 
-	trainerclass PLAYER_MALE
+	trainerclass PLAYER_CORY
 
-	trainerclass PLAYER_FEMALE
+	trainerclass PLAYER_CORA
 	
 	trainerclass PLAYER_PIPPI
+	
+	trainerclass PLAYER_RED
+	
+	trainerclass PLAYER_LEAF
+	
+	trainerclass PLAYER_GOLD
+	
+	trainerclass PLAYER_KRIS
 	
 	trainerclass STANLEY
 

@@ -129,7 +129,7 @@ LoadSpecialMapPalette: ; 494ac
 	cp TILESET_MALL_1
 	jp z, .mall1
 	cp TILESET_MALL_2
-	jp z, .mall1
+	jp z, .mall2
 	cp TILESET_SEWER
 	jp z, .sewer
 	jp .do_nothing
@@ -205,6 +205,10 @@ LoadSpecialMapPalette: ; 494ac
 	
 .mall1
 	ld hl, Mall1Palette
+	jp LoadSevenBGPalettes
+	
+.mall2
+	ld hl, Mall2Palette
 	jp LoadSevenBGPalettes
 	
 .sewer
@@ -340,6 +344,9 @@ INCLUDE "maps/palettes/bgpals/train.pal"
 
 Mall1Palette:
 INCLUDE "maps/palettes/bgpals/lustermall1.pal"
+
+Mall2Palette:
+INCLUDE "maps/palettes/bgpals/lustermall2.pal"
 
 LusterSewerPalette:
 INCLUDE "maps/palettes/bgpals/lustersewer.pal"

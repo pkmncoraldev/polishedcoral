@@ -729,9 +729,13 @@ wPlayerData::
 wPlayerID:: ds 2
 
 wPlayerGender::
-; 0 male
-; 1 female
+; 0 cory
+; 1 cora
 ; 2 pippi
+; 3 red
+; 4 leaf
+; 5 gold
+; 6 kris
 	ds 1
 
 wPlayerName:: ds NAME_LENGTH

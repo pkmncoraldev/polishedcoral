@@ -225,9 +225,10 @@ MAP_NONE   EQU 0
 	map_const LUSTER_MALL_POKECENTER,                      6,  4 ; 18
 	map_const LUSTER_MALL_ELECTRONICS_SHOP,				   5,  3 ; 19
 	map_const LUSTER_MALL_COFFEE_SHOP,					   5,  4 ; 20
-	map_const LUSTER_MALL_ANTIQUE_SHOP,					   4,  4 ; 21
-	map_const LUSTER_MALL_SKATE_SHOP,					   4,  3 ; 22
+	map_const LUSTER_MALL_SKATE_SHOP,					   4,  3 ; 21
+	map_const LUSTER_MALL_ANTIQUE_SHOP,					   4,  4 ; 22
 	map_const LUSTER_MALL_HERB_SHOP,					   4,  3 ; 23
 	map_const LUSTER_MALL_STONE_SHOP,					   4,  4 ; 24
 	map_const LUSTER_MALL_BALL_SHOP,					   4,  4 ; 25
+	map_const LUSTER_MALL_CLOTHES_SHOP,					   6,  4 ; 26
 	

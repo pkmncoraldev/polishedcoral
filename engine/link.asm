@@ -248,7 +248,7 @@ Gen2ToGen2LinkComms: ; 28177
 	ld a, [wLinkMode]
 	cp LINK_COLOSSEUM
 	jr nz, .ready_to_trade
-	ld a, PLAYER_MALE
+	ld a, PLAYER_CORY
 	ld [wOtherTrainerClass], a
 	call ClearScreen
 	call Link_WaitBGMap

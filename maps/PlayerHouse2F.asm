@@ -175,24 +175,78 @@ PlayerHouse2FInitializeRoom:
 	iftrue .SkipInizialization
 	callasm FixPlayerPalKrisHouse
 	readvar VAR_PLAYER_GENDER
-	if_equal FEMALE, .girl
+	if_equal CORY, .cory
+	if_equal CORA, .cora
 	if_equal PIPPI, .pippi
-	setevent EVENT_PLAYER_IS_MALE
-	clearevent EVENT_PLAYER_IS_FEMALE
+.cory
+	setevent EVENT_PLAYER_IS_CORY
+	clearevent EVENT_PLAYER_IS_CORA
 	clearevent EVENT_PLAYER_IS_PIPPI
-	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CHRIS
+	clearevent EVENT_PLAYER_IS_RED
+	clearevent EVENT_PLAYER_IS_LEAF
+	clearevent EVENT_PLAYER_IS_GOLD
+	clearevent EVENT_PLAYER_IS_KRIS
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORY
 	jump .done
-.girl
-	setevent EVENT_PLAYER_IS_FEMALE
+.cora
+	clearevent EVENT_PLAYER_IS_CORY
+	setevent EVENT_PLAYER_IS_CORA
 	clearevent EVENT_PLAYER_IS_PIPPI
-	clearevent EVENT_PLAYER_IS_MALE
-	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_KRIS
+	clearevent EVENT_PLAYER_IS_RED
+	clearevent EVENT_PLAYER_IS_LEAF
+	clearevent EVENT_PLAYER_IS_GOLD
+	clearevent EVENT_PLAYER_IS_KRIS
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORA
 	jump .done
 .pippi
+	clearevent EVENT_PLAYER_IS_CORY
+	clearevent EVENT_PLAYER_IS_CORA
 	setevent EVENT_PLAYER_IS_PIPPI
-	clearevent EVENT_PLAYER_IS_MALE
-	clearevent EVENT_PLAYER_IS_FEMALE
+	clearevent EVENT_PLAYER_IS_RED
+	clearevent EVENT_PLAYER_IS_LEAF
+	clearevent EVENT_PLAYER_IS_GOLD
+	clearevent EVENT_PLAYER_IS_KRIS
 	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_PIPPI
+	jump .done
+.red
+	clearevent EVENT_PLAYER_IS_CORY
+	clearevent EVENT_PLAYER_IS_CORA
+	clearevent EVENT_PLAYER_IS_PIPPI
+	setevent EVENT_PLAYER_IS_RED
+	clearevent EVENT_PLAYER_IS_LEAF
+	clearevent EVENT_PLAYER_IS_GOLD
+	clearevent EVENT_PLAYER_IS_KRIS
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_RED
+	jump .done
+.leaf
+	clearevent EVENT_PLAYER_IS_CORY
+	clearevent EVENT_PLAYER_IS_CORA
+	clearevent EVENT_PLAYER_IS_PIPPI
+	clearevent EVENT_PLAYER_IS_RED
+	setevent EVENT_PLAYER_IS_LEAF
+	clearevent EVENT_PLAYER_IS_GOLD
+	clearevent EVENT_PLAYER_IS_KRIS
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_LEAF
+	jump .done
+.gold
+	clearevent EVENT_PLAYER_IS_CORY
+	clearevent EVENT_PLAYER_IS_CORA
+	clearevent EVENT_PLAYER_IS_PIPPI
+	clearevent EVENT_PLAYER_IS_RED
+	clearevent EVENT_PLAYER_IS_LEAF
+	setevent EVENT_PLAYER_IS_GOLD
+	clearevent EVENT_PLAYER_IS_KRIS
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_GOLD
+	jump .done
+.kris
+	clearevent EVENT_PLAYER_IS_CORY
+	clearevent EVENT_PLAYER_IS_CORA
+	clearevent EVENT_PLAYER_IS_PIPPI
+	clearevent EVENT_PLAYER_IS_RED
+	clearevent EVENT_PLAYER_IS_LEAF
+	clearevent EVENT_PLAYER_IS_GOLD
+	setevent EVENT_PLAYER_IS_KRIS
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_KRIS
 .done
 	jumpstd initializeevents
 	return

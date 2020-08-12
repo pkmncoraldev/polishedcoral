@@ -386,6 +386,7 @@ ENDM
 	map_attributes LusterMallHerbShop, LUSTER_MALL_HERB_SHOP, 0, 0
 	map_attributes LusterMallStoneShop, LUSTER_MALL_STONE_SHOP, 0, 0
 	map_attributes LusterMallBallShop, LUSTER_MALL_BALL_SHOP, 0, 0
+	map_attributes LusterMallClothesShop, LUSTER_MALL_CLOTHES_SHOP, 0, 0
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $7, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0

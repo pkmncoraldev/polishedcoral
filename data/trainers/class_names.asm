@@ -1,7 +1,11 @@
 TrainerClassNames::
-	db "#MON TRAINER@"     ; PLAYER_MALE
-	db "#MON TRAINER@"     ; PLAYER_FEMALE
+	db "#MON TRAINER@"     ; PLAYER_CORY
+	db "#MON TRAINER@"     ; PLAYER_CORA
 	db "CUTIE PIE@"    	   ; PLAYER_PIPPI
+	db "#MON TRAINER@"     ; PLAYER_RED
+	db "#MON TRAINER@"     ; PLAYER_LEAF
+	db "#MON TRAINER@"     ; PLAYER_GOLD
+	db "#MON TRAINER@"     ; PLAYER_KRIS
 	db "LEADER@"           ; STANLEY
 	db "LEADER@"           ; RODNEY
 	db "LEADER@"           ; WENDY

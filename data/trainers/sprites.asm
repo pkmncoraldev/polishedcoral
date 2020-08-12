@@ -1,20 +1,24 @@
 BTTrainerClassSprites:
-	db SPRITE_CHRIS         ; PLAYER_MALE
-	db SPRITE_KRIS          ; PLAYER_FEMALE
+	db SPRITE_CORY          ; PLAYER_CORY
+	db SPRITE_CORA          ; PLAYER_CORA
 	db SPRITE_PIPPI         ; PLAYER_PIPPI
+	db SPRITE_RED           ; PLAYER_RED
+	db SPRITE_LEAF          ; PLAYER_LEAF
+	db SPRITE_GOLD          ; PLAYER_GOLD
+	db SPRITE_KRIS          ; PLAYER_KRIS
 	db SPRITE_STANLEY       ; STANLEY
 	db SPRITE_RODNEY        ; RODNEY
-	db SPRITE_CHRIS      	; WENDY
-	db SPRITE_CHRIS         ; MORTY
-	db SPRITE_CHRIS         ; CHUCK
-	db SPRITE_CHRIS      	; JASMINE
-	db SPRITE_CHRIS         ; PRYCE
-	db SPRITE_CHRIS         ; CLAIR
-	db SPRITE_CHRIS         ; WILL
-	db SPRITE_CHRIS         ; KOGA
-	db SPRITE_CHRIS         ; BRUNO
-	db SPRITE_CHRIS         ; KAREN
-	db SPRITE_CHRIS         ; CHAMPION
+	db SPRITE_GOLD      	; WENDY
+	db SPRITE_GOLD          ; MORTY
+	db SPRITE_GOLD          ; CHUCK
+	db SPRITE_GOLD      	; JASMINE
+	db SPRITE_GOLD          ; PRYCE
+	db SPRITE_GOLD          ; CLAIR
+	db SPRITE_GOLD          ; WILL
+	db SPRITE_GOLD          ; KOGA
+	db SPRITE_GOLD          ; BRUNO
+	db SPRITE_GOLD          ; KAREN
+	db SPRITE_GOLD          ; CHAMPION
 	db SPRITE_COLBY         ; RIVAL
 	db SPRITE_YOUNGSTER     ; YOUNGSTER
 	db SPRITE_BUG_CATCHER   ; BUG_CATCHER
@@ -63,16 +67,16 @@ BTTrainerClassSprites:
 	db SPRITE_COOLTRAINER_M ; COOLTRAINERM
 	db SPRITE_COOLTRAINER_F ; COOLTRAINERF
 	db SPRITE_SPRUCE        ; PROF_SPRUCE
-	db SPRITE_CHRIS         ; TeacherFast
-	db SPRITE_CHRIS         ; TrioBroR
-	db SPRITE_CHRIS         ; TrioBroB
-	db SPRITE_CHRIS         ; TioBroY
-	db SPRITE_CHRIS         ; Disguiseman
-	db SPRITE_CHRIS         ; BikiniP
-	db SPRITE_CHRIS         ; BikiniR
-	db SPRITE_CHRIS         ; BikiniY
-	db SPRITE_CHRIS         ; Delinquentm
-	db SPRITE_CHRIS         ; Delinquentf
-	db SPRITE_CHRIS         ; Safari
-	db SPRITE_CHRIS         ; MallCop
-	db SPRITE_CHRIS         ; TOWERTYCOON
+	db SPRITE_GOLD         ; TeacherFast
+	db SPRITE_GOLD         ; TrioBroR
+	db SPRITE_GOLD         ; TrioBroB
+	db SPRITE_GOLD         ; TioBroY
+	db SPRITE_GOLD         ; Disguiseman
+	db SPRITE_GOLD         ; BikiniP
+	db SPRITE_GOLD         ; BikiniR
+	db SPRITE_GOLD         ; BikiniY
+	db SPRITE_GOLD         ; Delinquentm
+	db SPRITE_GOLD         ; Delinquentf
+	db SPRITE_GOLD         ; Safari
+	db SPRITE_GOLD         ; MallCop
+	db SPRITE_GOLD         ; TOWERTYCOON

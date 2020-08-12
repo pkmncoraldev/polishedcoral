@@ -840,6 +840,8 @@ LoadMapPals:
 	jp z, .snow
 	cp TILESET_LUSTER
 	jp z, .luster
+	cp TILESET_MALL_1
+	jp z, .lustermall
 	cp TILESET_SEWER
 	jp z, .sewer
 	jp .normal
@@ -1066,6 +1068,14 @@ LoadMapPals:
 	call FarCopyWRAM
 	ret
 	
+.lustermall
+	ld hl, MapObjectPalsLusterMall
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+	
 .sailboat
 	ld a, [wMapNumber]
 	cp MAP_SUNSET_BAY
@@ -1244,6 +1254,9 @@ INCLUDE "maps/palettes/obpals/obsailboat.pal"
 
 MapObjectPalsLuster::
 INCLUDE "maps/palettes/obpals/obluster.pal"
+
+MapObjectPalsLusterMall::
+INCLUDE "maps/palettes/obpals/oblustermall.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

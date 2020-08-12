@@ -1,7 +1,11 @@
 TrainerPicPointers::
-	dba PlayermPic
-	dba PlayerfPic
-	dba PlayerpPic
+	dba CoryPic
+	dba CoraPic
+	dba PippiPic
+	dba RedPic
+	dba LeafPic
+	dba GoldPic
+	dba KrisPic
 	dba StanleyPic
 	dba RodneyPic
 	dba WendyPic

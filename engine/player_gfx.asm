@@ -1,28 +1,50 @@
 GetPlayerIcon: ; 8832c
 ; Get the player icon corresponding to gender
 
-; Pippi Mode
 	ld a, [wPlayerGender]
+	cp CORY
+	jr z, .cory
+	cp CORA
+	jr z, .cora
 	cp PIPPI
-	jr nz, .notpippi
+	jr z, .pippi
+	cp RED
+	jr z, .red
+	cp LEAF
+	jr z, .leaf
+	cp GOLD
+	jr z, .gold
+	cp KRIS
+	jr z, .kris
+	
+.cory
+	ld de, CorySpriteGFX
+	ld b, BANK(CorySpriteGFX)
+	ret
+.cora
+	ld de, CoraSpriteGFX
+	ld b, BANK(CoraSpriteGFX)
+	ret
+.pippi
 	ld de, PippiSpriteGFX
 	ld b, BANK(PippiSpriteGFX)
-	ret	
-	
-.notpippi
-; Male
-	ld de, ChrisSpriteGFX
-	ld b, BANK(ChrisSpriteGFX)
-
-	ld a, [wPlayerGender]
-	bit 0, a
-	ret z
-
-; Female
+	ret
+.red
+	ld de, RedSpriteGFX
+	ld b, BANK(RedSpriteGFX)
+	ret
+.leaf
+	ld de, LeafSpriteGFX
+	ld b, BANK(LeafSpriteGFX)
+	ret
+.gold
+	ld de, GoldSpriteGFX
+	ld b, BANK(GoldSpriteGFX)
+	ret
+.kris
 	ld de, KrisSpriteGFX
 	ld b, BANK(KrisSpriteGFX)
 	ret
-
 
 GetCardPic: ; 8833e
 	ld a, [wPlayerGender]

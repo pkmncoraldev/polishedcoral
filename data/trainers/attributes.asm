@@ -1,18 +1,42 @@
 TrainerClassAttributes: ; 3959c
 
-; Playerm
+; Cory
 	db 0, 0 ; items
 	db 30 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE
 	
-; Playerf
+; Cora
 	db 0, 0 ; items
 	db 30 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE
 	
-; Playerp
+; Pippi
+	db 0, 0 ; items
+	db 30 ; base reward
+	dw AI_BASIC + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE
+	
+; Red
+	db 0, 0 ; items
+	db 30 ; base reward
+	dw AI_BASIC + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE
+	
+; Leaf
+	db 0, 0 ; items
+	db 30 ; base reward
+	dw AI_BASIC + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE
+	
+; Gold
+	db 0, 0 ; items
+	db 30 ; base reward
+	dw AI_BASIC + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE
+	
+; Kris
 	db 0, 0 ; items
 	db 30 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY

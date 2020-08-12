@@ -1,9 +1,13 @@
 ; Each trainer class has its own group. See trainers.asm.
 
 TrainerGroups: ; 0x39999
-	dba PlayermGroup
-	dba PlayerfGroup
-	dba PlayerpGroup
+	dba CoryGroup
+	dba CoraGroup
+	dba PippiGroup
+	dba RedGroup
+	dba LeafGroup
+	dba GoldGroup
+	dba KrisGroup
 	dba StanleyGroup
 	dba RodneyGroup
 	dba WendyGroup

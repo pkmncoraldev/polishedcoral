@@ -8,7 +8,7 @@ EvolutionMoves::
 	db NO_MOVE      ; SQUIRTLE
 	db NO_MOVE      ; WARTORTLE
 	db FLASH_CANNON ; BLASTOISE
-	db NO_MOVE      ; CATERPIE
+	db NO_MOVE      ; PIKIPEK
 	db DEFENSE_CURL ; METAPOD
 	db GUST         ; BUTTERFREE
 	db NO_MOVE      ; WEEDLE

@@ -1,6 +1,6 @@
 ContestMons:
 	;   %, species,   min, max
-	db 15, CATERPIE,    7, 18
+	db 15, PIKIPEK,    7, 18
 	db 15, WEEDLE,      7, 18
 	db 10, METAPOD,     9, 18
 	db 10, KAKUNA,      9, 18

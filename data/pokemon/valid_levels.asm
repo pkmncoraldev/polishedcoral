@@ -10,7 +10,7 @@ ValidPokemonLevels:
 	db   1,  15 ; Squirtle
 	db  16,  35 ; Wartortle
 	db  36, 100 ; Blastoise
-	db   1,   6 ; Caterpie
+	db   1,   6 ; Pikipek
 	db   7,   9 ; Metapod
 	db  10, 100 ; Butterfree
 	db   1,   6 ; Weedle

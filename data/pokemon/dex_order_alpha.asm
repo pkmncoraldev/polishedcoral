@@ -16,7 +16,7 @@ AlphabeticalPokedexOrder:
 	db BLISSEY
 	db BULBASAUR
 	db BUTTERFREE
-	db CATERPIE
+	db PIKIPEK
 	db CELEBI
 	db CHANSEY
 	db CHARIZARD

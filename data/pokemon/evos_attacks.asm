@@ -202,15 +202,15 @@ CaterpieEvosAttacks:
 MetapodEvosAttacks:
 	db EVOLVE_LEVEL, 10, BUTTERFREE
 	db 0 ; no more evolutions
-	db 1, TACKLE ; Caterpie move
-	db 1, STRING_SHOT ; Caterpie move
+	db 1, TACKLE ; Pikipek move
+	db 1, STRING_SHOT ; Pikipek move
 	db 1, DEFENSE_CURL ; Harden → similar move
 	db 0 ; no more level-up moves
 
 ButterfreeEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE ; Caterpie move
-	db 1, STRING_SHOT ; Caterpie move
+	db 1, TACKLE ; Pikipek move
+	db 1, STRING_SHOT ; Pikipek move
 	db 1, GUST
 	db 11, CONFUSION
 	db 13, POISONPOWDER

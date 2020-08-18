@@ -15,13 +15,13 @@ BugContestant_BugCatcherDon:
 	db BUG_CATCHER, 1
 	dbw KAKUNA,     300
 	dbw METAPOD,    285
-	dbw CATERPIE,   226
+	dbw PIKIPEK,   226
 
 BugContestant_BugCatcherEd:
 	db BUG_CATCHER, 2
 	dbw YANMA,      286
 	dbw BUTTERFREE, 251
-	dbw CATERPIE,   237
+	dbw PIKIPEK,   237
 
 BugContestant_CooltrainerMNick:
 	db COOLTRAINERM, 1
@@ -39,7 +39,7 @@ BugContestant_BugCatcherBenny:
 	db BUG_CATCHER, 3
 	dbw BUTTERFREE, 318
 	dbw WEEDLE,     295
-	dbw CATERPIE,   285
+	dbw PIKIPEK,   285
 
 BugContestant_CamperBarry:
 	db CAMPER, 1
@@ -51,7 +51,7 @@ BugContestant_PicnickerCindy:
 	db PICNICKER, 1
 	dbw BUTTERFREE, 341
 	dbw METAPOD,    301
-	dbw CATERPIE,   264
+	dbw PIKIPEK,   264
 
 BugContestant_BugCatcherJosh:
 	db BUG_CATCHER, 4
@@ -63,7 +63,7 @@ BugContestant_SchoolboyJohnny:
 	db SCHOOLBOY, 1
 	dbw WEEDLE,     270
 	dbw PINSIR,     282
-	dbw CATERPIE,   251
+	dbw PIKIPEK,   251
 
 BugContestant_SchoolboyKipp:
 	db SCHOOLBOY, 2

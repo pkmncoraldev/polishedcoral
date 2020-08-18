@@ -4,7 +4,7 @@ SpriteMons:
 	db RAICHU
 	db LEDYBA
 	db ABRA ; BRELOOM
-	db CATERPIE
+	db PIKIPEK
 	db GROWLITHE
 	db CUBONE
 	db SMEARGLE

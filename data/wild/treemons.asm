@@ -107,7 +107,7 @@ TreeMons6:
 	db -1
 	; rare
 	db 50, HOOTHOOT,   10
-	db 15, CATERPIE,   10
+	db 15, PIKIPEK,   10
 	db 15, WEEDLE,     10
 	db 10, HOOTHOOT,   10
 	db  5, METAPOD,    10

@@ -12,7 +12,7 @@ MenuMonIconColors::
 	iconpal BLUE, TEAL ; SQUIRTLE
 	iconpal BLUE, TEAL ; WARTORTLE
 	iconpal BLUE, TEAL ; BLASTOISE
-	iconpal GREEN, PINK ; CATERPIE
+	iconpal GREEN, PINK ; PIKIPEK
 	iconpal GREEN, RED ; METAPOD
 	iconpal BLUE, RED ; BUTTERFREE
 	iconpal BROWN, PINK ; WEEDLE

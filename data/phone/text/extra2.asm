@@ -1419,12 +1419,12 @@ UnknownText_0x17674f: ; 0x17674f
 
 	para "I did once, but"
 	line "all I could catch"
-	cont "was a Caterpie."
+	cont "was a Pikipek."
 
 	para "But guess what!"
 
 	para "I won with that"
-	line "Caterpie. Isn't"
+	line "Pikipek. Isn't"
 	cont "that great?"
 	done
 ; 0x176816

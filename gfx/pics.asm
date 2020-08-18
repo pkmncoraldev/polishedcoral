@@ -45,8 +45,8 @@ SECTION "Pokemon Pics 2", ROMX
 
 BlastoiseFrontpic:        INCBIN "gfx/pokemon/blastoise/front.2bpp.lz"
 BlastoiseBackpic:         INCBIN "gfx/pokemon/blastoise/back.2bpp.lz"
-CaterpieFrontpic:         INCBIN "gfx/pokemon/caterpie/front.2bpp.lz"
-CaterpieBackpic:          INCBIN "gfx/pokemon/caterpie/back.2bpp.lz"
+CaterpieFrontpic:         INCBIN "gfx/pokemon/pikipek/front.2bpp.lz"
+CaterpieBackpic:          INCBIN "gfx/pokemon/pikipek/back.2bpp.lz"
 MetapodFrontpic:          INCBIN "gfx/pokemon/metapod/front.2bpp.lz"
 MetapodBackpic:           INCBIN "gfx/pokemon/metapod/back.2bpp.lz"
 ButterfreeFrontpic:       INCBIN "gfx/pokemon/butterfree/front.2bpp.lz"

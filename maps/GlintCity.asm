@@ -225,7 +225,7 @@ GlintDoggo:
 GlintBirb:
 	opentext
 	writetext GlintBirbText
-	cry CATERPIE
+	cry PIKIPEK
 	waitbutton
 	closetext
 	end

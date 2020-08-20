@@ -4,3 +4,4 @@
 	frame 2, 07
 	dorepeat 2
 	endanim
+; 0xd1002

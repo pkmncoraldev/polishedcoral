@@ -4349,12 +4349,12 @@ INCLUDE "gfx/pokemon/extras.asm"
 SECTION "Pic Animations Frames 1", ROMX
 
 INCLUDE "gfx/pokemon/frame_pointers.asm"
-INCLUDE "gfx/pokemon/kanto_frames.asm"
+INCLUDE "gfx/pokemon/frames.asm"
 
 
 SECTION "Pic Animations Frames 2", ROMX
 
-INCLUDE "gfx/pokemon/johto_frames.asm"
+;INCLUDE "gfx/pokemon/johto_frames.asm"
 ;INCLUDE "gfx/pokemon/variant_frame_pointers.asm"
 ;INCLUDE "gfx/pokemon/variant_frames.asm"
 

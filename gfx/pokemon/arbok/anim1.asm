@@ -5,3 +5,4 @@
 	frame 5, 04
 	frame 4, 06
 	endanim
+; 0xd19a9

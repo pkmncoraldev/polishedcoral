@@ -386,12 +386,12 @@ UnknownText_0xa183d: ; 0xa183d
 	line "the first #mon"
 
 	para "Mary caught was a"
-	line "Drowzee?"
+	line "Meditite?"
 
 	para "Isn't that so out"
 	line "of character?"
 
-	para "But Mary's Drowzee"
+	para "But Mary's Meditite"
 	line "kept making her"
 
 	para "fall asleep on the"

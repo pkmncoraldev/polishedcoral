@@ -1,5 +1,5 @@
 ; MamoswinePokedexEntry:
-	db "Twin Tusk@" ; species name
+	db "TWIN TUSK@" ; species name
 	dw 802, 6415 ; height, width
 
 	db   "Its impressive"

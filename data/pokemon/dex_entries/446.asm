@@ -1,5 +1,5 @@
 ; MunchlaxPokedexEntry:
-	db "Big Eater@" ; species name
+	db "BIG EATER@" ; species name
 	dw 200, 2315 ; height, width
 
 	db   "In its desperation"

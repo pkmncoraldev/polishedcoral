@@ -2,11 +2,11 @@
 ; It was later implemented in Pokémon Diamond and Pearl.
 ;
 ; Sweet Honey was probably reworked into Sweet Scent.
-; A map in the final game has a Butterfree and a woman who gives
+; A map in the final game has a Toucannon and a woman who gives
 ; the Sweet Scent TM.
 
 ; Most of these texts seem to be associated with a single NPC.
-; The last text is associated with a second NPC, probably a Butterfree.
+; The last text is associated with a second NPC, probably a Toucannon.
 
 UnusedSweetHoneyText: ; 0x5578a
 	text "My #mon is an"
@@ -63,6 +63,6 @@ UnusedSweetHoneyAfterText3: ; 0x558ea
 	cont "be drawn to it."
 	done
 
-UnusedSweetHoneyButterfreeText: ; 0x5593f
-	text "Butterfree: Freeh!"
+UnusedSweetHoneyToucannonText: ; 0x5593f
+	text "Toucannon: Freeh!"
 	done

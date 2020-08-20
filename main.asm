@@ -4340,10 +4340,10 @@ INCLUDE "gfx/pokemon/extra_pointers.asm"
 INCLUDE "gfx/pokemon/extras.asm"
 
 ; Variants have their own animation data despite having entries in the main tables
-INCLUDE "gfx/pokemon/variant_anim_pointers.asm"
-INCLUDE "gfx/pokemon/variant_anims.asm"
-INCLUDE "gfx/pokemon/variant_extra_pointers.asm"
-INCLUDE "gfx/pokemon/variant_extras.asm"
+;INCLUDE "gfx/pokemon/variant_anim_pointers.asm"
+;INCLUDE "gfx/pokemon/variant_anims.asm"
+;INCLUDE "gfx/pokemon/variant_extra_pointers.asm"
+;INCLUDE "gfx/pokemon/variant_extras.asm"
 
 
 SECTION "Pic Animations Frames 1", ROMX
@@ -4355,8 +4355,8 @@ INCLUDE "gfx/pokemon/kanto_frames.asm"
 SECTION "Pic Animations Frames 2", ROMX
 
 INCLUDE "gfx/pokemon/johto_frames.asm"
-INCLUDE "gfx/pokemon/variant_frame_pointers.asm"
-INCLUDE "gfx/pokemon/variant_frames.asm"
+;INCLUDE "gfx/pokemon/variant_frame_pointers.asm"
+;INCLUDE "gfx/pokemon/variant_frames.asm"
 
 
 SECTION "Pic Animations Bitmasks", ROMX
@@ -4364,8 +4364,8 @@ SECTION "Pic Animations Bitmasks", ROMX
 ; Bitmasks
 INCLUDE "gfx/pokemon/bitmask_pointers.asm"
 INCLUDE "gfx/pokemon/bitmasks.asm"
-INCLUDE "gfx/pokemon/variant_bitmask_pointers.asm"
-INCLUDE "gfx/pokemon/variant_bitmasks.asm"
+;INCLUDE "gfx/pokemon/variant_bitmask_pointers.asm"
+;INCLUDE "gfx/pokemon/variant_bitmasks.asm"
 
 
 SECTION "Standard Text", ROMX

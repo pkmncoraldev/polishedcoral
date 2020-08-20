@@ -255,7 +255,7 @@ BattleTowerMons2:
 	db $ef, $be, $ff ; DVs
 	db ABILITY_1 | QUIRKY, MALE ; Personality
 
-	db AZUMARILL
+	db FEAROW
 	db MYSTIC_WATER
 	db SURF, BLIZZARD, ATTRACT, RAIN_DANCE
 	db $fe, $df, $ee ; DVs
@@ -529,7 +529,7 @@ BattleTowerMons4:
 	db $ef, $7e, $ff ; DVs
 	db ABILITY_1 | QUIRKY, MALE ; Personality
 
-	db HYPNO
+	db MEDICHAM
 	db BRIGHTPOWDER
 	db CONFUSION, THUNDERPUNCH, HEADBUTT, DISABLE
 	db $77, $77, $77 ; DVs
@@ -791,7 +791,7 @@ BattleTowerMons6:
 	db $6b, $76, $bb ; DVs
 	db ABILITY_1 | QUIRKY, MALE ; Personality
 
-	db PARASECT
+	db CRUSTLE
 	db SITRUS_BERRY
 	db SPORE, GIGA_DRAIN, HYPER_BEAM, SLUDGE_BOMB
 	db $56, $65, $66 ; DVs

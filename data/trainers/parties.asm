@@ -2380,7 +2380,7 @@ DisguiseGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 ;	db 12, VOLTORB
-;	db 12, MARILL
+;	db 12, SPEAROW
 ;	db 13, JIGGLYPUFF
 	db  1, BULBASAUR
 	db -1 ; end

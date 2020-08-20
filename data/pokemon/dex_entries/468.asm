@@ -1,5 +1,5 @@
 ; TogekissPokedexEntry:
-	db "Jubilee@" ; species name
+	db "JUBILEE@" ; species name
 	dw 411, 838 ; height, width
 
 	db   "It shares many"

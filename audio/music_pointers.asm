@@ -59,4 +59,5 @@ Music:
 	dba Music_TrainStartup
 	dba Music_SnareTheme
 	dba Music_WaterRoute
+	dba Music_EventideVillage
 	

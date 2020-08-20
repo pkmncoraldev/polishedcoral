@@ -1,5 +1,5 @@
 ; MagmortarPokedexEntry:
-	db "Blast@" ; species name
+	db "BLAST@" ; species name
 	dw 503, 1499 ; height, width
 
 	db   "It blasts fire-"

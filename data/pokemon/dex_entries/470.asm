@@ -1,5 +1,5 @@
 ; LeafeonPokedexEntry:
-	db "Verdant@" ; species name
+	db "VERDANT@" ; species name
 	dw 303, 562 ; height, width
 
 	db   "Just like a plant,"

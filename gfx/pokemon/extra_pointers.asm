@@ -1,4 +1,4 @@
-AnimationExtraPointers:
+AnimationExtraExtraPointers:
 	dw BulbasaurAnimationExtra
 	dw IvysaurAnimationExtra
 	dw VenusaurAnimationExtra
@@ -8,9 +8,6 @@ AnimationExtraPointers:
 	dw SquirtleAnimationExtra
 	dw WartortleAnimationExtra
 	dw BlastoiseAnimationExtra
-	dw CaterpieAnimationExtra
-	dw MetapodAnimationExtra
-	dw ButterfreeAnimationExtra
 	dw WeedleAnimationExtra
 	dw KakunaAnimationExtra
 	dw BeedrillAnimationExtra
@@ -19,11 +16,9 @@ AnimationExtraPointers:
 	dw PidgeotAnimationExtra
 	dw RattataAnimationExtra
 	dw RaticateAnimationExtra
-	dw MarillAnimationExtra
-	dw AzumarillAnimationExtra
 	dw EkansAnimationExtra
-	dw -1 ; see ArbokAnimationExtraPointers
-	dw -1 ; see PikachuAnimationExtraPointers
+	dw ArbokAnimationExtra
+	dw PikachuAnimationExtra
 	dw RaichuAnimationExtra
 	dw SandshrewAnimationExtra
 	dw SandslashAnimationExtra
@@ -35,8 +30,6 @@ AnimationExtraPointers:
 	dw NidokingAnimationExtra
 	dw ClefairyAnimationExtra
 	dw ClefableAnimationExtra
-	dw VulpixAnimationExtra
-	dw NinetalesAnimationExtra
 	dw JigglypuffAnimationExtra
 	dw WigglytuffAnimationExtra
 	dw ZubatAnimationExtra
@@ -44,18 +37,10 @@ AnimationExtraPointers:
 	dw OddishAnimationExtra
 	dw GloomAnimationExtra
 	dw VileplumeAnimationExtra
-	dw ParasAnimationExtra
-	dw ParasectAnimationExtra
-	dw VenonatAnimationExtra
-	dw VenomothAnimationExtra
-	dw DiglettAnimationExtra
-	dw DugtrioAnimationExtra
 	dw MeowthAnimationExtra
 	dw PersianAnimationExtra
 	dw PsyduckAnimationExtra
 	dw GolduckAnimationExtra
-	dw MankeyAnimationExtra
-	dw PrimeapeAnimationExtra
 	dw GrowlitheAnimationExtra
 	dw ArcanineAnimationExtra
 	dw PoliwagAnimationExtra
@@ -67,11 +52,6 @@ AnimationExtraPointers:
 	dw MachopAnimationExtra
 	dw MachokeAnimationExtra
 	dw MachampAnimationExtra
-	dw BellsproutAnimationExtra
-	dw WeepinbellAnimationExtra
-	dw VictreebelAnimationExtra
-	dw TentacoolAnimationExtra
-	dw TentacruelAnimationExtra
 	dw GeodudeAnimationExtra
 	dw GravelerAnimationExtra
 	dw GolemAnimationExtra
@@ -81,54 +61,33 @@ AnimationExtraPointers:
 	dw SlowbroAnimationExtra
 	dw MagnemiteAnimationExtra
 	dw MagnetonAnimationExtra
-	dw FarfetchDAnimationExtra
 	dw DoduoAnimationExtra
 	dw DodrioAnimationExtra
-	dw SeelAnimationExtra
-	dw DewgongAnimationExtra
-	dw GrimerAnimationExtra
-	dw MukAnimationExtra
-	dw ShellderAnimationExtra
-	dw CloysterAnimationExtra
 	dw GastlyAnimationExtra
 	dw HaunterAnimationExtra
 	dw GengarAnimationExtra
 	dw OnixAnimationExtra
-	dw DrowzeeAnimationExtra
-	dw HypnoAnimationExtra
-	dw KrabbyAnimationExtra
-	dw KinglerAnimationExtra
 	dw VoltorbAnimationExtra
 	dw ElectrodeAnimationExtra
 	dw ExeggcuteAnimationExtra
 	dw ExeggutorAnimationExtra
 	dw CuboneAnimationExtra
 	dw MarowakAnimationExtra
-	dw HitmonleeAnimationExtra
-	dw HitmonchanAnimationExtra
 	dw KoffingAnimationExtra
 	dw WeezingAnimationExtra
 	dw RhyhornAnimationExtra
 	dw RhydonAnimationExtra
-	dw ChanseyAnimationExtra
-	dw TangelaAnimationExtra
-	dw KangaskhanAnimationExtra
 	dw HorseaAnimationExtra
 	dw SeadraAnimationExtra
-	dw TogepiAnimationExtra
-	dw TogeticAnimationExtra
-	dw TogekissAnimationExtra
 	dw StaryuAnimationExtra
 	dw StarmieAnimationExtra
-	dw MrMimeAnimationExtra
 	dw ScytherAnimationExtra
-	dw JynxAnimationExtra
 	dw ElectabuzzAnimationExtra
 	dw MagmarAnimationExtra
 	dw PinsirAnimationExtra
 	dw TaurosAnimationExtra
-	dw -1 ; see MagikarpAnimationExtraPointers
-	dw -1 ; see GyaradosAnimationExtraPointers
+	dw MagikarpAnimationExtra
+	dw GyaradosAnimationExtra
 	dw LaprasAnimationExtra
 	dw DittoAnimationExtra
 	dw EeveeAnimationExtra
@@ -136,11 +95,6 @@ AnimationExtraPointers:
 	dw JolteonAnimationExtra
 	dw FlareonAnimationExtra
 	dw PorygonAnimationExtra
-	dw OmanyteAnimationExtra
-	dw OmastarAnimationExtra
-	dw KabutoAnimationExtra
-	dw KabutopsAnimationExtra
-	dw AerodactylAnimationExtra
 	dw SnorlaxAnimationExtra
 	dw ArticunoAnimationExtra
 	dw ZapdosAnimationExtra
@@ -148,8 +102,6 @@ AnimationExtraPointers:
 	dw DratiniAnimationExtra
 	dw DragonairAnimationExtra
 	dw DragoniteAnimationExtra
-	dw -1 ; see MewtwoAnimationExtraPointers
-	dw MewAnimationExtra
 	dw ChikoritaAnimationExtra
 	dw BayleefAnimationExtra
 	dw MeganiumAnimationExtra
@@ -159,72 +111,43 @@ AnimationExtraPointers:
 	dw TotodileAnimationExtra
 	dw CroconawAnimationExtra
 	dw FeraligatrAnimationExtra
-	dw SentretAnimationExtra
-	dw FurretAnimationExtra
-	dw HoothootAnimationExtra
-	dw NoctowlAnimationExtra
 	dw LedybaAnimationExtra
 	dw LedianAnimationExtra
-	dw SpinarakAnimationExtra
-	dw AriadosAnimationExtra
 	dw CrobatAnimationExtra
 	dw ChinchouAnimationExtra
 	dw LanturnAnimationExtra
-	dw -1 ; see PichuAnimationExtraPointers
-	dw MunchlaxAnimationExtra
-	dw MagnezoneAnimationExtra
-	dw TangrowthAnimationExtra
+	dw TogepiAnimationExtra
+	dw TogeticAnimationExtra
 	dw NatuAnimationExtra
 	dw XatuAnimationExtra
 	dw MareepAnimationExtra
 	dw FlaaffyAnimationExtra
 	dw AmpharosAnimationExtra
 	dw BellossomAnimationExtra
-	dw RhyperiorAnimationExtra
 	dw SudowoodoAnimationExtra
 	dw PolitoedAnimationExtra
-	dw SunkernAnimationExtra
-	dw SunfloraAnimationExtra
-	dw YanmaAnimationExtra
-	dw YanmegaAnimationExtra
 	dw WooperAnimationExtra
 	dw QuagsireAnimationExtra
 	dw EspeonAnimationExtra
 	dw UmbreonAnimationExtra
-	dw LeafeonAnimationExtra
-	dw GlaceonAnimationExtra
 	dw MurkrowAnimationExtra
-	dw HonchkrowAnimationExtra
 	dw SlowkingAnimationExtra
-	dw MisdreavusAnimationExtra
-	dw MismagiusAnimationExtra
-	dw -1 ; see UnownAnimationExtraPointers
-	dw WobbuffetAnimationExtra
-	dw GirafarigAnimationExtra
 	dw PinecoAnimationExtra
 	dw ForretressAnimationExtra
-	dw DunsparceAnimationExtra
 	dw GligarAnimationExtra
-	dw GliscorAnimationExtra
 	dw SteelixAnimationExtra
 	dw SnubbullAnimationExtra
 	dw GranbullAnimationExtra
-	dw QwilfishAnimationExtra
 	dw ScizorAnimationExtra
 	dw HeracrossAnimationExtra
 	dw SneaselAnimationExtra
-	dw WeavileAnimationExtra
 	dw TeddiursaAnimationExtra
 	dw UrsaringAnimationExtra
 	dw SlugmaAnimationExtra
 	dw MagcargoAnimationExtra
 	dw SwinubAnimationExtra
 	dw PiloswineAnimationExtra
-	dw MamoswineAnimationExtra
 	dw CorsolaAnimationExtra
-	dw RemoraidAnimationExtra
-	dw OctilleryAnimationExtra
-	dw MantineAnimationExtra
 	dw SkarmoryAnimationExtra
 	dw HoundourAnimationExtra
 	dw HoundoomAnimationExtra
@@ -233,24 +156,55 @@ AnimationExtraPointers:
 	dw DonphanAnimationExtra
 	dw Porygon2AnimationExtra
 	dw SmeargleAnimationExtra
-	dw TyrogueAnimationExtra
-	dw HitmontopAnimationExtra
 	dw ElekidAnimationExtra
-	dw ElectivireAnimationExtra
 	dw MagbyAnimationExtra
-	dw MagmortarAnimationExtra
 	dw MiltankAnimationExtra
-	dw BlisseyAnimationExtra
-	dw RaikouAnimationExtra
-	dw EnteiAnimationExtra
-	dw SuicuneAnimationExtra
 	dw LarvitarAnimationExtra
 	dw PupitarAnimationExtra
 	dw TyranitarAnimationExtra
-	dw LugiaAnimationExtra
-	dw HoOhAnimationExtra
-	dw CelebiAnimationExtra
-	dw SylveonAnimationExtra
+	dw ShroomishAnimationExtra
+	dw BreloomAnimationExtra
+	dw AronAnimationExtra
+	dw LaironAnimationExtra
+	dw AggronAnimationExtra
+	dw MedititeAnimationExtra
+	dw MedichamAnimationExtra
+	dw NumelAnimationExtra
+	dw CameruptAnimationExtra
+	dw SwabluAnimationExtra
+	dw AltariaAnimationExtra
+	dw CorphishAnimationExtra
+	dw CrawdauntAnimationExtra
+	dw BuizelAnimationExtra
+	dw FloatzelAnimationExtra
+	dw BunearyAnimationExtra
+	dw LopunnyAnimationExtra
+	dw HonchkrowAnimationExtra
+	dw MunchlaxAnimationExtra
+	dw WeavileAnimationExtra
+	dw MagnezoneAnimationExtra
+	dw RhyperiorAnimationExtra
+	dw ElectivireAnimationExtra
+	dw MagmortarAnimationExtra
+	dw TogekissAnimationExtra
+	dw LeafeonAnimationExtra
+	dw GlaceonAnimationExtra
+	dw GliscorAnimationExtra
+	dw MamoswineAnimationExtra
 	dw PorygonZAnimationExtra
+	dw CottoneeAnimationExtra
+	dw WhimsicottAnimationExtra
+	dw DwebbleAnimationExtra
+	dw CrustleAnimationExtra
+	dw JoltikAnimationExtra
+	dw GalvantulaAnimationExtra
+	dw LarvestaAnimationExtra
+	dw VolcaronaAnimationExtra
+	dw SylveonAnimationExtra
+	dw NoibatAnimationExtra
+	dw NoivernAnimationExtra
+	dw PikipekAnimationExtra
+	dw TrumbeakAnimationExtra
+	dw ToucannonAnimationExtra
 	dw EggAnimationExtra
 	dw -1 ; unused

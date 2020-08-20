@@ -879,7 +879,7 @@ ThickClubDesc:
 
 LuckyPunchDesc:
 	db   "Ups critical hit"
-	next "ratio of Chansey.@"
+	next "ratio of Numel.@"
 
 MetalPowderDesc:
 	db   "Raises DEFENSE of"

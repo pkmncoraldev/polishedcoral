@@ -272,7 +272,7 @@ FindOwnedPosters: ; 268fb
 	db DECO_TOWN_MAP
 	db DECO_PIKACHU_POSTER
 	db DECO_CLEFAIRY_POSTER
-	db DECO_MARILL_POSTER
+	db DECO_SPEAROW_POSTER
 	db -1
 ; 26908
 
@@ -335,10 +335,10 @@ FindOwnedOrnaments: ; 26925
 	db DECO_UNOWN_DOLL
 	db DECO_GEODUDE_DOLL
 	db DECO_PINECO_DOLL
-	db DECO_MARILL_DOLL
+	db DECO_SPEAROW_DOLL
 	db DECO_TEDDIURSA_DOLL
 	db DECO_MEOWTH_DOLL
-	db DECO_VULPIX_DOLL
+	db DECO_BUIZEL_DOLL
 	db DECO_GROWLITHE_DOLL
 	db DECO_EEVEE_DOLL
 	db DECO_GOLD_TROPHY_DOLL
@@ -1077,7 +1077,7 @@ DecorationDesc_PosterPointers: ; 26f84
 	dbw DECO_TOWN_MAP, DecorationDesc_TownMapPoster
 	dbw DECO_PIKACHU_POSTER, DecorationDesc_PikachuPoster
 	dbw DECO_CLEFAIRY_POSTER, DecorationDesc_ClefairyPoster
-	dbw DECO_MARILL_POSTER, DecorationDesc_MarillPoster
+	dbw DECO_SPEAROW_POSTER, DecorationDesc_SpearowPoster
 	db -1
 ; 26f91
 
@@ -1116,12 +1116,12 @@ DecorationDesc_ClefairyPoster: ; 0x26fa8
 	db "@"
 ; 0x26fb0
 
-DecorationDesc_MarillPoster: ; 0x26fb0
-	jumptext .MarillPosterText
+DecorationDesc_SpearowPoster: ; 0x26fb0
+	jumptext .SpearowPosterText
 ; 0x26fb3
 
-.MarillPosterText: ; 0x26fb3
-	; It's a poster of a cute MARILL.
+.SpearowPosterText: ; 0x26fb3
+	; It's a poster of a cute SPEAROW.
 	text_jump UnknownText_0x1bc5b3
 	db "@"
 ; 0x26fb8

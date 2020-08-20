@@ -21,7 +21,7 @@ StarglowPokeCenter_MapScriptHeader:
 	person_event SPRITE_GENTLEMAN, 5, 1, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowCenterGramps, -1
 	person_event SPRITE_TEACHER, 2, 9, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, StarglowCenterGirl, -1
 	person_event SPRITE_SNARE, -6, -6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, -1
-	object_event  5,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, StarglowCenterChansey, -1
+	object_event  5,  1, SPRITE_NUMEL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, StarglowCenterNumel, -1
 
 	
 	const_def 1 ; object constants
@@ -30,7 +30,7 @@ StarglowPokeCenter_MapScriptHeader:
 	const STARGLOWCENTER_GENTLEMAN
 	const STARGLOWCENTER_GIRL
 	const STARGLOWCENTER_ROCKET
-	const STARGLOWCENTER_CHANSEY
+	const STARGLOWCENTER_NUMEL
 
 StarglowPokeCenterTrigger0:
 	disappear STARGLOWCENTER_ROCKET
@@ -39,16 +39,16 @@ StarglowPokeCenterTrigger0:
 StarglowPokeCenterTrigger1:
 	end
 	
-StarglowCenterChansey:
+StarglowCenterNumel:
 	opentext
-	writetext StarglowCenterChanseyText
-	cry CHANSEY
+	writetext StarglowCenterNumelText
+	cry NUMEL
 	waitbutton
 	closetext
 	end
 	
-StarglowCenterChanseyText:
-	text "CHANSEY: Sii!"
+StarglowCenterNumelText:
+	text "NUMEL: Sii!"
 	done
 	
 StarglowCenterRocketStopsYouR:

@@ -1,5 +1,5 @@
 ; GlaceonPokedexEntry:
-	db "Fresh Snow@" ; species name
+	db "FRESH SNOW@" ; species name
 	dw 207, 571 ; height, width
 
 	db   "It causes small"

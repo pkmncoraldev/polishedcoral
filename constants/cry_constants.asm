@@ -4,52 +4,52 @@
 	const CRY_NIDORAN_M
 	const CRY_NIDORAN_F
 	const CRY_SLOWPOKE
-	const CRY_KANGASKHAN
+	const CRY_UNUSED5
 	const CRY_CHARMANDER
-	const CRY_GRIMER
+	const CRY_SNORLAX
 	const CRY_VOLTORB
-	const CRY_MUK
+	const CRY_GENGAR
 	const CRY_ODDISH
 	const CRY_RAICHU
 	const CRY_NIDOQUEEN
-	const CRY_DIGLETT
-	const CRY_SEEL
-	const CRY_DROWZEE
+	const CRY_DODUO
+	const CRY_UNUSED2
+	const CRY_EXEGGUTOR
 	const CRY_PIDGEY
 	const CRY_BULBASAUR
-	const CRY_FARFETCH_D
+	const CRY_UNUSED
 	const CRY_RHYDON
 	const CRY_GOLEM
 	const CRY_BLASTOISE
 	const CRY_PIDGEOTTO
 	const CRY_WEEDLE
-	const CRY_CATERPIE
+	const CRY_SCYTHER
 	const CRY_EKANS
-	const CRY_SHELLDER
+	const CRY_UNUSED3
 	const CRY_CLEFAIRY
-	const CRY_VENONAT
+	const CRY_EEVEE
 	const CRY_LAPRAS
-	const CRY_METAPOD
+	const CRY_ABRA
 	const CRY_SQUIRTLE
-	const CRY_PARAS
+	const CRY_STARYU
 	const CRY_GROWLITHE
-	const CRY_KRABBY
+	const CRY_UNUSED4
 	const CRY_PSYDUCK
 	const CRY_RATTATA
 	const CRY_VILEPLUME
-	const CRY_VULPIX
-	const CRY_WEEPINBELL
+	const CRY_GEODUDE
+	const CRY_PONYTA
 
 ; gen 2
 	const CRY_MARILL
-	const CRY_SPINARAK
+	const CRY_PUPITAR
 	const CRY_TOGEPI
-	const CRY_GIRAFARIG
-	const CRY_RAIKOU
+	const CRY_PORYGON2
+	const CRY_LARVITAR
 	const CRY_MAREEP
 	const CRY_TOGETIC
-	const CRY_HOOTHOOT
-	const CRY_SENTRET
+	const CRY_UNUSED6
+	const CRY_PHANPY
 	const CRY_SLOWKING
 	const CRY_CYNDAQUIL
 	const CRY_CHIKORITA
@@ -58,16 +58,16 @@
 	const CRY_BELLOSSOM
 	const CRY_SLUGMA
 	const CRY_LEDYBA
-	const CRY_ENTEI
+	const CRY_UNUSED8
 	const CRY_WOOPER
-	const CRY_MANTINE
+	const CRY_UNUSED7
 	const CRY_TYPHLOSION
 	const CRY_NATU
 	const CRY_TEDDIURSA
-	const CRY_REMORAID
+	const CRY_ELEKID
 	const CRY_AMPHAROS
 	const CRY_MAGCARGO
-	const CRY_PICHU
-	const CRY_TYROGUE
-	const CRY_DUNSPARCE
+	const CRY_SMEARGLE
+	const CRY_ESPEON
+	const CRY_SNUBBULL
 	const CRY_DONPHAN

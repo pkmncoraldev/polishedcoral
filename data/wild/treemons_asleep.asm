@@ -2,8 +2,8 @@
 
 AsleepTreeMonsNite:
 	db PIKIPEK
-	db METAPOD
-	db BUTTERFREE
+	db TRUMBEAK
+	db TOUCANNON
 	db WEEDLE
 	db KAKUNA
 	db BEEDRILL

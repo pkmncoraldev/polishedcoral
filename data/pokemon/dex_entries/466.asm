@@ -1,5 +1,5 @@
 ; ElectivirePokedexEntry:
-	db "Thunderbolt@" ; species name
+	db "THUNDERBOLT@" ; species name
 	dw 511, 3056 ; height, width
 
 	db   "As its electric"

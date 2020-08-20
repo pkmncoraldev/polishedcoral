@@ -726,8 +726,8 @@ Function92bd4: ; 92bd4 (24:6bd4)
 	dw ReelAction_InitGolem                   ; 12
 	dw ReelAction_WaitGolem                   ; 13
 	dw ReelAction_EndGolem                    ; 14
-	dw Slots_InitChansey                      ; 15
-	dw ReelAction_WaitChansey                 ; 16
+	dw Slots_InitNumel                      ; 15
+	dw ReelAction_WaitNumel                 ; 16
 	dw ReelAction_WaitEgg                     ; 17
 	dw ReelAction_DropReel                    ; 18
 ; 92c16
@@ -1010,7 +1010,7 @@ ReelAction_EndGolem: ; 92d6e
 
 ; 92d7e
 
-Slots_InitChansey: ; 92d7e
+Slots_InitNumel: ; 92d7e
 	call Slots_CheckMatchedAllThreeReels
 	ret c
 	ld a, SFX_STOP_SLOT
@@ -1024,7 +1024,7 @@ Slots_InitChansey: ; 92d7e
 	ld [hl], $0
 	push bc
 	depixel 12, 0
-	ld a, SPRITE_ANIM_INDEX_SLOTS_CHANSEY
+	ld a, SPRITE_ANIM_INDEX_SLOTS_NUMEL
 	call _InitSpriteAnimStruct
 	pop bc
 	xor a
@@ -1033,7 +1033,7 @@ Slots_InitChansey: ; 92d7e
 
 ; 92da4
 
-ReelAction_WaitChansey: ; 92da4
+ReelAction_WaitNumel: ; 92da4
 	ld a, [wcf64]
 	and a
 	ret z
@@ -1921,7 +1921,7 @@ SlotMachine_AnimateGolem: ; 9321d (24:721d)
 	ld [hSCY], a
 	ret
 
-Slots_AnimateChansey: ; 932ac (24:72ac)
+Slots_AnimateNumel: ; 932ac (24:72ac)
 	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
 	add hl, bc
 	ld e, [hl]

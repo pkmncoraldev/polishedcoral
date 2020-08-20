@@ -22,8 +22,8 @@ DoAnimFrame: ; 8d24b
 	dw .ComposeMailCursor  ; SPRITE_ANIM_SEQ_COMPOSE_MAIL_CURSOR
 	dw .GameFreakLogo      ; SPRITE_ANIM_SEQ_GAMEFREAK_LOGO
 	dw .SlotsGolem         ; SPRITE_ANIM_SEQ_SLOTS_GOLEM
-	dw .SlotsChansey       ; SPRITE_ANIM_SEQ_SLOTS_CHANSEY
-	dw .SlotsChanseyEgg    ; SPRITE_ANIM_SEQ_SLOTS_EGG
+	dw .SlotsNumel       ; SPRITE_ANIM_SEQ_SLOTS_NUMEL
+	dw .SlotsNumelEgg    ; SPRITE_ANIM_SEQ_SLOTS_EGG
 ;	dw .DummyGameCursor    ; SPRITE_ANIM_SEQ_DUMMY_GAME_CURSOR
 	dw .PokegearModeArrow  ; SPRITE_ANIM_SEQ_POKEGEAR_MODE_ARROW
 	dw .TradePokeBall      ; SPRITE_ANIM_SEQ_TRADE_POKE_BALL
@@ -133,17 +133,17 @@ DoAnimFrame: ; 8d24b
 .SlotsGolem: ; 8d422 (23:5422)
 	farjp SlotMachine_AnimateGolem
 
-.SlotsChansey: ; 8d429 (23:5429)
-	farcall Slots_AnimateChansey
+.SlotsNumel: ; 8d429 (23:5429)
+	farcall Slots_AnimateNumel
 	ld hl, wcf64
 	ld a, [hl]
 	cp $2
 	ret nz
 	ld [hl], $3
-	ld a, SPRITE_ANIM_FRAMESET_SLOTS_CHANSEY_2
+	ld a, SPRITE_ANIM_FRAMESET_SLOTS_NUMEL_2
 	jp _ReinitSpriteAnimFrame
 
-.SlotsChanseyEgg: ; 8d43e (23:543e)
+.SlotsNumelEgg: ; 8d43e (23:543e)
 	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
 	add hl, bc
 	ld a, [hl]

@@ -11,8 +11,8 @@ Cries:
 	dba Cry_Raichu
 	dba Cry_Nidoqueen
 	dba Cry_Diglett
-	dba Cry_Seel
-	dba Cry_Drowzee
+	dba Cry_Shroomish
+	dba Cry_Meditite
 	dba Cry_Pidgey
 	dba Cry_Bulbasaur
 	dba Cry_Farfetch_d
@@ -21,23 +21,23 @@ Cries:
 	dba Cry_Blastoise
 	dba Cry_Pidgeotto
 	dba Cry_Weedle
-	dba Cry_Caterpie
+	dba Cry_Pikipek
 	dba Cry_Ekans
 	dba Cry_Shellder
 	dba Cry_Clefairy
 	dba Cry_Venonat
 	dba Cry_Lapras
-	dba Cry_Metapod
+	dba Cry_Trumbeak
 	dba Cry_Squirtle
-	dba Cry_Paras
+	dba Cry_Dwebble
 	dba Cry_Growlithe
-	dba Cry_Krabby
+	dba Cry_Corphish
 	dba Cry_Psyduck
 	dba Cry_Rattata
 	dba Cry_Vileplume
-	dba Cry_Vulpix
+	dba Cry_Buizel
 	dba Cry_Weepinbell
-	dba Cry_Marill
+	dba Cry_Spearow
 	dba Cry_Spinarak
 	dba Cry_Togepi
 	dba Cry_Girafarig

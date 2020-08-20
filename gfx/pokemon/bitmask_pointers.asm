@@ -8,9 +8,6 @@ BitmasksPointers:
 	dw SquirtleBitmasks
 	dw WartortleBitmasks
 	dw BlastoiseBitmasks
-	dw CaterpieBitmasks
-	dw MetapodBitmasks
-	dw ButterfreeBitmasks
 	dw WeedleBitmasks
 	dw KakunaBitmasks
 	dw BeedrillBitmasks
@@ -19,11 +16,9 @@ BitmasksPointers:
 	dw PidgeotBitmasks
 	dw RattataBitmasks
 	dw RaticateBitmasks
-	dw MarillBitmasks
-	dw AzumarillBitmasks
 	dw EkansBitmasks
-	dw -1 ; see ArbokBitmasksPointers
-	dw -1 ; see PikachuBitmasksPointers
+	dw ArbokBitmasks
+	dw PikachuBitmasks
 	dw RaichuBitmasks
 	dw SandshrewBitmasks
 	dw SandslashBitmasks
@@ -35,8 +30,6 @@ BitmasksPointers:
 	dw NidokingBitmasks
 	dw ClefairyBitmasks
 	dw ClefableBitmasks
-	dw VulpixBitmasks
-	dw NinetalesBitmasks
 	dw JigglypuffBitmasks
 	dw WigglytuffBitmasks
 	dw ZubatBitmasks
@@ -44,18 +37,10 @@ BitmasksPointers:
 	dw OddishBitmasks
 	dw GloomBitmasks
 	dw VileplumeBitmasks
-	dw ParasBitmasks
-	dw ParasectBitmasks
-	dw VenonatBitmasks
-	dw VenomothBitmasks
-	dw DiglettBitmasks
-	dw DugtrioBitmasks
 	dw MeowthBitmasks
 	dw PersianBitmasks
 	dw PsyduckBitmasks
 	dw GolduckBitmasks
-	dw MankeyBitmasks
-	dw PrimeapeBitmasks
 	dw GrowlitheBitmasks
 	dw ArcanineBitmasks
 	dw PoliwagBitmasks
@@ -67,11 +52,6 @@ BitmasksPointers:
 	dw MachopBitmasks
 	dw MachokeBitmasks
 	dw MachampBitmasks
-	dw BellsproutBitmasks
-	dw WeepinbellBitmasks
-	dw VictreebelBitmasks
-	dw TentacoolBitmasks
-	dw TentacruelBitmasks
 	dw GeodudeBitmasks
 	dw GravelerBitmasks
 	dw GolemBitmasks
@@ -81,54 +61,33 @@ BitmasksPointers:
 	dw SlowbroBitmasks
 	dw MagnemiteBitmasks
 	dw MagnetonBitmasks
-	dw FarfetchDBitmasks
 	dw DoduoBitmasks
 	dw DodrioBitmasks
-	dw SeelBitmasks
-	dw DewgongBitmasks
-	dw GrimerBitmasks
-	dw MukBitmasks
-	dw ShellderBitmasks
-	dw CloysterBitmasks
 	dw GastlyBitmasks
 	dw HaunterBitmasks
 	dw GengarBitmasks
 	dw OnixBitmasks
-	dw DrowzeeBitmasks
-	dw HypnoBitmasks
-	dw KrabbyBitmasks
-	dw KinglerBitmasks
 	dw VoltorbBitmasks
 	dw ElectrodeBitmasks
 	dw ExeggcuteBitmasks
 	dw ExeggutorBitmasks
 	dw CuboneBitmasks
 	dw MarowakBitmasks
-	dw HitmonleeBitmasks
-	dw HitmonchanBitmasks
 	dw KoffingBitmasks
 	dw WeezingBitmasks
 	dw RhyhornBitmasks
 	dw RhydonBitmasks
-	dw ChanseyBitmasks
-	dw TangelaBitmasks
-	dw KangaskhanBitmasks
 	dw HorseaBitmasks
 	dw SeadraBitmasks
-	dw TogepiBitmasks
-	dw TogeticBitmasks
-	dw TogekissBitmasks
 	dw StaryuBitmasks
 	dw StarmieBitmasks
-	dw MrMimeBitmasks
 	dw ScytherBitmasks
-	dw JynxBitmasks
 	dw ElectabuzzBitmasks
 	dw MagmarBitmasks
 	dw PinsirBitmasks
 	dw TaurosBitmasks
-	dw -1 ; see MagikarpBitmasksPointers
-	dw -1 ; see GyaradosBitmasksPointers
+	dw MagikarpBitmasks
+	dw GyaradosBitmasks
 	dw LaprasBitmasks
 	dw DittoBitmasks
 	dw EeveeBitmasks
@@ -136,20 +95,10 @@ BitmasksPointers:
 	dw JolteonBitmasks
 	dw FlareonBitmasks
 	dw PorygonBitmasks
-	dw OmanyteBitmasks
-	dw OmastarBitmasks
-	dw KabutoBitmasks
-	dw KabutopsBitmasks
-	dw AerodactylBitmasks
 	dw SnorlaxBitmasks
-	dw ArticunoBitmasks
-	dw ZapdosBitmasks
-	dw MoltresBitmasks
 	dw DratiniBitmasks
 	dw DragonairBitmasks
 	dw DragoniteBitmasks
-	dw -1 ; see MewtwoBitmasks
-	dw MewBitmasks
 	dw ChikoritaBitmasks
 	dw BayleefBitmasks
 	dw MeganiumBitmasks
@@ -159,72 +108,43 @@ BitmasksPointers:
 	dw TotodileBitmasks
 	dw CroconawBitmasks
 	dw FeraligatrBitmasks
-	dw SentretBitmasks
-	dw FurretBitmasks
-	dw HoothootBitmasks
-	dw NoctowlBitmasks
 	dw LedybaBitmasks
 	dw LedianBitmasks
-	dw SpinarakBitmasks
-	dw AriadosBitmasks
 	dw CrobatBitmasks
 	dw ChinchouBitmasks
 	dw LanturnBitmasks
-	dw -1 ; see PichuBitmasksPointers
-	dw MunchlaxBitmasks
-	dw MagnezoneBitmasks
-	dw TangrowthBitmasks
+	dw TogepiBitmasks
+	dw TogeticBitmasks
 	dw NatuBitmasks
 	dw XatuBitmasks
 	dw MareepBitmasks
 	dw FlaaffyBitmasks
 	dw AmpharosBitmasks
 	dw BellossomBitmasks
-	dw RhyperiorBitmasks
 	dw SudowoodoBitmasks
 	dw PolitoedBitmasks
-	dw SunkernBitmasks
-	dw SunfloraBitmasks
-	dw YanmaBitmasks
-	dw YanmegaBitmasks
 	dw WooperBitmasks
 	dw QuagsireBitmasks
 	dw EspeonBitmasks
 	dw UmbreonBitmasks
-	dw LeafeonBitmasks
-	dw GlaceonBitmasks
 	dw MurkrowBitmasks
-	dw HonchkrowBitmasks
 	dw SlowkingBitmasks
-	dw MisdreavusBitmasks
-	dw MismagiusBitmasks
-	dw -1 ; see UnownBitmasksPointers
-	dw WobbuffetBitmasks
-	dw GirafarigBitmasks
 	dw PinecoBitmasks
 	dw ForretressBitmasks
-	dw DunsparceBitmasks
 	dw GligarBitmasks
-	dw GliscorBitmasks
 	dw SteelixBitmasks
 	dw SnubbullBitmasks
 	dw GranbullBitmasks
-	dw QwilfishBitmasks
 	dw ScizorBitmasks
 	dw HeracrossBitmasks
 	dw SneaselBitmasks
-	dw WeavileBitmasks
 	dw TeddiursaBitmasks
 	dw UrsaringBitmasks
 	dw SlugmaBitmasks
 	dw MagcargoBitmasks
 	dw SwinubBitmasks
 	dw PiloswineBitmasks
-	dw MamoswineBitmasks
 	dw CorsolaBitmasks
-	dw RemoraidBitmasks
-	dw OctilleryBitmasks
-	dw MantineBitmasks
 	dw SkarmoryBitmasks
 	dw HoundourBitmasks
 	dw HoundoomBitmasks
@@ -233,24 +153,55 @@ BitmasksPointers:
 	dw DonphanBitmasks
 	dw Porygon2Bitmasks
 	dw SmeargleBitmasks
-	dw TyrogueBitmasks
-	dw HitmontopBitmasks
 	dw ElekidBitmasks
-	dw ElectivireBitmasks
 	dw MagbyBitmasks
-	dw MagmortarBitmasks
 	dw MiltankBitmasks
-	dw BlisseyBitmasks
-	dw RaikouBitmasks
-	dw EnteiBitmasks
-	dw SuicuneBitmasks
 	dw LarvitarBitmasks
 	dw PupitarBitmasks
 	dw TyranitarBitmasks
-	dw LugiaBitmasks
-	dw HoOhBitmasks
-	dw CelebiBitmasks
-	dw SylveonBitmasks
+	dw ShroomishBitmasks
+	dw BreloomBitmasks
+	dw AronBitmasks
+	dw LaironBitmasks
+	dw AggronBitmasks
+	dw MedititeBitmasks
+	dw MedichamBitmasks
+	dw NumelBitmasks
+	dw CameruptBitmasks
+	dw SwabluBitmasks
+	dw AltariaBitmasks
+	dw CorphishBitmasks
+	dw CrawdauntBitmasks
+	dw BuizelBitmasks
+	dw FloatzelBitmasks
+	dw BunearyBitmasks
+	dw LopunnyBitmasks
+	dw HonchkrowBitmasks
+	dw MunchlaxBitmasks
+	dw WeavileBitmasks
+	dw MagnezoneBitmasks
+	dw RhyperiorBitmasks
+	dw ElectivireBitmasks
+	dw MagmortarBitmasks
+	dw TogekissBitmasks
+	dw LeafeonBitmasks
+	dw GlaceonBitmasks
+	dw GliscorBitmasks
+	dw MamoswineBitmasks
 	dw PorygonZBitmasks
+	dw CottoneeBitmasks
+	dw WhimsicottBitmasks
+	dw DwebbleBitmasks
+	dw CrustleBitmasks
+	dw JoltikBitmasks
+	dw GalvantulaBitmasks
+	dw LarvestaBitmasks
+	dw VolcaronaBitmasks
+	dw SylveonBitmasks
+	dw NoibatBitmasks
+	dw NoivernBitmasks
+	dw PikipekBitmasks
+	dw TrumbeakBitmasks
+	dw ToucannonBitmasks
 	dw EggBitmasks
 	dw -1 ; unused

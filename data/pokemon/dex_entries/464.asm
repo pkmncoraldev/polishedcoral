@@ -1,5 +1,5 @@
 ; RhyperiorPokedexEntry:
-	db "Drill@" ; species name
+	db "DRILL@" ; species name
 	dw 710, 6235 ; height, width
 
 	db   "From holes in its"

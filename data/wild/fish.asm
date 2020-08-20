@@ -16,17 +16,17 @@ FishGroups: ; 92488
 .Shore_Old: ; 924e3
 	db  70 percent + 1, MAGIKARP,   10
 	db  85 percent + 1, MAGIKARP,   10
-	db 100 percent,     KRABBY,     10
+	db 100 percent,     CORPHISH,     10
 .Shore_Good: ; 924ec
 	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     KRABBY,     20
-	db  90 percent + 1, KRABBY,     20
+	db  70 percent,     CORPHISH,     20
+	db  90 percent + 1, CORPHISH,     20
 	db 100 percent,     0, 0
 .Shore_Super: ; 924f8
-	db  40 percent,     KRABBY,     40
+	db  40 percent,     CORPHISH,     40
 	db  70 percent,     0, 1
-	db  90 percent + 1, KRABBY,     40
-	db 100 percent,     KINGLER,    40
+	db  90 percent + 1, CORPHISH,     40
+	db 100 percent,     CRAWDAUNT,    40
 
 .Ocean_Old: ; 92504
 	db  70 percent + 1, MAGIKARP,   10
@@ -151,16 +151,16 @@ FishGroups: ; 92488
 .WhirlIslands_Old: ; 9260c
 	db  70 percent + 1, MAGIKARP,   10
 	db  85 percent + 1, MAGIKARP,   10
-	db 100 percent,     KRABBY,     10
+	db 100 percent,     CORPHISH,     10
 .WhirlIslands_Good: ; 92615
 	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     KRABBY,     20
-	db  90 percent + 1, KRABBY,     20
+	db  70 percent,     CORPHISH,     20
+	db  90 percent + 1, CORPHISH,     20
 	db 100 percent,     0, 18
 .WhirlIslands_Super: ; 92621
-	db  40 percent,     KRABBY,     40
+	db  40 percent,     CORPHISH,     40
 	db  70 percent,     0, 19
-	db  90 percent + 1, KINGLER,    40
+	db  90 percent + 1, CRAWDAUNT,    40
 	db 100 percent,     SEADRA,     40
 
 .Qwilfish_NoSwarm_Old:

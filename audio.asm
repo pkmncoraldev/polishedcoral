@@ -76,6 +76,7 @@ INCLUDE "audio/music/snaretheme.asm"
 INCLUDE "audio/music/twinkletownday.asm"
 INCLUDE "audio/music/twinkletownnite.asm"
 INCLUDE "audio/music/waterroute.asm"
+INCLUDE "audio/music/eventidevillage.asm"
 
 
 SECTION "Music 5", ROMX

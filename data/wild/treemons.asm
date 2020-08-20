@@ -102,7 +102,7 @@ TreeMons6:
 	db 15, PINECO,     10
 	db 15, PINECO,     10
 	db 10, NOCTOWL,    10
-	db  5, BUTTERFREE, 10
+	db  5, TOUCANNON, 10
 	db  5, BEEDRILL,   10
 	db -1
 	; rare
@@ -110,12 +110,12 @@ TreeMons6:
 	db 15, PIKIPEK,   10
 	db 15, WEEDLE,     10
 	db 10, HOOTHOOT,   10
-	db  5, METAPOD,    10
+	db  5, TRUMBEAK,    10
 	db  5, KAKUNA,     10
 	db -1
 
 RockMons:
-	db 70, KRABBY,     15
+	db 70, CORPHISH,     15
 	db 30, GEODUDE,    15
 	db -1
 	

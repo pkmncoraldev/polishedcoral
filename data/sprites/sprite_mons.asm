@@ -9,7 +9,7 @@ SpriteMons:
 	db CUBONE
 	db SMEARGLE
 	db POLIWHIRL
-	db CHANSEY
+	db NUMEL
 	db TOGEPI
 	db PSYDUCK
 	db ABRA ; LARVESTA

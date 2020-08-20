@@ -14,30 +14,30 @@ BugContestantPointers:
 BugContestant_BugCatcherDon:
 	db BUG_CATCHER, 1
 	dbw KAKUNA,     300
-	dbw METAPOD,    285
+	dbw TRUMBEAK,    285
 	dbw PIKIPEK,   226
 
 BugContestant_BugCatcherEd:
 	db BUG_CATCHER, 2
 	dbw YANMA,      286
-	dbw BUTTERFREE, 251
+	dbw TOUCANNON, 251
 	dbw PIKIPEK,   237
 
 BugContestant_CooltrainerMNick:
 	db COOLTRAINERM, 1
 	dbw SCYTHER,    357
-	dbw BUTTERFREE, 349
+	dbw TOUCANNON, 349
 	dbw PINSIR,     368
 
 BugContestant_PokefanMWilliam:
 	db POKEFANM, 1
 	dbw VENOMOTH,   332
-	dbw BUTTERFREE, 324
+	dbw TOUCANNON, 324
 	dbw VENONAT,    321
 
 BugContestant_BugCatcherBenny:
 	db BUG_CATCHER, 3
-	dbw BUTTERFREE, 318
+	dbw TOUCANNON, 318
 	dbw WEEDLE,     295
 	dbw PIKIPEK,   285
 
@@ -49,15 +49,15 @@ BugContestant_CamperBarry:
 
 BugContestant_PicnickerCindy:
 	db PICNICKER, 1
-	dbw BUTTERFREE, 341
-	dbw METAPOD,    301
+	dbw TOUCANNON, 341
+	dbw TRUMBEAK,    301
 	dbw PIKIPEK,   264
 
 BugContestant_BugCatcherJosh:
 	db BUG_CATCHER, 4
 	dbw SCYTHER,    326
-	dbw BUTTERFREE, 292
-	dbw METAPOD,    282
+	dbw TOUCANNON, 292
+	dbw TRUMBEAK,    282
 
 BugContestant_SchoolboyJohnny:
 	db SCHOOLBOY, 1
@@ -68,5 +68,5 @@ BugContestant_SchoolboyJohnny:
 BugContestant_SchoolboyKipp:
 	db SCHOOLBOY, 2
 	dbw VENONAT,    267
-	dbw PARAS,      254
+	dbw DWEBBLE,      254
 	dbw KAKUNA,     259

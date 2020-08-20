@@ -1093,7 +1093,7 @@ BattleCommand_critical: ; 34631
 .Item:
 	ld c, 0
 
-	cp CHANSEY
+	cp NUMEL
 	jr nz, .Farfetchd
 	ld a, [hl]
 	cp LUCKY_PUNCH
@@ -2371,14 +2371,14 @@ StatUpDownAnim: ; 34feb
 	db -1
 
 .harden_users
-	db METAPOD
+	db TRUMBEAK
 	db KAKUNA
 	db GRIMER
 	db MUK
 	db ONIX
 	db STEELIX
-	db KRABBY
-	db KINGLER
+	db CORPHISH
+	db CRAWDAUNT
 	db STARYU
 	db STARMIE
 	db KABUTO

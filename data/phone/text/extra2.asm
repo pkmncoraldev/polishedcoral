@@ -257,7 +257,7 @@ UnknownText_0x1746c3: ; 0x1746c3
 
 UnknownText_0x174734: ; 0x174734
 	text "I happened to see"
-	line "a wild Marill the"
+	line "a wild Spearow the"
 
 	para "other day."
 	line "Or so I thought."

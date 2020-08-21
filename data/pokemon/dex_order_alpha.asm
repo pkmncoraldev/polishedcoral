@@ -55,7 +55,7 @@ AlphabeticalPokedexOrder:
 	db FLAREON
 	db FLOATZEL
 	db FORRETRESS
-	db GALCEON
+	db GLACEON
 	db GALVANTULA
 	db GASTLY
 	db GENGAR

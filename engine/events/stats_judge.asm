@@ -403,11 +403,11 @@ JudgeGetStatName:
 	ret
 
 .names
-	db "Spcl.Def@"
-	db "Spcl.Atk@"
-	db "Speed@"
-	db "Defense@"
-	db "Attack@"
+	db "SPCL.DEF@"
+	db "SPCL.ATK@"
+	db "SPEED@"
+	db "DEFENSE@"
+	db "ATTACK@"
 	db "HP@"
 
 GetCaughtGender:

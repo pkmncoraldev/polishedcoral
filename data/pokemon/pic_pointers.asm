@@ -159,7 +159,6 @@ PicPointers::
 	dba HorseaBackpic
 	dba SeadraFrontpic
 	dba SeadraBackpic
-	
 	dba StaryuFrontpic
 	dba StaryuBackpic
 	dba StarmieFrontpic
@@ -310,6 +309,8 @@ PicPointers::
 	dba DonphanBackpic
 	dba Porygon2Frontpic
 	dba Porygon2Backpic
+	dba StantlerFrontpic
+	dba StantlerBackpic
 	dba SmeargleFrontpic
 	dba SmeargleBackpic
 	dba ElekidFrontpic
@@ -324,8 +325,6 @@ PicPointers::
 	dba PupitarBackpic
 	dba TyranitarFrontpic
 	dba TyranitarBackpic
-
-	
 	dba ShroomishFrontpic
 	dba ShroomishBackpic
 	dba BreloomFrontpic

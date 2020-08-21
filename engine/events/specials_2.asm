@@ -95,7 +95,7 @@ SpecialGiveWobbuffet: ; 7305
 	ld [wMonType], a
 
 ; Level 20 Wobbuffet.
-	ld a, WOBBUFFET
+	ld a, BULBASAUR
 	ld [wCurPartySpecies], a
 	ld a, 20
 	ld [wCurPartyLevel], a
@@ -159,7 +159,7 @@ SpecialReturnWobbuffet: ; 737e
 	jr c, .refused
 
 	ld a, [wCurPartySpecies]
-	cp WOBBUFFET
+	cp BULBASAUR
 	jr nz, .DontReturn
 
 	ld a, [wCurPartyMon]

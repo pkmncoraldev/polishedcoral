@@ -14,13 +14,6 @@ BattleCommand_transform:
 	ld hl, wBattleMonSpecies
 	ld de, wBattleMonItem
 .got_mon_item
-	ld a, [hl]
-	cp MEWTWO
-	jr nz, .not_armored_mewtwo
-	ld a, [de]
-	cp ARMOR_SUIT
-	jp z, BattleEffect_ButItFailed
-.not_armored_mewtwo
 
 	ld a, BATTLE_VARS_ABILITY
 	call GetBattleVar

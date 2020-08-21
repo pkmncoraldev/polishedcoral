@@ -188,7 +188,7 @@ NewPokedexOrder:
 	db MAGMORTAR
 	db TOGEKISS
 	db LEAFEON
-	db GALCEON
+	db GLACEON
 	db GLISCOR
 	db MAMOSWINE
 	db PORYGON_Z

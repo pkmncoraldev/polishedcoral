@@ -67,8 +67,6 @@ MenuMonIconColors::
 	iconpal GRAY, BROWN ; MAGNETON
 	iconpal BROWN, RED ; DODUO
 	iconpal BROWN, RED ; DODRIO
-	iconpal PURPLE, RED ; SHELLDER
-	iconpal PURPLE, BLUE ; CLOYSTER
 	iconpal PURPLE, BLUE ; GASTLY
 	iconpal PURPLE, BLUE ; HAUNTER
 	iconpal PURPLE, BLUE ; GENGAR
@@ -139,7 +137,6 @@ MenuMonIconColors::
 	iconpal PINK, PURPLE ; SLOWKING
 	iconpal GRAY, RED ; PINECO
 	iconpal PURPLE, BROWN ; FORRETRESS
-	iconpal BLUE, RED ; DUNSPARCE
 	iconpal PURPLE, GRAY ; GLIGAR
 	iconpal GRAY, BROWN ; STEELIX
 	iconpal PINK, BLUE ; SNUBBULL
@@ -161,6 +158,7 @@ MenuMonIconColors::
 	iconpal BLUE, GRAY ; PHANPY
 	iconpal GRAY, RED ; DONPHAN
 	iconpal BLUE, PURPLE ; PORYGON2
+	iconpal BROWN, GREEN ; STANTLER
 	iconpal BROWN, GREEN ; SMEARGLE
 	iconpal BROWN, RED ; ELEKID
 	iconpal RED, BROWN ; MAGBY

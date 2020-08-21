@@ -746,7 +746,6 @@ Pokedex_InitUnownMode: ; 405bd (10:45bd)
 	call Pokedex_DrawUnownModeBG
 	xor a
 	ld [wDexCurrentUnownIndex], a
-	call Pokedex_LoadUnownFrontpicTiles
 	call Pokedex_UnownModePlaceCursor
 	farcall PrintUnownWord
 	call ApplyTilemapInVBlank
@@ -809,7 +808,6 @@ Pokedex_UnownModeHandleDPadInput: ; 40610 (10:4610)
 	ld [hBGMapMode], a
 	pop af
 	call Pokedex_UnownModeEraseCursor
-	call Pokedex_LoadUnownFrontpicTiles
 	call Pokedex_UnownModePlaceCursor
 	farcall PrintUnownWord
 	ld a, $1
@@ -2361,18 +2359,8 @@ Pokedex_LoadSelectedMonTiles: ; 4143b
 	call Pokedex_CheckSeen
 	jr z, .QuestionMark
 	call Pokedex_GetSelectedMon
-	cp UNOWN
-	jr z, .use_first_unown
-	cp MAGIKARP
-	jr z, .use_first_magikarp
 	ld a, 1
-	jr .continue
-.use_first_unown
-	ld a, [wFirstUnownSeen]
-	jr .continue
-.use_first_magikarp
-	ld a, [wFirstMagikarpSeen]
-.continue
+	
 	ld [wCurForm], a
 	ld a, [wd265]
 	ld [wCurPartySpecies], a
@@ -2463,25 +2451,6 @@ Pokedex_LoadUnownFont: ; 41a2c
 	or UNOWN_FONT
 	ld [wOptions2], a
 	jp LoadStandardFont
-
-Pokedex_LoadUnownFrontpicTiles: ; 41a58 (10:5a58)
-	ld a, [wCurForm]
-	push af
-	ld a, [wDexCurrentUnownIndex]
-	ld e, a
-	ld d, 0
-	ld hl, wUnownDex
-	add hl, de
-	ld a, [hl]
-	ld [wCurForm], a
-	ld a, UNOWN
-	ld [wCurPartySpecies], a
-	call GetBaseData
-	ld de, VTiles2 tile $00
-	predef GetFrontpic
-	pop af
-	ld [wCurForm], a
-	ret
 
 NewPokedexEntry: ; fb877
 	ld a, [hMapAnims]

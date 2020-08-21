@@ -1093,25 +1093,25 @@ BattleCommand_critical: ; 34631
 .Item:
 	ld c, 0
 
-	cp NUMEL
-	jr nz, .Farfetchd
-	ld a, [hl]
-	cp LUCKY_PUNCH
-	jr nz, .FocusEnergy
+;	cp CHANSEY
+;	jr nz, .Farfetchd
+;	ld a, [hl]
+;	cp LUCKY_PUNCH
+;	jr nz, .FocusEnergy
 
 ; +2 critical level
-	ld c, 2
-	jr .FocusEnergy
+;	ld c, 2
+;	jr .FocusEnergy
 
-.Farfetchd:
-	cp FARFETCH_D
-	jr nz, .FocusEnergy
-	ld a, [hl]
-	cp STICK
-	jr nz, .FocusEnergy
+;.Farfetchd:
+;	cp FARFETCH_D
+;	jr nz, .FocusEnergy
+;	ld a, [hl]
+;	cp STICK
+;	jr nz, .FocusEnergy
 
 ; +2 critical level
-	ld c, 2
+;	ld c, 2
 	; fallthrough
 
 .FocusEnergy:
@@ -2273,14 +2273,12 @@ BattleCommand_hittargetnosub: ; 34f60
 	db NIDORAN_M
 	db NIDORINO
 	db NIDOKING
-	db FARFETCH_D
 	db DODUO
 	db DODRIO
 	db RHYHORN
 	db RHYDON
 	db RHYPERIOR
 	db PINSIR
-	db DUNSPARCE
 	db HERACROSS
 	db PILOSWINE
 	db MAMOSWINE
@@ -2364,25 +2362,14 @@ StatUpDownAnim: ; 34feb
 	db WARTORTLE
 	db BLASTOISE
 	db SLOWBRO
-	db SHELLDER
-	db CLOYSTER
-	db OMANYTE
-	db OMASTAR
 	db -1
 
 .harden_users
-	db TRUMBEAK
 	db KAKUNA
-	db GRIMER
-	db MUK
 	db ONIX
 	db STEELIX
-	db CORPHISH
-	db CRAWDAUNT
 	db STARYU
 	db STARMIE
-	db KABUTO
-	db KABUTOPS
 	db HERACROSS
 	db GLIGAR
 	db GLISCOR
@@ -6083,14 +6070,14 @@ GetStatName:
 	ret
 
 .names
-	db "Attack@"
-	db "Defense@"
-	db "Speed@"
-	db "Spcl.Atk@"
-	db "Spcl.Def@"
-	db "Accuracy@"
-	db "Evasion@"
-	db "stats@" ; used by Curse
+	db "ATTACK@"
+	db "DEFENSE@"
+	db "SPEED@"
+	db "SPCL.ATK@"
+	db "SPCL.DEF@"
+	db "ACCURACY@"
+	db "EVASION@"
+	db "STATS@" ; used by Curse
 
 
 StatLevelMultipliers: ; 364e6

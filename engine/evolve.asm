@@ -64,6 +64,9 @@ EvolveAfterBattle_MasterLoop
 	jr z, EvolveAfterBattle_MasterLoop
 
 	ld b, a
+	
+	cp EVOLVE_TRADE
+	jp z, .trade
 
 	ld a, [wLinkMode]
 	and a
@@ -128,16 +131,6 @@ EvolveAfterBattle_MasterLoop
 	call IsMonHoldingEverstone
 	jp z, .dont_evolve_2
 
-	; Spiky-eared Pichu cannot evolve
-	ld a, [wTempMonSpecies]
-	cp PICHU
-	jr nz, .not_spiky_eared_pichu
-	ld a, [wTempMonForm]
-	and FORM_MASK
-	cp 2
-	jp z, .dont_evolve_2
-
-.not_spiky_eared_pichu
 	ld a, [hli]
 	cp TR_ANYTIME
 	jp z, .proceed
@@ -156,6 +149,27 @@ EvolveAfterBattle_MasterLoop
 	jp z, .dont_evolve_3
 	jp .proceed
 
+.trade
+	ld a, [wLinkMode]
+	and a
+	jp z, .dont_evolve_2
+
+	call IsMonHoldingEverstone
+	jp z, .dont_evolve_2
+
+	ld a, [hli]
+	ld b, a
+	inc a
+	jp z, .proceed
+
+	ld a, [wTempMonItem]
+	cp b
+	jp nz, .dont_evolve_3
+
+	xor a
+	ld [wTempMonItem], a
+	jp .proceed
+	
 .item
 	ld a, [hli]
 	ld b, a
@@ -353,15 +367,6 @@ endr
 	dec a
 	call SetSeenAndCaughtMon
 
-	ld a, [wd265]
-	cp UNOWN
-	jr nz, .skip_unown
-
-	ld hl, wTempMonForm
-	predef GetVariant
-	farcall UpdateUnownDex
-
-.skip_unown
 	pop de
 	pop hl
 	ld a, [wTempMonSpecies]

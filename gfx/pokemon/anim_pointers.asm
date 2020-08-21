@@ -96,9 +96,6 @@ AnimationPointers:
 	dw FlareonAnimation
 	dw PorygonAnimation
 	dw SnorlaxAnimation
-	dw ArticunoAnimation
-	dw ZapdosAnimation
-	dw MoltresAnimation
 	dw DratiniAnimation
 	dw DragonairAnimation
 	dw DragoniteAnimation
@@ -124,6 +121,8 @@ AnimationPointers:
 	dw FlaaffyAnimation
 	dw AmpharosAnimation
 	dw BellossomAnimation
+	dw MarillAnimation
+	dw AzumarillAnimation
 	dw SudowoodoAnimation
 	dw PolitoedAnimation
 	dw WooperAnimation
@@ -155,6 +154,7 @@ AnimationPointers:
 	dw PhanpyAnimation
 	dw DonphanAnimation
 	dw Porygon2Animation
+	dw StantlerAnimation
 	dw SmeargleAnimation
 	dw ElekidAnimation
 	dw MagbyAnimation

@@ -12,12 +12,12 @@ BuenasPasswordTable:
 	dw .RadioStations
 
               ; string type, points, option 1, option 2, option 3
-.JohtoStarters: db BUENA_MON,    10, CYNDAQUIL, TOTODILE, CHIKORITA
+.JohtoStarters: db BUENA_MON,    10, BULBASAUR, BULBASAUR, BULBASAUR
 .Beverages:     db BUENA_ITEM,   12, FRESH_WATER, SODA_POP, LEMONADE
 .HealingItems:  db BUENA_ITEM,   12, POTION, ANTIDOTE, PARALYZEHEAL
 .Balls:         db BUENA_ITEM,   12, POKE_BALL, GREAT_BALL, ULTRA_BALL
-.Pokemon1:      db BUENA_MON,    10, PIKACHU, RATTATA, GEODUDE
-.Pokemon2:      db BUENA_MON,    10, HOOTHOOT, SPINARAK, MEDITITE
+.Pokemon1:      db BUENA_MON,    10, BULBASAUR, BULBASAUR, BULBASAUR
+.Pokemon2:      db BUENA_MON,    10, BULBASAUR, BULBASAUR, BULBASAUR
 .JohtoTowns:    db BUENA_STRING, 16, "New Bark Town@", "Cherrygrove City@", "Azalea Town@"
 .Types:         db BUENA_STRING,  6, "Flying@", "Bug@", "Grass@"
 .Moves:         db BUENA_MOVE,   12, TACKLE, GROWL, MUD_SLAP

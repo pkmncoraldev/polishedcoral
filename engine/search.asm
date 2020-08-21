@@ -3,24 +3,24 @@ SpecialBeastsCheck: ; 0x4a6e8
 ; They must exist in either party or PC, and have the player's OT and ID.
 ; Return the result in wScriptVar.
 
-	ld a, RAIKOU
-	ld [wScriptVar], a
-	call CheckOwnMonAnywhere
-	jr nc, SpecialMonCheckFailed
+;	ld a, RAIKOU
+;	ld [wScriptVar], a
+;	call CheckOwnMonAnywhere
+;	jr nc, SpecialMonCheckFailed
 
-	ld a, ENTEI
-	ld [wScriptVar], a
-	call CheckOwnMonAnywhere
-	jr nc, SpecialMonCheckFailed
+;	ld a, ENTEI
+;	ld [wScriptVar], a
+;	call CheckOwnMonAnywhere
+;	jr nc, SpecialMonCheckFailed
 
-	ld a, SUICUNE
-	ld [wScriptVar], a
-	call CheckOwnMonAnywhere
-	jr nc, SpecialMonCheckFailed
+;	ld a, SUICUNE
+;	ld [wScriptVar], a
+;	call CheckOwnMonAnywhere
+;	jr nc, SpecialMonCheckFailed
 
 	; they exist
-	ld a, 1
-	ld [wScriptVar], a
+;	ld a, 1
+;	ld [wScriptVar], a
 	ret
 
 
@@ -29,24 +29,24 @@ SpecialBirdsCheck:
 ; They must exist in either party or PC, and have the player's OT and ID.
 ; Return the result in wScriptVar.
 
-	ld a, ARTICUNO
-	ld [wScriptVar], a
-	call CheckOwnMonAnywhere
-	jr nc, SpecialMonCheckFailed
+;	ld a, ARTICUNO
+;	ld [wScriptVar], a
+;	call CheckOwnMonAnywhere
+;	jr nc, SpecialMonCheckFailed
 
-	ld a, ZAPDOS
-	ld [wScriptVar], a
-	call CheckOwnMonAnywhere
-	jr nc, SpecialMonCheckFailed
+;	ld a, ZAPDOS
+;	ld [wScriptVar], a
+;	call CheckOwnMonAnywhere
+;	jr nc, SpecialMonCheckFailed
 
-	ld a, MOLTRES
-	ld [wScriptVar], a
-	call CheckOwnMonAnywhere
-	jr nc, SpecialMonCheckFailed
+;	ld a, MOLTRES
+;	ld [wScriptVar], a
+;	call CheckOwnMonAnywhere
+;	jr nc, SpecialMonCheckFailed
 
 	; they exist
-	ld a, 1
-	ld [wScriptVar], a
+;	ld a, 1
+;	ld [wScriptVar], a
 	ret
 
 
@@ -55,19 +55,19 @@ SpecialDuoCheck:
 ; They must exist in either party or PC, and have the player's OT and ID.
 ; Return the result in wScriptVar.
 
-	ld a, LUGIA
-	ld [wScriptVar], a
-	call CheckOwnMonAnywhere
-	jr nc, SpecialMonCheckFailed
+;	ld a, LUGIA
+;	ld [wScriptVar], a
+;	call CheckOwnMonAnywhere
+;	jr nc, SpecialMonCheckFailed
 
-	ld a, HO_OH
-	ld [wScriptVar], a
-	call CheckOwnMonAnywhere
-	jr nc, SpecialMonCheckFailed
+;	ld a, HO_OH
+;	ld [wScriptVar], a
+;	call CheckOwnMonAnywhere
+;	jr nc, SpecialMonCheckFailed
 
 	; they exist
-	ld a, 1
-	ld [wScriptVar], a
+;	ld a, 1
+;	ld [wScriptVar], a
 	ret
 
 

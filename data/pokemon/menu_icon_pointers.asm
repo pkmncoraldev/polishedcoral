@@ -155,6 +155,7 @@ IconPointers:
 	dw PhanpyIcon
 	dw DonphanIcon
 	dw Porygon2Icon
+	dw StantlerIcon
 	dw SmeargleIcon
 	dw ElekidIcon
 	dw MagbyIcon

@@ -429,14 +429,7 @@ _ChooseWildEncounter:
 	call ValidateTempWildMonSpecies
 	jr c, .nowildbattle
 
-	cp UNOWN
-	jr nz, .unown_check_done
 
-	ld a, [wUnlockedUnowns]
-	and a
-	jr z, .nowildbattle
-
-.unown_check_done
 	; Check if we're forcing type
 	ld [wCurSpecies], a
 	push bc

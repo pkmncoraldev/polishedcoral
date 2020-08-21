@@ -147,7 +147,7 @@ AddEggMonToParty:
 OddEggs:
 
 OddEgg1:
-	db PICHU
+	db BULBASAUR
 	db NO_ITEM
 	db THUNDERSHOCK, CHARM, DIZZY_PUNCH, 0
 	dw 02048 ; OT ID
@@ -171,7 +171,7 @@ OddEgg1:
 	db "Egg@@@@@@@@"
 
 OddEgg2:
-	db PICHU
+	db BULBASAUR
 	db NO_ITEM
 	db THUNDERSHOCK, CHARM, DIZZY_PUNCH, 0
 	dw 00256 ; OT ID
@@ -194,7 +194,7 @@ OddEgg2:
 	bigdw 6 ; SDef
 	db "Egg@@@@@@@@"
 
-	db MAGBY
+	db BULBASAUR
 	db NO_ITEM
 	db HAZE, LEER, DIZZY_PUNCH, 0
 	dw 02560 ; OT ID
@@ -217,7 +217,7 @@ OddEgg2:
 	bigdw 6 ; SDef
 	db "Egg@@@@@@@@"
 
-	db MAGBY
+	db BULBASAUR
 	db NO_ITEM
 	db HAZE, LEER, DIZZY_PUNCH, 0
 	dw 00512 ; OT ID
@@ -240,7 +240,7 @@ OddEgg2:
 	bigdw 6 ; SDef
 	db "Egg@@@@@@@@"
 
-	db ELEKID
+	db BULBASAUR
 	db NO_ITEM
 	db QUICK_ATTACK, LEER, DIZZY_PUNCH, 0
 	dw 03072 ; OT ID
@@ -263,7 +263,7 @@ OddEgg2:
 	bigdw 6 ; SDef
 	db "Egg@@@@@@@@"
 
-	db ELEKID
+	db BULBASAUR
 	db NO_ITEM
 	db QUICK_ATTACK, LEER, DIZZY_PUNCH, 0
 	dw 00512 ; OT ID
@@ -286,7 +286,7 @@ OddEgg2:
 	bigdw 6 ; SDef
 	db "Egg@@@@@@@@"
 
-	db TYROGUE
+	db BULBASAUR
 	db NO_ITEM
 	db TACKLE, RAGE, FORESIGHT, DIZZY_PUNCH
 	dw 02560 ; OT ID
@@ -309,7 +309,7 @@ OddEgg2:
 	bigdw 6 ; SDef
 	db "Egg@@@@@@@@"
 
-	db TYROGUE
+	db BULBASAUR
 	db NO_ITEM
 	db TACKLE, RAGE, FORESIGHT, DIZZY_PUNCH
 	dw 00256 ; OT ID
@@ -332,7 +332,7 @@ OddEgg2:
 	bigdw 6 ; SDef
 	db "Egg@@@@@@@@"
 
-	db MUNCHLAX
+	db BULBASAUR
 	db NO_ITEM
 	db SWEET_KISS, METRONOME, TACKLE, DIZZY_PUNCH
 	dw 04096 ; OT ID
@@ -355,7 +355,7 @@ OddEgg2:
 	bigdw 7 ; SDef
 	db "Egg@@@@@@@@"
 
-	db MUNCHLAX
+	db BULBASAUR
 	db NO_ITEM
 	db SWEET_KISS, METRONOME, TACKLE, DIZZY_PUNCH
 	dw 00768 ; OT ID

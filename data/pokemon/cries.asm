@@ -160,6 +160,7 @@ CryHeaders::
 	mon_cry CRY_PHANPY,    	 $048,  $230 ; Phanpy
 	mon_cry CRY_DONPHAN,     $000,  $1a0 ; Donphan
 	mon_cry CRY_PORYGON2,  	 $073,  $240 ; Porygon2
+	mon_cry CRY_ESPEON,     -$160,  $180 ; Stantler
 	mon_cry CRY_SMEARGLE,   -$21a,  $1f0 ; Smeargle
 	mon_cry CRY_ELEKID,  	-$2d8,  $0b4 ; Elekid
 	mon_cry CRY_TEDDIURSA,   $176,  $03a ; Magby

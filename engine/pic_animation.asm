@@ -931,10 +931,6 @@ GetMonFramesPointer: ; d05ce
 	ld h, [hl]
 	ld l, a
 	jr c, .got_frames
-	ld a, [wPokeAnimSpecies]
-	cp CHIKORITA
-	jr c, .got_frames
-	ld c, BANK(JohtoFrames)
 .got_frames
 	ld a, c
 	ld [wPokeAnimFramesBank], a

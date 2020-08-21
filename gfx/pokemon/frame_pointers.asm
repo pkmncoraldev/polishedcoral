@@ -121,6 +121,8 @@ FramesPointers:
 	dw FlaaffyFrames
 	dw AmpharosFrames
 	dw BellossomFrames
+	dw MarillFrames
+	dw AzumarillFrames
 	dw SudowoodoFrames
 	dw PolitoedFrames
 	dw WooperFrames
@@ -152,6 +154,7 @@ FramesPointers:
 	dw PhanpyFrames
 	dw DonphanFrames
 	dw Porygon2Frames
+	dw StantlerFrames
 	dw SmeargleFrames
 	dw ElekidFrames
 	dw MagbyFrames

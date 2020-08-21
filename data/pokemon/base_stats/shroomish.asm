@@ -7,7 +7,7 @@
 	db NO_ITEM ; item 1
 	db RAWST_BERRY ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
-	dn 6, 6 ; frontpic dimensions
+	dn 5, 5 ; frontpic dimensions
 	db THICK_FAT ; ability 1
 	db HYDRATION ; ability 2
 	db ICE_BODY ; hidden ability

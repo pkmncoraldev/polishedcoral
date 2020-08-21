@@ -645,8 +645,8 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 ; 4e21e
 
 .Status_Type: ; 4e119
-	db   "Status/"
-	next "Type/@"
+	db   "STATUS/"
+	next "TYPE/@"
 ; 4e127
 
 .OK_str: ; 4e127
@@ -659,11 +659,11 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 ; 4e226
 
 .ExpPointStr: ; 4e12b
-	db "Exp.Points@"
+	db "EXP.POINTS@"
 ; 4e136
 
 .LevelUpStr: ; 4e136
-	db "Level Up@"
+	db "LEVEL UP@"
 ; 4e13f
 
 .ToStr: ; 4e13f
@@ -708,7 +708,7 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 ; 4e1a0 (13:61a0)
 
 .Item: ; 4e1a0
-	db "Item@"
+	db "ITEM@"
 ; 4e1a5
 
 .ThreeDashes: ; 4e1a5
@@ -716,7 +716,7 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 ; 4e1a9
 
 .Move: ; 4e1a9
-	db "Moves@"
+	db "MOVES@"
 ; 4e1ae
 
 .BluePage: ; 4e1ae (13:61ae)
@@ -750,7 +750,7 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 	ret
 
 .NatureString:
-	db "Nature/@"
+	db "NATURE/@"
 
 .OrangePage:
 	farjp OrangePage_
@@ -783,7 +783,7 @@ OrangePage_:
 .horizontal_divider
 	db "____________________@"
 .ability
-	db "Ability/@"
+	db "ABILITY/@"
 
 TN_PrintToD
 	ld de, .caughtat
@@ -807,16 +807,16 @@ TN_PrintToD
 	jp PlaceString
 
 .caughtat
-	db "Met/@"
+	db "MET/@"
 
 .morn
-	db "Morn@"
+	db "MORN@"
 
 .day
-	db "Day@"
+	db "DAY@"
 
 .nite
-	db "Nite@"
+	db "NITE@"
 
 .unknown
 	db "???@"
@@ -836,7 +836,7 @@ TN_PrintLocation:
 	jp PlaceString
 
 .event
-	db "Event #mon@"
+	db "EVENT #MON@"
 
 TN_PrintLV:
 	ld a, [wTempMonCaughtLevel]
@@ -863,10 +863,10 @@ TN_PrintLV:
 	db "at <LV>@"
 
 .str_hatched
-	db "from Egg@"
+	db "from EGG@"
 
 .str_unknown
-	db "by trade@"
+	db "by TRADE@"
 
 TN_PrintCharacteristics:
 	; b = value of best DV, c = index of best DV
@@ -987,30 +987,14 @@ StatsScreen_PlaceFrontpic: ; 4e226 (13:6226)
 .AnimateMon: ; 4e253 (13:6253)
 	ld hl, wcf64
 	set 5, [hl]
-	ld a, [wCurPartySpecies]
-	cp UNOWN
-	jr z, .unown
 	hlcoord 0, 0
 	jp PrepMonFrontpic
 
-.unown
-	xor a
-	ld [wBoxAlignment], a
-	hlcoord 0, 0
-	jp _PrepMonFrontpic
 
 .AnimateEgg: ; 4e271 (13:6271)
-	ld a, [wCurPartySpecies]
-	cp UNOWN
-	jr z, .unownegg
 	ld a, TRUE
 	ld [wBoxAlignment], a
-	jr .get_animation
 
-.unownegg
-	xor a
-	ld [wBoxAlignment], a
-	; fallthrough
 
 .get_animation ; 4e289 (13:6289)
 	ld a, [wCurPartySpecies]
@@ -1155,7 +1139,7 @@ EggStatsScreen: ; 4e33a
 ; 0x4e3c0
 
 EggString: ; 4e3c0
-	db   "Egg"
+	db   "EGG"
 	next "OT/?????"
 	next "<ID>№.?????@"
 
@@ -1176,7 +1160,7 @@ EggMoreTimeString: ; 0x4e43d
 	next "more time, though.@"
 
 EggALotMoreTimeString: ; 0x4e46e
-	db   "This Egg needs a"
+	db   "This EGG needs a"
 	next "lot more time to"
 	next "hatch.@"
 ; 0x4e497

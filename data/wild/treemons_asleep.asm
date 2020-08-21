@@ -1,30 +1,30 @@
 ; Used by CheckSleepingTreeMon
 
 AsleepTreeMonsNite:
-	db PIKIPEK
-	db TRUMBEAK
-	db TOUCANNON
-	db WEEDLE
-	db KAKUNA
-	db BEEDRILL
-	db PIDGEY
-	db EKANS
-	db EXEGGCUTE
-	db LEDYBA
+	db BULBASAUR
+	db BULBASAUR
+	db BULBASAUR
+	db BULBASAUR
+	db BULBASAUR
+	db BULBASAUR
+	db BULBASAUR
+	db BULBASAUR
+	db BULBASAUR
+	db BULBASAUR
 	db -1 ; end
 
 AsleepTreeMonsDay:
-	db VENONAT
-	db HOOTHOOT
-	db NOCTOWL
-	db SPINARAK
-	db HERACROSS
+	db BULBASAUR
+	db BULBASAUR
+	db BULBASAUR
+	db BULBASAUR
+	db BULBASAUR
 	db -1 ; end
 
 AsleepTreeMonsMorn:
-	db VENONAT
-	db HOOTHOOT
-	db NOCTOWL
-	db SPINARAK
-	db HERACROSS
+	db BULBASAUR
+	db BULBASAUR
+	db BULBASAUR
+	db BULBASAUR
+	db BULBASAUR
 	db -1 ; end

@@ -4,24 +4,7 @@ PrintMonTypes: ; 5090d
 
 	push hl
 	call GetBaseData
-	pop hl
-
-if !DEF(FAITHFUL)
-	; PrintMonTypes is only called for the stats screen,
-	; so assume that the full data is in wTempMon
-	; Armored Mewtwo is Psychic/Steel
-	ld a, [wTempMonSpecies]
-	cp MEWTWO
-	jr nz, .not_armored_mewtwo
-	ld a, [wTempMonItem]
-	cp ARMOR_SUIT
-	jr nz, .not_armored_mewtwo
-	ld a, STEEL
-	ld [wBaseType2], a
-.not_armored_mewtwo
-endc
-
-	push hl
+	
 	ld a, [wBaseType1]
 	call .Print
 
@@ -95,24 +78,24 @@ TypeNames: ; 5097b
 	dw Fairy
 	dw UnknownType
 
-Normal:      db "Normal@"
-Fighting:    db "Fighting@"
-Flying:      db "Flying@"
-Poison:      db "Poison@"
-Ground:      db "Ground@"
-Rock:        db "Rock@"
-Bug:         db "Bug@"
-Ghost:       db "Ghost@"
-Steel:       db "Steel@"
-Fire:        db "Fire@"
-Water:       db "Water@"
-Grass:       db "Grass@"
-Electric:    db "Electric@"
-Psychic:     db "Psychic@"
-Ice:         db "Ice@"
-Dragon:      db "Dragon@"
-Dark:        db "Dark@"
-Fairy:       db "Fairy@"
+Normal:      db "NORMAL@"
+Fighting:    db "FIGHTING@"
+Flying:      db "FLYING@"
+Poison:      db "POISON@"
+Ground:      db "GROUND@"
+Rock:        db "ROCK@"
+Bug:         db "BUG@"
+Ghost:       db "GHOST@"
+Steel:       db "STEEL@"
+Fire:        db "FIRE@"
+Water:       db "WATER@"
+Grass:       db "GRASS@"
+Electric:    db "ELECTRIC@"
+Psychic:     db "PSYCHIC@"
+Ice:         db "ICE@"
+Dragon:      db "DRAGON@"
+Dark:        db "DARK@"
+Fairy:       db "FAIRY@"
 UnknownType: db "???@"
 
 ; 50a28

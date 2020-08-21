@@ -3310,30 +3310,6 @@ LoadEnemyPkmnToSwitchTo:
 	ld [wCurPartySpecies], a
 	call LoadEnemyMon
 
-	ld a, [wCurPartySpecies]
-	cp UNOWN
-	jr nz, .skip_unown
-	ld a, [wFirstUnownSeen]
-	and a
-	jr nz, .skip_unown
-	ld hl, wEnemyMonForm
-	predef GetVariant
-	ld a, [wCurForm]
-	ld [wFirstUnownSeen], a
-.skip_unown
-
-	ld a, [wCurPartySpecies]
-	cp MAGIKARP
-	jr nz, .skip_magikarp
-	ld a, [wFirstMagikarpSeen]
-	and a
-	jr nz, .skip_magikarp
-	ld hl, wEnemyMonForm
-	predef GetVariant
-	ld a, [wCurForm]
-	ld [wFirstMagikarpSeen], a
-.skip_magikarp
-
 	ld hl, wEnemyMonHP
 	ld a, [hli]
 	ld [wEnemyHPAtTimeOfPlayerSwitch], a
@@ -3627,19 +3603,6 @@ InitBattleMon: ; 3da0d
 	ld a, [wBaseType2]
 	ld [wBattleMonType2], a
 
-if !DEF(FAITHFUL)
-	; Armored Mewtwo is Psychic/Steel
-	ld a, [wBattleMonSpecies]
-	cp MEWTWO
-	jr nz, .not_armored_mewtwo
-	ld a, [wBattleMonItem]
-	cp ARMOR_SUIT
-	jr nz, .not_armored_mewtwo
-	ld a, STEEL
-	ld [wBattleMonType2], a
-.not_armored_mewtwo
-endc
-
 	ld hl, wPartyMonNicknames
 	ld a, [wCurBattleMon]
 	call SkipNames
@@ -3740,19 +3703,6 @@ InitEnemyMon: ; 3dabd
 	inc de
 	ld a, [hl]
 	ld [de], a
-
-if !DEF(FAITHFUL)
-	; Armored Mewtwo is Psychic/Steel
-	ld a, [wEnemyMonSpecies]
-	cp MEWTWO
-	jr nz, .not_armored_mewtwo
-	ld a, [wEnemyMonItem]
-	cp ARMOR_SUIT
-	jr nz, .not_armored_mewtwo
-	ld a, STEEL
-	ld [wEnemyMonType2], a
-.not_armored_mewtwo
-endc
 
 	ld hl, wBaseStats
 	ld de, wEnemyMonBaseStats
@@ -6910,113 +6860,6 @@ endr
 	ld a, [bc]
 	ld [hl], a
 
-	; Unown
-	ld a, [wTempEnemyMonSpecies]
-	cp UNOWN
-	jr nz, .EkansArbok
-
-.unown_letter
-	ld a, NUM_UNOWN
-	call BattleRandomRange
-	inc a
-	ld b, a
-	ld a, [wEnemyMonForm]
-	and $ff - FORM_MASK
-	add b
-	ld [wEnemyMonForm], a
-	; Get letter based on form
-	ld hl, wEnemyMonForm
-	predef GetVariant
-	; Can't use any letters that haven't been unlocked
-	push de
-	call CheckUnownLetter
-	pop de
-	jr c, .unown_letter ; re-roll
-	jp .Happiness
-
-.EkansArbok:
-	ld a, [wTempEnemyMonSpecies]
-	cp EKANS
-	jr z, .yes_ekans
-	cp ARBOK
-	jr nz, .Magikarp
-
-.yes_ekans
-	call RegionCheck
-	ld a, e
-	ld d, ARBOK_JOHTO_FORM
-	and a
-	jr z, .johto_form
-	ld d, ARBOK_KANTO_FORM
-.johto_form
-	ld a, [wEnemyMonForm]
-	and $ff - FORM_MASK
-	add d
-	ld [wEnemyMonForm], a
-	jr .Happiness
-
-.Magikarp:
-	ld a, [wTempEnemyMonSpecies]
-	cp MAGIKARP
-	jr nz, .Happiness
-
-	; Random Magikarp pattern
-	ld a, NUM_MAGIKARP
-	call BattleRandomRange
-	inc a
-	ld b, a
-	ld a, [wEnemyMonForm]
-	and $ff - FORM_MASK
-	add b
-	ld [wEnemyMonForm], a
-
-	; Get Magikarp's length
-	ld de, wEnemyMonDVs
-	ld bc, wPlayerID
-	farcall CalcMagikarpLength
-
-	; We're clear if the length is < 5'
-	ld a, [wMagikarpLengthMmHi]
-	cp 5
-	jr nz, .CheckMagikarpArea
-
-	; 5% chance of skipping size checks
-	call Random
-	cp 5 percent
-	jr c, .CheckMagikarpArea
-	; Try again if > 3"
-	ld a, [wMagikarpLengthMmLo]
-	cp 3
-	jp nc, .GenerateDVs
-
-	; 20% chance of skipping this check
-	call Random
-	cp 20 percent - 1
-	jr c, .CheckMagikarpArea
-	; Try again if > 2"
-	ld a, [wMagikarpLengthMmLo]
-	cp 2
-	jp nc, .GenerateDVs
-
-.CheckMagikarpArea:
-;	ld a, [wMapGroup]
-;	cp GROUP_LAKE_OF_RAGE
-;	jr nz, .Happiness
-;	ld a, [wMapNumber]
-;	cp MAP_LAKE_OF_RAGE
-;	jr nz, .Happiness
-;.LakeOfRageMagikarp
-;	; 40% chance of not flooring
-;	call Random
-;	cp $64 ; / $100
-;	jr c, .Happiness
-;	; Floor at length 1024
-;	ld a, [wMagikarpLengthMmHi]
-;	cp 1024 >> 8
-;	jp c, .GenerateDVs ; try again
-
-
-	; Finally done with DVs
 
 .Happiness:
 	; Set happiness
@@ -7082,19 +6925,6 @@ endr
 	inc de
 	ld a, [hl]
 	ld [de], a
-
-if !DEF(FAITHFUL)
-	; Armored Mewtwo is Psychic/Steel
-	ld a, [wEnemyMonSpecies]
-	cp MEWTWO
-	jr nz, .not_armored_mewtwo
-	ld a, [wEnemyMonItem]
-	cp ARMOR_SUIT
-	jr nz, .not_armored_mewtwo
-	ld a, STEEL
-	ld [wEnemyMonType2], a
-.not_armored_mewtwo
-endc
 
 	; Get moves
 	ld de, wEnemyMonMoves
@@ -8787,26 +8617,6 @@ InitEnemyWildmon: ; 3f607
 	rst CopyBytes
 	ld hl, wEnemyMonForm
 	predef GetVariant
-
-	ld a, [wCurPartySpecies]
-	cp UNOWN
-	jr nz, .skip_unown
-	ld a, [wFirstUnownSeen]
-	and a
-	jr nz, .skip_unown
-	ld a, [wCurForm]
-	ld [wFirstUnownSeen], a
-.skip_unown
-
-	ld a, [wCurPartySpecies]
-	cp MAGIKARP
-	jr nz, .skip_magikarp
-	ld a, [wFirstMagikarpSeen]
-	and a
-	jr nz, .skip_magikarp
-	ld a, [wCurForm]
-	ld [wFirstMagikarpSeen], a
-.skip_magikarp
 
 	ld de, VTiles2
 	predef FrontpicPredef

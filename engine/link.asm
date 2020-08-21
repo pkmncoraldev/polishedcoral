@@ -1649,21 +1649,7 @@ LinkTrade: ; 28b87
 	call LoadTradeScreenGFX
 	call SetTradeRoomBGPals
 	call Link_WaitBGMap
-	ld b, $1
 	pop af
-	ld c, a
-	cp MEW
-	jr z, .loop
-	ld a, [wCurPartySpecies]
-	cp MEW
-	jr z, .loop
-	ld b, $2
-	ld a, c
-	cp CELEBI
-	jr z, .loop
-	ld a, [wCurPartySpecies]
-	cp CELEBI
-	jr z, .loop
 	ld b, $0
 
 .loop

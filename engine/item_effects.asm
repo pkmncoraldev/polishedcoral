@@ -1526,12 +1526,12 @@ StatStrings: ; eeab
 	dw .spcl_atk
 	dw .spcl_def
 
-.health   db "Health@"
-.attack   db "Attack@"
-.defense  db "Defense@"
-.speed    db "Speed@"
-.spcl_atk db "Spcl.Atk@"
-.spcl_def db "Spcl.Def@"
+.health   db "HEALTH@"
+.attack   db "ATTACK@"
+.defense  db "DEFENSE@"
+.speed    db "SPEED@"
+.spcl_atk db "SPCL.ATK@"
+.spcl_def db "SPCL.DEF@"
 ; eed9
 
 

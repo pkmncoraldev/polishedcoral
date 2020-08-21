@@ -125,8 +125,21 @@ $(roms_md5): crystal ; $(MD5) $(NAME)-$(VERSION).gbc > $@
 $(sorted_sym): crystal ; tail -n +3 $(NAME)-$(VERSION).sym | sort -o $@
 
 
-%.o: dep = $(shell $(SCAN_INCLUDES) $(@D)/$*.asm)
-%.o: %.asm $$(dep)
+
+# The dep rules have to be explicit or else missing files won't be reported.
+# As a side effect, they're evaluated immediately instead of when the rule is invoked.
+# It doesn't look like $(shell) can be deferred so there might not be a better way.
+define DEP
+$1: $2 $$(shell tools/scan_includes $2)
+endef
+
+ifeq (,$(filter clean tidy tools,$(MAKECMDGOALS)))
+# Dependencies for shared objects objects
+$(foreach obj, $(crystal_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
+endif
+
+%.o: %.asm
+
 	$(RGBDS_DIR)rgbasm $(RGBASM_FLAGS) -o $@ $<
 
 .gbc:

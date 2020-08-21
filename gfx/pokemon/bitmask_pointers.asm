@@ -121,6 +121,8 @@ BitmasksPointers:
 	dw FlaaffyBitmasks
 	dw AmpharosBitmasks
 	dw BellossomBitmasks
+	dw MarillBitmasks
+	dw AzumarillBitmasks
 	dw SudowoodoBitmasks
 	dw PolitoedBitmasks
 	dw WooperBitmasks
@@ -152,6 +154,7 @@ BitmasksPointers:
 	dw PhanpyBitmasks
 	dw DonphanBitmasks
 	dw Porygon2Bitmasks
+	dw StantlerBitmasks
 	dw SmeargleBitmasks
 	dw ElekidBitmasks
 	dw MagbyBitmasks

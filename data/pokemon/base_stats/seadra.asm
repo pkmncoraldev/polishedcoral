@@ -1,21 +1,27 @@
-	db  55,  65,  95,  85,  95,  45 ; 440 BST
+	db  45,  49,  49,  45,  65,  65
 	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, WATER
-	db 75 ; catch rate
-	db 155 ; base exp
+	db GRASS, POISON
+	db 45 ; catch rate
+	db 64 ; base exp
 	db NO_ITEM ; item 1
-	db DRAGON_SCALE ; item 2
-	dn FEMALE_50, 3 ; gender, step cycles to hatch
-	INCBIN "gfx/pokemon/seadra/front.dimensions"
-	abilities_for SEADRA, POISON_POINT, SNIPER, DAMP
-	db MEDIUM_FAST ; growth rate
-	dn AMPHIBIAN, REPTILE ; egg groups
+	db NO_ITEM ; item 2
+	dn FEMALE_12_5, 3 ; gender, step cycles to hatch
+	dn 5, 5 ; frontpic dimensions
+	db OVERGROW ; ability 1
+if DEF(FAITHFUL)
+	db OVERGROW ; ability 2
+else
+	db EFFECT_SPORE ; ability 2
+endc
+	db CHLOROPHYLL ; hidden ability
+	db MEDIUM_SLOW ; growth rate
+	dn MONSTER, PLANT ; egg groups
 
 	; ev_yield
-	ev_yield   0,   0,   1,   0,   1,   0
+	ev_yield   0,   0,   0,   0,   1,   0
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CURSE, TOXIC, HAIL, HIDDEN_POWER, ICE_BEAM, BLIZZARD, HYPER_BEAM, PROTECT, RAIN_DANCE, RETURN, DOUBLE_TEAM, FLASH_CANNON, SWIFT, SUBSTITUTE, FACADE, REST, ATTRACT, SCALD, DRAGON_PULSE, WATER_PULSE, GIGA_IMPACT, SURF, WHIRLPOOL, WATERFALL, DOUBLE_EDGE, ENDURE, HEADBUTT, ICY_WIND, SLEEP_TALK, SWAGGER
+	tmhm CURSE, TOXIC, HIDDEN_POWER, SUNNY_DAY, LIGHT_SCREEN, PROTECT, GIGA_DRAIN, SAFEGUARD, SOLAR_BEAM, RETURN, DOUBLE_TEAM, SLUDGE_BOMB, SUBSTITUTE, FACADE, REST, ATTRACT, ROCK_SMASH, ENERGY_BALL, ENDURE, FLASH, SWORDS_DANCE, CUT, STRENGTH, BODY_SLAM, DEFENSE_CURL, DOUBLE_EDGE, HEADBUTT, KNOCK_OFF, SEED_BOMB, SLEEP_TALK, SWAGGER
 	; end

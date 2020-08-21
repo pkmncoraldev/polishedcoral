@@ -54,7 +54,7 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .skip1
-	givepoke MEW, 100
+	givepoke STANTLER, 100
 .skip1
 	writetext PlayerHouseDebugText2
 	yesorno

@@ -222,7 +222,7 @@ UserCanLoseItem::
 	ret
 
 .StuckItems
-	db ARMOR_SUIT, MEWTWO
+;	db ARMOR_SUIT, MEWTWO
 	db -1
 
 GetOpponentUsedItemAddr::
@@ -380,19 +380,9 @@ GetOpponentAbilityAfterMoldBreaker:: ; 39e1
 	ret
 
 LegendaryMons::
-	db ARTICUNO
-	db ZAPDOS
-	db MOLTRES
-	db RAIKOU
-	db ENTEI
-	db SUICUNE
+
 UberMons::
 ; banned from Battle Tower
-	db MEWTWO
-	db MEW
-	db LUGIA
-	db HO_OH
-	db CELEBI
 	db -1
 
 MoldBreakerSuppressedAbilities:

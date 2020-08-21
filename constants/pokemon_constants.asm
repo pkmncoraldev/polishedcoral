@@ -189,7 +189,7 @@
 	const MAGMORTAR ;467
 	const TOGEKISS ;468
 	const LEAFEON ;470
-	const GALCEON ;471
+	const GLACEON ;471
 	const GLISCOR ;472
 	const MAMOSWINE ;473
 	const PORYGON_Z ;474

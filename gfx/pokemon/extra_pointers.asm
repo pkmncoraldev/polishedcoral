@@ -1,4 +1,4 @@
-AnimationExtraExtraPointers:
+AnimationExtraPointers:
 	dw BulbasaurAnimationExtra
 	dw IvysaurAnimationExtra
 	dw VenusaurAnimationExtra
@@ -96,9 +96,6 @@ AnimationExtraExtraPointers:
 	dw FlareonAnimationExtra
 	dw PorygonAnimationExtra
 	dw SnorlaxAnimationExtra
-	dw ArticunoAnimationExtra
-	dw ZapdosAnimationExtra
-	dw MoltresAnimationExtra
 	dw DratiniAnimationExtra
 	dw DragonairAnimationExtra
 	dw DragoniteAnimationExtra
@@ -124,6 +121,8 @@ AnimationExtraExtraPointers:
 	dw FlaaffyAnimationExtra
 	dw AmpharosAnimationExtra
 	dw BellossomAnimationExtra
+	dw MarillAnimationExtra
+	dw AzumarillAnimationExtra
 	dw SudowoodoAnimationExtra
 	dw PolitoedAnimationExtra
 	dw WooperAnimationExtra
@@ -155,6 +154,7 @@ AnimationExtraExtraPointers:
 	dw PhanpyAnimationExtra
 	dw DonphanAnimationExtra
 	dw Porygon2AnimationExtra
+	dw StantlerAnimationExtra
 	dw SmeargleAnimationExtra
 	dw ElekidAnimationExtra
 	dw MagbyAnimationExtra

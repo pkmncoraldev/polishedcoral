@@ -567,10 +567,31 @@ LearnLevelMoves: ; 42487
 	jr .find_move
 
 .learn
+;	pop hl
+;	push hl
 	ld a, d
 	ld [wPutativeTMHMMove], a
 	ld [wd265], a
+	
+	ld [wCurMove], a
+	ld [wNamedObjectIndexBuffer], a
+	push hl
+	push de
+	farcall CheckMultiMoveSlot
+	jr nc, .not_multi_move_slot
+	pop de
+	pop hl
+	dec a
+	farcall GetMultiMoveSlotName
+	jr .got_move_name
+.not_multi_move_slot
+	pop de
+	pop hl
+	ld a, [wCurMove]
+	dec a
 	call GetMoveName
+	
+.got_move_name
 	call CopyName1
 	predef LearnMove
 	pop hl

@@ -13,8 +13,8 @@ Route4_MapScriptHeader:
 	signpost 7, 2, SIGNPOST_READ, Route4Sign
 	signpost 5, 38, SIGNPOST_READ, Route4ForestSign
 
-	db 9 ; object events
-	person_event SPRITE_LASS, 7, 7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute4_1, -1
+	db 8 ; object events
+;	person_event SPRITE_LASS, 7, 7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute4_1, -1
 	person_event SPRITE_FISHER, 11, 12, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRoute4_2, -1
 	person_event SPRITE_FISHER, 16, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRoute4_3, -1
 	person_event SPRITE_FISHER, 16, 15, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRoute4_4, -1
@@ -130,11 +130,11 @@ Route4NPC8:
 	
 Route4Snorlax:
 	checkitem POKE_FLUTE
-	iffalse noflute
+	iffalse Route4NoFlute
 	opentext
 	writetext Route4SnorlaxTextHaveFlute
 	yesorno
-	iffalse dontuseflute
+	iffalse Route4DontUseFlute
 Route4PlayedFluteForSnorlax::
 	spriteface ROUTE4SNORLAXNPC1, RIGHT
 	spriteface ROUTE4SNORLAXNPC2, LEFT
@@ -149,7 +149,28 @@ Route4PlayedFluteForSnorlax::
 	waitsfx
 	loadwildmon SNORLAX, 30
 	startbattle
-	if_equal $2, DidntBeatSnorlaxRoute4
+	if_equal $0, BeatSnorlaxRoute4
+	reloadmapafterbattle
+	opentext
+	writetext Route4SnorlaxTextRanAway
+	waitbutton
+	closetext
+	end
+	
+Route4DontUseFlute:
+	writetext Route4SnorlaxTextDontUseFlute
+	waitbutton
+	closetext
+	end
+	
+Route4NoFlute:
+	opentext
+	writetext Route4SnorlaxTextNoFlute
+	waitbutton
+	closetext
+	end
+	
+BeatSnorlaxRoute4:
 	disappear ROUTE4SNORLAX
 	reloadmapafterbattle
 	opentext
@@ -157,27 +178,6 @@ Route4PlayedFluteForSnorlax::
 	waitbutton
 	closetext
 	setevent EVENT_FOUGHT_SNORLAX_ROUTE_4
-	end
-	
-dontuseflute:
-	writetext Route4SnorlaxTextDontUseFlute
-	waitbutton
-	closetext
-	end
-	
-noflute:
-	opentext
-	writetext Route4SnorlaxTextNoFlute
-	waitbutton
-	closetext
-	end
-	
-DidntBeatSnorlaxRoute4:
-	reloadmapafterbattle
-	opentext
-	writetext Route4SnorlaxTextRanAway
-	waitbutton
-	closetext
 	end
 	
 Route4Sign:

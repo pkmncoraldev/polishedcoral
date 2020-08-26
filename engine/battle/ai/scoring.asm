@@ -337,7 +337,6 @@ AI_Smart: ; 386be
 	dbw EFFECT_HEAL,              AI_Smart_Heal
 	dbw EFFECT_TOXIC,             AI_Smart_Toxic
 	dbw EFFECT_LIGHT_SCREEN,      AI_Smart_LightScreen
-	dbw EFFECT_SUPER_FANG,        AI_Smart_SuperFang
 	dbw EFFECT_TRAP,              AI_Smart_Bind
 	dbw EFFECT_CONFUSE,           AI_Smart_Confuse
 	dbw EFFECT_SP_DEF_UP_2,       AI_Smart_SpDefenseUp2
@@ -1211,7 +1210,7 @@ AI_Smart_Encore: ; 38c3b
 	db HAZE
 	db HONE_CLAWS
 	db LEECH_SEED
-	db LEER
+	db LEER_TAIL_WHIP
 	db POISONPOWDER
 	db ROAR
 	db SCREECH
@@ -1219,7 +1218,6 @@ AI_Smart_Encore: ; 38c3b
 	db SPLASH
 	db STRING_SHOT
 	db SUBSTITUTE
-	db SUPER_FANG
 	db SWORDS_DANCE
 	db TELEPORT
 	db TRICK
@@ -2131,7 +2129,7 @@ SunnyDayMoves: ; 39134
 	db FIRE_SPIN
 	db FIRE_BLAST
 	db FLARE_BLITZ
-	db HEALINGLIGHT
+	db SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db $ff
 ; 3913d
 
@@ -2570,7 +2568,6 @@ UsefulMoves: ; 39301
 	db RECOVER
 	db FIRE_BLAST
 	db SOFTBOILED
-	db SUPER_FANG
 	db MOONBLAST
 	db PLAY_ROUGH
 	db HURRICANE
@@ -2624,12 +2621,12 @@ AI_Opportunist: ; 39315
 
 .stallmoves
 	db AGILITY
-	db BARRIER
+	db BARRIER_IRON_DEFENSE
 	db BULK_UP
 	db CALM_MIND
 	db CONVERSION
 	db COUNTER
-	db DEFENSE_CURL
+	db DEFENSE_CURL_HARDEN_WITHDRAW
 	db DISABLE
 	db DRAGON_DANCE
 	db FOCUS_ENERGY
@@ -2638,7 +2635,7 @@ AI_Opportunist: ; 39315
 	db HAZE
 	db HONE_CLAWS
 	db LEECH_SEED
-	db LEER
+	db LEER_TAIL_WHIP
 	db LIGHT_SCREEN
 	db RAGE
 	db REFLECT
@@ -2762,7 +2759,7 @@ AI_Aggressive: ; 39369
 	db EFFECT_RAMPAGE
 	db EFFECT_MULTI_HIT
 	db EFFECT_DOUBLE_HIT
-	db EFFECT_FURY_STRIKES
+	db EFFECT_FURY_SWIPES
 	db $ff
 ; 393e7
 
@@ -2789,7 +2786,6 @@ AIDamageCalc: ; 393e7
 	farjp BattleCommand_conditionalboost
 
 .ConstantDamageEffects:
-	db EFFECT_SUPER_FANG
 	db EFFECT_STATIC_DAMAGE
 	db EFFECT_LEVEL_DAMAGE
 	db $ff

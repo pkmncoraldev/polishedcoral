@@ -158,6 +158,7 @@ EvosAttacksPointers:: ; 0x425b1
 	dw PhanpyEvosAttacks
 	dw DonphanEvosAttacks
 	dw Porygon2EvosAttacks
+	dw StantlerEvosAttacks
 	dw SmeargleEvosAttacks
 	dw ElekidEvosAttacks
 	dw MagbyEvosAttacks
@@ -165,7 +166,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw LarvitarEvosAttacks
 	dw PupitarEvosAttacks
 	dw TyranitarEvosAttacks
-	
 	dw ShroomishEvosAttacks
 	dw BreloomEvosAttacks
 	dw AronEvosAttacks

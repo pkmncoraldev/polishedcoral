@@ -147,7 +147,7 @@ MoveDescriptions::
 	dw DizzyPunchDescription
 	dw SporeDescription
 	dw FlashDescription
-	dw ExtrasensoryDescription
+	dw LockOnDescription
 	dw SplashDescription
 	dw DragonDanceDescription
 	dw CrabhammerDescription
@@ -160,7 +160,7 @@ MoveDescriptions::
 	dw BulkUpDescription
 	dw ConversionDescription
 	dw TriAttackDescription
-	dw SuperFangDescription
+	dw SharpenDescription
 	dw SlashDescription
 	dw SubstituteDescription
 	dw GigaImpactDescription
@@ -329,7 +329,6 @@ HyperFangDescription:
 AirSlashDescription:
 IronHeadDescription:
 ZenHeadbuttDescription:
-ExtrasensoryDescription:
 DarkPulseDescription:
 AstonishDescription:
 IcicleCrashDescription:
@@ -352,8 +351,8 @@ ScaldDescription:
 	next "inflict a burn.@"
 	
 FakeOutDescription:
-	db   "Causes flinching."
-	next "Only usable once.@"
+	db   "Always flinches."
+	next "First turn only.@"
 
 BodySlamDescription:
 ThundershockDescription:
@@ -498,9 +497,13 @@ SweetKissDescription:
 	db   "A move that may"
 	next "confuse the foe.@"
 
+SharpenDescription:
+	db   "Raises the user's"
+	next "ATTACK.@"
+	
 DefenseCurlDescription:
 	db   "Raises the user's"
-	next "Defense.@"
+	next "DEFENSE.@"
 
 DoubleTeamDescription:
 	db   "Raises the user's"
@@ -512,23 +515,23 @@ FocusEnergyDescription:
 
 SwordsDanceDescription:
 	db   "Sharply raises the"
-	next "user's Attack.@"
+	next "user's ATTACK.@"
 
 BarrierDescription:
 	db   "Sharply raises the"
-	next "user's Defense.@"
+	next "user's DEFENSE.@"
 
 AgilityDescription:
 	db   "Sharply raises the"
-	next "user's Speed.@"
+	next "user's SPEED.@"
 
 NastyPlotDescription:
 	db   "Sharply raises the"
-	next "user's Spcl.Atk.@"
+	next "user's SPCL.ATK.@"
 
 AmnesiaDescription:
 	db   "Sharply raises the"
-	next "user's Spcl.Def.@"
+	next "user's SPCL.DEF.@"
 
 MinimizeDescription:
 	db   "Sharply raises the"
@@ -536,52 +539,52 @@ MinimizeDescription:
 
 GrowthDescription:
 	db   "Raises the user's"
-	next "Atk and Spcl.Atk.@"
+	next "ATK and SPCL.ATK.@"
 
 BulkUpDescription:
 	db   "Raises the user's"
-	next "Atk and Def.@"
+	next "ATK and Def.@"
 
 CalmMindDescription:
 	db   "Raises the user's"
-	next "Sp.Atk and Sp.Def.@"
+	next "SPCL.ATK and SPCL.DEF.@"
 
 DragonDanceDescription:
 	db   "Raises the user's"
-	next "Attack and Speed.@"
+	next "ATTACK and SPEED.@"
 
 HoneClawsDescription:
 	db   "Raises the user's"
-	next "Atk and accuracy.@"
+	next "ATK and ACCURACY.@"
 
 GrowlDescription:
 	db   "A move that lowers"
-	next "the foe's Attack.@"
+	next "the foe's ATTACK.@"
 
 LeerDescription:
 	db   "A move that lowers"
-	next "the foe's Defense.@"
+	next "the foe's DEFENSE.@"
 
 StringShotDescription:
 	db   "A move that lowers"
-	next "the foe's Speed.@"
+	next "the foe's SPEED.@"
 
 SmokescreenDescription:
 FlashDescription:
 	db   "A move that lowers"
-	next "the foe's accuracy.@"
+	next "the foe's ACCURACY.@"
 
 CharmDescription:
 	db   "Sharply lowers the"
-	next "foe's Attack.@"
+	next "foe's ATTACK.@"
 
 ScreechDescription:
 	db   "Sharply lowers the"
-	next "foe's Defense.@"
+	next "foe's DEFENSE.@"
 
 ScaryFaceDescription:
 	db   "Sharply lowers the"
-	next "foe's Speed.@"
+	next "foe's SPEED.@"
 
 HazeDescription:
 	db   "Eliminates all"
@@ -895,10 +898,6 @@ TriAttackDescription:
 	db   "Fires three kinds"
 	next "of beams at once.@"
 
-SuperFangDescription:
-	db   "Cuts the foe's HP"
-	next "by 1/2.@"
-
 SubstituteDescription:
 	db   "Makes a decoy with"
 	next "1/4 user's max HP.@"
@@ -1054,3 +1053,7 @@ GyroBallDescription:
 TrickDescription:
 	db   "Swaps held items"
 	next "with the foe.@"
+	
+LockOnDescription:
+	db   "Ensures the next"
+	next "attack will hit.@"

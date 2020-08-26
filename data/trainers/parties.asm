@@ -76,11 +76,11 @@ StanleyGroup:
 
 	; STANLEY
 	db "STANLEY@"
-	db TRAINERTYPE_ITEM | TRAINERTYPE_EVS | TRAINERTYPE_MOVES
+	db TRAINERTYPE_ITEM | TRAINERTYPE_EVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
 	; party
-	db 11, SMEARGLE, NO_ITEM, 16
+	db 11, SMEARGLE, NO_ITEM, 16, ABILITY_2 | JOLLY, MALE
 		db DOUBLE_EDGE, CONFUSION, THUNDER_WAVE, FAKE_OUT
-	db 15, DITTO, NO_ITEM, 16
+	db 15, DITTO, NO_ITEM, 16, ABILITY_1 | JOLLY, MALE
 		db TRANSFORM, 0, 0, 0
 	db -1 ; end
 
@@ -96,9 +96,9 @@ RodneyGroup:
 	db "RODNEY@"
 	db TRAINERTYPE_ITEM | TRAINERTYPE_EVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
 	; party
-	db 18, WOOPER, NO_ITEM, 32, HIDDEN_ABILITY | HASTY, MALE
+	db 18, WOOPER, NO_ITEM, 32, HIDDEN_ABILITY | HASTY, FEMALE
 		db RAIN_DANCE, WATER_GUN, BODY_SLAM, 0
-	db 20, POLIWHIRL, NO_ITEM, 32, HIDDEN_ABILITY | TIMID, MALE
+	db 20, POLIWHIRL, MYSTIC_WATER, 32, HIDDEN_ABILITY | QUIET, MALE
 		db RAIN_DANCE, WATER_GUN, HYPNOSIS, MUD_SLAP
 	db -1 ; end
 
@@ -334,9 +334,8 @@ RivalGroup:
 	db "<RIVAL>@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
-;	db 7, SNUBBULL
-;	db 8, TOTODILE
+	db 7, SNUBBULL
+	db 8, TOTODILE
 	db -1 ; end
 
 ; ================
@@ -345,9 +344,8 @@ RivalGroup:
 	db "<RIVAL>@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
-;	db 7, SNUBBULL
-;	db 8, CYNDAQUIL
+	db 7, SNUBBULL
+	db 8, CYNDAQUIL
 	db -1 ; end
 
 ; ================
@@ -356,9 +354,8 @@ RivalGroup:
 	db "<RIVAL>@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
-;	db 7, SNUBBULL
-;	db 8, CHIKORITA
+	db 7, SNUBBULL
+	db 8, CHIKORITA
 	db -1 ; end
 
 ; ================
@@ -367,9 +364,8 @@ RivalGroup:
 	db "<RIVAL>@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
-;	db 7, SNUBBULL
-;	db 8, SQUIRTLE
+	db 7, SNUBBULL
+	db 8, SQUIRTLE
 	db -1 ; end
 
 ; ================
@@ -378,9 +374,8 @@ RivalGroup:
 	db "<RIVAL>@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
-;	db 7, SNUBBULL
-;	db 8, CHARMANDER
+	db 7, SNUBBULL
+	db 8, CHARMANDER
 	db -1 ; end
 
 ; ================
@@ -389,9 +384,8 @@ RivalGroup:
 	db "<RIVAL>@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
-;	db 7, SNUBBULL
-;	db 8, BULBASAUR
+	db 7, SNUBBULL
+	db 8, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -404,13 +398,9 @@ YoungsterGroup:
 
 	; YOUNGSTER
 	db "JOEY@"
-;	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
-;	; party
-;	db 5, RATTATA, FAKE_PERFECT_DVS, ABILITY_2 | ADAMANT, MALE
-;	db -1 ; end
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
 	; party
-	db 1, RATTATA
+	db 5, RATTATA, FAKE_PERFECT_DVS, ABILITY_1 | ADAMANT, MALE
 	db -1 ; end
 
 ; ================
@@ -419,7 +409,8 @@ YoungsterGroup:
 	db "BILLY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 4, PIDGEY
+	db 4, COTTONEE
 	db -1 ; end
 
 ; ================
@@ -428,7 +419,8 @@ YoungsterGroup:
 	db "CHRIS@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 10, EKANS
+	db  9, PIDGEY
 	db -1 ; end
 
 ; ================
@@ -437,7 +429,9 @@ YoungsterGroup:
 	db "TOMMY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 25, EKANS
+	db 24, GASTLY
+	db 26, GASTLY
 	db -1 ; end
 
 ; ================
@@ -461,7 +455,9 @@ BugCatcherGroup:
 	db "BARNEY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 6, WEEDLE
+	db 7, WEEDLE
+	db 8, KAKUNA
 	db -1 ; end
 
 ; ================
@@ -470,7 +466,7 @@ BugCatcherGroup:
 	db "JOSH@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 13, SCYTHER
 	db -1 ; end
 
 ; ================
@@ -479,7 +475,8 @@ BugCatcherGroup:
 	db "ARNOLD@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 19, LEDYBA
+	db 18, JOLTIK
 	db -1 ; end
 
 ; ================
@@ -503,7 +500,7 @@ CamperGroup:
 	db "BART@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 9, CLEFAIRY
 	db -1 ; end
 
 ; ================
@@ -512,7 +509,7 @@ CamperGroup:
 	db "DENNY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 11, NIDORAN_M
 	db -1 ; end
 
 ; ================
@@ -521,7 +518,8 @@ CamperGroup:
 	db "TREVOR@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 17, SHROOMISH
+	db 17, ODDISH
 	db -1 ; end
 
 ; ================
@@ -530,7 +528,7 @@ CamperGroup:
 	db "VINCENT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 16, NIDORINO
 	db -1 ; end
 
 ; ================
@@ -539,7 +537,8 @@ CamperGroup:
 	db "DANTE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 24, BAYLEEF
+	db 25, SHROOMISH
 	db -1 ; end
 
 ; ================
@@ -554,7 +553,7 @@ PicnickerGroup:
 	db "MOLLY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 9, JIGGLYPUFF
 	db -1 ; end
 
 ; ================
@@ -563,7 +562,7 @@ PicnickerGroup:
 	db "ERIN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 11, NIDORAN_F
 	db -1 ; end
 
 ; ================
@@ -572,7 +571,9 @@ PicnickerGroup:
 	db "TRISTA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 14, MARILL
+	db 15, MARILL
+	db 15, POLIWAG
 	db -1 ; end
 
 ; ================
@@ -581,7 +582,8 @@ PicnickerGroup:
 	db "SHAUNA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 17, MEOWTH
+	db 17, TRUMBEAK
 	db -1 ; end
 
 ; ================
@@ -590,7 +592,7 @@ PicnickerGroup:
 	db "BETH@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 16, NIDORINA
 	db -1 ; end
 
 ; ================
@@ -599,7 +601,8 @@ PicnickerGroup:
 	db "TINA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 24, BULBASAUR
+	db 24, CHIKORITA
 	db -1 ; end
 
 ; ================
@@ -612,18 +615,24 @@ TwinsGroup:
 
 	; TWINS
 	db "JEN & JAN@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_ITEM | TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 7, TOGEPI, NO_ITEM
+		db METRONOME, 0, 0, 0
+	db 8, TOGEPI, ORAN_BERRY
+		db METRONOME, 0, 0, 0
 	db -1 ; end
 
 ; ================
 
 	; TWINS
 	db "JAN & JEN@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_ITEM | TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 7, TOGEPI, NO_ITEM
+		db METRONOME, 0, 0, 0
+	db 8, TOGEPI, ORAN_BERRY
+		db METRONOME, 0, 0, 0
 	db -1 ; end
 
 ; ================
@@ -656,7 +665,8 @@ FisherGroup:
 	db "DAVE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 10, WOOPER
+	db 8, POLIWAG
 	db -1 ; end
 
 ; ================
@@ -665,7 +675,8 @@ FisherGroup:
 	db "GERALD@"	;2 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 13, POLIWAG
+	db 13, MARILL
 	db -1 ; end
 
 ; ================
@@ -728,16 +739,8 @@ FisherGroup:
 	db "WALTER@"	;2 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "WALTER@"	;2 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
+	db 13, CHINCHOU
+	db 13, SQUIRTLE
 	db -1 ; end
 
 ; ================
@@ -800,7 +803,7 @@ FisherGroup:
 	db "BORRIS@"	;2 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 16, WARTORTLE
 	db -1 ; end
 
 ; ================
@@ -863,7 +866,8 @@ FisherGroup:
 	db "CLINT@"	;2 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 13, BUIZEL
+	db 13, WOOPER
 	db -1 ; end
 
 ; ================
@@ -926,7 +930,9 @@ FisherGroup:
 	db "HOMER@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 14, CHINCHOU
+	db 13, WOOPER
+	db 14, BUIZEL
 	db -1 ; end
 
 ; ================
@@ -935,7 +941,8 @@ FisherGroup:
 	db "HUE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 16, CHINCHOU
+	db 17, HORSEA
 	db -1 ; end
 
 ; ================
@@ -944,7 +951,8 @@ FisherGroup:
 	db "DARREN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 16, CORPHISH
+	db 17, CORPHISH
 	db -1 ; end
 
 ; ================
@@ -968,7 +976,8 @@ BirdKeeperGroup:
 	db "BRYANT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 28, PIDGEOTTO
+	db 28, TRUMBEAK
 	db -1 ; end
 
 ; ================
@@ -977,7 +986,9 @@ BirdKeeperGroup:
 	db "TODD@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 29, DODUO
+	db 29, DODUO
+	db 27, MURKROW
 	db -1 ; end
 
 ; ================
@@ -986,7 +997,7 @@ BirdKeeperGroup:
 	db "RANDY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 31, DODRIO
 	db -1 ; end
 
 ; ================
@@ -1010,7 +1021,8 @@ HikerGroup:
 	db "DOUG@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 12, GEODUDE
+	db 13, CUBONE
 	db -1 ; end
 
 ; ================
@@ -1019,7 +1031,7 @@ HikerGroup:
 	db "WILL@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 10, ONIX
 	db -1 ; end
 
 ; ================
@@ -1028,7 +1040,8 @@ HikerGroup:
 	db "ROB@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 10, ONIX
+	db 12, GEODUDE
 	db -1 ; end
 
 ; ================
@@ -1037,7 +1050,8 @@ HikerGroup:
 	db "BENJAMIN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 11, WOOPER
+	db 12, MACHOP
 	db -1 ; end
 
 ; ================
@@ -1046,7 +1060,8 @@ HikerGroup:
 	db "LANDON@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 11, GEODUDE
+	db 12, MACHOP
 	db -1 ; end
 
 ; ================
@@ -1055,7 +1070,8 @@ HikerGroup:
 	db "SIMON@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 18, MACHOP
+	db 17, TEDDIURSA
 	db -1 ; end
 
 ; ================
@@ -1064,7 +1080,9 @@ HikerGroup:
 	db "STEVEN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 18, GEODUDE
+	db 19, GEODUDE
+	db 19, ONIX
 	db -1 ; end
 
 ; ================
@@ -1073,7 +1091,8 @@ HikerGroup:
 	db "GILL@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 20, NUMEL
+	db 18, CORSOLA
 	db -1 ; end
 
 ; ================
@@ -1082,7 +1101,9 @@ HikerGroup:
 	db "HARVEY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 19, ARON
+	db 21, NOIBAT
+	db 21, ZUBAT
 	db -1 ; end
 
 ; ================
@@ -1091,7 +1112,9 @@ HikerGroup:
 	db "TED@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 21, KOFFING
+	db 21, GEODUDE
+	db 21, ZUBAT
 	db -1 ; end
 
 ; ================
@@ -1100,7 +1123,8 @@ HikerGroup:
 	db "LEROY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 22, LARVITAR
+	db 22, MAGBY
 	db -1 ; end
 
 ; ================
@@ -1142,7 +1166,9 @@ GruntMGroup:
 	db "STARGLOWM1@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 12, ZUBAT
+	db 12, GROWLITHE
+	db 12, BUIZEL
 	db -1 ; end
 
 ; ================
@@ -1151,7 +1177,8 @@ GruntMGroup:
 	db "STARGLOWM2@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 13, EKANS
+	db 13, PIDGEY
 	db -1 ; end
 
 ; ================
@@ -1160,7 +1187,9 @@ GruntMGroup:
 	db "STARGLOWM3@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 13, ZUBAT
+	db 12, HOUNDOUR
+	db 12, CLEFAIRY
 	db -1 ; end
 
 ; ================
@@ -1256,7 +1285,9 @@ GruntFGroup:
 	db "STARGLOWF1@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 12, HOUNDOUR
+	db 13, COTTONEE
+	db 12, PIKACHU
 	db -1 ; end
 
 ; ================
@@ -1307,7 +1338,9 @@ KageGroup:
 	db "KAGE1@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 25, AZUMARILL
+	db 23, ARBOK
+	db 30, URSARING
 	db -1 ; end
 
 ; ================
@@ -1322,7 +1355,8 @@ PokefanMGroup:
 	db "RON@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 18, PHANPY
+	db 19, PSYDUCK
 	db -1 ; end
 
 ; ================
@@ -1362,9 +1396,10 @@ PokefanFGroup:
 
 	; POKEFANF
 	db "SUSAN@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 16, STANTLER
+		db STOMP, LEER_TAIL_WHIP, HYPNOSIS, 0
 	db -1 ; end
 
 ; ================
@@ -1481,7 +1516,7 @@ LassGroup:
 	db "LIBBY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 6, SNUBBULL
 	db -1 ; end
 
 ; ================
@@ -1490,7 +1525,8 @@ LassGroup:
 	db "VERONICA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 7, CLEFAIRY
+	db 7, CLEFAIRY
 	db -1 ; end
 
 ; ================
@@ -1499,7 +1535,8 @@ LassGroup:
 	db "CHARLOTEE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 10, PIKACHU
+	db 11, MAREEP
 	db -1 ; end
 
 ; ================
@@ -1508,7 +1545,8 @@ LassGroup:
 	db "JUNE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 13, ODDISH
+	db 14, JIGGLYPUFF
 	db -1 ; end
 
 ; ================
@@ -1517,7 +1555,9 @@ LassGroup:
 	db "MELANIE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 18, TEDDIURSA
+	db 19, MARILL
+	db 17, EEVEE
 	db -1 ; end
 
 ; ================
@@ -1526,7 +1566,9 @@ LassGroup:
 	db "SARAH@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 17, SNUBBULL
+	db 18, MEOWTH
+	db 19, PSYDUCK
 	db -1 ; end
 
 ; ================
@@ -1535,7 +1577,9 @@ LassGroup:
 	db "MARSHA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 26, BULBASAUR
+	db 25, MEOWTH
+	db 26, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -1574,7 +1618,8 @@ FirebreatherGroup:
 	db "MORT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 20, SLUGMA
+	db 21, MAGBY
 	db -1 ; end
 
 ; ================
@@ -1583,7 +1628,9 @@ FirebreatherGroup:
 	db "FRITZ@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 19, NUMEL
+	db 19, SLUGMA
+	db 19, LARVITAR
 	db -1 ; end
 
 ; ================
@@ -1592,7 +1639,9 @@ FirebreatherGroup:
 	db "MEL@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 20, SLUGMA
+	db 19, KOFFING
+	db 20, NUMEL
 	db -1 ; end
 
 ; ================
@@ -1601,7 +1650,8 @@ FirebreatherGroup:
 	db "DOM@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 20, PONYTA
+	db 22, MAGBY
 	db -1 ; end
 
 ; ================
@@ -1652,7 +1702,9 @@ JugglerGroup:
 	db "ERNIE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 20, SWABLU
+	db 22, ABRA
+	db 18, KADABRA
 	db -1 ; end
 
 ; ================
@@ -1661,7 +1713,8 @@ JugglerGroup:
 	db "WILLY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 19, NATU
+	db 20, MEDITITE
 	db -1 ; end
 
 ; ================
@@ -1670,7 +1723,8 @@ JugglerGroup:
 	db "QUINN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 20, KOFFING
+	db 19, KADABRA
 	db -1 ; end
 
 ; ================
@@ -1685,7 +1739,8 @@ SchoolboyGroup:
 	db "TIMMY@"	;1 BADGE
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 9, PIDGEY
+	db 8, RATTATA
 	db -1 ; end
 
 ; ================
@@ -1757,7 +1812,8 @@ SchoolboyGroup:
 	db "DAMIAN@"	;1 BADGE
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 9, PIKIPEK
+	db 8, RATTATA
 	db -1 ; end
 
 ; ================
@@ -1895,7 +1951,8 @@ GentlemanGroup:
 	db "DURWOOD@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 18, GROWLITHE
+	db 17, SWABLU
 	db -1 ; end
 
 ; ================
@@ -1934,7 +1991,8 @@ LadyGroup:
 	db "RUTH@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 19, MEOWTH
+	db 18, BUNEARY
 	db -1 ; end
 
 ; ================
@@ -2241,7 +2299,7 @@ CooltrainerMGroup:
 	db "CODY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 23, PONYTA
 	db -1 ; end
 
 ; ================
@@ -2268,7 +2326,7 @@ CooltrainerFGroup:
 	db "CASEY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 23, NUMEL
 	db -1 ; end
 
 ; ================
@@ -2277,7 +2335,9 @@ CooltrainerFGroup:
 	db "SALLY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 15, GROWLITHE
+	db 15, MAREEP
+	db 14, JIGGLYPUFF
 	db -1 ; end
 
 ; ================
@@ -2379,10 +2439,9 @@ DisguiseGroup:
 	db "MASTER@"
 	db TRAINERTYPE_NORMAL
 	; party
-;	db 12, VOLTORB
-;	db 12, SPEAROW
-;	db 13, JIGGLYPUFF
-	db  1, BULBASAUR
+	db 12, VOLTORB
+	db 12, MARILL
+	db 13, JIGGLYPUFF
 	db -1 ; end
 
 ; ================
@@ -2394,10 +2453,10 @@ BikiniBRGroup:
 ; ================
 
 	; BIKINIP
-	db "UNUSED@"
+	db "HAZEL@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 23, SANDSHREW
 	db -1 ; end
 
 ; ================
@@ -2409,10 +2468,10 @@ BikiniBLGroup:
 ; ================
 
 	; BIKINIR
-	db "UNUSED@"
+	db "ASTER@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 22, PHANPY
 	db -1 ; end
 
 ; ================
@@ -2424,10 +2483,10 @@ BikiniPGroup:
 ; ================
 
 	; BIKINIY
-	db "UNUSED@"
+	db "LILAC@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 20, GLIGAR
 	db -1 ; end
 
 ; ================
@@ -2482,39 +2541,6 @@ DelinquentfGroup:
 
 	; DELINQUENT_F
 	db "UNUSED@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-; ================================
-
-
-SafariGroup:
-; ================================
-; ================
-
-	; SAFARI
-	db "JULIAN@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SAFARI
-	db "PAUL@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SAFARI
-	db "PHILLIP@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

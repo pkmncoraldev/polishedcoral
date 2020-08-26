@@ -458,7 +458,7 @@ ContactMoves::
 	db FLAME_WHEEL
 	db FLARE_BLITZ
 	db FLY
-	db FURY_STRIKES
+	db FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db GYRO_BALL
 	db GIGA_IMPACT
 	db HEADBUTT
@@ -499,7 +499,6 @@ ContactMoves::
 	db STEEL_WING
 	db STOMP
 	db STRENGTH
-	db SUPER_FANG
 	db TACKLE
 	db TAKE_DOWN
 	db THIEF
@@ -568,7 +567,6 @@ DynamicPowerMoves::
 	db REVERSAL
 	db SEISMIC_TOSS
 	db SONIC_BOOM
-	db SUPER_FANG
 	db -1
 
 ; These routines return z if the user is of the given type

@@ -196,7 +196,7 @@ OddEgg2:
 
 	db BULBASAUR
 	db NO_ITEM
-	db HAZE, LEER, DIZZY_PUNCH, 0
+	db HAZE, LEER_TAIL_WHIP, DIZZY_PUNCH, 0
 	dw 02560 ; OT ID
 	dt 0 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
@@ -219,7 +219,7 @@ OddEgg2:
 
 	db BULBASAUR
 	db NO_ITEM
-	db HAZE, LEER, DIZZY_PUNCH, 0
+	db HAZE, LEER_TAIL_WHIP, DIZZY_PUNCH, 0
 	dw 00512 ; OT ID
 	dt 0 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
@@ -242,7 +242,7 @@ OddEgg2:
 
 	db BULBASAUR
 	db NO_ITEM
-	db QUICK_ATTACK, LEER, DIZZY_PUNCH, 0
+	db QUICK_ATTACK, LEER_TAIL_WHIP, DIZZY_PUNCH, 0
 	dw 03072 ; OT ID
 	dt 0 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
@@ -265,7 +265,7 @@ OddEgg2:
 
 	db BULBASAUR
 	db NO_ITEM
-	db QUICK_ATTACK, LEER, DIZZY_PUNCH, 0
+	db QUICK_ATTACK, LEER_TAIL_WHIP, DIZZY_PUNCH, 0
 	dw 00512 ; OT ID
 	dt 0 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs

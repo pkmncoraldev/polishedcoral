@@ -715,7 +715,7 @@ AdaptabilityDescription:
 	next1 "type moves.@"
 
 SkillLinkDescription:
-	db    "Increases multi-"
+	db    "Maximizes multi-"
 	next1 "strike move hits.@"
 
 HydrationDescription:

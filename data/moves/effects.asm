@@ -2548,3 +2548,11 @@ FlareBlitz:
 	pickpocket
 	cantusefakeout
 	endmove
+	
+LockOn:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	lockon
+	endmove

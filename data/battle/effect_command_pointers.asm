@@ -189,6 +189,7 @@ BattleCommandPointers:
 	command brickbreak              ; ae
 	command fakeout					; af - coral
 	command cantusefakeout			; b0 - coral
+	command lockon					; b1 - coral
 
 	enum_start -1, -1
 	commandonly endmove

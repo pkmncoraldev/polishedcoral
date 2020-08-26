@@ -162,7 +162,8 @@ OfficerStopsYouText3:
 	para "I'm sorry, but I"
 	line "can't let you go"
 	cont "out there without"
-	cont "a #GEAR!"
+	cont "some way to call"
+	cont "home!"
 	
 	para "I could lose my"
 	line "job!"

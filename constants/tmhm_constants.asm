@@ -115,7 +115,7 @@ NUM_HMS = const_value - HM01
 	add_mt AQUA_TAIL    ; $51
 	add_mt BODY_SLAM    ; $52
 	add_mt COUNTER      ; $53
-	add_mt DEFENSE_CURL ; $54
+	add_mt DEFENSE_CURL_HARDEN_WITHDRAW ; $54
 	add_mt DOUBLE_EDGE  ; $55
 	add_mt DREAM_EATER  ; $56
 	add_mt EARTH_POWER  ; $57

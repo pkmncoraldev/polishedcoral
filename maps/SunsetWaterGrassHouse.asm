@@ -30,7 +30,7 @@ SunsetWaterGrassHouseNPC1Text:
 	
 	para "but you'll be more"
 	line "successful with a"
-	cont "well-balanced team."
+	cont "balanced team."
 	done
 	
 SunsetWaterGrassHouseNPC2Text:

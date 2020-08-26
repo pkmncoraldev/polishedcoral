@@ -42,7 +42,7 @@
 	const POISON_STING ; $28
 	const U_TURN       ; $29
 	const PIN_MISSILE  ; $2a
-	const LEER         ; $2b
+	const LEER_TAIL_WHIP         ; $2b
 	const BITE         ; $2c
 	const GROWL        ; $2d
 	const ROAR         ; $2e
@@ -110,8 +110,8 @@
 	const SMOKESCREEN  ; $6c
 	const CONFUSE_RAY  ; $6d
 	const AQUA_TAIL    ; $6e
-	const DEFENSE_CURL ; $6f
-	const BARRIER      ; $70
+	const DEFENSE_CURL_HARDEN_WITHDRAW ; $6f
+	const BARRIER_IRON_DEFENSE      ; $70
 	const LIGHT_SCREEN ; $71
 	const HAZE         ; $72
 	const REFLECT      ; $73
@@ -148,12 +148,12 @@
 	const DIZZY_PUNCH  ; $92
 	const SPORE        ; $93
 	const FLASH        ; $94
-	const EXTRASENSORY ; $95
+	const LOCK_ON_MIND_READER	   ; $95
 	const SPLASH       ; $96
 	const DRAGON_DANCE ; $97
 	const CRABHAMMER   ; $98
 	const EXPLOSION    ; $99
-	const FURY_STRIKES ; $9a
+	const FURY_SWIPES_FURY_ATTACK_COMET_PUNCH  ; $9a
 	const BONEMERANG   ; $9b
 	const REST         ; $9c
 	const ROCK_SLIDE   ; $9d
@@ -161,7 +161,7 @@
 	const BULK_UP      ; $9f
 	const CONVERSION   ; $a0
 	const TRI_ATTACK   ; $a1
-	const SUPER_FANG   ; $a2
+	const SHARPEN_HOWL_MEDITATE	   ; $a2
 	const SLASH        ; $a3
 	const SUBSTITUTE   ; $a4
 	const GIGA_IMPACT  ; $a5
@@ -211,7 +211,7 @@
 	const SPARK        ; $d1
 	const BUG_BITE     ; $d2
 	const STEEL_WING   ; $d3
-	const MEAN_LOOK    ; $d4
+	const MEAN_LOOK_BLOCK_SPIDER_WEB    ; $d4
 	const ATTRACT      ; $d5
 	const SLEEP_TALK   ; $d6
 	const HEAL_BELL    ; $d7
@@ -233,7 +233,7 @@
 	const IRON_TAIL    ; $e7
 	const METAL_CLAW   ; $e8
 	const AURA_SPHERE  ; $e9
-	const HEALINGLIGHT ; $ea
+	const SYNTHESIS_MOONLIGHT_MORNING_SUN ; $ea
 	const HURRICANE    ; $eb
 	const KNOCK_OFF    ; $ec
 	const HIDDEN_POWER ; $ed

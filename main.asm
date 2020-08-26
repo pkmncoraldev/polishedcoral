@@ -3493,10 +3493,51 @@ ListMoves: ; 50d6f
 	push de
 	push hl
 	push hl
+	cp DEFENSE_CURL_HARDEN_WITHDRAW
+	jr nz, .not_defense_curl
+	farcall GetDefenseCurlName
+	jr .cont
+.not_defense_curl
+	cp LEER_TAIL_WHIP
+	jr nz, .not_leer
+	farcall GetLeerName
+	jr .cont
+.not_leer
+	cp BARRIER_IRON_DEFENSE
+	jr nz, .not_barrier
+	farcall GetBarrierName
+	jr .cont
+.not_barrier
+	cp LOCK_ON_MIND_READER
+	jr nz, .not_lock_on
+	farcall GetLockOnName
+	jr .cont
+.not_lock_on
+	cp SHARPEN_HOWL_MEDITATE
+	jr nz, .not_sharpen
+	farcall GetSharpenName
+	jr .cont
+.not_sharpen
+	cp FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
+	jr nz, .not_fury_swipes
+	farcall GetFurySwipesName
+	jr .cont
+.not_fury_swipes
+	cp SYNTHESIS_MOONLIGHT_MORNING_SUN
+	jr nz, .not_synthesis
+	farcall GetSynthesisName
+	jr .cont
+.not_synthesis
+	cp MEAN_LOOK_BLOCK_SPIDER_WEB
+	jr nz, .not_mean_look
+	farcall GetMeanLookName
+	jr .cont
+.not_mean_look
 	ld [wCurSpecies], a
 	ld a, MOVE_NAME
 	ld [wNamedObjectTypeBuffer], a
 	call GetName
+.cont
 	ld de, wStringBuffer1
 	pop hl
 	push bc
@@ -3516,7 +3557,7 @@ ListMoves: ; 50d6f
 	ld a, b
 	cp NUM_MOVES
 	ret z
-	jr .moves_loop
+	jp .moves_loop
 
 .no_more_moves
 	ld a, b
@@ -4520,3 +4561,5 @@ INCBIN "gfx/intro/splash/disclaimer2.2bpp"
 
 OriginalGameByGFX:: ; e4000
 INCBIN "gfx/splash/originalgameby.2bpp"
+
+INCLUDE "engine/battle/multi_move_slots.asm"

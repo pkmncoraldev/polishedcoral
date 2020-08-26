@@ -54,7 +54,7 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .skip1
-	givepoke STANTLER, 100
+	givepoke CORSOLA, 100
 .skip1
 	writetext PlayerHouseDebugText2
 	yesorno
@@ -70,6 +70,7 @@ PlayerHouseDebugPoster:
 	giveitem BICYCLE
 	giveitem OLD_ROD
 	giveitem GOOD_ROD
+	giveitem OVAL_CHARM
 .skip2
 	writetext PlayerHouseDebugText3
 	yesorno

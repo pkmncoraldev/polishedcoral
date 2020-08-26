@@ -311,9 +311,9 @@ GetBackpic: ; 5116c
 	call GetRelevantPicPointers
 	pop bc
 	ld a, b
-	jr nc, .notvariant
-	ld a, c
-.notvariant
+;	jr nc, .notvariant
+;	ld a, c
+;.notvariant
 	dec a
 	ld bc, 6
 	rst AddNTimes

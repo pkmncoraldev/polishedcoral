@@ -195,11 +195,11 @@ TrainerLake:
 
 LakeSudowoodo:
 	checkitem POKE_FLUTE
-	iffalse noflutelake
+	iffalse LakeNoFlute
 	opentext
 	writetext LakeSudowoodoTextHaveFlute
 	yesorno
-	iffalse dontuseflutelake
+	iffalse LakeDontUseFlute
 LakePlayedFluteForSudowoodo::
 	writetext LakeSudowoodoTextUseFlute
 	playsound SFX_POKEFLUTE
@@ -223,13 +223,13 @@ LakePlayedFluteForSudowoodo::
 	setevent EVENT_FOUGHT_SUDOWOODO
 	end
 
-dontuseflutelake:
+LakeDontUseFlute:
 	writetext LakeSudowoodoTextDontUseFlute
 	waitbutton
 	closetext
 	end
 
-noflutelake:
+LakeNoFlute:
 	opentext
 	writetext LakeSudowoodoTextNoFlute
 	waitbutton

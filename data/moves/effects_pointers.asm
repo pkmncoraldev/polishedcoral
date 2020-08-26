@@ -79,7 +79,7 @@ MoveEffectsPointers:
 	dw Conversion
 	dw PayDay
 	dw TriAttack
-	dw SuperFang
+	dw AttackUp
 	dw Transform
 	dw Substitute
 	dw HyperBeam
@@ -151,3 +151,4 @@ MoveEffectsPointers:
 	dw BodySlam
 	dw LowKick
 	dw BrickBreak
+	dw LockOn

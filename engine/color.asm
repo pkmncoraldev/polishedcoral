@@ -125,6 +125,24 @@ LoadCategoryAndTypePals:
 	ld hl, TypeIconPals
 	pop bc
 	ld a, c
+	push hl
+	push de
+	push af
+	ld a, [wCurMove]
+	cp DEFENSE_CURL_HARDEN_WITHDRAW
+	jr z, .defense_curl
+	cp BARRIER_IRON_DEFENSE
+	jr z, .barrier
+	cp SHARPEN_HOWL_MEDITATE
+	jr z, .sharpen
+	cp SYNTHESIS_MOONLIGHT_MORNING_SUN
+	jr z, .synthesis
+	cp MEAN_LOOK_BLOCK_SPIDER_WEB
+	jr z, .mean_look
+	pop af
+.return
+	pop de
+	pop hl
 	add a
 	ld c, a
 	ld b, 0
@@ -137,6 +155,62 @@ LoadCategoryAndTypePals:
 	ld a, $5
 	jp FarCopyWRAM
 
+.defense_curl
+	pop af
+	farcall CheckWithdrawUsers
+	jr nc, .not_withdraw
+	ld a, WATER
+	jr .return
+.not_withdraw
+	ld a, NORMAL
+	jr .return
+	
+.barrier
+	pop af
+	farcall CheckIronDefenseUsers
+	jr nc, .not_iron_defense
+	ld a, STEEL
+	jr .return
+.not_iron_defense
+	ld a, PSYCHIC
+	jr .return
+	
+.sharpen
+	pop af
+	farcall CheckMeditateUsers
+	jr nc, .not_meditate
+	ld a, PSYCHIC
+	jr .return
+.not_meditate
+	ld a, NORMAL
+	jr .return
+	
+.synthesis
+	pop af
+	farcall CheckMoonlightUsers
+	jr nc, .not_moonlight
+	ld a, FAIRY
+	jr .return
+.not_moonlight
+	farcall CheckMorningSunUsers
+	jr nc, .not_morning_sun
+	ld a, NORMAL
+	jr .return
+.not_morning_sun
+	ld a, GRASS
+	jr .return
+	
+.mean_look
+	pop af
+	farcall CheckSpiderWebUsers
+	jr nc, .not_spider_web
+	ld a, BUG
+	jr .return
+.not_spider_web
+	ld a, NORMAL
+	jr .return
+	
+	
 LoadItemIconPalette:
 	ld a, [wCurSpecies]
 	ld bc, ItemIconPalettes

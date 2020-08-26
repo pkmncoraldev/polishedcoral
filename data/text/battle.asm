@@ -941,6 +941,15 @@ SketchedText: ; 0x81143
 	prompt
 ; 0x81156
 
+SketchedText2: ; 0x81143
+	text "@"
+	text_from_ram wStringBuffer1
+	text " became"
+	line "@"
+	text_from_ram wStringBuffer2
+	text "."
+	prompt
+
 DestinyBondEffectText: ; 0x81156
 	text "<USER> is"
 	line "trying to take its"
@@ -1336,6 +1345,11 @@ IdentifiedText: ; 0x816b1
 	cont "<TARGET>!"
 	prompt
 ; 0x816c2
+
+TookAimText: ; 0x816b1
+	text "<USER>"
+	line "took aim!"
+	prompt
 
 StartPerishText: ; 0x816c2
 	text "Both #mon will"

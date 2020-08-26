@@ -397,12 +397,7 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass DELINQUENT_F
-
-
-	trainerclass SAFARI
-	const JULIAN
-	const PAUL
-	const PHILLIP
+	
 	
 	trainerclass MALL_COP
 	const PHIL

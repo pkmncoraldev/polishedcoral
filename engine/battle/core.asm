@@ -5762,6 +5762,9 @@ CheckAmuletCoin:
 MoveSelectionScreen:
 	; Maybe reset wPlayerSelectedMove if the move has disappeared
 	; (possible if we learned a new move and replaced the old)
+	ld a, [wBattleMonSpecies]
+	ld [wCurPartySpecies], a
+	
 	ld a, [wMoveSelectionMenuType]
 	cp 2
 	jr z, .ether_elixer_menu
@@ -6196,7 +6199,21 @@ MoveInfoBox: ; 3e6c8
 	call Request2bpp
 	ld hl, TypeIconGFX
 	ld bc, 4 * LEN_1BPP_TILE
+	push hl
+	push bc
+	ld a, [wCurMove]
+	cp DEFENSE_CURL_HARDEN_WITHDRAW
+	jr z, .defense_curl
+	cp BARRIER_IRON_DEFENSE
+	jr z, .barrier
+	cp SHARPEN_HOWL_MEDITATE
+	jr z, .sharpen
+	cp SYNTHESIS_MOONLIGHT_MORNING_SUN
+	jr z, .synthesis
 	ld a, [wPlayerMoveStruct + MOVE_TYPE]
+.return
+	pop bc
+	pop hl
 	rst AddNTimes
 	ld d, h
 	ld e, l
@@ -6242,6 +6259,48 @@ endr
 	lb bc, 1, 2
 	jp PrintNum
 ; 3e786
+
+.defense_curl
+	farcall CheckWithdrawUsers
+	jr nc, .not_withdraw
+	ld a, WATER
+	jr .return
+.not_withdraw
+	ld a, NORMAL
+	jr .return
+	
+.barrier
+	farcall CheckIronDefenseUsers
+	jr nc, .not_iron_defense
+	ld a, STEEL
+	jr .return
+.not_iron_defense
+	ld a, PSYCHIC
+	jr .return
+	
+.sharpen
+	farcall CheckMeditateUsers
+	jr nc, .not_meditate
+	ld a, PSYCHIC
+	jr .return
+.not_meditate
+	ld a, NORMAL
+	jr .return
+	
+.synthesis
+	farcall CheckMoonlightUsers
+	jr nc, .not_moonlight
+	ld a, FAIRY
+	jp .return
+.not_moonlight
+	farcall CheckMorningSunUsers
+	jr nc, .not_morning_sun
+	ld a, NORMAL
+	jp .return
+.not_morning_sun
+	ld a, GRASS
+	jp .return
+	
 
 CheckUsableMoves:
 ; Return nz if we have no usable moves

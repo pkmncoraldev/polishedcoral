@@ -1,5 +1,8 @@
 DoPlayerTurn: ; 34000
 	call SetPlayerTurn
+	
+	ld a, [wBattleMonSpecies]
+	ld [wCurPartySpecies], a
 
 	ld a, [wBattlePlayerAction]
 	and a
@@ -16,6 +19,9 @@ DoPlayerTurn: ; 34000
 
 DoEnemyTurn: ; 3400a
 	call SetEnemyTurn
+	
+	ld a, [wTempEnemyMonSpecies]
+	ld [wCurPartySpecies], a
 
 	ld a, [wBattleType]
 	cp BATTLETYPE_GHOST
@@ -549,9 +555,23 @@ MoveDisabled: ; 3438d
 
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
+	ld [wCurMove], a
 	ld [wNamedObjectIndexBuffer], a
+	push hl
+	push de
+	farcall CheckMultiMoveSlot
+	jr nc, .not_multi_move_slot
+	pop de
+	pop hl
+	farcall GetMultiMoveSlotName
+	jr .done
+.not_multi_move_slot
+	pop de
+	pop hl
+	ld a, [wCurMove]
 	call GetMoveName
 
+.done
 	ld hl, DisabledMoveText
 	jp StdBattleTextBox
 
@@ -2198,7 +2218,7 @@ BattleCommand_hittargetnosub: ; 34f60
 	call GetBattleVar
 	cp EFFECT_MULTI_HIT
 	jr z, .multihit
-	cp EFFECT_FURY_STRIKES
+	cp EFFECT_FURY_SWIPES
 	jr z, .fury_strikes
 	cp EFFECT_CONVERSION
 	jr z, .conversion
@@ -2249,7 +2269,7 @@ BattleCommand_hittargetnosub: ; 34f60
 	ld [wNumHits], a
 	jp PlayFXAnimID
 
-; Fury Swipes and Fury Attack were merged into Fury Strikes, so use the correct
+; Fury Swipes, Fury Attack and Comet Punch were merged, so use the correct
 ; animation for the Pokémon that learned each one
 .fury_strikes
 	push de
@@ -2259,32 +2279,26 @@ BattleCommand_hittargetnosub: ; 34f60
 	jr z, .got_user_species
 	ld a, [wEnemyMonSpecies]
 .got_user_species
-	ld hl, .fury_attack_users
-	ld de, 1
-	call IsInArray
+	farcall CheckFuryAttackUsers2
 	pop de
-	jr nc, .multihit
+	jr nc, .not_furry_attack
 	ld a, $2
 	ld [wKickCounter], a
 	jr .fury_attack
-
-.fury_attack_users
-	db BEEDRILL
-	db NIDORAN_M
-	db NIDORINO
-	db NIDOKING
-	db DODUO
-	db DODRIO
-	db RHYHORN
-	db RHYDON
-	db RHYPERIOR
-	db PINSIR
-	db HERACROSS
-	db PILOSWINE
-	db MAMOSWINE
-	db SKARMORY
-	db DONPHAN
-	db -1
+.not_furry_attack
+	push de
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wEnemyMonSpecies]
+.got_user_species2
+	farcall CheckCometPunchUsers2
+	pop de
+	jr nc, .multihit
+	ld a, $3
+	ld [wKickCounter], a
+	jr .fury_attack
 
 ; 34fd1
 
@@ -2322,65 +2336,65 @@ StatUpDownAnim: ; 34feb
 	call GetBattleVar
 	ld e, a
 	ld d, 0
-	cp DEFENSE_CURL
+	cp DEFENSE_CURL_HARDEN_WITHDRAW
 	jr nz, .not_defense_curl
 	ld a, [hBattleTurn]
 	and a
-	ld a, [wBattleMonSpecies]
-	jr z, .got_user_species
-	ld a, [wEnemyMonSpecies]
-.got_user_species
-	ld hl, .withdraw_users
-	ld de, 1
-	push af
-	call IsInArray
+	farcall CheckWithdrawUsers
 	jr nc, .not_withdraw
-	pop af
 	ld a, $1
 	jr .got_kick_counter
 .not_withdraw
-	pop af ; restore species to a
-	inc hl ; ld hl, .harden_users
-	; ld de, 1
-	call IsInArray
+	farcall CheckHardenUsers
 	jr nc, .not_harden
 	ld a, $2
 	jr .got_kick_counter
 .not_harden
 .not_defense_curl
+	cp LEER_TAIL_WHIP
+	jr nz, .not_leer
+	ld a, [hBattleTurn]
+	and a
+	farcall CheckTailWhipUsers
+	jr nc, .not_tailwhip
+	ld a, $1
+	jr .got_kick_counter
+.not_leer
+.not_tailwhip
+	cp BARRIER_IRON_DEFENSE
+	jr nz, .not_barrier
+	ld a, [hBattleTurn]
+	and a
+	farcall CheckIronDefenseUsers
+	jr nc, .not_iron_defense
+	ld a, $1
+	jr .got_kick_counter
+.not_barrier
+.not_iron_defense
+	cp SHARPEN_HOWL_MEDITATE
+	jr nz, .not_sharpen
+	ld a, [hBattleTurn]
+	and a
+	farcall CheckMeditateUsers
+	jr nc, .not_meditate
+	ld a, $1
+	jr .got_kick_counter
+.not_meditate
+	farcall CheckHowlUsers
+	jr nc, .not_howl
+	ld a, $2
+	jr .got_kick_counter
+.not_howl
+.not_sharpen
 	xor a
 .got_kick_counter
 	ld [wKickCounter], a
+
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld e, a
 	ld d, 0
 	jp PlayFXAnimID
-
-.withdraw_users
-	db SQUIRTLE
-	db WARTORTLE
-	db BLASTOISE
-	db SLOWBRO
-	db -1
-
-.harden_users
-	db KAKUNA
-	db ONIX
-	db STEELIX
-	db STARYU
-	db STARMIE
-	db HERACROSS
-	db GLIGAR
-	db GLISCOR
-	db SLUGMA
-	db MAGCARGO
-	db CORSOLA
-	db PUPITAR
-	db TYRANITAR
-	db -1
-
-; 34ffd
 
 
 BattleCommand_raisesub: ; 35004
@@ -2430,7 +2444,7 @@ BattleCommand_failuretext:
 	jr z, .multihit
 	cp EFFECT_DOUBLE_HIT
 	jr z, .multihit
-	cp EFFECT_FURY_STRIKES
+	cp EFFECT_FURY_SWIPES
 	jr z, .multihit
 	jp EndMoveEffect
 
@@ -2959,7 +2973,7 @@ BattleCommand_postfainteffects:
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_TRIPLE_KICK
 	jr z, .multiple_hit_raise_sub
-	cp EFFECT_FURY_STRIKES
+	cp EFFECT_FURY_SWIPES
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_SWITCH_HIT
 	jr nz, .finish
@@ -3842,7 +3856,7 @@ BattleCommand_damagecalc: ; 35612
 	; Variable-hit moves and Conversion can have a power of 0.
 	cp EFFECT_MULTI_HIT
 	jr z, .skip_zero_damage_check
-	cp EFFECT_FURY_STRIKES
+	cp EFFECT_FURY_SWIPES
 	jr z, .skip_zero_damage_check
 	cp EFFECT_CONVERSION
 	jr z, .skip_zero_damage_check
@@ -4108,8 +4122,6 @@ BattleCommand_constantdamage: ; 35726
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_SUPER_FANG
-	jr z, .super_fang
 
 	cp EFFECT_REVERSAL
 	jr z, .reversal
@@ -4119,29 +4131,6 @@ BattleCommand_constantdamage: ; 35726
 	ld b, a
 	xor a
 	jr .got_power
-
-.super_fang
-	ld hl, wEnemyMonHP
-	ld a, [hBattleTurn]
-	and a
-	jr z, .got_hp
-	ld hl, wBattleMonHP
-.got_hp
-	ld a, [hli]
-	srl a
-	ld b, a
-	ld a, [hl]
-	rr a
-	push af
-	ld a, b
-	pop bc
-	and a
-	jr nz, .got_power
-	or b
-	ld a, 0 ; not xor a; preserve carry flag?
-	jr nz, .got_power
-	ld b, $1
-	; fallthrough
 
 .got_power
 	ld hl, wCurDamage
@@ -4546,15 +4535,15 @@ BattleCommand_sketch: ; 35a74
 	ld b, a
 ; Fail if move is invalid or is Struggle.
 	and a
-	jr z, .fail
+	jp z, .fail
 	cp STRUGGLE
-	jr z, .fail
+	jp z, .fail
 ; Fail if user already knows that move
 	ld c, NUM_MOVES
 .does_user_already_know_move
 	ld a, [hli]
 	cp b
-	jr z, .fail
+	jp z, .fail
 	dec c
 	jr nz, .does_user_already_know_move
 ; Find Sketch in the user's moveset.
@@ -4614,10 +4603,57 @@ BattleCommand_sketch: ; 35a74
 	add hl, de
 	ld [hl], a
 .done_copy
+	ld a, [hBattleTurn] ; Get opponent move name information. wStringBuffer2
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species
+	ld a, [wEnemyMonSpecies]
+.got_user_species
+	ld [wCurPartySpecies], a
+	ld a, [wNamedObjectIndexBuffer]
+	ld [wCurMove], a
+	push hl
+	push de
+	farcall CheckMultiMoveSlot
+	jr nc, .not_multi_move_slot
+	pop de
+	pop hl
+	farcall GetMultiMoveSlotName
+	call CopyName1
+	
+	
+	ld a, [hBattleTurn] ; Get user move name information. wStringBuffer1
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wBattleMonSpecies]
+.got_user_species2
+	ld [wCurPartySpecies], a
+	ld a, [wNamedObjectIndexBuffer]
+	ld [wCurMove], a
+	farcall GetMultiMoveSlotName
+	
+	jr .done
+.not_multi_move_slot
+	pop de
+	pop hl
+	ld a, [wCurMove]
 	call GetMoveName
+.done
 	call AnimateCurrentMove
 
 	ld hl, SketchedText
+	jp StdBattleTextBox
+	
+	ld hl, wStringBuffer1
+	ld a, [hli]
+	ld b, a
+	ld hl, wStringBuffer2
+	ld a, [hli]
+	cp b
+	ret z
+	
+	ld hl, SketchedText2
 	jp StdBattleTextBox
 
 .fail
@@ -4963,7 +4999,7 @@ SelfInflictDamageToSubstitute: ; 35de0
 	jr z, .ok
 	cp EFFECT_TRIPLE_KICK
 	jr z, .ok
-	cp EFFECT_FURY_STRIKES
+	cp EFFECT_FURY_SWIPES
 	jr z, .ok
 	xor a
 	ld [hl], a
@@ -4988,10 +5024,24 @@ UpdateMoveData:
 
 	ld [wCurMove], a
 	ld [wNamedObjectIndexBuffer], a
-
+	push hl
+	push de
+	farcall CheckMultiMoveSlot
+	jr nc, .not_multi_move_slot
+	pop de
+	pop hl
+	dec a
+	call GetMoveData
+	farcall GetMultiMoveSlotName
+	jr .done
+.not_multi_move_slot
+	pop de
+	pop hl
+	ld a, [wCurMove]
 	dec a
 	call GetMoveData
 	call GetMoveName
+.done
 	jp CopyName1
 
 GetMoveData::
@@ -7400,7 +7450,7 @@ BattleCommand_disable: ; 36fed
 
 	ld a, [wAttackMissed]
 	and a
-	jr nz, .failed
+	jp nz, .failed
 
 	ld de, wEnemyDisableCount
 	ld hl, wEnemyMonMoves
@@ -7464,8 +7514,25 @@ BattleCommand_disable: ; 36fed
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
 	call GetBattleVar
 	ld [hl], a
+	ld [wCurMove], a
 	ld [wNamedObjectIndexBuffer], a
+	ld a, [wBattleMonSpecies]
+	ld [wCurPartySpecies], a
+	push hl
+	push de
+	farcall CheckMultiMoveSlot
+	jr nc, .not_multi_move_slot
+	pop de
+	pop hl
+	farcall GetMultiMoveSlotName
+	jr .done
+.not_multi_move_slot
+	pop de
+	pop hl
+	ld a, [wCurMove]
 	call GetMoveName
+
+.done
 	ld hl, WasDisabledText
 	call StdBattleTextBox
 	jp CheckOpponentMentalHerb
@@ -7969,6 +8036,8 @@ BattleCommand_roost:
 
 INCLUDE "engine/battle/effect_commands/transform.asm"
 
+INCLUDE "engine/battle/effect_commands/lock_on.asm"
+
 BattleSideCopy: ; 372c6
 ; Copy bc bytes from hl to de if it's the player's turn.
 ; Copy bc bytes from de to hl if it's the enemy's turn.
@@ -8279,6 +8348,23 @@ BattleCommand_arenatrap: ; 37517
 
 	; Otherwise trap the opponent.
 	set SUBSTATUS_CANT_RUN, [hl]
+	
+	ld a, [hBattleTurn]
+	and a
+	farcall CheckBlockUsers
+	jr nc, .not_block
+	ld a, $1
+	jr .got_kick_counter
+.not_block
+	farcall CheckSpiderWebUsers
+	jr nc, .not_spider_web
+	ld a, $2
+	jr .got_kick_counter
+.not_spider_web
+	xor a
+.got_kick_counter
+	ld [wKickCounter], a
+	
 	call AnimateCurrentMove
 	ld hl, CantEscapeNowText
 	jp StdBattleTextBox
@@ -9085,31 +9171,16 @@ BattleCommand_healweather:
 
 	ld a, [hBattleTurn]
 	and a
-	ld a, [wBattleMonType1]
-	ld b, a
-	ld a, [wBattleMonType2]
-	ld c, a
-	jr z, .got_types
-	ld a, [wEnemyMonType1]
-	ld b, a
-	ld a, [wEnemyMonType2]
-	ld c, a
-.got_types
-	ld a, b
-	cp GRASS
-	jr z, .synthesis_anim
-	ld a, c
-	cp GRASS
-	jr z, .synthesis_anim
-	ld a, [wTimeOfDay]
-	cp NITE
-	jr nc, .moonlight_anim
-	xor a ; Morning Sun anim
-	jr .got_anim
-.moonlight_anim
+	farcall CheckMoonlightUsers
+	jr nc, .not_moonlight
 	ld a, $1
 	jr .got_anim
-.synthesis_anim
+.not_moonlight
+	farcall CheckMorningSunUsers
+	jr nc, .not_morning_sun
+	ld a, $0
+	jr .got_anim
+.not_morning_sun
 	ld a, $2
 .got_anim
 	ld [wKickCounter], a
@@ -9653,3 +9724,4 @@ _CheckBattleEffects: ; 37ed5
 	pop de
 	pop hl
 	ret
+	

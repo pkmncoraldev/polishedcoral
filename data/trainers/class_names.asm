@@ -77,7 +77,6 @@ TrainerClassNames::
 	db "BEACH BEAUTY@"	   ; BIKINIY
 	db "DELINQUENT@"	   ; DELINQUENT_M
 	db "DELINQUENT@"	   ; DELINQUENT_F
-	db "EXPLORER@"		   ; EXPLORER
 	db "MALL COP@"		   ; MALL_COP
 	db "TYCOON@"		   ; TOWERTYCOON
 	

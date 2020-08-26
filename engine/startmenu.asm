@@ -2058,6 +2058,26 @@ PlaceMoveData:
 	pop af
 	ld hl, TypeIconGFX
 	ld bc, 4 * LEN_1BPP_TILE
+	push hl
+	push bc
+	push af
+	
+	ld a, [wCurMove]
+	cp DEFENSE_CURL_HARDEN_WITHDRAW
+	jp z, .defense_curl
+	cp BARRIER_IRON_DEFENSE
+	jp z, .barrier
+	cp SHARPEN_HOWL_MEDITATE
+	jp z, .sharpen
+	cp SYNTHESIS_MOONLIGHT_MORNING_SUN
+	jp z, .synthesis
+	cp MEAN_LOOK_BLOCK_SPIDER_WEB
+	jp z, .mean_look
+	pop af
+	
+.return
+	pop bc
+	pop hl
 	rst AddNTimes
 	ld d, h
 	ld e, l
@@ -2119,6 +2139,61 @@ PlaceMoveData:
 	ld [hBGMapMode], a
 	ret
 ; 132ba
+
+.defense_curl
+	pop af
+	farcall CheckWithdrawUsers
+	jr nc, .not_withdraw
+	ld a, WATER
+	jp .return
+.not_withdraw
+	ld a, NORMAL
+	jp .return
+	
+.barrier
+	pop af
+	farcall CheckIronDefenseUsers
+	jr nc, .not_iron_defense
+	ld a, STEEL
+	jp .return
+.not_iron_defense
+	ld a, PSYCHIC
+	jp .return
+	
+.sharpen
+	pop af
+	farcall CheckMeditateUsers
+	jr nc, .not_meditate
+	ld a, PSYCHIC
+	jp .return
+.not_meditate
+	ld a, NORMAL
+	jp .return
+	
+.synthesis
+	pop af
+	farcall CheckMoonlightUsers
+	jr nc, .not_moonlight
+	ld a, FAIRY
+	jp .return
+.not_moonlight
+	farcall CheckMorningSunUsers
+	jr nc, .not_morning_sun
+	ld a, NORMAL
+	jp .return
+.not_morning_sun
+	ld a, GRASS
+	jp .return
+	
+.mean_look
+	pop af
+	farcall CheckSpiderWebUsers
+	jr nc, .not_spider_web
+	ld a, BUG
+	jp .return
+.not_spider_web
+	ld a, NORMAL
+	jp .return
 
 String_na: ; 132cf
 	db "---@"

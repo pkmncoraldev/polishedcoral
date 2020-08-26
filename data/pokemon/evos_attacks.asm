@@ -54,6 +54,7 @@ WartortleEvosAttacks:
 	db EVOLVE_LEVEL, 36, BLASTOISE
 	db 0 ; no more evolutions
 	db 1, TACKLE
+	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
 	db 0 ; no more level-up moves
 
 BlastoiseEvosAttacks:
@@ -71,6 +72,7 @@ KakunaEvosAttacks:
 	db EVOLVE_LEVEL, 10, BEEDRILL
 	db 0 ; no more evolutions
 	db 1, TACKLE
+	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
 	db 0 ; no more level-up moves
 
 BeedrillEvosAttacks:

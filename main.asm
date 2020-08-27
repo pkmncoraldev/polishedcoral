@@ -228,15 +228,20 @@ BugContest_SetCaughtContestMon: ; e6ce
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
+	ld a, [wOTPartyMon1Form]
+	ld [wCurForm], a
 	call GetBaseData
 	xor a
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld hl, wContestMon
-	call ByteFill
+	rst AddNTimes
 	xor a
 	ld [wMonType], a
-	ld hl, wContestMon
-	jp GeneratePartyMonStats
+	ld hl, wOTPartyMon1
+	ld de, wContestMon
+	ld bc, PARTYMON_STRUCT_LENGTH
+	rst CopyBytes
+	ret
 
 .caughttext ; 0xe71d
 	; Caught @ !

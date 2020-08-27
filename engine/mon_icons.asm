@@ -133,16 +133,17 @@ GetMonIconPalette::
 
 GetMenuMonIconPalette::
 	ld a, [wCurPartySpecies]
-	cp GYARADOS
+	cp RAICHU
 	jr nz, .not_red_gyarados
 
 	inc hl ; Form is in the byte after Shiny
 	ld a, [hl]
 	dec hl
 	and FORM_MASK
-	cp GYARADOS_RED_FORM
+	cp ALOLAN_FORM
 	jr nz, .not_red_gyarados
-	xor a ; PAL_OW_RED
+	ld a, 1
+;	xor a ; PAL_OW_RED
 	jr .done
 
 .not_red_gyarados

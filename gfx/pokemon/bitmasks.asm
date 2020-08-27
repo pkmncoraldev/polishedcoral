@@ -18,7 +18,7 @@ RaticateBitmasks:   INCLUDE "gfx/pokemon/raticate/bitmask.asm"
 EkansBitmasks:      INCLUDE "gfx/pokemon/ekans/bitmask.asm"
 ArbokBitmasks:      INCLUDE "gfx/pokemon/arbok/bitmask.asm"
 PikachuBitmasks:    INCLUDE "gfx/pokemon/pikachu/bitmask.asm"
-RaichuBitmasks:     INCLUDE "gfx/pokemon/raichu/bitmask.asm"
+
 SandshrewBitmasks:  INCLUDE "gfx/pokemon/sandshrew/bitmask.asm"
 SandslashBitmasks:  INCLUDE "gfx/pokemon/sandslash/bitmask.asm"
 NidoranFBitmasks:   INCLUDE "gfx/pokemon/nidoran_f/bitmask.asm"

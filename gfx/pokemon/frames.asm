@@ -19,7 +19,7 @@ RaticateFrames:   INCLUDE "gfx/pokemon/raticate/frames.asm"
 EkansFrames:      INCLUDE "gfx/pokemon/ekans/frames.asm"
 ArbokFrames:      INCLUDE "gfx/pokemon/arbok/frames.asm"
 PikachuFrames:    INCLUDE "gfx/pokemon/pikachu/frames.asm"
-RaichuFrames:     INCLUDE "gfx/pokemon/raichu/frames.asm"
+
 SandshrewFrames:  INCLUDE "gfx/pokemon/sandshrew/frames.asm"
 SandslashFrames:  INCLUDE "gfx/pokemon/sandslash/frames.asm"
 NidoranFFrames:   INCLUDE "gfx/pokemon/nidoran_f/frames.asm"

@@ -1,0 +1,3 @@
+RaichuAnimationExtraPointers:
+	dw RaichuKantoAnimationExtra
+	dw RaichuAlolaAnimationExtra

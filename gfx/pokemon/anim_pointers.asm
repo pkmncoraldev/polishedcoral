@@ -19,7 +19,7 @@ AnimationPointers:
 	dw EkansAnimation
 	dw ArbokAnimation
 	dw PikachuAnimation
-	dw RaichuAnimation
+	dw -1 ; see RaichuAnimationPointers
 	dw SandshrewAnimation
 	dw SandslashAnimation
 	dw NidoranFAnimation

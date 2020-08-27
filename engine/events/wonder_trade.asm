@@ -320,19 +320,19 @@ endr
 	ld b, a
 	; Form
 	ld a, [wOTTrademonSpecies]
-	cp EKANS
-	jr z, .ekans_arbok
-	cp ARBOK
-	jr z, .ekans_arbok
-	cp MAGIKARP
-	jr z, .magikarp
-	ld a, 1
-	jr .got_form_count
-.ekans_arbok
-	ld a, 2
-	jr .got_form_count
-.magikarp
-	ld a, NUM_MAGIKARP
+;	cp EKANS
+;	jr z, .ekans_arbok
+;	cp ARBOK
+;	jr z, .ekans_arbok
+;	cp MAGIKARP
+;	jr z, .magikarp
+;	ld a, 1
+;	jr .got_form_count
+;.ekans_arbok
+;	ld a, 2
+;	jr .got_form_count
+;.magikarp
+;	ld a, NUM_MAGIKARP
 .got_form_count
 	push bc
 	call RandomRange

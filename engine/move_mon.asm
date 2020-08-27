@@ -329,9 +329,9 @@ endr
 .Female:
 	ld b, a
 
-; Form 1
-	ld a, 1
-	add b
+; Form from [wCurForm] (set by LoadEnemyMon)
+	ld a, [wCurForm]
+;	add b
 	ld [wDVAndPersonalityBuffer + 4], a
 
 .initializetrainermonstats

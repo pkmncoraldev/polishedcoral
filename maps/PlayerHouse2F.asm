@@ -54,7 +54,18 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .skip1
-	givepoke CORSOLA, 100
+	callasm MakePlain
+	givepoke RAICHU, 50
+	callasm MakeAlola
+	givepoke RAICHU, 50
+	callasm MakePlain
+	givepoke RAICHU, 50
+	callasm MakeAlola
+	givepoke RAICHU, 50
+	callasm MakePlain
+	givepoke RAICHU, 50
+	callasm MakeAlola
+	givepoke RAICHU, 50
 .skip1
 	writetext PlayerHouseDebugText2
 	yesorno
@@ -98,6 +109,16 @@ PlayerHouseDebugPoster:
 	waitbutton
 	closetext
 	end
+	
+MakePlain:
+	ld a, PLAIN_FORM
+	ld [wCurForm], a
+	ret
+	
+MakeAlola:
+	ld a, ALOLAN_FORM
+	ld [wCurForm], a
+	ret
 	
 PlayerHouseDebugText1:
 	text "DEBUG POSTER"

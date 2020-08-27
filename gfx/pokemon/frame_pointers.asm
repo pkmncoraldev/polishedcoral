@@ -70,9 +70,9 @@ FramesPointers:
 	dw VoltorbFrames
 	dw ElectrodeFrames
 	dw ExeggcuteFrames
-	dw ExeggutorFrames
+	dw -1 ; see ExeggutorFramesPointers
 	dw CuboneFrames
-	dw MarowakFrames
+	dw -1 ; see MarowakFramesPointers
 	dw KoffingFrames
 	dw WeezingFrames
 	dw RhyhornFrames

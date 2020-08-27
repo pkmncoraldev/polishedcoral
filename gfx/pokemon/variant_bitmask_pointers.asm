@@ -1,3 +1,12 @@
 RaichuBitmasksPointers:
-	dw RaichuKantoBitmasks
+	dw RaichuPlainBitmasks
 	dw RaichuAlolaBitmasks
+	
+MarowakBitmasksPointers:
+	dw MarowakPlainBitmasks
+	dw MarowakAlolaBitmasks
+	
+ExeggutorBitmasksPointers:
+	dw ExeggutorPlainBitmasks
+	dw ExeggutorAlolaBitmasks
+	

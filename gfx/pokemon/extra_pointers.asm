@@ -70,9 +70,9 @@ AnimationExtraPointers:
 	dw VoltorbAnimationExtra
 	dw ElectrodeAnimationExtra
 	dw ExeggcuteAnimationExtra
-	dw ExeggutorAnimationExtra
+	dw -1 ; see ExeggutorAnimationExtraPointers
 	dw CuboneAnimationExtra
-	dw MarowakAnimationExtra
+	dw -1 ; see MarowakAnimationExtraPointers
 	dw KoffingAnimationExtra
 	dw WeezingAnimationExtra
 	dw RhyhornAnimationExtra

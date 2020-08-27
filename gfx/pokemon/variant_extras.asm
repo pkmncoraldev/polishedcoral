@@ -1,2 +1,6 @@
-RaichuKantoAnimationExtra: INCLUDE "gfx/pokemon/raichu/kanto/anim1.asm"
-RaichuAlolaAnimationExtra: INCLUDE "gfx/pokemon/raichu/alola/anim1.asm"
+RaichuPlainAnimationExtra:		INCLUDE "gfx/pokemon/raichu/plain/anim1.asm"
+RaichuAlolaAnimationExtra:		INCLUDE "gfx/pokemon/raichu/alola/anim1.asm"
+MarowakPlainAnimationExtra: 	INCLUDE "gfx/pokemon/marowak/plain/anim1.asm"
+MarowakAlolaAnimationExtra:		INCLUDE "gfx/pokemon/marowak/alola/anim1.asm"
+ExeggutorPlainAnimationExtra:	INCLUDE "gfx/pokemon/exeggutor/plain/anim1.asm"
+ExeggutorAlolaAnimationExtra: 	INCLUDE "gfx/pokemon/exeggutor/alola/anim1.asm"

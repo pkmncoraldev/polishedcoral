@@ -69,9 +69,9 @@ OnixBitmasks:       INCLUDE "gfx/pokemon/onix/bitmask.asm"
 VoltorbBitmasks:    INCLUDE "gfx/pokemon/voltorb/bitmask.asm"
 ElectrodeBitmasks:  INCLUDE "gfx/pokemon/electrode/bitmask.asm"
 ExeggcuteBitmasks:  INCLUDE "gfx/pokemon/exeggcute/bitmask.asm"
-ExeggutorBitmasks:  INCLUDE "gfx/pokemon/exeggutor/bitmask.asm"
+
 CuboneBitmasks:     INCLUDE "gfx/pokemon/cubone/bitmask.asm"
-MarowakBitmasks:    INCLUDE "gfx/pokemon/marowak/bitmask.asm"
+
 KoffingBitmasks:    INCLUDE "gfx/pokemon/koffing/bitmask.asm"
 WeezingBitmasks:    INCLUDE "gfx/pokemon/weezing/bitmask.asm"
 RhyhornBitmasks:    INCLUDE "gfx/pokemon/rhyhorn/bitmask.asm"

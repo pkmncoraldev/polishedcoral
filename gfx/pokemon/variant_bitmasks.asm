@@ -1,2 +1,6 @@
-RaichuKantoBitmasks: INCLUDE "gfx/pokemon/raichu/kanto/bitmask.asm"
-RaichuAlolaBitmasks: INCLUDE "gfx/pokemon/raichu/alola/bitmask.asm"
+RaichuPlainBitmasks:		INCLUDE "gfx/pokemon/raichu/plain/bitmask.asm"
+RaichuAlolaBitmasks:		INCLUDE "gfx/pokemon/raichu/alola/bitmask.asm"
+MarowakPlainBitmasks:		INCLUDE "gfx/pokemon/marowak/plain/bitmask.asm"
+MarowakAlolaBitmasks:		INCLUDE "gfx/pokemon/marowak/alola/bitmask.asm"
+ExeggutorPlainBitmasks:		INCLUDE "gfx/pokemon/exeggutor/plain/bitmask.asm"
+ExeggutorAlolaBitmasks:		INCLUDE "gfx/pokemon/exeggutor/alola/bitmask.asm"

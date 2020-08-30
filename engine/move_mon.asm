@@ -331,7 +331,7 @@ endr
 
 ; Form from [wCurForm] (set by LoadEnemyMon)
 	ld a, [wCurForm]
-	add b
+;	add b
 	ld [wDVAndPersonalityBuffer + 4], a
 
 .initializetrainermonstats

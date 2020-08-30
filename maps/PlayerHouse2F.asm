@@ -54,7 +54,18 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .skip1
-	givepoke RAICHU, 100
+	callasm MakePlain
+	givepoke RAICHU, 50
+	callasm MakeAlola
+	givepoke RAICHU, 50
+	callasm MakePlain
+	givepoke RAICHU, 50
+	callasm MakeAlola
+	givepoke RAICHU, 50
+	callasm MakePlain
+	givepoke RAICHU, 50
+	callasm MakeAlola
+	givepoke RAICHU, 50
 .skip1
 	writetext PlayerHouseDebugText2
 	yesorno

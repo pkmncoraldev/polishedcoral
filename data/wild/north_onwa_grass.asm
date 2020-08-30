@@ -2,31 +2,31 @@
 
 	
 	map_id ROUTE_1
-	db 99 percent, 99 percent, 99 percent ; encounter rates: morn/day/nite
+	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
-	db 4, CUBONE		;30%
-	db 3, CUBONE		;30%
-	db 3, CUBONE		;20%
-	db 4, CUBONE		;10%
-	db 3, CUBONE		;5%
-	db 4, CUBONE		;4%
-	db 5, CUBONE		;1%
+	db 4, PIKIPEK		;30%
+	db 3, COTTONEE		;30%
+	db 3, PIDGEY		;20%
+	db 4, LEDYBA		;10%
+	db 3, RATTATA		;5%
+	db 4, RATTATA		;4%
+	db 5, LEDYBA		;1%
 	; day
-	db 4, CUBONE		;30%
-	db 3, CUBONE		;30%
-	db 3, CUBONE		;20%
-	db 4, CUBONE		;10%
-	db 3, CUBONE		;5%
-	db 4, CUBONE		;4%
-	db 5, CUBONE		;1%
+	db 4, PIKIPEK		;30%
+	db 3, COTTONEE		;30%
+	db 3, PIDGEY		;20%
+	db 4, LEDYBA		;10%
+	db 3, RATTATA		;5%
+	db 4, RATTATA		;4%
+	db 5, LEDYBA		;1%
 	; nite
-	db 4, CUBONE		;30%
-	db 3, CUBONE		;30%
-	db 3, CUBONE		;20%
-	db 4, CUBONE		;10%
-	db 3, CUBONE		;5%
-	db 4, CUBONE		;4%
-	db 5, CUBONE		;1%
+	db 4, PIKIPEK		;30%
+	db 3, COTTONEE		;30%
+	db 3, PIDGEY		;20%
+	db 4, LEDYBA		;10%
+	db 3, RATTATA		;5%
+	db 4, RATTATA		;4%
+	db 5, GASTLY		;1%
 	
 	map_id ROUTE_2
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

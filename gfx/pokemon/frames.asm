@@ -70,9 +70,9 @@ OnixFrames:       INCLUDE "gfx/pokemon/onix/frames.asm"
 VoltorbFrames:    INCLUDE "gfx/pokemon/voltorb/frames.asm"
 ElectrodeFrames:  INCLUDE "gfx/pokemon/electrode/frames.asm"
 ExeggcuteFrames:  INCLUDE "gfx/pokemon/exeggcute/frames.asm"
-
+ExeggutorFrames:  INCLUDE "gfx/pokemon/exeggutor/frames.asm"
 CuboneFrames:     INCLUDE "gfx/pokemon/cubone/frames.asm"
-
+MarowakFrames:    INCLUDE "gfx/pokemon/marowak/frames.asm"
 KoffingFrames:    INCLUDE "gfx/pokemon/koffing/frames.asm"
 WeezingFrames:    INCLUDE "gfx/pokemon/weezing/frames.asm"
 RhyhornFrames:    INCLUDE "gfx/pokemon/rhyhorn/frames.asm"

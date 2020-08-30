@@ -142,14 +142,12 @@ PicPointers::
 	dba ElectrodeBackpic
 	dba ExeggcuteFrontpic
 	dba ExeggcuteBackpic
-	; see ExeggutorPicPointers
-	dbw -1, -1
-	dbw -1, -1
+	dba ExeggutorFrontpic
+	dba ExeggutorBackpic
 	dba CuboneFrontpic
 	dba CuboneBackpic
-	; see MarowakPicPointers
-	dbw -1, -1
-	dbw -1, -1
+	dba MarowakFrontpic
+	dba MarowakBackpic
 	dba KoffingFrontpic
 	dba KoffingBackpic
 	dba WeezingFrontpic

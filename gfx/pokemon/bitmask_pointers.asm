@@ -70,9 +70,9 @@ BitmasksPointers:
 	dw VoltorbBitmasks
 	dw ElectrodeBitmasks
 	dw ExeggcuteBitmasks
-	dw -1 ; see ExeggutorBitmasksPointers
+	dw ExeggutorBitmasks
 	dw CuboneBitmasks
-	dw -1 ; see MarowakBitmasksPointers
+	dw MarowakBitmasks
 	dw KoffingBitmasks
 	dw WeezingBitmasks
 	dw RhyhornBitmasks

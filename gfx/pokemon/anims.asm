@@ -70,9 +70,9 @@ OnixAnimation:       INCLUDE "gfx/pokemon/onix/anim0.asm"
 VoltorbAnimation:    INCLUDE "gfx/pokemon/voltorb/anim0.asm"
 ElectrodeAnimation:  INCLUDE "gfx/pokemon/electrode/anim0.asm"
 ExeggcuteAnimation:  INCLUDE "gfx/pokemon/exeggcute/anim0.asm"
-
+ExeggutorAnimation:  INCLUDE "gfx/pokemon/exeggutor/anim0.asm"
 CuboneAnimation:     INCLUDE "gfx/pokemon/cubone/anim0.asm"
-
+MarowakAnimation:    INCLUDE "gfx/pokemon/marowak/anim0.asm"
 KoffingAnimation:    INCLUDE "gfx/pokemon/koffing/anim0.asm"
 WeezingAnimation:    INCLUDE "gfx/pokemon/weezing/anim0.asm"
 RhyhornAnimation:    INCLUDE "gfx/pokemon/rhyhorn/anim0.asm"

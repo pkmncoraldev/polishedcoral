@@ -91,10 +91,6 @@ EvolveAfterBattle_MasterLoop
 	jp z, .evs
 	cp EVOLVE_LEVEL
 	jp z, .level
-	cp EVOLVE_LEVEL_DAY
-	jp z, .levelday
-	cp EVOLVE_LEVEL_NITE
-	jp z, .levelnite
 	cp EVOLVE_HAPPINESS
 	jp z, .happiness
 
@@ -187,7 +183,6 @@ EvolveAfterBattle_MasterLoop
 	ld a, [wLinkMode]
 	and a
 	jp nz, .dont_evolve_3
-	call ChangeFormOnItemEvolution
 	jp .proceed
 
 .holding
@@ -257,42 +252,10 @@ endr
 	jp c, .dont_evolve_3
 	call IsMonHoldingEverstone
 	jp z, .dont_evolve_3
-	call _PlainFormOnEvolution
-	jr .proceed
-	
-.levelday
-	ld a, [hli]
-	ld b, a
-	ld a, [wTempMonLevel]
-	cp b
-	jp c, .dont_evolve_3
-	call IsMonHoldingEverstone
-	jp z, .dont_evolve_3
-	ld a, [wTimeOfDay]
-	cp NITE
-	jp z, .dont_evolve_3
-	call ChangeFormOnLevelDayEvolution
-	jr .proceed
-	
-.levelnite
-	ld a, [hli]
-	ld b, a
-	ld a, [wTempMonLevel]
-	cp b
-	jp c, .dont_evolve_3
-	call IsMonHoldingEverstone
-	jp z, .dont_evolve_3
-	ld a, [wTimeOfDay]
-	cp NITE
-	jp nz, .dont_evolve_3
-	call ChangeFormOnLevelNiteEvolution
 
 .proceed
 	ld a, [wTempMonLevel]
 	ld [wCurPartyLevel], a
-	ld a, [wTempMonForm]
-	and FORM_MASK
-	ld [wCurForm], a
 	ld a, $1
 	ld [wMonTriedToEvolve], a
 
@@ -354,9 +317,6 @@ endr
 
 	call ClearTileMap
 	call UpdateSpeciesNameIfNotNicknamed
-	ld a, [wTempMonForm]
-	and FORM_MASK
-	ld [wCurForm], a
 	call GetBaseData
 
 	ld hl, wTempMonEVs - 1
@@ -440,54 +400,6 @@ endr
 	call nz, RestartMapMusic
 	ret
 ; 42414
-
-;ChangeFormOnLevelEvolution:
-; These Pokémon evolve into plain forms by level.
-;	ld a, [wTempMonSpecies]
-;	cp CUBONE
-;	jr z .cont
-;.cont
-;	cp EXEGGCUTE
-;	ret z
-;	ld a, ALOLAN_FORM
-;	jr _ChangeFormOnEvolution
-
-ChangeFormOnLevelDayEvolution:
-; These Pokémon evolve into plain forms by level.
-	ld a, [wTempMonSpecies]
-	cp EXEGGCUTE
-	ret nz
-	ld a, ALOLAN_FORM
-	jr _ChangeFormOnEvolution
-	
-ChangeFormOnLevelNiteEvolution:
-; These Pokémon evolve into plain forms by level.
-	ld a, [wTempMonSpecies]
-	cp CUBONE
-	ret nz
-	ld a, ALOLAN_FORM
-	jr _ChangeFormOnEvolution
-
-_PlainFormOnEvolution:
-	ld a, PLAIN_FORM
-_ChangeFormOnEvolution:
-	ld b, a
-	ld a, [wTempMonForm]
-	and $ff - FORM_MASK
-	or b
-	ld [wTempMonForm], a
-	ret
-
-ChangeFormOnItemEvolution:
-; These Pokémon evolve into different forms with different items.
-	ld a, [wTempMonSpecies]
-	cp PIKACHU
-	ret nz
-	ld a, [wCurItem]
-	cp FIRE_STONE
-	ld a, ALOLAN_FORM
-	jr z, _ChangeFormOnEvolution
-	jr _PlainFormOnEvolution
 
 UpdateSpeciesNameIfNotNicknamed: ; 42414
 	ld a, [wEvolutionOldSpecies]

@@ -1,12 +1,3 @@
 RaichuAnimationPointers:
-	dw RaichuPlainAnimation
+	dw RaichuKantoAnimation
 	dw RaichuAlolaAnimation
-	
-MarowakAnimationPointers:
-	dw MarowakPlainAnimation
-	dw MarowakAlolaAnimation
-	
-ExeggutorAnimationPointers:
-	dw ExeggutorPlainAnimation
-	dw ExeggutorAlolaAnimation
-	

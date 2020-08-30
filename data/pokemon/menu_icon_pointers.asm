@@ -207,4 +207,7 @@ IconPointers:
 	dw PikipekIcon
 	dw TrumbeakIcon
 	dw ToucannonIcon
+	dw Raichu_AIcon
+	dw Exeggutor_AIcon
+	dw Marowak_AIcon
 	dw EggIcon

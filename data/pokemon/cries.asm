@@ -212,5 +212,8 @@ CryHeaders::
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Pikipek
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Trumbeak
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Toucannon
+	mon_cry CRY_RAICHU,      $0ee,  $088 ; Raichu_A
+	mon_cry CRY_EXEGGUTOR,   $000,  $100 ; Exeggutor_A
+	mon_cry CRY_ODDISH,      $04f,  $0e0 ; Marowak_A
 	mon_cry CRY_NIDORAN_M,      0,     0 ; Egg
 	mon_cry CRY_NIDORAN_M,      0,     0 ; 255

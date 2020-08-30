@@ -53,13 +53,23 @@ PlayerHouseDebugPoster:
 	waitsfx
 	writetext PlayerHouseDebugText1
 	yesorno
-	iffalse .skip1
-	givepoke CORSOLA, 100
-.skip1
+	iffalse .items
+	givepoke PIKACHU, 100
+	givepoke EXEGGCUTE, 100
+	givepoke CUBONE, 100
+.items
+	writetext PlayerHouseDebugText6
+	yesorno
+	iffalse .keyitems
+	giveitem THUNDERSTONE, 3
+	giveitem FIRE_STONE, 3
+	giveitem MASTER_BALL, 10
+.keyitems
 	writetext PlayerHouseDebugText2
 	yesorno
-	iffalse .skip2
+	iffalse .badges
 	setflag ENGINE_POKEGEAR
+	setflag ENGINE_POKEDEX
 	setflag ENGINE_PHONE_CARD
 	setflag ENGINE_MAP_CARD
 	addcellnum PHONE_MOM
@@ -71,10 +81,10 @@ PlayerHouseDebugPoster:
 	giveitem OLD_ROD
 	giveitem GOOD_ROD
 	giveitem OVAL_CHARM
-.skip2
+.badges
 	writetext PlayerHouseDebugText3
 	yesorno
-	iffalse .skip3
+	iffalse .hms
 	setflag ENGINE_FIRSTBADGE
 	setflag ENGINE_SECONDBADGE
 	setflag ENGINE_THIRDBADGE
@@ -83,17 +93,17 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_FIFTHBADGE
 	setflag ENGINE_SEVENTHBADGE
 	setflag ENGINE_EIGHTHBADGE
-.skip3
+.hms
 	writetext PlayerHouseDebugText4
 	yesorno
-	iffalse .skip4
+	iffalse .done
 	setflag ENGINE_GOT_ROCK_SMASH
 	setflag ENGINE_GOT_CUT
 	setflag ENGINE_GOT_FLY
 	givetmhm HM_ROCK_SMASH
 	givetmhm HM_CUT
 	givetmhm HM_FLY
-.skip4
+.done
 	writetext PlayerHouseDebugText5
 	waitbutton
 	closetext

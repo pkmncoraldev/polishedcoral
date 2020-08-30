@@ -1652,6 +1652,20 @@ Pokedex_CheckCaught: ; 40bc4 (10:4bc4)
 	push de
 	push hl
 	ld a, [wd265]
+	cp RAICHU_A
+	jr nz, .not_raichu_a
+	ld a, RAICHU
+	jr .cont
+.not_raichu_a
+	cp EXEGGUTOR_A
+	jr nz, .not_exeggutor_a
+	ld a, EXEGGUTOR
+	jr .cont
+.not_exeggutor_a
+	cp MAROWAK_A
+	jr nz, .cont
+	ld a, MAROWAK
+.cont
 	dec a
 	call CheckCaughtMon
 	pop hl
@@ -1663,6 +1677,20 @@ Pokedex_CheckSeen: ; 40bd0
 	push de
 	push hl
 	ld a, [wd265]
+	cp RAICHU_A
+	jr nz, .not_raichu_a
+	ld a, RAICHU
+	jr .cont
+.not_raichu_a
+	cp EXEGGUTOR_A
+	jr nz, .not_exeggutor_a
+	ld a, EXEGGUTOR
+	jr .cont
+.not_exeggutor_a
+	cp MAROWAK_A
+	jr nz, .cont
+	ld a, MAROWAK
+.cont
 	dec a
 	call CheckSeenMon
 	pop hl
@@ -2477,6 +2505,11 @@ NewPokedexEntry: ; fb877
 	ld [wPokedexStatus], a
 	farcall DisplayDexEntry
 	call WaitPressAorB_BlinkCursor
+	ld a, [wTempMonSpecies]
+	ld [wCurPartySpecies], a
+	call GetBaseData
+	ld de, VTiles2
+	predef GetFrontpic
 	pop af
 	ld [wPokedexStatus], a
 	call MaxVolume
@@ -2500,6 +2533,21 @@ NewPokedexEntry: ; fb877
 	call Pokedex_LoadGFX2
 	call Pokedex_LoadAnyFootprint
 	ld a, [wd265]
+	ld [wTempMonSpecies], a
+	cp RAICHU_A
+	jr nz, .not_raichu_a
+	ld a, RAICHU
+	jr .cont
+.not_raichu_a
+	cp EXEGGUTOR_A
+	jr nz, .not_exeggutor_a
+	ld a, EXEGGUTOR
+	jr .cont
+.not_exeggutor_a
+	cp MAROWAK_A
+	jr nz, .cont
+	ld a, MAROWAK
+.cont
 	ld [wCurPartySpecies], a
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_DrawFootprint

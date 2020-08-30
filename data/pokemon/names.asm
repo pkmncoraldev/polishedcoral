@@ -206,5 +206,8 @@ PokemonNames::
 	db "PIKIPEK@@@"
 	db "TRUMBEAK@@"
 	db "TOUCANNON@"
+	db "RAICHU@@@@"
+	db "EXEGGUTOR@"
+	db "MAROWAK@@@"
 	db "EGG@@@@@@@"
 	db "???@@@@@@@"

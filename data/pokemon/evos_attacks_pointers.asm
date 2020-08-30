@@ -210,3 +210,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw PikipekEvosAttacks
 	dw TrumbeakEvosAttacks
 	dw ToucannonEvosAttacks
+	dw Raichu_AEvosAttacks
+	dw Exeggutor_AEvosAttacks
+	dw Marowak_AEvosAttacks

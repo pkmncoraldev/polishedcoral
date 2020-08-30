@@ -545,6 +545,20 @@ PokeBallEffect: ; e8a2
 	ld a, c
 	push af
 	ld a, [wd265]
+	cp RAICHU_A
+	jr nz, .not_raichu_a
+	ld a, RAICHU
+	jr .cont
+.not_raichu_a
+	cp EXEGGUTOR_A
+	jr nz, .not_exeggutor_a
+	ld a, EXEGGUTOR
+	jr .cont
+.not_exeggutor_a
+	cp MAROWAK_A
+	jr nz, .cont
+	ld a, MAROWAK
+.cont
 	dec a
 	call SetSeenAndCaughtMon
 	pop af

@@ -207,6 +207,9 @@
 	const PIKIPEK ;731
 	const TRUMBEAK ;732
 	const TOUCANNON ;733
+	const RAICHU_A
+	const EXEGGUTOR_A
+	const MAROWAK_A
 
 NUM_POKEMON EQU const_value +- 1
 	const EGG        ; $fe

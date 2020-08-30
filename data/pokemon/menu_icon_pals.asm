@@ -210,4 +210,7 @@ MenuMonIconColors::
 	iconpal RED, PINK ; PIKIPEK
 	iconpal RED, PURPLE ; TRUMBEAK
 	iconpal RED, PURPLE ; TOUCANNON
+	iconpal BROWN, BROWN ; RAICHU_A
+	iconpal GREEN, RED ; EXEGGUTOR_A
+	iconpal GRAY, BLUE ; MAROWAK_A
 	iconpal RED, BLUE ; EGG

@@ -6617,6 +6617,20 @@ LoadEnemyMon: ; 3e8eb
 	ld [wEnemyMonSpecies], a
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
+	cp RAICHU_A
+	jr nz, .not_raichu_a
+	ld a, RAICHU
+	jr .cont
+.not_raichu_a
+	cp EXEGGUTOR_A
+	jr nz, .not_exeggutor_a
+	ld a, EXEGGUTOR
+	jr .cont
+.not_exeggutor_a
+	cp MAROWAK_A
+	jr nz, .cont
+	ld a, MAROWAK
+.cont
 
 	; Mark as seen
 	dec a
@@ -8448,8 +8462,6 @@ DropPlayerSub: ; 3f447
 	push af
 	ld a, [wBattleMonSpecies]
 	ld [wCurPartySpecies], a
-	ld hl, wBattleMonForm
-	predef GetVariant
 	ld de, VTiles2 tile $31
 	predef GetBackpic
 	pop af
@@ -8487,8 +8499,6 @@ DropEnemySub: ; 3f486
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 	call GetBaseData
-	ld hl, wEnemyMonForm
-	predef GetVariant
 	ld de, VTiles2
 	predef FrontpicPredef
 	pop af
@@ -8672,8 +8682,6 @@ InitEnemyWildmon: ; 3f607
 	ld de, wEnemyBackupDVs
 	ld bc, 5
 	rst CopyBytes
-	ld hl, wEnemyMonForm
-	predef GetVariant
 
 	ld de, VTiles2
 	predef FrontpicPredef

@@ -1066,7 +1066,7 @@ DisplayDexEntry: ; 4424d
 	call GetPokemonName
 	hlcoord 9, 3
 	call PlaceString ; mon species
-	ld a, [wd265]
+	ld a, [wCurPartySpecies]
 	ld b, a
 	call GetDexEntryPointer
 	ld a, b
@@ -1082,11 +1082,25 @@ DisplayDexEntry: ; 4424d
 	ld [hli], a
 	ld a, "."
 	ld [hli], a
-	ld de, wd265
+	ld de, wCurPartySpecies
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
 	call PrintNum
 ; Check to see if we caught it.  Get out of here if we haven't.
 	ld a, [wd265]
+	cp RAICHU_A
+	jr nz, .not_raichu_a
+	ld a, RAICHU
+	jr .cont
+.not_raichu_a
+	cp EXEGGUTOR_A
+	jr nz, .not_exeggutor_a
+	ld a, EXEGGUTOR
+	jr .cont
+.not_exeggutor_a
+	cp MAROWAK_A
+	jr nz, .cont
+	ld a, MAROWAK
+.cont
 	dec a
 	call CheckCaughtMon
 	pop hl

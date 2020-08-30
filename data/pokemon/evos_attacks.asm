@@ -121,6 +121,7 @@ ArbokEvosAttacks:
 
 PikachuEvosAttacks:
 	db EVOLVE_ITEM, THUNDERSTONE, RAICHU
+	db EVOLVE_ITEM, FIRE_STONE, RAICHU_A
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 0 ; no more level-up moves
@@ -410,7 +411,8 @@ ElectrodeEvosAttacks:
 	db 0 ; no more level-up moves
 
 ExeggcuteEvosAttacks:
-	db EVOLVE_ITEM, LEAF_STONE, EXEGGUTOR
+	db EVOLVE_ITEM, THUNDERSTONE, EXEGGUTOR
+	db EVOLVE_ITEM, FIRE_STONE, EXEGGUTOR_A
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 0 ; no more level-up moves
@@ -421,7 +423,8 @@ ExeggutorEvosAttacks:
 	db 0 ; no more level-up moves
 
 CuboneEvosAttacks:
-	db EVOLVE_LEVEL, 28, MAROWAK
+	db EVOLVE_ITEM, THUNDERSTONE, MAROWAK
+	db EVOLVE_ITEM, FIRE_STONE, MAROWAK_A
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 0 ; no more level-up moves
@@ -1167,6 +1170,21 @@ TrumbeakEvosAttacks:
 	db 0 ; no more level-up moves
 
 ToucannonEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 0 ; no more level-up moves
+	
+Raichu_AEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 0 ; no more level-up moves
+	
+Exeggutor_AEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 0 ; no more level-up moves
+	
+Marowak_AEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 0 ; no more level-up moves

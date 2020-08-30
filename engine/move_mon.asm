@@ -168,6 +168,20 @@ rept 6 ; EVs
 	inc de
 endr
 	ld a, [wCurPartySpecies]
+	cp RAICHU_A
+	jr nz, .not_raichu_a
+	ld a, RAICHU
+	jr .cont
+.not_raichu_a
+	cp EXEGGUTOR_A
+	jr nz, .not_exeggutor_a
+	ld a, EXEGGUTOR
+	jr .cont
+.not_exeggutor_a
+	cp MAROWAK_A
+	jr nz, .cont
+	ld a, MAROWAK
+.cont
 	ld [wd265], a
 	dec a
 	push de

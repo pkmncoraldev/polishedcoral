@@ -413,4 +413,10 @@ PicPointers::
 	dba TrumbeakBackpic
 	dba ToucannonFrontpic
 	dba ToucannonBackpic
+	dba Raichu_AFrontpic
+	dba Raichu_ABackpic
+	dba Exeggutor_AFrontpic
+	dba Exeggutor_ABackpic
+	dba Marowak_AFrontpic
+	dba Marowak_ABackpic
 	dba EggPic

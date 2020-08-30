@@ -206,5 +206,8 @@ AnimationExtraPointers:
 	dw PikipekAnimationExtra
 	dw TrumbeakAnimationExtra
 	dw ToucannonAnimationExtra
+	dw Raichu_AAnimationExtra
+	dw Exeggutor_AAnimationExtra
+	dw Marowak_AAnimationExtra
 	dw EggAnimationExtra
 	dw -1 ; unused

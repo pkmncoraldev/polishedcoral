@@ -206,5 +206,8 @@ AnimationPointers:
 	dw PikipekAnimation
 	dw TrumbeakAnimation
 	dw ToucannonAnimation
+	dw Raichu_AAnimation
+	dw Exeggutor_AAnimation
+	dw Marowak_AAnimation
 	dw EggAnimation
 	dw -1 ; unused

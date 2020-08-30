@@ -1,18 +1,9 @@
-if DEF(FAITHFUL)
 	db  60,  90,  55, 110,  90,  80
 	;   hp  atk  def  spd  sat  sdf
-else
-	db  60, 100,  55, 121, 100,  80
-	;   hp  atk  def  spd  sat  sdf
-endc
 
 	db ELECTRIC, ELECTRIC
 	db 75 ; catch rate
-if DEF(FAITHFUL)
 	db 122 ; base exp
-else
-	db 179 ; base exp
-endc
 	db NO_ITEM ; item 1
 	db ORAN_BERRY ; item 2
 	dn FEMALE_50, 1 ; gender, step cycles to hatch
@@ -28,5 +19,5 @@ endc
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm DYNAMICPUNCH, CURSE, CALM_MIND, TOXIC, HIDDEN_POWER, HYPER_BEAM, LIGHT_SCREEN, PROTECT, RAIN_DANCE, IRON_TAIL, THUNDERBOLT, THUNDER, RETURN, DIG, DOUBLE_TEAM, SWIFT, SUBSTITUTE, FACADE, WILD_CHARGE, REST, ATTRACT, THIEF, ROCK_SMASH, FOCUS_BLAST, ENDURE, GIGA_IMPACT, FLASH, VOLT_SWITCH, THUNDER_WAVE, STRENGTH, BODY_SLAM, COUNTER, DEFENSE_CURL_HARDEN_WITHDRAW, DOUBLE_EDGE, HEADBUTT, KNOCK_OFF, PAY_DAY, ROLLOUT, SEISMIC_TOSS, SLEEP_TALK, SWAGGER, THUNDERPUNCH, ZAP_CANNON
+	tmhm 
 	; end

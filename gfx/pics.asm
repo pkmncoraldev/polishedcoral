@@ -560,6 +560,12 @@ MarillFrontpic:      	  INCBIN "gfx/pokemon/marill/front.2bpp.lz"
 MarillBackpic:       	  INCBIN "gfx/pokemon/marill/back.2bpp.lz"
 AzumarillFrontpic:        INCBIN "gfx/pokemon/azumarill/front.2bpp.lz"
 AzumarillBackpic:         INCBIN "gfx/pokemon/azumarill/back.2bpp.lz"
+Raichu_AFrontpic:         INCBIN "gfx/pokemon/raichu_a/front.2bpp.lz"
+Raichu_ABackpic:          INCBIN "gfx/pokemon/raichu_a/back.2bpp.lz"
+Exeggutor_AFrontpic:      INCBIN "gfx/pokemon/exeggutor_a/front.2bpp.lz"
+Exeggutor_ABackpic:       INCBIN "gfx/pokemon/exeggutor_a/back.2bpp.lz"
+Marowak_AFrontpic:        INCBIN "gfx/pokemon/marowak_a/front.2bpp.lz"
+Marowak_ABackpic:         INCBIN "gfx/pokemon/marowak_a/back.2bpp.lz"
 EggPic:                   INCBIN "gfx/pokemon/egg/front.2bpp.lz"
 
 

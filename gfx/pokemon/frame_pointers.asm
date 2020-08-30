@@ -206,5 +206,8 @@ FramesPointers:
 	dw PikipekFrames
 	dw TrumbeakFrames
 	dw ToucannonFrames
+	dw Raichu_AFrames
+	dw Exeggutor_AFrames
+	dw Marowak_AFrames
 	dw EggFrames
 	dw -1 ; unused

@@ -154,6 +154,7 @@ EvolutionMoves::
 	db NO_MOVE      ; PHANPY
 	db NO_MOVE      ; DONPHAN
 	db NO_MOVE      ; PORYGON2
+	db NO_MOVE      ; STANTLER
 	db NO_MOVE      ; SMEARGLE
 	db NO_MOVE      ; ELEKID
 	db NO_MOVE      ; MAGBY
@@ -205,4 +206,6 @@ EvolutionMoves::
 	db NO_MOVE      ; PIKIPEK
 	db NO_MOVE      ; TRUMBEAK
 	db NO_MOVE      ; TOUCANNON
-	
+	db PSYCHIC_M    ; RAICHU_A
+	db NO_MOVE      ; EXEGGUTOR_A
+	db NO_MOVE      ; MAROWAK_A

@@ -206,5 +206,8 @@ BitmasksPointers:
 	dw PikipekBitmasks
 	dw TrumbeakBitmasks
 	dw ToucannonBitmasks
+	dw Raichu_ABitmasks
+	dw Exeggutor_ABitmasks
+	dw Marowak_ABitmasks
 	dw EggBitmasks
 	dw -1 ; unused

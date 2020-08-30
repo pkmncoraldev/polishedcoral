@@ -3741,8 +3741,6 @@ ForcePlayerSwitch: ; 3db32
 
 
 SendOutPlayerMon: ; 3db5f
-	ld hl, wBattleMonForm
-	predef GetVariant
 	hlcoord 1, 5
 	lb bc, 7, 8
 	call ClearBox

@@ -18,7 +18,7 @@ RaticateAnimationExtra:   INCLUDE "gfx/pokemon/raticate/anim1.asm"
 EkansAnimationExtra:      INCLUDE "gfx/pokemon/ekans/anim1.asm"
 ArbokAnimationExtra:      INCLUDE "gfx/pokemon/arbok/anim1.asm"
 PikachuAnimationExtra:    INCLUDE "gfx/pokemon/pikachu/anim1.asm"
-
+RaichuAnimationExtra:     INCLUDE "gfx/pokemon/raichu/anim1.asm"
 SandshrewAnimationExtra:  INCLUDE "gfx/pokemon/sandshrew/anim1.asm"
 SandslashAnimationExtra:  INCLUDE "gfx/pokemon/sandslash/anim1.asm"
 NidoranFAnimationExtra:   INCLUDE "gfx/pokemon/nidoran_f/anim1.asm"

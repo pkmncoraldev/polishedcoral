@@ -39,9 +39,8 @@ PicPointers::
 	dba ArbokBackpic
 	dba PikachuFrontpic
 	dba PikachuBackpic
-	; see RaichuPicPointers
-	dbw -1, -1
-	dbw -1, -1
+	dba RaichuFrontpic
+	dba RaichuBackpic
 	dba SandshrewFrontpic
 	dba SandshrewBackpic
 	dba SandslashFrontpic

@@ -19,7 +19,7 @@ AnimationExtraPointers:
 	dw EkansAnimationExtra
 	dw ArbokAnimationExtra
 	dw PikachuAnimationExtra
-	dw -1 ; see RaichuAnimationExtraPointers
+	dw RaichuAnimationExtra
 	dw SandshrewAnimationExtra
 	dw SandslashAnimationExtra
 	dw NidoranFAnimationExtra

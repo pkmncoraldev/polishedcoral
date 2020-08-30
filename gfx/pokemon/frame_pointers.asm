@@ -19,7 +19,7 @@ FramesPointers:
 	dw EkansFrames
 	dw ArbokFrames
 	dw PikachuFrames
-	dw -1 ; see RaichuFramesPointers
+	dw RaichuFrames
 	dw SandshrewFrames
 	dw SandslashFrames
 	dw NidoranFFrames

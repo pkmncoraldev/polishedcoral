@@ -1,9 +1,117 @@
 GetVariant: ; 51040
+;	ld a, [wCurPartySpecies]
+;	cp PIKACHU
+;	jr z, .GetPikachuVariant
+;	cp MEWTWO
+;	jp z, .GetMewtwoVariant
+
 ; Return CurForm based on Form at hl
-	ld a, [hl]
-	and FORM_MASK
-	ld [wCurForm], a
-	ret
+;	ld a, [hl]
+;	and FORM_MASK
+;	jr nz, .ok
+;	ld a, [wCurPartySpecies]
+;	cp ARBOK
+;	jr nz, .not_kanto_arbok
+;	push bc
+;	push de
+;	call RegionCheck
+;	ld a, e
+;	pop de
+;	pop bc
+;	and a
+;	jr z, .not_kanto_arbok
+;.kanto_arbok
+;	ld a, ARBOK_KANTO_FORM
+;	jr .ok
+;.not_kanto_arbok
+;	ld a, 1 ; safeguard: form 0 becomes variant 1
+;.ok
+;	ld [wCurForm], a
+;	ret
+
+;.GetPikachuVariant:
+; Return Pikachu form (1-5) in wCurForm
+; hl-8 is ...MonMove1
+; hl-7 is ...MonMove2
+; hl-6 is ...MonMove3
+; hl-5 is ...MonMove4
+; hl is ...MonForm
+
+;	ld a, [hl]
+;	and FORM_MASK
+;	cp PIKACHU_RED_FORM
+;	jr nc, .use_form
+
+;	push bc
+;	ld bc, wTempMonForm
+;	ld a, b
+;	cp h
+;	jr nz, .nottemp1
+;	ld a, c
+;	cp l
+;	jr nz, .nottemp1
+	; skip wTempMonID through wTempMonSdfEV
+;	ld bc, -11
+;	add hl, bc
+;.nottemp1
+;	ld bc, -8
+;	add hl, bc
+;	pop bc
+
+;	ld a, PIKACHU_SURF_FORM
+;	ld [wCurForm], a
+;rept NUM_MOVES
+;	ld a, [hli]
+;	cp SURF
+;	ret z
+;endr
+
+;rept NUM_MOVES
+;	dec hl
+;endr
+;	ld a, PIKACHU_FLY_FORM
+;	ld [wCurForm], a
+;rept NUM_MOVES
+;	ld a, [hli]
+;	cp FLY
+;	ret z
+;endr
+
+;.plain
+;	ld a, PIKACHU_PLAIN_FORM
+;.use_form
+;	ld [wCurForm], a
+;	ret
+
+;.GetMewtwoVariant:
+; Return Mewtwo form (1-2) in wCurForm
+; hl-9 is ...MonItem
+; hl is ...MonForm
+
+;	push bc
+;	ld bc, wTempMonForm
+;	ld a, b
+;	cp h
+;	jr nz, .nottemp2
+;	ld a, c
+;	cp l
+;	jr nz, .nottemp2
+	; skip wTempMonID through wTempMonSdfEV
+;	ld bc, -11
+;	add hl, bc
+;.nottemp2
+;	ld bc, -9
+;	add hl, bc
+;	pop bc
+
+;	ld a, [hl]
+;	cp ARMOR_SUIT
+;	ld a, MEWTWO_ARMORED_FORM
+;	jr z, .armored_mewtwo
+;	dec a ; MEWTWO_PLAIN_FORM
+;.armored_mewtwo
+;	ld [wCurForm], a
+;	ret
 
 GetFrontpic: ; 51077
 	ld a, [wCurPartySpecies]
@@ -203,9 +311,9 @@ GetBackpic: ; 5116c
 	call GetRelevantPicPointers
 	pop bc
 	ld a, b
-	jr nc, .notvariant
-	ld a, c
-.notvariant
+;	jr nc, .notvariant
+;	ld a, c
+;.notvariant
 	dec a
 	ld bc, 6
 	rst AddNTimes

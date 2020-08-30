@@ -19,7 +19,7 @@ BitmasksPointers:
 	dw EkansBitmasks
 	dw ArbokBitmasks
 	dw PikachuBitmasks
-	dw -1 ; see RaichuBitmasksPointers
+	dw RaichuBitmasks
 	dw SandshrewBitmasks
 	dw SandslashBitmasks
 	dw NidoranFBitmasks

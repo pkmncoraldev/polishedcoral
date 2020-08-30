@@ -6898,12 +6898,12 @@ endc
 	ld b, a
 
 	; Form
-;	ld a, [wBattleType]
-;	cp BATTLETYPE_SHINY
-;	ld a, GYARADOS_RED_FORM
-;	jr z, .red_form
+	ld a, [wBattleType]
+	cp BATTLETYPE_SHINY
+	ld a, GYARADOS_RED_FORM
+	jr z, .red_form
 	ld a, 1 ; default form 1
-;.red_form
+.red_form
 	add b
 	ld [hl], a
 

@@ -1,3 +1,0 @@
-RaichuAnimationPointers:
-	dw RaichuKantoAnimation
-	dw RaichuAlolaAnimation

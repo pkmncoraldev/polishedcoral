@@ -1,3 +1,0 @@
-RaichuBitmasksPointers:
-	dw RaichuKantoBitmasks
-	dw RaichuAlolaBitmasks

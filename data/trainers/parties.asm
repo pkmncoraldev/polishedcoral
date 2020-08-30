@@ -2374,9 +2374,9 @@ TeacherFastGroup:
 
 	; TEACHER_FAST
 	db "KATE@"
-	db TRAINERTYPE_ITEM | TRAINERTYPE_PERSONALITY
+	db TRAINERTYPE_ITEM
 	; party
-	db 6, RAICHU, QUICK_CLAW, ABILITY_2 | JOLLY, MALE | ALOLAN_FORM
+	db 6, MEOWTH, QUICK_CLAW
 	db -1 ; end
 
 ; ================

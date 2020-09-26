@@ -9,11 +9,7 @@
 	dn FEMALE_12_5, 6 ; gender, step cycles to hatch
 	dn 7, 7 ; frontpic dimensions
 	db CUTE_CHARM ; ability 1
-if DEF(FAITHFUL)
 	db CUTE_CHARM ; ability 2
-else
-	db SERENE_GRACE ; ability 2
-endc
 	db PIXILATE ; hidden ability
 	db MEDIUM_FAST ; growth rate
 	dn FIELD, FIELD ; egg groups
@@ -23,5 +19,5 @@ endc
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CALM_MIND, TOXIC, HIDDEN_POWER, SUNNY_DAY, HYPER_BEAM, LIGHT_SCREEN, PROTECT, RAIN_DANCE, SAFEGUARD, IRON_TAIL, RETURN, DIG, SHADOW_BALL, DOUBLE_TEAM, REFLECT, SWIFT, SUBSTITUTE, FACADE, REST, ATTRACT, DAZZLINGLEAM, FLASH, CUT, DOUBLE_EDGE, HYPER_VOICE, SKILL_SWAP, SLEEP_TALK, SWAGGER
+	tmhm 
 	; end

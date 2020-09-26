@@ -1007,6 +1007,7 @@ BattleCommand_doturn:
 	jp EndMoveEffect
 
 .continuousmoves ; 34602
+	db EFFECT_SKULL_BASH
 	db EFFECT_SOLAR_BEAM
 	db EFFECT_FLY
 	db EFFECT_ROLLOUT
@@ -1298,6 +1299,9 @@ BattleCommand_stab: ; 346d2
 	; Apply STAB
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	
+	farcall MultiSlotMoveTypes
+	
 	ld b, a
 	ld a, [hBattleTurn]
 	and a
@@ -1331,6 +1335,9 @@ BattleCommand_stab: ; 346d2
 	; Apply weather modifiers
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	
+	farcall MultiSlotMoveTypes
+	
 	ld b, a
 	farcall DoWeatherModifiers
 
@@ -1404,6 +1411,9 @@ CheckTypeMatchup:
 	; check Air Balloon for Ground-type attacks
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	
+	farcall MultiSlotMoveTypes
+	
 	cp GROUND
 	jr nz, .done_air_balloon
 
@@ -1449,6 +1459,9 @@ _CheckTypeMatchup: ; 347d3
 	push hl
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	
+	farcall MultiSlotMoveTypes
+	
 	ld d, a
 	ld a, BATTLE_VARS_ABILITY
 	call GetBattleVar
@@ -2011,6 +2024,8 @@ BattleCommand_checkhit:
 	cp THUNDER
 	ret z
 	cp HURRICANE
+	ret z
+	cp TWISTER
 	ret
 
 .DigMoves:
@@ -2140,6 +2155,8 @@ BattleCommand_lowersub: ; 34eee
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
+	cp EFFECT_SKULL_BASH
+	jr z, .charge_turn
 	cp EFFECT_SOLAR_BEAM
 	jr z, .charge_turn
 	cp EFFECT_FLY
@@ -2228,6 +2245,13 @@ BattleCommand_hittargetnosub: ; 34f60
 	jr z, .triplekick
 
 .normal_move
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp TACKLE_SCRATCH_POUND
+	jr nz, .not_tackle_scratch_pound
+	farcall CheckTackleThing
+	jr .triplekick
+.not_tackle_scratch_pound
 	xor a
 	ld [wKickCounter], a
 .triplekick
@@ -2272,32 +2296,7 @@ BattleCommand_hittargetnosub: ; 34f60
 ; Fury Swipes, Fury Attack and Comet Punch were merged, so use the correct
 ; animation for the Pokémon that learned each one
 .fury_strikes
-	push de
-	ld a, [hBattleTurn]
-	and a
-	ld a, [wBattleMonSpecies]
-	jr z, .got_user_species
-	ld a, [wEnemyMonSpecies]
-.got_user_species
-	farcall CheckFuryAttackUsers2
-	pop de
-	jr nc, .not_furry_attack
-	ld a, $2
-	ld [wKickCounter], a
-	jr .fury_attack
-.not_furry_attack
-	push de
-	ld a, [hBattleTurn]
-	and a
-	ld a, [wBattleMonSpecies]
-	jr z, .got_user_species2
-	ld a, [wEnemyMonSpecies]
-.got_user_species2
-	farcall CheckCometPunchUsers2
-	pop de
-	jr nc, .multihit
-	ld a, $3
-	ld [wKickCounter], a
+	farcall CheckFuryStrikesThing
 	jr .fury_attack
 
 ; 34fd1
@@ -2338,54 +2337,39 @@ StatUpDownAnim: ; 34feb
 	ld d, 0
 	cp DEFENSE_CURL_HARDEN_WITHDRAW
 	jr nz, .not_defense_curl
-	ld a, [hBattleTurn]
-	and a
-	farcall CheckWithdrawUsers
-	jr nc, .not_withdraw
-	ld a, $1
+	farcall CheckDefenseCurlThing
 	jr .got_kick_counter
-.not_withdraw
-	farcall CheckHardenUsers
-	jr nc, .not_harden
-	ld a, $2
-	jr .got_kick_counter
-.not_harden
 .not_defense_curl
 	cp LEER_TAIL_WHIP
 	jr nz, .not_leer
-	ld a, [hBattleTurn]
-	and a
-	farcall CheckTailWhipUsers
-	jr nc, .not_tailwhip
-	ld a, $1
+	farcall CheckLeerThing
 	jr .got_kick_counter
 .not_leer
-.not_tailwhip
 	cp BARRIER_IRON_DEFENSE
 	jr nz, .not_barrier
-	ld a, [hBattleTurn]
-	and a
-	farcall CheckIronDefenseUsers
-	jr nc, .not_iron_defense
-	ld a, $1
+	farcall CheckBarrierThing
 	jr .got_kick_counter
 .not_barrier
-.not_iron_defense
 	cp SHARPEN_HOWL_MEDITATE
 	jr nz, .not_sharpen
-	ld a, [hBattleTurn]
-	and a
-	farcall CheckMeditateUsers
-	jr nc, .not_meditate
-	ld a, $1
+	farcall CheckSharpenThing
 	jr .got_kick_counter
-.not_meditate
-	farcall CheckHowlUsers
-	jr nc, .not_howl
-	ld a, $2
-	jr .got_kick_counter
-.not_howl
 .not_sharpen
+	cp CHARM_FEATHER_DANCE
+	jr nz, .not_charm
+	farcall CheckCharmThing
+	jr .got_kick_counter
+.not_charm
+	cp SCARY_FACE_COTTON_SPORE
+	jr nz, .not_scary_face
+	farcall CheckScaryFaceThing
+	jr .got_kick_counter
+.not_scary_face
+	cp SAND_ATTACK_SMOKESCREEN
+	jr nz, .not_sand_attack
+	farcall CheckSandAttackThing
+	jr .got_kick_counter
+.not_sand_attack
 	xor a
 .got_kick_counter
 	ld [wKickCounter], a
@@ -2974,8 +2958,6 @@ BattleCommand_postfainteffects:
 	cp EFFECT_TRIPLE_KICK
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_FURY_SWIPES
-	jr z, .multiple_hit_raise_sub
-	cp EFFECT_SWITCH_HIT
 	jr nz, .finish
 	call HasUserFainted
 	call nz, BattleCommand_switchout
@@ -3917,6 +3899,9 @@ BattleCommand_damagecalc: ; 35612
 	jr z, .no_flash_fire
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	
+	farcall MultiSlotMoveTypes
+	
 	cp FIRE
 	ld a, $32 ; 3/2 = 150%
 	call z, ApplyDamageMod
@@ -3959,6 +3944,9 @@ BattleCommand_damagecalc: ; 35612
 .type_boost
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	
+	farcall MultiSlotMoveTypes
+	
 	cp c
 	ld a, $65 ; 6/5 = 120%
 .life_orb
@@ -5355,20 +5343,6 @@ SapHealth: ; 36011
 	ld b, a
 	ld c, [hl]
 
-	; for Drain Kiss, we want 75% drain instead of 50%
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVar
-	cp DRAIN_KISS
-	jr nz, .skip_drain_kiss
-	ld h, b
-	ld l, c
-	srl b
-	rr c
-	add hl, bc
-	ld b, h
-	ld c, l
-
-.skip_drain_kiss
 	call GetHPAbsorption
 
 	; check for Liquid Ooze
@@ -5568,7 +5542,7 @@ BattleCommand_selfstatdownhit:
 	ld [wLoweredStat], a
 	call BattleCommand_statdownmessage
 	jp SwitchTurn
-
+	
 BattleCommand_bulkup:
 	lb bc, ATTACK, DEFENSE
 	jr DoubleUp
@@ -5578,15 +5552,15 @@ BattleCommand_calmmind:
 BattleCommand_dragondance:
 	lb bc, ATTACK, SPEED
 	jr DoubleUp
+BattleCommand_workup:
+	lb bc, ATTACK, SP_ATTACK
+	jr DoubleUp
 BattleCommand_growth:
 	lb bc, ATTACK, SP_ATTACK
 	call GetWeatherAfterCloudNine
 	cp WEATHER_SUN
 	jr nz, DoubleUp
 	lb bc, ($10 | ATTACK), ($10 | SP_ATTACK)
-	jr DoubleUp
-BattleCommand_honeclaws:
-	lb bc, ATTACK, ACCURACY
 DoubleUp:
 ; stats to raise are in bc
 	push bc ; StatUp clobbers c (via CheckIfStatCanBeRaised), which we want to retain
@@ -6251,6 +6225,69 @@ BattleCommand_tristatuschance: ; 3658f
 	dw BattleCommand_burntarget ; burn
 ; 365a7
 
+BattleCommand_burnflinchtarget: ; 3658f
+; tristatuschance
+
+	call BattleCommand_effectchance
+
+; 1/3 chance of each status
+.loop
+	call BattleRandom
+	swap a
+	and %11
+	jr z, .loop
+; jump
+	dec a
+	ld hl, .ptrs
+	rst JumpTable
+	ret
+
+.ptrs
+	dw BattleCommand_flinchtarget ; flinch
+	dw BattleCommand_burntarget ; burn
+	
+BattleCommand_freezeflinchtarget: ; 3658f
+; tristatuschance
+
+	call BattleCommand_effectchance
+
+; 1/3 chance of each status
+.loop
+	call BattleRandom
+	swap a
+	and %11
+	jr z, .loop
+; jump
+	dec a
+	ld hl, .ptrs
+	rst JumpTable
+	ret
+
+.ptrs
+	dw BattleCommand_flinchtarget ; flinch
+	dw BattleCommand_freezetarget ; freeze
+	
+BattleCommand_paralyzeflinchtarget: ; 3658f
+; tristatuschance
+
+	call BattleCommand_effectchance
+
+; 1/3 chance of each status
+.loop
+	call BattleRandom
+	swap a
+	and %11
+	jr z, .loop
+; jump
+	dec a
+	ld hl, .ptrs
+	rst JumpTable
+	ret
+
+.ptrs
+	dw BattleCommand_flinchtarget ; flinch
+	dw BattleCommand_paralyzetarget ; paralyze
+
 
 BattleCommand_curl: ; 365a7
 ; curl
@@ -6578,7 +6615,7 @@ BattleCommand_forceswitch: ; 3680f
 	inc a
 	ld [wBattleEnded], a
 	call SetBattleDraw
-	ld a, $1
+	farcall CheckRoarThing
 	ld [wKickCounter], a
 	call AnimateCurrentMove
 	ld c, 20
@@ -6594,8 +6631,7 @@ BattleCommand_forceswitch: ; 3680f
 	xor a
 	ld [hl], a
 	call UpdateOpponentInParty
-	ld a, $1
-	ld [wKickCounter], a
+	farcall CheckRoarThing
 	call AnimateCurrentMove
 	ld c, $14
 	call DelayFrames
@@ -6914,6 +6950,12 @@ BattleCommand_charge:
 
 	ld hl, .UsedText
 	call BattleTextBox
+	
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_SKULL_BASH
+	ld b, endturn_command
+	jp z, SkipToBattleCommand
 	jp EndMoveEffect
 
 .UsedText:
@@ -6924,6 +6966,10 @@ BattleCommand_charge:
 
 	ld hl, .SolarBeam
 	cp SOLAR_BEAM
+	ret z
+	
+	ld hl, .SkullBash
+	cp SKULL_BASH
 	ret z
 
 	ld hl, .Fly
@@ -6939,6 +6985,10 @@ BattleCommand_charge:
 	text_jump UnknownText_0x1c0d26
 	db "@"
 
+.SkullBash:
+	text_jump UnknownText_0x1c0d26
+	db "@"
+	
 .Fly:
 ; 'flew up high!'
 	text_jump UnknownText_0x1c0d5c
@@ -7651,31 +7701,6 @@ BattleCommand_payday:
 
 ; 3707f
 
-BattleCommand_skillswap:
-	call CheckHiddenOpponent
-	jr nz, .failed
-
-	ld a, [wPlayerAbility]
-	ld b, a
-	ld a, [wEnemyAbility]
-	ld [wPlayerAbility], a
-	ld a, b
-	ld [wEnemyAbility], a
-
-	ld hl, SwappedAbilitiesText
-	call StdBattleTextBox
-
-	; Don't use RunBothActivationAbilities, because
-	; Skill Swap always runs the user first
-	farcall RunActivationAbilitiesInner
-	call SwitchTurn
-	farcall RunActivationAbilitiesInner
-	jp SwitchTurn
-
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed
-
 BattleCommand_trick:
 	ld a, [wAttackMissed]
 	and a
@@ -7725,23 +7750,20 @@ BattleCommand_trick:
 	call AnimateFailedMove
 	jp PrintButItFailed
 
-BattleCommand_conversion:
-; In vanilla later generations, we change type into what is in the first slot.
-; However, since we can swap moves during battle here, and the alternative
-; (don't allow it, or remember what used to be our first move) is unintuitive.
-; As a result, we buff Conversion instead. It might actually make the move
-; useful, too.
-	ld a, [hBattleTurn]
-	and a
+BattleCommand_conversion: ; 3707f
+; conversion
+
 	ld hl, wBattleMonMoves
 	ld de, wBattleMonType1
+	ld a, [hBattleTurn]
+	and a
 	jr z, .got_moves
 	ld hl, wEnemyMonMoves
 	ld de, wEnemyMonType1
 .got_moves
 	push de
 	ld c, 0
-	ld de, wStringBuffer3
+	ld de, wStringBuffer1
 .loop
 	push hl
 	ld b, 0
@@ -7771,7 +7793,7 @@ BattleCommand_conversion:
 	inc de
 	ld [de], a
 	pop de
-	ld hl, wStringBuffer3
+	ld hl, wStringBuffer1
 .loop2
 	ld a, [hl]
 	cp -1
@@ -7785,7 +7807,7 @@ BattleCommand_conversion:
 	ld a, [de]
 	dec de
 	cp [hl]
-	jr nz, .choose_move
+	jr nz, .done
 .next
 	inc hl
 	jr .loop2
@@ -7794,141 +7816,35 @@ BattleCommand_conversion:
 	call AnimateFailedMove
 	jp PrintButItFailed
 
-.choose_move
-	push de
-	ld a, [hBattleTurn]
-	and a
-	jr nz, .enemy
-
-	; Choose what move's type to change into
-	call BattleCommand_movedelay
-	pop de
-.player_choose_move
-	push de
-	ld hl, ChangeIntoTypeText
-	call StdBattleTextBox
-
-	ld a, [wCurMoveNum]
-	ld d, a
-	ld a, [wCurPlayerMove]
-	ld e, a
-	push de
-
-	xor a
-	ld [wCurMoveNum], a
-	ld a, 2
-	ld [wMoveSelectionMenuType], a
-	farcall MoveSelectionScreen
-	ld a, [wMenuCursorY]
-	ld [wCurMoveNum], a
-
-	call UpdateBattleHuds
-	call Call_LoadTempTileMapToTileMap
-
-	ld a, [wLinkMode]
-	and a
-	jr z, .player_link_done
-	farcall LinkBattleSendReceiveAction
-.player_link_done
-	ld a, [wCurMoveNum]
-	ld b, a
-	pop de
-	ld a, d
-	ld [wCurMoveNum], a
-	ld a, e
-	ld [wCurPlayerMove], a
-
-	push bc
-	farcall UpdateMoveData
-	pop bc
-	ld a, b
-	jr .validate_choice
-.enemy
-	ld a, [wLinkMode]
-	and a
-	jr nz, .enemy_link
-	ld a, [wBattleMode]
-	dec a
-	jr z, .enemy_wild
-
-	; Check trainer AI. If "Smart" mode is disabled, change randomly.
-	; Otherwise, try to be intelligent about our choice.
-	ld hl, TrainerClassAttributes + TRNATTR_AI_MOVE_WEIGHTS
-
-	; If we have a battle in BattleTower just load the Attributes of the first wTrainerClass (Falkner)
-	; so we have always the same AI, regardless of the loaded class of trainer
-	ld a, [wInBattleTowerBattle]
-	bit 0, a
-	jr nz, .battle_tower_skip
-
-	ld a, [wTrainerClass]
-	dec a
-	ld b, 0
-	ld c, a
-	ld a, NUM_TRAINER_ATTRIBUTES
-	rst AddNTimes
-
-.battle_tower_skip
-	lb bc, CHECK_FLAG, AI_SMART
-	ld d, BANK(TrainerClassAttributes)
-	predef FlagPredef
-	jr z, .not_smart
-	farcall AI_Conversion
-	jr .validate_choice
-
-.enemy_link
-	farcall LinkBattleSendReceiveAction
-	ld a, [wBattleAction]
-	cp 4
-	jr c, .validate_choice
-
-	farjp LinkBattleError
-	jr .validate_choice
-.not_smart
-.enemy_wild
-	call BattleRandom
-	and %11 ; NUM_MOVES - 1
-.validate_choice
-	pop de
+.done
+.loop3
+	ld a, 0
 	ld c, a
 	ld b, 0
-	ld hl, wStringBuffer3
+	ld hl, wStringBuffer1
 	add hl, bc
 	ld a, [hl]
 	cp -1
-	jr z, .invalid_selection
+	jr z, .fail
 	cp UNKNOWN_T
-	jr z, .invalid_selection
+	jr z, .fail
 	ld a, [de]
 	cp [hl]
-	jr z, .invalid_selection
+	jr z, .fail
 	inc de
 	ld a, [de]
 	dec de
 	cp [hl]
-	jr z, .invalid_selection
+	jr z, .fail
 	ld a, [hl]
 	ld [de], a
 	inc de
 	ld [de], a
 	ld [wNamedObjectIndexBuffer], a
-	farcall GetTypeName
+	callba GetTypeName
 	call AnimateCurrentMove
 	ld hl, TransformedTypeText
 	jp StdBattleTextBox
-.invalid_selection
-	; If the player chose an invalid move, give an appropriate message.
-	; Otherwise, just loop back to move selection.
-	ld a, [hBattleTurn]
-	and a
-	ld hl, InvalidTypeChangeText
-	call z, StdBattleTextBox
-
-	; skip move delay after the first selection
-	ld a, [hBattleTurn]
-	and a
-	jp z, .player_choose_move
-	jp .choose_move
 
 BattleCommand_resetstats:
 	ld a, BASE_STAT_LEVEL
@@ -7986,6 +7902,8 @@ BattleCommand_heal:
 .not_rest
 	farcall GetHalfMaxHP
 .finish
+	farcall CheckSoftboiledThing
+	ld [wKickCounter], a
 	call AnimateCurrentMove
 	farcall RestoreHP
 	call UpdateUserInParty
@@ -8414,8 +8332,25 @@ BattleCommand_defrost: ; 37563
 
 ; 37588
 
-
-INCLUDE "engine/battle/effect_commands/curse.asm"
+BattleCommand_shellsmash:
+	farcall ShellSmashCommand
+	ret
+	
+BattleCommand_quiverdance:
+	farcall QuiverDanceCommand
+	ret
+	
+BattleCommand_curse:
+	farcall CurseCommand
+	ret
+	
+BattleCommand_cottonguard:
+	farcall CottonGuardCommand
+	ret
+	
+BattleCommand_mirrormove:
+	farcall MirrorMoveCommand
+	ret
 
 INCLUDE "engine/battle/effect_commands/protect.asm"
 
@@ -8430,10 +8365,7 @@ INCLUDE "engine/battle/effect_commands/perish_song.asm"
 INCLUDE "engine/battle/effect_commands/rollout.asm"
 
 BoostJumptable:
-	dbw AVALANCHE, DoAvalanche
-	dbw ACROBATICS, DoAcrobatics
 	dbw FACADE, DoFacade
-	dbw HEX, DoHex
 	dbw VENOSHOCK, DoVenoshock
 	dbw KNOCK_OFF, DoKnockOff
 	dbw -1, -1
@@ -8444,21 +8376,17 @@ BattleCommand_conditionalboost:
 	call GetBattleVar
 	jp BattleJumptable
 
-DoAvalanche:
-	call CheckOpponentWentFirst
-	jr DoubleDamageIfNZ
-
-DoAcrobatics:
-	ld a, [hBattleTurn]
-	and a
-	ld hl, wBattleMonItem
-	jr z, .got_item
-	ld hl, wEnemyMonItem
-.got_item
-	ld a, [hl]
-	and a
-	ret nz
-	jr DoubleDamage
+;DoAcrobatics:
+;	ld a, [hBattleTurn]
+;	and a
+;	ld hl, wBattleMonItem
+;	jr z, .got_item
+;	ld hl, wEnemyMonItem
+;.got_item
+;	ld a, [hl]
+;	and a
+;	ret nz
+;	jr DoubleDamage
 
 DoFacade:
 	ld a, BATTLE_VARS_STATUS
@@ -8466,11 +8394,11 @@ DoFacade:
 	and 1 << BRN | 1 << PSN | 1 << PAR
 	jr DoubleDamageIfNZ
 
-DoHex:
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and a
-	jr DoubleDamageIfNZ
+;DoHex:
+;	ld a, BATTLE_VARS_STATUS_OPP
+;	call GetBattleVar
+;	and a
+;	jr DoubleDamageIfNZ
 
 DoVenoshock:
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -9144,15 +9072,6 @@ BattleCommand_clearhazards: ; 37b39
 	call StdBattleTextBox
 	pop hl
 .no_spikes
-	ld a, [hl]
-	and SCREENS_TOXIC_SPIKES
-	jr z, .no_toxic_spikes
-	cpl
-	and [hl]
-	ld [hl], a
-	ld hl, BlewToxicSpikesText
-	call StdBattleTextBox
-.no_toxic_spikes
 	pop de
 	ld a, [de]
 	and a

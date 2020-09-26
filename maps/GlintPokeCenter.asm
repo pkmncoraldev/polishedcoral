@@ -116,9 +116,9 @@ GlintPokeCenterTeaLadyText1:
 	
 GlintPokeCenterTeaLadyText2:
 	text "Oh! You don't have"
-	line "any!"
+	line "any FLOWER PETALS!"
 	
-	para "Off to the GROVE"
+	para "Off to the grove"
 	line "to find some!"
 	done
 	
@@ -135,29 +135,28 @@ GlintPokeCenterTeaLadyText4:
 	line "PETALS to make"
 	cont "you some tea."
 	
-	para "Off to the GROVE"
+	para "Off to the grove"
 	line "to find some more!"
 	done
 	
 GlintPokeCenterTeaLadyText5:
-	text "The FLOWER PETALS"
-	line "from the trees in"
-	cont "GLINT GROVE can be"
+	text "FLOWER PETALS from"
+	line "GLINT GROVE can be"
 	cont "brewed into a"
-	cont "tasty tea that"
-	cont "#MON love!"
+	cont "tasty tea."
+
+	para "#MON love it!"
 	
 	para "I often go to the"
 	line "grove to collect"
 	cont "them myself."
 	
 	para "If you bring me 4"
-	line "FLOWER PETALS from"
-	cont "the grove,"
+	line "FLOWER PETALS,"
 	
 	para "I'd be more then"
 	line "happy to make you"
-	cont "some."
+	cont "some tea."
 	
 	para "How about it?"
 	done

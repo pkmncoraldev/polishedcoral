@@ -109,7 +109,7 @@ MapSetupCommands: ; 15440
 	dba DecompressMetatiles ; 2d
 ; 154ca
 
-ActivateMapAnims: ; 154cf
+ActivateMapAnims:: ; 154cf
 	ld a, $1
 	ld [hMapAnims], a
 	ret

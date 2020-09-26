@@ -6,8 +6,9 @@ Route10East_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, Route10EastCallback
 
-	db 1 ; warp events
+	db 2 ; warp events
 	warp_event 11, 21, ROUTE_10_TENT, 1
+	warp_event 14,  7, ICE_CAVE_B1F, 3
 
 	db 20 ; coord events
 	xy_trigger 0, 23, 11, 0, Route10EastLight, 0, 0

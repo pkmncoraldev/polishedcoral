@@ -51,6 +51,8 @@ EngineFlags: ; 80462
 	engine_flag wOWState, OWSTATE_WHIRLPOOL
 	engine_flag wOWState, OWSTATE_WATERFALL
 	engine_flag wOWState, OWSTATE_CUT
+	engine_flag wOWState, OWSTATE_BIKE_GEAR
+	engine_flag wOWState, OWSTATE_ROCK_CLIMB
 
 	engine_flag wBikeGear, 0
 	
@@ -232,6 +234,7 @@ EngineFlags: ; 80462
 	engine_flag wGotHMFlags, 0 ; rock smash
 	engine_flag wGotHMFlags, 1 ; cut
 	engine_flag wGotHMFlags, 2 ; fly
+	engine_flag wGotHMFlags, 3 ; rock climb
 
 	engine_flag wMetGymLeaderFlags, 0  ; stanley
 	engine_flag wMetGymLeaderFlags, 1  ; rodney

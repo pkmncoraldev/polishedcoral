@@ -94,9 +94,9 @@ ItemIconPointers:
 	dw LibraryCardIcon
 	dw PokeFluteIcon
 	dw TheThingIcon
-	dw RedScaleIcon
+	dw TorchIcon
 	dw OldKeyIcon
-	dw BasementKeyIcon
+	dw ClayPotIcon
 	dw SSTicketIcon
 	dw PassIcon
 	dw MachinePartIcon
@@ -239,8 +239,8 @@ ItemIconPointers:
 	dw GoldLeafIcon
 	dw SlowpokeTailIcon
 	dw BottleCapIcon
-	dw HelixFossilIcon
-	dw DomeFossilIcon
+	dw JawFossilIcon
+	dw SailFossilIcon
 	dw OldAmberIcon
 	dw MulchIcon
 	dw SweetHoneyIcon

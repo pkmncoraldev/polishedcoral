@@ -125,24 +125,9 @@ LoadCategoryAndTypePals:
 	ld hl, TypeIconPals
 	pop bc
 	ld a, c
-	push hl
-	push de
-	push af
-	ld a, [wCurMove]
-	cp DEFENSE_CURL_HARDEN_WITHDRAW
-	jr z, .defense_curl
-	cp BARRIER_IRON_DEFENSE
-	jr z, .barrier
-	cp SHARPEN_HOWL_MEDITATE
-	jr z, .sharpen
-	cp SYNTHESIS_MOONLIGHT_MORNING_SUN
-	jr z, .synthesis
-	cp MEAN_LOOK_BLOCK_SPIDER_WEB
-	jr z, .mean_look
-	pop af
-.return
-	pop de
-	pop hl
+
+	farcall MultiSlotMoveTypes
+
 	add a
 	ld c, a
 	ld b, 0
@@ -154,61 +139,6 @@ LoadCategoryAndTypePals:
 	ld bc, 2
 	ld a, $5
 	jp FarCopyWRAM
-
-.defense_curl
-	pop af
-	farcall CheckWithdrawUsers
-	jr nc, .not_withdraw
-	ld a, WATER
-	jr .return
-.not_withdraw
-	ld a, NORMAL
-	jr .return
-	
-.barrier
-	pop af
-	farcall CheckIronDefenseUsers
-	jr nc, .not_iron_defense
-	ld a, STEEL
-	jr .return
-.not_iron_defense
-	ld a, PSYCHIC
-	jr .return
-	
-.sharpen
-	pop af
-	farcall CheckMeditateUsers
-	jr nc, .not_meditate
-	ld a, PSYCHIC
-	jr .return
-.not_meditate
-	ld a, NORMAL
-	jr .return
-	
-.synthesis
-	pop af
-	farcall CheckMoonlightUsers
-	jr nc, .not_moonlight
-	ld a, FAIRY
-	jr .return
-.not_moonlight
-	farcall CheckMorningSunUsers
-	jr nc, .not_morning_sun
-	ld a, NORMAL
-	jr .return
-.not_morning_sun
-	ld a, GRASS
-	jr .return
-	
-.mean_look
-	pop af
-	farcall CheckSpiderWebUsers
-	jr nc, .not_spider_web
-	ld a, BUG
-	jr .return
-.not_spider_web
-	ld a, NORMAL
-	jr .return
 	
 	
 LoadItemIconPalette:
@@ -879,11 +809,11 @@ LoadMapPals:
 .got_pals
 	ld a, [wMapGroup]
 	cp GROUP_LAKE_ONWA
-	jr z, .rockscheck1
+	jp z, .rockscheck1
 	cp GROUP_ROUTE_3_EAST
-	jr z, .rockscheck2
+	jp z, .rockscheck2
 	cp GROUP_SUNBEAM_ISLAND
-	jr z, .umbrellacheck
+	jp z, .umbrellacheck
 	cp GROUP_SUNSET_BAY
 	jp z, .sailboat
 .got_pals_cont
@@ -902,7 +832,58 @@ LoadMapPals:
 	jp z, .lustermall
 	cp TILESET_SEWER
 	jp z, .sewer
+	cp TILESET_ICE_CAVE
+	jp z, .ice_cave
 	jp .normal
+.ice_cave
+	ld a, [wPlayerPalette]
+	cp 4
+	jr z, .ice_cave_purple
+	eventflagcheck EVENT_TORCH_LIT
+	jr nz, .torch
+	jr .ice_cave_cont
+.torch
+	ld a, 1
+.ice_cave_cont
+	and 3
+	ld bc, 8 palettes
+	eventflagcheck EVENT_MAMOSWINE_CUTSCENE
+	jr z, .not_mamo
+	ld hl, MapObjectPalsIceCave2
+	jr .ice_cave_cont2
+.not_mamo
+	ld hl, MapObjectPalsIceCave
+.ice_cave_cont2
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+	
+.ice_cave_purple
+	eventflagcheck EVENT_TORCH_LIT
+	jr nz, .torch_purple
+	jr .ice_cave_purple_cont
+.torch_purple
+	ld a, 1
+.ice_cave_purple_cont
+	and 3
+	ld bc, 8 palettes
+	eventflagcheck EVENT_MAMOSWINE_CUTSCENE
+	jr z, .not_mamo_purple
+	ld hl, MapObjectPalsIceCavePurple2
+	jr .ice_cave_purple_cont2
+.not_mamo_purple
+	ld hl, MapObjectPalsIceCavePurple
+.ice_cave_purple_cont2
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+	
 .sewer
 	ld a, [wMapNumber]
 	cp MAP_LUSTER_SEWERS_B1F_FLOODED
@@ -1138,6 +1119,8 @@ LoadMapPals:
 	ld a, [wMapNumber]
 	cp MAP_SUNSET_BAY
 	jr z, .sailboatcont
+	cp MAP_SUNSET_CAPE
+	jr z, .lighthouse
 	jr .normal
 	
 .sailboatcont
@@ -1145,6 +1128,18 @@ LoadMapPals:
 	and 3
 	ld bc, 8 palettes
 	ld hl, MapObjectPalsSailboat
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	jr .outside
+	
+.lighthouse
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPalsLighthouse
 	call AddNTimes
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
@@ -1280,6 +1275,18 @@ INCLUDE "maps/palettes/obpals/obumbrella.pal"
 MapObjectPalsStarglow::
 INCLUDE "maps/palettes/obpals/obstarglow.pal"
 
+MapObjectPalsIceCave::
+INCLUDE "maps/palettes/obpals/obicecave.pal"
+
+MapObjectPalsIceCave2::
+INCLUDE "maps/palettes/obpals/obicecave2.pal"
+
+MapObjectPalsIceCavePurple::
+INCLUDE "maps/palettes/obpals/obicecavepurple.pal"
+
+MapObjectPalsIceCavePurple2::
+INCLUDE "maps/palettes/obpals/obicecavepurple2.pal"
+
 MapObjectPalsSewer::
 INCLUDE "maps/palettes/obpals/obsewer.pal"
 
@@ -1309,6 +1316,9 @@ INCLUDE "maps/palettes/obpals/obsnowstormbrown.pal"
 
 MapObjectPalsSailboat::
 INCLUDE "maps/palettes/obpals/obsailboat.pal"
+
+MapObjectPalsLighthouse::
+INCLUDE "maps/palettes/obpals/oblighthouse.pal"
 
 MapObjectPalsLuster::
 INCLUDE "maps/palettes/obpals/obluster.pal"

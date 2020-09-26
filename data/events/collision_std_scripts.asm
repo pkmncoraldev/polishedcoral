@@ -1,6 +1,7 @@
 ; stdscripts associated with tile collisions
 
 TileCollisionStdScripts:
+	dbw COLL_ICE_BLOCK,       iceblock
 	dbw COLL_BOOKSHELF,       magazinebookshelf
 	dbw COLL_TRASH_CAN,       trashcan
 	dbw COLL_PC,              pcscript

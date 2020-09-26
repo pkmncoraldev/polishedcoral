@@ -28,7 +28,6 @@ AI_Redundant: ; 2c41a
 	dbw EFFECT_SLEEP_TALK,    .SleepTalk
 	dbw EFFECT_MEAN_LOOK,     .MeanLook
 	dbw EFFECT_SPIKES,        .Spikes
-	dbw EFFECT_TOXIC_SPIKES,  .ToxicSpikes
 	dbw EFFECT_FORESIGHT,     .Foresight
 	dbw EFFECT_PERISH_SONG,   .PerishSong
 	dbw EFFECT_SANDSTORM,     .Sandstorm
@@ -138,12 +137,6 @@ AI_Redundant: ; 2c41a
 	ld a, [wPlayerScreens]
 	and SCREENS_SPIKES
 	cp SCREENS_SPIKES
-	jr .InvertZero
-
-.ToxicSpikes:
-	ld a, [wPlayerScreens]
-	and SCREENS_TOXIC_SPIKES
-	cp (SCREENS_TOXIC_SPIKES / 3) * 2
 	jr .InvertZero
 
 .Sandstorm:

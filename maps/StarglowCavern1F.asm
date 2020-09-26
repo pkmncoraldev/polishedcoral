@@ -5,29 +5,27 @@ StarglowCavern1F_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 5 ; warp events
+	db 4 ; warp events
 	warp_def 29, 5, 1, ROUTE_3
 	warp_def 27, 31, 1, ROUTE_3_STARGLOW
 	warp_def 5, 23, 1, STARGLOW_CAVERN_2F
 	warp_def 11, 33, 2, STARGLOW_CAVERN_2F
-	warp_def 27, 21, 1, ROUTE_3_EAST
 
 	db 1 ; coord events
 	xy_trigger 0, 19, 34, 0, StarglowCavernNuggeyManStopsYou, 0, 0
 
 	db 0 ; bg events
 
-	db 13 ; object events
+	db 12 ; object events
 	person_event SPRITE_HIKER, 22, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, TrainerStarglowCavern_1, -1
 	person_event SPRITE_HIKER, 11, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, TrainerStarglowCavern_2, -1
 	person_event SPRITE_HIKER, 5, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerStarglowCavern_3, -1
-	person_event SPRITE_COOLTRAINER_F, 24, 23, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, TrainerStarglowCavern_4, -1
 	person_event SPRITE_HIKER, 19, 35, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, StarglowCavern1FNPC1, -1
 	itemball_event  3, 14, POTION, 1, EVENT_STARGLOW_CAVERN_1F_POKE_BALL1
 	person_event SPRITE_DISGUISEMAN, 19, 30, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, StarglowCavern1FNPC2, EVENT_STARGLOW_CAVERN_1F_POKE_BALL2
-	person_event SPRITE_FISHER, 19, 30, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_STARGLOW_CAVERN_DISGUISEMAN
-	person_event SPRITE_FISHER, 0, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_STARGLOW_CAVERN_DISGUISEMAN_2
-	person_event SPRITE_FISHER, 20, 34, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_STARGLOW_CAVERN_DISGUISEMAN_2
+	person_event SPRITE_FAT_GUY, 19, 30, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_STARGLOW_CAVERN_DISGUISEMAN
+	person_event SPRITE_FAT_GUY, 0, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_STARGLOW_CAVERN_DISGUISEMAN_2
+	person_event SPRITE_FAT_GUY, 20, 34, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_STARGLOW_CAVERN_DISGUISEMAN_2
 	smashrock_event 13, 24
 	smashrock_event 15, 16
 	smashrock_event 16,  7
@@ -36,7 +34,6 @@ StarglowCavern1F_MapScriptHeader:
 	const STARGLOWCAVERN_TRAINER1
 	const STARGLOWCAVERN_TRAINER2
 	const STARGLOWCAVERN_TRAINER3
-	const STARGLOWCAVERN_TRAINER4
 	const STARGLOWCAVERN_NUGGETMAN
 	const STARGLOWCAVERN_POKEBALL
 	const STARGLOWCAVERN_TRAINER4_POKEBALL
@@ -119,27 +116,6 @@ TrainerStarglowCavern_3:
 	para "I lost?"
 	done
 	
-TrainerStarglowCavern_4:
-	generictrainer COOLTRAINERF, JULES, EVENT_BEAT_STARGLOW_CAVERN_1F_TRAINER_4, .SeenText, .BeatenText
-
-	text "You have to be"
-	line "tough if you're"
-	cont "this off the"
-	cont "beaten path."
-	done	
-
-.SeenText:
-	text "I don't see many"
-	line "people around"
-	cont "here."
-	
-	para "You must be tough!"
-	done
-
-.BeatenText:
-	text "Sure are!"
-	done
-	
 StarglowCavernNuggeyManStopsYou:
 	special Special_StopRunning
 	playsound SFX_PAY_DAY
@@ -158,7 +134,7 @@ StarglowCavern1FNPC1:
 	writetext StarglowCavern_NuggetManText2
 	waitbutton
 	closetext
-	variablesprite SPRITE_DISGUISEMAN, SPRITE_FISHER
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_FAT_GUY
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	applymovement STARGLOWCAVERN_TRAINER4_POKEBALL, Movement_StarglowCavern_DisguiseMan2
 	disappear STARGLOWCAVERN_TRAINER4_POKEBALL
@@ -211,7 +187,7 @@ StarglowCavern1FNPC1:
 	end
 	
 StarglowCavern1FNPC2:
-	variablesprite SPRITE_DISGUISEMAN, SPRITE_FISHER
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_FAT_GUY
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	applymovement STARGLOWCAVERN_TRAINER4_POKEBALL, Movement_StarglowCavern_DisguiseMan1
 	appear STARGLOWCAVERN_DISGUISEMAN

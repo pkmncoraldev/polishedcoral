@@ -10,9 +10,8 @@ MovePriorities:
 	db MACH_PUNCH,    1
 	db QUICK_ATTACK,  1
 	; everything else 0
-	db AVALANCHE,    -4
 	db COUNTER,      -5
 	db MIRROR_COAT,  -5
-	db ROAR,         -6
+	db ROAR_WHIRLWIND,         -6
 	db TELEPORT,     -6
 	db -1

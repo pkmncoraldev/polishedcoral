@@ -1,6 +1,5 @@
-	setrepeat 3
-	frame 0, 06
-	frame 3, 06
+	setrepeat 2
+	frame 0, 09
+	frame 4, 09
 	dorepeat 1
 	endanim
-; 0xd1a4f

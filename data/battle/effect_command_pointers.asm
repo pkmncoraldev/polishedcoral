@@ -163,7 +163,6 @@ BattleCommandPointers:
 	command raisesubnoanim          ; 95
 	command lowersubnoanim          ; 96
 	command dragondance             ; 97
-	command honeclaws               ; 98
 	command clearmissdamage         ; 99
 	command movedelay               ; 9a
 	command hittarget               ; 9b
@@ -175,10 +174,9 @@ BattleCommandPointers:
 	command bounceback              ; a1
 	command pickpocket              ; a2
 	command suckerpunch             ; a3
-	command toxicspikes             ; a4
 	command roost                   ; a5
 	command closecombat             ; a6
-	command skillswap               ; a7
+	command cottonguard             ; a7
 	command trick                   ; a8
 	command knockoff                ; a9
 	command bugbite                 ; aa
@@ -190,6 +188,13 @@ BattleCommandPointers:
 	command fakeout					; af - coral
 	command cantusefakeout			; b0 - coral
 	command lockon					; b1 - coral
+	command burnflinchtarget		; b2 - coral
+	command freezeflinchtarget		; b3 - coral
+	command paralyzeflinchtarget	; b4 - coral
+	command shellsmash				; b5 - coral
+	command workup					; b6 - coral
+	command quiverdance				; b7 - coral
+	command mirrormove				; b8 - coral
 
 	enum_start -1, -1
 	commandonly endmove

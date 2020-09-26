@@ -149,6 +149,9 @@ AICheckMatchupForEnemyMon:
 	pop de
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVarAddr
+	
+	farcall MultiSlotMoveTypes
+	
 	ld a, [wBattleMonType1]
 	ld [hl], a
 	pop hl
@@ -156,6 +159,9 @@ AICheckMatchupForEnemyMon:
 	call .set_matchup
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVarAddr
+	
+	farcall MultiSlotMoveTypes
+	
 	ld a, [wBattleMonType2]
 	ld [hl], a
 	pop hl

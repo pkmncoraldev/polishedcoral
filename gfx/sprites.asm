@@ -184,6 +184,9 @@ TrafficLightGFX::			   INCBIN "gfx/sprites/traffic_light.2bpp"
 HangarPartsGFX::			   INCBIN "gfx/sprites/hangar_parts.2bpp"
 KoffingBeanGFX::			   INCBIN "gfx/sprites/koffing_bean.2bpp"
 ClothesRacksGFX::			   INCBIN "gfx/sprites/clothes_racks.2bpp"
+IceBlockGFX::			  	   INCBIN "gfx/sprites/ice_block.2bpp"
+BigMamoswineSpriteGFX::        INCBIN "gfx/sprites/big_mamoswine.2bpp"
+LighthouseSpriteGFX::      	   INCBIN "gfx/sprites/lighthouse.2bpp"
 
 
 SECTION "Overworld Sprites 8", ROMX

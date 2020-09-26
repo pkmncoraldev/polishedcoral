@@ -114,6 +114,12 @@ StarglowCavern1F_BlockData:
 StarglowCavern2F_BlockData:
 	INCBIN "maps/StarglowCavern2F.ablk.lz"
 	
+StarglowCavern3F_BlockData:
+	INCBIN "maps/StarglowCavern3F.ablk.lz"
+	
+StarglowCavernFossilRoom_BlockData:
+	INCBIN "maps/StarglowCavernFossilRoom.ablk.lz"
+	
 GlintGym_BlockData:
 	INCBIN "maps/GlintGym.ablk.lz"
 
@@ -196,6 +202,27 @@ Route10Tent_BlockData:
 	
 TwinkleTown_BlockData:
 	INCBIN "maps/TwinkleTown.ablk.lz"
+	
+IceCaveB1F_BlockData:
+	INCBIN "maps/IceCaveB1F.ablk.lz"
+	
+IceCaveB2F_BlockData:
+	INCBIN "maps/IceCaveB2F.ablk.lz"
+	
+IceCaveB3F_BlockData:
+	INCBIN "maps/IceCaveB3F.ablk.lz"
+	
+IceTempleB1F1_BlockData:
+	INCBIN "maps/IceTempleB1F1.ablk.lz"
+	
+IceTempleB1F2_BlockData:
+	INCBIN "maps/IceTempleB1F2.ablk.lz"
+	
+IceTempleB1F3_BlockData:
+	INCBIN "maps/IceTempleB1F3.ablk.lz"
+	
+IceTempleB2F1_BlockData:
+	INCBIN "maps/IceTempleB2F1.ablk.lz"
 	
 EastTrainCabin1_BlockData:
 EastTrainCabin2_BlockData:

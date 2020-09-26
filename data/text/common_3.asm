@@ -1213,3 +1213,8 @@ ItemCantBeSelectedText::
 	text "That item can't be"
 	line "selected."
 	prompt
+	
+TorchWentOutText::
+	text "Your TORCH went"
+	line "out."
+	done

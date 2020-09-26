@@ -1,4 +1,4 @@
-BattleCommand_curse:
+CurseCommand::
 	ld de, wBattleMonType1
 	ld bc, wPlayerStatLevels
 	ld a, [hBattleTurn]
@@ -39,48 +39,48 @@ BattleCommand_curse:
 
 	ld a, $1
 	ld [wKickCounter], a
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 	ld b, SPEED
-	call LowerStat
-	call SwitchTurn
-	call BattleCommand_statdownmessage
-	call ResetMiss
-	call SwitchTurn
-	call BattleCommand_attackup
-	call BattleCommand_statupmessage
-	call ResetMiss
-	call BattleCommand_defenseup
-	jp BattleCommand_statupmessage
+	farcall LowerStat
+	farcall SwitchTurn
+	farcall BattleCommand_statdownmessage
+	farcall ResetMiss
+	farcall SwitchTurn
+	farcall BattleCommand_attackup
+	farcall BattleCommand_statupmessage
+	farcall ResetMiss
+	farcall BattleCommand_defenseup
+	farjp BattleCommand_statupmessage
 
 
 .ghost
 
 ; Cut HP in half and put a curse on the opponent.
 
-	call CheckHiddenOpponent
+	farcall CheckHiddenOpponent
 	jr nz, .failed
 
-	call CheckSubstituteOpp
+	farcall CheckSubstituteOpp
 	jr nz, .failed
 
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
-	call GetBattleVarAddr
+	farcall GetBattleVarAddr
 	bit SUBSTATUS_CURSE, [hl]
 	jr nz, .failed
 
 	set SUBSTATUS_CURSE, [hl]
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 	ld hl, GetHalfMaxHP
-	call CallBattleCore
+	farcall CallBattleCore
 	ld hl, SubtractHPFromUser
-	call CallBattleCore
-	call UpdateUserInParty
+	farcall CallBattleCore
+	farcall UpdateUserInParty
 	ld hl, PutACurseText
-	jp StdBattleTextBox
+	farjp StdBattleTextBox
 
 .failed
-	call AnimateFailedMove
-	jp PrintButItFailed
+	farcall AnimateFailedMove
+	farjp PrintButItFailed
 
 
 .cantraise
@@ -88,7 +88,7 @@ BattleCommand_curse:
 ; Can't raise either stat.
 
 	ld b, MULTIPLE_STATS + 1
-	call GetStatName
-	call AnimateFailedMove
+	farcall GetStatName
+	farcall AnimateFailedMove
 	ld hl, WontRiseAnymoreText
-	jp StdBattleTextBox
+	farjp StdBattleTextBox

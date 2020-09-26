@@ -9,11 +9,7 @@
 	dn FEMALE_50, 2 ; gender, step cycles to hatch
 	dn 5, 5 ; frontpic dimensions
 	db INNER_FOCUS ; ability 1
-if DEF(FAITHFUL)
 	db INNER_FOCUS ; ability 2
-else
-	db ANTICIPATION ; ability 2
-endc
 	db INFILTRATOR ; hidden ability
 	db MEDIUM_FAST ; growth rate
 	dn AVIAN, AVIAN ; egg groups
@@ -23,5 +19,5 @@ endc
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CURSE, TOXIC, HIDDEN_POWER, SUNNY_DAY, PROTECT, RAIN_DANCE, GIGA_DRAIN, RETURN, SHADOW_BALL, ROOST, DOUBLE_TEAM, SLUDGE_BOMB, SWIFT, SUBSTITUTE, FACADE, REST, ATTRACT, THIEF, STEEL_WING, LEECH_LIFE, ENDURE, ACROBATICS, POISON_JAB, U_TURN, FLY, DOUBLE_EDGE, SLEEP_TALK, SWAGGER, ZEN_HEADBUTT
+	tmhm 
 	; end

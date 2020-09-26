@@ -132,6 +132,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .mall2
 	cp TILESET_SEWER
 	jp z, .sewer
+	cp TILESET_ICE_CAVE
+	jp z, .ice_cave
 	jp .do_nothing
 	
 .checktent
@@ -213,6 +215,16 @@ LoadSpecialMapPalette: ; 494ac
 	
 .sewer
 	ld hl, LusterSewerPalette
+	jp LoadSevenBGPalettes
+	
+.ice_cave
+	eventflagcheck EVENT_TORCH_LIT
+	jr nz, .torch
+	ld hl, IceCavePalette
+	jp LoadSevenBGPalettes
+
+.torch
+	ld hl, IceCaveTorchPalette
 	jp LoadSevenBGPalettes
 	
 .do_nothing
@@ -326,9 +338,6 @@ LoadSpecialMapOBPalette:
 
 LandmarkSignPals::
 INCLUDE "maps/palettes/landmarksignpals/landmarksign.pal"
-	
-CavePalette:
-INCLUDE "maps/palettes/bgpals/cave.pal"
 
 StarglowCavernPalette:
 INCLUDE "maps/palettes/bgpals/starglow_cavern.pal"
@@ -350,6 +359,12 @@ INCLUDE "maps/palettes/bgpals/lustermall2.pal"
 
 LusterSewerPalette:
 INCLUDE "maps/palettes/bgpals/lustersewer.pal"
+
+IceCavePalette:
+INCLUDE "maps/palettes/bgpals/icecave.pal"
+
+IceCaveTorchPalette:
+INCLUDE "maps/palettes/bgpals/icecavetorch.pal"
 
 OutsideGrovePalette:
 INCLUDE "maps/palettes/bgpals/bggrove.pal"

@@ -10,5 +10,5 @@ INCLUDE "data/pokemon/egg_move_pointers.asm"
 EggMoves::
 
 NoEggMoves:
-	db TACKLE
+	db TACKLE_SCRATCH_POUND
 	db $ff

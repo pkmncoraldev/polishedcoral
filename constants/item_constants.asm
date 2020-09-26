@@ -111,9 +111,9 @@
 	const LIBRARY_CARD ; 5c
 	const POKE_FLUTE   ; 5d
 	const THE_THING    ; 5e
-	const RED_SCALE    ; 5f
+	const TORCH		   ; 5f
 	const OLD_KEY      ; 60
-	const BASEMENT_KEY ; 61
+	const CLAY_POT ; 61
 	const S_S_TICKET   ; 62
 	const PASS         ; 63
 	const MACHINE_PART ; 64
@@ -272,8 +272,8 @@
 	const SLOWPOKETAIL ; ee
 	const BOTTLE_CAP   ; ef
 
-	const HELIX_FOSSIL ; f0
-	const DOME_FOSSIL  ; f1
+	const JAW_FOSSIL ; f0
+	const SAIL_FOSSIL  ; f1
 	const OLD_AMBER    ; f2
 
 	const MULCH        ; f3
@@ -306,7 +306,7 @@
 	const NAM_ASSAULT_VEST ; 09
 	const NAM_AWAKENING    ; 0a
 	const NAM_BALMMUSHROOM ; 0b
-	const NAM_BASEMENT_KEY ; 0c
+	const NAM_CLAY_POT ; 0c
 	const NAM_BERSERK_GENE ; 0d
 	const NAM_BICYCLE      ; 0e
 	const NAM_BIG_MUSHROOM ; 0f
@@ -340,7 +340,7 @@
 	const NAM_DESTINY_KNOT ; 2b
 	const NAM_DIRE_HIT     ; 2c
 	const NAM_DIVE_BALL    ; 2d
-	const NAM_DOME_FOSSIL  ; 2e
+	const NAM_SAIL_FOSSIL  ; 2e
 	const NAM_DRAGON_FANG  ; 2f
 	const NAM_DRAGON_SCALE ; 30
 	const NAM_DUBIOUS_DISC ; 31
@@ -380,7 +380,7 @@
 	const NAM_HEAL_POWDER  ; 53
 	const NAM_HEAT_ROCK    ; 54
 	const NAM_HEAVY_BALL   ; 55
-	const NAM_HELIX_FOSSIL ; 56
+	const NAM_JAW_FOSSIL ; 56
 	const NAM_HP_UP        ; 57
 	const NAM_HYPER_POTION ; 58
 	const NAM_ICE_HEAL     ; 59
@@ -485,7 +485,7 @@
 	const NAM_RAWST_BERRY  ; bc
 	const NAM_RAZOR_CLAW   ; bd
 	const NAM_RAZOR_FANG   ; be
-	const NAM_RED_SCALE    ; bf
+	const NAM_TORCH		   ; bf
 	const NAM_REPEAT_BALL  ; c0
 	const NAM_REPEL        ; c1
 	const NAM_REVIVAL_HERB ; c2

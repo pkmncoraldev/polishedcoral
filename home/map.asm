@@ -231,15 +231,14 @@ CheckOutdoorMap:: ; 22ee
 ; 22f4
 
 CheckIndoorMap:: ; 22f4
-	cp INDOOR
-	ret z
 	cp CAVE
 	ret z
 	cp DUNGEON
 	ret z
 	cp GATE
+	ret z
+	cp INDOOR
 	ret
-; 2300
 
 LoadMapAttributes:: ; 2309
 	call CopyMapHeaders

@@ -35,6 +35,9 @@ Pointers445f: ; 445f
 	dw SetFacingMallSign,    		   SetFacingMallSign	 	  ; PERSON_ACTION_MALL_SIGN
 	dw SetFacingHangarLeft,    		   SetFacingHangarLeft	 	  ; PERSON_ACTION_HANGAR_LEFT
 	dw SetFacingHangarRight,    	   SetFacingHangarRight	 	  ; PERSON_ACTION_HANGAR_RIGHT
+	dw SetFacingLighthouse1,    	   SetFacingLighthouse1	 	  ; PERSON_ACTION_LIGHTHOUSE_1
+	dw SetFacingLighthouse2,    	   SetFacingLighthouse2	 	  ; PERSON_ACTION_LIGHTHOUSE_2
+	
 ; 44a3
 
 SetFacingStanding: ; 44a3
@@ -380,5 +383,13 @@ SetFacingHangarLeft:
 	
 SetFacingHangarRight:
 	ld a, FACING_HANGAR_RIGHT
+	jp SetFixedFacing
+	
+SetFacingLighthouse1:
+	ld a, FACING_LIGHTHOUSE_1
+	jp SetFixedFacing
+	
+SetFacingLighthouse2:
+	ld a, FACING_LIGHTHOUSE_2
 	jp SetFixedFacing
 	

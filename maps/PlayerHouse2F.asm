@@ -54,9 +54,9 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke PIKACHU, 100
-	givepoke EXEGGCUTE, 100
-	givepoke CUBONE, 100
+	givepoke CLEFAIRY, 1
+;	givepoke BULBASAUR, 1
+;	givepoke PORYGON, 100
 .items
 	writetext PlayerHouseDebugText6
 	yesorno
@@ -129,6 +129,10 @@ PlayerHouseDebugText4:
 	
 PlayerHouseDebugText5:
 	text "DONE"
+	done
+	
+PlayerHouseDebugText6:
+	text "ITEMS?"
 	done
 	
 PlayerHouseSunset:

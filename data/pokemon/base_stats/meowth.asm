@@ -1,16 +1,7 @@
-if DEF(FAITHFUL)
 	db  40,  45,  35,  90,  40,  40
 	;   hp  atk  def  spd  sat  sdf
-else
-	db  40,  35,  35,  90,  50,  40
-	;   hp  atk  def  spd  sat  sdf
-endc
 
-if DEF(FAITHFUL)
 	db NORMAL, NORMAL
-else
-	db DARK, DARK
-endc
 	db 255 ; catch rate
 	db 69 ; base exp
 	db NO_ITEM ; item 1
@@ -28,5 +19,5 @@ endc
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CURSE, TOXIC, HIDDEN_POWER, SUNNY_DAY, HONE_CLAWS, PROTECT, RAIN_DANCE, IRON_TAIL, THUNDERBOLT, THUNDER, RETURN, DIG, SHADOW_BALL, DOUBLE_TEAM, SWIFT, SUBSTITUTE, FACADE, REST, ATTRACT, THIEF, FALSE_SWIPE, DARK_PULSE, ENDURE, WATER_PULSE, SHADOW_CLAW, U_TURN, FLASH, CUT, BODY_SLAM, DEFENSE_CURL_HARDEN_WITHDRAW, DOUBLE_EDGE, DREAM_EATER, HEADBUTT, HYPER_VOICE, ICY_WIND, KNOCK_OFF, PAY_DAY, SEED_BOMB, SLEEP_TALK, SWAGGER, ZAP_CANNON
+	tmhm 
 	; end

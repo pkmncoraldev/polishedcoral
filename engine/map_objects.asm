@@ -550,6 +550,8 @@ MapObjectMovementPattern:
 	dw .MovementMallSign
 	dw .MovementHangarLeft
 	dw .MovementHangarRight
+	dw .MovementLighthouse1
+	dw .MovementLighthouse2
 
 .RandomWalkY:
 	call Random
@@ -768,6 +770,14 @@ MapObjectMovementPattern:
 	
 .MovementHangarRight:
 	ld a, PERSON_ACTION_HANGAR_RIGHT
+	jr ._ActionA_StepType04
+	
+.MovementLighthouse1:
+	ld a, PERSON_ACTION_LIGHTHOUSE_1
+	jr ._ActionA_StepType04
+	
+.MovementLighthouse2:
+	ld a, PERSON_ACTION_LIGHTHOUSE_2
 	jr ._ActionA_StepType04
 	
 .MovementCutTree:

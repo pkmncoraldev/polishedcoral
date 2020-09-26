@@ -67,8 +67,8 @@ Route10_MapScriptHeader:
 	person_event SPRITE_BOARDER, 29, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_3, -1
 	person_event SPRITE_SKIER, 39, 38, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_4, -1
 	person_event SPRITE_BOARDER, 22, 42, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_5, -1
-	person_event SPRITE_BOARDER, 24, 50, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_6, -1
-	person_event SPRITE_SKIER, 12, 33, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute10_7, -1
+	person_event SPRITE_FIREBREATHER, 24, 50, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_6, -1
+	person_event SPRITE_BOARDER, 12, 33, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute10_7, -1
 
 Route10Trigger0:
 	end
@@ -157,7 +157,7 @@ TrainerRoute10_5:
 	done
 	
 TrainerRoute10_6:
-	generictrainer BOARDER, GLENN, EVENT_BEAT_ROUTE_10_TRAINER_6, .SeenText, .BeatenText
+	generictrainer FIREBREATHER, TEX, EVENT_BEAT_ROUTE_10_TRAINER_6, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done
@@ -171,7 +171,7 @@ TrainerRoute10_6:
 	done
 	
 TrainerRoute10_7:
-	generictrainer SKIER, LAURA, EVENT_BEAT_ROUTE_10_TRAINER_7, .SeenText, .BeatenText
+	generictrainer BOARDER, GLENN, EVENT_BEAT_ROUTE_10_TRAINER_7, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done
@@ -207,7 +207,7 @@ Route10StartSnowstorm:
 	
 Route10RandomAsm:
 	call Random
-	cp $5f ; 33 percent
+	cp $99 ; 60 percent
 	ret c
 	call Random
 	cp $3f ; 25 percent

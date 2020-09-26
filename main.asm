@@ -390,7 +390,7 @@ SECTION "Code 6", ROMX
 INCLUDE "engine/clock_reset.asm"
 
 
-SECTION "Effect Command Pointers", ROMX
+;SECTION "Effect Command Pointers", ROMX
 
 INCLUDE "data/battle/effect_command_pointers.asm"
 
@@ -3503,19 +3503,24 @@ ListMoves: ; 50d6f
 	ld a, [de]
 	inc de
 	and a
-	jr z, .no_more_moves
+	jp z, .no_more_moves
 	push de
 	push hl
 	push hl
+	cp TACKLE_SCRATCH_POUND
+	jr nz, .not_tackle
+	farcall GetTackleName
+	jp .cont
+.not_tackle
 	cp DEFENSE_CURL_HARDEN_WITHDRAW
 	jr nz, .not_defense_curl
 	farcall GetDefenseCurlName
-	jr .cont
+	jp .cont
 .not_defense_curl
 	cp LEER_TAIL_WHIP
 	jr nz, .not_leer
 	farcall GetLeerName
-	jr .cont
+	jp .cont
 .not_leer
 	cp BARRIER_IRON_DEFENSE
 	jr nz, .not_barrier
@@ -3547,6 +3552,36 @@ ListMoves: ; 50d6f
 	farcall GetMeanLookName
 	jr .cont
 .not_mean_look
+	cp CHARM_FEATHER_DANCE
+	jr nz, .not_charm
+	farcall GetCharmName
+	jr .cont
+.not_charm
+	cp SCARY_FACE_COTTON_SPORE
+	jr nz, .not_scary_face
+	farcall GetScaryFaceName
+	jr .cont
+.not_scary_face
+	cp ROAR_WHIRLWIND
+	jr nz, .not_roar
+	farcall GetRoarName
+	jr .cont
+.not_roar
+	cp SAND_ATTACK_SMOKESCREEN
+	jr nz, .not_sand_attack
+	farcall GetSandAttackName
+	jr .cont
+.not_sand_attack
+	cp SOFTBOILED_MILK_DRINK
+	jr nz, .not_softboiled
+	farcall GetSoftboiledName
+	jr .cont
+.not_softboiled
+	cp FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
+	jr nz, .not_foresight
+	farcall GetForesightName
+	jr .cont
+.not_foresight
 	ld [wCurSpecies], a
 	ld a, MOVE_NAME
 	ld [wNamedObjectTypeBuffer], a
@@ -4158,7 +4193,6 @@ INCLUDE "engine/phone_scripts.asm"
 SECTION "Code 21", ROMX
 
 INCLUDE "engine/battle_anims/bg_effects.asm"
-INCLUDE "data/moves/animations.asm"
 
 
 SECTION "Code 22", ROMX
@@ -4577,3 +4611,18 @@ OriginalGameByGFX:: ; e4000
 INCBIN "gfx/splash/originalgameby.2bpp"
 
 INCLUDE "engine/battle/multi_move_slots.asm"
+
+INCLUDE "engine/battle/effect_commands/curse.asm"
+
+INCLUDE "engine/battle/effect_commands/cottonguard.asm"
+
+INCLUDE "engine/battle/effect_commands/shellsmash.asm"
+
+INCLUDE "engine/battle/effect_commands/quiverdance.asm"
+
+INCLUDE "engine/battle/effect_commands/mirrormove.asm"
+
+
+SECTION "Coral Data 2", ROMX
+
+INCLUDE "data/moves/animations.asm"

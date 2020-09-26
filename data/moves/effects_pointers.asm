@@ -15,6 +15,7 @@ MoveEffectsPointers:
 	dw ConfuseHit
 	dw AttackUpHit
 	dw DefenseUpHit
+	dw SpeedUpHit
 	dw AllUpHit
 	dw AttackDownHit
 	dw DefenseDownHit
@@ -51,7 +52,6 @@ MoveEffectsPointers:
 	dw CalmMind
 	dw Growth
 	dw DragonDance
-	dw HoneClaws
 	dw AttackDown
 	dw DefenseDown
 	dw StringShot
@@ -125,6 +125,7 @@ MoveEffectsPointers:
 	dw SunnyDay
 	dw BellyDrum
 	dw MirrorCoat
+	dw SkullBash
 	dw Earthquake
 	dw FutureSight
 	dw Gust
@@ -137,13 +138,13 @@ MoveEffectsPointers:
 	dw FlareBlitz
 	dw NormalHit
 	dw NormalHit
-	dw SwitchHit
 	dw SuckerPunch
-	dw ToxicSpikes
 	dw Roost
 	dw CloseCombat
-	dw SkillSwap
-	dw Trick
+	dw CottonGuard
+	dw BurnFlinchHit
+	dw FreezeFlinchHit
+	dw ParalyzeFlinchHit
 	dw KnockOff
 	dw FuryStrikes
 	dw BugBite
@@ -152,3 +153,8 @@ MoveEffectsPointers:
 	dw LowKick
 	dw BrickBreak
 	dw LockOn
+	dw ShellSmash
+	dw WorkUp
+	dw QuiverDance
+	dw MirrorMove
+	dw Twister

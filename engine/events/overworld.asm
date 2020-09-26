@@ -1675,7 +1675,7 @@ Script_UsedRockClimb: ; 0xcb20
 	waitbutton
 	closetext
 	scall FieldMovePokepicScript
-;	setflag ENGINE_AUTOWATERFALL_ACTIVE
+	setflag ENGINE_ROCK_CLIMB_ACTIVE
 	jump Script_AutoRockClimb
 
 .Text_UsedRockClimb:
@@ -1688,13 +1688,13 @@ Script_AutoRockClimb:
 	playsound SFX_BITE
 	checkcode VAR_FACING
 	if_equal DOWN, .youarefacingdown
-	applyonemovement PLAYER, step_up
+	applyonemovement PLAYER, fast_step_up
 	callasm .CheckContinueRockClimb
 	iffalse .loop
 	special Special_ForcePlayerStateNormal
 	end
 .youarefacingdown
-	applyonemovement PLAYER, step_down
+	applyonemovement PLAYER, fast_step_down
 	callasm .CheckContinueRockClimb
 	iffalse .loop
 	special Special_ForcePlayerStateNormal
@@ -1717,23 +1717,22 @@ Script_AutoRockClimb:
 	ret
 
 TryRockClimbOW:: ; cb56
-	ld d, WATERFALL
-	call CheckPartyCanLearnMove
-	jr c, .failed
-;	ld de, ENGINE_EIGHTHBADGE
-;	call CheckEngineFlag
-;	jr c, .failed
-;	call CheckMapCanRockClimb
-;	jr c, .failed
+	call HasRockClimb
+	jr z, .debugrockclimb
+;	jr z, .no
 	ld a, BANK(Script_AskRockClimb)
 	ld hl, Script_AskRockClimb
 	call CallScript
 	scf
 	ret
-
-.failed
-	ld a, BANK(Script_CantDoRockClimb)
-	ld hl, Script_CantDoRockClimb
+	
+.no
+	xor a
+	ret
+	
+.debugrockclimb
+	ld a, BANK(DebugRockClimb)
+	ld hl, DebugRockClimb
 	call CallScript
 	scf
 	ret
@@ -1746,17 +1745,51 @@ Script_CantDoRockClimb: ; 0xcb7e
 	db "@"
 
 Script_AskRockClimb: ; 0xcb86
-;	checkflag ENGINE_AUTOWATERFALL_ACTIVE
-;	iftrue Script_AutoRockClimb
+	checkflag ENGINE_ROCK_CLIMB_ACTIVE
+	iftrue Script_AutoRockClimb
 	opentext
 	writetext .AskUseRockClimb
 	yesorno
 	iftrue Script_UsedRockClimb
 	endtext
+.no
+	end
 
 .AskUseRockClimb: ; 0xcb90
 	text_jump AskUseRockClimbText
 	db "@"
+	
+DebugRockClimb:
+	opentext
+	writetext DebugFieldMoveText
+	closetext
+	jump Script_AutoRockClimb
+	
+HasRockClimb: ; cf7c
+	ld d, ROCK_CLIMB
+	call CheckPartyCanLearnMove
+	jr c, .no
+	
+	ld de, ENGINE_GOT_ROCK_CLIMB
+	call CheckEngineFlag
+	jr c, .no
+	
+	ld de, ENGINE_FOURTHBADGE
+	call CheckEngineFlag
+	jr c, .no
+	
+	call CheckMapCanRockClimb
+	jr c, .no
+	
+.yes
+	xor a
+	jr .done
+
+.no
+	ld a, 1
+.done
+	ld [wScriptVar], a
+	ret
 	
 TryDodrioJumpOW:: ; cec9
 	ld a, [wPlayerState]

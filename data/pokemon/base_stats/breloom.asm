@@ -1,10 +1,5 @@
-if DEF(FAITHFUL)
 	db  90,  70,  80,  70,  70,  95
 	;   hp  atk  def  spd  sat  sdf
-else
-	db  90,  70,  80,  70,  80,  95
-	;   hp  atk  def  spd  sat  sdf
-endc
 
 	db WATER, ICE
 	db 75 ; catch rate
@@ -24,5 +19,5 @@ endc
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CURSE, TOXIC, HAIL, HIDDEN_POWER, ICE_BEAM, BLIZZARD, HYPER_BEAM, PROTECT, RAIN_DANCE, SAFEGUARD, IRON_TAIL, RETURN, DOUBLE_TEAM, SUBSTITUTE, FACADE, REST, ATTRACT, THIEF, ENDURE, WATER_PULSE, AVALANCHE, GIGA_IMPACT, SURF, WHIRLPOOL, WATERFALL, AQUA_TAIL, BODY_SLAM, DOUBLE_EDGE, HEADBUTT, ICY_WIND, PAY_DAY, SLEEP_TALK, SWAGGER
+	tmhm 
 	; end

@@ -93,9 +93,9 @@ ItemDescriptions:
 	dw LibraryCardDesc
 	dw PokeFluteDesc
 	dw TheThingDesc
-	dw RedScaleDesc
+	dw TorchDesc
 	dw OldKeyDesc
-	dw BasementKeyDesc
+	dw ClayPotDesc
 	dw SSTicketDesc
 	dw PassDesc
 	dw MachinePartDesc
@@ -238,8 +238,8 @@ ItemDescriptions:
 	dw GoldLeafDesc
 	dw SlowpokeTailDesc
 	dw BottleCapDesc
-	dw HelixFossilDesc
-	dw DomeFossilDesc
+	dw JawFossilDesc
+	dw SailFossilDesc
 	dw OldAmberDesc
 	dw MulchDesc
 	dw SweetHoneyDesc
@@ -605,16 +605,17 @@ TheThingDesc:
 	db   "A shady package."
 	next "Best not to ask…@"
 
-RedScaleDesc:
-	db   "A scale from the"
-	next "red Gyarados.@"
+TorchDesc:
+	db   "A TORCH used to"
+	next "light fires.@"
 
 OldKeyDesc:
 	db   "Opens doors in"
 	next "the OLD MANOR.@"
 
-BasementKeyDesc:
-	db   "Opens doors.@"
+ClayPotDesc:
+	db   "A plain looking"
+	next "piece of junk.@"
 
 SSTicketDesc:
 	db   "A ticket for the"
@@ -1165,10 +1166,10 @@ BottleCapDesc:
 	db   "A shiny, rare"
 	next "bottle cap.@"
 
-HelixFossilDesc:
-DomeFossilDesc:
-	db   "A fossilized"
-	next "#MON shell.@"
+JawFossilDesc:
+SailFossilDesc:
+	db   "A fossil of a"
+	next "#MON.@"
 
 OldAmberDesc:
 	db   "Fossilized resin"

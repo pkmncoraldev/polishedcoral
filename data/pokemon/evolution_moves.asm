@@ -1,13 +1,13 @@
 EvolutionMoves::
 	db NO_MOVE      ; BULBASAUR
-	db NO_MOVE      ; IVYSAUR
-	db NO_MOVE      ; VENUSAUR
+	db SLUDGE       ; IVYSAUR
+	db PETAL_DANCE  ; VENUSAUR
 	db NO_MOVE      ; CHARMANDER
-	db NO_MOVE      ; CHARMELEON
-	db NO_MOVE      ; CHARIZARD
+	db DRAGON_RAGE  ; CHARMELEON
+	db AIR_SLASH    ; CHARIZARD
 	db NO_MOVE      ; SQUIRTLE
-	db NO_MOVE      ; WARTORTLE
-	db NO_MOVE      ; BLASTOISE
+	db ICY_WIND     ; WARTORTLE
+	db BARRIER_IRON_DEFENSE      ; BLASTOISE
 	db NO_MOVE      ; WEEDLE
 	db NO_MOVE      ; KAKUNA
 	db NO_MOVE      ; BEEDRILL
@@ -15,7 +15,7 @@ EvolutionMoves::
 	db NO_MOVE      ; PIDGEOTTO
 	db NO_MOVE      ; PIDGEOT
 	db NO_MOVE      ; RATTATA
-	db NO_MOVE      ; RATICATE
+	db SCARY_FACE_COTTON_SPORE      ; RATICATE
 	db NO_MOVE      ; EKANS
 	db NO_MOVE      ; ARBOK
 	db NO_MOVE      ; PIKACHU
@@ -42,7 +42,7 @@ EvolutionMoves::
 	db NO_MOVE      ; PSYDUCK
 	db NO_MOVE      ; GOLDUCK
 	db NO_MOVE      ; GROWLITHE
-	db NO_MOVE      ; ARCANINE
+	db EXTREMESPEED ; ARCANINE
 	db NO_MOVE      ; POLIWAG
 	db NO_MOVE      ; POLIWHIRL
 	db NO_MOVE      ; POLIWRATH
@@ -64,8 +64,8 @@ EvolutionMoves::
 	db NO_MOVE      ; DODUO
 	db NO_MOVE      ; DODRIO
 	db NO_MOVE      ; GASTLY
-	db NO_MOVE      ; HAUNTER
-	db NO_MOVE      ; GENGAR
+	db SHADOW_CLAW  ; HAUNTER
+	db SHADOW_CLAW  ; GENGAR
 	db NO_MOVE      ; ONIX
 	db NO_MOVE      ; VOLTORB
 	db NO_MOVE      ; ELECTRODE
@@ -100,14 +100,14 @@ EvolutionMoves::
 	db NO_MOVE      ; DRAGONAIR
 	db NO_MOVE      ; DRAGONITE
 	db NO_MOVE      ; CHIKORITA
-	db NO_MOVE      ; BAYLEEF
-	db NO_MOVE      ; MEGANIUM
+	db MEGA_DRAIN   ; BAYLEEF
+	db CALM_MIND    ; MEGANIUM
 	db NO_MOVE      ; CYNDAQUIL
-	db NO_MOVE      ; QUILAVA
-	db NO_MOVE      ; TYPHLOSION
+	db FLAME_CHARGE ; QUILAVA
+	db WORK_UP      ; TYPHLOSION
 	db NO_MOVE      ; TOTODILE
-	db NO_MOVE      ; CROCONAW
-	db NO_MOVE      ; FERALIGATR
+	db AQUA_JET     ; CROCONAW
+	db BULK_UP      ; FERALIGATR
 	db NO_MOVE      ; LEDYBA
 	db NO_MOVE      ; LEDIAN
 	db NO_MOVE      ; CROBAT
@@ -176,7 +176,7 @@ EvolutionMoves::
 	db NO_MOVE      ; CORPHISH
 	db NO_MOVE      ; CRAWDAUNT
 	db NO_MOVE      ; BUIZEL
-	db NO_MOVE      ; FLOATZEL
+	db ICE_FANG     ; FLOATZEL
 	db NO_MOVE      ; BUNEARY
 	db NO_MOVE      ; LOPUNNY
 	db NO_MOVE      ; HONCHKROW
@@ -205,7 +205,7 @@ EvolutionMoves::
 	db NO_MOVE      ; NOIVERN
 	db NO_MOVE      ; PIKIPEK
 	db NO_MOVE      ; TRUMBEAK
-	db NO_MOVE      ; TOUCANNON
+	db NO_MOVE ;BEAK_BLAST      ; TOUCANNON
 	db PSYCHIC_M    ; RAICHU_A
 	db NO_MOVE      ; EXEGGUTOR_A
 	db NO_MOVE      ; MAROWAK_A

@@ -179,3 +179,6 @@ SpriteHeaders:
 	overworld_sprite HangarPartsGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite KoffingBeanGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite ClothesRacksGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite IceBlockGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite BigMamoswineSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite LighthouseSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER

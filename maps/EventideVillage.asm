@@ -152,8 +152,8 @@ EventideVillageNPC1Text:
 	line "me on a set of"
 	cont "wheels?"
 	
-	para "I'd be a chick"
-	line "magnet!"
+	para "Talk about a"
+	line "lady-killer!"
 	done
 	
 EventideVillageNPC2Text:
@@ -164,7 +164,7 @@ EventideVillageNPC2Text:
 	line "a farmer,"
 	
 	para "there isn't much to"
-	cont "do around here."
+	line "do around here."
 	done
 	
 EventideVillageMilkGirlText1:

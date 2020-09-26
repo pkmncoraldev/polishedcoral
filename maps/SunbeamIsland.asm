@@ -13,7 +13,7 @@ SunbeamIsland_MapScriptHeader:
 	db 14 ; warp events
 	warp_def 29, 27, 2, SUNBEAM_MART
 	warp_def 33, 17, 1, SUNBEAM_POKECENTER
-	warp_def 18, 40, 1, SUNBEAM_JUNGLE
+	warp_def 18, 34, 1, SUNBEAM_JUNGLE
 	warp_def  9, 25, 1, SUNBEAM_TRADE_HOUSE
 	warp_def  9, 31, 1, SUNBEAM_DODRIO_HOUSE
 	warp_def 15, 16, 1, SPRUCES_LAB
@@ -22,7 +22,7 @@ SunbeamIsland_MapScriptHeader:
 	warp_def 41, 17, 1, SUNBEAM_SURF_SHOP
 	warp_def 11, 16, 3, SPRUCES_LAB
 	warp_def 11, 17, 3, SPRUCES_LAB
-	warp_def 18, 41, 2, SUNBEAM_JUNGLE
+	warp_def 18, 35, 2, SUNBEAM_JUNGLE
 	warp_def 47,  7, 1, SUNBEAM_BOAT_HOUSE
 	warp_def 42, 17, 1, SUNBEAM_SURF_SHOP
 

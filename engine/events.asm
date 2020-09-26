@@ -993,6 +993,9 @@ CountStep: ; 96b79
 	; If Repel wore off, don't count the step.
 	call DoRepelStep
 	jr c, .doscript
+	
+	call DoTorchStep
+	jr c, .doscript
 
 	; Count the step for poison and total steps
 	ld hl, wPoisonStepCount
@@ -1092,6 +1095,31 @@ UseAnotherRepelScript:
 	text_jump UseAnotherRepelText
 	db "@"
 
+DoTorchStep: ; 96bd7
+	ld a, [wTorchSteps]
+	and a
+	ret z
+
+	dec a
+	ld [wTorchSteps], a
+	ret nz
+
+	ld a, BANK(TorchWentOutScript)
+	ld hl, TorchWentOutScript
+	call CallScript
+	scf
+	ret
+	
+TorchWentOutScript:
+	domaptrigger ICE_TEMPLE_B1F_1, $0
+	special Special_StopRunning
+	clearevent EVENT_TORCH_LIT
+	loadvar wTimeOfDayPalFlags, $40 | 0
+	thistext
+
+	text_jump TorchWentOutText
+	db "@"
+	
 DoPlayerEvent: ; 96beb
 	ld a, [wScriptRunning]
 	and a
@@ -1270,6 +1298,7 @@ CheckFacingTileEvent: ; 97c5f
 .rockclimb
 	farcall TryRockClimbOW
 	jr c, .done
+	jr .noevent
 	
 .whirlpool
 	farcall TryWhirlpoolOW

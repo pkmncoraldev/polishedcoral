@@ -30,6 +30,8 @@ INCLUDE "maps/GlintGrove.asm"
 INCLUDE "maps/GlintGroveDeep.asm"
 INCLUDE "maps/StarglowCavern1F.asm"
 INCLUDE "maps/StarglowCavern2F.asm"
+INCLUDE "maps/StarglowCavern3F.asm"
+INCLUDE "maps/StarglowCavernFossilRoom.asm"
 INCLUDE "maps/MtOnwa1F.asm"
 INCLUDE "maps/MtOnwa2F.asm"
 INCLUDE "maps/MtOnwaB1F.asm"
@@ -44,6 +46,17 @@ INCLUDE "maps/LusterSewersB1FEmpty.asm"
 INCLUDE "maps/LusterSewersB2FFlooded.asm"
 INCLUDE "maps/LusterSewersB2FEmpty.asm"
 INCLUDE "maps/LusterSewersValveRoom.asm"
+INCLUDE "maps/IceCaveB1F.asm"
+INCLUDE "maps/IceCaveB2F.asm"
+INCLUDE "maps/IceCaveB3F.asm"
+
+
+SECTION "Dungeon Scripts2", ROMX
+
+INCLUDE "maps/IceTempleB1F1.asm"
+INCLUDE "maps/IceTempleB1F2.asm"
+INCLUDE "maps/IceTempleB1F3.asm"
+INCLUDE "maps/IceTempleB2F1.asm"
 
 
 SECTION "Routes Scripts", ROMX

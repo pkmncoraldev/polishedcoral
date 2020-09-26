@@ -219,6 +219,7 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass SUPER_NERD
+	const LARRY
 
 
 	trainerclass LASS
@@ -245,6 +246,7 @@ PLAYER_F EQU __enum__
 	const WIZ
 	const GARTH
 	const ART
+	const TEX
 
 
 	trainerclass JUGGLER
@@ -326,7 +328,6 @@ PLAYER_F EQU __enum__
 	const RHONDA
 	const KIM
 	const SHERRY
-	const LAURA
 
 
 	trainerclass BLACKBELT_T

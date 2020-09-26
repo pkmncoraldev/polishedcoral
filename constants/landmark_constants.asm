@@ -38,8 +38,9 @@
 	const FLICKER_PASS		 ; 1c
 	const ROUTE_10			 ; 1d
 	const TWINKLE_TOWN		 ; 1e
-	const LUSTER_CITY		 ; 1f
-	const LUSTER_SEWERS		 ; 20
+	const FROZEN_RUINS		 ; 1f
+	const LUSTER_CITY		 ; 20
+	const LUSTER_SEWERS		 ; 21
 	const RESIDENTIAL_DISTRICT
 	const SHOPPING_DISTRICT
 	const BUSINESS_DISTRICT

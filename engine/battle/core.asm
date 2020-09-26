@@ -121,7 +121,7 @@ DoBattle: ; 3c000
 
 .not_linked_2
 	call HandleFirstAirBalloon
-	call BoostGiovannisArmoredMewtwo
+;	call BoostGiovannisArmoredMewtwo
 	call RunBothActivationAbilities
 	jp BattleTurn
 ; 3c0e5
@@ -614,7 +614,7 @@ ParsePlayerAction: ; 3c434
 	jr nz, .reset_bide
 	xor a
 	ld [wMoveSelectionMenuType], a
-	inc a ; ld a, ACROBATICS
+	inc a ; ld a, ROCK_CLIMB
 	ld [wFXAnimIDLo], a
 	call MoveSelectionScreen
 	push af
@@ -3940,7 +3940,7 @@ SpikesDamage_GotAbility:
 	push hl
 	call .Spikes
 	pop hl
-	call .ToxicSpikes
+	;call .ToxicSpikes
 	ret
 
 .Spikes:
@@ -3966,73 +3966,6 @@ SpikesDamage_GotAbility:
 
 	ld hl, BattleText_UserHurtBySpikes
 	jp StdBattleTextBox
-
-.ToxicSpikes:
-	ld a, [hl]
-	and SCREENS_TOXIC_SPIKES
-	ret z
-
-	push af
-	push bc
-	push hl
-	call CheckIfUserIsPoisonType
-	pop hl
-	pop bc
-	jr nz, .no_poison_type
-	pop af
-
-	; Grounded Poison types absorb the Toxic Spikes
-	xor [hl]
-	ld [hl], a
-	ret
-
-.no_poison_type
-	pop af
-	push bc
-	push hl
-	call SwitchTurn
-	ld b, c
-	farcall CanPoisonTarget
-	push af
-	call SwitchTurn
-	pop af
-	pop hl
-	pop bc
-	ret nz
-
-	ld a, [hl]
-	and SCREENS_TOXIC_SPIKES
-	cp (SCREENS_TOXIC_SPIKES / 3) * 2
-	ld a, 1 << PSN
-	ld hl, WasPoisonedText
-	jr nz, .no_toxic
-	or 1 << TOX
-	ld hl, BadlyPoisonedText
-.no_toxic
-	push bc
-	push hl
-	push af
-	ld a, BATTLE_VARS_STATUS
-	call GetBattleVarAddr
-	pop af
-	ld [hl], a
-	ld de, ANIM_PSN
-	call Call_PlayBattleAnim
-	call RefreshBattleHuds
-	pop hl
-
-	call SwitchTurn
-	call StdBattleTextBox
-	pop bc
-	ld a, c
-	and a
-	jr z, .no_synchronize
-	farcall PostStatusWithSynchronize
-	jr .poststatus_done
-.no_synchronize
-	farcall PostStatus
-.poststatus_done
-	jp SwitchTurn
 
 HandleAirBalloon:
 ; prints air balloon msg and returns z if we have air balloon
@@ -6197,21 +6130,11 @@ MoveInfoBox: ; 3e6c8
 	call Request2bpp
 	ld hl, TypeIconGFX
 	ld bc, 4 * LEN_1BPP_TILE
-	push hl
-	push bc
-	ld a, [wCurMove]
-	cp DEFENSE_CURL_HARDEN_WITHDRAW
-	jr z, .defense_curl
-	cp BARRIER_IRON_DEFENSE
-	jr z, .barrier
-	cp SHARPEN_HOWL_MEDITATE
-	jr z, .sharpen
-	cp SYNTHESIS_MOONLIGHT_MORNING_SUN
-	jr z, .synthesis
+
 	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-.return
-	pop bc
-	pop hl
+
+	farcall MultiSlotMoveTypes
+	
 	rst AddNTimes
 	ld d, h
 	ld e, l
@@ -6256,49 +6179,7 @@ endr
 	ld de, wNamedObjectIndexBuffer
 	lb bc, 1, 2
 	jp PrintNum
-; 3e786
-
-.defense_curl
-	farcall CheckWithdrawUsers
-	jr nc, .not_withdraw
-	ld a, WATER
-	jr .return
-.not_withdraw
-	ld a, NORMAL
-	jr .return
-	
-.barrier
-	farcall CheckIronDefenseUsers
-	jr nc, .not_iron_defense
-	ld a, STEEL
-	jr .return
-.not_iron_defense
-	ld a, PSYCHIC
-	jr .return
-	
-.sharpen
-	farcall CheckMeditateUsers
-	jr nc, .not_meditate
-	ld a, PSYCHIC
-	jr .return
-.not_meditate
-	ld a, NORMAL
-	jr .return
-	
-.synthesis
-	farcall CheckMoonlightUsers
-	jr nc, .not_moonlight
-	ld a, FAIRY
-	jp .return
-.not_moonlight
-	farcall CheckMorningSunUsers
-	jr nc, .not_morning_sun
-	ld a, NORMAL
-	jp .return
-.not_morning_sun
-	ld a, GRASS
-	jp .return
-	
+; 3e786	
 
 CheckUsableMoves:
 ; Return nz if we have no usable moves

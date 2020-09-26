@@ -14,7 +14,7 @@ SunsetCape_MapScriptHeader:
 	signpost 11, 6, SIGNPOST_READ, SunsetCapeSign
 	signpost 27, 8, SIGNPOST_READ, SunsetLighthouseSign
 
-	db 8 ; object events
+	db 15 ; object events
 	person_event SPRITE_GRAMPS, 32, 6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, 1<<MORN, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunsetCapeNpc1, -1
 	person_event SPRITE_RAICHU, 32, 5, SPRITEMOVEDATA_POKEMON, 0, 0, -1, 1<<MORN, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetCapeNpc2, -1
 	person_event SPRITE_LADY, 32,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, 1<<DAY, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetCapeNpc3, -1
@@ -22,7 +22,15 @@ SunsetCape_MapScriptHeader:
 	person_event SPRITE_CUTE_GIRL, 32, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, 1<<NITE, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunsetCapeNpc4, -1
 	person_event SPRITE_SWIMMER_GIRL, 32, 19, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_TRAINER, 3, TrainerSunsetCape, -1
 	itemball_event  1, 20, POKE_BALL, 1, EVENT_SUNSET_CAPE_POKE_BALL
-	fruittree_event 16, 12, FRUITTREE_SUNSET_CAPE, ORAN_BERRY
+	fruittreeinvis_event 16, 12, FRUITTREE_SUNSET_CAPE, ORAN_BERRY
+	person_event SPRITE_LIGHTHOUSE, 20,  2, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_LIGHTHOUSE, 20,  4, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_LIGHTHOUSE, 23,  4, SPRITEMOVEDATA_LIGHTHOUSE_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_LIGHTHOUSE, 24,  4, SPRITEMOVEDATA_LIGHTHOUSE_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_LIGHTHOUSE, 25,  4, SPRITEMOVEDATA_LIGHTHOUSE_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_LIGHTHOUSE, 26,  4, SPRITEMOVEDATA_LIGHTHOUSE_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_LIGHTHOUSE, 27,  4, SPRITEMOVEDATA_LIGHTHOUSE_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	
 
 	const_def 1 ; object constants
 	const SUNSET_CAPE_NPC_1
@@ -57,6 +65,7 @@ SunsetCapeNpc3:
 	waitbutton
 	spriteface SUNSET_CAPE_NPC_3, DOWN
 	closetext
+	applyonemovement PLAYER, hide_person
 	end
 	
 SunsetCapeNpc4:

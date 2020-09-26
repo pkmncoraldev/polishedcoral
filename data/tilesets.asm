@@ -449,20 +449,21 @@ TilesetTrainColl::
 INCLUDE "data/tilesets/train_collision.asm"
 
 
-SECTION "Tileset Data - icetemple", ROMX
+SECTION "Tileset Data - icecave", ROMX
 
-TilesetIceTempleGFX::
-INCBIN "gfx/tilesets/ice_temple.2bpp.lz"
+TilesetIceCaveGFX::
+INCBIN "gfx/tilesets/ice_temple.2bpp.vram0.lz"
 
-TilesetIceTempleGFX2 EQU 0
+TilesetIceCaveGFX2::
+INCBIN "gfx/tilesets/ice_temple.2bpp.vram1.lz"
 
-TilesetIceTempleMeta::
+TilesetIceCaveMeta::
 INCBIN "data/tilesets/ice_temple_metatiles.bin.lz"
 
-TilesetIceTempleAttr::
+TilesetIceCaveAttr::
 INCBIN "data/tilesets/ice_temple_attributes.bin.lz"
 
-TilesetIceTempleColl::
+TilesetIceCaveColl::
 INCLUDE "data/tilesets/ice_temple_collision.asm"
 
 
@@ -503,3 +504,4 @@ Tilesets::
 	tileset TilesetMall2
 	tileset TilesetSewer
 	tileset TilesetTrain
+	tileset TilesetIceCave

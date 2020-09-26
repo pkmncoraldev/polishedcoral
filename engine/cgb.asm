@@ -1283,7 +1283,7 @@ endr
 .CoraldevLogoPalette:
 	RGB 00, 00, 00
 	RGB 15, 07, 00
-	RGB 31, 16, 25
+	RGB 31, 14, 22
 	RGB 31, 31, 31
 
 .CoraldevOBPalette: ; 9521

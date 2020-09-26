@@ -28,7 +28,7 @@ NightSlash:
 Peck:
 PowerGem:
 PowerWhip:
-Psystrike:
+Psyshock:
 QuickAttack:
 RazorLeaf:
 RockThrow:
@@ -63,6 +63,19 @@ XScissor:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	cantusefakeout
+	endmove
+	
+QuiverDance:
+	checkobedience
+	usedmovetext
+	doturn
+	quiverdance
+;	lowersub
+;	statupanim
+;	raisesub
+;	statupmessage
+	statupfailtext
 	cantusefakeout
 	endmove
 
@@ -115,31 +128,6 @@ DrainPunch:
 	postfainteffects
 	posthiteffects
 	pickpocket
-	cantusefakeout
-	endmove
-
-UTurn:
-VoltSwitch:
-SwitchHit:
-	checkobedience
-	usedmovetext
-	doturn
-	pressure
-	critical
-	damagestats
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	hittarget
-	failuretext
-	checkfaint
-	criticaltext
-	supereffectivetext
-	postfainteffects
-	posthiteffects
-	pickpocket
-	switchout
 	cantusefakeout
 	endmove
 
@@ -210,12 +198,10 @@ BraveBird:
 
 FlinchHit:
 AirSlash:
-Astonish:
 Bite:
 DarkPulse:
 Extrasensory:
 Headbutt:
-HyperFang:
 IcicleCrash:
 IronHead:
 RockSlide:
@@ -243,12 +229,84 @@ ZenHeadbutt:
 	pickpocket
 	cantusefakeout
 	endmove
+	
+BurnFlinchHit:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	critical
+	effectchance
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	flinchtarget
+	burntarget
+	pickpocket
+	cantusefakeout
+	endmove
+	
+FreezeFlinchHit:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	critical
+	effectchance
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	freezeflinchtarget
+	pickpocket
+	cantusefakeout
+	endmove
+	
+ParalyzeFlinchHit:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	critical
+	effectchance
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	paralyzeflinchtarget
+	pickpocket
+	cantusefakeout
+	endmove
 
 PoisonHit:
 PoisonSting:
 SludgeBomb:
 PoisonJab:
-GunkShot:
 	checkobedience
 	usedmovetext
 	doturn
@@ -488,6 +546,31 @@ SteelWing:
 	pickpocket
 	cantusefakeout
 	endmove
+	
+SpeedUpHit:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	critical
+	effectchance
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	speedup
+	statupmessage
+	pickpocket
+	cantusefakeout
+	endmove
 
 AllUpHit:
 Ancientpower:
@@ -683,7 +766,6 @@ ShadowBall:
 
 AccuracyDownHit:
 MudSlap:
-Octazooka:
 	checkobedience
 	usedmovetext
 	doturn
@@ -881,6 +963,28 @@ SweetKiss:
 	cantusefakeout
 	endmove
 
+ShellSmash:
+	checkobedience
+	usedmovetext
+	doturn
+	shellsmash
+	statupfailtext
+	cantusefakeout
+	endmove
+	
+WorkUp:
+	checkobedience
+	usedmovetext
+	doturn
+	workup
+	lowersub
+	statupanim
+	raisesub
+	statupmessage
+	statupfailtext
+	cantusefakeout
+	endmove
+	
 AttackUp:
 	checkobedience
 	usedmovetext
@@ -1112,14 +1216,6 @@ DragonDance:
 	cantusefakeout
 	endmove
 
-HoneClaws:
-	checkobedience
-	usedmovetext
-	doturn
-	honeclaws
-	cantusefakeout
-	endmove
-
 AttackDown:
 Growl:
 	checkobedience
@@ -1204,7 +1300,7 @@ SpecialDefenseDown:
 	endmove
 
 AccuracyDown:
-Smokescreen:
+SandAttack:
 Flash:
 	checkobedience
 	usedmovetext
@@ -1222,6 +1318,7 @@ Flash:
 	endmove
 
 EvasionDown:
+SweetScent:
 	checkobedience
 	usedmovetext
 	doturn
@@ -1383,7 +1480,6 @@ Heal:
 Recover:
 Softboiled:
 Rest:
-MilkDrink:
 	checkobedience
 	usedmovetext
 	doturn
@@ -1513,22 +1609,11 @@ Roar:
 	cantusefakeout
 	endmove
 
-SkillSwap:
+CottonGuard:
 	checkobedience
 	usedmovetext
 	doturn
-	pressure
-	skillswap
-	cantusefakeout
-	endmove
-
-Trick:
-	checkobedience
-	usedmovetext
-	doturn
-	pressure
-	checkhit
-	trick
+	cottonguard
 	cantusefakeout
 	endmove
 
@@ -1960,16 +2045,6 @@ Spikes:
 	cantusefakeout
 	endmove
 
-ToxicSpikes:
-	checkobedience
-	usedmovetext
-	doturn
-	pressure
-	bounceback
-	toxicspikes
-	cantusefakeout
-	endmove
-
 Foresight:
 	checkobedience
 	usedmovetext
@@ -2058,8 +2133,6 @@ Swagger:
 	cantusefakeout
 	endmove
 
-Avalanche:
-Acrobatics:
 Facade:
 Hex:
 Venoshock:
@@ -2333,6 +2406,30 @@ MirrorCoat:
 	posthiteffects
 	cantusefakeout
 	endmove
+	
+SkullBash:
+	checkcharge
+	checkobedience
+	doturn
+	pressure
+	charge
+	usedmovetext
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	pickpocket
+	cantusefakeout
+	endmove
 
 Earthquake:
 	checkobedience
@@ -2474,6 +2571,31 @@ Thunder:
 	pickpocket
 	cantusefakeout
 	endmove
+	
+Twister:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	critical
+	effectchance
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	doubleflyingdamage
+	checkhit
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	flinchtarget
+	pickpocket
+	cantusefakeout
+	endmove
 
 Teleport:
 	checkobedience
@@ -2555,4 +2677,13 @@ LockOn:
 	doturn
 	checkhit
 	lockon
+	cantusefakeout
+	endmove
+	
+MirrorMove:
+	checkobedience
+	usedmovetext
+	doturn
+	mirrormove
+	cantusefakeout
 	endmove

@@ -1,10 +1,5 @@
-if DEF(FAITHFUL)
 	db  40,  20,  30,  55,  40,  80
 	;   hp  atk  def  spd  sat  sdf
-else
-	db  40,  40,  30,  55,  20,  80
-	;   hp  atk  def  spd  sat  sdf
-endc
 
 	db BUG, FLYING
 	db 255 ; catch rate
@@ -24,5 +19,5 @@ endc
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm DYNAMICPUNCH, CURSE, TOXIC, HIDDEN_POWER, SUNNY_DAY, LIGHT_SCREEN, PROTECT, GIGA_DRAIN, SAFEGUARD, SOLAR_BEAM, RETURN, DIG, ROOST, DOUBLE_TEAM, REFLECT, SWIFT, SUBSTITUTE, FACADE, REST, ATTRACT, THIEF, ROCK_SMASH, ENDURE, DRAIN_PUNCH, ACROBATICS, U_TURN, FLASH, SWORDS_DANCE, DOUBLE_EDGE, HEADBUTT, ICE_PUNCH, KNOCK_OFF, ROLLOUT, SLEEP_TALK, SWAGGER, THUNDERPUNCH
+	tmhm 
 	; end

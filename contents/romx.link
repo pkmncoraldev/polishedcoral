@@ -1,7 +1,7 @@
 ROMX $01
 	org $4000
 	"Code 1"
-	"Effect Command Pointers"
+;	"Effect Command Pointers"
 
 ROMX $02
 	org $4000

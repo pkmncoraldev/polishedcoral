@@ -58,3 +58,4 @@
 	enum vendingmachine
 	enum treegrotto
 	enum cavegrotto
+	enum iceblock

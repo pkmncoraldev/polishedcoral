@@ -81,6 +81,11 @@ PokeComNursePokerusText:
 	line "healthy and seem"
 	cont "to be fine."
 	done
+	
+IceBlockText:
+	text "A solid block of"
+	line "ice."
+	done
 
 DifficultBookshelfText:
 	text "It's full of"

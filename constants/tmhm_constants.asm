@@ -27,14 +27,14 @@ ENDM
 	add_tm DRAGON_CLAW  ; $01
 	add_tm CURSE        ; $02
 	add_tm CALM_MIND    ; $03
-	add_tm ROAR         ; $04
+	add_tm ROAR_WHIRLWIND         ; $04
 	add_tm TOXIC        ; $05
 	add_tm HAIL         ; $06
 	add_tm BULK_UP      ; $07
 	add_tm VENOSHOCK    ; $08
 	add_tm HIDDEN_POWER ; $09
 	add_tm SUNNY_DAY    ; $0a
-	add_tm HONE_CLAWS   ; $0b
+	add_tm SIGNAL_BEAM   ; $0b
 	add_tm ICE_BEAM     ; $0c
 	add_tm BLIZZARD     ; $0d
 	add_tm HYPER_BEAM   ; $0e
@@ -43,7 +43,7 @@ ENDM
 	add_tm RAIN_DANCE   ; $11
 	add_tm GIGA_DRAIN   ; $12
 	add_tm SAFEGUARD    ; $13
-	add_tm BULLDOZE     ; $14
+	add_tm WORK_UP     ; $14
 	add_tm SOLAR_BEAM   ; $15
 	add_tm IRON_TAIL    ; $16
 	add_tm THUNDERBOLT  ; $17
@@ -53,7 +53,7 @@ ENDM
 	add_tm DIG          ; $1b
 	add_tm PSYCHIC      ; $1c
 	add_tm SHADOW_BALL  ; $1d
-	add_tm TACKLE		; $1e
+	add_tm TACKLE_SCRATCH_POUND		; $1e
 	add_tm DOUBLE_TEAM  ; $1f
 	add_tm REFLECT      ; $20
 	add_tm FLASH_CANNON ; $21
@@ -84,14 +84,14 @@ ENDM
 	add_tm DRAGON_PULSE ; $3a
 	add_tm DRAIN_PUNCH  ; $3b
 	add_tm WILL_O_WISP  ; $3c
-	add_tm ACROBATICS   ; $3d
+	add_tm EMBER   ; $3d
 	add_tm WATER_PULSE  ; $3e
 	add_tm EXPLOSION    ; $3f
 	add_tm SHADOW_CLAW  ; $40
 	add_tm POISON_JAB   ; $41
-	add_tm AVALANCHE    ; $42
+	add_tm FAIRY_WIND    ; $42
 	add_tm GIGA_IMPACT  ; $43
-	add_tm U_TURN       ; $44
+	add_tm FIRE_FANG       ; $44
 	add_tm FLASH        ; $45
 	add_tm STONE_EDGE   ; $46
 	add_tm VOLT_SWITCH  ; $47
@@ -110,6 +110,7 @@ NUM_TMS = const_value - TM01
 	add_hm WHIRLPOOL    ; $4f
 	add_hm WATERFALL    ; $50
 	add_hm ROCK_SMASH   ; $1e
+	add_hm ROCK_CLIMB
 NUM_HMS = const_value - HM01
 
 	add_mt AQUA_TAIL    ; $51
@@ -124,18 +125,18 @@ NUM_HMS = const_value - HM01
 	add_mt HYPER_VOICE  ; $5a
 	add_mt ICE_PUNCH    ; $5b
 	add_mt ICY_WIND     ; $5c
-	add_mt IRON_HEAD    ; $5d
+	add_mt MIRROR_MOVE    ; $5d
 	add_mt KNOCK_OFF    ; $5e
 	add_mt PAY_DAY      ; $5f
 	add_mt ROLLOUT      ; $60
 	add_mt SEED_BOMB    ; $61
 	add_mt SEISMIC_TOSS ; $62
-	add_mt SKILL_SWAP   ; $63
+	add_mt COTTON_GUARD   ; $63
 	add_mt SLEEP_TALK   ; $64
 	add_mt SUCKER_PUNCH ; $65
 	add_mt SWAGGER      ; $66
 	add_mt THUNDERPUNCH ; $67
-	add_mt TRICK        ; $68
+	add_mt ICE_FANG        ; $68
 	add_mt ZAP_CANNON   ; $69
 	add_mt ZEN_HEADBUTT ; $6a
 

@@ -63,7 +63,7 @@ DodrioRanchRaceTrack_MapScriptHeader:
 
 	db 11 ; object events
 	person_event SPRITE_SNES,  7,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideScarecrow, -1
-	person_event SPRITE_YOUNGSTER, 17, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RanchRideRaceGuy, -1
+	person_event SPRITE_POKEMANIAC, 17, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RanchRideRaceGuy, -1
 	person_event SPRITE_COWGIRL, 14,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RanchRideReturnGirl, -1
 	person_event SPRITE_DODRIO, 6, 14, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideDodrio, -1
 	person_event SPRITE_DODUO, 16, 15, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
@@ -225,6 +225,8 @@ RanchRideRaceFinishLine:
 	pause 20
 	checkevent EVENT_FINISHED_RANCH_RACE_ONCE
 	iffalse .firsttime
+	checkevent EVENT_FINISHED_RANCH_RACE_TWICE
+	iffalse .secondtime
 	writetext RanchRideRaceTimeText
 	waitbutton
 	checkcode VAR_WEEKDAY
@@ -262,20 +264,32 @@ RanchRideRaceFinishLine:
 	clearflag ENGINE_BUG_CONTEST_TIMER
 	end
 .firsttime
-	writetext RanchRideRaceTimeTextFirstTime
+	writetext RanchRideRaceTimeText
+	buttonsound
+	verbosegivetmhm HM_FLY
+	setevent EVENT_GOT_HM02_FLY
+	setflag ENGINE_GOT_FLY
+	writetext RanchRideRaceText11
+	waitbutton
+	closetext
+	clearflag ENGINE_BUG_CONTEST_TIMER
+	setevent EVENT_FINISHED_RANCH_RACE_ONCE
+	end
+.secondtime
+	writetext RanchRideRaceTimeTextSecondTime
 	waitbutton
 	checkcode VAR_PARTYCOUNT
 	if_equal 6, .PartyFull
 	writetext RanchRideGotDoduoText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-;	givepoke DODUO, 10
-;	special TeachDoduoExtremeSpeed
+	givepoke DODUO, 10
+	special TeachDoduoExtremeSpeed
 	writetext RanchRideRaceText7
 	waitbutton
 	closetext
 	clearflag ENGINE_BUG_CONTEST_TIMER
-	setevent EVENT_FINISHED_RANCH_RACE_ONCE
+	setevent EVENT_FINISHED_RANCH_RACE_TWICE
 	setevent EVENT_RANCH_GOT_DODUO
 	end
 	
@@ -364,6 +378,8 @@ RanchRideRaceGuy:
 
 	checkevent EVENT_FINISHED_RANCH_RACE_ONCE
 	iffalse .trytostartracecont
+	checkevent EVENT_FINISHED_RANCH_RACE_TWICE
+	iffalse .trytostartracecont
 	checkevent EVENT_RANCH_GOT_DODUO
 	iftrue .trytostartracecont
 	writetext RanchRideRaceText9
@@ -373,8 +389,8 @@ RanchRideRaceGuy:
 	writetext RanchRideGotDoduoText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-;	givepoke DODUO, 10
-;	special TeachDoduoExtremeSpeed
+	givepoke DODUO, 10
+	special TeachDoduoExtremeSpeed
 	writetext RanchRideRaceText7
 	waitbutton
 	closetext
@@ -531,7 +547,7 @@ RanchRideRaceTimeText:
 	para "Here's your prize!"
 	done
 	
-RanchRideRaceTimeTextFirstTime:
+RanchRideRaceTimeTextSecondTime:
 ;	text_from_ram wStringBuffer3
 	text " seconds!"
 	
@@ -586,6 +602,22 @@ RanchRideRaceText9:
 RanchRideRaceText10:
 	text "You want to try"
 	line "again?"
+	done
+	
+RanchRideRaceText11:
+	text "That move will let"
+	line "you fly to any"
+	cont "town or city that"
+	cont "you've visited!"
+	
+	para "You'll need a BADGE"
+	line "from EVENTIDE"
+	cont "VILLAGE to use it"
+	cont "outside of battle."
+	
+	para "Come back tomorrow"
+	line "for a chance at"
+	cont "another prize!"
 	done
 	
 RanchRideRaceWhatAreYouDoingText:

@@ -207,6 +207,9 @@ AI_Types: ; 38635
 	push de
 	push bc
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	
+	farcall MultiSlotMoveTypes
+	
 	ld d, a
 	ld hl, wEnemyMonMoves
 	lb bc, (NUM_MOVES + 1), 0
@@ -220,6 +223,9 @@ AI_Types: ; 38635
 
 	call AIGetEnemyMove
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	
+	farcall MultiSlotMoveTypes
+	
 	cp d
 	jr z, .checkmove2
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
@@ -324,6 +330,7 @@ AI_Smart: ; 386be
 	jr .checkmove
 
 .table_386f2
+	dbw EFFECT_CONVERSION,		  AI_Smart_Conversion
 	dbw EFFECT_FAKE_OUT,		  AI_Smart_FakeOut
 	dbw EFFECT_SLEEP,             AI_Smart_Sleep
 	dbw EFFECT_LEECH_HIT,         AI_Smart_LeechHit
@@ -391,10 +398,24 @@ AI_Smart: ; 386be
 	db $ff
 ; 387e3
 
+AI_Smart_Conversion:
+	ld b, EFFECT_CONVERSION
+	call AIHasMoveEffect
+	ret nc
+	
+	ld a, [wEnemyMonType1]
+	cp NORMAL
+	ret nz
+	ld a, [wEnemyMonType2]
+	cp NORMAL
+	ret nz
+	
+	dec [hl]
+	dec [hl]
+	ret
+
 
 AI_Smart_FakeOut:
-; Don't use Thief unless it's the only move available.
-
 	ld b, EFFECT_FAKE_OUT
 	call AIHasMoveEffect
 	ret nc
@@ -1208,19 +1229,16 @@ AI_Smart_Encore: ; 38c3b
 	db FOCUS_ENERGY
 	db GROWTH
 	db HAZE
-	db HONE_CLAWS
 	db LEECH_SEED
 	db LEER_TAIL_WHIP
 	db POISONPOWDER
-	db ROAR
+	db ROAR_WHIRLWIND
 	db SCREECH
-	db SKILL_SWAP
 	db SPLASH
 	db STRING_SHOT
 	db SUBSTITUTE
 	db SWORDS_DANCE
 	db TELEPORT
-	db TRICK
 	db $ff
 ; 38ca4
 
@@ -2034,7 +2052,6 @@ RainDanceMoves: ; 390e7
 	db BUBBLE_BEAM
 	db CRABHAMMER
 	db HYDRO_PUMP
-	db OCTAZOOKA
 	db SCALD
 	db SURF
 	db THUNDER
@@ -2567,7 +2584,7 @@ UsefulMoves: ; 39301
 	db WILL_O_WISP
 	db RECOVER
 	db FIRE_BLAST
-	db SOFTBOILED
+	db SOFTBOILED_MILK_DRINK
 	db MOONBLAST
 	db PLAY_ROUGH
 	db HURRICANE
@@ -2633,20 +2650,18 @@ AI_Opportunist: ; 39315
 	db GROWL
 	db GROWTH
 	db HAZE
-	db HONE_CLAWS
 	db LEECH_SEED
 	db LEER_TAIL_WHIP
 	db LIGHT_SCREEN
 	db RAGE
 	db REFLECT
 	db SCREECH
-	db SKILL_SWAP
+	db COTTON_GUARD
 	db SPLASH
 	db STRING_SHOT
 	db SUBSTITUTE
 	db SWORDS_DANCE
 	db TRANSFORM
-	db TRICK
 	db $ff
 ; 39369
 
@@ -2838,7 +2853,6 @@ AI_Cautious: ; 39418
 	db STUN_SPORE
 	db SUBSTITUTE
 	db THUNDER_WAVE
-	db TOXIC_SPIKES
 	db TRANSFORM
 	db $ff
 ; 39453

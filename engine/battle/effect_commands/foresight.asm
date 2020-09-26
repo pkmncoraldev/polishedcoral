@@ -12,6 +12,10 @@ BattleCommand_foresight:
 	jr nz, .failed
 
 	set SUBSTATUS_IDENTIFIED, [hl]
+	
+	farcall CheckForesightThing
+	ld [wKickCounter], a
+	
 	call AnimateCurrentMove
 	ld hl, IdentifiedText
 	jp StdBattleTextBox

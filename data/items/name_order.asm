@@ -111,9 +111,9 @@ ItemNameOrder:
 	db NAM_LIBRARY_CARD	; 8b
 	db NAM_SQUIRTBOTTLE ; df
 	db NAM_THE_THING    ; cc
-	db NAM_RED_SCALE    ; bf
+	db NAM_TORCH	    ; bf
 	db NAM_OLD_KEY      ; 1f
-	db NAM_BASEMENT_KEY ; 0c
+	db NAM_CLAY_POT ; 0c
 	db NAM_S_S_TICKET   ; c6
 	db NAM_PASS         ; 9b
 	db NAM_MACHINE_PART ; 73
@@ -271,8 +271,8 @@ ItemNameOrder:
 	db NAM_SLOWPOKETAIL ; d8
 	db NAM_BOTTLE_CAP   ; 19
 
-	db NAM_HELIX_FOSSIL ; 56
-	db NAM_DOME_FOSSIL  ; 2e
+	db NAM_JAW_FOSSIL ; 56
+	db NAM_SAIL_FOSSIL  ; 2e
 	db NAM_OLD_AMBER    ; 93
 
 	db NAM_MULCH        ; 88

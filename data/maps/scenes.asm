@@ -63,4 +63,8 @@ MapTriggers::
 	scene_var SPOOKY_FOREST_9,						  wSpookyForestEscortTrigger
 	scene_var SPOOKY_FOREST_ESCORT,					  wSpookyForestEscortTrigger
 	scene_var LUSTER_MALL,							  wLusterMallTrigger
+	scene_var ICE_TEMPLE_B1F_1,						  wIceTempleB1F1Trigger
+	scene_var ICE_TEMPLE_B1F_2,						  wIceTempleB1F2Trigger
+	scene_var ICE_TEMPLE_B1F_3,						  wIceTempleB1F3Trigger
+	scene_var ICE_TEMPLE_B2F_1,						  wIceTempleB2F1Trigger
 	db -1

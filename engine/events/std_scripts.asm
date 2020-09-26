@@ -58,6 +58,7 @@ StdScripts::
 	dba VendingMachineScript
 	dba TreeGrottoScript
 	dba CaveGrottoScript
+	dba IceBlockScript
 
 PokeCenterNurseScript:
 	opentext
@@ -169,6 +170,9 @@ ResetPalsAfterNurse:
 	call SetPalettes
 	ret
 
+IceBlockScript:
+	farjumptext IceBlockText
+	
 DifficultBookshelfScript:
 	farjumptext DifficultBookshelfText
 
@@ -504,6 +508,21 @@ InitializeEventsScript:
 	setevent EVENT_LAKE_BOAT_LEFT_GONE
 	setevent EVENT_HAVENT_SAVED_SUNBEAM
 	setevent EVENT_HAVENT_SAVED_BIKESHOP_OWNERS_SON
+	setevent EVENT_STARGLOW_CAVERN_FOSSIL_GUY
+	setevent EVENT_TORCH_2_UNLIT
+	setevent EVENT_TORCH_3_UNLIT
+	setevent EVENT_TORCH_4_UNLIT
+	setevent EVENT_TORCH_5_UNLIT
+	setevent EVENT_TORCH_6_UNLIT
+	setevent EVENT_TORCH_7_UNLIT
+	setevent EVENT_TORCH_8_UNLIT
+	setevent EVENT_TORCH_9_UNLIT
+	setevent EVENT_ICE_TEMPLE_CAMPFIRE_1_UNLIT
+	setevent EVENT_ICE_TEMPLE_CAMPFIRE_2_UNLIT
+	setevent EVENT_ICE_TEMPLE_CAMPFIRE_3_UNLIT
+	setevent EVENT_ICE_TEMPLE_CAMPFIRE_4_UNLIT
+	setevent EVENT_ICE_TEMPLE_CAMPFIRE_5_UNLIT
+	setevent EVENT_ICE_TEMPLE_CAMPFIRE_6_UNLIT
 	setevent EVENT_ALWAYS_SET
 	setflag ENGINE_PUNKS_IN_STARGLOW
 	setflag ENGINE_PUNKS_ON_SUNBEAM

@@ -40,9 +40,9 @@
 	RGB 00, 00, 00
 ;8 - Eventide Forest
 	RGB 31, 00, 31
-	RGB 31, 00, 31
-	RGB 31, 00, 31
-	RGB 31, 00, 31
+	RGB 30, 31, 28
+	RGB 05, 06, 07
+	RGB 00, 00, 00
 ;9 - Eventide Village
 	RGB 31, 00, 31
 	RGB 30, 30, 28

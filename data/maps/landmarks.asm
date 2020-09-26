@@ -35,6 +35,7 @@ Landmarks: ; 0x1ca8c3
 	landmark 100,  44, FlickerPassName
 	landmark 108,  36, Route10Name
 	landmark 108,  28, TwinkleTownName
+	landmark   0,   0, FrozenRuinsName
 	landmark 132,  52, LusterCityName
 	landmark 132,  52, LusterSewersName
 	landmark 132,  52, ResidentialName
@@ -73,6 +74,7 @@ FlickerStationName:	   db "FLICKER¯STATION@"
 FlickerPassName:	   db "FLICKER¯PASS@"
 Route10Name:		   db "ROUTE 10@"
 TwinkleTownName: 	   db "TWINKLE¯TOWN@"
+FrozenRuinsName: 	   db "FROZEN¯RUINS@"
 LusterCityName:		   db "LUSTER CITY@"
 LusterSewersName:	   db "LUSTER¯SEWERS@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"

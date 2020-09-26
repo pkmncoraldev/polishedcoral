@@ -525,6 +525,9 @@ RunHitAbilities:
 	ld b, a
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	
+	farcall MultiSlotMoveTypes
+	
 	ld c, a
 	push bc
 	call GetOpponentAbilityAfterMoldBreaker
@@ -724,6 +727,9 @@ CheckNullificationAbilities:
 	ld b, a
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	
+	farcall MultiSlotMoveTypes
+	
 	cp b
 	jr z, .ability_ok
 	ret
@@ -1419,6 +1425,9 @@ PinchAbility:
 ; 150% damage if the user is in a pinch (1/3HP or less) for given type
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	
+	farcall MultiSlotMoveTypes
+	
 	cp b
 	ret nz
 	call CheckPinch
@@ -1487,6 +1496,9 @@ SandForceAbility:
 	ret nz
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	
+	farcall MultiSlotMoveTypes
+	
 	cp GROUND
 	jr z, .ok
 	cp ROCK
@@ -1525,6 +1537,9 @@ GutsAbility:
 PixilateAbility:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	
+	farcall MultiSlotMoveTypes
+	
 	and a ; cp NORMAL
 	ret nz
 	ld a, $65
@@ -1559,6 +1574,9 @@ EnemyThickFatAbility:
 ; 50% damage for Fire and Ice-type moves
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	
+	farcall MultiSlotMoveTypes
+	
 	cp FIRE
 	jr z, .ok
 	cp ICE
@@ -1573,6 +1591,9 @@ EnemyDrySkinAbility:
 ; stuff is elsewhere
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	
+	farcall MultiSlotMoveTypes
+	
 	cp FIRE
 	ret nz
 	ld a, $54

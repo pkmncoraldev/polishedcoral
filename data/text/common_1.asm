@@ -1004,12 +1004,12 @@ UnknownText_0x1bd2e7::
 	done
 
 UnknownText_0x1bd308::
-	text "Repel's effect"
+	text "REPEL's effect"
 	line "wore off."
 	done
 
 UseAnotherRepelText::
-	text "Repel's effect"
+	text "REPEL's effect"
 	line "wore off."
 
 	para "Use another?"

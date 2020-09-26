@@ -18,10 +18,10 @@ Route8_MapScriptHeader:
 	signpost 12, 16, SIGNPOST_READ, Route8FlowerHouseSign
 
 	db 10 ; object events
-	person_event SPRITE_YOUNGSTER, 13, 23, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route2SouthNPC1, -1
-	person_event SPRITE_BATTLE_GIRL, 29, 43, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route2SouthNPC2, -1
-	person_event SPRITE_POKEFAN_F, 10,  8, SPRITEMOVEDATA_STANDING_DOWN, 2, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route2SouthNPC3, -1
-	person_event SPRITE_FISHER, 14, 35, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute8_1, -1
+	person_event SPRITE_YOUNGSTER, 13, 23, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route8NPC1, -1
+	person_event SPRITE_BATTLE_GIRL, 29, 43, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route8NPC2, -1
+	person_event SPRITE_POKEFAN_F, 10,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route8NPC3, -1
+	person_event SPRITE_FISHER, 14, 35, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRoute8_1, -1
 	person_event SPRITE_POKEFAN_M, 19, 47, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute8_2, -1
 	person_event SPRITE_POKEFAN_F, 26, 50, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute8_3, -1
 	person_event SPRITE_BEAUTY, 21, 27, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute8_4, -1
@@ -33,14 +33,14 @@ Route8Callback:
 	clearflag ENGINE_ENCOUNTER_HOUSE
 	return
 	
-Route2SouthNPC1:
-	jumptextfaceplayer Route2SouthNPC1Text
+Route8NPC1:
+	jumptextfaceplayer Route8NPC1Text
 	
-Route2SouthNPC2:
-	jumptextfaceplayer Route2SouthNPC2Text
+Route8NPC2:
+	jumptextfaceplayer Route8NPC2Text
 	
-Route2SouthNPC3:
-	jumptextfaceplayer Route2SouthNPC3Text
+Route8NPC3:
+	jumptextfaceplayer Route8NPC3Text
 	
 Route8Sign:
 	jumptext Route8SignText
@@ -135,7 +135,7 @@ TrainerRoute8_4:
 	line "flower…"
 	done
 	
-Route2SouthNPC1Text:
+Route8NPC1Text:
 	text "The lady in that"
 	line "house really likes"
 	cont "likes to brag"
@@ -145,14 +145,14 @@ Route2SouthNPC1Text:
 	line "kinda pretty…"
 	done
 	
-Route2SouthNPC2Text:
+Route8NPC2Text:
 	text "Can't talk…"
 	
 	para "Looking for #-"
 	line "MON…"
 	done
 	
-Route2SouthNPC3Text:
+Route8NPC3Text:
 	text "Ah!"
 	
 	para "Feels nice to"

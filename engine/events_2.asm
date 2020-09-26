@@ -202,6 +202,8 @@ LoadMapNameSignGFX:: ; b80c6
 	jp z, .route
 	cp TOWN
 	jp z, .town
+	cp INDOOR
+	jp z, .town
 	cp CAVE
 	jp z, .cave
 	cp FOREST
@@ -681,8 +683,8 @@ RockItemEncounter:
 	ret
 
 .RockItems:
-	db 1, HELIX_FOSSIL
-	db 1, DOME_FOSSIL
+	db 1, JAW_FOSSIL
+	db 1, SAIL_FOSSIL
 	db 1, OLD_AMBER
 	db 1, BIG_NUGGET
 	db 2, RARE_BONE

@@ -983,7 +983,11 @@ wLusterSewersB1FFloodedTrigger:: ds 1
 wLusterSewersB2FFloodedTrigger:: ds 1
 wSpookyForestEscortTrigger:: ds 1
 wLusterMallTrigger:: ds 1
-ds 41
+wIceTempleB1F1Trigger:: ds 1
+wIceTempleB1F2Trigger:: ds 1
+wIceTempleB1F3Trigger:: ds 1
+wIceTempleB2F1Trigger:: ds 1
+ds 37
 
 ; fight counts
 wJackFightCount::    ds 1
@@ -1042,7 +1046,7 @@ wCurrMapTriggerHeaderPointer:: ds 2
 wCurrMapCallbackCount:: ds 1
 wCurrMapCallbackHeaderPointer:: ds 2
 
-	ds 2 ; unused
+	ds 1 ; unused
 
 ; Sprite id of each decoration
 wBed:: ds 1
@@ -1127,6 +1131,8 @@ wLuckyIDNumber:: ds 2
 
 wRepelEffect:: ds 1 ; If a Repel is in use, it contains the nr of steps it's still active
 wRepelType:: ds 1
+
+wTorchSteps:: ds 1
 
 wBikeStep:: ds 2
 

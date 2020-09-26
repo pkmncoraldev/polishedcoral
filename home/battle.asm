@@ -431,7 +431,6 @@ MoldBreakerSuppressedAbilities:
 ContactMoves::
 	db 0
 	db AQUA_TAIL
-	db ASTONISH
 	db BITE
 	db BODY_SLAM
 	db BUG_BITE
@@ -447,7 +446,7 @@ ContactMoves::
 	db DOUBLE_KICK
 	db DOUBLE_EDGE
 	db DRAGON_CLAW
-	db DRAIN_KISS
+	db DOUBLE_HIT
 	db DRAIN_PUNCH
 	db DRILL_PECK
 	db DYNAMICPUNCH
@@ -464,9 +463,7 @@ ContactMoves::
 	db HEADBUTT
 	db HI_JUMP_KICK
 	db HORN_ATTACK
-	db HYPER_FANG
 	db ICE_PUNCH
-	db IRON_HEAD
 	db IRON_TAIL
 	db KARATE_CHOP
 	db KNOCK_OFF
@@ -491,7 +488,7 @@ ContactMoves::
 	db REVERSAL
 	db ROCK_SMASH
 	db ROLLOUT
-	db SCRATCH
+	db FLAME_CHARGE
 	db SEISMIC_TOSS
 	db SHADOW_CLAW
 	db SLASH
@@ -499,12 +496,11 @@ ContactMoves::
 	db STEEL_WING
 	db STOMP
 	db STRENGTH
-	db TACKLE
+	db TACKLE_SCRATCH_POUND
 	db TAKE_DOWN
 	db THIEF
 	db THRASH
 	db THUNDERPUNCH
-	db U_TURN
 	db VINE_WHIP
 	db WATERFALL
 	db WILD_CHARGE
@@ -512,6 +508,9 @@ ContactMoves::
 	db WRAP
 	db X_SCISSOR
 	db ZEN_HEADBUTT
+	db FIRE_FANG
+	db ICE_FANG
+	db THUNDER_FANG
 	db -1
 
 PowderMoves::
@@ -533,11 +532,10 @@ PunchingMoves::
 
 SoundMoves::
 	db BUG_BUZZ
-	db DISARM_VOICE
 	db GROWL
 	db HYPER_VOICE
 	db PERISH_SONG
-	db ROAR
+	db ROAR_WHIRLWIND
 	db SCREECH
 	db SING
 	db SUPERSONIC
@@ -549,9 +547,8 @@ SubstituteBypassMoves::
 	db ATTRACT
 	db DISABLE
 	db ENCORE
-	db FORESIGHT
+	db FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db SPIKES
-	db TOXIC_SPIKES
 	db -1
 
 DynamicPowerMoves::

@@ -58,6 +58,8 @@ Facings:
 	dw FacingMallSign 		; FACING_MALL_SIGN
 	dw FacingHangarLeft 	; FACING_HANGAR_LEFT
 	dw FacingHangarRight 	; FACING_HANGAR_RIGHT
+	dw FacingLighthouse1
+	dw FacingLighthouse2
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -399,7 +401,6 @@ FacingHangarLeft:
 	db  4, 32, 0, $06
 	db  4, 40, 0, $07
 	
-	
 FacingHangarRight:
 	db 6 ; #
 	db  4,  0, 0, $08
@@ -408,6 +409,16 @@ FacingHangarRight:
 	db  4, 24, 0, $0b
 	db 12, 32, 0, $02
 	db 12, 40, 0, $03
+	
+FacingLighthouse1:
+	db 2 ; #
+	db 12,  8, 0 | X_FLIP, $08
+	db 12,  -32, 0, $08
+	
+FacingLighthouse2:
+	db 2 ; #
+	db 12,  8, 0 | X_FLIP, $09
+	db 12,  -32, 0, $09
 	
 FacingArchTreeDown:
 	db 2 ; #

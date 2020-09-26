@@ -124,9 +124,9 @@ ENDM
 	connection south, StarglowValley, STARGLOW_VALLEY, -3
 	connection west, Route3East, ROUTE_3_EAST, -4
 	
-	map_attributes StarglowValley, STARGLOW_VALLEY, 5, NORTH | EAST
+	map_attributes StarglowValley, STARGLOW_VALLEY, 5, NORTH | EAST | WEST
 	connection north, Route3Starglow, ROUTE_3_STARGLOW, 3
-;	connection west, ROUTE_12, Route12, 4
+	connection west, Route8, ROUTE_8, 0
 	connection east, Route4, ROUTE_4, 6
 	
 	map_attributes Route4, ROUTE_4, 5, NORTH | SOUTH | WEST
@@ -147,9 +147,10 @@ ENDM
 	connection south, Route6, ROUTE_6, 1
 	connection west, LakeOnwa, LAKE_ONWA, -11
 	
-	map_attributes Route8, ROUTE_8, 5, NORTH | SOUTH
+	map_attributes Route8, ROUTE_8, 5, NORTH | SOUTH | EAST
 	connection north, Route3, ROUTE_3, -8
 	connection south, LakeOnwa, LAKE_ONWA, -6
+	connection east, StarglowValley, STARGLOW_VALLEY, 0
 	
 	map_attributes Route9, ROUTE_9, 5, NORTH | WEST
 	connection north, FlickerStation, FLICKER_STATION, -9
@@ -266,6 +267,8 @@ ENDM
 	map_attributes GlintGroveDeep, GLINT_GROVE_DEEP, $20, 0
 	map_attributes StarglowCavern1F, STARGLOW_CAVERN_1F, $9, 0
 	map_attributes StarglowCavern2F, STARGLOW_CAVERN_2F, $9, 0
+	map_attributes StarglowCavern3F, STARGLOW_CAVERN_3F, $9, 0
+	map_attributes StarglowCavernFossilRoom, STARGLOW_CAVERN_FOSSIL_ROOM, $9, 0
 	map_attributes MtOnwa1F, MT_ONWA_1F, $09, 0
 	map_attributes MtOnwa2F, MT_ONWA_2F, $09, 0
 	map_attributes MtOnwaB1F, MT_ONWA_B1F, $09, 0
@@ -280,6 +283,13 @@ ENDM
 	map_attributes LusterSewersB2FFlooded, LUSTER_SEWERS_B2F_FLOODED, 0, 0
 	map_attributes LusterSewersB2FEmpty, LUSTER_SEWERS_B2F_EMPTY, 0, 0
 	map_attributes LusterSewersValveRoom, LUSTER_SEWERS_VALVE_ROOM, 0, 0
+	map_attributes IceCaveB1F, ICE_CAVE_B1F, $54, 0
+	map_attributes IceCaveB2F, ICE_CAVE_B2F, $54, 0
+	map_attributes IceCaveB3F, ICE_CAVE_B3F, $54, 0
+	map_attributes IceTempleB1F1, ICE_TEMPLE_B1F_1, 0, 0
+	map_attributes IceTempleB1F2, ICE_TEMPLE_B1F_2, 0, 0
+	map_attributes IceTempleB1F3, ICE_TEMPLE_B1F_3, 0, 0
+	map_attributes IceTempleB2F1, ICE_TEMPLE_B2F_1, 0, 0
 	
 	map_attributes SunsetPokeCenter, SUNSET_POKECENTER, $0, 0
 	map_attributes SunsetLighthouse, SUNSET_LIGHTHOUSE, $0, 0

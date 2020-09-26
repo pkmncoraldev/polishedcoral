@@ -300,7 +300,7 @@ LoadMapTimeOfDay: ; 104750
 	hlbgcoord 0, 0
 	jp ByteFill
 
-LoadGraphics: ; 1047cf
+LoadGraphics:: ; 1047cf
 	call LoadTilesetHeader
 	call LoadTileset
 	xor a

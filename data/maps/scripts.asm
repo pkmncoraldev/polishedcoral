@@ -57,6 +57,7 @@ INCLUDE "maps/IceTempleB1F1.asm"
 INCLUDE "maps/IceTempleB1F2.asm"
 INCLUDE "maps/IceTempleB1F3.asm"
 INCLUDE "maps/IceTempleB2F1.asm"
+INCLUDE "maps/IceTempleB2F2.asm"
 
 
 SECTION "Routes Scripts", ROMX

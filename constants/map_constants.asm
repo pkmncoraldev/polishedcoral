@@ -49,6 +49,7 @@ MAP_NONE   EQU 0
 	map_const ICE_TEMPLE_B1F_2,							  14, 10 ; 27
 	map_const ICE_TEMPLE_B1F_3,							   4, 4  ; 28
 	map_const ICE_TEMPLE_B2F_1,							   8, 6  ; 29
+	map_const ICE_TEMPLE_B2F_2,							  13, 7  ; 30
 
 	newgroup                                                     ;  2
 

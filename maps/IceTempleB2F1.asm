@@ -5,8 +5,12 @@ IceTempleB2F1_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, IceTempleB2F1CampfiresCallback
 
-	db 1 ; warp events
+	db 5 ; warp events
 	warp_def  3, 15, 3, ICE_TEMPLE_B1F_3
+	warp_def  1, 1, 1, ICE_TEMPLE_B2F_2
+	warp_def  1, 2, 2, ICE_TEMPLE_B2F_2
+	warp_def  1, 11, 3, ICE_TEMPLE_B2F_2
+	warp_def  1, 12, 4, ICE_TEMPLE_B2F_2
 
 	db 0 ; coord events
 
@@ -128,7 +132,6 @@ IceTempleMamoswineCutscene:
 	end
 	
 IceTempleTorch8:
-	setevent EVENT_BEAT_MAMOSWINE
 	checkitem TORCH
 	iffalse IceTemplePlayerTorchNotLit
 	checkevent EVENT_TORCH_8_UNLIT
@@ -150,7 +153,6 @@ IceTempleTorch8:
 	end
 	
 IceTempleTorch9:
-	setevent EVENT_BEAT_MAMOSWINE
 	checkitem TORCH
 	iffalse IceTemplePlayerTorchNotLit
 	checkevent EVENT_TORCH_9_UNLIT

@@ -54,7 +54,7 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke CLEFAIRY, 1
+	givepoke ZUBAT, 26
 ;	givepoke BULBASAUR, 1
 ;	givepoke PORYGON, 100
 .items

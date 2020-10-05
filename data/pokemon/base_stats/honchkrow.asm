@@ -1,10 +1,5 @@
-if DEF(FAITHFUL)
 	db 100, 125,  52,  71, 105,  52
 	;   hp  atk  def  spd  sat  sdf
-else
-	db 105, 125,  52,  71, 105,  52
-	;   hp  atk  def  spd  sat  sdf
-endc
 
 	db DARK, FLYING
 	db 30 ; catch rate
@@ -24,5 +19,5 @@ endc
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CALM_MIND, TOXIC, HIDDEN_POWER, SUNNY_DAY, HYPER_BEAM, PROTECT, RAIN_DANCE, RETURN, PSYCHIC, SHADOW_BALL, ROOST, DOUBLE_TEAM, SWIFT, SUBSTITUTE, FACADE, REST, ATTRACT, THIEF, STEEL_WING, DARK_PULSE, ENDURE, GIGA_IMPACT, THUNDER_WAVE, FLY, DREAM_EATER, ICY_WIND, SLEEP_TALK, SUCKER_PUNCH, SWAGGER
+	tmhm 
 	; end

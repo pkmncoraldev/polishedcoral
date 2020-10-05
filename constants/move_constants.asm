@@ -3,7 +3,7 @@
 	const ROCK_CLIMB   ; $01
 	const KARATE_CHOP  ; $02
 	const DOUBLE_SLAP  ; $03
-	const AERIAL_ACE   ; $04 - REMOVE
+	const BONE_CLUB    ; $04
 	const DRAGON_CLAW  ; $05
 	const PAY_DAY      ; $06
 	const FIRE_PUNCH   ; $07
@@ -19,11 +19,11 @@
 	const WING_ATTACK  ; $11
 	const SUCKER_PUNCH ; $12
 	const FLY          ; $13
-	const DAZZLINGLEAM ; $14 - REMOVE
+	const DAZZLINGLEAM ; $14
 	const FLAIL  	   ; $15
 	const VINE_WHIP    ; $16
 	const STOMP        ; $17
-	const DOUBLE_KICK  ; $18 - REMOVE
+	const HEX		   ; $18
 	const FLARE_BLITZ  ; $19
 	const STONE_EDGE   ; $1a
 	const FOCUS_BLAST  ; $1b
@@ -65,8 +65,8 @@
 	const HYPER_BEAM   ; $3f
 	const PECK         ; $40
 	const DRILL_PECK   ; $41
-	const CLOSE_COMBAT ; $42 - REMOVE
-	const LOW_KICK     ; $43 - REMOVE
+	const SHADOW_BONE  ; $42
+	const BONE_RUSH    ; $43
 	const COUNTER      ; $44
 	const SEISMIC_TOSS ; $45
 	const STRENGTH     ; $46
@@ -145,7 +145,7 @@
 	const BRAVE_BIRD   ; $8f
 	const TRANSFORM    ; $90
 	const WATER_PULSE  ; $91
-	const DIZZY_PUNCH  ; $92 - REMOVE
+	const POISON_FANG  ; $92
 	const SPORE        ; $93
 	const FLASH        ; $94
 	const LOCK_ON_MIND_READER	   				; $95
@@ -167,10 +167,10 @@
 	const GIGA_IMPACT  ; $a5
 	const SKETCH       ; $a6
 	const DRAIN_PUNCH  ; $a7
-	const THIEF        ; $a8 - REMOVE
+	const ACROBATICS   ; $a8
 	const WILL_O_WISP  ; $a9
 	const ZEN_HEADBUTT ; $aa
-	const FACADE       ; $ab - REMOVE
+	const VITAL_THROW  ; $ab - REMOVE
 	const FLAME_WHEEL  ; $ac
 	const HYPER_VOICE  ; $ad
 	const CURSE        ; $ae

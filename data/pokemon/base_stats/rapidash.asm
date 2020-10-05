@@ -1,11 +1,7 @@
 	db  65, 100,  70, 105,  80,  80
 	;   hp  atk  def  spd  sat  sdf
 
-if DEF(FAITHFUL)
 	db FIRE, FIRE
-else
-	db FIRE, FAIRY
-endc
 	db 60 ; catch rate
 	db 192 ; base exp
 	db NO_ITEM ; item 1
@@ -23,5 +19,5 @@ endc
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CURSE, TOXIC, HIDDEN_POWER, SUNNY_DAY, HYPER_BEAM, PROTECT, SOLAR_BEAM, IRON_TAIL, RETURN, DOUBLE_TEAM, FLAMETHROWER, FIRE_BLAST, SWIFT, SUBSTITUTE, FACADE, WILD_CHARGE, REST, ATTRACT, ENDURE, WILL_O_WISP, POISON_JAB, GIGA_IMPACT, STRENGTH, BODY_SLAM, DOUBLE_EDGE, HEADBUTT, PAY_DAY, SLEEP_TALK, SWAGGER
+	tmhm 
 	; end

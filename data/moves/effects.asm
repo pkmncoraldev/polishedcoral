@@ -1,7 +1,6 @@
 MoveEffects:
 
 NormalHit:
-AerialAce:
 Aeroblast:
 AquaJet:
 AquaTail:
@@ -10,7 +9,6 @@ BulletPunch:
 Crabhammer:
 CrossChop:
 Cut:
-Dazzlingleam:
 DragonClaw:
 DrillPeck:
 Extremespeed:
@@ -135,7 +133,6 @@ DrainPunch:
 MultiHit:
 Bonemerang:
 CometPunch:
-DoubleKick:
 DoubleSlap:
 PinMissile:
 IcicleSpear:
@@ -815,30 +812,6 @@ EvasionDownHit:
 	cantusefakeout
 	endmove
 
-CloseCombat:
-	checkobedience
-	usedmovetext
-	doturn
-	pressure
-	critical
-	effectchance
-	damagestats
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	hittarget
-	failuretext
-	checkfaint
-	criticaltext
-	supereffectivetext
-	closecombat
-	postfainteffects
-	posthiteffects
-	pickpocket
-	cantusefakeout
-	endmove
-
 StaticDamage:
 Sonicboom:
 DragonRage:
@@ -886,6 +859,30 @@ Toxic:
 	stab
 	checksafeguard
 	toxic
+	cantusefakeout
+	endmove
+	
+PoisonFang:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	critical
+	effectchance
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	toxictarget
+	pickpocket
 	cantusefakeout
 	endmove
 
@@ -1929,61 +1926,31 @@ HealBell:
 	cantusefakeout
 	endmove
 
-TripleKick:
-	checkobedience
-	usedmovetext
-	doturn
-	pressure
-	startloop
-	lowersub
-	checkhit
-	critical
-	damagestats
-	damagecalc
-	triplekick
-	stab
-	damagevariation
-	clearmissdamage
-	hittargetnosub
-	failuretext
-	checkfaint
-	criticaltext
-	cleartext
-	supereffectivelooptext
-	postfainteffects
-	posthiteffects
-	kickcounter
-	endloop
-	raisesub
-	pickpocket
-	cantusefakeout
-	endmove
-
-Thief:
-	checkobedience
-	usedmovetext
-	doturn
-	pressure
-	critical
-	effectchance
-	damagestats
-	damagecalc
-	stab
-	damagevariation
-	checkhit
+;Thief:
+;	checkobedience
+;	usedmovetext
+;	doturn
+;	pressure
+;	critical
+;	effectchance
+;	damagestats
+;	damagecalc
+;	stab
+;	damagevariation
+;	checkhit
 	; Yes, thief is 100% but this makes Sheer Force and Substitute be handled correctly
-	hittarget
-	failuretext
-	checkfaint
-	criticaltext
-	supereffectivetext
-	thief
-	postfainteffects
-	posthiteffects
-	pickpocket
-	cantusefakeout
-	endmove
-
+;	hittarget
+;	failuretext
+;	checkfaint
+;	criticaltext
+;	supereffectivetext
+;	thief
+;	postfainteffects
+;	posthiteffects
+;	pickpocket
+;	cantusefakeout
+;	endmove
+	
 MeanLook:
 	checkobedience
 	usedmovetext
@@ -2248,29 +2215,6 @@ GyroBall:
 	critical
 	damagestats
 	gyroball
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	hittarget
-	failuretext
-	checkfaint
-	criticaltext
-	supereffectivetext
-	postfainteffects
-	posthiteffects
-	pickpocket
-	cantusefakeout
-	endmove
-
-LowKick:
-	checkobedience
-	usedmovetext
-	doturn
-	pressure
-	critical
-	damagestats
-	lowkick
 	damagecalc
 	stab
 	damagevariation

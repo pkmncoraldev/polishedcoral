@@ -47,6 +47,6 @@ MetronomeExcepts:
 	db PROTECT
 	db SKETCH
 	db SLEEP_TALK
-	db THIEF
+;	db THIEF
 	db TRANSFORM
 	db -1

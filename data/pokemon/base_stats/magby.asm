@@ -1,10 +1,5 @@
-if DEF(FAITHFUL)
 	db  45,  75,  37,  83,  70,  55
 	;   hp  atk  def  spd  sat  sdf
-else
-	db  50,  75,  37,  83,  70,  55
-	;   hp  atk  def  spd  sat  sdf
-endc
 
 	db FIRE, FIRE
 	db 45 ; catch rate
@@ -24,5 +19,5 @@ endc
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm DYNAMICPUNCH, CURSE, TOXIC, HIDDEN_POWER, SUNNY_DAY, PROTECT, IRON_TAIL, RETURN, PSYCHIC, DOUBLE_TEAM, FLAMETHROWER, FIRE_BLAST, SUBSTITUTE, FACADE, REST, ATTRACT, THIEF, ROCK_SMASH, ENDURE, WILL_O_WISP, BODY_SLAM, COUNTER, DOUBLE_EDGE, FIRE_PUNCH, HEADBUTT, SEISMIC_TOSS, SLEEP_TALK, SWAGGER, THUNDERPUNCH
+	tmhm 
 	; end

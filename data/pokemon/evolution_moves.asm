@@ -205,7 +205,7 @@ EvolutionMoves::
 	db NO_MOVE      ; NOIVERN
 	db NO_MOVE      ; PIKIPEK
 	db NO_MOVE      ; TRUMBEAK
-	db NO_MOVE ;BEAK_BLAST      ; TOUCANNON
+	db NO_MOVE 		; TOUCANNON		;BEAK_BLAST
 	db PSYCHIC_M    ; RAICHU_A
 	db NO_MOVE      ; EXEGGUTOR_A
-	db NO_MOVE      ; MAROWAK_A
+	db SHADOW_BONE  ; MAROWAK_A

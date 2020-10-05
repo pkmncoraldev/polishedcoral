@@ -2,7 +2,7 @@ MoveDescriptions::
 	dw RockClimbDescription
 	dw KarateChopDescription
 	dw DoubleSlapDescription
-	dw AerialAceDescription
+	dw BoneClubDescription
 	dw DragonClawDescription
 	dw PayDayDescription
 	dw FirePunchDescription
@@ -22,7 +22,7 @@ MoveDescriptions::
 	dw FlailDescription
 	dw VineWhipDescription
 	dw StompDescription
-	dw DoubleKickDescription
+	dw HexDescription
 	dw FlareBlitzDescription
 	dw StoneEdgeDescription
 	dw FocusBlastDescription
@@ -64,8 +64,8 @@ MoveDescriptions::
 	dw HyperBeamDescription
 	dw PeckDescription
 	dw DrillPeckDescription
-	dw CloseCombatDescription
-	dw LowKickDescription
+	dw ShadowBoneDescription
+	dw BoneRushDescription
 	dw CounterDescription
 	dw SeismicTossDescription
 	dw StrengthDescription
@@ -144,7 +144,7 @@ MoveDescriptions::
 	dw BraveBirdDescription
 	dw TransformDescription
 	dw WaterPulseDescription
-	dw DizzyPunchDescription
+	dw PoisonFangDescription
 	dw SporeDescription
 	dw FlashDescription
 	dw LockOnDescription
@@ -166,10 +166,10 @@ MoveDescriptions::
 	dw GigaImpactDescription
 	dw SketchDescription
 	dw DrainPunchDescription
-	dw ThiefDescription
+	dw AcrobaticsDescription
 	dw WillOWispDescription
 	dw ZenHeadbuttDescription
-	dw FacadeDescription
+	dw VitalThrowDescription
 	dw FlameWheelDescription
 	dw HyperVoiceDescription
 	dw CurseDescription
@@ -273,7 +273,6 @@ StoneEdgeDescription:
 
 SwiftDescription:
 FeintAttackDescription:
-AerialAceDescription:
 AuraSphereDescription:
 	db   "An attack that"
 	next "never misses.@"
@@ -286,6 +285,10 @@ DrainPunchDescription:
 	db   "Steals 1/2 of the"
 	next "damage inflicted.@"
 
+BoneRushDescription:
+	db	 "An attack that"
+	next "hits 2-5 times.@"
+	
 DoubleSlapDescription:
 	db   "Repeatedly slaps"
 	next "2-5 times.@"
@@ -328,15 +331,19 @@ MirrorMoveDescription:
 StompDescription:
 HeadbuttDescription:
 BiteDescription:
-LowKickDescription:
 WaterfallDescription:
 RockSlideDescription:
 AirSlashDescription:
 ZenHeadbuttDescription:
 DarkPulseDescription:
 IcicleCrashDescription:
+BoneClubDescription:
 	db   "An attack that may"
 	next "cause flinching.@"
+	
+DazzlingleamDescription:
+	db   "Dazzles with a"
+	next "powerful flash.@"
 
 PoisonStingDescription:
 SludgeBombDescription:
@@ -378,7 +385,6 @@ BlizzardDescription:
 
 PsybeamDescription:
 ConfusionDescription:
-DizzyPunchDescription:
 WaterPulseDescription:
 HurricaneDescription:
 SignalBeamDescription:
@@ -402,10 +408,6 @@ AncientpowerDescription:
 	db   "An attack that may"
 	next "raise all stats.@"
 
-CloseCombatDescription:
-	db   "Lowers the user's"
-	next "Def and Sp.Def.@"
-
 AuroraBeamDescription:
 PlayRoughDescription:
 	db   "An attack that may"
@@ -414,6 +416,7 @@ PlayRoughDescription:
 RockSmashDescription:
 CrunchDescription:
 IronTailDescription:
+ShadowBoneDescription:
 	db   "An attack that may"
 	next "lower Defense.@"
 
@@ -492,6 +495,10 @@ SporeDescription:
 ToxicDescription:
 	db   "A Poison move with"
 	next "increasing damage.@"
+	
+PoisonFangDescription:
+	db   "High chance to"
+	next "badly poison.@"
 
 ConfuseRayDescription:
 SupersonicDescription:
@@ -775,9 +782,9 @@ HornAttackDescription:
 	db   "An attack using a"
 	next "horn to jab.@"
 
-DoubleKickDescription:
-	db   "A double kicking"
-	next "attack.@"
+HexDescription:
+	db   "Damage doubles if"
+	next "foe has status.@"
 	
 DoubleHitDescription:
 	db   "A double hitting"
@@ -790,10 +797,6 @@ PayDayDescription:
 SuckerPunchDescription:
 	db   "Attacks before the"
 	next "foe does.@"
-
-DazzlingleamDescription:
-	db   "Dazzles with a"
-	next "powerful flash.@"
 
 RoarDescription:
 	db   "Forces the foe out"
@@ -903,13 +906,13 @@ SketchDescription:
 	db   "Copies the foe's"
 	next "move permanently.@"
 
-ThiefDescription:
-	db   "An attack that may"
-	next "steal a held item.@"
+AcrobaticsDescription:
+	db   "Damage doubles if"
+	next "user has no item.@"
 
-FacadeDescription:
-	db   "Double damage with"
-	next "Psn, Brn, or Prz.@"
+VitalThrowDescription:
+	db   "A 2nd-strike move"
+	next "that never misses.@"
 
 HyperVoiceDescription:
 	db   "Attack the foe"

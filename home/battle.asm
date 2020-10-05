@@ -435,15 +435,12 @@ ContactMoves::
 	db BODY_SLAM
 	db BUG_BITE
 	db BULLET_PUNCH
-	db CLOSE_COMBAT
 	db COUNTER
 	db CRABHAMMER
 	db CROSS_CHOP
 	db CRUNCH
 	db CUT
 	db DIG
-	db DIZZY_PUNCH
-	db DOUBLE_KICK
 	db DOUBLE_EDGE
 	db DRAGON_CLAW
 	db DOUBLE_HIT
@@ -469,7 +466,6 @@ ContactMoves::
 	db KNOCK_OFF
 	db LEECH_LIFE
 	db LICK
-	db LOW_KICK
 	db MACH_PUNCH
 	db MEGAHORN
 	db METAL_CLAW
@@ -498,7 +494,7 @@ ContactMoves::
 	db STRENGTH
 	db TACKLE_SCRATCH_POUND
 	db TAKE_DOWN
-	db THIEF
+	db ACROBATICS
 	db THRASH
 	db THUNDERPUNCH
 	db VINE_WHIP
@@ -511,6 +507,8 @@ ContactMoves::
 	db FIRE_FANG
 	db ICE_FANG
 	db THUNDER_FANG
+	db POISON_FANG
+	db VITAL_THROW
 	db -1
 
 PowderMoves::
@@ -522,12 +520,12 @@ PowderMoves::
 
 PunchingMoves::
 	db BULLET_PUNCH
-	db DIZZY_PUNCH
 	db DRAIN_PUNCH
 	db DYNAMICPUNCH
 	db FIRE_PUNCH
 	db MACH_PUNCH
 	db THUNDERPUNCH
+	db ICE_PUNCH
 	db -1
 
 SoundMoves::
@@ -556,7 +554,6 @@ DynamicPowerMoves::
 	db COUNTER
 	db DRAGON_RAGE
 	db GYRO_BALL
-;   db LOW_KICK
 	db MAGNITUDE
 	db MIRROR_COAT
 	db NIGHT_SHADE

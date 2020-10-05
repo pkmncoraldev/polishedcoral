@@ -363,15 +363,39 @@ WigglytuffEvosAttacks:
 
 ZubatEvosAttacks:
 	db EVOLVE_LEVEL, 22, GOLBAT
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
+	db  0 ; no more evolutions
+	db  1, ABSORB
+	db  5, SUPERSONIC
+	db  7, LICK
+	db 11, BITE
+	db 13, WING_ATTACK
+	db 17, CONFUSE_RAY
+	db 19, AIR_SLASH
+	db 23, ACROBATICS
+	db 26, POISON_FANG
+	db 29, MEAN_LOOK_BLOCK_SPIDER_WEB
+	db 32, LEECH_LIFE
+	db 35, HAZE
+	db 38, VENOSHOCK
+	db  0 ; no more level-up moves
 
 GolbatEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, CROBAT
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
+	db  0 ; no more evolutions
+	db  1, ABSORB
+	db  1, SUPERSONIC
+	db  1, LICK
+	db  1, BITE
+	db  1, WING_ATTACK
+	db  1, CONFUSE_RAY
+	db  1, AIR_SLASH
+	db 25, ACROBATICS
+	db 28, POISON_FANG
+	db 32, MEAN_LOOK_BLOCK_SPIDER_WEB
+	db 36, LEECH_LIFE
+	db 40, HAZE
+	db 45, VENOSHOCK
+	db  0 ; no more level-up moves
 
 OddishEvosAttacks:
 	db EVOLVE_LEVEL, 21, GLOOM
@@ -491,37 +515,102 @@ AlakazamEvosAttacks:
 
 MachopEvosAttacks:
 	db EVOLVE_LEVEL, 28, MACHOKE
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
+	db  0 ; no more evolutions
+	db  1, KARATE_CHOP
+	db  1, LEER_TAIL_WHIP
+	db  5, FOCUS_ENERGY
+	db  9, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
+	db 13, SEISMIC_TOSS
+	db 18, BULK_UP
+	db 21, KNOCK_OFF
+	db 25, VITAL_THROW
+	db 30, SCARY_FACE_COTTON_SPORE
+	db 38, CROSS_CHOP
+	db 44, DYNAMICPUNCH
+	db  0 ; no more level-up moves
 
 MachokeEvosAttacks:
 	db EVOLVE_TRADE, -1, MACHAMP
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
+	db  0 ; no more evolutions
+	db  1, KARATE_CHOP
+	db  1, LEER_TAIL_WHIP
+	db  1, FOCUS_ENERGY
+	db  1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
+	db  1, SEISMIC_TOSS
+	db  1, BULK_UP
+	db  1, KNOCK_OFF
+	db  1, VITAL_THROW
+	db 32, SCARY_FACE_COTTON_SPORE
+	db 41, CROSS_CHOP
+	db 50, DYNAMICPUNCH
+	db  0 ; no more level-up moves
 
 MachampEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
+	db  0 ; no more evolutions
+	db  1, KARATE_CHOP
+	db  1, LEER_TAIL_WHIP
+	db  1, FOCUS_ENERGY
+	db  1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
+	db  1, SEISMIC_TOSS
+	db  1, BULK_UP
+	db  1, KNOCK_OFF
+	db  1, VITAL_THROW
+	db 32, SCARY_FACE_COTTON_SPORE
+	db 41, CROSS_CHOP
+	db 50, DYNAMICPUNCH
+	db  0 ; no more level-up moves
 
 GeodudeEvosAttacks:
 	db EVOLVE_LEVEL, 25, GRAVELER
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
+	db  1, DEFENSE_CURL_HARDEN_WITHDRAW
+	db  6, AGILITY
+	db 10, ROCK_THROW
+	db 12, MAGNITUDE
+	db 16, ROLLOUT
+	db 21, BULK_UP
+	db 24, SELFDESTRUCT
+	db 30, ROCK_BLAST
+	db 34, EARTHQUAKE
+	db 36, EXPLOSION
+	db 40, DOUBLE_EDGE
+	db 44, STONE_EDGE
+	db  0 ; no more level-up moves
 
 GravelerEvosAttacks:
 	db EVOLVE_TRADE, -1, GOLEM
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
+	db  1, DEFENSE_CURL_HARDEN_WITHDRAW
+	db  1, AGILITY
+	db  1, ROCK_THROW
+	db  1, MAGNITUDE
+	db  1, ROLLOUT
+	db  1, BULK_UP
+	db  1, SELFDESTRUCT
+	db 33, ROCK_BLAST
+	db 38, EARTHQUAKE
+	db 42, EXPLOSION
+	db 47, DOUBLE_EDGE
+	db 53, STONE_EDGE
 
 GolemEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
+	db  1, DEFENSE_CURL_HARDEN_WITHDRAW
+	db  1, AGILITY
+	db  1, ROCK_THROW
+	db  1, MAGNITUDE
+	db  1, ROLLOUT
+	db  1, BULK_UP
+	db  1, SELFDESTRUCT
+	db 33, ROCK_BLAST
+	db 38, EARTHQUAKE
+	db 42, EXPLOSION
+	db 47, DOUBLE_EDGE
+	db 53, STONE_EDGE
+	db 60, GYRO_BALL
 
 PonytaEvosAttacks:
 	db EVOLVE_LEVEL, 40, RAPIDASH
@@ -656,14 +745,41 @@ ExeggutorEvosAttacks:
 CuboneEvosAttacks:
 	db EVOLVE_ITEM, THUNDERSTONE, MAROWAK
 	db EVOLVE_ITEM, FIRE_STONE, MAROWAK_A
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
+	db  0 ; no more evolutions
+	db  1, GROWL
+	db  3, TACKLE_SCRATCH_POUND
+	db  8, BONE_CLUB
+	db 11, HEADBUTT
+	db 13, LEER_TAIL_WHIP
+	db 17, FOCUS_ENERGY
+	db 21, BONEMERANG
+	db 23, RAGE
+	db 27, FALSE_SWIPE
+	db 31, THRASH
+	db 35, DIG
+	db 39, SLASH
+	db 43, DOUBLE_EDGE
+	db 50, BONE_RUSH
+	db  0 ; no more level-up moves
 
 MarowakEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
+	db  0 ; no more evolutions
+	db  1, MUD_SLAP
+	db  1, GROWL
+	db  1, TACKLE_SCRATCH_POUND
+	db  1, BONE_CLUB
+	db  1, HEADBUTT
+	db  1, LEER_TAIL_WHIP
+	db  1, FOCUS_ENERGY
+	db  1, BONEMERANG
+	db  1, RAGE
+	db  1, FALSE_SWIPE
+	db 33, THRASH
+	db 37, DIG
+	db 43, SLASH
+	db 48, DOUBLE_EDGE
+	db 56, BONE_RUSH
+	db  0 ; no more level-up moves
 
 KoffingEvosAttacks:
 	db EVOLVE_LEVEL, 35, WEEZING
@@ -1019,9 +1135,21 @@ LedianEvosAttacks:
 	db  0 ; no more level-up moves
 
 CrobatEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
+	db  0 ; no more evolutions
+	db  1, ABSORB
+	db  1, SUPERSONIC
+	db  1, LICK
+	db  1, BITE
+	db  1, WING_ATTACK
+	db  1, CONFUSE_RAY
+	db  1, AIR_SLASH
+	db 25, ACROBATICS
+	db 28, POISON_FANG
+	db 32, MEAN_LOOK_BLOCK_SPIDER_WEB
+	db 36, LEECH_LIFE
+	db 40, HAZE
+	db 45, VENOSHOCK
+	db  0 ; no more level-up moves
 
 ChinchouEvosAttacks:
 	db EVOLVE_LEVEL, 27, LANTURN
@@ -1645,6 +1773,19 @@ Exeggutor_AEvosAttacks:
 	db 0 ; no more level-up moves
 	
 Marowak_AEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
+	db  0 ; no more evolutions
+	db  1, FLAME_WHEEL
+	db  1, GROWL
+	db  1, TACKLE_SCRATCH_POUND
+	db  1, BONE_CLUB
+	db  1, HEADBUTT
+	db  1, LEER_TAIL_WHIP
+	db  1, HEX
+	db  1, BONEMERANG
+	db  1, WILL_O_WISP
+	db  1, FALSE_SWIPE
+	db 33, THRASH
+	db 37, DIG
+	db 43, SLASH
+	db 48, FLARE_BLITZ
+	db 56, BONE_RUSH

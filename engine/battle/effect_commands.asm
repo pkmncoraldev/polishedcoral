@@ -1211,35 +1211,6 @@ BattleCommand_critical: ; 34631
 	;   0     1     2     3+
 ; 346b2
 
-
-BattleCommand_triplekick: ; 346b2
-; triplekick
-
-	ld a, [wKickCounter]
-	ld b, a
-	inc b
-	ld hl, wCurDamage + 1
-	ld a, [hld]
-	ld e, a
-	ld a, [hli]
-	ld d, a
-.next_kick
-	dec b
-	ret z
-	ld a, [hl]
-	add e
-	ld [hld], a
-	ld a, [hl]
-	adc d
-	ld [hli], a
-
-; No overflow.
-	jr nc, .next_kick
-	ld a, $ff
-	ld [hld], a
-	ld [hl], a
-	ret
-
 CheckAirBalloon:
 ; Returns z if the user is holding an Air Balloon
 	push bc
@@ -2241,8 +2212,6 @@ BattleCommand_hittargetnosub: ; 34f60
 	jr z, .conversion
 	cp EFFECT_DOUBLE_HIT
 	jr z, .doublehit
-	cp EFFECT_TRIPLE_KICK
-	jr z, .triplekick
 
 .normal_move
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -2250,11 +2219,11 @@ BattleCommand_hittargetnosub: ; 34f60
 	cp TACKLE_SCRATCH_POUND
 	jr nz, .not_tackle_scratch_pound
 	farcall CheckTackleThing
-	jr .triplekick
+	jr .cont
 .not_tackle_scratch_pound
 	xor a
 	ld [wKickCounter], a
-.triplekick
+.cont
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld e, a
@@ -2954,8 +2923,6 @@ BattleCommand_postfainteffects:
 	cp EFFECT_MULTI_HIT
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_DOUBLE_HIT
-	jr z, .multiple_hit_raise_sub
-	cp EFFECT_TRIPLE_KICK
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_FURY_SWIPES
 	jr nz, .finish
@@ -4985,8 +4952,6 @@ SelfInflictDamageToSubstitute: ; 35de0
 	jr z, .ok
 	cp EFFECT_DOUBLE_HIT
 	jr z, .ok
-	cp EFFECT_TRIPLE_KICK
-	jr z, .ok
 	cp EFFECT_FURY_SWIPES
 	jr z, .ok
 	xor a
@@ -5240,6 +5205,29 @@ BattleCommand_poisontarget:
 	call StdBattleTextBox
 
 	jp PostStatusWithSynchronize
+	
+BattleCommand_toxictarget:
+	call CheckSubstituteOpp
+	ret nz
+	ld b, 1
+	call CanPoisonTarget
+	ret nz
+	ld a, [wTypeModifier]
+	and a
+	ret z
+	ld a, [wEffectFailed]
+	and a
+	ret nz
+
+	call ToxicOpponent
+	ld de, ANIM_PSN
+	call PlayOpponentBattleAnim
+	call RefreshBattleHuds
+
+	ld hl, BadlyPoisonedText
+	call StdBattleTextBox
+
+	jp PostStatusWithSynchronize
 
 CanPoisonTargetVerbose:
 	; different from CanPoisonTarget: common function for BC_(Poison|Toxic)
@@ -5311,6 +5299,12 @@ PoisonOpponent:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	set PSN, [hl]
+	jp UpdateOpponentInParty
+	
+ToxicOpponent:
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	set TOX, [hl]
 	jp UpdateOpponentInParty
 
 
@@ -6761,19 +6755,6 @@ BattleCommand_endloop: ; 369b6
 	ld a, 1
 	jr z, .double_hit
 	ld a, [hl]
-	cp EFFECT_TRIPLE_KICK
-	jr nz, .not_triple_kick
-.reject_triple_kick_sample
-	call BattleRandom
-	and $3
-	jr z, .reject_triple_kick_sample
-	dec a
-	jr nz, .double_hit
-	ld a, 1
-	ld [bc], a
-	jr .done_loop
-
-.not_triple_kick
 	ld a, BATTLE_VARS_ABILITY
 	call GetBattleVar
 	cp SKILL_LINK
@@ -8365,7 +8346,8 @@ INCLUDE "engine/battle/effect_commands/perish_song.asm"
 INCLUDE "engine/battle/effect_commands/rollout.asm"
 
 BoostJumptable:
-	dbw FACADE, DoFacade
+	dbw ACROBATICS, DoAcrobatics
+	dbw HEX, DoHex
 	dbw VENOSHOCK, DoVenoshock
 	dbw KNOCK_OFF, DoKnockOff
 	dbw -1, -1
@@ -8376,29 +8358,29 @@ BattleCommand_conditionalboost:
 	call GetBattleVar
 	jp BattleJumptable
 
-;DoAcrobatics:
-;	ld a, [hBattleTurn]
-;	and a
-;	ld hl, wBattleMonItem
-;	jr z, .got_item
-;	ld hl, wEnemyMonItem
-;.got_item
-;	ld a, [hl]
-;	and a
-;	ret nz
-;	jr DoubleDamage
+DoAcrobatics:
+	ld a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonItem
+	jr z, .got_item
+	ld hl, wEnemyMonItem
+.got_item
+	ld a, [hl]
+	and a
+	ret nz
+	jr DoubleDamage
 
-DoFacade:
-	ld a, BATTLE_VARS_STATUS
-	call GetBattleVar
-	and 1 << BRN | 1 << PSN | 1 << PAR
-	jr DoubleDamageIfNZ
-
-;DoHex:
-;	ld a, BATTLE_VARS_STATUS_OPP
+;DoFacade:
+;	ld a, BATTLE_VARS_STATUS
 ;	call GetBattleVar
-;	and a
+;	and 1 << BRN | 1 << PSN | 1 << PAR
 ;	jr DoubleDamageIfNZ
+
+DoHex:
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and a
+	jr DoubleDamageIfNZ
 
 DoVenoshock:
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -8698,66 +8680,6 @@ BattleCommand_gyroball:
 	ld d, a
 	pop bc
 	ret
-
-BattleCommand_lowkick:
-	push bc
-	push de
-	ld a, [hBattleTurn]
-	and a
-	ld hl, wBattleMonSpecies
-	jr z, .got_species
-	ld hl, wEnemyMonSpecies
-.got_species
-	ld a, [hl]
-	dec a
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	ld a, BANK(PokedexDataPointerTable)
-	call GetFarHalfword
-
-	; skip the pokémon "type" (seed for bulbasaur, genetic for mewtwo, etc)
-.loop
-	farcall GetPokedexEntryBank
-	call GetFarByte
-	inc hl
-	cp "@"
-	jr nz, .loop
-
-	; skip height by inc hl twice
-	farcall GetPokedexEntryBank
-	inc hl
-	inc hl
-	call GetFarHalfword ; now we have weight in hl
-	ld d, h
-	ld e, l
-
-	ld hl, .WeightTable
-.loop2
-	ld a, [hli]
-	ld c, a
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	sub e
-	ld a, b
-	sbc d
-	jr nc, .loop2
-.got_power
-	pop de
-	ld d, c
-	pop bc
-	ret
-
-.WeightTable
-	;    BP, weight
-	dbw 120, 4407
-	dbw 100, 2202
-	dbw  80, 1100
-	dbw  60, 550
-	dbw  40, 218
-	dbw  20, 0
 
 CheckAnyOtherAliveMons:
 ; These return nz if any is alive

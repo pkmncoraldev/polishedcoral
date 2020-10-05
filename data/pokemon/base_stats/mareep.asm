@@ -10,11 +10,7 @@
 	dn 5, 5 ; frontpic dimensions
 	db STATIC ; ability 1
 	db STATIC ; ability 2
-if DEF(FAITHFUL)
 	db STATIC ; hidden ability
-else
-	db MOTOR_DRIVE ; hidden ability
-endc
 	db MEDIUM_SLOW ; growth rate
 	dn MONSTER, FIELD ; egg groups
 
@@ -23,5 +19,5 @@ endc
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CURSE, TOXIC, HIDDEN_POWER, LIGHT_SCREEN, PROTECT, RAIN_DANCE, SAFEGUARD, IRON_TAIL, THUNDERBOLT, THUNDER, RETURN, DOUBLE_TEAM, SWIFT, SUBSTITUTE, FACADE, WILD_CHARGE, REST, ATTRACT, ENDURE, FLASH, THUNDER_WAVE, BODY_SLAM, DEFENSE_CURL_HARDEN_WITHDRAW, DOUBLE_EDGE, HEADBUTT, SLEEP_TALK, SWAGGER, ZAP_CANNON
+	tmhm 
 	; end

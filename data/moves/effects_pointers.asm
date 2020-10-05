@@ -97,8 +97,6 @@ MoveEffectsPointers:
 	dw Reversal
 	dw FalseSwipe
 	dw HealBell
-	dw TripleKick
-	dw Thief
 	dw MeanLook
 	dw FlameWheel
 	dw Curse
@@ -140,7 +138,6 @@ MoveEffectsPointers:
 	dw NormalHit
 	dw SuckerPunch
 	dw Roost
-	dw CloseCombat
 	dw CottonGuard
 	dw BurnFlinchHit
 	dw FreezeFlinchHit
@@ -150,7 +147,6 @@ MoveEffectsPointers:
 	dw BugBite
 	dw GyroBall
 	dw BodySlam
-	dw LowKick
 	dw BrickBreak
 	dw LockOn
 	dw ShellSmash
@@ -158,3 +154,4 @@ MoveEffectsPointers:
 	dw QuiverDance
 	dw MirrorMove
 	dw Twister
+	dw PoisonFang

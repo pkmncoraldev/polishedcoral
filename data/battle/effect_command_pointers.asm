@@ -78,7 +78,6 @@ BattleCommandPointers:
 	command falseswipe              ; 40
 	command healbell                ; 41
 	command pressure                ; 42
-	command triplekick              ; 43
 	command kickcounter             ; 44
 	command thief                   ; 45
 	command arenatrap               ; 46
@@ -183,7 +182,6 @@ BattleCommandPointers:
 	command toxic                   ; ab
 	command gyroball                ; ac
 	command checkpowder             ; ad
-	command lowkick                 ; ae
 	command brickbreak              ; ae
 	command fakeout					; af - coral
 	command cantusefakeout			; b0 - coral
@@ -195,6 +193,7 @@ BattleCommandPointers:
 	command workup					; b6 - coral
 	command quiverdance				; b7 - coral
 	command mirrormove				; b8 - coral
+	command toxictarget				; b9 - coral
 
 	enum_start -1, -1
 	commandonly endmove

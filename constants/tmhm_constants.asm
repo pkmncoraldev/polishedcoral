@@ -64,11 +64,11 @@ ENDM
 	add_tm SWIFT        ; $26
 	add_tm FAKE_OUT		; $27
 	add_tm SUBSTITUTE   ; $28
-	add_tm FACADE       ; $29
+	add_tm VITAL_THROW  ; $29
 	add_tm WILD_CHARGE  ; $2a
 	add_tm REST         ; $2b
 	add_tm ATTRACT      ; $2c
-	add_tm THIEF        ; $2d
+	add_tm ACROBATICS   ; $2d
 	add_tm STEEL_WING   ; $2e
 	add_tm ROCK_SLIDE   ; $2f
 	add_tm DAZZLINGLEAM ; $30

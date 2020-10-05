@@ -9,11 +9,7 @@
 	dn FEMALE_12_5, 3 ; gender, step cycles to hatch
 	dn 6, 6 ; frontpic dimensions
 	db OVERGROW ; ability 1
-if DEF(FAITHFUL)
 	db OVERGROW ; ability 2
-else
-	db EFFECT_SPORE ; ability 2
-endc
 	db CHLOROPHYLL ; hidden ability
 	db MEDIUM_SLOW ; growth rate
 	dn MONSTER, PLANT ; egg groups
@@ -23,5 +19,5 @@ endc
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CURSE, TOXIC, HIDDEN_POWER, SUNNY_DAY, LIGHT_SCREEN, PROTECT, GIGA_DRAIN, SAFEGUARD, SOLAR_BEAM, RETURN, DOUBLE_TEAM, SLUDGE_BOMB, SUBSTITUTE, FACADE, REST, ATTRACT, ROCK_SMASH, ENERGY_BALL, ENDURE, FLASH, SWORDS_DANCE, CUT, STRENGTH, BODY_SLAM, DEFENSE_CURL_HARDEN_WITHDRAW, DOUBLE_EDGE, HEADBUTT, KNOCK_OFF, SEED_BOMB, SLEEP_TALK, SWAGGER
+	tmhm 
 	; end

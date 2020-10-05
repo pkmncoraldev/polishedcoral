@@ -40,11 +40,11 @@ TMHMMoves:
 	db SWIFT        ; TM39
 	db FAKE_OUT		; TM40 (Stanley)
 	db SUBSTITUTE   ; TM41
-	db FACADE       ; TM42
+	db VITAL_THROW  ; TM42
 	db WILD_CHARGE  ; TM43
 	db REST         ; TM44
 	db ATTRACT      ; TM45
-	db THIEF        ; TM46
+	db ACROBATICS   ; TM46
 	db STEEL_WING   ; TM47
 	db ROCK_SLIDE   ; TM48
 	db DAZZLINGLEAM ; TM49

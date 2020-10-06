@@ -4625,7 +4625,7 @@ INCLUDE "engine/battle/effect_commands/shellsmash.asm"
 
 INCLUDE "engine/battle/effect_commands/quiverdance.asm"
 
-INCLUDE "engine/battle/effect_commands/mirrormove.asm"
+;INCLUDE "engine/battle/effect_commands/mirrormove.asm"
 
 
 SECTION "Coral Data 2", ROMX

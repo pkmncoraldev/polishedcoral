@@ -31,14 +31,46 @@ MirrorMoveCommand:
 	call GetBattleVarAddr
 	ld d, h
 	ld e, l
+	
+	ld a, [wNamedObjectIndexBuffer]
+	ld [wCurMove], a
+	push hl
+	push de
+	farcall CheckMultiMoveSlot
+	jr nc, .not_multi_move_slot
+	pop de
+	pop hl
 	pop af
-
+	
 	dec a
 	call GetMoveData
-	call GetMoveName
+	
+	ld a, [wNamedObjectIndexBuffer]
+	ld [wCurMove], a
+	push hl
+	push de
+	farcall CheckMultiMoveSlot
+	jr nc, .not_multi_move_slot
+	pop de
+	pop hl
+	farcall GetMultiMoveSlotName
 	call CopyName1
+	
+	ld a, [hBattleTurn] ; Get user move name information. wStringBuffer1
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species
+	ld a, [wBattleMonSpecies]
+.got_user_species
+	ld [wCurPartySpecies], a
+	ld a, [wEnemyMonSpecies]
+	ld [wCurPartySpecies], a
+	ld a, [wNamedObjectIndexBuffer]
+	ld [wCurMove], a
+	farcall GetMultiMoveSlotName
+	
 	call CheckUserIsCharging
-	jr nz, .done
+	jr nz, .done1
 
 	ld a, [wKickCounter]
 	push af
@@ -46,6 +78,37 @@ MirrorMoveCommand:
 	pop af
 	ld [wKickCounter], a
 
-.done
+.done1
+	ld hl, wStringBuffer1
+	ld a, [hli]
+	ld b, a
+	ld hl, wStringBuffer2
+	ld a, [hli]
+	cp b
+	ret z
+	
+	call BattleCommand_movedelay
+	ld hl, SketchedText2
+	call StdBattleTextBox
+
+	jp ResetTurn
+	
+.not_multi_move_slot
+	pop af
+
+	dec a
+	call GetMoveData
+	call GetMoveName
+	call CopyName1
+	call CheckUserIsCharging
+	jr nz, .done2
+
+	ld a, [wKickCounter]
+	push af
+	call BattleCommand_lowersub
+	pop af
+	ld [wKickCounter], a
+
+.done2
 	call BattleCommand_movedelay
 	jp ResetTurn

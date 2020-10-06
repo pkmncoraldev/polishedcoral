@@ -8369,9 +8369,11 @@ BattleCommand_cottonguard:
 	ret
 	
 BattleCommand_mirrormove:
-	farcall MirrorMoveCommand
+	call MirrorMoveCommand
 	ret
 
+INCLUDE "engine/battle/effect_commands/mirrormove.asm"
+	
 INCLUDE "engine/battle/effect_commands/protect.asm"
 
 INCLUDE "engine/battle/effect_commands/endure.asm"

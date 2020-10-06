@@ -95,7 +95,7 @@ MoveNames::
 	db "PSYCHIC@"
 	db "HYPNOSIS@"
 	db "SIGNAL BEAM@"
-	db "AGILITY@"
+	db "ERROR!@" ; AGILITY_ROCK_POLISH
 	db "QUICK ATTACK@"
 	db "RAGE@"
 	db "TELEPORT@"
@@ -175,7 +175,7 @@ MoveNames::
 	db "CURSE@"
 	db "GYRO BALL@"
 	db "ENERGY BALL@"
-	db "AEROBLAST@"
+	db "MIMIC@"
 	db "SEED BOMB@"
 	db "REVERSAL@"
 	db "SLUDGE@"

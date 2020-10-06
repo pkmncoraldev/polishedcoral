@@ -106,7 +106,7 @@ Moves:: ; 41afb
 	move PSYCHIC_M,    EFFECT_SP_DEF_DOWN_HIT,    90, PSYCHIC,   100, 15,  10, SPECIAL
 	move HYPNOSIS,     EFFECT_SLEEP,               0, PSYCHIC,    60, 20,   0, STATUS
 	move SIGNAL_BEAM,  EFFECT_CONFUSE_HIT,        75, BUG,       100, 15,  10, SPECIAL
-	move AGILITY,      EFFECT_SPEED_UP_2,          0, PSYCHIC,   100, 30,   0, STATUS
+	move AGILITY_ROCK_POLISH,      EFFECT_SPEED_UP_2,          0, NORMAL,   100, 30,   0, STATUS
 	move QUICK_ATTACK, EFFECT_PRIORITY_HIT,       40, NORMAL,    100, 30,   0, PHYSICAL
 	move RAGE,         EFFECT_RAGE,               20, NORMAL,    100, 20,   0, PHYSICAL
 	move TELEPORT,     EFFECT_TELEPORT,            0, PSYCHIC,   100, 20,   0, STATUS
@@ -186,7 +186,7 @@ Moves:: ; 41afb
 	move CURSE,        EFFECT_CURSE,               0, GHOST,     100, 10,   0, STATUS
 	move GYRO_BALL,    EFFECT_GYRO_BALL,           1, STEEL,     100,  5,   0, PHYSICAL
 	move ENERGY_BALL,  EFFECT_SP_DEF_DOWN_HIT,    90, GRASS,     100, 10,  10, SPECIAL
-	move AEROBLAST,    EFFECT_NORMAL_HIT,        100, FLYING,     95,  5,   0, SPECIAL
+	move MIMIC,        EFFECT_MIMIC,               0, NORMAL,    100, 10,   0, STATUS
 	move SEED_BOMB,    EFFECT_NORMAL_HIT,         80, GRASS,     100, 15,   0, PHYSICAL
 	move REVERSAL,     EFFECT_REVERSAL,            1, FIGHTING,  100, 15,   0, PHYSICAL
 	move SLUDGE,       EFFECT_POISON_HIT,         65, POISON,    100, 20,  30, SPECIAL

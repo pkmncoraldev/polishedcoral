@@ -1032,6 +1032,67 @@ GetMoveNameForesight:: ; 34f8
 	rst Bankswitch
 	ret
 	
+GetAgilityName::
+	ld a, [hROMBank]
+	push af
+	push hl
+	push bc
+	push de
+
+	call CheckRockPolishUsers
+	jr nc, .not_rock_polish
+	ld hl, AgilityNames
+	ld a, 0
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	jr .done
+.not_rock_polish
+	ld hl, AgilityNames
+	ld a, 1
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	
+.done
+	pop de
+	pop bc
+	pop hl
+	pop af
+	rst Bankswitch
+	ret
+	
+GetMoveNameAgility:: ; 34f8
+	ld a, [hROMBank]
+	push af
+	push hl
+	push bc
+
+	
+	call CheckRockPolishUsers
+	jr nc, .not_rock_polish
+	ld hl, AgilityNames
+	ld a, 0
+	jr .done
+	
+.not_rock_polish
+	ld hl, AgilityNames
+	ld a, 1
+	
+.done
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	ld de, wStringBuffer1
+	pop bc
+	pop hl
+	pop af
+	rst Bankswitch
+	ret
+	
 CheckPoundUsers::
 	ld a, [wCurPartySpecies]
 CheckPoundUsers2::
@@ -1193,6 +1254,13 @@ CheckOdorSleuthUsers::
 CheckMiracleEyeUsers::
 	ld a, [wCurPartySpecies]
 	ld hl, MiracleEyeUsers
+	ld de, 1
+	call IsInArray
+	ret
+	
+CheckRockPolishUsers::
+	ld a, [wCurPartySpecies]
+	ld hl, RockPolishUsers
 	ld de, 1
 	call IsInArray
 	ret
@@ -1458,40 +1526,46 @@ CheckForesightThing::
 	ret
 .not_miracle_eye
 	ret
+	
+CheckAgilityThing::
+	ld a, [hBattleTurn]
+	and a
+	farcall CheckRockPolishUsers
+	jr nc, .not_rock_polish
+	ld a, $1
+	ret
+.not_rock_polish
+	ret
 
 PoundUsers:
+	db CLEFAIRY
+	db CLEFABLE
 	db JIGGLYPUFF
+	db WIGGLYTUFF
 	db -1
 	
 ScratchUsers:
 	db CHARMANDER
 	db CHARMELEON
 	db CHARIZARD
+	db TOTODILE
+	db CROCONAW
+	db FERALIGATR
 	db BUIZEL
 	db FLOATZEL
+	db CUBONE
+	db MAROWAK
+	db MAROWAK_A
 	db -1
 	
 WithdrawUsers:
 	db SQUIRTLE
 	db WARTORTLE
 	db BLASTOISE
-	db SLOWBRO
 	db -1
 
 HardenUsers:
-	db KAKUNA
-	db ONIX
-	db STEELIX
-	db STARYU
-	db STARMIE
-	db HERACROSS
-	db GLIGAR
-	db GLISCOR
-	db SLUGMA
-	db MAGCARGO
-	db CORSOLA
-	db PUPITAR
-	db TYRANITAR
+	db SMEARGLE
 	db -1
 
 TailWhipUsers:
@@ -1519,21 +1593,7 @@ HowlUsers:
 	db -1
 	
 FuryAttackUsers:
-	db BEEDRILL
-	db NIDORAN_M
-	db NIDORINO
-	db NIDOKING
-	db DODUO
-	db DODRIO
-	db RHYHORN
-	db RHYDON
-	db RHYPERIOR
-	db PINSIR
-	db HERACROSS
-	db PILOSWINE
-	db MAMOSWINE
-	db SKARMORY
-	db DONPHAN
+	db SMEARGLE
 	db -1
 	
 CometPunchUsers:
@@ -1547,17 +1607,15 @@ MoonlightUsers:
 	db -1
 	
 MorningSunUsers:
-	db ESPEON
+	db SMEARGLE
 	db -1
 	
 BlockUsers:
-	db SNORLAX
-	db SUDOWOODO
+	db SMEARGLE
 	db -1
 	
 SpiderWebUsers:
-	db JOLTIK
-	db GALVANTULA
+	db SMEARGLE
 	db -1
 	
 FeatherDanceUsers:
@@ -1587,7 +1645,7 @@ SmokescreenUsers:
 	db -1
 	
 MilkDrinkUsers:
-	db MILTANK
+	db SMEARGLE
 	db -1
 	
 OdorSleuthUsers:
@@ -1596,11 +1654,13 @@ OdorSleuthUsers:
 	db -1
 	
 MiracleEyeUsers:
-	db ABRA
-	db KADABRA
-	db ALAKAZAM
-	db NATU
-	db XATU
+	db SMEARGLE
+	db -1
+	
+RockPolishUsers:
+	db GEODUDE
+	db GRAVELER
+	db GOLEM
 	db -1
 	
 TackleNames:
@@ -1685,6 +1745,11 @@ ForesightNames:
 	db "FORESIGHT@"
 	db -1
 	
+AgilityNames:
+	db "ROCK POLISH@"
+	db "AGILITY@"
+	db -1
+	
 MultiSlotMoves:
 	db TACKLE_SCRATCH_POUND
 	db DEFENSE_CURL_HARDEN_WITHDRAW
@@ -1701,6 +1766,7 @@ MultiSlotMoves:
 	db SAND_ATTACK_SMOKESCREEN
 	db SOFTBOILED_MILK_DRINK
 	db FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
+	db AGILITY_ROCK_POLISH
 	db -1
 	
 MultiSlotMoveTypes::
@@ -1727,6 +1793,8 @@ MultiSlotMoveTypes::
 	jp z, .foresight
 	cp CHARM_FEATHER_DANCE
 	jp z, .charm
+	cp AGILITY_ROCK_POLISH
+	jp z, .agility
 	pop af
 	pop de
 	pop bc
@@ -1879,6 +1947,22 @@ MultiSlotMoveTypes::
 	ret
 .not_feather_dance
 	ld a, FAIRY
+	pop de
+	pop bc
+	pop hl
+	ret
+	
+.agility
+	pop af
+	call CheckRockPolishUsers
+	jr nc, .not_rock_polish
+	ld a, ROCK
+	pop de
+	pop bc
+	pop hl
+	ret
+.not_rock_polish
+	ld a, PSYCHIC
 	pop de
 	pop bc
 	pop hl

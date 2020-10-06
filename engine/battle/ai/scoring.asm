@@ -1221,7 +1221,7 @@ AI_Smart_Encore: ; 38c3b
 	ret
 
 .EncoreMoves:
-	db AGILITY
+	db AGILITY_ROCK_POLISH
 	db CONVERSION
 	db DISABLE
 	db DREAM_EATER
@@ -2637,7 +2637,7 @@ AI_Opportunist: ; 39315
 	jr .checkmove
 
 .stallmoves
-	db AGILITY
+	db AGILITY_ROCK_POLISH
 	db BARRIER_IRON_DEFENSE
 	db BULK_UP
 	db CALM_MIND

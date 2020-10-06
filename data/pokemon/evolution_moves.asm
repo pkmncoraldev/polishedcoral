@@ -31,7 +31,7 @@ EvolutionMoves::
 	db NO_MOVE      ; CLEFAIRY
 	db NO_MOVE      ; CLEFABLE
 	db NO_MOVE      ; JIGGLYPUFF
-	db NO_MOVE      ; WIGGLYTUFF
+	db PLAY_ROUGH      ; WIGGLYTUFF
 	db NO_MOVE      ; ZUBAT
 	db NO_MOVE      ; GOLBAT
 	db NO_MOVE      ; ODDISH

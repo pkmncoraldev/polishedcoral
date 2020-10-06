@@ -1786,6 +1786,14 @@ Metronome:
 	metronome
 	cantusefakeout
 	endmove
+	
+Mimic:
+	checkobedience
+	usedmovetext
+	doturn
+	mimic
+	cantusefakeout
+	endmove
 
 LeechSeed:
 	checkobedience

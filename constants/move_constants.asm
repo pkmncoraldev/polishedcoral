@@ -96,7 +96,7 @@
 	const PSYCHIC_M    ; $5e
 	const HYPNOSIS     ; $5f
 	const SIGNAL_BEAM  ; $60
-	const AGILITY      ; $61
+	const AGILITY_ROCK_POLISH      ; $61
 	const QUICK_ATTACK ; $62
 	const RAGE         ; $63
 	const TELEPORT     ; $64
@@ -170,13 +170,13 @@
 	const ACROBATICS   ; $a8
 	const WILL_O_WISP  ; $a9
 	const ZEN_HEADBUTT ; $aa
-	const VITAL_THROW  ; $ab - REMOVE
+	const VITAL_THROW  ; $ab
 	const FLAME_WHEEL  ; $ac
 	const HYPER_VOICE  ; $ad
 	const CURSE        ; $ae
 	const GYRO_BALL    ; $af
 	const ENERGY_BALL  ; $b0
-	const AEROBLAST    ; $b1 - REMOVE
+	const MIMIC		   ; $b1
 	const SEED_BOMB    ; $b2 - REMOVE
 	const REVERSAL     ; $b3
 	const SLUDGE       ; $b4

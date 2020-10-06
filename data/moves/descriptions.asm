@@ -175,7 +175,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw GyroBallDescription
 	dw EnergyBallDescription
-	dw AeroblastDescription
+	dw MimicDescription
 	dw SeedBombDescription
 	dw ReversalDescription
 	dw SludgeDescription
@@ -263,13 +263,16 @@ KarateChopDescription:
 RazorLeafDescription:
 CrabhammerDescription:
 SlashDescription:
-AeroblastDescription:
 CrossChopDescription:
 NightSlashDescription:
 ShadowClawDescription:
 StoneEdgeDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
+	
+MimicDescription:
+	db   "Copies foe's last"
+	next "move. Goes first.@"
 
 SwiftDescription:
 FeintAttackDescription:

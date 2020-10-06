@@ -3525,7 +3525,7 @@ ListMoves: ; 50d6f
 	cp BARRIER_IRON_DEFENSE
 	jr nz, .not_barrier
 	farcall GetBarrierName
-	jr .cont
+	jp .cont
 .not_barrier
 	cp LOCK_ON_MIND_READER
 	jr nz, .not_lock_on
@@ -3582,6 +3582,11 @@ ListMoves: ; 50d6f
 	farcall GetForesightName
 	jr .cont
 .not_foresight
+	cp AGILITY_ROCK_POLISH
+	jr nz, .not_agility
+	farcall GetAgilityName
+	jr .cont
+.not_agility
 	ld [wCurSpecies], a
 	ld a, MOVE_NAME
 	ld [wNamedObjectTypeBuffer], a

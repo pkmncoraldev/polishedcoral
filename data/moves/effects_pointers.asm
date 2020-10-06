@@ -155,3 +155,4 @@ MoveEffectsPointers:
 	dw MirrorMove
 	dw Twister
 	dw PoisonFang
+	dw Mimic

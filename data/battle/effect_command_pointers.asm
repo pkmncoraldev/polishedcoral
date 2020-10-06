@@ -194,6 +194,7 @@ BattleCommandPointers:
 	command quiverdance				; b7 - coral
 	command mirrormove				; b8 - coral
 	command toxictarget				; b9 - coral
+	command mimic					; ba - coral
 
 	enum_start -1, -1
 	commandonly endmove

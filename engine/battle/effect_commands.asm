@@ -1080,6 +1080,36 @@ BattleConsumePP:
 .end
 	or 1
 	ret
+	
+CheckMimicUsed:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wCurMoveNum]
+	jr z, .player
+	ld a, [wCurEnemyMoveNum]
+
+.player
+	ld c, a
+	ld a, MON_MOVES
+	call UserPartyAttr
+
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	cp MIMIC
+	jr z, .mimic
+;
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	cp MIMIC
+	jr nz, .mimic
+
+	scf
+	ret
+
+.mimic
+	and a
+	ret
 
 BattleCommand_critical: ; 34631
 ; critical
@@ -1199,7 +1229,6 @@ BattleCommand_critical: ; 34631
 	db RAZOR_LEAF
 	db CRABHAMMER
 	db SLASH
-	db AEROBLAST
 	db CROSS_CHOP
 	db SHADOW_CLAW
 	db STONE_EDGE
@@ -2339,6 +2368,11 @@ StatUpDownAnim: ; 34feb
 	farcall CheckSandAttackThing
 	jr .got_kick_counter
 .not_sand_attack
+	cp AGILITY_ROCK_POLISH
+	jr nz, .not_agility
+	farcall CheckAgilityThing
+	jr .got_kick_counter
+.not_agility
 	xor a
 .got_kick_counter
 	ld [wKickCounter], a
@@ -4594,11 +4628,15 @@ BattleCommand_sketch: ; 35a74
 	pop hl
 	ld a, [wCurMove]
 	call GetMoveName
-.done
 	call AnimateCurrentMove
 
 	ld hl, SketchedText
 	jp StdBattleTextBox
+.done
+	call AnimateCurrentMove
+
+	ld hl, SketchedText
+	call StdBattleTextBox
 	
 	ld hl, wStringBuffer1
 	ld a, [hli]
@@ -8090,6 +8128,7 @@ PrintButItFailed: ; 3734e
 ; 37354
 
 
+FailMimic:
 FailDisable:
 FailAttract:
 FailForesight:
@@ -8435,6 +8474,8 @@ DoKnockOff:
 	ld a, l
 	ld [wCurDamage + 1], a
 	ret
+	
+INCLUDE "engine/battle/effect_commands/mimic.asm"
 
 INCLUDE "engine/battle/effect_commands/attract.asm"
 

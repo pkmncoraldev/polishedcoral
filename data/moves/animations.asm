@@ -176,7 +176,7 @@ BattleAnimations::
 	dw BattleAnim_Curse
 	dw BattleAnim_GyroBall
 	dw BattleAnim_EnergyBall
-	dw BattleAnim_Aeroblast
+	dw BattleAnim_Mimic
 	dw BattleAnim_SeedBomb
 	dw BattleAnim_Reversal
 	dw BattleAnim_Sludge
@@ -294,6 +294,7 @@ BattleAnim_DazzlinGleam:
 BattleAnim_ShadowBone:
 BattleAnim_PoisonFang:
 BattleAnim_KnockOff:
+BattleAnim_RockPolish:
 	anim_ret
 	
 BattleAnim_CottonGuard:
@@ -3259,6 +3260,7 @@ BattleAnim_Rage:
 	anim_ret
 
 BattleAnim_Agility:
+	anim_jumpif $1, BattleAnim_RockPolish
 	anim_1gfx ANIM_GFX_WIND
 	anim_obp0 $fc
 	anim_call BattleAnim_FollowEnemyFeet_0
@@ -3643,26 +3645,26 @@ BattleAnim_Conversion:
 	anim_wait 128
 	anim_ret
 
-BattleAnim_Aeroblast:
-	anim_2gfx ANIM_GFX_BEAM, ANIM_GFX_AEROBLAST
-	anim_bgp $1b
-	anim_bgeffect ANIM_BG_1F, $50, $4, $10
-	anim_bgeffect ANIM_BG_06, $0, $2, $0
-	anim_sound 0, 0, SFX_AEROBLAST
-	anim_obj ANIM_OBJ_B3,   9, 0,  11, 0, $0
-	anim_wait 32
-	anim_sound 0, 0, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_27,  10, 0,  10, 4, $0
-	anim_wait 2
-	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_27,  12, 0,   9, 4, $0
-	anim_wait 2
-	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_27,  14, 0,   8, 4, $0
-	anim_obj ANIM_OBJ_28,  15, 6,   7, 6, $0
-	anim_wait 48
-	anim_bgp $e4
-	anim_ret
+;BattleAnim_Aeroblast:
+;	anim_2gfx ANIM_GFX_BEAM, ANIM_GFX_AEROBLAST
+;	anim_bgp $1b
+;	anim_bgeffect ANIM_BG_1F, $50, $4, $10
+;	anim_bgeffect ANIM_BG_06, $0, $2, $0
+;	anim_sound 0, 0, SFX_AEROBLAST
+;	anim_obj ANIM_OBJ_B3,   9, 0,  11, 0, $0
+;	anim_wait 32
+;	anim_sound 0, 0, SFX_HYPER_BEAM
+;	anim_obj ANIM_OBJ_27,  10, 0,  10, 4, $0
+;	anim_wait 2
+;	anim_sound 0, 1, SFX_HYPER_BEAM
+;	anim_obj ANIM_OBJ_27,  12, 0,   9, 4, $0
+;	anim_wait 2
+;	anim_sound 0, 1, SFX_HYPER_BEAM
+;	anim_obj ANIM_OBJ_27,  14, 0,   8, 4, $0
+;	anim_obj ANIM_OBJ_28,  15, 6,   7, 6, $0
+;	anim_wait 48
+;	anim_bgp $e4
+;	anim_ret
 
 ; Seed Bomb animation from Pokémon Prism
 BattleAnim_SeedBomb:
@@ -5431,31 +5433,31 @@ BattleAnim_SweetScent: ; removed
 	anim_wait 128
 	anim_ret
 
-;BattleAnim_AcidArmor: ; removed
-;	anim_1gfx ANIM_GFX_HIT
-;	anim_call BattleAnim_FollowPlayerHead_0
-;	anim_bgeffect ANIM_BG_ACID_ARMOR, $0, $1, $8
-;	anim_sound 0, 0, SFX_MEGA_PUNCH
-;	anim_wait 64
-;	anim_incbgeffect ANIM_BG_ACID_ARMOR
-;	anim_call BattleAnim_ShowMon_0
-;	anim_ret
+BattleAnim_AcidArmor:
+	anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_FollowPlayerHead_0
+	anim_bgeffect ANIM_BG_ACID_ARMOR, $0, $1, $8
+	anim_sound 0, 0, SFX_MEGA_PUNCH
+	anim_wait 64
+	anim_incbgeffect ANIM_BG_ACID_ARMOR
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
 
-;BattleAnim_Mimic: ; removed
-;	anim_1gfx ANIM_GFX_SPEED
-;	anim_obp0 $fc
-;	anim_sound 63, 3, SFX_LICK
-;	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $0
-;	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $8
-;	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $10
-;	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $18
-;	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $20
-;	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $28
-;	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $30
-;	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $38
-;	anim_wait 128
-;	anim_wait 48
-;	anim_ret
+BattleAnim_Mimic:
+	anim_1gfx ANIM_GFX_SPEED
+	anim_obp0 $fc
+	anim_sound 63, 3, SFX_LICK
+	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $0
+	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $8
+	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $10
+	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $18
+	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $20
+	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $28
+	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $30
+	anim_obj ANIM_OBJ_65, -16, 4,   5, 4, $38
+	anim_wait 128
+	anim_wait 48
+	anim_ret
 
 BattleAnim_BoneClub:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_MISC
@@ -5550,7 +5552,7 @@ BattleAnim_CottonSpore: ; removed
 	anim_1gfx ANIM_GFX_MISC
 	anim_sound 0, 1, SFX_POWDER
 .loop
-	anim_obj ANIM_OBJ_81, -16, 4,   4, 0, $0
+	anim_obj ANIM_OBJ_COTTON_SPORE, -16, 4,   4, 0, $0
 	anim_wait 8
 	anim_loop 5, .loop
 	anim_wait 96

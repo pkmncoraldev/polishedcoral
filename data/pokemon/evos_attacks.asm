@@ -199,7 +199,7 @@ PidgeyEvosAttacks:
 	db 21, TWISTER
 	db 25, CHARM_FEATHER_DANCE
 	db 27, WING_ATTACK
-	db 29, AGILITY
+	db 29, AGILITY_ROCK_POLISH
 	db 33, ROOST
 	db 41, MIRROR_MOVE
 	db 45, AIR_SLASH
@@ -217,7 +217,7 @@ PidgeottoEvosAttacks:
 	db 23, TWISTER
 	db 27, CHARM_FEATHER_DANCE
 	db 29, WING_ATTACK
-	db 31, AGILITY
+	db 31, AGILITY_ROCK_POLISH
 	db 35, ROOST
 	db 43, MIRROR_MOVE
 	db 47, AIR_SLASH
@@ -234,7 +234,7 @@ PidgeotEvosAttacks:
 	db  1, TWISTER
 	db  1, CHARM_FEATHER_DANCE
 	db  1, WING_ATTACK
-	db  1, AGILITY
+	db  1, AGILITY_ROCK_POLISH
 	db  1, ROOST
 	db 44, MIRROR_MOVE
 	db 48, AIR_SLASH
@@ -341,25 +341,75 @@ NidokingEvosAttacks:
 
 ClefairyEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, CLEFABLE
-	db 0 ; no more evolutions
-	db  1, SYNTHESIS_MOONLIGHT_MORNING_SUN
+	db  0 ; no more evolutions
+	db  1, FAIRY_WIND
+	db  1, TACKLE_SCRATCH_POUND
+	db  1, GROWL
+	db  1, ENCORE
+	db  8, SING
+	db 13, DOUBLE_SLAP
+	db 17, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 22, BODY_SLAM
+	db 26, MINIMIZE
+	db 32, METRONOME
+;	db 36, COSMIC_POWER
+	db 40, CHARM_FEATHER_DANCE
+	db 45, SYNTHESIS_MOONLIGHT_MORNING_SUN
+	db 50, MOONBLAST
 	db  0 ; no more level-up moves
 
 ClefableEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
+	db  0 ; no more evolutions
+	db  1, FAIRY_WIND
+	db  1, TACKLE_SCRATCH_POUND
+	db  1, GROWL
+	db  1, ENCORE
+	db  1, SING
+	db  1, DOUBLE_SLAP
+	db  1, DEFENSE_CURL_HARDEN_WITHDRAW
+	db  1, BODY_SLAM
+	db  1, MINIMIZE
+	db  1, METRONOME
+;	db  1, COSMIC_POWER
+	db  1, CHARM_FEATHER_DANCE
+	db  1, SYNTHESIS_MOONLIGHT_MORNING_SUN
+	db  1, MOONBLAST
+	db  0 ; no more level-up moves
 
 JigglypuffEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, WIGGLYTUFF
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
+	db  0 ; no more evolutions
+	db  1, SING
+	db  3, DEFENSE_CURL_HARDEN_WITHDRAW
+	db  5, TACKLE_SCRATCH_POUND
+	db  9, FAIRY_WIND
+	db 13, DISABLE
+	db 17, DOUBLE_SLAP
+	db 20, ROLLOUT
+	db 26, REST
+	db 30, BODY_SLAM
+	db 34, GYRO_BALL
+	db 39, MIMIC
+	db 42, HYPER_VOICE
+	db 46, DOUBLE_EDGE
+	db  0 ; no more level-up moves
 
 WigglytuffEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
+	db  0 ; no more evolutions
+	db  1, SING
+	db  1, DEFENSE_CURL_HARDEN_WITHDRAW
+	db  1, TACKLE_SCRATCH_POUND
+	db  1, FAIRY_WIND
+	db  1, DISABLE
+	db  1, DOUBLE_SLAP
+	db  1, ROLLOUT
+	db  1, REST
+	db  1, BODY_SLAM
+	db  1, GYRO_BALL
+	db  1, MIMIC
+	db  1, HYPER_VOICE
+	db  1, DOUBLE_EDGE
+	db  0 ; no more level-up moves
 
 ZubatEvosAttacks:
 	db EVOLVE_LEVEL, 22, GOLBAT
@@ -444,12 +494,13 @@ GrowlitheEvosAttacks:
 	db  1, ROAR_WHIRLWIND
 	db  6, EMBER
 	db  8, LEER_TAIL_WHIP
+	db 10, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db 16, FLAME_WHEEL
 	db 19, REVERSAL
 	db 21, FIRE_FANG
 	db 24, TAKE_DOWN
 	db 28, FLAME_CHARGE
-	db 30, AGILITY
+	db 30, AGILITY_ROCK_POLISH
 	db 34, FLAMETHROWER
 	db 38, CRUNCH
 	db 43, OUTRAGE
@@ -463,6 +514,7 @@ ArcanineEvosAttacks:
 	db  1, THUNDER_FANG
 	db  1, BITE
 	db  1, ROAR_WHIRLWIND
+	db  1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db  1, EMBER
 	db  1, LEER_TAIL_WHIP
 	db  1, FLAME_WHEEL
@@ -470,7 +522,7 @@ ArcanineEvosAttacks:
 	db  1, FIRE_FANG
 	db  1, TAKE_DOWN
 	db  1, FLAME_CHARGE
-	db  1, AGILITY
+	db  1, AGILITY_ROCK_POLISH
 	db  1, FLAMETHROWER
 	db  1, CRUNCH
 	db  1, OUTRAGE
@@ -565,7 +617,7 @@ GeodudeEvosAttacks:
 	db  0 ; no more evolutions
 	db  1, TACKLE_SCRATCH_POUND
 	db  1, DEFENSE_CURL_HARDEN_WITHDRAW
-	db  6, AGILITY
+	db  6, AGILITY_ROCK_POLISH
 	db 10, ROCK_THROW
 	db 12, MAGNITUDE
 	db 16, ROLLOUT
@@ -583,7 +635,7 @@ GravelerEvosAttacks:
 	db  0 ; no more evolutions
 	db  1, TACKLE_SCRATCH_POUND
 	db  1, DEFENSE_CURL_HARDEN_WITHDRAW
-	db  1, AGILITY
+	db  1, AGILITY_ROCK_POLISH
 	db  1, ROCK_THROW
 	db  1, MAGNITUDE
 	db  1, ROLLOUT
@@ -599,7 +651,7 @@ GolemEvosAttacks:
 	db  0 ; no more evolutions
 	db  1, TACKLE_SCRATCH_POUND
 	db  1, DEFENSE_CURL_HARDEN_WITHDRAW
-	db  1, AGILITY
+	db  1, AGILITY_ROCK_POLISH
 	db  1, ROCK_THROW
 	db  1, MAGNITUDE
 	db  1, ROLLOUT
@@ -1108,7 +1160,7 @@ LedybaEvosAttacks:
 	db 19, SIGNAL_BEAM
 	db 22, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 26, BATON_PASS
-	db 29, AGILITY
+	db 29, AGILITY_ROCK_POLISH
 	db 33, BUG_BUZZ
 	db 36, AIR_SLASH
 	db 38, DOUBLE_EDGE
@@ -1127,7 +1179,7 @@ LedianEvosAttacks:
 	db 20, SIGNAL_BEAM
 	db 24, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 29, BATON_PASS
-	db 33, AGILITY
+	db 33, AGILITY_ROCK_POLISH
 	db 38, BUG_BUZZ
 	db 42, AIR_SLASH
 	db 47, DOUBLE_EDGE
@@ -1520,7 +1572,7 @@ BuizelEvosAttacks:
 	db 27, DOUBLE_HIT
 	db 34, AQUA_TAIL
 	db 41, CRUNCH
-	db 46, AGILITY
+	db 46, AGILITY_ROCK_POLISH
 	db 52, HYDRO_PUMP
 	db  0 ; no more level-up moves
 	
@@ -1537,7 +1589,7 @@ FloatzelEvosAttacks:
 	db  1, DOUBLE_HIT
 	db 36, AQUA_TAIL
 	db 43, CRUNCH
-	db 49, AGILITY
+	db 49, AGILITY_ROCK_POLISH
 	db 55, HYDRO_PUMP
 	db  0 ; no more level-up moves
 	

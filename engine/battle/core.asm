@@ -10,6 +10,7 @@ DoBattle: ; 3c000
 	ld [wInverseBattleScore], a
 	ld [wPlayerEndturnSwitched], a
 	ld [wEnemyEndturnSwitched], a
+	ld [wMirrorMoveUsed], a
 	inc a
 	ld [wBattleHasJustStarted], a
 	ld hl, wOTPartyMon1HP

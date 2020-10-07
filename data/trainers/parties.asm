@@ -2374,10 +2374,9 @@ TeacherFastGroup:
 
 	; TEACHER_FAST
 	db "KATE@"
-	db TRAINERTYPE_MOVES
+	db TRAINERTYPE_ITEM
 	; party
-	db 1, MEOWTH
-		db TACKLE_SCRATCH_POUND, 0, 0, 0
+	db 1, MEOWTH, QUICK_CLAW
 	db -1 ; end
 
 ; ================

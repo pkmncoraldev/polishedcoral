@@ -3,6 +3,9 @@ DoPlayerTurn: ; 34000
 	
 	ld a, [wBattleMonSpecies]
 	ld [wCurPartySpecies], a
+	
+	xor a
+	ld [wMirrorMoveUsed], a
 
 	ld a, [wBattlePlayerAction]
 	and a
@@ -23,6 +26,9 @@ DoEnemyTurn: ; 3400a
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurPartySpecies], a
 
+	xor a
+	ld [wMirrorMoveUsed], a
+	
 	ld a, [wBattleType]
 	cp BATTLETYPE_GHOST
 	jr nz, .not_ghost

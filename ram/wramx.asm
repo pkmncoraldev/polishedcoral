@@ -299,7 +299,9 @@ ENDU
 wEncounterHouse:: ds 1
 wEncounterHouseMon:: ds 1
 
-	ds 3 ; unused
+	ds 2 ; unused
+	
+wMirrorMoveUsed:: ds 1
 
 wCurIconMonHasItemOrMail:: ds 1
 

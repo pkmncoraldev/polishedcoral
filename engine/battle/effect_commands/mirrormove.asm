@@ -44,18 +44,7 @@ MirrorMoveCommand:
 	
 	dec a
 	call GetMoveData
-	
-	ld a, [wNamedObjectIndexBuffer]
-	ld [wCurMove], a
-	push hl
-	push de
-	farcall CheckMultiMoveSlot
-	jr nc, .not_multi_move_slot
-	pop de
-	pop hl
-	farcall GetMultiMoveSlotName
-	call CopyName1
-	
+	push af
 	ld a, [hBattleTurn] ; Get user move name information. wStringBuffer1
 	and a
 	ld a, [wEnemyMonSpecies]
@@ -63,12 +52,13 @@ MirrorMoveCommand:
 	ld a, [wBattleMonSpecies]
 .got_user_species
 	ld [wCurPartySpecies], a
+	ld a, 1
+	ld [wMirrorMoveUsed], a
+	pop af
+	farcall GetMultiMoveSlotName
+	call CopyName1
 	ld a, [wEnemyMonSpecies]
 	ld [wCurPartySpecies], a
-	ld a, [wNamedObjectIndexBuffer]
-	ld [wCurMove], a
-	farcall GetMultiMoveSlotName
-	
 	call CheckUserIsCharging
 	jr nz, .done1
 
@@ -79,21 +69,12 @@ MirrorMoveCommand:
 	ld [wKickCounter], a
 
 .done1
-	ld hl, wStringBuffer1
-	ld a, [hli]
-	ld b, a
-	ld hl, wStringBuffer2
-	ld a, [hli]
-	cp b
-	ret z
-	
 	call BattleCommand_movedelay
-	ld hl, SketchedText2
-	call StdBattleTextBox
-
 	jp ResetTurn
 	
 .not_multi_move_slot
+	pop de
+	pop hl
 	pop af
 
 	dec a

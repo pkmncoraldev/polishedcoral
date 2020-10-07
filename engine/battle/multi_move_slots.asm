@@ -1345,8 +1345,19 @@ GetMultiMoveSlotName::
 .end
 	ret
 
-CheckTackleThing::  ;moved here because out of room oops
+CheckTackleThing::
 	push de
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip1
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species
+	
+.skip1
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
@@ -1361,6 +1372,17 @@ CheckTackleThing::  ;moved here because out of room oops
 	ret
 .not_pound
 	push de
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species2
+	
+.skip2
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
@@ -1378,7 +1400,7 @@ CheckTackleThing::  ;moved here because out of room oops
 	ld [wKickCounter], a
 	ret
 
-CheckFuryStrikesThing::  ;moved here because out of room oops
+CheckFuryStrikesThing::
 	push de
 	ld a, [hBattleTurn]
 	and a

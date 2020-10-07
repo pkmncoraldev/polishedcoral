@@ -2995,7 +2995,7 @@ BattleAnim_Detect: ; removed
 	anim_1gfx ANIM_GFX_SHINE
 	anim_bgeffect ANIM_BG_07, $0, $0, $0
 	anim_sound 0, 0, SFX_FORESIGHT
-	anim_obj ANIM_OBJ_A7,   8, 0,  11, 0, $0
+	anim_obj ANIM_OBJ_FORESIGHT,   8, 0,  11, 0, $0
 	anim_wait 24
 	anim_ret
 
@@ -3338,6 +3338,7 @@ BattleAnim_Fissure: ; removed
 
 BattleAnim_Barrier:
 	anim_jumpif $1, BattleAnim_IronDefense
+	anim_jumpif $2, BattleAnim_AcidArmor
 	anim_1gfx ANIM_GFX_REFLECT
 	anim_enemyfeetobj
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
@@ -3678,14 +3679,14 @@ BattleAnim_Conversion:
 	anim_1gfx ANIM_GFX_EXPLOSION
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
 	anim_sound 63, 3, SFX_SHARPEN
-	anim_obj ANIM_OBJ_91,   6, 0,  11, 0, $0
-	anim_obj ANIM_OBJ_91,   6, 0,  11, 0, $8
-	anim_obj ANIM_OBJ_91,   6, 0,  11, 0, $10
-	anim_obj ANIM_OBJ_91,   6, 0,  11, 0, $18
-	anim_obj ANIM_OBJ_91,   6, 0,  11, 0, $20
-	anim_obj ANIM_OBJ_91,   6, 0,  11, 0, $28
-	anim_obj ANIM_OBJ_91,   6, 0,  11, 0, $30
-	anim_obj ANIM_OBJ_91,   6, 0,  11, 0, $38
+	anim_obj ANIM_OBJ_CONVERSION,   6, 0,  11, 0, $0
+	anim_obj ANIM_OBJ_CONVERSION,   6, 0,  11, 0, $8
+	anim_obj ANIM_OBJ_CONVERSION,   6, 0,  11, 0, $10
+	anim_obj ANIM_OBJ_CONVERSION,   6, 0,  11, 0, $18
+	anim_obj ANIM_OBJ_CONVERSION,   6, 0,  11, 0, $20
+	anim_obj ANIM_OBJ_CONVERSION,   6, 0,  11, 0, $28
+	anim_obj ANIM_OBJ_CONVERSION,   6, 0,  11, 0, $30
+	anim_obj ANIM_OBJ_CONVERSION,   6, 0,  11, 0, $38
 	anim_wait 128
 	anim_ret
 
@@ -3767,19 +3768,19 @@ BattleAnim_Reversal:
 	anim_obj ANIM_OBJ_04,  14, 0,   8, 0, $0
 	anim_wait 2
 	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_A7,  15, 0,   7, 0, $0
+	anim_obj ANIM_OBJ_FORESIGHT,  15, 0,   7, 0, $0
 	anim_wait 2
 	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_obj ANIM_OBJ_04,  16, 0,   7, 0, $0
 	anim_wait 2
 	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_A7, -15, 0,   6, 0, $0
+	anim_obj ANIM_OBJ_FORESIGHT, -15, 0,   6, 0, $0
 	anim_wait 2
 	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_obj ANIM_OBJ_04, -14, 0,   6, 0, $0
 	anim_wait 2
 	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_A7, -13, 0,   5, 0, $0
+	anim_obj ANIM_OBJ_FORESIGHT, -13, 0,   5, 0, $0
 	anim_wait 24
 	anim_ret
 
@@ -4062,7 +4063,7 @@ BattleAnim_Foresight:
 	anim_call BattleAnim_FollowEnemyFeet_1
 	anim_bgeffect ANIM_BG_07, $0, $0, $0
 	anim_sound 0, 1, SFX_FORESIGHT
-	anim_obj ANIM_OBJ_A7, -16, 4,   5, 0, $0
+	anim_obj ANIM_OBJ_FORESIGHT, -16, 4,   5, 0, $0
 	anim_wait 24
 	anim_bgeffect ANIM_BG_19, $0, $0, $40
 	anim_wait 64
@@ -4413,15 +4414,15 @@ BattleAnim_MeanLook:
 	anim_1gfx ANIM_GFX_PSYCHIC
 	anim_obp0 $e0
 	anim_sound 0, 1, SFX_MEAN_LOOK
-	anim_obj ANIM_OBJ_AC, -14, 4,   4, 0, $0
+	anim_obj ANIM_OBJ_MEAN_LOOK, -14, 4,   4, 0, $0
 	anim_wait 5
-	anim_obj ANIM_OBJ_AC,  14, 4,   8, 0, $0
+	anim_obj ANIM_OBJ_MEAN_LOOK,  14, 4,   8, 0, $0
 	anim_wait 5
-	anim_obj ANIM_OBJ_AC, -14, 4,   8, 0, $0
+	anim_obj ANIM_OBJ_MEAN_LOOK, -14, 4,   8, 0, $0
 	anim_wait 5
-	anim_obj ANIM_OBJ_AC,  14, 4,   4, 0, $0
+	anim_obj ANIM_OBJ_MEAN_LOOK,  14, 4,   4, 0, $0
 	anim_wait 5
-	anim_obj ANIM_OBJ_AC, -16, 4,   6, 0, $0
+	anim_obj ANIM_OBJ_MEAN_LOOK, -16, 4,   6, 0, $0
 	anim_wait 128
 	anim_ret
 

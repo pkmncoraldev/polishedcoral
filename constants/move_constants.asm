@@ -111,7 +111,7 @@
 	const CONFUSE_RAY  ; $6d
 	const AQUA_TAIL    ; $6e
 	const DEFENSE_CURL_HARDEN_WITHDRAW 			; $6f
-	const BARRIER_IRON_DEFENSE      			; $70
+	const BARRIER_IRON_DEFENSE_ACID_ARMOR      			; $70
 	const LIGHT_SCREEN ; $71
 	const HAZE         ; $72
 	const REFLECT      ; $73

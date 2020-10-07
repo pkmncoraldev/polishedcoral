@@ -232,8 +232,18 @@ GetBarrierName::
 	rst CopyBytes
 	jr .done
 .not_iron_defense
+	call CheckAcidArmorUsers
+	jr nc, .not_acid_armor
 	ld hl, BarrierNames
 	ld a, 1
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	jr .done
+.not_acid_armor
+	ld hl, BarrierNames
+	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
 	ld bc, ITEM_NAME_LENGTH
@@ -261,8 +271,15 @@ GetMoveNameBarrier:: ; 34f8
 	jr .done
 	
 .not_iron_defense
+	call CheckAcidArmorUsers
+	jr nc, .not_acid_armor
 	ld hl, BarrierNames
 	ld a, 1
+	jr .done
+	
+.not_acid_armor
+	ld hl, BarrierNames
+	ld a, 2
 	
 .done
 	call GetNthString
@@ -1141,6 +1158,14 @@ CheckIronDefenseUsers2::
 	call IsInArray
 	ret
 	
+CheckAcidArmorUsers::
+	ld a, [wCurPartySpecies]
+CheckAcidArmorUsers2::
+	ld hl, AcidArmorUsers
+	ld de, 1
+	call IsInArray
+	ret
+	
 CheckMindReaderUsers::
 	ld a, [wCurPartySpecies]
 CheckMindReaderUsers2::
@@ -1292,7 +1317,7 @@ GetMultiMoveSlotName::
 	jr z, .defense_curl
 	cp LEER_TAIL_WHIP
 	jr z, .leer
-	cp BARRIER_IRON_DEFENSE
+	cp BARRIER_IRON_DEFENSE_ACID_ARMOR
 	jr z, .barrier
 	cp LOCK_ON_MIND_READER
 	jr z, .lock_on
@@ -1549,26 +1574,48 @@ CheckLeerThing::
 CheckBarrierThing::
 	ld a, [wMirrorMoveUsed]
 	and a
-	jr z, .skip
+	jr z, .skip1
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
-	jr z, .got_user_species
+	jr z, .got_user_species1
 	ld a, [wBattleMonSpecies]
-	jr .got_user_species
+	jr .got_user_species1
 	
-.skip
+.skip1
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
-	jr z, .got_user_species
+	jr z, .got_user_species1
 	ld a, [wEnemyMonSpecies]
-.got_user_species
+.got_user_species1
 	farcall CheckIronDefenseUsers2
 	jr nc, .not_iron_defense
 	ld a, $1
 	ret
 .not_iron_defense
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species2
+	
+.skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wEnemyMonSpecies]
+.got_user_species2
+	farcall CheckAcidArmorUsers2
+	jr nc, .not_acid_armor
+	ld a, $2
+	ret
+.not_acid_armor
 	ret
 	
 CheckSharpenThing::
@@ -1862,6 +1909,10 @@ IronDefenseUsers:
 	db BLASTOISE
 	db -1
 	
+AcidArmorUsers:
+	db SMEARGLE
+	db -1
+	
 MeditateUsers:
 	db MEDITITE
 	db MEDICHAM
@@ -1962,6 +2013,7 @@ LeerNames:
 	
 BarrierNames:
 	db "IRON DEFENSE@"
+	db "ACID ARMOR"
 	db "BARRIER@"
 	db -1
 	
@@ -2034,7 +2086,7 @@ MultiSlotMoves:
 	db TACKLE_SCRATCH_POUND
 	db DEFENSE_CURL_HARDEN_WITHDRAW
 	db LEER_TAIL_WHIP
-	db BARRIER_IRON_DEFENSE
+	db BARRIER_IRON_DEFENSE_ACID_ARMOR
 	db LOCK_ON_MIND_READER
 	db SHARPEN_HOWL_MEDITATE
 	db FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
@@ -2057,7 +2109,7 @@ MultiSlotMoveTypes::
 	ld a, [wCurMove]
 	cp DEFENSE_CURL_HARDEN_WITHDRAW
 	jr z, .defense_curl
-	cp BARRIER_IRON_DEFENSE
+	cp BARRIER_IRON_DEFENSE_ACID_ARMOR
 	jr z, .barrier
 	cp SHARPEN_HOWL_MEDITATE
 	jr z, .sharpen
@@ -2066,7 +2118,7 @@ MultiSlotMoveTypes::
 	cp MEAN_LOOK_BLOCK_SPIDER_WEB
 	jr z, .mean_look
 	cp SAND_ATTACK_SMOKESCREEN
-	jr z, .sand_attack
+	jp z, .sand_attack
 	cp SCARY_FACE_COTTON_SPORE
 	jp z, .scary_face
 	cp FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
@@ -2106,6 +2158,14 @@ MultiSlotMoveTypes::
 	pop hl
 	ret
 .not_iron_defense
+	call CheckAcidArmorUsers
+	jr nc, .not_acid_armor
+	ld a, POISON
+	pop de
+	pop bc
+	pop hl
+	ret
+.not_acid_armor
 	ld a, PSYCHIC
 	pop de
 	pop bc

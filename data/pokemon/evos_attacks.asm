@@ -154,7 +154,7 @@ WartortleEvosAttacks:
 
 BlastoiseEvosAttacks:
 	db  0 ; no more evolutions
-	db  1, BARRIER_IRON_DEFENSE
+	db  1, BARRIER_IRON_DEFENSE_ACID_ARMOR
 	db  1, TACKLE_SCRATCH_POUND
 	db  1, LEER_TAIL_WHIP
 	db  1, WATER_GUN

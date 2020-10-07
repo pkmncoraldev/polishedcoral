@@ -3522,7 +3522,7 @@ ListMoves: ; 50d6f
 	farcall GetLeerName
 	jp .cont
 .not_leer
-	cp BARRIER_IRON_DEFENSE
+	cp BARRIER_IRON_DEFENSE_ACID_ARMOR
 	jr nz, .not_barrier
 	farcall GetBarrierName
 	jp .cont

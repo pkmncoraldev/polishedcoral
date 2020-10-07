@@ -2349,7 +2349,7 @@ StatUpDownAnim: ; 34feb
 	farcall CheckLeerThing
 	jr .got_kick_counter
 .not_leer
-	cp BARRIER_IRON_DEFENSE
+	cp BARRIER_IRON_DEFENSE_ACID_ARMOR
 	jr nz, .not_barrier
 	farcall CheckBarrierThing
 	jr .got_kick_counter

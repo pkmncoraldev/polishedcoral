@@ -10,12 +10,12 @@ GlintGrove_MapScriptHeader:
 	db 4 ; warp events
 	warp_def 57, 27, 1, GLINT_GROVE_ENTRANCE
 	warp_def 57, 26, 2, GLINT_GROVE_ENTRANCE
-	warp_def 46, 49, 1, GLINT_GROVE_DEEP
-	warp_def 46, 48, 2, GLINT_GROVE_DEEP
+	warp_def 46, 45, 1, GLINT_GROVE_DEEP
+	warp_def 46, 44, 2, GLINT_GROVE_DEEP
 
 	db 9 ; coord events
-	xy_trigger 0, 47, 48, 0, GlintGroveTrioTrigger1, 0, 0
-	xy_trigger 0, 47, 49, 0, GlintGroveTrioTrigger2, 0, 0
+	xy_trigger 0, 47, 44, 0, GlintGroveTrioTrigger1, 0, 0
+	xy_trigger 0, 47, 45, 0, GlintGroveTrioTrigger2, 0, 0
 	xy_trigger 0, 44, 24, 0, GlintGrovePile1, 0, 0
 	xy_trigger 0, 38,  9, 0, GlintGrovePile2, 0, 0
 	xy_trigger 0, 38, 32, 0, GlintGrovePile3, 0, 0
@@ -39,10 +39,10 @@ GlintGrove_MapScriptHeader:
 	person_event SPRITE_CHILD, 53, 22, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveNPC2, -1
 	person_event SPRITE_BATTLE_GIRL, 33, 16, SPRITEMOVEDATA_WANDER, 1, 3, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintGroveNPC3, -1
 	person_event SPRITE_POKEMANIAC, 52, 31, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GlintGroveNPC4, -1
-	person_event SPRITE_ROCKER, 50, 48, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveTrioRed, EVENT_TRIO_BROS
-	person_event SPRITE_ROCKER, 48, 51, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintGroveTrioBlue, EVENT_TRIO_BROS
-	person_event SPRITE_ROCKER, 48, 46, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, GlintGroveTrioYellow, EVENT_TRIO_BROS
-	itemball_event  11, 17, PARALYZEHEAL, 1, EVENT_GLINT_GROVE_POKE_BALL
+	person_event SPRITE_ROCKER, 50, 44, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveTrioRed, EVENT_TRIO_BROS
+	person_event SPRITE_ROCKER, 48, 47, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintGroveTrioBlue, EVENT_TRIO_BROS
+	person_event SPRITE_ROCKER, 48, 42, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, GlintGroveTrioYellow, EVENT_TRIO_BROS
+	itemball_event 10, 19, PARALYZEHEAL, 1, EVENT_GLINT_GROVE_POKE_BALL
 	person_event SPRITE_ELDER, 44, 29, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintGrovePetalMan, -1
 	person_event SPRITE_MISC_OVERHEAD, -1, -1, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_GENERICTRAINER, 1, 0, -1
 	

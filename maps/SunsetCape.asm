@@ -12,7 +12,7 @@ SunsetCape_MapScriptHeader:
 
 	db 2 ; bg events
 	signpost 11, 6, SIGNPOST_READ, SunsetCapeSign
-	signpost 27, 8, SIGNPOST_READ, SunsetLighthouseSign
+	signpost 27,  5, SIGNPOST_READ, SunsetLighthouseSign
 
 	db 15 ; object events
 	person_event SPRITE_GRAMPS, 32, 6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, 1<<MORN, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunsetCapeNpc1, -1

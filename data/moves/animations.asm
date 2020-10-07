@@ -285,8 +285,6 @@ BattleAnim_MirrorMove:
 BattleAnim_0:
 BattleAnim_FairyWind:
 BattleAnim_WorkUp:
-BattleAnim_OdorSleuth:
-BattleAnim_MiracleEye:
 BattleAnim_RockClimb:
 BattleAnim_Hex:
 BattleAnim_DazzlinGleam:
@@ -295,6 +293,43 @@ BattleAnim_PoisonFang:
 BattleAnim_KnockOff:
 BattleAnim_RockPolish:
 	anim_ret
+	
+BattleAnim_MiracleEye:
+    anim_2gfx ANIM_GFX_PSYCHIC, ANIM_GFX_EXPLOSION
+    anim_sound 0, 1, SFX_MEAN_LOOK
+    anim_obj ANIM_OBJ_MEAN_LOOK, 48, 88, $0
+    anim_wait 16
+    anim_bgeffect ANIM_BG_18, $0, $0, $40
+    anim_sound 63, 3, SFX_SHARPEN
+    anim_obj ANIM_OBJ_CONVERSION, 132, 48, $0
+    anim_obj ANIM_OBJ_CONVERSION, 132, 48, $8
+    anim_obj ANIM_OBJ_CONVERSION, 132, 48, $10
+    anim_obj ANIM_OBJ_CONVERSION, 132, 48, $18
+    anim_obj ANIM_OBJ_CONVERSION, 132, 48, $20
+    anim_obj ANIM_OBJ_CONVERSION, 132, 48, $28
+    anim_obj ANIM_OBJ_CONVERSION, 132, 48, $30
+    anim_obj ANIM_OBJ_CONVERSION, 132, 48, $38
+    anim_wait 128
+    anim_incbgeffect ANIM_BG_18
+    anim_ret
+	
+BattleAnim_OdorSleuth:
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_SHINE
+    anim_call BattleAnim_FollowEnemyFeet_1
+    anim_sound 0, 0, SFX_TAIL_WHIP
+    anim_bgeffect ANIM_BG_26, $0, $0, $0
+.loop
+    anim_sound 0, 0, SFX_RAZOR_WIND
+    anim_wait 8
+    anim_loop 4, .loop
+    anim_wait 64
+    anim_incbgeffect ANIM_BG_26
+    anim_call BattleAnim_ShowMon_1
+    anim_wait 24
+    anim_sound 0, 0, SFX_FORESIGHT
+    anim_obj ANIM_OBJ_FORESIGHT, 64, 88, $0
+    anim_wait 24
+    anim_ret
 	
 BattleAnim_DoubleHit:
 	anim_1gfx ANIM_GFX_HIT

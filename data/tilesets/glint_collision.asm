@@ -181,7 +181,7 @@
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; b4
 	tilecoll FLOOR, PUDDLE, FLOOR, PUDDLE ; b5
 	tilecoll WALL, WALL, WALL, DOOR ; b6
-	tilecoll WALL, FLOOR, WALL, FLOOR ; b7
+	tilecoll WALL, FLOOR, WALL, WALL ; b7
 	tilecoll WALL, WALL, WALL, WALL ; b8
 	tilecoll WALL, WALL, WALL, WALL ; b9
 	tilecoll WATERFALL, WATERFALL, WATERFALL, WATERFALL ; ba

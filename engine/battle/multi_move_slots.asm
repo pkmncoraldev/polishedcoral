@@ -1111,6 +1111,7 @@ CheckScratchUsers2::
 	
 CheckWithdrawUsers::
 	ld a, [wCurPartySpecies]
+CheckWithdrawUsers2::
 	ld hl, WithdrawUsers
 	ld de, 1
 	call IsInArray
@@ -1118,6 +1119,7 @@ CheckWithdrawUsers::
 	
 CheckHardenUsers::
 	ld a, [wCurPartySpecies]
+CheckHardenUsers2::
 	ld hl, HardenUsers
 	ld de, 1
 	call IsInArray
@@ -1125,6 +1127,7 @@ CheckHardenUsers::
 	
 CheckTailWhipUsers::
 	ld a, [wCurPartySpecies]
+CheckTailWhipUsers2::
 	ld hl, TailWhipUsers
 	ld de, 1
 	call IsInArray
@@ -1132,6 +1135,7 @@ CheckTailWhipUsers::
 	
 CheckIronDefenseUsers::
 	ld a, [wCurPartySpecies]
+CheckIronDefenseUsers2::
 	ld hl, IronDefenseUsers
 	ld de, 1
 	call IsInArray
@@ -1139,6 +1143,7 @@ CheckIronDefenseUsers::
 	
 CheckMindReaderUsers::
 	ld a, [wCurPartySpecies]
+CheckMindReaderUsers2::
 	ld hl, MindReaderUsers
 	ld de, 1
 	call IsInArray
@@ -1146,6 +1151,7 @@ CheckMindReaderUsers::
 	
 CheckMeditateUsers::
 	ld a, [wCurPartySpecies]
+CheckMeditateUsers2::
 	ld hl, MeditateUsers
 	ld de, 1
 	call IsInArray
@@ -1153,6 +1159,7 @@ CheckMeditateUsers::
 	
 CheckHowlUsers::
 	ld a, [wCurPartySpecies]
+CheckHowlUsers2::
 	ld hl, HowlUsers
 	ld de, 1
 	call IsInArray
@@ -1176,6 +1183,7 @@ CheckCometPunchUsers2::
 	
 CheckMoonlightUsers::
 	ld a, [wCurPartySpecies]
+CheckMoonlightUsers2::
 	ld hl, MoonlightUsers
 	ld de, 1
 	call IsInArray
@@ -1183,6 +1191,7 @@ CheckMoonlightUsers::
 	
 CheckMorningSunUsers::
 	ld a, [wCurPartySpecies]
+CheckMorningSunUsers2::
 	ld hl, MorningSunUsers
 	ld de, 1
 	call IsInArray
@@ -1190,6 +1199,7 @@ CheckMorningSunUsers::
 	
 CheckBlockUsers::
 	ld a, [wCurPartySpecies]
+CheckBlockUsers2::
 	ld hl, BlockUsers
 	ld de, 1
 	call IsInArray
@@ -1197,20 +1207,15 @@ CheckBlockUsers::
 	
 CheckSpiderWebUsers::
 	ld a, [wCurPartySpecies]
+CheckSpiderWebUsers2::
 	ld hl, SpiderWebUsers
-	ld de, 1
-	call IsInArray
-	ret
-	
-CheckMultiMoveSlot::
-	ld a, [wCurMove]
-	ld hl, MultiSlotMoves
 	ld de, 1
 	call IsInArray
 	ret
 	
 CheckFeatherDanceUsers::
 	ld a, [wCurPartySpecies]
+CheckFeatherDanceUsers2::
 	ld hl, FeatherDanceUsers
 	ld de, 1
 	call IsInArray
@@ -1218,6 +1223,7 @@ CheckFeatherDanceUsers::
 	
 CheckCottonSporeUsers::
 	ld a, [wCurPartySpecies]
+CheckCottonSporeUsers2::
 	ld hl, CottonSporeUsers
 	ld de, 1
 	call IsInArray
@@ -1225,6 +1231,7 @@ CheckCottonSporeUsers::
 	
 CheckWhirlwindUsers::
 	ld a, [wCurPartySpecies]
+CheckWhirlwindUsers2::
 	ld hl, WhirlwindUsers
 	ld de, 1
 	call IsInArray
@@ -1232,6 +1239,7 @@ CheckWhirlwindUsers::
 	
 CheckSmokescreenUsers::
 	ld a, [wCurPartySpecies]
+CheckSmokescreenUsers2::
 	ld hl, SmokescreenUsers
 	ld de, 1
 	call IsInArray
@@ -1239,6 +1247,7 @@ CheckSmokescreenUsers::
 	
 CheckMilkDrinkUsers::
 	ld a, [wCurPartySpecies]
+CheckMilkDrinkUsers2::
 	ld hl, MilkDrinkUsers
 	ld de, 1
 	call IsInArray
@@ -1246,6 +1255,7 @@ CheckMilkDrinkUsers::
 	
 CheckOdorSleuthUsers::
 	ld a, [wCurPartySpecies]
+CheckOdorSleuthUsers2::
 	ld hl, OdorSleuthUsers
 	ld de, 1
 	call IsInArray
@@ -1253,6 +1263,7 @@ CheckOdorSleuthUsers::
 	
 CheckMiracleEyeUsers::
 	ld a, [wCurPartySpecies]
+CheckMiracleEyeUsers2::
 	ld hl, MiracleEyeUsers
 	ld de, 1
 	call IsInArray
@@ -1260,7 +1271,15 @@ CheckMiracleEyeUsers::
 	
 CheckRockPolishUsers::
 	ld a, [wCurPartySpecies]
+CheckRockPolishUsers2::
 	ld hl, RockPolishUsers
+	ld de, 1
+	call IsInArray
+	ret
+	
+CheckMultiMoveSlot::
+	ld a, [wCurMove]
+	ld hl, MultiSlotMoves
 	ld de, 1
 	call IsInArray
 	ret
@@ -1353,17 +1372,17 @@ CheckTackleThing::
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
-	jr z, .got_user_species
+	jr z, .got_user_species1
 	ld a, [wBattleMonSpecies]
-	jr .got_user_species
+	jr .got_user_species1
 	
 .skip1
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
-	jr z, .got_user_species
+	jr z, .got_user_species1
 	ld a, [wEnemyMonSpecies]
-.got_user_species
+.got_user_species1
 	farcall CheckPoundUsers2
 	pop de
 	jr nc, .not_pound
@@ -1402,12 +1421,23 @@ CheckTackleThing::
 
 CheckFuryStrikesThing::
 	push de
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip1
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species1
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species1
+	
+.skip1
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
-	jr z, .got_user_species3
+	jr z, .got_user_species1
 	ld a, [wEnemyMonSpecies]
-.got_user_species3
+.got_user_species1
 	farcall CheckFuryAttackUsers2
 	pop de
 	jr nc, .not_fury_attack
@@ -1416,12 +1446,23 @@ CheckFuryStrikesThing::
 	ret
 .not_fury_attack
 	push de
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species2
+	
+.skip2
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
-	jr z, .got_user_species4
+	jr z, .got_user_species2
 	ld a, [wEnemyMonSpecies]
-.got_user_species4
+.got_user_species2
 	farcall CheckCometPunchUsers2
 	pop de
 	jr nc, .not_comet_punch
@@ -1434,14 +1475,46 @@ CheckFuryStrikesThing::
 	ret
 	
 CheckDefenseCurlThing::
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip1
 	ld a, [hBattleTurn]
 	and a
-	farcall CheckWithdrawUsers
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species1
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species1
+	
+.skip1
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species1
+	ld a, [wEnemyMonSpecies]
+.got_user_species1
+	farcall CheckWithdrawUsers2
 	jr nc, .not_withdraw
 	ld a, $1
 	ret
 .not_withdraw
-	farcall CheckHardenUsers
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species2
+	
+.skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wEnemyMonSpecies]
+.got_user_species2
+	farcall CheckHardenUsers2
 	jr nc, .not_harden
 	ld a, $2
 	ret
@@ -1449,9 +1522,24 @@ CheckDefenseCurlThing::
 	ret
 	
 CheckLeerThing::
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip
 	ld a, [hBattleTurn]
 	and a
-	farcall CheckTailWhipUsers
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species
+	
+.skip
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species
+	ld a, [wEnemyMonSpecies]
+.got_user_species
+	farcall CheckTailWhipUsers2
 	jr nc, .not_tailwhip
 	ld a, $1
 	ret
@@ -1459,9 +1547,24 @@ CheckLeerThing::
 	ret
 	
 CheckBarrierThing::
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip
 	ld a, [hBattleTurn]
 	and a
-	farcall CheckIronDefenseUsers
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species
+	
+.skip
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species
+	ld a, [wEnemyMonSpecies]
+.got_user_species
+	farcall CheckIronDefenseUsers2
 	jr nc, .not_iron_defense
 	ld a, $1
 	ret
@@ -1469,14 +1572,46 @@ CheckBarrierThing::
 	ret
 	
 CheckSharpenThing::
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip1
 	ld a, [hBattleTurn]
 	and a
-	farcall CheckMeditateUsers
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species1
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species1
+	
+.skip1
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species1
+	ld a, [wEnemyMonSpecies]
+.got_user_species1
+	farcall CheckMeditateUsers2
 	jr nc, .not_meditate
 	ld a, $1
 	ret
 .not_meditate
-	farcall CheckHowlUsers
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species2
+	
+.skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wEnemyMonSpecies]
+.got_user_species2
+	farcall CheckHowlUsers2
 	jr nc, .not_howl
 	ld a, $2
 	ret
@@ -1484,9 +1619,24 @@ CheckSharpenThing::
 	ret
 	
 CheckCharmThing::
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip
 	ld a, [hBattleTurn]
 	and a
-	farcall CheckFeatherDanceUsers
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species
+	
+.skip
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species
+	ld a, [wEnemyMonSpecies]
+.got_user_species
+	farcall CheckFeatherDanceUsers2
 	jr nc, .not_feather_dance
 	ld a, $1
 	ret
@@ -1494,9 +1644,24 @@ CheckCharmThing::
 	ret
 	
 CheckScaryFaceThing::
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip
 	ld a, [hBattleTurn]
 	and a
-	farcall CheckCottonSporeUsers
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species
+	
+.skip
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species
+	ld a, [wEnemyMonSpecies]
+.got_user_species
+	farcall CheckCottonSporeUsers2
 	jr nc, .not_scary_face
 	ld a, $1
 	ret
@@ -1504,9 +1669,24 @@ CheckScaryFaceThing::
 	ret
 	
 CheckRoarThing::
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip
 	ld a, [hBattleTurn]
 	and a
-	farcall CheckWhirlwindUsers
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species
+	
+.skip
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species
+	ld a, [wEnemyMonSpecies]
+.got_user_species
+	farcall CheckWhirlwindUsers2
 	jr nc, .not_whirlwind
 	ld a, $2
 	ret
@@ -1515,9 +1695,24 @@ CheckRoarThing::
 	ret
 	
 CheckSandAttackThing::
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip
 	ld a, [hBattleTurn]
 	and a
-	farcall CheckSmokescreenUsers
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species
+	
+.skip
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species
+	ld a, [wEnemyMonSpecies]
+.got_user_species
+	farcall CheckSmokescreenUsers2
 	jr nc, .not_smokescreen
 	ld a, $1
 	ret
@@ -1525,9 +1720,24 @@ CheckSandAttackThing::
 	ret
 	
 CheckSoftboiledThing::
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip
 	ld a, [hBattleTurn]
 	and a
-	farcall CheckMilkDrinkUsers
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species
+	
+.skip
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species
+	ld a, [wEnemyMonSpecies]
+.got_user_species
+	farcall CheckMilkDrinkUsers2
 	jr nc, .not_milk_drink
 	ld a, $1
 	ret
@@ -1535,14 +1745,46 @@ CheckSoftboiledThing::
 	ret
 	
 CheckForesightThing::
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip1
 	ld a, [hBattleTurn]
 	and a
-	farcall CheckOdorSleuthUsers
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species1
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species1
+	
+.skip1
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species1
+	ld a, [wEnemyMonSpecies]
+.got_user_species1
+	farcall CheckOdorSleuthUsers2
 	jr nc, .not_odor_sleuth
 	ld a, $1
 	ret
 .not_odor_sleuth
-	farcall CheckMiracleEyeUsers
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species2
+	
+.skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wEnemyMonSpecies]
+.got_user_species2
+	farcall CheckMiracleEyeUsers2
 	jr nc, .not_miracle_eye
 	ld a, $2
 	ret
@@ -1550,9 +1792,24 @@ CheckForesightThing::
 	ret
 	
 CheckAgilityThing::
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip
 	ld a, [hBattleTurn]
 	and a
-	farcall CheckRockPolishUsers
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species
+	
+.skip
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species
+	ld a, [wEnemyMonSpecies]
+.got_user_species
+	farcall CheckRockPolishUsers2
 	jr nc, .not_rock_polish
 	ld a, $1
 	ret
@@ -1588,6 +1845,7 @@ WithdrawUsers:
 
 HardenUsers:
 	db SMEARGLE
+	db MEOWTH
 	db -1
 
 TailWhipUsers:

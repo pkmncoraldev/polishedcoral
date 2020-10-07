@@ -285,7 +285,6 @@ BattleAnim_MirrorMove:
 BattleAnim_0:
 BattleAnim_FairyWind:
 BattleAnim_WorkUp:
-BattleAnim_DoubleHit:
 BattleAnim_OdorSleuth:
 BattleAnim_MiracleEye:
 BattleAnim_RockClimb:
@@ -296,6 +295,16 @@ BattleAnim_PoisonFang:
 BattleAnim_KnockOff:
 BattleAnim_RockPolish:
 	anim_ret
+	
+BattleAnim_DoubleHit:
+	anim_1gfx ANIM_GFX_HIT
+    anim_sound 0, 1, SFX_COMET_PUNCH
+    anim_obj ANIM_OBJ_01, 144, 48, $0
+    anim_wait 32
+    anim_sound 0, 1, SFX_COMET_PUNCH
+    anim_obj ANIM_OBJ_01, 120, 48, $0
+    anim_wait 8
+    anim_ret
 	
 BattleAnim_CottonGuard:
     anim_obp0 $54

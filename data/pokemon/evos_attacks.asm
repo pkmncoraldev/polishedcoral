@@ -407,6 +407,7 @@ WigglytuffEvosAttacks:
 	db  1, BODY_SLAM
 	db  1, GYRO_BALL
 	db  1, MIMIC
+	db  1, MIRROR_MOVE
 	db  1, HYPER_VOICE
 	db  1, DOUBLE_EDGE
 	db  0 ; no more level-up moves

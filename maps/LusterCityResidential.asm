@@ -1,5 +1,6 @@
 LusterCityResidential_MapScriptHeader:
-	db 0 ; scene scripts
+	db 1 ; scene scripts
+	scene_script LusterCityResidentialTrigger0
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, ResidentialCallback
@@ -84,13 +85,37 @@ LusterCityResidential_MapScriptHeader:
 	const LUSTERPUNK2
 	const LUSTERSHADYGUY
 	
+LusterCityResidentialTrigger0:
+	checktime 1<<NITE
+	iffalse .end
+	checkflag ENGINE_STREETLIGHTS
+	iftrue .end
+	changeblock $18, $14, $84
+	changeblock $4, $20, $85
+	changeblock $14, $28, $85
+	setflag ENGINE_STREETLIGHTS
+	callasm RefreshScreen_BridgeUpdate
+	callasm LusterCityStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
+.end
+	end
+	
+LusterCityStreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
+	farcall CheckCurrentMapXYTriggers
+	ret nc
+	ld hl, wCurCoordEventScriptAddr
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wMapScriptHeaderBank]
+	farjp CallScript
+	
+	
 ResidentialCallback:
 	checktime 1<<NITE
 	iffalse .notnite
 	changeblock $18, $14, $84
 	changeblock $4, $20, $85
 	changeblock $14, $28, $85
-
 .notnite
 	checkevent EVENT_DOUBLE_LANDMARK_SIGN
 	iffalse .cont

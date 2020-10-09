@@ -106,6 +106,7 @@ VBlank0::
 	call DMATransfer
 	jr c, .done
 	call UpdateBGMap
+	jr c, .done
 
 	; These have their own timing checks.
 
@@ -113,7 +114,6 @@ VBlank0::
 	call LYOverrideStackCopy
 	call Serve1bppRequest
 	call AnimateTileset
-
 .done
 
 	call PushOAM

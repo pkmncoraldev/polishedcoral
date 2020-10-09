@@ -1,5 +1,6 @@
 LusterCityShopping_MapScriptHeader:
-	db 0 ; scene scripts
+	db 1 ; scene scripts
+	scene_script LusterCityShoppingTrigger0
 
 	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, LusterCityFlypointCallback
@@ -57,6 +58,17 @@ LusterCityShopping_MapScriptHeader:
 	const LUSTER2NPC7
 	const LUSTER2NPC8
 
+LusterCityShoppingTrigger0:
+	checktime 1<<NITE
+	iffalse .end
+	checkflag ENGINE_STREETLIGHTS
+	iftrue .end
+	changeblock -4, 20, $84
+	setflag ENGINE_STREETLIGHTS
+	callasm RefreshScreen_BridgeUpdate
+.end
+	end
+	
 LusterShoppingSignThing:
 	dotrigger $1
 	setevent EVENT_DOUBLE_LANDMARK_SIGN

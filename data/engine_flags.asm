@@ -51,7 +51,6 @@ EngineFlags: ; 80462
 	engine_flag wOWState, OWSTATE_WHIRLPOOL
 	engine_flag wOWState, OWSTATE_WATERFALL
 	engine_flag wOWState, OWSTATE_CUT
-	engine_flag wOWState, OWSTATE_BIKE_GEAR
 	engine_flag wOWState, OWSTATE_ROCK_CLIMB
 
 	engine_flag wBikeGear, 0
@@ -117,7 +116,7 @@ EngineFlags: ; 80462
 	engine_flag wDailyFlags, 4 ; all fruit trees
 	engine_flag wDailyFlags, 5 ; daily dodrio race
 	engine_flag wDailyFlags, 6 ; goldenrod underground merchant closed
-	engine_flag wDailyFlags, 7 ; fought in trainer hall today
+	engine_flag wDailyFlags, 7 ; streetlights
 
 	engine_flag wDailyFlags2, 0 ; gym leader rematch 1
 	engine_flag wDailyFlags2, 1 ; gym leader rematch 2

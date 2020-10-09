@@ -1,5 +1,6 @@
 LusterCityBusiness_MapScriptHeader:
-	db 0 ; scene scripts
+	db 1 ; scene scripts
+	scene_script LusterCityBusinessTrigger0
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, BusinessCallback
@@ -29,6 +30,20 @@ LusterCityBusiness_MapScriptHeader:
 	db 1 ; object events
 	person_event SPRITE_TRAFFIC_LIGHT, 24, 14, SPRITEMOVEDATA_TILE_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
 
+LusterCityBusinessTrigger0:
+	checktime 1<<NITE
+	iffalse .end
+	checkflag ENGINE_STREETLIGHTS
+	iftrue .end
+	changeblock $12, $18, $86
+	changeblock $24, $12, $86
+	changeblock $e, $12, $87
+	changeblock $20, $18, $87
+	setflag ENGINE_STREETLIGHTS
+	callasm RefreshScreen_BridgeUpdate
+	callasm LusterCityStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
+.end
+	end
 	
 BusinessCallback:
 	checktime 1<<NITE

@@ -283,7 +283,6 @@ BattleAnimations::
 
 BattleAnim_MirrorMove:
 BattleAnim_0:
-BattleAnim_FairyWind:
 BattleAnim_WorkUp:
 BattleAnim_RockClimb:
 BattleAnim_Hex:
@@ -443,6 +442,24 @@ BattleAnim_Psyshock:
 	anim_wait 64
 	anim_incbgeffect ANIM_BG_TELEPORT
 	anim_call BattleAnim_ShowMon_1
+	anim_ret
+	
+BattleAnim_FairyWind:
+	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_MISC
+	anim_sound 0, 0, SFX_SWEET_SCENT
+	anim_obj ANIM_OBJ_FLOWER,   8, 0,  12, 0, $2
+	anim_wait 2
+	anim_obj ANIM_OBJ_FLOWER,   8, 0,  10, 0, $2
+	anim_wait 96
+	anim_1gfx ANIM_GFX_SHINE
+	anim_obp0 $54
+	anim_sound 0, 0, SFX_METRONOME
+	anim_obj ANIM_OBJ_GLIMMER,   16, 4,   4, 0, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_GLIMMER,   14, 0,  8, 0, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_GLIMMER,   18, 0,  9, 0, $0
+	anim_wait 21
 	anim_ret
 	
 BattleAnim_QuiverDance:

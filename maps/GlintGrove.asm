@@ -209,6 +209,10 @@ GlintGrovePile1:
 	pause 3
 	disappear GLINTGROVE_PETALS
 	setflag ENGINE_GLINT_GROVE_PILE_1
+	checkevent EVENT_GOT_PETAL_PILE_1
+	iffalse GlintGroveFirstPile
+	checkevent EVENT_GOT_PETAL_PILE_2
+	iffalse GlintGroveSecondPile
 	callasm PetalsAsm2
 	closetext
 	callasm MakePalGreen
@@ -230,6 +234,10 @@ GlintGrovePile2:
 	pause 3
 	disappear GLINTGROVE_PETALS
 	setflag ENGINE_GLINT_GROVE_PILE_2
+	checkevent EVENT_GOT_PETAL_PILE_1
+	iffalse GlintGroveFirstPile
+	checkevent EVENT_GOT_PETAL_PILE_2
+	iffalse GlintGroveSecondPile
 	callasm PetalsAsm
 	closetext
 	callasm MakePalGreen
@@ -253,6 +261,10 @@ GlintGrovePile3:
 	verbosegiveitem FLOWER_PETAL
 	closetext
 	setflag ENGINE_GLINT_GROVE_PILE_3
+	checkevent EVENT_GOT_PETAL_PILE_1
+	iffalse GlintGroveFirstPile2
+	checkevent EVENT_GOT_PETAL_PILE_2
+	iffalse GlintGroveSecondPile2
 	callasm MakePalGreen
 .end
 	end
@@ -272,6 +284,10 @@ GlintGrovePile4:
 	pause 3
 	disappear GLINTGROVE_PETALS
 	setflag ENGINE_GLINT_GROVE_PILE_4
+	checkevent EVENT_GOT_PETAL_PILE_1
+	iffalse GlintGroveFirstPile
+	checkevent EVENT_GOT_PETAL_PILE_2
+	iffalse GlintGroveSecondPile
 	callasm PetalsAsm3
 	closetext
 	callasm MakePalGreen
@@ -295,6 +311,10 @@ GlintGrovePile5:
 	verbosegiveitem FLOWER_PETAL
 	closetext
 	setflag ENGINE_GLINT_GROVE_PILE_5
+	checkevent EVENT_GOT_PETAL_PILE_1
+	iffalse GlintGroveFirstPile2
+	checkevent EVENT_GOT_PETAL_PILE_2
+	iffalse GlintGroveSecondPile2
 	callasm MakePalGreen
 .end
 	end
@@ -314,6 +334,10 @@ GlintGrovePile6:
 	pause 3
 	disappear GLINTGROVE_PETALS
 	setflag ENGINE_GLINT_GROVE_PILE_6
+	checkevent EVENT_GOT_PETAL_PILE_1
+	iffalse GlintGroveFirstPile
+	checkevent EVENT_GOT_PETAL_PILE_2
+	iffalse GlintGroveSecondPile
 	callasm PetalsAsm3
 	closetext
 	callasm MakePalGreen
@@ -335,10 +359,32 @@ GlintGrovePile7:
 	pause 3
 	disappear GLINTGROVE_PETALS
 	setflag ENGINE_GLINT_GROVE_PILE_7
+	checkevent EVENT_GOT_PETAL_PILE_1
+	iffalse GlintGroveFirstPile
+	checkevent EVENT_GOT_PETAL_PILE_2
+	iffalse GlintGroveSecondPile
 	callasm PetalsAsm
 	closetext
 	callasm MakePalGreen
 .end
+	end
+	
+GlintGroveFirstPile:
+	setevent EVENT_GOT_PETAL_PILE_1
+	jump GlintGroveGivePetal
+GlintGroveSecondPile:
+	setevent EVENT_GOT_PETAL_PILE_2
+GlintGroveGivePetal:
+	verbosegiveitem FLOWER_PETAL
+	closetext
+	end
+	
+GlintGroveFirstPile2:
+	setevent EVENT_GOT_PETAL_PILE_1
+	end
+	
+GlintGroveSecondPile2:
+	setevent EVENT_GOT_PETAL_PILE_2
 	end
 	
 GlintGrovePiles:

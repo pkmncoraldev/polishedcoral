@@ -1,7 +1,8 @@
 MtOnwaCliff_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, MtOnwaCliffCallback
 
 	db 2 ; warp events
 	warp_def 21, 28, 2, MT_ONWA_1F
@@ -15,8 +16,8 @@ MtOnwaCliff_MapScriptHeader:
 	person_event SPRITE_ROCKER, 15, 30, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerMtOnwaOutside_1, -1
 	person_event SPRITE_HIKER, 13, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerMtOnwaOutside_2, -1
 	person_event SPRITE_COOLTRAINER_F, 29, 14, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerMtOnwaOutside_3, -1
-	person_event SPRITE_YOUNGSTER, 8, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, MtOnwaPanNPC, -1 ;EVENT_PLAYER_IS_MALE
-	person_event SPRITE_CUTE_GIRL, 8, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, MtOnwaPanNPC, -1 ;EVENT_PLAYER_IS_FEMALE
+	person_event SPRITE_YOUNGSTER, 8, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, MtOnwaPanNPC, EVENT_MT_ONWA_NPC_1
+	person_event SPRITE_CUTE_GIRL, 8, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, MtOnwaPanNPC, EVENT_MT_ONWA_NPC_2
 	person_event SPRITE_PLAYER_CUTSCENE, 8, 16, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_MT_ONWA_CUTSCENE
 	person_event SPRITE_PLAYER_CUTSCENE, 8, 16, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, -1, EVENT_MT_ONWA_CUTSCENE
 	person_event SPRITE_PLAYER_CUTSCENE, 8, 16, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_MT_ONWA_CUTSCENE
@@ -38,6 +39,23 @@ MtOnwaCliff_MapScriptHeader:
 	const MT_ONWA_CUTSCENE5
 	const MT_ONWA_CUTSCENE6
 	const MT_ONWA_CUTSCENE7
+	
+MtOnwaCliffCallback:
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .playerfemale
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .playerfemale
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .playerfemale
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .playerfemale
+	disappear MT_ONWA_NPC1
+	appear MT_ONWA_NPC2
+	return
+.playerfemale
+	appear MT_ONWA_NPC1
+	disappear MT_ONWA_NPC2
+	return
 	
 MtOnwaPanNPC:
 	faceplayer

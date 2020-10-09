@@ -133,11 +133,11 @@ TilesetMountainAnim::
 TilesetSpookyAnim::
 TilesetRanchAnim::
 TilesetLusterAnim::
+	dw VTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
+	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $14, WriteTileFromBuffer
 	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -153,6 +153,8 @@ TilesetLusterAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
+	
+	
 	
 TilesetJungleAnim::
     dw VTiles2 tile $14, WriteTileToBuffer

@@ -1,14 +1,14 @@
-LusterSewersB2FFlooded_MapScriptHeader:
+LusterSewersB2F_MapScriptHeader:
 	db 3 ; scene scripts
-	scene_script LusterSewersB2FFloodedTrigger0
-	scene_script LusterSewersB2FFloodedTrigger1
-	scene_script LusterSewersB2FFloodedTrigger2
+	scene_script LusterSewersB2FTrigger0
+	scene_script LusterSewersB2FTrigger1
+	scene_script LusterSewersB2FTrigger2
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, LusterSewersB2FChangeBlocks
 
 	db 3 ; warp events
-	warp_def  7, 14, 3, LUSTER_SEWERS_B1F_FLOODED
+	warp_def  7, 14, 3, LUSTER_SEWERS_B1F
 	warp_def  1, 15, 3, LUSTER_SEWERS_VALVE_ROOM
 	warp_def  9, 27, 5, LUSTER_SEWERS_VALVE_ROOM
 
@@ -32,13 +32,13 @@ LusterSewersB2FFlooded_MapScriptHeader:
 	person_event SPRITE_PLANK_BRIDGE, 15, 16, SPRITEMOVEDATA_TILE_UP, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_EMPTY
 	person_event SPRITE_PLANK_BRIDGE, 15, 16, SPRITEMOVEDATA_TILE_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_FLOODED
 
-LusterSewersB2FFloodedTrigger0:
+LusterSewersB2FTrigger0:
 	end
 	
-LusterSewersB2FFloodedTrigger1:
+LusterSewersB2FTrigger1:
 	end
 	
-LusterSewersB2FFloodedTrigger2:
+LusterSewersB2FTrigger2:
 	end
 	
 LusterSewersB2FChangeBlocks:

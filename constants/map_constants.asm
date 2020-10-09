@@ -37,19 +37,17 @@ MAP_NONE   EQU 0
 	map_const MT_ONWA_LOWER_CLIFF,						  13, 12 ; 15
 	map_const FLICKER_PASS_1F,							  21, 18 ; 16
 	map_const FLICKER_PASS_2F,							  25, 26 ; 17
-	map_const LUSTER_SEWERS_B1F_FLOODED,				  13, 12 ; 18
-	map_const LUSTER_SEWERS_B1F_EMPTY,					  13, 12 ; 19
-	map_const LUSTER_SEWERS_B2F_FLOODED,				  15, 12 ; 20
-	map_const LUSTER_SEWERS_B2F_EMPTY,					  15, 12 ; 21
-	map_const LUSTER_SEWERS_VALVE_ROOM,				      16,  3 ; 22
-	map_const ICE_CAVE_B1F,								  15,  7 ; 23
-	map_const ICE_CAVE_B2F,								  15, 16 ; 24
-	map_const ICE_CAVE_B3F,								  16, 16 ; 25
-	map_const ICE_TEMPLE_B1F_1,							  14, 11 ; 26
-	map_const ICE_TEMPLE_B1F_2,							  14, 10 ; 27
-	map_const ICE_TEMPLE_B1F_3,							   4, 4  ; 28
-	map_const ICE_TEMPLE_B2F_1,							   8, 6  ; 29
-	map_const ICE_TEMPLE_B2F_2,							  13, 7  ; 30
+	map_const LUSTER_SEWERS_B1F,						  13, 12 ; 18
+	map_const LUSTER_SEWERS_B2F,						  15, 12 ; 19
+	map_const LUSTER_SEWERS_VALVE_ROOM,				      16,  3 ; 20
+	map_const ICE_CAVE_B1F,								  15,  7 ; 21
+	map_const ICE_CAVE_B2F,								  15, 16 ; 22
+	map_const ICE_CAVE_B3F,								  16, 16 ; 23
+	map_const ICE_TEMPLE_B1F_1,							  14, 11 ; 24
+	map_const ICE_TEMPLE_B1F_2,							  14, 10 ; 25
+	map_const ICE_TEMPLE_B1F_3,							   4, 4  ; 26
+	map_const ICE_TEMPLE_B2F_1,							   8, 6  ; 27
+	map_const ICE_TEMPLE_B2F_2,							  13, 7  ; 27
 
 	newgroup                                                     ;  2
 

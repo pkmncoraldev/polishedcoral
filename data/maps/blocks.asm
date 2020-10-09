@@ -273,13 +273,13 @@ LusterMallBallShop_BlockData:
 LusterMallClothesShop_BlockData:
 	INCBIN "maps/LusterMallClothesShop.ablk.lz"
 	
-LusterSewersB1FFlooded_BlockData:
+LusterSewersB1F_BlockData:
 	INCBIN "maps/LusterSewersB1FFlooded.ablk.lz"
 	
 LusterSewersB1FEmpty_BlockData:
 	INCBIN "maps/LusterSewersB1FEmpty.ablk.lz"
 	
-LusterSewersB2FFlooded_BlockData:
+LusterSewersB2F_BlockData:
 	INCBIN "maps/LusterSewersB2FFlooded.ablk.lz"
 	
 LusterSewersB2FEmpty_BlockData:

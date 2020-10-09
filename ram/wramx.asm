@@ -981,8 +981,8 @@ wLusterTrainCutsceneTrigger:: ds 1
 wLusterCityResidentialTrigger:: ds 1
 wLusterCityShoppingTrigger:: ds 1
 wLusterCityBusinessTrigger:: ds 1
-wLusterSewersB1FFloodedTrigger:: ds 1
-wLusterSewersB2FFloodedTrigger:: ds 1
+wLusterSewersB1FTrigger:: ds 1
+wLusterSewersB2FTrigger:: ds 1
 wSpookyForestEscortTrigger:: ds 1
 wLusterMallTrigger:: ds 1
 wIceTempleB1F1Trigger:: ds 1

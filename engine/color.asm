@@ -886,9 +886,9 @@ LoadMapPals:
 	
 .sewer
 	ld a, [wMapNumber]
-	cp MAP_LUSTER_SEWERS_B1F_FLOODED
+	cp MAP_LUSTER_SEWERS_B1F
 	jp z, .rocks
-	cp MAP_LUSTER_SEWERS_B2F_FLOODED
+	cp MAP_LUSTER_SEWERS_B2F
 	jp z, .rocks
 	ld hl, MapObjectPalsSewer
 	ld de, wUnknOBPals

@@ -278,10 +278,8 @@ ENDM
 	map_attributes MtOnwaLowerCliff, MT_ONWA_LOWER_CLIFF, $00, 0
 	map_attributes FlickerPass1F, FLICKER_PASS_1F, $9, 0
 	map_attributes FlickerPass2F, FLICKER_PASS_2F, $9, 0
-	map_attributes LusterSewersB1FFlooded, LUSTER_SEWERS_B1F_FLOODED, 0, 0
-	map_attributes LusterSewersB1FEmpty, LUSTER_SEWERS_B1F_EMPTY, 0, 0
-	map_attributes LusterSewersB2FFlooded, LUSTER_SEWERS_B2F_FLOODED, 0, 0
-	map_attributes LusterSewersB2FEmpty, LUSTER_SEWERS_B2F_EMPTY, 0, 0
+	map_attributes LusterSewersB1F, LUSTER_SEWERS_B1F, 0, 0
+	map_attributes LusterSewersB2F, LUSTER_SEWERS_B2F, 0, 0
 	map_attributes LusterSewersValveRoom, LUSTER_SEWERS_VALVE_ROOM, 0, 0
 	map_attributes IceCaveB1F, ICE_CAVE_B1F, $54, 0
 	map_attributes IceCaveB2F, ICE_CAVE_B2F, $54, 0

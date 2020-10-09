@@ -6,7 +6,7 @@ LusterCityResidential_MapScriptHeader:
 	callback MAPCALLBACK_TILES, ResidentialCallback
 
 	db 9 ; warp events
-	warp_def 20, 12, 1, LUSTER_SEWERS_B1F_FLOODED
+	warp_def 20, 12, 1, LUSTER_SEWERS_B1F
 	warp_def 25, 11, 1, LUSTER_MART
 	warp_def 25, 17, 1, LUSTER_POKECENTER
 	warp_def 24,  7, 1, LUSTER_APARTMENT_1_1F

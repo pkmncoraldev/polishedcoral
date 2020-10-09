@@ -4,12 +4,12 @@ LusterSewersValveRoom_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 6 ; warp events
-	warp_def  5,  3, 2, LUSTER_SEWERS_B1F_FLOODED
-	warp_def  5,  4, 2, LUSTER_SEWERS_B1F_FLOODED
-	warp_def  5, 15, 2, LUSTER_SEWERS_B2F_FLOODED
-	warp_def  5, 16, 2, LUSTER_SEWERS_B2F_FLOODED
-	warp_def  5, 27, 3, LUSTER_SEWERS_B2F_FLOODED
-	warp_def  5, 28, 3, LUSTER_SEWERS_B2F_FLOODED
+	warp_def  5,  3, 2, LUSTER_SEWERS_B1F
+	warp_def  5,  4, 2, LUSTER_SEWERS_B1F
+	warp_def  5, 15, 2, LUSTER_SEWERS_B2F
+	warp_def  5, 16, 2, LUSTER_SEWERS_B2F
+	warp_def  5, 27, 3, LUSTER_SEWERS_B2F
+	warp_def  5, 28, 3, LUSTER_SEWERS_B2F
 	
 	db 0 ; coord events
 

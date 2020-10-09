@@ -50,8 +50,8 @@ MapTriggers::
 	scene_var LUSTER_CITY_RESIDENTIAL,				  wLusterCityResidentialTrigger
 	scene_var LUSTER_CITY_SHOPPING,					  wLusterCityShoppingTrigger
 	scene_var LUSTER_CITY_BUSINESS,					  wLusterCityBusinessTrigger
-	scene_var LUSTER_SEWERS_B1F_FLOODED,			  wLusterSewersB1FFloodedTrigger
-	scene_var LUSTER_SEWERS_B2F_FLOODED,			  wLusterSewersB2FFloodedTrigger
+	scene_var LUSTER_SEWERS_B1F,					  wLusterSewersB1FTrigger
+	scene_var LUSTER_SEWERS_B2F,					  wLusterSewersB2FTrigger
 	scene_var SPOOKY_FOREST_1,						  wSpookyForestEscortTrigger
 	scene_var SPOOKY_FOREST_2,						  wSpookyForestEscortTrigger
 	scene_var SPOOKY_FOREST_3,						  wSpookyForestEscortTrigger

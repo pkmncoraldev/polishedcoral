@@ -175,6 +175,7 @@ INCLUDE "maps/TwinkleTown.asm"
 INCLUDE "maps/TwinkleRockHouse.asm"
 INCLUDE "maps/TwinkleHouse2.asm"
 INCLUDE "maps/TwinkleHouse3.asm"
+INCLUDE "maps/TwinkleGymEntry.asm"
 
 SECTION "Luster City Scripts", ROMX
 

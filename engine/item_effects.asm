@@ -107,13 +107,13 @@ ItemEffects: ; e73c
 	dw NoEffect         ; EXP_SHARE
 	dw NoEffect         ; LIBRARY_CARD
 	dw PokeFlute	    ; POKE_FLUTE
-	dw NoEffect         ; SECRETPOTION
-	dw NoEffect         ; RED_SCALE
-	dw CardKey          ; CARD_KEY
-	dw BasementKey      ; BASEMENT_KEY
-	dw NoEffect         ; S_S_TICKET
-	dw NoEffect         ; PASS
-	dw NoEffect         ; MACHINE_PART
+	dw NoEffect         ; THE_THING
+	dw NoEffect         ; TORCH
+	dw NoEffect         ; OLD_KEY
+	dw NoEffect         ; CLAY_POT
+	dw NoEffect         ; B_ROOM_KEY
+	dw NoEffect         ; Y_ROOM_KEY
+	dw NoEffect         ; R_ROOM_KEY
 	dw NoEffect         ; LOST_ITEM
 	dw NoEffect         ; RIVAL_POKEDEX
 	dw NoEffect         ; SILVER_WING
@@ -2850,16 +2850,6 @@ UnknownText_0xf739: ; 0xf739
 PokeFlute: ; f73e
 	farjp _PokeFlute
 ; f745
-
-
-CardKey: ; f745
-	farjp _CardKey
-; f74c
-
-
-BasementKey: ; f74c
-	farjp _BasementKey
-; f753
 
 
 SacredAsh: ; f753

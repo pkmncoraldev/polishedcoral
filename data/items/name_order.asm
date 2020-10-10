@@ -114,9 +114,9 @@ ItemNameOrder:
 	db NAM_TORCH	    ; bf
 	db NAM_OLD_KEY      ; 1f
 	db NAM_CLAY_POT ; 0c
-	db NAM_S_S_TICKET   ; c6
-	db NAM_PASS         ; 9b
-	db NAM_MACHINE_PART ; 73
+	db NAM_B_ROOM_KEY   ; c6
+	db NAM_Y_ROOM_KEY         ; 9b
+	db NAM_R_ROOM_KEY ; 73
 	db NAM_LOST_ITEM    ; 6b
 	db NAM_RIVAL_POKEDEX ; b9
 	db NAM_SILVER_WING  ; d5

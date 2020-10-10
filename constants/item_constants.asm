@@ -113,10 +113,10 @@
 	const THE_THING    ; 5e
 	const TORCH		   ; 5f
 	const OLD_KEY      ; 60
-	const CLAY_POT ; 61
-	const S_S_TICKET   ; 62
-	const PASS         ; 63
-	const MACHINE_PART ; 64
+	const CLAY_POT     ; 61
+	const B_ROOM_KEY   ; 62
+	const Y_ROOM_KEY   ; 63
+	const R_ROOM_KEY   ; 64
 	const LOST_ITEM    ; 65
 	const RIVAL_POKEDEX; 66
 	const SILVER_WING  ; 67
@@ -409,7 +409,7 @@
 	const NAM_LUM_BERRY    ; 70
 	const NAM_LURE_BALL    ; 71
 	const NAM_LUXURY_BALL  ; 72
-	const NAM_MACHINE_PART ; 73
+	const NAM_R_ROOM_KEY   ; 73
 	const NAM_MACHO_BRACE  ; 74
 	const NAM_MAGMARIZER   ; 75
 	const NAM_MAGNET       ; 76
@@ -449,7 +449,7 @@
 	const NAM_OVAL_CHARM   ; 98
 	const NAM_PARALYZEHEAL ; 99
 	const NAM_PARK_BALL    ; 9a
-	const NAM_PASS         ; 9b
+	const NAM_Y_ROOM_KEY   ; 9b
 	const NAM_PEARL        ; 9c
 	const NAM_PEARL_STRING ; 9d
 	const NAM_PECHA_BERRY  ; 9e
@@ -492,7 +492,7 @@
 	const NAM_REVIVE       ; c3
 	const NAM_ROCKY_HELMET ; c4
 	const NAM_UNUSED7      ; c5
-	const NAM_S_S_TICKET   ; c6
+	const NAM_B_ROOM_KEY   ; c6
 	const NAM_SACRED_ASH   ; c7
 	const NAM_SAFARI_BALL  ; c8
 	const NAM_SAFE_GOGGLES ; c9

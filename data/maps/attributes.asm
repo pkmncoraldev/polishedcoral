@@ -368,6 +368,7 @@ ENDM
 	map_attributes TwinkleHouse3, TWINKLE_HOUSE_3, 0, 0
 	map_attributes TwinklePokeCenter, TWINKLE_POKECENTER, 0, 0
 	map_attributes TwinkleMart, TWINKLE_MART, 0, 0
+	map_attributes TwinkleGymEntry, TWINKLE_GYM_ENTRY, 0, 0
 	map_attributes EastTrainCabin1, EAST_TRAIN_CABIN_1, 0, 0
 	map_attributes EastTrainCabin2, EAST_TRAIN_CABIN_2, 0, 0
 	map_attributes EastTrainCab, EAST_TRAIN_CAB, 0, 0

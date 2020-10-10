@@ -227,6 +227,9 @@ IceTempleB2F1_BlockData:
 IceTempleB2F2_BlockData:
 	INCBIN "maps/IceTempleB2F2.ablk.lz"
 	
+TwinkleGymEntry_BlockData:
+	INCBIN "maps/TwinkleGymEntry.ablk.lz"
+	
 EastTrainCabin1_BlockData:
 EastTrainCabin2_BlockData:
 	INCBIN "maps/TrainCabin.ablk.lz"

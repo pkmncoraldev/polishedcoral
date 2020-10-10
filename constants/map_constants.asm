@@ -203,6 +203,7 @@ MAP_NONE   EQU 0
 	map_const TWINKLE_HOUSE_3,							   4,  4 ; 7
 	map_const TWINKLE_POKECENTER,                          6,  4 ; 8
 	map_const TWINKLE_MART,								   6,  4 ; 9
+	map_const TWINKLE_GYM_ENTRY,						   7,  6 ; 10
 	
 	newgroup													 ; 12
 	

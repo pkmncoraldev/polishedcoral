@@ -72,8 +72,8 @@ TwinkleIcyRockHouseNPCText1:
 TwinkleIcyRockHouseNPCText2:
 	text "I wonder if it"
 	line "would be good to"
-	cont "give to an"
-	cont "ICE-type #MON?"
+	cont "give to ICE-type"
+	cont "#MON?"
 	done
 	
 TwinkleIcyRockHouseNPCText3:

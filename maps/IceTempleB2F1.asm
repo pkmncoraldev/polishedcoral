@@ -27,7 +27,7 @@ IceTempleB2F1_MapScriptHeader:
 	object_event  9,  4, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, IceTempleCampfire6, EVENT_ICE_TEMPLE_CAMPFIRE_6_UNLIT
 	person_event SPRITE_BIG_MAMOSWINE,  3,  7, SPRITEMOVEDATA_SNORLAX, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, IceTempleMamoswine, EVENT_MAMOSWINE_PURPLE
 	person_event SPRITE_BIG_MAMOSWINE,  3,  7, SPRITEMOVEDATA_SNORLAX, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, IceTempleMamoswine, EVENT_MAMOSWINE_TEAL
-	itemball_event  8,  2, CLAY_POT, 1, -1
+	itemball_event  8,  2, CLAY_POT, 1, EVENT_ICE_TEMPLE_GOT_TREASURE
 	
 	
 	const_def 1 ; object constants

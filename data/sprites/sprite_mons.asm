@@ -28,7 +28,7 @@ SpriteMons:
 	db DODRIO
 	db PIKACHU
 	db TOGETIC
-	db ABRA
+	db WIGGLYTUFF
 	db ABRA
 	db ABRA
 	db ABRA

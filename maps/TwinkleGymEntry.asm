@@ -5,9 +5,13 @@ TwinkleGymEntry_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 2 ; warp events
+	db 6 ; warp events
 	warp_def 11,  6, 7, TWINKLE_TOWN
 	warp_def 11,  7, 7, TWINKLE_TOWN
+	warp_def  1,  2, 1, TWINKLE_GYM_BLUE_ROOM
+	warp_def  1, 11, 1, TWINKLE_GYM_YELLOW_ROOM
+	warp_def  0,  6, 1, TWINKLE_GYM_RED_ROOM
+	warp_def  0,  7, 2, TWINKLE_GYM_RED_ROOM
 
 	db 2 ; coord events
 	xy_trigger 0,  9,  4, 0, TwinkleGymEntryClerkStopsYouL, 0, 0

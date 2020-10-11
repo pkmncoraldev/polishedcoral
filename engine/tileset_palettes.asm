@@ -134,6 +134,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .sewer
 	cp TILESET_ICE_CAVE
 	jp z, .ice_cave
+	cp TILESET_PLAYER_HOUSE
+	jp z, .playerhouse
 	jp .do_nothing
 	
 .checktent
@@ -225,6 +227,52 @@ LoadSpecialMapPalette: ; 494ac
 
 .torch
 	ld hl, IceCaveTorchPalette
+	jp LoadSevenBGPalettes
+	
+.playerhouse
+	ld a, [wMapGroup]
+	cp GROUP_TWINKLE_GYM_ENTRY
+	jp nz, .do_nothing
+	ld a, [wMapNumber]
+	cp MAP_TWINKLE_GYM_BLUE_ROOM
+	jr z, .blue_room
+	cp MAP_TWINKLE_GYM_YELLOW_ROOM
+	jr z, .yellow_room
+	cp MAP_TWINKLE_GYM_RED_ROOM
+	jr z, .red_room
+	jr .do_nothing
+.blue_room
+	eventflagcheck EVENT_BLUE_ROOM_STEAM_1
+	jr nz, .steam1
+	eventflagcheck EVENT_BLUE_ROOM_STEAM_2
+	jr nz, .steam2
+	eventflagcheck EVENT_BLUE_ROOM_STEAM_3
+	jr nz, .steam3
+	jr .do_nothing
+.yellow_room
+	eventflagcheck EVENT_YELLOW_ROOM_STEAM_1
+	jr nz, .steam1
+	eventflagcheck EVENT_YELLOW_ROOM_STEAM_2
+	jr nz, .steam2
+	eventflagcheck EVENT_YELLOW_ROOM_STEAM_3
+	jr nz, .steam3
+	jr .do_nothing
+.red_room
+	eventflagcheck EVENT_RED_ROOM_STEAM_1
+	jr nz, .steam1
+	eventflagcheck EVENT_RED_ROOM_STEAM_2
+	jr nz, .steam2
+	eventflagcheck EVENT_RED_ROOM_STEAM_3
+	jr nz, .steam3
+	jr .do_nothing
+.steam1
+	ld hl, TwinkleGym1Palette
+	jp LoadSevenBGPalettes
+.steam2
+	ld hl, TwinkleGym2Palette
+	jp LoadSevenBGPalettes
+.steam3
+	ld hl, TwinkleGym3Palette
 	jp LoadSevenBGPalettes
 	
 .do_nothing
@@ -365,6 +413,15 @@ INCLUDE "maps/palettes/bgpals/icecave.pal"
 
 IceCaveTorchPalette:
 INCLUDE "maps/palettes/bgpals/icecavetorch.pal"
+
+TwinkleGym1Palette:
+INCLUDE "maps/palettes/bgpals/twinklegym1.pal"
+
+TwinkleGym2Palette:
+INCLUDE "maps/palettes/bgpals/twinklegym2.pal"
+
+TwinkleGym3Palette:
+INCLUDE "maps/palettes/bgpals/twinklegym3.pal"
 
 OutsideGrovePalette:
 INCLUDE "maps/palettes/bgpals/bggrove.pal"

@@ -230,6 +230,15 @@ IceTempleB2F2_BlockData:
 TwinkleGymEntry_BlockData:
 	INCBIN "maps/TwinkleGymEntry.ablk.lz"
 	
+TwinkleGymBlueRoom_BlockData:
+	INCBIN "maps/TwinkleGymBlueRoom.ablk.lz"
+	
+TwinkleGymYellowRoom_BlockData:
+	INCBIN "maps/TwinkleGymYellowRoom.ablk.lz"
+	
+TwinkleGymRedRoom_BlockData:
+	INCBIN "maps/TwinkleGymRedRoom.ablk.lz"
+	
 EastTrainCabin1_BlockData:
 EastTrainCabin2_BlockData:
 	INCBIN "maps/TrainCabin.ablk.lz"

@@ -3,7 +3,8 @@ TwinkleGymEntry_MapScriptHeader:
 	scene_script TwinkleGymEntryTrigger0
 	scene_script TwinkleGymEntryTrigger1
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, TwinkleGymEntryCallback
 
 	db 6 ; warp events
 	warp_def 11,  6, 7, TWINKLE_TOWN
@@ -38,6 +39,28 @@ TwinkleGymEntryTrigger0:
 	
 TwinkleGymEntryTrigger1:
 	end
+	
+TwinkleGymEntryCallback:
+	checkevent EVENT_UNLOCKED_BLUE_DOOR
+	iftrue .OpenSesame1
+.cont1
+	checkevent EVENT_UNLOCKED_YELLOW_DOOR
+	iftrue .OpenSesame2
+.cont2
+	checkevent EVENT_UNLOCKED_RED_DOOR
+	iftrue .OpenSesame3
+.cont3
+	return
+	
+.OpenSesame1
+	changeblock $2, $0, $4c
+	jump .cont1
+.OpenSesame2
+	changeblock $a, $0, $4e
+	jump .cont2
+.OpenSesame3
+	changeblock $6, $0, $4d
+	jump .cont3
 	
 TwinkleGymEntryBlueDoor:
 	dw EVENT_UNLOCKED_BLUE_DOOR
@@ -240,15 +263,17 @@ TwinkleGymGuyText1:
 	para "Champ in making!"
 	
 	para "You here for some"
-	line "rest and relaxation?"
+	line "R&R?"
 	
-	para "I hope not, cuz you"
-	line "aren't gonna find"
-	cont "it!"
+	para "I hope not, cuz"
+	line "you aren't gonna"
+	cont "find it!"
 	
-	para "Despite the weather"
-	line "outside, this toasty"
-	cont "GYM specializes in"
+	para "Despite the cold"
+	line "weather outside,"
+
+	para "this toasty GYM"
+	line "specializes in"
 	cont "FIRE-type #MON!"
 
 	para "Douse them with a"

@@ -1355,8 +1355,12 @@ DoPlayerMovement:: ; 80000
 ; 803ee
 
 .BumpSound: ; 803ee
+	ld a, [wTileset]
+	cp TILESET_SNOW
+	jr nz, .not_on_snowstorm_map
 	eventflagcheck EVENT_SNOWSTORM_HAPPENING
 	jr nz, .snowstorm
+.not_on_snowstorm_map
 	call CheckSFX
 	ret c
 	ld de, SFX_BUMP

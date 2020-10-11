@@ -70,7 +70,7 @@ Route10EastCampfire:
 	jumptext Route10EastCampfireText
 	
 Route10EastCampfireText:
-	text "OH SHIT A FIRE!"
+	text "A fire is blazing!"
 	done
 
 Route10EastLight:

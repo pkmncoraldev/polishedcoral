@@ -18,7 +18,11 @@ TwinkleTown_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 4 ; bg events
+	signpost 44,  8, SIGNPOST_READ, TwinkleTownSign
+	signpost 22, 12, SIGNPOST_READ, TwinkleTownGymSign
+	signpost 47, 12, SIGNPOST_READ, TwinkleTownPokeCenterSign
+	signpost 41, 18, SIGNPOST_READ, TwinkleTownMartSign
 
 	db 0 ; object events
 
@@ -42,3 +46,31 @@ TwinkleTownTrigger1:
 	domaptrigger ROUTE_10, $0
 	dotrigger $0
 	end
+	
+TwinkleTownSign:
+	jumptext TwinkleTownSignText
+	
+TwinkleTownGymSign:
+	jumptext TwinkleTownGymSignText
+	
+TwinkleTownPokeCenterSign:
+	jumpstd pokecentersign
+	
+TwinkleTownMartSign:
+	jumpstd martsign
+	
+TwinkleTownSignText:
+	text "TWINKLE TOWN"
+	
+	para "A shining beacon"
+	line "in the storm."
+	done
+	
+TwinkleTownGymSignText:
+	text "TWINKLE TOWN"
+	line "#MON GYM"
+	cont "LEADER: CHARLIE"
+
+	para "The smokin' hot"
+	line "stud."
+	done

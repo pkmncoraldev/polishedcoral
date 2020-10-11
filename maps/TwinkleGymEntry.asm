@@ -13,7 +13,11 @@ TwinkleGymEntry_MapScriptHeader:
 	xy_trigger 0,  9,  4, 0, TwinkleGymEntryClerkStopsYouL, 0, 0
 	xy_trigger 0,  9,  9, 0, TwinkleGymEntryClerkStopsYouR, 0, 0
 
-	db 0 ; bg events
+	db 4 ; bg events
+	signpost  1,  2, SIGNPOST_IFNOTSET, TwinkleGymEntryBlueDoor
+	signpost  1, 11, SIGNPOST_IFNOTSET, TwinkleGymEntryYellowDoor
+	signpost  0,  6, SIGNPOST_IFNOTSET, TwinkleGymEntryRedDoor
+	signpost  0,  7, SIGNPOST_IFNOTSET, TwinkleGymEntryRedDoor
 
 	db 2 ; object events
 	object_event  6,  7, SPRITE_BATTLE_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleGymEntryClerk, -1
@@ -31,6 +35,84 @@ TwinkleGymEntryTrigger0:
 TwinkleGymEntryTrigger1:
 	end
 	
+TwinkleGymEntryBlueDoor:
+	dw EVENT_UNLOCKED_BLUE_DOOR
+	checkitem B_ROOM_KEY
+	iftrue .unlockdoor
+	jumptext TwinkleGymEntryLockedDoorText
+	
+.unlockdoor:
+	opentext
+	writetext TwinkleGymEntryAskUnlockDoorText
+	yesorno
+	iffalse TwinkleGymEntryDontUnlockDoor
+	closetext
+	changeblock $2, $0, $4c
+	setevent EVENT_UNLOCKED_BLUE_DOOR
+	pause 7
+	playsound SFX_WALL_OPEN
+	pause 14
+	opentext
+	writetext TwinkleGymEntryUnlockDoorText
+	waitbutton
+	closetext
+	callasm RefreshScreen_BridgeUpdate
+	end
+	
+TwinkleGymEntryYellowDoor:
+	dw EVENT_UNLOCKED_YELLOW_DOOR
+	checkitem Y_ROOM_KEY
+	iftrue .unlockdoor
+	jumptext TwinkleGymEntryLockedDoorText
+	
+.unlockdoor:
+	opentext
+	writetext TwinkleGymEntryAskUnlockDoorText
+	yesorno
+	iffalse TwinkleGymEntryDontUnlockDoor
+	closetext
+	changeblock $a, $0, $4e
+	setevent EVENT_UNLOCKED_YELLOW_DOOR
+	pause 7
+	playsound SFX_WALL_OPEN
+	pause 14
+	opentext
+	writetext TwinkleGymEntryUnlockDoorText
+	waitbutton
+	closetext
+	callasm RefreshScreen_BridgeUpdate
+	end
+	
+TwinkleGymEntryRedDoor:
+	dw EVENT_UNLOCKED_RED_DOOR
+	checkitem R_ROOM_KEY
+	iftrue .unlockdoor
+	jumptext TwinkleGymEntryLockedDoorText
+	
+.unlockdoor:
+	opentext
+	writetext TwinkleGymEntryAskUnlockDoorText
+	yesorno
+	iffalse TwinkleGymEntryDontUnlockDoor
+	closetext
+	changeblock $6, $0, $4d
+	setevent EVENT_UNLOCKED_RED_DOOR
+	pause 7
+	playsound SFX_WALL_OPEN
+	pause 14
+	opentext
+	writetext TwinkleGymEntryUnlockDoorText
+	waitbutton
+	closetext
+	callasm RefreshScreen_BridgeUpdate
+	end
+	
+TwinkleGymEntryDontUnlockDoor:
+	writetext TwinkleGymEntryBetterNotText
+	waitbutton
+	closetext
+	end
+	
 TwinkleGymEntryClerkStopsYouL:
 	special Special_StopRunning
 	playsound SFX_PAY_DAY
@@ -44,10 +126,7 @@ TwinkleGymEntryClerkStopsYouL:
 	closetext
 	spriteface TWINKLE_GYM_ENTRY_CLERK, DOWN
 	applymovement PLAYER, Movement_TwinkleGymEntryL
-	opentext
-	writetext TwinkleGymEntryClerkTextExcuseMe2
-	jump TwinkleGymEntryClerk.cont
-	end
+	jump TwinkleGymEntryClerk
 	
 TwinkleGymEntryClerkStopsYouR:
 	special Special_StopRunning
@@ -62,10 +141,7 @@ TwinkleGymEntryClerkStopsYouR:
 	closetext
 	spriteface TWINKLE_GYM_ENTRY_CLERK, DOWN
 	applymovement PLAYER, Movement_TwinkleGymEntryR
-	opentext
-	writetext TwinkleGymEntryClerkTextExcuseMe2
-	jump TwinkleGymEntryClerk.cont
-	end
+	jump TwinkleGymEntryClerk
 	
 TwinkleGymEntryClerk:
 	faceplayer
@@ -73,7 +149,6 @@ TwinkleGymEntryClerk:
 	checkevent EVENT_GOT_BLUE_KEY
 	iftrue .gotbluekey
 	writetext TwinkleGymEntryClerkText1
-.cont
 	yesorno
 	iffalse .saidno
 	setevent EVENT_GOT_BLUE_KEY
@@ -88,14 +163,23 @@ TwinkleGymEntryClerk:
 .gotbluekey
 	checkevent EVENT_CAN_GET_YELLOW_KEY
 	iftrue .yellow
-	writetext TwinkleGymEntryClerkText4
+	writetext TwinkleGymEntryClerkText3
 	waitbutton
 	closetext
 	end
 .yellow
 	checkevent EVENT_GOT_YELLOW_KEY
 	iftrue .gotyellowkey
+	writetext TwinkleGymEntryClerkText4
+	waitbutton
+	closetext
+	spriteface TWINKLE_GYM_ENTRY_CLERK, UP
+	pause 20
+	faceplayer
+	opentext
 	writetext TwinkleGymEntryClerkText5
+	playsound SFX_LEVEL_UP 
+	waitsfx
 	waitbutton
 	takeitem B_ROOM_KEY
 	verbosegiveitem Y_ROOM_KEY
@@ -107,14 +191,23 @@ TwinkleGymEntryClerk:
 .gotyellowkey
 	checkevent EVENT_CAN_GET_RED_KEY
 	iftrue .red
-	writetext TwinkleGymEntryClerkText7
+	writetext TwinkleGymEntryClerkText6
 	waitbutton
 	closetext
 	end
 .red
 	checkevent EVENT_GOT_RED_KEY
 	iftrue .gotredkey
+	writetext TwinkleGymEntryClerkText7
+	waitbutton
+	closetext
+	spriteface TWINKLE_GYM_ENTRY_CLERK, UP
+	pause 20
+	faceplayer
+	opentext
 	writetext TwinkleGymEntryClerkText8
+	playsound SFX_LEVEL_UP 
+	waitsfx
 	waitbutton
 	takeitem Y_ROOM_KEY
 	verbosegiveitem R_ROOM_KEY
@@ -124,7 +217,7 @@ TwinkleGymEntryClerk:
 	setevent EVENT_GOT_RED_KEY
 	end
 .gotredkey
-	writetext TwinkleGymEntryClerkText10
+	writetext TwinkleGymEntryClerkText9
 	waitbutton
 	closetext
 	end
@@ -135,36 +228,114 @@ TwinkleGymEntryClerk:
 	end
 	
 TwinkleGymGuyScript:
-	opentext
-	yesorno
-	iffalse .skip
-	setevent EVENT_CAN_GET_YELLOW_KEY
-.skip
-	yesorno
-	iffalse .skip2
-	setevent EVENT_CAN_GET_RED_KEY
-.skip2
-	closetext
-	end
+	jumptextfaceplayer TwinkleGymGuyText1
+	
+TwinkleGymGuyText1:
+	text "Yo!"
+	
+	para "Champ in making!"
+	
+	para "You here for some"
+	line "rest and relaxation?"
+	
+	para "I hope not, cuz you"
+	line "aren't gonna find"
+	cont "it!"
+	
+	para "Despite the weather"
+	line "outside, this toasty"
+	cont "GYM specializes in"
+	cont "FIRE-type #MON!"
+
+	para "Douse them with a"
+	line "WATER or ROCK-type"
+	cont "MOVE to take 'em"
+	cont "down real quick!"
+	
+	para "ICE or GRASS-types"
+	line "won't do well here,"
+	cont "though…"
+	
+	para "You know all this,"
+	line "kid!"
+	
+	para "Go kick some tail!"
+	done
+	
+TwinkleGymGuyText2:
+	text "Great job, kid!"
+	
+	para "Just like I said!"
+	
+	para "Now if you'll"
+	line "excuse me,"
+	
+	para "I think I'm gonna"
+	line "book some time in"
+	cont "one of the rooms."
+	
+	para "I could use a spa"
+	line "day!"
+	done
 	
 TwinkleGymEntryClerkText1:
-	text "TEXT 1"
+	text "Welcome to the"
+	line "TWINKLE TOWN"
+	cont "#MON GYM."
+	
+	para "Here, we provide"
+	line "sauna and spa"
+	cont "services as well"
+	cont "as standard GYM"
+	cont "battles."
+	
+	para "Are you here to"
+	line "challenge the GYM?"
 	done
 	
 TwinkleGymEntryClerkText2:
-	text "TEXT 2"
+	text "Excellent!"
+	
+	para "You're going to be"
+	line "in our BLUE ROOM"
+	cont "today."
+	
+	para "Here is your key."
 	done
 	
 TwinkleGymEntryClerkText3:
-	text "TEXT 3"
+	text "The BLUE ROOM is"
+	line "down the hall to"
+	cont "the left."
+	
+	para "Please proceed to"
+	line "the BLUE ROOM."
+	
+	para "Good luck!"
 	done
 	
 TwinkleGymEntryClerkText4:
-	text "TEXT 4"
+	text "What's that?"
+	
+	para "The wrong room?"
+	
+	para "Let me just check"
+	line "here…"
 	done
 	
+	
 TwinkleGymEntryClerkText5:
-	text "TEXT 5"
+	text "Oh my!"
+	
+	para "You're right!"
+	
+	para "You're supposed to"
+	line "be in the YELLOW"
+	cont "ROOM!"
+	
+	para "My mistake."
+	
+	para "Here is your key!"
 	
 	para "<PLAYER> handed"
 	line "over the B.ROOM"
@@ -172,15 +343,38 @@ TwinkleGymEntryClerkText5:
 	done
 	
 TwinkleGymEntryClerkText6:
-	text "TEXT 6"
+	text "The YELLOW ROOM"
+	line "is down the hall"
+	cont "to the right."
+	
+	para "Please proceed to"
+	line "the YELLOW ROOM."
+	
+	para "Good luck!"
 	done
 	
+	
 TwinkleGymEntryClerkText7:
-	text "TEXT 7"
+	text "Hmm?"
+	
+	para "The wrong room"
+	line "again?"
+	
+	para "One moment…"
 	done
 	
 TwinkleGymEntryClerkText8:
-	text "TEXT 8"
+	text "Oh dear…"
+	
+	para "I messed up again,"
+	line "didn't I?"
+	
+	para "It says here you're"
+	line "supposed to be in"
+	cont "the RED ROOM."
+	
+	para "I'm sure of it"
+	line "this time!"
 	
 	para "<PLAYER> handed"
 	line "over the Y.ROOM" 
@@ -188,11 +382,13 @@ TwinkleGymEntryClerkText8:
 	done
 	
 TwinkleGymEntryClerkText9:
-	text "TEXT 9"
-	done
+	text "The RED ROOM is…"
 	
-TwinkleGymEntryClerkText10:
-	text "TEXT 10"
+	para "Well, I'm sure you"
+	line "know where the RED"
+	cont "ROOM is by now…"
+	
+	para "Good luck!"
 	done
 	
 TwinkleGymEntryClerkTextExcuseMe:
@@ -210,6 +406,26 @@ TwinkleGymEntryClerkSaidNo:
 	para "Have a good day!"
 	done
 
+TwinkleGymEntryLockedDoorText:
+	text "It's locked tight!"
+	done
+	
+TwinkleGymEntryUnlockDoorText:
+	text "The door unlocked!"
+	done
+	
+TwinkleGymEntryAskUnlockDoorText:
+	text "Looks like your"
+	line "key works on this"
+	cont "door."
+	
+	para "Unlock the door?"
+	done
+	
+TwinkleGymEntryBetterNotText:
+	text "Better not…"
+	done
+	
 Movement_TwinkleGymEntryL:
 	step_right
 	step_right

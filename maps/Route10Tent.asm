@@ -43,6 +43,8 @@ Route10TentNPC:
 	yesorno
 	iffalse .no
 	writetext Route10TentNPCText4
+	playsound SFX_LEVEL_UP 
+	waitsfx
 	waitbutton
 	takeitem CLAY_POT
 	verbosegiveitem AMULET_COIN

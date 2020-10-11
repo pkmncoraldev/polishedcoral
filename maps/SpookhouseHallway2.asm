@@ -6,8 +6,8 @@ SpookhouseHallway2_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 9 ; warp events
-	warp_def 3, 41, 3, SPOOKHOUSE_HALLWAY_1
-	warp_def 2, 41, 4, SPOOKHOUSE_HALLWAY_1
+	warp_def 3, 41, 7, SPOOKHOUSE_LIVING_ROOM
+	warp_def 2, 41, 8, SPOOKHOUSE_LIVING_ROOM
 	warp_def 3, 0, 2, SPOOKHOUSE_HALLWAY_3
 	warp_def 2, 0, 2, SPOOKHOUSE_HALLWAY_3
 	warp_def 1, 37, 1, SPOOKHOUSE_LIVING_ROOM

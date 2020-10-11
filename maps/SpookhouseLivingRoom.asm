@@ -15,8 +15,8 @@ SpookhouseLivingRoom_MapScriptHeader:
 	warp_def 1, 5, 2, SPOOKHOUSE_BEDROOM
 	warp_def 3, 0, 2, SPOOKHOUSE_HALLWAY_1
 	warp_def 2, 0, 2, SPOOKHOUSE_HALLWAY_1
-	warp_def  3,  9, 1, SPOOKHOUSE_HALLWAY_1
-	warp_def 2, 9, 2, SPOOKHOUSE_HALLWAY_1
+	warp_def  3,  9, 1, ROUTE_1
+	warp_def 2, 9, 2, ROUTE_1
 
 	db 2 ; coord events
 	xy_trigger 1, 6, 5, 0, SpookHouseGhost1, 0, 0
@@ -27,8 +27,8 @@ SpookhouseLivingRoom_MapScriptHeader:
 	signpost 2, 10, SIGNPOST_READ, SpookHouseLockedDoor
 	signpost 5, 3, SIGNPOST_READ, SpookHouseFlickerLight
 	signpost 5, 6, SIGNPOST_READ, SpookHouseDeadLight
-	signpost 3, -1, SIGNPOST_READ, SpookHouseLockedDoor2
-	signpost 2, -1, SIGNPOST_READ, SpookHouseLockedDoor2
+	signpost 3, -1, SIGNPOST_IFNOTSET, SpookHouseLockedDoor2
+	signpost 2, -1, SIGNPOST_IFNOTSET, SpookHouseLockedDoor2
 
 	db 1 ; object events
 	person_event SPRITE_TWIN, 2, 4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SpookHouseNPC1, EVENT_SPOOKHOUSE_SAW_GHOST_1
@@ -99,22 +99,30 @@ SpookHouseLockedDoor:
 	jumptext SpookHouseLockedDoorText
 	
 SpookHouseLockedDoor2:
-	checkevent EVENT_SPOOKHOUSE_DOOR_UNLOCKED
-	iftrue .unlockeddoor
+	dw EVENT_SPOOKHOUSE_DOOR_UNLOCKED
 	checkitem OLD_KEY
 	iftrue .unlockdoor
 	jumptext SpookHouseLockedDoorText2
 	
-.unlockeddoor:
-;	killsfx
-	end
-	
 .unlockdoor:
+	opentext
+	writetext SpookHouseUnlockDoorText
+	yesorno
+	iffalse SpookHouseDontUnlockDoor
+	closetext
 	changeblock $0, $3, $51
 	setevent EVENT_SPOOKHOUSE_DOOR_UNLOCKED
+	pause 7
+	playsound SFX_WALL_OPEN
+	pause 14
 	opentext
 	writetext SpookHouseLockedDoor2Text
-	playsound SFX_WALL_OPEN
+	waitbutton
+	closetext
+	end
+	
+SpookHouseDontUnlockDoor:
+	writetext SpookHouseJournalText2
 	waitbutton
 	closetext
 	end
@@ -173,6 +181,14 @@ SpookHouseLockedDoorText2:
 SpookHouseLockedDoor2Text:
 	text "The door is un-"
 	line "locked."
+	done
+	
+SpookHouseUnlockDoorText:
+	text "Looks like your"
+	line "key works on this"
+	cont "door."
+	
+	para "Unlock the door?"
 	done
 	
 SpookHouseFlickerLightText:

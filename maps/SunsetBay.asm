@@ -70,8 +70,6 @@ SunsetBay_MapScriptHeader:
 	const SUNSET_NPC6
 	const SUNSET_BOAT_L
 	const SUNSET_BOAT_R
-	const SUNSET_BOAT_L2
-	const SUNSET_BOAT_R3
 	const SUNSET_SAILBOAT_T
 	const SUNSET_SAILBOAT_B
 	const SUNSET_STRAND
@@ -109,6 +107,8 @@ SunsetBayFlyPoint:
 	return
 	
 JustRodeBoatSunset:
+	special Special_StopRunning
+	special Special_StopLandmarkTimer
 	applymovement PLAYER, Movement_GrampsStart1
 	spriteface PLAYER, LEFT
 	opentext
@@ -119,11 +119,15 @@ JustRodeBoatSunset:
 	playsound SFX_EXIT_BUILDING
 	disappear SUNSET_STRAND
 	waitsfx
+	special Special_StartLandmarkTimer
+	waitsfx
 	setevent EVENT_SUNSET_STRAND
 	dotrigger $1
 	end
 	
 JustRodeBoatSunset2:
+	special Special_StopRunning
+	special Special_StopLandmarkTimer
 	applymovement PLAYER, Movement_GrampsStart1
 	spriteface PLAYER, LEFT
 	opentext
@@ -138,11 +142,15 @@ JustRodeBoatSunset2:
 	disappear SUNSET_STRAND
 	waitsfx
 	special Special_FadeInQuickly
+	special Special_StartLandmarkTimer
+	waitsfx
 	setevent EVENT_SUNSET_STRAND
 	dotrigger $1
 	end
 	
 JustRodeBoatSunset3:
+	special Special_StopRunning
+	special Special_StopLandmarkTimer
 	applymovement PLAYER, Movement_GrampsStart1
 	spriteface PLAYER, LEFT
 	opentext
@@ -152,6 +160,8 @@ JustRodeBoatSunset3:
 	applymovement SUNSET_STRAND, Movement_GrampsStart1
 	playsound SFX_EXIT_BUILDING
 	disappear SUNSET_STRAND
+	waitsfx
+	special Special_StartLandmarkTimer
 	waitsfx
 	setevent EVENT_SUNSET_STRAND
 	dotrigger $1

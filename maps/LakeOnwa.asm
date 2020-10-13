@@ -88,6 +88,8 @@ LakeOnwaCallback:
 	return
 
 JustRodeBoatR:
+	special Special_StopRunning
+	special Special_StopLandmarkTimer
 	applymovement PLAYER, Movement_PlayerStepOffBoat
 	opentext
 	writetext JustRodeBoatText
@@ -99,6 +101,8 @@ JustRodeBoatR:
 	disappear LAKEBOATMANOUTSIDER
 	disappear LAKEBOATMANOUTSIDEL
 	waitsfx
+	special Special_StartLandmarkTimer
+	waitsfx
 	setevent EVENT_BOAT_BOYS_BEGONE
 	changeblock $26, $20, $43
 	changeblock $18, $1a, $43
@@ -106,6 +110,8 @@ JustRodeBoatR:
 	end
 
 JustRodeBoatL:
+	special Special_StopRunning
+	special Special_StopLandmarkTimer
 	applymovement PLAYER, Movement_PlayerStepOffBoat
 	opentext
 	writetext JustRodeBoatText
@@ -116,6 +122,8 @@ JustRodeBoatL:
 	playsound SFX_EXIT_BUILDING
 	disappear LAKEBOATMANOUTSIDER
 	disappear LAKEBOATMANOUTSIDEL
+	waitsfx
+	special Special_StartLandmarkTimer
 	waitsfx
 	setevent EVENT_BOAT_BOYS_BEGONE
 	changeblock $26, $20, $43

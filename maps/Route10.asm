@@ -185,9 +185,15 @@ TrainerRoute10_7:
 	done
 	
 Route10Random:
+	checkevent EVENT_HAD_FIRST_SNOWSTORM
+	iffalse .first_storm
 	checkevent EVENT_SNOWSTORM_HAPPENING
 	iftrue .endcallback
 	callasm Route10RandomAsm
+	jump .endcallback
+.first_storm
+	callasm Route10FirstTimeRandomAsm
+	setevent EVENT_HAD_FIRST_SNOWSTORM
 .endcallback
 	return
 	
@@ -207,7 +213,7 @@ Route10StartSnowstorm:
 	
 Route10RandomAsm:
 	call Random
-	cp $99 ; 60 percent
+	cp $7f ; 50 percent
 	ret c
 	call Random
 	cp $3f ; 25 percent
@@ -216,6 +222,13 @@ Route10RandomAsm:
 	cp $3f ; 25 percent
 	jr c, Route10SetScene2Asm
 	jr Route10SetScene3Asm
+	
+Route10FirstTimeRandomAsm:
+	call Random
+	cp $7f ; 50 percent
+	jr c, Route10SetScene1Asm
+	jr Route10SetScene2Asm
+	
 	
 Route10SetScene1Asm:
 	ld b, BANK(Route10SetScene1Script)

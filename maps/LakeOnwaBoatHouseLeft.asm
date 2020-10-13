@@ -58,7 +58,6 @@ LakeBoatMan2:
 	end
 	
 .normal
-	opentext
 	writetext LakeBoatManText11
 	special PlaceMoneyTopRight
 	yesorno
@@ -227,16 +226,11 @@ LakeBoatManText8:
 	cont "ship out for"
 	cont "some reason…"
 	
-	para "The best I can"
-	line "do is give you"
-	cont "a ride across"
-	cont "the lake."
-	
 	para "Maybe you should"
 	line "call the person"
 	cont "you were supposed"
 	cont "to meet, and let"
-	cont "them know…"
+	cont "them know."
 	done
 	
 LakeBoatManText9:
@@ -245,27 +239,23 @@ LakeBoatManText9:
 	done
 	
 LakeBoatManText10:
-	text "Welcome to the"
-	line "LAKE ONWA BOAT"
-	cont "HOUSE."
-
-	para "Sorry kid."
+	text  "Sorry kid."
 	
-	para "The best I can"
-	line "do is give you"
-	cont "a ride across"
-	cont "the lake."
+	para "The boats aren't"
+	line "running to the"
+	cont "island today."
+	
+	para "The SUNBEAM BOAT"
+	line "HOUSE won't give"
+	cont "us the 10-4 to"
+	cont "ship out for"
+	cont "some reason…"
 	
 	para "Maybe you should"
 	line "call the person"
 	cont "you were supposed"
 	cont "to meet, and let"
-	cont "them know…"
-	
-	para "Anyway, would"
-	line "you like a ride"
-	cont "across the lake"
-	cont "for ¥500?"
+	cont "them know."
 	done
 	
 LakeBoatManText11:
@@ -307,11 +297,14 @@ LakeBoatManText15:
 	line "running to the"
 	cont "island today."
 	
-	para "The best I can"
-	line "do is give you"
-	cont "a ride to the"
+	para "Huh?"
+	
+	para "A ride to the"
 	cont "other side of the"
-	cont "lake."
+	cont "lake?"
+	
+	para "Sure, I can do"
+	line "that!"
 	
 	para "Would you like a"
 	line "ride for ¥500?"

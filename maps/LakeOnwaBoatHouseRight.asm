@@ -45,10 +45,11 @@ LakeBoatMan1:
 	end
 .talkedbefore
 	writetext LakeBoatManText10
-	jump .cont
+	waitbutton
+	closetext
+	end
 .talkedbeforeandcalled
 	writetext LakeBoatManText15
-.cont
 	special PlaceMoneyTopRight
 	yesorno
 	iffalse .end

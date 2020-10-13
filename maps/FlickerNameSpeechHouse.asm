@@ -34,7 +34,7 @@ FlickerHouse2NPC1Text:
 	
 	para "Since then, this"
 	line "little town hasn't"
-	cont "gotten much bigger."
+	cont "gotten any bigger."
 	done
 	
 FlickerHouse2NPC2Text:
@@ -48,7 +48,7 @@ FlickerHouse2NPC2Text:
 	
 	para "Apparently the"
 	line "town was built"
-	cont "around the"
+	cont "AROUND the"
 	cont "station."
 	
 	para "I guess that would"

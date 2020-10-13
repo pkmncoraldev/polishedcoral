@@ -245,7 +245,8 @@ SpruceLabSpruceText1:
 	para "How is the #MON"
 	line "I sent for you?"
 	
-	para "Well, I hope."
+	para "Doing well, I"
+	line "hope."
 	
 	para "Anyway, let me"
 	line "show you around."

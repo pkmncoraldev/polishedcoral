@@ -35,9 +35,9 @@ MAP_NONE   EQU 0
 	map_const MT_ONWA_B3F,								  11, 14 ; 13
 	map_const MT_ONWA_CLIFF,							  20, 20 ; 14
 	map_const MT_ONWA_LOWER_CLIFF,						  13, 12 ; 15
-	map_const FLICKER_PASS_1F,							  21, 18 ; 16
+	map_const FLICKER_PASS_1F,							  21, 22 ; 16
 	map_const FLICKER_PASS_2F,							  25, 26 ; 17
-	map_const LUSTER_SEWERS_B1F,						  13, 12 ; 18
+	map_const LUSTER_SEWERS_B1F,						  15, 12 ; 18
 	map_const LUSTER_SEWERS_B2F,						  15, 12 ; 19
 	map_const LUSTER_SEWERS_VALVE_ROOM,				      16,  3 ; 20
 	map_const ICE_CAVE_B1F,								  15,  7 ; 21
@@ -203,8 +203,8 @@ MAP_NONE   EQU 0
 	map_const TWINKLE_HOUSE_3,							   4,  4 ; 7
 	map_const TWINKLE_POKECENTER,                          6,  4 ; 8
 	map_const TWINKLE_MART,								   6,  4 ; 9
-	map_const TWINKLE_GYM_ENTRY,						   7,  6 ; 10
-	map_const TWINKLE_GYM_BLUE_ROOM,					   3,  3 ; 11
+	map_const TWINKLE_GYM_ENTRY,						   7,  7 ; 10
+	map_const TWINKLE_GYM_BLUE_ROOM,					   5,  9 ; 11
 	map_const TWINKLE_GYM_YELLOW_ROOM,					   3,  3 ; 12
 	map_const TWINKLE_GYM_RED_ROOM,						   3,  3 ; 13
 	

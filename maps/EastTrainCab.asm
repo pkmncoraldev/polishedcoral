@@ -301,7 +301,8 @@ EastTrainCabLockeText1:
 	
 EastTrainCabLockeText2:
 	text "I thought I told"
-	line "you to be quiet!"
+	line "you to be quiet"
+	cont "back there!"
 	
 	para "I'll shut you up!"
 	done

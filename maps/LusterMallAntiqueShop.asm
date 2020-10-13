@@ -42,16 +42,16 @@ LusterMallAntiqueShopLampText:
 	done
 	
 LusterMallAntiqueShopMapText:
-	text "At first glance"
-	line "it looks like a map,"
+	text "At first glance it"
+	line "looks like a map,"
 	
 	para "but it's actually a"
 	line "painting."
 	done
 	
 LusterMallAntiqueShopBookShelfText:
-	text "It's filled with old"
-	line "novels."
+	text "It's filled with"
+	line "old novels."
 	
 	para "Boooring!"
 	done
@@ -72,6 +72,6 @@ LusterMallAntiqueShopRadioText:
 	done
 	
 LusterMallAntiqueShopPlaqueText:
-	text "A bronze plaque of"
-	line "some kind."
+	text "A bronze plaque"
+	line "of some kind."
 	done

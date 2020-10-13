@@ -156,6 +156,8 @@ JustRodeBoatSunbeamNormal:
 	playsound SFX_EXIT_BUILDING
 	disappear SUNBEAM_BOAT_MAN
 	waitsfx
+	special Special_StartLandmarkTimer
+	waitsfx
 	setevent EVENT_ISLAND_STRAND
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
 	checkevent EVENT_SNARE_ASLEEP

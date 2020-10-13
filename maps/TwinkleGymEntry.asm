@@ -7,8 +7,8 @@ TwinkleGymEntry_MapScriptHeader:
 	callback MAPCALLBACK_TILES, TwinkleGymEntryCallback
 
 	db 6 ; warp events
-	warp_def 11,  6, 7, TWINKLE_TOWN
-	warp_def 11,  7, 7, TWINKLE_TOWN
+	warp_def 13,  6, 7, TWINKLE_TOWN
+	warp_def 13,  7, 7, TWINKLE_TOWN
 	warp_def  1,  2, 1, TWINKLE_GYM_BLUE_ROOM
 	warp_def  1, 11, 1, TWINKLE_GYM_YELLOW_ROOM
 	warp_def  0,  6, 1, TWINKLE_GYM_RED_ROOM
@@ -26,7 +26,7 @@ TwinkleGymEntry_MapScriptHeader:
 
 	db 2 ; object events
 	object_event  6,  7, SPRITE_BATTLE_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleGymEntryClerk, -1
-	object_event  9, 10, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymGuyScript, -1
+	object_event  9, 11, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymGuyScript, -1
 
 	
 	const_def 1 ; object constants

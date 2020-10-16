@@ -72,7 +72,7 @@ DodrioRanchRaceTrack_MapScriptHeader:
 	person_event SPRITE_DODUO,  9, 11, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
 	person_event SPRITE_BEAUTY, 12,  5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
 	person_event SPRITE_BIRD_KEEPER, 3, 9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
-	person_event SPRITE_BALL_CUT_FRUIT, 30, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RanchRidePokeballFly, EVENT_GOT_HM02_FLY
+	fruittreeinvis_event 28, 30, FRUITTREE_DODRIO_RANCH, LEPPA_BERRY
 
 
 	const_def 1 ; object constants
@@ -84,7 +84,7 @@ DodrioRanchRaceTrack_MapScriptHeader:
 	const RANCHRACEDODUO2
 	const RANCHRACEDODUO3
 	const RANCHRACEDODUO4
-	const RANCHRACEPOKEBALL
+	const RANCHRACEBERRYTREE
 	
 DodrioRanchRaceTrackTrigger0:
 	end
@@ -115,26 +115,6 @@ DodrioRanchRaceTrackMakeBrown:
 	writebyte (1 << 7) | (PAL_OW_BROWN << 4)
 	special Special_SetPlayerPalette
 	return
-	
-RanchRidePokeballFly:
-	disappear LAST_TALKED
-	opentext
-	writetext ReceivedFlyText1
-	waitsfx
-	specialsound
-	waitbutton
-	writetext ReceivedFlyText2
-	waitbutton
-	closetext
-	setevent EVENT_GOT_HM02_FLY
-	setflag ENGINE_GOT_FLY
-	end
-;	opentext
-;	writetext .text_found
-;	playsound SFX_ITEM
-;	pause 60
-;	tmhmnotify
-;	closetext
 	
 RanchRideScarecrow:
 	jumptext RanchRideScarecrowText
@@ -264,7 +244,7 @@ RanchRideRaceFinishLine:
 	clearflag ENGINE_BUG_CONTEST_TIMER
 	end
 .firsttime
-	writetext RanchRideRaceTimeText
+	writetext RanchRideRaceTimeTextFirstTime
 	buttonsound
 	verbosegivetmhm HM_FLY
 	setevent EVENT_GOT_HM02_FLY
@@ -541,6 +521,20 @@ RanchRideRaceText4:
 RanchRideRaceTimeText:
 ;	text_from_ram wStringBuffer3
 	text " seconds!"
+	
+	para "Alright!"
+	
+	para "Here's your prize!"
+	done
+	
+RanchRideRaceTimeTextFirstTime:
+;	text_from_ram wStringBuffer3
+	text "Wow, kid!"
+	
+	para "You were really"
+	line "flying!"
+	
+	para " seconds!"
 	
 	para "Alright!"
 	

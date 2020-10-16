@@ -68,4 +68,5 @@ MapTriggers::
 	scene_var ICE_TEMPLE_B1F_3,						  wIceTempleB1F3Trigger
 	scene_var ICE_TEMPLE_B2F_1,						  wIceTempleB2F1Trigger
 	scene_var TWINKLE_GYM_ENTRY,					  wTwinkleGymEntryTrigger
+	scene_var TWINKLE_GYM_YELLOW_ROOM,				  wTwinkleGymYellowRoomTrigger
 	db -1

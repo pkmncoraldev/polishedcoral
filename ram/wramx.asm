@@ -990,7 +990,8 @@ wIceTempleB1F2Trigger:: ds 1
 wIceTempleB1F3Trigger:: ds 1
 wIceTempleB2F1Trigger:: ds 1
 wTwinkleGymEntryTrigger:: ds 1
-ds 36
+wTwinkleGymYellowRoomTrigger:: ds 1
+ds 35
 
 ; fight counts
 wJackFightCount::    ds 1

@@ -248,7 +248,8 @@ LoadSpecialMapPalette: ; 494ac
 	jr nz, .steam2
 	eventflagcheck EVENT_BLUE_ROOM_STEAM_3
 	jr nz, .steam3
-	jr .do_nothing
+	ld hl, TwinkleGym4Palette
+	jp LoadSevenBGPalettes
 .yellow_room
 	eventflagcheck EVENT_YELLOW_ROOM_STEAM_1
 	jr nz, .steam1
@@ -256,7 +257,8 @@ LoadSpecialMapPalette: ; 494ac
 	jr nz, .steam2
 	eventflagcheck EVENT_YELLOW_ROOM_STEAM_3
 	jr nz, .steam3
-	jr .do_nothing
+	ld hl, TwinkleGym4Palette
+	jp LoadSevenBGPalettes
 .red_room
 	eventflagcheck EVENT_RED_ROOM_STEAM_1
 	jr nz, .steam1
@@ -264,7 +266,8 @@ LoadSpecialMapPalette: ; 494ac
 	jr nz, .steam2
 	eventflagcheck EVENT_RED_ROOM_STEAM_3
 	jr nz, .steam3
-	jr .do_nothing
+	ld hl, TwinkleGym4Palette
+	jp LoadSevenBGPalettes
 .steam1
 	ld hl, TwinkleGym1Palette
 	jp LoadSevenBGPalettes
@@ -422,6 +425,9 @@ INCLUDE "maps/palettes/bgpals/twinklegym2.pal"
 
 TwinkleGym3Palette:
 INCLUDE "maps/palettes/bgpals/twinklegym3.pal"
+
+TwinkleGym4Palette:
+INCLUDE "maps/palettes/bgpals/twinklegym4.pal"
 
 OutsideGrovePalette:
 INCLUDE "maps/palettes/bgpals/bggrove.pal"

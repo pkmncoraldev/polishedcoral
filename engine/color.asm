@@ -834,7 +834,66 @@ LoadMapPals:
 	jp z, .sewer
 	cp TILESET_ICE_CAVE
 	jp z, .ice_cave
+	cp TILESET_PLAYER_HOUSE
+	jp z, .playerhouse
 	jp .normal
+.playerhouse
+	ld a, [wMapGroup]
+	cp GROUP_TWINKLE_GYM_ENTRY
+	jp nz, .normal
+	ld a, [wMapNumber]
+	cp MAP_TWINKLE_GYM_BLUE_ROOM
+	jr z, .blue_room
+	cp MAP_TWINKLE_GYM_YELLOW_ROOM
+	jr z, .yellow_room
+	cp MAP_TWINKLE_GYM_RED_ROOM
+	jr z, .red_room
+	jp .normal
+.blue_room
+	eventflagcheck EVENT_BLUE_ROOM_STEAM_1
+	jr nz, .steam1
+	eventflagcheck EVENT_BLUE_ROOM_STEAM_2
+	jr nz, .steam2
+	eventflagcheck EVENT_BLUE_ROOM_STEAM_3
+	jr nz, .steam3
+	jp .normal
+.yellow_room
+	eventflagcheck EVENT_YELLOW_ROOM_STEAM_1
+	jr nz, .steam1
+	eventflagcheck EVENT_YELLOW_ROOM_STEAM_2
+	jr nz, .steam2
+	eventflagcheck EVENT_YELLOW_ROOM_STEAM_3
+	jr nz, .steam3
+	jp .normal
+.red_room
+	eventflagcheck EVENT_RED_ROOM_STEAM_1
+	jr nz, .steam1
+	eventflagcheck EVENT_RED_ROOM_STEAM_2
+	jr nz, .steam2
+	eventflagcheck EVENT_RED_ROOM_STEAM_3
+	jr nz, .steam3
+	jp .normal
+.steam1
+	ld hl, MapObjectPalsTwinkleGym1
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+.steam2
+	ld hl, MapObjectPalsTwinkleGym2
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+.steam3
+	ld hl, MapObjectPalsTwinkleGym3
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
 .ice_cave
 	ld a, [wPlayerPalette]
 	cp 4
@@ -1286,6 +1345,15 @@ INCLUDE "maps/palettes/obpals/obicecavepurple.pal"
 
 MapObjectPalsIceCavePurple2::
 INCLUDE "maps/palettes/obpals/obicecavepurple2.pal"
+
+MapObjectPalsTwinkleGym1:
+INCLUDE "maps/palettes/obpals/obtwinklegym1.pal"
+
+MapObjectPalsTwinkleGym2:
+INCLUDE "maps/palettes/obpals/obtwinklegym2.pal"
+
+MapObjectPalsTwinkleGym3:
+INCLUDE "maps/palettes/obpals/obtwinklegym3.pal"
 
 MapObjectPalsSewer::
 INCLUDE "maps/palettes/obpals/obsewer.pal"

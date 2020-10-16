@@ -230,6 +230,8 @@ Luster2NPC8Text:
 	line "allowed behind the"
 	cont "SHOPPING MALL."
 	
-	para "I wonder what goes"
-	line "on back there…"
+	para "I'm thinking of"
+	line "getting a job just"
+	cont "to see what goes"
+	cont "on back there…"
 	done

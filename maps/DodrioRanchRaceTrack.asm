@@ -17,8 +17,8 @@ DodrioRanchRaceTrack_MapScriptHeader:
 	xy_trigger 1, 13, 40, 0, RanchRideRaceCheckpoint2, 0, 0
 	xy_trigger 1, 24, 31, 0, RanchRideRaceCheckpoint3, 0, 0
 	xy_trigger 1, 25, 31, 0, RanchRideRaceCheckpoint3, 0, 0
-	xy_trigger 1, 17, 29, 0, RanchRideRaceFinishLine, 0, 0
 	xy_trigger 1, 17, 28, 0, RanchRideRaceFinishLine, 0, 0
+	xy_trigger 1, 17, 29, 0, RanchRideRaceFinishLine2, 0, 0
 	xy_trigger 1, 18, 29, 0, RanchRideRaceBackwards, 0, 0
 	xy_trigger 1, 18, 28, 0, RanchRideRaceBackwards, 0, 0
 	xy_trigger 1, 12, 27, 0, RanchRideRaceOffTrack, 0, 0
@@ -197,6 +197,51 @@ RanchRideRaceFinishLine:
 	spriteface RANCHRACENPC1, RIGHT
 	spriteface PLAYER, LEFT
 	playmusic MUSIC_ROUTE_4
+	jump .cont
+	
+.FinishLine2:
+	checkevent EVENT_RANCH_RACE_CHECKPOINT1
+	iffalse .nocheckpoints
+	checkevent EVENT_RANCH_RACE_CHECKPOINT2
+	iffalse .skippedcheckpoint
+	checkevent EVENT_RANCH_RACE_CHECKPOINT3
+	iffalse .skippedcheckpoint
+	checkevent EVENT_RANCH_RACE_FINISHED_LAP_1
+	iftrue .lap2_2
+	setevent EVENT_RANCH_RACE_FINISHED_LAP_1
+	clearevent EVENT_RANCH_RACE_CHECKPOINT1
+	clearevent EVENT_RANCH_RACE_CHECKPOINT2
+	clearevent EVENT_RANCH_RACE_CHECKPOINT3
+	playsound SFX_TALLY
+	end
+.lap2_2
+	checkevent EVENT_RANCH_RACE_FINISHED_LAP_2
+	iftrue .lap3_2
+	setevent EVENT_RANCH_RACE_FINISHED_LAP_2
+	clearevent EVENT_RANCH_RACE_CHECKPOINT1
+	clearevent EVENT_RANCH_RACE_CHECKPOINT2
+	clearevent EVENT_RANCH_RACE_CHECKPOINT3
+	playsound SFX_TALLY
+	end
+.lap3_2
+	setflag ENGINE_DONE_RANCH_RACE_TODAY
+	clearevent EVENT_RANCH_RACE_CHECKPOINT1
+	clearevent EVENT_RANCH_RACE_CHECKPOINT2
+	clearevent EVENT_RANCH_RACE_CHECKPOINT3
+	clearevent EVENT_RANCH_RACE_FINISHED_LAP_1
+	clearevent EVENT_RANCH_RACE_FINISHED_LAP_2
+	dotrigger $0
+	playmusic MUSIC_NONE
+	playsound SFX_RAZOR_WIND
+	waitsfx
+	playsound SFX_CHOOSE_A_CARD
+	waitsfx
+	pause 10
+	spriteface RANCHRACENPC1, RIGHT
+	spriteface PLAYER, LEFT
+	playmusic MUSIC_ROUTE_4
+	applyonemovement PLAYER, step_left
+.cont
 	opentext
 ;	checkcode VAR_CONTESTMINUTES
 ;	RAM2MEM $0
@@ -301,6 +346,9 @@ RanchRideRaceFinishLine:
 	
 .nocheckpoints
 	end
+	
+RanchRideRaceFinishLine2:
+	jump RanchRideRaceFinishLine.FinishLine2
 	
 RanchRideRaceBackwards:
 	checkevent EVENT_RANCH_RACE_CHECKPOINT3
@@ -529,12 +577,12 @@ RanchRideRaceTimeText:
 	
 RanchRideRaceTimeTextFirstTime:
 ;	text_from_ram wStringBuffer3
-	text "Wow, kid!"
+	text " seconds!"
+	
+	para "Wow, kid!"
 	
 	para "You were really"
-	line "flying!"
-	
-	para " seconds!"
+	line "flying out there!"
 	
 	para "Alright!"
 	

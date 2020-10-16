@@ -1554,178 +1554,233 @@ CoralSplashScreen:
 	farcall DrawTitleGraphic
 	hlcoord 7, 2
 	lb bc, 1, 6
-	lb de, $94, 0
+	lb de, $90, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 1, 4
+	lb bc, 1, SCREEN_WIDTH
+	lb de, $a9, 0
 	farcall DrawTitleGraphic
 	
 	hlcoord 0, 5
 	lb bc, 1, SCREEN_WIDTH
-	lb de, $a8, 0
+	lb de, $bc, 0
 	farcall DrawTitleGraphic
 	
 	hlcoord 0, 6
 	lb bc, 1, SCREEN_WIDTH
-	lb de, $bc, 0
+	lb de, $d0, 0
 	farcall DrawTitleGraphic
 	
 	hlcoord 0, 7
 	lb bc, 1, SCREEN_WIDTH
-	lb de, $d0, 0
-	farcall DrawTitleGraphic
-	
-	hlcoord 0, 8
-	lb bc, 1, SCREEN_WIDTH
 	lb de, $e4, 0
 	farcall DrawTitleGraphic
 	
-	hlcoord 0, 9
+	hlcoord 0, 8
 	lb bc, 1, 7
 	lb de, $f8, 0
 	farcall DrawTitleGraphic
 	
-	hlcoord 7, 9
+	hlcoord 7, 8
 	lb bc, 1, 1
 	lb de, $73, 0
 	farcall DrawTitleGraphic
 	
-	hlcoord 8, 9
+	hlcoord 8, 8
 	lb bc, 1, 12
 	lb de, $00, 0
 	farcall DrawTitleGraphic
 	
-	hlcoord 0, 10
+	hlcoord 0, 9
 	lb bc, 1, SCREEN_WIDTH
 	lb de, $0c, 0
 	farcall DrawTitleGraphic
 	
-	hlcoord 0, 11
+	hlcoord 0, 10
 	lb bc, 1, SCREEN_WIDTH
 	lb de, $20, 0
 	farcall DrawTitleGraphic
 	
-	hlcoord 0, 12
+	hlcoord 0, 11
 	lb bc, 1, SCREEN_WIDTH
 	lb de, $34, 0
 	farcall DrawTitleGraphic
 	
-	hlcoord 0, 13
+	hlcoord 0, 12
 	lb bc, 1, SCREEN_WIDTH
 	lb de, $48, 0
 	farcall DrawTitleGraphic
 	
-	hlcoord 0, 14
+	hlcoord 0, 13
 	lb bc, 1, SCREEN_WIDTH
-	lb de, $5b, 0
+	lb de, $5c, 0
 	farcall DrawTitleGraphic
 	
-	hlcoord 0, 15
+	hlcoord 0, 14
 	lb bc, 1, 1
 	lb de, $70, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 1, 15
+	hlcoord 1, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 2, 15
+	hlcoord 2, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 3, 15
+	hlcoord 3, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 4, 15
+	hlcoord 4, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 5, 15
+	hlcoord 5, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 6, 15
+	hlcoord 6, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 7, 15
+	hlcoord 7, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 8, 15
+	hlcoord 8, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 9, 15
+	hlcoord 9, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 10, 15
+	hlcoord 10, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 11, 15
+	hlcoord 11, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 12, 15
+	hlcoord 12, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 13, 15
+	hlcoord 13, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 14, 15
+	hlcoord 14, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 15, 15
+	hlcoord 15, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 16, 15
+	hlcoord 16, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 17, 15
+	hlcoord 17, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 18, 15
+	hlcoord 18, 14
 	lb bc, 1, 1
 	lb de, $71, 1
 	farcall DrawTitleGraphic
 	
-	hlcoord 19, 15
+	hlcoord 19, 14
 	lb bc, 1, 1
 	lb de, $72, 1
 	farcall DrawTitleGraphic
 	
-;	hlcoord 3, 16
-;	lb bc, 1, 9
-;	lb de, $86, 0
-;	farcall DrawTitleGraphic
+	hlcoord 0, 15
+	lb bc, 1, 10
+	lb de, $86, 0
+	farcall DrawTitleGraphic
 	
-;	hlcoord 3, 17
-;	lb bc, 1, 9
-;	lb de, $9a, 0
-;	farcall DrawTitleGraphic
+	hlcoord 10, 15
+	lb bc, 1, 8
+	lb de, $a0, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 18, 15
+	lb bc, 1, 2
+	lb de, $7d, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 0, 16
+	lb bc, 1, 10
+	lb de, $96, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 10, 16
+	lb bc, 1, 1
+	lb de, $a8, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 11, 16
+	lb bc, 1, 9
+	lb de, $74, 0
+	farcall DrawTitleGraphic
+	
+; set PRESS A TO CONTINUE palette
+	ld a, 1
+	ld [rVBK], a
+	
+	hlbgcoord 0, 15
+	ld bc, BG_MAP_WIDTH
+	ld a, 1
+	call ByteFill
+	
+	hlbgcoord 0, 16
+	ld bc, BG_MAP_WIDTH
+	ld a, 1
+	call ByteFill
+	
+	xor a
+	ld [rVBK], a
+	ret
+	
+ClearSplashScreenPalettes:
+	ld a, 1
+	ld [rVBK], a
+	
+	hlbgcoord 0, 15
+	ld bc, BG_MAP_WIDTH
+	xor a
+	call ByteFill
+	
+	hlbgcoord 0, 16
+	ld bc, BG_MAP_WIDTH
+	xor a
+	call ByteFill
+	
+	xor a
+	ld [rVBK], a
 	ret
 
 CoralDevScreen:

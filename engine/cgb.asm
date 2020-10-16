@@ -1295,9 +1295,11 @@ endr
 
 
 _CGB_SplashScreen: ; 94fa
-	ld de, wUnknBGPals
 	ld hl, .SplashScreenPalette
-	call LoadHLPaletteIntoDE
+	ld de, wUnknBGPals
+	ld bc, 2 palettes
+	ld a, $5
+	call FarCopyWRAM
 
 	ld de, wUnknOBPals
 rept 2
@@ -1310,7 +1312,12 @@ endr
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-	RGB 31, 31, 31	
+	RGB 31, 31, 31
+	
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	
 .SplashScreenOBPalette: ; 9521
 	RGB 00, 00, 00

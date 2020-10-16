@@ -18,13 +18,24 @@ Copyright_GFPresents: ; e4579
 	call ApplyTilemapInVBlank
 	ld c, 15
 	call FadePalettes
-	ld c, 250
+	ld c, 200
 	call DelayFrames
-	ld c, 150
-	call DelayFrames
+	ld hl, SplashScreenPalette
+	ld de, wUnknBGPals
+	ld bc, 2 palettes
+	ld a, $5
+	call FarCopyWRAM
+	ld c, 15
+	call FadePalettes
+.loop
+	call GetJoypad
+	ld hl, hJoyPressed
+	bit A_BUTTON_F, [hl]
+	jr z, .loop
 	call SetBlackPals
 	ld c, 15
 	call FadePalettes
+	farcall ClearSplashScreenPalettes
 	ld b, CGB_GAMEFREAK_LOGO
 	call GetCGBLayout
 	ld c, 60
@@ -131,6 +142,17 @@ Copyright_GFPresents: ; e4579
 	ld c, 16
 	jp DelayFrames
 ; e4670
+
+SplashScreenPalette:
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 31, 31, 31
+	
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 31, 31, 31
 
 PlaceGameFreakPresents: ; e4670
 	ld a, [wJumptableIndex]

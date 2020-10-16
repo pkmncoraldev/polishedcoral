@@ -30,3 +30,5 @@
 
 CGB_PARTY_MENU_HP_PALS  EQU -4
 CGB_RAM EQU -1
+
+;engine\cgb.asm

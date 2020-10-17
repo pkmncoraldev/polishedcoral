@@ -33,6 +33,7 @@ TwinkleGymYellowRoomInPool:
 	changeblock $e, $a, $65
 	changeblock $12, $a, $66
 	changeblock $a, $8, $6c
+	changeblock $c, $8, $5c
 	changeblock $12, $8, $6d
 	callasm RefreshScreen_BridgeUpdate
 	dotrigger $1
@@ -42,7 +43,8 @@ TwinkleGymYellowRoomOutPool:
 	changeblock $c, $a, $60
 	changeblock $e, $a, $5a
 	changeblock $12, $a, $62
-	changeblock $0, $2, $5c
+	changeblock $a, $8, $6a
+	changeblock $c, $8, $76
 	changeblock $12, $8, $5e
 	callasm RefreshScreen_BridgeUpdate
 	dotrigger $0

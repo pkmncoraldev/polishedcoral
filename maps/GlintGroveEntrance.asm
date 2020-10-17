@@ -7,7 +7,7 @@ GlintGroveEntrance_MapScriptHeader:
 	scene_script GlintGroveEntranceTrigger3
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_OBJECTS, GlintGroveEntrancePiles
+	callback MAPCALLBACK_TILES, GlintGroveEntrancePiles
 
 	db 2 ; warp events
 	warp_def 4, 9, 1, GLINT_GROVE

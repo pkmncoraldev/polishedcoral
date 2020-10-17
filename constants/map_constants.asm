@@ -204,7 +204,7 @@ MAP_NONE   EQU 0
 	map_const TWINKLE_POKECENTER,                          6,  4 ; 8
 	map_const TWINKLE_MART,								   6,  4 ; 9
 	map_const TWINKLE_GYM_ENTRY,						   7,  7 ; 10
-	map_const TWINKLE_GYM_BLUE_ROOM,					   5,  9 ; 11
+	map_const TWINKLE_GYM_BLUE_ROOM,					   7,  9 ; 11
 	map_const TWINKLE_GYM_YELLOW_ROOM,					  11, 10 ; 12
 	map_const TWINKLE_GYM_RED_ROOM,						   3,  3 ; 13
 	

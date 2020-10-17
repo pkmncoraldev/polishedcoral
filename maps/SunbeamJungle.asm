@@ -66,7 +66,7 @@ SunbeamJungleTrigger0:
 	applymovement SUNBEAM_JUNGLE_KAGE_CUTSCENE, Movement_SunbeamJungleKage1
 	disappear SUNBEAM_JUNGLE_KAGE_CUTSCENE
 	applymovement SUNBEAM_JUNGLE_SNARE_CUTSCENE, Movement_SunbeamJungleSnare1
-	callasm SunbeamJungleCutsceneAsm
+	callasm CheckFacingObjectCutscene
 	iffalse .endwalking
 	applyonemovement SUNBEAM_JUNGLE_SNARE_CUTSCENE, step_left
 	spriteface SUNBEAM_JUNGLE_SNARE_CUTSCENE, DOWN
@@ -100,17 +100,6 @@ SunbeamJungleTrigger1:
 	
 SunbeamJungleTrigger2:
 	end
-	
-SunbeamJungleCutsceneAsm:
-	callba GetFacingObject
-	jr nc, .nope
-	ld a, 1
-	ld [wScriptVar], a
-	ret
-.nope
-	xor a
-	ld [wScriptVar], a
-	ret
 	
 SunbeamJungleKageScript:
 	special Special_StopRunning

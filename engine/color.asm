@@ -1228,6 +1228,8 @@ LoadMapPals:
 	ret nz
 .outside
 	ld a, [wTileset]
+	cp TILESET_GROVE
+	ret z
 	cp TILESET_MOUNTAIN
 	ret z
 	cp TILESET_SNOW

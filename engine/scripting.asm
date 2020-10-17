@@ -1318,6 +1318,17 @@ ShowEmoteScript:
 	step_sleep_1
 	step_end
 
+CheckFacingObjectCutscene::
+	callba GetFacingObject
+	jr nc, .nope
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+.nope
+	xor a
+	ld [wScriptVar], a
+	ret
+	
 MakePalGray::
 	ld hl, .palettesgray
 	ld de, wOBPals palette PAL_OW_SILVER

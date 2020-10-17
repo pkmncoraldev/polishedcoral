@@ -284,14 +284,102 @@ BattleAnimations::
 BattleAnim_MirrorMove:
 BattleAnim_0:
 BattleAnim_WorkUp:
-BattleAnim_RockClimb:
-BattleAnim_Hex:
 BattleAnim_DazzlinGleam:
-BattleAnim_ShadowBone:
 BattleAnim_PoisonFang:
 BattleAnim_KnockOff:
 BattleAnim_RockPolish:
 	anim_ret
+	
+BattleAnim_Hex:
+    anim_2gfx ANIM_GFX_FIRE, ANIM_GFX_SPEED
+    anim_bgp $f8
+    anim_wait 8
+    anim_sound 6, 2, SFX_SLUDGE_BOMB
+    anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+    anim_wait 40
+    anim_bgp $1b
+    anim_sound 0, 0, SFX_CURSE
+    anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+.loop
+    anim_obj ANIM_OBJ_HEX, 136, 72, $6
+    anim_wait 2
+    anim_obj ANIM_OBJ_HEX, 128, 72, $6
+    anim_wait 2
+    anim_obj ANIM_OBJ_BLUE_FLAME, 128, 54, $10
+    anim_obj ANIM_OBJ_HEX, 144, 72, $8
+    anim_wait 2
+    anim_obj ANIM_OBJ_HEX, 120, 72, $8
+    anim_wait 2
+    anim_obj ANIM_OBJ_HEX, 152, 72, $6
+    anim_wait 2
+    anim_obj ANIM_OBJ_BLUE_FLAME, 144, 38, $90
+    anim_obj ANIM_OBJ_HEX, 112, 72, $8
+    anim_wait 2
+    anim_obj ANIM_OBJ_HEX, 160, 72, $8
+    anim_wait 2
+    anim_loop 3, .loop
+    anim_wait 8
+    anim_wait 16
+    anim_ret
+	
+BattleAnim_ShadowBone:
+    anim_2gfx ANIM_GFX_MISC, ANIM_GFX_FIRE
+    anim_sound 0, 1, SFX_CUT
+    anim_obj ANIM_OBJ_BONE_CLUB, 64, 88, $2
+    anim_wait 32
+    anim_bgp $1b
+    anim_obj ANIM_OBJ_BONE_RUSH, 132, 56, $2
+    anim_sound 0, 0, SFX_CURSE
+.loop
+    anim_obj ANIM_OBJ_BLUE_FLAME, 120, 62, $10
+    anim_wait 6
+    anim_obj ANIM_OBJ_BLUE_FLAME, 146, 42, $90
+    anim_loop 2, .loop
+    anim_wait 78
+    anim_ret
+	
+BattleAnim_RockClimb:
+    anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
+    anim_call BattleAnim_FollowPlayerHead_0
+    anim_bgeffect ANIM_BG_BOUNCE_DOWN, $0, $1, $0
+    anim_wait 8
+.loop
+    anim_obj ANIM_OBJ_ROCK_SMASH, 56, 112, $5c
+    anim_obj ANIM_OBJ_ROCK_SMASH, 40, 112, $e8
+    anim_sound 6, 2, SFX_SPARK
+    anim_wait 28
+    anim_loop 2, .loop
+    anim_incbgeffect ANIM_BG_BOUNCE_DOWN
+    anim_wait 8
+    anim_bgeffect ANIM_BG_25, $0, $1, $0
+    anim_wait 16
+    anim_call BattleAnim_ShowMon_0
+    anim_sound 0, 1, SFX_KARATE_CHOP
+    anim_obj ANIM_OBJ_01, 136, 56, $0
+    anim_obj ANIM_OBJ_ROCK_SMASH, 136, 56, $5c
+    anim_obj ANIM_OBJ_ROCK_SMASH, 136, 56, $e8
+    anim_wait 3
+    anim_sound 0, 1, SFX_KARATE_CHOP
+    anim_obj ANIM_OBJ_01, 136, 48, $0
+    anim_obj ANIM_OBJ_ROCK_SMASH, 136, 48, $5c
+    anim_obj ANIM_OBJ_ROCK_SMASH, 136, 48, $e8
+    anim_wait 3
+    anim_sound 0, 1, SFX_KARATE_CHOP
+    anim_obj ANIM_OBJ_01, 136, 40, $0
+    anim_obj ANIM_OBJ_ROCK_SMASH, 136, 40, $5c
+    anim_obj ANIM_OBJ_ROCK_SMASH, 136, 40, $e8
+    anim_wait 3
+    anim_sound 0, 1, SFX_KARATE_CHOP
+    anim_obj ANIM_OBJ_01, 136, 32, $0
+    anim_obj ANIM_OBJ_ROCK_SMASH, 136, 32, $5c
+    anim_obj ANIM_OBJ_ROCK_SMASH, 136, 32, $e8
+    anim_wait 3
+    anim_sound 0, 1, SFX_KARATE_CHOP
+    anim_obj ANIM_OBJ_01, 136, 24, $0
+    anim_obj ANIM_OBJ_ROCK_SMASH, 136, 24, $5c
+    anim_obj ANIM_OBJ_ROCK_SMASH, 136, 24, $e8
+    anim_wait 8
+    anim_ret
 	
 BattleAnim_MiracleEye:
     anim_2gfx ANIM_GFX_PSYCHIC, ANIM_GFX_EXPLOSION
@@ -5154,21 +5242,21 @@ BattleAnim_RockSmash:
 	anim_sound 0, 1, SFX_SPARK
 	anim_obj ANIM_OBJ_01,  16, 0,   7, 0, $0
 	anim_sound 0, 1, SFX_SPARK
-	anim_obj ANIM_OBJ_B5,  16, 0,   8, 0, $28
-	anim_obj ANIM_OBJ_B5,  16, 0,   8, 0, $5c
+	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $28
+	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $5c
 	anim_sound 0, 1, SFX_SPARK
-	anim_obj ANIM_OBJ_B5,  16, 0,   8, 0, $10
-	anim_obj ANIM_OBJ_B5,  16, 0,   8, 0, $e8
+	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $10
+	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $e8
 	anim_sound 0, 1, SFX_SPARK
-	anim_obj ANIM_OBJ_B5,  16, 0,   8, 0, $9c
-	anim_obj ANIM_OBJ_B5,  16, 0,   8, 0, $d0
+	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $9c
+	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $d0
 	anim_wait 6
 	anim_sound 0, 1, SFX_SPARK
-	anim_obj ANIM_OBJ_B5,  16, 0,   8, 0, $1c
-	anim_obj ANIM_OBJ_B5,  16, 0,   8, 0, $50
+	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $1c
+	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $50
 	anim_sound 0, 1, SFX_SPARK
-	anim_obj ANIM_OBJ_B5,  16, 0,   8, 0, $dc
-	anim_obj ANIM_OBJ_B5,  16, 0,   8, 0, $90
+	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $dc
+	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $90
 	anim_wait 32
 	anim_ret
 
@@ -5523,7 +5611,7 @@ BattleAnim_Mimic:
 
 BattleAnim_BoneClub:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_MISC
-	anim_obj ANIM_OBJ_68,   8, 0,  11, 0, $2
+	anim_obj ANIM_OBJ_BONE_CLUB,   8, 0,  11, 0, $2
 	anim_wait 32
 	anim_sound 0, 1, SFX_BONE_CLUB
 	anim_obj ANIM_OBJ_01, -15, 0,   7, 0, $0
@@ -5636,7 +5724,7 @@ BattleAnim_CottonSpore: ; removed
 BattleAnim_BoneRush:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_MISC
 	anim_sound 0, 1, SFX_BONE_CLUB
-	anim_obj ANIM_OBJ_69, -16, 4,   7, 0, $2
+	anim_obj ANIM_OBJ_BONE_RUSH, -16, 4,   7, 0, $2
 	anim_wait 16
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj ANIM_OBJ_01,  15, 0,   6, 0, $0

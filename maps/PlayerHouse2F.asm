@@ -80,6 +80,7 @@ PlayerHouseDebugPoster:
 	giveitem BICYCLE
 	giveitem OLD_ROD
 	giveitem GOOD_ROD
+	giveitem RIVAL_POKEDEX
 	giveitem OVAL_CHARM
 .badges
 	writetext PlayerHouseDebugText3

@@ -30,9 +30,10 @@ StarglowCavern2FNPC1Text:
 	cont "way you came."
 	
 	para "He started acting"
-	line "strange, so I"
-	cont "booked it outta"
-	cont "there!"
+	line "strange,"
+	
+	para "so I booked it"
+	line "outta there!"
 	done
 
 TrainerStarglowCavern2F_1:

@@ -431,6 +431,7 @@ GlintGymLibrarian:
 	writetext GlintGymLibrarianText2
 	waitbutton
 	closetext
+	dotrigger $1
 	end
 	
 .GlintGymLibrarian3:
@@ -718,7 +719,7 @@ GlintGymStanleyTextAfterBattle:
 	cont "to know the move."
 	
 	para "As long as they"
-	line "can learn it,"
+	line "CAN learn it,"
 	
 	para "you're good to go!"
 	
@@ -1226,11 +1227,11 @@ GlintGymBookText13:
 	line "them like simple"
 	cont "creatures,"
 	
-	para "but I think #MON"
-	line "can have just as"
-	cont "much heart as us"
-	cont "if you give them"
-	cont "the chance.”"
+	para "but I think #-"
+	line "MON can have just"
+	cont "as much heart as"
+	cont "us if you give"
+	cont "them the chance.”"
 	done
 	
 GlintGymBookText14:
@@ -1340,7 +1341,7 @@ GlintGymBookText16:
 	line "said to be what"
 	cont "attracts FAIRY-"
 	cont "type #MON to"
-	cont "the grove and"
+	cont "the grove and also"
 	cont "gives the trees "
 	cont "their distinct"
 	cont "year-round pink"

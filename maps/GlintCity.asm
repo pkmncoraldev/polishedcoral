@@ -318,8 +318,8 @@ GlintNPC7Text:
 	line "young,"
 	
 	para "the boys would"
-	line "flock to me for"
-	cont "my looks."
+	line "flock to me for my"
+	cont "looks."
 	
 	para "Nowadays the only"
 	line "ones flocking to"

@@ -12,7 +12,7 @@ StarglowCavernFossilRoom_MapScriptHeader:
 	db 0 ; bg events
 
 	db 4 ; object events
-	person_event SPRITE_SUPER_NERD,  5,  3, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowCavernFossilRoomNpc, EVENT_BEAT_STARGLOW_CAVERN_FOSSIL_GUY
+	person_event SPRITE_SUPER_NERD,  4,  3, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowCavernFossilRoomNpc, EVENT_BEAT_STARGLOW_CAVERN_FOSSIL_GUY
 	person_event SPRITE_SUPER_NERD,  2,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowCavernFossilRoomNpc2, EVENT_STARGLOW_CAVERN_FOSSIL_GUY
 	person_event SPRITE_BOULDER_ROCK_FOSSIL,  3,  4, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, StarglowCavernFossilRoomJawFossil, EVENT_GOT_FOSSIL
 	person_event SPRITE_BOULDER_ROCK_FOSSIL,  3,  2, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, StarglowCavernFossilRoomSailFossil, EVENT_GOT_FOSSIL
@@ -249,7 +249,6 @@ StarglowCavernFossilRoomNpcWinText:
 	done
 	
 Movement_StarglowCavernFossilGuy:
-	step_up
 	step_up
 	step_up
 	step_end

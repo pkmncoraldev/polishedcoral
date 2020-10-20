@@ -597,3 +597,23 @@ skateboard_step_left: macro
 skateboard_step_right: macro
 	db movement_skateboard_step_right ; $61
 	endm
+	
+	enum movement_skateboard_slow_step_down
+skateboard_slow_step_down: macro
+	db movement_skateboard_slow_step_down ; $62
+	endm
+
+	enum movement_skateboard_slow_step_up
+skateboard_slow_step_up: macro
+	db movement_skateboard_slow_step_up ; $63
+	endm
+
+	enum movement_skateboard_slow_step_left
+skateboard_slow_step_left: macro
+	db movement_skateboard_slow_step_left ; $64
+	endm
+
+	enum movement_skateboard_slow_step_right
+skateboard_slow_step_right: macro
+	db movement_skateboard_slow_step_right ; $65
+	endm

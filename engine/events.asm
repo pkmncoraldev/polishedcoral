@@ -995,6 +995,9 @@ CountStep: ; 96b79
 	jr c, .doscript
 	
 	call DoSkateboardStep
+;	jr c, .doscript
+	
+	call DoSkateboardPush
 	
 	call DoTorchStep
 	jr c, .doscript
@@ -1097,10 +1100,19 @@ UseAnotherRepelScript:
 	text_jump UseAnotherRepelText
 	db "@"
 
+DoSkateboardPush:
+	ld a, [wSkateboardPush]
+	and a
+	ret z
+
+	dec a
+	ld [wSkateboardPush], a
+	ret
+	
 DoSkateboardStep:
 	ld a, [wPlayerState]
 	cp PLAYER_SKATEBOARD_MOVING
-	ret z
+	ret nz
 
 	ld a, [wSkateboardSteps]
 	and a
@@ -1110,9 +1122,21 @@ DoSkateboardStep:
 	ld [wSkateboardSteps], a
 	ret nz
 	
-	xor a
-	ld [wSkateboardPush], a
+	ld a, [wSkateboardSpeed]
+	and a
+	ret z
+
+	dec a
+	ld [wSkateboardSpeed], a
+	ld a, 1
+	ld [wSkateboardSteps], a
 	ret
+	
+TestSkateboardScript:
+	thistext
+
+	text_jump TorchWentOutText
+	db "@"
 	
 DoTorchStep: ; 96bd7
 	ld a, [wTorchSteps]

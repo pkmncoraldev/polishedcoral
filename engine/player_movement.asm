@@ -1,4 +1,4 @@
-DoPlayerMovement:: ; 80000
+DoPlayerMovement:: ; 80000wWalkingDirection
 
 	call .GetDPad
 	ld a, movement_step_sleep_1
@@ -92,30 +92,39 @@ DoPlayerMovement:: ; 80000
 	jp .NotMoving
 	
 .Skating:
+;	ld a, [wSkateboardMoving]
+;	cp 0
+;	jr z, .SkatingStanding
+	ld a, [wWalkingDirection]
+	ld b, a
+	ld a, [wLastWalkingDirection]
+	cp b
+	jr nz, .SkatingStanding
 	ld a, [wWalkingDirection]
 	cp STANDING
 	jr z, .SkatingStanding
-.SkatingReturn
+	ld a, [wSkateboardSpeed]
+	cp 0
+	jr z, .SkatingPush
 	ld a, [wSkateboardPush]
 	cp 0
 	jr z, .Skatingcont
-	
-	ld a, 1
-	ld [wSkateboardSteps], a
 	
 	push bc
 	ld a, PLAYER_SKATEBOARD_MOVING
 	ld [wPlayerState], a
 	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
+	ld a, 8
+	ld [wSkateboardSteps], a
 .Skatingcont
 	call .CheckForced
 	call .GetAction
 	call .CheckTile
 	ret c
-	call .TryStep
-	ret c
 	call .CheckTurning
+	ret c
+	call .TryStep
 	ret c
 	call .TryJump
 	ret c
@@ -124,13 +133,13 @@ DoPlayerMovement:: ; 80000
 	jr .NotMoving
 	
 .SkatingStanding
-	ld a, [wPlayerState]
-	cp PLAYER_SKATEBOARD_MOVING
-	jr nz, .SkatingReturn
 	xor a
 	ld [wSkateboardSteps], a
 	ld [wSkateboardPush], a
-	
+	ld [wSkateboardMoving], a
+.SkatingPush
+	ld a, 3
+	ld [wSkateboardSpeed], a
 	push bc
 	ld a, PLAYER_SKATEBOARD
 	ld [wPlayerState], a
@@ -172,9 +181,6 @@ DoPlayerMovement:: ; 80000
 	ret
 	
 .NotMoving:
-;	xor a
-;	ld [wSkateboardPush], a
-;	ld [wSkateboardSteps], a
 	ld a, [wWalkingDirection]
 	cp STANDING
 	jr z, .Standing
@@ -285,12 +291,6 @@ DoPlayerMovement:: ; 80000
 	and 3
 	cp e
 	jr z, .not_turning
-	
-;	ld a, [wPlayerState]
-;	cp PLAYER_SKATEBOARD
-;	jr z, .not_turning
-;	cp PLAYER_SKATEBOARD_MOVING
-;	jr z, .not_turning
 
 	ld a, STEP_TURN
 	call .DoStep
@@ -673,7 +673,21 @@ DoPlayerMovement:: ; 80000
 .not_bike
 	call .SkateboardCheck
 	jp nz, .walk
+	
+	ld a, [wSkateboardMoving]
+	cp 0
+	jr z, .walk
+	ld a, [wSkateboardSpeed]
+	cp 1
+	jr z, .skateboard_slow
+	
+.skateboard_fast
 	ld a, STEP_SKATEBOARD
+	call .DoStep
+	scf
+	ret
+.skateboard_slow
+	ld a, STEP_SKATEBOARD_PUSH
 	call .DoStep
 	scf
 	ret
@@ -741,6 +755,9 @@ DoPlayerMovement:: ; 80000
 	xor a
 	ld [wSkateboardSteps], a
 	ld [wSkateboardPush], a
+	ld [wSkateboardMoving], a
+	ld a, 3
+	ld [wSkateboardSpeed], a
 	ld a, PLAYER_SKATEBOARD
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
@@ -926,16 +943,13 @@ DoPlayerMovement:: ; 80000
 
 	ld a, [wPlayerState]
 	cp PLAYER_SKATEBOARD
-	jr nz, .NotStandingBoard
+	jr nz, .DoStepEnd
+	
+	ld a, 2
+	ld [wSkateboardPush], a
 	
 	ld a, 1
-	ld [wSkateboardPush], a
-	jr .DoStepEnd
-	
-.NotStandingBoard
-	xor a
-	ld [wSkateboardPush], a
-	ld [wSkateboardSteps], a
+	ld [wSkateboardMoving], a
 	
 .DoStepEnd
 	ld a, 4
@@ -956,6 +970,7 @@ DoPlayerMovement:: ; 80000
 	dw .SurfStep
 	dw .SlideStep
 	dw .SkateboardStep
+	dw .SkateboardPushStep
 	
 .StepsPippi:
 	dw .SlowStep ; x0.5
@@ -972,6 +987,7 @@ DoPlayerMovement:: ; 80000
 	dw .SurfStep
 	dw .SlideStep
 	dw .SkateboardStep
+	dw .SkateboardPushStep
 
 .SlowStep:
 	slow_step_down
@@ -1053,6 +1069,11 @@ DoPlayerMovement:: ; 80000
 	skateboard_step_up
 	skateboard_step_left
 	skateboard_step_right
+.SkateboardPushStep
+	skateboard_slow_step_down
+	skateboard_slow_step_up
+	skateboard_slow_step_left
+	skateboard_slow_step_right
 
 .StandInPlace: ; 802b3
 	ld a, movement_step_sleep_1
@@ -1125,6 +1146,8 @@ DoPlayerMovement:: ; 80000
 .d_right	add hl, de
 
 .update
+	ld a, [wWalkingDirection]
+	ld [wLastWalkingDirection], a
 	ld a, [hli]
 	ld [wWalkingDirection], a
 	ld a, [hli]
@@ -1294,6 +1317,8 @@ DoPlayerMovement:: ; 80000
 
 	ld a, [wPlayerState]
 	cp PLAYER_SKATEBOARD_MOVING
+	ret z
+	cp PLAYER_SKATEBOARD
 	ret z
 	cp PLAYER_SLIP
 	ret

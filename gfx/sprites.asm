@@ -212,3 +212,13 @@ KrisBikeSpriteGFX::            INCBIN "gfx/sprites/pippi_bike.2bpp"
 KrisSurfSpriteGFX::            INCBIN "gfx/sprites/cora_surf.2bpp"
 KrisRunSpriteGFX::             INCBIN "gfx/sprites/pippi_run.2bpp"
 KrisMiscSpriteGFX::            INCBIN "gfx/sprites/pippi_misc.2bpp"
+CorySkateboardSpriteGFX::
+CoraSkateboardSpriteGFX::
+PippiSkateboardSpriteGFX::
+RedSkateboardSpriteGFX::
+LeafSkateboardSpriteGFX::
+GoldSkateboardSpriteGFX::
+KrisSkateboardSpriteGFX::
+								INCBIN "gfx/sprites/cory_skateboard.2bpp"
+CorySkateboard2SpriteGFX::
+								INCBIN "gfx/sprites/cory_skateboard_2.2bpp"

@@ -102,7 +102,7 @@ ItemIconPointers:
 	dw MachinePartIcon
 	dw LostItemIcon
 	dw RivalPokedexIcon
-	dw SilverWingIcon
+	dw SkateboardIcon
 	dw ClearBellIcon
 	dw GSBallIcon
 	dw BlueCardIcon

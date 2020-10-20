@@ -54,6 +54,8 @@ KRIS   EQU 6
 	const STEP_FAST ; same as STEP_RUN but without doubling animation speed
 	const STEP_SURF
 	const STEP_SLIDE
+	const STEP_SKATEBOARD
+	const STEP_SKATEBOARD_PUSH
 
 const_value = 1
 	const HAPPINESS_GAINLEVEL         ; 01

@@ -10,35 +10,43 @@ SpriteHeaders:
 	overworld_sprite CorySurfSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite CoryRunSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite CoryMiscSpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite CorySkateboardSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite CorySkateboard2SpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite CoraSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CoraBikeSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CoraSurfSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CoraRunSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CoraMiscSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite CoraSkateboardSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite PippiSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite PippiRunSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite PippiBikeSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
-	overworld_sprite PippiMiscSpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite PippiMiscSpriteGFX, STANDING_SPRITE, PAL_OW_PINK
+	overworld_sprite PippiSkateboardSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite RedSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite RedBikeSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite RedSurfSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite RedRunSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite RedMiscSpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite RedSkateboardSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite LeafSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite LeafBikeSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite LeafSurfSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite LeafRunSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite LeafMiscSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite LeafSkateboardSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite GoldSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite GoldBikeSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite GoldSurfSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite GoldRunSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite GoldMiscSpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite GoldSkateboardSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite KrisSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisBikeSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisSurfSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisRunSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisMiscSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite KrisSkateboardSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite MomSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite ColbySpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite StanleySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE

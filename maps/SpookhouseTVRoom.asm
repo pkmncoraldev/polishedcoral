@@ -34,7 +34,6 @@ SpookhouseTVRoom_MapScriptHeader:
 	const SPOOKHOUSE_TVROOM_NPC5
 	
 SpookhouseTVRoomTrigger0:
-	setflag ENGINE_PUNKS_IN_STARGLOW
 	end
 	
 SpookhouseTVRoomTrigger1:
@@ -175,7 +174,6 @@ SpookHouseNPC2:
 	reloadmappart
 	setevent EVENT_SPOOKHOUSE_GHOSTBEGONE
 	setevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
-	clearflag ENGINE_PUNKS_IN_STARGLOW
 	dotrigger $1
 	end
 	

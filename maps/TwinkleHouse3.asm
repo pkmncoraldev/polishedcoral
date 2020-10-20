@@ -3,7 +3,7 @@ TwinkleHouse3_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 3 ; warp events
+	db 2 ; warp events
 	warp_def 7, 2, 5, TWINKLE_TOWN
 	warp_def 7, 3, 5, TWINKLE_TOWN
 

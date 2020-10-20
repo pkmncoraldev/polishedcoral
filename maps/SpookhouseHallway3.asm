@@ -41,7 +41,6 @@ SpookhouseHallway3Trigger0:
 	end
 	
 SpookhouseHallway3Trigger1:
-	clearflag ENGINE_PUNKS_IN_STARGLOW
 	end
 
 SpookHouseHallwayGhost3:

@@ -101,7 +101,7 @@ ItemNames::
 	db "R.ROOM KEY@"
 	db "LOST ITEM@"
 	db "#DEX@"
-	db "SILVER WING@"
+	db "SKATEBOARD@"
 	db "CLEAR BELL@"
 	db "GS BALL@"
 	db "BLUE CARD@"

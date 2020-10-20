@@ -113,6 +113,10 @@ MovementPointers:
 	dw Movement_pippi_fast_step_up    ; 70
 	dw Movement_pippi_fast_step_left  ; 71
 	dw Movement_pippi_fast_step_right ; 72
+	dw Movement_skateboard_step_down  ; 73
+	dw Movement_skateboard_step_up    ; 74
+	dw Movement_skateboard_step_left  ; 75
+	dw Movement_skateboard_step_right ; 76
 
 Movement_teleport_from: ; 5129
 	ld hl, OBJECT_STEP_TYPE
@@ -477,23 +481,23 @@ Movement_slow_step_left:
 
 Movement_slow_step_right:
 	ld a, STEP_SLOW << 2 | RIGHT
-	jr Movement_do_step
+	jp Movement_do_step
 
 Movement_step_down:
 	ld a, STEP_WALK << 2 | DOWN
-	jr Movement_do_step
+	jp Movement_do_step
 
 Movement_step_up:
 	ld a, STEP_WALK << 2 | UP
-	jr Movement_do_step
+	jp Movement_do_step
 
 Movement_step_left:
 	ld a, STEP_WALK << 2 | LEFT
-	jr Movement_do_step
+	jp Movement_do_step
 
 Movement_step_right:
 	ld a, STEP_WALK << 2 | RIGHT
-	jr Movement_do_step
+	jp Movement_do_step
 
 Movement_fast_step_down:
 	ld a, STEP_RUN << 2 | DOWN
@@ -562,6 +566,22 @@ Movement_pippi_fast_step_left:
 Movement_pippi_fast_step_right:
 	ld a, STEP_BIKE << 2 | RIGHT
 	jp Movement_do_run
+	
+Movement_skateboard_step_down:
+	ld a, STEP_RUN << 2 | DOWN
+	jp Movement_do_skateboard
+
+Movement_skateboard_step_up:
+	ld a, STEP_RUN << 2 | UP
+	jp Movement_do_skateboard
+
+Movement_skateboard_step_left:
+	ld a, STEP_RUN << 2 | LEFT
+	jp Movement_do_skateboard
+
+Movement_skateboard_step_right:
+	ld a, STEP_RUN << 2 | RIGHT
+	jp Movement_do_skateboard
 	
 Movement_big_step_down:
 	ld a, STEP_BIKE << 2 | DOWN
@@ -686,6 +706,10 @@ Movement_run_step_right:
 	ld a, STEP_RUN << 2 | RIGHT ; STEP_RUN
 Movement_do_run:
 	ld d, PERSON_ACTION_RUN
+	jp Movement_normal_step
+	
+Movement_do_skateboard:
+	ld d, PERSON_ACTION_SKATEBOARD
 	jp Movement_normal_step
 
 Movement_turn_away_down: ; 533c

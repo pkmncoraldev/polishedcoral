@@ -2303,7 +2303,7 @@ BikeFunction: ; d0b3
 
 .floortoobumpy
 	call RefreshScreen
-	ld hl, Script_FloorTooBumpy
+	ld hl, Script_FloorTooBumpyBike
 	jr .done
 	
 .done
@@ -2393,12 +2393,161 @@ GotOffTheBikeText: ; 0xd181
 	text_jump UnknownText_0x1c09c7
 	db "@"
 
-Script_FloorTooBumpy: ; 0xd171
+Script_FloorTooBumpyBike: ; 0xd171
 	writetext .FloorTooBumpyBikeText
 	waitendtext
 
 .FloorTooBumpyBikeText
 	text_jump _NoBikeText
+	db "@"
+	
+SkateboardFunction: ; d0b3
+	call .TrySkateboard
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.TrySkateboard: ; d0bc
+	ld hl, wHaveFollower
+	bit 0, [hl] ; ENGINE_SKATEBOARD_GEAR
+	jr nz, .CannotUseSkateboard ;set
+	ld a, [wPlayerStandingTile]
+	cp COLL_NO_BIKE
+	jp z, .floortoobumpy
+	
+	call .CheckEnvironment
+	jr c, .CannotUseSkateboard
+	ld a, [wPlayerState]
+	and a ; cp PLAYER_NORMAL
+	jr z, .GetOnSkateboard
+	cp PLAYER_RUN
+	jr z, .GetOnSkateboard
+	cp PLAYER_SKATEBOARD
+	jr z, .GetOffSkateboard
+	cp PLAYER_SKATEBOARD_MOVING
+	jr z, .GetOffSkateboard
+	jr .CannotUseSkateboard
+
+.GetOnSkateboard:
+	ld hl, Script_GetOnSkateboard
+	ld de, Script_GetOnSkateboard_Register
+	call .CheckIfRegistered
+	jr .done
+
+.GetOffSkateboard:
+	ld hl, wOWState
+	bit OWSTATE_BIKING_FORCED, [hl]
+	jr nz, .CantGetOffSkateboard
+	ld hl, Script_GetOffSkateboard
+	ld de, Script_GetOffSkateboard_Register
+	call .CheckIfRegistered
+	jr .done
+
+.CantGetOffSkateboard:
+	ld hl, Script_CantGetOffSkateboard
+	jr .done
+
+.CannotUseSkateboard:
+	xor a
+	ret
+
+.floortoobumpy
+	call RefreshScreen
+	ld hl, Script_FloorTooBumpySkateboard
+	jr .done
+	
+.done
+	call QueueScript
+	ld a, $1
+	ret
+
+.CheckIfRegistered: ; d119
+	ld a, [wUsingItemWithSelect]
+	and a
+	ret z
+	ld h, d
+	ld l, e
+	ret
+
+.CheckEnvironment: ; d121
+	call GetMapPermission
+	call CheckOutdoorMap
+	jr z, .ok
+	cp CAVE
+	jr z, .ok
+	cp GATE
+	jr z, .ok
+	cp PERM_5
+	jr z, .ok
+	jr .nope
+
+.ok
+	call GetPlayerStandingTile
+	and $f ; cp LANDTILE ; can't use our skateboard in a wall or on water
+	jr nz, .nope
+	xor a
+	ret
+
+.nope
+	scf
+	ret
+
+Script_GetOnSkateboard: ; 0xd13e
+	reloadmappart
+	special UpdateTimePals
+	writecode VAR_MOVEMENT, PLAYER_SKATEBOARD
+	writetext GotOnTheSkateboardText
+	waitbutton
+	closetext
+FinishGettingOnSkateboard:
+	special ReplaceKrisSprite
+	end
+
+Script_GetOnSkateboard_Register: ; 0xd14e
+	writecode VAR_MOVEMENT, PLAYER_SKATEBOARD
+	jump FinishGettingOnSkateboard
+
+Script_GetOffSkateboard: ; 0xd158
+	reloadmappart
+	special UpdateTimePals
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	writetext GotOffTheSkateboardText
+	waitbutton
+	closetext
+FinishGettingOffSkateboard:
+	special ReplaceKrisSprite
+;	special PlayMapMusic
+	end
+
+Script_GetOffSkateboard_Register: ; 0xd16b
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	jump FinishGettingOffSkateboard
+
+Script_CantGetOffSkateboard: ; 0xd171
+	writetext .CantGetOffSkateboardText
+	waitendtext
+
+.CantGetOffSkateboardText: ; 0xd177
+	; You can't get off here!
+	text_jump UnknownText_0x1c099a
+	db "@"
+
+GotOnTheSkateboardText: ; 0xd17c
+	; got on the @ .
+	text_jump UnknownText_0x1c09b2
+	db "@"
+
+GotOffTheSkateboardText: ; 0xd181
+	; got off the @ .
+	text_jump UnknownText_0x1c09c7
+	db "@"
+
+Script_FloorTooBumpySkateboard: ; 0xd171
+	writetext .FloorTooBumpySkateboardText
+	waitendtext
+
+.FloorTooBumpySkateboardText
+	text_jump _NoBikeText                                          ;TODO: change this
 	db "@"
 
 HasCutAvailable:: ; d186

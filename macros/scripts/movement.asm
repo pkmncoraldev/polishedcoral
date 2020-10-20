@@ -577,3 +577,23 @@ pippi_fast_step_left: macro
 pippi_fast_step_right: macro
 	db movement_pippi_fast_step_right ; $61
 	endm
+	
+	enum movement_skateboard_step_down
+skateboard_step_down: macro
+	db movement_skateboard_step_down ; $5e
+	endm
+
+	enum movement_skateboard_step_up
+skateboard_step_up: macro
+	db movement_skateboard_step_up ; $5f
+	endm
+
+	enum movement_skateboard_step_left
+skateboard_step_left: macro
+	db movement_skateboard_step_left ; $60
+	endm
+
+	enum movement_skateboard_step_right
+skateboard_step_right: macro
+	db movement_skateboard_step_right ; $61
+	endm

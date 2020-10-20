@@ -36,6 +36,10 @@ DoPlayerMovement:: ; 80000
 	jr z, .Normal
 	cp PLAYER_RUN
 	jr z, .Running
+	cp PLAYER_SKATEBOARD
+	jr z, .Skating
+	cp PLAYER_SKATEBOARD_MOVING
+	jr z, .Skating
 	cp PLAYER_SURF
 	jp z, .Surf
 	cp PLAYER_SURF_PIKA
@@ -61,7 +65,7 @@ DoPlayerMovement:: ; 80000
 	ret c
 	call .CheckWarp
 	ret c
-	jr .NotMoving
+	jp .NotMoving
 	
 .Running:
 	ld a, [wWalkingDirection]
@@ -85,7 +89,54 @@ DoPlayerMovement:: ; 80000
 	ret c
 	call .CheckWarp
 	ret c
+	jp .NotMoving
+	
+.Skating:
+	ld a, [wWalkingDirection]
+	cp STANDING
+	jr z, .SkatingStanding
+.SkatingReturn
+	ld a, [wSkateboardPush]
+	cp 0
+	jr z, .Skatingcont
+	
+	ld a, 1
+	ld [wSkateboardSteps], a
+	
+	push bc
+	ld a, PLAYER_SKATEBOARD_MOVING
+	ld [wPlayerState], a
+	call ReplaceKrisSprite ; UpdateSprites
+	pop bc
+.Skatingcont
+	call .CheckForced
+	call .GetAction
+	call .CheckTile
+	ret c
+	call .TryStep
+	ret c
+	call .CheckTurning
+	ret c
+	call .TryJump
+	ret c
+	call .CheckWarp
+	ret c
 	jr .NotMoving
+	
+.SkatingStanding
+	ld a, [wPlayerState]
+	cp PLAYER_SKATEBOARD_MOVING
+	jr nz, .SkatingReturn
+	xor a
+	ld [wSkateboardSteps], a
+	ld [wSkateboardPush], a
+	
+	push bc
+	ld a, PLAYER_SKATEBOARD
+	ld [wPlayerState], a
+	call ReplaceKrisSprite ; UpdateSprites
+	pop bc
+	jr .Skatingcont
 
 .Surf:
 	call .CheckForced
@@ -121,6 +172,9 @@ DoPlayerMovement:: ; 80000
 	ret
 	
 .NotMoving:
+;	xor a
+;	ld [wSkateboardPush], a
+;	ld [wSkateboardSteps], a
 	ld a, [wWalkingDirection]
 	cp STANDING
 	jr z, .Standing
@@ -231,6 +285,12 @@ DoPlayerMovement:: ; 80000
 	and 3
 	cp e
 	jr z, .not_turning
+	
+;	ld a, [wPlayerState]
+;	cp PLAYER_SKATEBOARD
+;	jr z, .not_turning
+;	cp PLAYER_SKATEBOARD_MOVING
+;	jr z, .not_turning
 
 	ld a, STEP_TURN
 	call .DoStep
@@ -246,15 +306,14 @@ DoPlayerMovement:: ; 80000
 .TryStep: ; 8016b
 	ld a, [wTileset]
 	cp TILESET_TRAIN
-	jp nz, .cont
+	jp nz, .not_sitting
 
-.train
 	ld a, [wSnareFlags]
 	bit 0, a ; Team Snare in Starglow Valley. Reusing this flag for convenience.
-	jr z, .cont
+	jr z, .not_sitting
 	ret
 	
-.cont
+.not_sitting
 ; Surfing actually calls .TrySurf directly instead of passing through here.
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
@@ -271,12 +330,14 @@ DoPlayerMovement:: ; 80000
 	jp z, .conveyorleft
 	cp COLL_CONVEYOR_RIGHT
 	jp z, .conveyorright
-	cp COLL_WALL
-	jp z, .wall
+	call .CheckWalkable
+	jr c, .wall
 	jr .contreturn
 	
 .wall
 	eventflagset EVENT_YOU_CHEATED
+	ld a, PLAYER_DODRIO
+	ld [wPlayerState], a
 	
 .contreturn
 	call .CheckLandPerms
@@ -300,11 +361,12 @@ DoPlayerMovement:: ; 80000
 	cp COLL_ICE
 	jp z, .ice
 
-	ld a, [wTileset]
-	cp TILESET_SNOW
-	jp z, .snowruncheck
+	call .TVRoomCheck
+	jp z, .DoNotRun
+	
+	call .SnowCheck
+	jp z, .DoNotRun
 
-.donesnowcheck
 	call .RunCheck
 	jp z, .run
 	jp .DoNotRun
@@ -566,73 +628,12 @@ DoPlayerMovement:: ; 80000
 	call ReplaceKrisSprite ; UpdateSprites
 	ret
 	
-.snowruncheck
-	ld a, [wWalkingDirection]
-	cp UP
-	jr z, .snowupruncheck
-	cp DOWN
-	jr z, .snowdownruncheck
-	cp LEFT
-	jr z, .snowleftruncheck
-	cp RIGHT
-	jr z, .snowrightruncheck
-.snowupruncheck
-	ld a, [wTileUp]
-	cp COLL_TALL_GRASS
-	jr z, .DoNotRun
-	jp .donesnowcheck
-.snowdownruncheck
-	ld a, [wTileDown]
-	cp COLL_TALL_GRASS
-	jr z, .DoNotRun
-	jp .donesnowcheck
-.snowleftruncheck
-	ld a, [wTileLeft]
-	cp COLL_TALL_GRASS
-	jr z, .DoNotRun
-	jp .donesnowcheck
-.snowrightruncheck
-	ld a, [wTileRight]
-	cp COLL_TALL_GRASS
-	jr z, .DoNotRun
-	jp .donesnowcheck
-	
 .DoNotRun
 ; Downhill riding is slower when not moving down.
 	call .BikeCheck
-	jp nz, .walk
-
-	ld a, [wTileset]
-	cp TILESET_SNOW
-	jp nz, .DoNotRun2
+	jp nz, .not_bike
 	
-	ld a, [wWalkingDirection]
-	cp UP
-	jr z, .snowupbikecheck
-	cp DOWN
-	jr z, .snowdownbikecheck
-	cp LEFT
-	jr z, .snowleftbikecheck
-	cp RIGHT
-	jr z, .snowrightbikecheck
-.snowupbikecheck
-	ld a, [wTileUp]
-	cp COLL_TALL_GRASS
-	jr z, .bikeslowstep
-	jr .DoNotRun2
-.snowdownbikecheck
-	ld a, [wTileDown]
-	cp COLL_TALL_GRASS
-	jr z, .bikeslowstep
-	jr .DoNotRun2
-.snowleftbikecheck
-	ld a, [wTileLeft]
-	cp COLL_TALL_GRASS
-	jr z, .bikeslowstep
-	jr .DoNotRun2
-.snowrightbikecheck
-	ld a, [wTileRight]
-	cp COLL_TALL_GRASS
+	call .SnowCheck
 	jr z, .bikeslowstep
 	
 .DoNotRun2
@@ -669,66 +670,32 @@ DoPlayerMovement:: ; 80000
 	scf
 	ret
 
-.walk
-	ld a, [wTileset]
-	cp TILESET_HAUNTED_TV
-	jp z, .tvroom
+.not_bike
+	call .SkateboardCheck
+	jp nz, .walk
+	ld a, STEP_SKATEBOARD
+	call .DoStep
+	scf
+	ret
 	
-	cp TILESET_SNOW
-	jp z, .snow
+.walk
+	call .TVRoomCheck
+	jr z, .slowwalk
+	
+	call .SnowCheck
+	jr z, .slowwalk
 
 .walkcont
 	ld a, STEP_WALK
 	call .DoStep
 	scf
 	ret
-	
-.tvroom
-	ld a, [wSnareFlags]
-	bit 0, a ; Team Snare in Starglow Valley. Reusing this flag for convenience.
-	jr z, .walkcont
-	
-	ld a, [wWalkingDirection]
-	cp UP
-	jr z, .slowwalk
-	jr .walkcont
 
 .ice
 	ld a, STEP_ICE
 	call .DoStep
 	scf
 	ret
-
-.snow
-	ld a, [wWalkingDirection]
-	cp UP
-	jr z, .snowup
-	cp DOWN
-	jr z, .snowdown
-	cp LEFT
-	jr z, .snowleft
-	cp RIGHT
-	jr z, .snowright
-.snowup
-	ld a, [wTileUp]
-	cp COLL_TALL_GRASS
-	jr z, .slowwalk
-	jr .walkcont
-.snowdown
-	ld a, [wTileDown]
-	cp COLL_TALL_GRASS
-	jr z, .slowwalk
-	jr .walkcont
-.snowleft
-	ld a, [wTileLeft]
-	cp COLL_TALL_GRASS
-	jr z, .slowwalk
-	jr .walkcont
-.snowright
-	ld a, [wTileRight]
-	cp COLL_TALL_GRASS
-	jr z, .slowwalk
-	jr .walkcont
 	
 .slowwalk
 	ld a, PLAYER_NORMAL
@@ -769,6 +736,15 @@ DoPlayerMovement:: ; 80000
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
 .contbump
+	cp PLAYER_SKATEBOARD_MOVING
+	jr nz, .contbump2
+	xor a
+	ld [wSkateboardSteps], a
+	ld [wSkateboardPush], a
+	ld a, PLAYER_SKATEBOARD
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+.contbump2
 	xor a
 	ld [wSpinning], a
 	ret
@@ -948,6 +924,20 @@ DoPlayerMovement:: ; 80000
 	ld a, [hl]
 	ld [wPlayerTurningDirection], a
 
+	ld a, [wPlayerState]
+	cp PLAYER_SKATEBOARD
+	jr nz, .NotStandingBoard
+	
+	ld a, 1
+	ld [wSkateboardPush], a
+	jr .DoStepEnd
+	
+.NotStandingBoard
+	xor a
+	ld [wSkateboardPush], a
+	ld [wSkateboardSteps], a
+	
+.DoStepEnd
 	ld a, 4
 	ret
 
@@ -965,6 +955,7 @@ DoPlayerMovement:: ; 80000
 	dw .Fast ; x2
 	dw .SurfStep
 	dw .SlideStep
+	dw .SkateboardStep
 	
 .StepsPippi:
 	dw .SlowStep ; x0.5
@@ -980,6 +971,7 @@ DoPlayerMovement:: ; 80000
 	dw .Fast ; x2
 	dw .SurfStep
 	dw .SlideStep
+	dw .SkateboardStep
 
 .SlowStep:
 	slow_step_down
@@ -1056,6 +1048,11 @@ DoPlayerMovement:: ; 80000
 	slide_step_up
 	slide_step_left
 	slide_step_right
+.SkateboardStep
+	skateboard_step_down
+	skateboard_step_up
+	skateboard_step_left
+	skateboard_step_right
 
 .StandInPlace: ; 802b3
 	ld a, movement_step_sleep_1
@@ -1291,6 +1288,53 @@ DoPlayerMovement:: ; 80000
 	cp PLAYER_BIKE
 	ret z
 	cp PLAYER_SLIP
+	ret
+	
+.SkateboardCheck: ; 803ca
+
+	ld a, [wPlayerState]
+	cp PLAYER_SKATEBOARD_MOVING
+	ret z
+	cp PLAYER_SLIP
+	ret
+	
+.TVRoomCheck
+	ld a, [wTileset]
+	cp TILESET_HAUNTED_TV
+	ret nz
+	eventflagcheck EVENT_SPOOKHOUSE_GHOSTBEGONE
+	ret nz
+	
+	ld a, [wWalkingDirection]
+	cp UP
+	ret
+	
+.SnowCheck:
+	ld a, [wTileset]
+	cp TILESET_SNOW
+	ret nz
+	ld a, [wWalkingDirection]
+	cp UP
+	jr z, .snowupcheck
+	cp DOWN
+	jr z, .snowdowncheck
+	cp LEFT
+	jr z, .snowleftcheck
+	cp RIGHT
+	jr z, .snowrightcheck
+.snowupcheck
+	ld a, [wTileUp]
+	jr .snowcheckcont
+.snowdowncheck
+	ld a, [wTileDown]
+	jr .snowcheckcont
+.snowleftcheck
+	ld a, [wTileLeft]
+	jr .snowcheckcont
+.snowrightcheck
+	ld a, [wTileRight]
+.snowcheckcont
+	cp COLL_TALL_GRASS
 	ret
 ; 803d3
 

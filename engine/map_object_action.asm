@@ -37,6 +37,7 @@ Pointers445f: ; 445f
 	dw SetFacingHangarRight,    	   SetFacingHangarRight	 	  ; PERSON_ACTION_HANGAR_RIGHT
 	dw SetFacingLighthouse1,    	   SetFacingLighthouse1	 	  ; PERSON_ACTION_LIGHTHOUSE_1
 	dw SetFacingLighthouse2,    	   SetFacingLighthouse2	 	  ; PERSON_ACTION_LIGHTHOUSE_2
+	dw SetFacingSkate,                 SetFacingCurrent           ; PERSON_ACTION_SKATE
 	
 ; 44a3
 
@@ -131,6 +132,10 @@ SetFacingStandAction:
 
 SetFacingStepAction:
 SetFacingBumpAction:
+	ld a, [wPlayerState]
+	cp PLAYER_SKATEBOARD_MOVING
+	jp z, SetFacingSkate
+
 	ld hl, OBJECT_FLAGS1
 	add hl, bc
 	bit SLIDING, [hl]
@@ -353,6 +358,29 @@ SetFacingRun:
 	call GetSpriteDirection
 	or d
 	ld hl, OBJECT_FACING_STEP
+	add hl, bc
+	ld [hl], a
+	ret
+	
+SetFacingSkate:
+	ld hl, OBJECT_FLAGS1
+	add hl, bc
+	bit SLIDING, [hl]
+	jp nz, SetFacingCurrent
+
+	ld hl, OBJECT_STEP_FRAME
+	add hl, bc
+	inc [hl]
+	ld a, [hl]
+	rrca
+	rrca
+	rrca
+	rrca
+	and %01
+	ld d, a
+	call GetSpriteDirection
+	or d
+	ld hl, OBJECT_FACING_STEP ;call SetFixedFacing
 	add hl, bc
 	ld [hl], a
 	ret

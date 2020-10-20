@@ -101,7 +101,7 @@ ItemDescriptions:
 	dw MachinePartDesc
 	dw LostItemDesc
 	dw RivalPokedexDesc
-	dw SilverWingDesc
+	dw SkateboardDesc
 	dw ClearBellDesc
 	dw GSBallDesc
 	dw BlueCardDesc
@@ -637,9 +637,9 @@ RivalPokedexDesc:
 	db   "<RIVAL>'s"
 	next "#DEX.@"
 
-SilverWingDesc:
-	db   "A strange, silver-"
-	next "colored feather.@"
+SkateboardDesc:
+	db   "A cool skateboard."
+	next "Can do tricks!@"
 
 ClearBellDesc:
 	db   "Makes a gentle"

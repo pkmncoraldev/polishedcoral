@@ -116,7 +116,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; R_ROOM_KEY
 	dw NoEffect         ; LOST_ITEM
 	dw NoEffect         ; RIVAL_POKEDEX
-	dw NoEffect         ; SILVER_WING
+	dw Skateboard       ; SKATEBOARD
 	dw NoEffect         ; CLEAR_BELL
 	dw NoEffect         ; GS_BALL
 	dw BlueCard         ; BLUE_CARD
@@ -1425,6 +1425,8 @@ Bicycle: ; ee08
 	farjp BikeFunction
 ; ee0f
 
+Skateboard: ; ee08
+	farjp SkateboardFunction
 
 EvoStoneEffect:
 	ld b, PARTYMENUACTION_EVO_STONE

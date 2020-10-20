@@ -210,6 +210,8 @@ DelayLoadingNewSprites: ; 154f1
 	ret
 
 CheckReplaceKrisSprite: ; 154f7
+;	call .CheckSkateboarding
+;	jr c, .ok
 	call .CheckBiking
 	jr c, .ok
 	call .CheckSurfing
@@ -220,6 +222,16 @@ CheckReplaceKrisSprite: ; 154f7
 
 .ok
 	jp ReplaceKrisSprite
+	
+;.CheckSkateboarding: ; 1550c (5:550c)
+;	and a
+;	ld hl, wOWState
+;	bit OWSTATE_BIKING_FORCED, [hl]
+;	ret z
+;	ld a, PLAYER_SKATEBOARD
+;	ld [wPlayerState], a
+;	scf
+;	ret
 
 .CheckBiking: ; 1550c (5:550c)
 	and a
@@ -255,6 +267,14 @@ CheckReplaceKrisSprite: ; 154f7
 	jr .nope
 .checkbiking
 	ld a, [wPlayerState]
+	cp PLAYER_SKATEBOARD
+	jr nz, .check_skateboard_moving
+	jr .surfing
+.check_skateboard_moving
+	cp PLAYER_SKATEBOARD_MOVING
+	jr nz, .not_skateboarding
+	jr .surfing
+.not_skateboarding
 	cp PLAYER_BIKE
 	jr nz, .nope
 .surfing

@@ -75,9 +75,10 @@ PlayerHouseDebugPoster:
 	addcellnum PHONE_MOM
 	addcellnum PHONE_SPRUCE
 	setevent EVENT_MOM_GOT_POKEGEAR
+	giveitem SKATEBOARD
+	giveitem BICYCLE
 	giveitem LIBRARY_CARD
 	giveitem POKE_FLUTE
-	giveitem BICYCLE
 	giveitem OLD_ROD
 	giveitem GOOD_ROD
 	giveitem RIVAL_POKEDEX

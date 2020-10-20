@@ -218,7 +218,9 @@ ENDU
 
 ENDU
 
-	ds 12 ; unused
+wSkateboardPush:: ds 1
+wSkateboardSteps:: ds 1
+	ds 10 ; unused
 
 wTMHMMoveNameBackup:: ds MOVE_NAME_LENGTH
 

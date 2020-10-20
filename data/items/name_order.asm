@@ -119,7 +119,7 @@ ItemNameOrder:
 	db NAM_R_ROOM_KEY ; 73
 	db NAM_LOST_ITEM    ; 6b
 	db NAM_RIVAL_POKEDEX ; b9
-	db NAM_SILVER_WING  ; d5
+	db NAM_SKATEBOARD  ; d5
 	db NAM_CLEAR_BELL   ; 28
 	db NAM_GS_BALL      ; 4f
 	db NAM_BLUE_CARD    ; 17

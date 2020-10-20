@@ -119,7 +119,7 @@
 	const R_ROOM_KEY   ; 64
 	const LOST_ITEM    ; 65
 	const RIVAL_POKEDEX; 66
-	const SILVER_WING  ; 67
+	const SKATEBOARD  ; 67
 	const CLEAR_BELL   ; 68
 	const GS_BALL      ; 69
 	const BLUE_CARD    ; 6a
@@ -507,7 +507,7 @@
 	const NAM_SILK_SCARF   ; d2
 	const NAM_FLOWER_PETAL ; d3
 	const NAM_SILVER_LEAF  ; d4
-	const NAM_SILVER_WING  ; d5
+	const NAM_SKATEBOARD  ; d5
 	const NAM_SILVERPOWDER ; d6
 	const NAM_SITRUS_BERRY ; d7
 	const NAM_SLOWPOKETAIL ; d8

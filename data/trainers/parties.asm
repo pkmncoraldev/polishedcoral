@@ -2377,7 +2377,7 @@ TeacherFastGroup:
 	db TRAINERTYPE_MOVES
 	; party
 	db 1, MEOWTH
-		db DEFENSE_CURL_HARDEN_WITHDRAW, 0, 0, 0
+		db TOXIC, 0, 0, 0
 	db -1 ; end
 
 ; ================

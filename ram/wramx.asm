@@ -195,11 +195,12 @@ NEXTU
 wCurInput:: ds 1
 	ds 3
 wMovementAnimation:: ds 1
+wWalkingDirection:: ds 1
 wFacingDirection:: ds 1
 wWalkingX:: ds 1
 wWalkingY:: ds 1
 wWalkingTile:: ds 1
-	ds 7
+	ds 6
 wPlayerTurningDirection:: ds 1
 
 NEXTU
@@ -222,8 +223,7 @@ wSkateboardSteps:: ds 1
 wSkateboardSpeed:: ds 1
 wSkateboardMoving:: ds 1
 wLastWalkingDirection:: ds 1
-wWalkingDirection:: ds 1
-	ds 6 ; unused
+	ds 7 ; unused
 
 wTMHMMoveNameBackup:: ds MOVE_NAME_LENGTH
 

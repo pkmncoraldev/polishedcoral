@@ -995,7 +995,6 @@ CountStep: ; 96b79
 	jr c, .doscript
 	
 	call DoSkateboardStep
-;	jr c, .doscript
 	
 	call DoSkateboardPush
 	

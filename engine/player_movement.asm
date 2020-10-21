@@ -93,8 +93,10 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	
 .Skating:
 	ld a, [wPlayerStandingTile]
-	cp COLL_FLOOR
-	jp z, .SkatingStanding
+	ld hl, SkateboardSlowTiles
+	ld de, 1
+	call IsInArray
+	jr c, .SkatingStanding
 	ld a, [wWalkingDirection]
 	ld b, a
 	ld a, [wLastWalkingDirection]
@@ -1525,3 +1527,8 @@ CheckBikeGear::
 	ret nz
 	ld a, 1
 	ret
+	
+SkateboardSlowTiles::
+	db COLL_TALL_GRASS
+	db COLL_LONG_GRASS
+	db -1

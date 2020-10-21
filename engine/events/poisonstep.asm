@@ -4,7 +4,7 @@ DoPoisonStep:: ; 505da
 	jr z, .no_recovery
 
 	xor a
-	ld c, 7
+	ld c, 5
 	ld hl, wEngineBuffer1
 .loop_clearEngineBuffer1
 	ld [hli], a

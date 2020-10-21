@@ -92,9 +92,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jp .NotMoving
 	
 .Skating:
-;	ld a, [wSkateboardMoving]
-;	cp 0
-;	jr z, .SkatingStanding
+	ld a, [wPlayerStandingTile]
+	cp COLL_FLOOR
+	jp z, .SkatingStanding
 	ld a, [wWalkingDirection]
 	ld b, a
 	ld a, [wLastWalkingDirection]
@@ -756,7 +756,6 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld [wSkateboardSteps], a
 	ld [wSkateboardPush], a
 	ld [wSkateboardMoving], a
-	ld a, 3
 	ld [wSkateboardSpeed], a
 	ld a, PLAYER_SKATEBOARD
 	ld [wPlayerState], a

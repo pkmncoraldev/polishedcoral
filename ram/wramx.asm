@@ -195,13 +195,11 @@ NEXTU
 wCurInput:: ds 1
 	ds 3
 wMovementAnimation:: ds 1
-wWalkingDirection:: ds 1
 wFacingDirection:: ds 1
 wWalkingX:: ds 1
 wWalkingY:: ds 1
 wWalkingTile:: ds 1
-wLastWalkingDirection:: ds 1
-	ds 5
+	ds 7
 wPlayerTurningDirection:: ds 1
 
 NEXTU
@@ -223,7 +221,9 @@ wSkateboardPush:: ds 1
 wSkateboardSteps:: ds 1
 wSkateboardSpeed:: ds 1
 wSkateboardMoving:: ds 1
-	ds 8 ; unused
+wLastWalkingDirection:: ds 1
+wWalkingDirection:: ds 1
+	ds 6 ; unused
 
 wTMHMMoveNameBackup:: ds MOVE_NAME_LENGTH
 
@@ -997,6 +997,7 @@ wIceTempleB2F1Trigger:: ds 1
 wTwinkleGymEntryTrigger:: ds 1
 wTwinkleGymBlueRoomTrigger:: ds 1
 wTwinkleGymYellowRoomTrigger:: ds 1
+
 ds 34
 
 ; fight counts

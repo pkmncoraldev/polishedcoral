@@ -2274,6 +2274,10 @@ BikeFunction: ; d0b3
 	jr z, .GetOnBike
 	cp PLAYER_RUN
 	jr z, .GetOnBike
+	cp PLAYER_SKATEBOARD
+	jr z, .GetOnBike
+	cp PLAYER_SKATEBOARD_MOVING
+	jr z, .GetOnBike
 	cp PLAYER_BIKE
 	jr z, .GetOffBike
 	jr .CannotUseBike
@@ -2421,6 +2425,8 @@ SkateboardFunction: ; d0b3
 	and a ; cp PLAYER_NORMAL
 	jr z, .GetOnSkateboard
 	cp PLAYER_RUN
+	jr z, .GetOnSkateboard
+	cp PLAYER_BIKE
 	jr z, .GetOnSkateboard
 	cp PLAYER_SKATEBOARD
 	jr z, .GetOffSkateboard

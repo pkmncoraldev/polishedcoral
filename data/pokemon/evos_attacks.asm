@@ -1111,6 +1111,7 @@ TotodileEvosAttacks:
 	db 32, CRUNCH
 	db 38, THRASH
 	db 44, HYDRO_PUMP
+;	db 50, SUPERPOWER
 	db  0 ; no more level-up moves
 
 CroconawEvosAttacks:
@@ -1129,6 +1130,7 @@ CroconawEvosAttacks:
 	db 33, CRUNCH
 	db 40, THRASH
 	db 47, HYDRO_PUMP
+;	db 54, SUPERPOWER
 	db  0 ; no more level-up moves
 
 FeraligatrEvosAttacks:
@@ -1147,6 +1149,7 @@ FeraligatrEvosAttacks:
 	db 36, CRUNCH
 	db 43, THRASH
 	db 50, HYDRO_PUMP
+;	db 58, SUPERPOWER
 	db  0 ; no more level-up moves
 
 LedybaEvosAttacks:

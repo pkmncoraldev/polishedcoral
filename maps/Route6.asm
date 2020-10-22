@@ -382,8 +382,9 @@ Route6Lass3Text:
 Route6FisherText:
 	text "If you go NORTH"
 	line "from here,"
-	cont "you'll reach LAKE"
-	cont "ONWA."
+	
+	para "you'll reach LAKE"
+	line "ONWA."
 	
 	para "There's a little"
 	line "town set up on the"

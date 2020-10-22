@@ -458,8 +458,8 @@ LusterMallCopText7:
 	done
 	
 LusterMallCopText8:
-	text "You feel somehow"
-	line "empty inside…"
+	text "You feel empty"
+	line "inside…"
 	done
 	
 LusterMallCopWinText:

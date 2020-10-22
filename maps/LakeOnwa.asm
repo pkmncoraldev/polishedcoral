@@ -286,6 +286,9 @@ LakeSignText:
 	
 	para "EAST:"
 	line "ROUTE 7"
+	
+	para "NORTH:"
+	line "ROUTE 8"
 	done
 
 LakeBoatHouseSignRText:

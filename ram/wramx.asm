@@ -224,7 +224,12 @@ wSkateboardSpeed:: ds 1
 wSkateboardMoving:: ds 1
 wSkateboardOllie:: ds 1
 wLastWalkingDirection:: ds 1
-	ds 6 ; unused
+
+wTileDownFar:: ds 1
+wTileUpFar:: ds 1
+wTileLeftFar:: ds 1
+wTileRightFar:: ds 1
+	ds 2 ; unused
 
 wTMHMMoveNameBackup:: ds MOVE_NAME_LENGTH
 

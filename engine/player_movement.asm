@@ -862,34 +862,6 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jp z, .DontOllie
 	cp 2
 	jp z, .DontOllie
-	
-	ld a, [wPlayerFacing]
-	cp $00
-	jr z, .SetOllieDown
-	cp $01
-	jr z, .SetOllieDown
-	cp $04
-	jr z, .SetOllieUp
-	cp $05
-	jr z, .SetOllieUp
-	cp $08
-	jr z, .SetOllieLeft
-	cp $09
-	jr z, .SetOllieLeft
-	ld a, RIGHT
-	ld [wWalkingDirection], a
-	jr .DoJump
-.SetOllieDown
-	ld a, DOWN
-	ld [wWalkingDirection], a
-	jr .DoJump
-.SetOllieUp
-	ld a, UP
-	ld [wWalkingDirection], a
-	jr .DoJump
-.SetOllieLeft
-	ld a, LEFT
-	ld [wWalkingDirection], a
 	jr .DoJump
 
 .data_8021e

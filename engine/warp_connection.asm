@@ -320,6 +320,7 @@ RefreshMapSprites: ; 1047f0
 
 	farcall ReturnFromMapSetupScript
 	call GetMovementPermissions
+	farcall GetMovementPermissionsFar
 	farcall RefreshPlayerSprite
 	farcall CheckReplaceKrisSprite
 	ld hl, wPlayerSpriteSetupFlags

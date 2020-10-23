@@ -61,8 +61,30 @@ HandlePlayerStep: ; d4e5 (3:54e5)
 
 	dw GetMovementPermissions
 	dw BufferScreen
+	dw GetMovementPermissionsFar
 	dw .fail
-	dw .fail
+	
+GetMovementPermissionsFar::
+	ld a, [wPlayerStandingMapX]
+	ld d, a
+	ld a, [wPlayerStandingMapY]
+	ld e, a
+
+	inc e
+	inc e
+	call GetCoordTile
+	ld [wTileDownFar], a
+	
+	ld a, [wPlayerStandingMapX]
+	ld d, a
+	ld a, [wPlayerStandingMapY]
+	ld e, a
+	
+	dec e
+	dec e
+	call GetCoordTile
+	ld [wTileUpFar], a
+	ret
 
 UpdatePlayerCoords: ; d511 (3:5511)
 	ld hl, wYCoord

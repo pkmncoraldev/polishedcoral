@@ -551,10 +551,6 @@ CheckBPressOW: ; 96999
 .not_on_bike
 	ld a, [wPlayerState]
 	cp PLAYER_SKATEBOARD_MOVING
-	jr nz, .checkskateboard
-	jr .on_skateboard
-.checkskateboard
-	cp PLAYER_SKATEBOARD
 	jr nz, .not_on_skateboard
 
 .on_skateboard

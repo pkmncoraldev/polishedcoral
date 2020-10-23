@@ -222,8 +222,9 @@ wSkateboardPush:: ds 1
 wSkateboardSteps:: ds 1
 wSkateboardSpeed:: ds 1
 wSkateboardMoving:: ds 1
+wSkateboardOllie:: ds 1
 wLastWalkingDirection:: ds 1
-	ds 7 ; unused
+	ds 6 ; unused
 
 wTMHMMoveNameBackup:: ds MOVE_NAME_LENGTH
 

@@ -2413,7 +2413,7 @@ SkateboardFunction: ; d0b3
 
 .TrySkateboard: ; d0bc
 	ld hl, wHaveFollower
-	bit 0, [hl] ; ENGINE_SKATEBOARD_GEAR
+	bit 0, [hl] ; ENGINE_BIKE_GEAR
 	jr nz, .CannotUseSkateboard ;set
 	ld a, [wPlayerStandingTile]
 	cp COLL_NO_BIKE

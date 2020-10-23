@@ -549,6 +549,31 @@ CheckBPressOW: ; 96999
 	ret
 
 .not_on_bike
+	ld a, [wPlayerState]
+	cp PLAYER_SKATEBOARD_MOVING
+	jr nz, .checkskateboard
+	jr .on_skateboard
+.checkskateboard
+	cp PLAYER_SKATEBOARD
+	jr nz, .not_on_skateboard
+
+.on_skateboard
+	ld a, [hJoyDown]
+	and B_BUTTON
+	jp nz, .ollie_1
+	ld a, [wSkateboardOllie]
+	cp 1
+	jr nz, .not_on_skateboard
+	ld a, [hJoyReleased]
+	and B_BUTTON
+	jp z, .not_on_skateboard
+	ld a, 2
+	ld [wSkateboardOllie], a
+	jr .not_on_skateboard
+.ollie_1
+	ld a, 1
+	ld [wSkateboardOllie], a
+.not_on_skateboard
 	xor a
 	ret
 	

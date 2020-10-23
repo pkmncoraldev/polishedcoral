@@ -23,6 +23,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld c, a
 	and D_PAD
 	ret nz
+	
+;	and B_BUTTON
+;	ret nz
 
 	ld a, c
 	or D_DOWN
@@ -123,6 +126,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call .CheckForced
 	call .GetAction
 	call .CheckTile
+	ret c
+	call .TryOllie
 	ret c
 	call .CheckTurning
 	ret c
@@ -338,8 +343,6 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	
 .wall
 	eventflagset EVENT_YOU_CHEATED
-	ld a, PLAYER_DODRIO
-	ld [wPlayerState], a
 	
 .contreturn
 	call .CheckLandPerms
@@ -805,7 +808,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 ; 801f3
 
 .TryJump: ; 801f3
-	call .CheckNPC
+	call .CheckNPCFarAhead
 	and a
 	jr z, .bump
 	cp 2
@@ -816,10 +819,6 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	and $f0
 	cp $a0 ; ledge
 	jr nz, .DontJump
-	
-	ld a, [wPlayerState]
-	cp PLAYER_RUN
-	jr z, .dothejumprunning
 
 	ld a, e
 	and 7
@@ -831,29 +830,67 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	and [hl]
 	jr z, .DontJump
 
+.DoJump
 	ld de, SFX_JUMP_OVER_LEDGE
 	call PlaySFX
-	ld a, STEP_LEDGE
-	call .DoStep
-	ld a, 7
-	scf
-	ret
-	
-.dothejumprunning
-	ld de, SFX_JUMP_OVER_LEDGE
-	call PlaySFX
+	xor a
+	ld [wSkateboardOllie], a
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .DoJumpCont
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
+.DoJumpCont
 	ld a, STEP_LEDGE
 	call .DoStep
 	ld a, 7
 	scf
 	ret
-
+.DontOllie
+	ld [wSkateboardOllie], a
 .DontJump:
 	xor a
 	ret
+	
+.TryOllie: ; 801f3
+	ld a, [wSkateboardOllie]
+	cp 2
+	jr nz, .DontJump
+	call .CheckNPCFarAhead
+	and a
+	jp z, .DontOllie
+	cp 2
+	jp z, .DontOllie
+	
+	ld a, [wPlayerFacing]
+	cp $00
+	jr z, .SetOllieDown
+	cp $01
+	jr z, .SetOllieDown
+	cp $04
+	jr z, .SetOllieUp
+	cp $05
+	jr z, .SetOllieUp
+	cp $08
+	jr z, .SetOllieLeft
+	cp $09
+	jr z, .SetOllieLeft
+	ld a, RIGHT
+	ld [wWalkingDirection], a
+	jr .DoJump
+.SetOllieDown
+	ld a, DOWN
+	ld [wWalkingDirection], a
+	jr .DoJump
+.SetOllieUp
+	ld a, UP
+	ld [wWalkingDirection], a
+	jr .DoJump
+.SetOllieLeft
+	ld a, LEFT
+	ld [wWalkingDirection], a
+	jr .DoJump
 
 .data_8021e
 	db FACE_RIGHT
@@ -1224,6 +1261,94 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret
 ; 8036f
 
+.CheckNPCFarAhead: ; 80341
+; Returns 0 if there is an NPC 2 spaces in front that you can't move
+; Returns 1 if there is no NPC 2 spaces in front
+	ld hl, wHaveFollower
+	bit 0, [hl] ; ENGINE_BIKE_GEAR
+	jr nz, .is_npc ;set
+	xor a
+	ld [hMapObjectIndexBuffer], a
+	
+	ld a, [wFacingDirection]
+	cp FACE_UP
+	jr z, .CheckNPCFarAheadUp
+	cp FACE_DOWN
+	jr z, .CheckNPCFarAheadDown
+	cp FACE_LEFT
+	jr z, .CheckNPCFarAheadLeft
+	
+.CheckNPCFarAheadRight
+; Load the next X coordinate into d
+	ld a, [wPlayerStandingMapX]
+	ld d, a
+	ld a, [wWalkingX]
+	add d
+	inc a
+	ld d, a
+; Load the next Y coordinate into e
+	ld a, [wPlayerStandingMapY]
+	ld e, a
+	ld a, [wWalkingY]
+	add e
+	ld e, a
+	jr .CheckNPCFarAheadEnd
+	
+.CheckNPCFarAheadUp
+; Load the next X coordinate into d
+	ld a, [wPlayerStandingMapX]
+	ld d, a
+	ld a, [wWalkingX]
+	add d
+	ld d, a
+; Load the next Y coordinate into e
+	ld a, [wPlayerStandingMapY]
+	ld e, a
+	ld a, [wWalkingY]
+	add e
+	dec a
+	ld e, a
+	jr .CheckNPCFarAheadEnd
+	
+.CheckNPCFarAheadDown
+; Load the next X coordinate into d
+	ld a, [wPlayerStandingMapX]
+	ld d, a
+	ld a, [wWalkingX]
+	add d
+	ld d, a
+; Load the next Y coordinate into e
+	ld a, [wPlayerStandingMapY]
+	ld e, a
+	ld a, [wWalkingY]
+	add e
+	inc a
+	ld e, a
+	jr .CheckNPCFarAheadEnd
+	
+.CheckNPCFarAheadLeft
+; Load the next X coordinate into d
+	ld a, [wPlayerStandingMapX]
+	ld d, a
+	ld a, [wWalkingX]
+	add d
+	dec a
+	ld d, a
+; Load the next Y coordinate into e
+	ld a, [wPlayerStandingMapY]
+	ld e, a
+	ld a, [wWalkingY]
+	add e
+	ld e, a
+	
+.CheckNPCFarAheadEnd:
+; Find an object struct with coordinates equal to d,e
+	farcall IsNPCAtCoord
+	jr nc, .is_npc
+
+	xor a
+	ret
+
 .CheckStrengthBoulder: ; 8036f
 
 	ld hl, wOWState
@@ -1320,8 +1445,16 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp PLAYER_SKATEBOARD_MOVING
 	ret z
 	cp PLAYER_SKATEBOARD
-	ret z
-	cp PLAYER_SLIP
+	ret
+	
+.OllieCheck
+	ld a, [wSkateboardOllie]
+	cp 1
+	jp z, .Ollie
+	and a
+	ret
+.Ollie
+	scf
 	ret
 	
 .TVRoomCheck

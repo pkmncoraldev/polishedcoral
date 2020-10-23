@@ -84,6 +84,79 @@ GetMovementPermissionsFar::
 	dec e
 	call GetCoordTile
 	ld [wTileUpFar], a
+	
+	ld a, [wPlayerStandingMapX]
+	ld d, a
+	ld a, [wPlayerStandingMapY]
+	ld e, a
+
+	dec d
+	dec d
+	call GetCoordTile
+	ld [wTileLeftFar], a
+	
+	ld a, [wPlayerStandingMapX]
+	ld d, a
+	ld a, [wPlayerStandingMapY]
+	ld e, a
+
+	inc d
+	inc d
+	call GetCoordTile
+	ld [wTileRightFar], a	
+	ret
+	
+CheckFacingEdgeofMap::
+	ld a, [wPlayerFacing]
+	cp $04
+	jr z, .up
+	cp $00
+	jr z, .down
+	cp $08
+	jr z, .left
+	cp $0c
+	jr z, .right
+	jr .nope
+.up
+	ld a, [wPlayerStandingMapY]
+	dec a
+	dec a
+	dec a
+	dec a
+	cp 0
+	ret z
+	jr .nope
+.left
+	ld a, [wPlayerStandingMapX]
+	dec a
+	dec a
+	dec a
+	dec a
+	cp 0
+	ret z
+	jr .nope
+.right
+	ld a, [wMapWidth]
+	add a, a
+	ld [wSkateboardSteps], a
+	ld d, a
+	ld a, [wPlayerStandingMapX]
+	dec a
+	dec a
+	cp d
+	ret nz
+	jr .nope
+.down
+	ld a, [wMapHeight]
+	add a, a
+	ld d, a
+	ld a, [wPlayerStandingMapY]
+	dec a
+	dec a
+	cp d
+	ret nz
+.nope
+	scf
 	ret
 
 UpdatePlayerCoords: ; d511 (3:5511)

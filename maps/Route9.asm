@@ -7,15 +7,27 @@ Route9_MapScriptHeader:
 	warp_def 25, 21, 1, DODRIO_RANCH_HOUSE
 	warp_def 11, 31, 1, DODRIO_RANCH_BARN
 
-	db 8 ; coord events
+	db 20 ; coord events
 	xy_trigger 0, 26, 18, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 27, 18, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 28, 18, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 29, 18, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 26, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 27, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 28, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 29, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 11, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 11, 24, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 11, 25, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 18, 19, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 1, 26, 17, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 27, 17, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 28, 17, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 29, 17, 0, Route9MapSignThing, 0, 0
+	xy_trigger 1, 26, 16, 0, Route9MapSignThing, 0, 0
+	xy_trigger 1, 27, 16, 0, Route9MapSignThing, 0, 0
+	xy_trigger 1, 28, 16, 0, Route9MapSignThing, 0, 0
+	xy_trigger 1, 29, 16, 0, Route9MapSignThing, 0, 0
 
 	db 11 ; bg events
 	signpost 24, 28, SIGNPOST_READ, RanchLogs
@@ -44,7 +56,7 @@ Route9_MapScriptHeader:
 	person_event SPRITE_BIRD_KEEPER, 34,  3, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerRanch_2, -1
 	person_event SPRITE_BEAUTY, 18, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_3, -1
 	person_event SPRITE_BUG_CATCHER, 12, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_4, -1
-	person_event SPRITE_BIRD_KEEPER,  9, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRanch_5, -1
+	person_event SPRITE_BIRD_KEEPER,  9, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRanch_5, -1
 	fruittreeinvis_event  12, 10, FRUITTREE_ROUTE_9, ASPEAR_BERRY
 
 Route9MapSignThing::

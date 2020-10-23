@@ -476,6 +476,14 @@ BillBoxSwitch:
 
 Special_StopRunning:
 	ld a, [wPlayerState]
+	cp PLAYER_SKATEBOARD_MOVING
+	jr nz, .not_skating
+	ld a, PLAYER_SKATEBOARD
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret
+.not_skating
+	ld a, [wPlayerState]
 	cp PLAYER_RUN
 	ret nz
 	ld a, PLAYER_NORMAL

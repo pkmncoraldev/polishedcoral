@@ -1,5 +1,4 @@
 DoPlayerMovement:: ; 80000wWalkingDirection
-
 	call .GetDPad
 	ld a, movement_step_sleep_1
 	ld [wMovementAnimation], a
@@ -96,10 +95,12 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	
 .Skating:
 	ld a, [wPlayerStandingTile]
-	ld hl, SkateboardSlowTiles
+	ld hl, SkateboardTiles
 	ld de, 1
 	call IsInArray
-	jr c, .SkatingStanding
+	jr nc, .SkatingOffRoad
+	xor a
+	ld [wSkateboardOffRoad], a
 	ld a, [wWalkingDirection]
 	ld b, a
 	ld a, [wLastWalkingDirection]
@@ -139,6 +140,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret c
 	jr .NotMoving
 	
+.SkatingOffRoad
+	ld a, 1
+	ld [wSkateboardOffRoad], a
 .SkatingStanding
 	xor a
 	ld [wSkateboardSteps], a
@@ -679,19 +683,21 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call .SkateboardCheck
 	jp nz, .walk
 	
+	ld a, [wSkateboardOffRoad]
+	cp 1
+	jr z, .slow
 	ld a, [wSkateboardMoving]
 	cp 0
 	jr z, .walk
 	ld a, [wSkateboardSpeed]
 	cp 1
-	jr z, .skateboard_slow
-	
-.skateboard_fast
+	jr z, .skateboard_push
+
 	ld a, STEP_SKATEBOARD
 	call .DoStep
 	scf
 	ret
-.skateboard_slow
+.skateboard_push
 	ld a, STEP_SKATEBOARD_PUSH
 	call .DoStep
 	scf
@@ -720,6 +726,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
+.slow
 	ld a, STEP_SLOW
 	call .DoStep
 	scf
@@ -821,7 +828,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr nz, .DontJump
 
 	ld a, e
-	and 7
+	and 15
 	ld e, a
 	ld d, 0
 	ld hl, .data_8021e
@@ -848,6 +855,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	scf
 	ret
 .DontOllie
+	ld de, SFX_WRONG
+	call PlaySFX
 	ld [wSkateboardOllie], a
 .DontJump:
 	xor a
@@ -862,9 +871,20 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jp z, .DontOllie
 	cp 2
 	jp z, .DontOllie
+	
+	farcall CheckFacingEdgeofMap
+	jr nc, .DontOllie	
 	jr .DoJump
 
 .data_8021e
+	db FACE_RIGHT
+	db FACE_LEFT
+	db FACE_UP
+	db FACE_DOWN
+	db FACE_RIGHT | FACE_DOWN
+	db FACE_DOWN | FACE_LEFT
+	db FACE_UP | FACE_RIGHT
+	db FACE_UP | FACE_LEFT
 	db FACE_RIGHT
 	db FACE_LEFT
 	db FACE_UP
@@ -1633,7 +1653,18 @@ CheckBikeGear::
 	ld a, 1
 	ret
 	
-SkateboardSlowTiles::
-	db COLL_TALL_GRASS
-	db COLL_LONG_GRASS
+SkateboardTiles::
+	db COLL_SKATE
+	db COLL_SKATE_LEDGE_RIGHT
+	db COLL_SKATE_LEDGE_LEFT
+	db COLL_SKATE_LEDGE_UP
+	db COLL_SKATE_LEDGE_DOWN
+	db COLL_SKATE_LEDGE_DOWN_RIGHT
+	db COLL_SKATE_LEDGE_DOWN_LEFT
+	db COLL_SKATE_LEDGE_UP_RIGHT
+	db COLL_SKATE_LEDGE_UP_LEFT
+	db COLL_WARP_CARPET_RIGHT
+	db COLL_WARP_CARPET_LEFT
+	db COLL_WARP_CARPET_UP
+	db COLL_WARP_CARPET_DOWN
 	db -1

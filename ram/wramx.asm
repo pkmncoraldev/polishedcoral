@@ -223,13 +223,14 @@ wSkateboardSteps:: ds 1
 wSkateboardSpeed:: ds 1
 wSkateboardMoving:: ds 1
 wSkateboardOllie:: ds 1
+wSkateboardOffRoad:: ds 1
 wLastWalkingDirection:: ds 1
 
 wTileDownFar:: ds 1
 wTileUpFar:: ds 1
 wTileLeftFar:: ds 1
 wTileRightFar:: ds 1
-	ds 2 ; unused
+	ds 1 ; unused
 
 wTMHMMoveNameBackup:: ds MOVE_NAME_LENGTH
 

@@ -138,7 +138,6 @@ CheckFacingEdgeofMap::
 .right
 	ld a, [wMapWidth]
 	add a, a
-	ld [wSkateboardSteps], a
 	ld d, a
 	ld a, [wPlayerStandingMapX]
 	dec a

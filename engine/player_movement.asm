@@ -101,12 +101,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr nc, .SkatingOffRoad
 	xor a
 	ld [wSkateboardOffRoad], a
-	ld a, [wWalkingDirection]
-	ld b, a
 	ld a, [wLastWalkingDirection]
-	cp b
-	jr nz, .SkatingStanding
-	ld a, [wWalkingDirection]
 	cp STANDING
 	jr z, .SkatingStanding
 	ld a, [wSkateboardSpeed]
@@ -121,16 +116,16 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld [wPlayerState], a
 	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
-	ld a, 8
+	ld a, 5
 	ld [wSkateboardSteps], a
 .Skatingcont
 	call .CheckForced
 	call .GetAction
 	call .CheckTile
 	ret c
-	call .TryOllie
-	ret c
 	call .CheckTurning
+	ret c
+	call .TryOllie
 	ret c
 	call .TryStep
 	ret c
@@ -855,8 +850,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	scf
 	ret
 .DontOllie
-	ld de, SFX_WRONG
-	call PlaySFX
+	xor a
 	ld [wSkateboardOllie], a
 .DontJump:
 	xor a
@@ -866,14 +860,18 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, [wSkateboardOllie]
 	cp 2
 	jr nz, .DontJump
+	ld a, [wWalkingDirection]
+	cp STANDING
+	jr z, .DontOllie
 	call .CheckNPCFarAhead
 	and a
 	jp z, .DontOllie
 	cp 2
 	jp z, .DontOllie
-	
+	call .CheckLandPermsFarAhead
+	jp c, .DontOllie
 	farcall CheckFacingEdgeofMap
-	jr nc, .DontOllie	
+	jr nc, .DontOllie
 	jr .DoJump
 
 .data_8021e
@@ -1400,6 +1398,48 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	scf
 	ret
 ; 803b4
+
+.CheckLandPermsFarAhead: ; 8039e
+; Return 0 if walking onto land and tile permissions allow it.
+; Otherwise, return carry.
+
+	ld a, [wTilePermissions]
+	ld d, a
+	ld a, [wFacingDirection]
+	and d
+	jr nz, .NotWalkable
+	ld a, [wPlayerFacing]
+	cp $04
+	jr z, .CheckLandPermsFarAheadUp
+	cp $00
+	jr z, .CheckLandPermsFarAheadDown
+	cp $08
+	jr z, .CheckLandPermsFarAheadLeft
+	cp $0c
+	jr z, .CheckLandPermsFarAheadRight
+	jr .CheckLandPermsFarAheadEnd
+.CheckLandPermsFarAheadUp
+	ld a, [wTileUpFar]
+	call .CheckWalkable
+	jr c, .NotWalkable
+	jr .CheckLandPermsFarAheadEnd
+.CheckLandPermsFarAheadDown
+	ld a, [wTileDownFar]
+	call .CheckWalkable
+	jr c, .NotWalkable
+	jr .CheckLandPermsFarAheadEnd
+.CheckLandPermsFarAheadLeft
+	ld a, [wTileLeftFar]
+	call .CheckWalkable
+	jr c, .NotWalkable
+	jr .CheckLandPermsFarAheadEnd
+.CheckLandPermsFarAheadRight
+	ld a, [wTileRightFar]
+	call .CheckWalkable
+	jr c, .NotWalkable
+.CheckLandPermsFarAheadEnd:
+	xor a
+	ret
 
 .CheckSurfPerms: ; 803b4
 ; Return 0 if moving in water, or 1 if moving onto land.

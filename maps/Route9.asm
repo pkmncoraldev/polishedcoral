@@ -7,7 +7,7 @@ Route9_MapScriptHeader:
 	warp_def 25, 21, 1, DODRIO_RANCH_HOUSE
 	warp_def 11, 31, 1, DODRIO_RANCH_BARN
 
-	db 20 ; coord events
+	db 27 ; coord events
 	xy_trigger 0, 26, 18, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 27, 18, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 28, 18, 0, DodrioRanchMapSignThing, 0, 0
@@ -20,6 +20,13 @@ Route9_MapScriptHeader:
 	xy_trigger 0, 11, 24, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 11, 25, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 18, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 11, 23, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 11, 22, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 11, 20, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 21, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 22, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 23, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 24, 19, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 1, 26, 17, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 27, 17, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 28, 17, 0, Route9MapSignThing, 0, 0

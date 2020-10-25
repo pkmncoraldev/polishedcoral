@@ -680,7 +680,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	
 	ld a, [wSkateboardOffRoad]
 	cp 1
-	jr z, .slow
+	jr z, .offroadslow
 	ld a, [wSkateboardMoving]
 	cp 0
 	jr z, .walk
@@ -716,6 +716,11 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call .DoStep
 	scf
 	ret
+	
+.offroadslow
+	xor a
+	ld [wSkateboardOllie], a
+	jr .slow
 	
 .slowwalk
 	ld a, PLAYER_NORMAL
@@ -759,16 +764,16 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 .contbump
 	cp PLAYER_SKATEBOARD_MOVING
 	jr nz, .contbump2
-	xor a
-	ld [wSkateboardSteps], a
-	ld [wSkateboardPush], a
-	ld [wSkateboardMoving], a
-	ld [wSkateboardSpeed], a
 	ld a, PLAYER_SKATEBOARD
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
 .contbump2
 	xor a
+	ld [wSkateboardSteps], a
+	ld [wSkateboardPush], a
+	ld [wSkateboardMoving], a
+	ld [wSkateboardSpeed], a
+	ld [wSkateboardOllie], a
 	ld [wSpinning], a
 	ret
 ; 801c0
@@ -857,6 +862,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret
 	
 .TryOllie: ; 801f3
+;	ld a, [wSkateboardMoving]
+;	cp 0
+;	jr z, .DontOllie
 	ld a, [wSkateboardOllie]
 	cp 2
 	jr nz, .DontJump
@@ -872,6 +880,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jp c, .DontOllie
 	farcall CheckFacingEdgeofMap
 	jr nc, .DontOllie
+	ld a, [wLastWalkingDirection]
+	ld [wWalkingDirection], a
 	jr .DoJump
 
 .data_8021e
@@ -1399,7 +1409,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret
 ; 803b4
 
-.CheckLandPermsFarAhead: ; 8039e
+.CheckLandPermsFarAhead:: ; 8039e
 ; Return 0 if walking onto land and tile permissions allow it.
 ; Otherwise, return carry.
 
@@ -1417,7 +1427,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr z, .CheckLandPermsFarAheadLeft
 	cp $0c
 	jr z, .CheckLandPermsFarAheadRight
-	jr .CheckLandPermsFarAheadEnd
+	jr .NotWalkable
 .CheckLandPermsFarAheadUp
 	ld a, [wTileUpFar]
 	call .CheckWalkable
@@ -1477,16 +1487,6 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp PLAYER_SKATEBOARD_MOVING
 	ret z
 	cp PLAYER_SKATEBOARD
-	ret
-	
-.OllieCheck
-	ld a, [wSkateboardOllie]
-	cp 1
-	jp z, .Ollie
-	and a
-	ret
-.Ollie
-	scf
 	ret
 	
 .TVRoomCheck

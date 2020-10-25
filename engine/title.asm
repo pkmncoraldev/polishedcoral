@@ -31,7 +31,6 @@ _TitleScreen: ; 10ed67
 	ld de, VTiles1
 	call Decompress
 
-
 ; Clear screen palettes
 	hlbgcoord 0, 0
 	ld bc, SCREEN_WIDTH * BG_MAP_WIDTH
@@ -112,6 +111,8 @@ _TitleScreen: ; 10ed67
 	ld a, " "
 	call ByteFill
 	
+	call DrawOffScreenTitleBackground
+	
 ; Draw logo
 	hlcoord 0, 1
 	lb bc, 7, SCREEN_WIDTH
@@ -128,6 +129,16 @@ _TitleScreen: ; 10ed67
 	hlcoord 0, 10
 	lb bc, 7, SCREEN_WIDTH
 	lb de, $80, SCREEN_WIDTH
+	call DrawTitleGraphic
+	
+	hlcoord 0, 17
+	lb bc, 1, 11
+	lb de, $29, SCREEN_WIDTH
+	call DrawTitleGraphic
+	
+	hlcoord 11, 17
+	lb bc, 1, 9
+	lb de, $3d, SCREEN_WIDTH
 	call DrawTitleGraphic
 	
 ; Initialize running Suicune?
@@ -327,3 +338,269 @@ INCBIN "gfx/title/logo.w160.t4.2bpp.lz"
 
 TitleLighthouseGFX:
 INCBIN "gfx/title/lighthouse.2bpp.lz"
+
+DrawOffScreenTitleBackground:
+	hlbgcoord 20, 10
+	ld bc, 1 * 1
+	ld a, $0c
+	call ByteFill
+	hlbgcoord 21, 10
+	ld bc, 1 * 1
+	ld a, $0d
+	call ByteFill
+	hlbgcoord 22, 10
+	ld bc, 1 * 1
+	ld a, $0e
+	call ByteFill
+	hlbgcoord 23, 10
+	ld bc, 1 * 1
+	ld a, $0f
+	call ByteFill
+	
+	hlbgcoord 20, 11
+	ld bc, 1 * 1
+	ld a, $20
+	call ByteFill
+	hlbgcoord 21, 11
+	ld bc, 1 * 1
+	ld a, $21
+	call ByteFill
+	hlbgcoord 22, 11
+	ld bc, 1 * 1
+	ld a, $22
+	call ByteFill
+	hlbgcoord 23, 11
+	ld bc, 1 * 1
+	ld a, $23
+	call ByteFill
+	hlbgcoord 27, 11
+	ld bc, 1 * 1
+	ld a, $27
+	call ByteFill
+	hlbgcoord 28, 11
+	ld bc, 1 * 1
+	ld a, $28
+	call ByteFill
+	
+	hlbgcoord 20, 12
+	ld bc, 1 * 1
+	ld a, $34
+	call ByteFill
+	hlbgcoord 21, 12
+	ld bc, 1 * 1
+	ld a, $35
+	call ByteFill
+	hlbgcoord 22, 12
+	ld bc, 1 * 1
+	ld a, $36
+	call ByteFill
+	hlbgcoord 23, 12
+	ld bc, 1 * 1
+	ld a, $37
+	call ByteFill
+	hlbgcoord 24, 12
+	ld bc, 1 * 1
+	ld a, $38
+	call ByteFill
+	hlbgcoord 25, 12
+	ld bc, 1 * 1
+	ld a, $39
+	call ByteFill
+	hlbgcoord 26, 12
+	ld bc, 1 * 1
+	ld a, $3a
+	call ByteFill
+	hlbgcoord 27, 12
+	ld bc, 1 * 1
+	ld a, $3b
+	call ByteFill
+	hlbgcoord 28, 12
+	ld bc, 1 * 1
+	ld a, $3c
+	call ByteFill
+	
+	hlbgcoord 20, 13
+	ld bc, 1 * 1
+	ld a, $48
+	call ByteFill
+	hlbgcoord 21, 13
+	ld bc, 1 * 1
+	ld a, $49
+	call ByteFill
+	hlbgcoord 22, 13
+	ld bc, 1 * 1
+	ld a, $4a
+	call ByteFill
+	hlbgcoord 23, 13
+	ld bc, 1 * 1
+	ld a, $4b
+	call ByteFill
+	hlbgcoord 24, 13
+	ld bc, 1 * 1
+	ld a, $4c
+	call ByteFill
+	hlbgcoord 25, 13
+	ld bc, 1 * 1
+	ld a, $4d
+	call ByteFill
+	hlbgcoord 26, 13
+	ld bc, 1 * 1
+	ld a, $4e
+	call ByteFill
+	hlbgcoord 27, 13
+	ld bc, 1 * 1
+	ld a, $4f
+	call ByteFill
+	hlbgcoord 28, 13
+	ld bc, 1 * 1
+	ld a, $50
+	call ByteFill
+	
+	hlbgcoord 20, 14
+	ld bc, 1 * 1
+	ld a, $5c
+	call ByteFill
+	hlbgcoord 21, 14
+	ld bc, 1 * 1
+	ld a, $5d
+	call ByteFill
+	hlbgcoord 22, 14
+	ld bc, 1 * 1
+	ld a, $5e
+	call ByteFill
+	hlbgcoord 23, 14
+	ld bc, 1 * 1
+	ld a, $5f
+	call ByteFill
+	hlbgcoord 24, 14
+	ld bc, 1 * 1
+	ld a, $60
+	call ByteFill
+	hlbgcoord 25, 14
+	ld bc, 1 * 1
+	ld a, $61
+	call ByteFill
+	hlbgcoord 26, 14
+	ld bc, 1 * 1
+	ld a, $62
+	call ByteFill
+	hlbgcoord 27, 14
+	ld bc, 1 * 1
+	ld a, $63
+	call ByteFill
+	hlbgcoord 28, 14
+	ld bc, 1 * 1
+	ld a, $64
+	call ByteFill
+	
+	hlbgcoord 20, 15
+	ld bc, 1 * 1
+	ld a, $70
+	call ByteFill
+	hlbgcoord 21, 15
+	ld bc, 1 * 1
+	ld a, $71
+	call ByteFill
+	hlbgcoord 22, 15
+	ld bc, 1 * 1
+	ld a, $72
+	call ByteFill
+	hlbgcoord 23, 15
+	ld bc, 1 * 1
+	ld a, $73
+	call ByteFill
+	hlbgcoord 24, 15
+	ld bc, 1 * 1
+	ld a, $74
+	call ByteFill
+	hlbgcoord 25, 15
+	ld bc, 1 * 1
+	ld a, $75
+	call ByteFill
+	hlbgcoord 26, 15
+	ld bc, 1 * 1
+	ld a, $76
+	call ByteFill
+	hlbgcoord 27, 15
+	ld bc, 1 * 1
+	ld a, $77
+	call ByteFill
+	hlbgcoord 28, 15
+	ld bc, 1 * 1
+	ld a, $78
+	call ByteFill
+	
+	hlbgcoord 20, 16
+	ld bc, 1 * 1
+	ld a, $15
+	call ByteFill
+	hlbgcoord 21, 16
+	ld bc, 1 * 1
+	ld a, $16
+	call ByteFill
+	hlbgcoord 22, 16
+	ld bc, 1 * 1
+	ld a, $17
+	call ByteFill
+	hlbgcoord 23, 16
+	ld bc, 1 * 1
+	ld a, $18
+	call ByteFill
+	hlbgcoord 24, 16
+	ld bc, 1 * 1
+	ld a, $19
+	call ByteFill
+	hlbgcoord 25, 16
+	ld bc, 1 * 1
+	ld a, $1a
+	call ByteFill
+	hlbgcoord 26, 16
+	ld bc, 1 * 1
+	ld a, $1b
+	call ByteFill
+	hlbgcoord 27, 16
+	ld bc, 1 * 1
+	ld a, $1c
+	call ByteFill
+	hlbgcoord 28, 16
+	ld bc, 1 * 1
+	ld a, $1d
+	call ByteFill
+	
+	hlbgcoord 20, 17
+	ld bc, 1 * 1
+	ld a, $51
+	call ByteFill
+	hlbgcoord 21, 17
+	ld bc, 1 * 1
+	ld a, $52
+	call ByteFill
+	hlbgcoord 22, 17
+	ld bc, 1 * 1
+	ld a, $53
+	call ByteFill
+	hlbgcoord 23, 17
+	ld bc, 1 * 1
+	ld a, $54
+	call ByteFill
+	hlbgcoord 24, 17
+	ld bc, 1 * 1
+	ld a, $55
+	call ByteFill
+	hlbgcoord 25, 17
+	ld bc, 1 * 1
+	ld a, $56
+	call ByteFill
+	hlbgcoord 26, 17
+	ld bc, 1 * 1
+	ld a, $57
+	call ByteFill
+	hlbgcoord 27, 17
+	ld bc, 1 * 1
+	ld a, $58
+	call ByteFill
+	hlbgcoord 28, 17
+	ld bc, 1 * 1
+	ld a, $59
+	call ByteFill
+	ret

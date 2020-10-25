@@ -32,6 +32,15 @@ HP_GREEN  EQU 0
 HP_YELLOW EQU 1
 HP_RED    EQU 2
 
+; sprite_oam_struct members (see macros/wram.asm)
+	const_def
+	const SPRITEOAMSTRUCT_YCOORD     ; 0
+	const SPRITEOAMSTRUCT_XCOORD     ; 1
+	const SPRITEOAMSTRUCT_TILE_ID    ; 2
+	const SPRITEOAMSTRUCT_ATTRIBUTES ; 3
+SPRITEOAMSTRUCT_LENGTH EQU const_value
+NUM_SPRITE_OAM_STRUCTS EQU 40 ; see wVirtualOAM
+
 	const_def
 	const ANIM_MON_SLOW    ; 0
 	const ANIM_MON_NORMAL  ; 1

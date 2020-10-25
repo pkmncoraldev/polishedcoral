@@ -854,6 +854,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, 7
 	scf
 	ret
+.DontOllieSound
+	ld de, SFX_EGG_CRACK
+	call PlaySFX
 .DontOllie
 	xor a
 	ld [wSkateboardOllie], a
@@ -862,9 +865,6 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret
 	
 .TryOllie: ; 801f3
-;	ld a, [wSkateboardMoving]
-;	cp 0
-;	jr z, .DontOllie
 	ld a, [wSkateboardOllie]
 	cp 2
 	jr nz, .DontJump
@@ -873,13 +873,13 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr z, .DontOllie
 	call .CheckNPCFarAhead
 	and a
-	jp z, .DontOllie
+	jp z, .DontOllieSound
 	cp 2
-	jp z, .DontOllie
+	jp z, .DontOllieSound
 	call .CheckLandPermsFarAhead
-	jp c, .DontOllie
+	jp c, .DontOllieSound
 	farcall CheckFacingEdgeofMap
-	jr nc, .DontOllie
+	jr nc, .DontOllieSound
 	ld a, [wLastWalkingDirection]
 	ld [wWalkingDirection], a
 	jr .DoJump

@@ -101,7 +101,7 @@ Drumkit6:
 	dw Woosh3
 	dw Woosh4
 	dw Woosh5
-	dw Triangle1
+	dw Woosh6
 	dw Crash1
 	dw Snare14
 	dw Snare13
@@ -342,4 +342,8 @@ Woosh4:
 	
 Woosh5: 
 	noise A_, 16, $87, $12
+	endchannel	
+
+Woosh6: 
+	noise A_, 16, $1f, $12
 	endchannel		

@@ -1272,8 +1272,8 @@ TitleScreenEntrance: ; 62bc
 	call FadePalettes
 
 ; Play the title screen music.
-;	ld de, MUSIC_TITLE
-;	call PlayMusic
+	ld de, MUSIC_TITLE
+	call PlayMusic
 
 	ld a, $88
 	ld [hWY], a
@@ -1322,15 +1322,15 @@ TitleScreenTimer: ; 62f6
 	call CloseSRAM
 
 ; Start a timer
-	ld de, 73 * 60 + 36
-	ld a, [wSaveFileExists]
-	and a
-	jr z, .ok
-	ld hl, wStatusFlags
-	bit 6, [hl] ; hall of fame
-	jr z, .ok
-	ld de, 56 * 60
-.ok
+	ld de, 73 * 56; + 36
+;	ld a, [wSaveFileExists]
+;	and a
+;	jr z, .ok
+;	ld hl, wStatusFlags
+;	bit 6, [hl] ; hall of fame
+;	jr z, .ok
+;	ld de, 56 * 60
+;.ok
 	ld hl, wcf65
 	ld [hl], e
 	inc hl
@@ -1362,7 +1362,7 @@ TitleScreenMain: ; 6304
 	cp  D_UP + B_BUTTON + SELECT
 	jr z, .delete_save_data
 
-; The clock can be reset by pressing Down + B.
+; The clock can be reset by pressing Down + B + Select.
 	ld a, [hl]
 	and D_DOWN + B_BUTTON + SELECT
 	cp  D_DOWN + B_BUTTON + SELECT
@@ -1380,12 +1380,12 @@ TitleScreenMain: ; 6304
 	inc [hl]
 
 ; Only do this once every eight frames
-;	and %111111
-;	jr nz, .cont
+	and %111111
+	jr nz, .cont
 
-;	call TitleScreenScroll
+	call TitleScreenScroll
 
-;.cont
+.cont
 	ret
 
 .done
@@ -1452,14 +1452,14 @@ TitleScreenScroll:
 	ld [wMagnetTrainDirection], a
 
 	ld hl, wLYOverridesBackup
-	ld c, 64 - 1
+	ld c, 65
 	xor a ; same as ld a, 0
 	ldh [hSCX], a
 	call .loadloop
 	ld c, 70
 	ld a, [wMagnetTrainDirection]
 	call .loadloop
-	ld c, 8 + 1
+	ld c, 8
 	xor a
 	call .loadloop
 	call PushLYOverrides
@@ -1469,7 +1469,7 @@ TitleScreenScroll:
 	dec c
 	jr nz, .loadloop
 	ret
-
+	
 DeleteSaveData: ; 6389
 	farcall _DeleteSaveData
 	jp Init
@@ -1944,7 +1944,7 @@ TitleScreenPalettes:
 	RGB 00, 00, 00
 	RGB 23, 03, 06
 	RGB 31, 13, 21
-	RGB 31, 31, 31
+	RGB 31, 25, 30
 	
 	RGB 00, 00, 00
 	RGB 23, 03, 06
@@ -1986,7 +1986,7 @@ TitleScreenPalettes2:
 	RGB 19, 26, 31
 	RGB 23, 03, 06
 	RGB 31, 13, 21
-	RGB 31, 31, 31
+	RGB 31, 25, 30
 	
 	RGB 17, 25, 31
 	RGB 23, 03, 06

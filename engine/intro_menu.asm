@@ -1938,13 +1938,13 @@ TitleScreenPalettes:
 
 	RGB 00, 00, 00
 	RGB 23, 03, 06
-	RGB 31, 13, 21
+	RGB 31, 22, 26
 	RGB 31, 31, 31
 	
 	RGB 00, 00, 00
 	RGB 23, 03, 06
-	RGB 31, 13, 21
-	RGB 31, 25, 30
+	RGB 31, 22, 26
+	RGB 31, 31, 31
 	
 	RGB 00, 00, 00
 	RGB 23, 03, 06
@@ -1977,16 +1977,16 @@ TitleScreenPalettes2:
 	RGB 21, 27, 31
 	RGB 11, 20, 29
 	RGB 08, 18, 28
-
+	
 	RGB 21, 27, 31
 	RGB 23, 03, 06
-	RGB 31, 13, 21
+	RGB 31, 22, 26
 	RGB 31, 31, 31
 	
 	RGB 19, 26, 31
 	RGB 23, 03, 06
-	RGB 31, 13, 21
-	RGB 31, 25, 30
+	RGB 31, 22, 26
+	RGB 31, 31, 31
 	
 	RGB 17, 25, 31
 	RGB 23, 03, 06

@@ -101,6 +101,14 @@ rWave_d     EQU $ff3d
 rWave_e     EQU $ff3e
 rWave_f     EQU $ff3f
 rLCDC       EQU $ff40 ; LCD Control (R/W)
+rLCDC_BG_PRIORITY    EQU 0 ; 0=Off, 1=On
+rLCDC_SPRITES_ENABLE EQU 1 ; 0=Off, 1=On
+rLCDC_SPRITE_SIZE    EQU 2 ; 0=8x8, 1=8x16
+rLCDC_BG_TILEMAP     EQU 3 ; 0=9800-9BFF, 1=9C00-9FFF
+rLCDC_TILE_DATA      EQU 4 ; 0=8800-97FF, 1=8000-8FFF
+rLCDC_WINDOW_ENABLE  EQU 5 ; 0=Off, 1=On
+rLCDC_WINDOW_TILEMAP EQU 6 ; 0=9800-9BFF, 1=9C00-9FFF
+rLCDC_ENABLE         EQU 7 ; 0=Off, 1=On
 rSTAT       EQU $ff41 ; LCDC Status (R/W)
 rSCY        EQU $ff42 ; Scroll Y (R/W)
 rSCX        EQU $ff43 ; Scroll X (R/W)

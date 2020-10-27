@@ -105,6 +105,10 @@ _TitleScreen: ; 10ed67
 	ld de, VTiles1
 	call Decompress
 	
+	ld hl, TitleSpritesGFX
+	ld de, VTiles0
+	call Decompress
+	
 ; Clear screen tiles
 	hlbgcoord 0, 0
 	ld bc, 64 * BG_MAP_WIDTH
@@ -159,9 +163,18 @@ _TitleScreen: ; 10ed67
 	pop af
 	ld [rSVBK], a
 
+	ld hl, UnusedTitleFG_OAM
+	ld de, wSprites
+	ld bc, 24
+	call CopyBytes
+	
 ; Reset audio
-	call ChannelsOff
+;	call ChannelsOff
 	call EnableLCD
+	
+	ldh a, [rLCDC]
+	set rLCDC_SPRITES_ENABLE, a
+	ldh [rLCDC], a
 
 	ld a, $1
 	ld [hCGBPalUpdate], a
@@ -338,6 +351,9 @@ INCBIN "gfx/title/logo.w160.t4.2bpp.lz"
 
 TitleLighthouseGFX:
 INCBIN "gfx/title/lighthouse.2bpp.lz"
+
+TitleSpritesGFX:
+INCBIN "gfx/title/title_sprites.2bpp.lz"
 
 DrawOffScreenTitleBackground:
 	hlbgcoord 20, 10
@@ -604,3 +620,12 @@ DrawOffScreenTitleBackground:
 	ld a, $59
 	call ByteFill
 	ret
+
+UnusedTitleFG_OAM:
+	dsprite 12,  0,  3,  2, $00, 1
+	dsprite 13,  0,  3,  2, $02, 1
+	dsprite 14,  0,  3,  2, $04, 1
+	dsprite 12,  0,  4,  2, $01, 1
+	dsprite 13,  0,  4,  2, $03, 1
+	dsprite 14,  0,  4,  2, $05, 1
+	

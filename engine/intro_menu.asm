@@ -1272,17 +1272,14 @@ TitleScreenEntrance: ; 62bc
 	call FadePalettes
 
 ; Play the title screen music.
-	ld de, MUSIC_TITLE
-	call PlayMusic
+;	ld de, MUSIC_TITLE
+;	call PlayMusic
 
 	ld a, $88
 	ld [hWY], a
 	
 	ld c, 30
 	call DelayFrames
-	
-;	ld de, SFX_TITLE_SCREEN_ENTRANCE
-;	call PlaySFX
 	
 	call SetWhitePals
 	ld c, 6
@@ -1380,7 +1377,7 @@ TitleScreenMain: ; 6304
 	inc [hl]
 
 ; Only do this once every eight frames
-	and %111111
+	and %011111
 	jr nz, .cont
 
 	call TitleScreenScroll
@@ -1456,7 +1453,7 @@ TitleScreenScroll:
 	xor a ; same as ld a, 0
 	ldh [hSCX], a
 	call .loadloop
-	ld c, 70
+	ld c, 38
 	ld a, [wMagnetTrainDirection]
 	call .loadloop
 	ld c, 8
@@ -2020,10 +2017,10 @@ TitleScreenOBPalettes:
 	RGB 30, 13, 21
 	RGB 31, 31, 31
 
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
+	RGB 21, 27, 31
+	RGB 15, 24, 31
+	RGB 11, 20, 29
+	RGB 08, 18, 28
 
 	RGB 31, 31, 31
 	RGB 31, 31, 31

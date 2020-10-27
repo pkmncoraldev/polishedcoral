@@ -9,7 +9,7 @@ Music_TitleScreen_Ch1:
 	volume $77
 	stereopanning $77
 	notetype $C, $00
-	note __, 8
+;	note __, 8
 	dutycycle 1
 	octave 4
 	notetype $8, $65
@@ -1119,7 +1119,7 @@ Music_TitleScreen_Ch1:
 
 Music_TitleScreen_Ch2:
 	notetype $C, $00
-	note __, 16
+	note __, 8
 	note __, 16
 	note __, 16
 	note __, 16
@@ -1471,7 +1471,7 @@ Music_TitleScreen_Ch3:
 	notetype $C, $00
 	note __, 16
 	note __, 16
-	note __, 8
+;	note __, 8
 	intensity $10
 	vibrato $00, $12
 	octave 5
@@ -1896,8 +1896,9 @@ Music_TitleScreen_Ch3:
 Music_TitleScreen_Ch4:
 	togglenoise 6
 	notetype $C
-	note G_, 8
-	note F#, 8
+;	note G_, 8
+;	note F#, 8
+	note __, 8
 	note __, 16
 	note __, 16
 	note __, 16

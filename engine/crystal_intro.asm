@@ -40,12 +40,14 @@ Copyright_GFPresents: ; e4579
 	call GetCGBLayout
 	ld c, 60
 	call DelayFrames
+	ld de, MUSIC_TITLE
+	call PlayMusic
 	farcall Copyright
 	farcall BSOD
 	call ApplyTilemapInVBlank
 	ld c, 0
 	call FadePalettes
-	ld c, 80
+	ld c, 160
 	call DelayFrames
 	call SetBlackPals
 	ld c, 15
@@ -61,8 +63,8 @@ Copyright_GFPresents: ; e4579
 	call FadePalettes
 	ld c, 15
 	call DelayFrames
-	ld de, MUSIC_CORALDEV_1
-	call PlayMusic
+;	ld de, MUSIC_CORALDEV_1
+;	call PlayMusic
 	ld c, 110
 	call DelayFrames
 	farcall CoralDevScreenWink

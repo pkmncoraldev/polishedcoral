@@ -4629,3 +4629,8 @@ INCLUDE "engine/battle/effect_commands/quiverdance.asm"
 SECTION "Coral Data 2", ROMX
 
 INCLUDE "data/moves/animations.asm"
+
+
+SECTION "Coral Data 3", ROMX
+
+INCLUDE "engine/titlescreen_cutscene.asm"

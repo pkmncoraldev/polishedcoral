@@ -80,7 +80,7 @@ BATTLEANIMSTRUCT_LENGTH EQU const_value
 	const ANIM_OBJ_33
 	const ANIM_OBJ_34
 	const ANIM_OBJ_35
-	const ANIM_OBJ_36
+	const ANIM_OBJ_BITE
 	const ANIM_OBJ_37
 	const ANIM_OBJ_38
 	const ANIM_OBJ_39

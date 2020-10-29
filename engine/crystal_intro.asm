@@ -32,6 +32,7 @@ Copyright_GFPresents: ; e4579
 	ld hl, hJoyPressed
 	bit A_BUTTON_F, [hl]
 	jr z, .loop
+StartIntroSequence::
 	call SetBlackPals
 	ld c, 15
 	call FadePalettes
@@ -42,18 +43,20 @@ Copyright_GFPresents: ; e4579
 	call DelayFrames
 	ld de, MUSIC_TITLE
 	call PlayMusic
+	ld c, 30
+	call DelayFrames
 	farcall Copyright
 	farcall BSOD
 	call ApplyTilemapInVBlank
 	ld c, 0
 	call FadePalettes
-	ld c, 160
+	ld c, 180
 	call DelayFrames
 	call SetBlackPals
 	ld c, 15
 	call FadePalettes
 	call ClearTileMap
-	ld c, 60
+	ld c, 80
 	call DelayFrames
 	ld b, CGB_CORALDEV_LOGO
 	call GetCGBLayout
@@ -61,11 +64,11 @@ Copyright_GFPresents: ; e4579
 	call ApplyTilemapInVBlank
 	ld c, 15
 	call FadePalettes
-	ld c, 15
+	ld c, 30
 	call DelayFrames
 ;	ld de, MUSIC_CORALDEV_1
 ;	call PlayMusic
-	ld c, 110
+	ld c, 100
 	call DelayFrames
 	farcall CoralDevScreenWink
 	ld c, 15

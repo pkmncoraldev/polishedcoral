@@ -156,11 +156,6 @@ _TitleScreen: ; 10ed67
 ; Restore WRAM bank
 	pop af
 	ld [rSVBK], a
-
-	ld hl, Title_OAM
-	ld de, wSprites
-	ld bc, 24
-	call CopyBytes
 	
 ; Reset audio
 ;	call ChannelsOff
@@ -223,12 +218,4 @@ INCBIN "gfx/title/title_sprites.2bpp.lz"
 TitleScreenTilemap:
 ; 32x32 (alternating tiles and attributes)
 INCBIN "gfx/title/title.bin"
-
-Title_OAM:
-	dsprite 12,  0,  3,  0, $00, 1
-	dsprite 13,  0,  3,  0, $02, 1
-	dsprite 14,  0,  3,  0, $04, 1
-	dsprite 12,  0,  4,  0, $01, 1
-	dsprite 13,  0,  4,  0, $03, 1
-	dsprite 14,  0,  4,  0, $05, 1
 	

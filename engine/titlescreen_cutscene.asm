@@ -45,7 +45,7 @@ TitleScreenEntrance: ; 62bc
 	
 	ld hl, TitleLensFlare_OAM01
 	ld de, wSprites
-	ld bc, 36
+	ld bc, 24
 	call CopyBytes
 	
 	ldh a, [rLCDC]
@@ -89,7 +89,7 @@ TitleScreenEntrance: ; 62bc
 	ld bc, 8 palettes
 	rst CopyBytes
 	
-	ld hl, TitleScreenOBPalettes
+	ld hl, TitleScreenOBPalettes1
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
 	rst CopyBytes
@@ -145,7 +145,7 @@ TitleScreenCutscene1:
 	ld l, a
 
 	ld de, wSprites
-	ld bc, 36
+	ld bc, 24
 	call CopyBytes
 
 .cont
@@ -191,6 +191,12 @@ TitleScreenCutscene2:
 	ld a, [wNumHits]
 	inc a
 	ld [wNumHits], a
+	cp 8
+	jr z, .changepal1
+	cp 15
+	jr z, .changepal2
+.return
+	ld a, [wNumHits]
 	
 	ld e, a
 	ld d, 0
@@ -202,7 +208,7 @@ TitleScreenCutscene2:
 	ld l, a
 
 	ld de, wSprites
-	ld bc, 36
+	ld bc, 24
 	call CopyBytes
 
 .cont
@@ -214,6 +220,28 @@ TitleScreenCutscene2:
 	ld hl, wcf65
 	inc [hl]
 	ret
+.changepal1
+	ld a, BANK(wUnknOBPals)
+	call StackCallInWRAMBankA
+
+	ld hl, TitleScreenOBPalettes2
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	rst CopyBytes
+	ld c, 1
+	call FadePalettes
+	jr .return
+.changepal2
+	ld a, BANK(wUnknOBPals)
+	call StackCallInWRAMBankA
+
+	ld hl, TitleScreenOBPalettes3
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	rst CopyBytes
+	ld c, 1
+	call FadePalettes
+	jr .return
 
 TitleScreenCutscene3:
 ; Run the timer down.
@@ -233,9 +261,9 @@ TitleScreenCutscene3:
 	ld hl, wcf65
 	ld a, [hl]
 	cp 126
-	jr z, .changepal
+	jr z, .changepal1
 
-.return
+.return1
 	xor a
 	ldh [hLCDCPointer], a
 	
@@ -254,6 +282,12 @@ TitleScreenCutscene3:
 	ld a, [wNumHits]
 	inc a
 	ld [wNumHits], a
+	cp 30
+	jr z, .changepal2
+	cp 35
+	jr z, .changepal3
+.return2
+	ld a, [wNumHits]
 	
 	ld e, a
 	ld d, 0
@@ -265,7 +299,7 @@ TitleScreenCutscene3:
 	ld l, a
 
 	ld de, wSprites
-	ld bc, 36
+	ld bc, 24
 	call CopyBytes
 	
 .cont
@@ -277,7 +311,7 @@ TitleScreenCutscene3:
 	ld hl, wcf65
 	inc [hl]
 	ret
-.changepal
+.changepal1
 	ld a, BANK(wUnknBGPals)
 	call StackCallInWRAMBankA
 
@@ -287,7 +321,29 @@ TitleScreenCutscene3:
 	rst CopyBytes
 	ld c, 1
 	call FadePalettes
-	jr .return
+	jr .return1
+.changepal2
+	ld a, BANK(wUnknOBPals)
+	call StackCallInWRAMBankA
+
+	ld hl, TitleScreenOBPalettes2
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	rst CopyBytes
+	ld c, 1
+	call FadePalettes
+	jr .return2
+.changepal3
+	ld a, BANK(wUnknOBPals)
+	call StackCallInWRAMBankA
+
+	ld hl, TitleScreenOBPalettes1
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	rst CopyBytes
+	ld c, 1
+	call FadePalettes
+	jr .return2
 	
 GetTitleLensFlare_OAM:
 	dw 0
@@ -428,7 +484,7 @@ TitleScreenFlash:
 	ld bc, 8 palettes
 	rst CopyBytes
 	
-	ld hl, TitleScreenOBPalettes
+	ld hl, TitleScreenOBPalettes1
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
 	rst CopyBytes
@@ -726,8 +782,8 @@ TitleScreenPalettes:
 	RGB 08, 13, 20
 	RGB 08, 13, 20
 	
-	RGB 31, 31, 31
-	RGB 31, 31, 31
+	RGB 08, 13, 20
+	RGB 23, 24, 17
 	RGB 31, 31, 31
 	RGB 31, 31, 31
 	
@@ -768,8 +824,8 @@ TitleScreenPalettes2:
 	RGB 15, 24, 31
 	RGB 15, 24, 31
 	
-	RGB 31, 31, 31
-	RGB 31, 31, 31
+	RGB 15, 24, 31
+	RGB 28, 30, 20
 	RGB 31, 31, 31
 	RGB 31, 31, 31
 	
@@ -815,11 +871,95 @@ TitleScreenPalettes3:
 	RGB 31, 31, 31
 	RGB 31, 31, 31
 	
-TitleScreenOBPalettes:
+TitleScreenOBPalettes1:
 ;OB
 	RGB 00, 00, 00
-	RGB 23, 03, 06
-	RGB 30, 13, 21
+	RGB 08, 14, 23
+	RGB 10, 17, 26
+	RGB 11, 21, 30
+
+	RGB 21, 27, 31
+	RGB 15, 24, 31
+	RGB 11, 20, 29
+	RGB 08, 18, 28
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	
+TitleScreenOBPalettes2:
+;OB
+	RGB 00, 00, 00
+	RGB 10, 17, 26
+	RGB 11, 21, 30
+	RGB 21, 27, 31
+
+	RGB 21, 27, 31
+	RGB 15, 24, 31
+	RGB 11, 20, 29
+	RGB 08, 18, 28
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	
+TitleScreenOBPalettes3:
+;OB
+	RGB 00, 00, 00
+	RGB 11, 21, 30
+	RGB 21, 27, 31
 	RGB 31, 31, 31
 
 	RGB 21, 27, 31
@@ -873,17 +1013,11 @@ TitleLensFlare_OAM00:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM01:
 	dsprite  8,  0, 13,  0, $06, 0
 	dsprite  6,  0, 15,  0, $07, 0
 	dsprite  4,  0, 17,  0, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -895,17 +1029,11 @@ TitleLensFlare_OAM02:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM03:
 	dsprite  8,  0, 13,  2, $06, 0
 	dsprite  6,  2, 15,  0, $07, 0
 	dsprite  4,  4, 16,  7, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -917,17 +1045,11 @@ TitleLensFlare_OAM04:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 
 TitleLensFlare_OAM05:
 	dsprite  8,  0, 13,  4, $06, 0
 	dsprite  6,  4, 15,  0, $07, 0
 	dsprite  5,  0, 16,  6, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -939,17 +1061,11 @@ TitleLensFlare_OAM06:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM07:
 	dsprite  8,  0, 13,  5, $06, 0
 	dsprite  6,  6, 15,  0, $07, 0
 	dsprite  5,  4, 16,  5, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -961,17 +1077,11 @@ TitleLensFlare_OAM08:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM09:
 	dsprite  8,  0, 13,  6, $06, 0
 	dsprite  7,  0, 15,  0, $07, 0
 	dsprite  6,  0, 16,  4, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -983,17 +1093,11 @@ TitleLensFlare_OAM10:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM11:
 	dsprite  8,  0, 13,  6, $06, 0
 	dsprite  7,  2, 14,  7, $07, 0
 	dsprite  6,  4, 16,  3, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1005,17 +1109,11 @@ TitleLensFlare_OAM12:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM13:
 	dsprite  8,  0, 13,  7, $06, 0
 	dsprite  7,  4, 14,  7, $07, 0
 	dsprite  7,  0, 16,  3, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1027,17 +1125,11 @@ TitleLensFlare_OAM14:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM15:
 	dsprite  8,  0, 13,  7, $06, 0
 	dsprite  7,  5, 14,  7, $07, 0
 	dsprite  7,  3, 16,  2, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1049,17 +1141,11 @@ TitleLensFlare_OAM16:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM17:
 	dsprite  8,  0, 14,  0, $06, 0
 	dsprite  7,  6, 14,  7, $07, 0
 	dsprite  7,  5, 16,  1, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1071,17 +1157,11 @@ TitleLensFlare_OAM18:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM19:
 	dsprite  8,  0, 14,  0, $06, 0
 	dsprite  7,  7, 14,  7, $07, 0
 	dsprite  7,  7, 16,  1, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1093,17 +1173,11 @@ TitleLensFlare_OAM20:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM21: ;middle
 	dsprite  8,  0, 14,  0, $06, 0
 	dsprite  8,  0, 14,  7, $07, 0
 	dsprite  8,  0, 16,  0, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1115,17 +1189,11 @@ TitleLensFlare_OAM22: ;middle
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM23: ;middle
 	dsprite  8,  0, 14,  0, $06, 0
 	dsprite  8,  0, 14,  7, $07, 0
 	dsprite  8,  0, 16,  0, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1137,17 +1205,11 @@ TitleLensFlare_OAM24:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM25:
 	dsprite  8,  0, 14,  0, $06, 0
 	dsprite  8,  1, 14,  7, $07, 0
 	dsprite  8,  1, 16,  1, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1159,17 +1221,11 @@ TitleLensFlare_OAM26:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM27:
 	dsprite  8,  0, 14,  0, $06, 0
 	dsprite  8,  2, 14,  7, $07, 0
 	dsprite  8,  3, 16,  1, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1181,17 +1237,11 @@ TitleLensFlare_OAM28:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM29:
 	dsprite  8,  0, 14,  0, $06, 0
 	dsprite  8,  3, 14,  7, $07, 0
 	dsprite  8,  5, 16,  2, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1203,17 +1253,11 @@ TitleLensFlare_OAM30:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM31:
 	dsprite  8,  0, 14,  0, $06, 0
 	dsprite  8,  4, 14,  7, $07, 0
 	dsprite  9,  0, 16,  3, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1225,17 +1269,11 @@ TitleLensFlare_OAM32:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM33:
 	dsprite  8,  0, 14,  0, $06, 0
 	dsprite  8,  6, 14,  7, $07, 0
 	dsprite  9,  4, 16,  3, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1247,17 +1285,11 @@ TitleLensFlare_OAM34:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM35:
 	dsprite  8,  0, 14,  0, $06, 0
 	dsprite  9,  0, 15,  0, $07, 0
 	dsprite 10,  0, 16,  4, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1269,17 +1301,11 @@ TitleLensFlare_OAM36:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM37:
 	dsprite  8,  0, 13,  7, $06, 0
 	dsprite  9,  2, 15,  0, $07, 0
 	dsprite 10,  4, 16,  5, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1291,17 +1317,11 @@ TitleLensFlare_OAM38:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM39:
 	dsprite  8,  0, 13,  7, $06, 0
 	dsprite  9,  4, 15,  0, $07, 0
 	dsprite 11,  0, 16,  6, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1313,17 +1333,11 @@ TitleLensFlare_OAM40:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM41:
 	dsprite  8,  0, 13,  6, $06, 0
 	dsprite  9,  6, 15,  0, $07, 0
 	dsprite 11,  4, 16,  7, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1335,17 +1349,11 @@ TitleLensFlare_OAM42:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM43:
 	dsprite  8,  0, 13,  5, $06, 0
 	dsprite 10,  0, 15,  0, $07, 0
 	dsprite 12,  0, 17,  0, $08, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1357,9 +1365,6 @@ TitleLensFlare_OAM45:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM48:
 	dsprite  8,  0, 13,  2, $06, 0
@@ -1368,14 +1373,8 @@ TitleLensFlare_OAM48:
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM50:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 19,  7,  3,  0, $00, 1
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1384,9 +1383,6 @@ TitleLensFlare_OAM50:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM51:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 19,  6,  3,  0, $00, 1
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1395,9 +1391,6 @@ TitleLensFlare_OAM51:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM52:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 19,  5,  3,  0, $00, 1
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1406,9 +1399,6 @@ TitleLensFlare_OAM52:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM53:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 19,  4,  3,  0, $00, 1
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1417,9 +1407,6 @@ TitleLensFlare_OAM53:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM54:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 19,  3,  3,  0, $00, 1
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1428,9 +1415,6 @@ TitleLensFlare_OAM54:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM55:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 19,  2,  3,  0, $00, 1
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1439,9 +1423,6 @@ TitleLensFlare_OAM55:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM56:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 19,  1,  3,  0, $00, 1
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1450,9 +1431,6 @@ TitleLensFlare_OAM56:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM57:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 19,  0,  3,  0, $00, 1
 	dsprite  0,  0,  0,  0, $00, 0
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1461,9 +1439,6 @@ TitleLensFlare_OAM57:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM58:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 18,  7,  3,  0, $00, 1
 	dsprite 19,  7,  3,  0, $02, 1
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1472,9 +1447,6 @@ TitleLensFlare_OAM58:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM59:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 18,  6,  3,  0, $00, 1
 	dsprite 19,  6,  3,  0, $02, 1
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1483,9 +1455,6 @@ TitleLensFlare_OAM59:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM60:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 18,  5,  3,  0, $00, 1
 	dsprite 19,  5,  3,  0, $02, 1
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1494,9 +1463,6 @@ TitleLensFlare_OAM60:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM61:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 18,  4,  3,  0, $00, 1
 	dsprite 19,  4,  3,  0, $02, 1
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1505,9 +1471,6 @@ TitleLensFlare_OAM61:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM62:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 18,  3,  3,  0, $00, 1
 	dsprite 19,  3,  3,  0, $02, 1
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1516,9 +1479,6 @@ TitleLensFlare_OAM62:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM63:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 18,  2,  3,  0, $00, 1
 	dsprite 19,  2,  3,  0, $02, 1
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1527,9 +1487,6 @@ TitleLensFlare_OAM63:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM64:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 18,  1,  3,  0, $00, 1
 	dsprite 19,  1,  3,  0, $02, 1
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1538,9 +1495,6 @@ TitleLensFlare_OAM64:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM65:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 18,  0,  3,  0, $00, 1
 	dsprite 19,  0,  3,  0, $02, 1
 	dsprite  0,  0,  0,  0, $00, 0
@@ -1549,9 +1503,6 @@ TitleLensFlare_OAM65:
 	dsprite  0,  0,  0,  0, $00, 0
 	
 TitleLensFlare_OAM66:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 17,  7,  3,  0, $00, 1
 	dsprite 18,  7,  3,  0, $02, 1
 	dsprite 19,  7,  3,  0, $04, 1
@@ -1560,9 +1511,6 @@ TitleLensFlare_OAM66:
 	dsprite 19,  7,  4,  0, $05, 1
 	
 TitleLensFlare_OAM67:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 17,  6,  3,  0, $00, 1
 	dsprite 18,  6,  3,  0, $02, 1
 	dsprite 19,  6,  3,  0, $04, 1
@@ -1571,9 +1519,6 @@ TitleLensFlare_OAM67:
 	dsprite 19,  6,  4,  0, $05, 1
 	
 TitleLensFlare_OAM68:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 17,  5,  3,  0, $00, 1
 	dsprite 18,  5,  3,  0, $02, 1
 	dsprite 19,  5,  3,  0, $04, 1
@@ -1582,9 +1527,6 @@ TitleLensFlare_OAM68:
 	dsprite 19,  5,  4,  0, $05, 1
 	
 TitleLensFlare_OAM69:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 17,  4,  3,  0, $00, 1
 	dsprite 18,  4,  3,  0, $02, 1
 	dsprite 19,  4,  3,  0, $04, 1
@@ -1593,9 +1535,6 @@ TitleLensFlare_OAM69:
 	dsprite 19,  4,  4,  0, $05, 1
 	
 TitleLensFlare_OAM70:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 17,  3,  3,  0, $00, 1
 	dsprite 18,  3,  3,  0, $02, 1
 	dsprite 19,  3,  3,  0, $04, 1
@@ -1604,9 +1543,6 @@ TitleLensFlare_OAM70:
 	dsprite 19,  3,  4,  0, $05, 1
 	
 TitleLensFlare_OAM71:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 17,  2,  3,  0, $00, 1
 	dsprite 18,  2,  3,  0, $02, 1
 	dsprite 19,  2,  3,  0, $04, 1
@@ -1615,9 +1551,6 @@ TitleLensFlare_OAM71:
 	dsprite 19,  2,  4,  0, $05, 1
 	
 TitleLensFlare_OAM72:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 17,  1,  3,  0, $00, 1
 	dsprite 18,  1,  3,  0, $02, 1
 	dsprite 19,  1,  3,  0, $04, 1
@@ -1626,9 +1559,6 @@ TitleLensFlare_OAM72:
 	dsprite 19,  1,  4,  0, $05, 1
 	
 TitleLensFlare_OAM73:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 17,  0,  3,  0, $00, 1
 	dsprite 18,  0,  3,  0, $02, 1
 	dsprite 19,  0,  3,  0, $04, 1
@@ -1637,9 +1567,6 @@ TitleLensFlare_OAM73:
 	dsprite 19,  0,  4,  0, $05, 1
 	
 TitleLensFlare_OAM74:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 16,  7,  3,  0, $00, 1
 	dsprite 17,  7,  3,  0, $02, 1
 	dsprite 18,  7,  3,  0, $04, 1
@@ -1648,9 +1575,6 @@ TitleLensFlare_OAM74:
 	dsprite 18,  7,  4,  0, $05, 1
 	
 TitleLensFlare_OAM75:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 16,  6,  3,  0, $00, 1
 	dsprite 17,  6,  3,  0, $02, 1
 	dsprite 18,  6,  3,  0, $04, 1
@@ -1659,9 +1583,6 @@ TitleLensFlare_OAM75:
 	dsprite 18,  6,  4,  0, $05, 1
 	
 TitleLensFlare_OAM76:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 16,  5,  3,  0, $00, 1
 	dsprite 17,  5,  3,  0, $02, 1
 	dsprite 18,  5,  3,  0, $04, 1
@@ -1670,9 +1591,6 @@ TitleLensFlare_OAM76:
 	dsprite 18,  5,  4,  0, $05, 1
 	
 TitleLensFlare_OAM77:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 16,  4,  3,  0, $00, 1
 	dsprite 17,  4,  3,  0, $02, 1
 	dsprite 18,  4,  3,  0, $04, 1
@@ -1681,9 +1599,6 @@ TitleLensFlare_OAM77:
 	dsprite 18,  4,  4,  0, $05, 1
 	
 TitleLensFlare_OAM78:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 16,  3,  3,  0, $00, 1
 	dsprite 17,  3,  3,  0, $02, 1
 	dsprite 18,  3,  3,  0, $04, 1
@@ -1692,9 +1607,6 @@ TitleLensFlare_OAM78:
 	dsprite 18,  3,  4,  0, $05, 1
 	
 TitleLensFlare_OAM79:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 16,  2,  3,  0, $00, 1
 	dsprite 17,  2,  3,  0, $02, 1
 	dsprite 18,  2,  3,  0, $04, 1
@@ -1703,9 +1615,6 @@ TitleLensFlare_OAM79:
 	dsprite 18,  2,  4,  0, $05, 1
 	
 TitleLensFlare_OAM80:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 16,  1,  3,  0, $00, 1
 	dsprite 17,  1,  3,  0, $02, 1
 	dsprite 18,  1,  3,  0, $04, 1
@@ -1714,9 +1623,6 @@ TitleLensFlare_OAM80:
 	dsprite 18,  1,  4,  0, $05, 1
 	
 TitleLensFlare_OAM81:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 16,  0,  3,  0, $00, 1
 	dsprite 17,  0,  3,  0, $02, 1
 	dsprite 18,  0,  3,  0, $04, 1
@@ -1725,9 +1631,6 @@ TitleLensFlare_OAM81:
 	dsprite 18,  0,  4,  0, $05, 1
 	
 TitleLensFlare_OAM82:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 15,  7,  3,  0, $00, 1
 	dsprite 16,  7,  3,  0, $02, 1
 	dsprite 17,  7,  3,  0, $04, 1
@@ -1736,9 +1639,6 @@ TitleLensFlare_OAM82:
 	dsprite 17,  7,  4,  0, $05, 1
 	
 TitleLensFlare_OAM83:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 15,  6,  3,  0, $00, 1
 	dsprite 16,  6,  3,  0, $02, 1
 	dsprite 17,  6,  3,  0, $04, 1
@@ -1747,9 +1647,6 @@ TitleLensFlare_OAM83:
 	dsprite 17,  6,  4,  0, $05, 1
 	
 TitleLensFlare_OAM84:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 15,  5,  3,  0, $00, 1
 	dsprite 16,  5,  3,  0, $02, 1
 	dsprite 17,  5,  3,  0, $04, 1
@@ -1758,9 +1655,6 @@ TitleLensFlare_OAM84:
 	dsprite 17,  5,  4,  0, $05, 1
 	
 TitleLensFlare_OAM85:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 15,  4,  3,  0, $00, 1
 	dsprite 16,  4,  3,  0, $02, 1
 	dsprite 17,  4,  3,  0, $04, 1
@@ -1769,9 +1663,6 @@ TitleLensFlare_OAM85:
 	dsprite 17,  4,  4,  0, $05, 1
 	
 TitleLensFlare_OAM86:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 15,  3,  3,  0, $00, 1
 	dsprite 16,  3,  3,  0, $02, 1
 	dsprite 17,  3,  3,  0, $04, 1
@@ -1780,9 +1671,6 @@ TitleLensFlare_OAM86:
 	dsprite 17,  3,  4,  0, $05, 1
 	
 TitleLensFlare_OAM87:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 15,  2,  3,  0, $00, 1
 	dsprite 16,  2,  3,  0, $02, 1
 	dsprite 17,  2,  3,  0, $04, 1
@@ -1791,9 +1679,6 @@ TitleLensFlare_OAM87:
 	dsprite 17,  2,  4,  0, $05, 1
 	
 TitleLensFlare_OAM88:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 15,  1,  3,  0, $00, 1
 	dsprite 16,  1,  3,  0, $02, 1
 	dsprite 17,  1,  3,  0, $04, 1
@@ -1802,9 +1687,6 @@ TitleLensFlare_OAM88:
 	dsprite 17,  1,  4,  0, $05, 1
 	
 TitleLensFlare_OAM89:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 15,  0,  3,  0, $00, 1
 	dsprite 16,  0,  3,  0, $02, 1
 	dsprite 17,  0,  3,  0, $04, 1
@@ -1813,9 +1695,6 @@ TitleLensFlare_OAM89:
 	dsprite 17,  0,  4,  0, $05, 1
 	
 TitleLensFlare_OAM90:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 14,  7,  3,  0, $00, 1
 	dsprite 15,  7,  3,  0, $02, 1
 	dsprite 16,  7,  3,  0, $04, 1
@@ -1824,9 +1703,6 @@ TitleLensFlare_OAM90:
 	dsprite 16,  7,  4,  0, $05, 1
 	
 TitleLensFlare_OAM91:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 14,  6,  3,  0, $00, 1
 	dsprite 15,  6,  3,  0, $02, 1
 	dsprite 16,  6,  3,  0, $04, 1
@@ -1835,9 +1711,6 @@ TitleLensFlare_OAM91:
 	dsprite 16,  6,  4,  0, $05, 1
 	
 TitleLensFlare_OAM92:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 14,  5,  3,  0, $00, 1
 	dsprite 15,  5,  3,  0, $02, 1
 	dsprite 16,  5,  3,  0, $04, 1
@@ -1846,9 +1719,6 @@ TitleLensFlare_OAM92:
 	dsprite 16,  5,  4,  0, $05, 1
 	
 TitleLensFlare_OAM93:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 14,  4,  3,  0, $00, 1
 	dsprite 15,  4,  3,  0, $02, 1
 	dsprite 16,  4,  3,  0, $04, 1
@@ -1857,9 +1727,6 @@ TitleLensFlare_OAM93:
 	dsprite 16,  4,  4,  0, $05, 1
 	
 TitleLensFlare_OAM94:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 14,  3,  3,  0, $00, 1
 	dsprite 15,  3,  3,  0, $02, 1
 	dsprite 16,  3,  3,  0, $04, 1
@@ -1868,9 +1735,6 @@ TitleLensFlare_OAM94:
 	dsprite 16,  3,  4,  0, $05, 1
 	
 TitleLensFlare_OAM95:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 14,  2,  3,  0, $00, 1
 	dsprite 15,  2,  3,  0, $02, 1
 	dsprite 16,  2,  3,  0, $04, 1
@@ -1879,9 +1743,6 @@ TitleLensFlare_OAM95:
 	dsprite 16,  2,  4,  0, $05, 1
 	
 TitleLensFlare_OAM96:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 14,  1,  3,  0, $00, 1
 	dsprite 15,  1,  3,  0, $02, 1
 	dsprite 16,  1,  3,  0, $04, 1
@@ -1890,9 +1751,6 @@ TitleLensFlare_OAM96:
 	dsprite 16,  1,  4,  0, $05, 1
 	
 TitleLensFlare_OAM97:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 14,  0,  3,  0, $00, 1
 	dsprite 15,  0,  3,  0, $02, 1
 	dsprite 16,  0,  3,  0, $04, 1
@@ -1901,9 +1759,6 @@ TitleLensFlare_OAM97:
 	dsprite 16,  0,  4,  0, $05, 1
 	
 TitleLensFlare_OAM98:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 13,  7,  3,  0, $00, 1
 	dsprite 14,  7,  3,  0, $02, 1
 	dsprite 15,  7,  3,  0, $04, 1
@@ -1912,9 +1767,6 @@ TitleLensFlare_OAM98:
 	dsprite 15,  7,  4,  0, $05, 1
 	
 TitleLensFlare_OAM99:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 13,  6,  3,  0, $00, 1
 	dsprite 14,  6,  3,  0, $02, 1
 	dsprite 15,  6,  3,  0, $04, 1
@@ -1923,9 +1775,6 @@ TitleLensFlare_OAM99:
 	dsprite 15,  6,  4,  0, $05, 1
 	
 TitleLensFlare_OAM100:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 13,  5,  3,  0, $00, 1
 	dsprite 14,  5,  3,  0, $02, 1
 	dsprite 15,  5,  3,  0, $04, 1
@@ -1934,9 +1783,6 @@ TitleLensFlare_OAM100:
 	dsprite 15,  5,  4,  0, $05, 1
 	
 TitleLensFlare_OAM101:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 13,  4,  3,  0, $00, 1
 	dsprite 14,  4,  3,  0, $02, 1
 	dsprite 15,  4,  3,  0, $04, 1
@@ -1945,9 +1791,6 @@ TitleLensFlare_OAM101:
 	dsprite 15,  4,  4,  0, $05, 1
 	
 TitleLensFlare_OAM102:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 13,  3,  3,  0, $00, 1
 	dsprite 14,  3,  3,  0, $02, 1
 	dsprite 15,  3,  3,  0, $04, 1
@@ -1956,9 +1799,6 @@ TitleLensFlare_OAM102:
 	dsprite 15,  3,  4,  0, $05, 1
 	
 TitleLensFlare_OAM103:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 13,  2,  3,  0, $00, 1
 	dsprite 14,  2,  3,  0, $02, 1
 	dsprite 15,  2,  3,  0, $04, 1
@@ -1967,9 +1807,6 @@ TitleLensFlare_OAM103:
 	dsprite 15,  2,  4,  0, $05, 1
 	
 TitleLensFlare_OAM104:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 13,  1,  3,  0, $00, 1
 	dsprite 14,  1,  3,  0, $02, 1
 	dsprite 15,  1,  3,  0, $04, 1
@@ -1978,9 +1815,6 @@ TitleLensFlare_OAM104:
 	dsprite 15,  1,  4,  0, $05, 1
 	
 TitleLensFlare_OAM105:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 13,  0,  3,  0, $00, 1
 	dsprite 14,  0,  3,  0, $02, 1
 	dsprite 15,  0,  3,  0, $04, 1
@@ -1989,9 +1823,6 @@ TitleLensFlare_OAM105:
 	dsprite 15,  0,  4,  0, $05, 1
 	
 TitleLensFlare_OAM106:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 12,  7,  3,  0, $00, 1
 	dsprite 13,  7,  3,  0, $02, 1
 	dsprite 14,  7,  3,  0, $04, 1
@@ -2000,9 +1831,6 @@ TitleLensFlare_OAM106:
 	dsprite 14,  7,  4,  0, $05, 1
 	
 TitleLensFlare_OAM107:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 12,  6,  3,  0, $00, 1
 	dsprite 13,  6,  3,  0, $02, 1
 	dsprite 14,  6,  3,  0, $04, 1
@@ -2011,9 +1839,6 @@ TitleLensFlare_OAM107:
 	dsprite 14,  6,  4,  0, $05, 1
 	
 TitleLensFlare_OAM108:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 12,  5,  3,  0, $00, 1
 	dsprite 13,  5,  3,  0, $02, 1
 	dsprite 14,  5,  3,  0, $04, 1
@@ -2022,9 +1847,6 @@ TitleLensFlare_OAM108:
 	dsprite 14,  5,  4,  0, $05, 1
 	
 TitleLensFlare_OAM109:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 12,  4,  3,  0, $00, 1
 	dsprite 13,  4,  3,  0, $02, 1
 	dsprite 14,  4,  3,  0, $04, 1
@@ -2033,9 +1855,6 @@ TitleLensFlare_OAM109:
 	dsprite 14,  4,  4,  0, $05, 1
 	
 TitleLensFlare_OAM110:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 12,  3,  3,  0, $00, 1
 	dsprite 13,  3,  3,  0, $02, 1
 	dsprite 14,  3,  3,  0, $04, 1
@@ -2044,9 +1863,6 @@ TitleLensFlare_OAM110:
 	dsprite 14,  3,  4,  0, $05, 1
 	
 TitleLensFlare_OAM111:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 12,  2,  3,  0, $00, 1
 	dsprite 13,  2,  3,  0, $02, 1
 	dsprite 14,  2,  3,  0, $04, 1
@@ -2055,9 +1871,6 @@ TitleLensFlare_OAM111:
 	dsprite 14,  2,  4,  0, $05, 1
 	
 TitleLensFlare_OAM112:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 12,  1,  3,  0, $00, 1
 	dsprite 13,  1,  3,  0, $02, 1
 	dsprite 14,  1,  3,  0, $04, 1
@@ -2066,9 +1879,6 @@ TitleLensFlare_OAM112:
 	dsprite 14,  1,  4,  0, $05, 1
 	
 TitleLensFlare_OAM113:
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
-	dsprite  0,  0,  0,  0, $00, 0
 	dsprite 12,  0,  3,  0, $00, 1
 	dsprite 13,  0,  3,  0, $02, 1
 	dsprite 14,  0,  3,  0, $04, 1

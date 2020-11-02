@@ -8,295 +8,294 @@ Music_TitleScreen_Ch1:
 	tempo $89
 	volume $77
 	stereopanning $77
+	notetype $C, $00
 	dutycycle 1
 	octave 4
-	notetype $4, $65
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	octave 5
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	octave 4
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	octave 5
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	octave 4
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	octave 5
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	octave 4
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	octave 5
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	octave 4
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	octave 5
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	octave 4
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	octave 5
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	octave 4
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	octave 5
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	octave 4
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	octave 5
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	octave 4
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	octave 5
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	octave 4
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	octave 5
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	octave 4
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	octave 5
-	note D_, 2
-	intensity $25
-	note D_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note G_, 2
-	intensity $25
-	note G_, 2
-	intensity $65
-	note C_, 2
-	intensity $25
-	note C_, 2
-	intensity $65
-	note D_, 2
-	intensity $25
-	note D_, 2
-	
 	notetype $8, $65
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	octave 5
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	octave 4
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	octave 5
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	octave 4
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	octave 5
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	octave 4
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	octave 5
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	octave 4
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	octave 5
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	octave 4
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	octave 5
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	octave 4
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	octave 5
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	octave 4
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	octave 5
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	octave 4
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	octave 5
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	octave 4
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	octave 5
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	octave 4
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	octave 5
+	note D_, 1
+	intensity $25
+	note D_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note G_, 1
+	intensity $25
+	note G_, 1
+	intensity $65
+	note C_, 1
+	intensity $25
+	note C_, 1
+	intensity $65
+	note D_, 1
+	intensity $25
+	note D_, 1
 	intensity $65
 	octave 4
 	note G_, 1
@@ -637,13 +636,16 @@ Music_TitleScreen_Ch1:
 	intensity $25
 	note G_, 1
 	intensity $78
-	octave 4
-	note E_, 6
-	note C_, 6
+	octave 3
 	note E_, 6
 	note G_, 6
-	note F_, 6
+	octave 4
+	note C_, 6
 	note E_, 6
+	note D_, 6
+	octave 3
+	note A#, 6
+	octave 4
 	note D_, 6
 	note F_, 6
 	notetype $F, $78
@@ -682,10 +684,12 @@ Music_TitleScreen_Ch1:
 	octave 4
 	note C_, 1
 	note D_, 1
-	note E_, 8
-	note C_, 8
+	octave 3
 	note E_, 8
 	note G_, 8
+	octave 4
+	note C_, 8
+	note E_, 8
 	note F_, 8
 	note E_, 8
 	note D_, 8
@@ -703,13 +707,16 @@ Music_TitleScreen_Ch1:
 	octave 3
 	note A_, 16
 	note B_, 16
-	octave 4
-	note E_, 8
-	note C_, 8
+	octave 3
 	note E_, 8
 	note G_, 8
-	note F_, 8
+	octave 4
+	note C_, 8
 	note E_, 8
+	note D_, 8
+	octave 3
+	note A#, 8
+	octave 4
 	note D_, 8
 	note F_, 8
 	note E_, 10
@@ -745,10 +752,12 @@ Music_TitleScreen_Ch1:
 	octave 4
 	note C_, 1
 	note D_, 1
-	note E_, 8
-	note C_, 8
+	octave 3
 	note E_, 8
 	note G_, 8
+	octave 4
+	note C_, 8
+	note E_, 8
 	note F_, 8
 	note E_, 8
 	note D_, 8
@@ -1119,7 +1128,6 @@ Music_TitleScreen_Ch1:
 
 Music_TitleScreen_Ch2:
 	notetype $C, $00
-	note __, 8
 	note __, 16
 	note __, 16
 	note __, 16
@@ -1127,7 +1135,7 @@ Music_TitleScreen_Ch2:
 	note __, 16
 	note __, 16
 	note __, 16
-	note __, 8
+	note __, 16
 	dutycycle 2
 	intensity $A8
 	octave 1
@@ -1471,7 +1479,6 @@ Music_TitleScreen_Ch3:
 	notetype $C, $00
 	note __, 16
 	note __, 16
-;	note __, 8
 	intensity $10
 	vibrato $00, $12
 	octave 5
@@ -1897,7 +1904,6 @@ Music_TitleScreen_Ch4:
 	togglenoise 6
 	notetype $C
 ;	note G_, 8
-;	note F#, 8
 	note __, 8
 	note __, 16
 	note __, 16

@@ -192,11 +192,11 @@ LighthouseSpriteGFX::      	   INCBIN "gfx/sprites/lighthouse.2bpp"
 
 SECTION "Overworld Sprites 8", ROMX
 
-RedSpriteGFX::           	   INCBIN "gfx/sprites/pippi.2bpp"
-RedBikeSpriteGFX::       	   INCBIN "gfx/sprites/pippi_bike.2bpp"
-RedSurfSpriteGFX::       	   INCBIN "gfx/sprites/cora_surf.2bpp"
-RedRunSpriteGFX::              INCBIN "gfx/sprites/pippi_run.2bpp"
-RedMiscSpriteGFX::             INCBIN "gfx/sprites/pippi_misc.2bpp"
+RedSpriteGFX::           	   INCBIN "gfx/sprites/red.2bpp"
+RedBikeSpriteGFX::       	   INCBIN "gfx/sprites/red_bike.2bpp"
+RedSurfSpriteGFX::       	   INCBIN "gfx/sprites/red_surf.2bpp"
+RedRunSpriteGFX::              INCBIN "gfx/sprites/red_run.2bpp"
+RedMiscSpriteGFX::             INCBIN "gfx/sprites/red_misc.2bpp"
 LeafSpriteGFX::                INCBIN "gfx/sprites/pippi.2bpp"
 LeafBikeSpriteGFX::            INCBIN "gfx/sprites/pippi_bike.2bpp"
 LeafSurfSpriteGFX::            INCBIN "gfx/sprites/cora_surf.2bpp"
@@ -212,13 +212,17 @@ KrisBikeSpriteGFX::            INCBIN "gfx/sprites/pippi_bike.2bpp"
 KrisSurfSpriteGFX::            INCBIN "gfx/sprites/cora_surf.2bpp"
 KrisRunSpriteGFX::             INCBIN "gfx/sprites/pippi_run.2bpp"
 KrisMiscSpriteGFX::            INCBIN "gfx/sprites/pippi_misc.2bpp"
-CorySkateboardSpriteGFX::
-CoraSkateboardSpriteGFX::
-PippiSkateboardSpriteGFX::
-RedSkateboardSpriteGFX::
-LeafSkateboardSpriteGFX::
-GoldSkateboardSpriteGFX::
-KrisSkateboardSpriteGFX::
-								INCBIN "gfx/sprites/cory_skateboard.2bpp"
-CorySkateboard2SpriteGFX::
-								INCBIN "gfx/sprites/cory_skateboard_2.2bpp"
+CorySkateboardSpriteGFX::	   INCBIN "gfx/sprites/cory_skateboard.2bpp"
+CoraSkateboardSpriteGFX::	   INCBIN "gfx/sprites/cora_skateboard.2bpp"
+PippiSkateboardSpriteGFX::	   INCBIN "gfx/sprites/pippi_skateboard.2bpp"
+RedSkateboardSpriteGFX::	   INCBIN "gfx/sprites/red_skateboard.2bpp"
+LeafSkateboardSpriteGFX::	   INCBIN "gfx/sprites/leaf_skateboard.2bpp"
+GoldSkateboardSpriteGFX::	   INCBIN "gfx/sprites/gold_skateboard.2bpp"
+KrisSkateboardSpriteGFX::	   INCBIN "gfx/sprites/kris_skateboard.2bpp"
+CorySkateboard2SpriteGFX::	   INCBIN "gfx/sprites/cory_skateboard_2.2bpp"
+CoraSkateboard2SpriteGFX::	   INCBIN "gfx/sprites/cora_skateboard_2.2bpp"
+PippiSkateboard2SpriteGFX::	   INCBIN "gfx/sprites/pippi_skateboard_2.2bpp"
+RedSkateboard2SpriteGFX::	   INCBIN "gfx/sprites/red_skateboard_2.2bpp"
+LeafSkateboard2SpriteGFX::	   INCBIN "gfx/sprites/leaf_skateboard_2.2bpp"
+GoldSkateboard2SpriteGFX::	   INCBIN "gfx/sprites/gold_skateboard_2.2bpp"
+KrisSkateboard2SpriteGFX::	   INCBIN "gfx/sprites/kris_skateboard_2.2bpp"

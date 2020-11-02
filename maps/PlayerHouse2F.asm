@@ -314,6 +314,7 @@ PlayerHouseCloset:
 	applymovement PLAYER, ChangeColorMovement1
 	playsound SFX_TWINKLE
 	callasm SetPlayerPalKrisHouse
+	opentext
 	writetext ChangeColorText2
 	waitbutton
 	closetext
@@ -444,9 +445,11 @@ FixPlayerPalKrisHouse:
 	ret
 	
 SetPlayerPalKrisHouse:
+	ld a, RED
+	ld [wPlayerGender], a
 	ld a, [wMenuCursorY] ; 1 - 8
 	sub $1
 	ld [wPlayerPalette], a
 	add $1	;prevents respawn as another color when fainting. why?????
 	ld [wPlayerInitialPalette], a
-	ret
+	jp ReplaceKrisSprite

@@ -783,8 +783,8 @@ TitleScreenPalettes:
 	RGB 08, 13, 20
 	
 	RGB 08, 13, 20
-	RGB 23, 24, 17
-	RGB 31, 31, 31
+	RGB 13, 18, 24
+	RGB 22, 27, 31
 	RGB 31, 31, 31
 	
 TitleScreenPalettes2:
@@ -825,8 +825,8 @@ TitleScreenPalettes2:
 	RGB 15, 24, 31
 	
 	RGB 15, 24, 31
-	RGB 28, 30, 20
-	RGB 31, 31, 31
+	RGB 18, 25, 31
+	RGB 22, 27, 31
 	RGB 31, 31, 31
 	
 TitleScreenPalettes3:

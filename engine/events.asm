@@ -269,7 +269,7 @@ PlayerEvents: ; 9681f
 .DodrioRanchMapSignThing:
 	dba DodrioRanchMapSignThing
 
-CheckEventFlag:
+CheckEventFlag::
 	ld b, CHECK_FLAG
 	call EventFlagAction
 	ld a, c
@@ -1153,12 +1153,6 @@ DoSkateboardStep:
 	ld a, 1
 	ld [wSkateboardSteps], a
 	ret
-	
-TestSkateboardScript:
-	thistext
-
-	text_jump TorchWentOutText
-	db "@"
 	
 DoTorchStep: ; 96bd7
 	ld a, [wTorchSteps]

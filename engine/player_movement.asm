@@ -365,8 +365,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp COLL_ICE
 	jp z, .ice
 
-	call .TVRoomCheck
-	jp z, .DoNotRun
+;	call .TVRoomCheck
+;	jp z, .DoNotRun
 	
 	call .SnowCheck
 	jp z, .DoNotRun
@@ -699,8 +699,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret
 	
 .walk
-	call .TVRoomCheck
-	jr z, .slowwalk
+;	call .TVRoomCheck
+;	jr z, .slowwalk
 	
 	call .SnowCheck
 	jr z, .slowwalk
@@ -1489,16 +1489,16 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp PLAYER_SKATEBOARD
 	ret
 	
-.TVRoomCheck
-	ld a, [wTileset]
-	cp TILESET_HAUNTED_TV
-	ret nz
-	eventflagcheck EVENT_SPOOKHOUSE_GHOSTBEGONE
-	ret nz
+;.TVRoomCheck
+;	ld a, [wTileset]
+;	cp TILESET_HAUNTED_TV
+;	ret nz
+;	eventflagcheck EVENT_SPOOKHOUSE_GHOSTBEGONE
+;	ret nz
 	
-	ld a, [wWalkingDirection]
-	cp UP
-	ret
+;	ld a, [wWalkingDirection]
+;	cp UP
+;	ret
 	
 .SnowCheck:
 	ld a, [wTileset]
@@ -1590,6 +1590,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 ; 803ee
 
 .BumpSound: ; 803ee
+	eventflagcheck EVENT_SPOOKHOUSE_DARK
+	ret nz
 	ld a, [wTileset]
 	cp TILESET_SNOW
 	jr nz, .not_on_snowstorm_map

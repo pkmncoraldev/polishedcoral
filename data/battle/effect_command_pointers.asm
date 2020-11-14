@@ -174,15 +174,15 @@ BattleCommandPointers:
 	command pickpocket              ; a2
 	command suckerpunch             ; a3
 	command roost                   ; a5
-	command closecombat             ; a6
+	command superpower              ; a6
 	command cottonguard             ; a7
 	command trick                   ; a8
 	command knockoff                ; a9
-	command bugbite                 ; aa
-	command toxic                   ; ab
-	command gyroball                ; ac
-	command checkpowder             ; ad
-	command brickbreak              ; ae
+	command toxic                   ; aa
+	command gyroball                ; ab
+	command checkpowder             ; ac
+	command brickbreak              ; ad
+	command toxicspikes             ; ae
 	command fakeout					; af - coral
 	command cantusefakeout			; b0 - coral
 	command lockon					; b1 - coral
@@ -195,6 +195,8 @@ BattleCommandPointers:
 	command mirrormove				; b8 - coral
 	command toxictarget				; b9 - coral
 	command mimic					; ba - coral
+	command electroball				; bb - coral
+	
 
 	enum_start -1, -1
 	commandonly endmove

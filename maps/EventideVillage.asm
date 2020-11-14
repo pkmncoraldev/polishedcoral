@@ -12,31 +12,31 @@ EventideVillage_MapScriptHeader:
 	warp_event 23, 13, EVENTIDE_BIKE_SHOP, 1
 	warp_event 13, 25, EVENTIDE_GYM_SPEECH_HOUSE, 1
 	warp_event 35, 13, EVENTIDE_SOOTHE_BELL_HOUSE, 1
-	warp_event 31, 35, EVENTIDE_GYM, 1
-	warp_event 32, 35, EVENTIDE_GYM, 2
+	warp_event 31, 37, EVENTIDE_GYM, 1
+	warp_event 32, 37, EVENTIDE_GYM, 2
 
 	db 0 ; coord events
 
 	db 7 ; bg events
-	bg_event 24, 34, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
-	bg_event 25, 34, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
-	bg_event 26, 34, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
-	bg_event 27, 34, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
+	bg_event 24, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
+	bg_event 25, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
+	bg_event 26, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
+	bg_event 27, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
 	bg_event 18, 19, SIGNPOST_JUMPTEXT, EventideVillageSignText
 	bg_event 24, 15, SIGNPOST_JUMPTEXT, EventideVillageBikeShopSignText
-	bg_event 29, 36, SIGNPOST_JUMPTEXT, EventideVillageGymSignText
+	bg_event 29, 38, SIGNPOST_JUMPTEXT, EventideVillageGymSignText
 
 	db 13 ; object events
-	person_event SPRITE_HANGAR_PARTS, 30, 28, SPRITEMOVEDATA_HANGAR_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_PURPLE
-	person_event SPRITE_HANGAR_PARTS, 30, 28, SPRITEMOVEDATA_HANGAR_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_TEAL
-	person_event SPRITE_HANGAR_PARTS, 30, 33, SPRITEMOVEDATA_HANGAR_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_MILTANK, 30, 21, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
-	person_event SPRITE_MILTANK, 32, 19, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
-	person_event SPRITE_MILTANK, 34, 22, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
-	person_event SPRITE_MILTANK, 31, 13, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
-	person_event SPRITE_MILTANK, 36, 12, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
-	person_event SPRITE_MILTANK, 41, 14, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
-	person_event SPRITE_COWGIRL, 32, 20, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EventideVillageMilkGirl, -1
+	person_event SPRITE_HANGAR_PARTS, 32, 28, SPRITEMOVEDATA_HANGAR_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_PURPLE
+	person_event SPRITE_HANGAR_PARTS, 32, 28, SPRITEMOVEDATA_HANGAR_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_TEAL
+	person_event SPRITE_HANGAR_PARTS, 32, 33, SPRITEMOVEDATA_HANGAR_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MILTANK, 32, 21, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
+	person_event SPRITE_MILTANK, 34, 19, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
+	person_event SPRITE_MILTANK, 36, 22, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
+	person_event SPRITE_MILTANK, 33, 13, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
+	person_event SPRITE_MILTANK, 38, 12, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
+	person_event SPRITE_MILTANK, 43, 14, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
+	person_event SPRITE_COWGIRL, 34, 20, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EventideVillageMilkGirl, -1
 	person_event SPRITE_ROCKER, 20, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageNPC1, -1
 	person_event SPRITE_CUTE_GIRL, 15, 30, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideVillageNPC2, -1
 	itemball_event  8, 18, POTION, 1, EVENT_EVENTIDE_VILLAGE_POKEBALL

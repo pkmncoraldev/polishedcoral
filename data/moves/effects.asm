@@ -812,6 +812,30 @@ EvasionDownHit:
 	cantusefakeout
 	endmove
 
+Superpower:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	critical
+	effectchance
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	superpower
+	postfainteffects
+	posthiteffects
+	pickpocket
+	cantusefakeout
+	endmove
+	
 StaticDamage:
 Sonicboom:
 DragonRage:
@@ -1669,29 +1693,6 @@ KnockOff:
 	cantusefakeout
 	endmove
 
-BugBite:
-	checkobedience
-	usedmovetext
-	doturn
-	pressure
-	critical
-	damagestats
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	conditionalboost
-	hittarget
-	failuretext
-	bugbite ; before checkfaint to steal HP berries before they take effect
-	checkfaint
-	criticaltext
-	supereffectivetext
-	postfainteffects
-	posthiteffects
-	cantusefakeout
-	endmove
-
 TriAttack:
 	checkobedience
 	usedmovetext
@@ -2020,6 +2021,16 @@ Spikes:
 	cantusefakeout
 	endmove
 
+ToxicSpikes:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	bounceback
+	toxicspikes
+	cantusefakeout
+	endmove
+	
 Foresight:
 	checkobedience
 	usedmovetext
@@ -2223,6 +2234,29 @@ GyroBall:
 	critical
 	damagestats
 	gyroball
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	pickpocket
+	cantusefakeout
+	endmove
+	
+ElectroBall:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	critical
+	damagestats
+	electroball
 	damagecalc
 	stab
 	damagevariation

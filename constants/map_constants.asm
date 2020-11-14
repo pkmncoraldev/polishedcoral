@@ -167,7 +167,7 @@ MAP_NONE   EQU 0
 
 	newgroup													 ;  9
 	
-	map_const EVENTIDE_VILLAGE,							  20, 23 ; 1
+	map_const EVENTIDE_VILLAGE,							  20, 24 ; 1
 	map_const EVENTIDE_GYM_SPEECH_HOUSE,       		       4,  4 ; 2
 	map_const EVENTIDE_SOOTHE_BELL_HOUSE,  		       	   4,  4 ; 3
 	map_const EVENTIDE_BIKE_SHOP,       		           4,  4 ; 4

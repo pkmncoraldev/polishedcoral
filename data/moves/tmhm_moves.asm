@@ -8,7 +8,7 @@ TMHMMoves:
 	db HAIL         ; TM07
 	db BULK_UP      ; TM08
 	db VENOSHOCK    ; TM09
-	db HIDDEN_POWER ; TM10
+	db SUPERPOWER ; TM10
 	db SUNNY_DAY    ; TM11
 	db SIGNAL_BEAM   ; TM12
 	db ICE_BEAM     ; TM13
@@ -61,7 +61,7 @@ TMHMMoves:
 	db DRAIN_PUNCH  ; TM60
 	db WILL_O_WISP  ; TM61
 	db EMBER   ; TM62
-	db WATER_PULSE  ; TM63
+	db TOXIC_SPIKES  ; TM63
 	db EXPLOSION    ; TM64
 	db SHADOW_CLAW  ; TM65
 	db POISON_JAB   ; TM66
@@ -101,7 +101,7 @@ TMHMMoves:
 	db KNOCK_OFF    ; MT14
 	db PAY_DAY      ; MT15
 	db ROLLOUT      ; MT16
-	db SEED_BOMB    ; MT17
+	db NUZZLE    ; MT17
 	db SEISMIC_TOSS ; MT18
 	db COTTON_GUARD   ; MT20
 	db SLEEP_TALK   ; MT19

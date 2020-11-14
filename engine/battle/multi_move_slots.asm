@@ -1882,6 +1882,9 @@ ScratchUsers:
 	db CUBONE
 	db MAROWAK
 	db MAROWAK_A
+	db NIDORAN_F
+	db NIDORINA
+	db NIDOQUEEN
 	db -1
 	
 WithdrawUsers:
@@ -1901,6 +1904,13 @@ TailWhipUsers:
 	db BLASTOISE
 	db RATTATA
 	db RATICATE
+	db SNUBBULL
+	db GRANBULL
+	db NIDORAN_F
+	db NIDORINA
+	db NIDOQUEEN
+	db WOOPER
+	db QUAGSIRE
 	db -1
 	
 IronDefenseUsers:
@@ -1925,6 +1935,12 @@ HowlUsers:
 	
 FuryAttackUsers:
 	db SMEARGLE
+	db WEEDLE
+	db KAKUNA
+	db BEEDRILL
+	db NIDORAN_M
+	db NIDORINO
+	db NIDOKING
 	db -1
 	
 CometPunchUsers:
@@ -1956,6 +1972,9 @@ FeatherDanceUsers:
 	db -1
 	
 CottonSporeUsers:
+	db MAREEP
+	db FLAAFFY
+	db AMPHAROS
 	db COTTONEE
 	db WHIMSICOTT
 	db -1

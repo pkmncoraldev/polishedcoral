@@ -1,8 +1,8 @@
-BattleCommand_mimic:
+MimicCommand::
 ; mimic
 
-	call ClearLastMove
-	call BattleCommand_movedelay
+	farcall ClearLastMove
+	farcall BattleCommand_movedelay
 	ld a, [wAttackMissed]
 	and a
 	jp nz, .fail
@@ -12,12 +12,12 @@ BattleCommand_mimic:
 	jr z, .player_turn
 	ld hl, wEnemyMonMoves
 .player_turn
-	call CheckHiddenOpponent
+	farcall CheckHiddenOpponent
 	jp nz, .fail
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
-	call GetBattleVar
+	farcall GetBattleVar
 	and a
-	jr z, .fail
+	jp z, .fail
 	cp STRUGGLE
 	jr z, .fail
 	ld b, a
@@ -35,7 +35,7 @@ BattleCommand_mimic:
 	jr nz, .find_mimic
 	inc hl
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
-	call GetBattleVar
+	farcall GetBattleVar
 	ld [hl], a
 	ld [wNamedObjectIndexBuffer], a
 	ld bc, wBattleMonPP - wBattleMonMoves
@@ -51,7 +51,7 @@ BattleCommand_mimic:
 	pop de
 	pop hl
 	farcall GetMultiMoveSlotName
-	call CopyName1
+	farcall CopyName1
 	
 	
 	ld a, [hBattleTurn] ; Get user move name information. wStringBuffer1
@@ -69,14 +69,14 @@ BattleCommand_mimic:
 .not_multi_move_slot
 	pop de
 	pop hl
-	call GetMoveName
-	call AnimateCurrentMove
+	farcall GetMoveName
+	farcall AnimateCurrentMove
 	ld hl, MimicLearnedMoveText
 	jp StdBattleTextBox
 .done
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 	ld hl, MimicLearnedMoveText
-	call StdBattleTextBox
+	farcall StdBattleTextBox
 	
 	ld hl, wStringBuffer1
 	ld a, [hli]
@@ -90,4 +90,4 @@ BattleCommand_mimic:
 	jp StdBattleTextBox
 
 .fail
-	jp FailMimic
+	farjp FailMimic

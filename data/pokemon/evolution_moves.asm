@@ -19,7 +19,7 @@ EvolutionMoves::
 	db NO_MOVE      ; EKANS
 	db NO_MOVE      ; ARBOK
 	db NO_MOVE      ; PIKACHU
-	db NO_MOVE      ; RAICHU
+	db THUNDERPUNCH      ; RAICHU
 	db NO_MOVE      ; SANDSHREW
 	db NO_MOVE      ; SANDSLASH
 	db NO_MOVE      ; NIDORAN_F
@@ -118,8 +118,8 @@ EvolutionMoves::
 	db NO_MOVE      ; NATU
 	db NO_MOVE      ; XATU
 	db NO_MOVE      ; MAREEP
-	db NO_MOVE      ; FLAAFFY
-	db NO_MOVE      ; AMPHAROS
+	db NO_MOVE      ; FLAFFY
+	db THUNDERPUNCH      ; AMPHAROS
 	db NO_MOVE      ; BELLOSSOM
 	db NO_MOVE      ; MARILL
 	db NO_MOVE      ; AZUMARILL

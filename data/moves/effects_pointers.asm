@@ -144,7 +144,6 @@ MoveEffectsPointers:
 	dw ParalyzeFlinchHit
 	dw KnockOff
 	dw FuryStrikes
-	dw BugBite
 	dw GyroBall
 	dw BodySlam
 	dw BrickBreak
@@ -156,3 +155,6 @@ MoveEffectsPointers:
 	dw Twister
 	dw PoisonFang
 	dw Mimic
+	dw ToxicSpikes
+	dw ElectroBall
+	dw Superpower

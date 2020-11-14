@@ -1828,7 +1828,13 @@ CloseSubmenu:: ; 2b3c
 	call ReloadTilesetAndPalettes
 	call UpdateSprites
 	call ExitMenu
-	jr FinishExitMenu
+	call FinishExitMenu
+	ld de, EVENT_SPOOKHOUSE_DARK
+	farcall CheckEventFlag
+	ret z
+	ld a, 3
+	ld [wSpookhouseTVRoomTrigger], a
+	ret
 ; 2b4d
 
 ExitAllMenus:: ; 2b4d

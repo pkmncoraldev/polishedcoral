@@ -300,7 +300,7 @@ LakeBoatManText15:
 	para "Huh?"
 	
 	para "A ride to the"
-	cont "other side of the"
+	line "other side of the"
 	cont "lake?"
 	
 	para "Sure, I can do"

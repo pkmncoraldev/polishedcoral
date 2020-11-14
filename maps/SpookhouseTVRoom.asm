@@ -1,7 +1,9 @@
 SpookhouseTVRoom_MapScriptHeader:
-	db 2 ; scene scripts
+	db 4 ; scene scripts
 	scene_script SpookhouseTVRoomTrigger0
 	scene_script SpookhouseTVRoomTrigger1
+	scene_script SpookhouseTVRoomTrigger2
+	scene_script SpookhouseTVRoomTrigger3
 
 	db 0 ; callbacks
 
@@ -9,22 +11,19 @@ SpookhouseTVRoom_MapScriptHeader:
 	warp_def  8,  2, 7, SPOOKHOUSE_HALLWAY_3
 	warp_def  8,  3, 7, SPOOKHOUSE_HALLWAY_3
 
-	db 5 ; coord events
-	xy_trigger 1,  7,  2, 0, SpookHouseTVRoom1, 0, 0
-	xy_trigger 1,  7,  4, 0, SpookHouseTVRoom2, 0, 0
-	xy_trigger 1,  7,  3, 0, SpookHouseTVRoom3, 0, 0
-	xy_trigger 1,  7,  1, 0, SpookHouseTVRoom4, 0, 0
-	xy_trigger 1,  7,  0, 0, SpookHouseTVRoom5, 0, 0
+	db 0 ; coord events
 
-	db 1 ; bg events
+	db 3 ; bg events
 	signpost  3,  2, SIGNPOST_READ, SpookHouseTV
+	signpost  9,  2, SIGNPOST_IFNOTSET, SpookHouseTVScaryDoor
+	signpost  9,  3, SIGNPOST_IFNOTSET, SpookHouseTVScaryDoor
 
 	db 5 ; object events
 	person_event SPRITE_TWIN,  4,  2, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SpookHouseNPC2, EVENT_SPOOKHOUSE_GHOSTBEGONE
 	person_event SPRITE_TWIN,  7,  1, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SpookHouseNPC1, EVENT_SPOOKHOUSE_TV_ROOM_GIRLS_GONE
 	person_event SPRITE_TWIN,  7,  3, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SpookHouseNPC1, EVENT_SPOOKHOUSE_TV_ROOM_GIRLS_GONE
 	person_event SPRITE_TWIN,  8,  2, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SpookHouseNPC1, EVENT_SPOOKHOUSE_TV_ROOM_GIRLS_GONE
-	person_event SPRITE_TWIN,  6,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SpookHouseNPC1, EVENT_SPOOKHOUSE_TV_ROOM_GIRLS_GONE
+	person_event SPRITE_TWIN,  6,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SpookHouseNPC3, EVENT_SPOOKHOUSE_TV_ROOM_GIRLS_GONE
 
 	const_def 1 ; object constants
 	const SPOOKHOUSE_TVROOM_NPC1
@@ -42,9 +41,44 @@ SpookhouseTVRoomTrigger1:
 	end
 .tvoff
 	changeblock $2, $2, $73
+	changeblock $2, $8, $26
 	end
 	
-SpookHouseTVRoom1:
+SpookhouseTVRoomTrigger2:
+	end
+	
+SpookhouseTVRoomTrigger3:
+	callasm SpookHouseTVRoomAsmThing
+	appear SPOOKHOUSE_TVROOM_NPC5
+	end
+	
+SpookHouseTVRoomAsmThing:
+	ld a, 5
+	ld b, a
+	ld a, [wPlayerStandingMapX]
+	ld d, a
+	ld a, [wPlayerStandingMapY]
+	dec a
+	ld e, a
+	farjp CopyDECoordsToMapObject
+	
+SpookHouseTVScaryDoor:
+	dw EVENT_SPOOKHOUSE_DARK
+	setevent EVENT_SPOOKHOUSE_DARK
+	opentext
+	writetext SpookHouseScaryDoorText
+	closetext
+	changemap SpookhouseTVRoom2_BlockData
+	reloadmappart
+	playsound SFX_UNKNOWN_5F
+	waitsfx
+	dotrigger $2
+	end
+	
+SpookHouseNPC3:
+	jumptextfaceplayer SpookHouseGhostText9
+	
+SpookHouseTVRoom5:
 	checkevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
 	iffalse .end
 	clearevent EVENT_SPOOKHOUSE_GHOSTBEGONE
@@ -115,59 +149,17 @@ SpookHouseTVRoom1:
 .end
 	end
 	
-SpookHouseTVRoom2:
-	checkevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
-	iffalse .end
-	applyonemovement PLAYER, step_left
-	applyonemovement PLAYER, step_left
-	special Special_StopRunning
-	spriteface PLAYER, DOWN
-	jump SpookHouseTVRoom1
-.end
-	end
-	
-SpookHouseTVRoom3:
-	checkevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
-	iffalse .end
-	applyonemovement PLAYER, step_left
-	special Special_StopRunning
-	spriteface PLAYER, DOWN
-	jump SpookHouseTVRoom1
-.end
-	end
-	
-SpookHouseTVRoom4:
-	checkevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
-	iffalse .end
-	applyonemovement PLAYER, step_right
-	special Special_StopRunning
-	spriteface PLAYER, DOWN
-	jump SpookHouseTVRoom1
-.end
-	end
-	
-SpookHouseTVRoom5:
-	checkevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
-	iffalse .end
-	applyonemovement PLAYER, step_right
-	applyonemovement PLAYER, step_right
-	special Special_StopRunning
-	spriteface PLAYER, DOWN
-	jump SpookHouseTVRoom1
-.end
-	end
-	
 SpookHouseNPC2:
 	opentext
 	writetext SpookHouseGhostText1
 	waitbutton
 	closetext
 	wait 16
-	opentext
-	playsound SFX_UNKNOWN_5F
-	faceplayer
-	writetext SpookHouseGhostText2
-	wait 4
+;	opentext
+;	playsound SFX_UNKNOWN_5F
+;	faceplayer
+;	writetext SpookHouseGhostText2
+;	wait 4
 	disappear SPOOKHOUSE_TVROOM_NPC1
 	closetext
 	changeblock $2, $2, $73
@@ -227,10 +219,23 @@ SpookHouseGhostText8:
 	text "YOU'RE MINE!"
 	done
 	
+SpookHouseGhostText9:
+	text "BOO!"
+	done
+	
 SpookHouseTVTextOn:
 	text "Its just static."
 	done
 	
 SpookHouseTVTextOff:
 	text "The TV is off."
+	done
+	
+SpookHouseScaryDoorText:
+	text "That's weird…"
+	
+	para "It won't budge"
+	line "at all…"
+	
+	para "Maybe you could"
 	done

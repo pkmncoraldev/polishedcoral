@@ -4,14 +4,14 @@
 	const KARATE_CHOP  ; $02
 	const DOUBLE_SLAP  ; $03
 	const BONE_CLUB    ; $04
-	const DRAGON_CLAW  ; $05
+	const DRAGON_CLAW  ; $05 -
 	const PAY_DAY      ; $06
 	const FIRE_PUNCH   ; $07
 	const ICE_PUNCH    ; $08
 	const THUNDERPUNCH ; $09
 	const FLAME_CHARGE ; $0a
 	const X_SCISSOR    ; $0b
-	const NIGHT_SLASH  ; $0c
+	const NIGHT_SLASH  ; $0c - REMOVE
 	const AIR_SLASH    ; $0d
 	const SWORDS_DANCE ; $0e
 	const CUT          ; $0f
@@ -26,7 +26,7 @@
 	const HEX		   ; $18
 	const FLARE_BLITZ  ; $19
 	const STONE_EDGE   ; $1a
-	const FOCUS_BLAST  ; $1b
+	const FOCUS_BLAST  ; $1b -
 	const BULLET_SEED  ; $1c
 	const HEADBUTT     ; $1d
 	const HORN_ATTACK  ; $1e
@@ -46,7 +46,7 @@
 	const BITE         ; $2c
 	const GROWL        ; $2d
 	const ROAR_WHIRLWIND        	 			; $2e
-	const SING         ; $2f
+	const SING         ; $2f - COMBINE
 	const SUPERSONIC   ; $30
 	const SONIC_BOOM   ; $31
 	const DISABLE      ; $32
@@ -73,7 +73,7 @@
 	const ABSORB       ; $47
 	const MEGA_DRAIN   ; $48
 	const LEECH_SEED   ; $49
-	const GROWTH       ; $4a
+	const GROWTH       ; $4a -
 	const RAZOR_LEAF   ; $4b
 	const SOLAR_BEAM   ; $4c
 	const POISONPOWDER ; $4d
@@ -94,7 +94,7 @@
 	const TOXIC        ; $5c
 	const CONFUSION    ; $5d
 	const PSYCHIC_M    ; $5e
-	const HYPNOSIS     ; $5f
+	const HYPNOSIS     ; $5f - REMOVE
 	const SIGNAL_BEAM  ; $60
 	const AGILITY_ROCK_POLISH      ; $61
 	const QUICK_ATTACK ; $62
@@ -136,15 +136,15 @@
 	const ROOST        ; $86
 	const SOFTBOILED_MILK_DRINK   				; $87
 	const HI_JUMP_KICK ; $88
-	const GLARE        ; $89
+	const GLARE        ; $89 - REMOVE
 	const DREAM_EATER  ; $8a
 	const POISON_JAB   ; $8b
 	const BULLET_PUNCH ; $8c
 	const LEECH_LIFE   ; $8d
 	const DOUBLE_HIT   ; $8e
-	const BRAVE_BIRD   ; $8f
+	const BRAVE_BIRD   ; $8f - REMOVE
 	const TRANSFORM    ; $90
-	const WATER_PULSE  ; $91
+	const TOXIC_SPIKES ; $91
 	const POISON_FANG  ; $92
 	const SPORE        ; $93
 	const FLASH        ; $94
@@ -157,7 +157,7 @@
 	const BONEMERANG   ; $9b
 	const REST         ; $9c
 	const ROCK_SLIDE   ; $9d
-	const SWEET_SCENT  ; $9e
+	const SWEET_SCENT  ; $9e - REMOVE
 	const BULK_UP      ; $9f
 	const CONVERSION   ; $a0
 	const TRI_ATTACK   ; $a1
@@ -166,7 +166,7 @@
 	const SUBSTITUTE   ; $a4
 	const GIGA_IMPACT  ; $a5
 	const SKETCH       ; $a6
-	const DRAIN_PUNCH  ; $a7
+	const DRAIN_PUNCH  ; $a7 - 
 	const ACROBATICS   ; $a8
 	const WILL_O_WISP  ; $a9
 	const ZEN_HEADBUTT ; $aa
@@ -177,7 +177,7 @@
 	const GYRO_BALL    ; $af
 	const ENERGY_BALL  ; $b0
 	const MIMIC		   ; $b1
-	const SEED_BOMB    ; $b2 - REMOVE
+	const NUZZLE       ; $b2
 	const REVERSAL     ; $b3
 	const SLUDGE       ; $b4
 	const ICE_SHARD    ; $b5
@@ -185,11 +185,11 @@
 	const MACH_PUNCH   ; $b7
 	const SCARY_FACE_COTTON_SPORE   			; $b8
 	const FEINT_ATTACK ; $b9
-	const SWEET_KISS   ; $ba
+	const SWEET_KISS   ; $ba - REMOVE
 	const BELLY_DRUM   ; $bb
 	const SLUDGE_BOMB  ; $bc
 	const MUD_SLAP     ; $bd
-	const SHELL_SMASH  ; $be
+	const SHELL_SMASH  ; $be -
 	const SPIKES       ; $bf
 	const ZAP_CANNON   ; $c0
 	const FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE   	 ; $c1
@@ -209,17 +209,17 @@
 	const SWAGGER      ; $cf
 	const TWISTER      ; $d0
 	const SPARK        ; $d1
-	const BUG_BITE     ; $d2 - REMOVE
+	const ELECTRO_BALL ; $d2
 	const STEEL_WING   ; $d3
 	const MEAN_LOOK_BLOCK_SPIDER_WEB    		; $d4
-	const ATTRACT      ; $d5
+	const ATTRACT      ; $d5 - REMOVE
 	const SLEEP_TALK   ; $d6
-	const HEAL_BELL    ; $d7
+	const HEAL_BELL    ; $d7 - REMOVE
 	const RETURN       ; $d8
 	const QUIVER_DANCE ; $d9
 	const BUG_BUZZ     ; $da
 	const SAFEGUARD    ; $db
-	const PAIN_SPLIT   ; $dc
+	const PAIN_SPLIT   ; $dc - REMOVE
 	const FAKE_OUT	   ; $dd
 	const MAGNITUDE    ; $de
 	const DYNAMICPUNCH ; $df
@@ -235,19 +235,19 @@
 	const AURA_SPHERE  ; $e9
 	const SYNTHESIS_MOONLIGHT_MORNING_SUN 		; $ea
 	const HURRICANE    ; $eb
-	const KNOCK_OFF    ; $ec - REMOVE
-	const HIDDEN_POWER ; $ed
+	const KNOCK_OFF    ; $ec
+	const SUPERPOWER   ; $ed
 	const CROSS_CHOP   ; $ee
 	const AQUA_JET     ; $ef
 	const RAIN_DANCE   ; $f0
 	const SUNNY_DAY    ; $f1
 	const CRUNCH       ; $f2
-	const MIRROR_COAT  ; $f3
+	const MIRROR_COAT  ; $f3 - REMOVE
 	const NASTY_PLOT   ; $f4
 	const EXTREMESPEED ; $f5
 	const ANCIENTPOWER ; $f6
 	const SHADOW_BALL  ; $f7
-	const FUTURE_SIGHT ; $f8
+	const FUTURE_SIGHT ; $f8 -
 	const ROCK_SMASH   ; $f9
 	const WHIRLPOOL    ; $fa
 	const DARK_PULSE   ; $fb

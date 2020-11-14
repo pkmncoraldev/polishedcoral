@@ -433,7 +433,6 @@ ContactMoves::
 	db AQUA_TAIL
 	db BITE
 	db BODY_SLAM
-	db BUG_BITE
 	db BULLET_PUNCH
 	db COUNTER
 	db CRABHAMMER
@@ -509,6 +508,7 @@ ContactMoves::
 	db THUNDER_FANG
 	db POISON_FANG
 	db VITAL_THROW
+	db SUPERPOWER
 	db -1
 
 PowderMoves::
@@ -547,6 +547,7 @@ SubstituteBypassMoves::
 	db ENCORE
 	db FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db SPIKES
+	db TOXIC_SPIKES
 	db -1
 
 DynamicPowerMoves::
@@ -561,6 +562,7 @@ DynamicPowerMoves::
 	db REVERSAL
 	db SEISMIC_TOSS
 	db SONIC_BOOM
+	db ELECTRO_BALL
 	db -1
 
 ; These routines return z if the user is of the given type

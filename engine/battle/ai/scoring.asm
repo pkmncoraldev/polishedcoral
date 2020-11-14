@@ -2056,7 +2056,6 @@ RainDanceMoves: ; 390e7
 	db SURF
 	db THUNDER
 	db WATER_GUN
-	db WATER_PULSE
 	db WATERFALL
 	db WHIRLPOOL
 	db $ff
@@ -2853,6 +2852,7 @@ AI_Cautious: ; 39418
 	db STUN_SPORE
 	db SUBSTITUTE
 	db THUNDER_WAVE
+	db TOXIC_SPIKES
 	db TRANSFORM
 	db $ff
 ; 39453

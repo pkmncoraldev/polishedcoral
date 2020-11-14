@@ -5554,12 +5554,12 @@ BattleCommand_paralyzetarget:
 	call PrintParalyze
 	jp PostStatusWithSynchronize
 
-BattleCommand_closecombat:
+BattleCommand_superpower:
 	ld a, [wAttackMissed]
 	and a
 	ret nz
 
-	lb bc, DEFENSE, SP_DEFENSE
+	lb bc, ATTACK, DEFENSE
 BattleCommand_selfstatdownhit:
 ; input: 1-2 stats to decrease in b and c respectivey
 	push bc
@@ -7647,49 +7647,6 @@ BattleCommand_knockoff:
 	ld [hl], a
 	ret
 
-BattleCommand_bugbite:
-	; these abilities prevent us from eating it
-	call GetOpponentAbilityAfterMoldBreaker
-	cp STICKY_HOLD
-	ret z
-	cp UNNERVE
-	ret z
-
-	; does the opponent even have a berry? DON'T check EdibleBerries,
-	; there are non-edible ones which we'll still eat (with no effect)
-	call GetOpponentItem
-	ld a, [hl]
-	ld [wCurItem], a
-	push bc
-	push hl
-	farcall CheckItemPocket
-	pop hl
-	pop bc
-	ld a, [wItemAttributeParamBuffer]
-	cp BERRIES
-	ret nz
-
-	; OK, we will eat the berry. Done by reusing item effect functions,
-	; and if the opponent still has an item, eating it with no effect
-	farcall StealHeldStatusHealingItem
-	farcall StealHPHealingItem
-	farcall StealStatBoostBerry
-	farcall StealDefendHitBerry
-	farcall StealLeppaBerry
-
-	; check if the opponent still has a berry
-	call GetOpponentItem
-	ld a, [hl]
-	and a
-	ret z
-	farcall ItemRecoveryAnim
-	call GetCurItemName
-	ld hl, BattleText_UserAteItem
-	call StdBattleTextBox
-	call ConsumeOpponentItem
-	ld hl, NothingHappenedText
-	jp StdBattleTextBox
-
 BattleCommand_payday:
 	call CheckSubstituteOpp
 	ret nz
@@ -8377,6 +8334,10 @@ BattleCommand_cottonguard:
 BattleCommand_mirrormove:
 	call MirrorMoveCommand
 	ret
+	
+BattleCommand_mimic:
+	farcall MimicCommand
+	ret
 
 INCLUDE "engine/battle/effect_commands/mirrormove.asm"
 	
@@ -8482,8 +8443,6 @@ DoKnockOff:
 	ld a, l
 	ld [wCurDamage + 1], a
 	ret
-	
-INCLUDE "engine/battle/effect_commands/mimic.asm"
 
 INCLUDE "engine/battle/effect_commands/attract.asm"
 
@@ -8671,7 +8630,20 @@ BattleCommand_gyroball:
 	farcall GetSpeed
 	pop de
 	; User speed in BC, target speed in DE
+	jr BattleCommand_gyroball_electroball_cont
 
+BattleCommand_electroball:
+	push bc
+	push de
+	farcall GetSpeed
+	push bc
+	call SwitchTurn
+	farcall GetSpeed
+	pop de
+	call SwitchTurn
+	; User speed in DE, target speed in BC
+	
+BattleCommand_gyroball_electroball_cont:
 	; This is counterintuitive (the logical choice is to set speed to 1),
 	; but is how it's done in VII...
 	ld a, b
@@ -8690,7 +8662,7 @@ BattleCommand_gyroball:
 	rr e
 	jr .scaledown_loop
 .scaledown_ok
-	; Base Power = 25 * (Target Speed / User Speed), capped at 150
+	; Base Power = 25 * (DE Speed / BC Speed), capped at 150
 	xor a
 	ld [hMultiplicand + 0], a
 	ld a, d
@@ -9043,6 +9015,15 @@ BattleCommand_clearhazards: ; 37b39
 	call StdBattleTextBox
 	pop hl
 .no_spikes
+	ld a, [hl]
+	and SCREENS_TOXIC_SPIKES
+	jr z, .no_toxic_spikes
+	cpl
+	and [hl]
+	ld [hl], a
+	ld hl, BlewToxicSpikesText
+	call StdBattleTextBox
+.no_toxic_spikes
 	pop de
 	ld a, [de]
 	and a

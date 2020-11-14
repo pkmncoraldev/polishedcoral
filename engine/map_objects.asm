@@ -2240,7 +2240,7 @@ BattleStart_HideAllSpritesExceptBattleParticipants: ; 5602, called at battle sta
 	call RespawnObject ; respawn opponent
 .ok
 	jp _UpdateSprites
-; 561d
+	
 
 ReturnFromFly_SpawnOnlyPlayer: ; 561d
 	call MaskAllObjectStructs ; clear sprites

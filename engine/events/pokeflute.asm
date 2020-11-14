@@ -113,8 +113,6 @@ _PokeFlute: ; 50730
 	jr c, .nope
 
 	ld a, d
-	cp SPRITEMOVEDATA_SNORLAX
-	jr z, .snorlax
 
 	cp SPRITEMOVEDATA_SUDOWOODO
 	jr z, .sudowoodo
@@ -122,6 +120,12 @@ _PokeFlute: ; 50730
 	ld a, [wMapGroup]
 	cp GROUP_SUNBEAM_ISLAND
 	jr z, .sunbeamgroup
+	
+	callba GetFacingObjectSprite
+	ld a, d
+	
+	cp SPRITE_BIG_SNORLAX
+	jr z, .snorlax
 	
 .nope
 	xor a

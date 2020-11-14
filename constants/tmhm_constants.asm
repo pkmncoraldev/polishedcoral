@@ -32,7 +32,7 @@ ENDM
 	add_tm HAIL         ; $06
 	add_tm BULK_UP      ; $07
 	add_tm VENOSHOCK    ; $08
-	add_tm HIDDEN_POWER ; $09
+	add_tm SUPERPOWER ; $09
 	add_tm SUNNY_DAY    ; $0a
 	add_tm SIGNAL_BEAM   ; $0b
 	add_tm ICE_BEAM     ; $0c
@@ -85,7 +85,7 @@ ENDM
 	add_tm DRAIN_PUNCH  ; $3b
 	add_tm WILL_O_WISP  ; $3c
 	add_tm EMBER   ; $3d
-	add_tm WATER_PULSE  ; $3e
+	add_tm TOXIC_SPIKES  ; $3e
 	add_tm EXPLOSION    ; $3f
 	add_tm SHADOW_CLAW  ; $40
 	add_tm POISON_JAB   ; $41
@@ -129,7 +129,7 @@ NUM_HMS = const_value - HM01
 	add_mt KNOCK_OFF    ; $5e
 	add_mt PAY_DAY      ; $5f
 	add_mt ROLLOUT      ; $60
-	add_mt SEED_BOMB    ; $61
+	add_mt NUZZLE    ; $61
 	add_mt SEISMIC_TOSS ; $62
 	add_mt COTTON_GUARD   ; $63
 	add_mt SLEEP_TALK   ; $64

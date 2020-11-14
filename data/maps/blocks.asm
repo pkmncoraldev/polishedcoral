@@ -458,5 +458,8 @@ SpookhouseHallway3_BlockData:
 SpookhouseTVRoom_BlockData:
 	INCBIN "maps/SpookhouseTVRoom.ablk.lz"
 	
+SpookhouseTVRoom2_BlockData:
+	INCBIN "maps/SpookhouseTVRoom2.ablk.lz"
+	
 DodrioRanchBarn_BlockData:
 	INCBIN "maps/DodrioRanchBarn.ablk.lz"

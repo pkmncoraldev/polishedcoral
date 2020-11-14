@@ -144,7 +144,7 @@ BattleAnimations::
 	dw BattleAnim_DoubleHit
 	dw BattleAnim_BraveBird
 	dw BattleAnim_Transform
-	dw BattleAnim_WaterPulse
+	dw BattleAnim_ToxicSpikes
 	dw BattleAnim_PoisonFang
 	dw BattleAnim_Spore
 	dw BattleAnim_Flash
@@ -177,7 +177,7 @@ BattleAnimations::
 	dw BattleAnim_GyroBall
 	dw BattleAnim_EnergyBall
 	dw BattleAnim_Mimic
-	dw BattleAnim_SeedBomb
+	dw BattleAnim_Nuzzle
 	dw BattleAnim_Reversal
 	dw BattleAnim_Sludge
 	dw BattleAnim_IceShard
@@ -209,7 +209,7 @@ BattleAnimations::
 	dw BattleAnim_Swagger
 	dw BattleAnim_Twister
 	dw BattleAnim_Spark
-	dw BattleAnim_BugBite
+	dw BattleAnim_ElectroBall
 	dw BattleAnim_SteelWing
 	dw BattleAnim_MeanLook
 	dw BattleAnim_Attract
@@ -236,7 +236,7 @@ BattleAnimations::
 	dw BattleAnim_HealingLight
 	dw BattleAnim_Hurricane
 	dw BattleAnim_KnockOff
-	dw BattleAnim_HiddenPower
+	dw BattleAnim_Superpower
 	dw BattleAnim_CrossChop
 	dw BattleAnim_AquaJet
 	dw BattleAnim_RainDance
@@ -286,6 +286,9 @@ BattleAnim_0:
 BattleAnim_DazzlinGleam:
 BattleAnim_KnockOff:
 BattleAnim_RockPolish:
+BattleAnim_Nuzzle:
+BattleAnim_ElectroBall:
+BattleAnim_Superpower:
 	anim_ret
 	
 BattleAnim_PoisonFang:
@@ -1557,7 +1560,6 @@ BattleAnim_Blizzard:
 	anim_wait 24
 	anim_ret
 
-BattleAnim_WaterPulse: ; TODO: write an original animation
 BattleAnim_Bubble: ; removed
 	anim_1gfx ANIM_GFX_BUBBLE
 	anim_sound 32, 2, SFX_WATER_GUN
@@ -3886,24 +3888,24 @@ BattleAnim_Conversion:
 ;	anim_ret
 
 ; Seed Bomb animation from Pokémon Prism
-BattleAnim_SeedBomb:
-	anim_2gfx ANIM_GFX_PLANT, ANIM_GFX_EXPLOSION
-	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_obj ANIM_OBJ_4A,  6, 0, 10, 0, $20
-	anim_wait 2
-	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_obj ANIM_OBJ_4A,  6, 0, 10, 0, $28
-	anim_wait 2
-	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_obj ANIM_OBJ_4A,  6, 0, 10, 0, $30
-	anim_wait 28
-	anim_bgeffect ANIM_BG_1F, $60, $4, $10
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $24
-	anim_clearobjs
-	anim_call BattleAnim_Explosion_branch_cbb8f
-	anim_wait 16
-	anim_bgp $e4
-	anim_ret
+;BattleAnim_SeedBomb:
+;	anim_2gfx ANIM_GFX_PLANT, ANIM_GFX_EXPLOSION
+;	anim_sound 16, 2, SFX_VINE_WHIP
+;	anim_obj ANIM_OBJ_4A,  6, 0, 10, 0, $20
+;	anim_wait 2
+;	anim_sound 16, 2, SFX_VINE_WHIP
+;	anim_obj ANIM_OBJ_4A,  6, 0, 10, 0, $28
+;	anim_wait 2
+;	anim_sound 16, 2, SFX_VINE_WHIP
+;	anim_obj ANIM_OBJ_4A,  6, 0, 10, 0, $30
+;	anim_wait 28
+;	anim_bgeffect ANIM_BG_1F, $60, $4, $10
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $24
+;	anim_clearobjs
+;	anim_call BattleAnim_Explosion_branch_cbb8f
+;	anim_wait 16
+;	anim_bgp $e4
+;	anim_ret
 
 ; Energy Ball animation from Pokémon Prism
 BattleAnim_EnergyBall:
@@ -4136,6 +4138,7 @@ BattleAnim_MudSlap:
 ;.done
 ;	anim_ret
 
+BattleAnim_ToxicSpikes: ; TODO: design new animation for Toxic Spikes
 BattleAnim_Spikes:
 	anim_1gfx ANIM_GFX_MISC
 	anim_sound 6, 2, SFX_MENU
@@ -4543,7 +4546,6 @@ BattleAnim_WildCharge:
 	anim_bgp $e4
 	anim_ret
 
-BattleAnim_BugBite: ; TODO: write an original animation
 BattleAnim_FuryCutter: ; removed
 	anim_1gfx ANIM_GFX_CUT
 .loop
@@ -5053,39 +5055,39 @@ BattleAnim_Crunch:
 	anim_bgp $e4
 	anim_ret
 
-BattleAnim_HiddenPower:
-	anim_1gfx ANIM_GFX_CHARGE
-	anim_call BattleAnim_FollowEnemyFeet_0
-	anim_bgeffect ANIM_BG_1A, $0, $1, $20
-	anim_bgeffect ANIM_BG_07, $0, $2, $0
-	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $0
-	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $8
-	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $10
-	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $18
-	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $20
-	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $28
-	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $30
-	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $38
-.loop
-	anim_sound 0, 0, SFX_SWORDS_DANCE
-	anim_wait 8
-	anim_loop 12, .loop
-	anim_incbgeffect ANIM_BG_1A
-	anim_call BattleAnim_ShowMon_0
-	anim_wait 1
-	anim_incobj  2
-	anim_incobj  3
-	anim_incobj  4
-	anim_incobj  5
-	anim_incobj  6
-	anim_incobj  7
-	anim_incobj  8
-	anim_incobj  9
-	anim_wait 16
-	anim_1gfx ANIM_GFX_HIT
-	anim_obj ANIM_OBJ_00, -15, 0,   7, 0, $0
-	anim_wait 32
-	anim_ret
+;BattleAnim_HiddenPower:
+;	anim_1gfx ANIM_GFX_CHARGE
+;	anim_call BattleAnim_FollowEnemyFeet_0
+;	anim_bgeffect ANIM_BG_1A, $0, $1, $20
+;	anim_bgeffect ANIM_BG_07, $0, $2, $0
+;	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $0
+;	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $8
+;	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $10
+;	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $18
+;	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $20
+;	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $28
+;	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $30
+;	anim_obj ANIM_OBJ_9F,   5, 4,  11, 0, $38
+;.loop
+;	anim_sound 0, 0, SFX_SWORDS_DANCE
+;	anim_wait 8
+;	anim_loop 12, .loop
+;	anim_incbgeffect ANIM_BG_1A
+;	anim_call BattleAnim_ShowMon_0
+;	anim_wait 1
+;	anim_incobj  2
+;	anim_incobj  3
+;	anim_incobj  4
+;	anim_incobj  5
+;	anim_incobj  6
+;	anim_incobj  7
+;	anim_incobj  8
+;	anim_incobj  9
+;	anim_wait 16
+;	anim_1gfx ANIM_GFX_HIT
+;	anim_obj ANIM_OBJ_00, -15, 0,   7, 0, $0
+;	anim_wait 32
+;	anim_ret
 
 BattleAnim_CrossChop:
 	anim_1gfx ANIM_GFX_CUT

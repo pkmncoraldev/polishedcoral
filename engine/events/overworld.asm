@@ -1902,6 +1902,28 @@ GetFacingObject:: ; cf0d
 .fail
 	scf
 	ret
+	
+GetFacingObjectSprite:: ; cf0d
+	farcall CheckFacingObject
+	jr nc, .fail
+
+	ld a, [hObjectStructIndexBuffer]
+	call GetObjectStruct
+	ld hl, OBJECT_MAP_OBJECT_INDEX
+	add hl, bc
+	ld a, [hl]
+	ld [hLastTalked], a
+	call GetMapObject
+	ld hl, MAPOBJECT_SPRITE
+	add hl, bc
+	ld a, [hl]
+	ld d, a
+	and a
+	ret
+
+.fail
+	scf
+	ret
 
 RockSmashFromMenuScript: ; 0xcf2e
 	reloadmappart

@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw DoubleHitDescription
 	dw BraveBirdDescription
 	dw TransformDescription
-	dw WaterPulseDescription
+	dw ToxicSpikesDescription
 	dw PoisonFangDescription
 	dw SporeDescription
 	dw FlashDescription
@@ -176,7 +176,7 @@ MoveDescriptions::
 	dw GyroBallDescription
 	dw EnergyBallDescription
 	dw MimicDescription
-	dw SeedBombDescription
+	dw NuzzleDescription
 	dw ReversalDescription
 	dw SludgeDescription
 	dw IceShardDescription
@@ -208,7 +208,7 @@ MoveDescriptions::
 	dw SwaggerDescription
 	dw TwisterDescription
 	dw SparkDescription
-	dw BugBiteDescription
+	dw ElectroBallDescription
 	dw SteelWingDescription
 	dw MeanLookDescription
 	dw AttractDescription
@@ -235,7 +235,7 @@ MoveDescriptions::
 	dw HealingLightDescription
 	dw HurricaneDescription
 	dw KnockOffDescription
-	dw HiddenPowerDescription
+	dw SuperpowerDescription
 	dw CrossChopDescription
 	dw AquaJetDescription
 	dw RainDanceDescription
@@ -378,6 +378,7 @@ SparkDescription:
 	next "cause paralysis.@"
 
 ZapCannonDescription:
+NuzzleDescription:
 	db   "An attack that"
 	next "always paralyzes.@"
 
@@ -388,7 +389,6 @@ BlizzardDescription:
 
 PsybeamDescription:
 ConfusionDescription:
-WaterPulseDescription:
 HurricaneDescription:
 SignalBeamDescription:
 RockClimbDescription:
@@ -720,6 +720,10 @@ MirrorCoatDescription:
 SpikesDescription:
 	db   "Hurts foes when"
 	next "they switch in.@"
+	
+ToxicSpikesDescription:
+	db   "Poisons foes when"
+	next "they switch in.@"
 
 QuickAttackDescription:
 	db   "Lets the user get"
@@ -930,10 +934,6 @@ FlailDescription:
 	db   "Stronger if the"
 	next "user's HP is low.@"
 
-SeedBombDescription:
-	db   "Slams a barrage of"
-	next "seeds at the foe.@"
-
 ProtectDescription:
 	db   "Foils attack that"
 	next "turn. It may fail.@"
@@ -965,10 +965,6 @@ RolloutDescription:
 SwaggerDescription:
 	db   "Causes confusion"
 	next "but raises Attack.@"
-
-BugBiteDescription:
-	db   "Bites the foe and"
-	next "eats a held Berry.@"
 
 MeanLookDescription:
 	db   "Prevents fleeing"
@@ -1046,9 +1042,9 @@ KnockOffDescription:
 	db   "Slaps down the"
 	next "foe's held item.@"
 
-HiddenPowerDescription:
-	db   "The type varies"
-	next "with the #mon.@"
+SuperpowerDescription:
+	db   "Lowers the user's"
+	next "ATK and DEF.@"
 
 FutureSightDescription:
 	db   "An attack that"
@@ -1057,6 +1053,10 @@ FutureSightDescription:
 GyroBallDescription:
 	db   "Does more damage"
 	next "at lower speed.@"
+	
+ElectroBallDescription:
+	db   "Does more damage"
+	next "at higher speed.@"
 
 FireFangDescription:
 	db   "May burn or"

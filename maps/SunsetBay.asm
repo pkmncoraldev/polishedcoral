@@ -12,54 +12,54 @@ SunsetBay_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, SunsetBayFlyPoint
 
 	db 7 ; warp events
-	warp_event 13, 13, PLAYER_HOUSE_1F, 2
-	warp_event 25,  9, SUNSET_POKECENTER, 2
-	warp_event 29, 15, SUNSET_CAFE, 2
-	warp_event 25, 27, SUNSET_CAPTAINS_HOUSE, 1
-	warp_event 19,  9, SUNSET_WATER_GRASS_HOUSE, 2
-	warp_event 31,  9, SUNSET_LEGENDS_HOUSE, 2
-	warp_event 21, 15, SUNSET_GENGAR_HOUSE, 2
+	warp_event 13, 11, PLAYER_HOUSE_1F, 2
+	warp_event 25,  7, SUNSET_POKECENTER, 2
+	warp_event 29, 13, SUNSET_CAFE, 2
+	warp_event 25, 25, SUNSET_CAPTAINS_HOUSE, 1
+	warp_event 19,  7, SUNSET_WATER_GRASS_HOUSE, 2
+	warp_event 31,  7, SUNSET_LEGENDS_HOUSE, 2
+	warp_event 21, 13, SUNSET_GENGAR_HOUSE, 2
 
 	db 4 ; coord events
 
-	coord_event 37, 12, 0, SunsetGrampsStopsYou1
-	coord_event 37, 15, 0, SunsetGrampsStopsYou2
-	coord_event 37, 16, 0, SunsetGrampsStopsYou3
-	coord_event 37, 17, 0, SunsetGrampsStopsYou4
+	coord_event 37, 10, 0, SunsetGrampsStopsYou1
+	coord_event 37, 13, 0, SunsetGrampsStopsYou2
+	coord_event 37, 14, 0, SunsetGrampsStopsYou3
+	coord_event 37, 15, 0, SunsetGrampsStopsYou4
 
 	db 19 ; bg events
-	bg_event 11, 13, SIGNPOST_READ, PlayersHouseSign
-	bg_event 27, 15, SIGNPOST_READ, SunsetCafeSign
-	bg_event 26,  9, SIGNPOST_READ, SunsetBayPokeCenterSign
-	bg_event 36, 13, SIGNPOST_READ, SunsetBaySign
-	bg_event 16, 12, SIGNPOST_READ, SunsetMomsFlowers
-	bg_event 16, 13, SIGNPOST_READ, SunsetMomsFlowers
-	bg_event 34, 17, SIGNPOST_READ, SunsetOtherFlowers
-	bg_event 28,  8, SIGNPOST_READ, SunsetOtherFlowers
-	bg_event 28,  9, SIGNPOST_READ, SunsetOtherFlowers
+	bg_event 11, 11, SIGNPOST_READ, PlayersHouseSign
+	bg_event 27, 13, SIGNPOST_READ, SunsetCafeSign
+	bg_event 26,  7, SIGNPOST_READ, SunsetBayPokeCenterSign
+	bg_event 36, 11, SIGNPOST_READ, SunsetBaySign
+	bg_event 16, 10, SIGNPOST_READ, SunsetMomsFlowers
+	bg_event 16, 11, SIGNPOST_READ, SunsetMomsFlowers
+	bg_event 34, 15, SIGNPOST_READ, SunsetOtherFlowers
+	bg_event 28,  6, SIGNPOST_READ, SunsetOtherFlowers
+	bg_event 28,  7, SIGNPOST_READ, SunsetOtherFlowers
+	bg_event 34, 10, SIGNPOST_READ, SunsetOtherFlowers
+	bg_event 34, 11, SIGNPOST_READ, SunsetOtherFlowers
 	bg_event 34, 12, SIGNPOST_READ, SunsetOtherFlowers
 	bg_event 34, 13, SIGNPOST_READ, SunsetOtherFlowers
 	bg_event 34, 14, SIGNPOST_READ, SunsetOtherFlowers
-	bg_event 34, 15, SIGNPOST_READ, SunsetOtherFlowers
-	bg_event 34, 16, SIGNPOST_READ, SunsetOtherFlowers
-	bg_event 24, 14, SIGNPOST_READ, SunsetOtherFlowers
-	bg_event 24, 15, SIGNPOST_READ, SunsetOtherFlowers
-	bg_event 32, 12, SIGNPOST_READ, SunsetGuyOnDate
-	bg_event 35, 21, SIGNPOST_ITEM + POKE_BALL, EVENT_SUNSET_BAY_HIDDEN_POKE_BALL
-	bg_event 12, 18, SIGNPOST_ITEM + POTION, EVENT_SUNSET_BAY_HIDDEN_POTION
+	bg_event 24, 12, SIGNPOST_READ, SunsetOtherFlowers
+	bg_event 24, 13, SIGNPOST_READ, SunsetOtherFlowers
+	bg_event 32, 10, SIGNPOST_READ, SunsetGuyOnDate
+	bg_event 35, 19, SIGNPOST_ITEM + POKE_BALL, EVENT_SUNSET_BAY_HIDDEN_POKE_BALL
+	bg_event 12, 16, SIGNPOST_ITEM + POTION, EVENT_SUNSET_BAY_HIDDEN_POTION
 
 	db 11 ; object events
-	person_event SPRITE_CUTE_GIRL, 15, 32, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetNPC1, -1
-	object_event 32, 13, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_GRAMPS, 14, 37, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetNPC3, -1
-	person_event SPRITE_COOLTRAINER_F, 11, 18, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunsetNPC4, -1
-	person_event SPRITE_FAT_GUY, 18, 15, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunsetNPC5, -1
-	person_event SPRITE_SUPER_NERD, 18, 33, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetNPC6, -1
-	object_event 26, 29, SPRITE_ROWBOAT, SPRITEMOVEDATA_BOAT_BOB, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, jumptext, SunsetBroatText, -1
-	object_event 10, 25, SPRITE_ROWBOAT, SPRITEMOVEDATA_BOAT_BOB, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, jumptext, SunsetBroat2Text, -1
-	object_event 12, 29, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 12, 29, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_BOTTOM, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	person_event SPRITE_SAGE, 28, 25, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, -1, EVENT_SUNSET_STRAND
+	person_event SPRITE_CUTE_GIRL, 13, 32, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetNPC1, -1
+	object_event 32, 11, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_GRAMPS, 12, 37, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetNPC3, -1
+	person_event SPRITE_COOLTRAINER_F,  9, 18, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunsetNPC4, -1
+	person_event SPRITE_FAT_GUY, 16, 15, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunsetNPC5, -1
+	person_event SPRITE_SUPER_NERD, 16, 33, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetNPC6, -1
+	object_event 26, 27, SPRITE_ROWBOAT, SPRITEMOVEDATA_BOAT_BOB, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, jumptext, SunsetBroatText, -1
+	object_event 10, 23, SPRITE_ROWBOAT, SPRITEMOVEDATA_BOAT_BOB, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, jumptext, SunsetBroat2Text, -1
+	object_event 12, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 12, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_BOTTOM, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	person_event SPRITE_SAGE, 26, 25, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, -1, EVENT_SUNSET_STRAND
 
 	const_def 1 ; object constants
 	const SUNSET_NPC1

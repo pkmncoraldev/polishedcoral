@@ -42,9 +42,11 @@ INCLUDE "data/tilesets/playerhouse_collision.asm"
 SECTION "Tileset Data - glint", ROMX
 
 TilesetGlintGFX::
+TilesetStarglowGFX::
 INCBIN "gfx/tilesets/glint.2bpp.vram0.lz"
 
 TilesetGlintGFX2::
+TilesetStarglowGFX2::
 INCBIN "gfx/tilesets/glint.2bpp.vram1.lz"
 
 TilesetGlintMeta::
@@ -55,6 +57,18 @@ INCBIN "data/tilesets/glint_attributes.bin.lz"
 
 TilesetGlintColl::
 INCLUDE "data/tilesets/glint_collision.asm"
+
+
+SECTION "Tileset Data - starglow", ROMX
+
+TilesetStarglowMeta::
+INCBIN "data/tilesets/starglow_metatiles.bin.lz"
+
+TilesetStarglowAttr::
+INCBIN "data/tilesets/starglow_attributes.bin.lz"
+
+TilesetStarglowColl::
+INCLUDE "data/tilesets/starglow_collision.asm"
 
 
 SECTION "Tileset Data - house1", ROMX
@@ -480,6 +494,7 @@ Tilesets::
 	tileset TilesetPlayerRoom
 	tileset TilesetPlayerHouse
 	tileset TilesetGlint
+	tileset TilesetStarglow
 	tileset TilesetHouse1
 	tileset TilesetHouse2
 	tileset TilesetPokeCenter

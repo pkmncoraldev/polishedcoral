@@ -107,6 +107,7 @@ TilesetTrainAnim::
 	dw NULL,  DoneTileAnimation
 	
 TilesetGlintAnim::
+TilesetStarglowAnim::
 	dw VTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft
@@ -494,7 +495,7 @@ AnimateWaterTile: ; fc402
 ; fc41c
 
 WaterTileFrames: ; fc41c
-	INCBIN "gfx/tilesets/water.2bpp"
+	INCBIN "gfx/tilesets/water/water.2bpp"
 ; fc45c
 
 

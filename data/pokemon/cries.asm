@@ -1,7 +1,18 @@
-mon_cry: MACRO
+;mon_cry: MACRO
 ; index, pitch, length
-	dw \1, \2, \3
-ENDM
+;	dw \1, \2, \3
+;ENDM
+
+mon_cry: MACRO
+IF _NARG == 3
+	db \1
+	dw \2, \3
+ELSE
+	db $ff
+	dba \2 ; bank/address
+	db \1 - 1 ; species (padding)
+ENDC
+	ENDM
 
 CryHeaders::
 ; entries correspond to constants/pokemon_constants.asm
@@ -37,7 +48,8 @@ CryHeaders::
 	mon_cry CRY_CLEFAIRY,    $0cc,  $081 ; Clefairy
 	mon_cry CRY_CLEFAIRY,    $0aa,  $0a0 ; Clefable
 	mon_cry CRY_PIDGEY,      $0ff,  $0b5 ; Jigglypuff
-	mon_cry CRY_PIDGEY,      $068,  $0e0 ; Wigglytuff
+	mon_cry     WIGGLYTUFF,     FroslassDEDData ; Bulbasaur
+;	mon_cry CRY_PIDGEY,      $068,  $0e0 ; Wigglytuff
 	mon_cry CRY_SQUIRTLE,    $0e0,  $100 ; Zubat
 	mon_cry CRY_SQUIRTLE,    $0fa,  $100 ; Golbat
 	mon_cry CRY_ODDISH,      $0dd,  $081 ; Oddish

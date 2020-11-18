@@ -246,9 +246,12 @@ anim_0xf6: macro
 	db anim_0xf6_command
 	endm
 
-	enum anim_0xf7_command ; f7
-anim_0xf7: macro
-	db anim_0xf7_command
+;	enum anim_0xf7_command ; f7
+;anim_0xf7: macro
+;	db anim_0xf7_command
+	enum anim_clearfirstbgeffect_command ; f7
+anim_clearfirstbgeffect: macro
+	db anim_clearfirstbgeffect_command
 	endm
 
 	enum anim_jumpif_command ; f8

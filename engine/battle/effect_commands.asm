@@ -2176,7 +2176,8 @@ BattleCommand_lowersub: ; 34eee
 	ret nz
 
 .charge_turn
-	call _CheckBattleEffects
+;	call _CheckBattleEffects
+	call CheckBattleEffects
 	jr c, .mimic_anims
 
 	xor a
@@ -2398,7 +2399,8 @@ BattleCommand_raisesub: ; 35004
 	bit SUBSTATUS_SUBSTITUTE, a
 	ret z
 
-	call _CheckBattleEffects
+;	call _CheckBattleEffects
+	call CheckBattleEffects
 	jp c, BattleCommand_raisesubnoanim
 
 	xor a
@@ -5789,7 +5791,8 @@ StatUpAnimation:
 
 	ld a, $1
 	ld [bc], a
-	call _CheckBattleEffects
+;	call _CheckBattleEffects
+	call CheckBattleEffects
 	ret nc
 
 	xor a
@@ -7418,7 +7421,8 @@ BattleCommand_substitute: ; 36e7c
 	xor a
 	ld [hl], a
 	ld [de], a
-	call _CheckBattleEffects
+;	call _CheckBattleEffects
+	call CheckBattleEffects
 	jr c, .no_anim
 
 	xor a
@@ -8170,7 +8174,8 @@ BattleCommand_selfdestruct: ; 37380
 	ld a, BATTLE_VARS_SUBSTATUS2_OPP
 	call GetBattleVarAddr
 	res SUBSTATUS_DESTINY_BOND, [hl]
-	call _CheckBattleEffects
+;	call _CheckBattleEffects
+	call CheckBattleEffects
 	ret nc
 	farcall DrawPlayerHUD
 	farcall DrawEnemyHUD
@@ -9585,14 +9590,14 @@ AppearUserRaiseSub: ; 37ece
 ; 37ed5
 
 
-_CheckBattleEffects: ; 37ed5
+;_CheckBattleEffects: ; 37ed5
 ; Checks the options.  Returns carry if battle animations are disabled.
-	push hl
-	push de
-	push bc
-	farcall CheckBattleEffects
-	pop bc
-	pop de
-	pop hl
-	ret
+;	push hl
+;	push de
+;	push bc
+;	farcall CheckBattleEffects
+;	pop bc
+;	pop de
+;	pop hl
+;	ret
 	

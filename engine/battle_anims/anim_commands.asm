@@ -59,9 +59,24 @@ BattleAnimRunScript: ; cc11c
 
 	ld a, [wFXAnimIDHi]
 	and a
-	jr nz, .hi_byte
+;	jr nz, .hi_byte
+	jr z, .moveAnim
+	call CheckBattleEffects
+	jr nc, .hi_byte
+	ld a, [wFXAnimIDLo]
+	cp ANIM_IN_SANDSTORM & $ff
+	jr z, .done
+	cp ANIM_IN_HAIL & $ff
+	jr z, .done
+	cp ANIM_CONFUSED & $ff
+	jr z, .done
+	cp ANIM_SLP & $ff
+	jr z, .done
+	jr .hi_byte
+.moveAnim
 
-	farcall CheckBattleEffects
+;	farcall CheckBattleEffects
+	call CheckBattleEffects
 	jr c, .disabled
 
 	call BattleAnimClearHud
@@ -109,10 +124,15 @@ RunBattleAnimScript: ; cc163
 	call BattleAnim_UpdateOAM_All
 	call PushLYOverrides
 	call BattleAnimRequestPals
+	
+	ld a, [hDEDCryFlag]
+	and a
+	jr nz, .playDED
 
 ; Speed up Rollout's animation.
 	ld a, [wFXAnimIDHi]
-	or a
+;	or a
+	and a
 	jr nz, .not_rollout
 
 	ld a, [wFXAnimIDLo]
@@ -140,6 +160,48 @@ RunBattleAnimScript: ; cc163
 
 	jp BattleAnim_ClearCGB_OAMFlags
 ; cc1a1
+
+.playDED
+	ld [hBuffer], a
+	ld a, $1
+	ld [hDEDVBlankMode], a
+	ld a, [wFXAnimIDLo]
+	cp ROAR_WHIRLWIND
+	jr nz, .playCry
+	ld a, [hBattleTurn]
+	and a
+	coord de, 12, 0
+	ld bc, VBGMap0 + 12
+	jr z, .gotRoarCoords
+	coord de, 0, 5
+	ld bc, VBGMap0 + 5 * BG_MAP_WIDTH
+.gotRoarCoords
+	ld hl, wPokeAnimCoord
+	ld a, e
+	ld [hli], a
+	ld [hl], d
+	ld hl, wPokeAnimDestination
+	ld a, c
+	ld [hli], a
+	ld [hl], b
+.playCry
+	ld a, [hBuffer]
+	call _PlayCry
+	xor a
+	ld [hDEDVBlankMode], a
+	jr .done
+
+RunOneFrameOfGrowlOrRoarAnim::
+	call RunBattleAnimCommand
+	call _ExecuteBGEffects
+	call BattleAnim_UpdateOAM_All
+	call BattleAnimRequestPals
+	ld a, [wBattleAnimFlags]
+	bit 0, a
+	ret z
+	xor a
+	ld [hDEDVBlankMode], a
+	jp BattleAnim_ClearCGB_OAMFlags
 
 BattleAnimClearHud: ; cc1a1
 
@@ -239,22 +301,22 @@ BattleAnim_ClearCGB_OAMFlags: ; cc23d
 RunBattleAnimCommand: ; cc25f
 	call .CheckTimer
 	ret nc
-	jp .RunScript
+;	jp .RunScript
 ; cc267
 
-.CheckTimer: ; cc267
-	ld a, [wBattleAnimDuration]
-	and a
-	jr z, .done
+;.CheckTimer: ; cc267
+;	ld a, [wBattleAnimDuration]
+;	and a
+;	jr z, .done
 
-	dec a
-	ld [wBattleAnimDuration], a
-	and a
-	ret
+;	dec a
+;	ld [wBattleAnimDuration], a
+;	and a
+;	ret
 
-.done
-	scf
-	ret
+;.done
+;	scf
+;	ret
 ; cc275
 
 .RunScript: ; cc275
@@ -282,8 +344,28 @@ RunBattleAnimCommand: ; cc25f
 .do_anim
 	call .DoCommand
 
-	jr .loop
+;	jr .loop
+	ld a, [hDEDCryFlag]
+	and a
+	jr z, .loop
+	ret
 ; cc293
+
+.CheckTimer: ; cc267
+	ld a, [wBattleAnimDuration]
+	and a
+	jr z, .done
+
+	dec a
+	ld [wBattleAnimDuration], a
+	and a
+	ret
+
+.done
+	scf
+	ret
+; cc275
+
 
 .DoCommand: ; cc293
 ; Execute battle animation command in [wBattleAnimByte].
@@ -343,7 +425,8 @@ BattleAnimCommands:: ; cc2a4 (33:42a4)
 	dw BattleAnimCmd_ClearSprites
 	dw BattleAnimCmd_F5 ; dummy
 	dw BattleAnimCmd_F6 ; dummy
-	dw BattleAnimCmd_F7 ; dummy
+;	dw BattleAnimCmd_F7 ; dummy
+	dw BattleAnimCmd_ClearFirstBGEffect
 	dw BattleAnimCmd_IfParamEqual
 	dw BattleAnimCmd_SetVar
 	dw BattleAnimCmd_IncVar
@@ -1214,13 +1297,15 @@ BattleAnimCmd_Sound: ; cc7cd (33:47cd)
 
 BattleAnimCmd_Cry: ; cc807 (33:4807)
 	call GetBattleAnimByte
-	and 3
-	ld e, a
-	ld d, 0
-	ld hl, .CryData
-rept 4
-	add hl, de
-endr
+;	and 3
+;	ld e, a
+;	ld d, 0
+;	ld hl, .CryData
+;rept 4
+;	add hl, de
+;endr
+
+	ld c, a
 
 	ld a, [rSVBK]
 	push af
@@ -1242,41 +1327,56 @@ endr
 	ld a, [wEnemyMonSpecies] ; wEnemyMon
 
 .done_cry_tracks
-	push hl
-	call LoadCryHeader
-	pop hl
-	jr c, .done
+;	push hl
+;	call LoadCryHeader
+;	pop hl
+;	jr c, .done
 
-	ld a, [hli]
-	ld c, a
-	ld a, [hli]
+;	ld a, [hli]
+;	ld c, a
+;	ld a, [hli]
 	ld b, a
+	push bc
+	call LoadCryHeader
+	pop bc
+	jr c, .ded
+	ld hl, wCryLength
+	dec c
+	ld a, $c0
+	jr nz, .gotLengthOffset
+	ld a, $40
+.gotLengthOffset
+	add [hl]
+	ld [hli], a
+	jr nc, .noCarry
+	inc [hl]
+.noCarry
 
-	push hl
-	ld hl, wCryPitch
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	add hl, bc
-	ld a, l
-	ld [wCryPitch], a
-	ld a, h
-	ld [wCryPitch + 1], a
-	pop hl
+;	push hl
+;	ld hl, wCryPitch
+;	ld a, [hli]
+;	ld h, [hl]
+;	ld l, a
+;	add hl, bc
+;	ld a, l
+;	ld [wCryPitch], a
+;	ld a, h
+;	ld [wCryPitch + 1], a
+;	pop hl
 
-	ld a, [hli]
-	ld c, a
-	ld b, [hl]
-	ld hl, wCryLength ; CryLength
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	add hl, bc
+;	ld a, [hli]
+;	ld c, a
+;	ld b, [hl]
+;	ld hl, wCryLength ; CryLength
+;	ld a, [hli]
+;	ld h, [hl]
+;	ld l, a
+;	add hl, bc
 
-	ld a, l
-	ld [wCryLength], a ; CryLength
-	ld a, h
-	ld [wCryLength + 1], a
+;	ld a, l
+;	ld [wCryLength], a ; CryLength
+;	ld a, h
+;	ld [wCryLength + 1], a
 	ld a, 1
 	ld [wStereoPanningMask], a
 
@@ -1288,13 +1388,18 @@ endr
 	ret
 ; cc871 (33:4871)
 
-.CryData: ; cc871
+;.CryData: ; cc871
 ; +pitch, +length
-	dw $0000, $00c0
-	dw $0000, $0040
-	dw $0000, $0000
-	dw $0000, $0000
+;	dw $0000, $00c0
+;	dw $0000, $0040
+;	dw $0000, $0000
+;	dw $0000, $0000
 ; cc881
+
+.ded
+	ld a, b
+	ld [hDEDCryFlag], a
+	jr .done
 
 
 PlayHitSound: ; cc881
@@ -1484,3 +1589,8 @@ BattleAnim_UpdateOAM_All: ; cc96e
 	ld [hli], a
 	jr .loop2
 ; cc9a1
+
+BattleAnimCmd_ClearFirstBGEffect:
+	xor a
+	ld [wActiveBGEffects], a
+	ret

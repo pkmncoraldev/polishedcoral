@@ -1289,7 +1289,7 @@ wPokeAnimSpecies:: ds 1
 wPokeAnimVariant:: ds 1
 wPokeAnimSpeciesOrVariant:: ds 1
 wPokeAnimGraphicStartTile:: ds 1
-wPokeAnimCoord:: ds 2
+;wPokeAnimCoord:: ds 2
 wPokeAnimFrontpicHeight:: ds 1
 ; PokeAnim Data
 wPokeAnimExtraFlag:: ds 1
@@ -1353,7 +1353,15 @@ wDecompressedAttributes:: ds 256 * 16
 
 SECTION "Music Player Notes", WRAMX
 
-wMPNotes:: ds 4 * 256
+;wMPNotes:: ds 4 * 256
+
+
+;SECTION "DED RAM", WRAMX
+
+wDEDTempSamp:: ds 16
+
+wGetDEDByte::
+wMPNotes:: ds $100
 
 
 SECTION "GBC Video", WRAMX

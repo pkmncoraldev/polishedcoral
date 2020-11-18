@@ -2643,16 +2643,16 @@ ResetDisplayBetweenHallOfFameMons: ; 4e906
 
 INCLUDE "engine/battle/sliding_intro.asm"
 
-CheckBattleEffects: ; 4ea44
+;CheckBattleEffects: ; 4ea44
 ; Return carry if battle scene is turned off.
-	ld a, [wOptions1]
-	bit BATTLE_EFFECTS, a
-	jr z, .off
-	and a
-	ret
-.off
-	scf
-	ret
+;	ld a, [wOptions1]
+;	bit BATTLE_EFFECTS, a
+;	jr z, .off
+;	and a
+;	ret
+;.off
+;	scf
+;	ret
 
 INCLUDE "engine/bsod.asm"
 
@@ -4282,6 +4282,7 @@ SECTION "Battle Animations", ROMX
 INCLUDE "engine/battle_anims/anim_commands.asm"
 INCLUDE "engine/battle_anims/core.asm"
 INCLUDE "data/battle_anims/objects.asm"
+INCLUDE "engine/growl_roar_ded_vblank_hook.asm"
 INCLUDE "engine/battle_anims/functions.asm"
 INCLUDE "engine/battle_anims/helpers.asm"
 INCLUDE "data/battle_anims/framesets.asm"
@@ -4634,3 +4635,5 @@ INCLUDE "data/moves/animations.asm"
 SECTION "Coral Data 3", ROMX
 
 INCLUDE "engine/titlescreen_cutscene.asm"
+
+INCLUDE "engine/ded.asm"

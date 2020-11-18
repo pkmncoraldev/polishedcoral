@@ -1142,3 +1142,6 @@ wSecondsSince:: ds 1
 wMinutesSince:: ds 1
 wHoursSince:: ds 1
 wDaysSince:: ds 1
+
+wPokeAnimCoord:: ds 2
+wPokeAnimDestination:: ds 2

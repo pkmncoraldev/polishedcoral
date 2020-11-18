@@ -248,3 +248,10 @@ SECTION "Cries", ROMX
 INCLUDE "data/pokemon/cries.asm"
 
 INCLUDE "audio/cries.asm"
+
+
+SECTION "DED", ROMX
+
+INCLUDE "audio/ded.asm"
+
+INCLUDE "audio/ded/files.asm"

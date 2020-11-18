@@ -37,13 +37,15 @@ _PlayCry:: ; 37e2
 	push bc
 
 	call GetCryIndex
-	jr c, .done
+;	jr c, .done
 
-	ld e, c
-	ld d, b
-	call PlayCryHeader
+;	ld e, c
+;	ld d, b
+;	call PlayCryHeader
 
-.done
+;.done
+	call nc, PlayCryHeader
+PlayCry_PopBCDEHLOff::
 	pop bc
 	pop de
 	pop hl
@@ -61,16 +63,22 @@ LoadCryHeader:: ; 37f3
 	ld a, BANK(CryHeaders)
 	rst Bankswitch
 
-	ld hl, CryHeaders
-rept 6
-	add hl, bc
-endr
+;	ld hl, CryHeaders
+;rept 6
+;	add hl, bc
+;endr
 
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	inc hl
-
+;	ld e, [hl]
+;	inc hl
+;	ld d, [hl]
+;	inc hl
+	ld a, [hli]
+	cp $ff
+	jr z, .ded
+	
+	ld d, 0
+	ld e, a
+	
 	ld a, [hli]
 	ld [wCryPitch], a
 	ld a, [hli]
@@ -84,10 +92,19 @@ endr
 	rst Bankswitch
 	and a
 	ret
+	
+.ded
+	call LoadDEDCryHeader
+	pop af
+	rst Bankswitch
+	scf
+	ret
 ; 381e
 
 GetCryIndex:: ; 381e
 	and a
+	jr z, .no
+	cp EGG
 	jr z, .no
 	cp NUM_POKEMON + 1
 	jr nc, .no
@@ -95,6 +112,9 @@ GetCryIndex:: ; 381e
 	dec a
 	ld c, a
 	ld b, 0
+	ld hl, CryHeaders
+	ld a, 5
+	call AddNTimes
 	and a
 	ret
 

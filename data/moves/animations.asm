@@ -2423,22 +2423,25 @@ BattleAnim_Earthquake:
 
 BattleAnim_Growl:
 	anim_1gfx ANIM_GFX_NOISE
-	anim_enemyfeetobj
+;	anim_enemyfeetobj
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_cry $0
 .loop
 	anim_call BattleAnim_Growl_branch_cbbbc
 	anim_wait 16
 	anim_loop 3, .loop
-	anim_wait 9
-	anim_bgeffect ANIM_BG_FEET_FOLLOW, $0, $1, $0
-	anim_wait 8
+;	anim_wait 9
+;	anim_bgeffect ANIM_BG_FEET_FOLLOW, $0, $1, $0
+;	anim_wait 8
+	anim_clearfirstbgeffect
+	anim_wait 17
 	anim_bgeffect ANIM_BG_19, $0, $0, $40
 	anim_wait 64
 	anim_incbgeffect ANIM_BG_19
-	anim_wait 1
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
-	anim_wait 5
+;	anim_wait 1
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_wait 5
+	anim_wait 6
 	anim_incobj 10
 	anim_wait 8
 	anim_ret
@@ -2452,6 +2455,7 @@ BattleAnim_Roar:
 	anim_call BattleAnim_Roar_branch_cbbbc
 	anim_wait 16
 	anim_loop 3, .loop
+	anim_clearfirstbgeffect
 	anim_wait 16
 	anim_jumpif $0, .done
 	anim_bgeffect ANIM_BG_27, $0, $0, $0

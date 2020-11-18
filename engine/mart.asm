@@ -900,7 +900,7 @@ BTMartConfirmPurchase:
 TMMartConfirmPurchase:
 	ld a, [wCurTMHM]
 	ld [wd265], a
-	call GetTMHMName
+	farcall GetTMHMName
 	call CopyName1
 
 	; off by one error?

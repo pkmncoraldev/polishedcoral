@@ -626,88 +626,6 @@ GetApricornName::
 	pop hl
 	ret
 
-GetTMHMName:: ; 3487
-; Get TM/HM name by item id wNamedObjectIndexBuffer.
-
-	push hl
-	push de
-	push bc
-	ld a, [wNamedObjectIndexBuffer]
-	push af
-
-; TM/HM prefix
-	cp HM01
-	push af
-	jr c, .TM
-
-	ld hl, .HMText
-	ld bc, .HMTextEnd - .HMText
-	jr .asm_34a1
-
-.TM:
-	ld hl, .TMText
-	ld bc, .TMTextEnd - .TMText
-
-.asm_34a1
-	ld de, wStringBuffer1
-	rst CopyBytes
-
-; TM/HM number
-	ld a, [wNamedObjectIndexBuffer]
-	ld c, a
-
-; HM numbers start from 51, not 1
-	pop af
-	ld a, c
-	jr c, .asm_34b9
-	sub NUM_TMS
-.asm_34b9
-	inc a
-
-; Divide and mod by 10 to get the top and bottom digits respectively
-	ld b, "0"
-.mod10
-	sub 10
-	jr c, .asm_34c2
-	inc b
-	jr .mod10
-.asm_34c2
-	add 10
-
-	push af
-	ld a, b
-	ld [de], a
-	inc de
-	pop af
-
-	ld b, "0"
-	add b
-	ld [de], a
-
-; End the string
-	inc de
-	ld a, "@"
-	ld [de], a
-
-	pop af
-	ld [wNamedObjectIndexBuffer], a
-	pop bc
-	pop de
-	pop hl
-	ld de, wStringBuffer1
-	ret
-
-.TMText:
-	db "TM"
-.TMTextEnd:
-	db "@"
-
-.HMText:
-	db "HM"
-.HMTextEnd:
-	db "@"
-; 34df
-
 IsHM:: ; 34df
 	cp HM01
 	jr c, .NotHM
@@ -1017,7 +935,7 @@ CheckTrainerBattle:: ; 360d
 
 ; Is facing the player...
 	call GetObjectStruct
-	call FacingPlayerDistance_bc
+	farcall FacingPlayerDistance_bc
 	jr nc, .next
 
 ; ...within their sight range
@@ -1134,85 +1052,6 @@ LoadTrainer_continue:: ; 367e
 	end_if_just_battled
 	jumpstashedtext
 
-FacingPlayerDistance_bc:: ; 36a5
-	push de
-	call FacingPlayerDistance
-	ld b, d
-	ld c, e
-	pop de
-	ret
-; 36ad
-
-FacingPlayerDistance:: ; 36ad
-; Return carry if the sprite at bc is facing the player,
-; and its distance in d.
-
-	ld hl, OBJECT_NEXT_MAP_X ; x
-	add hl, bc
-	ld d, [hl]
-
-	ld hl, OBJECT_NEXT_MAP_Y ; y
-	add hl, bc
-	ld e, [hl]
-
-	ld a, [wPlayerStandingMapX]
-	cp d
-	jr z, .CheckY
-
-	ld a, [wPlayerStandingMapY]
-	cp e
-	jr z, .CheckX
-
-	and a
-	ret
-
-.CheckY:
-	ld a, [wPlayerStandingMapY]
-	sub e
-	jr z, .NotFacing
-	jr nc, .Above
-
-; Below
-	cpl
-	inc a
-	ld d, a
-	ld e, OW_UP
-	jr .CheckFacing
-
-.Above:
-	ld d, a
-	ld e, OW_DOWN
-	jr .CheckFacing
-
-.CheckX:
-	ld a, [wPlayerStandingMapX]
-	sub d
-	jr z, .NotFacing
-	jr nc, .Left
-
-; Right
-	cpl
-	inc a
-	ld d, a
-	ld e, OW_LEFT
-	jr .CheckFacing
-
-.Left:
-	ld d, a
-	ld e, OW_RIGHT
-
-.CheckFacing:
-	call GetSpriteDirection
-	cp e
-	jr nz, .NotFacing
-	scf
-	ret
-
-.NotFacing:
-	and a
-	ret
-; 36f5
-
 PrintWinLossText:: ; 3718
 	ld a, [wBattleResult]
 	ld hl, wWinTextPointer
@@ -1229,66 +1068,6 @@ PrintWinLossText:: ; 3718
 	call ApplyTilemapInVBlank
 	jp WaitPressAorB_BlinkCursor
 ; 3741
-
-DrawBattleHPBar:: ; 3750
-; Draw an HP bar d tiles long at hl
-; Fill it up to e pixels
-
-	push hl
-	push de
-	push bc
-
-; Place 'HP:'
-	ld a, "<HP1>"
-	ld [hli], a
-	inc a ; ld a, "<HP2>"
-	ld [hli], a
-
-; Draw a template
-	push hl
-	inc a ; ld a, "<NOHP>" ; empty bar
-.template
-	ld [hli], a
-	dec d
-	jr nz, .template
-	ld a, "<HPEND>" ; bar end cap
-	ld [hl], a
-	pop hl
-
-; Safety check # pixels
-	ld a, e
-	and a
-	jr nz, .fill
-	ld a, c
-	and a
-	jr z, .done
-	ld e, 1
-
-.fill
-; Keep drawing tiles until pixel length is reached
-	ld a, e
-	sub TILE_WIDTH
-	jr c, .lastbar
-
-	ld e, a
-	ld a, "<FULLHP>"
-	ld [hli], a
-	ld a, e
-	and a
-	jr z, .done
-	jr .fill
-
-.lastbar
-	ld a, "<NOHP>"
-	add e
-	ld [hl], a
-
-.done
-	pop bc
-	pop de
-	pop hl
-	ret
-; 3786
 
 PrepMonFrontpic:: ; 3786
 	ld a, $1
@@ -1620,43 +1399,9 @@ PushLYOverrides:: ; 3b0c
 	ret
 ; 3b2a
 
-_InitSpriteAnimStruct:: ; 3b2a
-
-	ld [wSpriteAnimIDBuffer], a
-	ld a, [hROMBank]
-	push af
-
-	ld a, BANK(InitSpriteAnimStruct)
-	rst Bankswitch
-	ld a, [wSpriteAnimIDBuffer]
-
-	call InitSpriteAnimStruct
-
-	pop af
-	rst Bankswitch
-
-	ret
-; 3b3c
-
-ReinitSpriteAnimFrame:: ; 3b3c
-
-	ld [wSpriteAnimIDBuffer], a
-	ld a, [hROMBank]
-	push af
-
-	ld a, BANK(_ReinitSpriteAnimFrame)
-	rst Bankswitch
-	ld a, [wSpriteAnimIDBuffer]
-
-	call _ReinitSpriteAnimFrame
-
-	pop af
-	rst Bankswitch
-
-	ret
-; 3b4e
-
 INCLUDE "home/audio.asm"
+
+INCLUDE "home/ded.asm"
 
 SECTION "Home2", ROMX
 INCLUDE "home/copy2.asm"

@@ -1983,6 +1983,7 @@ WhirlwindUsers:
 	db PIDGEY
 	db PIDGEOTTO
 	db PIDGEOT
+	db WIGGLYTUFF
 	db -1
 	
 SmokescreenUsers:

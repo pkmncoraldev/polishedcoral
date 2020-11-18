@@ -493,6 +493,7 @@ WigglytuffEvosAttacks:
 	db  1, MIRROR_MOVE
 	db  1, HYPER_VOICE
 	db  1, DOUBLE_EDGE
+	db  1, ROAR_WHIRLWIND
 	db  0 ; no more level-up moves
 
 ZubatEvosAttacks:

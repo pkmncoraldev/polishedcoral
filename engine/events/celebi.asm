@@ -19,7 +19,7 @@ Special_CelebiShrineEvent: ; 4989a
 
 	depixel 0, 10, 7, 0
 	ld a, SPRITE_ANIM_INDEX_CELEBI
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
 	add hl, bc
 	ld [hl], $84
@@ -185,13 +185,13 @@ UpdateCelebiPosition: ; 49aa2 (12:5aa2)
 	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld a, SPRITE_ANIM_FRAMESET_CELEBI_RIGHT
-	jp ReinitSpriteAnimFrame
+	farjp ReinitSpriteAnimFrame
 
 .left
 	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld a, SPRITE_ANIM_FRAMESET_CELEBI_LEFT
-	jp ReinitSpriteAnimFrame
+	farjp ReinitSpriteAnimFrame
 	ret
 
 .FreezeCelebiPosition: ; 49b30 (12:5b30)
@@ -199,7 +199,7 @@ UpdateCelebiPosition: ; 49aa2 (12:5aa2)
 	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld a, SPRITE_ANIM_FRAMESET_CELEBI_LEFT
-	jp ReinitSpriteAnimFrame
+	farjp ReinitSpriteAnimFrame
 
 GetCelebiSpriteTile: ; 49bae
 	push hl

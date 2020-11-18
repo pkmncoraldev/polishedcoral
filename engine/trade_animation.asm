@@ -352,7 +352,7 @@ TradeAnim_InitTubeAnim: ; 2914e
 
 	pop de
 	ld a, SPRITE_ANIM_INDEX_TRADEMON_ICON
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 
 	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
 	add hl, bc
@@ -361,7 +361,7 @@ TradeAnim_InitTubeAnim: ; 2914e
 
 	pop de
 	ld a, SPRITE_ANIM_INDEX_TRADEMON_BUBBLE
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 
 	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
 	add hl, bc
@@ -1013,7 +1013,7 @@ TrademonStats_PrintTrademonID: ; 29611
 TradeAnim_RockingBall: ; 2961b
 	depixel 10, 11, 4, 0
 	ld a, SPRITE_ANIM_INDEX_TRADE_POKE_BALL
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	call TradeAnim_AdvanceScriptPointer
 	ld a, $20
 	ld [wcf64], a
@@ -1023,7 +1023,7 @@ TradeAnim_RockingBall: ; 2961b
 TradeAnim_DropBall: ; 2962c
 	depixel 10, 11, 4, 0
 	ld a, SPRITE_ANIM_INDEX_TRADE_POKE_BALL
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
 	add hl, bc
 	ld [hl], $1
@@ -1039,7 +1039,7 @@ TradeAnim_DropBall: ; 2962c
 TradeAnim_Poof: ; 29649
 	depixel 10, 11, 4, 0
 	ld a, SPRITE_ANIM_INDEX_TRADE_POOF
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	call TradeAnim_AdvanceScriptPointer
 	ld a, $10
 	ld [wcf64], a
@@ -1052,7 +1052,7 @@ TradeAnim_BulgeThroughTube: ; 29660
 	call DmgToCgbObjPal0
 	depixel 5, 11
 	ld a, SPRITE_ANIM_INDEX_TRADE_TUBE_BULGE
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	call TradeAnim_AdvanceScriptPointer
 	ld a, $40
 	ld [wcf64], a

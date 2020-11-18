@@ -116,7 +116,7 @@ StartIntroSequence::
 	farcall ClearSpriteAnims
 	depixel 10, 11, 4, 0
 	ld a, SPRITE_ANIM_INDEX_GAMEFREAK_LOGO
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], $a0
@@ -757,7 +757,7 @@ IntroScene7: ; e4b3f (39:4b3f)
 	farcall ClearSpriteAnims
 	depixel 13, 27, 4, 0
 	ld a, SPRITE_ANIM_INDEX_INTRO_SUICUNE
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld a, $f0
 	ld [wGlobalAnimXOffset], a
 	call Intro_SetCGBPalUpdate
@@ -846,14 +846,14 @@ IntroScene10: ; e4c4f (39:4c4f)
 .pichu
 	depixel 21, 16, 1, 0
 	ld a, SPRITE_ANIM_INDEX_INTRO_PICHU
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld de, SFX_INTRO_PICHU
 	jp PlaySFX
 
 .wooper
 	depixel 22, 6
 	ld a, SPRITE_ANIM_INDEX_INTRO_WOOPER
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld de, SFX_INTRO_PICHU
 	jp PlaySFX
 .done
@@ -1000,7 +1000,7 @@ IntroScene13: ; e4d6d (39:4d6d)
 	farcall ClearSpriteAnims
 	depixel 13, 11, 4, 0
 	ld a, SPRITE_ANIM_INDEX_INTRO_SUICUNE
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld de, MUSIC_EVOLUTION
 	call PlayMusic
 	xor a
@@ -1108,10 +1108,10 @@ IntroScene15: ; e4e40 (39:4e40)
 	call Intro_SetCGBPalUpdate
 	depixel 8, 5
 	ld a, SPRITE_ANIM_INDEX_INTRO_UNOWN_F
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	depixel 12, 0
 	ld a, SPRITE_ANIM_INDEX_INTRO_SUICUNE_AWAY
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	xor a
 	ld [wIntroSceneFrameCounter], a
 	ld [wcf65], a
@@ -1256,7 +1256,7 @@ IntroScene19: ; e4f7e (39:4f7e)
 	call Intro_SetCGBPalUpdate
 	depixel 12, 0
 	ld a, SPRITE_ANIM_INDEX_INTRO_SUICUNE_AWAY
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	xor a
 	ld [wIntroSceneFrameCounter], a
 	ld [wcf65], a
@@ -1575,36 +1575,36 @@ endc
 CrystalIntro_InitUnownAnim: ; e51dc (39:51dc)
 	push de
 	ld a, SPRITE_ANIM_INDEX_INTRO_UNOWN
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_0C
 	add hl, bc
 	ld [hl], $8
 	ld a, SPRITE_ANIM_FRAMESET_INTRO_UNOWN_4
-	call ReinitSpriteAnimFrame
+	farcall ReinitSpriteAnimFrame
 	pop de
 
 	push de
 	ld a, SPRITE_ANIM_INDEX_INTRO_UNOWN
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_0C
 	add hl, bc
 	ld [hl], $18
 	ld a, SPRITE_ANIM_FRAMESET_INTRO_UNOWN_3
-	call ReinitSpriteAnimFrame
+	farcall ReinitSpriteAnimFrame
 	pop de
 
 	push de
 	ld a, SPRITE_ANIM_INDEX_INTRO_UNOWN
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_0C
 	add hl, bc
 	ld [hl], $28
 	ld a, SPRITE_ANIM_FRAMESET_INTRO_UNOWN_1
-	call ReinitSpriteAnimFrame
+	farcall ReinitSpriteAnimFrame
 	pop de
 
 	ld a, SPRITE_ANIM_INDEX_INTRO_UNOWN
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_0C
 	add hl, bc
 	ld [hl], $38

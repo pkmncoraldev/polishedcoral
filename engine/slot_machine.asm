@@ -966,7 +966,7 @@ ReelAction_InitGolem: ; 92d20
 	push af
 	depixel 12, 13
 	ld a, SPRITE_ANIM_INDEX_SLOTS_GOLEM
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_0E
 	add hl, bc
 	pop af
@@ -1025,7 +1025,7 @@ Slots_InitNumel: ; 92d7e
 	push bc
 	depixel 12, 0
 	ld a, SPRITE_ANIM_INDEX_SLOTS_NUMEL
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	pop bc
 	xor a
 	ld [wcf64], a
@@ -1994,7 +1994,7 @@ Slots_AnimateNumel: ; 932ac (24:72ac)
 	push bc
 	depixel 12, 13, 0, 4
 	ld a, SPRITE_ANIM_INDEX_SLOTS_EGG
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	pop bc
 	ret
 

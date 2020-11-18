@@ -63,27 +63,27 @@ GetSpriteVTile:: ; 180e
 	pop hl
 	ret
 
-DoesSpriteHaveFacings:: ; 1836
-	push de
-	push hl
+;DoesSpriteHaveFacings:: ; 1836
+;	push de
+;	push hl
 
-	ld b, a
-	ld a, [hROMBank]
-	push af
-	ld a, BANK(_DoesSpriteHaveFacings)
-	rst Bankswitch
+;	ld b, a
+;	ld a, [hROMBank]
+;	push af
+;	ld a, BANK(_DoesSpriteHaveFacings)
+;	rst Bankswitch
 
-	ld a, b
-	call _DoesSpriteHaveFacings
-	ld c, a
+;	ld a, b
+;	call _DoesSpriteHaveFacings
+;	ld c, a
 
-	pop de
-	ld a, d
-	rst Bankswitch
+;	pop de
+;	ld a, d
+;	rst Bankswitch
 
-	pop hl
-	pop de
-	ret
+;	pop hl
+;	pop de
+;	ret
 ; 184a
 
 GetPlayerStandingTile:: ; 184a

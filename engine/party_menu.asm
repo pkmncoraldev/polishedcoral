@@ -150,7 +150,7 @@ PlacePartyHPBar: ; 500cf
 	call PlacePartymonHPBar
 	pop hl
 	ld d, $6
-	call DrawBattleHPBar
+	farcall DrawBattleHPBar
 	ld hl, wHPPals
 	ld a, [wHPPalIndex]
 	ld c, a

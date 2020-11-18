@@ -711,7 +711,7 @@ CurItemName:
 CurTMHMName:
 	ld a, [wCurTMHM]
 	ld [wd265], a
-	jp GetTMHMName
+	farjp GetTMHMName
 
 PutItemInPocketText:
 	text_jump UnknownText_0x1c472c
@@ -1130,7 +1130,7 @@ ApplyPersonFacing:
 	add hl, bc
 	ld a, [hl]
 	push bc
-	call DoesSpriteHaveFacings
+	farcall _DoesSpriteHaveFacings
 	pop bc
 	jr c, .not_visible ; STANDING_SPRITE
 	ld hl, OBJECT_FLAGS1
@@ -3173,7 +3173,7 @@ Script_tmhmtotext:
 	ld a, [wScriptVar]
 .ok
 	ld [wd265], a
-	call GetTMHMName
+	farcall GetTMHMName
 	ld de, wStringBuffer1
 	call ConvertMemToText
 

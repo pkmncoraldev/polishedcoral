@@ -179,7 +179,7 @@ HPBarAnim_RedrawHPBar:
 	jr nc, .skip
 	inc h
 .skip
-	jp DrawBattleHPBar
+	farjp DrawBattleHPBar
 
 HPBarAnim_UpdateHPRemaining:
 	ld a, [wWhichHPBar]

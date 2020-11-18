@@ -67,7 +67,7 @@ FindTMHMInBallScript::
 	ld [wScriptVar], a
 	ld a, [wCurItemBallContents]
 	ld [wNamedObjectIndexBuffer], a
-	call GetTMHMName
+	farcall GetTMHMName
 	ld hl, wStringBuffer3
 	call CopyName2
 

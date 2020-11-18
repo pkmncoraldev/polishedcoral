@@ -106,6 +106,7 @@ DoNextFrameForFirst16Sprites: ; 8cfa8 (23:4fa8)
 	ld [hli], a
 	jr .loop2
 
+_InitSpriteAnimStruct::
 InitSpriteAnimStruct:: ; 8cfd6
 ; Initialize animation a at pixel x=e, y=d
 ; Find if there's any room in the wSpriteAnimationStructs array, which is 10x16
@@ -408,6 +409,7 @@ GetSpriteAnimVTile: ; 8d109
 ; 8d120
 
 _ReinitSpriteAnimFrame:: ; 8d120
+ReinitSpriteAnimFrame::
 	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld [hl], a

@@ -1060,8 +1060,9 @@ wOverworldDelay:: ds 1
 wTextDelayFrames:: ds 1
 wVBlankOccurred:: ds 1
 wGenericDelay:: ds 1
+wDEDCryRuntimeDuration:: ds 1
 
-	ds 7 ; unused
+	ds 6 ; unused
 
 wGameTimerPause::
 ; bit 0

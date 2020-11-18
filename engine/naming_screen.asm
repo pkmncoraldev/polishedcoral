@@ -270,7 +270,7 @@ SetUpNamingScreen: ; 116f8
 	pop bc
 	ld a, c
 	depixel 4, 4, 4, 0
-	jp _InitSpriteAnimStruct
+	farjp _InitSpriteAnimStruct
 
 .StoreMonIconParams: ; 1187b (4:587b)
 	ld a, PKMN_NAME_LENGTH - 1

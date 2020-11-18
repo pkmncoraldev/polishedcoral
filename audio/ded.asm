@@ -58,14 +58,31 @@ _PlayDEDCry::
 	di
 	xor a
 	ld [hDEDCryFlag], a
+	ld [wDEDCryRuntimeDuration], a
 	ld a, 7
 	ld [hVBlank], a
 	call PlayDEDSamples
-	ei
+;	ei
 	xor a
 	ld [rNR51], a
 	ld [rNR30], a
 	ld [rTMA], a
+	ld a, [wDEDCryRuntimeDuration]
+	and a
+	jr z, .noMusicToSkip
+	ld b, a
+	ld a, [rNR52]
+	push af
+	xor a
+	ld [rNR52], a
+.skipMusicLoop
+	call UpdateSound
+	dec b
+	jr nz, .skipMusicLoop
+	pop af
+	ld [rNR52], a
+.noMusicToSkip
+	ei
 	pop af
 	ld [rTIMA], a
 	ld a, (1 << rTAC_ON) | rTAC_65536_HZ

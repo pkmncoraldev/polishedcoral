@@ -4,29 +4,29 @@
 	map_id ROUTE_1
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
-	db 4, RAICHU_A		;30%
-	db 3, RAICHU_A		;30%
-	db 3, RAICHU_A		;20%
-	db 4, RAICHU_A		;10%
-	db 3, RAICHU_A		;5%
-	db 4, RAICHU_A		;4%
-	db 5, RAICHU_A		;1%
+	db 4, WIGGLYTUFF		;30%
+	db 3, WIGGLYTUFF		;30%
+	db 3, WIGGLYTUFF		;20%
+	db 4, WIGGLYTUFF		;10%
+	db 3, WIGGLYTUFF		;5%
+	db 4, WIGGLYTUFF		;4%
+	db 5, WIGGLYTUFF		;1%
 	; day
-	db 4, RAICHU_A		;30%
-	db 3, RAICHU_A		;30%
-	db 3, RAICHU_A		;20%
-	db 4, RAICHU_A		;10%
-	db 3, RAICHU_A		;5%
-	db 4, RAICHU_A		;4%
-	db 5, RAICHU_A		;1%
+	db 4, WIGGLYTUFF		;30%
+	db 3, WIGGLYTUFF		;30%
+	db 3, WIGGLYTUFF		;20%
+	db 4, WIGGLYTUFF		;10%
+	db 3, WIGGLYTUFF		;5%
+	db 4, WIGGLYTUFF		;4%
+	db 5, WIGGLYTUFF		;1%
 	; nite
-	db 4, RAICHU_A		;30%
-	db 3, RAICHU_A		;30%
-	db 3, RAICHU_A		;20%
-	db 4, RAICHU_A		;10%
-	db 3, RAICHU_A		;5%
-	db 4, RAICHU_A		;4%
-	db 5, RAICHU_A		;1%
+	db 4, WIGGLYTUFF		;30%
+	db 3, WIGGLYTUFF		;30%
+	db 3, WIGGLYTUFF		;20%
+	db 4, WIGGLYTUFF		;10%
+	db 3, WIGGLYTUFF		;5%
+	db 4, WIGGLYTUFF		;4%
+	db 5, WIGGLYTUFF		;1%
 	
 	map_id ROUTE_2
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

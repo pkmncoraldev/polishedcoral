@@ -61,6 +61,8 @@ VBlank::
 .skipToGameTime
 	ld a, [hROMBank]
 	ld [hROMBankBackup], a
+	ld hl, wDEDCryRuntimeDuration
+	inc [hl]
 	ld a, [hDEDVBlankMode]
 	and a
 	jr z, .tryDoMapAnims

@@ -57,7 +57,7 @@ PlayFaintingCry2:: ; 37e2
 	adc [hl]
 	ld [hl], a
 
-	call _PlayCryHeader
+	farcall _PlayCryHeader
 	jp PlayCry_PopBCDEHLOff
 
 .ded

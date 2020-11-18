@@ -1035,7 +1035,7 @@ CheckBattleEffects:: ; 4ea44
 ; Return carry if battle scene is turned off.
 	ld a, [wOptions1]
 	bit BATTLE_EFFECTS, a
-	jr nz, .off
+	jr z, .off
 	and a
 	ret
 

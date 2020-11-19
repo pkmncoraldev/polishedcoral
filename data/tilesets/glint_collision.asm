@@ -31,7 +31,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 1e
 	tilecoll WALL, WALL, WALL, WALL ; 1f
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 20
-	tilecoll LONG_GRASS, LONG_GRASS, LONG_GRASS, LONG_GRASS ; 21
+	tilecoll STAIRS, STAIRS, FLOOR, FLOOR ; 21
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 22
 	tilecoll SKATE, WALL, SKATE, SKATE ; 23
 	tilecoll WALL, WALL, WALL, WALL ; 24

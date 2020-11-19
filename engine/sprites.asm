@@ -410,6 +410,7 @@ GetSpriteAnimVTile: ; 8d109
 
 ReinitSpriteAnimFrame::
 _ReinitSpriteAnimFrame:: ; 8d120
+ReinitSpriteAnimFrame::
 	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld [hl], a

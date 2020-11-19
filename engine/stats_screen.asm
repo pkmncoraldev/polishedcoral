@@ -67,18 +67,38 @@ StatsScreen_WaitAnim: ; 4dd3a (13:5d3a)
 	bit 6, [hl]
 	jr nz, .try_anim
 	bit 5, [hl]
-	jr nz, .finish
+;	jr nz, .finish
+	jr nz, .finishFrame
 	jp DelayFrame
 
 .try_anim
-	farcall SetUpPokeAnim
-	jr nc, .finish
+;	farcall SetUpPokeAnim
+;	jr nc, .finish
+
+	call DelayFrame
+	ld a, [hDEDCryFlag]
+	and a
+	jr nz, .playDEDCry
+	ld a, [hRunPicAnim]
+	and a
+	jr nz, .finishFrame
+
 	ld hl, wcf64
 	res 6, [hl]
-.finish
+;.finish
+.finishFrame
 	ld hl, wcf64
 	res 5, [hl]
+	
+.copyTilemap
 	farjp HDMATransferTileMapToWRAMBank3
+.playDEDCry
+	push af
+	
+	farcall HDMATransferTileMapToWRAMBank3
+	pop af
+	call _PlayCry
+	jr .copyTilemap
 
 StatsScreen_SetJumptableIndex: ; 4dd62 (13:5d62)
 	ld a, [wJumptableIndex]
@@ -90,9 +110,13 @@ StatsScreen_SetJumptableIndex: ; 4dd62 (13:5d62)
 StatsScreen_Exit: ; 4dd6c (13:5d6c)
 	ld hl, wJumptableIndex
 	set 7, [hl]
+	xor a
+	ld [hRunPicAnim], a
 	ret
 
 MonStatsInit: ; 4dd72 (13:5d72)
+	xor a
+	ld [hRunPicAnim], a
 	ld hl, wcf64
 	res 6, [hl]
 	call ClearBGPalettes
@@ -422,10 +446,11 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 	call .LoadPals
 	ld hl, wcf64
 	bit 4, [hl]
-	jr nz, .place_frontpic
-	jp SetPalettes
+;	jr nz, .place_frontpic
+;	jp SetPalettes
 
-.place_frontpic
+;.place_frontpic
+	jp z, SetPalettes
 	jp StatsScreen_PlaceFrontpic
 
 .ClearBox: ; 4dfda (13:5fda)
@@ -968,30 +993,39 @@ StatsScreen_PlaceFrontpic: ; 4e226 (13:6226)
 	jr c, .egg
 	and a
 	jr z, .no_cry
-	jr .cry
+;	jr .cry
 
-.egg
-	call .AnimateEgg
-	jp SetPalettes
+;.egg
+;	call .AnimateEgg
+;	jp SetPalettes
 
-.no_cry
-	call .AnimateMon
-	jp SetPalettes
+;.no_cry
+;	call .AnimateMon
+;	jp SetPalettes
 
-.cry
+;.cry
 	call SetPalettes
 	call .AnimateMon
 	ld a, [wCurPartySpecies]
 	jp PlayCry2
+.no_cry
+	call .AnimateEgg
+	jp SetPalettes
+.egg
+	call .AnimateMon
+	jp SetPalettes
 
-.AnimateMon: ; 4e253 (13:6253)
+
+;.AnimateMon: ; 4e253 (13:6253)
+.AnimateEgg:
 	ld hl, wcf64
 	set 5, [hl]
 	hlcoord 0, 0
 	jp PrepMonFrontpic
 
 
-.AnimateEgg: ; 4e271 (13:6271)
+;.AnimateEgg: ; 4e271 (13:6271)
+.AnimateMon:
 	ld a, TRUE
 	ld [wBoxAlignment], a
 
@@ -1018,6 +1052,8 @@ StatsScreen_PlaceFrontpic: ; 4e226 (13:6226)
 ;	call PlayCry2
 	ld hl, wcf64
 	set 6, [hl]
+	ld a, $1
+	ld [hRunPicAnim], a
 	ret
 
 StatsScreen_GetAnimationParam: ; 4e2ad (13:62ad)

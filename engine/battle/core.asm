@@ -9356,23 +9356,24 @@ InitBattleDisplay: ; 3fb6c
 GetTrainerBackpic: ; 3fbff
 ; Load the player character's backpic (6x6) into VRAM starting from VTiles2 tile $31.
 
-	ld b, BANK(ChrisBackpic) ; BANK(ChrisBackpic), BANK(KrisBackpic), BANK(PippiBackpic)	
+	ld b, BANK(CoryBackpic)
 ; What gender are we?
-	ld hl, ChrisBackpic
-	ld a, [wPlayerSpriteSetupFlags]
-	bit 2, a ; transformed to male
-	jr nz, .Decompress
 	ld a, [wPlayerGender]
-	cp MALE
-	jr z, .Decompress
-	cp FEMALE
-	jr z, .female
-	
+	cp CORY
+	jr z, .cory
+	cp CORA
+	jr z, .cora
+	cp PIPPI
+	jr z, .pippi
+.cory
+	ld hl, CoryBackpic
+	jr .Decompress
+.cora
+	ld hl, CoraBackpic
+	jr .Decompress
+.pippi
 	ld hl, PippiBackpic
 	jr .Decompress
-
-.female
-	ld hl, KrisBackpic	
 
 .Decompress:
 	ld de, VTiles2 tile $31

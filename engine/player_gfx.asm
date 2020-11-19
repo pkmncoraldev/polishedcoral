@@ -76,26 +76,31 @@ INCBIN "gfx/trainer_card/pippi_card.5x7.2bpp"
 
 GetPlayerBackpic: ; 88825
 	ld a, [wPlayerGender]
+	cp CORY
+	jr z, .cory
+	cp CORA
+	jr z, .cora
 	cp PIPPI
-	jr nz, .notpippi
+	jr z, .pippi
+.cory
+	ld hl, CoryBackpic
+	jr .ok
+.cora
+	ld hl, CoraBackpic
+	jr .ok
+.pippi
 	ld hl, PippiBackpic
 	jr .ok
-.notpippi
-	ld hl, ChrisBackpic
-	ld a, [wPlayerGender]
-	bit 0, a
-	jr z, .ok
-	ld hl, KrisBackpic
 .ok
 	ld de, VTiles2 tile $31
-	lb bc, BANK(ChrisBackpic), 6 * 6 ; dimensions
+	lb bc, BANK(CoryBackpic), 6 * 6 ; dimensions
 	predef DecompressPredef
 	ret
 
-ChrisBackpic: ; 2ba1a
+CoryBackpic: ; 2ba1a
 INCBIN "gfx/player/chris_back.6x6.2bpp.lz"
 
-KrisBackpic: ; 88ed6
+CoraBackpic: ; 88ed6
 INCBIN "gfx/player/kris_back.6x6.2bpp.lz"
 
 PippiBackpic: ; 2bbaa

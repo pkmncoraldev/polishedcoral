@@ -51,7 +51,7 @@ MAP_NONE   EQU 0
 
 	newgroup                                                     ;  2
 
-	map_const SUNSET_BAY,                                 22, 19 ;  1
+	map_const SUNSET_BAY,                                 22, 21 ;  1
 	map_const SUNSET_CAPE,                                13, 20 ;  2
 	map_const SUNSET_POKECENTER,                    	   6,  4 ;  3
 	map_const SUNSET_LIGHTHOUSE,                           5,  5 ;  4

@@ -58,7 +58,7 @@ SpookHouseJournalNo:
 	end
 	
 SpookHouseBookshelfText:
-	text "Its full of old"
+	text "It's full of old"
 	line "dusty books and"
 	cont "journals."
 	done
@@ -66,21 +66,21 @@ SpookHouseBookshelfText:
 SpookHouseBedText:
 	text "A big fluffy bed."
 	
-	para "Its neatly made,"
+	para "It's neatly made,"
 	line "but seems like it"
 	cont "hasn't been used in"
 	cont "years."
 	done
 	
 SpookHouseTrashcanText:
-	text "Its full of dust."
+	text "It's full of dust."
 	done
 	
 SpookHouseJournalText1:
 	text "A dusty old"
 	line "journal."
 	
-	para "Its open to a page"
+	para "It's open to a page"
 	line "in the middle."
 	
 	para "Read it?"

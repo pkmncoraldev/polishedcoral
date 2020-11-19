@@ -683,7 +683,7 @@ PokegearMap_InitPlayerIcon: ; 9106a
 	
 .ok
 	ld a, b
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
 	add hl, bc
 	ld [hl], $10
@@ -706,7 +706,7 @@ PokegearMap_InitCursor: ; 91098
 	push af
 	depixel 0, 0
 	ld a, SPRITE_ANIM_INDEX_POKEGEAR_MODE_ARROW
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
 	add hl, bc
 	ld [hl], $4
@@ -795,7 +795,7 @@ PokegearRadio_Init: ; 910f9 (24:50f9)
 	call InitPokegearTilemap
 	depixel 4, 10, 4, 4
 	ld a, SPRITE_ANIM_INDEX_RADIO_TUNING_KNOB
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
 	add hl, bc
 	ld [hl], $8
@@ -2866,7 +2866,7 @@ TownMapMon: ; 91f7b
 ; Animation/palette
 	depixel 0, 0
 	ld a, SPRITE_ANIM_INDEX_PARTY_MON
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
 	add hl, bc
 	ld [hl], $8
@@ -2946,7 +2946,7 @@ TownMapPlayerIcon: ; 91fa6
 .ok
 	
 	ld a, b
-	call _InitSpriteAnimStruct
+	farcall _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
 	add hl, bc
 	ld [hl], $10

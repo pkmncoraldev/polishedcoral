@@ -173,6 +173,8 @@ hTmpe              EQU $fff8
 
 hFastMusicUpdate   EQU $fff9
 
+hRunPicAnim            EQU $fffa
+
 hRequestOpaque1bpp EQU $fffb
 
 hTilesetGFXBank EQU $fffc

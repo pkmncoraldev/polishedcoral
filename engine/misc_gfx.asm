@@ -224,6 +224,31 @@ CutAndPasteMap: ; 104265 (41:4265)
 	ld [hMapObjectIndexBuffer], a
 	ret
 
+_HDMAHBlankTransferTileMap_DuringDI::
+	call CallInSafeGFXMode
+	
+.Function
+	decoord 0, 0
+	ld hl, wDecompressScratch
+	call CutAndPasteTilemap
+	xor a
+	ld [rVBK], a
+	ld hl, wDecompressScratch
+	jp DoHBlankHDMATransfer_toBGMap
+	
+_HDMAHBlankTransferAttrMap_DuringDI::
+	call CallInSafeGFXMode
+
+.Function
+	decoord 0, 0, wAttrMap
+	ld hl, wScratchTileMap
+	call CutAndPasteAttrMap
+	ld a, $1
+	ld [rVBK], a
+	ld hl, wScratchTileMap
+	jp DoHBlankHDMATransfer_toBGMap
+
+	
 HDMATransfer_OnlyTopFourRows:: ; 104303
 	call CallInSafeGFXMode
 

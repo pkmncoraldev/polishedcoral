@@ -23,7 +23,7 @@ PokeAnims: ; d0042
 	dw .Trade
 	dw .Evolve
 	dw .Hatch
-	dw .Menu ; unused
+	dw .Unused
 	dw .Egg1
 	dw .Egg2
 
@@ -33,6 +33,7 @@ PokeAnims: ; d0042
 .Trade:  POKEANIM Extra, Play2, Extra, Play, SetWait, Wait, Cry, Setup, Play
 .Evolve: POKEANIM Extra, Play, SetWait, Wait, CryNoWait, Setup, Play
 .Hatch:  POKEANIM Extra, Play, CryNoWait, Setup, Play, SetWait, Wait, Extra, Play
+.Unused: POKEANIM
 .Egg1:   POKEANIM Setup, Play
 .Egg2:   POKEANIM Extra, Play
 
@@ -41,13 +42,25 @@ AnimateFrontpic: ; d008e
 	call AnimateMon_CheckIfPokemon
 	ret c
 	call LoadMonAnimation
+	ld a, $1
+	ld [hRunPicAnim], a
 .loop
-	call SetUpPokeAnim
-	push af
-	farcall HDMATransferTileMapToWRAMBank3
-	pop af
-	jr nc, .loop
+;	call SetUpPokeAnim
+;	push af
+	call DelayFrame
+	callba HDMATransferTileMapToWRAMBank3
+;	pop af
+;	jr nc, .loop
+	ld a, [hDEDCryFlag]
+	and a
+	jr nz, .handleDEDCry
+	ld a, [hRunPicAnim]
+	and a
+	jr nz, .loop
 	ret
+.handleDEDCry
+	call _PlayCry
+	jr .loop
 ; d00a3
 
 LoadMonAnimation: ; d00a3
@@ -92,6 +105,14 @@ LoadMonAnimation: ; d00a3
 	ld a, d
 	ld [wPokeAnimGraphicStartTile], a
 
+; convert tilemap coord to BGMap coords
+	call ConvertTileMapAddrToBGMap
+	ld a, l
+	ld [wPokeAnimDestination], a
+	ld a, h
+	ld [wPokeAnimDestination + 1], a
+
+	
 	ld a, $1
 	ld hl, wCurPartySpecies
 	call GetFarWRAMByte
@@ -116,7 +137,35 @@ LoadMonAnimation: ; d00a3
 	ret
 ; d0228
 
-SetUpPokeAnim: ; d00b4
+ConvertTileMapAddrToBGMap:
+	ld a, l
+	sub (wTileMap & $ff)
+	ld l, a
+	ld a, h
+	sbc (wTileMap >> 8)
+	ld h, a
+	ld bc, -SCREEN_WIDTH
+	ld d, 0
+	jr .handleLoop
+.subtractLoop
+	inc d
+.handleLoop
+	add hl, bc
+	jr c, .subtractLoop
+	ld bc, SCREEN_WIDTH
+	add hl, bc
+	ld e, l
+	ld hl, VBGMap0
+	ld bc, BG_MAP_WIDTH
+	ld a, d
+	rst AddNTimes
+	ld c, e
+	ld b, 0
+	add hl, bc
+	ret
+
+
+SetUpPokeAnim:: ; d00b4
 	ld a, [rSVBK]
 	push af
 	ld a, $2
@@ -243,12 +292,21 @@ PokeAnim_Finish: ; d0171
 	call PokeAnim_DeinitFrames
 	ld hl, wPokeAnimSceneIndex
 	set 7, [hl]
+	xor a
+	ld [hRunPicAnim], a
 	ret
 ; d017a
 
 PokeAnim_Cry: ; d017a
 	ld a, [wPokeAnimSpecies]
+	call LoadCryHeader
+	ld a, [wPokeAnimSpecies]
+	jr c, .dedCry
 	call _PlayCry
+	jr .done
+.dedCry
+	ld [hDEDCryFlag], a
+.done
 	ld a, [wPokeAnimSceneIndex]
 	inc a
 	ld [wPokeAnimSceneIndex], a
@@ -257,7 +315,14 @@ PokeAnim_Cry: ; d017a
 
 PokeAnim_CryNoWait: ; d0188
 	ld a, [wPokeAnimSpecies]
+	call LoadCryHeader
+	ld a, [wPokeAnimSpecies]
+	jr c, .dedCry
 	call PlayCry2
+	jr .done
+.dedCry
+	ld [hDEDCryFlag], a
+.done
 	ld a, [wPokeAnimSceneIndex]
 	inc a
 	ld [wPokeAnimSceneIndex], a
@@ -268,7 +333,14 @@ PokeAnim_StereoCry: ; d0196
 	ld a, $f
 	ld [wCryTracks], a
 	ld a, [wPokeAnimSpecies]
+	call LoadCryHeader
+	ld a, [wPokeAnimSpecies]
+	jr c, .dedCry
 	call PlayStereoCry2
+	jr .done
+.dedCry
+	ld [hDEDCryFlag], a
+.done
 	ld a, [wPokeAnimSceneIndex]
 	inc a
 	ld [wPokeAnimSceneIndex], a
@@ -281,9 +353,11 @@ PokeAnim_DeinitFrames: ; d01a9
 	ld a, $2
 	ld [rSVBK], a
 	call PokeAnim_PlaceGraphic
-	farcall HDMATransferTileMapToWRAMBank3
+;	farcall HDMATransferTileMapToWRAMBank3
+	call HDMAHBlankTransferTileMap_DuringDI
 	call PokeAnim_SetVBank0
-	farcall HDMATransferAttrMapToWRAMBank3
+;	farcall HDMATransferAttrMapToWRAMBank3
+	call HDMAHBlankTransferTileMap_DuringDI
 	pop af
 	ld [rSVBK], a
 	ret
@@ -310,7 +384,8 @@ PokeAnim_InitAnim: ; d0228
 	ld [rSVBK], a
 	push bc
 	ld hl, wPokeAnimExtraFlag
-	ld bc, wPokeAnimStructEnd - wPokeAnimExtraFlag
+;	ld bc, wPokeAnimStructEnd - wPokeAnimExtraFlag
+	ld bc, wPokeAnimDestination - wPokeAnimExtraFlag
 	xor a
 	call ByteFill
 	pop bc
@@ -805,7 +880,8 @@ PokeAnim_SetVBank1: ; d0504
 	xor a
 	ld [hBGMapMode], a
 	call .SetFlag
-	farcall HDMATransferAttrMapToWRAMBank3
+;	farcall HDMATransferAttrMapToWRAMBank3
+	call HDMAHBlankTransferAttrMap_DuringDI
 	pop af
 	ld [rSVBK], a
 	ret

@@ -337,6 +337,26 @@ CompareLong:: ; 31e4
 	ret
 ; 31f3
 
+HDMAHBlankTransferTileMap_DuringDI::
+	ld a, [hROMBank]
+	push af
+	ld a, BANK(_HDMAHBlankTransferTileMap_DuringDI)
+	rst Bankswitch
+	call _HDMAHBlankTransferTileMap_DuringDI
+	pop af
+	rst Bankswitch
+	ret
+	
+HDMAHBlankTransferAttrMap_DuringDI::
+	ld a, [hROMBank]
+	push af
+	ld a, BANK(_HDMAHBlankTransferAttrMap_DuringDI)
+	rst Bankswitch
+	call _HDMAHBlankTransferAttrMap_DuringDI
+	pop af
+	rst Bankswitch
+	ret
+
 SetPalettes:: ; 32f9
 ; Inits the Palettes
 ; depending on the system the monochromes palettes or color palettes

@@ -62,7 +62,6 @@ _PlayDEDCry::
 	ld a, 7
 	ld [hVBlank], a
 	call PlayDEDSamples
-;	ei
 	xor a
 	ld [rNR51], a
 	ld [rNR30], a

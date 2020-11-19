@@ -21,3 +21,4 @@ Makefile text
 *.ablk binary diff=hex
 *.tilemap binary diff=hex
 *.ips  binary diff=hex
+*.ded binary diff=hex

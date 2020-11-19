@@ -57,7 +57,7 @@ PushWindow::
 	farjp _PushWindow
 
 SECTION "rst38", ROM0
-	rst $38
+	db $fc
 
 ExitMenu::
 	push af

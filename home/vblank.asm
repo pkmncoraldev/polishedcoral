@@ -68,6 +68,9 @@ VBlank::
 	jr z, .tryDoMapAnims
 	dec a
 	jr z, .doGrowlOrRoarAnim
+	dec a
+	jr z, .doPokeAnim
+	jr .doGameTime
 .tryDoMapAnims
 	call AnimateTileset
 	jr .doGameTime
@@ -89,6 +92,13 @@ VBlank::
 	call RunOneFrameOfGrowlOrRoarAnim
 	pop af
 	ld [rSVBK], a
+	jr .doGameTime
+
+.doPokeAnim
+	call TransferAnimatingPicDuringHBlank
+	ld a, BANK(SetUpPokeAnim)
+	rst Bankswitch
+	call SetUpPokeAnim
 	jr .doGameTime
 
 .VBlanks:

@@ -408,7 +408,6 @@ GetSpriteAnimVTile: ; 8d109
 	ret
 ; 8d120
 
-ReinitSpriteAnimFrame::
 _ReinitSpriteAnimFrame:: ; 8d120
 ReinitSpriteAnimFrame::
 	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID

@@ -42,25 +42,22 @@ AnimateFrontpic: ; d008e
 	call AnimateMon_CheckIfPokemon
 	ret c
 	call LoadMonAnimation
-	ld a, $1
-	ld [hRunPicAnim], a
+	ld a, 2
+	ld [hDEDVBlankMode], a
 .loop
 ;	call SetUpPokeAnim
 ;	push af
-	call DelayFrame
+	call SetUpPokeAnim
 	callba HDMATransferTileMapToWRAMBank3
 ;	pop af
 ;	jr nc, .loop
 	ld a, [hDEDCryFlag]
 	and a
-	jr nz, .handleDEDCry
-	ld a, [hRunPicAnim]
+	call nz, _PlayCry
+	ld a, [hDEDVBlankMode]
 	and a
 	jr nz, .loop
 	ret
-.handleDEDCry
-	call _PlayCry
-	jr .loop
 ; d00a3
 
 LoadMonAnimation: ; d00a3
@@ -293,7 +290,7 @@ PokeAnim_Finish: ; d0171
 	ld hl, wPokeAnimSceneIndex
 	set 7, [hl]
 	xor a
-	ld [hRunPicAnim], a
+	ld [hDEDVBlankMode], a
 	ret
 ; d017a
 
@@ -384,8 +381,7 @@ PokeAnim_InitAnim: ; d0228
 	ld [rSVBK], a
 	push bc
 	ld hl, wPokeAnimExtraFlag
-;	ld bc, wPokeAnimStructEnd - wPokeAnimExtraFlag
-	ld bc, wPokeAnimDestination - wPokeAnimExtraFlag
+	ld bc, wPokeAnimStructEnd - wPokeAnimExtraFlag
 	xor a
 	call ByteFill
 	pop bc

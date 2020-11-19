@@ -121,7 +121,6 @@ DoHBlankHDMATransfer_toBGMap:
 	ld a, e
 	and $f0
 	ld [rHDMA4], a
-	di
 	ld a, [rLY]
 	add c ; calculate end LY
 	cp $80 ; is the end LY greater than the max LY
@@ -137,9 +136,9 @@ DoHBlankHDMATransfer_toBGMap:
 .waitHDMALoop
 	cp [hl]
 	jr nz, .waitHDMALoop
-	reti
+	ret
 
-DoHBlankHDMATransfer
+DoHBlankHDMATransfer:
 	ld b, $7f
 ; a lot of waiting around for hardware registers
 	; [rHDMA1, rHDMA2] = hl & $fff0

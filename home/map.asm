@@ -1071,12 +1071,12 @@ LoadTileset:: ; 2821
 	ld a, $1
 	ld [rSVBK], a
 
-	ld hl, wTilesetGFX2Address
-	ld a, [hli]
-	and a
-	jr z, .no_gfx2
-	ld h, [hl]
-	ld l, a
+	ld hl, wTilesetGFX2Address+1
+    ld a, [hld]
+    and a
+    jr z, .no_gfx2
+    ld l, [hl]
+    ld h, a
 
 	ld a, BANK(wDecompressScratch)
 	ld [rSVBK], a

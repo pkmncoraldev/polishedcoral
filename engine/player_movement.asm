@@ -55,6 +55,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp PLAYER_SITTING
 	jp z, .Standing
 .Normal:
+	xor a
+	ld [wPlayerRunning], a
 	call .CheckForced
 	call .GetAction
 	call .CheckTile
@@ -83,6 +85,13 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call .GetAction
 	call .CheckTile
 	ret c
+	ld a, [wPlayerRunning]
+	cp 1
+	jr z, .Runningcont2
+	ld a, 1
+	ld [wPlayerRunning], a
+	call ReplaceKrisSprite ; UpdateSprites
+.Runningcont2
 	call .CheckTurning
 	ret c
 	call .TryStep

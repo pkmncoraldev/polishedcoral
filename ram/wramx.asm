@@ -230,7 +230,7 @@ wTileDownFar:: ds 1
 wTileUpFar:: ds 1
 wTileLeftFar:: ds 1
 wTileRightFar:: ds 1
-	ds 1 ; unused
+wPlayerRunning::	ds 1
 
 wTMHMMoveNameBackup:: ds MOVE_NAME_LENGTH
 

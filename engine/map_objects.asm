@@ -552,6 +552,7 @@ MapObjectMovementPattern:
 	dw .MovementHangarRight
 	dw .MovementLighthouse1
 	dw .MovementLighthouse2
+	dw .MovementLighthouse3
 
 .RandomWalkY:
 	call Random
@@ -778,6 +779,10 @@ MapObjectMovementPattern:
 	
 .MovementLighthouse2:
 	ld a, PERSON_ACTION_LIGHTHOUSE_2
+	jr ._ActionA_StepType04
+	
+.MovementLighthouse3:
+	ld a, PERSON_ACTION_LIGHTHOUSE_3
 	jr ._ActionA_StepType04
 	
 .MovementCutTree:

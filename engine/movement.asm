@@ -523,7 +523,7 @@ Movement_pippi_run_step_down:
 	push bc
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
-	call ReplaceKrisSprite ; UpdateSprites
+;	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
 	ld a, STEP_RUN << 2 | DOWN  ; STEP_RUN
 	jp Movement_do_run
@@ -532,7 +532,7 @@ Movement_pippi_run_step_up:
 	push bc
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
-	call ReplaceKrisSprite ; UpdateSprites
+;	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
 	ld a, STEP_RUN << 2 | UP    ; STEP_RUN
 	jp Movement_do_run
@@ -541,7 +541,7 @@ Movement_pippi_run_step_left:
 	push bc
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
-	call ReplaceKrisSprite ; UpdateSprites
+;	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
 	ld a, STEP_RUN << 2 | LEFT  ; STEP_RUN
 	jp Movement_do_run
@@ -550,7 +550,7 @@ Movement_pippi_run_step_right:
 	push bc
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
-	call ReplaceKrisSprite ; UpdateSprites
+;	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
 	ld a, STEP_RUN << 2 | RIGHT ; STEP_RUN
 	jp Movement_do_run
@@ -678,7 +678,6 @@ Movement_player_run_step_down:
 	push bc
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
-	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
 	ld a, STEP_RUN << 2 | DOWN  ; STEP_RUN
 	jp Movement_do_step
@@ -687,7 +686,6 @@ Movement_player_run_step_up:
 	push bc
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
-	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
 	ld a, STEP_RUN << 2 | UP    ; STEP_RUN
 	jp Movement_do_step
@@ -696,7 +694,6 @@ Movement_player_run_step_left:
 	push bc
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
-	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
 	ld a, STEP_RUN << 2 | LEFT  ; STEP_RUN
 	jp Movement_do_step
@@ -705,7 +702,6 @@ Movement_player_run_step_right:
 	push bc
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
-	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
 	ld a, STEP_RUN << 2 | RIGHT ; STEP_RUN
 	jp Movement_do_step

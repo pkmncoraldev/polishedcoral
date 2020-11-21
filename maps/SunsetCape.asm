@@ -1,5 +1,7 @@
 SunsetCape_MapScriptHeader:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script SunsetCapeTrigger0
+	scene_script SunsetCapeTrigger1
 
 	db 0 ; callbacks
 
@@ -8,7 +10,11 @@ SunsetCape_MapScriptHeader:
 	warp_event  5,  5, ROUTE_1_GATE, 4
 	warp_event 15, 15, PLAYER_HOUSE_1F, 2 ;DAYBREAK_GROTTO_WATERWAY
 
-	db 0 ; coord events
+	db 4 ; coord events
+	xy_trigger 0, 30, 1, 0, SunsetCapeDisappear, 0, 0
+	xy_trigger 0, 31, 1, 0, SunsetCapeDisappear, 0, 0
+	xy_trigger 1, 30, 2, 0, SunsetCapeAppear, 0, 0
+	xy_trigger 1, 31, 2, 0, SunsetCapeAppear, 0, 0
 
 	db 2 ; bg events
 	signpost 11,  6, SIGNPOST_READ, SunsetCapeSign
@@ -30,7 +36,7 @@ SunsetCape_MapScriptHeader:
 	person_event SPRITE_LIGHTHOUSE, 27,  4, SPRITEMOVEDATA_LIGHTHOUSE_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_LIGHTHOUSE, 28,  4, SPRITEMOVEDATA_LIGHTHOUSE_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_LIGHTHOUSE, 29,  4, SPRITEMOVEDATA_LIGHTHOUSE_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_LIGHTHOUSE, 26,  2, SPRITEMOVEDATA_LIGHTHOUSE_3, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_LIGHTHOUSE, 29,  2, SPRITEMOVEDATA_LIGHTHOUSE_3, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_BEAT_SUNSET_CAPE_LIGHTHOUSE_SPRITES
 	
 
 	const_def 1 ; object constants
@@ -41,6 +47,32 @@ SunsetCape_MapScriptHeader:
 	const SUNSET_CAPE_NPC_5
 	const SUNSET_CAPE_TRAINER
 	const SUNSET_CAPE_POKE_BALL1
+	const SUNSET_CAPE_FRUIT
+	const SUNSET_CAPE_LIGHTHOUSE_1
+	const SUNSET_CAPE_LIGHTHOUSE_2
+	const SUNSET_CAPE_LIGHTHOUSE_3
+	const SUNSET_CAPE_LIGHTHOUSE_4
+	const SUNSET_CAPE_LIGHTHOUSE_5
+	const SUNSET_CAPE_LIGHTHOUSE_6
+	const SUNSET_CAPE_LIGHTHOUSE_7
+	const SUNSET_CAPE_LIGHTHOUSE_8
+	
+	
+SunsetCapeTrigger0:
+	end
+	
+SunsetCapeTrigger1:
+	end
+	
+SunsetCapeDisappear:
+	disappear SUNSET_CAPE_LIGHTHOUSE_8
+	dotrigger $1
+	end
+	
+SunsetCapeAppear:
+	appear SUNSET_CAPE_LIGHTHOUSE_8
+	dotrigger $0
+	end
 	
 SunsetCapeNpc1:
 	faceplayer

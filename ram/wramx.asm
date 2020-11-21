@@ -952,6 +952,7 @@ wAlways0Trigger:: ds 1
 wPlayerHouse1FTrigger:: ds 1
 wPlayerHouse2FTrigger:: ds 1
 wSunsetBayTrigger:: ds 1
+wSunsetCapeTrigger:: ds 1
 wSunsetCaptainsHouseTrigger:: ds 1
 wSunsetLighthouseTrigger:: ds 1
 wRoute1GateTrigger:: ds 1
@@ -1005,7 +1006,7 @@ wTwinkleGymEntryTrigger:: ds 1
 wTwinkleGymBlueRoomTrigger:: ds 1
 wTwinkleGymYellowRoomTrigger:: ds 1
 
-ds 34
+ds 33
 
 ; fight counts
 wJackFightCount::    ds 1

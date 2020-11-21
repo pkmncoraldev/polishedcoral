@@ -9,6 +9,7 @@ MapTriggers::
 	scene_var PLAYER_HOUSE_1F,                        wPlayerHouse1FTrigger
 	scene_var PLAYER_HOUSE_2F,                        wPlayerHouse2FTrigger
 	scene_var SUNSET_BAY,     	                      wSunsetBayTrigger
+	scene_var SUNSET_CAPE,     	                      wSunsetCapeTrigger
 	scene_var SUNSET_CAPTAINS_HOUSE,     	          wSunsetCaptainsHouseTrigger
 	scene_var SUNSET_LIGHTHOUSE,     	       	      wSunsetLighthouseTrigger
 	scene_var ROUTE_1_GATE,							  wRoute1GateTrigger

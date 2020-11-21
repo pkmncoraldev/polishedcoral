@@ -423,10 +423,11 @@ FacingLighthouse2:
 	
 FacingLighthouse3:
 	db 4 ; #
-	db 12, 0, 0, $09
-	db 28, 0, 0 ,$08
-	db 44, 0, 0, $09
-	db 60, 0, 0, $08
+	db -36, 0, 0 ,$09
+	db -20, 0, 0, $08
+	db  -4, 0, 0, $09
+	db  12, 0, 0, $08
+	
 	
 FacingArchTreeDown:
 	db 2 ; #

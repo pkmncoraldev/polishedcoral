@@ -218,7 +218,7 @@ MoveNames::
 	db "QUIVER DANCE@"
 	db "BUG BUZZ@"
 	db "SAFEGUARD@"
-	db "PAIN SPLIT@"
+	db "FURY CUTTER@"
 	db "FAKE OUT@"
 	db "MAGNITUDE@"
 	db "DYNAMICPUNCH@"

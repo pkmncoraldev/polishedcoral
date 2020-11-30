@@ -1,21 +1,21 @@
-	db  60,  45,  50,  70,  90,  80
+	db  80, 120,  75,  60,  75,  75
 	;   hp  atk  def  spd  sat  sdf
 
-	db BUG, FLYING
-	db 45 ; catch rate
-	db 160 ; base exp
-	db SILVERPOWDER ; item 1
-	db SHED_SHELL ; item 2
+	db NORMAL, FLYING
+	db 45  ; catch rate
+	db 218 ; base exp
+	db RAWST_BERRY ; item 1
+	db RAWST_BERRY ; item 2
 	dn FEMALE_50, 2 ; gender, step cycles to hatch
 	dn 7, 7 ; frontpic dimensions
-	db COMPOUND_EYES ; ability 1
-	db COMPOUND_EYES ; ability 2
-	db TINTED_LENS ; hidden ability
+	db KEEN_EYE ; ability 1
+	db SKILL_LINK ; ability 2
+	db SHEER_FORCE ; hidden ability
 	db MEDIUM_FAST ; growth rate
-	dn INSECT, INSECT ; egg groups
+	dn AVIAN, AVIAN ; egg groups
 
 	; ev_yield
-	ev_yield   0,   0,   0,   0,   2,   1
+	ev_yield   0,   3,   0,   0,   0,   0
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm

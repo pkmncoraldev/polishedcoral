@@ -90,7 +90,7 @@ MoveEffectsPointers:
 	dw Disable
 	dw Counter
 	dw Encore
-	dw PainSplit
+	dw FuryCutter
 	dw Sketch
 	dw SleepTalk
 	dw DestinyBond

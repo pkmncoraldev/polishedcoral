@@ -71,7 +71,7 @@ BattleCommandPointers:
 	command constantdamage          ; 39
 	command counter                 ; 3a
 	command encore                  ; 3b
-	command painsplit               ; 3c
+	command furycutter              ; 3c
 	command sketch                  ; 3d
 	command sleeptalk               ; 3e
 	command destinybond             ; 3f

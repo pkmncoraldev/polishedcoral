@@ -219,7 +219,7 @@ BattleAnimations::
 	dw BattleAnim_QuiverDance
 	dw BattleAnim_BugBuzz
 	dw BattleAnim_Safeguard
-	dw BattleAnim_PainSplit
+	dw BattleAnim_FuryCutter
 	dw BattleAnim_FakeOut
 	dw BattleAnim_Magnitude
 	dw BattleAnim_Dynamicpunch
@@ -4550,7 +4550,7 @@ BattleAnim_WildCharge:
 	anim_bgp $e4
 	anim_ret
 
-BattleAnim_FuryCutter: ; removed
+BattleAnim_FuryCutter:
 	anim_1gfx ANIM_GFX_CUT
 .loop
 	anim_sound 0, 1, SFX_CUT
@@ -4701,18 +4701,18 @@ BattleAnim_Safeguard:
 	anim_wait 96
 	anim_ret
 
-BattleAnim_PainSplit:
-	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_OBJECTS
-	anim_call BattleAnim_FollowPlayerHead_0
-	anim_bgeffect ANIM_BG_25, $0, $1, $0
-	anim_wait 4
-	anim_sound 0, 1, SFX_TACKLE
-	anim_obj ANIM_OBJ_04,  14, 0,   6, 0, $0
-	anim_obj ANIM_OBJ_04,   9, 4,  12, 0, $0
-	anim_wait 8
-	anim_call BattleAnim_ShowMon_0
-	anim_wait 1
-	anim_ret
+;BattleAnim_PainSplit:
+;	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_OBJECTS
+;	anim_call BattleAnim_FollowPlayerHead_0
+;	anim_bgeffect ANIM_BG_25, $0, $1, $0
+;	anim_wait 4
+;	anim_sound 0, 1, SFX_TACKLE
+;	anim_obj ANIM_OBJ_04,  14, 0,   6, 0, $0
+;	anim_obj ANIM_OBJ_04,   9, 4,  12, 0, $0
+;	anim_wait 8
+;	anim_call BattleAnim_ShowMon_0
+;	anim_wait 1
+;	anim_ret
 
 BattleAnim_FakeOut:
 	anim_1gfx ANIM_GFX_OBJECTS

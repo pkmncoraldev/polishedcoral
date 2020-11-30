@@ -218,7 +218,7 @@ MoveDescriptions::
 	dw QuiverDanceDescription
 	dw BugBuzzDescription
 	dw SafeguardDescription
-	dw PainSplitDescription
+	dw FuryCutterDescription
 	dw FakeOutDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
@@ -713,9 +713,9 @@ CounterDescription:
 	db   "Returns a physical"
 	next "attack double.@"
 
-MirrorCoatDescription:
-	db   "Returns a special"
-	next "attack double.@"
+FuryCutterDescription:
+	db   "Successive hits"
+	next "raise power.@"
 
 SpikesDescription:
 	db   "Hurts foes when"
@@ -998,12 +998,12 @@ WorkUpDescription:
 	db   "Raises ATTACK"
 	next "and SPCL. ATK.@"
 
-PainSplitDescription:
-	db   "Adds user & foe's"
-	next "HPs. Shares total.@"
+MirrorCoatDescription:
+	db   "Counters a SPCL."
+	next "ATK move double.@"
 
 MagnitudeDescription:
-	db   "A Ground attack"
+	db   "A GROUND attack"
 	next "with random power.@"
 
 MegahornDescription:

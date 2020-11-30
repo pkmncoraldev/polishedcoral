@@ -15,7 +15,7 @@ LakeOnwa_MapScriptHeader:
 	warp_def 22,  5, 1, LAKE_ONWA_NAME_RATER_HOUSE
 	warp_def 16, 11, 1, LAKE_ONWA_ITEM_HOUSE
 	warp_def 17, 17, 1, LAKE_ONWA_POKECENTER
-	warp_def  1, 55, 3, ROUTE_8_GATE
+	warp_def  3, 55, 3, ROUTE_8_GATE
 
 	db 0 ; coord events
 

@@ -882,15 +882,24 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr z, .DontOllie
 	call .CheckNPCFarAhead
 	and a
-	jp z, .DontOllieSound
+	jr z, .DontOllieSound
 	cp 2
-	jp z, .DontOllieSound
+	jr z, .DontOllieSound
 	call .CheckLandPermsFarAhead
-	jp c, .DontOllieSound
+	jr c, .DontOllieSound
+	call .CheckNoJumpTile
+	jr nc, .DontOllieSound
+	ld a, [wPlayerStandingTile]
+	ld hl, SkateboardTiles
+	ld de, 1
+	call IsInArray
+	jr nc, .DontOllieSound
 	farcall CheckFacingEdgeofMap
 	jr nc, .DontOllieSound
 	ld a, [wLastWalkingDirection]
 	ld [wWalkingDirection], a
+	xor a
+	ld [wPlayerStandingTile], a
 	jr .DoJump
 
 .data_8021e
@@ -1570,6 +1579,23 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret
 ; 803da
 
+.CheckNoJumpTile: ; 803d3
+; Return 0 if tile a is land. Otherwise, return carry.
+
+	ld a, [wWalkingTile]
+;	call GetTileCollision
+	cp COLL_NO_OLLIE
+	jr z, .CheckNoJumpTileNope
+	cp COLL_CAVE
+	jr z, .CheckNoJumpTileNope
+	cp COLL_ROCK_CLIMB
+	jr z, .CheckNoJumpTileNope
+	scf
+	ret
+.CheckNoJumpTileNope
+	xor a
+	ret
+	
 .CheckSurfable: ; 803da
 ; Return 0 if tile a is water, or 1 if land.
 ; Otherwise, return carry.

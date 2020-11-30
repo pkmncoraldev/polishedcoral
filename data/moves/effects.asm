@@ -1850,15 +1850,15 @@ Encore:
 	cantusefakeout
 	endmove
 
-PainSplit:
-	checkobedience
-	usedmovetext
-	doturn
-	pressure
-	checkhit
-	painsplit
-	cantusefakeout
-	endmove
+;PainSplit:
+;	checkobedience
+;	usedmovetext
+;	doturn
+;	pressure
+;	checkhit
+;	painsplit
+;	cantusefakeout
+;	endmove
 
 Sketch:
 	checkobedience
@@ -2390,6 +2390,29 @@ MirrorCoat:
 	checkfaint
 	postfainteffects
 	posthiteffects
+	cantusefakeout
+	endmove
+
+FuryCutter:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	furycutter
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	pickpocket
 	cantusefakeout
 	endmove
 	

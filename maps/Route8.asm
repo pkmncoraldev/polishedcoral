@@ -12,7 +12,7 @@ Route8_MapScriptHeader:
 	db 0 ; coord events
 
 	db 4 ; bg events
-	signpost 35, 45, SIGNPOST_READ, Route8Sign
+	signpost 34, 45, SIGNPOST_READ, Route8Sign
 	signpost 10, 22, SIGNPOST_READ, Route8Flowers
 	signpost 11, 22, SIGNPOST_READ, Route8Flowers
 	signpost 12, 16, SIGNPOST_READ, Route8FlowerHouseSign

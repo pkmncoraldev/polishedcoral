@@ -120,7 +120,7 @@ EvolutionMoves::
 	db NO_MOVE      ; MAREEP
 	db NO_MOVE      ; FLAFFY
 	db THUNDERPUNCH      ; AMPHAROS
-	db NO_MOVE      ; BELLOSSOM
+	db ENERGY_BALL      ; BELLOSSOM
 	db NO_MOVE      ; MARILL
 	db NO_MOVE      ; AZUMARILL
 	db NO_MOVE      ; SUDOWOODO
@@ -141,7 +141,7 @@ EvolutionMoves::
 	db NO_MOVE      ; HERACROSS
 	db NO_MOVE      ; SNEASEL
 	db NO_MOVE      ; TEDDIURSA
-	db NO_MOVE      ; URSARING
+	db BULK_UP      ; URSARING
 	db NO_MOVE      ; SLUGMA
 	db NO_MOVE      ; MAGCARGO
 	db NO_MOVE      ; SWINUB
@@ -163,7 +163,7 @@ EvolutionMoves::
 	db NO_MOVE      ; PUPITAR
 	db NO_MOVE      ; TYRANITAR
 	db NO_MOVE      ; SHROOMISH
-	db NO_MOVE      ; BRELOOM
+	db MACH_PUNCH      ; BRELOOM
 	db NO_MOVE      ; ARON
 	db NO_MOVE      ; LAIRON
 	db NO_MOVE      ; AGGRON
@@ -197,7 +197,7 @@ EvolutionMoves::
 	db NO_MOVE      ; DWEBBLE
 	db NO_MOVE      ; CRUSTLE
 	db NO_MOVE      ; JOLTIK
-	db NO_MOVE      ; GALVANTULA
+	db LEECH_LIFE      ; GALVANTULA
 	db NO_MOVE      ; LARVESTA
 	db NO_MOVE      ; VOLCARONA
 	db NO_MOVE      ; SYLVEON

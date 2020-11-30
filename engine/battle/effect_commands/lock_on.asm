@@ -40,5 +40,6 @@ BattleCommand_lockon:
 	jp PrintDidntAffect
 
 MindReaderUsers:
-	db STANTLER
+	db SHROOMISH
+	db BRELOOM
 	db -1

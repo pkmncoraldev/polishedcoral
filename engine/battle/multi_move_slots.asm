@@ -1885,17 +1885,21 @@ ScratchUsers:
 	db NIDORAN_F
 	db NIDORINA
 	db NIDOQUEEN
+	db TEDDIURSA
+	db URSARING
 	db -1
 	
 WithdrawUsers:
 	db SQUIRTLE
 	db WARTORTLE
 	db BLASTOISE
+	db DWEBBLE
+	db CRUSTLE
 	db -1
 
 HardenUsers:
-	db SMEARGLE
-	db MEOWTH
+	db ONIX
+	db STEELIX
 	db -1
 
 TailWhipUsers:
@@ -1911,6 +1915,8 @@ TailWhipUsers:
 	db NIDOQUEEN
 	db WOOPER
 	db QUAGSIRE
+	db MARILL
+	db AZUMARILL
 	db -1
 	
 IronDefenseUsers:
@@ -1951,6 +1957,10 @@ CometPunchUsers:
 MoonlightUsers:
 	db CLEFAIRY
 	db CLEFABLE
+	db ODDISH
+	db GLOOM
+	db VILEPLUME
+	db BELLOSSOM
 	db -1
 	
 MorningSunUsers:
@@ -1962,7 +1972,8 @@ BlockUsers:
 	db -1
 	
 SpiderWebUsers:
-	db SMEARGLE
+	db JOLTIK
+	db GALVANTULA
 	db -1
 	
 FeatherDanceUsers:
@@ -2011,6 +2022,26 @@ RockPolishUsers:
 	db GEODUDE
 	db GRAVELER
 	db GOLEM
+	db DWEBBLE
+	db CRUSTLE
+	db ONIX
+	db STEELIX
+	db -1
+	
+GrowthUsers:
+	db BULBASAUR
+	db IVYSAUR
+	db VENUSAUR
+	db ODDISH
+	db GLOOM
+	db VILEPLUME
+	db BELLOSSOM
+	db COTTONEE
+	db WHIMSICOTT
+	db -1
+	
+HealBellUsers:
+	db MILTANK
 	db -1
 	
 TackleNames:

@@ -1,6 +1,7 @@
 CutGrassBlockPointers:
 ; Which tileset are we in?
 	dbw TILESET_GLINT, .glint
+	dbw TILESET_STARGLOW, .glint
 	dbw TILESET_MOUNTAIN, .glint
 	dbw TILESET_SPOOKY, .glint
 	dbw TILESET_JUNGLE, .glint ;TODO - Jungle tileset cut stuff

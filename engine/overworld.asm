@@ -241,6 +241,8 @@ LoadEmoteGFX::
 	ld a, [wTileset]
 	cp TILESET_GLINT
 	jp z, .outdoor
+	cp TILESET_STARGLOW
+	jp z, .outdoor
 	cp TILESET_JUNGLE
 	jp z, .outdoor
 	cp TILESET_SPOOKY

@@ -1,21 +1,21 @@
-	db  50,  20,  55,  30,  25,  25
+	db  55,  85,  50,  75,  40,  50
 	;   hp  atk  def  spd  sat  sdf
 
-	db BUG, BUG
+	db NORMAL, FLYING
 	db 120 ; catch rate
-	db 72 ; base exp
-	db NO_ITEM ; item 1
-	db NO_ITEM ; item 2
+	db 124 ; base exp
+	db SITRUS_BERRY ; item 1
+	db SITRUS_BERRY ; item 2
 	dn FEMALE_50, 2 ; gender, step cycles to hatch
-	dn 5, 5 ; frontpic dimensions
-	db SHED_SKIN ; ability 1
-	db SHED_SKIN ; ability 2
-	db SHED_SKIN ; hidden ability
+	dn 6, 6 ; frontpic dimensions
+	db KEEN_EYE ; ability 1
+	db SKILL_LINK ; ability 2
+	db PICKUP ; hidden ability
 	db MEDIUM_FAST ; growth rate
-	dn INSECT, INSECT ; egg groups
+	dn AVIAN, AVIAN ; egg groups
 
 	; ev_yield
-	ev_yield   0,   0,   2,   0,   0,   0
+	ev_yield   0,   2,   0,   0,   0,   0
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm

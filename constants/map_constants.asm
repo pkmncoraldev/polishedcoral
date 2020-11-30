@@ -105,7 +105,7 @@ MAP_NONE   EQU 0
 	map_const STARGLOW_POKECENTER,                         6,  4 ;  7
 	map_const STARGLOW_MART,							   6,  4 ;  8
 	map_const STARGLOW_GYM,                                6, 11 ;  9
-	map_const ROUTE_4,                                    23, 12 ; 10
+	map_const ROUTE_4,                                    22, 12 ; 10
 	map_const HUNTERS_THICKET,                            15, 12 ; 11
 	map_const ROUTE_5,                                    18, 28 ; 12
 	map_const ROUTE_5_DEEP,                                8,  8 ; 13

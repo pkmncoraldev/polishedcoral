@@ -48,8 +48,7 @@ CryHeaders::
 	mon_cry CRY_CLEFAIRY,    $0cc,  $081 ; Clefairy
 	mon_cry CRY_CLEFAIRY,    $0aa,  $0a0 ; Clefable
 	mon_cry CRY_PIDGEY,      $0ff,  $0b5 ; Jigglypuff
-	mon_cry     WIGGLYTUFF,     FroslassDEDData ; Bulbasaur
-;	mon_cry CRY_PIDGEY,      $068,  $0e0 ; Wigglytuff
+	mon_cry CRY_PIDGEY,      $068,  $0e0 ; Wigglytuff
 	mon_cry CRY_SQUIRTLE,    $0e0,  $100 ; Zubat
 	mon_cry CRY_SQUIRTLE,    $0fa,  $100 ; Golbat
 	mon_cry CRY_ODDISH,      $0dd,  $081 ; Oddish
@@ -221,9 +220,9 @@ CryHeaders::
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Sylveon
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Noibat
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Noivern
-	mon_cry CRY_BULBASAUR,   $080,  $081 ; Pikipek
-	mon_cry CRY_BULBASAUR,   $080,  $081 ; Trumbeak
-	mon_cry CRY_BULBASAUR,   $080,  $081 ; Toucannon
+	mon_cry     PIKIPEK,   PikipekDEDData ; Pikipek
+	mon_cry    TRUMBEAK,  TrumbeakDEDData ; Trumbeak
+	mon_cry   TOUCANNON, ToucannonDEDData ; Toucannon
 	mon_cry CRY_RAICHU,      $0ee,  $088 ; Raichu_A
 	mon_cry CRY_EXEGGUTOR,   $000,  $100 ; Exeggutor_A
 	mon_cry CRY_ODDISH,      $04f,  $0e0 ; Marowak_A

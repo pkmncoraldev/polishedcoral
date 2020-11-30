@@ -438,8 +438,8 @@ wPlayerToxicCount:: ds 1
 wPlayerDisableCount:: ds 1
 wPlayerEncoreCount:: ds 1
 wPlayerPerishCount:: ds 1
+wPlayerFuryCutterCount:: ds 1
 wPlayerProtectCount:: ds 1
-	ds 1
 
 wEnemyAbility:: ds 1
 wEnemyRolloutCount:: ds 1
@@ -448,8 +448,9 @@ wEnemyToxicCount:: ds 1
 wEnemyDisableCount:: ds 1
 wEnemyEncoreCount:: ds 1
 wEnemyPerishCount:: ds 1
+wEnemyFuryCutterCount:: ds 1
 wEnemyProtectCount:: ds 1
-	ds 1
+
 wBattleSubStatusWRAMEnd::
 
 wPlayerDamageTaken:: ds 2

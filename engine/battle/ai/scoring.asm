@@ -357,13 +357,12 @@ AI_Smart: ; 386be
 	dbw EFFECT_DISABLE,           AI_Smart_Disable
 	dbw EFFECT_COUNTER,           AI_Smart_Counter
 	dbw EFFECT_ENCORE,            AI_Smart_Encore
-	dbw EFFECT_PAIN_SPLIT,        AI_Smart_PainSplit
 	dbw EFFECT_SLEEP_TALK,        AI_Smart_SleepTalk
 	dbw EFFECT_DESTINY_BOND,      AI_Smart_DestinyBond
 	dbw EFFECT_REVERSAL,          AI_Smart_Reversal
 	dbw EFFECT_HEAL_BELL,         AI_Smart_HealBell
 	dbw EFFECT_PRIORITY_HIT,      AI_Smart_PriorityHit
-;	dbw EFFECT_THIEF,             AI_Smart_Thief
+	dbw EFFECT_FURY_CUTTER,       AI_Smart_FuryCutter
 	dbw EFFECT_MEAN_LOOK,         AI_Smart_MeanLook
 	dbw EFFECT_FLAME_WHEEL,       AI_Smart_FlameWheel
 	dbw EFFECT_FLARE_BLITZ,       AI_Smart_FlameWheel
@@ -606,7 +605,11 @@ AI_Smart_EvasionUp: ; 388d4
 	cp b
 	jr c, .asm_38936
 
-; Greatly encourage this move if the player is in the middle of Rollout.
+; Greatly encourage this move if the player is in the middle of Fury Cutter or Rollout.
+	ld a, [wPlayerFuryCutterCount]
+	and a
+	jr nz, .asm_388ef
+
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_ROLLOUT, a
 	jr nz, .asm_388ef
@@ -732,7 +735,11 @@ AI_Smart_AccuracyDown: ; 38985
 	cp b
 	jr c, .asm_389e4
 
-; Greatly encourage this move if the player is in the middle of Rollout.
+; Greatly encourage this move if the player is in the middle of Fury Cutter or Rollout.
+	ld a, [wPlayerFuryCutterCount]
+	and a
+	jr nz, .asm_3899d
+
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_ROLLOUT, a
 	jr nz, .asm_3899d
@@ -1243,28 +1250,6 @@ AI_Smart_Encore: ; 38c3b
 ; 38ca4
 
 
-AI_Smart_PainSplit: ; 38ca4
-; Discourage this move if [enemy's current HP * 2 > player's current HP].
-
-	push hl
-	ld hl, wEnemyMonHP
-	ld b, [hl]
-	inc hl
-	ld c, [hl]
-	sla c
-	rl b
-	ld hl, wBattleMonHP + 1
-	ld a, [hld]
-	cp c
-	ld a, [hl]
-	sbc b
-	pop hl
-	ret nc
-	inc [hl]
-	ret
-; 38cba
-
-
 AI_Smart_SleepTalk: ; 38cba
 ; Greatly encourage this move if enemy is fast asleep.
 ; Greatly discourage this move otherwise.
@@ -1608,6 +1593,10 @@ AI_Smart_Protect: ; 38ed2
 	bit SUBSTATUS_LOCK_ON, a
 	jr nz, .asm_38f14
 
+	ld a, [wPlayerFuryCutterCount]
+	cp 3
+	jr nc, .asm_38f0d
+	
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_CHARGED, a
 	jr nz, .asm_38f0d
@@ -1805,6 +1794,28 @@ AI_Smart_Endure: ; 38fac
 	ret
 ; 38fdb
 
+AI_Smart_FuryCutter:
+; Encourage this move based on Fury Cutter's count.
+
+	ld a, [wEnemyFuryCutterCount]
+	and a
+	jr z, .end
+	dec [hl]
+
+	cp 2
+	jr c, .end
+	dec [hl]
+	dec [hl]
+
+	cp 3
+	jr c, .end
+	dec [hl]
+	dec [hl]
+	dec [hl]
+
+.end
+
+	; fallthrough
 
 AI_Smart_Rollout:
 ; 80% chance to discourage this move if the enemy is in love, confused, or paralyzed.

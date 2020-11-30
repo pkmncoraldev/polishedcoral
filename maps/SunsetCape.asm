@@ -98,7 +98,6 @@ SunsetCapeNpc3:
 	waitbutton
 	spriteface SUNSET_CAPE_NPC_3, DOWN
 	closetext
-	applyonemovement PLAYER, hide_person
 	end
 	
 SunsetCapeNpc4:

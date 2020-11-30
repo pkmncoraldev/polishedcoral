@@ -4,7 +4,7 @@
 	const KARATE_CHOP  ; $02
 	const DOUBLE_SLAP  ; $03
 	const BONE_CLUB    ; $04
-	const DRAGON_CLAW  ; $05 -
+	const DRAGON_CLAW  ; $05
 	const PAY_DAY      ; $06
 	const FIRE_PUNCH   ; $07
 	const ICE_PUNCH    ; $08
@@ -26,7 +26,7 @@
 	const HEX		   ; $18
 	const FLARE_BLITZ  ; $19
 	const STONE_EDGE   ; $1a
-	const FOCUS_BLAST  ; $1b -
+	const FOCUS_BLAST  ; $1b
 	const BULLET_SEED  ; $1c
 	const HEADBUTT     ; $1d
 	const HORN_ATTACK  ; $1e
@@ -73,7 +73,7 @@
 	const ABSORB       ; $47
 	const MEGA_DRAIN   ; $48
 	const LEECH_SEED   ; $49
-	const GROWTH       ; $4a -
+	const GROWTH       ; $4a - COMBINE
 	const RAZOR_LEAF   ; $4b
 	const SOLAR_BEAM   ; $4c
 	const POISONPOWDER ; $4d
@@ -166,7 +166,7 @@
 	const SUBSTITUTE   ; $a4
 	const GIGA_IMPACT  ; $a5
 	const SKETCH       ; $a6
-	const DRAIN_PUNCH  ; $a7 - 
+	const DRAIN_PUNCH  ; $a7
 	const ACROBATICS   ; $a8
 	const WILL_O_WISP  ; $a9
 	const ZEN_HEADBUTT ; $aa
@@ -189,7 +189,7 @@
 	const BELLY_DRUM   ; $bb
 	const SLUDGE_BOMB  ; $bc
 	const MUD_SLAP     ; $bd
-	const SHELL_SMASH  ; $be -
+	const SHELL_SMASH  ; $be
 	const SPIKES       ; $bf
 	const ZAP_CANNON   ; $c0
 	const FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE   	 ; $c1
@@ -214,12 +214,12 @@
 	const MEAN_LOOK_BLOCK_SPIDER_WEB    		; $d4
 	const ATTRACT      ; $d5 - REMOVE
 	const SLEEP_TALK   ; $d6
-	const HEAL_BELL    ; $d7 - REMOVE
+	const HEAL_BELL    ; $d7
 	const RETURN       ; $d8
 	const QUIVER_DANCE ; $d9
 	const BUG_BUZZ     ; $da
 	const SAFEGUARD    ; $db
-	const PAIN_SPLIT   ; $dc - REMOVE
+	const FURY_CUTTER  ; $dc
 	const FAKE_OUT	   ; $dd
 	const MAGNITUDE    ; $de
 	const DYNAMICPUNCH ; $df
@@ -242,12 +242,12 @@
 	const RAIN_DANCE   ; $f0
 	const SUNNY_DAY    ; $f1
 	const CRUNCH       ; $f2
-	const MIRROR_COAT  ; $f3 - REMOVE
+	const MIRROR_COAT  ; $f3 -
 	const NASTY_PLOT   ; $f4
 	const EXTREMESPEED ; $f5
 	const ANCIENTPOWER ; $f6
 	const SHADOW_BALL  ; $f7
-	const FUTURE_SIGHT ; $f8 -
+	const FUTURE_SIGHT ; $f8
 	const ROCK_SMASH   ; $f9
 	const WHIRLPOOL    ; $fa
 	const DARK_PULSE   ; $fb

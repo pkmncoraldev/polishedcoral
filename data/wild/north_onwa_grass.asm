@@ -4,56 +4,56 @@
 	map_id ROUTE_1
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
-	db 4, WIGGLYTUFF		;30%
-	db 3, WIGGLYTUFF		;30%
-	db 3, WIGGLYTUFF		;20%
-	db 4, WIGGLYTUFF		;10%
-	db 3, WIGGLYTUFF		;5%
-	db 4, WIGGLYTUFF		;4%
-	db 5, WIGGLYTUFF		;1%
+	db 4, PIKIPEK		;30%
+	db 3, LEDYBA		;30%
+	db 4, PIDGEY		;20%
+	db 3, RATTATA		;10%
+	db 3, RATTATA		;5%
+	db 4, RATTATA		;4%
+	db 5, RATTATA		;1%
 	; day
-	db 4, WIGGLYTUFF		;30%
-	db 3, WIGGLYTUFF		;30%
-	db 3, WIGGLYTUFF		;20%
-	db 4, WIGGLYTUFF		;10%
-	db 3, WIGGLYTUFF		;5%
-	db 4, WIGGLYTUFF		;4%
-	db 5, WIGGLYTUFF		;1%
+	db 4, PIKIPEK		;30%
+	db 3, LEDYBA		;30%
+	db 4, PIDGEY		;20%
+	db 3, RATTATA		;10%
+	db 3, RATTATA		;5%
+	db 4, RATTATA		;4%
+	db 5, RATTATA		;1%
 	; nite
-	db 4, WIGGLYTUFF		;30%
-	db 3, WIGGLYTUFF		;30%
-	db 3, WIGGLYTUFF		;20%
-	db 4, WIGGLYTUFF		;10%
-	db 3, WIGGLYTUFF		;5%
-	db 4, WIGGLYTUFF		;4%
-	db 5, WIGGLYTUFF		;1%
+	db 4, PIKIPEK		;30%
+	db 3, LEDYBA		;30%
+	db 4, PIDGEY		;20%
+	db 3, RATTATA		;10%
+	db 3, RATTATA		;5%
+	db 4, RATTATA		;4%
+	db 5, GASTLY		;1%
 	
 	map_id ROUTE_2
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 5, BUIZEL		;30%
 	db 5, GROWLITHE		;30%
-	db 5, PIDGEY		;20%
-	db 4, LEDYBA		;10%
-	db 5, RATTATA		;5%
-	db 6, RATTATA		;4%
+	db 5, COTTONEE		;20%
+	db 5, COTTONEE		;10%
+	db 5, PIDGEY		;5%
+	db 6, PIDGEY		;4%
 	db 5, LEDYBA		;1%
 	; day
 	db 5, BUIZEL		;30%
 	db 5, GROWLITHE		;30%
-	db 5, PIDGEY		;20%
-	db 4, LEDYBA		;10%
-	db 5, RATTATA		;5%
-	db 6, RATTATA		;4%
+	db 5, COTTONEE		;20%
+	db 5, COTTONEE		;10%
+	db 5, PIDGEY		;5%
+	db 6, PIDGEY		;4%
 	db 5, LEDYBA		;1%
 	; nite
 	db 5, BUIZEL		;30%
 	db 5, GROWLITHE		;30%
-	db 5, PIDGEY		;20%
-	db 4, LEDYBA		;10%
-	db 5, RATTATA		;5%
-	db 6, RATTATA		;4%
-	db 5, GASTLY		;1%
+	db 5, COTTONEE		;20%
+	db 5, COTTONEE		;10%
+	db 5, PIDGEY		;5%
+	db 6, PIDGEY		;4%
+	db 5, LEDYBA		;1%
 	
 	map_id DAYBREAK_GROTTO_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -277,7 +277,7 @@
 	db 12, STANTLER			;30%
 	db 12, TEDDIURSA		;30%
 	db 10, EEVEE			;20%
-	db 13, SHROOMISH		;10%
+	db 13, ODDISH			;10%
 	db 12, PIKACHU			;5%
 	db 12, SCYTHER			;4%
 	db 15, SCYTHER			;1%
@@ -285,7 +285,7 @@
 	db 12, STANTLER			;30%
 	db 12, TEDDIURSA		;30%
 	db 10, EEVEE			;20%
-	db 13, SHROOMISH		;10%
+	db 13, ODDISH			;10%
 	db 12, PIKACHU			;5%
 	db 12, SCYTHER			;4%
 	db 15, SCYTHER			;1%
@@ -293,7 +293,7 @@
 	db 12, STANTLER			;30%
 	db 12, TEDDIURSA		;30%
 	db 10, EEVEE			;20%
-	db 13, SHROOMISH		;10%
+	db 13, ODDISH			;10%
 	db 12, PIKACHU			;5%
 	db 12, SCYTHER			;4%
 	db 12, GASTLY			;1%

@@ -4,17 +4,20 @@ Route4_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 6, 39, 1, ROUTE_4_EVENTIDE_GATE
-	warp_def 7, 39, 2, ROUTE_4_EVENTIDE_GATE
+	warp_def 16, 37, 1, ROUTE_4_EVENTIDE_GATE
+	warp_def 17, 37, 2, ROUTE_4_EVENTIDE_GATE
 
 	db 0 ; coord events
 
 	db 2 ; bg events
 	signpost 7, 2, SIGNPOST_READ, Route4Sign
-	signpost 5, 38, SIGNPOST_READ, Route4ForestSign
+	signpost 15, 36, SIGNPOST_READ, Route4ForestSign
 
-	db 9 ; object events
-	person_event SPRITE_BIG_SNORLAX, 10, 20, SPRITEMOVEDATA_SNORLAX, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route4Snorlax, EVENT_FOUGHT_SNORLAX_ROUTE_4
+	db 12 ; object events
+	person_event SPRITE_BIG_SNORLAX,  9, 20, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route4Snorlax, EVENT_FOUGHT_SNORLAX_ROUTE_4
+	person_event SPRITE_BIG_SNORLAX,  9, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route4Snorlax, EVENT_FOUGHT_SNORLAX_ROUTE_4
+	person_event SPRITE_BIG_SNORLAX, 11, 20, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route4Snorlax, EVENT_FOUGHT_SNORLAX_ROUTE_4
+	person_event SPRITE_BIG_SNORLAX, 11, 21, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route4Snorlax, EVENT_FOUGHT_SNORLAX_ROUTE_4
 	person_event SPRITE_LASS, 7, 7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute4_1, -1
 	person_event SPRITE_FISHER, 11, 12, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRoute4_2, -1
 	person_event SPRITE_FISHER, 16, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRoute4_3, -1
@@ -25,7 +28,10 @@ Route4_MapScriptHeader:
 	fruittree_event 16,  8, FRUITTREE_ROUTE_4, CHERI_BERRY
 
 	const_def 1 ; object constants
-	const ROUTE4SNORLAX
+	const ROUTE4SNORLAX1
+	const ROUTE4SNORLAX2
+	const ROUTE4SNORLAX3
+	const ROUTE4SNORLAX4
 	const ROUTE4LASS
 	const ROUTE4FISHER1
 	const ROUTE4FISHER2
@@ -171,7 +177,10 @@ Route4NoFlute:
 	end
 	
 BeatSnorlaxRoute4:
-	disappear ROUTE4SNORLAX
+	disappear ROUTE4SNORLAX1
+	disappear ROUTE4SNORLAX2
+	disappear ROUTE4SNORLAX3
+	disappear ROUTE4SNORLAX4
 	reloadmapafterbattle
 	opentext
 	writetext Route4SnorlaxTextSnorlaxGone

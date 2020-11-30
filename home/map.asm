@@ -1100,6 +1100,8 @@ LoadTileset:: ; 2821
 	ld a, [wTileset]
 	cp TILESET_GLINT
 	jr z, .load_roof
+	cp TILESET_STARGLOW
+	jr z, .load_roof
 	cp TILESET_SPOOKY
 	jr z, .load_roof
 	cp TILESET_GROVE

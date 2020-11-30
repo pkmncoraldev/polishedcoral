@@ -4416,75 +4416,62 @@ BattleCommand_encore: ; 35864
 ; 35926
 
 
-BattleCommand_painsplit:
-	call CheckHiddenOpponent
-	jr nz, .failed
+BattleCommand_furycutter:
+; furycutter
 
-	call AnimateCurrentMove
-
-	; Get HP
-	ld a, [hBattleTurn]
+	ld hl, wPlayerFuryCutterCount
+	ldh a, [hBattleTurn]
 	and a
-	ld de, wBattleMonHP + 1
-	ld hl, wEnemyMonHP + 1
-	jr z, .got_hp
-	push de
-	ld d, h
-	ld e, l
-	pop hl
+	jr z, .go
+	ld hl, wEnemyFuryCutterCount
 
-.got_hp
-	; Set bc to [de] - [hl] (user HP - target HP)
-	ld a, [de]
-	sub [hl]
-	ld c, a
-	dec de
+.go
+	ld a, [wAttackMissed]
+	and a
+	jp nz, ResetFuryCutterCount
+
+	inc [hl]
+
+; Damage capped at 5 turns' worth (16x).
+	ld a, [hl]
+	ld b, a
+	cp 6
+	jr c, .checkdouble
+	ld b, 5
+
+.checkdouble
+	dec b
+	ret z
+
+; Double the damage
+	ld hl, wCurDamage + 1
+	sla [hl]
 	dec hl
-	ld a, [de]
-	sbc [hl]
-	jr c, .target_has_more
-	ld b, a
-	or c
-	jr z, .done ; do nothing, they're equal
+	rl [hl]
+	jr nc, .checkdouble
 
-	; User has more
-.share
-	; updates HP anim buffers
-	push bc
-	farcall GetMaxHP
-	pop bc
-	srl b
-	rr c
-	push bc
-	jr nc, .even_share
-	inc bc ; HP difference is odd, so round down result (HP decrease is done first)
-.even_share
-	farcall SubtractHPFromUser
-	call UpdateUserInParty
-	call SwitchTurn
-	farcall GetMaxHP
-	pop bc
-	farcall RestoreHP
-	call UpdateUserInParty
-	call SwitchTurn
-.done
-	ld hl, SharedPainText ; text is turn agnostic, so turn swap if target>user is OK
-	jp StdBattleTextBox
+; No overflow
+	ld a, $ff
+	ld [hli], a
+	ld [hl], a
+	ret
 
-.target_has_more
-	cpl
-	ld b, a
-	ld a, c
-	cpl
-	ld c, a
-	inc bc
-	call SwitchTurn
-	call .share
-	jp SwitchTurn
+ResetFuryCutterCount:
+	push hl
 
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed
+	ld hl, wPlayerFuryCutterCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .reset
+	ld hl, wEnemyFuryCutterCount
+
+.reset
+	xor a
+	ld [hl], a
+
+	pop hl
+	ret
+
 
 
 BattleCommand_sketch: ; 35a74

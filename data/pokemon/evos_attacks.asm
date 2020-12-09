@@ -173,18 +173,33 @@ BlastoiseEvosAttacks:
 WeedleEvosAttacks:
 	db EVOLVE_LEVEL, 7, KAKUNA
 	db  0 ; no more evolutions
-	db  0, STRUGGLE
+	db 1, POISON_STING
+	db 1, STRING_SHOT
 	db  0 ; no more level-up moves
 
 KakunaEvosAttacks:
 	db EVOLVE_LEVEL, 10, BEEDRILL
 	db  0 ; no more evolutions
-	db  0, STRUGGLE
+	db 1, HARDEN
+	db 7, HARDEN
 	db  0 ; no more level-up moves
 
 BeedrillEvosAttacks:
 	db  0 ; no more evolutions
-	db  0, STRUGGLE
+	db 1, TWINEEDLE
+	db 10, TWINEEDLE
+	db 11, FURY_ATTACK
+	db 14, RAGE
+	db 17, PURSUIT
+	db 20, FOCUS_ENERGY
+	db 23, VENOSHOCK
+	db 26, ASSURANCE
+	db 29, TOXIC_SPIKES
+	db 31, PIN_MISSILE
+	db 34, POISON_JAB
+	db 37, AGILITY
+	db 40, X-SCISSOR
+	db 43, OUTRAGE
 	db  0 ; no more level-up moves
 
 PidgeyEvosAttacks:

@@ -173,33 +173,18 @@ BlastoiseEvosAttacks:
 WeedleEvosAttacks:
 	db EVOLVE_LEVEL, 7, KAKUNA
 	db  0 ; no more evolutions
-	db 1, POISON_STING
-	db 1, STRING_SHOT
+	db  0, STRUGGLE
 	db  0 ; no more level-up moves
 
 KakunaEvosAttacks:
 	db EVOLVE_LEVEL, 10, BEEDRILL
 	db  0 ; no more evolutions
-	db 1, HARDEN
-	db 7, HARDEN
+	db  0, STRUGGLE
 	db  0 ; no more level-up moves
 
 BeedrillEvosAttacks:
 	db  0 ; no more evolutions
-	db 1, TWINEEDLE
-	db 10, TWINEEDLE
-	db 11, FURY_ATTACK
-	db 14, RAGE
-	db 17, PURSUIT
-	db 20, FOCUS_ENERGY
-	db 23, VENOSHOCK
-	db 26, ASSURANCE
-	db 29, TOXIC_SPIKES
-	db 31, PIN_MISSILE
-	db 34, POISON_JAB
-	db 37, AGILITY
-	db 40, X-SCISSOR
-	db 43, OUTRAGE
+	db  0, STRUGGLE
 	db  0 ; no more level-up moves
 
 PidgeyEvosAttacks:
@@ -1032,7 +1017,20 @@ StarmieEvosAttacks:
 ScytherEvosAttacks:
 	db EVOLVE_TRADE, METAL_COAT, SCIZOR
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, QUICK_ATTACK
+	db 1, LEER_TAIL_WHIP
+	db 5, FOCUS_ENERGY
+	db 9, PURSUIT
+	db 13, FALSE_SWIPE
+	db 17, AGILITY_ROCK_POLISH
+	db 21, WING_ATTACK
+	db 25, FURY_CUTTER
+	db 29, SLASH
+	db 33, DOUBLE_HIT
+	db 37, DOUBLE_TEAM
+	db 41, AIR_SLASH
+	db 45, X-SCISSOR
+	db 49, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
@@ -1086,25 +1084,70 @@ EeveeEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_NITE, UMBREON
 	db EVOLVE_LOCATION, EVENTIDE_FOREST, LEAFEON
 	db EVOLVE_LOCATION, SUNSET_BAY, GLACEON
-	db EVOLVE_LOCATION, GLINT_GROVE, SYLVEON
-	
+	db EVOLVE_LOCATION, GLINT_GROVE, SYLVEON	
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 5, LEER_TAIL_WHIP
+	db 9, SAND_ATTACK_SMOKESCREEN
+	db 13, QUICK_ATTACK
+	db 17, BITE
+	db 21, SWIFT
+	db 25, TAKE_DOWN
+	db 29, CHARM
+	db 33, BATON_PASS
+	db 37, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 VaporeonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 5, LEER_TAIL_WHIP
+	db 9, SAND_ATTACK_SMOKESCREEN
+	db 13, QUICK_ATTACK
+	db 17, BITE
+	db 21, BUBBLE_BEAM
+	db 25, AURORA_BEAM
+	db 29, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 33, HAZE
+	db 37, SURF
+	db 41, DOUBLE_EDGE
+	db 45, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 JolteonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 5, LEER_TAIL_WHIP
+	db 9, SAND_ATTACK_SMOKESCREEN
+	db 13, QUICK_ATTACK
+	db 17, DOUBLE_KICK
+	db 21, THUNDER_FANG
+	db 25, PIN_MISSILE
+	db 29, AGILITY_ROCK_POLISH
+	db 33, THUNDER_WAVE
+	db 37, THUNDERBOLT
+	db 41, DOUBLE_EDGE
+	db 45, THUNDER
 	db 0 ; no more level-up moves
 
 FlareonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 5, LEER_TAIL_WHIP
+	db 9, SAND_ATTACK_SMOKESCREEN
+	db 13, QUICK_ATTACK
+	db 17, BITE
+	db 21, FIRE_FANG
+	db 25, FIRE_SPIN
+	db 29, SCARY_FACE_COTTON_SPORE
+	db 33, SMOG
+	db 37, FLAMETHROWER
+	db 41, DOUBLE_EDGE
+	db 45, FLARE_BLITZ
 	db 0 ; no more level-up moves
 
 PorygonEvosAttacks:

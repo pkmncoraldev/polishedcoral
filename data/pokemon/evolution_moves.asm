@@ -91,9 +91,9 @@ EvolutionMoves::
 	db NO_MOVE      ; LAPRAS
 	db NO_MOVE      ; DITTO
 	db NO_MOVE      ; EEVEE
-	db NO_MOVE      ; VAPOREON
-	db NO_MOVE      ; JOLTEON
-	db NO_MOVE      ; FLAREON
+	db WATER_GUN    ; VAPOREON
+	db THUNDERSHOCK ; JOLTEON
+	db EMBER        ; FLAREON
 	db NO_MOVE      ; PORYGON
 	db NO_MOVE      ; SNORLAX
 	db NO_MOVE      ; DRATINI

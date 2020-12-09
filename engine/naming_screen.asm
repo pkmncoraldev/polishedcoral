@@ -586,9 +586,13 @@ NamingScreenJoypadLoop: ; 11915
 	hlcoord 5, 2
 	call PlaceString
 ;	call DelayFrame
+	ld de, MUSIC_NONE
+	call PlayMusic
 	ld a, CLEFAIRY
 	call PlayCry
 	call WaitSFX
+	ld de, MUSIC_LASS_ENCOUNTER
+	call PlayMusic
 	
 .endcont
 	ld hl, wJumptableIndex

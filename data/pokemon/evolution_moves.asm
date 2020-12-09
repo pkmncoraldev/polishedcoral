@@ -38,7 +38,7 @@ EvolutionMoves::
 	db NO_MOVE      ; GLOOM
 	db NO_MOVE      ; VILEPLUME
 	db NO_MOVE      ; MEOWTH
-	db NO_MOVE      ; PERSIAN
+	db SWIFT        ; PERSIAN
 	db NO_MOVE      ; PSYDUCK
 	db NO_MOVE      ; GOLDUCK
 	db NO_MOVE      ; GROWLITHE

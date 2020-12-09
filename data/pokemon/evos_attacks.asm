@@ -589,11 +589,36 @@ MeowthEvosAttacks:
 	db EVOLVE_LEVEL, 28, PERSIAN
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 6, BITE
+	db 10, FAKE_OUT
+	db 15, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
+	db 19, SCREECH
+	db 24, FEINT_ATTACK
+	db 28, PAY_DAY
+	db 33, SLASH
+	db 37, NASTY_PLOT
+	db 42, SWAGGER
+	db 46, NIGHT_SLASH
 	db 0 ; no more level-up moves
 
 PersianEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, PLAY_ROUGH
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 1, BITE
+	db 1, FAKE_OUT
+	db 6, BITE
+	db 10, FAKE_OUT
+	db 15, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
+	db 19, SCREECH
+	db 24, FEINT_ATTACK
+	db 30, POWER_GEM
+	db 36, SLASH
+	db 42, NASTY_PLOT
+	db 48, SWAGGER
+	db 54, NIGHT_SLASH
 	db 0 ; no more level-up moves
 
 PsyduckEvosAttacks:
@@ -1820,6 +1845,16 @@ Porygon2EvosAttacks:
 StantlerEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 5, LEER_TAIL_WHIP
+	db 10, HYPNOSIS
+	db 14, STOMP
+	db 19, SAND_ATTACK_SMOKESCREEN,
+	db 23, TAKE_DOWN
+	db 28, CONFUSE_RAY
+	db 32, CALM_MIND
+	db 37, ZEN_HEADBUTT
+	db 41, JUMP_KICK
+	db 46, JUMP_KICK
 	db 0 ; no more level-up moves
 
 SmeargleEvosAttacks:

@@ -10,7 +10,8 @@ EventideGym_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 5 ; bg events
+	db 6 ; bg events
+	bg_event 22, 14, SIGNPOST_UP, EventideGymBlueSwitchScript
 	bg_event 27,  8, SIGNPOST_UP, EventideGymBlueSwitchScript
 	bg_event  0,  4, SIGNPOST_UP, EventideGymRedSwitchScript
 	bg_event 11, 12, SIGNPOST_UP, EventideGymYellowSwitchScript
@@ -31,8 +32,6 @@ EventideGymCallback:
 	changeblock $e, $8, $aa
 	changeblock $e, $6, $ab
 	changeblock $c, $6, $9a
-	changeblock $26, $a, $9b
-	changeblock $28, $a, $9b
 	changeblock $22, $c, $c2
 	changeblock $22, $e, $c3
 
@@ -41,8 +40,6 @@ EventideGymCallback:
 	iftrue .blue_on
 	jump .check_yellow
 .blue_on
-	changeblock $6, $6, $a1
-	changeblock $4, $6, $a1
 	changeblock $1c, $a, $a1
 	changeblock $1e, $a, $a1
 	changeblock $20, $a, $a1
@@ -50,9 +47,26 @@ EventideGymCallback:
 .check_yellow
 	checkevent EVENT_EVENTIDE_GYM_YELLOW_SWITCH
 	iftrue .yellow_on
-	return
+	jump .check_black
 .yellow_on
 	changeblock $18, $6, $97
+	
+.check_black
+	checkevent EVENT_EVENTIDE_GYM_BLACK_SWITCH
+	iftrue .black_on
+	return
+.black_on
+	changeblock $18, $c, $94
+	changeblock $26, $a, $98
+	changeblock $26, $a, $98
+	changeblock $4, $6, $99
+	changeblock $6, $6, $99
+	changeblock $8, $8, $cd
+	changeblock $8, $a, $ce
+	changeblock $c, $e, $99
+	changeblock $e, $e, $af
+	changeblock $e, $c, $cf
+	changeblock $e, $a, $a7
 	return
 
 EventideGymRedSwitchScript:
@@ -72,14 +86,12 @@ EventideGymRedSwitchScript:
 	changeblock $e, $8, $aa
 	changeblock $e, $6, $ab
 	changeblock $c, $6, $9a
-	changeblock $26, $a, $9b
-	changeblock $28, $a, $9b
 	changeblock $22, $c, $c2
 	changeblock $22, $e, $c3
 	reloadmappart
 	closetext
 	setevent EVENT_EVENTIDE_GYM_RED_SWITCH
-	end
+	jump EventideGymBlackSwitchScript
 .turn_off
 	changeblock $14, $a, $9b
 	changeblock $12, $a, $9b
@@ -87,13 +99,11 @@ EventideGymRedSwitchScript:
 	changeblock $e, $8, $a8
 	changeblock $e, $6, $a9
 	changeblock $c, $6, $9b
-	changeblock $26, $a, $9a
-	changeblock $28, $a, $9a
 	changeblock $22, $c, $c0
 	changeblock $22, $e, $c1
 	closetext
 	clearevent EVENT_EVENTIDE_GYM_RED_SWITCH
-	end
+	jump EventideGymBlackSwitchScript
 	
 EventideGymBlueSwitchScript:
 	opentext
@@ -106,25 +116,21 @@ EventideGymBlueSwitchScript:
 	closetext
 	checkevent EVENT_EVENTIDE_GYM_BLUE_SWITCH
 	iftrue .turn_off
-	changeblock $6, $6, $a1
-	changeblock $4, $6, $a1
 	changeblock $1c, $a, $a1
 	changeblock $1e, $a, $a1
 	changeblock $20, $a, $a1
 	reloadmappart
 	closetext
 	setevent EVENT_EVENTIDE_GYM_BLUE_SWITCH
-	end
+	jump EventideGymBlackSwitchScript
 .turn_off
-	changeblock $6, $6, $a0
-	changeblock $4, $6, $a0
 	changeblock $1c, $a, $a0
 	changeblock $1e, $a, $a0
 	changeblock $20, $a, $a0
 	reloadmappart
 	closetext
 	clearevent EVENT_EVENTIDE_GYM_BLUE_SWITCH
-	end
+	jump EventideGymBlackSwitchScript
 	
 	
 EventideGymYellowSwitchScript:
@@ -142,12 +148,47 @@ EventideGymYellowSwitchScript:
 	reloadmappart
 	closetext
 	setevent EVENT_EVENTIDE_GYM_YELLOW_SWITCH
-	end
+	jump EventideGymBlackSwitchScript
 .turn_off
 	changeblock $18, $6, $96
 	reloadmappart
 	closetext
 	clearevent EVENT_EVENTIDE_GYM_YELLOW_SWITCH
+;fallthrough
+	
+EventideGymBlackSwitchScript:
+	checkevent EVENT_EVENTIDE_GYM_BLACK_SWITCH
+	iftrue .turn_off
+	changeblock $18, $c, $94
+	changeblock $28, $a, $98
+	changeblock $26, $a, $98
+	changeblock $4, $6, $99
+	changeblock $6, $6, $99
+	changeblock $8, $8, $cd
+	changeblock $8, $a, $ce
+	changeblock $c, $e, $99
+	changeblock $e, $e, $af
+	changeblock $e, $c, $cf
+	changeblock $e, $a, $a7
+	reloadmappart
+	closetext
+	setevent EVENT_EVENTIDE_GYM_BLACK_SWITCH
+	end
+.turn_off
+	changeblock $18, $c, $95
+	changeblock $28, $a, $99
+	changeblock $26, $a, $99
+	changeblock $4, $6, $98
+	changeblock $6, $6, $98
+	changeblock $8, $8, $ac
+	changeblock $8, $a, $b0
+	changeblock $c, $e, $98
+	changeblock $e, $e, $cc
+	changeblock $e, $c, $b1
+	changeblock $e, $a, $9e
+	reloadmappart
+	closetext
+	clearevent EVENT_EVENTIDE_GYM_BLACK_SWITCH
 	end
 
 EventideGymNoSwitchScript:

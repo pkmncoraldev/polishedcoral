@@ -642,6 +642,18 @@ PsyduckEvosAttacks:
 GolduckEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 5, TAIL_WHIP
+	db 8, WATER_GUN
+	db 12, CONFUSION
+	db 15, FURY_SWIPES
+	db 19, BUBBLE_BEAM
+	db 22, DISABLE
+	db 26, SCREECH
+	db 29, ZEN_HEADBUTT
+	db 35, AQUA_TAIL
+	db 41, PSYCH_UP
+	db 47, AMNESIA
+	db 53, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 GrowlitheEvosAttacks:

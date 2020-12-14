@@ -1981,17 +1981,47 @@ AronEvosAttacks:
 	db EVOLVE_LEVEL, 32, LAIRON
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 6, MUD_SLAP
+	db 10, HEADBUTT
+	db 15, METAL_CLAW
+	db 19, ROCK_THROW
+	db 24, PROTECT
+	db 28, ROAR_WHIRLWIND
+	db 33, IRON_TAIL
+	db 37, ROCK_SLIDE
+	db 42, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 	
 LaironEvosAttacks:
 	db EVOLVE_LEVEL, 42, AGGRON
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 6, MUD_SLAP
+	db 10, HEADBUTT
+	db 15, METAL_CLAW
+	db 19, ROCK_THROW
+	db 24, PROTECT
+	db 28, ROAR_WHIRLWIND
+	db 36, IRON_TAIL
+	db 43, ROCK_SLIDE
+	db 51, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 	
 AggronEvosAttacks: 
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 6, MUD_SLAP
+	db 10, HEADBUTT
+	db 15, METAL_CLAW
+	db 19, ROCK_THROW
+	db 24, PROTECT
+	db 28, ROAR_WHIRLWIND
+	db 37, IRON_TAIL
+	db 47, ROCK_SLIDE
+	db 58, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 	
 MedititeEvosAttacks:
@@ -2339,12 +2369,40 @@ SylveonEvosAttacks:
 NoibatEvosAttacks:
 	db EVOLVE_LEVEL, 48, NOIVERN
 	db 0 ; no more evolutions
+	db 1, SCREECH
+	db 1, SUPERSONIC
 	db 1, TACKLE_SCRATCH_POUND
+	db 6, ABSORB
+	db 11, GUST
+	db 15, BITE
+	db 20, WING_ATTACK
+	db 25, SONIC_BOOM
+	db 29, ROOST
+	db 34, ACROBATICS
+	db 39, WHIRLWIND
+	db 43, CRUNCH
+	db 48, AIR_SLASH
+	db 53, AGILITY
+	db 57, HURRICANE
 	db 0 ; no more level-up moves
 	
 NoivernEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, SCREECH
+	db 1, SUPERSONIC
 	db 1, TACKLE_SCRATCH_POUND
+	db 6, ABSORB
+	db 11, GUST
+	db 15, BITE
+	db 20, WING_ATTACK
+	db 25, SONIC_BOOM
+	db 29, ROOST
+	db 34, ACROBATICS
+	db 39, WHIRLWIND
+	db 43, CRUNCH
+	db 48, AIR_SLASH
+	db 55, AGILITY
+	db 62, HURRICANE
 	db 0 ; no more level-up moves
 	
 PikipekEvosAttacks:

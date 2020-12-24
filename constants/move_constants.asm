@@ -11,7 +11,7 @@
 	const THUNDERPUNCH ; $09
 	const FLAME_CHARGE ; $0a
 	const X_SCISSOR    ; $0b
-	const NIGHT_SLASH  ; $0c - REMOVE
+	const SMOG	       ; $0c
 	const AIR_SLASH    ; $0d
 	const SWORDS_DANCE ; $0e
 	const CUT          ; $0f
@@ -171,7 +171,7 @@
 	const WILL_O_WISP  ; $a9
 	const ZEN_HEADBUTT ; $aa
 	const VITAL_THROW  ; $ab
-	const FLAME_WHEEL  ; $ac
+	const FLAME_BURST  ; $ac
 	const HYPER_VOICE  ; $ad
 	const CURSE        ; $ae
 	const GYRO_BALL    ; $af

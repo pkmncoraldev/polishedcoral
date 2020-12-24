@@ -22,7 +22,6 @@ KarateChop:
 MachPunch:
 Megahorn:
 MegaKick:
-NightSlash:
 Peck:
 PowerGem:
 PowerWhip:

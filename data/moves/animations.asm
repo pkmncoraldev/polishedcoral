@@ -11,7 +11,7 @@ BattleAnimations::
 	dw BattleAnim_Thunderpunch
 	dw BattleAnim_FlameCharge
 	dw BattleAnim_XScissor
-	dw BattleAnim_NightSlash
+	dw BattleAnim_Smog
 	dw BattleAnim_AirSlash
 	dw BattleAnim_SwordsDance
 	dw BattleAnim_Cut
@@ -171,7 +171,7 @@ BattleAnimations::
 	dw BattleAnim_WillOWisp
 	dw BattleAnim_ZenHeadbutt
 	dw BattleAnim_VitalThrow
-	dw BattleAnim_FlameWheel
+	dw BattleAnim_FlameBurst
 	dw BattleAnim_HyperVoice
 	dw BattleAnim_Curse
 	dw BattleAnim_GyroBall
@@ -289,6 +289,7 @@ BattleAnim_RockPolish:
 BattleAnim_Nuzzle:
 BattleAnim_ElectroBall:
 BattleAnim_Superpower:
+BattleAnim_FlameWheel:
 	anim_ret
 	
 BattleAnim_PoisonFang:
@@ -3036,19 +3037,6 @@ BattleAnim_DrillPeck:
 	anim_wait 16
 	anim_ret
 
-; Night Slash animation from Pokémon Prism
-BattleAnim_NightSlash:
-	anim_1gfx ANIM_GFX_CUT
-	anim_bgp $1b
-	anim_obp0 0, 1, 2, 3
-	anim_bgeffect ANIM_BG_1F, $60, $2, $0
-	anim_sound 0, 1, SFX_CUT
-	anim_obj ANIM_OBJ_3A, 19, 0,  5, 0, $0
-	anim_obj ANIM_OBJ_3A, 18, 4,  4, 4, $0
-	anim_wait 32
-	anim_bgp $e4
-	anim_ret
-
 BattleAnim_Flash:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_sound 0, 1, SFX_FLASH
@@ -3754,28 +3742,28 @@ BattleAnim_BugBuzz:
 	anim_wait 24
 	anim_ret
 
-BattleAnim_FlameWheel:
-	anim_1gfx ANIM_GFX_FIRE
-.loop
-	anim_sound 0, 0, SFX_EMBER
-	anim_obj ANIM_OBJ_7F,   6, 0,  12, 0, $0
-	anim_wait 6
-	anim_loop 8, .loop
-	anim_wait 96
-	anim_call BattleAnim_FollowEnemyFeet_0
-	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
-	anim_wait 4
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
-	anim_sound 0, 1, SFX_EMBER
-	anim_obj ANIM_OBJ_0F, -15, 0,   6, 0, $1
-	anim_obj ANIM_OBJ_0F, -15, 0,   6, 0, $4
-	anim_obj ANIM_OBJ_0F, -15, 0,   6, 0, $5
-	anim_wait 8
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
-	anim_wait 4
-	anim_incobj  9
-	anim_wait 8
-	anim_ret
+;BattleAnim_FlameWheel:
+;	anim_1gfx ANIM_GFX_FIRE
+;.loop
+;	anim_sound 0, 0, SFX_EMBER
+;	anim_obj ANIM_OBJ_7F,   6, 0,  12, 0, $0
+;	anim_wait 6
+;	anim_loop 8, .loop
+;	anim_wait 96
+;	anim_call BattleAnim_FollowEnemyFeet_0
+;	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+;	anim_wait 4
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
+;	anim_sound 0, 1, SFX_EMBER
+;	anim_obj ANIM_OBJ_0F, -15, 0,   6, 0, $1
+;	anim_obj ANIM_OBJ_0F, -15, 0,   6, 0, $4
+;	anim_obj ANIM_OBJ_0F, -15, 0,   6, 0, $5
+;	anim_wait 8
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+;	anim_wait 4
+;	anim_incobj  9
+;	anim_wait 8
+;	anim_ret
 
 ; Hyper Voice animation from Pokémon Prism
 BattleAnim_HyperVoice:
@@ -6076,15 +6064,15 @@ BattleAnim_Pound: ; removed
 	anim_wait 16
 	anim_ret
 
-;BattleAnim_Smog: ; removed
-;	anim_1gfx ANIM_GFX_HAZE
-;	anim_sound 0, 1, SFX_BUBBLE_BEAM
-;.loop
-;	anim_obj ANIM_OBJ_5D, -16, 4,   2, 0, $0
-;	anim_wait 8
-;	anim_loop 10, .loop
-;	anim_wait 96
-;	anim_ret
+BattleAnim_Smog:
+	anim_1gfx ANIM_GFX_HAZE
+	anim_sound 0, 1, SFX_BUBBLE_BEAM
+.loop
+	anim_obj ANIM_OBJ_5D, -16, 4,   2, 0, $0
+	anim_wait 8
+	anim_loop 10, .loop
+	anim_wait 96
+	anim_ret
 
 ;BattleAnim_Slam: ; removed
 ;	anim_1gfx ANIM_GFX_HIT

@@ -364,7 +364,6 @@ AI_Smart: ; 386be
 	dbw EFFECT_PRIORITY_HIT,      AI_Smart_PriorityHit
 	dbw EFFECT_FURY_CUTTER,       AI_Smart_FuryCutter
 	dbw EFFECT_MEAN_LOOK,         AI_Smart_MeanLook
-	dbw EFFECT_FLAME_WHEEL,       AI_Smart_FlameWheel
 	dbw EFFECT_FLARE_BLITZ,       AI_Smart_FlameWheel
 	dbw EFFECT_CURSE,             AI_Smart_Curse
 	dbw EFFECT_PROTECT,           AI_Smart_Protect
@@ -1232,7 +1231,7 @@ AI_Smart_Encore: ; 38c3b
 	db CONVERSION
 	db DISABLE
 	db DREAM_EATER
-	db FLAME_WHEEL
+
 	db FOCUS_ENERGY
 	db GROWTH
 	db HAZE

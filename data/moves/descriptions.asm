@@ -10,7 +10,7 @@ MoveDescriptions::
 	dw ThunderpunchDescription
 	dw FlameChargeDescription
 	dw XScissorDescription
-	dw NightSlashDescription
+	dw SmogDescription
 	dw AirSlashDescription
 	dw SwordsDanceDescription
 	dw CutDescription
@@ -170,7 +170,7 @@ MoveDescriptions::
 	dw WillOWispDescription
 	dw ZenHeadbuttDescription
 	dw VitalThrowDescription
-	dw FlameWheelDescription
+	dw FlameBurstDescription
 	dw HyperVoiceDescription
 	dw CurseDescription
 	dw GyroBallDescription
@@ -264,7 +264,6 @@ RazorLeafDescription:
 CrabhammerDescription:
 SlashDescription:
 CrossChopDescription:
-NightSlashDescription:
 ShadowClawDescription:
 StoneEdgeDescription:
 	db   "Has a high criti-"
@@ -353,16 +352,20 @@ SludgeBombDescription:
 PoisonJabDescription:
 GunkShotDescription:
 SludgeDescription:
+SmogDescription:
 	db   "An attack that may"
 	next "poison the foe.@"
 
 EmberDescription:
 FlamethrowerDescription:
 FireBlastDescription:
-FlameWheelDescription:
 ScaldDescription:
 	db   "An attack that may"
 	next "inflict a burn.@"
+	
+FlameBurstDescription:
+	db   "Attacks with a"
+	next "bursting flame.@"
 	
 FakeOutDescription:
 	db   "Always flinches."

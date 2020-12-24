@@ -207,6 +207,7 @@ INCLUDE "maps/LusterMallHerbShop.asm"
 INCLUDE "maps/LusterMallStoneShop.asm"
 INCLUDE "maps/LusterMallBallShop.asm"
 INCLUDE "maps/LusterMallClothesShop.asm"
+INCLUDE "maps/Skatepark.asm"
 
 SECTION "Train Scripts", ROMX
 

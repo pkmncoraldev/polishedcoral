@@ -38,7 +38,9 @@ Pointers445f: ; 445f
 	dw SetFacingLighthouse1,    	   SetFacingLighthouse1	 	  ; PERSON_ACTION_LIGHTHOUSE_1
 	dw SetFacingLighthouse2,    	   SetFacingLighthouse2	 	  ; PERSON_ACTION_LIGHTHOUSE_2
 	dw SetFacingLighthouse3,    	   SetFacingLighthouse3	 	  ; PERSON_ACTION_LIGHTHOUSE_3
-	dw SetFacingSkate,                 SetFacingCurrent          ; PERSON_ACTION_SKATE
+	dw SetFacingSkate,                 SetFacingCurrent           ; PERSON_ACTION_SKATEBOARD
+	dw SetFacingHalfpipe1,    		   SetFacingHalfpipe1	 	  ; PERSON_ACTION_HALFPIPE_1
+	dw SetFacingHalfpipe2,    		   SetFacingHalfpipe2	 	  ; PERSON_ACTION_HALFPIPE_2
 	
 ; 44a3
 
@@ -444,5 +446,13 @@ SetFacingLighthouse2:
 	
 SetFacingLighthouse3:
 	ld a, FACING_LIGHTHOUSE_3
+	jp SetFixedFacing
+	
+SetFacingHalfpipe1:
+	ld a, FACING_HALFPIPE_1
+	jp SetFixedFacing
+	
+SetFacingHalfpipe2:
+	ld a, FACING_HALFPIPE_2
 	jp SetFixedFacing
 	

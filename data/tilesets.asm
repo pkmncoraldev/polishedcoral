@@ -379,9 +379,10 @@ INCLUDE "data/tilesets/snow_collision.asm"
 SECTION "Tileset Data - park", ROMX
 
 TilesetParkGFX::
-INCBIN "gfx/tilesets/park.2bpp.lz"
+INCBIN "gfx/tilesets/park.2bpp.vram0.lz"
 
-TilesetParkGFX2 EQU 0
+TilesetParkGFX2::
+INCBIN "gfx/tilesets/park.2bpp.vram1.lz"
 
 TilesetParkMeta::
 INCBIN "data/tilesets/park_metatiles.bin.lz"

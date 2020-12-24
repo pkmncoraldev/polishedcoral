@@ -243,4 +243,5 @@ MAP_NONE   EQU 0
 	map_const LUSTER_MALL_STONE_SHOP,					   4,  4 ; 24
 	map_const LUSTER_MALL_BALL_SHOP,					   4,  4 ; 25
 	map_const LUSTER_MALL_CLOTHES_SHOP,					   6,  4 ; 26
+	map_const SKATEPARK,								  10, 30 ; 27
 	

@@ -181,7 +181,7 @@ Moves:: ; 41afb
 	move WILL_O_WISP,  EFFECT_BURN,                0, FIRE,       85, 15,   0, STATUS
 	move ZEN_HEADBUTT, EFFECT_FLINCH_HIT,         80, PSYCHIC,    90, 15,  20, PHYSICAL
 	move VITAL_THROW,  EFFECT_ALWAYS_HIT,         70, FIGHTING,  100, 10,   0, PHYSICAL
-	move FLAME_WHEEL,  EFFECT_FLAME_WHEEL,        60, FIRE,      100, 25,  10, PHYSICAL
+	move FLAME_BURST,  EFFECT_NORMAL_HIT,         70, FIRE,      100, 15,   0, SPECIAL
 	move HYPER_VOICE,  EFFECT_NORMAL_HIT,         90, NORMAL,    100, 10,   0, SPECIAL
 	move CURSE,        EFFECT_CURSE,               0, GHOST,     100, 10,   0, STATUS
 	move GYRO_BALL,    EFFECT_GYRO_BALL,           1, STEEL,     100,  5,   0, PHYSICAL

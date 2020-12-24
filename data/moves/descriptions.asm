@@ -170,7 +170,7 @@ MoveDescriptions::
 	dw WillOWispDescription
 	dw ZenHeadbuttDescription
 	dw VitalThrowDescription
-	dw FlameWheelDescription
+	dw FlameBurstDescription
 	dw HyperVoiceDescription
 	dw CurseDescription
 	dw GyroBallDescription
@@ -359,10 +359,13 @@ SmogDescription:
 EmberDescription:
 FlamethrowerDescription:
 FireBlastDescription:
-FlameWheelDescription:
 ScaldDescription:
 	db   "An attack that may"
 	next "inflict a burn.@"
+	
+FlameBurstDescription:
+	db   "Attacks with a"
+	next "bursting flame.@"
 	
 FakeOutDescription:
 	db   "Always flinches."

@@ -171,7 +171,7 @@
 	const WILL_O_WISP  ; $a9
 	const ZEN_HEADBUTT ; $aa
 	const VITAL_THROW  ; $ab
-	const FLAME_WHEEL  ; $ac
+	const FLAME_BURST  ; $ac
 	const HYPER_VOICE  ; $ad
 	const CURSE        ; $ae
 	const GYRO_BALL    ; $af

@@ -171,7 +171,7 @@ BattleAnimations::
 	dw BattleAnim_WillOWisp
 	dw BattleAnim_ZenHeadbutt
 	dw BattleAnim_VitalThrow
-	dw BattleAnim_FlameWheel
+	dw BattleAnim_FlameBurst
 	dw BattleAnim_HyperVoice
 	dw BattleAnim_Curse
 	dw BattleAnim_GyroBall
@@ -289,6 +289,7 @@ BattleAnim_RockPolish:
 BattleAnim_Nuzzle:
 BattleAnim_ElectroBall:
 BattleAnim_Superpower:
+BattleAnim_FlameWheel:
 	anim_ret
 	
 BattleAnim_PoisonFang:
@@ -3741,28 +3742,28 @@ BattleAnim_BugBuzz:
 	anim_wait 24
 	anim_ret
 
-BattleAnim_FlameWheel:
-	anim_1gfx ANIM_GFX_FIRE
-.loop
-	anim_sound 0, 0, SFX_EMBER
-	anim_obj ANIM_OBJ_7F,   6, 0,  12, 0, $0
-	anim_wait 6
-	anim_loop 8, .loop
-	anim_wait 96
-	anim_call BattleAnim_FollowEnemyFeet_0
-	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
-	anim_wait 4
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
-	anim_sound 0, 1, SFX_EMBER
-	anim_obj ANIM_OBJ_0F, -15, 0,   6, 0, $1
-	anim_obj ANIM_OBJ_0F, -15, 0,   6, 0, $4
-	anim_obj ANIM_OBJ_0F, -15, 0,   6, 0, $5
-	anim_wait 8
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
-	anim_wait 4
-	anim_incobj  9
-	anim_wait 8
-	anim_ret
+;BattleAnim_FlameWheel:
+;	anim_1gfx ANIM_GFX_FIRE
+;.loop
+;	anim_sound 0, 0, SFX_EMBER
+;	anim_obj ANIM_OBJ_7F,   6, 0,  12, 0, $0
+;	anim_wait 6
+;	anim_loop 8, .loop
+;	anim_wait 96
+;	anim_call BattleAnim_FollowEnemyFeet_0
+;	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+;	anim_wait 4
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
+;	anim_sound 0, 1, SFX_EMBER
+;	anim_obj ANIM_OBJ_0F, -15, 0,   6, 0, $1
+;	anim_obj ANIM_OBJ_0F, -15, 0,   6, 0, $4
+;	anim_obj ANIM_OBJ_0F, -15, 0,   6, 0, $5
+;	anim_wait 8
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+;	anim_wait 4
+;	anim_incobj  9
+;	anim_wait 8
+;	anim_ret
 
 ; Hyper Voice animation from Pokémon Prism
 BattleAnim_HyperVoice:

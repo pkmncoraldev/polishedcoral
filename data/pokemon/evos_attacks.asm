@@ -664,7 +664,7 @@ GrowlitheEvosAttacks:
 	db  6, EMBER
 	db  8, LEER_TAIL_WHIP
 	db 10, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
-	db 16, FLAME_WHEEL
+	db 16, FLAME_BURST
 	db 19, REVERSAL
 	db 21, FIRE_FANG
 	db 24, TAKE_DOWN
@@ -686,7 +686,7 @@ ArcanineEvosAttacks:
 	db  1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db  1, EMBER
 	db  1, LEER_TAIL_WHIP
-	db  1, FLAME_WHEEL
+	db  1, FLAME_BURST
 	db  1, REVERSAL
 	db  1, FIRE_FANG
 	db  1, TAKE_DOWN
@@ -1294,7 +1294,7 @@ CyndaquilEvosAttacks:
 	db 10, SAND_ATTACK_SMOKESCREEN
 	db 13, QUICK_ATTACK
 	db 17, SWIFT
-	db 22, FLAME_WHEEL
+	db 22, FLAME_BURST
 	db 27, ROLLOUT
 	db 28, DEFENSE_CURL_HARDEN_WITHDRAW
 	db 36, FLAMETHROWER
@@ -1311,7 +1311,7 @@ QuilavaEvosAttacks:
 	db  1, SAND_ATTACK_SMOKESCREEN
 	db  1, QUICK_ATTACK
 	db 18, SWIFT
-	db 23, FLAME_WHEEL
+	db 23, FLAME_BURST
 	db 29, ROLLOUT
 	db 30, DEFENSE_CURL_HARDEN_WITHDRAW
 	db 38, FLAMETHROWER
@@ -1328,7 +1328,7 @@ TyphlosionEvosAttacks:
 	db  1, QUICK_ATTACK
 	db  1, FLAME_CHARGE
 	db  1, SWIFT
-	db  1, FLAME_WHEEL
+	db  1, FLAME_BURST
 	db  1, ROLLOUT
 	db  1, DEFENSE_CURL_HARDEN_WITHDRAW
 	db 42, FLAMETHROWER
@@ -2039,11 +2039,38 @@ NumelEvosAttacks:
 	db EVOLVE_LEVEL, 33, CAMERUPT
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 5, EMBER
+	db 8, FOCUS_ENERGY
+	db 12, MAGNITUDE
+	db 15, FIRE_SPIN
+	db 19, AMNESIA
+	db 22, FLAME_BURST
+	db 26, EARTH_POWER
+	db 29, CURSE
+	db 33, TAKE_DOWN
+	db 36, FLAMETHROWER
+	db 40, EARTHQUAKE
+	db 43, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 	
 CameruptEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, ROCK_SLIDE
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 1, EMBER
+	db 1, FOCUS_ENERGY
+	db 12, MAGNITUDE
+	db 15, FIRE_SPIN
+	db 19, AMNESIA
+	db 22, FLAME_BURST
+	db 26, EARTH_POWER
+	db 29, CURSE
+	db 35, TAKE_DOWN
+	db 40, FLAMETHROWER
+	db 46, EARTHQUAKE
+	db 51, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 	
 SwabluEvosAttacks:
@@ -2055,7 +2082,7 @@ SwabluEvosAttacks:
 	db 7, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 10, SAFEGUARD
 	db 13, FAIRY_WIND
-	db 16, MIST
+	db 16, SCARY_FACE_COTTON_SPORE
 	db 19, DRAGONBREATH
 	db 22, HAZE
 	db 25, TAKE_DOWN
@@ -2069,14 +2096,14 @@ SwabluEvosAttacks:
 	
 AltariaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SKY_ATTACK
+	db 1, HURRICANE
 	db 1, PECK
 	db 1, GROWL
 	db 1, SING
 	db 1, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 10, SAFEGUARD
 	db 13, FAIRY_WIND
-	db 16, MIST
+	db 16, SCARY_FACE_COTTON_SPORE
 	db 19, DRAGONBREATH
 	db 22, HAZE
 	db 25, TAKE_DOWN
@@ -2483,7 +2510,7 @@ Exeggutor_AEvosAttacks:
 	
 Marowak_AEvosAttacks:
 	db  0 ; no more evolutions
-	db  1, FLAME_WHEEL
+	db  1, FLAME_BURST
 	db  1, GROWL
 	db  1, TACKLE_SCRATCH_POUND
 	db  1, BONE_CLUB

@@ -163,14 +163,14 @@ EvolutionMoves::
 	db NO_MOVE      ; PUPITAR
 	db NO_MOVE      ; TYRANITAR
 	db NO_MOVE      ; SHROOMISH
-	db MACH_PUNCH      ; BRELOOM
+	db MACH_PUNCH   ; BRELOOM
 	db NO_MOVE      ; ARON
 	db NO_MOVE      ; LAIRON
 	db NO_MOVE      ; AGGRON
 	db NO_MOVE      ; MEDITITE
 	db NO_MOVE      ; MEDICHAM
 	db NO_MOVE      ; NUMEL
-	db NO_MOVE      ; CAMERUPT
+	db ROCK_SLIDE   ; CAMERUPT
 	db NO_MOVE      ; SWABLU
 	db NO_MOVE      ; ALTARIA
 	db NO_MOVE      ; CORPHISH

@@ -345,6 +345,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jp z, .conveyorleft
 	cp COLL_CONVEYOR_RIGHT
 	jp z, .conveyorright
+	cp COLL_GRIND
+	jp z, .grind
 	call .CheckWalkable
 	jr c, .wall
 	jr .contreturn
@@ -366,6 +368,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp PLAYER_DODRIO
 	jp z, .fast
 	
+;	cp PLAYER_SKATEBOARD_GRINDING
+;	jp z, .stop_grinding
+	
 	ld a, [wSpinning]
 	and a
 	jp nz, .spin
@@ -373,9 +378,6 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, [wPlayerStandingTile]
 	cp COLL_ICE
 	jp z, .ice
-
-;	call .TVRoomCheck
-;	jp z, .DoNotRun
 	
 	call .SnowCheck
 	jp z, .DoNotRun
@@ -639,6 +641,39 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite ; UpdateSprites
+	ret
+	
+.grind
+	call GetFacingTileCoord
+	call GetTileCollision
+	cp LANDTILE
+	jr z, .stop_grinding
+	ld a, [wPlayerState]
+	cp PLAYER_SKATEBOARD_GRINDING
+	jr z, .grindcont
+	ld a, PLAYER_SKATEBOARD_GRINDING
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+.grindcont
+	ld a, [wLastWalkingDirection]
+	ld [wWalkingDirection], a
+	ld a, STEP_SLIDE
+	call .DoStep
+	scf
+	ret
+	
+.stop_grinding
+	ld a, [wLastWalkingDirection]
+	ld [wWalkingDirection], a
+	ld a, PLAYER_SKATEBOARD
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ld de, SFX_JUMP_OVER_LEDGE
+	call PlaySFX
+	ld a, STEP_LEDGE
+	call .DoStep
+	ld a, 7
+	scf
 	ret
 	
 .DoNotRun
@@ -1448,21 +1483,29 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr .NotWalkable
 .CheckLandPermsFarAheadUp
 	ld a, [wTileUpFar]
+	cp COLL_GRIND
+	jr z, .CheckLandPermsFarAheadEnd
 	call .CheckWalkable
 	jr c, .NotWalkable
 	jr .CheckLandPermsFarAheadEnd
 .CheckLandPermsFarAheadDown
 	ld a, [wTileDownFar]
+	cp COLL_GRIND
+	jr z, .CheckLandPermsFarAheadEnd
 	call .CheckWalkable
 	jr c, .NotWalkable
 	jr .CheckLandPermsFarAheadEnd
 .CheckLandPermsFarAheadLeft
 	ld a, [wTileLeftFar]
+	cp COLL_GRIND
+	jr z, .CheckLandPermsFarAheadEnd
 	call .CheckWalkable
 	jr c, .NotWalkable
 	jr .CheckLandPermsFarAheadEnd
 .CheckLandPermsFarAheadRight
 	ld a, [wTileRightFar]
+	cp COLL_GRIND
+	jr z, .CheckLandPermsFarAheadEnd
 	call .CheckWalkable
 	jr c, .NotWalkable
 .CheckLandPermsFarAheadEnd:

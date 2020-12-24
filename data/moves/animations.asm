@@ -11,7 +11,7 @@ BattleAnimations::
 	dw BattleAnim_Thunderpunch
 	dw BattleAnim_FlameCharge
 	dw BattleAnim_XScissor
-	dw BattleAnim_NightSlash
+	dw BattleAnim_Smog
 	dw BattleAnim_AirSlash
 	dw BattleAnim_SwordsDance
 	dw BattleAnim_Cut
@@ -3034,19 +3034,6 @@ BattleAnim_DrillPeck:
 	anim_wait 4
 	anim_loop 5, .loop
 	anim_wait 16
-	anim_ret
-
-; Night Slash animation from Pokémon Prism
-BattleAnim_NightSlash:
-	anim_1gfx ANIM_GFX_CUT
-	anim_bgp $1b
-	anim_obp0 0, 1, 2, 3
-	anim_bgeffect ANIM_BG_1F, $60, $2, $0
-	anim_sound 0, 1, SFX_CUT
-	anim_obj ANIM_OBJ_3A, 19, 0,  5, 0, $0
-	anim_obj ANIM_OBJ_3A, 18, 4,  4, 4, $0
-	anim_wait 32
-	anim_bgp $e4
 	anim_ret
 
 BattleAnim_Flash:
@@ -6076,15 +6063,15 @@ BattleAnim_Pound: ; removed
 	anim_wait 16
 	anim_ret
 
-;BattleAnim_Smog: ; removed
-;	anim_1gfx ANIM_GFX_HAZE
-;	anim_sound 0, 1, SFX_BUBBLE_BEAM
-;.loop
-;	anim_obj ANIM_OBJ_5D, -16, 4,   2, 0, $0
-;	anim_wait 8
-;	anim_loop 10, .loop
-;	anim_wait 96
-;	anim_ret
+BattleAnim_Smog:
+	anim_1gfx ANIM_GFX_HAZE
+	anim_sound 0, 1, SFX_BUBBLE_BEAM
+.loop
+	anim_obj ANIM_OBJ_5D, -16, 4,   2, 0, $0
+	anim_wait 8
+	anim_loop 10, .loop
+	anim_wait 96
+	anim_ret
 
 ;BattleAnim_Slam: ; removed
 ;	anim_1gfx ANIM_GFX_HIT

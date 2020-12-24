@@ -11,7 +11,7 @@
 	const THUNDERPUNCH ; $09
 	const FLAME_CHARGE ; $0a
 	const X_SCISSOR    ; $0b
-	const NIGHT_SLASH  ; $0c - REMOVE
+	const SMOG	       ; $0c
 	const AIR_SLASH    ; $0d
 	const SWORDS_DANCE ; $0e
 	const CUT          ; $0f

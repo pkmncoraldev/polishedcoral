@@ -61,6 +61,8 @@ Facings:
 	dw FacingLighthouse1
 	dw FacingLighthouse2
 	dw FacingLighthouse3
+	dw FacingHalfpipe1
+	dw FacingHalfpipe2
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -428,6 +430,15 @@ FacingLighthouse3:
 	db  -4, 0, 0, $09
 	db  12, 0, 0, $08
 	
+FacingHalfpipe1:
+	db 2 ; #
+	db -4, 8,  0, $04
+	db  4, 8,  0, $05
+	
+FacingHalfpipe2:
+	db 2 ; #
+	db -4, 0,  0, $06
+	db  4, 0,  0, $07
 	
 FacingArchTreeDown:
 	db 2 ; #

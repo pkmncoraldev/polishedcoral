@@ -290,6 +290,7 @@ ENDM
 	map_attributes IceTempleB2F1, ICE_TEMPLE_B2F_1, 0, 0
 	map_attributes IceTempleB2F2, ICE_TEMPLE_B2F_2, 0, 0
 	
+	map_attributes Skatepark, SKATEPARK, $0, 0
 	map_attributes SunsetPokeCenter, SUNSET_POKECENTER, $0, 0
 	map_attributes SunsetLighthouse, SUNSET_LIGHTHOUSE, $0, 0
 	map_attributes PlayerHouse1F, PLAYER_HOUSE_1F, $0, 0

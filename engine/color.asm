@@ -816,6 +816,8 @@ LoadMapPals:
 	jp z, .umbrellacheck
 	cp GROUP_SUNSET_BAY
 	jp z, .sailboat
+	cp GROUP_SKATEPARK
+	jp z, .skateparkcheck
 .got_pals_cont
 	ld a, [wTileset]
 	cp TILESET_CAVE
@@ -1174,6 +1176,21 @@ LoadMapPals:
 	call FarCopyWRAM
 	ret
 	
+.skateparkcheck
+	ld a, [wMapNumber]
+	cp MAP_SKATEPARK
+	jp nz, .got_pals_cont
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPalsSkatepark
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	jr .outside
+	
 .sailboat
 	ld a, [wMapNumber]
 	cp MAP_SUNSET_BAY
@@ -1389,6 +1406,9 @@ INCLUDE "maps/palettes/obpals/obsailboat.pal"
 
 MapObjectPalsLighthouse::
 INCLUDE "maps/palettes/obpals/oblighthouse.pal"
+
+MapObjectPalsSkatepark::
+INCLUDE "maps/palettes/obpals/obskatepark.pal"
 
 MapObjectPalsLuster::
 INCLUDE "maps/palettes/obpals/obluster.pal"

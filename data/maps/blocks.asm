@@ -78,6 +78,9 @@ EventideSootheBellHouse_BlockData:
 SECTION "Map Blockdata 1", ROMX
 
 
+Skatepark_BlockData:
+	INCBIN "maps/Skatepark.ablk.lz"
+
 PlayerHouse1F_BlockData:
 	INCBIN "maps/PlayerHouse1F.ablk.lz"
 

@@ -599,7 +599,7 @@ MeowthEvosAttacks:
 	db 33, SLASH
 	db 37, NASTY_PLOT
 	db 42, SWAGGER
-	db 46, NIGHT_SLASH
+;	db 46, NIGHT_SLASH
 	db 0 ; no more level-up moves
 
 PersianEvosAttacks:
@@ -618,7 +618,7 @@ PersianEvosAttacks:
 	db 36, SLASH
 	db 42, NASTY_PLOT
 	db 48, SWAGGER
-	db 54, NIGHT_SLASH
+;	db 54, NIGHT_SLASH
 	db 0 ; no more level-up moves
 
 PsyduckEvosAttacks:
@@ -1054,7 +1054,7 @@ ScytherEvosAttacks:
 	db 33, DOUBLE_HIT
 	db 37, DOUBLE_TEAM
 	db 41, AIR_SLASH
-	db 45, X-SCISSOR
+	db 45, X_SCISSOR
 	db 49, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
@@ -1119,7 +1119,7 @@ EeveeEvosAttacks:
 	db 17, BITE
 	db 21, SWIFT
 	db 25, TAKE_DOWN
-	db 29, CHARM
+	db 29, CHARM_FEATHER_DANCE
 	db 33, BATON_PASS
 	db 37, DOUBLE_EDGE
 	db 0 ; no more level-up moves
@@ -1148,7 +1148,7 @@ JolteonEvosAttacks:
 	db 5, LEER_TAIL_WHIP
 	db 9, SAND_ATTACK_SMOKESCREEN
 	db 13, QUICK_ATTACK
-	db 17, DOUBLE_KICK
+;	db 17, DOUBLE_KICK
 	db 21, THUNDER_FANG
 	db 25, PIN_MISSILE
 	db 29, AGILITY_ROCK_POLISH
@@ -1848,13 +1848,13 @@ StantlerEvosAttacks:
 	db 5, LEER_TAIL_WHIP
 	db 10, HYPNOSIS
 	db 14, STOMP
-	db 19, SAND_ATTACK_SMOKESCREEN,
+	db 19, SAND_ATTACK_SMOKESCREEN
 	db 23, TAKE_DOWN
 	db 28, CONFUSE_RAY
 	db 32, CALM_MIND
 	db 37, ZEN_HEADBUTT
-	db 41, JUMP_KICK
-	db 46, JUMP_KICK
+;	db 41, JUMP_KICK
+;	db 46, JUMP_KICK
 	db 0 ; no more level-up moves
 
 SmeargleEvosAttacks:
@@ -2309,6 +2309,7 @@ ToucannonEvosAttacks:
 	db 37, BULLET_SEED
 	db 42, CHARM_FEATHER_DANCE
 	db 48, HYPER_VOICE
+	db 50, POWER_GEM
 	db  0 ; no more level-up moves
 	
 Raichu_AEvosAttacks:

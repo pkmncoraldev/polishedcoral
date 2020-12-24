@@ -468,7 +468,6 @@ ContactMoves::
 	db MACH_PUNCH
 	db MEGAHORN
 	db METAL_CLAW
-	db NIGHT_SLASH
 	db OUTRAGE
 	db PECK
 	db PETAL_DANCE

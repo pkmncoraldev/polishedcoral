@@ -10,7 +10,7 @@ MoveDescriptions::
 	dw ThunderpunchDescription
 	dw FlameChargeDescription
 	dw XScissorDescription
-	dw NightSlashDescription
+	dw SmogDescription
 	dw AirSlashDescription
 	dw SwordsDanceDescription
 	dw CutDescription
@@ -264,7 +264,6 @@ RazorLeafDescription:
 CrabhammerDescription:
 SlashDescription:
 CrossChopDescription:
-NightSlashDescription:
 ShadowClawDescription:
 StoneEdgeDescription:
 	db   "Has a high criti-"
@@ -353,6 +352,7 @@ SludgeBombDescription:
 PoisonJabDescription:
 GunkShotDescription:
 SludgeDescription:
+SmogDescription:
 	db   "An attack that may"
 	next "poison the foe.@"
 

@@ -625,16 +625,16 @@ PsyduckEvosAttacks:
 	db EVOLVE_LEVEL, 33, GOLDUCK
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
-	db 5, TAIL_WHIP
+	db 5, LEER_TAIL_WHIP
 	db 8, WATER_GUN
 	db 12, CONFUSION
-	db 15, FURY_SWIPES
+	db 15, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 19, BUBBLE_BEAM
 	db 22, DISABLE
 	db 26, SCREECH
 	db 29, ZEN_HEADBUTT
 	db 33, AQUA_TAIL
-	db 36, PSYCH_UP
+;	db 36, PSYCH_UP
 	db 40, AMNESIA
 	db 43, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -642,16 +642,16 @@ PsyduckEvosAttacks:
 GolduckEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
-	db 5, TAIL_WHIP
+	db 5, LEER_TAIL_WHIP
 	db 8, WATER_GUN
 	db 12, CONFUSION
-	db 15, FURY_SWIPES
+	db 15, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 19, BUBBLE_BEAM
 	db 22, DISABLE
 	db 26, SCREECH
 	db 29, ZEN_HEADBUTT
 	db 35, AQUA_TAIL
-	db 41, PSYCH_UP
+;	db 41, PSYCH_UP
 	db 47, AMNESIA
 	db 53, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -1861,7 +1861,7 @@ PhanpyEvosAttacks:
 	db 24, MAGNITUDE
 	db 28, TAKE_DOWN
 	db 33, ENDURE
-	db 37, CHARM
+	db 37, CHARM_FEATHER_DANCE
 	db 42, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
@@ -2055,7 +2055,7 @@ SwabluEvosAttacks:
 	db 7, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 10, SAFEGUARD
 	db 13, FAIRY_WIND
-	db 16, MIST
+;	db 16, MIST
 	db 19, DRAGONBREATH
 	db 22, HAZE
 	db 25, TAKE_DOWN
@@ -2069,14 +2069,14 @@ SwabluEvosAttacks:
 	
 AltariaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SKY_ATTACK
+;	db 1, SKY_ATTACK
 	db 1, PECK
 	db 1, GROWL
 	db 1, SING
 	db 1, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 10, SAFEGUARD
 	db 13, FAIRY_WIND
-	db 16, MIST
+;	db 16, MIST
 	db 19, DRAGONBREATH
 	db 22, HAZE
 	db 25, TAKE_DOWN
@@ -2139,15 +2139,15 @@ LopunnyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
 	db 1, SPLASH
-	db 1, POUND
+	db 1, TACKLE_SCRATCH_POUND
 	db 1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db 6, ENDURE
 	db 12, QUICK_ATTACK
-	db 18, DOUBLE_KICK
+;	db 18, DOUBLE_KICK
 	db 24, BATON_PASS
-	db 30, AGILITY
+	db 30, AGILITY_ROCK_POLISH
 	db 36, DOUBLE_HIT
-	db 42, CHARM
+	db 42, CHARM_FEATHER_DANCE
 	db 48, SWEET_KISS
 	db 54, ACROBATICS
 	db 0 ; no more level-up moves
@@ -2379,10 +2379,10 @@ NoibatEvosAttacks:
 	db 25, SONIC_BOOM
 	db 29, ROOST
 	db 34, ACROBATICS
-	db 39, WHIRLWIND
+	db 39, ROAR_WHIRLWIND
 	db 43, CRUNCH
 	db 48, AIR_SLASH
-	db 53, AGILITY
+	db 53, AGILITY_ROCK_POLISH
 	db 57, HURRICANE
 	db 0 ; no more level-up moves
 	
@@ -2398,10 +2398,10 @@ NoivernEvosAttacks:
 	db 25, SONIC_BOOM
 	db 29, ROOST
 	db 34, ACROBATICS
-	db 39, WHIRLWIND
+	db 39, ROAR_WHIRLWIND
 	db 43, CRUNCH
 	db 48, AIR_SLASH
-	db 55, AGILITY
+	db 55, AGILITY_ROCK_POLISH
 	db 62, HURRICANE
 	db 0 ; no more level-up moves
 	

@@ -1908,6 +1908,8 @@ TailWhipUsers:
 	db BLASTOISE
 	db RATTATA
 	db RATICATE
+	db PSYDUCK
+	db GOLDUCK
 	db SNUBBULL
 	db GRANBULL
 	db NIDORAN_F
@@ -1994,6 +1996,8 @@ WhirlwindUsers:
 	db PIDGEY
 	db PIDGEOTTO
 	db PIDGEOT
+	db NOIBAT
+	db NOIVERN
 	db -1
 	
 SmokescreenUsers:

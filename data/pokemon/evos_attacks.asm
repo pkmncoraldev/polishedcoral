@@ -2039,11 +2039,38 @@ NumelEvosAttacks:
 	db EVOLVE_LEVEL, 33, CAMERUPT
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 5, EMBER
+	db 8, FOCUS_ENERGY
+	db 12, MAGNITUDE
+	db 15, FIRE_SPIN
+	db 19, AMNESIA
+	db 22, FLAME_BURST
+	db 26, EARTH_POWER
+	db 29, CURSE
+	db 33, TAKE_DOWN
+	db 36, FLAMETHROWER
+	db 40, EARTHQUAKE
+	db 43, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 	
 CameruptEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, ROCK_SLIDE
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 1, EMBER
+	db 1, FOCUS_ENERGY
+	db 12, MAGNITUDE
+	db 15, FIRE_SPIN
+	db 19, AMNESIA
+	db 22, FLAME_BURST
+	db 26, EARTH_POWER
+	db 29, CURSE
+	db 35, TAKE_DOWN
+	db 40, FLAMETHROWER
+	db 46, EARTHQUAKE
+	db 51, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 	
 SwabluEvosAttacks:
@@ -2055,7 +2082,7 @@ SwabluEvosAttacks:
 	db 7, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 10, SAFEGUARD
 	db 13, FAIRY_WIND
-;	db 16, MIST
+	db 16, SCARY_FACE_COTTON_SPORE
 	db 19, DRAGONBREATH
 	db 22, HAZE
 	db 25, TAKE_DOWN
@@ -2069,14 +2096,14 @@ SwabluEvosAttacks:
 	
 AltariaEvosAttacks:
 	db 0 ; no more evolutions
-;	db 1, SKY_ATTACK
+	db 1, HURRICANE
 	db 1, PECK
 	db 1, GROWL
 	db 1, SING
 	db 1, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 10, SAFEGUARD
 	db 13, FAIRY_WIND
-;	db 16, MIST
+	db 16, SCARY_FACE_COTTON_SPORE
 	db 19, DRAGONBREATH
 	db 22, HAZE
 	db 25, TAKE_DOWN

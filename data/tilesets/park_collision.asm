@@ -115,7 +115,7 @@
 	tilecoll GRIND, SKATE, GRIND, SKATE ; 72
 	tilecoll SKATE, SKATE, GRIND, SKATE ; 73
 	tilecoll WALL, WALL, WALL, WALL ; 74
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 75
+	tilecoll GRIND, SKATE, GRIND, SKATE ; 75
 	tilecoll GRIND, SKATE, SKATE, SKATE ; 76
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 77
 	tilecoll WALL, WALL, WALL, WALL ; 78

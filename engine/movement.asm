@@ -849,7 +849,6 @@ Movement_fast_slide_step_right: ; 53af
 	jp SlideStep
 ; 53b4
 
-
 Movement_slow_jump_step_down: ; 53b4
 	ld a, STEP_SLOW << 2 | DOWN
 	jp JumpStep

@@ -13,6 +13,7 @@ SpriteHeaders:
 	overworld_sprite CorySkateboardSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite CorySkateboard2SpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite CorySkateboardGrindingSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite CorySkateboardFallingSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite CoraSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CoraBikeSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CoraSurfSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE

@@ -245,7 +245,7 @@ wBattleMenuCursorBuffer:: ds 2
 wCurBattleMon:: ds 1
 wCurMoveNum:: ds 1
 
-	ds 1 ; unused
+wSkateboardGrinding:: ds 1
 
 wPCItemsCursor:: ds 1
 wPartyMenuCursor:: ds 1

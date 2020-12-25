@@ -56,6 +56,7 @@ KRIS   EQU 6
 	const STEP_SLIDE
 	const STEP_SKATEBOARD
 	const STEP_SKATEBOARD_PUSH
+	const STEP_SLOW_SLIDE
 
 const_value = 1
 	const HAPPINESS_GAINLEVEL         ; 01

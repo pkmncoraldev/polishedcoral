@@ -39,9 +39,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp PLAYER_RUN
 	jr z, .Running
 	cp PLAYER_SKATEBOARD
-	jr z, .Skating
+	jp z, .Skating
 	cp PLAYER_SKATEBOARD_MOVING
-	jr z, .Skating
+	jp z, .Skating
 	cp PLAYER_SURF
 	jp z, .Surf
 	cp PLAYER_SURF_PIKA
@@ -54,6 +54,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jp z, .Ice
 	cp PLAYER_SITTING
 	jp z, .Standing
+	cp PLAYER_SKATEBOARD_FALLING
+	jp z, .SkateboardFalling
 .Normal:
 	xor a
 	ld [wPlayerRunning], a
@@ -142,7 +144,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret c
 	call .CheckWarp
 	ret c
-	jr .NotMoving
+	jp .NotMoving
 	
 .SkatingOffRoad
 	ld a, 1
@@ -152,6 +154,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld [wSkateboardSteps], a
 	ld [wSkateboardPush], a
 	ld [wSkateboardMoving], a
+	ld [wSkateboardGrinding], a
 .SkatingPush
 	ld a, 3
 	ld [wSkateboardSpeed], a
@@ -162,6 +165,52 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	pop bc
 	jr .Skatingcont
 
+.SkateboardFalling
+	xor a
+	ld [wSkateboardSteps], a
+	ld [wSkateboardPush], a
+	ld [wSkateboardMoving], a
+	ld [wSkateboardSpeed], a
+	ld [wSkateboardOllie], a
+	ld a, [wSkateboardGrinding]
+	cp 0
+	jr z, .start_fall
+	cp 60
+	jr z, .get_up
+	ld a, [wSkateboardGrinding]
+	inc a
+	ld [wSkateboardGrinding], a
+	call .StandInPlace
+	scf
+	ret
+.get_up
+	ld a, PLAYER_SKATEBOARD
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	xor a
+	ld [wSkateboardGrinding], a
+	scf
+	ret
+.start_fall
+	ld de, SFX_SUBMISSION
+	call PlaySFX
+	ld a, 1
+	ld [wSkateboardGrinding], a
+	call GetFacingTileCoord
+	call GetTileCollision
+	cp LANDTILE
+	jr z, .slide_fall
+	xor a
+	scf
+	ret
+.slide_fall
+	ld a, [wLastWalkingDirection]
+	ld [wWalkingDirection], a
+	ld a, STEP_SLOW
+	call .DoStep
+	scf
+	ret
+	
 .Surf:
 	call .CheckForced
 	call .GetAction
@@ -212,7 +261,6 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 
 .Standing:
 	call .StandInPlace
-.Sitting:
 	xor a
 	ret
 ; 800b7
@@ -651,10 +699,14 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, [wPlayerState]
 	cp PLAYER_SKATEBOARD_GRINDING
 	jr z, .grindcont
+	ld de, SFX_GRIND
+	call PlaySFX
 	ld a, PLAYER_SKATEBOARD_GRINDING
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
 .grindcont
+	ld a, 1
+	ld [wSkateboardGrinding], a
 	ld a, [wLastWalkingDirection]
 	ld [wWalkingDirection], a
 	ld a, STEP_SLIDE
@@ -663,12 +715,30 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret
 	
 .stop_grinding
+	ld a, [wSkateboardGrinding]
+	cp 0
+	jr z, .stop_grinding_fall
 	ld a, [wLastWalkingDirection]
 	ld [wWalkingDirection], a
 	ld a, PLAYER_SKATEBOARD
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
+	xor a
+	ld [wSkateboardGrinding], a
 	ld de, SFX_JUMP_OVER_LEDGE
+	call PlaySFX
+	ld a, STEP_LEDGE
+	call .DoStep
+	ld a, 7
+	scf
+	ret
+.stop_grinding_fall
+	ld a, [wLastWalkingDirection]
+	ld [wWalkingDirection], a
+	ld a, PLAYER_SKATEBOARD_FALLING
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ld de, SFX_BEAT_UP
 	call PlaySFX
 	ld a, STEP_LEDGE
 	call .DoStep
@@ -818,6 +888,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld [wSkateboardMoving], a
 	ld [wSkateboardSpeed], a
 	ld [wSkateboardOllie], a
+	ld [wSkateboardGrinding], a
 	ld [wSpinning], a
 	ret
 ; 801c0
@@ -1787,4 +1858,5 @@ SkateboardTiles::
 	db COLL_WARP_CARPET_LEFT
 	db COLL_WARP_CARPET_UP
 	db COLL_WARP_CARPET_DOWN
+	db COLL_GRIND
 	db -1

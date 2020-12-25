@@ -953,6 +953,7 @@ wPlayerHouse1FTrigger:: ds 1
 wPlayerHouse2FTrigger:: ds 1
 wSunsetBayTrigger:: ds 1
 wSunsetCapeTrigger:: ds 1
+wSunsetGengarHouseTrigger:: ds 1
 wSunsetCaptainsHouseTrigger:: ds 1
 wSunsetLighthouseTrigger:: ds 1
 wRoute1GateTrigger:: ds 1
@@ -1006,7 +1007,7 @@ wTwinkleGymEntryTrigger:: ds 1
 wTwinkleGymBlueRoomTrigger:: ds 1
 wTwinkleGymYellowRoomTrigger:: ds 1
 
-ds 33
+ds 32
 
 ; fight counts
 wJackFightCount::    ds 1
@@ -1153,7 +1154,9 @@ wRepelType:: ds 1
 
 wTorchSteps:: ds 1
 
-wBikeStep:: ds 2
+wOnBike::	ds 1
+
+wOnSkateboard:: ds 1
 
 wKurtApricornQuantity:: ds 1
 

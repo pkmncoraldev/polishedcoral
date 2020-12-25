@@ -2305,6 +2305,8 @@ BikeFunction: ; d0b3
 	jr .CannotUseBike
 
 .GetOnBike:
+	ld a, 1
+	ld [wOnBike], a
 	ld hl, Script_GetOnBike
 	ld de, Script_GetOnBike_Register
 	call .CheckIfRegistered
@@ -2314,6 +2316,8 @@ BikeFunction: ; d0b3
 	ld hl, wOWState
 	bit OWSTATE_BIKING_FORCED, [hl]
 	jr nz, .CantGetOffBike
+	xor a
+	ld [wOnBike], a
 	ld hl, Script_GetOffBike
 	ld de, Script_GetOffBike_Register
 	call .CheckIfRegistered
@@ -2457,6 +2461,8 @@ SkateboardFunction: ; d0b3
 	jr .CannotUseSkateboard
 
 .GetOnSkateboard:
+	ld a, 1
+	ld [wOnSkateboard], a
 	ld hl, Script_GetOnSkateboard
 	ld de, Script_GetOnSkateboard_Register
 	call .CheckIfRegistered
@@ -2466,6 +2472,8 @@ SkateboardFunction: ; d0b3
 	ld hl, wOWState
 	bit OWSTATE_BIKING_FORCED, [hl]
 	jr nz, .CantGetOffSkateboard
+	xor a
+	ld [wOnSkateboard], a
 	ld hl, Script_GetOffSkateboard
 	ld de, Script_GetOffSkateboard_Register
 	call .CheckIfRegistered

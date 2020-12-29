@@ -219,17 +219,19 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call GetFacingTileCoord
 	call GetTileCollision
 	cp LANDTILE
-	jr z, .slide_fall
-	xor a
-	scf
-	ret
-.slide_fall
-	ld a, [wLastWalkingDirection]
-	ld [wWalkingDirection], a
+	jr nz, .dont_slide_fall
+	call .CheckNPC
+	and a
+	jp z, .dont_slide_fall
 	ld a, STEP_SLOW
 	call .DoStep
 	scf
 	ret
+.dont_slide_fall
+	xor a
+	scf
+	ret
+	
 	
 .Surf:
 	call .CheckForced
@@ -711,14 +713,32 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call ReplaceKrisSprite ; UpdateSprites
 	ret
 	
-.grind
-	call GetFacingTileCoord
-	call GetTileCollision
-	cp LANDTILE
-	jr z, .stop_grinding
+.change_grind_direction
+	call SetLastWalkingDirectionOpposite
 	ld a, [wPlayerState]
 	cp PLAYER_SKATEBOARD_GRINDING
 	jr z, .grindcont
+	ld de, SFX_GRIND
+	call PlaySFX
+	ld a, PLAYER_SKATEBOARD_GRINDING
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	jr .grindcont
+.grind
+	call GetFacingTileCoord
+	ld c, a
+	cp COLL_GRIND
+	jr nz, .stop_grinding
+	ld a, [wPlayerState]
+	cp PLAYER_SKATEBOARD_GRINDING
+	jr z, .grindcont
+	xor a
+	ld [wSkateboardSteps], a
+	ld [wSkateboardPush], a
+	ld [wSkateboardMoving], a
+	ld [wSkateboardSpeed], a
+	ld [wSkateboardOllie], a
+	ld [wSpinning], a
 	ld de, SFX_GRIND
 	call PlaySFX
 	ld a, PLAYER_SKATEBOARD_GRINDING
@@ -738,8 +758,16 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, [wSkateboardGrinding]
 	cp 0
 	jr z, .stop_grinding_fall
+
+	call GetFacingTileCoord
+	call GetTileCollision
+	cp LANDTILE
+	jr nz, .change_grind_direction
+	
 	ld a, [wLastWalkingDirection]
 	ld [wWalkingDirection], a
+	xor a
+	ld a, [wLastWalkingDirection]
 	ld a, PLAYER_SKATEBOARD
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
@@ -753,8 +781,16 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	scf
 	ret
 .stop_grinding_fall
+	call GetFacingTileCoord
+	call GetTileCollision
+	cp LANDTILE
+	jr z, .stop_grinding_fall_normal
+	call SetLastWalkingDirectionOpposite
+.stop_grinding_fall_normal
 	ld a, [wLastWalkingDirection]
 	ld [wWalkingDirection], a
+	xor a
+	ld a, [wLastWalkingDirection]
 	ld a, PLAYER_FALLING
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
@@ -1024,11 +1060,11 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr c, .DontOllieSound
 	call .CheckNoJumpTile
 	jr nc, .DontOllieSound
-;	ld a, [wPlayerStandingTile]
-;	ld hl, SkateboardTiles
-;	ld de, 1
-;	call IsInArray
-;	jr nc, .DontOllieSound
+	ld a, [wPlayerStandingTile]
+	ld hl, SkateboardTiles
+	ld de, 1
+	call IsInArray
+	jr nc, .DontOllieSound
 	farcall CheckFacingEdgeofMap
 	jr nc, .DontOllieSound
 	ld a, [wLastWalkingDirection]
@@ -1613,14 +1649,14 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret
 	
 .CheckSkatableFarAhead:: ; 8039e
-	ld a, [wPlayerFacing]
-	cp $04
+	ld a, [wWalkingDirection]
+	cp $01
 	jr z, .CheckSkatableFarAheadUp
 	cp $00
 	jr z, .CheckSkatableFarAheadDown
-	cp $08
+	cp $02
 	jr z, .CheckSkatableFarAheadLeft
-	cp $0c
+	cp $03
 	jr z, .CheckSkatableFarAheadRight
 	jr .CheckSkatableFarAheadEnd2
 .CheckSkatableFarAheadUp
@@ -1918,6 +1954,28 @@ CheckBikeGear::
 	bit 0, [hl] ; ENGINE_BIKE_GEAR
 	ret nz
 	ld a, 1
+	ret
+	
+SetLastWalkingDirectionOpposite::
+	ld a, [wLastWalkingDirection]
+	cp DOWN
+	jr z, .up
+	cp UP
+	jr z, .down
+	cp LEFT
+	jr z, .right
+	ld a, LEFT
+	jr .end
+.up
+	ld a, UP
+	jr .end
+.down
+	ld a, DOWN
+	jr .end
+.right
+	ld a, RIGHT
+.end
+	ld [wLastWalkingDirection], a
 	ret
 	
 SkateboardTiles::

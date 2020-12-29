@@ -7,10 +7,12 @@ LusterSewersB1F_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, LusterSewersB1FChangeBlocks
 
-	db 3 ; warp events
+	db 5 ; warp events
 	warp_def  3,  8, 1, LUSTER_CITY_RESIDENTIAL
 	warp_def 19,  3, 1, LUSTER_SEWERS_VALVE_ROOM
 	warp_def  3, 25, 1, LUSTER_SEWERS_B2F
+	warp_def  1, 29, 5, LUSTER_SEWERS_VALVE_ROOM
+	warp_def 11, 27, 3, LUSTER_SEWERS_B2F
 	
 	db 6 ; coord events
 	xy_trigger 0,  4,  5, 0, LusterSewersB1FUnderBridge, 0, 0
@@ -22,7 +24,7 @@ LusterSewersB1F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 7 ; object events
+	db 8 ; object events
 	person_event SPRITE_PLANK_BRIDGE, 14, 17, SPRITEMOVEDATA_TILE_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_EMPTY
 	person_event SPRITE_PLANK_BRIDGE, 15, 17, SPRITEMOVEDATA_TILE_UP, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_EMPTY
 	person_event SPRITE_PLANK_BRIDGE, 15, 17, SPRITEMOVEDATA_TILE_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_FLOODED
@@ -30,7 +32,30 @@ LusterSewersB1F_MapScriptHeader:
 	person_event SPRITE_PLANK_BRIDGE_2,  4, 27, SPRITEMOVEDATA_TILE_UP, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_EMPTY
 	person_event SPRITE_PLANK_BRIDGE_2,  5, 26, SPRITEMOVEDATA_TILE_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_FLOODED
 	person_event SPRITE_PLANK_BRIDGE_2,  5, 27, SPRITEMOVEDATA_TILE_UP, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_FLOODED
+	person_event SPRITE_DELINQUENT_M,  9,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerLusterSewersB1F_1, -1
 
+TrainerLusterSewersB1F_1:
+	generictrainer BUNEARY_M, BOY_1, EVENT_BEAT_LUSTER_SEWERS_B1F_TRAINER_1, .SeenText, .BeatenText
+
+	text "Someday I'm gonna"
+	line "beat STANLEY and"
+	cont "get my own badge."
+	done
+
+.SeenText:
+	text "You beat STANLEY?"
+	
+	para "That's so cool!"
+	
+	para "Can I see your"
+	line "badge?"	
+	done
+
+.BeatenText:
+	text "You really ARE"
+	line "strong!"
+	done
+	
 LusterSewersB1FTrigger0:
 	end
 	

@@ -78,6 +78,9 @@ EventideSootheBellHouse_BlockData:
 SECTION "Map Blockdata 1", ROMX
 
 
+Park_BlockData:
+	INCBIN "maps/Park.ablk.lz"
+
 Skatepark_BlockData:
 	INCBIN "maps/Skatepark.ablk.lz"
 
@@ -302,6 +305,9 @@ LusterSewersB2FEmpty_BlockData:
 	
 LusterSewersValveRoom_BlockData:
 	INCBIN "maps/LusterSewersValveRoom.ablk.lz"
+	
+LusterSewersThroneRoom_BlockData:
+	INCBIN "maps/LusterSewersThroneRoom.ablk.lz"
 	
 SprucesLab_BlockData:
 	INCBIN "maps/SprucesLab.ablk.lz"

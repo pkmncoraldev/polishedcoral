@@ -2551,6 +2551,36 @@ DelinquentfGroup:
 ; ================================
 
 
+BunearymGroup:
+; ================================
+; ================
+
+	; BUNEARY_M
+	db "BOY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+
+BunearyfGroup:
+; ================================
+; ================
+
+	; BUNEARY_F
+	db "GAL@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+
 MallCopGroup:
 ; ================================
 ; ================

@@ -47,7 +47,6 @@ TilesetLabAnim::
 TilesetMartAnim::
 TilesetLibraryAnim::
 TilesetSnowAnim::
-TilesetParkAnim::
 TilesetMall2Anim::
 TilesetIceCaveAnim::
 	dw NULL,  WaitTileAnimation
@@ -134,6 +133,7 @@ TilesetMountainAnim::
 TilesetSpookyAnim::
 TilesetRanchAnim::
 TilesetLusterAnim::
+TilesetParkAnim::
 	dw VTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft

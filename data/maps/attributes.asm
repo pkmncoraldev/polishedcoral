@@ -261,6 +261,12 @@ ENDM
 	map_attributes LusterCityBusiness, LUSTER_CITY_BUSINESS, 113, WEST
 	connection west, LusterCityShopping, LUSTER_CITY_SHOPPING, -6
 	
+	map_attributes Park, PARK, $0, EAST
+	connection east, Skatepark, SKATEPARK, 0
+	
+	map_attributes Skatepark, SKATEPARK, $0, WEST
+	connection west, Park, PARK, 0
+	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0
 	map_attributes GlintGrove, GLINT_GROVE, $20, 0
@@ -281,6 +287,7 @@ ENDM
 	map_attributes LusterSewersB1F, LUSTER_SEWERS_B1F, 0, 0
 	map_attributes LusterSewersB2F, LUSTER_SEWERS_B2F, 0, 0
 	map_attributes LusterSewersValveRoom, LUSTER_SEWERS_VALVE_ROOM, 0, 0
+	map_attributes LusterSewersThroneRoom, LUSTER_SEWERS_THRONE_ROOM, 0, 0
 	map_attributes IceCaveB1F, ICE_CAVE_B1F, $54, 0
 	map_attributes IceCaveB2F, ICE_CAVE_B2F, $54, 0
 	map_attributes IceCaveB3F, ICE_CAVE_B3F, $54, 0
@@ -290,7 +297,6 @@ ENDM
 	map_attributes IceTempleB2F1, ICE_TEMPLE_B2F_1, 0, 0
 	map_attributes IceTempleB2F2, ICE_TEMPLE_B2F_2, 0, 0
 	
-	map_attributes Skatepark, SKATEPARK, $0, 0
 	map_attributes SunsetPokeCenter, SUNSET_POKECENTER, $0, 0
 	map_attributes SunsetLighthouse, SUNSET_LIGHTHOUSE, $0, 0
 	map_attributes PlayerHouse1F, PLAYER_HOUSE_1F, $0, 0

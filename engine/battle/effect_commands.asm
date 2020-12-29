@@ -7131,7 +7131,7 @@ BattleCommand_recoil: ; 36cb2
 	jr z, .OneThirdRecoil
 	cp FLARE_BLITZ
 	jr z, .OneThirdRecoil
-	ld a, BATTLE_VARS_MOVE_ANIM
+	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
 	ld d, a
 ; get 1/4 damage or 1 HP, whichever is higher
@@ -7191,7 +7191,7 @@ BattleCommand_recoil: ; 36cb2
 	jp .recoil_text
 
 .OneThirdRecoil
-	ld a, BATTLE_VARS_MOVE_ANIM
+	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
 	ld d, a
 	ld a, [wCurDamage]

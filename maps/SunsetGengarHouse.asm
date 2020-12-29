@@ -7,7 +7,9 @@ SunsetGengarHouse_MapScriptHeader:
 	warp_event  2,  7, SUNSET_BAY, 7
 	warp_event  3,  7, SUNSET_BAY, 7
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event  7,  4, 1, SunsetGengarHouseTrip
+	coord_event  6,  5, 1, SunsetGengarHouseTrip
 
 	db 2 ; bg events
 	bg_event  6,  1, SIGNPOST_JUMPSTD, picturebookshelf
@@ -33,8 +35,19 @@ SunsetGengarHouseGengar:
 	writetext SunsetGengarHouseGengarText2
 	waitbutton
 	closetext
+	dotrigger $1
 	end
-
+	
+SunsetGengarHouseTrip:
+	callasm SunsetGengarHouseAsm
+	dotrigger $0
+	end
+	
+SunsetGengarHouseAsm:
+	ld a, 69
+	ld [wSkateboardGrinding], a
+	ret
+	
 SunsetGengarHouseNPC1Text:
 	text "I've known my"
 	line "GENGAR, BUTTERCUP,"
@@ -67,6 +80,6 @@ SunsetGengarHouseGengarText1:
 	done
 	
 SunsetGengarHouseGengarText2:
-	text "She untied your"
-	line "shoelaces."
+	text "She tied together"
+	line "your shoelaces…"
 	done

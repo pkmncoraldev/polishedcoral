@@ -400,6 +400,14 @@ PLAYER_F EQU __enum__
 	trainerclass DELINQUENT_F
 	
 	
+	trainerclass BUNEARY_M
+	const BOY_1
+
+
+	trainerclass BUNEARY_F
+	const GAL_1
+	
+	
 	trainerclass MALL_COP
 	const PHIL
 

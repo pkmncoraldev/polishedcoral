@@ -289,7 +289,7 @@ BattleAnim_RockPolish:
 BattleAnim_Nuzzle:
 BattleAnim_ElectroBall:
 BattleAnim_Superpower:
-BattleAnim_FlameWheel:
+BattleAnim_FlameBurst:
 	anim_ret
 	
 BattleAnim_PoisonFang:

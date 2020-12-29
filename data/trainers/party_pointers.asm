@@ -79,5 +79,7 @@ TrainerGroups: ; 0x39999
 	dba BikiniPGroup
 	dba DelinquentmGroup
 	dba DelinquentfGroup
+	dba BunearymGroup
+	dba BunearyfGroup
 	dba MallCopGroup
 	dba TowerTycoonGroup

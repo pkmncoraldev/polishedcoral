@@ -214,3 +214,4 @@
 	const SFX_BUMP_SNOWSTORM			  ; d0
 	const SFX_SNOWSTORM_INTRO			  ; d1
 	const SFX_SNOWSTORM 				  ; d2
+	const SFX_GRIND						  ; d3

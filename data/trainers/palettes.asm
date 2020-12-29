@@ -80,6 +80,8 @@ BikiniBLPalette:		 INCLUDE "gfx/trainers/bikinibl.pal"
 BikiniPPalette:			 INCLUDE "gfx/trainers/bikinip.pal"
 DelinquentmPalette:		 INCLUDE "gfx/trainers/delinquent_m.pal"
 DelinquentfPalette:	 	 INCLUDE "gfx/trainers/delinquent_f.pal"
+BunearymPalette:		 INCLUDE "gfx/trainers/delinquent_m.pal"
+BunearyfPalette:		 INCLUDE "gfx/trainers/delinquent_f.pal"
 MallCopPalette:			 INCLUDE "gfx/trainers/player1.pal"
 TowerTycoonPalette:
 

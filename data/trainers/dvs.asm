@@ -108,6 +108,8 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  72, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE ; bikiniy
 	db  32, $AA, $AA, $AA, ABILITY_1 | QUIRKY, MALE   ; delinquentm
 	db  32, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE ; delinquentf
+	db  00, $00, $00, $00, ABILITY_1 | QUIRKY, MALE   ; bunearym
+	db  48, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE ; bunearyf
 	db   0, $66, $66, $66, ABILITY_1 | QUIRKY, MALE   ; mall cop
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; towertycoon
 

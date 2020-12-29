@@ -617,3 +617,4 @@ skateboard_slow_step_left: macro
 skateboard_slow_step_right: macro
 	db movement_skateboard_slow_step_right ; $65
 	endm
+

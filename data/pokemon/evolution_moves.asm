@@ -141,7 +141,7 @@ EvolutionMoves::
 	db NO_MOVE      ; TEDDIURSA
 	db BULK_UP      ; URSARING
 	db NO_MOVE      ; SLUGMA
-	db NO_MOVE      ; MAGCARGO
+	db SHELL_SMASH     ; MAGCARGO
 	db NO_MOVE      ; SWINUB
 	db NO_MOVE      ; PILOSWINE
 	db NO_MOVE      ; CORSOLA
@@ -158,7 +158,7 @@ EvolutionMoves::
 	db NO_MOVE      ; MAGBY
 	db NO_MOVE      ; MILTANK
 	db NO_MOVE      ; LARVITAR
-	db NO_MOVE      ; PUPITAR
+	db BARRIER_IRON_DEFENSE_ACID_ARMOR      ; PUPITAR
 	db NO_MOVE      ; TYRANITAR
 	db NO_MOVE      ; RALTS
 	db NO_MOVE      ; KIRLIA

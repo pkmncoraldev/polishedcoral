@@ -1074,13 +1074,39 @@ ScytherEvosAttacks:
 ElectabuzzEvosAttacks:
 	db EVOLVE_HOLDING, ELECTIRIZER, ELECTIVIRE
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, QUICK_ATTACK
+	db 1, LEER_TAIL_WHIP
+	db 5, THUNDERSHOCK
+	db 8, DOUBLE_TEAM
+	db 12, SWIFT
+	db 15, SHOCK_WAVE
+	db 19, THUNDER_WAVE
+	db 22, ELECTRO_BALL
+	db 26, SCREECH
+	db 29, THUNDERPUNCH
+	db 36, LOW_KICK
+	db 42, LIGHT_SCREEN
+	db 49, THUNDERBOLT
+	db 55, THUNDER
 	db 0 ; no more level-up moves
 
 MagmarEvosAttacks:
 	db EVOLVE_HOLDING, MAGMARIZER, MAGMORTAR
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, SMOG
+	db 1, LEER_TAIL_WHIP
+	db 5, EMBER
+	db 8, SAND_ATTACK_SMOKESCREEN
+	db 12, FAINT_ATTACK
+	db 15, FIRE_SPIN
+	db 19, CLEAR_SMOG
+	db 22, FLAME_BURST
+	db 26, CONFUSE_RAY
+	db 29, FIRE_PUNCH
+	db 36, LOW_KICK
+	db 42, SUNNY_DAY
+	db 49, FLAMETHROWER
+	db 55, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 PinsirEvosAttacks:
@@ -1792,12 +1818,38 @@ UrsaringEvosAttacks:
 SlugmaEvosAttacks:
 	db EVOLVE_LEVEL, 38, MAGCARGO
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, SAND_ATTACK_SMOKESCREEN
+	db 1, SMOG
+	db 6, EMBER
+	db 9, ROCK_THROW
+	db 14, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 18, FIRE_SPIN
+	db 23, CLEAR_SMOG
+	db 25, ANCIENTPOWER
+	db 30, FLAME_BURST
+	db 33, BODY_SLAM
+	db 37, RECOVER
+	db 40, ROCK_SLIDE
+	db 45, FLAMETHROWER
+	db 48, EARTH_POWER
 	db 0 ; no more level-up moves
 
 MagcargoEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, SAND_ATTACK_SMOKESCREEN
+	db 1, SMOG
+	db 6, EMBER
+	db 9, ROCK_THROW
+	db 14, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 18, FIRE_SPIN
+	db 23, CLEAR_SMOG
+	db 25, ANCIENTPOWER
+	db 30, FLAME_BURST
+	db 33, BODY_SLAM
+	db 37, RECOVER
+	db 42, ROCK_SLIDE
+	db 49, FLAMETHROWER
+	db 54, EARTH_POWER
 	db 0 ; no more level-up moves
 
 SwinubEvosAttacks:
@@ -1903,13 +1955,39 @@ SmeargleEvosAttacks:
 ElekidEvosAttacks:
 	db EVOLVE_LEVEL, 30, ELECTABUZZ
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, QUICK_ATTACK
+	db 1, LEER_TAIL_WHIP
+	db 5, THUNDERSHOCK
+	db 8, DOUBLE_TEAM
+	db 12, SWIFT
+	db 15, SHOCK_WAVE
+	db 19, THUNDER_WAVE
+	db 22, ELECTRO_BALL
+	db 26, SCREECH
+	db 29, THUNDERPUNCH
+	db 33, LOW_KICK
+	db 36, LIGHT_SCREEN
+	db 40, THUNDERBOLT
+	db 43, THUNDER
 	db 0 ; no more level-up moves
 
 MagbyEvosAttacks:
 	db EVOLVE_LEVEL, 30, MAGMAR
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, SMOG
+	db 1, LEER_TAIL_WHIP
+	db 5, EMBER
+	db 8, SAND_ATTACK_SMOKESCREEN
+	db 12, FAINT_ATTACK
+	db 15, FIRE_SPIN
+	db 19, CLEAR_SMOG
+	db 22, FLAME_BURST
+	db 26, CONFUSE_RAY
+	db 29, FIRE_PUNCH
+	db 33, LOW_KICK
+	db 36, SUNNY_DAY
+	db 40, FLAMETHROWER
+	db 43, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 MiltankEvosAttacks:
@@ -1921,17 +1999,62 @@ LarvitarEvosAttacks:
 	db EVOLVE_LEVEL, 30, PUPITAR
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 5, ROCK_THROW
+	db 9, BITE
+	db 13, SCARY_FACE_COTTON_SPORE
+	db 17, MAGNITUDE
+	db 21, ROCK_SLIDE
+	db 25, SCREECH
+	db 29, CRUNCH
+	db 33, EARTHQUAKE
+	db 37, STONE_EDGE
+	db 41, THRASH
+	db 45, SANDSTORM
+	db 49, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 PupitarEvosAttacks:
 	db EVOLVE_LEVEL, 55, TYRANITAR
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 5, ROCK_THROW
+	db 9, BITE
+	db 13, SCARY_FACE_COTTON_SPORE
+	db 17, MAGNITUDE
+	db 21, ROCK_SLIDE
+	db 25, SCREECH
+	db 29, CRUNCH
+	db 35, EARTHQUAKE
+	db 41, STONE_EDGE
+	db 47, THRASH
+	db 53, SANDSTORM
+	db 59, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 TyranitarEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 1, THUNDER_FANG
+	db 1, ICE_FANG
+	db 1, FIRE_FANG
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 1, ROCK_THROW
+	db 1, BITE
+	db 5, ROCK_THROW
+	db 9, BITE
+	db 13, SCARY_FACE_COTTON_SPORE
+	db 17, MAGNITUDE
+	db 21, ROCK_SLIDE
+	db 25, SCREECH
+	db 29, CRUNCH
+	db 35, EARTHQUAKE
+	db 41, STONE_EDGE
+	db 47, THRASH
+	db 53, SANDSTORM
+	db 63, HYPER_BEAM
 	db 0 ; no more level-up moves
 	
 RaltsEvosAttacks:
@@ -2214,12 +2337,46 @@ RhyperiorEvosAttacks:
 	
 ElectivireEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, FIRE_PUNCH
+	db 1, QUICK_ATTACK
+	db 1, LEER_TAIL_WHIP
+	db 1, THUNDERSHOCK
+	db 1, DOUBLE_TEAM
+	db 5, THUNDERSHOCK
+	db 8, DOUBLE_TEAM
+	db 12, SWIFT
+	db 15, SHOCK_WAVE
+	db 19, THUNDER_WAVE
+	db 22, ELECTRO_BALL
+	db 26, SCREECH
+	db 29, THUNDERPUNCH
+	db 36, LOW_KICK
+	db 42, LIGHT_SCREEN
+	db 49, THUNDERBOLT
+	db 55, THUNDER
+	db 62, GIGA_IMPACT
 	db 0 ; no more level-up moves
 	
 MagmortarEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, THUNDERPUNCH
+	db 1, SMOG
+	db 1, LEER_TAIL_WHIP
+	db 1, EMBER
+	db 1, SAND_ATTACK_SMOKESCREEN
+	db 5, EMBER
+	db 8, SAND_ATTACK_SMOKESCREEN
+	db 12, FAINT_ATTACK
+	db 15, FIRE_SPIN
+	db 19, CLEAR_SMOG
+	db 22, FLAME_BURST
+	db 26, CONFUSE_RAY
+	db 29, FIRE_PUNCH
+	db 36, LOW_KICK
+	db 42, SUNNY_DAY
+	db 49, FLAMETHROWER
+	db 55, FIRE_BLAST
+	db 62, HYPER_BEAM
 	db 0 ; no more level-up moves
 	
 TogekissEvosAttacks:

@@ -56,7 +56,7 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke WIGGLYTUFF, 100
-	givepoke BULBASAUR, 1
+	givepoke SHROOMISH, 100
 .items
 	writetext PlayerHouseDebugText6
 	yesorno

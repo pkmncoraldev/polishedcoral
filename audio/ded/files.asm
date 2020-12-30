@@ -4,14 +4,28 @@ TrumbeakDEDData:: INCBIN "audio/ded/trumbeak.ded"
 ToucannonDEDData:: INCBIN "audio/ded/toucannon.ded"
 
 SECTION "DED 2", ROMX
+AronDEDData:: INCBIN "audio/ded/aron.ded"
+AggronDEDData:: INCBIN "audio/ded/aggron.ded"
+LaironDEDData:: INCBIN "audio/ded/lairon.ded"
+ShroomishDEDData:: INCBIN "audio/ded/shroomish.ded"
 
 SECTION "DED 3", ROMX
+BreloomDEDData:: INCBIN "audio/ded/breloom.ded"
+BuizelDEDData:: INCBIN "audio/ded/buizel.ded"
+FloatzelDEDData:: INCBIN "audio/ded/floatzel.ded"
 
 SECTION "DED 4", ROMX
+LitwickDEDData:: INCBIN "audio/ded/litwick.ded"
+LampentDEDData:: INCBIN "audio/ded/lampent.ded"
 
 SECTION "DED 5", ROMX
+ChandelureDEDData:: INCBIN "audio/ded/chandelure.ded"
+RaltsDEDData:: INCBIN "audio/ded/ralts.ded"
+KirliaDEDData:: INCBIN "audio/ded/kirlia.ded"
 
 SECTION "DED 6", ROMX
+GardevoirDEDData:: INCBIN "audio/ded/gardevoir.ded"
+GalladeDEDData:: INCBIN "audio/ded/gallade.ded"
 
 SECTION "DED 7", ROMX
 

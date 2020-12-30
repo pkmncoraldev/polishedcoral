@@ -405,10 +405,7 @@ LusterPunkLeader:
 	writetext LusterPunk2Text2
 	waitbutton
 	closetext
-	pause 20
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, LUSTERPUNK1, 15
-	pause 7
+	pause 25
 	spriteface LUSTERPUNK1, UP
 	opentext
 	writetext LusterPunk1Text3

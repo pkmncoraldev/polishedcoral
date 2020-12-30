@@ -33,8 +33,6 @@ CryHeaders::
 	mon_cry CRY_PIDGEOTTO,   $011,  $17f ; Pidgeot
 	mon_cry CRY_RATTATA,     $000,  $100 ; Rattata
 	mon_cry CRY_RATTATA,     $020,  $17f ; Raticate
-	mon_cry CRY_EKANS,       $012,  $0c0 ; Ekans
-	mon_cry CRY_EKANS,       $0e0,  $090 ; Arbok
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; Pikachu
 	mon_cry CRY_RAICHU,      $0ee,  $088 ; Raichu
 	mon_cry CRY_NIDORAN_M,   $020,  $0c0 ; Sandshrew
@@ -179,21 +177,24 @@ CryHeaders::
 	mon_cry CRY_LARVITAR,    $05f,  $0d0 ; Larvitar
 	mon_cry CRY_PUPITAR,   	-$1db,  $150 ; Pupitar
 	mon_cry CRY_LARVITAR,   -$100,  $180 ; Tyranitar
-	mon_cry CRY_BULBASAUR,   $080,  $081 ; Shroomish
-	mon_cry CRY_BULBASAUR,   $080,  $081 ; Breloom
-	mon_cry CRY_BULBASAUR,   $080,  $081 ; Aron
-	mon_cry CRY_BULBASAUR,   $080,  $081 ; Lairon
-	mon_cry CRY_BULBASAUR,   $080,  $081 ; Aggron
+	mon_cry     RALTS,   RaltsDEDData ; Ralts
+	mon_cry     KIRLIA,   KirliaDEDData ; Kirlia
+	mon_cry     GARDEVOIR,   GardevoirDEDData ; Gardevoir
+	mon_cry     SHROOMISH,   ShroomishDEDData ; Shroomish
+	mon_cry     BRELOOM,   BreloomDEDData ; Breloom
+	mon_cry     ARON,   AronDEDData ; Aron
+	mon_cry     LAIRON,   LaironDEDData ; Lairon
+	mon_cry     AGGRON,   AggronDEDData ; Aggron
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Meditite
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Medicham
+	mon_cry CRY_BULBASAUR,   $080,  $081 ; Carvanha
+	mon_cry CRY_BULBASAUR,   $080,  $081 ; Sharpedo
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Numel
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Camerupt
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Swablu
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Altaria
-	mon_cry CRY_BULBASAUR,   $080,  $081 ; Corphish
-	mon_cry CRY_BULBASAUR,   $080,  $081 ; Crawdaunt
-	mon_cry CRY_BULBASAUR,   $080,  $081 ; Buizel
-	mon_cry CRY_BULBASAUR,   $080,  $081 ; Floatzel
+	mon_cry     BUIZEL,   BuizelDEDData ; Buizel
+	mon_cry     FLOATZEL,   FloatzelDEDData ; Floatzel
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Buneary
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Lopunny
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Honchkrow
@@ -209,12 +210,18 @@ CryHeaders::
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Gliscor
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Mamoswine
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; PorygonZ
+	mon_cry     GALLADE,   GalladeDEDData ; Gallade
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Cottonee
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Whimsicott
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Dwebble
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Crustle
+	mon_cry CRY_EKANS,       $012,  $0c0 ; Minccino
+	mon_cry CRY_EKANS,       $0e0,  $090 ; Cinccino
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Joltik
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Galvantula
+	mon_cry     LITWICK,   LitwickDEDData ; Litwick
+	mon_cry     LAMPENT,   LampentDEDData ; Lampent
+	mon_cry     CHANDELURE,   ChandelureDEDData ; Chandelure
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Lervesta
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Volcarona
 	mon_cry CRY_BULBASAUR,   $080,  $081 ; Sylveon

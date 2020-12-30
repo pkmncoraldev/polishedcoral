@@ -17,8 +17,6 @@ IconPointers:
 	dw PidgeotIcon
 	dw RattataIcon
 	dw RaticateIcon
-	dw EkansIcon
-	dw ArbokIcon
 	dw PikachuIcon
 	dw RaichuIcon
 	dw SandshrewIcon
@@ -163,6 +161,9 @@ IconPointers:
 	dw LarvitarIcon
 	dw PupitarIcon
 	dw TyranitarIcon
+	dw RaltsIcon
+	dw KirliaIcon
+	dw GardevoirIcon
 	dw ShroomishIcon
 	dw BreloomIcon
 	dw AronIcon
@@ -170,12 +171,12 @@ IconPointers:
 	dw AggronIcon
 	dw MedititeIcon
 	dw MedichamIcon
+	dw CarvanhaIcon
+	dw SharpedoIcon
 	dw NumelIcon
 	dw CameruptIcon
 	dw SwabluIcon
 	dw AltariaIcon
-	dw CorphishIcon
-	dw CrawdauntIcon
 	dw BuizelIcon
 	dw FloatzelIcon
 	dw BunearyIcon
@@ -193,12 +194,18 @@ IconPointers:
 	dw GliscorIcon
 	dw MamoswineIcon
 	dw PorygonZIcon
+	dw GalladeIcon
 	dw CottoneeIcon
 	dw WhimsicottIcon
 	dw DwebbleIcon
 	dw CrustleIcon
+	dw MinccinoIcon
+	dw CinccinoIcon
 	dw JoltikIcon
 	dw GalvantulaIcon
+	dw LitwickIcon
+	dw LampentIcon
+	dw ChandelureIcon
 	dw LarvestaIcon
 	dw VolcaronaIcon
 	dw SylveonIcon

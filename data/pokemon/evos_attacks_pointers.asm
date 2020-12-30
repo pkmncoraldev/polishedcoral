@@ -20,8 +20,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw PidgeotEvosAttacks
 	dw RattataEvosAttacks
 	dw RaticateEvosAttacks
-	dw EkansEvosAttacks
-	dw ArbokEvosAttacks
 	dw PikachuEvosAttacks
 	dw RaichuEvosAttacks
 	dw SandshrewEvosAttacks
@@ -166,6 +164,9 @@ EvosAttacksPointers:: ; 0x425b1
 	dw LarvitarEvosAttacks
 	dw PupitarEvosAttacks
 	dw TyranitarEvosAttacks
+	dw RaltsEvosAttacks
+	dw KirliaEvosAttacks
+	dw GardevoirEvosAttacks
 	dw ShroomishEvosAttacks
 	dw BreloomEvosAttacks
 	dw AronEvosAttacks
@@ -173,12 +174,12 @@ EvosAttacksPointers:: ; 0x425b1
 	dw AggronEvosAttacks
 	dw MedititeEvosAttacks
 	dw MedichamEvosAttacks
+	dw CarvanhaEvosAttacks
+	dw SharpedoEvosAttacks
 	dw NumelEvosAttacks
 	dw CameruptEvosAttacks
 	dw SwabluEvosAttacks
 	dw AltariaEvosAttacks
-	dw CorphishEvosAttacks
-	dw CrawdauntEvosAttacks
 	dw BuizelEvosAttacks
 	dw FloatzelEvosAttacks
 	dw BunearyEvosAttacks
@@ -196,12 +197,18 @@ EvosAttacksPointers:: ; 0x425b1
 	dw GliscorEvosAttacks
 	dw MamoswineEvosAttacks
 	dw PorygonZEvosAttacks
+	dw GalladeEvosAttacks
 	dw CottoneeEvosAttacks
 	dw WhimsicottEvosAttacks
 	dw DwebbleEvosAttacks
 	dw CrustleEvosAttacks
+	dw MinccinoEvosAttacks
+	dw CinccinoEvosAttacks
 	dw JoltikEvosAttacks
 	dw GalvantulaEvosAttacks
+	dw LitwickEvosAttacks
+	dw LampentEvosAttacks
+	dw ChandelureEvosAttacks
 	dw LarvestaEvosAttacks
 	dw VolcaronaEvosAttacks
 	dw SylveonEvosAttacks

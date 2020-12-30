@@ -419,7 +419,7 @@ YoungsterGroup:
 	db "CHRIS@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 10, EKANS
+	db 10, MINCCINO
 	db  9, PIDGEY
 	db -1 ; end
 
@@ -429,7 +429,7 @@ YoungsterGroup:
 	db "TOMMY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 25, EKANS
+	db 25, MINCCINO
 	db 24, GASTLY
 	db 26, GASTLY
 	db -1 ; end
@@ -951,8 +951,8 @@ FisherGroup:
 	db "DARREN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 16, CORPHISH
-	db 17, CORPHISH
+	db 16, CARVANHA
+	db 17, CARVANHA
 	db -1 ; end
 
 ; ================
@@ -1177,7 +1177,7 @@ GruntMGroup:
 	db "STARGLOWM2@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 13, EKANS
+	db 13, MINCCINO
 	db 13, PIDGEY
 	db -1 ; end
 
@@ -1339,7 +1339,7 @@ KageGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 25, AZUMARILL
-	db 23, ARBOK
+	db 23, CINCCINO
 	db 30, URSARING
 	db -1 ; end
 
@@ -2556,12 +2556,30 @@ BunearymGroup:
 ; ================
 
 	; BUNEARY_M
-	db "BOY@"
+	db "BOY1@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
 	db -1 ; end
 
+; ================
+
+	; BUNEARY_M
+	db "BOY2@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; BUNEARY_M
+	db "BOY3@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
 ; ================
 ; ================================
 
@@ -2571,7 +2589,7 @@ BunearyfGroup:
 ; ================
 
 	; BUNEARY_F
-	db "GAL@"
+	db "GAL1@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

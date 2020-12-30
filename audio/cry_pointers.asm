@@ -22,7 +22,7 @@ Cries:
 	dba Cry_Pidgeotto
 	dba Cry_Weedle
 	dba Cry_Pikipek
-	dba Cry_Ekans
+	dba Cry_Minccino
 	dba Cry_Shellder
 	dba Cry_Clefairy
 	dba Cry_Venonat
@@ -31,7 +31,7 @@ Cries:
 	dba Cry_Squirtle
 	dba Cry_Dwebble
 	dba Cry_Growlithe
-	dba Cry_Corphish
+	dba Cry_Carvanha
 	dba Cry_Psyduck
 	dba Cry_Rattata
 	dba Cry_Vileplume

@@ -81,7 +81,7 @@ ItemNames::
 	db "SUN STONE@"
 	db "DUSK STONE@"
 	db "SHINY STONE@"
-	db "ICE STONE@"
+	db "DAWN STONE@"
 	db "EVERSTONE@"
 	db "BICYCLE@"
 	db "OLD ROD@"

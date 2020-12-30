@@ -1065,10 +1065,10 @@ Cry_Pikipek: ; f3543
 	musicheader 1, 8, Cry_Pikipek_Ch8
 ; f354c
 
-Cry_Ekans: ; f354c
-	musicheader 3, 5, Cry_Ekans_Ch5
-	musicheader 1, 6, Cry_Ekans_Ch6
-	musicheader 1, 8, Cry_Ekans_Ch8
+Cry_Minccino: ; f354c
+	musicheader 3, 5, Cry_Minccino_Ch5
+	musicheader 1, 6, Cry_Minccino_Ch6
+	musicheader 1, 8, Cry_Minccino_Ch8
 ; f3555
 
 Cry_Shellder: ; f3555
@@ -1119,10 +1119,10 @@ Cry_Growlithe: ; f3594
 	musicheader 1, 8, Cry_Growlithe_Ch8
 ; f359d
 
-Cry_Corphish: ; f359d
-	musicheader 3, 5, Cry_Corphish_Ch5
-	musicheader 1, 6, Cry_Corphish_Ch6
-	musicheader 1, 8, Cry_Corphish_Ch8
+Cry_Carvanha: ; f359d
+	musicheader 3, 5, Cry_Carvanha_Ch5
+	musicheader 1, 6, Cry_Carvanha_Ch6
+	musicheader 1, 8, Cry_Carvanha_Ch8
 ; f35a6
 
 Cry_Psyduck: ; f35a6
@@ -1998,7 +1998,7 @@ Cry_Weedle_Ch8: ; f3d5b
 	endchannel
 ; f3d6e
 
-Cry_Ekans_Ch5: ; f3d6e
+Cry_Minccino_Ch5: ; f3d6e
 	sound_duty 3, 3, 0, 0
 	sound __, 16, $f7, $0500
 	sound __, 16, $e7, $0508
@@ -2007,7 +2007,7 @@ Cry_Ekans_Ch5: ; f3d6e
 	endchannel
 ; f3d81
 
-Cry_Ekans_Ch6: ; f3d81
+Cry_Minccino_Ch6: ; f3d81
 	sound_duty 0, 1, 0, 1
 	sound __, 15, $d7, $0481
 	sound __, 15, $c7, $0489
@@ -2016,7 +2016,7 @@ Cry_Ekans_Ch6: ; f3d81
 	endchannel
 ; f3d94
 
-Cry_Ekans_Ch8: ; f3d94
+Cry_Minccino_Ch8: ; f3d94
 	noise __, 15, $f7, $7c
 	noise __, 13, $f6, $6c
 	noise __, 10, $e4, $7c
@@ -2182,7 +2182,7 @@ Cry_Growlithe_Ch8: ; f3efd
 	endchannel
 ; f3f0a
 
-Cry_Corphish_Ch5: ; f3f0a
+Cry_Carvanha_Ch5: ; f3f0a
 	sound_duty 0, 0, 3, 3
 	sound __, 14, $f1, $0511
 	sound __, 14, $e1, $0515
@@ -2191,7 +2191,7 @@ Cry_Corphish_Ch5: ; f3f0a
 	endchannel
 ; f3f1d
 
-Cry_Corphish_Ch6: ; f3f1d
+Cry_Carvanha_Ch6: ; f3f1d
 	sound_duty 1, 1, 1, 0
 	sound __, 13, $e1, $050c
 	sound __, 13, $d1, $0510
@@ -2200,7 +2200,7 @@ Cry_Corphish_Ch6: ; f3f1d
 	endchannel
 ; f3f30
 
-Cry_Corphish_Ch8: ; f3f30
+Cry_Carvanha_Ch8: ; f3f30
 	noise __, 15, $f2, $65
 	noise __, 14, $e2, $55
 	noise __, 15, $d2, $56

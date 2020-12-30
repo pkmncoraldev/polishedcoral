@@ -24,7 +24,7 @@ LusterSewersB1F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 8 ; object events
+	db 11 ; object events
 	person_event SPRITE_PLANK_BRIDGE, 14, 17, SPRITEMOVEDATA_TILE_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_EMPTY
 	person_event SPRITE_PLANK_BRIDGE, 15, 17, SPRITEMOVEDATA_TILE_UP, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_EMPTY
 	person_event SPRITE_PLANK_BRIDGE, 15, 17, SPRITEMOVEDATA_TILE_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_FLOODED
@@ -33,27 +33,95 @@ LusterSewersB1F_MapScriptHeader:
 	person_event SPRITE_PLANK_BRIDGE_2,  5, 26, SPRITEMOVEDATA_TILE_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_FLOODED
 	person_event SPRITE_PLANK_BRIDGE_2,  5, 27, SPRITEMOVEDATA_TILE_UP, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_FLOODED
 	person_event SPRITE_DELINQUENT_M,  9,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerLusterSewersB1F_1, -1
+	person_event SPRITE_DELINQUENT_F, 21, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerLusterSewersB1F_2, -1
+	person_event SPRITE_DELINQUENT_M, 18, 25, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerLusterSewersB1F_3, -1
+	person_event SPRITE_DELINQUENT_M, 11, 28, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerLusterSewersB1F_4, -1
 
 TrainerLusterSewersB1F_1:
 	generictrainer BUNEARY_M, BOY_1, EVENT_BEAT_LUSTER_SEWERS_B1F_TRAINER_1, .SeenText, .BeatenText
 
-	text "Someday I'm gonna"
-	line "beat STANLEY and"
-	cont "get my own badge."
+	text "You ARE with"
+	line "“THE NIDOKINGS”,"
+	cont "aren't you?"
 	done
 
 .SeenText:
-	text "You beat STANLEY?"
+	text "Who the heck are"
+	line "you?"
 	
-	para "That's so cool!"
-	
-	para "Can I see your"
-	line "badge?"	
+	para "This is “BUNEARY”"
+	line "turf now!"	
 	done
 
 .BeatenText:
-	text "You really ARE"
-	line "strong!"
+	text "You darn"
+	line "“NIDOKINGS”…"
+	done
+	
+TrainerLusterSewersB1F_2:
+	generictrainer BUNEARY_F, GAL_1, EVENT_BEAT_LUSTER_SEWERS_B1F_TRAINER_2, .SeenText, .BeatenText
+
+	text "Don't get it wrong!"
+	
+	para "These sewers are"
+	line "still ours!"
+	done
+
+.SeenText:
+	text "You can't be down"
+	line "here!"
+	
+	para "FRANKIE says WE"
+	line "own these sewers!"	
+	done
+
+.BeatenText:
+	text "You better watch"
+	line "yourself down"
+	cont "here!"
+	done
+	
+TrainerLusterSewersB1F_3:
+	generictrainer BUNEARY_M, BOY_2, EVENT_BEAT_LUSTER_SEWERS_B1F_TRAINER_3, .SeenText, .BeatenText
+
+	text "Just because we"
+	line "stole all of it"
+	cont "doesn't mean you"
+	cont "can steal it back!"
+	done
+
+.SeenText:
+	text "Everything here"
+	line "is property of the"
+	cont "“BUNEARY BOYS”."
+	
+	para "Don't even think"
+	line "about touching"
+	cont "anything!"
+	done
+
+.BeatenText:
+	text "Man, whatever…"
+	done
+	
+TrainerLusterSewersB1F_4:
+	generictrainer BUNEARY_M, BOY_3, EVENT_BEAT_LUSTER_SEWERS_B1F_TRAINER_4, .SeenText, .BeatenText
+
+	text "You may as well"
+	line "just head back"
+	cont "the way you came!"
+	done
+
+.SeenText:
+	text "How did you get"
+	line "over here?"
+	
+	para "There ain't"
+	line "nothin' over here."
+	done
+
+.BeatenText:
+	text "I'm telling ya…"
 	done
 	
 LusterSewersB1FTrigger0:

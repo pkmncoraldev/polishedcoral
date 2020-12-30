@@ -17,8 +17,6 @@
 	dw PidgeotPokedexEntry
 	dw RattataPokedexEntry
 	dw RaticatePokedexEntry
-	dw EkansPokedexEntry
-	dw ArbokPokedexEntry
 	dw PikachuPokedexEntry
 	dw RaichuPokedexEntry
 	dw SandshrewPokedexEntry
@@ -162,6 +160,9 @@
 	dw LarvitarPokedexEntry
 	dw PupitarPokedexEntry
 	dw TyranitarPokedexEntry
+	dw RaltsPokedexEntry
+	dw KirliaPokedexEntry
+	dw GardevoirPokedexEntry
 	dw ShroomishPokedexEntry
 	dw BreloomPokedexEntry
 	dw AronPokedexEntry
@@ -169,12 +170,12 @@
 	dw AggronPokedexEntry
 	dw MedititePokedexEntry
 	dw MedichamPokedexEntry
+	dw CarvanhaPokedexEntry
+	dw SharpedoPokedexEntry
 	dw NumelPokedexEntry
 	dw CameruptPokedexEntry
 	dw SwabluPokedexEntry
 	dw AltariaPokedexEntry
-	dw CorphishPokedexEntry
-	dw CrawdauntPokedexEntry
 	dw BuizelPokedexEntry
 	dw FloatzelPokedexEntry
 	dw BunearyPokedexEntry
@@ -192,12 +193,18 @@
 	dw GliscorPokedexEntry
 	dw MamoswinePokedexEntry
 	dw PorygonZPokedexEntry
+	dw GalladePokedexEntry
 	dw CottoneePokedexEntry
 	dw WhimsicottPokedexEntry
 	dw DwebblePokedexEntry
 	dw CrustlePokedexEntry
+	dw MinccinoPokedexEntry
+	dw CinccinoPokedexEntry
 	dw JoltikPokedexEntry
 	dw GalvantulaPokedexEntry
+	dw LitwickPokedexEntry
+	dw LampentPokedexEntry
+	dw ChandelurePokedexEntry
 	dw LarvestaPokedexEntry
 	dw VolcaronaPokedexEntry
 	dw SylveonPokedexEntry

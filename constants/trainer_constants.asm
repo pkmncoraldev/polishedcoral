@@ -402,6 +402,8 @@ PLAYER_F EQU __enum__
 	
 	trainerclass BUNEARY_M
 	const BOY_1
+	const BOY_2
+	const BOY_3
 
 
 	trainerclass BUNEARY_F

@@ -98,7 +98,7 @@
 	const SUN_STONE    ; 50
 	const DUSK_STONE   ; 51
 	const SHINY_STONE  ; 52
-	const ICE_STONE    ; 53
+	const DAWN_STONE   ; 53
 	const EVERSTONE    ; 54
 
 	const BICYCLE      ; 55
@@ -384,7 +384,7 @@
 	const NAM_HP_UP        ; 57
 	const NAM_HYPER_POTION ; 58
 	const NAM_ICE_HEAL     ; 59
-	const NAM_ICE_STONE    ; 5a
+	const NAM_DAWN_STONE    ; 5a
 	const NAM_ICY_ROCK     ; 5b
 	const NAM_IRON         ; 5c
 	const NAM_ITEMFINDER   ; 5d

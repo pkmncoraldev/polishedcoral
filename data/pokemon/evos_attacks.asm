@@ -270,17 +270,6 @@ RaticateEvosAttacks:
 	db 35, DOUBLE_EDGE
 	db  0 ; no more level-up moves
 
-EkansEvosAttacks:
-	db EVOLVE_LEVEL, 22, ARBOK
-	db  0 ; no more evolutions
-	db  0, STRUGGLE
-	db  0 ; no more level-up moves
-
-ArbokEvosAttacks:
-	db  0 ; no more evolutions
-	db  0, STRUGGLE
-	db  0 ; no more level-up moves
-
 PikachuEvosAttacks:
 	db EVOLVE_ITEM, THUNDERSTONE, RAICHU
 	db EVOLVE_ITEM, FIRE_STONE, RAICHU_A
@@ -1945,6 +1934,24 @@ TyranitarEvosAttacks:
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
+RaltsEvosAttacks:
+	db EVOLVE_LEVEL, 20, KIRLIA
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+KirliaEvosAttacks:
+	db EVOLVE_LEVEL, 30, GARDEVOIR
+	db EVOLVE_ITEM, DAWN_STONE, GALLADE
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+GardevoirEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
 ShroomishEvosAttacks:
 	db EVOLVE_LEVEL, 23, BRELOOM
 	db  0 ; no more evolutions
@@ -2035,6 +2042,17 @@ MedichamEvosAttacks:
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
+CarvanhaEvosAttacks:
+	db EVOLVE_LEVEL, 30, SHARPEDO
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+SharpedoEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
 NumelEvosAttacks:
 	db EVOLVE_LEVEL, 33, CAMERUPT
 	db 0 ; no more evolutions
@@ -2113,17 +2131,6 @@ AltariaEvosAttacks:
 	db 40, DRAGON_PULSE
 	db 46, PERISH_SONG
 	db 52, MOONBLAST
-	db 0 ; no more level-up moves
-	
-CorphishEvosAttacks:
-	db EVOLVE_LEVEL, 30, CRAWDAUNT
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
-	
-CrawdauntEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
 BuizelEvosAttacks:
@@ -2259,6 +2266,11 @@ PorygonZEvosAttacks:
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
+GalladeEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
 CottoneeEvosAttacks:
 	db EVOLVE_ITEM, SUN_STONE, WHIMSICOTT
 	db  0 ; no more evolutions
@@ -2304,7 +2316,7 @@ WhimsicottEvosAttacks:
 DwebbleEvosAttacks:
 	db EVOLVE_LEVEL, 34, CRUSTLE
 	db  0 ; no more evolutions
-;	db  1, FURY_CUTTER
+	db  1, FURY_CUTTER
 	db  5, ROCK_BLAST
 	db  7, DEFENSE_CURL_HARDEN_WITHDRAW
 	db 11, SAND_ATTACK_SMOKESCREEN
@@ -2321,7 +2333,7 @@ DwebbleEvosAttacks:
 	
 CrustleEvosAttacks:
 	db  0 ; no more evolutions
-;	db  1, FURY_CUTTER
+	db  1, FURY_CUTTER
 	db  1, ROCK_BLAST
 	db  1, DEFENSE_CURL_HARDEN_WITHDRAW
 	db  1, SAND_ATTACK_SMOKESCREEN
@@ -2334,6 +2346,17 @@ CrustleEvosAttacks:
 	db 40, SHELL_SMASH
 	db 45, FLAIL
 ;	db 50, ROCK_WRECKER
+	db  0 ; no more level-up moves
+	
+MinccinoEvosAttacks:
+	db EVOLVE_LEVEL, 22, CINCCINO
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
+	db  0 ; no more level-up moves
+
+CinccinoEvosAttacks:
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
 	db  0 ; no more level-up moves
 	
 JoltikEvosAttacks:
@@ -2376,6 +2399,23 @@ GalvantulaEvosAttacks:
 	db 48, THUNDERBOLT
 	db 54, BUG_BUZZ
 	db  0 ; no more level-up moves
+	
+LitwickEvosAttacks:
+	db EVOLVE_LEVEL, 41, LAMPENT
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+LampentEvosAttacks:
+	db EVOLVE_ITEM, DUSK_STONE, CHANDELURE
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+ChandelureEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
 	
 LarvestaEvosAttacks:
 	db EVOLVE_LEVEL, 59, VOLCARONA

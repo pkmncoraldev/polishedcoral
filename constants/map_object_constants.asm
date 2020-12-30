@@ -43,6 +43,7 @@ OW_RIGHT EQU RIGHT << 2
 ; object_struct OBJECT_FLAGS1 bit flags
 FIXED_FACING EQU 2
 SLIDING      EQU 3
+WALKABLE	 EQU 6
 EMOTE_OBJECT EQU 7
 
 ; object_struct OBJECT_FLAGS2 bit flags

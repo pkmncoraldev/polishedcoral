@@ -16,8 +16,6 @@ FramesPointers:
 	dw PidgeotFrames
 	dw RattataFrames
 	dw RaticateFrames
-	dw EkansFrames
-	dw ArbokFrames
 	dw PikachuFrames
 	dw RaichuFrames
 	dw SandshrewFrames
@@ -162,6 +160,9 @@ FramesPointers:
 	dw LarvitarFrames
 	dw PupitarFrames
 	dw TyranitarFrames
+	dw RaltsFrames
+	dw KirliaFrames
+	dw GardevoirFrames
 	dw ShroomishFrames
 	dw BreloomFrames
 	dw AronFrames
@@ -169,12 +170,12 @@ FramesPointers:
 	dw AggronFrames
 	dw MedititeFrames
 	dw MedichamFrames
+	dw CarvanhaFrames
+	dw SharpedoFrames
 	dw NumelFrames
 	dw CameruptFrames
 	dw SwabluFrames
 	dw AltariaFrames
-	dw CorphishFrames
-	dw CrawdauntFrames
 	dw BuizelFrames
 	dw FloatzelFrames
 	dw BunearyFrames
@@ -192,12 +193,18 @@ FramesPointers:
 	dw GliscorFrames
 	dw MamoswineFrames
 	dw PorygonZFrames
+	dw GalladeFrames
 	dw CottoneeFrames
 	dw WhimsicottFrames
 	dw DwebbleFrames
 	dw CrustleFrames
+	dw MinccinoFrames
+	dw CinccinoFrames
 	dw JoltikFrames
 	dw GalvantulaFrames
+	dw LitwickFrames
+	dw LampentFrames
+	dw ChandelureFrames
 	dw LarvestaFrames
 	dw VolcaronaFrames
 	dw SylveonFrames

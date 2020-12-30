@@ -16,8 +16,6 @@ AnimationPointers:
 	dw PidgeotAnimation
 	dw RattataAnimation
 	dw RaticateAnimation
-	dw EkansAnimation
-	dw ArbokAnimation
 	dw PikachuAnimation
 	dw RaichuAnimation
 	dw SandshrewAnimation
@@ -162,6 +160,9 @@ AnimationPointers:
 	dw LarvitarAnimation
 	dw PupitarAnimation
 	dw TyranitarAnimation
+	dw RaltsAnimation
+	dw KirliaAnimation
+	dw GardevoirAnimation
 	dw ShroomishAnimation
 	dw BreloomAnimation
 	dw AronAnimation
@@ -169,12 +170,12 @@ AnimationPointers:
 	dw AggronAnimation
 	dw MedititeAnimation
 	dw MedichamAnimation
+	dw CarvanhaAnimation
+	dw SharpedoAnimation
 	dw NumelAnimation
 	dw CameruptAnimation
 	dw SwabluAnimation
 	dw AltariaAnimation
-	dw CorphishAnimation
-	dw CrawdauntAnimation
 	dw BuizelAnimation
 	dw FloatzelAnimation
 	dw BunearyAnimation
@@ -192,12 +193,18 @@ AnimationPointers:
 	dw GliscorAnimation
 	dw MamoswineAnimation
 	dw PorygonZAnimation
+	dw GalladeAnimation
 	dw CottoneeAnimation
 	dw WhimsicottAnimation
 	dw DwebbleAnimation
 	dw CrustleAnimation
+	dw MinccinoAnimation
+	dw CinccinoAnimation
 	dw JoltikAnimation
 	dw GalvantulaAnimation
+	dw LitwickAnimation
+	dw LampentAnimation
+	dw ChandelureAnimation
 	dw LarvestaAnimation
 	dw VolcaronaAnimation
 	dw SylveonAnimation

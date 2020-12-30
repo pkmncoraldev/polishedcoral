@@ -17,8 +17,6 @@
 	const PIDGEOT
 	const RATTATA
 	const RATICATE
-	const EKANS
-	const ARBOK
 	const PIKACHU
 	const RAICHU
 	const SANDSHREW
@@ -163,6 +161,9 @@
 	const LARVITAR
 	const PUPITAR
 	const TYRANITAR
+	const RALTS ;280
+	const KIRLIA ;281
+	const GARDEVOIR ;282
 	const SHROOMISH ;285
 	const BRELOOM ;286
 	const ARON ;304
@@ -170,12 +171,12 @@
 	const AGGRON ;306
 	const MEDITITE ;307
 	const MEDICHAM ;308
+	const CARVANHA ;318
+	const SHARPEDO ;319
 	const NUMEL ;322
 	const CAMERUPT ;323
 	const SWABLU ;333
 	const ALTARIA ;334
-	const CORPHISH ;341
-	const CRAWDAUNT ;342
 	const BUIZEL ;418
 	const FLOATZEL ;419
 	const BUNEARY ;427
@@ -193,12 +194,18 @@
 	const GLISCOR ;472
 	const MAMOSWINE ;473
 	const PORYGON_Z ;474
+	const GALLADE ;475
 	const COTTONEE ;546
 	const WHIMSICOTT ;547
 	const DWEBBLE ;557
 	const CRUSTLE ;558
+	const MINCCINO ;572
+	const CINCCINO ;573
 	const JOLTIK ;595
 	const GALVANTULA ;596
+	const LITWICK ;607
+	const LAMPENT ;608
+	const CHANDELURE ;609
 	const LARVESTA ;636
 	const VOLCARONA ;637
 	const SYLVEON ;700
@@ -268,14 +275,6 @@ NUM_UNOWN EQU const_value +- 1
 	const_def 1
 	const PICHU_PLAIN_FORM
 	const PICHU_SPIKY_EARED_FORM
-
-; arbok
-	const_def 1
-	const ARBOK_JOHTO_FORM
-	const ARBOK_KANTO_FORM
-	const ARBOK_KOGA_FORM
-	const ARBOK_AGATHA_FORM
-	const ARBOK_ARIANA_FORM
 
 ; magikarp
 	const_def 1

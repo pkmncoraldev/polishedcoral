@@ -674,9 +674,9 @@ BikiniPPic:				  INCBIN "gfx/trainers/bikinip.2bpp.lz"
 
 SECTION "Trainer Pics 5", ROMX
 
-BunearymPic:
+BunearymPic:			  INCBIN "gfx/trainers/buneary_m.2bpp.lz"
 DelinquentmPic:			  INCBIN "gfx/trainers/delinquent_m.2bpp.lz"
-BunearyfPic:
+BunearyfPic:			  INCBIN "gfx/trainers/buneary_f.2bpp.lz"
 DelinquentfPic:			  INCBIN "gfx/trainers/delinquent_f.2bpp.lz"
 SafariPic:				  INCBIN "gfx/trainers/safari.2bpp.lz"
 MallCopPic:				  INCBIN "gfx/trainers/cory.2bpp.lz"

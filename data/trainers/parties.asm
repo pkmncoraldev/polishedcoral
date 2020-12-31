@@ -2581,6 +2581,24 @@ BunearymGroup:
 	db -1 ; end
 	
 ; ================
+
+	; BUNEARY_M
+	db "BOY4@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; BUNEARY_M
+	db "BOY5@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
 ; ================================
 
 
@@ -2590,6 +2608,15 @@ BunearyfGroup:
 
 	; BUNEARY_F
 	db "GAL1@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BUNEARY_F
+	db "GAL2@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

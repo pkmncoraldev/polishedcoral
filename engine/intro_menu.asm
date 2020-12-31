@@ -877,7 +877,7 @@ SpruceText1: ; 0x6045
 SpruceText2: ; 0x604a
 	text_jump _SpruceText2
 	start_asm
-	ld a, SNORLAX
+	ld a, MUNCHLAX
 	call PlayCry
 	call WaitSFX
 	ld hl, SpruceText3

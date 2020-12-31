@@ -181,6 +181,7 @@ PokemonNames::
 	db "BUNEARY@@@"
 	db "LOPUNNY@@@"
 	db "HONCHKROW@"
+	db "SPIRITOMB@"
 	db "MUNCHLAX@@"
 	db "WEAVILE@@@"
 	db "MAGNEZONE@"

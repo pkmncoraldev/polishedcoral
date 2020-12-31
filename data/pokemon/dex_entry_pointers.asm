@@ -181,6 +181,7 @@
 	dw BunearyPokedexEntry
 	dw LopunnyPokedexEntry
 	dw HonchkrowPokedexEntry
+	dw SpiritombPokedexEntry
 	dw MunchlaxPokedexEntry
 	dw WeavilePokedexEntry
 	dw MagnezonePokedexEntry

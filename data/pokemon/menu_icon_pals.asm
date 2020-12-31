@@ -185,6 +185,7 @@ MenuMonIconColors::
 	iconpal BROWN, PINK ; BUNEARY
 	iconpal BROWN, PINK ; LOPUNNY
 	iconpal BLUE, PINK ; HONCHKROW
+	iconpal PURPLE, BLUE ; SPIRITOMB
 	iconpal GREEN, BLUE ; MUNCHLAX
 	iconpal RED, PINK ; WEAVILE
 	iconpal GRAY, GRAY ; MAGNEZONE

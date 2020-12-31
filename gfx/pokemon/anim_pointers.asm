@@ -181,6 +181,7 @@ AnimationPointers:
 	dw BunearyAnimation
 	dw LopunnyAnimation
 	dw HonchkrowAnimation
+	dw SpiritombAnimation
 	dw MunchlaxAnimation
 	dw WeavileAnimation
 	dw MagnezoneAnimation

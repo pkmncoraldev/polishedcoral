@@ -193,6 +193,7 @@ FloatzelPokedexEntry::   INCLUDE "data/pokemon/dex_entries/419.asm"
 BunearyPokedexEntry::    INCLUDE "data/pokemon/dex_entries/427.asm"
 LopunnyPokedexEntry::    INCLUDE "data/pokemon/dex_entries/428.asm"
 HonchkrowPokedexEntry::  INCLUDE "data/pokemon/dex_entries/430.asm"
+SpiritombPokedexEntry::  INCLUDE "data/pokemon/dex_entries/000.asm" ;442
 MunchlaxPokedexEntry::   INCLUDE "data/pokemon/dex_entries/446.asm"
 WeavilePokedexEntry::    INCLUDE "data/pokemon/dex_entries/461.asm"
 MagnezonePokedexEntry::  INCLUDE "data/pokemon/dex_entries/462.asm"

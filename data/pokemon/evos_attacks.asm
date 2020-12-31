@@ -2314,6 +2314,11 @@ HonchkrowEvosAttacks:
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
+SpiritombEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
 MunchlaxEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, SNORLAX
 	db 0 ; no more evolutions

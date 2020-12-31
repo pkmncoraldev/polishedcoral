@@ -181,6 +181,7 @@ FramesPointers:
 	dw BunearyFrames
 	dw LopunnyFrames
 	dw HonchkrowFrames
+	dw SpiritombFrames
 	dw MunchlaxFrames
 	dw WeavileFrames
 	dw MagnezoneFrames

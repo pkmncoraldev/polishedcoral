@@ -54,7 +54,6 @@ CottoneeDEDData:: INCBIN "audio/ded/cottonee.ded"
 SECTION "DED 11", ROMX
 ElectivireDEDData:: INCBIN "audio/ded/electivire.ded"
 MagmortarDEDData:: INCBIN "audio/ded/magmortar.ded"
-MinccinoDEDData:: INCBIN "audio/ded/minccino.ded"
 
 SECTION "DED 12", ROMX
 TogekissDEDData:: INCBIN "audio/ded/togekiss.ded"
@@ -64,7 +63,6 @@ JoltikDEDData:: INCBIN "audio/ded/joltik.ded"
 SECTION "DED 13", ROMX
 GlaceonDEDData:: INCBIN "audio/ded/glaceon.ded"
 GliscorDEDData:: INCBIN "audio/ded/gliscor.ded"
-LarvestaDEDData:: INCBIN "audio/ded/larvesta.ded"
 
 SECTION "DED 14", ROMX
 MamoswineDEDData:: INCBIN "audio/ded/mamoswine.ded"
@@ -78,6 +76,7 @@ CrustleDEDData:: INCBIN "audio/ded/crustle.ded"
 SECTION "DED 16", ROMX
 CinccinoDEDData:: INCBIN "audio/ded/cinccino.ded"
 GalvantulaDEDData:: INCBIN "audio/ded/galvantula.ded"
+LarvestaDEDData:: INCBIN "audio/ded/larvesta.ded"
 
 SECTION "DED 17", ROMX
 VolcaronaDEDData:: INCBIN "audio/ded/volcarona.ded"
@@ -86,8 +85,10 @@ SylveonDEDData:: INCBIN "audio/ded/sylveon.ded"
 SECTION "DED 18", ROMX
 NoibatDEDData:: INCBIN "audio/ded/noibat.ded"
 NoivernDEDData:: INCBIN "audio/ded/noivern.ded"
+MinccinoDEDData:: INCBIN "audio/ded/minccino.ded"
 
 SECTION "DED 19", ROMX
+SpiritombDEDData:: INCBIN "audio/ded/spiritomb.ded"
 
 SECTION "DED 20", ROMX
 

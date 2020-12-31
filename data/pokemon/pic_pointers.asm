@@ -363,6 +363,8 @@ PicPointers::
 	dba LopunnyBackpic
 	dba HonchkrowFrontpic
 	dba HonchkrowBackpic
+	dba SpiritombFrontpic
+	dba SpiritombBackpic
 	dba MunchlaxFrontpic
 	dba MunchlaxBackpic
 	dba WeavileFrontpic

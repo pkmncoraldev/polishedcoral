@@ -198,6 +198,7 @@ CryHeaders::
 	mon_cry BUNEARY,   	BunearyDEDData	 	; Buneary
 	mon_cry LOPUNNY,   	LopunnyDEDData	 	; Lopunny
 	mon_cry HONCHKROW,  HonchkrowDEDData 	; Honchkrow
+	mon_cry SPIRITOMB,  SpiritombDEDData 	; Spiritomb
 	mon_cry MUNCHLAX,   MunchlaxDEDData	 	; Munchlax
 	mon_cry WEAVILE,   	WeavileDEDData	 	; Weavile
 	mon_cry MAGNEZONE,  MagnezoneDEDData 	; Magnezone

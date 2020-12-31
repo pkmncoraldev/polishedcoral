@@ -182,6 +182,7 @@
 	const BUNEARY ;427
 	const LOPUNNY ;428
 	const HONCHKROW ;430
+	const SPIRITOMB ;442
 	const MUNCHLAX ;446
 	const WEAVILE ;461
 	const MAGNEZONE ;462

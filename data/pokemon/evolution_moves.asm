@@ -181,6 +181,7 @@ EvolutionMoves::
 	db NO_MOVE      ; BUNEARY
 	db NO_MOVE      ; LOPUNNY
 	db NO_MOVE      ; HONCHKROW
+	db NO_MOVE      ; SPIRITOMB
 	db NO_MOVE      ; MUNCHLAX
 	db NO_MOVE      ; WEAVILE
 	db NO_MOVE      ; MAGNEZONE

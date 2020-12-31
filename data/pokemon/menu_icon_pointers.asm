@@ -182,6 +182,7 @@ IconPointers:
 	dw BunearyIcon
 	dw LopunnyIcon
 	dw HonchkrowIcon
+	dw SpiritombIcon
 	dw MunchlaxIcon
 	dw WeavileIcon
 	dw MagnezoneIcon

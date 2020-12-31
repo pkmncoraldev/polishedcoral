@@ -181,6 +181,7 @@ BitmasksPointers:
 	dw BunearyBitmasks
 	dw LopunnyBitmasks
 	dw HonchkrowBitmasks
+	dw SpiritombBitmasks
 	dw MunchlaxBitmasks
 	dw WeavileBitmasks
 	dw MagnezoneBitmasks

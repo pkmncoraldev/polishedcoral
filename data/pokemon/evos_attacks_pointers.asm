@@ -185,6 +185,7 @@ EvosAttacksPointers:: ; 0x425b1
 	dw BunearyEvosAttacks
 	dw LopunnyEvosAttacks
 	dw HonchkrowEvosAttacks
+	dw SpiritombEvosAttacks
 	dw MunchlaxEvosAttacks
 	dw WeavileEvosAttacks
 	dw MagnezoneEvosAttacks

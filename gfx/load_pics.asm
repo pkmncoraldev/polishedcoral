@@ -10,8 +10,8 @@ GetVariant: ; 51040
 ;	and FORM_MASK
 ;	jr nz, .ok
 ;	ld a, [wCurPartySpecies]
-;	cp ARBOK
-;	jr nz, .not_kanto_arbok
+;	cp CINCCINO
+;	jr nz, .not_kanto_cinccino
 ;	push bc
 ;	push de
 ;	call RegionCheck
@@ -19,11 +19,11 @@ GetVariant: ; 51040
 ;	pop de
 ;	pop bc
 ;	and a
-;	jr z, .not_kanto_arbok
-;.kanto_arbok
-;	ld a, ARBOK_KANTO_FORM
+;	jr z, .not_kanto_cinccino
+;.kanto_cinccino
+;	ld a, CINCCINO_KANTO_FORM
 ;	jr .ok
-;.not_kanto_arbok
+;.not_kanto_cinccino
 ;	ld a, 1 ; safeguard: form 0 becomes variant 1
 ;.ok
 ;	ld [wCurForm], a

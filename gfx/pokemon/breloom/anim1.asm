@@ -1,5 +1,4 @@
-	frame 5, 05
-	frame 0, 05
-	frame 5, 05
+	frame 7, 10
+	frame 0, 08
+	frame 7, 08
 	endanim
-; 0xd18a0

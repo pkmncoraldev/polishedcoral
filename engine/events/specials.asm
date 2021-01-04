@@ -186,7 +186,7 @@ BugContestJudging: ; c34a
 	ld hl, wStatusFlags
 	bit 6, [hl] ; hall of fame
 	jr z, .finish
-	ld a, SHINY_STONE - MOON_STONE + 1 ; TODO: include ICE_STONE once it's useful
+	ld a, DAWN_STONE - MOON_STONE + 1
 	call RandomRange
 	add MOON_STONE
 	jr .finish

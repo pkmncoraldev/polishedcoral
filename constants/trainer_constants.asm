@@ -402,10 +402,15 @@ PLAYER_F EQU __enum__
 	
 	trainerclass BUNEARY_M
 	const BOY_1
+	const BOY_2
+	const BOY_3
+	const BOY_4
+	const BOY_5
 
 
 	trainerclass BUNEARY_F
 	const GAL_1
+	const GAL_2
 	
 	
 	trainerclass MALL_COP

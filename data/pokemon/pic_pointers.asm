@@ -33,10 +33,6 @@ PicPointers::
 	dba RattataBackpic
 	dba RaticateFrontpic
 	dba RaticateBackpic
-	dba EkansFrontpic
-	dba EkansBackpic
-	dba ArbokFrontpic
-	dba ArbokBackpic
 	dba PikachuFrontpic
 	dba PikachuBackpic
 	dba RaichuFrontpic
@@ -325,6 +321,12 @@ PicPointers::
 	dba PupitarBackpic
 	dba TyranitarFrontpic
 	dba TyranitarBackpic
+	dba RaltsFrontpic
+	dba RaltsBackpic
+	dba KirliaFrontpic
+	dba KirliaBackpic
+	dba GardevoirFrontpic
+	dba GardevoirBackpic
 	dba ShroomishFrontpic
 	dba ShroomishBackpic
 	dba BreloomFrontpic
@@ -339,6 +341,10 @@ PicPointers::
 	dba MedititeBackpic
 	dba MedichamFrontpic
 	dba MedichamBackpic
+	dba CarvanhaFrontpic
+	dba CarvanhaBackpic
+	dba SharpedoFrontpic
+	dba SharpedoBackpic
 	dba NumelFrontpic
 	dba NumelBackpic
 	dba CameruptFrontpic
@@ -347,10 +353,6 @@ PicPointers::
 	dba SwabluBackpic
 	dba AltariaFrontpic
 	dba AltariaBackpic
-	dba CorphishFrontpic
-	dba CorphishBackpic
-	dba CrawdauntFrontpic
-	dba CrawdauntBackpic
 	dba BuizelFrontpic
 	dba BuizelBackpic
 	dba FloatzelFrontpic
@@ -361,6 +363,8 @@ PicPointers::
 	dba LopunnyBackpic
 	dba HonchkrowFrontpic
 	dba HonchkrowBackpic
+	dba SpiritombFrontpic
+	dba SpiritombBackpic
 	dba MunchlaxFrontpic
 	dba MunchlaxBackpic
 	dba WeavileFrontpic
@@ -385,6 +389,8 @@ PicPointers::
 	dba MamoswineBackpic
 	dba PorygonZFrontpic
 	dba PorygonZBackpic
+	dba GalladeFrontpic
+	dba GalladeBackpic
 	dba CottoneeFrontpic
 	dba CottoneeBackpic
 	dba WhimsicottFrontpic
@@ -393,10 +399,20 @@ PicPointers::
 	dba DwebbleBackpic
 	dba CrustleFrontpic
 	dba CrustleBackpic
+	dba MinccinoFrontpic
+	dba MinccinoBackpic
+	dba CinccinoFrontpic
+	dba CinccinoBackpic
 	dba JoltikFrontpic
 	dba JoltikBackpic
 	dba GalvantulaFrontpic
 	dba GalvantulaBackpic
+	dba LitwickFrontpic
+	dba LitwickBackpic
+	dba LampentFrontpic
+	dba LampentBackpic
+	dba ChandelureFrontpic
+	dba ChandelureBackpic
 	dba LarvestaFrontpic
 	dba LarvestaBackpic
 	dba VolcaronaFrontpic

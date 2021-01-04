@@ -7,7 +7,7 @@
 	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
-	dn 6, 6 ; frontpic dimensions
+	dn 7, 7 ; frontpic dimensions
 	db SWIFT_SWIM ; ability 1
 	db SWIFT_SWIM ; ability 2
 	db WATER_VEIL ; hidden ability

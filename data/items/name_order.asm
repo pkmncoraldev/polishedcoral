@@ -98,7 +98,7 @@ ItemNameOrder:
 	db NAM_SUN_STONE    ; e3
 	db NAM_DUSK_STONE   ; 33
 	db NAM_SHINY_STONE  ; d1
-	db NAM_ICE_STONE    ; 5a
+	db NAM_DAWN_STONE   ; 5a
 	db NAM_EVERSTONE    ; 3b
 
 	db NAM_BICYCLE      ; 0e

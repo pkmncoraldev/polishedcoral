@@ -20,8 +20,6 @@ MenuMonIconColors::
 	iconpal RED, BROWN ; PIDGEOT
 	iconpal PURPLE, GRAY ; RATTATA
 	iconpal BROWN, RED ; RATICATE
-	iconpal PURPLE, BROWN ; EKANS
-	iconpal PURPLE, BROWN ; ARBOK
 	iconpal RED, BLUE ; PIKACHU
 	iconpal RED, BLUE ; RAICHU
 	iconpal BROWN, TEAL ; SANDSHREW
@@ -166,6 +164,9 @@ MenuMonIconColors::
 	iconpal GREEN, GREEN ; LARVITAR
 	iconpal GRAY, PURPLE ; PUPITAR
 	iconpal GREEN, GRAY ; TYRANITAR
+	iconpal GREEN, BLUE ; RALTS
+	iconpal GREEN, BLUE ; KIRLIA
+	iconpal GREEN, BLUE ; GARDEVOIR
 	iconpal GREEN, RED ; SHROOMISH
 	iconpal GREEN, RED ; BRELOOM
 	iconpal BLUE, RED ; ARON
@@ -173,17 +174,18 @@ MenuMonIconColors::
 	iconpal BLUE, RED ; AGGRON
 	iconpal BLUE, RED ; MEDITITE
 	iconpal RED, BLUE ; MEDICHAM
+	iconpal BLUE, GREEN ; CARVANHA
+	iconpal BLUE, PURPLE ; SHARPEDO
 	iconpal GREEN, BLUE ; NUMEL
 	iconpal RED, GRAY ; CAMERUPT
 	iconpal TEAL, BROWN ; SWABLU
 	iconpal TEAL, BROWN ; ALTARIA
-	iconpal RED, PINK ; CORPHISH
-	iconpal RED, BROWN ; CRAWDAUNT
 	iconpal RED, BROWN ; BUIZEL
 	iconpal RED, BROWN ; FLOATZEL
 	iconpal BROWN, PINK ; BUNEARY
 	iconpal BROWN, PINK ; LOPUNNY
 	iconpal BLUE, PINK ; HONCHKROW
+	iconpal PURPLE, BLUE ; SPIRITOMB
 	iconpal GREEN, BLUE ; MUNCHLAX
 	iconpal RED, PINK ; WEAVILE
 	iconpal GRAY, GRAY ; MAGNEZONE
@@ -196,12 +198,18 @@ MenuMonIconColors::
 	iconpal PURPLE, GRAY ; GLISCOR
 	iconpal BROWN, GREEN ; MAMOSWINE
 	iconpal BLUE, PURPLE ; PORYGON_Z
+	iconpal GREEN, BLUE ; GALLADE
 	iconpal GREEN, RED ; COTTONEE
 	iconpal GREEN, BLUE ; WHIMSICOTT
 	iconpal BROWN, RED ; DWEBBLE
 	iconpal BROWN, GREEN ; CRUSTLE
+	iconpal GRAY, RED ; MINCCINO
+	iconpal GRAY, RED ; CINCCINO
 	iconpal BROWN, GREEN ; JOLTIK
-	iconpal BROWN, BROWN ; GALVANTULA
+	iconpal BROWN, RED ; GALVANTULA
+	iconpal PURPLE, RED ; LITWICK
+	iconpal PURPLE, RED ; LAMPENT
+	iconpal PURPLE, RED ; CHANDELURE
 	iconpal RED, BROWN ; LARVESTA
 	iconpal RED, BROWN ; VOLCARONA
 	iconpal PINK, BLUE ; SYLVEON

@@ -9,4 +9,3 @@
 	frame 3, 06
 	dorepeat 7
 	endanim
-	

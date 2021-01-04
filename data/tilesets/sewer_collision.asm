@@ -101,7 +101,7 @@
 	tilecoll WALL, FLOOR, WALL, TOP_WALL ; 64
 	tilecoll WALL, WALL, WALL, FLOOR ; 65
 	tilecoll WALL, FLOOR, WALL, WALL ; 66
-	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 67
+	tilecoll WALL, FLOOR, BOTTOM_WALL, BOTTOM_WALL ; 67
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 68
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 69
 	tilecoll WALL, WALL, LEFT_WALL, FLOOR ; 6a

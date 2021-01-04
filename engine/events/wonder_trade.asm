@@ -320,15 +320,15 @@ endr
 	ld b, a
 	; Form
 	ld a, [wOTTrademonSpecies]
-	cp EKANS
-	jr z, .ekans_arbok
-	cp ARBOK
-	jr z, .ekans_arbok
+	cp MINCCINO
+	jr z, .minccino_cinccino
+	cp CINCCINO
+	jr z, .minccino_cinccino
 	cp MAGIKARP
 	jr z, .magikarp
 	ld a, 1
 	jr .got_form_count
-.ekans_arbok
+.minccino_cinccino
 	ld a, 2
 	jr .got_form_count
 .magikarp

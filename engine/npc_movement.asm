@@ -277,7 +277,12 @@ IsNPCAtCoord: ; 7041
 
 	ld hl, OBJECT_FLAGS1
 	add hl, bc
-	bit 7, [hl]
+	bit WALKABLE, [hl]
+	jr nz, .next
+	
+	ld hl, OBJECT_FLAGS1
+	add hl, bc
+	bit EMOTE_OBJECT, [hl]
 	jr nz, .next
 
 	ld hl, OBJECT_PALETTE

@@ -142,26 +142,26 @@
 	db 7, NIDORAN_M		;30%
 	db 8, MAREEP		;30%
 	db 7, NIDORAN_F		;20%
-	db 8, EKANS			;10%
+	db 8, MINCCINO			;10%
 	db 7, WOOPER		;5%
 	db 8, WOOPER		;4%
-	db 8, EKANS			;1%
+	db 8, MINCCINO			;1%
 	; day
 	db 7, NIDORAN_M		;30%
 	db 8, MAREEP		;30%
 	db 7, NIDORAN_F		;20%
-	db 8, EKANS			;10%
+	db 8, MINCCINO			;10%
 	db 7, WOOPER		;5%
 	db 8, WOOPER		;4%
-	db 8, EKANS			;1%
+	db 8, MINCCINO			;1%
 	; nite
 	db 7, NIDORAN_M		;30%
 	db 8, MAREEP		;30%
 	db 7, NIDORAN_F		;20%
-	db 8, EKANS			;10%
+	db 8, MINCCINO			;10%
 	db 7, WOOPER		;5%
 	db 8, WOOPER		;4%
-	db 8, EKANS			;1%
+	db 8, MINCCINO			;1%
 	
 	map_id STARGLOW_CAVERN_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite

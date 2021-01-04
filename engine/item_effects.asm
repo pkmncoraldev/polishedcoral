@@ -96,7 +96,7 @@ ItemEffects: ; e73c
 	dw EvoStoneEffect   ; SUN_STONE
 	dw EvoStoneEffect   ; DUSK_STONE
 	dw EvoStoneEffect   ; SHINY_STONE
-	dw EvoStoneEffect   ; ICE_STONE
+	dw EvoStoneEffect   ; DAWN_STONE
 	dw NoEffect         ; EVERSTONE
 	dw Bicycle          ; BICYCLE
 	dw OldRod           ; OLD_ROD

@@ -54,13 +54,19 @@ Script_Whiteout: ; 0x124ce
 WhiteoutHandleEvents:
 	clearevent EVENT_SNOWSTORM_HAPPENING
 	loadvar wTimeOfDayPalFlags, $40 | 0
+	domaptrigger SUNSET_CAPE, $0
 	domaptrigger ROUTE_10, $0
+	domaptrigger SUNSET_CAPE, $0
 	clearevent EVENT_ON_DODRIO_RANCH
 	clearflag ENGINE_NEAR_CAMPFIRE
 	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
 	clearevent EVENT_IN_SHOPPING_DISTRICT
 	clearevent EVENT_IN_BUSINESS_DISTRICT
 	clearevent EVENT_DOUBLE_LANDMARK_SIGN
+	clearevent EVENT_BEAT_SUNSET_CAPE_LIGHTHOUSE_SPRITES
+	setevent EVENT_LUSTER_SEWERS_BUNEARY_GIRL_1
+	clearevent EVENT_LUSTER_SEWERS_BUNEARY_GIRL_2
+	clearflag ENGINE_ENCOUNTER_HOUSE
 	end
 	
 OverworldWhiteoutFade

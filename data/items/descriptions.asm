@@ -81,7 +81,7 @@ ItemDescriptions:
 	dw SunStoneDesc
 	dw DuskStoneDesc
 	dw ShinyStoneDesc
-	dw IceStoneDesc
+	dw DawnStoneDesc
 	dw EverstoneDesc
 	dw BicycleDesc
 	dw OldRodDesc
@@ -557,7 +557,7 @@ MoonStoneDesc:
 SunStoneDesc:
 DuskStoneDesc:
 ShinyStoneDesc:
-IceStoneDesc:
+DawnStoneDesc:
 	db   "Evolves certain"
 	next "kinds of #MON.@"
 

@@ -16,8 +16,6 @@ EvolutionMoves::
 	db NO_MOVE      ; PIDGEOT
 	db NO_MOVE      ; RATTATA
 	db SCARY_FACE_COTTON_SPORE      ; RATICATE
-	db NO_MOVE      ; EKANS
-	db NO_MOVE      ; ARBOK
 	db NO_MOVE      ; PIKACHU
 	db THUNDERPUNCH      ; RAICHU
 	db NO_MOVE      ; SANDSHREW
@@ -162,6 +160,9 @@ EvolutionMoves::
 	db NO_MOVE      ; LARVITAR
 	db BARRIER_IRON_DEFENSE_ACID_ARMOR      ; PUPITAR
 	db NO_MOVE      ; TYRANITAR
+	db NO_MOVE      ; RALTS
+	db NO_MOVE      ; KIRLIA
+	db NO_MOVE      ; GARDEVOIR
 	db NO_MOVE      ; SHROOMISH
 	db MACH_PUNCH   ; BRELOOM
 	db NO_MOVE      ; ARON
@@ -169,17 +170,18 @@ EvolutionMoves::
 	db NO_MOVE      ; AGGRON
 	db NO_MOVE      ; MEDITITE
 	db NO_MOVE      ; MEDICHAM
+	db NO_MOVE      ; CARVANHA
+	db NO_MOVE      ; SHARPEDO
 	db NO_MOVE      ; NUMEL
 	db ROCK_SLIDE   ; CAMERUPT
 	db NO_MOVE      ; SWABLU
 	db NO_MOVE      ; ALTARIA
-	db NO_MOVE      ; CORPHISH
-	db NO_MOVE      ; CRAWDAUNT
 	db NO_MOVE      ; BUIZEL
 	db ICE_FANG     ; FLOATZEL
 	db NO_MOVE      ; BUNEARY
 	db NO_MOVE      ; LOPUNNY
 	db NO_MOVE      ; HONCHKROW
+	db NO_MOVE      ; SPIRITOMB
 	db NO_MOVE      ; MUNCHLAX
 	db NO_MOVE      ; WEAVILE
 	db NO_MOVE      ; MAGNEZONE
@@ -192,12 +194,18 @@ EvolutionMoves::
 	db NO_MOVE      ; GLISCOR
 	db NO_MOVE      ; MAMOSWINE
 	db NO_MOVE      ; PORYGON_Z
+	db NO_MOVE		; GALLADE
 	db NO_MOVE      ; COTTONEE
 	db NO_MOVE      ; WHIMSICOTT
 	db NO_MOVE      ; DWEBBLE
 	db NO_MOVE      ; CRUSTLE
+	db NO_MOVE      ; MINCCINO
+	db NO_MOVE      ; CINCCINO
 	db NO_MOVE      ; JOLTIK
 	db LEECH_LIFE      ; GALVANTULA
+	db NO_MOVE      ; LITWICK
+	db NO_MOVE      ; LAMPENT
+	db NO_MOVE      ; CHANDELURE
 	db NO_MOVE      ; LARVESTA
 	db NO_MOVE      ; VOLCARONA
 	db NO_MOVE      ; SYLVEON

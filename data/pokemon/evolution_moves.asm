@@ -56,7 +56,7 @@ EvolutionMoves::
 	db NO_MOVE      ; GRAVELER
 	db NO_MOVE      ; GOLEM
 	db NO_MOVE      ; PONYTA
-	db NO_MOVE      ; RAPIDASH
+	db FURY_SWIPES_FURY_ATTACK_COMET_PUNCH      ; RAPIDASH
 	db NO_MOVE      ; SLOWPOKE
 	db NO_MOVE      ; SLOWBRO
 	db NO_MOVE      ; MAGNEMITE
@@ -116,11 +116,11 @@ EvolutionMoves::
 	db NO_MOVE      ; TOGEPI
 	db NO_MOVE      ; TOGETIC
 	db NO_MOVE      ; NATU
-	db NO_MOVE      ; XATU
+	db AIR_SLASH    ; XATU
 	db NO_MOVE      ; MAREEP
 	db NO_MOVE      ; FLAFFY
-	db THUNDERPUNCH      ; AMPHAROS
-	db ENERGY_BALL      ; BELLOSSOM
+	db THUNDERPUNCH ; AMPHAROS
+	db ENERGY_BALL  ; BELLOSSOM
 	db NO_MOVE      ; MARILL
 	db NO_MOVE      ; AZUMARILL
 	db NO_MOVE      ; SUDOWOODO

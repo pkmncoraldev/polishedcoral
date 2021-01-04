@@ -837,11 +837,38 @@ PonytaEvosAttacks:
 	db EVOLVE_LEVEL, 40, RAPIDASH
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 6, LEER_TAIL_WHIP
+	db 10, EMBER
+	db 15, FLAME_CHARGE
+	db 19, DOUBLE_KICK
+	db 24, FIRE_SPIN
+	db 28, STOMP
+	db 33, TAKE_DOWN
+	db 37, FIRE_BLAST
+	db 42, AGILITY
+	db 46, FLARE_BLITZ
 	db 0 ; no more level-up moves
 
 RapidashEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, MEGAHORN
+	db 1, POISON_JAB
+	db 1, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 1, LEER_TAIL_WHIP
+	db 1, EMBER
+	db 6, LEER_TAIL_WHIP
+	db 10, EMBER
+	db 15, FLAME_CHARGE
+	db 19, DOUBLE_KICK
+	db 24, FIRE_SPIN
+	db 28, STOMP
+	db 33, TAKE_DOWN
+	db 37, FIRE_BLAST
+	db 43, AGILITY
+	db 50, FLARE_BLITZ
 	db 0 ; no more level-up moves
 
 SlowpokeEvosAttacks:
@@ -1521,12 +1548,37 @@ TogeticEvosAttacks:
 NatuEvosAttacks:
 	db EVOLVE_LEVEL, 25, XATU
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, PECK
+	db 1, LEER
+	db 6, NIGHT_SHADE
+	db 10, TELEPORT
+	db 14, REFLECT
+	db 19, OMNINOUS_WIND
+	db 23, CONFUSE_RAY
+	db 27, ROOST
+	db 32, PSYCHIC_M
+	db 36, CALM_MIND
+	db 40, FUTURE_SIGHT
+	db 45, DRILL_PECK
 	db 0 ; no more level-up moves
 
 XatuEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, AIR_SLASH
+	db 1, PECK
+	db 1, LEER
+	db 1, NIGHT_SHADE
+	db 1, TELEPORT
+	db 6, NIGHT_SHADE
+	db 10, TELEPORT
+	db 14, REFLECT
+	db 19, OMNINOUS_WIND
+	db 23, CONFUSE_RAY
+	db 27, ROOST
+	db 32, PSYCHIC_M
+	db 36, CALM_MIND
+	db 40, FUTURE_SIGHT
+	db 45, DRILL_PECK
 	db 0 ; no more level-up moves
 
 MareepEvosAttacks:

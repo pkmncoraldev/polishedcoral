@@ -56,34 +56,6 @@ LusterSewerShadyGuy2:
 TrainerLusterSewersB2F_1:
 	generictrainer BUNEARY_M, BOY_4, EVENT_BEAT_LUSTER_SEWERS_B2F_TRAINER_1, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
-	done
-
-.SeenText:
-	text "SEEN TEXT"	
-	done
-
-.BeatenText:
-	text "YOU WIN"
-	done
-	
-TrainerLusterSewersB2F_2:
-	generictrainer BUNEARY_F, GAL_2, EVENT_BEAT_LUSTER_SEWERS_B2F_TRAINER_2, .SeenText, .BeatenText
-
-	text "NORMAL TEXT"
-	done
-
-.SeenText:
-	text "SEEN TEXT"	
-	done
-
-.BeatenText:
-	text "YOU WIN"
-	done
-	
-TrainerLusterSewersB2F_3:
-	generictrainer BUNEARY_M, BOY_5, EVENT_BEAT_LUSTER_SEWERS_B2F_TRAINER_3, .SeenText, .BeatenText
-
 	text "Cut it out!"
 	
 	para "Someone could get"
@@ -101,7 +73,54 @@ TrainerLusterSewersB2F_3:
 
 .BeatenText:
 	text "It IS you,"
-	line "“isn't it?"
+	line "isn't it?"
+	done
+	
+TrainerLusterSewersB2F_2:
+	generictrainer BUNEARY_F, GAL_2, EVENT_BEAT_LUSTER_SEWERS_B2F_TRAINER_2, .SeenText, .BeatenText
+
+	text "Yeah, yeah…"
+	
+	para "You win."
+	
+	para "Whatever…"
+	done
+
+.SeenText:
+	text "Thought you could"
+	line "sneak by me?"
+	
+	para "Guess again!"
+	done
+
+.BeatenText:
+	text "Thought I would"
+	line "win?"
+	
+	para "Guess again!"
+	done
+	
+TrainerLusterSewersB2F_3:
+	generictrainer BUNEARY_M, BOY_5, EVENT_BEAT_LUSTER_SEWERS_B2F_TRAINER_3, .SeenText, .BeatenText
+
+	text "This ain't good"
+	line "for me at all!"
+	done
+
+.SeenText:
+	text "You're gettin'"
+	line "too close to"
+	cont "FRANKIE!"
+	
+	para "If you make it,"
+	line "I'm the one who"
+	cont "gets in trouble!"
+	done
+
+.BeatenText:
+	text "Wait, kid!"
+	
+	para "Please!"
 	done
 	
 LusterSewersB2FChangeBlocks:

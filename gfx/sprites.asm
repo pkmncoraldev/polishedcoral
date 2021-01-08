@@ -188,7 +188,8 @@ ClothesRacksGFX::			   INCBIN "gfx/sprites/clothes_racks.2bpp"
 IceBlockGFX::			  	   INCBIN "gfx/sprites/ice_block.2bpp"
 BigMamoswineSpriteGFX::        INCBIN "gfx/sprites/big_mamoswine.2bpp"
 LighthouseSpriteGFX::      	   INCBIN "gfx/sprites/lighthouse.2bpp"
-FrankieSpriteGFX::           	   INCBIN "gfx/sprites/frankie.2bpp"
+FrankieSpriteGFX::             INCBIN "gfx/sprites/frankie.2bpp"
+SkaterSpriteGFX::              INCBIN "gfx/sprites/skater.2bpp"
 
 
 SECTION "Overworld Sprites 8", ROMX

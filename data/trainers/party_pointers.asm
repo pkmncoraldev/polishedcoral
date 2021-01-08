@@ -83,4 +83,5 @@ TrainerGroups: ; 0x39999
 	dba BunearyfGroup
 	dba FrankieGroup
 	dba MallCopGroup
+	dba SkaterGroup
 	dba TowerTycoonGroup

@@ -126,6 +126,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .train
 	cp TILESET_LUSTER
 	jp z, .luster
+	cp TILESET_PARK
+	jp z, .park
 	cp TILESET_MALL_1
 	jp z, .mall1
 	cp TILESET_MALL_2
@@ -205,6 +207,10 @@ LoadSpecialMapPalette: ; 494ac
 	
 .lusterbusiness
 	ld hl, OutsideLusterBusinessPalette
+	jp LoadSevenTimeOfDayBGPalettes
+	
+.park
+	ld hl, OutsideSkateparkPalette
 	jp LoadSevenTimeOfDayBGPalettes
 	
 .mall1
@@ -458,3 +464,6 @@ INCLUDE "maps/palettes/bgpals/bgluster.pal"
 
 OutsideLusterBusinessPalette:
 INCLUDE "maps/palettes/bgpals/bglusterbusiness.pal"
+
+OutsideSkateparkPalette:
+INCLUDE "maps/palettes/bgpals/bgskatepark.pal"

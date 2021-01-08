@@ -679,7 +679,7 @@ DelinquentmPic:			  INCBIN "gfx/trainers/delinquent_m.2bpp.lz"
 BunearyfPic:;			  INCBIN "gfx/trainers/buneary_f.2bpp.lz"
 DelinquentfPic:			  INCBIN "gfx/trainers/delinquent_f.2bpp.lz"
 FrankiePic:				  INCBIN "gfx/trainers/frankie.2bpp.lz"
-SafariPic:				  INCBIN "gfx/trainers/safari.2bpp.lz"
+SkaterPic:				  INCBIN "gfx/trainers/skater.2bpp.lz"
 MallCopPic:				  INCBIN "gfx/trainers/cory.2bpp.lz"
 TowerTycoonPic:
 CoryPic:				  INCBIN "gfx/trainers/cory.2bpp.lz"

@@ -65,6 +65,7 @@ SpriteHeaders:
 	overworld_sprite DelinquentMSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite DelinquentFSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite FrankieSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite SkaterSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SpruceSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite InvisibleSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite DodrioRunSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN

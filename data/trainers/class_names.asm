@@ -81,5 +81,6 @@ TrainerClassNames::
 	db "BUNEARY@"	  	   ; BUNEARY_F
 	db "FRANKIE@"	       ; FRANKIE
 	db "MALL COP@"		   ; MALL_COP
+	db "SK8R BOY@"	       ; SKATER
 	db "TYCOON@"		   ; TOWERTYCOON
 	

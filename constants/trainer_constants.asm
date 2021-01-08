@@ -416,6 +416,9 @@ PLAYER_F EQU __enum__
 	
 	trainerclass MALL_COP
 	const PHIL
+	
+	trainerclass SKATER
+	const TONY
 
 	trainerclass TOWERTYCOON ; 1
 

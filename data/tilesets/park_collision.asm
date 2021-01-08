@@ -63,7 +63,7 @@
 	tilecoll SKATE, SKATE, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 3e
 	tilecoll WALL, WALL, WALL, WALL ; 3f
 	tilecoll WALL, WALL, WALL, SKATE ; 40
-	tilecoll FLOOR, WALL, SKATE, SKATE ; 41
+	tilecoll SKATE, WALL, FLOOR, SKATE ; 41
 	tilecoll WALL, WALL, WALL, HEADBUTT_TREE ; 42
 	tilecoll TOP_WALL, TOP_WALL, FLOOR, FLOOR ; 43
 	tilecoll WALL, WALL, WALL, WALL ; 44
@@ -96,7 +96,7 @@
 	tilecoll SKATE, SKATE, WALL, WALL ; 5f
 	tilecoll WALL, WALL, WALL, WALL ; 60
 	tilecoll WALL, WALL, WALL, WALL ; 61
-	tilecoll WALL, WALL, WALL, WALL ; 62
+	tilecoll WALL, WALL, TOP_WALL, TOP_WALL ; 62
 	tilecoll WALL, WALL, WALL, WALL ; 63
 	tilecoll WALL, WALL, WALL, SKATE ; 64
 	tilecoll WALL, WALL, SKATE, SKATE ; 65
@@ -133,11 +133,11 @@
 	tilecoll GRIND, SKATE, GRIND, SKATE ; 84
 	tilecoll SKATE, SKATE, SKATE, GRIND ; 85
 	tilecoll SKATE, GRIND, SKATE, GRIND ; 86
-	tilecoll SKATE, GRIND, SKATE, SKATE ; 87
+	tilecoll SKATE, GRIND, SKATE, GRIND ; 87
 	tilecoll SKATE, GRIND, SKATE, GRIND ; 88
 	tilecoll SKATE, GRIND, SKATE, GRIND ; 89
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 8a
-	tilecoll FLOOR, GRIND, SKATE, GRIND ; 8b
+	tilecoll SKATE, GRIND, FLOOR, GRIND ; 8b
 	tilecoll WALL, WALL, WALL, SKATE ; 8c
 	tilecoll WALL, WALL, SKATE, WALL ; 8d
 	tilecoll WALL, SKATE, WALL, SKATE ; 8e
@@ -169,4 +169,8 @@
 	tilecoll WALL, WALL, HEADBUTT_TREE, HEADBUTT_TREE ; a8
 	tilecoll SKATE, WALL, SKATE, WALL ; a9
 	tilecoll WALL, WALL, WALL, WALL ; aa
-	tilecoll WALL, WALL, WALL, WALL ; ab
+	tilecoll WALL, WALL, WALL, SKATE ; ab
+	tilecoll WALL, WALL, TOP_WALL, TOP_WALL ; ac
+	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; ad
+	tilecoll FLOOR, GRIND, SKATE, GRIND ; ae
+	tilecoll SKATE, GRIND, SKATE, SKATE ; af

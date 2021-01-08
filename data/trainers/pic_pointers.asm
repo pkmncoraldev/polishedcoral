@@ -81,5 +81,6 @@ TrainerPicPointers::
 	dba BunearyfPic
 	dba FrankiePic
 	dba MallCopPic
+	dba SkaterPic
 	dba TowerTycoonPic
 	

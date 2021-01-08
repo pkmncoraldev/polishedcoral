@@ -30,9 +30,9 @@ LusterSewersB2F_MapScriptHeader:
 	person_event SPRITE_PLANK_BRIDGE,  4, 15, SPRITEMOVEDATA_TILE_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_EMPTY
 	person_event SPRITE_PLANK_BRIDGE,  5, 15, SPRITEMOVEDATA_TILE_UP, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_EMPTY
 	person_event SPRITE_PLANK_BRIDGE,  5, 15, SPRITEMOVEDATA_TILE_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_FLOODED
-	person_event SPRITE_DELINQUENT_M, 11, 16, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, TrainerLusterSewersB2F_1, -1
-	person_event SPRITE_DELINQUENT_F, 20, 19, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, TrainerLusterSewersB2F_2, -1
-	person_event SPRITE_DELINQUENT_M,  8, 26, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerLusterSewersB2F_3, -1
+	person_event SPRITE_DELINQUENT_M, 11, 16, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, TrainerLusterSewersB2F_1,  EVENT_CLEARED_LUSTER_SEWERS
+	person_event SPRITE_DELINQUENT_F, 20, 19, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, TrainerLusterSewersB2F_2,  EVENT_CLEARED_LUSTER_SEWERS
+	person_event SPRITE_DELINQUENT_M,  8, 26, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerLusterSewersB2F_3,  EVENT_CLEARED_LUSTER_SEWERS
 	person_event SPRITE_BURGLAR, 17,  1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterSewerShadyGuy1, EVENT_LUSTER_SEWERS_FLOODED
 	person_event SPRITE_BURGLAR, 15,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterSewerShadyGuy2, EVENT_LUSTER_SEWERS_EMPTY
 	itemball_event 21, 14, ESCAPE_ROPE, 1, EVENT_LUSTER_SEWERS_B2F_POKEBALL
@@ -72,8 +72,8 @@ TrainerLusterSewersB2F_1:
 	done
 
 .BeatenText:
-	text "It IS you,"
-	line "isn't it?"
+	text "It IS you, isn't"
+	line "it?"
 	done
 	
 TrainerLusterSewersB2F_2:
@@ -103,14 +103,13 @@ TrainerLusterSewersB2F_2:
 TrainerLusterSewersB2F_3:
 	generictrainer BUNEARY_M, BOY_5, EVENT_BEAT_LUSTER_SEWERS_B2F_TRAINER_3, .SeenText, .BeatenText
 
-	text "This ain't good"
-	line "for me at all!"
+	text "This ain't good for"
+	line "me at all!"
 	done
 
 .SeenText:
-	text "You're gettin'"
-	line "too close to"
-	cont "FRANKIE!"
+	text "You're gettin' too"
+	line "close to FRANKIE!"
 	
 	para "If you make it,"
 	line "I'm the one who"

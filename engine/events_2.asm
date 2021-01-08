@@ -184,6 +184,9 @@ PlaceMapNameSign:: ; b8098 (2e:4098)
 	ret nz
 	ld [hLCDCPointer], a
 	
+	ld a, [wScriptRunning]
+	and a
+	jr nz, .end
 	ld a, [wCurrentLandmark]
 	cp LUSTER_CITY
 	jr nz, .end

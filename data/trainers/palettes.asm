@@ -82,6 +82,7 @@ DelinquentmPalette:		 INCLUDE "gfx/trainers/delinquent_m.pal"
 DelinquentfPalette:	 	 INCLUDE "gfx/trainers/delinquent_f.pal"
 BunearymPalette:		 INCLUDE "gfx/trainers/buneary_m.pal"
 BunearyfPalette:		 INCLUDE "gfx/trainers/buneary_f.pal"
+FrankiePalette:			 INCLUDE "gfx/trainers/frankie.pal"
 MallCopPalette:			 INCLUDE "gfx/trainers/player1.pal"
 TowerTycoonPalette:
 

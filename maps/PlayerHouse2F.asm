@@ -5,7 +5,7 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 13 ; warp events
+	db 14 ; warp events
 	warp_event  9,  0, PLAYER_HOUSE_1F, 3
 	warp_event  5, 10, SUNSET_BAY, 1
 	warp_event  7, 10, DAYBREAK_VILLAGE, 1
@@ -18,7 +18,8 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event  7, 14, FLICKER_STATION, 1
 	warp_event  9, 14, TWINKLE_TOWN, 1
 	warp_event 11, 14, LUSTER_CITY_SHOPPING, 1
-	warp_event 13, 14, SKATEPARK, 1
+	warp_event 13, 14, LUSTER_SEWERS_THRONE_ROOM, 1
+	warp_event 15, 14, SKATEPARK, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
@@ -56,7 +57,7 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke WIGGLYTUFF, 100
-	givepoke LAIRON, 100
+	givepoke AGGRON, 100
 .items
 	writetext PlayerHouseDebugText6
 	yesorno

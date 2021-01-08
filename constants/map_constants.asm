@@ -40,7 +40,7 @@ MAP_NONE   EQU 0
 	map_const LUSTER_SEWERS_B1F,						  15, 12 ; 18
 	map_const LUSTER_SEWERS_B2F,						  15, 11 ; 19
 	map_const LUSTER_SEWERS_VALVE_ROOM,				      16,  3 ; 20
-	map_const LUSTER_SEWERS_THRONE_ROOM,				   6,  6 ; 21
+	map_const LUSTER_SEWERS_THRONE_ROOM,				   6,  7 ; 21
 	map_const ICE_CAVE_B1F,								  15,  7 ; 22
 	map_const ICE_CAVE_B2F,								  15, 16 ; 23
 	map_const ICE_CAVE_B3F,								  16, 16 ; 24

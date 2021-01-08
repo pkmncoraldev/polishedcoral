@@ -79,6 +79,7 @@ TrainerClassNames::
 	db "DELINQUENT@"	   ; DELINQUENT_F
 	db "BUNEARY@"	  	   ; BUNEARY_M
 	db "BUNEARY@"	  	   ; BUNEARY_F
+	db "FRANKIE@"	       ; FRANKIE
 	db "MALL COP@"		   ; MALL_COP
 	db "TYCOON@"		   ; TOWERTYCOON
 	

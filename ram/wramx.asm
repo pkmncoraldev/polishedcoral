@@ -997,6 +997,7 @@ wLusterCityShoppingTrigger:: ds 1
 wLusterCityBusinessTrigger:: ds 1
 wLusterSewersB1FTrigger:: ds 1
 wLusterSewersB2FTrigger:: ds 1
+wLusterSewersThroneRoomTrigger:: ds 1
 wSpookyForestEscortTrigger:: ds 1
 wLusterMallTrigger:: ds 1
 wIceTempleB1F1Trigger:: ds 1
@@ -1007,7 +1008,7 @@ wTwinkleGymEntryTrigger:: ds 1
 wTwinkleGymBlueRoomTrigger:: ds 1
 wTwinkleGymYellowRoomTrigger:: ds 1
 
-ds 32
+ds 31
 
 ; fight counts
 wJackFightCount::    ds 1

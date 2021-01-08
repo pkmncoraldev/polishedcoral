@@ -63,7 +63,7 @@
 	tilecoll SKATE, SKATE, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 3e
 	tilecoll WALL, WALL, WALL, WALL ; 3f
 	tilecoll WALL, WALL, WALL, SKATE ; 40
-	tilecoll WALL, WALL, SKATE, WALL ; 41
+	tilecoll FLOOR, WALL, SKATE, SKATE ; 41
 	tilecoll WALL, WALL, WALL, HEADBUTT_TREE ; 42
 	tilecoll TOP_WALL, TOP_WALL, FLOOR, FLOOR ; 43
 	tilecoll WALL, WALL, WALL, WALL ; 44
@@ -75,7 +75,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 4a
 	tilecoll SKATE, WALL, SKATE, SKATE ; 4b
 	tilecoll GRIND, GRIND, GRIND, GRIND ; 4c
-	tilecoll SKATE, SKATE, WALL, SKATE ; 4d
+	tilecoll SKATE, SKATE, SKATE, WALL ; 4d
 	tilecoll GRIND, GRIND, GRIND, GRIND ; 4e
 	tilecoll WALL, WATER, WATER, WATER ; 4f
 	tilecoll GRIND, GRIND, GRIND, GRIND ; 50
@@ -127,8 +127,8 @@
 	tilecoll WALL, WALL, WALL, WALL ; 7e
 	tilecoll WALL, WALL, WALL, WALL ; 7f
 	tilecoll WALL, WALL, WALL, SKATE ; 80
-	tilecoll WALL, WALL, WALL, WALL ; 81
-	tilecoll WALL, WALL, WALL, WALL ; 82
+	tilecoll WALL, WALL, HEADBUTT_TREE, HEADBUTT_TREE ; 81
+	tilecoll HEADBUTT_TREE, WALL, HEADBUTT_TREE, WALL ; 82
 	tilecoll WALL, SKATE, WALL, SKATE ; 83
 	tilecoll GRIND, SKATE, GRIND, SKATE ; 84
 	tilecoll SKATE, SKATE, SKATE, GRIND ; 85
@@ -137,7 +137,7 @@
 	tilecoll SKATE, GRIND, SKATE, GRIND ; 88
 	tilecoll SKATE, GRIND, SKATE, GRIND ; 89
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 8a
-	tilecoll HEADBUTT_TREE, FLOOR, HEADBUTT_TREE, GRIND ; 8b
+	tilecoll FLOOR, GRIND, SKATE, GRIND ; 8b
 	tilecoll WALL, WALL, WALL, SKATE ; 8c
 	tilecoll WALL, WALL, SKATE, WALL ; 8d
 	tilecoll WALL, SKATE, WALL, SKATE ; 8e
@@ -162,3 +162,11 @@
 	tilecoll GRIND, GRIND, SKATE, SKATE ; a1
 	tilecoll SKATE, GRIND, SKATE, SKATE ; a2
 	tilecoll GRIND, GRIND, SKATE, SKATE ; a3
+	tilecoll SKATE, SKATE, WALL, WALL ; a4
+	tilecoll FLOOR, WALL, SKATE, WALL ; a5
+	tilecoll SKATE, SKATE, SKATE, GRIND ; a6
+	tilecoll WALL, WALL, HEADBUTT_TREE, HEADBUTT_TREE ; a7
+	tilecoll WALL, WALL, HEADBUTT_TREE, HEADBUTT_TREE ; a8
+	tilecoll SKATE, WALL, SKATE, WALL ; a9
+	tilecoll WALL, WALL, WALL, WALL ; aa
+	tilecoll WALL, WALL, WALL, WALL ; ab

@@ -1,6 +1,7 @@
 LusterCityResidential_MapScriptHeader:
-	db 1 ; scene scripts
+	db 2 ; scene scripts
 	scene_script LusterCityResidentialTrigger0
+	scene_script LusterCityResidentialTrigger1
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, ResidentialCallback
@@ -16,7 +17,7 @@ LusterCityResidential_MapScriptHeader:
 	warp_def 44, 11, 1, LUSTER_APARTMENT_5_1F
 	warp_def 44, 17, 1, LUSTER_APARTMENT_6_1F
 
-	db 12 ; coord events
+	db 18 ; coord events
 	xy_trigger 0, 41, 21, 0, LusterCityResidentialLight, 0, 0
 	xy_trigger 0, 33,  5, 0, LusterCityResidentialLight, 0, 0
 	xy_trigger 0, 21, 24, 0, LusterCityResidentialLight, 0, 0
@@ -29,6 +30,12 @@ LusterCityResidential_MapScriptHeader:
 	xy_trigger 1, 40, 21, 0, LusterCityResidentialDark, 0, 0
 	xy_trigger 1, 41, 22, 0, LusterCityResidentialDark, 0, 0
 	xy_trigger 1, 42, 21, 0, LusterCityResidentialDark, 0, 0
+	xy_trigger 1, 43, 21, 0, LusterCityResidentialDark, 0, 0
+	xy_trigger 1, 39, 21, 0, LusterCityResidentialDark, 0, 0
+	xy_trigger 1, 23, 24, 0, LusterCityResidentialDark, 0, 0
+	xy_trigger 1, 19, 24, 0, LusterCityResidentialDark, 0, 0
+	xy_trigger 1, 31,  5, 0, LusterCityResidentialDark, 0, 0
+	xy_trigger 1, 35,  5, 0, LusterCityResidentialDark, 0, 0
 
 	db 8 ; bg events
 	signpost 18, 13, SIGNPOST_READ, LusterTrashcan1
@@ -56,7 +63,7 @@ LusterCityResidential_MapScriptHeader:
 	person_event SPRITE_PIKACHU, 25, 14, SPRITEMOVEDATA_POKEMON, 2, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster1NPC11, -1
 	person_event SPRITE_GENTLEMAN,  9, 22, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC12, -1
 	person_event SPRITE_CUTE_GIRL, 26,  5, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC13, -1
-	person_event SPRITE_COOL_DUDE, 49, 13, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Luster1NPC14, -1
+	person_event SPRITE_POKEMANIAC, 49, 13, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Luster1NPC14, -1
 	person_event SPRITE_DELINQUENT_M, 20, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunkLeader, -1
 	person_event SPRITE_DELINQUENT_F, 21, 13, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunk1, -1
 	person_event SPRITE_DELINQUENT_M, 19, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunk2, -1
@@ -97,6 +104,9 @@ LusterCityResidentialTrigger0:
 	callasm RefreshScreen_BridgeUpdate
 	callasm LusterCityStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
 .end
+	end
+	
+LusterCityResidentialTrigger1:
 	end
 	
 LusterCityStreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
@@ -172,12 +182,19 @@ ResidentialCallback:
 	jump .cont6
 	
 .OpenSesameSewer:
+	checkevent EVENT_CLEARED_LUSTER_SEWERS
+	iftrue .movepunks2
 	moveperson LUSTERPUNKLEADER, $10, $14
 	moveperson LUSTERPUNK2, $10, $13
 	moveperson LUSTERPUNK1, $10, $15
+.openmanhole
 	changeblock $c, $14, $5a
 	return
-	
+.movepunks2
+	moveperson LUSTERPUNKLEADER, $e, $14
+	moveperson LUSTERPUNK2, $e, $13
+	moveperson LUSTERPUNK1, $e, $15
+	jump .openmanhole
 	
 LusterCityResidentialLight:
 	checktime 1<<NITE
@@ -367,6 +384,8 @@ LusterTrashcanOnlyTrash:
 	jumptext LusterTrashcanTextOnlyTrash
 	
 LusterPunkLeader:
+	checkevent EVENT_CLEARED_LUSTER_SEWERS
+	iftrue .clearedsewers
 	checkevent EVENT_CAN_GET_THE_THING
 	iftrue .gogetpackage
 	checkitem THE_THING
@@ -509,12 +528,14 @@ LusterPunkLeader:
 	pause 10
 	opentext
 	writetext LusterPunkLeaderTextOpen1
+	playsound SFX_SANDSTORM
+	waitsfx
 	pause 20
 	writetext LusterPunkLeaderTextOpen2
 	playsound SFX_SLUDGE_BOMB
 	waitsfx
 	closetext
-	pause 10
+	pause 20
 	special Special_NewFadeIn
 	pause 10
 	jumptext LusterPunkLeaderText10
@@ -523,8 +544,102 @@ LusterPunkLeader:
 .saidno
 	writetext LusterPunkLeaderTextNo
 	jump .yesnoloop
+.clearedsewers
+	checkcode VAR_FACING
+	if_equal LEFT, .clearedsewersright
+	applymovement LUSTERPUNKLEADER, Movement_LusterResidentialPunkLeader1
+	pause 5
+	opentext
+	writetext LusterPunkLeaderText11
+	waitbutton
+	closetext
+	applymovement LUSTERPUNK2, Movement_LusterResidentialPunks1
+	spriteface LUSTERPUNK2, DOWN
+	opentext
+	writetext LusterPunk2Text8
+	waitbutton
+	closetext
+	applymovement LUSTERPUNK1, Movement_LusterResidentialPunks1
+	spriteface LUSTERPUNK1, UP
+	opentext
+	writetext LusterPunk1Text8
+	waitbutton
+	yesorno
+	iffalse .saidno2
+.clearedsewersreturn
+	closetext
+	pause 5
+	playmusic MUSIC_NONE
+	spriteface LUSTERPUNKLEADER, RIGHT
+	pause 48
+	playmusic MUSIC_ENCOUNTER_GYM_LEADER
+	pause 20
+	applymovement LUSTERPUNKLEADER, Movement_LusterResidentialPunkLeader2
+	pause 20
+	spriteface LUSTERPUNKLEADER, LEFT
+	jump .clearedsewersfinish
+.clearedsewersright
+	applymovement LUSTERPUNKLEADER, Movement_LusterResidentialPunkLeader2
+	pause 5
+	opentext
+	writetext LusterPunkLeaderText11
+	waitbutton
+	closetext
+	applymovement LUSTERPUNK2, Movement_LusterResidentialPunks2
+	spriteface LUSTERPUNK2, DOWN
+	opentext
+	writetext LusterPunk2Text8
+	waitbutton
+	closetext
+	applymovement LUSTERPUNK1, Movement_LusterResidentialPunks2
+	spriteface LUSTERPUNK1, UP
+	opentext
+	writetext LusterPunk1Text8
+	waitbutton
+	yesorno
+	iffalse .saidno2
+.clearedsewersrightreturn
+	closetext
+	pause 5
+	playmusic MUSIC_NONE
+	spriteface LUSTERPUNKLEADER, LEFT
+	pause 48
+	playmusic MUSIC_ENCOUNTER_GYM_LEADER
+	pause 20
+	applymovement LUSTERPUNKLEADER, Movement_LusterResidentialPunkLeader1
+	pause 20
+	spriteface LUSTERPUNKLEADER, RIGHT
+.clearedsewersfinish
+	opentext
+	writetext LusterPunkLeaderText12
+	waitbutton
+	verbosegiveitem SKATEBOARD
+	writetext LusterPunkLeaderText13
+	waitbutton
+	closetext
+	pause 10
+	special Special_NewFadeBlack
+	pause 10
+	playsound SFX_EXIT_BUILDING
+	disappear LUSTERPUNKLEADER
+	disappear LUSTERPUNK1
+	disappear LUSTERPUNK2
+	pause 10
+	special Special_NewFadeIn
+	playmusic MUSIC_LUSTER_CITY
+	end
+.saidno2
+	writetext LusterPunk1Text14
+	waitbutton
+	yesorno
+	iffalse .saidno2
+	checkcode VAR_FACING
+	if_equal LEFT, .clearedsewersrightreturn
+	jump .clearedsewersreturn
 	
 LusterPunk1:
+	checkevent EVENT_CLEARED_LUSTER_SEWERS
+	iftrue .clearedsewers
 	checkevent EVENT_CAN_GET_THE_THING
 	iftrue .gogetpackage
 	checkitem THE_THING
@@ -563,8 +678,12 @@ LusterPunk1:
 	end
 .speechloop
 	jumptextfaceplayer LusterPunk1Text7
+.clearedsewers
+	jumptextfaceplayer LusterPunk1Text9
 	
 LusterPunk2:
+	checkevent EVENT_CLEARED_LUSTER_SEWERS
+	iftrue .clearedsewers
 	checkevent EVENT_CAN_GET_THE_THING
 	iftrue .gogetpackage
 	checkitem THE_THING
@@ -603,6 +722,8 @@ LusterPunk2:
 	end
 .speechloop
 	jumptextfaceplayer LusterPunk2Text7
+.clearedsewers
+	jumptextfaceplayer LusterPunk2Text9
 	
 LusterShadyGuy:
 	checkevent EVENT_LUSTER_SEWER_OPEN
@@ -893,6 +1014,109 @@ LusterPunkLeaderTextOpen2:
 	text "CLANG!"
 	done
 	
+LusterPunkLeaderText11:
+	text "Kid!"
+	
+	para "You're alive!"
+	
+	para "Tell me some good"
+	line "news!"
+	
+	para "Didja drive out"
+	line "rotton, no-good,"
+	cont "FRANKIE?"	
+	done
+	
+LusterPunkLeaderText12:
+	text "YES!"
+	
+	para "KID!"
+	
+	para "YOU ROCK!"
+	
+	para "You beat 'em up,"
+	
+	para "punched them out"
+	line "big time,"
+	
+	para "kicked their"
+	line "butts,"
+	
+	para "bit their heads"
+	line "off,"
+	
+	para "spit in their"
+	line "eyes,"
+	
+	para "and made them wet"
+	line "their pants!"
+	
+	para "Thank you!"
+	
+	para "Now we can finally"
+	line "get back to what"
+	cont "we do best:"
+	
+	para "Terrorizing the"
+	line "good people of"
+	cont "LUSTER CITY!"
+	
+	para "Here, kid."
+	
+	para "I told you I'd"
+	line "make this worth"
+	cont "your while!"
+	done
+	
+LusterPunkLeaderText13:
+	text "That SKATEBOARD"
+	line "let's you roll"
+	cont "around in style!"
+	
+	para "It's faster than"
+	line "walking,"
+	
+	para "but you have to"
+	line "kick every once in"
+	cont "a while for speed."
+	
+	para "You can also only"
+	line "skate on certain"
+	cont "surfaces."
+	
+	para "You can't roll on"
+	line "grass, gravel, or"
+	cont "other bumpy stuff!"
+	
+	para "I've heard there's"
+	line "also a SKATE SHOP"
+	cont "at the MALL that"
+	cont "can teach you some"
+	cont "cool tricks!"
+	
+	para "…"
+	
+	para "Anyway, we're outta"
+	line "here!"
+	
+	para "Come visit us in"
+	line "down here anytime."
+	
+	para "As far as we're"
+	line "concerned,"
+	
+	para "you're one of us"
+	line "now kid!"
+	done
+	
+LusterPunk1Text14:
+	text "Aw, you're kidding,"
+	line "right?"
+	
+	para "You totally took"
+	line "FRANKIE down, right?"
+	done
+	
 LusterPunk1Text1:
 	text "What are we"
 	line "gonna do?"
@@ -928,7 +1152,16 @@ LusterPunk1Text6:
 	done
 	
 LusterPunk1Text7:
-	text "TEXT 7"
+	text "Show 'em what"
+	line "for!"
+	done
+	
+LusterPunk1Text8:
+	text "Spit it out!"
+	done
+	
+LusterPunk1Text9:
+	text "Did ya do it?"
 	done
 	
 LusterPunk2Text1:
@@ -964,7 +1197,15 @@ LusterPunk2Text6:
 	done
 	
 LusterPunk2Text7:
-	text "TEXT 7"
+	text "You got this!"
+	done
+	
+LusterPunk2Text8:
+	text "Yeah, tell us!"
+	done
+	
+LusterPunk2Text9:
+	text "How'd it go?"
 	done
 	
 LusterShadyGuyText1:
@@ -1009,18 +1250,79 @@ LusterShadyGuyText4:
 	done
 
 Luster1NPC1Text:
-	text "TEXT 1"
+	text "Sometimes I forget"
+	line "just how big this"
+	cont "city is…"
+	
+	para "It's honestly a"
+	line "bit overwhelming!"
 	done
 
 Luster1NPC2Text:
-	text "TEXT 2"
+	text "Whenever I get"
+	line "sad or blue,"
+	
+	para "I take a trip to"
+	line "the SHOPPING MALL."
+	
+	para "Then I forget all"
+	line "about what I was"
+	cont "worried about!"
 	done
 
 Luster1NPC3Text:
-	text "TEXT 3"
+	text "I just got a new"
+	line "haircut."
+	
+	para "I went with a new"
+	line "style instead of"
+	cont "my usual one…"
+	
+	para "It makes me look"
+	line "tough, right?"
+	
+	para "Right…?"
 	done
 
 Luster1NPC4Text:
+	text "Why do we have"
+	line "#MART here,"
+	cont "anyway?"
+
+	para "We already have"
+	line "the SHOPPING MALL!"
+	
+	para "How much shopping"
+	line "does one city"
+	cont "need?"
+	done
+
+Luster1NPC5Text:
+	text "I love living in"
+	line "the big city,"
+	
+	para "but some days I"
+	line "do miss living"
+	cont "back home…"
+	
+	para "Oh, who am I"
+	line "kidding?"
+	
+	para "No I don't!"
+	done
+
+Luster1NPC6Text:
+	text "There's some cool"
+	line "dudes that hang"
+	cont "out at the PARK"
+	cont "to the SOUTH."
+	
+	para "I wish I had a"
+	line "SKATEBOARD like"
+	cont "them!"
+	done
+
+Luster1NPC7Text:
 	text "LUSTER CITY has"
 	line "two #MON"
 	cont "CENTERS."
@@ -1034,18 +1336,6 @@ Luster1NPC4Text:
 	line "if you ask me!"
 	done
 
-Luster1NPC5Text:
-	text "TEXT 5"
-	done
-
-Luster1NPC6Text:
-	text "TEXT 6"
-	done
-
-Luster1NPC7Text:
-	text "TEXT 7"
-	done
-
 Luster1NPC8Text:
 	text "I'm not supposed to"
 	line "play in the"
@@ -1056,25 +1346,87 @@ Luster1NPC8Text:
 	done
 
 Luster1NPC9Text:
-	text "TEXT 13"
+	text "The PARK is down"
+	line "this way."
+	
+	para "It leads outta"
+	line "the city,"
+	
+	para "so be ready for"
+	line "some battles!"
 	done
 
 Luster1NPC10Text:
-	text "TEXT 10"
+	text "MEOWTH: Mee"
+	line "Owth!"
 	done
 
 Luster1NPC11Text:
-	text "TEXT 11"
+	text "PIKACHU: Chu!"
+	line "Pika-chu!"
 	done
 
 Luster1NPC12Text:
-	text "TEXT 12"
+	text "They say sitting"
+	line "by the traintracks"
+	cont "is bad for your"
+	cont "hearing."
+	
+	para "Nonsense!"
+	
+	para "It's not even that"
+	line "loud."
+	
+	para "In fact, it's been"
+	line "getting quieter"
+	cont "lately…"
 	done
 
 Luster1NPC13Text:
-	text "TEXT 13"
+	text "You aren't from"
+	line "around here, huh?"
+	
+	para "You look totally"
+	line "lost!"
 	done
 
 Luster1NPC14Text:
-	text "TEXT 14"
+	text "There are 3"
+	line "distinct districts"
+	cont "in LUSTER CITY."
+	
+	para "Right now, you're"
+	line "in the HOUSING"
+	cont "DISTRICT."
+	
+	para "There's also the"
+	line "SHOPPING DISTRICT"
+	cont "and the BUSINESS"
+	cont "DISCTRICT."
 	done
+	
+Movement_LusterResidentialPunkLeader1:
+	turn_step_left
+	turn_step_left
+	turn_step_left
+	step_end
+	
+Movement_LusterResidentialPunkLeader2:
+	turn_step_right
+	turn_step_right
+	turn_step_right
+	step_end
+
+Movement_LusterResidentialPunks1:
+	turn_step_left
+	turn_step_left
+	turn_step_left
+	run_step_left
+	step_end
+	
+Movement_LusterResidentialPunks2:
+	turn_step_right
+	turn_step_right
+	turn_step_right
+	run_step_right
+	step_end

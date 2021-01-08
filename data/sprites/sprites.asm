@@ -63,7 +63,8 @@ SpriteHeaders:
 	overworld_sprite Bikini3SpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite TrunksSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite DelinquentMSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite DelinquentFSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite DelinquentFSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite FrankieSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite SpruceSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite InvisibleSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite DodrioRunSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN

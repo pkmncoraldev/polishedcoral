@@ -80,6 +80,7 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_POKEMANIAC_ENCOUNTER	; delinquentf
 	db MUSIC_POKEMANIAC_ENCOUNTER	; bunearym
 	db MUSIC_POKEMANIAC_ENCOUNTER	; bunearyf
+	db MUSIC_NONE					; frankie
 	db MUSIC_NONE					; mall cop
 	db MUSIC_NONE			 		; towertycoon
 

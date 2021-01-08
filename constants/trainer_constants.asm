@@ -412,6 +412,7 @@ PLAYER_F EQU __enum__
 	const GAL_1
 	const GAL_2
 	
+	trainerclass FRANKIE
 	
 	trainerclass MALL_COP
 	const PHIL

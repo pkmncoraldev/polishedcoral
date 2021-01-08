@@ -189,6 +189,7 @@ endc
 	ld b, a
 	decoord 1, 15
 	call .PlaceCurrentDay
+	call .VersionNumberPrint
 	decoord 4, 16
 	ld a, [hHours]
 	ld c, a
@@ -199,6 +200,15 @@ endc
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
 	jp PrintNum
 ; 49e75
+
+.VersionNumberPrint:
+	hlcoord 10, 15
+	ld de, .VersionNumberText
+	call PlaceString
+	ret
+	
+.VersionNumberText
+	db "indev@"
 
 .PrintTimeNotSet: ; 49e75
 	hlcoord 1, 14

@@ -79,6 +79,7 @@ TrainerPicPointers::
 	dba DelinquentfPic
 	dba BunearymPic
 	dba BunearyfPic
+	dba FrankiePic
 	dba MallCopPic
 	dba TowerTycoonPic
 	

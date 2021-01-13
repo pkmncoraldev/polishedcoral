@@ -460,7 +460,7 @@ ContactMoves::
 	db HORN_ATTACK
 	db ICE_PUNCH
 	db IRON_TAIL
-	db KARATE_CHOP
+	db LOW_KICK
 	db KNOCK_OFF
 	db LEECH_LIFE
 	db LICK

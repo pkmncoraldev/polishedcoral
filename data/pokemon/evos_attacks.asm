@@ -726,7 +726,7 @@ AlakazamEvosAttacks:
 MachopEvosAttacks:
 	db EVOLVE_LEVEL, 28, MACHOKE
 	db  0 ; no more evolutions
-;	db  1, LOW_KICK
+	db  1, LOW_KICK
 	db  1, LEER_TAIL_WHIP
 	db  5, FOCUS_ENERGY
 	db  9, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
@@ -742,7 +742,7 @@ MachopEvosAttacks:
 MachokeEvosAttacks:
 	db EVOLVE_TRADE, -1, MACHAMP
 	db  0 ; no more evolutions
-;	db  1, LOW_KICK
+	db  1, LOW_KICK
 	db  1, LEER_TAIL_WHIP
 	db  1, FOCUS_ENERGY
 	db  1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
@@ -757,7 +757,7 @@ MachokeEvosAttacks:
 
 MachampEvosAttacks:
 	db  0 ; no more evolutions
-;	db  1, LOW_KICK
+	db  1, LOW_KICK
 	db  1, LEER_TAIL_WHIP
 	db  1, FOCUS_ENERGY
 	db  1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
@@ -1111,7 +1111,7 @@ ElectabuzzEvosAttacks:
 	db 22, ELECTRO_BALL
 	db 26, SCREECH
 	db 29, THUNDERPUNCH
-;	db 36, LOW_KICK
+	db 36, LOW_KICK
 	db 42, LIGHT_SCREEN
 	db 49, THUNDERBOLT
 	db 55, THUNDER
@@ -1130,7 +1130,7 @@ MagmarEvosAttacks:
 	db 22, FLAME_BURST
 	db 26, CONFUSE_RAY
 	db 29, FIRE_PUNCH
-;	db 36, LOW_KICK
+	db 36, LOW_KICK
 	db 42, SUNNY_DAY
 	db 49, FLAMETHROWER
 	db 55, FIRE_BLAST
@@ -2017,7 +2017,7 @@ ElekidEvosAttacks:
 	db 22, ELECTRO_BALL
 	db 26, SCREECH
 	db 29, THUNDERPUNCH
-;	db 33, LOW_KICK
+	db 33, LOW_KICK
 	db 36, LIGHT_SCREEN
 	db 40, THUNDERBOLT
 	db 43, THUNDER
@@ -2036,7 +2036,7 @@ MagbyEvosAttacks:
 	db 22, FLAME_BURST
 	db 26, CONFUSE_RAY
 	db 29, FIRE_PUNCH
-;	db 33, LOW_KICK
+	db 33, LOW_KICK
 	db 36, SUNNY_DAY
 	db 40, FLAMETHROWER
 	db 43, FIRE_BLAST
@@ -2407,7 +2407,7 @@ ElectivireEvosAttacks:
 	db 22, ELECTRO_BALL
 	db 26, SCREECH
 	db 29, THUNDERPUNCH
-;	db 36, LOW_KICK
+	db 36, LOW_KICK
 	db 42, LIGHT_SCREEN
 	db 49, THUNDERBOLT
 	db 55, THUNDER
@@ -2429,7 +2429,7 @@ MagmortarEvosAttacks:
 	db 22, FLAME_BURST
 	db 26, CONFUSE_RAY
 	db 29, FIRE_PUNCH
-;	db 36, LOW_KICK
+	db 36, LOW_KICK
 	db 42, SUNNY_DAY
 	db 49, FLAMETHROWER
 	db 55, FIRE_BLAST

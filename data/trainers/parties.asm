@@ -2389,10 +2389,9 @@ TeacherFastGroup:
 
 	; TEACHER_FAST
 	db "KATE@"
-	db TRAINERTYPE_MOVES
+	db TRAINERTYPE_NORMAL
 	; party
 	db 1, MEOWTH
-		db TOXIC, 0, 0, 0
 	db -1 ; end
 
 ; ================

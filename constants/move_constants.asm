@@ -1,7 +1,7 @@
 	const_def
 	const NO_MOVE      ; $00
 	const ROCK_CLIMB   ; $01
-	const KARATE_CHOP  ; $02
+	const LOW_KICK	   ; $02
 	const DOUBLE_SLAP  ; $03
 	const BONE_CLUB    ; $04
 	const DRAGON_CLAW  ; $05

@@ -158,3 +158,4 @@ MoveEffectsPointers:
 	dw ToxicSpikes
 	dw ElectroBall
 	dw Superpower
+	dw LowKick

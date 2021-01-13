@@ -196,6 +196,7 @@ BattleCommandPointers:
 	command toxictarget				; b9 - coral
 	command mimic					; ba - coral
 	command electroball				; bb - coral
+	command lowkick
 	
 
 	enum_start -1, -1

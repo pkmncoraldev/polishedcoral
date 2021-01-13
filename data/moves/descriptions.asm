@@ -1,6 +1,6 @@
 MoveDescriptions::
 	dw RockClimbDescription
-	dw KarateChopDescription
+	dw LowKickDescription
 	dw DoubleSlapDescription
 	dw BoneClubDescription
 	dw DragonClawDescription
@@ -259,7 +259,6 @@ MoveDescriptions::
 Move00Description:
 	db "?@"
 
-KarateChopDescription:
 RazorLeafDescription:
 CrabhammerDescription:
 SlashDescription:
@@ -268,6 +267,10 @@ ShadowClawDescription:
 StoneEdgeDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
+	
+LowKickDescription:
+	db	 "Does more damage"
+	next "to heavier foes.@"
 	
 MimicDescription:
 	db   "Copies foe's last"

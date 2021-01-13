@@ -1,6 +1,6 @@
 MoveNames::
 	db "ROCK CLIMB@"
-	db "KARATE CHOP@"
+	db "LOW KICK@"
 	db "DOUBLESLAP@"
 	db "BONE CLUB@"
 	db "DRAGON CLAW@"

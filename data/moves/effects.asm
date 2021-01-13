@@ -18,7 +18,6 @@ HornAttack:
 HydroPump:
 HyperVoice:
 IceShard:
-KarateChop:
 MachPunch:
 Megahorn:
 MegaKick:
@@ -47,6 +46,29 @@ XScissor:
 	doturn
 	pressure
 	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	pickpocket
+	cantusefakeout
+	endmove
+	
+LowKick:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	critical
+	lowkick
 	damagestats
 	damagecalc
 	stab

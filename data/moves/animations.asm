@@ -1,7 +1,7 @@
 BattleAnimations::
 	dw BattleAnim_0
 	dw BattleAnim_RockClimb
-	dw BattleAnim_KarateChop
+	dw BattleAnim_LowKick
 	dw BattleAnim_DoubleSlap
 	dw BattleAnim_BoneClub
 	dw BattleAnim_DragonClaw
@@ -1212,24 +1212,24 @@ BattleAnim_Acrobatics:
 	anim_wait 4
 	anim_ret
 
-BattleAnim_KarateChop:
-	anim_1gfx ANIM_GFX_HIT
-	anim_sound 0, 1, SFX_KARATE_CHOP
-	anim_obj ANIM_OBJ_08, -15, 0,   5, 0, $0
-	anim_wait 6
-	anim_obj ANIM_OBJ_01, -15, 0,   5, 0, $0
-	anim_wait 6
-	anim_sound 0, 1, SFX_KARATE_CHOP
-	anim_obj ANIM_OBJ_08, -15, 0,   5, 4, $0
-	anim_wait 6
-	anim_obj ANIM_OBJ_01, -15, 0,   5, 4, $0
-	anim_wait 6
-	anim_sound 0, 1, SFX_KARATE_CHOP
-	anim_obj ANIM_OBJ_08, -15, 0,   6, 0, $0
-	anim_wait 6
-	anim_obj ANIM_OBJ_01, -15, 0,   6, 0, $0
-	anim_wait 16
-	anim_ret
+;BattleAnim_KarateChop:
+;	anim_1gfx ANIM_GFX_HIT
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_08, -15, 0,   5, 0, $0
+;	anim_wait 6
+;	anim_obj ANIM_OBJ_01, -15, 0,   5, 0, $0
+;	anim_wait 6
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_08, -15, 0,   5, 4, $0
+;	anim_wait 6
+;	anim_obj ANIM_OBJ_01, -15, 0,   5, 4, $0
+;	anim_wait 6
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_08, -15, 0,   6, 0, $0
+;	anim_wait 6
+;	anim_obj ANIM_OBJ_01, -15, 0,   6, 0, $0
+;	anim_wait 16
+;	anim_ret
 
 BattleAnim_DoubleSlap:
 	anim_1gfx ANIM_GFX_HIT

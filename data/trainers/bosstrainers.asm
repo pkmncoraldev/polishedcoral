@@ -14,3 +14,9 @@ BossTrainers:
 	db CHAMPION
 	db TOWERTYCOON
 	db -1
+	
+SnareTrainers:
+	db GRUNTM
+	db GRUNTF
+	db KAGE
+	db -1

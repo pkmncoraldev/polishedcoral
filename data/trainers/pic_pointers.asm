@@ -31,6 +31,7 @@ TrainerPicPointers::
 	dba GruntmPic
 	dba GruntfPic
 	dba KagePic
+	dba LockePic
 	dba PokefanmPic
 	dba PokefanfPic
 	dba OfficermPic

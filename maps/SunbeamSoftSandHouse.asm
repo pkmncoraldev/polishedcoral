@@ -57,7 +57,7 @@ SunbeamIslandSoftSandHouseNPCText2:
 	
 	para "No way!"
 	
-	para "That's no ordinary"
+	para "That's special"
 	line "sand."
 	
 	para "Give it to your"

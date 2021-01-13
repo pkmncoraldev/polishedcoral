@@ -19,7 +19,7 @@ EastTrainCab_MapScriptHeader:
 	person_event SPRITE_SNARE,  1,  3, SPRITEMOVEDATA_STANDING_RIGHT, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, EastTrainCabSnare1, -1
 	person_event SPRITE_SNARE,  3,  3, SPRITEMOVEDATA_STANDING_RIGHT, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, EastTrainCabSnare2, -1
 	person_event SPRITE_SNARE_GIRL,  2,  4, SPRITEMOVEDATA_STANDING_RIGHT, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_BEAUTY,  2,  3, SPRITEMOVEDATA_STANDING_RIGHT, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, EastTrainCabLocke, -1
+	person_event SPRITE_LOCKE,  2,  3, SPRITEMOVEDATA_STANDING_RIGHT, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, EastTrainCabLocke, -1
 	
 
 	const_def 1 ; object constants
@@ -86,8 +86,7 @@ EastTrainCabLocke:
 	special SaveMusic
 	winlosstext EastTrainCabLockeWinText, EastTrainCabLockeLoseText
 	setlasttalked EAST_TRAIN_CAB_LOCKE
-;	loadtrainer LOCKE, TRAIN_LOCKE
-	loadtrainer KAGE, SUNBEAM_KAGE
+	loadtrainer LOCKE, TRAIN_LOCKE
 	startbattle
 	reloadmapafterbattle
 	special RestoreMusic

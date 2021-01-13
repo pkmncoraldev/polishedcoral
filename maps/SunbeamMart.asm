@@ -36,9 +36,9 @@ SunbeamMartNPC1Text:
 	done
 	
 SunbeamMartNPC2Text:
-	text "I found some candy"
-	line "called “RARE"
-	cont "CANDY.”"
+	text "I found some weird"
+	line "candy called"
+	cont "“RARE CANDY.”"
 	
 	para "It was gross!"
 	

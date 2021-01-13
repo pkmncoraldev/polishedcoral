@@ -42,11 +42,9 @@ INCLUDE "data/tilesets/playerhouse_collision.asm"
 SECTION "Tileset Data - glint", ROMX
 
 TilesetGlintGFX::
-TilesetStarglowGFX::
 INCBIN "gfx/tilesets/glint.2bpp.vram0.lz"
 
 TilesetGlintGFX2::
-TilesetStarglowGFX2::
 INCBIN "gfx/tilesets/glint.2bpp.vram1.lz"
 
 TilesetGlintMeta::
@@ -60,6 +58,12 @@ INCLUDE "data/tilesets/glint_collision.asm"
 
 
 SECTION "Tileset Data - starglow", ROMX
+
+TilesetStarglowGFX::
+INCBIN "gfx/tilesets/starglow.2bpp.vram0.lz"
+
+TilesetStarglowGFX2::
+INCBIN "gfx/tilesets/starglow.2bpp.vram1.lz"
 
 TilesetStarglowMeta::
 INCBIN "data/tilesets/starglow_metatiles.bin.lz"

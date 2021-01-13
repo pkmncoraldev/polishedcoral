@@ -186,8 +186,12 @@ PLAYER_F EQU __enum__
 
 	trainerclass KAGE
 	const SUNBEAM_KAGE
+	
+	
+	trainerclass LOCKE
+	const TRAIN_LOCKE
 
-
+	
 	trainerclass POKEFANM
 	const RON
 	const SID

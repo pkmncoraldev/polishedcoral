@@ -60,4 +60,5 @@ Music:
 	dba Music_SnareTheme
 	dba Music_WaterRoute
 	dba Music_EventideVillage
+	dba Music_SnareVictory
 	

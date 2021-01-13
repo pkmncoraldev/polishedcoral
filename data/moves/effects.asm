@@ -997,12 +997,6 @@ WorkUp:
 	usedmovetext
 	doturn
 	workup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
-	cantusefakeout
 	endmove
 	
 AttackUp:

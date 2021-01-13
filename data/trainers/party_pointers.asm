@@ -33,6 +33,7 @@ TrainerGroups: ; 0x39999
 	dba GruntMGroup
 	dba GruntFGroup
 	dba KageGroup
+	dba LockeGroup
 	dba PokefanMGroup
 	dba PokefanFGroup
 	dba OfficerMGroup

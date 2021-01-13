@@ -730,6 +730,12 @@ InfatuationText:
 	cont "it from attacking!"
 	prompt
 
+PranksterText:
+	text "<USER>'s"
+	line "PRANKSTER let it"
+	cont "move first!"
+	prompt
+	
 ObliviousPreventedDestinyKnot:
 	text "<USER>'s"
 	line "@"

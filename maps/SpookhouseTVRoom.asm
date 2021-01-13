@@ -50,6 +50,7 @@ SpookhouseTVRoomTrigger2:
 SpookhouseTVRoomTrigger3:
 	callasm SpookHouseTVRoomAsmThing
 	appear SPOOKHOUSE_TVROOM_NPC5
+	dotrigger $0
 	end
 	
 SpookHouseTVRoomAsmThing:
@@ -76,7 +77,19 @@ SpookHouseTVScaryDoor:
 	end
 	
 SpookHouseNPC3:
-	jumptextfaceplayer SpookHouseGhostText9
+	opentext
+	writetext SpookHouseGhostText9
+	closetext
+	disappear SPOOKHOUSE_TVROOM_NPC5
+	applyonemovement PLAYER, hide_person
+	changemap SpookhouseTVRoom_BlockData
+	reloadmappart
+	closetext
+	playsound SFX_UNKNOWN_5F
+	earthquake 60
+	waitsfx
+	end
+	
 	
 SpookHouseTVRoom5:
 	checkevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN

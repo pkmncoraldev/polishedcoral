@@ -14,7 +14,7 @@ LusterCityShopping_MapScriptHeader:
 	warp_def 33, 16, 3, LUSTER_MALL
 	warp_def 33, 17, 4, LUSTER_MALL
 
-	db 10 ; coord events
+	db 17 ; coord events
 	xy_trigger 0, 46,  0, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 47,  0, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 48,  0, 0, LusterShoppingSignThing, 0, 0
@@ -25,6 +25,13 @@ LusterCityShopping_MapScriptHeader:
 	xy_trigger 0, 47, 29, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 48, 29, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 49, 29, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 21,  2, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 21,  3, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 0, 21,  4, 0, LusterShoppingSignThing, 0, 0
+	xy_trigger 1, 19,  2, 0, LusterResidentialSignThing, 0, 0
+	xy_trigger 1, 19,  3, 0, LusterResidentialSignThing, 0, 0
+	xy_trigger 1, 19,  4, 0, LusterResidentialSignThing, 0, 0
+	xy_trigger 1, 19,  5, 0, LusterResidentialSignThing, 0, 0
 
 	db 0 ; bg events
 
@@ -67,6 +74,16 @@ LusterCityShoppingTrigger0:
 	setflag ENGINE_STREETLIGHTS
 	callasm RefreshScreen_BridgeUpdate
 .end
+	end
+	
+LusterResidentialSignThing:
+	dotrigger $0
+	setevent EVENT_DOUBLE_LANDMARK_SIGN
+	setevent EVENT_IN_RESIDENTIAL_DISTRICT
+	clearevent EVENT_IN_SHOPPING_DISTRICT
+	clearevent EVENT_IN_BUSINESS_DISTRICT
+	loadvar wEnteredMapFromContinue, 0
+	callasm ReturnFromMapSetupScript
 	end
 	
 LusterShoppingSignThing:

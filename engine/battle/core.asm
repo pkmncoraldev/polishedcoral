@@ -856,10 +856,13 @@ GetMovePriority: ; 3c5c5
 	cp STATUS
 	jr nz, .no_priority
 	inc b
+	ld hl, PranksterText
+	call StdBattleTextBox
 .no_priority
 	ld a, b
 	pop bc
 	ret
+
 
 INCLUDE "data/moves/priorities.asm"
 
@@ -2643,6 +2646,9 @@ PlayVictoryMusic: ; 3d0ea
 	ld de, MUSIC_GYM_VICTORY
 	call IsBossTrainer
 	jr c, .play_music
+	ld de, MUSIC_SNARE_VICTORY
+	call IsSnareTrainer
+	jr c, .play_music
 	ld de, MUSIC_TRAINER_VICTORY
 
 .play_music
@@ -2656,6 +2662,16 @@ PlayVictoryMusic: ; 3d0ea
 
 IsBossTrainer:
 	ld hl, BossTrainers
+	push de
+	ld a, [wOtherTrainerClass]
+	ld de, $1
+	call IsInArray
+	pop de
+	ret
+; 0x3d137
+
+IsSnareTrainer:
+	ld hl, SnareTrainers
 	push de
 	ld a, [wOtherTrainerClass]
 	ld de, $1

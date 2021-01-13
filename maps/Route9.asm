@@ -150,7 +150,7 @@ TrainerRanch_3:
 	done
 	
 TrainerRanch_4:
-	generictrainer BUG_CATCHER, CHARLIE, EVENT_BEAT_ROUTE_9_TRAINER_4, .SeenText, .BeatenText
+	generictrainer BUG_CATCHER, DANNY, EVENT_BEAT_ROUTE_9_TRAINER_4, .SeenText, .BeatenText
 
 	text "What a bad place"
 	line "for a BUG CATCHER"

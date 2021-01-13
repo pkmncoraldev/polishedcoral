@@ -1454,7 +1454,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 ; Returns 0 if there is an NPC 2 spaces in front that you can't move
 ; Returns 1 if there is no NPC 2 spaces in front
 	ld hl, wHaveFollower
-	bit 0, [hl] ; ENGINE_BIKE_GEAR
+	bit 0, [hl]
 	jr nz, .is_npc ;set
 	xor a
 	ld [hMapObjectIndexBuffer], a

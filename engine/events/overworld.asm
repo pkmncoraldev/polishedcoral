@@ -1595,9 +1595,9 @@ AutoHeadbuttScript:
 	jumptext UnknownText_0xcea2
 
 TryHeadbuttOW:: ; cec9
-	ld d, HEADBUTT
-	call CheckPartyCanLearnMove
-	jr c, .no
+;	ld d, HEADBUTT
+;	call CheckPartyCanLearnMove
+;	jr c, .no
 
 	ld a, BANK(AskHeadbuttScript)
 	ld hl, AskHeadbuttScript
@@ -1843,15 +1843,16 @@ TryDodrioJump2OW:: ; cec9
 	
 DodrioJump2Script:
 	killsfx
-	playsound SFX_JUMP_OVER_LEDGE
 	checkcode VAR_FACING
 	if_equal DOWN, .YouAreFacingDown
 	if_equal UP, .YouAreFacingUp
 	jump .end
 .YouAreFacingDown
+	playsound SFX_JUMP_OVER_LEDGE
 	applyonemovement PLAYER, jump_step_down
 	jump .end
 .YouAreFacingUp
+	playsound SFX_JUMP_OVER_LEDGE
 	applyonemovement PLAYER, jump_step_up
 	jump .end
 	

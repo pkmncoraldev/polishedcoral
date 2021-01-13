@@ -482,7 +482,7 @@ BugCatcherGroup:
 ; ================
 
 	; BUG_CATCHER
-	db "CHARLIE@"
+	db "DANNY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

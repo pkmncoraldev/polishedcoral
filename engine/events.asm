@@ -1348,6 +1348,7 @@ CheckFacingTileEvent: ; 97c5f
 	jr nc, .noevent
 .done
 	call PlayClickSFX
+.done2
 	ld a, $ff
 	scf
 	ret
@@ -1360,18 +1361,22 @@ CheckFacingTileEvent: ; 97c5f
 .whirlpool
 	farcall TryWhirlpoolOW
 	jr c, .done
+	jr .noevent
 
 .waterfall
 	farcall TryWaterfallOW
 	jr c, .done
+	jr .noevent
 
 .headbutt
 	farcall TryHeadbuttOW
 	jr c, .done
+	jr .noevent
 	
 .dodriojump
 	farcall TryDodrioJumpOW
 	jr c, .done2
+	jr .noevent
 	
 .dodriojump2
 	farcall TryDodrioJump2OW
@@ -1380,10 +1385,6 @@ CheckFacingTileEvent: ; 97c5f
 	xor a
 	ret
 ; 97cc0
-.done2
-	ld a, $ff
-	scf
-	ret
 
 
 RandomEncounter:: ; 97cc0

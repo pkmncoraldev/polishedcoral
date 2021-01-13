@@ -77,7 +77,7 @@ PLAYER_F EQU __enum__
 	const BARNEY
 	const JOSH
 	const ARNOLD
-	const CHARLIE
+	const DANNY
 
 	trainerclass CAMPER
 	const BART

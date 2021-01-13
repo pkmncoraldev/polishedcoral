@@ -1014,13 +1014,6 @@ ShellSmash:
 	cantusefakeout
 	endmove
 	
-WorkUp:
-	checkobedience
-	usedmovetext
-	doturn
-	workup
-	endmove
-	
 AttackUp:
 	checkobedience
 	usedmovetext

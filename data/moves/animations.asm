@@ -318,6 +318,7 @@ BattleAnim_PoisonFang:
     anim_ret
 	
 BattleAnim_WorkUp:
+	anim_jumpif $1, BattleAnim_Growth
     anim_2gfx ANIM_GFX_HIT, ANIM_GFX_SAND
     anim_call BattleAnim_FollowEnemyFeet_0
     anim_bgeffect ANIM_BG_2C, $0, $1, $0

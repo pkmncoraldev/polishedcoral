@@ -3528,7 +3528,7 @@ ListMoves: ; 50d6f
 	cp LOCK_ON_MIND_READER
 	jr nz, .not_lock_on
 	farcall GetLockOnName
-	jr .cont
+	jp .cont
 .not_lock_on
 	cp SHARPEN_HOWL_MEDITATE
 	jr nz, .not_sharpen
@@ -3585,6 +3585,11 @@ ListMoves: ; 50d6f
 	farcall GetAgilityName
 	jr .cont
 .not_agility
+	cp WORK_UP_GROWTH
+	jr nz, .not_workup
+	farcall GetWorkUpName
+	jr .cont
+.not_workup
 	ld [wCurSpecies], a
 	ld a, MOVE_NAME
 	ld [wNamedObjectTypeBuffer], a

@@ -5576,9 +5576,6 @@ BattleCommand_calmmind:
 BattleCommand_dragondance:
 	lb bc, ATTACK, SPEED
 	jr DoubleUp
-BattleCommand_workup:
-	lb bc, ATTACK, SP_ATTACK
-	jr DoubleUp
 BattleCommand_growth:
 	lb bc, ATTACK, SP_ATTACK
 	call GetWeatherAfterCloudNine
@@ -5618,6 +5615,16 @@ DoubleUp:
 	jr nz, .statupmessage
 	inc a
 	ld [wKickCounter], a
+	
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld e, a
+	ld d, 0
+	cp WORK_UP_GROWTH
+	jr nz, .not_work_up
+	farcall CheckWorkUpThing
+	ld [wKickCounter], a
+.not_work_up
 	call AnimateCurrentMove
 	pop de
 	inc e
@@ -8651,14 +8658,14 @@ BattleCommand_gyroball_electroball_cont:
 	rr e
 	jr .scaledown_loop
 .scaledown_ok
-	; Base Power = 25 * (DE Speed / BC Speed), capped at 150
+	; Base Power = 50 * (DE Speed / BC Speed), capped at 150
 	xor a
 	ld [hMultiplicand + 0], a
 	ld a, d
 	ld [hMultiplicand + 1], a
 	ld a, e
 	ld [hMultiplicand + 2], a
-	ld a, 25
+	ld a, 60
 	ld [hMultiplier], a
 	call Multiply
 

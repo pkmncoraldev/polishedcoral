@@ -19,7 +19,7 @@ TMHMMoves:
 	db RAIN_DANCE   ; TM18
 	db GIGA_DRAIN   ; TM19
 	db SAFEGUARD    ; TM20
-	db WORK_UP     ; TM21
+	db WORK_UP_GROWTH     ; TM21
 	db SOLAR_BEAM   ; TM22
 	db IRON_TAIL    ; TM23
 	db THUNDERBOLT  ; TM24

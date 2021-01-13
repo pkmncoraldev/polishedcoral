@@ -43,7 +43,7 @@ ENDM
 	add_tm RAIN_DANCE   ; $11
 	add_tm GIGA_DRAIN   ; $12
 	add_tm SAFEGUARD    ; $13
-	add_tm WORK_UP     ; $14
+	add_tm WORK_UP_GROWTH     ; $14
 	add_tm SOLAR_BEAM   ; $15
 	add_tm IRON_TAIL    ; $16
 	add_tm THUNDERBOLT  ; $17

@@ -190,12 +190,11 @@ BattleCommandPointers:
 	command freezeflinchtarget		; b3 - coral
 	command paralyzeflinchtarget	; b4 - coral
 	command shellsmash				; b5 - coral
-	command workup					; b6 - coral
-	command quiverdance				; b7 - coral
-	command mirrormove				; b8 - coral
-	command toxictarget				; b9 - coral
-	command mimic					; ba - coral
-	command electroball				; bb - coral
+	command quiverdance				; b6 - coral
+	command mirrormove				; b7 - coral
+	command toxictarget				; b8 - coral
+	command mimic					; b9 - coral
+	command electroball				; ba - coral
 	command lowkick
 	
 

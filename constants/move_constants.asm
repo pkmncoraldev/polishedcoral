@@ -131,7 +131,7 @@
 	const SWIFT        ; $81
 	const MIRROR_MOVE  ; $82
 	const ICICLE_SPEAR ; $83
-	const WORK_UP      ; $84
+	const WORK_UP_GROWTH      ; $84
 	const AMNESIA      ; $85
 	const ROOST        ; $86
 	const SOFTBOILED_MILK_DRINK   				; $87

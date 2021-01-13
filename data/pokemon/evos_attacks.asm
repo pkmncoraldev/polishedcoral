@@ -9,7 +9,7 @@ INCLUDE "data/pokemon/evolution_moves.asm"
 INCLUDE "data/pokemon/evos_attacks_pointers.asm"
 
 EvosAttacks::
-
+;	db
 BulbasaurEvosAttacks:
 	db EVOLVE_LEVEL, 16, IVYSAUR
 	db  0 ; no more evolutions
@@ -24,7 +24,7 @@ BulbasaurEvosAttacks:
 	db 17, TAKE_DOWN
 	db 19, RAZOR_LEAF
 	db 21, SWEET_SCENT
-	db 25, WORK_UP
+	db 25, WORK_UP_GROWTH
 	db 28, DOUBLE_EDGE
 	db 33, SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db 37, SOLAR_BEAM
@@ -43,7 +43,7 @@ IvysaurEvosAttacks:
 	db 18, TAKE_DOWN
 	db 20, RAZOR_LEAF
 	db 23, SWEET_SCENT
-	db 27, WORK_UP
+	db 27, WORK_UP_GROWTH
 	db 34, DOUBLE_EDGE
 	db 36, SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db 40, SOLAR_BEAM
@@ -60,7 +60,7 @@ VenusaurEvosAttacks:
 	db  1, TAKE_DOWN
 	db  1, RAZOR_LEAF
 	db  1, SWEET_SCENT
-	db  1, WORK_UP
+	db  1, WORK_UP_GROWTH
 	db  1, DOUBLE_EDGE
 	db 42, SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db 50, SOLAR_BEAM
@@ -525,7 +525,7 @@ OddishEvosAttacks:
 	db EVOLVE_LEVEL, 21, GLOOM
 	db  0 ; no more evolutions
 	db  1, ABSORB
-	db  1, WORK_UP
+	db  1, WORK_UP_GROWTH
 	db  5, ACID
 	db  9, POISONPOWDER
 	db 12, STUN_SPORE
@@ -544,7 +544,7 @@ GloomEvosAttacks:
 	db EVOLVE_ITEM, SUN_STONE, BELLOSSOM
 	db  0 ; no more evolutions
 	db  1, ABSORB
-	db  1, WORK_UP
+	db  1, WORK_UP_GROWTH
 	db  1, ACID
 	db  1, POISONPOWDER
 	db  1, STUN_SPORE
@@ -561,7 +561,7 @@ GloomEvosAttacks:
 VileplumeEvosAttacks:
 	db  0 ; no more evolutions
 	db  1, ABSORB
-	db  1, WORK_UP
+	db  1, WORK_UP_GROWTH
 	db  1, ACID
 	db  1, POISONPOWDER
 	db  1, STUN_SPORE
@@ -1363,7 +1363,7 @@ QuilavaEvosAttacks:
 
 TyphlosionEvosAttacks:
 	db  0 ; no more evolutions
-	db  1, WORK_UP
+	db  1, WORK_UP_GROWTH
 	db  1, TACKLE_SCRATCH_POUND
 	db  1, LEER_TAIL_WHIP
 	db  1, SAND_ATTACK_SMOKESCREEN
@@ -2138,7 +2138,7 @@ ShroomishEvosAttacks:
 	db 15, HEADBUTT
 	db 19, POISONPOWDER
 	db 24, GIGA_DRAIN
-	db 28, WORK_UP
+	db 28, WORK_UP_GROWTH
 	db 33, TOXIC
 	db 36, BULLET_SEED
 	db 40, SPORE
@@ -2490,7 +2490,7 @@ CottoneeEvosAttacks:
 	db  0 ; no more evolutions
 	db  1, ABSORB
 	db  1, FAIRY_WIND
-	db  4, WORK_UP
+	db  4, WORK_UP_GROWTH
 	db  8, LEECH_SEED
 	db 10, STUN_SPORE
 	db 13, MEGA_DRAIN
@@ -2509,7 +2509,7 @@ WhimsicottEvosAttacks:
 	db  0 ; no more evolutions
 	db  1, ABSORB
 	db  1, FAIRY_WIND
-	db  1, WORK_UP
+	db  1, WORK_UP_GROWTH
 	db  1, LEECH_SEED
 	db  1, STUN_SPORE
 	db  1, MEGA_DRAIN

@@ -149,7 +149,6 @@ MoveEffectsPointers:
 	dw BrickBreak
 	dw LockOn
 	dw ShellSmash
-	dw WorkUp
 	dw QuiverDance
 	dw MirrorMove
 	dw Twister

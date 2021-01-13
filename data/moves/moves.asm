@@ -83,7 +83,7 @@ Moves:: ; 41afb
 	move ABSORB,       EFFECT_LEECH_HIT,          20, GRASS,     100, 25,   0, SPECIAL
 	move MEGA_DRAIN,   EFFECT_LEECH_HIT,          40, GRASS,     100, 15,   0, SPECIAL
 	move LEECH_SEED,   EFFECT_LEECH_SEED,          0, GRASS,      90, 10,   0, STATUS
-	move GROWTH,       EFFECT_GROWTH,              0, NORMAL,    100, 20,   0, STATUS
+	move GROWTH,       EFFECT_SPLASH,              0, NORMAL,    100, 20,   0, STATUS
 	move RAZOR_LEAF,   EFFECT_NORMAL_HIT,         55, GRASS,      95, 25,   0, PHYSICAL
 	move SOLAR_BEAM,   EFFECT_SOLAR_BEAM,        120, GRASS,     100, 10,   0, SPECIAL
 	move POISONPOWDER, EFFECT_POISON,              0, POISON,     75, 35,   0, STATUS
@@ -141,7 +141,7 @@ Moves:: ; 41afb
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,    100, 20,   0, SPECIAL
 	move MIRROR_MOVE,  EFFECT_MIRROR_MOVE,         0, FLYING,    100, 20,   0, STATUS
 	move ICICLE_SPEAR, EFFECT_MULTI_HIT,          25, ICE,       100, 30,   0, PHYSICAL
-	move WORK_UP,      EFFECT_WORK_UP,             0, NORMAL,    100, 30, 100, STATUS
+	move WORK_UP_GROWTH,      EFFECT_GROWTH,             0, NORMAL,    100, 30, 100, STATUS
 	move AMNESIA,      EFFECT_SP_DEF_UP_2,         0, PSYCHIC,   100, 20,   0, STATUS
 	move ROOST,        EFFECT_ROOST,               0, FLYING,    100, 10,   0, STATUS
 	move SOFTBOILED_MILK_DRINK,   EFFECT_HEAL,                0, NORMAL,    100, 10,   0, STATUS

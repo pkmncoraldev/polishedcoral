@@ -559,10 +559,6 @@ MinimizeDescription:
 	db   "Sharply raises the"
 	next "user's evasiveness.@"
 
-GrowthDescription:
-	db   "Raises the user's"
-	next "ATK and SPCL.ATK.@"
-
 BulkUpDescription:
 	db   "Raises the user's"
 	next "ATK and Def.@"
@@ -1001,8 +997,9 @@ PsyshockDescription:
 	next "physical damage.@"
 	
 WorkUpDescription:
-	db   "Raises ATTACK"
-	next "and SPCL. ATK.@"
+GrowthDescription:
+	db   "Raises the user's"
+	next "ATK and SPCL.ATK.@"
 
 MirrorCoatDescription:
 	db   "Counters a SPCL."

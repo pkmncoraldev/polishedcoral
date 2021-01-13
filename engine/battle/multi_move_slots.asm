@@ -1110,6 +1110,67 @@ GetMoveNameAgility:: ; 34f8
 	rst Bankswitch
 	ret
 	
+GetWorkUpName::
+	ld a, [hROMBank]
+	push af
+	push hl
+	push bc
+	push de
+
+	call CheckGrowthUsers
+	jr nc, .not_growth
+	ld hl, WorkUpNames
+	ld a, 0
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	jr .done
+.not_growth
+	ld hl, WorkUpNames
+	ld a, 1
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	
+.done
+	pop de
+	pop bc
+	pop hl
+	pop af
+	rst Bankswitch
+	ret
+
+GetMoveNameWorkUp:: ; 34f8
+	ld a, [hROMBank]
+	push af
+	push hl
+	push bc
+
+	
+	call CheckGrowthUsers
+	jr nc, .not_growth
+	ld hl, WorkUpNames
+	ld a, 0
+	jr .done
+	
+.not_growth
+	ld hl, WorkUpNames
+	ld a, 2
+	
+.done
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	ld de, wStringBuffer1
+	pop bc
+	pop hl
+	pop af
+	rst Bankswitch
+	ret
+	
 CheckPoundUsers::
 	ld a, [wCurPartySpecies]
 CheckPoundUsers2::
@@ -1302,6 +1363,14 @@ CheckRockPolishUsers2::
 	call IsInArray
 	ret
 	
+CheckGrowthUsers::
+	ld a, [wCurPartySpecies]
+CheckGrowthUsers2::
+	ld hl, GrowthUsers
+	ld de, 1
+	call IsInArray
+	ret
+	
 CheckMultiMoveSlot::
 	ld a, [wCurMove]
 	ld hl, MultiSlotMoves
@@ -1341,6 +1410,8 @@ GetMultiMoveSlotName::
 	jr z, .softboiled
 	cp FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	jr z, .foresight
+	cp WORK_UP_GROWTH
+	jr z, .workup
 	jr .end
 .tackle
 	call GetMoveNameTackle
@@ -1386,6 +1457,9 @@ GetMultiMoveSlotName::
 	jr .end
 .foresight
 	call GetMoveNameForesight
+	jr .end
+.workup
+	call GetMoveNameWorkUp
 .end
 	ret
 
@@ -1862,6 +1936,31 @@ CheckAgilityThing::
 	ret
 .not_rock_polish
 	ret
+	
+CheckWorkUpThing::
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species
+	
+.skip
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species
+	ld a, [wEnemyMonSpecies]
+.got_user_species
+	farcall CheckGrowthUsers2
+	jr nc, .not_growth
+	ld a, $1
+	ret
+.not_growth
+	ret
 
 PoundUsers:
 	db CLEFAIRY
@@ -2136,6 +2235,11 @@ AgilityNames:
 	db "AGILITY@"
 	db -1
 	
+WorkUpNames:
+	db "GROWTH@"
+	db "WORK UP@"
+	db -1
+	
 MultiSlotMoves:
 	db TACKLE_SCRATCH_POUND
 	db DEFENSE_CURL_HARDEN_WITHDRAW
@@ -2153,6 +2257,7 @@ MultiSlotMoves:
 	db SOFTBOILED_MILK_DRINK
 	db FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db AGILITY_ROCK_POLISH
+	db WORK_UP_GROWTH
 	db -1
 	
 MultiSlotMoveTypes::

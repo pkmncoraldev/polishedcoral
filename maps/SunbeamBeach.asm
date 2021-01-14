@@ -9,7 +9,8 @@ SunbeamBeach_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 9 ; object events
+	db 10 ; object events
+	person_event SPRITE_SILVER_TROPHY, 29, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, 1<<NITE, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbather, -1
 	person_event SPRITE_ROWBOAT, 29, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbather, -1
 	person_event SPRITE_TRUNKS, 17,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, 4, 19, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_TRUNKS, 33,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, 4, 19, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -37,7 +38,10 @@ SunbeamIslandSunbatherText:
 SunbeamIslandSunbatherText2:
 	text "…"
 	
-	para "She's sleeping…"
+	para "She's sleeping!"
+	
+	para "Her skin looks"
+	line "pretty red…"
 	done
 	
 SunbeamIslandSunbatherText3:
@@ -52,8 +56,20 @@ SunbeamIslandSunbatherText4:
 	
 	para "What do you want?"
 	
+	para "Ow ow!"
+	
+	para "Sunburn!"
+	
+	para "I must've fallen"
+	line "asleep sunbathing"
+	cont "again!"
+	
 	para "Just take this and"
 	line "leave me alone!"
+	
+	para "I'm just gonna"
+	line "lie here a little"
+	cont "longer…"
 	done
 	
 SunbeamBeachFluteDidntWorkText:

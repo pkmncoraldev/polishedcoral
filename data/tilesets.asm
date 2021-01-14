@@ -39,6 +39,24 @@ TilesetPlayerHouseColl::
 INCLUDE "data/tilesets/playerhouse_collision.asm"
 
 
+SECTION "Tileset Data - sunset", ROMX
+
+TilesetSunsetGFX::
+INCBIN "gfx/tilesets/sunset.2bpp.vram0.lz"
+
+TilesetSunsetGFX2::
+INCBIN "gfx/tilesets/sunset.2bpp.vram1.lz"
+
+TilesetSunsetMeta::
+INCBIN "data/tilesets/sunset_metatiles.bin.lz"
+
+TilesetSunsetAttr::
+INCBIN "data/tilesets/sunset_attributes.bin.lz"
+
+TilesetSunsetColl::
+INCLUDE "data/tilesets/sunset_collision.asm"
+
+
 SECTION "Tileset Data - glint", ROMX
 
 TilesetGlintGFX::
@@ -498,6 +516,7 @@ endm
 Tilesets::
 	tileset TilesetPlayerRoom
 	tileset TilesetPlayerHouse
+	tileset TilesetSunset
 	tileset TilesetGlint
 	tileset TilesetStarglow
 	tileset TilesetHouse1

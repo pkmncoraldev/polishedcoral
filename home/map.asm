@@ -1098,6 +1098,8 @@ LoadTileset:: ; 2821
 	ld [rSVBK], a
 
 	ld a, [wTileset]
+	cp TILESET_SUNSET
+	jr z, .load_roof
 	cp TILESET_GLINT
 	jr z, .load_roof
 	cp TILESET_STARGLOW

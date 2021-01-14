@@ -105,6 +105,7 @@ TilesetTrainAnim::
 	dw TrainWindowFrames, AnimateWaterfallTiles
 	dw NULL,  DoneTileAnimation
 	
+TilesetSunsetAnim::
 TilesetGlintAnim::
 TilesetStarglowAnim::
 	dw VTiles2 tile $14, WriteTileToBuffer

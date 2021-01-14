@@ -1,5 +1,6 @@
 CutGrassBlockPointers:
 ; Which tileset are we in?
+	dbw TILESET_SUNSET, .glint
 	dbw TILESET_GLINT, .glint
 	dbw TILESET_STARGLOW, .glint
 	dbw TILESET_MOUNTAIN, .glint

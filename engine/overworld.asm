@@ -253,6 +253,8 @@ LoadEmoteGFX::
 	ld c, EMOTE_SHADOW
 	call LoadEmote
 	ld a, [wTileset]
+	cp TILESET_SUNSET
+	jp z, .outdoor
 	cp TILESET_GLINT
 	jp z, .outdoor
 	cp TILESET_STARGLOW

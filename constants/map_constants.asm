@@ -22,7 +22,7 @@ MAP_NONE   EQU 0
 
 	map_const DAYBREAK_GROTTO_1,                           9,  7 ;  1
 	map_const DAYBREAK_GROTTO_2,                           9, 11 ;  2
-	map_const GLINT_GROVE,                                29, 30 ;  3
+	map_const GLINT_GROVE,                                27, 30 ;  3
 	map_const GLINT_GROVE_DEEP,							   7,  7 ;  4
 	map_const STARGLOW_CAVERN_1F,                         19, 16 ;  5
 	map_const STARGLOW_CAVERN_2F,                         14, 13 ;  6
@@ -90,7 +90,7 @@ MAP_NONE   EQU 0
 	map_const GLINT_EVO_HOUSE,                             4,  4 ; 11
 	map_const ROUTE_3,                                    27, 16 ; 12
 	map_const ROUTE_3_EAST,                		          14, 10 ; 13
-	map_const ROUTE_8,                                    30, 20 ; 14
+	map_const ROUTE_8,                                    31, 20 ; 14
 	map_const ROUTE_8_ENCOUNTER_HOUSE,                     4,  4 ; 15
 	map_const ROUTE_8_GARDEN,                             30, 20 ; 16
 	map_const ROUTE_8_GATE,                                4,  4 ; 17

@@ -504,7 +504,7 @@ SunbeamSnareText3:
 	done
 
 SunbeamSnareText4:
-	text "Uh uh."
+	text "Nuh uh."
 	done
 
 SunbeamSnareText5:

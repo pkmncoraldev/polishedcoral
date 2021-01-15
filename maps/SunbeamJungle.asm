@@ -242,7 +242,7 @@ SunbeamJungleSnare3:
 	
 	para "…"
 	
-	para "ARE YOU LAUGHING?"
+	para "DID YOU LAUGH?"
 	
 	para "I CAN'T HEAR YOU!"
 	done
@@ -346,7 +346,8 @@ SunbeamJungleKageText1:
 
 	para "There should only"
 	line "be an old man and"
-	cont "a MUNCHLAX there,"
+	cont "a MUNCHLAX to deal"
+	cont "with,"
 
 	para "so we should be"
 	line "able to handle it"

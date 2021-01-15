@@ -10,7 +10,7 @@ SunbeamBeach_MapScriptHeader:
 	db 0 ; bg events
 
 	db 10 ; object events
-	person_event SPRITE_SILVER_TROPHY, 29, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, 1<<NITE, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbather, -1
+	person_event SPRITE_SILVER_TROPHY, 29, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, 1<<NITE, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbatherNite, -1
 	person_event SPRITE_ROWBOAT, 29, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbather, -1
 	person_event SPRITE_TRUNKS, 17,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, 4, 19, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_TRUNKS, 33,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, 4, 19, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -22,10 +22,8 @@ SunbeamBeach_MapScriptHeader:
 	person_event SPRITE_SUPER_NERD, 45, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, 0, -1
 
 SunbeamIslandSunbather:
-	checktime 1<<NITE
-	iftrue .nite
 	jumptext SunbeamIslandSunbatherText
-.nite
+SunbeamIslandSunbatherNite:
 	jumptext SunbeamIslandSunbatherText2
 	
 SunbeamIslandSunbatherText:
@@ -54,7 +52,8 @@ SunbeamIslandSunbatherText3:
 SunbeamIslandSunbatherText4:
 	text "Huh?"
 	
-	para "What do you want?"
+	para "Why's it so dark"
+	line "out?"
 	
 	para "Ow ow!"
 	
@@ -67,8 +66,8 @@ SunbeamIslandSunbatherText4:
 	para "Just take this and"
 	line "leave me alone!"
 	
-	para "I'm just gonna"
-	line "lie here a little"
+	para "I'm just gonna lie"
+	line "here a little"
 	cont "longer…"
 	done
 	

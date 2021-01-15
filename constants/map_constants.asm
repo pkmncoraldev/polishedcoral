@@ -196,7 +196,7 @@ MAP_NONE   EQU 0
 	newgroup													 ; 11
 	
 	map_const ROUTE_10,									  29, 26 ; 1
-	map_const ROUTE_10_EAST,							  12, 14 ; 2
+	map_const ROUTE_10_EAST,							  12, 15 ; 2
 	map_const ROUTE_10_TENT,							   2,  3 ; 3
 	map_const TWINKLE_TOWN,								  24, 28 ; 4
 	map_const TWINKLE_ROCK_HOUSE,						   4,  4 ; 5
@@ -245,5 +245,5 @@ MAP_NONE   EQU 0
 	map_const LUSTER_MALL_BALL_SHOP,					   4,  4 ; 25
 	map_const LUSTER_MALL_CLOTHES_SHOP,					   6,  4 ; 26
 	map_const PARK,										  21, 30 ; 27
-	map_const SKATEPARK,								  14, 31 ; 28
+	map_const SKATEPARK,								  15, 32 ; 28
 	

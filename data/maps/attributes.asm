@@ -157,7 +157,7 @@ ENDM
 	connection west, EventideVillage, EVENTIDE_VILLAGE, 16
 	
 	map_attributes Route10, ROUTE_10, 5, NORTH | EAST
-	connection north, TwinkleTown, TWINKLE_TOWN, 4
+	connection north, TwinkleTown, TWINKLE_TOWN, 5
 	connection east, Route10East, ROUTE_10_EAST, -1
 	
 	map_attributes Route10East, ROUTE_10_EAST, 5, WEST
@@ -249,7 +249,7 @@ ENDM
 	connection south, SpookyForest8, SPOOKY_FOREST_8, 4
 	
 	map_attributes TwinkleTown, TWINKLE_TOWN, 5, SOUTH
-	connection south, Route10, ROUTE_10, -4
+	connection south, Route10, ROUTE_10, -5
 	
 	map_attributes LusterCityResidential, LUSTER_CITY_RESIDENTIAL, 113, EAST
 	connection east, LusterCityShopping, LUSTER_CITY_SHOPPING, 0
@@ -261,10 +261,10 @@ ENDM
 	map_attributes LusterCityBusiness, LUSTER_CITY_BUSINESS, 113, WEST
 	connection west, LusterCityShopping, LUSTER_CITY_SHOPPING, -6
 	
-	map_attributes Park, PARK, $0, EAST
+	map_attributes Park, PARK, $02, EAST
 	connection east, Skatepark, SKATEPARK, 0
 	
-	map_attributes Skatepark, SKATEPARK, $0, WEST
+	map_attributes Skatepark, SKATEPARK, $02, WEST
 	connection west, Park, PARK, 0
 	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0

@@ -130,7 +130,7 @@ SquirtleEvosAttacks:
 	db 19, RAPID_SPIN
 	db 22, BUBBLE_BEAM
 	db 25, PROTECT
-	db 31, SKULL_BASH
+	db 31, DOUBLE_EDGE
 	db 33, RAIN_DANCE
 	db 35, HYDRO_PUMP
 	db  0 ; no more level-up moves
@@ -147,7 +147,7 @@ WartortleEvosAttacks:
 	db 21, RAPID_SPIN
 	db 24, BUBBLE_BEAM
 	db 27, PROTECT
-	db 35, SKULL_BASH
+	db 35, DOUBLE_EDGE
 	db 37, RAIN_DANCE
 	db 40, HYDRO_PUMP
 	db  0 ; no more level-up moves
@@ -165,7 +165,7 @@ BlastoiseEvosAttacks:
 	db  1, PROTECT
 	db  1, FLASH_CANNON
 	db  1, SHELL_SMASH
-	db 40, SKULL_BASH
+	db 40, DOUBLE_EDGE
 	db 45, RAIN_DANCE
 	db 50, HYDRO_PUMP
 	db  0 ; no more level-up moves
@@ -1036,36 +1036,111 @@ MarowakEvosAttacks:
 KoffingEvosAttacks:
 	db EVOLVE_LEVEL, 35, WEEZING
 	db 0 ; no more evolutions
+	db 1, POISON_GAS
 	db 1, TACKLE_SCRATCH_POUND
+	db 6, SMOG
+	db 10, SAND_ATTACK_SMOKESCREEN
+	db 15, FAINT_ATTACK
+	db 19, SLUDGE
+	db 24, SELFDESTRUCT
+	db 28, HAZE
+	db 33, GYRO_BALL
+	db 37, SLUDGE_BOMB
+	db 42, EXPLOSION
+	db 46, TOXIC
+	db 51, DESTINY_BOND
 	db 0 ; no more level-up moves
 
 WeezingEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, DOUBLE_HIT
+	db 1, POISON_GAS
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, SMOG
+	db 1, SAND_ATTACK_SMOKESCREEN
+	db 1, FAINT_ATTACK
+	db 1, SLUDGE
+	db 1, SELFDESTRUCT
+	db 1, HAZE
+	db 1, GYRO_BALL
+	db 37, SLUDGE_BOMB
+	db 42, EXPLOSION
+	db 46, TOXIC
+	db 51, DESTINY_BOND
 	db 0 ; no more level-up moves
 
 RhyhornEvosAttacks:
 	db EVOLVE_LEVEL, 42, RHYDON
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 7, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
+	db 10, ROCK_THROW
+	db 16, MAGNITUDE
+	db 19, HORN_ATTACK
+	db 25, SCARY_FACE_COTTON_SPORE
+	db 28, STOMP
+	db 34, ROCK_SLIDE
+	db 37, TAKE_DOWN
+	db 43, STONE_EDGE
+	db 46, EARTHQUAKE
+	db 52, MEGAHORN
+	db 55, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 RhydonEvosAttacks:
 	db EVOLVE_HOLDING, PROTECTOR, RHYPERIOR
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 7, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
+	db 10, ROCK_THROW
+	db 16, MAGNITUDE
+	db 19, HORN_ATTACK
+	db 25, SCARY_FACE_COTTON_SPORE
+	db 28, STOMP
+	db 34, ROCK_SLIDE
+	db 37, TAKE_DOWN
+	db 45, STONE_EDGE
+	db 50, EARTHQUAKE
+	db 57, MEGAHORN
+	db 62, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 HorseaEvosAttacks:
 	db EVOLVE_LEVEL, 32, SEADRA
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, WATER_GUN
+	db 1, LEER_TAIL_WHIP
+	db 7, SAND_ATTACK_SMOKESCREEN
+	db 10, TWISTER
+	db 16, FOCUS_ENERGY
+	db 19, DRAGONBREATH
+	db 25, BUBBLEBEAM
+	db 28, FLAIL
+	db 34, AGILITY
+	db 37, DRAGON_PULSE
+	db 43, HYDRO_PUMP
+	db 46, DRAGON_DANCE
+	db 52, RAIN_DANCE
 	db 0 ; no more level-up moves
 
 SeadraEvosAttacks:
 	db EVOLVE_TRADE, DRAGON_SCALE, KINGDRA
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, WATER_GUN
+	db 1, LEER_TAIL_WHIP
+	db 7, SAND_ATTACK_SMOKESCREEN
+	db 10, TWISTER
+	db 16, FOCUS_ENERGY
+	db 19, DRAGONBREATH
+	db 25, BUBBLEBEAM
+	db 28, FLAIL
+	db 34, AGILITY
+	db 37, DRAGON_PULSE
+	db 43, HYDRO_PUMP
+	db 46, DRAGON_DANCE
+	db 52, RAIN_DANCE
 	db 0 ; no more level-up moves
 
 StaryuEvosAttacks:
@@ -1544,7 +1619,7 @@ NatuEvosAttacks:
 	db 14, REFLECT
 ;	db 19, OMINNOUS_WIND
 	db 23, CONFUSE_RAY
-	db 27, ROOST
+	db 27, ROOST       ; WISH?
 	db 32, PSYCHIC_M
 	db 36, CALM_MIND
 	db 40, FUTURE_SIGHT
@@ -1563,7 +1638,7 @@ XatuEvosAttacks:
 	db 14, REFLECT
 ;	db 19, OMINNOUS_WIND
 	db 23, CONFUSE_RAY
-	db 27, ROOST
+	db 27, ROOST       ; WISH?
 	db 32, PSYCHIC_M
 	db 36, CALM_MIND
 	db 40, FUTURE_SIGHT
@@ -1939,7 +2014,19 @@ HoundoomEvosAttacks:
 
 KingdraEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, WATER_GUN
+	db 1, LEER_TAIL_WHIP
+	db 7, SAND_ATTACK_SMOKESCREEN
+	db 10, TWISTER
+	db 16, FOCUS_ENERGY
+	db 19, DRAGONBREATH
+	db 25, BUBBLEBEAM
+	db 28, FLAIL
+	db 34, AGILITY
+	db 37, DRAGON_PULSE
+	db 43, HYDRO_PUMP
+	db 46, DRAGON_DANCE
+	db 52, RAIN_DANCE
 	db 0 ; no more level-up moves
 
 PhanpyEvosAttacks:
@@ -2390,6 +2477,19 @@ MagnezoneEvosAttacks:
 RhyperiorEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 7, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
+	db 10, ROCK_THROW
+	db 16, MAGNITUDE
+	db 19, HORN_ATTACK
+	db 25, SCARY_FACE_COTTON_SPORE
+	db 28, STOMP
+	db 34, ROCK_SLIDE
+	db 37, TAKE_DOWN
+	db 45, STONE_EDGE
+	db 50, EARTHQUAKE
+	db 57, MEGAHORN
+	db 62, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 	
 ElectivireEvosAttacks:

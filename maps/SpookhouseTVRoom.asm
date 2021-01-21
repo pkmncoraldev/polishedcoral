@@ -15,7 +15,7 @@ SpookhouseTVRoom_MapScriptHeader:
 
 	db 3 ; bg events
 	signpost  3,  2, SIGNPOST_READ, SpookHouseTV
-	signpost  9,  2, SIGNPOST_IFNOTSET, SpookHouseTVScaryDoor
+	signpost  9,  2, SIGNPOST_IFNOTSET, SpookHouseTVScaryDoorLeft
 	signpost  9,  3, SIGNPOST_IFNOTSET, SpookHouseTVScaryDoor
 
 	db 5 ; object events
@@ -63,15 +63,20 @@ SpookHouseTVRoomAsmThing:
 	ld e, a
 	farjp CopyDECoordsToMapObject
 	
+SpookHouseTVScaryDoorLeft
+	dw EVENT_SPOOKHOUSE_DARK
+	setevent EVENT_SCARY_DOOR_LEFT
+	jump SpookHouseTVScaryDoorCont
 SpookHouseTVScaryDoor:
 	dw EVENT_SPOOKHOUSE_DARK
+SpookHouseTVScaryDoorCont:
 	setevent EVENT_SPOOKHOUSE_DARK
 	opentext
 	writetext SpookHouseScaryDoorText
 	closetext
 	changemap SpookhouseTVRoom2_BlockData
 	reloadmappart
-	playsound SFX_UNKNOWN_5F
+	cry CANCEL
 	waitsfx
 	dotrigger $2
 	end
@@ -79,17 +84,64 @@ SpookHouseTVScaryDoor:
 SpookHouseNPC3:
 	opentext
 	writetext SpookHouseGhostText9
+	pause 8
+	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	pause 6
+	writetext SpookHouseGhostText10
+	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	pause 6
+	writetext SpookHouseGhostText10
+	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	pause 4
+	writetext SpookHouseGhostText10
+	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	pause 4
+	writetext SpookHouseGhostText10
+	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	pause 4
+	writetext SpookHouseGhostText10
+	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	pause 2
+	writetext SpookHouseGhostText10
+	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	pause 2
+	writetext SpookHouseGhostText10
+	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	pause 2
+	writetext SpookHouseGhostText10
+	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	writetext SpookHouseGhostText10
+	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	writetext SpookHouseGhostText10
+	playsound SFX_READ_TEXT
+	writetext SpookHouseGhostText10
+	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
 	closetext
 	disappear SPOOKHOUSE_TVROOM_NPC5
 	applyonemovement PLAYER, hide_person
-	changemap SpookhouseTVRoom_BlockData
+	checkevent EVENT_SCARY_DOOR_LEFT
+	iftrue .girlleft
+	changemap SpookhouseTVRoom3_BlockData
+.return
 	reloadmappart
 	closetext
 	playsound SFX_UNKNOWN_5F
-	earthquake 60
 	waitsfx
 	end
-	
+.girlleft
+	changemap SpookhouseTVRoom4_BlockData
+	jump .return
 	
 SpookHouseTVRoom5:
 	checkevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
@@ -233,7 +285,26 @@ SpookHouseGhostText8:
 	done
 	
 SpookHouseGhostText9:
-	text "BOO!"
+	text "You should have"
+	line "left while you"
+	cont "could…"
+	
+	para "But now…"
+	
+	para "We can play for-"
+	line "ever and ever"
+	
+	para "and ever and ever"
+	
+	para "and ever and ever"
+	
+	para "and ever and ever"
+	
+	para "and ever and ever"
+	done
+	
+SpookHouseGhostText10:
+	text "and ever and ever"
 	done
 	
 SpookHouseTVTextOn:

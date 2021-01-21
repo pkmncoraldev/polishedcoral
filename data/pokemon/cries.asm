@@ -235,4 +235,4 @@ CryHeaders::
 	mon_cry CRY_EXEGGUTOR,   $000,  $100 	; Exeggutor_A
 	mon_cry CRY_ODDISH,      $04f,  $0e0 	; Marowak_A
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg
-	mon_cry CRY_NIDORAN_M,      0,     0 	; 255
+	mon_cry RALTS,   	ScreamDEDData	 	; 255

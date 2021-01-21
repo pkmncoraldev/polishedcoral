@@ -10,8 +10,8 @@ FlickerPass2F_MapScriptHeader:
 	warp_def 33, 15, 2, FLICKER_PASS_1F
 	warp_def 49, 37, 3, FLICKER_PASS_1F
 	warp_def  1, 19, 1, ROUTE_10
-	warp_def  9,  9, 2, ROUTE_10
-	warp_def 17,  3, 1, FLICKER_PASS_OUTSIDE
+	warp_def  1,  9, 2, ROUTE_10
+	warp_def  9,  3, 1, FLICKER_PASS_OUTSIDE
 
 	db 0 ; coord events
 

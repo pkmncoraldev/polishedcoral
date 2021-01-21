@@ -171,7 +171,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; aa
 	tilecoll WALL, WALL, WALL, WALL ; ab
 	tilecoll NO_OLLIE, NO_OLLIE, FLOOR, NO_OLLIE ; ac
-	tilecoll WALL, FLOOR, WALL, ROCK_CLIMB ; ad
+	tilecoll WALL, ROCK_CLIMB, WALL, ROCK_CLIMB ; ad
 	tilecoll WALL, WALL, WALL, WALL ; ae
 	tilecoll WALL, WALL, WALL, WALL ; af
 	tilecoll TALL_GRASS, WALL, WALL, WALL ; b0

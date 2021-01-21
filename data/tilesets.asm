@@ -326,11 +326,11 @@ SECTION "Tileset Data - haunted", ROMX
 
 TilesetHauntedGFX::
 TilesetHauntedTVGFX::
-INCBIN "gfx/tilesets/haunted.2bpp.lz"
+INCBIN "gfx/tilesets/haunted.2bpp.vram0.lz"
 
-TilesetHauntedGFX2 EQU 0
-
-TilesetHauntedTVGFX2 EQU 0
+TilesetHauntedGFX2::
+TilesetHauntedTVGFX2::
+INCBIN "gfx/tilesets/haunted.2bpp.vram1.lz"
 
 TilesetHauntedMeta::
 TilesetHauntedTVMeta::

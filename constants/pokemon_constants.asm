@@ -218,10 +218,11 @@
 	const RAICHU_A
 	const EXEGGUTOR_A
 	const MAROWAK_A
-
-NUM_POKEMON EQU const_value +- 1
 	const EGG        ; $fe
 	const CANCEL     ; $ff
+
+NUM_POKEMON EQU const_value +- 1
+	
 
 
 ; form values

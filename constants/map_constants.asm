@@ -144,7 +144,7 @@ MAP_NONE   EQU 0
 	newgroup                                                     ;  8
 	
 	map_const ROUTE_4_EVENTIDE_GATE,					   5,  4 ;  1
-	map_const EVENTIDE_FOREST,							  30, 24 ;  2
+	map_const EVENTIDE_FOREST,							  23, 36 ;  2
 	map_const EVENTIDE_VILLAGE_GATE,					   5,  4 ;  3
 	map_const SPOOKY_FOREST_1, 							   8,  8 ;  4
 	map_const SPOOKY_FOREST_2, 							   8,  8 ;  5
@@ -164,7 +164,7 @@ MAP_NONE   EQU 0
 	map_const SPOOKHOUSE_HALLWAY_1,						  21,  2 ; 19
 	map_const SPOOKHOUSE_HALLWAY_2,						  21,  2 ; 20
 	map_const SPOOKHOUSE_HALLWAY_3,						  21,  2 ; 21
-	map_const SPOOKHOUSE_TV_ROOM,						   3,  5 ; 22
+	map_const SPOOKHOUSE_TV_ROOM,						   3,  6 ; 22
 
 	newgroup													 ;  9
 	

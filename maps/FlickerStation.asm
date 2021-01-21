@@ -9,43 +9,43 @@ FlickerStation_MapScriptHeader:
 	callback MAPCALLBACK_OBJECTS, FlickerStationGirlMove
 
 	db 7 ; warp events
-	warp_def 27, 37, 1, FLICKER_POKECENTER
-	warp_def 13, 35, 1, FLICKER_MART
-	warp_def 13, 43, 1, FLICKER_SOUND_SPEECH_HOUSE
-	warp_def 13, 53, 1, FLICKER_NAME_SPEECH_HOUSE
-	warp_def 27, 51, 1, FLICKER_TRAIN_STATION
-	warp_def 27, 52, 2, FLICKER_TRAIN_STATION
-	warp_def  5, 51, 1, FLICKER_PASS_1F
+	warp_def 29, 37, 1, FLICKER_POKECENTER
+	warp_def 15, 35, 1, FLICKER_MART
+	warp_def 15, 43, 1, FLICKER_SOUND_SPEECH_HOUSE
+	warp_def 15, 53, 1, FLICKER_NAME_SPEECH_HOUSE
+	warp_def 29, 51, 1, FLICKER_TRAIN_STATION
+	warp_def 29, 52, 2, FLICKER_TRAIN_STATION
+	warp_def  7, 51, 1, FLICKER_PASS_1F
 	
 
 	db 2 ; coord events
-	xy_trigger 0, 26,  9, 0, FlickerStation3Girls, 0, 0
-	xy_trigger 1, 26, 14, 0, FlickerStation3GirlsExtra, 0, 0
+	xy_trigger 0, 28,  9, 0, FlickerStation3Girls, 0, 0
+	xy_trigger 1, 28, 14, 0, FlickerStation3GirlsExtra, 0, 0
 
 	db 9 ; bg events
-	signpost 27, 38, SIGNPOST_READ, FlickerCenterSign
-	signpost 13, 36, SIGNPOST_READ, FlickerMartSign
-	signpost 33, 40, SIGNPOST_READ, FlickerSign
-	signpost 19, 20, SIGNPOST_UP, FlickerTrainDoor
-	signpost 19, 17, SIGNPOST_UP, FlickerTrainDoor
-	signpost 16, 21, SIGNPOST_UP, FlickerTrainDoor
-	signpost 16, 18, SIGNPOST_UP, FlickerTrainDoor
-	signpost 13, 20, SIGNPOST_UP, FlickerTrainDoor
-	signpost 13, 17, SIGNPOST_UP, FlickerTrainDoor
+	signpost 29, 38, SIGNPOST_READ, FlickerCenterSign
+	signpost 15, 36, SIGNPOST_READ, FlickerMartSign
+	signpost 35, 40, SIGNPOST_READ, FlickerSign
+	signpost 21, 20, SIGNPOST_UP, FlickerTrainDoor
+	signpost 21, 17, SIGNPOST_UP, FlickerTrainDoor
+	signpost 18, 21, SIGNPOST_UP, FlickerTrainDoor
+	signpost 18, 18, SIGNPOST_UP, FlickerTrainDoor
+	signpost 15, 20, SIGNPOST_UP, FlickerTrainDoor
+	signpost 15, 17, SIGNPOST_UP, FlickerTrainDoor
 
 	db 12 ; object events
-	person_event SPRITE_FAT_GUY, 28, 54, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC1, -1
-	person_event SPRITE_COOLTRAINER_F, 30, 43, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationNPC2, -1
-	person_event SPRITE_CHILD, 16, 49, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC3, -1
-	person_event SPRITE_SCHOOLGIRL, 16, 50, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC4, -1
-	person_event SPRITE_YOUNGSTER, 14, 38, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC5, -1
-	person_event SPRITE_COOL_DUDE, 33, 55, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, FlickerStationNPC6, -1
-	person_event SPRITE_HIKER, 11, 48, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC7, -1
-	person_event SPRITE_DELINQUENT_F, 24,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationGirl1, -1
-	person_event SPRITE_DELINQUENT_F, 26,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationGirl2, -1
-	person_event SPRITE_DELINQUENT_F, 29,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationGirl3, -1
-	tmhmball_event  7, 28, TM_THUNDERPUNCH, 1, EVENT_FLICKER_STATION_
-	itemball_event 41,  8, POTION, 1, EVENT_FLICKER_STATION_POKEBALL
+	person_event SPRITE_FAT_GUY, 30, 54, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC1, -1
+	person_event SPRITE_COOLTRAINER_F, 32, 43, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationNPC2, -1
+	person_event SPRITE_CHILD, 18, 49, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC3, -1
+	person_event SPRITE_SCHOOLGIRL, 18, 50, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC4, -1
+	person_event SPRITE_YOUNGSTER, 16, 38, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC5, -1
+	person_event SPRITE_COOL_DUDE, 35, 55, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, FlickerStationNPC6, -1
+	person_event SPRITE_HIKER, 13, 48, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC7, -1
+	person_event SPRITE_DELINQUENT_F, 26,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationGirl1, -1
+	person_event SPRITE_DELINQUENT_F, 28,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationGirl2, -1
+	person_event SPRITE_DELINQUENT_F, 31,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationGirl3, -1
+	tmhmball_event  7, 30, TM_THUNDERPUNCH, 1, EVENT_FLICKER_STATION_
+	itemball_event 41, 10, POTION, 1, EVENT_FLICKER_STATION_POKEBALL
 
 
 	const_def 1 ; object constants

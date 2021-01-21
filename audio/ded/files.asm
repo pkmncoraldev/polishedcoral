@@ -91,6 +91,7 @@ SECTION "DED 19", ROMX
 SpiritombDEDData:: INCBIN "audio/ded/spiritomb.ded"
 
 SECTION "DED 20", ROMX
+ScreamDEDData:: INCBIN "audio/ded/scream.ded"
 
 SECTION "DED 21", ROMX
 

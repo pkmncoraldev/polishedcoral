@@ -320,14 +320,47 @@ GetNextTile:
 
 AddStepVector:
 	call GetStepVector
-	jr nc, .ok
+	jr nc, .notSlowStep
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
 	ld a, [hl]
 	and %1
-	jr nz, .ok
+	jr nz, .gotDelta
 	lb de, 0, 0
-.ok
+	jr .gotDelta
+.notSlowStep
+	cp 10 ; hardcoded duration of medium step
+	jr nz, .gotDelta
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	ld a, [hl]
+	cp 2 ; 2 is forced to a delta of 2 so that the deltas sum to 16
+	jr z, .getNewDelta
+	and %1 ; even duration means delta of 1
+	jr z, .gotDelta
+	; ld a, [hl]
+	; cp 7 ; 7 and 1 are forced to 1 so that the deltas sum to 16
+	; jr z, .gotDelta
+	; dec a
+	; jr z, .gotDelta
+; otherwise, adjust delta
+.getNewDelta
+	ld hl, OBJECT_DIRECTION_WALKING
+	add hl, bc
+	ld a, [hl]
+	and %11
+	add a
+	add a
+	add (StepVectors_FastStepType & $ff)
+	ld l, a
+	ld h, (StepVectors_FastStepType >> 8)
+	jr nc, .noCarry
+	inc h
+.noCarry
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+.gotDelta
 	ld hl, OBJECT_SPRITE_X
 	add hl, bc
 	ld a, [hl]
@@ -345,7 +378,7 @@ GetStepVector:
 	ld hl, OBJECT_DIRECTION_WALKING
 	add hl, bc
 	ld a, [hl]
-	and %00001111
+	and %00011111
 	add a
 	add a
 	ld l, a
@@ -363,7 +396,7 @@ GetStepVector:
 	ld hl, OBJECT_DIRECTION_WALKING
 	add hl, bc
 	ld a, [hl]
-	cp (STEP_SLOW << 2 | RIGHT) + 1
+	cp (STEP_TYPE_SLOW << 2 | RIGHT) + 1
 	jr c, .slowStep
 	pop hl
 	pop af
@@ -387,16 +420,24 @@ StepVectors:
 	db  0, -1, 16, 1
 	db -1,  0, 16, 1
 	db  1,  0, 16, 1
-	; fast/bike
+	; super fast/bike
 	db  0,  4,  4, 4
 	db  0, -4,  4, 4
 	db -4,  0,  4, 4
 	db  4,  0,  4, 4
-	; running shoes
+	; fast/skateboard
+StepVectors_FastStepType:
 	db  0,  2,  8, 2
 	db  0, -2,  8, 2
 	db -2,  0,  8, 2
 	db  2,  0,  8, 2
+	; medium/running shoes
+	; speed makes no sense here
+	db  0,  1, 10, 2
+	db  0, -1, 10, 2
+	db -1,  0, 10, 2
+	db  1,  0, 10, 2
+
 
 GetStepVectorSign:
 	add a
@@ -720,7 +761,7 @@ MapObjectMovementPattern:
 	ld hl, OBJECT_DIRECTION_WALKING
 	add hl, bc
 	ld a, [hl]
-	and %00001100
+	and %00011100
 	or d
 	pop bc
 	jp NormalStep

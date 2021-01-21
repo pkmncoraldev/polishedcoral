@@ -889,9 +889,11 @@ PlayerMovement: ; 96af0
 	dw .five
 	dw .six
 	dw .seven
+	dw .eight
 
 .zero
 .four ; 96b0d
+.eight
 	xor a
 	ld c, a
 	ret

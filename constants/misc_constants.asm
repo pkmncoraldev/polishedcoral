@@ -58,6 +58,13 @@ KRIS   EQU 6
 	const STEP_SKATEBOARD_PUSH
 	const STEP_SLOW_SLIDE
 
+	const_def
+	const STEP_TYPE_SLOW
+	const STEP_TYPE_NORMAL
+	const STEP_TYPE_SUPER_FAST
+	const STEP_TYPE_FAST
+	const STEP_TYPE_MEDIUM
+
 const_value = 1
 	const HAPPINESS_GAINLEVEL         ; 01
 	const HAPPINESS_USEDITEM          ; 02

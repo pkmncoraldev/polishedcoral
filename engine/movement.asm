@@ -472,51 +472,51 @@ TurnHead: ; 52ee
 ; 5300
 
 Movement_slow_step_down:
-	ld a, STEP_SLOW << 2 | DOWN
+	ld a, STEP_TYPE_SLOW << 2 | DOWN
 	jp Movement_do_step
 
 Movement_slow_step_up:
-	ld a, STEP_SLOW << 2 | UP
+	ld a, STEP_TYPE_SLOW << 2 | UP
 	jp Movement_do_step
 
 Movement_slow_step_left:
-	ld a, STEP_SLOW << 2 | LEFT
+	ld a, STEP_TYPE_SLOW << 2 | LEFT
 	jp Movement_do_step
 
 Movement_slow_step_right:
-	ld a, STEP_SLOW << 2 | RIGHT
+	ld a, STEP_TYPE_SLOW << 2 | RIGHT
 	jp Movement_do_step
 
 Movement_step_down:
-	ld a, STEP_WALK << 2 | DOWN
+	ld a, STEP_TYPE_NORMAL << 2 | DOWN
 	jp Movement_do_step
 
 Movement_step_up:
-	ld a, STEP_WALK << 2 | UP
+	ld a, STEP_TYPE_NORMAL << 2 | UP
 	jp Movement_do_step
 
 Movement_step_left:
-	ld a, STEP_WALK << 2 | LEFT
+	ld a, STEP_TYPE_NORMAL << 2 | LEFT
 	jp Movement_do_step
 
 Movement_step_right:
-	ld a, STEP_WALK << 2 | RIGHT
+	ld a, STEP_TYPE_NORMAL << 2 | RIGHT
 	jp Movement_do_step
 
 Movement_fast_step_down:
-	ld a, STEP_RUN << 2 | DOWN
+	ld a, STEP_TYPE_FAST << 2 | DOWN
 	jp Movement_do_step
 
 Movement_fast_step_up:
-	ld a, STEP_RUN << 2 | UP
+	ld a, STEP_TYPE_FAST << 2 | UP
 	jp Movement_do_step
 
 Movement_fast_step_left:
-	ld a, STEP_RUN << 2 | LEFT
+	ld a, STEP_TYPE_FAST << 2 | LEFT
 	jp Movement_do_step
 
 Movement_fast_step_right:
-	ld a, STEP_RUN << 2 | RIGHT
+	ld a, STEP_TYPE_FAST << 2 | RIGHT
 	jp Movement_do_step
 
 Movement_pippi_run_step_down:
@@ -525,7 +525,7 @@ Movement_pippi_run_step_down:
 	ld [wPlayerState], a
 ;	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
-	ld a, STEP_RUN << 2 | DOWN  ; STEP_RUN
+	ld a, STEP_TYPE_MEDIUM << 2 | DOWN  ; STEP_TYPE_MEDIUM
 	jp Movement_do_run
 
 Movement_pippi_run_step_up:
@@ -534,7 +534,7 @@ Movement_pippi_run_step_up:
 	ld [wPlayerState], a
 ;	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
-	ld a, STEP_RUN << 2 | UP    ; STEP_RUN
+	ld a, STEP_TYPE_MEDIUM << 2 | UP    ; STEP_TYPE_MEDIUM
 	jp Movement_do_run
 
 Movement_pippi_run_step_left:
@@ -543,7 +543,7 @@ Movement_pippi_run_step_left:
 	ld [wPlayerState], a
 ;	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
-	ld a, STEP_RUN << 2 | LEFT  ; STEP_RUN
+	ld a, STEP_TYPE_MEDIUM << 2 | LEFT  ; STEP_TYPE_MEDIUM
 	jp Movement_do_run
 
 Movement_pippi_run_step_right:
@@ -552,71 +552,71 @@ Movement_pippi_run_step_right:
 	ld [wPlayerState], a
 ;	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
-	ld a, STEP_RUN << 2 | RIGHT ; STEP_RUN
+	ld a, STEP_TYPE_MEDIUM << 2 | RIGHT ; STEP_TYPE_MEDIUM
 	jp Movement_do_run
 	
 Movement_pippi_fast_step_down:
-	ld a, STEP_BIKE << 2 | DOWN
+	ld a, STEP_TYPE_SUPER_FAST << 2 | DOWN
 	jp Movement_do_run
 	
 Movement_pippi_fast_step_up:
-	ld a, STEP_BIKE << 2 | UP
+	ld a, STEP_TYPE_SUPER_FAST << 2 | UP
 	jp Movement_do_run
 	
 Movement_pippi_fast_step_left:
-	ld a, STEP_BIKE << 2 | LEFT
+	ld a, STEP_TYPE_SUPER_FAST << 2 | LEFT
 	jp Movement_do_run
 	
 Movement_pippi_fast_step_right:
-	ld a, STEP_BIKE << 2 | RIGHT
+	ld a, STEP_TYPE_SUPER_FAST << 2 | RIGHT
 	jp Movement_do_run
 	
 Movement_skateboard_step_down:
-	ld a, STEP_RUN << 2 | DOWN
+	ld a, STEP_TYPE_FAST << 2 | DOWN
 	jp Movement_do_skateboard
 
 Movement_skateboard_step_up:
-	ld a, STEP_RUN << 2 | UP
+	ld a, STEP_TYPE_FAST << 2 | UP
 	jp Movement_do_skateboard
 
 Movement_skateboard_step_left:
-	ld a, STEP_RUN << 2 | LEFT
+	ld a, STEP_TYPE_FAST << 2 | LEFT
 	jp Movement_do_skateboard
 
 Movement_skateboard_step_right:
-	ld a, STEP_RUN << 2 | RIGHT
+	ld a, STEP_TYPE_FAST << 2 | RIGHT
 	jp Movement_do_skateboard
 	
 Movement_skateboard_slow_step_down:
-	ld a, STEP_WALK << 2 | DOWN
+	ld a, STEP_TYPE_NORMAL << 2 | DOWN
 	jp Movement_do_skateboard
 
 Movement_skateboard_slow_step_up:
-	ld a, STEP_WALK << 2 | UP
+	ld a, STEP_TYPE_NORMAL << 2 | UP
 	jp Movement_do_skateboard
 
 Movement_skateboard_slow_step_left:
-	ld a, STEP_WALK << 2 | LEFT
+	ld a, STEP_TYPE_NORMAL << 2 | LEFT
 	jp Movement_do_skateboard
 
 Movement_skateboard_slow_step_right:
-	ld a, STEP_WALK << 2 | RIGHT
+	ld a, STEP_TYPE_NORMAL << 2 | RIGHT
 	jp Movement_do_skateboard
 	
 Movement_big_step_down:
-	ld a, STEP_BIKE << 2 | DOWN
+	ld a, STEP_TYPE_SUPER_FAST << 2 | DOWN
 	jr Movement_do_step
 
 Movement_big_step_up:
-	ld a, STEP_BIKE << 2 | UP
+	ld a, STEP_TYPE_SUPER_FAST << 2 | UP
 	jr Movement_do_step
 
 Movement_big_step_left:
-	ld a, STEP_BIKE << 2 | LEFT
+	ld a, STEP_TYPE_SUPER_FAST << 2 | LEFT
 	jr Movement_do_step
 
 Movement_big_step_right:
-	ld a, STEP_BIKE << 2 | RIGHT
+	ld a, STEP_TYPE_SUPER_FAST << 2 | RIGHT
 Movement_do_step:
 	ld d, PERSON_ACTION_STEP
 Movement_normal_step:
@@ -632,7 +632,7 @@ Movement_player_walk_step_down:
 	call ReplaceKrisSprite ; UpdateSprites
 .skip
 	pop bc
-	ld a, STEP_WALK << 2 | DOWN
+	ld a, STEP_TYPE_NORMAL << 2 | DOWN
 	jp Movement_do_step
 
 Movement_player_walk_step_up:
@@ -645,7 +645,7 @@ Movement_player_walk_step_up:
 	call ReplaceKrisSprite ; UpdateSprites
 .skip
 	pop bc
-	ld a, STEP_WALK << 2 | UP
+	ld a, STEP_TYPE_NORMAL << 2 | UP
 	jp Movement_do_step
 
 Movement_player_walk_step_left:
@@ -658,7 +658,7 @@ Movement_player_walk_step_left:
 	call ReplaceKrisSprite ; UpdateSprites
 .skip
 	pop bc
-	ld a, STEP_WALK << 2 | LEFT
+	ld a, STEP_TYPE_NORMAL << 2 | LEFT
 	jp Movement_do_step
 
 Movement_player_walk_step_right:
@@ -671,7 +671,7 @@ Movement_player_walk_step_right:
 	call ReplaceKrisSprite ; UpdateSprites
 .skip
 	pop bc
-	ld a, STEP_WALK << 2 | RIGHT
+	ld a, STEP_TYPE_NORMAL << 2 | RIGHT
 	jp Movement_do_step
 	
 Movement_player_run_step_down:
@@ -679,7 +679,7 @@ Movement_player_run_step_down:
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
 	pop bc
-	ld a, STEP_RUN << 2 | DOWN  ; STEP_RUN
+	ld a, STEP_TYPE_MEDIUM << 2 | DOWN  ; STEP_TYPE_MEDIUM
 	jp Movement_do_step
 
 Movement_player_run_step_up:
@@ -687,7 +687,7 @@ Movement_player_run_step_up:
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
 	pop bc
-	ld a, STEP_RUN << 2 | UP    ; STEP_RUN
+	ld a, STEP_TYPE_MEDIUM << 2 | UP    ; STEP_TYPE_MEDIUM
 	jp Movement_do_step
 
 Movement_player_run_step_left:
@@ -695,7 +695,7 @@ Movement_player_run_step_left:
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
 	pop bc
-	ld a, STEP_RUN << 2 | LEFT  ; STEP_RUN
+	ld a, STEP_TYPE_MEDIUM << 2 | LEFT  ; STEP_TYPE_MEDIUM
 	jp Movement_do_step
 
 Movement_player_run_step_right:
@@ -703,23 +703,23 @@ Movement_player_run_step_right:
 	ld a, PLAYER_RUN
 	ld [wPlayerState], a
 	pop bc
-	ld a, STEP_RUN << 2 | RIGHT ; STEP_RUN
+	ld a, STEP_TYPE_MEDIUM << 2 | RIGHT ; STEP_TYPE_MEDIUM
 	jp Movement_do_step
 	
 Movement_run_step_down:
-	ld a, STEP_RUN << 2 | DOWN  ; STEP_RUN
+	ld a, STEP_TYPE_MEDIUM << 2 | DOWN  ; STEP_TYPE_MEDIUM
 	jp Movement_do_run
 
 Movement_run_step_up:
-	ld a, STEP_RUN << 2 | UP    ; STEP_RUN
+	ld a, STEP_TYPE_MEDIUM << 2 | UP    ; STEP_TYPE_MEDIUM
 	jp Movement_do_run
 
 Movement_run_step_left:
-	ld a, STEP_RUN << 2 | LEFT  ; STEP_RUN
+	ld a, STEP_TYPE_MEDIUM << 2 | LEFT  ; STEP_TYPE_MEDIUM
 	jp Movement_do_run
 
 Movement_run_step_right:
-	ld a, STEP_RUN << 2 | RIGHT ; STEP_RUN
+	ld a, STEP_TYPE_MEDIUM << 2 | RIGHT ; STEP_TYPE_MEDIUM
 Movement_do_run:
 	ld d, PERSON_ACTION_RUN
 	jp Movement_normal_step
@@ -729,183 +729,183 @@ Movement_do_skateboard:
 	jp Movement_normal_step
 
 Movement_turn_away_down: ; 533c
-	ld a, STEP_SLOW << 2 | DOWN
+	ld a, STEP_TYPE_SLOW << 2 | DOWN
 	jp TurningStep
 ; 5341
 
 Movement_turn_away_up: ; 5341
-	ld a, STEP_SLOW << 2 | UP
+	ld a, STEP_TYPE_SLOW << 2 | UP
 	jp TurningStep
 ; 5346
 
 Movement_turn_away_left: ; 5346
-	ld a, STEP_SLOW << 2 | LEFT
+	ld a, STEP_TYPE_SLOW << 2 | LEFT
 	jp TurningStep
 ; 534b
 
 Movement_turn_away_right: ; 534b
-	ld a, STEP_SLOW << 2 | RIGHT
+	ld a, STEP_TYPE_SLOW << 2 | RIGHT
 	jp TurningStep
 ; 5350
 
 Movement_turn_in_down: ; 5350
-	ld a, STEP_WALK << 2 | DOWN
+	ld a, STEP_TYPE_NORMAL << 2 | DOWN
 	jp TurningStep
 ; 5355
 
 Movement_turn_in_up: ; 5355
-	ld a, STEP_WALK << 2 | UP
+	ld a, STEP_TYPE_NORMAL << 2 | UP
 	jp TurningStep
 ; 535a
 
 Movement_turn_in_left: ; 535a
-	ld a, STEP_WALK << 2 | LEFT
+	ld a, STEP_TYPE_NORMAL << 2 | LEFT
 	jp TurningStep
 ; 535f
 
 Movement_turn_in_right: ; 535f
-	ld a, STEP_WALK << 2 | RIGHT
+	ld a, STEP_TYPE_NORMAL << 2 | RIGHT
 	jp TurningStep
 ; 5364
 
 Movement_turn_waterfall_down: ; 5364
-	ld a, STEP_WALK << 2 | DOWN
+	ld a, STEP_TYPE_NORMAL << 2 | DOWN
 	jp TurningStep
 ; 5369
 
 Movement_turn_waterfall_up: ; 5369
-	ld a, STEP_WALK << 2 | UP
+	ld a, STEP_TYPE_NORMAL << 2 | UP
 	jp TurningStep
 ; 536e
 
 Movement_turn_waterfall_left: ; 536e
-	ld a, STEP_WALK << 2 | LEFT
+	ld a, STEP_TYPE_NORMAL << 2 | LEFT
 	jp TurningStep
 ; 5373
 
 Movement_turn_waterfall_right: ; 5373
-	ld a, STEP_WALK << 2 | RIGHT
+	ld a, STEP_TYPE_NORMAL << 2 | RIGHT
 	jp TurningStep
 ; 5378
 
 
 Movement_slow_slide_step_down: ; 5378
-	ld a, STEP_SLOW << 2 | DOWN
+	ld a, STEP_TYPE_SLOW << 2 | DOWN
 	jp SlideStep
 ; 537d
 
 Movement_slow_slide_step_up: ; 537d
-	ld a, STEP_SLOW << 2 | UP
+	ld a, STEP_TYPE_SLOW << 2 | UP
 	jp SlideStep
 ; 5382
 
 Movement_slow_slide_step_left: ; 5382
-	ld a, STEP_SLOW << 2 | LEFT
+	ld a, STEP_TYPE_SLOW << 2 | LEFT
 	jp SlideStep
 ; 5387
 
 Movement_slow_slide_step_right: ; 5387
-	ld a, STEP_SLOW << 2 | RIGHT
+	ld a, STEP_TYPE_SLOW << 2 | RIGHT
 	jp SlideStep
 ; 538c
 
 Movement_slide_step_down: ; 538c
-	ld a, STEP_WALK << 2 | DOWN
+	ld a, STEP_TYPE_NORMAL << 2 | DOWN
 	jp SlideStep
 ; 5391
 
 Movement_slide_step_up: ; 5391
-	ld a, STEP_WALK << 2 | UP
+	ld a, STEP_TYPE_NORMAL << 2 | UP
 	jp SlideStep
 ; 5396
 
 Movement_slide_step_left: ; 5396
-	ld a, STEP_WALK << 2 | LEFT
+	ld a, STEP_TYPE_NORMAL << 2 | LEFT
 	jp SlideStep
 ; 539b
 
 Movement_slide_step_right: ; 539b
-	ld a, STEP_WALK << 2 | RIGHT
+	ld a, STEP_TYPE_NORMAL << 2 | RIGHT
 	jp SlideStep
 ; 53a0
 
 Movement_fast_slide_step_down: ; 53a0
-	ld a, STEP_RUN << 2 | DOWN
+	ld a, STEP_TYPE_FAST << 2 | DOWN
 	jp SlideStep
 ; 53a5
 
 Movement_fast_slide_step_up: ; 53a5
-	ld a, STEP_RUN << 2 | UP
+	ld a, STEP_TYPE_FAST << 2 | UP
 	jp SlideStep
 ; 53aa
 
 Movement_fast_slide_step_left: ; 53aa
-	ld a, STEP_RUN << 2 | LEFT
+	ld a, STEP_TYPE_FAST << 2 | LEFT
 	jp SlideStep
 ; 53af
 
 Movement_fast_slide_step_right: ; 53af
-	ld a, STEP_RUN << 2 | RIGHT
+	ld a, STEP_TYPE_FAST << 2 | RIGHT
 	jp SlideStep
 ; 53b4
 
 Movement_slow_jump_step_down: ; 53b4
-	ld a, STEP_SLOW << 2 | DOWN
+	ld a, STEP_TYPE_SLOW << 2 | DOWN
 	jp JumpStep
 ; 53b9
 
 Movement_slow_jump_step_up: ; 53b9
-	ld a, STEP_SLOW << 2 | UP
+	ld a, STEP_TYPE_SLOW << 2 | UP
 	jp JumpStep
 ; 53be
 
 Movement_slow_jump_step_left: ; 53be
-	ld a, STEP_SLOW << 2 | LEFT
+	ld a, STEP_TYPE_SLOW << 2 | LEFT
 	jp JumpStep
 ; 53c3
 
 Movement_slow_jump_step_right: ; 53c3
-	ld a, STEP_SLOW << 2 | RIGHT
+	ld a, STEP_TYPE_SLOW << 2 | RIGHT
 	jp JumpStep
 ; 53c8
 
 Movement_jump_step_down: ; 53c8
-	ld a, STEP_WALK << 2 | DOWN
+	ld a, STEP_TYPE_NORMAL << 2 | DOWN
 	jp JumpStep
 ; 53cd
 
 Movement_jump_step_up: ; 53cd
-	ld a, STEP_WALK << 2 | UP
+	ld a, STEP_TYPE_NORMAL << 2 | UP
 	jp JumpStep
 ; 53d2
 
 Movement_jump_step_left: ; 53d2
-	ld a, STEP_WALK << 2 | LEFT
+	ld a, STEP_TYPE_NORMAL << 2 | LEFT
 	jp JumpStep
 ; 53d7
 
 Movement_jump_step_right: ; 53d7
-	ld a, STEP_WALK << 2 | RIGHT
+	ld a, STEP_TYPE_NORMAL << 2 | RIGHT
 	jp JumpStep
 ; 53dc
 
 Movement_fast_jump_step_down: ; 53dc
-	ld a, STEP_BIKE << 2 | DOWN
+	ld a, STEP_TYPE_SUPER_FAST << 2 | DOWN
 	jp JumpStep
 ; 53e1
 
 Movement_fast_jump_step_up: ; 53e1
-	ld a, STEP_BIKE << 2 | UP
+	ld a, STEP_TYPE_SUPER_FAST << 2 | UP
 	jp JumpStep
 ; 53e6
 
 Movement_fast_jump_step_left: ; 53e6
-	ld a, STEP_BIKE << 2 | LEFT
+	ld a, STEP_TYPE_SUPER_FAST << 2 | LEFT
 	jp JumpStep
 ; 53eb
 
 Movement_fast_jump_step_right: ; 53eb
-	ld a, STEP_BIKE << 2 | RIGHT
+	ld a, STEP_TYPE_SUPER_FAST << 2 | RIGHT
 	jp JumpStep
 ; 53f0
 

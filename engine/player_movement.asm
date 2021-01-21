@@ -90,23 +90,29 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call .GetAction
 	call .CheckTile
 	ret c
-	ld a, [wPlayerRunning]
-	cp 1
-	jr z, .Runningcont2
-	ld a, 1
-	ld [wPlayerRunning], a
-	call ReplaceKrisSprite ; UpdateSprites
-.Runningcont2
 	call .CheckTurning
 	ret c
 	call .TryStep
-	ret c
+	jr c, .stepTaken
 	call .TryJump
 	ret c
 	call .CheckWarp
 	ret c
 	jp .NotMoving
-	
+
+.stepTaken
+	cp 8 ; took running step
+	ret nz
+	ld a, [wPlayerRunning]
+	cp 1
+	jr z, .alreadyRunning
+	ld a, 1
+	ld [wPlayerRunning], a
+	call ReplaceKrisSprite ; UpdateSprites
+.alreadyRunning
+	ld a, 4
+	ret
+
 .Skating:
 	ld a, [wPlayerStandingTile]
 	ld hl, SkateboardTiles
@@ -913,6 +919,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 ;	call CheckTrainerRun
 ;.skip_trainer
 ;	pop af
+	ld a, 8
 	scf
 	ret
 

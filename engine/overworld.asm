@@ -525,6 +525,36 @@ endr
 	inc a
 .bankswitch
 	ld [rVBK], a
+	
+	ld a, [hUsedSpriteTile]
+	and a
+	jr nz, .noLYCheck
+
+	ld a, [rLCDC]
+	bit rLCDC_ENABLE, a
+	jr z, .noLYCheck
+
+; player sprite is (supposed) to be between [60, 76)
+; copying 1 tile takes 1 LY
+; each set has 12 tiles
+; so, ensure that the copy doesn't happen while in LY=[60, 76)
+; check a few LYs earlier to be safe
+; i.e. [60 - 12 - 4, 76)
+; assumes that only one copy will happen per frame
+; 	ld a, [rLY]
+; 	cp (60 - 6 - 12) ; 42
+; 	jr c, .noLYCheck
+
+; dumb hack fix later
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .noLYCheck
+; otherwise, we must wait until we pass LY=76
+.lyWaitLoop
+	ld a, [rLY]
+	cp 76
+	jr c, .lyWaitLoop
+.noLYCheck	
 	call Get2bpp
 	pop af
 	ld [rVBK], a

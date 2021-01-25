@@ -91,9 +91,12 @@ SECTION "DED 19", ROMX
 SpiritombDEDData:: INCBIN "audio/ded/spiritomb.ded"
 
 SECTION "DED 20", ROMX
-ScreamDEDData:: INCBIN "audio/ded/scream.ded"
+PanchamDEDData:: INCBIN "audio/ded/pancham.ded"
+PangoroDEDData:: INCBIN "audio/ded/pangoro.ded"
+PhantumpDEDData:: INCBIN "audio/ded/phantump.ded"
 
 SECTION "DED 21", ROMX
+TrevenantDEDData:: INCBIN "audio/ded/trevenant.ded"
 
 SECTION "DED 22", ROMX
 

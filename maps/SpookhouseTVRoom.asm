@@ -76,7 +76,7 @@ SpookHouseTVScaryDoorCont:
 	closetext
 	changemap SpookhouseTVRoom2_BlockData
 	reloadmappart
-	cry CANCEL
+	playsound SFX_UNKNOWN_5F
 	waitsfx
 	dotrigger $2
 	end

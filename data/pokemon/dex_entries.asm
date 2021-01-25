@@ -225,7 +225,11 @@ LampentPokedexEntry::	 INCLUDE "data/pokemon/dex_entries/000.asm" ;608
 ChandelurePokedexEntry:: INCLUDE "data/pokemon/dex_entries/000.asm" ;609
 LarvestaPokedexEntry::   INCLUDE "data/pokemon/dex_entries/636.asm"
 VolcaronaPokedexEntry::  INCLUDE "data/pokemon/dex_entries/637.asm"
+PanchamPokedexEntry::  	 INCLUDE "data/pokemon/dex_entries/000.asm" ;674
+PangoroPokedexEntry::  	 INCLUDE "data/pokemon/dex_entries/000.asm" ;675
 SylveonPokedexEntry::    INCLUDE "data/pokemon/dex_entries/700.asm"
+PhantumpPokedexEntry::	 INCLUDE "data/pokemon/dex_entries/000.asm" ;708
+TrevenantPokedexEntry::	 INCLUDE "data/pokemon/dex_entries/000.asm" ;709
 NoibatPokedexEntry::     INCLUDE "data/pokemon/dex_entries/714.asm"
 NoivernPokedexEntry::    INCLUDE "data/pokemon/dex_entries/715.asm"
 PikipekPokedexEntry::    INCLUDE "data/pokemon/dex_entries/731.asm"

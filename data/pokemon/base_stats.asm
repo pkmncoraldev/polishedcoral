@@ -270,7 +270,11 @@ INCLUDE "data/pokemon/base_stats/chandelure.asm"
 INCLUDE "data/pokemon/base_stats/larvesta.asm"
 INCLUDE "data/pokemon/base_stats/volcarona.asm"
 
+INCLUDE "data/pokemon/base_stats/pancham.asm"
+INCLUDE "data/pokemon/base_stats/pangoro.asm"
 INCLUDE "data/pokemon/base_stats/sylveon.asm"
+INCLUDE "data/pokemon/base_stats/phantump.asm"
+INCLUDE "data/pokemon/base_stats/trevenant.asm"
 INCLUDE "data/pokemon/base_stats/noibat.asm"
 INCLUDE "data/pokemon/base_stats/noivern.asm"
 

@@ -417,8 +417,16 @@ PicPointers::
 	dba LarvestaBackpic
 	dba VolcaronaFrontpic
 	dba VolcaronaBackpic
+	dba PanchamFrontpic
+	dba PanchamBackpic
+	dba PangoroFrontpic
+	dba PangoroBackpic
 	dba SylveonFrontpic
 	dba SylveonBackpic
+	dba PhantumpFrontpic
+	dba PhantumpBackpic
+	dba TrevenantFrontpic
+	dba TrevenantBackpic
 	dba NoibatFrontpic
 	dba NoibatBackpic
 	dba NoivernFrontpic

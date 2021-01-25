@@ -212,7 +212,11 @@ EvosAttacksPointers:: ; 0x425b1
 	dw ChandelureEvosAttacks
 	dw LarvestaEvosAttacks
 	dw VolcaronaEvosAttacks
+	dw PanchamEvosAttacks
+	dw PangoroEvosAttacks
 	dw SylveonEvosAttacks
+	dw PhantumpEvosAttacks
+	dw TrevenantEvosAttacks
 	dw NoibatEvosAttacks
 	dw NoivernEvosAttacks
 	dw PikipekEvosAttacks

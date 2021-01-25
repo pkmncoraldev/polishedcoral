@@ -209,7 +209,11 @@ IconPointers:
 	dw ChandelureIcon
 	dw LarvestaIcon
 	dw VolcaronaIcon
+	dw PanchamIcon
+	dw PangoroIcon
 	dw SylveonIcon
+	dw PhantumpIcon
+	dw TrevenantIcon
 	dw NoibatIcon
 	dw NoivernIcon
 	dw PikipekIcon

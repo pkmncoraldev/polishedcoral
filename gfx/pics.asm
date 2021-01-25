@@ -554,15 +554,22 @@ LarvestaFrontpic:         INCBIN "gfx/pokemon/larvesta/front.2bpp.lz"
 LarvestaBackpic:          INCBIN "gfx/pokemon/larvesta/back.2bpp.lz"
 VolcaronaFrontpic:        INCBIN "gfx/pokemon/volcarona/front.2bpp.lz"
 VolcaronaBackpic:         INCBIN "gfx/pokemon/volcarona/back.2bpp.lz"
+PanchamFrontpic:     	  INCBIN "gfx/pokemon/pancham/front.2bpp.lz"
+PanchamBackpic:           INCBIN "gfx/pokemon/pancham/back.2bpp.lz"
+PangoroFrontpic:     	  INCBIN "gfx/pokemon/pangoro/front.2bpp.lz"
+PangoroBackpic:           INCBIN "gfx/pokemon/pangoro/back.2bpp.lz"
 SylveonFrontpic:          INCBIN "gfx/pokemon/sylveon/front.2bpp.lz"
 SylveonBackpic:           INCBIN "gfx/pokemon/sylveon/back.2bpp.lz"
-NoibatFrontpic:           INCBIN "gfx/pokemon/noibat/front.2bpp.lz"
-NoibatBackpic:            INCBIN "gfx/pokemon/noibat/back.2bpp.lz"
+PhantumpFrontpic:         INCBIN "gfx/pokemon/phantump/front.2bpp.lz"
+PhantumpBackpic:          INCBIN "gfx/pokemon/phantump/back.2bpp.lz"
+TrevenantFrontpic:        INCBIN "gfx/pokemon/trevenant/front.2bpp.lz"
+TrevenantBackpic:         INCBIN "gfx/pokemon/trevenant/back.2bpp.lz"
 
 
 SECTION "Pokemon Pics 26", ROMX
 
-
+NoibatFrontpic:           INCBIN "gfx/pokemon/noibat/front.2bpp.lz"
+NoibatBackpic:            INCBIN "gfx/pokemon/noibat/back.2bpp.lz"
 NoivernFrontpic:          INCBIN "gfx/pokemon/noivern/front.2bpp.lz"
 NoivernBackpic:           INCBIN "gfx/pokemon/noivern/back.2bpp.lz"
 PikipekFrontpic:          INCBIN "gfx/pokemon/pikipek/front.2bpp.lz"

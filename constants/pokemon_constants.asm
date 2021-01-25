@@ -209,7 +209,11 @@
 	const CHANDELURE ;609
 	const LARVESTA ;636
 	const VOLCARONA ;637
+	const PANCHAM ;674
+	const PANGORO ;675
 	const SYLVEON ;700
+	const PHANTUMP ;708
+	const TREVENANT ;709
 	const NOIBAT ;714
 	const NOIVERN ;715
 	const PIKIPEK ;731

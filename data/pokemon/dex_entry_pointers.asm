@@ -208,7 +208,11 @@
 	dw ChandelurePokedexEntry
 	dw LarvestaPokedexEntry
 	dw VolcaronaPokedexEntry
+	dw PanchamPokedexEntry
+	dw PangoroPokedexEntry
 	dw SylveonPokedexEntry
+	dw PhantumpPokedexEntry
+	dw TrevenantPokedexEntry
 	dw NoibatPokedexEntry
 	dw NoivernPokedexEntry
 	dw PikipekPokedexEntry

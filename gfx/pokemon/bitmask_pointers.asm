@@ -208,7 +208,11 @@ BitmasksPointers:
 	dw ChandelureBitmasks
 	dw LarvestaBitmasks
 	dw VolcaronaBitmasks
+	dw PanchamBitmasks
+	dw PangoroBitmasks
 	dw SylveonBitmasks
+	dw PhantumpBitmasks
+	dw TrevenantBitmasks
 	dw NoibatBitmasks
 	dw NoivernBitmasks
 	dw PikipekBitmasks

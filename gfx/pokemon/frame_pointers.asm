@@ -208,7 +208,11 @@ FramesPointers:
 	dw ChandelureFrames
 	dw LarvestaFrames
 	dw VolcaronaFrames
+	dw PanchamFrames
+	dw PangoroFrames
 	dw SylveonFrames
+	dw PhantumpFrames
+	dw TrevenantFrames
 	dw NoibatFrames
 	dw NoivernFrames
 	dw PikipekFrames

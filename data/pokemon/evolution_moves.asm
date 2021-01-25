@@ -208,7 +208,11 @@ EvolutionMoves::
 	db NO_MOVE      						; CHANDELURE
 	db NO_MOVE      						; LARVESTA
 	db NO_MOVE      						; VOLCARONA
+	db NO_MOVE      						; PANCHAM
+	db NO_MOVE      						; PANGORO
 	db NO_MOVE      						; SYLVEON
+	db NO_MOVE      						; PHANTUMP
+	db NO_MOVE      						; TREVENANT
 	db NO_MOVE      						; NOIBAT
 	db NO_MOVE      						; NOIVERN
 	db NO_MOVE      						; PIKIPEK

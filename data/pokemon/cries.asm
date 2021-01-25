@@ -225,7 +225,11 @@ CryHeaders::
 	mon_cry CHANDELURE, ChandelureDEDData 	; Chandelure
 	mon_cry LARVESTA,   LarvestaDEDData	 	; Larvesta
 	mon_cry VOLCARONA,  VolcaronaDEDData 	; Volcarona
+	mon_cry PANCHAM, 	PanchamDEDData 		; Pancham
+	mon_cry PANGORO, 	PangoroDEDData 		; Pangoro
 	mon_cry SYLVEON,   	SylveonDEDData	 	; Sylveon
+	mon_cry PHANTUMP,	PhantumpDEDData		; Phantump
+	mon_cry TREVENANT,	TrevenantDEDData	; Trevenant
 	mon_cry NOIBAT,   	NoibatDEDData	 	; Noibat
 	mon_cry NOIVERN,   	NoivernDEDData	 	; Noivern
 	mon_cry PIKIPEK,   	PikipekDEDData	 	; Pikipek
@@ -235,4 +239,4 @@ CryHeaders::
 	mon_cry CRY_EXEGGUTOR,   $000,  $100 	; Exeggutor_A
 	mon_cry CRY_ODDISH,      $04f,  $0e0 	; Marowak_A
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg
-	mon_cry RALTS,   	ScreamDEDData	 	; 255
+	mon_cry CRY_NIDORAN_M,      0,     0 	; 255

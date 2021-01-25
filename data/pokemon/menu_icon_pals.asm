@@ -212,7 +212,11 @@ MenuMonIconColors::
 	iconpal PURPLE, RED ; CHANDELURE
 	iconpal RED, BROWN ; LARVESTA
 	iconpal RED, BROWN ; VOLCARONA
+	iconpal GRAY, RED ; PANCHAM
+	iconpal GRAY, RED ; PANGORO
 	iconpal PINK, BLUE ; SYLVEON
+	iconpal BROWN, GRAY ; PHANTUMP
+	iconpal BROWN, GRAY ; TREVENANT
 	iconpal PURPLE, TEAL ; NOIBAT
 	iconpal PURPLE, TEAL ; NOIVERN
 	iconpal RED, PINK ; PIKIPEK

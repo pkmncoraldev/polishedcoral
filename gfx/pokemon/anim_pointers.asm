@@ -208,7 +208,11 @@ AnimationPointers:
 	dw ChandelureAnimation
 	dw LarvestaAnimation
 	dw VolcaronaAnimation
+	dw PanchamAnimation
+	dw PangoroAnimation
 	dw SylveonAnimation
+	dw PhantumpAnimation
+	dw TrevenantAnimation
 	dw NoibatAnimation
 	dw NoivernAnimation
 	dw PikipekAnimation

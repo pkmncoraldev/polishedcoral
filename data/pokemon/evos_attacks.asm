@@ -2742,7 +2742,29 @@ VolcaronaEvosAttacks:
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
+PanchamEvosAttacks:
+	db EVOLVE_LEVEL, 32, PANGORO
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+PangoroEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
 SylveonEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+PhantumpEvosAttacks:
+	db EVOLVE_TRADE, -1, TREVENANT
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+TrevenantEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves

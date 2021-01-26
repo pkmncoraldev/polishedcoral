@@ -6627,6 +6627,11 @@ LoadEnemyMon: ; 3e8eb
 	cp BATTLETYPE_FORCEITEM
 	ld a, [wBaseItems]
 	jr z, .UpdateItem
+	
+	ld a, [wBattleType]
+	cp BATTLETYPE_SHINY_LEGENDARY
+	ld a, [wBaseItems]
+	jr z, .UpdateItem
 
 	ld a, [wBattleType]
 	cp BATTLETYPE_LEGENDARY
@@ -6789,6 +6794,8 @@ endc
 	; 1/4096 chance to be shiny, 3/4096 with Shiny Charm
 	ld a, [wBattleType]
 	cp BATTLETYPE_SHINY
+	jr z, .shiny
+	cp BATTLETYPE_SHINY_LEGENDARY
 	jr z, .shiny
 	cp BATTLETYPE_GROTTO
 	jr z, .not_shiny
@@ -9524,7 +9531,7 @@ BattleStartMessage: ; 3fc8b
 	ld hl, LegendaryAppearedText
 	cp BATTLETYPE_ROAMING
 	jr z, .PlaceBattleStartText
-	cp BATTLETYPE_SHINY ; or BATTLETYPE_LEGENDARY
+	cp BATTLETYPE_LEGENDARY ; or BATTLETYPE_SHINY_LEGENDARY
 	jr nc, .PlaceBattleStartText
 	ld hl, WildPokemonAppearedText
 

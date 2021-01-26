@@ -36,7 +36,7 @@ GlintSecretSmeargle:
 	closetext
 	waitsfx
 	loadwildmon SMEARGLE, 10
-	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY
+	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY_LEGENDARY
 	startbattle
 	if_equal $1, GlintSecretSmeargle2
 	disappear GLINTSECRET_SMEARGLE

@@ -2717,29 +2717,84 @@ GalvantulaEvosAttacks:
 LitwickEvosAttacks:
 	db EVOLVE_LEVEL, 41, LAMPENT
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, EMBER
+	db 1, SMOG
+	db 4, MINIMIZE
+	db 8, FIRE_SPIN
+	db 12, CONFUSE_RAY
+	db 16, NIGHT_SHADE
+	db 20, WILL_O_WISP
+	db 24, FLAME_BURST
+	db 28, HAZE
+	db 32, HEX
+	db 36, ENDURE
+	db 40, FLAMETHROWER
+	db 44, CURSE
+	db 48, SHADOW_BALL
+	db 52, FIRE_BLAST
 	db 0 ; no more level-up moves
 	
 LampentEvosAttacks:
 	db EVOLVE_ITEM, DUSK_STONE, CHANDELURE
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, EMBER
+	db 1, SMOG
+	db 4, MINIMIZE
+	db 8, FIRE_SPIN
+	db 12, CONFUSE_RAY
+	db 16, NIGHT_SHADE
+	db 20, WILL_O_WISP
+	db 24, FLAME_BURST
+	db 28, HAZE
+	db 32, HEX
+	db 36, ENDURE
+	db 40, FLAMETHROWER
+	db 46, CURSE
+	db 52, SHADOW_BALL
+	db 58, FIRE_BLAST
 	db 0 ; no more level-up moves
 	
 ChandelureEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, SMOG
+	db 1, CONFUSE_RAY
+	db 1, FLAME_BURST
+	db 1, HEX
 	db 0 ; no more level-up moves
 	
 LarvestaEvosAttacks:
 	db EVOLVE_LEVEL, 59, VOLCARONA
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, EMBER
+	db 1, STRING_SHOT
+	db 6, ABSORB
+	db 12, FLAME_CHARGE
+	db 18, BITE
+	db 24, SCREECH
+	db 30, LEECH_LIFE
+	db 36, TAKE_DOWN
+	db 42, BUG_BUZZ
+	db 48, ANMESIA
+	db 54, DOUBLE_EDGE
+	db 60, FLARE_BLITZ
 	db 0 ; no more level-up moves
 	
 VolcaronaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, QUIVER_DANCE
+	db 1, EMBER
+	db 1, STRING_SHOT
+	db 1, ABSORB
+	db 1, FIRE_SPIN
+	db 18, GUST
+	db 24, SCREECH
+	db 30, LEECH_LIFE
+	db 36, FLAMETHROWER
+	db 42, BUG_BUZZ
+	db 48, ANMESIA
+	db 54, DOUBLE_EDGE
+	db 62, HURRICANE
+	db 70, FIRE_BLAST
 	db 0 ; no more level-up moves
 	
 PanchamEvosAttacks:
@@ -2762,11 +2817,35 @@ PhantumpEvosAttacks:
 	db EVOLVE_TRADE, -1, TREVENANT
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, CONFUSE_RAY
+	db 6, LEECH_SEED
+	db 10, FEINT_ATTACK
+	db 15, GROWTH
+	db 19, WILL_O_WISP
+	db 24, HEX
+;	db 28, HORN_LEECH
+	db 33, CURSE
+	db 37, SHADOW_BALL
+	db 42, DESTINY_BOND
+	db 46, POWER_WHIP
 	db 0 ; no more level-up moves
 	
 TrevenantEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, SHADOW_CLAW
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, CONFUSE_RAY
+	db 1, LEECH_SEED
+	db 1, FEINT_ATTACK
+	db 15, GROWTH
+	db 19, WILL_O_WISP
+	db 24, HEX
+;	db 28, HORN_LEECH
+	db 33, CURSE
+	db 37, SHADOW_BALL
+	db 42, DESTINY_BOND
+	db 46, POWER_WHIP
+	db 52, DRAIN_PUNCH
 	db 0 ; no more level-up moves
 	
 NoibatEvosAttacks:

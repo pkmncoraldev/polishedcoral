@@ -24,8 +24,12 @@ EventideBikeShopOwner:
 	writetext EventideBikeShopOwnerGiveBikeText1
 	waitbutton
 	verbosegiveitem BICYCLE
-.havebike
 	writetext  EventideBikeShopOwnerGiveBikeText2
+	waitbutton
+	closetext
+	end
+.havebike
+	writetext  EventideBikeShopOwnerGiveBikeText3
 	waitbutton
 	closetext
 	end
@@ -54,28 +58,24 @@ EventideBikeShopOwnerGiveBikeText1:
 	done
 	
 EventideBikeShopOwnerGiveBikeText2:
-	text "That BICYCLE has"
-	line "two gears."
+	text "That BICYCLE may"
+	line "not be the fastest"
+	cont "around,"
 	
-	para "Press the B BUTTON"
-	line "to switch gears."
+	para "but it's quicker"
+	line "than hoofing it"
+	cont "everywhere!"
 	
-	para "In HIGH GEAR,"
-	line "you'll zoom along"
-	cont "at breakneck"
-	cont "speeds!"
-	
-	para "In LOW GEAR, you"
-	line "have a lot more"
-	cont "control."
-	
-	para "It's important to"
-	line "switch gears based"
-	cont "on the situation."
+	para "Thank you so much"
+	line "for all your help!"
 	done
 	
+EventideBikeShopOwnerGiveBikeText3:
+	text "Thank you so much"
+	line "for all your help!"
+	
 EventideBikeShopKidText:
-	text "Thanks for saving"
+	text "Thanks for helping"
 	line "me, big kid!"
 	done
 	

@@ -536,6 +536,8 @@ CheckBPressOW: ; 96999
 	ld a, [hJoyPressed]
 	and B_BUTTON
 	ret z
+	eventflagcheck EVENT_BIKE_UPGRADED
+	ret z
 	
 	ld de, SFX_SQUEAK
 	call PlaySFX

@@ -458,6 +458,12 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call .SnowCheck
 	jp z, .DoNotRun
 
+	ld hl, wHaveFollower
+	bit 0, [hl] ; ENGINE_BIKE_GEAR
+	jp nz, .DoNotRun
+	eventflagcheck EVENT_RUNNING_SHOES
+	jp z, .DoNotRun
+	xor a
 	call .RunCheck
 	jp z, .run
 	jp .DoNotRun
@@ -838,7 +844,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	
 .checkbikegear
 	call CheckBikeGear
-	jr z, .fast
+	jr nz, .fast
 	ld a, STEP_FAST
 	call .DoStep
 	scf
@@ -1782,10 +1788,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 
 ; Routine by Victoria Lacroix
 ; https://github.com/VictoriaLacroix/pokecrystal/commit/ed7f525d642cb02e84e856f2e506d2a6425d95db
-.RunCheck:
-	ld hl, wHaveFollower
-	bit 0, [hl] ; ENGINE_BIKE_GEAR
-	ret nz ;set
+.RunCheck:	
 	ld a, [wWalkingDirection]
 	cp STANDING
 	ret z

@@ -184,11 +184,11 @@ ENDM
 	connection east, SunbeamIsland, SUNBEAM_ISLAND, 0
 	
 	map_attributes EventideForest, EVENTIDE_FOREST, $7, NORTH
-	connection north, SpookyForest1, SPOOKY_FOREST_1, 5
+	connection north, SpookyForest1, SPOOKY_FOREST_1, 14
 	
 	map_attributes SpookyForest1, SPOOKY_FOREST_1, 92, NORTH | SOUTH | WEST | EAST
 	connection north, SpookyForest2, SPOOKY_FOREST_2, 0
-	connection south, EventideForest, EVENTIDE_FOREST, -5
+	connection south, EventideForest, EVENTIDE_FOREST, -14
 	connection west, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
 	connection east, SpookyForestBlank, SPOOKY_FOREST_BLANK, 0
 	

@@ -353,6 +353,10 @@ PicPointers::
 	dba SwabluBackpic
 	dba AltariaFrontpic
 	dba AltariaBackpic
+	dba SnoruntFrontpic
+	dba SnoruntBackpic
+	dba GlalieFrontpic
+	dba GlalieBackpic
 	dba BuizelFrontpic
 	dba BuizelBackpic
 	dba FloatzelFrontpic
@@ -367,6 +371,10 @@ PicPointers::
 	dba SpiritombBackpic
 	dba MunchlaxFrontpic
 	dba MunchlaxBackpic
+	dba SnoverFrontpic
+	dba SnoverBackpic
+	dba AbomasnowFrontpic
+	dba AbomasnowBackpic
 	dba WeavileFrontpic
 	dba WeavileBackpic
 	dba MagnezoneFrontpic
@@ -391,6 +399,8 @@ PicPointers::
 	dba PorygonZBackpic
 	dba GalladeFrontpic
 	dba GalladeBackpic
+	dba FroslassFrontpic
+	dba FroslassBackpic
 	dba CottoneeFrontpic
 	dba CottoneeBackpic
 	dba WhimsicottFrontpic

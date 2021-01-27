@@ -2395,6 +2395,18 @@ AltariaEvosAttacks:
 	db 52, MOONBLAST
 	db 0 ; no more level-up moves
 	
+SnoruntEvosAttacks:
+	db EVOLVE_LEVEL, 42, GLALIE
+	db EVOLVE_ITEM, DAWN_STONE, FROSLASS
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+GlalieEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
 BuizelEvosAttacks:
 	db EVOLVE_LEVEL, 26, FLOATZEL
 	db  0 ; no more evolutions
@@ -2460,6 +2472,17 @@ SpiritombEvosAttacks:
 	
 MunchlaxEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, SNORLAX
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+SnoverEvosAttacks:
+	db EVOLVE_LEVEL, 40, ABOMASNOW
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+AbomasnowEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
@@ -2581,6 +2604,11 @@ PorygonZEvosAttacks:
 	db 0 ; no more level-up moves
 	
 GalladeEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+FroslassEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
@@ -2774,7 +2802,7 @@ LarvestaEvosAttacks:
 	db 30, LEECH_LIFE
 	db 36, TAKE_DOWN
 	db 42, BUG_BUZZ
-	db 48, ANMESIA
+	db 48, AMNESIA
 	db 54, DOUBLE_EDGE
 	db 60, FLARE_BLITZ
 	db 0 ; no more level-up moves
@@ -2791,7 +2819,7 @@ VolcaronaEvosAttacks:
 	db 30, LEECH_LIFE
 	db 36, FLAMETHROWER
 	db 42, BUG_BUZZ
-	db 48, ANMESIA
+	db 48, AMNESIA
 	db 54, DOUBLE_EDGE
 	db 62, HURRICANE
 	db 70, FIRE_BLAST

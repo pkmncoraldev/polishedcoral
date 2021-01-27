@@ -176,6 +176,8 @@ EvolutionMoves::
 	db ROCK_SLIDE   						; CAMERUPT
 	db NO_MOVE      						; SWABLU
 	db NO_MOVE      						; ALTARIA
+	db NO_MOVE      						; SNORUNT
+	db NO_MOVE      						; GLALIE
 	db NO_MOVE      						; BUIZEL
 	db ICE_FANG     						; FLOATZEL
 	db NO_MOVE      						; BUNEARY
@@ -183,6 +185,8 @@ EvolutionMoves::
 	db NO_MOVE      						; HONCHKROW
 	db NO_MOVE      						; SPIRITOMB
 	db NO_MOVE      						; MUNCHLAX
+	db NO_MOVE      						; SNOVER
+	db NO_MOVE      						; ABOMASNOW
 	db NO_MOVE      						; WEAVILE
 	db NO_MOVE      						; MAGNEZONE
 	db NO_MOVE      						; RHYPERIOR
@@ -195,6 +199,7 @@ EvolutionMoves::
 	db NO_MOVE      						; MAMOSWINE
 	db NO_MOVE      						; PORYGON_Z
 	db NO_MOVE								; GALLADE
+	db NO_MOVE								; FROSLASS
 	db NO_MOVE      						; COTTONEE
 	db NO_MOVE      						; WHIMSICOTT
 	db NO_MOVE      						; DWEBBLE

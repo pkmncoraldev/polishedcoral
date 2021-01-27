@@ -176,6 +176,8 @@ FramesPointers:
 	dw CameruptFrames
 	dw SwabluFrames
 	dw AltariaFrames
+	dw SnoruntFrames
+	dw GlalieFrames
 	dw BuizelFrames
 	dw FloatzelFrames
 	dw BunearyFrames
@@ -183,6 +185,8 @@ FramesPointers:
 	dw HonchkrowFrames
 	dw SpiritombFrames
 	dw MunchlaxFrames
+	dw SnoverFrames
+	dw AbomasnowFrames
 	dw WeavileFrames
 	dw MagnezoneFrames
 	dw RhyperiorFrames
@@ -195,6 +199,7 @@ FramesPointers:
 	dw MamoswineFrames
 	dw PorygonZFrames
 	dw GalladeFrames
+	dw FroslassFrames
 	dw CottoneeFrames
 	dw WhimsicottFrames
 	dw DwebbleFrames

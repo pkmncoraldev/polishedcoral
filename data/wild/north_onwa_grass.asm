@@ -1108,6 +1108,195 @@
 	db 20, PIDGEOTTO	;5%
 	db 20, PIDGEOTTO	;4%
 	db 28, DODRIO		;1%
+	
+	map_id FLICKER_PASS_1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 22, ZUBAT		;30%
+	db 22, GEODUDE		;30%
+	db 22, ONIX			;20%
+	db 22, SWINUB		;10%
+	db 22, MACHOP		;5%
+	db 22, MACHOP		;4%
+	db 22, MACHOP		;1%
+	; day
+	db 22, ZUBAT		;30%
+	db 22, GEODUDE		;30%
+	db 22, ONIX			;20%
+	db 22, SWINUB		;10%
+	db 22, MACHOP		;5%
+	db 22, MACHOP		;4%
+	db 22, MACHOP		;1%
+	; nite
+	db 22, ZUBAT		;30%
+	db 22, GEODUDE		;30%
+	db 22, ONIX			;20%
+	db 22, SWINUB		;10%
+	db 22, MACHOP		;5%
+	db 22, MACHOP		;4%
+	db 22, MACHOP		;1%
+	
+	map_id FLICKER_PASS_2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 22, ZUBAT		;30%
+	db 22, GEODUDE		;30%
+	db 22, SWINUB		;20%
+	db 22, MACHOP		;10%
+	db 22, MACHOP		;5%
+	db 22, ONIX			;4%
+	db 22, ONIX			;1%
+	; day
+	db 22, ZUBAT		;30%
+	db 22, GEODUDE		;30%
+	db 22, SWINUB		;20%
+	db 22, MACHOP		;10%
+	db 22, MACHOP		;5%
+	db 22, ONIX			;4%
+	db 22, ONIX			;1%
+	; nite
+	db 22, ZUBAT		;30%
+	db 22, GEODUDE		;30%
+	db 22, SWINUB		;20%
+	db 22, MACHOP		;10%
+	db 22, MACHOP		;5%
+	db 22, ONIX			;4%
+	db 22, ONIX			;1%
+	
+	map_id ROUTE_10 ; used on Route 9 during clear weather
+	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
+	; morn
+	db 23, SNOVER		;30%
+	db 23, SWINUB		;30%
+	db 23, MACHOP		;20%
+	db 23, MEDITITE		;10%
+	db 23, SNORUNT		;5%
+	db 23, SNEASEL		;4%
+	db 23, SNEASEL		;1%
+	; day
+	db 23, SNOVER		;30%
+	db 23, SWINUB		;30%
+	db 23, MACHOP		;20%
+	db 23, MEDITITE		;10%
+	db 23, SNORUNT		;5%
+	db 23, SNEASEL		;4%
+	db 23, SNEASEL		;1%
+	; nite
+	db 23, SNOVER		;30%
+	db 23, SWINUB		;30%
+	db 23, MACHOP		;20%
+	db 23, MEDITITE		;10%
+	db 23, SNORUNT		;5%
+	db 23, SNEASEL		;4%
+	db 23, SNEASEL		;1%
+	
+	map_id ROUTE_10_EAST ; used on Route 9 during snowstorm
+	db 18 percent, 18 percent, 18 percent ; encounter rates: morn/day/nite
+	; morn
+	db 23, SNORUNT		;30%
+	db 23, SNOVER		;30%
+	db 23, SWINUB		;20%
+	db 23, SNORUNT		;10%
+	db 23, SNEASEL		;5%
+	db 23, SNEASEL		;4%
+	db 23, SNEASEL		;1%
+	; day
+	db 23, SNOVER		;30%
+	db 23, SWINUB		;30%
+	db 23, MACHOP		;20%
+	db 23, MEDITITE		;10%
+	db 23, SNORUNT		;5%
+	db 23, SNEASEL		;4%
+	db 23, SNEASEL		;1%
+	; nite
+	db 23, SNOVER		;30%
+	db 23, SWINUB		;30%
+	db 23, MACHOP		;20%
+	db 23, MEDITITE		;10%
+	db 23, SNORUNT		;5%
+	db 23, SNEASEL		;4%
+	db 23, SNEASEL		;1%
+	
+	map_id ICE_CAVE_B1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 23, ZUBAT		;30%
+	db 23, SWINUB		;30%
+	db 23, SNEASEL		;20%
+	db 23, SNEASEL		;10%
+	db 23, MEDITITE		;5%
+	db 23, MEDITITE		;4%
+	db 23, MEDITITE		;1%
+	; day
+	db 23, ZUBAT		;30%
+	db 23, SWINUB		;30%
+	db 23, SNEASEL		;20%
+	db 23, SNEASEL		;10%
+	db 23, MEDITITE		;5%
+	db 23, MEDITITE		;4%
+	db 23, MEDITITE		;1%
+	; nite
+	db 23, ZUBAT		;30%
+	db 23, SWINUB		;30%
+	db 23, SNEASEL		;20%
+	db 23, SNEASEL		;10%
+	db 23, MEDITITE		;5%
+	db 23, MEDITITE		;4%
+	db 23, MEDITITE		;1%
+	
+	map_id ICE_CAVE_B2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 24, GOLBAT		;30%
+	db 25, SNEASEL		;30%
+	db 25, SWINUB		;20%
+	db 25, MACHOP		;10%
+	db 25, ZUBAT		;5%
+	db 25, ZUBAT		;4%
+	db 25, ZUBAT		;1%
+	; day
+	db 24, GOLBAT		;30%
+	db 25, SNEASEL		;30%
+	db 25, SWINUB		;20%
+	db 25, MACHOP		;10%
+	db 25, ZUBAT		;5%
+	db 25, ZUBAT		;4%
+	db 25, ZUBAT		;1%
+	; nite
+	db 24, GOLBAT		;30%
+	db 25, SNEASEL		;30%
+	db 25, SWINUB		;20%
+	db 25, MACHOP		;10%
+	db 25, ZUBAT		;5%
+	db 25, ZUBAT		;4%
+	db 25, ZUBAT		;1%
+	
+	map_id ICE_CAVE_B3F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 24, GOLBAT		;30%
+	db 25, SNEASEL		;30%
+	db 25, SWINUB		;20%
+	db 25, MEDITITE		;10%
+	db 25, ZUBAT		;5%
+	db 25, ZUBAT		;4%
+	db 25, ZUBAT		;1%
+	; day
+	db 24, GOLBAT		;30%
+	db 25, SNEASEL		;30%
+	db 25, SWINUB		;20%
+	db 25, MEDITITE		;10%
+	db 25, ZUBAT		;5%
+	db 25, ZUBAT		;4%
+	db 25, ZUBAT		;1%
+	; nite
+	db 24, GOLBAT		;30%
+	db 25, SNEASEL		;30%
+	db 25, SWINUB		;20%
+	db 25, MEDITITE		;10%
+	db 25, ZUBAT		;5%
+	db 25, ZUBAT		;4%
+	db 25, ZUBAT		;1%
 
 
 	db -1 ; end

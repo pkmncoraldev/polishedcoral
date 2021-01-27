@@ -177,6 +177,8 @@ IconPointers:
 	dw CameruptIcon
 	dw SwabluIcon
 	dw AltariaIcon
+	dw SnoruntIcon
+	dw GlalieIcon
 	dw BuizelIcon
 	dw FloatzelIcon
 	dw BunearyIcon
@@ -184,6 +186,8 @@ IconPointers:
 	dw HonchkrowIcon
 	dw SpiritombIcon
 	dw MunchlaxIcon
+	dw SnoverIcon
+	dw AbomasnowIcon
 	dw WeavileIcon
 	dw MagnezoneIcon
 	dw RhyperiorIcon
@@ -196,6 +200,7 @@ IconPointers:
 	dw MamoswineIcon
 	dw PorygonZIcon
 	dw GalladeIcon
+	dw FroslassIcon
 	dw CottoneeIcon
 	dw WhimsicottIcon
 	dw DwebbleIcon

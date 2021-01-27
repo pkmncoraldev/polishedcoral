@@ -193,6 +193,8 @@ CryHeaders::
 	mon_cry CAMERUPT,   CameruptDEDData	 	; Camerupt
 	mon_cry SWABLU,   	SwabluDEDData	 	; Swablu
 	mon_cry ALTARIA,   	AltariaDEDData	 	; Altaria
+	mon_cry SNORUNT,   	SnoruntDEDData	 	; Snorunt
+	mon_cry GLALIE,   	GlalieDEDData	 	; Glalie
 	mon_cry BUIZEL,   	BuizelDEDData	 	; Buizel
 	mon_cry FLOATZEL,   FloatzelDEDData	 	; Floatzel
 	mon_cry BUNEARY,   	BunearyDEDData	 	; Buneary
@@ -200,6 +202,8 @@ CryHeaders::
 	mon_cry HONCHKROW,  HonchkrowDEDData 	; Honchkrow
 	mon_cry SPIRITOMB,  SpiritombDEDData 	; Spiritomb
 	mon_cry MUNCHLAX,   MunchlaxDEDData	 	; Munchlax
+	mon_cry SNOVER,   	SnoverDEDData	 	; Snover
+	mon_cry ABOMASNOW,  AbomasnowDEDData	; Abomasnow
 	mon_cry WEAVILE,   	WeavileDEDData	 	; Weavile
 	mon_cry MAGNEZONE,  MagnezoneDEDData 	; Magnezone
 	mon_cry RHYPERIOR,  RhyperiorDEDData 	; Rhyperior
@@ -212,6 +216,7 @@ CryHeaders::
 	mon_cry MAMOSWINE,  MamoswineDEDData 	; Mamoswine
 	mon_cry PORYGON_Z,  PorygonZDEDData	 	; PorygonZ
 	mon_cry GALLADE,   	GalladeDEDData	 	; Gallade
+	mon_cry FROSLASS,  	FroslassDEDData	 	; Froslass
 	mon_cry COTTONEE,   CottoneeDEDData	 	; Cottonee
 	mon_cry WHIMSICOTT, WhimsicottDEDData 	; Whimsicott
 	mon_cry DWEBBLE,   	DwebbleDEDData	 	; Dwebble

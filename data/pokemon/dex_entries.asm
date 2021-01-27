@@ -188,6 +188,8 @@ NumelPokedexEntry::      INCLUDE "data/pokemon/dex_entries/322.asm"
 CameruptPokedexEntry::   INCLUDE "data/pokemon/dex_entries/323.asm"
 SwabluPokedexEntry::     INCLUDE "data/pokemon/dex_entries/333.asm"
 AltariaPokedexEntry::    INCLUDE "data/pokemon/dex_entries/334.asm"
+SnoruntPokedexEntry::    INCLUDE "data/pokemon/dex_entries/000.asm" ;361
+GlaliePokedexEntry::	 INCLUDE "data/pokemon/dex_entries/000.asm" ;362
 BuizelPokedexEntry::     INCLUDE "data/pokemon/dex_entries/418.asm"
 FloatzelPokedexEntry::   INCLUDE "data/pokemon/dex_entries/419.asm"
 BunearyPokedexEntry::    INCLUDE "data/pokemon/dex_entries/427.asm"
@@ -195,6 +197,8 @@ LopunnyPokedexEntry::    INCLUDE "data/pokemon/dex_entries/428.asm"
 HonchkrowPokedexEntry::  INCLUDE "data/pokemon/dex_entries/430.asm"
 SpiritombPokedexEntry::  INCLUDE "data/pokemon/dex_entries/000.asm" ;442
 MunchlaxPokedexEntry::   INCLUDE "data/pokemon/dex_entries/446.asm"
+SnoverPokedexEntry::   	 INCLUDE "data/pokemon/dex_entries/000.asm" ;459
+AbomasnowPokedexEntry::  INCLUDE "data/pokemon/dex_entries/000.asm" ;460
 WeavilePokedexEntry::    INCLUDE "data/pokemon/dex_entries/461.asm"
 MagnezonePokedexEntry::  INCLUDE "data/pokemon/dex_entries/462.asm"
 RhyperiorPokedexEntry::  INCLUDE "data/pokemon/dex_entries/464.asm"
@@ -204,15 +208,16 @@ TogekissPokedexEntry::   INCLUDE "data/pokemon/dex_entries/468.asm"
 LeafeonPokedexEntry::    INCLUDE "data/pokemon/dex_entries/470.asm"
 GlaceonPokedexEntry::    INCLUDE "data/pokemon/dex_entries/471.asm"
 GliscorPokedexEntry::    INCLUDE "data/pokemon/dex_entries/472.asm"
-MamoswinePokedexEntry::  INCLUDE "data/pokemon/dex_entries/473.asm"
-PorygonZPokedexEntry::   INCLUDE "data/pokemon/dex_entries/474.asm"
-GalladePokedexEntry:: 	 INCLUDE "data/pokemon/dex_entries/000.asm" ;475
-CottoneePokedexEntry::   INCLUDE "data/pokemon/dex_entries/546.asm"
 
 
 SECTION "Pokedex Entries 193-253", ROMX
 
 PokedexEntries4::
+MamoswinePokedexEntry::  INCLUDE "data/pokemon/dex_entries/473.asm"
+PorygonZPokedexEntry::   INCLUDE "data/pokemon/dex_entries/474.asm"
+GalladePokedexEntry:: 	 INCLUDE "data/pokemon/dex_entries/000.asm" ;475
+FroslassPokedexEntry:: 	 INCLUDE "data/pokemon/dex_entries/000.asm" ;478
+CottoneePokedexEntry::   INCLUDE "data/pokemon/dex_entries/546.asm"
 WhimsicottPokedexEntry:: INCLUDE "data/pokemon/dex_entries/547.asm"
 DwebblePokedexEntry::    INCLUDE "data/pokemon/dex_entries/557.asm"
 CrustlePokedexEntry::    INCLUDE "data/pokemon/dex_entries/558.asm"

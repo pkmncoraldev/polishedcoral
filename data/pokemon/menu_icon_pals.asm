@@ -180,6 +180,8 @@ MenuMonIconColors::
 	iconpal RED, GRAY ; CAMERUPT
 	iconpal TEAL, BROWN ; SWABLU
 	iconpal TEAL, BROWN ; ALTARIA
+	iconpal BROWN, BLUE ; SNORUNT
+	iconpal BLUE, RED ; GLALIE
 	iconpal RED, BROWN ; BUIZEL
 	iconpal RED, BROWN ; FLOATZEL
 	iconpal BROWN, PINK ; BUNEARY
@@ -187,6 +189,8 @@ MenuMonIconColors::
 	iconpal BLUE, PINK ; HONCHKROW
 	iconpal PURPLE, BLUE ; SPIRITOMB
 	iconpal GREEN, BLUE ; MUNCHLAX
+	iconpal GREEN, BLUE ; SNOVER
+	iconpal GREEN, BLUE ; ABOMASNOW
 	iconpal RED, PINK ; WEAVILE
 	iconpal GRAY, GRAY ; MAGNEZONE
 	iconpal RED, BROWN ; RHYPERIOR
@@ -199,6 +203,7 @@ MenuMonIconColors::
 	iconpal BROWN, GREEN ; MAMOSWINE
 	iconpal BLUE, PURPLE ; PORYGON_Z
 	iconpal GREEN, BLUE ; GALLADE
+	iconpal RED, PINK ; FROSLASS
 	iconpal GREEN, RED ; COTTONEE
 	iconpal GREEN, BLUE ; WHIMSICOTT
 	iconpal BROWN, RED ; DWEBBLE

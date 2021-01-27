@@ -177,6 +177,8 @@
 	const CAMERUPT ;323
 	const SWABLU ;333
 	const ALTARIA ;334
+	const SNORUNT ;361
+	const GLALIE ;362
 	const BUIZEL ;418
 	const FLOATZEL ;419
 	const BUNEARY ;427
@@ -184,6 +186,8 @@
 	const HONCHKROW ;430
 	const SPIRITOMB ;442
 	const MUNCHLAX ;446
+	const SNOVER ;459
+	const ABOMASNOW ;460
 	const WEAVILE ;461
 	const MAGNEZONE ;462
 	const RHYPERIOR ;464
@@ -196,6 +200,7 @@
 	const MAMOSWINE ;473
 	const PORYGON_Z ;474
 	const GALLADE ;475
+	const FROSLASS ;478
 	const COTTONEE ;546
 	const WHIMSICOTT ;547
 	const DWEBBLE ;557

@@ -97,10 +97,15 @@ PhantumpDEDData:: INCBIN "audio/ded/phantump.ded"
 
 SECTION "DED 21", ROMX
 TrevenantDEDData:: INCBIN "audio/ded/trevenant.ded"
+SnoruntDEDData:: INCBIN "audio/ded/snorunt.ded"
+GlalieDEDData:: INCBIN "audio/ded/glalie.ded"
 
 SECTION "DED 22", ROMX
+FroslassDEDData:: INCBIN "audio/ded/froslass.ded"
+SnoverDEDData:: INCBIN "audio/ded/snover.ded"
 
 SECTION "DED 23", ROMX
+AbomasnowDEDData:: INCBIN "audio/ded/abomasnow.ded"
 
 SECTION "DED 24", ROMX
 

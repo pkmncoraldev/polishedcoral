@@ -180,6 +180,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw CameruptEvosAttacks
 	dw SwabluEvosAttacks
 	dw AltariaEvosAttacks
+	dw SnoruntEvosAttacks
+	dw GlalieEvosAttacks
 	dw BuizelEvosAttacks
 	dw FloatzelEvosAttacks
 	dw BunearyEvosAttacks
@@ -187,6 +189,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw HonchkrowEvosAttacks
 	dw SpiritombEvosAttacks
 	dw MunchlaxEvosAttacks
+	dw SnoverEvosAttacks
+	dw AbomasnowEvosAttacks
 	dw WeavileEvosAttacks
 	dw MagnezoneEvosAttacks
 	dw RhyperiorEvosAttacks
@@ -199,6 +203,7 @@ EvosAttacksPointers:: ; 0x425b1
 	dw MamoswineEvosAttacks
 	dw PorygonZEvosAttacks
 	dw GalladeEvosAttacks
+	dw FroslassEvosAttacks
 	dw CottoneeEvosAttacks
 	dw WhimsicottEvosAttacks
 	dw DwebbleEvosAttacks

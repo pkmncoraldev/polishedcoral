@@ -176,6 +176,8 @@
 	dw CameruptPokedexEntry
 	dw SwabluPokedexEntry
 	dw AltariaPokedexEntry
+	dw SnoruntPokedexEntry
+	dw GlaliePokedexEntry
 	dw BuizelPokedexEntry
 	dw FloatzelPokedexEntry
 	dw BunearyPokedexEntry
@@ -183,6 +185,8 @@
 	dw HonchkrowPokedexEntry
 	dw SpiritombPokedexEntry
 	dw MunchlaxPokedexEntry
+	dw SnoverPokedexEntry
+	dw AbomasnowPokedexEntry
 	dw WeavilePokedexEntry
 	dw MagnezonePokedexEntry
 	dw RhyperiorPokedexEntry
@@ -195,6 +199,7 @@
 	dw MamoswinePokedexEntry
 	dw PorygonZPokedexEntry
 	dw GalladePokedexEntry
+	dw FroslassPokedexEntry
 	dw CottoneePokedexEntry
 	dw WhimsicottPokedexEntry
 	dw DwebblePokedexEntry

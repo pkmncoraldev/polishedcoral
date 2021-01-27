@@ -176,6 +176,8 @@ NewPokedexOrder:
 	db CAMERUPT
 	db SWABLU
 	db ALTARIA
+	db SNORUNT
+	db GLALIE
 	db BUIZEL
 	db FLOATZEL
 	db BUNEARY
@@ -183,6 +185,8 @@ NewPokedexOrder:
 	db HONCHKROW
 	db SPIRITOMB
 	db MUNCHLAX
+	db SNOVER
+	db ABOMASNOW
 	db WEAVILE
 	db MAGNEZONE
 	db RHYPERIOR
@@ -195,6 +199,7 @@ NewPokedexOrder:
 	db MAMOSWINE
 	db PORYGON_Z
 	db GALLADE
+	db FROSLASS
 	db COTTONEE
 	db WHIMSICOTT
 	db DWEBBLE

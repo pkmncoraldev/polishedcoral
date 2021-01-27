@@ -176,6 +176,8 @@ AnimationPointers:
 	dw CameruptAnimation
 	dw SwabluAnimation
 	dw AltariaAnimation
+	dw SnoruntAnimation
+	dw GlalieAnimation
 	dw BuizelAnimation
 	dw FloatzelAnimation
 	dw BunearyAnimation
@@ -183,6 +185,8 @@ AnimationPointers:
 	dw HonchkrowAnimation
 	dw SpiritombAnimation
 	dw MunchlaxAnimation
+	dw SnoverAnimation
+	dw AbomasnowAnimation
 	dw WeavileAnimation
 	dw MagnezoneAnimation
 	dw RhyperiorAnimation
@@ -195,6 +199,7 @@ AnimationPointers:
 	dw MamoswineAnimation
 	dw PorygonZAnimation
 	dw GalladeAnimation
+	dw FroslassAnimation
 	dw CottoneeAnimation
 	dw WhimsicottAnimation
 	dw DwebbleAnimation

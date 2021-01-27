@@ -176,6 +176,8 @@ BitmasksPointers:
 	dw CameruptBitmasks
 	dw SwabluBitmasks
 	dw AltariaBitmasks
+	dw SnoruntBitmasks
+	dw GlalieBitmasks
 	dw BuizelBitmasks
 	dw FloatzelBitmasks
 	dw BunearyBitmasks
@@ -183,6 +185,8 @@ BitmasksPointers:
 	dw HonchkrowBitmasks
 	dw SpiritombBitmasks
 	dw MunchlaxBitmasks
+	dw SnoverBitmasks
+	dw AbomasnowBitmasks
 	dw WeavileBitmasks
 	dw MagnezoneBitmasks
 	dw RhyperiorBitmasks
@@ -195,6 +199,7 @@ BitmasksPointers:
 	dw MamoswineBitmasks
 	dw PorygonZBitmasks
 	dw GalladeBitmasks
+	dw FroslassBitmasks
 	dw CottoneeBitmasks
 	dw WhimsicottBitmasks
 	dw DwebbleBitmasks

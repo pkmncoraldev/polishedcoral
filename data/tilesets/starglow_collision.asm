@@ -204,7 +204,7 @@
 	tilecoll SKATE, SKATE, SKATE, SKATE ; cb
 	tilecoll LONG_GRASS, LONG_GRASS, LONG_GRASS, LONG_GRASS ; cc
 	tilecoll WARP_CARPET_UP, WARP_CARPET_UP, FLOOR, FLOOR ; cd
-	tilecoll WALL, WALL, WALL, WALL ; ce
+	tilecoll SKATE, SKATE, SKATE, SKATE ; ce
 	tilecoll WALL, WALL, WALL, WALL ; cf
 	tilecoll WALL, WALL, WALL, WALL ; d0
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; d1

@@ -53,7 +53,7 @@ SunsetMomStopsYou:
 	special RestartMapMusic
 	setevent EVENT_TALKED_TO_MOM
 	dotrigger $1
-	domaptrigger SUNSET_BAY, $6
+	domaptrigger SUNSET_BAY, $4
 	end
 
 SunsetMomScript:

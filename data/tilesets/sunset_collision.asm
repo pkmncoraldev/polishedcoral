@@ -81,7 +81,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 50
 	tilecoll WALL, WALL, WALL, WALL ; 51
 	tilecoll PUDDLE, FLOOR, PUDDLE, FLOOR ; 52
-	tilecoll SKATE, SKATE, WALL, WATER ; 53
+	tilecoll SKATE, SKATE, SKATE, SKATE ; 53
 	tilecoll WATER, WATER, WATER, WATER ; 54
 	tilecoll WATER, WATER, WATER, WATER ; 55
 	tilecoll WALL, WALL, WALL, WALL ; 56

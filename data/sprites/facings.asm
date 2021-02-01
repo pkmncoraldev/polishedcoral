@@ -464,7 +464,7 @@ FacingSailboatTop:
 	db  4,  8, 0, $81
 	db 12,  0, 0, $82
 	db 12,  8, 0, $83
-	db -4, 16, 0, $84
+	db -4,  0, 0, $84
 
 FacingSailboatBottom:
 	db 5 ; #

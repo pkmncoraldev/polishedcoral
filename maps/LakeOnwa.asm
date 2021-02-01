@@ -1,8 +1,11 @@
 LakeOnwa_MapScriptHeader:
-	db 3 ; scene scripts
+	db 6 ; scene scripts
 	scene_script LakeOnwaTrigger0
 	scene_script LakeOnwaTrigger1
 	scene_script LakeOnwaTrigger2
+	scene_script LakeOnwaTrigger3
+	scene_script LakeOnwaTrigger4
+	scene_script LakeOnwaTrigger5
 
 	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, LakeOnwaFlypointCallback
@@ -17,7 +20,63 @@ LakeOnwa_MapScriptHeader:
 	warp_def 17, 17, 1, LAKE_ONWA_POKECENTER
 	warp_def  3, 55, 3, ROUTE_8_GATE
 
-	db 0 ; coord events
+	db 56 ; coord events
+	coord_event 20, 18, 0, LakeMakeSilverBrown
+	coord_event 21, 18, 0, LakeMakeSilverBrown
+	coord_event 22, 18, 0, LakeMakeSilverBrown
+	coord_event 23, 18, 0, LakeMakeSilverBrown
+	coord_event 24, 18, 0, LakeMakeSilverBrown
+	coord_event 25, 18, 0, LakeMakeSilverBrown
+	coord_event 26, 18, 0, LakeMakeSilverBrown
+	coord_event 27, 18, 0, LakeMakeSilverBrown
+	coord_event 28, 18, 0, LakeMakeSilverBrown
+	coord_event 29, 18, 0, LakeMakeSilverBrown
+	coord_event 32, 18, 0, LakeMakeSilverBrown
+	coord_event 33, 18, 0, LakeMakeSilverBrown
+	coord_event 34, 18, 0, LakeMakeSilverBrown
+	coord_event 35, 18, 0, LakeMakeSilverBrown
+	coord_event 36, 18, 0, LakeMakeSilverBrown
+	coord_event 37, 18, 0, LakeMakeSilverBrown
+	coord_event 38, 18, 0, LakeMakeSilverBrown
+	coord_event 39, 18, 0, LakeMakeSilverBrown
+	coord_event 40, 18, 0, LakeMakeSilverBrown
+	coord_event 41, 18, 0, LakeMakeSilverBrown
+	coord_event 42, 18, 0, LakeMakeSilverBrown
+	coord_event 43, 18, 0, LakeMakeSilverBrown
+	coord_event 44, 18, 0, LakeMakeSilverBrown
+	coord_event 45, 18, 0, LakeMakeSilverBrown
+	coord_event 48, 18, 0, LakeMakeSilverBrown
+	coord_event 49, 18, 0, LakeMakeSilverBrown
+	coord_event 50, 18, 0, LakeMakeSilverBrown
+	coord_event 51, 18, 0, LakeMakeSilverBrown
+	coord_event 20, 19, 5, LakeMakeSilverBlue
+	coord_event 21, 19, 5, LakeMakeSilverBlue
+	coord_event 22, 19, 5, LakeMakeSilverBlue
+	coord_event 23, 19, 5, LakeMakeSilverBlue
+	coord_event 24, 19, 5, LakeMakeSilverBlue
+	coord_event 25, 19, 5, LakeMakeSilverBlue
+	coord_event 26, 19, 5, LakeMakeSilverBlue
+	coord_event 27, 19, 5, LakeMakeSilverBlue
+	coord_event 28, 19, 5, LakeMakeSilverBlue
+	coord_event 29, 19, 5, LakeMakeSilverBlue
+	coord_event 32, 19, 5, LakeMakeSilverBlue
+	coord_event 33, 19, 5, LakeMakeSilverBlue
+	coord_event 34, 19, 5, LakeMakeSilverBlue
+	coord_event 35, 19, 5, LakeMakeSilverBlue
+	coord_event 36, 19, 5, LakeMakeSilverBlue
+	coord_event 37, 19, 5, LakeMakeSilverBlue
+	coord_event 38, 19, 5, LakeMakeSilverBlue
+	coord_event 39, 19, 5, LakeMakeSilverBlue
+	coord_event 40, 19, 5, LakeMakeSilverBlue
+	coord_event 41, 19, 5, LakeMakeSilverBlue
+	coord_event 42, 19, 5, LakeMakeSilverBlue
+	coord_event 43, 19, 5, LakeMakeSilverBlue
+	coord_event 44, 19, 5, LakeMakeSilverBlue
+	coord_event 45, 19, 5, LakeMakeSilverBlue
+	coord_event 48, 19, 5, LakeMakeSilverBlue
+	coord_event 49, 19, 5, LakeMakeSilverBlue
+	coord_event 50, 19, 5, LakeMakeSilverBlue
+	coord_event 51, 19, 5, LakeMakeSilverBlue
 
 	db 6 ; bg events
 	signpost 25, 57, SIGNPOST_READ, LakeSign
@@ -27,13 +86,12 @@ LakeOnwa_MapScriptHeader:
 	signpost 17, 18, SIGNPOST_READ, LakeCenterSign
 	signpost 8, 30, SIGNPOST_READ, MtOnwaSign
 
-	db 18 ; object events
-	person_event SPRITE_FAT_GUY, 30, 39, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_BOAT_BOYS_BEGONE
-	person_event SPRITE_FAT_GUY, 24, 24, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_BOAT_BOYS_BEGONE
-	person_event SPRITE_ROWBOAT, 32, 38, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LakeBoat, EVENT_LAKE_BOAT_RIGHT_GONE
-	person_event SPRITE_ROWBOAT, 32, 39, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LakeBoat, EVENT_LAKE_BOAT_RIGHT_GONE
-	person_event SPRITE_ROWBOAT, 26, 24, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LakeBoat, EVENT_LAKE_BOAT_LEFT_GONE
-	person_event SPRITE_ROWBOAT, 26, 25, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LakeBoat, EVENT_LAKE_BOAT_LEFT_GONE
+	db 16 ; object events
+	person_event SPRITE_GENERAL_VARIABLE_1, 0, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 39, 31, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 40, 31, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 39, 32, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 40, 32, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
 	person_event SPRITE_COOL_DUDE, 32, 46, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LakeNpc1, -1
 	person_event SPRITE_FISHER, 26, 10, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LakeNpc2, -1
 	person_event SPRITE_CUTE_GIRL, 12, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LakeNpc3, -1
@@ -41,20 +99,18 @@ LakeOnwa_MapScriptHeader:
 	itemball_event 39, 16, POKE_BALL, 1, EVENT_LAKE_ONWA_POKE_BALL
 	tmhmball_event  26, 6, TM_ICE_PUNCH, 1, EVENT_LAKE_ONWA_POKE_BALL2
 	person_event SPRITE_HIKER,  7, 61, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerLake, -1
-	person_event SPRITE_WEIRD_TREE, 22, 55, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeSudowoodo, EVENT_FOUGHT_SUDOWOODO
-	smashrock_event 22, 10
-	smashrock_event 20, 13
+	person_event SPRITE_WEIRD_TREE, 22, 56, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeSudowoodo, EVENT_FOUGHT_SUDOWOODO
+	smashrock_event 23, 10
 	smashrock_event 26,  9
 	smashrock_event 27,  8
 
 
 	const_def 1 ; object constants
-	const LAKEBOATMANOUTSIDER
-	const LAKEBOATMANOUTSIDEL
-	const LAKEBOATR1
-	const LAKEBOATR2
-	const LAKEBOATL1
-	const LAKEBOATL2
+	const LAKEBOATMANOUTSIDE
+	const LAKEBOATT1
+	const LAKEBOATT2
+	const LAKEBOATB1
+	const LAKEBOATB2
 	const LAKENPC1
 	const LAKENPC2
 	const LAKENPC3
@@ -66,7 +122,6 @@ LakeOnwa_MapScriptHeader:
 	const LAKEROCK1
 	const LAKEROCK2
 	const LAKEROCK3
-	const LAKEROCK4
 
 LakeOnwaTrigger0:
 	end
@@ -78,60 +133,161 @@ LakeOnwaTrigger1:
 LakeOnwaTrigger2:
 	priorityjump JustRodeBoatL
 	end
+	
+LakeOnwaTrigger3:
+	priorityjump JustRodeBoatLakeStrandR
+	end
+	
+LakeOnwaTrigger4:
+	priorityjump JustRodeBoatLakeStrandL
+	end
+	
+LakeOnwaTrigger5:
+	end
 
 LakeOnwaFlypointCallback:
 	setflag ENGINE_FLYPOINT_LAKE_ONWA
 	return
 	
 LakeOnwaCallback:
-	checkevent EVENT_BOAT_BOYS_BEGONE
-	iftrue .skip
-	changeblock $26, $20, $b1
-	changeblock $18, $1a, $b1
-.skip
+	clearevent EVENT_LAKE_ROCKS_BROWN
+	loadvar wTimeOfDayPalFlags, $40 | 0
+	checkevent EVENT_LAKE_BOAT_LEFT
+	iffalse .boatnotleft
+	moveperson LAKEBOATT1, 23, 25
+	moveperson LAKEBOATT2, 24, 25
+	moveperson LAKEBOATB1, 23, 26
+	moveperson LAKEBOATB2, 24, 26
+.boatnotleft
+	checkscene
+	ifequal $1, .right
+	ifequal $3, .right
+	ifequal $2, .left
+	ifequal $4, .left
+	dotrigger $0
 	return
+.right
+	disappear LAKEBOATMANOUTSIDE
+	moveperson LAKEBOATMANOUTSIDE, 40, 31
+	appear LAKEBOATMANOUTSIDE
+	return
+.left
+	disappear LAKEBOATMANOUTSIDE
+	moveperson LAKEBOATMANOUTSIDE, 23, 25
+	appear LAKEBOATMANOUTSIDE
+	return	
+	
+LakeMakeSilverBrown:
+	setevent EVENT_LAKE_ROCKS_BROWN
+	loadvar wTimeOfDayPalFlags, $40 | 1
+	special Special_UpdatePalsInstant
+	dotrigger $5
+	end
+	
+LakeMakeSilverBlue:
+	clearevent EVENT_LAKE_ROCKS_BROWN
+	loadvar wTimeOfDayPalFlags, $40 | 0
+	special Special_UpdatePalsInstant
+	dotrigger $0
+	end
 
 JustRodeBoatR:
+	spriteface LAKEBOATMANOUTSIDE, LEFT
 	special Special_StopRunning
 	special Special_StopLandmarkTimer
-	applymovement PLAYER, Movement_PlayerStepOffBoat
 	opentext
 	writetext JustRodeBoatText
 	waitbutton
 	closetext
-	spriteface PLAYER, RIGHT
-	applymovement LAKEBOATMANOUTSIDER, Movement_JustRodeBoatR
+	applymovement LAKEBOATMANOUTSIDE, Movement_JustRodeBoatR
 	playsound SFX_EXIT_BUILDING
-	disappear LAKEBOATMANOUTSIDER
-	disappear LAKEBOATMANOUTSIDEL
+	disappear LAKEBOATMANOUTSIDE
 	waitsfx
 	special Special_StartLandmarkTimer
 	waitsfx
-	setevent EVENT_BOAT_BOYS_BEGONE
-	changeblock $26, $20, $43
-	changeblock $18, $1a, $43
 	dotrigger $0
 	end
 
 JustRodeBoatL:
+	spriteface LAKEBOATMANOUTSIDE, RIGHT
 	special Special_StopRunning
 	special Special_StopLandmarkTimer
-	applymovement PLAYER, Movement_PlayerStepOffBoat
 	opentext
 	writetext JustRodeBoatText
 	waitbutton
 	closetext
-	spriteface PLAYER, LEFT
-	applymovement LAKEBOATMANOUTSIDEL, Movement_JustRodeBoatL
+	applymovement LAKEBOATMANOUTSIDE, Movement_JustRodeBoatL
 	playsound SFX_EXIT_BUILDING
-	disappear LAKEBOATMANOUTSIDER
-	disappear LAKEBOATMANOUTSIDEL
+	disappear LAKEBOATMANOUTSIDE
 	waitsfx
 	special Special_StartLandmarkTimer
 	waitsfx
-	setevent EVENT_BOAT_BOYS_BEGONE
-	changeblock $26, $20, $43
-	changeblock $18, $1a, $43
+	dotrigger $0
+	end
+	
+JustRodeBoatLakeStrandR:
+	spriteface LAKEBOATMANOUTSIDE, LEFT
+	special Special_StopRunning
+	special Special_StopLandmarkTimer
+	opentext
+	writetext JustRodeBoatText
+	waitbutton
+	closetext
+	spriteface LAKEBOATMANOUTSIDE, DOWN
+	playsound SFX_EXIT_BUILDING
+	special Special_FadeBlackQuickly
+	special Special_ReloadSpritesNoPalettes
+	disappear LAKEBOATMANOUTSIDE
+	disappear LAKEBOATT1
+	disappear LAKEBOATT2
+	disappear LAKEBOATB1
+	disappear LAKEBOATB2
+	moveperson LAKEBOATT1, 23, 25
+	moveperson LAKEBOATT2, 24, 25
+	moveperson LAKEBOATB1, 23, 26
+	moveperson LAKEBOATB2, 24, 26
+	appear LAKEBOATT1
+	appear LAKEBOATT2
+	appear LAKEBOATB1
+	appear LAKEBOATB2
+	setevent EVENT_LAKE_BOAT_LEFT
+	waitsfx
+	special Special_FadeInQuickly
+	special Special_StartLandmarkTimer
+	waitsfx
+	dotrigger $0
+	end
+	
+JustRodeBoatLakeStrandL:
+	spriteface LAKEBOATMANOUTSIDE, RIGHT
+	special Special_StopRunning
+	special Special_StopLandmarkTimer
+	opentext
+	writetext JustRodeBoatText
+	waitbutton
+	closetext
+	spriteface LAKEBOATMANOUTSIDE, DOWN
+	playsound SFX_EXIT_BUILDING
+	special Special_FadeBlackQuickly
+	special Special_ReloadSpritesNoPalettes
+	disappear LAKEBOATMANOUTSIDE
+	disappear LAKEBOATT1
+	disappear LAKEBOATT2
+	disappear LAKEBOATB1
+	disappear LAKEBOATB2
+	moveperson LAKEBOATT1, 39, 31
+	moveperson LAKEBOATT2, 40, 31
+	moveperson LAKEBOATB1, 39, 32
+	moveperson LAKEBOATB2, 40, 32
+	appear LAKEBOATT1
+	appear LAKEBOATT2
+	appear LAKEBOATB1
+	appear LAKEBOATB2
+	clearevent EVENT_LAKE_BOAT_LEFT
+	waitsfx
+	special Special_FadeInQuickly
+	special Special_StartLandmarkTimer
+	waitsfx
 	dotrigger $0
 	end
 
@@ -457,15 +613,11 @@ LakeSudowoodoTextSudowoodoGone:
 	cont "the path!"
 	done
 
-Movement_PlayerStepOffBoat:
-	step_up
-	step_end
-
 Movement_JustRodeBoatR:
 	step_right
 	step_right
 	step_right
-	step_right
+	step_up
 	step_up
 	step_end
 
@@ -474,7 +626,7 @@ Movement_JustRodeBoatL:
 	step_left
 	step_left
 	step_left
-	step_left
+	step_up
 	step_up
 	step_end
 

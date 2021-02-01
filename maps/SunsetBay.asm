@@ -1,15 +1,14 @@
 SunsetBay_MapScriptHeader:
-	db 7 ; scene scripts
+	db 5 ; scene scripts
 	scene_script SunsetBayTrigger0
 	scene_script SunsetBayTrigger1
 	scene_script SunsetBayTrigger2
 	scene_script SunsetBayTrigger3
 	scene_script SunsetBayTrigger4
-	scene_script SunsetBayTrigger5
-	scene_script SunsetBayTrigger6
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, SunsetBayFlyPoint
+	callback MAPCALLBACK_TILES, SunsetBayCallback
 
 	db 7 ; warp events
 	warp_event 13, 11, PLAYER_HOUSE_1F, 2
@@ -47,26 +46,25 @@ SunsetBay_MapScriptHeader:
 	bg_event 35, 19, SIGNPOST_ITEM + POKE_BALL, EVENT_SUNSET_BAY_HIDDEN_POKE_BALL
 	bg_event 12, 16, SIGNPOST_ITEM + POTION, EVENT_SUNSET_BAY_HIDDEN_POTION
 
-	db 19 ; object events
+	db 18 ; object events
 	person_event SPRITE_CUTE_GIRL, 13, 32, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetNPC1, -1
 	object_event 32, 11, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_GRAMPS, 12, 37, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetNPC3, -1
 	person_event SPRITE_COOLTRAINER_F,  9, 18, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunsetNPC4, -1
 	person_event SPRITE_FAT_GUY, 16, 15, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunsetNPC5, -1
 	person_event SPRITE_SUPER_NERD, 16, 33, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetNPC6, -1
-	object_event 28, 28, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 29, 29, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 28, 29, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 29, 28, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event  9, 22, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 10, 23, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event  9, 23, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 10, 22, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 12, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 13, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 12, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 13, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	person_event SPRITE_SAGE, 26, 25, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, -1, EVENT_SUNSET_STRAND
+	object_event 27, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 27, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 26, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 26, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 10, 22, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 10, 23, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event  9, 23, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event  9, 22, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 13, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 13, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 12, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 12, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
 
 	const_def 1 ; object constants
 	const SUNSET_NPC1
@@ -87,7 +85,6 @@ SunsetBay_MapScriptHeader:
 	const SUNSET_SAILBOAT3_T2
 	const SUNSET_SAILBOAT3_B1
 	const SUNSET_SAILBOAT3_B2
-	const SUNSET_STRAND
 
 SunsetBayTrigger0:
 	end
@@ -105,14 +102,6 @@ SunsetBayTrigger3:
 	end
 	
 SunsetBayTrigger4:
-	priorityjump JustRodeBoatSunset2
-	end
-	
-SunsetBayTrigger5:
-	priorityjump JustRodeBoatSunset3
-	end
-	
-SunsetBayTrigger6:
 	special Special_StartLandmarkTimer
 	dotrigger $0
 	end
@@ -120,62 +109,42 @@ SunsetBayTrigger6:
 SunsetBayFlyPoint:
 	setflag ENGINE_FLYPOINT_SUNSET
 	return
-	
+		
+SunsetBayCallback:
+	checkevent EVENT_SUNSET_STRAND
+	iftrue .end
+	moveperson SUNSET_SAILBOAT2_T1, 29, 28
+	moveperson SUNSET_SAILBOAT2_T2, 29, 29
+	moveperson SUNSET_SAILBOAT2_B1, 28, 29
+	moveperson SUNSET_SAILBOAT2_B2, 28, 28
+.end
+	return
+		
 JustRodeBoatSunset:
 	special Special_StopRunning
 	special Special_StopLandmarkTimer
-	applymovement PLAYER, Movement_GrampsStart1
-	spriteface PLAYER, LEFT
 	opentext
 	writetext SunsetJustRodeBoatText
 	waitbutton
 	closetext
-	applymovement SUNSET_STRAND, Movement_GrampsStart1
-	playsound SFX_EXIT_BUILDING
-	disappear SUNSET_STRAND
-	waitsfx
-	special Special_StartLandmarkTimer
-	waitsfx
-	setevent EVENT_SUNSET_STRAND
-	dotrigger $1
-	end
-	
-JustRodeBoatSunset2:
-	special Special_StopRunning
-	special Special_StopLandmarkTimer
-	applymovement PLAYER, Movement_GrampsStart1
-	spriteface PLAYER, LEFT
-	opentext
-	writetext SunsetJustRodeBoatText2
-	waitbutton
-	closetext
-	spriteface SUNSET_STRAND, DOWN
 	wait 5
 	playsound SFX_EXIT_BUILDING
 	special Special_FadeBlackQuickly
 	special Special_ReloadSpritesNoPalettes
-	disappear SUNSET_STRAND
+	disappear SUNSET_SAILBOAT2_T1
+	disappear SUNSET_SAILBOAT2_T2
+	disappear SUNSET_SAILBOAT2_B1
+	disappear SUNSET_SAILBOAT2_B2
+	moveperson SUNSET_SAILBOAT2_T1, 10, 22
+	moveperson SUNSET_SAILBOAT2_T2, 10, 23
+	moveperson SUNSET_SAILBOAT2_B1, 9, 23
+	moveperson SUNSET_SAILBOAT2_B2, 9, 22
+	appear SUNSET_SAILBOAT2_T1
+	appear SUNSET_SAILBOAT2_T2
+	appear SUNSET_SAILBOAT2_B1
+	appear SUNSET_SAILBOAT2_B2
 	waitsfx
 	special Special_FadeInQuickly
-	special Special_StartLandmarkTimer
-	waitsfx
-	setevent EVENT_SUNSET_STRAND
-	dotrigger $1
-	end
-	
-JustRodeBoatSunset3:
-	special Special_StopRunning
-	special Special_StopLandmarkTimer
-	applymovement PLAYER, Movement_GrampsStart1
-	spriteface PLAYER, LEFT
-	opentext
-	writetext SunsetJustRodeBoatText3
-	waitbutton
-	closetext
-	applymovement SUNSET_STRAND, Movement_GrampsStart1
-	playsound SFX_EXIT_BUILDING
-	disappear SUNSET_STRAND
-	waitsfx
 	special Special_StartLandmarkTimer
 	waitsfx
 	setevent EVENT_SUNSET_STRAND
@@ -466,36 +435,9 @@ SunsetJustRodeBoatText:
 	text "Here we are,"
 	line "SUNET BAY."
 	
-	para "Take care."
-	done
-	
-SunsetJustRodeBoatText2:
-	text "Thanks for riding."
+	para "Thanks for riding."
 	
 	para "Come again."
-	done
-	
-SunsetJustRodeBoatText3:
-	text "Here we are,"
-	line "SUNET BAY."
-	
-	para "From now on, the"
-	line "boats should be"
-	cont "running to the"
-	cont "island again."
-	
-	para "If you need to get"
-	line "back,"
-	
-	para "you can take the"
-	line "boat from the lake"
-	
-	para "Of course, I could"
-	line "always give you a"
-	cont "ride for free if"
-	cont "you need it."
-	
-	para "Take care."
 	done
 	
 SunsetBayHiddenPokeBall:

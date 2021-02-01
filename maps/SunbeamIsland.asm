@@ -1,10 +1,11 @@
 SunbeamIsland_MapScriptHeader:
-	db 5 ; scene scripts
+	db 6 ; scene scripts
 	scene_script SunbeamIslandTrigger0
 	scene_script SunbeamIslandTrigger1
 	scene_script SunbeamIslandTrigger2
 	scene_script SunbeamIslandTrigger3
 	scene_script SunbeamIslandTrigger4
+	scene_script SunbeamIslandTrigger5
 
 	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, SunbeamIslandFlyPoint
@@ -23,7 +24,7 @@ SunbeamIsland_MapScriptHeader:
 	warp_def 11, 16, 3, SPRUCES_LAB
 	warp_def 11, 17, 3, SPRUCES_LAB
 	warp_def 18, 35, 2, SUNBEAM_JUNGLE
-	warp_def 47,  7, 1, SUNBEAM_BOAT_HOUSE
+	warp_def 47,  9, 1, SUNBEAM_BOAT_HOUSE
 	warp_def 42, 17, 1, SUNBEAM_SURF_SHOP
 
 	db 2 ; coord events
@@ -41,15 +42,13 @@ SunbeamIsland_MapScriptHeader:
 	signpost 29, 28, SIGNPOST_READ, SunBeamMartSign
 	signpost 45, 12, SIGNPOST_READ, SunBeamBoatSign
 
-	db 18 ; object events
+	db 20 ; object events
 	person_event SPRITE_MATRON, 22, 24, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC1, -1
 	person_event SPRITE_FAT_GUY, 10, 28, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC2, -1
 	person_event SPRITE_CUTE_GIRL, 16,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC3, -1
-	person_event SPRITE_GRANNY, 15, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC4, -1
+	person_event SPRITE_GENERAL_VARIABLE_1, 15, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC4, -1
 	person_event SPRITE_CUTE_GIRL, 43, 19, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC5, -1
 	person_event SPRITE_SUPER_NERD, 45,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC6, -1
-	person_event SPRITE_GENERAL_VARIABLE_1, 48,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ISLAND_STRAND
-	person_event SPRITE_ROWBOAT, 49,  8, SPRITEMOVEDATA_BOAT_BOB, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandBoat, -1
 	person_event SPRITE_DONPHAN,  6, 19, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveDonphan, -1
 	person_event SPRITE_SLOWPOKETAIL, 14,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveSlowpoke, -1
 	person_event SPRITE_MAGMAR, 13, 13, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveMagmar, -1
@@ -60,17 +59,19 @@ SunbeamIsland_MapScriptHeader:
 	person_event SPRITE_POKEFAN_M, 42, 29, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SUNBEAM_CROWD_GONE
 	person_event SPRITE_BATTLE_GIRL, 42, 26, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SUNBEAM_CROWD_GONE
 	person_event SPRITE_SNARE, 20, 33, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SumbeamSnare, EVENT_SAVED_SUNBEAM
+	object_event  7, 50, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, EVENT_SUNBEAM_BOAT_GONE
+	object_event  7, 51, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, EVENT_SUNBEAM_BOAT_GONE
+	object_event  6, 51, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, EVENT_SUNBEAM_BOAT_GONE
+	object_event  6, 50, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, EVENT_SUNBEAM_BOAT_GONE
 
 
 	const_def 1 ; object constants
 	const SUNBEAM_NPC1
 	const SUNBEAM_NPC2
 	const SUNBEAM_NPC3
-	const SUNBEAM_NPC4
+	const SUNBEAM_NPC4;
 	const SUNBEAM_NPC5
 	const SUNBEAM_NPC6
-	const SUNBEAM_BOAT_MAN
-	const SUNBEAM_ROWBOAT
 	const SUNBEAM_DONPHAN
 	const SUNBEAM_SLOWPOKE
 	const SUNBEAM_MAGMAR
@@ -81,6 +82,10 @@ SunbeamIsland_MapScriptHeader:
 	const SUNBEAM_CROWD4
 	const SUNBEAM_CROWD5
 	const SUNBEAM_SNARE
+	const SUNBEAM_SAILBOAT_T1
+	const SUNBEAM_SAILBOAT_T2
+	const SUNBEAM_SAILBOAT_B1
+	const SUNBEAM_SAILBOAT_B2
 
 SunbeamIslandTrigger0:
 	priorityjump JustRodeBoatSunbeamStrand
@@ -98,12 +103,33 @@ SunbeamIslandTrigger3:
 
 SunbeamIslandTrigger4:
 	end
+	
+SunbeamIslandTrigger5:
+	priorityjump JustRodeBoatSunbeamStrand2
+	end
 
 SunbeamIslandFlyPoint:
 	setflag ENGINE_FLYPOINT_SUNBEAM
 	return
 
 SunbeamIslandCallback:
+	checkevent EVENT_ISLAND_STRAND
+	iffalse .dontmoveboat
+	moveperson SUNBEAM_SAILBOAT_T1, 13, 50
+	moveperson SUNBEAM_SAILBOAT_T2, 13, 51
+	moveperson SUNBEAM_SAILBOAT_B1, 12, 51
+	moveperson SUNBEAM_SAILBOAT_B2, 12, 50
+	disappear SUNBEAM_NPC4
+	moveperson SUNBEAM_NPC4, 13, 50
+	appear SUNBEAM_NPC4
+	jump .skipsunbeamboatman
+.dontmoveboat
+	checkevent EVENT_ISLAND_BOATMAN
+	iftrue .skipsunbeamboatman
+	disappear SUNBEAM_NPC4
+	moveperson SUNBEAM_NPC4, 7, 49
+	appear SUNBEAM_NPC4
+.skipsunbeamboatman
 	checkevent EVENT_SUNBEAM_SNARE_STEPPED_DOWN
 	iffalse .skipsnarestepdown
 	moveperson SUNBEAM_SNARE, $21, $15
@@ -117,24 +143,32 @@ SunbeamIslandCallback:
 	return
 
 JustRodeBoatSunbeamStrand:
+	spriteface SUNBEAM_NPC4, UP
 	special Special_StopRunning
 	special Special_StopLandmarkTimer
-	applymovement PLAYER, Movement_SunbeamPlayerStepOffBoat
-	spriteface PLAYER, LEFT
 	opentext
 	writetext SunbeamJustRodeBoatText
 	waitbutton
 	closetext
-	spriteface SUNBEAM_BOAT_MAN, DOWN
+	spriteface SUNBEAM_NPC4, DOWN
 	playsound SFX_EXIT_BUILDING
 	special Special_FadeBlackQuickly
 	special Special_ReloadSpritesNoPalettes
-	disappear SUNBEAM_BOAT_MAN
+	disappear SUNBEAM_NPC4
+	disappear SUNBEAM_SAILBOAT_T1
+	disappear SUNBEAM_SAILBOAT_T2
+	disappear SUNBEAM_SAILBOAT_B1
+	disappear SUNBEAM_SAILBOAT_B2
+	moveperson SUNBEAM_NPC4, 15, 23
+	appear SUNBEAM_NPC4
 	waitsfx
 	special Special_FadeInQuickly
 	special Special_StartLandmarkTimer
 	waitsfx
-	setevent EVENT_ISLAND_STRAND
+	setevent EVENT_ISLAND_BOATMAN
+	setevent EVENT_SUNBEAM_BOAT_GONE
+	clearevent EVENT_ISLAND_STRAND
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_GRANNY
 	checkevent EVENT_SNARE_ASLEEP
 	iftrue .sunbeamsnareasleep
 	dotrigger $2
@@ -144,22 +178,65 @@ JustRodeBoatSunbeamStrand:
 	end
 
 JustRodeBoatSunbeamNormal:
+	spriteface SUNBEAM_NPC4, DOWN
 	special Special_StopRunning
 	special Special_StopLandmarkTimer
-	applymovement PLAYER, Movement_SunbeamPlayerStepOffBoat
-	spriteface PLAYER, LEFT
 	opentext
 	writetext SunbeamJustRodeBoatText2
 	waitbutton
 	closetext
-	applymovement SUNBEAM_BOAT_MAN, Movement_SunbeamPlayerStepOffBoat
+	applymovement SUNBEAM_NPC4, Movement_SunbeamBoatmanLeave
 	playsound SFX_EXIT_BUILDING
-	disappear SUNBEAM_BOAT_MAN
+	disappear SUNBEAM_NPC4
+	moveperson SUNBEAM_NPC4, 15, 23
+	appear SUNBEAM_NPC4
 	waitsfx
 	special Special_StartLandmarkTimer
 	waitsfx
-	setevent EVENT_ISLAND_STRAND
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
+	setevent EVENT_ISLAND_BOATMAN
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_GRANNY
+	checkevent EVENT_SNARE_ASLEEP
+	iftrue .sunbeamsnareasleep
+	dotrigger $2
+	end
+.sunbeamsnareasleep
+	dotrigger $4
+	end
+	
+JustRodeBoatSunbeamStrand2:
+	spriteface SUNBEAM_NPC4, UP
+	special Special_StopRunning
+	special Special_StopLandmarkTimer
+	opentext
+	writetext SunbeamJustRodeBoatText
+	waitbutton
+	closetext
+	spriteface SUNBEAM_NPC4, DOWN
+	playsound SFX_EXIT_BUILDING
+	special Special_FadeBlackQuickly
+	special Special_ReloadSpritesNoPalettes
+	disappear SUNBEAM_NPC4
+	moveperson SUNBEAM_NPC4, 15, 23
+	appear SUNBEAM_NPC4
+	disappear SUNBEAM_SAILBOAT_T1
+	disappear SUNBEAM_SAILBOAT_T2
+	disappear SUNBEAM_SAILBOAT_B1
+	disappear SUNBEAM_SAILBOAT_B2
+	moveperson SUNBEAM_SAILBOAT_T1, 7, 50
+	moveperson SUNBEAM_SAILBOAT_T2, 7, 51
+	moveperson SUNBEAM_SAILBOAT_B1, 6, 51
+	moveperson SUNBEAM_SAILBOAT_B2, 6, 50
+	appear SUNBEAM_SAILBOAT_T1
+	appear SUNBEAM_SAILBOAT_T2
+	appear SUNBEAM_SAILBOAT_B1
+	appear SUNBEAM_SAILBOAT_B2
+	waitsfx
+	special Special_FadeInQuickly
+	special Special_StartLandmarkTimer
+	waitsfx
+	setevent EVENT_ISLAND_BOATMAN
+	clearevent EVENT_ISLAND_STRAND
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_GRANNY
 	checkevent EVENT_SNARE_ASLEEP
 	iftrue .sunbeamsnareasleep
 	dotrigger $2
@@ -528,7 +605,10 @@ SunbeamTextUseFlute:
 	line "# FLUTE."
 	done
 
-Movement_SunbeamPlayerStepOffBoat:
+Movement_SunbeamBoatmanLeave:
+	step_up
+	step_right
+	step_right
 	step_up
 	step_end
 

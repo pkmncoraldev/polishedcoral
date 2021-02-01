@@ -733,7 +733,7 @@ MachopEvosAttacks:
 	db 13, SEISMIC_TOSS
 	db 18, BULK_UP
 	db 21, KNOCK_OFF
-	db 25, VITAL_THROW
+	db 25, MACH_PUNCH
 	db 30, SCARY_FACE_COTTON_SPORE
 	db 38, CROSS_CHOP
 	db 44, DYNAMICPUNCH
@@ -749,7 +749,7 @@ MachokeEvosAttacks:
 	db  1, SEISMIC_TOSS
 	db  1, BULK_UP
 	db  1, KNOCK_OFF
-	db  1, VITAL_THROW
+	db  1, MACH_PUNCH
 	db 32, SCARY_FACE_COTTON_SPORE
 	db 41, CROSS_CHOP
 	db 50, DYNAMICPUNCH
@@ -764,7 +764,7 @@ MachampEvosAttacks:
 	db  1, SEISMIC_TOSS
 	db  1, BULK_UP
 	db  1, KNOCK_OFF
-	db  1, VITAL_THROW
+	db  1, MACH_PUNCH
 	db 32, SCARY_FACE_COTTON_SPORE
 	db 41, CROSS_CHOP
 	db 50, DYNAMICPUNCH
@@ -887,12 +887,39 @@ MagnetonEvosAttacks:
 DoduoEvosAttacks:
 	db EVOLVE_LEVEL, 31, DODRIO
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, PECK
+	db 1, GROWL
+	db 5, QUICK_ATTACK
+	db 8, RAGE
+	db 13, FURY_ATTACK
+	db 16, PURSUIT
+	db 20, DOUBLE_HIT
+	db 25, AGILITY
+	db 28, MIRROR_MOVE
+	db 32, FLAIL
+	db 37, JUMP_KICK
+	db 40, DRILL_PECK
+	db 44, SWORDS_DANCE
+	db 49, THRASH
 	db 0 ; no more level-up moves
 
 DodrioEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, TRI_ATTACK
+	db 1, PECK
+	db 1, GROWL
+	db 5, QUICK_ATTACK
+	db 8, RAGE
+	db 13, FURY_ATTACK
+	db 16, PURSUIT
+	db 20, DOUBLE_HIT
+	db 25, AGILITY
+	db 28, MIRROR_MOVE
+	db 34, FLAIL
+	db 39, JUMP_KICK
+	db 45, DRILL_PECK
+	db 50, SWORDS_DANCE
+	db 56, THRASH
 	db 0 ; no more level-up moves
 
 GastlyEvosAttacks:
@@ -1800,7 +1827,19 @@ UmbreonEvosAttacks:
 MurkrowEvosAttacks:
 	db EVOLVE_ITEM, DUSK_STONE, HONCHKROW
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, PECK
+	db 1, LEER_TAIL_WHIP
+	db 5, PURSUIT
+	db 11, HAZE
+	db 15, WING_ATTACK
+	db 21, NIGHT_SHADE
+	db 25, FAINT_ATTACK
+	db 21, SCREECH
+	db 35, MEAN_LOOK
+	db 41, DRILL_PECK
+	db 45, MIRROR_MOVE
+	db 51, SUCKER_PUNCH
+	db 55, PERISH_SONG
 	db 0 ; no more level-up moves
 
 SlowkingEvosAttacks:
@@ -2004,12 +2043,39 @@ SkarmoryEvosAttacks:
 HoundourEvosAttacks:
 	db EVOLVE_LEVEL, 24, HOUNDOOM
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 1, EMBER
+	db 4, SHARPEN_HOWL_MEDITATE
+	db 8, SMOG
+	db 13, ROAR_WHIRLWIND
+	db 16, BITE
+	db 20, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
+	db 25, FIRE_FANG
+	db 28, FAINT_ATTACK
+	db 32, SWAGGER
+	db 37, FLAMETHROWER
+	db 40, CRUNCH
+	db 44, NASTY_PLOT
+	db 49, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 HoundoomEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, THUNDER_FANG
+	db 1, LEER_TAIL_WHIP
+	db 1, EMBER
+	db 1, SHARPEN_HOWL_MEDITATE
+	db 1, SMOG
+	db 13, ROAR_WHIRLWIND
+	db 16, BITE
+	db 20, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
+	db 26, FIRE_FANG
+	db 30, FAINT_ATTACK
+	db 35, SWAGGER
+	db 41, FLAMETHROWER
+	db 45, CRUNCH
+	db 50, NASTY_PLOT
+	db 56, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 KingdraEvosAttacks:
@@ -2462,12 +2528,38 @@ LopunnyEvosAttacks:
 	
 HonchkrowEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, SUCKER_PUNCH
+	db 1, PECK
+	db 1, LEER_TAIL_WHIP
+	db 1, PURSUIT
+	db 1, HAZE
+	db 15, WING_ATTACK
+	db 21, NIGHT_SHADE
+	db 25, FAINT_ATTACK
+	db 21, SCREECH
+	db 35, MEAN_LOOK
+	db 41, DRILL_PECK
+	db 45, MIRROR_MOVE
+	db 51, NIGHT_SLASH
+	db 55, PERISH_SONG
+	db 61, DARK_PULSE
 	db 0 ; no more level-up moves
 	
 SpiritombEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, NIGHT_SHADE
+	db 1, CONFUSE_RAY
+	db 5, PURSUIT
+	db 10, DISABLE
+	db 14, HEX
+	db 19, CURSE
+	db 23, FAINT_ATTACK
+	db 28, HYPNOSIS
+	db 32, DREAM_EATER
+	db 37, SUCKER_PUNCH
+	db 41, SHADOW_BALL
+	db 46, NASTY_PLOT
+	db 50, DARK_PULSE
 	db 0 ; no more level-up moves
 	
 MunchlaxEvosAttacks:

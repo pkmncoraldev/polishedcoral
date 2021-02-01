@@ -60,6 +60,9 @@ SunsetCaptainsHouseTrigger0Event:
 	jump .cont
 	
 SunsetCaptain:
+;	jump .captaingivesallrides ;UNCOMMENT FOR TESTING
+	checkevent EVENT_SAVED_SUNBEAM
+	iftrue .captaingivesallrides
 	checkevent EVENT_CAPTAIN_GIVES_RIDES_TO_ISLAND
 	iftrue SunsetCaptainRidetoIsland
 	checkevent EVENT_CAN_GET_FIRST_RIDE_TO_ISLAND
@@ -102,12 +105,11 @@ SunsetCaptain:
 	special FadeOutPalettes
 	special Special_FadeOutMusic
 	setevent EVENT_TAKEN_LAKE_BOAT_ONCE
-	setevent EVENT_LAKE_BOAT_RIGHT_GONE
+	setevent EVENT_LAKE_BOAT_LEFT
 	setevent EVENT_JUST_TOOK_BOAT
-	clearevent EVENT_LAKE_BOAT_LEFT_GONE
-	clearevent EVENT_LAKE_STRAND
-	domaptrigger LAKE_ONWA, $3
-	warpfacing UP, LAKE_ONWA, $18, $1a
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
+	domaptrigger LAKE_ONWA, $4
+	warpfacing LEFT, LAKE_ONWA, $18, $19
 	end
 	
 .LakeR
@@ -120,12 +122,11 @@ SunsetCaptain:
 	special FadeOutPalettes
 	special Special_FadeOutMusic
 	setevent EVENT_TAKEN_LAKE_BOAT_ONCE
-	setevent EVENT_LAKE_BOAT_LEFT_GONE
+	clearevent EVENT_LAKE_BOAT_LEFT
 	setevent EVENT_JUST_TOOK_BOAT
-	clearevent EVENT_LAKE_BOAT_RIGHT_GONE
-	clearevent EVENT_LAKE_STRAND
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
 	domaptrigger LAKE_ONWA, $3
-	warpfacing UP, LAKE_ONWA, $27, $20
+	warpfacing RIGHT, LAKE_ONWA, $27, $1f
 	end
 	
 .Sunbeam
@@ -137,9 +138,11 @@ SunsetCaptain:
 	closetext
 	special FadeOutPalettes
 	special Special_FadeOutMusic
-	clearevent EVENT_ISLAND_STRAND
-	domaptrigger SUNBEAM_ISLAND, $0
-	warpfacing UP, SUNBEAM_ISLAND, $8, $31
+	clearevent EVENT_ISLAND_BOATMAN
+	setevent EVENT_ISLAND_STRAND
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
+	domaptrigger SUNBEAM_ISLAND, $5
+	warpfacing DOWN, SUNBEAM_ISLAND, 13, 49
 	end
 	
 .end
@@ -194,14 +197,16 @@ CaptainGoToIsland:
 	clearevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
 	clearevent EVENT_CAN_CALL_MOM_ABOUT_ISLAND
 	clearevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_STRAND
-	clearevent EVENT_ISLAND_STRAND
+	clearevent EVENT_ISLAND_BOATMAN
+	setevent EVENT_ISLAND_STRAND
 	writetext SunsetCaptainRidetoIslandTextYes
 	waitbutton
 	closetext
 	special FadeOutPalettes
 	special Special_FadeOutMusic
 	domaptrigger SUNBEAM_ISLAND, $0
-	warpfacing UP, SUNBEAM_ISLAND, $8, $31
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
+	warpfacing DOWN, SUNBEAM_ISLAND, 13, 49
 	end
 	
 SunsetCaptainRidetoIsland:
@@ -412,7 +417,7 @@ SunsetCaptainBoatHouseText2:
 	
 SunsetCaptainBoatHouseText3:
 	text "Travel to the"
-	line "WEST end to"
+	line "WEST end of"
 	cont "LAKE ONWA?"
 	done
 	
@@ -424,7 +429,7 @@ SunsetCaptainBoatHouseText4:
 	
 SunsetCaptainBoatHouseText5:
 	text "Travel to the"
-	line "EAST end to"
+	line "EAST end of"
 	cont "LAKE ONWA?"
 	done
 	

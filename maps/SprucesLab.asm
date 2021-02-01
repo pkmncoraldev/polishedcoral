@@ -91,7 +91,7 @@ SpruceLabSpruce:
 	end
 	
 SpruceLabComeBackInside:
-	setevent EVENT_ISLAND_STRAND
+	setevent EVENT_ISLAND_BOATMAN
 	applymovement PLAYER, Movement_SpruceLabPlayer2
 	pause 14
 	playsound SFX_ENTER_DOOR

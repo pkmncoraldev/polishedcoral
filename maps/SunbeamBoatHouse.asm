@@ -54,8 +54,9 @@ SunbeamBoatHouseNPC:
 	special FadeOutPalettes
 	special Special_FadeOutMusic
 	clearevent EVENT_SUNSET_STRAND
-	domaptrigger SUNSET_BAY, $4
-	warpfacing UP, SUNSET_BAY, $1a, $1d
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
+	domaptrigger SUNSET_BAY, $3
+	warpfacing DOWN, SUNSET_BAY, 29, 28
 	end
 	
 .LakeL
@@ -74,12 +75,11 @@ SunbeamBoatHouseNPC:
 	special FadeOutPalettes
 	special Special_FadeOutMusic
 	setevent EVENT_TAKEN_LAKE_BOAT_ONCE
-	setevent EVENT_LAKE_BOAT_RIGHT_GONE
+	setevent EVENT_LAKE_BOAT_LEFT
 	setevent EVENT_JUST_TOOK_BOAT
-	clearevent EVENT_LAKE_BOAT_LEFT_GONE
-	clearevent EVENT_BOAT_BOYS_BEGONE
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
 	domaptrigger LAKE_ONWA, $2
-	warpfacing UP, LAKE_ONWA, $18, $1a
+	warpfacing LEFT, LAKE_ONWA, $18, $19
 	end
 	
 .LakeR
@@ -98,12 +98,11 @@ SunbeamBoatHouseNPC:
 	special FadeOutPalettes
 	special Special_FadeOutMusic
 	setevent EVENT_TAKEN_LAKE_BOAT_ONCE
-	setevent EVENT_LAKE_BOAT_LEFT_GONE
+	clearevent EVENT_LAKE_BOAT_LEFT
 	setevent EVENT_JUST_TOOK_BOAT
-	clearevent EVENT_LAKE_BOAT_RIGHT_GONE
-	clearevent EVENT_BOAT_BOYS_BEGONE
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
 	domaptrigger LAKE_ONWA, $1
-	warpfacing UP, LAKE_ONWA, $27, $20
+	warpfacing RIGHT, LAKE_ONWA, $27, $1f
 	end
 	
 .nomoneySunset

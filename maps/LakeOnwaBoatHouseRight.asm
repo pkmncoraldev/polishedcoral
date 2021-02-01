@@ -65,12 +65,11 @@ LakeBoatMan1:
 	special FadeOutPalettes
 	special Special_FadeOutMusic
 	setevent EVENT_TAKEN_LAKE_BOAT_ONCE
-	setevent EVENT_LAKE_BOAT_RIGHT_GONE
 	setevent EVENT_JUST_TOOK_BOAT
-	clearevent EVENT_LAKE_BOAT_LEFT_GONE
-	clearevent EVENT_BOAT_BOYS_BEGONE
+	setevent EVENT_LAKE_BOAT_LEFT
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
 	domaptrigger LAKE_ONWA, $2
-	warpfacing UP, LAKE_ONWA, $18, $1a
+	warpfacing LEFT, LAKE_ONWA, $18, $19
 	end
 .nomoney
 	checkevent EVENT_TAKEN_LAKE_BOAT_ONCE
@@ -151,10 +150,10 @@ LakeBoatMan1:
 	closetext
 	special FadeOutPalettes
 	special Special_FadeOutMusic
-	clearevent EVENT_ISLAND_STRAND
+	clearevent EVENT_ISLAND_BOATMAN
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
 	domaptrigger SUNBEAM_ISLAND, $1
-	warpfacing UP, SUNBEAM_ISLAND, $8, $31
+	warpfacing UP, SUNBEAM_ISLAND, 7, 50
 	end
 	
 LakeBoatHouseRMenuData:

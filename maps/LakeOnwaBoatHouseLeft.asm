@@ -23,6 +23,7 @@ LakeBoat2Trashcan:
 	
 LakeBoatMan2:
 	opentext
+;	jump .normal ;UNCOMMENT FOR TESTING
 	checkevent EVENT_SAVED_SUNBEAM
 	iftrue .normal
 	writetext LakeBoatManText15
@@ -41,12 +42,11 @@ LakeBoatMan2:
 	special FadeOutPalettes
 	special Special_FadeOutMusic
 	setevent EVENT_TAKEN_LAKE_BOAT_ONCE
-	setevent EVENT_LAKE_BOAT_LEFT_GONE
 	setevent EVENT_JUST_TOOK_BOAT
-	clearevent EVENT_LAKE_BOAT_RIGHT_GONE
-	clearevent EVENT_BOAT_BOYS_BEGONE
+	clearevent EVENT_LAKE_BOAT_LEFT
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
 	domaptrigger LAKE_ONWA, $1
-	warpfacing UP, LAKE_ONWA, $27, $20
+	warpfacing RIGHT, LAKE_ONWA, $27, $1f
 	end
 .noride
 	writetext LakeBoatManText7
@@ -91,8 +91,9 @@ LakeBoatMan2:
 	special FadeOutPalettes
 	special Special_FadeOutMusic
 	clearevent EVENT_SUNSET_STRAND
-	domaptrigger SUNSET_BAY, $4
-	warpfacing UP, SUNSET_BAY, $1a, $1d
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
+	domaptrigger SUNSET_BAY, $3
+	warpfacing DOWN, SUNSET_BAY, 29, 28
 	end
 	
 .LakeR
@@ -120,10 +121,10 @@ LakeBoatMan2:
 	closetext
 	special FadeOutPalettes
 	special Special_FadeOutMusic
-	clearevent EVENT_ISLAND_STRAND
+	clearevent EVENT_ISLAND_BOATMAN
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
 	domaptrigger SUNBEAM_ISLAND, $1
-	warpfacing UP, SUNBEAM_ISLAND, $8, $31
+	warpfacing UP, SUNBEAM_ISLAND, 7, 50
 	end
 	
 LakeBoatHouseLMenuData:

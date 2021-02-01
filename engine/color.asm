@@ -960,7 +960,7 @@ LoadMapPals:
 .umbrellacheck
 	ld a, [wMapNumber]
 	cp MAP_SUNBEAM_BEACH
-	jp nz, .normal
+	jp nz, .sailboatcont
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes
@@ -975,6 +975,8 @@ LoadMapPals:
 	ld a, [wMapNumber]
 	cp MAP_LAKE_ONWA
 	jp nz, .got_pals_cont
+	eventflagcheck EVENT_LAKE_ROCKS_BROWN
+	jp z, .sailboatcont
 	jr .rocks
 .rockscheck2
 	ld a, [wMapNumber]
@@ -1379,7 +1381,7 @@ INCLUDE "maps/palettes/obpals/obtwinklegym3.pal"
 MapObjectPalsSewer::
 INCLUDE "maps/palettes/obpals/obsewer.pal"
 
-MapObjectPalsRanch:
+MapObjectPalsRanch::
 INCLUDE "maps/palettes/obpals/obranch.pal"
 
 MapObjectPalsRanchYellow::

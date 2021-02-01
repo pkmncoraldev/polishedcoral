@@ -206,6 +206,7 @@ SunbeamJungleKageScript:
 	clearflag ENGINE_PUNKS_ON_SUNBEAM
 	setevent EVENT_SAVED_SUNBEAM
 	clearevent EVENT_HAVENT_SAVED_SUNBEAM
+	clearevent EVENT_SUNBEAM_BOAT_GONE
 	dotrigger $2
 	end
 

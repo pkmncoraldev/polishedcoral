@@ -22,7 +22,7 @@ FlickerPass1F_MapScriptHeader:
 	person_event SPRITE_POKEMANIAC, 15, 12, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerFlickerPass1F_3, -1
 	person_event SPRITE_FIREBREATHER, 28,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, TrainerFlickerPass1F_4, -1
 	person_event SPRITE_FIREBREATHER,  5, 15, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerFlickerPass1F_5, -1
-	smashrock_event 28, 28
+	smashrock_outside_event 28, 28
 	
 TrainerFlickerPass1F_1:
 	generictrainer POKEMANIAC, CARLOS, EVENT_BEAT_FLICKER_PASS_1F_TRAINER_1, .SeenText, .BeatenText

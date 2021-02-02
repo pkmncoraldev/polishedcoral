@@ -36,6 +36,21 @@ LakeBoatMan2:
 	takemoney $0, 500
 	special PlaceMoneyTopRight
 .doit
+	checkevent EVENT_LAKE_BOAT_LEFT
+	iftrue .skipcallingboat1
+	writetext LakeBoatManText4
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN2, step_right
+	opentext
+	writetext LakeBoatManText5
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN2, step_left
+	spriteface LAKEBOATMAN2, DOWN
+	setevent EVENT_LAKE_BOAT_LEFT
+	opentext
+.skipcallingboat1
 	writetext LakeBoatManText3
 	waitbutton
 	closetext
@@ -85,6 +100,21 @@ LakeBoatMan2:
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
+	checkevent EVENT_LAKE_BOAT_LEFT
+	iftrue .skipcallingboat2
+	writetext LakeBoatManText4
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN2, step_right
+	opentext
+	writetext LakeBoatManText5
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN2, step_left
+	spriteface LAKEBOATMAN2, DOWN
+	setevent EVENT_LAKE_BOAT_LEFT
+	opentext
+.skipcallingboat2
 	writetext LakeBoatManText3
 	waitbutton
 	closetext
@@ -116,6 +146,21 @@ LakeBoatMan2:
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
+	checkevent EVENT_LAKE_BOAT_LEFT
+	iftrue .skipcallingboat3
+	writetext LakeBoatManText4
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN2, step_right
+	opentext
+	writetext LakeBoatManText5
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN2, step_left
+	spriteface LAKEBOATMAN2, DOWN
+	setevent EVENT_LAKE_BOAT_LEFT
+	opentext
+.skipcallingboat3
 	writetext LakeBoatManText3
 	waitbutton
 	closetext
@@ -288,17 +333,7 @@ LakeBoatManText14:
 	done
 	
 LakeBoatManText15:
-	text "Welcome to the"
-	line "LAKE ONWA BOAT"
-	cont "HOUSE."
-
-	para "Sorry kid."
-	
-	para "The boats aren't"
-	line "running to the"
-	cont "island today."
-	
-	para "Huh?"
+	text "Huh?"
 	
 	para "A ride to the"
 	line "other side of the"

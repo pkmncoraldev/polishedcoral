@@ -142,6 +142,36 @@ PLAYER_F EQU __enum__
 	const TODD
 	const RANDY
 	const JAZZ
+	const RICKY_3
+	const RICKY_4
+	const RICKY_5
+	const RICKY_6
+	const RICKY_7
+	const RICKY_8
+	const VERN_3
+	const VERN_4
+	const VERN_5
+	const VERN_6
+	const VERN_7
+	const VERN_8
+	const ROY_3
+	const ROY_4
+	const ROY_5
+	const ROY_6
+	const ROY_7
+	const ROY_8
+	const SPENCER_3
+	const SPENCER_4
+	const SPENCER_5
+	const SPENCER_6
+	const SPENCER_7
+	const SPENCER_8
+	const CALEB_3
+	const CALEB_4
+	const CALEB_5
+	const CALEB_6
+	const CALEB_7
+	const CALEB_8
 
 
 	trainerclass HIKER

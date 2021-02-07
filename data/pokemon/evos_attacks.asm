@@ -2270,7 +2270,7 @@ RaltsEvosAttacks:
 	
 KirliaEvosAttacks:
 	db EVOLVE_LEVEL, 30, GARDEVOIR
-	db EVOLVE_ITEM, DAWN_STONE, GALLADE
+	db EVOLVE_ITEM_MALE, DAWN_STONE, GALLADE
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
@@ -2463,7 +2463,7 @@ AltariaEvosAttacks:
 	
 SnoruntEvosAttacks:
 	db EVOLVE_LEVEL, 42, GLALIE
-	db EVOLVE_ITEM, DAWN_STONE, FROSLASS
+	db EVOLVE_ITEM_FEMALE, DAWN_STONE, FROSLASS
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves

@@ -147,6 +147,8 @@ BATTLEMON_STRUCT_LENGTH EQUS "(wBattleMonStructEnd - wBattleMonSpecies)"
 	const EVOLVE_MOVE
 	const EVOLVE_EVS
 	const EVOLVE_TRADE
+	const EVOLVE_ITEM_MALE
+	const EVOLVE_ITEM_FEMALE
 
 ; happiness evolution triggers
 HAPPINESS_TO_EVOLVE EQU 220

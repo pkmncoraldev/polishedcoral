@@ -75,6 +75,10 @@ EvolveAfterBattle_MasterLoop
 	ld a, b
 	cp EVOLVE_ITEM
 	jp z, .item
+	cp EVOLVE_ITEM_MALE
+	jp z, .item_m
+	cp EVOLVE_ITEM_FEMALE
+	jp z, .item_f
 
 	ld a, [wForceEvolution]
 	and a
@@ -170,6 +174,22 @@ EvolveAfterBattle_MasterLoop
 	ld [wTempMonItem], a
 	jp .proceed
 	
+.item_f
+	ld a, $3
+	ld [wMonType], a
+	push hl
+	predef GetGender
+	pop hl
+	jr z, .item
+.notMale
+	jp .dont_evolve_2
+.item_m
+	ld a, $3
+	ld [wMonType], a
+	push hl
+	predef GetGender
+	pop hl
+	jr z, .notMale
 .item
 	ld a, [hli]
 	ld b, a

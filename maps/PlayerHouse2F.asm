@@ -57,13 +57,18 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke WIGGLYTUFF, 100
-	givepoke DWEBBLE, 100
+	givepoke KIRLIA, 100
+	givepoke SNORUNT, 100
 .items
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
 	giveitem THUNDERSTONE, 3
 	giveitem FIRE_STONE, 3
+	giveitem LEAF_STONE, 3
+	giveitem WATER_STONE, 3
+	giveitem DAWN_STONE, 3
+	giveitem DUSK_STONE, 3
 	giveitem MASTER_BALL, 10
 .keyitems
 	writetext PlayerHouseDebugText2

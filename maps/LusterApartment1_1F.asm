@@ -12,4 +12,51 @@ LusterApartment1_1F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 3 ; object events
+	person_event SPRITE_AROMA_LADY,  3,  4, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterApartment1_1F_NPC1, -1
+	person_event SPRITE_PSYCHIC,  3,  1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterApartment1_1F_NPC2, -1
+	person_event SPRITE_HOUNDOUR,  4,  2, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterApartment1_1F_NPC3, -1
+
+LusterApartment1_1F_NPC1:
+	jumptextfaceplayer LusterApartment1_1F_NPC1Text
+	
+LusterApartment1_1F_NPC2:
+	jumptextfaceplayer LusterApartment1_1F_NPC2Text
+	
+LusterApartment1_1F_NPC3:
+	opentext
+	writetext LusterApartment1_1F_NPC3Text
+	cry HOUNDOUR
+	waitbutton
+	closetext
+	end
+	
+LusterApartment1_1F_NPC1Text:
+	text "We love the herbal"
+	line "medicine from the"
+	cont "WEEPIN' BELL at"
+	cont "the mall!"
+	
+	para "It's all natural"
+	line "and not full of"
+	cont "preservatives"
+	cont "like the medicine"
+	cont "from the #MART!"
+	done
+	
+LusterApartment1_1F_NPC2Text:
+	text "People say #MON"
+	line "don't like herbal"
+	cont "medicine,"
+	
+	para "but our little"
+	line "guy seems to LOVE"
+	cont "them!"
+	done
+	
+LusterApartment1_1F_NPC3Text:
+	text "HOUNDOUR: Dour…"
+	
+	para "It looks"
+	line "miserable…"
+	done

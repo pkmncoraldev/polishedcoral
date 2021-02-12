@@ -234,9 +234,9 @@ MAP_NONE   EQU 0
 	map_const LUSTER_APARTMENT_6_2F,             	       4,  4 ; 14
 	map_const LUSTER_POKECENTER,                           6,  4 ; 15
 	map_const LUSTER_MART,								   6,  4 ; 16
-	map_const LUSTER_MALL,								  17, 13 ; 17
+	map_const LUSTER_MALL,								  17, 15 ; 17
 	map_const LUSTER_MALL_POKECENTER,                      6,  4 ; 18
-	map_const LUSTER_MALL_ELECTRONICS_SHOP,				   5,  3 ; 19
+	map_const LUSTER_MALL_ELECTRONICS_SHOP,				   5,  4 ; 19
 	map_const LUSTER_MALL_COFFEE_SHOP,					   5,  4 ; 20
 	map_const LUSTER_MALL_SKATE_SHOP,					   4,  3 ; 21
 	map_const LUSTER_MALL_ANTIQUE_SHOP,					   4,  4 ; 22

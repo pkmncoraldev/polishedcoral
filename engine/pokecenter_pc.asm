@@ -89,6 +89,9 @@ PC_CheckPartyForPokemon: ; 15650
 ; 0x15668
 
 BillsPC: ; 15668
+	ld a, [wTileset]
+	cp TILESET_MALL_2
+	jr z, MallPC
 	call PC_PlayChoosePCSound
 	ld hl, PokeCenterPCText_AccessedBillsPC
 	call PC_DisplayText
@@ -98,6 +101,9 @@ BillsPC: ; 15668
 ; 15679 (5:5679)
 
 PlayersPC: ; 15679
+	ld a, [wTileset]
+	cp TILESET_MALL_2
+	jr z, MallPC
 	call PC_PlayChoosePCSound
 	ld hl, PokeCenterPCText_AccessedOwnPC
 	call PC_DisplayText
@@ -108,6 +114,9 @@ PlayersPC: ; 15679
 ; 15689
 
 HallOfFamePC: ; 1569a
+	ld a, [wTileset]
+	cp TILESET_MALL_2
+	jr z, MallPC
 	call PC_PlayChoosePCSound
 	call FadeToMenu
 	farcall _HallOfFamePC
@@ -117,11 +126,21 @@ HallOfFamePC: ; 1569a
 ; 156ab
 
 TurnOffPC: ; 156ab
+	ld a, [wTileset]
+	cp TILESET_MALL_2
+	jr z, MallPC
 	ld hl, PokeCenterPCText_LinkClosed
 	call PrintText
 	scf
 	ret
 ; 156b3
+
+MallPC:
+	call PC_PlayChoosePCSoundMall
+	ld hl, PokeCenterPCText_MallPC
+	call PrintText
+	scf
+	ret
 
 PC_PlayBootSound: ; 156b3
 	ld de, SFX_BOOT_PC
@@ -141,6 +160,10 @@ PC_PlaySwapItemsSound: ; 156c7
 	call PC_WaitPlaySFX
 	ld de, SFX_SWITCH_POKEMON
 
+PC_PlayChoosePCSoundMall: ; 156c2
+	ld de, SFX_READ_TEXT
+	jr PC_WaitPlaySFX
+	
 PC_WaitPlaySFX: ; 156d0
 	push de
 	call WaitSFX
@@ -653,3 +676,8 @@ PokeCenterPCText_LinkClosed: ; 0x15a40
 	text_jump UnknownText_0x1c1505
 	db "@"
 ; 0x15a45
+
+PokeCenterPCText_MallPC: ; 0x15a36
+	; Accessed own PC. Item Storage System opened.
+	text_jump UnknownText_MallPC
+	db "@"

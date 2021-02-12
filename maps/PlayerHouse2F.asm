@@ -44,8 +44,10 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event  8, 14, SIGNPOST_JUMPTEXT, PlayerHouseTwinkle
 	bg_event 10, 14, SIGNPOST_JUMPTEXT, PlayerHouseLuster
 
-	db 1 ; object events
-	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, -1
+	db 3 ; object events
+	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_N64
+	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_N64
+	object_event  6,  2, SPRITE_N64, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_SNES
 
 	const_def 1 ; object constants
 	const PLAYERHOUSE2F_SNES
@@ -293,7 +295,6 @@ GameConsole:
 	writetext GameConsoleText_Kirby
 	waitbutton
 	closetext
-	special RestartMapMusic
 	end
 	
 PlayerHouseRadio:

@@ -533,6 +533,7 @@ InitializeEventsScript:
 	setevent EVENT_RED_ROOM_STEAM_1
 	setevent EVENT_RED_ROOM_STEAM_2
 	setevent EVENT_RED_ROOM_STEAM_3
+	setevent EVENT_SNES
 	setevent EVENT_ALWAYS_SET
 	setflag ENGINE_PUNKS_IN_STARGLOW
 	setflag ENGINE_PUNKS_ON_SUNBEAM

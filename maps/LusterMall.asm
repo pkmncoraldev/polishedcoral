@@ -6,10 +6,10 @@ LusterMall_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 22 ; warp events
-	warp_def 25, 14, 3, LUSTER_CITY_SHOPPING
-	warp_def 25, 15, 4, LUSTER_CITY_SHOPPING
-	warp_def 25, 18, 5, LUSTER_CITY_SHOPPING
-	warp_def 25, 19, 6, LUSTER_CITY_SHOPPING
+	warp_def 29, 14, 3, LUSTER_CITY_SHOPPING
+	warp_def 29, 15, 4, LUSTER_CITY_SHOPPING
+	warp_def 29, 18, 5, LUSTER_CITY_SHOPPING
+	warp_def 29, 19, 6, LUSTER_CITY_SHOPPING
 	warp_def 15, 16, 1, LUSTER_MALL_POKECENTER
 	warp_def 15, 17, 2, LUSTER_MALL_POKECENTER
 	warp_def  7,  2, 1, LUSTER_MALL_ELECTRONICS_SHOP
@@ -40,7 +40,7 @@ LusterMall_MapScriptHeader:
 	coord_event 21, 17, 0, LusterMallEscalatorClear
 
 	db 11 ; bg events
-	signpost 20, 16, SIGNPOST_JUMPTEXT, LusterMallEscalatorSignText
+	signpost 26, 16, SIGNPOST_JUMPTEXT, LusterMallEscalatorSignText
 	signpost  8, 16, SIGNPOST_JUMPTEXT, LusterMallEscalatorSignText
 	signpost 16, 15, SIGNPOST_READ, LusterMallPokeCenterSign
 	signpost  8,  1, SIGNPOST_JUMPTEXT, LusterMallElectronicsSignText
@@ -53,13 +53,45 @@ LusterMall_MapScriptHeader:
 	signpost 16, 32, SIGNPOST_JUMPTEXT, LusterMallClothesSignText
 	
 
-	db 3 ; object events
-	person_event SPRITE_OFFICER, 0, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	db 18 ; object events
+	person_event SPRITE_OFFICER,  5, 13, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_Cop, EVENT_BEAT_MALL_COP
 	person_event SPRITE_KOFFING_BEAN,  5,  8, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_KOFFING_BEAN,  5,  9, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_GRANNY,  8, 28, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC1, -1
+	person_event SPRITE_SCHOOLBOY,  8, 22, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC2, -1
+	person_event SPRITE_ROCKER, 11, 29, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC3, -1
+	person_event SPRITE_YOUNGSTER, 11, 19, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMall_NPC4, -1
+	person_event SPRITE_CUTE_GIRL, 11, 17, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMall_NPC5, -1
+	person_event SPRITE_GENTLEMAN, 11, 16, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC6, -1
+	person_event SPRITE_CLERK, 11,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC7, -1
+	person_event SPRITE_BEAUTY, 17, 29, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMall_NPC8, -1
+	person_event SPRITE_SCHOOLGIRL, 16,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC9, -1
+	person_event SPRITE_POKEFAN_F, 26, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMall_NPC10, -1
+	person_event SPRITE_SKATER, 22, 20, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC11, -1
+	person_event SPRITE_SKATER, 23, 20, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC12, -1
+	person_event SPRITE_CUTE_GIRL, 19,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMall_NPC13, -1
+	person_event SPRITE_POKEFAN_M, 25, 12, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterMall_NPC14, -1
+	person_event SPRITE_YOUNGSTER, 17, 18, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC15, -1
 
 	const_def 1 ; object constants
 	const LUSTERMALLCOP
+	const LUSTERMALLKOFFINGBEAN1
+	const LUSTERMALLKOFFINGBEAN2
+	const LUSTERMALLNPC1
+	const LUSTERMALLNPC2
+	const LUSTERMALLNPC3
+	const LUSTERMALLNPC4
+	const LUSTERMALLNPC5
+	const LUSTERMALLNPC6
+	const LUSTERMALLNPC7
+	const LUSTERMALLNPC8
+	const LUSTERMALLNPC9
+	const LUSTERMALLNPC10
+	const LUSTERMALLNPC11
+	const LUSTERMALLNPC12
+	const LUSTERMALLNPC13
+	const LUSTERMALLNPC14
+	const LUSTERMALLNPC15
 	
 LusterMallTrigger0:
 	end
@@ -464,6 +496,289 @@ LusterMallCopText8:
 	
 LusterMallCopWinText:
 	text "Why…"
+	done
+	
+LusterMall_NPC1:
+	jumptextfaceplayer LusterMall_NPC1Text
+	
+LusterMall_NPC2:
+	faceplayer
+	opentext
+	writetext LusterMall_NPC2Text
+	waitbutton
+	closetext
+	spriteface LUSTERMALLNPC2, UP
+	end
+	
+LusterMall_NPC3:
+	faceplayer
+	opentext
+	writetext LusterMall_NPC3Text
+	waitbutton
+	closetext
+	spriteface LUSTERMALLNPC3, RIGHT
+	end
+	
+LusterMall_NPC4:
+	faceplayer
+	opentext
+	writetext LusterMall_NPC4Text
+	waitbutton
+	closetext
+	spriteface LUSTERMALLNPC4, LEFT
+	end
+	
+LusterMall_NPC5:
+	jumptext LusterMall_NPC5Text
+	
+LusterMall_NPC6:
+	faceplayer
+	opentext
+	writetext LusterMall_NPC6Text
+	waitbutton
+	closetext
+	spriteface LUSTERMALLNPC6, LEFT
+	end
+	
+LusterMall_NPC7:
+	faceplayer
+	opentext
+	writetext LusterMall_NPC7Text
+	waitbutton
+	closetext
+	spriteface LUSTERMALLNPC7, RIGHT
+	end
+	
+LusterMall_NPC8:
+	jumptextfaceplayer LusterMall_NPC8Text
+	
+LusterMall_NPC9:
+	faceplayer
+	opentext
+	writetext LusterMall_NPC9Text
+	waitbutton
+	closetext
+	spriteface LUSTERMALLNPC9, UP
+	end
+	
+LusterMall_NPC10:
+	faceplayer
+	opentext
+	writetext LusterMall_NPC10Text
+	waitbutton
+	closetext
+	spriteface LUSTERMALLNPC10, LEFT
+	end
+	
+LusterMall_NPC11:
+	jumptextfaceplayer LusterMall_NPC11Text
+	
+LusterMall_NPC12:
+	jumptextfaceplayer LusterMall_NPC12Text
+	
+LusterMall_NPC13:
+	checkitem SKATEBOARD
+	iftrue .have_skateboard
+	jumptextfaceplayer LusterMall_NPC13Text1
+.have_skateboard
+	jumptextfaceplayer LusterMall_NPC13Text2
+	
+LusterMall_NPC14:
+	faceplayer
+	opentext
+	writetext LusterMall_NPC14Text
+	waitbutton
+	closetext
+	spriteface LUSTERMALLNPC14, RIGHT
+	end
+	
+LusterMall_NPC15:
+	jumptextfaceplayer LusterMall_NPC15Text
+	
+LusterMall_Cop:
+	jumptextfaceplayer LusterMall_CopText
+	
+LusterMall_NPC1Text:
+	text "It makes me so"
+	line "happy to see an"
+	cont "ANTIQUE STORE"
+	cont "in this day and"
+	cont "age."
+	
+	para "Visiting it makes"
+	line "me feel like a"
+	cont "little girl again!"
+	
+	para "Ho ho ho!"
+	done
+	
+LusterMall_NPC2Text:
+	text "I wanna buy a"
+	line "SKATEBOARD so bad,"
+	
+	para "but my DAD won't"
+	line "let me have one…"
+	done
+	
+LusterMall_NPC3Text:
+	text "Do you mind?"
+	
+	para "I'm supposed to be"
+	line "meeting a girl"
+	cont "here!"
+	
+	para "…"
+	
+	para "She's coming,"
+	line "right?"
+	done
+	
+LusterMall_NPC4Text:
+	text "Boy, she loves to"
+	line "talk."
+	
+	para "She won't even let "
+	line "me get a word in"
+	cont "edgewise."
+	done
+	
+LusterMall_NPC5Text:
+	text "…and then I told"
+	line "her that he told"
+	
+	para "me that she said"
+	line "that isn't true."
+	
+	para "Then she said that"
+	line "I was lying!"
+	
+	para "Can you believe"
+	line "that?"
+	
+	para "Blah blah blah!"
+	
+	para "…"
+	
+	para "It seems like"
+	line "she'll never stop!"
+	done
+	
+LusterMall_NPC6Text:
+	text "I wish those two"
+	line "behind me would"
+	cont "keep it down."
+	
+	para "I'm trying to read"
+	line "the newspaper."
+	
+	para "I've had to restart"
+	line "the same paragraph"
+	cont "ten times!"
+	done
+	
+LusterMall_NPC7Text:
+	text "What do you want?"
+	
+	para "Leave me alone."
+	
+	para "I'm on break!"
+	done
+	
+LusterMall_NPC8Text:
+	text "I love to buy lots"
+	line "of designer #-"
+	cont "BALLS to match my"
+	cont "designer outfits!"
+	done
+	
+LusterMall_NPC9Text:
+	text "These pretty rocks"
+	line "are so sparkly!"
+	
+	para "I wonder what they"
+	line "do!"
+	done
+	
+LusterMall_NPC10Text:
+	text "Ok, so I am here,"
+	
+	para "and the MAGNETON"
+	line "BROS. SHOP is…"
+	
+	para "Oh…"
+	
+	para "This map is so"
+	line "confusing!"
+	done
+	
+LusterMall_NPC11Text:
+	text "That lame MALL"
+	line "COP keeps getting"
+	cont "onto us."
+	
+	para "He's really funny"
+	line "when he's mad!"
+	done
+	
+LusterMall_NPC12Text:
+	text "I love going the"
+	line "wrong way on the"
+	cont "escalators."
+	
+	para "Why?"
+	
+	para "Becuase I'm not"
+	line "supposed to!"
+	done
+	
+LusterMall_NPC13Text1:
+	text "SKATERS are so"
+	line "dreamy!"
+	
+	para "Do you have a"
+	line "SKATEBOARD?"
+	
+	para "No, I didn't think"
+	line "so…"
+	done
+	
+LusterMall_NPC13Text2:
+	text "SKATERS are so"
+	line "dreamy!"
+	
+	para "Do you have a"
+	line "SKATEBOARD?"
+	
+	para "You do?"
+	
+	para "Sigh…"
+	
+	para "Soooo dreamy!"
+	done
+	
+LusterMall_NPC14Text:
+	text "Sometimes I like to"
+	line "just sit here and"
+	cont "people watch."
+	
+	para "…"
+	
+	para "That's not weird,"
+	line "is it?"
+	done
+	
+LusterMall_NPC15Text:
+	text "No matter how busy"
+	line "the MALL gets,"
+	
+	para "there's never a"
+	line "line at the #MON"
+	cont "CENTER."
+	done
+	
+LusterMall_CopText:
+	text "You aren't up to"
+	line "no good, are you?"
 	done
 	
 Movement_LusterMallCop1:

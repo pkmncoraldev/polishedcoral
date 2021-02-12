@@ -1003,6 +1003,13 @@ UnknownText_0x1c1505::
 	line "Link closed…"
 	done
 
+UnknownText_MallPC::
+	text "Oh!"
+
+	para "It's just for"
+	line "display purposes…"
+	prompt
+	
 _OakPCText1::
 	text "Want to get your"
 	line "#DEX rated?"

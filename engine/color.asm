@@ -1191,7 +1191,7 @@ LoadMapPals:
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	jr .outside
+	jp .outside
 	
 .sailboat
 	ld a, [wMapNumber]
@@ -1244,7 +1244,22 @@ LoadMapPals:
 	cp TOWN
 	jr z, .outside
 	cp ROUTE
-	ret nz
+	jr z, .outside
+	eventflagcheck EVENT_N64
+	jr nz, .n64
+	ld hl, MapObjectPalsSnes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+.n64
+	ld hl, MapObjectPalsN64
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
 .outside
 	ld a, [wTileset]
 	cp TILESET_GROVE
@@ -1419,6 +1434,12 @@ INCLUDE "maps/palettes/obpals/obluster.pal"
 
 MapObjectPalsLusterMall::
 INCLUDE "maps/palettes/obpals/oblustermall.pal"
+
+MapObjectPalsSnes::
+INCLUDE "maps/palettes/obpals/snes.pal"
+
+MapObjectPalsN64::
+INCLUDE "maps/palettes/obpals/n64.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

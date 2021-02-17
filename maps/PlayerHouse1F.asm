@@ -4,8 +4,8 @@ PlayerHouse1F_MapScriptHeader:
 	scene_script PlayerHouse1FTrigger1
 	scene_script PlayerHouse1FTrigger2
 
-	db 0 ; callbacks
-	
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, PlayerHouse1FSetMusic
 
 	db 3 ; warp events
 	warp_event  6,  7, SUNSET_BAY, 1
@@ -28,7 +28,7 @@ PlayerHouse1F_MapScriptHeader:
 	const_def 1 ; object constants
 	const PLAYERHOUSE1F_MOM1
 	const PLAYERHOUSE1F_MOM2
-
+	
 PlayerHouse1FTrigger0:
 	end
 	
@@ -38,6 +38,27 @@ PlayerHouse1FTrigger1:
 PlayerHouse1FTrigger2:
 	end
 
+PlayerHouse1FSetMusic:
+	callasm PlayerHouse1FSetMusicAsm
+;	iffalse .end
+;	special Special_FadeOutMusic
+;	pause 15
+;	special RestartMapMusic
+;.end
+	return
+	
+PlayerHouse1FSetMusicAsm:
+	call FadeToMapMusic
+	ret
+	ld a, [wMapMusic]
+	cp MUSIC_SUNSET_BAY
+	jr z, .normalmusic
+	ld a, 1
+	ret
+.normalmusic
+	ld a, 0
+	ret
+	
 SunsetMomStopsYou:
 	checkevent EVENT_TALKED_TO_MOM
 	iftrue SunsetMomStopsYouEnd
@@ -57,6 +78,9 @@ SunsetMomStopsYou:
 	end
 
 SunsetMomScript:
+	setevent EVENT_N64
+	clearevent EVENT_SNES
+	end
 	checkevent EVENT_CAN_CALL_MOM_ABOUT_ISLAND
 	iftrue SunsetMomRetellsYouAboutStrand
 	checkevent EVENT_MOM_SPEECH_LOOP

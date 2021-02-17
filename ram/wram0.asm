@@ -972,7 +972,11 @@ wPalFadeMode::
 
 wCurForm:: ds 1
 
-	ds 8 ; unused
+wCookingItem1:: ds 1
+
+wCookingItem2:: ds 1
+
+	ds 6 ; unused
 
 wWindowStackPointer:: ds 2
 wMenuJoypad:: ds 1

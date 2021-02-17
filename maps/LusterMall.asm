@@ -601,9 +601,8 @@ LusterMall_Cop:
 LusterMall_NPC1Text:
 	text "It makes me so"
 	line "happy to see an"
-	cont "ANTIQUE STORE"
-	cont "in this day and"
-	cont "age."
+	cont "ANTIQUE STORE in"
+	cont "this day and age."
 	
 	para "Visiting it makes"
 	line "me feel like a"
@@ -645,9 +644,8 @@ LusterMall_NPC4Text:
 LusterMall_NPC5Text:
 	text "…and then I told"
 	line "her that he told"
-	
-	para "me that she said"
-	line "that isn't true."
+	cont "me that she said"
+	cont "that isn't true."
 	
 	para "Then she said that"
 	line "I was lying!"
@@ -660,7 +658,8 @@ LusterMall_NPC5Text:
 	para "…"
 	
 	para "It seems like"
-	line "she'll never stop!"
+	line "she'll never stop"
+	cont "talking!"
 	done
 	
 LusterMall_NPC6Text:
@@ -757,9 +756,9 @@ LusterMall_NPC13Text2:
 	done
 	
 LusterMall_NPC14Text:
-	text "Sometimes I like to"
-	line "just sit here and"
-	cont "people watch."
+	text "Sometimes I like"
+	line "to just sit here"
+	cont "and people watch."
 	
 	para "…"
 	
@@ -772,8 +771,8 @@ LusterMall_NPC15Text:
 	line "the MALL gets,"
 	
 	para "there's never a"
-	line "line at the #MON"
-	cont "CENTER."
+	line "line at the"
+	cont "#MON CENTER."
 	done
 	
 LusterMall_CopText:

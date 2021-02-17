@@ -41,6 +41,8 @@ Pointers445f: ; 445f
 	dw SetFacingSkate,                 SetFacingCurrent           ; PERSON_ACTION_SKATEBOARD
 	dw SetFacingHalfpipe1,    		   SetFacingHalfpipe1	 	  ; PERSON_ACTION_HALFPIPE_1
 	dw SetFacingHalfpipe2,    		   SetFacingHalfpipe2	 	  ; PERSON_ACTION_HALFPIPE_2
+	dw SetFacingTopHalf,    		   SetFacingTopHalf		 	  ; PERSON_ACTION_TOP_HALF
+	dw SetFacingBottomHalf,    		   SetFacingBottomHalf	 	  ; PERSON_ACTION_BOTTOM_HALF
 	
 ; 44a3
 
@@ -454,5 +456,13 @@ SetFacingHalfpipe1:
 	
 SetFacingHalfpipe2:
 	ld a, FACING_HALFPIPE_2
+	jp SetFixedFacing
+	
+SetFacingTopHalf:
+	ld a, FACING_TOP_HALF
+	jp SetFixedFacing
+	
+SetFacingBottomHalf:
+	ld a, FACING_BOTTOM_HALF
 	jp SetFixedFacing
 	

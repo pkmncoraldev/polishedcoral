@@ -20,35 +20,37 @@ MAP_NONE   EQU 0
 	const_def
 	newgroup                                                     ;  1
 
-	map_const DAYBREAK_GROTTO_1,                           9,  7 ;  1
-	map_const DAYBREAK_GROTTO_2,                           9, 11 ;  2
-	map_const GLINT_GROVE,                                27, 30 ;  3
-	map_const GLINT_GROVE_DEEP,							   7,  7 ;  4
-	map_const STARGLOW_CAVERN_1F,                         19, 16 ;  5
-	map_const STARGLOW_CAVERN_2F,                         14, 13 ;  6
-	map_const STARGLOW_CAVERN_3F,                          4,  8 ;  7
-	map_const STARGLOW_CAVERN_FOSSIL_ROOM,                 4,  6 ;  8
-	map_const MT_ONWA_1F,                       		  14, 13 ;  9
-	map_const MT_ONWA_2F,                                 17, 14 ; 10
-	map_const MT_ONWA_B1F,								  18, 20 ; 11
-	map_const MT_ONWA_B2F,								  23, 15 ; 12
-	map_const MT_ONWA_B3F,								  11, 14 ; 13
-	map_const MT_ONWA_CLIFF,							  20, 20 ; 14
-	map_const MT_ONWA_LOWER_CLIFF,						  13, 12 ; 15
-	map_const FLICKER_PASS_1F,							  21, 22 ; 16
-	map_const FLICKER_PASS_2F,							  25, 26 ; 17
-	map_const LUSTER_SEWERS_B1F,						  15, 12 ; 18
-	map_const LUSTER_SEWERS_B2F,						  15, 11 ; 19
-	map_const LUSTER_SEWERS_VALVE_ROOM,				      16,  3 ; 20
-	map_const LUSTER_SEWERS_THRONE_ROOM,				   6,  7 ; 21
-	map_const ICE_CAVE_B1F,								  15,  7 ; 22
-	map_const ICE_CAVE_B2F,								  15, 16 ; 23
-	map_const ICE_CAVE_B3F,								  16, 16 ; 24
-	map_const ICE_TEMPLE_B1F_1,							  14, 11 ; 25
-	map_const ICE_TEMPLE_B1F_2,							  14, 10 ; 26
-	map_const ICE_TEMPLE_B1F_3,							   4, 4  ; 27
-	map_const ICE_TEMPLE_B2F_1,							   8, 6  ; 28
-	map_const ICE_TEMPLE_B2F_2,							  13, 7  ; 29
+	map_const PLAYER_HOUSE_1F,                             5,  4 ;  1
+	map_const PLAYER_HOUSE_2F,                            10, 12 ;  2
+	map_const DAYBREAK_GROTTO_1,                           9,  7 ;  3
+	map_const DAYBREAK_GROTTO_2,                           9, 11 ;  4
+	map_const GLINT_GROVE,                                27, 30 ;  5
+	map_const GLINT_GROVE_DEEP,							   7,  7 ;  6
+	map_const STARGLOW_CAVERN_1F,                         19, 16 ;  7
+	map_const STARGLOW_CAVERN_2F,                         14, 13 ;  8
+	map_const STARGLOW_CAVERN_3F,                          4,  8 ;  9
+	map_const STARGLOW_CAVERN_FOSSIL_ROOM,                 4,  6 ; 10
+	map_const MT_ONWA_1F,                       		  14, 13 ; 11
+	map_const MT_ONWA_2F,                                 17, 14 ; 12
+	map_const MT_ONWA_B1F,								  18, 20 ; 13
+	map_const MT_ONWA_B2F,								  23, 15 ; 14
+	map_const MT_ONWA_B3F,								  11, 14 ; 15
+	map_const MT_ONWA_CLIFF,							  20, 20 ; 16
+	map_const MT_ONWA_LOWER_CLIFF,						  13, 12 ; 17
+	map_const FLICKER_PASS_1F,							  21, 22 ; 18
+	map_const FLICKER_PASS_2F,							  25, 26 ; 19
+	map_const LUSTER_SEWERS_B1F,						  15, 12 ; 20
+	map_const LUSTER_SEWERS_B2F,						  15, 11 ; 21
+	map_const LUSTER_SEWERS_VALVE_ROOM,				      16,  3 ; 22
+	map_const LUSTER_SEWERS_THRONE_ROOM,				   6,  7 ; 23
+	map_const ICE_CAVE_B1F,								  15,  7 ; 24
+	map_const ICE_CAVE_B2F,								  15, 16 ; 25
+	map_const ICE_CAVE_B3F,								  16, 16 ; 26
+	map_const ICE_TEMPLE_B1F_1,							  14, 11 ; 27
+	map_const ICE_TEMPLE_B1F_2,							  14, 10 ; 28
+	map_const ICE_TEMPLE_B1F_3,							   4, 4  ; 29
+	map_const ICE_TEMPLE_B2F_1,							   8, 6  ; 30
+	map_const ICE_TEMPLE_B2F_2,							  13, 7  ; 31
 
 	newgroup                                                     ;  2
 
@@ -56,14 +58,12 @@ MAP_NONE   EQU 0
 	map_const SUNSET_CAPE,                                13, 20 ;  2
 	map_const SUNSET_POKECENTER,                    	   6,  4 ;  3
 	map_const SUNSET_LIGHTHOUSE,                           5,  5 ;  4
-	map_const PLAYER_HOUSE_1F,                             5,  4 ;  5
-	map_const PLAYER_HOUSE_2F,                            10, 12 ;  6
-	map_const SUNSET_WATER_GRASS_HOUSE,                    4,  4 ;  7
-	map_const SUNSET_GENGAR_HOUSE,                         4,  4 ;  8
-	map_const SUNSET_LEGENDS_HOUSE,                        4,  4 ;  9
-	map_const SUNSET_CAPTAINS_HOUSE,                       4,  4 ; 10
-	map_const SUNSET_CAFE,                  			   4,  4 ; 11
-	map_const ROUTE_1_GATE,                          	   4,  4 ; 12
+	map_const SUNSET_WATER_GRASS_HOUSE,                    4,  4 ;  5
+	map_const SUNSET_GENGAR_HOUSE,                         4,  4 ;  6
+	map_const SUNSET_LEGENDS_HOUSE,                        4,  4 ;  7
+	map_const SUNSET_CAPTAINS_HOUSE,                       4,  4 ;  8
+	map_const SUNSET_CAFE,                  			   4,  4 ;  9
+	map_const ROUTE_1_GATE,                          	   4,  4 ; 10
 
 	newgroup                                                     ;  3
 

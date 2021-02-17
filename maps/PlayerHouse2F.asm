@@ -44,13 +44,113 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event  8, 14, SIGNPOST_JUMPTEXT, PlayerHouseTwinkle
 	bg_event 10, 14, SIGNPOST_JUMPTEXT, PlayerHouseLuster
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_N64
 	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_N64
 	object_event  6,  2, SPRITE_N64, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_SNES
+	object_event  0,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, RecipeTest, -1
 
 	const_def 1 ; object constants
 	const PLAYERHOUSE2F_SNES
+	
+RecipeTest:
+	faceplayer
+	opentext
+	writetext RecipeTestText1
+	buttonsound
+	special Special_ChooseItem
+	iffalse_jumpopenedtext RecipeTestTextNo
+	copybytetovar wCurItem
+	takeitem ITEM_FROM_MEM
+	callasm RecipeTestAsm1
+	
+	writetext RecipeTestText2
+	buttonsound
+	special Special_ChooseItem
+	iffalse_jumpopenedtext RecipeTestTextNo
+	callasm RecipeTestAsm2
+	writetext RecipeTestText3
+	yesorno
+	iffalse_jumpopenedtext RecipeTestTextNo
+	copybytetovar wCurItem
+	takeitem ITEM_FROM_MEM
+	callasm RecipeTestAsm3
+	waitsfx
+	callasm RecipeTestCookingAsm
+	copybytetovar wCurItem
+	verbosegiveitem ITEM_FROM_MEM, 1
+	closetext
+	end
+	
+	text "Merci! Thank you!"
+
+	para "With this, I can"
+	line "create something"
+	cont "superb."
+	done
+	
+RecipeTestAsm1:
+	ld a, [wCurItem]
+	ld [wCookingItem1], a
+	ret
+	
+RecipeTestAsm2:
+	call GetCurItemName
+	call CopyName1
+	
+	ld a, [wCookingItem1]
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	ret
+	
+RecipeTestAsm3:
+	ld a, [wCurItem]
+	ld [wCookingItem2], a
+	ret
+	
+RecipeTestCookingAsm:
+	ld a, [wCookingItem1]
+	cp THUNDERSTONE
+	jr nz, .no_good
+	ld a, MASTER_BALL
+	ld [wCurItem], a
+	ld hl, TextJump_GoodItem
+	jp PrintText
+.no_good
+	ld a, POKE_BALL
+	ld [wCurItem], a
+	ld hl, TextJump_BadItem
+	jp PrintText
+	
+TextJump_GoodItem:
+	text "Good item."
+	prompt
+	
+TextJump_BadItem:
+	text "Bad item."
+	prompt
+	
+RecipeTestText1:
+	text "What to cook?"
+	done
+	
+RecipeTestText2:
+	text "Second item?"
+	done
+	
+RecipeTestText3:
+	text "Cook with a"
+	line "@"
+	text_from_ram wStringBuffer1
+	text ""
+	cont "and @"
+	text_from_ram wStringBuffer2
+	text "?"
+	done
+	
+RecipeTestTextNo:
+	text "Nvm"
+	done
 	
 PlayerHouseDebugPoster:
 	opentext
@@ -283,22 +383,66 @@ PlayerHouse2FInitializeRoom:
 
 PlayerHouse2FSetSpawn:
 ;	special ToggleMaptileDecorations
+	checkevent EVENT_N64
+	iftrue .n64
+	return
+.n64
+	changeblock $6, $0, $2b
+	changeblock $6, $2, $2a
 	return
 
 PlayerHouseBookshelf:
 	jumpstd picturebookshelf
 	
 GameConsole:
-	pause 4
+	opentext
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue .turnoff
+	writetext GameConsoleText_AskTurnOnSnes
+	yesorno
+	iffalse .no
+	writetext GameConsoleText_TurnOnSnes
+	waitbutton
+	closetext
+	callasm GameConsoleSetMapMusic
 	playmusic MUSIC_SNES_KIRBY
+	pause 20
 	opentext
 	writetext GameConsoleText_Kirby
 	waitbutton
 	closetext
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	end
+.turnoff
+	writetext GameConsoleText_AskTurnOffKirby
+	yesorno
+	iffalse .no
+	writetext GameConsoleText_TurnOffSnes
+	waitbutton
+	closetext
+	pause 4
+	callasm GameConsoleRestoreMapMusic
+	special RestartMapMusic
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	end
+.no
+	writetext GameConsoleText_No
+	waitbutton
+	closetext
 	end
 	
+GameConsoleSetMapMusic:
+	xor a
+	jr GameConsoleMusic
+GameConsoleRestoreMapMusic:
+	ld a, MUSIC_SUNSET_BAY
+GameConsoleMusic:
+	ld [wMapMusic], a
+	ret
+	
 PlayerHouseRadio:
-	jumpstd radio1
+;	jumpstd radio1
+	end
 
 PlayerHousePC:
 	opentext
@@ -398,12 +542,38 @@ GameConsoleText_SMW:
 	cont "a green dinosaur."
 	done
 	
-GameConsoleText_Kirby:
+GameConsoleText_AskTurnOnSnes:
 	text "It's an SNES."
 	
-	para "A Pink Puff is"
+	para "Turn it on?"
+	done
+	
+GameConsoleText_TurnOnSnes:
+	text "<PLAYER> turned"
+	line "on the SNES!"
+	done
+	
+GameConsoleText_TurnOffSnes:
+	text "<PLAYER> turned"
+	line "off the SNES!"
+	done
+	
+GameConsoleText_No:
+	text "Better not…"
+	done
+	
+GameConsoleText_Kirby:
+	text "A Pink Puff is"
 	line "eating everything"
 	cont "in its path."
+	done
+	
+GameConsoleText_AskTurnOffKirby
+	text "A Pink Puff is"
+	line "eating everything"
+	cont "in its path."
+	
+	para "Turn off the SNES?"
 	done
 	
 ChangeColorText:
@@ -454,8 +624,6 @@ FixPlayerPalKrisHouse:
 	ret
 	
 SetPlayerPalKrisHouse:
-	ld a, RED
-	ld [wPlayerGender], a
 	ld a, [wMenuCursorY] ; 1 - 8
 	sub $1
 	ld [wPlayerPalette], a

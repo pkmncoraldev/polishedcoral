@@ -138,6 +138,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .ice_cave
 	cp TILESET_PLAYER_HOUSE
 	jp z, .playerhouse
+	cp TILESET_PLAYER_ROOM
+	jp z, .playerroom
 	jp .do_nothing
 	
 .checktent
@@ -233,6 +235,10 @@ LoadSpecialMapPalette: ; 494ac
 
 .torch
 	ld hl, IceCaveTorchPalette
+	jp LoadSevenBGPalettes
+	
+.playerroom
+	ld hl, PlayerRoomFloorPalette
 	jp LoadSevenBGPalettes
 	
 .playerhouse
@@ -434,6 +440,9 @@ INCLUDE "maps/palettes/bgpals/twinklegym3.pal"
 
 TwinkleGym4Palette:
 INCLUDE "maps/palettes/bgpals/twinklegym4.pal"
+
+PlayerRoomFloorPalette:
+INCLUDE "maps/palettes/bgpals/playerroom.pal"
 
 OutsideGrovePalette:
 INCLUDE "maps/palettes/bgpals/bggrove.pal"

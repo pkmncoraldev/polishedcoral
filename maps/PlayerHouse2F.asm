@@ -44,114 +44,15 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event  8, 14, SIGNPOST_JUMPTEXT, PlayerHouseTwinkle
 	bg_event 10, 14, SIGNPOST_JUMPTEXT, PlayerHouseLuster
 
-	db 4 ; object events
+	db 3 ; object events
 	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_N64
 	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_N64
 	object_event  6,  2, SPRITE_N64, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_SNES
-	object_event  0,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, RecipeTest, -1
 
 	const_def 1 ; object constants
 	const PLAYERHOUSE2F_SNES
-	
-RecipeTest:
-	faceplayer
-	opentext
-	writetext RecipeTestText1
-	buttonsound
-	special Special_ChooseItem
-	iffalse_jumpopenedtext RecipeTestTextNo
-	copybytetovar wCurItem
-	takeitem ITEM_FROM_MEM
-	callasm RecipeTestAsm1
-	
-	writetext RecipeTestText2
-	buttonsound
-	special Special_ChooseItem
-	iffalse_jumpopenedtext RecipeTestTextNo
-	callasm RecipeTestAsm2
-	writetext RecipeTestText3
-	yesorno
-	iffalse_jumpopenedtext RecipeTestTextNo
-	copybytetovar wCurItem
-	takeitem ITEM_FROM_MEM
-	callasm RecipeTestAsm3
-	waitsfx
-	callasm RecipeTestCookingAsm
-	copybytetovar wCurItem
-	verbosegiveitem ITEM_FROM_MEM, 1
-	closetext
-	end
-	
-	text "Merci! Thank you!"
 
-	para "With this, I can"
-	line "create something"
-	cont "superb."
-	done
-	
-RecipeTestAsm1:
-	ld a, [wCurItem]
-	ld [wCookingItem1], a
-	ret
-	
-RecipeTestAsm2:
-	call GetCurItemName
-	call CopyName1
-	
-	ld a, [wCookingItem1]
-	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
-	ret
-	
-RecipeTestAsm3:
-	ld a, [wCurItem]
-	ld [wCookingItem2], a
-	ret
-	
-RecipeTestCookingAsm:
-	ld a, [wCookingItem1]
-	cp THUNDERSTONE
-	jr nz, .no_good
-	ld a, MASTER_BALL
-	ld [wCurItem], a
-	ld hl, TextJump_GoodItem
-	jp PrintText
-.no_good
-	ld a, POKE_BALL
-	ld [wCurItem], a
-	ld hl, TextJump_BadItem
-	jp PrintText
-	
-TextJump_GoodItem:
-	text "Good item."
-	prompt
-	
-TextJump_BadItem:
-	text "Bad item."
-	prompt
-	
-RecipeTestText1:
-	text "What to cook?"
-	done
-	
-RecipeTestText2:
-	text "Second item?"
-	done
-	
-RecipeTestText3:
-	text "Cook with a"
-	line "@"
-	text_from_ram wStringBuffer1
-	text ""
-	cont "and @"
-	text_from_ram wStringBuffer2
-	text "?"
-	done
-	
-RecipeTestTextNo:
-	text "Nvm"
-	done
-	
+
 PlayerHouseDebugPoster:
 	opentext
 	waitsfx
@@ -172,6 +73,8 @@ PlayerHouseDebugPoster:
 	giveitem DAWN_STONE, 3
 	giveitem DUSK_STONE, 3
 	giveitem MASTER_BALL, 10
+	giveitem BLOSSOM_TEA, 3
+	giveitem FLOWER_PETAL, 6
 .keyitems
 	writetext PlayerHouseDebugText2
 	yesorno

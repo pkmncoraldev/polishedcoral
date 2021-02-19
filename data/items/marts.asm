@@ -7,6 +7,8 @@ Marts: ; 160a9
 	dw FlickerMart
 	dw TwinkleMart
 	dw LusterMart
+	dw LusterMallElectronics
+	dw LusterMallCoffee
 MartsEnd
 
 
@@ -87,6 +89,16 @@ TwinkleMart: ; 16118
 	db -1
 	
 LusterMart: ; 16118
+	db 1 ; # items
+	db POTION
+	db -1
+	
+LusterMallElectronics: ; 16118
+	db 1 ; # items
+	db POTION
+	db -1
+	
+LusterMallCoffee: ; 16118
 	db 1 ; # items
 	db POTION
 	db -1

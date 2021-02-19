@@ -51,6 +51,9 @@ GlintPokeCenterTeaLady:
 	checkitem FLOWER_PETAL
 	iffalse .three
 	takeitem FLOWER_PETAL
+	writetext GlintPokeCenterTeaLadyTextGivePetals
+	playsound SFX_LEVEL_UP 
+	waitsfx
 	writetext GlintPokeCenterTeaLadyText3
 	waitbutton
 	closetext
@@ -104,6 +107,12 @@ GlintPokeCenterNpc2:
 GlintPokeCenterNpc3:
 	jumptextfaceplayer GlintPokeCenterNpc3Text
 
+GlintPokeCenterTeaLadyTextGivePetals:
+	text "<PLAYER> handed"
+	line "over the"
+	cont "FLOWER PETALS."
+	done
+	
 GlintPokeCenterTeaLadyText1:
 	text "Care for some more"
 	line "tea, sweetie?"

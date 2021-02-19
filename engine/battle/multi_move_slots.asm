@@ -2048,6 +2048,8 @@ FuryAttackUsers:
 	db NIDORAN_M
 	db NIDORINO
 	db NIDOKING
+	db DODUO
+	db DODRIO
 	db -1
 	
 CometPunchUsers:

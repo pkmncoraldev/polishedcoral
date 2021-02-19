@@ -59,6 +59,21 @@ LakeBoatMan1:
 	takemoney $0, 500
 	special PlaceMoneyTopRight
 .doit
+	checkevent EVENT_LAKE_BOAT_LEFT
+	iffalse .skipcallingboat1
+	writetext LakeBoatManText4
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN1, step_left
+	opentext
+	writetext LakeBoatManText5
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN1, step_right
+	spriteface LAKEBOATMAN1, DOWN
+	clearevent EVENT_LAKE_BOAT_LEFT
+	opentext
+.skipcallingboat1
 	writetext LakeBoatManText3
 	waitbutton
 	closetext
@@ -115,6 +130,21 @@ LakeBoatMan1:
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
+	checkevent EVENT_LAKE_BOAT_LEFT
+	iffalse .skipcallingboat2
+	writetext LakeBoatManText4
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN1, step_left
+	opentext
+	writetext LakeBoatManText5
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN1, step_right
+	spriteface LAKEBOATMAN1, DOWN
+	clearevent EVENT_LAKE_BOAT_LEFT
+	opentext
+.skipcallingboat2
 	writetext LakeBoatManText3
 	waitbutton
 	closetext
@@ -145,6 +175,21 @@ LakeBoatMan1:
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
+	checkevent EVENT_LAKE_BOAT_LEFT
+	iffalse .skipcallingboat3
+	writetext LakeBoatManText4
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN1, step_left
+	opentext
+	writetext LakeBoatManText5
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN1, step_right
+	spriteface LAKEBOATMAN1, DOWN
+	clearevent EVENT_LAKE_BOAT_LEFT
+	opentext
+.skipcallingboat3
 	writetext LakeBoatManText3
 	waitbutton
 	closetext

@@ -373,7 +373,7 @@ PlacePartyMonTMHMCompatibility: ; 501e0
 ; 5022f
 
 
-PlacePartyMonEvoStoneCompatibility: ; 5022f
+PlacePartyMonEvoStoneCompatibility:
 	ld a, [wPartyCount]
 	and a
 	ret z
@@ -387,16 +387,23 @@ PlacePartyMonEvoStoneCompatibility: ; 5022f
 	jr z, .next
 	push hl
 	ld a, b
+	push af
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld hl, wPartyMon1Species
 	rst AddNTimes
-	ld a, [hl]
-	dec a
-	ld e, a
+	ld e, [hl]
+	ld bc, MON_ITEM
+	add hl, bc
+	ld b, [hl]
+	pop af
+	call .GetGenderAndWriteInC
+
+	dec e
 	ld d, 0
 	ld hl, EvosAttacksPointers
 	add hl, de
 	add hl, de
+
 	call .DetermineCompatibility
 	pop hl
 	call PlaceString
@@ -410,52 +417,93 @@ PlacePartyMonEvoStoneCompatibility: ; 5022f
 	dec c
 	jr nz, .loop
 	ret
-; 50268
 
-.DetermineCompatibility: ; 50268
-	ld de, wStringBuffer1
+.GetGenderAndWriteInC
+	push bc
+	push hl
+	ld b, a
+	ld hl, wCurPartyMon
+	ld a, [hl]
+	push af
+	ld [hl], b
+	xor a
+	ld [wMonType], a
+	predef GetGender
+	ld c, a
+	pop af
+	ld [wCurPartyMon], a
+	ld a, c
+	pop hl
+	pop bc
+	ld c, a
+	ret
+
+.DetermineCompatibility
+	push bc
 	ld a, BANK(EvosAttacksPointers)
-	ld bc, 2
-	call FarCopyBytes
-	ld hl, wStringBuffer1
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
+	call GetFarHalfword
 	ld de, wStringBuffer1
-; Only reads first 4 evolution entries
-; https://hax.iimarck.us/topic/4567/
+	ld bc, 9
 	ld a, BANK(EvosAttacks)
-	ld bc, $10
 	call FarCopyBytes
+	xor a
+	ld [de], a
 	ld hl, wStringBuffer1
+	pop bc
 .loop2
 	ld a, [hli]
 	and a
 	jr z, .nope
 	inc hl
 	inc hl
+	cp EVOLVE_STAT
+	jr z, .nope ; reasons
 	cp EVOLVE_ITEM
+	jr z, .checkItem
+	cp EVOLVE_ITEM_MALE
+	jr z, .checkItemMale
+	cp EVOLVE_ITEM_FEMALE
+	jr z, .checkItemFemale
+	cp EVOLVE_TRADE
 	jr nz, .loop2
-	dec hl
-	dec hl
+; trade
+	ld a, b
+	cp EVERSTONE
+	jr z, .loop2
+	jr .checkHeldItem
+.checkItemMale
+	ld a, c
+	dec a
+	jr .goBackToLoop2IfNonZero
+.checkItemFemale
+	ld a, c
+	and a
+.goBackToLoop2IfNonZero
+	jr nz, .loop2
+.checkItem
 	ld a, [wCurItem]
+.checkHeldItem
+	dec hl
+	dec hl
 	cp [hl]
+	jr z, .able
+	ld a, [hli]
 	inc hl
-	inc hl
+	inc a
 	jr nz, .loop2
+.able
 	ld de, .string_able
 	ret
-
 .nope
 	ld de, .string_not_able
 	ret
 ; 502a3
 
 .string_able ; 502a3
-	db "Able@"
+	db "ABLE@"
 ; 502a8
 .string_not_able ; 502a8
-	db "Not able@"
+	db "NOT ABLE@"
 ; 502b1
 
 

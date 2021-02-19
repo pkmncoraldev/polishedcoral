@@ -67,7 +67,7 @@
 	const MOOMOO_MILK  ; 36
 	const RAGECANDYBAR ; 37
 
-	const SACRED_ASH   ; 38
+	const SACRED_ASH   ; 38 - remove
 	const ENERGYPOWDER ; 39
 	const ENERGY_ROOT  ; 3a
 	const HEAL_POWDER  ; 3b
@@ -174,7 +174,7 @@
 	const NEVERMELTICE ; 96
 	const DRAGON_FANG  ; 97
 	const BLACKGLASSES ; 98
-	const PINK_BOW     ; 99
+	const PINK_BOW     ; 99 - remove
 
 	const BRIGHTPOWDER ; 9a
 	const SCOPE_LENS   ; 9b
@@ -186,7 +186,7 @@
 	const AMULET_COIN  ; a1
 	const CLEANSE_TAG  ; a2
 	const SMOKE_BALL   ; a3
-	const BERSERK_GENE ; a4
+	const BERSERK_GENE ; a4 - remove
 
 	const LIGHT_BALL   ; a5
 	const STICK        ; a6
@@ -194,7 +194,7 @@
 	const LUCKY_PUNCH  ; a8
 	const METAL_POWDER ; a9
 	const QUICK_POWDER ; aa
-	const ARMOR_SUIT   ; ab
+	const ARMOR_SUIT   ; ab - remove
 
 	const AIR_BALLOON  ; ac
 	const ASSAULT_VEST ; ad
@@ -248,12 +248,12 @@
 	const DRAGON_SCALE ; d7
 	const UP_GRADE     ; d8
 	const DUBIOUS_DISC ; d9
-	const PROTECTOR    ; da
+	const PROTECTOR    ; da - remove
 	const ELECTIRIZER  ; db
 	const MAGMARIZER   ; dc
 	const RAZOR_FANG   ; dd
 	const RAZOR_CLAW   ; de
-	const ODD_SOUVENIR ; df
+	const ODD_SOUVENIR ; df - remove
 
 	const NUGGET       ; e0
 	const BIG_NUGGET   ; e1
@@ -262,10 +262,10 @@
 	const BALMMUSHROOM ; e4
 	const PEARL        ; e5
 	const BIG_PEARL    ; e6
-	const PEARL_STRING ; e7
+	const PEARL_STRING ; e7 - remove
 	const STARDUST     ; e8
 	const STAR_PIECE   ; e9
-	const BRICK_PIECE  ; ea
+	const BRICK_PIECE  ; ea - remove
 	const RARE_BONE    ; eb
 	const SILVER_LEAF  ; ec
 	const GOLD_LEAF    ; ed
@@ -276,19 +276,19 @@
 	const SAIL_FOSSIL  ; f1
 	const OLD_AMBER    ; f2
 
-	const MULCH        ; f3
-	const SWEET_HONEY  ; f4
+	const MULCH        ; f3 - remove
+	const SWEET_HONEY  ; f4 - remove
 
-	const FLOWER_MAIL  ; f5
-	const SURF_MAIL    ; f6
-	const LITEBLUEMAIL ; f7
-	const PORTRAITMAIL ; f8
-	const LOVELY_MAIL  ; f9
-	const EON_MAIL     ; fa
-	const MORPH_MAIL   ; fb
-	const BLUESKY_MAIL ; fc
-	const MUSIC_MAIL   ; fd
-	const MIRAGE_MAIL  ; fe
+	const FLOWER_MAIL  ; f5 - remove
+	const SURF_MAIL    ; f6 - remove
+	const LITEBLUEMAIL ; f7 - remove
+	const PORTRAITMAIL ; f8 - remove
+	const LOVELY_MAIL  ; f9 - remove
+	const EON_MAIL     ; fa - remove
+	const MORPH_MAIL   ; fb - remove
+	const BLUESKY_MAIL ; fc - remove
+	const MUSIC_MAIL   ; fd - remove
+	const MIRAGE_MAIL  ; fe - remove
 
 	const ITEM_FROM_MEM ; ff
 

@@ -44,12 +44,15 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event  8, 14, SIGNPOST_JUMPTEXT, PlayerHouseTwinkle
 	bg_event 10, 14, SIGNPOST_JUMPTEXT, PlayerHouseLuster
 
-	db 1 ; object events
-	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, -1
+	db 3 ; object events
+	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_N64
+	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_N64
+	object_event  6,  2, SPRITE_N64, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_SNES
 
 	const_def 1 ; object constants
 	const PLAYERHOUSE2F_SNES
-	
+
+
 PlayerHouseDebugPoster:
 	opentext
 	waitsfx
@@ -57,14 +60,21 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke WIGGLYTUFF, 100
-	givepoke DWEBBLE, 100
+	givepoke KIRLIA, 100
+	givepoke SNORUNT, 100
 .items
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
 	giveitem THUNDERSTONE, 3
 	giveitem FIRE_STONE, 3
+	giveitem LEAF_STONE, 3
+	giveitem WATER_STONE, 3
+	giveitem DAWN_STONE, 3
+	giveitem DUSK_STONE, 3
 	giveitem MASTER_BALL, 10
+	giveitem BLOSSOM_TEA, 3
+	giveitem FLOWER_PETAL, 6
 .keyitems
 	writetext PlayerHouseDebugText2
 	yesorno
@@ -276,23 +286,66 @@ PlayerHouse2FInitializeRoom:
 
 PlayerHouse2FSetSpawn:
 ;	special ToggleMaptileDecorations
+	checkevent EVENT_N64
+	iftrue .n64
+	return
+.n64
+	changeblock $6, $0, $2b
+	changeblock $6, $2, $2a
 	return
 
 PlayerHouseBookshelf:
 	jumpstd picturebookshelf
 	
 GameConsole:
-	pause 4
+	opentext
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue .turnoff
+	writetext GameConsoleText_AskTurnOnSnes
+	yesorno
+	iffalse .no
+	writetext GameConsoleText_TurnOnSnes
+	waitbutton
+	closetext
+	callasm GameConsoleSetMapMusic
 	playmusic MUSIC_SNES_KIRBY
+	pause 20
 	opentext
 	writetext GameConsoleText_Kirby
 	waitbutton
 	closetext
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	end
+.turnoff
+	writetext GameConsoleText_AskTurnOffKirby
+	yesorno
+	iffalse .no
+	writetext GameConsoleText_TurnOffSnes
+	waitbutton
+	closetext
+	pause 4
+	callasm GameConsoleRestoreMapMusic
 	special RestartMapMusic
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	end
+.no
+	writetext GameConsoleText_No
+	waitbutton
+	closetext
 	end
 	
+GameConsoleSetMapMusic:
+	xor a
+	jr GameConsoleMusic
+GameConsoleRestoreMapMusic:
+	ld a, MUSIC_SUNSET_BAY
+GameConsoleMusic:
+	ld [wMapMusic], a
+	ret
+	
 PlayerHouseRadio:
-	jumpstd radio1
+;	jumpstd radio1
+	end
 
 PlayerHousePC:
 	opentext
@@ -392,12 +445,38 @@ GameConsoleText_SMW:
 	cont "a green dinosaur."
 	done
 	
-GameConsoleText_Kirby:
+GameConsoleText_AskTurnOnSnes:
 	text "It's an SNES."
 	
-	para "A Pink Puff is"
+	para "Turn it on?"
+	done
+	
+GameConsoleText_TurnOnSnes:
+	text "<PLAYER> turned"
+	line "on the SNES!"
+	done
+	
+GameConsoleText_TurnOffSnes:
+	text "<PLAYER> turned"
+	line "off the SNES!"
+	done
+	
+GameConsoleText_No:
+	text "Better not…"
+	done
+	
+GameConsoleText_Kirby:
+	text "A Pink Puff is"
 	line "eating everything"
 	cont "in its path."
+	done
+	
+GameConsoleText_AskTurnOffKirby
+	text "A Pink Puff is"
+	line "eating everything"
+	cont "in its path."
+	
+	para "Turn off the SNES?"
 	done
 	
 ChangeColorText:
@@ -448,8 +527,6 @@ FixPlayerPalKrisHouse:
 	ret
 	
 SetPlayerPalKrisHouse:
-	ld a, RED
-	ld [wPlayerGender], a
 	ld a, [wMenuCursorY] ; 1 - 8
 	sub $1
 	ld [wPlayerPalette], a

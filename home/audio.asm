@@ -367,6 +367,9 @@ SkipMusic::
 	ret
 
 FadeToMapMusic:: ; 3cbc
+	ld a, [wTileset]
+	cp TILESET_PLAYER_ROOM
+	ret z
 	call GetCurrentLandmark
 	cp GATE_LANDMARK
 	ret z

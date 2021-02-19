@@ -1010,6 +1010,276 @@ BirdKeeperGroup:
 	db -1 ; end
 
 ; ================
+
+	; BIRD_KEEPER
+	db "RICKY@"	;3 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "RICKY@"	;4 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "RICKY@"	;5 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "RICKY@"	;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "RICKY@"	;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "RICKY@"	;8 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "VERN@"	;3 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "VERN@"	;4 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "VERN@"	;5 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "VERN@"	;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "VERN@"	;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "VERN@"	;8 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "ROY@"	;3 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "ROY@"	;4 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "ROY@"	;5 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "ROY@"	;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "ROY@"	;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "ROY@"	;8 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "SPENCER@"	;3 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "SPENCER@"	;4 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "SPENCER@"	;5 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "SPENCER@"	;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "SPENCER@"	;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "SPENCER@"	;8 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "CALEB@"	;3 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "CALEB@"	;4 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "CALEB@"	;5 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "CALEB@"	;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "CALEB@"	;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "CALEB@"	;8 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 

@@ -832,12 +832,16 @@ LoadMapPals:
 	jp z, .luster
 	cp TILESET_MALL_1
 	jp z, .lustermall
+	cp TILESET_MALL_2
+	jp z, .lustermall2
 	cp TILESET_SEWER
 	jp z, .sewer
 	cp TILESET_ICE_CAVE
 	jp z, .ice_cave
 	cp TILESET_PLAYER_HOUSE
 	jp z, .playerhouse
+	cp TILESET_PLAYER_ROOM
+	jp z, .playerroom
 	jp .normal
 .playerhouse
 	ld a, [wMapGroup]
@@ -851,6 +855,27 @@ LoadMapPals:
 	cp MAP_TWINKLE_GYM_RED_ROOM
 	jr z, .red_room
 	jp .normal
+	
+.playerroom
+	eventflagcheck EVENT_N64
+	jr nz, .n64
+.snes
+	call .normal
+	ld hl, MapObjectPalsSnes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+.n64
+	call .normal
+	ld hl, MapObjectPalsN64
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+	
 .blue_room
 	eventflagcheck EVENT_BLUE_ROOM_STEAM_1
 	jr nz, .steam1
@@ -1178,6 +1203,22 @@ LoadMapPals:
 	call FarCopyWRAM
 	ret
 	
+.lustermall2
+	call .normal
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_MALL_ELECTRONICS_SHOP
+	jp z, .snes
+	cp MAP_LUSTER_MALL_COFFEE_SHOP
+	jr z, .coffee
+	ret
+.coffee
+	ld hl, MapObjectPalsCoffee
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+	
 .skateparkcheck
 	ld a, [wMapNumber]
 	cp MAP_SKATEPARK
@@ -1191,7 +1232,7 @@ LoadMapPals:
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	jr .outside
+	jp .outside
 	
 .sailboat
 	ld a, [wMapNumber]
@@ -1244,7 +1285,8 @@ LoadMapPals:
 	cp TOWN
 	jr z, .outside
 	cp ROUTE
-	ret nz
+	jp z, .outside
+	ret
 .outside
 	ld a, [wTileset]
 	cp TILESET_GROVE
@@ -1419,6 +1461,15 @@ INCLUDE "maps/palettes/obpals/obluster.pal"
 
 MapObjectPalsLusterMall::
 INCLUDE "maps/palettes/obpals/oblustermall.pal"
+
+MapObjectPalsSnes::
+INCLUDE "maps/palettes/obpals/snes.pal"
+
+MapObjectPalsN64::
+INCLUDE "maps/palettes/obpals/n64.pal"
+
+MapObjectPalsCoffee::
+INCLUDE "maps/palettes/obpals/coffee.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

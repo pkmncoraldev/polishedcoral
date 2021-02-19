@@ -596,6 +596,8 @@ MapObjectMovementPattern:
 	dw .MovementLighthouse3
 	dw .MovementHalfpipe1
 	dw .MovementHalfpipe2
+	dw .MovementTopHalf
+	dw .MovementBottomHalf
 
 .RandomWalkY:
 	call Random
@@ -834,6 +836,14 @@ MapObjectMovementPattern:
 	
 .MovementHalfpipe2:
 	ld a, PERSON_ACTION_HALFPIPE_2
+	jr ._ActionA_StepType04
+	
+.MovementTopHalf:
+	ld a, PERSON_ACTION_TOP_HALF
+	jr ._ActionA_StepType04
+	
+.MovementBottomHalf:
+	ld a, PERSON_ACTION_BOTTOM_HALF
 	jr ._ActionA_StepType04
 	
 .MovementCutTree:

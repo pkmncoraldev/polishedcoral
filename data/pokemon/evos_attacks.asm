@@ -2363,11 +2363,40 @@ MedititeEvosAttacks:
 	db EVOLVE_LEVEL, 37, MEDICHAM
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 4, SHARPEN_HOWL_MEDITATE
+	db 7, CONFUSION
+	db 10, PROTECT
+	db 13, ENDURE
+	db 16, LOW_KICK
+	db 19, HIDDEN_POWER
+	db 22, FAKE_OUT
+	db 25, LOCK_ON_MIND_READER
+	db 28, HI_JUMP_KICK
+	db 31, CALM_MIND
+	db 34, FUTURE_SIGHT
+	db 37, RECOVER
+	db 40, REVERSAL
+	db 43, COUNTER
 	db 0 ; no more level-up moves
 	
 MedichamEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, ZEN_HEADBUTT
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, SHARPEN_HOWL_MEDITATE
+	db 1, CONFUSION
+	db 1, PROTECT
+	db 13, ENDURE
+	db 16, LOW_KICK
+	db 19, HIDDEN_POWER
+	db 22, FAKE_OUT
+	db 25, LOCK_ON_MIND_READER
+	db 28, HI_JUMP_KICK
+	db 31, CALM_MIND
+	db 34, FUTURE_SIGHT
+	db 40, RECOVER
+	db 46, REVERSAL
+	db 52, COUNTER
 	db 0 ; no more level-up moves
 	
 CarvanhaEvosAttacks:

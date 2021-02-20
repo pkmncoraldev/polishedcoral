@@ -169,7 +169,7 @@ EvolutionMoves::
 	db NO_MOVE      						; LAIRON
 	db NO_MOVE      						; AGGRON
 	db NO_MOVE      						; MEDITITE
-	db NO_MOVE      						; MEDICHAM
+	db ZEN_HEADBUTT      				    ; MEDICHAM
 	db NO_MOVE      						; CARVANHA
 	db NO_MOVE      						; SHARPEDO
 	db NO_MOVE      						; NUMEL

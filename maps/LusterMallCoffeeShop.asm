@@ -182,19 +182,15 @@ LoadwCookingItem1IntowCookingItem2:
 	
 CookItemsTogether:
 	ld a, [wCookingItem1]
-	cp THUNDERSTONE
-	jr z, .thunderstone
-.no_good
-	ld a, POKE_BALL
-	ld [wCurItem], a
-	ld hl, LusterMallCoffeeShop_CookTextBadItem
-	jp PrintText
-	
-.thunderstone
-	ld hl, ThunderStoneRecipes
-;	jump .cont
-.cont
-	ld a, [wCurItem]
+	ld hl, CookableItems
+    ld de, 3
+    call IsInArray
+    jr nc, .no_good
+    inc hl
+    ld a, [hli]
+    ld h, [hl]
+    ld l, a
+	ld a, [wCookingItem2]
 	ld b, a
 .loop
 	ld a, [hli]
@@ -209,6 +205,11 @@ CookItemsTogether:
 	ld a, [hli]
 	ld [wCurItem], a
 	ld hl, LusterMallCoffeeShop_CookTextGoodItem
+	jp PrintText
+.no_good
+	ld a, POKE_BALL
+	ld [wCurItem], a
+	ld hl, LusterMallCoffeeShop_CookTextBadItem
 	jp PrintText
 	
 ReturnCookingItem1ToPlayer:

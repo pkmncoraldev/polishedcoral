@@ -2367,9 +2367,8 @@ MedititeEvosAttacks:
 	db 7, CONFUSION
 	db 10, PROTECT
 	db 13, ENDURE
-	db 16, LOW_KICK
-	db 19, HIDDEN_POWER
-	db 22, FAKE_OUT
+	db 17, LOW_KICK
+	db 21, FAKE_OUT
 	db 25, LOCK_ON_MIND_READER
 	db 28, HI_JUMP_KICK
 	db 31, CALM_MIND
@@ -2387,9 +2386,8 @@ MedichamEvosAttacks:
 	db 1, CONFUSION
 	db 1, PROTECT
 	db 13, ENDURE
-	db 16, LOW_KICK
-	db 19, HIDDEN_POWER
-	db 22, FAKE_OUT
+	db 17, LOW_KICK
+	db 21, FAKE_OUT
 	db 25, LOCK_ON_MIND_READER
 	db 28, HI_JUMP_KICK
 	db 31, CALM_MIND

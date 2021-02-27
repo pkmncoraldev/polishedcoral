@@ -8,8 +8,11 @@ _NamingScreen: ; 0x116b7
 	call DisableSpriteUpdates
 	call NamingScreen
 	jp ReturnToMapWithSpeechTextbox
-
-; 0x116c1
+	
+_NamingScreen2: ; 0x116b7
+	call DisableSpriteUpdates
+	call NamingScreen
+	ret
 
 NamingScreen: ; 116c1
 	ld hl, wNamingScreenDestinationPointer
@@ -208,16 +211,16 @@ SetUpNamingScreen: ; 116f8
 ; 117d1
 
 .wTrendyPhrase:
-	ld de, ArtistSpriteGFX
-	lb bc, BANK(ArtistSpriteGFX), SPRITE_ANIM_INDEX_BLUE_WALK
-	call .LoadSprite
-	hlcoord 5, 2
+;	ld de, ArtistSpriteGFX
+;	lb bc, BANK(ArtistSpriteGFX), SPRITE_ANIM_INDEX_BLUE_WALK
+;	call .LoadSprite
+	hlcoord 2, 2
 	ld de, .TrendyPhraseString
 	call PlaceString
 	jp .StoreSpriteIconParams
 
 .TrendyPhraseString:
-	db "What's trendy?@"
+	db "Favorite phrase?@"
 
 .Box: ; 117f5 (4:57f5)
 	ld de, BallCutFruitSpriteGFX

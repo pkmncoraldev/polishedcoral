@@ -51,8 +51,7 @@ PlayerHouse2F_MapScriptHeader:
 
 	const_def 1 ; object constants
 	const PLAYERHOUSE2F_SNES
-
-
+	
 PlayerHouseDebugPoster:
 	opentext
 	waitsfx
@@ -108,6 +107,14 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_FIFTHBADGE
 	setflag ENGINE_SEVENTHBADGE
 	setflag ENGINE_EIGHTHBADGE
+	setflag ENGINE_MET_STANLEY
+	setflag ENGINE_MET_RODNEY
+	setflag ENGINE_MET_WENDY
+	setflag ENGINE_READ_MORTY_JOURNAL
+	setflag ENGINE_READ_CHUCK_JOURNAL
+	setflag ENGINE_READ_JASMINE_JOURNAL
+	setflag ENGINE_READ_PRYCE_JOURNAL
+	setflag ENGINE_READ_CLAIR_JOURNAL
 .hms
 	writetext PlayerHouseDebugText4
 	yesorno
@@ -117,7 +124,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_GOT_FLY
 	givetmhm HM_ROCK_SMASH
 	givetmhm HM_CUT
-	givetmhm HM_FLY
+	givetmhm HM_FLY	
 .done
 	writetext PlayerHouseDebugText5
 	waitbutton

@@ -59,3 +59,4 @@
 	enum treegrotto
 	enum cavegrotto
 	enum iceblock
+	enum atm

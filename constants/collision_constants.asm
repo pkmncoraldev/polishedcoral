@@ -14,6 +14,7 @@ COLL_LONG_GRASS        EQU $14
 COLL_HEADBUTT_TREE     EQU $15
 COLL_TALL_GRASS        EQU $18
 COLL_OVERHEAD          EQU $1c
+COLL_ATM               EQU $22
 COLL_ICE               EQU $23
 COLL_WHIRLPOOL         EQU $24
 COLL_BUOY              EQU $27

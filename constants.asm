@@ -1,7 +1,3 @@
-if DEF(HGSS) && (DEF(MONOCHROME) || DEF(NOIR)) || (DEF(MONOCHROME) && DEF(NOIR))
-fail "'make' cannot combine 'hgss', 'monochrome', and 'noir'."
-endc
-
 INCLUDE "charmap.asm"
 
 INCLUDE "macros.asm"

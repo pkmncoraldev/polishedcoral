@@ -260,11 +260,11 @@ endr
 	ld hl, wPokegearFlags
 	bit 7, [hl]
 	jr z, .no_pokegear
-	ld a, 7 ; pokegear
+	ld a, 3 ; pokegear
 	call .AppendMenuList
 .no_pokegear
 
-	ld a, 3 ; status
+	ld a, 7 ; status
 	call .AppendMenuList
 
 	ld a, [wLinkMode]

@@ -404,7 +404,6 @@ INCLUDE "engine/menu.asm"
 INCLUDE "engine/mon_menu.asm"
 INCLUDE "engine/battle/menu.asm"
 INCLUDE "engine/buy_sell_toss.asm"
-INCLUDE "engine/trainer_card.asm"
 INCLUDE "engine/events/prof_oaks_pc.asm"
 INCLUDE "engine/decorations.asm"
 INCLUDE "data/trainers/dvs.asm"
@@ -4640,6 +4639,7 @@ INCLUDE "data/moves/animations.asm"
 SECTION "Coral Data 3", ROMX
 
 INCLUDE "engine/titlescreen_cutscene.asm"
+INCLUDE "engine/trainer_card.asm"
 
 DrawBattleHPBar:: ; 3750
 ; Draw an HP bar d tiles long at hl

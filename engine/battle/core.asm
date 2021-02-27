@@ -2553,7 +2553,7 @@ WinTrainerBattle: ; 3cfa4
 .AddMoneyToWallet: ; 3d08d
 	push bc
 	ld hl, wBattleReward + 2
-	ld de, wMoney + 2
+	ld de, wMomsMoney + 2
 	call AddBattleMoneyToAccount
 	pop bc
 	ret

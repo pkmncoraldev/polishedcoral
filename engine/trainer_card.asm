@@ -1,4 +1,4 @@
-TRAINERCARD_BORDERGFX_START EQU $f4
+TRAINERCARD_BORDERGFX_START EQU $75
 
 TrainerCard: ; 25105
 	ld a, [wVramState]
@@ -9,7 +9,12 @@ TrainerCard: ; 25105
 	ld a, [hl]
 	push af
 	set NO_TEXT_SCROLL, [hl]
+	
+.return
+	call TrainerCard_LoadGFX
+	
 	call .InitRAM
+	
 .loop
 	call UpdateTime
 	call JoyTextDelay
@@ -17,19 +22,47 @@ TrainerCard: ; 25105
 	bit 7, a
 	jr nz, .quit
 	ld a, [hJoyLast]
-	and B_BUTTON | A_BUTTON
+	cp SELECT
+	jr z, .phrase
+	and B_BUTTON
 	jr nz, .quit
 	call .RunJumptable
 	call DelayFrame
 	jr .loop
 
 .quit
+	ld de, SFX_READ_TEXT
+	call PlaySFX
+	farcall FadeOutPalettes
 	pop af
 	ld [wOptions1], a
 	pop af
 	ld [wVramState], a
 	ret
 
+.phrase
+	farcall FadeOutPalettes
+	ld b, $3 ; trendy phrase
+	ld de, wTrendyPhrase
+	farcall _NamingScreen2
+	ld hl, wTrendyPhrase
+	ld de, DefaultTrendyPhrase
+	call InitName
+	
+	ld hl, DefaultTrendyPhrase
+	ld de, wTrendyPhrase
+	ld c, PLAYER_NAME_LENGTH
+	call StringCmp
+	jr z, .skip_sfx
+	
+	ld de, SFX_TRANSACTION
+	call PlaySFX
+	call WaitSFX
+.skip_sfx
+	farcall FadeOutPalettes
+	jr .return
+; 0xc2b2
+	
 .InitRAM: ; 2513b (9:513b)
 	call ClearBGPalettes
 	call ClearSprites
@@ -39,18 +72,19 @@ TrainerCard: ; 25105
 	farcall GetCardPic
 
 	ld hl, CardBorderGFX
-	ld de, VTiles1 tile (TRAINERCARD_BORDERGFX_START - $80)
-	ld bc, 12 tiles
+	ld de, VTiles1 tile ($75 + $80)
+	ld bc, 8 tiles
 	ld a, BANK(CardBorderGFX)
 	call FarCopyBytes
-
-	ld hl, CardDividerGFX
-	ld de, VTiles2 tile $23
-	ld bc, (6 + 4) tiles ; CardDividerGFX + CardStatusGFX
-	ld a, BANK(CardDividerGFX) ; BANK(CardStatusGFX)
+	
+	ld hl, CardMiscGFX
+	ld de, VTiles1 tile ($fa - $80)
+	ld bc, 6 tiles
+	ld a, BANK(CardMiscGFX)
 	call FarCopyBytes
 
 	call TrainerCard_PrintBorder
+	call TrainerCard_PrintMedian
 	call TrainerCard_PrintTopHalfOfCard
 
 	call EnableLCD
@@ -75,8 +109,13 @@ TrainerCard: ; 25105
 	dw TrainerCard_Page1_Joypad
 	dw TrainerCard_Page2_LoadGFX
 	dw TrainerCard_Page2_Joypad
+	dw TrainerCard_Page3_LoadGFX
+	dw TrainerCard_Page3_Joypad
 	dw TrainerCard_Quit
 
+DefaultTrendyPhrase:
+	db "┐@@@@@@@@@@"
+	
 TrainerCard_IncrementJumptable: ; 251ab (9:51ab)
 	ld hl, wJumptableIndex
 	inc [hl]
@@ -92,19 +131,18 @@ TrainerCard_Page1_LoadGFX: ; 251b6 (9:51b6)
 	call TrainerCardSetup_ClearBottomHalf
 	call ApplyTilemapInVBlank
 
+	call TrainerCard_PrintMedian1
+
 	ld b, CGB_TRAINER_CARD
 	call GetCGBLayout
 	call SetPalettes
 	call ApplyTilemapInVBlank
 
-	ld de, CardStatusGFX
-	call TrainerCard_LoadHeaderGFX
-
-	call TrainerCard_Page1_PrintDexCaught_GameTime
+	call TrainerCard_Page1_PrintMoney
 	jp TrainerCard_IncrementJumptable
 
 TrainerCard_Page1_Joypad: ; 251d7 (9:51d7)
-	call TrainerCard_Page1_PrintGameTime
+;	call TrainerCard_Page1_PrintGameTime
 	ld hl, hJoyLast
 	ld a, [hl]
 	and D_RIGHT
@@ -112,74 +150,135 @@ TrainerCard_Page1_Joypad: ; 251d7 (9:51d7)
 	ret
 
 .pressed_right
+	ld de, SFX_SWITCH_POCKETS
+	call PlaySFX
 	ld a, $2
+	ld [wJumptableIndex], a
+	ret
+	
+TrainerCard_Page2_LoadGFX: ; 251b6 (9:51b6)
+	call ClearSprites
+	call TrainerCardSetup_ClearBottomHalf
+	call ApplyTilemapInVBlank
+
+	call TrainerCard_PrintMedian2
+
+	ld b, CGB_TRAINER_CARD
+	call GetCGBLayout
+	call SetPalettes
+	call ApplyTilemapInVBlank
+
+	call TrainerCard_Page2_PrintDexCaught_GameTime
+	jp TrainerCard_IncrementJumptable
+
+TrainerCard_Page2_Joypad: ; 251d7 (9:51d7)
+	call TrainerCard_Page2_PrintGameTime
+	ld hl, hJoyLast
+	ld a, [hl]
+	cp D_RIGHT
+	jr z, .d_right
+	cp D_LEFT
+	jr z, .d_left
+	ret
+
+.d_right
+	ld de, SFX_SWITCH_POCKETS
+	call PlaySFX
+	ld a, $4
+	ld [wJumptableIndex], a
+	ret
+	
+.d_left
+	ld de, SFX_SWITCH_POCKETS
+	call PlaySFX
+	xor a
 	ld [wJumptableIndex], a
 	ret
 	
 
 ; 251f4
 
-TrainerCard_Page2_LoadGFX: ; 251f4 (9:51f4)
+TrainerCard_Page3_LoadGFX: ; 251f4 (9:51f4)
 	call ClearSprites
 	call TrainerCardSetup_ClearBottomHalf
 	call ApplyTilemapInVBlank
+
+	call TrainerCard_PrintMedian3
 
 	ld b, CGB_TRAINER_CARD_2
 	call GetCGBLayout
 	call SetPalettes
 	call ApplyTilemapInVBlank
+	
+	call TrainerCard_Page3_3_InitObjectsAndStrings
+	jp TrainerCard_IncrementJumptable
 
-	ld de, CardBadgesGFX
+TrainerCard_Page3_Joypad: ; 25221 (9:5221)
+	ld hl, TrainerCard_OnwaBadgesOAM
+	call TrainerCard_Page3_3_AnimateBadges
+	ld hl, hJoyLast
+	ld a, [hl]
+	and D_LEFT
+	jr nz, .pressed_left
+	ret
+
+.pressed_left
+	ld de, SFX_SWITCH_POCKETS
+	call PlaySFX
+	ld a, $2
+	ld [wJumptableIndex], a
+	ret
+
+TrainerCard_LoadHeaderGFX:
+	ld hl, VTiles2 tile $23
+	lb bc, BANK(CardStatusGFX), 20
+	jp Request2bpp
+	
+TrainerCard_LoadGFX:
+	ld de, CardStatusGFX
 	call TrainerCard_LoadHeaderGFX
-
+	
 	ld de, LeaderGFX
-	ld hl, VTiles2 tile $2f
+	ld hl, VTiles2 tile $37
 	lb bc, BANK(LeaderGFX), $50
 	call Request2bpp
 
 	ld de, BadgeGFX
 	ld hl, VTiles0 tile $00
 	lb bc, BANK(BadgeGFX), $2c
-	call Request2bpp
-
-	call TrainerCard_Page2_3_InitObjectsAndStrings
-	jp TrainerCard_IncrementJumptable
-
-TrainerCard_Page2_Joypad: ; 25221 (9:5221)
-	ld hl, TrainerCard_OnwaBadgesOAM
-	call TrainerCard_Page2_3_AnimateBadges
-	ld hl, hJoyLast
-	ld a, [hl]
-	and D_LEFT
-	jr nz, .d_left
-	ret
-
-.d_left
-	xor a
-	ld [wJumptableIndex], a
-	ret
-
-TrainerCard_LoadHeaderGFX:
-	ld hl, VTiles2 tile $29
-	lb bc, BANK(CardStatusGFX), $4 ; BANK(CardBadgesGFX)
 	jp Request2bpp
 
 TrainerCard_PrintBorder: ; 253b0 (9:53b0)
+;	hlcoord 1, 1
+;	ld a, $fc
+;	ld [hli], a
+
 	hlcoord 0, 0
 
 	ld a, TRAINERCARD_BORDERGFX_START
 	ld [hli], a
-	ld e, SCREEN_WIDTH - 2
+	ld e, SCREEN_WIDTH - 3
 	inc a ; top border
 .loop1
 	ld [hli], a
 	dec e
 	jr nz, .loop1
+	
+	ld a, TRAINERCARD_BORDERGFX_START
+	ld [hli], a
+	inc a
 	inc a ; top-right corner
 	ld [hli], a
 
 	ld bc, SCREEN_WIDTH - 2
-	ld e, SCREEN_HEIGHT - 2
+	ld e, SCREEN_HEIGHT - 3
+	inc a ; left border
+	ld [hli], a
+	add hl, bc
+	ld a, TRAINERCARD_BORDERGFX_START
+	ld [hli], a
+	inc a
+	inc a
 	inc a ; left border
 .loop2
 	ld [hli], a
@@ -199,13 +298,103 @@ TrainerCard_PrintBorder: ; 253b0 (9:53b0)
 	ld [hli], a
 	dec e
 	jr nz, .loop3
-	inc a ; bottom-right corner
+;	inc a ; bottom-right corner
+	ld a, TRAINERCARD_BORDERGFX_START
 	ld [hl], a
+	
+	hlcoord 1, 16
+	ld a, $35
+	ld [hli], a
+	ret
 
-	hlcoord 1, 8
+TrainerCard_PrintMedian:
+	hlcoord $12, 9
+	ld a, $36
+	ld [hli], a
+
+	hlcoord 0, 7
+	ld a, TRAINERCARD_BORDERGFX_START
+	ld [hli], a
+	hlcoord $13, 9
+	ld [hli], a
+	hlcoord 0, $10
+	ld [hli], a
+	hlcoord 1, $11
+	ld [hli], a
+
+	hlcoord 0, 8
+	ld [hli], a
+	ld a, $76
+	ld [hli], a
+	ld a, $7c
+	ld [hli], a
+	ld [hli], a
+	
+	ld a, $32
+	ld [hli], a
+	inc a ; $33
+	ld [hli], a
+	ld [hli], a
+	inc a ; $34
+	ld [hli], a
+	ld a, $32
+	ld [hli], a
+	inc a ; $33
+	ld [hli], a
+	ld [hli], a
+	inc a ; $34
+	ld [hli], a
+	ld a, $32
+	ld [hli], a
+	inc a ; $33
+	ld [hli], a
+	ld [hli], a
+	inc a ; $34
+	ld [hli], a
+	
+	hlcoord 16, 8
+	ld a, $7c
+	ld [hli], a
+	ld [hli], a
+	ld a, $7b
+	ld [hli], a
+	ld a, TRAINERCARD_BORDERGFX_START
+	ld [hli], a
+	ret
+
+TrainerCard_PrintMedian1:
+	hlcoord 3, 8
 	ld a, $23
 	ld [hli], a
-	ld a, $29
+	inc a ; $24
+	ld [hli], a
+	inc a ; $25
+	ld [hli], a
+	inc a ; $26
+	ld [hli], a
+	inc a ; $27
+	ld [hli], a
+	ld a, $32
+	ld [hli], a
+	inc a ; $33
+	ld [hli], a
+	ld [hli], a
+	inc a ; $34
+	ld [hli], a
+	ret
+	
+TrainerCard_PrintMedian2:
+	hlcoord 3, 8
+	ld a, $32
+	ld [hli], a
+	inc a ; $33
+	ld [hli], a
+	ld [hli], a
+	inc a ; $34
+	ld [hli], a
+	ld a, $28
+	ld [hli], a
+	inc a ; $29
 	ld [hli], a
 	inc a ; $2a
 	ld [hli], a
@@ -213,27 +402,54 @@ TrainerCard_PrintBorder: ; 253b0 (9:53b0)
 	ld [hli], a
 	inc a ; $2c
 	ld [hli], a
-	ld a, $24
+	ld a, $32
 	ld [hli], a
-
-	ld e, 4
-.loop4
-	inc a ; $25
+	inc a ; $33
 	ld [hli], a
-	inc a ; $26
 	ld [hli], a
-	inc a ; $27
+	inc a ; $34
 	ld [hli], a
-	ld a, $25 - 1
-	dec e
-	jr nz, .loop4
+	ret
+	
+TrainerCard_PrintMedian3:
+	hlcoord 7, 8
+	ld a, $32
+	ld [hli], a
+	inc a ; $33
+	ld [hli], a
+	ld [hli], a
+	inc a ; $34
+	ld [hli], a
+	ld a, $2d
+	ld [hli], a
+	inc a ; $2e
+	ld [hli], a
+	inc a ; $2f
+	ld [hli], a
+	inc a ; $30
+	ld [hli], a
+	inc a ; $31
+	ld [hli], a
 	ret
 
 TrainerCard_PrintTopHalfOfCard: ; 25299 (9:5299)
+	ld hl, DefaultTrendyPhrase
+	ld de, wTrendyPhrase
+	ld c, PLAYER_NAME_LENGTH
+	call StringCmp
+	jr z, .defaultphrase
+
 	hlcoord 1, 2
 	ld de, .Top_Headings
 	call PlaceString
+	jr .cont
+	
+.defaultphrase
+	hlcoord 1, 2
+	ld de, .Top_Headings_Default
+	call PlaceString
 
+.cont
 	hlcoord 7, 2
 	ld de, wPlayerName
 	call PlaceString
@@ -248,40 +464,111 @@ TrainerCard_PrintTopHalfOfCard: ; 25299 (9:5299)
 	xor a
 	ld [hGraphicStartTile], a
 	predef PlaceGraphic
-
-	ld a, [wMoney]
-	cp $f
-	jr c, .not_seven_digits
-	ld a, [wMoney + 1]
-	cp $42
-	jr c, .not_seven_digits
-	ld a, [wMoney + 2]
-	cp $40
-	jr c, .not_seven_digits
-	hlcoord 7, 6
-	jr .print_money
-.not_seven_digits
-	hlcoord 6, 6
-.print_money
-	ld de, wMoney
-	lb bc, PRINTNUM_MONEY | 3, 7
-	jp PrintNum
+	
+	hlcoord 18, 1
+	ld a, $36
+	ld [hli], a
+	
+	hlcoord 1, 7
+	ld a, $35
+	ld [hli], a
+	ret
 
 ; 252ec (9:52ec)
 
-.Top_Headings: ; 252ec
-	db "┐NAME/<LNBRK>"
-	db "┐<ID>№.<LNBRK>"
-	db "│└└└└└└└└└└└┘<LNBRK>"
+.Top_Headings_Default: ; 252ec
+	db " NAME/<LNBRK>"
+	db " <ID>№.<LNBRK>"
+	db "└└└└└└└└└└└└┘<LNBRK>"
 	db "<LNBRK>"
-	db " MONEY@"
+	db " PRESS SELECT!"
+	db "<LNBRK>@"
+
+.Top_Headings: ; 252ec
+	db " NAME/<LNBRK>"
+	db " <ID>№.<LNBRK>"
+	db "└└└└└└└└└└└└┘<LNBRK>"
+	db "<LNBRK>"
+	db "┌─:<TRENDY>"
+	db "<LNBRK>@"
 
 TrainerCardSetup_ClearBottomHalf:
 	hlcoord 1, 10
-	lb bc, 7, 18
+	lb bc, 7, 17
+	call ClearBox
+	
+	hlcoord 1, 16
+	ld a, $35
+	ld [hli], a
+	
+	hlcoord 2, 16
+	lb bc, 1, 17
 	jp ClearBox
 
-TrainerCard_Page1_PrintDexCaught_GameTime: ; 2530a (9:530a)
+TrainerCard_Page1_PrintMoney:
+	call CombinePocketAndBank
+	
+	hlcoord 1, $10
+	ld a, $35
+	ld [hli], a
+
+	hlcoord 2, 10
+	ld de, .Money
+	call PlaceString
+
+	hlcoord $0a, $0a
+.print_money
+	ld de, wMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
+
+	hlcoord $0a, $0c
+.print_money2
+	ld de, wMomsMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
+	
+	hlcoord $0a, $0e
+.print_money3
+	ld de, wTotalMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	jp PrintNum
+	
+.Money:
+	db   "POCKET"
+	next "BANK"
+	next "TOTAL"
+	next "                ▶@"
+	
+CombinePocketAndBank:
+	ld hl, wMoney+2
+	ld de, wMomsMoney+2
+	ld bc, wTotalMoney+2
+
+	ld a, [de]
+	add [hl]
+	ld [bc], a
+	dec de
+	dec hl
+	dec bc
+
+	ld a, [de]
+	adc [hl]
+	ld [bc], a
+	dec de
+	dec hl
+	dec bc
+
+	ld a, [de]
+	adc [hl]
+	ld [bc], a
+	ret
+	
+TrainerCard_Page2_PrintDexCaught_GameTime: ; 2530a (9:530a)
+	hlcoord 1, $10
+	ld a, $35
+	ld [hli], a
+
 	hlcoord 2, 10
 	ld de, .Dex_PlayTime_BP
 	call PlaceString
@@ -299,7 +586,7 @@ TrainerCard_Page1_PrintDexCaught_GameTime: ; 2530a (9:530a)
 	lb bc, 1, 3
 	call PrintNum
 
-	call TrainerCard_Page1_PrintGameTime
+	call TrainerCard_Page2_PrintGameTime
 
 	ld a, [wStatusFlags] ; pokedex
 	bit 0, a
@@ -333,9 +620,9 @@ TrainerCard_Page1_PrintDexCaught_GameTime: ; 2530a (9:530a)
 	db   "#DEX"
 	next "PLAY TIME"
 	next "BATTLE PTS."
-	next "          BADGES▶@"
+	next "◀               ▶@"
 
-TrainerCard_Page1_PrintGameTime: ; 25415 (9:5415)
+TrainerCard_Page2_PrintGameTime: ; 25415 (9:5415)
 	hlcoord 11, 12
 	ld de, wGameTimeHours
 	lb bc, 2, 4
@@ -359,12 +646,20 @@ TrainerCard_Page1_PrintGameTime: ; 25415 (9:5415)
 	ld [hl], a
 	ret
 
-TrainerCard_Page2_3_InitObjectsAndStrings: ; 2536c (9:536c)
+TrainerCard_Page3_3_InitObjectsAndStrings: ; 2536c (9:536c)
+	hlcoord 2, 16
+	ld de, .Status
+	call PlaceString
+
+	hlcoord 1, $10
+	ld a, $35
+	ld [hli], a
+
 	hlcoord 2, 10
-	ld a, $2f
+	ld a, $35
 	ld c, 4
 .loop
-	call TrainerCard_Page2_3_PlaceLeadersFaces
+	call TrainerCard_Page3_3_PlaceLeadersFaces
 rept 4
 	inc hl
 endr
@@ -375,7 +670,7 @@ endr
 	ld a, $57
 	ld c, 4
 .loop2
-	call TrainerCard_Page2_3_PlaceLeadersFaces
+	call TrainerCard_Page3_3_PlaceLeadersFaces
 rept 4
 	inc hl
 endr
@@ -385,9 +680,12 @@ endr
 	xor a
 	ld [wcf64], a
 	ld hl, TrainerCard_OnwaBadgesOAM ;kanto
-	jp TrainerCard_Page2_3_OAMUpdate
+	jp TrainerCard_Page3_3_OAMUpdate
 
-TrainerCard_Page2_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
+.Status:
+	db "◀                @"
+	
+TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	hlcoord 2, 10
 	ld de, .Numbers1Tilemap
 	call TrainerCardSetup_PlaceTilemapString
@@ -401,10 +699,10 @@ TrainerCard_Page2_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	ld de, .Faces2Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	hlcoord 2, 14
-	ld de, .Faces3Tilemap
+	ld de, .Faces1Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	hlcoord 2, 15
-	ld de, .Faces4Tilemap
+	ld de, .Faces2Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	
 	ld a, [wMetGymLeaderFlags]
@@ -419,7 +717,7 @@ TrainerCard_Page2_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	bit 3, a
 	jp nz, .leader4
 	bit 2, a
-	jp nz, .leader3
+	jp nz, .wendy
 	bit 1, a
 	jp nz, .rodney
 	bit 0, a
@@ -466,7 +764,7 @@ TrainerCard_Page2_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	ld de, .Leader42Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	
-.leader3
+.wendy
 	hlcoord $b, $b
 	ld de, .Leader31Tilemap
 	call TrainerCardSetup_PlaceTilemapString
@@ -491,73 +789,67 @@ TrainerCard_Page2_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	call TrainerCardSetup_PlaceTilemapString
 	ret
 
-.Numbers1Tilemap: ; 253a2
-	db $2f, $7f, $7f, $7f, $36, $7f, $7f, $7f, $3d, $7f, $7f, $7f, $44, $7f, $7f, $7f, $ff
+.Numbers1Tilemap:
+	db $37, $7f, $7f, $7f, $3e, $7f, $7f, $7f, $45, $7f, $7f, $7f, $4c, $7f, $7f, $7f, $ff
 	
-.Numbers2Tilemap: ; 253a2
-	db $4b, $7f, $7f, $7f, $52, $7f, $7f, $7f, $59, $7f, $7f, $7f, $60, $7f, $7f, $7f, $ff
+.Numbers2Tilemap:
+	db $53, $7f, $7f, $7f, $5a, $7f, $7f, $7f, $61, $7f, $7f, $7f, $68, $7f, $7f, $7f, $ff
 	
-.Faces1Tilemap: ; 253a2
-	db $7f, $67, $68, $69, $7f, $67, $68, $69, $7f, $67, $68, $69, $7f, $67, $68, $69, $ff
+.Faces1Tilemap:
+	db $7f, $6f, $70, $71, $7f, $6f, $70, $71, $7f, $6f, $70, $71, $7f, $6f, $70, $71, $ff
 	
-.Faces2Tilemap: ; 253a2
-	db $7f, $6a, $6b, $6c, $7f, $6a, $6b, $6c, $7f, $6a, $6b, $6c, $7f, $6a, $6b, $6c, $ff
-	
-.Faces3Tilemap: ; 253a2
-	db $7f, $67, $68, $69, $7f, $67, $68, $69, $7f, $67, $68, $69, $7f, $67, $68, $69, $ff
-	
-.Faces4Tilemap: ; 253a2
-	db $7f, $6a, $6b, $6c, $7f, $6a, $6b, $6c, $7f, $6a, $6b, $6c, $7f, $6a, $6b, $6c, $ff
+.Faces2Tilemap:
+	db $7f, $72, $73, $74, $7f, $72, $73, $74, $7f, $72, $73, $74, $7f, $72, $73, $74, $ff
 	
 .Stanley1Tilemap:
-	db $30, $31, $32, $ff
+	db $38, $39, $3a, $ff
 	
 .Stanley2Tilemap:
-	db $33, $34, $35, $ff
+	db $3b, $3c, $3d, $ff
 	
 .Rodney1Tilemap:
-	db $37, $38, $39, $ff
+	db $3f, $40, $41, $ff
 	
 .Rodney2Tilemap:
-	db $3a, $3b, $3c, $ff
+	db $42, $43, $44, $ff
 	
 .Leader31Tilemap:
-	db $3e, $3f, $40, $ff
+	db $46, $47, $48, $ff
 	
 .Leader32Tilemap:
-	db $41, $42, $43, $ff
+	db $49, $4a, $4b, $ff
 	
 .Leader41Tilemap:
-	db $45, $46, $47, $ff
+	db $4d, $4e, $4f, $ff
 	
 .Leader42Tilemap:
-	db $48, $49, $4a, $ff
+	db $50, $51, $52, $ff
 	
 .Leader51Tilemap:
-	db $4c, $4d, $4e, $ff
+	db $54, $55, $56, $ff
 	
 .Leader52Tilemap:
-	db $4f, $50, $51, $ff
+	db $57, $58, $59, $ff
 	
 .Leader61Tilemap:
-	db $53, $54, $55, $ff
+	db $5b, $5c, $5d, $ff
 	
 .Leader62Tilemap:
-	db $56, $57, $58, $ff
+	db $5e, $5f, $60, $ff
 	
 .Leader71Tilemap:
-	db $5a, $5b, $5c, $ff
+	db $62, $63, $64, $ff
 	
 .Leader72Tilemap:
-	db $5d, $5e, $5f, $ff
+	db $65, $66, $67, $ff
 	
 .Leader81Tilemap:
-	db $61, $62, $63, $ff
+	db $69, $6a, $6b, $ff
 	
 .Leader82Tilemap:
-	db $64, $65, $66, $ff
+	db $6c, $6d, $6e, $ff
 
-TrainerCard_Page2_3_AnimateBadges: ; 25438 (9:5438)
+TrainerCard_Page3_3_AnimateBadges: ; 25438 (9:5438)
 	ld a, [hVBlankCounter]
 	and $7
 	ret nz
@@ -565,7 +857,7 @@ TrainerCard_Page2_3_AnimateBadges: ; 25438 (9:5438)
 	inc a
 	and $7
 	ld [wcf64], a
-TrainerCard_Page2_3_OAMUpdate: ; 25448 (9:5448)
+TrainerCard_Page3_3_OAMUpdate: ; 25448 (9:5448)
 ; copy flag array pointer
 	ld a, [hli]
 	ld e, a
@@ -738,7 +1030,7 @@ TrainerCard_OnwaBadgesOAM: ; 254c9
 CardBorderGFX:  INCBIN "gfx/trainer_card/border.2bpp"
 CardDividerGFX: INCBIN "gfx/trainer_card/divider.2bpp"
 CardStatusGFX:  INCBIN "gfx/trainer_card/status.2bpp" ; must come after CardDividerGFX
-CardBadgesGFX:  INCBIN "gfx/trainer_card/badges.2bpp"
+CardMiscGFX:	INCBIN "gfx/trainer_card/misc.2bpp"
 
 LeaderGFX:  INCBIN "gfx/trainer_card/johto_leaders.w40.2bpp"
 LeaderGFX2: INCBIN "gfx/trainer_card/kanto_leaders.w40.2bpp"

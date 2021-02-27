@@ -848,10 +848,10 @@ wVariableSprites:: ds $100 - SPRITE_VARS
 
 wEnteredMapFromContinue:: ds 1
 
-	ds 2
+;	ds 2
 
 wTimeOfDayPal:: ds 1
-	ds 4
+
 wTimeOfDayPalFlags:: ds 1
 wTimeOfDayPalset:: ds 1
 wCurTimeOfDay:: ds 1
@@ -881,8 +881,11 @@ wStatusFlags2::
 
 wMoney:: ds 3
 wMomsMoney:: ds 3
+wTotalMoney:: ds 3
 MoneyEnd::
 wMomSavingMoney:: ds 1
+
+ds 3
 
 wCoins:: ds 2
 

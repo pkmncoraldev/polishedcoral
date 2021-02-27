@@ -808,18 +808,6 @@ endr
 _CGB_TrainerCard:
 	call LoadFirstTwoTrainerCardPals
 
-	ld hl, BronzeTrainerCardPals
-	call LoadPalette_White_Col1_Col2_Black
-
-	ld hl, SilverTrainerCardPals
-	call LoadPalette_White_Col1_Col2_Black
-
-	ld hl, GoldTrainerCardPals
-	call LoadPalette_White_Col1_Col2_Black
-
-	ld hl, CrystalTrainerCardPals
-	call LoadPalette_White_Col1_Col2_Black
-
 	; Trainer stars
 	hlcoord 2, 16, wAttrMap
 	ld a, $2 ; bronze
@@ -836,7 +824,7 @@ _CGB_TrainerCard:
 
 _CGB_TrainerCard2: ; 9289
 	call LoadFirstTwoTrainerCardPals
-
+	
 	ld a, STANLEY
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
@@ -853,13 +841,24 @@ _CGB_TrainerCard2: ; 9289
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld a, JASMINE ; CHUCK
+	ld a, JASMINE
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld a, CLAIR ; PRYCE
+	ld a, [wMetGymLeaderFlags]
+	bit 7, a
+	jp nz, .all_uncovered
+	
+	ld hl, TrainerCardMonochromePals
+	ld de, wUnknBGPals palette $07
+	call LoadPalette_White_Col1_Col2_Black
+	jr .skip
+	
+.all_uncovered
+	ld a, CLAIR
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
+.skip
 
 	; Badges
 	ld hl, JohtoBadgePalettes
@@ -868,54 +867,84 @@ _CGB_TrainerCard2: ; 9289
 	ld a, $5
 	call FarCopyWRAM
 
-	; Stanley
-	hlcoord 3, 10, wAttrMap
-	lb bc, 3, 3
-	ld a, $2
+	hlcoord 3, 11, wAttrMap
+	lb bc, 2, 15
+	ld a, $7
 	call FillBoxCGB
-
-	; Rodney
-	hlcoord 7, 10, wAttrMap
-	lb bc, 3, 3
-	ld a, $3
+	
+	hlcoord 3, 14, wAttrMap
+	lb bc, 2, 15
+	ld a, $7
 	call FillBoxCGB
-
-	; Wendy
-	hlcoord 11, 10, wAttrMap
+	
+	ld a, [wOnwaBadges]
+	bit 7, a
+	jr nz, .leader8
+	bit 6, a
+	jr nz, .leader7
+	bit 5, a
+	jr nz, .leader6
+	bit 4, a
+	jr nz, .leader5
+	bit 3, a
+	jr nz, .leader4
+	bit 2, a
+	jr nz, .wendy
+	bit 1, a
+	jr nz, .rodney
+	bit 0, a
+	jr nz, .stanley
+	jr .none
+	
+.leader8
+	hlcoord 15, 14, wAttrMap
 	lb bc, 3, 3
-	ld a, $4
+	ld a, $7
 	call FillBoxCGB
-
-	; Morty
-	hlcoord 15, 10, wAttrMap
+	
+.leader7
+	hlcoord 11, 14, wAttrMap
+	lb bc, 3, 3
+	ld a, $7
+	call FillBoxCGB
+	
+.leader6
+	hlcoord 7, 14, wAttrMap
+	lb bc, 3, 3
+	ld a, $6
+	call FillBoxCGB
+	
+.leader5
+	hlcoord 3, 14, wAttrMap
+	lb bc, 3, 3
+	ld a, $6
+	call FillBoxCGB
+	
+.leader4
+	hlcoord 15, 11, wAttrMap
 	lb bc, 3, 3
 	ld a, $5
 	call FillBoxCGB
-
-	; Chuck
-	hlcoord 3, 13, wAttrMap
+	
+.wendy
+	hlcoord 11, 11, wAttrMap
 	lb bc, 3, 3
-	ld a, $6
+	ld a, $4
+	call FillBoxCGB
+	
+.rodney
+	hlcoord 7, 11, wAttrMap
+	lb bc, 3, 3
+	ld a, $3
+	call FillBoxCGB
+	
+.stanley
+	hlcoord 3, 11, wAttrMap
+	lb bc, 2, 3
+	ld a, $2
 	call FillBoxCGB
 
-	; Jasmine
-	hlcoord 7, 13, wAttrMap
-	lb bc, 3, 3
-	ld a, $6
-	call FillBoxCGB
-
-	; Pryce
-	hlcoord 11, 13, wAttrMap
-	lb bc, 3, 3
-	ld a, $7
-	call FillBoxCGB
-
-	; Clair
-	hlcoord 15, 13, wAttrMap
-	lb bc, 3, 3
-	ld a, $7
-	call FillBoxCGB
-
+.none
 	jp _CGB_FinishLayout
 ; 9373
 
@@ -926,61 +955,87 @@ _CGB_TrainerCard3:
 
 LoadFirstTwoTrainerCardPals:
 	; trainer card
-	ld c, VAR_TRAINER_STARS
-	farcall _GetVarAction
-	ld a, [wStringBuffer2]
-	ld bc, TrainerCardPals
-	ld l, a
-	ld h, 0
-	add hl, hl
-	add hl, hl
-	add hl, bc
-	ld de, wUnknBGPals
-	call LoadPalette_White_Col1_Col2_Black
+;	ld c, VAR_TRAINER_STARS
+;	farcall _GetVarAction
+;	ld a, [wStringBuffer2]
+;	ld bc, TrainerCardPals
+;	ld l, a
+;	ld h, 0
+;	add hl, hl
+;	add hl, hl
+;	add hl, bc
+
+;	ld hl, TrainerCardPals
+;	ld de, wUnknBGPals
+;	call LoadPalette_White_Col1_Col2_Black
 
 ; player sprite
 	ld a, [wPlayerGender]
 	cp PIPPI
-	jr z, .pippi
+	jp z, .pippi
 	ld a, [wPlayerPalette]
 	cp 0
 	jp nz, .cont1
+	ld hl, TrainerCardRedPals
+	ld de, wUnknBGPals
+	call LoadPalette_White_Col1_Col2_Black
 	ld hl, PlayerPalette
 	jp .ok
 .cont1
 	ld a, [wPlayerPalette]
 	cp 1
 	jp nz, .cont2
+	ld hl, TrainerCardBluePals
+	ld de, wUnknBGPals
+	call LoadPalette_White_Col1_Col2_Black
 	ld hl, PlayerPalette2
 	jp .ok
 .cont2
 	ld a, [wPlayerPalette]
 	cp 2
 	jp nz, .cont3
+	ld hl, TrainerCardGreenPals
+	ld de, wUnknBGPals
+	call LoadPalette_White_Col1_Col2_Black
 	ld hl, PlayerPalette3
 	jp .ok
 .cont3
 	ld a, [wPlayerPalette]
 	cp 3
 	jp nz, .cont4
+	ld hl, TrainerCardBrownPals
+	ld de, wUnknBGPals
+	call LoadPalette_White_Col1_Col2_Black
 	ld hl, PlayerPalette4
 	jp .ok
 .cont4
 	ld a, [wPlayerPalette]
 	cp 4
 	jp nz, .cont5
+	ld hl, TrainerCardPurplePals
+	ld de, wUnknBGPals
+	call LoadPalette_White_Col1_Col2_Black
 	ld hl, PlayerPalette5
 	jp .ok
 .cont5
 	ld a, [wPlayerPalette]
 	cp 5
 	jp nz, .cont6
+	ld hl, TrainerCardTealPals
+	ld de, wUnknBGPals
+	call LoadPalette_White_Col1_Col2_Black
 	ld hl, PlayerPalette6
 	jp .ok
 .cont6
+	ld hl, TrainerCardPinkPals
+	ld de, wUnknBGPals
+	call LoadPalette_White_Col1_Col2_Black
 	ld hl, PlayerPalette7
 	jp .ok
 .pippi
+	ld hl, TrainerCardPippiPals
+	ld de, wUnknBGPals
+	call LoadPalette_White_Col1_Col2_Black
 	ld hl, ClefairyPalette
 .ok
 	call LoadPalette_White_Col1_Col2_Black
@@ -997,6 +1052,11 @@ LoadFirstTwoTrainerCardPals:
 	lb bc, 7, 5
 	ld a, $1
 	call FillBoxCGB
+	
+	hlcoord $12, 1, wAttrMap
+	ld bc, 1
+	xor a
+	call ByteFill
 
 	pop de
 	ret

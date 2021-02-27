@@ -59,6 +59,7 @@ StdScripts::
 	dba TreeGrottoScript
 	dba CaveGrottoScript
 	dba IceBlockScript
+	dba AtmScript
 
 PokeCenterNurseScript:
 	opentext
@@ -172,6 +173,14 @@ ResetPalsAfterNurse:
 
 IceBlockScript:
 	farjumptext IceBlockText
+	
+AtmScript:
+	checkcode VAR_FACING
+	ifnotequal UP, WrongSideScript
+	opentext
+;	special PlaceMoneyTopRight
+	special Special_BankOfMom
+	endtext
 	
 DifficultBookshelfScript:
 	farjumptext DifficultBookshelfText
@@ -535,6 +544,7 @@ InitializeEventsScript:
 	setevent EVENT_RED_ROOM_STEAM_3
 	setevent EVENT_SNES
 	setevent EVENT_ALWAYS_SET
+	setflag ENGINE_PHONE_CARD
 	setflag ENGINE_PUNKS_IN_STARGLOW
 	setflag ENGINE_PUNKS_ON_SUNBEAM
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT

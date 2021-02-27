@@ -1250,66 +1250,56 @@ UnknownText_0x1bd868::
 	prompt
 
 UnknownText_0x1bd88e::
-	text "Be careful."
-
-	para "#mon are your"
-	line "friends. You need"
-	cont "to work as a team."
-
-	para "Now, go on!"
+	text "Transaction"
+	line "cancelled!"
 	done
 
 UnknownText_0x1bd8da::
-	text "Hi! Welcome home!"
-	line "You're trying very"
-	cont "hard, I see."
-
-	para "I've kept your"
-	line "room tidy."
-
-	para "Or is this about"
-	line "your money?"
+	text "<PLAYER> inserted"
+	line "the ATM CARD."
 	done
 
 UnknownText_0x1bd942::
-	text "What do you want"
+	text "Welcome!"
+	
+	para "What do you want"
 	line "to do?"
 	done
 
 UnknownText_0x1bd95b::
-	text "How much do you"
-	line "want to save?"
+	text "Deposit how"
+	line "much?"
 	done
 
 UnknownText_0x1bd97a::
-	text "How much do you"
-	line "want to take?"
+	text "Withdraw how"
+	line "much?"
 	done
 
 UnknownText_0x1bd999::
-	text "Do you want to"
-	line "save some money?"
+	text "What do you want"
+	line "to do?"
 	done
 
 UnknownText_0x1bd9ba::
 	text "You haven't saved"
 	line "that much."
-	prompt
+	done
 
 UnknownText_0x1bd9d7::
 	text "You can't take"
 	line "that much."
-	prompt
+	done
 
 UnknownText_0x1bd9f1::
 	text "You don't have"
 	line "that much."
-	prompt
+	done
 
 UnknownText_0x1bda0b::
 	text "You can't save"
 	line "that much."
-	prompt
+	done
 
 UnknownText_0x1bda25::
 	text "OK, I'll save your"
@@ -1325,13 +1315,12 @@ UnknownText_0x1bda5b::
 	done
 
 UnknownText_0x1bda7e::
-	text "<PLAYER>, don't"
-	line "give up!"
+	text "Transaction"
+	line "complete!"
 	done
 
 UnknownText_0x1bda90::
-	text "Just do what"
-	line "you can."
+	text "Have a nice day!"
 	done
 
 UnknownText_0x1bdaa9::

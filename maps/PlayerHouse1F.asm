@@ -78,9 +78,6 @@ SunsetMomStopsYou:
 	end
 
 SunsetMomScript:
-	setevent EVENT_N64
-	clearevent EVENT_SNES
-	end
 	checkevent EVENT_CAN_CALL_MOM_ABOUT_ISLAND
 	iftrue SunsetMomRetellsYouAboutStrand
 	checkevent EVENT_MOM_SPEECH_LOOP

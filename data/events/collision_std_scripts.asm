@@ -18,4 +18,5 @@ TileCollisionStdScripts:
 	dbw COLL_STOVE,           stove
 	dbw COLL_INCENSE,         incenseburner
 	dbw COLL_ELEVATOR_BUTTON, elevatorbutton
+	dbw COLL_ATM,			  atm
 	db -1 ; end

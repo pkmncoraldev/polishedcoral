@@ -60,3 +60,33 @@ Sfx_Grind_branch_2: ; f225a
 	noise __, 11, $f3, $35
 ;	noise __, 15, $f6, $45
 	loopchannel 0, Sfx_Grind_branch_2
+	
+Sfx_Scream: ; f0aac
+	musicheader 3, 5, Sfx_Scream_Ch5
+	musicheader 1, 6, Sfx_Scream_Ch6
+	musicheader 1, 8, Sfx_Scream_Ch8
+	
+Sfx_Scream_Ch5: ; f221a
+Sfx_Scream_branch_f221a: ; f221a
+	dutycycle $0
+	sound __,  1, $f1, $07c0
+	sound __,  1, $f1, $0700
+	loopchannel 36, Sfx_Scream_branch_f221a
+	endchannel
+; f2229
+
+Sfx_Scream_Ch6: ; f2229
+Sfx_Scream_branch_f2229: ; f2229
+	sound_duty 3, 0, 3, 2
+	sound __,  1, $e1, $07c1
+	sound __,  1, $e1, $0701
+	loopchannel 36, Sfx_Scream_branch_f2229
+	endchannel
+; f2238
+
+Sfx_Scream_Ch8: ; f2238
+Sfx_Scream_branch_f2238: ; f2238
+	noise __,  2, $d1, $49
+	noise __,  2, $d1, $29
+	loopchannel 18, Sfx_Scream_branch_f2238
+	endchannel

@@ -220,3 +220,4 @@ SFX:
 	dba Sfx_SnowstormIntro
 	dba Sfx_Snowstorm
 	dba Sfx_Grind
+	dba Sfx_Scream

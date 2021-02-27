@@ -3,7 +3,8 @@ SpookhouseHallway3_MapScriptHeader:
 	scene_script SpookhouseHallway3Trigger0
 	scene_script SpookhouseHallway3Trigger1
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, SpookhouseHallway3Callback
 
 	db 9 ; warp events
 	warp_def 3, 41, 7, SPOOKHOUSE_LIVING_ROOM
@@ -12,7 +13,7 @@ SpookhouseHallway3_MapScriptHeader:
 	warp_def  2,  0, 10, SPOOKHOUSE_LIVING_ROOM
 	warp_def 1, 37, 1, SPOOKHOUSE_LIVING_ROOM
 	warp_def 1, 29, 1, SPOOKHOUSE_LIVING_ROOM
-	warp_def 1, 21, 1, SPOOKHOUSE_TV_ROOM
+	warp_def 1, 21, 255, SPOOKHOUSE_TV_ROOM
 	warp_def 1, 13, 1, SPOOKHOUSE_LIVING_ROOM
 	warp_def 1, 5, 1, SPOOKHOUSE_LIVING_ROOM
 
@@ -43,6 +44,15 @@ SpookhouseHallway3Trigger0:
 SpookhouseHallway3Trigger1:
 	end
 
+SpookhouseHallway3Callback:
+	checkevent EVENT_SPOOKHOUSE_BEATEN
+	iftrue .beaten
+	warpmod 1, SPOOKHOUSE_TV_ROOM
+	return
+.beaten
+	warpmod 1, SPOOKHOUSE_LIVING_ROOM
+	return
+	
 SpookHouseHallwayGhost3:
 	special Special_StopRunning
 	applymovement SPOOKHOUSE_HALLWAY3_NPC1, Movement_SpookHouseGhost4

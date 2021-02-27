@@ -84,49 +84,6 @@ SpookHouseTVScaryDoorCont:
 SpookHouseNPC3:
 	opentext
 	writetext SpookHouseGhostText9
-	pause 8
-	playsound SFX_READ_TEXT
-	farwritetext StdBlankText
-	pause 6
-	writetext SpookHouseGhostText10
-	playsound SFX_READ_TEXT
-	farwritetext StdBlankText
-	pause 6
-	writetext SpookHouseGhostText10
-	playsound SFX_READ_TEXT
-	farwritetext StdBlankText
-	pause 4
-	writetext SpookHouseGhostText10
-	playsound SFX_READ_TEXT
-	farwritetext StdBlankText
-	pause 4
-	writetext SpookHouseGhostText10
-	playsound SFX_READ_TEXT
-	farwritetext StdBlankText
-	pause 4
-	writetext SpookHouseGhostText10
-	playsound SFX_READ_TEXT
-	farwritetext StdBlankText
-	pause 2
-	writetext SpookHouseGhostText10
-	playsound SFX_READ_TEXT
-	farwritetext StdBlankText
-	pause 2
-	writetext SpookHouseGhostText10
-	playsound SFX_READ_TEXT
-	farwritetext StdBlankText
-	pause 2
-	writetext SpookHouseGhostText10
-	playsound SFX_READ_TEXT
-	farwritetext StdBlankText
-	writetext SpookHouseGhostText10
-	playsound SFX_READ_TEXT
-	farwritetext StdBlankText
-	writetext SpookHouseGhostText10
-	playsound SFX_READ_TEXT
-	writetext SpookHouseGhostText10
-	playsound SFX_READ_TEXT
-	farwritetext StdBlankText
 	closetext
 	disappear SPOOKHOUSE_TVROOM_NPC5
 	applyonemovement PLAYER, hide_person
@@ -136,8 +93,24 @@ SpookHouseNPC3:
 .return
 	reloadmappart
 	closetext
-	playsound SFX_UNKNOWN_5F
+	playsound SFX_SCREAM
 	waitsfx
+	loadwildmon SPIRITOMB, 30
+	startbattle
+	changemap SpookhouseTVRoom_BlockData
+	reloadmapafterbattle
+	applyonemovement PLAYER, show_person
+	opentext
+	writetext SpookHouseGhostText2
+	playsound SFX_EMBER
+	earthquake 60
+	waitsfx
+	closetext
+	special FadeOutPalettes
+	pause 15
+	setevent EVENT_SPOOKHOUSE_GHOSTBEGONE
+	setevent EVENT_SPOOKHOUSE_BEATEN
+	warp OLD_MANOR_EXTERIOR, 14, 10
 	end
 .girlleft
 	changemap SpookhouseTVRoom4_BlockData
@@ -285,26 +258,38 @@ SpookHouseGhostText8:
 	done
 	
 SpookHouseGhostText9:
-	text "You should have"
+	text "This place isn't"
+	line "for people like"
+	cont "you…"
+	
+	para "MOMMY and DADDY"
+	line "used to be like"
+	cont "you…"
+	
+	para "But now, they're"
+	line "like me…"
+	
+	para "You should have"
 	line "left while you"
 	cont "could…"
 	
 	para "But now…"
 	
 	para "We can play for-"
-	line "ever and ever"
+	line "ever and ever…"
 	
-	para "and ever and ever"
+	para "and ever and ever…"
 	
-	para "and ever and ever"
-	
-	para "and ever and ever"
-	
-	para "and ever and ever"
+	para "and ever and"
 	done
 	
 SpookHouseGhostText10:
 	text "and ever and ever"
+	line "and ever and ever"
+	done
+	
+SpookHouseGhostText11:
+	text "and ever and"
 	done
 	
 SpookHouseTVTextOn:
@@ -321,5 +306,5 @@ SpookHouseScaryDoorText:
 	para "It won't budge"
 	line "at all…"
 	
-	para "Maybe you could"
+	para "Maybe you should"
 	done

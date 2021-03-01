@@ -9,16 +9,23 @@ LusterMallCoffeeShop_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 4 ; bg events
+	bg_event  3,  1, SIGNPOST_READ, LusterMallCoffeeShop_Koffing
+	bg_event  4,  1, SIGNPOST_READ, LusterMallCoffeeShop_Koffing
+	bg_event  5,  1, SIGNPOST_READ, LusterMallCoffeeShop_Koffing
+	bg_event  7,  1, SIGNPOST_READ, LusterMallCoffeeShop_Picture
 
-	db 6 ; object events
+	db 9 ; object events
 	object_event  4,  1, SPRITE_N64, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	object_event  3,  1, SPRITE_KOFFING_BEAN, SPRITEMOVEDATA_TOP_HALF, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	object_event  5,  1, SPRITE_KOFFING_BEAN, SPRITEMOVEDATA_BOTTOM_HALF, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	object_event 1, 3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STANDARD, MART_LUSTER_MALL_COFFEE, -1
 	person_event SPRITE_CLERK,  4,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallCoffeeShop_Cook, -1
 	person_event SPRITE_GENTLEMAN,  4,  3, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMallCoffeeShop_NPC1, -1
-	
+	person_event SPRITE_ARTIST,  5,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterMallCoffeeShop_NPC2, -1
+	person_event SPRITE_POKEFAN_M,  6,  2, SPRITEMOVEDATA_STANDING_UP, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMallCoffeeShop_NPC3, -1
+	person_event SPRITE_BOOK_PAPER_POKEDEX,  5,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LusterMallCoffeeShop_Paper, -1
+
 	const_def 1 ; object constants
 	const LUSTER_MALL_COFFEE_SHOP_SIGN_1
 	const LUSTER_MALL_COFFEE_SHOP_SIGN_2
@@ -26,6 +33,9 @@ LusterMallCoffeeShop_MapScriptHeader:
 	const LUSTER_MALL_COFFEE_SHOP_CLERK
 	const LUSTER_MALL_COFFEE_SHOP_COOK
 	const LUSTER_MALL_COFFEE_SHOP_NPC1
+	const LUSTER_MALL_COFFEE_SHOP_NPC2
+	const LUSTER_MALL_COFFEE_SHOP_NPC3
+	const LUSTER_MALL_COFFEE_SHOP_PAPER
 	
 	
 LusterMallCoffeeShop_Clerk:
@@ -327,7 +337,7 @@ LusterMallCoffeeShop_CookText10:
 	done
 	
 LusterMallCoffeeShop_CookTextEnd:
-	text "Come again!"
+	text "Please come again!"
 	done
 	
 LusterMallCoffeeShop_CookTextPickAgain:
@@ -389,6 +399,61 @@ LusterMallCoffeeShop_NPC1:
 	spriteface LUSTER_MALL_COFFEE_SHOP_NPC1, LEFT
 	end
 	
+LusterMallCoffeeShop_NPC2:
+	faceplayer
+	opentext
+	writetext LusterMallCoffeeShop_NPC2Text1
+	waitbutton
+	closetext
+	spriteface LUSTER_MALL_COFFEE_SHOP_NPC2, RIGHT
+	end
+	
+LusterMallCoffeeShop_NPC3:
+	faceplayer
+	opentext
+	writetext LusterMallCoffeeShop_NPC3Text
+	waitbutton
+	closetext
+	spriteface LUSTER_MALL_COFFEE_SHOP_NPC3, UP
+	end
+	
+LusterMallCoffeeShop_Paper:
+	opentext
+	writetext LusterMallCoffeeShop_PaperText
+	waitbutton
+	closetext
+	pause 5
+	playsound SFX_PAY_DAY
+	checkcode VAR_FACING
+	if_equal UP, .YouAreFacingUp
+	spriteface LUSTER_MALL_COFFEE_SHOP_NPC2, UP
+	jump .cont
+.YouAreFacingUp
+	spriteface LUSTER_MALL_COFFEE_SHOP_NPC2, DOWN
+.cont
+	showemote EMOTE_SHOCK, LUSTER_MALL_COFFEE_SHOP_NPC2, 15
+	opentext
+	writetext LusterMallCoffeeShop_NPC2Text2
+	waitbutton
+	closetext
+	spriteface LUSTER_MALL_COFFEE_SHOP_NPC2, RIGHT
+	applyonemovement LUSTER_MALL_COFFEE_SHOP_NPC2, turn_step_right
+	applymovement LUSTER_MALL_COFFEE_SHOP_PAPER, Movement_LusterMallCoffeeShopPaper
+	disappear LUSTER_MALL_COFFEE_SHOP_PAPER
+	end
+	
+LusterMallCoffeeShop_Koffing:
+	jumptext LusterMallCoffeeShop_KoffingText
+	
+LusterMallCoffeeShop_Picture:
+	jumptext LusterMallCoffeeShop_PictureText
+	
+Movement_LusterMallCoffeeShopPaper:
+	fix_facing
+	fast_slide_step_left
+	remove_fixed_facing
+	step_end
+	
 LusterMallCoffeeShop_CookText:
 	text "IN PROGRESS"
 	done
@@ -411,6 +476,8 @@ LusterMallCoffeeShop_NPC1Text1:
 	line "kind soul would"
 	cont "bring me some"
 	cont "BLOSSOM TEA…"
+	
+	para "SIGH…"
 	done
 	
 LusterMallCoffeeShop_NPC1Text2:
@@ -476,6 +543,63 @@ LusterMallCoffeeShop_NPC1TextGiveTea:
 	text "<PLAYER> handed"
 	line "over the"
 	cont "BLOSSOM TEA."
+	done
+	
+LusterMallCoffeeShop_NPC2Text1:
+	text "I come here to"
+	line "write my novel."
+	
+	para "I like to write in"
+	line "public so every-"
+	cont "one can see."
+	
+	para "…"
+	
+	para "Are you paying"
+	line "attention to me?"
+	done
+	
+LusterMallCoffeeShop_NPC2Text2:
+	text "Hey!"
+	
+	para "It's not done!"
+	
+	para "No peeking!"
+	done
+	
+LusterMallCoffeeShop_NPC3Text:
+	text "I come here to"
+	line "drink all my"
+	cont "sorrows away…"
+	
+	para "What's that?"
+	
+	para "I know coffee won't"
+	line "make me forget."
+	
+	para "I just like the"
+	line "taste!"
+	done
+	
+LusterMallCoffeeShop_PaperText:
+	text "It's a mostly"
+	line "blank sheet of"
+	cont "paper."
+	done
+	
+LusterMallCoffeeShop_KoffingText:
+	text "KOFFEE the KOFFING"
+	line "says:"
+	
+	para "Drink! Drink!"
+	line "Drink!"
+	done
+	
+LusterMallCoffeeShop_PictureText:
+	text "Some tasteful,"
+	line "coffee-themed art."
+	
+	para "How quaint."
 	done
 	
 LusterMallCoffeeShop_Cooking:

@@ -1293,10 +1293,20 @@ Script_showemote:
 	jr z, .ok
 	ld [hLastTalked], a
 .ok
+	ld a, [wPermission]
+	cp INDOOR
+	jp z, .indoor
 	call GetScriptByte
 	ld [wScriptDelay], a
 	ld b, BANK(ShowEmoteScript)
 	ld de, ShowEmoteScript
+	jp ScriptCall
+	
+.indoor
+	call GetScriptByte
+	ld [wScriptDelay], a
+	ld b, BANK(ShowEmoteIndoorScript)
+	ld de, ShowEmoteIndoorScript
 	jp ScriptCall
 
 ShowEmoteScript:
@@ -1317,6 +1327,14 @@ ShowEmoteScript:
 	hide_emote
 	step_sleep_1
 	step_end
+	
+ShowEmoteIndoorScript:
+	callasm MakePalGray
+	loademote EMOTE_MEM
+	applymovement2 ShowEmoteScript.Show
+	pause 0
+	applymovement2 ShowEmoteScript.Hide
+	end
 
 CheckFacingObjectCutscene::
 	callba GetFacingObject
@@ -1340,10 +1358,10 @@ MakePalGray::
 	ret
 	
 .palettesgray ; 12451
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 13, 13, 13
-	RGB 00, 00, 00
+	RGB 30, 28, 26
+	RGB 30, 28, 26
+	RGB 22, 10, 22
+	RGB 07, 07, 07
 
 CheckMakePal::
 	ld a, [wTileset]

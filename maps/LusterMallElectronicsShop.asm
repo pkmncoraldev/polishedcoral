@@ -84,7 +84,7 @@ LusterMallElectronicsShop_NPC1Text:
 	line "N64,"
 	
 	para "so I'm stuck with"
-	cont "my old SNES…"
+	line "my old SNES…"
 	done
 	
 LusterMallElectronicsShop_NPC2Text:
@@ -105,6 +105,9 @@ LusterMallElectronicsShop_NPC3Text:
 	
 LusterMallElectronicsShop_PosterText:
 	text "NEW!"
+	
+	para "Teach your #MON"
+	line "new moves!"
 	
 	para "TMs now on sale!"
 	done

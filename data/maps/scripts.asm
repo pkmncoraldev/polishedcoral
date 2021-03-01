@@ -199,6 +199,10 @@ INCLUDE "maps/LusterApartment5_1F.asm"
 INCLUDE "maps/LusterApartment5_2F.asm"
 INCLUDE "maps/LusterApartment6_1F.asm"
 INCLUDE "maps/LusterApartment6_2F.asm"
+INCLUDE "maps/Park.asm"
+INCLUDE "maps/Skatepark.asm"
+
+SECTION "Luster City Scripts2", ROMX
 INCLUDE "maps/LusterMall.asm"
 INCLUDE "maps/LusterMallElectronicsShop.asm"
 INCLUDE "maps/LusterMallCoffeeShop.asm"
@@ -208,8 +212,6 @@ INCLUDE "maps/LusterMallHerbShop.asm"
 INCLUDE "maps/LusterMallStoneShop.asm"
 INCLUDE "maps/LusterMallBallShop.asm"
 INCLUDE "maps/LusterMallClothesShop.asm"
-INCLUDE "maps/Park.asm"
-INCLUDE "maps/Skatepark.asm"
 
 SECTION "Train Scripts", ROMX
 

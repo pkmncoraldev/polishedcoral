@@ -39,7 +39,7 @@ LusterMall_MapScriptHeader:
 	coord_event 22, 17, 0, LusterMallEscalatorClear
 	coord_event 21, 17, 0, LusterMallEscalatorClear
 
-	db 11 ; bg events
+	db 12 ; bg events
 	signpost 26, 16, SIGNPOST_JUMPTEXT, LusterMallEscalatorSignText
 	signpost  8, 16, SIGNPOST_JUMPTEXT, LusterMallEscalatorSignText
 	signpost 16, 15, SIGNPOST_READ, LusterMallPokeCenterSign
@@ -51,6 +51,7 @@ LusterMall_MapScriptHeader:
 	signpost 16,  7, SIGNPOST_JUMPTEXT, LusterMallStoneSignText
 	signpost 16, 26, SIGNPOST_JUMPTEXT, LusterMallBallSignText
 	signpost 16, 32, SIGNPOST_JUMPTEXT, LusterMallClothesSignText
+	signpost 11, 15, SIGNPOST_JUMPTEXT, LusterMall_PaperText
 	
 
 	db 18 ; object events
@@ -72,6 +73,7 @@ LusterMall_MapScriptHeader:
 	person_event SPRITE_CUTE_GIRL, 19,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMall_NPC13, -1
 	person_event SPRITE_POKEFAN_M, 25, 12, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterMall_NPC14, -1
 	person_event SPRITE_YOUNGSTER, 17, 18, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC15, -1
+
 
 	const_def 1 ; object constants
 	const LUSTERMALLCOP
@@ -595,6 +597,9 @@ LusterMall_NPC14:
 LusterMall_NPC15:
 	jumptextfaceplayer LusterMall_NPC15Text
 	
+LusterMall_Paper:
+	jumptext LusterMall_PaperText
+	
 LusterMall_Cop:
 	jumptextfaceplayer LusterMall_CopText
 	
@@ -607,8 +612,6 @@ LusterMall_NPC1Text:
 	para "Visiting it makes"
 	line "me feel like a"
 	cont "little girl again!"
-	
-	para "Ho ho ho!"
 	done
 	
 LusterMall_NPC2Text:
@@ -701,8 +704,8 @@ LusterMall_NPC9Text:
 LusterMall_NPC10Text:
 	text "Ok, so I am here,"
 	
-	para "and the MAGNETON"
-	line "BROS. SHOP is…"
+	para "and the ANTIQUE"
+	line "SHOP is…"
 	
 	para "Oh…"
 	
@@ -758,7 +761,7 @@ LusterMall_NPC13Text2:
 LusterMall_NPC14Text:
 	text "Sometimes I like"
 	line "to just sit here"
-	cont "and people watch."
+	cont "and people-watch."
 	
 	para "…"
 	
@@ -773,6 +776,11 @@ LusterMall_NPC15Text:
 	para "there's never a"
 	line "line at the"
 	cont "#MON CENTER."
+	done
+	
+LusterMall_PaperText:
+	text "An issue of “THE"
+	line "LUSTER TIMES”."
 	done
 	
 LusterMall_CopText:

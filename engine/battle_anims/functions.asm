@@ -93,6 +93,7 @@ DoBattleAnimFrame: ; ccfbe
 	dw BattleAnimFunction_4D ; 4d
 	dw BattleAnimFunction_4E ; 4e
 	dw BattleAnimFunction_4F ; 4f
+	dw BattleAnimFunction_57
 
 BattleAnimFunction_Null: ; cd06e (33:506e)
 	call BattleAnim_AnonJumptable
@@ -3975,3 +3976,52 @@ BattleAnim_IncAnonJumptableIndex: ; ce72c (33:672c)
 	add hl, bc
 	inc [hl]
 	ret
+	
+BattleAnimFunction_57:
+    call BattleAnim_AnonJumptable
+
+    dw .zero
+    dw .one
+
+.zero
+    call BattleAnim_IncAnonJumptableIndex
+    ld hl, BATTLEANIMSTRUCT_0F
+    add hl, bc
+    ld [hl], $28
+    inc hl
+    ld [hl], 0
+.one
+    ld hl, BATTLEANIMSTRUCT_0B
+    add hl, bc
+    ld a, [hl]
+    ld hl, BATTLEANIMSTRUCT_0F
+    add hl, bc
+    ld d, [hl]
+    push af
+    push de
+    call Sine
+    ld hl, BATTLEANIMSTRUCT_YOFFSET
+    add hl, bc
+    ld [hl], a
+    pop de
+    pop af
+    call Cosine
+    ld hl, BATTLEANIMSTRUCT_XOFFSET
+    add hl, bc
+    ld [hl], a
+    ld hl, BATTLEANIMSTRUCT_0F
+    add hl, bc
+    ld a, [hli]
+    ld d, a
+    ld e, [hl]
+    ld hl, -$480
+    add hl, de
+    jp nc, DeinitBattleAnimation
+    ld e, l
+    ld d, h
+    ld hl, BATTLEANIMSTRUCT_10
+    add hl, bc
+    ld a, e
+    ld [hld], a
+    ld [hl], d
+    ret

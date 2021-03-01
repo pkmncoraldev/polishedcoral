@@ -2121,6 +2121,7 @@ OdorSleuthUsers:
 	
 MiracleEyeUsers:
 	db SMEARGLE
+	db WIGGLYTUFF
 	db -1
 	
 RockPolishUsers:

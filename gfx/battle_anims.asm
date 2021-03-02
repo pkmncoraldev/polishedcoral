@@ -38,4 +38,6 @@ AnimObjShineGFX:     INCBIN "gfx/battle_anims/shine.2bpp.lz"
 AnimObjAngelsGFX:    INCBIN "gfx/battle_anims/angels.2bpp.lz"
 AnimObjWaveGFX:      INCBIN "gfx/battle_anims/wave.2bpp.lz"
 AnimObjAeroblastGFX: INCBIN "gfx/battle_anims/aeroblast.2bpp.lz"
+AnimObjStarsGFX:     INCBIN "gfx/battle_anims/stars.2bpp.lz"
+AnimObjHeartsGFX:    INCBIN "gfx/battle_anims/hearts.2bpp.lz"
 ; 8640e

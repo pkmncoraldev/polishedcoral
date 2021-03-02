@@ -185,8 +185,9 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_b7 ; b7
 	dw .Frameset_b8 ; b8
 	dw .Frameset_c4
+	dw .Frameset_c1
 
-     ; OAM index (see battle/objects/oam.asm), flip flags / duration
+	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
 .Frameset_00:
 	db BATTLEANIMOAMSET_00, $06
 	db -4
@@ -1269,9 +1270,13 @@ BattleAnimFrameData: ; ce85e
 	db -1
 	
 .Frameset_c4:
-    frame BATTLEANIMOAMSET_1E,  4
-    frame BATTLEANIMOAMSET_55,  8
-    frame BATTLEANIMOAMSET_54,  20
-    delanim
+	frame BATTLEANIMOAMSET_1E,  4
+	frame BATTLEANIMOAMSET_55,  8
+	frame BATTLEANIMOAMSET_54,  20
+	delanim
 
+.Frameset_c1:
+	frame BATTLEANIMOAMSET_54, 40
+	endanim
+	
 ; ceeae

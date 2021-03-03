@@ -636,6 +636,7 @@ LighthouseGetStarterScene_part2:
 	special Special_FadeOutMusic
 	pause 5
 	playmusic MUSIC_SUNSET_BAY
+	domaptrigger ROUTE_1_GATE, $1
 	end	
 	
 LighthouseAbner:
@@ -818,15 +819,13 @@ LighthouseAbnerText5:
 	done
 	
 LighthouseAbnerText6:
-	text "By the way,"
-	line "your MOM called"
-	cont "before you came."
+	text "Anyway, you should"
+	line "be on your way."
 	
-	para "She has something"
-	line "to give you."
+	para "I'm sure you'll"
+	line "do great things!"
 	
-	para "You should stop by"
-	line "before you leave."
+	para "Good luck!"
 	done
 	
 LighthouseAbnerText7:

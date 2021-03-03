@@ -1,8 +1,9 @@
 Route1Gate_MapScriptHeader:
-	db 2 ; scene scripts
+	db 3 ; scene scripts
 	
 	scene_script Route1GateTrigger0
 	scene_script Route1GateTrigger1
+	scene_script Route1GateTrigger2
 
 	db 0 ; callbacks
 
@@ -28,6 +29,11 @@ Route1GateTrigger0:
 	end
 	
 Route1GateTrigger1:
+	specialphonecall SPECIALCALL_MOMCOMEGETTRAINERCARD
+	addcellnum PHONE_MOM
+	end
+	
+Route1GateTrigger2:
 	end
 
 Route1OfficerScript1:
@@ -156,17 +162,14 @@ OfficerStopsYouText2:
 	done
 	
 OfficerStopsYouText3:
-	text "You don't have"
-	line "a #GEAR!"
+	text "Didn't your MOM"
+	line "have something for"
+	cont "you?"
 	
-	para "I'm sorry, but I"
-	line "can't let you go"
-	cont "out there without"
-	cont "some way to call"
-	cont "home!"
-	
-	para "I could lose my"
-	line "job!"
+	para "Huh?"
+
+	para "Of course I wasn't"
+	line "eavesdropping!"
 	done
 
 Route1OfficerText1:
@@ -180,13 +183,14 @@ Route1OfficerText1:
 	done
 	
 Route1OfficerText2:
-	text "You can't leave"
-	line "out through those"
-	cont "doors without a"
-	cont "#GEAR."
+	text "Didn't your MOM"
+	line "have something for"
+	cont "you?"
 	
-	para "Come back when you"
-	line "have one."
+	para "Huh?"
+
+	para "Of course I wasn't"
+	line "eavesdropping!"
 	done
 	
 Route1OfficerText3:

@@ -60,8 +60,6 @@ PlayerHouse1FSetMusicAsm:
 	ret
 	
 SunsetMomStopsYou:
-	checkevent EVENT_TALKED_TO_MOM
-	iftrue SunsetMomStopsYouEnd
 	special Special_StopRunning
 	playmusic MUSIC_MOM
 	showemote EMOTE_SHOCK, PLAYERHOUSE1F_MOM1, 15
@@ -159,10 +157,10 @@ SunsetMomGotAPokemon:
 	waitbutton
 	stringtotext GearName, $1
 	scall UnknownScript_0x7a57e
-	setflag ENGINE_POKEGEAR
-	setflag ENGINE_PHONE_CARD
-	addcellnum PHONE_MOM
+	setflag ENGINE_TRAINER_CARD
 	setevent EVENT_MOM_GOT_POKEGEAR
+	addcellnum PHONE_MOM
+	clearevent EVENT_CAN_CALL_TRAINER_CARD
 ;	writetext SetDayOfWeekText
 ;	buttonsound
 ;	special Special_SetDayOfWeek
@@ -181,42 +179,21 @@ SunsetMomGotAPokemon:
 ;	iffalse UnknownScript_0x7a519
 ;UnknownScript_0x7a531:
 	writetext UnknownText_0x7a763
-	yesorno
-	iffalse UnknownScript_0x7a542
-	jump UnknownScript_0x7a549
-
-UnknownScript_0x7a542:
-	writetext UnknownText_0x7a807
-	waitbutton
-	writetext MomAfterGearText
 	waitbutton
 	closetext
 	spriteface PLAYERHOUSE1F_MOM1, LEFT
 	setevent EVENT_LIGHTHOUSE_KIDS_DIE
 	domaptrigger SUNSET_BAY, $2
-	domaptrigger ROUTE_1_GATE, $1
-	end
-
-UnknownScript_0x7a549:
-	writetext MomAfterGearText
-	waitbutton
-	closetext
-	spriteface PLAYERHOUSE1F_MOM1, LEFT
-	setevent EVENT_LIGHTHOUSE_KIDS_DIE
-	domaptrigger SUNSET_BAY, $2
-	domaptrigger ROUTE_1_GATE, $1
+	domaptrigger ROUTE_1_GATE, $2
 	end
 	
 GearName:
-	db "#GEAR@"
+	db "TRAINER CARD@"
 
 UnknownScript_0x7a57e:
 	jumpstd receiveitem
 	end
-	
-	
-SunsetMomStopsYouEnd:
-	end
+
 	
 TVScript:
 	jumptext TVText
@@ -328,16 +305,50 @@ MomAfterGearText:
 	done
 
 UnknownText_0x7a763:
-	text "#MON GEAR, or"
-	line "just #GEAR."
+	text "It's a TRAINER"
+	line "CARD!"
 
-	para "It's essential if"
-	line "you want to be a"
-	cont "good trainer."
+	para "It'll help track"
+	cont "your progress as"
+	cont "a TRAINER."
 
-	para "By the way, do you"
-	line "know how to use"
-	cont "the PHONE?"
+	para "It also doubles"
+	line "as an ATM CARD!"
+	
+	para "Any money you earn"
+	line "will automatically"
+	cont "be purt into your"
+	cont "account!"
+	
+	para "Just visit the ATM"
+	line "at any #MON CENTER"
+	cont "to deposit or"
+	cont "withdraw money!"
+	
+	para "How convenient!"
+	
+	para "…"
+	
+	para "So, I guess you're"
+	line "heading off, then."
+	
+	para "My little baby is"
+	line "growing up!"
+	
+	para "Make sure you"
+	line "have everything"
+	cont "you need before"
+	cont "you leave town."
+	
+	para "You can stop by"
+	line "the CAFE if you"
+	cont "want to get some"
+	cont "items for your"
+	cont "#MON."
+	
+	para "Good luck out"
+	line "there, sweetie."
+	done
 	done
 	
 UnknownText_0x7a807:

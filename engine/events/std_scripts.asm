@@ -178,7 +178,6 @@ AtmScript:
 	checkcode VAR_FACING
 	ifnotequal UP, WrongSideScript
 	opentext
-;	special PlaceMoneyTopRight
 	special Special_BankOfMom
 	endtext
 	

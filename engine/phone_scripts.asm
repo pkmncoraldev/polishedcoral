@@ -5,6 +5,10 @@ UnusedPhoneScript: ; 0xbcea5
 ; Mom
 
 MomPhoneScript: ; 0xbceaa
+	checkcode VAR_SPECIALPHONECALL
+	if_equal SPECIALCALL_MOMCOMEGETTRAINERCARD, .comegettrainercard1
+	checkevent EVENT_CAN_CALL_TRAINER_CARD
+	iftrue .comegettrainercard2
 	checkevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
 	iftrue .callaboutisland2
 
@@ -22,6 +26,17 @@ MomPhoneScript: ; 0xbceaa
 
 .callaboutisland2
 	farwritetext MomPhoneGoToIsland2Text
+	end
+	
+.comegettrainercard1
+	farwritetext MomPhoneComeGetTrainerCard1Text
+	setevent EVENT_CAN_CALL_TRAINER_CARD
+	specialphonecall SPECIALCALL_NONE
+	domaptrigger ROUTE_1_GATE, $0
+	end
+	
+.comegettrainercard2
+	farwritetext MomPhoneComeGetTrainerCard2Text
 	end
 	
 ; Bill

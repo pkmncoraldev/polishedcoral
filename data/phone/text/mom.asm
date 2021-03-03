@@ -96,3 +96,50 @@ MomPhoneGoToIsland2Text
 	line "honey!"
 	done
 	
+MomPhoneComeGetTrainerCard1Text:
+	text "<PLAYER>!"
+	
+	para "How'd it go?"
+	
+	para "Did you make it in"
+	line "time?"
+	
+	para "That's great!"
+	
+	para "Oh?"
+	
+	para "You're going on an"
+	line "adventure?"
+	
+	para "Sounds like fun!"
+	
+	para "I got you a gift"
+	line "that will help you"
+	cont "out!"
+	
+	para "Make sure to stop"
+	line "by home before you"
+	cont "head out!"
+	
+	para "See you soon,"
+	line "honey!"
+	done
+	
+MomPhoneComeGetTrainerCard2Text:
+	text "Hello?"
+	
+	para "Oh, hi,"
+	line "<PLAYER>!"
+	
+	para "I got you a gift"
+	line "that will help you"
+	cont "out!"
+	
+	para "Make sure to stop"
+	line "by home before you"
+	cont "head out!"
+	
+	para "See you soon,"
+	line "honey!"
+	done
+	

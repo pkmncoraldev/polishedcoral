@@ -75,6 +75,7 @@ AnimationExtraPointers:
 	dw WeezingAnimationExtra
 	dw RhyhornAnimationExtra
 	dw RhydonAnimationExtra
+	dw ChanseyAnimationExtra
 	dw HorseaAnimationExtra
 	dw SeadraAnimationExtra
 	dw StaryuAnimationExtra
@@ -157,6 +158,7 @@ AnimationExtraPointers:
 	dw ElekidAnimationExtra
 	dw MagbyAnimationExtra
 	dw MiltankAnimationExtra
+	dw BlisseyAnimationExtra
 	dw LarvitarAnimationExtra
 	dw PupitarAnimationExtra
 	dw TyranitarAnimationExtra

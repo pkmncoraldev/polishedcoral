@@ -13,23 +13,16 @@ LakeOnwaPokeCenter_MapScriptHeader:
 
 	db 4 ; object events
 	pc_nurse_event  4, 1
+	pc_chansey_event  5, 1
 	person_event SPRITE_COOLTRAINER_F, 3, 9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeOwnaCenterNPC1, -1
 	person_event SPRITE_YOUNGSTER, 5, 1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LakeOwnaCenterNPC2, -1
-	object_event  5,  1, SPRITE_NUMEL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LakeOnwaCenterNumel, -1
+
 
 	const_def 1 ; object constants
 	const LAKE_ONWA_POKECENTER_NURSE
+	const LAKE_ONWA_POKECENTER_CHANSEY
 	const LAKE_ONWA_POKECENTER_NPC1
 	const LAKE_ONWA_POKECENTER_NPC2
-	const LAKE_ONWA_POKECENTER_NUMEL
-	
-LakeOnwaCenterNumel:
-	opentext
-	writetext LakeOnwaCenterNumelText
-	cry NUMEL
-	waitbutton
-	closetext
-	end
 	
 LakeOwnaCenterNPC1:
 	jumptextfaceplayer LakeOwnaCenterNPC1Text
@@ -63,8 +56,4 @@ LakeOwnaCenterNPC2Text:
 	para "I had to come back"
 	line "down here and"
 	cont "rest."
-	done
-	
-LakeOnwaCenterNumelText:
-	text "NUMEL: Sii!"
 	done

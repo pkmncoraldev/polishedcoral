@@ -151,6 +151,8 @@ PicPointers::
 	dba RhyhornBackpic
 	dba RhydonFrontpic
 	dba RhydonBackpic
+	dba ChanseyFrontpic
+	dba ChanseyBackpic
 	dba HorseaFrontpic
 	dba HorseaBackpic
 	dba SeadraFrontpic
@@ -315,6 +317,8 @@ PicPointers::
 	dba MagbyBackpic
 	dba MiltankFrontpic
 	dba MiltankBackpic
+	dba BlisseyFrontpic
+	dba BlisseyBackpic
 	dba LarvitarFrontpic
 	dba LarvitarBackpic
 	dba PupitarFrontpic

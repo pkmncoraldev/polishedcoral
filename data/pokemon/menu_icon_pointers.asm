@@ -76,6 +76,7 @@ IconPointers:
 	dw WeezingIcon
 	dw RhyhornIcon
 	dw RhydonIcon
+	dw ChanseyIcon
 	dw HorseaIcon
 	dw SeadraIcon
 	dw StaryuIcon
@@ -158,6 +159,7 @@ IconPointers:
 	dw ElekidIcon
 	dw MagbyIcon
 	dw MiltankIcon
+	dw BlisseyIcon
 	dw LarvitarIcon
 	dw PupitarIcon
 	dw TyranitarIcon

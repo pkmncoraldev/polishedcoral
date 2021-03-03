@@ -76,6 +76,7 @@
 	dw WeezingPokedexEntry
 	dw RhyhornPokedexEntry
 	dw RhydonPokedexEntry
+	dw ChanseyPokedexEntry
 	dw HorseaPokedexEntry
 	dw SeadraPokedexEntry
 	dw StaryuPokedexEntry
@@ -157,6 +158,7 @@
 	dw ElekidPokedexEntry
 	dw MagbyPokedexEntry
 	dw MiltankPokedexEntry
+	dw BlisseyPokedexEntry
 	dw LarvitarPokedexEntry
 	dw PupitarPokedexEntry
 	dw TyranitarPokedexEntry

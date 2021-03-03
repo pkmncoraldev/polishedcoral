@@ -59,8 +59,8 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke WIGGLYTUFF, 100
-	givepoke KIRLIA, 100
-	givepoke SNORUNT, 100
+	givepoke CHANSEY, 100
+	givepoke BLISSEY, 100
 .items
 	writetext PlayerHouseDebugText6
 	yesorno

@@ -13,18 +13,18 @@ GlintPokeCenter_MapScriptHeader:
 
 	db 6 ; object events
 	pc_nurse_event  4, 1
+	pc_chansey_event  5, 1
 	person_event SPRITE_FISHING_GURU, 5, 6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintPokeCenterNpc1, -1
 	person_event SPRITE_GENTLEMAN, 4, 1, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintPokeCenterNpc2, -1
 	person_event SPRITE_SCHOOLBOY,  2,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintPokeCenterNpc3, -1
-	object_event  5,  1, SPRITE_NUMEL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintCenterNumel, -1
 	person_event SPRITE_GRANNY,  6,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintPokeCenterTeaLady, -1
 
 	const_def 1 ; object constants
 	const GLINT_POKECENTER_NURSE
+	const GLINT_POKECENTER_CHANSEY
 	const GLINT_POKECENTER_NPC1
 	const GLINT_POKECENTER_NPC2
 	const GLINT_POKECENTER_NPC3
-	const GLINT_POKECENTER_NUMEL
 	const GLINT_POKECENTER_TEA_LADY
 	
 GlintPokeCenterTeaLady:
@@ -85,18 +85,6 @@ GlintPokeCenterTeaLady:
 	waitbutton
 	closetext
 	end
-	
-GlintCenterNumel:
-	opentext
-	writetext GlintCenterNumelText
-	cry NUMEL
-	waitbutton
-	closetext
-	end
-	
-GlintCenterNumelText:
-	text "NUMEL: Sii!"
-	done
 	
 GlintPokeCenterNpc1:
 	jumptextfaceplayer GlintPokeCenterNpc1Text

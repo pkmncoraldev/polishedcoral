@@ -79,6 +79,7 @@ MenuMonIconColors::
 	iconpal PURPLE, BLUE ; WEEZING
 	iconpal GRAY, RED ; RHYHORN
 	iconpal GRAY, RED ; RHYDON
+	iconpal PINK, GREEN ; CHANSEY
 	iconpal BLUE, RED ; HORSEA
 	iconpal BLUE, PURPLE ; SEADRA
 	iconpal BROWN, BLUE ; STARYU
@@ -161,6 +162,7 @@ MenuMonIconColors::
 	iconpal BROWN, RED ; ELEKID
 	iconpal RED, BROWN ; MAGBY
 	iconpal PINK, BLUE ; MILTANK
+	iconpal PINK, GRAY ; BLISSEY
 	iconpal GREEN, GREEN ; LARVITAR
 	iconpal GRAY, PURPLE ; PUPITAR
 	iconpal GREEN, GRAY ; TYRANITAR

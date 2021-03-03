@@ -11,8 +11,9 @@ FlickerPokeCenter_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 4 ; object events
 	pc_nurse_event  4, 1
+	pc_chansey_event  5, 1
 	person_event SPRITE_CUTE_GIRL, 5, 6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerCenterNPC1, -1
 	person_event SPRITE_POKEFAN_F, 4, 1, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, FlickerCenterNPC2, -1
 	

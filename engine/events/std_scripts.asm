@@ -60,6 +60,7 @@ StdScripts::
 	dba CaveGrottoScript
 	dba IceBlockScript
 	dba AtmScript
+	dba PokeCenterChanseyScript
 
 PokeCenterNurseScript:
 	opentext
@@ -180,6 +181,18 @@ AtmScript:
 	opentext
 	special Special_BankOfMom
 	endtext
+	
+PokeCenterChanseyScript:
+	opentext
+	writetext PokeCenterChanseyText
+	cry CHANSEY
+	waitbutton
+	closetext
+	end
+	
+PokeCenterChanseyText
+	text "CHANSEY: Sii!"
+	done
 	
 DifficultBookshelfScript:
 	farjumptext DifficultBookshelfText

@@ -1114,6 +1114,12 @@ RhyhornEvosAttacks:
 	db 52, MEGAHORN
 	db 55, DOUBLE_EDGE
 	db 0 ; no more level-up moves
+	
+ChanseyEvosAttacks:
+	db EVOLVE_HAPPINESS, TR_ANYTIME, BLISSEY
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
+	db  0 ; no more level-up moves
 
 RhydonEvosAttacks:
 	db EVOLVE_HOLDING, PROTECTOR, RHYPERIOR
@@ -2196,6 +2202,11 @@ MagbyEvosAttacks:
 	db 0 ; no more level-up moves
 
 MiltankEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+BlisseyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves

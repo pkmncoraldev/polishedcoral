@@ -60,3 +60,4 @@
 	enum cavegrotto
 	enum iceblock
 	enum atm
+	enum pokecenterchansey

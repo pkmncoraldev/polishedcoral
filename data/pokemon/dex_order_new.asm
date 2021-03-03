@@ -75,6 +75,7 @@ NewPokedexOrder:
 	db WEEZING
 	db RHYHORN
 	db RHYDON
+	db CHANSEY
 	db HORSEA
 	db SEADRA
 	db STARYU
@@ -157,6 +158,7 @@ NewPokedexOrder:
 	db ELEKID
 	db MAGBY
 	db MILTANK
+	db BLISSEY
 	db LARVITAR
 	db PUPITAR
 	db TYRANITAR

@@ -75,6 +75,7 @@ EvolutionMoves::
 	db DOUBLE_HIT      						; WEEZING
 	db NO_MOVE      						; RHYHORN
 	db NO_MOVE      						; RHYDON
+	db NO_MOVE      						; CHANSEY
 	db NO_MOVE      						; HORSEA
 	db NO_MOVE      						; SEADRA
 	db NO_MOVE      						; STARYU
@@ -157,6 +158,7 @@ EvolutionMoves::
 	db NO_MOVE      						; ELEKID
 	db NO_MOVE      						; MAGBY
 	db NO_MOVE      						; MILTANK
+	db NO_MOVE      						; BLISSEY
 	db NO_MOVE      						; LARVITAR
 	db BARRIER_IRON_DEFENSE_ACID_ARMOR      ; PUPITAR
 	db NO_MOVE      						; TYRANITAR

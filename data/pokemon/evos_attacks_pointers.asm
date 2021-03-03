@@ -79,6 +79,7 @@ EvosAttacksPointers:: ; 0x425b1
 	dw WeezingEvosAttacks
 	dw RhyhornEvosAttacks
 	dw RhydonEvosAttacks
+	dw ChanseyEvosAttacks
 	dw HorseaEvosAttacks
 	dw SeadraEvosAttacks
 	dw StaryuEvosAttacks
@@ -161,6 +162,7 @@ EvosAttacksPointers:: ; 0x425b1
 	dw ElekidEvosAttacks
 	dw MagbyEvosAttacks
 	dw MiltankEvosAttacks
+	dw BlisseyEvosAttacks
 	dw LarvitarEvosAttacks
 	dw PupitarEvosAttacks
 	dw TyranitarEvosAttacks

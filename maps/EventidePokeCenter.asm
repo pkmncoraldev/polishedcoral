@@ -11,5 +11,6 @@ EventidePokeCenter_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	pc_nurse_event  4, 1
+	pc_chansey_event  5, 1

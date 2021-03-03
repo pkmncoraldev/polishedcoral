@@ -17,45 +17,33 @@ StarglowPokeCenter_MapScriptHeader:
 
 	db 6 ; object events
 	person_event SPRITE_BOWING_NURSE, 1, 4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, StarglowCenterNurse, -1
+	pc_chansey_event  5, 1
 	person_event SPRITE_GAMEBOY_KID, 5, 8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowCenterGameboyKid, -1
 	person_event SPRITE_GENTLEMAN, 5, 1, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowCenterGramps, -1
 	person_event SPRITE_TEACHER, 2, 9, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, StarglowCenterGirl, -1
 	person_event SPRITE_SNARE, -6, -6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, -1
-	object_event  5,  1, SPRITE_NUMEL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, StarglowCenterNumel, -1
 
 	
 	const_def 1 ; object constants
-	const STARGLOWCENTER_NURSE
-	const STARGLOWCENTER_GAMEBOYKID
-	const STARGLOWCENTER_GENTLEMAN
-	const STARGLOWCENTER_GIRL
-	const STARGLOWCENTER_ROCKET
-	const STARGLOWCENTER_NUMEL
+	const STARGLOW_POKECENTER_NURSE
+	const STARGLOW_POKECENTER_CHANSEY
+	const STARGLOW_POKECENTER_GAMEBOYKID
+	const STARGLOW_POKECENTER_GENTLEMAN
+	const STARGLOW_POKECENTER_GIRL
+	const STARGLOW_POKECENTER_SNARE
 
 StarglowPokeCenterTrigger0:
-	disappear STARGLOWCENTER_ROCKET
+	disappear STARGLOW_POKECENTER_SNARE
 	end
 
 StarglowPokeCenterTrigger1:
 	end
 	
-StarglowCenterNumel:
-	opentext
-	writetext StarglowCenterNumelText
-	cry NUMEL
-	waitbutton
-	closetext
-	end
-	
-StarglowCenterNumelText:
-	text "NUMEL: Sii!"
-	done
-	
 StarglowCenterRocketStopsYouR:
-	moveperson STARGLOWCENTER_ROCKET, $5, $8
+	moveperson STARGLOW_POKECENTER_SNARE, $5, $8
 	jump StarglowCenterRocketStopsYou
 StarglowCenterRocketStopsYouL:
-	moveperson STARGLOWCENTER_ROCKET, $4, $8
+	moveperson STARGLOW_POKECENTER_SNARE, $4, $8
 StarglowCenterRocketStopsYou:
 	special Special_StopRunning
 	playsound SFX_PAY_DAY
@@ -63,10 +51,10 @@ StarglowCenterRocketStopsYou:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	playmusic MUSIC_NONE
 	pause 7
-	appear STARGLOWCENTER_ROCKET
+	appear STARGLOW_POKECENTER_SNARE
 	playsound SFX_ENTER_DOOR
 	applymovement PLAYER, Movement_StarglowCenterRocket
-	applymovement STARGLOWCENTER_ROCKET, Movement_StarglowCenterRocket
+	applymovement STARGLOW_POKECENTER_SNARE, Movement_StarglowCenterRocket
 	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
 	opentext
 	writetext StarglowCenterRocketText1
@@ -74,7 +62,7 @@ StarglowCenterRocketStopsYou:
 	closetext
 	waitsfx
 	winlosstext StarglowCenterRocketWinText, 0
-	setlasttalked STARGLOWCENTER_ROCKET
+	setlasttalked STARGLOW_POKECENTER_SNARE
 	loadtrainer GRUNTM, STARGLOW_GRUNTM_2
 	special SaveMusic
 	startbattle
@@ -84,10 +72,10 @@ StarglowCenterRocketStopsYou:
 	writetext StarglowCenterRocketText2
 	waitbutton
 	closetext
-	applymovement STARGLOWCENTER_ROCKET, Movement_StarglowCenterRocket2
+	applymovement STARGLOW_POKECENTER_SNARE, Movement_StarglowCenterRocket2
 	pause 8
 	playsound SFX_EXIT_BUILDING
-	disappear STARGLOWCENTER_ROCKET
+	disappear STARGLOW_POKECENTER_SNARE
 	pause 8
 	special Special_FadeOutMusic
 	pause 10
@@ -109,7 +97,7 @@ StarglowCenterGameboyKid:
 	opentext
 	writetext StarglowCenterGameboyKidText
 	waitbutton
-	spriteface STARGLOWCENTER_GAMEBOYKID, DOWN
+	spriteface STARGLOW_POKECENTER_GAMEBOYKID, DOWN
 	closetext
 	end
 	

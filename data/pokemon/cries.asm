@@ -92,6 +92,7 @@ CryHeaders::
 	mon_cry CRY_GOLEM,       $0ff,  $17f 	; Weezing
 	mon_cry CRY_CHARMANDER,  $000,  $100 	; Rhyhorn
 	mon_cry CRY_RHYDON,      $000,  $100 	; Rhydon
+	mon_cry CRY_PIDGEOTTO,   $00a,  $140 	; Chansey
 	mon_cry CRY_CLEFAIRY,    $099,  $090 	; Horsea
 	mon_cry CRY_CLEFAIRY,    $03c,  $081 	; Seadra
 	mon_cry CRY_STARYU,      $002,  $0a0 	; Staryu
@@ -174,6 +175,7 @@ CryHeaders::
 	mon_cry CRY_ELEKID,  	-$2d8,  $0b4 	; Elekid
 	mon_cry CRY_TEDDIURSA,   $176,  $03a 	; Magby
 	mon_cry CRY_GLIGAR,     -$1cd,  $1a0 	; Miltank
+	mon_cry CRY_SLOWKING,    $293,  $140 	; Blissey
 	mon_cry CRY_LARVITAR,    $05f,  $0d0 	; Larvitar
 	mon_cry CRY_PUPITAR,   	-$1db,  $150 	; Pupitar
 	mon_cry CRY_LARVITAR,   -$100,  $180 	; Tyranitar

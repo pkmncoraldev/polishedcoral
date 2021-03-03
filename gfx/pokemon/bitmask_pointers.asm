@@ -75,6 +75,7 @@ BitmasksPointers:
 	dw WeezingBitmasks
 	dw RhyhornBitmasks
 	dw RhydonBitmasks
+	dw ChanseyBitmasks
 	dw HorseaBitmasks
 	dw SeadraBitmasks
 	dw StaryuBitmasks
@@ -157,6 +158,7 @@ BitmasksPointers:
 	dw ElekidBitmasks
 	dw MagbyBitmasks
 	dw MiltankBitmasks
+	dw BlisseyBitmasks
 	dw LarvitarBitmasks
 	dw PupitarBitmasks
 	dw TyranitarBitmasks

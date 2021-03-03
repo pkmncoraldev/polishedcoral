@@ -13,30 +13,18 @@ DaybreakPokeCenter_MapScriptHeader:
 
 	db 5 ; object events
 	pc_nurse_event  4, 1
+	pc_chansey_event  5, 1
 	person_event SPRITE_GENTLEMAN, 3, 1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, DaybreakPokeCenterNPC1, -1
 	person_event SPRITE_POKEMANIAC, 6, 8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DaybreakPokeCenterNPC2, -1
 	person_event SPRITE_LEDYBA, 5, 8, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DaybreakPokeCenterLedyba, -1
-	object_event  5,  1, SPRITE_NUMEL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, DaybreakPokeCenterNumel, -1
-	
+		
 	
 	const_def 1 ; object constants
-	const DAYBREAKPOKECENTER1F_NURSE
-	const DAYBREAKPOKECENTER1F_GAMEBOY_KID
-	const DAYBREAKPOKECENTER1F_GENTLEMAN
-	const DAYBREAKPOKECENTER1F_YOUNGSTER
-	const DAYBREAKPOKECENTER1F_NUMEL
-	
-DaybreakPokeCenterNumel:
-	opentext
-	writetext DaybreakPokeCenterNumelText
-	cry NUMEL
-	waitbutton
-	closetext
-	end
-	
-DaybreakPokeCenterNumelText:
-	text "NUMEL: Sii!"
-	done
+	const DAYBREAK_POKECENTER_NURSE
+	const DAYBREAK_POKECENTER_CHANSEY
+	const DAYBREAK_POKECENTER_GAMEBOY_KID
+	const DAYBREAK_POKECENTER_GENTLEMAN
+	const DAYBREAK_POKECENTER_YOUNGSTER
 	
 DaybreakPokeCenterNPC1:
 	jumptextfaceplayer DaybreakPokeCenterNPC1Text

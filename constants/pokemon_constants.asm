@@ -76,6 +76,7 @@
 	const WEEZING
 	const RHYHORN
 	const RHYDON
+	const CHANSEY
 	const HORSEA
 	const SEADRA
 	const STARYU
@@ -158,6 +159,7 @@
 	const ELEKID
 	const MAGBY
 	const MILTANK
+	const BLISSEY
 	const LARVITAR
 	const PUPITAR
 	const TYRANITAR

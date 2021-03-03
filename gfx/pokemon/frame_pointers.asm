@@ -75,6 +75,7 @@ FramesPointers:
 	dw WeezingFrames
 	dw RhyhornFrames
 	dw RhydonFrames
+	dw ChanseyFrames
 	dw HorseaFrames
 	dw SeadraFrames
 	dw StaryuFrames
@@ -157,6 +158,7 @@ FramesPointers:
 	dw ElekidFrames
 	dw MagbyFrames
 	dw MiltankFrames
+	dw BlisseyFrames
 	dw LarvitarFrames
 	dw PupitarFrames
 	dw TyranitarFrames

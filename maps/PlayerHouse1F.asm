@@ -309,7 +309,7 @@ UnknownText_0x7a763:
 	line "CARD!"
 
 	para "It'll help track"
-	cont "your progress as"
+	line "your progress as"
 	cont "a TRAINER."
 
 	para "It also doubles"
@@ -317,13 +317,13 @@ UnknownText_0x7a763:
 	
 	para "Any money you earn"
 	line "will automatically"
-	cont "be purt into your"
+	cont "be put into your"
 	cont "account!"
 	
 	para "Just visit the ATM"
-	line "at any #MON CENTER"
-	cont "to deposit or"
-	cont "withdraw money!"
+	line "at any #MON"
+	cont "CENTER to deposit"
+	cont "or withdraw money!"
 	
 	para "How convenient!"
 	

@@ -904,9 +904,16 @@ UnknownText_0x1c12fc::
 	done
 
 UnknownText_0x1c1328::
-	text "Bzzzzt! You must"
-	line "have a #MON to"
-	cont "use this!"
+	text "Bzzzzt!"
+	
+	para "You must have a"
+	line "#MON to log in!"
+	prompt
+	
+UnknownText_0x1c13282::
+	text "Bzzzzt!"
+	
+	para "No account found!"
 	prompt
 
 UnknownText_0x1c1353::

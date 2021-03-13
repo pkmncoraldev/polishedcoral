@@ -1005,8 +1005,8 @@ ExeggutorEvosAttacks:
 	db 0 ; no more level-up moves
 
 CuboneEvosAttacks:
-	db EVOLVE_ITEM, THUNDERSTONE, MAROWAK
-	db EVOLVE_ITEM, FIRE_STONE, MAROWAK_A
+	db EVOLVE_LEVEL_DAY, 39, MAROWAK
+	db EVOLVE_LEVEL_NITE, 28, MAROWAK_A
 	db  0 ; no more evolutions
 	db  1, GROWL
 	db  3, TACKLE_SCRATCH_POUND
@@ -1810,7 +1810,7 @@ ForretressEvosAttacks:
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
-	db EVOLVE_HOLDING, RAZOR_FANG, GLISCOR
+	db EVOLVE_HOLDING_NITE, RAZOR_FANG, GLISCOR
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
@@ -1895,7 +1895,7 @@ HeracrossEvosAttacks:
 	db 0 ; no more level-up moves
 
 SneaselEvosAttacks:
-	db EVOLVE_HOLDING, RAZOR_CLAW, WEAVILE
+	db EVOLVE_HOLDING_NITE, RAZOR_CLAW, WEAVILE
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
@@ -2999,7 +2999,7 @@ PangoroEvosAttacks:
 	db 0 ; no more level-up moves
 	
 TyruntEvosAttacks:
-	db EVOLVE_LEVEL, 39, TYRANTRUM
+	db EVOLVE_LEVEL_DAY, 39, TYRANTRUM
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
@@ -3010,7 +3010,7 @@ TyrantrumEvosAttacks:
 	db 0 ; no more level-up moves
 	
 AmauraEvosAttacks:
-	db EVOLVE_LEVEL, 39, AURORUS
+	db EVOLVE_LEVEL_NITE, 39, AURORUS
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves

@@ -87,6 +87,10 @@ EvolveAfterBattle_MasterLoop
 	ld a, b
 	cp EVOLVE_HOLDING
 	jp z, .holding
+	cp EVOLVE_HOLDING_DAY
+	jp z, .holding_day
+	cp EVOLVE_HOLDING_NITE
+	jp z, .holding_nite
 	cp EVOLVE_LOCATION
 	jp z, .location
 	cp EVOLVE_MOVE
@@ -95,6 +99,10 @@ EvolveAfterBattle_MasterLoop
 	jp z, .evs
 	cp EVOLVE_LEVEL
 	jp z, .level
+	cp EVOLVE_LEVEL_DAY
+	jp z, .level_day
+	cp EVOLVE_LEVEL_NITE
+	jp z, .level_nite
 	cp EVOLVE_HAPPINESS
 	jp z, .happiness
 
@@ -143,12 +151,16 @@ EvolveAfterBattle_MasterLoop
 
 ; TR_NITE
 	ld a, [wTimeOfDay]
+	cp DUSK
+	jp z, .proceed
 	cp NITE
 	jp nz, .dont_evolve_3
 	jp .proceed
 
 .happiness_daylight
 	ld a, [wTimeOfDay]
+	cp DUSK
+	jp z, .dont_evolve_3
 	cp NITE
 	jp z, .dont_evolve_3
 	jp .proceed
@@ -205,6 +217,20 @@ EvolveAfterBattle_MasterLoop
 	jp nz, .dont_evolve_3
 	jp .proceed
 
+.holding_day
+	ld a, [wTimeOfDay]
+	cp DUSK
+	jp z, .dont_evolve_3
+	cp NITE
+	jp z, .dont_evolve_3
+	jr .holding
+.holding_nite
+	ld a, [wTimeOfDay]
+	cp DUSK
+	jp .holding
+	cp NITE
+	jp nz, .dont_evolve_3
+	
 .holding
 	ld a, [hli]
 	ld b, a
@@ -264,6 +290,19 @@ endr
 	jp c, .dont_evolve_3
 	jp .proceed
 
+.level_day
+	ld a, [wTimeOfDay]
+	cp DUSK
+	jp z, .dont_evolve_3
+	cp NITE
+	jp z, .dont_evolve_3
+	jr .level
+.level_nite
+	ld a, [wTimeOfDay]
+	cp DUSK
+	jp .level
+	cp NITE
+	jp nz, .dont_evolve_3
 .level
 	ld a, [hli]
 	ld b, a

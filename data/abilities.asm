@@ -957,6 +957,6 @@ RefrigerateDescription:
 	db    "NORMAL-TYPE moves"
 	next1 "become ICE-TYPE.@"
 	
-MerciliessDescription:
+MercilessDescription:
 	db    "Always crit if"
 	next1 "foe is poisoned.@"

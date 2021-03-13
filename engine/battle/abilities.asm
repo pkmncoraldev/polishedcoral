@@ -1562,6 +1562,7 @@ FlareBoostAbility:
 	jp ApplySpecialAttackDamageMod
 
 PixilateAbility:
+RefrigerateAbility:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	

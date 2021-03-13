@@ -807,15 +807,24 @@ LoadMapPals:
 	ld [rSVBK], a
 
 .got_pals
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPals
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
 	ld a, [wMapGroup]
 	cp GROUP_LAKE_ONWA
 	jp z, .rockscheck1
 	cp GROUP_ROUTE_3_EAST
 	jp z, .rockscheck2
 	cp GROUP_SUNBEAM_ISLAND
-	jp z, .umbrellacheck
+	jp z, .sunbeam
 	cp GROUP_SUNSET_BAY
-	jp z, .sailboat
+	jp z, .sunset
 	cp GROUP_SKATEPARK
 	jp z, .skateparkcheck
 .got_pals_cont
@@ -982,17 +991,17 @@ LoadMapPals:
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	ret
-.umbrellacheck
+.sunbeam
 	ld a, [wMapNumber]
 	cp MAP_SUNBEAM_BEACH
-	jp nz, .sailboatcont
+	jp nz, .sailboat
 	ld a, [wTimeOfDayPal]
 	and 3
-	ld bc, 8 palettes
+	ld bc, 1 palettes
 	ld hl, MapObjectPalsUmbrella
 	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	jp .outside
@@ -1001,7 +1010,7 @@ LoadMapPals:
 	cp MAP_LAKE_ONWA
 	jp nz, .got_pals_cont
 	eventflagcheck EVENT_LAKE_ROCKS_BROWN
-	jp z, .sailboatcont
+	jp z, .sailboat
 	jr .rocks
 .rockscheck2
 	ld a, [wMapNumber]
@@ -1010,11 +1019,11 @@ LoadMapPals:
 .rocks
 	ld a, [wTimeOfDayPal]
 	and 3
-	ld bc, 8 palettes
+	ld bc, 1 palettes
 	ld hl, MapObjectPalsRocks
 	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	ld a, [wPermission]
@@ -1027,8 +1036,8 @@ LoadMapPals:
 	ret
 .starglow
 	ld hl, MapObjectPalsStarglow
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	ret
@@ -1046,49 +1055,34 @@ LoadMapPals:
 	jr z, .ranchyellow
 	ld a, [wTimeOfDayPal]
 	and 3
-	ld bc, 8 palettes
+	ld bc, 1 palettes
 	ld hl, MapObjectPalsRanch
 	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	jp .outside
 .ranchyellow
 	ld a, [wTimeOfDayPal]
 	and 3
-	ld bc, 8 palettes
+	ld bc, 1 palettes
 	ld hl, MapObjectPalsRanchYellow
 	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	jp .outside
 	
 .hangar
-	ld a, [wPlayerPalette]
-	cp 4
-	jr z, .hangar2
 	ld a, [wTimeOfDayPal]
 	and 3
-	ld bc, 8 palettes
+	ld bc, 1 palettes
 	ld hl, MapObjectPalsHangar
 	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	jp .outside
-	
-.hangar2
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 8 palettes
-	ld hl, MapObjectPalsHangarPurple
-	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	jp .outside
@@ -1104,18 +1098,23 @@ LoadMapPals:
 .lustercont2
 	and 3
 	ld bc, 8 palettes
-	ld hl, MapObjectPalsLuster
+	ld hl, MapObjectPals
 	call AddNTimes
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	jp .outside
-	
-.snow
 	ld a, [wPlayerPalette]
 	cp 3
 	jr z, .snowbrown
+	ld hl, MapObjectPalsLuster
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	jp .outside
+	
+.snow
 	eventflagcheck EVENT_SNOWSTORM_HAPPENING
 	jr nz, .snowstorm
 	ld a, [wIsNearCampfire]
@@ -1134,29 +1133,21 @@ LoadMapPals:
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	ret
-	
-.snowbrown
-	eventflagcheck EVENT_SNOWSTORM_HAPPENING
-	jr nz, .snowstormbrown
-	ld a, [wIsNearCampfire]
-	bit 0, a
-	jr nz, .snowbrowncont1
-	ld a, [wTimeOfDayPal]
-	jr .snowbrowncont2
-.snowbrowncont1
-	ld a, 1
-.snowbrowncont2
-	and 3
-	ld bc, 8 palettes
-	ld hl, MapObjectPalsSnowBrown
-	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
+	ld a, [wPlayerPalette]
+	cp 3
+	jr z, .snowbrown
+	ld hl, MapObjectPalsSnowFire
+	ld de, wUnknOBPals + 3 palettes
+	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
-	
+	jp FarCopyWRAM
+.snowbrown
+	ld hl, MapObjectPalsSnowFire
+	ld de, wUnknOBPals + 5 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+
 .snowstorm
 	ld a, [wIsNearCampfire]
 	bit 0, a
@@ -1174,31 +1165,25 @@ LoadMapPals:
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	ret
-	
-.snowstormbrown
-	ld a, [wIsNearCampfire]
-	bit 0, a
-	jr nz, .snowstormbrowncont1
-	ld a, [wTimeOfDayPal]
-	jr .snowstormbrowncont2
-.snowstormbrowncont1
-	ld a, 1
-.snowstormbrowncont2
-	and 3
-	ld bc, 8 palettes
-	ld hl, MapObjectPalsSnowstormBrown
-	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
+	ld a, [wPlayerPalette]
+	cp 3
+	jr z, .snowstormbrown
+	ld hl, MapObjectPalsSnowstormFire
+	ld de, wUnknOBPals + 3 palettes
+	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
-	
+	jp FarCopyWRAM
+.snowstormbrown
+	ld hl, MapObjectPalsSnowstormFire
+	ld de, wUnknOBPals + 5 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+
 .lustermall
 	ld hl, MapObjectPalsLusterMall
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	ret
@@ -1225,31 +1210,31 @@ LoadMapPals:
 	jp nz, .got_pals_cont
 	ld a, [wTimeOfDayPal]
 	and 3
-	ld bc, 8 palettes
+	ld bc, 1 palettes
 	ld hl, MapObjectPalsSkatepark
 	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	jp .outside
 	
-.sailboat
+.sunset
 	ld a, [wMapNumber]
 	cp MAP_SUNSET_BAY
-	jr z, .sailboatcont
+	jr z, .sailboat
 	cp MAP_SUNSET_CAPE
 	jr z, .lighthouse
 	jr .normal
 	
-.sailboatcont
+.sailboat
 	ld a, [wTimeOfDayPal]
 	and 3
-	ld bc, 8 palettes
+	ld bc, 1 palettes
 	ld hl, MapObjectPalsSailboat
 	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	jr .outside
@@ -1257,25 +1242,16 @@ LoadMapPals:
 .lighthouse
 	ld a, [wTimeOfDayPal]
 	and 3
-	ld bc, 8 palettes
+	ld bc, 1 palettes
 	ld hl, MapObjectPalsLighthouse
 	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	jr .outside
 
 .normal
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 8 palettes
-	ld hl, MapObjectPals
-	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
 	ld a, [wTileset]
 	cp TILESET_SPOOKY
 	jr z, .outside
@@ -1411,13 +1387,13 @@ INCLUDE "maps/palettes/obpals/obicecavepurple.pal"
 MapObjectPalsIceCavePurple2::
 INCLUDE "maps/palettes/obpals/obicecavepurple2.pal"
 
-MapObjectPalsTwinkleGym1:
+MapObjectPalsTwinkleGym1::
 INCLUDE "maps/palettes/obpals/obtwinklegym1.pal"
 
-MapObjectPalsTwinkleGym2:
+MapObjectPalsTwinkleGym2::
 INCLUDE "maps/palettes/obpals/obtwinklegym2.pal"
 
-MapObjectPalsTwinkleGym3:
+MapObjectPalsTwinkleGym3::
 INCLUDE "maps/palettes/obpals/obtwinklegym3.pal"
 
 MapObjectPalsSewer::
@@ -1432,20 +1408,17 @@ INCLUDE "maps/palettes/obpals/obranchyellow.pal"
 MapObjectPalsHangar::
 INCLUDE "maps/palettes/obpals/obranchhangar.pal"
 
-MapObjectPalsHangarPurple::
-INCLUDE "maps/palettes/obpals/obranchhangarpurple.pal"
-
 MapObjectPalsSnow::
 INCLUDE "maps/palettes/obpals/obsnow.pal"
 
-MapObjectPalsSnowBrown::
-INCLUDE "maps/palettes/obpals/obsnowbrown.pal"
+MapObjectPalsSnowFire::
+INCLUDE "maps/palettes/obpals/obsnowfire.pal"
 
 MapObjectPalsSnowstorm::
 INCLUDE "maps/palettes/obpals/obsnowstorm.pal"
 
-MapObjectPalsSnowstormBrown::
-INCLUDE "maps/palettes/obpals/obsnowstormbrown.pal"
+MapObjectPalsSnowstormFire::
+INCLUDE "maps/palettes/obpals/obsnowstormfire.pal"
 
 MapObjectPalsSailboat::
 INCLUDE "maps/palettes/obpals/obsailboat.pal"
@@ -1476,7 +1449,6 @@ INCLUDE "maps/palettes/roofpals/roof.pal"
 
 RoofPalsDusk::
 INCLUDE "maps/palettes/roofpals/roofdusk.pal"
-
 
 INCLUDE "data/pokemon/palettes.asm"
 

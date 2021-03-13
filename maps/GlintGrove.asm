@@ -563,13 +563,13 @@ TrainerGlintGrove_6:
 	cont "around here,"
 	
 	para "but all I can find"
-	line "are WEEDLE!"
+	line "are VENIPEDE!"
 	done
 
 .BeatenText:
 	text "GAHH!"
 	
-	para "WEEDLE!"
+	para "VENIPEDE!"
 	done
 
 GlintGroveStanley:

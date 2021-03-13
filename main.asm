@@ -4641,6 +4641,10 @@ SECTION "Coral Data 3", ROMX
 INCLUDE "engine/titlescreen_cutscene.asm"
 INCLUDE "engine/trainer_card.asm"
 
+
+;SECTION "Coral Data 4", ROMX
+;INCLUDE "engine/map_object_pals.asm"
+
 DrawBattleHPBar:: ; 3750
 ; Draw an HP bar d tiles long at hl
 ; Fill it up to e pixels

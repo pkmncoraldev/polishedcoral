@@ -17,12 +17,6 @@ PicPointers::
 	dba WartortleBackpic
 	dba BlastoiseFrontpic
 	dba BlastoiseBackpic
-	dba WeedleFrontpic
-	dba WeedleBackpic
-	dba KakunaFrontpic
-	dba KakunaBackpic
-	dba BeedrillFrontpic
-	dba BeedrillBackpic
 	dba PidgeyFrontpic
 	dba PidgeyBackpic
 	dba PidgeottoFrontpic
@@ -147,10 +141,6 @@ PicPointers::
 	dba KoffingBackpic
 	dba WeezingFrontpic
 	dba WeezingBackpic
-	dba RhyhornFrontpic
-	dba RhyhornBackpic
-	dba RhydonFrontpic
-	dba RhydonBackpic
 	dba ChanseyFrontpic
 	dba ChanseyBackpic
 	dba HorseaFrontpic
@@ -325,6 +315,10 @@ PicPointers::
 	dba PupitarBackpic
 	dba TyranitarFrontpic
 	dba TyranitarBackpic
+	dba WingullFrontpic
+	dba WingullBackpic
+	dba PelipperFrontpic
+	dba PelipperBackpic
 	dba RaltsFrontpic
 	dba RaltsBackpic
 	dba KirliaFrontpic
@@ -365,6 +359,10 @@ PicPointers::
 	dba BuizelBackpic
 	dba FloatzelFrontpic
 	dba FloatzelBackpic
+	dba DrifloonFrontpic
+	dba DrifloonBackpic
+	dba DrifblimFrontpic
+	dba DrifblimBackpic
 	dba BunearyFrontpic
 	dba BunearyBackpic
 	dba LopunnyFrontpic
@@ -375,6 +373,14 @@ PicPointers::
 	dba SpiritombBackpic
 	dba MunchlaxFrontpic
 	dba MunchlaxBackpic
+	dba RioluFrontpic
+	dba RioluBackpic
+	dba LucarioFrontpic
+	dba LucarioBackpic
+	dba CroagunkFrontpic
+	dba CroagunkBackpic
+	dba ToxicroakFrontpic
+	dba ToxicroakBackpic
 	dba SnoverFrontpic
 	dba SnoverBackpic
 	dba AbomasnowFrontpic
@@ -383,8 +389,6 @@ PicPointers::
 	dba WeavileBackpic
 	dba MagnezoneFrontpic
 	dba MagnezoneBackpic
-	dba RhyperiorFrontpic
-	dba RhyperiorBackpic
 	dba ElectivireFrontpic
 	dba ElectivireBackpic
 	dba MagmortarFrontpic
@@ -405,14 +409,36 @@ PicPointers::
 	dba GalladeBackpic
 	dba FroslassFrontpic
 	dba FroslassBackpic
+	dba DrilburFrontpic
+	dba DrilburBackpic
+	dba ExcadrillFrontpic
+	dba ExcadrillBackpic
+	dba VenipedeFrontpic
+	dba VenipedeBackpic
+	dba WhirlipedeFrontpic
+	dba WhirlipedeBackpic
+	dba ScolipedeFrontpic
+	dba ScolipedeBackpic
 	dba CottoneeFrontpic
 	dba CottoneeBackpic
 	dba WhimsicottFrontpic
 	dba WhimsicottBackpic
+	dba SandileFrontpic
+	dba SandileBackpic
+	dba KrokorokFrontpic
+	dba KrokorokBackpic
+	dba KrookodileFrontpic
+	dba KrookodileBackpic
+	dba MaractusFrontpic
+	dba MaractusBackpic
 	dba DwebbleFrontpic
 	dba DwebbleBackpic
 	dba CrustleFrontpic
 	dba CrustleBackpic
+	dba ScraggyFrontpic
+	dba ScraggyBackpic
+	dba ScraftyFrontpic
+	dba ScraftyBackpic
 	dba MinccinoFrontpic
 	dba MinccinoBackpic
 	dba CinccinoFrontpic
@@ -435,6 +461,14 @@ PicPointers::
 	dba PanchamBackpic
 	dba PangoroFrontpic
 	dba PangoroBackpic
+	dba TyruntFrontpic
+	dba TyruntBackpic
+	dba TyrantrumFrontpic
+	dba TyrantrumBackpic
+	dba AmauraFrontpic
+	dba AmauraBackpic
+	dba AurorusFrontpic
+	dba AurorusBackpic
 	dba SylveonFrontpic
 	dba SylveonBackpic
 	dba PhantumpFrontpic
@@ -451,6 +485,10 @@ PicPointers::
 	dba TrumbeakBackpic
 	dba ToucannonFrontpic
 	dba ToucannonBackpic
+	dba MareanieFrontpic
+	dba MareanieBackpic
+	dba ToxapexFrontpic
+	dba ToxapexBackpic
 	dba Raichu_AFrontpic
 	dba Raichu_ABackpic
 	dba Exeggutor_AFrontpic

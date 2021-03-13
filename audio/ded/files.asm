@@ -48,8 +48,8 @@ WeavileDEDData:: INCBIN "audio/ded/weavile.ded"
 
 SECTION "DED 10", ROMX
 MagnezoneDEDData:: INCBIN "audio/ded/magnezone.ded"
-RhyperiorDEDData:: INCBIN "audio/ded/rhyperior.ded"
 CottoneeDEDData:: INCBIN "audio/ded/cottonee.ded"
+VenipedeDEDData::  INCBIN "audio/ded/venipede.ded"
 
 SECTION "DED 11", ROMX
 ElectivireDEDData:: INCBIN "audio/ded/electivire.ded"
@@ -89,6 +89,7 @@ MinccinoDEDData:: INCBIN "audio/ded/minccino.ded"
 
 SECTION "DED 19", ROMX
 SpiritombDEDData:: INCBIN "audio/ded/spiritomb.ded"
+MaractusDEDData::  INCBIN "audio/ded/maractus.ded"
 
 SECTION "DED 20", ROMX
 PanchamDEDData:: INCBIN "audio/ded/pancham.ded"
@@ -103,36 +104,47 @@ GlalieDEDData:: INCBIN "audio/ded/glalie.ded"
 SECTION "DED 22", ROMX
 FroslassDEDData:: INCBIN "audio/ded/froslass.ded"
 SnoverDEDData:: INCBIN "audio/ded/snover.ded"
+RioluDEDData::  INCBIN "audio/ded/riolu.ded"
 
 SECTION "DED 23", ROMX
 AbomasnowDEDData:: INCBIN "audio/ded/abomasnow.ded"
+ScraggyDEDData:: INCBIN "audio/ded/scraggy.ded"
+ScraftyDEDData:: INCBIN "audio/ded/scrafty.ded"
 
 SECTION "DED 24", ROMX
+SandileDEDData:: INCBIN "audio/ded/sandile.ded"
+KrokorokDEDData:: INCBIN "audio/ded/krokorok.ded"
+KrookodileDEDData:: INCBIN "audio/ded/krookodile.ded"
 
 SECTION "DED 25", ROMX
+WhirlipedeDEDData::  INCBIN "audio/ded/whirlipede.ded"
+ScolipedeDEDData::  INCBIN "audio/ded/scolipede.ded"
 
 SECTION "DED 26", ROMX
+LucarioDEDData::  INCBIN "audio/ded/lucario.ded"
+DrifloonDEDData::  INCBIN "audio/ded/drifloon.ded"
+DrifblimDEDData::  INCBIN "audio/ded/drifblim.ded"
 
 SECTION "DED 27", ROMX
+CroagunkDEDData::  INCBIN "audio/ded/croagunk.ded"
+ToxicroakDEDData::  INCBIN "audio/ded/toxicroak.ded"
 
-; The following files have been relocated to optimize bank allocation
+SECTION "DED 28", ROMX
+TyruntDEDData::  INCBIN "audio/ded/tyrunt.ded"
+TyrantrumDEDData::  INCBIN "audio/ded/tyrantrum.ded"
 
-SECTION "DED small 1", ROMX
+SECTION "DED 29", ROMX
+AurorusDEDData::  INCBIN "audio/ded/aurorus.ded"
+DrilburDEDData::  INCBIN "audio/ded/drilbur.ded"
 
-SECTION "DED small 2", ROMX
+SECTION "DED 30", ROMX
+AmauraDEDData::  INCBIN "audio/ded/amaura.ded"
+ExcadrillDEDData::  INCBIN "audio/ded/excadrill.ded"
 
-SECTION "DED small 3", ROMX
+SECTION "DED 31", ROMX
+WingullDEDData::  INCBIN "audio/ded/wingull.ded"
+PelipperDEDData::  INCBIN "audio/ded/pelipper.ded"
+MareanieDEDData::  INCBIN "audio/ded/mareanie.ded"
 
-SECTION "DED small 4", ROMX
-
-SECTION "DED small 5", ROMX
-
-SECTION "DED small 6", ROMX
-
-SECTION "DED small 7", ROMX
-
-SECTION "DED small 8", ROMX
-
-SECTION "DED small 9", ROMX
-
-SECTION "DED small 10", ROMX
+SECTION "DED 32", ROMX
+ToxapexDEDData::  INCBIN "audio/ded/toxapex.ded"

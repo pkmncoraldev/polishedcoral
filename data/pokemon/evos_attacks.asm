@@ -170,23 +170,6 @@ BlastoiseEvosAttacks:
 	db 50, HYDRO_PUMP
 	db  0 ; no more level-up moves
 
-WeedleEvosAttacks:
-	db EVOLVE_LEVEL, 7, KAKUNA
-	db  0 ; no more evolutions
-	db  0, STRUGGLE
-	db  0 ; no more level-up moves
-
-KakunaEvosAttacks:
-	db EVOLVE_LEVEL, 10, BEEDRILL
-	db  0 ; no more evolutions
-	db  0, STRUGGLE
-	db  0 ; no more level-up moves
-
-BeedrillEvosAttacks:
-	db  0 ; no more evolutions
-	db  0, STRUGGLE
-	db  0 ; no more level-up moves
-
 PidgeyEvosAttacks:
 	db EVOLVE_LEVEL, 18, PIDGEOTTO
 	db  0 ; no more evolutions
@@ -1095,50 +1078,12 @@ WeezingEvosAttacks:
 	db 46, TOXIC
 	db 51, DESTINY_BOND
 	db 0 ; no more level-up moves
-
-RhyhornEvosAttacks:
-	db EVOLVE_LEVEL, 42, RHYDON
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 1, LEER_TAIL_WHIP
-	db 7, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
-	db 10, ROCK_THROW
-	db 16, MAGNITUDE
-	db 19, HORN_ATTACK
-	db 25, SCARY_FACE_COTTON_SPORE
-	db 28, STOMP
-	db 34, ROCK_SLIDE
-	db 37, TAKE_DOWN
-	db 43, STONE_EDGE
-	db 46, EARTHQUAKE
-	db 52, MEGAHORN
-	db 55, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 	
 ChanseyEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, BLISSEY
 	db  0 ; no more evolutions
 	db  1, TACKLE_SCRATCH_POUND
 	db  0 ; no more level-up moves
-
-RhydonEvosAttacks:
-	db EVOLVE_HOLDING, PROTECTOR, RHYPERIOR
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 1, LEER_TAIL_WHIP
-	db 7, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
-	db 10, ROCK_THROW
-	db 16, MAGNITUDE
-	db 19, HORN_ATTACK
-	db 25, SCARY_FACE_COTTON_SPORE
-	db 28, STOMP
-	db 34, ROCK_SLIDE
-	db 37, TAKE_DOWN
-	db 45, STONE_EDGE
-	db 50, EARTHQUAKE
-	db 57, MEGAHORN
-	db 62, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
 HorseaEvosAttacks:
 	db EVOLVE_LEVEL, 32, SEADRA
@@ -2273,6 +2218,17 @@ TyranitarEvosAttacks:
 	db 63, HYPER_BEAM
 	db 0 ; no more level-up moves
 	
+WingullEvosAttacks:
+	db EVOLVE_LEVEL, 25, PELIPPER
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+PelipperEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
 RaltsEvosAttacks:
 	db EVOLVE_LEVEL, 20, KIRLIA
 	db 0 ; no more evolutions
@@ -2545,6 +2501,17 @@ FloatzelEvosAttacks:
 	db 55, HYDRO_PUMP
 	db  0 ; no more level-up moves
 	
+DrifloonEvosAttacks:
+	db EVOLVE_LEVEL, 28, DRIFBLIM
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+DrifblimEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, FLAMETHROWER
+	db 0 ; no more level-up moves
+	
 BunearyEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, LOPUNNY
 LopunnyEvosAttacks:
@@ -2606,6 +2573,28 @@ MunchlaxEvosAttacks:
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
+RioluEvosAttacks:
+	db EVOLVE_HAPPINESS, TR_MORNDAY, LUCARIO
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+LucarioEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+CroagunkEvosAttacks:
+	db EVOLVE_LEVEL, 37, TOXICROAK
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+ToxicroakEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
 SnoverEvosAttacks:
 	db EVOLVE_LEVEL, 40, ABOMASNOW
 	db 0 ; no more evolutions
@@ -2625,24 +2614,6 @@ WeavileEvosAttacks:
 MagnezoneEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
-	
-RhyperiorEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 1, LEER_TAIL_WHIP
-	db 7, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
-	db 10, ROCK_THROW
-	db 16, MAGNITUDE
-	db 19, HORN_ATTACK
-	db 25, SCARY_FACE_COTTON_SPORE
-	db 28, STOMP
-	db 34, ROCK_SLIDE
-	db 37, TAKE_DOWN
-	db 45, STONE_EDGE
-	db 50, EARTHQUAKE
-	db 57, MEGAHORN
-	db 62, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 	
 ElectivireEvosAttacks:
@@ -2743,6 +2714,34 @@ FroslassEvosAttacks:
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
+DrilburEvosAttacks:
+	db EVOLVE_LEVEL, 31, EXCADRILL
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
+	db  0 ; no more level-up moves
+
+ExcadrillEvosAttacks:
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
+	db  0 ; no more level-up moves
+	
+VenipedeEvosAttacks:
+	db EVOLVE_LEVEL, 22, WHIRLIPEDE
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
+	db  0 ; no more level-up moves
+
+WhirlipedeEvosAttacks:
+	db EVOLVE_LEVEL, 30, SCOLIPEDE
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
+	db  0 ; no more level-up moves
+
+ScolipedeEvosAttacks:
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
+	db  0 ; no more level-up moves
+	
 CottoneeEvosAttacks:
 	db EVOLVE_ITEM, SUN_STONE, WHIMSICOTT
 	db  0 ; no more evolutions
@@ -2785,6 +2784,28 @@ WhimsicottEvosAttacks:
 	db 50, MOONBLAST
 	db  0 ; no more level-up moves
 	
+SandileEvosAttacks:
+	db EVOLVE_LEVEL, 29, KROKOROK
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+KrokorokEvosAttacks:
+	db EVOLVE_LEVEL, 40, KROOKODILE
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+KrookodileEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+MaractusEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
 DwebbleEvosAttacks:
 	db EVOLVE_LEVEL, 34, CRUSTLE
 	db  0 ; no more evolutions
@@ -2818,6 +2839,17 @@ CrustleEvosAttacks:
 	db 40, SHELL_SMASH
 	db 45, FLAIL
 ;	db 50, ROCK_WRECKER
+	db  0 ; no more level-up moves
+	
+ScraggyEvosAttacks:
+	db EVOLVE_LEVEL, 39, SCRAFTY
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
+	db  0 ; no more level-up moves
+	
+ScraftyEvosAttacks:
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
 	db  0 ; no more level-up moves
 	
 MinccinoEvosAttacks:
@@ -2966,6 +2998,28 @@ PangoroEvosAttacks:
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
+TyruntEvosAttacks:
+	db EVOLVE_LEVEL, 39, TYRANTRUM
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+TyrantrumEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+AmauraEvosAttacks:
+	db EVOLVE_LEVEL, 39, AURORUS
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+AurorusEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
 SylveonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
@@ -3097,6 +3151,17 @@ ToucannonEvosAttacks:
 	db 48, HYPER_VOICE
 	db 50, POWER_GEM
 	db  0 ; no more level-up moves
+	
+MareanieEvosAttacks:
+	db EVOLVE_LEVEL, 38, TOXAPEX
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+ToxapexEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
 	
 Raichu_AEvosAttacks:
 	db  0 ; no more evolutions

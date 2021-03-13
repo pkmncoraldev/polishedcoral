@@ -87,7 +87,7 @@
 	; morn
 	db 6, CLEFAIRY		;30%
 	db 6, JIGGLYPUFF	;30%
-	db 6, WEEDLE		;20% ;VENIPEDE
+	db 6, VENIPEDE		;20% ;VENIPEDE
 	db 6, SNUBBULL		;10%
 	db 6, PIKACHU		;5%
 	db 6, PIKACHU		;4%
@@ -95,7 +95,7 @@
 	; day
 	db 6, CLEFAIRY		;30%
 	db 6, JIGGLYPUFF	;30%
-	db 6, WEEDLE		;20% ;VENIPEDE
+	db 6, VENIPEDE		;20% ;VENIPEDE
 	db 6, SNUBBULL		;10%
 	db 6, PIKACHU		;5%
 	db 6, PIKACHU		;4%
@@ -103,7 +103,7 @@
 	; nite
 	db 6, CLEFAIRY		;30%
 	db 6, JIGGLYPUFF	;30%
-	db 6, WEEDLE		;20% ;VENIPEDE
+	db 6, VENIPEDE		;20% ;VENIPEDE
 	db 6, SNUBBULL		;10%
 	db 6, PIKACHU		;5%
 	db 6, PIKACHU		;4%

@@ -9,9 +9,6 @@ IconPointers:
 	dw SquirtleIcon
 	dw WartortleIcon
 	dw BlastoiseIcon
-	dw WeedleIcon
-	dw KakunaIcon
-	dw BeedrillIcon
 	dw PidgeyIcon
 	dw PidgeottoIcon
 	dw PidgeotIcon
@@ -74,8 +71,6 @@ IconPointers:
 	dw MarowakIcon
 	dw KoffingIcon
 	dw WeezingIcon
-	dw RhyhornIcon
-	dw RhydonIcon
 	dw ChanseyIcon
 	dw HorseaIcon
 	dw SeadraIcon
@@ -163,6 +158,8 @@ IconPointers:
 	dw LarvitarIcon
 	dw PupitarIcon
 	dw TyranitarIcon
+	dw WingullIcon
+	dw PelipperIcon
 	dw RaltsIcon
 	dw KirliaIcon
 	dw GardevoirIcon
@@ -183,16 +180,21 @@ IconPointers:
 	dw GlalieIcon
 	dw BuizelIcon
 	dw FloatzelIcon
+	dw DrifloonIcon
+	dw DrifblimIcon
 	dw BunearyIcon
 	dw LopunnyIcon
 	dw HonchkrowIcon
 	dw SpiritombIcon
 	dw MunchlaxIcon
+	dw RioluIcon
+	dw LucarioIcon
+	dw CroagunkIcon
+	dw ToxicroakIcon
 	dw SnoverIcon
 	dw AbomasnowIcon
 	dw WeavileIcon
 	dw MagnezoneIcon
-	dw RhyperiorIcon
 	dw ElectivireIcon
 	dw MagmortarIcon
 	dw TogekissIcon
@@ -203,10 +205,21 @@ IconPointers:
 	dw PorygonZIcon
 	dw GalladeIcon
 	dw FroslassIcon
+	dw DrilburIcon
+	dw ExcadrillIcon
+	dw VenipedeIcon
+	dw WhirlipedeIcon
+	dw ScolipedeIcon
 	dw CottoneeIcon
 	dw WhimsicottIcon
+	dw SandileIcon
+	dw KrokorokIcon
+	dw KrookodileIcon
+	dw MaractusIcon
 	dw DwebbleIcon
 	dw CrustleIcon
+	dw ScraggyIcon
+	dw ScraftyIcon
 	dw MinccinoIcon
 	dw CinccinoIcon
 	dw JoltikIcon
@@ -218,6 +231,10 @@ IconPointers:
 	dw VolcaronaIcon
 	dw PanchamIcon
 	dw PangoroIcon
+	dw TyruntIcon
+	dw TyrantrumIcon
+	dw AmauraIcon
+	dw AurorusIcon
 	dw SylveonIcon
 	dw PhantumpIcon
 	dw TrevenantIcon
@@ -226,6 +243,8 @@ IconPointers:
 	dw PikipekIcon
 	dw TrumbeakIcon
 	dw ToucannonIcon
+	dw MareanieIcon
+	dw ToxapexIcon
 	dw Raichu_AIcon
 	dw Exeggutor_AIcon
 	dw Marowak_AIcon

@@ -25,9 +25,6 @@ CryHeaders::
 	mon_cry CRY_SQUIRTLE,    $060,  $0c0 	; Squirtle
 	mon_cry CRY_SQUIRTLE,    $020,  $0c0 	; Wartortle
 	mon_cry CRY_BLASTOISE,   $000,  $100 	; Blastoise
-	mon_cry CRY_WEEDLE,      $0ee,  $081 	; Weedle
-	mon_cry CRY_BLASTOISE,   $0ff,  $081 	; Kakuna
-	mon_cry CRY_BLASTOISE,   $060,  $100 	; Beedrill
 	mon_cry CRY_PIDGEY,      $0df,  $084 	; Pidgey
 	mon_cry CRY_PIDGEOTTO,   $028,  $140 	; Pidgeotto
 	mon_cry CRY_PIDGEOTTO,   $011,  $17f 	; Pidgeot
@@ -90,8 +87,6 @@ CryHeaders::
 	mon_cry CRY_ODDISH,      $04f,  $0e0 	; Marowak
 	mon_cry CRY_GOLEM,       $0e6,  $15d 	; Koffing
 	mon_cry CRY_GOLEM,       $0ff,  $17f 	; Weezing
-	mon_cry CRY_CHARMANDER,  $000,  $100 	; Rhyhorn
-	mon_cry CRY_RHYDON,      $000,  $100 	; Rhydon
 	mon_cry CRY_PIDGEOTTO,   $00a,  $140 	; Chansey
 	mon_cry CRY_CLEFAIRY,    $099,  $090 	; Horsea
 	mon_cry CRY_CLEFAIRY,    $03c,  $081 	; Seadra
@@ -179,6 +174,8 @@ CryHeaders::
 	mon_cry CRY_LARVITAR,    $05f,  $0d0 	; Larvitar
 	mon_cry CRY_PUPITAR,   	-$1db,  $150 	; Pupitar
 	mon_cry CRY_LARVITAR,   -$100,  $180 	; Tyranitar
+	mon_cry WINGULL,	WingullDEDData		; Wingull
+	mon_cry PELIPPER,	PelipperDEDData		; Pelipper
 	mon_cry RALTS,   	RaltsDEDData	 	; Ralts
 	mon_cry KIRLIA,		KirliaDEDData	 	; Kirlia
 	mon_cry GARDEVOIR,  GardevoirDEDData 	; Gardevoir
@@ -199,16 +196,21 @@ CryHeaders::
 	mon_cry GLALIE,   	GlalieDEDData	 	; Glalie
 	mon_cry BUIZEL,   	BuizelDEDData	 	; Buizel
 	mon_cry FLOATZEL,   FloatzelDEDData	 	; Floatzel
+	mon_cry DRIFLOON,   DrifloonDEDData	 	; Drifloon
+	mon_cry DRIFBLIM,   DrifblimDEDData	 	; Drifblim
 	mon_cry BUNEARY,   	BunearyDEDData	 	; Buneary
 	mon_cry LOPUNNY,   	LopunnyDEDData	 	; Lopunny
 	mon_cry HONCHKROW,  HonchkrowDEDData 	; Honchkrow
 	mon_cry SPIRITOMB,  SpiritombDEDData 	; Spiritomb
 	mon_cry MUNCHLAX,   MunchlaxDEDData	 	; Munchlax
+	mon_cry RIOLU,		RioluDEDData		; Riolu
+	mon_cry LUCARIO,	LucarioDEDData		; Lucario
+	mon_cry CROAGUNK,	CroagunkDEDData		; Croagunk
+	mon_cry TOXICROAK,	ToxicroakDEDData	; Toxicroak
 	mon_cry SNOVER,   	SnoverDEDData	 	; Snover
 	mon_cry ABOMASNOW,  AbomasnowDEDData	; Abomasnow
 	mon_cry WEAVILE,   	WeavileDEDData	 	; Weavile
 	mon_cry MAGNEZONE,  MagnezoneDEDData 	; Magnezone
-	mon_cry RHYPERIOR,  RhyperiorDEDData 	; Rhyperior
 	mon_cry ELECTIVIRE, ElectivireDEDData 	; Electivire
 	mon_cry MAGMORTAR,  MagmortarDEDData 	; Magmortar
 	mon_cry TOGEKISS,   TogekissDEDData	 	; Togekiss
@@ -219,10 +221,21 @@ CryHeaders::
 	mon_cry PORYGON_Z,  PorygonZDEDData	 	; PorygonZ
 	mon_cry GALLADE,   	GalladeDEDData	 	; Gallade
 	mon_cry FROSLASS,  	FroslassDEDData	 	; Froslass
+	mon_cry DRILBUR,	DrilburDEDData		; Drilbur
+	mon_cry EXCADRILL,	ExcadrillDEDData	; Excadrill
+	mon_cry VENIPEDE,  	VenipedeDEDData	 	; Venipede
+	mon_cry WHIRLIPEDE, WhirlipedeDEDData	; Whirlipede
+	mon_cry SCOLIPEDE,	ScolipedeDEDData	; Scolipede
 	mon_cry COTTONEE,   CottoneeDEDData	 	; Cottonee
 	mon_cry WHIMSICOTT, WhimsicottDEDData 	; Whimsicott
+	mon_cry SANDILE,	SandileDEDData 		; Sandile
+	mon_cry KROKOROK,	KrokorokDEDData 	; Krokorok
+	mon_cry KROOKODILE, KrookodileDEDData 	; Krookodile
+	mon_cry MARACTUS,	MaractusDEDData		; Maractus
 	mon_cry DWEBBLE,   	DwebbleDEDData	 	; Dwebble
 	mon_cry CRUSTLE,   	CrustleDEDData	 	; Crustle
+	mon_cry SCRAGGY,    ScraggyDEDData	 	; Scraggy
+	mon_cry SCRAFTY,   	ScraftyDEDData	 	; Scrafty
 	mon_cry MINCCINO,   MinccinoDEDData	 	; Minccino
 	mon_cry CINCCINO,   CinccinoDEDData	 	; Cinccino
 	mon_cry JOLTIK,   	JoltikDEDData	 	; Joltik
@@ -234,6 +247,10 @@ CryHeaders::
 	mon_cry VOLCARONA,  VolcaronaDEDData 	; Volcarona
 	mon_cry PANCHAM, 	PanchamDEDData 		; Pancham
 	mon_cry PANGORO, 	PangoroDEDData 		; Pangoro
+	mon_cry TYRUNT, 	TyruntDEDData 		; Tyrunt
+	mon_cry TYRANTRUM, 	TyrantrumDEDData 	; Tyrantrum
+	mon_cry AMAURA,		AmauraDEDData		; Amaura
+	mon_cry AURORUS,	AurorusDEDData		; Aurorus
 	mon_cry SYLVEON,   	SylveonDEDData	 	; Sylveon
 	mon_cry PHANTUMP,	PhantumpDEDData		; Phantump
 	mon_cry TREVENANT,	TrevenantDEDData	; Trevenant
@@ -242,6 +259,8 @@ CryHeaders::
 	mon_cry PIKIPEK,   	PikipekDEDData	 	; Pikipek
 	mon_cry	TRUMBEAK,  	TrumbeakDEDData	 	; Trumbeak
 	mon_cry	TOUCANNON, 	ToucannonDEDData 	; Toucannon
+	mon_cry MAREANIE,	MareanieDEDData		; Mareanie
+	mon_cry TOXAPEX,	ToxapexDEDData		; Toxapex
 	mon_cry CRY_RAICHU,      $0ee,  $088 	; Raichu_A
 	mon_cry CRY_EXEGGUTOR,   $000,  $100 	; Exeggutor_A
 	mon_cry CRY_ODDISH,      $04f,  $0e0 	; Marowak_A

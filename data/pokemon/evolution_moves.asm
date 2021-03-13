@@ -8,9 +8,6 @@ EvolutionMoves::
 	db NO_MOVE                              ; SQUIRTLE
 	db ICY_WIND                             ; WARTORTLE
 	db BARRIER_IRON_DEFENSE_ACID_ARMOR      ; BLASTOISE
-	db NO_MOVE     							; WEEDLE
-	db NO_MOVE      						; KAKUNA
-	db NO_MOVE      						; BEEDRILL
 	db NO_MOVE      						; PIDGEY
 	db NO_MOVE      						; PIDGEOTTO
 	db NO_MOVE      						; PIDGEOT
@@ -73,8 +70,6 @@ EvolutionMoves::
 	db NO_MOVE      						; MAROWAK
 	db NO_MOVE      						; KOFFING
 	db DOUBLE_HIT      						; WEEZING
-	db NO_MOVE      						; RHYHORN
-	db NO_MOVE      						; RHYDON
 	db NO_MOVE      						; CHANSEY
 	db NO_MOVE      						; HORSEA
 	db NO_MOVE      						; SEADRA
@@ -162,6 +157,8 @@ EvolutionMoves::
 	db NO_MOVE      						; LARVITAR
 	db BARRIER_IRON_DEFENSE_ACID_ARMOR      ; PUPITAR
 	db NO_MOVE      						; TYRANITAR
+	db NO_MOVE      						; WINGULL
+	db NO_MOVE      						; PELIPPER
 	db NO_MOVE      						; RALTS
 	db NO_MOVE      						; KIRLIA
 	db NO_MOVE      						; GARDEVOIR
@@ -182,16 +179,21 @@ EvolutionMoves::
 	db NO_MOVE      						; GLALIE
 	db NO_MOVE      						; BUIZEL
 	db ICE_FANG     						; FLOATZEL
+	db NO_MOVE      						; DRIFLOON
+	db NO_MOVE      						; DRIFBLIM
 	db NO_MOVE      						; BUNEARY
 	db NO_MOVE      						; LOPUNNY
 	db NO_MOVE      						; HONCHKROW
 	db NO_MOVE      						; SPIRITOMB
 	db NO_MOVE      						; MUNCHLAX
+	db NO_MOVE      						; RIOLU
+	db NO_MOVE      						; LUCARIO
+	db NO_MOVE      						; CROAGUNK
+	db NO_MOVE      						; TOXICROAK
 	db NO_MOVE      						; SNOVER
 	db NO_MOVE      						; ABOMASNOW
 	db NO_MOVE      						; WEAVILE
 	db NO_MOVE      						; MAGNEZONE
-	db NO_MOVE      						; RHYPERIOR
 	db NO_MOVE      						; ELECTIVIRE
 	db NO_MOVE      						; MAGMORTAR
 	db NO_MOVE      						; TOGEKISS
@@ -202,10 +204,21 @@ EvolutionMoves::
 	db NO_MOVE      						; PORYGON_Z
 	db NO_MOVE								; GALLADE
 	db NO_MOVE								; FROSLASS
+	db NO_MOVE     							; DRILBUR
+	db NO_MOVE     							; EXCADRILL
+	db NO_MOVE     							; VENIPEDE
+	db NO_MOVE      						; WHIRLIPEDE
+	db NO_MOVE      						; SCOLIPEDE
 	db NO_MOVE      						; COTTONEE
 	db NO_MOVE      						; WHIMSICOTT
+	db NO_MOVE      						; SANDILE
+	db NO_MOVE      						; KROKOROK
+	db NO_MOVE      						; KROOKODILE
+	db NO_MOVE      						; MARACTUS
 	db NO_MOVE      						; DWEBBLE
 	db NO_MOVE      						; CRUSTLE
+	db NO_MOVE      						; SCRAGGY
+	db NO_MOVE      						; SCRAFTY
 	db NO_MOVE      						; MINCCINO
 	db NO_MOVE      						; CINCCINO
 	db NO_MOVE      						; JOLTIK
@@ -217,6 +230,10 @@ EvolutionMoves::
 	db QUIVER_DANCE      					; VOLCARONA
 	db NO_MOVE      						; PANCHAM
 	db NO_MOVE      						; PANGORO
+	db NO_MOVE      						; TYRUNT
+	db NO_MOVE      						; TYRANTRUM
+	db NO_MOVE      						; AMAURA
+	db NO_MOVE      						; AURORUS
 	db NO_MOVE      						; SYLVEON
 	db NO_MOVE      						; PHANTUMP
 	db SHADOW_CLAW      					; TREVENANT
@@ -225,6 +242,8 @@ EvolutionMoves::
 	db NO_MOVE      						; PIKIPEK
 	db NO_MOVE      						; TRUMBEAK
 	db NO_MOVE 								; TOUCANNON		;BEAK_BLAST
+	db NO_MOVE 								; MAREANIE
+	db NO_MOVE 								; TOXAPEX
 	db PSYCHIC_M    						; RAICHU_A
 	db NO_MOVE      						; EXEGGUTOR_A
 	db SHADOW_BONE  						; MAROWAK_A

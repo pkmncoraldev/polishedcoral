@@ -455,9 +455,9 @@ BugCatcherGroup:
 	db "BARNEY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 6, WEEDLE
-	db 7, WEEDLE
-	db 8, KAKUNA
+	db 6, VENIPEDE
+	db 7, VENIPEDE
+	db 8, WHIRLIPEDE
 	db -1 ; end
 
 ; ================
@@ -2659,9 +2659,10 @@ TeacherFastGroup:
 
 	; TEACHER_FAST
 	db "KATE@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, MEOWTH
+	db 100, MEOWTH
+		db WILL_O_WISP, 0, 0, 0
 	db -1 ; end
 
 ; ================

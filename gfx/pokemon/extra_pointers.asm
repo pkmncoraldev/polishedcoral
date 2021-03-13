@@ -8,9 +8,6 @@ AnimationExtraPointers:
 	dw SquirtleAnimationExtra
 	dw WartortleAnimationExtra
 	dw BlastoiseAnimationExtra
-	dw WeedleAnimationExtra
-	dw KakunaAnimationExtra
-	dw BeedrillAnimationExtra
 	dw PidgeyAnimationExtra
 	dw PidgeottoAnimationExtra
 	dw PidgeotAnimationExtra
@@ -73,8 +70,6 @@ AnimationExtraPointers:
 	dw MarowakAnimationExtra
 	dw KoffingAnimationExtra
 	dw WeezingAnimationExtra
-	dw RhyhornAnimationExtra
-	dw RhydonAnimationExtra
 	dw ChanseyAnimationExtra
 	dw HorseaAnimationExtra
 	dw SeadraAnimationExtra
@@ -162,6 +157,8 @@ AnimationExtraPointers:
 	dw LarvitarAnimationExtra
 	dw PupitarAnimationExtra
 	dw TyranitarAnimationExtra
+	dw WingullAnimationExtra
+	dw PelipperAnimationExtra
 	dw RaltsAnimationExtra
 	dw KirliaAnimationExtra
 	dw GardevoirAnimationExtra
@@ -182,16 +179,21 @@ AnimationExtraPointers:
 	dw GlalieAnimationExtra
 	dw BuizelAnimationExtra
 	dw FloatzelAnimationExtra
+	dw DrifloonAnimationExtra
+	dw DrifblimAnimationExtra
 	dw BunearyAnimationExtra
 	dw LopunnyAnimationExtra
 	dw HonchkrowAnimationExtra
 	dw SpiritombAnimationExtra
 	dw MunchlaxAnimationExtra
+	dw RioluAnimationExtra
+	dw LucarioAnimationExtra
+	dw CroagunkAnimationExtra
+	dw ToxicroakAnimationExtra
 	dw SnoverAnimationExtra
 	dw AbomasnowAnimationExtra
 	dw WeavileAnimationExtra
 	dw MagnezoneAnimationExtra
-	dw RhyperiorAnimationExtra
 	dw ElectivireAnimationExtra
 	dw MagmortarAnimationExtra
 	dw TogekissAnimationExtra
@@ -202,10 +204,21 @@ AnimationExtraPointers:
 	dw PorygonZAnimationExtra
 	dw GalladeAnimationExtra
 	dw FroslassAnimationExtra
+	dw DrilburAnimationExtra
+	dw ExcadrillAnimationExtra
+	dw VenipedeAnimationExtra
+	dw WhirlipedeAnimationExtra
+	dw ScolipedeAnimationExtra
 	dw CottoneeAnimationExtra
 	dw WhimsicottAnimationExtra
+	dw SandileAnimationExtra
+	dw KrokorokAnimationExtra
+	dw KrookodileAnimationExtra
+	dw MaractusAnimationExtra
 	dw DwebbleAnimationExtra
 	dw CrustleAnimationExtra
+	dw ScraggyAnimationExtra
+	dw ScraftyAnimationExtra
 	dw MinccinoAnimationExtra
 	dw CinccinoAnimationExtra
 	dw JoltikAnimationExtra
@@ -217,6 +230,10 @@ AnimationExtraPointers:
 	dw VolcaronaAnimationExtra
 	dw PanchamAnimationExtra
 	dw PangoroAnimationExtra
+	dw TyruntAnimationExtra
+	dw TyrantrumAnimationExtra
+	dw AmauraAnimationExtra
+	dw AurorusAnimationExtra
 	dw SylveonAnimationExtra
 	dw PhantumpAnimationExtra
 	dw TrevenantAnimationExtra
@@ -225,6 +242,8 @@ AnimationExtraPointers:
 	dw PikipekAnimationExtra
 	dw TrumbeakAnimationExtra
 	dw ToucannonAnimationExtra
+	dw MareanieAnimationExtra
+	dw ToxapexAnimationExtra
 	dw Raichu_AAnimationExtra
 	dw Exeggutor_AAnimationExtra
 	dw Marowak_AAnimationExtra

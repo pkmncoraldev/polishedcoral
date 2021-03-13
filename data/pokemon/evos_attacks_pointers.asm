@@ -12,9 +12,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw SquirtleEvosAttacks
 	dw WartortleEvosAttacks
 	dw BlastoiseEvosAttacks
-	dw WeedleEvosAttacks
-	dw KakunaEvosAttacks
-	dw BeedrillEvosAttacks
 	dw PidgeyEvosAttacks
 	dw PidgeottoEvosAttacks
 	dw PidgeotEvosAttacks
@@ -77,8 +74,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw MarowakEvosAttacks
 	dw KoffingEvosAttacks
 	dw WeezingEvosAttacks
-	dw RhyhornEvosAttacks
-	dw RhydonEvosAttacks
 	dw ChanseyEvosAttacks
 	dw HorseaEvosAttacks
 	dw SeadraEvosAttacks
@@ -166,6 +161,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw LarvitarEvosAttacks
 	dw PupitarEvosAttacks
 	dw TyranitarEvosAttacks
+	dw WingullEvosAttacks
+	dw PelipperEvosAttacks
 	dw RaltsEvosAttacks
 	dw KirliaEvosAttacks
 	dw GardevoirEvosAttacks
@@ -186,16 +183,21 @@ EvosAttacksPointers:: ; 0x425b1
 	dw GlalieEvosAttacks
 	dw BuizelEvosAttacks
 	dw FloatzelEvosAttacks
+	dw DrifloonEvosAttacks
+	dw DrifblimEvosAttacks
 	dw BunearyEvosAttacks
 	dw LopunnyEvosAttacks
 	dw HonchkrowEvosAttacks
 	dw SpiritombEvosAttacks
 	dw MunchlaxEvosAttacks
+	dw RioluEvosAttacks
+	dw LucarioEvosAttacks
+	dw CroagunkEvosAttacks
+	dw ToxicroakEvosAttacks
 	dw SnoverEvosAttacks
 	dw AbomasnowEvosAttacks
 	dw WeavileEvosAttacks
 	dw MagnezoneEvosAttacks
-	dw RhyperiorEvosAttacks
 	dw ElectivireEvosAttacks
 	dw MagmortarEvosAttacks
 	dw TogekissEvosAttacks
@@ -206,10 +208,21 @@ EvosAttacksPointers:: ; 0x425b1
 	dw PorygonZEvosAttacks
 	dw GalladeEvosAttacks
 	dw FroslassEvosAttacks
+	dw DrilburEvosAttacks
+	dw ExcadrillEvosAttacks
+	dw VenipedeEvosAttacks
+	dw WhirlipedeEvosAttacks
+	dw ScolipedeEvosAttacks
 	dw CottoneeEvosAttacks
 	dw WhimsicottEvosAttacks
+	dw SandileEvosAttacks
+	dw KrokorokEvosAttacks
+	dw KrookodileEvosAttacks
+	dw MaractusEvosAttacks
 	dw DwebbleEvosAttacks
 	dw CrustleEvosAttacks
+	dw ScraggyEvosAttacks
+	dw ScraftyEvosAttacks
 	dw MinccinoEvosAttacks
 	dw CinccinoEvosAttacks
 	dw JoltikEvosAttacks
@@ -221,6 +234,10 @@ EvosAttacksPointers:: ; 0x425b1
 	dw VolcaronaEvosAttacks
 	dw PanchamEvosAttacks
 	dw PangoroEvosAttacks
+	dw TyruntEvosAttacks
+	dw TyrantrumEvosAttacks
+	dw AmauraEvosAttacks
+	dw AurorusEvosAttacks
 	dw SylveonEvosAttacks
 	dw PhantumpEvosAttacks
 	dw TrevenantEvosAttacks
@@ -229,6 +246,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw PikipekEvosAttacks
 	dw TrumbeakEvosAttacks
 	dw ToucannonEvosAttacks
+	dw MareanieEvosAttacks
+	dw ToxapexEvosAttacks
 	dw Raichu_AEvosAttacks
 	dw Exeggutor_AEvosAttacks
 	dw Marowak_AEvosAttacks

@@ -16,11 +16,11 @@ Cries:
 	dba Cry_Pidgey
 	dba Cry_Bulbasaur
 	dba Cry_Farfetch_d
-	dba Cry_Rhydon
+	dba Cry_Krokorok
 	dba Cry_Golem
 	dba Cry_Blastoise
 	dba Cry_Pidgeotto
-	dba Cry_Weedle
+	dba Cry_Venipede
 	dba Cry_Pikipek
 	dba Cry_Minccino
 	dba Cry_Shellder

@@ -9,9 +9,6 @@
 	const SQUIRTLE
 	const WARTORTLE
 	const BLASTOISE
-	const WEEDLE
-	const KAKUNA
-	const BEEDRILL
 	const PIDGEY
 	const PIDGEOTTO
 	const PIDGEOT
@@ -74,8 +71,6 @@
 	const MAROWAK
 	const KOFFING
 	const WEEZING
-	const RHYHORN
-	const RHYDON
 	const CHANSEY
 	const HORSEA
 	const SEADRA
@@ -163,6 +158,8 @@
 	const LARVITAR
 	const PUPITAR
 	const TYRANITAR
+	const WINGULL ;278
+	const PELIPPER ;279
 	const RALTS ;280
 	const KIRLIA ;281
 	const GARDEVOIR ;282
@@ -183,16 +180,21 @@
 	const GLALIE ;362
 	const BUIZEL ;418
 	const FLOATZEL ;419
+	const DRIFLOON ;425
+	const DRIFBLIM ;426
 	const BUNEARY ;427
 	const LOPUNNY ;428
 	const HONCHKROW ;430
 	const SPIRITOMB ;442
 	const MUNCHLAX ;446
+	const RIOLU ;447
+	const LUCARIO ;448
+	const CROAGUNK ;453
+	const TOXICROAK ;454
 	const SNOVER ;459
 	const ABOMASNOW ;460
 	const WEAVILE ;461
 	const MAGNEZONE ;462
-	const RHYPERIOR ;464
 	const ELECTIVIRE ;466
 	const MAGMORTAR ;467
 	const TOGEKISS ;468
@@ -203,10 +205,21 @@
 	const PORYGON_Z ;474
 	const GALLADE ;475
 	const FROSLASS ;478
+	const DRILBUR ;529
+	const EXCADRILL ;530
+	const VENIPEDE ;543
+	const WHIRLIPEDE ;544
+	const SCOLIPEDE ;545
 	const COTTONEE ;546
 	const WHIMSICOTT ;547
+	const SANDILE ;551
+	const KROKOROK ;552
+	const KROOKODILE ;553
+	const MARACTUS ;556
 	const DWEBBLE ;557
 	const CRUSTLE ;558
+	const SCRAGGY ;559
+	const SCRAFTY ;560
 	const MINCCINO ;572
 	const CINCCINO ;573
 	const JOLTIK ;595
@@ -218,6 +231,10 @@
 	const VOLCARONA ;637
 	const PANCHAM ;674
 	const PANGORO ;675
+	const TYRUNT ;696
+	const TYRANTRUM ;697
+	const AMAURA ;698
+	const AURORUS ;699
 	const SYLVEON ;700
 	const PHANTUMP ;708
 	const TREVENANT ;709
@@ -226,6 +243,8 @@
 	const PIKIPEK ;731
 	const TRUMBEAK ;732
 	const TOUCANNON ;733
+	const MAREANIE ;747
+	const TOXAPEX ;748
 	const RAICHU_A
 	const EXEGGUTOR_A
 	const MAROWAK_A

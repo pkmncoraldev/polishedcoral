@@ -26,9 +26,7 @@ EventideVillage_MapScriptHeader:
 	bg_event 24, 15, SIGNPOST_JUMPTEXT, EventideVillageBikeShopSignText
 	bg_event 29, 38, SIGNPOST_JUMPTEXT, EventideVillageGymSignText
 
-	db 13 ; object events
-	person_event SPRITE_HANGAR_PARTS, 32, 28, SPRITEMOVEDATA_HANGAR_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_PURPLE
-	person_event SPRITE_HANGAR_PARTS, 32, 28, SPRITEMOVEDATA_HANGAR_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_TEAL
+	db 11 ; object events
 	person_event SPRITE_HANGAR_PARTS, 32, 33, SPRITEMOVEDATA_HANGAR_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_MILTANK, 32, 21, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
 	person_event SPRITE_MILTANK, 34, 19, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
@@ -43,16 +41,6 @@ EventideVillage_MapScriptHeader:
 
 EventideVillageFlypointCallback:
 	setflag ENGINE_FLYPOINT_EVENTIDE
-	readvar VAR_PLAYER_COLOR
-	if_equal 4, .purple
-	setevent EVENT_HIDE_OW_OBJECTS_TEAL
-	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
-	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
-	return
-.purple
-	setevent EVENT_HIDE_OW_OBJECTS_PURPLE
-	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
-	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	return
 	
 EventideVillageNPC1:

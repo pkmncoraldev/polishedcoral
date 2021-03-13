@@ -1029,10 +1029,10 @@ Cry_Farfetch_d: ; f350d
 	musicheader 1, 8, Cry_Farfetch_d_Ch8
 ; f3516
 
-Cry_Rhydon: ; f3516
-	musicheader 3, 5, Cry_Rhydon_Ch5
-	musicheader 1, 6, Cry_Rhydon_Ch6
-	musicheader 1, 8, Cry_Rhydon_Ch8
+Cry_Krokorok: ; f3516
+	musicheader 3, 5, Cry_Krokorok_Ch5
+	musicheader 1, 6, Cry_Krokorok_Ch6
+	musicheader 1, 8, Cry_Krokorok_Ch8
 ; f351f
 
 Cry_Golem: ; f351f
@@ -1053,10 +1053,10 @@ Cry_Pidgeotto: ; f3531
 	musicheader 1, 8, Cry_Pidgeotto_Ch8
 ; f353a
 
-Cry_Weedle: ; f353a
-	musicheader 3, 5, Cry_Weedle_Ch5
-	musicheader 1, 6, Cry_Weedle_Ch6
-	musicheader 1, 8, Cry_Weedle_Ch8
+Cry_Venipede: ; f353a
+	musicheader 3, 5, Cry_Venipede_Ch5
+	musicheader 1, 6, Cry_Venipede_Ch6
+	musicheader 1, 8, Cry_Venipede_Ch8
 ; f3543
 
 Cry_Pikipek: ; f3543
@@ -1254,7 +1254,7 @@ Cry_Buizel_Ch8: ; f36f3
 	endchannel
 ; f3703
 
-Cry_Rhydon_Ch5: ; f3703
+Cry_Krokorok_Ch5: ; f3703
 	sound_duty 0, 0, 3, 3
 	sound __,  7, $f7, $07a0
 	sound __,  9, $e6, $07a4
@@ -1266,7 +1266,7 @@ Cry_Rhydon_Ch5: ; f3703
 	endchannel
 ; f3722
 
-Cry_Rhydon_Ch6: ; f3722
+Cry_Krokorok_Ch6: ; f3722
 	sound_duty 2, 2, 0, 0
 	sound __,  5, $8, 0
 	sound __,  7, $a7, $0741
@@ -1279,7 +1279,7 @@ Cry_Rhydon_Ch6: ; f3722
 	endchannel
 ; f3745
 
-Cry_Rhydon_Ch8: ; f3745
+Cry_Krokorok_Ch8: ; f3745
 	noise __,  3, $f2, $4c
 	noise __,  7, $e6, $3a
 	noise __,  5, $d7, $3a
@@ -1966,7 +1966,7 @@ Cry_Dwebble_Ch8: ; f3d09
 	endchannel
 ; f3d25
 
-Cry_Weedle_Ch5: ; f3d25
+Cry_Venipede_Ch5: ; f3d25
 	sound_duty 0, 0, 3, 3
 	sound __,  5, $f3, $0780
 	sound __, 16, $e7, $0700
@@ -1977,7 +1977,7 @@ Cry_Weedle_Ch5: ; f3d25
 	endchannel
 ; f3d40
 
-Cry_Weedle_Ch6: ; f3d40
+Cry_Venipede_Ch6: ; f3d40
 	sound_duty 2, 2, 1, 1
 	sound __,  7, $c3, $0701
 	sound __, 15, $b7, $0681
@@ -1988,7 +1988,7 @@ Cry_Weedle_Ch6: ; f3d40
 	endchannel
 ; f3d5b
 
-Cry_Weedle_Ch8: ; f3d5b
+Cry_Venipede_Ch8: ; f3d5b
 	noise __,  7, $e3, $5c
 	noise __, 15, $d6, $4c
 	noise __,  7, $c6, $3c

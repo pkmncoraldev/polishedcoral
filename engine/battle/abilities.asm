@@ -764,6 +764,7 @@ CheckNullificationAbilities:
 	db MOTOR_DRIVE,   ELECTRIC
 	db DRY_SKIN,      WATER
 	db WATER_ABSORB,  WATER
+	db STORM_DRAIN,   WATER
 	db FLASH_FIRE,    FIRE
 	db SAP_SIPPER,    GRASS
 	db LEVITATE,      GROUND
@@ -794,6 +795,7 @@ NullificationAbilities:
 	dbw SAP_SIPPER, SapSipperAbility
 	dbw VOLT_ABSORB, VoltAbsorbAbility
 	dbw WATER_ABSORB, WaterAbsorbAbility
+	dbw STORM_DRAIN, StormDrainAbility
 	dbw DAMP, DampAbility
 	dbw -1, -1
 
@@ -842,6 +844,7 @@ AttackUpAbility:
 	ld b, ATTACK
 	jr StatUpAbility
 LightningRodAbility:
+StormDrainAbility:
 	ld b, SP_ATTACK
 	jr StatUpAbility
 RattledAbility:
@@ -881,12 +884,14 @@ StatUpAbility:
 	farcall BattleCommand_statupmessage
 	jr .done
 .cant_raise
-; Lightning Rod, Motor Drive and Sap Sipper prints a "doesn't affect" message instead.
+; Lightning Rod, Motor Drive, Storm Drain and Sap Sipper prints a "doesn't affect" message instead.
 	ld a, BATTLE_VARS_ABILITY
 	call GetBattleVar
 	cp LIGHTNING_ROD
 	jr z, .print_immunity
 	cp MOTOR_DRIVE
+	jr z, .print_immunity
+	cp STORM_DRAIN
 	jr z, .print_immunity
 	cp SAP_SIPPER
 	jr nz, .done
@@ -1382,7 +1387,10 @@ OffensiveDamageAbilities:
 	dbw SAND_FORCE, SandForceAbility
 	dbw RECKLESS, RecklessAbility
 	dbw GUTS, GutsAbility
+	dbw FLARE_BOOST, FlareBoostAbility
 	dbw PIXILATE, PixilateAbility
+	dbw STRONG_JAW,	StrongJawAbility
+	dbw REFRIGERATE, RefrigerateAbility
 	dbw -1, -1
 
 DefensiveDamageAbilities:
@@ -1488,6 +1496,16 @@ IronFistAbility:
 	ret c
 	ld a, $65
 	jp ApplyDamageMod
+	
+StrongJawAbility:
+; 150% damage for biting moves
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld hl, BitingMoves
+	call IsInArray
+	ret c
+	ld a, $32
+	jp ApplyDamageMod
 
 SandForceAbility:
 ; 130% damage for Ground/Rock/Steel-type moves in a sandstorm, not hurt by Sandstorm
@@ -1533,6 +1551,15 @@ GutsAbility:
 	ret z
 	ld a, $32
 	jp ApplyPhysicalAttackDamageMod
+	
+FlareBoostAbility:
+; 150% special attack if user is burned
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVar
+	bit BRN, a
+	ret z
+	ld a, $32
+	jp ApplySpecialAttackDamageMod
 
 PixilateAbility:
 	ld a, BATTLE_VARS_MOVE_TYPE

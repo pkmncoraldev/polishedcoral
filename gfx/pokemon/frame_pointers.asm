@@ -8,9 +8,6 @@ FramesPointers:
 	dw SquirtleFrames
 	dw WartortleFrames
 	dw BlastoiseFrames
-	dw WeedleFrames
-	dw KakunaFrames
-	dw BeedrillFrames
 	dw PidgeyFrames
 	dw PidgeottoFrames
 	dw PidgeotFrames
@@ -73,8 +70,6 @@ FramesPointers:
 	dw MarowakFrames
 	dw KoffingFrames
 	dw WeezingFrames
-	dw RhyhornFrames
-	dw RhydonFrames
 	dw ChanseyFrames
 	dw HorseaFrames
 	dw SeadraFrames
@@ -162,6 +157,8 @@ FramesPointers:
 	dw LarvitarFrames
 	dw PupitarFrames
 	dw TyranitarFrames
+	dw WingullFrames
+	dw PelipperFrames
 	dw RaltsFrames
 	dw KirliaFrames
 	dw GardevoirFrames
@@ -182,16 +179,21 @@ FramesPointers:
 	dw GlalieFrames
 	dw BuizelFrames
 	dw FloatzelFrames
+	dw DrifloonFrames
+	dw DrifblimFrames
 	dw BunearyFrames
 	dw LopunnyFrames
 	dw HonchkrowFrames
 	dw SpiritombFrames
 	dw MunchlaxFrames
+	dw RioluFrames
+	dw LucarioFrames
+	dw CroagunkFrames
+	dw ToxicroakFrames
 	dw SnoverFrames
 	dw AbomasnowFrames
 	dw WeavileFrames
 	dw MagnezoneFrames
-	dw RhyperiorFrames
 	dw ElectivireFrames
 	dw MagmortarFrames
 	dw TogekissFrames
@@ -202,10 +204,21 @@ FramesPointers:
 	dw PorygonZFrames
 	dw GalladeFrames
 	dw FroslassFrames
+	dw DrilburFrames
+	dw ExcadrillFrames
+	dw VenipedeFrames
+	dw WhirlipedeFrames
+	dw ScolipedeFrames
 	dw CottoneeFrames
 	dw WhimsicottFrames
+	dw SandileFrames
+	dw KrokorokFrames
+	dw KrookodileFrames
+	dw MaractusFrames
 	dw DwebbleFrames
 	dw CrustleFrames
+	dw ScraggyFrames
+	dw ScraftyFrames
 	dw MinccinoFrames
 	dw CinccinoFrames
 	dw JoltikFrames
@@ -217,6 +230,10 @@ FramesPointers:
 	dw VolcaronaFrames
 	dw PanchamFrames
 	dw PangoroFrames
+	dw TyruntFrames
+	dw TyrantrumFrames
+	dw AmauraFrames
+	dw AurorusFrames
 	dw SylveonFrames
 	dw PhantumpFrames
 	dw TrevenantFrames
@@ -225,6 +242,8 @@ FramesPointers:
 	dw PikipekFrames
 	dw TrumbeakFrames
 	dw ToucannonFrames
+	dw MareanieFrames
+	dw ToxapexFrames
 	dw Raichu_AFrames
 	dw Exeggutor_AFrames
 	dw Marowak_AFrames

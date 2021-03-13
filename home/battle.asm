@@ -525,6 +525,13 @@ PunchingMoves::
 	db THUNDERPUNCH
 	db ICE_PUNCH
 	db -1
+	
+BitingMoves:
+	db BITE
+	db CRUNCH
+	db FIRE_FANG
+	db ICE_FANG
+	db THUNDER_FANG
 
 SoundMoves::
 	db BUG_BUZZ

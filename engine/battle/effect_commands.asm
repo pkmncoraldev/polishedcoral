@@ -1206,6 +1206,14 @@ BattleCommand_critical: ; 34631
 .Ability:
 	ld a, BATTLE_VARS_ABILITY
 	call GetBattleVar
+	cp MERCILESS
+	jr nz, .no_merciless
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	bit PSN, a
+	jr nz, .guranteed_crit
+	jr .Tally
+.no_merciless
 	cp SUPER_LUCK
 	jr nz, .Tally
 
@@ -1469,12 +1477,21 @@ _CheckTypeMatchup: ; 347d3
 	ld a, BATTLE_VARS_ABILITY
 	call GetBattleVar
 	cp PIXILATE
-	jr nz, .no_pixilate
+	jr z, .pixilate
+	cp REFRIGERATE
+	jr z, .refrigerate
+.pixilate
 	ld a, NORMAL
 	cp d
-	jr nz, .no_pixilate
+	jr nz, .no_change
 	ld d, FAIRY
-.no_pixilate
+	jr .no_change
+.refrigerate
+	ld a, NORMAL
+	cp d
+	jr nz, .no_change
+	ld d, ICE
+.no_change
 	ld b, [hl]
 	inc hl
 	ld c, [hl]
@@ -3031,6 +3048,10 @@ BattleCommand_posthiteffects:
 	ld a, b
 	cp HELD_ROCKY_HELMET
 	jr z, .rocky_helmet
+	ld a, BATTLE_VARS_ABILITY
+	call GetBattleVar
+	cp ROUGH_SKIN
+	jr z, .rough_skin
 	ld a, BATTLE_VARS_MOVE_CATEGORY
 	call GetBattleVar
 	cp c
@@ -3068,6 +3089,7 @@ BattleCommand_posthiteffects:
 	farcall GetEighthMaxHP
 	jr .got_hurt_item_damage
 .rocky_helmet
+.rough_skin
 	call CheckContactMove
 	jr c, .rocky_helmet_done
 	farcall GetSixthMaxHP

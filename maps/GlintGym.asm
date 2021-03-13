@@ -1084,7 +1084,7 @@ GlintGymBookText8_2:
 GlintGymBookText9:
 	text "A children's book"
 	line "called “THE HUNGRY"
-	cont "LITTLE WEEDLE”."
+	cont "LITTLE VENIPEDE”."
 	done
 	
 GlintGymBookText10:

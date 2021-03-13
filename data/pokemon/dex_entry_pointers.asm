@@ -9,9 +9,6 @@
 	dw SquirtlePokedexEntry
 	dw WartortlePokedexEntry
 	dw BlastoisePokedexEntry
-	dw WeedlePokedexEntry
-	dw KakunaPokedexEntry
-	dw BeedrillPokedexEntry
 	dw PidgeyPokedexEntry
 	dw PidgeottoPokedexEntry
 	dw PidgeotPokedexEntry
@@ -74,8 +71,6 @@
 	dw MarowakPokedexEntry
 	dw KoffingPokedexEntry
 	dw WeezingPokedexEntry
-	dw RhyhornPokedexEntry
-	dw RhydonPokedexEntry
 	dw ChanseyPokedexEntry
 	dw HorseaPokedexEntry
 	dw SeadraPokedexEntry
@@ -162,6 +157,8 @@
 	dw LarvitarPokedexEntry
 	dw PupitarPokedexEntry
 	dw TyranitarPokedexEntry
+	dw WingullPokedexEntry
+	dw PelipperPokedexEntry
 	dw RaltsPokedexEntry
 	dw KirliaPokedexEntry
 	dw GardevoirPokedexEntry
@@ -182,16 +179,21 @@
 	dw GlaliePokedexEntry
 	dw BuizelPokedexEntry
 	dw FloatzelPokedexEntry
+	dw DrifloonPokedexEntry
+	dw DrifblimPokedexEntry
 	dw BunearyPokedexEntry
 	dw LopunnyPokedexEntry
 	dw HonchkrowPokedexEntry
 	dw SpiritombPokedexEntry
 	dw MunchlaxPokedexEntry
+	dw RioluPokedexEntry
+	dw LucarioPokedexEntry
+	dw CroagunkPokedexEntry
+	dw ToxicroakPokedexEntry
 	dw SnoverPokedexEntry
 	dw AbomasnowPokedexEntry
 	dw WeavilePokedexEntry
 	dw MagnezonePokedexEntry
-	dw RhyperiorPokedexEntry
 	dw ElectivirePokedexEntry
 	dw MagmortarPokedexEntry
 	dw TogekissPokedexEntry
@@ -202,10 +204,21 @@
 	dw PorygonZPokedexEntry
 	dw GalladePokedexEntry
 	dw FroslassPokedexEntry
+	dw DrilburPokedexEntry
+	dw ExcadrillPokedexEntry
+	dw VenipedePokedexEntry
+	dw WhirlipedePokedexEntry
+	dw ScolipedePokedexEntry
 	dw CottoneePokedexEntry
 	dw WhimsicottPokedexEntry
+	dw SandilePokedexEntry
+	dw KrokorokPokedexEntry
+	dw KrookodilePokedexEntry
+	dw MaractusPokedexEntry
 	dw DwebblePokedexEntry
 	dw CrustlePokedexEntry
+	dw ScraggyPokedexEntry
+	dw ScraftyPokedexEntry
 	dw MinccinoPokedexEntry
 	dw CinccinoPokedexEntry
 	dw JoltikPokedexEntry
@@ -217,6 +230,10 @@
 	dw VolcaronaPokedexEntry
 	dw PanchamPokedexEntry
 	dw PangoroPokedexEntry
+	dw TyruntPokedexEntry
+	dw TyrantrumPokedexEntry
+	dw AmauraPokedexEntry
+	dw AurorusPokedexEntry
 	dw SylveonPokedexEntry
 	dw PhantumpPokedexEntry
 	dw TrevenantPokedexEntry
@@ -225,3 +242,5 @@
 	dw PikipekPokedexEntry
 	dw TrumbeakPokedexEntry
 	dw ToucannonPokedexEntry
+	dw MareaniePokedexEntry
+	dw ToxapexPokedexEntry

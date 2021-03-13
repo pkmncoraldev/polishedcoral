@@ -8,9 +8,6 @@ AnimationPointers:
 	dw SquirtleAnimation
 	dw WartortleAnimation
 	dw BlastoiseAnimation
-	dw WeedleAnimation
-	dw KakunaAnimation
-	dw BeedrillAnimation
 	dw PidgeyAnimation
 	dw PidgeottoAnimation
 	dw PidgeotAnimation
@@ -73,8 +70,6 @@ AnimationPointers:
 	dw MarowakAnimation
 	dw KoffingAnimation
 	dw WeezingAnimation
-	dw RhyhornAnimation
-	dw RhydonAnimation
 	dw ChanseyAnimation
 	dw HorseaAnimation
 	dw SeadraAnimation
@@ -162,6 +157,8 @@ AnimationPointers:
 	dw LarvitarAnimation
 	dw PupitarAnimation
 	dw TyranitarAnimation
+	dw WingullAnimation
+	dw PelipperAnimation
 	dw RaltsAnimation
 	dw KirliaAnimation
 	dw GardevoirAnimation
@@ -187,11 +184,14 @@ AnimationPointers:
 	dw HonchkrowAnimation
 	dw SpiritombAnimation
 	dw MunchlaxAnimation
+	dw RioluAnimation
+	dw LucarioAnimation
+	dw CroagunkAnimation
+	dw ToxicroakAnimation
 	dw SnoverAnimation
 	dw AbomasnowAnimation
 	dw WeavileAnimation
 	dw MagnezoneAnimation
-	dw RhyperiorAnimation
 	dw ElectivireAnimation
 	dw MagmortarAnimation
 	dw TogekissAnimation
@@ -202,10 +202,21 @@ AnimationPointers:
 	dw PorygonZAnimation
 	dw GalladeAnimation
 	dw FroslassAnimation
+	dw DrilburAnimation
+	dw ExcadrillAnimation
+	dw VenipedeAnimation
+	dw WhirlipedeAnimation
+	dw ScolipedeAnimation
 	dw CottoneeAnimation
 	dw WhimsicottAnimation
+	dw SandileAnimation
+	dw KrokorokAnimation
+	dw KrookodileAnimation
+	dw MaractusAnimation
 	dw DwebbleAnimation
 	dw CrustleAnimation
+	dw ScraggyAnimation
+	dw ScraftyAnimation
 	dw MinccinoAnimation
 	dw CinccinoAnimation
 	dw JoltikAnimation
@@ -217,6 +228,10 @@ AnimationPointers:
 	dw VolcaronaAnimation
 	dw PanchamAnimation
 	dw PangoroAnimation
+	dw TyruntAnimation
+	dw TyrantrumAnimation
+	dw AmauraAnimation
+	dw AurorusAnimation
 	dw SylveonAnimation
 	dw PhantumpAnimation
 	dw TrevenantAnimation
@@ -225,6 +240,8 @@ AnimationPointers:
 	dw PikipekAnimation
 	dw TrumbeakAnimation
 	dw ToucannonAnimation
+	dw MareanieAnimation
+	dw ToxapexAnimation
 	dw Raichu_AAnimation
 	dw Exeggutor_AAnimation
 	dw Marowak_AAnimation

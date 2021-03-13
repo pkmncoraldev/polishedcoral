@@ -8,9 +8,6 @@ BitmasksPointers:
 	dw SquirtleBitmasks
 	dw WartortleBitmasks
 	dw BlastoiseBitmasks
-	dw WeedleBitmasks
-	dw KakunaBitmasks
-	dw BeedrillBitmasks
 	dw PidgeyBitmasks
 	dw PidgeottoBitmasks
 	dw PidgeotBitmasks
@@ -73,8 +70,6 @@ BitmasksPointers:
 	dw MarowakBitmasks
 	dw KoffingBitmasks
 	dw WeezingBitmasks
-	dw RhyhornBitmasks
-	dw RhydonBitmasks
 	dw ChanseyBitmasks
 	dw HorseaBitmasks
 	dw SeadraBitmasks
@@ -162,6 +157,8 @@ BitmasksPointers:
 	dw LarvitarBitmasks
 	dw PupitarBitmasks
 	dw TyranitarBitmasks
+	dw WingullBitmasks
+	dw PelipperBitmasks
 	dw RaltsBitmasks
 	dw KirliaBitmasks
 	dw GardevoirBitmasks
@@ -182,16 +179,21 @@ BitmasksPointers:
 	dw GlalieBitmasks
 	dw BuizelBitmasks
 	dw FloatzelBitmasks
+	dw DrifloonBitmasks
+	dw DrifblimBitmasks
 	dw BunearyBitmasks
 	dw LopunnyBitmasks
 	dw HonchkrowBitmasks
 	dw SpiritombBitmasks
 	dw MunchlaxBitmasks
+	dw RioluBitmasks
+	dw LucarioBitmasks
+	dw CroagunkBitmasks
+	dw ToxicroakBitmasks
 	dw SnoverBitmasks
 	dw AbomasnowBitmasks
 	dw WeavileBitmasks
 	dw MagnezoneBitmasks
-	dw RhyperiorBitmasks
 	dw ElectivireBitmasks
 	dw MagmortarBitmasks
 	dw TogekissBitmasks
@@ -202,10 +204,21 @@ BitmasksPointers:
 	dw PorygonZBitmasks
 	dw GalladeBitmasks
 	dw FroslassBitmasks
+	dw DrilburBitmasks
+	dw ExcadrillBitmasks
+	dw VenipedeBitmasks
+	dw WhirlipedeBitmasks
+	dw ScolipedeBitmasks
 	dw CottoneeBitmasks
 	dw WhimsicottBitmasks
+	dw SandileBitmasks
+	dw KrokorokBitmasks
+	dw KrookodileBitmasks
+	dw MaractusBitmasks
 	dw DwebbleBitmasks
 	dw CrustleBitmasks
+	dw ScraggyBitmasks
+	dw ScraftyBitmasks
 	dw MinccinoBitmasks
 	dw CinccinoBitmasks
 	dw JoltikBitmasks
@@ -217,6 +230,10 @@ BitmasksPointers:
 	dw VolcaronaBitmasks
 	dw PanchamBitmasks
 	dw PangoroBitmasks
+	dw TyruntBitmasks
+	dw TyrantrumBitmasks
+	dw AmauraBitmasks
+	dw AurorusBitmasks
 	dw SylveonBitmasks
 	dw PhantumpBitmasks
 	dw TrevenantBitmasks
@@ -225,6 +242,8 @@ BitmasksPointers:
 	dw PikipekBitmasks
 	dw TrumbeakBitmasks
 	dw ToucannonBitmasks
+	dw MareanieBitmasks
+	dw ToxapexBitmasks
 	dw Raichu_ABitmasks
 	dw Exeggutor_ABitmasks
 	dw Marowak_ABitmasks

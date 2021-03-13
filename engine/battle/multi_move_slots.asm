@@ -2042,9 +2042,9 @@ HowlUsers:
 	
 FuryAttackUsers:
 	db SMEARGLE
-	db WEEDLE
-	db KAKUNA
-	db BEEDRILL
+	db VENIPEDE
+	db WHIRLIPEDE
+	db SCOLIPEDE
 	db NIDORAN_M
 	db NIDORINO
 	db NIDOKING

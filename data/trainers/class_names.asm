@@ -9,7 +9,7 @@ TrainerClassNames::
 	db "LEADER@"           ; STANLEY
 	db "LEADER@"           ; RODNEY
 	db "LEADER@"           ; WENDY
-	db "LEADER@"           ; MORTY
+	db "LEADER@"           ; CHARLIE
 	db "LEADER@"           ; CHUCK
 	db "LEADER@"           ; JASMINE
 	db "LEADER@"           ; PRYCE

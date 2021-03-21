@@ -32,7 +32,7 @@ PLAYER_F EQU __enum__
 
 	trainerclass WENDY
 
-	trainerclass MORTY
+	trainerclass CHARLIE
 
 	trainerclass CHUCK
 

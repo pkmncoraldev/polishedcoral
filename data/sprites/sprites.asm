@@ -54,7 +54,7 @@ SpriteHeaders:
 	overworld_sprite StanleySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite RodneySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite WendySpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite MortySpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite CharlieSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ChuckSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite JasmineSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite PryceSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN

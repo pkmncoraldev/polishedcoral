@@ -9,7 +9,7 @@ TrainerPicPointers::
 	dba StanleyPic
 	dba RodneyPic
 	dba WendyPic
-	dba MortyPic
+	dba CharliePic
 	dba ChuckPic
 	dba JasminePic
 	dba PrycePic

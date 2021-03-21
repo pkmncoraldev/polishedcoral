@@ -8,8 +8,8 @@ BTTrainerClassSprites:
 	db SPRITE_KRIS          ; PLAYER_KRIS
 	db SPRITE_STANLEY       ; STANLEY
 	db SPRITE_RODNEY        ; RODNEY
-	db SPRITE_GOLD      	; WENDY
-	db SPRITE_GOLD          ; MORTY
+	db SPRITE_WENDY      	; WENDY
+	db SPRITE_CHARLIE       ; CHARLIE
 	db SPRITE_GOLD          ; CHUCK
 	db SPRITE_GOLD      	; JASMINE
 	db SPRITE_GOLD          ; PRYCE

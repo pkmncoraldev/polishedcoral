@@ -647,7 +647,7 @@ SECTION "Trainer Pics 1", ROMX
 StanleyPic:               INCBIN "gfx/trainers/stanley.2bpp.lz"
 RodneyPic:                INCBIN "gfx/trainers/rodney.2bpp.lz"
 WendyPic:         	      INCBIN "gfx/trainers/wendy.2bpp.lz"
-MortyPic:                 INCBIN "gfx/trainers/morty.2bpp.lz"
+CharliePic:               INCBIN "gfx/trainers/charlie.2bpp.lz"
 ChuckPic:                 INCBIN "gfx/trainers/chuck.2bpp.lz"
 JasminePic:               INCBIN "gfx/trainers/jasmine.2bpp.lz"
 PrycePic:                 INCBIN "gfx/trainers/pryce.2bpp.lz"

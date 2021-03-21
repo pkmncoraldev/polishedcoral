@@ -2,7 +2,7 @@ BossTrainers:
 	db STANLEY
 	db RODNEY
 	db WENDY
-	db MORTY
+	db CHARLIE
 	db CHUCK
 	db JASMINE
 	db PRYCE

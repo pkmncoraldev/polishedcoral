@@ -122,12 +122,12 @@ WendyGroup:
 ; ================================
 
 
-MortyGroup:
+CharlieGroup:
 ; ================================
 ; ================
 
-	; MORTY
-	db "UNUSED@"
+	; CHARLIE
+	db "CHARLIE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

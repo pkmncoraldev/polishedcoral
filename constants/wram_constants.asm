@@ -199,7 +199,7 @@ NUM_GOT_HM_FLAGS EQU const_value
 	const MET_STANLEY
 	const MET_RODNEY
 	const MET_WENDY
-	const MORTY_JOURNAL ; Ecruteak Pokémon Center
+	const MET_CHARLIE
 	const CHUCK_JOURNAL ; Cianwood Pokémon Center
 	const JASMINE_JOURNAL ; Olivine Pokémon Center
 	const PRYCE_JOURNAL ; Mahogany Pokémon Center

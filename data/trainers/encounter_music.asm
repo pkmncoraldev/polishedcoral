@@ -10,7 +10,7 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_NONE					; stanley
 	db MUSIC_NONE					; rodney
 	db MUSIC_NONE					; wendy
-	db MUSIC_NONE					; morty
+	db MUSIC_NONE					; charlie
 	db MUSIC_NONE					; chuck
 	db MUSIC_NONE					; jasmine
 	db MUSIC_NONE					; pryce

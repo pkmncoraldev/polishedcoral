@@ -276,6 +276,9 @@ LusterMallCoffeeShop_BlockData:
 LusterMallSkateShop_BlockData:
 	INCBIN "maps/LusterMallSkateShop.ablk.lz"
 	
+LusterMallSkateTest_BlockData:
+	INCBIN "maps/LusterMallSkateTest.ablk.lz"
+	
 LusterMallAntiqueShop_BlockData:
 	INCBIN "maps/LusterMallAntiqueShop.ablk.lz"
 	

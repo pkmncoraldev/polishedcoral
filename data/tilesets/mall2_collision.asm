@@ -50,17 +50,17 @@
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 31
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 32
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 33
-	tilecoll WALL, WALL, WALL, FLOOR ; 34
-	tilecoll WALL, COUNTER, WALL, FLOOR ; 35
-	tilecoll COUNTER, COUNTER, FLOOR, FLOOR ; 36
-	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 37
-	tilecoll WALL, WALL, WALL, FLOOR ; 38
+	tilecoll WALL, DOOR, FLOOR, FLOOR ; 34
+	tilecoll COUNTER, COUNTER, FLOOR, FLOOR ; 35
+	tilecoll COUNTER, WALL, FLOOR, FLOOR ; 36
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 37
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 38
 	tilecoll WALL, FLOOR, WALL, WALL ; 39
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 3a
+	tilecoll WALL, WALL, FLOOR, WALL ; 3a
 	tilecoll WALL, WALL, FLOOR, WALL ; 3b
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 3c
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 3d
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 3e
+	tilecoll WALL, WALL, WALL, WALL ; 3e
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 3f
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 40
 	tilecoll WALL, WALL, WALL, WALL ; 41
@@ -131,6 +131,26 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 82
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 83
 	tilecoll WALL, WALL, WALL, WALL ; 84
-	tilecoll WALL, WALL, WALL, WALL ; 85
-	tilecoll WALL, WALL, WALL, WALL ; 86
-	tilecoll WALL, WALL, WALL, WALL ; 87
+	tilecoll FLOOR, FLOOR, FLOOR, WARP_CARPET_DOWN ; 85
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, FLOOR ; 86
+	tilecoll WALL, SKATE, SKATE, SKATE ; 87
+	tilecoll SKATE, SKATE, SKATE, SKATE ; 88
+	tilecoll SKATE, SKATE, SKATE, WALL ; 89
+	tilecoll SKATE, SKATE, WALL, WALL ; 8a
+	tilecoll SKATE, WALL, SKATE, WALL ; 8b
+	tilecoll SKATE, WALL, SKATE, SKATE ; 8c
+	tilecoll SKATE, SKATE, SKATE, SKATE ; 8d
+	tilecoll WALL, WALL, WALL, WALL ; 8e
+	tilecoll SKATE, SKATE, SKATE, WALL ; 8f
+	tilecoll WALL, WALL, WALL, WALL ; 90
+	tilecoll WALL, WALL, SKATE, SKATE ; 91
+	tilecoll WALL, WALL, WALL, WALL ; 92
+	tilecoll SKATE, SKATE, WALL, WALL ; 93
+	tilecoll SKATE, SKATE, SKATE, SKATE ; 94
+	tilecoll SKATE, SKATE, SKATE, SKATE ; 95
+	tilecoll SKATE, SKATE, SKATE, WALL ; 96
+	tilecoll SKATE, SKATE, WALL, SKATE ; 97
+	tilecoll SKATE, SKATE, SKATE, GRIND ; 98
+	tilecoll SKATE, WALL, GRIND, GRIND ; 99
+	tilecoll WALL, WALL, WALL, WALL ; 9a
+	tilecoll WALL, WALL, WALL, WALL ; 9b

@@ -239,11 +239,12 @@ MAP_NONE   EQU 0
 	map_const LUSTER_MALL_ELECTRONICS_SHOP,				   5,  4 ; 19
 	map_const LUSTER_MALL_COFFEE_SHOP,					   5,  4 ; 20
 	map_const LUSTER_MALL_SKATE_SHOP,					   4,  3 ; 21
-	map_const LUSTER_MALL_ANTIQUE_SHOP,					   4,  4 ; 22
-	map_const LUSTER_MALL_HERB_SHOP,					   4,  3 ; 23
-	map_const LUSTER_MALL_STONE_SHOP,					   4,  4 ; 24
-	map_const LUSTER_MALL_BALL_SHOP,					   4,  4 ; 25
-	map_const LUSTER_MALL_CLOTHES_SHOP,					   6,  4 ; 26
-	map_const PARK,										  21, 30 ; 27
-	map_const SKATEPARK,								  15, 32 ; 28
+	map_const LUSTER_MALL_SKATE_TEST,					   6,  5 ; 22
+	map_const LUSTER_MALL_ANTIQUE_SHOP,					   4,  4 ; 23
+	map_const LUSTER_MALL_HERB_SHOP,					   4,  3 ; 24
+	map_const LUSTER_MALL_STONE_SHOP,					   4,  4 ; 25
+	map_const LUSTER_MALL_BALL_SHOP,					   4,  4 ; 26
+	map_const LUSTER_MALL_CLOTHES_SHOP,					   6,  4 ; 27
+	map_const PARK,										  21, 30 ; 28
+	map_const SKATEPARK,								  15, 32 ; 29
 	

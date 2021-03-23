@@ -19,7 +19,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event  9, 14, TWINKLE_TOWN, 1
 	warp_event 11, 14, LUSTER_CITY_SHOPPING, 1
 	warp_event 13, 14, LUSTER_SEWERS_THRONE_ROOM, 1
-	warp_event 15, 14, ICE_TEMPLE_B1F_1, 1
+	warp_event 15, 14, SKATEPARK, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0

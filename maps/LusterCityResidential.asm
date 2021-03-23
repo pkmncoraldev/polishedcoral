@@ -1088,11 +1088,15 @@ LusterPunkLeaderText13:
 	line "grass, gravel, or"
 	cont "other bumpy stuff!"
 	
-	para "I've heard there's"
-	line "also a SKATE SHOP"
-	cont "at the MALL that"
-	cont "can teach you some"
-	cont "cool tricks!"
+	para "You should stop"
+	line "by the SKATE SHOP"
+	cont "at the MALL."
+	
+	para "I know a guy that"
+	line "works there."
+	
+	para "He can teach you"
+	cont "some cool tricks!"
 	
 	para "…"
 	

@@ -38,9 +38,9 @@ LusterMallCoffeeShop_MapScriptHeader:
 	const LUSTER_MALL_COFFEE_SHOP_PAPER
 	
 	
-LusterMallCoffeeShop_Clerk:
-	
 LusterMallCoffeeShop_Cook:
+	jumptextfaceplayer LusterMallCoffeeShop_CookText
+
 	faceplayer
 	opentext
 	writetext LusterMallCoffeeShop_CookText5
@@ -261,6 +261,10 @@ LusterMallCoffeeShop_CookTextBadItem:
 	line "anyway…"
 	prompt
 	
+LusterMallCoffeeShop_CookText:
+	text "IN PROGRESS"
+	done
+	
 LusterMallCoffeeShop_CookText1:
 	text "What would you"
 	line "like to brew?"
@@ -454,10 +458,6 @@ Movement_LusterMallCoffeeShopPaper:
 	remove_fixed_facing
 	step_end
 	
-LusterMallCoffeeShop_CookText:
-	text "IN PROGRESS"
-	done
-	
 LusterMallCoffeeShop_NPC1Text1:
 	text "The BARISTAS here"
 	line "don't know how to"
@@ -572,10 +572,10 @@ LusterMallCoffeeShop_NPC3Text:
 	line "drink all my"
 	cont "sorrows away…"
 	
-	para "What's that?"
+	para "Huh?"
 	
 	para "I know coffee won't"
-	line "make me forget."
+	line "help me forget."
 	
 	para "I just like the"
 	line "taste!"

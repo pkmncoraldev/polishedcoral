@@ -737,6 +737,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call ReplaceKrisSprite
 	jr .grindcont
 .grind
+	eventflagcheck EVENT_KNOW_GRIND
+	jr z, .stop_grinding_fall
 	call GetFacingTileCoord
 	ld c, a
 	cp COLL_GRIND
@@ -1058,6 +1060,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret
 	
 .TryOllie: ; 801f3
+	eventflagcheck EVENT_KNOW_OLLIE
+	jr z, .DontJump
 	ld a, [wSkateboardOllie]
 	cp 2
 	jr nz, .DontJump

@@ -2448,7 +2448,7 @@ SkateboardFunction: ; d0b3
 	cp COLL_NO_BIKE
 	jp z, .floortoobumpy
 	
-	call .CheckEnvironment
+	call .CheckEnvironmentSkateboard
 	jr c, .CannotUseSkateboard
 	ld a, [wPlayerState]
 	and a ; cp PLAYER_NORMAL
@@ -2507,6 +2507,13 @@ SkateboardFunction: ; d0b3
 	ld h, d
 	ld l, e
 	ret
+.CheckEnvironmentSkateboard:
+	ld a, [wMapGroup]
+	cp GROUP_LUSTER_MALL
+	jr nz, .CheckEnvironment
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_MALL_SKATE_TEST
+	jr z, .ok
 
 .CheckEnvironment: ; d121
 	call GetMapPermission

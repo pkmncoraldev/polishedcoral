@@ -30,36 +30,37 @@ Route10TentNPC:
 	waitbutton
 	jump .end
 .got_treasure
-	checkitem CLAY_POT
-	iftrue .have_treasure
-	writetext Route10TentNPCText2
-	waitbutton
-	jump .end
-.have_treasure
 	checkevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
 	iftrue .have_talked
 	setevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
 	writetext Route10TentNPCText3
-	yesorno
-	iffalse .no
+	waitbutton
 	writetext Route10TentNPCText4
-	playsound SFX_LEVEL_UP 
+	playsound SFX_LEVEL_UP
 	waitsfx
 	waitbutton
-	takeitem CLAY_POT
+	closetext
+	pause 5
+	spriteface ROUTE_10_TENT_NPC, UP
+	pause 10
+	opentext
+	writetext Route10TentNPCText7
+	waitbutton
+	closetext
+	pause 25
+	opentext
+	writetext Route10TentNPCText8
+	waitbutton
+	closetext
+	pause 10
+	spriteface ROUTE_10_TENT_NPC, DOWN
+	opentext
+	writetext Route10TentNPCText9
+	waitbutton
 	verbosegiveitem AMULET_COIN
 	jump .end
 .have_talked
-	writetext Route10TentNPCText6
-	yesorno
-	iffalse .no
-	writetext Route10TentNPCText4
-	waitbutton
-	takeitem CLAY_POT
-	verbosegiveitem AMULET_COIN
-	jump .end
-.no
-	writetext Route10TentNPCText5
+	writetext Route10TentNPCText2
 	waitbutton
 .end
 	closetext
@@ -100,17 +101,22 @@ Route10TentNPCText1:
 	done
 	
 Route10TentNPCText2:
-	text "This is it?"
+	text "There's a man who"
+	line "runs an ANTIQUE"
+	cont "SHOP at the MALL"
+	cont "in LUSTER CITY."
 	
-	para "It looks like a"
-	line "useless CLAY POT!"
+	para "This looks just"
+	line "like an artifact"
+	cont "he has there."
 	
-	para "But it couldn't be!"
+	para "You should take it"
+	line "there and see if"
+	cont "he knows more"
+	cont "about it."
 	
-	para "It's surely worth a"
-	line "fortune…"
-	
-	para "…Right?"
+	para "We could have a"
+	line "big find here!"
 	done
 	
 Route10TentNPCText3:
@@ -127,18 +133,12 @@ Route10TentNPCText3:
 	para "You did!"
 	
 	para "You've gotta let"
-	line "me have it!"
-	
-	para "I'll trade you"
-	line "this old coin."
-	
-	para "It's said to bring"
-	line "great fortune!"
+	line "me see it!"
 	done
 	
 Route10TentNPCText4:
-	text "<PLAYER> handed"
-	line "over the CLAY POT."
+	text "<PLAYER> showed"
+	line "off the CLAY POT."
 	done
 	
 Route10TentNPCText5:
@@ -149,13 +149,58 @@ Route10TentNPCText5:
 	
 Route10TentNPCText6:
 	text "You've gotta let"
-	line "me have it!"
+	line "me see it!"
+	done
 	
-	para "I'll trade you"
-	line "this old coin."
+Route10TentNPCText7:
+	text "Hmm…"
+	done
+	
+Route10TentNPCText8:
+	text "It looks like a"
+	line "useless CLAY POT…"
+	
+	para "…"
+	
+	para "But wait!"
+	
+	para "I've seen a pot"
+	line "like this before!"
+	
+	para "I wonder…"
+	
+	para "Could they be"
+	line "connected?"
+	done
+	
+Route10TentNPCText9:
+	text "Ok, kid!"
+	
+	para "There's a man who"
+	line "runs an ANTIQUE"
+	cont "SHOP at the MALL"
+	cont "in LUSTER CITY."
+	
+	para "This looks just"
+	line "like an artifact"
+	cont "he has there."
+	
+	para "You should take it"
+	line "there and see if"
+	cont "he knows more"
+	cont "about it."
+	
+	para "We could have a"
+	line "big find here!"
+	
+	para "For now, though,"
+	
+	para "take this as"
+	line "a thank you."
 	
 	para "It's said to bring"
 	line "great fortune!"
+	done
 	done
 	
 Route10TentWigglytuffText:

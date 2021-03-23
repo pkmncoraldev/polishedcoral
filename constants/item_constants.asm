@@ -67,7 +67,7 @@
 	const MOOMOO_MILK  ; 36
 	const RAGECANDYBAR ; 37
 
-	const SACRED_ASH   ; 38 - remove
+	const SACRED_ASH   ; 38 - replace
 	const ENERGYPOWDER ; 39
 	const ENERGY_ROOT  ; 3a
 	const HEAL_POWDER  ; 3b
@@ -117,21 +117,21 @@
 	const B_ROOM_KEY   ; 62
 	const Y_ROOM_KEY   ; 63
 	const R_ROOM_KEY   ; 64
-	const LOST_ITEM    ; 65
+	const LOST_ITEM    ; 65 - replace
 	const RIVAL_POKEDEX; 66
 	const SKATEBOARD  ; 67
-	const CLEAR_BELL   ; 68
-	const GS_BALL      ; 69
-	const BLUE_CARD    ; 6a
-	const ORANGETICKET ; 6b
-	const MYSTICTICKET ; 6c
-	const OLD_SEA_MAP  ; 6d
+	const CLEAR_BELL   ; 68 - replace
+	const GS_BALL      ; 69 - replace
+	const BLUE_CARD    ; 6a - replace
+	const ORANGETICKET ; 6b - replace
+	const MYSTICTICKET ; 6c - replace
+	const OLD_SEA_MAP  ; 6d - replace
 	const SHINY_CHARM  ; 6e
 	const OVAL_CHARM   ; 6f
 	const FLOWER_PETAL ; 70
 	const BLOSSOM_TEA  ; 71
 
-	const TERU_SAMA    ; 72
+	const TERU_SAMA    ; 72 - replace
 
 	const CHERI_BERRY  ; 73
 	const CHESTO_BERRY ; 74
@@ -145,19 +145,19 @@
 	const SITRUS_BERRY ; 7c
 	const FIGY_BERRY   ; 7d
 	
-	const UNUSED1      ; 7e
-	const UNUSED2      ; 7f
-	const UNUSED3      ; 80
-	const UNUSED4      ; 81
-	const UNUSED5      ; 82
-	const UNUSED6      ; 83
-	const UNUSED7      ; 84
-	const UNUSED8      ; 85
-	const UNUSED9      ; 86
+	const UNUSED1      ; 7e - replace
+	const UNUSED2      ; 7f - replace
+	const UNUSED3      ; 80 - replace
+	const UNUSED4      ; 81 - replace
+	const UNUSED5      ; 82 - replace
+	const UNUSED6      ; 83 - replace
+	const UNUSED7      ; 84 - replace
+	const UNUSED8      ; 85 - replace
+	const UNUSED9      ; 86 - replace
 
 	const BERRY_JUICE  ; 87
 
-	const SILK_SCARF   ; 88
+	const SILK_SCARF   ; 88 - replace
 	const BLACK_BELT   ; 89
 	const SHARP_BEAK   ; 8a
 	const POISON_BARB  ; 8b
@@ -174,7 +174,7 @@
 	const NEVERMELTICE ; 96
 	const DRAGON_FANG  ; 97
 	const BLACKGLASSES ; 98
-	const PINK_BOW     ; 99 - remove
+	const PINK_BOW     ; 99
 
 	const BRIGHTPOWDER ; 9a
 	const SCOPE_LENS   ; 9b
@@ -186,7 +186,7 @@
 	const AMULET_COIN  ; a1
 	const CLEANSE_TAG  ; a2
 	const SMOKE_BALL   ; a3
-	const BERSERK_GENE ; a4 - remove
+	const BERSERK_GENE ; a4 - replace
 
 	const LIGHT_BALL   ; a5
 	const STICK        ; a6
@@ -194,7 +194,7 @@
 	const LUCKY_PUNCH  ; a8
 	const METAL_POWDER ; a9
 	const QUICK_POWDER ; aa
-	const ARMOR_SUIT   ; ab - remove
+	const ARMOR_SUIT   ; ab - replace
 
 	const AIR_BALLOON  ; ac
 	const ASSAULT_VEST ; ad
@@ -248,12 +248,12 @@
 	const DRAGON_SCALE ; d7
 	const UP_GRADE     ; d8
 	const DUBIOUS_DISC ; d9
-	const PROTECTOR    ; da - remove
+	const PROTECTOR    ; da - replace
 	const ELECTIRIZER  ; db
 	const MAGMARIZER   ; dc
 	const RAZOR_FANG   ; dd
 	const RAZOR_CLAW   ; de
-	const ODD_SOUVENIR ; df - remove
+	const ODD_SOUVENIR ; df - replace
 
 	const NUGGET       ; e0
 	const BIG_NUGGET   ; e1
@@ -262,10 +262,10 @@
 	const BALMMUSHROOM ; e4
 	const PEARL        ; e5
 	const BIG_PEARL    ; e6
-	const PEARL_STRING ; e7 - remove
+	const PEARL_STRING ; e7 - replace
 	const STARDUST     ; e8
 	const STAR_PIECE   ; e9
-	const BRICK_PIECE  ; ea - remove
+	const BRICK_PIECE  ; ea - replace
 	const RARE_BONE    ; eb
 	const SILVER_LEAF  ; ec
 	const GOLD_LEAF    ; ed
@@ -276,19 +276,19 @@
 	const SAIL_FOSSIL  ; f1
 	const OLD_AMBER    ; f2
 
-	const MULCH        ; f3 - remove
-	const SWEET_HONEY  ; f4 - remove
+	const MULCH        ; f3 - replace
+	const SWEET_HONEY  ; f4 - replace
 
-	const FLOWER_MAIL  ; f5 - remove
-	const SURF_MAIL    ; f6 - remove
-	const LITEBLUEMAIL ; f7 - remove
-	const PORTRAITMAIL ; f8 - remove
-	const LOVELY_MAIL  ; f9 - remove
-	const EON_MAIL     ; fa - remove
-	const MORPH_MAIL   ; fb - remove
-	const BLUESKY_MAIL ; fc - remove
-	const MUSIC_MAIL   ; fd - remove
-	const MIRAGE_MAIL  ; fe - remove
+	const FLOWER_MAIL  ; f5 - replace
+	const SURF_MAIL    ; f6 - replace
+	const LITEBLUEMAIL ; f7 - replace
+	const PORTRAITMAIL ; f8 - replace
+	const LOVELY_MAIL  ; f9 - replace
+	const EON_MAIL     ; fa - replace
+	const MORPH_MAIL   ; fb - replace
+	const BLUESKY_MAIL ; fc - replace
+	const MUSIC_MAIL   ; fd - replace
+	const MIRAGE_MAIL  ; fe - replace
 
 	const ITEM_FROM_MEM ; ff
 

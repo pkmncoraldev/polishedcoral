@@ -66,6 +66,8 @@ MapTriggers::
 	scene_var SPOOKY_FOREST_9,						  wSpookyForestEscortTrigger
 	scene_var SPOOKY_FOREST_ESCORT,					  wSpookyForestEscortTrigger
 	scene_var LUSTER_MALL,							  wLusterMallTrigger
+	scene_var LUSTER_MALL_SKATE_SHOP,				  wAlways0Trigger
+	scene_var LUSTER_MALL_SKATE_TEST,				  wLusterMallSkateTestTrigger
 	scene_var ICE_TEMPLE_B1F_1,						  wIceTempleB1F1Trigger
 	scene_var ICE_TEMPLE_B1F_2,						  wIceTempleB1F2Trigger
 	scene_var ICE_TEMPLE_B1F_3,						  wIceTempleB1F3Trigger

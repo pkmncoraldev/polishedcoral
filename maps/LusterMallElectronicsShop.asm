@@ -30,7 +30,7 @@ LusterMallElectronicsShop_MapScriptHeader:
 	person_event SPRITE_CHILD,  6,  1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC1, -1
 	person_event SPRITE_SUPER_NERD,  5,  0, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC2, -1
 	person_event SPRITE_CUTE_GIRL,  2,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC3, -1
-	person_event SPRITE_CLERK,  4,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_Clerk, -1
+	object_event 4, 9, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STANDARD, MART_LUSTER_MALL_ELECTRONICS, -1
 
 	const_def 1 ; object constants
 	const LUSTER_MALL_ELECTRONICS_SNES1
@@ -56,9 +56,6 @@ LusterMallElectronicsShop_NPC3:
 	waitbutton
 	closetext
 	spriteface LUSTER_MALL_ELECTRONICS_NPC3, UP
-	end
-	
-LusterMallElectronicsShop_Clerk:
 	end
 	
 LusterMallElectronicsShop_Poster:

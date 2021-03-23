@@ -402,6 +402,7 @@ ENDM
 	map_attributes LusterMallElectronicsShop, LUSTER_MALL_ELECTRONICS_SHOP, 0, 0
 	map_attributes LusterMallCoffeeShop, LUSTER_MALL_COFFEE_SHOP, 0, 0
 	map_attributes LusterMallSkateShop, LUSTER_MALL_SKATE_SHOP, 0, 0
+	map_attributes LusterMallSkateTest, LUSTER_MALL_SKATE_TEST, 0, 0
 	map_attributes LusterMallAntiqueShop, LUSTER_MALL_ANTIQUE_SHOP, 0, 0
 	map_attributes LusterMallHerbShop, LUSTER_MALL_HERB_SHOP, 0, 0
 	map_attributes LusterMallStoneShop, LUSTER_MALL_STONE_SHOP, 0, 0

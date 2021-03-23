@@ -1003,6 +1003,7 @@ wLusterSewersB2FTrigger:: ds 1
 wLusterSewersThroneRoomTrigger:: ds 1
 wSpookyForestEscortTrigger:: ds 1
 wLusterMallTrigger:: ds 1
+wLusterMallSkateTestTrigger:: ds 1
 wIceTempleB1F1Trigger:: ds 1
 wIceTempleB1F2Trigger:: ds 1
 wIceTempleB1F3Trigger:: ds 1
@@ -1011,7 +1012,7 @@ wTwinkleGymEntryTrigger:: ds 1
 wTwinkleGymBlueRoomTrigger:: ds 1
 wTwinkleGymYellowRoomTrigger:: ds 1
 
-ds 31
+ds 30
 
 ; fight counts
 wJackFightCount::    ds 1

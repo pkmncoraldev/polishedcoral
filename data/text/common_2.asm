@@ -1011,10 +1011,10 @@ UnknownText_0x1c1505::
 	done
 
 UnknownText_MallPC::
-	text "Oh!"
+	text "Just kidding!"
 
 	para "It's just for"
-	line "display purposes…"
+	line "display purposes!"
 	prompt
 	
 _OakPCText1::

@@ -9,6 +9,7 @@ Marts: ; 160a9
 	dw LusterMart
 	dw LusterMallElectronics
 	dw LusterMallCoffee
+	dw LusterMallAntique
 MartsEnd
 
 
@@ -69,7 +70,7 @@ EventideMart: ; 16118
 	db ICE_HEAL
 	db -1
 	
-FlickerMart: ; 16118
+FlickerMart:
 	db 10 ; # items
 	db POKE_BALL
 	db GREAT_BALL
@@ -83,22 +84,27 @@ FlickerMart: ; 16118
 	db ICE_HEAL
 	db -1
 	
-TwinkleMart: ; 16118
+TwinkleMart:
 	db 1 ; # items
 	db POTION
 	db -1
 	
-LusterMart: ; 16118
+LusterMart:
 	db 1 ; # items
 	db POTION
 	db -1
 	
-LusterMallElectronics: ; 16118
+LusterMallElectronics:
 	db 1 ; # items
 	db POTION
 	db -1
 	
-LusterMallCoffee: ; 16118
+LusterMallCoffee:
+	db 1 ; # items
+	db POTION
+	db -1
+	
+LusterMallAntique:
 	db 1 ; # items
 	db POTION
 	db -1

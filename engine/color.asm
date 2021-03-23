@@ -1272,6 +1272,8 @@ LoadMapPals:
 	ret z
 	cp TILESET_MOUNTAIN
 	ret z
+	cp TILESET_JUNGLE
+	ret z
 	cp TILESET_SNOW
 	ret z
 	cp TILESET_PARK

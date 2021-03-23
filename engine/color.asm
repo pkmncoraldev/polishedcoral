@@ -993,8 +993,11 @@ LoadMapPals:
 	ret
 .sunbeam
 	ld a, [wMapNumber]
+	cp MAP_SUNBEAM_ISLAND
+	jp z, .sailboat
 	cp MAP_SUNBEAM_BEACH
-	jp nz, .sailboat
+	jp nz, .normal
+.umbrella
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes

@@ -31,7 +31,15 @@ SunbeamJungle_MapScriptHeader:
 	coord_event  6, 10, 1, JungleMakeSilverBlue
 	coord_event  7, 11, 1, JungleMakeSilverBlue
 
-	db 0 ; bg events
+	db 8 ; bg events
+	signpost  7,  8, SIGNPOST_READ, SunbeamJungleBigWaterfall
+	signpost  7,  9, SIGNPOST_READ, SunbeamJungleBigWaterfall
+	signpost  7, 10, SIGNPOST_READ, SunbeamJungleBigWaterfall
+	signpost  7, 11, SIGNPOST_READ, SunbeamJungleBigWaterfall
+	signpost  7, 12, SIGNPOST_READ, SunbeamJungleBigWaterfall
+	signpost  7, 13, SIGNPOST_READ, SunbeamJungleBigWaterfall
+	signpost  7, 14, SIGNPOST_READ, SunbeamJungleBigWaterfall
+	signpost  7, 15, SIGNPOST_READ, SunbeamJungleBigWaterfall
 
 	db 15 ; object events
 	cuttree_event  4,  9, EVENT_SUNBEAM_JUNGLE_CUT_TREE_1
@@ -72,7 +80,6 @@ JungleMakeSilverBlue:
 	setevent EVENT_JUNGLE_CAVE_BLUE
 	loadvar wTimeOfDayPalFlags, $40 | 1
 	special Special_UpdatePalsInstant
-;	playsound SFX_SNOWSTORM_INTRO
 	dotrigger $2
 	end
 	
@@ -82,6 +89,9 @@ JungleMakeSilverBlack:
 	special Special_UpdatePalsInstant
 	dotrigger $1
 	end
+	
+SunbeamJungleBigWaterfall:
+	jumptext SunbeamJungleBigWaterfallText
 	
 SunbeamJungleTrigger0:
 	special Special_StopRunning
@@ -293,7 +303,7 @@ SunbeamJungleSnare3:
 	
 	para "I CAN'T HEAR YOU"
 	line "OVER THE SOUND OF"
-	cont "THE WATTERFALL!"
+	cont "THE WATERFALL!"
 	done
 
 .BeatenText:
@@ -375,6 +385,11 @@ SunbeamJungleSnare6:
 	text "Why would I?"
 	done
 	end
+	
+SunbeamJungleBigWaterfallText:
+	text "Wow, it's a huge"
+	line "waterfall."
+	done
 
 SunbeamJungleKageText1:
 	text "After we wrap up"

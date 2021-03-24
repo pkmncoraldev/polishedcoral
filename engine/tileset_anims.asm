@@ -171,14 +171,6 @@ TilesetJungleAnim::
     dw Waterfall3Frames, AnimateWaterfallTiles
     dw Waterfall4Frames, AnimateWaterfallTiles
     dw Waterfall5Frames, AnimateWaterfallTiles
-    dw NULL,  WaitTileAnimation
-    dw NULL,  WaitTileAnimation
-    dw NULL,  WaitTileAnimation
-    dw NULL,  WaitTileAnimation
-    dw NULL,  WaitTileAnimation
-    dw NULL,  WaitTileAnimation
-    dw NULL,  WaitTileAnimation
-    dw NULL,  WaitTileAnimation
     dw NULL,  DoneTileAnimation
 	
 TilesetCaveAnim::

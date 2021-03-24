@@ -64,7 +64,7 @@ Route9_MapScriptHeader:
 	person_event SPRITE_BEAUTY, 18, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_3, -1
 	person_event SPRITE_BUG_CATCHER, 12, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_4, -1
 	person_event SPRITE_BIRD_KEEPER,  9, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRanch_5, -1
-	fruittreeinvis_event  12, 10, FRUITTREE_ROUTE_9, ASPEAR_BERRY
+	fruittree_event  12, 10, FRUITTREE_ROUTE_9, ASPEAR_BERRY
 
 Route9MapSignThing::
 	loadvar wTimeOfDayPalFlags, $40 | 0

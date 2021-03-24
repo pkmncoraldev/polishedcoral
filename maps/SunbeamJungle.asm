@@ -9,14 +9,31 @@ SunbeamJungle_MapScriptHeader:
 	db 3 ; warp events
 	warp_def 25,  4, 3, SUNBEAM_ISLAND
 	warp_def 25,  5, 12, SUNBEAM_ISLAND
-	warp_def  5, 12, 1, SUNBEAM_JUNGLE_CAVE
+	warp_def  5, 11, 1, SUNBEAM_JUNGLE_CAVE
 
-	db 1 ; coord events
+	db 18 ; coord events
 	xy_trigger 1, 17, 11, 0, SunbeamJungleKageScript, 0, 0
+	coord_event  4,  8, 2, JungleMakeSilverBlack
+	coord_event  6, 11, 2, JungleMakeSilverBlack
+	coord_event 17,  7, 2, JungleMakeSilverBlack
+	coord_event  5,  6, 1, JungleMakeSilverBlue
+	coord_event  5,  7, 1, JungleMakeSilverBlue
+	coord_event  5,  8, 1, JungleMakeSilverBlue
+	coord_event 17,  6, 2, JungleMakeSilverBlack
+	coord_event 16,  6, 1, JungleMakeSilverBlue
+	coord_event 16,  7, 1, JungleMakeSilverBlue
+	coord_event 16,  8, 1, JungleMakeSilverBlue
+	coord_event 16,  9, 1, JungleMakeSilverBlue
+	coord_event 17,  8, 2, JungleMakeSilverBlack
+	coord_event 17,  9, 2, JungleMakeSilverBlack
+	coord_event 17, 10, 2, JungleMakeSilverBlack
+	coord_event 17, 11, 2, JungleMakeSilverBlack
+	coord_event  6, 10, 1, JungleMakeSilverBlue
+	coord_event  7, 11, 1, JungleMakeSilverBlue
 
 	db 0 ; bg events
 
-	db 14 ; object events
+	db 15 ; object events
 	cuttree_event  4,  9, EVENT_SUNBEAM_JUNGLE_CUT_TREE_1
 	cuttree_event 24,  5, EVENT_SUNBEAM_JUNGLE_CUT_TREE_2
 	cuttree_event 25, 18, EVENT_SUNBEAM_JUNGLE_CUT_TREE_3
@@ -31,6 +48,8 @@ SunbeamJungle_MapScriptHeader:
 	person_event SPRITE_SNARE_GIRL, 19, 27, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, SunbeamJungleSnare6, EVENT_SAVED_SUNBEAM
 	person_event SPRITE_KAGE_WATER, -1, -1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAVED_SUNBEAM
 	person_event SPRITE_SNARE_WATER, -1, -1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAVED_SUNBEAM
+	person_event SPRITE_TRAFFIC_LIGHT,  5, 11, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
+
 	
 	const_def 1 ; object constants
 	const SUNBEAM_JUNGLE_TREE_1
@@ -49,8 +68,24 @@ SunbeamJungle_MapScriptHeader:
 	const SUNBEAM_JUNGLE_SNARE_WATER
 
 
+JungleMakeSilverBlue:
+	setevent EVENT_JUNGLE_CAVE_BLUE
+	loadvar wTimeOfDayPalFlags, $40 | 1
+	special Special_UpdatePalsInstant
+;	playsound SFX_SNOWSTORM_INTRO
+	dotrigger $2
+	end
+	
+JungleMakeSilverBlack:
+	clearevent EVENT_JUNGLE_CAVE_BLUE
+	loadvar wTimeOfDayPalFlags, $40 | 0
+	special Special_UpdatePalsInstant
+	dotrigger $1
+	end
+	
 SunbeamJungleTrigger0:
-	wait 5
+	special Special_StopRunning
+	applyonemovement PLAYER, step_up
 	opentext
 	writetext SunbeamJungleKageText1
 	waitbutton
@@ -65,7 +100,7 @@ SunbeamJungleTrigger0:
 	closetext
 	applymovement SUNBEAM_JUNGLE_KAGE_CUTSCENE, Movement_SunbeamJungleKage1
 	disappear SUNBEAM_JUNGLE_KAGE_CUTSCENE
-	applymovement SUNBEAM_JUNGLE_SNARE_CUTSCENE, Movement_SunbeamJungleSnare1
+	applyonemovement SUNBEAM_JUNGLE_SNARE_CUTSCENE, step_down
 	callasm CheckFacingObjectCutscene
 	iffalse .endwalking
 	applyonemovement SUNBEAM_JUNGLE_SNARE_CUTSCENE, step_left
@@ -102,6 +137,8 @@ SunbeamJungleTrigger2:
 	end
 	
 SunbeamJungleKageScript:
+	checkevent EVENT_SAVED_SUNBEAM
+	iftrue .end
 	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	spriteface SUNBEAM_JUNGLE_SNARE_BRIDGE, RIGHT
@@ -207,7 +244,7 @@ SunbeamJungleKageScript:
 	setevent EVENT_SAVED_SUNBEAM
 	clearevent EVENT_HAVENT_SAVED_SUNBEAM
 	clearevent EVENT_SUNBEAM_BOAT_GONE
-	dotrigger $2
+.end
 	end
 
 SunbeamJungleSnare2:
@@ -495,6 +532,7 @@ SunbeamJungleSnareBridgeText3:
 	done
 	
 Movement_SunbeamJungleKage1:
+	step_up
 	step_up
 	step_up
 	step_end

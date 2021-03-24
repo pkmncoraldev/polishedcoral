@@ -851,6 +851,8 @@ LoadMapPals:
 	jp z, .playerhouse
 	cp TILESET_PLAYER_ROOM
 	jp z, .playerroom
+	cp TILESET_JUNGLE
+	jp z, .jungle
 	jp .normal
 .playerhouse
 	ld a, [wMapGroup]
@@ -862,8 +864,22 @@ LoadMapPals:
 	cp MAP_TWINKLE_GYM_YELLOW_ROOM
 	jr z, .yellow_room
 	cp MAP_TWINKLE_GYM_RED_ROOM
-	jr z, .red_room
+	jp z, .red_room
 	jp .normal
+	
+.jungle
+	eventflagcheck EVENT_JUNGLE_CAVE_BLUE
+	jp z, .normal
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	ld hl, MapObjectPalsWaterfallCave
+	call AddNTimes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	jp .outside
 	
 .playerroom
 	eventflagcheck EVENT_N64
@@ -996,7 +1012,8 @@ LoadMapPals:
 	cp MAP_SUNBEAM_ISLAND
 	jp z, .sailboat
 	cp MAP_SUNBEAM_BEACH
-	jp nz, .normal
+	jp z, .umbrella
+	jp .got_pals_cont
 .umbrella
 	ld a, [wTimeOfDayPal]
 	and 3
@@ -1448,6 +1465,9 @@ INCLUDE "maps/palettes/obpals/n64.pal"
 
 MapObjectPalsCoffee::
 INCLUDE "maps/palettes/obpals/coffee.pal"
+
+MapObjectPalsWaterfallCave::
+INCLUDE "maps/palettes/obpals/waterfallcave.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

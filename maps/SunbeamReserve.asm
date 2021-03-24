@@ -32,6 +32,7 @@ SunbeamReserve_MapScriptHeader:
 	const SUNBEAM_SPRUCE
 	
 SunbeamReserveTrigger0:
+	special Special_StopRunning
 	playsound SFX_EXIT_BUILDING
 	moveperson SUNBEAM_SPRUCE, $11, $b
 	appear SUNBEAM_SPRUCE

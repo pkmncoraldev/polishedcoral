@@ -217,10 +217,11 @@ SECTION "Tileset Data - cave", ROMX
 
 TilesetCaveGFX::
 TilesetStarglowCavernGFX::
-INCBIN "gfx/tilesets/cave.2bpp.lz"
+INCBIN "gfx/tilesets/cave.2bpp.vram0.lz"
 
-TilesetCaveGFX2 EQU 0
-TilesetStarglowCavernGFX2 EQU 0
+TilesetCaveGFX2::
+TilesetStarglowCavernGFX2::
+INCBIN "gfx/tilesets/cave.2bpp.vram1.lz"
 
 TilesetCaveMeta::
 TilesetStarglowCavernMeta::

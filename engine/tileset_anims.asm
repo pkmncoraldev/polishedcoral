@@ -853,9 +853,9 @@ rept 2
 ; (16 bytes per tiles * 4 tiles = 64 bytes)
 	ld a, [wTileAnimationTimer]
 	and %111 ; 8 frames x2
-	rra ; rotating 3 right equals
-	rra ; rotating 5 left, which
-	rra ; multiplies by 2**5 = 32
+	rrca ; rotating 3 right equals
+	rrca ; rotating 5 left, which
+	rrca ; multiplies by 2**5 = 32
 	; hl += a
 	add l
 	ld l, a

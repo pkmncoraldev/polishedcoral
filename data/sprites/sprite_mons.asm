@@ -12,7 +12,7 @@ SpriteMons:
 	db CHANSEY
 	db TOGEPI
 	db PSYDUCK
-	db LARVESTA
+	db MAGMAR
 	db DONPHAN
 	db MEOWTH
 	db DODUO
@@ -22,15 +22,15 @@ SpriteMons:
 	db NIDORAN_F
 	db LOPUNNY
 	db ALTARIA
-	db MAGMAR
-	db ELECTABUZZ
+	db MAGBY
+	db ELEKID
 	db MILTANK
 	db DODRIO
 	db PIKACHU
 	db TOGETIC
 	db WIGGLYTUFF
 	db HOUNDOUR
-	db ABRA
+	db ELECTABUZZ
 	db ABRA
 	db ABRA
 	db ABRA

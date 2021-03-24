@@ -56,7 +56,7 @@
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 37
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 38
 	tilecoll WALL, WALL, BUOY, BUOY ; 39
-	tilecoll WALL, BUOY, BUOY, BUOY ; 3a
+	tilecoll FLOOR, FLOOR, LONG_GRASS, WALL ; 3a
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 3b
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 3c
 	tilecoll WATERFALL, WATERFALL, WATERFALL, DOOR ; 3d
@@ -126,3 +126,4 @@
 	tilecoll WATER, WATER, WATER, WATER ; 7d
 	tilecoll WALL, WALL, WALL, WALL ; 7e
 	tilecoll WALL, WALL, WALL, WALL ; 7f
+	tilecoll WALL, WALL, WALL, WALL ; 80

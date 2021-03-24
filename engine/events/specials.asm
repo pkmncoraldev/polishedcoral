@@ -475,6 +475,8 @@ BillBoxSwitch:
 	jp FarCopyWRAM
 
 Special_StopRunning:
+	xor a
+	ld [hJoyDown], a
 	ld a, [wPlayerState]
 	cp PLAYER_SKATEBOARD_MOVING
 	jr nz, .not_skating

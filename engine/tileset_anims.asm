@@ -167,7 +167,7 @@ TilesetJungleAnim::
     dw NULL,  AnimateFlowerTile
     dw NULL,  AnimateFlowerTile2
     dw WaterfallPriorityFrames, AnimateWaterfallTiles
-    dw Waterfall2PriorityFrames, AnimateWaterfallTiles
+	dw WaterfallPriorityAndPlainFrames, AnimateWaterfallTiles2
     dw Waterfall3Frames, AnimateWaterfallTiles
     dw Waterfall4Frames, AnimateWaterfallTiles
     dw Waterfall5Frames, AnimateWaterfallTiles
@@ -820,6 +820,58 @@ AnimateWaterfallTiles: ; fc56d
 
     jp WriteTwoTiles
 	
+AnimateWaterfallTiles2: ; fc56d
+; Draw two waterfall tiles for the current frame in VRAM tile at de.
+; based on AnimateWhirlpoolTiles, but with 8 frames
+
+; Struct:
+;     VRAM address
+;    Address of the first tile
+
+; Does two tiles at a time.
+
+; Save sp in bc (see WriteTile).
+    ld hl, sp+$0
+    ld b, h
+    ld c, l
+
+; de = VRAM address
+    ld l, e
+    ld h, d
+    ld e, [hl]
+    inc hl
+    ld d, [hl]
+    inc hl
+; Tile address is now at hl.
+
+; Get the tile for this frame.
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+rept 2
+; do 'hl += a * 32' twice to get 'hl += a * 64'
+; (16 bytes per tiles * 4 tiles = 64 bytes)
+	ld a, [wTileAnimationTimer]
+	and %111 ; 8 frames x2
+	rrca ; rotating 3 right equals
+	rrca ; rotating 5 left, which
+	rrca ; multiplies by 2**5 = 32
+	; hl += a
+	add l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
+endr
+
+; Stack now points to the desired frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteFourTiles
+	
 TrainWindowFrames: dw VTiles2 tile $28, TrainWindowTiles
 
 TrainWindowTiles: INCBIN "gfx/tilesets/trainwindows/1.2bpp"
@@ -848,7 +900,7 @@ WaterfallPriorityFrames: dw VTiles2 tile $30, WaterfallPriorityTiles
 
 WaterfallPriorityTiles: INCBIN "gfx/tilesets/waterfall/priority/1.2bpp"
 
-Waterfall2PriorityFrames: dw VTiles2 tile $32, Waterfall2PriorityTiles
+WaterfallPriorityAndPlainFrames: dw VTiles2 tile $6c, Waterfall2PriorityTiles
 
 Waterfall2PriorityTiles: INCBIN "gfx/tilesets/waterfall/priority/2.2bpp"
 
@@ -878,6 +930,23 @@ WriteTwoTiles:
 	ld [hl], d
 
 rept 8
+	pop de
+	inc hl
+	ld [hl], e
+	inc hl
+	ld [hl], d
+endr
+	jp _FinishWritingSecondTile
+	
+	
+WriteFourTiles:
+
+	pop de
+	ld [hl], e
+	inc hl
+	ld [hl], d
+
+rept 24
 	pop de
 	inc hl
 	ld [hl], e

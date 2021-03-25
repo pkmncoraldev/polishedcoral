@@ -25,6 +25,7 @@ Landmarks: ; 0x1ca8c3
 	landmark  44,  92, LakeOnwaName
 	landmark  44,  84, MtOnwaName
 	landmark  68, 124, SunbeamIslandName
+	landmark  68, 124, SunbeamJungleName
 	landmark  52,  76, Route8Name
 	landmark  84,  68, EventideForestName
 	landmark  84,  52, OldManorName
@@ -64,6 +65,7 @@ Route7Name:            db "ROUTE 7@"
 LakeOnwaName:          db "LAKE ONWA@"
 MtOnwaName:			   db "MT. ONWA@"
 SunbeamIslandName:	   db "SUNBEAM¯ISLAND@"
+SunbeamJungleName:	   db "SUNBEAM¯JUNGLE@"
 Route8Name:  		   db "ROUTE 8@"
 EventideForestName:	   db "EVENTIDE¯FOREST@"
 OldManorName:		   db "OLD MANOR@"
@@ -80,5 +82,5 @@ LusterSewersName:	   db "LUSTER¯SEWERS@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"
 ShoppingName:		   db "SHOPPING¯DISTRICT@"
 BusinessName:	 	   db "BUSINESS¯DISTRICT@"
-GateName:	 	 	   db "UNKOWN@"
+GateName:	 	 	   db "UNKNOWN@"
 SpecialMapName:        db "?","@"

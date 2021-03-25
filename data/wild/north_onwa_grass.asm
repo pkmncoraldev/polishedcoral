@@ -220,7 +220,7 @@
 	map_id HUNTERS_THICKET
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
-	db 10, ODDISH		;30%
+	db 10, EXEGGCUTE	;30%
 	db 10, PIKIPEK		;30%
 	db 10, MARILL		;20%
 	db 10, PIDGEY		;10%
@@ -228,7 +228,7 @@
 	db 10, SHROOMISH	;4%
 	db 10, SHROOMISH	;1%
 	; day
-	db 10, ODDISH		;30%
+	db 10, EXEGGCUTE	;30%
 	db 10, PIKIPEK		;30%
 	db 10, MARILL		;20%
 	db 10, PIDGEY		;10%
@@ -236,7 +236,7 @@
 	db 10, SHROOMISH	;4%
 	db 10, SHROOMISH	;1%
 	; nite
-	db 10, ODDISH		;30%
+	db 10, EXEGGCUTE	;30%
 	db 10, PIKIPEK		;30%
 	db 10, MARILL		;20%
 	db 10, PIDGEY		;10%
@@ -333,78 +333,78 @@
 	db 13, PSYDUCK		;20%
 	db 13, PHANPY		;10%
 	db 13, BUNEARY		;5%
-	db 13, PSYDUCK		;4%
-	db 13, PHANPY		;1%
+	db 13, MARILL		;4%
+	db 13, MARILL		;1%
 	; day
 	db 13, MEOWTH		;30%
 	db 13, PIDGEY		;30%
 	db 13, PSYDUCK		;20%
 	db 13, PHANPY		;10%
 	db 13, BUNEARY		;5%
-	db 13, PSYDUCK		;4%
-	db 13, PHANPY		;1%
+	db 13, MARILL		;4%
+	db 13, MARILL		;1%
 	; nite
 	db 13, MEOWTH		;30%
 	db 13, PIDGEY		;30%
 	db 13, PSYDUCK		;20%
 	db 13, PHANPY		;10%
 	db 13, BUNEARY		;5%
-	db 13, PSYDUCK		;4%
-	db 13, PHANPY		;1%
+	db 13, MARILL		;4%
+	db 13, MARILL		;1%
 	
 	map_id MT_ONWA_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 14, ARON			;30%
-	db 14, NOIBAT		;30%
-	db 14, ZUBAT		;20%
-	db 14, NUMEL		;10%
+	db 14, ZUBAT		;30%
+	db 14, GEODUDE		;20%
+	db 14, ONIX			;10%
 	db 14, LARVITAR		;5%
-	db 14, ELEKID		;4%
-	db 14, ELEKID		;1%
+	db 14, ONIX			;4%
+	db 14, ONIX			;1%
 	; day
 	db 14, ARON			;30%
-	db 14, NOIBAT		;30%
-	db 14, ZUBAT		;20%
-	db 14, NUMEL		;10%
+	db 14, ZUBAT		;30%
+	db 14, GEODUDE		;20%
+	db 14, ONIX			;10%
 	db 14, LARVITAR		;5%
-	db 14, ELEKID		;4%
-	db 14, ELEKID		;1%
+	db 14, ONIX			;4%
+	db 14, ONIX			;1%
 	; nite
 	db 14, ARON			;30%
-	db 14, NOIBAT		;30%
-	db 14, ZUBAT		;20%
-	db 14, NUMEL		;10%
+	db 14, ZUBAT		;30%
+	db 14, GEODUDE		;20%
+	db 14, ONIX			;10%
 	db 14, LARVITAR		;5%
-	db 14, ELEKID		;4%
-	db 14, ELEKID		;1%
+	db 14, ONIX			;4%
+	db 14, ONIX			;1%
 	
 	map_id MT_ONWA_2F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 14, ARON			;30%
-	db 14, NOIBAT		;30%
+	db 14, GEODUDE		;30%
 	db 14, ZUBAT		;20%
-	db 14, NUMEL		;10%
+	db 14, ONIX			;10%
 	db 14, LARVITAR		;5%
-	db 14, ELEKID		;4%
-	db 14, ELEKID		;1%
+	db 14, ONIX			;4%
+	db 14, ONIX			;1%
 	; day
 	db 14, ARON			;30%
-	db 14, NOIBAT		;30%
+	db 14, GEODUDE		;30%
 	db 14, ZUBAT		;20%
-	db 14, NUMEL		;10%
+	db 14, ONIX			;10%
 	db 14, LARVITAR		;5%
-	db 14, ELEKID		;4%
-	db 14, ELEKID		;1%
+	db 14, ONIX			;4%
+	db 14, ONIX			;1%
 	; nite
 	db 14, ARON			;30%
-	db 14, NOIBAT		;30%
+	db 14, GEODUDE		;30%
 	db 14, ZUBAT		;20%
-	db 14, NUMEL		;10%
+	db 14, ONIX			;10%
 	db 14, LARVITAR		;5%
-	db 14, ELEKID		;4%
-	db 14, ELEKID		;1%
+	db 14, ONIX			;4%
+	db 14, ONIX			;1%
 	
 	map_id MT_ONWA_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -441,24 +441,24 @@
 	db 16, MAGBY		;20%
 	db 16, KOFFING		;10%
 	db 16, NUMEL		;5%
-	db 16, LARVESTA		;4%
-	db 16, LARVESTA		;1%
+	db 16, ARON			;4%
+	db 16, ARON			;1%
 	; day
 	db 16, LARVITAR		;30%
 	db 16, KOFFING		;30%
 	db 16, MAGBY		;20%
 	db 16, KOFFING		;10%
 	db 16, NUMEL		;5%
-	db 16, LARVESTA		;4%
-	db 16, LARVESTA		;1%
+	db 16, ARON			;4%
+	db 16, ARON			;1%
 	; nite
 	db 16, LARVITAR		;30%
 	db 16, KOFFING		;30%
 	db 16, MAGBY		;20%
 	db 16, KOFFING		;10%
 	db 16, NUMEL		;5%
-	db 16, LARVESTA		;4%
-	db 16, LARVESTA		;1%
+	db 16, ARON			;4%
+	db 16, ARON			;1%
 	
 	map_id MT_ONWA_B3F
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -468,50 +468,50 @@
 	db 16, SLUGMA		;20%
 	db 16, ARON			;10%
 	db 16, LARVITAR		;5%
-	db 16, LARVESTA		;4%
-	db 16, LARVESTA		;1%
+	db 16, ARON			;4%
+	db 16, ARON			;1%
 	; day
 	db 16, KOFFING		;30%
 	db 16, NUMEL		;30%
 	db 16, SLUGMA		;20%
 	db 16, ARON			;10%
 	db 16, LARVITAR		;5%
-	db 16, LARVESTA		;4%
-	db 16, LARVESTA		;1%
+	db 16, ARON			;4%
+	db 16, ARON			;1%
 	; nite
 	db 16, KOFFING		;30%
 	db 16, NUMEL		;30%
 	db 16, SLUGMA		;20%
 	db 16, ARON			;10%
 	db 16, LARVITAR		;5%
-	db 16, LARVESTA		;4%
-	db 16, LARVESTA		;1%
+	db 16, ARON			;4%
+	db 16, ARON			;1%
 	
 	map_id MT_ONWA_CLIFF
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 14, PONYTA		;30%
 	db 14, NATU			;30%
-	db 14, ELEKID		;20%
+	db 14, SWABLU		;20%
 	db 14, MAGBY		;10%
-	db 14, MAGBY		;5%
-	db 14, MAGBY		;4%
+	db 14, LARVITAR		;5%
+	db 14, SWABLU		;4%
 	db 20, XATU			;1%
 	; day
 	db 14, PONYTA		;30%
 	db 14, NATU			;30%
-	db 14, ELEKID		;20%
+	db 14, SWABLU		;20%
 	db 14, MAGBY		;10%
-	db 14, MAGBY		;5%
-	db 14, MAGBY		;4%
+	db 14, LARVITAR		;5%
+	db 14, SWABLU		;4%
 	db 20, XATU			;1%
 	; nite
 	db 14, PONYTA		;30%
 	db 14, NATU			;30%
-	db 14, ELEKID		;20%
+	db 14, SWABLU		;20%
 	db 14, MAGBY		;10%
-	db 14, MAGBY		;5%
-	db 14, MAGBY		;4%
+	db 14, LARVITAR		;5%
+	db 14, SWABLU		;4%
 	db 20, XATU			;1%
 	
 	map_id MT_ONWA_LOWER_CLIFF
@@ -519,27 +519,108 @@
 	; morn
 	db 15, PONYTA		;30%
 	db 15, NATU			;30%
-	db 15, ELEKID		;20%
+	db 15, SWABLU		;20%
 	db 15, MAGBY		;10%
-	db 15, MAGBY		;5%
-	db 15, MAGBY		;4%
+	db 15, LARVITAR		;5%
+	db 15, SWABLU		;4%
 	db 20, XATU			;1%
 	; day
 	db 15, PONYTA		;30%
 	db 15, NATU			;30%
-	db 15, ELEKID		;20%
+	db 15, SWABLU		;20%
 	db 15, MAGBY		;10%
-	db 15, MAGBY		;5%
-	db 15, MAGBY		;4%
+	db 15, LARVITAR		;5%
+	db 15, SWABLU		;4%
 	db 20, XATU			;1%
 	; nite
 	db 15, PONYTA		;30%
 	db 15, NATU			;30%
-	db 15, ELEKID		;20%
+	db 15, SWABLU		;20%
 	db 15, MAGBY		;10%
-	db 15, MAGBY		;5%
-	db 15, MAGBY		;4%
+	db 15, LARVITAR		;5%
+	db 15, SWABLU		;4%
 	db 20, XATU			;1%
+	
+	map_id SUNBEAM_JUNGLE
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 17, TRUMBEAK		;30%
+	db 17, ODDISH		;30%
+	db 17, ELEKID		;20%
+	db 17, MARILL		;10%
+	db 17, SCYTHER		;5%
+	db 18, GLOOM		;4%
+	db 18, GLOOM		;1%
+	; day
+	db 17, TRUMBEAK		;30%
+	db 17, ODDISH		;30%
+	db 17, ELEKID		;20%
+	db 17, MARILL		;10%
+	db 17, SCYTHER		;5%
+	db 18, GLOOM		;4%
+	db 18, GLOOM		;1%
+	; nite
+	db 17, TRUMBEAK		;30%
+	db 17, ODDISH		;30%
+	db 17, ELEKID		;20%
+	db 17, MARILL		;10%
+	db 17, SCYTHER		;5%
+	db 18, GLOOM		;4%
+	db 18, GLOOM		;1%
+	
+	map_id SUNBEAM_JUNGLE_CAVE
+	db 8 percent, 8 percent, 8 percent ; encounter rates: morn/day/nite
+	; morn
+	db 18, NOIBAT		;30%
+	db 18, ONIX			;30%
+	db 18, ELEKID		;20%
+	db 18, ZUBAT		;10%
+	db 18, ZUBAT		;5%
+	db 18, ZUBAT		;4%
+	db 18, ZUBAT		;1%
+	; day
+	db 18, NOIBAT		;30%
+	db 18, ONIX			;30%
+	db 18, ELEKID		;20%
+	db 18, ZUBAT		;10%
+	db 18, ZUBAT		;5%
+	db 18, ZUBAT		;4%
+	db 18, ZUBAT		;1%
+	; nite
+	db 18, NOIBAT		;30%
+	db 18, ONIX			;30%
+	db 18, ELEKID		;20%
+	db 18, ZUBAT		;10%
+	db 18, ZUBAT		;5%
+	db 18, ZUBAT		;4%
+	db 18, ZUBAT		;1%
+	
+	map_id SUNBEAM_JUNGLE_DEEP
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 18, ELEKID		;30%
+	db 18, MARILL		;30%
+	db 18, TRUMBEAK		;20%
+	db 18, ODDISH		;10%
+	db 18, SCYTHER		;5%
+	db 19, GLOOM		;4%
+	db 19, GLOOM		;1%
+	; day
+	db 18, ELEKID		;30%
+	db 18, MARILL		;30%
+	db 18, TRUMBEAK		;20%
+	db 18, ODDISH		;10%
+	db 18, SCYTHER		;5%
+	db 19, GLOOM		;4%
+	db 19, GLOOM		;1%
+	; nite
+	db 18, ELEKID		;30%
+	db 18, MARILL		;30%
+	db 18, TRUMBEAK		;20%
+	db 18, ODDISH		;10%
+	db 18, SCYTHER		;5%
+	db 19, GLOOM		;4%
+	db 19, GLOOM		;1%
 	
 	map_id ROUTE_8
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
@@ -547,7 +628,7 @@
 	db 18, MEDITITE		;30%
 	db 16, RALTS		;30%
 	db 18, PIDGEOTTO	;20%
-	db 18, PANCHAM		;10%
+	db 18, SWABLU		;10%
 	db 18, RATTATA		;5%
 	db 18, RATTATA		;4%
 	db 18, RATTATA		;1%
@@ -555,7 +636,7 @@
 	db 18, MEDITITE		;30%
 	db 16, RALTS		;30%
 	db 18, PIDGEOTTO	;20%
-	db 18, PANCHAM		;10%
+	db 18, SWABLU		;10%
 	db 18, RATTATA		;5%
 	db 18, RATTATA		;4%
 	db 18, RATTATA		;1%
@@ -563,7 +644,7 @@
 	db 18, MEDITITE		;30%
 	db 16, RALTS		;30%
 	db 18, PIDGEOTTO	;20%
-	db 18, PANCHAM		;10%
+	db 18, SWABLU		;10%
 	db 18, RATTATA		;5%
 	db 18, RATTATA		;4%
 	db 18, RATTATA		;1%

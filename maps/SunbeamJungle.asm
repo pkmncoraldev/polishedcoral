@@ -95,6 +95,7 @@ SunbeamJungleBigWaterfall:
 	
 SunbeamJungleTrigger0:
 	special Special_StopRunning
+	special Special_StopLandmarkTimer
 	applyonemovement PLAYER, step_up
 	opentext
 	writetext SunbeamJungleKageText1
@@ -137,6 +138,7 @@ SunbeamJungleTrigger0:
 	applymovement SUNBEAM_JUNGLE_SNARE_CUTSCENE, Movement_SunbeamJungleSnare2
 	disappear SUNBEAM_JUNGLE_SNARE_CUTSCENE
 	setevent EVENT_SUNBEAM_JUNGLE_CUTSCENE
+	special Special_StartLandmarkTimer
 	dotrigger $1
 	end
 	

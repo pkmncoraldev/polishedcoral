@@ -158,3 +158,4 @@ MoveEffectsPointers:
 	dw ElectroBall
 	dw Superpower
 	dw LowKick
+	dw SpecialAttackUpHit

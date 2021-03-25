@@ -2976,6 +2976,7 @@ VolcaronaEvosAttacks:
 	db 1, STRING_SHOT
 	db 1, ABSORB
 	db 1, FIRE_SPIN
+	db 1, FIERY_DANCE
 	db 18, GUST
 	db 24, SCREECH
 	db 30, LEECH_LIFE
@@ -2985,6 +2986,7 @@ VolcaronaEvosAttacks:
 	db 54, DOUBLE_EDGE
 	db 62, HURRICANE
 	db 70, FIRE_BLAST
+	db 100, FIERY_DANCE
 	db 0 ; no more level-up moves
 	
 PanchamEvosAttacks:

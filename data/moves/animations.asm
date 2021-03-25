@@ -136,7 +136,7 @@ BattleAnimations::
 	dw BattleAnim_Roost
 	dw BattleAnim_Softboiled
 	dw BattleAnim_HiJumpKick
-	dw BattleAnim_Glare
+	dw BattleAnim_FieryDance
 	dw BattleAnim_DreamEater
 	dw BattleAnim_PoisonJab
 	dw BattleAnim_BulletPunch
@@ -287,6 +287,7 @@ BattleAnim_DazzlinGleam:
 BattleAnim_ElectroBall:
 BattleAnim_Superpower:
 BattleAnim_FlameBurst:
+BattleAnim_FieryDance:
 	anim_ret
 	
 BattleAnim_RockPolish:
@@ -3369,13 +3370,13 @@ BattleAnim_Psywave: ; removed
 	anim_wait 4
 	anim_ret
 
-BattleAnim_Glare:
-	anim_1gfx ANIM_GFX_BEAM
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $20
-	anim_bgeffect ANIM_BG_06, $0, $2, $0
-	anim_call BattleAnim_Glare_branch_cbadc
-	anim_wait 16
-	anim_ret
+;BattleAnim_Glare:
+;	anim_1gfx ANIM_GFX_BEAM
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $20
+;	anim_bgeffect ANIM_BG_06, $0, $2, $0
+;	anim_call BattleAnim_Glare_branch_cbadc
+;	anim_wait 16
+;	anim_ret
 
 BattleAnim_Thrash:
 	anim_1gfx ANIM_GFX_HIT

@@ -2597,6 +2597,7 @@ UsefulMoves: ; 39301
 	db MOONBLAST
 	db PLAY_ROUGH
 	db HURRICANE
+	db FIERY_DANCE
 	db $ff
 ; 39315
 

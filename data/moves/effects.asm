@@ -590,6 +590,31 @@ SpeedUpHit:
 	cantusefakeout
 	endmove
 
+SpecialAttackUpHit:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	critical
+	effectchance
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	specialattackup
+	statupmessage
+	pickpocket
+	cantusefakeout
+	endmove
+	
 AllUpHit:
 Ancientpower:
 	checkobedience
@@ -948,7 +973,6 @@ WillOWisp:
 DoParalyze:
 StunSpore:
 ThunderWave:
-Glare:
 	checkobedience
 	usedmovetext
 	doturn

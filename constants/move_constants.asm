@@ -136,7 +136,7 @@
 	const ROOST        ; $86
 	const SOFTBOILED_MILK_DRINK   				; $87
 	const HI_JUMP_KICK ; $88
-	const GLARE        ; $89 - REMOVE
+	const FIERY_DANCE  ; $89
 	const DREAM_EATER  ; $8a
 	const POISON_JAB   ; $8b
 	const BULLET_PUNCH ; $8c

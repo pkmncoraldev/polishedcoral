@@ -135,7 +135,7 @@ MoveDescriptions::
 	dw RoostDescription
 	dw SoftboiledDescription
 	dw HiJumpKickDescription
-	dw GlareDescription
+	dw FieryDanceDescription
 	dw DreamEaterDescription
 	dw PoisonJabDescription
 	dw BulletPunchDescription
@@ -487,7 +487,6 @@ WillOWispDescription:
 
 StunSporeDescription:
 ThunderWaveDescription:
-GlareDescription:
 	db   "A move that may"
 	next "paralyze the foe.@"
 
@@ -509,6 +508,10 @@ PoisonFangDescription:
 	db   "High chance to"
 	next "badly poison.@"
 
+FieryDanceDescription:
+	db   "50/50 chance to"
+	next "raise SPCL ATK.@"
+	
 ConfuseRayDescription:
 SupersonicDescription:
 SweetKissDescription:

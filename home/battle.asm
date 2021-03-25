@@ -417,6 +417,7 @@ MoldBreakerSuppressedAbilities:
 	db SOLID_ROCK
 	db SOUNDPROOF
 	db STICKY_HOLD
+	db STORM_DRAIN
 	db STURDY
 	db SUCTION_CUPS
 	db THICK_FAT

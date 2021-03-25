@@ -135,7 +135,7 @@ MoveNames::
 	db "ROOST@"
 	db "ERROR!@" ; SOFTBOILED_MILK_DRINK
 	db "HI JUMP KICK@"
-	db "GLARE@"
+	db "FIERY_DANCE@"
 	db "DREAM EATER@"
 	db "POISON JAB@"
 	db "BULLET PUNCH@"

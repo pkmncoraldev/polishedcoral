@@ -179,6 +179,8 @@ AnimationPointers:
 	dw GlalieAnimation
 	dw BuizelAnimation
 	dw FloatzelAnimation
+	dw DrifloonAnimation
+	dw DrifblimAnimation
 	dw BunearyAnimation
 	dw LopunnyAnimation
 	dw HonchkrowAnimation

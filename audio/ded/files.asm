@@ -1,7 +1,6 @@
 SECTION "DED 1", ROMX
 PikipekDEDData:: INCBIN "audio/ded/pikipek.ded"
 TrumbeakDEDData:: INCBIN "audio/ded/trumbeak.ded"
-ToucannonDEDData:: INCBIN "audio/ded/toucannon.ded"
 
 SECTION "DED 2", ROMX
 AronDEDData:: INCBIN "audio/ded/aron.ded"
@@ -148,3 +147,4 @@ MareanieDEDData::  INCBIN "audio/ded/mareanie.ded"
 
 SECTION "DED 32", ROMX
 ToxapexDEDData::  INCBIN "audio/ded/toxapex.ded"
+ToucannonDEDData:: INCBIN "audio/ded/toucannon.ded"

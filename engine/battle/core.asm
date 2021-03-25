@@ -9608,15 +9608,11 @@ CheckUniqueWildMove:
 	ld b, a
 	cp FLY
 	jr nz, .ChanceToTeach
-	ld a, [wPlayerState]
-	cp PLAYER_SURF
-	jr z, .SurfingPikachu
-	cp PLAYER_SURF_PIKA
-	jr nz, .ChanceToTeach
-.SurfingPikachu
-	ld a, SURF
-	ld b, a
-	jr .TeachMove
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEGENDARY
+	jr z, .TeachMove
+	cp BATTLETYPE_SHINY_LEGENDARY
+	jr z, .TeachMove
 .ChanceToTeach
 	call Random
 	cp 50 percent + 1

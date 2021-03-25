@@ -29,6 +29,12 @@ SunbeamJungleDeepElectabuzz:
 	if_equal $1, SunbeamJungleDeepElectabuzz2
 	disappear SUNBEAM_JUNGLE_DEEP_ELECTABUZZ
 	setevent EVENT_SUNBEAM_JUNGLE_DEEP_ELECTABUZZ_GONE
+	reloadmapafterbattle
+;	opentext
+;	writetext SunbeamJungleDeepElectabuzzTextGone
+;	waitbutton
+;	closetext
+	end
 SunbeamJungleDeepElectabuzz2:
 	reloadmapafterbattle
 	end
@@ -38,3 +44,8 @@ SunbeamJungleDeepElectabuzzText:
 	line "LECTA!"
 	done
 	
+SunbeamJungleDeepElectabuzzTextGone:
+	text "With a roar,"
+	line "it retreated into"
+	cont "the trees!"
+	done

@@ -2002,8 +2002,8 @@ GetMapHeaderMusic:: ; 2cbd
 	ld a, c
 	cp MUSIC_STARGLOW
 	jr z, .starglow
-	cp MUSIC_SUNBEAM
-	jr z, .sunbeam
+	cp MUSIC_JUNGLE
+	jr z, .jungle
 	cp MUSIC_TRAIN_RIDE
 	jr z, .train
 	cp MUSIC_TWINKLE_TOWN
@@ -2027,7 +2027,7 @@ GetMapHeaderMusic:: ; 2cbd
 	ld de, MUSIC_STARGLOW_VALLEY
 	jr .done
 
-.sunbeam
+.jungle
 	ld a, [wSnareFlags]
 	bit 1, a ; PUNKS_ON_SUNBEAM
 	jr z, .clearedsunbeam
@@ -2035,7 +2035,7 @@ GetMapHeaderMusic:: ; 2cbd
 	jr .done
 
 .clearedsunbeam
-	ld de, MUSIC_SUNBEAM_ISLAND
+	ld de, MUSIC_LAVA
 	jr .done
 
 .train

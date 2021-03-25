@@ -16,14 +16,21 @@ PlayBattleMusic: ; 2ee6c
 	and a
 	jr nz, .trainermusic
 
-	ld a, [wTempEnemyMonSpecies]
-	ld hl, .legendaries
-	call .loadfromarray
-	jr c, .done
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEGENDARY
+	jr z, .legendary
+	cp BATTLETYPE_SHINY_LEGENDARY
+	jr z, .legendary
+	cp BATTLETYPE_SHINY
+	jr z, .legendary
 
 	ld de, MUSIC_WILD_BATTLE
 	jr .done
 
+.legendary
+	ld de, MUSIC_DODRIO_RACE
+	jr .done
+	
 .trainermusic
 	ld a, [wOtherTrainerClass]
 	ld hl, .trainers
@@ -75,8 +82,4 @@ PlayBattleMusic: ; 2ee6c
 	dbw KAGE,			  MUSIC_SNARE_ADMIN_BATTLE
 	dbw STANLEY,		  MUSIC_GYM_BATTLE
 	dbw RODNEY,		  	  MUSIC_GYM_BATTLE
-	db -1
-
-.legendaries
-	dbw LARVESTA, MUSIC_EVOLUTION
 	db -1

@@ -29,6 +29,7 @@ LavaCaveBF3Magmar:
 	closetext
 	waitsfx
 	loadwildmon MAGMAR, 30
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	if_equal $1, LavaCaveBF3Magmar2
 	disappear MTONWABF3_MAGMAR
@@ -38,7 +39,8 @@ LavaCaveBF3Magmar2:
 	end
 
 LavaCaveBF3MagmarText:
-	text "Vraahhbrbrbr!"
+	text "MAAAAAR! MAG!"
+	line "MAR!"
 	done
 	
 LavaCaveBF3Trainer1:

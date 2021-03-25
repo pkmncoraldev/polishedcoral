@@ -3,8 +3,9 @@ SunbeamJungleCave_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 1 ; warp events
+	db 2 ; warp events
 	warp_def  9,  4, 3, SUNBEAM_JUNGLE
+	warp_def  5, 14, 1, SUNBEAM_JUNGLE_DEEP
 
 	db 0 ; coord events
 

@@ -868,6 +868,9 @@ LoadMapPals:
 	jp .normal
 	
 .jungle
+	ld a, [wMapNumber]
+	cp MAP_SUNBEAM_JUNGLE
+	jp nz, .outside
 	eventflagcheck EVENT_JUNGLE_CAVE_BLUE
 	jp z, .normal
 	ld a, [wTimeOfDayPal]

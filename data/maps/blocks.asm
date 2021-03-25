@@ -321,6 +321,9 @@ SunbeamJungle_BlockData:
 SunbeamJungleCave_BlockData:
 	INCBIN "maps/SunbeamJungleCave.ablk.lz"
 	
+SunbeamJungleDeep_BlockData:
+	INCBIN "maps/SunbeamJungleDeep.ablk.lz"
+	
 Route1_BlockData:
 	INCBIN "maps/Route1.ablk.lz"
 
@@ -450,6 +453,8 @@ SpookyForestEscort_BlockData:
 
 OldManorExterior_BlockData:
 	INCBIN "maps/OldManorExterior.ablk.lz"
+	
+SECTION "Map Blockdata 2", ROMX
 	
 SpookhouseLivingRoom_BlockData:
 	INCBIN "maps/SpookhouseLivingRoom.ablk.lz"

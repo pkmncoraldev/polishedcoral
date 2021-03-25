@@ -153,6 +153,7 @@ INCLUDE "maps/SprucesLab.asm"
 INCLUDE "maps/SunbeamReserve.asm"
 INCLUDE "maps/SunbeamJungle.asm"
 INCLUDE "maps/SunbeamJungleCave.asm"
+INCLUDE "maps/SunbeamJungleDeep.asm"
 
 SECTION "Eventide Village Scripts", ROMX
 INCLUDE "maps/EventideVillage.asm"

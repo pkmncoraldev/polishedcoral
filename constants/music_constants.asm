@@ -1,6 +1,7 @@
 	const_def
 	const MUSIC_NONE                           ; 00
 	const MUSIC_TITLE                          ; 01
+	const MUSIC_TITLE2
 	const MUSIC_ROUTE_2
 	const MUSIC_SUNSET_BAY
 	const MUSIC_MOM                            ; 02

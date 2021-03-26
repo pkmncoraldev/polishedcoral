@@ -116,6 +116,12 @@ TitleScreenCutscene1:
 	dec hl
 	ld [hl], e
 	
+	call GetJoypad
+	ld hl, hJoyDown
+	ld a, [hl]
+	and START | A_BUTTON
+	jp nz, TitleScreenSkipToEnd
+	
 	xor a
 	ldh [hLCDCPointer], a
 	
@@ -173,6 +179,12 @@ TitleScreenCutscene2:
 	dec hl
 	ld [hl], e
 
+	call GetJoypad
+	ld hl, hJoyDown
+	ld a, [hl]
+	and START | A_BUTTON
+	jp nz, TitleScreenSkipToEnd
+	
 	xor a
 	ldh [hLCDCPointer], a
 
@@ -257,6 +269,12 @@ TitleScreenCutscene3:
 	ld [hl], d
 	dec hl
 	ld [hl], e
+	
+	call GetJoypad
+	ld hl, hJoyDown
+	ld a, [hl]
+	and START | A_BUTTON
+	jp nz, TitleScreenSkipToEnd
 	
 	ld hl, wcf65
 	ld a, [hl]
@@ -460,14 +478,20 @@ GetTitleLensFlare_OAM:
 	dw TitleLensFlare_OAM112
 	dw TitleLensFlare_OAM113
 	
+TitleScreenSkipToEnd:
+	ld de, 73 * 39
+	ld hl, wcf65
+	ld [hl], e
+	inc hl
+	ld [hl], d
+	ld hl, wJumptableIndex
+	ld a, 7
+	ld [hl], a
+	ret
+	
 TitleScreenFlash:
 ;	ld a, $88
 ;	ld [hWY], a
-	
-	ld hl, TitleLighthouse_OAM
-	ld de, wSprites
-	ld bc, 24
-	call CopyBytes
 	
 	ld c, 10
 	call DelayFrames
@@ -475,6 +499,11 @@ TitleScreenFlash:
 	call SetWhitePals
 	ld c, 6
 	call FadePalettes
+	
+	ld hl, TitleLighthouse_OAM
+	ld de, wSprites
+	ld bc, 24
+	call CopyBytes
 	
 	ld a, BANK(wUnknBGPals)
 	call StackCallInWRAMBankA
@@ -488,6 +517,9 @@ TitleScreenFlash:
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
 	rst CopyBytes
+	
+	ld de, MUSIC_TITLE2
+	call PlayMusic
 	
 	ld a, LOW(rSCX)
 	ldh [hLCDCPointer], a

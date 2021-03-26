@@ -1,6 +1,7 @@
 Music:
 	dba Music_Nothing
 	dba Music_TitleScreen
+	dba Music_TitleScreen2
 	dba Music_Route2
 	dba Music_SunsetBay
 	dba Music_Mom

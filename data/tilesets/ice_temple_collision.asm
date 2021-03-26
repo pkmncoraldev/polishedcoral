@@ -143,13 +143,13 @@
 	tilecoll WALL, WALL, WALL, WALL ; 8e
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 8f
 	tilecoll WALL, WALL, WALL, LEDGE_LEFT ; 90
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 91
+	tilecoll WALL, WALL, WALL, WALL ; 91
 	tilecoll TOP_WALL, TOP_WALL, FLOOR, RIGHT_WALL ; 92
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 93
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 94
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 95
+	tilecoll WALL, WALL, WALL, WALL ; 94
+	tilecoll WALL, WALL, WALL, WALL ; 95
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 96
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 97
+	tilecoll WALL, WALL, WALL, WALL ; 97
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 98
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 99
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9a

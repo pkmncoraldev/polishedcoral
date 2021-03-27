@@ -166,8 +166,8 @@ TilesetJungleAnim::
     dw VTiles2 tile $14, WriteTileFromBuffer
     dw NULL,  AnimateFlowerTile
     dw NULL,  AnimateFlowerTile2
-    dw WaterfallPriorityFrames, AnimateWaterfallTiles
-	dw WaterfallPriorityAndPlainFrames, AnimateWaterfallTiles2
+    dw WaterfallPriorityFrames, AnimateWaterfallTiles2
+	dw WaterfallPriority2Frames, AnimateWaterfallTiles2
     dw Waterfall3Frames, AnimateWaterfallTiles
     dw Waterfall4Frames, AnimateWaterfallTiles
     dw Waterfall5Frames, AnimateWaterfallTiles
@@ -892,7 +892,7 @@ WaterfallPriorityFrames: dw VTiles2 tile $30, WaterfallPriorityTiles
 
 WaterfallPriorityTiles: INCBIN "gfx/tilesets/waterfall/priority/1.2bpp"
 
-WaterfallPriorityAndPlainFrames: dw VTiles2 tile $6c, Waterfall2PriorityTiles
+WaterfallPriority2Frames: dw VTiles2 tile $6c, Waterfall2PriorityTiles
 
 Waterfall2PriorityTiles: INCBIN "gfx/tilesets/waterfall/priority/2.2bpp"
 

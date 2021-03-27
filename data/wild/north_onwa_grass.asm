@@ -546,24 +546,24 @@
 	; morn
 	db 17, TRUMBEAK		;30%
 	db 17, ODDISH		;30%
-	db 17, ELEKID		;20%
-	db 17, MARILL		;10%
+	db 17, MARILL		;20%
+	db 17, ELEKID		;10%
 	db 17, SCYTHER		;5%
 	db 18, GLOOM		;4%
 	db 18, GLOOM		;1%
 	; day
 	db 17, TRUMBEAK		;30%
 	db 17, ODDISH		;30%
-	db 17, ELEKID		;20%
-	db 17, MARILL		;10%
+	db 17, MARILL		;20%
+	db 17, ELEKID		;10%
 	db 17, SCYTHER		;5%
 	db 18, GLOOM		;4%
 	db 18, GLOOM		;1%
 	; nite
 	db 17, TRUMBEAK		;30%
 	db 17, ODDISH		;30%
-	db 17, ELEKID		;20%
-	db 17, MARILL		;10%
+	db 17, MARILL		;20%
+	db 17, ELEKID		;10%
 	db 17, SCYTHER		;5%
 	db 18, GLOOM		;4%
 	db 18, GLOOM		;1%
@@ -598,25 +598,25 @@
 	map_id SUNBEAM_JUNGLE_DEEP
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 18, ELEKID		;30%
+	db 18, TRUMBEAK		;30%
 	db 18, MARILL		;30%
-	db 18, TRUMBEAK		;20%
+	db 18, ELEKID		;20%
 	db 18, ODDISH		;10%
 	db 18, SCYTHER		;5%
 	db 19, GLOOM		;4%
 	db 19, GLOOM		;1%
 	; day
-	db 18, ELEKID		;30%
+	db 18, TRUMBEAK		;30%
 	db 18, MARILL		;30%
-	db 18, TRUMBEAK		;20%
+	db 18, ELEKID		;20%
 	db 18, ODDISH		;10%
 	db 18, SCYTHER		;5%
 	db 19, GLOOM		;4%
 	db 19, GLOOM		;1%
 	; nite
-	db 18, ELEKID		;30%
+	db 18, TRUMBEAK		;30%
 	db 18, MARILL		;30%
-	db 18, TRUMBEAK		;20%
+	db 18, ELEKID		;20%
 	db 18, ODDISH		;10%
 	db 18, SCYTHER		;5%
 	db 19, GLOOM		;4%

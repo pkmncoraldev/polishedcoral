@@ -18,7 +18,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event  7, 14, FLICKER_STATION, 1
 	warp_event  9, 14, TWINKLE_TOWN, 1
 	warp_event 11, 14, LUSTER_CITY_SHOPPING, 1
-	warp_event 13, 14, LUSTER_SEWERS_THRONE_ROOM, 1
+	warp_event 13, 14, MT_ONWA_B3F, 1
 	warp_event 15, 14, SKATEPARK, 1
 
 	db 1 ; coord events
@@ -59,12 +59,13 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke WIGGLYTUFF, 100
-	givepoke NOIBAT, 100
+	givepoke SCYTHER, 100
 	givepoke BLISSEY, 100
 .items
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
+	giveitem RARE_CANDY, 99
 	giveitem THUNDERSTONE, 3
 	giveitem FIRE_STONE, 3
 	giveitem LEAF_STONE, 3

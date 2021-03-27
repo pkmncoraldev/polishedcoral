@@ -140,7 +140,7 @@ MAP_NONE   EQU 0
 	map_const SUNBEAM_RESERVE,                            25, 10 ; 13
 	map_const SUNBEAM_JUNGLE,  			             	  16, 16 ; 14
 	map_const SUNBEAM_JUNGLE_CAVE,  			           9,  6 ; 15
-	map_const SUNBEAM_JUNGLE_DEEP,  			          17, 17 ; 16
+	map_const SUNBEAM_JUNGLE_DEEP,  			          19, 17 ; 16
 	
 	newgroup                                                     ;  8
 	

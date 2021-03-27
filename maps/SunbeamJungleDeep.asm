@@ -10,8 +10,9 @@ SunbeamJungleDeep_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	person_event SPRITE_ELECTABUZZ,  5, 10, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamJungleDeepElectabuzz, EVENT_SUNBEAM_JUNGLE_DEEP_ELECTABUZZ_GONE
+	itemball_event 28, 13, MAGMARIZER, 1, EVENT_SUNBEAM_JUNGLE_DEEP_POKE_BALL
 
 	const_def 1 ; object constants
 	const SUNBEAM_JUNGLE_DEEP_ELECTABUZZ

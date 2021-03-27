@@ -16,7 +16,7 @@ MtOnwaB3F_MapScriptHeader:
 	db 3 ; object events
 	person_event SPRITE_MAGMAR, 3, 4, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LavaCaveBF3Magmar, EVENT_MT_ONWA_B3F_MAGMAR_GONE
 	person_event SPRITE_FIREBREATHER, 20, 2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 3, LavaCaveBF3Trainer1, -1
-	itemball_event 13, 8, SILVERPOWDER, 1, EVENT_MT_ONWA_B3F_POKE_BALL
+	itemball_event 13, 8, ELECTIRIZER, 1, EVENT_MT_ONWA_B3F_POKE_BALL
 	
 	const_def 1 ; object constants
 	const MTONWABF3_MAGMAR

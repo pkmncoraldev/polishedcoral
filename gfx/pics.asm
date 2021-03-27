@@ -597,16 +597,16 @@ PanchamFrontpic:     	  INCBIN "gfx/pokemon/pancham/front.2bpp.lz"
 PanchamBackpic:           INCBIN "gfx/pokemon/pancham/back.2bpp.lz"
 PangoroFrontpic:     	  INCBIN "gfx/pokemon/pangoro/front.2bpp.lz"
 PangoroBackpic:           INCBIN "gfx/pokemon/pangoro/back.2bpp.lz"
+
+
+SECTION "Pokemon Pics 26", ROMX
+
 TyruntFrontpic:           INCBIN "gfx/pokemon/tyrunt/front.2bpp.lz"
 TyruntBackpic:            INCBIN "gfx/pokemon/tyrunt/back.2bpp.lz"
 TyrantrumFrontpic:        INCBIN "gfx/pokemon/tyrantrum/front.2bpp.lz"
 TyrantrumBackpic:         INCBIN "gfx/pokemon/tyrantrum/back.2bpp.lz"
 AmauraFrontpic:           INCBIN "gfx/pokemon/amaura/front.2bpp.lz"
 AmauraBackpic:            INCBIN "gfx/pokemon/amaura/back.2bpp.lz"
-
-
-SECTION "Pokemon Pics 26", ROMX
-
 AurorusFrontpic:          INCBIN "gfx/pokemon/aurorus/front.2bpp.lz"
 AurorusBackpic:           INCBIN "gfx/pokemon/aurorus/back.2bpp.lz"
 SylveonFrontpic:          INCBIN "gfx/pokemon/sylveon/front.2bpp.lz"
@@ -633,6 +633,9 @@ MarillFrontpic:      	  INCBIN "gfx/pokemon/marill/front.2bpp.lz"
 MarillBackpic:       	  INCBIN "gfx/pokemon/marill/back.2bpp.lz"
 AzumarillFrontpic:        INCBIN "gfx/pokemon/azumarill/front.2bpp.lz"
 AzumarillBackpic:         INCBIN "gfx/pokemon/azumarill/back.2bpp.lz"
+
+SECTION "Pokemon Pics 27", ROMX
+
 Raichu_AFrontpic:         INCBIN "gfx/pokemon/raichu_a/front.2bpp.lz"
 Raichu_ABackpic:          INCBIN "gfx/pokemon/raichu_a/back.2bpp.lz"
 Exeggutor_AFrontpic:      INCBIN "gfx/pokemon/exeggutor_a/front.2bpp.lz"

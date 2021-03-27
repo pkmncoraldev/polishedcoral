@@ -37,7 +37,8 @@ LAST_TALKED EQU -2
 	const VAR_PLAYER_GENDER	   ; 1e
 	const VAR_PLAYER_COLOR	   ; 1f
 	const VAR_SCRIPT_VAR	   ; 20
-NUM_VARS EQU const_value       ; 21
+	const VAR_MONJUSTCAUGHT	   ; 21
+NUM_VARS EQU const_value
 
 RETVAR_STRBUF2 EQU (0 << 6)
 RETVAR_ADDR_DE EQU (1 << 6)

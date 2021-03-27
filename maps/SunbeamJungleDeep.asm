@@ -27,17 +27,16 @@ SunbeamJungleDeepElectabuzz:
 	loadwildmon ELECTABUZZ, 30
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
-	if_equal $1, SunbeamJungleDeepElectabuzz2
 	disappear SUNBEAM_JUNGLE_DEEP_ELECTABUZZ
 	setevent EVENT_SUNBEAM_JUNGLE_DEEP_ELECTABUZZ_GONE
 	reloadmapafterbattle
-;	opentext
-;	writetext SunbeamJungleDeepElectabuzzTextGone
-;	waitbutton
-;	closetext
-	end
-SunbeamJungleDeepElectabuzz2:
-	reloadmapafterbattle
+	checkcode VAR_MONJUSTCAUGHT
+	if_equal ELECTABUZZ, .CaughtElecatbuzz
+	opentext
+	writetext SunbeamJungleDeepElectabuzzTextGone
+	waitbutton
+	closetext
+.CaughtElecatbuzz
 	end
 	
 SunbeamJungleDeepElectabuzzText:
@@ -46,7 +45,8 @@ SunbeamJungleDeepElectabuzzText:
 	done
 	
 SunbeamJungleDeepElectabuzzTextGone:
-	text "With a roar,"
-	line "it retreated into"
-	cont "the trees!"
+	text "With a loud roar,"
+	line "ELECTABUZZ went"
+	cont "deep into the"
+	cont "jungle!"
 	done

@@ -311,7 +311,9 @@ ENDU
 wEncounterHouse:: ds 1
 wEncounterHouseMon:: ds 1
 
-	ds 2 ; unused
+wMonJustCaught:: ds 1
+
+	ds 1 ; unused
 	
 wMirrorMoveUsed:: ds 1
 

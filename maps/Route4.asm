@@ -154,13 +154,21 @@ Route4PlayedFluteForSnorlax::
 	closetext
 	waitsfx
 	loadwildmon SNORLAX, 30
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
-	if_equal $0, BeatSnorlaxRoute4
+	disappear ROUTE4SNORLAX1
+	disappear ROUTE4SNORLAX2
+	disappear ROUTE4SNORLAX3
+	disappear ROUTE4SNORLAX4
+	setevent EVENT_FOUGHT_SNORLAX_ROUTE_4
 	reloadmapafterbattle
+	checkcode VAR_MONJUSTCAUGHT
+	if_equal SNORLAX, .CaughtSnorlax
 	opentext
-	writetext Route4SnorlaxTextRanAway
+	writetext Route4SnorlaxTextSnorlaxGone
 	waitbutton
 	closetext
+.CaughtSnorlax
 	end
 	
 Route4DontUseFlute:
@@ -177,17 +185,7 @@ Route4NoFlute:
 	end
 	
 BeatSnorlaxRoute4:
-	disappear ROUTE4SNORLAX1
-	disappear ROUTE4SNORLAX2
-	disappear ROUTE4SNORLAX3
-	disappear ROUTE4SNORLAX4
-	reloadmapafterbattle
-	opentext
-	writetext Route4SnorlaxTextSnorlaxGone
-	waitbutton
-	closetext
-	setevent EVENT_FOUGHT_SNORLAX_ROUTE_4
-	end
+	
 	
 Route4Sign:
 	jumptext Route4SignText
@@ -243,14 +241,9 @@ Route4SnorlaxTextUseFlute:
 	done
 	
 Route4SnorlaxTextSnorlaxGone:
-	text "SNORLAX is no"
-	line "longer blocking"
-	cont "the path!"
-	done
-	
-Route4SnorlaxTextRanAway:
-	text "SNORLAX still"
-	line "blocks the path."
+	text "With a big yawn,"
+	line "SNORLAX returned"
+	cont "to the mountains!"
 	done
 	
 Route4NPC5Text:

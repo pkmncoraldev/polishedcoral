@@ -31,16 +31,28 @@ LavaCaveBF3Magmar:
 	loadwildmon MAGMAR, 30
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
-	if_equal $1, LavaCaveBF3Magmar2
 	disappear MTONWABF3_MAGMAR
 	setevent EVENT_MT_ONWA_B3F_MAGMAR_GONE
-LavaCaveBF3Magmar2:
 	reloadmapafterbattle
+	checkcode VAR_MONJUSTCAUGHT
+	if_equal MAGMAR, .CaughtMagmar
+	opentext
+	writetext LavaCaveBF3MagmarTextGone
+	waitbutton
+	closetext
+.CaughtMagmar
 	end
 
 LavaCaveBF3MagmarText:
 	text "MAAAAAR! MAG!"
 	line "MAR!"
+	done
+	
+LavaCaveBF3MagmarTextGone:
+	text "With a loud roar,"
+	line "MAGMAR retreated"
+	cont "deep into the"
+	cont "cave!"
 	done
 	
 LavaCaveBF3Trainer1:

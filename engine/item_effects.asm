@@ -495,6 +495,7 @@ PokeBallEffect: ; e8a2
 
 	ld a, [wEnemyMonSpecies]
 	push af
+	ld [wMonJustCaught], a
 	ld [wWildMon], a
 	ld [wCurPartySpecies], a
 	ld [wd265], a
@@ -535,6 +536,7 @@ PokeBallEffect: ; e8a2
 	predef CalcPkmnStats
 
 	pop af
+	ld [wMonJustCaught], a
 	ld [wWildMon], a
 	ld [wCurPartySpecies], a
 	ld [wd265], a

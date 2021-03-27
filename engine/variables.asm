@@ -65,6 +65,7 @@ _GetVarAction:: ; 80648 (20:4648)
 	dwb wPlayerGender,                  RETVAR_ADDR_DE
 	dwb wPlayerPalette,					RETVAR_ADDR_DE
 	dwb wScriptVar,						RETVAR_ADDR_DE
+	dwb wMonJustCaught,					RETVAR_ADDR_DE
 	dwb NULL,                           RETVAR_STRBUF2
 ; 806c5
 

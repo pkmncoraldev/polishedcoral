@@ -81,7 +81,7 @@ StanleyGroup:
 	db 11, SMEARGLE, NO_ITEM, 16, ABILITY_2 | JOLLY, MALE
 		db DOUBLE_EDGE, CONFUSION, THUNDER_WAVE, FAKE_OUT
 	db 15, DITTO, NO_ITEM, 16, ABILITY_1 | JOLLY, MALE
-		db TRANSFORM, 0, 0, 0
+		db TRANSFORM_SPLASH, 0, 0, 0
 	db -1 ; end
 
 ; ================

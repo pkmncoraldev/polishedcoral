@@ -886,7 +886,11 @@ TransformDescription:
 	db   "The user assumes"
 	next "the foe's guise.@"
 
-SplashDescription:
+ClearSmogDescription:
+	db   "Eliminates foe's"
+	next "stat changes.@"
+	
+SplashDescription
 	db   "Has no effect"
 	next "whatsoever.@"
 

@@ -143,13 +143,13 @@
 	const LEECH_LIFE   ; $8d
 	const DOUBLE_HIT   ; $8e
 	const BRAVE_BIRD   ; $8f - REMOVE
-	const TRANSFORM    ; $90
+	const TRANSFORM_SPLASH    ; $90
 	const TOXIC_SPIKES ; $91
 	const POISON_FANG  ; $92
 	const SPORE        ; $93
 	const FLASH        ; $94
 	const LOCK_ON_MIND_READER	   				; $95
-	const SPLASH       ; $96
+	const CLEAR_SMOG       ; $96
 	const DRAGON_DANCE ; $97
 	const CRABHAMMER   ; $98
 	const EXPLOSION    ; $99

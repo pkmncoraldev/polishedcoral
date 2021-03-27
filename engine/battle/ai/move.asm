@@ -31,11 +31,21 @@ AIChooseMove: ; 440ce
 	and a
 	jr nz, .unusable_loop
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEGENDARY
+	jr z, .legendary
+	cp BATTLETYPE_SHINY_LEGENDARY
+	jr z, .legendary
 	; Wildmons choose moves at random
 	ld a, [wBattleMode]
 	dec a
 	jr z, .DecrementScores
-
+	jr .ApplyLayers
+.legendary
+	ld hl, TrainerClassAttributes + TRNATTR_AI_MOVE_WEIGHTS
+	ld a, PLAYER_CORY
+	jr .post_legendary
+	
 ; Apply AI scoring layers depending on the trainer class.
 .ApplyLayers:
 	ld hl, TrainerClassAttributes + TRNATTR_AI_MOVE_WEIGHTS
@@ -47,6 +57,7 @@ AIChooseMove: ; 440ce
 	jr nz, .battle_tower_skip
 
 	ld a, [wTrainerClass]
+.post_legendary
 	dec a
 	ld bc, 7 ; Trainer2AI - Trainer1AI
 	rst AddNTimes

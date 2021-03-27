@@ -2517,7 +2517,7 @@ BunearyEvosAttacks:
 LopunnyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
-	db 1, SPLASH
+	db 1, TRANSFORM_SPLASH
 	db 1, TACKLE_SCRATCH_POUND
 	db 1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db 6, ENDURE

@@ -86,7 +86,7 @@ MoveEffectsPointers:
 	dw Rage
 	dw Metronome
 	dw LeechSeed
-	dw Splash
+	dw ClearSmog
 	dw Disable
 	dw Counter
 	dw Encore

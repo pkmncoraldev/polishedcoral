@@ -635,7 +635,6 @@ Music_TitleScreen_Ch1:
 	note G_, 1
 	intensity $25
 	note G_, 1
-	intensity $78
 	jumpchannel Music_TitleScreen2_Ch1
 
 Music_TitleScreen_Ch2:
@@ -694,7 +693,6 @@ Music_TitleScreen_Ch2:
 	note G_, 1
 	note A_, 1
 	note A#, 1
-	octave 4
 	jumpchannel Music_TitleScreen2_Ch2
 
 Music_TitleScreen_Ch3:

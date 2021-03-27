@@ -340,6 +340,7 @@ AI_Smart: ; 386be
 	dbw EFFECT_ALWAYS_HIT,        AI_Smart_AlwaysHit
 	dbw EFFECT_ACCURACY_DOWN,     AI_Smart_AccuracyDown
 	dbw EFFECT_HAZE,              AI_Smart_Haze
+	dbw EFFECT_CLEAR_SMOG,        AI_Smart_ClearSmog
 	dbw EFFECT_ROAR,              AI_Smart_Roar
 	dbw EFFECT_HEAL,              AI_Smart_Heal
 	dbw EFFECT_TOXIC,             AI_Smart_Toxic
@@ -812,6 +813,32 @@ AI_Smart_Haze: ; 389f5
 	ret
 ; 38a1e
 
+AI_Smart_ClearSmog:
+; 85% chance to encourage this move if any of player's stat levels is higher than +2.
+	push hl
+	ld hl, wPlayerAtkLevel
+	ld c, $8
+.asm_38a0a
+	dec c
+	jr z, .asm_38a1b
+	ld a, [hli]
+	cp $a
+	jr c, .asm_38a0a
+
+.asm_38a12
+	pop hl
+	call Random
+	cp $28
+	ret c
+	dec [hl]
+	ret
+	
+; Discourage this move if any of player's stat levels is not higher than +2.
+.asm_38a1b
+	pop hl
+	inc [hl]
+	ret
+	
 
 AI_Smart_Roar: ; 38a2a
 ; Discourage this move if the player has not shown
@@ -1240,7 +1267,7 @@ AI_Smart_Encore: ; 38c3b
 	db POISONPOWDER
 	db ROAR_WHIRLWIND
 	db SCREECH
-	db SPLASH
+	db TRANSFORM_SPLASH
 	db STRING_SHOT
 	db SUBSTITUTE
 	db SWORDS_DANCE
@@ -2667,11 +2694,10 @@ AI_Opportunist: ; 39315
 	db REFLECT
 	db SCREECH
 	db COTTON_GUARD
-	db SPLASH
+	db TRANSFORM_SPLASH
 	db STRING_SHOT
 	db SUBSTITUTE
 	db SWORDS_DANCE
-	db TRANSFORM
 	db $ff
 ; 39369
 
@@ -2864,7 +2890,7 @@ AI_Cautious: ; 39418
 	db SUBSTITUTE
 	db THUNDER_WAVE
 	db TOXIC_SPIKES
-	db TRANSFORM
+	db TRANSFORM_SPLASH
 	db $ff
 ; 39453
 

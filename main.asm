@@ -3532,7 +3532,7 @@ ListMoves: ; 50d6f
 	cp SHARPEN_HOWL_MEDITATE
 	jr nz, .not_sharpen
 	farcall GetSharpenName
-	jr .cont
+	jp .cont
 .not_sharpen
 	cp FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	jr nz, .not_fury_swipes
@@ -3589,6 +3589,11 @@ ListMoves: ; 50d6f
 	farcall GetWorkUpName
 	jr .cont
 .not_workup
+	cp TRANSFORM_SPLASH
+	jr nz, .not_transform
+	farcall GetTransformName
+	jr .cont
+.not_transform
 	ld [wCurSpecies], a
 	ld a, MOVE_NAME
 	ld [wNamedObjectTypeBuffer], a

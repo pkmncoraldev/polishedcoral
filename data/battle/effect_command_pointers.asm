@@ -59,7 +59,7 @@ BattleCommandPointers:
 	command rechargenextturn        ; 2d
 	command metronome               ; 2e
 	command leechseed               ; 2f
-	command splash                  ; 30
+	command resetfoestats           ; 30
 	command disable                 ; 31
 	command cleartext               ; 32
 	command charge                  ; 33

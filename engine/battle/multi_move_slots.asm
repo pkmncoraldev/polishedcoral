@@ -1171,6 +1171,69 @@ GetMoveNameWorkUp:: ; 34f8
 	rst Bankswitch
 	ret
 	
+	
+GetTransformName::
+	ld a, [hROMBank]
+	push af
+	push hl
+	push bc
+	push de
+
+	call CheckTransformUsers
+	jr c, .transform
+	ld hl, TransformNames
+	ld a, 1
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	jr .done
+.transform
+	ld hl, TransformNames
+	ld a, 0
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	
+.done
+	pop de
+	pop bc
+	pop hl
+	pop af
+	rst Bankswitch
+	ret
+	
+GetMoveNameTransform:: ; 34f8
+	ld a, [hROMBank]
+	push af
+	push hl
+	push bc
+
+	
+	call CheckTransformUsers
+	jr c, .transform
+	ld hl, TransformNames
+	ld a, 1
+	jr .done
+	
+.transform
+	ld hl, TransformNames
+	ld a, 0
+	
+.done
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	ld de, wStringBuffer1
+	pop bc
+	pop hl
+	pop af
+	rst Bankswitch
+	ret
+	
+	
 CheckPoundUsers::
 	ld a, [wCurPartySpecies]
 CheckPoundUsers2::
@@ -1371,6 +1434,14 @@ CheckGrowthUsers2::
 	call IsInArray
 	ret
 	
+CheckTransformUsers::
+	ld a, [wCurPartySpecies]
+CheckTransformUsers2::
+	ld hl, TransformUsers
+	ld de, 1
+	call IsInArray
+	ret
+	
 CheckMultiMoveSlot::
 	ld a, [wCurMove]
 	ld hl, MultiSlotMoves
@@ -1412,6 +1483,8 @@ GetMultiMoveSlotName::
 	jr z, .foresight
 	cp WORK_UP_GROWTH
 	jr z, .workup
+	cp TRANSFORM_SPLASH
+	jr z, .transform
 	jr .end
 .tackle
 	call GetMoveNameTackle
@@ -1460,6 +1533,9 @@ GetMultiMoveSlotName::
 	jr .end
 .workup
 	call GetMoveNameWorkUp
+	jr .end
+.transform
+	call GetMoveNameTransform
 .end
 	ret
 
@@ -1961,6 +2037,31 @@ CheckWorkUpThing::
 	ret
 .not_growth
 	ret
+	
+CheckTransformThing::
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species
+	
+.skip
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species
+	ld a, [wEnemyMonSpecies]
+.got_user_species
+	farcall CheckTransformUsers2
+	jr c, .transform
+	ld a, $1
+	ret
+.transform
+	ret
 
 PoundUsers:
 	db CLEFAIRY
@@ -2150,6 +2251,10 @@ HealBellUsers:
 	db MILTANK
 	db -1
 	
+TransformUsers:
+	db DITTO
+	db -1
+	
 TackleNames:
 	db "POUND@"
 	db "SCRATCH@"
@@ -2243,6 +2348,11 @@ WorkUpNames:
 	db "WORK UP@"
 	db -1
 	
+TransformNames:
+	db "TRANSFORM@"
+	db "SPLASH@"
+	db -1
+	
 MultiSlotMoves:
 	db TACKLE_SCRATCH_POUND
 	db DEFENSE_CURL_HARDEN_WITHDRAW
@@ -2261,6 +2371,7 @@ MultiSlotMoves:
 	db FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db AGILITY_ROCK_POLISH
 	db WORK_UP_GROWTH
+	db TRANSFORM_SPLASH
 	db -1
 	
 MultiSlotMoveTypes::

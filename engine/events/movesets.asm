@@ -16,7 +16,7 @@ TeachMagikarpDragonRage:
 	jp GiveSpecialMoveset
 
 .Moveset:
-	db SPLASH
+	db TRANSFORM_SPLASH
 	db DRAGON_RAGE
 	db 0
 

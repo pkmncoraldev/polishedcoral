@@ -1787,6 +1787,8 @@ BattleCommand_checkhit:
 	call GetBattleVar
 	cp EFFECT_ALWAYS_HIT
 	ret z
+	cp EFFECT_CLEAR_SMOG
+	ret z
 	cp EFFECT_ROAR
 	ret z
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -7529,14 +7531,6 @@ BattleCommand_leechseed: ; 36f9d
 
 ; 36fe1
 
-
-BattleCommand_splash: ; 36fe1
-	call AnimateCurrentMove
-	jp PrintNothingHappened
-
-; 36fed
-
-
 BattleCommand_disable: ; 36fed
 ; disable
 
@@ -7866,6 +7860,22 @@ BattleCommand_resetstats:
 	jr nz, .loop
 	ret
 
+BattleCommand_resetfoestats:
+	ld a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+	farcall ResetPlayerStatLevels
+	call AnimateCurrentMove
+
+	ld hl, EliminatedStatsText
+	jp StdBattleTextBox
+.enemy
+	farcall ResetEnemyStatLevels
+	call AnimateCurrentMove
+
+	ld hl, EliminatedStatsText
+	jp StdBattleTextBox
+	
 BattleCommand_heal:
 	farcall CheckFullHP
 	jr z, .hp_full

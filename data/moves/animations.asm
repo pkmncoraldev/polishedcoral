@@ -149,7 +149,7 @@ BattleAnimations::
 	dw BattleAnim_Spore
 	dw BattleAnim_Flash
 	dw BattleAnim_LockOn
-	dw BattleAnim_Splash
+	dw BattleAnim_ClearSmog
 	dw BattleAnim_DragonDance
 	dw BattleAnim_Crabhammer
 	dw BattleAnim_Explosion
@@ -288,6 +288,7 @@ BattleAnim_ElectroBall:
 BattleAnim_Superpower:
 BattleAnim_FlameBurst:
 BattleAnim_FieryDance:
+BattleAnim_ClearSmog:
 	anim_ret
 	
 BattleAnim_RockPolish:
@@ -3018,6 +3019,7 @@ BattleAnim_IcicleSpear:
 	anim_ret
 
 BattleAnim_Transform:
+	anim_jumpif $9, BattleAnim_Splash
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_FollowPlayerHead_0
 	anim_transform

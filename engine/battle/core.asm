@@ -9586,6 +9586,11 @@ BoostGiovannisArmoredMewtwo:
 ;	farjp BattleCommand_allstatsup
 
 CheckUniqueWildMove:
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEGENDARY
+	jp z, .boss
+	cp BATTLETYPE_SHINY_LEGENDARY
+	jp z, .boss
 	ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]
@@ -9607,11 +9612,6 @@ CheckUniqueWildMove:
 	ld a, [hli] ; move
 	ld b, a
 	cp FLY
-	jr nz, .ChanceToTeach
-	ld a, [wBattleType]
-	cp BATTLETYPE_LEGENDARY
-	jr z, .TeachMove
-	cp BATTLETYPE_SHINY_LEGENDARY
 	jr z, .TeachMove
 .ChanceToTeach
 	call Random
@@ -9628,5 +9628,55 @@ CheckUniqueWildMove:
 .inc1andloop
 	inc hl
 	jr .loop
+	
+.boss
+	ld a, [wTempEnemyMonSpecies]
+	ld c, a
+	ld hl, BossWildMoves
+.loop2
+	ld a, [hli] ; species
+	cp -1
+	ret z
+	cp c
+	jr nz, .inc4andloop2
+	ld a, [hli] ; move
+	ld b, a
+	push hl
+	ld hl, wEnemyMonMoves ; first move
+	ld a, b
+	ld [hl], a
+	
+	pop hl
+	ld a, [hli] ; move
+	ld b, a
+	push hl
+	ld hl, wEnemyMonMoves + 1; first move
+	ld a, b
+	ld [hl], a
+	
+	pop hl
+	ld a, [hli] ; move
+	ld b, a
+	push hl
+	ld hl, wEnemyMonMoves + 2; first move
+	ld a, b
+	ld [hl], a
+	
+	pop hl
+	ld a, [hli] ; move
+	ld b, a
+	ld hl, wEnemyMonMoves + 3; first move
+	ld a, b
+	ld [hl], a
+	ret
+
+.inc4andloop2
+	inc hl
+	inc hl
+	inc hl
+.inc1andloop2
+	inc hl
+	jr .loop2
 
 INCLUDE "data/pokemon/unique_wild_moves.asm"
+INCLUDE "data/pokemon/boss_wild_moves.asm"

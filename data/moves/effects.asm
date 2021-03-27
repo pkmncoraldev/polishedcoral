@@ -1839,11 +1839,26 @@ LeechSeed:
 	cantusefakeout
 	endmove
 
-Splash:
+ClearSmog:
 	checkobedience
 	usedmovetext
 	doturn
-	splash
+	pressure
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	resetfoestats
+	pickpocket
 	cantusefakeout
 	endmove
 
@@ -2182,9 +2197,23 @@ Attract:
 	usedmovetext
 	doturn
 	pressure
+	critical
+	effectchance
+	damagestats
+	damagecalc
+	stab
+	damagevariation
 	checkhit
-	bounceback
-	attract
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	specialattackdown
+	statdownmessage
+	pickpocket
 	cantusefakeout
 	endmove
 

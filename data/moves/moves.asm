@@ -83,7 +83,7 @@ Moves:: ; 41afb
 	move ABSORB,       EFFECT_LEECH_HIT,          20, GRASS,     100, 25,   0, SPECIAL
 	move MEGA_DRAIN,   EFFECT_LEECH_HIT,          40, GRASS,     100, 15,   0, SPECIAL
 	move LEECH_SEED,   EFFECT_LEECH_SEED,          0, GRASS,      90, 10,   0, STATUS
-	move GROWTH,       EFFECT_SPLASH,              0, NORMAL,    100, 20,   0, STATUS
+	move GROWTH,       EFFECT_NORMAL_HIT,              0, NORMAL,    100, 20,   0, STATUS
 	move RAZOR_LEAF,   EFFECT_NORMAL_HIT,         55, GRASS,      95, 25,   0, PHYSICAL
 	move SOLAR_BEAM,   EFFECT_SOLAR_BEAM,        120, GRASS,     100, 10,   0, SPECIAL
 	move POISONPOWDER, EFFECT_POISON,              0, POISON,     75, 35,   0, STATUS
@@ -153,13 +153,13 @@ Moves:: ; 41afb
 	move LEECH_LIFE,   EFFECT_LEECH_HIT,          80, BUG,       100, 10,   0, PHYSICAL
 	move DOUBLE_HIT,   EFFECT_DOUBLE_HIT,         35, NORMAL, 	 100, 10,   0, PHYSICAL
 	move BRAVE_BIRD,   EFFECT_RECOIL_HIT,        120, FLYING,    100, 15,   0, PHYSICAL
-	move TRANSFORM,    EFFECT_TRANSFORM,           0, NORMAL,    100, 10,   0, STATUS
+	move TRANSFORM_SPLASH,    EFFECT_TRANSFORM,           0, NORMAL,    100, 10,   0, STATUS
 	move TOXIC_SPIKES, EFFECT_TOXIC_SPIKES,        0, POISON,    100, 20,   0, STATUS
 	move POISON_FANG,  EFFECT_POISON_FANG,        50, POISON,    100, 15,  50, PHYSICAL
 	move SPORE,        EFFECT_SLEEP,               0, GRASS,     100, 15,   0, STATUS
 	move FLASH,        EFFECT_ACCURACY_DOWN,       0, NORMAL,    100, 20,   0, STATUS
 	move LOCK_ON_MIND_READER,	   EFFECT_LOCK_ON,    	       0, NORMAL,    100,  5,   0, STATUS
-	move SPLASH,       EFFECT_SPLASH,              0, NORMAL,    100, 40,   0, STATUS
+	move CLEAR_SMOG,   EFFECT_CLEAR_SMOG,         50, POISON,    100, 15,   0, SPECIAL
 	move DRAGON_DANCE, EFFECT_DRAGON_DANCE,        0, DRAGON,    100, 20,   0, STATUS
 	move CRABHAMMER,   EFFECT_NORMAL_HIT,        100, WATER,      90, 10,   0, PHYSICAL
 	move EXPLOSION,    EFFECT_EXPLOSION,         250, NORMAL,    100,  5,   0, PHYSICAL

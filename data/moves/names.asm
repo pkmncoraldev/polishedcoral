@@ -142,13 +142,13 @@ MoveNames::
 	db "LEECH LIFE@"
 	db "DRAININGKISS@"
 	db "BRAVE BIRD@"
-	db "TRANSFORM@"
+	db "ERROR!@" ; TRANSFORM_SPLASH
 	db "TOXIC SPIKES@"
 	db "POISON FANG@"
 	db "SPORE@"
 	db "FLASH@"
 	db "ERROR!@" ; LOCK_ON_MIND_READER
-	db "SPLASH@"
+	db "CLEAR SMOG@"
 	db "DRAGON DANCE@"
 	db "CRABHAMMER@"
 	db "EXPLOSION@"

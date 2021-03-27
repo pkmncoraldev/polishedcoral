@@ -7863,7 +7863,7 @@ BattleCommand_resetstats:
 BattleCommand_resetfoestats:
 	ld a, [hBattleTurn]
 	and a
-	jr nz, .enemy
+	jr z, .enemy
 	farcall ResetPlayerStatLevels
 	call AnimateCurrentMove
 

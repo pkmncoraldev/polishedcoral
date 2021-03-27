@@ -793,7 +793,7 @@ AI_Smart_Haze: ; 389f5
 	dec c
 	jr z, .asm_38a1b
 	ld a, [hli]
-	cp $a
+	cp $9
 	jr c, .asm_38a0a
 
 .asm_38a12
@@ -822,7 +822,7 @@ AI_Smart_ClearSmog:
 	dec c
 	jr z, .asm_38a1b
 	ld a, [hli]
-	cp $a
+	cp $9
 	jr c, .asm_38a0a
 
 .asm_38a12
@@ -830,12 +830,16 @@ AI_Smart_ClearSmog:
 	call Random
 	cp $28
 	ret c
-	dec [hl]
+	ld a, [hl]
+	sub 10
+	ld [hl], a
 	ret
 	
-; Discourage this move if any of player's stat levels is not higher than +2.
+; 50% chance to discourage this move if any of player's stat levels is not higher than +2.
 .asm_38a1b
 	pop hl
+	call AI_50_50
+	ret c
 	inc [hl]
 	ret
 	

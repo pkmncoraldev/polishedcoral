@@ -74,7 +74,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  48, $CC, $CC, $CC, ABILITY_1 | QUIRKY, FEMALE ; beauty
 	db  48, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; firebreather
 	db  48, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; juggler
-	db  48, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; schoolboy
+	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; schoolboy
 	db  48, $CC, $CC, $CC, ABILITY_1 | QUIRKY, FEMALE ; schoolgirl
 	db  48, $AA, $CC, $EE, ABILITY_1 | QUIRKY, MALE   ; psychic
 	db  48, $AA, $CC, $EE, ABILITY_1 | QUIRKY, FEMALE ; hex maniac

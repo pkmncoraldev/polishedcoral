@@ -423,8 +423,9 @@ AI_Smart_FakeOut:
 	bit SUBSTATUS_FAKE_OUT, a
 	ret nz
 	
-	dec [hl]
-	dec [hl]
+	ld a, [hl]
+	sub $5
+	ld [hl], a
 	ret
 
 
@@ -1036,8 +1037,8 @@ AI_Smart_Paralyze: ; 38b26
 
 ; 80% chance to greatly encourage this move
 ; if enemy is slower than player and its HP is above 25%.
-	call AICompareSpeed
-	ret c
+;	call AICompareSpeed
+;	ret c
 	call AICheckEnemyQuarterHP
 	ret nc
 	call AI_80_20

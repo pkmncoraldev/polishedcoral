@@ -457,7 +457,7 @@ BugCatcherGroup:
 	; party
 	db 6, VENIPEDE
 	db 7, VENIPEDE
-	db 8, WHIRLIPEDE
+	db 8, VENIPEDE
 	db -1 ; end
 
 ; ================
@@ -1817,7 +1817,7 @@ LassGroup:
 ; ================
 
 	; LASS
-	db "CHARLOTEE@"
+	db "CHARLOTE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 10, PIKACHU

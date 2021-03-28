@@ -1,18 +1,9 @@
-if DEF(FAITHFUL)
 	db  65,  55,  95,  35,  65,  95
 	;   hp  atk  def  spd  sat  sdf
-else
-	db  65,  55, 115,  35, 105, 115
-	;   hp  atk  def  spd  sat  sdf
-endc
 
 	db WATER, ROCK
 	db 60 ; catch rate
-if DEF(FAITHFUL)
-	db 113 ; base exp
-else
 	db 128 ; base exp
-endc
 	db NO_ITEM ; item 1
 	db HARD_STONE ; item 2
 	dn FEMALE_75, 3 ; gender, step cycles to hatch
@@ -28,5 +19,5 @@ endc
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH 
+	tmhm ROCK_SMASH, FAKE_OUT
 	; end

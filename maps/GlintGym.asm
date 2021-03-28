@@ -11,7 +11,7 @@ GlintGym_MapScriptHeader:
 
 	db 4 ; coord events
 	xy_trigger 0, 15, 3, 0, GlintGymLibrarianStopsYou1, 0, 0
-	xy_trigger 0, 14,  3, 0, GlintGymLibrarianStopsYou2, 0, 0
+	xy_trigger 0, 15,  4, 0, GlintGymLibrarianStopsYou2, 0, 0
 	xy_trigger 0, 15, 5, 0, GlintGymLibrarianStopsYou3, 0, 0
 	xy_trigger 0, 15, 6, 0, GlintGymLibrarianStopsYou4, 0, 0
 

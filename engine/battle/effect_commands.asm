@@ -1480,6 +1480,7 @@ _CheckTypeMatchup: ; 347d3
 	jr z, .pixilate
 	cp REFRIGERATE
 	jr z, .refrigerate
+	jr .no_change
 .pixilate
 	ld a, NORMAL
 	cp d

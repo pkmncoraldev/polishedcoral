@@ -1,16 +1,7 @@
-if DEF(FAITHFUL)
 	db  90,  75,  75,  70,  90, 100
 	;   hp  atk  def  spd  sat  sdf
-else
-	db  90,  75,  80,  80,  90, 100
-	;   hp  atk  def  spd  sat  sdf
-endc
 
-if DEF(FAITHFUL)
 	db WATER, WATER
-else
-	db WATER, GRASS
-endc
 	db 45 ; catch rate
 	db 185 ; base exp
 	db NO_ITEM ; item 1
@@ -28,5 +19,5 @@ endc
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm 
+	tmhm ROCK_SMASH 
 	; end

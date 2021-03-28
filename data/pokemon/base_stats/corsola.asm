@@ -28,5 +28,5 @@ endc
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, CUT, FLY
+	tmhm ROCK_SMASH 
 	; end

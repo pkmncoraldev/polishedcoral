@@ -53,18 +53,18 @@ SunsetBay_MapScriptHeader:
 	person_event SPRITE_COOLTRAINER_F,  9, 18, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunsetNPC4, -1
 	person_event SPRITE_FAT_GUY, 16, 15, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunsetNPC5, -1
 	person_event SPRITE_SUPER_NERD, 16, 33, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetNPC6, -1
-	object_event 27, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 27, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 26, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 26, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 10, 22, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 10, 23, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event  9, 23, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event  9, 22, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 13, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 13, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 12, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 12, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 27, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat2, -1
+	object_event 27, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat2, -1
+	object_event 26, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat2, -1
+	object_event 26, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat2, -1
+	object_event 10, 22, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
+	object_event 10, 23, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
+	object_event  9, 23, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
+	object_event  9, 22, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
+	object_event 13, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
+	object_event 13, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
+	object_event 12, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
+	object_event 12, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
 
 	const_def 1 ; object constants
 	const SUNSET_NPC1
@@ -168,6 +168,12 @@ SunsetMomsFlowers:
 
 SunsetOtherFlowers:
 	jumptext SunsetOtherFlowersText
+	
+SunsetSailboat:
+	jumptext SunsetSailboatText
+	
+SunsetSailboat2:
+	jumptext SunsetSailboat2Text
 	
 SunsetNPC1:
 	faceplayer
@@ -301,6 +307,21 @@ Movement_GrampsReset3:
 	step_up
 	step_end
 	
+SunsetSailboatText:
+	text "It's a sailboat."
+	
+	para "It's seen some use,"
+	line "but it's still in"
+	cont "good shape."
+	
+SunsetSailboat2Text:
+	text "CAP'N STRAND'S"
+	line "sailboat."
+	
+	para "It's seen a lot of"
+	line "use!"
+	done
+	
 SunsetNPC1Text:
 	text "Do you mind?"
 	line "I'm on a date."
@@ -337,22 +358,6 @@ SunsetOtherFlowersText:
 	
 	para "Not as good as"
 	line "MOM's, though."
-	done
-	
-SunsetBroatText:
-	text "CAP'N STRAND's"
-	line "rowboat."
-	
-	para "It has seen a"
-	line "lot of use."
-	done
-	
-SunsetBroat2Text:
-	text "It's a rowboat."
-	
-	para "It's seen some use,"
-	line "but it's still in"
-	cont "good shape."
 	done
 	
 SunsetGuyOnDateText:
@@ -416,8 +421,8 @@ SunsetNPC5Text2:
 	
 	para "Who's they?"
 	
-	para "You know, I"
-	line "never thought"
+	para "You know,"
+	line "I never thought"
 	cont "about it."
 	done
 	

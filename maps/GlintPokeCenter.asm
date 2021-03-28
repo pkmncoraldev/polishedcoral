@@ -58,7 +58,7 @@ GlintPokeCenterTeaLady:
 	waitbutton
 	closetext
 	spriteface GLINT_POKECENTER_TEA_LADY, RIGHT
-	pause 20
+	pause 40
 	spriteface GLINT_POKECENTER_TEA_LADY, LEFT
 	opentext
 	writetext GlintPokeCenterTeaLadyText6
@@ -97,8 +97,8 @@ GlintPokeCenterNpc3:
 
 GlintPokeCenterTeaLadyTextGivePetals:
 	text "<PLAYER> handed"
-	line "over the"
-	cont "FLOWER PETALS."
+	line "over the FLOWER"
+	cont "PETALS."
 	done
 	
 GlintPokeCenterTeaLadyText1:

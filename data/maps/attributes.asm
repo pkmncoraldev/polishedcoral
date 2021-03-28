@@ -99,24 +99,24 @@ ENDM
 	connection north, Route2, ROUTE_2, -6
 	connection south, Route1, ROUTE_1, -5
 	
-	map_attributes Route2, ROUTE_2, 5, NORTH | SOUTH
+	map_attributes Route2, ROUTE_2, $d4, NORTH | SOUTH
 	connection north, GlintCity, GLINT_CITY, -2
 	connection south, DaybreakVillage, DAYBREAK_VILLAGE, 6
 
-	map_attributes GlintCity, GLINT_CITY, $5, NORTH | SOUTH | EAST
+	map_attributes GlintCity, GLINT_CITY, $d4, NORTH | SOUTH | EAST
 	connection north, GlintGroveEntrance, GLINT_GROVE_ENTRANCE, 1
 	connection south, Route2, ROUTE_2, 2
 	connection east, Route3, ROUTE_3, 0
 	
-	map_attributes GlintGroveEntrance, GLINT_GROVE_ENTRANCE, 5, SOUTH
+	map_attributes GlintGroveEntrance, GLINT_GROVE_ENTRANCE, $d4, SOUTH
 	connection south, GlintCity, GLINT_CITY, -1
 	
-	map_attributes Route3, ROUTE_3, 5, SOUTH | WEST | EAST
+	map_attributes Route3, ROUTE_3, $d4, SOUTH | WEST | EAST
 	connection south, Route8, ROUTE_8, 7
 	connection west, GlintCity, GLINT_CITY, 0
 	connection east, Route3East, ROUTE_3_EAST, 2
 	
-	map_attributes Route3East, ROUTE_3_EAST, 5, WEST | EAST
+	map_attributes Route3East, ROUTE_3_EAST, $d4, WEST | EAST
 	connection west, Route3, ROUTE_3, -2
 	connection east, Route3Starglow, ROUTE_3_STARGLOW, 4
 

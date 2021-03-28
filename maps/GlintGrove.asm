@@ -612,13 +612,6 @@ GlintGroveStanley:
 ;	ret
 	
 GlintGroveNPC1:
-	setflag ENGINE_GLINT_GROVE_PILE_1
-	setflag ENGINE_GLINT_GROVE_PILE_2
-	setflag ENGINE_GLINT_GROVE_PILE_3
-	setflag ENGINE_GLINT_GROVE_PILE_4
-	setflag ENGINE_GLINT_GROVE_PILE_5
-	setflag ENGINE_GLINT_GROVE_PILE_6
-	setflag ENGINE_GLINT_GROVE_PILE_7
 	jumptextfaceplayer GlintGroveNPC1Text
 	
 GlintGroveNPC2:
@@ -1090,13 +1083,12 @@ GlintGroveNPC1Text:
 	
 GlintGroveNPC2Text:
 	text "I saw a #MON"
-	line "with a long tail"
-	cont "in the grass!"
+	line "with a long, gooey"
+	cont "tail in the grass!"
 	
 	para "My mom won't"
 	line "believe me,"
-	
-	para "but I saw it!"
+	cont "but I saw it!"
 	
 	para "Honest!"
 	done
@@ -1118,8 +1110,7 @@ GlintGroveNPC4Text1:
 	
 	para "I wish I could"
 	line "explore it,"
-	
-	para "but I can't swim!"
+	cont "but I can't swim!"
 	done
 	
 GlintGroveNPC4Text2:

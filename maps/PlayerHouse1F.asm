@@ -322,8 +322,8 @@ UnknownText_0x7a763:
 	
 	para "Just visit the ATM"
 	line "at any #MON"
-	cont "CENTER to deposit"
-	cont "or withdraw money!"
+	cont "CENTER to DEPOSIT"
+	cont "or WITHDRAW money!"
 	
 	para "How convenient!"
 	

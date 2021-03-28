@@ -37,9 +37,8 @@ GlintEvoHouseCubone:
 	
 GlintEvoHouseNPC1Text:
 	text "If you battle with"
-	line "your #MON,"
-	
-	para "they grow stronger!"
+	line "your #MON, they"
+	cont "grow stronger!"
 	
 	para "They might even"
 	line "evolve!"

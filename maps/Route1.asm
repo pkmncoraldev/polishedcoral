@@ -56,9 +56,8 @@ Route1NPCText:
 	
 	para "but if you go into"
 	line "the tall grass,"
-	
-	para "wild #MON might"
-	line "attack you."
+	cont "wild #MON might"
+	cont "attack you."
 	
 	para "Yeah, you already"
 	line "knew that."

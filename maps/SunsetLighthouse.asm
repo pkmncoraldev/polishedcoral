@@ -73,11 +73,12 @@ LighthouseStartGetStarterScene:
 	writetext LighthouseAbnerText7
 	waitbutton
 	closetext
+	pause 10
 	opentext
 	writetext LighthouseRivalEntersText
 	waitbutton
 	closetext
-	
+	pause 10
 	opentext
 	writetext LighthouseAbnerText10
 	waitbutton
@@ -138,7 +139,7 @@ LighthousePokeMenu:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	waitbutton
-	;givepoke CHARMANDER, 5, ORAN_BERRY
+	givepoke CHARMANDER, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	jump LighthouseGetStarterScene_part2
@@ -162,7 +163,7 @@ LighthousePokeMenu:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	;givepoke SQUIRTLE, 5, ORAN_BERRY
+	givepoke SQUIRTLE, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	jump LighthouseGetStarterScene_part2
@@ -186,7 +187,7 @@ LighthousePokeMenu:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	;givepoke BULBASAUR, 5, ORAN_BERRY
+	givepoke BULBASAUR, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	jump LighthouseGetStarterScene_part2
@@ -210,7 +211,7 @@ LighthousePokeMenu:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	;givepoke CYNDAQUIL, 5, ORAN_BERRY
+	givepoke CYNDAQUIL, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	jump LighthouseGetStarterScene_part2
@@ -235,7 +236,7 @@ LighthousePokeMenu:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	;givepoke TOTODILE, 5, ORAN_BERRY
+	givepoke TOTODILE, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	jump LighthouseGetStarterScene_part2
@@ -260,7 +261,7 @@ LighthousePokeMenu:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	;givepoke CHIKORITA, 5, ORAN_BERRY
+	givepoke CHIKORITA, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	jump LighthouseGetStarterScene_part2
@@ -868,9 +869,8 @@ LighthouseAbnerText9:
 	
 	para "But no matter"
 	line "which you choose,"
-	
-	para "you must train"
-	line "it well."
+	cont "you must train"
+	cont "it well."
 	
 	para "One of you might"
 	line "even become the"
@@ -894,9 +894,10 @@ LighthouseAbnerText10:
 	
 	para "You're just lucky"
 	line "<PLAYER> was also"
-	cont "running late or"
-	cont "you might have"
-	cont "missed your chance"
+	cont "running late,"
+	
+	para "or you might have"
+	line "missed your chance"
 	cont "to get a #MON."
 	done
 	

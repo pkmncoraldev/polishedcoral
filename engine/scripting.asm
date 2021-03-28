@@ -1755,7 +1755,6 @@ Script_reloadmapafterbattle:
 .notblackedout
 	bit 0, d
 	jr z, .was_wild
-	farcall MomTriesToBuySomething
 	farcall RunPostBattleAbilities
 	jr .done
 

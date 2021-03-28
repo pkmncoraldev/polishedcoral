@@ -244,6 +244,9 @@ GetMapEncounterRate: ; 2a111
 	ld a, 3
 	jr z, .ok
 	ld a, [wTimeOfDay]
+	cp DUSK
+	jr nz, .ok
+	ld a, NITE
 .ok
 	ld c, a
 	ld b, 0
@@ -334,6 +337,10 @@ _ChooseWildEncounter:
 	inc hl
 	inc hl
 	ld a, [wTimeOfDay]
+	cp DUSK
+	jr nz, .not_dusk
+	ld a, NITE
+.not_dusk
 	push bc
 	ld bc, $e
 	rst AddNTimes
@@ -1045,6 +1052,10 @@ RandomPhoneRareWildMon: ; 2a4ab
 	ld bc, 5 + 4 * 2 ; Location of the level of the 5th wild Pokemon in that map
 	add hl, bc
 	ld a, [wTimeOfDay]
+	cp DUSK
+	jr nz, .not_dusk
+	ld a, NITE
+.not_dusk
 	ld bc, 7 * 2
 	rst AddNTimes
 .randloop1
@@ -1116,6 +1127,10 @@ RandomPhoneWildMon: ; 2a51f
 	ld bc, 5 + 0 * 2
 	add hl, bc
 	ld a, [wTimeOfDay]
+	cp DUSK
+	jr nz, .not_dusk
+	ld a, NITE
+.not_dusk
 	inc a
 	ld bc, 7 * 2
 .loop

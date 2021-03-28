@@ -13,8 +13,6 @@ EvosAttacks::
 BulbasaurEvosAttacks:
 	db EVOLVE_LEVEL, 16, IVYSAUR
 	db  0 ; no more evolutions
-	db  1, SYNTHESIS_MOONLIGHT_MORNING_SUN
-	db  0 ; no more level-up moves
 	db  1, TACKLE_SCRATCH_POUND
 	db  3, GROWL
 	db  7, VINE_WHIP

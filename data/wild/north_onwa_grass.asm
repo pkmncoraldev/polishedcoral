@@ -4,56 +4,56 @@
 	map_id ROUTE_1
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, PIKIPEK		;30%
-	db 3, LEDYBA		;30%
-	db 3, PIDGEY		;20%
-	db 3, RATTATA		;10%
-	db 3, RATTATA		;5%
-	db 3, RATTATA		;4%
-	db 3, RATTATA		;1%
+	db 2, PIKIPEK		;30%
+	db 2, LEDYBA		;30%
+	db 2, PIDGEY		;20%
+	db 2, RATTATA		;10%
+	db 2, RATTATA		;5%
+	db 2, RATTATA		;4%
+	db 2, RATTATA		;1%
 	; day
-	db 3, PIKIPEK		;30%
-	db 3, LEDYBA		;30%
-	db 3, PIDGEY		;20%
-	db 3, RATTATA		;10%
-	db 3, RATTATA		;5%
-	db 3, RATTATA		;4%
-	db 3, RATTATA		;1%
+	db 2, PIKIPEK		;30%
+	db 2, LEDYBA		;30%
+	db 2, PIDGEY		;20%
+	db 2, RATTATA		;10%
+	db 2, RATTATA		;5%
+	db 2, RATTATA		;4%
+	db 2, RATTATA		;1%
 	; nite
-	db 3, PIKIPEK		;30%
-	db 3, LEDYBA		;30%
-	db 3, PIDGEY		;20%
-	db 3, RATTATA		;10%
-	db 3, RATTATA		;5%
-	db 3, RATTATA		;4%
-	db 3, GASTLY		;1%
+	db 2, PIKIPEK		;30%
+	db 2, LEDYBA		;30%
+	db 2, PIDGEY		;20%
+	db 2, RATTATA		;10%
+	db 2, RATTATA		;5%
+	db 2, RATTATA		;4%
+	db 2, RATTATA		;1%
 	
 	map_id ROUTE_2
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 4, BUIZEL		;30%
-	db 4, GROWLITHE		;30%
-	db 4, COTTONEE		;20%
-	db 4, COTTONEE		;10%
-	db 4, PIDGEY		;5%
-	db 4, PIDGEY		;4%
-	db 4, LEDYBA		;1%
+	db 3, BUIZEL		;30%
+	db 3, GROWLITHE		;30%
+	db 3, COTTONEE		;20%
+	db 3, COTTONEE		;10%
+	db 3, PIDGEY		;5%
+	db 3, PIDGEY		;4%
+	db 3, LEDYBA		;1%
 	; day
-	db 4, BUIZEL		;30%
-	db 4, GROWLITHE		;30%
-	db 4, COTTONEE		;20%
-	db 4, COTTONEE		;10%
-	db 4, PIDGEY		;5%
-	db 4, PIDGEY		;4%
-	db 4, LEDYBA		;1%
+	db 3, BUIZEL		;30%
+	db 3, GROWLITHE		;30%
+	db 3, COTTONEE		;20%
+	db 3, COTTONEE		;10%
+	db 3, PIDGEY		;5%
+	db 3, PIDGEY		;4%
+	db 3, LEDYBA		;1%
 	; nite
-	db 4, BUIZEL		;30%
-	db 4, GROWLITHE		;30%
-	db 4, COTTONEE		;20%
-	db 4, COTTONEE		;10%
-	db 4, PIDGEY		;5%
-	db 4, PIDGEY		;4%
-	db 4, LEDYBA		;1%
+	db 3, BUIZEL		;30%
+	db 3, GROWLITHE		;30%
+	db 3, COTTONEE		;20%
+	db 3, COTTONEE		;10%
+	db 3, PIDGEY		;5%
+	db 3, PIDGEY		;4%
+	db 3, LEDYBA		;1%
 	
 	map_id DAYBREAK_GROTTO_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -542,7 +542,7 @@
 	db 20, XATU			;1%
 	
 	map_id SUNBEAM_JUNGLE
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 17, TRUMBEAK		;30%
 	db 17, ODDISH		;30%
@@ -569,7 +569,7 @@
 	db 18, GLOOM		;1%
 	
 	map_id SUNBEAM_JUNGLE_CAVE
-	db 8 percent, 8 percent, 8 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, NOIBAT		;30%
 	db 18, ONIX			;30%
@@ -596,7 +596,7 @@
 	db 18, ZUBAT		;1%
 	
 	map_id SUNBEAM_JUNGLE_DEEP
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, TRUMBEAK		;30%
 	db 18, MARILL		;30%

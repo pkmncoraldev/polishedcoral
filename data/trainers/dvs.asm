@@ -50,7 +50,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; bruno
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; karen
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; champion
-	db 100, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; rival
+	db  24, $99, $99, $99, ABILITY_1 | QUIRKY, MALE   ; rival
 	db   0, $66, $66, $66, ABILITY_1 | QUIRKY, MALE   ; youngster
 	db   0, $66, $66, $66, ABILITY_1 | QUIRKY, MALE   ; bug catcher
 	db   8, $77, $77, $77, ABILITY_1 | QUIRKY, MALE   ; camper
@@ -99,7 +99,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  64, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE   ; cooltrainerm
 	db  64, $EE, $EE, $EE, ABILITY_1 | QUIRKY, FEMALE ; cooltrainerf
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; prof elm
-	db  72, $DD, $DF, $DD, ABILITY_1 | TIMID, FEMALE  ; teacherfast
+	db   0, $DD, $DF, $DD, ABILITY_1 | TIMID, FEMALE  ; teacherfast
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; triobror
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; triobrob
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; triobroy

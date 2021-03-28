@@ -334,7 +334,7 @@ RivalGroup:
 	db "<RIVAL>@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 7, SNUBBULL
+	db 6, SNUBBULL
 	db 8, TOTODILE
 	db -1 ; end
 
@@ -344,7 +344,7 @@ RivalGroup:
 	db "<RIVAL>@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 7, SNUBBULL
+	db 6, SNUBBULL
 	db 8, CYNDAQUIL
 	db -1 ; end
 
@@ -354,7 +354,7 @@ RivalGroup:
 	db "<RIVAL>@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 7, SNUBBULL
+	db 6, SNUBBULL
 	db 8, CHIKORITA
 	db -1 ; end
 
@@ -364,7 +364,7 @@ RivalGroup:
 	db "<RIVAL>@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 7, SNUBBULL
+	db 6, SNUBBULL
 	db 8, SQUIRTLE
 	db -1 ; end
 
@@ -374,7 +374,7 @@ RivalGroup:
 	db "<RIVAL>@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 7, SNUBBULL
+	db 6, SNUBBULL
 	db 8, CHARMANDER
 	db -1 ; end
 
@@ -384,7 +384,7 @@ RivalGroup:
 	db "<RIVAL>@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 7, SNUBBULL
+	db 6, SNUBBULL
 	db 8, BULBASAUR
 	db -1 ; end
 
@@ -2659,10 +2659,9 @@ TeacherFastGroup:
 
 	; TEACHER_FAST
 	db "KATE@"
-	db TRAINERTYPE_MOVES
+	db TRAINERTYPE_ITEM
 	; party
-	db 100, MEOWTH
-		db WILL_O_WISP, 0, 0, 0
+	db 6, MEOWTH, QUICK_CLAW
 	db -1 ; end
 
 ; ================

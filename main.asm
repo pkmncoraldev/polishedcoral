@@ -175,7 +175,7 @@ TimeOfDayTable: ; c012
 	db MORN, 1 << MORN
 	db DAY,  1 << DAY
 	db NITE, 1 << NITE
-	db NITE, 1 << NITE
+	db DUSK, 1 << DUSK
 	db -1
 
 GetBreedMon1LevelGrowth: ; e698

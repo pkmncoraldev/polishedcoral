@@ -17,6 +17,12 @@ NurseNiteText:
 	para "Welcome to our"
 	line "#MON CENTER."
 	done
+	
+NurseDuskText:
+	text "Good evening!"
+	line "Welcome to our"
+	cont "#MON CENTER."
+	done
 
 PokeComNurseMornText:
 	text "Good morning!"

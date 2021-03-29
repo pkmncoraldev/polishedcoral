@@ -70,6 +70,8 @@ PokeCenterNurseScript:
 	iftrue .morn
 	checktime 1 << DAY
 	iftrue .day
+	checktime 1 << DUSK
+	iftrue .dusk
 	checktime 1 << NITE
 	iftrue .nite
 	jump .ok
@@ -79,6 +81,9 @@ PokeCenterNurseScript:
 	jump .ok
 .day
 	farwritetext NurseDayText
+	jump .ok
+.dusk
+	farwritetext NurseDuskText
 	jump .ok
 .nite
 	farwritetext NurseNiteText

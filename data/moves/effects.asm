@@ -2201,7 +2201,6 @@ Attract:
 	bounceback
 	attract
 	cantusefakeout
-	endmovekeout
 	endmove
 
 Return:

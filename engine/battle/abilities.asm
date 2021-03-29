@@ -970,6 +970,13 @@ WaterAbsorbAbility:
 
 ApplySpeedAbilities:
 ; Passive speed boost abilities
+	ld a, [hBattleTurn]
+	and a
+	jr nz, .skip_teacher_hardcode
+	ld a, [wOtherTrainerClass]
+	cp TEACHERFAST
+	jr z, .teacher_fast
+.skip_teacher_hardcode
 	ld a, BATTLE_VARS_ABILITY
 	call GetBattleVar
 	cp SWIFT_SWIM
@@ -997,6 +1004,7 @@ ApplySpeedAbilities:
 	call GetWeatherAfterCloudNine
 	cp h
 	ret nz
+.teacher_fast
 	ld a, $21
 .apply_mod
 	jp ApplyDamageMod

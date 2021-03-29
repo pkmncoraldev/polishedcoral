@@ -347,6 +347,7 @@ StarglowSnare3:
 	writetext StarglowSnare3Text2
 	pause 20
 	closetext
+	pause 20
 	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
 	moveperson STARGLOWSNARE1, $d, $16
 	appear STARGLOWSNARE1
@@ -615,9 +616,9 @@ StarglowFisher1Text2:
 	cont "while fishing,"
 	
 	para "but you could use"
-	line "it to cut down"
-	cont "small trees that"
-	cont "are in your way."
+	line "it to CUT down"
+	cont "small trees in"
+	cont "your way."
 	
 	para "You need the BADGE"
 	line "from this town's"

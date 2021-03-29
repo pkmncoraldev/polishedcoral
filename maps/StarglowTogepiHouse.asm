@@ -63,6 +63,7 @@ StarglowHouse1RocketEvent:
 	writetext StarglowHouse1MommyText1
 	waitbutton
 	closetext
+	pause 5
 	opentext
 	writetext StarglowHouse1RocketText1
 	waitbutton
@@ -76,11 +77,13 @@ StarglowHouse1RocketEvent:
 	writetext StarglowHouse1LittleGirlText1
 	waitbutton
 	closetext
+	pause 5
 	spriteface STARGLOWHOUSE1_ROCKET, DOWN
 	opentext
 	writetext StarglowHouse1RocketText2
 	waitbutton
 	closetext
+	pause 5
 	applymovement STARGLOWHOUSE1_ROCKET, Movement_StarglowHouse1Rocket2
 	spriteface STARGLOWHOUSE1_ROCKET, UP
 	applymovement STARGLOWHOUSE1_LITTLEGIRL, Movement_StarglowHouse1LittleGirl3

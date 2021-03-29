@@ -639,6 +639,11 @@ UnknownText_0x1c0d26::
 	text ""
 	line "took in sunlight!"
 	prompt
+	
+UnknownText_SkullBash::
+	text ""
+	line "lowered its head!"
+	prompt
 
 UnknownText_0x1c0d5c::
 	text ""

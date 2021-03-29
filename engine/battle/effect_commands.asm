@@ -7030,7 +7030,8 @@ BattleCommand_charge:
 	db "@"
 
 .SkullBash:
-	text_jump UnknownText_0x1c0d26
+; 'lowered its head!
+	text_jump UnknownText_SkullBash
 	db "@"
 	
 .Fly:
@@ -7549,7 +7550,7 @@ BattleCommand_disable: ; 36fed
 .got_moves
 
 	ld a, [de]
-	and a
+	and $f
 	jr nz, .failed
 
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP

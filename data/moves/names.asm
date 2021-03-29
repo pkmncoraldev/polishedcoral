@@ -10,7 +10,7 @@ MoveNames::
 	db "THUNDERPUNCH@"
 	db "FLAME CHARGE@"
 	db "X-SCISSOR@"
-	db "NIGHT SLASH@"
+	db "SMOG@"
 	db "AIR SLASH@"
 	db "SWORDS DANCE@"
 	db "CUT@"

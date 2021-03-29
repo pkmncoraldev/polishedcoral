@@ -2197,24 +2197,11 @@ Attract:
 	usedmovetext
 	doturn
 	pressure
-	critical
-	effectchance
-	damagestats
-	damagecalc
-	stab
-	damagevariation
 	checkhit
-	hittarget
-	failuretext
-	checkfaint
-	criticaltext
-	supereffectivetext
-	postfainteffects
-	posthiteffects
-	specialattackdown
-	statdownmessage
-	pickpocket
+	bounceback
+	attract
 	cantusefakeout
+	endmovekeout
 	endmove
 
 Return:

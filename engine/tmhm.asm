@@ -6,6 +6,8 @@ CanLearnTMHMMove: ; 11639
 	farjp GetForgottenMoves
 
 .tm_tutor
+	ld a, [wCurMove]
+	push af
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
 	call GetBaseData
@@ -27,6 +29,8 @@ CanLearnTMHMMove: ; 11639
 
 .asm_11659
 	pop hl
+	pop af
+	ld [wCurSpecies], a
 	ld b, CHECK_FLAG
 	push de
 	ld d, 0
@@ -36,6 +40,8 @@ CanLearnTMHMMove: ; 11639
 
 .end
 	pop hl
+	pop af
+	ld [wCurSpecies], a
 	ld c, 0
 	ret
 ; 1166a

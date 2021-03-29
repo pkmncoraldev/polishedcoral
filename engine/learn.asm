@@ -51,8 +51,19 @@ LearnMove: ; 6508
 	ld [wDisabledMove], a
 	ld [wPlayerDisableCount], a
 .not_disabled
-
+	push hl
+	push de
+	farcall CheckMultiMoveSlot
+	jr nc, .not_multi_move_slot
+	pop de
+	pop hl
+	farcall GetMultiMoveSlotName
+	jr .done
+.not_multi_move_slot
+	pop de
+	pop hl
 	call GetMoveName
+.done
 	ld hl, Text_1_2_and_Poof ; 1, 2 and…
 	call PrintText
 

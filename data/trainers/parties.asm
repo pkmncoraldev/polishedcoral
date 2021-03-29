@@ -419,8 +419,8 @@ YoungsterGroup:
 	db "CHRIS@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 10, MINCCINO
-	db  9, PIDGEY
+	db  9, NIDORAN_M
+	db  8, PIDGEY
 	db -1 ; end
 
 ; ================
@@ -1291,8 +1291,8 @@ HikerGroup:
 	db "DOUG@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 12, GEODUDE
-	db 13, CUBONE
+	db 11, GEODUDE
+	db 10, CUBONE
 	db -1 ; end
 
 ; ================
@@ -1311,7 +1311,7 @@ HikerGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 10, ONIX
-	db 12, GEODUDE
+	db 11, GEODUDE
 	db -1 ; end
 
 ; ================
@@ -1400,7 +1400,7 @@ HikerGroup:
 ; ================
 
 	; HIKER
-	db "SAMSON@"
+	db "SAMSON@" ;UNUSED
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1447,7 +1447,7 @@ GruntMGroup:
 	db "STARGLOWM2@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 13, MINCCINO
+	db 13, MAREEP
 	db 13, PIDGEY
 	db -1 ; end
 
@@ -1458,7 +1458,7 @@ GruntMGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 13, ZUBAT
-	db 12, HOUNDOUR
+	db 11, COTTONEE
 	db 12, CLEFAIRY
 	db -1 ; end
 
@@ -1555,7 +1555,7 @@ GruntFGroup:
 	db "STARGLOWF1@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 12, HOUNDOUR
+	db 13, NIDORAN_M
 	db 13, COTTONEE
 	db 12, PIKACHU
 	db -1 ; end

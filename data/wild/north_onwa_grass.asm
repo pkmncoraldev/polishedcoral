@@ -85,29 +85,29 @@
 	map_id GLINT_GROVE
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
-	db 6, CLEFAIRY		;30%
-	db 6, JIGGLYPUFF	;30%
-	db 6, VENIPEDE		;20% ;VENIPEDE
-	db 6, SNUBBULL		;10%
-	db 6, PIKACHU		;5%
-	db 6, PIKACHU		;4%
-	db 6, PIKACHU		;1%
+	db 5, CLEFAIRY		;30%
+	db 5, JIGGLYPUFF	;30%
+	db 5, VENIPEDE		;20%
+	db 5, SNUBBULL		;10%
+	db 5, PIKACHU		;5%
+	db 5, PIKACHU		;4%
+	db 5, PIKACHU		;1%
 	; day
-	db 6, CLEFAIRY		;30%
-	db 6, JIGGLYPUFF	;30%
-	db 6, VENIPEDE		;20% ;VENIPEDE
-	db 6, SNUBBULL		;10%
-	db 6, PIKACHU		;5%
-	db 6, PIKACHU		;4%
-	db 6, PIKACHU		;1%
+	db 5, CLEFAIRY		;30%
+	db 5, JIGGLYPUFF	;30%
+	db 5, VENIPEDE		;20%
+	db 5, SNUBBULL		;10%
+	db 5, PIKACHU		;5%
+	db 5, PIKACHU		;4%
+	db 5, PIKACHU		;1%
 	; nite
-	db 6, CLEFAIRY		;30%
-	db 6, JIGGLYPUFF	;30%
-	db 6, VENIPEDE		;20% ;VENIPEDE
-	db 6, SNUBBULL		;10%
-	db 6, PIKACHU		;5%
-	db 6, PIKACHU		;4%
-	db 6, PIKACHU		;1%
+	db 5, CLEFAIRY		;30%
+	db 5, JIGGLYPUFF	;30%
+	db 5, VENIPEDE		;20%
+	db 5, SNUBBULL		;10%
+	db 5, PIKACHU		;5%
+	db 5, PIKACHU		;4%
+	db 5, PIKACHU		;1%
 	
 	map_id GLINT_GROVE_DEEP
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
@@ -166,83 +166,83 @@
 	map_id STARGLOW_CAVERN_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db  9, GEODUDE		;30%
-	db  9, ZUBAT		;30%
-	db  9, DWEBBLE		;20%
-	db  9, RATTATA		;10%
-	db  9, WOOPER		;5%
-	db  9, ONIX			;4%
-	db  9, ONIX			;1%
+	db  7, GEODUDE		;30%
+	db  7, ZUBAT		;30%
+	db  7, DWEBBLE		;20%
+	db  7, RATTATA		;10%
+	db  7, WOOPER		;5%
+	db  7, ONIX			;4%
+	db  7, ONIX			;1%
 	; day
-	db  9, GEODUDE		;30%
-	db  9, ZUBAT		;30%
-	db  9, DWEBBLE		;20%
-	db  9, RATTATA		;10%
-	db  9, WOOPER		;5%
-	db  9, ONIX			;4%
-	db  9, ONIX			;1%
+	db  7, GEODUDE		;30%
+	db  7, ZUBAT		;30%
+	db  7, DWEBBLE		;20%
+	db  7, RATTATA		;10%
+	db  7, WOOPER		;5%
+	db  7, ONIX			;4%
+	db  7, ONIX			;1%
 	; nite
-	db  9, GEODUDE		;30%
-	db  9, ZUBAT		;30%
-	db  9, DWEBBLE		;20%
-	db  9, RATTATA		;10%
-	db  9, WOOPER		;5%
-	db  9, ONIX			;4%
-	db  9, ONIX			;1%
+	db  7, GEODUDE		;30%
+	db  7, ZUBAT		;30%
+	db  7, DWEBBLE		;20%
+	db  7, RATTATA		;10%
+	db  7, WOOPER		;5%
+	db  7, ONIX			;4%
+	db  7, ONIX			;1%
 	
 	map_id STARGLOW_CAVERN_2F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db  9, GEODUDE		;30%
-	db  9, DWEBBLE		;30%
-	db  9, ZUBAT		;20%
-	db  9, WOOPER		;10%
-	db  9, RATTATA		;5%
-	db  9, ONIX			;4%
-	db  9, ONIX			;1%
+	db  7, GEODUDE		;30%
+	db  7, DWEBBLE		;30%
+	db  7, ZUBAT		;20%
+	db  7, WOOPER		;10%
+	db  7, RATTATA		;5%
+	db  7, ONIX			;4%
+	db  7, ONIX			;1%
 	; day
-	db  9, GEODUDE		;30%
-	db  9, DWEBBLE		;30%
-	db  9, ZUBAT		;20%
-	db  9, WOOPER		;10%
-	db  9, RATTATA		;5%
-	db  9, ONIX			;4%
-	db  9, ONIX			;1%
+	db  7, GEODUDE		;30%
+	db  7, DWEBBLE		;30%
+	db  7, ZUBAT		;20%
+	db  7, WOOPER		;10%
+	db  7, RATTATA		;5%
+	db  7, ONIX			;4%
+	db  7, ONIX			;1%
 	; nite
-	db  9, GEODUDE		;30%
-	db  9, DWEBBLE		;30%
-	db  9, ZUBAT		;20%
-	db  9, WOOPER		;10%
-	db  9, RATTATA		;5%
-	db  9, ONIX			;4%
-	db  9, ONIX			;1%
+	db  7, GEODUDE		;30%
+	db  7, DWEBBLE		;30%
+	db  7, ZUBAT		;20%
+	db  7, WOOPER		;10%
+	db  7, RATTATA		;5%
+	db  7, ONIX			;4%
+	db  7, ONIX			;1%
 	
 	map_id HUNTERS_THICKET
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
-	db 10, EXEGGCUTE	;30%
-	db 10, PIKIPEK		;30%
-	db 10, MARILL		;20%
-	db 10, PIDGEY		;10%
-	db 10, SHROOMISH	;5%
-	db 10, SHROOMISH	;4%
-	db 10, SHROOMISH	;1%
+	db  9, EXEGGCUTE	;30%
+	db  9, PIKIPEK		;30%
+	db  9, MARILL		;20%
+	db  9, PIDGEY		;10%
+	db  9, SHROOMISH	;5%
+	db  9, SHROOMISH	;4%
+	db  9, SHROOMISH	;1%
 	; day
-	db 10, EXEGGCUTE	;30%
-	db 10, PIKIPEK		;30%
-	db 10, MARILL		;20%
-	db 10, PIDGEY		;10%
-	db 10, SHROOMISH	;5%
-	db 10, SHROOMISH	;4%
-	db 10, SHROOMISH	;1%
+	db  9, EXEGGCUTE	;30%
+	db  9, PIKIPEK		;30%
+	db  9, MARILL		;20%
+	db  9, PIDGEY		;10%
+	db  9, SHROOMISH	;5%
+	db  9, SHROOMISH	;4%
+	db  9, SHROOMISH	;1%
 	; nite
-	db 10, EXEGGCUTE	;30%
-	db 10, PIKIPEK		;30%
-	db 10, MARILL		;20%
-	db 10, PIDGEY		;10%
-	db 10, SHROOMISH	;5%
-	db 10, SHROOMISH	;4%
-	db 10, SHROOMISH	;1%
+	db  9, EXEGGCUTE	;30%
+	db  9, PIKIPEK		;30%
+	db  9, MARILL		;20%
+	db  9, PIDGEY		;10%
+	db  9, SHROOMISH	;5%
+	db  9, SHROOMISH	;4%
+	db  9, SHROOMISH	;1%
 	
 	map_id ROUTE_5
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite

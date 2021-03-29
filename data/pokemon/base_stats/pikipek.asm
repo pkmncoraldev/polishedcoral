@@ -4,8 +4,8 @@
 	db NORMAL, FLYING
 	db 255 ; catch rate
 	db 53 ; base exp
-	db ORAN_BERRY ; item 1
-	db ORAN_BERRY ; item 2
+	db NO_ITEM ; item 1
+	db NO_ITEM ; item 2
 	dn FEMALE_50, 2 ; gender, step cycles to hatch
 	dn 5, 5 ; frontpic dimensions
 	db KEEN_EYE ; ability 1

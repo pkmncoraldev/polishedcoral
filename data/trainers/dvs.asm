@@ -50,12 +50,12 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; bruno
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; karen
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; champion
-	db  24, $99, $99, $99, ABILITY_1 | QUIRKY, MALE   ; rival
+	db   0, $99, $99, $99, ABILITY_1 | QUIRKY, MALE   ; rival
 	db   0, $66, $66, $66, ABILITY_1 | QUIRKY, MALE   ; youngster
 	db   0, $66, $66, $66, ABILITY_1 | QUIRKY, MALE   ; bug catcher
 	db   8, $77, $77, $77, ABILITY_1 | QUIRKY, MALE   ; camper
 	db   8, $77, $77, $77, ABILITY_1 | QUIRKY, FEMALE ; picnicker
-	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE ; twins
+	db   8, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE ; twins
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE   ; fisher
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE   ; bird keeper
 	db  24, $99, $99, $99, ABILITY_1 | QUIRKY, MALE   ; hiker

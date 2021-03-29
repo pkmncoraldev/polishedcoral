@@ -558,9 +558,10 @@ TrainerGlintGrove_6:
 
 .SeenText:
 	text "I figured I could"
-	line "catch some cool"
-	cont "BUG TYPE #MON"
-	cont "around here,"
+	line "catch a bunch of"
+	cont "different BUG TYPE"
+	cont "#MON in this"
+	cont "grove,"
 	
 	para "but all I can find"
 	line "are VENIPEDE!"

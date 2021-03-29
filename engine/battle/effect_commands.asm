@@ -175,7 +175,7 @@ BattleCommand_checkturn:
 	ld a, BATTLE_VARS_ABILITY
 	call GetBattleVar
 	cp INNER_FOCUS
-	jr z, .not_flinched
+	jr z, .inner_focus
 	push af
 	ld hl, FlinchedText
 	call StdBattleTextBox
@@ -188,6 +188,9 @@ BattleCommand_checkturn:
 	call CantMove
 	jp EndTurn
 
+.inner_focus
+	ld hl, InnerFocusText
+	call StdBattleTextBox
 .not_flinched
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVarAddr

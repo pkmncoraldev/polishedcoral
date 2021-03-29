@@ -736,6 +736,12 @@ PranksterText:
 	cont "move first!"
 	prompt
 	
+InnerFocusText:
+	text "<USER>'s"
+	line "INNER FOCUS kept"
+	cont "it from flinching!"
+	prompt
+	
 ObliviousPreventedDestinyKnot:
 	text "<USER>'s"
 	line "@"

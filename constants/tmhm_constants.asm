@@ -53,7 +53,7 @@ ENDM
 	add_tm DIG          ; $1b
 	add_tm PSYCHIC      ; $1c
 	add_tm SHADOW_BALL  ; $1d
-	add_tm SMOG		; $1e
+	add_tm METAL_CLAW		; $1e
 	add_tm DOUBLE_TEAM  ; $1f
 	add_tm REFLECT      ; $20
 	add_tm FLASH_CANNON ; $21

@@ -20,15 +20,15 @@
 	tilecoll WALL, WALL, WALL, WALL ; 13
 	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 14
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 15
-	tilecoll WALL, WALL, WALL, DOOR ; 16
+	tilecoll WATER, WATER, WATER, WATER ; 16
 	tilecoll WALL, WALL, WALL, WALL ; 17
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 18
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 19
 	tilecoll WALL, WALL, WALL, WALL ; 1a
 	tilecoll WALL, WALL, WALL, WALL ; 1b
-	tilecoll WALL, WALL, WALL, WALL ; 1c
+	tilecoll WATER, WATER, WATER, WATER ; 1c
 	tilecoll WALL, WALL, WALL, WALL ; 1d
-	tilecoll WALL, WALL, WALL, WALL ; 1e
+	tilecoll WATER, WATER, WATER, WATER ; 1e
 	tilecoll WALL, WALL, WALL, WALL ; 1f
 	tilecoll WALL, WALL, WALL, WALL ; 20
 	tilecoll WALL, WALL, WALL, WALL ; 21
@@ -122,7 +122,7 @@
 	tilecoll WATER, WATER, WATER, WATER ; 79
 	tilecoll WATER, WATER, WATER, WATER ; 7a
 	tilecoll WALL, WALL, WALL, WALL ; 7b
-	tilecoll WALL, WALL, WALL, WALL ; 7c
-	tilecoll WALL, WALL, WALL, WALL ; 7d
+	tilecoll WATER, WATER, WATER, WATER ; 7c
+	tilecoll WATER, WATER, WATER, WATER ; 7d
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 7e
 	tilecoll WALL, WALL, WALL, WALL ; 7f

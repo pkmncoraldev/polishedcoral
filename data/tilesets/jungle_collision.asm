@@ -142,3 +142,5 @@
 	tilecoll WATER, WATER, WATER, WATER ; 8d
 	tilecoll WATER, WATER, WATER, WATER ; 8e
 	tilecoll WATER, WATER, WATER, WATER ; 8f
+	tilecoll WATER, WATER, WATER, WATER ; 90
+	tilecoll WATER, WATER, WATER, WATER ; 91

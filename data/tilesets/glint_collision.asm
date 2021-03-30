@@ -162,14 +162,14 @@
 	tilecoll SKATE_LEDGE_DOWN, SKATE, WALL, FLOOR ; a1
 	tilecoll LEDGE_DOWN, FLOOR, WALL, FLOOR ; a2
 	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; a3
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a4
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a5
+	tilecoll WATER, WATER, WATER, WATER ; a4
+	tilecoll WATER, WATER, WATER, WATER ; a5
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a6
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a7
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a8
 	tilecoll WALL, WALL, FLOOR, FLOOR ; a9
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; aa
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ab
+	tilecoll SKATE, SKATE, SKATE, WALL ; ab
 	tilecoll WALL, WALL, WALL, WALL ; ac
 	tilecoll WALL, WALL, WALL, WALL ; ad
 	tilecoll WALL, WALL, WALL, WALL ; ae

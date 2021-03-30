@@ -146,3 +146,9 @@
 	tilecoll WALL, WALL, WALL, WALL ; 91
 	tilecoll WALL, WALL, WALL, WALL ; 92
 	tilecoll WALL, WALL, WALL, WALL ; 93
+	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; 94
+	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; 95
+	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; 96
+	tilecoll ICE, ICE, ICE, ICE ; 97
+	tilecoll ICE, ICE, ICE, ICE ; 98
+	tilecoll ICE, ICE, ICE, ICE ; 99

@@ -1,23 +1,23 @@
-	db  90,  70,  80,  70,  70,  95
+	db  60, 140,  80,  70,  60,  60
 	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, ICE
-	db 75 ; catch rate
-	db 176 ; base exp
-	db RAWST_BERRY ; item 1
-	db NEVERMELTICE ; item 2
+	db GRASS, FIGHTING
+	db 90 ; catch rate
+	db 165 ; base exp
+	db NO_ITEM ; item 1
+	db NO_ITEM ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
 	dn 7, 7 ; frontpic dimensions
-	db THICK_FAT ; ability 1
-	db HYDRATION ; ability 2
-	db ICE_BODY ; hidden ability
+	db EFFECT_SPORE ; ability 1
+	db POISON_HEAL ; ability 2
+	db TECHNICIAN ; hidden ability
 	db MEDIUM_FAST ; growth rate
-	dn AMPHIBIAN, FIELD ; egg groups
+	dn FAERY, PLANT ; egg groups
 
 	; ev_yield
-	ev_yield   0,   0,   0,   0,   0,   2
+	ev_yield   0,   2,   0,   0,   0,   0
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, FAKE_OUT
+	tmhm 
 	; end

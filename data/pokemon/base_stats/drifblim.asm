@@ -8,8 +8,8 @@
 	db NO_ITEM ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
 	dn 5, 5 ; frontpic dimensions
-	db FLARE_BOOST ; ability 1
-	db FLARE_BOOST ; ability 2
+	db AFTERMATH ; ability 1
+	db UNBURDEN ; ability 2
 	db FLARE_BOOST ; hidden ability
 	db MEDIUM_FAST ; growth rate
 	dn AMORPHOUS, AMORPHOUS ; egg groups

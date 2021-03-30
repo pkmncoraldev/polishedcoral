@@ -466,7 +466,8 @@ BugCatcherGroup:
 	db "JOSH@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 13, SCYTHER
+	db 13, DWEBBLE
+	db 13, DWEBBLE
 	db -1 ; end
 
 ; ================
@@ -571,8 +572,8 @@ PicnickerGroup:
 	db "TRISTA@"
 	db TRAINERTYPE_NORMAL
 	; party
+	db 13, MARILL
 	db 14, MARILL
-	db 15, MARILL
 	db 15, POLIWAG
 	db -1 ; end
 
@@ -932,7 +933,7 @@ FisherGroup:
 	; party
 	db 14, CHINCHOU
 	db 13, WOOPER
-	db 14, BUIZEL
+	db 13, BUIZEL
 	db -1 ; end
 
 ; ================
@@ -1830,8 +1831,8 @@ LassGroup:
 	db "JUNE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 13, ODDISH
-	db 14, JIGGLYPUFF
+	db 12, ODDISH
+	db 13, JIGGLYPUFF
 	db -1 ; end
 
 ; ================
@@ -2620,9 +2621,8 @@ CooltrainerFGroup:
 	db "SALLY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 15, GROWLITHE
-	db 15, MAREEP
-	db 14, JIGGLYPUFF
+	db 13, GROWLITHE
+	db 14, MAREEP
 	db -1 ; end
 
 ; ================

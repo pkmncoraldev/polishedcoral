@@ -96,8 +96,8 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  72, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; guitaristf
 	db  72, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; biker
 	db  72, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; roughneck
-	db  64, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE   ; cooltrainerm
-	db  64, $EE, $EE, $EE, ABILITY_1 | QUIRKY, FEMALE ; cooltrainerf
+	db  48, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE   ; cooltrainerm
+	db  48, $EE, $EE, $EE, ABILITY_1 | QUIRKY, FEMALE ; cooltrainerf
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; prof elm
 	db   0, $DD, $DF, $DD, ABILITY_1 | TIMID, FEMALE  ; teacherfast
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; triobror

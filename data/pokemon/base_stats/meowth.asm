@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm FAKE_OUT
+	tmhm FAKE_OUT, METAL_CLAW, CUT
 	; end

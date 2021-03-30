@@ -147,6 +147,7 @@ StarglowHouse1LittleGirl:
 	jumptextfaceplayer StarglowHouse1LittleGirlText3
 	end
 .littlegirl3
+	spriteface STARGLOWHOUSE1_MOMMY3, LEFT
 	checkevent EVENT_DIDNT_TAKE_TOGEPI
 	iftrue .didnttaketogepi
 	checkevent EVENT_GOT_TOGEPI
@@ -190,7 +191,7 @@ StarglowHouse1LittleGirl:
 	iffalse .end
 	checkcode VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .PartyFull
-;	special SpecialGiveShinyTogepi
+	special SpecialGiveShinyTogepi
 	disappear STARGLOWHOUSE1_TOGEPI2
 	writetext StarglowHouse1GotTogepiText
 	playsound SFX_CAUGHT_MON
@@ -209,7 +210,7 @@ StarglowHouse1LittleGirl:
 	iffalse .end
 	checkcode VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .PartyFull
-;	special SpecialGiveShinyTogepi
+	special SpecialGiveShinyTogepi
 	disappear STARGLOWHOUSE1_TOGEPI2
 	writetext StarglowHouse1GotTogepiText
 	playsound SFX_CAUGHT_MON

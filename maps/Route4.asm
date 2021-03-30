@@ -255,10 +255,9 @@ Route4NPC5Text:
 	cont "leave town,"
 	
 	para "and now a SNORLAX"
-	line "decided this would"
-	cont "be the perfect"
-	cont "place to take a"
-	cont "nap."
+	line "decided this was"
+	cont "the perfect place"
+	cont "to take a nap!"
 	
 	para "I'm just trying to"
 	line "get home…"

@@ -54,12 +54,12 @@ TrainerHunters_1:
 TrainerHunters_2:
 	generictrainer BUG_CATCHER, JOSH, EVENT_BEAT_HUNTERS_TRAINER_2, .SeenText, .BeatenText
 
-	text "My bug #MON"
+	text "My BUG #MON"
 	line "ARE rocks!"
 	done
 
 .SeenText:
-	text "Bug #MON rock!"
+	text "BUG #MON rock!"
 	
 	para "Let me show you!"
 	done

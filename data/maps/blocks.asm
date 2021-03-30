@@ -415,6 +415,9 @@ LakeOnwaNameRaterHouse_BlockData:
 Route8EncounterHouse_BlockData:
 	INCBIN "maps/Route8EncounterHouse.ablk.lz"
 	
+	
+SECTION "Map Blockdata 2", ROMX
+	
 EventideForest_BlockData:
 	INCBIN "maps/EventideForest.ablk.lz"
 	
@@ -453,8 +456,6 @@ SpookyForestEscort_BlockData:
 
 OldManorExterior_BlockData:
 	INCBIN "maps/OldManorExterior.ablk.lz"
-	
-SECTION "Map Blockdata 2", ROMX
 	
 SpookhouseLivingRoom_BlockData:
 	INCBIN "maps/SpookhouseLivingRoom.ablk.lz"

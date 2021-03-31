@@ -59,8 +59,8 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke WIGGLYTUFF, 100
-	givepoke SCYTHER, 100
-	givepoke BLISSEY, 100
+	givepoke MAGIKARP, 100
+	givepoke DITTO, 100
 .items
 	writetext PlayerHouseDebugText6
 	yesorno

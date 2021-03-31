@@ -1200,7 +1200,7 @@ TaurosEvosAttacks:
 MagikarpEvosAttacks:
 	db EVOLVE_LEVEL, 20, GYARADOS
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, TRANSFORM_SPLASH
 	db 0 ; no more level-up moves
 
 GyaradosEvosAttacks:
@@ -1215,7 +1215,7 @@ LaprasEvosAttacks:
 
 DittoEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, TRANSFORM_SPLASH
 	db 0 ; no more level-up moves
 
 EeveeEvosAttacks:

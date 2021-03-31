@@ -1,16 +1,8 @@
 BattleCommand_transform:
-	ld a, [hBattleTurn]
-	and a
-	jr z, .player
-	ld a, [wEnemyMonSpecies]
-	cp DITTO
-	jr z, .do_transform
-.player
-	ld a, [wBattleMonSpecies]
-	cp DITTO
-	jr z, .do_transform
-	ld a, $9
+	farcall CheckTransformThing
 	ld [wKickCounter], a
+	cp $9
+	jr nz, .do_transform
 	call AnimateCurrentMove
 	jp PrintNothingHappened
 	

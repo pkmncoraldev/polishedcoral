@@ -30,17 +30,16 @@ GlintCity_MapScriptHeader:
 	signpost 9, 38, SIGNPOST_READ, GlintCityRoute3sign
 
 	db 11 ; object events
-	person_event SPRITE_COOLTRAINER_F, 8, 20, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintNPC1, -1
+	person_event SPRITE_COOLTRAINER_F,  8, 15, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintNPC1, -1
 	person_event SPRITE_FAT_GUY, 16, 13, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintNPC2, -1
 	person_event SPRITE_SCHOOLGIRL, 12, 15, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, GlintNPC3, -1
 	person_event SPRITE_TWIN, 11, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GlintNPC4, -1
-	person_event SPRITE_GAMEBOY_KID, 8, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintNPC5, -1
+	person_event SPRITE_GAMEBOY_KID,  8, 32, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintNPC5, -1
 	person_event SPRITE_CLERK, 10, 25, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintNPC6, -1
-	person_event SPRITE_GRANNY, 8, 32, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, GlintNPC7, -1
-	person_event SPRITE_GROWLITHE, 8, 21, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintDoggo, -1
-	person_event SPRITE_PIKIPEK, 9, 32, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintBirb, EVENT_GLINT_BIRDS
-	person_event SPRITE_PIKIPEK, 11, 32, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintBirb, EVENT_GLINT_BIRDS
-	person_event SPRITE_PIKIPEK, 10, 31, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintBirb, EVENT_GLINT_BIRDS
+	person_event SPRITE_GRANNY,  8, 20, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, GlintNPC7, -1
+	person_event SPRITE_GROWLITHE,  8, 14, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintDoggo, -1
+	person_event SPRITE_PIKIPEK, 10, 21, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintBirb, -1
+	person_event SPRITE_PIKIPEK,  9, 20, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintBirb, -1
 
 	
 	const_def 1 ; object constants
@@ -54,7 +53,6 @@ GlintCity_MapScriptHeader:
 	const GLINT_GROWLITHE
 	const GLINT_BIRB1
 	const GLINT_BIRB2
-	const GLINT_BIRB3
 	
 GlintCityTrigger0:
 	end
@@ -235,8 +233,10 @@ GlintNPC1Text:
 	line "coming to the"
 	cont "park."
 	
-	para "I bring her here"
-	line "everyday."
+	para "I have to keep her"
+	line "on the lease,"
+	cont "or she'll try to"
+	cont "chase the PIKIPEK!"
 	done
 	
 GlintNPC2Text:

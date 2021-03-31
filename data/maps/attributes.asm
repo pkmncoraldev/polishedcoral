@@ -114,18 +114,14 @@ ENDM
 	map_attributes Route3, ROUTE_3, $d4, SOUTH | WEST | EAST
 	connection south, Route8, ROUTE_8, 7
 	connection west, GlintCity, GLINT_CITY, 0
-	connection east, Route3East, ROUTE_3_EAST, 2
+	connection east, Route3East, ROUTE_3_EAST, 0
 	
-	map_attributes Route3East, ROUTE_3_EAST, $d4, WEST | EAST
-	connection west, Route3, ROUTE_3, -2
-	connection east, Route3Starglow, ROUTE_3_STARGLOW, 4
-
-	map_attributes Route3Starglow, ROUTE_3_STARGLOW, $5, SOUTH | WEST
-	connection south, StarglowValley, STARGLOW_VALLEY, -3
-	connection west, Route3East, ROUTE_3_EAST, -4
+	map_attributes Route3East, ROUTE_3_EAST, $d4, SOUTH | WEST
+	connection south, StarglowValley, STARGLOW_VALLEY, 11
+	connection west, Route3, ROUTE_3, 0
 	
 	map_attributes StarglowValley, STARGLOW_VALLEY, 5, NORTH | EAST | WEST
-	connection north, Route3Starglow, ROUTE_3_STARGLOW, 3
+	connection north, Route3East, ROUTE_3_EAST, -11
 	connection west, Route8, ROUTE_8, 0
 	connection east, Route4, ROUTE_4, 6
 	

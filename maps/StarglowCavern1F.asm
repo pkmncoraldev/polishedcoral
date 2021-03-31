@@ -7,7 +7,7 @@ StarglowCavern1F_MapScriptHeader:
 
 	db 4 ; warp events
 	warp_def 29, 5, 1, ROUTE_3
-	warp_def 27, 31, 1, ROUTE_3_STARGLOW
+	warp_def 27, 31, 1, ROUTE_3_EAST
 	warp_def 5, 23, 1, STARGLOW_CAVERN_2F
 	warp_def 11, 33, 2, STARGLOW_CAVERN_2F
 

@@ -680,7 +680,7 @@ StarglowGymGuyText:
 	
 	para "Champ in making!"
 	
-	para "This gym is also a"
+	para "This GYM is also a"
 	line "tackle shop!"
 	
 	para "That means all the"

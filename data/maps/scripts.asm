@@ -120,7 +120,6 @@ INCLUDE "maps/GlintEvoHouse.asm"
 
 SECTION "Starglow Valley Scripts", ROMX
 
-INCLUDE "maps/Route3Starglow.asm"
 INCLUDE "maps/StarglowValley.asm"
 INCLUDE "maps/StarglowTogepiHouse.asm"
 INCLUDE "maps/StarglowNoPokemonHouse.asm"

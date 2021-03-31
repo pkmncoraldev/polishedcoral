@@ -89,15 +89,14 @@ MAP_NONE   EQU 0
 	map_const GLINT_RIVAL_HOUSE,                  		   4,  4 ; 10
 	map_const GLINT_EVO_HOUSE,                             4,  4 ; 11
 	map_const ROUTE_3,                                    27, 16 ; 12
-	map_const ROUTE_3_EAST,                		          14, 10 ; 13
-	map_const ROUTE_8,                                    31, 20 ; 14
-	map_const ROUTE_8_ENCOUNTER_HOUSE,                     4,  4 ; 15
-	map_const ROUTE_8_GARDEN,                             30, 20 ; 16
-	map_const ROUTE_8_GATE,                                4,  4 ; 17
+	map_const ROUTE_8,                                    31, 20 ; 13
+	map_const ROUTE_8_ENCOUNTER_HOUSE,                     4,  4 ; 14
+	map_const ROUTE_8_GARDEN,                             30, 20 ; 15
+	map_const ROUTE_8_GATE,                                4,  4 ; 16
 
 	newgroup                                                     ;  5
 
-	map_const ROUTE_3_STARGLOW,                            8, 10 ;  1
+	map_const ROUTE_3_EAST,                		          22, 16 ;  1
 	map_const STARGLOW_VALLEY,                            19, 17 ;  2
 	map_const STARGLOW_TOGEPI_HOUSE,                       4,  4 ;  3
 	map_const STARGLOW_NO_POKEMON_HOUSE,                   4,  4 ;  4

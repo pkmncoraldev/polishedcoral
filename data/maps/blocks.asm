@@ -160,9 +160,6 @@ LusterApartment1_2F_BlockData:
 LusterApartment3_2F_BlockData:
 	INCBIN "maps/Apartment2FGreen.ablk.lz"
 	
-Route3Starglow_BlockData:
-	INCBIN "maps/Route3Starglow.ablk.lz"
-	
 StarglowValley_BlockData:
 	INCBIN "maps/StarglowValley.ablk.lz"
 	

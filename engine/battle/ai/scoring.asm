@@ -356,7 +356,7 @@ AI_Smart: ; 386be
 	dbw EFFECT_RAGE,              AI_Smart_Rage
 	dbw EFFECT_LEECH_SEED,        AI_Smart_LeechSeed
 	dbw EFFECT_DISABLE,           AI_Smart_Disable
-	dbw EFFECT_COUNTER,           AI_Smart_Counter
+	dbw EFFECT_PSYCH_UP,          AI_Smart_PsychUp
 	dbw EFFECT_ENCORE,            AI_Smart_Encore
 	dbw EFFECT_SLEEP_TALK,        AI_Smart_SleepTalk
 	dbw EFFECT_DESTINY_BOND,      AI_Smart_DestinyBond
@@ -385,7 +385,6 @@ AI_Smart: ; 386be
 	dbw EFFECT_RAIN_DANCE,        AI_Smart_RainDance
 	dbw EFFECT_SUNNY_DAY,         AI_Smart_SunnyDay
 	dbw EFFECT_BELLY_DRUM,        AI_Smart_BellyDrum
-	dbw EFFECT_MIRROR_COAT,       AI_Smart_MirrorCoat
 	dbw EFFECT_EARTHQUAKE,        AI_Smart_Earthquake
 	dbw EFFECT_FUTURE_SIGHT,      AI_Smart_FutureSight
 	dbw EFFECT_GUST,              AI_Smart_Gust
@@ -1145,66 +1144,62 @@ AI_Smart_Rage: ; 38b7f
 ; 38ba8
 
 
-AI_Smart_Counter: ; 38bf1
+AI_Smart_PsychUp:
 	push hl
-	ld hl, wPlayerUsedMoves
-	lb bc, 0, 4
+	ld hl, wEnemyAtkLevel
+	ld b, $8
+	ld c, 100
 
-.loop
+; Calculate the sum of all enemy's stat level modifiers. Add 100 first to prevent underflow.
+; Put the result in c. c will range between 58 and 142.
+.asm_3915a
 	ld a, [hli]
-	and a
-	jr z, .next
+	sub $7
+	add c
+	ld c, a
+	dec b
+	jr nz, .asm_3915a
 
-	call AIGetEnemyMove
+; Calculate the sum of all player's stat level modifiers. Add 100 first to prevent underflow.
+; Put the result in d. d will range between 58 and 142.
+	ld hl, wPlayerAtkLevel
+	ld b, $8
+	ld d, 100
 
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	jr z, .next
+.asm_39169
+	ld a, [hli]
+	sub $7
+	add d
+	ld d, a
+	dec b
+	jr nz, .asm_39169
 
-	ld a, [wEnemyMoveStruct + MOVE_CATEGORY]
-	cp SPECIAL
-	jr nc, .next
-
-	inc b
-
-.next
-	dec c
-	jr nz, .loop
-
+; Greatly discourage this move if enemy's stat levels are higher than player's (if c>=d).
+	ld a, c
+	sub d
 	pop hl
-	ld a, b
-	and a
-	jr z, .none
+	jr nc, .asm_39188
 
-	cp $3
-	jr nc, .all
+; Else, 80% chance to encourage this move unless player's accuracy level is lower than -1...
+	ld a, [wPlayerAccLevel]
+	cp $6
+	ret c
 
-	ld a, [wPlayerSelectedMove]
-	and a
-	ret z
-
-	call AIGetEnemyMove
-
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	ret z
-
-	ld a, [wEnemyMoveStruct + MOVE_CATEGORY]
-	cp SPECIAL
+; ...or enemy's evasion level is higher than +0.
+	ld a, [wEnemyEvaLevel]
+	cp $8
 	ret nc
 
-.all
-	call Random
-	cp 100
+	call AI_80_20
 	ret c
 
 	dec [hl]
 	ret
 
-.none
+.asm_39188
+	inc [hl]
 	inc [hl]
 	ret
-; 38c3b
 
 
 AI_Smart_Encore: ; 38c3b
@@ -1265,7 +1260,7 @@ AI_Smart_Encore: ; 38c3b
 	db DREAM_EATER
 
 	db FOCUS_ENERGY
-	db GROWTH
+	db WORK_UP_GROWTH
 	db HAZE
 	db LEECH_SEED
 	db LEER_TAIL_WHIP
@@ -2215,69 +2210,6 @@ AI_Smart_BellyDrum: ; 3913d
 	ret
 ; 39152
 
-
-AI_Smart_MirrorCoat: ; 3918b
-	push hl
-	ld hl, wPlayerUsedMoves
-	lb bc, 0, 4
-
-.loop
-	ld a, [hli]
-	and a
-	jr z, .next
-
-	call AIGetEnemyMove
-
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	jr z, .next
-
-	ld a, [wEnemyMoveStruct + MOVE_CATEGORY]
-	cp SPECIAL
-	jr c, .next
-
-	inc b
-
-.next
-	dec c
-	jr nz, .loop
-
-	pop hl
-	ld a, b
-	and a
-	jr z, .none
-
-	cp $3
-	jr nc, .all
-
-	ld a, [wPlayerSelectedMove]
-	and a
-	ret z
-
-	call AIGetEnemyMove
-
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	ret z
-
-	ld a, [wEnemyMoveStruct + MOVE_CATEGORY]
-	cp SPECIAL
-	ret c
-
-.all
-	call Random
-	cp 100
-	ret c
-
-	dec [hl]
-	ret
-
-.none
-	inc [hl]
-	ret
-; 391d5
-
-
 AI_Smart_Gust: ; 391d5
 
 ; Greatly encourage this move if the player is flying and the enemy is faster.
@@ -2684,13 +2616,13 @@ AI_Opportunist: ; 39315
 	db BULK_UP
 	db CALM_MIND
 	db CONVERSION
-	db COUNTER
+	db PSYCH_UP
 	db DEFENSE_CURL_HARDEN_WITHDRAW
 	db DISABLE
 	db DRAGON_DANCE
 	db FOCUS_ENERGY
 	db GROWL
-	db GROWTH
+	db WORK_UP_GROWTH
 	db HAZE
 	db LEECH_SEED
 	db LEER_TAIL_WHIP
@@ -2703,6 +2635,7 @@ AI_Opportunist: ; 39315
 	db STRING_SHOT
 	db SUBSTITUTE
 	db SWORDS_DANCE
+	db COSMIC_POWER
 	db $ff
 ; 39369
 

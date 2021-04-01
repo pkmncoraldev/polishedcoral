@@ -69,7 +69,7 @@ BattleCommandPointers:
 	command rampage                 ; 37
 	command checkrampage            ; 38
 	command constantdamage          ; 39
-	command counter                 ; 3a
+	command psychup                 ; 3a
 	command encore                  ; 3b
 	command furycutter              ; 3c
 	command sketch                  ; 3d
@@ -196,6 +196,7 @@ BattleCommandPointers:
 	command mimic					; b9 - coral
 	command electroball				; ba - coral
 	command lowkick
+	command cosmicpower
 	
 
 	enum_start -1, -1

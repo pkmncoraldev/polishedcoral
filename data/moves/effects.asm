@@ -41,6 +41,7 @@ VineWhip:
 WaterGun:
 WingAttack:
 XScissor:
+NightSlash:
 	checkobedience
 	usedmovetext
 	doturn
@@ -1245,6 +1246,14 @@ BulkUp:
 	cantusefakeout
 	endmove
 
+CosmicPower:
+	checkobedience
+	usedmovetext
+	doturn
+	cosmicpower
+	cantusefakeout
+	endmove
+	
 CalmMind:
 	checkobedience
 	usedmovetext
@@ -1873,16 +1882,27 @@ Disable:
 	cantusefakeout
 	endmove
 
-Counter:
+;Counter:
+;	checkobedience
+;	usedmovetext
+;	doturn
+;	counter
+;	hittarget
+;	failuretext
+;	checkfaint
+;	postfainteffects
+;	posthiteffects
+;	cantusefakeout
+;	endmove
+
+PsychUp:
 	checkobedience
 	usedmovetext
 	doturn
-	counter
-	hittarget
-	failuretext
-	checkfaint
-	postfainteffects
-	posthiteffects
+	pressure
+	checkhit
+	bounceback
+	psychup
 	cantusefakeout
 	endmove
 

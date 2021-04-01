@@ -363,13 +363,6 @@ ForewarnAbility:
 	pop hl
 	pop bc
 	jr nc, .not_special
-	; Counter/Mirror Coat are regarded as 160BP moves, everything else as 80BP
-	ld c, 160
-	cp COUNTER
-	jr z, .compare_power
-	cp MIRROR_COAT
-	jr z, .compare_power
-	ld c, 80
 	jr .compare_power
 .not_special
 	ld a, b

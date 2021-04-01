@@ -11,8 +11,6 @@ MovePriorities:
 	db QUICK_ATTACK,  1
 	; everything else 0
 	db VITAL_THROW,	 -1
-	db COUNTER,      -5
-	db MIRROR_COAT,  -5
 	db ROAR_WHIRLWIND,         -6
 	db TELEPORT,     -6
 	db -1

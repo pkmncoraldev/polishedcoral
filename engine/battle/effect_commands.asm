@@ -1246,6 +1246,7 @@ BattleCommand_critical: ; 34631
 	db CROSS_CHOP
 	db SHADOW_CLAW
 	db STONE_EDGE
+	db NIGHT_SLASH
 	db $ff
 
 .Chances:
@@ -4251,71 +4252,71 @@ BattleCommand_constantdamage: ; 35726
 ; 35813
 
 
-BattleCommand_counter:
-	lb bc, EFFECT_COUNTER, PHYSICAL
-	jr Counterattack
+;BattleCommand_counter:
+;	lb bc, EFFECT_COUNTER, PHYSICAL
+;	jr Counterattack
 BattleCommand_mirrorcoat:
-	lb bc, EFFECT_MIRROR_COAT, SPECIAL
-Counterattack:
-	ld a, 1
-	ld [wAttackMissed], a
-	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
-	call GetBattleVar
-	and a
-	ret z
+;	lb bc, EFFECT_MIRROR_COAT, SPECIAL
+;Counterattack:
+;	ld a, 1
+;	ld [wAttackMissed], a
+;	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
+;	call GetBattleVar
+;	and a
+;	ret z
 
-	push bc
-	ld b, a
-	farcall GetMoveEffect
-	ld a, b
-	pop bc
-	cp b
-	ret z
+;	push bc
+;	ld b, a
+;	farcall GetMoveEffect
+;	ld a, b
+;	pop bc
+;	cp b
+;	ret z
 
-	call BattleCommand_resettypematchup
-	ld a, [wTypeMatchup]
-	and a
-	ret z
+;	call BattleCommand_resettypematchup
+;	ld a, [wTypeMatchup]
+;	and a
+;	ret z
 
-	call CheckOpponentWentFirst
-	ret z
+;	call CheckOpponentWentFirst
+;	ret z
 
-	push bc
-	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
-	call GetBattleVar
-	dec a
-	ld de, wStringBuffer1
-	call GetMoveData
-	pop bc
+;	push bc
+;	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
+;	call GetBattleVar
+;	dec a
+;	ld de, wStringBuffer1
+;	call GetMoveData
+;	pop bc
 
-	ld a, [wStringBuffer1 + MOVE_POWER]
-	and a
-	ret z
+;	ld a, [wStringBuffer1 + MOVE_POWER]
+;	and a
+;	ret z
 
-	ld a, [wStringBuffer1 + MOVE_CATEGORY]
-	cp c
-	ret nz
+;	ld a, [wStringBuffer1 + MOVE_CATEGORY]
+;	cp c
+;	ret nz
 
-	ld hl, wCurDamage
-	ld a, [hli]
-	or [hl]
-	ret z
+;	ld hl, wCurDamage
+;	ld a, [hli]
+;	or [hl]
+;	ret z
 
-	ld a, [hl]
-	add a
-	ld [hld], a
-	ld a, [hl]
-	adc a
-	ld [hl], a
-	jr nc, .capped
-	ld a, $ff
-	ld [hli], a
-	ld [hl], a
-.capped
+;	ld a, [hl]
+;	add a
+;	ld [hld], a
+;	ld a, [hl]
+;	adc a
+;	ld [hl], a
+;	jr nc, .capped
+;	ld a, $ff
+;	ld [hli], a
+;	ld [hl], a
+;.capped
 
-	xor a
-	ld [wAttackMissed], a
-	ret
+;	xor a
+;	ld [wAttackMissed], a
+;	ret
 
 
 BattleCommand_encore: ; 35864
@@ -5598,6 +5599,9 @@ BattleCommand_selfstatdownhit:
 BattleCommand_bulkup:
 	lb bc, ATTACK, DEFENSE
 	jr DoubleUp
+BattleCommand_cosmicpower:
+	lb bc, DEFENSE, SP_DEFENSE
+	jr DoubleUp
 BattleCommand_calmmind:
 	lb bc, SP_ATTACK, SP_DEFENSE
 	jr DoubleUp
@@ -6605,7 +6609,55 @@ SetBattleDraw: ; 36804
 	ret
 
 ; 3680f
+BattleCommand_psychup: ; 37c55
+; psychup
 
+	ld hl, wEnemyStatLevels
+	ld de, wPlayerStatLevels
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .pointers_correct
+; It's the enemy's turn, so swap the pointers.
+	push hl
+	ld h, d
+	ld l, e
+	pop de
+.pointers_correct
+	push hl
+	ld b, NUM_LEVEL_STATS
+; If any of the enemy's stats is modified from its base level,
+; the move succeeds.  Otherwise, it fails.
+.loop
+	ld a, [hli]
+	cp BASE_STAT_LEVEL
+	jr nz, .break
+	dec b
+	jr nz, .loop
+	pop hl
+	call AnimateFailedMove
+	jp PrintButItFailed
+
+.break
+	pop hl
+	ld b, NUM_LEVEL_STATS
+.loop2
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec b
+	jr nz, .loop2
+;	ldh a, [hBattleTurn]
+;	and a
+;	jr nz, .calc_enemy_stats
+;	call CalcPlayerStats
+;	jr .merge
+
+;.calc_enemy_stats
+;	call CalcEnemyStats
+;.merge
+	call AnimateCurrentMove
+	ld hl, CopiedStatsText
+	jp StdBattleTextBox
 
 BattleCommand_forceswitch: ; 3680f
 ; forceswitch
@@ -9698,4 +9750,6 @@ kg EQUS "* 10000000 / 453592"
 ;	pop de
 ;	pop hl
 ;	ret
+
+
 	

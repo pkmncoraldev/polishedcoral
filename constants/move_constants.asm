@@ -66,21 +66,21 @@
 	const PECK         ; $40
 	const DRILL_PECK   ; $41
 	const SHADOW_BONE  ; $42
-	const BONE_RUSH    ; $43
-	const COUNTER      ; $44
+	const NIGHT_SLASH  ; $43
+	const PSYCH_UP     ; $44
 	const SEISMIC_TOSS ; $45
 	const STRENGTH     ; $46
 	const ABSORB       ; $47
 	const MEGA_DRAIN   ; $48
 	const LEECH_SEED   ; $49
-	const GROWTH       ; $4a - COMBINE
+	const COSMIC_POWER ; $4a
 	const RAZOR_LEAF   ; $4b
 	const SOLAR_BEAM   ; $4c
 	const POISONPOWDER ; $4d
 	const STUN_SPORE   ; $4e
 	const SLEEP_POWDER ; $4f
 	const PETAL_DANCE  ; $50
-	const STRING_SHOT  ; $51
+	const STRING_SHOT  ; $51 - COMBINE
 	const DRAGON_RAGE  ; $52
 	const FIRE_SPIN    ; $53
 	const THUNDERSHOCK ; $54
@@ -94,7 +94,7 @@
 	const TOXIC        ; $5c
 	const CONFUSION    ; $5d
 	const PSYCHIC_M    ; $5e
-	const HYPNOSIS     ; $5f - REMOVE
+	const HYPNOSIS     ; $5f - COMBINE
 	const SIGNAL_BEAM  ; $60
 	const AGILITY_ROCK_POLISH      ; $61
 	const QUICK_ATTACK ; $62
@@ -121,7 +121,7 @@
 	const SCALD        ; $77
 	const SELFDESTRUCT ; $78
 	const COTTON_GUARD ; $79
-	const LICK         ; $7a
+	const LICK         ; $7a - REMOVE
 	const PSYSHOCK     ; $7b
 	const VENOSHOCK    ; $7c
 	const EARTH_POWER  ; $7d
@@ -130,7 +130,7 @@
 	const ICICLE_CRASH ; $80
 	const SWIFT        ; $81
 	const MIRROR_MOVE  ; $82
-	const ICICLE_SPEAR ; $83
+	const ICICLE_SPEAR ; $83 - REMOVE
 	const WORK_UP_GROWTH      ; $84
 	const AMNESIA      ; $85
 	const ROOST        ; $86
@@ -142,7 +142,7 @@
 	const BULLET_PUNCH ; $8c
 	const LEECH_LIFE   ; $8d
 	const DOUBLE_HIT   ; $8e
-	const BRAVE_BIRD   ; $8f - REMOVE
+	const BRAVE_BIRD   ; $8f
 	const TRANSFORM_SPLASH    ; $90
 	const TOXIC_SPIKES ; $91
 	const POISON_FANG  ; $92
@@ -151,7 +151,7 @@
 	const LOCK_ON_MIND_READER	   				; $95
 	const CLEAR_SMOG       ; $96
 	const DRAGON_DANCE ; $97
-	const CRABHAMMER   ; $98
+	const CRABHAMMER   ; $98 - REMOVE
 	const EXPLOSION    ; $99
 	const FURY_SWIPES_FURY_ATTACK_COMET_PUNCH  	; $9a
 	const BONEMERANG   ; $9b
@@ -170,7 +170,7 @@
 	const ACROBATICS   ; $a8
 	const WILL_O_WISP  ; $a9
 	const ZEN_HEADBUTT ; $aa
-	const VITAL_THROW  ; $ab
+	const VITAL_THROW  ; $ab - REMOVE
 	const FLAME_BURST  ; $ac
 	const HYPER_VOICE  ; $ad
 	const CURSE        ; $ae
@@ -212,9 +212,9 @@
 	const ELECTRO_BALL ; $d2
 	const STEEL_WING   ; $d3
 	const MEAN_LOOK_BLOCK_SPIDER_WEB    		; $d4
-	const ATTRACT      ; $d5 - REMOVE
+	const ATTRACT      ; $d5
 	const SLEEP_TALK   ; $d6
-	const HEAL_BELL    ; $d7
+	const HEAL_BELL    ; $d7 - COMBINE
 	const RETURN       ; $d8
 	const QUIVER_DANCE ; $d9
 	const BUG_BUZZ     ; $da
@@ -242,14 +242,14 @@
 	const RAIN_DANCE   ; $f0
 	const SUNNY_DAY    ; $f1
 	const CRUNCH       ; $f2
-	const MIRROR_COAT  ; $f3 -
+	const DOUBLE_KICK  ; $f3
 	const NASTY_PLOT   ; $f4
 	const EXTREMESPEED ; $f5
 	const ANCIENTPOWER ; $f6
 	const SHADOW_BALL  ; $f7
 	const FUTURE_SIGHT ; $f8
 	const ROCK_SMASH   ; $f9
-	const WHIRLPOOL    ; $fa
+	const WHIRLPOOL    ; $fa - REMOVE
 	const DARK_PULSE   ; $fb
 	const MOONBLAST    ; $fc
 	const PLAY_ROUGH   ; $fd

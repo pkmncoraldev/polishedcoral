@@ -65,14 +65,14 @@ MoveDescriptions::
 	dw PeckDescription
 	dw DrillPeckDescription
 	dw ShadowBoneDescription
-	dw BoneRushDescription
-	dw CounterDescription
+	dw NightSlashDescription
+	dw PsychUpDescription
 	dw SeismicTossDescription
 	dw StrengthDescription
 	dw AbsorbDescription
 	dw MegaDrainDescription
 	dw LeechSeedDescription
-	dw GrowthDescription
+	dw CosmicPowerDescription
 	dw RazorLeafDescription
 	dw SolarBeamDescription
 	dw PoisonpowderDescription
@@ -241,7 +241,7 @@ MoveDescriptions::
 	dw RainDanceDescription
 	dw SunnyDayDescription
 	dw CrunchDescription
-	dw MirrorCoatDescription
+	dw DoubleKickDescription
 	dw NastyPlotDescription
 	dw ExtremespeedDescription
 	dw AncientpowerDescription
@@ -265,6 +265,7 @@ SlashDescription:
 CrossChopDescription:
 ShadowClawDescription:
 StoneEdgeDescription:
+NightSlashDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
 	
@@ -290,9 +291,9 @@ DrainPunchDescription:
 	db   "Steals 1/2 of the"
 	next "damage inflicted.@"
 
-BoneRushDescription:
-	db	 "An attack that"
-	next "hits 2-5 times.@"
+;BoneRushDescription:
+;	db	 "An attack that"
+;	next "hits 2-5 times.@"
 	
 DoubleSlapDescription:
 	db   "Repeatedly slaps"
@@ -714,9 +715,9 @@ ThunderpunchDescription:
 	db   "An electric punch."
 	next "It may paralyze.@"
 
-CounterDescription:
-	db   "Returns a physical"
-	next "attack double.@"
+PsychUpDescription:
+	db   "Copies the foe's"
+	next "stat changes.@"
 
 FuryCutterDescription:
 	db   "Successive hits"
@@ -1008,9 +1009,13 @@ GrowthDescription:
 	db   "Raises the user's"
 	next "ATK and SPCL.ATK.@"
 
-MirrorCoatDescription:
-	db   "Counters a SPCL."
-	next "ATK move double.@"
+CosmicPowerDescription:
+	db   "Raises the user's"
+	next "DEF and SPCL.DEF.@"
+	
+DoubleKickDescription:
+	db   "A double kicking"
+	next "attack.@"
 
 MagnitudeDescription:
 	db   "A GROUND attack"

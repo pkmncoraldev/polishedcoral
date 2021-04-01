@@ -435,7 +435,6 @@ ContactMoves::
 	db BITE
 	db BODY_SLAM
 	db BULLET_PUNCH
-	db COUNTER
 	db CRABHAMMER
 	db CROSS_CHOP
 	db CRUNCH
@@ -508,6 +507,7 @@ ContactMoves::
 	db POISON_FANG
 	db VITAL_THROW
 	db SUPERPOWER
+	db NIGHT_SLASH
 	db -1
 
 PowderMoves::
@@ -559,11 +559,9 @@ SubstituteBypassMoves::
 
 DynamicPowerMoves::
 ; used by Forewarn and for move power listing
-	db COUNTER
 	db DRAGON_RAGE
 	db GYRO_BALL
 	db MAGNITUDE
-	db MIRROR_COAT
 	db NIGHT_SHADE
 	db RETURN
 	db REVERSAL

@@ -1619,3 +1619,11 @@ MirrorMoveFailedText:
 	text "The MIRROR MOVE"
 	next "failed!"
 	prompt
+	
+CopiedStatsText:
+	text "<USER>"
+	line "copied the stat"
+
+	para "changes of"
+	line "<TARGET>!"
+	prompt

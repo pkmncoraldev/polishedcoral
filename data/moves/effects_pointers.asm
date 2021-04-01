@@ -88,7 +88,7 @@ MoveEffectsPointers:
 	dw LeechSeed
 	dw ClearSmog
 	dw Disable
-	dw Counter
+	dw PsychUp
 	dw Encore
 	dw FuryCutter
 	dw Sketch
@@ -159,3 +159,4 @@ MoveEffectsPointers:
 	dw Superpower
 	dw LowKick
 	dw SpecialAttackUpHit
+	dw CosmicPower

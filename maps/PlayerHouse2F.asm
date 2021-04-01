@@ -59,7 +59,7 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke WIGGLYTUFF, 100
-	givepoke MAGIKARP, 100
+	givepoke GOLDUCK, 41
 	givepoke DITTO, 100
 .items
 	writetext PlayerHouseDebugText6

@@ -180,6 +180,8 @@ GlintNPC5:
 GlintNPC6:
 	checkevent EVENT_GLINT_GUY_GAVE_POTION
 	iftrue .GlintNPC6_2
+	checkevent EVENT_BEAT_STANLEY
+	iftrue .GlintNPC6_3
 	faceplayer
 	opentext
 	writetext GlintNPC6Text
@@ -194,18 +196,19 @@ GlintNPC6:
 .GlintNPC6_2:
 	jumptextfaceplayer GlintNPC6Text2
 	
-GlintNPC7:
-	checkevent EVENT_GLINT_BIRDS
-	iffalse .GlintNPC7_2
+.GlintNPC6_3
 	faceplayer
 	opentext
-	writetext GlintNPC7Text
+	writetext GlintNPC6Text3
+	buttonsound
+	verbosegiveitem POTION
+	writetext GlintNPC6Text2
 	waitbutton
-	spriteface GLINT_NPC7, DOWN
+	setevent EVENT_GLINT_GUY_GAVE_POTION
 	closetext
 	end
 	
-.GlintNPC7_2:
+GlintNPC7:
 	opentext
 	writetext GlintNPC7Text2
 	waitbutton
@@ -295,7 +298,7 @@ GlintNPC6Text:
 	para "Make sure to stock"
 	line "up before you"
 	cont "challange the GYM"
-	cont "LEADER."
+	cont "LEADER!"
 	
 	para "Here."
 	
@@ -311,6 +314,20 @@ GlintNPC6Text2:
 	para "If you need more,"
 	line "you should stop by"
 	cont "the #MART."
+	done
+	
+GlintNPC6Text3:
+	text "The #MART has"
+	line "everything a"
+	cont "TRAINER needs."
+	
+	para "Make sure to stock"
+	line "up before you"
+	cont "head out of town!"
+	
+	para "Here."
+	
+	para "Try a sample."
 	done
 	
 GlintNPC7Text:

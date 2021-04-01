@@ -4,20 +4,20 @@ Route3_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def  7, 22, 1, STARGLOW_CAVERN_1F
+	warp_def  7, 20, 1, STARGLOW_CAVERN_1F
 	warp_def  7, 46, 1, STARGLOW_CAVERN_3F
 
 	db 0 ; coord events
 
 	db 2 ; bg events
-	signpost  8, 23, SIGNPOST_READ, Route3_sign
+	signpost  8, 21, SIGNPOST_READ, Route3_sign
 	signpost 9, 0, SIGNPOST_READ, Route3_sign2
 
 	db 10 ; object events
 	person_event SPRITE_YOUNGSTER, 8, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute3West_1, -1
 	person_event SPRITE_YOUNGSTER, 16, 30, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute3West_2, -1
 	itemball_event 46, 30, RARE_CANDY, 1, EVENT_ROUTE_3_RARE_CANDY
-	cuttree_event 24, 10, EVENT_ROUTE_3_CUT_TREE_1
+	cuttree_event 24, 11, EVENT_ROUTE_3_CUT_TREE_1
 	cuttree_event 23, 26, EVENT_ROUTE_3_CUT_TREE_2
 	cuttree_event 18, 31, EVENT_ROUTE_3_CUT_TREE_3
 	smashrock_event 46, 14

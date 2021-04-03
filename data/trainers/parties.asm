@@ -2659,9 +2659,9 @@ TeacherFastGroup:
 
 	; TEACHER_FAST
 	db "KATE@"
-	db TRAINERTYPE_ITEM
+	db TRAINERTYPE_NORMAL
 	; party
-	db 6, MEOWTH, QUICK_CLAW
+	db 6, MEOWTH
 	db -1 ; end
 
 ; ================

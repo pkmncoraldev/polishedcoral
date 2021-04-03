@@ -1027,8 +1027,8 @@ ExeggcuteEvosAttacks:
 	db  1, ABSORB
 	db  1, HYPNOSIS
 	db  7, REFLECT
-	db 11, LEECH_SEED
-	db 14, BULLET_SEED
+	db 11, BULLET_SEED
+	db 14, LEECH_SEED
 	db 17, CONFUSION
 	db 19, STUN_SPORE
 	db 21, POISONPOWDER

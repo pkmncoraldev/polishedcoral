@@ -98,8 +98,8 @@ RodneyGroup:
 	; party
 	db 18, WOOPER, NO_ITEM, 32, HIDDEN_ABILITY | HASTY, FEMALE
 		db RAIN_DANCE, WATER_GUN, BODY_SLAM, 0
-	db 20, POLIWHIRL, MYSTIC_WATER, 32, HIDDEN_ABILITY | QUIET, MALE
-		db RAIN_DANCE, WATER_GUN, HYPNOSIS, MUD_SLAP
+	db 20, POLIWHIRL, NO_ITEM, 32, HIDDEN_ABILITY | QUIRKY, MALE
+		db RAIN_DANCE, WATER_GUN, HYPNOSIS, BODY_SLAM
 	db -1 ; end
 
 ; ================
@@ -676,8 +676,8 @@ FisherGroup:
 	db "GERALD@"	;2 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 13, POLIWAG
-	db 13, MARILL
+	db 15, POLIWAG
+	db 14, MARILL
 	db -1 ; end
 
 ; ================
@@ -740,8 +740,8 @@ FisherGroup:
 	db "WALTER@"	;2 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 13, CHINCHOU
-	db 13, SQUIRTLE
+	db 14, CHINCHOU
+	db 15, SQUIRTLE
 	db -1 ; end
 
 ; ================
@@ -867,8 +867,8 @@ FisherGroup:
 	db "CLINT@"	;2 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 13, BUIZEL
-	db 13, WOOPER
+	db 14, BUIZEL
+	db 14, WOOPER
 	db -1 ; end
 
 ; ================

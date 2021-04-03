@@ -439,6 +439,7 @@ AI_Smart_Sleep: ; 387e3
 	ret c
 	dec [hl]
 	dec [hl]
+	dec [hl]
 	ret
 ; 387f7
 
@@ -2066,17 +2067,17 @@ AI_Smart_RainDance: ; 390cb
 
 ; Greatly discourage this move if it would favour the player type-wise.
 ; Particularly, if the player is a Water-type.
-	ld a, [wBattleMonType1]
-	cp WATER
-	jr z, AIBadWeatherType
-	cp FIRE
-	jr z, AIGoodWeatherType
+;	ld a, [wBattleMonType1]
+;	cp WATER
+;	jr z, AIBadWeatherType
+;	cp FIRE
+;	jr z, AIGoodWeatherType
 
-	ld a, [wBattleMonType2]
-	cp WATER
-	jr z, AIBadWeatherType
-	cp FIRE
-	jr z, AIGoodWeatherType
+;	ld a, [wBattleMonType2]
+;	cp WATER
+;	jr z, AIBadWeatherType
+;	cp FIRE
+;	jr z, AIGoodWeatherType
 
 	push hl
 	ld hl, RainDanceMoves
@@ -2101,17 +2102,17 @@ AI_Smart_SunnyDay: ; 390f3
 
 ; Greatly discourage this move if it would favour the player type-wise.
 ; Particularly, if the player is a Fire-type.
-	ld a, [wBattleMonType1]
-	cp FIRE
-	jr z, AIBadWeatherType
-	cp WATER
-	jr z, AIGoodWeatherType
+;	ld a, [wBattleMonType1]
+;	cp FIRE
+;	jr z, AIBadWeatherType
+;	cp WATER
+;	jr z, AIGoodWeatherType
 
-	ld a, [wBattleMonType2]
-	cp FIRE
-	jr z, AIBadWeatherType
-	cp WATER
-	jr z, AIGoodWeatherType
+;	ld a, [wBattleMonType2]
+;	cp FIRE
+;	jr z, AIBadWeatherType
+;	cp WATER
+;	jr z, AIGoodWeatherType
 
 	push hl
 	ld hl, SunnyDayMoves
@@ -2134,10 +2135,12 @@ AI_Smart_WeatherMove: ; 3910d
 	jr nc, AIBadWeatherType
 
 ; 50% chance to encourage this move otherwise.
-	call AI_50_50
-	ret c
+;	call AI_50_50
+;	ret c
 
-	dec [hl]
+	ld a, [hl]
+	sub $5
+	ld [hl], a
 	ret
 ; 3911e
 

@@ -1481,6 +1481,8 @@ GetMultiMoveSlotName::
 	jr z, .softboiled
 	cp FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	jr z, .foresight
+	cp AGILITY_ROCK_POLISH
+	jr z, .agility
 	cp WORK_UP_GROWTH
 	jr z, .workup
 	cp TRANSFORM_SPLASH
@@ -1530,6 +1532,9 @@ GetMultiMoveSlotName::
 	jr .end
 .foresight
 	call GetMoveNameForesight
+	jr .end
+.agility
+	call GetMoveNameAgility
 	jr .end
 .workup
 	call GetMoveNameWorkUp

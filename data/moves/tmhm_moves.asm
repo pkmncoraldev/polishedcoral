@@ -40,7 +40,7 @@ TMHMMoves:
 	db SWIFT        ; TM39
 	db FAKE_OUT		; TM40 (Stanley)
 	db SUBSTITUTE   ; TM41
-	db VITAL_THROW  ; TM42
+	db BRICK_BREAK  ; TM42
 	db WILD_CHARGE  ; TM43
 	db REST         ; TM44
 	db ATTRACT      ; TM45
@@ -87,7 +87,7 @@ TMHMMoves:
 	db ROCK_CLIMB
 	db AQUA_TAIL    ; MT01
 	db BODY_SLAM    ; MT02
-	db PSYCH_UP      ; MT03
+	db SHOCK_WAVE      ; MT03
 	db DEFENSE_CURL_HARDEN_WITHDRAW ; MT04
 	db DOUBLE_EDGE  ; MT05
 	db DREAM_EATER  ; MT06

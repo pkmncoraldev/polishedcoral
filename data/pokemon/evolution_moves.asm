@@ -40,7 +40,7 @@ EvolutionMoves::
 	db EXTREMESPEED 						; ARCANINE
 	db NO_MOVE      						; POLIWAG
 	db NO_MOVE      						; POLIWHIRL
-	db NO_MOVE      						; POLIWRATH
+	db BRICK_BREAK      					; POLIWRATH
 	db NO_MOVE      						; ABRA
 	db NO_MOVE      						; KADABRA
 	db NO_MOVE      						; ALAKAZAM
@@ -65,7 +65,7 @@ EvolutionMoves::
 	db NO_MOVE      						; VOLTORB
 	db NO_MOVE      						; ELECTRODE
 	db NO_MOVE      						; EXEGGCUTE
-	db NO_MOVE      						; EXEGGUTOR
+	db NO_MOVE ;WOOD_HAMMER     						; EXEGGUTOR
 	db NO_MOVE      						; CUBONE
 	db NO_MOVE      						; MAROWAK
 	db NO_MOVE      						; KOFFING
@@ -170,7 +170,7 @@ EvolutionMoves::
 	db NO_MOVE      						; MEDITITE
 	db ZEN_HEADBUTT      				    ; MEDICHAM
 	db NO_MOVE      						; CARVANHA
-	db NO_MOVE      						; SHARPEDO
+	db SLASH	      						; SHARPEDO
 	db NO_MOVE      						; NUMEL
 	db ROCK_SLIDE   						; CAMERUPT
 	db NO_MOVE      						; SWABLU
@@ -207,8 +207,8 @@ EvolutionMoves::
 	db NO_MOVE     							; DRILBUR
 	db NO_MOVE     							; EXCADRILL
 	db NO_MOVE     							; VENIPEDE
-	db NO_MOVE      						; WHIRLIPEDE
-	db NO_MOVE      						; SCOLIPEDE
+	db BARRIER_IRON_DEFENSE_ACID_ARMOR      						; WHIRLIPEDE
+	db BATON_PASS      						; SCOLIPEDE
 	db NO_MOVE      						; COTTONEE
 	db NO_MOVE      						; WHIMSICOTT
 	db NO_MOVE      						; SANDILE
@@ -245,5 +245,5 @@ EvolutionMoves::
 	db NO_MOVE 								; MAREANIE
 	db NO_MOVE 								; TOXAPEX
 	db PSYCHIC_M    						; RAICHU_A
-	db NO_MOVE      						; EXEGGUTOR_A
+	db NO_MOVE ;DRAGON_HAMMER     						; EXEGGUTOR_A
 	db SHADOW_BONE  						; MAROWAK_A

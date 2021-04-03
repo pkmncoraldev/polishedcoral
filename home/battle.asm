@@ -435,7 +435,6 @@ ContactMoves::
 	db BITE
 	db BODY_SLAM
 	db BULLET_PUNCH
-	db CRABHAMMER
 	db CROSS_CHOP
 	db CRUNCH
 	db CUT
@@ -463,7 +462,7 @@ ContactMoves::
 	db LOW_KICK
 	db KNOCK_OFF
 	db LEECH_LIFE
-	db LICK
+	db JUMP_KICK
 	db MACH_PUNCH
 	db MEGAHORN
 	db METAL_CLAW
@@ -505,7 +504,7 @@ ContactMoves::
 	db ICE_FANG
 	db THUNDER_FANG
 	db POISON_FANG
-	db VITAL_THROW
+	db BRICK_BREAK
 	db SUPERPOWER
 	db NIGHT_SLASH
 	db -1

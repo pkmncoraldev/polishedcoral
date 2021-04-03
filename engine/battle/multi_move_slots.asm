@@ -2068,6 +2068,10 @@ PoundUsers:
 	db CLEFABLE
 	db JIGGLYPUFF
 	db WIGGLYTUFF
+	db POLIWAG
+	db POLIWHIRL
+	db POLIWRATH
+	db POLITOED
 	db -1
 	
 ScratchUsers:
@@ -2125,6 +2129,9 @@ IronDefenseUsers:
 	db SQUIRTLE
 	db WARTORTLE
 	db BLASTOISE
+	db VENIPEDE
+	db WHIRLIPEDE
+	db SCOLIPEDE
 	db -1
 	
 AcidArmorUsers:
@@ -2143,9 +2150,6 @@ HowlUsers:
 	
 FuryAttackUsers:
 	db SMEARGLE
-	db VENIPEDE
-	db WHIRLIPEDE
-	db SCOLIPEDE
 	db NIDORAN_M
 	db NIDORINO
 	db NIDOKING
@@ -2173,6 +2177,8 @@ MorningSunUsers:
 	
 BlockUsers:
 	db SMEARGLE
+	db MUNCHLAX
+	db SNORLAX
 	db -1
 	
 SpiderWebUsers:
@@ -2218,6 +2224,8 @@ MilkDrinkUsers:
 OdorSleuthUsers:
 	db GROWLITHE
 	db ARCANINE
+	db MUNCHLAX
+	db SNORLAX
 	db -1
 	
 MiracleEyeUsers:

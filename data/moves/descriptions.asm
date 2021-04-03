@@ -66,7 +66,7 @@ MoveDescriptions::
 	dw DrillPeckDescription
 	dw ShadowBoneDescription
 	dw NightSlashDescription
-	dw PsychUpDescription
+	dw ShockwaveDescription
 	dw SeismicTossDescription
 	dw StrengthDescription
 	dw AbsorbDescription
@@ -120,7 +120,7 @@ MoveDescriptions::
 	dw ScaldDescription
 	dw SelfdestructDescription
 	dw CottonGuardDescription
-	dw LickDescription
+	dw JumpKickDescription
 	dw PsyshockDescription
 	dw VenoshockDescription
 	dw EarthPowerDescription
@@ -129,7 +129,7 @@ MoveDescriptions::
 	dw IcicleCrashDescription
 	dw SwiftDescription
 	dw MirrorMoveDescription
-	dw IcicleSpearDescription
+	dw RockWreckerDescription
 	dw WorkUpDescription
 	dw AmnesiaDescription
 	dw RoostDescription
@@ -150,13 +150,13 @@ MoveDescriptions::
 	dw LockOnDescription
 	dw SplashDescription
 	dw DragonDanceDescription
-	dw CrabhammerDescription
+	dw OminousWindDescription
 	dw ExplosionDescription
 	dw FuryStrikesDescription
 	dw BonemerangDescription
 	dw RestDescription
 	dw RockSlideDescription
-	dw SweetScentDescription
+	dw HornLeechDescription
 	dw BulkUpDescription
 	dw ConversionDescription
 	dw TriAttackDescription
@@ -169,7 +169,7 @@ MoveDescriptions::
 	dw AcrobaticsDescription
 	dw WillOWispDescription
 	dw ZenHeadbuttDescription
-	dw VitalThrowDescription
+	dw BrickBreakDescription
 	dw FlameBurstDescription
 	dw HyperVoiceDescription
 	dw CurseDescription
@@ -260,7 +260,6 @@ Move00Description:
 	db "?@"
 
 RazorLeafDescription:
-CrabhammerDescription:
 SlashDescription:
 CrossChopDescription:
 ShadowClawDescription:
@@ -280,6 +279,7 @@ MimicDescription:
 SwiftDescription:
 FeintAttackDescription:
 AuraSphereDescription:
+ShockwaveDescription:
 	db   "An attack that"
 	next "never misses.@"
 
@@ -288,6 +288,7 @@ MegaDrainDescription:
 LeechLifeDescription:
 GigaDrainDescription:
 DrainPunchDescription:
+HornLeechDescription
 	db   "Steals 1/2 of the"
 	next "damage inflicted.@"
 
@@ -306,10 +307,6 @@ FuryStrikesDescription:
 PinMissileDescription:
 	db   "Fires pins that"
 	next "strike 2-5 times.@"
-
-IcicleSpearDescription:
-	db   "Fires icicles to"
-	next "hit 2-5 times.@"
 
 RockBlastDescription:
 	db   "Hurls boulders to"
@@ -379,7 +376,6 @@ BodySlamDescription:
 ThundershockDescription:
 ThunderboltDescription:
 ThunderDescription:
-LickDescription:
 SparkDescription:
 	db   "An attack that may"
 	next "cause paralysis.@"
@@ -415,6 +411,7 @@ SteelWingDescription:
 	next "up user's Defense.@"
 
 AncientpowerDescription:
+OminousWindDescription:
 	db   "An attack that may"
 	next "raise all stats.@"
 
@@ -529,10 +526,6 @@ DefenseCurlDescription:
 
 DoubleTeamDescription:
 	db   "Raises the user's"
-	next "evasiveness.@"
-	
-SweetScentDescription:
-	db	 "Reduces foe's"
 	next "evasiveness.@"
 
 FocusEnergyDescription:
@@ -675,6 +668,7 @@ FlyDescription:
 
 HyperBeamDescription:
 GigaImpactDescription:
+RockWreckerDescription:
 	db   "1st turn: Attack"
 	next "2nd turn: Rest@"
 
@@ -714,10 +708,6 @@ IcePunchDescription:
 ThunderpunchDescription:
 	db   "An electric punch."
 	next "It may paralyze.@"
-
-PsychUpDescription:
-	db   "Copies the foe's"
-	next "stat changes.@"
 
 FuryCutterDescription:
 	db   "Successive hits"
@@ -876,6 +866,7 @@ CottonGuardDescription:
 	next "user's DEFENSE.@"
 
 HiJumpKickDescription:
+JumpKickDescription:
 	db   "May miss and hurt"
 	next "the user.@"
 
@@ -927,9 +918,9 @@ AcrobaticsDescription:
 	db   "Damage doubles if"
 	next "user has no item.@"
 
-VitalThrowDescription:
-	db   "A 2nd-strike move"
-	next "that never misses.@"
+BrickBreakDescription:
+	db   "Shatters REFLECT"
+	next "and LIGHT SCREEN.@"
 
 HyperVoiceDescription:
 	db   "Attack the foe"

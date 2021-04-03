@@ -2,7 +2,7 @@
 	const NO_MOVE      ; $00
 	const ROCK_CLIMB   ; $01
 	const LOW_KICK	   ; $02
-	const DOUBLE_SLAP  ; $03
+	const DOUBLE_SLAP  ; $03 - COMBINE
 	const BONE_CLUB    ; $04
 	const DRAGON_CLAW  ; $05
 	const PAY_DAY      ; $06
@@ -67,7 +67,7 @@
 	const DRILL_PECK   ; $41
 	const SHADOW_BONE  ; $42
 	const NIGHT_SLASH  ; $43
-	const PSYCH_UP     ; $44
+	const SHOCK_WAVE    ; $44
 	const SEISMIC_TOSS ; $45
 	const STRENGTH     ; $46
 	const ABSORB       ; $47
@@ -121,7 +121,7 @@
 	const SCALD        ; $77
 	const SELFDESTRUCT ; $78
 	const COTTON_GUARD ; $79
-	const LICK         ; $7a - REMOVE
+	const JUMP_KICK    ; $7a
 	const PSYSHOCK     ; $7b
 	const VENOSHOCK    ; $7c
 	const EARTH_POWER  ; $7d
@@ -130,7 +130,7 @@
 	const ICICLE_CRASH ; $80
 	const SWIFT        ; $81
 	const MIRROR_MOVE  ; $82
-	const ICICLE_SPEAR ; $83 - REMOVE
+	const ROCK_WRECKER ; $83
 	const WORK_UP_GROWTH      ; $84
 	const AMNESIA      ; $85
 	const ROOST        ; $86
@@ -149,15 +149,15 @@
 	const SPORE        ; $93
 	const FLASH        ; $94
 	const LOCK_ON_MIND_READER	   				; $95
-	const CLEAR_SMOG       ; $96
+	const CLEAR_SMOG   ; $96
 	const DRAGON_DANCE ; $97
-	const CRABHAMMER   ; $98 - REMOVE
+	const OMINOUS_WIND ; $98
 	const EXPLOSION    ; $99
 	const FURY_SWIPES_FURY_ATTACK_COMET_PUNCH  	; $9a
 	const BONEMERANG   ; $9b
 	const REST         ; $9c
 	const ROCK_SLIDE   ; $9d
-	const SWEET_SCENT  ; $9e - REMOVE
+	const HORN_LEECH   ; $9e
 	const BULK_UP      ; $9f
 	const CONVERSION   ; $a0
 	const TRI_ATTACK   ; $a1
@@ -170,7 +170,7 @@
 	const ACROBATICS   ; $a8
 	const WILL_O_WISP  ; $a9
 	const ZEN_HEADBUTT ; $aa
-	const VITAL_THROW  ; $ab - REMOVE
+	const BRICK_BREAK  ; $ab - REMOVE
 	const FLAME_BURST  ; $ac
 	const HYPER_VOICE  ; $ad
 	const CURSE        ; $ae
@@ -185,7 +185,7 @@
 	const MACH_PUNCH   ; $b7
 	const SCARY_FACE_COTTON_SPORE   			; $b8
 	const FEINT_ATTACK ; $b9
-	const SWEET_KISS   ; $ba - REMOVE
+	const SWEET_KISS   ; $ba - COMBINE
 	const BELLY_DRUM   ; $bb
 	const SLUDGE_BOMB  ; $bc
 	const MUD_SLAP     ; $bd
@@ -213,7 +213,7 @@
 	const STEEL_WING   ; $d3
 	const MEAN_LOOK_BLOCK_SPIDER_WEB    		; $d4
 	const ATTRACT      ; $d5
-	const SLEEP_TALK   ; $d6
+	const SLEEP_TALK   ; $d6 - REMOVE
 	const HEAL_BELL    ; $d7 - COMBINE
 	const RETURN       ; $d8
 	const QUIVER_DANCE ; $d9

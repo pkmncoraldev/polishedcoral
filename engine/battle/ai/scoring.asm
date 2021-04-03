@@ -356,7 +356,6 @@ AI_Smart: ; 386be
 	dbw EFFECT_RAGE,              AI_Smart_Rage
 	dbw EFFECT_LEECH_SEED,        AI_Smart_LeechSeed
 	dbw EFFECT_DISABLE,           AI_Smart_Disable
-	dbw EFFECT_PSYCH_UP,          AI_Smart_PsychUp
 	dbw EFFECT_ENCORE,            AI_Smart_Encore
 	dbw EFFECT_SLEEP_TALK,        AI_Smart_SleepTalk
 	dbw EFFECT_DESTINY_BOND,      AI_Smart_DestinyBond
@@ -2087,7 +2086,6 @@ AI_Smart_RainDance: ; 390cb
 RainDanceMoves: ; 390e7
 	db AQUA_TAIL
 	db BUBBLE_BEAM
-	db CRABHAMMER
 	db HYDRO_PUMP
 	db SCALD
 	db SURF
@@ -2539,6 +2537,8 @@ AIHasMoveInArray: ; 392e6
 
 UsefulMoves: ; 39301
 ; Moves that are usable all-around.
+	db ANCIENTPOWER
+	db OMINOUS_WIND
 	db DOUBLE_EDGE
 	db SING
 	db FLAMETHROWER
@@ -2547,6 +2547,8 @@ UsefulMoves: ; 39301
 	db ICE_BEAM
 	db BLIZZARD
 	db HYPER_BEAM
+	db GIGA_IMPACT
+	db ROCK_WRECKER
 	db SLEEP_POWDER
 	db THUNDERBOLT
 	db THUNDER
@@ -2616,7 +2618,6 @@ AI_Opportunist: ; 39315
 	db BULK_UP
 	db CALM_MIND
 	db CONVERSION
-	db PSYCH_UP
 	db DEFENSE_CURL_HARDEN_WITHDRAW
 	db DISABLE
 	db DRAGON_DANCE

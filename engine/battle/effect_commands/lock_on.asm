@@ -42,4 +42,8 @@ BattleCommand_lockon:
 MindReaderUsers:
 	db SHROOMISH
 	db BRELOOM
+	db POLIWAG
+	db POLIWHIRL
+	db POLIWRATH
+	db POLITOED
 	db -1

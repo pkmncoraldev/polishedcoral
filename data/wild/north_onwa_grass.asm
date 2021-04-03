@@ -136,7 +136,7 @@
 	db 10, SMEARGLE		;4%
 	db 10, SMEARGLE		;1%
 	
-	map_id ROUTE_3
+	map_id ROUTE_3_EAST
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 7, NIDORAN_M		;30%
@@ -220,29 +220,29 @@
 	map_id HUNTERS_THICKET
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
-	db  9, EXEGGCUTE	;30%
-	db  9, PIKIPEK		;30%
-	db  9, MARILL		;20%
-	db  9, PIDGEY		;10%
-	db  9, SHROOMISH	;5%
-	db  9, SHROOMISH	;4%
-	db  9, SHROOMISH	;1%
+	db 10, SHROOMISH	;30%
+	db 10, PIKIPEK		;30%
+	db 10, MARILL		;20%
+	db 10, PIDGEY		;10%
+	db 10, EXEGGCUTE	;5%
+	db 10, EXEGGCUTE	;4%
+	db 10, EXEGGCUTE	;1%
 	; day
-	db  9, EXEGGCUTE	;30%
-	db  9, PIKIPEK		;30%
-	db  9, MARILL		;20%
-	db  9, PIDGEY		;10%
-	db  9, SHROOMISH	;5%
-	db  9, SHROOMISH	;4%
-	db  9, SHROOMISH	;1%
+	db 10, SHROOMISH	;30%
+	db 10, PIKIPEK		;30%
+	db 10, MARILL		;20%
+	db 10, PIDGEY		;10%
+	db 10, EXEGGCUTE	;5%
+	db 10, EXEGGCUTE	;4%
+	db 10, EXEGGCUTE	;1%
 	; nite
-	db  9, EXEGGCUTE	;30%
-	db  9, PIKIPEK		;30%
-	db  9, MARILL		;20%
-	db  9, PIDGEY		;10%
-	db  9, SHROOMISH	;5%
-	db  9, SHROOMISH	;4%
-	db  9, SHROOMISH	;1%
+	db 10, SHROOMISH	;30%
+	db 10, PIKIPEK		;30%
+	db 10, MARILL		;20%
+	db 10, PIDGEY		;10%
+	db 11, EXEGGCUTE	;5%
+	db 11, EXEGGCUTE	;4%
+	db 11, EXEGGCUTE	;1%
 	
 	map_id ROUTE_5
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite

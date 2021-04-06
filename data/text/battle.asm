@@ -82,7 +82,7 @@ HurtByBurnText: ; 0x807f8
 ; 0x8080e
 
 LeechSeedSapsText: ; 0x8080e
-	text "Leech Seed saps"
+	text "LEECH SEED saps"
 	line "<USER>!"
 	prompt
 ; 0x80822
@@ -170,17 +170,24 @@ BattleText_UserRecoveredPPUsing:
 	text_from_ram wStringBuffer1
 	text "!"
 	prompt
+	
+BattleText_HurtByRoughSkin:
+	text "<TARGET>"
+	line "was hurt by"
+	cont "<USER>'s"
+	cont "ROUGH SKIN!"
+	prompt
 
 BrokeLightScreenText:
 	text "<USER>"
 	line "broke the target's"
-	cont "Light Screen!"
+	cont "LIGHT SCREEN!"
 	prompt
 
 BrokeReflectText:
 	text "<USER>"
 	line "broke the target's"
-	cont "Reflect!"
+	cont "REFLECT!"
 	prompt
 	
 BattleText_RoseDrastically:
@@ -222,7 +229,7 @@ BattleText_UserChargedWithItem:
 BattleText_UsersFutureSightMissed:
 ; used when Future Sight can't hit anything because there was
 ; no target (so <TARGET> is undefined)
-	text "The Future Sight"
+	text "The FUTURE SIGHT"
 	line "arrived!"
 
 	para "But it failed!"
@@ -231,27 +238,27 @@ BattleText_UsersFutureSightMissed:
 BattleText_TargetWasHitByFutureSight: ; 0x808b6
 	text "<TARGET>"
 	line "took the"
-	cont "Future Sight!"
+	cont "FUTURE SIGHT!"
 	prompt
 ; 0x808d2
 
 BattleText_SafeguardFaded: ; 0x808d2
 	text "<USER>'s"
-	line "Safeguard faded!"
+	line "SAFEGUARD faded!"
 	prompt
 ; 0x808e7
 
 BattleText_PkmnLightScreenFell: ; 0x808e7
 	text_from_ram wStringBuffer1
-	text " #mon's"
-	line "Light Screen fell!"
+	text " #MON's"
+	line "LIGHT SCREEN fell!"
 	prompt
 ; 0x80905
 
 BattleText_PkmnReflectFaded: ; 0x80905
 	text_from_ram wStringBuffer1
-	text " #mon's"
-	line "Reflect faded!"
+	text " #MON's"
+	line "REFLECT faded!"
 	prompt
 ; 0x8091f
 
@@ -1201,13 +1208,13 @@ TransformedText: ; 0x81499
 
 LightScreenEffectText: ; 0x814b4
 	text "<USER>'s"
-	line "Spcl.Def rose!"
+	line "SPCL.DEF rose!"
 	prompt
 ; 0x814c7
 
 ReflectEffectText: ; 0x814c7
 	text "<USER>'s"
-	line "Defense rose!"
+	line "DEFENSE rose!"
 	prompt
 ; 0x814d9
 
@@ -1435,7 +1442,7 @@ ReleasedByText: ; 0x81764
 
 ShedLeechSeedText: ; 0x8177a
 	text "<USER>"
-	line "shed Leech Seed!"
+	line "shed LEECH SEED!"
 	prompt
 ; 0x8178e
 

@@ -565,13 +565,19 @@ RunContactAbilities:
 ; Abilities always run from the ability user's perspective. This is
 ; consistent. Thus, a switchturn happens here. Feel free to rework
 ; the logic if you feel that this reduces readability.
-	call BattleRandom
-	cp 1 + 30 percent
-	ret nc
 	call GetOpponentAbilityAfterMoldBreaker
 	ld b, a
 
 	call CallOpponentTurn
+	
+; Rough Skin always activates
+	ld a, b
+	cp ROUGH_SKIN
+	jp z, RoughSkinAbility
+	
+	call BattleRandom
+	cp 1 + 30 percent
+	ret nc
 .do_enemy_abilities
 	ld a, b
 	cp EFFECT_SPORE
@@ -584,6 +590,8 @@ RunContactAbilities:
 	jp z, StaticAbility
 	cp CUTE_CHARM
 	jp z, CuteCharmAbility
+	cp ROUGH_SKIN
+	jp z, RoughSkinAbility
 	ret
 
 CursedBodyAbility:
@@ -604,6 +612,17 @@ CuteCharmAbility:
 	farcall BattleCommand_attract
 	jp EnableAnimations
 
+RoughSkinAbility:
+	farcall GetSixthMaxHP
+	ld a, b
+	or c
+	jr nz, .damage_ok
+	inc c
+.damage_ok
+	farcall SubtractHPFromOpponent
+	ld hl, BattleText_HurtByRoughSkin
+	jp StdBattleTextBox
+	
 EffectSporeAbility:
 	call CheckIfTargetIsGrassType
 	ret z

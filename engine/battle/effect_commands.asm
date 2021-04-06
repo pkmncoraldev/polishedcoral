@@ -2988,9 +2988,9 @@ BattleCommand_postfainteffects:
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_FURY_SWIPES
 	jr nz, .finish
-	call HasUserFainted
-	call nz, BattleCommand_switchout
-	jr .finish
+;	call HasUserFainted
+;	call nz, BattleCommand_switchout
+;	jr .finish
 
 .multiple_hit_raise_sub
 	call BattleCommand_raisesub
@@ -3054,10 +3054,6 @@ BattleCommand_posthiteffects:
 	ld a, b
 	cp HELD_ROCKY_HELMET
 	jr z, .rocky_helmet
-	ld a, BATTLE_VARS_ABILITY
-	call GetBattleVar
-	cp ROUGH_SKIN
-	jr z, .rough_skin
 	ld a, BATTLE_VARS_MOVE_CATEGORY
 	call GetBattleVar
 	cp c
@@ -3095,7 +3091,6 @@ BattleCommand_posthiteffects:
 	farcall GetEighthMaxHP
 	jr .got_hurt_item_damage
 .rocky_helmet
-.rough_skin
 	call CheckContactMove
 	jr c, .rocky_helmet_done
 	farcall GetSixthMaxHP

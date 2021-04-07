@@ -2,6 +2,7 @@ Marts: ; 160a9
 	dw SunsetMart
 	dw GlintMart
 	dw StarglowMart
+	dw Route5GateMart
 	dw SunbeamMart
 	dw EventideMart
 	dw FlickerMart
@@ -41,6 +42,14 @@ StarglowMart: ; 160fa
 	db ANTIDOTE
 	db PARALYZEHEAL
 	db AWAKENING
+	db -1
+	
+Route5GateMart: ; 160fa
+	db 4 ; # items
+	db FRESH_WATER
+	db SODA_POP
+	db LEMONADE
+	db RAGECANDYBAR
 	db -1
 
 SunbeamMart: ; 16106

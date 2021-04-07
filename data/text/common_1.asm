@@ -1063,9 +1063,15 @@ UnknownText_0x1bd445::
 	db "@@"
 
 UnknownText_0x1bd449::
-	text "I collect #mon."
-	line "Do you have"
-	cont "@"
+	text "My friend claimed"
+	line "he found a SCYTHER"
+	cont "on ROUTE 5,"
+	
+	para "but I just can't"
+	line "find one…"
+	
+	para "Do you have a"
+	line "@"
 	text_from_ram wStringBuffer1
 	text "?"
 
@@ -1076,8 +1082,9 @@ UnknownText_0x1bd449::
 	done
 
 UnknownText_0x1bd48c::
-	text "You don't want to"
-	line "trade? Aww…"
+	text "Sigh…"
+	
+	line "Maybe someday…"
 	done
 
 UnknownText_0x1bd4aa::
@@ -1089,18 +1096,27 @@ UnknownText_0x1bd4aa::
 	done
 
 UnknownText_0x1bd4d2::
-	text "Yay! I got myself"
+	text "Yes!"
+	
+	para "I finally have a"
 	line "@"
 	text_from_ram wStringBuffer1
 	text "!"
-	cont "Thanks!"
+	
+	para "Thanks a lot!"
 	done
 
 UnknownText_0x1bd4f4::
-	text "Hi, how's my old"
-	line "@"
-	text_from_ram wStringBuffer2
-	text " doing?"
+	text "Yo!"
+	
+	para "How's SIR SNIPS"
+	line "been?"
+	
+	para "I've been taking"
+	line "good care of your"
+	cont "@"
+	text_from_ram wStringBuffer1
+	text "."
 	done
 
 UnknownText_0x1bd512::

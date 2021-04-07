@@ -32,9 +32,17 @@ SunbeamSurfShop_BlockData:
 	INCBIN "maps/SunbeamSurfShop.ablk.lz"
 	
 Route1Gate_BlockData:
-Route5Gate_BlockData:
 Route8Gate_BlockData:
 	INCBIN "maps/NorthSouthGate.ablk.lz"
+	
+Route5Gate1F_BlockData:
+	INCBIN "maps/Route5Gate1F.ablk.lz"
+	
+Route5Gate2F_BlockData:
+	INCBIN "maps/Route5Gate2F.ablk.lz"
+	
+SunbeamView_BlockData:
+	INCBIN "maps/SunbeamView.ablk.lz"
 
 Route4EventideGate_BlockData:
 EventideVillageGate_BlockData:

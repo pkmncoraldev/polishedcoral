@@ -149,7 +149,7 @@ TVText:
 	text "It's a TV."
 	done
 
-WrongSideText:
+WrongSideText::
 	text "Oops, wrong side."
 	done
 

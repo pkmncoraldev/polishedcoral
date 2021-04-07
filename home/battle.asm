@@ -430,7 +430,8 @@ MoldBreakerSuppressedAbilities:
 	db -1
 
 ContactMoves::
-	db 0
+	db FAKE_OUT
+	db AQUA_JET
 	db AQUA_TAIL
 	db BITE
 	db BODY_SLAM

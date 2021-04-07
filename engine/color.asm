@@ -853,6 +853,8 @@ LoadMapPals:
 	jp z, .playerroom
 	cp TILESET_JUNGLE
 	jp z, .jungle
+	cp TILESET_GATE
+	jp z, .snes
 	jp .normal
 .playerhouse
 	ld a, [wMapGroup]

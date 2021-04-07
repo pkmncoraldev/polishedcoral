@@ -120,26 +120,26 @@ ENDM
 	connection south, StarglowValley, STARGLOW_VALLEY, 11
 	connection west, Route3, ROUTE_3, 0
 	
-	map_attributes StarglowValley, STARGLOW_VALLEY, 5, NORTH | EAST | WEST
+	map_attributes StarglowValley, STARGLOW_VALLEY, $d4, NORTH | EAST | WEST
 	connection north, Route3East, ROUTE_3_EAST, -11
 	connection west, Route8, ROUTE_8, 0
 	connection east, Route4, ROUTE_4, 6
 	
-	map_attributes Route4, ROUTE_4, 5, NORTH | SOUTH | WEST
+	map_attributes Route4, ROUTE_4, $d4, NORTH | SOUTH | WEST
 	connection north, HuntersThicket, HUNTERS_THICKET, 2
 	connection south, Route5, ROUTE_5, -3
 	connection west, StarglowValley, STARGLOW_VALLEY, -6
 	
-	map_attributes HuntersThicket, HUNTERS_THICKET, $5, SOUTH
+	map_attributes HuntersThicket, HUNTERS_THICKET, $d4, SOUTH
 	connection south, Route4, ROUTE_4, -2
 	
-	map_attributes Route5, ROUTE_5, 7, NORTH
+	map_attributes Route5, ROUTE_5, $fb, NORTH
 	connection north, Route4, ROUTE_4, 3
 	
-	map_attributes Route6, ROUTE_6, 7, NORTH
+	map_attributes Route6, ROUTE_6, $0f, NORTH
 	connection north, Route7, ROUTE_7, -1
 	
-	map_attributes Route7, ROUTE_7, 7, SOUTH | WEST
+	map_attributes Route7, ROUTE_7, $0f, SOUTH | WEST
 	connection south, Route6, ROUTE_6, 1
 	connection west, LakeOnwa, LAKE_ONWA, -11
 	
@@ -407,9 +407,10 @@ ENDM
 	map_attributes LusterMallClothesShop, LUSTER_MALL_CLOTHES_SHOP, 0, 0
 	
 	
-	map_attributes Route5Deep, ROUTE_5_DEEP, $7, 0
+	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0
-	map_attributes Route5Gate, ROUTE_5_GATE, $0, 0
+	map_attributes Route5Gate1F, ROUTE_5_GATE_1F, $0, 0
+	map_attributes Route5Gate2F, ROUTE_5_GATE_2F, $0, 0
 	map_attributes Route8Gate, ROUTE_8_GATE, $0, 0
 	map_attributes Route4EventideGate, ROUTE_4_EVENTIDE_GATE, $0, 0
 	map_attributes EventideVillageGate, EVENTIDE_VILLAGE_GATE, $0, 0

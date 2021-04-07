@@ -7,8 +7,9 @@ Route6_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 1 ; warp events
-	warp_def 5, 59, 3, ROUTE_5_GATE
+	db 2 ; warp events
+	warp_def 5, 59, 3, ROUTE_5_GATE_1F
+	warp_def 5, 60, 4, ROUTE_5_GATE_1F
 
 	db 4 ; coord events
 	xy_trigger 0, 6, 43, 0, Route6PokeFanM, 0, 0
@@ -17,7 +18,7 @@ Route6_MapScriptHeader:
 	xy_trigger 1, 7, 44, 0, Route6PokeFanF, 0, 0
 
 	db 3 ; bg events
-	signpost 6, 60, SIGNPOST_READ, Route6Sign
+	signpost  6, 58, SIGNPOST_READ, Route6Sign
 	signpost 3, 26, SIGNPOST_READ, Route6LakeSign
 	bg_event 8, 4, SIGNPOST_ITEM + ULTRA_BALL, EVENT_ROUTE_6_HIDDEN_ULTRA_BALL
 
@@ -31,7 +32,7 @@ Route6_MapScriptHeader:
 	person_event SPRITE_GRANNY, 4, 31, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute6_5, -1
 	person_event SPRITE_LASS, 4, 9, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_6, -1
 	person_event SPRITE_GENTLEMAN, 6, 15, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_7, -1
-	person_event SPRITE_BATTLE_GIRL, 9, 60, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route6Lass3, -1
+	person_event SPRITE_BATTLE_GIRL,  8, 62, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route6Lass3, -1
 	person_event SPRITE_FAT_GUY, 6, 23, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route6Fisher, -1
 	tmhmball_event  19, 2, TM_ICE_PUNCH, 1, EVENT_ROUTE_6_POKE_BALL_ICE_PUNCH
 	

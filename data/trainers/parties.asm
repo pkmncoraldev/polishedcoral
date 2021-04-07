@@ -96,7 +96,7 @@ RodneyGroup:
 	db "RODNEY@"
 	db TRAINERTYPE_ITEM | TRAINERTYPE_EVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
 	; party
-	db 18, WOOPER, NO_ITEM, 32, HIDDEN_ABILITY | HASTY, FEMALE
+	db 19, WOOPER, NO_ITEM, 32, HIDDEN_ABILITY | HASTY, FEMALE
 		db RAIN_DANCE, WATER_GUN, BODY_SLAM, 0
 	db 20, POLIWHIRL, NO_ITEM, 32, HIDDEN_ABILITY | QUIRKY, MALE
 		db RAIN_DANCE, WATER_GUN, HYPNOSIS, BODY_SLAM
@@ -476,8 +476,8 @@ BugCatcherGroup:
 	db "ARNOLD@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 19, LEDYBA
-	db 18, JOLTIK
+	db 17, LEDYBA
+	db 15, JOLTIK
 	db -1 ; end
 
 ; ================
@@ -519,8 +519,8 @@ CamperGroup:
 	db "TREVOR@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 17, SHROOMISH
-	db 17, ODDISH
+	db 15, SHROOMISH
+	db 15, ODDISH
 	db -1 ; end
 
 ; ================
@@ -583,8 +583,8 @@ PicnickerGroup:
 	db "SHAUNA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 17, MEOWTH
-	db 17, TRUMBEAK
+	db 15, MEOWTH
+	db 15, TRUMBEAK
 	db -1 ; end
 
 ; ================
@@ -942,8 +942,8 @@ FisherGroup:
 	db "HUE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 16, CHINCHOU
-	db 17, HORSEA
+	db 14, CHINCHOU
+	db 14, HORSEA
 	db -1 ; end
 
 ; ================
@@ -952,8 +952,8 @@ FisherGroup:
 	db "DARREN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 16, CARVANHA
-	db 17, CARVANHA
+	db 14, CARVANHA
+	db 13, CARVANHA
 	db -1 ; end
 
 ; ================
@@ -1341,8 +1341,8 @@ HikerGroup:
 	db "SIMON@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 18, MACHOP
-	db 17, TEDDIURSA
+	db 15, MACHOP
+	db 15, TEDDIURSA
 	db -1 ; end
 
 ; ================
@@ -1641,8 +1641,8 @@ PokefanMGroup:
 	db "RON@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 18, PHANPY
-	db 19, PSYDUCK
+	db 17, PHANPY
+	db 18, PSYDUCK
 	db -1 ; end
 
 ; ================
@@ -1684,8 +1684,8 @@ PokefanFGroup:
 	db "SUSAN@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 16, STANTLER
-		db STOMP, LEER_TAIL_WHIP, HYPNOSIS, 0
+	db 14, STANTLER
+		db STOMP, 0, 0, 0
 	db -1 ; end
 
 ; ================
@@ -1841,9 +1841,9 @@ LassGroup:
 	db "MELANIE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 18, TEDDIURSA
-	db 19, MARILL
-	db 17, EEVEE
+	db 15, TEDDIURSA
+	db 14, MARILL
+	db 16, EEVEE
 	db -1 ; end
 
 ; ================
@@ -2277,8 +2277,8 @@ LadyGroup:
 	db "RUTH@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 19, MEOWTH
-	db 18, BUNEARY
+	db 17, MEOWTH
+	db 17, BUNEARY
 	db -1 ; end
 
 ; ================

@@ -80,7 +80,7 @@
 	tilecoll FLOOR, FLOOR, STAIRS, STAIRS ; 4f
 	tilecoll WALL, WALL, WALL, WALL ; 50
 	tilecoll WALL, WALL, WALL, WALL ; 51
-	tilecoll PUDDLE, FLOOR, PUDDLE, FLOOR ; 52
+	tilecoll WALL, WALL, WALL, WALL ; 52
 	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; 53
 	tilecoll WATER, WATER, WATER, WATER ; 54
 	tilecoll WATER, WATER, WATER, WATER ; 55
@@ -130,7 +130,7 @@
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; 81
 	tilecoll WALL, WALL, WALL, DOOR ; 82
 	tilecoll WALL, WALL, WALL, WALL ; 83
-	tilecoll FLOOR, FLOOR, PUDDLE, FLOOR ; 84
+	tilecoll WALL, WALL, WALL, DOOR ; 84
 	tilecoll FLOOR, FLOOR, FLOOR, PUDDLE ; 85
 	tilecoll WATER, WATER, WATER, WATER ; 86
 	tilecoll WATER, WATER, WATER, WATER ; 87
@@ -158,7 +158,7 @@
 	tilecoll WALL, WALL, WALL, SKATE ; 9d
 	tilecoll WALL, WATER, WALL, WATER ; 9e
 	tilecoll WALL, WALL, SKATE, WALL ; 9f
-	tilecoll PUDDLE, FLOOR, PUDDLE, PUDDLE ; a0
+	tilecoll WALL, WALL, WALL, WALL ; a0
 	tilecoll NO_OLLIE, FLOOR, NO_OLLIE, FLOOR ; a1
 	tilecoll NO_OLLIE, FLOOR, NO_OLLIE, NO_OLLIE ; a2
 	tilecoll FLOOR, FLOOR, NO_OLLIE, FLOOR ; a3
@@ -166,7 +166,7 @@
 	tilecoll FLOOR, NO_OLLIE, NO_OLLIE, NO_OLLIE ; a5
 	tilecoll FLOOR, FLOOR, FLOOR, NO_OLLIE ; a6
 	tilecoll FLOOR, NO_OLLIE, FLOOR, NO_OLLIE ; a7
-	tilecoll FLOOR, BOTTOM_WALL, NO_OLLIE, DOOR ; a8
+	tilecoll WALL, WALL, WALL, WALL ; a8
 	tilecoll WALL, WALL, FLOOR, FLOOR ; a9
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; aa
 	tilecoll FLOOR, NO_OLLIE, FLOOR, NO_OLLIE ; ab
@@ -179,7 +179,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; b2
 	tilecoll WALL, WALL, WALL, WALL ; b3
 	tilecoll SKATE, SKATE, WALL, SKATE ; b4
-	tilecoll FLOOR, PUDDLE, FLOOR, PUDDLE ; b5
+	tilecoll WALL, WALL, DOOR, WALL ; b5
 	tilecoll WALL, WALL, WALL, WALL ; b6
 	tilecoll WALL, WALL, SKATE, WALL ; b7
 	tilecoll WALL, WALL, WALL, WALL ; b8
@@ -192,7 +192,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; bf
 	tilecoll WALL, WALL, WALL, WALL ; c0
 	tilecoll WALL, WALL, WALL, WALL ; c1
-	tilecoll STAIRS, STAIRS, SKATE, SKATE ; c2
+	tilecoll FLOOR, WALL, FLOOR, WALL ; c2
 	tilecoll WALL, WATER, WALL, WATER ; c3
 	tilecoll SKATE, SKATE, WALL, WALL ; c4
 	tilecoll FLOOR, FLOOR, NO_OLLIE, NO_OLLIE ; c5

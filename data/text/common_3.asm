@@ -300,14 +300,12 @@ UnknownText_0x1c4d2a::
 	done
 
 UnknownText_0x1c4d47::
-	text "Hiya! Care to see"
-	line "some bargains?"
-
-	para "I sell rare items"
-	line "that nobody else"
-
-	para "carries--but only"
-	line "one of each item."
+	text "Hiya!"
+	
+	para "Like…"
+		
+	para "You want some"
+	line "refreshments?"
 	done
 
 UnknownText_0x1c4db0::
@@ -322,6 +320,12 @@ UnknownText_0x1c4dcd::
 	text "Thanks."
 	done
 
+UnknownText_0x1c4dcd2::
+	text "Like…"
+	
+	para "Here ya go!"
+	done
+	
 UnknownText_0x1c4dd6::
 	text "Uh-oh, your Bag"
 	line "is chock-full."
@@ -335,12 +339,16 @@ UnknownText_0x1c4df7::
 
 UnknownText_0x1c4e28::
 	text "Uh-oh, you're"
-	line "short on funds."
+	line "short on funds!"
+	
+	para "There's an ATM"
+	line "right over there!"
 	done
 
 UnknownText_0x1c4e46::
-	text "Come by again"
-	line "sometime."
+	text "Like…"
+	
+	para "Come again!"
 	done
 
 UnknownText_0x1c4e5f::
@@ -1207,6 +1215,14 @@ MartPremierBallText::
 	text "You also get a"
 	line "Premier Ball as"
 	cont "an added bonus."
+	done
+	
+RefreshmentsMartExtraItemText::
+	text "Oh!"
+	
+	para "Looks like she"
+	line "accidentally gave"
+	cont "you an extra!"
 	done
 
 ItemCantBeSelectedText::

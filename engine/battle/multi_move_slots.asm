@@ -2137,6 +2137,10 @@ IronDefenseUsers:
 	db VENIPEDE
 	db WHIRLIPEDE
 	db SCOLIPEDE
+	db PINECO
+	db FORRETRESS
+	db SCYTHER
+	db SCIZOR
 	db -1
 	
 AcidArmorUsers:
@@ -2160,6 +2164,7 @@ FuryAttackUsers:
 	db NIDOKING
 	db DODUO
 	db DODRIO
+	db HERACROSS
 	db -1
 	
 CometPunchUsers:

@@ -1192,18 +1192,19 @@ ScytherEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER_TAIL_WHIP
-	db 5, FOCUS_ENERGY
-	db 9, PURSUIT
-	db 13, FALSE_SWIPE
-	db 17, AGILITY_ROCK_POLISH
-	db 21, WING_ATTACK
-	db 25, FURY_CUTTER
-	db 29, SLASH
-	db 33, DOUBLE_HIT
-	db 37, DOUBLE_TEAM
-	db 41, AIR_SLASH
+	db 6, FOCUS_ENERGY
+	db 10, PURSUIT
+	db 14, FALSE_SWIPE
+	db 19, AGILITY_ROCK_POLISH
+	db 23, WING_ATTACK
+	db 27, FURY_CUTTER
+	db 32, SLASH
+	db 36, DOUBLE_HIT
+	db 40, DOUBLE_TEAM
 	db 45, X_SCISSOR
-	db 49, SWORDS_DANCE
+	db 49, NIGHT_SLASH
+	db 53, AIR_SLASH
+	db 58, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
@@ -1352,9 +1353,18 @@ FlareonEvosAttacks:
 PorygonEvosAttacks:
 	db EVOLVE_TRADE, UP_GRADE, PORYGON2
 	db 0 ; no more evolutions
-	db 1, ICE_FANG
-	db 1, QUIVER_DANCE
-	db 1, CONVERSION
+	db 1, TACKLE_SCRATCH_POUND
+	db 1, SHARPEN_HOWL_MEDITATE
+	db 7, THUNDERSHOCK
+	db 12, PSYBEAM
+	db 18, CONVERSION
+	db 23, AGILITY_ROCK_POLISH
+	db 29, SIGNAL_BEAM
+	db 34, RECOVER
+	db 40, THUNDERBOLT
+	db 45, TRI_ATTACK
+	db 51, LOCK_ON_MIND_READER
+	db 56, ZAP_CANNON
 	db 0 ; no more level-up moves
 
 SnorlaxEvosAttacks:
@@ -1904,11 +1914,34 @@ PinecoEvosAttacks:
 	db EVOLVE_LEVEL, 31, FORRETRESS
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, PROTECT
+	db 8, SELFDESTRUCT
+	db 12, TAKE_DOWN
+	db 16, RAPID_SPIN
+	db 20, ENDURE
+	db 24, FLAIL
+	db 28, SPIKES
+	db 32, PIN_MISSILE
+	db 36, EXPLOSION
+	db 40, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 44, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 ForretressEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, PROTECT
+	db 8, SELFDESTRUCT
+	db 12, TAKE_DOWN
+	db 16, RAPID_SPIN
+	db 20, ENDURE
+	db 24, FLAIL
+	db 28, SPIKES
+	db 33, PIN_MISSILE
+	db 38, EXPLOSION
+	db 44, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 50, DOUBLE_EDGE
+	db 56, ZAP_CANNON
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
@@ -1983,7 +2016,22 @@ GranbullEvosAttacks:
 
 ScizorEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, QUICK_ATTACK
+	db 1, LEER_TAIL_WHIP
+	db 1, BULLET_PUNCH
+	db 6, FOCUS_ENERGY
+	db 10, PURSUIT
+	db 14, FALSE_SWIPE
+	db 19, AGILITY_ROCK_POLISH
+	db 23, METAL_CLAW
+	db 27, FURY_CUTTER
+	db 32, SLASH
+	db 36, DOUBLE_HIT
+	db 40, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 45, X_SCISSOR
+	db 49, NIGHT_SLASH
+	db 53, STEEL_WING
+	db 58, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 ShuckleEvosAttacks:
@@ -1993,7 +2041,18 @@ ShuckleEvosAttacks:
 
 HeracrossEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, NIGHT_SLASH
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 1, FURY_ATTACK
+	db 1, ENDURE
+	db 9, HORN_ATTACK
+	db 17, BRICK_BREAK
+	db 25, PIN_MISSILE
+	db 33, THRASH
+	db 41, SWORDS_DANCE
+	db 49, REVERSAL
+	db 56, MEGAHORN
 	db 0 ; no more level-up moves
 
 SneaselEvosAttacks:
@@ -2188,6 +2247,17 @@ Porygon2EvosAttacks:
 	db EVOLVE_HOLDING, DUBIOUS_DISC, PORYGON_Z
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 7, THUNDERSHOCK
+	db 12, PSYBEAM
+	db 18, CONVERSION
+	db 23, AGILITY_ROCK_POLISH
+	db 29, SIGNAL_BEAM
+	db 34, RECOVER
+	db 40, THUNDERBOLT
+	db 45, TRI_ATTACK
+	db 51, LOCK_ON_MIND_READER
+	db 56, ZAP_CANNON
 	db 0 ; no more level-up moves
 
 StantlerEvosAttacks:
@@ -2843,6 +2913,18 @@ MamoswineEvosAttacks:
 PorygonZEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, NASTY_PLOT
+	db 7, THUNDERSHOCK
+	db 12, PSYBEAM
+	db 18, CONVERSION
+	db 23, AGILITY_ROCK_POLISH
+	db 29, SIGNAL_BEAM
+	db 34, RECOVER
+	db 40, THUNDERBOLT
+	db 45, TRI_ATTACK
+	db 51, LOCK_ON_MIND_READER
+	db 56, ZAP_CANNON
+	db 62, HYPER_BEAM
 	db 0 ; no more level-up moves
 	
 GalladeEvosAttacks:

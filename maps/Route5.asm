@@ -195,15 +195,16 @@ Route5NPC6Text:
 	done
 	
 Route5NPC7Text:
-	text "My friend said he"
-	line "caught his SCYTHER"
-	cont "in these woods."
+	text "I found a SCYTHER"
+	line "right here on"
+	cont "ROUTE 5."
 	
-	para "I want one so bad!"
+	para "I told my friend,"
+	line "but he won't"
+	cont "believe me!"
 	
-	para "I'm not heading"
-	line "back home until I"
-	cont "find one!"
+	para "It must be really"
+	line "rare…"
 	done
 	
 Route5NPC8Text:

@@ -70,10 +70,10 @@
 	tilecoll SKATE, SKATE, WALL, SKATE ; 45
 	tilecoll SKATE, SKATE, FLOOR, FLOOR ; 46
 	tilecoll STAIRCASE, WALL, SKATE, SKATE ; 47
-	tilecoll WALL, WALL, FLOOR, SKATE ; 48
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 48
 	tilecoll WALL, WALL, SKATE, SKATE ; 49
-	tilecoll WALL, WALL, SKATE, FLOOR ; 4a
-	tilecoll SKATE, SKATE, WALL, SKATE ; 4b
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 4a
+	tilecoll SKATE, SKATE, SKATE, SKATE ; 4b
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4c
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4d
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4e
@@ -98,3 +98,7 @@
 	tilecoll WALL, WALL, SKATE, SKATE ; 61
 	tilecoll WALL, SKATE, WALL, FLOOR ; 62
 	tilecoll SKATE, SKATE, WALL, FLOOR ; 63
+	tilecoll SKATE, FLOOR, WALL, WALL ; 64
+	tilecoll FLOOR, SKATE, WALL, WALL ; 65
+	tilecoll WALL, SKATE, WALL, WALL ; 66
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 67

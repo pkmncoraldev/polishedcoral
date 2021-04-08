@@ -157,7 +157,7 @@
 
 	const BERRY_JUICE  ; 87
 
-	const SILK_SCARF   ; 88 - replace
+	const SILK_SCARF   ; 88
 	const BLACK_BELT   ; 89
 	const SHARP_BEAK   ; 8a
 	const POISON_BARB  ; 8b

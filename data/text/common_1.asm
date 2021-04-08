@@ -1063,8 +1063,8 @@ UnknownText_0x1bd445::
 	db "@@"
 
 UnknownText_0x1bd449::
-	text "My friend claimed"
-	line "he found a SCYTHER"
+	text "My friend says he"
+	line "found his SCYTHER"
 	cont "on ROUTE 5,"
 	
 	para "but I just can't"

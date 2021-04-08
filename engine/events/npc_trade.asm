@@ -5,40 +5,93 @@ NPCTrade:: ; fcba8
 	ld b, CHECK_FLAG
 	call TradeFlagAction
 	ld a, TRADE_AFTER
-	jr nz, .done
+	jp nz, .done
 
 	ld a, TRADE_INTRO
 	call PrintTradeText
 
 	call YesNoBox
 	ld a, TRADE_CANCEL
-	jr c, .done
+	jp c, .done
 
 ; Select givemon from party
 	farcall SelectTradeOrDaycareMon
 	ld a, TRADE_CANCEL
-	jr c, .done
+	jp c, .done
 
 	ld e, TRADE_GIVEMON
 	call GetTradeAttribute
 	ld a, [wCurPartySpecies]
 	cp [hl]
 	ld a, TRADE_WRONG
-	jr nz, .done
+	jp nz, .done
 
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMonNicknames
+	call GetNickTradeMon
+	
 	ld b, SET_FLAG
 	call TradeFlagAction
 
 	ld hl, ConnectLinkCableText
 	call PrintText
-
+	
 	call DoNPCTrade
 	call .TradeAnimation
 	call GetTradeMonNames
 
 	ld hl, TradedForText
 	call PrintText
-
+	
+	ld e, TRADE_DIALOG
+	call GetTradeAttribute
+	ld a, 0
+	cp [hl]
+	jr z, .trade1
+	ld a, 1
+	cp [hl]
+	jr z, .trade2
+	ld a, 2
+	cp [hl]
+	jr z, .trade3
+	ld a, 3
+	cp [hl]
+	jr z, .trade4
+	ld a, 4
+	cp [hl]
+	jr z, .trade5
+	ld a, 5
+	cp [hl]
+	jr z, .trade6
+	ld a, 6
+	cp [hl]
+	jr z, .trade7
+	ld a, 7
+	cp [hl]
+	jr z, .trade8
+	ld a, 8
+	cp [hl]
+	jr z, .trade9
+	ld a, 9
+	cp [hl]
+	jr z, .trade10
+	jr .cont
+.trade1
+	ld hl, wBackupName
+	ld de, wTradeScytherName
+	ld bc, NAME_LENGTH
+	rst CopyBytes
+	jr .cont
+.trade2
+.trade3
+.trade4
+.trade5
+.trade6
+.trade7
+.trade8
+.trade9
+.trade10
+.cont
 	call RestartMapMusic
 
 	ld a, TRADE_COMPLETE

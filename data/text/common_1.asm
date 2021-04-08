@@ -1113,10 +1113,10 @@ UnknownText_0x1bd4f4::
 	line "been?"
 	
 	para "I've been taking"
-	line "good care of your"
+	line "real good care of"
 	cont "@"
-	text_from_ram wStringBuffer1
-	text "."
+	text_from_ram wTradeScytherName
+	text "!"
 	done
 
 UnknownText_0x1bd512::

@@ -19,7 +19,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event  9, 14, TWINKLE_TOWN, 1
 	warp_event 11, 14, LUSTER_CITY_SHOPPING, 1
 	warp_event 13, 14, MT_ONWA_B3F, 1
-	warp_event 15, 14, SKATEPARK, 1
+	warp_event 15, 14, ROUTE_5_GATE_1F, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
@@ -59,7 +59,7 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke WIGGLYTUFF, 100
-	givepoke CHIKORITA, 7
+	givepoke SCYTHER, 7
 	givepoke DITTO, 100
 .items
 	writetext PlayerHouseDebugText6

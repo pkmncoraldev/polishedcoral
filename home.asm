@@ -1284,6 +1284,24 @@ GetNick:: ; 38a2
 	ret
 ; 38bb
 
+GetNickTradeMon:: ; 38a2
+; Get nickname a from list hl.
+
+	push hl
+	push bc
+
+	call SkipNames
+	ld de, wBackupName
+
+	push de
+	ld bc, PKMN_NAME_LENGTH
+	rst CopyBytes
+	pop de
+
+	pop bc
+	pop hl
+	ret
+
 PrintBCDNumber:: ; 38bb
 ; function to print a BCD (Binary-coded decimal) number
 ; de = address of BCD number

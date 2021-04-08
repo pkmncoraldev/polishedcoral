@@ -2062,7 +2062,7 @@ CheckTransformThing::
 	ld a, [wEnemyMonSpecies]
 .got_user_species
 	farcall CheckTransformUsers2
-	jr nc, .not_transform
+	jr c, .not_transform
 	ld a, $9
 	ret
 .not_transform

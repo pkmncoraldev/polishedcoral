@@ -179,7 +179,7 @@ ENDM
 	map_attributes SunbeamBeach, SUNBEAM_BEACH, $35, EAST
 	connection east, SunbeamIsland, SUNBEAM_ISLAND, 0
 	
-	map_attributes EventideForest, EVENTIDE_FOREST, $7, NORTH
+	map_attributes EventideForest, EVENTIDE_FOREST, $80, NORTH
 	connection north, SpookyForest1, SPOOKY_FOREST_1, 14
 	
 	map_attributes SpookyForest1, SPOOKY_FOREST_1, 92, NORTH | SOUTH | WEST | EAST

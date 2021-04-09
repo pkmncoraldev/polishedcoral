@@ -10,7 +10,7 @@ Route3_MapScriptHeader:
 	db 0 ; coord events
 
 	db 2 ; bg events
-	signpost  8, 21, SIGNPOST_READ, Route3_sign
+	signpost  7, 17, SIGNPOST_READ, Route3_sign
 	signpost 9, 0, SIGNPOST_READ, Route3_sign2
 
 	db 10 ; object events

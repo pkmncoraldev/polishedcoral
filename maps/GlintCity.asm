@@ -30,7 +30,7 @@ GlintCity_MapScriptHeader:
 	signpost 9, 38, SIGNPOST_READ, GlintCityRoute3sign
 
 	db 11 ; object events
-	person_event SPRITE_COOLTRAINER_F,  8, 15, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintNPC1, -1
+	person_event SPRITE_COOLTRAINER_F,  8, 15, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintNPC1, -1
 	person_event SPRITE_FAT_GUY, 16, 13, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintNPC2, -1
 	person_event SPRITE_SCHOOLGIRL, 12, 15, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, GlintNPC3, -1
 	person_event SPRITE_TWIN, 11, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GlintNPC4, -1
@@ -143,7 +143,7 @@ GlintNPC1:
 	opentext
 	writetext GlintNPC1Text
 	waitbutton
-	spriteface GLINT_NPC1, RIGHT
+	spriteface GLINT_NPC1, LEFT
 	closetext
 	end
 

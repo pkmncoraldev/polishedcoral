@@ -219,7 +219,7 @@ Route5Gate1FNPC4Text5:
 	para "I'm sorry I blocked"
 	line "the ATM earlier…"
 	
-	para "To make up for,"
+	para "To make up for"
 	line "blocking the ATM,"
 	
 	para "I'll give you"

@@ -160,3 +160,6 @@ MoveEffectsPointers:
 	dw LowKick
 	dw SpecialAttackUpHit
 	dw CosmicPower
+	dw DoPoison
+	dw DoParalyze
+	dw DoSleep

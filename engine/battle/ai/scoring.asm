@@ -68,6 +68,9 @@ AI_Basic: ; 38591
 	db EFFECT_PARALYZE
 	db EFFECT_BURN
 	db EFFECT_FREEZE
+	db EFFECT_POISON_POWDER
+	db EFFECT_STUN_SPORE
+	db EFFECT_SLEEP_POWDER
 	db $ff
 ; 385e0
 
@@ -2882,15 +2885,27 @@ AI_Status: ; 39453
 	jr z, .confusion
 	cp EFFECT_ATTRACT
 	jr z, .attract
+	cp EFFECT_POISON_POWDER
+	jr z, .poison_powder
+	cp EFFECT_STUN_SPORE
+	jr z, .stun_spore
+	cp EFFECT_SLEEP_POWDER
+	jr z, .sleep_powder
 	pop hl
 	pop de
 	pop bc
 	jr .checkmove
 
+.poison_powder
+	lb de, GRASS, 0
+	jp .checkstatus2
 .poison
 	lb bc, IMMUNITY, HELD_PREVENT_POISON
 	lb de, POISON, 1
 	jr .checkstatus
+.stun_spore
+	lb de, GRASS, 0
+	jp .checkstatus2
 .paralyze
 	lb bc, LIMBER, HELD_PREVENT_PARALYZE
 	lb de, ELECTRIC, 1
@@ -2903,6 +2918,9 @@ AI_Status: ; 39453
 	lb bc, MAGMA_ARMOR, HELD_PREVENT_FREEZE
 	lb de, ICE, 0
 	jr .checkstatus
+.sleep_powder
+	lb de, GRASS, 0
+	jp .checkstatus2
 .sleep
 	; has 2 abilities, check one of them here
 	call GetOpponentAbilityAfterMoldBreaker
@@ -2985,6 +3003,17 @@ AI_Status: ; 39453
 	pop bc
 	call AIDiscourageMove
 	jp .checkmove
+	
+.checkstatus2
+	; Check opponent typings (fire types can't be burned and similar)
+	push bc
+	push de
+	ld a, d
+	call CheckIfTargetIsSomeType
+	pop de
+	pop bc
+	jr z, .pop_and_discourage
+	ret
 
 
 AI_Risky: ; 394a9

@@ -73,6 +73,9 @@ AIChooseMove: ; 440ce
 
 	ld a, c
 	cp 16 ; up to 16 scoring layers
+	
+	jr z, .DebugAndDecrement
+	
 	jr z, .DecrementScores
 
 	push bc
@@ -89,6 +92,8 @@ AIChooseMove: ; 440ce
 	and a
 	jr z, .CheckLayer
 
+	call AIDebug
+	
 	ld hl, AIScoringPointers
 	dec c
 	ld b, 0
@@ -102,6 +107,9 @@ AIChooseMove: ; 440ce
 
 	jr .CheckLayer
 
+.DebugAndDecrement:
+	call AIDebug
+	
 ; Decrement the scores of all moves one by one until one reaches 0.
 .DecrementScores:
 	ld hl, wBuffer1
@@ -204,3 +212,90 @@ AIScoringPointers: ; 441af
 	dw AI_None
 	dw AI_None
 ; 441cf
+
+AIDebug:
+; Prints out an AI score table and delays
+	push hl
+	push de
+	push bc
+
+	; Clear the text display
+	hlcoord 1, 13
+	push hl
+	ld c, 4
+	ld a, " "
+.clear_loop
+	ld b, 18
+.clear_row
+	ld [hli], a
+	dec b
+	jr nz, .clear_row
+	inc hl
+	inc hl
+	dec c
+	jr nz, .clear_loop
+
+	; Print move names
+	pop hl
+	ld de, wEnemyMonMoves
+	ld c, 4
+.move_loop
+	push de
+	push bc
+	ld [hl], "-"
+	ld a, [de]
+	inc de
+	and a
+	jr z, .get_score
+	ld [wNamedObjectIndexBuffer], a
+	push hl
+	call GetMoveName
+	pop hl
+	push hl
+	ld de, wStringBuffer1
+	call PlaceString
+	pop hl
+.get_score
+	ld bc, MOVE_NAME_LENGTH
+	add hl, bc
+	pop bc
+	push bc
+	ld de, wBuffer1 - 1
+	ld a, 5
+.score_target
+	inc de
+	dec a
+	cp c
+	jr nz, .score_target
+
+	lb bc, 1, 3
+	push hl
+	call PrintNum
+	pop hl
+	ld bc, SCREEN_WIDTH - MOVE_NAME_LENGTH
+	add hl, bc
+	pop bc
+	pop de
+	inc de
+	dec c
+	jr nz, .move_loop
+
+	pop bc
+	push bc
+	hlcoord 18, 13
+	ld a, c
+	cp 10
+	jr c, .numeric
+	add "A" - "0" - 10
+.numeric
+	add "0"
+	ld [hl], a
+
+	call ApplyTilemap
+;	ld c, 30
+;	call DelayFrames
+	call ButtonSound
+	pop bc
+	pop de
+	pop hl
+	ret

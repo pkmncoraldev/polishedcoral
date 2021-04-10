@@ -363,7 +363,7 @@ SpecialGiveShinyTogepi:
 ; Holding an Oran Berry.
 	ld hl, wPartyMon1Item
 	call _GetLastPartyMonAttribute
-	ld [hl], ORAN_BERRY
+	ld [hl], LUCKY_EGG
 
 ; OT ID. Guaranteed to not be the same as the player's for Masuda method breeding.
 	ld hl, wPartyMon1ID + 1

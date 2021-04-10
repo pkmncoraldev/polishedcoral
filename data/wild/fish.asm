@@ -14,9 +14,9 @@ FishGroups: ; 92488
 	dbbwww 60 percent + 1, 70 percent + 1, .Qwilfish_NoSwarm_Old, .Qwilfish_NoSwarm_Good, .Qwilfish_NoSwarm_Super
 
 .Shore_Old: ; 924e3
-	db  70 percent + 1, BULBASAUR,   10
-	db  85 percent + 1, BULBASAUR,   10
-	db 100 percent,     BULBASAUR,     10
+	db  70 percent + 1, MAGIKARP,   10
+	db  85 percent + 1, MAGIKARP,   10
+	db 100 percent,     MAGIKARP,   10
 .Shore_Good: ; 924ec
 	db  35 percent,     BULBASAUR,   20
 	db  70 percent,     BULBASAUR,     20

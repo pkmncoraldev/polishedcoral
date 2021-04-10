@@ -3,7 +3,7 @@
 
 	db WATER, WATER
 	db 255 ; catch rate
-	db 20 ; base exp
+	db 50 ; base exp
 	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2
 	dn FEMALE_50, 0 ; gender, step cycles to hatch

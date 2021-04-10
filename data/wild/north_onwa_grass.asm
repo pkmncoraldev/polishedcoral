@@ -136,32 +136,32 @@
 	db 10, SMEARGLE		;4%
 	db 10, SMEARGLE		;1%
 	
-	map_id ROUTE_3_EAST
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	map_id ROUTE_3
+	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
-	db 7, NIDORAN_M		;30%
-	db 7, MAREEP		;30%
-	db 7, NIDORAN_F		;20%
-	db 7, PIDGEY		;10%
-	db 7, WOOPER		;5%
-	db 7, WOOPER		;4%
-	db 7, WOOPER		;1%
+	db 6, NIDORAN_M		;30%
+	db 6, MAREEP		;30%
+	db 6, NIDORAN_F		;20%
+	db 6, PIDGEY		;10%
+	db 6, WOOPER		;5%
+	db 6, WOOPER		;4%
+	db 6, WOOPER		;1%
 	; day
-	db 7, NIDORAN_M		;30%
-	db 7, MAREEP		;30%
-	db 7, NIDORAN_F		;20%
-	db 7, PIDGEY		;10%
-	db 7, WOOPER		;5%
-	db 7, WOOPER		;4%
-	db 7, WOOPER		;1%
+	db 6, NIDORAN_M		;30%
+	db 6, MAREEP		;30%
+	db 6, NIDORAN_F		;20%
+	db 6, PIDGEY		;10%
+	db 6, WOOPER		;5%
+	db 6, WOOPER		;4%
+	db 6, WOOPER		;1%
 	; nite
-	db 7, NIDORAN_M		;30%
-	db 7, MAREEP		;30%
-	db 7, NIDORAN_F		;20%
-	db 7, PIDGEY		;10%
-	db 7, WOOPER		;5%
-	db 7, WOOPER		;4%
-	db 7, WOOPER		;1%
+	db 6, NIDORAN_M		;30%
+	db 6, MAREEP		;30%
+	db 6, NIDORAN_F		;20%
+	db 6, PIDGEY		;10%
+	db 6, WOOPER		;5%
+	db 6, WOOPER		;4%
+	db 6, WOOPER		;1%
 	
 	map_id STARGLOW_CAVERN_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -217,13 +217,40 @@
 	db  7, ONIX			;4%
 	db  7, ONIX			;1%
 	
+	map_id ROUTE_3_EAST
+	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
+	; morn
+	db 9, NIDORAN_M		;30%
+	db 9, MAREEP		;30%
+	db 9, NIDORAN_F		;20%
+	db 9, PIDGEY		;10%
+	db 9, WOOPER		;5%
+	db 9, WOOPER		;4%
+	db 9, WOOPER		;1%
+	; day
+	db 9, NIDORAN_M		;30%
+	db 9, MAREEP		;30%
+	db 9, NIDORAN_F		;20%
+	db 9, PIDGEY		;10%
+	db 9, WOOPER		;5%
+	db 9, WOOPER		;4%
+	db 9, WOOPER		;1%
+	; nite
+	db 9, NIDORAN_M		;30%
+	db 9, MAREEP		;30%
+	db 9, NIDORAN_F		;20%
+	db 9, PIDGEY		;10%
+	db 9, WOOPER		;5%
+	db 9, WOOPER		;4%
+	db 9, WOOPER		;1%
+	
 	map_id HUNTERS_THICKET
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
 	db 10, SHROOMISH	;30%
 	db 10, PIKIPEK		;30%
 	db 10, MARILL		;20%
-	db 10, PIDGEY		;10%
+	db 10, PIKACHU		;10%
 	db 10, EXEGGCUTE	;5%
 	db 10, EXEGGCUTE	;4%
 	db 10, EXEGGCUTE	;1%
@@ -231,7 +258,7 @@
 	db 10, SHROOMISH	;30%
 	db 10, PIKIPEK		;30%
 	db 10, MARILL		;20%
-	db 10, PIDGEY		;10%
+	db 10, PIKACHU		;10%
 	db 10, EXEGGCUTE	;5%
 	db 10, EXEGGCUTE	;4%
 	db 10, EXEGGCUTE	;1%
@@ -239,7 +266,7 @@
 	db 10, SHROOMISH	;30%
 	db 10, PIKIPEK		;30%
 	db 10, MARILL		;20%
-	db 10, PIDGEY		;10%
+	db 10, PIKACHU		;10%
 	db 11, EXEGGCUTE	;5%
 	db 11, EXEGGCUTE	;4%
 	db 11, EXEGGCUTE	;1%
@@ -252,7 +279,7 @@
 	db 12, TEDDIURSA	;20%
 	db 12, STANTLER		;10%
 	db 12, ODDISH		;5%
-	db 12, PIKACHU		;4%
+	db 12, PIDGEY		;4%
 	db 12, SCYTHER		;1%
 	; day
 	db 12, SHROOMISH	;30%
@@ -260,7 +287,7 @@
 	db 12, TEDDIURSA	;20%
 	db 12, STANTLER		;10%
 	db 12, ODDISH		;5%
-	db 12, PIKACHU		;4%
+	db 12, PIDGEY		;4%
 	db 12, SCYTHER		;1%
 	; nite
 	db 12, SHROOMISH	;30%
@@ -268,7 +295,7 @@
 	db 12, TEDDIURSA	;20%
 	db 12, STANTLER		;10%
 	db 12, ODDISH		;5%
-	db 12, PIKACHU		;4%
+	db 12, PIDGEY		;4%
 	db 12, SCYTHER		;1%
 	
 	map_id ROUTE_5_DEEP
@@ -278,7 +305,7 @@
 	db 13, TEDDIURSA	;30%
 	db 10, EEVEE		;20%
 	db 13, ODDISH		;10%
-	db 13, PIKACHU		;5%
+	db 13, PIDGEY		;5%
 	db 13, SCYTHER		;4%
 	db 13, SCYTHER		;1%
 	; day
@@ -286,7 +313,7 @@
 	db 13, TEDDIURSA	;30%
 	db 10, EEVEE		;20%
 	db 13, ODDISH		;10%
-	db 13, PIKACHU		;5%
+	db 13, PIDGEY		;5%
 	db 13, SCYTHER		;4%
 	db 13, SCYTHER		;1%
 	; nite
@@ -294,7 +321,7 @@
 	db 13, TEDDIURSA	;30%
 	db 10, EEVEE		;20%
 	db 13, ODDISH		;10%
-	db 13, PIKACHU		;5%
+	db 13, PIDGEY		;5%
 	db 13, SCYTHER		;4%
 	db 13, GASTLY		;1%
 	
@@ -677,7 +704,7 @@
 	db 7, CHARMANDER	;1%
 	
 	map_id ROUTE_4
-	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, NIDORINA		;30%
 	db 19, PIDGEOTTO	;30%

@@ -596,7 +596,7 @@ Continue_UnknownGameTime: ; 5f48
 Continue_DisplayBadgeCount: ; 5f58
 	push hl
 	ld hl, wOnwaBadges
-	ld b, 2
+	ld b, 1
 	call CountSetBits
 	pop hl
 	ld de, wd265

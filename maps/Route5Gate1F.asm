@@ -238,11 +238,9 @@ Route5Gate1FNPC4Text6:
 	para "It might not seem"
 	line "very good,"
 	
-	para "but it's really"
-	line "useful if you want"
-	cont "to weaken a"
-	cont "WILD #MON to"
-	cont "catch it!"
+	para "but it's useful"
+	line "when catching a"
+	cont "WILD #MON!"
 	done
 	
 Route5Gate1FNPC4Text7:

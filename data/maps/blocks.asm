@@ -43,6 +43,9 @@ Route5Gate2F_BlockData:
 	
 SunbeamView_BlockData:
 	INCBIN "maps/SunbeamView.ablk.lz"
+	
+SunbeamViewNite_BlockData:
+	INCBIN "maps/SunbeamViewNite.ablk.lz"
 
 Route4EventideGate_BlockData:
 EventideVillageGate_BlockData:

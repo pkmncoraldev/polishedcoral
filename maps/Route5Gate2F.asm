@@ -87,6 +87,8 @@ Route5Gate2FBinoculars:
 	appear ROUTE_5_GATE_2F_SUNBEAM_VIEW_1
 	appear ROUTE_5_GATE_2F_SUNBEAM_VIEW_2
 	changemap SunbeamView_BlockData
+	checktime 1<<NITE
+	iftrue .nite
 	checktime 1<<MORN
 	iftrue .morn_dusk
 	checktime 1<<DUSK
@@ -94,6 +96,9 @@ Route5Gate2FBinoculars:
 .morn_dusk
 	changeblock $6, $2, $6b
 	changeblock $4, $2, $6a
+	jump .skip
+.nite
+	changemap SunbeamViewNite_BlockData
 .skip
 	reloadmappart
 	callasm RefreshScreen_BridgeUpdate

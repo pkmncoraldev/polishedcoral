@@ -241,6 +241,7 @@ IceTempleCampfire6:
 	checkevent EVENT_ICE_TEMPLE_CAMPFIRE_5_UNLIT
 	iftrue .end
 	applyonemovement PLAYER, step_left
+	applyonemovement PLAYER, step_left
 	spriteface PLAYER, UP
 	jump IceTempleMamoswineCutscene
 .end

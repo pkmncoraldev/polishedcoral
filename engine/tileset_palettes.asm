@@ -249,7 +249,7 @@ LoadSpecialMapPalette: ; 494ac
 	cp 1
 	jp nz, .do_nothing
 	ld hl, SunbeamViewPalette
-	jp LoadSevenBGPalettes
+	jp LoadForceSevenTimeOfDayBGPalettes
 	
 .playerhouse
 	ld a, [wMapGroup]
@@ -314,6 +314,18 @@ LoadSevenBGPalettes: ; 494f2
 	
 LoadSevenTimeOfDayBGPalettes:
 	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals
+	ld bc, 7 palettes
+	call FarCopyWRAM
+	scf
+	ret
+	
+LoadForceSevenTimeOfDayBGPalettes:
+	ld a, [wTimeOfDay]
 	and 3
 	ld bc, 8 palettes
 	rst AddNTimes

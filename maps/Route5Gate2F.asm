@@ -76,17 +76,25 @@ Route5Gate2FBinoculars:
 	closetext
 	pause 10
 	special FadeOutPalettesBlack
-;	applyonemovement PLAYER, hide_person
-;	applyonemovement ROUTE_5_GATE_2F_NPC_1, hide_person
-;	applyonemovement ROUTE_5_GATE_2F_NPC_2, hide_person
-;	applyonemovement ROUTE_5_GATE_2F_NPC_3, hide_person
-;	applyonemovement ROUTE_5_GATE_2F_NPC_4, hide_person
-;	applyonemovement ROUTE_5_GATE_2F_NPC_5, hide_person
-;	applyonemovement ROUTE_5_GATE_2F_BINOCULARS_1, hide_person
-;	applyonemovement ROUTE_5_GATE_2F_BINOCULARS_2, hide_person
+	applyonemovement PLAYER, hide_person
+	applyonemovement ROUTE_5_GATE_2F_NPC_1, hide_person
+	applyonemovement ROUTE_5_GATE_2F_NPC_2, hide_person
+	applyonemovement ROUTE_5_GATE_2F_NPC_3, hide_person
+	applyonemovement ROUTE_5_GATE_2F_NPC_4, hide_person
+	applyonemovement ROUTE_5_GATE_2F_NPC_5, hide_person
+	applyonemovement ROUTE_5_GATE_2F_BINOCULARS_1, hide_person
+	applyonemovement ROUTE_5_GATE_2F_BINOCULARS_2, hide_person
 	appear ROUTE_5_GATE_2F_SUNBEAM_VIEW_1
 	appear ROUTE_5_GATE_2F_SUNBEAM_VIEW_2
 	changemap SunbeamView_BlockData
+	checktime 1<<MORN
+	iftrue .morn_dusk
+	checktime 1<<DUSK
+	iffalse .skip
+.morn_dusk
+	changeblock $6, $2, $6b
+	changeblock $4, $2, $6a
+.skip
 	reloadmappart
 	callasm RefreshScreen_BridgeUpdate
 	loadvar wTimeOfDayPalFlags, $40 | 1

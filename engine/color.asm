@@ -911,7 +911,7 @@ LoadMapPals:
 	and $3F
 	cp 1
 	jp nz, .snes
-	ld a, [wTimeOfDayPal]
+	ld a, [wTimeOfDay]
 	and 3
 	ld bc, 2 palettes
 	ld hl, MapObjectPalsSunbeamView

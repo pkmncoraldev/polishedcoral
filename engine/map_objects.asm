@@ -600,6 +600,7 @@ MapObjectMovementPattern:
 	dw .MovementBottomHalf
 	dw .MovementSunbeamView1
 	dw .MovementSunbeamView2
+	dw .MovementSunbeamView3
 
 .RandomWalkY:
 	call Random
@@ -790,7 +791,7 @@ MapObjectMovementPattern:
 	
 .MovementBigGyarados:
 	ld a, PERSON_ACTION_BIG_GYARADOS
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 
 .MovementTileDown:
 	ld a, PERSON_ACTION_TILE_DOWN
@@ -854,6 +855,10 @@ MapObjectMovementPattern:
 	
 .MovementSunbeamView2:
 	ld a, PERSON_ACTION_SUNBEAM_VIEW_2
+	jr ._ActionA_StepType04
+	
+.MovementSunbeamView3:
+	ld a, PERSON_ACTION_SUNBEAM_VIEW_3
 	jr ._ActionA_StepType04
 	
 .MovementCutTree:

@@ -30,7 +30,7 @@ Route5Gate2F_MapScriptHeader:
 	signpost  5, -1, SIGNPOST_READ, Route5Gate2FWindow4
 	signpost  6, -1, SIGNPOST_READ, Route5Gate2FWindow4
 
-	db 9 ; object events
+	db 10 ; object events
 	person_event SPRITE_CUTE_GIRL,  5,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Route5Gate2FNPC1, -1
 	person_event SPRITE_CHILD,  6,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route5Gate2FNPC2, -1
 	person_event SPRITE_GRANNY,  1,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route5Gate2FNPC3, -1
@@ -40,6 +40,7 @@ Route5Gate2F_MapScriptHeader:
 	person_event SPRITE_BOOK_PAPER_POKEDEX,  5,  6, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_SUNBEAM_VIEW,  7,  4, SPRITEMOVEDATA_SUNBEAM_VIEW_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	person_event SPRITE_SUNBEAM_VIEW,  7,  3, SPRITEMOVEDATA_SUNBEAM_VIEW_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	person_event SPRITE_SUNBEAM_VIEW,  6,  3, SPRITEMOVEDATA_SUNBEAM_VIEW_3, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	
 	const_def 1 ; object constants
 	const ROUTE_5_GATE_2F_NPC_1
@@ -51,6 +52,7 @@ Route5Gate2F_MapScriptHeader:
 	const ROUTE_5_GATE_2F_BINOCULARS_2
 	const ROUTE_5_GATE_2F_SUNBEAM_VIEW_1
 	const ROUTE_5_GATE_2F_SUNBEAM_VIEW_2
+	const ROUTE_5_GATE_2F_SUNBEAM_VIEW_3
 	
 Route5Gate2FBinoculars:
 	checkcode VAR_FACING
@@ -87,6 +89,7 @@ Route5Gate2FBinoculars:
 	applyonemovement ROUTE_5_GATE_2F_BINOCULARS_2, hide_person
 	appear ROUTE_5_GATE_2F_SUNBEAM_VIEW_1
 	appear ROUTE_5_GATE_2F_SUNBEAM_VIEW_2
+	appear ROUTE_5_GATE_2F_SUNBEAM_VIEW_3
 	changemap SunbeamView_BlockData
 	checktime 1<<NITE
 	iftrue .nite
@@ -130,6 +133,7 @@ Route5Gate2FBinoculars:
 	applyonemovement ROUTE_5_GATE_2F_BINOCULARS_2, show_person
 	disappear ROUTE_5_GATE_2F_SUNBEAM_VIEW_1
 	disappear ROUTE_5_GATE_2F_SUNBEAM_VIEW_2
+	disappear ROUTE_5_GATE_2F_SUNBEAM_VIEW_3
 	callasm RTC
 	callasm MaxVolume
 	special FadeInPalettes

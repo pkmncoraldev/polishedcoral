@@ -76,6 +76,7 @@ Route5Gate2FBinoculars:
 	closetext
 	pause 10
 	special FadeOutPalettesBlack
+	callasm LowVolume
 	applyonemovement PLAYER, hide_person
 	applyonemovement ROUTE_5_GATE_2F_NPC_1, hide_person
 	applyonemovement ROUTE_5_GATE_2F_NPC_2, hide_person
@@ -130,6 +131,7 @@ Route5Gate2FBinoculars:
 	disappear ROUTE_5_GATE_2F_SUNBEAM_VIEW_1
 	disappear ROUTE_5_GATE_2F_SUNBEAM_VIEW_2
 	callasm RTC
+	callasm MaxVolume
 	special FadeInPalettes
 	end
 	

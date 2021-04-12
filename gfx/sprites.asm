@@ -152,6 +152,7 @@ BoulderRockFossilSpriteGFX::   INCBIN "gfx/sprites/boulder_rock_fossil.2bpp"
 BookPaperPokedexSpriteGFX::    INCBIN "gfx/sprites/book_paper_pokedex.2bpp"
 SnesSpriteGFX::                INCBIN "gfx/sprites/snes.2bpp"
 N64SpriteGFX::                 INCBIN "gfx/sprites/n64.2bpp"
+SunbeamViewSpriteGFX::         INCBIN "gfx/sprites/sunbeam_view.2bpp"
 
 
 SECTION "Overworld Sprites 7", ROMX

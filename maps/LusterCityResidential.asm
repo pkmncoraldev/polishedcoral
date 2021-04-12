@@ -508,7 +508,7 @@ LusterPunkLeader:
 	closetext
 	pause 10
 	
-	special Special_NewFadeBlack
+	special FadeOutPalettesBlack
 	applyonemovement PLAYER, step_right
 	disappear LUSTERPUNKLEADER
 	disappear LUSTERPUNK2
@@ -536,7 +536,7 @@ LusterPunkLeader:
 	waitsfx
 	closetext
 	pause 20
-	special Special_NewFadeIn
+	special FadeInTextboxPalettes
 	pause 10
 	jumptext LusterPunkLeaderText10
 .speechloop
@@ -618,14 +618,14 @@ LusterPunkLeader:
 	waitbutton
 	closetext
 	pause 10
-	special Special_NewFadeBlack
+	special FadeOutPalettesBlack
 	pause 10
 	playsound SFX_EXIT_BUILDING
 	disappear LUSTERPUNKLEADER
 	disappear LUSTERPUNK1
 	disappear LUSTERPUNK2
 	pause 10
-	special Special_NewFadeIn
+	special FadeInTextboxPalettes
 	playmusic MUSIC_LUSTER_CITY
 	end
 .saidno2

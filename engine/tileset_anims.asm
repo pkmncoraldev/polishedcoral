@@ -42,7 +42,6 @@ TilesetHouse1Anim::
 TilesetPokeCenterAnim::
 TilesetCafeAnim::
 TilesetLighthouseAnim::
-TilesetGateAnim::
 TilesetLabAnim::
 TilesetMartAnim::
 TilesetLibraryAnim::
@@ -54,6 +53,35 @@ TilesetIceCaveAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
+	
+TilesetGateAnim::
+	dw VTiles2 tile $14, WriteTileToBuffer
+    dw NULL,  WaitTileAnimation
+    dw wTileAnimBuffer, ScrollTileRightLeft
+    dw NULL,  WaitTileAnimation
+    dw VTiles2 tile $14, WriteTileFromBuffer
+    dw NULL,  WaitTileAnimation
+    dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+    dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+    dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+    dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+    dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+    dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+    dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+    dw NULL,  WaitTileAnimation
+    dw SunbeamViewWaterFrames, AnimateWaterfallTiles2
+	dw SunbeamViewWaterFrames2, AnimateWaterfallTiles2
+    dw SunbeamViewSmokeFrames, AnimateWaterfallTiles2
+    dw NULL,  WaitTileAnimation
+    dw NULL,  WaitTileAnimation
+    dw NULL,  DoneTileAnimation
 	
 TilesetMall1Anim::
 	dw VTiles2 tile $08, WriteTileToBuffer
@@ -907,6 +935,18 @@ ShorelineTiles2: INCBIN "gfx/tilesets/shoreline/shore2.2bpp"
 ShorelineFrames3: dw VTiles2 tile $24, ShorelineTiles3
 
 ShorelineTiles3: INCBIN "gfx/tilesets/shoreline/shore3.2bpp"
+
+SunbeamViewWaterFrames: dw VTiles2 tile $4e, SunbeamViewWaterTiles
+
+SunbeamViewWaterTiles: INCBIN "gfx/tilesets/water/sunbeam_view.2bpp"
+
+SunbeamViewWaterFrames2: dw VTiles2 tile $6c, SunbeamViewWaterTiles2
+
+SunbeamViewWaterTiles2: INCBIN "gfx/tilesets/water/sunbeam_view2.2bpp"
+
+SunbeamViewSmokeFrames: dw VTiles2 tile $48, SunbeamViewSmokeTiles
+
+SunbeamViewSmokeTiles: INCBIN "gfx/tilesets/water/sunbeam_view3.2bpp"
 ; fc5cc
 
 	

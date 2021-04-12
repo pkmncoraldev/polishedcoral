@@ -310,7 +310,7 @@ LusterMallEscalatorStartBattle:
 	waitsfx
 	pause 10
 	disappear LUSTERMALLCOP
-	special Special_NewFadeIn
+	special FadeInTextboxPalettes
 	pause 10
 	opentext
 	writetext LusterMallCopText7

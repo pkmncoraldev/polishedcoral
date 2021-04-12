@@ -84,7 +84,7 @@ EastTrainCabin1Trigger1:
 	waitbutton
 	closetext
 	pause 20
-	callasm EastTrainCabin1FadeInAsm
+	special FadeOutPalettesBlack
 	pause 20
 	opentext
 	writetext EastTrainCaboosePAText4
@@ -372,7 +372,7 @@ EastTrainCabin1PlayersSeat:
 	special SaveMusic
 	playmusic MUSIC_HEAL
 	pause 60
-	callasm EastTrainCabin1FadeInAsm
+	special FadeOutPalettesBlack
 	pause 10
 	special RestoreMusic
 	pause 10
@@ -384,7 +384,7 @@ EastTrainCabin1PlayersSeat:
 	iffalse .no2
 	closetext
 	pause 5
-	callasm EastTrainCabin1BlackFadeAsm
+	special FadeOutPalettesBlack
 	checkevent EVENT_DONE_SNARE_TRAIN
 	iffalse .startsnaretrain	
 	waitbuttonseat
@@ -515,17 +515,6 @@ EastTrainCabin1PlayersSeatGetUpAsm:
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
-	ret
-	
-EastTrainCabin1FadeInAsm:
-	ld b, CGB_MAPPALS
-	call GetCGBLayout
-	farcall LoadRegularTextboxPalette
-	farjp FadeInPalettes
-	
-EastTrainCabin1BlackFadeAsm:
-	ld c, 10
-	call FadeToBlack
 	ret
 	
 EastTrainCabin1OtherSeatText:

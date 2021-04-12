@@ -43,6 +43,8 @@ Pointers445f: ; 445f
 	dw SetFacingHalfpipe2,    		   SetFacingHalfpipe2	 	  ; PERSON_ACTION_HALFPIPE_2
 	dw SetFacingTopHalf,    		   SetFacingTopHalf		 	  ; PERSON_ACTION_TOP_HALF
 	dw SetFacingBottomHalf,    		   SetFacingBottomHalf	 	  ; PERSON_ACTION_BOTTOM_HALF
+	dw SetFacingSunbeamView1,    	   SetFacingSunbeamView1	  ; PERSON_ACTION_SUNBEAM_VIEW_1
+	dw SetFacingSunbeamView2,    	   SetFacingSunbeamView2	  ; PERSON_ACTION_SUNBEAM_VIEW_2
 	
 ; 44a3
 
@@ -464,5 +466,13 @@ SetFacingTopHalf:
 	
 SetFacingBottomHalf:
 	ld a, FACING_BOTTOM_HALF
+	jp SetFixedFacing
+	
+SetFacingSunbeamView1:
+	ld a, FACING_SUNBEAM_VIEW_1
+	jp SetFixedFacing
+	
+SetFacingSunbeamView2:
+	ld a, FACING_SUNBEAM_VIEW_2
 	jp SetFixedFacing
 	

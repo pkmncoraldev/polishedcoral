@@ -598,6 +598,8 @@ MapObjectMovementPattern:
 	dw .MovementHalfpipe2
 	dw .MovementTopHalf
 	dw .MovementBottomHalf
+	dw .MovementSunbeamView1
+	dw .MovementSunbeamView2
 
 .RandomWalkY:
 	call Random
@@ -780,11 +782,11 @@ MapObjectMovementPattern:
 
 .MovementBigStanding:
 	ld a, PERSON_ACTION_BIG_SNORLAX
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 
 .MovementBouncing:
 	ld a, PERSON_ACTION_BOUNCE
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementBigGyarados:
 	ld a, PERSON_ACTION_BIG_GYARADOS
@@ -844,6 +846,14 @@ MapObjectMovementPattern:
 	
 .MovementBottomHalf:
 	ld a, PERSON_ACTION_BOTTOM_HALF
+	jr ._ActionA_StepType04
+	
+.MovementSunbeamView1:
+	ld a, PERSON_ACTION_SUNBEAM_VIEW_1
+	jr ._ActionA_StepType04
+	
+.MovementSunbeamView2:
+	ld a, PERSON_ACTION_SUNBEAM_VIEW_2
 	jr ._ActionA_StepType04
 	
 .MovementCutTree:

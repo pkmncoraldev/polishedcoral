@@ -140,6 +140,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .playerhouse
 	cp TILESET_PLAYER_ROOM
 	jp z, .playerroom
+	cp TILESET_GATE
+	jp z, .gate
 	jp .do_nothing
 	
 .checktent
@@ -239,6 +241,14 @@ LoadSpecialMapPalette: ; 494ac
 	
 .playerroom
 	ld hl, PlayerRoomFloorPalette
+	jp LoadSevenBGPalettes
+	
+.gate
+	ld a, [wTimeOfDayPalFlags]
+	and $3F
+	cp 1
+	jp nz, .do_nothing
+	ld hl, SunbeamViewPalette
 	jp LoadSevenBGPalettes
 	
 .playerhouse
@@ -476,3 +486,6 @@ INCLUDE "maps/palettes/bgpals/bglusterbusiness.pal"
 
 OutsideSkateparkPalette:
 INCLUDE "maps/palettes/bgpals/bgskatepark.pal"
+
+SunbeamViewPalette:
+INCLUDE "maps/palettes/bgpals/sunbeamview.pal"

@@ -1,0 +1,40 @@
+; palette 0
+	RGB 31, 31, 31
+	RGB 18, 19, 31
+	RGB 09, 09, 31
+	RGB 08, 08, 08
+; palette 1
+	RGB 18, 31, 10
+	RGB 08, 26, 07
+	RGB 09, 09, 31
+	RGB 00, 14, 05
+; palette 2
+	RGB 20, 17, 08
+	RGB 09, 09, 31
+	RGB 00, 14, 05
+	RGB 08, 08, 08
+; palette 3
+	RGB 24, 18, 07
+	RGB 09, 09, 31
+	RGB 00, 14, 05
+	RGB 08, 08, 08
+; palette 4
+	RGB 18, 31, 10
+	RGB 08, 26, 07
+	RGB 00, 14, 05
+	RGB 08, 08, 08
+; palette 5
+	RGB 31, 31, 31
+	RGB 18, 19, 31
+	RGB 09, 09, 31
+	RGB 17, 17, 21
+; palette 6
+	RGB 31, 31, 31
+	RGB 24, 18, 07
+	RGB 09, 09, 31
+	RGB 08, 08, 08
+; palette 7
+	RGB 31, 31, 31
+	RGB 18, 19, 31
+	RGB 09, 09, 31
+	RGB 08, 08, 08

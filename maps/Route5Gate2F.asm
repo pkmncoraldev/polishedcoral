@@ -30,22 +30,27 @@ Route5Gate2F_MapScriptHeader:
 	signpost  5, -1, SIGNPOST_READ, Route5Gate2FWindow4
 	signpost  6, -1, SIGNPOST_READ, Route5Gate2FWindow4
 
-	db 7 ; object events
+	db 9 ; object events
 	person_event SPRITE_CUTE_GIRL,  5,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Route5Gate2FNPC1, -1
 	person_event SPRITE_CHILD,  6,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route5Gate2FNPC2, -1
 	person_event SPRITE_GRANNY,  1,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route5Gate2FNPC3, -1
 	person_event SPRITE_ROCKER,  3,  4, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route5Gate2FNPC4, -1
+	object_event  3,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_COMMAND, trade, TRADE_WITH_JAKE_FOR_PINSIR, -1
 	person_event SPRITE_BOOK_PAPER_POKEDEX,  5,  4, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_BOOK_PAPER_POKEDEX,  5,  6, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  3,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_COMMAND, trade, TRADE_WITH_JAKE_FOR_PINSIR, -1
+	person_event SPRITE_SUNBEAM_VIEW,  7,  4, SPRITEMOVEDATA_SUNBEAM_VIEW_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	person_event SPRITE_SUNBEAM_VIEW,  7,  3, SPRITEMOVEDATA_SUNBEAM_VIEW_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	
 	const_def 1 ; object constants
 	const ROUTE_5_GATE_2F_NPC_1
 	const ROUTE_5_GATE_2F_NPC_2
 	const ROUTE_5_GATE_2F_NPC_3
 	const ROUTE_5_GATE_2F_NPC_4
+	const ROUTE_5_GATE_2F_NPC_5
 	const ROUTE_5_GATE_2F_BINOCULARS_1
 	const ROUTE_5_GATE_2F_BINOCULARS_2
+	const ROUTE_5_GATE_2F_SUNBEAM_VIEW_1
+	const ROUTE_5_GATE_2F_SUNBEAM_VIEW_2
 	
 Route5Gate2FBinoculars:
 	checkcode VAR_FACING
@@ -70,22 +75,23 @@ Route5Gate2FBinoculars:
 	waitbutton
 	closetext
 	pause 10
-	special Special_FadeBlackQuickly
-	applyonemovement PLAYER, hide_person
-	applyonemovement ROUTE_5_GATE_2F_NPC_1, hide_person
-	applyonemovement ROUTE_5_GATE_2F_NPC_2, hide_person
-	applyonemovement ROUTE_5_GATE_2F_NPC_3, hide_person
-	applyonemovement ROUTE_5_GATE_2F_NPC_4, hide_person
-	applyonemovement ROUTE_5_GATE_2F_BINOCULARS_1, hide_person
-	applyonemovement ROUTE_5_GATE_2F_BINOCULARS_2, hide_person
+	special FadeOutPalettesBlack
+;	applyonemovement PLAYER, hide_person
+;	applyonemovement ROUTE_5_GATE_2F_NPC_1, hide_person
+;	applyonemovement ROUTE_5_GATE_2F_NPC_2, hide_person
+;	applyonemovement ROUTE_5_GATE_2F_NPC_3, hide_person
+;	applyonemovement ROUTE_5_GATE_2F_NPC_4, hide_person
+;	applyonemovement ROUTE_5_GATE_2F_NPC_5, hide_person
+;	applyonemovement ROUTE_5_GATE_2F_BINOCULARS_1, hide_person
+;	applyonemovement ROUTE_5_GATE_2F_BINOCULARS_2, hide_person
+	appear ROUTE_5_GATE_2F_SUNBEAM_VIEW_1
+	appear ROUTE_5_GATE_2F_SUNBEAM_VIEW_2
 	changemap SunbeamView_BlockData
 	reloadmappart
 	callasm RefreshScreen_BridgeUpdate
-	special Special_FadeInQuickly
-	pause 40
-	opentext
-	writetext Route5Gate2FBinocularsSunbeamText
-	waitbutton
+	loadvar wTimeOfDayPalFlags, $40 | 1
+	callasm RTC
+	special FadeInPalettes
 .loop
 	closetext
 	pause 10
@@ -95,7 +101,8 @@ Route5Gate2FBinoculars:
 	yesorno
 	iffalse .loop
 	closetext
-	special Special_FadeBlackQuickly
+	special FadeOutPalettesBlack
+	loadvar wTimeOfDayPalFlags, $40 | 0
 	changemap Route5Gate2F_BlockData
 	reloadmappart
 	callasm RefreshScreen_BridgeUpdate
@@ -104,9 +111,13 @@ Route5Gate2FBinoculars:
 	applyonemovement ROUTE_5_GATE_2F_NPC_2, show_person
 	applyonemovement ROUTE_5_GATE_2F_NPC_3, show_person
 	applyonemovement ROUTE_5_GATE_2F_NPC_4, show_person
+	applyonemovement ROUTE_5_GATE_2F_NPC_5, show_person
 	applyonemovement ROUTE_5_GATE_2F_BINOCULARS_1, show_person
 	applyonemovement ROUTE_5_GATE_2F_BINOCULARS_2, show_person
-	special Special_FadeInQuickly
+	disappear ROUTE_5_GATE_2F_SUNBEAM_VIEW_1
+	disappear ROUTE_5_GATE_2F_SUNBEAM_VIEW_2
+	callasm RTC
+	special FadeInPalettes
 	end
 	
 .end

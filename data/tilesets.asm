@@ -182,9 +182,10 @@ INCLUDE "data/tilesets/lighthouse_collision.asm"
 SECTION "Tileset Data - gate", ROMX
 
 TilesetGateGFX::
-INCBIN "gfx/tilesets/gate.2bpp.lz"
+INCBIN "gfx/tilesets/gate.2bpp.vram0.lz"
 
-TilesetGateGFX2 EQU 0
+TilesetGateGFX2::
+INCBIN "gfx/tilesets/gate.2bpp.vram1.lz"
 
 TilesetGateMeta::
 INCBIN "data/tilesets/gate_metatiles.bin.lz"

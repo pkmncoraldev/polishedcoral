@@ -275,7 +275,7 @@ LusterSewersThroneRoomFrankieCutscene:
 	waitbutton
 	closetext
 	pause 10
-	special Special_NewFadeBlack
+	special FadeOutPalettesBlack
 	pause 10
 	playsound SFX_EXIT_BUILDING
 	disappear LUSTERSEWERSTHRONEROOM_FAKE_FRANKIE
@@ -283,7 +283,7 @@ LusterSewersThroneRoomFrankieCutscene:
 	disappear LUSTERSEWERSTHRONEROOM_GRUNT2
 	disappear LUSTERSEWERSTHRONEROOM_GRUNT3
 	pause 10
-	special Special_NewFadeIn
+	special FadeInTextboxPalettes
 	pause 10
 	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, step_down
 	pause 10

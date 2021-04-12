@@ -102,3 +102,6 @@
 	tilecoll FLOOR, SKATE, WALL, WALL ; 65
 	tilecoll WALL, SKATE, WALL, WALL ; 66
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 67
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 68
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 69
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 6a

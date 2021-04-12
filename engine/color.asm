@@ -854,7 +854,7 @@ LoadMapPals:
 	cp TILESET_JUNGLE
 	jp z, .jungle
 	cp TILESET_GATE
-	jp z, .snes
+	jp z, .gate
 	jp .normal
 .playerhouse
 	ld a, [wMapGroup]
@@ -862,9 +862,9 @@ LoadMapPals:
 	jp nz, .normal
 	ld a, [wMapNumber]
 	cp MAP_TWINKLE_GYM_BLUE_ROOM
-	jr z, .blue_room
+	jp z, .blue_room
 	cp MAP_TWINKLE_GYM_YELLOW_ROOM
-	jr z, .yellow_room
+	jp z, .yellow_room
 	cp MAP_TWINKLE_GYM_RED_ROOM
 	jp z, .red_room
 	jp .normal
@@ -902,6 +902,22 @@ LoadMapPals:
 	ld hl, MapObjectPalsN64
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+	
+.gate
+	ld a, [wTimeOfDayPalFlags]
+	and $3F
+	cp 1
+	jp nz, .snes
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 2 palettes
+	ld hl, MapObjectPalsSunbeamView
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 2 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	ret
@@ -1455,6 +1471,9 @@ INCLUDE "maps/palettes/obpals/oblighthouse.pal"
 
 MapObjectPalsSkatepark::
 INCLUDE "maps/palettes/obpals/obskatepark.pal"
+
+MapObjectPalsSunbeamView::
+INCLUDE "maps/palettes/obpals/obsunbeamview.pal"
 
 MapObjectPalsLuster::
 INCLUDE "maps/palettes/obpals/obluster.pal"

@@ -23,6 +23,9 @@ StarglowHouse4FishingGuru:
 	checkitem GOOD_ROD
 	iftrue .haverod
 	writetext StarglowHouse4FishingGuruText1
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
 .havetalked
 	checkitem GOOD_ROD
 	iftrue .haverod
@@ -97,7 +100,7 @@ StarglowHouse4FishingGuruText1:
 	cont "around here, so"
 	cont "it shouldn't be"
 	cont "too tough."
-	prompt
+	done
 	
 StarglowHouse4FishingGuruText2:
 	text "Get out there and"

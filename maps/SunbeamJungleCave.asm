@@ -12,7 +12,7 @@ SunbeamJungleCave_MapScriptHeader:
 	db 0 ; bg events
 
 	db 1 ; object events
-	tmhmball_event  3, 6, TM_THUNDERPUNCH, 1, EVENT_SUNBEAM_JUNGLE_CAVE_THUNDERPUNCH
+	tmhmball_event  3, 6, TM_THUNDERPUNCH, EVENT_SUNBEAM_JUNGLE_CAVE_THUNDERPUNCH
 
 	const_def 1 ; object constants
 	const SUNBEAM_JUNGLE_CAVE_POKEBALL

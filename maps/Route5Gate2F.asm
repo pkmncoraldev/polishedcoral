@@ -30,7 +30,7 @@ Route5Gate2F_MapScriptHeader:
 	signpost  5, -1, SIGNPOST_READ, Route5Gate2FWindow4
 	signpost  6, -1, SIGNPOST_READ, Route5Gate2FWindow4
 
-	db 10 ; object events
+	db 13 ; object events
 	person_event SPRITE_CUTE_GIRL,  5,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Route5Gate2FNPC1, -1
 	person_event SPRITE_CHILD,  6,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route5Gate2FNPC2, -1
 	person_event SPRITE_GRANNY,  1,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route5Gate2FNPC3, -1
@@ -41,6 +41,9 @@ Route5Gate2F_MapScriptHeader:
 	person_event SPRITE_SUNBEAM_VIEW,  7,  4, SPRITEMOVEDATA_SUNBEAM_VIEW_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	person_event SPRITE_SUNBEAM_VIEW,  7,  3, SPRITEMOVEDATA_SUNBEAM_VIEW_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	person_event SPRITE_SUNBEAM_VIEW,  6,  3, SPRITEMOVEDATA_SUNBEAM_VIEW_3, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	person_event SPRITE_SUNBEAM_VIEW_CLOUDS,  4,  1, SPRITEMOVEDATA_SUNBEAM_VIEW_4, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	person_event SPRITE_SUNBEAM_VIEW_CLOUDS,  3,  6, SPRITEMOVEDATA_SUNBEAM_VIEW_5, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	person_event SPRITE_SUNBEAM_VIEW_CLOUDS,  2,  6, SPRITEMOVEDATA_SUNBEAM_VIEW_6, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	
 	const_def 1 ; object constants
 	const ROUTE_5_GATE_2F_NPC_1
@@ -53,6 +56,9 @@ Route5Gate2F_MapScriptHeader:
 	const ROUTE_5_GATE_2F_SUNBEAM_VIEW_1
 	const ROUTE_5_GATE_2F_SUNBEAM_VIEW_2
 	const ROUTE_5_GATE_2F_SUNBEAM_VIEW_3
+	const ROUTE_5_GATE_2F_SUNBEAM_VIEW_4
+	const ROUTE_5_GATE_2F_SUNBEAM_VIEW_5
+	const ROUTE_5_GATE_2F_SUNBEAM_VIEW_6
 	
 Route5Gate2FBinoculars:
 	checkcode VAR_FACING
@@ -90,16 +96,21 @@ Route5Gate2FBinoculars:
 	appear ROUTE_5_GATE_2F_SUNBEAM_VIEW_1
 	appear ROUTE_5_GATE_2F_SUNBEAM_VIEW_2
 	appear ROUTE_5_GATE_2F_SUNBEAM_VIEW_3
+	appear ROUTE_5_GATE_2F_SUNBEAM_VIEW_4
+	appear ROUTE_5_GATE_2F_SUNBEAM_VIEW_5
 	changemap SunbeamView_BlockData
 	checktime 1<<NITE
 	iftrue .nite
+	checktime 1<<DUSK
+	iftrue .dusk
 	checktime 1<<MORN
 	iftrue .morn_dusk
-	checktime 1<<DUSK
-	iffalse .skip
+	jump .skip
+.dusk
+	changemap SunbeamViewDusk_BlockData
 .morn_dusk
-	changeblock $6, $2, $6b
-	changeblock $4, $2, $6a
+	disappear ROUTE_5_GATE_2F_SUNBEAM_VIEW_5
+	appear ROUTE_5_GATE_2F_SUNBEAM_VIEW_6
 	jump .skip
 .nite
 	changemap SunbeamViewNite_BlockData
@@ -112,12 +123,7 @@ Route5Gate2FBinoculars:
 .loop
 	closetext
 	pause 10
-	waitbutton
-	opentext
-	writetext Route5Gate2FBinocularsQuitText
-	yesorno
-	iffalse .loop
-	closetext
+	waitbuttonsilent
 	special FadeOutPalettesBlack
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	changemap Route5Gate2F_BlockData
@@ -134,6 +140,9 @@ Route5Gate2FBinoculars:
 	disappear ROUTE_5_GATE_2F_SUNBEAM_VIEW_1
 	disappear ROUTE_5_GATE_2F_SUNBEAM_VIEW_2
 	disappear ROUTE_5_GATE_2F_SUNBEAM_VIEW_3
+	disappear ROUTE_5_GATE_2F_SUNBEAM_VIEW_4
+	disappear ROUTE_5_GATE_2F_SUNBEAM_VIEW_5
+	disappear ROUTE_5_GATE_2F_SUNBEAM_VIEW_6
 	callasm RTC
 	callasm MaxVolume
 	special FadeInPalettes
@@ -239,17 +248,6 @@ Route5Gate2FNPC4Text:
 	para "I can't decide"
 	line "which one to stare"
 	cont "out of!"
-	done
-	
-Route5Gate2FBinocularsSunbeamText:
-	text "Hey!"
-	
-	para "There's SUNBEAM"
-	line "ISLAND!"
-	done
-	
-Route5Gate2FBinocularsQuitText:
-	text "Stop looking?"
 	done
 	
 Route5Gate2FBinocularsText:

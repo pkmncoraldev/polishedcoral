@@ -153,6 +153,7 @@ BookPaperPokedexSpriteGFX::    INCBIN "gfx/sprites/book_paper_pokedex.2bpp"
 SnesSpriteGFX::                INCBIN "gfx/sprites/snes.2bpp"
 N64SpriteGFX::                 INCBIN "gfx/sprites/n64.2bpp"
 SunbeamViewSpriteGFX::         INCBIN "gfx/sprites/sunbeam_view.2bpp"
+SunbeamViewSpriteCloudsGFX::   INCBIN "gfx/sprites/sunbeam_view_clouds.2bpp"
 
 
 SECTION "Overworld Sprites 7", ROMX

@@ -601,6 +601,8 @@ MapObjectMovementPattern:
 	dw .MovementSunbeamView1
 	dw .MovementSunbeamView2
 	dw .MovementSunbeamView3
+	dw .MovementSunbeamView4
+	dw .MovementSunbeamView5
 
 .RandomWalkY:
 	call Random
@@ -795,15 +797,15 @@ MapObjectMovementPattern:
 
 .MovementTileDown:
 	ld a, PERSON_ACTION_TILE_DOWN
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementTileUp:
 	ld a, PERSON_ACTION_TILE_UP
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementTileLeft:
 	ld a, PERSON_ACTION_TILE_LEFT
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementTileRight:
 	ld a, PERSON_ACTION_TILE_RIGHT
@@ -859,6 +861,18 @@ MapObjectMovementPattern:
 	
 .MovementSunbeamView3:
 	ld a, PERSON_ACTION_SUNBEAM_VIEW_3
+	jr ._ActionA_StepType04
+	
+.MovementSunbeamView4:
+	ld a, PERSON_ACTION_SUNBEAM_VIEW_4
+	jr ._ActionA_StepType04
+	
+.MovementSunbeamView5:
+	ld a, PERSON_ACTION_SUNBEAM_VIEW_5
+	jr ._ActionA_StepType04
+	
+.MovementSunbeamView6:
+	ld a, PERSON_ACTION_SUNBEAM_VIEW_6
 	jr ._ActionA_StepType04
 	
 .MovementCutTree:

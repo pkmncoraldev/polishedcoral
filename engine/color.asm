@@ -913,11 +913,11 @@ LoadMapPals:
 	jp nz, .snes
 	ld a, [wTimeOfDay]
 	and 3
-	ld bc, 2 palettes
+	ld bc, 3 palettes
 	ld hl, MapObjectPalsSunbeamView
 	call AddNTimes
 	ld de, wUnknOBPals
-	ld bc, 2 palettes
+	ld bc, 3 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	ret

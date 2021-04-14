@@ -68,6 +68,9 @@ Facings:
 	dw FacingSunbeamView1
 	dw FacingSunbeamView2
 	dw FacingSunbeamView3
+	dw FacingSunbeamView4
+	dw FacingSunbeamView5
+	dw FacingSunbeamView6
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -564,11 +567,59 @@ FacingSunbeamView1:
 	db  5, 67, 0, $02
 	
 FacingSunbeamView2:
-	db 2 ; #
+	db 9 ; #
 	db  4,  8, 0, $03
 	db  5, 43, 0, $04
+	db  5, 80, 0, $08
+	db -28, -48, 0, $0a
+	db -20, -48, 0, $0a
+	db -12, -48, Y_FLIP | 0, $09
+	db -28, 104, 0 | X_FLIP, $0a
+	db -20, 104, 0 | X_FLIP, $0a
+	db -12, 104, Y_FLIP | X_FLIP, $09
 	
 FacingSunbeamView3:
 	db 2 ; #
 	db 12, 16, 0, $05
 	db 12, 24, 0, $06
+	
+FacingSunbeamView4:
+	db 9 ; #
+	db  4,  8, 0, $00
+	db  4, 16, 0, $01
+	db  4, 24, 0, $02
+	db  4, 32, 0, $03
+	db 12,  0, 0, $04
+	db 12,  8, 0, $05
+	db 12, 16, 0, $06
+	db 12, 24, 0, $07
+	db 12, 32, 0, $08
+	
+FacingSunbeamView5:
+	db 9 ; #
+	db -4,  0, 0, $81
+	db -4,  8, 0, $82
+	db -4, 16, 0 | X_FLIP, $81
+	db  4,  0, 0, $83
+	db  4,  8, 0, $84
+	db  4, 16, 0 | X_FLIP, $83
+	db 12,  0, Y_FLIP | 0, $81
+	db 12,  8, Y_FLIP | 0, $82
+	db 12, 16, Y_FLIP | X_FLIP, $81
+	
+FacingSunbeamView6:
+	db 13 ; #
+	db  4,  8, 0, $00
+	db  4, 16, 0, $01
+	db  4, 24, 0, $02
+	db  4, 32, 0, $03
+	db 12,  0, 0, $04
+	db 12,  8, 0, $05
+	db 12, 16, 0, $06
+	db 12, 24, 0, $07
+	db 12, 32, 0, $08
+	db 20,  0, 0, $09
+	db 20,  8, 0, $0a
+	db 20, 16, 0, $0b
+	db 20, 24, 0, $80
+

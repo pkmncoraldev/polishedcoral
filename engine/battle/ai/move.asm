@@ -74,7 +74,7 @@ AIChooseMove: ; 440ce
 	ld a, c
 	cp 16 ; up to 16 scoring layers
 	
-	jr z, .DebugAndDecrement
+;	jr z, .DebugAndDecrement
 	
 	jr z, .DecrementScores
 
@@ -92,7 +92,7 @@ AIChooseMove: ; 440ce
 	and a
 	jr z, .CheckLayer
 
-	call AIDebug
+;	call AIDebug
 	
 	ld hl, AIScoringPointers
 	dec c
@@ -107,8 +107,8 @@ AIChooseMove: ; 440ce
 
 	jr .CheckLayer
 
-.DebugAndDecrement:
-	call AIDebug
+;.DebugAndDecrement:
+;	call AIDebug
 	
 ; Decrement the scores of all moves one by one until one reaches 0.
 .DecrementScores:

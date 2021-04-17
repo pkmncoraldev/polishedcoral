@@ -87,6 +87,7 @@ CharmeleonEvosAttacks:
 	db  1, SAND_ATTACK_SMOKESCREEN
 	db  1, FIRE_SPIN
 	db  1, SCARY_FACE_COTTON_SPORE
+	db  1, DRAGONBREATH
 	db 23, FIRE_FANG
 	db 29, SLASH
 	db 35, METAL_CLAW
@@ -106,6 +107,7 @@ CharizardEvosAttacks:
 	db  1, DRAGON_RAGE
 	db  1, WING_ATTACK
 	db  1, SHADOW_CLAW
+	db  1, DRAGONBREATH
 	db  1, FIRE_FANG
 	db  1, SLASH
 	db  1, BELLY_DRUM
@@ -1067,8 +1069,8 @@ CuboneEvosAttacks:
 	db  0 ; no more evolutions
 	db  1, GROWL
 	db  3, TACKLE_SCRATCH_POUND
-	db  8, BONE_CLUB
-	db 11, HEADBUTT
+	db  6, BONE_CLUB
+	db 10, HEADBUTT
 	db 13, LEER_TAIL_WHIP
 	db 17, FOCUS_ENERGY
 	db 21, BONEMERANG

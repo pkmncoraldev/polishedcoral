@@ -49,7 +49,7 @@ TrainerClassAttributes: ; 3959c
 	dw CONTEXT_USE
 
 ; Rodney
-	db SUPER_POTION, 0 ; items
+	db FULL_HEAL, 0 ; items
 	db 30 ; base reward
 	dw AI_BASIC + AI_SMART + AI_STATUS + AI_SETUP + AI_TYPES
 	dw CONTEXT_USE + SWITCH_SOMETIMES

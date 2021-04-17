@@ -51,16 +51,16 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; karen
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; champion
 	db   0, $99, $99, $99, ABILITY_1 | QUIRKY, MALE   ; rival
-	db   0, $66, $66, $66, ABILITY_1 | QUIRKY, MALE   ; youngster
-	db   0, $66, $66, $66, ABILITY_1 | QUIRKY, MALE   ; bug catcher
-	db   8, $77, $77, $77, ABILITY_1 | QUIRKY, MALE   ; camper
-	db   8, $77, $77, $77, ABILITY_1 | QUIRKY, FEMALE ; picnicker
-	db   8, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE ; twins
-	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE   ; fisher
-	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE   ; bird keeper
-	db  24, $99, $99, $99, ABILITY_1 | QUIRKY, MALE   ; hiker
-	db  32, $AA, $AA, $AA, ABILITY_1 | QUIRKY, MALE   ; gruntm
-	db  32, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE ; gruntf
+	db   0, $33, $33, $33, ABILITY_1 | QUIRKY, MALE   ; youngster
+	db   0, $33, $33, $33, ABILITY_1 | QUIRKY, MALE   ; bug catcher
+	db   8, $55, $55, $55, ABILITY_1 | QUIRKY, MALE   ; camper
+	db   8, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE ; picnicker
+	db   8, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE ; twins
+	db  16, $55, $55, $55, ABILITY_1 | QUIRKY, MALE   ; fisher
+	db  16, $77, $77, $77, ABILITY_1 | QUIRKY, MALE   ; bird keeper
+	db  24, $77, $77, $77, ABILITY_1 | QUIRKY, MALE   ; hiker
+	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, MALE   ; gruntm
+	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE ; gruntf
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; kage
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE ; locke
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE   ; pokefanm
@@ -70,7 +70,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  48, $E5, $FA, $D6, ABILITY_1 | QUIRKY, FEMALE ; nurse
 	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE   ; pokemaniac
 	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE   ; super nerd
-	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE ; lass
+	db  24, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE ; lass
 	db  48, $CC, $CC, $CC, ABILITY_1 | QUIRKY, FEMALE ; beauty
 	db  48, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; firebreather
 	db  48, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; juggler

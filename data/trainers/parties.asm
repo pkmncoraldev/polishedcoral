@@ -96,11 +96,11 @@ RodneyGroup:
 	db "RODNEY@"
 	db TRAINERTYPE_ITEM | TRAINERTYPE_EVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
 	; party
-	db 19, CHINCHOU, NO_ITEM, 72, ABILITY_1 | TIMID, MALE
-		db RAIN_DANCE, BUBBLE_BEAM, SPARK, CONFUSE_RAY
-	db 19, WOOPER, DAMP_ROCK, 72, HIDDEN_ABILITY | TIMID, FEMALE
+	db 17, CHINCHOU, NO_ITEM, 16, ABILITY_1 | SASSY, MALE
+		db RAIN_DANCE, WATER_GUN, SPARK, CONFUSE_RAY
+	db 18, WOOPER, NO_ITEM, 32, HIDDEN_ABILITY | TIMID, FEMALE
 		db RAIN_DANCE, WATER_GUN, BODY_SLAM, 0
-	db 20, GYARADOS, NO_ITEM, 48, ABILITY_1 | QUIRKY, MALE
+	db 20, GYARADOS, NO_ITEM, 32, ABILITY_1 | QUIRKY, MALE
 		db WATER_GUN, BITE, TACKLE_SCRATCH_POUND, TWISTER
 	db -1 ; end
 
@@ -280,114 +280,114 @@ RivalGroup:
 
 	; RIVAL (1-1)
 	db "<RIVAL>@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
 	; party
-	db 5, TOTODILE
+	db 5, TOTODILE, $66, $66, $66, ABILITY_1 | HARDY, MALE
 	db -1 ; end
 
 ; ================
 
 	; RIVAL (1-2)
 	db "<RIVAL>@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 5, CYNDAQUIL
+	db 5, CYNDAQUIL, ABILITY_1 | HARDY, MALE
 	db -1 ; end
 
 ; ================
 
 	; RIVAL (1-3)
 	db "<RIVAL>@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 5, CHIKORITA
+	db 5, CHIKORITA, ABILITY_1 | HARDY, MALE
 	db -1 ; end
 
 ; ================
 
 	; RIVAL (1-4)
 	db "<RIVAL>@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 5, SQUIRTLE
+	db 5, SQUIRTLE, ABILITY_1 | HARDY, MALE
 	db -1 ; end
 
 ; ================
 
 	; RIVAL (1-5)
 	db "<RIVAL>@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 5, CHARMANDER
+	db 5, CHARMANDER, ABILITY_1 | HARDY, MALE
 	db -1 ; end
 
 ; ================
 
 	; RIVAL (1-6)
 	db "<RIVAL>@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 5, BULBASAUR
+	db 5, BULBASAUR, ABILITY_1 | HARDY, MALE
 	db -1 ; end
 
 ; ================
 
 	; RIVAL (2-1)
 	db "<RIVAL>@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
 	; party
-	db 6, SNUBBULL
-	db 8, TOTODILE
+	db 6, SNUBBULL, $99, $99, $99, ABILITY_2 | HARDY, FEMALE
+	db 8, TOTODILE, $66, $66, $66, ABILITY_1 | HARDY, MALE
 	db -1 ; end
 
 ; ================
 
 	; RIVAL (2-2)
 	db "<RIVAL>@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
 	; party
-	db 6, SNUBBULL
-	db 8, CYNDAQUIL
+	db 6, SNUBBULL, $99, $99, $99, ABILITY_2 | HARDY, FEMALE
+	db 8, CYNDAQUIL, $66, $66, $66, ABILITY_1 | HARDY, MALE
 	db -1 ; end
 
 ; ================
 
 	; RIVAL (2-3)
 	db "<RIVAL>@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
 	; party
-	db 6, SNUBBULL
-	db 8, CHIKORITA
+	db 6, SNUBBULL, $99, $99, $99, ABILITY_2 | HARDY, FEMALE
+	db 8, CHIKORITA, $66, $66, $66, ABILITY_1 | HARDY, MALE
 	db -1 ; end
 
 ; ================
 
 	; RIVAL (2-4)
 	db "<RIVAL>@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
 	; party
-	db 6, SNUBBULL
-	db 8, SQUIRTLE
+	db 6, SNUBBULL, $99, $99, $99, ABILITY_2 | HARDY, FEMALE
+	db 8, SQUIRTLE, $66, $66, $66, ABILITY_1 | HARDY, MALE
 	db -1 ; end
 
 ; ================
 
 	; RIVAL (2-5)
 	db "<RIVAL>@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
 	; party
-	db 6, SNUBBULL
-	db 8, CHARMANDER
+	db 6, SNUBBULL, $99, $99, $99, ABILITY_2 | HARDY, FEMALE
+	db 8, CHARMANDER, $66, $66, $66, ABILITY_1 | HARDY, MALE
 	db -1 ; end
 
 ; ================
 
 	; RIVAL (2-6)
 	db "<RIVAL>@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
 	; party
-	db 6, SNUBBULL
-	db 8, BULBASAUR
+	db 6, SNUBBULL, $99, $99, $99, ABILITY_2 | HARDY, FEMALE
+	db 8, BULBASAUR, $66, $66, $66, ABILITY_1 | HARDY, MALE
 	db -1 ; end
 
 ; ================
@@ -575,8 +575,7 @@ PicnickerGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 13, MARILL
-	db 14, MARILL
-	db 15, POLIWAG
+	db 14, PIKIPEK
 	db -1 ; end
 
 ; ================
@@ -1643,8 +1642,8 @@ PokefanMGroup:
 	db "RON@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 17, PHANPY
-	db 18, PSYDUCK
+	db 15, PHANPY
+	db 16, PSYDUCK
 	db -1 ; end
 
 ; ================
@@ -2239,8 +2238,8 @@ GentlemanGroup:
 	db "DURWOOD@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 18, GROWLITHE
-	db 17, SWABLU
+	db 17, GROWLITHE
+	db 16, SWABLU
 	db -1 ; end
 
 ; ================
@@ -2279,8 +2278,8 @@ LadyGroup:
 	db "RUTH@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 17, MEOWTH
-	db 17, BUNEARY
+	db 15, MEOWTH
+	db 15, BUNEARY
 	db -1 ; end
 
 ; ================
@@ -2724,11 +2723,14 @@ DisguiseGroup:
 
 	; DISGUISE
 	db "MASTER@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
 	db 12, VOLTORB
+		db TACKLE_SCRATCH_POUND, ROLLOUT, 0, 0
 	db 12, MARILL
-	db 13, JIGGLYPUFF
+		db TACKLE_SCRATCH_POUND, ROLLOUT, 0, 0
+	db 12, JIGGLYPUFF
+		db TACKLE_SCRATCH_POUND, ROLLOUT, 0, 0
 	db -1 ; end
 
 ; ================

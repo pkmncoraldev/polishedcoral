@@ -3,7 +3,7 @@ EvolutionMoves::
 	db SLUDGE       						; IVYSAUR
 	db PETAL_DANCE  						; VENUSAUR
 	db NO_MOVE      						; CHARMANDER
-	db DRAGON_RAGE  						; CHARMELEON
+	db DRAGONBREATH  						; CHARMELEON
 	db AIR_SLASH                            ; CHARIZARD
 	db NO_MOVE                              ; SQUIRTLE
 	db ICY_WIND                             ; WARTORTLE

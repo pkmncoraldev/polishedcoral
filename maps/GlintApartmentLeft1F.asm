@@ -40,16 +40,14 @@ GlintApt11FNpc2:
 	setevent EVENT_GOT_TM08_ROCK_SMASH
 	setflag ENGINE_GOT_ROCK_SMASH
 	writetext GlintApt11FNpc2Text2
-	waitbutton
-	spriteface GLINT_APT11F_NPC2, RIGHT
-	closetext
-	end
-	
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
 .gotrocksmash:
 	writetext GlintApt11FNpc2Text3
 	waitbutton
-	spriteface GLINT_APT11F_NPC2, RIGHT
 	closetext
+	spriteface GLINT_APT11F_NPC2, RIGHT
 	end
 	
 GlintApt11FNpc1Text:
@@ -105,21 +103,6 @@ GlintApt11FNpc2Text2:
 	cont "to learn the move"
 	cont "to use it outside"
 	cont "of battle."
-	
-	para "That HM teachs the"
-	line "move ROCK SMASH."
-	
-	para "It's a FIGHTING"
-	line "TYPE move,"
-	
-	para "so it might come"
-	line "in handy against"
-	cont "NORMAL TYPE"
-	cont "#MON."
-	
-	para "Now get out there"
-	line "and prove yourself"
-	cont "TRAINER!"
 	done
 	
 GlintApt11FNpc2Text3:
@@ -132,10 +115,6 @@ GlintApt11FNpc2Text3:
 	para "so it might come"
 	line "in handy against"
 	cont "NORMAL TYPE"
-	cont "#MON."
-	
-	para "Now get out there"
-	line "and prove yourself"
-	cont "TRAINER!"
+	cont "#MON!"
 	done
 	

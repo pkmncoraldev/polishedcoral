@@ -27,14 +27,8 @@ LakeBoatMan2:
 	checkevent EVENT_SAVED_SUNBEAM
 	iftrue .normal
 	writetext LakeBoatManText15
-	special PlaceMoneyTopRight
 	yesorno
 	iffalse .end
-	checkmoney $0, 500
-	if_equal $2, .noride
-	playsound SFX_TRANSACTION
-	takemoney $0, 500
-	special PlaceMoneyTopRight
 .doit
 	checkevent EVENT_LAKE_BOAT_LEFT
 	iftrue .skipcallingboat1
@@ -285,7 +279,7 @@ LakeBoatManText9:
 	done
 	
 LakeBoatManText10:
-	text  "Sorry kid."
+	text "Sorry kid."
 	
 	para "The boats aren't"
 	line "running to the"
@@ -339,11 +333,17 @@ LakeBoatManText15:
 	line "other side of the"
 	cont "lake?"
 	
-	para "Sure, I can do"
-	line "that!"
+	para "Sure."
 	
-	para "Would you like a"
-	line "ride for ¥500?"
+	para "I guess that's"
+	line "the least I can do"
+	cont "since I can't take"
+	cont "you to the island…"
+	
+	para "It's on the house,"
+	line "kid!"
+	
+	para "How 'bout it?"
 	done
 	
 Movement_LakeBoatManPhone1:

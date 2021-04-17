@@ -20,7 +20,7 @@ LakeOnwa_MapScriptHeader:
 	warp_def 17, 17, 1, LAKE_ONWA_POKECENTER
 	warp_def  3, 55, 3, ROUTE_8_GATE
 
-	db 56 ; coord events
+	db 57 ; coord events
 	coord_event 20, 18, 0, LakeMakeSilverBrown
 	coord_event 21, 18, 0, LakeMakeSilverBrown
 	coord_event 22, 18, 0, LakeMakeSilverBrown
@@ -77,6 +77,7 @@ LakeOnwa_MapScriptHeader:
 	coord_event 49, 19, 5, LakeMakeSilverBlue
 	coord_event 50, 19, 5, LakeMakeSilverBlue
 	coord_event 51, 19, 5, LakeMakeSilverBlue
+	coord_event 19, 18, 5, LakeMakeSilverBlue
 
 	db 6 ; bg events
 	signpost 25, 57, SIGNPOST_READ, LakeSign
@@ -88,10 +89,10 @@ LakeOnwa_MapScriptHeader:
 
 	db 16 ; object events
 	person_event SPRITE_GENERAL_VARIABLE_1, 0, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 39, 31, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 40, 31, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 39, 32, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
-	object_event 40, 32, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 39, 31, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
+	object_event 40, 31, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
+	object_event 39, 32, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
+	object_event 40, 32, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
 	person_event SPRITE_COOL_DUDE, 32, 46, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LakeNpc1, -1
 	person_event SPRITE_FISHER, 26, 10, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LakeNpc2, -1
 	person_event SPRITE_CUTE_GIRL, 12, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LakeNpc3, -1
@@ -150,8 +151,6 @@ LakeOnwaFlypointCallback:
 	return
 	
 LakeOnwaCallback:
-	clearevent EVENT_LAKE_ROCKS_BROWN
-	loadvar wTimeOfDayPalFlags, $40 | 0
 	checkevent EVENT_LAKE_BOAT_LEFT
 	iffalse .boatnotleft
 	moveperson LAKEBOATT1, 23, 25
@@ -475,7 +474,7 @@ LakeNameRaterSignText:
 	done
 
 LakeBoatText:
-	text "It's a rowboat."
+	text "It's a sailboat."
 	
 	para "It's seen some use,"
 	line "but it's still in"
@@ -491,15 +490,9 @@ JustRodeBoatText:
 LakeNpc1Text:
 	text "Unless you have a"
 	line "#MON that can"
-	cont "travel across"
-	cont "water,"
-	
-	para "you'll have to take"
-	line "a boat."
-	
-	para "It's not even free!"
-	
-	para "What a rip off…"
+	cont "travel across the"
+	cont "water, you'll have"
+	cont "to take a boat."
 	done
 
 LakeNpc2Text:

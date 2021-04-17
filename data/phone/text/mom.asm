@@ -52,14 +52,15 @@ MomPhoneGoToIsland1Text
 	line "get home from"
 	cont "where you are?"
 	
-	para "Cross LAKE ONWA and"
-	line "you should be at the"
-	cont "foot of MT. ONWA."
+	para "Cross LAKE ONWA"
+	line "and you should be"
+	cont "at the foot of"
+	cont "MT. ONWA."
 	
 	para "Pass through the"
-	line "mountain, and"
-	cont "you should come out"
-	cont "on ROUTE 2."
+	line "mountain, and you"
+	cont "should come out on"
+	cont "ROUTE 2."
 	
 	para "From there, you're"
 	line "almost home!"
@@ -80,14 +81,15 @@ MomPhoneGoToIsland2Text
 	para "Did you forget my"
 	line "directions?"
 	
-	para "Cross LAKE ONWA and"
-	line "you should be at the"
-	cont "foot of MT. ONWA."
+	para "Cross LAKE ONWA"
+	line "and you should be"
+	cont "at the foot of"
+	cont "MT. ONWA."
 	
 	para "Pass through the"
-	line "mountain, and"
-	cont "you should come out"
-	cont "on ROUTE 2."
+	line "mountain, and you"
+	cont "should come out on"
+	cont "ROUTE 2."
 	
 	para "From there, you're"
 	line "almost home!"

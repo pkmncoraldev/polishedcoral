@@ -325,6 +325,7 @@ GameConsole:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	end
 .turnoff
+;	callasm SlowTempoTest
 	writetext GameConsoleText_AskTurnOffKirby
 	yesorno
 	iffalse .no
@@ -341,6 +342,14 @@ GameConsole:
 	waitbutton
 	closetext
 	end
+	
+;SlowTempoTest:
+;	ld a, 200
+;	ld [wChannel1Tempo], a
+;	ld [wChannel2Tempo], a
+;	ld [wChannel3Tempo], a
+;	ld [wChannel4Tempo], a
+;	ret
 	
 GameConsoleSetMapMusic:
 	xor a

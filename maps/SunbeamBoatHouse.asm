@@ -106,17 +106,35 @@ SunbeamBoatHouseNPC:
 	end
 	
 .nomoneySunset
+	checkmoney $1, 500
+	if_equal $2, .nomoneySunset2
+	jump .nomoneynoride
+	
+.nomoneySunset2
 	writetext SunbeamBoatHouseNPCTextNoMoney
 	jump .SunsetCont
 	
 .nomoneyLakeL
+	checkmoney $1, 500
+	if_equal $2, .nomoneyLakeL2
+	
+.nomoneyLakeL2
 	writetext SunbeamBoatHouseNPCTextNoMoney
 	jump .LakeLCont
 	
 .nomoneyLakeR
+	checkmoney $1, 500
+	if_equal $2, .nomoneyLakeR2
+	
+.nomoneyLakeR2
 	writetext SunbeamBoatHouseNPCTextNoMoney
 	jump .LakeRCont
 	
+.nomoneynoride
+	writetext SunbeamBoatHouseNPCTextNoMoney2
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
 .end
 	writetext SunbeamBoatHouseNPCTextEnd
 	waitbutton
@@ -211,4 +229,10 @@ SunbeamBoatHouseNPCTextNoMoney:
 	
 	para "We'll head out"
 	line "soon."
+	done
+	
+SunbeamBoatHouseNPCTextNoMoney2:
+	text "You don't seem"
+	line "to have enough"
+	cont "money…"
 	done

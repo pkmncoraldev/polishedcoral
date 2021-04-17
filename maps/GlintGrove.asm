@@ -579,13 +579,14 @@ GlintGroveStanley:
 	writetext GlintGroveStanleyText1
 	waitbutton
 	closetext
+	pause 10
 	faceplayer
 	opentext
 	writetext GlintGroveStanleyText2
 	waitbutton
 	spriteface GLINTGROVE_STANLEY, DOWN
 	closetext
-	pause 30
+	pause 40
 	faceplayer
 	opentext
 	writetext GlintGroveStanleyText3

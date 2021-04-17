@@ -124,7 +124,8 @@ StarglowHouse4FishingGuruText3:
 	
 	para "If I didn't know"
 	line "any better, I'd say"
-	cont "that I caught it!"
+	cont "that I caught it"
+	cont "myself!"
 	
 	para "Anyway, here's that"
 	line "reward I promised."

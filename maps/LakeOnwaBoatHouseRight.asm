@@ -50,14 +50,9 @@ LakeBoatMan1:
 	end
 .talkedbeforeandcalled
 	writetext LakeBoatManText15
-	special PlaceMoneyTopRight
+;	special PlaceMoneyTopRight
 	yesorno
 	iffalse .end
-	checkmoney $0, 500
-	if_equal $2, .nomoney
-	playsound SFX_TRANSACTION
-	takemoney $0, 500
-	special PlaceMoneyTopRight
 .doit
 	checkevent EVENT_LAKE_BOAT_LEFT
 	iffalse .skipcallingboat1

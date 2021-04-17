@@ -1,7 +1,8 @@
 MtOnwa1F_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, MtOnwa1FCallback
 
 	db 3 ; warp events
 	warp_def 23, 19, 3, LAKE_ONWA
@@ -18,6 +19,10 @@ MtOnwa1F_MapScriptHeader:
 	person_event SPRITE_HIKER, 9, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 2, TrainerMtOnwa_3, -1
 	person_event SPRITE_JUGGLER, 3, 8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerMtOnwa_4, -1
 
+MtOnwa1FCallback:
+	setevent EVENT_LAKE_ROCKS_BROWN
+	return
+	
 TrainerMtOnwa_1:
 	generictrainer JUGGLER, ERNIE, EVENT_BEAT_MT_ONWA_1F_TRAINER_1, .SeenText, .BeatenText
 

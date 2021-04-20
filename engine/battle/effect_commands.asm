@@ -6286,68 +6286,30 @@ BattleCommand_tristatuschance: ; 3658f
 	dw BattleCommand_burntarget ; burn
 ; 365a7
 
-BattleCommand_burnflinchtarget: ; 3658f
+BattleCommand_burnflinchtarget:
 ; tristatuschance
-
-	call BattleCommand_effectchance
-
-; 1/3 chance of each status
-.loop
 	call BattleRandom
-	swap a
-	and %11
-	jr z, .loop
-; jump
-	dec a
-	ld hl, .ptrs
-	rst JumpTable
-	ret
-
-.ptrs
-	dw BattleCommand_flinchtarget ; flinch
-	dw BattleCommand_burntarget ; burn
+	cp 1 + (50 percent)
+	jr c, .burn
+	jp BattleCommand_flinchtarget
+.burn
+	jp BattleCommand_burntarget
 	
-BattleCommand_freezeflinchtarget: ; 3658f
-; tristatuschance
-
-	call BattleCommand_effectchance
-
-; 1/3 chance of each status
-.loop
+BattleCommand_freezeflinchtarget:
 	call BattleRandom
-	swap a
-	and %11
-	jr z, .loop
-; jump
-	dec a
-	ld hl, .ptrs
-	rst JumpTable
-	ret
-
-.ptrs
-	dw BattleCommand_flinchtarget ; flinch
-	dw BattleCommand_freezetarget ; freeze
+	cp 1 + (50 percent)
+	jr c, .burn
+	jp BattleCommand_flinchtarget
+.burn
+	jp BattleCommand_freezetarget
 	
-BattleCommand_paralyzeflinchtarget: ; 3658f
-; tristatuschance
-
-	call BattleCommand_effectchance
-
-; 1/3 chance of each status
-.loop
+BattleCommand_paralyzeflinchtarget:
 	call BattleRandom
-	swap a
-	and %11
-	jr z, .loop
-; jump
-	dec a
-	ld hl, .ptrs
-	rst JumpTable
-	ret
-
-.ptrs
-	dw BattleCommand_flinchtarget ; flinch
-	dw BattleCommand_paralyzetarget ; paralyze
+	cp 1 + (50 percent)
+	jr c, .burn
+	jp BattleCommand_flinchtarget
+.burn
+	jp BattleCommand_paralyzetarget
 
 
 BattleCommand_curl: ; 365a7

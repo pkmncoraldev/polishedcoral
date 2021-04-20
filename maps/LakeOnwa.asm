@@ -20,7 +20,7 @@ LakeOnwa_MapScriptHeader:
 	warp_def 17, 17, 1, LAKE_ONWA_POKECENTER
 	warp_def  3, 55, 3, ROUTE_8_GATE
 
-	db 57 ; coord events
+	db 59 ; coord events
 	coord_event 20, 18, 0, LakeMakeSilverBrown
 	coord_event 21, 18, 0, LakeMakeSilverBrown
 	coord_event 22, 18, 0, LakeMakeSilverBrown
@@ -78,6 +78,8 @@ LakeOnwa_MapScriptHeader:
 	coord_event 50, 19, 5, LakeMakeSilverBlue
 	coord_event 51, 19, 5, LakeMakeSilverBlue
 	coord_event 19, 18, 5, LakeMakeSilverBlue
+	coord_event 35,  8, 5, LakeRivalT
+	coord_event 35,  9, 5, LakeRivalB
 
 	db 6 ; bg events
 	signpost 25, 57, SIGNPOST_READ, LakeSign
@@ -87,7 +89,7 @@ LakeOnwa_MapScriptHeader:
 	signpost 17, 18, SIGNPOST_READ, LakeCenterSign
 	signpost 8, 30, SIGNPOST_READ, MtOnwaSign
 
-	db 16 ; object events
+	db 17 ; object events
 	person_event SPRITE_GENERAL_VARIABLE_1, 0, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 39, 31, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
 	object_event 40, 31, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
@@ -104,6 +106,7 @@ LakeOnwa_MapScriptHeader:
 	smashrock_event 23, 10
 	smashrock_event 26,  9
 	smashrock_event 27,  8
+	person_event SPRITE_COLBY,  7, 37, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LakeBoat, EVENT_BEAT_LAKE_RIVAL
 
 
 	const_def 1 ; object constants
@@ -123,6 +126,7 @@ LakeOnwa_MapScriptHeader:
 	const LAKEROCK1
 	const LAKEROCK2
 	const LAKEROCK3
+	const LAKERIVAL
 
 LakeOnwaTrigger0:
 	end
@@ -163,7 +167,12 @@ LakeOnwaCallback:
 	ifequal $3, .right
 	ifequal $2, .left
 	ifequal $4, .left
+	checkevent EVENT_LAKE_ROCKS_BROWN
+	iftrue .scene5
 	dotrigger $0
+	return
+.scene5
+	dotrigger $5
 	return
 .right
 	disappear LAKEBOATMANOUTSIDE
@@ -290,6 +299,214 @@ JustRodeBoatLakeStrandL:
 	dotrigger $0
 	end
 
+LakeRivalT:
+	checkevent EVENT_BEAT_LAKE_RIVAL
+	iftrue .end
+	special Special_StopRunning
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, LAKERIVAL, 15
+	spriteface LAKERIVAL, DOWN
+	pause 7
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	pause 10
+	applymovement LAKERIVAL, Movement_Lake_Rival_1
+	opentext
+	writetext LakeRivalText1
+	waitbutton
+	closetext
+	waitsfx
+	checkevent EVENT_GOT_TOTODILE_FROM_SPRUCE
+	iftrue .totodile
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_SPRUCE
+	iftrue .cyndaquil
+	checkevent EVENT_GOT_CHIKORITA_FROM_SPRUCE
+	iftrue .chikorita
+	checkevent EVENT_GOT_SQUIRTLE_FROM_SPRUCE
+	iftrue .squirtle
+	checkevent EVENT_GOT_CHARMANDER_FROM_SPRUCE
+	iftrue .charmander
+	checkevent EVENT_GOT_BULBASAUR_FROM_SPRUCE
+	iftrue .bulbasaur
+.totodile
+	winlosstext LakeRivalWinText, LakeRivalLoseText
+	setlasttalked LAKERIVAL
+	loadtrainer RIVAL, RIVAL3_6
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+	
+.chikorita
+	winlosstext LakeRivalWinText, LakeRivalLoseText
+	setlasttalked LAKERIVAL
+	loadtrainer RIVAL, RIVAL3_5
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+	
+.cyndaquil
+	winlosstext LakeRivalWinText, LakeRivalLoseText
+	setlasttalked LAKERIVAL
+	loadtrainer RIVAL, RIVAL3_4
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+	
+.squirtle
+	winlosstext LakeRivalWinText, LakeRivalLoseText
+	setlasttalked LAKERIVAL
+	loadtrainer RIVAL, RIVAL3_3
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+	
+.bulbasaur
+	winlosstext LakeRivalWinText, LakeRivalLoseText
+	setlasttalked LAKERIVAL
+	loadtrainer RIVAL, RIVAL3_2
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+
+.charmander
+	winlosstext LakeRivalWinText, LakeRivalLoseText
+	setlasttalked LAKERIVAL
+	loadtrainer RIVAL, RIVAL3_1
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	
+.afterbattle
+	playmusic MUSIC_RIVAL_AFTER
+	opentext
+	writetext LakeRivalText2
+	waitbutton
+	closetext
+	applyonemovement PLAYER, step_down
+	spriteface PLAYER, UP
+	applymovement LAKERIVAL, Movement_LakeRivalWalkAway
+	disappear LAKERIVAL
+	special Special_FadeOutMusic
+	pause 15
+	playmusic MUSIC_ROUTE_4
+	setevent EVENT_BEAT_LAKE_RIVAL
+.end
+	end
+	
+LakeRivalB:
+	checkevent EVENT_BEAT_LAKE_RIVAL
+	iftrue .end
+	special Special_StopRunning
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, LAKERIVAL, 15
+	spriteface LAKERIVAL, DOWN
+	pause 7
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	pause 10
+	applymovement LAKERIVAL, Movement_Lake_Rival_2
+	opentext
+	writetext LakeRivalText1
+	waitbutton
+	closetext
+	waitsfx
+	checkevent EVENT_GOT_TOTODILE_FROM_SPRUCE
+	iftrue .totodile
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_SPRUCE
+	iftrue .cyndaquil
+	checkevent EVENT_GOT_CHIKORITA_FROM_SPRUCE
+	iftrue .chikorita
+	checkevent EVENT_GOT_SQUIRTLE_FROM_SPRUCE
+	iftrue .squirtle
+	checkevent EVENT_GOT_CHARMANDER_FROM_SPRUCE
+	iftrue .charmander
+	checkevent EVENT_GOT_BULBASAUR_FROM_SPRUCE
+	iftrue .bulbasaur
+.totodile
+	winlosstext LakeRivalWinText, LakeRivalLoseText
+	setlasttalked LAKERIVAL
+	loadtrainer RIVAL, RIVAL3_6
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+	
+.chikorita
+	winlosstext LakeRivalWinText, LakeRivalLoseText
+	setlasttalked LAKERIVAL
+	loadtrainer RIVAL, RIVAL3_5
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+	
+.cyndaquil
+	winlosstext LakeRivalWinText, LakeRivalLoseText
+	setlasttalked LAKERIVAL
+	loadtrainer RIVAL, RIVAL3_4
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+	
+.squirtle
+	winlosstext LakeRivalWinText, LakeRivalLoseText
+	setlasttalked LAKERIVAL
+	loadtrainer RIVAL, RIVAL3_3
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+	
+.bulbasaur
+	winlosstext LakeRivalWinText, LakeRivalLoseText
+	setlasttalked LAKERIVAL
+	loadtrainer RIVAL, RIVAL3_2
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+
+.charmander
+	winlosstext LakeRivalWinText, LakeRivalLoseText
+	setlasttalked LAKERIVAL
+	loadtrainer RIVAL, RIVAL3_1
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	
+.afterbattle
+	playmusic MUSIC_RIVAL_AFTER
+	opentext
+	writetext LakeRivalText2
+	waitbutton
+	closetext
+	applyonemovement PLAYER, step_up
+	spriteface PLAYER, DOWN
+	applymovement LAKERIVAL, Movement_LakeRivalWalkAway
+	disappear LAKERIVAL
+	special Special_FadeOutMusic
+	pause 15
+	playmusic MUSIC_ROUTE_4
+	setevent EVENT_BEAT_LAKE_RIVAL
+.end
+	end
+	
 MtOnwaSign:
 	jumptext MtOnwaSignText
 
@@ -606,6 +823,22 @@ LakeSudowoodoTextSudowoodoGone:
 	cont "the path!"
 	done
 
+LakeRivalText1:
+	text "TEXT 1"
+	done
+	
+LakeRivalText2:
+	text "TEXT 2"
+	done
+	
+LakeRivalWinText:
+	text "WIN TEXT"
+	done
+	
+LakeRivalLoseText:
+	text "LOSE TEXT"
+	done
+	
 Movement_JustRodeBoatR:
 	step_right
 	step_right
@@ -630,4 +863,25 @@ SudowoodoShakeMovement:
 WeirdTreeMovement_Flee:
 	fast_jump_step_up
 	fast_jump_step_up
+	step_end
+	
+Movement_Lake_Rival_1:
+	step_down
+	step_left
+	step_end
+	
+Movement_Lake_Rival_2:
+	step_down
+	step_down
+	step_left
+	step_end
+	
+Movement_LakeRivalWalkAway:
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_down
+	step_left
 	step_end

@@ -391,6 +391,72 @@ RivalGroup:
 	db -1 ; end
 
 ; ================
+
+	; RIVAL (3-1)
+	db "<RIVAL>@"
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
+	; party
+	db 19, SNUBBULL, $99, $99, $99, ABILITY_2 | HARDY, FEMALE
+	db 20, SCYTHER, $66, $66, $66, ABILITY_1 | HARDY, MALE
+	db 22, CROCONAW, $66, $66, $66, ABILITY_1 | HARDY, MALE
+	db -1 ; end
+
+; ================
+
+	; RIVAL (3-2)
+	db "<RIVAL>@"
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
+	; party
+	db 19, SNUBBULL, $99, $99, $99, ABILITY_2 | HARDY, FEMALE
+	db 20, SCYTHER, $66, $66, $66, ABILITY_1 | HARDY, MALE
+	db 22, QUILAVA, $66, $66, $66, ABILITY_1 | HARDY, MALE
+	db -1 ; end
+
+; ================
+
+	; RIVAL (3-3)
+	db "<RIVAL>@"
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
+	; party
+	db 19, SNUBBULL, $99, $99, $99, ABILITY_2 | HARDY, FEMALE
+	db 20, SCYTHER, $66, $66, $66, ABILITY_1 | HARDY, MALE
+	db 22, BAYLEEF, $66, $66, $66, ABILITY_1 | HARDY, MALE
+	db -1 ; end
+
+; ================
+
+	; RIVAL (3-4)
+	db "<RIVAL>@"
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
+	; party
+	db 19, SNUBBULL, $99, $99, $99, ABILITY_2 | HARDY, FEMALE
+	db 20, SCYTHER, $66, $66, $66, ABILITY_1 | HARDY, MALE
+	db 22, WARTORTLE, $66, $66, $66, ABILITY_1 | HARDY, MALE
+	db -1 ; end
+
+; ================
+
+	; RIVAL (3-5)
+	db "<RIVAL>@"
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
+	; party
+	db 19, SNUBBULL, $99, $99, $99, ABILITY_2 | HARDY, FEMALE
+	db 20, SCYTHER, $66, $66, $66, ABILITY_1 | HARDY, MALE
+	db 22, CHARMELEON, $66, $66, $66, ABILITY_1 | HARDY, MALE
+	db -1 ; end
+
+; ================
+
+	; RIVAL (3-6)
+	db "<RIVAL>@"
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
+	; party
+	db 19, SNUBBULL, $99, $99, $99, ABILITY_2 | HARDY, FEMALE
+	db 20, SCYTHER, $66, $66, $66, ABILITY_1 | HARDY, MALE
+	db 22, IVYSAUR, $66, $66, $66, ABILITY_1 | HARDY, MALE
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -1352,9 +1418,9 @@ HikerGroup:
 	db "STEVEN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 18, GEODUDE
-	db 19, GEODUDE
-	db 19, ONIX
+	db 14, GEODUDE
+	db 15, GEODUDE
+	db 14, ONIX
 	db -1 ; end
 
 ; ================
@@ -1853,9 +1919,9 @@ LassGroup:
 	db "SARAH@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 17, SNUBBULL
-	db 18, MEOWTH
-	db 19, PSYDUCK
+	db 15, SNUBBULL
+	db 15, MEOWTH
+	db 15, PSYDUCK
 	db -1 ; end
 
 ; ================
@@ -2238,8 +2304,8 @@ GentlemanGroup:
 	db "DURWOOD@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 17, GROWLITHE
-	db 16, SWABLU
+	db 16, GROWLITHE
+	db 15, SWABLU
 	db -1 ; end
 
 ; ================

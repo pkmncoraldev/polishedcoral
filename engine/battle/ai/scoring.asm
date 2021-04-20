@@ -395,8 +395,26 @@ AI_Smart: ; 386be
 	dbw EFFECT_THUNDER,           AI_Smart_Thunder
 	dbw EFFECT_FLY,               AI_Smart_Fly
 	dbw EFFECT_ROOST,             AI_Smart_Roost
+	dbw EFFECT_FALSE_SWIPE,		  AI_Smart_FalseSwipe
+	dbw EFFECT_FOCUS_ENERGY,	  AI_Smart_FocusEnergy
 	db $ff
 ; 387e3
+
+AI_Smart_FocusEnergy:
+	call AICheckEnemyQuarterHP
+	ret c
+	ld a, [hl]
+	add $20
+	ld [hl], a
+	ret
+
+AI_Smart_FalseSwipe:
+	call AICheckPlayerQuarterHP
+	ret c
+	ld a, [hl]
+	add $20
+	ld [hl], a
+	ret
 
 AI_Smart_Conversion:
 	ld b, EFFECT_CONVERSION

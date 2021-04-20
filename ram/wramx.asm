@@ -1409,7 +1409,9 @@ wColorVaryShiny:: ds 1
 wPalFadeDelayFrames:: ds 1
 wPalFadeDelay:: ds 1
 
-	ds 99 ; unused
+	ds 98 ; unused
+	
+wMusicID2:: ds 1
 	
 wMusicPlayerMusic:: ds 1
 

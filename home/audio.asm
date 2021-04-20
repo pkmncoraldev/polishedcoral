@@ -400,6 +400,30 @@ FadeToMapMusic:: ; 3cbc
 	ret
 ; 3cdf
 
+FadeToMapMusic2:: ; 3cbc
+	push hl
+	push de
+	push bc
+	push af
+
+	call GetMapMusic
+	
+	ld a, 8
+	ld [wMusicFade], a
+	ld a, e
+	ld [wMusicFadeIDLo], a
+	ld a, d
+	ld [wMusicFadeIDHi], a
+	ld a, e
+	ld [wMapMusic], a
+
+.done
+	pop af
+	pop bc
+	pop de
+	pop hl
+	ret
+
 PlayMapMusic:: ; 3cdf
 	push hl
 	push de

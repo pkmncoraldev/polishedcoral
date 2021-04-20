@@ -2006,8 +2006,6 @@ GetMapHeaderMusic:: ; 2cbd
 	jr z, .jungle
 	cp MUSIC_TRAIN_RIDE
 	jr z, .train
-	cp MUSIC_TWINKLE_TOWN
-	jr z, .twinkle
 	call Function8b342
 	ld e, c
 	ld d, 0
@@ -2047,17 +2045,6 @@ GetMapHeaderMusic:: ; 2cbd
 
 .clearedtrain
 	ld de, MUSIC_TRAIN
-	jr .done
-
-.twinkle
-	ld a, [wTimeOfDay]
-	cp NITE
-	jp z, .twinklenite
-	ld de, MUSIC_TWINKLE_TOWN_DAY
-	jr .done
-
-.twinklenite
-	ld de, MUSIC_TWINKLE_TOWN_NITE
 	jr .done
 
 Function8b342: ; 8b342

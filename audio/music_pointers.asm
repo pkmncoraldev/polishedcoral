@@ -37,8 +37,7 @@ Music:
 	dba Music_Route10
 	dba Music_LusterCity
 	dba Music_LusterSewer
-	dba Music_TwinkleTownDay
-	dba Music_TwinkleTownNite
+	dba Music_TwinkleTown
 	dba Music_Lava
 	dba Music_SunbeamIsland
 	dba Music_Eventide

@@ -2339,6 +2339,13 @@ SetLRTracks: ; e8b1b
 _PlayMusic:: ; e8b30
 ; load music
 	call MusicOff
+	push af
+	push de
+	ld a, e
+	ld [wMusicID2], a
+	call NiteTempo
+	pop de
+	pop af
 	ld hl, wMusicID
 	ld [hl], e ; song number
 	inc hl
@@ -2377,6 +2384,32 @@ _PlayMusic:: ; e8b30
 	jp MusicOn
 
 ; e8b79
+
+NiteTempo:
+	ld a, [wMusicID2]
+	ld hl, NiteMusic
+	ld de, 1
+	call IsInArray
+	jr nc, .not_nite_music
+	ld a, [wTimeOfDay]
+	cp NITE
+	jp nz, .not_nite_music
+	
+	ld a, [wMusicID2]
+	ld hl, NiteMusic
+	ld de, 3
+	call IsInArray
+	jr nc, .not_nite_music
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld [wTempoAdjustment], a
+	ret
+.not_nite_music
+	xor a
+	ld [wTempoAdjustment], a
+	ret
 
 _PlayCryHeader:: ; e8b79
 ; Play cry de using parameters:
@@ -2907,3 +2940,5 @@ PlayTrainerEncounterMusic:: ; e900a
 	ld e, [hl]
 	jp PlayMusic
 ; e9027
+
+INCLUDE "audio/nite_music.asm"

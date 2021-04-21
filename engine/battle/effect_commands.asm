@@ -8552,16 +8552,21 @@ BattleCommand_checksafeguard: ; 37972
 
 
 BattleCommand_fakeout: ; 37683
-	ld a, BATTLE_VARS_SUBSTATUS2
-	call GetBattleVarAddr
-	bit SUBSTATUS_FAKE_OUT, [hl]
+	ld a, [hBattleTurn]
+	and a
+	jr z, .PlayerTurn
+	ld a, [wEnemyTurnsTaken]
+	dec a
 	jr nz, .failed
+	jr .cont
+.PlayerTurn
+	ld a, [wPlayerTurnsTaken]
+	dec a
+	jr nz, .failed
+.cont
 	call CheckIfTargetIsGhostType
 	jr z, .failed
-
 	jp FlinchTarget
-	
-
 .failed
 	ld a, 1
 	ld [wAttackMissed], a
@@ -8569,13 +8574,6 @@ BattleCommand_fakeout: ; 37683
 	ld hl, ButItFailedText
 	call StdBattleTextBox
 	jp EndMoveEffect
-	
-	
-BattleCommand_cantusefakeout: ; 37683
-	ld a, BATTLE_VARS_SUBSTATUS2
-	call GetBattleVarAddr
-	set SUBSTATUS_FAKE_OUT, [hl]
-	ret
 
 
 BattleCommand_getmagnitude: ; 37991

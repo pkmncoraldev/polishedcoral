@@ -184,17 +184,16 @@ BattleCommandPointers:
 	command brickbreak              ; ad
 	command toxicspikes             ; ae
 	command fakeout					; af - coral
-	command cantusefakeout			; b0 - coral
-	command lockon					; b1 - coral
-	command burnflinchtarget		; b2 - coral
-	command freezeflinchtarget		; b3 - coral
-	command paralyzeflinchtarget	; b4 - coral
-	command shellsmash				; b5 - coral
-	command quiverdance				; b6 - coral
-	command mirrormove				; b7 - coral
-	command toxictarget				; b8 - coral
-	command mimic					; b9 - coral
-	command electroball				; ba - coral
+	command lockon					; b0 - coral
+	command burnflinchtarget		; b1 - coral
+	command freezeflinchtarget		; b2 - coral
+	command paralyzeflinchtarget	; b3 - coral
+	command shellsmash				; b4 - coral
+	command quiverdance				; b5 - coral
+	command mirrormove				; b6 - coral
+	command toxictarget				; b7 - coral
+	command mimic					; b8 - coral
+	command electroball				; b9 - coral
 	command lowkick
 	command cosmicpower
 	

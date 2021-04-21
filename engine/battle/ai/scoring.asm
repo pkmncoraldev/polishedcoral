@@ -438,8 +438,8 @@ AI_Smart_FakeOut:
 	call AIHasMoveEffect
 	ret nc
 	
-	ld a, [wEnemySubStatus2]
-	bit SUBSTATUS_FAKE_OUT, a
+	ld a, [wEnemyTurnsTaken]
+	dec a
 	ret nz
 	
 	ld a, [hl]

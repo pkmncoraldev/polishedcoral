@@ -5109,10 +5109,6 @@ BattleMenu_SafariBall:
 ; 3e234
 
 .UseItem: ; 3e234
-
-	ld hl, wPlayerSubStatus2
-	set SUBSTATUS_FAKE_OUT, [hl]
-
 	ld a, [wWildMon]
 	and a
 	jr nz, .run
@@ -5410,8 +5406,6 @@ EnemyMonEntrance:
 	ld a, $1
 	ld [wEnemyIsSwitching], a
 	ld [wEnemyGoesFirst], a
-	ld hl, wEnemySubStatus2
-	res SUBSTATUS_FAKE_OUT, [hl]
 	ld hl, wEnemySubStatus4
 	res SUBSTATUS_RAGE, [hl]
 	xor a
@@ -5463,9 +5457,6 @@ BattleMonEntrance: ; 3e40b
 
 	ld c, 50
 	call DelayFrames
-
-	ld hl, wPlayerSubStatus2
-	res SUBSTATUS_FAKE_OUT, [hl]
 	
 	ld hl, wPlayerSubStatus4
 	res SUBSTATUS_RAGE, [hl]
@@ -5698,10 +5689,6 @@ CheckRunSpeed:
 	jr .print_inescapable_text
 
 .cant_escape
-
-	ld hl, wPlayerSubStatus2
-	set SUBSTATUS_FAKE_OUT, [hl]
-
 	ld hl, BattleText_CantEscape
 	jr .print_inescapable_text
 

@@ -100,8 +100,8 @@ AI_Redundant: ; 2c41a
 	ret
 	
 .FakeOut:
-	ld a, [wEnemySubStatus2]
-	bit SUBSTATUS_FAKE_OUT, a
+	ld a, [wEnemyTurnsTaken]
+	dec a
 	ret
 
 .Reflect:

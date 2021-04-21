@@ -34,7 +34,7 @@ Route6_MapScriptHeader:
 	person_event SPRITE_GENTLEMAN, 6, 15, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_7, -1
 	person_event SPRITE_BATTLE_GIRL,  8, 62, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route6Lass3, -1
 	person_event SPRITE_FAT_GUY, 6, 23, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route6Fisher, -1
-	tmhmball_event  19, 2, TM_ICE_PUNCH, 1, EVENT_ROUTE_6_POKE_BALL_ICE_PUNCH
+	tmhmball_event  19, 2, TM_ICE_PUNCH, EVENT_ROUTE_6_POKE_BALL_ICE_PUNCH
 	itemball_event 47, 15, REVIVE, 1, EVENT_ROUTE_6_POKE_BALL_REVIVE
 	
 	const_def 1 ; object constants

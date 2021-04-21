@@ -1,21 +1,21 @@
-	db  45,  49,  49,  45,  65,  65
+	db  75,  70,  90,  80,  70, 105
 	;   hp  atk  def  spd  sat  sdf
 
-	db GRASS, POISON
+	db DRAGON, FLYING
 	db 45 ; catch rate
-	db 64 ; base exp
-	db NO_ITEM ; item 1
-	db NO_ITEM ; item 2
-	dn FEMALE_12_5, 3 ; gender, step cycles to hatch
+	db 188 ; base exp
+	db DRAGON_FANG ; item 1
+	db DRAGON_FANG ; item 2
+	dn FEMALE_50_50, 3 ; gender, step cycles to hatch
 	dn 5, 5 ; frontpic dimensions
-	db OVERGROW ; ability 1
-	db OVERGROW ; ability 2
-	db CHLOROPHYLL ; hidden ability
-	db MEDIUM_SLOW ; growth rate
-	dn MONSTER, PLANT ; egg groups
+	db NATURAL_CURE ; ability 1
+	db NATURAL_CURE ; ability 2
+	db CLOUD_NINE ; hidden ability
+	db FAST ; growth rate
+	dn AVIAN, REPTILE ; egg groups
 
 	; ev_yield
-	ev_yield   0,   0,   0,   0,   1,   0
+	ev_yield   0,   0,   0,   0,   0,   2
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm

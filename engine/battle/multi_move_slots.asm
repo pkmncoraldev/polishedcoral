@@ -1444,6 +1444,7 @@ CheckTransformUsers2::
 	
 CheckMultiMoveSlot::
 	ld a, [wCurMove]
+CheckMultiMoveSlot2::
 	ld hl, MultiSlotMoves
 	ld de, 1
 	call IsInArray
@@ -1451,6 +1452,7 @@ CheckMultiMoveSlot::
 	
 GetMultiMoveSlotName::
 	ld a, [wCurMove]
+GetMultiMoveSlotName2::
 	cp TACKLE_SCRATCH_POUND
 	jr z, .tackle
 	cp DEFENSE_CURL_HARDEN_WITHDRAW

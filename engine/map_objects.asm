@@ -1762,7 +1762,7 @@ PlayerOrNPCTurnStep:
 	ld [hl], 4
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
-	call .GetTurningSpeed
+	ld a, TURNING_SPEED
 	ld [hl], a
 	call IncrementObjectStructField28
 .step1
@@ -1780,7 +1780,7 @@ PlayerOrNPCTurnStep:
 	ld [hl], a
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
-	call .GetTurningSpeed
+	ld a, TURNING_SPEED
 	ld [hl], a
 	call IncrementObjectStructField28
 .step2
@@ -1791,14 +1791,6 @@ PlayerOrNPCTurnStep:
 	ld hl, OBJECT_STEP_TYPE
 	add hl, bc
 	ld [hl], STEP_TYPE_SLEEP
-	ret
-
-.GetTurningSpeed:
-	ld a, [wOptions1]
-	bit TURNING_SPEED, a
-	ld a, 4
-	ret z
-	ld a, 2
 	ret
 
 StepType0f: ; 4ecd

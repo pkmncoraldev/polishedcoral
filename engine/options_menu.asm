@@ -76,6 +76,8 @@ StringOptions1: ; e4241
 	db "        :<LNBRK>"
 	db "FRAME<LNBRK>"
 	db "        :TYPE<LNBRK>"
+	db "DEBUG MODE<LNBRK>"
+	db "        :<LNBRK>"
 	db "SOUND TEST<LNBRK>"
 	db "<LNBRK>"
 	db "DONE@"
@@ -106,6 +108,7 @@ GetOptionPointer: ; e42d6
 	dw Options_BattleEffects
 	dw Options_BattleStyle
 	dw Options_Frame
+	dw Options_DebugMode
 	dw Options_MusicPlayer
 	dw Options_Done
 ; e42f5
@@ -310,6 +313,36 @@ Options_Done: ; e4520
 	scf
 	ret
 ; e452a
+
+
+Options_DebugMode: ; e4365
+	ld hl, wOptions1
+	ld a, [hJoyPressed]
+	and D_LEFT | D_RIGHT
+	jr nz, .Toggle
+	bit DEBUG_MODE, [hl]
+	jr z, .SetOff
+	jr .SetOn
+.Toggle
+	bit DEBUG_MODE, [hl]
+	jr z, .SetOn
+.SetOff:
+	res DEBUG_MODE, [hl]
+	ld de, .Off
+	jr .Display
+.SetOn:
+	set DEBUG_MODE, [hl]
+	ld de, .On
+.Display:
+	hlcoord 11, 11
+	call PlaceString
+	and a
+	ret
+
+.Off:
+	db "OFF@"
+.On:
+	db "ON @"
 
 OptionsControl: ; e452a
 	ld hl, wJumptableIndex

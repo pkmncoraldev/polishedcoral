@@ -74,9 +74,7 @@ AIChooseMove: ; 440ce
 	ld a, c
 	cp 16 ; up to 16 scoring layers
 	
-;	jr z, .DebugAndDecrement
-	
-	jr z, .DecrementScores
+	jr z, .CheckDebugMode
 
 	push bc
 	ld d, BANK(TrainerClassAttributes)
@@ -92,8 +90,12 @@ AIChooseMove: ; 440ce
 	and a
 	jr z, .CheckLayer
 
-;	call AIDebug
+	ld a, [wOptions1]
+	bit DEBUG_MODE, a
+	jr z, .skip
+	call AIDebug
 	
+.skip
 	ld hl, AIScoringPointers
 	dec c
 	ld b, 0
@@ -107,8 +109,11 @@ AIChooseMove: ; 440ce
 
 	jr .CheckLayer
 
-;.DebugAndDecrement:
-;	call AIDebug
+.CheckDebugMode:
+	ld a, [wOptions1]
+	bit DEBUG_MODE, a
+	jr z, .DecrementScores
+	call AIDebug
 	
 ; Decrement the scores of all moves one by one until one reaches 0.
 .DecrementScores:
@@ -249,12 +254,20 @@ AIDebug:
 	jr z, .get_score
 	ld [wNamedObjectIndexBuffer], a
 	push hl
-	call GetMoveName
+	push de
+	farcall CheckMultiMoveSlot2
+	jr nc, .not_multi_move_slot
+	pop de
 	pop hl
-	push hl
+	farcall GetMultiMoveSlotName2
+	jr .done
+.not_multi_move_slot
+	pop de
+	pop hl
+	call GetMoveName
+.done
 	ld de, wStringBuffer1
 	call PlaceString
-	pop hl
 .get_score
 	ld bc, MOVE_NAME_LENGTH
 	add hl, bc

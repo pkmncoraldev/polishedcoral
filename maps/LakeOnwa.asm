@@ -824,19 +824,70 @@ LakeSudowoodoTextSudowoodoGone:
 	done
 
 LakeRivalText1:
-	text "TEXT 1"
+	text "<PLAYER>?"
+	
+	para "What are you doing"
+	line "here?"
+	
+	para "You're kidding me…"
+	
+	para "You're actually"
+	line "still training"
+	cont "your #MON?"
+	
+	para "Give it a rest!"
+	
+	para "A whimp like you"
+	line "will never get"
+	cont "ahead!"
+	
+	para "Last time was a"
+	line "fluke, you know!"
+	
+	para "I'll prove how much"
+	line "better I am than"
+	cont "you!"	
 	done
 	
 LakeRivalText2:
-	text "TEXT 2"
+	text "What is going on!?"
+	
+	para "This has to be a"
+	line "joke!"
+	
+	para "I KNOW I'm stronger"
+	line "than you!"
+	
+	para "…"
+	
+	para "It's…"
+
+	para "It's these stupid"
+	line "#MON!"
+	
+	para "It has to be!"
+	
+	para "They aren't trying"
+	line "hard enough!"
+	
+	para "Well that's gonna"
+	line "change."
+	
+	para "This wont happen"
+	line "next time,"
+	cont "<PLAYER>!"
+	
+	para "Now, step aside!"
 	done
 	
 LakeRivalWinText:
-	text "WIN TEXT"
+	text "Not again!"
 	done
 	
 LakeRivalLoseText:
-	text "LOSE TEXT"
+	text "Hmph!"
+	
+	para "Too easy."
 	done
 	
 Movement_JustRodeBoatR:

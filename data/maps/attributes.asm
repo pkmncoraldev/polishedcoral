@@ -136,10 +136,10 @@ ENDM
 	map_attributes Route5, ROUTE_5, $fb, NORTH
 	connection north, Route4, ROUTE_4, 3
 	
-	map_attributes Route6, ROUTE_6, $0f, NORTH
+	map_attributes Route6, ROUTE_6, $30, NORTH
 	connection north, Route7, ROUTE_7, -1
 	
-	map_attributes Route7, ROUTE_7, $0f, SOUTH | WEST
+	map_attributes Route7, ROUTE_7, $30, SOUTH | WEST
 	connection south, Route6, ROUTE_6, 1
 	connection west, LakeOnwa, LAKE_ONWA, -11
 	
@@ -169,7 +169,7 @@ ENDM
 	map_attributes FlickerPassOutside, FLICKER_PASS_OUTSIDE, 113, SOUTH
 	connection south, FlickerStation, FLICKER_STATION, -21
 	
-	map_attributes LakeOnwa, LAKE_ONWA, 7, NORTH | EAST
+	map_attributes LakeOnwa, LAKE_ONWA, $30, NORTH | EAST
 	connection north, Route8, ROUTE_8, 5
 	connection east, Route7, ROUTE_7, 11
 	

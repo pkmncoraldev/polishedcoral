@@ -42,7 +42,7 @@ TrainerMtOnwa2_1:
 	done
 
 TrainerMtOnwa2_2:
-	generictrainer HIKER, TED, EVENT_BEAT_MT_ONWA_2F_TRAINER_2, .SeenText, .BeatenText
+	generictrainer HIKER, LEROY, EVENT_BEAT_MT_ONWA_2F_TRAINER_2, .SeenText, .BeatenText
 
 	text "My LARVITAR can"
 	line "eat rocks, so it"

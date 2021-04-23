@@ -187,14 +187,14 @@ LakeOnwaCallback:
 	
 LakeMakeSilverBrown:
 	setevent EVENT_LAKE_ROCKS_BROWN
-	loadvar wTimeOfDayPalFlags, $40 | 1
+;	loadvar wTimeOfDayPalFlags, $40 | 1
 	special Special_UpdatePalsInstant
 	dotrigger $5
 	end
 	
 LakeMakeSilverBlue:
 	clearevent EVENT_LAKE_ROCKS_BROWN
-	loadvar wTimeOfDayPalFlags, $40 | 0
+;	loadvar wTimeOfDayPalFlags, $40 | 0
 	special Special_UpdatePalsInstant
 	dotrigger $0
 	end

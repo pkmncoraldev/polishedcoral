@@ -1445,10 +1445,12 @@ HikerGroup:
 
 	; HIKER
 	db "GILL@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
 	db 20, NUMEL
-	db 18, CORSOLA
+		db AMNESIA, FIRE_SPIN, MAGNITUDE, FOCUS_ENERGY
+	db 17, CORSOLA
+		db TACKLE_SCRATCH_POUND, DEFENSE_CURL_HARDEN_WITHDRAW, WATER_GUN, RECOVER
 	db -1 ; end
 
 ; ================
@@ -1468,9 +1470,9 @@ HikerGroup:
 	db "TED@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 21, KOFFING
-	db 21, GEODUDE
-	db 21, ZUBAT
+	db 19, KOFFING
+	db 20, GEODUDE
+	db 20, ZUBAT
 	db -1 ; end
 
 ; ================
@@ -2073,9 +2075,9 @@ JugglerGroup:
 	db "ERNIE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 20, SWABLU
+	db 19, SWABLU
 	db 22, ABRA
-	db 18, KADABRA
+	db 16, KADABRA
 	db -1 ; end
 
 ; ================
@@ -2084,8 +2086,8 @@ JugglerGroup:
 	db "WILLY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 19, NATU
-	db 20, MEDITITE
+	db 18, NATU
+	db 18, MEDITITE
 	db -1 ; end
 
 ; ================
@@ -2095,7 +2097,7 @@ JugglerGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 20, KOFFING
-	db 19, KADABRA
+	db 16, KADABRA
 	db -1 ; end
 
 ; ================
@@ -2670,7 +2672,7 @@ CooltrainerMGroup:
 	db "CODY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 23, PONYTA
+	db 21, PONYTA
 	db -1 ; end
 
 ; ================

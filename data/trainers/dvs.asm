@@ -71,11 +71,11 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE   ; pokemaniac
 	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE   ; super nerd
 	db  24, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE ; lass
-	db  48, $CC, $CC, $CC, ABILITY_1 | QUIRKY, FEMALE ; beauty
-	db  48, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; firebreather
-	db  48, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; juggler
-	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; schoolboy
-	db  48, $CC, $CC, $CC, ABILITY_1 | QUIRKY, FEMALE ; schoolgirl
+	db  24, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE ; beauty
+	db  24, $55, $55, $55, ABILITY_1 | QUIRKY, MALE   ; firebreather
+	db  24, $55, $55, $55, ABILITY_1 | QUIRKY, MALE   ; juggler
+	db  24, $55, $55, $55, ABILITY_1 | QUIRKY, MALE   ; schoolboy
+	db  24, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE ; schoolgirl
 	db  48, $AA, $CC, $EE, ABILITY_1 | QUIRKY, MALE   ; psychic
 	db  48, $AA, $CC, $EE, ABILITY_1 | QUIRKY, FEMALE ; hex maniac
 	db  48, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; couple

@@ -2143,6 +2143,7 @@ IronDefenseUsers:
 	db FORRETRESS
 	db SCYTHER
 	db SCIZOR
+	db CORSOLA
 	db -1
 	
 AcidArmorUsers:
@@ -2172,6 +2173,21 @@ FuryAttackUsers:
 CometPunchUsers:
 	db LEDYBA
 	db LEDIAN
+	db -1
+	
+SpikeCannonUsers:
+	db CORSOLA
+	db -1
+	
+DoubleSlapUsers:
+	db CLEFAIRY
+	db CLEFABLE
+	db JIGGLYPUFF
+	db WIGGLYTUFF
+	db POLIWAG
+	db POLIWHIRL
+	db POLIWRATH
+	db POLITOED
 	db -1
 	
 MoonlightUsers:
@@ -2241,8 +2257,9 @@ OdorSleuthUsers:
 	db -1
 	
 MiracleEyeUsers:
-	db SMEARGLE
-	db WIGGLYTUFF
+	db ABRA
+	db KADABRA
+	db ALAKAZAM
 	db -1
 	
 RockPolishUsers:
@@ -2269,6 +2286,7 @@ GrowthUsers:
 	
 HealBellUsers:
 	db MILTANK
+	db CORSOLA
 	db -1
 	
 TransformUsers:

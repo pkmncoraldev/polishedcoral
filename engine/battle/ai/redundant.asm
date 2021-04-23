@@ -101,8 +101,9 @@ AI_Redundant: ; 2c41a
 	
 .FakeOut:
 	ld a, [wEnemyTurnsTaken]
-	dec a
-	ret
+	cp 0
+	jr nz, .Redundant
+	jr .NotRedundant
 
 .Reflect:
 	ld a, [wEnemyScreens]

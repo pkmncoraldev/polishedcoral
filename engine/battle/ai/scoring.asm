@@ -434,19 +434,22 @@ AI_Smart_Conversion:
 
 
 AI_Smart_FakeOut:
-	ld b, EFFECT_FAKE_OUT
-	call AIHasMoveEffect
-	ret nc
-	
 	ld a, [wEnemyTurnsTaken]
-	dec a
-	ret nz
+	cp 0
+	jr nz, .dont
+	
+	call CheckIfTargetIsGhostType
+	jr z, .dont
 	
 	ld a, [hl]
 	sub $5
 	ld [hl], a
 	ret
-
+.dont
+	ld a, [hl]
+	add $20
+	ld [hl], a
+	ret
 
 AI_Smart_Sleep: ; 387e3
 ; Greatly encourage sleep inducing moves if the enemy has Dream Eater.

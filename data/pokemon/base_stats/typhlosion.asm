@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, FAKE_OUT, CUT, FALSE_SWIPE, FIRE_PUNCH, THUNDERPUNCH
+	tmhm ROCK_SMASH, FAKE_OUT, METAL_CLAW, CUT, FALSE_SWIPE, FIRE_PUNCH, THUNDERPUNCH
 	; end

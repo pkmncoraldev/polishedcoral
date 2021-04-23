@@ -674,9 +674,9 @@ PoliwagEvosAttacks:
 	db  1, WATER_GUN
 	db  1, HYPNOSIS
 	db  6, TACKLE_SCRATCH_POUND
-	db 12, BUBBLE_BEAM
-	db 18, AQUA_JET
-	db 24, RAIN_DANCE
+	db 12, DOUBLE_SLAP
+	db 18, RAIN_DANCE
+	db 24, BUBBLE_BEAM
 	db 30, BODY_SLAM
 	db 36, EARTH_POWER
 	db 42, HYDRO_PUMP
@@ -691,9 +691,9 @@ PoliwhirlEvosAttacks:
 	db  1, WATER_GUN
 	db  1, HYPNOSIS
 	db  6, TACKLE_SCRATCH_POUND
-	db 12, BUBBLE_BEAM
-	db 18, AQUA_JET
-	db 24, RAIN_DANCE
+	db 12, DOUBLE_SLAP
+	db 18, RAIN_DANCE
+	db 24, BUBBLE_BEAM
 	db 32, BODY_SLAM
 	db 40, EARTH_POWER
 	db 48, HYDRO_PUMP
@@ -706,8 +706,9 @@ PoliwrathEvosAttacks:
 	db  1, BRICK_BREAK
 	db  1, LOCK_ON_MIND_READER
 	db  1, DYNAMICPUNCH
-	db  1, AQUA_JET
+	db  1, DOUBLE_SLAP
 	db  1, RAIN_DANCE
+	db  1, BUBBLE_BEAM
 	db  1, BODY_SLAM
 	db  1, EARTH_POWER
 	db  1, HYDRO_PUMP
@@ -722,18 +723,38 @@ PoliwrathEvosAttacks:
 AbraEvosAttacks:
 	db EVOLVE_LEVEL, 16, KADABRA
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, TELEPORT
 	db 0 ; no more level-up moves
 
 KadabraEvosAttacks:
 	db EVOLVE_TRADE, -1, ALAKAZAM
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db  1, SAND_ATTACK_SMOKESCREEN
+	db  1, TELEPORT
+	db  1, CONFUSION
+	db 16, CONFUSION
+	db 18, DISABLE
+	db 21, PSYBEAM
+	db 23, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
+	db 26, REFLECT
+	db 31, RECOVER
+	db 38, PSYCHIC_M
+	db 43, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
 AlakazamEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db  1, SAND_ATTACK_SMOKESCREEN
+	db  1, TELEPORT
+	db  1, CONFUSION
+	db 16, CONFUSION
+	db 18, DISABLE
+	db 21, PSYBEAM
+	db 23, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
+	db 26, REFLECT
+	db 31, RECOVER
+	db 38, PSYCHIC_M
+	db 43, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
 MachopEvosAttacks:
@@ -2146,7 +2167,21 @@ PiloswineEvosAttacks:
 
 CorsolaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db  1, TACKLE_SCRATCH_POUND
+	db  4, DEFENSE_CURL_HARDEN_WITHDRAW
+	db  8, WATER_GUN
+	db 10, RECOVER
+	db 13, SAFEGUARD
+	db 17, BUBBLE_BEAM
+	db 20, ANCIENTPOWER
+	db 23, HEAL_BELL
+	db 27, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
+	db 29, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 31, ROCK_BLAST
+	db 35, ENDURE
+	db 41, POWER_GEM
+	db 47, EARTH_POWER
+	db 52, FLAIL
 	db 0 ; no more level-up moves
 
 SkarmoryEvosAttacks:

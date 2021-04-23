@@ -120,10 +120,10 @@ NUM_HMS = const_value - HM01
 	add_mt DOUBLE_EDGE  ; $55
 	add_mt DREAM_EATER  ; $56
 	add_mt EARTH_POWER  ; $57
-	add_mt FIRE_PUNCH   ; $58
+	add_mt FIRE_PUNCH_MT   ; $58
 	add_mt HEADBUTT     ; $59
 	add_mt HYPER_VOICE  ; $5a
-	add_mt ICE_PUNCH    ; $5b
+	add_mt ICE_PUNCH_MT    ; $5b
 	add_mt ICY_WIND     ; $5c
 	add_mt MIRROR_MOVE    ; $5d
 	add_mt KNOCK_OFF    ; $5e
@@ -135,7 +135,7 @@ NUM_HMS = const_value - HM01
 	add_mt SLEEP_TALK   ; $64
 	add_mt SUCKER_PUNCH ; $65
 	add_mt SWAGGER      ; $66
-	add_mt THUNDERPUNCH ; $67
+	add_mt THUNDERPUNCH_MT ; $67
 	add_mt ICE_FANG        ; $68
 	add_mt ZAP_CANNON   ; $69
 	add_mt ZEN_HEADBUTT ; $6a

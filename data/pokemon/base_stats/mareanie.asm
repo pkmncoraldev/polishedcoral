@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm FAKE_OUT
+	tmhm FAKE_OUT, FALSE_SWIPE
 	; end

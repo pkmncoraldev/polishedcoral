@@ -6,7 +6,7 @@
 	db 188 ; base exp
 	db DRAGON_FANG ; item 1
 	db DRAGON_FANG ; item 2
-	dn FEMALE_50_50, 3 ; gender, step cycles to hatch
+	dn FEMALE_50, 3 ; gender, step cycles to hatch
 	dn 5, 5 ; frontpic dimensions
 	db NATURAL_CURE ; ability 1
 	db NATURAL_CURE ; ability 2

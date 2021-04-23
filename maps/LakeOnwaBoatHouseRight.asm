@@ -59,12 +59,12 @@ LakeBoatMan1:
 	writetext LakeBoatManText4
 	waitbutton
 	closetext
-	applyonemovement LAKEBOATMAN1, step_left
+	applyonemovement LAKEBOATMAN1, step_right
 	opentext
 	writetext LakeBoatManText5
 	waitbutton
 	closetext
-	applyonemovement LAKEBOATMAN1, step_right
+	applyonemovement LAKEBOATMAN1, step_left
 	spriteface LAKEBOATMAN1, DOWN
 	clearevent EVENT_LAKE_BOAT_LEFT
 	opentext
@@ -130,12 +130,12 @@ LakeBoatMan1:
 	writetext LakeBoatManText4
 	waitbutton
 	closetext
-	applyonemovement LAKEBOATMAN1, step_left
+	applyonemovement LAKEBOATMAN1, step_right
 	opentext
 	writetext LakeBoatManText5
 	waitbutton
 	closetext
-	applyonemovement LAKEBOATMAN1, step_right
+	applyonemovement LAKEBOATMAN1, step_left
 	spriteface LAKEBOATMAN1, DOWN
 	clearevent EVENT_LAKE_BOAT_LEFT
 	opentext

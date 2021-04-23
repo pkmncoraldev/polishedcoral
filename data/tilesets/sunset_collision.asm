@@ -175,7 +175,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; ae
 	tilecoll WALL, WALL, WALL, WALL ; af
 	tilecoll WATER, WATER, WALL, WALL ; b0
-	tilecoll WALL, WALL, WATER, WATER ; b1
+	tilecoll BOTTOM_WALL, FLOOR, DOOR, NO_OLLIE ; b1
 	tilecoll WALL, WALL, WALL, WALL ; b2
 	tilecoll WALL, TOP_WALL, WALL, WALL ; b3
 	tilecoll SKATE, SKATE, WALL, SKATE ; b4

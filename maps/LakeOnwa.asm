@@ -833,7 +833,8 @@ LakeRivalText1:
 	
 	para "You're actually"
 	line "still training"
-	cont "your #MON?"
+	cont "your pathetic"
+	cont "#MON?"
 	
 	para "Give it a rest!"
 	

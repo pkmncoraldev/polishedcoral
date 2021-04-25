@@ -568,6 +568,33 @@
 	db 15, SWABLU		;4%
 	db 20, XATU			;1%
 	
+	map_id SUNBEAM_RESERVE
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 15, SWABLU		;30%
+	db 15, BUNEARY		;30%
+	db 15, PHANPY		;20%
+	db 15, MAGBY		;10%
+	db 15, ELEKID		;5%
+	db 15, ELEKID		;4%
+	db 15, ELEKID		;1%
+	; day
+	db 15, SWABLU		;30%
+	db 15, BUNEARY		;30%
+	db 15, PHANPY		;20%
+	db 15, MAGBY		;10%
+	db 15, ELEKID		;5%
+	db 15, ELEKID		;4%
+	db 15, ELEKID		;1%
+	; nite
+	db 15, SWABLU		;30%
+	db 15, BUNEARY		;30%
+	db 15, PHANPY		;20%
+	db 15, MAGBY		;10%
+	db 15, ELEKID		;5%
+	db 15, ELEKID		;4%
+	db 15, ELEKID		;1%
+	
 	map_id SUNBEAM_JUNGLE
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn

@@ -12,11 +12,12 @@ SprucesLab_MapScriptHeader:
 	db 1 ; coord events
 	xy_trigger 2, 1, 5, 0, SpruceLabComeBackInside, 0, 0
 
-	db 4 ; bg events
+	db 5 ; bg events
 	signpost 0, 5, SIGNPOST_READ, SpruceLabDoor
 	signpost 0, 4, SIGNPOST_READ, SpruceLabOpenWindow
-	signpost 1, 2, SIGNPOST_READ, SpruceLabPC
+	signpost  5,  1, SIGNPOST_DOWN, SpruceLabPC
 	signpost 3, 9, SIGNPOST_READ, SpruceLabTrashcan
+	signpost  1,  2, SIGNPOST_READ, SpruceLabHealMachine
 
 	db 5 ; object events
 	person_event SPRITE_SPRUCE, 3, 3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE1_GONE
@@ -41,6 +42,45 @@ SpruceLabUnlockDoor:
 .UnlockThatBitch
 	changeblock $4, $0, $24
 	return
+	
+SpruceLabHealMachine:
+	opentext
+	checkevent EVENT_TALKED_TO_SPRUCE
+	iffalse .whats_this
+	checkcode VAR_PARTYCOUNT
+	if_equal 0, .no_pokemon
+	writetext SpruceLabHealingMachineText
+	yesorno
+	iffalse .no
+	closetext
+	pause 10
+	turnobject PLAYER, LEFT
+	pause 10
+	special HealParty
+	special SaveMusic
+	playmusic MUSIC_NONE
+	writebyte 1 ; Machine is at a Pokemon Center
+	special HealMachineAnim
+	pause 30
+	special RestoreMusic
+	turnobject PLAYER, DOWN
+	pause 10
+	end
+.no
+	farwritetext BetterNotText
+	waitbutton
+	closetext
+	end
+.no_pokemon
+	playsound SFX_CHOOSE_PC_OPTION
+	farwritetext UnknownText_0x1c1328
+	closetext
+	end
+.whats_this
+	writetext SpruceLabHealingMachineText2
+	waitbutton
+	closetext
+	end
 	
 SpruceLabSpruce:
 	checkevent EVENT_TALKED_TO_SPRUCE
@@ -101,15 +141,47 @@ SpruceLabComeBackInside:
 	applymovement SPRUCELAB_SPRUCE2, Movement_SpruceLabSpruce5
 	spriteface PLAYER, DOWN
 	spriteface SPRUCELAB_SPRUCE2, UP
+	
+	opentext
+	writetext SpruceLabSpruceText12
+	waitbutton
+	closetext
+	pause 7
+	follow SPRUCELAB_SPRUCE2, PLAYER
+	applymovement SPRUCELAB_SPRUCE2, Movement_SpruceLabSpruce11
+	stopfollow
+	applymovement PLAYER, Movement_SpruceLabPlayer3
+	pause 7
+	spriteface PLAYER, RIGHT
+	spriteface SPRUCELAB_SPRUCE2, LEFT
+	opentext
+	writetext SpruceLabSpruceText13
+	waitbutton
+	closetext
+	pause 10
+	turnobject PLAYER, LEFT
+	pause 10
+	special HealParty
+	special SaveMusic
+	blackoutmod SUNBEAM_ISLAND
+	playmusic MUSIC_NONE
+	writebyte 1 ; Machine is at a Pokemon Center
+	special HealMachineAnim
+	pause 30
+	special RestoreMusic
+	turnobject PLAYER, RIGHT
+	spriteface SPRUCELAB_SPRUCE2, LEFT
+	pause 10
+	
 	opentext
 	writetext SpruceLabSpruceText3
 	waitbutton
 	closetext
+	spriteface SPRUCELAB_SPRUCE2, DOWN
+	pause 20
 	spriteface SPRUCELAB_SPRUCE2, LEFT
 	pause 20
 	spriteface SPRUCELAB_SPRUCE2, RIGHT
-	pause 20
-	spriteface SPRUCELAB_SPRUCE2, DOWN
 	pause 20
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, SPRUCELAB_SPRUCE2, 15
@@ -231,6 +303,16 @@ SpruceLabPC:
 SpruceLabTrashcan:
 	jumptext SpruceLabTrashcanText
 	
+SpruceLabHealingMachineText:
+	text "Would you like to"
+	line "heal your #MON?"
+	done
+	
+SpruceLabHealingMachineText2:
+	text "I wonder what this"
+	line "does?"
+	done
+	
 SpruceLabSpruceText1:
 	text "Ah!"
 	
@@ -263,7 +345,17 @@ SpruceLabSpruceText2:
 	done
 	
 SpruceLabSpruceText3:
-	text "Well, that's about"
+	text "See?"
+	
+	para "Good as new!"
+	
+	para "Feel free to use"
+	line "this machine when-"
+	cont "ever you like!"
+
+	para "…"
+	
+	para "Well, that's about"
 	line "it."
 	
 	para "…"
@@ -389,6 +481,26 @@ SpruceLabSpruceText11:
 	para "Hmm…"
 	done
 	
+SpruceLabSpruceText12:
+	text "Follow me!"
+	done
+	
+SpruceLabSpruceText13:
+	text "Next up, this"
+	line "machine will heal"
+	cont "your #MON."
+	
+	para "It's just like the"
+	line "machines in the"
+	cont "#MON CENTER!"
+	
+	para "Give it a try!"
+	
+	para "Go ahead and put"
+	line "your #BALLs in"
+	cont "the machine."
+	done
+	
 SpruceLabDexCheckText:
 	text "Ah, <PLAYER>!"
 	
@@ -484,6 +596,9 @@ Movement_SpruceLabSpruce5:
 	step_end
 	
 Movement_SpruceLabSpruce6:
+	step_right
+	step_right
+	step_down
 	step_down
 	step_right
 	step_right
@@ -529,6 +644,12 @@ Movement_SpruceLabSpruce10:
 	step_down
 	step_end
 	
+Movement_SpruceLabSpruce11:
+	step_left
+	step_left
+	step_up
+	step_end
+	
 Movement_SpruceLabPlayer1:
 	step_up
 	step_up
@@ -537,3 +658,9 @@ Movement_SpruceLabPlayer1:
 Movement_SpruceLabPlayer2:
 	step_down
 	step_end
+	
+Movement_SpruceLabPlayer3:
+	step_left
+	step_up
+	step_end
+	

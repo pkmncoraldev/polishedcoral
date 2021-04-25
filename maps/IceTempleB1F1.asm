@@ -260,7 +260,7 @@ IceTemplePlayerTorchNotLit:
 	end
 	
 IceTempleTorchNo:
-	writetext IceTempleFireText3
+	farwritetext BetterNotText
 	waitbutton
 	closetext
 	end
@@ -289,10 +289,6 @@ IceTempleFireText2Boy:
 IceTempleFireText2Girl:
 	text "<PLAYER> lit"
 	line "her TORCH!"
-	done
-	
-IceTempleFireText3:
-	text "Better not…"
 	done
 	
 IceTempleFireText4:

@@ -1234,3 +1234,7 @@ TorchWentOutText::
 	text "Your TORCH went"
 	line "out."
 	done
+	
+BetterNotText::
+	text "Better not…"
+	done

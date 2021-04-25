@@ -540,8 +540,7 @@ SunbeamSnareFallAsleepText:
 
 	para "…"
 
-	para "He's sleeping"
-	line "soundly!"
+	para "He's fast asleep!"
 	done
 
 SunbeamSnareSleepyText:
@@ -564,8 +563,7 @@ SunbeamSnareAsleepText:
 
 	para "…"
 
-	para "He's sleeping"
-	line "soundly!"
+	para "He's fast asleep!"
 	done
 
 SunbeamSnareText1:

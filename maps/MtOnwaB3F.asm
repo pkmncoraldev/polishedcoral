@@ -38,9 +38,9 @@ LavaCaveBF3Magmar:
 	startbattle
 	disappear MTONWABF3_MAGMAR
 	reloadmapafterbattle
+	setevent EVENT_MT_ONWA_B3F_MAGMAR_2
 	checkcode VAR_MONJUSTCAUGHT
 	if_equal MAGMAR, .CaughtMagmar
-	setevent EVENT_MT_ONWA_B3F_MAGMAR_2
 	opentext
 	writetext LavaCaveBF3MagmarTextGone
 	waitbutton

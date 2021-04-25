@@ -73,7 +73,7 @@ TwinkleGymBlueRoomDoor:
 	closetext
 	end
 .no
-	writetext TwinkleGymEntryBetterNotText
+	farwritetext BetterNotText
 	waitbutton
 	closetext
 	end

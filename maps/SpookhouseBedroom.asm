@@ -52,7 +52,7 @@ SpookHouseJournal:
 	end
 	
 SpookHouseJournalNo:
-	writetext SpookHouseJournalText2
+	farwritetext BetterNotText
 	waitbutton
 	closetext
 	end
@@ -84,10 +84,6 @@ SpookHouseJournalText1:
 	line "in the middle."
 	
 	para "Read it?"
-	done
-	
-SpookHouseJournalText2:
-	text "Better not…"
 	done
 	
 SpookHouseJournalText3:

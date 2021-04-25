@@ -135,7 +135,7 @@ TwinkleGymEntryRedDoor:
 	end
 	
 TwinkleGymEntryDontUnlockDoor:
-	writetext TwinkleGymEntryBetterNotText
+	farwritetext BetterNotText
 	waitbutton
 	closetext
 	end
@@ -449,10 +449,6 @@ TwinkleGymEntryAskUnlockDoorText:
 	cont "door."
 	
 	para "Unlock the door?"
-	done
-	
-TwinkleGymEntryBetterNotText:
-	text "Better not…"
 	done
 	
 Movement_TwinkleGymEntryL:

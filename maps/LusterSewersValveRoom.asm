@@ -153,7 +153,7 @@ LusterSewersValveRoomValveTurnOff
 	setevent EVENT_LUSTER_SEWERS_FLOODED
 	end
 LusterSewersValveRoomValveNo
-	writetext LusterSewersValveRoomValveNoText
+	farwritetext BetterNotText
 	waitbutton
 	closetext
 	end
@@ -168,10 +168,6 @@ LusterSewersValveRoomValveAskTurnText:
 LusterSewersValveRoomValveTurnText:
 	text "<PLAYER> turned"
 	line "the VALVE."
-	done
-	
-LusterSewersValveRoomValveNoText:
-	text "Better not…"
 	done
 	
 LusterSewersValveRoomWaterRushText:

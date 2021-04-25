@@ -149,7 +149,7 @@ Route5Gate2FBinoculars:
 	end
 	
 .end
-	writetext Route5Gate2FBinocularsNoText
+	farwritetext BetterNotText
 	waitbutton
 	closetext
 	end
@@ -263,10 +263,6 @@ Route5Gate2FBinocularsText2:
 	text "<PLAYER> looked"
 	line "through the BINO-"
 	cont "CULARS!"
-	done
-	
-Route5Gate2FBinocularsNoText:
-	text "Better not…"
 	done
 	
 Route5Gate2FBinocularsNoMoneyText:

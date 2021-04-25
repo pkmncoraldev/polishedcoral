@@ -196,7 +196,7 @@ EventideGymBlackSwitchScript:
 	end
 
 EventideGymNoSwitchScript:
-	writetext EventideGymNoSwitchText
+	farwritetext BetterNotText
 	waitbutton
 	closetext
 	end
@@ -729,10 +729,6 @@ EventideGymTrainer5RematchBeatenText:
 
 EventideGymYesSwitchText:
 	text "Who wouldn't?"
-	done
-
-EventideGymNoSwitchText:
-	text "Better not…"
 	done
 
 EventideGymRedSwitchText:

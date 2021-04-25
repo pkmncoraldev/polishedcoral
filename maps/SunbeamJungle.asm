@@ -4,7 +4,8 @@ SunbeamJungle_MapScriptHeader:
 	scene_script SunbeamJungleTrigger1
 	scene_script SunbeamJungleTrigger2
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, SunbeamJungleCallback
 
 	db 3 ; warp events
 	warp_def 25,  4, 3, SUNBEAM_ISLAND
@@ -75,6 +76,13 @@ SunbeamJungle_MapScriptHeader:
 	const SUNBEAM_JUNGLE_KAGE_WATER
 	const SUNBEAM_JUNGLE_SNARE_WATER
 
+	
+SunbeamJungleCallback:
+	checkevent EVENT_SUNBEAM_JUNGLE_DEEP_ELECTABUZZ_2
+	iftrue .end
+	clearevent EVENT_SUNBEAM_JUNGLE_DEEP_ELECTABUZZ_GONE
+.end
+	return
 
 JungleMakeSilverBlue:
 	setevent EVENT_JUNGLE_CAVE_BLUE

@@ -338,7 +338,7 @@ GameConsole:
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	end
 .no
-	writetext GameConsoleText_No
+	farwritetext BetterNotText
 	waitbutton
 	closetext
 	end
@@ -476,10 +476,6 @@ GameConsoleText_TurnOnSnes:
 GameConsoleText_TurnOffSnes:
 	text "<PLAYER> turned"
 	line "off the SNES!"
-	done
-	
-GameConsoleText_No:
-	text "Better not…"
 	done
 	
 GameConsoleText_Kirby:

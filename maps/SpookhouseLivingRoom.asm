@@ -122,7 +122,7 @@ SpookHouseLockedDoor2:
 	end
 	
 SpookHouseDontUnlockDoor:
-	writetext SpookHouseJournalText2
+	farwritetext BetterNotText
 	waitbutton
 	closetext
 	end

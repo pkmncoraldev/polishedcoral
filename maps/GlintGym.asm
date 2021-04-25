@@ -944,7 +944,7 @@ GlintGymBook12:
 	closetext
 	end
 .no
-	writetext GlintGymBookText12_3
+	farwritetext BetterNotText
 	waitbutton
 	closetext
 	end
@@ -1211,10 +1211,6 @@ GlintGymBookText12_2:
 	line "#MON disappear-"
 	cont "red to a place"
 	cont "beyond seeing…"
-	done
-	
-GlintGymBookText12_3:
-	text "Better not…"
 	done
 	
 GlintGymBookText13:

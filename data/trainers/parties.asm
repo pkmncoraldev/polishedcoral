@@ -1556,7 +1556,8 @@ GruntMGroup:
 	db "SUNBEAMM1@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 19, TRUMBEAK
+	db 18, ODDISH
 	db -1 ; end
 
 ; ================
@@ -1565,7 +1566,9 @@ GruntMGroup:
 	db "SUNBEAMM2@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 20, NOIBAT
+	db 18, MARILL
+	db 18, ODDISH
 	db -1 ; end
 
 ; ================
@@ -1574,7 +1577,9 @@ GruntMGroup:
 	db "SUNBEAMM3@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 18, ZUBAT
+	db 19, EXEGGCUTE
+	db 19, SWABLU
 	db -1 ; end
 
 ; ================
@@ -1583,7 +1588,8 @@ GruntMGroup:
 	db "SUNBEAMM4@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 18, ELEKID
+	db 21, NOIBAT
 	db -1 ; end
 
 ; ================
@@ -1654,7 +1660,8 @@ GruntFGroup:
 	db "SUNBEAMF1@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 18, GLOOM
+	db 18, RATTATA
 	db -1 ; end
 
 ; ================
@@ -1663,7 +1670,8 @@ GruntFGroup:
 	db "SUNBEAMF2@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 19, PIKIPEK
+	db 19, TRUMBEAK
 	db -1 ; end
 
 ; ================
@@ -1697,7 +1705,7 @@ KageGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 25, AZUMARILL
-	db 23, CINCCINO
+	db 25, RATICATE
 	db 30, URSARING
 	db -1 ; end
 

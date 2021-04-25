@@ -61,8 +61,8 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  24, $77, $77, $77, ABILITY_1 | QUIRKY, MALE   ; hiker
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, MALE   ; gruntm
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE ; gruntf
-	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; kage
-	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE ; locke
+	db  48, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; kage
+	db  48, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE ; locke
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE   ; pokefanm
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE ; pokefanf
 	db  48, $DD, $BB, $DB, ABILITY_1 | QUIRKY, MALE   ; officerm

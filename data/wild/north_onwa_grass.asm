@@ -623,7 +623,7 @@
 	db 18, GLOOM		;1%
 	
 	map_id SUNBEAM_JUNGLE_CAVE
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, NOIBAT		;30%
 	db 18, ONIX			;30%

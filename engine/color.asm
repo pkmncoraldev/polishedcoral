@@ -745,7 +745,7 @@ ClearBytes: ; 0x9a5b
 	ret
 ; 0x9a64
 
-LoadMapPals:
+LoadMapPals::
 	farcall LoadSpecialMapPalette
 	jr c, .got_pals
 

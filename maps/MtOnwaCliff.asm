@@ -158,6 +158,20 @@ MtOnwaPanNPC:
 	spriteface MT_ONWA_NPC2, LEFT
 	spriteface PLAYER, RIGHT
 	opentext
+	writetext MtOnwaPanNPCText7
+	yesorno
+	iffalse .no_heal
+	closetext	
+	special FadeOutPalettesBlack
+	special HealParty
+	special SaveMusic
+	playmusic MUSIC_HEAL
+	pause 60
+	special RestoreMusic
+	callasm LoadMapPals
+	special FadeInPalettes
+	opentext
+.no_heal
 	writetext MtOnwaPanNPCText3
 	waitbutton
 	closetext
@@ -273,6 +287,13 @@ MtOnwaPanNPCText5:
 MtOnwaPanNPCText6:	
 	text "It's a bit"
 	line "romantic…"
+	done
+	
+MtOnwaPanNPCText7:
+	text "Would you and your"
+	line "#MON like to"
+	cont "rest here for a"
+	cont "while?"
 	done
 	
 MtOnwaPanNPCTextYesorNo:

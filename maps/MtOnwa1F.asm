@@ -13,14 +13,19 @@ MtOnwa1F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 5 ; object events
 	person_event SPRITE_JUGGLER, 16, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerMtOnwa_1, -1
 	person_event SPRITE_HIKER, 8, 20, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, TrainerMtOnwa_2, -1
 	person_event SPRITE_HIKER, 9, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 2, TrainerMtOnwa_3, -1
 	person_event SPRITE_JUGGLER, 3, 8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerMtOnwa_4, -1
+	itemball_event 10, 20, FULL_RESTORE, 1, EVENT_MT_ONWA_1F_POKE_BALL
 
 MtOnwa1FCallback:
 	setevent EVENT_LAKE_ROCKS_BROWN
+	checkevent EVENT_MT_ONWA_B3F_MAGMAR_2
+	iftrue .end
+	clearevent EVENT_MT_ONWA_B3F_MAGMAR_GONE
+.end
 	return
 	
 TrainerMtOnwa_1:

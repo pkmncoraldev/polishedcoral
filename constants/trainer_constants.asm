@@ -423,6 +423,7 @@ PLAYER_F EQU __enum__
 	
 	trainerclass DISGUISE
 	const MASTER_1
+	const MASTER_2
 
 	
 	trainerclass BIKINIBR

@@ -172,6 +172,7 @@ StarglowCavern1FNPC1:
 	setevent EVENT_STARGLOW_CAVERN_DISGUISEMAN_2
 	setevent EVENT_STARGLOW_CAVERN_1F_POKE_BALL2
 	setevent EVENT_STARGLOW_CAVERN_DISGUISEMAN_FINISHED
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	end
 .alreadygotnugget:
 	opentext
@@ -232,6 +233,7 @@ StarglowCavern1FNPC2:
 	writetext StarglowCavern_DisguiseMan1Text4
 	waitbutton
 	closetext
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	end
 
 StarglowCavern_DisguiseMan1Text1:
@@ -240,8 +242,8 @@ StarglowCavern_DisguiseMan1Text1:
 	para "Appearing right,"
 	line "before your eyes!"
 	
-	para "It's I, the MASTER"
-	line"OF DISGUISE!"
+	para "'Tis I, the MASTER"
+	line "OF DISGUISE!"
 	done
 	
 StarglowCavern_DisguiseMan1Text2:
@@ -312,7 +314,7 @@ StarglowCavern_DisguiseMan1Text5:
 	text "Appearing right,"
 	line "before your eyes!"
 	
-	para "It's I, the MASTER"
+	para "'Tis I, the MASTER"
 	line "OF DISGUISE!"
 	done
 	

@@ -75,4 +75,6 @@ MapTriggers::
 	scene_var TWINKLE_GYM_ENTRY,					  wTwinkleGymEntryTrigger
 	scene_var TWINKLE_GYM_BLUE_ROOM,				  wTwinkleGymBlueRoomTrigger
 	scene_var TWINKLE_GYM_YELLOW_ROOM,				  wTwinkleGymYellowRoomTrigger
+	scene_var MT_ONWA_B2F,							  wMtOnwaB2FTrigger
+	scene_var MT_ONWA_B3F,							  wMtOnwaB3FTrigger
 	db -1

@@ -7448,6 +7448,14 @@ GiveExperiencePoints: ; 3ee3b
 	ld b, 4
 	call Divide
 
+	; Boost Experience for legendary mons
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEGENDARY ; or BATTLETYPE_SHINY_LEGENDARY
+	jr c, .not_legendary
+	call BoostExp
+	call BoostExp
+	call BoostExp
+.not_legendary
 	; Boost Experience for traded Pokemon
 	pop bc
 	ld hl, MON_ID

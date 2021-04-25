@@ -1447,7 +1447,7 @@ HikerGroup:
 	db "GILL@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 20, NUMEL
+	db 18, NUMEL
 		db AMNESIA, FIRE_SPIN, MAGNITUDE, FOCUS_ENERGY
 	db 17, CORSOLA
 		db TACKLE_SCRATCH_POUND, DEFENSE_CURL_HARDEN_WITHDRAW, WATER_GUN, RECOVER
@@ -1459,9 +1459,9 @@ HikerGroup:
 	db "HARVEY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 19, ARON
-	db 21, NOIBAT
-	db 21, ZUBAT
+	db 18, ARON
+	db 19, NOIBAT
+	db 19, ZUBAT
 	db -1 ; end
 
 ; ================
@@ -1481,8 +1481,8 @@ HikerGroup:
 	db "LEROY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 22, LARVITAR
-	db 22, MAGBY
+	db 18, LARVITAR
+	db 20, MAGBY
 	db -1 ; end
 
 ; ================
@@ -1991,8 +1991,8 @@ FirebreatherGroup:
 	db "MORT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 20, SLUGMA
-	db 21, MAGBY
+	db 19, SLUGMA
+	db 20, MAGBY
 	db -1 ; end
 
 ; ================
@@ -2001,9 +2001,9 @@ FirebreatherGroup:
 	db "FRITZ@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 19, NUMEL
-	db 19, SLUGMA
-	db 19, LARVITAR
+	db 17, NUMEL
+	db 18, SLUGMA
+	db 16, LARVITAR
 	db -1 ; end
 
 ; ================
@@ -2012,9 +2012,9 @@ FirebreatherGroup:
 	db "MEL@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 20, SLUGMA
-	db 19, KOFFING
-	db 20, NUMEL
+	db 18, SLUGMA
+	db 17, KOFFING
+	db 17, NUMEL
 	db -1 ; end
 
 ; ================
@@ -2023,8 +2023,8 @@ FirebreatherGroup:
 	db "DOM@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 20, PONYTA
-	db 22, MAGBY
+	db 18, PONYTA
+	db 20, MAGBY
 	db -1 ; end
 
 ; ================
@@ -2699,7 +2699,7 @@ CooltrainerFGroup:
 	db "CASEY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 23, NUMEL
+	db 21, NUMEL
 	db -1 ; end
 
 ; ================
@@ -2805,6 +2805,20 @@ TrioBroYGroup:
 
 DisguiseGroup:
 ; ================================
+; ================
+
+	; DISGUISE
+	db "MASTER@"
+	db TRAINERTYPE_MOVES
+	; party
+	db 12, VOLTORB
+		db TACKLE_SCRATCH_POUND, ROLLOUT, 0, 0
+	db 12, MARILL
+		db TACKLE_SCRATCH_POUND, ROLLOUT, 0, 0
+	db 12, JIGGLYPUFF
+		db TACKLE_SCRATCH_POUND, ROLLOUT, 0, 0
+	db -1 ; end
+
 ; ================
 
 	; DISGUISE

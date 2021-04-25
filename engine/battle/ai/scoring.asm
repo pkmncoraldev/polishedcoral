@@ -397,6 +397,8 @@ AI_Smart: ; 386be
 	dbw EFFECT_ROOST,             AI_Smart_Roost
 	dbw EFFECT_FALSE_SWIPE,		  AI_Smart_FalseSwipe
 	dbw EFFECT_FOCUS_ENERGY,	  AI_Smart_FocusEnergy
+	dbw EFFECT_STUN_SPORE,        AI_Smart_Paralyze
+	dbw EFFECT_SLEEP_POWDER,      AI_Smart_Sleep
 	db $ff
 ; 387e3
 

@@ -1,6 +1,9 @@
 DoPlayerTurn: ; 34000
 	call SetPlayerTurn
 	
+	ld hl, wPlayerTurnsTaken
+	inc [hl]
+	
 	ld a, [wBattleMonSpecies]
 	ld [wCurPartySpecies], a
 	
@@ -22,6 +25,9 @@ DoPlayerTurn: ; 34000
 
 DoEnemyTurn: ; 3400a
 	call SetEnemyTurn
+	
+	ld hl, wEnemyTurnsTaken
+	inc [hl]
 	
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurPartySpecies], a
@@ -986,7 +992,7 @@ BattleCommand_doturn:
 	ld hl, wEnemyTurnsTaken
 .got_turns_taken
 	; If we've gotten this far, this counts as a turn.
-	inc [hl]
+;	inc [hl]
 	ld a, [hl]
 	and a
 	jr nz, .no_overflow
@@ -1580,9 +1586,16 @@ BattleCommand_checkpowder:
 	ld de, 1
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
+	cp THUNDER_WAVE
+	jr z, .twave
 	ld hl, PowderMoves
 	call IsInArray
 	ret nc
+	jr BattleCommand_resettypematchup
+.twave
+	call CheckIfTargetIsGroundType
+	ret nz
+	; fallthrough
 BattleCommand_resettypematchup: ; 34833
 ; Reset the type matchup multiplier to 1.0, if the type matchup is not 0.
 ; If there is immunity in play, the move automatically misses.

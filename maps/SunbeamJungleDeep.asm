@@ -10,10 +10,12 @@ SunbeamJungleDeep_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 5 ; object events
 	person_event SPRITE_ELECTABUZZ,  5, 10, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamJungleDeepElectabuzz, EVENT_SUNBEAM_JUNGLE_DEEP_ELECTABUZZ_GONE
 	itemball_event 13,  5, MAGMARIZER, 1, EVENT_SUNBEAM_JUNGLE_DEEP_POKE_BALL
-	itemball_event 28, 13, PP_UP, 1, EVENT_SUNBEAM_JUNGLE_DEEP_POKE_BALL_2
+	itemball_event 34, 10, PP_UP, 1, EVENT_SUNBEAM_JUNGLE_DEEP_POKE_BALL_2
+	person_event SPRITE_BUG_MANIAC, 10, 29, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamJungleDeepNPC1, -1
+	person_event SPRITE_AROMA_LADY, 13, 33, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamJungleDeepNPC2, -1
 
 	const_def 1 ; object constants
 	const SUNBEAM_JUNGLE_DEEP_ELECTABUZZ
@@ -39,6 +41,58 @@ SunbeamJungleDeepElectabuzz:
 	closetext
 .CaughtElecatbuzz
 	end
+	
+SunbeamJungleDeepNPC1:
+	faceplayer
+	opentext
+	writetext SunbeamJungleDeepHealText
+	yesorno
+	iffalse .no
+	closetext
+	special FadeOutPalettesBlack
+	special HealParty
+	special SaveMusic
+	playmusic MUSIC_HEAL
+	pause 60
+	special RestoreMusic
+	callasm LoadMapPals
+	special FadeInPalettes
+.no
+	closetext
+	end
+	
+SunbeamJungleDeepNPC2:
+	jumptextfaceplayer SunbeamJungleDeepNPC2Text
+	end
+	
+SunbeamJungleDeepHealText:
+	text "We're on the trail"
+	line "of a crazy strong"
+	cont "#MON that was"
+	cont "spotted nearby."
+	
+	para "Are you looking"
+	line "for it too?"
+	
+	para "If you're heading"
+	line "on, you should"
+	cont "take a rest first."
+	done
+	
+SunbeamJungleDeepNPC2Text:
+	text "Some shady guys"
+	line "have been around"
+	cont "the jungle lately."
+	
+	para "I really hope"
+	line "they aren't up to"
+	cont "anything."
+	
+	para "There's a lot of"
+	line "rare and powerful"
+	cont "#MON around"
+	cont "here…"
+	done
 	
 SunbeamJungleDeepElectabuzzText:
 	text "BUZZ! BUZZ!"

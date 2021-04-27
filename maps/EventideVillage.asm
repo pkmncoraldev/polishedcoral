@@ -17,7 +17,7 @@ EventideVillage_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 7 ; bg events
+	db 9 ; bg events
 	bg_event 24, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
 	bg_event 25, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
 	bg_event 26, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
@@ -25,6 +25,8 @@ EventideVillage_MapScriptHeader:
 	bg_event 18, 19, SIGNPOST_JUMPTEXT, EventideVillageSignText
 	bg_event 24, 15, SIGNPOST_JUMPTEXT, EventideVillageBikeShopSignText
 	bg_event 29, 38, SIGNPOST_JUMPTEXT, EventideVillageGymSignText
+	signpost 17, 14, SIGNPOST_READ, GlintCityPokeCenterSign
+	signpost 25, 24, SIGNPOST_READ, GlintCityMartSign
 
 	db 11 ; object events
 	person_event SPRITE_HANGAR_PARTS, 32, 33, SPRITEMOVEDATA_HANGAR_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1

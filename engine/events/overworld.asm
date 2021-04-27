@@ -1537,6 +1537,7 @@ HeadbuttFunction: ; ce7d
 	ret
 
 TryHeadbuttFromMenu: ; ce86
+	jr .no_tree	;TODO undummy
 	call GetFacingTileCoord
 	cp COLL_HEADBUTT_TREE
 	jr nz, .no_tree
@@ -1595,9 +1596,10 @@ AutoHeadbuttScript:
 	jumptext UnknownText_0xcea2
 
 TryHeadbuttOW:: ; cec9
-;	ld d, HEADBUTT
-;	call CheckPartyCanLearnMove
-;	jr c, .no
+	jr .no	;TODO undummy
+	ld d, HEADBUTT
+	call CheckPartyCanLearnMove
+	jr c, .no
 
 	ld a, BANK(AskHeadbuttScript)
 	ld hl, AskHeadbuttScript
@@ -1717,6 +1719,7 @@ Script_AutoRockClimb:
 	ret
 
 TryRockClimbOW:: ; cb56
+	jr .no	;TODO undummy
 	call HasRockClimb
 	jr z, .debugrockclimb
 ;	jr z, .no

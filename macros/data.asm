@@ -35,10 +35,15 @@ dbbww: MACRO
 	dw \3, \4
 ENDM
 
-dbbwww: MACRO
-	db \1, \2
-	dw \3, \4, \5
+dbwww: MACRO
+	db \1
+	dw \2, \3, \4
 ENDM
+
+;dbbwww: MACRO
+;	db \1, \2
+;	dw \3, \4, \5
+;ENDM
 
 dn: MACRO
 	rept _NARG / 2

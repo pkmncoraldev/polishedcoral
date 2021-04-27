@@ -427,9 +427,6 @@ _ChooseWildEncounter:
 	cp 85 percent
 	jr c, .ok
 	inc b
-;	cp 95 percent
-;	jr c, .ok
-;	inc b
 ; Store the level
 .ok
 	ld a, b

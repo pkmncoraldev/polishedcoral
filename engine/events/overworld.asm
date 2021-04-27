@@ -2110,6 +2110,19 @@ FishFunction: ; cf8e
 	ld a, [wTempWildMonSpecies]
 .gotabite2
 	ld [wTempWildMonSpecies], a
+	; Check if we buff the wild mon, and by how much.
+	call Random
+	cp 45 percent
+	jr c, .ok
+	inc e
+	cp 65 percent
+	jr c, .ok
+	inc e
+	cp 85 percent
+	jr c, .ok
+	inc e
+; Store the level
+.ok	
 	ld a, e
 	ld [wCurPartyLevel], a
 	ld a, BATTLETYPE_FISH

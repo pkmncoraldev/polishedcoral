@@ -358,7 +358,7 @@ ENDM
 	map_attributes EventideGym, EVENTIDE_GYM, 0, 0
 	map_attributes DodrioRanchHouse, DODRIO_RANCH_HOUSE, $00, 0
 	map_attributes DodrioRanchBarn, DODRIO_RANCH_BARN, $00, 0
-	map_attributes DodrioRanchRaceTrack, DODRIO_RANCH_RACETRACK, 5, 0
+	map_attributes DodrioRanchRaceTrack, DODRIO_RANCH_RACETRACK, $d1, 0
 	map_attributes FlickerSoundSpeechHouse, FLICKER_SOUND_SPEECH_HOUSE, 0, 0
 	map_attributes FlickerNameSpeechHouse, FLICKER_NAME_SPEECH_HOUSE, 0, 0
 	map_attributes FlickerPokeCenter, FLICKER_POKECENTER, 0, 0

@@ -36,7 +36,7 @@ Route9_MapScriptHeader:
 	xy_trigger 1, 28, 16, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 29, 16, 0, Route9MapSignThing, 0, 0
 
-	db 11 ; bg events
+	db 12 ; bg events
 	signpost 24, 28, SIGNPOST_READ, RanchLogs
 	signpost 24, 25, SIGNPOST_READ, RanchLogs
 	signpost 23, 24, SIGNPOST_READ, RanchLogs
@@ -48,6 +48,7 @@ Route9_MapScriptHeader:
 	signpost 26, 20, SIGNPOST_READ, RanchSign
 	signpost 47,  2, SIGNPOST_READ, Route9Sign
 	signpost 35,  8, SIGNPOST_READ, Route9Sign2
+	bg_event 17, 31, SIGNPOST_ITEM + FIRE_STONE, EVENT_ROUTE_9_HIDDEN_FIRE_STONE
 
 	db 15 ; object events
 	person_event SPRITE_N64, 13, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchScarecrow, -1

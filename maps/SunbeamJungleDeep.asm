@@ -8,7 +8,8 @@ SunbeamJungleDeep_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 13,  8, SIGNPOST_ITEM + THUNDER_STONE, EVENT_SUNBEAM_JUNGLE_DEEP_HIDDEN_THUNDER_STONE
 
 	db 5 ; object events
 	person_event SPRITE_ELECTABUZZ,  5, 10, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamJungleDeepElectabuzz, EVENT_SUNBEAM_JUNGLE_DEEP_ELECTABUZZ_GONE

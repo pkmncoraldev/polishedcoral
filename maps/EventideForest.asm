@@ -22,9 +22,10 @@ EventideForest_MapScriptHeader:
 	xy_trigger 1,  9, 33, 0, ForestGhostGirlTrigger2, 0, 0
 	xy_trigger 0,  7, 52, 0, ForestGhostGirlTrigger, 0, 0
 
-	db 2 ; bg events
+	db 3 ; bg events
 	signpost  6,  8, SIGNPOST_READ, EventideForestSign
 	signpost 67, 37, SIGNPOST_READ, EventideForestSign2
+	bg_event 37, 17, SIGNPOST_ITEM + DUSK_STONE, EVENT_EVENTIDE_FOREST_HIDDEN_DUSK_STONE
 
 	db 13 ; object events
 	person_event SPRITE_TWIN, 11, 31, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_FOREST_GHOST_GIRL_GONE

@@ -9,7 +9,8 @@ Route8_MapScriptHeader:
 	warp_def 39, 46, 2, ROUTE_8_GATE
 	warp_def 11, 17, 1, ROUTE_8_ENCOUNTER_HOUSE
 
-	db 0 ; coord events
+	db 1 ; coord events
+	bg_event 35, 20, SIGNPOST_ITEM + DAWN_STONE, EVENT_ROUTE_8_HIDDEN_DAWN_STONE
 
 	db 4 ; bg events
 	signpost 34, 47, SIGNPOST_READ, Route8Sign

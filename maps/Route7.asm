@@ -7,7 +7,8 @@ Route7_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 23, 10, SIGNPOST_ITEM + LEAF_STONE, EVENT_ROUTE_7_HIDDEN_LEAF_STONE
 
 	db 2 ; object events
 	person_event SPRITE_BALL_CUT_FRUIT, 26, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route7Dummy, EVENT_ROUTE_6_POKE_BALL_ICE_PUNCH

@@ -45,7 +45,7 @@
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 2c
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 2d
 	tilecoll WALL, WALL, FLOOR, WALL ; 2e
-	tilecoll FLOOR, NO_OLLIE, FLOOR, NO_OLLIE ; 2f
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2f
 	tilecoll WALL, WALL, WALL, WALL ; 30
 	tilecoll WALL, WALL, WALL, WALL ; 31
 	tilecoll WATER, WATER, WATER, WATER ; 32
@@ -253,4 +253,4 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; fc
 	tilecoll LONG_GRASS, LONG_GRASS, FLOOR, FLOOR ; fd
 	tilecoll WALL, WALL, WALL, WALL ; fe
-	tilecoll WATER, WATER, WATER, WATER ; ff
+	tilecoll PUDDLE, FLOOR, PUDDLE, FLOOR ; ff

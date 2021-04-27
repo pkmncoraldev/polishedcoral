@@ -178,7 +178,7 @@ MAP_NONE   EQU 0
 	map_const EVENTIDE_GYM,								  23, 11 ; 7
 	map_const ROUTE_9,		 							  19, 28 ; 8
 	map_const DODRIO_RANCH_HOUSE,						   4,  4 ; 9
-	map_const DODRIO_RANCH_BARN,						   7,  4 ; 10
+	map_const DODRIO_RANCH_BARN,						   5,  4 ; 10
 	map_const DODRIO_RANCH_RACETRACK,					  25, 16 ; 11
 
 	newgroup													 ; 10

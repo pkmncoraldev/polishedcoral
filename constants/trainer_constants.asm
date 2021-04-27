@@ -84,6 +84,7 @@ PLAYER_F EQU __enum__
 	const JOSH
 	const ARNOLD
 	const DANNY
+	const TURK
 
 	trainerclass CAMPER
 	const BART

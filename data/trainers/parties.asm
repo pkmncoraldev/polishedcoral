@@ -515,9 +515,9 @@ YoungsterGroup:
 	db "TOMMY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 25, MINCCINO
-	db 24, GASTLY
-	db 26, GASTLY
+	db 21, PIDGEOTTO
+	db 22, GASTLY
+	db 23, GASTLY
 	db -1 ; end
 
 ; ================
@@ -573,6 +573,17 @@ BugCatcherGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BUG_CATCHER
+	db "TURK@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 22, WHIRLIPEDE
+	db 21, LEDIAN
+	db 23, WHIRLIPEDE
 	db -1 ; end
 
 ; ================
@@ -1750,7 +1761,8 @@ PokefanMGroup:
 	db "SID@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 20, STANTLER
+	
 	db -1 ; end
 
 ; ================
@@ -1771,7 +1783,8 @@ PokefanMGroup:
 	db "RICK@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 22, CHIKORITA
+	db 21, BAYLEEF
 	db -1 ; end
 
 ; ================
@@ -1793,10 +1806,12 @@ PokefanFGroup:
 ; ================
 
 	; POKEFANF
-	db "JILL@" ;UNUSED
+	db "JILL@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 22, RATICATE
+	db 23, LITWICK
+	db 24, LITWICK
 	db -1 ; end
 
 ; ================
@@ -1967,9 +1982,9 @@ LassGroup:
 	db "MARSHA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 26, BULBASAUR
-	db 25, MEOWTH
-	db 26, BULBASAUR
+	db 21, PHANTUMP
+	db 23, MEOWTH
+	db 22, ZUBAT
 	db -1 ; end
 
 ; ================
@@ -1984,8 +1999,8 @@ BeautyGroup:
 	db "BRITNEY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 22, CHIKORITA
-	db 21, BAYLEEF
+	db 23, RALTS
+	db 21, KIRLIA
 	db -1 ; end
 
 ; ================

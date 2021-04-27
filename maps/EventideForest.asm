@@ -26,7 +26,7 @@ EventideForest_MapScriptHeader:
 	signpost  6,  8, SIGNPOST_READ, EventideForestSign
 	signpost 67, 37, SIGNPOST_READ, EventideForestSign2
 
-	db 12 ; object events
+	db 13 ; object events
 	person_event SPRITE_TWIN, 11, 31, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_FOREST_GHOST_GIRL_GONE
 	person_event SPRITE_TWIN,  5, 34, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_FOREST_GHOST_GIRL_GONE2
 	person_event SPRITE_YOUNGSTER, 12,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerEventide_1, -1
@@ -34,6 +34,7 @@ EventideForest_MapScriptHeader:
 	person_event SPRITE_POKEFAN_M, 31, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerEventide_3, -1
 	person_event SPRITE_POKEFAN_F, 62, 29, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 2, TrainerEventide_4, -1
 	person_event SPRITE_POKEFAN_M, 49, 20, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 4, TrainerEventide_5, -1
+	person_event SPRITE_BUG_CATCHER, 35, 18, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerEventide_6, -1
 	itemball_event 28, 22, SUPER_REPEL, 1, EVENT_FOREST_POKE_BALL_1
 	itemball_event 30, 47, SUPER_POTION, 1, EVENT_FOREST_POKE_BALL_2
 	fruittree_event 27, 14, FRUITTREE_EVENTIDE_FOREST, PECHA_BERRY
@@ -181,6 +182,27 @@ TrainerEventide_5:
 	text "It gets you!"
 	done
 
+TrainerEventide_6:
+	generictrainer BUG_CATCHER, TURK, EVENT_BEAT_EVENTIDE_TRAINER_6, .SeenText, .BeatenText
+
+	text "There's some crazy"
+	line "cool BUG-TYPE #-"
+	cont "MON around here."
+	done
+
+.SeenText:
+	text "Check out my cool"
+	line "#MON!"
+	
+	para "BUG-TYPEs are the"
+	line "best!"
+	done
+	
+.BeatenText:
+	text "Actually, YOU'RE"
+	line "the best!"
+	done
+	
 ForestGhostGirlTrigger:
 	disappear FORESTGHOSTGIRL
 	setevent EVENT_FOREST_GHOST_GIRL_GONE
@@ -203,7 +225,8 @@ EventideForestSignText:
 	done
 	
 EventideForestSign2Text:
-	text "ROUTE 5 AHEAD"
+	text "EVENTIDE VILLAGE"
+	line "AHEAD"
 	done
 	
 Movement_ForestGhostGirl:

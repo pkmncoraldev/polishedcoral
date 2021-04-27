@@ -7,7 +7,11 @@ Route3_MapScriptHeader:
 	warp_def  7, 20, 1, STARGLOW_CAVERN_1F
 	warp_def  7, 46, 1, STARGLOW_CAVERN_3F
 
-	db 0 ; coord events
+	db 4 ; coord events
+	coord_event 40, 16, 0, Route3MakeSilverBrown
+	coord_event 40, 17, 0, Route3MakeSilverBrown
+	coord_event 38, 17, 1, Route3MakeSilverGreen
+	coord_event 38, 16, 1, Route3MakeSilverGreen
 
 	db 2 ; bg events
 	signpost  7, 17, SIGNPOST_READ, Route3_sign
@@ -15,7 +19,7 @@ Route3_MapScriptHeader:
 
 	db 10 ; object events
 	person_event SPRITE_YOUNGSTER, 8, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute3West_1, -1
-	person_event SPRITE_YOUNGSTER, 16, 30, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute3West_2, -1
+	person_event SPRITE_COOLTRAINER_M, 16, 30, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute3West_2, -1
 	itemball_event 46, 30, RARE_CANDY, 1, EVENT_ROUTE_3_RARE_CANDY
 	cuttree_event 24, 11, EVENT_ROUTE_3_CUT_TREE_1
 	cuttree_event 23, 26, EVENT_ROUTE_3_CUT_TREE_2
@@ -36,6 +40,19 @@ Route3_MapScriptHeader:
 	const ROUTEWEST_ROCK_SMASH2
 	const ROUTEWEST_ROCK_SMASH3
 	const ROUTEWEST_ROCK_SMASH4
+	
+	
+Route3MakeSilverBrown:
+	setevent EVENT_ROUTE_3_ROCKS_BROWN
+	special Special_UpdatePalsInstant
+	dotrigger $1
+	end
+	
+Route3MakeSilverGreen:
+	clearevent EVENT_ROUTE_3_ROCKS_BROWN
+	special Special_UpdatePalsInstant
+	dotrigger $0
+	end
 	
 TrainerRoute3West_1:
 	generictrainer YOUNGSTER, CHRIS, EVENT_BEAT_ROUTE_3_TRAINER_1, .SeenText, .BeatenText

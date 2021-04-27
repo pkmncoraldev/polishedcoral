@@ -20,6 +20,7 @@ MapTriggers::
 	scene_var GLINT_APARTMENT_LEFT_2F,				  wGlintApartmentLeft2FTrigger
 	scene_var GLINT_GYM,							  wGlintGymTrigger
 	scene_var STARGLOW_CAVERN_1F,					  wStarglowCavern1FTrigger
+	scene_var ROUTE_3,							  	  wRoute3Trigger
 	scene_var STARGLOW_VALLEY,						  wStarglowValleyTrigger
 	scene_var STARGLOW_TOGEPI_HOUSE,				  wStarglowTogepiHouseTrigger
 	scene_var STARGLOW_POKECENTER,					  wStarglowPokeCenterTrigger

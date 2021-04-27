@@ -31,6 +31,7 @@ Route8_MapScriptHeader:
 
 Route8Callback:
 	clearflag ENGINE_ENCOUNTER_HOUSE
+	clearevent EVENT_ROUTE_3_ROCKS_BROWN
 	return
 	
 Route8NPC1:

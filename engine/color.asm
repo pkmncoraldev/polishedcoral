@@ -819,8 +819,8 @@ LoadMapPals::
 	ld a, [wMapGroup]
 	cp GROUP_LAKE_ONWA
 	jp z, .rockscheck1
-;	cp GROUP_ROUTE_3_EAST
-;	jp z, .rockscheck2
+	cp GROUP_ROUTE_3
+	jp z, .rockscheck2
 	cp GROUP_SUNBEAM_ISLAND
 	jp z, .sunbeam
 	cp GROUP_SUNSET_BAY
@@ -1052,11 +1052,13 @@ LoadMapPals::
 	jp nz, .got_pals_cont
 	eventflagcheck EVENT_LAKE_ROCKS_BROWN
 	jp z, .sailboat
-;	jr .rocks
-;.rockscheck2
-;	ld a, [wMapNumber]
-;	cp MAP_ROUTE_3_EAST
-;	jp nz, .got_pals_cont
+	jr .rocks
+.rockscheck2
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_3
+	jp nz, .got_pals_cont
+	eventflagcheck EVENT_ROUTE_3_ROCKS_BROWN
+	jp z, .got_pals_cont
 .rocks
 	ld a, [wTimeOfDayPal]
 	and 3

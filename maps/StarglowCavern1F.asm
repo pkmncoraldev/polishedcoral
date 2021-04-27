@@ -3,7 +3,8 @@ StarglowCavern1F_MapScriptHeader:
 	scene_script StarglowCavern1FTrigger0
 	scene_script StarglowCavern1FTrigger1
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, StarglowCavern1FCallback
 
 	db 4 ; warp events
 	warp_def 29, 5, 1, ROUTE_3
@@ -46,6 +47,10 @@ StarglowCavern1FTrigger0:
 	
 StarglowCavern1FTrigger1:
 	end
+	
+StarglowCavern1FCallback:
+	clearevent EVENT_ROUTE_3_ROCKS_BROWN
+	return
 	
 TrainerStarglowCavern_1:
 	generictrainer HIKER, DOUG, EVENT_BEAT_STARGLOW_CAVERN_1F_TRAINER_1, .SeenText, .BeatenText

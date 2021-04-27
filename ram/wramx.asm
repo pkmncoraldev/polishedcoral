@@ -978,6 +978,7 @@ wGlintGroveTrigger:: ds 1
 wGlintApartmentLeft2FTrigger:: ds 1
 wGlintGymTrigger:: ds 1
 wStarglowCavern1FTrigger:: ds 1
+wRoute3Trigger:: ds 1
 wStarglowValleyTrigger:: ds 1
 wStarglowTogepiHouseTrigger:: ds 1
 wStarglowPokeCenterTrigger:: ds 1
@@ -1026,7 +1027,7 @@ wTwinkleGymYellowRoomTrigger:: ds 1
 wMtOnwaB2FTrigger:: ds 1
 wMtOnwaB3FTrigger:: ds 1
 
-ds 28
+ds 27
 
 ; fight counts
 wJackFightCount::    ds 1

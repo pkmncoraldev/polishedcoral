@@ -2056,6 +2056,9 @@ FishFunction: ; cf8e
 	jr z, .fail
 	cp PLAYER_SURF_PIKA
 	jr z, .fail
+	ld a, [wMapMusic]
+	cp MUSIC_LAVA
+	jr z, .fail
 	call GetFacingTileCoord
 	call GetTileCollision
 	cp $1

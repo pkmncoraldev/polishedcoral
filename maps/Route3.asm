@@ -7,11 +7,13 @@ Route3_MapScriptHeader:
 	warp_def  7, 20, 1, STARGLOW_CAVERN_1F
 	warp_def  7, 46, 1, STARGLOW_CAVERN_3F
 
-	db 4 ; coord events
+	db 6 ; coord events
 	coord_event 40, 16, 0, Route3MakeSilverBrown
 	coord_event 40, 17, 0, Route3MakeSilverBrown
 	coord_event 38, 17, 1, Route3MakeSilverGreen
 	coord_event 38, 16, 1, Route3MakeSilverGreen
+	coord_event 47, 30, 0, Route3MakeSilverBrown
+	coord_event 47, 31, 0, Route3MakeSilverBrown
 
 	db 2 ; bg events
 	signpost  7, 17, SIGNPOST_READ, Route3_sign

@@ -2109,8 +2109,8 @@ JugglerGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 19, SWABLU
-	db 22, ABRA
-	db 16, KADABRA
+	db 22, RALTS
+	db 16, KIRLIA
 	db -1 ; end
 
 ; ================
@@ -2130,7 +2130,7 @@ JugglerGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 20, KOFFING
-	db 16, KADABRA
+	db 16, KIRLIA
 	db -1 ; end
 
 ; ================

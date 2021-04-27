@@ -328,26 +328,26 @@
 	map_id ROUTE_6
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 13, PIDGEY		;30%
-	db 13, PHANPY		;30%
-	db 13, PSYDUCK		;20%
-	db 13, BUNEARY		;10%
+	db 13, PSYDUCK		;30%
+	db 13, WINGULL		;30%
+	db 13, PIDGEY		;20%
+	db 13, PHANPY		;10%
 	db 13, MEOWTH		;5%
 	db 13, MEOWTH		;4%
 	db 13, MEOWTH		;1%
 	; day
-	db 13, PIDGEY		;30%
-	db 13, PHANPY		;30%
-	db 13, PSYDUCK		;20%
-	db 13, BUNEARY		;10%
+	db 13, PSYDUCK		;30%
+	db 13, WINGULL		;30%
+	db 13, PIDGEY		;20%
+	db 13, PHANPY		;10%
 	db 13, MEOWTH		;5%
 	db 13, MEOWTH		;4%
 	db 13, MEOWTH		;1%
 	; nite
-	db 13, PIDGEY		;30%
-	db 13, PHANPY		;30%
-	db 13, PSYDUCK		;20%
-	db 13, BUNEARY		;10%
+	db 13, PSYDUCK		;30%
+	db 13, WINGULL		;30%
+	db 13, PIDGEY		;20%
+	db 13, PHANPY		;10%
 	db 13, MEOWTH		;5%
 	db 13, MEOWTH		;4%
 	db 13, MEOWTH		;1%

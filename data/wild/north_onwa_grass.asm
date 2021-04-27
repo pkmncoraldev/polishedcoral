@@ -785,39 +785,247 @@
 	db 19, RATICATE		;1%
 	
 	map_id SPOOKY_FOREST_1
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; day
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; nite
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	
 	map_id SPOOKY_FOREST_2
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; day
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; nite
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	
 	map_id SPOOKY_FOREST_3
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; day
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; nite
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	
 	map_id SPOOKY_FOREST_4
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; day
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; nite
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	
 	map_id SPOOKY_FOREST_5
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; day
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; nite
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	
 	map_id SPOOKY_FOREST_6
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; day
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; nite
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	
 	map_id SPOOKY_FOREST_7
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; day
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; nite
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	
 	map_id SPOOKY_FOREST_8
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; day
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	; nite
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
+	
 	map_id SPOOKY_FOREST_ESCORT
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, ZUBAT		;30%
-	db 20, PHANTUMP		;30%
-	db 20, GASTLY		;20%
-	db 20, STANTLER		;10%
-	db 20, STANTLER		;5%
-	db 20, LITWICK		;4%
-	db 20, LITWICK		;1%
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
 	; day
-	db 20, ZUBAT		;30%
-	db 20, PHANTUMP		;30%
-	db 20, GASTLY		;20%
-	db 20, STANTLER		;10%
-	db 20, STANTLER		;5%
-	db 20, LITWICK		;4%
-	db 20, LITWICK		;1%
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
 	; nite
-	db 20, ZUBAT		;30%
-	db 20, PHANTUMP		;30%
-	db 20, GASTLY		;20%
-	db 20, STANTLER		;10%
-	db 20, STANTLER		;5%
-	db 20, LITWICK		;4%
-	db 20, LITWICK		;1%
+	db 19, ZUBAT		;30%
+	db 19, PHANTUMP		;30%
+	db 19, GASTLY		;20%
+	db 19, STANTLER		;10%
+	db 19, STANTLER		;5%
+	db 19, LITWICK		;4%
+	db 19, LITWICK		;1%
 	
 	map_id SPOOKHOUSE_LIVING_ROOM
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite

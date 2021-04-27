@@ -706,29 +706,29 @@
 	map_id ROUTE_8_GARDEN
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 1, CHARMANDER	;30%
-	db 2, CHARMANDER	;30%
-	db 3, CHARMANDER	;20%
-	db 4, CHARMANDER	;10%
-	db 5, CHARMANDER	;5%
-	db 6, CHARMANDER	;4%
-	db 7, CHARMANDER	;1%
+	db 18, PIDGEY		;30%
+	db 18, PIKIPEK		;30%
+	db 18, RATTATA		;20%
+	db 18, RATTATA		;10%
+	db 18, PIDGEY		;5%
+	db 18, RATTATA		;4%
+	db 18, RATTATA		;1%
 	; day
-	db 1, CHARMANDER	;30%
-	db 2, CHARMANDER	;30%
-	db 3, CHARMANDER	;20%
-	db 4, CHARMANDER	;10%
-	db 5, CHARMANDER	;5%
-	db 6, CHARMANDER	;4%
-	db 7, CHARMANDER	;1%
+	db 18, PIDGEY		;30%
+	db 18, PIKIPEK		;30%
+	db 18, RATTATA		;20%
+	db 18, RATTATA		;10%
+	db 18, PIDGEY		;5%
+	db 18, RATTATA		;4%
+	db 18, RATTATA		;1%
 	; nite
-	db 1, CHARMANDER	;30%
-	db 2, CHARMANDER	;30%
-	db 3, CHARMANDER	;20%
-	db 4, CHARMANDER	;10%
-	db 5, CHARMANDER	;5%
-	db 6, CHARMANDER	;4%
-	db 7, CHARMANDER	;1%
+	db 18, PIDGEY		;30%
+	db 18, PIKIPEK		;30%
+	db 18, RATTATA		;20%
+	db 18, RATTATA		;10%
+	db 18, PIDGEY		;5%
+	db 18, RATTATA		;4%
+	db 18, RATTATA		;1%
 	
 	map_id ROUTE_4
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite

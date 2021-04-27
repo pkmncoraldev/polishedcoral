@@ -82,9 +82,9 @@ FishGroups: ; 92488
 .Grove_Super:
 .Grove_Good:
 	db  40 percent, MARILL,   	20	;40%
-	db  70 percent, MARILL,  	20	;30%
-	db  90 percent, STARYU,   	20	;20%
-	db 100 percent, GYARADOS, 	20	;10%
+	db  70 percent, POLIWAG,  	20	;30%
+	db  90 percent, MARILL,   	20	;20%
+	db 100 percent, POLIWAG, 	20	;10%
 	
 .Route_3_Pond_Old:
 .Route_3_Pond_Good:

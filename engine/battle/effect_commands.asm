@@ -8485,6 +8485,29 @@ BattleCommand_happinesspower: ; 3784b
 ; 37874
 
 
+BattleCommand_wish: ; 37939
+; safeguard
+
+	ld hl, wPlayerScreens
+	ld de, wPlayerWishCount
+	ld a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyScreens
+	ld de, wEnemyWishCount
+.ok
+	bit SCREENS_WISH, [hl]
+	jr nz, .failed
+	set SCREENS_WISH, [hl]
+	ld a, 2
+	ld [de], a
+	jp AnimateCurrentMove
+
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
+
+
 BattleCommand_safeguard: ; 37939
 ; safeguard
 

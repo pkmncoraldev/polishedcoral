@@ -163,3 +163,4 @@ MoveEffectsPointers:
 	dw DoPoison
 	dw DoParalyze
 	dw DoSleep
+	dw Wish

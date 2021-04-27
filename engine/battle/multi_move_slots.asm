@@ -459,13 +459,22 @@ GetFurySwipesName::
 	rst CopyBytes
 	jr .done
 .not_comet_punch
+	call CheckDoubleSlapUsers
+	jr nc, .not_doubleslap
 	ld hl, FurySwipesNames
 	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
 	ld bc, ITEM_NAME_LENGTH
 	rst CopyBytes
-	
+	jr .done
+.not_doubleslap
+	ld hl, FurySwipesNames
+	ld a, 3
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
 .done
 	pop de
 	pop bc
@@ -495,8 +504,14 @@ GetMoveNameFurySwipes:: ; 34f8
 	jr .done
 	
 .not_comet_punch
+	call CheckDoubleSlapUsers
+	jr nc, .not_doubleslap
 	ld hl, FurySwipesNames
 	ld a, 2
+	jr .done
+.not_doubleslap
+	ld hl, FurySwipesNames
+	ld a, 3
 	
 .done
 	call GetNthString
@@ -1157,7 +1172,7 @@ GetMoveNameWorkUp:: ; 34f8
 	
 .not_growth
 	ld hl, WorkUpNames
-	ld a, 2
+	ld a, 1
 	
 .done
 	call GetNthString
@@ -1326,6 +1341,14 @@ CheckCometPunchUsers::
 	ld a, [wCurPartySpecies]
 CheckCometPunchUsers2::
 	ld hl, CometPunchUsers
+	ld de, 1
+	call IsInArray
+	ret
+	
+CheckDoubleSlapUsers::
+	ld a, [wCurPartySpecies]
+CheckDoubleSlapUsers2::
+	ld hl, DoubleSlapUsers
 	ld de, 1
 	call IsInArray
 	ret
@@ -1652,6 +1675,31 @@ CheckFuryStrikesThing::
 	ld [wKickCounter], a
 	ret
 .not_comet_punch
+	push de
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip3
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species3
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species3
+	
+.skip3
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species3
+	ld a, [wEnemyMonSpecies]
+.got_user_species3
+	farcall CheckDoubleSlapUsers2
+	pop de
+	jr nc, .not_doubleslap
+	ld a, $4
+	ld [wKickCounter], a
+	ret
+.not_doubleslap
 	ld a, $1
 	ld [wKickCounter], a
 	ret
@@ -2330,6 +2378,7 @@ SharpenNames:
 FurySwipesNames:
 	db "FURY ATTACK@"
 	db "COMET PUNCH@"
+	db "DOUBLESLAP@"
 	db "FURY SWIPES@"
 	db -1
 	

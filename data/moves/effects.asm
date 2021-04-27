@@ -1449,6 +1449,13 @@ Safeguard:
 	doturn
 	safeguard
 	endmove
+	
+Wish:
+	checkobedience
+	usedmovetext
+	doturn
+	wish
+	endmove
 
 Screen:
 Reflect:

@@ -55,6 +55,10 @@ AI_Basic: ; 38591
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
 	jr z, .checkmove
+	
+	ld a, [wPlayerScreens]
+	bit SCREENS_WISH, a
+	jr z, .checkmove
 
 .discourage
 	call AIDiscourageMove

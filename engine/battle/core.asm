@@ -276,6 +276,7 @@ HandleBetweenTurnEffects:
 	ret c
 	call HandleLeppaBerry
 	call HandleSafeguard
+	call HandleWish
 	call HandleScreens
 	call HandleHealingItems
 	farcall HandleAbilities
@@ -1642,7 +1643,52 @@ HandleSafeguard:
 	ld hl, BattleText_SafeguardFaded
 	jp StdBattleTextBox
 
+HandleWish:
+	call CheckSpeed
+	jr z, .player_first
 
+	call .CheckEnemy
+.CheckPlayer:
+	ld a, [wPlayerScreens]
+	bit SCREENS_WISH, a
+	ret z
+	ld hl, wPlayerWishCount
+	dec [hl]
+	ret nz
+	res SCREENS_WISH, a
+	ld [wPlayerScreens], a
+	xor a
+	jr .print
+
+.player_first
+	call .CheckPlayer
+.CheckEnemy:
+	ld a, [wEnemyScreens]
+	bit SCREENS_WISH, a
+	ret z
+	ld hl, wEnemyWishCount
+	dec [hl]
+	ret nz
+	res SCREENS_WISH, a
+	ld [wEnemyScreens], a
+	ld a, $1
+
+.print
+	ld [hBattleTurn], a
+	farcall CheckFullHP
+	jr z, .full
+	ld hl, WishCameTrueText
+	call StdBattleTextBox
+	call GetHalfMaxHP
+	call ItemRecoveryAnim
+	call RestoreHP
+	ld hl, RegainedHealthText
+	jp StdBattleTextBox
+	
+.full
+	ld hl, HPIsFullText2
+	jp StdBattleTextBox
+	
 HandleScreens:
 	call CheckSpeed
 	jr nz, .enemy_first

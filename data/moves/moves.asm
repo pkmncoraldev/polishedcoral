@@ -12,7 +12,7 @@ ENDM
 Moves:: ; 41afb
 	move ROCK_CLIMB,   EFFECT_CONFUSE_HIT, 		  90, NORMAL,     85, 20,  20, PHYSICAL
 	move LOW_KICK,	   EFFECT_LOW_KICK,	           0, FIGHTING,  100, 20,   0, PHYSICAL
-	move DOUBLE_SLAP,  EFFECT_MULTI_HIT,          15, NORMAL,     85, 10,   0, PHYSICAL
+	move WISH,  	   EFFECT_WISH,         	   0, NORMAL,    100, 10,   0, STATUS
 	move BONE_CLUB,    EFFECT_FLINCH_HIT,         65, GROUND,     85, 25,  10, PHYSICAL
 	move DRAGON_CLAW,  EFFECT_NORMAL_HIT,         80, DRAGON,    100, 15,   0, PHYSICAL
 	move PAY_DAY,      EFFECT_PAY_DAY,            40, NORMAL,    100, 20,   0, PHYSICAL

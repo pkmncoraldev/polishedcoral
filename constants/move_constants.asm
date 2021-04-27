@@ -2,7 +2,7 @@
 	const NO_MOVE      ; $00
 	const ROCK_CLIMB   ; $01
 	const LOW_KICK	   ; $02
-	const DOUBLE_SLAP  ; $03 - COMBINE
+	const WISH		   ; $03
 	const BONE_CLUB    ; $04
 	const DRAGON_CLAW  ; $05
 	const PAY_DAY      ; $06
@@ -170,7 +170,7 @@
 	const ACROBATICS   ; $a8
 	const WILL_O_WISP  ; $a9
 	const ZEN_HEADBUTT ; $aa
-	const BRICK_BREAK  ; $ab - REMOVE
+	const BRICK_BREAK  ; $ab
 	const FLAME_BURST  ; $ac
 	const HYPER_VOICE  ; $ad
 	const CURSE        ; $ae

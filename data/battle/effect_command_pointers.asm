@@ -196,6 +196,7 @@ BattleCommandPointers:
 	command electroball				; b9 - coral
 	command lowkick
 	command cosmicpower
+	command wish
 	
 
 	enum_start -1, -1

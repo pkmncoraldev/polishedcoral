@@ -2,7 +2,7 @@ BattleAnimations::
 	dw BattleAnim_0
 	dw BattleAnim_RockClimb
 	dw BattleAnim_LowKick
-	dw BattleAnim_DoubleSlap
+	dw BattleAnim_Wish
 	dw BattleAnim_BoneClub
 	dw BattleAnim_DragonClaw
 	dw BattleAnim_PayDay
@@ -329,6 +329,7 @@ BattleAnim_RockWrecker:
 BattleAnim_OminousWind:
 BattleAnim_HornLeech:
 BattleAnim_BrickBreak:
+BattleAnim_Wish:
 	anim_ret
 	
 BattleAnim_RockPolish:
@@ -2208,6 +2209,7 @@ BattleAnim_Scratch:
 	anim_ret
 
 BattleAnim_FuryStrikes:
+	anim_jumpif $4, BattleAnim_DoubleSlap
 	anim_jumpif $3, BattleAnim_CometPunch
 	anim_jumpif $2, BattleAnim_FuryAttack
 BattleAnim_FurySwipes:

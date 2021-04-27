@@ -44,6 +44,7 @@ AI_Redundant: ; 2c41a
 	dbw EFFECT_BATON_PASS,    .BatonPass
 	dbw EFFECT_ROOST,         .Roost
 	dbw EFFECT_FAKE_OUT,	  .FakeOut
+	dbw EFFECT_WISH,     	  .Wish
 	db -1
 
 .Confuse:
@@ -113,6 +114,11 @@ AI_Redundant: ; 2c41a
 .Safeguard:
 	ld a, [wEnemyScreens]
 	bit SCREENS_SAFEGUARD, a
+	ret
+	
+.Wish:
+	ld a, [wEnemyScreens]
+	bit SCREENS_WISH, a
 	ret
 
 .Substitute:

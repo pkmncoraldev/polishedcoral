@@ -1246,6 +1246,11 @@ HPIsFullText: ; 0x81534
 	prompt
 ; 0x81544
 
+HPIsFullText2: ; 0x81534
+	text "But <USER>'s"
+	line "HP is full!"
+	prompt
+
 DraggedOutText: ; 0x81544
 	text "<USER>"
 	line "was dragged out!"
@@ -1418,6 +1423,11 @@ CoveredByVeilText: ; 0x8171c
 	line "covered by a veil!"
 	prompt
 ; 0x81733
+
+WishCameTrueText:
+	text "The WISH"
+	line "came true!"
+	prompt
 
 SafeguardProtectText: ; 0x81733
 	text "<TARGET>"

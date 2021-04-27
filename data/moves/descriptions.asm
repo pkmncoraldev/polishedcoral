@@ -1,7 +1,7 @@
 MoveDescriptions::
 	dw RockClimbDescription
 	dw LowKickDescription
-	dw DoubleSlapDescription
+	dw WishDescription
 	dw BoneClubDescription
 	dw DragonClawDescription
 	dw PayDayDescription
@@ -296,12 +296,12 @@ HornLeechDescription
 ;	db	 "An attack that"
 ;	next "hits 2-5 times.@"
 	
-DoubleSlapDescription:
-	db   "Repeatedly slaps"
-	next "2-5 times.@"
+WishDescription:
+	db   "Heals HP by 1/2 of"
+	next "max next turn.@"
 
 FuryStrikesDescription:
-	db   "Scratches or jabs"
+	db   "Attack that hits"
 	next "2-5 times.@"
 
 PinMissileDescription:

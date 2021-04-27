@@ -594,12 +594,13 @@ wEnemyScreens::
 wPlayerSafeguardCount:: ds 1
 wPlayerLightScreenCount:: ds 1
 wPlayerReflectCount:: ds 1
-	ds 1
+wPlayerWishCount:: ds 1
 
 wEnemySafeguardCount:: ds 1
 wEnemyLightScreenCount:: ds 1
 wEnemyReflectCount:: ds 1
-	ds 1
+wEnemyWishCount:: ds 1
+
 wWeather::
 ; 00 normal
 ; 01 rain

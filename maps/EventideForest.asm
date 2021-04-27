@@ -186,8 +186,8 @@ TrainerEventide_6:
 	generictrainer BUG_CATCHER, TURK, EVENT_BEAT_EVENTIDE_TRAINER_6, .SeenText, .BeatenText
 
 	text "There's some crazy"
-	line "cool BUG-TYPE #-"
-	cont "MON around here."
+	line "cool BUG-TYPEs"
+	cont "around here."
 	done
 
 .SeenText:

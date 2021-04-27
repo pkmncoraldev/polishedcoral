@@ -25,8 +25,8 @@ EventideVillage_MapScriptHeader:
 	bg_event 18, 19, SIGNPOST_JUMPTEXT, EventideVillageSignText
 	bg_event 24, 15, SIGNPOST_JUMPTEXT, EventideVillageBikeShopSignText
 	bg_event 29, 38, SIGNPOST_JUMPTEXT, EventideVillageGymSignText
-	signpost 17, 14, SIGNPOST_READ, GlintCityPokeCenterSign
-	signpost 25, 24, SIGNPOST_READ, GlintCityMartSign
+	signpost 17, 14, SIGNPOST_READ, EventideVillagePokeCenterSign
+	signpost 25, 24, SIGNPOST_READ, EventideVillageMartSign
 
 	db 11 ; object events
 	person_event SPRITE_HANGAR_PARTS, 32, 33, SPRITEMOVEDATA_HANGAR_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -44,6 +44,12 @@ EventideVillage_MapScriptHeader:
 EventideVillageFlypointCallback:
 	setflag ENGINE_FLYPOINT_EVENTIDE
 	return
+	
+EventideVillagePokeCenterSign:
+	jumpstd pokecentersign
+	
+EventideVillageMartSign:
+	jumpstd martsign
 	
 EventideVillageNPC1:
 	jumptextfaceplayer EventideVillageNPC1Text

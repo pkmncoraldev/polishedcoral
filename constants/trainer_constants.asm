@@ -259,7 +259,7 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass SUPER_NERD
-	const LARRY
+	const CHESTER
 
 
 	trainerclass LASS

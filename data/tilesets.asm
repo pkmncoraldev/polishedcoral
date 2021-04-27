@@ -293,9 +293,10 @@ INCLUDE "data/tilesets/mountain_collision.asm"
 SECTION "Tileset Data - jungle", ROMX
 
 TilesetJungleGFX::
-INCBIN "gfx/tilesets/jungle.2bpp.lz"
+INCBIN "gfx/tilesets/jungle.2bpp.vram0.lz"
 
-TilesetJungleGFX2 EQU 0
+TilesetJungleGFX2::
+INCBIN "gfx/tilesets/jungle.2bpp.vram1.lz"
 
 TilesetJungleMeta::
 INCBIN "data/tilesets/jungle_metatiles.bin.lz"

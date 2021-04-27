@@ -42,7 +42,7 @@ StarglowCavernFossilRoomNpc:
 	waitsfx
 	winlosstext StarglowCavernFossilRoomNpcWinText, 0
 	setlasttalked STARGLOWCAVERNFOSSILGUY1
-	loadtrainer SUPER_NERD, LARRY
+	loadtrainer SUPER_NERD, CHESTER
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle

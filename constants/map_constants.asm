@@ -115,8 +115,8 @@ MAP_NONE   EQU 0
 	newgroup                                                     ;  6
 
 	map_const ROUTE_6,                                    37, 19 ;  1
-	map_const ROUTE_7,                                    20, 12 ;  2
-	map_const LAKE_ONWA,                                  31, 26 ;  3
+	map_const ROUTE_7,                                    19, 12 ;  2
+	map_const LAKE_ONWA,                                  32, 26 ;  3
 	map_const LAKE_ONWA_BOAT_HOUSE_RIGHT,                  4,  3 ;  4
 	map_const LAKE_ONWA_BOAT_HOUSE_LEFT,                   4,  3 ;  5
 	map_const LAKE_ONWA_NAME_RATER_HOUSE,                  4,  4 ;  6
@@ -140,7 +140,7 @@ MAP_NONE   EQU 0
 	map_const SUNBEAM_RESERVE,                            25, 10 ; 13
 	map_const SUNBEAM_JUNGLE,  			             	  16, 16 ; 14
 	map_const SUNBEAM_JUNGLE_CAVE,  			           9,  6 ; 15
-	map_const SUNBEAM_JUNGLE_DEEP,  			          19, 17 ; 16
+	map_const SUNBEAM_JUNGLE_DEEP,  			          20, 17 ; 16
 	
 	newgroup                                                     ;  8
 	

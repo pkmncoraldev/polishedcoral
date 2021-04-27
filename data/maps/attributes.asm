@@ -143,7 +143,7 @@ ENDM
 	connection south, Route6, ROUTE_6, 1
 	connection west, LakeOnwa, LAKE_ONWA, -11
 	
-	map_attributes Route8, ROUTE_8, 5, NORTH | SOUTH | EAST
+	map_attributes Route8, ROUTE_8, $d4, NORTH | SOUTH | EAST
 	connection north, Route3, ROUTE_3, -7
 	connection south, LakeOnwa, LAKE_ONWA, -5
 	connection east, StarglowValley, STARGLOW_VALLEY, 0

@@ -116,8 +116,14 @@ WendyGroup:
 	db "WENDY@"
 	db TRAINERTYPE_ITEM | TRAINERTYPE_EVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR, NO_ITEM, 48, ABILITY_1 | QUIRKY, FEMALE
-		db TACKLE_SCRATCH_POUND, 0, 0, 0
+	db 32, TOGETIC, NO_ITEM, 48, ABILITY_2 | QUIRKY, FEMALE
+		db CHARM_FEATHER_DANCE, FAIRY_WIND, ROOST, ENCORE
+	db 31, DODRIO, NO_ITEM, 48, HIDDEN_ABILITY | QUIRKY, MALE
+		db AGILITY_ROCK_POLISH, TRI_ATTACK, ROOST, DRILL_PECK
+	db 30, SWABLU, NO_ITEM, 100, HIDDEN_ABILITY | QUIRKY, MALE
+		db SAFEGUARD, COTTON_GUARD, ROOST, DRAGONBREATH
+	db 36, SKARMORY, NO_ITEM, 48, ABILITY_1 | QUIRKY, FEMALE
+		db STEEL_WING, SPIKES, ROOST, FLY
 	db -1 ; end
 
 ; ================
@@ -572,7 +578,9 @@ BugCatcherGroup:
 	db "DANNY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 25, JOLTIK
+	db 24, LEDIAN
+	db 25, JOLTIK
 	db -1 ; end
 
 ; ================
@@ -782,7 +790,8 @@ FisherGroup:
 	db "GERALD@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 25, POLIWAG
+	db 24, MARILL
 	db -1 ; end
 
 ; ================
@@ -847,7 +856,9 @@ FisherGroup:
 	db "WALTER@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 24, CHINCHOU
+	db 25, SQUIRTLE
+	db 25, TOTODILE
 	db -1 ; end
 
 ; ================
@@ -910,7 +921,7 @@ FisherGroup:
 	db "BORRIS@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 25, WARTORTLE
 	db -1 ; end
 
 ; ================
@@ -974,7 +985,8 @@ FisherGroup:
 	db "CLINT@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 24, BUIZEL
+	db 25, WOOPER
 	db -1 ; end
 
 ; ================
@@ -1076,8 +1088,7 @@ BirdKeeperGroup:
 	db "BRYANT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 28, PIDGEOTTO
-	db 28, TRUMBEAK
+	db 27, MURKROW
 	db -1 ; end
 
 ; ================
@@ -1086,9 +1097,9 @@ BirdKeeperGroup:
 	db "TODD@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 29, DODUO
-	db 29, DODUO
-	db 27, MURKROW
+	db 24, DODUO
+	db 25, DODUO
+	db 24, MURKROW
 	db -1 ; end
 
 ; ================
@@ -1097,7 +1108,8 @@ BirdKeeperGroup:
 	db "RANDY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 31, DODRIO
+	db 24, PIDGEOTTO
+	db 24, TRUMBEAK
 	db -1 ; end
 
 ; ================
@@ -1115,7 +1127,9 @@ BirdKeeperGroup:
 	db "RICKY@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 23, PIDGEOTTO
+	db 25, DODUO
+	db 24, TRUMBEAK
 	db -1 ; end
 
 ; ================
@@ -1169,7 +1183,8 @@ BirdKeeperGroup:
 	db "VERN@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 25, NATU
+	db 25, SWABLU
 	db -1 ; end
 
 ; ================
@@ -1223,7 +1238,9 @@ BirdKeeperGroup:
 	db "ROY@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 24, WINGULL
+	db 24, WINGULL
+	db 24, TRUMBEAK
 	db -1 ; end
 
 ; ================
@@ -1277,7 +1294,7 @@ BirdKeeperGroup:
 	db "SPENCER@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 25, PELIPPER
 	db -1 ; end
 
 ; ================
@@ -1331,7 +1348,9 @@ BirdKeeperGroup:
 	db "CALEB@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 24, NATU
+	db 24, NATU
+	db 24, PIDGEOTTO
 	db -1 ; end
 
 ; ================
@@ -2009,7 +2028,9 @@ BeautyGroup:
 	db "SANDRA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 25, TOGETIC
+	db 23, WHIMSICOTT
+	db 24, NATU
 	db -1 ; end
 
 ; ================
@@ -2155,7 +2176,8 @@ SchoolboyGroup:
 	db "TIMMY@"	;2 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 17, PIDGEY
+	db 16, RATTATA
 	db -1 ; end
 
 ; ================
@@ -2164,7 +2186,8 @@ SchoolboyGroup:
 	db "TIMMY@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 25, PIDGEOTTO
+	db 24, RATICATE
 	db -1 ; end
 
 ; ================
@@ -2228,7 +2251,8 @@ SchoolboyGroup:
 	db "DAMIAN@"	;2 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 17, PIKIPEK
+	db 16, RATTATA
 	db -1 ; end
 
 ; ================
@@ -2237,7 +2261,8 @@ SchoolboyGroup:
 	db "DAMIAN@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 25, TRUMBEAK
+	db 24, RATICATE
 	db -1 ; end
 
 ; ================

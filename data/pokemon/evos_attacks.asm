@@ -1789,6 +1789,7 @@ TogepiEvosAttacks:
 	db  1, CHARM_FEATHER_DANCE
 	db  5, METRONOME
 	db  9, SING
+	db 13, FAIRY_WIND
 	db 15, ENCORE
 	db 21, SAFEGUARD
 	db 27, WISH
@@ -1806,6 +1807,7 @@ TogeticEvosAttacks:
 	db  1, CHARM_FEATHER_DANCE
 	db  5, METRONOME
 	db  9, SING
+	db 13, FAIRY_WIND
 	db 15, ENCORE
 	db 21, SAFEGUARD
 	db 27, WISH
@@ -3135,6 +3137,7 @@ TogekissEvosAttacks:
 	db  1, CHARM_FEATHER_DANCE
 	db  1, METRONOME
 	db  1, SING
+	db  1, FAIRY_WIND
 	db  1, ENCORE
 	db  1, SAFEGUARD
 	db  1, WISH

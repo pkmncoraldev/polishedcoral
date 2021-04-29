@@ -311,24 +311,71 @@ Text_ReceivedThridBadge:
 	done
 
 EventideGymWendyTextBeforeBattle:
-	text "BEFORE BATTLE"
+	text "Hello."
+	
+	para "You must be a"
+	line "challenger."
+	
+	para "I'm WENDY, the"
+	line "GYM LEADER of"
+	cont "EVENTIDE VILLAGE."
+	
+	para "I've flown just"
+	line "about everwhere"
+	cont "in this world,"
+	
+	para "but this sleepy"
+	line "little town will"
+	cont "always be home."
+	
+	para "FLYING-type #-"
+	line "MON can be as"
+	cont "graceful as a"
+	cont "spring breeze,"
+	
+	para "but they can also"
+	line "be as feirce as a"
+	cont "raging typhoon."
+	
+	para "That's why they"
+	line "are so great!"
+	
+	para "Are you ready to"
+	line "earn your wings?"
 	done
 	
 EventideGymWendyTextWin:
-	text "YOU WIN"
+	text "So fierce!"
+	line "So graceful!"
 	done
 	
 EventideGymWendyTextWinRematch:
-	text "YOU WIN"
-	line "REMATCH"
+	text "So fierce!"
+	line "So graceful!"
 	done
 	
 EventideGymWendyTextLoss:
-	text "YOU LOSE"
+	text "Blown away!"
 	done
 	
 EventideGymWendyTextAfterBattle:
-	text "AFTER BATTLE"
+	text "The GALEBADGE"
+	line "will allow you"
+	cont "to use the HM FLY"
+	cont "outside of"
+	cont "battle."
+	
+	para "You can use it to"
+	line "soar on your"
+	cont "#MON to any"
+	cont "town you've visted."
+	
+	para "You'll need to"
+	line "find the HM your-"
+	cont "self, though."
+	
+	para "You should also"
+	line "take this."
 	done
 	
 EventideGymWendyTextTMSpeech:
@@ -350,71 +397,106 @@ EventideGymWendyTextNoRematch:
 EventideGymTrainer1:
 	generictrainer BIRD_KEEPER, RICKY_3, EVENT_BEAT_EVENTIDE_GYM_TRAINER_1, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Oh yeah!"
+	
+	para "You're ready and"
+	line "willing, huh?"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Our GYM LEADER is"
+	line "just up there."
+	
+	para "You can't just see"
+	line "her that easily,"
+	cont "though!"
+	
+	para "You have to put in"
+	line "the work!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Well you showed me!"
 	done
 	
 EventideGymTrainer2:
 	generictrainer BIRD_KEEPER, VERN_3, EVENT_BEAT_EVENTIDE_GYM_TRAINER_2, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "You got this, kid!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "I sure hope you're"
+	line "prepared for a"
+	cont "high-flying defeat!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Darn it!"
 	done
 	
 EventideGymTrainer3:
 	generictrainer BIRD_KEEPER, ROY_3, EVENT_BEAT_EVENTIDE_GYM_TRAINER_3, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "No matter which"
+	line "color the switch"
+	cont "is, the black"
+	cont "conveyors will"
+	cont "change too!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Have you figured"
+	line "out the conveyor"
+	cont "belts work?"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "It's quite"
+	line "simple."
 	done
 	
 EventideGymTrainer4:
 	generictrainer BIRD_KEEPER, SPENCER_3, EVENT_BEAT_EVENTIDE_GYM_TRAINER_4, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Gotta head back"
+	line "the way you came!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Oops!"
+	
+	para "Wrong turn!"
+	
+	para "Nothing for you"
+	line "this way!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Nothing but a"
+	line "win that is!"
 	done
 	
 EventideGymTrainer5:
 	generictrainer BIRD_KEEPER, CALEB_3, EVENT_BEAT_EVENTIDE_GYM_TRAINER_5, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Hit that switch"
+	line "and finish this!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "You might feel"
+	line "like you aren't"
+	cont "close,"
+	
+	para "but you're almost"
+	line "there now!"
+	
+	para "Let's do this!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "So close!"
 	done
 	
 EventideGymTrainer1Rematch:
@@ -468,15 +550,24 @@ EventideGymTrainer1Rematch:
 	end
 
 EventideGymTrainer1RematchRegularText:
-	text "NORMAL TEXT"
+	text "Oh yeah!"
+	
+	para "You're ready and"
+	line "willing, huh?"
 	done
 
 EventideGymTrainer1RematchSeenText:
-	text "SEEN TEXT"
+	text "Back for more"
+	line "from the GYM"
+	cont "LEADER?"
+	
+	para "You've still gotta"
+	line "put in the work"
+	cont "to get to her!"
 	done
 
 EventideGymTrainer1RematchBeatenText:
-	text "YOU WIN"
+	text "Well you showed me!"
 	done
 	
 EventideGymTrainer2Rematch:
@@ -530,15 +621,18 @@ EventideGymTrainer2Rematch:
 	end
 
 EventideGymTrainer2RematchRegularText:
-	text "NORMAL TEXT"
+	text "You got this, kid!"
 	done
 
 EventideGymTrainer2RematchSeenText:
-	text "SEEN TEXT"
+	text "I hope you're"
+	line "ready for another"
+	cont "high-flying"
+	cont "defeat!"
 	done
 
 EventideGymTrainer2RematchBeatenText:
-	text "YOU WIN"
+	text "Darn it!"
 	done
 	
 EventideGymTrainer3Rematch:
@@ -592,15 +686,22 @@ EventideGymTrainer3Rematch:
 	end
 
 EventideGymTrainer3RematchRegularText:
-	text "NORMAL TEXT"
+	text "No matter which"
+	line "color the switch"
+	cont "is, the black"
+	cont "conveyors will"
+	cont "change too!"
 	done
 
 EventideGymTrainer3RematchSeenText:
-	text "SEEN TEXT"
+	text "Remember how the"
+	line "conveyor belts"
+	cont "work?"
 	done
 
 EventideGymTrainer3RematchBeatenText:
-	text "YOU WIN"
+	text "It's quite"
+	line "simple."
 	done
 	
 EventideGymTrainer4Rematch:
@@ -654,15 +755,23 @@ EventideGymTrainer4Rematch:
 	end
 
 EventideGymTrainer4RematchRegularText:
-	text "NORMAL TEXT"
+	text "Gotta head back"
+	line "the way you came!"
 	done
 
 EventideGymTrainer4RematchSeenText:
-	text "SEEN TEXT"
+	text "You want a"
+	line "rematch?"
+	
+	para "You must!"
+	
+	para "There's nothing"
+	line "else this way."
 	done
 
 EventideGymTrainer4RematchBeatenText:
-	text "YOU WIN"
+	text "Nothing but a"
+	line "win that is!"
 	done
 	
 EventideGymTrainer5Rematch:
@@ -716,15 +825,20 @@ EventideGymTrainer5Rematch:
 	end
 
 EventideGymTrainer5RematchRegularText:
-	text "NORMAL TEXT"
+	text "Hit that switch"
+	line "and finish this!"
 	done
 
 EventideGymTrainer5RematchSeenText:
-	text "SEEN TEXT"
+	text "You're almost"
+	line "to that last"
+	cont "switch again."
+	
+	para "Let's do this!"
 	done
 
 EventideGymTrainer5RematchBeatenText:
-	text "YOU WIN"
+	text "So close!"
 	done
 
 EventideGymYesSwitchText:

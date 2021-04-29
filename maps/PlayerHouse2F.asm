@@ -60,7 +60,8 @@ PlayerHouseDebugPoster:
 	iffalse .items
 	givepoke WIGGLYTUFF, 100
 	givepoke SCYTHER, 7
-	givepoke DITTO, 100
+	givepoke EXEGGCUTE, 27
+	givepoke EXEGGCUTE_A, 28
 .items
 	writetext PlayerHouseDebugText6
 	yesorno

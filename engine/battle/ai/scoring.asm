@@ -364,7 +364,7 @@ AI_Smart: ; 386be
 	dbw EFFECT_LEECH_SEED,        AI_Smart_LeechSeed
 	dbw EFFECT_DISABLE,           AI_Smart_Disable
 	dbw EFFECT_ENCORE,            AI_Smart_Encore
-	dbw EFFECT_SLEEP_TALK,        AI_Smart_SleepTalk
+	dbw EFFECT_SNORE,      		  AI_Smart_Snore
 	dbw EFFECT_DESTINY_BOND,      AI_Smart_DestinyBond
 	dbw EFFECT_REVERSAL,          AI_Smart_Reversal
 	dbw EFFECT_HEAL_BELL,         AI_Smart_HealBell
@@ -1298,7 +1298,7 @@ AI_Smart_Encore: ; 38c3b
 	db ROAR_WHIRLWIND
 	db SCREECH
 	db TRANSFORM_SPLASH
-	db STRING_SHOT
+	db SCARY_FACE_COTTON_SPORE_STRING_SHOT
 	db SUBSTITUTE
 	db SWORDS_DANCE
 	db TELEPORT
@@ -1306,7 +1306,7 @@ AI_Smart_Encore: ; 38c3b
 ; 38ca4
 
 
-AI_Smart_SleepTalk: ; 38cba
+AI_Smart_Snore: ; 38cba
 ; Greatly encourage this move if enemy is fast asleep.
 ; Greatly discourage this move otherwise.
 
@@ -2123,7 +2123,6 @@ RainDanceMoves: ; 390e7
 	db THUNDER
 	db WATER_GUN
 	db WATERFALL
-	db WHIRLPOOL
 	db $ff
 ; 390f3
 
@@ -2666,7 +2665,7 @@ AI_Opportunist: ; 39315
 	db SCREECH
 	db COTTON_GUARD
 	db TRANSFORM_SPLASH
-	db STRING_SHOT
+	db SCARY_FACE_COTTON_SPORE_STRING_SHOT
 	db SUBSTITUTE
 	db SWORDS_DANCE
 	db COSMIC_POWER

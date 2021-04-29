@@ -662,12 +662,12 @@ IsHMMove:: ; 34e7
 	jp IsInArray
 
 .HMMoves:
-	db CUT
-	db FLY
-	db SURF
-	db STRENGTH
-	db WATERFALL
-	db WHIRLPOOL
+	db STRUGGLE
+;	db FLY
+;	db SURF
+;	db STRENGTH
+;	db WATERFALL
+;	db ROCK_SMASH
 	db -1
 ; 34f8
 

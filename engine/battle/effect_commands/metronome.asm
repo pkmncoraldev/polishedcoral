@@ -44,6 +44,6 @@ MetronomeExcepts:
 	db METRONOME
 	db PROTECT
 	db SKETCH
-	db SLEEP_TALK
+	db SNORE
 	db TRANSFORM_SPLASH
 	db -1

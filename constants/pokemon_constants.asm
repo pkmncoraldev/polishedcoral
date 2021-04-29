@@ -246,6 +246,7 @@
 	const MAREANIE ;747
 	const TOXAPEX ;748
 	const RAICHU_A
+	const EXEGGCUTE_A
 	const EXEGGUTOR_A
 	const MAROWAK_A
 	const EGG        ; $fe

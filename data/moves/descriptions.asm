@@ -79,7 +79,7 @@ MoveDescriptions::
 	dw StunSporeDescription
 	dw SleepPowderDescription
 	dw PetalDanceDescription
-	dw StringShotDescription
+	dw TauntDescription
 	dw DragonRageDescription
 	dw FireSpinDescription
 	dw ThundershockDescription
@@ -212,7 +212,7 @@ MoveDescriptions::
 	dw SteelWingDescription
 	dw MeanLookDescription
 	dw AttractDescription
-	dw SleepTalkDescription
+	dw SnoreDescription
 	dw HealBellDescription
 	dw ReturnDescription
 	dw QuiverDanceDescription
@@ -248,7 +248,7 @@ MoveDescriptions::
 	dw ShadowBallDescription
 	dw FutureSightDescription
 	dw RockSmashDescription
-	dw WhirlpoolDescription
+	dw EggBombDescription
 	dw DarkPulseDescription
 	dw MoonblastDescription
 	dw PlayRoughDescription
@@ -576,9 +576,9 @@ LeerDescription:
 	db   "A move that lowers"
 	next "the foe's DEFENSE.@"
 
-StringShotDescription:
-	db   "A move that lowers"
-	next "the foe's SPEED.@"
+TauntDescription:
+	db   "Disables STATUS"
+	next "MOVES for 3 turns.@"
 
 SandAttackDescription:
 FlashDescription:
@@ -636,11 +636,14 @@ OutrageDescription:
 	next "and confuses user.@"
 
 FireSpinDescription:
-WhirlpoolDescription:
 WrapDescription:
 	db   "Traps the foe for"
 	next "2-5 turns.@"
 
+EggBombDescription:
+	db	 "Eggs are hurled"
+	next "at the foe."
+	
 SelfdestructDescription:
 	db   "Powerful but makes"
 	next "the user faint.@"
@@ -975,9 +978,9 @@ AttractDescription:
 	db   "Makes the opposite"
 	next "gender infatuated.@"
 
-SleepTalkDescription:
-	db   "Randomly attacks"
-	next "while asleep.@"
+SnoreDescription:
+	db	 "An attack useable"
+	next "only while asleep.@"
 
 HealBellDescription:
 	db   "Eliminates all"

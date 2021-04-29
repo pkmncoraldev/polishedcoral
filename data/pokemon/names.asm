@@ -245,6 +245,7 @@ PokemonNames::
 	db "MAREANIE@@"
 	db "TOXAPEX@@@"
 	db "RAICHU@@@@"
+	db "EXEGGCUTE@"
 	db "EXEGGUTOR@"
 	db "MAROWAK@@@"
 	db "EGG@@@@@@@"

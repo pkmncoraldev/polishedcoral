@@ -491,6 +491,8 @@ PicPointers::
 	dba ToxapexBackpic
 	dba Raichu_AFrontpic
 	dba Raichu_ABackpic
+	dba ExeggcuteFrontpic
+	dba ExeggcuteBackpic
 	dba Exeggutor_AFrontpic
 	dba Exeggutor_ABackpic
 	dba Marowak_AFrontpic

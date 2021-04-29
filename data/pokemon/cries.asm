@@ -262,6 +262,7 @@ CryHeaders::
 	mon_cry MAREANIE,	MareanieDEDData		; Mareanie
 	mon_cry TOXAPEX,	ToxapexDEDData		; Toxapex
 	mon_cry CRY_RAICHU,      $0ee,  $088 	; Raichu_A
+	mon_cry CRY_DODUO,   	 $000,  $100 	; Exeggcute_A
 	mon_cry CRY_EXEGGUTOR,   $000,  $100 	; Exeggutor_A
 	mon_cry CRY_ODDISH,      $04f,  $0e0 	; Marowak_A
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg

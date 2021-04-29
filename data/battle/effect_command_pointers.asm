@@ -73,7 +73,7 @@ BattleCommandPointers:
 	command encore                  ; 3b
 	command furycutter              ; 3c
 	command sketch                  ; 3d
-	command sleeptalk               ; 3e
+	command snore	                ; 3e
 	command destinybond             ; 3f
 	command falseswipe              ; 40
 	command healbell                ; 41
@@ -197,6 +197,7 @@ BattleCommandPointers:
 	command lowkick
 	command cosmicpower
 	command wish
+	command taunt
 	
 
 	enum_start -1, -1

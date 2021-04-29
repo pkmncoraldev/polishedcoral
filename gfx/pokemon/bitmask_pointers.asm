@@ -245,6 +245,7 @@ BitmasksPointers:
 	dw MareanieBitmasks
 	dw ToxapexBitmasks
 	dw Raichu_ABitmasks
+	dw ExeggcuteBitmasks
 	dw Exeggutor_ABitmasks
 	dw Marowak_ABitmasks
 	dw EggBitmasks

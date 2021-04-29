@@ -179,7 +179,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_9,		 							  19, 28 ; 8
 	map_const DODRIO_RANCH_HOUSE,						   4,  4 ; 9
 	map_const DODRIO_RANCH_BARN,						   5,  4 ; 10
-	map_const DODRIO_RANCH_RACETRACK,					  25, 16 ; 11
+	map_const DODRIO_RANCH_RACETRACK,					  25, 17 ; 11
 
 	newgroup													 ; 10
 	

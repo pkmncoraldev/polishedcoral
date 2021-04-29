@@ -249,6 +249,7 @@ MenuMonIconColors::
 	iconpal BLUE, RED ; MAREANIE
 	iconpal BLUE, RED ; TOXAPEX
 	iconpal BROWN, BROWN ; RAICHU_A
+	iconpal PINK, TEAL ; EXEGGCUTE_A
 	iconpal GREEN, RED ; EXEGGUTOR_A
 	iconpal GRAY, BLUE ; MAROWAK_A
 	iconpal RED, BLUE ; EGG

@@ -245,10 +245,10 @@ BattleCommand_checkturn:
 	ld hl, FastAsleepText
 	call StdBattleTextBox
 
-	; Sleep Talk bypasses sleep.
+	; Snore bypasses sleep.
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
-	cp SLEEP_TALK
+	cp SNORE
 	jr z, .not_asleep
 
 	call CantMove
@@ -941,7 +941,7 @@ IgnoreSleepOnly: ; 3451f
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 
-	cp SLEEP_TALK
+	cp SNORE
 	jr z, .CheckSleep
 	and a
 	ret
@@ -2398,7 +2398,7 @@ StatUpDownAnim: ; 34feb
 	farcall CheckCharmThing
 	jr .got_kick_counter
 .not_charm
-	cp SCARY_FACE_COTTON_SPORE
+	cp SCARY_FACE_COTTON_SPORE_STRING_SHOT
 	jr nz, .not_scary_face
 	farcall CheckScaryFaceThing
 	jr .got_kick_counter
@@ -4687,143 +4687,17 @@ BattleCommand_sketch: ; 35a74
 ; 35b16
 
 
-BattleCommand_sleeptalk: ; 35b33
-; sleeptalk
-
-	call ClearLastMove
-	ld a, [wAttackMissed]
-	and a
-	jr nz, .fail
-	ld a, [hBattleTurn]
-	and a
-	ld hl, wBattleMonMoves + 1
-	ld a, [wDisabledMove]
-	ld d, a
-	jr z, .got_moves
-	ld hl, wEnemyMonMoves + 1
-	ld a, [wEnemyDisabledMove]
-	ld d, a
-.got_moves
+BattleCommand_snore:
+; snore
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVar
 	and SLP
-	jr z, .fail
-	ld a, [hl]
-	and a
-	jr z, .fail
-	call .safely_check_has_usable_move
-	jr c, .fail
-	dec hl
-.sample_move
-	push hl
-	call BattleRandom
-	and %11 ; NUM_MOVES - 1
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	pop hl
-	and a
-	jr z, .sample_move
-	ld e, a
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	cp e
-	jr z, .sample_move
-	ld a, e
-	cp d
-	jr z, .sample_move
-	call .check_two_turn_move
-	jr z, .sample_move
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVarAddr
-	ld a, e
-	ld [hl], a
-	call CheckUserIsCharging
-	jr nz, .charging
-	ld a, [wKickCounter]
-	push af
-	call BattleCommand_lowersub
-	pop af
-	ld [wKickCounter], a
-.charging
-	call LoadMoveAnim
-	call UpdateMoveData
-	jp ResetTurn
-
-.fail
-	call AnimateFailedMove
-	jp TryPrintButItFailed
-
-.safely_check_has_usable_move
-	push hl
-	push de
-	push bc
-	call .check_has_usable_move
-	pop bc
-	pop de
-	pop hl
-	ret
-
-.check_has_usable_move
-	ld a, [hBattleTurn]
-	and a
-	ld a, [wDisabledMove]
-	jr z, .got_move_2
-
-	ld a, [wEnemyDisabledMove]
-.got_move_2
-	ld b, a
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVar
-	ld c, a
-	dec hl
-	ld d, NUM_MOVES
-.loop2
-	ld a, [hl]
-	and a
-	jr z, .carry
-
-	cp c
-	jr z, .nope
-	cp b
-	jr z, .nope
-
-	call .check_two_turn_move
-	jr nz, .no_carry
-
-.nope
-	inc hl
-	dec d
-	jr nz, .loop2
-
-.carry
-	scf
-	ret
-
-.no_carry
-	and a
-	ret
-
-.check_two_turn_move
-	push hl
-	push de
-	push bc
-
-	ld b, a
-	farcall GetMoveEffect
-	ld a, b
-
-	pop bc
-	pop de
-	pop hl
-
-	cp EFFECT_SOLAR_BEAM
-	ret z
-	cp EFFECT_FLY
-	ret
-
-; 35bff
+	ret nz
+	call ResetDamage
+	ld a, $1
+	ld [wAttackMissed], a
+	call PrintButItFailed
+	jp EndMoveEffect
 
 
 BattleCommand_destinybond: ; 35bff
@@ -6457,12 +6331,6 @@ BattleCommand_checkrampage: ; 3671a
 BattleCommand_rampage: ; 36751
 ; rampage
 
-; No rampage during Sleep Talk.
-	ld a, BATTLE_VARS_STATUS
-	call GetBattleVar
-	and SLP
-	ret nz
-
 	ld de, wPlayerRolloutCount
 	ld a, [hBattleTurn]
 	and a
@@ -7090,9 +6958,9 @@ BattleCommand_traptarget: ; 36c2d
 	jp StdBattleTextBox
 
 .Traps:
-	dbw WRAP,      WrappedByText     ; 'was WRAPPED by'
+;	dbw WRAP,      WrappedByText     ; 'was WRAPPED by'
 	dbw FIRE_SPIN, FireSpinTrapText  ; 'was trapped!'
-	dbw WHIRLPOOL, WhirlpoolTrapText ; 'was trapped!'
+;	dbw WHIRLPOOL, WhirlpoolTrapText ; 'was trapped!'
 ; 36c7e
 
 
@@ -8486,7 +8354,7 @@ BattleCommand_happinesspower: ; 3784b
 
 
 BattleCommand_wish: ; 37939
-; safeguard
+; wish
 
 	ld hl, wPlayerScreens
 	ld de, wPlayerWishCount
@@ -8507,6 +8375,40 @@ BattleCommand_wish: ; 37939
 	call AnimateFailedMove
 	jp PrintButItFailed
 
+	
+BattleCommand_taunt: ; 37939
+; taunt
+
+	call CheckSubstituteOpp
+	jr nz, .failed
+
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_TAUNT, [hl]
+	jr nz, .failed
+	
+	ld bc, wEnemyTauntCount
+	ld a, [hBattleTurn]
+	and a
+	jr z, .got_taunt_count
+	ld bc, wPlayerTauntCount
+	
+.got_taunt_count
+	set SUBSTATUS_TAUNT, [hl]
+	ld a, 4
+	ld [bc], a
+	call AnimateCurrentMove
+	ld hl, TauntedText
+	jp StdBattleTextBox
+
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
+	
 
 BattleCommand_safeguard: ; 37939
 ; safeguard

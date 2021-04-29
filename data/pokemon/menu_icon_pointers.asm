@@ -246,6 +246,7 @@ IconPointers:
 	dw MareanieIcon
 	dw ToxapexIcon
 	dw Raichu_AIcon
+	dw Exeggcute_AIcon
 	dw Exeggutor_AIcon
 	dw Marowak_AIcon
 	dw EggIcon

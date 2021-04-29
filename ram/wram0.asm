@@ -440,6 +440,7 @@ wPlayerEncoreCount:: ds 1
 wPlayerPerishCount:: ds 1
 wPlayerFuryCutterCount:: ds 1
 wPlayerProtectCount:: ds 1
+wPlayerTauntCount:: ds 1
 
 wEnemyAbility:: ds 1
 wEnemyRolloutCount:: ds 1
@@ -450,6 +451,7 @@ wEnemyEncoreCount:: ds 1
 wEnemyPerishCount:: ds 1
 wEnemyFuryCutterCount:: ds 1
 wEnemyProtectCount:: ds 1
+wEnemyTauntCount:: ds 1
 
 wBattleSubStatusWRAMEnd::
 
@@ -486,7 +488,7 @@ wEnemyMetronomeCount:: ds 1
 wAITempAbility:: ds 1
 wAITempItem:: ds 1
 
-	ds 16
+	ds 14
 
 wBattleScriptBufferLoc:: ds 2
 

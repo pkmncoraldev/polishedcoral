@@ -1665,6 +1665,11 @@ Pokedex_CheckCaught: ; 40bc4 (10:4bc4)
 	ld a, RAICHU
 	jr .cont
 .not_raichu_a
+	cp EXEGGCUTE_A
+	jr nz, .not_exeggcute_a
+	ld a, EXEGGCUTE
+	jr .cont
+.not_exeggcute_a
 	cp EXEGGUTOR_A
 	jr nz, .not_exeggutor_a
 	ld a, EXEGGUTOR
@@ -1690,6 +1695,11 @@ Pokedex_CheckSeen: ; 40bd0
 	ld a, RAICHU
 	jr .cont
 .not_raichu_a
+	cp EXEGGCUTE_A
+	jr nz, .not_exeggcute_a
+	ld a, EXEGGCUTE
+	jr .cont
+.not_exeggcute_a
 	cp EXEGGUTOR_A
 	jr nz, .not_exeggutor_a
 	ld a, EXEGGUTOR
@@ -2547,6 +2557,11 @@ NewPokedexEntry: ; fb877
 	ld a, RAICHU
 	jr .cont
 .not_raichu_a
+	cp EXEGGCUTE_A
+	jr nz, .not_exeggcute_a
+	ld a, EXEGGCUTE
+	jr .cont
+.not_exeggcute_a
 	cp EXEGGUTOR_A
 	jr nz, .not_exeggutor_a
 	ld a, EXEGGUTOR

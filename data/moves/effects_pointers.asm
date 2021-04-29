@@ -54,7 +54,7 @@ MoveEffectsPointers:
 	dw DragonDance
 	dw AttackDown
 	dw DefenseDown
-	dw StringShot
+	dw SpeedDown
 	dw SpecialAttackDown
 	dw SpecialDefenseDown
 	dw AccuracyDown
@@ -92,7 +92,7 @@ MoveEffectsPointers:
 	dw Encore
 	dw FuryCutter
 	dw Sketch
-	dw SleepTalk
+	dw Snore
 	dw DestinyBond
 	dw Reversal
 	dw FalseSwipe
@@ -164,3 +164,4 @@ MoveEffectsPointers:
 	dw DoParalyze
 	dw DoSleep
 	dw Wish
+	dw Taunt

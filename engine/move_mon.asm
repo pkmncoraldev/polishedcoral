@@ -173,6 +173,11 @@ endr
 	ld a, RAICHU
 	jr .cont
 .not_raichu_a
+	cp EXEGGCUTE_A
+	jr nz, .not_exeggcute_a
+	ld a, EXEGGCUTE
+	jr .cont
+.not_exeggcute_a
 	cp EXEGGUTOR_A
 	jr nz, .not_exeggutor_a
 	ld a, EXEGGUTOR

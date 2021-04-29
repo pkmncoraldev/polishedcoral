@@ -1489,18 +1489,18 @@ Script_AutoWhirlpool:
 	step_end
 
 TryWhirlpoolOW:: ; ce3e
-	ld d, WHIRLPOOL
-	call CheckPartyCanLearnMove
-	jr c, .failed
-	ld de, ENGINE_SEVENTHBADGE
-	call CheckEngineFlag
-	jr c, .failed
-	call TryWhirlpoolMenu
-	jr c, .failed
-	ld a, BANK(Script_AskWhirlpoolOW)
-	ld hl, Script_AskWhirlpoolOW
-	call CallScript
-	scf
+;	ld d, WHIRLPOOL
+;	call CheckPartyCanLearnMove
+;	jr c, .failed
+;	ld de, ENGINE_SEVENTHBADGE
+;	call CheckEngineFlag
+;	jr c, .failed
+;	call TryWhirlpoolMenu
+;	jr c, .failed
+;	ld a, BANK(Script_AskWhirlpoolOW)
+;	ld hl, Script_AskWhirlpoolOW
+;	call CallScript
+;	scf
 	ret
 
 .failed

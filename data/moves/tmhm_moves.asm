@@ -81,7 +81,7 @@ TMHMMoves:
 	db FLY          ; HM02
 	db SURF         ; HM03
 	db STRENGTH     ; HM04
-	db WHIRLPOOL    ; HM05
+	db EGG_BOMB    ; HM05
 	db WATERFALL    ; HM06
 	db ROCK_SMASH   ; HM07 (Glint Apartments)
 	db ROCK_CLIMB
@@ -104,7 +104,7 @@ TMHMMoves:
 	db NUZZLE    ; MT17
 	db SEISMIC_TOSS ; MT18
 	db COTTON_GUARD   ; MT20
-	db SLEEP_TALK   ; MT19
+	db SNORE   ; MT19
 	db SUCKER_PUNCH ; MT21
 	db SWAGGER      ; MT22
 	db THUNDERPUNCH ; MT23

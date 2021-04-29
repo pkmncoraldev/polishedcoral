@@ -290,6 +290,7 @@ HandleBetweenTurnEffects:
 	call HandleRoost
 	call UpdateBattleMonInParty
 	call LoadTileMapToTempTileMap
+	call HandleTaunt
 	jp HandleEncore
 
 CheckFaint:
@@ -744,6 +745,63 @@ HandleEncore: ; 3c4df
 	jp StdBattleTextBox
 ; 3c543
 
+
+HandleTaunt: ; 3c4df
+	ld a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .player_1
+	call .do_player
+	jr .do_enemy
+
+.player_1
+	call .do_enemy
+.do_player
+	ld hl, wPlayerSubStatus2
+	bit SUBSTATUS_TAUNT, [hl]
+	ret z
+	ld a, [wPlayerTauntCount]
+	dec a
+	ld [wPlayerTauntCount], a
+	jr z, .end_player_taunt
+	ld hl, wBattleMonPP
+	ld a, [wCurMoveNum]
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	and $3f
+	ret nz
+
+.end_player_taunt
+	ld hl, wPlayerSubStatus2
+	res SUBSTATUS_TAUNT, [hl]
+	call SetEnemyTurn
+	ld hl, BattleText_TargetsTauntEnded
+	jp StdBattleTextBox
+
+.do_enemy
+	ld hl, wEnemySubStatus2
+	bit SUBSTATUS_TAUNT, [hl]
+	ret z
+	ld a, [wEnemyTauntCount]
+	dec a
+	ld [wEnemyTauntCount], a
+	jr z, .end_enemy_taunt
+	ld hl, wEnemyMonPP
+	ld a, [wCurEnemyMoveNum]
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	and $3f
+	ret nz
+
+.end_enemy_taunt
+	ld hl, wEnemySubStatus2
+	res SUBSTATUS_TAUNT, [hl]
+	call SetPlayerTurn
+	ld hl, BattleText_TargetsTauntEnded
+	jp StdBattleTextBox
 
 TryEnemyFlee: ; 3c543
 	ld a, [wBattleMode]
@@ -5976,6 +6034,8 @@ MoveSelectionScreen:
 	ld c, a
 	call CheckUsableMove
 	dec a
+	jr z, .move_taunted
+	dec a
 	jr z, .no_pp_left
 	dec a
 	jr z, .move_disabled
@@ -5993,6 +6053,10 @@ MoveSelectionScreen:
 
 .move_disabled
 	ld hl, BattleText_TheMoveIsDisabled
+	jr .place_textbox_start_over
+	
+.move_taunted
+	ld hl, BattleText_TheMoveIsTaunted
 	jr .place_textbox_start_over
 
 .choiced
@@ -6361,6 +6425,31 @@ CheckUsableMove:
 	jr z, .end
 
 .not_disabled
+	; Check Taunt
+	
+	ld hl, Moves + MOVE_CATEGORY
+	ld a, c
+	dec a
+	call GetMoveAttr
+	cp STATUS
+	ld a, 5
+	jr nz, .not_taunted
+	
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wPlayerTauntCount]
+	jr z, .got_taunt_count
+	ld a, [wEnemyTauntCount]
+.got_taunt_count
+	swap a
+	and $f
+	jr z, .not_taunted
+	dec a
+	cp c
+	ld a, 5
+	jr z, .end
+
+.not_taunted
 	; Check items. This requires the actual move so get it into c
 	ld a, [hBattleTurn]
 	and a
@@ -6401,7 +6490,10 @@ CheckUsableMove:
 	cp c
 	ld a, 3
 	jr nz, .end
+	jr .usable
+	
 
+	
 	; fallthrough
 .usable
 	xor a
@@ -6622,6 +6714,11 @@ LoadEnemyMon: ; 3e8eb
 	ld a, RAICHU
 	jr .cont
 .not_raichu_a
+	cp EXEGGCUTE_A
+	jr nz, .not_exeggcute_a
+	ld a, EXEGGCUTE
+	jr .cont
+.not_exeggcute_a
 	cp EXEGGUTOR_A
 	jr nz, .not_exeggutor_a
 	ld a, EXEGGUTOR

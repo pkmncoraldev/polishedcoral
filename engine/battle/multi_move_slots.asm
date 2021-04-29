@@ -759,8 +759,18 @@ GetScaryFaceName::
 	rst CopyBytes
 	jr .done
 .not_cotton_spore
+	call CheckStringShotUsers
+	jr nc, .not_string_shot
 	ld hl, ScaryFaceNames
 	ld a, 1
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	jr .done
+.not_string_shot
+	ld hl, ScaryFaceNames
+	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
 	ld bc, ITEM_NAME_LENGTH
@@ -788,8 +798,14 @@ GetMoveNameScaryFace:: ; 34f8
 	jr .done
 	
 .not_cotton_spore
+	call CheckStringShotUsers
+	jr nc, .not_string_shot
 	ld hl, ScaryFaceNames
 	ld a, 1
+	jr .done
+.not_string_shot
+	ld hl, ScaryFaceNames
+	ld a, 2
 	
 .done
 	call GetNthString
@@ -1401,6 +1417,14 @@ CheckCottonSporeUsers2::
 	call IsInArray
 	ret
 	
+CheckStringShotUsers::
+	ld a, [wCurPartySpecies]
+CheckStringShotUsers2::
+	ld hl, CottonSporeUsers
+	ld de, 2
+	call IsInArray
+	ret
+	
 CheckWhirlwindUsers::
 	ld a, [wCurPartySpecies]
 CheckWhirlwindUsers2::
@@ -1496,7 +1520,7 @@ GetMultiMoveSlotName2::
 	jr z, .mean_look
 	cp CHARM_FEATHER_DANCE
 	jr z, .charm
-	cp SCARY_FACE_COTTON_SPORE
+	cp SCARY_FACE_COTTON_SPORE_STRING_SHOT
 	jr z, .scary_face
 	cp ROAR_WHIRLWIND
 	jr z, .roar
@@ -1898,26 +1922,48 @@ CheckCharmThing::
 CheckScaryFaceThing::
 	ld a, [wMirrorMoveUsed]
 	and a
-	jr z, .skip
+	jr z, .skip1
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
-	jr z, .got_user_species
+	jr z, .got_user_species1
 	ld a, [wBattleMonSpecies]
-	jr .got_user_species
+	jr .got_user_species1
 	
-.skip
+.skip1
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
-	jr z, .got_user_species
+	jr z, .got_user_species1
 	ld a, [wEnemyMonSpecies]
-.got_user_species
+.got_user_species1
 	farcall CheckCottonSporeUsers2
 	jr nc, .not_scary_face
 	ld a, $1
 	ret
 .not_scary_face
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species2
+	
+.skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wEnemyMonSpecies]
+.got_user_species2
+	farcall CheckStringShotUsers2
+	jr nc, .not_string_shot
+	ld a, $2
+	ret
+.not_string_shot
 	ret
 	
 CheckRoarThing::
@@ -2127,6 +2173,10 @@ PoundUsers:
 	db POLIWHIRL
 	db POLIWRATH
 	db POLITOED
+	db SUDOWOODO
+	db DRATINI
+	db DRAGONAIR
+	db DRAGONITE
 	db -1
 	
 ScratchUsers:
@@ -2159,6 +2209,15 @@ WithdrawUsers:
 HardenUsers:
 	db ONIX
 	db STEELIX
+	db STARYU
+	db STARMIE
+	db PINSIR
+	db SLUGMA
+	db MAGCARGO
+	db CORSOLA
+	db ARON
+	db LAIRON
+	db AGGRON
 	db -1
 
 TailWhipUsers:
@@ -2178,6 +2237,15 @@ TailWhipUsers:
 	db QUAGSIRE
 	db MARILL
 	db AZUMARILL
+	db EEVEE
+	db VAPOREON
+	db JOLTEON
+	db FLAREON
+	db ESPEON
+	db UMBREON
+	db LEAFEON
+	db GLACEON
+	db SYLVEON
 	db -1
 	
 IronDefenseUsers:
@@ -2245,16 +2313,19 @@ MoonlightUsers:
 	db GLOOM
 	db VILEPLUME
 	db BELLOSSOM
+	db UMBREON
+	db SYLVEON
 	db -1
 	
 MorningSunUsers:
-	db SMEARGLE
+	db ESPEON
 	db -1
 	
 BlockUsers:
 	db SMEARGLE
 	db MUNCHLAX
 	db SNORLAX
+	db SUDOWOODO
 	db -1
 	
 SpiderWebUsers:
@@ -2274,6 +2345,13 @@ CottonSporeUsers:
 	db AMPHAROS
 	db COTTONEE
 	db WHIMSICOTT
+	db -1
+	
+StringShotUsers:
+	db JOLTIK
+	db GALVANTULA
+	db LARVESTA
+	db VOLCARONA
 	db -1
 	
 WhirlwindUsers:
@@ -2401,6 +2479,7 @@ CharmNames:
 	
 ScaryFaceNames:
 	db "COTTON SPORE@"
+	db "STRING SHOT@"
 	db "SCARY FACE@"
 	db -1
 	
@@ -2451,7 +2530,7 @@ MultiSlotMoves:
 	db SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db MEAN_LOOK_BLOCK_SPIDER_WEB
 	db CHARM_FEATHER_DANCE
-	db SCARY_FACE_COTTON_SPORE
+	db SCARY_FACE_COTTON_SPORE_STRING_SHOT
 	db ROAR_WHIRLWIND
 	db SAND_ATTACK_SMOKESCREEN
 	db SOFTBOILED_MILK_DRINK
@@ -2479,7 +2558,7 @@ MultiSlotMoveTypes::
 	jr z, .mean_look
 	cp SAND_ATTACK_SMOKESCREEN
 	jp z, .sand_attack
-	cp SCARY_FACE_COTTON_SPORE
+	cp SCARY_FACE_COTTON_SPORE_STRING_SHOT
 	jp z, .scary_face
 	cp FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	jp z, .foresight
@@ -2614,6 +2693,10 @@ MultiSlotMoveTypes::
 	pop hl
 	ret
 .not_cotton_spore
+	call CheckStringShotUsers
+	jr nc, .not_string_shot
+	ld a, BUG
+.not_string_shot
 	ld a, NORMAL
 	pop de
 	pop bc

@@ -548,6 +548,11 @@ BattleText_TheMoveIsDisabled: ; 0x80c5b
 	prompt
 ; 0x80c72
 
+BattleText_TheMoveIsTaunted:
+	text "The move is"
+	line "taunted!"
+	prompt
+
 BattleText_PkmnHasNoMovesLeft: ; 0x80c72
 	text_from_ram wBattleMonNick
 	text ""
@@ -560,6 +565,16 @@ BattleText_TargetsEncoreEnded: ; 0x80c8a
 	line "encore ended!"
 	prompt
 ; 0x80c9c
+
+BattleText_TargetsTauntEnded: ; 0x80c8a
+	text "<TARGET>'s"
+	line "taunt ended!"
+	prompt
+	
+TauntedText:
+	text "<TARGET> fell"
+	line "for the TAUNT!"
+	prompt
 
 BattleText_StringBuffer1GrewToLevel: ; 0x80c9c
 	text_from_ram wStringBuffer1

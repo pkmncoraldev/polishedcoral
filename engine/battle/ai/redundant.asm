@@ -25,7 +25,7 @@ AI_Redundant: ; 2c41a
 	dbw EFFECT_LEECH_SEED,    .LeechSeed
 	dbw EFFECT_DISABLE,       .Disable
 	dbw EFFECT_ENCORE,        .Encore
-	dbw EFFECT_SLEEP_TALK,    .SleepTalk
+	dbw EFFECT_SNORE,    	  .Snore
 	dbw EFFECT_MEAN_LOOK,     .MeanLook
 	dbw EFFECT_SPIKES,        .Spikes
 	dbw EFFECT_TOXIC_SPIKES,  .ToxicSpikes
@@ -45,6 +45,7 @@ AI_Redundant: ; 2c41a
 	dbw EFFECT_ROOST,         .Roost
 	dbw EFFECT_FAKE_OUT,	  .FakeOut
 	dbw EFFECT_WISH,     	  .Wish
+	dbw EFFECT_TAUNT,		  .Taunt
 	db -1
 
 .Confuse:
@@ -94,6 +95,11 @@ AI_Redundant: ; 2c41a
 	ld a, [wEnemySubStatus2]
 	bit SUBSTATUS_CANT_RUN, a
 	ret
+	
+.Taunt:
+	ld a, [wEnemySubStatus2]
+	bit SUBSTATUS_TAUNT, a
+	ret
 
 .PerishSong:
 	ld a, [wPlayerSubStatus1]
@@ -136,7 +142,7 @@ AI_Redundant: ; 2c41a
 	bit SUBSTATUS_TRANSFORMED, a
 	ret
 
-.SleepTalk:
+.Snore:
 	ld a, [wEnemyMonStatus]
 	and SLP
 	jr .InvertZero

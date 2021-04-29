@@ -245,6 +245,7 @@ AnimationExtraPointers:
 	dw MareanieAnimationExtra
 	dw ToxapexAnimationExtra
 	dw Raichu_AAnimationExtra
+	dw ExeggcuteAnimationExtra
 	dw Exeggutor_AAnimationExtra
 	dw Marowak_AAnimationExtra
 	dw EggAnimationExtra

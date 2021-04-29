@@ -80,7 +80,7 @@ BattleAnimations::
 	dw BattleAnim_StunSpore
 	dw BattleAnim_SleepPowder
 	dw BattleAnim_PetalDance
-	dw BattleAnim_StringShot
+	dw BattleAnim_Taunt
 	dw BattleAnim_DragonRage
 	dw BattleAnim_FireSpin
 	dw BattleAnim_Thundershock
@@ -213,7 +213,7 @@ BattleAnimations::
 	dw BattleAnim_SteelWing
 	dw BattleAnim_MeanLook
 	dw BattleAnim_Attract
-	dw BattleAnim_SleepTalk
+	dw BattleAnim_Snore
 	dw BattleAnim_HealBell
 	dw BattleAnim_Return
 	dw BattleAnim_QuiverDance
@@ -249,7 +249,7 @@ BattleAnimations::
 	dw BattleAnim_ShadowBall
 	dw BattleAnim_FutureSight
 	dw BattleAnim_RockSmash
-	dw BattleAnim_Whirlpool
+	dw BattleAnim_EggBomb
 	dw BattleAnim_DarkPulse
 	dw BattleAnim_Moonblast
 	dw BattleAnim_PlayRough
@@ -330,6 +330,7 @@ BattleAnim_OminousWind:
 BattleAnim_HornLeech:
 BattleAnim_BrickBreak:
 BattleAnim_Wish:
+BattleAnim_Taunt:
 	anim_ret
 	
 BattleAnim_RockPolish:
@@ -3922,6 +3923,7 @@ BattleAnim_MachPunch:
 
 BattleAnim_ScaryFace:
 	anim_jumpif $1, BattleAnim_CottonSpore
+	anim_jumpif $2, BattleAnim_StringShot
 	anim_1gfx ANIM_GFX_BEAM
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
@@ -4445,15 +4447,15 @@ BattleAnim_Attract:
 	anim_wait 64
 	anim_ret
 
-BattleAnim_SleepTalk:
-	anim_1gfx ANIM_GFX_STATUS
-.loop
-	anim_sound 0, 0, SFX_STRENGTH
-	anim_obj ANIM_OBJ_54,   8, 0,  10, 0, $0
-	anim_wait 40
-	anim_loop 2, .loop
-	anim_wait 32
-	anim_ret
+;BattleAnim_SleepTalk:
+;	anim_1gfx ANIM_GFX_STATUS
+;.loop
+;	anim_sound 0, 0, SFX_STRENGTH
+;	anim_obj ANIM_OBJ_54,   8, 0,  10, 0, $0
+;	anim_wait 40
+;	anim_loop 2, .loop
+;	anim_wait 32
+;	anim_ret
 
 BattleAnim_HealBell:
 	anim_2gfx ANIM_GFX_MISC, ANIM_GFX_NOISE
@@ -5660,18 +5662,18 @@ BattleAnim_Meditate:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
-;BattleAnim_Snore: ; removed
-;	anim_2gfx ANIM_GFX_STATUS, ANIM_GFX_NOISE
-;	anim_obj ANIM_OBJ_54,   8, 0,  10, 0, $0
-;	anim_wait 32
-;	anim_bgeffect ANIM_BG_1F, $60, $2, $0
-;	anim_sound 0, 0, SFX_SNORE
-;.loop
-;	anim_call BattleAnim_Snore_branch_cbbbc
-;	anim_wait 16
-;	anim_loop 2, .loop
-;	anim_wait 8
-;	anim_ret
+BattleAnim_Snore:
+	anim_2gfx ANIM_GFX_STATUS, ANIM_GFX_NOISE
+	anim_obj ANIM_OBJ_54,   8, 0,  10, 0, $0
+	anim_wait 32
+	anim_bgeffect ANIM_BG_1F, $60, $2, $0
+	anim_sound 0, 0, SFX_SNORE
+.loop
+	anim_call BattleAnim_Snore_branch_cbbbc
+	anim_wait 16
+	anim_loop 2, .loop
+	anim_wait 8
+	anim_ret
 
 ;BattleAnim_Barrage: ; removed
 ;	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_EXPLOSION
@@ -5726,24 +5728,24 @@ BattleAnim_Twister: ; removed
 	anim_wait 32
 	anim_ret
 
-;BattleAnim_EggBomb: ; removed
-;	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_EXPLOSION
-;	anim_sound 0, 0, SFX_SWITCH_POKEMON
-;	anim_obj ANIM_OBJ_46,   5, 4,  13, 0, $1
-;	anim_wait 128
-;	anim_wait 96
-;	anim_incobj  1
-;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
-;	anim_sound 0, 1, SFX_EGG_BOMB
-;	anim_obj ANIM_OBJ_18,  16, 0,   8, 0, $0
-;	anim_wait 8
-;	anim_sound 0, 1, SFX_EGG_BOMB
-;	anim_obj ANIM_OBJ_18, -14, 0,   8, 4, $0
-;	anim_wait 8
-;	anim_sound 0, 1, SFX_EGG_BOMB
-;	anim_obj ANIM_OBJ_18, -15, 0,   9, 0, $0
-;	anim_wait 24
-;	anim_ret
+BattleAnim_EggBomb: ; removed
+	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_EXPLOSION
+	anim_sound 0, 0, SFX_SWITCH_POKEMON
+	anim_obj ANIM_OBJ_46,   5, 4,  13, 0, $1
+	anim_wait 128
+	anim_wait 96
+	anim_incobj  1
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_18,  16, 0,   8, 0, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_18, -14, 0,   8, 4, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_18, -15, 0,   9, 0, $0
+	anim_wait 24
+	anim_ret
 
 BattleAnim_LockOn:
 	anim_jumpif $1, BattleAnim_MindReader

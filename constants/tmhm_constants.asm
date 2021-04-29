@@ -107,7 +107,7 @@ NUM_TMS = const_value - TM01
 	add_hm FLY          ; $4c
 	add_hm SURF         ; $4d
 	add_hm STRENGTH     ; $4e
-	add_hm WHIRLPOOL    ; $4f
+	add_hm EGG_BOMB    ; $4f
 	add_hm WATERFALL    ; $50
 	add_hm ROCK_SMASH   ; $1e
 	add_hm ROCK_CLIMB
@@ -132,7 +132,7 @@ NUM_HMS = const_value - HM01
 	add_mt NUZZLE    ; $61
 	add_mt SEISMIC_TOSS ; $62
 	add_mt COTTON_GUARD   ; $63
-	add_mt SLEEP_TALK   ; $64
+	add_mt SNORE   ; $64
 	add_mt SUCKER_PUNCH ; $65
 	add_mt SWAGGER      ; $66
 	add_mt THUNDERPUNCH_MT ; $67

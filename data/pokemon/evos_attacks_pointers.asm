@@ -249,5 +249,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw MareanieEvosAttacks
 	dw ToxapexEvosAttacks
 	dw Raichu_AEvosAttacks
+	dw Exeggcute_AEvosAttacks
 	dw Exeggutor_AEvosAttacks
 	dw Marowak_AEvosAttacks

@@ -309,5 +309,6 @@ INCLUDE "data/pokemon/base_stats/mareanie.asm"
 INCLUDE "data/pokemon/base_stats/toxapex.asm"
 
 INCLUDE "data/pokemon/base_stats/raichu_a.asm"
+INCLUDE "data/pokemon/base_stats/exeggcute.asm"
 INCLUDE "data/pokemon/base_stats/exeggutor_a.asm"
 INCLUDE "data/pokemon/base_stats/marowak_a.asm"

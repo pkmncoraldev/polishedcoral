@@ -1249,7 +1249,6 @@ Leer:
 	endmove
 
 SpeedDown:
-StringShot:
 	checkobedience
 	usedmovetext
 	doturn
@@ -1515,7 +1514,6 @@ Trap:
 Wrap:
 Bind:
 FireSpin:
-Whirlpool:
 	checkobedience
 	usedmovetext
 	doturn
@@ -1788,6 +1786,16 @@ Disable:
 	bounceback
 	disable
 	endmove
+	
+Taunt:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	checkhit
+	bounceback
+	taunt
+	endmove
 
 ;Counter:
 ;	checkobedience
@@ -1840,11 +1848,26 @@ Sketch:
 	sketch
 	endmove
 
-SleepTalk:
+Snore:
 	checkobedience
 	usedmovetext
 	doturn
-	sleeptalk
+	pressure
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	snore
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	pickpocket
 	endmove
 
 DestinyBond:

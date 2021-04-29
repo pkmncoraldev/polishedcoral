@@ -35,7 +35,7 @@
 	const THUNDER_FANG ; $21
 	const TACKLE_SCRATCH_POUND       			; $22
 	const BODY_SLAM    ; $23
-	const WRAP         ; $24
+	const WRAP         ; $24 - REMOVE
 	const TAKE_DOWN    ; $25
 	const THRASH       ; $26
 	const DOUBLE_EDGE  ; $27
@@ -80,7 +80,7 @@
 	const STUN_SPORE   ; $4e
 	const SLEEP_POWDER ; $4f
 	const PETAL_DANCE  ; $50
-	const STRING_SHOT  ; $51 - COMBINE
+	const TAUNT		   ; $51
 	const DRAGON_RAGE  ; $52
 	const FIRE_SPIN    ; $53
 	const THUNDERSHOCK ; $54
@@ -183,7 +183,7 @@
 	const ICE_SHARD    ; $b5
 	const PROTECT      ; $b6
 	const MACH_PUNCH   ; $b7
-	const SCARY_FACE_COTTON_SPORE   			; $b8
+	const SCARY_FACE_COTTON_SPORE_STRING_SHOT   ; $b8
 	const FEINT_ATTACK ; $b9
 	const SWEET_KISS   ; $ba - COMBINE
 	const BELLY_DRUM   ; $bb
@@ -213,7 +213,7 @@
 	const STEEL_WING   ; $d3
 	const MEAN_LOOK_BLOCK_SPIDER_WEB    		; $d4
 	const ATTRACT      ; $d5
-	const SLEEP_TALK   ; $d6 - REMOVE
+	const SNORE		   ; $d6
 	const HEAL_BELL    ; $d7 - COMBINE
 	const RETURN       ; $d8
 	const QUIVER_DANCE ; $d9
@@ -249,7 +249,7 @@
 	const SHADOW_BALL  ; $f7
 	const FUTURE_SIGHT ; $f8
 	const ROCK_SMASH   ; $f9
-	const WHIRLPOOL    ; $fa - REMOVE
+	const EGG_BOMB     ; $fa
 	const DARK_PULSE   ; $fb
 	const MOONBLAST    ; $fc
 	const PLAY_ROUGH   ; $fd

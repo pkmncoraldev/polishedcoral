@@ -245,6 +245,7 @@ FramesPointers:
 	dw MareanieFrames
 	dw ToxapexFrames
 	dw Raichu_AFrames
+	dw ExeggcuteFrames
 	dw Exeggutor_AFrames
 	dw Marowak_AFrames
 	dw EggFrames

@@ -35,6 +35,7 @@ FlickerTrainStation_MapScriptHeader:
 	const FLICKER_TRAIN_STATION_CLERK
 	
 FlickerTrainStationClerk:
+	jumptextfaceplayer FlickerTrainStationClerkTextDemo
 	faceplayer
 	opentext
 	writetext FlickerTrainStationClerkText1
@@ -106,6 +107,13 @@ FlickerTrainStationScheduleFront:
 	
 FlickerTrainStationScheduleBack:
 	jumptext FlickerTrainStationScheduleBackText
+	
+FlickerTrainStationClerkTextDemo:
+	text "Sorry."
+	
+	para "The trains aren't"
+	line "running right now."
+	done
 	
 FlickerTrainStationClerkText1:
 	text "Take the train to"

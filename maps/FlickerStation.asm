@@ -18,9 +18,10 @@ FlickerStation_MapScriptHeader:
 	warp_def  7, 51, 1, FLICKER_PASS_1F
 	
 
-	db 2 ; coord events
+	db 3 ; coord events
 	xy_trigger 0, 28,  9, 0, FlickerStation3Girls, 0, 0
 	xy_trigger 1, 28, 14, 0, FlickerStation3GirlsExtra, 0, 0
+	xy_trigger 1, 29, 14, 0, FlickerStation3GirlsExtra, 0, 0
 
 	db 9 ; bg events
 	signpost 29, 38, SIGNPOST_READ, FlickerCenterSign
@@ -33,7 +34,7 @@ FlickerStation_MapScriptHeader:
 	signpost 15, 20, SIGNPOST_UP, FlickerTrainDoor
 	signpost 15, 17, SIGNPOST_UP, FlickerTrainDoor
 
-	db 12 ; object events
+	db 13 ; object events
 	person_event SPRITE_FAT_GUY, 30, 54, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 32, 43, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationNPC2, -1
 	person_event SPRITE_CHILD, 18, 49, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC3, -1
@@ -46,6 +47,7 @@ FlickerStation_MapScriptHeader:
 	person_event SPRITE_DELINQUENT_F, 31,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationGirl3, -1
 	tmhmball_event  7, 30, TM_THUNDERPUNCH, EVENT_FLICKER_STATION_
 	itemball_event 41, 10, POTION, 1, EVENT_FLICKER_STATION_POKEBALL
+	person_event SPRITE_POKEMANIAC,  8, 51, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationEndDemoNPC, -1
 
 
 	const_def 1 ; object constants
@@ -227,6 +229,20 @@ FlickerStationNPC6:
 	
 FlickerStationNPC7:
 	jumptextfaceplayer FlickerStationNPC7Text
+	
+FlickerStationEndDemoNPC:
+	jumptextfaceplayer FlickerStationEndDemoNPCText
+	
+FlickerStationEndDemoNPCText:
+	text "Welp."
+	
+	para "That's the end for"
+	line "now."
+	
+	para "Sorry."
+	
+	para "Thanks for playing!"
+	done
 	
 FlickerTrainDoorText:
 	text "It's shut tight."

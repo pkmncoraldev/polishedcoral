@@ -83,6 +83,11 @@ NPCTrade:: ; fcba8
 	rst CopyBytes
 	jr .cont
 .trade2
+	ld hl, wBackupName
+	ld de, wTradeExeggcuteName
+	ld bc, NAME_LENGTH
+	rst CopyBytes
+	jr .cont
 .trade3
 .trade4
 .trade5
@@ -522,6 +527,9 @@ TradeAfterText1: ; 0xfcfab
 
 
 TradeIntroText2:
+	text_jump UnknownText_TradeIntroText2
+	db "@"
+
 TradeIntroText3: ; 0xfcfb0
 	; Hi, I'm looking for this #MON. If you have @ , would you trade it for my @ ?
 	text_jump UnknownText_0x1bd512
@@ -529,6 +537,9 @@ TradeIntroText3: ; 0xfcfb0
 ; 0xfcfb5
 
 TradeCancelText2:
+	text_jump UnknownText_TradeCancelText2
+	db "@"
+
 TradeCancelText3: ; 0xfcfb5
 	; You don't have one either? Gee, that's really disappointing…
 	text_jump UnknownText_0x1bd565
@@ -536,6 +547,9 @@ TradeCancelText3: ; 0xfcfb5
 ; 0xfcfba
 
 TradeWrongText2:
+	text_jump UnknownText_0x1bd4aa
+	db "@"
+
 TradeWrongText3: ; 0xfcfba
 	; You don't have @ ? That's too bad, then.
 	text_jump UnknownText_0x1bd5a1
@@ -543,13 +557,11 @@ TradeWrongText3: ; 0xfcfba
 ; 0xfcfbf
 
 TradeCompleteText2: ; 0xfcfbf
-	; Great! Thank you! I finally got @ .
 	text_jump UnknownText_0x1bd5cc
 	db "@"
 ; 0xfcfc4
 
 TradeAfterText2: ; 0xfcfc4
-	; Hi! The @ you traded me is doing great!
 	text_jump UnknownText_0x1bd5f4
 	db "@"
 ; 0xfcfc9

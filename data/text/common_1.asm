@@ -1118,7 +1118,22 @@ UnknownText_0x1bd4f4::
 	text_from_ram wTradeScytherName
 	text "!"
 	done
+	
+UnknownText_TradeIntroText2::
+	text "People say the"
+	line "EXEGGCUTE around"
+	cont "here are special."
+	
+	para "Would you like to"
+	line "trade one for your"
+	cont "GLOOM?"
+	done
+	
+UnknownText_TradeCancelText2::
+	text "Ah shoot!"
+	done
 
+	
 UnknownText_0x1bd512::
 	text "Hi, I'm looking"
 	line "for this #mon."
@@ -1151,20 +1166,40 @@ UnknownText_0x1bd5a1::
 	done
 
 UnknownText_0x1bd5cc::
-	text "Great! Thank you!"
+	text "I caught"
+	line "SUNNY SIDE on a"
+	cont "little island off"
+	cont "the coast."
 
-	para "I finally got"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "."
+	para "EXEGGCUTE caught"
+	line "around here are"
+	cont "known to evolve"
+	cont "into a taller form"
+	cont "than usual."
+	
+	para "Some say it's their"
+	line "natural form!"
+	
+	para "…"
+	
+	para "Thanks again!"
+
+	para "I'll take great"
+	line "care of @"
+	text_from_ram wTradeExeggcuteName
+	text "!"
 	done
 
 UnknownText_0x1bd5f4::
-	text "Hi! The @"
-	text_from_ram wMonOrItemNameBuffer
-	text ""
-	line "you traded me is"
-	cont "doing great!"
+	text "Hey!"
+	
+	para "@"
+	text_from_ram wTradeExeggcuteName
+	text "'s"
+	line "doing awesome!"
+	
+	para "How is SUNNY SIDE"
+	line "doing?"
 	done
 
 UnknownText_0x1bd621::

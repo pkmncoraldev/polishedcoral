@@ -2,14 +2,14 @@ NPCTrades:
 ; OT names have 3 characters less padding so the total struct is 32 bytes
 ; TRADE_WITH_JAKE_FOR_PINSIR in Route 5 Gate
 	db 0, SCYTHER,       PINSIR,     "SIR SNIPS@@"
-	db $EE, $EE, $EE, ABILITY_1 | ADAMANT, MALE,   POKE_BALL,   SITRUS_BERRY
+	db $DD, $DD, $DD, ABILITY_1 | ADAMANT, MALE,   POKE_BALL,   SITRUS_BERRY
 	dw 64582
 	db "JAKE@@@@", $00
-; TRADE_WITH_KYLE_FOR_VOLTORB in Violet City
-	db 0, BULBASAUR,    BULBASAUR,    "M","i","m","i","c","@","@","@","@","@","@"
-	db $EE, $EE, $EE, HIDDEN_ABILITY | HASTY,   MALE,   PREMIER_BALL, PERSIM_BERRY
-	dw 48926
-	db "K","y","l","e","@","@","@","@", $00
+; TRADE_WITH_PAUL_FOR_EXEGGCUTE on Sunbeam Island
+	db 1, GLOOM,       EXEGGCUTE_A,     "SUNNY SIDE@"
+	db $DD, $DD, $DD, HIDDEN_ABILITY | MODEST, MALE,   POKE_BALL,   RAWST_BERRY
+	dw 15832
+	db "PAULIE@@", $00
 ; TRADE_WITH_TIM_FOR_KANGASKHAN in Olivine City
 	db 1, BULBASAUR,    BULBASAUR, "J","o","e","y","@","@","@","@","@","@","@"
 	db $EE, $EE, $EE, HIDDEN_ABILITY | BRAVE,   MALE,   HEAVY_BALL,   SILK_SCARF

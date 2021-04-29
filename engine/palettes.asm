@@ -1136,7 +1136,7 @@ TMHMTypes:
 	db POISON   ; VENOSHOCK
 	db NORMAL   ; HIDDEN_POWER
 	db FIRE     ; SUNNY_DAY
-	db FLYING   ; ROOST
+	db BUG	    ; SIGNAL_BEAM
 	db ICE      ; ICE_BEAM
 	db ICE      ; BLIZZARD
 	db NORMAL   ; HYPER_BEAM

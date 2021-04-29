@@ -463,6 +463,7 @@ WigglytuffEvosAttacks:
 	db  1, HYPER_VOICE
 	db  1, DOUBLE_EDGE
 	db  1, ROAR_WHIRLWIND
+	db  1, TAUNT
 	db  0 ; no more level-up moves
 
 ZubatEvosAttacks:
@@ -559,7 +560,7 @@ MeowthEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 1, GROWL
-	db 6, BITE
+	db 6, TAUNT
 	db 10, FAKE_OUT
 	db 15, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 17, SCREECH

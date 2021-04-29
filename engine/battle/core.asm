@@ -3603,6 +3603,7 @@ NewEnemyMonStatus: ; 3d834
 	ld [hli], a
 	ld [hli], a
 	ld [hl], a
+	ld [wEnemyTauntCount], a
 	ld [wEnemyDisableCount], a
 	ld [wEnemyProtectCount], a
 	ld [wEnemyToxicCount], a
@@ -3933,6 +3934,7 @@ rept NUM_MOVES + -1
 	ld [hli], a
 endr
 	ld [hl], a
+	ld [wPlayerTauntCount], a
 	ld [wPlayerDisableCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerToxicCount], a
@@ -6034,8 +6036,6 @@ MoveSelectionScreen:
 	ld c, a
 	call CheckUsableMove
 	dec a
-	jr z, .move_taunted
-	dec a
 	jr z, .no_pp_left
 	dec a
 	jr z, .move_disabled
@@ -6043,6 +6043,8 @@ MoveSelectionScreen:
 	jr z, .choiced
 	dec a
 	jr z, .assault_vest
+	dec a
+	jr z, .taunt
 	ld b, 0
 	ld hl, wBattleMonMoves
 	add hl, bc
@@ -6087,6 +6089,14 @@ MoveSelectionScreen:
 	ld hl, BattleText_ItemPreventsStatusMoves
 	jr .place_textbox_start_over
 
+.taunt
+	ld a, TAUNT
+	ld [wNamedObjectIndexBuffer], a
+	call GetMoveName
+	
+	ld hl, BattleText_ItemPreventsStatusMoves
+	jr .place_textbox_start_over
+	
 .no_pp_left
 	ld hl, BattleText_TheresNoPPLeftForThisMove
 
@@ -6425,31 +6435,6 @@ CheckUsableMove:
 	jr z, .end
 
 .not_disabled
-	; Check Taunt
-	
-	ld hl, Moves + MOVE_CATEGORY
-	ld a, c
-	dec a
-	call GetMoveAttr
-	cp STATUS
-	ld a, 5
-	jr nz, .not_taunted
-	
-	ld a, [hBattleTurn]
-	and a
-	ld a, [wPlayerTauntCount]
-	jr z, .got_taunt_count
-	ld a, [wEnemyTauntCount]
-.got_taunt_count
-	swap a
-	and $f
-	jr z, .not_taunted
-	dec a
-	cp c
-	ld a, 5
-	jr z, .end
-
-.not_taunted
 	; Check items. This requires the actual move so get it into c
 	ld a, [hBattleTurn]
 	and a
@@ -6459,6 +6444,17 @@ CheckUsableMove:
 .got_moves
 	add hl, bc
 	ld c, [hl]
+	
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wPlayerTauntCount]
+	jr z, .got_taunt_count
+	ld a, [wEnemyTauntCount]
+.got_taunt_count
+	cp 0
+	jr z, .not_taunted
+	jr .check_status2
+.not_taunted
 	push bc
 	farcall GetUserItem
 	ld a, b
@@ -6467,7 +6463,7 @@ CheckUsableMove:
 	jr z, .check_choiced
 	cp HELD_ASSAULT_VEST
 	jr nz, .usable
-
+.check_status
 	; Assault Vest check
 	ld hl, Moves + MOVE_CATEGORY
 	ld a, c
@@ -6490,9 +6486,6 @@ CheckUsableMove:
 	cp c
 	ld a, 3
 	jr nz, .end
-	jr .usable
-	
-
 	
 	; fallthrough
 .usable
@@ -6504,6 +6497,16 @@ CheckUsableMove:
 	pop bc
 	ret
 
+.check_status2
+	ld hl, Moves + MOVE_CATEGORY
+	ld a, c
+	dec a
+	call GetMoveAttr
+	cp STATUS
+	ld a, 5
+	jr z, .end
+	jr .usable
+	
 ParseEnemyAction: ; 3e7c1
 	ld a, [wEnemyIsSwitching]
 	and a
@@ -6586,13 +6589,13 @@ ParseEnemyAction: ; 3e7c1
 	xor a
 	ld [wEnemyProtectCount], a
 	ret
-
+	
 .struggle
 	ld a, STRUGGLE
 .finish
 	ld [wCurEnemyMove], a
 	jr .skip_load
-
+	
 ResetVarsForSubstatusRage: ; 3e8c1
 	xor a
 	ld [wEnemyProtectCount], a

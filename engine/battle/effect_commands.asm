@@ -318,6 +318,32 @@ BattleCommand_checkturn:
 	call StdBattleTextBox
 
 .not_disabled
+	ld a, [hBattleTurn]
+	and a
+	jr nz, .enemy7
+	ld hl, wPlayerSubStatus2
+	jr .ok7
+.enemy7
+	ld hl, wEnemySubStatus2
+.ok7
+	bit SUBSTATUS_TAUNT, [hl]
+	jp z, .not_taunted
+	
+	ld a, [hBattleTurn]
+	and a
+	jr nz, .enemy8
+	ld a, [wPlayerMoveStruct + MOVE_CATEGORY]
+	jr .ok8
+.enemy8
+	ld a, [wEnemyMoveStruct + MOVE_CATEGORY]
+.ok8
+	cp STATUS
+	jr nz, .not_taunted
+	call MoveDisabled
+	call CantMove
+	jp EndTurn
+
+.not_taunted
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
 	add a ; bit SUBSTATUS_CONFUSED, a
@@ -589,6 +615,45 @@ MoveDisabled: ; 3438d
 	jp StdBattleTextBox
 
 ; 343a5
+
+MoveTaunted:
+	ld a, [hBattleTurn]
+	and a
+	ld hl, wPlayerSubStatus2
+	jr z, .got_taunt_count
+	ld hl, wEnemySubStatus2
+.got_taunt_count
+	bit SUBSTATUS_TAUNT, [hl]
+	jp z, .check_status
+	ret
+	
+.check_status
+	ld a, [wEnemyMoveStruct + MOVE_CATEGORY]
+	cp STATUS
+	ret nz
+	
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld [wCurMove], a
+	ld [wNamedObjectIndexBuffer], a
+	push hl
+	push de
+	farcall CheckMultiMoveSlot
+	jr nc, .not_multi_move_slot
+	pop de
+	pop hl
+	farcall GetMultiMoveSlotName
+	jr .done
+.not_multi_move_slot
+	pop de
+	pop hl
+	ld a, [wCurMove]
+	call GetMoveName
+
+.done	
+	ld hl, DisabledMoveText
+	jp StdBattleTextBox
+	
 
 HitConfusion: ; 343a5
 

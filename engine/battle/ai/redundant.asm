@@ -97,7 +97,7 @@ AI_Redundant: ; 2c41a
 	ret
 	
 .Taunt:
-	ld a, [wEnemySubStatus2]
+	ld a, [wPlayerSubStatus2]
 	bit SUBSTATUS_TAUNT, a
 	ret
 

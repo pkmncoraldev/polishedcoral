@@ -752,6 +752,8 @@ GlintGymStanleyTextTMSpeech:
 	para "It's a great strat-"
 	line "egic move!"
 	
+	para "…"
+	
 	para "You gave a really"
 	line "good fight."
 	

@@ -631,6 +631,8 @@ StarglowGymRodneyTextTMSpeech:
 	line "to have at your"
 	cont "disposal."
 	
+	para "…"
+	
 	para "When I was young,"
 	line "my grandfather"
 	cont "always told me to"

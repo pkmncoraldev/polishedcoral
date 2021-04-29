@@ -20,7 +20,7 @@ EventideGym_MapScriptHeader:
 	bg_event 45,  8, SIGNPOST_UP, EventideGymBlueSwitchScript
 	bg_event 25,  4, SIGNPOST_UP, EventideGymYellowSwitchScript
 
-	db 11 ; object events
+	db 12 ; object events
 	person_event SPRITE_WENDY,  2, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EventideGymWendy, -1
 	person_event SPRITE_BIRD_KEEPER,  8, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, EventideGymTrainer1, EVENT_BEAT_WENDY
 	person_event SPRITE_BIRD_KEEPER, 16, 36, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, EventideGymTrainer2, EVENT_BEAT_WENDY
@@ -32,7 +32,9 @@ EventideGym_MapScriptHeader:
 	person_event SPRITE_BIRD_KEEPER,  9, 42, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 1, EventideGymTrainer3Rematch, EVENT_HAVENT_BEAT_WENDY
 	person_event SPRITE_BIRD_KEEPER,  4,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 2, EventideGymTrainer4Rematch, EVENT_HAVENT_BEAT_WENDY
 	person_event SPRITE_BIRD_KEEPER, 15, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 2, EventideGymTrainer5Rematch, EVENT_HAVENT_BEAT_WENDY
+	person_event SPRITE_GYM_GUY, 14, 26, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideGymGuyScript, -1
 
+	
 	
 	const_def 1 ; object constants
 	const EVENTIDEGYM_WENDY
@@ -195,6 +197,23 @@ EventideGymBlackSwitchScript:
 	clearevent EVENT_EVENTIDE_GYM_BLACK_SWITCH
 	end
 
+EventideGymGuyScript:
+	faceplayer
+	checkevent EVENT_BEAT_WENDY
+	iftrue .EventideGymGuyWinScript
+	opentext
+	writetext EventideGymGuyText
+	waitbutton
+	closetext
+	end
+
+.EventideGymGuyWinScript:
+	opentext
+	writetext EventideGymGuyWinText
+	waitbutton
+	closetext
+	end
+	
 EventideGymNoSwitchScript:
 	farwritetext BetterNotText
 	waitbutton
@@ -258,9 +277,11 @@ WendyTextLoop:
 EventideGymWendyRematch:
 	checkevent EVENT_BEAT_WENDY_REMATCH
 	iftrue WendyTextLoop
-	writetext EventideGymWendyTextBeforeBattleRematch
+	writetext EventideGymWendyTextBeforeBattle1Rematch
 	yesorno
 	iffalse .end
+	writetext EventideGymWendyTextBeforeBattle2Rematch
+	waitbutton
 	closetext
 	waitsfx
 	winlosstext EventideGymWendyTextWinRematch, EventideGymWendyTextLoss
@@ -328,19 +349,22 @@ EventideGymWendyTextBeforeBattle:
 	line "little town will"
 	cont "always be home."
 	
-	para "FLYING-type #-"
-	line "MON can be as"
-	cont "graceful as a"
-	cont "spring breeze,"
+	para "FLYING-types can"
+	line "be as fierce as"
+	cont "a raging storm,"
 	
-	para "but they can also"
-	line "be as feirce as a"
-	cont "raging typhoon."
+	para "or as graceful"
+	cont "as a spring"
+	cont "breeze…"
 	
-	para "That's why they"
-	line "are so great!"
+	para "That's why they're"
+	line "so fantastic!"
 	
-	para "Are you ready to"
+	para "…"
+	
+	para "Now then,"
+	
+	para "are you ready to"
 	line "earn your wings?"
 	done
 	
@@ -362,8 +386,7 @@ EventideGymWendyTextAfterBattle:
 	text "The GALEBADGE"
 	line "will allow you"
 	cont "to use the HM FLY"
-	cont "outside of"
-	cont "battle."
+	cont "outside of battle."
 	
 	para "You can use it to"
 	line "soar on your"
@@ -379,19 +402,73 @@ EventideGymWendyTextAfterBattle:
 	done
 	
 EventideGymWendyTextTMSpeech:
-	text "TM SPEECH"
+	text "That TM contains"
+	line "ROOST."
+	
+	para "It let's your"
+	line "#MON land and"
+	cont "rest for a while"
+	cont "which will restore"
+	cont "half of it's HP!"
+	
+	para "Keep in mind that"
+	line "they can be hit by"
+	cont "GROUND-type moves"
+	cont "while roosting."
+	
+	para "…"
+	
+	para "It's important to"
+	line "remember your roots"
+	cont "no matter how far"
+	cont "you go!"
+	
+	para "The sky is the"
+	line "limit for a great"
+	cont "TRAINER like you."
+	
+	para "Now go spread your"
+	line "wings and soar on"
+	cont "the wind!"
+	
+	para "Good luck out"
+	line "there!"
 	done
 	
 EventideGymWendyTextLoop:
-	text "SPEECH LOOP"
+	text "It's important to"
+	line "remember your roots"
+	cont "no matter how far"
+	cont "you go!"
+	
+	para "The sky is the"
+	line "limit for a great"
+	cont "TRAINER like you."
+	
+	para "Now go spread your"
+	line "wings and soar on"
+	cont "the wind!"
+	
+	para "Good luck out"
+	line "there!"
 	done
 	
-EventideGymWendyTextBeforeBattleRematch:
-	text "REMATCH TEXT"
+EventideGymWendyTextBeforeBattle1Rematch:
+	text "You beat everyone"
+	line "else?"
+	
+	para "Do you want a"
+	line "rematch?"
+	done
+	
+EventideGymWendyTextBeforeBattle2Rematch:
+	text "Are you ready to"
+	line "earn your wings?"
 	done
 	
 EventideGymWendyTextNoRematch:
-	text "NO REMATCH"
+	text "That takes the"
+	line "wind outta me…"
 	done
 	
 EventideGymTrainer1:
@@ -428,7 +505,8 @@ EventideGymTrainer2:
 .SeenText:
 	text "I sure hope you're"
 	line "prepared for a"
-	cont "high-flying defeat!"
+	cont "high-flying"
+	cont "defeat!"
 	done
 
 .BeatenText:
@@ -440,9 +518,10 @@ EventideGymTrainer3:
 
 	text "No matter which"
 	line "color the switch"
-	cont "is, the black"
-	cont "conveyors will"
-	cont "change too!"
+	cont "you press is,"
+
+	para "the gray conveyors"
+	cont "will change too!"
 	done
 
 .SeenText:
@@ -688,9 +767,10 @@ EventideGymTrainer3Rematch:
 EventideGymTrainer3RematchRegularText:
 	text "No matter which"
 	line "color the switch"
-	cont "is, the black"
-	cont "conveyors will"
-	cont "change too!"
+	cont "you press is,"
+
+	para "the gray conveyors"
+	cont "will change too!"
 	done
 
 EventideGymTrainer3RematchSeenText:
@@ -861,4 +941,44 @@ EventideGymYellowSwitchText:
 	text "A yellow SWITCH!"
 	
 	para "Push it?"
+	done
+	
+EventideGymGuyText:
+	text "Yo!"
+	
+	para "Champ in making!"
+	
+	para "This place is"
+	line "HUGE!"
+	
+	para "And look at all"
+	line "these airplanes!"
+	
+	para "I'm sure you can"
+	line "guess which type"
+	cont "the TRAINERS here"
+	cont "specialize in."
+	
+	para "You can clip a"
+	line "FLYING-type's wings"
+	cont "with an ELECTRIC"
+	cont "or ICE-type move."
+	
+	para "They'll blow your"
+	line "FIGHTING and GRASS"
+	cont "types away easily,"
+	cont "though."
+	
+	para "You've got this!"
+	done
+	
+EventideGymGuyWinText:
+	text "Excellent!"
+	
+	para "I never doubted"
+	line "you for a second!"
+	
+	para "That's another"
+	line "BADGE under your"
+	cont "belt!"
 	done

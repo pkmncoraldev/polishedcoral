@@ -1,8 +1,9 @@
 EventideVillage_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, EventideVillageFlypointCallback
+	callback MAPCALLBACK_OBJECTS, EventideVillageWendyRematch
 
 	db 9 ; warp events
 	warp_event  6, 20, EVENTIDE_VILLAGE_GATE, 3
@@ -39,10 +40,22 @@ EventideVillage_MapScriptHeader:
 	person_event SPRITE_COWGIRL, 34, 20, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EventideVillageMilkGirl, -1
 	person_event SPRITE_ROCKER, 20, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageNPC1, -1
 	person_event SPRITE_CUTE_GIRL, 15, 30, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideVillageNPC2, -1
-	itemball_event  8, 18, POTION, 1, EVENT_EVENTIDE_VILLAGE_POKEBALL
+	itemball_event  8, 18, PROTEIN, 1, EVENT_EVENTIDE_VILLAGE_POKEBALL
 
 EventideVillageFlypointCallback:
 	setflag ENGINE_FLYPOINT_EVENTIDE
+	return
+	
+EventideVillageWendyRematch:
+	checkevent EVENT_BEAT_WENDY_REMATCH
+	iffalse .end
+	clearevent EVENT_BEAT_WENDY_REMATCH
+	clearevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_1_REMATCH
+	clearevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_2_REMATCH
+	clearevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_3_REMATCH
+	clearevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_4_REMATCH
+	clearevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_5_REMATCH
+.end
 	return
 	
 EventideVillagePokeCenterSign:

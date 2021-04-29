@@ -120,7 +120,7 @@ RockMons:
 	db -1
 	
 PetalMons:
-	db 50, SQUIRTLE,   1
-	db 25, CHARMANDER, 1
-	db 25, BULBASAUR,  1
+	db 50, VENIPEDE,   5
+	db 25, PIKACHU,	   5
+	db 25, PIKACHU,	   5
 	db -1

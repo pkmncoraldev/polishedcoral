@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm RAIN_DANCE
+	tmhm RAIN_DANCE, ROOST
 	; end

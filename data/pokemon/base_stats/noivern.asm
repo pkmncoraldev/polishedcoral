@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CUT, ROOST
+	tmhm CUT, ROOST, FLY
 	; end

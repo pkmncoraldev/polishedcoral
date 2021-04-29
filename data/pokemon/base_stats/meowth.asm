@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm FAKE_OUT, METAL_CLAW, CUT, FALSE_SWIPE
+	tmhm FAKE_OUT, METAL_CLAW, CUT, FALSE_SWIPE, RAIN_DANCE
 	; end

@@ -4,7 +4,7 @@ Skatepark_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 1 ; warp events
-	warp_def 37,  0, 1, ROUTE_8
+	warp_def 41,  1, 7, FLICKER_STATION
 
 	db 0 ; coord events
 

@@ -1,21 +1,21 @@
-	db  45,  49,  49,  45,  65,  65
+	db  70, 100,  70,  40, 105,  75
 	;   hp  atk  def  spd  sat  sdf
 
-	db GRASS, POISON
-	db 45 ; catch rate
-	db 64 ; base exp
+	db FIRE, GROUND
+	db 150 ; catch rate
+	db 175 ; base exp
 	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2
-	dn FEMALE_12_5, 3 ; gender, step cycles to hatch
+	dn FEMALE_50, 3 ; gender, step cycles to hatch
 	dn 5, 5 ; frontpic dimensions
-	db OVERGROW ; ability 1
-	db OVERGROW ; ability 2
-	db CHLOROPHYLL ; hidden ability
-	db MEDIUM_SLOW ; growth rate
-	dn MONSTER, PLANT ; egg groups
+	db MAGMA_ARMOR ; ability 1
+	db SOLID_ROCK ; ability 2
+	db ANGER_POINT ; hidden ability
+	db MEDIUM_FAST ; growth rate
+	dn FIELD, FIELD ; egg groups
 
 	; ev_yield
-	ev_yield   0,   0,   0,   0,   1,   0
+	ev_yield   0,   1,   0,   0,   1,   0
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm

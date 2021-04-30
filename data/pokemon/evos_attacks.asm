@@ -1083,7 +1083,7 @@ ExeggutorEvosAttacks:
 	db  1, SOLAR_BEAM
 	db 27, PSYSHOCK
 	db 37, EGG_BOMB
-;	db 47, WOOD_HAMMER
+	db 47, WOOD_HAMMER
 	db 0 ; no more level-up moves
 
 CuboneEvosAttacks:
@@ -1961,7 +1961,7 @@ AzumarillEvosAttacks:
 SudowoodoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
-;	db 1, WOOD_HAMMER
+	db 1, WOOD_HAMMER
 	db 1, FLAIL
 	db 1, LOW_KICK
 	db 1, ROCK_THROW
@@ -1971,11 +1971,11 @@ SudowoodoEvosAttacks:
 	db 15, MIMIC
 	db 19, FEINT_ATTACK
 	db 22, BODY_SLAM
-	db 26, MEAN_LOOK_BLOCK_SPIDER_WEB
+	db 25, MEAN_LOOK_BLOCK_SPIDER_WEB
 	db 29, ROCK_SLIDE
 	db 36, SUCKER_PUNCH
 	db 43, STONE_EDGE
-;	db 47, WOOD_HAMMER
+	db 47, WOOD_HAMMER
 	db 0 ; no more level-up moves
 
 PolitoedEvosAttacks:
@@ -3806,7 +3806,7 @@ Exeggutor_AEvosAttacks:
 	db  1, SOLAR_BEAM
 	db 27, PSYSHOCK
 	db 37, EGG_BOMB
-;	db 47, WOOD_HAMMER
+	db 47, WOOD_HAMMER
 	db 0 ; no more level-up moves
 	
 Marowak_AEvosAttacks:

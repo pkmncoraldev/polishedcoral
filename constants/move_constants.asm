@@ -35,7 +35,7 @@
 	const THUNDER_FANG ; $21
 	const TACKLE_SCRATCH_POUND       			; $22
 	const BODY_SLAM    ; $23
-	const WRAP         ; $24 - REMOVE
+	const WOOD_HAMMER  ; $24
 	const TAKE_DOWN    ; $25
 	const THRASH       ; $26
 	const DOUBLE_EDGE  ; $27

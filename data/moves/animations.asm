@@ -35,7 +35,7 @@ BattleAnimations::
 	dw BattleAnim_ThunderFang
 	dw BattleAnim_Tackle
 	dw BattleAnim_BodySlam
-	dw BattleAnim_Wrap
+	dw BattleAnim_WoodHammer
 	dw BattleAnim_TakeDown
 	dw BattleAnim_Thrash
 	dw BattleAnim_DoubleEdge
@@ -331,6 +331,7 @@ BattleAnim_HornLeech:
 BattleAnim_BrickBreak:
 BattleAnim_Wish:
 BattleAnim_Taunt:
+BattleAnim_WoodHammer:
 	anim_ret
 	
 BattleAnim_RockPolish:

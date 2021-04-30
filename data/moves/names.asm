@@ -34,7 +34,7 @@ MoveNames::
 	db "THUNDER FANG@"
 	db "ERROR!@" ; TACKLE_SCRATCH_POUND
 	db "BODY SLAM@"
-	db "WRAP@"
+	db "WOOD HAMMER@"
 	db "TAKE DOWN@"
 	db "THRASH@"
 	db "DOUBLE-EDGE@"

@@ -65,7 +65,7 @@ EvolutionMoves::
 	db NO_MOVE      						; VOLTORB
 	db NO_MOVE      						; ELECTRODE
 	db NO_MOVE      						; EXEGGCUTE
-	db NO_MOVE ;WOOD_HAMMER     						; EXEGGUTOR
+	db WOOD_HAMMER     						; EXEGGUTOR
 	db NO_MOVE      						; CUBONE
 	db NO_MOVE      						; MAROWAK
 	db NO_MOVE      						; KOFFING
@@ -246,5 +246,5 @@ EvolutionMoves::
 	db NO_MOVE 								; TOXAPEX
 	db PSYCHIC_M    						; RAICHU_A
 	db NO_MOVE								; EXEGGCUTE_A
-	db NO_MOVE ;DRAGON_HAMMER     						; EXEGGUTOR_A
+	db WOOD_HAMMER ;DRAGON_HAMMER     						; EXEGGUTOR_A
 	db SHADOW_BONE  						; MAROWAK_A

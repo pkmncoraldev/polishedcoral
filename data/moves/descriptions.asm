@@ -34,7 +34,7 @@ MoveDescriptions::
 	dw ThunderFangDescription
 	dw TackleDescription
 	dw BodySlamDescription
-	dw WrapDescription
+	dw WoodHammerDescription
 	dw TakeDownDescription
 	dw ThrashDescription
 	dw DoubleEdgeDescription
@@ -316,6 +316,10 @@ BulletSeedDescription:
 	db   "Hurls seeds to"
 	next "hit 2-5 times.@"
 
+WoodHammerDescription:
+	db   "Attack that also"
+	next "hurts the user.@"
+	
 TakeDownDescription:
 DoubleEdgeDescription:
 	db   "A tackle that also"
@@ -636,7 +640,6 @@ OutrageDescription:
 	next "and confuses user.@"
 
 FireSpinDescription:
-WrapDescription:
 	db   "Traps the foe for"
 	next "2-5 turns.@"
 

@@ -137,10 +137,10 @@ ENDM
 	connection north, Route4, ROUTE_4, 3
 	
 	map_attributes Route6, ROUTE_6, $30, NORTH
-	connection north, Route7, ROUTE_7, -1
+	connection north, Route7, ROUTE_7, 0
 	
 	map_attributes Route7, ROUTE_7, $30, SOUTH | WEST
-	connection south, Route6, ROUTE_6, 1
+	connection south, Route6, ROUTE_6, 0
 	connection west, LakeOnwa, LAKE_ONWA, -11
 	
 	map_attributes Route8, ROUTE_8, $d4, NORTH | SOUTH | EAST

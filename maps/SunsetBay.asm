@@ -313,6 +313,7 @@ SunsetSailboatText:
 	para "It's seen some use,"
 	line "but it's still in"
 	cont "good shape."
+	done
 	
 SunsetSailboat2Text:
 	text "CAP'N STRAND'S"

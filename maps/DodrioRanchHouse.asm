@@ -99,7 +99,7 @@ RanchHouseDodrioGirlText4:
 	line "little short on"
 	cont "funds…"
 	
-	para "Come back some other"
-	line "time!"
+	para "Come back some"
+	line "other time!"
 	done
 	

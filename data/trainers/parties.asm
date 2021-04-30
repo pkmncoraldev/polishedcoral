@@ -1555,7 +1555,7 @@ GruntMGroup:
 ; ================
 
 	; STARGLOW_GRUNTM_1
-	db "STARGLOWM1@"
+	db "GRUNT@";"STARGLOWM1@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 12, ZUBAT
@@ -1566,7 +1566,7 @@ GruntMGroup:
 ; ================
 
 	; STARGLOW_GRUNTM_2
-	db "STARGLOWM2@"
+	db "GRUNT@";"STARGLOWM2@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 13, MAREEP
@@ -1576,7 +1576,7 @@ GruntMGroup:
 ; ================
 
 	; STARGLOW_GRUNTM_3
-	db "STARGLOWM3@"
+	db "GRUNT@";"STARGLOWM3@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 13, ZUBAT
@@ -1587,7 +1587,7 @@ GruntMGroup:
 ; ================
 
 	; SUNBEAM_GRUNTM_1
-	db "SUNBEAMM1@"
+	db "GRUNT@";"SUNBEAMM1@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 19, TRUMBEAK
@@ -1597,7 +1597,7 @@ GruntMGroup:
 ; ================
 
 	; SUNBEAM_GRUNTM_2
-	db "SUNBEAMM2@"
+	db "GRUNT@";"SUNBEAMM2@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 20, NOIBAT
@@ -1608,7 +1608,7 @@ GruntMGroup:
 ; ================
 
 	; SUNBEAM_GRUNTM_3
-	db "SUNBEAMM3@"
+	db "GRUNT@";"SUNBEAMM3@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 18, ZUBAT
@@ -1619,7 +1619,7 @@ GruntMGroup:
 ; ================
 
 	; SUNBEAM_GRUNTM_4
-	db "SUNBEAMM4@"
+	db "GRUNT@";"SUNBEAMM4@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 18, ELEKID
@@ -1680,7 +1680,7 @@ GruntFGroup:
 ; ================
 
 	; STARGLOW_GRUNTF_1
-	db "STARGLOWF1@"
+	db "GRUNT@";"STARGLOWF1@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 13, NIDORAN_M
@@ -1691,7 +1691,7 @@ GruntFGroup:
 ; ================
 
 	; SUNBEAM_GRUNTF_1
-	db "SUNBEAMF1@"
+	db "GRUNT@";"SUNBEAMF1@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 18, GLOOM
@@ -1701,7 +1701,7 @@ GruntFGroup:
 ; ================
 
 	; SUNBEAM_GRUNTF_2
-	db "SUNBEAMF2@"
+	db "GRUNT@";"SUNBEAMF2@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 19, PIKIPEK
@@ -1735,7 +1735,7 @@ KageGroup:
 ; ================
 
 	; SUNBEAM_KAGE
-	db "KAGE1@"
+	db "KAGE@";"KAGE1@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 25, AZUMARILL
@@ -1752,7 +1752,7 @@ LockeGroup:
 ; ================
 
 	; TRAIN_LOCKE
-	db "LOCKE1@"
+	db "LOCKE@";"LOCKE1@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

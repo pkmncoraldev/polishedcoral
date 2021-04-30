@@ -583,6 +583,11 @@ SunbeamContestText18:
 	cont "competition!"
 	done
 	
+SunbeamContestCrowdText:
+	text "Crowd: WOOO!!"
+	line "YEAH!!"
+	done
+	
 SunBeamContestBikiniPText1:
 	text "A battle in a"
 	line "bikini?"

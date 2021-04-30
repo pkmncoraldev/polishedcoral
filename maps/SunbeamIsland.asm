@@ -27,9 +27,13 @@ SunbeamIsland_MapScriptHeader:
 	warp_def 47,  9, 1, SUNBEAM_BOAT_HOUSE
 	warp_def 42, 17, 1, SUNBEAM_SURF_SHOP
 
-	db 2 ; coord events
+	db 6 ; coord events
 	xy_trigger 2, 21, 32, 0, SunbeamSnareStopsYouD, 0, 0
 	xy_trigger 3, 20, 32, 0, SunbeamSnareStopsYouU, 0, 0
+	xy_trigger 6, 42, 20, 0, SunbeamFirstContest1, 0, 0
+	xy_trigger 6, 43, 20, 0, SunbeamFirstContest2, 0, 0
+	xy_trigger 6, 44, 20, 0, SunbeamFirstContest3, 0, 0
+	xy_trigger 6, 45, 20, 0, SunbeamFirstContest4, 0, 0
 
 	db 9 ; bg events
 	signpost 29, 21, SIGNPOST_READ, SunBeamSign
@@ -169,8 +173,13 @@ JustRodeBoatSunbeamStrand:
 	setevent EVENT_SUNBEAM_BOAT_GONE
 	clearevent EVENT_ISLAND_STRAND
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_GRANNY
+	checkevent EVENT_FIRST_BIKINI_CONTEST
+	iftrue .firstcontestdone
 	checkevent EVENT_SNARE_ASLEEP
 	iftrue .sunbeamsnareasleep
+	dotrigger $6
+	end
+.firstcontestdone
 	dotrigger $2
 	end
 .sunbeamsnareasleep
@@ -195,8 +204,13 @@ JustRodeBoatSunbeamNormal:
 	waitsfx
 	setevent EVENT_ISLAND_BOATMAN
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_GRANNY
+	checkevent EVENT_FIRST_BIKINI_CONTEST
+	iftrue .firstcontestdone
 	checkevent EVENT_SNARE_ASLEEP
 	iftrue .sunbeamsnareasleep
+	dotrigger $6
+	end
+.firstcontestdone
 	dotrigger $2
 	end
 .sunbeamsnareasleep
@@ -237,12 +251,119 @@ JustRodeBoatSunbeamStrand2:
 	setevent EVENT_ISLAND_BOATMAN
 	clearevent EVENT_ISLAND_STRAND
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_GRANNY
+	checkevent EVENT_FIRST_BIKINI_CONTEST
+	iftrue .firstcontestdone
 	checkevent EVENT_SNARE_ASLEEP
 	iftrue .sunbeamsnareasleep
+	dotrigger $6
+	end
+.firstcontestdone
 	dotrigger $2
 	end
 .sunbeamsnareasleep
 	dotrigger $4
+	end
+	
+SunbeamFirstContest1:
+	disappear SUNBEAM_NPC4
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_TRUNKS
+	moveperson SUNBEAM_NPC4, $1c, $2a
+	appear SUNBEAM_NPC4
+	playmusic MUSIC_GSC_GAME_CORNER
+	opentext
+	writetext SunbeamContestCrowdText
+	waitbutton
+	closetext
+	applymovement PLAYER, Movement_SunbeamFirstContest1
+	spriteface SUNBEAM_NPC4, UP
+	applymovement PLAYER, Movement_SunbeamFirstContest1_1
+	jump SunbeamFirstContest
+SunbeamFirstContest2:
+	disappear SUNBEAM_NPC4
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_TRUNKS
+	moveperson SUNBEAM_NPC4, $1c, $2a
+	appear SUNBEAM_NPC4
+	playmusic MUSIC_GSC_GAME_CORNER
+	opentext
+	writetext SunbeamContestCrowdText
+	waitbutton
+	closetext
+	applymovement PLAYER, Movement_SunbeamFirstContest1
+	spriteface SUNBEAM_NPC4, UP
+	applymovement PLAYER, Movement_SunbeamFirstContest1_2
+	jump SunbeamFirstContest
+SunbeamFirstContest3:
+	disappear SUNBEAM_NPC4
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_TRUNKS
+	moveperson SUNBEAM_NPC4, $1c, $2a
+	appear SUNBEAM_NPC4
+	playmusic MUSIC_GSC_GAME_CORNER
+	opentext
+	writetext SunbeamContestCrowdText
+	waitbutton
+	closetext
+	applymovement PLAYER, Movement_SunbeamFirstContest1
+	spriteface SUNBEAM_NPC4, UP
+	applymovement PLAYER, Movement_SunbeamFirstContest1_3
+	jump SunbeamFirstContest
+SunbeamFirstContest4:
+	disappear SUNBEAM_NPC4
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_TRUNKS
+	moveperson SUNBEAM_NPC4, $1c, $2a
+	appear SUNBEAM_NPC4
+	playmusic MUSIC_GSC_GAME_CORNER
+	opentext
+	writetext SunbeamContestCrowdText
+	waitbutton
+	closetext
+	applymovement PLAYER, Movement_SunbeamFirstContest1
+	spriteface SUNBEAM_NPC4, UP
+	applymovement PLAYER, Movement_SunbeamFirstContest1_4
+SunbeamFirstContest:
+	pause 7
+	opentext
+	writetext SunbeamContestText18
+	waitbutton
+	closetext
+	pause 7
+	special FadeOutPalettesBlack
+	pause 20
+	playmusic MUSIC_SUNBEAM_ISLAND
+	disappear SUNBEAM_CROWD1
+	disappear SUNBEAM_CROWD2
+	disappear SUNBEAM_CROWD3
+	disappear SUNBEAM_CROWD4
+	disappear SUNBEAM_CROWD5
+	callasm LoadMapPals
+	special FadeInPalettes
+	pause 7
+	spriteface SUNBEAM_NPC4, LEFT
+	opentext
+	writetext SunbeamFirstContestCharlieText1
+	waitbutton
+	closetext
+	spriteface PLAYER, RIGHT
+	pause 7
+	opentext
+	writetext SunbeamFirstContestCharlieText2
+	waitbutton
+	closetext
+	spriteface SUNBEAM_NPC4, DOWN
+	pause 40
+	spriteface SUNBEAM_NPC4, LEFT
+	opentext
+	writetext SunbeamFirstContestCharlieText3
+	waitbutton
+	closetext
+	applymovement SUNBEAM_NPC4, Movement_SunbeamFirstContest2
+	disappear SUNBEAM_NPC4
+	moveperson SUNBEAM_NPC4, 15, 23
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_GRANNY
+	appear SUNBEAM_NPC4
+	dotrigger $2
+	setevent EVENT_FIRST_BIKINI_CONTEST
+	setevent EVENT_SUNBEAM_CROWD_GONE
+	setflag ENGINE_DAILY_BIKINI_CONTEST
 	end
 
 SunbeamSnareStopsYouD:
@@ -602,6 +723,70 @@ SunbeamTextUseFlute:
 	text "<PLAYER> played the"
 	line "# FLUTE."
 	done
+	
+SunbeamFirstContestCharlieText1:
+	text "Looks like you"
+	line "just missed the"
+	cont "show, huh?"
+	done
+	
+SunbeamFirstContestCharlieText2:
+	text "That's a shame…"
+	
+	para "It was a good one!"
+	
+	para "Filled with ups"
+	line "and downs and"
+	cont "dramatic battles!"
+	
+	para "Pretty good for a"
+	line "bikini contest,"
+	cont "huh?"
+	
+	para "…"
+	
+	para "Anyway, you aren't"
+	line "from around here,"
+	cont "are you?"
+	
+	para "That's ok, I'm not"
+	line "either."
+	
+	para "I'm CHARLIE!"
+	
+	para "I run the GYM in"
+	line "TWINKLE TOWN."
+	done
+	
+SunbeamFirstContestCharlieText3:
+	text "Compared to up"
+	line "there,"
+	
+	para "this place is a"
+	line "tropical paradise!"
+	
+	para "It's sometimes nice"
+	line "to get a break"
+	cont "from the cold and"
+	cont "soak in some sun!"
+	
+	para "But I'm rambling,"
+	line "aren't I?"
+	
+	para "Well, if you ever"
+	line "find yourself in"
+	cont "TWINKLE TOWN,"
+
+	para "you should stop by"
+	line "and challenge the"
+	cont "GYM!"
+	
+	para "But I'll warn you,"
+	line "I'm no slouch!"
+	
+	para "See you around,"
+	line "TRAINER!"
+	done
 
 Movement_SunbeamBoatmanLeave:
 	step_up
@@ -622,11 +807,10 @@ Movement_SunbeamFirstContest1:
 	step_right
 	step_right
 	step_end
-
+	
 Movement_SunbeamFirstContest1_1:
 	step_right
-	step_down
-	step_down
+	step_right
 	step_down
 	step_right
 	step_right
@@ -636,8 +820,7 @@ Movement_SunbeamFirstContest1_1:
 
 Movement_SunbeamFirstContest1_2:
 	step_right
-	step_down
-	step_down
+	step_right
 	step_right
 	step_right
 	step_right
@@ -646,10 +829,11 @@ Movement_SunbeamFirstContest1_2:
 
 Movement_SunbeamFirstContest1_3:
 	step_right
-	step_down
 	step_right
 	step_right
 	step_right
+	step_right
+	step_up
 	step_up
 	step_end
 
@@ -658,41 +842,20 @@ Movement_SunbeamFirstContest1_4:
 	step_right
 	step_right
 	step_right
+	step_right
+	step_up
+	step_up
 	step_up
 	step_end
 
 Movement_SunbeamFirstContest2:
-	turn_head_left
-	step_sleep 20
-	step_left
-	step_end
-
-Movement_SunbeamFirstContest3:
-	turn_head_left
-	step_sleep 24
-	turn_head_up
-	step_sleep 24
-	turn_head_right
-	step_sleep 24
-	turn_head_down
-	step_sleep 24
-	step_end
-
-Movement_SunbeamFirstContest4:
-	step_right
-	step_down
 	step_down
 	step_left
-	step_end
-
-Movement_SunbeamFirstContest5:
 	step_left
 	step_left
 	step_left
-	step_up
-	step_up
-	step_up
-	step_up
+	step_left
+	step_left
 	step_end
 
 SunbeamSnareStopsYouAsm1:

@@ -13,9 +13,9 @@ SunbeamBeach_MapScriptHeader:
 	db 10 ; object events
 	person_event SPRITE_SILVER_TROPHY, 29, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, 1<<NITE, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbatherNite, -1
 	person_event SPRITE_ROWBOAT, 29, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbather, -1
-	person_event SPRITE_TRUNKS, 18,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, 4, 19, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_TRUNKS, 33,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, 4, 19, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_BIKINI_2, 22, 10, SPRITEMOVEDATA_WANDER, 1, 1, 4, 19, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_TRUNKS, 18,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, 4, 19, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamBeachTrunks1, -1
+	person_event SPRITE_TRUNKS, 33,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, 4, 19, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunbeamBeachTrunks2, -1
+	person_event SPRITE_BIKINI_2, 22, 10, SPRITEMOVEDATA_WANDER, 1, 1, 4, 19, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SunbeamBeachBikini, -1
 	person_event SPRITE_UMBRELLA, 24, 11, SPRITEMOVEDATA_UMBRELLA_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_UMBRELLA, 24, 12, SPRITEMOVEDATA_UMBRELLA_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_UMBRELLA, 28, 11, SPRITEMOVEDATA_UMBRELLA_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
@@ -26,6 +26,46 @@ SunbeamIslandSunbather:
 	jumptext SunbeamIslandSunbatherText
 SunbeamIslandSunbatherNite:
 	jumptext SunbeamIslandSunbatherText2
+	
+SunbeamBeachTrunks1:
+	jumptextfaceplayer SunbeamBeachTrunks1Text
+	
+SunbeamBeachTrunks2:
+	jumptextfaceplayer SunbeamBeachTrunks2Text
+	
+SunbeamBeachBikini:
+	jumptextfaceplayer SunbeamBeachBikiniText
+	
+SunbeamBeachTrunks1Text:
+	text "Man…"
+	
+	para "Those girls are so"
+	line "pretty…"
+	
+	para "I'm just too shy"
+	line "to talk to any of"
+	cont "them…"
+	done
+	
+SunbeamBeachTrunks2Text:
+	text "The beach is a"
+	line "great place to"
+	cont "meet girls!"
+	
+	para "That's the only"
+	line "reason I'm here."
+	
+	para "I don't even know"
+	line "how to swim!"
+	done
+	
+SunbeamBeachBikiniText:
+	text "That guy up there"
+	line "keeps staring at"
+	cont "me!"
+	
+	para "Weirdo…"
+	done
 	
 SunbeamIslandSunbatherText:
 	text "Can I help you?"

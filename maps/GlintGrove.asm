@@ -584,8 +584,8 @@ GlintGroveStanley:
 	opentext
 	writetext GlintGroveStanleyText2
 	waitbutton
-	spriteface GLINTGROVE_STANLEY, DOWN
 	closetext
+	spriteface GLINTGROVE_STANLEY, DOWN
 	pause 40
 	faceplayer
 	opentext

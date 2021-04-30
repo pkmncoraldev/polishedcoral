@@ -108,7 +108,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_4,                                    22, 12 ; 10
 	map_const HUNTERS_THICKET,                            15, 12 ; 11
 	map_const ROUTE_5,                                    18, 28 ; 12
-	map_const ROUTE_5_DEEP,                                8,  8 ; 13
+	map_const ROUTE_5_DEEP,                                9,  8 ; 13
 	map_const ROUTE_5_GATE_1F,                     		   8,  4 ; 14
 	map_const ROUTE_5_GATE_2F,                     		   5,  5 ; 15
 

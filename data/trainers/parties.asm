@@ -511,8 +511,8 @@ YoungsterGroup:
 	db "CHRIS@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db  9, NIDORAN_M
-	db  8, PIDGEY
+	db  7, NIDORAN_M
+	db  7, PIDGEY
 	db -1 ; end
 
 ; ================

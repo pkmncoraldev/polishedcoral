@@ -65,12 +65,11 @@ TrainerRoute3West_1:
 	done
 
 .SeenText:
-	text "You beat STANLEY?"
+	text "Have you been to"
+	line "the GYM?"
 	
-	para "That's so cool!"
-	
-	para "Can I see your"
-	line "badge?"	
+	para "The leader is real"
+	line "tough!"	
 	done
 
 .BeatenText:

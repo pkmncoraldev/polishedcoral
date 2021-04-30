@@ -245,6 +245,7 @@ WrongSideScript:
 	farjumptext WrongSideText
 
 Radio1Script:
+	end
 	callasm IsKantoRadioOffAir
 	iftrue RadioOffAirScript
 	opentext
@@ -253,6 +254,7 @@ Radio1Script:
 	endtext
 
 Radio2Script:
+	end
 	callasm IsKantoRadioOffAir
 	iftrue RadioOffAirScript
 	opentext
@@ -564,6 +566,7 @@ InitializeEventsScript:
 	setflag ENGINE_PHONE_CARD
 	setflag ENGINE_PUNKS_IN_STARGLOW
 	setflag ENGINE_PUNKS_ON_SUNBEAM
+	setevent EVENT_RUNNING_SHOES
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
 	return

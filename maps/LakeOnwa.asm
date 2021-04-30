@@ -102,7 +102,7 @@ LakeOnwa_MapScriptHeader:
 	itemball_event 39, 16, POKE_BALL, 1, EVENT_LAKE_ONWA_POKE_BALL1
 	itemball_event 26, 6, HARD_STONE, 1, EVENT_LAKE_ONWA_POKE_BALL2
 	person_event SPRITE_HIKER,  7, 61, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerLake, -1
-	person_event SPRITE_WEIRD_TREE, 22, 57, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeSudowoodo, EVENT_FOUGHT_SUDOWOODO
+	person_event SPRITE_WEIRD_TREE, 22, 56, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeSudowoodo, EVENT_FOUGHT_SUDOWOODO
 	smashrock_event 23, 10
 	smashrock_event 26,  9
 	smashrock_event 27,  8
@@ -595,7 +595,8 @@ LakePlayedFluteForSudowoodo::
 	waitbutton
 	closetext
 	waitsfx
-	loadwildmon SUDOWOODO, 30
+	loadwildmon SUDOWOODO, 25
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	if_equal $2, DidntBeatLakeSudowoodo
 	disappear LAKESUDOWOODO

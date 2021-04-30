@@ -914,17 +914,17 @@ GlintGymBook7:
 	jumptext GlintGymBookText7
 	
 GlintGymBook8:
-	checkevent EVENT_GOT_CLUE_1
-	iftrue .gotclue
-	opentext
-	writetext GlintGymBookText8
-	buttonsound
+;	checkevent EVENT_GOT_CLUE_1
+;	iftrue .gotclue
+;	opentext
+;	writetext GlintGymBookText8
+;	buttonsound
 ;	verbosegiveitem CLUE_1
-	closetext
-	setevent EVENT_GOT_CLUE_1
-	end
+;	closetext
+;	setevent EVENT_GOT_CLUE_1
+;	end
 	
-.gotclue
+;.gotclue
 	jumptext GlintGymBookText8_2
 	
 GlintGymBook9:
@@ -1172,7 +1172,7 @@ GlintGymBookText12_2:
 	cont "toll,"
 	
 	para "for it must"
-	cont "be done."
+	line "be done."
 	
 	para "Done it must be"
 	line "to guard ourselves"

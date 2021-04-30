@@ -140,7 +140,7 @@ MoveNames::
 	db "POISON JAB@"
 	db "BULLET PUNCH@"
 	db "LEECH LIFE@"
-	db "DRAININGKISS@"
+	db "DOUBLE HIT@"
 	db "BRAVE BIRD@"
 	db "ERROR!@" ; TRANSFORM_SPLASH
 	db "TOXIC SPIKES@"

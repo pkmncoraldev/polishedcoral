@@ -681,12 +681,12 @@ PokeBallEffect: ; e8a2
 	ld a, BANK(sBoxCount)
 	call GetSRAMBank
 
-	ld a, [sBoxCount]
-	cp MONS_PER_BOX
-	jr nz, .BoxNotFullYet
-	ld hl, wBattleResult
-	set 7, [hl]
-.BoxNotFullYet:
+;	ld a, [sBoxCount]
+;	cp MONS_PER_BOX
+;	jr nz, .BoxNotFullYet
+;	ld hl, wBattleResult
+;	set 7, [hl]
+;.BoxNotFullYet:
 	ld a, [wCurItem]
 	cp FRIEND_BALL
 	jr nz, .SkipBoxMonFriendBall

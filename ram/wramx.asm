@@ -309,7 +309,8 @@ wMailboxEnd:: ds 1
 ENDU
 
 wEncounterHouse:: ds 1
-wEncounterHouseMon:: ds 1
+
+	ds 1 ; unused
 
 wMonJustCaught:: ds 1
 
@@ -1230,7 +1231,11 @@ wPartyMonOT:: ds NAME_LENGTH * PARTY_LENGTH
 wPartyMonNicknames:: ds PKMN_NAME_LENGTH * PARTY_LENGTH
 wPartyMonNicknamesEnd::
 
-	ds 12 ; unused
+	ds 1 ; unused
+	
+wEncounterHouseMon:: ds 1
+
+	ds 10 ; unused
 
 wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::

@@ -4,9 +4,10 @@ Route8Garden_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route8GardenCallback
 
-	db 2 ; warp events
-	warp_def  7, 15, 3, ROUTE_8_ENCOUNTER_HOUSE
-	warp_def  7, 16, 3, ROUTE_8_ENCOUNTER_HOUSE
+	db 3 ; warp events
+	warp_def  7, 17, 3, ROUTE_8_ENCOUNTER_HOUSE
+	warp_def  7, 18, 3, ROUTE_8_ENCOUNTER_HOUSE
+	warp_def 11, 17, 1, ROUTE_8_ENCOUNTER_HOUSE
 
 	db 0 ; coord events
 

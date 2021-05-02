@@ -1574,7 +1574,7 @@ FriskedItemText:
 
 PickedItemText:
 	text "<USER>"
-	line "harvested"
+	line "picked up"
 	cont "@"
 	text_from_ram wStringBuffer1
 	text "!"

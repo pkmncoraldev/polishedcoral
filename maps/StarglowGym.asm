@@ -103,25 +103,25 @@ StarglowGymRodneyRematch:
 	iftrue .sevenbadges
 	checkflag ENGINE_EIGHTHBADGE
 	iftrue .eightbadges
-	loadtrainer RODNEY, 2
+	loadtrainer RODNEY, 1;2
 	jump .cont
 .threebadges
-	loadtrainer RODNEY, 3
+	loadtrainer RODNEY, 1;3
 	jump .cont
 .fourbadges
-	loadtrainer RODNEY, 4
+	loadtrainer RODNEY, 1;4
 	jump .cont
 .fivebadges
-	loadtrainer RODNEY, 5
+	loadtrainer RODNEY, 1;5
 	jump .cont
 .sixbadges
-	loadtrainer RODNEY, 6
+	loadtrainer RODNEY, 1;6
 	jump .cont
 .sevenbadges
-	loadtrainer RODNEY, 7
+	loadtrainer RODNEY, 1;7
 	jump .cont
 .eightbadges
-	loadtrainer RODNEY, 8
+	loadtrainer RODNEY, 1;8
 .cont
 	startbattle
 	reloadmapafterbattle

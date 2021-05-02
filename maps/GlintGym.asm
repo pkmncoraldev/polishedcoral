@@ -154,25 +154,25 @@ GlintGymStanleyRematch:
 	loadtrainer STANLEY, 1
 	jump .cont
 .twobadges
-	loadtrainer STANLEY, 2
+	loadtrainer STANLEY, 1;2
 	jump .cont
 .threebadges
-	loadtrainer STANLEY, 3
+	loadtrainer STANLEY, 1;3
 	jump .cont
 .fourbadges
-	loadtrainer STANLEY, 4
+	loadtrainer STANLEY, 1;4
 	jump .cont
 .fivebadges
-	loadtrainer STANLEY, 5
+	loadtrainer STANLEY, 1;5
 	jump .cont
 .sixbadges
-	loadtrainer STANLEY, 6
+	loadtrainer STANLEY, 1;6
 	jump .cont
 .sevenbadges
-	loadtrainer STANLEY, 7
+	loadtrainer STANLEY, 1;7
 	jump .cont
 .eightbadges
-	loadtrainer STANLEY, 8
+	loadtrainer STANLEY, 1;8
 .cont
 	startbattle
 	reloadmapafterbattle

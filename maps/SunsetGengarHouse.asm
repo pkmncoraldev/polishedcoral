@@ -7,9 +7,10 @@ SunsetGengarHouse_MapScriptHeader:
 	warp_event  2,  7, SUNSET_BAY, 7
 	warp_event  3,  7, SUNSET_BAY, 7
 
-	db 2 ; coord events
+	db 3 ; coord events
 	coord_event  7,  4, 1, SunsetGengarHouseTrip
 	coord_event  6,  5, 1, SunsetGengarHouseTrip
+	coord_event  7,  2, 1, SunsetGengarHouseTrip
 
 	db 2 ; bg events
 	bg_event  6,  1, SIGNPOST_JUMPSTD, picturebookshelf

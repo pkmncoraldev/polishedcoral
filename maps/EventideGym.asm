@@ -295,22 +295,22 @@ EventideGymWendyRematch:
 	iftrue .sevenbadges
 	checkflag ENGINE_EIGHTHBADGE
 	iftrue .eightbadges
-	loadtrainer WENDY, 3
+	loadtrainer WENDY, 1;3
 	jump .cont
 .fourbadges
-	loadtrainer WENDY, 4
+	loadtrainer WENDY, 1;4
 	jump .cont
 .fivebadges
-	loadtrainer WENDY, 5
+	loadtrainer WENDY, 1;5
 	jump .cont
 .sixbadges
-	loadtrainer WENDY, 6
+	loadtrainer WENDY, 1;6
 	jump .cont
 .sevenbadges
-	loadtrainer WENDY, 7
+	loadtrainer WENDY, 1;7
 	jump .cont
 .eightbadges
-	loadtrainer WENDY, 8
+	loadtrainer WENDY, 1;8
 .cont
 	startbattle
 	reloadmapafterbattle

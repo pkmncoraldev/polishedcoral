@@ -277,7 +277,7 @@ ENDM
 	map_attributes MtOnwaB2F, MT_ONWA_B2F, $09, 0
 	map_attributes MtOnwaB3F, MT_ONWA_B3F, $09, 0
 	map_attributes MtOnwaCliff, MT_ONWA_CLIFF, $00, 0
-	map_attributes MtOnwaLowerCliff, MT_ONWA_LOWER_CLIFF, $00, 0
+	map_attributes MtOnwaLowerCliff, MT_ONWA_LOWER_CLIFF, $71, 0
 	map_attributes FlickerPass1F, FLICKER_PASS_1F, $9, 0
 	map_attributes FlickerPass2F, FLICKER_PASS_2F, $9, 0
 	map_attributes LusterSewersB1F, LUSTER_SEWERS_B1F, 0, 0
@@ -327,7 +327,7 @@ ENDM
 	map_attributes LakeOnwaBoatHouseLeft, LAKE_ONWA_BOAT_HOUSE_LEFT, $0, 0
 	map_attributes LakeOnwaItemHouse, LAKE_ONWA_ITEM_HOUSE, $0, 0
 	map_attributes LakeOnwaPokeCenter, LAKE_ONWA_POKECENTER, $0, 0
-	map_attributes Route8Garden, ROUTE_8_GARDEN, $5, 0
+	map_attributes Route8Garden, ROUTE_8_GARDEN, $d4, 0
 	map_attributes Route8EncounterHouse, ROUTE_8_ENCOUNTER_HOUSE, $0, 0
 	map_attributes SunbeamPokeCenter, SUNBEAM_POKECENTER, $0, 0
 	map_attributes SunbeamMart, SUNBEAM_MART, $0, 0

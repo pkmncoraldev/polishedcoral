@@ -371,7 +371,7 @@ AcademyBlackboardText:
 	text "The blackboard"
 	line "describes #MON"
 	cont "status changes in"
-	line "battle."
+	cont "battle."
 	done
 
 AcademyBlackboardText2:

@@ -146,8 +146,8 @@ LakeBoatMan1:
 	special FadeOutPalettes
 	special Special_FadeOutMusic
 	clearevent EVENT_SUNSET_STRAND
-	domaptrigger SUNSET_BAY, $4
-	warpfacing UP, SUNSET_BAY, $1a, $1d
+	domaptrigger SUNSET_BAY, $3
+	warpfacing UP, SUNSET_BAY, 29, 28
 	end
 	
 .LakeL

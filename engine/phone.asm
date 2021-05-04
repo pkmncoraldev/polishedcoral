@@ -338,8 +338,8 @@ Function90199: ; 90199 (24:4199)
 	ld hl, PHONE_CONTACT_SCRIPT1_TIME
 	add hl, de
 	ld a, [hl]
-	call CheckPhoneContactTimeOfDay
-	jr z, .OutOfArea
+;	call CheckPhoneContactTimeOfDay
+;	jr z, .OutOfArea
 	; If we're in the same map as the person we're calling,
 	; use the "Just talk to that person" script.
 	ld hl, PHONE_CONTACT_MAP_GROUP

@@ -63,16 +63,16 @@ MagnemitePokedexEntry::  INCLUDE "data/pokemon/dex_entries/081.asm"
 MagnetonPokedexEntry::   INCLUDE "data/pokemon/dex_entries/082.asm"
 DoduoPokedexEntry::      INCLUDE "data/pokemon/dex_entries/084.asm"
 DodrioPokedexEntry::     INCLUDE "data/pokemon/dex_entries/085.asm"
-
-
-SECTION "Pokedex Entries 065-128", ROMX
-
-PokedexEntries2::
 GastlyPokedexEntry::     INCLUDE "data/pokemon/dex_entries/092.asm"
 HaunterPokedexEntry::    INCLUDE "data/pokemon/dex_entries/093.asm"
 GengarPokedexEntry::     INCLUDE "data/pokemon/dex_entries/094.asm"
 OnixPokedexEntry::       INCLUDE "data/pokemon/dex_entries/095.asm"
 VoltorbPokedexEntry::    INCLUDE "data/pokemon/dex_entries/100.asm"
+
+
+SECTION "Pokedex Entries 065-128", ROMX
+
+PokedexEntries2::
 ElectrodePokedexEntry::  INCLUDE "data/pokemon/dex_entries/101.asm"
 ExeggcutePokedexEntry::  INCLUDE "data/pokemon/dex_entries/102.asm"
 ExeggutorPokedexEntry::  INCLUDE "data/pokemon/dex_entries/103.asm"
@@ -125,21 +125,23 @@ MareepPokedexEntry::     INCLUDE "data/pokemon/dex_entries/179.asm"
 FlaaffyPokedexEntry::    INCLUDE "data/pokemon/dex_entries/180.asm"
 AmpharosPokedexEntry::   INCLUDE "data/pokemon/dex_entries/181.asm"
 BellossomPokedexEntry::  INCLUDE "data/pokemon/dex_entries/182.asm"
+MarillPokedexEntry::  	 INCLUDE "data/pokemon/dex_entries/183.asm"
+AzumarillPokedexEntry::  INCLUDE "data/pokemon/dex_entries/184.asm"
 SudowoodoPokedexEntry::  INCLUDE "data/pokemon/dex_entries/185.asm"
 PolitoedPokedexEntry::   INCLUDE "data/pokemon/dex_entries/186.asm"
 WooperPokedexEntry::     INCLUDE "data/pokemon/dex_entries/194.asm"
 QuagsirePokedexEntry::   INCLUDE "data/pokemon/dex_entries/195.asm"
 EspeonPokedexEntry::     INCLUDE "data/pokemon/dex_entries/196.asm"
 UmbreonPokedexEntry::    INCLUDE "data/pokemon/dex_entries/197.asm"
+MurkrowPokedexEntry::    INCLUDE "data/pokemon/dex_entries/198.asm"
+SlowkingPokedexEntry::   INCLUDE "data/pokemon/dex_entries/199.asm"
+PinecoPokedexEntry::     INCLUDE "data/pokemon/dex_entries/204.asm"
+ForretressPokedexEntry:: INCLUDE "data/pokemon/dex_entries/205.asm"
 
 
 SECTION "Pokedex Entries 129-192", ROMX
 
 PokedexEntries3::
-MurkrowPokedexEntry::    INCLUDE "data/pokemon/dex_entries/198.asm"
-SlowkingPokedexEntry::   INCLUDE "data/pokemon/dex_entries/199.asm"
-PinecoPokedexEntry::     INCLUDE "data/pokemon/dex_entries/204.asm"
-ForretressPokedexEntry:: INCLUDE "data/pokemon/dex_entries/205.asm"
 GligarPokedexEntry::     INCLUDE "data/pokemon/dex_entries/207.asm"
 SteelixPokedexEntry::    INCLUDE "data/pokemon/dex_entries/208.asm"
 SnubbullPokedexEntry::   INCLUDE "data/pokemon/dex_entries/209.asm"
@@ -161,6 +163,7 @@ KingdraPokedexEntry::    INCLUDE "data/pokemon/dex_entries/230.asm"
 PhanpyPokedexEntry::     INCLUDE "data/pokemon/dex_entries/231.asm"
 DonphanPokedexEntry::    INCLUDE "data/pokemon/dex_entries/232.asm"
 Porygon2PokedexEntry::   INCLUDE "data/pokemon/dex_entries/233.asm"
+StantlerPokedexEntry::   INCLUDE "data/pokemon/dex_entries/234.asm"
 SmearglePokedexEntry::   INCLUDE "data/pokemon/dex_entries/235.asm"
 ElekidPokedexEntry::     INCLUDE "data/pokemon/dex_entries/239.asm"
 MagbyPokedexEntry::      INCLUDE "data/pokemon/dex_entries/240.asm"
@@ -203,6 +206,11 @@ LucarioPokedexEntry:: 	 INCLUDE "data/pokemon/dex_entries/000.asm" ;448
 CroagunkPokedexEntry::   INCLUDE "data/pokemon/dex_entries/000.asm" ;453
 ToxicroakPokedexEntry::  INCLUDE "data/pokemon/dex_entries/000.asm" ;454
 SnoverPokedexEntry::   	 INCLUDE "data/pokemon/dex_entries/000.asm" ;459
+
+
+SECTION "Pokedex Entries 193-253", ROMX
+
+PokedexEntries4::
 AbomasnowPokedexEntry::  INCLUDE "data/pokemon/dex_entries/000.asm" ;460
 WeavilePokedexEntry::    INCLUDE "data/pokemon/dex_entries/461.asm"
 MagnezonePokedexEntry::  INCLUDE "data/pokemon/dex_entries/462.asm"
@@ -212,11 +220,6 @@ TogekissPokedexEntry::   INCLUDE "data/pokemon/dex_entries/468.asm"
 LeafeonPokedexEntry::    INCLUDE "data/pokemon/dex_entries/470.asm"
 GlaceonPokedexEntry::    INCLUDE "data/pokemon/dex_entries/471.asm"
 GliscorPokedexEntry::    INCLUDE "data/pokemon/dex_entries/472.asm"
-
-
-SECTION "Pokedex Entries 193-253", ROMX
-
-PokedexEntries4::
 MamoswinePokedexEntry::  INCLUDE "data/pokemon/dex_entries/473.asm"
 PorygonZPokedexEntry::   INCLUDE "data/pokemon/dex_entries/474.asm"
 GalladePokedexEntry:: 	 INCLUDE "data/pokemon/dex_entries/000.asm" ;475
@@ -261,5 +264,3 @@ TrumbeakPokedexEntry::   INCLUDE "data/pokemon/dex_entries/732.asm"
 ToucannonPokedexEntry::  INCLUDE "data/pokemon/dex_entries/733.asm"
 MareaniePokedexEntry::	 INCLUDE "data/pokemon/dex_entries/000.asm" ;747
 ToxapexPokedexEntry::	 INCLUDE "data/pokemon/dex_entries/000.asm" ;748
-MarillPokedexEntry::  	 INCLUDE "data/pokemon/dex_entries/183.asm"
-AzumarillPokedexEntry::  INCLUDE "data/pokemon/dex_entries/184.asm"

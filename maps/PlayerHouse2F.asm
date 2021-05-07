@@ -97,6 +97,7 @@ PlayerHouseDebugPoster:
 	giveitem GOOD_ROD
 	giveitem RIVAL_POKEDEX
 	giveitem OVAL_CHARM
+	callasm FillPokedex
 .badges
 	writetext PlayerHouseDebugText3
 	yesorno
@@ -132,6 +133,18 @@ PlayerHouseDebugPoster:
 	waitbutton
 	closetext
 	end
+	
+FillPokedex:
+	ld hl, wPokedexSeen
+	call .Fill
+	ld hl, wPokedexCaught
+.Fill:
+	ld a, %11111111
+	ld bc, 31 ; 001-248
+	call ByteFill
+	ld [hl], %00111111 ; 249-254
+	ret
+
 	
 PlayerHouseDebugText1:
 	text "DEBUG POSTER"
@@ -326,7 +339,6 @@ GameConsole:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	end
 .turnoff
-;	callasm SlowTempoTest
 	writetext GameConsoleText_AskTurnOffKirby
 	yesorno
 	iffalse .no
@@ -343,14 +355,6 @@ GameConsole:
 	waitbutton
 	closetext
 	end
-	
-;SlowTempoTest:
-;	ld a, 200
-;	ld [wChannel1Tempo], a
-;	ld [wChannel2Tempo], a
-;	ld [wChannel3Tempo], a
-;	ld [wChannel4Tempo], a
-;	ret
 	
 GameConsoleSetMapMusic:
 	xor a

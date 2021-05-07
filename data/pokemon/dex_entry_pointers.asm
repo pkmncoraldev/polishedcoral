@@ -149,6 +149,7 @@
 	dw PhanpyPokedexEntry
 	dw DonphanPokedexEntry
 	dw Porygon2PokedexEntry
+	dw StantlerPokedexEntry
 	dw SmearglePokedexEntry
 	dw ElekidPokedexEntry
 	dw MagbyPokedexEntry

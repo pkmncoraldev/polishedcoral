@@ -1065,7 +1065,8 @@ DisplayDexEntry: ; 4424d
 	call GetPokemonName
 	hlcoord 9, 3
 	call PlaceString ; mon species
-	ld a, [wCurPartySpecies]
+;	ld a, [wCurPartySpecies]
+	farcall Pokedex_GetSelectedMon
 	ld b, a
 	call GetDexEntryPointer
 	ld a, b

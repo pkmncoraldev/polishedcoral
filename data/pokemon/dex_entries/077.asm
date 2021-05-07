@@ -1,5 +1,5 @@
 ; PonytaPokedexEntry: ; 0x1b84f2
-	db "Fire Horse@" ; species name
+	db "FIRE HORSE@" ; species name
 	dw 303, 660 ; height, width
 
 	db   "Training by"

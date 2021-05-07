@@ -1,5 +1,5 @@
 ; MagnemitePokedexEntry: ; 0x1b869d
-	db "Magnet@" ; species name
+	db "MAGNET@" ; species name
 	dw 100, 130 ; height, width
 
 	db   "The electricity"

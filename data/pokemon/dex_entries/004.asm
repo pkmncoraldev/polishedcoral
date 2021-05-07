@@ -1,5 +1,5 @@
 ; CharmanderPokedexEntry: ; 0x1817db
-	db "Lizard@" ; species name
+	db "LIZARD@" ; species name
 	dw 200, 190 ; height, width
 
 	db   "If it's healthy,"

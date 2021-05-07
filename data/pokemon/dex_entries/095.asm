@@ -1,5 +1,5 @@
 ; OnixPokedexEntry: ; 0x1b8c98
-	db "Rock Snake@" ; species name
+	db "ROCK SNAKE@" ; species name
 	dw 2810, 4630 ; height, width
 
 	db   "As it digs through"

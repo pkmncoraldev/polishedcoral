@@ -1,5 +1,5 @@
 ; CorsolaPokedexEntry: ; 0x1d0c68
-	db "Coral@" ; species name
+	db "CORAL@" ; species name
 	dw 200, 110 ; height, width
 
 	db   "The points on its"

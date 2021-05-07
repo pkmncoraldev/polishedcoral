@@ -1,10 +1,10 @@
 ; StantlerPokedexEntry: ; 0x181695
-	db "???@" ; species name
-	dw 0, 0 ; height, width
+	db "BIG HORN@" ; species name
+	dw 407, 1570 ; height, weight
 
-	db   "UNFINISHED@"
-	next ""
-	next ""
-	page "UNFINISHED"
-	next ""
-	next "@"
+	db   "The round balls"
+	next "found on the"
+	next "fallen antlers can"
+	page "be ground into a"
+	next "powder that aids"
+	next "in sleeping.@"

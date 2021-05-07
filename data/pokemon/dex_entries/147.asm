@@ -1,5 +1,5 @@
 ; DratiniPokedexEntry: ; 0x1cc761
-	db "Dragon@" ; species name
+	db "DRAGON@" ; species name
 	dw 511, 70 ; height, width
 
 	db   "It sheds many lay-"

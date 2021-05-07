@@ -1,5 +1,5 @@
 ; NidorinoPokedexEntry: ; 0x1823fd
-	db "Poison Pin@" ; species name
+	db "POISON PIN@" ; species name
 	dw 211, 430 ; height, width
 
 	db   "It is easily"

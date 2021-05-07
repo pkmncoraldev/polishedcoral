@@ -1,5 +1,5 @@
 ; BayleefPokedexEntry: ; 0x1cc9e9
-	db "Leaf@" ; species name
+	db "LEAF@" ; species name
 	dw 311, 350 ; height, width
 
 	db   "The scent that"

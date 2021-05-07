@@ -1,5 +1,5 @@
 ; QuagsirePokedexEntry: ; 0x1d00dd
-	db "Water Fish@" ; species name
+	db "WATER FISH@" ; species name
 	dw 407, 1650 ; height, width
 
 	db   "Its body is always"

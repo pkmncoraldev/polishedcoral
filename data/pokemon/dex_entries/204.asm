@@ -1,5 +1,5 @@
 ; PinecoPokedexEntry: ; 0x1d04b0
-	db "Bagworm@" ; species name
+	db "BAGWORM@" ; species name
 	dw 200, 160 ; height, width
 
 	db   "It spits out a"

@@ -1,5 +1,5 @@
 ; GloomPokedexEntry: ; 0x1828a6
-	db "Weed@" ; species name
+	db "WEED@" ; species name
 	dw 207, 190 ; height, width
 
 	db   "The smell from its"

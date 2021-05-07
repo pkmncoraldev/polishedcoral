@@ -1,5 +1,5 @@
 ; SeadraPokedexEntry: ; 0x1b95b8
-	db "Dragon@" ; species name
+	db "DRAGON@" ; species name
 	dw 311, 550 ; height, width
 
 	db   "The male raises"

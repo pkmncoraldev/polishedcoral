@@ -1,5 +1,5 @@
 ; DonphanPokedexEntry: ; 0x1d10ac
-	db "Armor@" ; species name
+	db "ARMOR@" ; species name
 	dw 307, 2650 ; height, width
 
 	db   "Because this"

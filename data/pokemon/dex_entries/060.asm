@@ -1,5 +1,5 @@
 ; PoliwagPokedexEntry: ; 0x182f91
-	db "Tadpole@" ; species name
+	db "TADPOLE@" ; species name
 	dw 200, 270 ; height, width
 
 	db   "The swirl on its"

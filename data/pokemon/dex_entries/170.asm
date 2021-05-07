@@ -1,5 +1,5 @@
 ; ChinchouPokedexEntry: ; 0x1cd165
-	db "Angler@" ; species name
+	db "ANGLER@" ; species name
 	dw 108, 260 ; height, width
 
 	db   "Its antennae, whi-"

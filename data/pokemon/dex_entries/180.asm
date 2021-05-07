@@ -1,5 +1,5 @@
 ; FlaaffyPokedexEntry: ; 0x1cd5b8
-	db "Wool@" ; species name
+	db "WOOL@" ; species name
 	dw 207, 290 ; height, width
 
 	db   "Because of its"

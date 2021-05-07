@@ -1,5 +1,5 @@
 ; TyphlosionPokedexEntry: ; 0x1ccba0
-	db "Volcano@" ; species name
+	db "VOLCANO@" ; species name
 	dw 507, 1750 ; height, width
 
 	db   "When heat from its"

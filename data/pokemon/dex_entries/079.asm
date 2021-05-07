@@ -1,5 +1,5 @@
 ; SlowpokePokedexEntry: ; 0x1b85d3
-	db "Dopey@" ; species name
+	db "DOPEY@" ; species name
 	dw 311, 790 ; height, width
 
 	db   "It is always so"

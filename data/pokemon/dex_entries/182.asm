@@ -1,5 +1,5 @@
 ; BellossomPokedexEntry: ; 0x1cd69a
-	db "Flower@" ; species name
+	db "FLOWER@" ; species name
 	dw 104, 130 ; height, width
 
 	db   "When these dance"

@@ -1,10 +1,11 @@
-; BellossomPokedexEntry: ; 0x1cd69a
-	db "Flower@" ; species name
-	dw 104, 130 ; height, width
+; AzumarillPokedexEntry: ; 0x1cd69a
+	db "AQUARABBIT@" ; species name
+	dw 207, 630 ; height, weight
 
-	db   "When these dance"
-	next "together, their"
-	next "petals rub against"
-	page "each other,"
-	next "making pretty,"
-	next "relaxing sounds.@"
+	db   "The bubble-like"
+	next "pattern on its"
+	next "stomach helps it"
+	page "camouflage itself"
+	next "when it's in the"
+	next "water.@"
+

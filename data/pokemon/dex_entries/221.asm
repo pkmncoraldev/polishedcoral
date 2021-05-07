@@ -1,5 +1,5 @@
 ; PiloswinePokedexEntry: ; 0x1d0c01
-	db "Swine@" ; species name
+	db "SWINE@" ; species name
 	dw 307, 1230 ; height, width
 
 	db   "Although its legs"

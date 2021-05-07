@@ -1,5 +1,5 @@
 ; SwinubPokedexEntry: ; 0x1d0b8d
-	db "Pig@" ; species name
+	db "PIG@" ; species name
 	dw 104, 140 ; height, width
 
 	db   "It uses the tip of"

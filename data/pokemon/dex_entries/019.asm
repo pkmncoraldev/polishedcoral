@@ -1,8 +1,8 @@
 ; RattataPokedexEntry: ; 0x181e3d
-	db "Rat@" ; species name
+	db "RAT@" ; species name
 	dw 100, 80 ; height, width
 
-	db   "This #mon's"
+	db   "This #MON's"
 	next "impressive vital-"
 	next "ity allows it to"
 	page "live anywhere. It"

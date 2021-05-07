@@ -1,5 +1,5 @@
 ; BlisseyPokedexEntry: ; 0x1d14f7
-	db "Happiness@" ; species name
+	db "HAPPINESS@" ; species name
 	dw 411, 1030 ; height, width
 
 	db   "Biting into one"

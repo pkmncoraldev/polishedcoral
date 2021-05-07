@@ -1,5 +1,5 @@
 ; GyaradosPokedexEntry: ; 0x1cc065
-	db "Atrocious@" ; species name
+	db "ATROCIOUS@" ; species name
 	dw 2104, 5180 ; height, width
 
 	db   "It appears when-"

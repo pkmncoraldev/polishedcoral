@@ -1,5 +1,5 @@
 ; RaticatePokedexEntry: ; 0x181ea3
-	db "Rat@" ; species name
+	db "RAT@" ; species name
 	dw 204, 410 ; height, width
 
 	db   "The webs on its"

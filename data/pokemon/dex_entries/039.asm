@@ -1,5 +1,5 @@
 ; JigglypuffPokedexEntry: ; 0x182673
-	db "Balloon@" ; species name
+	db "BALLOON@" ; species name
 	dw 108, 120 ; height, width
 
 	db   "It rolls its cute"

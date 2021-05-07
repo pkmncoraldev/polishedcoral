@@ -1,5 +1,5 @@
 ; LedianPokedexEntry: ; 0x1ccfa0
-	db "Five Star@" ; species name
+	db "FIVE STAR@" ; species name
 	dw 407, 780 ; height, width
 
 	db   "In the daytime"

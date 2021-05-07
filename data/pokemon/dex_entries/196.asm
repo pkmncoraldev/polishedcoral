@@ -1,5 +1,5 @@
 ; EspeonPokedexEntry: ; 0x1d0155
-	db "Sun@" ; species name
+	db "SUN@" ; species name
 	dw 211, 580 ; height, width
 
 	db   "The tip of its"

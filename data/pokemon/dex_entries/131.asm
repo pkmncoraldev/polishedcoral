@@ -1,9 +1,9 @@
 ; LaprasPokedexEntry: ; 0x1cc0cd
-	db "Transport@" ; species name
+	db "TRANSPORT@" ; species name
 	dw 802, 4850 ; height, width
 
 	db   "This gentle"
-	next "#mon loves to"
+	next "#MON loves to"
 	next "give people rides"
 	page "and provides a ve-"
 	next "ry comfortable way"

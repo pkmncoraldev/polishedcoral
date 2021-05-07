@@ -1,5 +1,5 @@
 ; RaichuPokedexEntry: ; 0x182117
-	db "Mouse@" ; species name
+	db "MOUSE@" ; species name
 	dw 207, 660 ; height, width
 
 	db   "If its electric"

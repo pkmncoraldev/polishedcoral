@@ -1,10 +1,10 @@
 ; LarvitarPokedexEntry: ; 0x1d169c
-	db "Rock Skin@" ; species name
+	db "ROCK SKIN@" ; species name
 	dw 200, 1590 ; height, width
 
 	db   "Born deep under-"
 	next "ground, this"
-	next "#mon becomes a"
+	next "#MON becomes a"
 	page "pupa after eating"
 	next "enough dirt to"
 	next "make a mountain.@"

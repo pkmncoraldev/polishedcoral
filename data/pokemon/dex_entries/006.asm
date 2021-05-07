@@ -1,5 +1,5 @@
 ; CharizardPokedexEntry: ; 0x1818b3
-	db "Flame@" ; species name
+	db "FLAME@" ; species name
 	dw 507, 2000 ; height, width
 
 	db   "It uses its wings"

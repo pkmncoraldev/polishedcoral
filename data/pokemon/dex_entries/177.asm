@@ -1,5 +1,5 @@
 ; NatuPokedexEntry: ; 0x1cd47d
-	db "Little Bird@" ; species name
+	db "LITTLE BIRD@" ; species name
 	dw 8, 40 ; height, width
 
 	db   "It is extremely"

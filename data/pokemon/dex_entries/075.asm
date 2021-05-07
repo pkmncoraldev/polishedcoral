@@ -1,5 +1,5 @@
 ; GravelerPokedexEntry: ; 0x1b840c
-	db "Rock@" ; species name
+	db "ROCK@" ; species name
 	dw 303, 2320 ; height, width
 
 	db   "It travels by rol-"

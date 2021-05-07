@@ -1,5 +1,5 @@
 ; JolteonPokedexEntry: ; 0x1cc28b
-	db "Lightning@" ; species name
+	db "LIGHTNING@" ; species name
 	dw 207, 540 ; height, width
 
 	db   "The negatively"

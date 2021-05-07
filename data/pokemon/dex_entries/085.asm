@@ -1,5 +1,5 @@
 ; DodrioPokedexEntry: ; 0x1b884a
-	db "Triple Bird@" ; species name
+	db "TRIPLE BIRD@" ; species name
 	dw 511, 1880 ; height, width
 
 	db   "An enemy that"

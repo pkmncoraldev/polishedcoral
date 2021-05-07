@@ -1,5 +1,5 @@
 ; PhanpyPokedexEntry: ; 0x1d1038
-	db "Long Nose@" ; species name
+	db "LONG NOSE@" ; species name
 	dw 108, 740 ; height, width
 
 	db   "During the desert-"

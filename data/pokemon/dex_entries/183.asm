@@ -1,10 +1,11 @@
-; BellossomPokedexEntry: ; 0x1cd69a
-	db "Flower@" ; species name
-	dw 104, 130 ; height, width
+; MarillPokedexEntry: ; 0x1cd69a
+	db "AQUAMOUSE@" ; species name
+	dw 104, 190 ; height, weight
 
-	db   "When these dance"
-	next "together, their"
-	next "petals rub against"
-	page "each other,"
-	next "making pretty,"
-	next "relaxing sounds.@"
+	db   "The fur on its"
+	next "body naturally"
+	next "repels water. It"
+	page "can stay dry, even"
+	next "when it plays in"
+	next "the water.@"
+

@@ -1,5 +1,5 @@
 ; HorseaPokedexEntry: ; 0x1b9553
-	db "Dragon@" ; species name
+	db "DRAGON@" ; species name
 	dw 104, 180 ; height, width
 
 	db   "When they're in a"

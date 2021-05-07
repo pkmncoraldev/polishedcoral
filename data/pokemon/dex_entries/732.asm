@@ -3,8 +3,8 @@
 	dw 200, 326 ; height, width
 
 	db   "By bending its"
-	next "beak, it can make"
-	next "a variety of calls."
+	next "beak, it makes a"
+	next "variety of calls."
 	page "It can be a noisy"
 	next "nuisance to its"
 	next "neighbors.@"

@@ -4,7 +4,7 @@
 
 	db   "It has a flotation"
 	next "sac that is like"
-	next "an inflatable col-"
-	page "lar. It floats on"
-	next "water with its"
-	next "head out.@"
+	next "an inflatable"
+	page "collar. It floats"
+	next "on the water with"
+	next "its head out.@"

@@ -3,8 +3,8 @@
 	dw 200, 247 ; height, width
 
 	db   "It never skips its"
-	next "daily yoga training."
+	next "yoga training."
 	next "It heightens its"
-	page "inner strenght"
-	next "through meditation."
-	next "@"
+	page "inner strength"
+	next "through daily"
+	next "meditation.@"

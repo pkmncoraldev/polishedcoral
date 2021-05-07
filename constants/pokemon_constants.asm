@@ -245,16 +245,14 @@
 	const TOUCANNON ;733
 	const MAREANIE ;747
 	const TOXAPEX ;748
+NUM_SPECIES EQU const_value +- 1
 	const RAICHU_A
 	const EXEGGCUTE_A
 	const EXEGGUTOR_A
 	const MAROWAK_A
+NUM_POKEMON EQU const_value +- 1
 	const EGG        ; $fe
 	const CANCEL     ; $ff
-
-NUM_POKEMON EQU const_value +- 1
-	
-
 
 ; form values
 

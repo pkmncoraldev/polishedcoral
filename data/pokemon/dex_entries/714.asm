@@ -3,7 +3,7 @@
 	dw 108, 176 ; height, width
 
 	db   "They live in pitch"
-	next "black caves."
-	page "Their enormous ears"
-	next "can emit ultrasonic"
+	next "black caves. Their"
+	page "enormous ears can"
+	next "emit ultrasonic"
 	next "waves of 200,000hz.@"

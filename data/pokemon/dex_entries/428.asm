@@ -3,8 +3,8 @@
 	dw 311, 734 ; height, width
 
 	db   "The ears appear to"
-	next "be delicate."
-	next "If they are touched"
+	next "be delicate. If"
+	next "they are touched"
 	page "roughly, it kicks"
 	next "with its graceful"
 	next "legs.@"

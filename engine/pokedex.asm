@@ -120,7 +120,7 @@ Pokedex_InitCursorPosition: ; 400b4
 	ld a, [wLastDexEntry]
 	and a
 	ret z
-	cp NUM_POKEMON + 1
+	cp NUM_SPECIES + 1
 	ret nc
 
 	ld b, a
@@ -1737,7 +1737,7 @@ Pokedex_OrderMonsByMode: ; 40bdc
 .NewMode: ; 40bf6 (10:4bf6)
 	ld de, NewPokedexOrder
 	ld hl, wPokedexDataStart
-	ld c, NUM_POKEMON
+	ld c, NUM_SPECIES
 .loopnew
 	ld a, [de]
 	inc de
@@ -1749,7 +1749,7 @@ Pokedex_OrderMonsByMode: ; 40bdc
 .OldMode: ; 40c08 (10:4c08)
 	ld hl, wPokedexDataStart
 	ld a, $1
-	ld c, NUM_POKEMON
+	ld c, NUM_SPECIES
 .loopold
 	ld [hli], a
 	inc a
@@ -1758,8 +1758,8 @@ Pokedex_OrderMonsByMode: ; 40bdc
 	; fallthrough
 
 .FindLastSeen: ; 40c18 (10:4c18)
-	ld hl, wPokedexDataStart + NUM_POKEMON - 1
-	ld d, NUM_POKEMON
+	ld hl, wPokedexDataStart + NUM_SPECIES - 1
+	ld d, NUM_SPECIES
 	ld e, d
 .loopfindend
 	ld a, [hld]
@@ -1779,7 +1779,7 @@ Pokedex_ABCMode: ; 40c30
 	ld [wDexListingEnd], a
 	ld hl, wPokedexDataStart
 	ld de, AlphabeticalPokedexOrder
-	ld c, NUM_POKEMON
+	ld c, NUM_SPECIES
 .loop1abc
 	push bc
 	ld a, [de]
@@ -1800,7 +1800,7 @@ Pokedex_ABCMode: ; 40c30
 	ld a, [wDexListingEnd]
 	ld c, 0
 .loop2abc
-	cp NUM_POKEMON
+	cp NUM_SPECIES
 	ret z
 	ld [hl], c
 	inc hl
@@ -1993,7 +1993,7 @@ Pokedex_SearchForMons: ; 41086
 	ld [wDexConvertedMonType], a
 	ld hl, wPokedexDataStart
 	ld de, wPokedexDataStart
-	ld c, NUM_POKEMON
+	ld c, NUM_SPECIES
 	xor a
 	ld [wDexSearchResultCount], a
 .loop
@@ -2039,7 +2039,7 @@ Pokedex_SearchForMons: ; 41086
 	ld c, 0
 
 .zero_remaining_mons
-	cp NUM_POKEMON
+	cp NUM_SPECIES
 	ret z
 	ld [hl], c
 	inc hl
@@ -2521,7 +2521,7 @@ NewPokedexEntry: ; fb877
 	call WaitPressAorB_BlinkCursor
 	ld a, $1
 	ld [wPokedexStatus], a
-	farcall DisplayDexEntry
+	farcall DisplayDexEntry2
 	call WaitPressAorB_BlinkCursor
 	ld a, [wTempMonSpecies]
 	ld [wCurPartySpecies], a
@@ -2580,7 +2580,7 @@ NewPokedexEntry: ; fb877
 	ld bc, 19
 	ld a, " "
 	call ByteFill
-	farcall DisplayDexEntry
+	farcall DisplayDexEntry2
 	call EnableLCD
 	call ApplyTilemapInVBlank
 	call GetBaseData

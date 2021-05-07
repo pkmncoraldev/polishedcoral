@@ -7,4 +7,4 @@
 	next "fight viciously."
 	page "The one whose rock"
 	next "is broken is the"
-	next "loser of the battle.@"
+	next "loser.@"

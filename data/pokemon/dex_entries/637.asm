@@ -6,5 +6,5 @@
 	next "wings to scatter"
 	next "their ember scales."
 	page "Ancient people knew"
-	next "them as <``>the rage"
-	next "of the sun.<''>@"
+	next "them as “the rage"
+	next "of the sun.”@"

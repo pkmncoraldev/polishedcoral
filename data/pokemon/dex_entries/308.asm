@@ -2,9 +2,9 @@
 	db "MEDITATE@" ; species name
 	dw 403, 694 ; height, width
 
-	db   "It elegantly avoids"
-	next "attacks with dance-"
-	next "like steps, then"
+	db   "It can elegantly"
+	next "avoid attacks with"
+	next "dance steps, then"
 	page "launches a deva-"
-	next "stating blow in the"
-	next "same motion.@"
+	next "stating blow in"
+	next "the same motion.@"

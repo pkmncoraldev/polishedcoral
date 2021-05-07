@@ -6,5 +6,5 @@
 	next "nature. It is said"
 	next "that it never for-"
 	page "gives the mistakes"
-	next "of its Murkrow"
+	next "of its MURKROW"
 	next "followers.@"

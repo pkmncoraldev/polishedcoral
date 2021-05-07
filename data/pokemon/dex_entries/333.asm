@@ -6,5 +6,5 @@
 	next "cotton tufts."
 	next "If it perches on"
 	page "someone's head, it"
-	next "looks like a cotton"
-	next "hat.@"
+	next "looks like a"
+	next "cotton hat.@"

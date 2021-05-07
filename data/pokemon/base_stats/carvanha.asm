@@ -7,7 +7,7 @@
 	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
-	dn 5, 5 ; frontpic dimensions
+	dn 6, 6 ; frontpic dimensions
 	db ROUGH_SKIN ; ability 1
 	db ROUGH_SKIN ; ability 2
 	db SPEED_BOOST ; hidden ability

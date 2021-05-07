@@ -245,7 +245,7 @@
 	const TOUCANNON ;733
 	const MAREANIE ;747
 	const TOXAPEX ;748
-NUM_SPECIES EQU const_value +- 1
+NUM_SPECIES EQU const_value - 1
 	const RAICHU_A
 	const EXEGGCUTE_A
 	const EXEGGUTOR_A

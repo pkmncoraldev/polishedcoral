@@ -1237,10 +1237,10 @@ wEncounterHouseMon:: ds 1
 
 	ds 10 ; unused
 
-wPokedexCaught:: flag_array NUM_POKEMON
+wPokedexCaught:: flag_array NUM_SPECIES
 wEndPokedexCaught::
 
-wPokedexSeen:: flag_array NUM_POKEMON
+wPokedexSeen:: flag_array NUM_SPECIES
 wEndPokedexSeen::
 
 wUnownDex:: ds NUM_UNOWN

@@ -1061,18 +1061,11 @@ DoDexSearchSlowpokeFrame: ; 44207
 	dsprite 13, 0, 11, 0, $22, $0
 	db -1
 
-DisplayDexEntry: ; 4424d
+DisplayDexEntry:
 	call GetPokemonName
 	hlcoord 9, 3
 	call PlaceString ; mon species
-	farcall Pokedex_GetSelectedMon
-	jr DisplayDexEntry3
-DisplayDexEntry2:
-	call GetPokemonName
-	hlcoord 9, 3
-	call PlaceString ; mon species
-	ld a, [wCurPartySpecies]
-DisplayDexEntry3:
+	ld a, [wd265]
 	ld b, a
 	call GetDexEntryPointer
 	ld a, b
@@ -1088,7 +1081,7 @@ DisplayDexEntry3:
 	ld [hli], a
 	ld a, "."
 	ld [hli], a
-	ld de, wCurPartySpecies
+	ld de, wd265
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
 	call PrintNum
 ; Check to see if we caught it.  Get out of here if we haven't.

@@ -140,9 +140,8 @@ FillPokedex:
 	ld hl, wPokedexCaught
 .Fill:
 	ld a, %11111111
-	ld bc, 31 ; 001-248
+	ld bc, 32
 	call ByteFill
-	ld [hl], %00111111 ; 249-254
 	ret
 
 	

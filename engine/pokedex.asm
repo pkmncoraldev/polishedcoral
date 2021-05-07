@@ -315,9 +315,9 @@ Pokedex_InitDexEntryScreen: ; 40217 (10:4217)
 	ld a, CGB_POKEDEX
 	call Pokedex_GetCGBLayout
 	
-	ld a, 1
-	ld [hCGBPalUpdate], a
-	call DelayFrame
+;	ld a, 1
+;	ld [hCGBPalUpdate], a
+;	call DelayFrame
 	
 	ld a, [wCurPartySpecies]
 	call PlayCry
@@ -446,11 +446,8 @@ DexEntryScreen_MenuActionJumptable: ; 402f2
 	jp Pokedex_GetCGBLayout
 
 .Cry: ; 40340
-;	ld a, [wCurPartySpecies]
-;	jp PlayCry
-	call Pokedex_GetSelectedMon
-	ld a, [wd265]
-	jp _PlayCry
+	ld a, [wCurPartySpecies]
+	jp PlayCry
 
 .Shiny:
 	ld hl, wDexMonShiny
@@ -2521,13 +2518,8 @@ NewPokedexEntry: ; fb877
 	call WaitPressAorB_BlinkCursor
 	ld a, $1
 	ld [wPokedexStatus], a
-	farcall DisplayDexEntry2
+	farcall DisplayDexEntry
 	call WaitPressAorB_BlinkCursor
-	ld a, [wTempMonSpecies]
-	ld [wCurPartySpecies], a
-	call GetBaseData
-	ld de, VTiles2
-	predef GetFrontpic
 	pop af
 	ld [wPokedexStatus], a
 	call MaxVolume
@@ -2580,7 +2572,7 @@ NewPokedexEntry: ; fb877
 	ld bc, 19
 	ld a, " "
 	call ByteFill
-	farcall DisplayDexEntry2
+	farcall DisplayDexEntry
 	call EnableLCD
 	call ApplyTilemapInVBlank
 	call GetBaseData
@@ -2588,7 +2580,6 @@ NewPokedexEntry: ; fb877
 	predef GetFrontpic
 	ld a, CGB_POKEDEX
 	call Pokedex_GetCGBLayout
-	call DelayFrame
 	ld a, [wCurPartySpecies]
 	jp PlayCry
 

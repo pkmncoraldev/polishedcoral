@@ -314,14 +314,10 @@ Pokedex_InitDexEntryScreen: ; 40217 (10:4217)
 	ld [wDexMonShiny], a
 	ld a, CGB_POKEDEX
 	call Pokedex_GetCGBLayout
-	
-;	ld a, 1
-;	ld [hCGBPalUpdate], a
-;	call DelayFrame
-	
+	call DelayFrame
+	call Pokedex_IncrementDexPointer
 	ld a, [wCurPartySpecies]
-	call PlayCry
-	jp Pokedex_IncrementDexPointer
+	jp PlayCry
 
 Pokedex_UpdateDexEntryScreen: ; 40258 (10:4258)
 	ld a, [wCelebiEvent]
@@ -390,6 +386,7 @@ Pokedex_ReinitDexEntryScreen: ; 402aa (10:42aa)
 	ld [wCurPartySpecies], a
 	ld a, CGB_POKEDEX
 	call Pokedex_GetCGBLayout
+	call DelayFrame
 	ld a, [wCurPartySpecies]
 	call PlayCry
 	ld hl, wJumptableIndex
@@ -419,7 +416,7 @@ DexEntryScreen_MenuActionJumptable: ; 402f2
 	call Pokedex_BlackOutBG
 	xor a
 	ld [hSCX], a
-	;call DelayFrame
+	call DelayFrame
 	ld a, $7
 	ld [hWX], a
 	ld a, $90
@@ -599,6 +596,7 @@ Pokedex_UpdateSearchScreen: ; 40471 (10:4471)
 	ld a, [hl]
 	and A_BUTTON
 	ret z
+
 
 	ld a, [wDexArrowCursorPosIndex]
 	ld hl, .MenuActionJumptable
@@ -2580,6 +2578,7 @@ NewPokedexEntry: ; fb877
 	predef GetFrontpic
 	ld a, CGB_POKEDEX
 	call Pokedex_GetCGBLayout
+	call DelayFrame
 	ld a, [wCurPartySpecies]
 	jp PlayCry
 

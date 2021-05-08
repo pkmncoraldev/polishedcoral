@@ -57,23 +57,9 @@ FindNest: ; 2a01f
 	cp -1
 	ret z
 	push hl
-
-	; assume that navel rock is the first off-screen map, and end the search early
-;	ld a, [hli]
-;	cp GROUP_NAVEL_ROCK_INSIDE
-;	jr nz, .not_navel_rock_group
-;	ld b, a
-;	ld a, [hli]
-;	cp MAP_NAVEL_ROCK_INSIDE
-;	jr nz, .not_navel_rock_map
-;	pop hl
-;	ret
-
-;	ld a, [hli]
-;.not_navel_rock_group
+	ld a, [hli]
 	ld b, a
 	ld a, [hli]
-;.not_navel_rock_map
 	ld c, a
 	inc hl
 	inc hl

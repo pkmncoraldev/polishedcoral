@@ -2356,16 +2356,16 @@ _Area: ; 91d11
 	call LoadTownMapGFX
 
 	ld a, [wTownMapPlayerIconLandmark]
-	cp SHAMOUTI_LANDMARK
-	jr nc, .shamouti
+;	cp SHAMOUTI_LANDMARK
+;	jr nc, .shamouti
 	cp KANTO_LANDMARK
 	jr nc, .kanto
 .johto
 	ld a, JOHTO_REGION
 	jr .set_region
-.shamouti
-	ld a, ORANGE_REGION
-	jr .set_region
+;.shamouti
+;	ld a, ORANGE_REGION
+;	jr .set_region
 .kanto
 	ld a, KANTO_REGION
 .set_region

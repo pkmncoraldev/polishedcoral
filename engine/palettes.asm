@@ -1214,16 +1214,16 @@ TMHMTypes:
 
 PokegearPals:
 if !DEF(MONOCHROME)
-; ???
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-; map 1
+; map 0
 	RGB 28, 31, 20
 	RGB 21, 21, 21
 	RGB 13, 13, 13
 	RGB 00, 00, 00
+; map 1
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 28, 31, 20
 ; map 2
 	RGB 28, 31, 20
 	RGB 00, 31, 00
@@ -1242,23 +1242,19 @@ if !DEF(MONOCHROME)
 ; map 5
 	RGB 28, 31, 20
 	RGB 00, 31, 00
-	RGB 00, 00, 31
+	RGB 31, 15, 00
 	RGB 31, 00, 00
 ; map 6
 	RGB 28, 31, 20
-	RGB 00, 31, 00
+	RGB 00, 00, 31
 	RGB 15, 07, 00
 	RGB 31, 00, 00
-; ???
+; map 7
+	RGB 00, 31, 00
+	RGB 31, 15, 00
+	RGB 15, 07, 00
 	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-; ???
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+
 else
 	MONOCHROME_RGB_FOUR
 
@@ -1330,7 +1326,7 @@ if !DEF(MONOCHROME)
 	RGB 00, 00, 00
 ; Silver
 	RGB 31, 31, 31
-	RGB 31, 31, 31
+	RGB 28, 31, 20
 	RGB 13, 13, 13
 	RGB 00, 00, 00
 else

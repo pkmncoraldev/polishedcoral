@@ -248,7 +248,7 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 	ld a, [wJumptableIndex]
 	cp 7 ; Orange
 	call z, TownMapOrangeFlips
-.not_town_map
+.cont
 	ld a, [wcf65]
 	and a
 	jr nz, .transition
@@ -282,7 +282,9 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 	call DelayFrames
 	jp ApplyTilemapInVBlank
 
-; 90e12 (24:4e12)
+.not_town_map
+	call AssignPokeGearPals
+	jr .cont
 
 .Jumptable: ; 90e12
 	dw .Clock
@@ -306,19 +308,23 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 ; 90e36 (24:4e36)
 
 .switch
-	db " Switch▶@"
+	db "SWITCH▶@"
 ; 90e3f
 
 .Map: ; 90e3f
 	farcall PokegearMap
 	ld a, $7
-	ld bc, $12
+	ld bc, $7
 	hlcoord 1, 2
 	call ByteFill
 	hlcoord 0, 2
 	ld [hl], $6
-	hlcoord 19, 2
-	ld [hl], $17
+	hlcoord 8, 0
+	ld [hl], $06
+	hlcoord 8, 1
+	ld [hl], $16
+	hlcoord 8, 2
+	ld [hl], $27
 	ld a, [wPokegearMapCursorLandmark]
 	jp PokegearMap_UpdateLandmarkName
 
@@ -346,7 +352,7 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 
 .PlacePhoneBars: ; 90e98 (24:4e98)
 	hlcoord 17, 1
-	ld a, $58
+	ld a, $68
 	ld [hli], a
 	inc a
 	ld [hl], a
@@ -357,7 +363,7 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 	and a
 	ret nz
 	hlcoord 18, 2
-	ld [hl], $5b
+	ld [hl], $6b
 	ret
 
 Pokegear_FinishTilemap: ; 90eb0 (24:4eb0)
@@ -723,8 +729,8 @@ PokegearMap_InitCursor: ; 91098
 
 PokegearMap_UpdateLandmarkName: ; 910b4
 	push af
-	hlcoord 8, 0
-	lb bc, 2, 12
+	hlcoord 9, 1
+	lb bc, 2, 10
 	call ClearBox
 	pop af
 	ld e, a
@@ -732,8 +738,8 @@ PokegearMap_UpdateLandmarkName: ; 910b4
 	farcall GetLandmarkName
 	pop de
 	call TownMap_ConvertLineBreakCharacters
-	hlcoord 8, 0
-	ld [hl], "<UPDN>"
+;	hlcoord 9, 1
+;	ld [hl], "<UPDN>"
 	ret
 
 ; 910d4
@@ -770,7 +776,7 @@ TownMap_ConvertLineBreakCharacters: ; 1de2c5
 
 .end
 	ld de, wStringBuffer1
-	hlcoord 9, 0
+	hlcoord 9, 1
 	jp PlaceString
 
 TownMap_GetNorthOnwaLandmarkLimits:
@@ -2753,7 +2759,7 @@ FillTownMap: ; 91f07
 
 ; 91f13
 
-TownMapPals: ; 91f13
+AssignPokeGearPals: ; 91f13
 ; Assign palettes based on tile ids
 	hlcoord 0, 0
 	decoord 0, 0, wAttrMap
@@ -2774,9 +2780,39 @@ TownMapPals: ; 91f13
 	dec bc
 	ld a, b
 	or c
-	jr nz, .loop
+	jr nz, .loop	
 	ret
-; 91f7b
+
+TownMapPals: ; 91f13
+; Assign palettes based on tile ids
+	hlcoord 0, 0
+	decoord 0, 0, wAttrMap
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+.loop
+	ld a, [hli]
+	push hl
+	cp $7f
+	jr z, .pal1
+	cp $80
+	jr nc, .pal1
+	cp $40 ; tiles after TownMapGFX use palette 0
+	jr nc, .pal0
+	call GetNextTownMapTilePalette
+	jr .update
+.pal1
+	ld a, 1
+	jr .update
+.pal0
+	xor a
+.update
+	pop hl
+	ld [de], a
+	inc de
+	dec bc
+	ld a, b
+	or c
+	jr nz, .loop	
+	ret
 
 GetNextTownMapTilePalette:
 ; The palette data is condensed to nybbles, least-significant first.
@@ -2813,10 +2849,10 @@ rept _NARG / 2
 	shift
 endr
 endm
-	townmappals 2, 2, 2, 3, 3, 3, 1, 1, 2, 2, 4, 2, 5, 6, 5, 6
-	townmappals 2, 2, 2, 3, 3, 3, 1, 1, 2, 2, 1, 3, 2, 3, 3, 3
-	townmappals 2, 2, 2, 3, 3, 3, 1, 1, 3, 3, 1, 1, 1, 1, 1, 1
-	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+	townmappals 2, 2, 2, 3, 3, 7, 0, 0, 2, 2, 4, 2, 5, 6, 5, 5
+	townmappals 2, 2, 7, 3, 4, 5, 0, 0, 2, 2, 0, 3, 2, 3, 3, 3
+	townmappals 2, 2, 2, 2, 2, 7, 0, 0, 3, 7, 4, 0, 0, 0, 0, 0
+	townmappals 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 3, 3, 2, 7, 1, 1
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 

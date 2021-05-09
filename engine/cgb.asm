@@ -288,10 +288,10 @@ _CGB_PokegearPals: ; 8eb9
 .cont6
 	ld hl, PinkPokegearInterfacePalette
 .ok
-	ld de, wUnknBGPals palette 0
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
+;	ld de, wUnknBGPals palette 0
+;	ld bc, 1 palettes
+;	ld a, $5
+;	call FarCopyWRAM
 	call ApplyPals
 	ld a, $1
 	ld [hCGBPalUpdate], a
@@ -306,11 +306,11 @@ _CGB_PokedexAreaPals:
 	ld a, $5
 	call FarCopyWRAM
 
-	ld hl, .InvertedGrayPalette
-	ld de, wUnknBGPals palette 0
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
+;	ld hl, .InvertedGrayPalette
+;	ld de, wUnknBGPals palette 0
+;	ld bc, 1 palettes
+;	ld a, $5
+;	call FarCopyWRAM
 
 	call ApplyPals
 	ld a, $1

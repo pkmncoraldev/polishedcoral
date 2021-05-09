@@ -338,19 +338,19 @@ DayToTextScript:
 	stringtotext .SaturdayText, 0
 	end
 .SundayText:
-	db "Sunday@"
+	db "SUNDAY@"
 .MondayText:
-	db "Monday@"
+	db "MONDAY@"
 .TuesdayText:
-	db "Tuesday@"
+	db "TUESDAY@"
 .WednesdayText:
-	db "Wednesday@"
+	db "WEDNESDAY@"
 .ThursdayText:
-	db "Thursday@"
+	db "THURSDAY@"
 .FridayText:
-	db "Friday@"
+	db "FRIDAY@"
 .SaturdayText:
-	db "Saturday@"
+	db "SATURDAY@"
 
 GoldenrodRocketsScript:
 ;	clearevent EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER

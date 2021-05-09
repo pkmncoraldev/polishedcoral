@@ -1017,11 +1017,11 @@ Text_WeekDay::
 	dw .Fri
 	dw .Satur
 
-.Sun:    db "Sun@"
-.Mon:    db "Mon@"
-.Tues:   db "Tues@"
-.Wednes: db "Wednes@"
-.Thurs:  db "Thurs@"
-.Fri:    db "Fri@"
-.Satur:  db "Satur@"
-.Day:    db "day@"
+.Sun:    db "SUN@"
+.Mon:    db "MON@"
+.Tues:   db "TUES@"
+.Wednes: db "WEDNES@"
+.Thurs:  db "THURS@"
+.Fri:    db "FRI@"
+.Satur:  db "SATUR@"
+.Day:    db "DAY@"

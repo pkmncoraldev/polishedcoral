@@ -813,7 +813,7 @@ EvoFlagAction: ; 42577
 	ret
 ; 42581
 
-GetPreEvolution: ; 42581
+GetPreEvolution:: ; 42581
 ; Find the first mon to evolve into wCurPartySpecies.
 
 ; Return carry and the new species in wCurPartySpecies

@@ -38,8 +38,16 @@ Route8EncounterHouseLady:
 	writetext Route8EncounterHouseLadyText1
 	waitbutton
 	callasm Route8EncounterHouseLadyAsm
+	ifequal 3, .yesand
 	iffalse .no
 	writetext Route8EncounterHouseLadyText2
+	waitbutton
+	closetext
+	setflag ENGINE_ENCOUNTER_HOUSE
+	setflag ENGINE_DAILY_ROUTE_GARDEN
+	end
+.yesand
+	writetext Route8EncounterHouseLadyText5
 	waitbutton
 	closetext
 	setflag ENGINE_ENCOUNTER_HOUSE
@@ -62,12 +70,26 @@ Route8EncounterHouseLadyAsm:
 	jr c, .cancel
 	ld a, [wCurPartySpecies]
 	ld [wEncounterHouseMon], a
+	farcall GetPreEvolution
+	farcall GetPreEvolution
+	ld a, [wEncounterHouseMon]
+	ld b, a
+	ld a, [wCurPartySpecies]
+	cp b
+	jr nz, .evo
+	ld [wEncounterHouseMon], a
 	ld [wStringBuffer1], a
 	ld a, TRUE
 	ld [wScriptVar], a
 	ret
 .cancel
 	ld a, FALSE
+	ld [wScriptVar], a
+	ret
+.evo
+	ld [wEncounterHouseMon], a
+	ld [wStringBuffer1], a
+	ld a, 3
 	ld [wScriptVar], a
 	ret
 	
@@ -122,4 +144,12 @@ Route8EncounterHouseLadyText4:
 	line "luck finding that"
 	cont "#MON in the"
 	cont "garden?"
+	done
+
+Route8EncounterHouseLadyText5:
+	text "That's not it, but"
+	line "it looked similar…"
+	
+	para "I wonder if it's"
+	line "still back there…"
 	done

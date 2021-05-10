@@ -655,13 +655,13 @@ TrySurfOW:: ; c9e7
 
 	ld de, ENGINE_FOURTHBADGE
 	call CheckEngineFlag
-;	jr c, .debugsurf ;debug
-	jr c, .quit
+	jr c, .debugsurf ;debug
+;	jr c, .quit
 
 	ld d, SURF
 	call CheckPartyCanLearnMove
-;	jr c, .debugsurf ;debug
-	jr c, .quit
+	jr c, .debugsurf ;debug
+;	jr c, .quit
 
 	ld hl, wOWState
 	bit OWSTATE_BIKING_FORCED, [hl]
@@ -693,11 +693,11 @@ TrySurfOW:: ; c9e7
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr z, .quit
-;	jr z, .debugsurf ;debug
+;	jr z, .quit
+	jr z, .debugsurf ;debug
 	cp a, -1
-	jr z, .quit
-;	jr z, .debugsurf ;debug
+;	jr z, .quit
+	jr z, .debugsurf ;debug
 	dec a
 	ld hl, BaseData + 7
 	ld bc, BaseData1 - BaseData0
@@ -1721,8 +1721,8 @@ Script_AutoRockClimb:
 TryRockClimbOW:: ; cb56
 	jr .no	;TODO undummy
 	call HasRockClimb
-;	jr z, .debugrockclimb
-	jr z, .no
+	jr z, .debugrockclimb
+;	jr z, .no
 	ld a, BANK(Script_AskRockClimb)
 	ld hl, Script_AskRockClimb
 	call CallScript
@@ -1975,8 +1975,8 @@ UnknownText_0xcf58: ; 0xcf58
 
 AskRockSmashScript: ; 0xcf5d
 	callasm HasRockSmash
-;	ifequal 1, .debugrocksmash
-	ifequal 1, .no
+	ifequal 1, .debugrocksmash
+;	ifequal 1, .no
 	playsound SFX_READ_TEXT_2
 	checkflag ENGINE_ROCK_SMASH_ACTIVE
 	iftrue AutoRockSmashScript
@@ -2640,8 +2640,8 @@ HasCutAvailable:: ; d186
 
 AskCutTreeScript: ; 0xd1a9
 	callasm HasCutAvailable
-;	ifequal 1, .debugcut
-	ifequal 1, .no
+	ifequal 1, .debugcut
+;	ifequal 1, .no
 	playsound SFX_READ_TEXT_2
 	checkflag ENGINE_AUTOCUT_ACTIVE
 	iftrue AutoCutTreeScript

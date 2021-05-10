@@ -93,7 +93,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 5c
 	tilecoll WALL, WALL, WALL, WALL ; 5d
 	tilecoll WALL, WALL, SKATE, SKATE ; 5e
-	tilecoll SKATE, SKATE, WALL, WALL ; 5f
+	tilecoll WALL, WALL, WALL, WALL ; 5f
 	tilecoll WALL, WALL, WALL, WALL ; 60
 	tilecoll WALL, WALL, WALL, WALL ; 61
 	tilecoll WALL, WALL, TOP_WALL, TOP_WALL ; 62
@@ -187,3 +187,6 @@
 	tilecoll WALL, WALL, WALL, WALL ; ba
 	tilecoll WALL, WALL, WALL, WALL ; bb
 	tilecoll WALL, WALL, WALL, DOOR ; bc
+	tilecoll FLOOR, FLOOR, WALL, WALL ; bd
+	tilecoll SKATE, SKATE, SKATE, SKATE ; be
+	tilecoll WALL, WALL, WALL, WALL ; bf

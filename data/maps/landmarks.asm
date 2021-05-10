@@ -11,49 +11,50 @@ Landmarks: ; 0x1ca8c3
 	landmark  28,  92, Route1Name
 	landmark  28,  84, DaybreakVillageName
 	landmark  28,  72, Route2Name
-	landmark  36,  84, DaybreakGrottoName
+	landmark  36,  76, DaybreakGrottoName
 	landmark  28,  60, GlintCityName
 	landmark  28,  52, GlintGroveName
-	landmark  48,  60, Route3Name
-	landmark  60,  52, StarglowCavernName
-	landmark  60,  68, StarglowValleyName
-	landmark  72,  68, Route4Name
-	landmark  68,  60, HuntersThicketName
-	landmark  68,  84, Route5Name
-	landmark  60, 100, Route6Name
+	landmark  42,  60, Route3Name
+	landmark  52,  52, StarglowCavernName
+	landmark  64,  76, StarglowValleyName
+	landmark  78,  76, Route4Name
+	landmark  76,  68, HuntersThicketName
+	landmark  72,  88, Route5Name
+	landmark  62, 100, Route6Name
 	landmark  52,  92, Route7Name
-	landmark  44,  92, LakeOnwaName
+	landmark  40,  92, LakeOnwaName
 	landmark  44,  84, MtOnwaName
-	landmark  68, 124, SunbeamIslandName
+	landmark  60, 124, SunbeamIslandName
 	landmark  68, 124, SunbeamJungleName
 	landmark  52,  76, Route8Name
-	landmark  84,  68, EventideForestName
-	landmark  84,  52, OldManorName
-	landmark  92,  68, EventideVillageName
-	landmark 100,  64, Route9Name
-	landmark 108,  60, DodrioRanchName
-	landmark 100,  52, FlickerStationName
-	landmark 100,  44, FlickerPassName
-	landmark 108,  36, Route10Name
-	landmark 108,  28, TwinkleTownName
-	landmark   0,   0, FrozenRuinsName
-	landmark 132,  52, LusterCityName
-	landmark 132,  52, LusterSewersName
-	landmark 132,  52, ResidentialName
-	landmark 132,  52, ShoppingName
-	landmark 132,  52, BusinessName
+	landmark  84,  84, EventideForestName
+	landmark  92,  80, OldManorName
+	landmark  92,  92, EventideVillageName
+	landmark 100,  88, Route9Name
+	landmark 108,  84, DodrioRanchName
+	landmark 100,  76, FlickerStationName
+	landmark 100,  68, FlickerPassName
+	landmark 120,  44, Route10Name
+	landmark 116,  36, TwinkleTownName
+	landmark 124,  28, FrozenRuinsName
+	landmark 136,  80, LusterCityName
+	landmark 132,  80, LusterSewersName
+	landmark 132,  92, ParkName
+	landmark 136,  80, ResidentialName
+	landmark 136,  80, ShoppingName
+	landmark 136,  80, BusinessName
 	landmark -16, -16, GateName
 
 
 SunsetBayName:         db "SUNSET BAY@"
-SunsetCapeName:        db "SUNSET CAPE@"
+SunsetCapeName:        db "SUNSET¯CAPE@"
 LighthouseName:		   db "SUNSET¯LIGHTHOUSE@"
 DaybreakVillageName:   db "DAYBREAK¯VILLAGE@"
 Route1Name:            db "ROUTE 1@"
 Route2Name:            db "ROUTE 2@"
 DaybreakGrottoName:    db "DAYBREAK¯GROTTO@"
 GlintCityName:   	   db "GLINT CITY@"
-GlintGroveName:   	   db "GLINT GROVE@"
+GlintGroveName:   	   db "GLINT¯GROVE@"
 Route3Name:            db "ROUTE 3@"
 StarglowCavernName:	   db "STARGLOW¯CAVERN@"
 StarglowValleyName:	   db "STARGLOW¯VALLEY@"
@@ -77,8 +78,9 @@ FlickerPassName:	   db "FLICKER¯PASS@"
 Route10Name:		   db "ROUTE 10@"
 TwinkleTownName: 	   db "TWINKLE¯TOWN@"
 FrozenRuinsName: 	   db "FROZEN¯RUINS@"
-LusterCityName:		   db "LUSTER CITY@"
+LusterCityName:		   db "LUSTER¯CITY@"
 LusterSewersName:	   db "LUSTER¯SEWERS@"
+ParkName:			   db "PARK@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"
 ShoppingName:		   db "SHOPPING¯DISTRICT@"
 BusinessName:	 	   db "BUSINESS¯DISTRICT@"

@@ -258,10 +258,10 @@ ENDM
 	connection west, LusterCityShopping, LUSTER_CITY_SHOPPING, -6
 	
 	map_attributes Park, PARK, $02, EAST
-	connection east, Skatepark, SKATEPARK, 0
+	connection east, Skatepark, SKATEPARK, 1
 	
 	map_attributes Skatepark, SKATEPARK, $02, WEST
-	connection west, Park, PARK, 0
+	connection west, Park, PARK, -1
 	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0
@@ -414,3 +414,5 @@ ENDM
 	map_attributes Route8Gate, ROUTE_8_GATE, $0, 0
 	map_attributes Route4EventideGate, ROUTE_4_EVENTIDE_GATE, $0, 0
 	map_attributes EventideVillageGate, EVENTIDE_VILLAGE_GATE, $0, 0
+	map_attributes ParkGate, PARK_GATE, $0, 0
+	map_attributes Route11Gate, ROUTE_11_GATE, $0, 0

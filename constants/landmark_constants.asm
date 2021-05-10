@@ -42,6 +42,7 @@
 	const FROZEN_RUINS		 ; 20
 	const LUSTER_CITY		 ; 21
 	const LUSTER_SEWERS		 ; 22
+	const PARK				 ; 23
 	const RESIDENTIAL_DISTRICT
 	const SHOPPING_DISTRICT
 	const BUSINESS_DISTRICT

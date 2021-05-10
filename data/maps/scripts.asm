@@ -202,6 +202,8 @@ INCLUDE "maps/LusterApartment6_1F.asm"
 INCLUDE "maps/LusterApartment6_2F.asm"
 INCLUDE "maps/Park.asm"
 INCLUDE "maps/Skatepark.asm"
+INCLUDE "maps/ParkGate.asm"
+INCLUDE "maps/Route11Gate.asm"
 
 SECTION "Luster City Scripts2", ROMX
 INCLUDE "maps/LusterMall.asm"

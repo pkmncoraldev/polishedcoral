@@ -19,7 +19,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event  9, 14, TWINKLE_TOWN, 1
 	warp_event 11, 14, LUSTER_CITY_SHOPPING, 1
 	warp_event 13, 14, MT_ONWA_B3F, 1
-	warp_event 15, 14, ROUTE_5_GATE_1F, 1
+	warp_event 15, 14, ROUTE_8_ENCOUNTER_HOUSE, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
@@ -139,9 +139,10 @@ FillPokedex:
 	call .Fill
 	ld hl, wPokedexCaught
 .Fill:
-	ld a, %11111111
-	ld bc, 32
+	ld a, %11111111 ; 001-240
+	ld bc, 30
 	call ByteFill
+	ld [hl], %00011111 ; 241-245
 	ret
 
 	

@@ -199,3 +199,5 @@ SpriteHeaders:
 	overworld_sprite LighthouseSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite SunbeamViewSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite SunbeamViewSpriteCloudsGFX, WALKING_SPRITE, PAL_OW_SILVER
+	overworld_sprite SpaWorkerSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite SpaTrainerSpriteGFX, WALKING_SPRITE, PAL_OW_RED

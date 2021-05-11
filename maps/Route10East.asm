@@ -33,6 +33,8 @@ Route10East_MapScriptHeader:
 	xy_trigger 1, 25, 13, 0, Route10EastDark, 0, 0
 
 	db 0 ; bg events
+	signpost 20,  9, SIGNPOST_READ, Route10EastWood
+	signpost 21,  9, SIGNPOST_READ, Route10EastWood
 
 	db 2 ; object events
 	object_event 11, 24, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route10EastCampfire, EVENT_HIDE_OW_OBJECTS_BROWN
@@ -65,6 +67,14 @@ Route10EastCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	return
+	
+Route10EastWood:
+	jumptext Route10EastWoodText
+	
+Route10EastWoodText:
+	text "A pile of neatly"
+	line "stacked firewood."
+	done
 	
 Route10EastCampfire:
 	jumptext Route10EastCampfireText

@@ -86,6 +86,8 @@ BunearyfPalette:		 INCLUDE "gfx/trainers/buneary_f.pal"
 FrankiePalette:			 INCLUDE "gfx/trainers/frankie.pal"
 MallCopPalette:			 INCLUDE "gfx/trainers/mall_cop.pal"
 SkaterPalette:			 INCLUDE "gfx/trainers/skater.pal"
+SpatrainerPalette:		 INCLUDE "gfx/trainers/spa_trainer.pal"
+SpatrainerfPalette:		 INCLUDE "gfx/trainers/spa_trainer_f.pal"
 TowerTycoonPalette:
 
 

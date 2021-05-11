@@ -114,6 +114,8 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE ; frankie
 	db   0, $66, $66, $66, ABILITY_1 | QUIRKY, MALE   ; mall cop
 	db  56, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; skater
+	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE   ; spatrainer
+	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE ; spatrainerf
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; towertycoon
 
 ; 2715c

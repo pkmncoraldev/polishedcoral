@@ -30,7 +30,7 @@ ENDM
 	add_tm ROAR_WHIRLWIND         ; $04
 	add_tm TOXIC        ; $05
 	add_tm HAIL         ; $06
-	add_tm BULK_UP      ; $07
+	add_tm CHARM	    ; $07
 	add_tm VENOSHOCK    ; $08
 	add_tm SUPERPOWER ; $09
 	add_tm SUNNY_DAY    ; $0a
@@ -53,7 +53,7 @@ ENDM
 	add_tm DIG          ; $1b
 	add_tm PSYCHIC      ; $1c
 	add_tm SHADOW_BALL  ; $1d
-	add_tm METAL_CLAW		; $1e
+	add_tm METAL_CLAW	; $1e
 	add_tm DOUBLE_TEAM  ; $1f
 	add_tm REFLECT      ; $20
 	add_tm FLASH_CANNON ; $21

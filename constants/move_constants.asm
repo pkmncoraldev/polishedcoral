@@ -67,7 +67,7 @@
 	const DRILL_PECK   ; $41
 	const SHADOW_BONE  ; $42
 	const NIGHT_SLASH  ; $43
-	const SHOCK_WAVE    ; $44
+	const SHOCK_WAVE   ; $44
 	const SEISMIC_TOSS ; $45
 	const STRENGTH     ; $46
 	const ABSORB       ; $47

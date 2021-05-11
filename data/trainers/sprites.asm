@@ -83,4 +83,6 @@ BTTrainerClassSprites:
 	db SPRITE_GOLD         ; Frankie
 	db SPRITE_GOLD         ; MallCop
 	db SPRITE_GOLD         ; Skater
+	db SPRITE_GOLD         ; SpaTrainer
+	db SPRITE_GOLD         ; SpaTrainerF
 	db SPRITE_GOLD         ; TOWERTYCOON

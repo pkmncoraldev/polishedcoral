@@ -15,7 +15,7 @@ FlickerStation_MapScriptHeader:
 	warp_def 15, 53, 1, FLICKER_NAME_SPEECH_HOUSE
 	warp_def 29, 51, 1, FLICKER_TRAIN_STATION
 	warp_def 29, 52, 2, FLICKER_TRAIN_STATION
-	warp_def  7, 51, 1, SKATEPARK
+	warp_def  7, 51, 1, FLICKER_PASS_1F
 	
 
 	db 3 ; coord events
@@ -34,8 +34,7 @@ FlickerStation_MapScriptHeader:
 	signpost 15, 20, SIGNPOST_UP, FlickerTrainDoor
 	signpost 15, 17, SIGNPOST_UP, FlickerTrainDoor
 
-	db 13 ; object events
-	person_event SPRITE_POKEMANIAC,  8, 51, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationEndDemoNPC, EVENT_KNOW_OLLIE
+	db 12 ; object events
 	person_event SPRITE_FAT_GUY, 30, 54, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 32, 43, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationNPC2, -1
 	person_event SPRITE_CHILD, 18, 49, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC3, -1
@@ -51,7 +50,6 @@ FlickerStation_MapScriptHeader:
 
 
 	const_def 1 ; object constants
-	const FLICKER_STATION_DEMO_END
 	const FLICKER_STATION_NPC1
 	const FLICKER_STATION_NPC2
 	const FLICKER_STATION_NPC3
@@ -230,39 +228,7 @@ FlickerStationNPC6:
 	
 FlickerStationNPC7:
 	jumptextfaceplayer FlickerStationNPC7Text
-	
-FlickerStationEndDemoNPC:
-	faceplayer 
-	opentext
-	writetext FlickerStationEndDemoNPCText
-	waitbutton
-	verbosegiveitem SKATEBOARD
-	closetext
-	applymovement FLICKER_STATION_DEMO_END, Movement_FlickerStationDemoEnd
-	disappear FLICKER_STATION_DEMO_END
-	setevent EVENT_KNOW_OLLIE
-	setevent EVENT_KNOW_GRIND
-	end
-	
-FlickerStationEndDemoNPCText:
-	text "Welp."
-	
-	para "That's the end for"
-	line "now."
-	
-	para "Sorry."
-	
-	para "Take this and go"
-	line "mess around."
-	
-	para "Go through this"
-	line "cave for the"
-	cont "SKATEPARK."
-	
-	para "Thanks for"
-	line "playing!"
-	done
-	
+		
 FlickerTrainDoorText:
 	text "It's shut tight."
 	done
@@ -423,39 +389,5 @@ Movement_FlickerStation3Girls3:
 	step_right
 	step_right
 	step_right
-	step_end
-	
-Movement_FlickerStationDemoEnd:
-	turn_head_down
-	step_sleep 12
-	turn_head_left
-	step_sleep 6
-	turn_head_up
-	step_sleep 3
-	turn_head_right
-	step_sleep 2
-	turn_head_down
-	step_sleep 2
-	turn_head_left
-	step_sleep 2
-	turn_head_up
-	step_sleep 1
-	turn_head_right
-	step_sleep 1
-	turn_head_down
-	step_sleep 1
-	turn_head_left
-	step_sleep 1
-	turn_head_up
-	turn_head_right
-	turn_head_down
-	turn_head_left
-	turn_head_up
-	turn_head_right
-	turn_head_down
-	turn_head_left
-	turn_head_up
-	turn_head_right
-	turn_head_down
 	step_end
 	

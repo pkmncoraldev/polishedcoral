@@ -202,7 +202,7 @@ MoveNames::
 	db "SANDSTORM@"
 	db "GIGA DRAIN@"
 	db "ENDURE@"
-	db "ERROR!@" ; CHARM
+	db "CHARM@" ; CHARM_FEATHER_DANCE
 	db "ROLLOUT@"
 	db "FALSE SWIPE@"
 	db "SWAGGER@"

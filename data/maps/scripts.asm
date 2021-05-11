@@ -80,6 +80,9 @@ INCLUDE "maps/Route8Garden.asm"
 INCLUDE "maps/Route8.asm"
 INCLUDE "maps/Route9.asm"
 INCLUDE "maps/Route10.asm"
+
+
+SECTION "Routes Scripts2", ROMX
 INCLUDE "maps/Route10East.asm"
 INCLUDE "maps/Route10Tent.asm"
 

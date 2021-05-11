@@ -18,23 +18,108 @@ TwinkleGymBlueRoom_MapScriptHeader:
 	signpost  3,  4, SIGNPOST_IFNOTSET, TwinkleGymBlueRoomDoor
 	signpost  3,  5, SIGNPOST_IFNOTSET, TwinkleGymBlueRoomDoor
 
-	db 4 ; object events
-	object_event  4, 14, SPRITE_BURGLAR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymBlueRoomWorker1, EVENT_BEAT_CHARLIE
-	object_event  0,  6, SPRITE_BURGLAR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymBlueRoomWorker2, EVENT_BEAT_CHARLIE
-	object_event  9,  1, SPRITE_BURGLAR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymBlueRoomWorker3, EVENT_BEAT_CHARLIE
-	object_event  4,  5, SPRITE_CORY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	db 5 ; object events
+	object_event  4, 14, SPRITE_SPA_WORKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymBlueRoomWorker1, EVENT_BEAT_CHARLIE
+	object_event  0,  6, SPRITE_SPA_WORKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymBlueRoomWorker2, EVENT_BEAT_CHARLIE
+	object_event 13,  1, SPRITE_SPA_WORKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymBlueRoomWorker3, EVENT_BEAT_CHARLIE
+	object_event  9,  1, SPRITE_SPA_TRAINER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymBlueRoomTrainer, -1
+	object_event  4,  5, SPRITE_SPA_TRAINER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymBlueRoomLeader, -1
 
 	
 	const_def 1 ; object constants
 	const TWINKLE_GYM_BLUE_ROOM_WORKER_1
 	const TWINKLE_GYM_BLUE_ROOM_WORKER_2
 	const TWINKLE_GYM_BLUE_ROOM_WORKER_3
+	const TWINKLE_GYM_BLUE_ROOM_TRAINER
 	const TWINKLE_GYM_BLUE_ROOM_LEADER
 
 TwinkleGymBlueRoomTrigger0:
 	end
 	
 TwinkleGymBlueRoomTrigger1:
+	end
+	
+TwinkleGymBlueRoomTrainer:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER
+	iftrue .FightDone
+	playmusic MUSIC_HIKER_ENCOUNTER
+	writetext TwinkleGymBlueRoomTrainerSeenText
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext TwinkleGymBlueRoomTrainerBeatenText, 0
+	checkflag ENGINE_FOURTHBADGE
+	iftrue .fourbadges
+	checkflag ENGINE_FIFTHBADGE
+	iftrue .fivebadges
+	checkflag ENGINE_SIXTHBADGE
+	iftrue .sixbadges
+	checkflag ENGINE_SEVENTHBADGE
+	iftrue .sevenbadges
+	checkflag ENGINE_EIGHTHBADGE
+	iftrue .eightbadges
+	loadtrainer SPA_TRAINER, SHAYMUS_3
+	jump .cont
+.fourbadges
+	loadtrainer SPA_TRAINER, SHAYMUS_4
+	jump .cont
+.fivebadges
+	loadtrainer SPA_TRAINER, SHAYMUS_5
+	jump .cont
+.sixbadges
+	loadtrainer SPA_TRAINER, SHAYMUS_6
+	jump .cont
+.sevenbadges
+	loadtrainer SPA_TRAINER, SHAYMUS_7
+	jump .cont
+.eightbadges
+	loadtrainer SPA_TRAINER, SHAYMUS_8
+.cont
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmapmusic
+	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER
+	end
+.FightDone
+	writetext TwinkleGymBlueRoomTrainerRegularText
+	waitbutton
+	closetext
+	end
+
+TwinkleGymBlueRoomTrainerRegularText:
+	text "REGULAR TEXT"
+	done
+
+TwinkleGymBlueRoomTrainerSeenText:
+	text "SEEN TEXT"
+	done
+
+TwinkleGymBlueRoomTrainerBeatenText:
+	text "YOU WIN"
+	done
+	
+TwinkleGymBlueRoomLeader:
+	opentext
+	checkevent EVENT_CAN_GET_YELLOW_KEY
+	iftrue .end
+	writetext TwinkleGymBlueRoomLeaderText1
+	waitbutton
+	closetext
+	winlosstext TwinkleGymBlueRoomLeaderWinText, 0
+	setlasttalked TWINKLE_GYM_BLUE_ROOM_LEADER
+	loadtrainer SPA_TRAINER, DENNIS_3
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	opentext
+.end
+	writetext TwinkleGymBlueRoomLeaderText2
+	waitbutton
+	closetext
+	setevent EVENT_CAN_GET_YELLOW_KEY
 	end
 	
 TwinkleGymBlueRoomDoor:
@@ -169,6 +254,39 @@ TwinkleGymBlueRoomWorker3:
 	waitbutton
 	closetext
 	end
+	
+TwinkleGymBlueRoomLeaderText1:
+	text "What's up?"
+	
+	para "A GYM LEADER?"
+	
+	para "No GYM LEADER"
+	line "here."
+	
+	para "They must have"
+	line "sent you to the"
+	cont "wrong room."
+	
+	para "I could go for a"
+	line "battle, though!"
+	done
+	
+TwinkleGymBlueRoomLeaderText2:
+	text "Sorry about the"
+	line "confusion."
+	
+	para "You should talk to"
+	line "the lady at the"
+	cont "front desk."
+	
+	para "She can probably"
+	line "clear it up for"
+	cont "you."
+	done
+	
+TwinkleGymBlueRoomLeaderWinText:
+	text "Good stuff!"
+	done
 	
 TwinkleGymBlueRoomWorker1Text:
 	text "Heya kid."

@@ -1,5 +1,5 @@
 ; PelipperPokedexEntry: ; 0x181695
-	db "SEAGULL@" ; species name
+	db "WATER BIRD@" ; species name
 	dw 0, 0 ; height, width
 
 	db   "It carries around"

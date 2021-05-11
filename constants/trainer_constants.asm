@@ -461,6 +461,20 @@ PLAYER_F EQU __enum__
 	
 	trainerclass SKATER
 	const TONY
+	
+	trainerclass SPA_TRAINER
+	const DENNIS_3
+	const DENNIS_4
+	const DENNIS_5
+	const DENNIS_6
+	const DENNIS_7
+	const DENNIS_8
+	const SHAYMUS_3
+	const SHAYMUS_4
+	const SHAYMUS_5
+	const SHAYMUS_6
+	const SHAYMUS_7
+	const SHAYMUS_8
 
 	trainerclass TOWERTYCOON ; 1
 

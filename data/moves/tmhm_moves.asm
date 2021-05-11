@@ -6,7 +6,7 @@ TMHMMoves:
 	db ROAR_WHIRLWIND         ; TM05
 	db TOXIC        ; TM06
 	db HAIL         ; TM07
-	db BULK_UP      ; TM08
+	db CHARM_FEATHER_DANCE      ; TM08
 	db VENOSHOCK    ; TM09
 	db SUPERPOWER ; TM10
 	db SUNNY_DAY    ; TM11

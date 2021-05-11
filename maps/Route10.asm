@@ -62,12 +62,12 @@ Route10_MapScriptHeader:
 	db 0 ; bg events
 
 	db 7 ; object events
-	person_event SPRITE_BOARDER, 35, 21, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_1, -1
+	person_event SPRITE_BOARDER, 34, 19, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_1, -1
 	person_event SPRITE_SKIER, 33, 27, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_2, -1
-	person_event SPRITE_BOARDER, 29, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_3, -1
+	person_event SPRITE_BOARDER, 30, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_3, -1
 	person_event SPRITE_SKIER, 39, 38, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_4, -1
 	person_event SPRITE_BOARDER, 22, 42, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_5, -1
-	person_event SPRITE_FIREBREATHER, 24, 50, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_6, -1
+	person_event SPRITE_FIREBREATHER, 24, 50, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_6, -1
 	person_event SPRITE_BOARDER, 12, 33, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute10_7, -1
 
 Route10Trigger0:
@@ -89,99 +89,158 @@ Route10Trigger4:
 TrainerRoute10_1:
 	generictrainer BOARDER, FRANK, EVENT_BEAT_ROUTE_10_TRAINER_1, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Aren't you cold?"
+	
+	para "You're wearing"
+	line "shorts!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Look at you!"
+	
+	para "You are NOT"
+	line "dressed for this…"
 	done
 
 .BeatenText:
-	text "BEATEN TEXT"
+	text "Still beat me,"
+	line "huh?"
 	done
 	
 TrainerRoute10_2:
 	generictrainer SKIER, KIM, EVENT_BEAT_ROUTE_10_TRAINER_2, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Cold enough for"
+	line "ya?"
+	
+	para "Haha…"
+	
+	para "…"
+	
+	para "I'm still no good"
+	line "at small talk…"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Nice weather,"
+	line "huh?"
+	
+	para "Haha…"
+	
+	para "…"
+	
+	para "I'm no good at"
+	line "small talk."
 	done
 
 .BeatenText:
-	text "BEATEN TEXT"
+	text "I'm no good at"
+	line "battling, either…"
 	done
 	
 TrainerRoute10_3:
 	generictrainer BOARDER, JOSE, EVENT_BEAT_ROUTE_10_TRAINER_3, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Snowboarding in a"
+	line "snowstorm is tons"
+	cont "of fun!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "There's been a lot"
+	line "of snowstorms"
+	cont "lately."
+	
+	para "Makes battles more"
+	line "interesting at"
+	cont "least!"
 	done
 
 .BeatenText:
-	text "BEATEN TEXT"
+	text "What a battle!"
 	done
 	
 TrainerRoute10_4:
 	generictrainer SKIER, SHERRY, EVENT_BEAT_ROUTE_10_TRAINER_4, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Nice and toasty!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Sure is cold out"
+	line "here!"
+	
+	para "How about a battle"
+	line "to warm up?"
 	done
 
 .BeatenText:
-	text "BEATEN TEXT"
+	text "That did it!"
 	done
 	
 TrainerRoute10_5:
 	generictrainer BOARDER, PETER, EVENT_BEAT_ROUTE_10_TRAINER_5, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Your shoes are"
+	line "covered in snow!"
+	
+	para "My snowboard lets"
+	line "me glide right"
+	cont "over!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Snow slowing you"
+	line "down?"
+	
+	para "See, I don't have"
+	line "that problem!"
 	done
 
 .BeatenText:
-	text "BEATEN TEXT"
+	text "Woah!"
+	line "Slow down!"
 	done
 	
 TrainerRoute10_6:
 	generictrainer FIREBREATHER, TEX, EVENT_BEAT_ROUTE_10_TRAINER_6, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Gah!"
+	
+	para "I'm burning up!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Cold?"
+	line "I'm not cold!"
+	
+	para "MY BLOOD BURNS AS"
+	line "HOT AS FIRE!"
 	done
 
 .BeatenText:
-	text "BEATEN TEXT"
+	text "HOT! HOT!"
 	done
 	
 TrainerRoute10_7:
 	generictrainer BOARDER, GLENN, EVENT_BEAT_ROUTE_10_TRAINER_7, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Keep going!"
+	
+	para "You're almost there!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "How are your #-"
+	line "MON handling the"
+	cont "cold?"
+	
+	para "You're almost to"
+	line "town now!"
 	done
 
 .BeatenText:
-	text "BEATEN TEXT"
+	text "Holding up well!"
 	done
 	
 Route10Random:

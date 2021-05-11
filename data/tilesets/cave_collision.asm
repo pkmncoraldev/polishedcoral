@@ -186,7 +186,7 @@
 	tilecoll WATER, WATER, WATER, WATER ; b9
 	tilecoll WATER, WATER, WATER, WATER ; ba
 	tilecoll LEDGE_DOWN, FLOOR, WALL, FLOOR ; bb
-	tilecoll WALL, WALL, WALL, WALL ; bc
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; bc
 	tilecoll WALL, WALL, WALL, WALL ; bd
 	tilecoll WALL, WALL, WALL, WALL ; be
 	tilecoll WALL, LEDGE_DOWN, WALL, WALL ; bf

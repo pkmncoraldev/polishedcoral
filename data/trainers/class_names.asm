@@ -83,5 +83,7 @@ TrainerClassNames::
 	db "FRANKIE@"	       ; FRANKIE
 	db "MALL COP@"		   ; MALL_COP
 	db "SK8R BOY@"	       ; SKATER
+	db "STEAMER@"	       ; SPA_TRAINER
+	db "BATHER@"	       ; SPA_TRAINER_F
 	db "TYCOON@"		   ; TOWERTYCOON
 	

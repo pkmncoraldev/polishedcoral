@@ -50,6 +50,8 @@ TwinkleGymEntryCallback:
 	checkevent EVENT_UNLOCKED_RED_DOOR
 	iftrue .OpenSesame3
 .cont3
+	clearevent EVENT_TWINKLE_GYM_BLUE_ROOM_GLASS
+	clearevent EVENT_TWINKLE_GYM_YELLOW_ROOM_GLASS
 	return
 	
 .OpenSesame1
@@ -200,8 +202,16 @@ TwinkleGymEntryClerk:
 	writetext TwinkleGymEntryClerkText4
 	waitbutton
 	closetext
-	spriteface TWINKLE_GYM_ENTRY_CLERK, UP
-	pause 20
+	pause 7
+	applyonemovement TWINKLE_GYM_ENTRY_CLERK, step_up
+	playsound SFX_EXIT_BUILDING
+	disappear TWINKLE_GYM_ENTRY_CLERK
+	spriteface TWINKLE_GYM_ENTRY_CLERK, DOWN
+	moveperson TWINKLE_GYM_ENTRY_CLERK, 6, 6
+	pause 50
+	playsound SFX_ENTER_DOOR
+	appear TWINKLE_GYM_ENTRY_CLERK
+	applyonemovement TWINKLE_GYM_ENTRY_CLERK, step_down
 	faceplayer
 	opentext
 	writetext TwinkleGymEntryClerkText5
@@ -228,8 +238,16 @@ TwinkleGymEntryClerk:
 	writetext TwinkleGymEntryClerkText7
 	waitbutton
 	closetext
-	spriteface TWINKLE_GYM_ENTRY_CLERK, UP
-	pause 20
+	pause 7
+	applyonemovement TWINKLE_GYM_ENTRY_CLERK, step_up
+	playsound SFX_EXIT_BUILDING
+	disappear TWINKLE_GYM_ENTRY_CLERK
+	spriteface TWINKLE_GYM_ENTRY_CLERK, DOWN
+	moveperson TWINKLE_GYM_ENTRY_CLERK, 6, 6
+	pause 50
+	playsound SFX_ENTER_DOOR
+	appear TWINKLE_GYM_ENTRY_CLERK
+	applyonemovement TWINKLE_GYM_ENTRY_CLERK, step_down
 	faceplayer
 	opentext
 	writetext TwinkleGymEntryClerkText8

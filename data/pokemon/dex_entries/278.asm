@@ -1,5 +1,5 @@
 ; WingullPokedexEntry: ; 0x181695
-	db "???@" ; species name
+	db "SEAGULL@" ; species name
 	dw 200, 209 ; height, width
 
 	db   "It rides on the"

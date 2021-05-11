@@ -84,6 +84,8 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_NONE					; frankie
 	db MUSIC_NONE					; mall cop
 	db MUSIC_HARDCORE_ENCOUNTER		; skater
+	db MUSIC_HIKER_ENCOUNTER		; spatrainer
+	db MUSIC_LASS_ENCOUNTER			; spatrainerf
 	db MUSIC_NONE			 		; towertycoon
 
 ; e906e

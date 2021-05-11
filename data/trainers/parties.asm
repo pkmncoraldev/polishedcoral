@@ -3117,6 +3117,135 @@ SkaterGroup:
 ; ================================
 
 
+SpaTrainerGroup:
+; ================================
+; ================
+
+	; DENNIS_3
+	db "DENNIS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DENNIS_4
+	db "DENNIS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DENNIS_5
+	db "DENNIS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DENNIS_6
+	db "DENNIS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DENNIS_7
+	db "DENNIS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DENNIS_8
+	db "DENNIS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SHAYMUS_3
+	db "SHAYMUS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SHAYMUS_4
+	db "SHAYMUS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SHAYMUS_5
+	db "SHAYMUS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SHAYMUS_6
+	db "SHAYMUS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SHAYMUS_7
+	db "SHAYMUS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SHAYMUS_8
+	db "SHAYMUS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+
+SpaTrainerFGroup:
+; ================================
+; ================
+
+	; MARTHA
+	db "MARTHA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+
 TowerTycoonGroup:
 ; ================================
 ; ================

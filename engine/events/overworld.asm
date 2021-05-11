@@ -1719,7 +1719,6 @@ Script_AutoRockClimb:
 	ret
 
 TryRockClimbOW:: ; cb56
-	jr .no	;TODO undummy
 	call HasRockClimb
 	jr z, .debugrockclimb
 ;	jr z, .no

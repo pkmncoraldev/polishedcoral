@@ -194,6 +194,8 @@ BigMamoswineSpriteGFX::        INCBIN "gfx/sprites/big_mamoswine.2bpp"
 LighthouseSpriteGFX::      	   INCBIN "gfx/sprites/lighthouse.2bpp"
 FrankieSpriteGFX::             INCBIN "gfx/sprites/frankie.2bpp"
 SkaterSpriteGFX::              INCBIN "gfx/sprites/skater.2bpp"
+SpaWorkerSpriteGFX::           INCBIN "gfx/sprites/spa_worker.2bpp"
+SpaTrainerSpriteGFX::          INCBIN "gfx/sprites/spa_trainer.2bpp"
 
 
 SECTION "Overworld Sprites 8", ROMX

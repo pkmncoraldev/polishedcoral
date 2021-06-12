@@ -458,18 +458,6 @@ Mom_WithdrawDepositMenuJoypad: ; 16571
 	dt 9
 ; 16649
 
-UnknownText_0x16649: ; 0x16649
-	; Wow, that's a cute #MON. Where did you get it? … So, you're leaving on an adventure… OK! I'll help too. But what can I do for you? I know! I'll save money for you. On a long journey, money's important. Do you want me to save your money?
-	text_jump UnknownText_0x1bd77f
-	db "@"
-; 0x1664e
-
-UnknownText_0x1664e: ; 0x1664e
-	; OK, I'll take care of your money.
-	text_jump UnknownText_0x1bd868
-	db "@"
-; 0x16653
-
 UnknownText_0x16653: ; 0x16653
 	text_jump UnknownText_0x1bd88e
 	db "@"

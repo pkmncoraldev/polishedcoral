@@ -49,6 +49,7 @@ Pointers445f: ; 445f
 	dw SetFacingSunbeamView4,    	   SetFacingSunbeamView4	  ; PERSON_ACTION_SUNBEAM_VIEW_4
 	dw SetFacingSunbeamView5,    	   SetFacingSunbeamView5	  ; PERSON_ACTION_SUNBEAM_VIEW_5
 	dw SetFacingSunbeamView6,    	   SetFacingSunbeamView6	  ; PERSON_ACTION_SUNBEAM_VIEW_6
+	dw SetFacingBather,                SetFacingFreezeBather      ; PERSON_ACTION_BATHER
 	
 ; 44a3
 
@@ -252,6 +253,21 @@ SetFacingBounce: ; 4590
 	jp nz, SetFixedFacing
 SetFacingFreezeBounce: ; 45a4
 	xor a ; FACING_STEP_DOWN_0
+	jp SetFixedFacing
+; 45ab
+
+SetFacingBather: ; 4590
+	ld hl, OBJECT_STEP_FRAME
+	add hl, bc
+	ld a, [hl]
+	inc a
+	and %00111111
+	ld [hl], a
+	and %00100000
+	ld a, FACING_STEP_LEFT_0
+	jp nz, SetFixedFacing
+SetFacingFreezeBather: ; 45a4
+	ld a, FACING_STEP_RIGHT_0
 	jp SetFixedFacing
 ; 45ab
 

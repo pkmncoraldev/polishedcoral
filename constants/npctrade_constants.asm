@@ -1,11 +1,11 @@
 ; see data/events/npc_trades.asm:NPCTrades
 	const_def
 	const TRADE_WITH_JAKE_FOR_PINSIR     ; 0
-	const TRADE_WITH_PAUL_FOR_EXEGGCUTE    ; 1
-	const TRADE_WITH_TIM_FOR_KANGASKHAN  ; 2
+	const TRADE_WITH_PAUL_FOR_EXEGGCUTE  ; 1
+	const TRADE_WITH_ALICE_FOR_GLIGAR 	 ; 2
 	const TRADE_WITH_EMY_FOR_MR__MIME    ; 3
 	const TRADE_WITH_CHRIS_FOR_HERACROSS ; 4
-	const TRADE_WITH_KIM_FOR_NUMEL     ; 5
+	const TRADE_WITH_KIM_FOR_NUMEL     	 ; 5
 	const TRADE_WITH_JACQUES_FOR_GRIMER  ; 6
 	const TRADE_WITH_HARI_FOR_DODUO      ; 7
 

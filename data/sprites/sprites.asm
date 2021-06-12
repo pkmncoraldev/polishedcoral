@@ -14,6 +14,7 @@ SpriteHeaders:
 	overworld_sprite CorySkateboard2SpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite CorySkateboardGrindingSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite CorySkateboardFallingSpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite CoryBathingSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite CoraSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CoraBikeSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CoraSurfSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
@@ -201,3 +202,6 @@ SpriteHeaders:
 	overworld_sprite SunbeamViewSpriteCloudsGFX, WALKING_SPRITE, PAL_OW_SILVER
 	overworld_sprite SpaWorkerSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite SpaTrainerSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite Bather1SpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite Bather2SpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite SteamSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER

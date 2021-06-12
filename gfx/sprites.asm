@@ -8,6 +8,7 @@ CoryBikeSpriteGFX::            INCBIN "gfx/sprites/cory_bike.2bpp"
 CorySurfSpriteGFX::            INCBIN "gfx/sprites/cory_surf.2bpp"
 CoryRunSpriteGFX::             INCBIN "gfx/sprites/cory_run.2bpp"
 CoryMiscSpriteGFX::            INCBIN "gfx/sprites/cory_misc.2bpp"
+CoryBathingSpriteGFX::         INCBIN "gfx/sprites/cory_bathing.2bpp"
 CoraSpriteGFX::                INCBIN "gfx/sprites/cora.2bpp"
 CoraBikeSpriteGFX::            INCBIN "gfx/sprites/cora_bike.2bpp"
 CoraSurfSpriteGFX::            INCBIN "gfx/sprites/cora_surf.2bpp"
@@ -28,6 +29,9 @@ ChuckSpriteGFX::               INCBIN "gfx/sprites/chuck.2bpp"
 JasmineSpriteGFX::             INCBIN "gfx/sprites/jasmine.2bpp"
 PryceSpriteGFX::               INCBIN "gfx/sprites/pryce.2bpp"
 ClairSpriteGFX::               INCBIN "gfx/sprites/clair.2bpp"
+Bather1SpriteGFX::             INCBIN "gfx/sprites/bather1.2bpp"
+Bather2SpriteGFX::             INCBIN "gfx/sprites/bather2.2bpp"
+SteamSpriteGFX::               INCBIN "gfx/sprites/steam.2bpp"
 
 
 SECTION "Overworld Sprites 2", ROMX

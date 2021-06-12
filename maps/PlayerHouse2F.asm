@@ -61,7 +61,7 @@ PlayerHouseDebugPoster:
 	givepoke WIGGLYTUFF, 100
 	givepoke WINGULL, 7
 	givepoke PELIPPER, 27
-	givepoke CARVANHA, 28
+	givepoke SNEASEL, 28
 .items
 	writetext PlayerHouseDebugText6
 	yesorno

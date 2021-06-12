@@ -178,7 +178,7 @@ SECTION "Twinkle Town Scripts", ROMX
 
 INCLUDE "maps/TwinkleTown.asm"
 INCLUDE "maps/TwinkleRockHouse.asm"
-INCLUDE "maps/TwinkleHouse2.asm"
+INCLUDE "maps/TwinkleTradeHouse.asm"
 INCLUDE "maps/TwinkleHouse3.asm"
 INCLUDE "maps/TwinkleGymEntry.asm"
 INCLUDE "maps/TwinkleGymBlueRoom.asm"

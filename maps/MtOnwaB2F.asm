@@ -97,8 +97,8 @@ MtOnwaB2FDisguiseman2:
 	writetext MtOnwa_DisguiseMan1Text3
 	waitbutton
 	closetext
-	applymovement MT_ONWA_B2F_DISGUISEMAN1, Movement_StarglowCavern_DisguiseMan2
-	disappear MT_ONWA_B2F_DISGUISEMAN1
+	applymovement MT_ONWA_B2F_DISGUISEMAN2, Movement_StarglowCavern_DisguiseMan2
+	disappear MT_ONWA_B2F_DISGUISEMAN2
 	opentext
 	writetext StarglowCavern_DisguiseMan1Text4
 	waitbutton

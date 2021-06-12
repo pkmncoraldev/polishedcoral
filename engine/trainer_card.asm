@@ -707,21 +707,21 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	
 	ld a, [wMetGymLeaderFlags]
 	bit 7, a
-	jp nz, .leader8
+	call nz, .leader8
 	bit 6, a
-	jp nz, .leader7
+	call nz, .leader7
 	bit 5, a
-	jp nz, .leader6
+	call nz, .leader6
 	bit 4, a
-	jp nz, .leader5
+	call nz, .leader5
 	bit 3, a
-	jp nz, .leader4
+	call nz, .leader4
 	bit 2, a
-	jp nz, .wendy
+	call nz, .wendy
 	bit 1, a
-	jp nz, .rodney
+	call nz, .rodney
 	bit 0, a
-	jp nz, .stanley
+	call nz, .stanley
 	ret
 	
 .leader8
@@ -731,6 +731,7 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	hlcoord $f, $f
 	ld de, .Leader82Tilemap
 	call TrainerCardSetup_PlaceTilemapString
+	ret
 	
 .leader7
 	hlcoord $b, $e
@@ -739,6 +740,7 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	hlcoord $b, $f
 	ld de, .Leader72Tilemap
 	call TrainerCardSetup_PlaceTilemapString
+	ret
 	
 .leader6
 	hlcoord 7, $e
@@ -747,6 +749,7 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	hlcoord 7, $f
 	ld de, .Leader62Tilemap
 	call TrainerCardSetup_PlaceTilemapString
+	ret
 	
 .leader5
 	hlcoord 3, $e
@@ -755,6 +758,7 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	hlcoord 3, $f
 	ld de, .Leader52Tilemap
 	call TrainerCardSetup_PlaceTilemapString
+	ret
 	
 .leader4
 	hlcoord $f, $b
@@ -763,6 +767,7 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	hlcoord $f, $c
 	ld de, .Leader42Tilemap
 	call TrainerCardSetup_PlaceTilemapString
+	ret
 	
 .wendy
 	hlcoord $b, $b
@@ -771,6 +776,7 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	hlcoord $b, $c
 	ld de, .Leader32Tilemap
 	call TrainerCardSetup_PlaceTilemapString
+	ret
 	
 .rodney
 	hlcoord 7, $b
@@ -779,6 +785,7 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	hlcoord 7, $c
 	ld de, .Rodney2Tilemap
 	call TrainerCardSetup_PlaceTilemapString
+	ret
 	
 .stanley
 	hlcoord 3, $b

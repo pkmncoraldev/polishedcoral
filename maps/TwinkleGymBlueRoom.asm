@@ -18,12 +18,13 @@ TwinkleGymBlueRoom_MapScriptHeader:
 	signpost  3,  4, SIGNPOST_IFNOTSET, TwinkleGymBlueRoomDoor
 	signpost  3,  5, SIGNPOST_IFNOTSET, TwinkleGymBlueRoomDoor
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event  4, 14, SPRITE_SPA_WORKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymBlueRoomWorker1, EVENT_BEAT_CHARLIE
 	object_event  0,  6, SPRITE_SPA_WORKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymBlueRoomWorker2, EVENT_BEAT_CHARLIE
 	object_event 13,  1, SPRITE_SPA_WORKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymBlueRoomWorker3, EVENT_BEAT_CHARLIE
 	object_event  9,  1, SPRITE_SPA_TRAINER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymBlueRoomTrainer, -1
 	object_event  4,  5, SPRITE_SPA_TRAINER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymBlueRoomLeader, -1
+	object_event  3,  4, SPRITE_STEAM, SPRITEMOVEDATA_STEAM, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 
 	
 	const_def 1 ; object constants
@@ -209,20 +210,7 @@ TwinkleGymBlueRoomWorker2:
 	checkevent EVENT_TWINKLE_GYM_BLUE_ROOM_WORKER_2
 	iftrue .alreadydone
 	setevent EVENT_TWINKLE_GYM_BLUE_ROOM_WORKER_2
-	writetext TwinkleGymBlueRoomWorkerText1
-	waitbutton
-	closetext
-	checkevent EVENT_BLUE_ROOM_STEAM_2
-	iftrue .steam2
-	clearevent EVENT_BLUE_ROOM_STEAM_3
-	loadvar wTimeOfDayPalFlags, $40 | 1
-	dotrigger $1
-	end
-.steam2
-	clearevent EVENT_BLUE_ROOM_STEAM_2
-	loadvar wTimeOfDayPalFlags, $40 | 1
-	dotrigger $1
-	end
+	jump TwinkleGymBlueRoomWorker
 .alreadydone
 	writetext TwinkleGymBlueRoomWorkerText2
 	waitbutton
@@ -235,6 +223,14 @@ TwinkleGymBlueRoomWorker3:
 	checkevent EVENT_TWINKLE_GYM_BLUE_ROOM_WORKER_3
 	iftrue .alreadydone
 	setevent EVENT_TWINKLE_GYM_BLUE_ROOM_WORKER_3
+	jump TwinkleGymBlueRoomWorker
+.alreadydone
+	writetext TwinkleGymBlueRoomWorkerText2
+	waitbutton
+	closetext
+	end
+	
+TwinkleGymBlueRoomWorker:
 	writetext TwinkleGymBlueRoomWorkerText1
 	waitbutton
 	closetext
@@ -242,17 +238,10 @@ TwinkleGymBlueRoomWorker3:
 	iftrue .steam2
 	clearevent EVENT_BLUE_ROOM_STEAM_3
 	loadvar wTimeOfDayPalFlags, $40 | 1
-	dotrigger $1
 	end
 .steam2
 	clearevent EVENT_BLUE_ROOM_STEAM_2
 	loadvar wTimeOfDayPalFlags, $40 | 1
-	dotrigger $1
-	end
-.alreadydone
-	writetext TwinkleGymBlueRoomWorkerText2
-	waitbutton
-	closetext
 	end
 	
 TwinkleGymBlueRoomLeaderText1:
@@ -307,7 +296,18 @@ TwinkleGymBlueRoomWorker1Text:
 	line "steam down a bit"
 	cont "for you."
 	
-	para "I'll do that now."
+	para "Don't mistake the"
+	line "customers for us."
+
+	para "They might want to"
+	line "battle!"
+	
+	para "Keep a careful eye"
+	line "out!"
+	
+	para "I'll go ahead and"
+	line "turn the steam"
+	cont "down now."
 	done
 	
 TwinkleGymBlueRoomWorkerText1:

@@ -1062,7 +1062,7 @@ UnknownText_0x1bd445::
 	interpret_data
 	db "@@"
 
-UnknownText_0x1bd449::
+UnknownText_TradeIntroText1::
 	text "My friend says he"
 	line "found his SCYTHER"
 	cont "on ROUTE 5,"
@@ -1081,13 +1081,13 @@ UnknownText_0x1bd449::
 	text "?"
 	done
 
-UnknownText_0x1bd48c::
+UnknownText_TradeCancelText1::
 	text "Sigh…"
 	
 	line "Maybe someday…"
 	done
 
-UnknownText_0x1bd4aa::
+UnknownText_TradeWrongText1::
 	text "Huh? That's not"
 	line "@"
 	text_from_ram wStringBuffer1
@@ -1095,7 +1095,7 @@ UnknownText_0x1bd4aa::
 	cont "What a letdown…"
 	done
 
-UnknownText_0x1bd4d2::
+UnknownText_TradeCompleteText1::
 	text "Yes!"
 	
 	para "I finally have a"
@@ -1106,7 +1106,7 @@ UnknownText_0x1bd4d2::
 	para "Thanks a lot!"
 	done
 
-UnknownText_0x1bd4f4::
+UnknownText_TradeAfterText1::
 	text "Yo!"
 	
 	para "How's SIR SNIPS"
@@ -1133,39 +1133,14 @@ UnknownText_TradeCancelText2::
 	text "Ah shoot!"
 	done
 
-	
-UnknownText_0x1bd512::
-	text "Hi, I'm looking"
-	line "for this #mon."
-
-	para "If you have"
+UnknownText_TradeWrongText2::
+	text "Huh? That's not"
 	line "@"
 	text_from_ram wStringBuffer1
-	text ", would"
-
-	para "you trade it for"
-	line "my @"
-	text_from_ram wStringBuffer2
-	text "?"
+	text "."
 	done
 
-UnknownText_0x1bd565::
-	text "You don't have"
-	line "one either?"
-
-	para "Gee, that's really"
-	line "disappointing…"
-	done
-
-UnknownText_0x1bd5a1::
-	text "You don't have"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "? That's"
-	cont "too bad, then."
-	done
-
-UnknownText_0x1bd5cc::
+UnknownText_TradeCompleteText2::
 	text "I caught"
 	line "SUNNY SIDE on a"
 	cont "little island off"
@@ -1186,119 +1161,106 @@ UnknownText_0x1bd5cc::
 
 	para "I'll take great"
 	line "care of @"
-	text_from_ram wTradeExeggcuteName
+	text_from_ram wTradeGloomName
 	text "!"
 	done
 
-UnknownText_0x1bd5f4::
+UnknownText_TradeAfterText2::
 	text "Hey!"
 	
 	para "@"
-	text_from_ram wTradeExeggcuteName
+	text_from_ram wTradeGloomName
 	text "'s"
 	line "doing awesome!"
 	
 	para "How is SUNNY SIDE"
 	line "doing?"
 	done
+	
+	
+UnknownText_TradeIntroText3::
+	text "Hi!"
+	
+	para "Do you have"
+	line "SNEASEL?"
+	
+	para "Wanna trade for my"
+	line "GLIGAR?"
+	
+	para "She may help you"
+	line "if you're gonna"
+	cont "take on the gym."
+	
+	para "Whaduya say?"
+	done
+	
+UnknownText_TradeCancelText3::
+	text "Darn!"
+	done
 
-UnknownText_0x1bd621::
-	text_from_ram wMonOrItemNameBuffer
-	text "'s cute,"
-	line "but I don't have"
-
-	para "it. Do you have"
+UnknownText_TradeWrongText3::
+	text "What? That's not"
 	line "@"
 	text_from_ram wStringBuffer1
-	text "?"
-
-	para "Want to trade it"
-	line "for my @"
-	text_from_ram wStringBuffer2
-	text "?"
-	done
-
-UnknownText_0x1bd673::
-	text "You don't want to"
-	line "trade? Oh, darn…"
-	done
-
-UnknownText_0x1bd696::
-	text "That's not"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "."
-
-	para "Please trade with"
-	line "me if you get one."
-	done
-
-UnknownText_0x1bd6cd::
-	text "Wow! Thank you!"
-	line "I always wanted"
-	cont "@"
-	text_from_ram wMonOrItemNameBuffer
 	text "!"
 	done
 
-UnknownText_0x1bd6f5::
-	text "How is that"
-	line "@"
-	text_from_ram wStringBuffer2
-	text " I"
-	cont "traded you doing?"
+UnknownText_TradeCompleteText3::
+	text "ROBIN there may"
+	line "not be too great"
+	cont "in this climate,"
 
-	para "Your @"
-	text_from_ram wMonOrItemNameBuffer
-	text "'s"
-	line "so cute!"
-	done
-
-UnknownText_0x1bd731::
-	text "Uh? What happened?"
-	done
-
-UnknownText_0x1bd745::
-	text "Trading is so odd…"
-
-	para "I still have a lot"
-	line "to learn about it."
-	done
-
-UnknownText_0x1bd77f::
-	text "Wow, that's a cute"
-	line "#mon."
-
-	para "Where did you get"
-	line "it?"
-
+	para "but the GYM LEADER"
+	line "doesn't use"
+	cont "ICE-type #MON,"
+	
+	para "so she should be"
+	line "a big help!"
+	
 	para "…"
+	
+	para "Thanks again!"
 
-	para "So, you're leaving"
-	line "on an adventure…"
-
-	para "OK!"
-	line "I'll help too."
-
-	para "But what can I do"
-	line "for you?"
-
-	para "I know! I'll save"
-	line "money for you."
-
-	para "On a long journey,"
-	line "money's important."
-
-	para "Do you want me to"
-	line "save your money?"
+	para "I'll take great"
+	line "care of @"
+	text_from_ram wTradeSneaselName
+	text "!"
 	done
 
-UnknownText_0x1bd868::
-	text "OK, I'll take care"
-	line "of your money."
+UnknownText_TradeAfterText3::
+	text "Hey!"
+	
+	para "How has ROBIN been"
+	line "treating ya?"
+	
+	para "@"
+	text_from_ram wTradeSneaselName
+	text "'s"
+	line "been great!"
+	
+	para "Thanks again for"
+	line "the trade!"
+	done
+	
+UnknownText_TradeIntroText4::
+	text "INTRO"
+	done
+	
+UnknownText_TradeCancelText4::
+	text "CANCEL"
+	done
 
-	para "………………"
-	prompt
+UnknownText_TradeWrongText4::
+	text "WRONG"
+	done
+
+UnknownText_TradeCompleteText4::
+	text "DONE"
+	done
+
+UnknownText_TradeAfterText4::
+	text "AFTER"
+	done
 
 UnknownText_0x1bd88e::
 	text "Transaction"

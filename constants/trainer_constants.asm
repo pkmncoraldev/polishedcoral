@@ -475,6 +475,38 @@ PLAYER_F EQU __enum__
 	const SHAYMUS_6
 	const SHAYMUS_7
 	const SHAYMUS_8
+	const CHUCK_3
+	const CHUCK_4
+	const CHUCK_5
+	const CHUCK_6
+	const CHUCK_7
+	const CHUCK_8
+	const SEYMOUR_3
+	const SEYMOUR_4
+	const SEYMOUR_5
+	const SEYMOUR_6
+	const SEYMOUR_7
+	const SEYMOUR_8
+	const MAC_3
+	const MAC_4
+	const MAC_5
+	const MAC_6
+	const MAC_7
+	const MAC_8
+	
+	trainerclass SPA_TRAINER_F
+	const LAURA_3
+	const LAURA_4
+	const LAURA_5
+	const LAURA_6
+	const LAURA_7
+	const LAURA_8
+	const BETTY_3
+	const BETTY_4
+	const BETTY_5
+	const BETTY_6
+	const BETTY_7
+	const BETTY_8
 
 	trainerclass TOWERTYCOON ; 1
 

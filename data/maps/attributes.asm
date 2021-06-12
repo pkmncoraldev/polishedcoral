@@ -368,7 +368,7 @@ ENDM
 	map_attributes LusterTrainCutscene, LUSTER_TRAIN_CUTSCENE, $12, 0
 	map_attributes Route10Tent, ROUTE_10_TENT, 0, 0
 	map_attributes TwinkleRockHouse, TWINKLE_ROCK_HOUSE, 0, 0
-	map_attributes TwinkleHouse2, TWINKLE_HOUSE_2, 0, 0
+	map_attributes TwinkleTradeHouse, TWINKLE_TRADE_HOUSE, 0, 0
 	map_attributes TwinkleHouse3, TWINKLE_HOUSE_3, 0, 0
 	map_attributes TwinklePokeCenter, TWINKLE_POKECENTER, 0, 0
 	map_attributes TwinkleMart, TWINKLE_MART, 0, 0

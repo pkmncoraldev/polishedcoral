@@ -84,11 +84,16 @@ NPCTrade:: ; fcba8
 	jr .cont
 .trade2
 	ld hl, wBackupName
-	ld de, wTradeExeggcuteName
+	ld de, wTradeGloomName
 	ld bc, NAME_LENGTH
 	rst CopyBytes
 	jr .cont
 .trade3
+	ld hl, wBackupName
+	ld de, wTradeSneaselName
+	ld bc, NAME_LENGTH
+	rst CopyBytes
+	jr .cont
 .trade4
 .trade5
 .trade6
@@ -495,117 +500,82 @@ TradedForText: ; 0xfcf80
 ; 0xfcf97
 
 
-TradeIntroText1: ; 0xfcf97
-	; I collect #MON. Do you have @ ? Want to trade it for my @ ?
-	text_jump UnknownText_0x1bd449
+TradeIntroText1:
+	text_jump UnknownText_TradeIntroText1
 	db "@"
-; 0xfcf9c
 
-TradeCancelText1: ; 0xfcf9c
-	; You don't want to trade? Aww…
-	text_jump UnknownText_0x1bd48c
+TradeCancelText1:
+	text_jump UnknownText_TradeCancelText1
 	db "@"
-; 0xfcfa1
 
-TradeWrongText1: ; 0xfcfa1
-	; Huh? That's not @ .  What a letdown…
-	text_jump UnknownText_0x1bd4aa
+TradeWrongText1:
+	text_jump UnknownText_TradeWrongText1
 	db "@"
-; 0xfcfa6
 
-TradeCompleteText1: ; 0xfcfa6
-	; Yay! I got myself @ ! Thanks!
-	text_jump UnknownText_0x1bd4d2
+TradeCompleteText1:
+	text_jump UnknownText_TradeCompleteText1
 	db "@"
-; 0xfcfab
 
-TradeAfterText1: ; 0xfcfab
-	; Hi, how's my old @  doing?
-	text_jump UnknownText_0x1bd4f4
+TradeAfterText1:
+	text_jump UnknownText_TradeAfterText1
 	db "@"
-; 0xfcfb0
-
-
+	
 TradeIntroText2:
 	text_jump UnknownText_TradeIntroText2
 	db "@"
-
-TradeIntroText3: ; 0xfcfb0
-	; Hi, I'm looking for this #MON. If you have @ , would you trade it for my @ ?
-	text_jump UnknownText_0x1bd512
-	db "@"
-; 0xfcfb5
 
 TradeCancelText2:
 	text_jump UnknownText_TradeCancelText2
 	db "@"
 
-TradeCancelText3: ; 0xfcfb5
-	; You don't have one either? Gee, that's really disappointing…
-	text_jump UnknownText_0x1bd565
-	db "@"
-; 0xfcfba
-
 TradeWrongText2:
-	text_jump UnknownText_0x1bd4aa
+	text_jump UnknownText_TradeWrongText2
 	db "@"
 
-TradeWrongText3: ; 0xfcfba
-	; You don't have @ ? That's too bad, then.
-	text_jump UnknownText_0x1bd5a1
+TradeCompleteText2:
+	text_jump UnknownText_TradeCompleteText2
 	db "@"
-; 0xfcfbf
 
-TradeCompleteText2: ; 0xfcfbf
-	text_jump UnknownText_0x1bd5cc
+TradeAfterText2:
+	text_jump UnknownText_TradeAfterText2
 	db "@"
-; 0xfcfc4
 
-TradeAfterText2: ; 0xfcfc4
-	text_jump UnknownText_0x1bd5f4
+TradeIntroText3:
+	text_jump UnknownText_TradeIntroText3
 	db "@"
-; 0xfcfc9
 
-
-TradeIntroText4: ; 0xfcfc9
-	; 's cute, but I don't have it. Do you have @ ? Want to trade it for my @ ?
-	text_jump UnknownText_0x1bd621
+TradeCancelText3:
+	text_jump UnknownText_TradeCancelText3
 	db "@"
-; 0xfcfce
 
-TradeCancelText4: ; 0xfcfce
-	; You don't want to trade? Oh, darn…
-	text_jump UnknownText_0x1bd673
+TradeWrongText3:
+	text_jump UnknownText_TradeWrongText3
 	db "@"
-; 0xfcfd3
 
-TradeWrongText4: ; 0xfcfd3
-	; That's not @ . Please trade with me if you get one.
-	text_jump UnknownText_0x1bd696
+TradeCompleteText3:
+	text_jump UnknownText_TradeCompleteText3
 	db "@"
-; 0xfcfd8
 
-TradeCompleteText4: ; 0xfcfd8
-	; Wow! Thank you! I always wanted @ !
-	text_jump UnknownText_0x1bd6cd
+TradeAfterText3:
+	text_jump UnknownText_TradeAfterText3
 	db "@"
-; 0xfcfdd
-
-TradeAfterText4: ; 0xfcfdd
-	; How is that @  I traded you doing? Your @ 's so cute!
-	text_jump UnknownText_0x1bd6f5
+	
+TradeIntroText4:
+	text_jump UnknownText_TradeIntroText4
 	db "@"
-; 0xfcfe2
 
-
-TradeCompleteText3: ; 0xfcfe2
-	; Uh? What happened?
-	text_jump UnknownText_0x1bd731
+TradeCancelText4:
+	text_jump UnknownText_TradeCancelText4
 	db "@"
-; 0xfcfe7
 
-TradeAfterText3: ; 0xfcfe7
-	; Trading is so odd… I still have a lot to learn about it.
-	text_jump UnknownText_0x1bd745
+TradeWrongText4:
+	text_jump UnknownText_TradeWrongText4
 	db "@"
-; 0xfcfec
+
+TradeCompleteText4:
+	text_jump UnknownText_TradeCompleteText4
+	db "@"
+
+TradeAfterText4:
+	text_jump UnknownText_TradeAfterText4
+	db "@"

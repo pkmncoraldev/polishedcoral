@@ -201,13 +201,13 @@ MAP_NONE   EQU 0
 	map_const ROUTE_10_TENT,							   2,  3 ; 3
 	map_const TWINKLE_TOWN,								  24, 28 ; 4
 	map_const TWINKLE_ROCK_HOUSE,						   4,  4 ; 5
-	map_const TWINKLE_HOUSE_2,							   4,  4 ; 6
+	map_const TWINKLE_TRADE_HOUSE,						   4,  4 ; 6
 	map_const TWINKLE_HOUSE_3,							   4,  4 ; 7
 	map_const TWINKLE_POKECENTER,                          6,  4 ; 8
 	map_const TWINKLE_MART,								   6,  4 ; 9
 	map_const TWINKLE_GYM_ENTRY,						   7,  7 ; 10
 	map_const TWINKLE_GYM_BLUE_ROOM,					   7,  9 ; 11
-	map_const TWINKLE_GYM_YELLOW_ROOM,					   6, 11 ; 12
+	map_const TWINKLE_GYM_YELLOW_ROOM,					   8, 11 ; 12
 	map_const TWINKLE_GYM_RED_ROOM,						   3,  3 ; 13
 	
 	newgroup													 ; 12

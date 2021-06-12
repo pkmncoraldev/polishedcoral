@@ -80,7 +80,7 @@ FlickerSoundSpeechHouse_BlockData:
 LakeOnwaItemHouse_BlockData:
 DodrioRanchHouse_BlockData:
 TwinkleRockHouse_BlockData:
-TwinkleHouse2_BlockData:
+TwinkleTradeHouse_BlockData:
 TwinkleHouse3_BlockData:
 	INCBIN "maps/RusticHouse.ablk.lz"
 

@@ -929,7 +929,7 @@ LoadMapPals::
 	jr nz, .steam2
 	eventflagcheck EVENT_BLUE_ROOM_STEAM_3
 	jr nz, .steam3
-	jp .normal
+	jr .no_steam
 .yellow_room
 	eventflagcheck EVENT_YELLOW_ROOM_STEAM_1
 	jr nz, .steam1
@@ -937,7 +937,7 @@ LoadMapPals::
 	jr nz, .steam2
 	eventflagcheck EVENT_YELLOW_ROOM_STEAM_3
 	jr nz, .steam3
-	jp .normal
+	jr .no_steam
 .red_room
 	eventflagcheck EVENT_RED_ROOM_STEAM_1
 	jr nz, .steam1
@@ -945,7 +945,7 @@ LoadMapPals::
 	jr nz, .steam2
 	eventflagcheck EVENT_RED_ROOM_STEAM_3
 	jr nz, .steam3
-	jp .normal
+	jr .no_steam
 .steam1
 	ld hl, MapObjectPalsTwinkleGym1
 	ld de, wUnknOBPals
@@ -964,6 +964,13 @@ LoadMapPals::
 	ld hl, MapObjectPalsTwinkleGym3
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+.no_steam
+	ld hl, MapObjectPalsTwinkleGym4
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	ret
@@ -1440,6 +1447,9 @@ INCLUDE "maps/palettes/obpals/obtwinklegym2.pal"
 
 MapObjectPalsTwinkleGym3::
 INCLUDE "maps/palettes/obpals/obtwinklegym3.pal"
+
+MapObjectPalsTwinkleGym4::
+INCLUDE "maps/palettes/obpals/obtwinklegym4.pal"
 
 MapObjectPalsSewer::
 INCLUDE "maps/palettes/obpals/obsewer.pal"

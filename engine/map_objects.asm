@@ -603,6 +603,9 @@ MapObjectMovementPattern:
 	dw .MovementSunbeamView3
 	dw .MovementSunbeamView4
 	dw .MovementSunbeamView5
+	dw .MovementSunbeamView6
+	dw .MovementBather             ; SPRITEMOVEFN_BATHER
+	dw .MovementSpinSteam ; SPRITEMOVEFN_SPIN_STEAM
 
 .RandomWalkY:
 	call Random
@@ -809,7 +812,7 @@ MapObjectMovementPattern:
 	
 .MovementTileRight:
 	ld a, PERSON_ACTION_TILE_RIGHT
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 
 .MovementMallSign:
 	ld a, PERSON_ACTION_MALL_SIGN
@@ -874,6 +877,10 @@ MapObjectMovementPattern:
 .MovementSunbeamView6:
 	ld a, PERSON_ACTION_SUNBEAM_VIEW_6
 	jr ._ActionA_StepType04
+	
+.MovementBather
+	ld a, PERSON_ACTION_BATHER
+	jp ._ActionA_StepType04
 	
 .MovementCutTree:
 	ld a, PERSON_ACTION_CUT_TREE
@@ -954,6 +961,12 @@ MapObjectMovementPattern:
 	dw .MovementSpinInit
 	dw .MovementSpinRepeat
 	dw .MovementSpinTurnRight
+	
+.MovementSpinSteam:
+	call MovementAnonymousJumptable
+	dw .MovementSpinInit
+	dw .MovementSpinRepeat
+	dw .MovementSpinTurnSteam
 
 .MovementSpinInit:
 	call EndSpriteMovement
@@ -962,7 +975,7 @@ MapObjectMovementPattern:
 	ld hl, OBJECT_ACTION
 	add hl, bc
 	ld [hl], PERSON_ACTION_STAND
-	ld a, $20
+	ld a, $10
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
 	ld [hl], a
@@ -986,6 +999,17 @@ MapObjectMovementPattern:
 
 .DirectionData_Clockwise: ; 49cc
 	db OW_LEFT, OW_RIGHT, OW_UP, OW_DOWN
+	
+.MovementSpinTurnSteam:
+	ld de, .DirectionData_Steam
+	call .MovementSpinNextFacing
+	jr .MovementSpinSteam
+
+.DirectionData_Steam: ; 49c0
+	db OW_UP ; next state for OW_DOWN
+    db OW_LEFT ; next state for OW_UP
+    db OW_DOWN ; next state for OW_LEFT
+    db OW_DOWN ; next state for OW_RIGHT
 
 .MovementSpinNextFacing:
 	ld hl, OBJECT_FACING
@@ -2194,6 +2218,17 @@ SplashPuddle:
 .puddle_data
 	db $80, PAL_OW_BLUE, SPRITEMOVEDATA_PUDDLE
 ; 5565
+
+SplashPuddle2:
+	push bc
+	ld de, .puddle_data2
+	call CopyTempObjectData
+	call InitTempObject
+	pop bc
+	ret
+
+.puddle_data2
+	db $80, PAL_OW_SILVER, SPRITEMOVEDATA_PUDDLE
 
 ShakeScreen: ; 5565
 	push bc

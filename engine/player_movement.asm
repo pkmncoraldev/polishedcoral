@@ -39,6 +39,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, [wPlayerState]
 	and a ; cp PLAYER_NORMAL
 	jr z, .Normal
+	cp PLAYER_BATHING
+	jr z, .Normal
 	cp PLAYER_RUN
 	jr z, .Running
 	cp PLAYER_SKATEBOARD

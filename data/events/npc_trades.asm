@@ -10,11 +10,11 @@ NPCTrades:
 	db $DD, $DD, $DD, HIDDEN_ABILITY | MODEST, MALE,   POKE_BALL,   RAWST_BERRY
 	dw 15832
 	db "PAULIE@@", $00
-; TRADE_WITH_TIM_FOR_KANGASKHAN in Olivine City
-	db 1, BULBASAUR,    BULBASAUR, "J","o","e","y","@","@","@","@","@","@","@"
-	db $EE, $EE, $EE, HIDDEN_ABILITY | BRAVE,   MALE,   HEAVY_BALL,   SILK_SCARF
-	dw 29189
-	db "T","i","m","@","@","@","@","@", $00
+; TRADE_WITH_ALICE_FOR_GLIGAR in Twinkle Town
+	db 2, SNEASEL,       GLIGAR,     "ROBIN@@@@@@"
+	db $DD, $DD, $DD, ABILITY_1 | ADAMANT, FEMALE,   POKE_BALL,   RAZOR_CLAW
+	dw 64582
+	db "ALICE@@@", $00
 ; TRADE_WITH_EMY_FOR_MR__MIME in Blackthorn City
 	db 3, BULBASAUR,       BULBASAUR,   "D","o","r","i","s","@","@","@","@","@","@"
 	db $EE, $EE, $EE, HIDDEN_ABILITY | TIMID,   FEMALE, LOVE_BALL,    PINK_BOW

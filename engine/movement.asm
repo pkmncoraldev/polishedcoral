@@ -969,6 +969,13 @@ NormalStep: ; 5412
 	call SplashPuddle
 	jr .skip_effect
 
+;.check_bathing
+;	ld a, [wPlayerState]
+;	cp PLAYER_BATHING
+;	jr nz, .skip_effect
+;	call SplashPuddle2
+;	jr .skip_effect
+	
 .shake_grass
 	ld a, [wTileset]
 	cp TILESET_SNOW

@@ -37,7 +37,6 @@ _AnimateTileset:: ; fc000
 
 Tileset00Anim::
 TilesetPlayerRoomAnim::
-TilesetPlayerHouseAnim::
 TilesetHouse1Anim::
 TilesetPokeCenterAnim::
 TilesetCafeAnim::
@@ -150,6 +149,28 @@ TilesetStarglowAnim::
 	dw ShorelineFrames3,  AnimateWaterfallTiles
 	dw ShorelineFrames,  AnimateWaterfallTiles
 	dw ShorelineFrames2,  AnimateWaterfallTiles
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
+TilesetPlayerHouseAnim::
+	dw VTiles2 tile $14, WriteTileToBuffer
+	dw NULL,  WaitTileAnimation
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $14, WriteTileFromBuffer
+	dw RippleFrames, AnimateWaterfallTiles
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+    dw NULL,  WaitTileAnimation
+    dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -895,6 +916,10 @@ endr
 TrainWindowFrames: dw VTiles2 tile $28, TrainWindowTiles
 
 TrainWindowTiles: INCBIN "gfx/tilesets/trainwindows/1.2bpp"
+	
+RippleFrames: dw VTiles2 tile $7d, RippleTiles
+
+RippleTiles: INCBIN "gfx/tilesets/water/ripple.2bpp"
 	
 WaterfallFrames: dw VTiles2 tile $30, WaterfallTiles
 

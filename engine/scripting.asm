@@ -1348,6 +1348,10 @@ CheckFacingObjectCutscene::
 	ret
 	
 MakePalGray::
+	ld a, [wTileset]
+	cp TILESET_PLAYER_HOUSE
+	jr z, .playerhouse
+.not_twinkle
 	ld hl, .palettesgray
 	ld de, wOBPals palette PAL_OW_SILVER
 	ld bc, 1 palettes
@@ -1355,6 +1359,15 @@ MakePalGray::
 	call FarCopyWRAM
 	ld a, $1
 	ld [hCGBPalUpdate], a
+	ret
+	
+.playerhouse
+	ld a, [wMapGroup]
+	cp GROUP_TWINKLE_GYM_ENTRY
+	jr nz, .not_twinkle
+	ld a, [wMapNumber]
+	cp MAP_TWINKLE_GYM_ENTRY
+	jr z, .not_twinkle
 	ret
 	
 .palettesgray ; 12451

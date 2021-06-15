@@ -220,6 +220,7 @@ Route10Tent_BlockData:
 	INCBIN "maps/Route10Tent.ablk.lz"
 	
 TwinkleTown_BlockData:
+TwinkleGymRedRoom_BlockData:
 	INCBIN "maps/TwinkleTown.ablk.lz"
 	
 IceCaveB1F_BlockData:
@@ -254,9 +255,6 @@ TwinkleGymBlueRoom_BlockData:
 	
 TwinkleGymYellowRoom_BlockData:
 	INCBIN "maps/TwinkleGymYellowRoom.ablk.lz"
-	
-TwinkleGymRedRoom_BlockData:
-	INCBIN "maps/TwinkleGymRedRoom.ablk.lz"
 	
 EastTrainCabin1_BlockData:
 EastTrainCabin2_BlockData:

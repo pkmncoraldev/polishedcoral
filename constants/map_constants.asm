@@ -208,7 +208,7 @@ MAP_NONE   EQU 0
 	map_const TWINKLE_GYM_ENTRY,						   7,  7 ; 10
 	map_const TWINKLE_GYM_BLUE_ROOM,					   7,  9 ; 11
 	map_const TWINKLE_GYM_YELLOW_ROOM,					   8, 11 ; 12
-	map_const TWINKLE_GYM_RED_ROOM,						   3,  3 ; 13
+	map_const TWINKLE_GYM_RED_ROOM,						  24, 28 ; 13
 	
 	newgroup													 ; 12
 	

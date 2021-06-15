@@ -35,7 +35,6 @@ EventideGym_MapScriptHeader:
 	person_event SPRITE_GYM_GUY, 14, 26, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideGymGuyScript, -1
 
 	
-	
 	const_def 1 ; object constants
 	const EVENTIDEGYM_WENDY
 	
@@ -239,10 +238,7 @@ EventideGymWendy:
 	writetext Text_ReceivedThridBadge
 	playsound SFX_GET_BADGE
 	waitsfx
-	setflag ENGINE_THIRDBADGE
-	checkcode VAR_BADGES
-	
-	
+	setflag ENGINE_THIRDBADGE	
 .FightDone:	
 	checkevent EVENT_GOT_TM_FROM_WENDY
 	iftrue .GotTMFromWendy
@@ -285,16 +281,12 @@ EventideGymWendyRematch:
 	closetext
 	waitsfx
 	winlosstext EventideGymWendyTextWinRematch, EventideGymWendyTextLoss
-	checkflag ENGINE_FOURTHBADGE
-	iftrue .fourbadges
-	checkflag ENGINE_FIFTHBADGE
-	iftrue .fivebadges
-	checkflag ENGINE_SIXTHBADGE
-	iftrue .sixbadges
-	checkflag ENGINE_SEVENTHBADGE
-	iftrue .sevenbadges
-	checkflag ENGINE_EIGHTHBADGE
-	iftrue .eightbadges
+	checkcode VAR_BADGES
+	ifequal 4, .fourbadges
+	ifequal 5, .fivebadges
+	ifequal 6, .sixbadges
+	ifequal 7, .sevenbadges
+	ifequal 8, .eightbadges
 	loadtrainer WENDY, 1;3
 	jump .cont
 .fourbadges

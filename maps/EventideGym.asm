@@ -235,7 +235,7 @@ EventideGymWendy:
 	setevent EVENT_BEAT_WENDY
 	clearevent EVENT_HAVENT_BEAT_WENDY
 	opentext
-	writetext Text_ReceivedThridBadge
+	writetext Text_ReceivedThirdBadge
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_THIRDBADGE	
@@ -318,7 +318,7 @@ EventideGymWendyRematch:
 	closetext
 	end
 	
-Text_ReceivedThridBadge:
+Text_ReceivedThirdBadge:
 	text "<PLAYER> received"
 	line "the GALEBADGE."
 	done
@@ -346,7 +346,7 @@ EventideGymWendyTextBeforeBattle:
 	cont "a raging storm,"
 	
 	para "or as graceful"
-	cont "as a spring"
+	line "as a spring"
 	cont "breeze…"
 	
 	para "That's why they're"
@@ -411,9 +411,9 @@ EventideGymWendyTextTMSpeech:
 	para "…"
 	
 	para "It's important to"
-	line "remember your roots"
-	cont "no matter how far"
-	cont "you go!"
+	line "remember your"
+	cont "roots no matter"
+	cont "how far you go!"
 	
 	para "The sky is the"
 	line "limit for a great"
@@ -429,9 +429,9 @@ EventideGymWendyTextTMSpeech:
 	
 EventideGymWendyTextLoop:
 	text "It's important to"
-	line "remember your roots"
-	cont "no matter how far"
-	cont "you go!"
+	line "remember your"
+	cont "roots no matter"
+	cont "how far you go!"
 	
 	para "The sky is the"
 	line "limit for a great"

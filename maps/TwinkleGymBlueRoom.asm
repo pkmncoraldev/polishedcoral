@@ -51,16 +51,13 @@ TwinkleGymBlueRoomTrainer:
 	closetext
 	waitsfx
 	winlosstext TwinkleGymBlueRoomTrainerBeatenText, 0
-	checkflag ENGINE_FOURTHBADGE
-	iftrue .fourbadges
-	checkflag ENGINE_FIFTHBADGE
-	iftrue .fivebadges
-	checkflag ENGINE_SIXTHBADGE
-	iftrue .sixbadges
-	checkflag ENGINE_SEVENTHBADGE
-	iftrue .sevenbadges
-	checkflag ENGINE_EIGHTHBADGE
-	iftrue .eightbadges
+.return
+	checkcode VAR_BADGES
+	ifequal 4, .fourbadges
+	ifequal 5, .fivebadges
+	ifequal 6, .sixbadges
+	ifequal 7, .sevenbadges
+	ifequal 8, .eightbadges
 	loadtrainer SPA_TRAINER, SHAYMUS_3
 	jump .cont
 .fourbadges
@@ -83,12 +80,28 @@ TwinkleGymBlueRoomTrainer:
 	reloadmapafterbattle
 	playmapmusic
 	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER
-	end
+	checkevent EVENT_BEAT_CHARLIE
+	iffalse .skip
+	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER_REMATCH
+	jump .skip
 .FightDone
+	checkevent EVENT_BEAT_CHARLIE
+	iffalse .skip
+	checkevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER_REMATCH
+	iffalse .rematch
+.skip
 	writetext TwinkleGymBlueRoomTrainerRegularText
 	waitbutton
 	closetext
 	end
+.rematch
+	playmusic MUSIC_HIKER_ENCOUNTER
+	writetext TwinkleGymBlueRoomTrainerRematchSeenText
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext TwinkleGymBlueRoomTrainerRematchBeatenText, 0
+	jump .return
 
 TwinkleGymBlueRoomTrainerRegularText:
 	text "REGULAR TEXT"
@@ -97,30 +110,75 @@ TwinkleGymBlueRoomTrainerRegularText:
 TwinkleGymBlueRoomTrainerSeenText:
 	text "SEEN TEXT"
 	done
+	
+TwinkleGymBlueRoomTrainerRematchSeenText:
+	text "SEEN TEXT"
+	done
 
 TwinkleGymBlueRoomTrainerBeatenText:
+	text "YOU WIN"
+	done
+	
+TwinkleGymBlueRoomTrainerRematchBeatenText:
 	text "YOU WIN"
 	done
 	
 TwinkleGymBlueRoomLeader:
 	opentext
 	checkevent EVENT_CAN_GET_YELLOW_KEY
-	iftrue .end
+	iftrue .checkrematch
 	writetext TwinkleGymBlueRoomLeaderText1
+.return
 	waitbutton
 	closetext
 	winlosstext TwinkleGymBlueRoomLeaderWinText, 0
 	setlasttalked TWINKLE_GYM_BLUE_ROOM_LEADER
-	loadtrainer SPA_TRAINER, DENNIS_3
+	checkcode VAR_BADGES
+	ifequal 4, .fourbadges
+	ifequal 5, .fivebadges
+	ifequal 6, .sixbadges
+	ifequal 7, .sevenbadges
+	ifequal 8, .eightbadges
+	loadtrainer SPA_TRAINER_F, DENNIS_3
+	jump .cont
+.fourbadges
+	loadtrainer SPA_TRAINER_F, DENNIS_4
+	jump .cont
+.fivebadges
+	loadtrainer SPA_TRAINER_F, DENNIS_5
+	jump .cont
+.sixbadges
+	loadtrainer SPA_TRAINER_F, DENNIS_6
+	jump .cont
+.sevenbadges
+	loadtrainer SPA_TRAINER_F, DENNIS_7
+	jump .cont
+.eightbadges
+	loadtrainer SPA_TRAINER_F, DENNIS_8
+.cont
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
 	opentext
+.checkrematch
+	checkevent EVENT_BEAT_CHARLIE
+	iffalse .end
+	checkevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_LEADER_REMATCH
+	iftrue .end2
+	writetext TwinkleGymBlueRoomLeaderRematchText1
+	jump .return
 .end
 	writetext TwinkleGymBlueRoomLeaderText2
 	waitbutton
 	closetext
 	setevent EVENT_CAN_GET_YELLOW_KEY
+	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_LEADER
+	end
+.end2
+	writetext TwinkleGymBlueRoomLeaderRematchText2
+	waitbutton
+	closetext
+	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_LEADER_REMATCH
 	end
 	
 TwinkleGymBlueRoomDoor:
@@ -260,6 +318,10 @@ TwinkleGymBlueRoomLeaderText1:
 	line "battle, though!"
 	done
 	
+TwinkleGymBlueRoomLeaderRematchText1:
+	text "TEXT 1"
+	done
+	
 TwinkleGymBlueRoomLeaderText2:
 	text "Sorry about the"
 	line "confusion."
@@ -271,6 +333,10 @@ TwinkleGymBlueRoomLeaderText2:
 	para "She can probably"
 	line "clear it up for"
 	cont "you."
+	done
+	
+TwinkleGymBlueRoomLeaderRematchText2:
+	text "TEXT 2"
 	done
 	
 TwinkleGymBlueRoomLeaderWinText:

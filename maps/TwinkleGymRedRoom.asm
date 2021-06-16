@@ -40,17 +40,22 @@ TwinkleGymCharlie:
 	setevent EVENT_BEAT_CHARLIE
 	clearevent EVENT_HAVENT_BEAT_CHARLIE
 	opentext
-	writetext Text_ReceivedForthBadge
+	writetext Text_ReceivedFourthBadge
 	playsound SFX_GET_BADGE
 	waitsfx
-	setflag ENGINE_FORTHBADGE
+	setflag ENGINE_FOURTHBADGE
 	
 	
 .FightDone:	
 	checkevent EVENT_GOT_TM_FROM_CHARLIE
 	iftrue .GotTMFromCharlie
-	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_1
-	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_2
+	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER
+	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_LEADER
+	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_1
+	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_2
+	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_LEADER
+	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1
+	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2
 	writetext TwinkleGymCharlieTextAfterBattle
 	buttonsound
 	verbosegivetmhm TM_FAKE_OUT
@@ -61,19 +66,19 @@ TwinkleGymCharlie:
 	end
 
 .GotTMFromCharlie:
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_1_REMATCH
+	checkevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER_REMATCH
 	iffalse CharlieTextLoop
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_2_REMATCH
+	checkevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_LEADER_REMATCH
 	iffalse CharlieTextLoop
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_3_REMATCH
+	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_1_REMATCH
 	iffalse CharlieTextLoop
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_4_REMATCH
+	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_2_REMATCH
 	iffalse CharlieTextLoop
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_5_REMATCH
+	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_LEADER_REMATCH
 	iffalse CharlieTextLoop
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_6_REMATCH
+	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1_REMATCH
 	iffalse CharlieTextLoop
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_7_REMATCH
+	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2_REMATCH
 	iftrue TwinkleGymCharlieRematch
 CharlieTextLoop:
 	writetext TwinkleGymCharlieTextLoop
@@ -129,147 +134,47 @@ TwinkleGymCharlieRematch:
 	closetext
 	end
 	
-Text_ReceivedThridBadge:
+Text_ReceivedFourthBadge:
 	text "<PLAYER> received"
 	line "the SAUNABADGE."
 	done
 
 TwinkleGymCharlieTextBeforeBattle:
-	text "Hello."
-	
-	para "You must be a"
-	line "challenger."
-	
-	para "I'm CHARLIE, the"
-	line "GYM LEADER of"
-	cont "EVENTIDE VILLAGE."
-	
-	para "I've flown just"
-	line "about everwhere"
-	cont "in this world,"
-	
-	para "but this sleepy"
-	line "little town will"
-	cont "always be home."
-	
-	para "FLYING-types can"
-	line "be as fierce as"
-	cont "a raging storm,"
-	
-	para "or as graceful"
-	cont "as a spring"
-	cont "breeze…"
-	
-	para "That's why they're"
-	line "so fantastic!"
-	
-	para "…"
-	
-	para "Now then,"
-	
-	para "are you ready to"
-	line "earn your wings?"
+	text "BEFORE BATTLE"
 	done
 	
 TwinkleGymCharlieTextWin:
-	text "So fierce!"
-	line "So graceful!"
+	text "YOU WIN"
 	done
 	
 TwinkleGymCharlieTextWinRematch:
-	text "So fierce!"
-	line "So graceful!"
+	text "YOU WIN AGAIN"
 	done
 	
 TwinkleGymCharlieTextLoss:
-	text "Blown away!"
+	text "YOU LOSE"
 	done
 	
 TwinkleGymCharlieTextAfterBattle:
-	text "The GALEBADGE"
-	line "will allow you"
-	cont "to use the HM FLY"
-	cont "outside of battle."
-	
-	para "You can use it to"
-	line "soar on your"
-	cont "#MON to any"
-	cont "town you've visted."
-	
-	para "You'll need to"
-	line "find the HM your-"
-	cont "self, though."
-	
-	para "You should also"
-	line "take this."
+	text "AFTER BATTLE"
 	done
 	
 TwinkleGymCharlieTextTMSpeech:
-	text "That TM contains"
-	line "ROOST."
-	
-	para "It let's your"
-	line "#MON land and"
-	cont "rest for a while"
-	cont "which will restore"
-	cont "half of it's HP!"
-	
-	para "Keep in mind that"
-	line "they can be hit by"
-	cont "GROUND-type moves"
-	cont "while roosting."
-	
-	para "…"
-	
-	para "It's important to"
-	line "remember your roots"
-	cont "no matter how far"
-	cont "you go!"
-	
-	para "The sky is the"
-	line "limit for a great"
-	cont "TRAINER like you."
-	
-	para "Now go spread your"
-	line "wings and soar on"
-	cont "the wind!"
-	
-	para "Good luck out"
-	line "there!"
+	text "TM SPEECH"
 	done
 	
 TwinkleGymCharlieTextLoop:
-	text "It's important to"
-	line "remember your roots"
-	cont "no matter how far"
-	cont "you go!"
-	
-	para "The sky is the"
-	line "limit for a great"
-	cont "TRAINER like you."
-	
-	para "Now go spread your"
-	line "wings and soar on"
-	cont "the wind!"
-	
-	para "Good luck out"
-	line "there!"
+	text "TEXT LOOP"
 	done
 	
 TwinkleGymCharlieTextBeforeBattle1Rematch:
-	text "You beat everyone"
-	line "else?"
-	
-	para "Do you want a"
-	line "rematch?"
+	text "REMATCH?"
 	done
 	
 TwinkleGymCharlieTextBeforeBattle2Rematch:
-	text "Are you ready to"
-	line "earn your wings?"
+	text "REMATCH START"
 	done
 	
 TwinkleGymCharlieTextNoRematch:
-	text "That takes the"
-	line "wind outta me…"
+	text "NO REMATCH"
 	done

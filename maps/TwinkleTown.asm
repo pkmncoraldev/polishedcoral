@@ -5,7 +5,7 @@ TwinkleTown_MapScriptHeader:
 
 	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, TwinkleTownFlypointCallback
-	callback MAPCALLBACK_OBJECTS, TwinkleTownStopSnowstorm
+	callback MAPCALLBACK_OBJECTS, TwinkleTownCallback
 
 	db 7 ; warp events
 	warp_def 47, 11, 1, TWINKLE_POKECENTER
@@ -31,7 +31,18 @@ TwinkleTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_TWINKLE
 	return
 	
-TwinkleTownStopSnowstorm:
+TwinkleTownCallback:
+	checkevent EVENT_BEAT_CHARLIE_REMATCH
+	iffalse .skip
+	clearevent EVENT_BEAT_CHARLIE_REMATCH
+	clearevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER_REMATCH
+	clearevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_LEADER_REMATCH
+	clearevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_1_REMATCH
+	clearevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_2_REMATCH
+	clearevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_LEADER_REMATCH
+	clearevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1_REMATCH
+	clearevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2_REMATCH
+.skip
 	checkevent EVENT_SNOWSTORM_HAPPENING
 	iffalse .endcallback
 	dotrigger $1

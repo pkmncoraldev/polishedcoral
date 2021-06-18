@@ -153,6 +153,10 @@ UnknownText_0x1c460d::
 	text "The save file is"
 	line "corrupted!"
 	prompt
+	
+UnknownText_ClownSaveText::
+	text "Clowns can't save!"
+	prompt
 
 UnknownText_0x1c462a::
 	text "When you change a"

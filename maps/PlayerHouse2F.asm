@@ -143,8 +143,7 @@ FillPokedex:
 	ld bc, 30
 	call ByteFill
 	ld [hl], %00011111 ; 241-245
-	ret
-
+	ret	
 	
 PlayerHouseDebugText1:
 	text "DEBUG POSTER"

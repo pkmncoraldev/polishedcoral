@@ -205,3 +205,4 @@ SpriteHeaders:
 	overworld_sprite Bather1SpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite Bather2SpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SteamSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite ClownSpriteGFX, WALKING_SPRITE, PAL_OW_RED

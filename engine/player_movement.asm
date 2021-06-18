@@ -430,7 +430,12 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr .contreturn
 	
 .wall
+	ld de, MUSIC_CLOWN
+	call PlayMusic
 	eventflagset EVENT_YOU_CHEATED
+	ld a, PLAYER_CLOWN
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
 	
 .contreturn
 	call .CheckLandPerms
@@ -445,6 +450,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, [wPlayerState]
 	cp PLAYER_DODRIO
 	jp z, .fast
+	cp PLAYER_CLOWN
+	jp z, .slow
 	
 ;	cp PLAYER_SKATEBOARD_GRINDING
 ;	jp z, .stop_grinding

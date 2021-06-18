@@ -32,6 +32,7 @@ ClairSpriteGFX::               INCBIN "gfx/sprites/clair.2bpp"
 Bather1SpriteGFX::             INCBIN "gfx/sprites/bather1.2bpp"
 Bather2SpriteGFX::             INCBIN "gfx/sprites/bather2.2bpp"
 SteamSpriteGFX::               INCBIN "gfx/sprites/steam.2bpp"
+ClownSpriteGFX::               INCBIN "gfx/sprites/clown.2bpp"
 
 
 SECTION "Overworld Sprites 2", ROMX

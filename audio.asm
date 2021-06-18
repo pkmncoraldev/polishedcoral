@@ -48,6 +48,7 @@ INCLUDE "audio/music/daybreakgrotto.asm"
 INCLUDE "audio/music/snareinvasion.asm"
 INCLUDE "audio/music/starglowvalley.asm"
 INCLUDE "audio/music/eventide.asm"
+INCLUDE "audio/music/clown.asm"
 
 
 SECTION "Music 3", ROMX

@@ -87,7 +87,9 @@ PlayMusicAfterDelay::
 	ld [wMapMusic], a
 PlayMusic:: ; 3b97
 ; Play music de.
-
+	eventflagcheck EVENT_YOU_CHEATED
+	ret nz
+	
 	push hl
 	push de
 	push bc
@@ -367,6 +369,8 @@ SkipMusic::
 	ret
 
 FadeToMapMusic:: ; 3cbc
+	eventflagcheck EVENT_YOU_CHEATED
+	ret nz
 	ld a, [wTileset]
 	cp TILESET_PLAYER_ROOM
 	ret z
@@ -401,6 +405,8 @@ FadeToMapMusic:: ; 3cbc
 ; 3cdf
 
 FadeToMapMusic2:: ; 3cbc
+	eventflagcheck EVENT_YOU_CHEATED
+	ret nz
 	push hl
 	push de
 	push bc
@@ -425,6 +431,8 @@ FadeToMapMusic2:: ; 3cbc
 	ret
 
 PlayMapMusic:: ; 3cdf
+	eventflagcheck EVENT_YOU_CHEATED
+	ret nz
 	push hl
 	push de
 	push bc
@@ -443,6 +451,8 @@ PlayMapMusic:: ; 3cdf
 ; 3d03
 
 EnterMapMusic:: ; 3d03
+	eventflagcheck EVENT_YOU_CHEATED
+	ret nz
 	push hl
 	push de
 	push bc
@@ -461,6 +471,8 @@ EnterMapMusic:: ; 3d03
 ; 3d2f
 
 TryRestartMapMusic:: ; 3d2f
+	eventflagcheck EVENT_YOU_CHEATED
+	ret nz
 	ld a, [wDontPlayMapMusicOnReload]
 	and a
 	jp z, RestoreMusic
@@ -475,6 +487,8 @@ TryRestartMapMusic:: ; 3d2f
 ; 3d47
 
 RestartMapMusic:: ; 3d47
+	eventflagcheck EVENT_YOU_CHEATED
+	ret nz
 	push hl
 	push de
 	push bc
@@ -494,6 +508,8 @@ RestartMapMusic:: ; 3d47
 ; 3d62
 
 GetMapMusic::
+	eventflagcheck EVENT_YOU_CHEATED
+	ret nz
 	ld hl, SpecialMusicMaps
 	ld a, [wMapGroup]
 	ld b, a

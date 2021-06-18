@@ -588,9 +588,9 @@ FadeMusic: ; e8358
 	xor a
 	ld [wVolume], a
 	; did we just get on a bike?
-	ld a, [wPlayerState]
-	cp $1 ; bicycle
-	jr z, .bicycle
+;	ld a, [wPlayerState]
+;	cp $1 ; bicycle
+;	jr z, .bicycle
 	push bc
 	; restart sound
 	call MusicFadeRestart
@@ -611,26 +611,26 @@ FadeMusic: ; e8358
 	ld [wMusicFade], a
 	ret
 
-.bicycle
-	push bc
+;.bicycle
+;	push bc
 	; restart sound
-	call MusicFadeRestart
+;	call MusicFadeRestart
 	; this turns the volume up
 	; turn it back down
-	xor a
-	ld [wVolume], a
+;	xor a
+;	ld [wVolume], a
 	; get new song id
-	ld a, [wMusicFadeIDLo]
-	ld e, a
-	ld a, [wMusicFadeIDHi]
-	ld d, a
+;	ld a, [wMusicFadeIDLo]
+;	ld e, a
+;	ld a, [wMusicFadeIDHi]
+;	ld d, a
 	; load new song
-	call _PlayMusic
-	pop bc
+;	call _PlayMusic
+;	pop bc
 	; fade in
-	ld hl, wMusicFade
-	set 7, [hl]
-	ret
+;	ld hl, wMusicFade
+;	set 7, [hl]
+;	ret
 
 .fadein
 	; are we done?

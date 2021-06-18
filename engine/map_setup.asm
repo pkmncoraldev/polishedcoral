@@ -314,12 +314,15 @@ RetainOldPalettes: ; 1556d
 	farjp _UpdateTimePals
 
 RotatePalettesRightMapAndMusic:
+	eventflagcheck EVENT_YOU_CHEATED
+	jr nz, .skip
 	ld e, 0
 	ld a, [wMusicFadeIDLo]
 	ld d, 0
 	ld a, [wMusicFadeIDHi]
 	ld a, $4
 	ld [wMusicFade], a
+.skip
 	farjp FadeOutPalettes
 
 ForceMapMusic: ; 15587

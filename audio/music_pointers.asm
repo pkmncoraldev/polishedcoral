@@ -61,4 +61,5 @@ Music:
 	dba Music_WaterRoute
 	dba Music_EventideVillage
 	dba Music_SnareVictory
+	dba Music_Clown
 	

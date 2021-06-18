@@ -6,6 +6,8 @@ SaveMenu: ; 14a1a
 	call SpeechTextBox
 	call UpdateSprites
 	call ApplyTilemap
+	eventflagcheck EVENT_YOU_CHEATED
+	jr nz, .clown
 	ld hl, UnknownText_0x15283
 	ld b, BANK(UnknownText_0x15283)
 	call MapTextbox
@@ -30,6 +32,15 @@ SaveMenu: ; 14a1a
 	call CopyTilemapAtOnce
 	scf
 	ret
+.clown
+	ld hl, UnknownText_ClownSave
+	ld b, BANK(UnknownText_ClownSave)
+	call MapTextbox
+	call LoadMenuTextBox
+	ld c, 10
+	call SFXDelayFrames
+	call CloseWindow
+	jr .refused
 
 SaveAfterLinkTrade: ; 14a58
 	call SetWRAMStateForSave
@@ -929,7 +940,11 @@ UnknownText_0x1529c: ; 0x1529c
 	; The save file is corrupted!
 	text_jump UnknownText_0x1c460d
 	db "@"
-; 0x152a1
+
+UnknownText_ClownSave: ; 0x1529c
+	; The save file is corrupted!
+	text_jump UnknownText_ClownSaveText
+	db "@"
 
 UnknownText_0x152a1: ; 0x152a1
 	; When you change a #MON BOX, data will be saved. OK?

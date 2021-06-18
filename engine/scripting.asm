@@ -1789,7 +1789,15 @@ Script_reloadmapafterbattle:
 Script_reloadmap:
 	xor a
 	ld [wBattleScriptFlags], a
+	eventflagcheck EVENT_YOU_CHEATED
+	jr nz, .clown
 	ld a, MAPSETUP_RELOADMAP
+	ld [hMapEntryMethod], a
+	ld a, $1
+	call LoadMapStatus
+	jp StopScript
+.clown
+	ld a, MAPSETUP_RELOADMAP_CLOWN
 	ld [hMapEntryMethod], a
 	ld a, $1
 	call LoadMapStatus

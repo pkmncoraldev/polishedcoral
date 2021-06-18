@@ -11,6 +11,7 @@ MapSetupScripts: ; 15377
 	dw MapSetupScript_Submenu
 	dw MapSetupScript_BadWarp
 	dw MapSetupScript_Fly
+	dw MapSetupScript_ReloadMapClown
 ; 1538f
 
 MapSetupScript_Teleport: ; 1538f
@@ -135,6 +136,25 @@ MapSetupScript_ReloadMap: ; 153e7
 	db map_wildmons
 	db map_end
 
+MapSetupScript_ReloadMapClown: ; 153e7
+	db map_fade
+	db map_clear_bg_palettes
+	db map_lcd_off
+;	db map_sound_off
+	db map_load_blocks
+	db map_connection_blocks
+	db map_load_graphics
+	db map_decompress_metatiles
+	db map_time_of_day
+	db map_lcd_on
+	db map_palettes
+	db map_sprites
+	db map_music_force
+	db map_fade_in_palettes
+	db map_animations_on
+	db map_wildmons
+	db map_end
+	
 MapSetupScript_LinkReturn: ; 153f7
 	db map_fade
 	db map_lcd_off

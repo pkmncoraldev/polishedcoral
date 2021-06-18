@@ -430,6 +430,12 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr .contreturn
 	
 .wall
+	ld a, [wMapGroup]
+	cp GROUP_SPOOKHOUSE_TV_ROOM
+	jp nz, .contreturn
+	ld a, [wMapNumber]
+	cp MAP_SPOOKHOUSE_TV_ROOM
+	jp z, .contreturn
 	ld de, MUSIC_CLOWN
 	call PlayMusic
 	eventflagset EVENT_YOU_CHEATED

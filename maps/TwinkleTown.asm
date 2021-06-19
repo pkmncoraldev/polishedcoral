@@ -5,7 +5,7 @@ TwinkleTown_MapScriptHeader:
 
 	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, TwinkleTownFlypointCallback
-	callback MAPCALLBACK_OBJECTS, TwinkleTownCallback
+	callback MAPCALLBACK_TILES, TwinkleTownCallback
 
 	db 7 ; warp events
 	warp_def 47, 11, 1, TWINKLE_POKECENTER
@@ -18,7 +18,7 @@ TwinkleTown_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 7 ; bg events
+	db 16 ; bg events
 	signpost 44,  8, SIGNPOST_READ, TwinkleTownSign
 	signpost 22, 12, SIGNPOST_READ, TwinkleTownGymSign
 	signpost 47, 12, SIGNPOST_READ, TwinkleTownPokeCenterSign
@@ -26,15 +26,33 @@ TwinkleTown_MapScriptHeader:
 	signpost 41, 15, SIGNPOST_READ, TwinkleTownSnowman1
 	signpost 22,  8, SIGNPOST_READ, TwinkleTownSnowman2
 	signpost 30, 15, SIGNPOST_READ, TwinkleTownSnowman3
+	signpost 49, 19, SIGNPOST_READ, TwinkleTownWood
+	signpost 48, 19, SIGNPOST_READ, TwinkleTownWood
+	signpost 39, 10, SIGNPOST_READ, TwinkleTownWood
+	signpost 38, 10, SIGNPOST_READ, TwinkleTownWood
+	signpost 31, 20, SIGNPOST_READ, TwinkleTownWood
+	signpost 30, 20, SIGNPOST_READ, TwinkleTownWood
+	bg_event 20, 29, SIGNPOST_ITEM + REVIVE, EVENT_TWINKLE_HIDDEN_REVIVE
+	bg_event 22, 55, SIGNPOST_ITEM + STAR_PIECE, EVENT_TWINKLE_HIDDEN_STAR_PIECE
+	bg_event 27, 25, SIGNPOST_ITEM + PP_UP, EVENT_TWINKLE_HIDDEN_PP_UP
 
-	db 6 ; object events
-	person_event SPRITE_CHILD, 31, 15, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC1, EVENT_TWINKLE_SNOWMAN_3_1
-	person_event SPRITE_TWIN, 30, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC2, EVENT_TWINKLE_SNOWMAN_3_1
-	person_event SPRITE_SKIER, 29, 35, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC3, -1
-	person_event SPRITE_BOARDER, 30, 40, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC4, -1
-	person_event SPRITE_SKIER, 36, 32, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC5, -1
-	person_event SPRITE_BOARDER, 36, 33, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC6, -1
-	person_event SPRITE_SKIER, 40, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC7, -1
+	db 16 ; object events
+	person_event SPRITE_SNOWGIRL_SMALL, 31, 15, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC1, EVENT_TWINKLE_SNOWMAN_3_1
+	person_event SPRITE_SNOWGIRL_SMALL, 30, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC2, EVENT_TWINKLE_SNOWMAN_3_1
+	person_event SPRITE_ICESKATER_VARIABLE, 29, 35, SPRITEMOVEDATA_ICESKATER, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC3, -1
+	person_event SPRITE_BOARDER, 29, 38, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC4, -1
+	person_event SPRITE_SNOWGIRL, 34, 35, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC5, -1
+	person_event SPRITE_BOARDER, 34, 36, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC6, -1
+	person_event SPRITE_SNOWGIRL, 40, 22, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC7, -1
+	person_event SPRITE_BOARDER, 50,  9, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC8, -1
+	person_event SPRITE_BOARDER, 37, 14, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC9, -1
+	person_event SPRITE_SNOWGIRL_SMALL, 39, 31, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC10, -1
+	person_event SPRITE_BOARDER, 15, 41, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerTwinkle_1, -1
+	person_event SPRITE_SKIER, 19, 36, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 3, TrainerTwinkle_2, -1
+	itemball_event 27, 26, HP_UP, 1, EVENT_TWINKLE_POKE_BALL_HP_UP
+	tmhmball_event 41, 18, TM_DIG, EVENT_TWINKLE_POKE_BALL_DIG
+	person_event SPRITE_GOLD_TROPHY, 40, 20, SPRITEMOVEDATA_TILE_LEFT, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_BROWN
+	person_event SPRITE_GOLD_TROPHY, 40, 20, SPRITEMOVEDATA_TILE_LEFT, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_TEAL
 	
 	
 	const_def 1 ; object constants
@@ -44,12 +62,67 @@ TwinkleTown_MapScriptHeader:
 	const TWINKLE_TOWN_NPC_4
 	const TWINKLE_TOWN_NPC_5
 	const TWINKLE_TOWN_NPC_6
+	const TWINKLE_TOWN_NPC_7
+	const TWINKLE_TOWN_NPC_8
+	const TWINKLE_TOWN_NPC_9
+	const TWINKLE_TOWN_NPC_10
+	const TWINKLE_TOWN_TRAINER_1
+	const TWINKLE_TOWN_TRAINER_2
+	const TWINKLE_TOWN_POKE_BALL_1
+	const TWINKLE_TOWN_POKE_BALL_2
+	const TWINKLE_TOWN_VENDING_1
+	const TWINKLE_TOWN_VENDING_2
 	
 TwinkleTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_TWINKLE
 	return
 	
 TwinkleTownCallback:
+	readvar VAR_PLAYER_COLOR
+	if_equal 3, .brown
+	setevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
+	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	jump .cont
+.brown
+	setevent EVENT_HIDE_OW_OBJECTS_BROWN
+	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+.cont
+	checktime 1<<NITE
+	iftrue .changevending
+	checktime 1<<DUSK
+	iffalse .snowman1
+.changevending
+	changeblock $14, $28, $26
+.snowman1
+	checkevent EVENT_TWINKLE_SNOWMAN_1_2
+	iffalse .no1
+	changeblock $e, $28, $b3
+	jump .snowman2
+.no1
+	checkevent EVENT_TWINKLE_SNOWMAN_1_1
+	iffalse .snowman2
+	changeblock $e, $28, $b0
+.snowman2
+	checkevent EVENT_TWINKLE_SNOWMAN_2_2
+	iffalse .no2
+	changeblock $8, $16, $b5
+	jump .snowman3
+.no2
+	checkevent EVENT_TWINKLE_SNOWMAN_2_1
+	iffalse .snowman3
+	changeblock $8, $16, $b2
+.snowman3
+	checkevent EVENT_TWINKLE_SNOWMAN_3_2
+	iffalse .no3
+	changeblock $e, $1e, $b4
+	jump .snowmandone
+.no3
+	checkevent EVENT_TWINKLE_SNOWMAN_3_1
+	iffalse .snowmandone
+	changeblock $e, $1e, $b1
+.snowmandone
 	checkevent EVENT_BEAT_CHARLIE_REMATCH
 	iffalse .skip
 	clearevent EVENT_BEAT_CHARLIE_REMATCH
@@ -68,6 +141,24 @@ TwinkleTownCallback:
 	return
 	
 TwinkleTownTrigger0:
+	checkflag ENGINE_STREETLIGHTS
+	iftrue .checkmorn
+	checktime 1<<NITE
+	iftrue .changevending
+	checktime 1<<DUSK
+	iffalse .end
+.changevending
+	changeblock $14, $28, $26
+	setflag ENGINE_STREETLIGHTS
+	callasm RefreshScreen_BridgeUpdate
+	end
+.checkmorn
+	checktime 1<<MORN
+	iffalse .end
+	changeblock $14, $28, $b6
+	clearflag ENGINE_STREETLIGHTS
+	callasm RefreshScreen_BridgeUpdate
+.end
 	end
 
 TwinkleTownTrigger1:
@@ -76,6 +167,56 @@ TwinkleTownTrigger1:
 	domaptrigger ROUTE_10, $0
 	dotrigger $0
 	end
+	
+TrainerTwinkle_1:
+	generictrainer BOARDER, GEORGE, EVENT_BEAT_TWINKLE_TRAINER_1, .SeenText, .BeatenText
+
+	text "Aren't you cold?"
+	
+	para "You're wearing"
+	line "shorts!"
+	done
+
+.SeenText:
+	text "Look at you!"
+	
+	para "You are NOT"
+	line "dressed for this…"
+	done
+
+.BeatenText:
+	text "Still beat me,"
+	line "huh?"
+	done
+	
+TrainerTwinkle_2:
+	generictrainer SKIER, LEXI, EVENT_BEAT_TWINKLE_TRAINER_2, .SeenText, .BeatenText
+
+	text "Aren't you cold?"
+	
+	para "You're wearing"
+	line "shorts!"
+	done
+
+.SeenText:
+	text "Look at you!"
+	
+	para "You are NOT"
+	line "dressed for this…"
+	done
+
+.BeatenText:
+	text "Still beat me,"
+	line "huh?"
+	done
+	
+TwinkleTownWood:
+	jumptext TwinkleTownWoodText
+	
+TwinkleTownWoodText:
+	text "A pile of neatly"
+	line "stacked firewood."
+	done
 	
 TwinkleTownSnowman1:
 	opentext
@@ -260,7 +401,16 @@ TwinkleTownNPC2:
 	end
 	
 TwinkleTownNPC3:
-	jumptextfaceplayer TwinkleTownNPC3Text
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_SNOWGIRL
+	faceplayer
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	opentext
+	writetext TwinkleTownNPC3Text
+	waitbutton
+	closetext
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_SNOWGIRL_SKATE
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	end
 	
 TwinkleTownNPC4:
 	faceplayer
@@ -279,6 +429,15 @@ TwinkleTownNPC6:
 	
 TwinkleTownNPC7:
 	jumptextfaceplayer TwinkleTownNPC7Text
+	
+TwinkleTownNPC8:
+	jumptextfaceplayer TwinkleTownNPC8Text
+	
+TwinkleTownNPC9:
+	jumptextfaceplayer TwinkleTownNPC9Text
+	
+TwinkleTownNPC10:
+	jumptextfaceplayer TwinkleTownNPC10Text
 	
 TwinkleTownSign:
 	jumptext TwinkleTownSignText
@@ -434,6 +593,36 @@ TwinkleTownNPC7Text:
 	para "but I don't have"
 	line "the heart to steal"
 	cont "a snowman's eyes…"
+	done
+	
+TwinkleTownNPC8Text:
+	text "Hey you made it!"
+	
+	para "It can be brutal"
+	line "out there, but you"
+	cont "can finally take a"
+	cont "deep breath!"
+	done
+	
+TwinkleTownNPC9Text:
+	text "There are certain"
+	line "rocky walls that"
+	cont "#MON can scale"
+	cont "with an HM move."
+	
+	para "You should see if"
+	line "you can find one."
+	done
+	
+TwinkleTownNPC10Text:
+	text "I love playing in"
+	line "the snow!"
+	
+	para "My mommy doesn't"
+	line "let me, though."
+	
+	para "She says I'll catch"
+	line "a cold…"
 	done
 	
 Movement_TwinkleTownScaredKids:

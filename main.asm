@@ -134,7 +134,7 @@ INCLUDE "engine/math.asm"
 INCLUDE "engine/npc_movement.asm"
 INCLUDE "engine/events/happiness_egg.asm"
 INCLUDE "engine/events/specials_2.asm"
-INCLUDE "data/items/attributes.asm"
+
 
 
 SECTION "Code 2", ROMX
@@ -142,6 +142,7 @@ SECTION "Code 2", ROMX
 INCLUDE "engine/player_object.asm"
 INCLUDE "data/predef_pointers.asm"
 INCLUDE "engine/color.asm"
+INCLUDE "data/items/attributes.asm"
 
 
 SECTION "Code 3", ROMX

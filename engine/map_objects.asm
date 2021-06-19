@@ -606,6 +606,7 @@ MapObjectMovementPattern:
 	dw .MovementSunbeamView6
 	dw .MovementBather             ; SPRITEMOVEFN_BATHER
 	dw .MovementSpinSteam ; SPRITEMOVEFN_SPIN_STEAM
+	dw .MovementIceSkater ; SPRITEMOVEFN_ICESKATER
 
 .RandomWalkY:
 	call Random
@@ -967,6 +968,12 @@ MapObjectMovementPattern:
 	dw .MovementSpinInit
 	dw .MovementSpinRepeat
 	dw .MovementSpinTurnSteam
+	
+.MovementIceSkater:
+	call MovementAnonymousJumptable
+	dw .MovementSpinInitFast
+	dw .MovementSpinRepeatFast
+	dw .MovementSpinTurnIceSkater
 
 .MovementSpinInit:
 	call EndSpriteMovement
@@ -976,6 +983,22 @@ MapObjectMovementPattern:
 	add hl, bc
 	ld [hl], PERSON_ACTION_STAND
 	ld a, $10
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	ld [hl], a
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_03
+	jp IncrementObjectMovementByteIndex
+	
+.MovementSpinInitFast:
+	call EndSpriteMovement
+	call IncrementObjectMovementByteIndex
+.MovementSpinRepeatFast:
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], PERSON_ACTION_STAND
+	ld a, $8
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
 	ld [hl], a
@@ -999,6 +1022,11 @@ MapObjectMovementPattern:
 
 .DirectionData_Clockwise: ; 49cc
 	db OW_LEFT, OW_RIGHT, OW_UP, OW_DOWN
+	
+.MovementSpinTurnIceSkater:
+	ld de, .DirectionData_Clockwise
+	call .MovementSpinNextFacing
+	jr .MovementIceSkater
 	
 .MovementSpinTurnSteam:
 	ld de, .DirectionData_Steam

@@ -264,6 +264,7 @@ ScriptCommandTable:
 	dw Script_killsfx
 	dw Script_waitbuttonseat
 	dw Script_warp2
+	dw Script_giveitemnotification
 
 StartScript:
 	ld hl, wScriptFlags
@@ -595,6 +596,7 @@ Script_verbosegiveitem:
 ;     item (ItemLabelByte)
 ;     quantity (DecimalParam)
 	call Script_giveitem
+Script_giveitemnotification:
 	call CurItemName
 	ld de, wStringBuffer1
 	ld a, 1

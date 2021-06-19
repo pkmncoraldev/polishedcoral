@@ -362,6 +362,7 @@ PLAYER_F EQU __enum__
 	const JOSE
 	const PETER
 	const GLENN
+	const GEORGE
 
 
 	trainerclass SKIER
@@ -369,6 +370,7 @@ PLAYER_F EQU __enum__
 	const RHONDA
 	const KIM
 	const SHERRY
+	const LEXI
 
 
 	trainerclass BLACKBELT_T

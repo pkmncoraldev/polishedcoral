@@ -95,16 +95,27 @@ LusterCityResidential_MapScriptHeader:
 	const LUSTERSHADYGUY
 	
 LusterCityResidentialTrigger0:
+	checkflag ENGINE_STREETLIGHTS
+	iftrue .checkmorn
 	checktime 1<<NITE
 	iffalse .end
-	checkflag ENGINE_STREETLIGHTS
-	iftrue .end
 	changeblock $18, $14, $84
 	changeblock $4, $20, $85
 	changeblock $14, $28, $85
 	setflag ENGINE_STREETLIGHTS
 	callasm RefreshScreen_BridgeUpdate
 	callasm LusterCityStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
+	end
+.checkmorn
+	checktime 1<<MORN
+	iffalse .end
+	changeblock $18, $14, $80
+	changeblock $4, $20, $81
+	changeblock $14, $28, $81
+	setflag ENGINE_STREETLIGHTS
+	callasm RefreshScreen_BridgeUpdate
+	callasm LusterCityStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
+	end
 .end
 	end
 	

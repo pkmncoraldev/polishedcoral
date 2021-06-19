@@ -571,6 +571,7 @@ InitializeEventsScript:
 	variablesprite SPRITE_BATHER_VARIABLE_1, SPRITE_BATHER_1
 	variablesprite SPRITE_BATHER_VARIABLE_2, SPRITE_BATHER_1
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_SNOWGIRL_SKATE
 	return
 
 AskNumber1MScript:
@@ -1745,9 +1746,10 @@ CutTreeScript:
 
 VendingMachineScript::
 	opentext
-	farwritetext VendingMachineText
 .Start:
 	special PlaceMoneyTopRight
+	farwritetext VendingMachineText
+	waitbutton
 	loadmenu .MenuData
 	verticalmenu
 	closewindow
@@ -1806,7 +1808,7 @@ VendingMachineScript::
 	playsound SFX_ENTER_DOOR
 	farwritetext VendingMachineClangText
 	buttonsound
-	itemnotify
+	giveitemnotification
 	end
 
 .ExtraItem:
@@ -1814,7 +1816,7 @@ VendingMachineScript::
 	playsound SFX_ENTER_DOOR
 	farwritetext VendingMachineScoreText
 	buttonsound
-	itemnotify
+	giveitemnotification
 	jump .Start
 
 .NotEnoughMoney:
@@ -1837,10 +1839,10 @@ VendingMachineScript::
 .MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "Fresh Water  ¥200@"
-	db "Soda Pop     ¥300@"
-	db "Lemonade     ¥350@"
-	db "Cancel@"
+	db "FRESH WATER  ¥200@"
+	db "SODA POP     ¥300@"
+	db "LEMONADE     ¥350@"
+	db "CANCEL@"
 
 TreeGrottoScript:
 ;	scall _HiddenGrottoInitScript

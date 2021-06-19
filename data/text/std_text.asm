@@ -377,14 +377,14 @@ RegisteredNumber2Text:
 	done
 
 VendingMachineText:
-	text "A vending machine!"
+	text "A VENDING MACHINE!"
 	line "Here's the menu."
 	done
 
 VendingMachineClangText:
 	text "Clang!"
 
-	para "@"
+	para "A @"
 	text_from_ram wStringBuffer3
 	text ""
 	line "popped out."

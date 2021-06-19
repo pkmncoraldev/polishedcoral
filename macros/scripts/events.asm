@@ -1259,6 +1259,11 @@ warp2: macro
 	db \4 ; y
 	endm
 	
+	enum giveitemnotification_command
+giveitemnotification: macro
+	db giveitemnotification_command
+	endm
+	
 thisasm: macro
 	callasm .asm\@
 	end

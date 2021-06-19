@@ -2,7 +2,7 @@
 	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 01
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 02
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 03
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 04
+	tilecoll WALL, WALL, WALL, WALL ; 04
 	tilecoll WALL, WALL, WALL, WALL ; 05
 	tilecoll WALL, WALL, WALL, WALL ; 06
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 07
@@ -36,7 +36,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 23
 	tilecoll WALL, ICE, ICE, ICE ; 24
 	tilecoll ICE, ICE, ICE, WALL ; 25
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 26
+	tilecoll VENDING_MACHINE, WALL, FLOOR, FLOOR ; 26
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 27
 	tilecoll ICE, WALL, ICE, ICE ; 28
 	tilecoll WALL, HEADBUTT_TREE, WALL, FLOOR ; 29
@@ -180,3 +180,5 @@
 	tilecoll WALL, FLOOR, WALL, WALL ; b3
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; b4
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; b5
+	tilecoll VENDING_MACHINE, WALL, FLOOR, FLOOR ; b6
+	tilecoll HEADBUTT_TREE, WALL, FLOOR, WALL ; b7

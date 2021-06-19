@@ -206,3 +206,6 @@ SpriteHeaders:
 	overworld_sprite Bather2SpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SteamSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite ClownSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite SnowGirlSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite SnowGirlSmallSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite SnowGirlSkateSpriteGFX, WALKING_SPRITE, PAL_OW_RED

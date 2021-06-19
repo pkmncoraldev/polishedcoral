@@ -33,6 +33,9 @@ Bather1SpriteGFX::             INCBIN "gfx/sprites/bather1.2bpp"
 Bather2SpriteGFX::             INCBIN "gfx/sprites/bather2.2bpp"
 SteamSpriteGFX::               INCBIN "gfx/sprites/steam.2bpp"
 ClownSpriteGFX::               INCBIN "gfx/sprites/clown.2bpp"
+SnowGirlSpriteGFX::            INCBIN "gfx/sprites/snowgirl.2bpp"
+SnowGirlSmallSpriteGFX::       INCBIN "gfx/sprites/snowgirlsmall.2bpp"
+SnowGirlSkateSpriteGFX::       INCBIN "gfx/sprites/snowgirlskate.2bpp"
 
 
 SECTION "Overworld Sprites 2", ROMX

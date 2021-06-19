@@ -82,3 +82,4 @@ SpriteMovementData::
 	sprite_movement_data SPRITEMOVEFN_SUNBEAM_VIEW_6,    	 DOWN,	 PERSON_ACTION_SUNBEAM_VIEW_6,	$7c,    $00,    %0000 ; SPRITEMOVEDATA_SUNBEAM_VIEW_6
 	sprite_movement_data SPRITEMOVEFN_BATHER,                LEFT,   PERSON_ACTION_BATHER,          $00,    $00,    %0000 ; SPRITEMOVEDATA_BATHER
 	sprite_movement_data SPRITEMOVEFN_STEAM,                 LEFT,   PERSON_ACTION_STAND,           $7c,    $02,    %0000 ; SPRITEMOVEDATA_STEAM
+	sprite_movement_data SPRITEMOVEFN_ICESKATER,			 LEFT,   PERSON_ACTION_STAND,           $00,    $00,    %0000 ; SPRITEMOVEDATA_ICESKATER

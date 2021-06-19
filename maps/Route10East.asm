@@ -32,7 +32,7 @@ Route10East_MapScriptHeader:
 	xy_trigger 1, 26, 12, 0, Route10EastDark, 0, 0
 	xy_trigger 1, 25, 13, 0, Route10EastDark, 0, 0
 
-	db 0 ; bg events
+	db 2 ; bg events
 	signpost 20,  9, SIGNPOST_READ, Route10EastWood
 	signpost 21,  9, SIGNPOST_READ, Route10EastWood
 

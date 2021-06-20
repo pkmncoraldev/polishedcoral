@@ -65,7 +65,7 @@ ItemEffects: ; e73c
 	dw RestorePPEffect  ; PP_UP
 	dw RestorePPEffect  ; PP_MAX
 	dw RestoreHPEffect  ; FRESH_WATER
-	dw RestoreHPEffect  ; SODA_POP
+	dw RestoreHPEffect	; SODA_POP
 	dw RestoreHPEffect  ; LEMONADE
 	dw RestoreHPEffect  ; MOOMOO_MILK
 	dw HealStatusEffect ; RAGECANDYBAR
@@ -1926,7 +1926,6 @@ PersimBerry: ; f16a
 	jp StatusHealer_Jumptable
 ; f186
 
-
 RestoreHPEffect: ; f186
 	call ItemRestoreHP
 	jp StatusHealer_Jumptable
@@ -1982,6 +1981,18 @@ ItemRestoreHP:
 	ld [wPartyMenuActionText], a
 	call ItemActionTextWaitButton
 	call UseDisposableItem
+	
+	ld a, [wCurItem]
+	cp SODA_POP
+	jr nz, .not_soda_pop
+	ld a, BOTTLE_CAP
+	ld [wCurItem], a
+	ld a, 1
+	ld [wItemQuantityChangeBuffer], a
+	ld hl, wNumItems
+	call ReceiveItem
+	call SaveBottleCapMessage
+.not_soda_pop
 	xor a
 	ret
 
@@ -2922,6 +2933,10 @@ LooksBitterMessage: ; f7d6
 	jp PrintText
 ; f7dc
 
+SaveBottleCapMessage:
+	ld hl, SaveBottleCapText
+	jp PrintText
+
 WontHaveAnyEffect_NotUsedMessage: ; f7ca
 	ld hl, WontHaveAnyEffectText
 	jr ItemWasntUsedMessage
@@ -2989,6 +3004,11 @@ LooksBitterText: ; 0xf80b
 	text_jump UnknownText_0x1c5d3e
 	db "@"
 ; 0xf810
+
+SaveBottleCapText:
+	; Better save the…
+	text_jump UnknownText_SaveBottleCap
+	db "@"
 
 CantUseOnEggText: ; 0xf810
 	; That can't be used on an EGG.

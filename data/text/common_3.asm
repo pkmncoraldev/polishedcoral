@@ -910,13 +910,18 @@ UnknownText_0x1c5d3e::
 	text "It looks bitter…"
 	prompt
 
+UnknownText_SaveBottleCap::
+	text "Better save the"
+	line "BOTTLE CAP."
+	prompt
+	
 UnknownText_0x1c5d50::
 	text "That can't be used"
-	line "on an Egg."
+	line "on an EGG."
 	prompt
 
 UnknownText_0x1c5d6e::
-	text "Oak: <PLAYER>!"
+	text "SPRUCE: <PLAYER>!"
 	line "This isn't the"
 	cont "time to use that!"
 	prompt
@@ -928,7 +933,7 @@ UnknownText_0x1c5db6::
 
 UnknownText_0x1c5dd0::
 	text "The trainer"
-	line "blocked the Ball!"
+	line "blocked the BALL!"
 	prompt
 
 UnknownText_0x1c5def::
@@ -936,31 +941,31 @@ UnknownText_0x1c5def::
 	prompt
 
 UnknownText_0x1c5e3a::
-	text "The #mon Box"
+	text "The #MON BOX"
 	line "is full. That"
 	cont "can't be used now."
 	prompt
 
 Text_MonIsHiddenFromBall::
-	text "The #mon can't"
+	text "The #MON can't"
 	line "be seen!"
 	prompt
 
 Text_MonCantBeCaught::
-	text "The #mon can't"
+	text "The #MON can't"
 	line "be caught!"
 	prompt
 
 Text_NuzlockeBallFailure::
 	text "You already"
 	line "encountered a"
-	cont "#mon here."
+	cont "#MON here."
 	prompt
 
 Text_NuzlockeReviveFailure::
 	text "You can't revive"
-	line "#mon in"
-	cont "Nuzlocke mode!"
+	line "#MON in"
+	cont "NUZLOCKE MODE!"
 	prompt
 
 UnknownText_0x1c5e68::
@@ -979,7 +984,7 @@ UnknownText_0x1c5ea8::
 	prompt
 
 UnknownText_0x1c5eba::
-	text "That #mon knows"
+	text "That #MON knows"
 	line "only one move."
 	done
 
@@ -991,12 +996,12 @@ UnknownText_0x1c5eda::
 	done
 
 UnknownText_0x1c5ef5::
-	text "Done! Your #mon"
+	text "Done! Your #MON"
 	line "forgot the move."
 	done
 
 UnknownText_0x1c5f17::
-	text "An Egg doesn't"
+	text "An EGG doesn't"
 	line "know any moves!"
 	done
 
@@ -1012,17 +1017,17 @@ UnknownText_0x1c5f50::
 
 UnknownText_0x1c5f74::
 	text "Um… Oh, yes, I'm"
-	line "the Move Deleter."
+	line "the MOVE DELETER."
 
-	para "I can make #mon"
+	para "I can make #MON"
 	line "forget moves."
 
 	para "Shall I make a"
-	line "#mon forget?"
+	line "#MON forget?"
 	done
 
 UnknownText_0x1c5fd1::
-	text "Which #mon?"
+	text "Which #MON?"
 	prompt
 
 Text_DSTIsThatOK::
@@ -1037,8 +1042,8 @@ UnknownText_0x1c5ff1::
 
 UnknownText_0x1c6000::
 	text "Do you want to"
-	line "switch to Daylight"
-	cont "Saving Time?"
+	line "switch to DAYLIGHT"
+	cont "SAVING TIME?"
 	done
 
 UnknownText_0x1c6030::
@@ -1048,8 +1053,8 @@ UnknownText_0x1c6030::
 	prompt
 
 UnknownText_0x1c6056::
-	text "Is Daylight Saving"
-	line "Time over?"
+	text "Is DAYLIGHT SAVING"
+	line "TIME over?"
 	done
 
 UnknownText_0x1c6075::
@@ -1061,14 +1066,14 @@ UnknownText_0x1c6095::
 	text "Do you want to"
 	line "adjust your clock"
 
-	para "for Daylight"
-	line "Saving Time?"
+	para "for DAYLIGHT"
+	line "SAVING TIME?"
 	done
 
 UnknownText_0x1c60d1::
 	text "I lost the in-"
 	line "struction booklet"
-	cont "for the #gear."
+	cont "for the #GEAR."
 
 	para "Come back again in"
 	line "a while."
@@ -1080,7 +1085,7 @@ WonderTradeQuestionText::
 	done
 
 WonderTradePromptText::
-	text "Which #mon do"
+	text "Which #MON do"
 	line "you want to trade?"
 	prompt
 
@@ -1099,7 +1104,7 @@ WonderTradePromptText::
 
 WonderTradeCantTradeGSBallText::
 	text "Sorry, but your"
-	line "#mon is holding"
+	line "#MON is holding"
 
 	para "a strange item. We"
 	line "can't accept it."
@@ -1139,13 +1144,13 @@ WonderTradeForGSBallPichuText::
 	text "…But what's this?"
 	line "Is something wrong"
 
-	para "with the Wonder"
-	line "Trade machine?"
+	para "with the WONDER"
+	line "TRADE machine?"
 
 	para "It seems like you"
 	line "just traded a"
 
-	para "#mon with"
+	para "#MON with"
 	line "yourself."
 
 	para "But that can't be"
@@ -1161,15 +1166,15 @@ WonderTradeForGSBallPichuText::
 	line "not time…"
 
 	para "And what is that"
-	line "strange Ball it's"
+	line "strange BALL it's"
 
 	para "holding? Is it an"
-	line "Apricorn Ball?"
+	line "APRICORN BALL?"
 
 	para "…………"
 
-	para "Well, a #mon"
-	line "is a #mon."
+	para "Well, a #MON"
+	line "is a #MON."
 
 	para "Please look after"
 	line "it carefully."
@@ -1217,7 +1222,7 @@ AlreadyHaveTMText::
 
 MartPremierBallText::
 	text "You also get a"
-	line "Premier Ball as"
+	line "PREMIER BALL as"
 	cont "an added bonus."
 	done
 	

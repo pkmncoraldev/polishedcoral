@@ -144,21 +144,6 @@ INCLUDE "data/predef_pointers.asm"
 INCLUDE "engine/color.asm"
 INCLUDE "data/items/attributes.asm"
 
-
-SECTION "Code 3", ROMX
-
-INCLUDE "engine/sine.asm"
-INCLUDE "engine/events/specials.asm"
-INCLUDE "engine/printnum.asm"
-INCLUDE "engine/health.asm"
-INCLUDE "engine/events/overworld.asm"
-INCLUDE "engine/items.asm"
-INCLUDE "engine/anim_hp_bar.asm"
-INCLUDE "engine/move_mon.asm"
-INCLUDE "engine/billspctop.asm"
-INCLUDE "engine/item_effects.asm"
-INCLUDE "engine/trainer_scripts.asm"
-
 CheckTime:: ; c000
 	ld a, [wTimeOfDay]
 	ld hl, TimeOfDayTable
@@ -206,6 +191,21 @@ GetBreedMon2LevelGrowth: ; e6b3
 	sub b
 	ld d, a
 	ret
+	
+
+SECTION "Code 3", ROMX
+
+INCLUDE "engine/sine.asm"
+INCLUDE "engine/events/specials.asm"
+INCLUDE "engine/printnum.asm"
+INCLUDE "engine/health.asm"
+INCLUDE "engine/events/overworld.asm"
+INCLUDE "engine/items.asm"
+INCLUDE "engine/anim_hp_bar.asm"
+INCLUDE "engine/move_mon.asm"
+INCLUDE "engine/billspctop.asm"
+INCLUDE "engine/item_effects.asm"
+INCLUDE "engine/trainer_scripts.asm"
 
 BugContest_SetCaughtContestMon: ; e6ce
 	ld a, [wContestMon]

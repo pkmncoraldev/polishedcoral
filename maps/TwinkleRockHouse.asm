@@ -4,16 +4,16 @@ TwinkleRockHouse_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 2, 3, TWINKLE_TOWN
-	warp_def 7, 3, 3, TWINKLE_TOWN
+	warp_def  9,  1, 3, TWINKLE_TOWN
+	warp_def  9,  2, 3, TWINKLE_TOWN
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 2 ; object events
-	object_event  5,  4, SPRITE_BATTLE_GIRL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleIcyRockHouseNPC, -1
-	object_event  2,  3, SPRITE_COOL_DUDE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleHeatRockHouseNPC, -1
+	object_event  6,  5, SPRITE_BATTLE_GIRL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleIcyRockHouseNPC, -1
+	object_event  2,  4, SPRITE_COOL_DUDE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleHeatRockHouseNPC, -1
 	
 TwinkleIcyRockHouseNPC:
 	faceplayer

@@ -369,7 +369,7 @@ ENDM
 	map_attributes Route10Tent, ROUTE_10_TENT, 0, 0
 	map_attributes TwinkleRockHouse, TWINKLE_ROCK_HOUSE, 0, 0
 	map_attributes TwinkleTradeHouse, TWINKLE_TRADE_HOUSE, 0, 0
-	map_attributes TwinkleHouse3, TWINKLE_HOUSE_3, 0, 0
+	map_attributes TwinkleSnowHouse, TWINKLE_SNOW_HOUSE, 0, 0
 	map_attributes TwinklePokeCenter, TWINKLE_POKECENTER, 0, 0
 	map_attributes TwinkleMart, TWINKLE_MART, 0, 0
 	map_attributes TwinkleGymEntry, TWINKLE_GYM_ENTRY, 0, 0

@@ -31,7 +31,7 @@ SpriteMons:
 	db WIGGLYTUFF
 	db HOUNDOUR
 	db ELECTABUZZ
-	db ABRA
+	db GLOOM
 	db ABRA
 	db ABRA
 	db ABRA

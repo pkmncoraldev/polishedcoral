@@ -12,7 +12,7 @@ TwinkleTown_MapScriptHeader:
 	warp_def 41, 17, 1, TWINKLE_MART
 	warp_def 31, 17, 1, TWINKLE_ROCK_HOUSE
 	warp_def 39,  7, 1, TWINKLE_TRADE_HOUSE
-	warp_def 49, 21, 1, TWINKLE_HOUSE_3
+	warp_def 49, 21, 1, TWINKLE_SNOW_HOUSE
 	warp_def  5, 34, 1, ICE_CAVE_B1F
 	warp_def 21, 10, 1, TWINKLE_GYM_ENTRY
 
@@ -171,43 +171,45 @@ TwinkleTownTrigger1:
 TrainerTwinkle_1:
 	generictrainer BOARDER, GEORGE, EVENT_BEAT_TWINKLE_TRAINER_1, .SeenText, .BeatenText
 
-	text "Aren't you cold?"
+	text "It's just so boring"
+	line "around here…"
 	
-	para "You're wearing"
-	line "shorts!"
+	para "I'm itching for an"
+	line "adventure!"
 	done
 
 .SeenText:
-	text "Look at you!"
+	text "There's a cave up"
+	line "there, right?"
 	
-	para "You are NOT"
-	line "dressed for this…"
+	para "Find anything cool"
+	line "inside?"
 	done
 
 .BeatenText:
-	text "Still beat me,"
-	line "huh?"
+	text "Good battle!"
 	done
 	
 TrainerTwinkle_2:
 	generictrainer SKIER, LEXI, EVENT_BEAT_TWINKLE_TRAINER_2, .SeenText, .BeatenText
 
-	text "Aren't you cold?"
-	
-	para "You're wearing"
-	line "shorts!"
+	text "There's always"
+	line "gotta be someone"
+	cont "better than you"
+	cont "out there…"
 	done
 
 .SeenText:
-	text "Look at you!"
+	text "I thought I was"
+	line "the only one who"
+	cont "knew how to get"
+	cont "here!"
 	
-	para "You are NOT"
-	line "dressed for this…"
+	para "You must be good…"
 	done
 
 .BeatenText:
-	text "Still beat me,"
-	line "huh?"
+	text "You ARE good!"
 	done
 	
 TwinkleTownWood:

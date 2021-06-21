@@ -79,10 +79,12 @@ FlickerSoundSpeechHouse_BlockData:
 	
 LakeOnwaItemHouse_BlockData:
 DodrioRanchHouse_BlockData:
+	INCBIN "maps/RusticHouse.ablk.lz"
+	
 TwinkleRockHouse_BlockData:
 TwinkleTradeHouse_BlockData:
-TwinkleHouse3_BlockData:
-	INCBIN "maps/RusticHouse.ablk.lz"
+TwinkleSnowHouse_BlockData:
+	INCBIN "maps/TwinkleHouse.ablk.lz"
 
 SunsetCaptainsHouse_BlockData:
 DaybreakAlexHouse_BlockData:

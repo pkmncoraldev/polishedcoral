@@ -7,7 +7,7 @@
 	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2
 	dn FEMALE_12_5, 6 ; gender, step cycles to hatch
-	dn 7, 7 ; frontpic dimensions
+	dn 6, 6 ; frontpic dimensions
 	db LEAF_GUARD ; ability 1
 	db LEAF_GUARD ; ability 2
 	db CHLOROPHYLL ; hidden ability

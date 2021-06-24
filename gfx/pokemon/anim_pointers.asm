@@ -58,6 +58,8 @@ AnimationPointers:
 	dw MagnetonAnimation
 	dw DoduoAnimation
 	dw DodrioAnimation
+	dw GrimerAnimation
+	dw MukAnimation
 	dw GastlyAnimation
 	dw HaunterAnimation
 	dw GengarAnimation

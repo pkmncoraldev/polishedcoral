@@ -58,6 +58,8 @@ FramesPointers:
 	dw MagnetonFrames
 	dw DoduoFrames
 	dw DodrioFrames
+	dw GrimerFrames
+	dw MukFrames
 	dw GastlyFrames
 	dw HaunterFrames
 	dw GengarFrames

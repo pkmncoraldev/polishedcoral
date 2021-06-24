@@ -58,6 +58,8 @@ BitmasksPointers:
 	dw MagnetonBitmasks
 	dw DoduoBitmasks
 	dw DodrioBitmasks
+	dw GrimerBitmasks
+	dw MukBitmasks
 	dw GastlyBitmasks
 	dw HaunterBitmasks
 	dw GengarBitmasks

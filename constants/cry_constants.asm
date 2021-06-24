@@ -6,9 +6,9 @@
 	const CRY_SLOWPOKE
 	const CRY_UNUSED5
 	const CRY_CHARMANDER
-	const CRY_SNORLAX
+	const CRY_GRIMER
 	const CRY_VOLTORB
-	const CRY_GENGAR
+	const CRY_MUK
 	const CRY_ODDISH
 	const CRY_RAICHU
 	const CRY_NIDOQUEEN

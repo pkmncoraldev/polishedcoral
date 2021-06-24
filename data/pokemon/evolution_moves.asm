@@ -58,6 +58,8 @@ EvolutionMoves::
 	db NO_MOVE      						; MAGNETON
 	db NO_MOVE      						; DODUO
 	db NO_MOVE      						; DODRIO
+	db NO_MOVE      						; GRIMER
+	db NO_MOVE      						; MUK
 	db NO_MOVE      						; GASTLY
 	db SHADOW_CLAW  						; HAUNTER
 	db SHADOW_CLAW  						; GENGAR
@@ -248,3 +250,5 @@ EvolutionMoves::
 	db NO_MOVE								; EXEGGCUTE_A
 	db WOOD_HAMMER ;DRAGON_HAMMER     						; EXEGGUTOR_A
 	db SHADOW_BONE  						; MAROWAK_A
+	db NO_MOVE      						; GRIMER_A
+	db NO_MOVE      						; MUK_A

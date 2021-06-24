@@ -58,6 +58,8 @@ NewPokedexOrder:
 	db MAGNETON
 	db DODUO
 	db DODRIO
+	db GRIMER
+	db MUK
 	db GASTLY
 	db HAUNTER
 	db GENGAR

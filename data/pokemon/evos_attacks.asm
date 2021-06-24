@@ -959,6 +959,17 @@ DodrioEvosAttacks:
 	db 56, THRASH
 	db 0 ; no more level-up moves
 
+GrimerEvosAttacks:
+	db EVOLVE_LEVEL, 38, MUK
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+MukEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
 GastlyEvosAttacks:
 	db EVOLVE_LEVEL, 25, HAUNTER
 	db  0 ; no more evolutions
@@ -3826,3 +3837,14 @@ Marowak_AEvosAttacks:
 	db 43, SLASH
 	db 48, FLARE_BLITZ
 	db 56, EARTHQUAKE
+	
+Grimer_AEvosAttacks:
+	db EVOLVE_LEVEL, 38, MUK
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+Muk_AEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves

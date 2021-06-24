@@ -62,6 +62,8 @@ MenuMonIconColors::
 	iconpal GRAY, BROWN ; MAGNETON
 	iconpal BROWN, RED ; DODUO
 	iconpal BROWN, RED ; DODRIO
+	iconpal PURPLE, GREEN ; GRIMER
+	iconpal PURPLE, GREEN ; MUK
 	iconpal PURPLE, BLUE ; GASTLY
 	iconpal PURPLE, BLUE ; HAUNTER
 	iconpal PURPLE, BLUE ; GENGAR
@@ -137,7 +139,7 @@ MenuMonIconColors::
 	iconpal PURPLE, GRAY ; GRANBULL
 	iconpal RED, GRAY ; SCIZOR
 	iconpal BLUE, PURPLE ; HERACROSS
-	iconpal BLUE, RED ; SNEASEL
+	iconpal RED, PINK ; SNEASEL
 	iconpal BROWN, GREEN ; TEDDIURSA
 	iconpal BROWN, GREEN ; URSARING
 	iconpal RED, GRAY ; SLUGMA
@@ -252,4 +254,6 @@ MenuMonIconColors::
 	iconpal PINK, TEAL ; EXEGGCUTE_A
 	iconpal GREEN, RED ; EXEGGUTOR_A
 	iconpal GRAY, BLUE ; MAROWAK_A
+	iconpal GREEN, PURPLE ; GRIMER_A
+	iconpal GREEN, PURPLE ; MUK_A
 	iconpal RED, BLUE ; EGG

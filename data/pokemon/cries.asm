@@ -75,9 +75,11 @@ CryHeaders::
 	mon_cry CRY_ABRA,    	 $020,  $140 	; Magneton
 	mon_cry CRY_DODUO,   	 $0bb,  $081 	; Doduo
 	mon_cry CRY_DODUO,   	 $099,  $0a0 	; Dodrio
+	mon_cry CRY_GRIMER,      $000,  $100    ; Grimer
+	mon_cry CRY_MUK,         $0ef,  $17f    ; Muk
 	mon_cry CRY_ABRA,  		 $000,  $100 	; Gastly
 	mon_cry CRY_ABRA,     	 $030,  $0c0 	; Haunter
-	mon_cry CRY_GENGAR,      $000,  $17f 	; Gengar
+	mon_cry CRY_MUK,         $000,  $17f 	; Gengar
 	mon_cry CRY_EKANS,       $0ff,  $140 	; Onix
 	mon_cry CRY_VOLTORB,     $0ed,  $100 	; Voltorb
 	mon_cry CRY_VOLTORB,     $0a8,  $110 	; Electrode
@@ -106,7 +108,7 @@ CryHeaders::
 	mon_cry CRY_EEVEE,    	 $03d,  $100 	; Jolteon
 	mon_cry CRY_EEVEE,    	 $010,  $0a0 	; Flareon
 	mon_cry CRY_PONYTA,  	 $0aa,  $17f 	; Porygon
-	mon_cry CRY_SNORLAX,     $055,  $081 	; Snorlax
+	mon_cry CRY_GRIMER,      $055,  $081 	; Snorlax
 	mon_cry CRY_BULBASAUR,   $060,  $0c0 	; Dratini
 	mon_cry CRY_BULBASAUR,   $040,  $100 	; Dragonair
 	mon_cry CRY_BULBASAUR,   $03c,  $140 	; Dragonite
@@ -265,5 +267,7 @@ CryHeaders::
 	mon_cry CRY_DODUO,   	 $000,  $100 	; Exeggcute_A
 	mon_cry CRY_EXEGGUTOR,   $000,  $100 	; Exeggutor_A
 	mon_cry CRY_ODDISH,      $04f,  $0e0 	; Marowak_A
+	mon_cry CRY_GRIMER,      $000,  $100    ; Grimer_A
+	mon_cry CRY_MUK,         $0ef,  $17f    ; Muk_A
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg
 	mon_cry CRY_NIDORAN_M,      0,     0 	; 255

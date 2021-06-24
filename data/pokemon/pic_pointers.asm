@@ -117,6 +117,10 @@ PicPointers::
 	dba DoduoBackpic
 	dba DodrioFrontpic
 	dba DodrioBackpic
+	dba GrimerFrontpic
+	dba GrimerBackpic
+	dba MukFrontpic
+	dba MukBackpic
 	dba GastlyFrontpic
 	dba GastlyBackpic
 	dba HaunterFrontpic

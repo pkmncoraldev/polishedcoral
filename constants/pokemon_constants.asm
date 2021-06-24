@@ -59,6 +59,8 @@
 	const MAGNETON
 	const DODUO
 	const DODRIO
+	const GRIMER
+	const MUK
 	const GASTLY
 	const HAUNTER
 	const GENGAR
@@ -250,6 +252,8 @@ NUM_SPECIES EQU const_value - 1
 	const EXEGGCUTE_A
 	const EXEGGUTOR_A
 	const MAROWAK_A
+	const GRIMER_A
+	const MUK_A
 NUM_POKEMON EQU const_value +- 1
 	const EGG        ; $fe
 	const CANCEL     ; $ff

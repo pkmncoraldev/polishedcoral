@@ -59,6 +59,8 @@ IconPointers:
 	dw MagnetonIcon
 	dw DoduoIcon
 	dw DodrioIcon
+	dw GrimerIcon
+	dw MukIcon
 	dw GastlyIcon
 	dw HaunterIcon
 	dw GengarIcon
@@ -249,4 +251,6 @@ IconPointers:
 	dw Exeggcute_AIcon
 	dw Exeggutor_AIcon
 	dw Marowak_AIcon
+	dw Grimer_AIcon
+	dw Muk_AIcon
 	dw EggIcon

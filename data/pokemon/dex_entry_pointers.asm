@@ -59,6 +59,8 @@
 	dw MagnetonPokedexEntry
 	dw DoduoPokedexEntry
 	dw DodrioPokedexEntry
+	dw GrimerPokedexEntry
+	dw MukPokedexEntry
 	dw GastlyPokedexEntry
 	dw HaunterPokedexEntry
 	dw GengarPokedexEntry

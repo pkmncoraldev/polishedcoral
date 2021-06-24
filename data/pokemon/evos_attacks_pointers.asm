@@ -62,6 +62,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw MagnetonEvosAttacks
 	dw DoduoEvosAttacks
 	dw DodrioEvosAttacks
+	dw GrimerEvosAttacks
+	dw MukEvosAttacks
 	dw GastlyEvosAttacks
 	dw HaunterEvosAttacks
 	dw GengarEvosAttacks
@@ -252,3 +254,5 @@ EvosAttacksPointers:: ; 0x425b1
 	dw Exeggcute_AEvosAttacks
 	dw Exeggutor_AEvosAttacks
 	dw Marowak_AEvosAttacks
+	dw Grimer_AEvosAttacks
+	dw Muk_AEvosAttacks

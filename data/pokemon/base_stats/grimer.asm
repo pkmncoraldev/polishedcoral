@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ICE_PUNCH, FIRE_PUNCH
+	tmhm ROCK_SMASH, FAKE_OUT, CUT
 	; end

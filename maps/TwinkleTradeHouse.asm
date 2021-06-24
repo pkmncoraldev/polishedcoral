@@ -15,8 +15,6 @@ TwinkleTradeHouse_MapScriptHeader:
 	object_event  5,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, trade, TRADE_WITH_ALICE_FOR_GLIGAR, -1
 	person_event SPRITE_CUTE_GIRL, 3, 2, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TwinkleTradeHouseNpc2, -1
 
-	const_def 1 ; object constants
-
 TwinkleTradeHouseNpc2:
 	jumptextfaceplayer TwinkleTradeHouseNpc2Text
 	

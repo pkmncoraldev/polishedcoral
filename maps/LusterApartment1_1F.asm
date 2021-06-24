@@ -25,8 +25,11 @@ LusterApartment1_1F_NPC2:
 	
 LusterApartment1_1F_NPC3:
 	opentext
-	writetext LusterApartment1_1F_NPC3Text
+	writetext LusterApartment1_1F_NPC3Text1
 	cry HOUNDOUR
+	waitsfx
+	buttonsound
+	writetext LusterApartment1_1F_NPC3Text2
 	waitbutton
 	closetext
 	end
@@ -54,9 +57,11 @@ LusterApartment1_1F_NPC2Text:
 	cont "them!"
 	done
 	
-LusterApartment1_1F_NPC3Text:
+LusterApartment1_1F_NPC3Text1:
 	text "HOUNDOUR: Dour…"
+	done
 	
-	para "It looks"
+LusterApartment1_1F_NPC3Text2:
+	text "It looks"
 	line "miserable…"
 	done

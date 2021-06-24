@@ -209,3 +209,6 @@ SpriteHeaders:
 	overworld_sprite SnowGirlSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite SnowGirlSmallSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite SnowGirlSkateSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite NidokingMSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
+	overworld_sprite NidokingFSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
+	overworld_sprite NidokingLeaderSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE

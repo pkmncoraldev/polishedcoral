@@ -36,6 +36,9 @@ ClownSpriteGFX::               INCBIN "gfx/sprites/clown.2bpp"
 SnowGirlSpriteGFX::            INCBIN "gfx/sprites/snowgirl.2bpp"
 SnowGirlSmallSpriteGFX::       INCBIN "gfx/sprites/snowgirlsmall.2bpp"
 SnowGirlSkateSpriteGFX::       INCBIN "gfx/sprites/snowgirlskate.2bpp"
+NidokingMSpriteGFX::      	   INCBIN "gfx/sprites/nidoking_m.2bpp"
+NidokingFSpriteGFX::      	   INCBIN "gfx/sprites/nidoking_f.2bpp"
+NidokingLeaderSpriteGFX::      INCBIN "gfx/sprites/nidoking_leader.2bpp"
 
 
 SECTION "Overworld Sprites 2", ROMX

@@ -13,13 +13,13 @@ NPCTrades:
 ; TRADE_WITH_ALICE_FOR_GLIGAR in Twinkle Town
 	db 2, SNEASEL,       GLIGAR,     "ROBIN@@@@@@"
 	db $DD, $DD, $DD, ABILITY_1 | ADAMANT, FEMALE,   POKE_BALL,   RAZOR_CLAW
-	dw 64582
+	dw 25145
 	db "ALICE@@@", $00
-; TRADE_WITH_EMY_FOR_MR__MIME in Blackthorn City
-	db 3, BULBASAUR,       BULBASAUR,   "D","o","r","i","s","@","@","@","@","@","@"
-	db $EE, $EE, $EE, HIDDEN_ABILITY | TIMID,   FEMALE, LOVE_BALL,    PINK_BOW
-	dw 00283
-	db "E","m","y","@","@","@","@","@", $00
+; TRADE_WITH_EMY_FOR_SCRAGGY in Luster City
+	db 3, CROAGUNK,       SCRAGGY,   "SHAGGY@@@@@"
+	db $DD, $DD, $DD, ABILITY_2 | JOLLY, MALE,   POKE_BALL,   SHED_SHELL
+	dw 37351
+	db "EMY@@@@@", $00
 ; TRADE_WITH_CHRIS_FOR_HERACROSS in Pewter City
 	db 2, BULBASAUR,     BULBASAUR,  "P","a","u","l","@","@","@","@","@","@","@"
 	db $EE, $EE, $EE, HIDDEN_ABILITY | JOLLY,   MALE,   PARK_BALL,    SILVERPOWDER

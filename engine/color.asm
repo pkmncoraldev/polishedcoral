@@ -855,6 +855,8 @@ LoadMapPals::
 	jp z, .jungle
 	cp TILESET_GATE
 	jp z, .gate
+	cp TILESET_HOUSE_1
+	jp z, .candle
 	jp .normal
 .playerhouse
 	ld a, [wMapGroup]
@@ -1301,6 +1303,14 @@ LoadMapPals::
 	call FarCopyWRAM
 	jr .outside
 
+.candle
+	ld hl, MapObjectPalsCandle
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+	
 .normal
 	ld a, [wTileset]
 	cp TILESET_SPOOKY
@@ -1504,6 +1514,9 @@ INCLUDE "maps/palettes/obpals/coffee.pal"
 
 MapObjectPalsWaterfallCave::
 INCLUDE "maps/palettes/obpals/waterfallcave.pal"
+
+MapObjectPalsCandle::
+INCLUDE "maps/palettes/obpals/candle.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

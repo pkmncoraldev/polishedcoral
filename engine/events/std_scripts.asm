@@ -562,6 +562,7 @@ InitializeEventsScript:
 	setevent EVENT_RED_ROOM_STEAM_2
 	setevent EVENT_RED_ROOM_STEAM_3
 	setevent EVENT_SNES
+	setevent EVENT_LUSTER_PUNKS_NOT_IN_APARTMENT
 	setevent EVENT_ALWAYS_SET
 	setflag ENGINE_PHONE_CARD
 	setflag ENGINE_PUNKS_IN_STARGLOW

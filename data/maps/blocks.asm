@@ -151,32 +151,38 @@ GlintCity_BlockData:
 	INCBIN "maps/GlintCity.ablk.lz"
 
 GlintApartmentLeft1F_BlockData:
-LusterApartment4_1F_BlockData:
 LusterApartment6_1F_BlockData:
 	INCBIN "maps/Apartment1FRed.ablk.lz"
 	
 GlintApartmentLeft2F_BlockData:
-LusterApartment4_2F_BlockData:
 LusterApartment6_2F_BlockData:
 	INCBIN "maps/Apartment2FRed.ablk.lz"
 	
 GlintApartmentRight1F_BlockData:
 LusterApartment2_1F_BlockData:
-LusterApartment5_1F_BlockData:
+LusterApartment3_1F_BlockData:
 	INCBIN "maps/Apartment1FBlue.ablk.lz"
 	
 GlintApartmentRight2F_BlockData:
 LusterApartment2_2F_BlockData:
-LusterApartment5_2F_BlockData:
 	INCBIN "maps/Apartment2FBlue.ablk.lz"
 	
 LusterApartment1_1F_BlockData:
-LusterApartment3_1F_BlockData:
+LusterApartment5_1F_BlockData:
 	INCBIN "maps/Apartment1FGreen.ablk.lz"
 	
 LusterApartment1_2F_BlockData:
 LusterApartment3_2F_BlockData:
 	INCBIN "maps/Apartment2FGreen.ablk.lz"
+	
+LusterApartment4_1F_BlockData:
+	INCBIN "maps/LusterApartment4_1F.ablk.lz"
+	
+LusterApartment4_2F_BlockData:
+	INCBIN "maps/LusterApartment4_2F.ablk.lz"
+	
+LusterApartment5_2F_BlockData:
+	INCBIN "maps/LusterApartment5_2F.ablk.lz"
 	
 StarglowValley_BlockData:
 	INCBIN "maps/StarglowValley.ablk.lz"

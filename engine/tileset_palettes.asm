@@ -142,6 +142,19 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .playerroom
 	cp TILESET_GATE
 	jp z, .gate
+	cp TILESET_HOUSE_1
+	jp z, .house1
+	jp .do_nothing
+	
+.house1
+	ld a, [wMapGroup]
+	cp GROUP_LUSTER_APARTMENT_5_2F
+	jp nz, .house1_nope
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_APARTMENT_5_2F
+	jp nz, .house1_nope
+	jp .spookhouse
+.house1_nope
 	jp .do_nothing
 	
 .checktent

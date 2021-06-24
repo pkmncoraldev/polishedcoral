@@ -95,6 +95,11 @@ NPCTrade:: ; fcba8
 	rst CopyBytes
 	jr .cont
 .trade4
+	ld hl, wBackupName
+	ld de, wTradeCroagunkName
+	ld bc, NAME_LENGTH
+	rst CopyBytes
+	jr .cont
 .trade5
 .trade6
 .trade7

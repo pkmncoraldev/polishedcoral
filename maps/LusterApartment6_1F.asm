@@ -12,4 +12,5 @@ LusterApartment6_1F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event  4,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_COMMAND, trade, TRADE_WITH_EMY_FOR_SCRAGGY, -1

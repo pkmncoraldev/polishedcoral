@@ -12,9 +12,9 @@ LusterCityResidential_MapScriptHeader:
 	warp_def 25, 17, 1, LUSTER_POKECENTER
 	warp_def 24,  7, 1, LUSTER_APARTMENT_1_1F
 	warp_def 34, 11, 1, LUSTER_APARTMENT_2_1F
-	warp_def 34, 17, 1, LUSTER_APARTMENT_3_1F
+	warp_def 44, 11, 1, LUSTER_APARTMENT_3_1F
 	warp_def 44,  6, 1, LUSTER_APARTMENT_4_1F
-	warp_def 44, 11, 1, LUSTER_APARTMENT_5_1F
+	warp_def 34, 17, 1, LUSTER_APARTMENT_5_1F
 	warp_def 44, 17, 1, LUSTER_APARTMENT_6_1F
 	warp_def 55, 22, 1, PARK_GATE
 	warp_def 55, 23, 2, PARK_GATE
@@ -39,13 +39,14 @@ LusterCityResidential_MapScriptHeader:
 	xy_trigger 1, 31,  5, 0, LusterCityResidentialDark, 0, 0
 	xy_trigger 1, 35,  5, 0, LusterCityResidentialDark, 0, 0
 
-	db 8 ; bg events
+	db 9 ; bg events
 	signpost 18, 13, SIGNPOST_READ, LusterTrashcan1
 	signpost 18, 14, SIGNPOST_READ, LusterTrashcan2
 	signpost 35, 14, SIGNPOST_READ, LusterTrashcan3
 	signpost 35, 20, SIGNPOST_READ, LusterTrashcan4
 	signpost 45, 14, SIGNPOST_READ, LusterTrashcan5
 	signpost 45, 20, SIGNPOST_READ, LusterTrashcan6
+	signpost 45,  9, SIGNPOST_READ, LusterTrashcan7
 	signpost 12, 27, SIGNPOST_READ, LusterSign1
 	signpost 15, 23, SIGNPOST_READ, LusterSign2
 
@@ -59,17 +60,17 @@ LusterCityResidential_MapScriptHeader:
 	person_event SPRITE_COOLTRAINER_F, 33, 21, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Luster1NPC5, -1
 	person_event SPRITE_YOUNGSTER, 39, 16, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Luster1NPC6, -1
 	person_event SPRITE_LASS, 26, 19, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC7, -1
-	person_event SPRITE_SCHOOLGIRL, 47,  7, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC8, -1
+	person_event SPRITE_SCHOOLGIRL, 47,  8, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster1NPC8, -1
 	person_event SPRITE_YOUNGSTER, 51, 21, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster1NPC9, -1
 	person_event SPRITE_MEOWTH, 44, 14, SPRITEMOVEDATA_POKEMON, 2, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster1NPC10, -1
 	person_event SPRITE_PIKACHU, 25, 14, SPRITEMOVEDATA_POKEMON, 2, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster1NPC11, -1
 	person_event SPRITE_GENTLEMAN,  9, 22, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC12, -1
 	person_event SPRITE_CUTE_GIRL, 26,  5, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster1NPC13, -1
 	person_event SPRITE_POKEMANIAC, 49, 13, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Luster1NPC14, -1
-	person_event SPRITE_DELINQUENT_M, 20, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunkLeader, -1
-	person_event SPRITE_DELINQUENT_F, 21, 13, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunk1, -1
-	person_event SPRITE_DELINQUENT_M, 19, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunk2, -1
-	person_event SPRITE_BURGLAR, 34, 14, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterShadyGuy, -1
+	person_event SPRITE_NIDOKING_LEADER, 20, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunkLeader, EVENT_HELPED_NIDOKINGS
+	person_event SPRITE_NIDOKING_F, 21, 13, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunk1, EVENT_HELPED_NIDOKINGS
+	person_event SPRITE_NIDOKING_M, 19, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterPunk2, EVENT_HELPED_NIDOKINGS
+	person_event SPRITE_BURGLAR, 44,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterShadyGuy, -1
 
 
 	const_def 1 ; object constants
@@ -166,6 +167,9 @@ ResidentialCallback:
 	checkevent EVENT_LUSTER_TRASHCAN_6
 	iftrue .OpenSesame6
 .cont6
+	checkevent EVENT_LUSTER_TRASHCAN_7
+	iftrue .OpenSesame7
+.cont7
 	checkevent EVENT_LUSTER_SEWER_OPEN
 	iftrue .OpenSesameSewer
 	return
@@ -193,6 +197,10 @@ ResidentialCallback:
 .OpenSesame6:
 	changeblock $14, $2c, $4c
 	jump .cont6
+
+.OpenSesame7:
+	changeblock $8, $2c, $58
+	jump .cont7
 	
 .OpenSesameSewer:
 	checkevent EVENT_CLEARED_LUSTER_SEWERS
@@ -388,6 +396,23 @@ LusterTrashcan6:
 	waitbutton
 	closetext
 	setevent EVENT_LUSTER_TRASHCAN_6
+	end
+	
+LusterTrashcan7:
+	checkevent EVENT_LUSTER_TRASHCAN_7
+	iftrue LusterTrashcanOnlyTrash
+	changeblock $8, $2c, $58
+	opentext
+	writetext LusterTrashcanText1
+	playsound SFX_SANDSTORM
+	waitsfx
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterTrashcanTextOnlyTrash
+	waitbutton
+	closetext
+	setevent EVENT_LUSTER_TRASHCAN_7
 	end
 	
 LusterTrashcanEmpty:
@@ -640,6 +665,8 @@ LusterPunkLeader:
 	pause 10
 	special FadeInTextboxPalettes
 	playmusic MUSIC_LUSTER_CITY
+	setevent EVENT_HELPED_NIDOKINGS
+	clearevent EVENT_LUSTER_PUNKS_NOT_IN_APARTMENT
 	end
 .saidno2
 	writetext LusterPunk1Text14
@@ -745,7 +772,13 @@ LusterShadyGuy:
 	iftrue .alreadygotpackage
 	checkevent EVENT_CAN_GET_THE_THING
 	iftrue .getpackage
-	jumptextfaceplayer LusterShadyGuyText1
+	faceplayer
+	opentext
+	writetext LusterShadyGuyText1
+	waitbutton
+	closetext
+	spriteface LUSTERSHADYGUY, LEFT
+	end
 .getpackage
 	faceplayer
 	opentext
@@ -757,7 +790,7 @@ LusterShadyGuy:
 	closetext
 	setevent EVENT_GOT_THE_THING
 	clearevent EVENT_CAN_GET_THE_THING
-	spriteface LUSTERSHADYGUY, UP
+	spriteface LUSTERSHADYGUY, LEFT
 	end
 .alreadygotpackage
 	faceplayer
@@ -765,7 +798,7 @@ LusterShadyGuy:
 	writetext LusterShadyGuyText3
 	waitbutton
 	closetext
-	spriteface LUSTERSHADYGUY, UP
+	spriteface LUSTERSHADYGUY, LEFT
 	end
 .seweropen
 	faceplayer
@@ -773,7 +806,7 @@ LusterShadyGuy:
 	writetext LusterShadyGuyText4
 	waitbutton
 	closetext
-	spriteface LUSTERSHADYGUY, UP
+	spriteface LUSTERSHADYGUY, LEFT
 	end
 	
 LusterTrashcanText1:
@@ -1036,8 +1069,8 @@ LusterPunkLeaderText11:
 	line "news!"
 	
 	para "Didja drive out"
-	line "rotton, no-good,"
-	cont "FRANKIE?"	
+	line "that rotton,"
+	cont "no-good, FRANKIE?"	
 	done
 	
 LusterPunkLeaderText12:
@@ -1109,7 +1142,7 @@ LusterPunkLeaderText13:
 	line "works there."
 	
 	para "He can teach you"
-	cont "some cool tricks!"
+	line "some cool tricks!"
 	
 	para "…"
 	
@@ -1131,7 +1164,8 @@ LusterPunk1Text14:
 	line "right?"
 	
 	para "You totally took"
-	line "FRANKIE down, right?"
+	line "FRANKIE down,"
+	cont "right?"
 	done
 	
 LusterPunk1Text1:
@@ -1374,7 +1408,7 @@ Luster1NPC9Text:
 	done
 
 Luster1NPC10Text:
-	text "MEOWTH: Mee"
+	text "MEOWTH: Mee!"
 	line "Owth!"
 	done
 

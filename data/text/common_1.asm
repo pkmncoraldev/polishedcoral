@@ -1243,23 +1243,65 @@ UnknownText_TradeAfterText3::
 	done
 	
 UnknownText_TradeIntroText4::
-	text "INTRO"
+	text "Are you a TRAINER?"
+	
+	para "Do you have a"
+	line "CROAGUNK?"
+	
+	para "I love it!"
+	
+	para "Would you trade"
+	line "for my SCRAGGY?"
 	done
 	
 UnknownText_TradeCancelText4::
-	text "CANCEL"
+	text "Awww…"
 	done
 
 UnknownText_TradeWrongText4::
-	text "WRONG"
+	text "What? That's not"
+	line "@"
+	text_from_ram wStringBuffer1
+	text "!"
 	done
 
 UnknownText_TradeCompleteText4::
-	text "DONE"
+	text "Yay!"
+	
+	para "A CROAGUNK!"
+	
+	para "My favorite!"
+	
+	para "Where'd you find"
+	line "it?"
+	
+	para "…"
+	
+	para "The sewer?"
+	
+	para "What were you"
+	line "doing in the"
+	cont "sewer?"
+	
+	para "Well, @"
+	text_from_ram wTradeSneaselName
+	line "won't be going"
+	cont "down to the sewer"
+	cont "again any time soon…"
 	done
 
 UnknownText_TradeAfterText4::
-	text "AFTER"
+	text "How is SHAGGY"
+	line "doing, sewer kid?"
+	
+	para "@"
+	text_from_ram wTradeSneaselName
+	text "'s"
+	line "been great!"
+	
+	para "Thanks again for"
+	line "the trade!"
+	done
 	done
 
 UnknownText_0x1bd88e::

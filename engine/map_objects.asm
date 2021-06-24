@@ -607,6 +607,7 @@ MapObjectMovementPattern:
 	dw .MovementBather             ; SPRITEMOVEFN_BATHER
 	dw .MovementSpinSteam ; SPRITEMOVEFN_SPIN_STEAM
 	dw .MovementIceSkater ; SPRITEMOVEFN_ICESKATER
+	dw .MovementCandle             ; SPRITEMOVEFN_CANDLE
 
 .RandomWalkY:
 	call Random
@@ -817,11 +818,11 @@ MapObjectMovementPattern:
 
 .MovementMallSign:
 	ld a, PERSON_ACTION_MALL_SIGN
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementHangarLeft:
 	ld a, PERSON_ACTION_HANGAR_LEFT
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementHangarRight:
 	ld a, PERSON_ACTION_HANGAR_RIGHT
@@ -898,6 +899,10 @@ MapObjectMovementPattern:
 .MovementSailboatBottom:
 	ld a, PERSON_ACTION_SAILBOAT_BOTTOM
 	jr ._ActionA_StepType04
+	
+.MovementCandle:
+	ld a, PERSON_ACTION_CANDLE
+	jp ._ActionA_StepType04
 	
 .MovementUmbrellaLeft:
 	call EndSpriteMovement

@@ -71,6 +71,8 @@ Facings:
 	dw FacingSunbeamView4
 	dw FacingSunbeamView5
 	dw FacingSunbeamView6
+	dw FacingCandle1
+	dw FacingCandle2
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -623,3 +625,16 @@ FacingSunbeamView6:
 	db 20, 16, 0, $0b
 	db 20, 24, 0, $80
 
+FacingCandle1:
+	db 4 ; #
+	db  7,  5, 0, $00
+	db  7, 13, 0, $01
+	db 15,  5, 0, $02
+	db 15, 13, 0, $03
+	
+FacingCandle2:
+	db 4 ; #
+	db  7,  5, 0, $04
+	db  7, 13, 0, $05
+	db 15,  5, 0, $06
+	db 15, 13, 0, $07

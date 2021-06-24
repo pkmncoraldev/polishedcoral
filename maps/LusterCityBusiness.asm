@@ -199,15 +199,17 @@ Luster3NPC7:
 	jumptextfaceplayer Luster3NPC7Text
 	
 Luster3NPC7Text:
-	text "They say this place"
-	line "is a concrete jungle,"
+	text "They say this area"
+	line "is a concrete"
+	cont "jungle,"
 	
 	para "but at night, when"
-	line "all the lights come"
-	cont "on,"
+	line "all the lights"
+	cont "come on,"
 	
 	para "I think there is a"
-	line "certain charm to it."
+	line "certain charm to"
+	cont "it."
 	done
 	
 Luster3NPC8:

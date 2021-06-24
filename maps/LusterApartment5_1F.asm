@@ -12,4 +12,26 @@ LusterApartment5_1F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	person_event SPRITE_BATTLE_GIRL,  3,  4, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterApartment5_1F_NPC, -1
+
+LusterApartment5_1F_NPC:
+	jumptextfaceplayer LusterApartment5_1F_NPCText
+	
+LusterApartment5_1F_NPCText:
+	text "Gah!"
+	
+	para "My roommate is so"
+	line "weird!"
+	
+	para "She thinks she's a"
+	line "witch or something"
+	cont "like that."
+	
+	para "She's always trying"
+	line "to cast curses and"
+	cont "hexes on people!"
+	
+	para "I have GOT to find"
+	line "a new place…"
+	done

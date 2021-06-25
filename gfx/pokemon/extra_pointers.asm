@@ -250,5 +250,7 @@ AnimationExtraPointers:
 	dw ExeggcuteAnimationExtra
 	dw Exeggutor_AAnimationExtra
 	dw Marowak_AAnimationExtra
+	dw Grimer_AAnimationExtra
+	dw Muk_AAnimationExtra
 	dw EggAnimationExtra
 	dw -1 ; unused

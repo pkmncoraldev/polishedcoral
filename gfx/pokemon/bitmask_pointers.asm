@@ -250,5 +250,7 @@ BitmasksPointers:
 	dw ExeggcuteBitmasks
 	dw Exeggutor_ABitmasks
 	dw Marowak_ABitmasks
+	dw Grimer_ABitmasks
+	dw Muk_ABitmasks
 	dw EggBitmasks
 	dw -1 ; unused

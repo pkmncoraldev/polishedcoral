@@ -250,5 +250,7 @@ FramesPointers:
 	dw ExeggcuteFrames
 	dw Exeggutor_AFrames
 	dw Marowak_AFrames
+	dw Grimer_AFrames
+	dw Muk_AFrames
 	dw EggFrames
 	dw -1 ; unused

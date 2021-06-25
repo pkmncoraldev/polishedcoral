@@ -646,6 +646,10 @@ Exeggutor_AFrontpic:      INCBIN "gfx/pokemon/exeggutor_a/front.2bpp.lz"
 Exeggutor_ABackpic:       INCBIN "gfx/pokemon/exeggutor_a/back.2bpp.lz"
 Marowak_AFrontpic:        INCBIN "gfx/pokemon/marowak_a/front.2bpp.lz"
 Marowak_ABackpic:         INCBIN "gfx/pokemon/marowak_a/back.2bpp.lz"
+Grimer_AFrontpic:         INCBIN "gfx/pokemon/grimer_a/front.2bpp.lz"
+Grimer_ABackpic:          INCBIN "gfx/pokemon/grimer_a/back.2bpp.lz"
+Muk_AFrontpic:        	  INCBIN "gfx/pokemon/muk_a/front.2bpp.lz"
+Muk_ABackpic:         	  INCBIN "gfx/pokemon/muk_a/back.2bpp.lz"
 EggPic:                   INCBIN "gfx/pokemon/egg/front.2bpp.lz"
 
 

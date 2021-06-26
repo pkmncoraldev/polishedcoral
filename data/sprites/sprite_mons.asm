@@ -32,7 +32,7 @@ SpriteMons:
 	db HOUNDOUR
 	db ELECTABUZZ
 	db GLOOM
-	db ABRA
+	db GRIMER_A
 	db ABRA
 	db ABRA
 	db ABRA

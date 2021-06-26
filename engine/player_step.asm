@@ -33,6 +33,8 @@ _HandlePlayerStep:: ; d497 (3:5497)
 	ret
 
 ScrollScreen:: ; d4d2 (3:54d2)
+	eventflagcheck EVENT_DONT_SCROLL_OW
+	ret nz
 	ld a, [wPlayerStepVectorX]
 	ld d, a
 	ld a, [wPlayerStepVectorY]

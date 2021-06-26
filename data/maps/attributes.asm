@@ -284,6 +284,7 @@ ENDM
 	map_attributes LusterSewersB2F, LUSTER_SEWERS_B2F, 0, 0
 	map_attributes LusterSewersValveRoom, LUSTER_SEWERS_VALVE_ROOM, 0, 0
 	map_attributes LusterSewersThroneRoom, LUSTER_SEWERS_THRONE_ROOM, 0, 0
+	map_attributes LusterSewersMukRoom, LUSTER_SEWERS_MUK_ROOM, 0, 0
 	map_attributes IceCaveB1F, ICE_CAVE_B1F, $54, 0
 	map_attributes IceCaveB2F, ICE_CAVE_B2F, $54, 0
 	map_attributes IceCaveB3F, ICE_CAVE_B3F, $54, 0

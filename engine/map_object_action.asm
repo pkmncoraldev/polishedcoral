@@ -51,6 +51,10 @@ Pointers445f: ; 445f
 	dw SetFacingSunbeamView6,    	   SetFacingSunbeamView6	  ; PERSON_ACTION_SUNBEAM_VIEW_6
 	dw SetFacingBather,                SetFacingFreezeBather      ; PERSON_ACTION_BATHER
 	dw SetFacingCandle,                SetFacingFreezeCandle      ; PERSON_ACTION_CANDLE
+	dw SetFacingWalkInPlace1,          SetFacingFreezeBounce      ; PERSON_ACTION_WALK_IN_PLACE
+	dw SetFacingBigMuk,		           SetFacingBigMuk		      ; PERSON_ACTION_BIG_MUK
+	dw SetFacingBigMuk2,		       SetFacingBigMuk2		      ; PERSON_ACTION_BIG_MUK_2
+	dw SetFacingBigMuk3,		       SetFacingBigMuk3		      ; PERSON_ACTION_BIG_MUK_3
 	
 ; 44a3
 
@@ -99,13 +103,14 @@ SetFacingUmbrellaRight:
 	ret
 	
 SetFacingBigDoll: ; 45c5
-	ld a, [wVariableSprites + SPRITE_BIG_DOLL - SPRITE_VARS]
-	cp SPRITE_BIG_ONIX
-	ld a, FACING_BIG_DOLL_ASYM
-	jr z, SetFixedFacing
+;	ld a, [wVariableSprites + SPRITE_BIG_DOLL - SPRITE_VARS]
+;	cp SPRITE_BIG_ONIX
+;	ld a, FACING_BIG_DOLL_ASYM
+;	jr z, SetFixedFacing
 SetFacingBigDollSym: ; 4589
-	ld a, FACING_BIG_DOLL_SYM
-	jr SetFixedFacing
+;	ld a, FACING_BIG_DOLL_SYM
+;	jr SetFixedFacing
+	ret
 ; 4590
 
 SetFacingFish: ; 456e
@@ -256,6 +261,19 @@ SetFacingFreezeBounce: ; 45a4
 	xor a ; FACING_STEP_DOWN_0
 	jp SetFixedFacing
 ; 45ab
+
+SetFacingWalkInPlace1:
+	ld hl, OBJECT_STEP_FRAME
+	add hl, bc
+	ld a, [hl]
+	inc a
+	and %00011111
+	ld [hl], a
+	and %00010000
+	ld a, FACING_STEP_DOWN_1
+	jp nz, SetFixedFacing
+	xor a ; FACING_STEP_DOWN_0
+	jp SetFixedFacing
 
 SetFacingCandle: ; 4590
 	ld hl, OBJECT_STEP_FRAME
@@ -525,5 +543,17 @@ SetFacingSunbeamView5:
 	
 SetFacingSunbeamView6:
 	ld a, FACING_SUNBEAM_VIEW_6
+	jp SetFixedFacing
+	
+SetFacingBigMuk:
+	ld a, FACING_BIG_MUK
+	jp SetFixedFacing
+	
+SetFacingBigMuk2:
+	ld a, FACING_BIG_MUK_2
+	jp SetFixedFacing
+	
+SetFacingBigMuk3:
+	ld a, FACING_BIG_MUK_3
 	jp SetFixedFacing
 	

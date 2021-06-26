@@ -73,6 +73,9 @@ Facings:
 	dw FacingSunbeamView6
 	dw FacingCandle1
 	dw FacingCandle2
+	dw FacingBigMuk
+	dw FacingBigMuk2
+	dw FacingBigMuk3
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -638,3 +641,44 @@ FacingCandle2:
 	db  7, 13, 0, $05
 	db 15,  5, 0, $06
 	db 15, 13, 0, $07
+	
+FacingBigMuk:
+	db 10 ; #
+	db  8,  0, 0, $00
+	db  8,  8, 0, $01
+	db  8,  16, 0, $02
+	db  16,  0, 0, $03
+	db  16,  8, 0, $04
+	db  16,  16, 0, $05
+	db  16,  24, 0, $06
+	db  24,  0, 0, $07
+	db  24,  8, 0, $08
+	db  24,  16, 0, $09
+	
+FacingBigMuk2:
+	db 11 ; #
+	db  8,  8, 0, $0a
+	db  8,  16, 0, $0b
+	db  8,  24, 0, $0c
+	db  16,  0, 0, $0d
+	db  16,  8, 0, $0e
+	db  16,  16, 0, $0f
+	db  16,  24, 0, $10
+	db  24,  0, 0, $80
+	db  24,  8, 0, $81
+	db  24,  16, 0, $82
+	db  24,  24, 0, $83
+	
+FacingBigMuk3:
+	db 11 ; #
+	db  8,  -2, 0, $84
+	db  8,  6, 0, $85
+	db  8,  14, 0, $86
+	db  8,  22, 0, $87
+	db  16, -2, 0, $88
+	db  16,  6, 0, $89
+	db  16,  14, 0, $8a
+	db  16,  22, 0, $8b
+	db  24, -2, 0, $8c
+	db  24,  6, 0, $8d
+	db  24,  14, 0, $8e

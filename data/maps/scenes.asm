@@ -56,6 +56,7 @@ MapTriggers::
 	scene_var LUSTER_SEWERS_B1F,					  wLusterSewersB1FTrigger
 	scene_var LUSTER_SEWERS_B2F,					  wLusterSewersB2FTrigger
 	scene_var LUSTER_SEWERS_THRONE_ROOM,			  wLusterSewersThroneRoomTrigger
+	scene_var LUSTER_SEWERS_MUK_ROOM,				  wLusterSewersMukRoomTrigger
 	scene_var SPOOKY_FOREST_1,						  wSpookyForestEscortTrigger
 	scene_var SPOOKY_FOREST_2,						  wSpookyForestEscortTrigger
 	scene_var SPOOKY_FOREST_3,						  wSpookyForestEscortTrigger

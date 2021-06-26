@@ -1,6 +1,5 @@
 	setrepeat 3
-	frame 0, 07
-	frame 3, 07
+	frame 0, 12
+	frame 4, 12
 	dorepeat 1
 	endanim
-; 0xd1b38

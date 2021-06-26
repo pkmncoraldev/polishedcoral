@@ -47,6 +47,7 @@ INCLUDE "maps/LusterSewersValveRoom.asm"
 SECTION "Dungeon Scripts2", ROMX
 
 INCLUDE "maps/LusterSewersThroneRoom.asm"
+INCLUDE "maps/LusterSewersMukRoom.asm"
 INCLUDE "maps/FlickerPass1F.asm"
 INCLUDE "maps/FlickerPass2F.asm"
 INCLUDE "maps/IceCaveB1F.asm"

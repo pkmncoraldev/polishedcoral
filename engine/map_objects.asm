@@ -608,6 +608,10 @@ MapObjectMovementPattern:
 	dw .MovementSpinSteam ; SPRITEMOVEFN_SPIN_STEAM
 	dw .MovementIceSkater ; SPRITEMOVEFN_ICESKATER
 	dw .MovementCandle             ; SPRITEMOVEFN_CANDLE
+	dw .MovementWalkInPlace             ; SPRITEMOVEFN_WALK_IN_PLACE
+	dw .MovementBigMuk
+	dw .MovementBigMuk2
+	dw .MovementBigMuk3
 
 .RandomWalkY:
 	call Random
@@ -826,19 +830,19 @@ MapObjectMovementPattern:
 	
 .MovementHangarRight:
 	ld a, PERSON_ACTION_HANGAR_RIGHT
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementLighthouse1:
 	ld a, PERSON_ACTION_LIGHTHOUSE_1
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementLighthouse2:
 	ld a, PERSON_ACTION_LIGHTHOUSE_2
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementLighthouse3:
 	ld a, PERSON_ACTION_LIGHTHOUSE_3
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementHalfpipe1:
 	ld a, PERSON_ACTION_HALFPIPE_1
@@ -903,6 +907,22 @@ MapObjectMovementPattern:
 .MovementCandle:
 	ld a, PERSON_ACTION_CANDLE
 	jp ._ActionA_StepType04
+	
+.MovementWalkInPlace:
+	ld a, PERSON_ACTION_WALK_IN_PLACE
+	jp ._ActionA_StepType04
+	
+.MovementBigMuk:
+	ld a, PERSON_ACTION_BIG_MUK
+	jr ._ActionA_StepType04
+	
+.MovementBigMuk2:
+	ld a, PERSON_ACTION_BIG_MUK_2
+	jr ._ActionA_StepType04
+	
+.MovementBigMuk3:
+	ld a, PERSON_ACTION_BIG_MUK_3
+	jr ._ActionA_StepType04
 	
 .MovementUmbrellaLeft:
 	call EndSpriteMovement

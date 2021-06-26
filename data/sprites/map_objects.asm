@@ -84,3 +84,7 @@ SpriteMovementData::
 	sprite_movement_data SPRITEMOVEFN_STEAM,                 LEFT,   PERSON_ACTION_STAND,           $7c,    $02,    %0000 ; SPRITEMOVEDATA_STEAM
 	sprite_movement_data SPRITEMOVEFN_ICESKATER,			 LEFT,   PERSON_ACTION_STAND,           $00,    $00,    %0000 ; SPRITEMOVEDATA_ICESKATER
 	sprite_movement_data SPRITEMOVEFN_CANDLE,                DOWN,   PERSON_ACTION_CANDLE,          $7c,    $00,    %0000 ; SPRITEMOVEDATA_CANDLE
+	sprite_movement_data SPRITEMOVEFN_WALK_IN_PLACE,         DOWN,   PERSON_ACTION_WALK_IN_PLACE,   $2e,    $00,    %0000 ; SPRITEMOVEDATA_WALK_IN_PLACE
+	sprite_movement_data SPRITEMOVEFN_BIG_MUK,  		     DOWN,   PERSON_ACTION_BIG_MUK,   		$2e,    $00,    %0000 ; SPRITEMOVEDATA_BIG_MUK
+	sprite_movement_data SPRITEMOVEFN_BIG_MUK_2,  		     DOWN,   PERSON_ACTION_BIG_MUK_2,   	$2e,    $00,    %0000 ; SPRITEMOVEDATA_BIG_MUK_2
+	sprite_movement_data SPRITEMOVEFN_BIG_MUK_3,  		     DOWN,   PERSON_ACTION_BIG_MUK_3,   	$2e,    $00,    %0000 ; SPRITEMOVEDATA_BIG_MUK_3

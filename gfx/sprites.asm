@@ -39,6 +39,7 @@ SnowGirlSkateSpriteGFX::       INCBIN "gfx/sprites/snowgirlskate.2bpp"
 NidokingMSpriteGFX::      	   INCBIN "gfx/sprites/nidoking_m.2bpp"
 NidokingFSpriteGFX::      	   INCBIN "gfx/sprites/nidoking_f.2bpp"
 NidokingLeaderSpriteGFX::      INCBIN "gfx/sprites/nidoking_leader.2bpp"
+GrimerAOWSpriteGFX::      	   INCBIN "gfx/sprites/grimer_a_ow.2bpp"
 
 
 SECTION "Overworld Sprites 2", ROMX
@@ -154,7 +155,7 @@ SwimmingOfficerFSpriteGFX::    INCBIN "gfx/sprites/swimming_officer_f.2bpp"
 SurfingPikachuSpriteGFX::      INCBIN "gfx/sprites/surf_pikachu.2bpp"
 BigSnorlaxSpriteGFX::          INCBIN "gfx/sprites/big_snorlax.2bpp"
 BigLaprasSpriteGFX::           INCBIN "gfx/sprites/big_lapras.2bpp"
-BigOnixSpriteGFX::             INCBIN "gfx/sprites/big_onix.2bpp"
+BigMukSpriteGFX::              INCBIN "gfx/sprites/big_muk.2bpp"
 BigGyaradosSpriteGFX::         INCBIN "gfx/sprites/big_gyarados.2bpp"
 SlowpoketailSpriteGFX::        INCBIN "gfx/sprites/slowpoketail.2bpp"
 WeirdTreeSpriteGFX::           INCBIN "gfx/sprites/weird_tree.2bpp"

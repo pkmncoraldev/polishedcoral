@@ -4,6 +4,7 @@
 	const STANDING_SPRITE
 	const MON_SPRITE
 	const BIG_GYARADOS_SPRITE
+	const BIG_MUK_SPRITE
 
 ; sprite header fields
 	const_def

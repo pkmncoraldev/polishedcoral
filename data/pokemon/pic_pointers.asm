@@ -501,4 +501,8 @@ PicPointers::
 	dba Exeggutor_ABackpic
 	dba Marowak_AFrontpic
 	dba Marowak_ABackpic
+	dba Grimer_AFrontpic
+	dba Grimer_ABackpic
+	dba Muk_AFrontpic
+	dba Muk_ABackpic
 	dba EggPic

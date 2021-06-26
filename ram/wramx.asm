@@ -1015,6 +1015,7 @@ wLusterCityBusinessTrigger:: ds 1
 wLusterSewersB1FTrigger:: ds 1
 wLusterSewersB2FTrigger:: ds 1
 wLusterSewersThroneRoomTrigger:: ds 1
+wLusterSewersMukRoomTrigger:: ds 1
 wSpookyForestEscortTrigger:: ds 1
 wLusterMallTrigger:: ds 1
 wLusterMallSkateTestTrigger:: ds 1
@@ -1028,7 +1029,7 @@ wTwinkleGymYellowRoomTrigger:: ds 1
 wMtOnwaB2FTrigger:: ds 1
 wMtOnwaB3FTrigger:: ds 1
 
-ds 27
+ds 26
 
 ; fight counts
 wJackFightCount::    ds 1

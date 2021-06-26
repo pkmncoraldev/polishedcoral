@@ -43,14 +43,15 @@ MAP_NONE   EQU 0
 	map_const LUSTER_SEWERS_B2F,						  15, 11 ; 21
 	map_const LUSTER_SEWERS_VALVE_ROOM,				      16,  3 ; 22
 	map_const LUSTER_SEWERS_THRONE_ROOM,				   6,  7 ; 23
-	map_const ICE_CAVE_B1F,								  15,  7 ; 24
-	map_const ICE_CAVE_B2F,								  15, 16 ; 25
-	map_const ICE_CAVE_B3F,								  16, 16 ; 26
-	map_const ICE_TEMPLE_B1F_1,							  14, 11 ; 27
-	map_const ICE_TEMPLE_B1F_2,							  14, 10 ; 28
-	map_const ICE_TEMPLE_B1F_3,							   4, 4  ; 29
-	map_const ICE_TEMPLE_B2F_1,							   8, 6  ; 30
-	map_const ICE_TEMPLE_B2F_2,							  13, 7  ; 31
+	map_const LUSTER_SEWERS_MUK_ROOM,				  	   6,  6 ; 24
+	map_const ICE_CAVE_B1F,								  15,  7 ; 25
+	map_const ICE_CAVE_B2F,								  15, 16 ; 26
+	map_const ICE_CAVE_B3F,								  16, 16 ; 27
+	map_const ICE_TEMPLE_B1F_1,							  14, 11 ; 28
+	map_const ICE_TEMPLE_B1F_2,							  14, 10 ; 29
+	map_const ICE_TEMPLE_B1F_3,							   4, 4  ; 30
+	map_const ICE_TEMPLE_B2F_1,							   8, 6  ; 31
+	map_const ICE_TEMPLE_B2F_2,							  13, 7  ; 32
 
 	newgroup                                                     ;  2
 

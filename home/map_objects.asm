@@ -29,6 +29,8 @@ GetSpriteVTile:: ; 180e
 	ld a, [hUsedSpriteIndex]
 	cp SPRITE_BIG_GYARADOS
 	jr z, .use_last_struct
+	cp SPRITE_BIG_MUK
+	jr z, .use_last_struct
 	cp SPRITE_SAILBOAT
 	jr z, .use_last_struct
 	ld a, [hObjectStructIndexBuffer]

@@ -331,6 +331,9 @@ LusterSewersValveRoom_BlockData:
 LusterSewersThroneRoom_BlockData:
 	INCBIN "maps/LusterSewersThroneRoom.ablk.lz"
 	
+LusterSewersMukRoom_BlockData:
+	INCBIN "maps/LusterSewersMukRoom.ablk.lz"
+	
 SprucesLab_BlockData:
 	INCBIN "maps/SprucesLab.ablk.lz"
 	

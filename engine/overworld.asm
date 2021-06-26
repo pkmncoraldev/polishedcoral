@@ -336,9 +336,14 @@ GetSprite:: ; 1423c
 	; load the length into c
 	ld c, 15
 	ld a, l
+	cp BIG_MUK_SPRITE
+	jr z, .muk
 	cp BIG_GYARADOS_SPRITE
 	ret z
 	ld c, 12
+	ret
+.muk
+	ld c, 17
 	ret
 ; 14259
 

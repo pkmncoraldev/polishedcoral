@@ -121,6 +121,9 @@ MovementPointers:
 	dw Movement_skateboard_slow_step_up    ; 78
 	dw Movement_skateboard_slow_step_left  ; 79
 	dw Movement_skateboard_slow_step_right ; 7a
+	dw Movement_muk_up		;7b
+	dw Movement_muk_down	;7c
+	dw Movement_muk_sleep	;7
 
 Movement_teleport_from: ; 5129
 	ld hl, OBJECT_STEP_TYPE
@@ -338,6 +341,28 @@ Movement_step_sleep_common: ; 5247
 	ld [hl], STANDING
 	ret
 ; 525f
+
+Movement_muk_sleep: ; 5242
+; parameters:
+;	duration (DecimalParam)
+;	call JumpMovementPointer
+	ld a, 1
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	ld [hl], a
+
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_03
+
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], PERSON_ACTION_BIG_MUK
+
+	ld hl, OBJECT_DIRECTION_WALKING
+	add hl, bc
+	ld [hl], STANDING
+	ret
 
 Movement_step_bump: ; 525f
 	ld a, 1
@@ -603,6 +628,14 @@ Movement_skateboard_slow_step_right:
 	ld a, STEP_TYPE_NORMAL << 2 | RIGHT
 	jp Movement_do_skateboard
 	
+Movement_muk_up:
+	ld a, STEP_TYPE_SLOW << 2 | UP
+	jp MukStep
+	
+Movement_muk_down:
+	ld a, STEP_TYPE_SLOW << 2 | DOWN
+	jp MukStep2
+		
 Movement_big_step_down:
 	ld a, STEP_TYPE_SUPER_FAST << 2 | DOWN
 	jr Movement_do_step
@@ -1055,6 +1088,50 @@ SlideStep: ; 5468
 	ret
 ; 548a
 
+MukStep: ; 5468
+	call InitStep
+	call UpdateTallGrassFlags
+
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], PERSON_ACTION_BIG_MUK_2
+
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_NPC_WALK
+	ret
+	
+MukStep2: ; 5468
+	call InitStep
+	call UpdateTallGrassFlags
+
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], PERSON_ACTION_BIG_MUK_3
+
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_NPC_WALK
+	ret
+	
+MukStep3: ; 5468
+	ld a, 1
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	ld [hl], a
+
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_03
+
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], PERSON_ACTION_BIG_MUK
+
+	ld hl, OBJECT_DIRECTION_WALKING
+	add hl, bc
+	ld [hl], STANDING
+	ret
 
 JumpStep: ; 548a
 	call InitStep

@@ -7,11 +7,12 @@ LusterSewersB2F_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, LusterSewersB2FChangeBlocks
 
-	db 4 ; warp events
+	db 5 ; warp events
 	warp_def  7, 14, 3, LUSTER_SEWERS_B1F
 	warp_def  1, 15, 3, LUSTER_SEWERS_VALVE_ROOM
 	warp_def 15, 16, 5, LUSTER_SEWERS_B1F
 	warp_def 13,  9, 1, LUSTER_SEWERS_THRONE_ROOM
+	warp_def 13,  1, 1, LUSTER_SEWERS_MUK_ROOM
 	
 
 	db 8 ; coord events
@@ -123,6 +124,15 @@ TrainerLusterSewersB2F_3:
 	done
 	
 LusterSewersB2FChangeBlocks:
+	checkevent EVENT_LUSTER_SEWERS_MUK_ROOM_MUK
+	iftrue .skip
+	clearevent EVENT_LUSTER_SEWERS_GRIMER_1
+	clearevent EVENT_LUSTER_SEWERS_GRIMER_2
+	clearevent EVENT_LUSTER_SEWERS_GRIMER_3
+	clearevent EVENT_LUSTER_SEWERS_GRIMER_4
+	clearevent EVENT_LUSTER_SEWERS_MUK_RIGHT
+	setevent EVENT_MT_ONWA_CUTSCENE
+.skip
 	checkevent EVENT_LUSTER_SEWERS_EMPTY
 	iffalse .endcallback
 	changemap LusterSewersB2FEmpty_BlockData

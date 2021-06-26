@@ -161,7 +161,7 @@ SpriteHeaders:
 	overworld_sprite SurfingPikachuSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite BigSnorlaxSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BigLaprasSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
-	overworld_sprite BigOnixSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite BigMukSpriteGFX, BIG_MUK_SPRITE, PAL_OW_BROWN
 	overworld_sprite BigGyaradosSpriteGFX, BIG_GYARADOS_SPRITE, PAL_OW_RED
 	overworld_sprite SlowpoketailSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite WeirdTreeSpriteGFX, STANDING_SPRITE, PAL_OW_GREEN
@@ -212,3 +212,4 @@ SpriteHeaders:
 	overworld_sprite NidokingMSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite NidokingFSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite NidokingLeaderSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
+	overworld_sprite GrimerAOWSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN

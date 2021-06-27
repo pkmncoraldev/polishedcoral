@@ -35,7 +35,7 @@ FlickerTrainStation_MapScriptHeader:
 	const FLICKER_TRAIN_STATION_CLERK
 	
 FlickerTrainStationClerk:
-	jumptextfaceplayer FlickerTrainStationClerkTextDemo
+;	jumptextfaceplayer FlickerTrainStationClerkTextDemo
 	faceplayer
 	opentext
 	writetext FlickerTrainStationClerkText1

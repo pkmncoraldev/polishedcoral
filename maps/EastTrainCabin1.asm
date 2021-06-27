@@ -84,7 +84,7 @@ EastTrainCabin1Trigger1:
 	waitbutton
 	closetext
 	pause 20
-	special FadeOutPalettesBlack
+	special FadeInTextboxPalettes
 	pause 20
 	opentext
 	writetext EastTrainCaboosePAText4
@@ -372,7 +372,7 @@ EastTrainCabin1PlayersSeat:
 	special SaveMusic
 	playmusic MUSIC_HEAL
 	pause 60
-	special FadeOutPalettesBlack
+	special FadeInTextboxPalettes;FadeOutPalettesBlack
 	pause 10
 	special RestoreMusic
 	pause 10

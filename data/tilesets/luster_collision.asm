@@ -128,8 +128,8 @@
 	tilecoll WALL, WALL, DOOR, DOOR ; 7f
 	tilecoll SKATE, WALL, SKATE, WALL ; 80
 	tilecoll WALL, SKATE, WALL, SKATE ; 81
-	tilecoll SKATE, SKATE, SKATE, SKATE ; 82
-	tilecoll SKATE, SKATE, SKATE, SKATE ; 83
+	tilecoll WALL, WALL, WALL, WALL ; 82
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 83
 	tilecoll SKATE, WALL, SKATE, WALL ; 84
 	tilecoll WALL, SKATE, WALL, SKATE ; 85
 	tilecoll SKATE, WALL, SKATE, WALL ; 86

@@ -1434,7 +1434,7 @@
 	db 25, ZUBAT		;1%
 
 	map_id LUSTER_SEWERS_B1F
-	db 8 percent, 8 percent, 8 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 27, RATICATE		;30%
 	db 27, GOLBAT		;30%
@@ -1461,7 +1461,7 @@
 	db 27, ZUBAT		;1%
 	
 	map_id LUSTER_SEWERS_B2F
-	db 8 percent, 8 percent, 8 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 27, RATICATE		;30%
 	db 27, GOLBAT		;30%
@@ -1487,31 +1487,31 @@
 	db 27, RATTATA		;4%
 	db 27, RATTATA		;1%
 	
-	map_id LUSTER_SEWERS_MUK_ROOM
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+;	map_id LUSTER_SEWERS_MUK_ROOM
+;	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 ;	; morn
-	db 30, GRIMER_A		;30%
-	db 30, GRIMER_A		;30%
-	db 30, GRIMER		;20%
-	db 30, GRIMER_A		;10%
-	db 30, RATTATA		;5%
-	db 30, RATTATA		;4%
-	db 30, RATTATA		;1%
+;	db 30, GRIMER_A		;30%
+;	db 30, GRIMER_A		;30%
+;	db 30, GRIMER		;20%
+;	db 30, GRIMER_A		;10%
+;	db 30, RATTATA		;5%
+;	db 30, RATTATA		;4%
+;	db 30, RATTATA		;1%
 ;	; day
-	db 30, GRIMER_A		;30%
-	db 30, GRIMER_A		;30%
-	db 30, GRIMER		;20%
-	db 30, GRIMER_A		;10%
-	db 30, RATTATA		;5%
-	db 30, RATTATA		;4%
-	db 30, RATTATA		;1%
+;	db 30, GRIMER_A		;30%
+;	db 30, GRIMER_A		;30%
+;	db 30, GRIMER		;20%
+;	db 30, GRIMER_A		;10%
+;	db 30, RATTATA		;5%
+;	db 30, RATTATA		;4%
+;	db 30, RATTATA		;1%
 ;	; nite
-	db 30, GRIMER_A		;30%
-	db 30, GRIMER_A		;30%
-	db 30, GRIMER		;20%
-	db 30, GRIMER_A		;10%
-	db 30, RATTATA		;5%
-	db 30, RATTATA		;4%
-	db 30, RATTATA		;1%
-	
+;	db 30, GRIMER_A		;30%
+;	db 30, GRIMER_A		;30%
+;	db 30, GRIMER		;20%
+;	db 30, GRIMER_A		;10%
+;	db 30, RATTATA		;5%
+;	db 30, RATTATA		;4%
+;	db 30, RATTATA		;1%
+
 	db -1 ; end

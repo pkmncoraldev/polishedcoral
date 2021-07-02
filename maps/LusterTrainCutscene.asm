@@ -6,26 +6,19 @@ LusterTrainCutscene_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event 5, 3, ROUTE_1, 1
-	warp_event 60,  3, LUSTER_CITY_SHOPPING, 1
+	warp_event  5,  2, ROUTE_1, 1
+	warp_event 60,  2, LUSTER_TRAIN_STATION, 3
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	person_event SPRITE_GENTLEMAN,  7, 54, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-
-
-	const_def 1 ; object constants
-	const LUSTER_TRAIN_CUTSCENE_NPC
-
+	db 0 ; object events
+	
 LusterTrainCutsceneTrigger0:
 	callasm LusterTrainThing
 	applymovement PLAYER, Movement_LusterTrainArrives
 	special FadeOutPalettes
-	applyonemovement PLAYER, show_person
-	callasm LusterTrainThing2
 	warpcheck
 	end
 	
@@ -68,26 +61,26 @@ Movement_LusterTrainArrives:
 	big_step_right
 	big_step_right
 	big_step_right
-	fast_step_right
-	fast_step_right
-	fast_step_right
-	fast_step_right
-	fast_step_right
-	fast_step_right
-	fast_step_right
-	fast_step_right
-	fast_step_right
-	step_right
-	step_right
-	step_right
-	step_right
-	step_right
-	step_right
-	step_right
-	slow_step_right
-	slow_step_right
-	slow_step_right
-	slow_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
 	step_end
 	
 LusterTrainThing:

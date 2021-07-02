@@ -1,7 +1,8 @@
 ParkGate_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, ParkGateCallback
 
 	db 4 ; warp events
 	warp_event  3,  0, LUSTER_CITY_RESIDENTIAL, 10
@@ -14,3 +15,11 @@ ParkGate_MapScriptHeader:
 	db 0 ; bg events
 
 	db 0 ; object events
+
+	
+ParkGateCallback
+	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
+	clearevent EVENT_IN_SHOPPING_DISTRICT
+	clearevent EVENT_IN_BUSINESS_DISTRICT
+	clearevent EVENT_DOUBLE_LANDMARK_SIGN
+	return

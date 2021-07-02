@@ -156,8 +156,8 @@ SpriteHeaders:
 	overworld_sprite GamerGirlSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SilphEmployeeSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite SafariOfficerSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
-	overworld_sprite SwimmingOfficerSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
-	overworld_sprite SwimmingOfficerFSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite ReporterSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite CameramanSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SurfingPikachuSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite BigSnorlaxSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BigLaprasSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE

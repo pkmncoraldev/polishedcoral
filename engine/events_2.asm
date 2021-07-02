@@ -190,6 +190,11 @@ PlaceMapNameSign:: ; b8098 (2e:4098)
 	ld a, [wCurrentLandmark]
 	cp LUSTER_CITY
 	jr nz, .end
+	
+	ld a, [wMapGroup]
+	cp GROUP_FLICKER_STATION
+	jp z, .end
+	
 	ld a, [wLandmarkSignTimer]
 	cp $00
 	jr nz, .end

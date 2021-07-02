@@ -1009,6 +1009,7 @@ wEastTrainCabin1Trigger:: ds 1
 wEastTrainCabooseTrigger:: ds 1
 wEastTrainCabTrigger:: ds 1
 wLusterTrainCutsceneTrigger:: ds 1
+wLusterTrainStationTrigger:: ds 1
 wLusterCityResidentialTrigger:: ds 1
 wLusterCityShoppingTrigger:: ds 1
 wLusterCityBusinessTrigger:: ds 1
@@ -1029,7 +1030,7 @@ wTwinkleGymYellowRoomTrigger:: ds 1
 wMtOnwaB2FTrigger:: ds 1
 wMtOnwaB3FTrigger:: ds 1
 
-ds 26
+ds 25
 
 ; fight counts
 wJackFightCount::    ds 1

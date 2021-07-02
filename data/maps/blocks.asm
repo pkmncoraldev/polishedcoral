@@ -224,6 +224,9 @@ FlickerTrainCutscene_BlockData:
 LusterTrainCutscene_BlockData:
 	INCBIN "maps/LusterTrainCutscene.ablk.lz"
 	
+LusterTrainStation_BlockData:
+	INCBIN "maps/LusterTrainStation.ablk.lz"
+	
 Route10Tent_BlockData:
 	INCBIN "maps/Route10Tent.ablk.lz"
 	

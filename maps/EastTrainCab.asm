@@ -175,6 +175,7 @@ EastTrainCabLocke:
 	closetext
 	special FadeOutPalettes
 	applyonemovement PLAYER, hide_person
+	domaptrigger LUSTER_TRAIN_STATION, $1
 	warpcheck
 	end
 	

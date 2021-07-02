@@ -8,7 +8,7 @@ LusterCityShopping_MapScriptHeader:
 
 	db 6 ; warp events
 	warp_def 11,  0, 1, ROUTE_1
-	warp_def 11,  1, 2, ROUTE_1
+	warp_def 11,  1, 2, LUSTER_TRAIN_STATION
 	warp_def 33, 12, 1, LUSTER_MALL
 	warp_def 33, 13, 2, LUSTER_MALL
 	warp_def 33, 16, 3, LUSTER_MALL
@@ -66,6 +66,8 @@ LusterCityShopping_MapScriptHeader:
 	const LUSTER2NPC8
 
 LusterCityShoppingTrigger0:
+;	callasm LusterCityShoppingCheckMusicAsm
+;	ifequal 0, .startmusic
 	checktime 1<<NITE
 	iffalse .end
 	checkflag ENGINE_STREETLIGHTS
@@ -73,6 +75,10 @@ LusterCityShoppingTrigger0:
 	changeblock -4, 20, $84
 	setflag ENGINE_STREETLIGHTS
 	callasm RefreshScreen_BridgeUpdate
+	jump .end
+;.startmusic
+;	waitsfx
+;	playmusic MUSIC_LUSTER_CITY
 .end
 	end
 	
@@ -102,10 +108,15 @@ LusterCityFlypointCallback:
 	
 ShoppingCallback:
 	checktime 1<<NITE
-	iffalse .notnite
+	iffalse .end
 	changeblock -4, 20, $84
-.notnite
+.end
 	return
+	
+LusterCityShoppingCheckMusicAsm:
+	ld a, [wChannel1MusicID]
+	ld [wScriptVar], a
+	ret
 	
 Luster2NPC1:
 	faceplayer

@@ -59,7 +59,7 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke WIGGLYTUFF, 100
-	givepoke GLACEON, 7
+	givepoke PIDGEY, 7
 	givepoke LEAFEON, 27
 	givepoke SNEASEL, 28
 .items

@@ -174,6 +174,7 @@ INCLUDE "maps/FlickerNameSpeechHouse.asm"
 INCLUDE "maps/FlickerTrainStation.asm"
 INCLUDE "maps/FlickerTrainCutscene.asm"
 INCLUDE "maps/FlickerPassOutside.asm"
+INCLUDE "maps/LusterTrainCutscene.asm"
 
 SECTION "Twinkle Town Scripts", ROMX
 
@@ -188,7 +189,7 @@ INCLUDE "maps/TwinkleGymRedRoom.asm"
 
 SECTION "Luster City Scripts", ROMX
 
-INCLUDE "maps/LusterTrainCutscene.asm"
+INCLUDE "maps/LusterTrainStation.asm"
 INCLUDE "maps/LusterCityResidential.asm"
 INCLUDE "maps/LusterCityShopping.asm"
 INCLUDE "maps/LusterCityBusiness.asm"

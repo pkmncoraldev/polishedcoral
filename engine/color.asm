@@ -1321,7 +1321,12 @@ LoadMapPals::
 	cp TOWN
 	jr z, .outside
 	cp ROUTE
-	jp z, .outside
+	jr z, .outside
+	cp INDOOR
+	jr z, .outside
+	ld a, [wCurrentLandmark]
+	cp LUSTER_STATION
+	jr z, .outside
 	ret
 .outside
 	ld a, [wTileset]

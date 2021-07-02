@@ -193,7 +193,8 @@ MAP_NONE   EQU 0
 	map_const FLICKER_PASS_OUTSIDE,						  12,  9 ; 7
 	map_const FLICKER_TRAIN_CUTSCENE,					  27,  7 ; 8
 	map_const LUSTER_TRAIN_CUTSCENE,					  33,  4 ; 9
-	map_const LUSTER_CITY_BUSINESS,					      24, 24 ; 10
+	map_const LUSTER_TRAIN_STATION,						  16,  8 ; 10
+	map_const LUSTER_CITY_BUSINESS,					      24, 24 ; 11
 	
 	newgroup													 ; 11
 	

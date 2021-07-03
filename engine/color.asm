@@ -1322,12 +1322,12 @@ LoadMapPals::
 	jr z, .outside
 	cp ROUTE
 	jr z, .outside
-	cp INDOOR
-	jr z, .outside
-	ld a, [wCurrentLandmark]
-	cp LUSTER_STATION
-	jr z, .outside
-	ret
+	ld a, [wMapGroup]
+	cp GROUP_LUSTER_TRAIN_STATION
+	ret nz
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_TRAIN_STATION
+	ret nz
 .outside
 	ld a, [wTileset]
 	cp TILESET_GROVE

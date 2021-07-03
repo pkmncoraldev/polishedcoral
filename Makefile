@@ -169,5 +169,5 @@ gfx/pokemon/%/bitmask.asm gfx/pokemon/%/frames.asm: gfx/pokemon/%/front.2bpp
 %.ablk: ; $(error ERROR: Cannot find '$@')
 %.tilemap: ; $(error ERROR: Cannot find '$@')
 
-%.wav: ;
-%.ded: %.wav dedenc.py ; $(PYTHON) dedenc.py $< $@
+#%.wav: ;
+#%.ded: %.wav dedenc.py ; $(PYTHON) dedenc.py $< $@

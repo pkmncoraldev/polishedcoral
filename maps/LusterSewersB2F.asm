@@ -5,7 +5,7 @@ LusterSewersB2F_MapScriptHeader:
 	scene_script LusterSewersB2FTrigger2
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_OBJECTS, LusterSewersB2FChangeBlocks
+	callback MAPCALLBACK_TILES, LusterSewersB2FChangeBlocks
 
 	db 5 ; warp events
 	warp_def  7, 14, 3, LUSTER_SEWERS_B1F
@@ -136,11 +136,20 @@ LusterSewersB2FChangeBlocks:
 	checkevent EVENT_LUSTER_SEWERS_EMPTY
 	iffalse .endcallback
 	changemap LusterSewersB2FEmpty_BlockData
-	reloadmappart
+	checkscene
+	ifequal $0, .end
+	ifequal $1, .changeblocks
 	dotrigger $0
+.end
 	return
 .endcallback
 	dotrigger $2
+	return
+.changeblocks
+	changeblock $12, $10, $40
+	changeblock $12, $12, $44
+	changeblock $18, $10, $40
+	changeblock $18, $12, $44
 	return
 	
 LusterSewersB2FUnderBridge:

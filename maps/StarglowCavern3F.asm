@@ -27,7 +27,7 @@ TrainerStarglowCavern3F_1:
 
 	text "You have to be"
 	line "tough if you're"
-	cont "this off the"
+	cont "this far off the"
 	cont "beaten path."
 	done	
 

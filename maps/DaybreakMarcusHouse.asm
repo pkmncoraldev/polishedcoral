@@ -13,7 +13,7 @@ DaybreakMarcusHouse_MapScriptHeader:
 
 	db 2 ; object events
 	person_event SPRITE_REDS_MOM, 3, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, DaybreakMarcusMom, -1
-	person_event SPRITE_BRELOOM, 5, 6, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DaybreakMarcusHouseBreloom, -1
+	object_event 6, 5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, BRELOOM, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, DaybreakMarcusHouseBreloom, -1
 
 	const_def 1 ; object constants
 	const DAYBREAK_MARCUS_HOUSE_MARCUS_MOM

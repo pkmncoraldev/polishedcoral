@@ -13,7 +13,7 @@ EventideSootheBellHouse_MapScriptHeader:
 
 	db 2 ; object events
 	person_event SPRITE_REDS_MOM,  4,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideSootheBellHouseNPC, -1
-	person_event SPRITE_TOGETIC,  3,  7, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideSootheBellHouseTogetic, -1
+	object_event 7, 3, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TOGETIC, -1, -1, (1 << 3) | PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, EventideSootheBellHouseTogetic, -1
 
 	
 EventideSootheBellHouseNPC:

@@ -16,7 +16,7 @@ DaybreakPokeCenter_MapScriptHeader:
 	pc_chansey_event  5, 1
 	person_event SPRITE_GENTLEMAN, 3, 1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, DaybreakPokeCenterNPC1, -1
 	person_event SPRITE_POKEMANIAC, 6, 8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DaybreakPokeCenterNPC2, -1
-	person_event SPRITE_LEDYBA, 5, 8, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DaybreakPokeCenterLedyba, -1
+	object_event 8, 5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, LEDYBA, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, DaybreakPokeCenterLedyba, -1
 		
 	
 	const_def 1 ; object constants

@@ -14,7 +14,7 @@ Route10Tent_MapScriptHeader:
 
 	db 2 ; object events
 	person_event SPRITE_ROCKER,  3,  2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route10TentNPC, -1
-	person_event SPRITE_WIGGLYTUFF,  4,  0, SPRITEMOVEDATA_POKEMON, 2, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route10TentWigglytuff, -1
+	object_event 0, 4, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, WIGGLYTUFF, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, Route10TentWigglytuff, -1
 	
 	
 	const_def 1 ; object constants

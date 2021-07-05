@@ -474,8 +474,24 @@ CopyTempObjectToObjectStruct: ; 8286
 	add hl, de
 	ld [hl], STANDING
 
+	; the "radius" for Pokémon icons is the species, so don't alter it
+	ld a, [wTempObjectCopySprite]
+	cp SPRITE_MON_ICON
 	ld a, [wTempObjectCopyRadius]
-	call .InitRadius
+	jr z, .keep_radius
+	; add 1 to the y and x radii
+	ld h, a
+	inc a
+	and $f
+	ld l, a
+	ld a, h
+	add $10
+	and $f0
+	or l
+.keep_radius
+	ld hl, OBJECT_RADIUS
+	add hl, de
+	ld [hl], a
 
 	ld a, [wTempObjectCopyRange]
 	ld hl, OBJECT_RANGE
@@ -519,20 +535,6 @@ CopyTempObjectToObjectStruct: ; 8286
 	ld hl, wPlayerBGMapOffsetX
 	sub [hl]
 	ld hl, OBJECT_SPRITE_X
-	add hl, de
-	ld [hl], a
-	ret
-
-.InitRadius: ; 830d
-	ld h, a
-	inc a
-	and $f
-	ld l, a
-	ld a, h
-	add $10
-	and $f0
-	or l
-	ld hl, OBJECT_RADIUS
 	add hl, de
 	ld [hl], a
 	ret

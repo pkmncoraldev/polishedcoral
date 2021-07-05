@@ -14,7 +14,7 @@ GlintEvoHouse_MapScriptHeader:
 	db 3 ; object events
 	person_event SPRITE_FISHING_GURU, 4, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintEvoHouseNPC1, -1
 	person_event SPRITE_REDS_MOM, 4, 5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintEvoHouseNPC2, -1
-	person_event SPRITE_CUBONE, 6, 6, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, GlintEvoHouseCubone, -1
+	object_event 6, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, CUBONE, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, GlintEvoHouseCubone, -1
 
 	const_def 1 ; object constants
 	const GLINT_EVOHOUSE_NPC1

@@ -158,5 +158,5 @@ endc
 ENDM
 
 pc_chansey_event: MACRO
-	object_event \1, \2, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_COMMAND, jumpstd, pokecenterchansey, -1
+	object_event \1, \2, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, CHANSEY, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_COMMAND, jumpstd, pokecenterchansey, -1
 ENDM

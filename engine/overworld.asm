@@ -228,7 +228,6 @@ ReloadSpriteIndex::
 ; Used to reload variable sprites
 	ld hl, wObjectStructs
 	ld de, OBJECT_STRUCT_LENGTH
-	push bc
 	ld a, [hUsedSpriteIndex]
 	ld b, a
 	xor a
@@ -243,12 +242,20 @@ ReloadSpriteIndex::
 	jr nz, .done
 .continue
 	push hl
+	; hl points to an object_struct; we want bc to point to a map_object,
+	; to get the radius (actually the SPRITE_MON_ICON species).
+	push bc
+	ld bc, OBJECT_RADIUS - MAPOBJECT_RADIUS
+	add hl, bc
+	ld b, h
+	ld c, l
 	call GetSpriteVTile
+	pop bc
 	pop hl
 	push hl
-	inc hl
-	inc hl
-	ld [hl], a
+	inc hl ; skip OBJECT_SPRITE
+	inc hl ; skip OBJECT_MAP_OBJECT_INDEX
+	ld [hl], a ; OBJECT_SPRITE_TILE
 	pop hl
 .done
 	add hl, de
@@ -256,7 +263,6 @@ ReloadSpriteIndex::
 	inc a
 	cp NUM_OBJECT_STRUCTS
 	jr nz, .loop
-	pop bc
 	ret
 
 LoadEmoteGFX::
@@ -350,9 +356,8 @@ GetSprite:: ; 1423c
 
 GetMonSprite: ; 14259
 ; Return carry if a monster sprite was loaded.
-
-	cp SPRITE_POKEMON
-	jr c, .Normal
+	cp SPRITE_MON_ICON
+	jr z, .MonIcon
 	cp SPRITE_MON_DOLL_1
 	jr z, .MonDoll1
 	cp SPRITE_MON_DOLL_2
@@ -363,57 +368,9 @@ GetMonSprite: ; 14259
 	jr z, .BreedMon2
 	cp SPRITE_GROTTO_MON
 	jr z, .GrottoMon
+
 	cp SPRITE_VARS
-	jr nc, .Variable
-	jr .Icon
-
-.Normal:
-	and a
-	ret
-
-.Icon:
-	sub SPRITE_POKEMON
-	ld e, a
-	ld d, 0
-	ld hl, SpriteMons
-	add hl, de
-	ld a, [hl]
-	jr .Mon
-
-.BreedMon1
-	ld a, [wBreedMon1Species]
-	jr .Mon
-
-.BreedMon2
-	ld a, [wBreedMon2Species]
-	jr .Mon
-
-.GrottoMon
-	farcall GetHiddenGrottoContents
-	ld a, [hl]
-	jr .Mon
-
-.MonDoll1
-	ld a, [wLeftOrnament]
-	farcall GetDecorationSpecies
-	jr .Mon
-
-.MonDoll2
-	ld a, [wRightOrnament]
-	farcall GetDecorationSpecies
-
-.Mon:
-	ld e, a
-	and a
-	jr z, .NoBreedmon
-
-	farcall LoadOverworldMonIcon
-
-	lb hl, 0, MON_SPRITE
-	scf
-	ret
-
-.Variable:
+	jr c, .Normal
 	sub SPRITE_VARS
 	ld e, a
 	ld d, 0
@@ -421,12 +378,56 @@ GetMonSprite: ; 14259
 	add hl, de
 	ld a, [hl]
 	and a
-	jp nz, GetMonSprite
+	jr nz, GetMonSprite
+	; fallthrough
 
-.NoBreedmon:
+.NoSprite:
 	ld a, 1
 	lb hl, 0, MON_SPRITE
+.Normal:
 	and a
+	ret
+
+.MonIcon:
+; Everything that calls GetMonSprite either points to a map_object struct in bc,
+; or will not be used for Pokémon icons, so this SPRITE_MON_ICON can assume
+; that bc takes MAPOBJECT_* offsets.
+; (That means the player, Battle Tower trainers, and variable sprites cannot
+;  use Pokémon icons.)
+	ld hl, MAPOBJECT_RADIUS
+	add hl, bc
+	ld a, [hl]
+	jr .Mon
+
+.BreedMon1:
+	ld a, [wBreedMon1Species]
+	jr .Mon
+
+.BreedMon2:
+	ld a, [wBreedMon2Species]
+	jr .Mon
+
+.GrottoMon:
+	farcall GetHiddenGrottoContents
+	ld a, [hl]
+	jr .Mon
+
+.MonDoll1:
+	ld a, [wLeftOrnament]
+	jr .MonDoll
+
+.MonDoll2:
+	ld a, [wRightOrnament]
+.MonDoll:
+	farcall GetDecorationSpecies
+	; fallthrough
+
+.Mon:
+	and a
+	jr z, .NoSprite
+	farcall LoadOverworldMonIcon
+	lb hl, 0, MON_SPRITE
+	scf
 	ret
 ; 142a7
 
@@ -633,6 +634,6 @@ LoadEmote:: ; 1442f
 
 INCLUDE "data/sprites/emotes.asm"
 
-INCLUDE "data/sprites/sprite_mons.asm"
+;INCLUDE "data/sprites/sprite_mons.asm"
 
 INCLUDE "data/sprites/sprites.asm"

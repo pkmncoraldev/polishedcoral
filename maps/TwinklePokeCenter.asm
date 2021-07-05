@@ -16,7 +16,7 @@ TwinklePokeCenter_MapScriptHeader:
 	pc_chansey_event  5, 1
 	object_event  2,  4, SPRITE_FISHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinklePokeCenterFisher, -1
 	object_event  9,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, TwinklePokeCenterGirl, -1
-	object_event  9,  5, SPRITE_GLOOM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinklePokeCenterGloom, -1
+	object_event  9,  5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GLOOM, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinklePokeCenterGloom, -1
 	object_event 11,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, TwinklePokeCenterNerd, -1
 	
 	const_def 1 ; object constants

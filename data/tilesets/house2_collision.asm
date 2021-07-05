@@ -14,16 +14,16 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0d
 	tilecoll WALL, WALL, FLOOR, WALL ; 0e
 	tilecoll WALL, WALL, WALL, WALL ; 0f
-	tilecoll WALL, WALL, WALL, WALL ; 10
-	tilecoll WALL, WALL, WALL, WALL ; 11
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 10
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 11
 	tilecoll WALL, WALL, WALL, WALL ; 12
 	tilecoll WALL, WALL, WALL, BOOKSHELF ; 13
-	tilecoll WALL, WALL, WALL, WALL ; 14
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 14
 	tilecoll WALL, WALL, WALL, WALL ; 15
-	tilecoll WALL, WALL, WALL, WALL ; 16
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 16
 	tilecoll RIGHT_WALL, FLOOR, FLOOR, FLOOR ; 17
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 18
-	tilecoll WALL, WALL, WALL, WALL ; 19
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 19
 	tilecoll WALL, WALL, BOOKSHELF, BOOKSHELF ; 1a
 	tilecoll WALL, WALL, WALL, WALL ; 1b
 	tilecoll WALL, WALL, WALL, WALL ; 1c

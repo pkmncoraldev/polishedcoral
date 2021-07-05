@@ -1,7 +1,7 @@
 INCLUDE "data/pokemon/menu_icon_pals.asm"
 
 LoadOverworldMonIcon: ; 8e82b
-	ld a, e
+;	ld a, e
 	ld [wCurIcon], a
 	ld l, a
 	ld h, 0

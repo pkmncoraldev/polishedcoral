@@ -14,7 +14,7 @@ SunbeamDodrioHouse_MapScriptHeader:
 	db 3 ; object events
 	person_event SPRITE_REDS_MOM, 4, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SunbeamIslandHouse4NPC1, -1
 	person_event SPRITE_BATTLE_GIRL, 3, 5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandHouse4NPC2, -1
-	person_event SPRITE_DODUO, 4, 7, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandHouse4NPC3, -1
+	object_event 7, 4, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODUO, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandHouse4NPC3, -1
 
 	const_def 1 ; object constants
 	const SUNBEAM_DODRIO_HOUSE_NPC1

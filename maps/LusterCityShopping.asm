@@ -66,8 +66,6 @@ LusterCityShopping_MapScriptHeader:
 	const LUSTER2NPC8
 
 LusterCityShoppingTrigger0:
-;	callasm LusterCityShoppingCheckMusicAsm
-;	ifequal 0, .startmusic
 	checktime 1<<NITE
 	iffalse .end
 	checkflag ENGINE_STREETLIGHTS
@@ -75,10 +73,6 @@ LusterCityShoppingTrigger0:
 	changeblock -4, 20, $84
 	setflag ENGINE_STREETLIGHTS
 	callasm RefreshScreen_BridgeUpdate
-	jump .end
-;.startmusic
-;	waitsfx
-;	playmusic MUSIC_LUSTER_CITY
 .end
 	end
 	
@@ -112,11 +106,6 @@ ShoppingCallback:
 	changeblock -4, 20, $84
 .end
 	return
-	
-LusterCityShoppingCheckMusicAsm:
-	ld a, [wChannel1MusicID]
-	ld [wScriptVar], a
-	ret
 	
 Luster2NPC1:
 	faceplayer

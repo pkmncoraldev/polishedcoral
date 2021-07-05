@@ -19,7 +19,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 12
 	tilecoll WALL, WALL, WALL, BOOKSHELF ; 13
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 14
-	tilecoll WALL, WALL, WALL, WALL ; 15
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 15
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 16
 	tilecoll RIGHT_WALL, FLOOR, FLOOR, FLOOR ; 17
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 18

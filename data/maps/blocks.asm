@@ -267,8 +267,8 @@ TwinkleGymBlueRoom_BlockData:
 TwinkleGymYellowRoom_BlockData:
 	INCBIN "maps/TwinkleGymYellowRoom.ablk.lz"
 	
-EastTrainCabin1_BlockData:
-EastTrainCabin2_BlockData:
+TrainCabin1_BlockData:
+TrainCabin2_BlockData:
 	INCBIN "maps/TrainCabin.ablk.lz"
 	
 EastTrainCab_BlockData:

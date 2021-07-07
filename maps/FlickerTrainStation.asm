@@ -1,7 +1,8 @@
 FlickerTrainStation_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, FlickerTrainStationCallback
 
 	db 3 ; warp events
 	warp_event  7, 11, FLICKER_STATION, 5
@@ -34,6 +35,18 @@ FlickerTrainStation_MapScriptHeader:
 	const FLICKER_TRAIN_STATION_NPC3
 	const FLICKER_TRAIN_STATION_CLERK
 	
+FlickerTrainStationCallback:
+	checkevent EVENT_TRAIN_GOING_WEST
+	iffalse .end
+	moveperson FLICKER_TRAIN_STATION_CLERK, 9, 3
+	earthquake 5
+	applymovement PLAYER, Movement_FlickerTrainStationPlayer
+	applymovement FLICKER_TRAIN_STATION_CLERK, Movement_FlickerTrainStationClerk2
+	clearevent EVENT_TRAIN_GOING_EAST
+	clearevent EVENT_TRAIN_GOING_WEST
+.end
+	return
+	
 FlickerTrainStationClerk:
 ;	jumptextfaceplayer FlickerTrainStationClerkTextDemo
 	faceplayer
@@ -42,6 +55,9 @@ FlickerTrainStationClerk:
 	yesorno
 	iffalse .end
 	closetext
+	domaptrigger TRAIN_CABIN_1, $0
+	setevent EVENT_TRAIN_GOING_EAST
+	clearevent EVENT_TRAIN_GOING_WEST
 	follow FLICKER_TRAIN_STATION_CLERK, PLAYER
 	applymovement FLICKER_TRAIN_STATION_CLERK, Movement_FlickerTrainStationClerk
 	stopfollow
@@ -198,8 +214,20 @@ FlickerTrainStationWindowText:
 	line "act your age!"
 	done
 	
+Movement_FlickerTrainStationPlayer:
+	step_down
+	step_down
+	step_down
+	step_down
+	step_end
+	
 Movement_FlickerTrainStationClerk:
 	step_up
 	step_up
 	step_left
+	step_end
+	
+Movement_FlickerTrainStationClerk2:
+	step_left
+	step_down
 	step_end

@@ -5,8 +5,9 @@ FlickerTrainCutscene_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 1 ; warp events
-	warp_event  4,  8, FLICKER_TRAIN_STATION, 5
+	db 2 ; warp events
+	warp_event  4,  8, FLICKER_TRAIN_STATION, 3
+	warp_event 47,  5, ROUTE_1, 1
 
 	db 0 ; coord events
 
@@ -60,10 +61,30 @@ FlickerTrainCutsceneTrigger0:
 	waitsfx
 	dotrigger $2
 	callasm FlickerStationPlayerSeatAsm
-	warpfacing LEFT, EAST_TRAIN_CABIN_1, $7, $2
+	warpfacing LEFT, TRAIN_CABIN_1, $7, $2
 	end
 	
 FlickerTrainCutsceneTrigger1:
+	callasm FlickerStationTrainThing
+	playmusic MUSIC_NONE
+	applymovement PLAYER, Movement_FlickerStationTrainArrives
+	pause 5
+	earthquake 5
+	pause 35
+	opentext
+	writetext FlickerTrainCutsceneArriveText
+	waitbutton
+	callasm LusterTrainThing2
+	closetext
+	applymovement PLAYER, Movement_FlickerStationTrainArrives2
+	pause 15
+	playsound SFX_EXIT_BUILDING
+	applyonemovement PLAYER, show_person
+	applyonemovement PLAYER, step_down
+	pause 10
+	applyonemovement PLAYER, step_down
+	warpcheck
+	dotrigger $2
 	end
 	
 FlickerStationTrainThing:
@@ -86,6 +107,15 @@ FlickerStationTrainThing:
 	farcall HDMATransfer_OnlyTopFourRows
 	ret
 
+FlickerTrainCutsceneArriveText:
+	text "We've arrived at"
+	line "FLICKER STATION!"
+	
+	para "Please watch your"
+	line "step as you exit"
+	cont "the train."
+	done
+	
 Movement_FlickerStationTrainLeaves:
 	slow_step_right
 	slow_step_right
@@ -130,5 +160,55 @@ Movement_FlickerStationTrainLeaves:
 	big_step_right
 	big_step_right
 	big_step_right
+	step_end
+	
+Movement_FlickerStationTrainArrives:
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	slow_step_left
+	slow_step_left
+	slow_step_left
+	step_end
+	
+Movement_FlickerStationTrainArrives2:
+	slow_step_left
+	slow_step_down
 	step_end
 	

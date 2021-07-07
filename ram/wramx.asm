@@ -1005,7 +1005,7 @@ wFlickerTrainCutsceneTrigger:: ds 1
 wRoute10Trigger:: ds 1
 wRoute10EastTrigger:: ds 1
 wTwinkleTownTrigger:: ds 1
-wEastTrainCabin1Trigger:: ds 1
+wTrainCabin1Trigger:: ds 1
 wEastTrainCabooseTrigger:: ds 1
 wEastTrainCabTrigger:: ds 1
 wLusterTrainCutsceneTrigger:: ds 1

@@ -6,14 +6,14 @@ EastTrainCaboose_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 1 ; warp events
-	warp_event 3,  2, EAST_TRAIN_CABIN_1, 1
+	warp_event 3,  2, TRAIN_CABIN_1, 1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 2 ; object events
-	person_event SPRITE_DISGUISEMAN,  2,  3, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_EAST_TRAIN_CABIN_1_SNARE_OFFICER
+	person_event SPRITE_DISGUISEMAN,  2,  3, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_TRAIN_CABIN_1_SNARE_OFFICER
 	person_event SPRITE_SNARE,  2,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_EAST_TRAIN_CABOOSE_SNARE_GRUNT
 
 	const_def 1 ; object constants
@@ -94,8 +94,9 @@ EastTrainCabooseTrigger0:
 	disappear EAST_TRAIN_CABOOSE_SNARE_GRUNT
 	playsound SFX_ENTER_DOOR
 	setevent EVENT_SNARE_ON_TRAIN
+	setevent EVENT_TRAIN_DOWN_OFFICER_GONE
 	clearevent EVENT_ALWAYS_SET
-	clearevent EVENT_BEAT_EAST_TRAIN_CABIN_1_SNARE_1
+	clearevent EVENT_BEAT_TRAIN_CABIN_1_SNARE_1
 	special Special_FadeOutMusic
 	pause 40
 	playsound SFX_ELEVATOR_END

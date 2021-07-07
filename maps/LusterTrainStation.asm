@@ -69,6 +69,8 @@ LusterTrainStationCallback:
 	applyonemovement PLAYER, show_person
 	applyonemovement PLAYER, step_down
 	pause 10
+	checkevent EVENT_MET_MR_NETT
+	iftrue .met_nett
 	applymovement PLAYER, Movement_LusterTrainArrives4
 	opentext
 	writetext LusterTrainStationConductorText1
@@ -152,6 +154,14 @@ LusterTrainStationCallback:
 	callasm LusterStationMusicAsm
 	setevent EVENT_MET_MR_NETT
 	dotrigger $0
+	jump .end
+.met_nett
+	applymovement PLAYER, Movement_LusterTrainArrives6
+	applymovement LUSTER_TRAIN_STATION_OFFICER, Movement_LusterStationOfficer2
+	clearevent EVENT_TRAIN_GOING_EAST
+	clearevent EVENT_TRAIN_GOING_WEST
+	callasm LusterStationMusicAsm
+	dotrigger $0
 .end
 	return
 	
@@ -161,6 +171,51 @@ LusterStationMusicAsm:
 	ret
 
 LusterTrainStationConductor:
+	faceplayer
+	opentext
+	writetext LusterTrainStationClerkText1
+	yesorno
+	iffalse .end
+	closetext
+	domaptrigger TRAIN_CABIN_1, $0
+	clearevent EVENT_TRAIN_GOING_EAST
+	setevent EVENT_TRAIN_GOING_WEST
+	
+	follow LUSTER_TRAIN_STATION_OFFICER, PLAYER
+	applymovement LUSTER_TRAIN_STATION_OFFICER, Movement_LusterStationOfficer1
+	stopfollow
+	spriteface LUSTER_TRAIN_STATION_OFFICER, LEFT
+	applymovement PLAYER, Movement_LusterStationBoardTrain
+	playsound SFX_ENTER_DOOR
+	applyonemovement PLAYER, hide_person
+	waitsfx
+	opentext
+	writetext LusterStationAllAboardText
+	waitbutton
+	closetext
+	pause 20
+	special Special_FadeOutMusic
+	pause 20	
+	applymovement PLAYER, Movement_LusterStationTrainCamera
+	pause 30
+	playmusic MUSIC_TRAIN_STARTUP
+	pause 20
+	
+	callasm FlickerStationTrainThing
+	pause 20
+	earthquake 5
+	pause 5
+	applymovement PLAYER, Movement_LusterStationTrainLeaves
+	playsound SFX_EXIT_BUILDING
+	special FadeOutPalettes
+	waitsfx
+	callasm FlickerStationPlayerSeatAsm
+	warpfacing LEFT, TRAIN_CABIN_1, $7, $2
+	end
+.end
+	writetext LusterTrainStationClerkText2
+	waitbutton
+	closetext
 	end
 	
 LusterTrainStationReporter:
@@ -168,6 +223,24 @@ LusterTrainStationReporter:
 	
 LusterTrainStationCameraman:
 	end
+	
+LusterTrainStationClerkText1:
+	text "Take the train to"
+	line "FLICKER STATION?"
+	done
+	
+LusterTrainStationClerkText2:
+	text "Have a nice day."
+	done
+	
+LusterStationAllAboardText:
+	text "All aboard!"
+	
+	para "Train heading to"
+	line "FLICKER STATION is"
+	cont "now departing!"
+	done
+	
 	
 LusterTrainStationText1:
 	text "We've arrived at"
@@ -380,6 +453,16 @@ Movement_LusterTrainArrives5:
 	step_right
 	step_end
 	
+Movement_LusterTrainArrives6:
+	step_right
+	step_right
+	step_right
+	step_down
+	step_down
+	step_down
+	step_down
+	step_end
+	
 Movement_LusterStationConductor:
 	run_step_left
 	run_step_left
@@ -415,3 +498,35 @@ Movement_LusterStationOfficer2:
 	step_down
 	step_down
 	step_end
+	
+Movement_LusterStationBoardTrain:
+	step_up
+	step_left
+	step_left
+	step_left
+	step_up
+	step_end
+	
+Movement_LusterStationTrainLeaves:
+	slow_step_left
+	slow_step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	step_end
+
+Movement_LusterStationTrainCamera:
+	slow_step_up
+	slow_step_right
+	step_end
+	

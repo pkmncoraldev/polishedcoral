@@ -6,7 +6,7 @@ EastTrainCab_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  0,  2, EAST_TRAIN_CABIN_2, 2
+	warp_event  0,  2, TRAIN_CABIN_2, 2
 	warp_event  3,  2, LUSTER_TRAIN_CUTSCENE, 1
 
 	db 1 ; coord events
@@ -132,7 +132,7 @@ EastTrainCabLocke:
 	clearflag ENGINE_PUNKS_ON_TRAIN
 	clearevent EVENT_SNARE_ON_TRAIN
 	setevent EVENT_ALWAYS_SET
-	setevent EVENT_BEAT_EAST_TRAIN_CABIN_1_SNARE_1
+	setevent EVENT_BEAT_TRAIN_CABIN_1_SNARE_1
 	setevent EVENT_SAVED_TRAIN
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	special Special_FadeOutMusic

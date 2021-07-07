@@ -46,7 +46,7 @@ MapTriggers::
 	scene_var ROUTE_10,								  wRoute10Trigger
 	scene_var ROUTE_10_EAST,						  wRoute10EastTrigger
 	scene_var TWINKLE_TOWN,							  wTwinkleTownTrigger
-	scene_var EAST_TRAIN_CABIN_1,					  wEastTrainCabin1Trigger
+	scene_var TRAIN_CABIN_1,						  wTrainCabin1Trigger
 	scene_var EAST_TRAIN_CABOOSE,					  wEastTrainCabooseTrigger
 	scene_var EAST_TRAIN_CAB,						  wEastTrainCabTrigger
 	scene_var LUSTER_TRAIN_CUTSCENE,				  wLusterTrainCutsceneTrigger

@@ -378,8 +378,8 @@ ENDM
 	map_attributes TwinkleGymBlueRoom, TWINKLE_GYM_BLUE_ROOM, 0, 0
 	map_attributes TwinkleGymYellowRoom, TWINKLE_GYM_YELLOW_ROOM, 0, 0
 	map_attributes TwinkleGymRedRoom, TWINKLE_GYM_RED_ROOM, 0, 0
-	map_attributes EastTrainCabin1, EAST_TRAIN_CABIN_1, 0, 0
-	map_attributes EastTrainCabin2, EAST_TRAIN_CABIN_2, 0, 0
+	map_attributes TrainCabin1, TRAIN_CABIN_1, 0, 0
+	map_attributes TrainCabin2, TRAIN_CABIN_2, 0, 0
 	map_attributes EastTrainCab, EAST_TRAIN_CAB, 0, 0
 	map_attributes EastTrainCaboose, EAST_TRAIN_CABOOSE, 0, 0
 	map_attributes LusterApartment1_1F, LUSTER_APARTMENT_1_1F, $0, 0

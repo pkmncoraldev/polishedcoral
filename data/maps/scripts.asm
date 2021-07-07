@@ -224,8 +224,8 @@ INCLUDE "maps/LusterMallClothesShop.asm"
 
 SECTION "Train Scripts", ROMX
 
-INCLUDE "maps/EastTrainCabin1.asm"
-INCLUDE "maps/EastTrainCabin2.asm"
+INCLUDE "maps/TrainCabin1.asm"
+INCLUDE "maps/TrainCabin2.asm"
 INCLUDE "maps/EastTrainCab.asm"
 INCLUDE "maps/EastTrainCaboose.asm"
 

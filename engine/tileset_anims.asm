@@ -130,6 +130,7 @@ TilesetTrainAnim::
 ;	dw NULL,  WaitTileAnimation
 	dw VTiles2 tile $0, WriteTileFromBuffer
 	dw TrainWindowFrames, AnimateWaterfallTiles
+	dw TrainWindowFrames2, AnimateWaterfallTiles
 	dw NULL,  DoneTileAnimation
 	
 TilesetSunsetAnim::
@@ -916,6 +917,10 @@ endr
 TrainWindowFrames: dw VTiles2 tile $28, TrainWindowTiles
 
 TrainWindowTiles: INCBIN "gfx/tilesets/trainwindows/1.2bpp"
+
+TrainWindowFrames2: dw VTiles2 tile $38, TrainWindowTiles2
+
+TrainWindowTiles2: INCBIN "gfx/tilesets/trainwindows/2.2bpp"
 	
 RippleFrames: dw VTiles2 tile $7d, RippleTiles
 

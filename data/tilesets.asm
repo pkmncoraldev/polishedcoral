@@ -7,8 +7,10 @@ ENDM
 
 SECTION "Tileset Data - player_room", ROMX
 
-TilesetPlayerRoomGFX::
+TilesetPlayerRoomGFX0::
 INCBIN "gfx/tilesets/player_room.2bpp.lz"
+
+TilesetPlayerRoomGFX1 EQU 0
 
 TilesetPlayerRoomGFX2 EQU 0
 
@@ -24,8 +26,10 @@ INCLUDE "data/tilesets/player_room_collision.asm"
 
 SECTION "Tileset Data - playerhouse", ROMX
 
-TilesetPlayerHouseGFX::
+TilesetPlayerHouseGFX0::
 INCBIN "gfx/tilesets/playerhouse.2bpp.lz"
+
+TilesetPlayerHouseGFX1 EQU 0
 
 TilesetPlayerHouseGFX2 EQU 0
 
@@ -41,11 +45,14 @@ INCLUDE "data/tilesets/playerhouse_collision.asm"
 
 SECTION "Tileset Data - sunset", ROMX
 
-TilesetSunsetGFX::
+TilesetSunsetGFX0::
 INCBIN "gfx/tilesets/sunset.2bpp.vram0.lz"
 
-TilesetSunsetGFX2::
+TilesetSunsetGFX1::
 INCBIN "gfx/tilesets/sunset.2bpp.vram1.lz"
+
+TilesetSunsetGFX2::
+INCBIN "gfx/tilesets/sunset.2bpp.vram2.lz"
 
 TilesetSunsetMeta::
 INCBIN "data/tilesets/sunset_metatiles.bin.lz"
@@ -59,11 +66,14 @@ INCLUDE "data/tilesets/sunset_collision.asm"
 
 SECTION "Tileset Data - glint", ROMX
 
-TilesetGlintGFX::
+TilesetGlintGFX0::
 INCBIN "gfx/tilesets/glint.2bpp.vram0.lz"
 
-TilesetGlintGFX2::
+TilesetGlintGFX1::
 INCBIN "gfx/tilesets/glint.2bpp.vram1.lz"
+
+TilesetGlintGFX2::
+INCBIN "gfx/tilesets/glint.2bpp.vram2.lz"
 
 TilesetGlintMeta::
 INCBIN "data/tilesets/glint_metatiles.bin.lz"
@@ -77,11 +87,14 @@ INCLUDE "data/tilesets/glint_collision.asm"
 
 SECTION "Tileset Data - starglow", ROMX
 
-TilesetStarglowGFX::
+TilesetStarglowGFX0::
 INCBIN "gfx/tilesets/starglow.2bpp.vram0.lz"
 
-TilesetStarglowGFX2::
+TilesetStarglowGFX1::
 INCBIN "gfx/tilesets/starglow.2bpp.vram1.lz"
+
+TilesetStarglowGFX2::
+INCBIN "gfx/tilesets/starglow.2bpp.vram2.lz"
 
 TilesetStarglowMeta::
 INCBIN "data/tilesets/starglow_metatiles.bin.lz"
@@ -95,8 +108,11 @@ INCLUDE "data/tilesets/starglow_collision.asm"
 
 SECTION "Tileset Data - house1", ROMX
 
-TilesetHouse1GFX::
+TilesetHouse1GFX0::
 INCBIN "gfx/tilesets/house1.2bpp.lz"
+
+TilesetHouse1GFX1::
+INCBIN "gfx/tilesets/house1.2bpp.vram1.lz"
 
 TilesetHouse1GFX2 EQU 0
 
@@ -112,11 +128,14 @@ INCLUDE "data/tilesets/house1_collision.asm"
 
 SECTION "Tileset Data - house2", ROMX
 
-TilesetHouse2GFX::
+TilesetHouse2GFX0::
 INCBIN "gfx/tilesets/house2.2bpp.vram0.lz"
 
-TilesetHouse2GFX2::
+TilesetHouse2GFX1::
 INCBIN "gfx/tilesets/house2.2bpp.vram1.lz"
+
+TilesetHouse2GFX2::
+INCBIN "gfx/tilesets/house2.2bpp.vram2.lz"
 
 TilesetHouse2Meta::
 INCBIN "data/tilesets/house2_metatiles.bin.lz"
@@ -130,8 +149,11 @@ INCLUDE "data/tilesets/house2_collision.asm"
 
 SECTION "Tileset Data - pokecenter", ROMX
 
-TilesetPokeCenterGFX::
-INCBIN "gfx/tilesets/pokecenter.2bpp.lz"
+TilesetPokeCenterGFX0::
+INCBIN "gfx/tilesets/pokecenter.2bpp.vram0.lz"
+
+TilesetPokeCenterGFX1::
+INCBIN "gfx/tilesets/pokecenter.2bpp.vram1.lz"
 
 TilesetPokeCenterGFX2 EQU 0
 
@@ -147,8 +169,10 @@ INCLUDE "data/tilesets/pokecenter_collision.asm"
 
 SECTION "Tileset Data - cafe", ROMX
 
-TilesetCafeGFX::
+TilesetCafeGFX0::
 INCBIN "gfx/tilesets/cafe.2bpp.lz"
+
+TilesetCafeGFX1 EQU 0
 
 TilesetCafeGFX2 EQU 0
 
@@ -164,8 +188,10 @@ INCLUDE "data/tilesets/cafe_collision.asm"
 
 SECTION "Tileset Data - lighthouse", ROMX
 
-TilesetLighthouseGFX::
+TilesetLighthouseGFX0::
 INCBIN "gfx/tilesets/lighthouse.2bpp.lz"
+
+TilesetLighthouseGFX1 EQU 0
 
 TilesetLighthouseGFX2 EQU 0
 
@@ -181,11 +207,14 @@ INCLUDE "data/tilesets/lighthouse_collision.asm"
 
 SECTION "Tileset Data - gate", ROMX
 
-TilesetGateGFX::
+TilesetGateGFX0::
 INCBIN "gfx/tilesets/gate.2bpp.vram0.lz"
 
-TilesetGateGFX2::
+TilesetGateGFX1::
 INCBIN "gfx/tilesets/gate.2bpp.vram1.lz"
+
+TilesetGateGFX2::
+INCBIN "gfx/tilesets/gate.2bpp.vram2.lz"
 
 TilesetGateMeta::
 INCBIN "data/tilesets/gate_metatiles.bin.lz"
@@ -199,8 +228,11 @@ INCLUDE "data/tilesets/gate_collision.asm"
 
 SECTION "Tileset Data - lab", ROMX
 
-TilesetLabGFX::
-INCBIN "gfx/tilesets/lab.2bpp.lz"
+TilesetLabGFX0::
+INCBIN "gfx/tilesets/lab.2bpp.vram0.lz"
+
+TilesetLabGFX1::
+INCBIN "gfx/tilesets/lab.2bpp.vram1.lz"
 
 TilesetLabGFX2 EQU 0
 
@@ -216,13 +248,17 @@ INCLUDE "data/tilesets/lab_collision.asm"
 
 SECTION "Tileset Data - cave", ROMX
 
-TilesetCaveGFX::
-TilesetStarglowCavernGFX::
+TilesetCaveGFX0::
+TilesetStarglowCavernGFX0::
 INCBIN "gfx/tilesets/cave.2bpp.vram0.lz"
+
+TilesetCaveGFX1::
+TilesetStarglowCavernGFX1::
+INCBIN "gfx/tilesets/cave.2bpp.vram1.lz"
 
 TilesetCaveGFX2::
 TilesetStarglowCavernGFX2::
-INCBIN "gfx/tilesets/cave.2bpp.vram1.lz"
+INCBIN "gfx/tilesets/cave.2bpp.vram2.lz"
 
 TilesetCaveMeta::
 TilesetStarglowCavernMeta::
@@ -241,8 +277,10 @@ INCBIN "data/tilesets/starglow_cavern_attributes.bin.lz"
 
 SECTION "Tileset Data - grove", ROMX
 
-TilesetGroveGFX::
+TilesetGroveGFX0::
 INCBIN "gfx/tilesets/grove.2bpp.lz"
+
+TilesetGroveGFX1 EQU 0
 
 TilesetGroveGFX2 EQU 0
 
@@ -258,8 +296,11 @@ INCLUDE "data/tilesets/grove_collision.asm"
 
 SECTION "Tileset Data - mart", ROMX
 
-TilesetMartGFX::
-INCBIN "gfx/tilesets/mart.2bpp.lz"
+TilesetMartGFX0::
+INCBIN "gfx/tilesets/mart.2bpp.vram0.lz"
+
+TilesetMartGFX1::
+INCBIN "gfx/tilesets/mart.2bpp.vram1.lz"
 
 TilesetMartGFX2 EQU 0
 
@@ -275,8 +316,11 @@ INCLUDE "data/tilesets/mart_collision.asm"
 
 SECTION "Tileset Data - mountain", ROMX
 
-TilesetMountainGFX::
-INCBIN "gfx/tilesets/mountain.2bpp.lz"
+TilesetMountainGFX0::
+INCBIN "gfx/tilesets/mountain.2bpp.vram0.lz"
+
+TilesetMountainGFX1::
+INCBIN "gfx/tilesets/mountain.2bpp.vram1.lz"
 
 TilesetMountainGFX2 EQU 0
 
@@ -292,11 +336,14 @@ INCLUDE "data/tilesets/mountain_collision.asm"
 
 SECTION "Tileset Data - jungle", ROMX
 
-TilesetJungleGFX::
+TilesetJungleGFX0::
 INCBIN "gfx/tilesets/jungle.2bpp.vram0.lz"
 
-TilesetJungleGFX2::
+TilesetJungleGFX1::
 INCBIN "gfx/tilesets/jungle.2bpp.vram1.lz"
+
+TilesetJungleGFX2::
+INCBIN "gfx/tilesets/jungle.2bpp.vram2.lz"
 
 TilesetJungleMeta::
 INCBIN "data/tilesets/jungle_metatiles.bin.lz"
@@ -310,8 +357,11 @@ INCLUDE "data/tilesets/jungle_collision.asm"
 
 SECTION "Tileset Data - spooky", ROMX
 
-TilesetSpookyGFX::
-INCBIN "gfx/tilesets/spooky.2bpp.lz"
+TilesetSpookyGFX0::
+INCBIN "gfx/tilesets/spooky.2bpp.vram0.lz"
+
+TilesetSpookyGFX1::
+INCBIN "gfx/tilesets/spooky.2bpp.vram1.lz"
 
 TilesetSpookyGFX2 EQU 0
 
@@ -327,13 +377,17 @@ INCLUDE "data/tilesets/spooky_collision.asm"
 
 SECTION "Tileset Data - haunted", ROMX
 
-TilesetHauntedGFX::
-TilesetHauntedTVGFX::
+TilesetHauntedGFX0::
+TilesetHauntedTVGFX0::
 INCBIN "gfx/tilesets/haunted.2bpp.vram0.lz"
+
+TilesetHauntedGFX1::
+TilesetHauntedTVGFX1::
+INCBIN "gfx/tilesets/haunted.2bpp.vram1.lz"
 
 TilesetHauntedGFX2::
 TilesetHauntedTVGFX2::
-INCBIN "gfx/tilesets/haunted.2bpp.vram1.lz"
+INCBIN "gfx/tilesets/haunted.2bpp.vram2.lz"
 
 TilesetHauntedMeta::
 TilesetHauntedTVMeta::
@@ -350,11 +404,14 @@ INCLUDE "data/tilesets/haunted_collision.asm"
 
 SECTION "Tileset Data - ranch", ROMX
 
-TilesetRanchGFX::
+TilesetRanchGFX0::
 INCBIN "gfx/tilesets/ranch.2bpp.vram0.lz"
 
-TilesetRanchGFX2::
+TilesetRanchGFX1::
 INCBIN "gfx/tilesets/ranch.2bpp.vram1.lz"
+
+TilesetRanchGFX2::
+INCBIN "gfx/tilesets/ranch.2bpp.vram2.lz"
 
 TilesetRanchMeta::
 INCBIN "data/tilesets/ranch_metatiles.bin.lz"
@@ -368,11 +425,14 @@ INCLUDE "data/tilesets/ranch_collision.asm"
 
 SECTION "Tileset Data - luster", ROMX
 
-TilesetLusterGFX::
+TilesetLusterGFX0::
 INCBIN "gfx/tilesets/luster.2bpp.vram0.lz"
 
-TilesetLusterGFX2::
+TilesetLusterGFX1::
 INCBIN "gfx/tilesets/luster.2bpp.vram1.lz"
+
+TilesetLusterGFX2::
+INCBIN "gfx/tilesets/luster.2bpp.vram2.lz"
 
 TilesetLusterMeta::
 INCBIN "data/tilesets/luster_metatiles.bin.lz"
@@ -386,8 +446,11 @@ INCLUDE "data/tilesets/luster_collision.asm"
 
 SECTION "Tileset Data - snow", ROMX
 
-TilesetSnowGFX::
-INCBIN "gfx/tilesets/snow.2bpp.lz"
+TilesetSnowGFX0::
+INCBIN "gfx/tilesets/snow.2bpp.vram0.lz"
+
+TilesetSnowGFX1::
+INCBIN "gfx/tilesets/snow.2bpp.vram1.lz"
 
 TilesetSnowGFX2 EQU 0
 
@@ -403,11 +466,14 @@ INCLUDE "data/tilesets/snow_collision.asm"
 
 SECTION "Tileset Data - park", ROMX
 
-TilesetParkGFX::
+TilesetParkGFX0::
 INCBIN "gfx/tilesets/park.2bpp.vram0.lz"
 
-TilesetParkGFX2::
+TilesetParkGFX1::
 INCBIN "gfx/tilesets/park.2bpp.vram1.lz"
+
+TilesetParkGFX2::
+INCBIN "gfx/tilesets/park.2bpp.vram2.lz"
 
 TilesetParkMeta::
 INCBIN "data/tilesets/park_metatiles.bin.lz"
@@ -421,11 +487,14 @@ INCLUDE "data/tilesets/park_collision.asm"
 
 SECTION "Tileset Data - mall1", ROMX
 
-TilesetMall1GFX::
+TilesetMall1GFX0::
 INCBIN "gfx/tilesets/mall1.2bpp.vram0.lz"
 
-TilesetMall1GFX2::
+TilesetMall1GFX1::
 INCBIN "gfx/tilesets/mall1.2bpp.vram1.lz"
+
+TilesetMall1GFX2::
+INCBIN "gfx/tilesets/mall1.2bpp.vram2.lz"
 
 TilesetMall1Meta::
 INCBIN "data/tilesets/mall1_metatiles.bin.lz"
@@ -439,11 +508,14 @@ INCLUDE "data/tilesets/mall1_collision.asm"
 
 SECTION "Tileset Data - mall2", ROMX
 
-TilesetMall2GFX::
+TilesetMall2GFX0::
 INCBIN "gfx/tilesets/mall2.2bpp.vram0.lz"
 
-TilesetMall2GFX2::
+TilesetMall2GFX1::
 INCBIN "gfx/tilesets/mall2.2bpp.vram1.lz"
+
+TilesetMall2GFX2::
+INCBIN "gfx/tilesets/mall2.2bpp.vram2.lz"
 
 TilesetMall2Meta::
 INCBIN "data/tilesets/mall2_metatiles.bin.lz"
@@ -457,8 +529,10 @@ INCLUDE "data/tilesets/mall2_collision.asm"
 
 SECTION "Tileset Data - sewer", ROMX
 
-TilesetSewerGFX::
+TilesetSewerGFX0::
 INCBIN "gfx/tilesets/sewer.2bpp.lz"
+
+TilesetSewerGFX1 EQU 0
 
 TilesetSewerGFX2 EQU 0
 
@@ -474,8 +548,10 @@ INCLUDE "data/tilesets/sewer_collision.asm"
 
 SECTION "Tileset Data - train", ROMX
 
-TilesetTrainGFX::
+TilesetTrainGFX0::
 INCBIN "gfx/tilesets/train.2bpp.lz"
+
+TilesetTrainGFX1 EQU 0
 
 TilesetTrainGFX2 EQU 0
 
@@ -491,11 +567,14 @@ INCLUDE "data/tilesets/train_collision.asm"
 
 SECTION "Tileset Data - icecave", ROMX
 
-TilesetIceCaveGFX::
+TilesetIceCaveGFX0::
 INCBIN "gfx/tilesets/ice_temple.2bpp.vram0.lz"
 
-TilesetIceCaveGFX2::
+TilesetIceCaveGFX1::
 INCBIN "gfx/tilesets/ice_temple.2bpp.vram1.lz"
+
+TilesetIceCaveGFX2::
+INCBIN "gfx/tilesets/ice_temple.2bpp.vram2.lz"
 
 TilesetIceCaveMeta::
 INCBIN "data/tilesets/ice_temple_metatiles.bin.lz"
@@ -509,27 +588,30 @@ INCLUDE "data/tilesets/ice_temple_collision.asm"
 
 SECTION "Tileset Data - harbor", ROMX
 
-TilesetSunsetGFX::
+TilesetHarborGFX0::
 INCBIN "gfx/tilesets/harbor.2bpp.vram0.lz"
 
-TilesetSunsetGFX2::
+TilesetHarborGFX1::
 INCBIN "gfx/tilesets/harbor.2bpp.vram1.lz"
 
-TilesetSunsetMeta::
+TilesetHarborGFX2::
+INCBIN "gfx/tilesets/harbor.2bpp.vram2.lz"
+
+TilesetHarborMeta::
 INCBIN "data/tilesets/harbor_metatiles.bin.lz"
 
-TilesetSunsetAttr::
+TilesetHarborAttr::
 INCBIN "data/tilesets/harbor_attributes.bin.lz"
 
-TilesetSunsetColl::
+TilesetHarborColl::
 INCLUDE "data/tilesets/harbor_collision.asm"
 
 
 SECTION "Tileset Headers", ROMX
 
 tileset: macro
-	dba \1GFX
-	dw \1GFX2
+	dba \1GFX0
+	dw \1GFX1, \1GFX2
 	dba \1Meta, \1Coll, \1Attr
 	dw \1Anim
 endm
@@ -565,3 +647,4 @@ Tilesets::
 	tileset TilesetSewer
 	tileset TilesetTrain
 	tileset TilesetIceCave
+	tileset TilesetHarbor

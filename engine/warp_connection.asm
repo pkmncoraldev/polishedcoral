@@ -300,9 +300,22 @@ LoadMapTimeOfDay: ; 104750
 	hlbgcoord 0, 0
 	jp ByteFill
 
-LoadGraphics:: ; 1047cf
+DeferredLoadGraphics:
+	call TilesetUnchanged
+	jr z, .done
+	call LoadTilesetHeader
+	ld a, 3
+	ld [wPendingOverworldGraphics], a
+	xor a
+.done
+	ld [hMapAnims], a
+	ld [hTileAnimFrame], a
+	ret
+
+LoadGraphics:
 	call LoadTilesetHeader
 	call LoadTileset
+.done
 	xor a
 	ld [hMapAnims], a
 	ld [hTileAnimFrame], a

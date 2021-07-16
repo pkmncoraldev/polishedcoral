@@ -47,6 +47,7 @@ TilesetLibraryAnim::
 TilesetSnowAnim::
 TilesetMall2Anim::
 TilesetIceCaveAnim::
+TilesetHarborAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

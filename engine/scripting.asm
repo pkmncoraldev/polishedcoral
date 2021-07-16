@@ -1795,14 +1795,14 @@ Script_reloadmap:
 	jr nz, .clown
 	ld a, MAPSETUP_RELOADMAP
 	ld [hMapEntryMethod], a
-	ld a, $1
-	call LoadMapStatus
+	ld a, 1
+	ld [wMapStatus], a
 	jp StopScript
 .clown
 	ld a, MAPSETUP_RELOADMAP_CLOWN
 	ld [hMapEntryMethod], a
-	ld a, $1
-	call LoadMapStatus
+	ld a, 1
+	ld [wMapStatus], a
 	jp StopScript
 
 Script_scall:
@@ -2833,7 +2833,7 @@ Script_warp:
 	ld a, MAPSETUP_WARP
 	ld [hMapEntryMethod], a
 	ld a, 1
-	call LoadMapStatus
+	ld [wMapStatus], a
 	jp StopScript
 
 .not_ok
@@ -2845,7 +2845,7 @@ Script_warp:
 	ld a, MAPSETUP_BADWARP
 	ld [hMapEntryMethod], a
 	ld a, 1
-	call LoadMapStatus
+	ld [wMapStatus], a
 	jp StopScript
 
 Script_warpmod:
@@ -2947,7 +2947,7 @@ Script_newloadmap:
 	call GetScriptByte
 	ld [hMapEntryMethod], a
 	ld a, 1
-	call LoadMapStatus
+	ld [wMapStatus], a
 	jp StopScript
 
 Script_reloadandreturn:
@@ -3099,8 +3099,8 @@ Script_credits:
 	farcall LeafCredits
 ReturnFromCredits:
 	call Script_endall
-	ld a, $3
-	call LoadMapStatus
+	ld a, 3
+	ld [wMapStatus], a
 	jp StopScript
 ; 97c051
 
@@ -3388,7 +3388,7 @@ Script_warp2:
 	ld a, MAPSETUP_BADWARP
 	ld [hMapEntryMethod], a
 	ld a, 1
-	call LoadMapStatus
+	ld [wMapStatus], a
 	jp StopScript
 
 .not_ok
@@ -3400,6 +3400,6 @@ Script_warp2:
 	ld a, MAPSETUP_BADWARP
 	ld [hMapEntryMethod], a
 	ld a, 1
-	call LoadMapStatus
+	ld [wMapStatus], a
 	jp StopScript
 	

@@ -1507,7 +1507,9 @@ MoveScreenLoop:
 	jr nz, .ok
 	ld a, [hl]
 	push bc
-	call IsHMMove
+	ld hl, HMMoves
+	ld de, 1
+	call IsInArray
 	pop bc
 	ld a, c
 	jr nc, .ok
@@ -2133,3 +2135,14 @@ Text_CantForgetHM:
 ; HM moves can't be forgotten now.
 	text_jump UnknownText_0x1c5772
 	db "@"
+
+HMMoves::
+	db STRUGGLE
+;	db FLY
+;	db SURF
+;	db STRENGTH
+;	db WATERFALL
+;	db ROCK_SMASH
+	db -1
+; 34f8
+	

@@ -166,13 +166,6 @@ VBlank0::
 	call UpdateDividerCounters
 	call AdvanceRNGState
 
-	ld a, [wOverworldDelay]
-	and a
-	jr z, .noDelay
-	dec a
-	ld [wOverworldDelay], a
-.noDelay
-
 	ld a, [wTextDelayFrames]
 	and a
 	jr z, .noDelay2

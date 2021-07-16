@@ -88,7 +88,7 @@ MapSetupCommands: ; 15440
 	dba EnterMapConnection ; 18
 	dba LoadWarpData ; 19
 	dba LoadMapAttributes ; 1a
-	dba LoadMapAttributes_SkipPeople ; 1b
+	dba LoadMapAttributes_Continue  ; 1b
 	dba ClearBGPalettes ; 1c
 	dba FadeOutPalettes ; 1d
 	dba FadeInPalettesSign ; 1e
@@ -107,7 +107,7 @@ MapSetupCommands: ; 15440
 	dba RetainOldPalettes ; 2b
 	dba ReturnFromMapSetupScript ; 2c
 	dba DecompressMetatiles ; 2d
-; 154ca
+	dba DeferredLoadGraphics ; 2e
 
 ActivateMapAnims:: ; 154cf
 	ld a, $1
@@ -336,6 +336,9 @@ ForceMapMusic: ; 15587
 	jp TryRestartMapMusic
 
 DecompressMetatiles:
+	call TilesetUnchanged
+	ret z
+
 	ld hl, wTilesetBlocksBank
 	ld c, BANK(wDecompressedMetatiles)
 	call .Decompress

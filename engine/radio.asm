@@ -608,12 +608,9 @@ OaksPkmnTalk13:
 	dec [hl]
 	ret nz
 	hlcoord 12, 16
-	ld de, .terminator
+	ld de, RadioTerminator
 	ld a, OAKS_POKEMON_TALK_14
 	jp PlaceRadioString
-
-.terminator
-	db "@"
 
 OaksPkmnTalk14:
 	ld hl, wRadioTextDelay
@@ -621,7 +618,7 @@ OaksPkmnTalk14:
 	ret nz
 	ld de, MUSIC_EVOLUTION
 	farcall RadioMusicRestartDE
-	ld hl, .terminator
+	ld hl, RadioTerminator
 	call PrintText
 	ld a, OAKS_POKEMON_TALK_4
 	ld [wNextRadioLine], a
@@ -632,9 +629,6 @@ OaksPkmnTalk14:
 	ld a, 10
 	ld [wRadioTextDelay], a
 	ret
-
-.terminator
-	db "@"
 
 PlaceRadioString:
 	ld [wCurrentRadioLine], a
@@ -892,7 +886,7 @@ BenFernMusic7:
 	ret
 
 StartPokemonMusicChannel:
-	call RadioTerminator
+	ld hl, RadioTerminator
 	call PrintText
 	ld de, MUSIC_EVOLUTION
 	call GetWeekday
@@ -1878,7 +1872,7 @@ StartRadioStation:
 	ld a, [wNumRadioLinesPrinted]
 	and a
 	ret nz
-	call RadioTerminator
+	ld hl, RadioTerminator
 	call PrintText
 	ld hl, RadioChannelSongs
 	ld a, [wCurrentRadioLine]
@@ -1898,3 +1892,6 @@ NextRadioLine:
 	call CopyRadioTextToRAM
 	pop af
 	jp PrintRadioLine
+	
+RadioTerminator:
+	db "@"

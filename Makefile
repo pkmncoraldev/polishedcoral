@@ -148,12 +148,13 @@ endif
 	$(RGBDS_DIR)rgbfix $(RGBFIX_FLAGS) $@
 
 %.2bpp.vram0: %.2bpp
-# take the first 128 tiles (= 16384 px = 32768 bits = 4096 bytes)
-	head -c 4096 $< > $@
+	tools/sub_2bpp.sh $< 128 > $@
 
 %.2bpp.vram1: %.2bpp
-# skip the first 256 tiles
-	tail -c +4097 $< > $@
+	tools/sub_2bpp.sh $< 128 128 > $@
+
+%.2bpp.vram2: %.2bpp
+	tools/sub_2bpp.sh $< 256 128 > $@
 	
 %.2bpp: %.png ; $(GFX) 2bpp $<
 %.1bpp: %.png ; $(GFX) 1bpp $<

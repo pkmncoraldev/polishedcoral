@@ -70,22 +70,6 @@ EnableSpriteUpdates:: ; 2ee4
 
 INCLUDE "home/string.asm"
 
-IsInNorthOnwa:: ; 2f17
-; Return z if the player is in Johto, and nz in Kanto or Shamouti Island.
-	call GetCurrentLandmark
-	cp KANTO_LANDMARK
-	jr nc, .kanto_or_orange
-.johto
-	xor a ; JOHTO_REGION
-	and a
-	ret
-
-.kanto_or_orange
-	ld a, KANTO_REGION
-	and a
-	ret
-; 2f3e
-
 INCLUDE "home/item.asm"
 INCLUDE "home/random.asm"
 INCLUDE "home/sram.asm"
@@ -655,21 +639,6 @@ IsHM:: ; 34df
 	and a
 	ret
 ; 34e7
-
-IsHMMove:: ; 34e7
-	ld hl, .HMMoves
-	ld de, 1
-	jp IsInArray
-
-.HMMoves:
-	db STRUGGLE
-;	db FLY
-;	db SURF
-;	db STRENGTH
-;	db WATERFALL
-;	db ROCK_SMASH
-	db -1
-; 34f8
 
 ItemIsMail:: ; b9e76
 	ld a, d

@@ -70,4 +70,5 @@
 	const map_keep_palettes       ; 2b
 	const map_stop_script         ; 2c
 	const map_decompress_metatiles ; 2d
+	const map_deferred_load_graphics   ; 2e
 map_end EQU -1

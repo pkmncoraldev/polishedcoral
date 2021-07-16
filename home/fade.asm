@@ -55,15 +55,3 @@ FadeOBPalettes::
 DoFadePalettes:
 	farjp _DoFadePalettes
 
-WhitePal::
-if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-else
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-endc

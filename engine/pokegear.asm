@@ -2002,8 +2002,9 @@ PlayRadio: ; 91a53
 ; 91acb
 
 .OakOrPnP: ; 91acb
-	call IsInNorthOnwa
-	jr nz, .kanto_or_orange
+	call GetCurrentLandmark
+	cp KANTO_LANDMARK
+	jr nc, .kanto_or_orange
 	call UpdateTime
 	ld a, [wTimeOfDay]
 	and a

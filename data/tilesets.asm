@@ -507,6 +507,24 @@ TilesetIceCaveColl::
 INCLUDE "data/tilesets/ice_temple_collision.asm"
 
 
+SECTION "Tileset Data - harbor", ROMX
+
+TilesetSunsetGFX::
+INCBIN "gfx/tilesets/harbor.2bpp.vram0.lz"
+
+TilesetSunsetGFX2::
+INCBIN "gfx/tilesets/harbor.2bpp.vram1.lz"
+
+TilesetSunsetMeta::
+INCBIN "data/tilesets/harbor_metatiles.bin.lz"
+
+TilesetSunsetAttr::
+INCBIN "data/tilesets/harbor_attributes.bin.lz"
+
+TilesetSunsetColl::
+INCLUDE "data/tilesets/harbor_collision.asm"
+
+
 SECTION "Tileset Headers", ROMX
 
 tileset: macro

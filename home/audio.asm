@@ -16,18 +16,7 @@ MapSetup_Sound_Off:: ; 3b4e
 
 	call _MapSetup_Sound_Off
 
-	pop af
-;	ld [hROMBank], a
-;	ld [MBC3RomBank], a
-	rst Bankswitch
-
-	pop af
-	pop bc
-	pop de
-	pop hl
-	ret
-; 3b6a
-
+	jr PopAFBankThenAFBCDEHL
 
 UpdateSound:: ; 3b6a
 
@@ -45,17 +34,7 @@ UpdateSound:: ; 3b6a
 
 	call _UpdateSound
 
-	pop af
-;	ld [hROMBank], a
-;	ld [MBC3RomBank], a
-	rst Bankswitch
-
-	pop af
-	pop bc
-	pop de
-	pop hl
-	ret
-; 3b86
+	jr PopAFBankThenAFBCDEHL
 
 
 _LoadMusicByte:: ; 3b86
@@ -113,10 +92,13 @@ PlayMusic:: ; 3b97
 	call _MapSetup_Sound_Off
 
 .end
+PopAFBankThenAFBCDEHL:
 	pop af
 ;	ld [hROMBank], a
 ;	ld [MBC3RomBank], a
 	rst Bankswitch
+
+_PopAFBCDEHL:
 	pop af
 	pop bc
 	pop de
@@ -146,20 +128,43 @@ PlayMusic2:: ; 3bbc
 	call DelayFrame
 	pop de
 	call _PlayMusic
+	jr PopAFBankThenAFBCDEHL
 
-	pop af
+; 3be3
+
+WaitPlaySFX::
+	call WaitSFX
+	; fallthrough
+PlaySFX:: ; 3c23
+; Play sound effect de.
+; Sound effects are ordered by priority (highest to lowest)
+
+	push hl
+	push de
+	push bc
+	push af
+
+	; Is something already playing?
+	call CheckSFX
+	jr nc, .play
+
+	; Does it have priority?
+	ld a, [wCurSFX]
+	cp e
+	jr c, _PopAFBCDEHL
+
+.play
+	ld a, [hROMBank]
+	push af
+	ld a, BANK(_PlaySFX)
 ;	ld [hROMBank], a
 ;	ld [MBC3RomBank], a
 	rst Bankswitch
 
-	pop af
-	pop bc
-	pop de
-	pop hl
-	ret
-
-; 3be3
-
+	ld a, e
+	ld [wCurSFX], a
+	call _PlaySFX
+	jr PopAFBankThenAFBCDEHL
 
 PlayCryHeader:: ; 3be3
 ;	push hl
@@ -168,11 +173,11 @@ PlayCryHeader:: ; 3be3
 ;	push af
 ; Play cry header at hl.
 
-	ld a, [hROMBank]
-	push af
-
 	; Cry headers are stuck in one bank.
-	ld a, BANK(CryHeaders)
+	anonbankpush CryHeaders
+
+.Function:
+
 ;	ld [hROMBank], a
 ;	ld [MBC3RomBank], a
 
@@ -185,7 +190,6 @@ PlayCryHeader:: ; 3be3
 ;	inc hl
 ;	ld d, [hl]
 ;	inc hl
-	rst Bankswitch
 	
 	ld a, [hli]
 	cp $ff
@@ -211,69 +215,11 @@ PlayCryHeader:: ; 3be3
 ;	pop af
 ;	ld [hROMBank], a
 ;	ld [MBC3RomBank], a
-	farcall _PlayCryHeader
-	jr .done
+	farjp _PlayCryHeader
 .ded
 	ld e, 0
 	call LoadDEDCryHeader
-	call PlayDEDCry
-
-.done
-
-	pop af
-;	pop bc
-;	pop de
-;	pop hl
-	rst Bankswitch
-	ret
-; 3c23
-
-WaitPlaySFX::
-	call WaitSFX
-	; fallthrough
-PlaySFX:: ; 3c23
-; Play sound effect de.
-; Sound effects are ordered by priority (highest to lowest)
-
-	push hl
-	push de
-	push bc
-	push af
-
-	; Is something already playing?
-	call CheckSFX
-	jr nc, .play
-
-	; Does it have priority?
-	ld a, [wCurSFX]
-	cp e
-	jr c, .done
-
-.play
-	ld a, [hROMBank]
-	push af
-	ld a, BANK(_PlaySFX)
-;	ld [hROMBank], a
-;	ld [MBC3RomBank], a
-	rst Bankswitch
-
-	ld a, e
-	ld [wCurSFX], a
-	call _PlaySFX
-
-	pop af
-;	ld [hROMBank], a
-;	ld [MBC3RomBank], a
-	rst Bankswitch
-
-.done
-	pop af
-	pop bc
-	pop de
-	pop hl
-	ret
-; 3c4e
-
+	jp PlayDEDCry
 
 WaitSFX:: ; 3c55
 ; infinite loop until sfx is done playing
@@ -385,7 +331,7 @@ FadeToMapMusic:: ; 3cbc
 	call GetMapMusic
 	ld a, [wMapMusic]
 	cp e
-	jr z, .done
+	jr z, PopAFBCDEHL
 
 	ld a, 8
 	ld [wMusicFade], a
@@ -396,13 +342,7 @@ FadeToMapMusic:: ; 3cbc
 	ld a, e
 	ld [wMapMusic], a
 
-.done
-	pop af
-	pop bc
-	pop de
-	pop hl
-	ret
-; 3cdf
+	jr PopAFBCDEHL
 
 FadeToMapMusic2:: ; 3cbc
 	eventflagcheck EVENT_YOU_CHEATED
@@ -422,13 +362,7 @@ FadeToMapMusic2:: ; 3cbc
 	ld [wMusicFadeIDHi], a
 	ld a, e
 	ld [wMapMusic], a
-
-.done
-	pop af
-	pop bc
-	pop de
-	pop hl
-	ret
+	jr PopAFBCDEHL
 
 PlayMapMusic:: ; 3cdf
 	eventflagcheck EVENT_YOU_CHEATED
@@ -443,12 +377,8 @@ PlayMapMusic:: ; 3cdf
 	cp e
 	call nz, PlayMusicAfterDelay
 
-	pop af
-	pop bc
-	pop de
-	pop hl
-	ret
-; 3d03
+PopAFBCDEHL:
+	jp _PopAFBCDEHL
 
 EnterMapMusic:: ; 3d03
 	eventflagcheck EVENT_YOU_CHEATED
@@ -462,13 +392,23 @@ EnterMapMusic:: ; 3d03
 	ld [wDontPlayMapMusicOnReload], a
 	call GetMapMusic
 	call PlayMusicAfterDelay
+	jr PopAFBCDEHL
 
-	pop af
-	pop bc
-	pop de
-	pop hl
-	ret
-; 3d2f
+RestartMapMusic:: ; 3d47
+	eventflagcheck EVENT_YOU_CHEATED
+	ret nz
+	push hl
+	push de
+	push bc
+	push af
+	ld de, MUSIC_NONE
+	call PlayMusic
+	call DelayFrame
+	ld a, [wMapMusic]
+	ld e, a
+	ld d, 0
+	call PlayMusic
+	jr PopAFBCDEHL
 
 TryRestartMapMusic:: ; 3d2f
 	eventflagcheck EVENT_YOU_CHEATED
@@ -485,27 +425,6 @@ TryRestartMapMusic:: ; 3d2f
 	ld [wDontPlayMapMusicOnReload], a
 	ret
 ; 3d47
-
-RestartMapMusic:: ; 3d47
-	eventflagcheck EVENT_YOU_CHEATED
-	ret nz
-	push hl
-	push de
-	push bc
-	push af
-	ld de, MUSIC_NONE
-	call PlayMusic
-	call DelayFrame
-	ld a, [wMapMusic]
-	ld e, a
-	ld d, 0
-	call PlayMusic
-	pop af
-	pop bc
-	pop de
-	pop hl
-	ret
-; 3d62
 
 GetMapMusic::
 	eventflagcheck EVENT_YOU_CHEATED

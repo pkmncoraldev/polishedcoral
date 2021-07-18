@@ -223,7 +223,7 @@ CutAndPasteMap: ; 104265 (41:4265)
 	ld [hMapObjectIndexBuffer], a
 	ret
 
-_HDMAHBlankTransferTileMap_DuringDI::
+HDMAHBlankTransferTileMap_DuringDI::
 	call CallInSafeGFXMode
 	
 .Function
@@ -235,7 +235,7 @@ _HDMAHBlankTransferTileMap_DuringDI::
 	ld hl, wDecompressScratch
 	jp DoHBlankHDMATransfer_toBGMap
 	
-_HDMAHBlankTransferAttrMap_DuringDI::
+HDMAHBlankTransferAttrMap_DuringDI::
 	call CallInSafeGFXMode
 
 .Function

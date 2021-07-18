@@ -927,8 +927,7 @@ FarCopyRadioText:: ; 3a90
 	ld a, [hli]
 	ld d, a
 	ld a, [hli]
-	ld [hROMBank], a
-	ld [MBC3RomBank], a
+	rst Bankswitch
 	ld a, e
 	ld l, a
 	ld a, d
@@ -937,11 +936,13 @@ FarCopyRadioText:: ; 3a90
 	ld bc, 2 * SCREEN_WIDTH
 	rst CopyBytes
 	pop af
-	ld [hROMBank], a
-	ld [MBC3RomBank], a
+	rst Bankswitch
 	ret
 ; 3ab2
 
+StdBattleTextBox:: ; 3ad5
+; Open a textbox and print battle text at 20:hl.
+	anonbankpush BattleText
 
 BattleTextBox:: ; 3ac3
 ; Open a textbox and print text at hl.
@@ -965,25 +966,6 @@ BattleTextBox:: ; 3ac3
 	pop hl
 	jp PrintTextBoxText
 ; 3ad5
-
-
-StdBattleTextBox:: ; 3ad5
-; Open a textbox and print battle text at 20:hl.
-
-GLOBAL BattleText
-
-	ld a, [hROMBank]
-	push af
-
-	ld a, BANK(BattleText)
-	rst Bankswitch
-
-	call BattleTextBox
-
-	pop af
-	rst Bankswitch
-	ret
-; 3ae1
 
 GetBattleAnimPointer:: ; 3ae1
 

@@ -411,6 +411,21 @@ VRAMToVRAMCopy::
 	jr nz, .outerLoop2
 	jp DoneHBlankCopy
 
+CopyDataUntil::
+; Copy hl to de until hl == bc
+
+; In other words, the source data is
+; from hl up to but not including bc,
+; and the destination is de.
+	ld a, c
+	sub l
+	ld c, a
+	ld a, b
+	sbc h
+	ld b, a
+	inc bc
+	jr _CopyBytes
+
 FarCopyBytes::
 	call StackCallInBankA
 	; fallthrough

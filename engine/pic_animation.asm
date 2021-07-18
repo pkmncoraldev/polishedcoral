@@ -351,10 +351,10 @@ PokeAnim_DeinitFrames: ; d01a9
 	ld [rSVBK], a
 	call PokeAnim_PlaceGraphic
 ;	farcall HDMATransferTileMapToWRAMBank3
-	call HDMAHBlankTransferTileMap_DuringDI
+	farcall HDMAHBlankTransferTileMap_DuringDI
 	call PokeAnim_SetVBank0
 ;	farcall HDMATransferAttrMapToWRAMBank3
-	call HDMAHBlankTransferTileMap_DuringDI
+	farcall HDMAHBlankTransferTileMap_DuringDI
 	pop af
 	ld [rSVBK], a
 	ret
@@ -877,7 +877,7 @@ PokeAnim_SetVBank1: ; d0504
 	ld [hBGMapMode], a
 	call .SetFlag
 ;	farcall HDMATransferAttrMapToWRAMBank3
-	call HDMAHBlankTransferAttrMap_DuringDI
+	farcall HDMAHBlankTransferAttrMap_DuringDI
 	pop af
 	ld [rSVBK], a
 	ret

@@ -136,6 +136,10 @@ RadioTerminator::
 	ret
 .stop	db "@"
 
+
+FarPrintText:: ; 31b0
+	call StackCallInBankA
+
 PrintText::
 	call SetUpTextBox
 PrintTextNoBox::

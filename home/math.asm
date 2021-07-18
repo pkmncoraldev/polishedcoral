@@ -1,3 +1,9 @@
+
+SkipNames:: ; 0x30f4
+; Skip a names.
+	ld bc, NAME_LENGTH
+
+; fallthrough
 _AddNTimes:: ; 0x30fe
 ; Add bc * a to hl. Don't optimize this for space.
 	and a

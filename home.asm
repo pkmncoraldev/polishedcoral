@@ -116,16 +116,14 @@ _Jumptable:
 
 LoadTileMapToTempTileMap:: ; 309d
 ; Load wTileMap into wTempTileMap
-	ld a, [rSVBK]
-	push af
 	ld a, BANK(wTempTileMap)
-	ld [rSVBK], a
+	call StackCallInWRAMBankA
+
+.Function:
 	hlcoord 0, 0
 	decoord 0, 0, wTempTileMap
 	ld bc, wTileMapEnd - wTileMap
 	rst CopyBytes
-	pop af
-	ld [rSVBK], a
 	ret
 ; 30b4
 
@@ -140,16 +138,14 @@ Call_LoadTempTileMapToTileMap:: ; 30b4
 
 LoadTempTileMapToTileMap:: ; 30bf
 ; Load wTempTileMap into wTileMap
-	ld a, [rSVBK]
-	push af
 	ld a, BANK(wTempTileMap)
-	ld [rSVBK], a
+	call StackCallInWRAMBankA
+
+.Function:
 	hlcoord 0, 0, wTempTileMap
 	decoord 0, 0
 	ld bc, wTileMapEnd - wTileMap
 	rst CopyBytes
-	pop af
-	ld [rSVBK], a
 	ret
 ; 30d6
 
@@ -167,18 +163,6 @@ CopyName2:: ; 30d9
 	jr nz, .loop
 	ret
 ; 30e1
-
-SkipNames:: ; 0x30f4
-; Skip a names.
-	ld bc, NAME_LENGTH
-	and a
-	ret z
-.loop
-	add hl, bc
-	dec a
-	jr nz, .loop
-	ret
-; 0x30fe
 
 INCLUDE "home/math.asm"
 
@@ -239,35 +223,8 @@ PrintLetterDelay:: ; 313d
 	ret
 ; 318c
 
-CopyDataUntil:: ; 318c
-; Copy [hl .. bc) to de.
-
-; In other words, the source data is
-; from hl up to but not including bc,
-; and the destination is de.
-
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, h
-	cp b
-	jr nz, CopyDataUntil
-	ld a, l
-	cp c
-	jr nz, CopyDataUntil
-	ret
-; 0x3198
-
 PrintNum:: ; 3198
-	homecall _PrintNum
-	ret
-; 31a4
-
-FarPrintText:: ; 31b0
-	ld [hBuffer], a
-	homecall PrintText, [hBuffer]
-	ret
-; 31be
+	farjp _PrintNum
 
 QueueScript:: ; 31cd
 ; Push pointer hl in the current bank to wQueuedScriptBank.
@@ -321,26 +278,6 @@ CompareLong:: ; 31e4
 	ret
 ; 31f3
 
-HDMAHBlankTransferTileMap_DuringDI::
-	ld a, [hROMBank]
-	push af
-	ld a, BANK(_HDMAHBlankTransferTileMap_DuringDI)
-	rst Bankswitch
-	call _HDMAHBlankTransferTileMap_DuringDI
-	pop af
-	rst Bankswitch
-	ret
-	
-HDMAHBlankTransferAttrMap_DuringDI::
-	ld a, [hROMBank]
-	push af
-	ld a, BANK(_HDMAHBlankTransferAttrMap_DuringDI)
-	rst Bankswitch
-	call _HDMAHBlankTransferAttrMap_DuringDI
-	pop af
-	rst Bankswitch
-	ret
-
 SetPalettes:: ; 32f9
 ; Inits the Palettes
 ; depending on the system the monochromes palettes or color palettes
@@ -355,11 +292,10 @@ SetPalettes:: ; 32f9
 
 ClearPalettes:: ; 3317
 ; Make all palettes white
-	ld a, [rSVBK]
-	push af
-
 	ld a, BANK(wBGPals)
-	ld [rSVBK], a
+	call StackCallInWRAMBankA
+
+.Function:
 
 ; Fill wBGPals and wOBPals with $ffff (white)
 	ld hl, wBGPals
@@ -377,9 +313,6 @@ else
 	dec b
 	jr nz, .mono_loop
 endc
-
-	pop af
-	ld [rSVBK], a
 
 ; Request palette update
 	ld a, 1
@@ -561,11 +494,10 @@ GetBasePokemonName:: ; 3420
 GetPokemonName:: ; 343b
 ; Get Pokemon name wNamedObjectIndexBuffer.
 
-	ld a, [hROMBank]
-	push af
+	anonbankpush PokemonNames
+
+.Function:
 	push hl
-	ld a, BANK(PokemonNames)
-	rst Bankswitch
 
 ; Each name is ten characters
 	ld a, [wNamedObjectIndexBuffer]
@@ -591,8 +523,6 @@ GetPokemonName:: ; 343b
 	pop de
 
 	pop hl
-	pop af
-	rst Bankswitch
 	ret
 ; 3468
 
@@ -1114,13 +1044,12 @@ Print8BitNumRightAlign:: ; 3842
 ; 384d
 
 GetBaseData:: ; 3856
+	anonbankpush BaseData
+
+.Function:
 	push bc
 	push de
 	push hl
-	ld a, [hROMBank]
-	push af
-	ld a, BANK(BaseData)
-	rst Bankswitch
 
 ; Egg doesn't have BaseData
 	ld a, [wCurSpecies]
@@ -1143,8 +1072,6 @@ GetBaseData:: ; 3856
 	ld [wBasePicSize], a
 
 .end
-	pop af
-	rst Bankswitch
 	pop hl
 	pop de
 	pop bc

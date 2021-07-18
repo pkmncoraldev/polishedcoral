@@ -114,7 +114,7 @@ GetCryIndex:: ; 381e
 	ld b, 0
 	ld hl, CryHeaders
 	ld a, 5
-	call AddNTimes
+	rst AddNTimes
 	and a
 	ret
 

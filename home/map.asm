@@ -610,21 +610,6 @@ ChangeMap:: ; 24e4
 	ret
 ; 2524
 
-DecompressConnectionMap:
-	ld a, [rSVBK]
-	push af
-	ld a, BANK(wDecompressScratch)
-	ld [rSVBK], a
-	push de
-	push bc
-	ld de, wDecompressScratch
-	call Decompress
-	pop bc
-	pop de
-	pop af
-	ld [rSVBK], a
-	ret
-
 FillMapConnections:: ; 2524
 
 ; North
@@ -634,8 +619,7 @@ FillMapConnections:: ; 2524
 	ld b, a
 	ld a, [wNorthConnectedMapNumber]
 	ld c, a
-	call GetAnyMapBlockdataBankPointer
-	call DecompressConnectionMap
+	call GetAnyMapBlockdataBankPointerAndDecompressConnectionMap
 
 	ld a, [wNorthConnectionStripPointer]
 	ld l, a
@@ -659,8 +643,7 @@ FillMapConnections:: ; 2524
 	ld b, a
 	ld a, [wSouthConnectedMapNumber]
 	ld c, a
-	call GetAnyMapBlockdataBankPointer
-	call DecompressConnectionMap
+	call GetAnyMapBlockdataBankPointerAndDecompressConnectionMap
 
 	ld a, [wSouthConnectionStripPointer]
 	ld l, a
@@ -683,8 +666,7 @@ FillMapConnections:: ; 2524
 	ld b, a
 	ld a, [wWestConnectedMapNumber]
 	ld c, a
-	call GetAnyMapBlockdataBankPointer
-	call DecompressConnectionMap
+	call GetAnyMapBlockdataBankPointerAndDecompressConnectionMap
 
 	ld a, [wWestConnectionStripPointer]
 	ld l, a
@@ -707,8 +689,7 @@ FillMapConnections:: ; 2524
 	ld b, a
 	ld a, [wEastConnectedMapNumber]
 	ld c, a
-	call GetAnyMapBlockdataBankPointer
-	call DecompressConnectionMap
+	call GetAnyMapBlockdataBankPointerAndDecompressConnectionMap
 
 	ld a, [wEastConnectionStripPointer]
 	ld l, a
@@ -729,11 +710,9 @@ FillEastConnectionStrip:: ; 25f6
 	ld a, [wMapWidth]
 	add 6
 	ld [hConnectedMapWidth], a
+	call RunFunctionInWRA6
 
-	ld a, [rSVBK]
-	push af
-	ld a, BANK(wDecompressScratch)
-	ld [rSVBK], a
+.Function:
 .loop
 	push de
 
@@ -763,8 +742,6 @@ FillEastConnectionStrip:: ; 25f6
 .okay
 	dec b
 	jr nz, .loop
-	pop af
-	ld [rSVBK], a
 	ret
 ; 261b
 
@@ -773,11 +750,9 @@ FillSouthConnectionStrip:: ; 25d3
 	ld a, [wMapWidth]
 	add 6
 	ld [hMapWidthPlus6], a
-	ld a, [rSVBK]
-	push af
-	ld a, BANK(wDecompressScratch)
-	ld [rSVBK], a
+	call RunFunctionInWRA6
 
+.Function:
 	ld c, 3
 .y
 	push de
@@ -807,8 +782,6 @@ FillSouthConnectionStrip:: ; 25d3
 .okay
 	dec c
 	jr nz, .y
-	pop af
-	ld [rSVBK], a
 	ret
 ; 25f6
 
@@ -1907,7 +1880,7 @@ SwitchToMapScriptHeaderBank:: ; 2c52
 	ret
 ; 2c57
 
-GetAnyMapBlockdataBankPointer:: ; 2c5b
+GetAnyMapBlockdataBankPointerAndDecompressConnectionMap:: ; 2c5b
 ; Return the blockdata bank for group b map c.
 	push de
 	push bc
@@ -1930,17 +1903,14 @@ GetAnyMapBlockdataBankPointer:: ; 2c5b
 	ld a, c
 	rst Bankswitch
 	ld a, [hli]
-	ld c, a
+	ld b, a
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, c
-	rst Bankswitch
-
+	call FarDecompressWRA6InB
 	pop bc
 	pop de
 	ret
-; 2c7d
 
 GetSecondaryMapHeaderPointer:: ; 0x2c7d
 ; returns the current map's secondary map header pointer in hl.

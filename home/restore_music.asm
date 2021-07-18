@@ -3,20 +3,19 @@
 
 SaveMusic::
 	; back up old music state
+	ld a, BANK(wSoundEngineBackup)
+	call StackCallInWRAMBankA
+
+.Function:
 	push hl
 	push de
 	push bc
 	push af
 
-	ld a, [rSVBK]
-	push af
-	ld a, BANK(wSoundEngineBackup)
-	ld [rSVBK], a
-
 	ld de, wSoundEngineBackup
 	ld a, [de]
 	and a
-	jr nz, .skip
+	jr nz, HomeRestoreMusic_PopAFBCDEHL
 	call DelayFrame
 
 	di
@@ -25,26 +24,18 @@ SaveMusic::
 	rst CopyBytes
 	ei
 
-.skip
-	pop af
-	ld [rSVBK], a
-
-	pop af
-	pop bc
-	pop de
-	pop hl
-	ret
+HomeRestoreMusic_PopAFBCDEHL:
+	jp _PopAFBCDEHL
 
 RestoreMusic::
+	ld a, BANK(wSoundEngineBackup)
+	call StackCallInWRAMBankA
+
+.Function:
 	push hl
 	push de
 	push bc
 	push af
-
-	ld a, [rSVBK]
-	push af
-	ld a, BANK(wSoundEngineBackup)
-	ld [rSVBK], a
 
 	ld hl, wSoundEngineBackup
 	ld a, [hl]
@@ -53,7 +44,7 @@ RestoreMusic::
 	ld a, $1
 	ld [rSVBK], a
 	call PlayMapMusic
-	jr .done
+	jr HomeRestoreMusic_PopAFBCDEHL
 
 .copy
 	ld de, MUSIC_NONE
@@ -70,27 +61,13 @@ RestoreMusic::
 	xor a
 	ld [wSoundEngineBackup], a
 
-.done
-	pop af
-	ld [rSVBK], a
-
-	pop af
-	pop bc
-	pop de
-	pop hl
-	ret
+	jr HomeRestoreMusic_PopAFBCDEHL
 
 DeleteSavedMusic::
-	push af
-	ld a, [rSVBK]
-	push af
-
 	ld a, BANK(wSoundEngineBackup)
-	ld [rSVBK], a
+	call StackCallInWRAMBankA
+
+.Function:
 	xor a
 	ld [wSoundEngineBackup], a
-
-	pop af
-	ld [rSVBK], a
-	pop af
 	ret

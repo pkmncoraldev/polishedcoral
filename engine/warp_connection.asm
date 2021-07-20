@@ -306,8 +306,8 @@ DeferredLoadGraphics:
 	call LoadTilesetHeader
 	ld a, 3
 	ld [wPendingOverworldGraphics], a
-	xor a
 .done
+	xor a
 	ld [hMapAnims], a
 	ld [hTileAnimFrame], a
 	ret

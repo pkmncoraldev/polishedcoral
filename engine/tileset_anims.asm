@@ -207,8 +207,6 @@ TilesetParkAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 	
-	
-	
 TilesetJungleAnim::
     dw VTiles2 tile $14, WriteTileToBuffer
     dw NULL,  WaitTileAnimation

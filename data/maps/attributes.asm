@@ -86,7 +86,8 @@ endc
 ENDM
 
 
-	map_attributes SunsetBay, SUNSET_BAY, $71, EAST
+	map_attributes SunsetBay, SUNSET_BAY, $71, SOUTH | EAST
+	connection south, Harbor, HARBOR, 2
 	connection east, SunsetCape, SUNSET_CAPE, 1
 	
 	map_attributes SunsetCape, SUNSET_CAPE, 53, WEST
@@ -117,11 +118,11 @@ ENDM
 	connection east, Route3East, ROUTE_3_EAST, 0
 	
 	map_attributes Route3East, ROUTE_3_EAST, $d4, SOUTH | WEST
-	connection south, StarglowValley, STARGLOW_VALLEY, 11
+	connection south, StarglowValley, STARGLOW_VALLEY, 10
 	connection west, Route3, ROUTE_3, 0
 	
 	map_attributes StarglowValley, STARGLOW_VALLEY, $d4, NORTH | EAST | WEST
-	connection north, Route3East, ROUTE_3_EAST, -11
+	connection north, Route3East, ROUTE_3_EAST, -10
 	connection west, Route8, ROUTE_8, 0
 	connection east, Route4, ROUTE_4, 6
 	
@@ -143,7 +144,7 @@ ENDM
 	connection south, Route6, ROUTE_6, 0
 	connection west, LakeOnwa, LAKE_ONWA, -11
 	
-	map_attributes Route8, ROUTE_8, $d4, NORTH | SOUTH | EAST
+	map_attributes Route8, ROUTE_8, $ae, NORTH | SOUTH | EAST
 	connection north, Route3, ROUTE_3, -7
 	connection south, LakeOnwa, LAKE_ONWA, -5
 	connection east, StarglowValley, STARGLOW_VALLEY, 0
@@ -262,6 +263,9 @@ ENDM
 	
 	map_attributes Skatepark, SKATEPARK, $02, WEST
 	connection west, Park, PARK, -1
+	
+	map_attributes Harbor, HARBOR, $71, NORTH
+	connection north, SunsetBay, SUNSET_BAY, -2
 	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0

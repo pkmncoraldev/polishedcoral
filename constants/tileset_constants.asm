@@ -29,6 +29,7 @@
 	const TILESET_SEWER				;28
 	const TILESET_TRAIN				;29
 	const TILESET_ICE_CAVE			;30
+	const TILESET_HARBOR			;31
 	
 
 	const_def

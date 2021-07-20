@@ -512,3 +512,6 @@ SpookhouseTVRoom4_BlockData:
 	
 DodrioRanchBarn_BlockData:
 	INCBIN "maps/DodrioRanchBarn.ablk.lz"
+	
+Harbor_BlockData:
+	INCBIN "maps/Harbor.ablk.lz"

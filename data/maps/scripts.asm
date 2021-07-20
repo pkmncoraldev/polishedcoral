@@ -222,6 +222,10 @@ INCLUDE "maps/LusterMallStoneShop.asm"
 INCLUDE "maps/LusterMallBallShop.asm"
 INCLUDE "maps/LusterMallClothesShop.asm"
 
+SECTION "Harbor Scripts", ROMX
+
+INCLUDE "maps/Harbor.asm"
+
 SECTION "Train Scripts", ROMX
 
 INCLUDE "maps/TrainCabin1.asm"

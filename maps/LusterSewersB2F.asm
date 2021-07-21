@@ -157,7 +157,7 @@ LusterSewersB2FUnderBridge:
 	changeblock $12, $12, $44
 	changeblock $18, $10, $40
 	changeblock $18, $12, $44
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	dotrigger $1
 	end
 	
@@ -166,7 +166,7 @@ LusterSewersB2FOverBridge:
 	changeblock $12, $12, $1e
 	changeblock $18, $10, $1f
 	changeblock $18, $12, $1e
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	dotrigger $0
 	end
 	

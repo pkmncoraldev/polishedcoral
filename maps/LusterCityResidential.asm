@@ -104,7 +104,7 @@ LusterCityResidentialTrigger0:
 	changeblock $4, $20, $85
 	changeblock $14, $28, $85
 	setflag ENGINE_STREETLIGHTS
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	callasm LusterCityStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
 	end
 .checkmorn
@@ -114,7 +114,7 @@ LusterCityResidentialTrigger0:
 	changeblock $4, $20, $81
 	changeblock $14, $28, $81
 	setflag ENGINE_STREETLIGHTS
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	callasm LusterCityStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
 	end
 .end

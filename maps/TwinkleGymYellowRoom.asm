@@ -168,7 +168,7 @@ TwinkleGymYellowRoomDoor:
 	setevent EVENT_TWINKLE_GYM_YELLOW_ROOM_GLASS
 	pause 7
 	playsound SFX_WALL_OPEN
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	pause 14
 	opentext
 	writetext TwinkleGymEntryUnlockDoorText
@@ -191,7 +191,7 @@ TwinkleGymYellowRoomBather1Script:
 	special Special_UpdatePalsInstant
 	changeblock $8, $8, $64
 	callasm RTC
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	spriteface TWINKLE_GYM_YELLOW_ROOM_BATHER_1, LEFT
 	pause 2
 	spriteface TWINKLE_GYM_YELLOW_ROOM_BATHER_1, UP
@@ -252,7 +252,7 @@ TwinkleGymYellowRoomBather1Script:
 	special Special_UpdatePalsInstant
 	changeblock $8, $8, $64
 	callasm RTC
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	spriteface TWINKLE_GYM_YELLOW_ROOM_BATHER_1, LEFT
 	pause 2
 	spriteface TWINKLE_GYM_YELLOW_ROOM_BATHER_1, UP
@@ -282,7 +282,7 @@ TwinkleGymYellowRoomBather2Script:
 	special Special_UpdatePalsInstant
 	changeblock $4, $a, $65
 	callasm RTC
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	spriteface TWINKLE_GYM_YELLOW_ROOM_BATHER_2, LEFT
 	pause 2
 	spriteface TWINKLE_GYM_YELLOW_ROOM_BATHER_2, UP
@@ -343,7 +343,7 @@ TwinkleGymYellowRoomBather2Script:
 	special Special_UpdatePalsInstant
 	changeblock $4, $a, $65
 	callasm RTC
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	spriteface TWINKLE_GYM_YELLOW_ROOM_BATHER_2, LEFT
 	pause 2
 	spriteface TWINKLE_GYM_YELLOW_ROOM_BATHER_2, UP

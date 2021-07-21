@@ -116,7 +116,7 @@ Route5Gate2FBinoculars:
 	changemap SunbeamViewNite_BlockData
 .skip
 	reloadmappart
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	loadvar wTimeOfDayPalFlags, $40 | 1
 	callasm RTC
 	special FadeInPalettes
@@ -128,7 +128,7 @@ Route5Gate2FBinoculars:
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	changemap Route5Gate2F_BlockData
 	reloadmappart
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	applyonemovement PLAYER, show_person
 	applyonemovement ROUTE_5_GATE_2F_NPC_1, show_person
 	applyonemovement ROUTE_5_GATE_2F_NPC_2, show_person

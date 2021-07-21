@@ -150,14 +150,14 @@ TwinkleTownTrigger0:
 .changevending
 	changeblock $14, $28, $26
 	setflag ENGINE_STREETLIGHTS
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	end
 .checkmorn
 	checktime 1<<MORN
 	iffalse .end
 	changeblock $14, $28, $b6
 	clearflag ENGINE_STREETLIGHTS
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 .end
 	end
 

@@ -209,7 +209,7 @@ TwinkleGymBlueRoomDoor:
 	setevent EVENT_TWINKLE_GYM_BLUE_ROOM_GLASS
 	pause 7
 	playsound SFX_WALL_OPEN
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	pause 14
 	opentext
 	writetext TwinkleGymEntryUnlockDoorText

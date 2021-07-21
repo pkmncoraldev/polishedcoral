@@ -129,11 +129,20 @@ MapEvents: ; 96795
 NextOverworldFrame:
 	; If we haven't already performed a delay outside DelayFrame as a result
 	; of a busy LY overflow, perform that now.
+	ld a, [wOverworldDelaySkip]
+	and a
+	jr nz, .done
 	ld a, [hDelayFrameLY]
 	inc a
 	jp nz, LoadGraphicsAndDelay
 	xor a
 	ld [hDelayFrameLY], a
+.done
+	ld a, [wOverworldDelaySkip]
+	and a
+	ret z
+	dec a
+	ld [wOverworldDelaySkip], a
 	ret
 
 HandleMapTimeAndJoypad: ; 967c1

@@ -166,7 +166,7 @@ LusterSewersB1FUnderBridge:
 	changeblock $6, $8, $44
 	changeblock $c, $12, $40
 	changeblock $c, $14, $44
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	dotrigger $1
 	end
 	
@@ -175,6 +175,6 @@ LusterSewersB1FOverBridge:
 	changeblock $6, $8, $1e
 	changeblock $c, $12, $1f
 	changeblock $c, $14, $1e
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	dotrigger $0
 	end

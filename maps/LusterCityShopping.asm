@@ -72,7 +72,7 @@ LusterCityShoppingTrigger0:
 	iftrue .end
 	changeblock -4, 20, $84
 	setflag ENGINE_STREETLIGHTS
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 .end
 	end
 	

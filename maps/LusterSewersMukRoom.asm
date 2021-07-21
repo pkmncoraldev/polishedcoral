@@ -118,7 +118,7 @@ LusterSewersMukRoomTrigger0:
 	
 	changeblock $06, $04, $9b
 	changeblock $08, $04, $9b
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	applyonemovement PLAYER, hide_person
 	
 	callasm AsmCheckPlayerXCoord
@@ -137,7 +137,7 @@ LusterSewersMukRoomTrigger0:
 	applymovement LUSTER_SEWERS_MUK, Movement_LusterSewersMukRoomMuk3
 	changeblock $06, $04, $09
 	changeblock $08, $04, $09
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	pause 20
 	checkevent EVENT_LUSTER_SEWERS_MUK_RIGHT
 	iftrue .right2
@@ -259,11 +259,11 @@ LusterSewersMukRoomGrimer1:
 	spriteface LUSTER_SEWERS_GRIMER_1_2, DOWN
 	pause 10
 	changeblock $06, $04, $99
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	applymovement LUSTER_SEWERS_GRIMER_1_2, Movement_LusterSewersMukRoomGrimer2
 	disappear LUSTER_SEWERS_GRIMER_1_2
 	changeblock $06, $04, $09
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	setevent EVENT_LUSTER_SEWERS_GRIMER_1
 	end
 	
@@ -279,11 +279,11 @@ LusterSewersMukRoomGrimer2:
 	spriteface LUSTER_SEWERS_GRIMER_2_2, DOWN
 	pause 10
 	changeblock $06, $04, $9a
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	applymovement LUSTER_SEWERS_GRIMER_2_2, Movement_LusterSewersMukRoomGrimer2
 	disappear LUSTER_SEWERS_GRIMER_2_2
 	changeblock $06, $04, $09
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	setevent EVENT_LUSTER_SEWERS_GRIMER_2
 	end
 	
@@ -299,11 +299,11 @@ LusterSewersMukRoomGrimer3:
 	spriteface LUSTER_SEWERS_GRIMER_3_2, DOWN
 	pause 10
 	changeblock $08, $04, $99
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	applymovement LUSTER_SEWERS_GRIMER_3_2, Movement_LusterSewersMukRoomGrimer2
 	disappear LUSTER_SEWERS_GRIMER_3_2
 	changeblock $08, $04, $09
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	setevent EVENT_LUSTER_SEWERS_GRIMER_3
 	end
 	
@@ -319,11 +319,11 @@ LusterSewersMukRoomGrimer4:
 	spriteface LUSTER_SEWERS_GRIMER_4_2, DOWN
 	pause 10
 	changeblock $08, $04, $9a
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	applymovement LUSTER_SEWERS_GRIMER_4_2, Movement_LusterSewersMukRoomGrimer2
 	disappear LUSTER_SEWERS_GRIMER_4_2
 	changeblock $08, $04, $09
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	setevent EVENT_LUSTER_SEWERS_GRIMER_4
 	end
 

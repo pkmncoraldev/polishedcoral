@@ -85,7 +85,7 @@ TwinkleGymEntryBlueDoor:
 	writetext TwinkleGymEntryUnlockDoorText
 	waitbutton
 	closetext
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	end
 	
 TwinkleGymEntryYellowDoor:
@@ -109,7 +109,7 @@ TwinkleGymEntryYellowDoor:
 	writetext TwinkleGymEntryUnlockDoorText
 	waitbutton
 	closetext
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	end
 	
 TwinkleGymEntryRedDoor:
@@ -133,7 +133,7 @@ TwinkleGymEntryRedDoor:
 	writetext TwinkleGymEntryUnlockDoorText
 	waitbutton
 	closetext
-	callasm RefreshScreen_BridgeUpdate
+	callasm GenericFinishBridge
 	end
 	
 TwinkleGymEntryDontUnlockDoor:

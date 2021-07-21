@@ -375,7 +375,7 @@ Script_CutTree:
 	endtext
 
 AutoCutTreeScript:
-	callasm RefreshScreen_BridgeUpdate
+	callasm RefreshScreenFast
 	disappear -2
 	callasm CutDownTree
 	endtext

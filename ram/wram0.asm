@@ -981,7 +981,11 @@ wCookingItem1:: ds 1
 
 wCookingItem2:: ds 1
 
-	ds 6 ; unused
+wOverworldDelaySkip::
+; amount of overworld frames to skip DelayFrame for
+	ds 1
+	
+	ds 5 ; unused
 
 wWindowStackPointer:: ds 2
 wMenuJoypad:: ds 1

@@ -549,9 +549,10 @@ INCLUDE "data/tilesets/sewer_collision.asm"
 SECTION "Tileset Data - train", ROMX
 
 TilesetTrainGFX0::
-INCBIN "gfx/tilesets/train.2bpp.lz"
+INCBIN "gfx/tilesets/train.2bpp.vram0.lz"
 
-TilesetTrainGFX1 EQU 0
+TilesetTrainGFX1::
+INCBIN "gfx/tilesets/train.2bpp.vram1.lz"
 
 TilesetTrainGFX2 EQU 0
 

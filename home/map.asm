@@ -1268,6 +1268,7 @@ SaveScreen_LoadNeighbor:: ; 28f7
 ; 2914
 
 GenericFinishBridge::
+	farjp ReanchorBGMap_NoOAMUpdate_NoDelay
 	ld a, 1
 	ld [wOverworldDelaySkip], a
 GetMovementPermissions:: ; 2914

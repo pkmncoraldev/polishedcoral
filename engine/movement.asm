@@ -657,6 +657,9 @@ Movement_normal_step:
 
 Movement_player_walk_step_down:
 	push bc
+	ld a, [wWalkingTile]
+	cp COLL_STAIRS
+	jr z, .skip
 	ld a, [wPlayerState]
 	cp PLAYER_RUN
 	jr nz, .skip
@@ -670,6 +673,9 @@ Movement_player_walk_step_down:
 
 Movement_player_walk_step_up:
 	push bc
+	ld a, [wPlayerStandingTile]
+	cp COLL_STAIRS
+	jr z, .skip
 	ld a, [wPlayerState]
 	cp PLAYER_RUN
 	jr nz, .skip

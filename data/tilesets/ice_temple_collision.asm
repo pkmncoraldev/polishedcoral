@@ -16,7 +16,7 @@
 	tilecoll TOP_WALL, TOP_WALL, LADDER, FLOOR ; 0f
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 10
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 11
-	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 12
+	tilecoll FLOOR, FLOOR, WALL, STAIRS ; 12
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 13
 	tilecoll WALL, WALL, WALL, FLOOR ; 14
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 15
@@ -55,8 +55,8 @@
 	tilecoll WALL, WALL, WALL, WALL ; 36
 	tilecoll FLOOR, FLOOR, FLOOR, LADDER ; 37
 	tilecoll FLOOR, FLOOR, FLOOR, LADDER ; 38
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 39
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 3a
+	tilecoll WALL, FLOOR, WALL, STAIRS ; 39
+	tilecoll FLOOR, WALL, STAIRS, WALL ; 3a
 	tilecoll WALL, WALL, WALL, WALL ; 3b
 	tilecoll WALL, ICE, ICE, ICE ; 3c
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 3d
@@ -64,7 +64,7 @@
 	tilecoll TOP_WALL, TOP_WALL, FLOOR, LADDER ; 3f
 	tilecoll ICE, ICE, WALL, WALL ; 40
 	tilecoll WATER, WATER, WATER, WATER ; 41
-	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 42
+	tilecoll FLOOR, FLOOR, STAIRS, WALL ; 42
 	tilecoll FLOOR, LADDER, WALL, WALL ; 43
 	tilecoll WALL, WALL, WATER, WATER ; 44
 	tilecoll WATER, WATER, WALL, WALL ; 45
@@ -150,7 +150,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 95
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 96
 	tilecoll WALL, WALL, WALL, WALL ; 97
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 98
+	tilecoll FLOOR, FLOOR, STAIRS, STAIRS ; 98
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 99
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9a
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9b
@@ -162,7 +162,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a1
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a2
 	tilecoll WALL, FLOOR, WALL, FLOOR ; a3
-	tilecoll ICE, ICE, FLOOR, WALL ; a4
+	tilecoll ICE, ICE, STAIRS, WALL ; a4
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a5
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a6
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a7
@@ -171,7 +171,7 @@
 	tilecoll ICE, WALL, ICE, WALL ; aa
 	tilecoll ICE, ICE, ICE, WALL ; ab
 	tilecoll WALL, ICE, WALL, ICE ; ac
-	tilecoll ICE, ICE, WALL, FLOOR ; ad
+	tilecoll ICE, ICE, WALL, STAIRS ; ad
 	tilecoll WALL, WALL, WALL, WALL ; ae
 	tilecoll ICE, ICE, WALL, ICE ; af
 	tilecoll WALL, ICE, WALL, WALL ; b0

@@ -471,6 +471,13 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp COLL_ICE
 	jp z, .ice
 	
+	call .SkateboardCheck
+	jp z, .skipstaircheck
+	
+	call .StairCheck
+	jp z, .stairs
+	
+.skipstaircheck
 	call .SnowCheck
 	jp z, .DoNotRun
 
@@ -483,6 +490,11 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call .RunCheck
 	jp z, .run
 	jp .DoNotRun
+	
+.stairs
+	call .RunCheck
+	jp z, .walkcont
+	jp .slow
 
 .conveyorup
 	ld a, [wPlayerState]
@@ -837,6 +849,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call .BikeCheck
 	jp nz, .not_bike
 	
+	call .StairCheck
+	jr z, .bikeslowstep
+	
 	call .SnowCheck
 	jr z, .bikeslowstep
 	
@@ -900,6 +915,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	
 .walk
 ;	call .TVRoomCheck
+;	jr z, .slowwalk
+	
+;	call .StairCheck
 ;	jr z, .slowwalk
 	
 	call .SnowCheck
@@ -1776,6 +1794,22 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 ;	ld a, [wWalkingDirection]
 ;	cp UP
 ;	ret
+	
+.StairCheck:
+	ld a, [wWalkingDirection]
+	cp UP
+	jr z, .stairup
+	cp DOWN
+	jr z, .stairdown
+	ret
+.stairup
+	ld a, [wPlayerStandingTile]
+	cp COLL_STAIRS
+	ret
+.stairdown
+	ld a, [wWalkingTile]
+	cp COLL_STAIRS
+	ret
 	
 .SnowCheck:
 	ld a, [wTileset]

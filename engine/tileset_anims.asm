@@ -54,6 +54,22 @@ TilesetHarborAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 	
+TilesetNettBuildingAnim::
+	dw PokeballSculptureFrames, AnimateWaterfallTiles2
+	dw PokeballSculptureFrames2, AnimateWaterfallTiles2
+	dw NULL,  StandingTileFrame8
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
 TilesetGateAnim::
 	dw VTiles2 tile $14, WriteTileToBuffer
     dw NULL,  WaitTileAnimation
@@ -290,9 +306,25 @@ WaitTileAnimation: ; fc2fe
 
 StandingTileFrame8: ; fc2ff
 	ld a, [wTileAnimationTimer]
+	cp 7
+	jr nz, .not_8
+	ld a, [wPlaceBallsY]
+	cp 7
+	jr z, .is_8
+	inc a
+	and a, 7
+	ld [wPlaceBallsY], a
+	ret
+.not_8
+	ld a, [wTileAnimationTimer]
 	inc a
 	and a, 7
 	ld [wTileAnimationTimer], a
+	ret
+.is_8
+	xor a
+	ld [wTileAnimationTimer], a
+	ld [wPlaceBallsY], a
 	ret
 ; fc309
 
@@ -976,6 +1008,14 @@ SunbeamViewWaterTiles2: INCBIN "gfx/tilesets/water/sunbeam_view2.2bpp"
 SunbeamViewSmokeFrames: dw VTiles2 tile $48, SunbeamViewSmokeTiles
 
 SunbeamViewSmokeTiles: INCBIN "gfx/tilesets/water/sunbeam_view3.2bpp"
+
+PokeballSculptureFrames: dw VTiles2 tile $2c, PokeballSculptureTiles
+
+PokeballSculptureTiles: INCBIN "gfx/tilesets/sculpture/1.2bpp"
+
+PokeballSculptureFrames2: dw VTiles2 tile $3c, PokeballSculptureTiles2
+
+PokeballSculptureTiles2: INCBIN "gfx/tilesets/sculpture/2.2bpp"
 ; fc5cc
 
 	
@@ -1158,7 +1198,7 @@ AnimateSproutPillarTile: ; fc645
 	jr WriteTile
 
 .frames
-	db $00, $10, $20, $30, $40, $30, $20, $10
+	db $00, $10, $20, $30, $40, $50, $60, $70
 ; fc673
 
 
@@ -1545,16 +1585,16 @@ FlickeringLightbulbPalette:
 	ld [rSVBK], a
 	ret
 
-SproutPillarTilePointer1:  dw VTiles2 tile $2d, SproutPillarTile1
-SproutPillarTilePointer2:  dw VTiles2 tile $2f, SproutPillarTile2
-SproutPillarTilePointer3:  dw VTiles2 tile $3d, SproutPillarTile3
-SproutPillarTilePointer4:  dw VTiles2 tile $3f, SproutPillarTile4
-SproutPillarTilePointer5:  dw VTiles2 tile $3c, SproutPillarTile5
-SproutPillarTilePointer6:  dw VTiles2 tile $2c, SproutPillarTile6
-SproutPillarTilePointer7:  dw VTiles2 tile $4d, SproutPillarTile7
-SproutPillarTilePointer8:  dw VTiles2 tile $4f, SproutPillarTile8
-SproutPillarTilePointer9:  dw VTiles2 tile $5d, SproutPillarTile9
-SproutPillarTilePointer10: dw VTiles2 tile $5f, SproutPillarTile10
+SproutPillarTilePointer1:  dw VTiles2 tile $2c, SproutPillarTile1
+SproutPillarTilePointer2:  dw VTiles2 tile $2d, SproutPillarTile1
+SproutPillarTilePointer3:  dw VTiles2 tile $2e, SproutPillarTile1
+SproutPillarTilePointer4:  dw VTiles2 tile $2f, SproutPillarTile1
+SproutPillarTilePointer5:  dw VTiles2 tile $3c, SproutPillarTile1
+SproutPillarTilePointer6:  dw VTiles2 tile $3d, SproutPillarTile1
+SproutPillarTilePointer7:  dw VTiles2 tile $3e, SproutPillarTile1
+SproutPillarTilePointer8:  dw VTiles2 tile $3f, SproutPillarTile1
+SproutPillarTilePointer9:  dw VTiles2 tile $7f, SproutPillarTile9
+SproutPillarTilePointer10: dw VTiles2 tile $7f, SproutPillarTile10
 
 SproutPillarTile1:  INCBIN "gfx/tilesets/sprout-pillar/1.2bpp"
 SproutPillarTile2:  INCBIN "gfx/tilesets/sprout-pillar/2.2bpp"

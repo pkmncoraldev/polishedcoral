@@ -316,6 +316,23 @@ LusterMallBallShop_BlockData:
 LusterMallClothesShop_BlockData:
 	INCBIN "maps/LusterMallClothesShop.ablk.lz"
 	
+LusterSkyscraper1_1F_BlockData:
+LusterSkyscraper2_1F_BlockData:
+	INCBIN "maps/LusterSkyscraper1F.ablk.lz"
+	
+LusterSkyscraper1_2F_BlockData:
+LusterSkyscraper1_3F_BlockData:
+LusterSkyscraper2_2F_BlockData:
+LusterSkyscraper2_3F_BlockData:
+	INCBIN "maps/LusterSkyscraper2F.ablk.lz"
+	
+LusterSkyscraper1_Elevator_BlockData:
+LusterSkyscraper2_Elevator_BlockData:
+	INCBIN "maps/LusterSkyscraperElevator.ablk.lz"
+	
+NettBuilding_1F_BlockData:
+	INCBIN "maps/NettBuilding_1F.ablk.lz"
+	
 LusterSewersB1F_BlockData:
 	INCBIN "maps/LusterSewersB1FFlooded.ablk.lz"
 	

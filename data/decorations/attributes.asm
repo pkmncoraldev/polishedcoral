@@ -65,4 +65,4 @@ DecorationAttributes:
 ;	decoration DECO_DOLL,     GROWLITHE,         SET_UP_DOLL,        EVENT_DECO_GROWLITHE_DOLL,         SPRITE_MON_DOLL_1
 ;	decoration DECO_DOLL,     EEVEE,             SET_UP_DOLL,        EVENT_DECO_EEVEE_DOLL,             SPRITE_MON_DOLL_1
 ;	decoration DECO_PLANT,    GOLD_TROPHY,       SET_UP_DOLL,        EVENT_DECO_GOLD_TROPHY,            SPRITE_GOLD_TROPHY
-;	decoration DECO_PLANT,    SILVER_TROPHY,     SET_UP_DOLL,        EVENT_DECO_SILVER_TROPHY,          SPRITE_SILVER_TROPHY
+;	decoration DECO_PLANT,    CANDLE,     SET_UP_DOLL,        EVENT_DECO_SILVER_TROPHY,          SPRITE_SILVER_TROPHY

@@ -1032,8 +1032,9 @@ wTwinkleGymBlueRoomTrigger:: ds 1
 wTwinkleGymYellowRoomTrigger:: ds 1
 wMtOnwaB2FTrigger:: ds 1
 wMtOnwaB3FTrigger:: ds 1
+wParkGateTrigger:: ds 1
 
-ds 25
+ds 24
 
 ; fight counts
 wJackFightCount::    ds 1

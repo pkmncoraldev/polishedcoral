@@ -857,6 +857,8 @@ LoadMapPals::
 	jp z, .gate
 	cp TILESET_HOUSE_1
 	jp z, .candle
+	cp TILESET_NETT_BUILDING
+	jp z, .nett
 	jp .normal
 .playerhouse
 	ld a, [wMapGroup]
@@ -887,6 +889,18 @@ LoadMapPals::
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	jp .outside
+	
+.nett
+	ld a, [wMapNumber]
+	cp MAP_NETT_BUILDING_1F
+	jr nz, .snes
+	call .normal
+	ld hl, MapObjectPalsNett
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
 	
 .playerroom
 	eventflagcheck EVENT_N64
@@ -1507,6 +1521,9 @@ INCLUDE "maps/palettes/obpals/obluster.pal"
 
 MapObjectPalsLusterMall::
 INCLUDE "maps/palettes/obpals/oblustermall.pal"
+
+MapObjectPalsNett::
+INCLUDE "maps/palettes/obpals/nett.pal"
 
 MapObjectPalsSnes::
 INCLUDE "maps/palettes/obpals/snes.pal"

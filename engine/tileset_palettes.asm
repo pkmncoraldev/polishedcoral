@@ -107,7 +107,7 @@ endc
 LoadSpecialMapPalette: ; 494ac
 	ld a, [wTileset]
 	cp TILESET_STARGLOW_CAVERN
-	jr z, .starglow_cavern
+	jp z, .starglow_cavern
 	cp TILESET_GROVE
 	jp z, .grove
 	cp TILESET_MOUNTAIN
@@ -144,6 +144,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .gate
 	cp TILESET_HOUSE_1
 	jp z, .house1
+	cp TILESET_NETT_BUILDING
+	jp z, .nett
 	jp .do_nothing
 	
 .house1
@@ -156,6 +158,13 @@ LoadSpecialMapPalette: ; 494ac
 	jp .spookhouse
 .house1_nope
 	jp .do_nothing
+	
+.nett
+	ld a, [wMapNumber]
+	cp MAP_NETT_BUILDING_1F
+	jp nz, .do_nothing
+	ld hl, NettPalette
+	jp LoadSevenBGPalettes
 	
 .checktent
 	ld a, [wMapNumber]
@@ -448,6 +457,9 @@ INCLUDE "maps/palettes/bgpals/spookhousetv.pal"
 
 TrainPalette:
 INCLUDE "maps/palettes/bgpals/train.pal"
+
+NettPalette:
+INCLUDE "maps/palettes/bgpals/nett.pal"
 
 Mall1Palette:
 INCLUDE "maps/palettes/bgpals/lustermall1.pal"

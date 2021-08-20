@@ -4236,7 +4236,9 @@ SECTION "Code 24", ROMX
 
 INCLUDE "engine/tileset_anims.asm"
 INCLUDE "engine/events/npc_trade.asm"
-INCLUDE "engine/events/wonder_trade.asm"
+;INCLUDE "engine/events/wonder_trade.asm"
+WonderTrade::
+ret
 
 
 SECTION "Code 25", ROMX

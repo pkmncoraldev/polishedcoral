@@ -398,10 +398,10 @@ FacingTileLeft:
 	
 FacingTileRight:
 	db 4 ; #
-	db  4,  0, 0, $0c
-	db  4,  8, 0, $0d
-	db 12,  0, 0, $0e
-	db 12,  8, 0, $0f
+	db  4,  0, 0 | X_FLIP, $09
+	db  4,  8, 0 | X_FLIP, $08
+	db 12,  0, 0 | X_FLIP, $0b
+	db 12,  8, 0 | X_FLIP, $0a
 
 FacingMallSign:
 	db 2 ; #

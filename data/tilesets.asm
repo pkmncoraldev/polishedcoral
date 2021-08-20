@@ -586,6 +586,25 @@ TilesetIceCaveColl::
 INCLUDE "data/tilesets/ice_temple_collision.asm"
 
 
+SECTION "Tileset Data - nettbuilding", ROMX
+
+TilesetNettBuildingGFX0::
+INCBIN "gfx/tilesets/nett_building.2bpp.vram0.lz"
+
+TilesetNettBuildingGFX1::
+INCBIN "gfx/tilesets/nett_building.2bpp.vram1.lz"
+
+TilesetNettBuildingGFX2 EQU 0
+
+TilesetNettBuildingMeta::
+INCBIN "data/tilesets/nett_building_metatiles.bin.lz"
+
+TilesetNettBuildingAttr::
+INCBIN "data/tilesets/nett_building_attributes.bin.lz"
+
+TilesetNettBuildingColl::
+INCLUDE "data/tilesets/nett_building_collision.asm"
+
 SECTION "Tileset Data - harbor", ROMX
 
 TilesetHarborGFX0::
@@ -647,4 +666,5 @@ Tilesets::
 	tileset TilesetSewer
 	tileset TilesetTrain
 	tileset TilesetIceCave
+	tileset TilesetNettBuilding
 	tileset TilesetHarbor

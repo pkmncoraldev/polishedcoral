@@ -25,6 +25,7 @@ ResetOWMapState:
 	res 2, [hl]
 .keep_flash
 	xor a
+	ld [wPlaceBallsY], a
 ; reset map buffer event flags
 	ld [wEventFlags], a
 ; reset ow state

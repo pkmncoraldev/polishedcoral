@@ -15,9 +15,10 @@ Pia Carrot - Additional Graphics
 varmintz - Additional Graphics
 daz - Additional Graphics
 smalls - Additional Graphics
+Pik - Additional Graphics
 James - Movesets and balance
 Sourapple - Movesets and balance
-Sourapple - Move Animations
+Sourapple - Move Animations 
 
 SPECIAL THANKS-
 Rangi

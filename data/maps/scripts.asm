@@ -221,6 +221,15 @@ INCLUDE "maps/LusterMallHerbShop.asm"
 INCLUDE "maps/LusterMallStoneShop.asm"
 INCLUDE "maps/LusterMallBallShop.asm"
 INCLUDE "maps/LusterMallClothesShop.asm"
+INCLUDE "maps/LusterSkyscraper1_1F.asm"
+INCLUDE "maps/LusterSkyscraper1_2F.asm"
+INCLUDE "maps/LusterSkyscraper1_3F.asm"
+INCLUDE "maps/LusterSkyscraper1_Elevator.asm"
+INCLUDE "maps/LusterSkyscraper2_1F.asm"
+INCLUDE "maps/LusterSkyscraper2_2F.asm"
+INCLUDE "maps/LusterSkyscraper2_3F.asm"
+INCLUDE "maps/LusterSkyscraper2_Elevator.asm"
+INCLUDE "maps/NettBuilding_1F.asm"
 
 SECTION "Harbor Scripts", ROMX
 

@@ -248,12 +248,21 @@ MAP_NONE   EQU 0
 	map_const LUSTER_MALL_STONE_SHOP,					   4,  4 ; 25
 	map_const LUSTER_MALL_BALL_SHOP,					   4,  4 ; 26
 	map_const LUSTER_MALL_CLOTHES_SHOP,					   6,  4 ; 27
-	map_const PARK,										  21, 31 ; 28
-	map_const SKATEPARK,								  15, 32 ; 29
-	map_const PARK_GATE,							   	   4,  4 ; 30
-	map_const ROUTE_11_GATE,							   4,  4 ; 31
+	map_const LUSTER_SKYSCRAPER_1_1F,					   5,  4 ; 28
+	map_const LUSTER_SKYSCRAPER_1_2F,					   4,  4 ; 29
+	map_const LUSTER_SKYSCRAPER_1_3F,					   4,  4 ; 30 
+	map_const LUSTER_SKYSCRAPER_1_ELEVATOR,				   2,  2 ; 31
+	map_const LUSTER_SKYSCRAPER_2_1F,					   5,  4 ; 32
+	map_const LUSTER_SKYSCRAPER_2_2F,					   4,  4 ; 33
+	map_const LUSTER_SKYSCRAPER_2_3F,					   4,  4 ; 34
+	map_const LUSTER_SKYSCRAPER_2_ELEVATOR,				   2,  2 ; 35
+	map_const NETT_BUILDING_1F,							   9,  7 ; 36
+	map_const PARK,										  21, 31 ; 
+	map_const SKATEPARK,								  15, 32 ; 
+	map_const PARK_GATE,							   	   4,  4 ; 
+	map_const ROUTE_11_GATE,							   4,  4 ; 
 	
 	newgroup													 ; 13
 	
-	map_const HARBOR,					  				  25, 15 ; 1
+	map_const HARBOR,					  				  26, 16 ; 1
 	

@@ -172,7 +172,7 @@ SECTION "Overworld Sprites 7", ROMX
 
 GameCubeSpriteGFX::            INCBIN "gfx/sprites/gamecube.2bpp"
 WiiSpriteGFX::                 INCBIN "gfx/sprites/wii.2bpp"
-SilverTrophySpriteGFX::        INCBIN "gfx/sprites/silver_trophy.2bpp"
+CandleSpriteGFX::        	   INCBIN "gfx/sprites/candle.2bpp"
 GoldTrophySpriteGFX::          INCBIN "gfx/sprites/gold_trophy.2bpp"
 SailboatSpriteGFX::            INCBIN "gfx/sprites/sailboat.2bpp"
 MiscOverheadSpriteGFX::        INCBIN "gfx/sprites/misc_overhead.2bpp"

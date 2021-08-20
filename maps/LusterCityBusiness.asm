@@ -4,7 +4,13 @@ LusterCityBusiness_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, BusinessCallback
 
-	db 0 ; warp events
+	db 6 ; warp events
+	warp_event 16, 13, LUSTER_SKYSCRAPER_1_1F, 1
+	warp_event 17, 13, LUSTER_SKYSCRAPER_1_1F, 2
+	warp_event 22, 25, LUSTER_SKYSCRAPER_2_1F, 1
+	warp_event 23, 25, LUSTER_SKYSCRAPER_2_1F, 2
+	warp_event 24, 11, NETT_BUILDING_1F, 1
+	warp_event 25, 11, NETT_BUILDING_1F, 2
 
 	db 0 ; coord events
 

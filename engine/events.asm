@@ -556,6 +556,8 @@ CheckBPressOW: ; 96999
 	ld a, [wPlayerState]
 	cp PLAYER_SKATEBOARD_MOVING
 	jr z, .on_skateboard
+	cp PLAYER_SKATEBOARD_GRINDING
+	jr z, .on_skateboard
 	cp PLAYER_SKATEBOARD
 	jr nz, .not_on_skateboard
 
@@ -571,6 +573,8 @@ CheckBPressOW: ; 96999
 	jp z, .not_on_skateboard
 	ld a, 2
 	ld [wSkateboardOllie], a
+	xor a
+	ld [wSkateboardGrinding], a
 	jr .not_on_skateboard
 .ollie_1
 	ld a, 1

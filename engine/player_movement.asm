@@ -183,6 +183,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	xor a
 	ld [wSkateboardGrinding], a
 .Falling
+	ld a, [wPlaceBallsY]
+	ld [wWalkingDirection], a
 	xor a
 	ld [wSkateboardSteps], a
 	ld [wSkateboardPush], a
@@ -413,6 +415,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jp z, .TrySurf
 	cp PLAYER_SURF_PIKA
 	jp z, .TrySurf
+;	cp PLAYER_SKATEBOARD_GRINDING
+;	jp z, .grindcont
 
 	ld a, [wPlayerStandingTile]
 	cp COLL_CONVEYOR_UP
@@ -753,6 +757,14 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call ReplaceKrisSprite ; UpdateSprites
 	ret
 	
+.setgrind
+;	ld a, [wPlayerState]
+;	cp PLAYER_SKATEBOARD_GRINDING
+;	ret z
+	ld a, PLAYER_SKATEBOARD_GRINDING
+	ld [wPlayerState], a
+	ret
+	
 .change_grind_direction
 	call SetLastWalkingDirectionOpposite
 	ld a, [wPlayerState]
@@ -767,13 +779,23 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 .grind
 	eventflagcheck EVENT_KNOW_GRIND
 	jr z, .stop_grinding_fall
+	
+	call .TryOllie
+	ret c
+	
 	call GetFacingTileCoord
 	ld c, a
 	cp COLL_GRIND
-	jr nz, .stop_grinding
-	ld a, [wPlayerState]
-	cp PLAYER_SKATEBOARD_GRINDING
+	jr nz, .check_stop_grinding
+	
+	ld a, [wSkateboardGrinding]
+	cp 1
 	jr z, .grindcont
+;	ld a, [wPlayerState]
+;	cp PLAYER_SKATEBOARD_GRINDING
+;	jr z, .grindcont
+	ld a, [wLastWalkingDirection]
+	ld [wPlaceBallsY], a
 	xor a
 	ld [wSkateboardSteps], a
 	ld [wSkateboardPush], a
@@ -786,53 +808,63 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, PLAYER_SKATEBOARD_GRINDING
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
-.grindcont
+	ld a, [wFacingDirection]
+	ld [wWalkingDirection], a
 	ld a, 1
 	ld [wSkateboardGrinding], a
-	ld a, [wLastWalkingDirection]
+	ret
+.grindcont
+	ld a, [wPlaceBallsY]
 	ld [wWalkingDirection], a
 	ld a, STEP_SLIDE
 	call .DoStep
 	scf
 	ret
 	
-.stop_grinding
-	ld a, [wSkateboardGrinding]
+.check_stop_grinding
+	ld a, [wSkateboardOllie]
 	cp 0
-	jr z, .stop_grinding_fall
-
-	call GetFacingTileCoord
-	call GetTileCollision
-	cp LANDTILE
-	jr nz, .change_grind_direction
-	
-	ld a, [wLastWalkingDirection]
-	ld [wWalkingDirection], a
-	xor a
-	ld a, [wLastWalkingDirection]
-	ld a, PLAYER_SKATEBOARD
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	xor a
-	ld [wSkateboardGrinding], a
-	ld de, SFX_JUMP_OVER_LEDGE
-	call PlaySFX
-	ld a, STEP_LEDGE
-	call .DoStep
-	ld a, 7
+	jr z, .stop_grinding
+	ld a, [hJoyDown]
+	and B_BUTTON
+	jr nz, .stop_grinding
+	call .TryOllie2
+	ret c
 	scf
 	ret
+	
+.stop_grinding
+	ld a, [wSkateboardGrinding]
+	cp 1
+	jr nz, .stop_grinding_fall
+
+;	call GetFacingTileCoord
+;	call GetTileCollision
+;	cp LANDTILE
+;	jp nz, .change_grind_direction
+	
+	jp .Falling2
+	
+;	ld a, [wLastWalkingDirection]
+;	ld [wWalkingDirection], a
+;	xor a
+;	ld a, [wLastWalkingDirection]
+;	ld a, PLAYER_SKATEBOARD
+;	ld [wPlayerState], a
+;	call ReplaceKrisSprite
+;	xor a
+;	ld [wSkateboardGrinding], a
+;	ld de, SFX_JUMP_OVER_LEDGE
+;	call PlaySFX
+;	ld a, STEP_LEDGE
+;	call .DoStep
+;	ld a, 7
+;	scf
+;	ret
 .stop_grinding_fall
-	call GetFacingTileCoord
-	call GetTileCollision
-	cp LANDTILE
-	jr z, .stop_grinding_fall_normal
-	call SetLastWalkingDirectionOpposite
-.stop_grinding_fall_normal
 	ld a, [wLastWalkingDirection]
+	ld [wPlaceBallsY], a
 	ld [wWalkingDirection], a
-	xor a
-	ld a, [wLastWalkingDirection]
 	ld a, PLAYER_FALLING
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
@@ -1058,15 +1090,15 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr z, .DontJump
 
 .DoJump
-	ld a, [wOnSkateboard]
-	cp 0
-	jr z, .not_on_skateboard
-	call .CheckSkatableFarAhead
-	jr c, .not_on_skateboard
-	ld a, 69
+;	ld a, [wOnSkateboard]
+;	cp 0
+;	jr z, .not_on_skateboard
+;	call .CheckSkatableFarAhead
+;	jr c, .not_on_skateboard
+	xor a
 	ld [wSkateboardGrinding], a
 	
-.not_on_skateboard
+;.not_on_skateboard
 	ld de, SFX_JUMP_OVER_LEDGE
 	call PlaySFX
 	xor a
@@ -1102,6 +1134,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, [wWalkingDirection]
 	cp STANDING
 	jr z, .DontOllie
+.TryOllie2
 	call .CheckNPCFarAhead
 	and a
 	jr z, .DontOllieSound
@@ -1122,6 +1155,10 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld [wWalkingDirection], a
 	xor a
 	ld [wPlayerStandingTile], a
+	
+	ld a, PLAYER_SKATEBOARD_MOVING
+	ld [wPlayerState], a
+	
 	jp .DoJump
 
 .data_8021e

@@ -767,18 +767,25 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	
 .change_grind_direction
 	call SetLastWalkingDirectionOpposite
-	ld a, [wPlayerState]
-	cp PLAYER_SKATEBOARD_GRINDING
-	jr z, .grindcont
-	ld de, SFX_GRIND
-	call PlaySFX
-	ld a, PLAYER_SKATEBOARD_GRINDING
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	jr .grindcont
+;	ld a, [wPlayerState]
+;	cp PLAYER_SKATEBOARD_GRINDING
+;	jr z, .grindcont
+;	ld de, SFX_GRIND
+;	call PlaySFX
+;	ld a, PLAYER_SKATEBOARD_GRINDING
+;	ld [wPlayerState], a
+;	call ReplaceKrisSprite
+;	jr .grindcont
+;	ld a, 0
+	ld [wLastWalkingDirection], a
+	jp .stop_grinding_fall
 .grind
+	ld a, [wSkateboardGrinding]
+	cp 1
+	jr z, .input
+.grind_return
 	eventflagcheck EVENT_KNOW_GRIND
-	jr z, .stop_grinding_fall
+	jp z, .stop_grinding_fall
 	
 	call .TryOllie
 	ret c
@@ -786,7 +793,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call GetFacingTileCoord
 	ld c, a
 	cp COLL_GRIND
-	jr nz, .check_stop_grinding
+	jr nz, .end_of_rail
 	
 	ld a, [wSkateboardGrinding]
 	cp 1
@@ -794,8 +801,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 ;	ld a, [wPlayerState]
 ;	cp PLAYER_SKATEBOARD_GRINDING
 ;	jr z, .grindcont
-	ld a, [wLastWalkingDirection]
-	ld [wPlaceBallsY], a
+;	ld a, [wLastWalkingDirection]
+;	ld [wPlaceBallsY], a
 	xor a
 	ld [wSkateboardSteps], a
 	ld [wSkateboardPush], a
@@ -808,18 +815,74 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, PLAYER_SKATEBOARD_GRINDING
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
-	ld a, [wFacingDirection]
-	ld [wWalkingDirection], a
+;	ld a, [wFacingDirection]
+;	ld [wWalkingDirection], a
 	ld a, 1
 	ld [wSkateboardGrinding], a
 	ret
 .grindcont
+;	xor a
+;	ld [wInputFlags], a
 	ld a, [wPlaceBallsY]
 	ld [wWalkingDirection], a
 	ld a, STEP_SLIDE
 	call .DoStep
 	scf
 	ret
+	
+.input
+	xor a
+	ld [wInputFlags], a
+	jr .grind_return
+	
+.end_of_rail
+	ld a, [wPlaceBallsY]
+	cp 2
+	jr z, .left_right
+	cp 3
+	jr z, .left_right
+.up_down
+	ld a, [hJoyDown]
+	and D_LEFT
+	jr z, .skip_left
+	ld a, [wTileLeft]
+	cp COLL_GRIND
+	jr nz, .skip_left
+	ld a, 2
+	ld [wPlaceBallsY], a
+	jr .grindcont
+.skip_left
+	ld a, [hJoyDown]
+	and D_RIGHT
+	jr z, .check_stop_grinding
+	ld a, [wTileRight]
+	cp COLL_GRIND
+	jr nz, .check_stop_grinding
+	ld a, 3
+	ld [wPlaceBallsY], a
+	jr .grindcont
+	
+	
+.left_right
+	ld a, [hJoyDown]
+	and D_UP
+	jr z, .skip_up
+	ld a, [wTileUp]
+	cp COLL_GRIND
+	jr nz, .skip_up
+	ld a, 1
+	ld [wPlaceBallsY], a
+	jr .grindcont
+.skip_up
+	ld a, [hJoyDown]
+	and D_DOWN
+	jr z, .check_stop_grinding
+	ld a, [wTileDown]
+	cp COLL_GRIND
+	jr nz, .check_stop_grinding
+	ld a, 0
+	ld [wPlaceBallsY], a
+	jr .grindcont
 	
 .check_stop_grinding
 	ld a, [wSkateboardOllie]
@@ -834,14 +897,16 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret
 	
 .stop_grinding
+	call GetFacingTileCoord
+	call GetTileCollision
+	cp LANDTILE
+	jp nz, .change_grind_direction
+
 	ld a, [wSkateboardGrinding]
 	cp 1
 	jr nz, .stop_grinding_fall
 
-;	call GetFacingTileCoord
-;	call GetTileCollision
-;	cp LANDTILE
-;	jp nz, .change_grind_direction
+	
 	
 	jp .Falling2
 	
@@ -862,6 +927,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 ;	scf
 ;	ret
 .stop_grinding_fall
+	xor a
+	ld [wInputFlags], a
 	ld a, [wLastWalkingDirection]
 	ld [wPlaceBallsY], a
 	ld [wWalkingDirection], a
@@ -1090,11 +1157,14 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr z, .DontJump
 
 .DoJump
+	
 ;	ld a, [wOnSkateboard]
 ;	cp 0
 ;	jr z, .not_on_skateboard
 ;	call .CheckSkatableFarAhead
 ;	jr c, .not_on_skateboard
+	ld a, [wLastWalkingDirection]
+	ld [wPlaceBallsY], a
 	xor a
 	ld [wSkateboardGrinding], a
 	
@@ -1158,7 +1228,6 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	
 	ld a, PLAYER_SKATEBOARD_MOVING
 	ld [wPlayerState], a
-	
 	jp .DoJump
 
 .data_8021e
@@ -1708,33 +1777,37 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 .CheckLandPermsFarAheadUp
 	ld a, [wTileUpFar]
 	cp COLL_GRIND
-	jr z, .CheckLandPermsFarAheadEnd
+	jr z, .CheckLandPermsFarAheadGrind
 	call .CheckWalkable
 	jr c, .NotWalkable
 	jr .CheckLandPermsFarAheadEnd
 .CheckLandPermsFarAheadDown
 	ld a, [wTileDownFar]
 	cp COLL_GRIND
-	jr z, .CheckLandPermsFarAheadEnd
+	jr z, .CheckLandPermsFarAheadGrind
 	call .CheckWalkable
 	jr c, .NotWalkable
 	jr .CheckLandPermsFarAheadEnd
 .CheckLandPermsFarAheadLeft
 	ld a, [wTileLeftFar]
 	cp COLL_GRIND
-	jr z, .CheckLandPermsFarAheadEnd
+	jr z, .CheckLandPermsFarAheadGrind
 	call .CheckWalkable
 	jr c, .NotWalkable
 	jr .CheckLandPermsFarAheadEnd
 .CheckLandPermsFarAheadRight
 	ld a, [wTileRightFar]
 	cp COLL_GRIND
-	jr z, .CheckLandPermsFarAheadEnd
+	jr z, .CheckLandPermsFarAheadGrind
 	call .CheckWalkable
 	jr c, .NotWalkable
 .CheckLandPermsFarAheadEnd:
 	xor a
 	ret
+.CheckLandPermsFarAheadGrind:
+	set 6, a
+	ld [wInputFlags], a
+	jr .CheckLandPermsFarAheadEnd
 	
 .CheckSkatableFarAhead:: ; 8039e
 	ld a, [wWalkingDirection]

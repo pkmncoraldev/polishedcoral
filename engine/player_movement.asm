@@ -757,27 +757,11 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call ReplaceKrisSprite ; UpdateSprites
 	ret
 	
-.setgrind
-;	ld a, [wPlayerState]
-;	cp PLAYER_SKATEBOARD_GRINDING
-;	ret z
-	ld a, PLAYER_SKATEBOARD_GRINDING
-	ld [wPlayerState], a
-	ret
-	
 .change_grind_direction
-	call SetLastWalkingDirectionOpposite
-;	ld a, [wPlayerState]
-;	cp PLAYER_SKATEBOARD_GRINDING
-;	jr z, .grindcont
-;	ld de, SFX_GRIND
-;	call PlaySFX
-;	ld a, PLAYER_SKATEBOARD_GRINDING
-;	ld [wPlayerState], a
-;	call ReplaceKrisSprite
-;	jr .grindcont
-;	ld a, 0
+	call FindFreeFallSpot
 	ld [wLastWalkingDirection], a
+	xor a
+	ld [wSkateboardGrinding], a
 	jp .stop_grinding_fall
 .grind
 	ld a, [wSkateboardGrinding]
@@ -795,14 +779,32 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp COLL_GRIND
 	jr nz, .end_of_rail
 	
+	
+	ld a, [wPlaceBallsY]
+	cp 2
+	jr z, .left_right
+	cp 3
+	jr z, .left_right
+.up_down
+	ld a, [wTileLeft]
+	cp COLL_GRIND
+	jr nz, .grind_not_on_flowers
+	ld a, [wTileRight]
+	cp COLL_GRIND
+	jr z, .end_of_rail
+	jr .grind_not_on_flowers
+.left_right
+	ld a, [wTileUp]
+	cp COLL_GRIND
+	jr nz, .grind_not_on_flowers
+	ld a, [wTileDown]
+	cp COLL_GRIND
+	jr z, .end_of_rail
+	
+.grind_not_on_flowers
 	ld a, [wSkateboardGrinding]
 	cp 1
 	jr z, .grindcont
-;	ld a, [wPlayerState]
-;	cp PLAYER_SKATEBOARD_GRINDING
-;	jr z, .grindcont
-;	ld a, [wLastWalkingDirection]
-;	ld [wPlaceBallsY], a
 	xor a
 	ld [wSkateboardSteps], a
 	ld [wSkateboardPush], a
@@ -815,14 +817,10 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, PLAYER_SKATEBOARD_GRINDING
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
-;	ld a, [wFacingDirection]
-;	ld [wWalkingDirection], a
 	ld a, 1
 	ld [wSkateboardGrinding], a
 	ret
 .grindcont
-;	xor a
-;	ld [wInputFlags], a
 	ld a, [wPlaceBallsY]
 	ld [wWalkingDirection], a
 	ld a, STEP_SLIDE
@@ -838,10 +836,10 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 .end_of_rail
 	ld a, [wPlaceBallsY]
 	cp 2
-	jr z, .left_right
+	jr z, .left_right2
 	cp 3
-	jr z, .left_right
-.up_down
+	jr z, .left_right2
+.up_down2
 	ld a, [hJoyDown]
 	and D_LEFT
 	jr z, .skip_left
@@ -863,7 +861,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr .grindcont
 	
 	
-.left_right
+.left_right2
 	ld a, [hJoyDown]
 	and D_UP
 	jr z, .skip_up
@@ -905,27 +903,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, [wSkateboardGrinding]
 	cp 1
 	jr nz, .stop_grinding_fall
-
-	
-	
 	jp .Falling2
 	
-;	ld a, [wLastWalkingDirection]
-;	ld [wWalkingDirection], a
-;	xor a
-;	ld a, [wLastWalkingDirection]
-;	ld a, PLAYER_SKATEBOARD
-;	ld [wPlayerState], a
-;	call ReplaceKrisSprite
-;	xor a
-;	ld [wSkateboardGrinding], a
-;	ld de, SFX_JUMP_OVER_LEDGE
-;	call PlaySFX
-;	ld a, STEP_LEDGE
-;	call .DoStep
-;	ld a, 7
-;	scf
-;	ret
 .stop_grinding_fall
 	xor a
 	ld [wInputFlags], a
@@ -2130,26 +2109,80 @@ CheckBikeGear::
 	ld a, 1
 	ret
 	
-SetLastWalkingDirectionOpposite::
-	ld a, [wLastWalkingDirection]
+FindFreeFallSpot::
+	ld a, [wPlaceBallsY]
 	cp DOWN
-	jr z, .up
-	cp UP
 	jr z, .down
+	cp UP
+	jr z, .up
 	cp LEFT
-	jr z, .right
-	ld a, LEFT
-	jr .end
-.up
-	ld a, UP
-	jr .end
+	jr z, .left
+.right
+	ld a, [wTileLeftFar]
+	call .CheckWalkable
+	jr nc, .set_left
+	ld a, [wTileUpFar]
+	call .CheckWalkable
+	jr nc, .set_up
+	ld a, [wTileDownFar]
+	call .CheckWalkable
+	jr nc, .set_down
+	jr .set_right
 .down
+	ld a, [wTileUpFar]
+	call .CheckWalkable
+	jr nc, .set_up
+	ld a, [wTileLeftFar]
+	call .CheckWalkable
+	jr nc, .set_left
+	ld a, [wTileRightFar]
+	call .CheckWalkable
+	jr nc, .set_right
+	jr .set_down
+.up
+	ld a, [wTileDownFar]
+	call .CheckWalkable
+	jr nc, .set_down
+	ld a, [wTileRightFar]
+	call .CheckWalkable
+	jr nc, .set_right
+	ld a, [wTileLeftFar]
+	call .CheckWalkable
+	jr nc, .set_left
+	jr .set_up
+.left
+	ld a, [wTileRightFar]
+	call .CheckWalkable
+	jr nc, .set_right
+	ld a, [wTileUpFar]
+	call .CheckWalkable
+	jr nc, .set_up
+	ld a, [wTileDownFar]
+	call .CheckWalkable
+	jr nc, .set_down
+	jr .set_left
+.set_down
 	ld a, DOWN
 	jr .end
-.right
+.set_up
+	ld a, UP
+	jr .end
+.set_left
+	ld a, LEFT
+	jr .end
+.set_right
 	ld a, RIGHT
 .end
 	ld [wLastWalkingDirection], a
+	ret
+
+.CheckWalkable:
+; Return 0 if tile a is land. Otherwise, return carry.
+
+	call GetTileCollision
+	and a ; cp LANDTILE
+	ret z
+	scf
 	ret
 	
 SkateboardTiles::

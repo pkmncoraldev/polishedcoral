@@ -229,7 +229,7 @@ INCLUDE "maps/LusterSkyscraper2_1F.asm"
 INCLUDE "maps/LusterSkyscraper2_2F.asm"
 INCLUDE "maps/LusterSkyscraper2_3F.asm"
 INCLUDE "maps/LusterSkyscraper2_Elevator.asm"
-INCLUDE "maps/NettBuilding_1F.asm"
+INCLUDE "maps/NettBuilding1F.asm"
 
 SECTION "Harbor Scripts", ROMX
 

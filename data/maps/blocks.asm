@@ -330,8 +330,8 @@ LusterSkyscraper1_Elevator_BlockData:
 LusterSkyscraper2_Elevator_BlockData:
 	INCBIN "maps/LusterSkyscraperElevator.ablk.lz"
 	
-NettBuilding_1F_BlockData:
-	INCBIN "maps/NettBuilding_1F.ablk.lz"
+NettBuilding1F_BlockData:
+	INCBIN "maps/NettBuilding1F.ablk.lz"
 	
 LusterSewersB1F_BlockData:
 	INCBIN "maps/LusterSewersB1FFlooded.ablk.lz"

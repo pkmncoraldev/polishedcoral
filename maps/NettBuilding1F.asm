@@ -1,4 +1,4 @@
-NettBuilding_1F_MapScriptHeader:
+NettBuilding1F_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks

@@ -172,3 +172,6 @@ gfx/pokemon/%/bitmask.asm gfx/pokemon/%/frames.asm: gfx/pokemon/%/front.2bpp
 
 #%.wav: ;
 #%.ded: %.wav dedenc.py ; $(PYTHON) dedenc.py $< $@
+
+-PYTHON = python
++PYTHON = python2

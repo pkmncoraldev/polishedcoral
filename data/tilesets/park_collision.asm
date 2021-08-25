@@ -52,7 +52,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 33
 	tilecoll GRIND, GRIND, WALL, WALL ; 34
 	tilecoll WALL, WALL, GRIND, GRIND ; 35
-	tilecoll GRIND, SKATE, SKATE, GRIND ; 36
+	tilecoll GRIND, WALL, SKATE, GRIND ; 36
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 37
 	tilecoll WALL, WALL, WALL, WALL ; 38
 	tilecoll WALL, WALL, WALL, WALL ; 39

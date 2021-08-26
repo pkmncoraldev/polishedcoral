@@ -49,7 +49,7 @@ roms_md5      = roms.md5
 bank_ends_txt = contents/bank_ends.txt
 sorted_sym    = contents/$(NAME).sym
 
-PYTHON = python
+PYTHON = python2
 CC     = gcc
 RM     = rm -f
 GFX    = $(PYTHON) gfx.py
@@ -172,6 +172,3 @@ gfx/pokemon/%/bitmask.asm gfx/pokemon/%/frames.asm: gfx/pokemon/%/front.2bpp
 
 #%.wav: ;
 #%.ded: %.wav dedenc.py ; $(PYTHON) dedenc.py $< $@
-
--PYTHON = python
-+PYTHON = python2

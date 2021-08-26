@@ -136,7 +136,7 @@ SunbeamReserveNidoranM:
 	closetext
 	end
 	
-SunbeamReserveNidoranF
+SunbeamReserveNidoranF:
 	opentext
 	writetext SunbeamReserveNidoranFText
 	cry NIDORAN_F

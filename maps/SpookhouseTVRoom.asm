@@ -63,7 +63,7 @@ SpookHouseTVRoomAsmThing:
 	ld e, a
 	farjp CopyDECoordsToMapObject
 	
-SpookHouseTVScaryDoorLeft
+SpookHouseTVScaryDoorLeft:
 	dw EVENT_SPOOKHOUSE_DARK
 	setevent EVENT_SCARY_DOOR_LEFT
 	jump SpookHouseTVScaryDoorCont

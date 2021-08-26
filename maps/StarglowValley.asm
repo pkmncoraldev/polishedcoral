@@ -144,7 +144,7 @@ StarglowValleyRodneyRematch:
 ;FruitTreeScript_Starglow:
 ;	fruittree FRUITTREE_STARGLOW
 	
-StarglowFisher1
+StarglowFisher1:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_HM01_CUT
@@ -870,7 +870,7 @@ StarglowSnare3Text3:
 	line "runt!"
 	done
 	
-StarglowSnare3Text4
+StarglowSnare3Text4:
 	text "Who…?"
 	done
 	

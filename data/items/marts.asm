@@ -11,7 +11,7 @@ Marts: ; 160a9
 	dw LusterMallElectronics
 	dw LusterMallCoffee
 	dw LusterMallAntique
-MartsEnd
+MartsEnd:
 
 
 SunsetMart: ; 160ed

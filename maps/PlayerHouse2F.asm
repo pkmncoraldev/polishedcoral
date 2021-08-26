@@ -490,7 +490,7 @@ GameConsoleText_Kirby:
 	cont "in its path."
 	done
 	
-GameConsoleText_AskTurnOffKirby
+GameConsoleText_AskTurnOffKirby:
 	text "A Pink Puff is"
 	line "eating everything"
 	cont "in its path."

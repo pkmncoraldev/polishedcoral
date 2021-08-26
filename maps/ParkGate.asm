@@ -33,7 +33,7 @@ ParkGateTrigger1:
 ParkGateOfficer:
 	end
 	
-ParkGateCallback
+ParkGateCallback:
 	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
 	clearevent EVENT_IN_SHOPPING_DISTRICT
 	clearevent EVENT_IN_BUSINESS_DISTRICT

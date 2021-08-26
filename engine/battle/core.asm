@@ -2107,7 +2107,7 @@ GetMaxHP: ; 3ccac
 
 RestoreOpponentHP:
 	call CallOpponentTurn
-RestoreHP ; 3ccef
+RestoreHP: ; 3ccef
 	ld hl, wBattleMonMaxHP
 	ld a, [hBattleTurn]
 	and a
@@ -4256,7 +4256,7 @@ PursuitSwitch: ; 3dc5b
 	scf
 	ret
 
-PursuitSwitch_done
+PursuitSwitch_done:
 	; run switch-out abilities
 	call SwitchTurn
 	ld a, [wCurBattleMon]

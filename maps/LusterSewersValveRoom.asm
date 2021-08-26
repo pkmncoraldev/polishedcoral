@@ -148,11 +148,11 @@ LusterSewersValveRoomValve3:
 	clearevent EVENT_LUSTER_SEWERS_FLOODED
 	end
 	
-LusterSewersValveRoomValveTurnOff
+LusterSewersValveRoomValveTurnOff:
 	clearevent EVENT_LUSTER_SEWERS_EMPTY
 	setevent EVENT_LUSTER_SEWERS_FLOODED
 	end
-LusterSewersValveRoomValveNo
+LusterSewersValveRoomValveNo:
 	farwritetext BetterNotText
 	waitbutton
 	closetext

@@ -628,7 +628,7 @@ CheckIfUserIsSomeType::
 	ld b, a
 	ld a, [hBattleTurn]
 	xor 1
-CheckIfSomeoneIsSomeType
+CheckIfSomeoneIsSomeType:
 	ld c, a
 	ld de, wEnemyMonType1
 	ld a, c
@@ -968,10 +968,6 @@ BattleTextBox:: ; 3ac3
 ; 3ad5
 
 GetBattleAnimPointer:: ; 3ae1
-
-GLOBAL BattleAnimations
-GLOBAL BattleAnimCommands
-
 	ld a, BANK(BattleAnimations)
 	rst Bankswitch
 

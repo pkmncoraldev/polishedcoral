@@ -70,7 +70,7 @@ TrainerHunters_2:
 	para "I told you."
 	done
 	
-TrainerHunters_3
+TrainerHunters_3:
 	generictrainer PICNICKER, TRISTA, EVENT_BEAT_HUNTERS_TRAINER_3, .SeenText, .BeatenText
 
 	text "Why'd you have to"

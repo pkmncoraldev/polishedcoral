@@ -469,7 +469,7 @@ GlintGymLibrarianStopsYou1:
 	closetext
 	end
 	
-GlintGymLibrarianStopsYou1_2
+GlintGymLibrarianStopsYou1_2:
 	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, GLINTGYM_LIBRARIAN, 15
@@ -508,7 +508,7 @@ GlintGymLibrarianStopsYou2:
 	closetext
 	end
 	
-GlintGymLibrarianStopsYou2_2
+GlintGymLibrarianStopsYou2_2:
 	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, GLINTGYM_LIBRARIAN, 15
@@ -546,7 +546,7 @@ GlintGymLibrarianStopsYou3:
 	closetext
 	end
 	
-GlintGymLibrarianStopsYou3_2
+GlintGymLibrarianStopsYou3_2:
 	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, GLINTGYM_LIBRARIAN, 15
@@ -584,7 +584,7 @@ GlintGymLibrarianStopsYou4:
 	closetext
 	end
 	
-GlintGymLibrarianStopsYou4_2
+GlintGymLibrarianStopsYou4_2:
 	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, GLINTGYM_LIBRARIAN, 15
@@ -673,7 +673,7 @@ GlintGymStanleyTextBeforeBattle2:
 	cont "than pure power!"
 	done
 	
-GlintGymStanleyTextWin
+GlintGymStanleyTextWin:
 	text "I guess your stra-"
 	line "tegy trumped mine."
 	
@@ -683,14 +683,14 @@ GlintGymStanleyTextWin
 	line "LEAGUE STARKBADGE."
 	done
 	
-GlintGymStanleyTextWinRematch
+GlintGymStanleyTextWinRematch:
 	text "I guess your stra-"
 	line "tegy trumped mine."
 	
 	para "Good job!"
 	done
 	
-GlintGymStanleyTextLoss
+GlintGymStanleyTextLoss:
 	text "It seems your"
 	line "skills aren't up"
 	cont "to snuff."

@@ -343,7 +343,7 @@ StarglowHouse1Rocket:
 	disappear STARGLOWHOUSE1_LITTLEGIRL
 	end
 	
-StarglowHouse1Togepi
+StarglowHouse1Togepi:
 	opentext
 	writetext StarglowHouse1TogepiText
 	cry TOGEPI
@@ -428,7 +428,7 @@ Movement_StarglowHouse1Rocket5:
 	step_down
 	step_end
 	
-Movement_StarglowHouseTogepiHop1
+Movement_StarglowHouseTogepiHop1:
 	
 StarglowHouse1GotTogepiText:
 	text "<PLAYER> received"

@@ -873,7 +873,7 @@ DrawChannelLabel:
 	ld a, [wChannelSelector]
 	ld l, a
 	ld h, 0
-	add hl
+	add hl, hl
 	add l
 	ld l, a
 	add hl, de

@@ -288,7 +288,7 @@ MegaDrainDescription:
 LeechLifeDescription:
 GigaDrainDescription:
 DrainPunchDescription:
-HornLeechDescription
+HornLeechDescription:
 	db   "Steals 1/2 of the"
 	next "damage inflicted.@"
 
@@ -888,7 +888,7 @@ ClearSmogDescription:
 	db   "Eliminates foe's"
 	next "stat changes.@"
 	
-SplashDescription
+SplashDescription:
 	db   "Has no effect"
 	next "whatsoever.@"
 

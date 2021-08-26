@@ -257,6 +257,7 @@ MAP_NONE   EQU 0
 	map_const LUSTER_SKYSCRAPER_2_3F,					   4,  4 ; 34
 	map_const LUSTER_SKYSCRAPER_2_ELEVATOR,				   2,  2 ; 35
 	map_const NETT_BUILDING_1F,							   9,  7 ; 36
+	map_const NETT_BUILDING_STAIRWELL,					   3,  5 ; 37
 	map_const PARK,										  21, 31 ; 
 	map_const SKATEPARK,								  15, 32 ; 
 	map_const PARK_GATE,							   	   4,  4 ; 

@@ -333,6 +333,9 @@ LusterSkyscraper2_Elevator_BlockData:
 NettBuilding1F_BlockData:
 	INCBIN "maps/NettBuilding1F.ablk.lz"
 	
+NettBuildingStairwell_BlockData:
+	INCBIN "maps/NettBuildingStairwell.ablk.lz"
+	
 LusterSewersB1F_BlockData:
 	INCBIN "maps/LusterSewersB1FFlooded.ablk.lz"
 	

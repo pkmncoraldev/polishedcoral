@@ -420,6 +420,7 @@ ENDM
 	map_attributes LusterSkyscraper2_3F, LUSTER_SKYSCRAPER_2_3F, 0, 0
 	map_attributes LusterSkyscraper2_Elevator, LUSTER_SKYSCRAPER_2_ELEVATOR, 0, 0
 	map_attributes NettBuilding1F, NETT_BUILDING_1F, 0, 0
+	map_attributes NettBuildingStairwell, NETT_BUILDING_STAIRWELL, 0, 0
 	
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0

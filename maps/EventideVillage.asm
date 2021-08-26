@@ -139,7 +139,7 @@ EventideVillageMilkGirl:
 	closetext
 	end
 	
-EventideVillageMilkMenuData
+EventideVillageMilkMenuData:
 	db $40 ; flags
 	db 04, 00 ; start coords
 	db 11, 14 ; end coords

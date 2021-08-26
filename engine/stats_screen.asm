@@ -807,7 +807,7 @@ OrangePage_:
 .ability
 	db "ABILITY/@"
 
-TN_PrintToD
+TN_PrintToD:
 	ld de, .caughtat
 	hlcoord 1, 8
 	call PlaceString

@@ -1,4 +1,4 @@
-MomPhoneNormalText
+MomPhoneNormalText:
 	text "Hello?"
 	
 	para "Oh, hi,"
@@ -14,7 +14,7 @@ MomPhoneNormalText
 	line "there!"
 	done
 
-MomPhoneGoToIsland1Text
+MomPhoneGoToIsland1Text:
 	text "Hello?"
 	
 	para "Oh, hi,"
@@ -72,7 +72,7 @@ MomPhoneGoToIsland1Text
 	line "honey!"
 	done
 	
-MomPhoneGoToIsland2Text
+MomPhoneGoToIsland2Text:
 	text "Hello?"
 	
 	para "Oh, hi,"

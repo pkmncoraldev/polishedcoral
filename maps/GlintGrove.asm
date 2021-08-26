@@ -1227,7 +1227,7 @@ GlintGroveTrioYellow:
 	writetext GlintGrove_TrioYellowAfterBattleText2
 	buttonsound
 	
-GlintGroveTrioFinish
+GlintGroveTrioFinish:
 	pause 10
 	spriteface PLAYER, DOWN
 	writetext GlintGrove_TrioAfterBattleText1

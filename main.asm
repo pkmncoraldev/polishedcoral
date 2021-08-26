@@ -22,7 +22,7 @@ PushOAMCode: ; 403f
 	dec a
 	jr nz, .loop
 	ret
-PushOAMCodeEnd
+PushOAMCodeEnd:
 
 ReanchorBGMap_NoOAMUpdate:: ; 6454
 	ld a, [hOAMUpdate]
@@ -1333,12 +1333,6 @@ GetDexEntryPointer: ; 44333
 	ret
 
 .PokedexEntryBanks: ; 44351
-
-GLOBAL PokedexEntries1
-GLOBAL PokedexEntries2
-GLOBAL PokedexEntries3
-GLOBAL PokedexEntries4
-
 	db BANK(PokedexEntries1)
 	db BANK(PokedexEntries2)
 	db BANK(PokedexEntries3)

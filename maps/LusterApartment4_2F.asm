@@ -39,7 +39,7 @@ LusterApartment4_2F_MapScriptHeader:
 	const LUSTER_APARTMENT_4_2F_BUNEARY3
 	const LUSTER_APARTMENT_4_2F_BUNEARY4
 		
-LusterApartment4_2F_Frankie
+LusterApartment4_2F_Frankie:
 	jumptextfaceplayer LusterApartment4_2F_FrankieText
 	
 LusterApartment4_2F_Brutus:

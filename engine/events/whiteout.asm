@@ -67,7 +67,7 @@ WhiteoutHandleEvents:
 	clearflag ENGINE_ENCOUNTER_HOUSE
 	end
 	
-OverworldWhiteoutFade
+OverworldWhiteoutFade:
 	farcall FadeOutPalettes
 	call ClearTileMap
 	call ClearSprites

@@ -294,7 +294,7 @@ SpruceLabDoor:
 .unlocked
 	jumptext SpruceLabDoorText2
 	
-SpruceLabOpenWindow
+SpruceLabOpenWindow:
 	jumptext SpruceLabOpenWindowText
 	
 SpruceLabPC:

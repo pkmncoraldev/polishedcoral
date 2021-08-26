@@ -49,7 +49,7 @@ OfficerScript_0x19ab0b:
 	closetext
 	end
 
-Route5Gate1FNPC1
+Route5Gate1FNPC1:
 	faceplayer
 	opentext
 	writetext Route5Gate1FNPC1Text

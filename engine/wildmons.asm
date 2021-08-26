@@ -635,7 +635,7 @@ _GetWaterWildmonPointer:
 	ld hl, SouthOnwaWaterWildMons
 	ret
 
-_SwarmWildmonCheck
+_SwarmWildmonCheck:
 	call CopyCurrMapDE
 	push hl
 	ld hl, wSwarmFlags
@@ -670,15 +670,15 @@ _SwarmWildmonCheck
 	scf
 	ret
 
-_NoSwarmWildmon
+_NoSwarmWildmon:
 	and a
 	ret
 
-_NormalWildmonOK
+_NormalWildmonOK:
 	call CopyCurrMapDE
 	jr LookUpWildmonsForMapDE
 	
-_RanchWildmonOK
+_RanchWildmonOK:
 	call CopyRanchMapDE
 	jr LookUpWildmonsForMapDE
 

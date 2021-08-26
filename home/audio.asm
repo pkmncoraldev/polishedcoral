@@ -39,8 +39,6 @@ UpdateSound:: ; 3b6a
 
 _LoadMusicByte:: ; 3b86
 ; wCurMusicByte = [a:de]
-GLOBAL LoadMusicByte
-
 ;	ld [hROMBank], a
 ;	ld [MBC3RomBank], a
 	rst Bankswitch

@@ -17,7 +17,7 @@ RGBASM_FLAGS = -Weverything
 RGBLINK_FLAGS = -n $(ROM_NAME).sym -m $(ROM_NAME).map -l contents/contents.link -p $(FILLER)
 RGBFIX_FLAGS = -csjv -t $(TITLE) -i $(MCODE) -n $(ROMVERSION) -p $(FILLER) -k 01 -l 0x33 -m 0x10 -r 3
 
-CFLAGS = -g -O3 -march=native -std=c17 -Wall -Wextra -pedantic
+CFLAGS = -g -O3 -march=native -std=c11 -Wall -Wextra -pedantic
 
 ifeq ($(filter faithful,$(MAKECMDGOALS)),faithful)
 RGBASM_FLAGS += -DFAITHFUL

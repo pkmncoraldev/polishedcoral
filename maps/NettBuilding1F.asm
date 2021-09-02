@@ -3,10 +3,13 @@ NettBuilding1F_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 3 ; warp events
+	db 6 ; warp events
 	warp_event  8, 13, LUSTER_CITY_BUSINESS, 5
 	warp_event  9, 13, LUSTER_CITY_BUSINESS, 6
 	warp_event  2,  3, NETT_BUILDING_STAIRWELL, 1
+	warp_event  4,  3, NETT_BUILDING_ELEVATOR, 1
+	warp_event 14,  3, NETT_BUILDING_M_BATHROOM, 1
+	warp_event 16,  3, NETT_BUILDING_F_BATHROOM, 1
 
 	db 0 ; coord events
 
@@ -18,7 +21,7 @@ NettBuilding1F_MapScriptHeader:
 ;	person_event SPRITE_ICE_BLOCK,  6,  8, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_CAMPFIRE,  3, 15, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_CAMPFIRE,  3, 13, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, 0, -1
-	person_event SPRITE_FAT_GUY,  4, 14, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, 0, -1
+	person_event SPRITE_FAT_GUY,  4, 12, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_OFFICER,  4,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_RECEPTIONIST,  2,  8, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_BEAUTY,  8, 11, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, 0, -1

@@ -81,4 +81,6 @@ MapTriggers::
 	scene_var MT_ONWA_B2F,							  wMtOnwaB2FTrigger
 	scene_var MT_ONWA_B3F,							  wMtOnwaB3FTrigger
 	scene_var PARK_GATE,							  wParkGateTrigger
+	scene_var NETT_BUILDING_M_BATHROOM,				  wAlways0Trigger
+	scene_var NETT_BUILDING_F_BATHROOM,				  wAlways0Trigger
 	db -1

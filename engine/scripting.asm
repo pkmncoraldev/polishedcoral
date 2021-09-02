@@ -505,7 +505,7 @@ Script_waitbuttonsilent:
 	jp WaitButton
 
 Script_waitbuttonseat:
-	jp WaitButtonLeft
+	jp WaitButtonLeftRight
 	
 Script_buttonsound:
 	ld a, [hOAMUpdate]

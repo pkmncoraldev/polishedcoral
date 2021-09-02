@@ -328,13 +328,23 @@ LusterSkyscraper2_3F_BlockData:
 	
 LusterSkyscraper1_Elevator_BlockData:
 LusterSkyscraper2_Elevator_BlockData:
+NettBuildingElevator_BlockData:
 	INCBIN "maps/LusterSkyscraperElevator.ablk.lz"
 	
 NettBuilding1F_BlockData:
 	INCBIN "maps/NettBuilding1F.ablk.lz"
 	
+NettBuilding2F_BlockData:
+	INCBIN "maps/NettBuilding2F.ablk.lz"
+	
 NettBuildingStairwell_BlockData:
 	INCBIN "maps/NettBuildingStairwell.ablk.lz"
+	
+NettBuildingMBathroom_BlockData:
+	INCBIN "maps/NettBuildingMBathroom.ablk.lz"
+	
+NettBuildingFBathroom_BlockData:
+	INCBIN "maps/NettBuildingFBathroom.ablk.lz"
 	
 LusterSewersB1F_BlockData:
 	INCBIN "maps/LusterSewersB1FFlooded.ablk.lz"

@@ -232,6 +232,8 @@ PlayerHouse2FInitializeRoom:
 	if_equal CORA, .cora
 	if_equal PIPPI, .pippi
 .cory
+	setevent EVENT_PLAYER_IS_MALE
+	clearevent EVENT_PLAYER_IS_FEMALE
 	setevent EVENT_PLAYER_IS_CORY
 	clearevent EVENT_PLAYER_IS_CORA
 	clearevent EVENT_PLAYER_IS_PIPPI
@@ -242,6 +244,8 @@ PlayerHouse2FInitializeRoom:
 	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORY
 	jump .done
 .cora
+	clearevent EVENT_PLAYER_IS_MALE
+	setevent EVENT_PLAYER_IS_FEMALE
 	clearevent EVENT_PLAYER_IS_CORY
 	setevent EVENT_PLAYER_IS_CORA
 	clearevent EVENT_PLAYER_IS_PIPPI
@@ -252,6 +256,8 @@ PlayerHouse2FInitializeRoom:
 	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORA
 	jump .done
 .pippi
+	clearevent EVENT_PLAYER_IS_MALE
+	setevent EVENT_PLAYER_IS_FEMALE
 	clearevent EVENT_PLAYER_IS_CORY
 	clearevent EVENT_PLAYER_IS_CORA
 	setevent EVENT_PLAYER_IS_PIPPI
@@ -262,6 +268,8 @@ PlayerHouse2FInitializeRoom:
 	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_PIPPI
 	jump .done
 .red
+	setevent EVENT_PLAYER_IS_MALE
+	clearevent EVENT_PLAYER_IS_FEMALE
 	clearevent EVENT_PLAYER_IS_CORY
 	clearevent EVENT_PLAYER_IS_CORA
 	clearevent EVENT_PLAYER_IS_PIPPI
@@ -272,6 +280,8 @@ PlayerHouse2FInitializeRoom:
 	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_RED
 	jump .done
 .leaf
+	clearevent EVENT_PLAYER_IS_MALE
+	setevent EVENT_PLAYER_IS_FEMALE
 	clearevent EVENT_PLAYER_IS_CORY
 	clearevent EVENT_PLAYER_IS_CORA
 	clearevent EVENT_PLAYER_IS_PIPPI
@@ -282,6 +292,8 @@ PlayerHouse2FInitializeRoom:
 	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_LEAF
 	jump .done
 .gold
+	setevent EVENT_PLAYER_IS_MALE
+	clearevent EVENT_PLAYER_IS_FEMALE
 	clearevent EVENT_PLAYER_IS_CORY
 	clearevent EVENT_PLAYER_IS_CORA
 	clearevent EVENT_PLAYER_IS_PIPPI
@@ -292,6 +304,8 @@ PlayerHouse2FInitializeRoom:
 	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_GOLD
 	jump .done
 .kris
+	clearevent EVENT_PLAYER_IS_MALE
+	setevent EVENT_PLAYER_IS_FEMALE
 	clearevent EVENT_PLAYER_IS_CORY
 	clearevent EVENT_PLAYER_IS_CORA
 	clearevent EVENT_PLAYER_IS_PIPPI

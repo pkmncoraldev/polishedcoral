@@ -420,6 +420,10 @@ ENDM
 	map_attributes LusterSkyscraper2_3F, LUSTER_SKYSCRAPER_2_3F, 0, 0
 	map_attributes LusterSkyscraper2_Elevator, LUSTER_SKYSCRAPER_2_ELEVATOR, 0, 0
 	map_attributes NettBuilding1F, NETT_BUILDING_1F, 0, 0
+	map_attributes NettBuilding2F, NETT_BUILDING_2F, 0, 0
+	map_attributes NettBuildingElevator, NETT_BUILDING_ELEVATOR, 0, 0
+	map_attributes NettBuildingMBathroom, NETT_BUILDING_M_BATHROOM, 0, 0
+	map_attributes NettBuildingFBathroom, NETT_BUILDING_F_BATHROOM, 0, 0
 	map_attributes NettBuildingStairwell, NETT_BUILDING_STAIRWELL, 0, 0
 	
 	

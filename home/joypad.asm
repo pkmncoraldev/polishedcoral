@@ -286,6 +286,18 @@ JoyWaitLeft::
 	ret nz
 	call RTC
 	jr .loop
+	
+JoyWaitRight::
+.loop
+	call DelayFrame
+	call GetJoypad
+	ld a, [hJoyPressed]
+	and D_RIGHT
+	ret nz
+	call CheckAutoscroll
+	ret nz
+	call RTC
+	jr .loop
 
 CheckIfAOrBPressed:
 	call JoyTextDelay
@@ -331,13 +343,21 @@ WaitButton:: ; a46
 	ret
 ; a57
 
-WaitButtonLeft::
+WaitButtonLeftRight::
 	ld a, [hOAMUpdate]
 	push af
 	ld a, 1
 	ld [hOAMUpdate], a
 	call ApplyTilemapInVBlank
+	ld a, [wPlayerDirection]
+	cp $0c
+	jp z, .right
 	call JoyWaitLeft
+	pop af
+	ld [hOAMUpdate], a
+	ret
+.right
+	call JoyWaitRight
 	pop af
 	ld [hOAMUpdate], a
 	ret

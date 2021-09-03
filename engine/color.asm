@@ -746,8 +746,8 @@ ClearBytes: ; 0x9a5b
 ; 0x9a64
 
 LoadMapPals::
-	farcall LoadSpecialMapPalette
-	jr c, .got_pals
+;	farcall LoadSpecialMapPalette
+;	jr c, .got_pals
 
 	; Which palette group is based on whether we're outside or inside
 	ld a, [wPermission]
@@ -807,6 +807,7 @@ LoadMapPals::
 	ld [rSVBK], a
 
 .got_pals
+	farcall LoadSpecialMapPalette
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes

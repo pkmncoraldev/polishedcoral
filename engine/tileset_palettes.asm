@@ -129,9 +129,9 @@ LoadSpecialMapPalette: ; 494ac
 	cp TILESET_PARK
 	jp z, .park
 	cp TILESET_MALL_1
-	jp z, .mall1
+	jp z, .mall
 	cp TILESET_MALL_2
-	jp z, .mall2
+	jp z, .mall
 	cp TILESET_SEWER
 	jp z, .sewer
 	cp TILESET_ICE_CAVE
@@ -166,11 +166,21 @@ LoadSpecialMapPalette: ; 494ac
 	cp MAP_NETT_BUILDING_1F
 	jp nz, .do_nothing
 	ld hl, NettPalette
-	jp LoadSevenBGPalettes
+	ld de, wUnknBGPals + 4 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 	
 .nett2
 	ld hl, Nett2Palette
-	jp LoadSevenBGPalettes
+	ld de, wUnknBGPals + 4 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 	
 .checktent
 	ld a, [wMapNumber]
@@ -228,7 +238,12 @@ LoadSpecialMapPalette: ; 494ac
 	
 .train
 	ld hl, TrainPalette
-	jp LoadSevenBGPalettes
+	ld de, wUnknBGPals + 6 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 	
 .luster
 	ld a, [wMapNumber]
@@ -245,12 +260,8 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, OutsideSkateparkPalette
 	jp LoadSevenTimeOfDayBGPalettes
 	
-.mall1
-	ld hl, Mall1Palette
-	jp LoadSevenBGPalettes
-	
-.mall2
-	ld hl, Mall2Palette
+.mall
+	ld hl, MallPalette
 	jp LoadSevenBGPalettes
 	
 .sewer
@@ -470,11 +481,8 @@ INCLUDE "maps/palettes/bgpals/nett.pal"
 Nett2Palette:
 INCLUDE "maps/palettes/bgpals/nett2.pal"
 
-Mall1Palette:
-INCLUDE "maps/palettes/bgpals/lustermall1.pal"
-
-Mall2Palette:
-INCLUDE "maps/palettes/bgpals/lustermall2.pal"
+MallPalette:
+INCLUDE "maps/palettes/bgpals/lustermall.pal"
 
 LusterSewerPalette:
 INCLUDE "maps/palettes/bgpals/lustersewer.pal"

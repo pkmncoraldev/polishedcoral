@@ -161,9 +161,15 @@ LoadSpecialMapPalette: ; 494ac
 	
 .nett
 	ld a, [wMapNumber]
+	cp MAP_NETT_BUILDING_2F
+	jr z, .nett2
 	cp MAP_NETT_BUILDING_1F
 	jp nz, .do_nothing
 	ld hl, NettPalette
+	jp LoadSevenBGPalettes
+	
+.nett2
+	ld hl, Nett2Palette
 	jp LoadSevenBGPalettes
 	
 .checktent
@@ -460,6 +466,9 @@ INCLUDE "maps/palettes/bgpals/train.pal"
 
 NettPalette:
 INCLUDE "maps/palettes/bgpals/nett.pal"
+
+Nett2Palette:
+INCLUDE "maps/palettes/bgpals/nett2.pal"
 
 Mall1Palette:
 INCLUDE "maps/palettes/bgpals/lustermall1.pal"

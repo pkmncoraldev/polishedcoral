@@ -530,9 +530,10 @@ INCLUDE "data/tilesets/mall2_collision.asm"
 SECTION "Tileset Data - sewer", ROMX
 
 TilesetSewerGFX0::
-INCBIN "gfx/tilesets/sewer.2bpp.lz"
+INCBIN "gfx/tilesets/sewer.2bpp.vram0.lz"
 
-TilesetSewerGFX1 EQU 0
+TilesetSewerGFX1::
+INCBIN "gfx/tilesets/sewer.2bpp.vram1.lz"
 
 TilesetSewerGFX2 EQU 0
 

@@ -160,11 +160,12 @@ LoadSpecialMapPalette: ; 494ac
 	jp .do_nothing
 	
 .nett
-	ld a, [wMapNumber]
-	cp MAP_NETT_BUILDING_2F
-	jr z, .nett2
-	cp MAP_NETT_BUILDING_1F
+	ld a, [wMapGroup]
+	cp GROUP_NETT_BUILDING_1F
 	jp nz, .do_nothing
+	ld a, [wMapNumber]
+	cp MAP_NETT_BUILDING_1F
+	jp nz, .nett2
 	ld hl, NettPalette
 	ld de, wUnknBGPals + 4 palettes
 	ld bc, 1 palettes
@@ -179,6 +180,15 @@ LoadSpecialMapPalette: ; 494ac
 	ld bc, 1 palettes
 	ld a, $5
 	call FarCopyWRAM
+	ld a, [wMapNumber]
+	cp MAP_NETT_BUILDING_OFFICE
+	jr nz, .nett2_end
+	ld hl, Nett3Palette
+	ld de, wUnknBGPals + 3 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+.nett2_end
 	scf
 	ret
 	
@@ -480,6 +490,9 @@ INCLUDE "maps/palettes/bgpals/nett.pal"
 
 Nett2Palette:
 INCLUDE "maps/palettes/bgpals/nett2.pal"
+
+Nett3Palette:
+INCLUDE "maps/palettes/bgpals/nett3.pal"
 
 MallPalette:
 INCLUDE "maps/palettes/bgpals/lustermall.pal"

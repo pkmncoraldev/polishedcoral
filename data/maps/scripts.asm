@@ -235,6 +235,7 @@ INCLUDE "maps/NettBuildingElevator.asm"
 INCLUDE "maps/NettBuildingMBathroom.asm"
 INCLUDE "maps/NettBuildingFBathroom.asm"
 INCLUDE "maps/NettBuildingStairwell.asm"
+INCLUDE "maps/NettBuildingOffice.asm"
 
 SECTION "Harbor Scripts", ROMX
 

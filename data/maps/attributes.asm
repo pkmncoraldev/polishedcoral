@@ -425,6 +425,7 @@ ENDM
 	map_attributes NettBuildingMBathroom, NETT_BUILDING_M_BATHROOM, 0, 0
 	map_attributes NettBuildingFBathroom, NETT_BUILDING_F_BATHROOM, 0, 0
 	map_attributes NettBuildingStairwell, NETT_BUILDING_STAIRWELL, 0, 0
+	map_attributes NettBuildingOffice, NETT_BUILDING_OFFICE, 0, 0
 	
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0

@@ -894,9 +894,21 @@ LoadMapPals::
 .nett
 	ld a, [wMapNumber]
 	cp MAP_NETT_BUILDING_1F
-	jr nz, .snes
+	jr nz, .nett2
 	call .normal
 	ld hl, MapObjectPalsNett
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+	
+.nett2
+	ld a, [wMapNumber]
+	cp MAP_NETT_BUILDING_OFFICE
+	jr nz, .snes
+	call .normal
+	ld hl, MapObjectPalsNett2
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
@@ -1525,6 +1537,9 @@ INCLUDE "maps/palettes/obpals/oblustermall.pal"
 
 MapObjectPalsNett::
 INCLUDE "maps/palettes/obpals/nett.pal"
+
+MapObjectPalsNett2::
+INCLUDE "maps/palettes/obpals/nett2.pal"
 
 MapObjectPalsSnes::
 INCLUDE "maps/palettes/obpals/snes.pal"

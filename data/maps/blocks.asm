@@ -346,6 +346,9 @@ NettBuildingMBathroom_BlockData:
 NettBuildingFBathroom_BlockData:
 	INCBIN "maps/NettBuildingFBathroom.ablk.lz"
 	
+NettBuildingOffice_BlockData:
+	INCBIN "maps/NettBuildingOffice.ablk.lz"
+	
 LusterSewersB1F_BlockData:
 	INCBIN "maps/LusterSewersB1FFlooded.ablk.lz"
 	

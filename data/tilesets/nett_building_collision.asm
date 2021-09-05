@@ -155,3 +155,22 @@
 	tilecoll WALL, WALL, FLOOR, LEFT_WALL ; 9a
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 9b
 	tilecoll WALL, FLOOR, WALL, WARP_CARPET_DOWN ; 9c
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9d
+	tilecoll BOTTOM_WALL, BOTTOM_WALL, RIGHT_WALL, RIGHT_WALL ; 9e
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, FLOOR ; 9f
+	tilecoll FLOOR, FLOOR, FLOOR, WARP_CARPET_DOWN ; a0
+	tilecoll WALL, WALL, FLOOR, FLOOR ; a1
+	tilecoll WALL, WALL, FLOOR, FLOOR ; a2
+	tilecoll WALL, WALL, WALL, WALL ; a3
+	tilecoll WALL, WALL, WALL, WALL ; a4
+	tilecoll WALL, WALL, WALL, WALL ; a5
+	tilecoll WALL, WALL, WALL, WALL ; a6
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; a7
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; a8
+	tilecoll FLOOR, FLOOR, WALL, WALL ; a9
+	tilecoll WALL, FLOOR, WALL, FLOOR ; aa
+	tilecoll BOOKSHELF, BOOKSHELF, FLOOR, FLOOR ; ab
+	tilecoll WALL, WALL, WALL, WALL ; ac
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ad
+	tilecoll FLOOR, FLOOR, FLOOR, LEFT_WALL ; ae
+	tilecoll FLOOR, WALL, FLOOR, WALL ; af

@@ -596,7 +596,8 @@ INCBIN "gfx/tilesets/nett_building.2bpp.vram0.lz"
 TilesetNettBuildingGFX1::
 INCBIN "gfx/tilesets/nett_building.2bpp.vram1.lz"
 
-TilesetNettBuildingGFX2 EQU 0
+TilesetNettBuildingGFX2::
+INCBIN "gfx/tilesets/nett_building.2bpp.vram2.lz"
 
 TilesetNettBuildingMeta::
 INCBIN "data/tilesets/nett_building_metatiles.bin.lz"

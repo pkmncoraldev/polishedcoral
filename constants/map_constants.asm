@@ -256,16 +256,20 @@ MAP_NONE   EQU 0
 	map_const LUSTER_SKYSCRAPER_2_2F,					   4,  4 ; 33
 	map_const LUSTER_SKYSCRAPER_2_3F,					   4,  4 ; 34
 	map_const LUSTER_SKYSCRAPER_2_ELEVATOR,				   2,  2 ; 35
-	map_const NETT_BUILDING_1F,							   9,  7 ; 36
-	map_const NETT_BUILDING_2F,							   6,  7 ; 37
-	map_const NETT_BUILDING_ELEVATOR,					   2,  2 ; 38
-	map_const NETT_BUILDING_M_BATHROOM,					   3,  4 ; 39
-	map_const NETT_BUILDING_F_BATHROOM,					   3,  4 ; 40
-	map_const NETT_BUILDING_STAIRWELL,					   3,  5 ; 41
 	map_const PARK,										  21, 31 ; 
 	map_const SKATEPARK,								  15, 32 ; 
 	map_const PARK_GATE,							   	   4,  4 ; 
 	map_const ROUTE_11_GATE,							   4,  4 ; 
+	
+	newgroup
+	
+	map_const NETT_BUILDING_1F,							   9,  7 ; 1
+	map_const NETT_BUILDING_2F,							   6,  7 ; 2
+	map_const NETT_BUILDING_ELEVATOR,					   2,  2 ; 3
+	map_const NETT_BUILDING_M_BATHROOM,					   3,  4 ; 4
+	map_const NETT_BUILDING_F_BATHROOM,					   3,  4 ; 5
+	map_const NETT_BUILDING_STAIRWELL,					   3,  5 ; 6
+	map_const NETT_BUILDING_OFFICE,						   5,  5 ; 7
 	
 	newgroup													 ; 13
 	

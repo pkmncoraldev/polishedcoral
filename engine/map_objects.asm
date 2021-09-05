@@ -3104,6 +3104,9 @@ PRIORITY_HIGH EQU $30
 	add hl, bc
 	ld d, a
 	ld a, [hl]
+	cp PAL_OW_SILVER
+	jr z, .skip5
+.skip6
 	and %00000111
 	or d
 	ld d, a
@@ -3111,6 +3114,12 @@ PRIORITY_HIGH EQU $30
 	bit OVERHEAD, e
 	jr z, .skip4
 	or %10000000
+	jr .skip4
+.skip5
+	eventflagcheck EVENT_MT_ONWA_CUTSCENE
+	jr nz, .skip6
+	ld a, [wPlayerPalette]
+	jr .skip6
 .skip4
 	ld [hCurSpriteOAMFlags], a
 	ld hl, OBJECT_SPRITE_X

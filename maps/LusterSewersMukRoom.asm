@@ -14,7 +14,7 @@ LusterSewersMukRoom_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 16 ; object events
+	db 10 ; object events
 	object_event 6, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GRIMER_A, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer1, EVENT_LUSTER_SEWERS_GRIMER_1
 	person_event SPRITE_GRIMER_A_OW,  6,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer1, EVENT_MT_ONWA_CUTSCENE
 	object_event 7, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GRIMER_A, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer2, EVENT_LUSTER_SEWERS_GRIMER_2
@@ -24,13 +24,7 @@ LusterSewersMukRoom_MapScriptHeader:
 	object_event 9, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GRIMER_A, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer4, EVENT_LUSTER_SEWERS_GRIMER_4
 	person_event SPRITE_GRIMER_A_OW,  6,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer4, EVENT_MT_ONWA_CUTSCENE
 	person_event SPRITE_BIG_MUK,  4,  7, SPRITEMOVEDATA_BIG_MUK_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer1, EVENT_MT_ONWA_CUTSCENE
-	person_event SPRITE_PLAYER_CUTSCENE,  7,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_MT_ONWA_CUTSCENE
-	person_event SPRITE_PLAYER_CUTSCENE,  7,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, -1, EVENT_MT_ONWA_CUTSCENE
-	person_event SPRITE_PLAYER_CUTSCENE,  7,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_MT_ONWA_CUTSCENE
-	person_event SPRITE_PLAYER_CUTSCENE,  7,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, -1, EVENT_MT_ONWA_CUTSCENE
-	person_event SPRITE_PLAYER_CUTSCENE,  7,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, -1, EVENT_MT_ONWA_CUTSCENE
-	person_event SPRITE_PLAYER_CUTSCENE,  7,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_MT_ONWA_CUTSCENE
-	person_event SPRITE_PLAYER_CUTSCENE,  7,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_MT_ONWA_CUTSCENE
+	person_event SPRITE_PLAYER_CUTSCENE,  7,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_MT_ONWA_CUTSCENE
 
 	
 	const_def 1 ; object constants
@@ -43,13 +37,7 @@ LusterSewersMukRoom_MapScriptHeader:
 	const LUSTER_SEWERS_GRIMER_4_1
 	const LUSTER_SEWERS_GRIMER_4_2
 	const LUSTER_SEWERS_MUK
-	const LUSTER_SEWERS_MUK_CUTSCENE_1
-	const LUSTER_SEWERS_MUK_CUTSCENE_2
-	const LUSTER_SEWERS_MUK_CUTSCENE_3
-	const LUSTER_SEWERS_MUK_CUTSCENE_4
-	const LUSTER_SEWERS_MUK_CUTSCENE_5
-	const LUSTER_SEWERS_MUK_CUTSCENE_6
-	const LUSTER_SEWERS_MUK_CUTSCENE_7
+	const LUSTER_SEWERS_MUK_CUTSCENE
 	
 LusterSewersMukRoomTrigger0:
 	checkevent EVENT_LUSTER_SEWERS_GRIMER_1
@@ -78,44 +66,7 @@ LusterSewersMukRoomTrigger0:
 	writetext LusterSewersMukRoomMukText1
 	waitbutton
 	closetext
-	
-	copybytetovar wPlayerPalette
-    if_equal 0, .red
-    if_equal 1, .blue
-    if_equal 2, .green
-	if_equal 3, .brown
-	if_equal 4, .purple
-	if_equal 5, .teal
-	if_equal 6, .pink
-.red:	
-	appear LUSTER_SEWERS_MUK_CUTSCENE_1
-	jump .cont
-
-.blue
-	appear LUSTER_SEWERS_MUK_CUTSCENE_2
-	jump .cont
-
-.green
-	appear LUSTER_SEWERS_MUK_CUTSCENE_3
-	jump .cont
-	
-.brown
-	appear LUSTER_SEWERS_MUK_CUTSCENE_4
-	jump .cont
-	
-.purple
-	appear LUSTER_SEWERS_MUK_CUTSCENE_5
-	jump .cont
-	
-.teal
-	appear LUSTER_SEWERS_MUK_CUTSCENE_6
-	jump .cont
-	
-.pink
-	appear LUSTER_SEWERS_MUK_CUTSCENE_7
-
-.cont
-	
+	appear LUSTER_SEWERS_MUK_CUTSCENE
 	changeblock $06, $04, $9b
 	changeblock $08, $04, $9b
 	callasm GenericFinishBridge
@@ -154,13 +105,7 @@ LusterSewersMukRoomTrigger0:
 	applymovement LUSTER_SEWERS_MUK, Movement_LusterSewersMukRoomMuk2
 	applymovement LUSTER_SEWERS_MUK, Movement_LusterSewersMukRoomMuk3
 	pause 20
-	disappear LUSTER_SEWERS_MUK_CUTSCENE_1
-	disappear LUSTER_SEWERS_MUK_CUTSCENE_2
-	disappear LUSTER_SEWERS_MUK_CUTSCENE_3
-	disappear LUSTER_SEWERS_MUK_CUTSCENE_4
-	disappear LUSTER_SEWERS_MUK_CUTSCENE_5
-	disappear LUSTER_SEWERS_MUK_CUTSCENE_6
-	disappear LUSTER_SEWERS_MUK_CUTSCENE_7
+	disappear LUSTER_SEWERS_MUK_CUTSCENE
 	opentext
 	writetext LusterSewersMukRoomMukText2
 	cry MUK_A
@@ -215,13 +160,7 @@ LusterSewersMukRoomTrigger0:
 .bottomthree
 	applymovement PLAYER, Movement_LusterSewersMukRoomPlayer3
 .moveperson
-	moveperson LUSTER_SEWERS_MUK_CUTSCENE_1, 8, 7
-	moveperson LUSTER_SEWERS_MUK_CUTSCENE_2, 8, 7
-	moveperson LUSTER_SEWERS_MUK_CUTSCENE_3, 8, 7
-	moveperson LUSTER_SEWERS_MUK_CUTSCENE_4, 8, 7
-	moveperson LUSTER_SEWERS_MUK_CUTSCENE_5, 8, 7
-	moveperson LUSTER_SEWERS_MUK_CUTSCENE_6, 8, 7
-	moveperson LUSTER_SEWERS_MUK_CUTSCENE_7, 8, 7
+	moveperson LUSTER_SEWERS_MUK_CUTSCENE, 8, 7
 	jump .return
 .right
 	setevent EVENT_LUSTER_SEWERS_MUK_RIGHT

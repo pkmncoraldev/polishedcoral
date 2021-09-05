@@ -13,11 +13,10 @@ NettBuildingOffice_MapScriptHeader:
 	signpost  5,  5, SIGNPOST_READ, NettBuildingTest
 	signpost  5,  6, SIGNPOST_READ, NettBuildingOfficeNewton
 
-	db 4 ; object events
+	db 3 ; object events
 	person_event SPRITE_CORY,  3,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, NettBuildingOfficeNett, -1
 	person_event SPRITE_GOLD_TROPHY,  4,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NettBuildingOfficeTrophySilver, -1
 	person_event SPRITE_GOLD_TROPHY,  5,  0, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NettBuildingOfficeTrophyGold, -1
-	person_event SPRITE_ICE_BLOCK,  5,  6, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 
 	const_def 1 ; object constants
 	const NETT_OFFICE_NETT

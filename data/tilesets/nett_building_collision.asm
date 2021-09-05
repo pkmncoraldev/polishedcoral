@@ -57,7 +57,7 @@
 	tilecoll FLOOR, FLOOR, COUNTER, COUNTER ; 38
 	tilecoll WINDOW, FLOOR, TRASH_CAN, FLOOR ; 39
 	tilecoll WINDOW, FLOOR, WINDOW, FLOOR ; 3a
-	tilecoll WALL, WALL, WALL, WALL ; 3b
+	tilecoll LADDER, FLOOR, FLOOR, FLOOR ; 3b
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 3c
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 3d
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 3e

@@ -904,13 +904,20 @@ LoadMapPals::
 	ret
 	
 .nett2
-	ld a, [wMapNumber]
-	cp MAP_NETT_BUILDING_OFFICE
-	jr nz, .snes
+	eventflagcheck EVENT_NETT_BUILDING_DUNGEON
+	jr nz, .nett2_dark
 	call .normal
 	ld hl, MapObjectPalsNett2
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
+	
+.nett2_dark
+	ld hl, MapObjectPalsNettDark
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	ret
@@ -1540,6 +1547,9 @@ INCLUDE "maps/palettes/obpals/nett.pal"
 
 MapObjectPalsNett2::
 INCLUDE "maps/palettes/obpals/nett2.pal"
+
+MapObjectPalsNettDark::
+INCLUDE "maps/palettes/obpals/nettdark.pal"
 
 MapObjectPalsSnes::
 INCLUDE "maps/palettes/obpals/snes.pal"

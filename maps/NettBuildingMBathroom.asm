@@ -12,11 +12,12 @@ NettBuildingMBathroom_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 5 ; bg events
 	signpost 1, 1, SIGNPOST_READ, NettBuildingMBathroomDoor1
 	signpost 3, 1, SIGNPOST_READ, NettBuildingMBathroomDoor2
-	signpost 1, 0, SIGNPOST_READ, NettBuildingMBathroomToilet1
+	signpost  1,  0, SIGNPOST_READ, NettBuildingMBathroomToilet1
 	signpost 3, 0, SIGNPOST_READ, NettBuildingMBathroomToilet2
+	bg_event  5,  5, SIGNPOST_ITEM + BLACK_SLUDGE, EVENT_NETT_BATHROOM_HIDDEN_ITEM
 
 	db 5 ; object events
 	person_event SPRITE_GENTLEMAN,  4,  4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, NettBuildingMBathroom_NPC_1, -1
@@ -48,6 +49,9 @@ NettBuildingMBathroomTrigger0:
 	changeblock $2, $6, $7e
 	callasm GetMovementPermissions
 	pause 5
+	special FadeOutPalettes
+	playsound SFX_EXIT_BUILDING
+	waitsfx
 	warpfacing DOWN, NETT_BUILDING_1F, $0e, $04
 .end
 	end

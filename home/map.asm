@@ -1267,6 +1267,11 @@ SaveScreen_LoadNeighbor:: ; 28f7
 	ret
 ; 2914
 
+RestartAnimationTimer::
+	xor a
+	ld [wTileAnimationTimer], a
+	ret
+
 GenericFinishBridge::
 	farjp ReanchorBGMap_NoOAMUpdate_NoDelay
 	ld a, 1

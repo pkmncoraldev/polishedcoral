@@ -90,3 +90,14 @@ Sfx_Scream_branch_f2238: ; f2238
 	noise __,  2, $d1, $29
 	loopchannel 18, Sfx_Scream_branch_f2238
 	endchannel
+
+Sfx_Newton: ; f275b
+	musicheader 1, 5, Sfx_Newton_Ch5
+; f275e
+
+Sfx_Newton_Ch5: ; f275e
+	dutycycle $0
+	sound __,  1, $98, $07d0
+	sound __,  2, $62, $07d7
+	endchannel
+	

@@ -175,6 +175,8 @@ LoadSpecialMapPalette: ; 494ac
 	ret
 	
 .nett2
+	eventflagcheck EVENT_NETT_BUILDING_DUNGEON
+	jr nz, .nett2_dark
 	ld hl, Nett2Palette
 	ld de, wUnknBGPals + 4 palettes
 	ld bc, 1 palettes
@@ -191,6 +193,10 @@ LoadSpecialMapPalette: ; 494ac
 .nett2_end
 	scf
 	ret
+	
+.nett2_dark
+	ld hl, NettDarkPalette
+	jp LoadSevenBGPalettes
 	
 .checktent
 	ld a, [wMapNumber]
@@ -493,6 +499,9 @@ INCLUDE "maps/palettes/bgpals/nett2.pal"
 
 Nett3Palette:
 INCLUDE "maps/palettes/bgpals/nett3.pal"
+
+NettDarkPalette:
+INCLUDE "maps/palettes/bgpals/nettdark.pal"
 
 MallPalette:
 INCLUDE "maps/palettes/bgpals/lustermall.pal"

@@ -32,12 +32,12 @@ GlintApt11FNpc1:
 GlintApt11FNpc2:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TM08_ROCK_SMASH
+	checkevent EVENT_GOT_HM06_ROCK_SMASH
 	iftrue .gotrocksmash
 	writetext GlintApt11FNpc2Text1
 	waitbutton
 	verbosegivetmhm HM_ROCK_SMASH
-	setevent EVENT_GOT_TM08_ROCK_SMASH
+	setevent EVENT_GOT_HM06_ROCK_SMASH
 	setflag ENGINE_GOT_ROCK_SMASH
 	writetext GlintApt11FNpc2Text2
 	buttonsound

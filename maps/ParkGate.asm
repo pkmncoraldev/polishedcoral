@@ -12,9 +12,7 @@ ParkGate_MapScriptHeader:
 	warp_event  3,  7, PARK, 1
 	warp_event  4,  7, PARK, 2
 
-	db 2 ; coord events
-	coord_event  3,  7, 0, ParkGateOfficerStopsYou1
-	coord_event  4,  7, 0, ParkGateOfficerStopsYou2
+	db 0 ; coord events
 
 	db 0 ; bg events
 
@@ -31,7 +29,7 @@ ParkGateTrigger1:
 	end
 	
 ParkGateOfficer:
-	end
+	jumptextfaceplayer ParkGateOfficerText
 	
 ParkGateCallback:
 	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
@@ -40,55 +38,12 @@ ParkGateCallback:
 	clearevent EVENT_DOUBLE_LANDMARK_SIGN
 	return
 	
-ParkGateOfficerStopsYou1:
-	checkevent EVENT_WENT_TO_NETT_BUILDING
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, ROUTE1GATE_OFFICER, 15
-	pause 7
-	opentext
-	writetext ParkGateOfficerStopsYouText1
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_ParkGateOfficerStopsYou1
-	jump ParkGateOfficerStopsYouEnd
+ParkGateOfficerText:
+	text "Heading to the"
+	line "SKATEPARK?"
 	
-ParkGateOfficerStopsYou2:
-	checkevent EVENT_WENT_TO_NETT_BUILDING
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, ROUTE1GATE_OFFICER, 15
-	pause 7
-	opentext
-	writetext ParkGateOfficerStopsYouText1
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_ParkGateOfficerStopsYou2
-ParkGateOfficerStopsYouEnd:
-	opentext
-	writetext ParkGateOfficerStopsYouText2
-	waitbutton
-	closetext
-	end
-	
-ParkGateOfficerStopsYouText1:
-	text "Hold on!"
-	done
-	
-ParkGateOfficerStopsYouText2:	
-	text "I was told to keep"
-	line "an eye out for a"
-	cont "kid named <PLAYER>."
-	
-	para "That's you, right?"
-	
-	para "MR. NETT wanted"
-	line "you to pay him a"
-	cont "visit."
-	
-	para "You shouldn't keep"
-	line "someone like him"
-	cont "waiting!"
+	para "A lot of kids your"
+	line "age gather there!"
 	done
 	
 Movement_ParkGateOfficerStopsYou1:

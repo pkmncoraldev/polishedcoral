@@ -13,8 +13,15 @@ NettBuilding1F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 8 ; bg events
 	signpost  3,  8, SIGNPOST_READ, NettBuilding1F_NPC_4
+	signpost  3,  1, SIGNPOST_READ, NettBuilding1F_Sign
+	signpost  6,  8, SIGNPOST_READ, NettBuilding1F_Pokeball
+	signpost  6,  9, SIGNPOST_READ, NettBuilding1F_Pokeball
+	signpost  7,  8, SIGNPOST_READ, NettBuilding1F_Pokeball
+	signpost  7,  9, SIGNPOST_READ, NettBuilding1F_Pokeball
+	signpost  3, 13, SIGNPOST_READ, NettBuilding1F_MensRoom
+	signpost  3, 15, SIGNPOST_READ, NettBuilding1F_LadiesRoom
 
 	db 11 ; object events
 	person_event SPRITE_SLOWPOKETAIL,  5,  8, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
@@ -24,8 +31,8 @@ NettBuilding1F_MapScriptHeader:
 	person_event SPRITE_SUPER_NERD, 13, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_1, -1
 	person_event SPRITE_BEAUTY, 13, 11, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_2, -1
 	person_event SPRITE_OFFICER,  4,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_3, -1
-	person_event SPRITE_RECEPTIONIST,  2,  8, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, 0, -1
-	person_event SPRITE_BEAUTY,  8, 10, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_5, -1
+	person_event SPRITE_RECEPTIONIST,  2,  8, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_4, -1
+	person_event SPRITE_TEACHER,  8, 10, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_5, -1
 	person_event SPRITE_GENTLEMAN, 11,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_6, -1
 	person_event SPRITE_POKEMANIAC,  7,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_7, -1
 
@@ -42,6 +49,18 @@ NettBuilding1F_MapScriptHeader:
 	const NETT_1F_NPC_5
 	const NETT_1F_NPC_6
 	const NETT_1F_NPC_7
+	
+NettBuilding1F_Sign:
+	jumptext NettBuilding1F_SignText
+	
+NettBuilding1F_Pokeball:
+	jumptext NettBuilding1F_PokeballText
+	
+NettBuilding1F_MensRoom:
+	jumptext NettBuilding1F_MensRoomText
+	
+NettBuilding1F_LadiesRoom:
+	jumptext NettBuilding1F_LadiesRoomText
 	
 NettBuilding1F_NPC_1:
 	jumptext NettBuilding1F_NPC_1_Text
@@ -75,6 +94,24 @@ NettBuilding1F_NPC_7:
 	closetext
 	spriteface NETT_1F_NPC_7, RIGHT
 	end
+	
+NettBuilding1F_SignText:
+	text "FLOOR 1"
+	done
+	
+NettBuilding1F_PokeballText:
+	text "A giant sculpture"
+	line "of a #BALL"
+	cont "shrouded by a net."
+	done
+	
+NettBuilding1F_MensRoomText:
+	text "MEN'S ROOM"
+	done
+	
+NettBuilding1F_LadiesRoomText:
+	text "LADY'S ROOM"
+	done
 	
 NettBuilding1F_NPC_1_Text:
 	text "Mumble… mumble…"

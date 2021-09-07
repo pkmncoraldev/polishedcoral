@@ -353,7 +353,7 @@ LusterTrainStationConductorText3:
 	done
 	
 LusterStationNettText1:
-	text "Crazy story, huh?"
+	text "Pretty wild, huh?"
 	
 	para "…"
 	
@@ -378,16 +378,13 @@ LusterStationNettText1:
 	
 	para "I know you did."
 	
-	para "You've done a great"
-	line "deed for this city"
-	cont "and it's people."
+	para "…"
 	
 	para "You should stop by"
 	line "the NETT BUILDING."
 	
-	para "I'd be happy to"
-	line "set up a tour of"
-	cont "the building for"
+	para "I'd love to show"
+	line "my graditude for"
 	cont "the hero of LUSTER"
 	cont "CITY!"
 	

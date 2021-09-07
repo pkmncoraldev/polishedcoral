@@ -59,7 +59,7 @@ TilesetNettBuildingAnim::
 	dw PokeballSculptureFrames2, AnimateWaterfallTiles2
 	dw NULL,  StandingTileFrame8
 	dw NewtonFrames, AnimateNewtonTiles
-	dw NULL,  WaitTileAnimation
+	dw ClockFrames, AnimateWaterfallTiles
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -849,15 +849,22 @@ ConveyorTileFrames: ; fc58c
 	INCBIN "gfx/tilesets/conveyor/1.2bpp"
 	INCBIN "gfx/tilesets/conveyor/2.2bpp"
 	INCBIN "gfx/tilesets/conveyor/2.2bpp"
-
+	
 AnimateNewtonTiles:
 	ld a, [wMapNumber]
 	cp MAP_NETT_BUILDING_OFFICE
 	jr nz, AnimateWaterfallTiles
 	eventflagcheck EVENT_NEWTON_OFF
-	jr z, AnimateWaterfallTiles
-	ld a, 1
-	ld [wTileAnimationTimer], a
+	jr nz, AnimateWaterfallTiles
+	ld a, [wTileAnimationTimer]
+	cp 1
+	jr z, .sound
+	cp 5
+	jr z, .sound
+	jr AnimateWaterfallTiles
+.sound
+	ld de, SFX_NEWTON
+	jp PlaySFX
 	
 AnimateWaterfallTiles: ; fc56d
 ; Draw two waterfall tiles for the current frame in VRAM tile at de.
@@ -902,7 +909,7 @@ AnimateWaterfallTiles: ; fc56d
 
     ld l, e
     ld h, d
-
+	
     jp WriteTwoTiles
 	
 AnimateWaterfallTiles2: ; fc56d
@@ -1032,6 +1039,10 @@ PokeballSculptureTiles2: INCBIN "gfx/tilesets/sculpture/2.2bpp"
 NewtonFrames: dw VTiles2 tile $0a, NewtonTiles
 
 NewtonTiles: INCBIN "gfx/tilesets/newton/1.2bpp"
+
+ClockFrames: dw VTiles2 tile $1a, ClockTiles
+
+ClockTiles: INCBIN "gfx/tilesets/newton/2.2bpp"
 ; fc5cc
 
 	

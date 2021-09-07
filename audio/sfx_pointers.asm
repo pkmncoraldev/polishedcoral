@@ -221,3 +221,4 @@ SFX:
 	dba Sfx_Snowstorm
 	dba Sfx_Grind
 	dba Sfx_Scream
+	dba Sfx_Newton

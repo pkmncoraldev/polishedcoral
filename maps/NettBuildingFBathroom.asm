@@ -12,13 +12,14 @@ NettBuildingFBathroom_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 6 ; bg events
+	db 7 ; bg events
 	signpost  1,  4, SIGNPOST_READ, NettBuildingFBathroomDoor1
 	signpost  3,  4, SIGNPOST_READ, NettBuildingFBathroomDoor2
 	signpost  5,  4, SIGNPOST_READ, NettBuildingFBathroomDoor3
-	signpost -1, -1, SIGNPOST_READ, NettBuildingFBathroomToilet1
+	signpost  1,  5, SIGNPOST_READ, NettBuildingFBathroomToilet1
 	signpost  3,  5, SIGNPOST_READ, NettBuildingFBathroomToilet2
 	signpost  5,  5, SIGNPOST_READ, NettBuildingFBathroomToilet3
+	bg_event  0,  5, SIGNPOST_ITEM + BLACK_SLUDGE, EVENT_NETT_BATHROOM_HIDDEN_ITEM
 
 	db 4 ; object events
 	person_event SPRITE_BEAUTY,  4,  1, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, NettBuildingFBathroom_NPC_1, -1
@@ -48,6 +49,9 @@ NettBuildingFBathroomTrigger0:
 	changeblock $0, $6, $7e
 	callasm GetMovementPermissions
 	pause 5
+	special FadeOutPalettes
+	playsound SFX_EXIT_BUILDING
+	waitsfx
 	warpfacing DOWN, NETT_BUILDING_1F, $10, $04
 .end
 	end
@@ -86,7 +90,7 @@ NettBuildingFBathroom_NPC_1:
 	end
 	
 NettBuildingFBathroom_NPC_2:
-	checkevent EVENT_BATHROOM_TRASHCAN
+	checkevent EVENT_NETT_BATHROOM_HIDDEN_ITEM
 	iftrue .got_item
 	jumptextfaceplayer NettBuildingFBathroom_NPC_2_Text1
 .got_item
@@ -250,12 +254,12 @@ NettBuildingFBathroom_NPC_1_Text3:
 	done
 	
 NettBuildingFBathroom_NPC_2_Text1:
-	text "I dropped an item"
-	line "in the trash,"
+	text "Someone dropped"
+	line "something really"
+	cont "nasty in the"
+	cont "trashcan…"
 	
-	para "but I don't want to"
-	line "dig through to get"
-	cont "it back…"
+	para "Yuck!"
 	done
 	
 NettBuildingFBathroom_NPC_2_Text2:
@@ -263,9 +267,8 @@ NettBuildingFBathroom_NPC_2_Text2:
 	
 	para "That's so gross!"
 	
-	para "You keep it…"
-	
 	para "Weirdo…"
+	done
 	
 NettBuildingFBathroom_NPC_4_Text:
 	text "I'm on break right"

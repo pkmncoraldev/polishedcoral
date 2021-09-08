@@ -559,14 +559,14 @@ CottoneeFrontpic:         INCBIN "gfx/pokemon/cottonee/front.2bpp.lz"
 CottoneeBackpic:          INCBIN "gfx/pokemon/cottonee/back.2bpp.lz"
 WhimsicottFrontpic:       INCBIN "gfx/pokemon/whimsicott/front.2bpp.lz"
 WhimsicottBackpic:        INCBIN "gfx/pokemon/whimsicott/back.2bpp.lz"
-SandileFrontpic:          INCBIN "gfx/pokemon/sandile/front.2bpp.lz"
-SandileBackpic:           INCBIN "gfx/pokemon/sandile/back.2bpp.lz"
-KrokorokFrontpic:         INCBIN "gfx/pokemon/krokorok/front.2bpp.lz"
-KrokorokBackpic:          INCBIN "gfx/pokemon/krokorok/back.2bpp.lz"
 
 
 SECTION "Pokemon Pics 25", ROMX
 
+SandileFrontpic:          INCBIN "gfx/pokemon/sandile/front.2bpp.lz"
+SandileBackpic:           INCBIN "gfx/pokemon/sandile/back.2bpp.lz"
+KrokorokFrontpic:         INCBIN "gfx/pokemon/krokorok/front.2bpp.lz"
+KrokorokBackpic:          INCBIN "gfx/pokemon/krokorok/back.2bpp.lz"
 KrookodileFrontpic:       INCBIN "gfx/pokemon/krookodile/front.2bpp.lz"
 KrookodileBackpic:        INCBIN "gfx/pokemon/krookodile/back.2bpp.lz"
 MaractusFrontpic:         INCBIN "gfx/pokemon/maractus/front.2bpp.lz"
@@ -597,14 +597,14 @@ LarvestaFrontpic:         INCBIN "gfx/pokemon/larvesta/front.2bpp.lz"
 LarvestaBackpic:          INCBIN "gfx/pokemon/larvesta/back.2bpp.lz"
 VolcaronaFrontpic:        INCBIN "gfx/pokemon/volcarona/front.2bpp.lz"
 VolcaronaBackpic:         INCBIN "gfx/pokemon/volcarona/back.2bpp.lz"
-PanchamFrontpic:     	  INCBIN "gfx/pokemon/pancham/front.2bpp.lz"
-PanchamBackpic:           INCBIN "gfx/pokemon/pancham/back.2bpp.lz"
-PangoroFrontpic:     	  INCBIN "gfx/pokemon/pangoro/front.2bpp.lz"
-PangoroBackpic:           INCBIN "gfx/pokemon/pangoro/back.2bpp.lz"
 
 
 SECTION "Pokemon Pics 26", ROMX
 
+PanchamFrontpic:     	  INCBIN "gfx/pokemon/pancham/front.2bpp.lz"
+PanchamBackpic:           INCBIN "gfx/pokemon/pancham/back.2bpp.lz"
+PangoroFrontpic:     	  INCBIN "gfx/pokemon/pangoro/front.2bpp.lz"
+PangoroBackpic:           INCBIN "gfx/pokemon/pangoro/back.2bpp.lz"
 TyruntFrontpic:           INCBIN "gfx/pokemon/tyrunt/front.2bpp.lz"
 TyruntBackpic:            INCBIN "gfx/pokemon/tyrunt/back.2bpp.lz"
 TyrantrumFrontpic:        INCBIN "gfx/pokemon/tyrantrum/front.2bpp.lz"

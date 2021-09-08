@@ -58,10 +58,10 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke WIGGLYTUFF, 100
-	givepoke PIDGEY, 7
-	givepoke LEAFEON, 27
-	givepoke SNEASEL, 28
+	givepoke SYLVEON, 100
+	givepoke WHIRLIPEDE, 7
+	givepoke SCOLIPEDE, 27
+	givepoke VENIPEDE, 28
 .items
 	writetext PlayerHouseDebugText6
 	yesorno

@@ -46,3 +46,37 @@ INCBIN "gfx/diploma/diploma.2bpp.lz"
 
 DiplomaTilemap: ; 1ddc4b
 INCBIN "gfx/diploma/diploma.tilemap"
+
+_PippiScreen:
+	call ClearBGPalettes
+	call ClearTileMap
+	call ClearSprites
+	call DisableLCD
+	ld hl, PippiScreenGFX
+	ld de, VTiles2
+	call Decompress
+	ld hl, PippiScreenGFX2
+	ld de, VTiles1
+	call Decompress
+	ld hl, PippiScreenTilemap
+	decoord 0, 0
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	rst CopyBytes
+	call EnableLCD
+	call ApplyTilemapInVBlank
+	ld b, CGB_PIPPI_SCREEN
+	call GetCGBLayout
+	call SetPalettes
+	call DelayFrame
+	ld de, MUSIC_LASS_ENCOUNTER
+	call PlayMusic
+	jp WaitPressAorB_BlinkCursor
+	
+PippiScreenGFX: ; 1dd805
+INCBIN "gfx/diploma/pippiscreen.2bpp.lz"
+
+PippiScreenGFX2: ; 1dd805
+INCBIN "gfx/diploma/pippiscreen2.2bpp.lz"
+
+PippiScreenTilemap: ; 1ddc4b
+INCBIN "gfx/diploma/pippiscreen.tilemap"

@@ -38,10 +38,10 @@ _SpruceTextA::
 	
 	para "but I know if you"
 	line "put your trust"
+	cont "in your #MON,"
 	
-	para "in your #MON"
-	line "nothing is"
-	cont "insurmountable!"
+	para "nothing is"
+	line "insurmountable!"
 	
 	para "I look forward to"
 	line "properly meeting"

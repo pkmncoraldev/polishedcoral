@@ -793,6 +793,16 @@ ProfSpruceSpeech: ; 0x5f99
 	ld hl, SpruceText6
 	call PrintText
 	call NamePlayer
+	ld a, [wPlayerGender]
+	cp PIPPI
+	jr nz, .notpippi2
+	
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap	
+	farcall _PippiScreen
+	jr .endpippiscreen
+.notpippi2
 	ld c, 15
 	call FadeToWhite
 	call ClearTileMap
@@ -806,9 +816,11 @@ ProfSpruceSpeech: ; 0x5f99
 	call Intro_RotatePalettesLeftFrontpic
 	ld hl, SpruceText8
 	call PrintText
+.endpippiscreen
 	ld c, 15
 	call FadeToWhite
 	call ClearTileMap
+	farcall LoadNamingScreenGFX
 
 	xor a
 	ld [wCurPartySpecies], a
@@ -1034,7 +1046,6 @@ IntroFadePalettes: ; 0x617c
 	db %11100100
 IntroFadePalettesEnd:
 ; 6182
-
 DrawIntroPlayerPic:
 	xor a
 	ld [wCurPartySpecies], a
@@ -1631,7 +1642,7 @@ CoralDevScreenString:
 	db   $70, $70, $70, $70
 	
 	db "@"
-
+	
 GameInit:: ; 642e
 	farcall TryLoadSaveData
 	call ClearWindowData

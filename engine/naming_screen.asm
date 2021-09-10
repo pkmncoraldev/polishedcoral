@@ -594,8 +594,6 @@ NamingScreenJoypadLoop: ; 11915
 	ld a, CLEFAIRY
 	call PlayCry
 	call WaitSFX
-	ld de, MUSIC_LASS_ENCOUNTER
-	call PlayMusic
 	
 .endcont
 	ld hl, wJumptableIndex

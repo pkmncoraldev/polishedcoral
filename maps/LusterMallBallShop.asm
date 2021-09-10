@@ -22,8 +22,151 @@ LusterMallBallShop_MapScriptHeader:
 	signpost  1,  4, SIGNPOST_JUMPTEXT, LusterMallBallShopPosterText3
 	signpost  1,  3, SIGNPOST_JUMPTEXT, LusterMallBallShopPosterText3
 
-	db 0 ; object events
+	db 3 ; object events
+	object_event  1,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STANDARD, MART_LUSTER_MALL_BALL, -1
+	person_event SPRITE_LASS,  5,  7, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMallBallShop_NPC1, -1
+	person_event SPRITE_REDS_MOM,  4,  0, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallBallShop_NPC2, -1
 
+	
+LusterMallBallShop_NPC1:
+	jumptextfaceplayer LusterMallBallShop_NPC1Text
+	
+LusterMallBallShop_NPC2:
+	checkevent EVENT_DONE_PART_TIME_JOB
+	iftrue .finishedjob
+	checkevent EVENT_PART_TIME_JOB_SAVED_DELIVERY
+	iftrue .saved_delivery
+	checkevent EVENT_STARTED_PART_TIME_JOB
+	iftrue .startedjob
+	faceplayer 
+	opentext
+	writetext LusterMallBallShop_NPC2Text1
+	yesorno
+	iffalse .no
+	writetext LusterMallBallShop_NPC2Text2
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterMallBallShop_NPC2Text3
+	waitbutton
+	closetext
+	setevent EVENT_STARTED_PART_TIME_JOB
+	domaptrigger LUSTER_MALL, $1
+	end
+.no
+	writetext LusterMallBallShop_NPC2TextNo
+	waitbutton
+	closetext
+	end
+.startedjob
+	jumptextfaceplayer LusterMallBallShop_NPC2Text3
+	
+.saved_delivery
+	setevent EVENT_DONE_PART_TIME_JOB
+	jumptextfaceplayer LusterMallBallShop_NPC2Text4
+	
+.finishedjob
+	jumptextfaceplayer LusterMallBallShop_NPC2Text5
+	
+LusterMallBallShop_NPC1Text:
+	text "I didn't know this"
+	line "many different"
+	cont "kinds of #BALLS"
+	cont "even existed!"
+	done
+	
+LusterMallBallShop_NPC2Text1:
+	text "Are you finding"
+	line "everything ok?"
+	
+	para "I'm actually the"
+	line "owner of this"
+	cont "little shop."
+	
+	para "You wouldn't be"
+	line "looking for a"
+	cont "part-time job,"
+	cont "would you?"
+	done
+	
+LusterMallBallShop_NPC2Text2:
+	text "Great!"
+	done
+	
+LusterMallBallShop_NPC2Text3:
+	text "We make our"
+	line "#BALLS out of"
+	cont "APRICORNS imported"
+	cont "from the JOHTO"
+	cont "region."
+	
+	para "We are wating for"
+	line "a shipment and it's"
+	cont "running late."
+	
+	para "They're usually"
+	line "delivered by truck"
+	cont "at the back of the"
+	cont "building."
+	
+	para "Your job is to go"
+	line "out there see what"
+	cont "the holdup is."
+	
+	para "Go through the"
+	line "employees only"
+	cont "area to get back"
+	cont "there."
+	
+	para "Chop chop!"
+	done
+	
+LusterMallBallShop_NPC2Text4:
+	text "The delivery guy"
+	line "told me what"
+	cont "happened!"
+	
+	para "You did a great"
+	line "job!"
+	
+	para "I knew I made a"
+	line "good choice when I"
+	cont "hired you."
+	
+	para "As thanks for your"
+	line "all your help,"
+	
+	para "why don't I give"
+	line "you the employee"
+	cont "discount?"
+	
+	para "Half off on every"
+	line "item in the store!"
+	done
+	
+LusterMallBallShop_NPC2Text5:
+	text "My grandpa was the"
+	line "greatest #BALL"
+	cont "smith in the JOHTO"
+	cont "region."
+	
+	para "He taught me to"
+	line "make #BALLS out"
+	cont "of APRICORNS when"
+	cont "I was just a kid."
+	
+	para "We still make our"
+	line "#BALLS the old-"
+	cont "fashioned way."
+	
+	para "I think it sets us"
+	line "apart from the"
+	cont "competition."
+	done
+	
+LusterMallBallShop_NPC2TextNo:
+	text "Ah well…"
+	done
 	
 LusterMallBallShopCaseText1:
 	text "A case of regular"

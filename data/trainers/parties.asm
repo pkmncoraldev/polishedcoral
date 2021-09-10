@@ -1672,6 +1672,15 @@ GruntMGroup:
 	db -1 ; end
 
 ; ================
+
+	; LUSTER_GRUNTM
+	db "TRAINM@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 

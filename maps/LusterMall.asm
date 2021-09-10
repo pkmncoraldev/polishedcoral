@@ -3,9 +3,10 @@ LusterMall_MapScriptHeader:
 	scene_script LusterMallTrigger0
 	scene_script LusterMallTrigger1
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, LusterMallCallback
 
-	db 22 ; warp events
+	db 24 ; warp events
 	warp_def 29, 14, 3, LUSTER_CITY_SHOPPING
 	warp_def 29, 15, 4, LUSTER_CITY_SHOPPING
 	warp_def 29, 18, 5, LUSTER_CITY_SHOPPING
@@ -28,16 +29,19 @@ LusterMall_MapScriptHeader:
 	warp_def 15, 25, 2, LUSTER_MALL_BALL_SHOP
 	warp_def 15, 30, 1, LUSTER_MALL_CLOTHES_SHOP
 	warp_def 15, 31, 2, LUSTER_MALL_CLOTHES_SHOP
+	warp_def 17, 35, 1, LUSTER_MALL_BACK_ROOM
+	warp_def 18, 35, 2, LUSTER_MALL_BACK_ROOM
 
-	db 8 ; coord events
-	coord_event 11, 17, 0, LusterMallEscalator1
-	coord_event 12, 17, 0, LusterMallEscalator2
-	coord_event 11, 11, 0, LusterMallEscalatorClear
-	coord_event 12, 11, 0, LusterMallEscalatorClear
-	coord_event 21, 11, 0, LusterMallEscalator3
-	coord_event 22, 11, 0, LusterMallEscalator4
-	coord_event 22, 17, 0, LusterMallEscalatorClear
-	coord_event 21, 17, 0, LusterMallEscalatorClear
+	db 9 ; coord events
+	coord_event 11, 17, -1, LusterMallEscalator1
+	coord_event 12, 17, -1, LusterMallEscalator2
+	coord_event 11, 11, -1, LusterMallEscalatorClear
+	coord_event 12, 11, -1, LusterMallEscalatorClear
+	coord_event 21, 11, -1, LusterMallEscalator3
+	coord_event 22, 11, -1, LusterMallEscalator4
+	coord_event 22, 17, -1, LusterMallEscalatorClear
+	coord_event 21, 17, -1, LusterMallEscalatorClear
+	coord_event 35, 18, 0, LusterMallEmployeesOnly
 
 	db 12 ; bg events
 	signpost 26, 16, SIGNPOST_JUMPTEXT, LusterMallEscalatorSignText
@@ -54,7 +58,7 @@ LusterMall_MapScriptHeader:
 	signpost 11, 15, SIGNPOST_JUMPTEXT, LusterMall_PaperText
 	
 
-	db 18 ; object events
+	db 19 ; object events
 	person_event SPRITE_OFFICER,  5, 13, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_Cop, EVENT_BEAT_MALL_COP
 	person_event SPRITE_KOFFING_BEAN,  5,  8, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_KOFFING_BEAN,  5,  9, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -65,7 +69,7 @@ LusterMall_MapScriptHeader:
 	person_event SPRITE_CUTE_GIRL, 11, 17, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMall_NPC5, -1
 	person_event SPRITE_GENTLEMAN, 11, 16, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC6, -1
 	person_event SPRITE_CLERK, 11,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC7, -1
-	person_event SPRITE_BEAUTY, 17, 29, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMall_NPC8, -1
+	person_event SPRITE_BEAUTY, 17, 29, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMall_NPC8, -1
 	person_event SPRITE_SCHOOLGIRL, 16,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC9, -1
 	person_event SPRITE_POKEFAN_F, 26, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMall_NPC10, -1
 	person_event SPRITE_SKATER, 22, 20, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC11, -1
@@ -73,6 +77,7 @@ LusterMall_MapScriptHeader:
 	person_event SPRITE_CUTE_GIRL, 19,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMall_NPC13, -1
 	person_event SPRITE_POKEFAN_M, 25, 12, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterMall_NPC14, -1
 	person_event SPRITE_YOUNGSTER, 17, 18, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC15, -1
+	person_event SPRITE_OFFICER, 17, 35, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC16, -1
 
 
 	const_def 1 ; object constants
@@ -94,12 +99,21 @@ LusterMall_MapScriptHeader:
 	const LUSTERMALLNPC13
 	const LUSTERMALLNPC14
 	const LUSTERMALLNPC15
+	const LUSTERMALLNPC16
 	
 LusterMallTrigger0:
 	end
 	
 LusterMallTrigger1:
 	end
+	
+LusterMallCallback:
+	domaptrigger LUSTER_CITY_SHOPPING, $1
+	checkevent EVENT_STARTED_PART_TIME_JOB
+	iffalse .skip
+	moveperson LUSTERMALLNPC16, $23, $10
+.skip
+	return
 	
 LusterMallEscalator1:
 	checkevent EVENT_ON_ESCALATOR
@@ -329,6 +343,25 @@ LusterMallEscalatorBeatCop:
 LusterMallEscalatorClear:
 	clearevent EVENT_ON_ESCALATOR
 	end
+	
+LusterMallEmployeesOnly:
+	special Special_StopRunning
+	playsound SFX_PAY_DAY
+	spriteface LUSTERMALLNPC16, DOWN
+	showemote EMOTE_SHOCK, LUSTERMALLNPC16, 15
+	pause 7
+	spriteface PLAYER, UP
+	opentext
+	writetext LusterMall_NPC16Text1
+	waitbutton
+	closetext
+	follow PLAYER, LUSTERMALLNPC16
+	applyonemovement PLAYER, step_left
+	stopfollow
+	applyonemovement LUSTERMALLNPC16, step_up
+	spriteface LUSTERMALLNPC16, LEFT
+	end
+	
 LusterMallPokeCenterSign:
 	jumpstd pokecentersign
 	
@@ -597,6 +630,23 @@ LusterMall_NPC14:
 LusterMall_NPC15:
 	jumptextfaceplayer LusterMall_NPC15Text
 	
+LusterMall_NPC16:
+	faceplayer
+	opentext
+	checkevent EVENT_STARTED_PART_TIME_JOB
+	iftrue .have_job
+	writetext LusterMall_NPC16Text1
+	waitbutton
+	closetext
+	spriteface LUSTERMALLNPC16, LEFT
+	end
+.have_job
+	writetext LusterMall_NPC16Text2
+	waitbutton
+	closetext
+	spriteface LUSTERMALLNPC16, LEFT
+	end
+	
 LusterMall_Paper:
 	jumptext LusterMall_PaperText
 	
@@ -776,6 +826,22 @@ LusterMall_NPC15Text:
 	para "there's never a"
 	line "line at the"
 	cont "#MON CENTER."
+	done
+	
+LusterMall_NPC16Text1:
+	text "Employees only"
+	line "past this point!"
+	
+	para "You want to get"
+	line "back here, you"
+	cont "get a job!"
+	done
+	
+LusterMall_NPC16Text2:
+	text "Employees only"
+	line "past this point!"
+	
+	para "Go on ahead."
 	done
 	
 LusterMall_PaperText:

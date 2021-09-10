@@ -9,21 +9,22 @@ LusterMallSkateShop_MapScriptHeader:
 	warp_def  0,  5, 1, LUSTER_MALL_SKATE_TEST
 
 	db 1 ; coord events
-	xy_trigger 0,  1,  5, 0, LusterMallSkateShopStop, 0, 0
+	coord_event 5, 1, -1, LusterMallSkateShopStop
 
-	db 9 ; bg events
+	db 8 ; bg events
 	signpost  1,  7, SIGNPOST_JUMPTEXT, LusterMallSkateShopShelfText
 	signpost  4,  7, SIGNPOST_JUMPTEXT, LusterMallSkateShopShelfText
 	signpost  5,  7, SIGNPOST_JUMPTEXT, LusterMallSkateShopShelfText
 	signpost  4,  6, SIGNPOST_JUMPTEXT, LusterMallSkateShopShelfText
 	signpost  5,  6, SIGNPOST_JUMPTEXT, LusterMallSkateShopShelfText
 	signpost  0,  6, SIGNPOST_JUMPTEXT, LusterMallSkateShopSkateboardText
-	signpost  0,  4, SIGNPOST_JUMPTEXT, LusterMallSkateShopSignText
 	signpost  5,  1, SIGNPOST_JUMPTEXT, LusterMallSkateShopSkateboardText
 	signpost  5,  0, SIGNPOST_JUMPTEXT, LusterMallSkateShopSkateboardText
 
-	db 1 ; object events
+	db 3 ; object events
 	person_event SPRITE_BIRD_KEEPER,  1,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallSkateShop_Clerk, -1
+	person_event SPRITE_YOUNGSTER,  2,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallSkateShop_NPC1, -1
+	person_event SPRITE_SKATER,  4,  1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMallSkateShop_NPC2, -1
 
 	
 	const_def 1 ; object constants
@@ -94,6 +95,29 @@ LusterMallSkateShop_Clerk:
 	closetext
 	end
 	
+LusterMallSkateShop_NPC1:
+	jumptextfaceplayer LusterMallSkateShop_NPC1Text
+	
+LusterMallSkateShop_NPC2:
+	jumptextfaceplayer LusterMallSkateShop_NPC2Text
+	
+LusterMallSkateShop_NPC1Text:
+	text "The guy behind the"
+	line "counter is a real"
+	cont "jerk!"
+	
+	para "He won't sell me a"
+	line "SKATEBOARD!"
+	done
+	
+LusterMallSkateShop_NPC2Text:
+	text "Look at all these"
+	line "sick decks."
+	
+	para "I don't know which"
+	line "one to get."
+	done
+	
 LusterMallSkateShop_ClerkText1:
 	text "What do you want?"
 	
@@ -163,7 +187,8 @@ LusterMallSkateShop_ClerkText5:
 	line "that!"
 	
 	para "Maybe you'll find"
-	line "one somewhere else."
+	line "a SKATEBOARD"
+	cont "somewhere else."
 	
 	para "Hehe…"
 	
@@ -181,7 +206,8 @@ LusterMallSkateShop_ClerkText6:
 	line "thought."
 	
 	para "Maybe you'll find"
-	line "one somewhere else."
+	line "a SKATEBOARD"
+	cont "somewhere else."
 	
 	para "Hehe…"
 	
@@ -211,9 +237,5 @@ LusterMallSkateShopShelfText:
 LusterMallSkateShopSkateboardText:
 	text "A variety of cool"
 	line "skateboard decks."
-	done
-
-LusterMallSkateShopSignText:
-	text "SIGN TEXT"
 	done
 	

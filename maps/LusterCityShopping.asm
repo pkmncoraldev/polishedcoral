@@ -6,15 +6,17 @@ LusterCityShopping_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, LusterCityFlypointCallback
 	callback MAPCALLBACK_TILES, ShoppingCallback
 
-	db 6 ; warp events
+	db 8 ; warp events
 	warp_def 11,  0, 1, ROUTE_1
 	warp_def 11,  1, 2, LUSTER_TRAIN_STATION
 	warp_def 33, 12, 1, LUSTER_MALL
 	warp_def 33, 13, 2, LUSTER_MALL
 	warp_def 33, 16, 3, LUSTER_MALL
 	warp_def 33, 17, 4, LUSTER_MALL
+	warp_def 19, 18, 3, LUSTER_MALL_BACK_ROOM
+	warp_def 19, 19, 3, LUSTER_MALL_BACK_ROOM
 
-	db 17 ; coord events
+	db 20 ; coord events
 	xy_trigger 0, 46,  0, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 47,  0, 0, LusterShoppingSignThing, 0, 0
 	xy_trigger 0, 48,  0, 0, LusterShoppingSignThing, 0, 0
@@ -32,10 +34,19 @@ LusterCityShopping_MapScriptHeader:
 	xy_trigger 1, 19,  3, 0, LusterResidentialSignThing, 0, 0
 	xy_trigger 1, 19,  4, 0, LusterResidentialSignThing, 0, 0
 	xy_trigger 1, 19,  5, 0, LusterResidentialSignThing, 0, 0
+	coord_event 20, 17, 2, LusterShoppingDeliveryEvent
+	coord_event 20, 18, 2, LusterShoppingDeliveryEvent
+	coord_event 20, 19, 2, LusterShoppingDeliveryEvent
 
-	db 0 ; bg events
+	db 6 ; bg events
+	signpost 24,  5, SIGNPOST_READ, LusterShoppingTrashcan1
+	signpost 26,  5, SIGNPOST_READ, LusterShoppingTrashcan2
+	signpost 24, 25, SIGNPOST_READ, LusterShoppingTrashcan3
+	signpost 26, 25, SIGNPOST_READ, LusterShoppingTrashcan4
+	bg_event  7, 21, SIGNPOST_ITEM + POTION, EVENT_LUSTER_SHOPPING_HIDDEN_ITEM_1
+	bg_event 25, 27, SIGNPOST_ITEM + POTION, EVENT_LUSTER_SHOPPING_HIDDEN_ITEM_2
 
-	db 13 ; object events
+	db 16 ; object events
 	person_event SPRITE_TRAFFIC_LIGHT, 44, -3, SPRITEMOVEDATA_TILE_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
 	person_event SPRITE_MALL_SIGN_2, 44,  7, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
 	person_event SPRITE_MALL_SIGN_2, 44,  8, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
@@ -49,6 +60,9 @@ LusterCityShopping_MapScriptHeader:
 	person_event SPRITE_COOL_DUDE, 33, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Luster2NPC6, -1
 	person_event SPRITE_FISHER, 40, 15, SPRITEMOVEDATA_STANDING_LEFT, 2, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster2NPC7, -1
 	person_event SPRITE_SUPER_NERD, 29, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster2NPC8, -1
+	itemball_event 25, 25, POTION, 1, EVENT_LUSTER_SHOPPING_POKEBALL
+	person_event SPRITE_SNARE, 18, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster2Snare, EVENT_PART_TIME_JOB_BEAT_SNARE
+	person_event SPRITE_FAT_GUY, 18, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster2Delivery, EVENT_PART_TIME_JOB_SAVED_DELIVERY
 
 	const_def 1 ; object constants
 	const LUSTER2STREETLIGHT
@@ -64,6 +78,9 @@ LusterCityShopping_MapScriptHeader:
 	const LUSTER2NPC6
 	const LUSTER2NPC7
 	const LUSTER2NPC8
+	const LUSTER2ITEM
+	const LUSTER2SNARE
+	const LUSTER2DELIVERY
 
 LusterCityShoppingTrigger0:
 	checktime 1<<NITE
@@ -101,11 +118,165 @@ LusterCityFlypointCallback:
 	return
 	
 ShoppingCallback:
+	checkevent EVENT_PART_TIME_JOB_SAVED_DELIVERY
+	iffalse .skip1
+	changeblock $16, $10, $64
+	jump .skip2
+.skip1
+	checkevent EVENT_MIDDLE_PART_TIME_JOB
+	iffalse .skip2
+	moveperson LUSTER2SNARE, $18, $11
+.skip2
 	checktime 1<<NITE
 	iffalse .end
 	changeblock -4, 20, $84
 .end
 	return
+	
+LusterShoppingTrashcan1:
+	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_1
+	iftrue LusterTrashcanOnlyTrash
+	changeblock $4, $16, $dd
+	opentext
+	writetext LusterTrashcanText1
+	playsound SFX_SANDSTORM
+	waitsfx
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterTrashcanTextOnlyTrash
+	waitbutton
+	closetext
+	setevent EVENT_LUSTER_SHOPPING_TRASHCAN_1
+	end
+	
+LusterShoppingTrashcan2:
+	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_2
+	iftrue LusterTrashcanOnlyTrash
+	changeblock $4, $18, $dd
+	opentext
+	writetext LusterTrashcanText1
+	playsound SFX_SANDSTORM
+	waitsfx
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterTrashcanTextOnlyTrash
+	waitbutton
+	closetext
+	setevent EVENT_LUSTER_SHOPPING_TRASHCAN_2
+	end
+	
+LusterShoppingTrashcan3:
+	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_3
+	iftrue LusterTrashcanOnlyTrash
+	changeblock $18, $16, $dd
+	opentext
+	writetext LusterTrashcanText1
+	playsound SFX_SANDSTORM
+	waitsfx
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterTrashcanTextOnlyTrash
+	waitbutton
+	closetext
+	setevent EVENT_LUSTER_SHOPPING_TRASHCAN_3
+	end
+	
+LusterShoppingTrashcan4:
+	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_4
+	iftrue LusterTrashcanOnlyTrash
+	changeblock $18, $18, $dd
+	opentext
+	writetext LusterTrashcanText1
+	playsound SFX_SANDSTORM
+	waitsfx
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterTrashcanTextOnlyTrash
+	waitbutton
+	closetext
+	setevent EVENT_LUSTER_SHOPPING_TRASHCAN_4
+	end
+	
+Luster2Snare:
+	faceplayer
+	special SaveMusic
+	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
+	opentext
+	writetext LusterShoppingSnareText3
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext LusterShoppingSnareWinText, 0
+	setlasttalked LUSTER2SNARE
+	loadtrainer GRUNTM, LUSTER_GRUNTM
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	special RestoreMusic
+	opentext
+	writetext LusterShoppingSnareText4
+	waitbutton
+	closetext
+	pause 7
+	special FadeOutPalettesBlack
+	pause 20
+	disappear LUSTER2SNARE
+	callasm LoadMapPals
+	special FadeInPalettes
+	pause 7
+	setevent EVENT_PART_TIME_JOB_BEAT_SNARE
+	end
+	
+Luster2Delivery:
+	checkevent EVENT_PART_TIME_JOB_BEAT_SNARE
+	iftrue .saved
+	jumptextfaceplayer LusterShoppingDeliveryText2
+.saved
+	faceplayer
+	opentext
+	writetext LusterShoppingDeliveryText3
+	waitbutton
+	closetext
+	pause 7
+	special FadeOutPalettesBlack
+	pause 20
+	changeblock $16, $10, $64
+	callasm GenericFinishBridge
+	disappear LUSTER2DELIVERY
+	callasm LoadMapPals
+	special FadeInPalettes
+	pause 7
+	setevent EVENT_PART_TIME_JOB_SAVED_DELIVERY
+	end
+
+LusterShoppingDeliveryEvent:
+	applyonemovement LUSTER2SNARE, turn_step_left
+	opentext
+	writetext LusterShoppingSnareText1
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement LUSTER2DELIVERY, turn_step_right
+	opentext
+	writetext LusterShoppingDeliveryText1
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement LUSTER2SNARE, turn_step_left
+	opentext
+	writetext LusterShoppingSnareText2
+	waitbutton
+	closetext
+	applymovement LUSTER2SNARE, Movement_LusterShoppingSnare1
+	spriteface LUSTER2SNARE, LEFT
+	moveperson LUSTER2SNARE, $18, $11
+	dotrigger $1
+	setevent EVENT_MIDDLE_PART_TIME_JOB
+	end
 	
 Luster2NPC1:
 	faceplayer
@@ -252,3 +423,80 @@ Luster2NPC8Text:
 	cont "to see what goes"
 	cont "on back there…"
 	done
+	
+LusterShoppingSnareText1:
+	text "Alright, hand 'em"
+	line "over!"
+	
+	para "I know you've got"
+	line "APRICORNS on this"
+	cont "truck."
+	
+	para "And you're gonna"
+	line "give 'em to me,"
+	cont "or else."
+	done
+	
+LusterShoppingSnareText2:
+	text "Smart move."
+	
+	para "Hehe…"
+	done
+	
+LusterShoppingSnareText3:
+	text "TEXT 3"
+	done
+	
+LusterShoppingSnareText4:
+	text "TEXT 4"
+	done
+	
+LusterShoppingSnareWinText:
+	text "YOU WIN"
+	done
+	
+LusterShoppingDeliveryText1:
+	text "Ok ok…"
+	
+	para "Just take them!"
+	
+	para "The shipment is in"
+	line "the back…"
+	done
+	
+LusterShoppingDeliveryText2:
+	text "Psst…"
+	
+	para "A little help"
+	line "here?"
+	
+	para "That guy's robbing"
+	line "me!"
+	
+	para "If I don't finish"
+	line "this delivery,"
+	cont "I'll be in huge"
+	cont "trouble!"
+	
+	para "Don't just stand"
+	line "there…"
+	
+	para "Take him out!"
+	done
+	
+LusterShoppingDeliveryText3:
+	text "Wow!"
+	
+	para "Thanks a lot!"
+	
+	para "Now I can finish"
+	line "this delivery."
+	
+	para "I'm already super"
+	line "late!"
+	done
+	
+Movement_LusterShoppingSnare1:
+	step_right
+	step_up
+	step_end

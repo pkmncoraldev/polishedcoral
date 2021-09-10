@@ -26,7 +26,8 @@ SunsetLegendsHouseNPC:
 
 SunsetLegendsHouseNPCText:
 	text "I just moved here"
-	line "from HOENN."
+	line "from the HOENN"
+	cont "region."
 	
 
 	para "It's a lot calmer"

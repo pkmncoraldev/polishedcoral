@@ -97,11 +97,11 @@
 	tilecoll WALL, WALL, WALL, WALL ; 60
 	tilecoll WALL, WALL, DOOR, DOOR ; 61
 	tilecoll WALL, WALL, WALL, WALL ; 62
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 63
+	tilecoll FLOOR, FLOOR, FLOOR, WARP_CARPET_RIGHT ; 63
 	tilecoll WALL, WALL, WALL, WALL ; 64
 	tilecoll WALL, WALL, WALL, WALL ; 65
 	tilecoll WALL, WALL, WALL, WALL ; 66
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 67
+	tilecoll FLOOR, WARP_CARPET_RIGHT, FLOOR, FLOOR ; 67
 	tilecoll WALL, WALL, WALL, WALL ; 68
 	tilecoll WALL, WALL, DOOR, DOOR ; 69
 	tilecoll WALL, WALL, DOOR, DOOR ; 6a

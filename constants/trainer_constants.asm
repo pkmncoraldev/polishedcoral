@@ -211,6 +211,7 @@ PLAYER_F EQU __enum__
 	const TRAIN_GRUNTM_3
 	const TRAIN_GRUNTM_4
 	const TRAIN_GRUNTM_5
+	const LUSTER_GRUNTM
 
 
 	trainerclass GRUNTF

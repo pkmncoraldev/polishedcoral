@@ -316,6 +316,9 @@ LusterMallBallShop_BlockData:
 LusterMallClothesShop_BlockData:
 	INCBIN "maps/LusterMallClothesShop.ablk.lz"
 	
+LusterMallBackRoom_BlockData:
+	INCBIN "maps/LusterMallBackRoom.ablk.lz"
+	
 LusterSkyscraper1_1F_BlockData:
 LusterSkyscraper2_1F_BlockData:
 	INCBIN "maps/LusterSkyscraper1F.ablk.lz"

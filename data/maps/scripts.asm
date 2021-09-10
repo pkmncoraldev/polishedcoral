@@ -211,6 +211,7 @@ INCLUDE "maps/ParkGate.asm"
 INCLUDE "maps/Route11Gate.asm"
 
 SECTION "Luster City Scripts2", ROMX
+
 INCLUDE "maps/LusterMall.asm"
 INCLUDE "maps/LusterMallElectronicsShop.asm"
 INCLUDE "maps/LusterMallCoffeeShop.asm"
@@ -221,6 +222,7 @@ INCLUDE "maps/LusterMallHerbShop.asm"
 INCLUDE "maps/LusterMallStoneShop.asm"
 INCLUDE "maps/LusterMallBallShop.asm"
 INCLUDE "maps/LusterMallClothesShop.asm"
+INCLUDE "maps/LusterMallBackRoom.asm"
 INCLUDE "maps/LusterSkyscraper1_1F.asm"
 INCLUDE "maps/LusterSkyscraper1_2F.asm"
 INCLUDE "maps/LusterSkyscraper1_3F.asm"
@@ -229,6 +231,9 @@ INCLUDE "maps/LusterSkyscraper2_1F.asm"
 INCLUDE "maps/LusterSkyscraper2_2F.asm"
 INCLUDE "maps/LusterSkyscraper2_3F.asm"
 INCLUDE "maps/LusterSkyscraper2_Elevator.asm"
+
+SECTION "Nett Building Scripts", ROMX
+
 INCLUDE "maps/NettBuilding1F.asm"
 INCLUDE "maps/NettBuilding2F.asm"
 INCLUDE "maps/NettBuildingElevator.asm"

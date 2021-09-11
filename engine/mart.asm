@@ -30,6 +30,7 @@ OpenMartDialog:: ; 15a45
 	dw TMMart
 	dw BlueCardMart
 	dw BTMart
+	dw ClothesShop
 ; 15a61
 
 MartDialog: ; 15a61
@@ -71,6 +72,15 @@ RefreshmentsShop: ; 15a84
 ; 15aae
 
 INCLUDE "data/items/refreshments_shop.asm"
+
+ClothesShop: ; 15a6e
+	call FarReadTMMart
+	call LoadStandardMenuDataHeader
+	ld hl, Text_Mart_Clothes_Intro
+	call MartTextBox
+	call BuyClothesMenu
+	ld hl, Text_Mart_Clothes_ComeAgain
+	jp MartTextBox
 
 Pharmacist: ; 15aae
 	call FarReadMart
@@ -467,6 +477,13 @@ BuyRefreshmentsMenu:
 	call BuyRefreshmentsMenuLoop ; menu loop
 	jr nc, .loop
 	jr BuyMenu_Finish
+	
+BuyClothesMenu:
+	call BuyMenu_InitGFX
+.loop
+	call BuyClothesMenuLoop ; menu loop
+	jr nc, .loop
+	jr BuyMenu_Finish
 
 BuyTMMenu:
 	call BuyMenu_InitGFX
@@ -613,6 +630,7 @@ GetMartDialogGroup: ; 15ca3
 	dwb .TMMartPointers, 0
 	dwb .BlueCardMartPointers, 0
 	dwb .BTMartPointers, 0
+	dwb .ClothesMartPointers, 0
 ; 15cbf
 
 .StandardMartPointers: ; 15cbf
@@ -703,6 +721,14 @@ GetMartDialogGroup: ; 15ca3
 	dw Text_BTMart_BagFull
 	dw Text_BTMart_HereYouGo
 	dw BlueCardBuyMenuLoop
+	
+.ClothesMartPointers:
+	dw Text_Mart_HowMany
+	dw Text_ClothesMart_CostsThisMuch
+	dw Text_Mart_InsufficientFunds
+	dw Text_Mart_BagFull
+	dw Text_Mart_HereYouGo
+	dw BuyClothesMenuLoop
 
 
 BuyMenuLoop: ; 15cef
@@ -920,6 +946,38 @@ BTBuyMenuLoop:
 	and a
 	ret
 
+BuyClothesMenuLoop:
+	farcall PlaceMoneyTopRight
+	call UpdateSprites
+	ld hl, ClothesMenuDataHeader_Buy
+	call CopyMenuDataHeader
+	call DoMartScrollingMenu
+	call SpeechTextBox
+	ld a, [wMenuJoypad]
+	cp B_BUTTON
+	jp z, MartMenuLoop_SetCarry
+	call ClothesMartAskPurchaseQuantity
+	jr c, .cancel
+	call ClothesMartConfirmPurchase
+	jr c, .cancel
+	ld de, wMoney
+	ld bc, hMoneyTemp
+	call CompareMoney
+	jp c, MartMenuLoop_InsufficientFunds
+	call ReceiveClothes
+	ld de, wMoney
+	ld bc, hMoneyTemp
+	call TakeMoney
+	ld a, MARTTEXT_HERE_YOU_GO
+	call LoadBuyMenuText
+	call PlayTransactionSound
+	farcall PlaceMoneyTopRight
+	call JoyWaitAorB
+.cancel
+	call SpeechTextBox
+	and a
+	ret
+	
 DoMartScrollingMenu:
 	ld a, [wMenuCursorBufferBackup]
 	ld [wMenuCursorBuffer], a
@@ -979,6 +1037,11 @@ TMMartConfirmPurchase:
 	ld [wPutativeTMHMMove], a
 	call GetMoveName
 
+	ld a, MARTTEXT_COSTS_THIS_MUCH
+	call LoadBuyMenuText
+	jp YesNoBox
+	
+ClothesMartConfirmPurchase:
 	ld a, MARTTEXT_COSTS_THIS_MUCH
 	call LoadBuyMenuText
 	jp YesNoBox
@@ -1088,6 +1151,45 @@ TMMartAskPurchaseQuantity:
 
 .AlreadyHaveTMText
 	text_jump AlreadyHaveTMText
+	db "@"
+	
+ClothesMartAskPurchaseQuantity:
+	ld a, [wCurTMHM]
+	call CheckClothes
+	jr c, .AlreadyHaveClothes
+
+	ld a, 1
+	ld [wItemQuantityChangeBuffer], a
+	ld a, [wMartItemID]
+	ld e, a
+	ld d, $0
+	ld hl, wMartPointer
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	inc hl
+	add hl, de
+	add hl, de
+	add hl, de
+	inc hl
+	ld a, [hli]
+	ld [hMoneyTemp + 2], a
+	ld a, [hl]
+	ld [hMoneyTemp + 1], a
+	xor a
+	ld [hMoneyTemp], a
+	and a
+	ret
+
+.AlreadyHaveClothes
+	ld hl, .AlreadyHaveClothesText
+	call PrintText
+	call JoyWaitAorB
+	scf
+	ret
+
+.AlreadyHaveClothesText
+	text_jump AlreadyHaveClothesText
 	db "@"
 
 BTMartAskPurchaseQuantity:
@@ -1203,6 +1305,23 @@ TMMenuDataHeader_Buy:
 	dba MartMenu_PrintBCDPrices
 	dba UpdateTMHMIconAndDescriptionAndOwnership
 ; 15e30
+
+ClothesMenuDataHeader_Buy:
+	db $40 ; flags
+	db 03, 06 ; start coords
+	db 11, 19 ; end coords
+	dw .menudata2
+	db 1 ; default option
+; 0x15e20
+
+.menudata2 ; 0x15e20
+	db $30 ; pointers
+	db 4, 8 ; rows, columns
+	db 1 ; horizontal spacing
+	dbw 0, wCurMart
+	dba PlaceMartClothesName
+	dba MartMenu_PrintBCDPrices
+	dba UpdateClothesIconAndDescriptionAndOwnership
 
 MartMenu_PrintBCDPrices: ; 15e30
 	ld a, [wScrollingMenuCursorPosition]
@@ -1471,6 +1590,11 @@ Text_TMMart_CostsThisMuch:
 	; @  @  will be ¥@ .
 	text_jump TMMartCostsThisMuchText
 	db "@"
+	
+Text_ClothesMart_CostsThisMuch:
+	; That will be ¥@ .
+	text_jump ClothesMartCostsThisMuchText
+	db "@"
 
 Text_BlueCardMart_HowMayIHelpYou: ; 0x8b072
 	; Which prize would you like?
@@ -1637,6 +1761,14 @@ Text_Mart_HowMayIHelpYou: ; 0x15f83
 	text_jump UnknownText_0x1c4f62
 	db "@"
 ; 0x15f88
+
+Text_Mart_Clothes_Intro: ; 0x15f83
+	text_jump UnknownText_Mart_Clothes_Intro
+	db "@"
+	
+Text_Mart_Clothes_ComeAgain:
+	text_jump UnknownText_Mart_Clothes_ComeAgain
+	db "@"
 
 MenuDataHeader_BuySell: ; 0x15f88
 	db $40 ; flags

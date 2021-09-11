@@ -554,9 +554,9 @@ KrisRadioText4:
 	done
 
 FixPlayerPalKrisHouse:
-;	ld a, [wPlayerPalette]
-;	add $1
-;	ld [wPlayerInitialPalette], a
+	ld a, [wPlayerPalette]
+	inc a
+	call ReceiveStartingClothes
 	ret
 	
 SetPlayerPalKrisHouse:

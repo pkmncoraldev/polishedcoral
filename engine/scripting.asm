@@ -3304,36 +3304,6 @@ Script_loadgrottomon:
 	ret
 
 Script_giveapricorn:
-; parameters:
-;     apricorn (SingleByteParam)
-;     quantity (SingleByteParam)
-	call GetScriptByte
-	cp ITEM_FROM_MEM
-	jr nz, .ok
-	ld a, [wScriptVar]
-.ok
-	ld [wCurItem], a
-	call GetScriptByte
-	ld [wItemQuantityChangeBuffer], a
-
-	ld hl, wApricorns
-	ld a, [wCurItem]
-	dec a
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [wItemQuantityChangeBuffer]
-	add [hl]
-	cp 100
-	jr nc, .full
-	ld [hl], a
-	ld a, TRUE
-	ld [wScriptVar], a
-	ret
-
-.full
-	xor a
-	ld [wScriptVar], a
 	ret
 
 Script_paintingpic:

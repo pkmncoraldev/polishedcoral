@@ -1617,7 +1617,10 @@ rept 16
 endr
 endc
 
-
+ClothesIconPalettes:
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	
 TrainerCardRedPals:
 	RGB 30, 24, 12
 	RGB 30, 11, 09

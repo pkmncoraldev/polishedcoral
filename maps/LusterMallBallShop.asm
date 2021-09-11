@@ -22,11 +22,16 @@ LusterMallBallShop_MapScriptHeader:
 	signpost  1,  4, SIGNPOST_JUMPTEXT, LusterMallBallShopPosterText3
 	signpost  1,  3, SIGNPOST_JUMPTEXT, LusterMallBallShopPosterText3
 
-	db 3 ; object events
-	object_event  1,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STANDARD, MART_LUSTER_MALL_BALL, -1
+	db 4 ; object events
+	object_event  1,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STANDARD, MART_LUSTER_MALL_BALL, EVENT_DONE_PART_TIME_JOB
+	object_event  1,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, pokemart, MARTTYPE_INFORMAL, MART_LUSTER_MALL_BALL_DISCOUNT, EVENT_NO_BALL_SHOP_DISCOUNT
 	person_event SPRITE_LASS,  5,  7, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMallBallShop_NPC1, -1
 	person_event SPRITE_REDS_MOM,  4,  0, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallBallShop_NPC2, -1
 
+	
+	const_def 1 ; object constants
+	const LUSTER_MALL_BALL_SHOP_CLERK
+	const LUSTER_MALL_BALL_SHOP_CLERK_DISCOUNT
 	
 LusterMallBallShop_NPC1:
 	jumptextfaceplayer LusterMallBallShop_NPC1Text
@@ -62,8 +67,16 @@ LusterMallBallShop_NPC2:
 	jumptextfaceplayer LusterMallBallShop_NPC2Text3
 	
 .saved_delivery
+	appear LUSTER_MALL_BALL_SHOP_CLERK_DISCOUNT
 	setevent EVENT_DONE_PART_TIME_JOB
-	jumptextfaceplayer LusterMallBallShop_NPC2Text4
+	clearevent EVENT_NO_BALL_SHOP_DISCOUNT
+	faceplayer
+	opentext
+	writetext LusterMallBallShop_NPC2Text4
+	waitbutton
+	closetext
+	disappear LUSTER_MALL_BALL_SHOP_CLERK
+	end
 	
 .finishedjob
 	jumptextfaceplayer LusterMallBallShop_NPC2Text5
@@ -142,6 +155,8 @@ LusterMallBallShop_NPC2Text4:
 	
 	para "Half off on every"
 	line "item in the store!"
+	
+	para "You've earned it!"
 	done
 	
 LusterMallBallShop_NPC2Text5:

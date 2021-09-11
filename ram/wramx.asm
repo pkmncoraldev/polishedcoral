@@ -940,7 +940,10 @@ wNumPCItems:: ds 1
 wPCItems:: ds MAX_PC_ITEMS * 2 + 1
 wPCItemsEnd::
 
-wApricorns:: ds NUM_APRICORNS
+wClothesOwned:: flag_array NUM_CLOTHES
+wClothesOwnedEnd::
+
+ds 7
 
 wPokegearFlags::
 ; bit 0: map

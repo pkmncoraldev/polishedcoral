@@ -406,6 +406,18 @@ UnknownText_0x1c4f3e::
 	para "Is that OK?"
 	done
 
+UnknownText_Mart_Clothes_Intro::
+	text "Welcome to"
+	line "BOUTIQUE COUTOUR."
+	
+	para "What are you"
+	line "looking for today?"
+	done
+	
+UnknownText_Mart_Clothes_ComeAgain::
+	text "You look fabulous!"
+	done
+	
 UnknownText_0x1c4f62::
 	text "Welcome! How may I"
 	line "help you?"
@@ -461,6 +473,13 @@ TMMartCostsThisMuchText::
 	text_from_ram wStringBuffer1
 	text ""
 	line "will be ¥@"
+	deciram hMoneyTemp, 3, 7
+	text "."
+	done
+	
+ClothesMartCostsThisMuchText::
+	text "That will be"
+	line "¥@"
 	deciram hMoneyTemp, 3, 7
 	text "."
 	done
@@ -1220,6 +1239,11 @@ AlreadyHaveTMText::
 	line "that TM."
 	done
 
+AlreadyHaveClothesText::
+	text "You already have"
+	line "that outfit."
+	done
+	
 MartPremierBallText::
 	text "You also get a"
 	line "PREMIER BALL as"

@@ -550,13 +550,13 @@
 	const NAM_ZINC         ; fd
 	const NAM_ZOOM_LENS    ; fe
 
-; APRICORN_BOX contents
+; Clothes contents
 	const_def 1
-	const RED_APRICORN ; 1
-	const BLU_APRICORN ; 2
-	const YLW_APRICORN ; 3
-	const GRN_APRICORN ; 4
-	const WHT_APRICORN ; 5
-	const BLK_APRICORN ; 6
-	const PNK_APRICORN ; 7
-NUM_APRICORNS EQU const_value +- 1
+	const RED_CLOTHES ; 1
+	const BLUE_CLOTHES ; 2
+	const GREEN_CLOTHES ; 3
+	const BROWN_CLOTHES ; 4
+	const PURPLE_CLOTHES ; 5
+	const TEAL_CLOTHES ; 6
+	const PINK_CLOTHES ; 7
+NUM_CLOTHES EQU const_value +- 1

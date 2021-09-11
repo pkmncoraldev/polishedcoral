@@ -67,3 +67,25 @@ ReceiveTMHM:: ; d3c4
 	call FlagAction
 	scf
 	ret
+	
+CheckClothes:: ; d3fb
+	ld a, [wCurTMHM]
+	ld e, a
+	ld d, 0
+	ld b, CHECK_FLAG
+	ld hl, wClothesOwned
+	call FlagAction
+	ret z
+	scf
+	ret
+	
+ReceiveClothes:: ; d3c4
+	ld a, [wCurItem]
+ReceiveStartingClothes::
+	ld e, a
+	ld d, 0
+	ld b, SET_FLAG
+	ld hl, wClothesOwned
+	call FlagAction
+	scf
+	ret

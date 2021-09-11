@@ -386,7 +386,7 @@ INCLUDE "home/pokedex_flags.asm"
 NamesPointers:: ; 33ab
 	dba PokemonNames
 	dba MoveNames
-	dba ApricornNames
+	dba ClothesNames
 	dba ItemNames
 	dbw 0, wPartyMonOT
 	dbw 0, wOTPartyMonOT
@@ -546,13 +546,13 @@ GetItemName:: ; 3468
 	ret
 ; 3487
 
-GetApricornName::
+GetClothesName::
 ; Get apricorn name wNamedObjectIndexBuffer.
 	push hl
 	push bc
 	ld a, [wNamedObjectIndexBuffer]
 	ld [wCurSpecies], a
-	ld a, APRICORN_NAME
+	ld a, CLOTHES_NAME
 	ld [wNamedObjectTypeBuffer], a
 	call GetName
 	ld de, wStringBuffer1

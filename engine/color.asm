@@ -157,6 +157,23 @@ LoadItemIconPalette:
 	ld bc, 2
 	ld a, $5
 	jp FarCopyWRAM
+	
+LoadClothesIconPalette:
+	ld a, [wCurSpecies]
+	ld bc, ClothesIconPalettes
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, bc
+	ld de, wUnknBGPals palette 7 + 2
+	ld bc, 4
+	ld a, $5
+	call FarCopyWRAM
+	ld hl, BlackPalette
+	ld bc, 2
+	ld a, $5
+	jp FarCopyWRAM
 
 LoadTMHMIconPalette:
 	ld a, [wCurTMHM]

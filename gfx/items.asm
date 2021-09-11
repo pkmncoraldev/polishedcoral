@@ -14,6 +14,19 @@ UpdateTMHMIconAndDescriptionAndOwnership::
 .ok
 	farcall LoadTMHMIconPalette
 	jp SetPalettes
+	
+UpdateClothesIconAndDescriptionAndOwnership::
+	farcall UpdateClothesDescriptionAndOwnership
+	ld a, [wMenuSelection]
+	cp -1
+	jr z, .cancel
+	call LoadClothesIcon
+	jr .ok
+.cancel
+	call ClearTMHMIcon
+.ok
+	farcall LoadClothesIconPalette
+	jp SetPalettes
 
 UpdateItemIconAndDescriptionAndBagQuantity::
 	farcall UpdateItemDescriptionAndBagQuantity
@@ -55,6 +68,12 @@ LoadTMHMIcon::
 	ld hl, TMHMIcon
 	ld de, VTiles2 tile $1e
 	lb bc, BANK(TMHMIcon), 9
+	jp DecompressRequest2bpp
+	
+LoadClothesIcon::
+	ld hl, ClothesIcon
+	ld de, VTiles2 tile $1e
+	lb bc, BANK(ClothesIcon), 9
 	jp DecompressRequest2bpp
 
 ClearTMHMIcon::
@@ -330,3 +349,4 @@ MusicMailIcon:    INCBIN "gfx/items/music_mail.2bpp.lz"
 MirageMailIcon:   INCBIN "gfx/items/mirage_mail.2bpp.lz"
 
 TMHMIcon:         INCBIN "gfx/items/tm_hm.2bpp.lz"
+ClothesIcon:      INCBIN "gfx/items/clothes.2bpp.lz"

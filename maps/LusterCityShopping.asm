@@ -203,13 +203,13 @@ LusterShoppingTrashcan4:
 	
 Luster2Snare:
 	faceplayer
-	special SaveMusic
 	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
 	opentext
 	writetext LusterShoppingSnareText3
 	waitbutton
 	closetext
 	waitsfx
+	special SaveMusic
 	winlosstext LusterShoppingSnareWinText, 0
 	setlasttalked LUSTER2SNARE
 	loadtrainer GRUNTM, LUSTER_GRUNTM
@@ -227,6 +227,7 @@ Luster2Snare:
 	disappear LUSTER2SNARE
 	callasm LoadMapPals
 	special FadeInPalettes
+	playmusic MUSIC_LUSTER_CITY
 	pause 7
 	setevent EVENT_PART_TIME_JOB_BEAT_SNARE
 	end
@@ -444,15 +445,34 @@ LusterShoppingSnareText2:
 	done
 	
 LusterShoppingSnareText3:
-	text "TEXT 3"
+	text "Who the?"
+	
+	para "You want these"
+	line "APRICORNS?"
+	
+	para "No way!"
+	
+	para "They belong to"
+	line "TEAM SNARE now!"
+	
+	para "I'm stealing them"
+	line "fair and square!"
 	done
 	
 LusterShoppingSnareText4:
-	text "TEXT 4"
+	text "Darn it!"
+	
+	para "I was told not to"
+	line "let this shipment"
+	cont "make it to the"
+	cont "#BALL SHOP!"
+	
+	para "Now I'm gonna get"
+	line "it…"
 	done
 	
 LusterShoppingSnareWinText:
-	text "YOU WIN"
+	text "Ah geeze…"
 	done
 	
 LusterShoppingDeliveryText1:

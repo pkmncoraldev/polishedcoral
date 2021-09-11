@@ -1217,3 +1217,43 @@ MirageMailDesc:
 
 TeruSamaDesc:
 	db   "?@"
+
+	
+ClothesDescriptions:
+	dw RedClothesDesc
+	dw BlueClothesDesc
+	dw GreenClothesDesc
+	dw BrownClothesDesc
+	dw PurpleClothesDesc
+	dw TealClothesDesc
+	dw PinkClothesDesc
+	
+	
+RedClothesDesc:
+	db   "A set of RED"
+	next "clothes.@"
+	
+BlueClothesDesc:
+	db   "A set of BLUE"
+	next "clothes.@"
+	
+GreenClothesDesc:
+	db   "A set of GREEN"
+	next "clothes.@"
+	
+BrownClothesDesc:
+	db   "A set of BROWN"
+	next "clothes.@"
+	
+PurpleClothesDesc:
+	db   "A set of PURPLE"
+	next "clothes.@"
+	
+TealClothesDesc:
+	db   "A set of TEAL"
+	next "clothes.@"
+	
+PinkClothesDesc:
+	db   "A set of PINK"
+	next "clothes.@"
+	

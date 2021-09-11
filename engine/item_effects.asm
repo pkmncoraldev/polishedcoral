@@ -2527,24 +2527,7 @@ ApricornBox:
 	db "   ×@@"
 
 PrintAprValues:
-	lb bc, 1, 2
-	hlcoord 10, 4
-	ld de, wApricorns
-	call PrintNum
-	hlcoord 16, 4
-	call .print
-	hlcoord 10, 6
-	call .print
-	hlcoord 16, 6
-	call .print
-	hlcoord 10, 8
-	call .print
-	hlcoord 16, 8
-	call .print
-	hlcoord 10, 10
-.print
-	inc de
-	jp PrintNum
+	ret
 
 
 OldRod: ; f5a5

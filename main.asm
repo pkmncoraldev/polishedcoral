@@ -467,6 +467,33 @@ UpdateTMHMDescription:
 	decoord 1, 14
 	farjp PrintTMHMDescription
 
+UpdateClothesDescriptionAndOwnership:
+	hlcoord 1, 1
+	lb bc, 1, 8
+	call ClearBox
+	ld a, [wMenuSelection]
+	cp -1
+	jr z, UpdateClothesDescription
+	ld a, [wCurTMHM]
+	call CheckClothes
+	ld de, OwnedTMString
+	jr c, .GotString
+	ld de, UnownedTMString
+.GotString
+	hlcoord 1, 1
+	call PlaceString
+UpdateClothesDescription:
+	ld a, [wMenuSelection]
+	ld [wCurSpecies], a
+	hlcoord 0, 12
+	lb bc, 4, SCREEN_WIDTH - 2
+	call TextBox
+	ld a, [wMenuSelection]
+	cp -1
+	ret z
+	decoord 1, 14
+	farjp PrintClothesDescription
+	
 OwnedTMString:
 	db "Owned@"
 UnownedTMString:
@@ -543,14 +570,15 @@ PlaceMenuTMHMName:
 	pop hl
 	jp PlaceString
 
-PlaceMenuApricornQuantity:
+PlaceMartClothesName:
+	push de
 	ld a, [wMenuSelection]
-	ld [wCurItem], a
-	and a
-	ret nz
-	ld l, e
-	ld h, d
-	jr _PlaceMenuQuantity
+	cp a, -1 ; special case for Cancel in Key Items pocket
+	ld de, ScrollingMenu_CancelString ; found in scrolling_menu.asm
+	ld [wNamedObjectIndexBuffer], a
+	call nz, GetClothesName
+	pop hl
+	jp PlaceString
 
 PlaceMenuItemQuantity: ; 0x24ac3
 	push de
@@ -4572,6 +4600,23 @@ PrintTMHMDescription:
 	ld [wCurSpecies], a
 	predef PrintMoveDesc
 	ret
+	
+PrintClothesDescription:
+; Print the description for TM/HM [wCurSpecies] at de.
+
+	ld hl, ClothesDescriptions
+	ld a, [wCurSpecies]
+	dec a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	push de
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	pop hl
+	jp PlaceString
 
 MoveReminderNoMovesText:
 	text "Sorry… There isn't"
@@ -4582,7 +4627,7 @@ MoveReminderNoMovesText:
 	done
 	
 INCLUDE "data/items/descriptions.asm"
-INCLUDE "data/items/apricorn_names.asm"
+INCLUDE "data/items/clothes_names.asm"
 
 
 SECTION "Move and Landmark Text", ROMX

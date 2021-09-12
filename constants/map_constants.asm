@@ -274,5 +274,5 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 13
 	
-	map_const HARBOR,					  				  26, 16 ; 1
+	map_const HARBOR,					  				  27, 16 ; 1
 	

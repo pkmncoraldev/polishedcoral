@@ -22,16 +22,19 @@ LusterMallBallShop_MapScriptHeader:
 	signpost  1,  4, SIGNPOST_JUMPTEXT, LusterMallBallShopPosterText3
 	signpost  1,  3, SIGNPOST_JUMPTEXT, LusterMallBallShopPosterText3
 
-	db 4 ; object events
-	object_event  1,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STANDARD, MART_LUSTER_MALL_BALL, EVENT_DONE_PART_TIME_JOB
-	object_event  1,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, pokemart, MARTTYPE_INFORMAL, MART_LUSTER_MALL_BALL_DISCOUNT, EVENT_NO_BALL_SHOP_DISCOUNT
-	person_event SPRITE_LASS,  5,  7, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMallBallShop_NPC1, -1
+	db 5 ; object events
+	object_event  1,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, pokemart, MARTTYPE_BALL, 0, EVENT_DONE_PART_TIME_JOB
+	object_event  1,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, pokemart, MARTTYPE_BALL_DISCOUNT, 0, EVENT_NO_BALL_SHOP_DISCOUNT
+	person_event SPRITE_LASS,  4,  7, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMallBallShop_NPC1, -1
 	person_event SPRITE_REDS_MOM,  4,  0, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallBallShop_NPC2, -1
-
+	person_event SPRITE_POKEFAN_M,  6,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMallBallShop_NPC3, -1
 	
 	const_def 1 ; object constants
 	const LUSTER_MALL_BALL_SHOP_CLERK
 	const LUSTER_MALL_BALL_SHOP_CLERK_DISCOUNT
+	const LUSTER_MALL_BALL_SHOP_NPC_1
+	const LUSTER_MALL_BALL_SHOP_NPC_2
+	const LUSTER_MALL_BALL_SHOP_NPC_3
 	
 LusterMallBallShop_NPC1:
 	jumptextfaceplayer LusterMallBallShop_NPC1Text
@@ -81,11 +84,19 @@ LusterMallBallShop_NPC2:
 .finishedjob
 	jumptextfaceplayer LusterMallBallShop_NPC2Text5
 	
+LusterMallBallShop_NPC3:
+	faceplayer
+	opentext
+	writetext LusterMallBallShop_NPC3Text
+	waitbutton
+	closetext
+	spriteface LUSTER_MALL_BALL_SHOP_NPC_3, DOWN
+	end
+	
 LusterMallBallShop_NPC1Text:
-	text "I didn't know this"
-	line "many different"
-	cont "kinds of #BALLS"
-	cont "even existed!"
+	text "I didn't even know"
+	line "this many kinds of"
+	cont "#BALLS existed!"
 	done
 	
 LusterMallBallShop_NPC2Text1:
@@ -181,6 +192,19 @@ LusterMallBallShop_NPC2Text5:
 	
 LusterMallBallShop_NPC2TextNo:
 	text "Ah well…"
+	done
+	
+LusterMallBallShop_NPC3Text:
+	text "Even the regular"
+	line "#BALLS are more"
+	cont "expensive here."
+	
+	para "They're made by"
+	line "hand, so they're"
+	cont "quality!"
+	
+	para "Is it really worth"
+	line "it, though?"
 	done
 	
 LusterMallBallShopCaseText1:

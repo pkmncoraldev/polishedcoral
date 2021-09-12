@@ -8,13 +8,12 @@ Marts: ; 160a9
 	dw FlickerMart
 	dw TwinkleMart
 	dw LusterMart
+	dw LusterMallElectronicsTM
 	dw LusterMallElectronics
 	dw LusterMallCoffee
 	dw LusterMallAntique
 	dw LusterMallHerb
 	dw LusterMallStone
-	dw LusterMallBall
-	dw LusterMallBallDiscount
 	dw LusterMallClothes
 MartsEnd:
 
@@ -113,6 +112,11 @@ LusterMallElectronics:
 	db POTION
 	db -1
 	
+LusterMallElectronicsTM:
+	db 1 ; # items
+	dbw TM_DYNAMICPUNCH, 	100
+	db -1
+	
 LusterMallCoffee:
 	db 1 ; # items
 	db POTION
@@ -131,16 +135,6 @@ LusterMallHerb:
 LusterMallStone:
 	db 1 ; # items
 	db POTION
-	db -1
-	
-LusterMallBall:
-	db 1 ; # items
-	db POTION
-	db -1
-	
-LusterMallBallDiscount:
-	db 1 ; # items
-	db POKE_BALL
 	db -1
 	
 LusterMallClothes:

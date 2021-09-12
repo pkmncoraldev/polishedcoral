@@ -217,7 +217,7 @@
 	tilecoll WALL, ICE_BLOCK, FLOOR, FLOOR ; d8
 	tilecoll ICE_BLOCK, WALL, FLOOR, FLOOR ; d9
 	tilecoll WALL, FLOOR, WALL, FLOOR ; da
-	tilecoll FLOOR, WALL, WALL, WALL ; db
+	tilecoll LEDGE_RIGHT, WALL, WALL, WALL ; db
 	tilecoll WALL, ICE_BLOCK, FLOOR, FLOOR ; dc
 	tilecoll ICE_BLOCK, WALL, FLOOR, FLOOR ; dd
 	tilecoll WALL, WALL, WALL, WALL ; de

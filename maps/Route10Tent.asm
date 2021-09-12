@@ -101,18 +101,21 @@ Route10TentNPCText1:
 	done
 	
 Route10TentNPCText2:
-	text "There's a man who"
-	line "runs an ANTIQUE"
-	cont "SHOP at the MALL"
-	cont "in LUSTER CITY."
+	text "I work at a"
+	line "RESEARCH LAB in"
+	cont "UNFINISHED."
 	
 	para "This looks just"
 	line "like an artifact"
-	cont "he has there."
+	cont "we have there."
+	
+	para "There's a great"
+	line "researcher there"
+	cont "named UNFINISHED."
 	
 	para "You should take it"
-	line "there and see if"
-	cont "he knows more"
+	line "to him and see if"
+	cont "he knows anything"
 	cont "about it."
 	
 	para "We could have a"
@@ -176,31 +179,37 @@ Route10TentNPCText8:
 Route10TentNPCText9:
 	text "Ok, kid!"
 	
-	para "There's a man who"
-	line "runs an ANTIQUE"
-	cont "SHOP at the MALL"
-	cont "in LUSTER CITY."
+	para "I work at a"
+	line "RESEARCH LAB in"
+	cont "UNFINISHED."
 	
 	para "This looks just"
 	line "like an artifact"
-	cont "he has there."
+	cont "we have there."
+	
+	para "There's a great"
+	line "researcher there"
+	cont "named UNFINISHED."
 	
 	para "You should take it"
-	line "there and see if"
-	cont "he knows more"
+	line "to him and see if"
+	cont "he knows anything"
 	cont "about it."
 	
 	para "We could have a"
 	line "big find here!"
 	
-	para "For now, though,"
+	para "I need to stay"
+	line "a bit longer and"
+	cont "wrap some things"
+	cont "up here."
 	
-	para "take this as"
-	line "a thank you."
+	para "For now, though,"
+	line "take this as a"
+	cont "thank you."
 	
 	para "It's said to bring"
 	line "great fortune!"
-	done
 	done
 	
 Route10TentWigglytuffText:

@@ -253,26 +253,83 @@ UnknownText_0x1c4c08::
 	deciram hMoneyTemp, 3, 7
 	text "."
 	done
+	
+BallMartEmployeeDiscountText::
+	deciram wItemQuantityChangeBuffer, 1, 2
+	text " @"
+	text_from_ram wStringBuffer2
+	text "(s)"
+	line "with your employee"
+	cont "discount will be"
+	cont "¥@"
+	deciram hMoneyTemp, 3, 7
+	text "."
+	done
 
 UnknownText_0x1c4c28::
-	text "Hello, dear."
+	text "Hey sweetie."
 
-	para "I sell inexpensive"
-	line "herbal medicine."
+	para "Welcome to"
+	line "THE WEEPIN' BELL!"
 
-	para "They're good, but"
-	line "a trifle bitter."
-
-	para "Your #mon may"
-	line "not like them."
-
-	para "Hehehehe…"
+	para "What can I get ya?"
 	done
 
 UnknownText_0x1c4ca3::
 	text "How many?"
 	done
+	
+UnknownText_0x1c4d2a::
+	text "Come back anytime,"
+	line "sweetie!"
+	done
 
+UnknownText_StoneShop_Intro::
+	text "Hello."
+	
+	para "Anything catch"
+	line "your eye?"
+	done
+	
+UnknownText_StoneShop_ComeAgain::
+	text "Very well."
+	
+	para "Have a pleasent"
+	line "day."
+	done
+	
+UnknownText_StoneShop_HereYouGo::
+	text "Excellent."
+	done
+	
+UnknownText_AntiqueShop_Intro::
+	text "Hi there."
+	
+	para "See anything you'd"
+	line "like to take home?"
+	done
+	
+UnknownText_TMMart_HowMayIHelpYou::
+	text "Welcome to"
+	line "MAGENTON BROS."
+	cont "ELECTRONICS."
+	
+	para "This is the TM"
+	line "CORNER."
+	
+	para "How can I help"
+	line "you?"
+	done
+	
+UnknownText_ElectronicsShop_Intro::
+	text "Welcome to"
+	line "MAGENTON BROS."
+	cont "ELECTRONICS."
+	
+	para "How can I help"
+	line "you?"
+	done
+	
 UnknownText_0x1c4cae::
 	deciram wItemQuantityChangeBuffer, 1, 2
 	text " @"
@@ -283,26 +340,14 @@ UnknownText_0x1c4cae::
 	text "."
 	done
 
-UnknownText_0x1c4cce::
-	text "Thank you, dear."
-	line "Hehehehe…"
+UnknownText_CoffeeShop_Intro::
+	text "Welcome to"
+	line "THE KOFFING BEAN."
+	
+	para "What can I get"
+	line "started for you?"
 	done
-
-UnknownText_0x1c4cea::
-	text "Oh? Your Bag is"
-	line "full, dear."
-	done
-
-UnknownText_0x1c4d08::
-	text "Hehehe… You don't"
-	line "have the money."
-	done
-
-UnknownText_0x1c4d2a::
-	text "Come again, dear."
-	line "Hehehehe…"
-	done
-
+	
 UnknownText_0x1c4d47::
 	text "Hiya!"
 	
@@ -377,6 +422,10 @@ UnknownText_0x1c4e89::
 UnknownText_0x1c4eab::
 	text "Thanks much!"
 	done
+	
+UnknownText_CoffeeShop_HereYouGo::
+	text "Coming right up!"
+	done
 
 UnknownText_0x1c4eb9::
 	text "You don't have any"
@@ -391,6 +440,14 @@ UnknownText_0x1c4ed8::
 UnknownText_0x1c4ef6::
 	text "All right."
 	line "See you around."
+	done
+	
+UnknownText_BallMart_Intro::
+	text "Welcome to"
+	line "AZAELA BALL CO."
+	
+	para "How can I help"
+	line "you today?"
 	done
 
 UnknownText_0x1c4f33::

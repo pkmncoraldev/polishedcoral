@@ -30,7 +30,13 @@ OpenMartDialog:: ; 15a45
 	dw TMMart
 	dw BlueCardMart
 	dw BTMart
+	dw ElectronicsShop
+	dw CoffeeShop
+	dw StoneShop
+	dw AntiqueShop
 	dw ClothesShop
+	dw BallShop
+	dw BallShopDiscount
 ; 15a61
 
 MartDialog: ; 15a61
@@ -73,6 +79,68 @@ RefreshmentsShop: ; 15a84
 
 INCLUDE "data/items/refreshments_shop.asm"
 
+BallShop:
+	ld b, BANK(BallShopData)
+	ld de, BallShopData
+	call LoadMartPointer
+	call ReadMart
+	call LoadStandardMenuDataHeader
+	ld hl, Text_BallMart_Intro
+	call MartTextBox
+	call BuyMenu
+	ld hl, Text_BallMart_ComeAgain
+	jp MartTextBox
+	
+BallShopDiscount:
+	ld b, BANK(BallShopDataDiscount)
+	ld de, BallShopDataDiscount
+	call LoadMartPointer
+	call ReadMart
+	call LoadStandardMenuDataHeader
+	ld hl, Text_InformalMart_Intro
+	call MartTextBox
+	call BuyMenu
+	ld hl, Text_InformalMart_ComeAgain
+	jp MartTextBox
+
+INCLUDE "data/items/ball_shop.asm"
+
+ElectronicsShop: ; 15a6e
+	call FarReadMart
+	call LoadStandardMenuDataHeader
+	ld hl, Text_ElectronicsShop_Intro
+	call MartTextBox
+	call BuyMenu
+	ld hl, Text_Mart_ComeAgain
+	jp MartTextBox
+
+CoffeeShop: ; 15a6e
+	call FarReadMart
+	call LoadStandardMenuDataHeader
+	ld hl, Text_CoffeeShop_Intro
+	call MartTextBox
+	call BuyMenu
+	ld hl, Text_CoffeeShop_ComeAgain
+	jp MartTextBox
+
+StoneShop: ; 15a6e
+	call FarReadMart
+	call LoadStandardMenuDataHeader
+	ld hl, Text_StoneShop_Intro
+	call MartTextBox
+	call BuyMenu
+	ld hl, Text_StoneShop_ComeAgain
+	jp MartTextBox
+	
+AntiqueShop: ; 15a6e
+	call FarReadMart
+	call LoadStandardMenuDataHeader
+	ld hl, Text_AntiqueShop_Intro
+	call MartTextBox
+	call BuyMenu
+	ld hl, Text_Mart_ComeAgain
+	jp MartTextBox
+	
 ClothesShop: ; 15a6e
 	call FarReadTMMart
 	call LoadStandardMenuDataHeader
@@ -151,7 +219,7 @@ BazaarMart:
 TMMart:
 	call FarReadTMMart
 	call LoadStandardMenuDataHeader
-	ld hl, Text_Mart_HowMayIHelpYou
+	ld hl, Text_TMMart_HowMayIHelpYou
 	call MartTextBox
 	call BuyTMMenu
 	ld hl, Text_Mart_ComeAgain
@@ -630,7 +698,13 @@ GetMartDialogGroup: ; 15ca3
 	dwb .TMMartPointers, 0
 	dwb .BlueCardMartPointers, 0
 	dwb .BTMartPointers, 0
+	dwb .StandardMartPointers, 0
+	dwb .CoffeeShopPointers, 0
+	dwb .StoneShopPointers, 0
+	dwb .StandardMartPointers, 0
 	dwb .ClothesMartPointers, 0
+	dwb .StandardMartPointers, 2
+	dwb .BallMartDiscountPointers, 2
 ; 15cbf
 
 .StandardMartPointers: ; 15cbf
@@ -644,9 +718,9 @@ GetMartDialogGroup: ; 15ca3
 .HerbShopPointers: ; 15ccb
 	dw Text_HerbShop_HowMany
 	dw Text_HerbShop_CostsThisMuch
-	dw Text_HerbShop_InsufficientFunds
-	dw Text_HerbShop_BagFull
-	dw Text_HerbShop_HereYouGo
+	dw Text_Mart_InsufficientFunds
+	dw Text_Mart_BagFull
+	dw Text_Mart_HereYouGo
 	dw BuyMenuLoop
 
 .RefreshmentsShopPointers: ; 15cd7
@@ -722,6 +796,22 @@ GetMartDialogGroup: ; 15ca3
 	dw Text_BTMart_HereYouGo
 	dw BlueCardBuyMenuLoop
 	
+.CoffeeShopPointers:
+	dw Text_Mart_HowMany
+	dw Text_Mart_CostsThisMuch
+	dw Text_Mart_InsufficientFunds
+	dw Text_Mart_BagFull
+	dw Text_CoffeeShop_HereYouGo
+	dw BuyMenuLoop
+	
+.StoneShopPointers: ; 15cbf
+	dw Text_Mart_HowMany
+	dw Text_Mart_CostsThisMuch
+	dw Text_Mart_InsufficientFunds
+	dw Text_Mart_BagFull
+	dw Text_StoneShop_HereYouGo
+	dw BuyMenuLoop
+	
 .ClothesMartPointers:
 	dw Text_Mart_HowMany
 	dw Text_ClothesMart_CostsThisMuch
@@ -729,6 +819,14 @@ GetMartDialogGroup: ; 15ca3
 	dw Text_Mart_BagFull
 	dw Text_Mart_HereYouGo
 	dw BuyClothesMenuLoop
+	
+.BallMartDiscountPointers: ; 15cbf
+	dw Text_InformalMart_HowMany
+	dw Text_BallDiscount_CostsThisMuch
+	dw Text_InformalMart_InsufficientFunds
+	dw Text_InformalMart_BagFull
+	dw Text_InformalMart_HereYouGo
+	dw BuyMenuLoop
 
 
 BuyMenuLoop: ; 15cef
@@ -1268,7 +1366,10 @@ Text_AdventurerMart_CostsThisMuch:
 	; @ (S) will be ¥@ .
 	text_jump UnknownText_0x1c4c08
 	db "@"
-; 0x15e18
+
+Text_BallDiscount_CostsThisMuch:
+	text_jump BallMartEmployeeDiscountText
+	db "@"
 
 MenuDataHeader_Buy: ; 0x15e18
 	db $40 ; flags
@@ -1411,6 +1512,26 @@ GetCursorItemPointCost:
 	pop hl
 	ret
 
+Text_StoneShop_Intro:
+	text_jump UnknownText_StoneShop_Intro
+	db "@"
+	
+Text_StoneShop_ComeAgain:
+	text_jump UnknownText_StoneShop_ComeAgain
+	db "@"
+	
+Text_StoneShop_HereYouGo:
+	text_jump UnknownText_StoneShop_HereYouGo
+	db "@"
+	
+Text_AntiqueShop_Intro:
+	text_jump UnknownText_AntiqueShop_Intro
+	db "@"
+	
+Text_ElectronicsShop_Intro:
+	text_jump UnknownText_ElectronicsShop_Intro
+	db "@"
+	
 Text_HerbShop_Intro: ; 0x15e4a
 	; Hello, dear. I sell inexpensive herbal medicine. They're good, but a trifle bitter. Your #MON may not like them. Hehehehe…
 	text_jump UnknownText_0x1c4c28
@@ -1422,24 +1543,6 @@ Text_HerbShop_CostsThisMuch: ; 0x15e54
 	text_jump UnknownText_0x1c4cae
 	db "@"
 ; 0x15e59
-
-Text_HerbShop_HereYouGo: ; 0x15e59
-	; Thank you, dear. Hehehehe…
-	text_jump UnknownText_0x1c4cce
-	db "@"
-; 0x15e5e
-
-Text_HerbShop_BagFull: ; 0x15e5e
-	; Oh? Your PACK is full, dear.
-	text_jump UnknownText_0x1c4cea
-	db "@"
-; 0x15e63
-
-Text_HerbShop_InsufficientFunds: ; 0x15e63
-	; Hehehe… You don't have the money.
-	text_jump UnknownText_0x1c4d08
-	db "@"
-; 0x15e68
 
 Text_HerbShop_ComeAgain: ; 0x15e68
 	; Come again, dear. Hehehehe…
@@ -1528,7 +1631,10 @@ Text_InformalMart_HereYouGo:
 	; Thanks much!
 	text_jump UnknownText_0x1c4eab
 	db "@"
-; 0x15ea4
+
+Text_CoffeeShop_HereYouGo:
+	text_jump UnknownText_CoffeeShop_HereYouGo
+	db "@"
 
 Text_Pharmacy_BagFull: ; 0x15ea4
 Text_SilphMart_BagFull:
@@ -1553,8 +1659,11 @@ Text_InformalMart_ComeAgain:
 	; All right. See you around.
 	text_jump UnknownText_0x1c4ef6
 	db "@"
-; 0x15eb3
 
+Text_BallMart_Intro:
+	text_jump UnknownText_BallMart_Intro
+	db "@"
+	
 Text_SilphMart_Intro:
 	; Employees like me have access to company swag! Want to buy some?
 	text_jump SilphMartIntroText
@@ -1572,6 +1681,7 @@ Text_AdventurerMart_Intro:
 
 Text_AdventurerMart_ComeAgain:
 Text_BazaarMart_ComeAgain:
+Text_BallMart_ComeAgain:
 	; Come by again!
 	text_jump AdventurerMartComeAgainText
 	db "@"
@@ -1762,6 +1872,10 @@ Text_Mart_HowMayIHelpYou: ; 0x15f83
 	db "@"
 ; 0x15f88
 
+Text_TMMart_HowMayIHelpYou:
+	text_jump UnknownText_TMMart_HowMayIHelpYou
+	db "@"
+	
 Text_Mart_Clothes_Intro: ; 0x15f83
 	text_jump UnknownText_Mart_Clothes_Intro
 	db "@"
@@ -1812,10 +1926,15 @@ TextMart_CantBuyFromYou: ; 0x15faf
 ; 0x15fb4
 
 Text_Mart_ComeAgain: ; 0x15fb4
+Text_CoffeeShop_ComeAgain:
 	; Please come again!
 	text_jump UnknownText_0x1c4ff9
 	db "@"
 ; 0x15fb9
+
+Text_CoffeeShop_Intro:
+	text_jump UnknownText_CoffeeShop_Intro
+	db "@"
 
 Text_Mart_AnythingElse: ; 0x15fb9
 	text_jump UnknownText_0x1c500d

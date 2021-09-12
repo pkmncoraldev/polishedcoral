@@ -25,18 +25,31 @@ LusterMallAntiqueShop_MapScriptHeader:
 	signpost  5,  7, SIGNPOST_JUMPTEXT, LusterMallAntiqueShopPlaqueText
 
 	db 2 ; object events
-	object_event  1,  6, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STANDARD, MART_LUSTER_MALL_ANTIQUE, -1
-	person_event SPRITE_CHILD,  4,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC1, -1
+	object_event  1,  6, SPRITE_SCIENTIST_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_COMMAND, pokemart, MARTTYPE_ANTIQUE, MART_LUSTER_MALL_ANTIQUE, -1
+	person_event SPRITE_POKEFAN_F,  2,  0, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterMallAntiqueShop_NPC, -1
 
 	const_def 1 ; object constants
 	const LUSTER_MALL_ANTIQUE_CLERK
-	const LUSTER_MALL_ANTIQUE_OWNER
+	const LUSTER_MALL_ANTIQUE_NPC
+	
+
+LusterMallAntiqueShop_NPC:
+	jumptextfaceplayer LusterMallAntiqueShop_NPCText
 	
 LusterMallAntiqueShopBookShelf:
 	jumptext LusterMallAntiqueShopBookShelfText
 	
 LusterMallAntiqueShopIncense:
 	jumptext LusterMallAntiqueShopIncenseText
+	
+LusterMallAntiqueShop_NPCText:
+	text "There's so many"
+	line "cute little"
+	cont "trinkets for sale!"
+	
+	para "I want to buy all"
+	line "of it!"
+	done
 	
 LusterMallAntiqueShopStatueText:
 	text "A statue of a"

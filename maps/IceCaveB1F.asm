@@ -6,7 +6,7 @@ IceCaveB1F_MapScriptHeader:
 	db 4 ; warp events
 	warp_def 11, 22, 6, TWINKLE_TOWN
 	warp_def  5, 21, 2, ICE_CAVE_B2F
-	warp_def 11,  2, 2, ROUTE_10_EAST
+	warp_def 11,  4, 2, ROUTE_10_EAST
 	warp_def  7,  3, 1, ICE_CAVE_B2F
 
 	db 0 ; coord events

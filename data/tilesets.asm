@@ -234,7 +234,8 @@ INCBIN "gfx/tilesets/lab.2bpp.vram0.lz"
 TilesetLabGFX1::
 INCBIN "gfx/tilesets/lab.2bpp.vram1.lz"
 
-TilesetLabGFX2 EQU 0
+TilesetLabGFX2::
+INCBIN "gfx/tilesets/lab.2bpp.vram2.lz"
 
 TilesetLabMeta::
 INCBIN "data/tilesets/lab_metatiles.bin.lz"
@@ -608,25 +609,25 @@ INCBIN "data/tilesets/nett_building_attributes.bin.lz"
 TilesetNettBuildingColl::
 INCLUDE "data/tilesets/nett_building_collision.asm"
 
-SECTION "Tileset Data - harbor", ROMX
+SECTION "Tileset Data - shimmer", ROMX
 
-TilesetHarborGFX0::
-INCBIN "gfx/tilesets/harbor.2bpp.vram0.lz"
+TilesetShimmerGFX0::
+INCBIN "gfx/tilesets/shimmer.2bpp.vram0.lz"
 
-TilesetHarborGFX1::
-INCBIN "gfx/tilesets/harbor.2bpp.vram1.lz"
+TilesetShimmerGFX1::
+INCBIN "gfx/tilesets/shimmer.2bpp.vram1.lz"
 
-TilesetHarborGFX2::
-INCBIN "gfx/tilesets/harbor.2bpp.vram2.lz"
+TilesetShimmerGFX2::
+INCBIN "gfx/tilesets/shimmer.2bpp.vram2.lz"
 
-TilesetHarborMeta::
-INCBIN "data/tilesets/harbor_metatiles.bin.lz"
+TilesetShimmerMeta::
+INCBIN "data/tilesets/shimmer_metatiles.bin.lz"
 
-TilesetHarborAttr::
-INCBIN "data/tilesets/harbor_attributes.bin.lz"
+TilesetShimmerAttr::
+INCBIN "data/tilesets/shimmer_attributes.bin.lz"
 
-TilesetHarborColl::
-INCLUDE "data/tilesets/harbor_collision.asm"
+TilesetShimmerColl::
+INCLUDE "data/tilesets/shimmer_collision.asm"
 
 
 SECTION "Tileset Headers", ROMX
@@ -670,4 +671,4 @@ Tilesets::
 	tileset TilesetTrain
 	tileset TilesetIceCave
 	tileset TilesetNettBuilding
-	tileset TilesetHarbor
+	tileset TilesetShimmer

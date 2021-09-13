@@ -40,6 +40,7 @@ Landmarks: ; 0x1ca8c3
 	landmark 136,  80, LusterCityName
 	landmark 132,  80, LusterSewersName
 	landmark 132,  92, ParkName
+	landmark   0,   0, ShimmerName
 	
 	landmark 136,  80, LusterStationName
 	landmark 136,  80, ResidentialName
@@ -83,6 +84,7 @@ FrozenRuinsName: 	   db "FROZEN¯RUINS@"
 LusterCityName:		   db "LUSTER¯CITY@"
 LusterSewersName:	   db "LUSTER¯SEWERS@"
 ParkName:			   db "PARK@"
+ShimmerName:           db "SHIMMER¯CITY@"
 
 LusterStationName:	   db "LUSTER¯CITY@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"

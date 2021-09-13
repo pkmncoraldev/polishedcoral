@@ -103,7 +103,7 @@ Route10TentNPCText1:
 Route10TentNPCText2:
 	text "I work at a"
 	line "RESEARCH LAB in"
-	cont "UNFINISHED."
+	cont "SHIMMER CITY."
 	
 	para "This looks just"
 	line "like an artifact"
@@ -181,7 +181,7 @@ Route10TentNPCText9:
 	
 	para "I work at a"
 	line "RESEARCH LAB in"
-	cont "UNFINISHED."
+	cont "SHIMMER CITY."
 	
 	para "This looks just"
 	line "like an artifact"

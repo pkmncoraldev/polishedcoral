@@ -27,7 +27,7 @@
 	RGB 20, 09, 11
 	RGB 31, 08, 04
 	RGB 10, 03, 06
-	RGB 18, 05, 09
+	RGB 17, 04, 08
 ;6 - Lake Onwa
 	RGB 16, 10, 00
 	RGB 20, 14, 04
@@ -53,7 +53,7 @@
 	RGB 10, 13, 00
 	RGB 08, 11, 02
 	RGB 05, 08, 00
-;11 - Starshine
+;11 - Twinkle
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 00, 00, 00
@@ -68,3 +68,13 @@
 	RGB 13, 12, 31
 	RGB 10, 09, 20
 	RGB 04, 03, 18
+;14 - Nett Building
+	RGB 21, 21, 21
+	RGB 11, 11, 11
+	RGB 21, 21, 21
+	RGB 11, 11, 11
+;15 - Shimmer City
+	RGB 21, 21, 21
+	RGB 11, 09, 25
+	RGB 11, 11, 19
+	RGB 05, 03, 15

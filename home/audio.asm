@@ -459,7 +459,7 @@ GetPlayerStateMusic:
 ;	jr z, .bike
 	jp GetMapHeaderMusic
 
-TestSurfMusic:
+DoSurfMusic:
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
 	jr z, .surf
@@ -474,7 +474,9 @@ music_map: MACRO
 	map_id \1
 	dw \2
 ENDM
-	music_map SUNSET_BAY, TestSurfMusic
+	music_map SUNSET_BAY, DoSurfMusic
+	music_map SUNSET_CAPE, DoSurfMusic
+	music_map SHIMMER_CITY, DoSurfMusic
 ;	music_map INDIGO_PLATEAU, GetMapHeaderMusic
 ;	music_map QUIET_CAVE_1F, GetMapHeaderMusic
 ;	music_map QUIET_CAVE_B1F, GetMapHeaderMusic

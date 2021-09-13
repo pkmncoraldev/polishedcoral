@@ -242,9 +242,10 @@ INCLUDE "maps/NettBuildingFBathroom.asm"
 INCLUDE "maps/NettBuildingStairwell.asm"
 INCLUDE "maps/NettBuildingOffice.asm"
 
-SECTION "Harbor Scripts", ROMX
+SECTION "Shimmer City Scripts", ROMX
 
-INCLUDE "maps/Harbor.asm"
+INCLUDE "maps/ShimmerCity.asm"
+INCLUDE "maps/ShimmerLabLobby.asm"
 
 SECTION "Train Scripts", ROMX
 

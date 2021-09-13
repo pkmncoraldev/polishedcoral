@@ -274,5 +274,6 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 13
 	
-	map_const HARBOR,					  				  27, 16 ; 1
+	map_const SHIMMER_CITY,					  			  27, 16 ; 1
+	map_const SHIMMER_LAB_LOBBY,			  			   9,  3 ; 2
 	

@@ -16,5 +16,6 @@ SpawnPoints: ; 0x152ab
 	spawn FLICKER_STATION,			   37, 30
 	spawn TWINKLE_TOWN,				   11, 48
 	spawn LUSTER_CITY_RESIDENTIAL,	   17, 26
+	spawn SHIMMER_CITY,                36, 16
 	
 	spawn N_A,                        -1, -1

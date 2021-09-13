@@ -87,7 +87,7 @@ ENDM
 
 
 	map_attributes SunsetBay, SUNSET_BAY, $71, SOUTH | EAST
-	connection south, Harbor, HARBOR, 2
+	connection south, ShimmerCity, SHIMMER_CITY, 2
 	connection east, SunsetCape, SUNSET_CAPE, 1
 	
 	map_attributes SunsetCape, SUNSET_CAPE, 53, WEST
@@ -264,7 +264,7 @@ ENDM
 	map_attributes Skatepark, SKATEPARK, $02, WEST
 	connection west, Park, PARK, -1
 	
-	map_attributes Harbor, HARBOR, $71, NORTH
+	map_attributes ShimmerCity, SHIMMER_CITY, $71, NORTH
 	connection north, SunsetBay, SUNSET_BAY, -2
 	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
@@ -427,6 +427,7 @@ ENDM
 	map_attributes NettBuildingFBathroom, NETT_BUILDING_F_BATHROOM, 0, 0
 	map_attributes NettBuildingStairwell, NETT_BUILDING_STAIRWELL, 0, 0
 	map_attributes NettBuildingOffice, NETT_BUILDING_OFFICE, 0, 0
+	map_attributes ShimmerLabLobby, SHIMMER_LAB_LOBBY, 0, 0
 	
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0

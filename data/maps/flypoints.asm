@@ -16,8 +16,9 @@ Flypoints:
 	flypoint FLICKER,			FLICKER_STATION
 	flypoint TWINKLE,			TWINKLE_TOWN
 	flypoint LUSTER,			LUSTER_CITY
+	flypoint SHIMMER,			SHIMMER_CITY
 	
-	flypoint LASTFLYPOINT,		LUSTER_CITY
+	flypoint LASTFLYPOINT,		SHIMMER_CITY
 KANTO_FLYPOINT EQU const_value
 	
 	flypoint KANTO,      CINNABAR_LAB

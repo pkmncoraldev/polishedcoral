@@ -62,4 +62,6 @@ Music:
 	dba Music_EventideVillage
 	dba Music_SnareVictory
 	dba Music_Clown
+	dba Music_MinibossBattle
+	dba Music_ShimmerCity
 	

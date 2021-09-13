@@ -47,7 +47,6 @@ TilesetLibraryAnim::
 TilesetSnowAnim::
 TilesetMall2Anim::
 TilesetIceCaveAnim::
-TilesetHarborAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -153,6 +152,28 @@ TilesetTrainAnim::
 TilesetSunsetAnim::
 TilesetGlintAnim::
 TilesetStarglowAnim::
+	dw VTiles2 tile $14, WriteTileToBuffer
+	dw NULL,  WaitTileAnimation
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $14, WriteTileFromBuffer
+	dw NULL,  AnimateFlowerTile
+	dw NULL,  WaitTileAnimation
+	dw WaterfallFrames, AnimateWaterfallTiles
+    dw Waterfall2Frames, AnimateWaterfallTiles
+    dw Waterfall3Frames, AnimateWaterfallTiles
+	dw VTiles2 tile $36, AnimateTopofWaterfall
+	dw ShorelineFrames3,  AnimateWaterfallTiles
+	dw ShorelineFrames,  AnimateWaterfallTiles
+	dw ShorelineFrames2,  AnimateWaterfallTiles
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
+TilesetShimmerAnim::
 	dw VTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft

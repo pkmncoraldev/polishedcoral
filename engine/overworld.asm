@@ -285,6 +285,8 @@ LoadEmoteGFX::
 	jp z, .outdoor
 	cp TILESET_SNOW
 	jp z, .snow
+	cp TILESET_SHIMMER
+	jp z, .outdoor
 	cp TILESET_PLAYER_HOUSE
 	jp z, .playerhouse
 	call GetMapPermission

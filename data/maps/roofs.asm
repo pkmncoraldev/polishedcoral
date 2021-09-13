@@ -12,11 +12,11 @@ MapGroupRoofs:
 	db  2 ; group 8  (Eventide Forest)
 	db  2 ; group 9  (Eventide Village)
 	db  2 ; group 10 (Flicker Station)
-	db -1 ; group 11 (Train)
-	db  0 ; group 12 (Luster City)
-	db -1 ; group 13
-	db -1 ; group 14
-	db -1 ; group 15
+	db -1 ; group 11 (Twinkle Town)
+	db -1 ; group 12 (Train)
+	db -1 ; group 13 (Luster City)
+	db -1 ; group 14 (Nett Building)
+	db  3 ; group 15 (Shimmer City)
 	db -1 ; group 16
 	db -1 ; group 17
 	db -1 ; group 18

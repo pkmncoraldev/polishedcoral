@@ -43,6 +43,7 @@
 	const LUSTER_CITY		 ; 21
 	const LUSTER_SEWERS		 ; 22
 	const PARK				 ; 23
+	const SHIMMER_CITY		 ; 24
 	
 	const LUSTER_STATION
 	const RESIDENTIAL_DISTRICT

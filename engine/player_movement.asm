@@ -115,12 +115,24 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, 4
 	ret
 
+.AltSkateboardTiles:
+	ld a, [wPlayerStandingTile]
+	ld hl, SkateboardTiles2
+	ld de, 1
+	call IsInArray
+	jr nc, .SkatingOffRoad
+	jr .NotSkatingOffRoad
+	
 .Skating:
+	ld a, [wTileset]
+	cp TILESET_SHIMMER
+	jr z, .AltSkateboardTiles
 	ld a, [wPlayerStandingTile]
 	ld hl, SkateboardTiles
 	ld de, 1
 	call IsInArray
 	jr nc, .SkatingOffRoad
+.NotSkatingOffRoad
 	xor a
 	ld [wSkateboardOffRoad], a
 	ld a, [wLastWalkingDirection]
@@ -1781,16 +1793,22 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp COLL_GRIND
 	jr z, .CheckLandPermsFarAheadGrind
 	cp COLL_WARP_CARPET_DOWN
-	jr z, .NotWalkable
+	jr z, .carpet
 	cp COLL_WARP_CARPET_LEFT
-	jr z, .NotWalkable
+	jr z, .carpet
 	cp COLL_WARP_CARPET_UP
-	jr z, .NotWalkable
+	jr z, .carpet
 	cp COLL_WARP_CARPET_RIGHT
-	jr z, .NotWalkable
+	jr z, .carpet
+.RunTileChecksReturn
 	call .CheckWalkable
 	jr c, .NotWalkable
 	jr .CheckLandPermsFarAheadEnd
+.carpet
+	ld a, [wTileset]
+	cp TILESET_SHIMMER
+	jr z, .NotWalkable
+	jr .RunTileChecksReturn
 	
 .CheckSkatableFarAhead:: ; 8039e
 	ld a, [wWalkingDirection]
@@ -1805,32 +1823,16 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr .CheckSkatableFarAheadEnd2
 .CheckSkatableFarAheadUp
 	ld a, [wTileUpFar]
-	ld hl, SkateboardTiles
-	ld de, 1
-	call IsInArray
-	jr c, .CheckSkatableFarAheadEnd
-	jr .CheckSkatableFarAheadEnd2
+	jr .CheckSkateTiles
 .CheckSkatableFarAheadDown
 	ld a, [wTileDownFar]
-	ld hl, SkateboardTiles
-	ld de, 1
-	call IsInArray
-	jr c, .CheckSkatableFarAheadEnd
-	jr .CheckSkatableFarAheadEnd2
+	jr .CheckSkateTiles
 .CheckSkatableFarAheadLeft
 	ld a, [wTileLeftFar]
-	ld hl, SkateboardTiles
-	ld de, 1
-	call IsInArray
-	jr c, .CheckSkatableFarAheadEnd
-	jr .CheckSkatableFarAheadEnd2
+	jr .CheckSkateTiles
 .CheckSkatableFarAheadRight
 	ld a, [wTileRightFar]
-	ld hl, SkateboardTiles
-	ld de, 1
-	call IsInArray
-	jr c, .CheckSkatableFarAheadEnd
-	jr .CheckSkatableFarAheadEnd2
+	jr .CheckSkateTiles
 .CheckSkatableFarAheadEnd:
 	scf
 	ret
@@ -1838,6 +1840,12 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	xor a
 	ret
 	
+.CheckSkateTiles:
+	ld hl, SkateboardTiles
+	ld de, 1
+	call IsInArray
+	jr c, .CheckSkatableFarAheadEnd
+	jr .CheckSkatableFarAheadEnd2
 
 .CheckSurfPerms: ; 803b4
 ; Return 0 if moving in water, or 1 if moving onto land.
@@ -2206,9 +2214,30 @@ SkateboardTiles::
 	db COLL_SKATE_DOWN_LEFT_WALL
 	db COLL_SKATE_UP_RIGHT_WALL
 	db COLL_SKATE_UP_LEFT_WALL
+	db COLL_GRIND
 	db COLL_WARP_CARPET_RIGHT
 	db COLL_WARP_CARPET_LEFT
 	db COLL_WARP_CARPET_UP
 	db COLL_WARP_CARPET_DOWN
+	db -1
+	
+SkateboardTiles2::
+	db COLL_SKATE
+	db COLL_SKATE_LEDGE_RIGHT
+	db COLL_SKATE_LEDGE_LEFT
+	db COLL_SKATE_LEDGE_UP
+	db COLL_SKATE_LEDGE_DOWN
+	db COLL_SKATE_LEDGE_DOWN_RIGHT
+	db COLL_SKATE_LEDGE_DOWN_LEFT
+	db COLL_SKATE_LEDGE_UP_RIGHT
+	db COLL_SKATE_LEDGE_UP_LEFT
+	db COLL_SKATE_RIGHT_WALL
+	db COLL_SKATE_LEFT_WALL
+	db COLL_SKATE_UP_WALL
+	db COLL_SKATE_DOWN_WALL
+	db COLL_SKATE_DOWN_RIGHT_WALL
+	db COLL_SKATE_DOWN_LEFT_WALL
+	db COLL_SKATE_UP_RIGHT_WALL
+	db COLL_SKATE_UP_LEFT_WALL
 	db COLL_GRIND
 	db -1

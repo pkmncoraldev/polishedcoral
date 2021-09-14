@@ -1139,17 +1139,20 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 
 .DoJump
 	
-;	ld a, [wOnSkateboard]
-;	cp 0
-;	jr z, .not_on_skateboard
-;	call .CheckSkatableFarAhead
-;	jr c, .not_on_skateboard
+	call .CheckSkatableFarAhead
+	jr c, .not_on_skateboard
+	ld a, [wLastWalkingDirection]
+	ld [wPlaceBallsY], a
+	ld a, 69
+	ld [wSkateboardGrinding], a
+	jr .not_on_skateboard2
+.not_on_skateboard
 	ld a, [wLastWalkingDirection]
 	ld [wPlaceBallsY], a
 	xor a
 	ld [wSkateboardGrinding], a
 	
-;.not_on_skateboard
+.not_on_skateboard2
 	ld de, SFX_JUMP_OVER_LEDGE
 	call PlaySFX
 	xor a

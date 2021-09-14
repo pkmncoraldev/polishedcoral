@@ -55,6 +55,7 @@ Pointers445f: ; 445f
 	dw SetFacingBigMuk,		           SetFacingBigMuk		      ; PERSON_ACTION_BIG_MUK
 	dw SetFacingBigMuk2,		       SetFacingBigMuk2		      ; PERSON_ACTION_BIG_MUK_2
 	dw SetFacingBigMuk3,		       SetFacingBigMuk3		      ; PERSON_ACTION_BIG_MUK_3
+	dw SetFacingStall,			       SetFacingStall		      ; PERSON_ACTION_STALL
 	
 ; 44a3
 
@@ -555,5 +556,9 @@ SetFacingBigMuk2:
 	
 SetFacingBigMuk3:
 	ld a, FACING_BIG_MUK_3
+	jp SetFixedFacing
+	
+SetFacingStall:
+	ld a, FACING_STALL
 	jp SetFixedFacing
 	

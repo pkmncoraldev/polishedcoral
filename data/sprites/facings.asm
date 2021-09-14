@@ -76,6 +76,7 @@ Facings:
 	dw FacingBigMuk
 	dw FacingBigMuk2
 	dw FacingBigMuk3
+	dw FacingStall
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -671,14 +672,19 @@ FacingBigMuk2:
 	
 FacingBigMuk3:
 	db 11 ; #
-	db  8,  -2, 0, $84
-	db  8,  6, 0, $85
-	db  8,  14, 0, $86
-	db  8,  22, 0, $87
+	db   8, -2, 0, $84
+	db   8,  6, 0, $85
+	db   8, 14, 0, $86
+	db   8, 22, 0, $87
 	db  16, -2, 0, $88
 	db  16,  6, 0, $89
-	db  16,  14, 0, $8a
-	db  16,  22, 0, $8b
+	db  16, 14, 0, $8a
+	db  16, 22, 0, $8b
 	db  24, -2, 0, $8c
 	db  24,  6, 0, $8d
-	db  24,  14, 0, $8e
+	db  24, 14, 0, $8e
+	
+FacingStall:
+	db 1 ; #
+	db   10,  8, 0, $04
+

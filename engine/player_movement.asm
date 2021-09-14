@@ -252,6 +252,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret c
 	call .TrySurf
 	ret c
+	call .CheckWarp
+	ret c
 	jr .NotMoving
 	
 .Ice:
@@ -1263,13 +1265,12 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 .not_warp
 	xor a
 	ret
-
+	
 .EdgeWarps:
 	db COLL_WARP_CARPET_DOWN
 	db COLL_WARP_CARPET_UP
 	db COLL_WARP_CARPET_LEFT
 	db COLL_WARP_CARPET_RIGHT
-; 8025f
 
 .DoStep:
 	ld e, a
@@ -1755,37 +1756,37 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr .NotWalkable
 .CheckLandPermsFarAheadUp
 	ld a, [wTileUpFar]
-	cp COLL_GRIND
-	jr z, .CheckLandPermsFarAheadGrind
-	call .CheckWalkable
-	jr c, .NotWalkable
-	jr .CheckLandPermsFarAheadEnd
+	jr .RunTileChecks
 .CheckLandPermsFarAheadDown
 	ld a, [wTileDownFar]
-	cp COLL_GRIND
-	jr z, .CheckLandPermsFarAheadGrind
-	call .CheckWalkable
-	jr c, .NotWalkable
-	jr .CheckLandPermsFarAheadEnd
+	jr .RunTileChecks
 .CheckLandPermsFarAheadLeft
 	ld a, [wTileLeftFar]
-	cp COLL_GRIND
-	jr z, .CheckLandPermsFarAheadGrind
-	call .CheckWalkable
-	jr c, .NotWalkable
-	jr .CheckLandPermsFarAheadEnd
+	jr .RunTileChecks
 .CheckLandPermsFarAheadRight
 	ld a, [wTileRightFar]
-	cp COLL_GRIND
-	jr z, .CheckLandPermsFarAheadGrind
-	call .CheckWalkable
-	jr c, .NotWalkable
+	jr .RunTileChecks
 .CheckLandPermsFarAheadEnd:
 	xor a
 	ret
 .CheckLandPermsFarAheadGrind:
 	set 6, a
 	ld [wInputFlags], a
+	jr .CheckLandPermsFarAheadEnd
+	
+.RunTileChecks
+	cp COLL_GRIND
+	jr z, .CheckLandPermsFarAheadGrind
+	cp COLL_WARP_CARPET_DOWN
+	jr z, .NotWalkable
+	cp COLL_WARP_CARPET_LEFT
+	jr z, .NotWalkable
+	cp COLL_WARP_CARPET_UP
+	jr z, .NotWalkable
+	cp COLL_WARP_CARPET_RIGHT
+	jr z, .NotWalkable
+	call .CheckWalkable
+	jr c, .NotWalkable
 	jr .CheckLandPermsFarAheadEnd
 	
 .CheckSkatableFarAhead:: ; 8039e
@@ -1978,7 +1979,6 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 .CheckSurfable: ; 803da
 ; Return 0 if tile a is water, or 1 if land.
 ; Otherwise, return carry.
-
 	call GetTileCollision
 	cp WATERTILE
 	jr z, .Water
@@ -2195,6 +2195,14 @@ SkateboardTiles::
 	db COLL_SKATE_LEDGE_DOWN_LEFT
 	db COLL_SKATE_LEDGE_UP_RIGHT
 	db COLL_SKATE_LEDGE_UP_LEFT
+	db COLL_SKATE_RIGHT_WALL
+	db COLL_SKATE_LEFT_WALL
+	db COLL_SKATE_UP_WALL
+	db COLL_SKATE_DOWN_WALL
+	db COLL_SKATE_DOWN_RIGHT_WALL
+	db COLL_SKATE_DOWN_LEFT_WALL
+	db COLL_SKATE_UP_RIGHT_WALL
+	db COLL_SKATE_UP_LEFT_WALL
 	db COLL_WARP_CARPET_RIGHT
 	db COLL_WARP_CARPET_LEFT
 	db COLL_WARP_CARPET_UP

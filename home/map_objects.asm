@@ -112,6 +112,15 @@ GetTileCollision:: ; 185d
 	push de
 	push hl
 
+	cp COLL_WARP_CARPET_DOWN
+	jr z, .carpet
+	cp COLL_WARP_CARPET_LEFT
+	jr z, .carpet
+	cp COLL_WARP_CARPET_UP
+	jr z, .carpet
+	cp COLL_WARP_CARPET_RIGHT
+	jr z, .carpet
+	
 	ld hl, TileCollisionTable
 	ld e, a
 	ld d, 0
@@ -126,12 +135,22 @@ GetTileCollision:: ; 185d
 	rst Bankswitch
 
 	ld a, e
+.return
 	and $f ; lo nybble only
 
 	pop hl
 	pop de
 	ret
-; 1875
+
+.carpet
+	ld a, [wPlayerState]
+	cp PLAYER_SURF
+	jp z, .water
+	ld a, LANDTILE
+	jr .return
+.water
+	ld a, WATERTILE
+	jr .return
 
 CheckSpinTile::
 	cp COLL_SPIN_UP

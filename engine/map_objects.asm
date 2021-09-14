@@ -612,6 +612,7 @@ MapObjectMovementPattern:
 	dw .MovementBigMuk
 	dw .MovementBigMuk2
 	dw .MovementBigMuk3
+	dw .MovementStall
 
 .RandomWalkY:
 	call Random
@@ -846,11 +847,11 @@ MapObjectMovementPattern:
 	
 .MovementHalfpipe1:
 	ld a, PERSON_ACTION_HALFPIPE_1
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementHalfpipe2:
 	ld a, PERSON_ACTION_HALFPIPE_2
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementTopHalf:
 	ld a, PERSON_ACTION_TOP_HALF
@@ -922,6 +923,10 @@ MapObjectMovementPattern:
 	
 .MovementBigMuk3:
 	ld a, PERSON_ACTION_BIG_MUK_3
+	jr ._ActionA_StepType04
+	
+.MovementStall:
+	ld a, PERSON_ACTION_STALL
 	jr ._ActionA_StepType04
 	
 .MovementUmbrellaLeft:

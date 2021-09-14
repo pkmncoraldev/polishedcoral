@@ -45,7 +45,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 2c
 	tilecoll HEADBUTT_TREE, WALL, HEADBUTT_TREE, WALL ; 2d
 	tilecoll WALL, WALL, WALL, WALL ; 2e
-	tilecoll SKATE, SKATE, TOP_WALL, TOP_WALL ; 2f
+	tilecoll SKATE, SKATE, UP_WALL, UP_WALL ; 2f
 	tilecoll WALL, WALL, WALL, WALL ; 30
 	tilecoll WALL, WALL, WALL, WALL ; 31
 	tilecoll HEADBUTT_TREE, WALL, HEADBUTT_TREE, WALL ; 32
@@ -65,7 +65,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 40
 	tilecoll SKATE, WALL, STAIRS, WALL ; 41
 	tilecoll WALL, WALL, WALL, HEADBUTT_TREE ; 42
-	tilecoll TOP_WALL, TOP_WALL, FLOOR, FLOOR ; 43
+	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; 43
 	tilecoll WALL, WALL, WALL, WALL ; 44
 	tilecoll WALL, WALL, DOOR, DOOR ; 45
 	tilecoll WALL, WALL, WALL, WALL ; 46
@@ -82,7 +82,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 51
 	tilecoll WATER, WATER, WATER, WATER ; 52
 	tilecoll WALL, WALL, WALL, WALL ; 53
-	tilecoll WALL, WALL, TOP_WALL, TOP_WALL ; 54
+	tilecoll WALL, WALL, UP_WALL, UP_WALL ; 54
 	tilecoll WATER, WATER, WATER, WATER ; 55
 	tilecoll WATER, WATER, WATER, WATER ; 56
 	tilecoll WATER, WATER, WATER, WATER ; 57
@@ -96,7 +96,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 5f
 	tilecoll WALL, WALL, WALL, WALL ; 60
 	tilecoll WALL, WALL, WALL, WALL ; 61
-	tilecoll WALL, WALL, TOP_WALL, TOP_WALL ; 62
+	tilecoll WALL, WALL, UP_WALL, UP_WALL ; 62
 	tilecoll WALL, WALL, WALL, WALL ; 63
 	tilecoll WALL, WALL, WALL, SKATE ; 64
 	tilecoll WALL, WALL, SKATE, SKATE ; 65
@@ -148,7 +148,7 @@
 	tilecoll WALL, WALL, SKATE, SKATE ; 93
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 94
 	tilecoll SKATE, WALL, SKATE, WALL ; 95
-	tilecoll TOP_WALL, TOP_WALL, SKATE, SKATE ; 96
+	tilecoll UP_WALL, UP_WALL, SKATE, SKATE ; 96
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 97
 	tilecoll WALL, GRIND, WALL, GRIND ; 98
 	tilecoll WALL, GRIND, WALL, GRIND ; 99
@@ -170,7 +170,7 @@
 	tilecoll SKATE, WALL, SKATE, WALL ; a9
 	tilecoll WALL, WALL, WALL, WALL ; aa
 	tilecoll WALL, WALL, WALL, SKATE ; ab
-	tilecoll WALL, WALL, TOP_WALL, TOP_WALL ; ac
+	tilecoll WALL, WALL, UP_WALL, UP_WALL ; ac
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; ad
 	tilecoll STAIRS, GRIND, SKATE, GRIND ; ae
 	tilecoll SKATE, GRIND, SKATE, SKATE ; af

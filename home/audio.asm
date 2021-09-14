@@ -476,7 +476,7 @@ music_map: MACRO
 ENDM
 	music_map SUNSET_BAY, DoSurfMusic
 	music_map SUNSET_CAPE, DoSurfMusic
-	music_map SHIMMER_CITY, DoSurfMusic
+;	music_map SHIMMER_CITY, DoSurfMusic
 ;	music_map INDIGO_PLATEAU, GetMapHeaderMusic
 ;	music_map QUIET_CAVE_1F, GetMapHeaderMusic
 ;	music_map QUIET_CAVE_B1F, GetMapHeaderMusic

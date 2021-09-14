@@ -554,3 +554,6 @@ ShimmerCity_BlockData:
 
 ShimmerLabLobby_BlockData:
 	INCBIN "maps/ShimmerLabLobby.ablk.lz"
+	
+ShimmerUnderBoardwalk_BlockData:
+	INCBIN "maps/ShimmerUnderBoardwalk.ablk.lz"

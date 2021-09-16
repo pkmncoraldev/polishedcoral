@@ -77,7 +77,8 @@ Facings:
 	dw FacingBigMuk2
 	dw FacingBigMuk3
 	dw FacingStall
-	dw FacingBinoculars
+	dw FacingBinoculars1
+	dw FacingBinoculars2
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -687,10 +688,15 @@ FacingBigMuk3:
 	
 FacingStall:
 	db 1 ; #
-	db   4,  0, 0, $07
+	db   4,  0, 0, $05
 	
-FacingBinoculars:
+FacingBinoculars1:
 	db 2 ; #
 	db 12,  0, 0, $06
 	db 12,  8, 0, $06
+	
+FacingBinoculars2:
+	db 2 ; #
+	db 12,  0, 0, $07
+	db 12,  8, 0, $07
 

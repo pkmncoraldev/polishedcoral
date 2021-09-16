@@ -613,7 +613,8 @@ MapObjectMovementPattern:
 	dw .MovementBigMuk2
 	dw .MovementBigMuk3
 	dw .MovementStall
-	dw .MovementBinoculars
+	dw .MovementBinoculars1
+	dw .MovementBinoculars2
 
 .RandomWalkY:
 	call Random
@@ -856,7 +857,7 @@ MapObjectMovementPattern:
 	
 .MovementTopHalf:
 	ld a, PERSON_ACTION_TOP_HALF
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementBottomHalf:
 	ld a, PERSON_ACTION_BOTTOM_HALF
@@ -930,8 +931,12 @@ MapObjectMovementPattern:
 	ld a, PERSON_ACTION_STALL
 	jr ._ActionA_StepType04
 	
-.MovementBinoculars:
-	ld a, PERSON_ACTION_BINOCULARS
+.MovementBinoculars1:
+	ld a, PERSON_ACTION_BINOCULARS_1
+	jr ._ActionA_StepType04
+	
+.MovementBinoculars2:
+	ld a, PERSON_ACTION_BINOCULARS_2
 	jr ._ActionA_StepType04
 	
 .MovementUmbrellaLeft:

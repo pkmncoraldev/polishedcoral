@@ -33,10 +33,12 @@ ShimmerCity_MapScriptHeader:
 	signpost 13, 18, SIGNPOST_LEFT, ShimmerCityFishMarket
 	signpost 16, 18, SIGNPOST_LEFT, ShimmerCityBerryMarket
 
-	db 3 ; object events
+	db 5 ; object events
 	person_event SPRITE_FISHING_GURU, 13, 17, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc1, -1
 	person_event SPRITE_POKEFAN_F, 16, 17, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc2, -1
 	person_event SPRITE_BOOK_PAPER_POKEDEX, 15, 18, SPRITEMOVEDATA_STALL, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
+	person_event SPRITE_BOOK_PAPER_POKEDEX,  3,  4, SPRITEMOVEDATA_BINOCULARS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
+	person_event SPRITE_BOOK_PAPER_POKEDEX,  3,  6, SPRITEMOVEDATA_BINOCULARS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 
 	
 ShimmerCityFishMarket:

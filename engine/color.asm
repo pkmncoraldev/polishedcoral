@@ -1359,8 +1359,20 @@ LoadMapPals::
 .shimmer
 	ld a, [wMapNumber]
 	cp MAP_SHIMMER_CITY
-	jr z, .lighthouse
+	jp z, .binoculars
 	jr .normal
+	
+.binoculars
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	ld hl, MapObjectPalsBinoculars
+	call AddNTimes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	jr .outside
 	
 .candle
 	ld hl, MapObjectPalsCandle
@@ -1554,6 +1566,9 @@ INCLUDE "maps/palettes/obpals/obsailboat.pal"
 
 MapObjectPalsLighthouse::
 INCLUDE "maps/palettes/obpals/oblighthouse.pal"
+
+MapObjectPalsBinoculars::
+INCLUDE "maps/palettes/obpals/obbinoculars.pal"
 
 MapObjectPalsSkatepark::
 INCLUDE "maps/palettes/obpals/obskatepark.pal"

@@ -284,6 +284,19 @@ UnknownText_0x1c4d2a::
 	line "sweetie!"
 	done
 
+UnknownText_FishMarket_Intro::
+	text "FISH MARKET"
+	done
+	
+UnknownText_FishMarket_AnythingElse::
+	text "Anything else?"
+	done
+	
+UnknownText_FishMarket_Cant_Buy_That_Mon::
+	text "I can't buy that"
+	line "#MON!"
+	done
+	
 UnknownText_BerryMarket_Intro::
 	text "I sell BERRIES"
 	line "here that I grow"

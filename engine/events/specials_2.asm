@@ -360,7 +360,7 @@ SpecialGiveShinyTogepi:
 	lb bc, FEMALE, POKE_BALL
 	farcall SetGiftPartyMonCaughtData
 
-; Holding an Oran Berry.
+; Holding an Lucky Egg.
 	ld hl, wPartyMon1Item
 	call _GetLastPartyMonAttribute
 	ld [hl], LUCKY_EGG

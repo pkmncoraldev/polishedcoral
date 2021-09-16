@@ -262,10 +262,10 @@ endc
 
 ItemIconPalettes:
 CaughtBallPals:
-if !DEF(MONOCHROME)
 ; NO ITEM
 	RGB 20, 20, 20
 	RGB 10, 10, 10
+BuyMonIconPals:
 ; POKE BALL
 	RGB 30, 10, 06
 	RGB 30, 10, 06
@@ -1028,11 +1028,6 @@ if !DEF(MONOCHROME)
 ; MIRAGE MAIL
 	RGB 07, 26, 31
 	RGB 00, 21, 00
-else
-rept 255
-	MONOCHROME_RGB_TWO
-endr
-endc
 CancelPalette:
 if !DEF(MONOCHROME)
 ; CANCEL

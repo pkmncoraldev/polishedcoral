@@ -1,3 +1,7 @@
+GetFishMarketPrice:
+	ld hl, FishMarketRewards
+	jr GetItemManiacPrice
+
 GetGourmetManiacPrice:
 	ld hl, GourmetManiacItemRewards
 	jr GetItemManiacPrice

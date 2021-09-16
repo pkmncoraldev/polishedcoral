@@ -9,26 +9,18 @@ SelectMonFromParty: ; 50000
 	call DelayFrame
 	call PartyMenuSelect
 	jp ReturnToMapWithSpeechTextbox
-; 5001d
 
-
-SelectTradeOrDaycareMon: ; 5001d
+SelectTradeOrDaycareMon:
 	xor a
-	ld [wPartyMenuActionText], a
-	call DisableSpriteUpdates
-	call ClearBGPalettes
-	call InitPartyMenuLayout
-	call ApplyTilemapInVBlank
-	ld b, CGB_PARTY_MENU
-	call GetCGBLayout
-	call SetPalettes
-	call DelayFrame
-	call PartyMenuSelect
-	jp ReturnToMapWithSpeechTextbox
-; 5003f
+	jp SelectMonFinish
 
 SelectEncounterHouseMon::
 	ld a, 6
+	jp SelectMonFinish
+	
+SelectFishMarketSellMon::
+	ld a, 10
+SelectMonFinish::
 	ld [wPartyMenuActionText], a
 	call DisableSpriteUpdates
 	call ClearBGPalettes
@@ -40,7 +32,6 @@ SelectEncounterHouseMon::
 	call DelayFrame
 	call PartyMenuSelect
 	jp ReturnToMapWithSpeechTextbox
-
 
 InitPartyMenuLayout: ; 5003f
 	call LoadPartyMenuGFX
@@ -365,13 +356,12 @@ PlacePartyMonTMHMCompatibility: ; 501e0
 ; 50221
 
 .string_able ; 50221
-	db "Able@"
+	db "ABLE@"
 ; 50226
 
 .string_not_able ; 50226
-	db "Not able@"
+	db "NOT ABLE@"
 ; 5022f
-
 
 PlacePartyMonEvoStoneCompatibility:
 	ld a, [wPartyCount]
@@ -822,6 +812,7 @@ PartyMenuStrings: ; 0x504d2
 	dw ChooseAMonString ; Probably used to be ChooseAMalePKMNString
 	dw ToWhichPKMNString
 	dw TutorWhichPKMNString
+	dw SellWhichPKMNString
 
 ChooseAMonString: ; 0x504e4
 	db "Choose a #mon.@"
@@ -839,7 +830,8 @@ ToWhichPKMNString: ; 0x50549
 	db "To which <PK><MN>?@"
 ShowHerAPKMNString:
 	db "Show her a <PK><MN>!@"
-
+SellWhichPKMNString:
+	db "Sell which <PK><MN>?@"
 YouHaveNoPKMNString: ; 0x50556
 	db "You have no <PK><MN>!@"
 

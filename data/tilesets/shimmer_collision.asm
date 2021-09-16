@@ -173,7 +173,7 @@
 	tilecoll STAIRS, WALL, SKATE, SKATE ; ac
 	tilecoll SKATE, WALL, SKATE, SKATE ; ad
 	tilecoll WALL, WALL, WALL, WALL ; ae
-	tilecoll SKATE, SKATE, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; af
+	tilecoll WATER, WATER, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; af
 	tilecoll WATER, WATER, WALL, WALL ; b0
 	tilecoll DOWN_WALL, FLOOR, DOOR, NO_OLLIE ; b1
 	tilecoll WALL, WATER, WALL, WATER ; b2

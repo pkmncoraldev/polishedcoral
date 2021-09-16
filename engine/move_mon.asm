@@ -2119,5 +2119,11 @@ InitNickname: ; e3de
 	pop hl
 	ld de, wStringBuffer1
 	call InitName
+	ld a, [wPlaceBallsX]
+	and a
+	jr nz, .buyingmon
 	jp ExitAllMenus
-; e3fd
+	
+.buyingmon
+	farcall BuyMenu_InitGFX
+	ret

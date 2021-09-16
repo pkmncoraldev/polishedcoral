@@ -1,3 +1,8 @@
+FishMarketRewards:
+	dbw MAGIKARP,  100
+	dbw CHINCHOU,  100
+	db -1
+
 GourmetManiacItemRewards:
 	dbw ORAN_BERRY,   20
 	dbw SITRUS_BERRY, 20

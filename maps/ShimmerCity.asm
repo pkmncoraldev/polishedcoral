@@ -45,7 +45,7 @@ ShimmerCityFishMarket:
 	
 ShimmerCityFishMarketAsm:
 	farcall Script_opentext
-	ld a, MARTTYPE_STANDARD
+	ld a, MARTTYPE_FISH_MARKET
 	ld c, a
 	ld a, MART_SHIMMER_FISH_MARKET
 	ld e, a

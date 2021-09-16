@@ -37,7 +37,7 @@ OpenMartDialog:: ; 15a45
 	dw ClothesShop
 	dw BallShop
 	dw BallShopDiscount
-	dw HerbShop ;FishMarket
+	dw FishMarket
 	dw BerryMarket
 ; 15a61
 
@@ -358,15 +358,123 @@ StandardMart: ; 15b47
 	call MartTextBox
 	ld a, $ff ; exit
 	ret
-; 15baf
-
+	
 .AnythingElse: ; 15baf
 	call LoadStandardMenuDataHeader
 	ld hl, Text_Mart_AnythingElse
 	call PrintText
 	ld a, $1 ; top menu
 	ret
+
+FishMarket: ; 15b47
+.loop
+	ld a, [wEngineBuffer5]
+	ld hl, .MartFunctions
+	rst JumpTable
+	ld [wEngineBuffer5], a
+	cp $ff
+	jr nz, .loop
+	ret
+
+.MartFunctions:
+	dw .HowMayIHelpYou
+	dw .TopMenu
+	dw .Buy
+	dw .Sell
+	dw .Quit
+	dw .AnythingElse
+; 15b62
+
+.HowMayIHelpYou: ; 15b62
+	call LoadStandardMenuDataHeader
+	ld hl, Text_FishMarket_Intro
+	call PrintText
+	ld a, $1 ; top menu
+	ret
+; 15b6e
+
+.TopMenu: ; 15b6e
+	ld hl, MenuDataHeader_BuySell
+	call CopyMenuDataHeader
+	call VerticalMenu
+	jr c, .quit
+	ld a, [wMenuCursorY]
+	cp $1
+	jr z, .buy
+	cp $2
+	jr z, .sell
+.quit
+	ld a, $4 ;  Come again!
+	ret
+.buy
+	ld a, $2 ; buy
+	ret
+.sell
+	ld a, $3 ; sell
+	ret
+; 15b8d
+
+.Buy: ; 15b8d
+	call ExitMenu
+	call FarReadTMMart
+	call BuyPokemonMenu
+	and a
+	ld a, $5 ; Anything else?
+	ret
+; 15b9a
+
+.Sell: ; 15b9a
+	call ExitMenu
+.Sell2
+	farcall SelectFishMarketSellMon
+	jr c, .cancel
+	ld a, [wCurPartySpecies]
+	ld [wCurItem], a
+	ld hl, FishMarketSellMons
+	ld de, 1
+	call IsInArray
+	jr nc, .wrong
+	farcall GetFishMarketPrice
+	ld hl, Text_Mart_ICanPayThisMuch
+	call PrintTextBoxText
+	call YesNoBox
+	jr c, .cancel
+	farcall Give_hMoneyTemp
+	call PlayTransactionSound
+	farcall RemoveMonFromPartyOrBox
+	ld hl, Text_InformalMart_HereYouGo
+	call PrintText
+	call JoyWaitAorB
+	ld a, $ff ; Anything else?
+	ret
+.wrong
+	ld hl, Text_FishMarket_Cant_Buy_That_Mon
+	call MartTextBox
+	jr .Sell2
+	ret
+.cancel
+	ld a, $5 ; Anything else?
+	ret
+
+.Quit: ; 15ba3
+	call ExitMenu
+	ld hl, Text_InformalMart_HereYouGo
+	call MartTextBox
+	ld a, $ff ; exit
+	ret
+
+.AnythingElse: ; 15baf
+	call LoadStandardMenuDataHeader
+	ld hl, Text_FishMarket_AnythingElse
+	call PrintText
+	ld a, $1 ; top menu
+	ret
 ; 15bbb
+
+FishMarketSellMons::
+	dbw MAGIKARP, 1000
+	dbw CHINCHOU, 200
+	db -1
 
 FarReadMart: ; 15bbb
 	ld hl, wMartPointer
@@ -557,6 +665,13 @@ BuyRefreshmentsMenu:
 	jr nc, .loop
 	jr BuyMenu_Finish
 	
+BuyPokemonMenu:
+	call BuyMenu_InitGFX
+.loop
+	call BuyPokemonMenuLoop ; menu loop
+	jr nc, .loop
+	jr BuyMenu_Finish
+	
 BuyClothesMenu:
 	call BuyMenu_InitGFX
 .loop
@@ -716,7 +831,7 @@ GetMartDialogGroup: ; 15ca3
 	dwb .ClothesMartPointers, 0
 	dwb .StandardMartPointers, 2
 	dwb .BallMartDiscountPointers, 2
-	dwb .HerbShopPointers, 0 ;.FishMarketPointers, 0
+	dwb .FishMarketPointers, 0
 	dwb .BerryMarketPointers, 0
 ; 15cbf
 
@@ -841,6 +956,14 @@ GetMartDialogGroup: ; 15ca3
 	dw Text_InformalMart_HereYouGo
 	dw BuyMenuLoop
 
+.FishMarketPointers: ; 15cbf
+	dw Text_Mart_HowMany
+	dw Text_ClothesMart_CostsThisMuch
+	dw Text_Mart_InsufficientFunds
+	dw Text_Mart_BagFull
+	dw Text_Mart_HereYouGo
+	dw BuyPokemonMenuLoop
+	
 .BerryMarketPointers
 	dw Text_HerbShop_HowMany
 	dw Text_HerbShop_CostsThisMuch
@@ -1096,6 +1219,65 @@ BuyClothesMenuLoop:
 	and a
 	ret
 	
+BuyPokemonMenuLoop: ; 15cef
+	farcall PlaceMoneyTopRight
+	call UpdateSprites
+	ld hl, PokemonMenuDataHeader_Buy
+	call CopyMenuDataHeader
+	call DoMartScrollingMenu
+	call SpeechTextBox
+	ld a, [wMenuJoypad]
+	cp B_BUTTON
+	jp z, MartMenuLoop_SetCarry
+	call ClothesMartAskPurchaseQuantity
+	jr c, .cancel
+	call ClothesMartConfirmPurchase
+	jr c, .cancel
+	ld de, wMoney
+	ld bc, hMoneyTemp
+	call CompareMoney
+	jp c, MartMenuLoop_InsufficientFunds
+	ld de, wMoney
+	ld bc, hMoneyTemp
+	call TakeMoney
+	ld a, MARTTEXT_HERE_YOU_GO
+	call LoadBuyMenuText
+	call PlayTransactionSound
+	farcall PlaceMoneyTopRight
+	call JoyWaitAorB
+	
+	ld a, 1
+	ld [wPlaceBallsX], a
+	
+	ld a, [wCurItem]
+	ld [wCurPartySpecies], a
+	ld a, 5
+	ld [wCurPartyLevel], a
+	ld a, NO_ITEM
+	ld [wCurItem], a
+	ld a, 0
+	and a
+	ld b, a
+	jr z, .ok
+	ld hl, wScriptPos
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+.ok
+	farcall GivePoke
+	ld a, b
+	ld [wScriptVar], a
+	xor a
+	ld [wPlaceBallsX], a
+.cancel
+	call SpeechTextBox
+	and a
+	ret
+		
 DoMartScrollingMenu:
 	ld a, [wMenuCursorBufferBackup]
 	ld [wMenuCursorBuffer], a
@@ -1134,6 +1316,7 @@ StandardMartAskPurchaseQuantity:
 MartConfirmPurchase: ; 15d97
 BTMartConfirmPurchase:
 	predef PartyMonItemName
+ClothesMartConfirmPurchase:
 	ld a, MARTTEXT_COSTS_THIS_MUCH
 	call LoadBuyMenuText
 	jp YesNoBox
@@ -1159,10 +1342,10 @@ TMMartConfirmPurchase:
 	call LoadBuyMenuText
 	jp YesNoBox
 	
-ClothesMartConfirmPurchase:
-	ld a, MARTTEXT_COSTS_THIS_MUCH
-	call LoadBuyMenuText
-	jp YesNoBox
+
+;	ld a, MARTTEXT_COSTS_THIS_MUCH
+;	call LoadBuyMenuText
+;	jp YesNoBox
 
 RefreshmentsShopAskPurchaseQuantity:
 	ld a, 1
@@ -1443,6 +1626,23 @@ ClothesMenuDataHeader_Buy:
 	dba PlaceMartClothesName
 	dba MartMenu_PrintBCDPrices
 	dba UpdateClothesIconAndDescriptionAndOwnership
+	
+PokemonMenuDataHeader_Buy:
+	db $40 ; flags
+	db 03, 06 ; start coords
+	db 11, 19 ; end coords
+	dw .menudata2
+	db 1 ; default option
+; 0x15e20
+
+.menudata2 ; 0x15e20
+	db $30 ; pointers
+	db 4, 8 ; rows, columns
+	db 1 ; horizontal spacing
+	dbw 0, wCurMart
+	dba PlaceMartPokemonName
+	dba MartMenu_PrintBCDPrices
+	dba UpdateMonIconAndDescriptionAndOwnership
 
 MartMenu_PrintBCDPrices: ; 15e30
 	ld a, [wScrollingMenuCursorPosition]
@@ -1650,10 +1850,18 @@ Text_BazaarMart_CostsThisMuch:
 	db "@"
 ; 0x15e9f
 
+Text_FishMarket_Intro:
+	text_jump UnknownText_FishMarket_Intro
+	db "@"
+
 Text_Pharmacy_HereYouGo: ; 0x15e9f
 Text_InformalMart_HereYouGo:
 	; Thanks much!
 	text_jump UnknownText_0x1c4eab
+	db "@"
+	
+Text_FishMarket_Cant_Buy_That_Mon:
+	text_jump UnknownText_FishMarket_Cant_Buy_That_Mon
 	db "@"
 
 Text_CoffeeShop_HereYouGo:
@@ -1919,9 +2127,9 @@ MenuDataHeader_BuySell: ; 0x15f88
 .menudata2 ; 0x15f90
 	db $80 ; strings
 	db 3 ; items
-	db "Buy@"
-	db "Sell@"
-	db "Quit@"
+	db "BUY@"
+	db "SELL@"
+	db "QUIT@"
 ; 0x15f96
 
 Text_Mart_HereYouGo: ; 0x15fa0
@@ -1964,6 +2172,10 @@ Text_Mart_AnythingElse: ; 0x15fb9
 	text_jump UnknownText_0x1c500d
 	db "@"
 ; 0x15fbe
+
+Text_FishMarket_AnythingElse:
+	text_jump UnknownText_FishMarket_AnythingElse
+	db "@"
 
 Text_Mart_SoldForAmount: ; 0x15fbe
 	text_jump UnknownText_0x1c502e

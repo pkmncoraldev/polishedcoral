@@ -467,6 +467,34 @@ UpdateTMHMDescription:
 	decoord 1, 14
 	farjp PrintTMHMDescription
 
+UpdateMonDescription:
+	hlcoord 1, 1
+	lb bc, 1, 8
+	call ClearBox
+	ld a, [wMenuSelection]
+	cp -1
+	jr z, UpdateMonDescription2
+	ld a, [wCurItem]
+	dec a
+	call CheckCaughtMon
+	ld de, OwnedTMString
+	jr nz, .GotString
+	ld de, UnownedTMString
+.GotString
+	hlcoord 1, 1
+	call PlaceString
+UpdateMonDescription2:
+	ld a, [wMenuSelection]
+	ld [wCurSpecies], a
+	hlcoord 0, 12
+	lb bc, 4, SCREEN_WIDTH - 2
+	call TextBox
+	ld a, [wMenuSelection]
+	cp -1
+	ret z
+	decoord 1, 14
+	farjp PrintMonDescription
+	
 UpdateClothesDescriptionAndOwnership:
 	hlcoord 1, 1
 	lb bc, 1, 8
@@ -495,9 +523,9 @@ UpdateClothesDescription:
 	farjp PrintClothesDescription
 	
 OwnedTMString:
-	db "Owned@"
+	db "OWNED@"
 UnownedTMString:
-	db "Unowned@"
+	db "UNOWNED@"
 
 GetQuantityInBag:
 	ld a, [wCurItem]
@@ -577,6 +605,16 @@ PlaceMartClothesName:
 	ld de, ScrollingMenu_CancelString ; found in scrolling_menu.asm
 	ld [wNamedObjectIndexBuffer], a
 	call nz, GetClothesName
+	pop hl
+	jp PlaceString
+	
+PlaceMartPokemonName:
+	push de
+	ld a, [wMenuSelection]
+	cp a, -1 ; special case for Cancel in Key Items pocket
+	ld de, ScrollingMenu_CancelString ; found in scrolling_menu.asm
+	ld [wNamedObjectIndexBuffer], a
+	call nz, GetPokemonName
 	pop hl
 	jp PlaceString
 
@@ -4602,9 +4640,26 @@ PrintTMHMDescription:
 	ret
 	
 PrintClothesDescription:
-; Print the description for TM/HM [wCurSpecies] at de.
+; Print the description for Clothes [wCurSpecies] at de.
 
 	ld hl, ClothesDescriptions
+	ld a, [wCurSpecies]
+	dec a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	push de
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	pop hl
+	jp PlaceString
+	
+PrintMonDescription: ; 0x1c8955
+; Print the description for item [wCurSpecies] at de.
+
+	ld hl, BuyMonDescriptions
 	ld a, [wCurSpecies]
 	dec a
 	ld c, a
@@ -4628,6 +4683,7 @@ MoveReminderNoMovesText:
 	
 INCLUDE "data/items/descriptions.asm"
 INCLUDE "data/items/clothes_names.asm"
+INCLUDE "data/pokemon/buy_mon_descriptions.asm"
 
 
 SECTION "Move and Landmark Text", ROMX

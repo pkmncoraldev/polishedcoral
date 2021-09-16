@@ -28,6 +28,21 @@ UpdateClothesIconAndDescriptionAndOwnership::
 	farcall LoadClothesIconPalette
 	jp SetPalettes
 
+UpdateMonIconAndDescriptionAndOwnership::
+	farcall UpdateMonDescription
+	ld a, [wMenuSelection]
+	cp -1
+	jr z, .cancel
+	call LoadBuyMonIcon
+	jr .ok
+.cancel
+	call ClearTMHMIcon
+.ok
+	ld a, 1
+	ld [wCurSpecies], a
+	farcall LoadItemIconPalette
+	jp SetPalettes
+	
 UpdateItemIconAndDescriptionAndBagQuantity::
 	farcall UpdateItemDescriptionAndBagQuantity
 UpdateItemIcon::
@@ -64,6 +79,12 @@ GetItemIconBank:
 	lb bc, BANK(ItemIcons2), 9
 	ret
 
+LoadBuyMonIcon::
+	ld hl, PokeBallIcon
+	ld de, VTiles2 tile $1e
+	lb bc, BANK(PokeBallIcon), 9
+	jp DecompressRequest2bpp
+	
 LoadTMHMIcon::
 	ld hl, TMHMIcon
 	ld de, VTiles2 tile $1e

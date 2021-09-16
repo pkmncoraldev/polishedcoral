@@ -845,6 +845,8 @@ LoadMapPals::
 	jp z, .sunset
 	cp GROUP_SKATEPARK
 	jp z, .skateparkcheck
+	cp GROUP_SHIMMER_CITY
+	jp z, .shimmer
 .got_pals_cont
 	ld a, [wTileset]
 	cp TILESET_CAVE
@@ -1354,6 +1356,12 @@ LoadMapPals::
 	call FarCopyWRAM
 	jr .outside
 
+.shimmer
+	ld a, [wMapNumber]
+	cp MAP_SHIMMER_CITY
+	jr z, .lighthouse
+	jr .normal
+	
 .candle
 	ld hl, MapObjectPalsCandle
 	ld de, wUnknOBPals + 7 palettes

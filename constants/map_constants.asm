@@ -276,5 +276,5 @@ MAP_NONE   EQU 0
 	
 	map_const SHIMMER_CITY,					  			  27, 16 ; 1
 	map_const SHIMMER_LAB_LOBBY,			  			   9,  3 ; 2
-	map_const SHIMMER_UNDER_BOARDWALK,		  			   5,  8 ; 3
+	map_const SHIMMER_UNDER_BOARDWALK,		  			   7, 14 ; 3
 	

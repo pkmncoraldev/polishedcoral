@@ -284,6 +284,15 @@ UnknownText_0x1c4d2a::
 	line "sweetie!"
 	done
 
+UnknownText_BerryMarket_Intro::
+	text "I sell BERRIES"
+	line "here that I grow"
+	cont "myself."
+	
+	para "Would you like"
+	line "some?"
+	done
+	
 UnknownText_StoneShop_Intro::
 	text "Hello."
 	

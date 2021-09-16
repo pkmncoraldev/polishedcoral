@@ -89,3 +89,4 @@ SpriteMovementData::
 	sprite_movement_data SPRITEMOVEFN_BIG_MUK_2,  		     DOWN,   PERSON_ACTION_BIG_MUK_2,   	$2e,    $00,    %0000 ; SPRITEMOVEDATA_BIG_MUK_2
 	sprite_movement_data SPRITEMOVEFN_BIG_MUK_3,  		     DOWN,   PERSON_ACTION_BIG_MUK_3,   	$2e,    $00,    %0000 ; SPRITEMOVEDATA_BIG_MUK_3
 	sprite_movement_data SPRITEMOVEFN_STALL,  	  		     DOWN,   PERSON_ACTION_STALL,   		$7c,    $02,    %0000 ; SPRITEMOVEDATA_STALL
+	sprite_movement_data SPRITEMOVEFN_BINOCULARS,  		     DOWN,   PERSON_ACTION_BINOCULARS, 		$7c,    $02,    %0000 ; SPRITEMOVEDATA_BINOCULARS

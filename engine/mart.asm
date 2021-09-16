@@ -37,6 +37,8 @@ OpenMartDialog:: ; 15a45
 	dw ClothesShop
 	dw BallShop
 	dw BallShopDiscount
+	dw HerbShop ;FishMarket
+	dw BerryMarket
 ; 15a61
 
 MartDialog: ; 15a61
@@ -45,6 +47,15 @@ MartDialog: ; 15a61
 	ld [wEngineBuffer5], a
 	jp StandardMart
 ; 15a6e
+
+BerryMarket:
+	call FarReadMart
+	call LoadStandardMenuDataHeader
+	ld hl, Text_BerryMarket_Intro
+	call MartTextBox
+	call BuyMenu
+	ld hl, Text_HerbShop_ComeAgain
+	jp MartTextBox
 
 HerbShop: ; 15a6e
 	call FarReadMart
@@ -705,6 +716,8 @@ GetMartDialogGroup: ; 15ca3
 	dwb .ClothesMartPointers, 0
 	dwb .StandardMartPointers, 2
 	dwb .BallMartDiscountPointers, 2
+	dwb .HerbShopPointers, 0 ;.FishMarketPointers, 0
+	dwb .BerryMarketPointers, 0
 ; 15cbf
 
 .StandardMartPointers: ; 15cbf
@@ -828,6 +841,13 @@ GetMartDialogGroup: ; 15ca3
 	dw Text_InformalMart_HereYouGo
 	dw BuyMenuLoop
 
+.BerryMarketPointers
+	dw Text_HerbShop_HowMany
+	dw Text_HerbShop_CostsThisMuch
+	dw Text_Mart_InsufficientFunds
+	dw Text_Mart_BagFull
+	dw Text_Mart_HereYouGo
+	dw BuyMenuLoop
 
 BuyMenuLoop: ; 15cef
 	farcall PlaceMoneyTopRight
@@ -1532,6 +1552,10 @@ Text_ElectronicsShop_Intro:
 	text_jump UnknownText_ElectronicsShop_Intro
 	db "@"
 	
+Text_BerryMarket_Intro:
+	text_jump UnknownText_BerryMarket_Intro
+	db "@"
+	
 Text_HerbShop_Intro: ; 0x15e4a
 	; Hello, dear. I sell inexpensive herbal medicine. They're good, but a trifle bitter. Your #MON may not like them. Hehehehe…
 	text_jump UnknownText_0x1c4c28
@@ -1545,7 +1569,7 @@ Text_HerbShop_CostsThisMuch: ; 0x15e54
 ; 0x15e59
 
 Text_HerbShop_ComeAgain: ; 0x15e68
-	; Come again, dear. Hehehehe…
+	; Come back anytime, sweetie.
 	text_jump UnknownText_0x1c4d2a
 	db "@"
 ; 0x15e6d

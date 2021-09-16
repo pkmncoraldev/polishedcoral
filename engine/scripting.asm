@@ -2954,7 +2954,7 @@ Script_reloadandreturn:
 	call Script_newloadmap
 	jp Script_end
 
-Script_opentext:
+Script_opentext::
 	ld a, [wPlayerState]
 	cp PLAYER_RUN
 	jr nz, .cont
@@ -3279,7 +3279,7 @@ Script_iffalse_endtext:
 
 Script_waitendtext:
 	call Script_waitbutton
-Script_endtext:
+Script_endtext::
 	call Script_closetext
 	jp Script_end
 

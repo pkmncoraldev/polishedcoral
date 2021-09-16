@@ -428,7 +428,7 @@ ENDM
 	map_attributes NettBuildingStairwell, NETT_BUILDING_STAIRWELL, 0, 0
 	map_attributes NettBuildingOffice, NETT_BUILDING_OFFICE, 0, 0
 	map_attributes ShimmerLabLobby, SHIMMER_LAB_LOBBY, 0, 0
-	map_attributes ShimmerUnderBoardwalk, SHIMMER_UNDER_BOARDWALK, $56, 0
+	map_attributes ShimmerUnderBoardwalk, SHIMMER_UNDER_BOARDWALK, 0, 0
 	
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0

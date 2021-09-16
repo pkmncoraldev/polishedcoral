@@ -15,6 +15,8 @@ Marts: ; 160a9
 	dw LusterMallHerb
 	dw LusterMallStone
 	dw LusterMallClothes
+	dw ShimmerFishMarket
+	dw ShimmerBerryMarket
 MartsEnd:
 
 
@@ -146,4 +148,14 @@ LusterMallClothes:
 	dbw PURPLE_CLOTHES, 100
 	dbw TEAL_CLOTHES, 	100
 	dbw PINK_CLOTHES, 	100
+	db -1
+	
+ShimmerFishMarket:
+	db 1 ; # items
+	db POTION
+	db -1
+	
+ShimmerBerryMarket:
+	db 1 ; # items
+	db ORAN_BERRY
 	db -1

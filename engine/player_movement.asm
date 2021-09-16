@@ -1150,7 +1150,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr z, .DontJump
 
 .DoJump
-	
+	ld a, [wOnSkateboard]
+	cp 0
+	jr z, .not_on_skateboard2
 	call .CheckSkatableFarAhead
 	jr c, .not_on_skateboard
 	ld a, [wLastWalkingDirection]

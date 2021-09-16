@@ -285,7 +285,14 @@ UnknownText_0x1c4d2a::
 	done
 
 UnknownText_FishMarket_Intro::
-	text "FISH MARKET"
+	text "I run this little"
+	line "FISH MARKET."
+	
+	para "I buy and sell"
+	line "FISH #MON."
+	
+	para "How can I help"
+	line "you?"
 	done
 	
 UnknownText_FishMarket_AnythingElse::

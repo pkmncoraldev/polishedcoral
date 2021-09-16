@@ -1,6 +1,8 @@
 FishMarketRewards:
-	dbw MAGIKARP,  100
-	dbw CHINCHOU,  100
+	dbw MAGIKARP, 	100
+	dbw CHINCHOU, 	100
+	dbw CARVANHA, 	100
+	dbw HORSEA, 	100
 	db -1
 
 GourmetManiacItemRewards:

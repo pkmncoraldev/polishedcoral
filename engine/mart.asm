@@ -430,11 +430,11 @@ FishMarket: ; 15b47
 	jr c, .cancel
 	ld a, [wCurPartySpecies]
 	ld [wCurItem], a
-	ld hl, FishMarketSellMons
-	ld de, 1
-	call IsInArray
-	jr nc, .wrong
 	farcall GetFishMarketPrice
+	ld a, [wScriptVar]
+	cp FALSE
+	jr z, .wrong
+	
 	ld hl, Text_Mart_ICanPayThisMuch
 	call PrintTextBoxText
 	call YesNoBox
@@ -470,11 +470,6 @@ FishMarket: ; 15b47
 	ld a, $1 ; top menu
 	ret
 ; 15bbb
-
-FishMarketSellMons::
-	dbw MAGIKARP, 1000
-	dbw CHINCHOU, 200
-	db -1
 
 FarReadMart: ; 15bbb
 	ld hl, wMartPointer

@@ -479,7 +479,12 @@ UpdateMonDescription:
 	call CheckCaughtMon
 	ld de, OwnedTMString
 	jr nz, .GotString
-	ld de, UnownedTMString
+	ld a, [wCurItem]
+	dec a
+	call CheckSeenMon
+	ld de, SeenMonString
+	jr nz, .GotString
+	ld de, NewMonString
 .GotString
 	hlcoord 1, 1
 	call PlaceString
@@ -526,6 +531,10 @@ OwnedTMString:
 	db "OWNED@"
 UnownedTMString:
 	db "UNOWNED@"
+SeenMonString:
+	db "SEEN@"
+NewMonString:
+	db "UNSEEN@"
 
 GetQuantityInBag:
 	ld a, [wCurItem]

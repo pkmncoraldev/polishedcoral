@@ -40,6 +40,7 @@ NidokingMSpriteGFX::      	   INCBIN "gfx/sprites/nidoking_m.2bpp"
 NidokingFSpriteGFX::      	   INCBIN "gfx/sprites/nidoking_f.2bpp"
 NidokingLeaderSpriteGFX::      INCBIN "gfx/sprites/nidoking_leader.2bpp"
 GrimerAOWSpriteGFX::      	   INCBIN "gfx/sprites/grimer_a_ow.2bpp"
+BalloonsSpriteGFX::      	   INCBIN "gfx/sprites/balloons.2bpp"
 
 
 SECTION "Overworld Sprites 2", ROMX
@@ -171,7 +172,6 @@ SunbeamViewSpriteCloudsGFX::   INCBIN "gfx/sprites/sunbeam_view_clouds.2bpp"
 SECTION "Overworld Sprites 7", ROMX
 
 GameCubeSpriteGFX::            INCBIN "gfx/sprites/gamecube.2bpp"
-WiiSpriteGFX::                 INCBIN "gfx/sprites/wii.2bpp"
 CandleSpriteGFX::        	   INCBIN "gfx/sprites/candle.2bpp"
 GoldTrophySpriteGFX::          INCBIN "gfx/sprites/gold_trophy.2bpp"
 SailboatSpriteGFX::            INCBIN "gfx/sprites/sailboat.2bpp"

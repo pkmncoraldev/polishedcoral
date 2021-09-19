@@ -285,10 +285,7 @@ UnknownText_0x1c4d2a::
 	done
 
 UnknownText_FishMarket_Intro::
-	text "I run this little"
-	line "FISH MARKET."
-	
-	para "I buy and sell"
+	text "I buy and sell"
 	line "FISH #MON."
 	
 	para "How can I help"
@@ -302,6 +299,11 @@ UnknownText_FishMarket_AnythingElse::
 UnknownText_FishMarket_Cant_Buy_That_Mon::
 	text "I can't buy that"
 	line "#MON!"
+	done
+	
+UnknownText_FishMarket_Last_Mon::
+	text "I can't buy your"
+	line "only #MON!"
 	done
 	
 UnknownText_BerryMarket_Intro::

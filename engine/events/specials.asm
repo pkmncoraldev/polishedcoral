@@ -18,6 +18,10 @@ INCLUDE "data/special_pointers.asm"
 SpecialNone: ; c224
 	ret
 ; c225
+Special_RestorePlayerPalette:
+	ld a, [wPlayerInitialPalette]
+	ld [wPlayerPalette], a
+	ret
 
 Special_SetPlayerPalette: ; c225
 	ld a, [wScriptVar]
@@ -564,9 +568,13 @@ Special_UpdatePalsInstant:
 	ld a, d
 	ld [rSVBK], a
 
+	ld a, [wPermission]
+	cp INDOOR
+	jp z, .skip
 ; update palettes
 	farcall _UpdateTimePals
 	
+.skip
 ; successful change
 	scf
 	ret

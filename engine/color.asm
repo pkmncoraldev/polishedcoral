@@ -1330,7 +1330,7 @@ LoadMapPals::
 	jr z, .sailboat
 	cp MAP_SUNSET_CAPE
 	jr z, .lighthouse
-	jr .normal
+	jp .normal
 	
 .sailboat
 	ld a, [wTimeOfDayPal]
@@ -1342,7 +1342,7 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	jr .outside
+	jp .outside
 	
 .lighthouse
 	ld a, [wTimeOfDayPal]
@@ -1360,7 +1360,18 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_SHIMMER_CITY
 	jp z, .binoculars
+	cp MAP_SHIMMER_LAB_EXPERIMENTAL_LAB
+	jp z, .fossil_lab
 	jr .normal
+	
+.fossil_lab
+	call .normal
+	ld hl, MapObjectPalsFossilLab
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
 	
 .binoculars
 	ld a, [wTimeOfDayPal]
@@ -1581,6 +1592,9 @@ INCLUDE "maps/palettes/obpals/obluster.pal"
 
 MapObjectPalsLusterMall::
 INCLUDE "maps/palettes/obpals/oblustermall.pal"
+
+MapObjectPalsFossilLab::
+INCLUDE "maps/palettes/obpals/fossillab.pal"
 
 MapObjectPalsNett::
 INCLUDE "maps/palettes/obpals/nett.pal"

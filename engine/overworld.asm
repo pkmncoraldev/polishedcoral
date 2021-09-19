@@ -71,9 +71,13 @@ GetPlayerSprite: ; 14183
 	jr nz, .loop
 
 ; Any player state not in the array defaults to Chris's sprite.
+	ld a, [wPlayerState]
+	cp $fe
+	jr z, .skip
 	xor a ; ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
-	ld a, SPRITE_CORY
+.skip
+	ld a, SPRITE_GENERAL_VARIABLE_1
 	jr .finish
 
 .good

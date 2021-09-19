@@ -213,3 +213,4 @@ SpriteHeaders:
 	overworld_sprite NidokingFSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite NidokingLeaderSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite GrimerAOWSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite BalloonsSpriteGFX, WALKING_SPRITE, PAL_OW_RED

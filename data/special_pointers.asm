@@ -186,5 +186,6 @@ SpecialsPointers::
 	add_special Special_UpdatePalsInstant
 	add_special FadeOutPalettesBlack
 	add_special FadeInTextboxPalettes
+	add_special Special_RestorePlayerPalette
 
 	add_special SpecialNone

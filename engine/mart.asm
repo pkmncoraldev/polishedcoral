@@ -435,14 +435,23 @@ FishMarket: ; 15b47
 	cp FALSE
 	jr z, .wrong
 	
+	ld a, [wPartyCount]
+	cp 1
+	jr z, .lastmon
 	ld hl, Text_Mart_ICanPayThisMuch
-	call PrintTextBoxText
+	call PrintText
 	call YesNoBox
 	jr c, .cancel
 	farcall Give_hMoneyTemp
 	call PlayTransactionSound
 	farcall RemoveMonFromPartyOrBox
 	ld hl, Text_InformalMart_HereYouGo
+	call PrintText
+	call JoyWaitAorB
+	ld a, $ff ; Anything else?
+	ret
+.lastmon
+	ld hl, Text_FishMarket_Last_Mon
 	call PrintText
 	call JoyWaitAorB
 	ld a, $ff ; Anything else?
@@ -2091,7 +2100,10 @@ Text_Mart_ICanPayThisMuch: ; 0x15f78
 	; I can pay you ¥@ . Is that OK?
 	text_jump UnknownText_0x1c4f3e
 	db "@"
-; 0x15f7d
+
+Text_FishMarket_Last_Mon:
+	text_jump UnknownText_FishMarket_Last_Mon
+	db "@"
 
 Text_Mart_HowMayIHelpYou: ; 0x15f83
 	; Welcome! How may I help you?

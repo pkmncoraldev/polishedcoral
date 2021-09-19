@@ -209,6 +209,7 @@
 	const SPRITE_NIDOKING_F
 	const SPRITE_NIDOKING_LEADER
 	const SPRITE_GRIMER_A_OW
+	const SPRITE_BALLOONS
 
 	
 	const_def $f1

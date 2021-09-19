@@ -148,6 +148,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .nett
 	cp TILESET_SHIMMER
 	jp z, .shimmer
+	cp TILESET_LAB
+	jp z, .lab
 	jp .do_nothing
 	
 .house1
@@ -160,6 +162,18 @@ LoadSpecialMapPalette: ; 494ac
 	jp .spookhouse
 .house1_nope
 	jp .do_nothing
+	
+.lab
+	ld a, [wMapGroup]
+	cp GROUP_SHIMMER_CITY
+	jp nz, .do_nothing
+	ld hl, FossilLabPalette
+	ld de, wUnknBGPals + 6 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 	
 .shimmer
 	ld a, [wMapGroup]
@@ -507,6 +521,9 @@ INCLUDE "maps/palettes/bgpals/spookhousetv.pal"
 
 TrainPalette:
 INCLUDE "maps/palettes/bgpals/train.pal"
+
+FossilLabPalette:
+INCLUDE "maps/palettes/bgpals/fossillab.pal"
 
 BoardwalkPalette:
 INCLUDE "maps/palettes/bgpals/boardwalk.pal"

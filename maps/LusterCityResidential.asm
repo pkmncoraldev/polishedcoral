@@ -601,7 +601,6 @@ LusterPunkLeader:
 	spriteface LUSTERPUNK1, UP
 	opentext
 	writetext LusterPunk1Text8
-	waitbutton
 	yesorno
 	iffalse .saidno2
 .clearedsewersreturn
@@ -633,7 +632,6 @@ LusterPunkLeader:
 	spriteface LUSTERPUNK1, UP
 	opentext
 	writetext LusterPunk1Text8
-	waitbutton
 	yesorno
 	iffalse .saidno2
 .clearedsewersrightreturn
@@ -670,7 +668,6 @@ LusterPunkLeader:
 	end
 .saidno2
 	writetext LusterPunk1Text14
-	waitbutton
 	yesorno
 	iffalse .saidno2
 	checkcode VAR_FACING

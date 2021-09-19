@@ -246,6 +246,8 @@ SECTION "Shimmer City Scripts", ROMX
 
 INCLUDE "maps/ShimmerCity.asm"
 INCLUDE "maps/ShimmerLabLobby.asm"
+INCLUDE "maps/ShimmerLabResearchRoom.asm"
+INCLUDE "maps/ShimmerLabExperimentalLab.asm"
 INCLUDE "maps/ShimmerUnderBoardwalk.asm"
 
 SECTION "Train Scripts", ROMX

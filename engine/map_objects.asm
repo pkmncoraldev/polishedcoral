@@ -585,7 +585,6 @@ MapObjectMovementPattern:
 	dw .MovementSailboatBottom       ; SPRITEMOVEFN_SAILBOAT_BOTTOM
 	dw .MovementUmbrellaLeft ; 17
 	dw .MovementUmbrellaRight ; 18
-	dw .MovementBridgeBob
 	dw .MovementBoatBob
 	dw .MovementValve
 	dw .MovementMallSign
@@ -615,6 +614,9 @@ MapObjectMovementPattern:
 	dw .MovementStall
 	dw .MovementBinoculars1
 	dw .MovementBinoculars2
+	dw .MovementBalloons1
+	dw .MovementBalloons2
+	dw .MovementFossilMachine
 
 .RandomWalkY:
 	call Random
@@ -861,19 +863,19 @@ MapObjectMovementPattern:
 	
 .MovementBottomHalf:
 	ld a, PERSON_ACTION_BOTTOM_HALF
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementSunbeamView1:
 	ld a, PERSON_ACTION_SUNBEAM_VIEW_1
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementSunbeamView2:
 	ld a, PERSON_ACTION_SUNBEAM_VIEW_2
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementSunbeamView3:
 	ld a, PERSON_ACTION_SUNBEAM_VIEW_3
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementSunbeamView4:
 	ld a, PERSON_ACTION_SUNBEAM_VIEW_4
@@ -939,6 +941,18 @@ MapObjectMovementPattern:
 	ld a, PERSON_ACTION_BINOCULARS_2
 	jr ._ActionA_StepType04
 	
+.MovementBalloons1:
+	ld a, PERSON_ACTION_BALLOONS_1
+	jr ._ActionA_StepType04
+	
+.MovementBalloons2:
+	ld a, PERSON_ACTION_BALLOONS_2
+	jr ._ActionA_StepType04
+	
+.MovementFossilMachine:
+	ld a, PERSON_ACTION_FOSSIL_MACHINE
+	jr ._ActionA_StepType04
+	
 .MovementUmbrellaLeft:
 	call EndSpriteMovement
 	ld hl, OBJECT_DIRECTION_WALKING
@@ -978,10 +992,6 @@ MapObjectMovementPattern:
 	add hl, bc
 	ld [hl], STEP_TYPE_04
 	ret
-	
-.MovementBridgeBob
-	ld a, PERSON_ACTION_BRIDGE_BOB
-	jr ._ActionA_StepType04
 	
 .MovementBoatBob
 	ld a, PERSON_ACTION_BOAT_BOB
@@ -3131,7 +3141,7 @@ PRIORITY_HIGH EQU $30
 	or %10000000
 	jr .skip4
 .skip5
-	eventflagcheck EVENT_MT_ONWA_CUTSCENE
+	eventflagcheck EVENT_PLAYER_CUTSCENE_SILVER
 	jr nz, .skip6
 	ld a, [wPlayerPalette]
 	jr .skip6

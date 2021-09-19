@@ -50,8 +50,6 @@ Facings:
 	dw FacingSailboatBottom ; FACING_SAILBOAT_BOTTOM
 	dw FacingUmbrellaLeft
 	dw FacingUmbrellaRight
-	dw FacingBridgeBob1
-	dw FacingBridgeBob2
 	dw FacingBoatBob1
 	dw FacingBoatBob2
 	dw FacingValve1
@@ -79,6 +77,8 @@ Facings:
 	dw FacingStall
 	dw FacingBinoculars1
 	dw FacingBinoculars2
+	dw FacingBalloons
+	dw FacingFossilMachine
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -506,28 +506,6 @@ FacingUmbrellaRight:
 	db 16,  0, 0, $06
 	db 16,  8, 0, $07
 	
-FacingBridgeBob1:
-	db 8 ; #
-	db  4,  0, 0, $00
-	db  4,  8, 0, $01
-	db 12,  0, 0, $02
-	db 12,  8, 0, $03
-	db 20,  0, 0, $04
-	db 20,  8, 0, $05
-	db 28,  0, 0, $06
-	db 28,  8, 0, $07
-	
-FacingBridgeBob2:
-	db 8 ; #
-	db  5,  0, 0, $00
-	db  5,  8, 0, $01
-	db 13,  0, 0, $02
-	db 13,  8, 0, $03
-	db 21,  0, 0, $04
-	db 21,  8, 0, $05
-	db 29,  0, 0, $06
-	db 29,  8, 0, $07
-	
 FacingBoatBob1:
 	db 8 ; #
 	db  4,  0, 0, $04
@@ -700,3 +678,13 @@ FacingBinoculars2:
 	db 12,  0, 0, $07
 	db 12,  8, 0, $07
 
+FacingBalloons:
+	db 4 ; #
+	db  4,  0, 0, $80
+	db  4,  8, 0, $81
+	db 12,  0, 0, $82
+	db 12,  8, 0, $83
+	
+FacingFossilMachine:
+	db 1 ; #
+	db -1, 12, 0, $04

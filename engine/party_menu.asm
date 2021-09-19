@@ -10,7 +10,7 @@ SelectMonFromParty: ; 50000
 	call PartyMenuSelect
 	jp ReturnToMapWithSpeechTextbox
 
-SelectTradeOrDaycareMon:
+SelectTradeOrDaycareMon::
 	xor a
 	jp SelectMonFinish
 

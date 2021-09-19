@@ -131,7 +131,7 @@ LusterSewersB2FChangeBlocks:
 	clearevent EVENT_LUSTER_SEWERS_GRIMER_3
 	clearevent EVENT_LUSTER_SEWERS_GRIMER_4
 	clearevent EVENT_LUSTER_SEWERS_MUK_RIGHT
-	setevent EVENT_MT_ONWA_CUTSCENE
+	setevent EVENT_PLAYER_CUTSCENE_SILVER
 .skip
 	checkevent EVENT_LUSTER_SEWERS_EMPTY
 	iffalse .endcallback

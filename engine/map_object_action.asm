@@ -29,7 +29,6 @@ Pointers445f: ; 445f
 	dw SetFacingSailboatBottom,        SetFacingSailboatBottom    ; PERSON_ACTION_SAILBOAT_BOTTOM
 	dw SetFacingUmbrellaLeft,          SetFacingUmbrellaLeft      ; PERSON_ACTION_UMBRELLA_LEFT
 	dw SetFacingUmbrellaRight,         SetFacingUmbrellaRight     ; PERSON_ACTION_UMBRELLA_RIGHT
-	dw SetFacingBridgeBob,             SetFacingFreezeBridgeBob   ; PERSON_ACTION_BRIDGE_BOB
 	dw SetFacingBoatBob,               SetFacingFreezeBoatBob     ; PERSON_ACTION_BOAT_BOB
 	dw SetFacingValve,                 SetFacingValve             ; PERSON_ACTION_VALVE
 	dw SetFacingMallSign,    		   SetFacingMallSign	 	  ; PERSON_ACTION_MALL_SIGN
@@ -57,7 +56,10 @@ Pointers445f: ; 445f
 	dw SetFacingBigMuk3,		       SetFacingBigMuk3		      ; PERSON_ACTION_BIG_MUK_3
 	dw SetFacingStall,			       SetFacingStall		      ; PERSON_ACTION_STALL
 	dw SetFacingBinoculars1,		   SetFacingBinoculars1	      ; PERSON_ACTION_BINOCULARS_1
-	dw SetFacingBinoculars2,		   SetFacingBinoculars2	      ; PERSON_ACTION_BINOCULARS_
+	dw SetFacingBinoculars2,		   SetFacingBinoculars2	      ; PERSON_ACTION_BINOCULARS_2
+	dw SetFacingBalloons1,             SetFacingFreezeBalloons1   ; PERSON_ACTION_BALLOONS_1
+	dw SetFacingBalloons2,             SetFacingFreezeBalloons2   ; PERSON_ACTION_BALLOONS_2
+	dw SetFacingFossilMachine,    	   SetFacingFossilMachine	  ; PERSON_ACTION_FOSSIL_MACHINE
 	
 ; 44a3
 
@@ -255,15 +257,42 @@ SetFacingBounce: ; 4590
 	add hl, bc
 	ld a, [hl]
 	inc a
-	and %00011111
+	and %00111111
 	ld [hl], a
-	and %00010000
+	and %00100000
 	ld a, FACING_STEP_UP_0
 	jp nz, SetFixedFacing
 SetFacingFreezeBounce: ; 45a4
 	xor a ; FACING_STEP_DOWN_0
 	jp SetFixedFacing
-; 45ab
+
+SetFacingBalloons1: ; 4590
+	ld hl, OBJECT_STEP_FRAME
+	add hl, bc
+	ld a, [hl]
+	inc a
+	and %01111111
+	ld [hl], a
+	and %01000000
+	ld a, FACING_TILE_UP
+	jp nz, SetFixedFacing
+SetFacingFreezeBalloons1: ; 45a4
+	ld a, FACING_TILE_DOWN
+	jp SetFixedFacing
+	
+SetFacingBalloons2: ; 4590
+	ld hl, OBJECT_STEP_FRAME
+	add hl, bc
+	ld a, [hl]
+	inc a
+	and %01111111
+	ld [hl], a
+	and %01000000
+	ld a, FACING_BALLOONS
+	jp nz, SetFixedFacing
+SetFacingFreezeBalloons2: ; 45a4
+	ld a, FACING_TILE_LEFT
+	jp SetFixedFacing
 
 SetFacingWalkInPlace1:
 	ld hl, OBJECT_STEP_FRAME
@@ -306,20 +335,6 @@ SetFacingFreezeBather: ; 45a4
 	ld a, FACING_STEP_RIGHT_0
 	jp SetFixedFacing
 ; 45ab
-
-SetFacingBridgeBob: ; 4590
-	ld hl, OBJECT_STEP_FRAME
-	add hl, bc
-	ld a, [hl]
-	inc a
-	and %01111111
-	ld [hl], a
-	and %01000000
-	ld a, FACING_BRIDGE_BOB_1
-	jp nz, SetFixedFacing
-SetFacingFreezeBridgeBob: ; 45a4
-	ld a, FACING_BRIDGE_BOB_2
-	jp SetFixedFacing
 	
 SetFacingBoatBob: ; 4590
 	ld hl, OBJECT_STEP_FRAME
@@ -570,5 +585,9 @@ SetFacingBinoculars1:
 	
 SetFacingBinoculars2:
 	ld a, FACING_BINOCULARS_2
+	jp SetFixedFacing
+	
+SetFacingFossilMachine:
+	ld a, FACING_FOSSIL_MACHINE
 	jp SetFixedFacing
 	

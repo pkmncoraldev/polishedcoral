@@ -310,7 +310,6 @@ ENDU
 
 wEncounterHouse:: ds 1
 
-wPlayerInitialPalette::
 	ds 1 
 
 wMonJustCaught:: ds 1

@@ -222,3 +222,4 @@ SFX:
 	dba Sfx_Grind
 	dba Sfx_Scream
 	dba Sfx_Newton
+	dba Sfx_FossilMachine

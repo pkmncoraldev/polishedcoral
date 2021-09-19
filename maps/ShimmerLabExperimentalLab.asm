@@ -47,8 +47,12 @@ ShimmerLabFossilCutscene:
 	playsound SFX_LEVEL_UP 
 	waitsfx
 	waitbutton
-	closetext
+	closetext	
 	pause 5
+	
+	checkcode VAR_FACING
+	if_equal RIGHT, .YouAreFacingRight
+	if_equal UP, .YouAreFacingUp
 	applymovement SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, Movement_ShimmerLabLabFossilCutscene1
 	spriteface SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, UP
 	spriteface PLAYER, UP
@@ -73,8 +77,61 @@ ShimmerLabFossilCutscene:
 	pause 5
 	spriteface SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, DOWN
 	pause 5
-	
 	applyonemovement PLAYER, step_left
+	jump .cont
+.YouAreFacingRight
+	applymovement SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, Movement_ShimmerLabLabFossilCutscene2
+	spriteface SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, UP
+	spriteface PLAYER, UP
+	pause 10
+	changeblock $0, $2, $8c
+	changeblock $2, $2, $8d
+	playsound SFX_WALL_OPEN
+	callasm GenericFinishBridge
+	pause 10
+	opentext
+	writetext ShimmerLabLabFossilCutsceneText2
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, turn_step_up
+	closetext
+	pause 10
+	changeblock $0, $2, $77
+	changeblock $2, $2, $78
+	playsound SFX_WALL_OPEN
+	callasm GenericFinishBridge
+	pause 5
+	spriteface SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, DOWN
+	pause 5
+	applyonemovement PLAYER, step_right
+	jump .cont
+.YouAreFacingUp
+	applymovement SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, Movement_ShimmerLabLabFossilCutscene2
+	applyonemovement PLAYER, step_up
+	spriteface SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, UP
+	pause 10
+	changeblock $0, $2, $8c
+	changeblock $2, $2, $8d
+	playsound SFX_WALL_OPEN
+	callasm GenericFinishBridge
+	pause 10
+	opentext
+	writetext ShimmerLabLabFossilCutsceneText2
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, turn_step_up
+	closetext
+	pause 10
+	changeblock $0, $2, $77
+	changeblock $2, $2, $78
+	playsound SFX_WALL_OPEN
+	callasm GenericFinishBridge
+	pause 5
+	spriteface SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, DOWN
+	pause 5
+.cont
 	spriteface PLAYER, UP
 	pause 5
 	opentext
@@ -95,32 +152,32 @@ ShimmerLabFossilCutscene:
 	if_equal 6, .pink
 .red:	
 	appear SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_RED
-	jump .cont2
+	jump .cont3
 
 .blue
 	appear SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_BLUE
-	jump .cont2
+	jump .cont3
 
 .green
 	appear SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_GREEN
-	jump .cont2
+	jump .cont3
 	
 .brown
 	appear SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_BROWN
-	jump .cont2
+	jump .cont3
 	
 .purple
 	appear SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_PURPLE
-	jump .cont2
+	jump .cont3
 	
 .teal
 	appear SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_TEAL
-	jump .cont2
+	jump .cont3
 	
 .pink
 	appear SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_PINK
 
-.cont2
+.cont3
 	spriteface SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_RED, UP
 	spriteface SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_BLUE, UP
 	spriteface SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_GREEN, UP
@@ -152,7 +209,7 @@ ShimmerLabFossilCutscene:
 	pause 10
 	spriteface PLAYER, UP
 	pause 25
-	playsound SFX_EMBER
+	playsound SFX_FOSSIL_MACHINE
 	earthquake 60
 	pause 20
 	
@@ -208,10 +265,10 @@ endr
 	special FadeInPalettes
 	special Special_FadeOutMusic
 	pause 35
-	playsound SFX_EMBER
+	playsound SFX_FOSSIL_MACHINE
 	earthquake 60
 	pause 10
-	playsound SFX_EMBER
+	playsound SFX_FOSSIL_MACHINE
 	earthquake 60
 	pause 80
 	playsound SFX_SLOT_MACHINE_START
@@ -399,6 +456,31 @@ Movement_ShimmerLabLabFossilCutscene1:
 	step_left
 	step_left
 	step_left
+	step_end
+	
+Movement_ShimmerLabLabFossilCutscene2:
+	step_right
+	step_right
+	step_right
+	step_up
+	slow_step_up
+	step_up
+	step_left
+	step_left
+	step_left
+	step_left
+	step_end
+	
+Movement_ShimmerLabLabFossilCutsceneRight:
+	step_down
+	step_right
+	step_right
+	step_up
+	step_end
+	
+Movement_ShimmerLabLabFossilCutsceneUp:
+	step_right
+	step_up
 	step_end
 	
 ShimmerLabExperimentalLabChangeColorRedAsm:

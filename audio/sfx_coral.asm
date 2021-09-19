@@ -101,3 +101,28 @@ Sfx_Newton_Ch5: ; f275e
 	sound __,  2, $62, $07d7
 	endchannel
 	
+Sfx_FossilMachine: ; f0b33
+	musicheader 4, 5, Sfx_FossilMachine_Ch5
+	musicheader 1, 6, Sfx_FossilMachine_Ch6
+	musicheader 1, 7, Sfx_FossilMachine_Ch7
+	musicheader 1, 8, Sfx_FossilMachine_Ch8
+	
+Sfx_FossilMachine_Ch5: ; f2722
+	dutycycle $2
+	soundinput $5a
+Sfx_FossilMachine_branch_f2726: ; f2726
+	sound __,  3, $f1, $0300
+	loopchannel 40, Sfx_FossilMachine_branch_f2726
+	endchannel
+; f274b
+
+Sfx_FossilMachine_Ch6: ; f274b
+Sfx_FossilMachine_Ch7: ; f274b
+	sound F_,  1, $0, 0
+	sound E_,  4, $0, 0
+	endchannel
+	
+Sfx_FossilMachine_Ch8: ; f2754
+	noise F_,  1, $0, $0
+	noise E_,  4, $0, $0
+	endchannel

@@ -865,19 +865,8 @@ ProfSpruceSpeech: ; 0x5f99
 	
 	ld a, [wPlayerGender]
 	cp PIPPI
-	jr nz, .notpippi
+	ret nz
 	ld a, 7
-	add $1
-	ld [wPlayerPalette], a
-	ld [wPlayerInitialPalette], a
-;	ld a, 0
-;	add $1
-;	ld [wPlayerGender], a
-	ret
-	
-.notpippi
-	ld a, [wPlayerPalette]
-	add $1
 	ld [wPlayerPalette], a
 	ld [wPlayerInitialPalette], a
 	ret

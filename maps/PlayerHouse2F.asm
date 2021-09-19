@@ -58,10 +58,8 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke SYLVEON, 100
-	givepoke WHIRLIPEDE, 7
-	givepoke SCOLIPEDE, 27
-	givepoke VENIPEDE, 28
+	givepoke CLEFABLE, 100
+	givepoke MAGIKARP, 5
 .items
 	writetext PlayerHouseDebugText6
 	yesorno
@@ -563,6 +561,4 @@ SetPlayerPalKrisHouse:
 	ld a, [wMenuCursorY] ; 1 - 8
 	sub $1
 	ld [wPlayerPalette], a
-	add $1	;prevents respawn as another color when fainting. why?????
-	ld [wPlayerInitialPalette], a
 	jp ReplaceKrisSprite

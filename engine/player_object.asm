@@ -29,42 +29,42 @@ SpawnPlayer: ; 8029
 	ld hl, MAPOBJECT_COLOR
 	add hl, bc
 	ld a, [wPlayerInitialPalette]
-	cp 1
+	cp 0
 	jp nz, .cont1
 	ln e, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT
 	jp .ok
 
 .cont1
 	ld a, [wPlayerInitialPalette]
-	cp 2
+	cp 1
 	jp nz, .cont2
 	ln e, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT
 	jp .ok
 	
 .cont2
 	ld a, [wPlayerInitialPalette]
-	cp 3
+	cp 2
 	jp nz, .cont3
 	ln e, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT
 	jp .ok
 
 .cont3
 	ld a, [wPlayerInitialPalette]
-	cp 4
+	cp 3
 	jp nz, .cont4
 	ln e, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT
 	jp .ok
 	
 .cont4
 	ld a, [wPlayerInitialPalette]
-	cp 5
+	cp 4
 	jp nz, .cont5
 	ln e, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT
 	jp .ok
 	
 .cont5
 	ld a, [wPlayerInitialPalette]
-	cp 6
+	cp 5
 	jp nz, .cont6
 	ln e, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT
 	jp .ok

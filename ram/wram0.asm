@@ -1128,7 +1128,6 @@ wTextBoxFrame::
 
 wTextBoxFlags:: ds 1
 
-wPlayerInitialPalette::
 	ds 1
 
 wOptions2::

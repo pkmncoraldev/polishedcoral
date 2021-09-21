@@ -629,6 +629,26 @@ INCBIN "data/tilesets/shimmer_attributes.bin.lz"
 TilesetShimmerColl::
 INCLUDE "data/tilesets/shimmer_collision.asm"
 
+SECTION "Tileset Data - desert", ROMX
+
+TilesetDesertGFX0::
+INCBIN "gfx/tilesets/desert.2bpp.vram0.lz"
+
+TilesetDesertGFX1::
+INCBIN "gfx/tilesets/desert.2bpp.vram1.lz"
+
+TilesetDesertGFX2::
+INCBIN "gfx/tilesets/desert.2bpp.vram2.lz"
+
+TilesetDesertMeta::
+INCBIN "data/tilesets/desert_metatiles.bin.lz"
+
+TilesetDesertAttr::
+INCBIN "data/tilesets/desert_attributes.bin.lz"
+
+TilesetDesertColl::
+INCLUDE "data/tilesets/desert_collision.asm"
+
 
 SECTION "Tileset Headers", ROMX
 
@@ -672,3 +692,4 @@ Tilesets::
 	tileset TilesetIceCave
 	tileset TilesetNettBuilding
 	tileset TilesetShimmer
+	tileset TilesetDesert

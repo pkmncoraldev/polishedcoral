@@ -249,6 +249,7 @@ INCLUDE "maps/ShimmerLabLobby.asm"
 INCLUDE "maps/ShimmerLabResearchRoom.asm"
 INCLUDE "maps/ShimmerLabExperimentalLab.asm"
 INCLUDE "maps/ShimmerUnderBoardwalk.asm"
+INCLUDE "maps/DesertTown.asm"
 
 SECTION "Train Scripts", ROMX
 

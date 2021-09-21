@@ -431,6 +431,7 @@ ENDM
 	map_attributes ShimmerLabResearchRoom, SHIMMER_LAB_RESEARCH_ROOM, 0, 0
 	map_attributes ShimmerLabExperimentalLab, SHIMMER_LAB_EXPERIMENTAL_LAB, 0, 0
 	map_attributes ShimmerUnderBoardwalk, SHIMMER_UNDER_BOARDWALK, 0, 0
+	map_attributes DesertTown, DESERT_TOWN, 0, 0
 	
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0

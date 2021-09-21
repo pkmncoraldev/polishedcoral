@@ -563,3 +563,6 @@ ShimmerLabExperimentalLab_BlockData:
 	
 ShimmerUnderBoardwalk_BlockData:
 	INCBIN "maps/ShimmerUnderBoardwalk.ablk.lz"
+	
+DesertTown_BlockData:
+	INCBIN "maps/DesertTown.ablk.lz"

@@ -150,7 +150,13 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .shimmer
 	cp TILESET_LAB
 	jp z, .lab
+	cp TILESET_DESERT
+	jp z, .desert
 	jp .do_nothing
+	
+.desert
+	ld hl, OutsideDesertPalette
+	jp LoadSevenTimeOfDayBGPalettes
 	
 .house1
 	ld a, [wMapGroup]
@@ -599,6 +605,9 @@ INCLUDE "maps/palettes/bgpals/bglusterbusiness.pal"
 
 OutsideSkateparkPalette:
 INCLUDE "maps/palettes/bgpals/bgskatepark.pal"
+
+OutsideDesertPalette:
+INCLUDE "maps/palettes/bgpals/bgdesert.pal"
 
 SunbeamViewPalette:
 INCLUDE "maps/palettes/bgpals/sunbeamview.pal"

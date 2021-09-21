@@ -173,6 +173,28 @@ TilesetStarglowAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 	
+TilesetDesertAnim::
+	dw VTiles2 tile $14, WriteTileToBuffer
+	dw NULL,  WaitTileAnimation
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $14, WriteTileFromBuffer
+	dw NULL,  WaitTileAnimation
+	dw FlagFrames, AnimateWaterfallTiles
+	dw FlagFrames2, AnimateWaterfallTiles
+    dw NULL,  WaitTileAnimation
+    dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
 TilesetShimmerAnim::
 	dw VTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
@@ -1085,6 +1107,14 @@ NewtonTiles: INCBIN "gfx/tilesets/newton/1.2bpp"
 ClockFrames: dw VTiles2 tile $1a, ClockTiles
 
 ClockTiles: INCBIN "gfx/tilesets/newton/2.2bpp"
+
+FlagFrames: dw VTiles2 tile $30, FlagTiles
+
+FlagTiles: INCBIN "gfx/tilesets/flag/1.2bpp"
+
+FlagFrames2: dw VTiles2 tile $32, FlagTiles2
+
+FlagTiles2: INCBIN "gfx/tilesets/flag/2.2bpp"
 ; fc5cc
 
 	

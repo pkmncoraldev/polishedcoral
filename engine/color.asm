@@ -1422,6 +1422,8 @@ LoadMapPals::
 	ret z
 	cp TILESET_PARK
 	ret z
+	cp TILESET_DESERT
+	ret z
 	
 	ld a, [wTimeOfDayPal]
 	and 3

@@ -272,7 +272,7 @@ MAP_NONE   EQU 0
 	map_const NETT_BUILDING_STAIRWELL,					   3,  5 ; 6
 	map_const NETT_BUILDING_OFFICE,						   5,  5 ; 7
 	
-	newgroup													 ; 13
+	newgroup													 ; 14
 	
 	map_const SHIMMER_CITY,					  			  27, 16 ; 1
 	map_const SHIMMER_LAB_LOBBY,			  			   7,  3 ; 2
@@ -280,3 +280,6 @@ MAP_NONE   EQU 0
 	map_const SHIMMER_LAB_EXPERIMENTAL_LAB,  			   6,  5 ; 4
 	map_const SHIMMER_UNDER_BOARDWALK,		  			   7, 14 ; 5
 	
+	newgroup													 ; 15
+	
+	map_const DESERT_TOWN,								  22, 17 ; 1

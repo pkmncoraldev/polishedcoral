@@ -1,80 +1,85 @@
 ;0
 	RGB 21, 21, 21
 	RGB 11, 11, 11
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 00, 31
+	RGB 31, 00, 31
 ;1 - Dungeons
 	RGB 18, 18, 11
 	RGB 08, 15, 09
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 00, 31
+	RGB 31, 00, 31
 ;2 - Sunset
 	RGB 08, 09, 05
 	RGB 15, 15, 10
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 28, 30, 31
+	RGB 14, 17, 31
 ;3 - Daybreak
 	RGB 19, 09, 08
 	RGB 13, 06, 06
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 28, 31
+	RGB 20, 10, 22
 ;4 - Glint
 	RGB 28, 10, 05
 	RGB 21, 08, 04
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 30, 28
+	RGB 31, 16, 08
 ;5 - Starglow
 	RGB 18, 07, 05
 	RGB 26, 05, 04
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 28, 28
+	RGB 31, 08, 04
 ;6 - Lake Onwa
 	RGB 14, 05, 02
 	RGB 18, 08, 03
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 30, 30, 28
+	RGB 20, 14, 04
 ;7 - Sunbeam Island
 	RGB 19, 11, 05
 	RGB 27, 16, 04
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 30, 31, 28
+	RGB 29, 29, 00
 ;8 - Eventide Forest
 	RGB 11, 10, 16
 	RGB 05, 06, 07
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 30, 31, 28
+	RGB 05, 06, 07
 ;9 - Route 9
 	RGB 25, 17, 06
 	RGB 17, 11, 03
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 30, 30, 28
+	RGB 20, 15, 03
 ;10 - Flicker Station
 	RGB 14, 15, 01
 	RGB 09, 09, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 28, 31, 28
+	RGB 16, 20, 02
 ;11 - Twinkle
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 31, 31
+	RGB 21, 21, 21
 ;12 - Train
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 00, 31
+	RGB 31, 00, 31
 ;13 - Luster City
 	RGB 19, 16, 11
 	RGB 14, 12, 10
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 31, 31
+	RGB 21, 21, 21
 ;14 - Nett Building
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 31, 31
+	RGB 21, 21, 21
 ;15 - Shimmer City
 	RGB 21, 15, 08
 	RGB 10, 09, 08
+	RGB 29, 28, 31
+	RGB 11, 09, 25
+;16 - Brillo Town
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 00, 00, 00

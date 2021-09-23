@@ -879,6 +879,8 @@ LoadMapPals::
 	jp z, .candle
 	cp TILESET_NETT_BUILDING
 	jp z, .nett
+	cp TILESET_DESERT
+	jp z, .desert
 	jp .normal
 .playerhouse
 	ld a, [wMapGroup]
@@ -892,6 +894,21 @@ LoadMapPals::
 	cp MAP_TWINKLE_GYM_RED_ROOM
 	jp z, .red_room
 	jp .normal
+	
+.desert
+	ld a, [wMapNumber]
+	cp MAP_BRILLO_TOWN
+	jp z, .sailboat
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	ld hl, MapObjectPalsSand
+	call AddNTimes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
 	
 .jungle
 	ld a, [wMapNumber]
@@ -1360,6 +1377,8 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_SHIMMER_CITY
 	jp z, .binoculars
+	cp MAP_SHIMMER_HARBOR
+	jp z, .sailboat
 	cp MAP_SHIMMER_LAB_EXPERIMENTAL_LAB
 	jp z, .fossil_lab
 	jr .normal
@@ -1499,6 +1518,24 @@ endr
 	db $10, $11, $12, $13, $14, $15, $16, $17 ; nite
 	db $18, $19, $1a, $1b, $1c, $1d, $1e, $1f ; dark
 
+LoadTownSignPalette::
+	ld a, [wMapGroup]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld de, RoofPalsDusk
+	add hl, de
+rept 4
+	inc hl
+endr
+	ld de, wUnknBGPals + 7 palettes + 2
+	ld bc, 4
+	ld a, $5
+	call FarCopyWRAM
+	ret
+	
 Palette_b309: ; b309 mobile
 	RGB 31, 31, 31
 	RGB 31, 19, 24
@@ -1621,6 +1658,9 @@ INCLUDE "maps/palettes/obpals/waterfallcave.pal"
 
 MapObjectPalsCandle::
 INCLUDE "maps/palettes/obpals/candle.pal"
+
+MapObjectPalsSand::
+INCLUDE "maps/palettes/obpals/obsand.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

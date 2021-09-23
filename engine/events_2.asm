@@ -231,7 +231,7 @@ LoadMapNameSignGFX:: ; b80c6
 	ld de, MapEntryFrameTownGFX
 	lb bc, BANK(MapEntryFrameTownGFX), POPUP_MAP_FRAME_SIZE
 	call Get2bpp
-	jr .cont
+	jp .cont
 .route
 	farcall LoadRouteSignPalette
 	farcall ApplyPals
@@ -247,6 +247,7 @@ LoadMapNameSignGFX:: ; b80c6
 	call Get2bpp
 	jr .cont
 .town
+	farcall LoadCaveSignPalette
 	farcall LoadTownSignPalette
 	farcall ApplyPals
 	ld a, 1

@@ -30,21 +30,6 @@ LoadForestSignPalette::
 	call FarCopyWRAM
 	ret
 	
-LoadTownSignPalette::
-	ld a, [wMapGroup]
-	ld l, a
-	ld h, 0
-	add hl, hl
-	add hl, hl
-	add hl, hl
-	ld de, LandmarkSignPals
-	add hl, de
-	ld a, $5
-	ld de, wUnknBGPals palette PAL_BG_TEXT
-	ld bc, 1 palettes
-	call FarCopyWRAM
-	ret
-	
 LoadRegularTextboxPalette::
 	ld a, $5
 	ld de, wUnknBGPals palette PAL_BG_TEXT
@@ -509,12 +494,8 @@ InitLinkTradePalMap: ; 49856
 LoadLinkTradePalette: ; 49811
 	ret
 
-
 LoadSpecialMapOBPalette:
 	ret
-
-LandmarkSignPals::
-INCLUDE "maps/palettes/landmarksignpals/landmarksign.pal"
 
 StarglowCavernPalette:
 INCLUDE "maps/palettes/bgpals/starglow_cavern.pal"

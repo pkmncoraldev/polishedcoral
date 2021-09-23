@@ -158,3 +158,19 @@
 	tilecoll WALL, RIGHT_WALL, FLOOR, FLOOR ; 9d
 	tilecoll WALL, WALL, FLOOR, LADDER ; 9e
 	tilecoll WALL, WALL, BOOKSHELF, BOOKSHELF ; 9f
+	tilecoll WALL, WALL, BOOKSHELF, BOOKSHELF ; a0
+	tilecoll WALL, TOWN_MAP, TV, FLOOR ; a1
+	tilecoll WALL, WINDOW, FLOOR, FLOOR ; a2
+	tilecoll WALL, WALL, FLOOR, RADIO ; a3
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a4
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; a5
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; a6
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a7
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a8
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; a9
+	tilecoll WALL, RIGHT_WALL, FLOOR, FLOOR ; aa
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ab
+	tilecoll WALL, FLOOR, WALL, FLOOR ; ac
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; ad
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ae
+	tilecoll FLOOR, WALL, FLOOR, WALL ; af

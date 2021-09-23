@@ -109,12 +109,13 @@ INCLUDE "data/tilesets/starglow_collision.asm"
 SECTION "Tileset Data - house1", ROMX
 
 TilesetHouse1GFX0::
-INCBIN "gfx/tilesets/house1.2bpp.lz"
+INCBIN "gfx/tilesets/house1.2bpp.vram0.lz"
 
 TilesetHouse1GFX1::
 INCBIN "gfx/tilesets/house1.2bpp.vram1.lz"
 
-TilesetHouse1GFX2 EQU 0
+TilesetHouse1GFX2::
+INCBIN "gfx/tilesets/house1.2bpp.vram2.lz"
 
 TilesetHouse1Meta::
 INCBIN "data/tilesets/house1_metatiles.bin.lz"

@@ -11,6 +11,8 @@ INCLUDE "maps/FlickerPokeCenter.asm"
 INCLUDE "maps/TwinklePokeCenter.asm"
 INCLUDE "maps/LusterPokeCenter.asm"
 INCLUDE "maps/LusterMallPokeCenter.asm"
+INCLUDE "maps/ShimmerPokeCenter.asm"
+INCLUDE "maps/BrilloPokeCenter.asm"
 
 SECTION "Pokemon Mart Scripts 1", ROMX
 INCLUDE "maps/GlintMart.asm"
@@ -20,6 +22,8 @@ INCLUDE "maps/EventideMart.asm"
 INCLUDE "maps/FlickerMart.asm"
 INCLUDE "maps/TwinkleMart.asm"
 INCLUDE "maps/LusterMart.asm"
+INCLUDE "maps/ShimmerMart.asm"
+INCLUDE "maps/BrilloMart.asm"
 
 
 SECTION "Dungeon Scripts", ROMX
@@ -251,10 +255,17 @@ INCLUDE "maps/ShimmerLabResearchRoom.asm"
 INCLUDE "maps/ShimmerLabExperimentalLab.asm"
 INCLUDE "maps/ShimmerUnderBoardwalk.asm"
 INCLUDE "maps/ShimmerBoatHouse.asm"
+INCLUDE "maps/ShimmerHouse1.asm"
+INCLUDE "maps/ShimmerHouse2.asm"
+INCLUDE "maps/ShimmerHouse3.asm"
 
 SECTION "Brillo Town Scripts", ROMX
 
 INCLUDE "maps/BrilloTown.asm"
+INCLUDE "maps/BrilloBoatHouse.asm"
+INCLUDE "maps/BrilloHouse1.asm"
+INCLUDE "maps/BrilloHouse2.asm"
+INCLUDE "maps/BrilloHouse3.asm"
 
 SECTION "Train Scripts", ROMX
 

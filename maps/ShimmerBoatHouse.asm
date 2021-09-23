@@ -38,7 +38,7 @@ ShimmerBoatHouseNPC:
 	if_equal $2, .LakeL
 	if_equal $3, .LakeR
 	if_equal $4, .Sunbeam
-	if_equal $5, .end
+	jump .end
 	
 .brillomenu
 	loadmenudata ShimmerBoatHouseBrilloMenuData
@@ -49,7 +49,7 @@ ShimmerBoatHouseNPC:
 	if_equal $3, .LakeR
 	if_equal $4, .Sunbeam
 	if_equal $5, .Brillo
-	if_equal $6, .end
+	jump .end
 	
 .Sunset
 	writetext ShimmerBoatHouseNPCText4
@@ -222,13 +222,12 @@ ShimmerBoatHouseMenuData:
 	db 1 ; default option
 
 .MenuData:
-	db $81 ; flags
-	db 5 ; items
+	db $80 ; flags
+	db 4 ; items
 	db "SUNSET BAY@"
 	db "LAKE ONWA WEST@"
 	db "LAKE ONWA EAST@"
 	db "SUNBEAM ISLAND@"
-	db "CANCEL@"
 	end
 	
 ShimmerBoatHouseBrilloMenuData:
@@ -239,14 +238,13 @@ ShimmerBoatHouseBrilloMenuData:
 	db 1 ; default option
 
 .MenuData:
-	db $81 ; flags
-	db 6 ; items
+	db $80 ; flags
+	db 5 ; items
 	db "SUNSET BAY@"
 	db "LAKE ONWA WEST@"
 	db "LAKE ONWA EAST@"
 	db "SUNBEAM ISLAND@"
 	db "BRILLO TOWN@"
-	db "CANCEL@"
 	end
 	
 ShimmerBoatHouseNPCText1:

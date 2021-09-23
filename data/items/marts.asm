@@ -17,6 +17,8 @@ Marts: ; 160a9
 	dw LusterMallClothes
 	dw ShimmerFishMarket
 	dw ShimmerBerryMarket
+	dw ShimmerMart
+	dw BrilloMart
 MartsEnd:
 
 
@@ -161,4 +163,14 @@ ShimmerFishMarket:
 ShimmerBerryMarket:
 	db 1 ; # items
 	db ORAN_BERRY
+	db -1
+	
+ShimmerMart:
+	db 1 ; # items
+	db POTION
+	db -1
+	
+BrilloMart:
+	db 1 ; # items
+	db POTION
 	db -1

@@ -143,8 +143,14 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, OutsideDesertPalette
 	jp LoadSevenTimeOfDayBGPalettes
 	
+.desert_house
+	ld hl, DesertHousePalette
+	jp LoadSevenBGPalettes
+	
 .house1
 	ld a, [wMapGroup]
+	cp GROUP_BRILLO_TOWN
+	jr z, .desert_house
 	cp GROUP_LUSTER_APARTMENT_5_2F
 	jp nz, .house1_nope
 	ld a, [wMapNumber]
@@ -497,6 +503,9 @@ LoadLinkTradePalette: ; 49811
 LoadSpecialMapOBPalette:
 	ret
 
+DesertHousePalette:
+INCLUDE "maps/palettes/bgpals/desert_house.pal"
+	
 StarglowCavernPalette:
 INCLUDE "maps/palettes/bgpals/starglow_cavern.pal"
 

@@ -1,9 +1,10 @@
 ShimmerCity_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, ShimmerCityFlyPoint
 
-	db 21 ; warp events
+	db 26 ; warp events
 	warp_event 10, 27, SHIMMER_LAB_LOBBY, 1
 	warp_event 11, 27, SHIMMER_LAB_LOBBY, 2
 	warp_event 11, 17, SHIMMER_UNDER_BOARDWALK, 4
@@ -25,6 +26,11 @@ ShimmerCity_MapScriptHeader:
 	warp_event  7, 13, SHIMMER_UNDER_BOARDWALK, 30
 	warp_event  7, 16, SHIMMER_UNDER_BOARDWALK, 23
 	warp_event  7, 17, SHIMMER_UNDER_BOARDWALK, 25
+	warp_event 41, 17, SHIMMER_POKECENTER, 1
+	warp_event 47, 17, SHIMMER_MART, 1
+	warp_event 21, 25, SHIMMER_HOUSE_1, 1
+	warp_event 27, 25, SHIMMER_HOUSE_2, 1
+	warp_event 45, 25, SHIMMER_HOUSE_3, 1
 
 	db 0 ; coord events
 
@@ -52,6 +58,12 @@ ShimmerCity_MapScriptHeader:
 	const SHIIMER_CITY_NPC_3
 	const SHIIMER_CITY_NPC_4
 	const SHIIMER_CITY_NPC_5
+	
+	
+ShimmerCityFlyPoint:
+	setflag ENGINE_FLYPOINT_SHIMMER
+	setevent EVENT_CAN_GO_TO_SHIMMER
+	return
 	
 ShimmerCityFishMarket:
 	callasm ShimmerCityFishMarketAsm

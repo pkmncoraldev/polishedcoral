@@ -1,72 +1,44 @@
-SunbeamBoatHouse_MapScriptHeader:
+BrilloBoatHouse_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def  5,  5, 13, SUNBEAM_ISLAND
-	warp_def  5,  4, 13, SUNBEAM_ISLAND
+	warp_def  5,  5, 1, BRILLO_TOWN
+	warp_def  5,  4, 1, BRILLO_TOWN
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 2 ; object events
-	person_event SPRITE_FAT_GUY,  1,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamBoatHouseNPC, EVENT_HAVENT_SAVED_SUNBEAM
-	person_event SPRITE_SNARE,  1,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunbeamBoatHouseSnare, EVENT_SAVED_SUNBEAM
+	db 1 ; object events
+	person_event SPRITE_FAT_GUY,  1,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BrilloBoatHouseNPC, -1
 	
-SunbeamBoatHouseSnare:
-	jumptextfaceplayer SunbeamBoatHouseSnareText
 	
-SunbeamBoatHouseNPC:
+BrilloBoatHouseNPC:
 	opentext
-	writetext SunbeamBoatHouseNPCText2
+	writetext BrilloBoatHouseNPCText2
 	special PlaceMoneyTopRight
 	yesorno
 	iffalse .end
 .return
-	writetext SunbeamBoatHouseNPCText3
+	writetext BrilloBoatHouseNPCText3
 	waitbutton
 	closetext
 	refreshscreen $0
 	special PlaceMoneyTopRight
-	
-	checkevent EVENT_CAN_GO_TO_DESERT
-	iftrue .brillomenu
-	checkevent EVENT_CAN_GO_TO_SHIMMER
-	iftrue .shimmermenu
-	
-	loadmenudata SunbeamBoatHouseMenuData
+	loadmenudata BrilloBoatHouseMenuData
 	verticalmenu
 	closewindow
 	if_equal $1, .Sunset
 	if_equal $2, .LakeL
 	if_equal $3, .LakeR
-	jump .end
-	
-.shimmermenu
-	loadmenudata SunbeamBoatHouseShimmerMenuData
-	verticalmenu
-	closewindow
-	if_equal $1, .Sunset
-	if_equal $2, .LakeL
-	if_equal $3, .LakeR
-	if_equal $4, .Shimmer
-	jump .end
-	
-.brillomenu
-	loadmenudata SunbeamBoatHouseBrilloMenuData
-	verticalmenu
-	closewindow
-	if_equal $1, .Sunset
-	if_equal $2, .LakeL
-	if_equal $3, .LakeR
-	if_equal $4, .Shimmer
-	if_equal $5, .Brillo
+	if_equal $4, .Sunbeam
+	if_equal $5, .Shimmer
 	jump .end
 	
 .Sunset
-	writetext SunbeamBoatHouseNPCText4
+	writetext BrilloBoatHouseNPCText4
 	yesorno
 	iffalse .return
 	checkmoney $0, 500
@@ -74,7 +46,7 @@ SunbeamBoatHouseNPC:
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
-	writetext SunbeamBoatHouseNPCText7
+	writetext BrilloBoatHouseNPCText7
 .SunsetCont
 	waitbutton
 	closetext
@@ -87,7 +59,7 @@ SunbeamBoatHouseNPC:
 	end
 	
 .LakeL
-	writetext SunbeamBoatHouseNPCText5
+	writetext BrilloBoatHouseNPCText5
 	yesorno
 	iffalse .return
 	checkmoney $0, 500
@@ -95,7 +67,7 @@ SunbeamBoatHouseNPC:
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
-	writetext SunbeamBoatHouseNPCText7
+	writetext BrilloBoatHouseNPCText7
 .LakeLCont
 	waitbutton
 	closetext
@@ -110,7 +82,7 @@ SunbeamBoatHouseNPC:
 	end
 	
 .LakeR
-	writetext SunbeamBoatHouseNPCText6
+	writetext BrilloBoatHouseNPCText6
 	yesorno
 	iffalse .return
 	checkmoney $0, 500
@@ -118,7 +90,7 @@ SunbeamBoatHouseNPC:
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
-	writetext SunbeamBoatHouseNPCText7
+	writetext BrilloBoatHouseNPCText7
 .LakeRCont
 	waitbutton
 	closetext
@@ -132,8 +104,29 @@ SunbeamBoatHouseNPC:
 	warpfacing RIGHT, LAKE_ONWA, $27, $1f
 	end
 	
+.Sunbeam
+	writetext BrilloBoatHouseNPCText8
+	yesorno
+	iffalse .return
+	checkmoney $0, 500
+	if_equal $2, .nomoneySunbeam
+	playsound SFX_TRANSACTION
+	takemoney $0, 500
+	special PlaceMoneyTopRight
+	writetext BrilloBoatHouseNPCText7
+.SunbeamCont
+	waitbutton
+	closetext
+	special FadeOutPalettes
+	special Special_FadeOutMusic
+	clearevent EVENT_ISLAND_BOATMAN
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
+	domaptrigger SUNBEAM_ISLAND, $1
+	warpfacing UP, SUNBEAM_ISLAND, 7, 50
+	end
+	
 .Shimmer
-	writetext SunbeamBoatHouseNPCText4
+	writetext BrilloBoatHouseNPCText9
 	yesorno
 	iffalse .return
 	checkmoney $0, 500
@@ -141,7 +134,7 @@ SunbeamBoatHouseNPC:
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
-	writetext SunbeamBoatHouseNPCText7
+	writetext BrilloBoatHouseNPCText7
 .ShimmerCont
 	waitbutton
 	closetext
@@ -153,34 +146,13 @@ SunbeamBoatHouseNPC:
 	warpfacing DOWN, SHIMMER_HARBOR, 15, 8
 	end
 	
-.Brillo
-	writetext SunbeamBoatHouseNPCText4
-	yesorno
-	iffalse .return
-	checkmoney $0, 500
-	if_equal $2, .nomoneyBrillo
-	playsound SFX_TRANSACTION
-	takemoney $0, 500
-	special PlaceMoneyTopRight
-	writetext SunbeamBoatHouseNPCText7
-.BrilloCont
-	waitbutton
-	closetext
-	special FadeOutPalettes
-	special Special_FadeOutMusic
-	clearevent EVENT_BRILLO_BOATMAN
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
-	domaptrigger BRILLO_TOWN, $1
-	warpfacing DOWN, BRILLO_TOWN, 17, 24
-	end
-	
 .nomoneySunset
 	checkmoney $1, 500
 	if_equal $2, .nomoneySunset2
 	jump .nomoneynoride
 	
 .nomoneySunset2
-	writetext SunbeamBoatHouseNPCTextNoMoney
+	writetext BrilloBoatHouseNPCTextNoMoney
 	jump .SunsetCont
 	
 .nomoneyLakeL
@@ -188,7 +160,7 @@ SunbeamBoatHouseNPC:
 	if_equal $2, .nomoneyLakeL2
 	
 .nomoneyLakeL2
-	writetext SunbeamBoatHouseNPCTextNoMoney
+	writetext BrilloBoatHouseNPCTextNoMoney
 	jump .LakeLCont
 	
 .nomoneyLakeR
@@ -196,68 +168,39 @@ SunbeamBoatHouseNPC:
 	if_equal $2, .nomoneyLakeR2
 	
 .nomoneyLakeR2
-	writetext SunbeamBoatHouseNPCTextNoMoney
+	writetext BrilloBoatHouseNPCTextNoMoney
 	jump .LakeRCont
+	
+.nomoneySunbeam
+	checkmoney $1, 500
+	if_equal $2, .nomoneySunbeam2
+	jump .nomoneynoride
+	
+.nomoneySunbeam2
+	writetext BrilloBoatHouseNPCTextNoMoney
+	jump .SunbeamCont
 	
 .nomoneyShimmer
 	checkmoney $1, 500
 	if_equal $2, .nomoneyShimmer2
+	jump .nomoneynoride
 	
 .nomoneyShimmer2
-	writetext SunbeamBoatHouseNPCTextNoMoney
+	writetext BrilloBoatHouseNPCTextNoMoney
 	jump .ShimmerCont
 	
-.nomoneyBrillo
-	checkmoney $1, 500
-	if_equal $2, .nomoneyBrillo2
-	
-.nomoneyBrillo2
-	writetext SunbeamBoatHouseNPCTextNoMoney
-	jump .BrilloCont
-	
 .nomoneynoride
-	writetext SunbeamBoatHouseNPCTextNoMoney2
+	writetext BrilloBoatHouseNPCTextNoMoney2
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
 .end
-	writetext SunbeamBoatHouseNPCTextEnd
+	writetext BrilloBoatHouseNPCTextEnd
 	waitbutton
 	closetext
 	end
 	
-SunbeamBoatHouseMenuData:
-	db $40 ; flags
-	db 03, 00 ; start coords
-	db 17, 19 ; end coords
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db $80 ; flags
-	db 3 ; items
-	db "SUNSET BAY@"
-	db "LAKE ONWA WEST@"
-	db "LAKE ONWA EAST@"
-	end
-	
-SunbeamBoatHouseShimmerMenuData:
-	db $40 ; flags
-	db 03, 00 ; start coords
-	db 17, 19 ; end coords
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db $80 ; flags
-	db 4 ; items
-	db "SUNSET BAY@"
-	db "LAKE ONWA WEST@"
-	db "LAKE ONWA EAST@"
-	db "SHIMMER CITY@"
-	end
-	
-SunbeamBoatHouseBrilloMenuData:
+BrilloBoatHouseMenuData:
 	db $40 ; flags
 	db 03, 00 ; start coords
 	db 17, 19 ; end coords
@@ -270,27 +213,37 @@ SunbeamBoatHouseBrilloMenuData:
 	db "SUNSET BAY@"
 	db "LAKE ONWA WEST@"
 	db "LAKE ONWA EAST@"
+	db "SUNBEAM ISLAND@"
 	db "SHIMMER CITY@"
+	end
+	
+BrilloBoatHouseBrilloMenuData:
+	db $40 ; flags
+	db 03, 00 ; start coords
+	db 17, 19 ; end coords
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db $80 ; flags
+	db 5 ; items
+	db "SUNSET BAY@"
+	db "LAKE ONWA WEST@"
+	db "LAKE ONWA EAST@"
+	db "SUNBEAM ISLAND@"
 	db "BRILLO TOWN@"
 	end
 	
-SunbeamBoatHouseSnareText:
-	text "We're closed!"
-	
-	para "Don't come back!"
-	done
-	
-SunbeamBoatHouseNPCText1:
+BrilloBoatHouseNPCText1:
 	text "Sorry, kid."
 	
 	para "No boats are"
 	line "running for now."
 	done
 	
-SunbeamBoatHouseNPCText2:
+BrilloBoatHouseNPCText2:
 	text "Welcome to the"
-	line "SUNBEAM ISLAND"
-	cont "BOAT HOUSE."
+	line "BRILLO BOAT HOUSE."
 	
 	para "We can ferry you"
 	line "for ¥500."
@@ -299,40 +252,50 @@ SunbeamBoatHouseNPCText2:
 	line "ride?"
 	done
 
-SunbeamBoatHouseNPCText3:
+BrilloBoatHouseNPCText3:
 	text "Where would you"
 	line "like to go today?"
 	done
 
-SunbeamBoatHouseNPCText4:
+BrilloBoatHouseNPCText4:
 	text "Travel to"
 	line "SUNSET BAY?"
 	done
 
-SunbeamBoatHouseNPCText5:
+BrilloBoatHouseNPCText5:
 	text "Travel to the"
 	line "WEST end to"
 	cont "LAKE ONWA?"
 	done
 
-SunbeamBoatHouseNPCText6:
+BrilloBoatHouseNPCText6:
 	text "Travel to the"
 	line "EAST end to"
 	cont "LAKE ONWA?"
 	done
 
-SunbeamBoatHouseNPCText7:
+BrilloBoatHouseNPCText7:
 	text "Alright."
 	
 	para "We'll head out"
 	line "soon."
 	done
 	
-SunbeamBoatHouseNPCTextEnd:
+BrilloBoatHouseNPCText8:
+	text "Travel to"
+	line "SUNBEAM ISLAND?"
+	done
+	
+BrilloBoatHouseNPCText9:
+	text "Travel to"
+	line "SHIMMER CITY?"
+	done
+	
+BrilloBoatHouseNPCTextEnd:
 	text "Come again."
 	done
 	
-SunbeamBoatHouseNPCTextNoMoney:
+BrilloBoatHouseNPCTextNoMoney:
 	text "You don't seem"
 	line "to have enough"
 	cont "money…"
@@ -348,7 +311,7 @@ SunbeamBoatHouseNPCTextNoMoney:
 	line "soon."
 	done
 	
-SunbeamBoatHouseNPCTextNoMoney2:
+BrilloBoatHouseNPCTextNoMoney2:
 	text "You don't seem"
 	line "to have enough"
 	cont "money…"

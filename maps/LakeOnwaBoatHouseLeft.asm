@@ -89,7 +89,7 @@ LakeBoatMan2:
 	if_equal $1, .Sunset
 	if_equal $2, .LakeR
 	if_equal $3, .Sunbeam
-	if_equal $4, .end
+	jump .end
 	
 .shimmermenu
 	loadmenudata LakeBoatHouseLShimmerMenuData
@@ -99,7 +99,7 @@ LakeBoatMan2:
 	if_equal $2, .LakeR
 	if_equal $3, .Sunbeam
 	if_equal $4, .Shimmer
-	if_equal $5, .end
+	jump .end
 	
 .brillomenu
 	loadmenudata LakeBoatHouseLBrilloMenuData
@@ -110,7 +110,7 @@ LakeBoatMan2:
 	if_equal $3, .Sunbeam
 	if_equal $4, .Shimmer
 	if_equal $5, .Brillo
-	if_equal $6, .end
+	jump .end
 	
 .Sunset
 	writetext LakeBoatManText12
@@ -225,7 +225,7 @@ LakeBoatMan2:
 	clearevent EVENT_SHIMMER_BOATMAN
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
 	domaptrigger SHIMMER_HARBOR, $1
-	warpfacing DOWN, SHIMMER_HARBOR, 17, 24
+	warpfacing DOWN, SHIMMER_HARBOR, 15, 8
 	end
 	
 .Brillo
@@ -272,12 +272,11 @@ LakeBoatHouseLMenuData:
 	db 1 ; default option
 
 .MenuData:
-	db $81 ; flags
-	db 4 ; items
+	db $80 ; flags
+	db 3 ; items
 	db "SUNSET BAY@"
 	db "LAKE ONWA EAST@"
 	db "SUNBEAM ISLAND@"
-	db "CANCEL@"
 	end
 	
 LakeBoatHouseLShimmerMenuData:
@@ -288,13 +287,12 @@ LakeBoatHouseLShimmerMenuData:
 	db 1 ; default option
 
 .MenuData:
-	db $81 ; flags
-	db 5 ; items
+	db $80 ; flags
+	db 4 ; items
 	db "SUNSET BAY@"
 	db "LAKE ONWA EAST@"
 	db "SUNBEAM ISLAND@"
 	db "SHIMMER CITY@"
-	db "CANCEL@"
 	end
 	
 LakeBoatHouseLBrilloMenuData:
@@ -305,14 +303,13 @@ LakeBoatHouseLBrilloMenuData:
 	db 1 ; default option
 
 .MenuData:
-	db $81 ; flags
-	db 6 ; items
+	db $80 ; flags
+	db 5 ; items
 	db "SUNSET BAY@"
 	db "LAKE ONWA EAST@"
 	db "SUNBEAM ISLAND@"
 	db "SHIMMER CITY@"
 	db "BRILLO TOWN@"
-	db "CANCEL@"
 	end
 	
 LakeBoatTrashcanText:

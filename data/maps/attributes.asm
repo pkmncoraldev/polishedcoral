@@ -264,8 +264,12 @@ ENDM
 	map_attributes Skatepark, SKATEPARK, $02, WEST
 	connection west, Park, PARK, -1
 	
-	map_attributes ShimmerCity, SHIMMER_CITY, $71, NORTH
+	map_attributes ShimmerCity, SHIMMER_CITY, $71, NORTH | WEST
 	connection north, SunsetBay, SUNSET_BAY, -2
+	connection west, ShimmerHarbor, SHIMMER_HARBOR, 0
+	
+	map_attributes ShimmerHarbor, SHIMMER_HARBOR, $71, EAST
+	connection east, ShimmerCity, SHIMMER_CITY, 0
 	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0
@@ -431,7 +435,9 @@ ENDM
 	map_attributes ShimmerLabResearchRoom, SHIMMER_LAB_RESEARCH_ROOM, 0, 0
 	map_attributes ShimmerLabExperimentalLab, SHIMMER_LAB_EXPERIMENTAL_LAB, 0, 0
 	map_attributes ShimmerUnderBoardwalk, SHIMMER_UNDER_BOARDWALK, 0, 0
-	map_attributes DesertTown, DESERT_TOWN, 0, 0
+	map_attributes ShimmerBoatHouse, SHIMMER_BOAT_HOUSE, $0, 0
+	
+	map_attributes BrilloTown, BRILLO_TOWN, 0, 0
 	
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0

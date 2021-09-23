@@ -16,7 +16,7 @@
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 0f
 	tilecoll WALL, WALL, WALL, DOOR ; 10
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 11
-	tilecoll FLOOR, PUDDLE, PUDDLE, PUDDLE ; 12
+	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 12
 	tilecoll WALL, FLOOR, NO_OLLIE, NO_OLLIE ; 13
 	tilecoll WALL, WALL, WALL, DOOR ; 14
 	tilecoll WALL, WALL, WALL, WALL ; 15

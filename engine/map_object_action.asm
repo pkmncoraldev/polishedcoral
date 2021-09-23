@@ -31,7 +31,10 @@ Pointers445f: ; 445f
 	dw SetFacingUmbrellaRight,         SetFacingUmbrellaRight     ; PERSON_ACTION_UMBRELLA_RIGHT
 	dw SetFacingBoatBob,               SetFacingFreezeBoatBob     ; PERSON_ACTION_BOAT_BOB
 	dw SetFacingValve,                 SetFacingValve             ; PERSON_ACTION_VALVE
-	dw SetFacingMallSign,    		   SetFacingMallSign	 	  ; PERSON_ACTION_MALL_SIGN
+	dw SetFacingMallSign1,    		   SetFacingMallSign1	 	  ; PERSON_ACTION_MALL_SIGN_1
+	dw SetFacingMallSign2,    		   SetFacingMallSign2	 	  ; PERSON_ACTION_MALL_SIGN_2
+	dw SetFacingMallSign3,    		   SetFacingMallSign3	 	  ; PERSON_ACTION_MALL_SIGN_3
+	dw SetFacingMallSign4,    		   SetFacingMallSign4	 	  ; PERSON_ACTION_MALL_SIGN_4
 	dw SetFacingHangarLeft,    		   SetFacingHangarLeft	 	  ; PERSON_ACTION_HANGAR_LEFT
 	dw SetFacingHangarRight,    	   SetFacingHangarRight	 	  ; PERSON_ACTION_HANGAR_RIGHT
 	dw SetFacingLighthouse1,    	   SetFacingLighthouse1	 	  ; PERSON_ACTION_LIGHTHOUSE_1
@@ -60,6 +63,7 @@ Pointers445f: ; 445f
 	dw SetFacingBalloons1,             SetFacingFreezeBalloons1   ; PERSON_ACTION_BALLOONS_1
 	dw SetFacingBalloons2,             SetFacingFreezeBalloons2   ; PERSON_ACTION_BALLOONS_2
 	dw SetFacingFossilMachine,    	   SetFacingFossilMachine	  ; PERSON_ACTION_FOSSIL_MACHINE
+	dw SetFacingPCSign,    			   SetFacingPCSign			  ; PERSON_ACTION_PC_SIGN
 	
 ; 44a3
 
@@ -499,8 +503,20 @@ SetFacingTileRight:
 	ld a, FACING_TILE_RIGHT
 	jp SetFixedFacing
 
-SetFacingMallSign:
-	ld a, FACING_MALL_SIGN
+SetFacingMallSign1:
+	ld a, FACING_MALL_SIGN_1
+	jp SetFixedFacing
+	
+SetFacingMallSign2:
+	ld a, FACING_MALL_SIGN_2
+	jp SetFixedFacing
+	
+SetFacingMallSign3:
+	ld a, FACING_MALL_SIGN_3
+	jp SetFixedFacing
+	
+SetFacingMallSign4:
+	ld a, FACING_MALL_SIGN_4
 	jp SetFixedFacing
 	
 SetFacingHangarLeft:
@@ -589,5 +605,9 @@ SetFacingBinoculars2:
 	
 SetFacingFossilMachine:
 	ld a, FACING_FOSSIL_MACHINE
+	jp SetFixedFacing
+	
+SetFacingPCSign:
+	ld a, FACING_PC_SIGN
 	jp SetFixedFacing
 	

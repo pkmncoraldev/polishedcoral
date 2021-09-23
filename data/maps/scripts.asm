@@ -245,11 +245,16 @@ INCLUDE "maps/NettBuildingOffice.asm"
 SECTION "Shimmer City Scripts", ROMX
 
 INCLUDE "maps/ShimmerCity.asm"
+INCLUDE "maps/ShimmerHarbor.asm"
 INCLUDE "maps/ShimmerLabLobby.asm"
 INCLUDE "maps/ShimmerLabResearchRoom.asm"
 INCLUDE "maps/ShimmerLabExperimentalLab.asm"
 INCLUDE "maps/ShimmerUnderBoardwalk.asm"
-INCLUDE "maps/DesertTown.asm"
+INCLUDE "maps/ShimmerBoatHouse.asm"
+
+SECTION "Brillo Town Scripts", ROMX
+
+INCLUDE "maps/BrilloTown.asm"
 
 SECTION "Train Scripts", ROMX
 

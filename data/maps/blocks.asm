@@ -26,6 +26,7 @@ GenericMart_BlockData:: ; used by tilesets/palettes.asm:LoadSpecialMapPalette
 LakeOnwaBoatHouseRight_BlockData:
 LakeOnwaBoatHouseLeft_BlockData:
 SunbeamBoatHouse_BlockData:
+ShimmerBoatHouse_BlockData:
 	INCBIN "maps/BoatHouse.ablk.lz"
 	
 SunbeamSurfShop_BlockData:
@@ -551,6 +552,9 @@ DodrioRanchBarn_BlockData:
 	
 ShimmerCity_BlockData:
 	INCBIN "maps/ShimmerCity.ablk.lz"
+	
+ShimmerHarbor_BlockData:
+	INCBIN "maps/ShimmerHarbor.ablk.lz"
 
 ShimmerLabLobby_BlockData:
 	INCBIN "maps/ShimmerLabLobby.ablk.lz"
@@ -564,5 +568,5 @@ ShimmerLabExperimentalLab_BlockData:
 ShimmerUnderBoardwalk_BlockData:
 	INCBIN "maps/ShimmerUnderBoardwalk.ablk.lz"
 	
-DesertTown_BlockData:
-	INCBIN "maps/DesertTown.ablk.lz"
+BrilloTown_BlockData:
+	INCBIN "maps/BrilloTown.ablk.lz"

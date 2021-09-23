@@ -651,8 +651,13 @@ TrySurfOW:: ; c9e7
 
 	ld a, [wMapMusic]
 	cp MUSIC_LAVA
+	jr nz, .skip_lava
+	
+	ld a, [wMapGroup]
+	cp GROUP_MT_ONWA_1F
 	jr z, .lava
 
+.skip_lava
 	ld de, ENGINE_FOURTHBADGE
 	call CheckEngineFlag
 	jr c, .debugsurf ;debug

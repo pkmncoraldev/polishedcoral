@@ -274,12 +274,14 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 14
 	
-	map_const SHIMMER_CITY,					  			  27, 16 ; 1
-	map_const SHIMMER_LAB_LOBBY,			  			   7,  3 ; 2
-	map_const SHIMMER_LAB_RESEARCH_ROOM,				   5,  5 ; 3
-	map_const SHIMMER_LAB_EXPERIMENTAL_LAB,  			   6,  5 ; 4
-	map_const SHIMMER_UNDER_BOARDWALK,		  			   7, 14 ; 5
+	map_const SHIMMER_CITY,					  			  29, 17 ; 1
+	map_const SHIMMER_HARBOR,					  		  11, 14 ; 2
+	map_const SHIMMER_LAB_LOBBY,			  			   7,  3 ; 3
+	map_const SHIMMER_LAB_RESEARCH_ROOM,				   5,  5 ; 4
+	map_const SHIMMER_LAB_EXPERIMENTAL_LAB,  			   6,  5 ; 5
+	map_const SHIMMER_UNDER_BOARDWALK,		  			   7, 14 ; 6
+	map_const SHIMMER_BOAT_HOUSE,                   	   4,  3 ; 7
 	
 	newgroup													 ; 15
 	
-	map_const DESERT_TOWN,								  22, 17 ; 1
+	map_const BRILLO_TOWN,								  22, 17 ; 1

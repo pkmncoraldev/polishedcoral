@@ -11,4 +11,10 @@ ShimmerLabResearchRoom_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	person_event SPRITE_SCIENTIST,  1,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchRoom, -1
+	
+	
+ShimmerLabResearchRoom:
+	setevent EVENT_CAN_GO_TO_DESERT
+	end

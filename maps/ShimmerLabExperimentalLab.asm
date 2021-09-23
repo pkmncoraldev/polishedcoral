@@ -9,7 +9,8 @@ ShimmerLabExperimentalLab_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost  7,  8, SIGNPOST_READ, ShimmerLabExperimentalLabBook
 
 	db 11 ; object events
 	person_event SPRITE_SCIENTIST,  6,  3, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabFossilCutscene, -1
@@ -38,8 +39,95 @@ ShimmerLabExperimentalLab_MapScriptHeader:
 	
 	
 ShimmerLabExperimentalLabBook:
+	opentext
+	writetext ShimmerLabExperimentalLabBookText1
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext ShimmerLabExperimentalLabBookTextWhich
+	loadmenudata ShimmerLabExperimentalLabBookMenuData
+	verticalmenu
+	closewindow
+	if_equal $1, .jaw
+	if_equal $2, .sail
+	if_equal $3, .dome
+	if_equal $4, .plume
+	if_equal $5, .cancel
+	jump .cancel
+	
+.jaw
+	closetext
+	pokepic TYRUNT
+	waitbutton
+	closepokepic
+	callasm SetJawDex
 	end
+.sail
+	closetext
+	pokepic AMAURA
+	waitbutton
+	closepokepic
+	callasm SetSailDex
+	end
+.dome
+	closetext
+	pokepic BULBASAUR
+	waitbutton
+	closepokepic
+	callasm SetDomeDex
+	end
+.plume
+	closetext
+	pokepic BULBASAUR
+	waitbutton
+	closepokepic
+	callasm SetPlumeDex
+	end
+.cancel
+	closetext
+	end
+	
+SetJawDex:
+	ld a, TYRUNT
+	jp SetSeenMon
+	
+SetSailDex:
+	ld a, AMAURA
+	jp SetSeenMon
+	
+SetDomeDex:
+	ld a, BULBASAUR ;TIRTOUGA
+	jp SetSeenMon
+	
+SetPlumeDex:
+	ld a, BULBASAUR ;ARCHEN
+	jp SetSeenMon
+	
+ShimmerLabExperimentalLabBookMenuData:
+	db $40 ; flags
+	db 00, 00 ; start coords
+	db 12, 14 ; end coords
+	dw .MenuData
+	db 1 ; default option
 
+.MenuData:
+	db $80 ; flags
+	db 5 ; items
+	db "JAW FOSSIL@"
+	db "SAIL FOSSIL@"
+	db "DOME FOSSIL@"
+	db "PLUME FOSSIL@"
+	db "CANCEL@"
+	end
+	
+ShimmerLabExperimentalLabBookText1:
+	text "TEXT 1"
+	done
+
+ShimmerLabExperimentalLabBookTextWhich:
+	text "Which article?"
+	done
+	
 ShimmerLabFossilCutscene:
 	faceplayer
 	opentext

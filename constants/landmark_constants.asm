@@ -44,7 +44,7 @@
 	const LUSTER_SEWERS		 ; 22
 	const PARK				 ; 23
 	const SHIMMER_CITY		 ; 24
-	const DESERT_TOWN		 ; 25
+	const BRILLO_TOWN		 ; 25
 	
 	const LUSTER_STATION
 	const RESIDENTIAL_DISTRICT

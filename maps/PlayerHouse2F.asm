@@ -18,7 +18,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event  7, 14, FLICKER_STATION, 1
 	warp_event  9, 14, TWINKLE_TOWN, 1
 	warp_event 11, 14, LUSTER_CITY_SHOPPING, 1
-	warp_event 13, 14, DESERT_TOWN, 1
+	warp_event 13, 14, BRILLO_TOWN, 1
 	warp_event 15, 14, SKATEPARK, 1
 
 	db 1 ; coord events
@@ -59,7 +59,7 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke CLEFABLE, 100
-	givepoke MAGIKARP, 5
+	givepoke JOLTIK, 5
 .items
 	writetext PlayerHouseDebugText6
 	yesorno

@@ -53,7 +53,10 @@ Facings:
 	dw FacingBoatBob1
 	dw FacingBoatBob2
 	dw FacingValve1
-	dw FacingMallSign 		; FACING_MALL_SIGN
+	dw FacingMallSign1 		; FACING_MALL_SIGN_1
+	dw FacingMallSign2 		; FACING_MALL_SIGN_2
+	dw FacingMallSign3 		; FACING_MALL_SIGN_3
+	dw FacingMallSign4 		; FACING_MALL_SIGN_4
 	dw FacingHangarLeft 	; FACING_HANGAR_LEFT
 	dw FacingHangarRight 	; FACING_HANGAR_RIGHT
 	dw FacingLighthouse1
@@ -79,6 +82,7 @@ Facings:
 	dw FacingBinoculars2
 	dw FacingBalloons
 	dw FacingFossilMachine
+	dw FacingPCSign
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -406,10 +410,21 @@ FacingTileRight:
 	db 12,  0, 0 | X_FLIP, $0b
 	db 12,  8, 0 | X_FLIP, $0a
 
-FacingMallSign:
-	db 2 ; #
-	db 12,  8, 0, $07
-	db 12, 16, 0, $02
+FacingMallSign1:
+	db 1 ; #
+	db 12, 8, 0, $00
+	
+FacingMallSign2:
+	db 1 ; #
+	db 12, 0, 0, $01
+	
+FacingMallSign3:
+	db 1 ; #
+	db 4, 8, 0, $00
+	
+FacingMallSign4:
+	db 1 ; #
+	db 4, 0, 0, $01
 	
 FacingHangarLeft:
 	db 6 ; #
@@ -688,3 +703,7 @@ FacingBalloons:
 FacingFossilMachine:
 	db 1 ; #
 	db -1, 12, 0, $04
+	
+FacingPCSign:
+	db 1 ; #
+	db 4, 0, 0, $02

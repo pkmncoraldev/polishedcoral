@@ -108,6 +108,12 @@ LakeBoatMan1:
 	closetext
 	refreshscreen $0
 	special PlaceMoneyTopRight
+	
+	checkevent EVENT_CAN_GO_TO_DESERT
+	iftrue .brillomenu
+	checkevent EVENT_CAN_GO_TO_SHIMMER
+	iftrue .shimmermenu
+	
 	loadmenudata LakeBoatHouseRMenuData
 	verticalmenu
 	closewindow
@@ -115,6 +121,27 @@ LakeBoatMan1:
 	if_equal $2, .LakeL
 	if_equal $3, .Sunbeam
 	if_equal $4, .end
+	
+.shimmermenu
+	loadmenudata LakeBoatHouseRShimmerMenuData
+	verticalmenu
+	closewindow
+	if_equal $1, .Sunset
+	if_equal $2, .LakeL
+	if_equal $3, .Sunbeam
+	if_equal $4, .Shimmer
+	if_equal $5, .end
+	
+.brillomenu
+	loadmenudata LakeBoatHouseRBrilloMenuData
+	verticalmenu
+	closewindow
+	if_equal $1, .Sunset
+	if_equal $2, .LakeL
+	if_equal $3, .Sunbeam
+	if_equal $4, .Shimmer
+	if_equal $5, .Brillo
+	if_equal $6, .end
 	
 .Sunset
 	writetext LakeBoatManText12
@@ -196,6 +223,76 @@ LakeBoatMan1:
 	warpfacing UP, SUNBEAM_ISLAND, 7, 50
 	end
 	
+.Shimmer
+	writetext LakeBoatManText16
+	yesorno
+	iffalse .return
+	checkmoney $0, 500
+	if_equal $2, .noride
+	playsound SFX_TRANSACTION
+	takemoney $0, 500
+	special PlaceMoneyTopRight
+	checkevent EVENT_LAKE_BOAT_LEFT
+	iffalse .skipcallingboat4
+	writetext LakeBoatManText4
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN1, step_left
+	opentext
+	writetext LakeBoatManText5
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN1, step_right
+	spriteface LAKEBOATMAN1, DOWN
+	clearevent EVENT_LAKE_BOAT_LEFT
+	opentext
+.skipcallingboat4
+	writetext LakeBoatManText3
+	waitbutton
+	closetext
+	special FadeOutPalettes
+	special Special_FadeOutMusic
+	clearevent EVENT_SHIMMER_BOATMAN
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
+	domaptrigger SHIMMER_HARBOR, $1
+	warpfacing DOWN, SHIMMER_HARBOR, 17, 24
+	end
+	
+.Brillo
+	writetext LakeBoatManText17
+	yesorno
+	iffalse .return
+	checkmoney $0, 500
+	if_equal $2, .noride
+	playsound SFX_TRANSACTION
+	takemoney $0, 500
+	special PlaceMoneyTopRight
+	checkevent EVENT_LAKE_BOAT_LEFT
+	iffalse .skipcallingboat5
+	writetext LakeBoatManText4
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN1, step_left
+	opentext
+	writetext LakeBoatManText5
+	waitbutton
+	closetext
+	applyonemovement LAKEBOATMAN1, step_right
+	spriteface LAKEBOATMAN1, DOWN
+	clearevent EVENT_LAKE_BOAT_LEFT
+	opentext
+.skipcallingboat5
+	writetext LakeBoatManText3
+	waitbutton
+	closetext
+	special FadeOutPalettes
+	special Special_FadeOutMusic
+	clearevent EVENT_BRILLO_BOATMAN
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
+	domaptrigger BRILLO_TOWN, $1
+	warpfacing DOWN, BRILLO_TOWN, 17, 24
+	end
+	
 LakeBoatHouseRMenuData:
 	db $40 ; flags
 	db 03, 00 ; start coords
@@ -209,5 +306,40 @@ LakeBoatHouseRMenuData:
 	db "SUNSET BAY@"
 	db "LAKE ONWA WEST@"
 	db "SUNBEAM ISLAND@"
+	db "CANCEL@"
+	end
+	
+LakeBoatHouseRShimmerMenuData:
+	db $40 ; flags
+	db 03, 00 ; start coords
+	db 17, 19 ; end coords
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db $81 ; flags
+	db 5 ; items
+	db "SUNSET BAY@"
+	db "LAKE ONWA WEST@"
+	db "SUNBEAM ISLAND@"
+	db "SHIMMER CITY@"
+	db "CANCEL@"
+	end
+	
+LakeBoatHouseRBrilloMenuData:
+	db $40 ; flags
+	db 03, 00 ; start coords
+	db 17, 19 ; end coords
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db $81 ; flags
+	db 6 ; items
+	db "SUNSET BAY@"
+	db "LAKE ONWA WEST@"
+	db "SUNBEAM ISLAND@"
+	db "SHIMMER CITY@"
+	db "BRILLO TOWN@"
 	db "CANCEL@"
 	end

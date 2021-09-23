@@ -587,7 +587,10 @@ MapObjectMovementPattern:
 	dw .MovementUmbrellaRight ; 18
 	dw .MovementBoatBob
 	dw .MovementValve
-	dw .MovementMallSign
+	dw .MovementMallSign1
+	dw .MovementMallSign2
+	dw .MovementMallSign3
+	dw .MovementMallSign4
 	dw .MovementHangarLeft
 	dw .MovementHangarRight
 	dw .MovementLighthouse1
@@ -617,6 +620,7 @@ MapObjectMovementPattern:
 	dw .MovementBalloons1
 	dw .MovementBalloons2
 	dw .MovementFossilMachine
+	dw .MovementPCSign
 
 .RandomWalkY:
 	call Random
@@ -825,8 +829,20 @@ MapObjectMovementPattern:
 	ld a, PERSON_ACTION_TILE_RIGHT
 	jp ._ActionA_StepType04
 
-.MovementMallSign:
-	ld a, PERSON_ACTION_MALL_SIGN
+.MovementMallSign1:
+	ld a, PERSON_ACTION_MALL_SIGN_1
+	jp ._ActionA_StepType04
+	
+.MovementMallSign2:
+	ld a, PERSON_ACTION_MALL_SIGN_2
+	jp ._ActionA_StepType04
+	
+.MovementMallSign3:
+	ld a, PERSON_ACTION_MALL_SIGN_3
+	jp ._ActionA_StepType04
+	
+.MovementMallSign4:
+	ld a, PERSON_ACTION_MALL_SIGN_4
 	jp ._ActionA_StepType04
 	
 .MovementHangarLeft:
@@ -951,6 +967,10 @@ MapObjectMovementPattern:
 	
 .MovementFossilMachine:
 	ld a, PERSON_ACTION_FOSSIL_MACHINE
+	jr ._ActionA_StepType04
+	
+.MovementPCSign:
+	ld a, PERSON_ACTION_PC_SIGN
 	jr ._ActionA_StepType04
 	
 .MovementUmbrellaLeft:

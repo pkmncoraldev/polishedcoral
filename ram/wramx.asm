@@ -1036,8 +1036,9 @@ wTwinkleGymYellowRoomTrigger:: ds 1
 wMtOnwaB2FTrigger:: ds 1
 wMtOnwaB3FTrigger:: ds 1
 wNettBuildingOfficeTrigger:: ds 1
+wBrilloTownTrigger:: ds 1
 
-ds 23
+ds 22
 
 ; fight counts
 wJackFightCount::    ds 1

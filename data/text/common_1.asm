@@ -1302,8 +1302,61 @@ UnknownText_TradeAfterText4::
 	para "Thanks again for"
 	line "the trade!"
 	done
-	done
 
+UnknownText_TradeIntroText5::
+	text "My job keeps me so"
+	line "busy that I can't"
+	cont "always give my"
+	cont "#MON the atten-"
+	cont "tion she needs…"
+	
+	para "I think I need a"
+	line "lower mantinence"
+	cont "#MON!"
+	
+	para "Do you have a"
+	line "MEOWTH?"
+	
+	para "Would you trade"
+	line "for my HOUNDOUR?"
+	done
+	
+UnknownText_TradeCancelText5::
+	text "That's no good!"
+	done
+	
+UnknownText_TradeWrongText5::
+	text "I was hoping"
+	line "for a #MON like"
+	cont "MEOWTH…"
+	done
+	
+UnknownText_TradeCompleteText5::
+	text "Alright!"
+	
+	para "Please take good"
+	line "care of MITTENS!"
+	
+	para "I'm really going to"
+	line "miss her…"
+	done
+	
+UnknownText_TradeAfterText5::
+	text "Oh it's you!"
+	
+	para "How is MITTENS?"
+	
+	para "Are you giving her"
+	line "lots of attention?"
+	
+	para "@"
+	text_from_ram wTradeMeowthName
+	text "'s been"
+	line "a lot better for"
+	cont "me with my busy"
+	cont "schedule."
+	done
+	
 UnknownText_0x1bd88e::
 	text "Transaction"
 	line "cancelled!"

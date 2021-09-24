@@ -101,6 +101,11 @@ NPCTrade:: ; fcba8
 	rst CopyBytes
 	jr .cont
 .trade5
+	ld hl, wBackupName
+	ld de, wTradeMeowthName
+	ld bc, NAME_LENGTH
+	rst CopyBytes
+	jr .cont
 .trade6
 .trade7
 .trade8
@@ -434,7 +439,7 @@ PrintTradeText: ; fcf38
 	push af
 	call GetTradeMonNames
 	pop af
-	ld bc, 2 * 4
+	ld bc, 2 * 10
 	ld hl, TradeTexts
 	rst AddNTimes
 	ld a, [wcf64]
@@ -453,30 +458,60 @@ TradeTexts: ; fcf53
 	dw TradeIntroText2
 	dw TradeIntroText3
 	dw TradeIntroText4
+	dw TradeIntroText5
+	dw TradeIntroText1
+	dw TradeIntroText1
+	dw TradeIntroText1
+	dw TradeIntroText1
+	dw TradeIntroText1
 
 ; cancel
 	dw TradeCancelText1
 	dw TradeCancelText2
 	dw TradeCancelText3
 	dw TradeCancelText4
+	dw TradeCancelText5
+	dw TradeCancelText1
+	dw TradeCancelText1
+	dw TradeCancelText1
+	dw TradeCancelText1
+	dw TradeCancelText1
 
 ; wrong mon
 	dw TradeWrongText1
 	dw TradeWrongText2
 	dw TradeWrongText3
 	dw TradeWrongText4
+	dw TradeWrongText5
+	dw TradeWrongText1
+	dw TradeWrongText1
+	dw TradeWrongText1
+	dw TradeWrongText1
+	dw TradeWrongText1
 
 ; completed
 	dw TradeCompleteText1
 	dw TradeCompleteText2
 	dw TradeCompleteText3
 	dw TradeCompleteText4
+	dw TradeCompleteText5
+	dw TradeCompleteText1
+	dw TradeCompleteText1
+	dw TradeCompleteText1
+	dw TradeCompleteText1
+	dw TradeCompleteText1
 
 ; after
 	dw TradeAfterText1
 	dw TradeAfterText2
 	dw TradeAfterText3
 	dw TradeAfterText4
+	dw TradeAfterText5
+	dw TradeAfterText1
+	dw TradeAfterText1
+	dw TradeAfterText1
+	dw TradeAfterText1
+	dw TradeAfterText1
 ; fcf7b
 
 
@@ -583,4 +618,24 @@ TradeCompleteText4:
 
 TradeAfterText4:
 	text_jump UnknownText_TradeAfterText4
+	db "@"
+	
+TradeIntroText5:
+	text_jump UnknownText_TradeIntroText5
+	db "@"
+
+TradeCancelText5:
+	text_jump UnknownText_TradeCancelText5
+	db "@"
+
+TradeWrongText5:
+	text_jump UnknownText_TradeWrongText5
+	db "@"
+
+TradeCompleteText5:
+	text_jump UnknownText_TradeCompleteText5
+	db "@"
+
+TradeAfterText5:
+	text_jump UnknownText_TradeAfterText5
 	db "@"

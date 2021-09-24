@@ -15,16 +15,16 @@ NPCTrades:
 	db $DD, $DD, $DD, ABILITY_1 | ADAMANT, FEMALE,   POKE_BALL,   RAZOR_CLAW
 	dw 25145
 	db "ALICE@@@", $00
-; TRADE_WITH_EMY_FOR_SCRAGGY in Luster City
+; TRADE_WITH_EMY_FOR_SCRAGGY in Luster City Residential
 	db 3, CROAGUNK,       SCRAGGY,   "SHAGGY@@@@@"
 	db $DD, $DD, $DD, ABILITY_2 | JOLLY, MALE,   POKE_BALL,   SHED_SHELL
 	dw 37351
 	db "EMY@@@@@", $00
-; TRADE_WITH_CHRIS_FOR_HERACROSS in Pewter City
-	db 2, BULBASAUR,     BULBASAUR,  "P","a","u","l","@","@","@","@","@","@","@"
-	db $EE, $EE, $EE, HIDDEN_ABILITY | JOLLY,   MALE,   PARK_BALL,    SILVERPOWDER
-	dw 15616
-	db "C","h","r","i","s","@","@","@", $00
+; TRADE_WITH_TABBY_FOR_HOUNDOUR in Luster City Business
+	db 4, MEOWTH,     HOUNDOUR,  "MITTENS@@@@"
+	db $EE, $EE, $EE, HIDDEN_ABILITY | BRAVE,   FEMALE,   POKE_BALL,    DESTINY_KNOT
+	dw 12817
+	db "TABBY@@@", $00
 ; TRADE_WITH_KIM_FOR_NUMEL in Route 14
 	db 3, BULBASAUR,  BULBASAUR,    "C","h","a","n","c","e","@","@","@","@","@"
 	db $EE, $EE, $EE, HIDDEN_ABILITY | CALM,    FEMALE, HEAL_BALL,    LUCKY_EGG

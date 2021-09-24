@@ -765,7 +765,7 @@ wTradeScytherName:: ds NAME_LENGTH
 wTradeGloomName:: ds NAME_LENGTH
 wTradeSneaselName:: ds NAME_LENGTH
 wTradeCroagunkName:: ds NAME_LENGTH
-wTradeMon5Name:: ds NAME_LENGTH
+wTradeMeowthName:: ds NAME_LENGTH
 wTradeMon6Name:: ds NAME_LENGTH
 wTradeMon7Name:: ds NAME_LENGTH
 wTradeMon8Name:: ds NAME_LENGTH

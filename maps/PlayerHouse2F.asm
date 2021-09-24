@@ -59,11 +59,12 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke CLEFABLE, 100
-	givepoke JOLTIK, 5
+	givepoke MEOWTH, 5
 .items
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
+	giveitem UP_GRADE, 2
 	giveitem RARE_CANDY, 99
 	giveitem THUNDERSTONE, 3
 	giveitem FIRE_STONE, 3

@@ -2263,7 +2263,7 @@ IronDefenseUsers:
 	db -1
 	
 AcidArmorUsers:
-	db SMEARGLE
+	db VAPOREON
 	db -1
 	
 MeditateUsers:
@@ -2274,6 +2274,8 @@ MeditateUsers:
 HowlUsers:
 	db GROWLITHE
 	db ARCANINE
+	db HOUNDOUR
+	db HOUNDOOM
 	db -1
 	
 FuryAttackUsers:

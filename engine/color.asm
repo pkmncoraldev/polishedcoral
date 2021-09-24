@@ -928,7 +928,10 @@ LoadMapPals::
 	jp .outside
 	
 .nett
+	ld a, [wMapGroup]
+	cp GROUP_NETT_BUILDING_1F
 	ld a, [wMapNumber]
+	jr nz, .snes
 	cp MAP_NETT_BUILDING_1F
 	jr nz, .nett2
 	call .normal

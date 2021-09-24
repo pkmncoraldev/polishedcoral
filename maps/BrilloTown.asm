@@ -18,13 +18,17 @@ BrilloTown_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 5 ; object events
+	db 6 ; object events
+	object_event 17, 24, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NULL, EVENT_BRILLO_BOATMAN
 	object_event 17, 25, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
 	object_event 17, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
 	object_event 16, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
 	object_event 16, 25, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
 	person_event SPRITE_MALL_SIGN, 11, 24, SPRITEMOVEDATA_PC_SIGN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, NULL, -1
 
+	const_def 1 ; object constants
+	const BRILLO_BOAT_MAN
+	
 	
 BrilloTownTrigger0:
 	end
@@ -44,14 +48,13 @@ JustRodeBoatBrillo:
 	writetext BrilloJustRodeBoatText
 	waitbutton
 	closetext
-;	applymovement SUNBEAM_NPC4, Movement_SunbeamBoatmanLeave
+	applymovement BRILLO_BOAT_MAN, Movement_BrilloBoatmanLeave
 	playsound SFX_EXIT_BUILDING
-;	disappear SUNBEAM_NPC4
+	disappear BRILLO_BOAT_MAN
 	waitsfx
 	special Special_StartLandmarkTimer
 	waitsfx
 	setevent EVENT_BRILLO_BOATMAN
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_GRANNY
 	dotrigger $0
 	end
 	
@@ -67,5 +70,18 @@ BrilloSailboatText:
 	done
 	
 BrilloJustRodeBoatText:
-	text "TEXT"
+	text "Here we are,"
+	line "BRILLO TOWN."
+	
+	para "Thanks for riding."
+	
+	para "Come again."
 	done
+	
+Movement_BrilloBoatmanLeave:
+	step_up
+	step_up
+	step_right
+	step_right
+	step_up
+	step_end

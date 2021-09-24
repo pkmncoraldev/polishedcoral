@@ -150,7 +150,7 @@ SunbeamBoatHouseNPC:
 	clearevent EVENT_SHIMMER_BOATMAN
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
 	domaptrigger SHIMMER_HARBOR, $1
-	warpfacing DOWN, SHIMMER_HARBOR, 15, 8
+	warpfacing LEFT, SHIMMER_HARBOR, 15, 8
 	end
 	
 .Brillo
@@ -171,7 +171,7 @@ SunbeamBoatHouseNPC:
 	clearevent EVENT_BRILLO_BOATMAN
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
 	domaptrigger BRILLO_TOWN, $1
-	warpfacing DOWN, BRILLO_TOWN, 17, 24
+	warpfacing UP, BRILLO_TOWN, 17, 25
 	end
 	
 .nomoneySunset

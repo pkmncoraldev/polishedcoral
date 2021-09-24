@@ -143,7 +143,7 @@ BrilloBoatHouseNPC:
 	clearevent EVENT_SHIMMER_BOATMAN
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
 	domaptrigger SHIMMER_HARBOR, $1
-	warpfacing DOWN, SHIMMER_HARBOR, 15, 8
+	warpfacing LEFT, SHIMMER_HARBOR, 15, 8
 	end
 	
 .nomoneySunset

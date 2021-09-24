@@ -583,3 +583,6 @@ ShimmerUnderBoardwalk_BlockData:
 	
 BrilloTown_BlockData:
 	INCBIN "maps/BrilloTown.ablk.lz"
+	
+Route12_BlockData:
+	INCBIN "maps/Route12.ablk.lz"

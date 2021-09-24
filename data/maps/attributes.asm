@@ -271,6 +271,12 @@ ENDM
 	map_attributes ShimmerHarbor, SHIMMER_HARBOR, $71, EAST
 	connection east, ShimmerCity, SHIMMER_CITY, 0
 	
+	map_attributes BrilloTown, BRILLO_TOWN, $35, EAST
+	connection east, Route12, ROUTE_12, -7
+	
+	map_attributes Route12, ROUTE_12, $71, WEST
+	connection west, BrilloTown, BRILLO_TOWN, 7
+	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0
 	map_attributes GlintGrove, GLINT_GROVE, $27, 0
@@ -446,10 +452,7 @@ ENDM
 	map_attributes BrilloHouse2, BRILLO_HOUSE_2, $0, 0
 	map_attributes BrilloHouse3, BRILLO_HOUSE_3, $0, 0
 	map_attributes BrilloPokeCenter, BRILLO_POKECENTER, $0, 0
-	map_attributes BrilloMart, BRILLO_MART, $0, 0
-	
-	map_attributes BrilloTown, BRILLO_TOWN, 0, 0
-	
+	map_attributes BrilloMart, BRILLO_MART, $0, 0	
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0

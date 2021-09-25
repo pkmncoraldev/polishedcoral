@@ -45,6 +45,7 @@ GlintSecretSmeargle2:
 	special HealParty
 	dotrigger $0
 	clearevent EVENT_TRIO_BROS
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	end
 	
 GlintSecretTrioRed:

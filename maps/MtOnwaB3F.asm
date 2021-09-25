@@ -46,6 +46,7 @@ LavaCaveBF3Magmar:
 	waitbutton
 	closetext
 .CaughtMagmar
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	end
 
 MtOnwaB3FTrainerStopsYou:

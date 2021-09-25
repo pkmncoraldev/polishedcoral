@@ -148,6 +148,7 @@ SunbeamJungleTrigger0:
 	setevent EVENT_SUNBEAM_JUNGLE_CUTSCENE
 	special Special_StartLandmarkTimer
 	dotrigger $1
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	end
 	
 SunbeamJungleTrigger1:

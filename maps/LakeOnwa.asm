@@ -606,6 +606,7 @@ LakePlayedFluteForSudowoodo::
 	waitbutton
 	closetext
 	setevent EVENT_FOUGHT_SUDOWOODO
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	end
 
 LakeDontUseFlute:

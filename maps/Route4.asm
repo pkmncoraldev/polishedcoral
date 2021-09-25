@@ -169,6 +169,7 @@ Route4PlayedFluteForSnorlax::
 	waitbutton
 	closetext
 .CaughtSnorlax
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	end
 	
 Route4DontUseFlute:

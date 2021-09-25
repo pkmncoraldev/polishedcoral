@@ -1002,6 +1002,8 @@ NormalStep: ; 5412
 	jr z, .shake_grass
 	cp COLL_TALL_GRASS
 	jr z, .shake_grass
+	cp COLL_SAND
+	jr z, .shake_grass
 
 	cp COLL_PUDDLE
 	jr nz, .skip_effect

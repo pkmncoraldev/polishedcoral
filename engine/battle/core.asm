@@ -161,6 +161,9 @@ WildFled_EnemyFled_LinkBattleCanceled: ; 3c0e5
 	call SetPlayerTurn
 	ld a, 1
 	ld [wBattleEnded], a
+	xor a
+	ld [wPlaceBallsX], a
+	ld [wPlaceBallsY], a
 	ret
 ; 3c12f
 
@@ -2198,6 +2201,9 @@ HandleEnemyMonFaint: ; 3cd55
 
 	ld a, 1
 	ld [wBattleEnded], a
+	xor a
+	ld [wPlaceBallsX], a
+	ld [wPlaceBallsY], a
 	ret
 
 .trainer
@@ -2214,6 +2220,9 @@ HandleEnemyMonFaint: ; 3cd55
 
 	ld a, 1
 	ld [wBattleEnded], a
+	xor a
+	ld [wPlaceBallsX], a
+	ld [wPlaceBallsY], a
 	ret
 
 .dont_flee
@@ -2532,6 +2541,9 @@ WinTrainerBattle: ; 3cfa4
 	ld a, $1
 	ld [wBattleLowHealthAlarm], a
 	ld [wBattleEnded], a
+	xor a
+	ld [wPlaceBallsX], a
+	ld [wPlaceBallsY], a
 	ld a, [wLinkMode]
 	and a
 	ld a, b
@@ -2810,6 +2822,9 @@ HandlePlayerMonFaint: ; 3d14e
 	jr nz, .trainer
 	ld a, $1
 	ld [wBattleEnded], a
+	xor a
+	ld [wPlaceBallsX], a
+	ld [wPlaceBallsY], a
 	ret
 
 .trainer
@@ -2821,6 +2836,9 @@ HandlePlayerMonFaint: ; 3d14e
 	jr nc, .switch
 	ld a, $1
 	ld [wBattleEnded], a
+	xor a
+	ld [wPlaceBallsX], a
+	ld [wPlaceBallsY], a
 	ret
 
 .switch
@@ -3070,6 +3088,9 @@ ForcePickSwitchMonInBattle: ; 3d380
 LostBattle: ; 3d38e
 	ld a, 1
 	ld [wBattleEnded], a
+	xor a
+	ld [wPlaceBallsX], a
+	ld [wPlaceBallsY], a
 
 	ld a, [wInBattleTowerBattle]
 	bit 0, a
@@ -5854,6 +5875,9 @@ CheckRunSpeed:
 	call StdBattleTextBox
 	call WaitSFX
 	call LoadTileMapToTempTileMap
+	xor a
+	ld [wPlaceBallsX], a
+	ld [wPlaceBallsY], a
 	scf
 	ret
 

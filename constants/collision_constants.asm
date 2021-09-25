@@ -9,6 +9,7 @@ COLL_SKATE             EQU $01
 COLL_NO_OLLIE          EQU $02
 COLL_GRIND	           EQU $03
 COLL_WALL              EQU $07
+COLL_SAND              EQU $08
 COLL_CUT_TREE          EQU $12
 COLL_LONG_GRASS        EQU $14
 COLL_HEADBUTT_TREE     EQU $15

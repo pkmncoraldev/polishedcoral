@@ -956,7 +956,7 @@ wRadioTuningKnob:: ds 1
 wLastDexMode:: ds 1
 
 wIsNearCampfire:: ds 1
-	ds 1 ; unused
+wStuckInSandCounter:: ds 1
 
 wPlayerState:: ds 1
 

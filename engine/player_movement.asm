@@ -33,9 +33,18 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 ; 8002d
 
 .TranslateIntoMovement:
+	ld a, [wPlaceBallsX]
+	cp 0
+	jr nz, .DontMoveTimer
+
 	ld a, [wSkateboardGrinding]
 	cp 69
 	jp z, .Falling2
+	
+	ld a, [wStuckInSandCounter]
+	cp 8
+	jp z, .SinkingInSand
+	
 	ld a, [wPlayerState]
 	and a ; cp PLAYER_NORMAL
 	jr z, .Normal
@@ -78,6 +87,23 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret c
 	jp .NotMoving
 	
+.DontMoveTimer:
+	ld a, [wPlaceBallsX]
+	sub 1
+	ld [wPlaceBallsX], a
+	jp .StandInPlace
+	
+.SinkingInSand:
+	ld a, [wCurSFX]
+	cp SFX_PLACE_PUZZLE_PIECE_DOWN
+	jr nz, .sand_skip
+	call CheckSFX
+	jp c, .StandInPlace
+.sand_skip
+	ld a, 7
+	ld [wStuckInSandCounter], a
+	ret
+
 .Running:
 	ld a, [wWalkingDirection]
 	cp STANDING
@@ -94,6 +120,20 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret c
 	call .CheckTurning
 	ret c
+	
+	ld a, [wPlayerStandingTile]
+	cp COLL_SAND
+	jr nz, .not_sand
+	ld a, 8
+	ld [wStuckInSandCounter], a
+	ld de, SFX_PLACE_PUZZLE_PIECE_DOWN
+	call PlaySFX
+	ld a, PLAYER_BATHING
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	jp .bump
+	
+.not_sand
 	call .TryStep
 	jr c, .stepTaken
 	call .TryJump
@@ -401,6 +441,22 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp e
 	jr z, .not_turning
 
+	ld a, [wStuckInSandCounter]
+	cp 0
+	jp z, .CheckTurningCont
+	
+	ld a, [wStuckInSandCounter]
+	sub 1
+	ld [wStuckInSandCounter], a
+	ld a, STEP_TURN
+	call .DoStep
+	ld a, 2
+	scf
+	ld de, SFX_BURN
+	jp PlaySFX
+	
+.CheckTurningCont
+	
 	ld a, STEP_TURN
 	call .DoStep
 	ld a, 2
@@ -421,8 +477,30 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	bit 0, a ; Team Snare in Starglow Valley. Reusing this flag for convenience.
 	jr z, .not_sitting
 	ret
-	
+.free_from_sand
+	ld a, [wCurSFX]
+	cp SFX_BURN
+	jr nz, .not_burn_sfx
+	call CheckSFX
+	ret c
+.not_burn_sfx
+	ld de, SFX_JUMP_OVER_LEDGE
+	call PlaySFX
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ld a, 0
+	ld [wStuckInSandCounter], a
+	ld a, 30
+	ld [wPlaceBallsX], a
+	jp .StandInPlace
 .not_sitting
+	ld a, [wStuckInSandCounter]
+	cp 1
+	jp z, .free_from_sand
+	cp 0
+	jp nz, .bump
+
 ; Surfing actually calls .TrySurf directly instead of passing through here.
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
@@ -1297,11 +1375,11 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp PIPPI
 	jr nz, .DoStepNotPippi
 	ld hl, .StepsPippi
-	jr .DoStepCont
+	jr .DoStepCont2
 	
 .DoStepNotPippi
  	ld hl, .Steps
-.DoStepCont
+.DoStepCont2
 	add hl, de
 	add hl, de
 	ld a, [hli]
@@ -2019,6 +2097,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 .BumpSound: ; 803ee
 	eventflagcheck EVENT_SPOOKHOUSE_DARK
 	ret nz
+	ld a, [wStuckInSandCounter]
+	cp 0
+	ret nz
 	ld a, [wTileset]
 	cp TILESET_SNOW
 	jr nz, .not_on_snowstorm_map
@@ -2027,10 +2108,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 .not_on_snowstorm_map
 	call CheckSFX
 	ret c
+	
 	ld de, SFX_BUMP
 	jp PlaySFX
-; 803f9
-
 .snowstorm
 	ld a, [wCurSFX]
 	cp SFX_SNOWSTORM_INTRO

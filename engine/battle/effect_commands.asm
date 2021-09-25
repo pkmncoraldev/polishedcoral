@@ -6453,6 +6453,9 @@ BattleCommand_teleport: ; 36778
 	call DelayFrames
 	call SetBattleDraw
 
+	xor a
+	ld [wPlaceBallsX], a
+	ld [wPlaceBallsY], a
 	ld hl, FledFromBattleText
 	jp StdBattleTextBox
 
@@ -6590,6 +6593,10 @@ BattleCommand_forceswitch: ; 3680f
 	call AnimateCurrentMove
 	ld c, 20
 	call DelayFrames
+	
+	xor a
+	ld [wPlaceBallsX], a
+	ld [wPlaceBallsY], a
 	ld hl, FledInFearText
 	jp StdBattleTextBox
 

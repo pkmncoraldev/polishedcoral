@@ -2416,6 +2416,9 @@ PokeDoll: ; f48f
 	jr nz, .asm_f4a6
 	inc a
 	ld [wBattleEnded], a
+	xor a
+	ld [wPlaceBallsX], a
+	ld [wPlaceBallsY], a
 	ld a, [wBattleResult]
 	and 3 << 6
 	or $2

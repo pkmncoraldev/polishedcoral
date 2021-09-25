@@ -25,7 +25,7 @@ MAP_NONE   EQU 0
 	map_const DAYBREAK_GROTTO_1,                           9,  7 ;  3
 	map_const DAYBREAK_GROTTO_2,                           9, 11 ;  4
 	map_const GLINT_GROVE,                                27, 30 ;  5
-	map_const GLINT_GROVE_DEEP,							   7,  7 ;  6
+	map_const GLINT_GROVE_DEEP,							   7,  8 ;  6
 	map_const STARGLOW_CAVERN_1F,                         19, 16 ;  7
 	map_const STARGLOW_CAVERN_2F,                         14, 13 ;  8
 	map_const STARGLOW_CAVERN_3F,                          4,  8 ;  9

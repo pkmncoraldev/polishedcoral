@@ -204,7 +204,7 @@ GlintGrovePile1:
 	refreshscreen
 	callasm MakePalPink
 	playsound SFX_POWDER
-	changeblock $18, $2c, $7e
+	changeblock $18, $2c, $2b
 	reloadmappart
 	pause 3
 	disappear GLINTGROVE_PETALS
@@ -229,7 +229,7 @@ GlintGrovePile2:
 	refreshscreen
 	callasm MakePalPink
 	playsound SFX_POWDER
-	changeblock $8, $26, $7e
+	changeblock $8, $26, $2b
 	reloadmappart
 	pause 3
 	disappear GLINTGROVE_PETALS
@@ -254,7 +254,7 @@ GlintGrovePile3:
 	refreshscreen
 	callasm MakePalPink
 	playsound SFX_POWDER
-	changeblock $20, $26, $7e
+	changeblock $20, $26, $2b
 	reloadmappart
 	pause 3
 	disappear GLINTGROVE_PETALS
@@ -279,7 +279,7 @@ GlintGrovePile4:
 	refreshscreen
 	callasm MakePalPink
 	playsound SFX_POWDER
-	changeblock $10, $1a, $7e
+	changeblock $10, $1a, $2b
 	reloadmappart
 	pause 3
 	disappear GLINTGROVE_PETALS
@@ -304,7 +304,7 @@ GlintGrovePile5:
 	refreshscreen
 	callasm MakePalPink
 	playsound SFX_POWDER
-	changeblock $1a, $16, $7e
+	changeblock $1a, $16, $2b
 	reloadmappart
 	pause 3
 	disappear GLINTGROVE_PETALS
@@ -329,7 +329,7 @@ GlintGrovePile6:
 	refreshscreen
 	callasm MakePalPink
 	playsound SFX_POWDER
-	changeblock $c, $2e, $7e
+	changeblock $c, $2e, $2b
 	reloadmappart
 	pause 3
 	disappear GLINTGROVE_PETALS
@@ -354,7 +354,7 @@ GlintGrovePile7:
 	refreshscreen
 	callasm MakePalPink
 	playsound SFX_POWDER
-	changeblock $1c, $8, $7e
+	changeblock $1c, $8, $2b
 	reloadmappart
 	pause 3
 	disappear GLINTGROVE_PETALS
@@ -411,31 +411,31 @@ GlintGrovePiles:
 	return
 
 .GlintGrovePile1:
-	changeblock $18, $2c, $7e
+	changeblock $18, $2c, $2b
 	jump .cont1
 
 .GlintGrovePile2:
-	changeblock $8, $26, $7e
+	changeblock $8, $26, $2b
 	jump .cont2
 	
 .GlintGrovePile3:
-	changeblock $20, $26, $7e
+	changeblock $20, $26, $2b
 	jump .cont3
 	
 .GlintGrovePile4:
-	changeblock $10, $1a, $7e
+	changeblock $10, $1a, $2b
 	jump .cont4
 	
 .GlintGrovePile5:
-	changeblock $1a, $16, $7e
+	changeblock $1a, $16, $2b
 	jump .cont5
 	
 .GlintGrovePile6:
-	changeblock $c, $2e, $7e
+	changeblock $c, $2e, $2b
 	jump .cont6
 	
 .GlintGrovePile7:
-	changeblock $1c, $8, $7e
+	changeblock $1c, $8, $2b
 	return
 	
 TrainerGlintGrove_1:

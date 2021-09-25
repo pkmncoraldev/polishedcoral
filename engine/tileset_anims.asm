@@ -39,7 +39,6 @@ Tileset00Anim::
 TilesetPlayerRoomAnim::
 TilesetHouse1Anim::
 TilesetPokeCenterAnim::
-TilesetCafeAnim::
 TilesetLighthouseAnim::
 TilesetLabAnim::
 TilesetMartAnim::

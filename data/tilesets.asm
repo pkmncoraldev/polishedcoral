@@ -67,13 +67,15 @@ INCLUDE "data/tilesets/sunset_collision.asm"
 SECTION "Tileset Data - glint", ROMX
 
 TilesetGlintGFX0::
+TilesetStarglowGFX0::
 INCBIN "gfx/tilesets/glint.2bpp.vram0.lz"
 
 TilesetGlintGFX1::
+TilesetStarglowGFX1::
 INCBIN "gfx/tilesets/glint.2bpp.vram1.lz"
 
-TilesetGlintGFX2::
-INCBIN "gfx/tilesets/glint.2bpp.vram2.lz"
+TilesetGlintGFX2 EQU 0
+TilesetStarglowGFX2 EQU 0
 
 TilesetGlintMeta::
 INCBIN "data/tilesets/glint_metatiles.bin.lz"
@@ -86,15 +88,6 @@ INCLUDE "data/tilesets/glint_collision.asm"
 
 
 SECTION "Tileset Data - starglow", ROMX
-
-TilesetStarglowGFX0::
-INCBIN "gfx/tilesets/starglow.2bpp.vram0.lz"
-
-TilesetStarglowGFX1::
-INCBIN "gfx/tilesets/starglow.2bpp.vram1.lz"
-
-TilesetStarglowGFX2::
-INCBIN "gfx/tilesets/starglow.2bpp.vram2.lz"
 
 TilesetStarglowMeta::
 INCBIN "data/tilesets/starglow_metatiles.bin.lz"
@@ -166,25 +159,6 @@ INCBIN "data/tilesets/pokecenter_attributes.bin.lz"
 
 TilesetPokeCenterColl::
 INCLUDE "data/tilesets/pokecenter_collision.asm"
-
-
-SECTION "Tileset Data - cafe", ROMX
-
-TilesetCafeGFX0::
-INCBIN "gfx/tilesets/cafe.2bpp.lz"
-
-TilesetCafeGFX1 EQU 0
-
-TilesetCafeGFX2 EQU 0
-
-TilesetCafeMeta::
-INCBIN "data/tilesets/cafe_metatiles.bin.lz"
-
-TilesetCafeAttr::
-INCBIN "data/tilesets/cafe_attributes.bin.lz"
-
-TilesetCafeColl::
-INCLUDE "data/tilesets/cafe_collision.asm"
 
 
 SECTION "Tileset Data - lighthouse", ROMX
@@ -280,9 +254,10 @@ INCBIN "data/tilesets/starglow_cavern_attributes.bin.lz"
 SECTION "Tileset Data - grove", ROMX
 
 TilesetGroveGFX0::
-INCBIN "gfx/tilesets/grove.2bpp.lz"
+INCBIN "gfx/tilesets/grove.2bpp.vram0.lz"
 
-TilesetGroveGFX1 EQU 0
+TilesetGroveGFX1::
+INCBIN "gfx/tilesets/grove.2bpp.vram1.lz"
 
 TilesetGroveGFX2 EQU 0
 
@@ -670,7 +645,6 @@ Tilesets::
 	tileset TilesetHouse2
 	tileset TilesetPokeCenter
 	tileset TilesetMart
-	tileset TilesetCafe
 	tileset TilesetLighthouse
 	tileset TilesetGate
 	tileset TilesetLab

@@ -237,6 +237,9 @@ LoadSpecialMapPalette: ; 494ac
 	jp LoadSevenBGPalettes
 	
 .grove
+	ld a, [wPermission]
+	cp INDOOR
+	ret z
 	ld hl, OutsideGrovePalette
 	jp LoadSevenTimeOfDayBGPalettes
 	

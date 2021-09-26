@@ -35,13 +35,15 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 .TranslateIntoMovement:
 	ld a, [wPlaceBallsX]
 	cp 0
-	jr nz, .DontMoveTimer
+	jp nz, .DontMoveTimer
 
 	ld a, [wSkateboardGrinding]
 	cp 69
 	jp z, .Falling2
 	
 	ld a, [wStuckInSandCounter]
+	cp 9
+	jp z, .fall_in_sand
 	cp 8
 	jp z, .SinkingInSand
 	
@@ -51,7 +53,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp PLAYER_BATHING
 	jr z, .Normal
 	cp PLAYER_RUN
-	jr z, .Running
+	jp z, .Running
 	cp PLAYER_SKATEBOARD
 	jp z, .Skating
 	cp PLAYER_SKATEBOARD_MOVING
@@ -121,9 +123,10 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call .CheckTurning
 	ret c
 	
+.fall_in_sand
 	ld a, [wPlayerStandingTile]
 	cp COLL_SAND
-	jr nz, .not_sand
+	jr nz, .not_sand2
 	ld a, 8
 	ld [wStuckInSandCounter], a
 	ld de, SFX_PLACE_PUZZLE_PIECE_DOWN
@@ -131,9 +134,11 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, PLAYER_BATHING
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
+	xor a
+	ld [wPlaceBallsY], a
 	jp .bump
 	
-.not_sand
+.not_sand2
 	call .TryStep
 	jr c, .stepTaken
 	call .TryJump
@@ -501,6 +506,22 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp 0
 	jp nz, .bump
 
+	ld a, [wWalkingTile]
+	cp COLL_SAND
+	jr nz, .not_sand
+	ld a, [wOnBike]
+	cp 0
+	jr z, .not_sand
+	ld a, 69
+	ld [wSkateboardGrinding], a
+	ld a, [wWalkingDirection]
+	ld [wPlaceBallsY], a
+	xor a
+	ld [wOnBike], a
+	ld a, 9
+	ld [wStuckInSandCounter], a
+.not_sand
+	
 ; Surfing actually calls .TrySurf directly instead of passing through here.
 	ld a, [wPlayerState]
 	cp PLAYER_SURF

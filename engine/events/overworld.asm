@@ -2376,6 +2376,9 @@ BikeFunction: ; d0b3
 	ret
 
 .CheckEnvironment: ; d121
+	ld a, [wPlayerStandingTile]
+	cp COLL_SAND
+	jr z, .nope
 	call GetMapPermission
 	call CheckOutdoorMap
 	jr z, .ok

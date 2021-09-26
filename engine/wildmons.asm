@@ -600,6 +600,9 @@ _GrassWildmonLookup: ; 2a205
 	ret c
 	eventflagcheck EVENT_ON_DODRIO_RANCH
 	jr nz, .on_ranch
+	ld a, [wStuckInSandCounter]
+	cp 0
+	jr nz, .in_sand
 	call _GetGrassWildmonPointer
 	ld bc, GRASS_WILDDATA_LENGTH
 	jr _NormalWildmonOK
@@ -607,6 +610,10 @@ _GrassWildmonLookup: ; 2a205
 	call _GetGrassWildmonPointer
 	ld bc, GRASS_WILDDATA_LENGTH
 	jr _RanchWildmonOK
+.in_sand
+	call _GetGrassWildmonPointer
+	ld bc, GRASS_WILDDATA_LENGTH
+	jr _SandWildmonOK
 
 _WaterWildmonLookup: ; 2a21d
 	ld hl, SwarmWaterWildMons
@@ -681,6 +688,10 @@ _NormalWildmonOK:
 _RanchWildmonOK:
 	call CopyRanchMapDE
 	jr LookUpWildmonsForMapDE
+	
+_SandWildmonOK:
+	call CopySandMapDE
+	jr LookUpWildmonsForMapDE
 
 CopyCurrMapDE: ; 2a27f
 	ld a, [wMapGroup]
@@ -694,6 +705,13 @@ CopyRanchMapDE:
 	ld a, GROUP_DODRIO_RANCH_RACETRACK
 	ld d, a
 	ld a, MAP_DODRIO_RANCH_RACETRACK
+	ld e, a
+	ret
+	
+CopySandMapDE:
+	ld a, GROUP_BRILLO_BOAT_HOUSE
+	ld d, a
+	ld a, MAP_BRILLO_BOAT_HOUSE
 	ld e, a
 	ret
 

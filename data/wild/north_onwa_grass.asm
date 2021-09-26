@@ -1218,7 +1218,7 @@
 	
 	
 	map_id DODRIO_RANCH_RACETRACK ; used on Route 9 when EVENT_ON_DODRIO_RANCH is set
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, DODUO		;30%
 	db 20, MURKROW		;30%
@@ -1513,5 +1513,59 @@
 	db 30, RATTATA		;5%
 	db 30, RATTATA		;4%
 	db 30, RATTATA		;1%
+	
+	map_id ROUTE_12
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	; day
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	; nite
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	
+	map_id BRILLO_BOAT_HOUSE ; used in desert when stuck in sand
+	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, SQUIRTLE		;30%
+	db 20, SQUIRTLE		;30%
+	db 20, SQUIRTLE		;20%
+	db 20, SQUIRTLE		;10%
+	db 20, SQUIRTLE		;5%
+	db 20, SQUIRTLE		;4%
+	db 28, SQUIRTLE		;1%
+	; day
+	db 20, SQUIRTLE		;30%
+	db 20, SQUIRTLE		;30%
+	db 20, SQUIRTLE		;20%
+	db 20, SQUIRTLE		;10%
+	db 20, SQUIRTLE		;5%
+	db 20, SQUIRTLE		;4%
+	db 28, SQUIRTLE		;1%
+	; nite
+	db 20, SQUIRTLE		;30%
+	db 20, SQUIRTLE		;30%
+	db 20, SQUIRTLE		;20%
+	db 20, SQUIRTLE		;10%
+	db 20, SQUIRTLE		;5%
+	db 20, SQUIRTLE		;4%
+	db 28, SQUIRTLE		;1%
 	
 	db -1 ; end

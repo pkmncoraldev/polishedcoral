@@ -104,6 +104,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 .sand_skip
 	ld a, 7
 	ld [wStuckInSandCounter], a
+	xor a
+	ld [wWildEncounterCooldown], a
 	ret
 
 .Running:
@@ -136,7 +138,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call ReplaceKrisSprite
 	xor a
 	ld [wPlaceBallsY], a
-	jp .bump
+	farcall LoadWildMonData
+	ret
 	
 .not_sand2
 	call .TryStep
@@ -494,10 +497,11 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
-	ld a, 0
+	xor a
 	ld [wStuckInSandCounter], a
 	ld a, 30
 	ld [wPlaceBallsX], a
+	farcall LoadWildMonData
 	jp .StandInPlace
 .not_sitting
 	ld a, [wStuckInSandCounter]
@@ -520,6 +524,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld [wOnBike], a
 	ld a, 9
 	ld [wStuckInSandCounter], a
+	ld [wWildEncounterCooldown], a
 .not_sand
 	
 ; Surfing actually calls .TrySurf directly instead of passing through here.

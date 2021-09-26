@@ -395,9 +395,15 @@ CheckWildEncounterCooldown: ; 968c7
 ; 968d1
 
 SetUpFiveStepWildEncounterCooldown: ; 968d1
+	ld a, [wStuckInSandCounter]
+	cp 0
+	jr nz, .sand
 	ld a, 5
 	ld [wWildEncounterCooldown], a
 	ret
+.sand
+	ld a, 6
+	ld [wWildEncounterCooldown], a
 ; 968d7
 
 DoMapTrigger: ; 968ec

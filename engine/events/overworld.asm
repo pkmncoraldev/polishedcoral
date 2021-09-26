@@ -2333,6 +2333,8 @@ BikeFunction: ; d0b3
 .GetOnBike:
 	ld a, 1
 	ld [wOnBike], a
+	xor a
+	ld [wOnSkateboard], a
 	ld hl, Script_GetOnBike
 	ld de, Script_GetOnBike_Register
 	call .CheckIfRegistered
@@ -2492,6 +2494,8 @@ SkateboardFunction: ; d0b3
 .GetOnSkateboard:
 	ld a, 1
 	ld [wOnSkateboard], a
+	xor a
+	ld [wOnBike], a
 	ld hl, Script_GetOnSkateboard
 	ld de, Script_GetOnSkateboard_Register
 	call .CheckIfRegistered

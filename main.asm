@@ -4275,6 +4275,7 @@ SECTION "Code 20", ROMX
 
 INCLUDE "engine/events/std_scripts.asm"
 INCLUDE "engine/phone_scripts.asm"
+INCLUDE "engine/card_flip.asm"
 
 
 SECTION "Code 21", ROMX
@@ -4284,7 +4285,7 @@ INCLUDE "engine/battle_anims/bg_effects.asm"
 
 SECTION "Code 22", ROMX
 
-INCLUDE "engine/card_flip.asm"
+
 INCLUDE "engine/unown_puzzle.asm"
 ;INCLUDE "engine/dummy_game.asm"
 INCLUDE "engine/billspc.asm"

@@ -16,7 +16,8 @@ BrilloTown_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost 17, 15, SIGNPOST_READ, BrilloCardTest
 
 	db 6 ; object events
 	object_event 17, 24, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NULL, EVENT_BRILLO_BOATMAN
@@ -56,6 +57,12 @@ JustRodeBoatBrillo:
 	waitsfx
 	setevent EVENT_BRILLO_BOATMAN
 	dotrigger $0
+	end
+	
+BrilloCardTest:
+	opentext
+	special Special_MoogooMankey
+	closetext
 	end
 	
 BrilloSailboat:

@@ -236,9 +236,16 @@ Special_SlotMachine: ; c373
 	jr Special_StartGameCornerGame
 ; c380
 
+Special_MoogooMankey: ; c380
+;	call Special_CheckCoins
+;	ret c
+	ld a, BANK(_MoogooMankey)
+	ld hl, _MoogooMankey
+	jr Special_StartGameCornerGame
+
 Special_CardFlip: ; c380
-	call Special_CheckCoins
-	ret c
+;	call Special_CheckCoins
+;	ret c
 	ld a, BANK(_CardFlip)
 	ld hl, _CardFlip
 	; fallthrough

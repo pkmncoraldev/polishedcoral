@@ -294,11 +294,11 @@ UNION
 wMisc:: ds (SCREEN_WIDTH + 4) * (SCREEN_HEIGHT + 2)
 wMiscEnd::
 
-NEXTU
+;NEXTU
 ; odd egg
-wOddEgg:: party_struct wOddEgg
-wOddEggName:: ds PKMN_NAME_LENGTH
-wOddEggOTName:: ds PKMN_NAME_LENGTH
+;wOddEgg:: party_struct wOddEgg
+;wOddEggName:: ds PKMN_NAME_LENGTH
+;wOddEggOTName:: ds PKMN_NAME_LENGTH
 
 NEXTU
 ; battle tower temp struct
@@ -748,6 +748,49 @@ wCardFlipFaceUpCard:: ds 1
 wDiscardPile:: ds 24
 wDiscardPileEnd::
 wCardFlipEnd::
+
+NEXTU
+wMoogoo::
+wMoogooCard1Value:: ds 1
+wMoogooCard2Value:: ds 1
+wMoogooCard3Value:: ds 1
+wMoogooCard4Value:: ds 1
+wMoogooCard5Value:: ds 1
+wMoogooCard1ChipsA:: ds 1
+wMoogooCard1ChipsB:: ds 1
+wMoogooCard1ChipsC:: ds 1
+wMoogooCard2ChipsA:: ds 1
+wMoogooCard2ChipsB:: ds 1
+wMoogooCard2ChipsC:: ds 1
+wMoogooCard3ChipsA:: ds 1
+wMoogooCard3ChipsB:: ds 1
+wMoogooCard3ChipsC:: ds 1
+wMoogooCard4ChipsA:: ds 1
+wMoogooCard4ChipsB:: ds 1
+wMoogooCard4ChipsC:: ds 1
+wMoogooCard5ChipsA:: ds 1
+wMoogooCard5ChipsB:: ds 1
+wMoogooCard5ChipsC:: ds 1
+wMoogooPlayerCard1Suit:: ds 1
+wMoogooPlayerCard1Value:: ds 1
+wMoogooPlayerCard2Suit:: ds 1
+wMoogooPlayerCard2Value:: ds 1
+wMoogooPlayerCard3Suit:: ds 1
+wMoogooPlayerCard3Value:: ds 1
+wMoogooPlayerCard4Suit:: ds 1
+wMoogooPlayerCard4Value:: ds 1
+wMoogooPlayerCard5Suit:: ds 1
+wMoogooPlayerCard5Value:: ds 1
+wMoogooPlayerScore:: ds 1
+wMoogooCPU1Score:: ds 1
+wMoogooCPU2Score:: ds 1
+wMoogooTurn:: ds 1
+wMoogooCurrentCardValue:: ds 1
+wMoogooCurrentCardSuit:: ds 1
+wMoogooRetiredSuit1:: ds 1
+wMoogooRetiredSuit2:: ds 1
+wMoogooCardsWithLowestValue:: ds 1
+wMoogooEnd::
 
 ;NEXTU
 ;; dummy game

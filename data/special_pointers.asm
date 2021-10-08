@@ -106,7 +106,7 @@ SpecialsPointers::
 	add_special Diploma
 
 ; Crystal
-	add_special GiveOddEgg
+;	add_special GiveOddEgg
 	add_special SoftReset
 	add_special Special_MoveTutor
 	add_special SpecialOmanyteChamber
@@ -151,7 +151,7 @@ SpecialsPointers::
 	add_special WonderTrade
 	add_special RespawnOneOffs
 	add_special SpecialGiveShinyDitto
-	add_special GiveMystriEgg
+;	add_special GiveMystriEgg
 	add_special Special_ReiBlessing
 	add_special BillBoxSwitchCheck
 	add_special BillBoxSwitch
@@ -187,5 +187,6 @@ SpecialsPointers::
 	add_special FadeOutPalettesBlack
 	add_special FadeInTextboxPalettes
 	add_special Special_RestorePlayerPalette
+	add_special Special_MoogooMankey
 
 	add_special SpecialNone

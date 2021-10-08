@@ -127,31 +127,31 @@ _CardFlip: ; e00ee (38:40ee)
 ; 0xe01d2
 
 .DeductCoins: ; e01d2
-	ld a, [wCoins]
-	ld h, a
-	ld a, [wCoins + 1]
-	ld l, a
-	ld a, h
-	and a
-	jr nz, .deduct ; You have at least 256 coins.
-	ld a, l
-	cp 3
-	jr nc, .deduct ; You have at least 3 coins.
-	ld hl, .NotEnoughCoinsText
-	call CardFlip_UpdateCoinBalanceDisplay
-	ld a, 7
-	ld [wJumptableIndex], a
-	ret
+;	ld a, [wCoins]
+;	ld h, a
+;	ld a, [wCoins + 1]
+;	ld l, a
+;	ld a, h
+;	and a
+;	jr nz, .deduct ; You have at least 256 coins.
+;	ld a, l
+;	cp 3
+;	jr nc, .deduct ; You have at least 3 coins.
+;	ld hl, .NotEnoughCoinsText
+;	call CardFlip_UpdateCoinBalanceDisplay
+;	ld a, 7
+;	ld [wJumptableIndex], a
+;	ret
 
-.deduct
-	ld de, -3
-	add hl, de
-	ld a, h
-	ld [wCoins], a
-	ld a, l
-	ld [wCoins + 1], a
-	ld de, SFX_TRANSACTION
-	call PlaySFX
+;.deduct
+;	ld de, -3
+;	add hl, de
+;	ld a, h
+;	ld [wCoins], a
+;	ld a, l
+;	ld [wCoins + 1], a
+;	ld de, SFX_TRANSACTION
+;	call PlaySFX
 	xor a
 	ld [hBGMapMode], a
 	call CardFlip_PrintCoinBalance
@@ -421,7 +421,86 @@ PlaceCardFaceDown: ; e03c1
 	db $0b, $2f, $30, $31, $0c
 	db $0b, $32, $33, $34, $0c
 	db $0d, $0e, $0e, $0e, $0f
-; e03ec
+
+PlaceCardMoogoo:
+	cp 5
+	jp z, PlaceCardMoogoo5
+	cp 4
+	jp z, PlaceCardMoogoo4
+	cp 3
+	jp z, PlaceCardMoogoo3
+	cp 2
+	jp z, PlaceCardMoogoo2
+	
+PlaceCardMoogoo1: ; e03c1
+	xor a
+	ld [hBGMapMode], a
+	ld de, .Tilemap
+	lb bc, 5, 4
+	jp CardFlip_CopyToBox
+
+.Tilemap: ; e03ce
+	db $08, $09, $09, $0a
+	db $0b, $28, $28, $0c
+	db $0b, $3e, $3f, $0c
+	db $0b, $40, $41, $0c
+	db $0d, $0e, $0e, $0f
+	
+PlaceCardMoogoo2: ; e03c1
+	xor a
+	ld [hBGMapMode], a
+	ld de, .Tilemap
+	lb bc, 5, 4
+	jp CardFlip_CopyToBox
+
+.Tilemap: ; e03ce
+	db $08, $09, $09, $0a
+	db $0b, $28, $28, $0c
+	db $0b, $42, $43, $0c
+	db $0b, $44, $45, $0c
+	db $0d, $0e, $0e, $0f
+	
+PlaceCardMoogoo3: ; e03c1
+	xor a
+	ld [hBGMapMode], a
+	ld de, .Tilemap
+	lb bc, 5, 4
+	jp CardFlip_CopyToBox
+
+.Tilemap: ; e03ce
+	db $08, $09, $09, $0a
+	db $0b, $28, $28, $0c
+	db $0b, $46, $47, $0c
+	db $0b, $48, $49, $0c
+	db $0d, $0e, $0e, $0f
+	
+PlaceCardMoogoo4: ; e03c1
+	xor a
+	ld [hBGMapMode], a
+	ld de, .Tilemap
+	lb bc, 5, 4
+	jp CardFlip_CopyToBox
+
+.Tilemap: ; e03ce
+	db $08, $09, $09, $0a
+	db $0b, $28, $28, $0c
+	db $0b, $4a, $4b, $0c
+	db $0b, $4c, $4d, $0c
+	db $0d, $0e, $0e, $0f
+	
+PlaceCardMoogoo5: ; e03c1
+	xor a
+	ld [hBGMapMode], a
+	ld de, .Tilemap
+	lb bc, 5, 4
+	jp CardFlip_CopyToBox
+
+.Tilemap: ; e03ce
+	db $08, $09, $09, $0a
+	db $0b, $28, $28, $0c
+	db $0b, $3e, $3f, $0c
+	db $0b, $40, $41, $0c
+	db $0d, $0e, $0e, $0f
 
 CardFlip_DisplayCardFaceUp: ; e03ec
 	xor a
@@ -531,7 +610,7 @@ CardFlip_InitTilemap: ; e04c1 (38:44c1)
 	ld [hBGMapMode], a
 	hlcoord 0, 0
 	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
-	ld a, $29
+	ld a, $07
 	call ByteFill
 	hlcoord 9, 0
 	ld de, CardFlipTilemap
@@ -542,8 +621,16 @@ CardFlip_InitTilemap: ; e04c1 (38:44c1)
 	jp TextBox
 ; e04e5 (38:44e5)
 
+MoogooMankey_InitTilemap:
+	xor a
+	ld [hBGMapMode], a
+	ld hl, MoogooMankeyTilemap
+	decoord 0, 0
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	rst CopyBytes
+	
 CardFlip_FillGreenBox: ; e04e5
-	ld a, $29
+	ld a, $07
 
 CardFlip_FillBox: ; e04e7 (38:44e7)
 .row
@@ -1623,7 +1710,6 @@ CardFlip_InitAttrPals: ; e0c37 (38:4c37)
 ; e0c93 (38:4c93)
 
 .palettes ; e0c93
-if !DEF(MONOCHROME)
 	RGB 31, 31, 31
 	RGB 17, 07, 31
 	RGB 06, 19, 08
@@ -1668,18 +1754,141 @@ if !DEF(MONOCHROME)
 	RGB 31, 31, 31
 	RGB 31, 00, 00
 	RGB 31, 00, 00
-else
-	MONOCHROME_RGB_FOUR
-	MONOCHROME_RGB_FOUR
-	MONOCHROME_RGB_FOUR
-	MONOCHROME_RGB_FOUR
-	MONOCHROME_RGB_FOUR
-	MONOCHROME_RGB_FOUR
-	MONOCHROME_RGB_FOUR
-	MONOCHROME_RGB_FOUR
-	MONOCHROME_RGB_FOUR
-endc
-; e0cdb
+	
+MoogooMankey_InitAttrPals:
+	hlcoord 0, 0, wAttrMap
+	lb bc, 1, 24
+	ld a, $7
+	call CardFlip_FillBox
+
+	hlcoord 0, 5, wAttrMap
+	ld bc, 13 * SCREEN_WIDTH
+	xor a
+	call ByteFill
+
+	hlcoord 0, 1, wAttrMap
+	lb bc, 4, 4
+	ld a, $1
+	call CardFlip_FillBox
+
+	hlcoord 4, 1, wAttrMap
+	lb bc, 4, 4
+	ld a, $2
+	call CardFlip_FillBox
+
+	hlcoord 8, 1, wAttrMap
+	lb bc, 4, 4
+	ld a, $3
+	call CardFlip_FillBox
+
+	hlcoord 12, 1, wAttrMap
+	lb bc, 4, 4
+	ld a, $4
+	call CardFlip_FillBox
+
+	hlcoord 16, 1, wAttrMap
+	lb bc, 4, 4
+	ld a, $5
+	call CardFlip_FillBox
+	
+	hlcoord 0, 7, wAttrMap
+	lb bc, 5, 4
+	ld a, $1
+	call CardFlip_FillBox
+
+	hlcoord 4, 7, wAttrMap
+	lb bc, 5, 4
+	ld a, $2
+	call CardFlip_FillBox
+
+	hlcoord 8, 7, wAttrMap
+	lb bc, 5, 4
+	ld a, $3
+	call CardFlip_FillBox
+
+	hlcoord 12, 7, wAttrMap
+	lb bc, 5, 4
+	ld a, $4
+	call CardFlip_FillBox
+
+	hlcoord 16, 7, wAttrMap
+	lb bc, 5, 4
+	ld a, $5
+	call CardFlip_FillBox
+
+	hlcoord 0, 15, wAttrMap
+	lb bc, 1, 1
+	ld a, 1
+	call CardFlip_FillBox
+	
+	hlcoord 0, 16, wAttrMap
+	lb bc, 1, 1
+	ld a, 3
+	call CardFlip_FillBox
+	
+	hlcoord 1, 14, wAttrMap
+	lb bc, 3, 2
+	ld a, 7
+	call CardFlip_FillBox
+	
+	ld a, [rSVBK]
+	push af
+	ld a, $5
+	ld [rSVBK], a
+	ld hl, .palettes
+	ld de, wUnknBGPals
+	ld bc, 9 palettes
+	rst CopyBytes
+	pop af
+	ld [rSVBK], a
+	ret
+; e0c93 (38:4c93)
+
+.palettes ; e0c93
+	RGB 31, 31, 31
+	RGB 31, 00, 00
+	RGB 06, 19, 08
+	RGB 00, 00, 00
+
+	RGB 31, 31, 31
+	RGB 29, 25, 00
+	RGB 06, 19, 08
+	RGB 00, 00, 00
+
+	RGB 31, 31, 31
+	RGB 31, 13, 30
+	RGB 06, 19, 08
+	RGB 00, 00, 00
+
+	RGB 31, 31, 31
+	RGB 08, 17, 30
+	RGB 06, 19, 08
+	RGB 00, 00, 00
+
+	RGB 31, 31, 31
+	RGB 08, 31, 08
+	RGB 06, 19, 08
+	RGB 00, 00, 00
+
+	RGB 31, 31, 31
+	RGB 17, 07, 31
+	RGB 06, 19, 08
+	RGB 00, 00, 00
+
+	RGB 31, 31, 31
+	RGB 17, 07, 31
+	RGB 06, 19, 08
+	RGB 00, 00, 00
+
+	RGB 06, 19, 08
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 00, 00
+	RGB 31, 00, 00
 
 CardFlipLZ03: ; e0cdb
 INCBIN "gfx/card_flip/0e0cdb.2bpp.lz"
@@ -1696,6 +1905,9 @@ INCBIN "gfx/card_flip/0e0d16.2bpp.lz"
 CardFlipLZ02: ; e0ea8
 INCBIN "gfx/card_flip/0e0ea8.2bpp.lz"
 
+MoogooLZ01: ; e0d16
+INCBIN "gfx/card_flip/0e0d162.2bpp.lz"
+
 CardFlipTilemap: ; e110c
 	db CARDFLIP_LIGHT_OFF, $15, $27, $2a, $2a, $06, $27, $2a, $2a, $06, $27
 	db CARDFLIP_LIGHT_OFF, $07, $27, $3e, $3f, $42, $43, $46, $47, $4a, $4b
@@ -1709,4 +1921,1907 @@ CardFlipTilemap: ; e110c
 	db CARDFLIP_LIGHT_OFF, $25, $04, $00, $03, $00, $03, $00, $03, $00, $03
 	db CARDFLIP_LIGHT_OFF, $05, $14, $10, $13, $10, $13, $10, $13, $10, $13
 	db CARDFLIP_LIGHT_OFF, $16, $24, $20, $23, $20, $23, $20, $23, $20, $23
-; e1190
+
+MoogooMankeyTilemap:
+	INCBIN "gfx/card_flip/moogoomankey.tilemap"
+
+_MoogooMankey:
+	ld hl, wMoogooCard1Value
+	ld bc, 39
+	xor a
+	call ByteFill
+	ld [wMoogooTurn], a
+	ld [wPlaceBallsX], a
+	ld a, 1
+	ld [wPlaceBallsY], a
+	ld hl, wOptions1
+	set NO_TEXT_SCROLL, [hl]
+	call ClearBGPalettes
+	call ClearTileMap
+	call ClearSprites
+	ld de, MUSIC_NONE
+	call PlayMusic
+	call DelayFrame
+	call DisableLCD
+	call LoadStandardFont
+	call LoadFontsExtra
+
+	ld hl, MoogooLZ01
+	ld de, VTiles2 tile $00
+	call Decompress
+	ld hl, CardFlipLZ02
+	ld de, VTiles2 tile $3e
+	call Decompress
+	ld hl, CardFlipLZ03
+	ld de, VTiles0 tile $00
+	call Decompress
+	ld hl, CardFlipOffButtonGFX
+	ld de, VTiles1 tile (CARDFLIP_LIGHT_OFF - $80)
+	ld bc, 1 tiles
+	rst CopyBytes
+	ld hl, CardFlipOnButtonGFX
+	ld de, VTiles1 tile (CARDFLIP_LIGHT_ON - $80)
+	ld bc, 1 tiles
+	rst CopyBytes
+
+	call MoogooMankey_InitTilemap
+	call MoogooMankey_InitAttrPals
+	call MoogooMankey_UpdateScores
+	call EnableLCD
+	call ApplyAttrAndTilemapInVBlank
+	ld a, $e4
+	call DmgToCgbBGPals
+	ld de, $e4e4
+	call DmgToCgbObjPals
+	call DelayFrame
+	xor a
+	ld [wJumptableIndex], a
+	ld a, $2
+	ld [wCardFlipCursorY], a
+	ld [wCardFlipCursorX], a
+	
+	ld a, $1
+	ld [hBGMapMode], a
+;	ld c, 20
+;	call DelayFrames
+;	hlcoord 0, 0
+;	call PlaceCardMoogoo1
+;	hlcoord 4, 0
+;	call PlaceCardMoogoo2
+;	hlcoord 8, 0
+;	call PlaceCardMoogoo3
+;	hlcoord 12, 0
+;	call PlaceCardMoogoo4
+;	hlcoord 16, 0
+;	call PlaceCardMoogoo5
+;	call ApplyTilemapInVBlank
+	
+	ld de, MUSIC_GSC_GAME_CORNER
+	call PlayMusic
+	ld c, 20
+	call DelayFrames
+.MasterLoop:
+	ld a, [wMoogooTurn]
+	cp 69
+	jr z, .leavethegame
+	call .MoogooMankey
+	jr .MasterLoop
+.leavethegame
+	call WaitSFX
+	hlcoord 0, 0
+	ld de, .GameOverText
+	call PlaceString
+	ld de, SFX_QUIT_SLOTS
+	call PlaySFX
+	call DelayFrame
+	ld hl, wMoogooPlayerScore
+	call CheckIfYouWon
+	cp 0
+	jr z, .youlose
+	cp 1
+	jr z, .youwin
+	hlcoord 0, 0
+	ld de, .YouTiedText
+	call PlaceString
+	jr .leavethegame_cont
+.youwin
+	hlcoord 0, 0
+	ld de, .YouWinText
+	call PlaceString
+	jr .leavethegame_cont
+.youlose
+	hlcoord 0, 0
+	ld de, .YouLoseText
+	call PlaceString
+.leavethegame_cont
+	call WaitSFX
+	call ClearBGPalettes
+	ld hl, wOptions1
+	res NO_TEXT_SCROLL, [hl]
+	call MoogooShowCursor
+	ret
+	
+.MoogooMankey:
+	ld a, [wJumptableIndex]
+	ld e, a
+	ld d, 0
+	ld hl, .Jumptable
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp hl
+
+
+.Jumptable:
+;	dw .AskPlay
+;	dw .DeductCoins
+	dw .PlaceBet
+	dw .ChangeTurn
+	dw .PlaceBet
+	dw .ChangeTurn
+	dw .PlaceBet
+	dw .Shuffling
+	dw .ChangeTurn
+	dw .PlaceBet
+	dw .PlayCard
+	dw .CheckRoundOver
+	dw .NextRound
+	dw .Quit
+
+.Increment:
+	ld hl, wJumptableIndex
+	inc [hl]
+	ret
+	
+.AskPlay: ; e01b5
+	ld hl, .PlayWithThreeCoinsText
+	call CardFlip_UpdateCoinBalanceDisplay
+	call YesNoBox
+	jr c, .SaidNo
+	call CardFlip_ShuffleDeck
+	jr .Increment
+
+.SaidNo:
+	ld a, 7
+	ld [wJumptableIndex], a
+	ret
+; e01cd
+
+.PlayWithThreeCoinsText: ; 0xe01cd
+	; Play with three coins?
+	text_jump UnknownText_0x1c5793
+	db "@"
+; 0xe01d2
+
+.DeductCoins: ; e01d2
+;	ld a, [wCoins]
+;	ld h, a
+;	ld a, [wCoins + 1]
+;	ld l, a
+;	ld a, h
+;	and a
+;	jr nz, .deduct ; You have at least 256 coins.
+;	ld a, l
+;	cp 3
+;	jr nc, .deduct ; You have at least 3 coins.
+;	ld hl, .NotEnoughCoinsText
+;	call CardFlip_UpdateCoinBalanceDisplay
+;	ld a, 7
+;	ld [wJumptableIndex], a
+;	ret
+
+;.deduct
+;	ld de, -3
+;	add hl, de
+;	ld a, h
+;	ld [wCoins], a
+;	ld a, l
+;	ld [wCoins + 1], a
+;	ld de, SFX_TRANSACTION
+;	call PlaySFX
+	xor a
+	ld [hBGMapMode], a
+	call CardFlip_PrintCoinBalance
+	ld a, $1
+	ld [hBGMapMode], a
+	call WaitSFX
+	jp .Increment
+; e0212
+
+.NotEnoughCoinsText: ; 0xe0212
+	; Not enough coins…
+	text_jump UnknownText_0x1c57ab
+	db "@"
+	
+.PlaceBet:
+	ld a, [wPlaceBallsX]
+	cp 1
+	jr z, .PlaceBet_round1
+	cp 2
+	jr z, .PlaceBet_round2
+.PlaceBet_round1
+	ld a, [wMoogooPlayerScore]
+	ld b, a
+	ld a, [wMoogooCPU1Score]
+	add b
+	ld b, a
+	ld a, [wMoogooCPU2Score]
+	add b
+	cp 20
+	jr z, .PlaceBet_skipbet
+	jr .PlaceBet_normal
+
+.PlaceBet_round2
+	ld a, [wMoogooPlayerScore]
+	ld b, a
+	ld a, [wMoogooCPU1Score]
+	add b
+	ld b, a
+	ld a, [wMoogooCPU2Score]
+	add b
+	cp 16
+	jr z, .PlaceBet_skipbet
+	jr .PlaceBet_normal
+
+.PlaceBet_skipbet
+	hlcoord 0, 0
+	
+	ld a, [wMoogooTurn]
+	cp 2
+	jr z, .LoadCPU2TurnText2
+	cp 1
+	jr z, .LoadCPU1TurnText2
+	
+	ld de, .PlayersTurnText
+	jr .betskiploop
+.LoadCPU2TurnText2
+	ld de, .CPU2TurnText
+	jr .betskiploop
+.LoadCPU1TurnText2
+	ld de, .CPU1TurnText
+.betskiploop
+	call PlaceString
+	call JoyTextDelay
+	ld a, [hJoyLast]
+	and A_BUTTON
+	jp nz, .Increment
+	jr .betskiploop
+	
+.PlaceBet_normal
+	ld a, 1
+	ld [wPlaceBallsY], a
+	
+	hlcoord 0, 0
+	
+	ld a, [wMoogooTurn]
+	cp 2
+	jr z, .LoadCPU2TurnText
+	cp 1
+	jr z, .LoadCPU1TurnText
+	
+	ld de, .PlayersTurnText
+	jr .betloop2
+.LoadCPU2TurnText
+	ld de, .CPU2TurnText
+	jr .betloop2
+.LoadCPU1TurnText
+	ld de, .CPU1TurnText
+.betloop2
+	call PlaceString
+	call JoyTextDelay
+	ld a, [hJoyLast]
+	and A_BUTTON
+	jr nz, .PlaceBetCont
+	jr .betloop2
+.PlaceBetCont
+	ld de, SFX_READ_TEXT
+	call PlaySFX
+	hlcoord 0, 0
+	ld de, .PlaceBetText
+	call PlaceString
+	ld c, 20
+	call DelayFrames
+.betloop
+	call JoyTextDelay
+	ld a, [hJoyLast]
+	and A_BUTTON
+	jr nz, .dobet
+	call ChooseSurvivor_HandleJoypad
+	call ChooseSurvivor_UpdateCursorOAM
+	call DelayFrame
+	call MoogooShowCursor
+	jr .betloop
+
+.dobet
+	ld a, [wMoogooRetiredSuit1]
+	ld b, a
+	ld a, [wMoogooRetiredSuit2]
+	ld c, a
+	ld a, [wPlaceBallsY]
+	cp b
+	jp z, .placebetnope
+	cp c
+	jp z, .placebetnope
+	cp 5
+	jp z, .placebet5
+	cp 4
+	jp z, .placebet4
+	cp 3
+	jp z, .placebet3
+	cp 2
+	jp z, .placebet2
+	cp 1
+	jp z, .placebet1
+	
+.betdone
+	call MoogooHideCursor
+	ld a, 1
+	ld [wPlaceBallsY], a
+	hlcoord 0, 0
+	ld de, .Clear
+	call PlaceString
+	ld de, SFX_READ_TEXT
+	call PlaySFX
+	call WaitSFX
+	jp .Increment
+	
+.Shuffling
+	ld a, [wPlaceBallsX]
+	inc a
+	ld [wPlaceBallsX], a
+	cp 3
+	jp z, .Quit
+	hlcoord 0, 0
+	ld de, .ShufflingText
+	call PlaceString
+rept 15
+	ld de, SFX_SWITCH_POCKETS
+	call PlaySFX
+	call WaitSFX
+endr
+	hlcoord 0, 0
+	ld de, .Dealing
+	call PlaceString
+	call Random
+	and $7
+	inc a
+	ld [wMoogooPlayerCard1Value], a
+	call GetRandomSuit
+	ld [wMoogooPlayerCard1Suit], a
+	call Random
+	and $7
+	inc a
+	ld [wMoogooPlayerCard2Value], a
+	call GetRandomSuit
+	ld [wMoogooPlayerCard2Suit], a
+	call Random
+	and $7
+	inc a
+	ld [wMoogooPlayerCard3Value], a
+	call GetRandomSuit
+	ld [wMoogooPlayerCard3Suit], a
+	call Random
+	and $7
+	inc a
+	ld [wMoogooPlayerCard4Value], a
+	call GetRandomSuit
+	ld [wMoogooPlayerCard4Suit], a
+	call Random
+	and $7
+	inc a
+	ld [wMoogooPlayerCard5Value], a
+	call GetRandomSuit
+	ld [wMoogooPlayerCard5Suit], a
+	
+
+	ld a, $1
+	ld [hBGMapMode], a
+	ld c, 20
+	call DelayFrames
+	ld de, SFX_GRASS_RUSTLE
+	call PlaySFX
+	call DealPlayerCard1
+	ld c, 20
+	call DelayFrames
+	ld de, SFX_GRASS_RUSTLE
+	call PlaySFX
+	call DealPlayerCard2
+	ld c, 20
+	call DelayFrames
+	ld de, SFX_GRASS_RUSTLE
+	call PlaySFX
+	call DealPlayerCard3
+	ld c, 20
+	call DelayFrames
+	ld de, SFX_GRASS_RUSTLE
+	call PlaySFX
+	call DealPlayerCard4
+	ld c, 20
+	call DelayFrames
+	ld de, SFX_GRASS_RUSTLE
+	call PlaySFX
+	call DealPlayerCard5
+	hlcoord 0, 0
+	ld de, .Clear
+	call PlaceString
+	ld c, 20
+	call DelayFrames
+	jp .Increment
+.Clear
+	db "                    @"
+	
+.PlayersTurnText
+	db "    <PLAYER>'s Turn@"
+	
+.CPU1TurnText
+	db "     CPU 1's Turn@"
+	
+.CPU2TurnText
+	db "     CPU 2's Turn@"
+	
+.PlaceBetText
+	db "     Place a bet@"
+	
+.PlayCardText
+	db "     Play a card@"
+	
+.Dealing
+	db "       Dealing…@"
+	
+.ShufflingText
+	db "     Shuffling…@"
+	
+.GameOverText
+	db "      GAME OVER!@"
+	
+.YouWinText
+	db "         YOU WIN!@"
+	
+.YouLoseText
+	db "         YOU LOSE!@"
+	
+.YouTiedText
+	db "         YOU TIED!@"
+
+.PlayCard:
+	hlcoord 0, 0
+	ld de, .PlayCardText
+	call PlaceString
+	ld c, 20
+	call DelayFrames
+.playcardloop
+	call JoyTextDelay
+	ld a, [hJoyLast]
+	and A_BUTTON
+	jr nz, .playcarddone
+	call ChooseSurvivor_HandleJoypad
+	call PickCard_UpdateCursorOAM
+	call DelayFrame
+	call MoogooShowCursor
+	jr .playcardloop
+.playcarddone
+	ld de, SFX_READ_TEXT
+	call PlaySFX
+	
+	call CheckWhichCard
+	call PlaceCard
+	call ApplyTilemapInVBlank
+	call MoogooHideCursor
+	call WaitSFX
+	
+	ld c, 20
+	call DelayFrames
+	call ReplacePlayerCard
+	
+	hlcoord 0, 0
+	ld de, .Clear
+	call PlaceString
+	jp .Increment
+	
+.ChangeTurn
+	ld a, [wMoogooTurn]
+	cp 2
+	jr nz, .inc_turn
+	xor a
+	jr .got_turn
+.inc_turn
+	inc a
+.got_turn
+	ld [wMoogooTurn], a
+	jp .Increment
+	
+.CheckRoundOver:
+	xor a
+	ld [wMoogooCardsWithLowestValue], a
+.CheckRoundOverLoop
+	ld b, a
+	ld a, [wMoogooCard1Value]
+	cp b
+	jp z, .got_lowest_value
+	ld a, [wMoogooCard2Value]
+	cp b
+	jp z, .got_lowest_value
+	ld a, [wMoogooCard3Value]
+	cp b
+	jp z, .got_lowest_value
+	ld a, [wMoogooCard4Value]
+	cp b
+	jp z, .got_lowest_value
+	ld a, [wMoogooCard5Value]
+	cp b
+	jp z, .got_lowest_value
+	ld a, b
+	inc a
+	jr .CheckRoundOverLoop
+
+.got_lowest_value
+	cp 0
+	jp z, .round_not_over
+	ld b, a
+	ld a, [wMoogooCard1Value]
+	cp b
+	jr nz, .no_1
+	call MoogooIncreaseCardsWithLowestValue
+	ld a, 1
+	call MoogooRetireSuit
+.no_1
+	ld a, [wMoogooCard2Value]
+	cp b
+	jr nz, .no_2
+	call MoogooIncreaseCardsWithLowestValue
+	ld a, 2
+	call MoogooRetireSuit
+.no_2
+	ld a, [wMoogooCard3Value]
+	cp b
+	jr nz, .no_3
+	call MoogooIncreaseCardsWithLowestValue
+	ld a, 3
+	call MoogooRetireSuit
+.no_3
+	ld a, [wMoogooCard4Value]
+	cp b
+	jr nz, .no_4
+	call MoogooIncreaseCardsWithLowestValue
+	ld a, 4
+	call MoogooRetireSuit
+.no_4
+	ld a, [wMoogooCard5Value]
+	cp b
+	jr nz, .no_5
+	call MoogooIncreaseCardsWithLowestValue
+	ld a, 5
+	call MoogooRetireSuit
+.no_5
+	ld a, [wMoogooCardsWithLowestValue]
+	cp 1
+	jp z, .Increment	
+.round_not_over
+	xor a
+	call MoogooRetireSuit
+	ld a, 6
+	ld [wJumptableIndex], a
+	ret
+	
+.NextRound:
+	call WaitSFX
+	ld de, SFX_GAME_FREAK_PRESENTS
+	call PlaySFX
+	call WaitSFX
+	
+	ld hl, wMoogooPlayerCard1Suit
+	ld bc, 10
+	xor a
+	call ByteFill
+	
+	ld hl, wMoogooCard1Value
+	ld bc, 5
+	xor a
+	call ByteFill
+	
+	ld a, [wMoogooRetiredSuit1]
+	call MoogooCrossOutSuit
+	ld a, [wMoogooRetiredSuit2]
+	call MoogooCrossOutSuit
+	
+	ld a, 5
+	ld [wJumptableIndex], a
+	ret
+	
+.Quit: ; e0360
+	ld a, 69
+	ld [wMoogooTurn], a
+	ret
+	
+.placebet5:
+	ld a, [wMoogooCard5ChipsA]
+	ld b, a
+	ld a, [wMoogooCard5ChipsB]
+	add b
+	ld b, a
+	ld a, [wMoogooCard5ChipsC]
+	add b
+	cp 0
+	jr z, .placebet5_0
+	cp 1
+	jr z, .placebet5_1
+	cp 2
+	jr z, .placebet5_2
+	cp 3
+	jr z, .placebet5_3
+	jp .placebetnope
+	
+.placebet5_0
+	hlcoord $11, $5, wAttrMap
+	call ColorChip
+	hlcoord $11, $5
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet5end
+	
+.placebet5_1
+	hlcoord $12, $5, wAttrMap
+	call ColorChip
+	hlcoord $12, $5
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet5end
+
+.placebet5_2
+	hlcoord $11, $6, wAttrMap
+	call ColorChip
+	hlcoord $11, $6
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet5end
+
+.placebet5_3
+	hlcoord $12, $6, wAttrMap
+	call ColorChip
+	hlcoord $12, $6
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet5end
+	
+.placebet5end:
+	ld a, [wMoogooTurn]
+	cp 1
+	jr z, .placebet5cpu1
+	cp 2
+	jr z, .placebet5cpu2
+	ld a, [wMoogooCard5ChipsA]
+	inc a
+	ld [wMoogooCard5ChipsA], a
+	jp .betdone
+.placebet5cpu1
+	ld a, [wMoogooCard5ChipsB]
+	inc a
+	ld [wMoogooCard5ChipsB], a
+	jp .betdone
+.placebet5cpu2
+	ld a, [wMoogooCard5ChipsC]
+	inc a
+	ld [wMoogooCard5ChipsC], a
+	jp .betdone
+	
+.placebet4:
+	ld a, [wMoogooCard4ChipsA]
+	ld b, a
+	ld a, [wMoogooCard4ChipsB]
+	add b
+	ld b, a
+	ld a, [wMoogooCard4ChipsC]
+	add b
+	cp 0
+	jr z, .placebet4_0
+	cp 1
+	jr z, .placebet4_1
+	cp 2
+	jr z, .placebet4_2
+	cp 3
+	jr z, .placebet4_3
+	jp .placebetnope
+	
+.placebet4_0
+	hlcoord $0d, $5, wAttrMap
+	call ColorChip
+	hlcoord $0d, $5
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet4end
+	
+.placebet4_1
+	hlcoord $0e, $5, wAttrMap
+	call ColorChip
+	hlcoord $0e, $5
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet4end
+
+.placebet4_2
+	hlcoord $0d, $6, wAttrMap
+	call ColorChip
+	hlcoord $0d, $6
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet4end
+
+.placebet4_3
+	hlcoord $0e, $6, wAttrMap
+	call ColorChip
+	hlcoord $0e, $6
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet4end
+	
+.placebet4end:
+	ld a, [wMoogooTurn]
+	cp 1
+	jr z, .placebet4cpu1
+	cp 2
+	jr z, .placebet4cpu2
+	ld a, [wMoogooCard4ChipsA]
+	inc a
+	ld [wMoogooCard4ChipsA], a
+	jp .betdone
+.placebet4cpu1
+	ld a, [wMoogooCard4ChipsB]
+	inc a
+	ld [wMoogooCard4ChipsB], a
+	jp .betdone
+.placebet4cpu2
+	ld a, [wMoogooCard4ChipsC]
+	inc a
+	ld [wMoogooCard4ChipsC], a
+	jp .betdone
+	
+.placebet3:
+	ld a, [wMoogooCard3ChipsA]
+	ld b, a
+	ld a, [wMoogooCard3ChipsB]
+	add b
+	ld b, a
+	ld a, [wMoogooCard3ChipsC]
+	add b
+	cp 0
+	jr z, .placebet3_0
+	cp 1
+	jr z, .placebet3_1
+	cp 2
+	jr z, .placebet3_2
+	cp 3
+	jr z, .placebet3_3
+	jp .placebetnope
+	
+.placebet3_0
+	hlcoord $09, $5, wAttrMap
+	call ColorChip
+	hlcoord $09, $5
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet3end
+	
+.placebet3_1
+	hlcoord $0a, $5, wAttrMap
+	call ColorChip
+	hlcoord $0a, $5
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet3end
+
+.placebet3_2
+	hlcoord $09, $6, wAttrMap
+	call ColorChip
+	hlcoord $09, $6
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet3end
+
+.placebet3_3
+	hlcoord $0a, $6, wAttrMap
+	call ColorChip
+	hlcoord $0a, $6
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet3end
+	
+.placebet3end:
+	ld a, [wMoogooTurn]
+	cp 1
+	jr z, .placebet3cpu1
+	cp 2
+	jr z, .placebet3cpu2
+	ld a, [wMoogooCard3ChipsA]
+	inc a
+	ld [wMoogooCard3ChipsA], a
+	jp .betdone
+.placebet3cpu1
+	ld a, [wMoogooCard3ChipsB]
+	inc a
+	ld [wMoogooCard3ChipsB], a
+	jp .betdone
+.placebet3cpu2
+	ld a, [wMoogooCard3ChipsC]
+	inc a
+	ld [wMoogooCard3ChipsC], a
+	jp .betdone
+	
+.placebet2:
+	ld a, [wMoogooCard2ChipsA]
+	ld b, a
+	ld a, [wMoogooCard2ChipsB]
+	add b
+	ld b, a
+	ld a, [wMoogooCard2ChipsC]
+	add b
+	cp 0
+	jr z, .placebet2_0
+	cp 1
+	jr z, .placebet2_1
+	cp 2
+	jr z, .placebet2_2
+	cp 3
+	jr z, .placebet2_3
+	jp .placebetnope
+	
+.placebet2_0
+	hlcoord $5, $5, wAttrMap
+	call ColorChip
+	hlcoord $5, $5
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet2end
+	
+.placebet2_1
+	hlcoord $6, $5, wAttrMap
+	call ColorChip
+	hlcoord $6, $5
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet2end
+
+.placebet2_2
+	hlcoord $5, $6, wAttrMap
+	call ColorChip
+	hlcoord $5, $6
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet2end
+
+.placebet2_3
+	hlcoord $6, $6, wAttrMap
+	call ColorChip
+	hlcoord $6, $6
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet2end
+	
+.placebet2end:
+	ld a, [wMoogooTurn]
+	cp 1
+	jr z, .placebet2cpu1
+	cp 2
+	jr z, .placebet2cpu2
+	ld a, [wMoogooCard2ChipsA]
+	inc a
+	ld [wMoogooCard2ChipsA], a
+	jp .betdone
+.placebet2cpu1
+	ld a, [wMoogooCard2ChipsB]
+	inc a
+	ld [wMoogooCard2ChipsB], a
+	jp .betdone
+.placebet2cpu2
+	ld a, [wMoogooCard2ChipsC]
+	inc a
+	ld [wMoogooCard2ChipsC], a
+	jp .betdone
+	
+.placebet1:
+	ld a, [wMoogooCard1ChipsA]
+	ld b, a
+	ld a, [wMoogooCard1ChipsB]
+	add b
+	ld b, a
+	ld a, [wMoogooCard1ChipsC]
+	add b
+	cp 0
+	jr z, .placebet1_0
+	cp 1
+	jr z, .placebet1_1
+	cp 2
+	jr z, .placebet1_2
+	cp 3
+	jr z, .placebet1_3
+	jp .placebetnope
+	
+.placebet1_0
+	hlcoord $1, $5, wAttrMap
+	call ColorChip
+	hlcoord $1, $5
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet1end
+	
+.placebet1_1
+	hlcoord $2, $5, wAttrMap
+	call ColorChip
+	hlcoord $2, $5
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet1end
+
+.placebet1_2
+	hlcoord $1, $6, wAttrMap
+	call ColorChip
+	hlcoord $1, $6
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet1end
+
+.placebet1_3
+	hlcoord $2, $6, wAttrMap
+	call ColorChip
+	hlcoord $2, $6
+	call PlaceChip
+	call MoogooMankey_UpdateScores
+	jr .placebet1end
+	
+.placebet1end:
+	ld a, [wMoogooTurn]
+	cp 1
+	jr z, .placebet1cpu1
+	cp 2
+	jr z, .placebet1cpu2
+	ld a, [wMoogooCard1ChipsA]
+	inc a
+	ld [wMoogooCard1ChipsA], a
+	jp .betdone
+.placebet1cpu1
+	ld a, [wMoogooCard1ChipsB]
+	inc a
+	ld [wMoogooCard1ChipsB], a
+	jp .betdone
+.placebet1cpu2
+	ld a, [wMoogooCard1ChipsC]
+	inc a
+	ld [wMoogooCard1ChipsC], a
+	jp .betdone
+	
+.placebetnope
+	ld de, SFX_WRONG
+	call PlaySFX
+	jp .betloop
+	
+DealPlayerCard1:
+	hlcoord 3, 13
+	ld a, [wMoogooPlayerCard1Suit]
+	call PlaceCardMoogoo
+	hlcoord 3, 13, wAttrMap
+	lb bc, 5, 4
+	ld a, [wMoogooPlayerCard1Suit]
+	call CardFlip_FillBox
+	hlcoord 5, 14
+	ld de, wMoogooPlayerCard1Value
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	jp ApplyAttrAndTilemapInVBlank
+	
+DealPlayerCard2:
+	hlcoord 6, 13
+	ld a, [wMoogooPlayerCard2Suit]
+	call PlaceCardMoogoo
+	hlcoord 6, 13, wAttrMap
+	lb bc, 5, 4
+	ld a, [wMoogooPlayerCard2Suit]
+	call CardFlip_FillBox
+	hlcoord 8, 14
+	ld de, wMoogooPlayerCard2Value
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	jp ApplyAttrAndTilemapInVBlank
+
+DealPlayerCard3:
+	hlcoord 9, 13
+	ld a, [wMoogooPlayerCard3Suit]
+	call PlaceCardMoogoo
+	hlcoord 9, 13, wAttrMap
+	lb bc, 5, 4
+	ld a, [wMoogooPlayerCard3Suit]
+	call CardFlip_FillBox
+	hlcoord 11, 14
+	ld de, wMoogooPlayerCard3Value
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	jp ApplyAttrAndTilemapInVBlank
+
+DealPlayerCard4:
+	hlcoord 12, 13
+	ld a, [wMoogooPlayerCard4Suit]
+	call PlaceCardMoogoo
+	hlcoord 12, 13, wAttrMap
+	lb bc, 5, 4
+	ld a, [wMoogooPlayerCard4Suit]
+	call CardFlip_FillBox
+	hlcoord 14, 14
+	ld de, wMoogooPlayerCard4Value
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	jp ApplyAttrAndTilemapInVBlank
+
+DealPlayerCard5:
+	hlcoord 15, 13
+	ld a, [wMoogooPlayerCard5Suit]
+	call PlaceCardMoogoo
+	hlcoord 15, 13, wAttrMap
+	lb bc, 5, 4
+	ld a, [wMoogooPlayerCard5Suit]
+	call CardFlip_FillBox
+	hlcoord 17, 14
+	ld de, wMoogooPlayerCard5Value
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	jp ApplyAttrAndTilemapInVBlank
+	
+UpdatePlayerCard1:
+	hlcoord 3, 13
+	ld a, [wMoogooPlayerCard1Suit]
+	call PlaceCardMoogoo
+	hlcoord 5, 14
+	ld de, wMoogooPlayerCard1Value
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	jp ApplyTilemapInVBlank
+	
+UpdatePlayerCard2:
+	hlcoord 6, 13
+	ld a, [wMoogooPlayerCard2Suit]
+	call PlaceCardMoogoo
+	hlcoord 8, 14
+	ld de, wMoogooPlayerCard2Value
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	jp ApplyTilemapInVBlank
+
+UpdatePlayerCard3:
+	hlcoord 9, 13
+	ld a, [wMoogooPlayerCard3Suit]
+	call PlaceCardMoogoo
+	hlcoord 11, 14
+	ld de, wMoogooPlayerCard3Value
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	jp ApplyTilemapInVBlank
+
+UpdatePlayerCard4:
+	hlcoord 12, 13
+	ld a, [wMoogooPlayerCard4Suit]
+	call PlaceCardMoogoo
+	hlcoord 14, 14
+	ld de, wMoogooPlayerCard4Value
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	jp ApplyTilemapInVBlank
+
+UpdatePlayerCard5:
+	hlcoord 15, 13
+	ld a, [wMoogooPlayerCard5Suit]
+	call PlaceCardMoogoo
+	hlcoord 17, 14
+	ld de, wMoogooPlayerCard5Value
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	jp ApplyTilemapInVBlank
+	
+MoogooMankey_UpdateScores:
+	hlcoord $2, $e
+	ld de, wMoogooPlayerScore
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	hlcoord $2, $f
+	ld de, wMoogooCPU1Score
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	hlcoord $2, $10
+	ld de, wMoogooCPU2Score
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	jp PrintNum
+	
+GetRandomSuit:
+	ld a, [wMoogooRetiredSuit1]
+	ld b, a
+	ld a, [wMoogooRetiredSuit2]
+	ld c, a
+	call Random
+	and $7
+	inc a
+	cp 8
+	jr z, GetRandomSuit
+	cp 7
+	jr z, GetRandomSuit
+	cp 6
+	jr z, GetRandomSuit
+	cp b
+	jr z, GetRandomSuit
+	cp c
+	jr z, GetRandomSuit
+	ret
+	
+PlaceChip:
+	ld a, [wMoogooTurn]
+	cp 0
+	jr z, .player
+	cp 1
+	jr z, .cpu1
+	cp 2
+	jr z, .cpu2
+.return
+	lb bc, 1, 1
+	ld a, $7d
+	ld [hGraphicStartTile], a
+	predef PlaceGraphic
+	ret
+.player
+	ld a, [wMoogooPlayerScore]
+	inc a
+	ld [wMoogooPlayerScore], a
+	jr .return
+.cpu1
+	ld a, [wMoogooCPU1Score]
+	inc a
+	ld [wMoogooCPU1Score], a
+	jr .return
+.cpu2
+	ld a, [wMoogooCPU2Score]
+	inc a
+	ld [wMoogooCPU2Score], a
+	jr .return
+	
+	
+ColorChip:
+	lb bc, 1, 1
+	ld a, [wMoogooTurn]
+	cp 2
+	jr nz, .colorchipskip
+	inc a
+.colorchipskip
+	call CardFlip_FillBox
+	jp ApplyAttrAndTilemapInVBlank
+	
+ReplacePlayerCard:
+	ld a, [wPlaceBallsY]
+	cp 5
+	jr z, .five
+	cp 4
+	jr z, .four
+	cp 3
+	jp z, .three
+	cp 2
+	jp z, .two
+.one
+	ld de, SFX_GRASS_RUSTLE
+	call PlaySFX
+	jp DealPlayerCard1
+.five
+	ld de, SFX_GRASS_RUSTLE
+	call PlaySFX
+	jp DealPlayerCard5
+.four
+	ld de, SFX_GRASS_RUSTLE
+	call PlaySFX
+	jp DealPlayerCard4
+.three
+	ld de, SFX_GRASS_RUSTLE
+	call PlaySFX
+	jp DealPlayerCard3
+.two
+	ld de, SFX_GRASS_RUSTLE
+	call PlaySFX
+	jp DealPlayerCard2
+	
+CheckWhichCard:
+	ld a, [wPlaceBallsY]
+	cp 5
+	jr z, .five
+	cp 4
+	jr z, .four
+	cp 3
+	jp z, .three
+	cp 2
+	jp z, .two
+.one
+	ld a, [wMoogooPlayerCard1Value]
+	ld [wMoogooCurrentCardValue], a
+	ld a, [wMoogooPlayerCard1Suit]
+	ld [wMoogooCurrentCardSuit], a
+	call Random
+	and $7
+	inc a
+	ld [wMoogooPlayerCard1Value], a
+	call GetRandomSuit
+	ld [wMoogooPlayerCard1Suit], a
+	hlcoord $3, $d
+	ld de, .TilemapLeft
+	lb bc, 5, 4
+	jp CardFlip_CopyToBox
+.five
+	ld a, [wMoogooPlayerCard5Value]
+	ld [wMoogooCurrentCardValue], a
+	ld a, [wMoogooPlayerCard5Suit]
+	ld [wMoogooCurrentCardSuit], a
+	call Random
+	and $7
+	inc a
+	ld [wMoogooPlayerCard5Value], a
+	call GetRandomSuit
+	ld [wMoogooPlayerCard5Suit], a
+	hlcoord $f, $d
+	ld de, .TilemapRight
+	lb bc, 5, 4
+	jp CardFlip_CopyToBox
+.four
+	ld a, [wMoogooPlayerCard4Value]
+	ld [wMoogooCurrentCardValue], a
+	ld a, [wMoogooPlayerCard4Suit]
+	ld [wMoogooCurrentCardSuit], a
+	call Random
+	and $7
+	inc a
+	ld [wMoogooPlayerCard4Value], a
+	call GetRandomSuit
+	ld [wMoogooPlayerCard4Suit], a
+	hlcoord $c, $d
+	ld de, .TilemapMid
+	lb bc, 5, 4
+	jp CardFlip_CopyToBox
+.three
+	ld a, [wMoogooPlayerCard3Value]
+	ld [wMoogooCurrentCardValue], a
+	ld a, [wMoogooPlayerCard3Suit]
+	ld [wMoogooCurrentCardSuit], a
+	call Random
+	and $7
+	inc a
+	ld [wMoogooPlayerCard3Value], a
+	call GetRandomSuit
+	ld [wMoogooPlayerCard3Suit], a
+	hlcoord $9, $d
+	ld de, .TilemapMid
+	lb bc, 5, 4
+	jp CardFlip_CopyToBox
+.two
+	ld a, [wMoogooPlayerCard2Value]
+	ld [wMoogooCurrentCardValue], a
+	ld a, [wMoogooPlayerCard2Suit]
+	ld [wMoogooCurrentCardSuit], a
+	call Random
+	and $7
+	inc a
+	ld [wMoogooPlayerCard2Value], a
+	call GetRandomSuit
+	ld [wMoogooPlayerCard2Suit], a
+	hlcoord $6, $d
+	ld de, .TilemapMid
+	lb bc, 5, 4
+	jp CardFlip_CopyToBox
+	
+.TilemapLeft:
+	db $07, $07, $07, $08
+	db $07, $07, $07, $0b
+	db $07, $07, $07, $0b
+	db $07, $07, $07, $0b
+	db $07, $07, $07, $0d
+	
+.TilemapMid:
+	db $0a, $07, $07, $08
+	db $0c, $07, $07, $0b
+	db $0c, $07, $07, $0b
+	db $0c, $07, $07, $0b
+	db $0f, $07, $07, $0d
+	
+.TilemapRight:
+	db $0a, $07, $07, $07
+	db $0c, $07, $07, $07
+	db $0c, $07, $07, $07
+	db $0c, $07, $07, $07
+	db $0f, $07, $07, $07
+	
+PlaceCard:
+	ld a, [wMoogooCurrentCardSuit]
+	cp 5
+	jr z, .five
+	cp 4
+	jr z, .four
+	cp 3
+	jr z, .three
+	cp 2
+	jr z, .two
+.one
+	hlcoord $0, $7
+	call PlaceCardMoogoo
+	hlcoord $2, $8
+	ld de, wMoogooCurrentCardValue
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	ld a, [wMoogooCurrentCardValue]
+	ld [wMoogooCard1Value], a
+	ret
+.five
+	hlcoord $10, $7
+	call PlaceCardMoogoo
+	hlcoord $12, $8
+	ld de, wMoogooCurrentCardValue
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	ld a, [wMoogooCurrentCardValue]
+	ld [wMoogooCard5Value], a
+	ret
+.four
+	hlcoord $c, $7
+	call PlaceCardMoogoo
+	hlcoord $e, $8
+	ld de, wMoogooCurrentCardValue
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	ld a, [wMoogooCurrentCardValue]
+	ld [wMoogooCard4Value], a
+	ret
+.three
+	hlcoord $8, $7
+	call PlaceCardMoogoo
+	hlcoord $a, $8
+	ld de, wMoogooCurrentCardValue
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	ld a, [wMoogooCurrentCardValue]
+	ld [wMoogooCard3Value], a
+	ret
+.two
+	hlcoord $4, $7
+	call PlaceCardMoogoo
+	hlcoord $6, $8
+	ld de, wMoogooCurrentCardValue
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	call PrintNum
+	ld a, [wMoogooCurrentCardValue]
+	ld [wMoogooCard2Value], a
+	ret
+	
+ChooseSurvivor_HandleJoypad: ; e089c
+	ld hl, hJoyLast
+	ld a, [hl]
+	and D_LEFT
+	jp nz, .d_left
+	ld a, [hl]
+	and D_RIGHT
+	jp nz, .d_right
+	ret
+.d_left
+	ld a, [wPlaceBallsY]
+	cp 1
+	ret z
+	dec a
+	ld [wPlaceBallsY], a
+	ld de, SFX_POKEBALLS_PLACED_ON_TABLE
+	call PlaySFX
+	ret
+.d_right
+	ld a, [wPlaceBallsY]
+	cp 5
+	ret z
+	inc a
+	ld [wPlaceBallsY], a
+	ld de, SFX_POKEBALLS_PLACED_ON_TABLE
+	call PlaySFX
+	ret
+	
+ChooseSurvivor_UpdateCursorOAM:
+	ld a, [wPlaceBallsY]
+	cp 1
+	jr z, .one
+	cp 2
+	jr z, .two
+	cp 3
+	jr z, .three
+	cp 4
+	jr z, .four
+	
+.five
+	ld hl, ChooseSurvivor_OAM05
+	ld de, wSprites
+	ld bc, 54
+	jp CopyBytes
+
+.one
+	ld hl, ChooseSurvivor_OAM01
+	ld de, wSprites
+	ld bc, 54
+	jp CopyBytes
+	
+.two
+	ld hl, ChooseSurvivor_OAM02
+	ld de, wSprites
+	ld bc, 54
+	jp CopyBytes
+	
+.three
+	ld hl, ChooseSurvivor_OAM03
+	ld de, wSprites
+	ld bc, 54
+	jp CopyBytes
+	
+.four
+	ld hl, ChooseSurvivor_OAM04
+	ld de, wSprites
+	ld bc, 54
+	jp CopyBytes
+	
+ChooseSurvivor_OAM01:
+;y pos, x pos, tile, palette
+	dsprite  3,  0, 1,  0, $04, $0 | BEHIND_BG
+	dsprite  3,  0, 2,  0, $06, $0 | BEHIND_BG
+	dsprite  3,  0, 3,  0, $06, $0 | BEHIND_BG
+	dsprite  3,  0, 4,  0, $04, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  4,  0, 1,  0, $05, $0 | BEHIND_BG
+	dsprite  4,  0, 4,  0, $05, $0 | X_FLIP | BEHIND_BG
+	dsprite  5,  0, 1,  0, $05, $0 | BEHIND_BG
+	dsprite  5,  0, 4,  0, $05, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  6,  0, 1,  0, $04, $0 | Y_FLIP | BEHIND_BG
+	dsprite  6,  0, 2,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  6,  0, 3,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  6,  0, 4,  0, $04, $0 | X_FLIP | Y_FLIP | BEHIND_BG
+	dsprite  0,  0, 0,  0, $00, $0
+	dsprite  0,  0, 0,  0, $00, $0
+	
+ChooseSurvivor_OAM02:
+;y pos, x pos, tile, palette
+	dsprite  3,  0, 5,  0, $04, $0 | BEHIND_BG
+	dsprite  3,  0, 6,  0, $06, $0 | BEHIND_BG
+	dsprite  3,  0, 7,  0, $06, $0 | BEHIND_BG
+	dsprite  3,  0, 8,  0, $04, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  4,  0, 5,  0, $05, $0 | BEHIND_BG
+	dsprite  4,  0, 8,  0, $05, $0 | X_FLIP | BEHIND_BG
+	dsprite  5,  0, 5,  0, $05, $0 | BEHIND_BG
+	dsprite  5,  0, 8,  0, $05, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  6,  0, 5,  0, $04, $0 | Y_FLIP | BEHIND_BG
+	dsprite  6,  0, 6,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  6,  0, 7,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  6,  0, 8,  0, $04, $0 | X_FLIP | Y_FLIP | BEHIND_BG
+	dsprite  0,  0, 0,  0, $00, $0
+	dsprite  0,  0, 0,  0, $00, $0
+	
+ChooseSurvivor_OAM03:
+;y pos, x pos, tile, palette
+	dsprite  3,  0, 9,  0, $04, $0 | BEHIND_BG
+	dsprite  3,  0, 10,  0, $06, $0 | BEHIND_BG
+	dsprite  3,  0, 11,  0, $06, $0 | BEHIND_BG
+	dsprite  3,  0, 12,  0, $04, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  4,  0, 9,  0, $05, $0 | BEHIND_BG
+	dsprite  4,  0, 12,  0, $05, $0 | X_FLIP | BEHIND_BG
+	dsprite  5,  0, 9,  0, $05, $0 | BEHIND_BG
+	dsprite  5,  0, 12,  0, $05, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  6,  0, 9,  0, $04, $0 | Y_FLIP | BEHIND_BG
+	dsprite  6,  0, 10,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  6,  0, 11,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  6,  0, 12,  0, $04, $0 | X_FLIP | Y_FLIP | BEHIND_BG
+	dsprite  0,  0, 0,  0, $00, $0
+	dsprite  0,  0, 0,  0, $00, $0
+	
+ChooseSurvivor_OAM04:
+;y pos, x pos, tile, palette
+	dsprite  3,  0, 13,  0, $04, $0 | BEHIND_BG
+	dsprite  3,  0, 14,  0, $06, $0 | BEHIND_BG
+	dsprite  3,  0, 15,  0, $06, $0 | BEHIND_BG
+	dsprite  3,  0, 16,  0, $04, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  4,  0, 13,  0, $05, $0 | BEHIND_BG
+	dsprite  4,  0, 16,  0, $05, $0 | X_FLIP | BEHIND_BG
+	dsprite  5,  0, 13,  0, $05, $0 | BEHIND_BG
+	dsprite  5,  0, 16,  0, $05, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  6,  0, 13,  0, $04, $0 | Y_FLIP | BEHIND_BG
+	dsprite  6,  0, 14,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  6,  0, 15,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  6,  0, 16,  0, $04, $0 | X_FLIP | Y_FLIP | BEHIND_BG
+	dsprite  0,  0, 0,  0, $00, $0
+	dsprite  0,  0, 0,  0, $00, $0
+	
+ChooseSurvivor_OAM05:
+;y pos, x pos, tile, palette
+	dsprite  3,  0, 17,  0, $04, $0 | BEHIND_BG
+	dsprite  3,  0, 18,  0, $06, $0 | BEHIND_BG
+	dsprite  3,  0, 19,  0, $06, $0 | BEHIND_BG
+	dsprite  3,  0, 20,  0, $04, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  4,  0, 17,  0, $05, $0 | BEHIND_BG
+	dsprite  4,  0, 20,  0, $05, $0 | X_FLIP | BEHIND_BG
+	dsprite  5,  0, 17,  0, $05, $0 | BEHIND_BG
+	dsprite  5,  0, 20,  0, $05, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  6,  0, 17,  0, $04, $0 | Y_FLIP | BEHIND_BG
+	dsprite  6,  0, 18,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  6,  0, 19,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  6,  0, 20,  0, $04, $0 | X_FLIP | Y_FLIP | BEHIND_BG
+	dsprite  0,  0, 0,  0, $00, $0
+	dsprite  0,  0, 0,  0, $00, $0
+	
+PickCard_UpdateCursorOAM:
+	ld a, [wPlaceBallsY]
+	cp 1
+	jr z, .one
+	cp 2
+	jr z, .two
+	cp 3
+	jr z, .three
+	cp 4
+	jr z, .four
+	
+.five
+	call UpdatePlayerCard5
+	ld hl, PickCard_OAM05
+	ld de, wSprites
+	ld bc, 54
+	jp CopyBytes
+
+.one
+	call UpdatePlayerCard1
+	ld hl, PickCard_OAM01
+	ld de, wSprites
+	ld bc, 54
+	jp CopyBytes
+	
+.two
+	call UpdatePlayerCard2
+	ld hl, PickCard_OAM02
+	ld de, wSprites
+	ld bc, 54
+	jp CopyBytes
+	
+.three
+	call UpdatePlayerCard3
+	ld hl, PickCard_OAM03
+	ld de, wSprites
+	ld bc, 54
+	jp CopyBytes
+	
+.four
+	call UpdatePlayerCard4
+	ld hl, PickCard_OAM04
+	ld de, wSprites
+	ld bc, 55
+	jp CopyBytes
+	
+PickCard_OAM01:
+;y pos, x pos, tile, palette
+	dsprite  15,  0, 4,  0, $04, $0 | BEHIND_BG
+	dsprite  15,  0, 5,  0, $06, $0 | BEHIND_BG
+	dsprite  15,  0, 6,  0, $06, $0 | BEHIND_BG
+	dsprite  15,  0, 7,  0, $04, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  16,  0, 4,  0, $05, $0 | BEHIND_BG
+	dsprite  16,  0, 7,  0, $05, $0 | X_FLIP | BEHIND_BG
+	dsprite  17,  0, 4,  0, $05, $0 | BEHIND_BG
+	dsprite  17,  0, 7,  0, $05, $0 | X_FLIP | BEHIND_BG
+	dsprite  18,  0, 4,  0, $05, $0 | BEHIND_BG
+	dsprite  18,  0, 7,  0, $05, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  19,  0, 4,  0, $04, $0 | Y_FLIP | BEHIND_BG
+	dsprite  19,  0, 5,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  19,  0, 6,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  19,  0, 7,  0, $00, $0 | BEHIND_BG
+	
+PickCard_OAM02:
+;y pos, x pos, tile, palette
+	dsprite  15,  0, 7,  0, $04, $0 | BEHIND_BG
+	dsprite  15,  0, 8,  0, $06, $0 | BEHIND_BG
+	dsprite  15,  0, 9,  0, $06, $0 | BEHIND_BG
+	dsprite  15,  0, 10,  0, $04, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  16,  0, 7,  0, $05, $0 | BEHIND_BG
+	dsprite  16,  0, 10,  0, $05, $0 | X_FLIP | BEHIND_BG
+	dsprite  17,  0, 7,  0, $05, $0 | BEHIND_BG
+	dsprite  17,  0, 10,  0, $05, $0 | X_FLIP | BEHIND_BG
+	dsprite  18,  0, 7,  0, $05, $0 | BEHIND_BG
+	dsprite  18,  0, 10,  0, $05, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  19,  0, 7,  0, $04, $0 | Y_FLIP | BEHIND_BG
+	dsprite  19,  0, 8,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  19,  0, 9,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  19,  0, 10,  0, $00, $0 | BEHIND_BG
+	
+PickCard_OAM03:
+;y pos, x pos, tile, palette
+	dsprite  15,  0, 10,  0, $04, $0 | BEHIND_BG
+	dsprite  15,  0, 11,  0, $06, $0 | BEHIND_BG
+	dsprite  15,  0, 12,  0, $06, $0 | BEHIND_BG
+	dsprite  15,  0, 13,  0, $04, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  16,  0, 10,  0, $05, $0 | BEHIND_BG
+	dsprite  16,  0, 13,  0, $05, $0 | X_FLIP | BEHIND_BG
+	dsprite  17,  0, 10,  0, $05, $0 | BEHIND_BG
+	dsprite  17,  0, 13,  0, $05, $0 | X_FLIP | BEHIND_BG
+	dsprite  18,  0, 10,  0, $05, $0 | BEHIND_BG
+	dsprite  18,  0, 13,  0, $05, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  19,  0, 10,   0, $04, $0 | Y_FLIP | BEHIND_BG
+	dsprite  19,  0, 11,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  19,  0, 12,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  19,  0, 13,  0, $00, $0 | BEHIND_BG
+	
+PickCard_OAM04:
+;y pos, x pos, tile, palette
+	dsprite  15,  0, 13,  0, $04, $0 | BEHIND_BG
+	dsprite  15,  0, 14,  0, $06, $0 | BEHIND_BG
+	dsprite  15,  0, 15,  0, $06, $0 | BEHIND_BG
+	dsprite  15,  0, 16,  0, $04, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  16,  0, 13,  0, $05, $0 | BEHIND_BG
+	dsprite  16,  0, 16,  0, $05, $0 | X_FLIP | BEHIND_BG
+	dsprite  17,  0, 13,  0, $05, $0 | BEHIND_BG
+	dsprite  17,  0, 16,  0, $05, $0 | X_FLIP | BEHIND_BG
+	dsprite  18,  0, 13,  0, $05, $0 | BEHIND_BG
+	dsprite  18,  0, 16,  0, $05, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  19,  0, 13,  0, $04, $0 | Y_FLIP | BEHIND_BG
+	dsprite  19,  0, 14,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  19,  0, 15,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  19,  0, 16,  0, $00, $0 | BEHIND_BG
+	
+PickCard_OAM05:
+;y pos, x pos, tile, palette
+	dsprite  15,  0, 16,  0, $04, $0 | BEHIND_BG
+	dsprite  15,  0, 17,  0, $06, $0 | BEHIND_BG
+	dsprite  15,  0, 18,  0, $06, $0 | BEHIND_BG
+	dsprite  15,  0, 19,  0, $04, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  16,  0, 16,  0, $05, $0 | BEHIND_BG
+	dsprite  16,  0, 19,  0, $05, $0 | X_FLIP | BEHIND_BG
+	dsprite  17,  0, 16,  0, $05, $0 | BEHIND_BG
+	dsprite  17,  0, 19,  0, $05, $0 | X_FLIP | BEHIND_BG
+	dsprite  18,  0, 16,  0, $05, $0 | BEHIND_BG
+	dsprite  18,  0, 19,  0, $05, $0 | X_FLIP | BEHIND_BG
+	
+	dsprite  19,  0, 16,  0, $04, $0 | Y_FLIP | BEHIND_BG
+	dsprite  19,  0, 17,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  19,  0, 18,  0, $06, $0 | Y_FLIP | BEHIND_BG
+	dsprite  19,  0, 19,  0, $00, $0 | BEHIND_BG
+	
+MoogooIncreaseCardsWithLowestValue:
+	ld a, [wMoogooCardsWithLowestValue]
+	inc a
+	ld [wMoogooCardsWithLowestValue], a
+	ret
+	
+MoogooRetireSuit:
+	ld c, a
+	ld a, [wPlaceBallsX]
+	cp 2
+	jr z, .round2
+	ld a, c
+	ld [wMoogooRetiredSuit1], a
+	ret
+.round2
+	ld a, c
+	ld [wMoogooRetiredSuit2], a
+	ret
+	
+MoogooCrossOutSuit:
+	cp 0
+	ret z
+	cp 1
+	jr z, .one
+	cp 2
+	jr z, .two
+	cp 3
+	jp z, .three
+	cp 4
+	jp z, .four
+	ld a, [wMoogooCard5ChipsA]
+	ld b, a
+	ld a, [wMoogooPlayerScore]
+	sub b
+	ld [wMoogooPlayerScore], a
+	ld a, [wMoogooCard5ChipsB]
+	ld b, a
+	ld a, [wMoogooCPU1Score]
+	sub b
+	ld [wMoogooCPU1Score], a
+	
+	ld a, [wMoogooCard5ChipsC]
+	ld b, a
+	ld a, [wMoogooCPU2Score]
+	sub b
+	ld [wMoogooCPU2Score], a
+	
+	xor a
+	ld [wMoogooCard5ChipsA], a
+	ld [wMoogooCard5ChipsB], a
+	ld [wMoogooCard5ChipsC], a
+	ld a, 69
+	ld [wMoogooCard5Value], a
+	hlcoord $10, 1
+	jp .draw
+.one
+	ld a, [wMoogooCard1ChipsA]
+	ld b, a
+	ld a, [wMoogooPlayerScore]
+	sub b
+	ld [wMoogooPlayerScore], a 
+	ld a, [wMoogooCard1ChipsB]
+	ld b, a
+	ld a, [wMoogooCPU1Score]
+	sub b
+	ld [wMoogooCPU1Score], a
+	
+	ld a, [wMoogooCard1ChipsC]
+	ld b, a
+	ld a, [wMoogooCPU2Score]
+	sub b
+	ld [wMoogooCPU2Score], a
+	
+	xor a
+	ld [wMoogooCard1ChipsA], a
+	ld [wMoogooCard1ChipsB], a
+	ld [wMoogooCard1ChipsC], a
+	ld a, 69
+	ld [wMoogooCard1Value], a
+	hlcoord 0, 1
+	jp .draw
+.two
+	ld a, [wMoogooCard2ChipsA]
+	ld b, a
+	ld a, [wMoogooPlayerScore]
+	sub b
+	ld [wMoogooPlayerScore], a
+	ld a, [wMoogooCard2ChipsB]
+	ld b, a
+	ld a, [wMoogooCPU1Score]
+	sub b
+	ld [wMoogooCPU1Score], a
+	
+	ld a, [wMoogooCard2ChipsC]
+	ld b, a
+	ld a, [wMoogooCPU2Score]
+	sub b
+	ld [wMoogooCPU2Score], a
+	
+	xor a
+	ld [wMoogooCard2ChipsA], a
+	ld [wMoogooCard2ChipsB], a
+	ld [wMoogooCard2ChipsC], a
+	ld a, 69
+	ld [wMoogooCard2Value], a
+	hlcoord 4, 1
+	jr .draw
+.three
+	ld a, [wMoogooCard3ChipsA]
+	ld b, a
+	ld a, [wMoogooPlayerScore]
+	sub b
+	ld [wMoogooPlayerScore], a 
+	ld a, [wMoogooCard3ChipsB]
+	ld b, a
+	ld a, [wMoogooCPU1Score]
+	sub b
+	ld [wMoogooCPU1Score], a
+	
+	ld a, [wMoogooCard3ChipsC]
+	ld b, a
+	ld a, [wMoogooCPU2Score]
+	sub b
+	ld [wMoogooCPU2Score], a
+	
+	xor a
+	ld [wMoogooCard3ChipsA], a
+	ld [wMoogooCard3ChipsB], a
+	ld [wMoogooCard3ChipsC], a
+	ld a, 69
+	ld [wMoogooCard3Value], a
+	hlcoord 8, 1
+	jr .draw
+.four
+	ld a, [wMoogooCard4ChipsA]
+	ld b, a
+	ld a, [wMoogooPlayerScore]
+	sub b
+	ld [wMoogooPlayerScore], a
+	ld a, [wMoogooCard4ChipsB]
+	ld b, a
+	ld a, [wMoogooCPU1Score]
+	sub b
+	ld [wMoogooCPU1Score], a
+	
+	ld a, [wMoogooCard4ChipsC]
+	ld b, a
+	ld a, [wMoogooCPU2Score]
+	sub b
+	ld [wMoogooCPU2Score], a
+	
+	xor a
+	ld [wMoogooCard4ChipsA], a
+	ld [wMoogooCard4ChipsB], a
+	ld [wMoogooCard4ChipsC], a
+	ld a, 69
+	ld [wMoogooCard4Value], a
+	hlcoord $c, 1
+.draw
+	ld de, .Tilemap
+	lb bc, 6, 4
+	call CardFlip_CopyToBox
+	
+	hlcoord 0, 7
+	call MoogooDrawEmptyCard
+	hlcoord 4, 7
+	call MoogooDrawEmptyCard
+	hlcoord 8, 7
+	call MoogooDrawEmptyCard
+	hlcoord $c, 7
+	call MoogooDrawEmptyCard
+	hlcoord $10, 7
+	call MoogooDrawEmptyCard
+	
+	hlcoord 3, $d
+	lb bc, 5, 16
+	call CardFlip_FillGreenBox
+	call MoogooMankey_UpdateScores
+	jp ApplyAttrAndTilemapInVBlank
+	
+	
+.Tilemap:
+	db $10, $11, $12, $13
+	db $14, $15, $16, $17
+	db $18, $19, $1a, $1b
+	db $1c, $1d, $1e, $1f
+	db $07, $07, $07, $07
+	db $07, $07, $07, $07
+	
+MoogooDrawEmptyCard:
+	ld de, .Tilemap
+	lb bc, 5, 4
+	jp CardFlip_CopyToBox
+	
+.Tilemap
+	db $72, $73, $73, $74
+	db $75, $72, $74, $76
+	db $75, $75, $76, $76
+	db $75, $77, $79, $76
+	db $77, $78, $78, $79
+	
+MoogooHideCursor:
+	ldh a, [rLCDC]
+	res rLCDC_SPRITES_ENABLE, a
+	ldh [rLCDC], a
+	ret
+	
+MoogooShowCursor:
+	ldh a, [rLCDC]
+	set rLCDC_SPRITES_ENABLE, a
+	ldh [rLCDC], a
+	ret
+	
+CheckIfYouWon:
+	ld a, [hli]
+	cp [hl]
+	jr c, .lost
+	jr z, .tie
+	inc hl
+	cp [hl]
+	jr c, .lost
+	jr z, .tie
+; won
+	ld a, 1
+	ret
+.lost
+	xor a
+	ret
+.tie
+	ld a, -1
+	ret

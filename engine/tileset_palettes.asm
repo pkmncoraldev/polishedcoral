@@ -137,6 +137,14 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .lab
 	cp TILESET_DESERT
 	jp z, .desert
+	cp TILESET_MART
+	jp z, .mart
+	jp .do_nothing
+	
+.mart
+	ld a, [wMapGroup]
+	cp GROUP_BRILLO_TOWN
+	jr z, .desert_house
 	jp .do_nothing
 	
 .desert

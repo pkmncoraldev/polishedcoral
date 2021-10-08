@@ -41,6 +41,7 @@ NidokingFSpriteGFX::      	   INCBIN "gfx/sprites/nidoking_f.2bpp"
 NidokingLeaderSpriteGFX::      INCBIN "gfx/sprites/nidoking_leader.2bpp"
 GrimerAOWSpriteGFX::      	   INCBIN "gfx/sprites/grimer_a_ow.2bpp"
 BalloonsSpriteGFX::      	   INCBIN "gfx/sprites/balloons.2bpp"
+PeepHoleSpriteGFX::      	   INCBIN "gfx/sprites/peep_hole.2bpp"
 
 
 SECTION "Overworld Sprites 2", ROMX

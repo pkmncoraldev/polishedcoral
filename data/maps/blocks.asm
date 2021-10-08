@@ -23,9 +23,11 @@ FlickerMart_BlockData:
 TwinkleMart_BlockData:
 LusterMart_BlockData:
 ShimmerMart_BlockData:
-BrilloMart_BlockData:
 GenericMart_BlockData:: ; used by tilesets/palettes.asm:LoadSpecialMapPalette
 	INCBIN "maps/Mart.ablk.lz"
+	
+BrilloMart_BlockData:
+	INCBIN "maps/BrilloMart.ablk.lz"
 
 LakeOnwaBoatHouseRight_BlockData:
 LakeOnwaBoatHouseLeft_BlockData:

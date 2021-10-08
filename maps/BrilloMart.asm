@@ -136,7 +136,7 @@ DefaultPassword:
 	db "¯@@@@@@@@@@"
 	
 CorrectPassword:
-	db "PENIS@@@@@@"
+	db "PASSWORD@@@"
 	
 BrilloMartDoorText1:
 	text "What's da password?"

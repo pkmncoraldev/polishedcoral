@@ -55,6 +55,6 @@
 	tilecoll FLOOR, MART_SHELF, FLOOR, MART_SHELF ; 36
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 37
 	tilecoll WALL, WALL, FLOOR, MART_SHELF ; 38
-	tilecoll DOOR, WALL, FLOOR, FLOOR ; 39
+	tilecoll DOOR, WALL, FLOOR, MART_SHELF ; 39
 	tilecoll WALL, WALL, WALL, FLOOR ; 3a
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 3b

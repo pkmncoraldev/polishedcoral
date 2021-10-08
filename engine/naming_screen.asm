@@ -252,7 +252,7 @@ SetUpNamingScreen: ; 116f8
 	hlcoord 2, 2
 	ld de, .PasswordString
 	call PlaceString
-	jp .StoreSpriteIconParams
+	jp .StoreMonIconParams
 
 .PasswordString:
 	db "Say the password!@"

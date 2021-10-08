@@ -422,7 +422,63 @@ PlaceCardFaceDown: ; e03c1
 	db $0b, $32, $33, $34, $0c
 	db $0d, $0e, $0e, $0e, $0f
 
-PlaceCardMoogoo:
+PlaceCardMoogooBorderSingle:
+	xor a
+	ld [hBGMapMode], a
+	ld de, .Tilemap
+	lb bc, 5, 4
+	jp CardFlip_CopyToBox
+
+.Tilemap: ; e03ce
+	db $08, $09, $09, $0a
+	db $0b, $28, $28, $0c
+	db $0b, $28, $28, $0c
+	db $0b, $28, $28, $0c
+	db $0d, $0e, $0e, $0f
+	
+PlaceCardMoogooBorderLeft:
+	xor a
+	ld [hBGMapMode], a
+	ld de, .Tilemap
+	lb bc, 5, 4
+	jp CardFlip_CopyToBox
+
+.Tilemap: ; e03ce
+	db $08, $09, $09, $21
+	db $0b, $28, $28, $23
+	db $0b, $28, $28, $23
+	db $0b, $28, $28, $23
+	db $0d, $0e, $0e, $25
+	
+PlaceCardMoogooBorderMiddle:
+	xor a
+	ld [hBGMapMode], a
+	ld de, .Tilemap
+	lb bc, 5, 4
+	jp CardFlip_CopyToBox
+
+.Tilemap: ; e03ce
+	db $20, $09, $09, $21
+	db $22, $28, $28, $23
+	db $22, $28, $28, $23
+	db $22, $28, $28, $23
+	db $24, $0e, $0e, $25
+	
+PlaceCardMoogooBorderRight:
+	xor a
+	ld [hBGMapMode], a
+	ld de, .Tilemap
+	lb bc, 5, 4
+	jp CardFlip_CopyToBox
+
+.Tilemap: ; e03ce
+	db $20, $09, $09, $0a
+	db $22, $28, $28, $0c
+	db $22, $28, $28, $0c
+	db $22, $28, $28, $0c
+	db $24, $0e, $0e, $0f
+	
+PlaceCardMoogooSuit:
 	cp 5
 	jp z, PlaceCardMoogoo5
 	cp 4
@@ -436,71 +492,56 @@ PlaceCardMoogoo1: ; e03c1
 	xor a
 	ld [hBGMapMode], a
 	ld de, .Tilemap
-	lb bc, 5, 4
+	lb bc, 2, 2
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $08, $09, $09, $0a
-	db $0b, $28, $28, $0c
-	db $0b, $3e, $3f, $0c
-	db $0b, $40, $41, $0c
-	db $0d, $0e, $0e, $0f
+	db $3e, $3f
+	db $40, $41
 	
 PlaceCardMoogoo2: ; e03c1
 	xor a
 	ld [hBGMapMode], a
 	ld de, .Tilemap
-	lb bc, 5, 4
+	lb bc, 2, 2
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $08, $09, $09, $0a
-	db $0b, $28, $28, $0c
-	db $0b, $42, $43, $0c
-	db $0b, $44, $45, $0c
-	db $0d, $0e, $0e, $0f
+	db $42, $43
+	db $44, $45
 	
 PlaceCardMoogoo3: ; e03c1
 	xor a
 	ld [hBGMapMode], a
 	ld de, .Tilemap
-	lb bc, 5, 4
+	lb bc, 2, 2
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $08, $09, $09, $0a
-	db $0b, $28, $28, $0c
-	db $0b, $46, $47, $0c
-	db $0b, $48, $49, $0c
-	db $0d, $0e, $0e, $0f
+	db $46, $47
+	db $48, $49
 	
 PlaceCardMoogoo4: ; e03c1
 	xor a
 	ld [hBGMapMode], a
 	ld de, .Tilemap
-	lb bc, 5, 4
+	lb bc, 2, 2
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $08, $09, $09, $0a
-	db $0b, $28, $28, $0c
-	db $0b, $4a, $4b, $0c
-	db $0b, $4c, $4d, $0c
-	db $0d, $0e, $0e, $0f
+	db $4a, $4b
+	db $4c, $4d
 	
 PlaceCardMoogoo5: ; e03c1
 	xor a
 	ld [hBGMapMode], a
 	ld de, .Tilemap
-	lb bc, 5, 4
+	lb bc, 2, 2
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $08, $09, $09, $0a
-	db $0b, $28, $28, $0c
-	db $0b, $3e, $3f, $0c
-	db $0b, $40, $41, $0c
-	db $0d, $0e, $0e, $0f
+	db $3e, $3f
+	db $40, $41
 
 CardFlip_DisplayCardFaceUp: ; e03ec
 	xor a
@@ -1831,6 +1872,31 @@ MoogooMankey_InitAttrPals:
 	ld a, 7
 	call CardFlip_FillBox
 	
+	hlcoord 1, 8, wAttrMap
+	lb bc, 1, 2
+	ld a, 6
+	call CardFlip_FillBox
+	
+	hlcoord 5, 8, wAttrMap
+	lb bc, 1, 2
+	ld a, 6
+	call CardFlip_FillBox
+	
+	hlcoord 9, 8, wAttrMap
+	lb bc, 1, 2
+	ld a, 6
+	call CardFlip_FillBox
+	
+	hlcoord 13, 8, wAttrMap
+	lb bc, 1, 2
+	ld a, 6
+	call CardFlip_FillBox
+	
+	hlcoord 17, 8, wAttrMap
+	lb bc, 1, 2
+	ld a, 6
+	call CardFlip_FillBox
+	
 	ld a, [rSVBK]
 	push af
 	ld a, $5
@@ -1875,10 +1941,10 @@ MoogooMankey_InitAttrPals:
 	RGB 06, 19, 08
 	RGB 00, 00, 00
 
-	RGB 31, 31, 31
-	RGB 17, 07, 31
-	RGB 06, 19, 08
 	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 06, 19, 08
+	RGB 31, 31, 31
 
 	RGB 06, 19, 08
 	RGB 00, 00, 00
@@ -1932,6 +1998,7 @@ _MoogooMankey:
 	call ByteFill
 	ld [wMoogooTurn], a
 	ld [wPlaceBallsX], a
+	ld [wOnSkateboard], a
 	ld a, 1
 	ld [wPlaceBallsY], a
 	ld hl, wOptions1
@@ -2268,6 +2335,8 @@ _MoogooMankey:
 	jp .Increment
 	
 .Shuffling
+	ld a, 1
+	ld [wOnSkateboard], a
 	ld a, [wPlaceBallsX]
 	inc a
 	ld [wPlaceBallsX], a
@@ -2348,6 +2417,8 @@ endr
 	call PlaceString
 	ld c, 20
 	call DelayFrames
+	xor a
+	ld [wOnSkateboard], a
 	jp .Increment
 .Clear
 	db "                    @"
@@ -2897,11 +2968,23 @@ endr
 	
 DealPlayerCard1:
 	hlcoord 3, 13
+	call PlaceCardMoogooBorderSingle
+	ld a, [wOnSkateboard]
+	cp 1
+	jr z, .cont
+	hlcoord 3, 13
+	call PlaceCardMoogooBorderLeft
+.cont
+	hlcoord 4, 15
 	ld a, [wMoogooPlayerCard1Suit]
-	call PlaceCardMoogoo
+	call PlaceCardMoogooSuit
 	hlcoord 3, 13, wAttrMap
 	lb bc, 5, 4
 	ld a, [wMoogooPlayerCard1Suit]
+	call CardFlip_FillBox
+	hlcoord 4, 14, wAttrMap
+	lb bc, 1, 2
+	ld a, 6
 	call CardFlip_FillBox
 	hlcoord 5, 14
 	ld de, wMoogooPlayerCard1Value
@@ -2911,11 +2994,23 @@ DealPlayerCard1:
 	
 DealPlayerCard2:
 	hlcoord 6, 13
+	call PlaceCardMoogooBorderRight
+	ld a, [wOnSkateboard]
+	cp 1
+	jr z, .cont
+	hlcoord 6, 13
+	call PlaceCardMoogooBorderMiddle
+.cont
+	hlcoord 7, 15
 	ld a, [wMoogooPlayerCard2Suit]
-	call PlaceCardMoogoo
+	call PlaceCardMoogooSuit
 	hlcoord 6, 13, wAttrMap
 	lb bc, 5, 4
 	ld a, [wMoogooPlayerCard2Suit]
+	call CardFlip_FillBox
+	hlcoord 7, 14, wAttrMap
+	lb bc, 1, 2
+	ld a, 6
 	call CardFlip_FillBox
 	hlcoord 8, 14
 	ld de, wMoogooPlayerCard2Value
@@ -2925,11 +3020,23 @@ DealPlayerCard2:
 
 DealPlayerCard3:
 	hlcoord 9, 13
+	call PlaceCardMoogooBorderRight
+	ld a, [wOnSkateboard]
+	cp 1
+	jr z, .cont
+	hlcoord 9, 13
+	call PlaceCardMoogooBorderMiddle
+.cont
+	hlcoord 10, 15
 	ld a, [wMoogooPlayerCard3Suit]
-	call PlaceCardMoogoo
+	call PlaceCardMoogooSuit
 	hlcoord 9, 13, wAttrMap
 	lb bc, 5, 4
 	ld a, [wMoogooPlayerCard3Suit]
+	call CardFlip_FillBox
+	hlcoord 10, 14, wAttrMap
+	lb bc, 1, 2
+	ld a, 6
 	call CardFlip_FillBox
 	hlcoord 11, 14
 	ld de, wMoogooPlayerCard3Value
@@ -2939,11 +3046,23 @@ DealPlayerCard3:
 
 DealPlayerCard4:
 	hlcoord 12, 13
+	call PlaceCardMoogooBorderRight
+	ld a, [wOnSkateboard]
+	cp 1
+	jr z, .cont
+	hlcoord 12, 13
+	call PlaceCardMoogooBorderMiddle
+.cont
+	hlcoord 13, 15
 	ld a, [wMoogooPlayerCard4Suit]
-	call PlaceCardMoogoo
+	call PlaceCardMoogooSuit
 	hlcoord 12, 13, wAttrMap
 	lb bc, 5, 4
 	ld a, [wMoogooPlayerCard4Suit]
+	call CardFlip_FillBox
+	hlcoord 13, 14, wAttrMap
+	lb bc, 1, 2
+	ld a, 6
 	call CardFlip_FillBox
 	hlcoord 14, 14
 	ld de, wMoogooPlayerCard4Value
@@ -2953,11 +3072,17 @@ DealPlayerCard4:
 
 DealPlayerCard5:
 	hlcoord 15, 13
+	call PlaceCardMoogooBorderRight
+	hlcoord 16, 15
 	ld a, [wMoogooPlayerCard5Suit]
-	call PlaceCardMoogoo
+	call PlaceCardMoogooSuit
 	hlcoord 15, 13, wAttrMap
 	lb bc, 5, 4
 	ld a, [wMoogooPlayerCard5Suit]
+	call CardFlip_FillBox
+	hlcoord 16, 14, wAttrMap
+	lb bc, 1, 2
+	ld a, 6
 	call CardFlip_FillBox
 	hlcoord 17, 14
 	ld de, wMoogooPlayerCard5Value
@@ -2967,8 +3092,10 @@ DealPlayerCard5:
 	
 UpdatePlayerCard1:
 	hlcoord 3, 13
+	call PlaceCardMoogooBorderLeft
+	hlcoord 4, 15
 	ld a, [wMoogooPlayerCard1Suit]
-	call PlaceCardMoogoo
+	call PlaceCardMoogooSuit
 	hlcoord 5, 14
 	ld de, wMoogooPlayerCard1Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
@@ -2977,8 +3104,10 @@ UpdatePlayerCard1:
 	
 UpdatePlayerCard2:
 	hlcoord 6, 13
+	call PlaceCardMoogooBorderMiddle
+	hlcoord 7, 15
 	ld a, [wMoogooPlayerCard2Suit]
-	call PlaceCardMoogoo
+	call PlaceCardMoogooSuit
 	hlcoord 8, 14
 	ld de, wMoogooPlayerCard2Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
@@ -2987,8 +3116,10 @@ UpdatePlayerCard2:
 
 UpdatePlayerCard3:
 	hlcoord 9, 13
+	call PlaceCardMoogooBorderMiddle
+	hlcoord 10, 15
 	ld a, [wMoogooPlayerCard3Suit]
-	call PlaceCardMoogoo
+	call PlaceCardMoogooSuit
 	hlcoord 11, 14
 	ld de, wMoogooPlayerCard3Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
@@ -2997,8 +3128,10 @@ UpdatePlayerCard3:
 
 UpdatePlayerCard4:
 	hlcoord 12, 13
+	call PlaceCardMoogooBorderMiddle
+	hlcoord 13, 15
 	ld a, [wMoogooPlayerCard4Suit]
-	call PlaceCardMoogoo
+	call PlaceCardMoogooSuit
 	hlcoord 14, 14
 	ld de, wMoogooPlayerCard4Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
@@ -3007,8 +3140,10 @@ UpdatePlayerCard4:
 
 UpdatePlayerCard5:
 	hlcoord 15, 13
+	call PlaceCardMoogooBorderRight
+	hlcoord 16, 15
 	ld a, [wMoogooPlayerCard5Suit]
-	call PlaceCardMoogoo
+	call PlaceCardMoogooSuit
 	hlcoord 17, 14
 	ld de, wMoogooPlayerCard5Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
@@ -3240,7 +3375,9 @@ PlaceCard:
 	jr z, .two
 .one
 	hlcoord $0, $7
-	call PlaceCardMoogoo
+	call PlaceCardMoogooBorderSingle
+	hlcoord $1, $9
+	call PlaceCardMoogoo1
 	hlcoord $2, $8
 	ld de, wMoogooCurrentCardValue
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
@@ -3250,7 +3387,9 @@ PlaceCard:
 	ret
 .five
 	hlcoord $10, $7
-	call PlaceCardMoogoo
+	call PlaceCardMoogooBorderSingle
+	hlcoord $11, $9
+	call PlaceCardMoogoo5
 	hlcoord $12, $8
 	ld de, wMoogooCurrentCardValue
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
@@ -3260,7 +3399,9 @@ PlaceCard:
 	ret
 .four
 	hlcoord $c, $7
-	call PlaceCardMoogoo
+	call PlaceCardMoogooBorderSingle
+	hlcoord $d, $9
+	call PlaceCardMoogoo4
 	hlcoord $e, $8
 	ld de, wMoogooCurrentCardValue
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
@@ -3270,7 +3411,9 @@ PlaceCard:
 	ret
 .three
 	hlcoord $8, $7
-	call PlaceCardMoogoo
+	call PlaceCardMoogooBorderSingle
+	hlcoord $9, $9
+	call PlaceCardMoogoo3
 	hlcoord $a, $8
 	ld de, wMoogooCurrentCardValue
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
@@ -3280,7 +3423,9 @@ PlaceCard:
 	ret
 .two
 	hlcoord $4, $7
-	call PlaceCardMoogoo
+	call PlaceCardMoogooBorderSingle
+	hlcoord $5, $9
+	call PlaceCardMoogoo2
 	hlcoord $6, $8
 	ld de, wMoogooCurrentCardValue
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2

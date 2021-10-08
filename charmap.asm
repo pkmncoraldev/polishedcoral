@@ -61,7 +61,7 @@
 	charmap "<_CONT>",  $4b
 	charmap "<SCRL2>",  $4c
 
-	; unused: $4d
+	charmap "<BACKUP>",  $4d
 
 	charmap "<NL>",     $4e
 	charmap "<LINE>",   $4f

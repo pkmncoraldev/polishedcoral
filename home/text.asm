@@ -205,6 +205,7 @@ endm
 	dict "<PARA>",   Paragraph
 	dict "<PLAYER>", PrintPlayerName
 	dict "<RIVAL>",  PrintRivalName
+	dict "<BACKUP>", PrintBackupName
 	dict "<CONT>",   ContText
 	dict "<TRENDY>", PrintTrendyPhrase
 	dict "<DONE>",   DoneText
@@ -251,6 +252,7 @@ endm
 PrintPlayerName:   print_name wPlayerName
 PrintRivalName:    print_name wRivalName
 PrintTrendyPhrase: print_name wTrendyPhrase
+PrintBackupName: print_name wBackupName
 
 PlaceLe: print_name .LeText
 .LeText: db "l", "e", "@"

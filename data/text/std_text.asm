@@ -131,7 +131,7 @@ IncenseBurnerText:
 	line "burner!"
 	done
 
-MerchandiseShelfText:
+MerchandiseShelfText::
 	text "Lots of #MON"
 	line "merchandise!"
 	done

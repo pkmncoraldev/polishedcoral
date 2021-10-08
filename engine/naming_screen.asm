@@ -4,7 +4,7 @@ NAMINGSCREEN_CURSOR EQU $7e
 NAMINGSCREEN_MIDDLELINE EQU "↑"
 NAMINGSCREEN_UNDERLINE  EQU "↓"
 
-_NamingScreen: ; 0x116b7
+_NamingScreen:: ; 0x116b7
 	call DisableSpriteUpdates
 	call NamingScreen
 	jp ReturnToMapWithSpeechTextbox
@@ -86,6 +86,7 @@ SetUpNamingScreen: ; 116f8
 	dw .Rival
 	dw .wTrendyPhrase
 	dw .Box
+	dw .Password
 
 .Pokemon: ; 1173e (4:573e)
 	ld a, [wCurPartySpecies]
@@ -247,6 +248,14 @@ SetUpNamingScreen: ; 116f8
 .BoxNameString: ; 11822
 	db "Box name?@"
 
+.Password:
+	hlcoord 2, 2
+	ld de, .PasswordString
+	call PlaceString
+	jp .StoreSpriteIconParams
+
+.PasswordString:
+	db "Say the password!@"
 ; 1182c
 
 .LoadSprite: ; 11847 (4:5847)
@@ -349,7 +358,7 @@ NamingScreen_IsTargetBox: ; 1189c
 	push bc
 	push af
 	ld a, [wNamingScreenType]
-	sub $4
+	sub $5
 	ld b, a
 	pop af
 	dec b
@@ -609,7 +618,18 @@ NamingScreenJoypadLoop: ; 11915
 .Pippi: ; 4e5da
 	db "Pippi@@@@@@"
 	
+.no_lower
+	call CheckSFX
+	jp c, .upper
+	ld de, SFX_WRONG
+	call PlaySFX
+	jr .upper
+	
 .select
+	ld a, [wNamingScreenType]
+	cp 5
+	jr z, .no_lower
+
 	ld hl, wcf64
 	ld a, [hl]
 	xor 1
@@ -627,7 +647,7 @@ NamingScreenJoypadLoop: ; 11915
 	ld c, [hl]
 	inc hl
 	ld b, [hl]
-
+	
 NamingScreen_GetCursorPosition: ; 11a11 (4:5a11)
 	ld hl, SPRITEANIMSTRUCT_0D
 	add hl, bc

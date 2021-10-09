@@ -452,7 +452,8 @@ ENDM
 	map_attributes BrilloHouse2, BRILLO_HOUSE_2, $0, 0
 	map_attributes BrilloHouse3, BRILLO_HOUSE_3, $0, 0
 	map_attributes BrilloPokeCenter, BRILLO_POKECENTER, $0, 0
-	map_attributes BrilloMart, BRILLO_MART, $0, 0	
+	map_attributes BrilloMart, BRILLO_MART, $0, 0
+	map_attributes BrilloGameCorner, BRILLO_GAME_CORNER, $0, 0
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0

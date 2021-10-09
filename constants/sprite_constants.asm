@@ -210,6 +210,7 @@
 	const SPRITE_GRIMER_A_OW
 	const SPRITE_BALLOONS
 	const SPRITE_PEEP_HOLE
+	const SPRITE_CASINO
 
 	
 	const_def $f1

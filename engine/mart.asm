@@ -39,6 +39,8 @@ OpenMartDialog:: ; 15a45
 	dw BallShopDiscount
 	dw FishMarket
 	dw BerryMarket
+	dw PasswordShop
+	dw BuyOnly
 ; 15a61
 
 MartDialog: ; 15a61
@@ -76,14 +78,6 @@ RefreshmentsShop: ; 15a84
 	ld hl, Text_RefreshmentsShop_Intro
 	call MartTextBox
 	call BuyRefreshmentsMenu
-;	ld hl, wBargainShopFlags
-;	ld a, [hli]
-;	or [hl]
-;	jr z, .skip_set
-;	ld hl, wDailyFlags ; ENGINE_GOLDENROD_UNDERGROUND_MERCHANT_CLOSED
-;	set 6, [hl]
-
-;.skip_set
 	ld hl, Text_RefreshmentsShop_ComeAgain
 	jp MartTextBox
 ; 15aae
@@ -480,6 +474,28 @@ FishMarket: ; 15b47
 	ret
 ; 15bbb
 
+INCLUDE "data/items/coins_shop.asm"
+
+PasswordShop: ; 15b47
+	
+	ld b, BANK(CoinsShopData)
+	ld de, CoinsShopData
+	call LoadMartPointer
+	call ReadMart
+	ld hl, Text_BrilloMartSecret1
+	call MartTextBox
+	ld hl, Text_BrilloMartSecret2
+	call MartTextBox
+	call BuyMenuCoins
+	and a
+	ret
+	
+BuyOnly:
+	call FarReadMart
+	call BuyMenu
+	and a
+	ret
+
 FarReadMart: ; 15bbb
 	ld hl, wMartPointer
 	ld a, [hli]
@@ -704,7 +720,14 @@ BTBuyMenu:
 	jr nc, .loop
 	jr BuyMenu_Finish
 
-BuyMenu_InitGFX:
+BuyMenuCoins: ; 15c62
+	call BuyMenu_InitGFX
+.loop
+	call BuyMenuCoinsLoop ; menu loop
+	jr nc, .loop
+	jr BuyMenu_Finish
+
+BuyMenu_InitGFX::
 	xor a
 	ld [hBGMapMode], a
 	farcall FadeOutPalettes
@@ -837,6 +860,8 @@ GetMartDialogGroup: ; 15ca3
 	dwb .BallMartDiscountPointers, 2
 	dwb .FishMarketPointers, 0
 	dwb .BerryMarketPointers, 0
+	dwb .CoinsMartPointers, 1
+	dwb .StandardMartPointers, 0
 ; 15cbf
 
 .StandardMartPointers: ; 15cbf
@@ -975,6 +1000,22 @@ GetMartDialogGroup: ; 15ca3
 	dw Text_Mart_BagFull
 	dw Text_Mart_HereYouGo
 	dw BuyMenuLoop
+	
+.BrilloMartPointers
+	dw Text_Mart_HowMany
+	dw Text_Mart_CostsThisMuch
+	dw Text_Mart_InsufficientFunds
+	dw Text_Mart_BagFull
+	dw Text_Mart_HereYouGo
+	dw BuyMenuCoinsLoop
+	
+.CoinsMartPointers
+	dw Text_Mart_HowMany
+	dw Text_CoinMart_CostsThisMuch
+	dw Text_CoinMart_InsufficientFunds
+	dw Text_Mart_BagFull
+	dw Text_CoinMart_HereYouGo
+	dw BuyMenuLoop
 
 BuyMenuLoop: ; 15cef
 	farcall PlaceMoneyTopRight
@@ -1043,6 +1084,40 @@ BuyMenuLoop: ; 15cef
 .PremierBallText
 	text_jump MartPremierBallText
 	db "@"
+	
+BuyMenuCoinsLoop: ; 15cef
+	farcall Special_DisplayCoinCaseBalance
+	call UpdateSprites
+	ld hl, CoinsMenuDataHeader_Buy
+	call CopyMenuDataHeader
+	call DoMartScrollingMenu
+	call SpeechTextBox
+	ld a, [wMenuJoypad]
+	cp B_BUTTON
+	jp z, MartMenuLoop_SetCarry
+	call MartAskPurchaseQuantity
+	jr c, .cancel
+	call MartConfirmPurchase
+	jr c, .cancel
+	ld de, wCoins
+	ld bc, hMoneyTemp + 1
+	call CheckCoins
+	jp c, MartMenuLoop_InsufficientFunds
+	ld hl, wNumItems
+	call ReceiveItem
+	jp nc, MartMenuLoop_InsufficientBagSpace
+	ld de, wCoins
+	ld bc, hMoneyTemp + 1
+	call TakeCoins
+	ld a, MARTTEXT_HERE_YOU_GO
+	call LoadBuyMenuText
+	call PlayTransactionSound
+	farcall Special_DisplayCoinCaseBalance
+	call JoyWaitAorB
+.cancel
+	call SpeechTextBox
+	and a
+	ret
 
 BuyRefreshmentsMenuLoop: ; 15cef
 	farcall PlaceMoneyTopRight
@@ -1560,6 +1635,13 @@ BTMartCompareBP:
 	ld a, [wBattlePoints]
 	cp d
 	ret
+	
+BrilloMartCompareCoins:
+	ld a, [hMoneyTemp]
+	ld d, a
+	ld a, [wCoins]
+	cp d
+	ret
 
 Text_Mart_HowMany: ; 0x15e0e
 Text_BTMart_HowMany:
@@ -1595,6 +1677,23 @@ MenuDataHeader_Buy: ; 0x15e18
 	dba MartMenu_PrintBCDPrices
 	dba UpdateItemIconAndDescriptionAndBagQuantity
 ; 15e30
+
+CoinsMenuDataHeader_Buy: ; 0x15e18
+	db $40 ; flags
+	db 03, 06 ; start coords
+	db 11, 19 ; end coords
+	dw .menudata2
+	db 1 ; default option
+; 0x15e20
+
+.menudata2 ; 0x15e20
+	db $30 ; pointers
+	db 4, 8 ; rows, columns
+	db 1 ; horizontal spacing
+	dbw 0, wCurMart
+	dba PlaceMartItemName
+	dba CoinMenu_PrintBCDPrices
+	dba UpdateItemIconAndDescriptionAndBagQuantity
 
 TMMenuDataHeader_Buy:
 	db $40 ; flags
@@ -1664,8 +1763,29 @@ MartMenu_PrintBCDPrices: ; 15e30
 	add hl, bc
 	ld c, PRINTNUM_LEADINGZEROS | PRINTNUM_MONEY | 3
 	jp PrintBCDNumber
-; 15e4a (5:5e4a)
 
+CoinMenu_PrintBCDPrices:
+	ld a, [wScrollingMenuCursorPosition]
+	ld c, a
+	ld b, 0
+	ld hl, wMartItem1BCD
+	add hl, bc
+	add hl, bc
+	add hl, bc
+	push de
+	ld d, h
+	ld e, l
+	pop hl
+	ld bc, SCREEN_WIDTH - 8
+	add hl, bc
+	ld c, PRINTNUM_LEADINGZEROS | 3
+	call PrintBCDNumber
+	ld de, .CoinsString
+	jp PlaceString
+
+.CoinsString:
+	db " COINS@"
+	
 BlueCardMenuDataHeader_Buy:
 	db $40 ; flags
 	db 03, 06 ; start coords
@@ -1693,7 +1813,7 @@ BlueCardMenuDataHeader_Buy:
 	jp PlaceString
 
 .PointsString:
-	db " Pts@"
+	db " PTS.@"
 
 BTMenuDataHeader_Buy:
 	db $40 ; flags
@@ -2002,8 +2122,16 @@ Text_BTMart_ComeAgain:
 	; Please come back any time you want!
 	text_jump BTMartComeAgainText
 	db "@"
+	
+Text_BrilloMartSecret1: ; 0x15e6d
+	text_jump UnknownText_BrilloMartSecret1
+	db "@"
+	
+Text_BrilloMartSecret2: ; 0x15e6d
+	text_jump UnknownText_BrilloMartSecret2
+	db "@"
 
-SellMenu: ; 15eb3
+SellMenu:: ; 15eb3
 	call DisableSpriteUpdates
 	farcall DepositSellInitPackBuffers
 .loop
@@ -2137,7 +2265,22 @@ MenuDataHeader_BuySell: ; 0x15f88
 	db "BUY@"
 	db "SELL@"
 	db "QUIT@"
-; 0x15f96
+
+MenuDataHeader_Secret: ; 0x15f88
+	db $40 ; flags
+	db 00, 00 ; start coords
+	db 10, 09 ; end coords
+	dw .menudata2
+	db 1 ; default option
+; 0x15f90
+
+.menudata2 ; 0x15f90
+	db $80 ; strings
+	db 4 ; items
+	db "BUY@"
+	db "SELL@"
+	db "COINS@"
+	db "QUIT@"
 
 Text_Mart_HereYouGo: ; 0x15fa0
 Text_BTMart_HereYouGo:
@@ -2146,6 +2289,18 @@ Text_BTMart_HereYouGo:
 	db "@"
 ; 0x15fa5
 
+Text_CoinMart_HereYouGo:
+	text_jump UnknownText_CoinMart_HereYouGo
+	db "@"
+
+Text_CoinMart_InsufficientFunds:
+	text_jump UnknownText_CoinMart_InsufficientFunds
+	db "@"
+	
+Text_CoinMart_CostsThisMuch:
+	text_jump UnknownText_CoinMart_CostsThisMuch
+	db "@"
+	
 Text_Mart_InsufficientFunds: ; 0x15fa5
 	; You don't have enough money.
 	text_jump UnknownText_0x1c4f9a

@@ -144,8 +144,12 @@ LoadSpecialMapPalette: ; 494ac
 .mart
 	ld a, [wMapGroup]
 	cp GROUP_BRILLO_TOWN
-	jr z, .desert_house
-	jp .do_nothing
+	jp nz, .do_nothing
+	ld a, [wMapNumber]
+	cp MAP_BRILLO_GAME_CORNER
+	jr nz, .desert_house
+	ld hl, GameCornerPalette
+	jp LoadSevenBGPalettes
 	
 .desert
 	ld hl, OutsideDesertPalette
@@ -514,6 +518,9 @@ LoadLinkTradePalette: ; 49811
 LoadSpecialMapOBPalette:
 	ret
 
+GameCornerPalette:
+INCLUDE "maps/palettes/bgpals/game_corner.pal"
+	
 DesertHousePalette:
 INCLUDE "maps/palettes/bgpals/desert_house.pal"
 	

@@ -267,6 +267,7 @@ INCLUDE "maps/BrilloBoatHouse.asm"
 INCLUDE "maps/BrilloHouse1.asm"
 INCLUDE "maps/BrilloHouse2.asm"
 INCLUDE "maps/BrilloHouse3.asm"
+INCLUDE "maps/BrilloGameCorner.asm"
 
 SECTION "Train Scripts", ROMX
 

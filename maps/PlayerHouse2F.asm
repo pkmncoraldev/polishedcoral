@@ -96,6 +96,8 @@ PlayerHouseDebugPoster:
 	giveitem GOOD_ROD
 	giveitem RIVAL_POKEDEX
 	giveitem OVAL_CHARM
+	giveitem COIN_CASE
+	givecoins 20
 	setevent EVENT_KNOW_OLLIE
 	setevent EVENT_KNOW_GRIND
 	callasm FillPokedex

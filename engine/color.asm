@@ -881,6 +881,8 @@ LoadMapPals::
 	jp z, .nett
 	cp TILESET_DESERT
 	jp z, .desert
+	cp TILESET_MART
+	jp z, .mart
 	jp .normal
 .playerhouse
 	ld a, [wMapGroup]
@@ -894,6 +896,21 @@ LoadMapPals::
 	cp MAP_TWINKLE_GYM_RED_ROOM
 	jp z, .red_room
 	jp .normal
+	
+.mart
+	ld a, [wMapGroup]
+	cp GROUP_BRILLO_TOWN
+	jp nz, .normal
+	ld a, [wMapNumber]
+	cp MAP_BRILLO_GAME_CORNER
+	jp nz, .normal
+	call .normal
+	ld hl, MapObjectPalsCasino
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ret
 	
 .desert
 	ld a, [wMapNumber]
@@ -1664,6 +1681,9 @@ INCLUDE "maps/palettes/obpals/candle.pal"
 
 MapObjectPalsSand::
 INCLUDE "maps/palettes/obpals/obsand.pal"
+
+MapObjectPalsCasino::
+INCLUDE "maps/palettes/obpals/casino.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

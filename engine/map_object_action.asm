@@ -64,6 +64,11 @@ Pointers445f: ; 445f
 	dw SetFacingBalloons2,             SetFacingFreezeBalloons2   ; PERSON_ACTION_BALLOONS_2
 	dw SetFacingFossilMachine,    	   SetFacingFossilMachine	  ; PERSON_ACTION_FOSSIL_MACHINE
 	dw SetFacingPCSign,    			   SetFacingPCSign			  ; PERSON_ACTION_PC_SIGN
+	dw SetFacingCardTable1,    		   SetFacingCardTable1		  ; PERSON_ACTION_CARD_TABLE_1
+	dw SetFacingCardTable2,    		   SetFacingCardTable2		  ; PERSON_ACTION_CARD_TABLE_2
+	dw SetFacingCardTable3,    		   SetFacingCardTable3		  ; PERSON_ACTION_CARD_TABLE_3
+	dw SetFacingCardTable4,    		   SetFacingCardTable4		  ; PERSON_ACTION_CARD_TABLE_4
+	dw SetFacingPlaySign,    		   SetFacingPlaySign		  ; PERSON_ACTION_PLAY_SIGN
 	
 ; 44a3
 
@@ -609,5 +614,25 @@ SetFacingFossilMachine:
 	
 SetFacingPCSign:
 	ld a, FACING_PC_SIGN
+	jp SetFixedFacing
+	
+SetFacingCardTable1:
+	ld a, FACING_CARD_TABLE_1
+	jp SetFixedFacing
+	
+SetFacingCardTable2:
+	ld a, FACING_CARD_TABLE_2
+	jp SetFixedFacing
+	
+SetFacingCardTable3:
+	ld a, FACING_CARD_TABLE_3
+	jp SetFixedFacing
+	
+SetFacingCardTable4:
+	ld a, FACING_CARD_TABLE_4
+	jp SetFixedFacing
+	
+SetFacingPlaySign:
+	ld a, FACING_PLAY_SIGN
 	jp SetFixedFacing
 	

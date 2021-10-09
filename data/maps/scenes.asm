@@ -84,4 +84,5 @@ MapTriggers::
 	scene_var NETT_BUILDING_F_BATHROOM,				  wAlways0Trigger
 	scene_var SHIMMER_HARBOR,						  wShimmerHarborTrigger
 	scene_var BRILLO_TOWN,							  wBrilloTownTrigger
+	scene_var BRILLO_MART,							  wAlways0Trigger
 	db -1

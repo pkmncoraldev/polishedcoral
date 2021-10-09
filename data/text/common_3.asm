@@ -515,6 +515,22 @@ UnknownText_0x1c4f80::
 	text "Here you are."
 	line "Thank you!"
 	done
+	
+UnknownText_CoinMart_HereYouGo::
+	text "Alright, here."
+	done
+	
+UnknownText_CoinMart_InsufficientFunds::
+	text "You don't have"
+	line "enough COINS"
+	done
+	
+UnknownText_CoinMart_CostsThisMuch::
+	text "That'll be"
+	line "@"
+	deciram hMoneyTemp, 3, 7
+	text " COINS."
+	done
 
 UnknownText_0x1c4f9a::
 	text "You don't have"
@@ -607,6 +623,16 @@ BTMartComeAgainText::
 	line "any time you want!"
 	done
 
+UnknownText_BrilloMartSecret1::
+	text "<PLAYER> said"
+	line "“STORM DRAIN”."
+	done
+	
+UnknownText_BrilloMartSecret2::
+	text "Alright, let's make"
+	line "it quick!"
+	done
+	
 UnknownText_0x1c505e::
 	text "Start!"
 	done

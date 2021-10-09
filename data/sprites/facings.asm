@@ -83,6 +83,11 @@ Facings:
 	dw FacingBalloons
 	dw FacingFossilMachine
 	dw FacingPCSign
+	dw FacingCardTable1
+	dw FacingCardTable2
+	dw FacingCardTable3
+	dw FacingCardTable4
+	dw FacingPlaySign
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -707,3 +712,24 @@ FacingFossilMachine:
 FacingPCSign:
 	db 1 ; #
 	db 4, 0, 0, $02
+	
+FacingCardTable1:
+	db 1 ; #
+	db 4, 0, 0, $00
+	
+FacingCardTable2:
+	db 1 ; #
+	db 4, 8, 0 | X_FLIP, $00
+	
+FacingCardTable3:
+	db 1 ; #
+	db 12, 0, 0, $01
+	
+FacingCardTable4:
+	db 1 ; #
+	db 12, 8, 0 | X_FLIP, $01
+	
+FacingPlaySign:
+	db 2 ; #
+	db 4,  0, 0, $02
+	db 4,  8, 0, $03

@@ -621,6 +621,11 @@ MapObjectMovementPattern:
 	dw .MovementBalloons2
 	dw .MovementFossilMachine
 	dw .MovementPCSign
+	dw .MovementCardTable1
+	dw .MovementCardTable2
+	dw .MovementCardTable3
+	dw .MovementCardTable4
+	dw .MovementPlaySign
 
 .RandomWalkY:
 	call Random
@@ -895,15 +900,15 @@ MapObjectMovementPattern:
 	
 .MovementSunbeamView4:
 	ld a, PERSON_ACTION_SUNBEAM_VIEW_4
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementSunbeamView5:
 	ld a, PERSON_ACTION_SUNBEAM_VIEW_5
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementSunbeamView6:
 	ld a, PERSON_ACTION_SUNBEAM_VIEW_6
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementBather
 	ld a, PERSON_ACTION_BATHER
@@ -911,7 +916,7 @@ MapObjectMovementPattern:
 	
 .MovementCutTree:
 	ld a, PERSON_ACTION_CUT_TREE
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 
 .MovementArchTree:
 	ld a, PERSON_ACTION_ARCH_TREE
@@ -971,6 +976,26 @@ MapObjectMovementPattern:
 	
 .MovementPCSign:
 	ld a, PERSON_ACTION_PC_SIGN
+	jr ._ActionA_StepType04
+	
+.MovementCardTable1
+	ld a, PERSON_ACTION_CARD_TABLE_1
+	jr ._ActionA_StepType04
+	
+.MovementCardTable2
+	ld a, PERSON_ACTION_CARD_TABLE_2
+	jr ._ActionA_StepType04
+	
+.MovementCardTable3
+	ld a, PERSON_ACTION_CARD_TABLE_3
+	jr ._ActionA_StepType04
+	
+.MovementCardTable4
+	ld a, PERSON_ACTION_CARD_TABLE_4
+	jr ._ActionA_StepType04
+	
+.MovementPlaySign
+	ld a, PERSON_ACTION_PLAY_SIGN
 	jr ._ActionA_StepType04
 	
 .MovementUmbrellaLeft:

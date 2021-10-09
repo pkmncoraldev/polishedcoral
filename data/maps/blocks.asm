@@ -109,6 +109,9 @@ BrilloHouse2_BlockData:
 BrilloHouse3_BlockData:
 	INCBIN "maps/DesertHouse.ablk.lz"
 	
+BrilloGameCorner_BlockData:
+	INCBIN "maps/BrilloGameCorner.ablk.lz"
+	
 SECTION "Map Blockdata 1", ROMX
 
 

@@ -726,7 +726,7 @@ Special_DisplayCoinCaseBalance: ; 24b25
 
 Special_DisplayMoneyAndCoinBalance: ; 24b4e
 	hlcoord 5, 0
-	lb bc, 3, 13
+	lb bc, 4, 13
 	call TextBox
 	hlcoord 6, 1
 	ld de, MoneyString
@@ -744,9 +744,9 @@ Special_DisplayMoneyAndCoinBalance: ; 24b4e
 	jp PrintNum
 
 MoneyString: ; 24b83
-	db "Money@"
+	db "MONEY@"
 CoinString: ; 24b89
-	db "Coin@"
+	db "COINs@"
 
 StartMenu_DrawBugContestStatusBox: ; 24bdc
 	hlcoord 0, 0

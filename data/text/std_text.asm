@@ -282,36 +282,58 @@ GymStatue_ThreeWinningTrainersText:
 	done
 
 CoinVendor_WelcomeText:
-	text "Welcome to the"
+	text "A casino?"
+	
+	para "I don't have any"
+	line "idea what you're"
+	cont "talking about."
+	
+	para "The MARACTUS ROOM"
+	line "isn't a casino."
+	
+	para "This is a"
 	line "GAME CORNER."
+	
+	para "You don't bet real"
+	line "money here."
+	
+	para "We use COINs!"
+	
+	para "Here."
 	done
 
-CoinVendor_NoCoinCaseText:
-	text "Do you need game"
-	line "coins?"
-
-	para "Oh, you don't have"
-	line "a COIN CASE for"
-	cont "your coins."
+CoinVendor_WelcomeText2:
+	text "I threw in 50"
+	line "50 COINs on the"
+	cont "house."
+	
+	para "Now, stop asking"
+	line "questions."
+	
+	para "Come talk to me"
+	line "if you wanna buy"
+	cont "more COINs."
 	done
 
 CoinVendor_IntroText:
 	text "Do you need some"
-	line "game coins?"
+	line "COINs?"
 
 	para "It costs ¥1000 for"
-	line "50 coins. Do you"
+	line "50 COINs. Do you"
 	cont "want some?"
 	done
 
 CoinVendor_Buy50CoinsText:
-	text "Thank you!"
-	line "Here are 50 coins."
+	text "Here."
+	
+	para "50 COINs."
 	done
 
 CoinVendor_Buy500CoinsText:
-	text "Thank you! Here"
-	line "are 500 coins."
+	text "Here."
+	
+	para "500 COINs."
 	done
 
 CoinVendor_NotEnoughMoneyText:
@@ -320,13 +342,13 @@ CoinVendor_NotEnoughMoneyText:
 	done
 
 CoinVendor_CoinCaseFullText:
-	text "Whoops! Your COIN"
-	line "CASE is full."
+	text "You can't hold"
+	line "anymore COINs."
 	done
 
 CoinVendor_CancelText:
-	text "No coins for you?"
-	line "Come again!"
+	text "Quit wasting my"
+	line "time!"
 	done
 
 BugContestPrizeNoRoomText:

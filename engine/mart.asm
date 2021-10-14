@@ -1784,7 +1784,7 @@ CoinMenu_PrintBCDPrices:
 	jp PlaceString
 
 .CoinsString:
-	db " COINS@"
+	db " COINs@"
 	
 BlueCardMenuDataHeader_Buy:
 	db $40 ; flags

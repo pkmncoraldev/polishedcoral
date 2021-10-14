@@ -626,6 +626,9 @@ MapObjectMovementPattern:
 	dw .MovementCardTable3
 	dw .MovementCardTable4
 	dw .MovementPlaySign
+	dw .MovementDealerDown
+	dw .MovementDealerLeft
+	dw .MovementDealerRight
 
 .RandomWalkY:
 	call Random
@@ -920,15 +923,15 @@ MapObjectMovementPattern:
 
 .MovementArchTree:
 	ld a, PERSON_ACTION_ARCH_TREE
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 
 .MovementSailboatTop:
 	ld a, PERSON_ACTION_SAILBOAT_TOP
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 
 .MovementSailboatBottom:
 	ld a, PERSON_ACTION_SAILBOAT_BOTTOM
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementCandle:
 	ld a, PERSON_ACTION_CANDLE
@@ -996,6 +999,18 @@ MapObjectMovementPattern:
 	
 .MovementPlaySign
 	ld a, PERSON_ACTION_PLAY_SIGN
+	jr ._ActionA_StepType04
+	
+.MovementDealerDown
+	ld a, PERSON_ACTION_DEALER_DOWN
+	jr ._ActionA_StepType04
+	
+.MovementDealerLeft
+	ld a, PERSON_ACTION_DEALER_LEFT
+	jr ._ActionA_StepType04
+	
+.MovementDealerRight
+	ld a, PERSON_ACTION_DEALER_RIGHT
 	jr ._ActionA_StepType04
 	
 .MovementUmbrellaLeft:

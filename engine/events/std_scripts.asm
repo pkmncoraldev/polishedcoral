@@ -1641,11 +1641,13 @@ ReceiveItemScript: ; 0xbcdb9
 GameCornerCoinVendorScript: ; 0xbcdcd
 	faceplayer
 	opentext
-	farwritetext CoinVendor_WelcomeText
-	buttonsound
 	checkitem COIN_CASE
 	iftrue CoinVendor_IntroScript
-	farwritetext CoinVendor_NoCoinCaseText
+	farwritetext CoinVendor_WelcomeText
+	waitbutton
+	verbosegiveitem COIN_CASE
+	givecoins 50
+	farwritetext CoinVendor_WelcomeText2
 	waitendtext
 ; 0xbcde0
 
@@ -1717,7 +1719,7 @@ CoinVendor_IntroScript: ; 0xbcde0
 	db 3 ; items
 	db " 50 :  ¥1000@"
 	db "500 : ¥10000@"
-	db "Cancel@"
+	db "CANCEL@"
 ; 0xbce7f
 
 

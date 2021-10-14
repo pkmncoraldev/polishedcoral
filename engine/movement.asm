@@ -123,7 +123,10 @@ MovementPointers:
 	dw Movement_skateboard_slow_step_right ; 7a
 	dw Movement_muk_up		;7b
 	dw Movement_muk_down	;7c
-	dw Movement_muk_sleep	;7
+	dw Movement_muk_sleep	;7d
+	dw Movement_dealer_down
+	dw Movement_dealer_left
+	dw Movement_dealer_right
 
 Movement_teleport_from: ; 5129
 	ld hl, OBJECT_STEP_TYPE
@@ -283,7 +286,51 @@ Movement_4b: ; 5210
 	ld hl, wVramState
 	res 7, [hl]
 	ret
-; 5222
+	
+Movement_dealer_down:
+	ld a, PERSON_ACTION_DEALER_DOWN
+	push af
+	call EndSpriteMovement
+	pop af
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], a
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_04
+	ld hl, wVramState
+	res 7, [hl]
+	ret
+	
+Movement_dealer_left:
+	ld a, PERSON_ACTION_DEALER_LEFT
+	push af
+	call EndSpriteMovement
+	pop af
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], a
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_04
+	ld hl, wVramState
+	res 7, [hl]
+	ret
+	
+Movement_dealer_right:
+	ld a, PERSON_ACTION_DEALER_RIGHT
+	push af
+	call EndSpriteMovement
+	pop af
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], a
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_04
+	ld hl, wVramState
+	res 7, [hl]
+	ret
 
 Movement_step_sleep_1: ; 5222
 	ld a, 1

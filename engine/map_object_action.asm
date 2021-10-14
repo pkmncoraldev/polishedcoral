@@ -69,6 +69,9 @@ Pointers445f: ; 445f
 	dw SetFacingCardTable3,    		   SetFacingCardTable3		  ; PERSON_ACTION_CARD_TABLE_3
 	dw SetFacingCardTable4,    		   SetFacingCardTable4		  ; PERSON_ACTION_CARD_TABLE_4
 	dw SetFacingPlaySign,    		   SetFacingPlaySign		  ; PERSON_ACTION_PLAY_SIGN
+	dw SetFacingDealerDown,    		   SetFacingDealerDown		  ; PERSON_ACTION_DEALER_DOWN
+	dw SetFacingDealerLeft,    		   SetFacingDealerLeft		  ; PERSON_ACTION_DEALER_LEFT
+	dw SetFacingDealerRight,   		   SetFacingDealerRight		  ; PERSON_ACTION_DEALER_RIGHT
 	
 ; 44a3
 
@@ -634,5 +637,17 @@ SetFacingCardTable4:
 	
 SetFacingPlaySign:
 	ld a, FACING_PLAY_SIGN
+	jp SetFixedFacing
+	
+SetFacingDealerDown:
+	ld a, FACING_DEALER_DOWN
+	jp SetFixedFacing
+	
+SetFacingDealerLeft:
+	ld a, FACING_DEALER_LEFT
+	jp SetFixedFacing
+	
+SetFacingDealerRight:
+	ld a, FACING_DEALER_RIGHT
 	jp SetFixedFacing
 	

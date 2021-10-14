@@ -41,11 +41,32 @@ TilesetHouse1Anim::
 TilesetPokeCenterAnim::
 TilesetLighthouseAnim::
 TilesetLabAnim::
-TilesetMartAnim::
 TilesetLibraryAnim::
 TilesetSnowAnim::
 TilesetMall2Anim::
 TilesetIceCaveAnim::
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
+TilesetMartAnim::
+	dw NULL,  StandingTileFrame
+	dw NULL,  TileAnimationPaletteCasino
+	dw CasinoSignFrames, AnimateWaterfallTiles3
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -1027,6 +1048,62 @@ endr
 
 	jp WriteFourTiles
 	
+AnimateWaterfallTiles3: ; fc56d
+; Draw two waterfall tiles for the current frame in VRAM tile at de.
+; based on AnimateWhirlpoolTiles, but with 8 frames
+
+; Struct:
+;     VRAM address
+;    Address of the first tile
+
+; Does two tiles at a time.
+
+; Save sp in bc (see WriteTile).
+    ld hl, sp+$0
+    ld b, h
+    ld c, l
+
+; de = VRAM address
+    ld l, e
+    ld h, d
+    ld e, [hl]
+    inc hl
+    ld d, [hl]
+    inc hl
+; Tile address is now at hl.
+
+; Get the tile for this frame.
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+rept 2
+; do 'hl += a * 32' twice to get 'hl += a * 64'
+; (16 bytes per tiles * 4 tiles = 64 bytes)
+	ld a, [wTileAnimationTimer]
+	and %1 ; 2 frames x2
+	rrca ; rotating 3 right equals
+	rrca ; rotating 5 left, which
+	rrca ; multiplies by 2**5 = 32
+	; hl += a
+	add l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
+endr
+
+; Stack now points to the desired frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteFourTiles
+	
+CasinoSignFrames: dw VTiles2 tile $02, CasinoSignTiles
+
+CasinoSignTiles: INCBIN "gfx/tilesets/casino/sign.2bpp"
+	
 TrainWindowFrames: dw VTiles2 tile $28, TrainWindowTiles
 
 TrainWindowTiles: INCBIN "gfx/tilesets/trainwindows/1.2bpp"
@@ -1679,6 +1756,63 @@ FlickeringLightbulbPalette:
 	ld a, [hli]
 	ld [rBGPD], a
 
+	pop af
+	ld [rSVBK], a
+	ret
+	
+TileAnimationPaletteCasino: ; fc6d7
+
+; No palette changes on DMG.
+	ld a, [hCGB]
+	and a
+	ret z
+
+; We don't want to mess with non-standard palettes.
+	ld a, [rBGP] ; BGP
+	cp %11100100
+	ret nz
+
+; Only update on even frames.
+	ld a, [wTileAnimationTimer]
+	ld l, a
+	and 1 ; odd
+	ret nz
+
+; Ready for BGPD input...
+	ld a, %10010000 ; auto increment, index $18 (pal 3 color 0)
+	ld [rBGPI], a
+
+	ld a, [rSVBK]
+	push af
+	ld a, 5 ; wra5: gfx
+	ld [rSVBK], a
+
+; Update color 0 in order 0 1 2 1
+
+	ld a, l
+	and %110 ; frames 0 2 4 6
+
+	jr z, .color0
+
+	cp 4
+	jr z, .color0
+	
+.color1
+	ld hl, wUnknBGPals + $0e ; pal 3 color 1
+	ld a, [hli]
+	ld [rBGPD], a
+	ld a, [hli]
+	ld [rBGPD], a
+	jr .end
+
+.color0
+	ld hl, wUnknBGPals + $10 ; pal 3 color 0
+	ld a, [hli]
+	ld [rBGPD], a
+	ld a, [hli]
+	ld [rBGPD], a
+
+.end
 	pop af
 	ld [rSVBK], a
 	ret

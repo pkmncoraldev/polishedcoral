@@ -297,5 +297,5 @@ MAP_NONE   EQU 0
 	map_const BRILLO_HOUSE_3,							   4,  4 ; 5
 	map_const BRILLO_POKECENTER,                    	   6,  4 ; 6
 	map_const BRILLO_MART,                    			   5,  4 ; 7
-	map_const BRILLO_GAME_CORNER,              			   7,  4 ; 8
+	map_const BRILLO_GAME_CORNER,              			   7,  5 ; 8
 	map_const ROUTE_12,         	           			  24, 17 ; 9

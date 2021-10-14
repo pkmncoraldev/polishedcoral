@@ -522,14 +522,14 @@ UnknownText_CoinMart_HereYouGo::
 	
 UnknownText_CoinMart_InsufficientFunds::
 	text "You don't have"
-	line "enough COINS"
+	line "enough COINs."
 	done
 	
 UnknownText_CoinMart_CostsThisMuch::
 	text "That'll be"
 	line "@"
 	deciram hMoneyTemp, 3, 7
-	text " COINS."
+	text " COINs."
 	done
 
 UnknownText_0x1c4f9a::
@@ -567,7 +567,7 @@ UnknownText_0x1c502e::
 
 UnknownText_0x1c5049::
 	text "Bet how many"
-	line "coins?"
+	line "COINs?"
 	done
 
 TMMartCostsThisMuchText::
@@ -639,12 +639,12 @@ UnknownText_0x1c505e::
 
 UnknownText_0x1c5066::
 	text "Not enough"
-	line "coins."
+	line "COINs."
 	prompt
 
 UnknownText_0x1c5079::
 	text "Darn… Ran out of"
-	line "coins…"
+	line "COINs…"
 	done
 
 UnknownText_0x1c5092::
@@ -655,7 +655,7 @@ UnknownText_0x1c509f::
 	text "lined up!"
 	line "Won @"
 	text_from_ram wStringBuffer2
-	text " coins!"
+	text " COINs!"
 	done
 
 UnknownText_0x1c50bb::
@@ -779,12 +779,12 @@ UnknownText_0x1c5772::
 	prompt
 
 UnknownText_0x1c5793::
-	text "Play with three"
-	line "coins?"
+	text "Play with 3"
+	line "COINs?"
 	done
 
 UnknownText_0x1c57ab::
-	text "Not enough coins…"
+	text "Not enough COINs…"
 	prompt
 
 UnknownText_0x1c57be::
@@ -1002,7 +1002,7 @@ UnknownText_0x1c5c5e::
 	done
 
 UnknownText_0x1c5c7b::
-	text "Coins:"
+	text "COINs:"
 	line "@"
 	deciram wCoins, 2, 5
 	db "@@"

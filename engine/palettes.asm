@@ -1526,7 +1526,6 @@ endc
 
 
 SlotMachinePals:
-if !DEF(MONOCHROME)
 	RGB 31, 31, 31
 	RGB 17, 09, 08
 	RGB 31, 12, 09
@@ -1606,12 +1605,38 @@ if !DEF(MONOCHROME)
 	RGB 31, 31, 31
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-else
-rept 16
-	MONOCHROME_RGB_FOUR
-endr
-endc
 
+SlotMachinePals2:
+	RGB 31, 31, 31
+	RGB 08, 09, 17
+	RGB 15, 21, 31
+	RGB 00, 00, 00
+
+	RGB 31, 31, 31
+	RGB 24, 31, 06
+	RGB 15, 21, 31
+	RGB 00, 00, 00
+
+	RGB 31, 31, 31
+	RGB 15, 31, 00
+	RGB 15, 21, 31
+	RGB 00, 00, 00
+
+	RGB 31, 31, 31
+	RGB 31, 15, 31
+	RGB 15, 21, 31
+	RGB 00, 00, 00
+
+	RGB 31, 31, 31
+	RGB 31, 12, 09
+	RGB 15, 21, 31
+	RGB 00, 00, 00
+
+	RGB 31, 31, 11
+	RGB 31, 31, 06
+	RGB 15, 21, 31
+	RGB 00, 00, 00
+	
 ClothesIconPalettes:
 	RGB 00, 00, 00
 	RGB 00, 00, 00

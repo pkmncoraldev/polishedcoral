@@ -9,10 +9,10 @@
 	tilecoll WALL, FLOOR, WALL, WALL ; 08
 	tilecoll WALL, WALL, WALL, WALL ; 09
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0a
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 0b
+	tilecoll WALL, WALL, WALL, WALL ; 0b
 	tilecoll WALL, WALL, WALL, WALL ; 0c
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0d
-	tilecoll WALL, WALL, WALL, WALL ; 0e
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 0e
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 0f
 	tilecoll WALL, WALL, WALL, FLOOR ; 10
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 11
@@ -20,17 +20,17 @@
 	tilecoll WALL, WALL, MART_SHELF, MART_SHELF ; 13
 	tilecoll WALL, WALL, MART_SHELF, MART_SHELF ; 14
 	tilecoll WALL, WALL, MART_SHELF, MART_SHELF ; 15
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 16
-	tilecoll WALL, WALL, FLOOR, COUNTER ; 17
+	tilecoll WALL, WALL, WALL, WALL ; 16
+	tilecoll WALL, WALL, WALL, WALL ; 17
 	tilecoll STAIRCASE, WALL, FLOOR, FLOOR ; 18
 	tilecoll WALL, STAIRCASE, FLOOR, FLOOR ; 19
-	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 1a
-	tilecoll COUNTER, COUNTER, FLOOR, COUNTER ; 1b
+	tilecoll WALL, WALL, WALL, WALL ; 1a
+	tilecoll WALL, WALL, WALL, WALL ; 1b
 	tilecoll WALL, WALL, WALL, WALL ; 1c
 	tilecoll WALL, WALL, WALL, WALL ; 1d
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1e
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1f
-	tilecoll WALL, WALL, WALL, FLOOR ; 20
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 20
 	tilecoll WALL, WALL, WALL, WALL ; 21
 	tilecoll COUNTER, FLOOR, COUNTER, FLOOR ; 22
 	tilecoll FLOOR, MART_SHELF, FLOOR, MART_SHELF ; 23
@@ -60,12 +60,13 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 3b
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 3c
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 3d
-	tilecoll WALL, WALL, WALL, FLOOR ; 3e
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 3e
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 3f
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 40
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 41
+	tilecoll FLOOR, COUNTER, FLOOR, WALL ; 40
+	tilecoll FLOOR, COUNTER, FLOOR, COUNTER ; 41
 	tilecoll WALL, WALL, WALL, WALL ; 42
 	tilecoll WALL, WALL, WALL, WALL ; 43
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 44
-	tilecoll FLOOR, WALL, WALL, WALL ; 45
+	tilecoll FLOOR, WALL, COUNTER, WALL ; 45
 	tilecoll WALL, WALL, COUNTER, MART_SHELF ; 46
+	tilecoll WALL, WALL, WALL, WALL ; 47

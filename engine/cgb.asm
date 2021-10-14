@@ -476,6 +476,17 @@ _CGB_SlotMachine: ; 906e
 	ld a, $5
 	call FarCopyWRAM
 
+	ld a, [wPlaceBallsY]
+	cp 0
+	jr z, .skip
+	
+	ld hl, SlotMachinePals2
+	ld de, wUnknBGPals
+	ld bc, 6 palettes
+	ld a, $5
+	call FarCopyWRAM
+	
+.skip
 	call WipeAttrMap
 
 	hlcoord 0, 2, wAttrMap

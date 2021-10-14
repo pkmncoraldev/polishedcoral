@@ -620,15 +620,30 @@ skateboard_slow_step_right: macro
 	
 	enum movement_muk_up
 step_muk_up: macro
-	db movement_muk_up ; $65
+	db movement_muk_up ; $66
 	endm
 
 	enum movement_muk_down
 step_muk_down: macro
-	db movement_muk_down ; $65
+	db movement_muk_down ; $67
 	endm
 	
 	enum movement_muk_sleep
 step_muk_sleep: macro
-	db movement_muk_sleep ; $65
+	db movement_muk_sleep ; $68
+	endm
+	
+	enum movement_dealer_down
+step_dealer_down: macro
+	db movement_dealer_down ; $69
+	endm
+	
+	enum movement_dealer_left
+step_dealer_left: macro
+	db movement_dealer_left ; $6a
+	endm
+	
+	enum movement_dealer_right
+step_dealer_right: macro
+	db movement_dealer_right ; $6b
 	endm

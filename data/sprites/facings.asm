@@ -88,6 +88,9 @@ Facings:
 	dw FacingCardTable3
 	dw FacingCardTable4
 	dw FacingPlaySign
+	dw FacingDealerDown
+	dw FacingDealerLeft
+	dw FacingDealerRight
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -733,3 +736,24 @@ FacingPlaySign:
 	db 2 ; #
 	db 4,  0, 0, $02
 	db 4,  8, 0, $03
+	
+FacingDealerDown:
+	db 4 ; #
+	db  0, -8, 0, $00
+	db  0,  0, 0, $01
+	db  8, -8, 2, $02
+	db  8,  0, 2, $03
+	
+FacingDealerLeft:
+	db 4 ; #
+	db  0, -8, 0, $08
+	db  0,  0, 0, $09
+	db  8, -8, 2, $0a
+	db  8,  0, 2, $0b
+	
+FacingDealerRight:
+	db 4 ; #
+	db  0, -8, 0 | X_FLIP, $09
+	db  0,  0, 0 | X_FLIP, $08
+	db  8, -8, 2 | X_FLIP, $0b
+	db  8,  0, 2 | X_FLIP, $0a

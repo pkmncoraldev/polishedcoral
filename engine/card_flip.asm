@@ -127,31 +127,31 @@ _CardFlip: ; e00ee (38:40ee)
 ; 0xe01d2
 
 .DeductCoins: ; e01d2
-;	ld a, [wCoins]
-;	ld h, a
-;	ld a, [wCoins + 1]
-;	ld l, a
-;	ld a, h
-;	and a
-;	jr nz, .deduct ; You have at least 256 coins.
-;	ld a, l
-;	cp 3
-;	jr nc, .deduct ; You have at least 3 coins.
-;	ld hl, .NotEnoughCoinsText
-;	call CardFlip_UpdateCoinBalanceDisplay
-;	ld a, 7
-;	ld [wJumptableIndex], a
-;	ret
+	ld a, [wCoins]
+	ld h, a
+	ld a, [wCoins + 1]
+	ld l, a
+	ld a, h
+	and a
+	jr nz, .deduct ; You have at least 256 coins.
+	ld a, l
+	cp 3
+	jr nc, .deduct ; You have at least 3 coins.
+	ld hl, .NotEnoughCoinsText
+	call CardFlip_UpdateCoinBalanceDisplay
+	ld a, 7
+	ld [wJumptableIndex], a
+	ret
 
-;.deduct
-;	ld de, -3
-;	add hl, de
-;	ld a, h
-;	ld [wCoins], a
-;	ld a, l
-;	ld [wCoins + 1], a
-;	ld de, SFX_TRANSACTION
-;	call PlaySFX
+.deduct
+	ld de, -3
+	add hl, de
+	ld a, h
+	ld [wCoins], a
+	ld a, l
+	ld [wCoins + 1], a
+	ld de, SFX_TRANSACTION
+	call PlaySFX
 	xor a
 	ld [hBGMapMode], a
 	call CardFlip_PrintCoinBalance
@@ -643,7 +643,7 @@ CardFlip_PrintCoinBalance: ; e049c
 ; e04bc
 
 .CoinStr:
-	db "Coin@"
+	db "COIN@"
 ; e04c1
 
 CardFlip_InitTilemap: ; e04c1 (38:44c1)
@@ -2090,16 +2090,22 @@ _MoogooMankey:
 	hlcoord 0, 0
 	ld de, .YouTiedText
 	call PlaceString
+	ld a, 2
+	ld [wScriptVar], a
 	jr .leavethegame_cont
 .youwin
 	hlcoord 0, 0
 	ld de, .YouWinText
 	call PlaceString
+	ld a, 1
+	ld [wScriptVar], a
 	jr .leavethegame_cont
 .youlose
 	hlcoord 0, 0
 	ld de, .YouLoseText
 	call PlaceString
+	ld a, 0
+	ld [wScriptVar], a
 .leavethegame_cont
 	call WaitSFX
 	call ClearBGPalettes
@@ -2122,8 +2128,6 @@ _MoogooMankey:
 
 
 .Jumptable:
-;	dw .AskPlay
-;	dw .DeductCoins
 	dw .PlaceBet
 	dw .ChangeTurn
 	dw .PlaceBet
@@ -2141,66 +2145,6 @@ _MoogooMankey:
 	ld hl, wJumptableIndex
 	inc [hl]
 	ret
-	
-.AskPlay: ; e01b5
-	ld hl, .PlayWithThreeCoinsText
-	call CardFlip_UpdateCoinBalanceDisplay
-	call YesNoBox
-	jr c, .SaidNo
-	call CardFlip_ShuffleDeck
-	jr .Increment
-
-.SaidNo:
-	ld a, 7
-	ld [wJumptableIndex], a
-	ret
-; e01cd
-
-.PlayWithThreeCoinsText: ; 0xe01cd
-	; Play with three coins?
-	text_jump UnknownText_0x1c5793
-	db "@"
-; 0xe01d2
-
-.DeductCoins: ; e01d2
-;	ld a, [wCoins]
-;	ld h, a
-;	ld a, [wCoins + 1]
-;	ld l, a
-;	ld a, h
-;	and a
-;	jr nz, .deduct ; You have at least 256 coins.
-;	ld a, l
-;	cp 3
-;	jr nc, .deduct ; You have at least 3 coins.
-;	ld hl, .NotEnoughCoinsText
-;	call CardFlip_UpdateCoinBalanceDisplay
-;	ld a, 7
-;	ld [wJumptableIndex], a
-;	ret
-
-;.deduct
-;	ld de, -3
-;	add hl, de
-;	ld a, h
-;	ld [wCoins], a
-;	ld a, l
-;	ld [wCoins + 1], a
-;	ld de, SFX_TRANSACTION
-;	call PlaySFX
-	xor a
-	ld [hBGMapMode], a
-	call CardFlip_PrintCoinBalance
-	ld a, $1
-	ld [hBGMapMode], a
-	call WaitSFX
-	jp .Increment
-; e0212
-
-.NotEnoughCoinsText: ; 0xe0212
-	; Not enough coins…
-	text_jump UnknownText_0x1c57ab
-	db "@"
 	
 .PlaceBet:
 	ld a, [wPlaceBallsX]

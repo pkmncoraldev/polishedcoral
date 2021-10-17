@@ -152,7 +152,14 @@ LoadSpecialMapPalette: ; 494ac
 	jp LoadSevenBGPalettes
 	
 .desert
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_12_NORTH
+	jr z, .desert_tent
 	ld hl, OutsideDesertPalette
+	jp LoadSevenTimeOfDayBGPalettes
+	
+.desert_tent
+	ld hl, OutsideDesertTentPalette
 	jp LoadSevenTimeOfDayBGPalettes
 	
 .desert_house
@@ -616,6 +623,9 @@ INCLUDE "maps/palettes/bgpals/bgskatepark.pal"
 
 OutsideDesertPalette:
 INCLUDE "maps/palettes/bgpals/bgdesert.pal"
+
+OutsideDesertTentPalette:
+INCLUDE "maps/palettes/bgpals/bgdeserttent.pal"
 
 SunbeamViewPalette:
 INCLUDE "maps/palettes/bgpals/sunbeamview.pal"

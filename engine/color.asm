@@ -909,13 +909,14 @@ LoadMapPals::
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 	
 .desert
 	ld a, [wMapNumber]
 	cp MAP_BRILLO_TOWN
 	jp z, .sailboat
+	cp MAP_ROUTE_12_NORTH
+	jp z, .desertfire
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
@@ -924,8 +925,36 @@ LoadMapPals::
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+	
+.desertfire
+	ld a, [wIsNearCampfire]
+	bit 0, a
+	jr nz, .desertfirecont1
+	ld a, [wTimeOfDayPal]
+	jr .desertfirecont2
+.desertfirecont1
+	ld a, 1
+.desertfirecont2
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPalsSnow
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	ret
+	
+	ld a, 1
+	and 3
+	ld hl, MapObjectPalsRocks
+	call AddNTimes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	
+	jp .fire
 	
 .jungle
 	ld a, [wMapNumber]
@@ -956,8 +985,8 @@ LoadMapPals::
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
+	
 	
 .nett2
 	eventflagcheck EVENT_NETT_BUILDING_DUNGEON
@@ -967,16 +996,14 @@ LoadMapPals::
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 	
 .nett2_dark
 	ld hl, MapObjectPalsNettDark
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 	
 .playerroom
 	eventflagcheck EVENT_N64
@@ -987,16 +1014,14 @@ LoadMapPals::
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 .n64
 	call .normal
 	ld hl, MapObjectPalsN64
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 	
 .gate
 	ld a, [wTimeOfDayPalFlags]
@@ -1011,8 +1036,7 @@ LoadMapPals::
 	ld de, wUnknOBPals
 	ld bc, 3 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
 	
 .blue_room
 	eventflagcheck EVENT_BLUE_ROOM_STEAM_1
@@ -1043,29 +1067,29 @@ LoadMapPals::
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
+
 .steam2
 	ld hl, MapObjectPalsTwinkleGym2
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
+
 .steam3
 	ld hl, MapObjectPalsTwinkleGym3
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
+
 .no_steam
 	ld hl, MapObjectPalsTwinkleGym4
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
+
 .ice_cave
 	ld a, [wPlayerPalette]
 	cp 4
@@ -1089,8 +1113,8 @@ LoadMapPals::
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
+
 	
 .ice_cave_purple
 	eventflagcheck EVENT_TORCH_LIT
@@ -1112,8 +1136,8 @@ LoadMapPals::
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
+
 	
 .sewer
 	ld a, [wMapNumber]
@@ -1125,8 +1149,8 @@ LoadMapPals::
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
+
 .sunbeam
 	ld a, [wMapNumber]
 	cp MAP_SUNBEAM_ISLAND
@@ -1181,8 +1205,8 @@ LoadMapPals::
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
+
 .ranch
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_9
@@ -1275,6 +1299,7 @@ LoadMapPals::
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
+.fire
 	ld a, [wPlayerPalette]
 	cp 3
 	jr z, .snowbrown
@@ -1327,8 +1352,8 @@ LoadMapPals::
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
+
 	
 .lustermall2
 	call .normal
@@ -1343,8 +1368,8 @@ LoadMapPals::
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
+
 	
 .skateparkcheck
 	ld a, [wMapNumber]
@@ -1409,8 +1434,8 @@ LoadMapPals::
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
+
 	
 .binoculars
 	ld a, [wTimeOfDayPal]
@@ -1429,8 +1454,8 @@ LoadMapPals::
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
+
 	
 .normal
 	ld a, [wTileset]
@@ -1499,8 +1524,8 @@ endr
 	ld de, wUnknBGPals + 6 palettes + 2
 	ld bc, 4
 	ld a, $5
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
+
 
 .TilesetColorsPointers:
 	dw .OutdoorColors ; unused
@@ -1553,8 +1578,8 @@ endr
 	ld de, wUnknBGPals + 7 palettes + 2
 	ld bc, 4
 	ld a, $5
-	call FarCopyWRAM
-	ret
+	jp FarCopyWRAM
+
 	
 Palette_b309: ; b309 mobile
 	RGB 31, 31, 31

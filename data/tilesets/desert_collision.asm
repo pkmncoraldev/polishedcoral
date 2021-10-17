@@ -73,14 +73,14 @@
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 48
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 49
 	tilecoll NO_OLLIE, WATER, WATER, WATER ; 4a
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4b
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 4b
 	tilecoll FLOOR, WALL, WALL, WALL ; 4c
 	tilecoll WALL, WALL, WALL, WALL ; 4d
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4e
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4f
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 50
 	tilecoll WALL, WALL, WALL, WALL ; 51
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 52
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 52
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 53
 	tilecoll WATER, WATER, WATER, WATER ; 54
 	tilecoll WATER, WATER, WATER, WATER ; 55
@@ -95,8 +95,8 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 5e
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 5f
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 60
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 61
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 62
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 61
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 62
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 63
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 64
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 65

@@ -247,6 +247,7 @@ LusterTrainStation_BlockData:
 	INCBIN "maps/LusterTrainStation.ablk.lz"
 	
 Route10Tent_BlockData:
+Route12Tent_BlockData:
 	INCBIN "maps/Route10Tent.ablk.lz"
 	
 TwinkleTown_BlockData:
@@ -591,3 +592,7 @@ BrilloTown_BlockData:
 	
 Route12_BlockData:
 	INCBIN "maps/Route12.ablk.lz"
+	
+Route12North_BlockData:
+	INCBIN "maps/Route12North.ablk.lz"
+	

@@ -86,11 +86,13 @@ INCLUDE "maps/Route8.asm"
 INCLUDE "maps/Route9.asm"
 INCLUDE "maps/Route10.asm"
 INCLUDE "maps/Route12.asm"
+INCLUDE "maps/Route12North.asm"
 
 
 SECTION "Routes Scripts2", ROMX
 INCLUDE "maps/Route10East.asm"
 INCLUDE "maps/Route10Tent.asm"
+INCLUDE "maps/Route12Tent.asm"
 
 
 SECTION "Sunset Bay Scripts", ROMX

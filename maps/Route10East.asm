@@ -4,7 +4,7 @@ Route10East_MapScriptHeader:
 	scene_script Route10EastTrigger1
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_NEWMAP, Route10EastCallback
+	callback MAPCALLBACK_TILES, Route10EastCallback
 
 	db 2 ; warp events
 	warp_event 11, 21, ROUTE_10_TENT, 1

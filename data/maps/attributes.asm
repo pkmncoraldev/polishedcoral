@@ -274,8 +274,12 @@ ENDM
 	map_attributes BrilloTown, BRILLO_TOWN, $35, EAST
 	connection east, Route12, ROUTE_12, -7
 	
-	map_attributes Route12, ROUTE_12, $71, WEST
+	map_attributes Route12, ROUTE_12, $71, NORTH | WEST
+	connection north, Route12North, ROUTE_12_NORTH, 14
 	connection west, BrilloTown, BRILLO_TOWN, 7
+	
+	map_attributes Route12North, ROUTE_12_NORTH, $71, SOUTH
+	connection south, Route12, ROUTE_12, -14
 	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0
@@ -454,6 +458,7 @@ ENDM
 	map_attributes BrilloPokeCenter, BRILLO_POKECENTER, $0, 0
 	map_attributes BrilloMart, BRILLO_MART, $0, 0
 	map_attributes BrilloGameCorner, BRILLO_GAME_CORNER, $0, 0
+	map_attributes Route12Tent, ROUTE_12_TENT, $0, 0
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0

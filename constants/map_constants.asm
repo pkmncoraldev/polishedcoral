@@ -299,3 +299,5 @@ MAP_NONE   EQU 0
 	map_const BRILLO_MART,                    			   5,  4 ; 7
 	map_const BRILLO_GAME_CORNER,              			   7,  5 ; 8
 	map_const ROUTE_12,         	           			  24, 17 ; 9
+	map_const ROUTE_12_NORTH,       	           		  11, 13 ; 10
+	map_const ROUTE_12_TENT,							   2,  3 ; 11

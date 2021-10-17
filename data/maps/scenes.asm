@@ -85,4 +85,5 @@ MapTriggers::
 	scene_var SHIMMER_HARBOR,						  wShimmerHarborTrigger
 	scene_var BRILLO_TOWN,							  wBrilloTownTrigger
 	scene_var BRILLO_MART,							  wAlways0Trigger
+	scene_var ROUTE_12_NORTH,						  wRoute12NorthTrigger
 	db -1

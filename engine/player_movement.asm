@@ -52,6 +52,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr z, .Normal
 	cp PLAYER_BATHING
 	jr z, .Normal
+	cp PLAYER_SAND
+	jr z, .Sand
 	cp PLAYER_RUN
 	jp z, .Running
 	cp PLAYER_SKATEBOARD
@@ -72,6 +74,21 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jp z, .Standing
 	cp PLAYER_FALLING
 	jp z, .Falling
+.Sand
+	ld a, [wStuckInSandCounter]
+	cp 0
+	jp nz, .Normal
+	ld de, SFX_JUMP_OVER_LEDGE
+	call PlaySFX
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	xor a
+	ld [wStuckInSandCounter], a
+	ld a, 30
+	ld [wPlaceBallsX], a
+	farcall LoadWildMonData
+	jp .StandInPlace
 .Normal:
 	xor a
 	ld [wPlayerRunning], a
@@ -133,7 +150,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld [wStuckInSandCounter], a
 	ld de, SFX_PLACE_PUZZLE_PIECE_DOWN
 	call PlaySFX
-	ld a, PLAYER_BATHING
+	ld a, PLAYER_SAND
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
 	xor a
@@ -485,31 +502,22 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	bit 0, a ; Team Snare in Starglow Valley. Reusing this flag for convenience.
 	jr z, .not_sitting
 	ret
-.free_from_sand
-	ld a, [wCurSFX]
-	cp SFX_BURN
-	jr nz, .not_burn_sfx
-	call CheckSFX
-	ret c
-.not_burn_sfx
-	ld de, SFX_JUMP_OVER_LEDGE
-	call PlaySFX
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	xor a
-	ld [wStuckInSandCounter], a
-	ld a, 30
-	ld [wPlaceBallsX], a
-	farcall LoadWildMonData
-	jp .StandInPlace
+;.free_from_sand
+;	ld de, SFX_JUMP_OVER_LEDGE
+;	call PlaySFX
+;	ld a, PLAYER_NORMAL
+;	ld [wPlayerState], a
+;	call ReplaceKrisSprite
+;	xor a
+;	ld [wStuckInSandCounter], a
+;	ld a, 30
+;	ld [wPlaceBallsX], a
+;	farcall LoadWildMonData
+;	jp .StandInPlace
 .not_sitting
-	ld a, [wStuckInSandCounter]
-	cp 1
-	jp z, .free_from_sand
-	cp 0
-	jp nz, .bump
-
+	ld a, [wPlayerState]
+	cp PLAYER_SAND
+	jp z, .StandInPlace
 	ld a, [wWalkingTile]
 	cp COLL_SAND
 	jr nz, .not_sand

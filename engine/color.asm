@@ -1390,6 +1390,8 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_SUNSET_BAY
 	jr z, .sailboat
+	cp MAP_SAILBOAT_CUTSCENE
+	jr z, .sailboat
 	cp MAP_SUNSET_CAPE
 	jr z, .lighthouse
 	jp .normal

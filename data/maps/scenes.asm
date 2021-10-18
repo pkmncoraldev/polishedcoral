@@ -86,4 +86,5 @@ MapTriggers::
 	scene_var BRILLO_TOWN,							  wBrilloTownTrigger
 	scene_var BRILLO_MART,							  wAlways0Trigger
 	scene_var ROUTE_12_NORTH,						  wRoute12NorthTrigger
+	scene_var SAILBOAT_CUTSCENE,					  wAlways0Trigger
 	db -1

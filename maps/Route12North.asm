@@ -4,7 +4,7 @@ Route12North_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route12NorthCallback
 
-	db 0 ; warp events
+	db 1 ; warp events
 	warp_event  7, 15, ROUTE_12_TENT, 1
 
 	db 15 ; coord events

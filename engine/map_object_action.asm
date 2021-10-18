@@ -72,6 +72,7 @@ Pointers445f: ; 445f
 	dw SetFacingDealerDown,    		   SetFacingDealerDown		  ; PERSON_ACTION_DEALER_DOWN
 	dw SetFacingDealerLeft,    		   SetFacingDealerLeft		  ; PERSON_ACTION_DEALER_LEFT
 	dw SetFacingDealerRight,   		   SetFacingDealerRight		  ; PERSON_ACTION_DEALER_RIGHT
+	dw SetFacingSailboatTopRight,      SetFacingSailboatTopRight  ; PERSON_ACTION_SAILBOAT_TOP_RIGHT
 	
 ; 44a3
 
@@ -107,6 +108,10 @@ SetFacingSailboatBottom:
 	ld a, FACING_SAILBOAT_BOTTOM
 	jr SetFixedFacing
 
+SetFacingSailboatTopRight:
+	ld a, FACING_SAILBOAT_TOP_RIGHT
+	jr SetFixedFacing
+	
 SetFacingUmbrellaLeft:
 	ld hl, OBJECT_FACING_STEP
 	add hl, bc

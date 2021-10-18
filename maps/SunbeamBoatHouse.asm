@@ -3,9 +3,10 @@ SunbeamBoatHouse_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_def  5,  5, 13, SUNBEAM_ISLAND
 	warp_def  5,  4, 13, SUNBEAM_ISLAND
+	warp_def  3,  5, 255, SAILBOAT_CUTSCENE
 
 	db 0 ; coord events
 
@@ -76,15 +77,11 @@ SunbeamBoatHouseNPC:
 	special PlaceMoneyTopRight
 	writetext SunbeamBoatHouseNPCText7
 .SunsetCont
-	waitbutton
-	closetext
-	special FadeOutPalettes
-	special Special_FadeOutMusic
 	clearevent EVENT_SUNSET_STRAND
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
-	domaptrigger SUNSET_BAY, $3
-	warpfacing DOWN, SUNSET_BAY, 29, 28
-	end
+	warpmod 1, SAILBOAT_CUTSCENE
+	setevent EVENT_SAILBOAT_LEFT
+	setevent EVENT_BOAT_GOING_TO_LAKE_R
+	jump .DoBoatEnd
 	
 .LakeL
 	writetext SunbeamBoatHouseNPCText5
@@ -97,17 +94,13 @@ SunbeamBoatHouseNPC:
 	special PlaceMoneyTopRight
 	writetext SunbeamBoatHouseNPCText7
 .LakeLCont
-	waitbutton
-	closetext
-	special FadeOutPalettes
-	special Special_FadeOutMusic
 	setevent EVENT_TAKEN_LAKE_BOAT_ONCE
 	setevent EVENT_LAKE_BOAT_LEFT
 	setevent EVENT_JUST_TOOK_BOAT
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
-	domaptrigger LAKE_ONWA, $2
-	warpfacing LEFT, LAKE_ONWA, $18, $19
-	end
+	warpmod 1, SAILBOAT_CUTSCENE
+	setevent EVENT_SAILBOAT_LEFT
+	setevent EVENT_BOAT_GOING_TO_LAKE_R
+	jump .DoBoatEnd
 	
 .LakeR
 	writetext SunbeamBoatHouseNPCText6
@@ -120,17 +113,13 @@ SunbeamBoatHouseNPC:
 	special PlaceMoneyTopRight
 	writetext SunbeamBoatHouseNPCText7
 .LakeRCont
-	waitbutton
-	closetext
-	special FadeOutPalettes
-	special Special_FadeOutMusic
 	setevent EVENT_TAKEN_LAKE_BOAT_ONCE
 	clearevent EVENT_LAKE_BOAT_LEFT
 	setevent EVENT_JUST_TOOK_BOAT
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
-	domaptrigger LAKE_ONWA, $1
-	warpfacing RIGHT, LAKE_ONWA, $27, $1f
-	end
+	warpmod 1, SAILBOAT_CUTSCENE
+	setevent EVENT_SAILBOAT_LEFT
+	setevent EVENT_BOAT_GOING_TO_LAKE_R
+	jump .DoBoatEnd
 	
 .Shimmer
 	writetext SunbeamBoatHouseNPCText4
@@ -143,15 +132,11 @@ SunbeamBoatHouseNPC:
 	special PlaceMoneyTopRight
 	writetext SunbeamBoatHouseNPCText7
 .ShimmerCont
-	waitbutton
-	closetext
-	special FadeOutPalettes
-	special Special_FadeOutMusic
 	clearevent EVENT_SHIMMER_BOATMAN
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
-	domaptrigger SHIMMER_HARBOR, $1
-	warpfacing LEFT, SHIMMER_HARBOR, 15, 8
-	end
+	warpmod 1, SAILBOAT_CUTSCENE
+	setevent EVENT_SAILBOAT_LEFT
+	setevent EVENT_BOAT_GOING_TO_SHIMMER
+	jump .DoBoatEnd
 	
 .Brillo
 	writetext SunbeamBoatHouseNPCText4
@@ -164,14 +149,22 @@ SunbeamBoatHouseNPC:
 	special PlaceMoneyTopRight
 	writetext SunbeamBoatHouseNPCText7
 .BrilloCont
+	clearevent EVENT_BRILLO_BOATMAN
+	warpmod 1, SAILBOAT_CUTSCENE
+	setevent EVENT_SAILBOAT_LEFT
+	setevent EVENT_BOAT_GOING_TO_BRILLO
+
+.DoBoatEnd
 	waitbutton
 	closetext
 	special FadeOutPalettes
+	applyonemovement PLAYER, hide_person
+	changeblock $4, $2, $9b
+	callasm GetMovementPermissions
 	special Special_FadeOutMusic
-	clearevent EVENT_BRILLO_BOATMAN
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
-	domaptrigger BRILLO_TOWN, $1
-	warpfacing UP, BRILLO_TOWN, 17, 25
+	setevent EVENT_DONT_SCROLL_OW
+	warpcheck
 	end
 	
 .nomoneySunset

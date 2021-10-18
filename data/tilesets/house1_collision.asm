@@ -174,3 +174,4 @@
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; ad
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ae
 	tilecoll FLOOR, WALL, FLOOR, WALL ; af
+	tilecoll WATER, WATER, WATER, WATER ; b0

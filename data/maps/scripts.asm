@@ -182,6 +182,7 @@ INCLUDE "maps/FlickerTrainStation.asm"
 INCLUDE "maps/FlickerTrainCutscene.asm"
 INCLUDE "maps/FlickerPassOutside.asm"
 INCLUDE "maps/LusterTrainCutscene.asm"
+INCLUDE "maps/SailboatCutscene.asm"
 
 SECTION "Twinkle Town Scripts", ROMX
 

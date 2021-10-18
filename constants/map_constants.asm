@@ -65,6 +65,7 @@ MAP_NONE   EQU 0
 	map_const SUNSET_CAPTAINS_HOUSE,                       4,  4 ;  8
 	map_const SUNSET_CAFE,                  			   4,  4 ;  9
 	map_const ROUTE_1_GATE,                          	   4,  4 ; 10
+	map_const SAILBOAT_CUTSCENE,						   7,  1 ; 11
 
 	newgroup                                                     ;  3
 
@@ -211,6 +212,7 @@ MAP_NONE   EQU 0
 	map_const TWINKLE_GYM_BLUE_ROOM,					   7,  9 ; 11
 	map_const TWINKLE_GYM_YELLOW_ROOM,					   8, 11 ; 12
 	map_const TWINKLE_GYM_RED_ROOM,						  24, 28 ; 13
+	map_const ROUTE_12_TENT,							   2,  3 ; 14
 	
 	newgroup													 ; 12
 	
@@ -300,4 +302,3 @@ MAP_NONE   EQU 0
 	map_const BRILLO_GAME_CORNER,              			   7,  5 ; 8
 	map_const ROUTE_12,         	           			  24, 17 ; 9
 	map_const ROUTE_12_NORTH,       	           		  11, 13 ; 10
-	map_const ROUTE_12_TENT,							   2,  3 ; 11

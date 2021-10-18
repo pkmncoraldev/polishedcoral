@@ -37,7 +37,6 @@ _AnimateTileset:: ; fc000
 
 Tileset00Anim::
 TilesetPlayerRoomAnim::
-TilesetHouse1Anim::
 TilesetPokeCenterAnim::
 TilesetLighthouseAnim::
 TilesetLabAnim::
@@ -49,6 +48,12 @@ TilesetIceCaveAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
+TilesetHouse1Anim::
+	dw VTiles2 tile $14, WriteTileToBuffer
+    dw wTileAnimBuffer, ScrollTileSailboat
+    dw VTiles2 tile $14, WriteTileFromBuffer
 	dw NULL,  DoneTileAnimation
 	
 TilesetMartAnim::
@@ -468,6 +473,10 @@ ScrollTileUp2: ; fc318
 	jr nz, ScrollTileUp
 	jr ScrollTileUp
 
+ScrollTileSailboat:
+	eventflagcheck EVENT_SAILBOAT_LEFT
+	jr nz, ScrollTileRight
+	
 ScrollTileLeft: ; fc327
 	ld h, d
 	ld l, e

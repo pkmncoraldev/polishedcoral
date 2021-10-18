@@ -91,6 +91,7 @@ Facings:
 	dw FacingDealerDown
 	dw FacingDealerLeft
 	dw FacingDealerRight
+	dw FacingSailboatTopRight
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -506,12 +507,26 @@ FacingSailboatTop:
 	db -4,  0, 0, $84
 
 FacingSailboatBottom:
-	db 5 ; #
-	db  4,  0, 0, $80
-	db  4,  8, 0, $81
-	db 12,  0, 0, $82
-	db 12,  8, 0, $83
-	db -4, 16, 0, $84
+	db 8 ; #
+	db  4, 8, 0 | X_FLIP, $00
+	db  4, 0, 0 | X_FLIP, $01
+	db  12, 8, 0 | X_FLIP, $02
+	db  12, 0, 0 | X_FLIP, $03
+	db  4,  -8, 0 | X_FLIP, $04
+	db  4, -16, 0 | X_FLIP, $05
+	db  12, -8, 0 | X_FLIP, $06
+	db  12, -16, 0 | X_FLIP, $07
+	
+FacingSailboatTopRight:
+	db 8 ; #
+	db  4, -8, 0 | X_FLIP, $80
+	db  4,  -16, 0 | X_FLIP, $81
+	db  12, -8, 0 | X_FLIP, $82
+	db  12,  -16, 0 | X_FLIP, $83
+	db -4, -8, 0 | X_FLIP, $84
+	db  4, 0, 0 | X_FLIP, $09
+	db  12, 8, 0 | X_FLIP, $0a
+	db  12, 0, 0 | X_FLIP, $0b
 
 FacingUmbrellaLeft:
 	db 5 ; #

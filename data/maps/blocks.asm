@@ -243,6 +243,9 @@ FlickerTrainCutscene_BlockData:
 LusterTrainCutscene_BlockData:
 	INCBIN "maps/LusterTrainCutscene.ablk.lz"
 	
+SailboatCutscene_BlockData:
+	INCBIN "maps/SailboatCutscene.ablk.lz"
+	
 LusterTrainStation_BlockData:
 	INCBIN "maps/LusterTrainStation.ablk.lz"
 	

@@ -629,6 +629,7 @@ MapObjectMovementPattern:
 	dw .MovementDealerDown
 	dw .MovementDealerLeft
 	dw .MovementDealerRight
+	dw .MovementSailboatTopRight          ; SPRITEMOVEFN_SAILBOAT_TOP_RIGHT
 
 .RandomWalkY:
 	call Random
@@ -931,6 +932,10 @@ MapObjectMovementPattern:
 
 .MovementSailboatBottom:
 	ld a, PERSON_ACTION_SAILBOAT_BOTTOM
+	jp ._ActionA_StepType04
+	
+.MovementSailboatTopRight:
+	ld a, PERSON_ACTION_SAILBOAT_TOP_RIGHT
 	jp ._ActionA_StepType04
 	
 .MovementCandle:

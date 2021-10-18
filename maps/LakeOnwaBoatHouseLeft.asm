@@ -3,9 +3,10 @@ LakeOnwaBoatHouseLeft_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_def 5, 4, 2, LAKE_ONWA
 	warp_def 5, 5, 2, LAKE_ONWA
+	warp_def  3,  4, 255, SAILBOAT_CUTSCENE
 
 	db 0 ; coord events
 
@@ -31,7 +32,7 @@ LakeBoatMan2:
 	iffalse .end
 .doit
 	checkevent EVENT_LAKE_BOAT_LEFT
-	iftrue .skipcallingboat1
+	iftrue .LakeRCont
 	writetext LakeBoatManText4
 	waitbutton
 	closetext
@@ -44,19 +45,13 @@ LakeBoatMan2:
 	spriteface LAKEBOATMAN2, DOWN
 	setevent EVENT_LAKE_BOAT_LEFT
 	opentext
-.skipcallingboat1
-	writetext LakeBoatManText3
-	waitbutton
-	closetext
-	special FadeOutPalettes
-	special Special_FadeOutMusic
+.LakeRCont
 	setevent EVENT_TAKEN_LAKE_BOAT_ONCE
 	setevent EVENT_JUST_TOOK_BOAT
 	clearevent EVENT_LAKE_BOAT_LEFT
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
-	domaptrigger LAKE_ONWA, $1
-	warpfacing RIGHT, LAKE_ONWA, $27, $1f
-	end
+	warpmod 2, SAILBOAT_CUTSCENE
+	setevent EVENT_BOAT_GOING_TO_LAKE_R
+	jump .DoBoatEnd
 .noride
 	writetext LakeBoatManText7
 	waitbutton
@@ -122,7 +117,7 @@ LakeBoatMan2:
 	takemoney $0, 500
 	special PlaceMoneyTopRight
 	checkevent EVENT_LAKE_BOAT_LEFT
-	iftrue .skipcallingboat2
+	iftrue .SunsetCont
 	writetext LakeBoatManText4
 	waitbutton
 	closetext
@@ -135,17 +130,12 @@ LakeBoatMan2:
 	spriteface LAKEBOATMAN2, DOWN
 	setevent EVENT_LAKE_BOAT_LEFT
 	opentext
-.skipcallingboat2
-	writetext LakeBoatManText3
-	waitbutton
-	closetext
-	special FadeOutPalettes
-	special Special_FadeOutMusic
+.SunsetCont
 	clearevent EVENT_SUNSET_STRAND
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
-	domaptrigger SUNSET_BAY, $3
-	warpfacing DOWN, SUNSET_BAY, 29, 28
-	end
+	warpmod 1, SAILBOAT_CUTSCENE
+	setevent EVENT_SAILBOAT_LEFT
+	setevent EVENT_BOAT_GOING_TO_SUNSET
+	jump .DoBoatEnd
 	
 .LakeR
 	writetext LakeBoatManText13
@@ -168,7 +158,7 @@ LakeBoatMan2:
 	takemoney $0, 500
 	special PlaceMoneyTopRight
 	checkevent EVENT_LAKE_BOAT_LEFT
-	iftrue .skipcallingboat3
+	iftrue .SunbeamCont
 	writetext LakeBoatManText4
 	waitbutton
 	closetext
@@ -181,17 +171,11 @@ LakeBoatMan2:
 	spriteface LAKEBOATMAN2, DOWN
 	setevent EVENT_LAKE_BOAT_LEFT
 	opentext
-.skipcallingboat3
-	writetext LakeBoatManText3
-	waitbutton
-	closetext
-	special FadeOutPalettes
-	special Special_FadeOutMusic
+.SunbeamCont
 	clearevent EVENT_ISLAND_BOATMAN
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
-	domaptrigger SUNBEAM_ISLAND, $1
-	warpfacing UP, SUNBEAM_ISLAND, 7, 50
-	end
+	warpmod 2, SAILBOAT_CUTSCENE
+	setevent EVENT_BOAT_GOING_TO_SUNBEAM
+	jump .DoBoatEnd
 	
 .Shimmer
 	writetext LakeBoatManText16
@@ -203,7 +187,7 @@ LakeBoatMan2:
 	takemoney $0, 500
 	special PlaceMoneyTopRight
 	checkevent EVENT_LAKE_BOAT_LEFT
-	iftrue .skipcallingboat4
+	iftrue .ShimmerCont
 	writetext LakeBoatManText4
 	waitbutton
 	closetext
@@ -216,17 +200,12 @@ LakeBoatMan2:
 	spriteface LAKEBOATMAN2, DOWN
 	setevent EVENT_LAKE_BOAT_LEFT
 	opentext
-.skipcallingboat4
-	writetext LakeBoatManText3
-	waitbutton
-	closetext
-	special FadeOutPalettes
-	special Special_FadeOutMusic
+.ShimmerCont
 	clearevent EVENT_SHIMMER_BOATMAN
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
-	domaptrigger SHIMMER_HARBOR, $1
-	warpfacing LEFT, SHIMMER_HARBOR, 15, 8
-	end
+	warpmod 1, SAILBOAT_CUTSCENE
+	setevent EVENT_SAILBOAT_LEFT
+	setevent EVENT_BOAT_GOING_TO_SHIMMER
+	jump .DoBoatEnd
 	
 .Brillo
 	writetext LakeBoatManText17
@@ -238,7 +217,7 @@ LakeBoatMan2:
 	takemoney $0, 500
 	special PlaceMoneyTopRight
 	checkevent EVENT_LAKE_BOAT_LEFT
-	iftrue .skipcallingboat5
+	iftrue .BrilloCont
 	writetext LakeBoatManText4
 	waitbutton
 	closetext
@@ -251,16 +230,24 @@ LakeBoatMan2:
 	spriteface LAKEBOATMAN2, DOWN
 	setevent EVENT_LAKE_BOAT_LEFT
 	opentext
-.skipcallingboat5
+.BrilloCont
+	clearevent EVENT_BRILLO_BOATMAN
+	warpmod 1, SAILBOAT_CUTSCENE
+	setevent EVENT_SAILBOAT_LEFT
+	setevent EVENT_BOAT_GOING_TO_BRILLO
+
+.DoBoatEnd
 	writetext LakeBoatManText3
 	waitbutton
 	closetext
 	special FadeOutPalettes
+	applyonemovement PLAYER, hide_person
+	changeblock $4, $2, $9b
+	callasm GetMovementPermissions
 	special Special_FadeOutMusic
-	clearevent EVENT_BRILLO_BOATMAN
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
-	domaptrigger BRILLO_TOWN, $1
-	warpfacing UP, BRILLO_TOWN, 17, 25
+	setevent EVENT_DONT_SCROLL_OW
+	warpcheck
 	end
 	
 	

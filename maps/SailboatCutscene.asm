@@ -30,6 +30,7 @@ SailboatCutscene_MapScriptHeader:
 	
 	
 SailboatCutsceneTrigger0:
+	playmapmusic
 	checkevent EVENT_SAILBOAT_LEFT
 	iftrue .left
 	disappear SAILBOAT_CUTSCENE_BOAT_L_1
@@ -39,6 +40,7 @@ SailboatCutsceneTrigger0:
 	applymovement PLAYER, Movement_SailboatCutsceneRight
 	clearevent EVENT_DONT_SCROLL_OW
 	clearevent EVENT_SAILBOAT_LEFT
+	special Special_FadeOutMusic
 	jump .find_destination
 .left
 	disappear SAILBOAT_CUTSCENE_BOAT_R_1

@@ -58,8 +58,8 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke CLEFABLE, 100
-	givepoke MEOWTH, 5
+	givepoke BULBASAUR, 100
+	givepoke LITWICK, 5
 .items
 	writetext PlayerHouseDebugText6
 	yesorno

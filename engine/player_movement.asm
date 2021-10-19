@@ -74,6 +74,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jp z, .Standing
 	cp PLAYER_FALLING
 	jp z, .Falling
+	jr .Normal
 .Sand
 	ld a, [wStuckInSandCounter]
 	cp 0

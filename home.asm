@@ -1337,5 +1337,30 @@ INCLUDE "home/audio.asm"
 
 INCLUDE "home/ded.asm"
 
+CheckExtendedSpace::
+	ld a, [hROMBank]
+	push af
+	ld a, BANK(ExtendedSpaceString)
+	rst Bankswitch
+
+	ld de, ExtendedSpaceString
+	ld hl, .teststring
+	ld c, PLAYER_NAME_LENGTH
+	call StringCmp
+	jr nz, .no
+	ld a, 1
+	ld [wExtendedSpace], a
+	jr .skip
+.no
+	xor a
+	ld [wExtendedSpace], a
+.skip
+	pop af
+	rst Bankswitch
+	ret
+
+.teststring:
+	db "PIPPI@@@@@@"
+	
 SECTION "Home2", ROMX
 INCLUDE "home/copy2.asm"

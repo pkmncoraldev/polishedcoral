@@ -49,7 +49,7 @@ OptionsMenu_LoadOptions:
 	xor a
 	ld [wJumptableIndex], a
 	ld [hJoyPressed], a
-	ld c, $5 ; number of items on the menu minus 1 (for done)
+	ld c, $7 ; number of items on the menu minus 1 (for done)
 .print_text_loop ; this next will display the settings of each option when the menu is opened
 	push bc
 	xor a
@@ -76,10 +76,10 @@ StringOptions1: ; e4241
 	db "        :<LNBRK>"
 	db "FRAME<LNBRK>"
 	db "        :TYPE<LNBRK>"
-;	db "DEBUG MODE<LNBRK>"
-;	db "        :<LNBRK>"
-;	db "SOUND TEST<LNBRK>"
-;	db "<LNBRK>"
+	db "DEBUG MODE<LNBRK>"
+	db "        :<LNBRK>"
+	db "SOUND TEST<LNBRK>"
+	db "<LNBRK>"
 	db "DONE@"
 ; e42d6
 
@@ -108,8 +108,8 @@ GetOptionPointer: ; e42d6
 	dw Options_BattleEffects
 	dw Options_BattleStyle
 	dw Options_Frame
-;	dw Options_DebugMode
-;	dw Options_MusicPlayer
+	dw Options_DebugMode
+	dw Options_MusicPlayer
 	dw Options_Done
 ; e42f5
 
@@ -298,7 +298,7 @@ Options_MusicPlayer:
 	ld [wMapMusic], a
 	ld e, a
 	ld d, 0
-	farcall PlayMusic2
+	farcall PlayMusic
 	farjp MusicPlayer
 	
 
@@ -357,7 +357,7 @@ OptionsControl: ; e452a
 .DownPressed:
 	ld a, [hl] ; load the cursor position to a
 
-	cp $4 ; maximum number of items in option menu
+	cp $6 ; maximum number of items in option menu
 	jr nz, .Increase
 	ld [hl], -1
 .Increase:
@@ -370,7 +370,7 @@ OptionsControl: ; e452a
 
 	and a
 	jr nz, .Decrease
-	ld [hl], $5 ; number of option items + 1
+	ld [hl], $7 ; number of option items + 1
 .Decrease:
 	dec [hl]
 	scf

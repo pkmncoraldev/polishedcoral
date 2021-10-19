@@ -1,4 +1,7 @@
 SECTION "DED 1", ROMX
+ExtendedSpaceString::
+	db "PIPPI@@@@@@"
+	
 PikipekDEDData:: INCBIN "audio/ded/pikipek.ded"
 TrumbeakDEDData:: INCBIN "audio/ded/trumbeak.ded"
 

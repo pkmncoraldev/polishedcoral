@@ -338,7 +338,7 @@ MusicPlayerLoop:
 	ld [wMapMusic], a
 	ld e, a
 	ld d, 0
-	farcall PlayMusic2
+	farcall PlayMusic
 	ld hl, wChLastNotes
 	xor a
 	ld [hli], a
@@ -356,7 +356,7 @@ MusicPlayerLoop:
 	ld [wMapMusic], a
 	ld e, a
 	ld d, 0
-	farcall PlayMusic2
+	farcall PlayMusic
 	ld hl, wChLastNotes
 	xor a
 	ld [hli], a
@@ -705,7 +705,7 @@ AdjustTempo:
 	ld e, a
 	ld d, 0
 	ld [wMapMusic], a
-	farcall PlayMusic2
+	farcall PlayMusic
 	jr .exit
 
 .b:
@@ -1699,7 +1699,7 @@ SongSelector:
 .got_song
 	ld e, a
 	ld d, 0
-	farcall PlayMusic2
+	farcall PlayMusic
 	jr .finish
 
 .up

@@ -15,7 +15,7 @@ GetPlayerSprite: ; 14183
 ;	ld a, [wPlayerSpriteSetupFlags]
 ;	bit 2, a
 ;	jr nz, .go
-	
+	call CheckExtendedSpace
 	ld a, [wPlayerGender]
 	cp CORY
 	jr z, .loadcory

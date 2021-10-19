@@ -104,32 +104,6 @@ _PopAFBCDEHL:
 	ret
 ; 3bbc
 
-
-PlayMusic2:: ; 3bbc
-; Stop playing music, then play music de.
-
-	push hl
-	push de
-	push bc
-	push af
-
-	ld a, [hROMBank]
-	push af
-	ld a, BANK(_PlayMusic)
-;	ld [hROMBank], a
-;	ld [MBC3RomBank], a
-	rst Bankswitch
-
-	push de
-	ld de, MUSIC_NONE
-	call _PlayMusic
-	call DelayFrame
-	pop de
-	call _PlayMusic
-	jr PopAFBankThenAFBCDEHL
-
-; 3be3
-
 WaitPlaySFX::
 	call WaitSFX
 	; fallthrough

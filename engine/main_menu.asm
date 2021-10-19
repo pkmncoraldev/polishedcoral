@@ -1,4 +1,4 @@
-MainMenu: ; 49cdc
+MainMenu: ; 49cdc	
 	call DeleteSavedMusic
 	call Function49ed0
 	ld b, CGB_DIPLOMA

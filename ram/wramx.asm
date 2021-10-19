@@ -1080,7 +1080,7 @@ wBoxNamesEnd::
 
 wCelebiEvent:: ds 1
 
-	ds 1 ; unused
+wExtendedSpace::	ds 1
 
 wOWState:: ds 2
 

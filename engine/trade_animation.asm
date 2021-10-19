@@ -124,7 +124,7 @@ RunTradeAnimSequence: ; 28fa1
 	and a
 	jr nz, .anim_loop
 	ld de, MUSIC_EVOLUTION
-	call PlayMusic2
+	call PlayMusic
 .anim_loop
 	call DoTradeAnimation
 	jr nc, .anim_loop

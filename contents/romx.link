@@ -230,3 +230,131 @@ ROMX $38
 	org $4000
 	"Crystal Data"
 	"Trainer Pic Pointers"
+	
+ROMX $e0
+	org $4000
+	"DED 1"
+	
+ROMX $e1
+	org $4000
+	"DED 2"
+	
+ROMX $e2
+	org $4000
+	"DED 3"
+	
+ROMX $e3
+	org $4000
+	"DED 4"
+	
+ROMX $e4
+	org $4000
+	"DED 5"
+	
+ROMX $e5
+	org $4000
+	"DED 6"
+	
+ROMX $e6
+	org $4000
+	"DED 7"
+	
+ROMX $e7
+	org $4000
+	"DED 8"
+	
+ROMX $e8
+	org $4000
+	"DED 9"
+	
+ROMX $e9
+	org $4000
+	"DED 10"
+	
+ROMX $ea
+	org $4000
+	"DED 11"
+	
+ROMX $eb
+	org $4000
+	"DED 12"
+	
+ROMX $ec
+	org $4000
+	"DED 13"
+	
+ROMX $ed
+	org $4000
+	"DED 14"
+	
+ROMX $ee
+	org $4000
+	"DED 15"
+	
+ROMX $ef
+	org $4000
+	"DED 16"
+	
+ROMX $f0
+	org $4000
+	"DED 17"
+	
+ROMX $f1
+	org $4000
+	"DED 18"
+	
+ROMX $f2
+	org $4000
+	"DED 19"
+	
+ROMX $f3
+	org $4000
+	"DED 20"
+	
+ROMX $f4
+	org $4000
+	"DED 21"
+	
+ROMX $f5
+	org $4000
+	"DED 22"
+	
+ROMX $f6
+	org $4000
+	"DED 23"
+	
+ROMX $f7
+	org $4000
+	"DED 24"
+	
+ROMX $f8
+	org $4000
+	"DED 25"
+	
+ROMX $f9
+	org $4000
+	"DED 26"
+	
+ROMX $fa
+	org $4000
+	"DED 27"
+	
+ROMX $fb
+	org $4000
+	"DED 28"
+	
+ROMX $fc
+	org $4000
+	"DED 29"
+	
+ROMX $fd
+	org $4000
+	"DED 30"
+	
+ROMX $fe
+	org $4000
+	"DED 31"
+	
+ROMX $ff
+	org $4000
+	"DED 32"

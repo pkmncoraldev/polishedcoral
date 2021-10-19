@@ -161,7 +161,7 @@ MagntTrain_LoadGFX_PlayMusic: ; 8ccc9
 	ld [hli], a
 	ld [hli], a
 	ld de, MUSIC_NONE
-	jp PlayMusic2
+	jp PlayMusic
 ; 8cd27
 
 DrawMagnetTrain: ; 8cd27

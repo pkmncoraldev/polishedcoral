@@ -29,9 +29,20 @@ Copyright_GFPresents: ; e4579
 	call FarCopyWRAM
 	ld c, 15
 	call FadePalettes
+.loop2
+	ld a, [wPlaceBallsX]
+	inc a
+	ld [wPlaceBallsX], a
+	cp $ff
+	jr nz, .skip2
+	ld a, [wPlaceBallsY]
+	inc a
+	ld [wPlaceBallsY], a
+	cp $20
+	jr nz, .skip2
 	ld hl, wLowHealthAlarm
 	set 7, [hl]
-.loop2
+.skip2
 	call GetJoypad
 	ld hl, hJoyPressed
 	bit A_BUTTON_F, [hl]
@@ -42,6 +53,8 @@ Copyright_GFPresents: ; e4579
 .skip
 	xor a
 	ld [wLowHealthAlarm], a
+	ld [wPlaceBallsX], a
+	ld [wPlaceBallsY], a
 	farcall CoralSplashScreen
 	call ApplyAttrAndTilemapInVBlank
 	

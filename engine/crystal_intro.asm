@@ -12,17 +12,51 @@ Copyright_GFPresents: ; e4579
 	ld [hSCY], a
 	ld a, $90
 	ld [hWY], a
-	ld b, CGB_SPLASH_SCREEN
-	call GetCGBLayout
+	
+	call CheckExtendedSpace
+	
+	ld a, BANK(wExtendedSpace)
+	ld hl, wExtendedSpace
+	call GetFarWRAMByte
+	; value is now in a
+	cp 0
+	jr nz, .skip
+	farcall _WarnScreen
+	ld hl, WarnScreenPalette
+	ld de, wUnknBGPals
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	ld c, 15
+	call FadePalettes
+	ld hl, wLowHealthAlarm
+	set 7, [hl]
+.loop2
+	call GetJoypad
+	ld hl, hJoyPressed
+	bit A_BUTTON_F, [hl]
+	jr z, .loop2
+	call SetBlackPals
+	ld c, 15
+	call FadePalettes
+.skip
+	xor a
+	ld [wLowHealthAlarm], a
 	farcall CoralSplashScreen
-	call ApplyTilemapInVBlank
+	call ApplyAttrAndTilemapInVBlank
+	
+	ld hl, SplashScreenPalette
+	ld de, wUnknBGPals
+	ld bc, 2 palettes
+	ld a, $5
+	call FarCopyWRAM
 	ld c, 15
 	call FadePalettes
 	ld c, 200
 	call DelayFrames
 	ld hl, SplashScreenPalette
-	ld de, wUnknBGPals
-	ld bc, 2 palettes
+	ld de, wUnknBGPals + 1 palettes
+	ld bc, 1 palettes
 	ld a, $5
 	call FarCopyWRAM
 	ld c, 15
@@ -157,8 +191,20 @@ SplashScreenPalette:
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-	RGB 31, 31, 31
+	RGB 00, 00, 00
 
+WarnScreenPalette:
+	RGB 31, 31, 31
+	RGB 31, 25, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	
+WarnScreenPalette2:
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	
 PlaceGameFreakPresents: ; e4670
 	ld a, [wJumptableIndex]
 	ld e, a

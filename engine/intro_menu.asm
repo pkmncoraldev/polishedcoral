@@ -1472,13 +1472,13 @@ CoralSplashScreen:
 	ld a, 1
 	ld [rVBK], a
 	
-	hlbgcoord 0, 15
-	ld bc, BG_MAP_WIDTH
-	ld a, 1
+	hlcoord 0, 0, wAttrMap
+	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	xor a
 	call ByteFill
 	
-	hlbgcoord 0, 16
-	ld bc, BG_MAP_WIDTH
+	hlcoord 0, $0f, wAttrMap
+	ld bc, 2 * SCREEN_WIDTH
 	ld a, 1
 	call ByteFill
 	

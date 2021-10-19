@@ -80,3 +80,24 @@ INCBIN "gfx/diploma/pippiscreen2.2bpp.lz"
 
 PippiScreenTilemap: ; 1ddc4b
 INCBIN "gfx/diploma/pippiscreen.tilemap"
+
+_WarnScreen:
+	call ClearBGPalettes
+	call ClearTileMap
+	call ClearSprites
+	call DisableLCD
+	ld hl, WarnScreenGFX
+	ld de, VTiles2
+	call Decompress
+	ld hl, WarnScreenTilemap
+	decoord 0, 0
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	rst CopyBytes
+	call EnableLCD
+	jp ApplyTilemapInVBlank
+	
+WarnScreenGFX: ; 1dd805
+INCBIN "gfx/diploma/warn.2bpp.lz"
+
+WarnScreenTilemap: ; 1ddc4b
+INCBIN "gfx/diploma/warn.tilemap"

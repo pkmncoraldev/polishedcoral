@@ -243,7 +243,6 @@ LakeBoatMan2:
 	special FadeOutPalettes
 	applyonemovement PLAYER, hide_person
 	changeblock $4, $2, $9b
-	callasm GetMovementPermissions
 	special Special_FadeOutMusic
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FAT_GUY
 	setevent EVENT_DONT_SCROLL_OW

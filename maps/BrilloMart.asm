@@ -107,7 +107,6 @@ BrilloMartDoor:
 	playsound SFX_WALL_OPEN
 	waitsfx
 	changeblock $8, $0, $39
-	callasm GetMovementPermissions
 	opentext
 	writetext BrilloMartDoorText3
 	waitbutton

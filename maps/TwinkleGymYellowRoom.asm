@@ -86,11 +86,11 @@ TwinkleGymYellowRoomLeader:
 	opentext
 	checkevent EVENT_CAN_GET_RED_KEY
 	iftrue .checkrematch
-	writetext TwinkleGymYellowRoomLeaderText1
+	writetext TwinkleGymBlueRoomLeaderText1
 .return
 	waitbutton
 	closetext
-	winlosstext TwinkleGymYellowRoomLeaderWinText, 0
+	winlosstext TwinkleGymBlueRoomLeaderWinText, 0
 	setlasttalked TWINKLE_GYM_YELLOW_ROOM_LEADER
 	checkcode VAR_BADGES
 	ifequal 4, .fourbadges
@@ -98,22 +98,22 @@ TwinkleGymYellowRoomLeader:
 	ifequal 6, .sixbadges
 	ifequal 7, .sevenbadges
 	ifequal 8, .eightbadges
-	loadtrainer SPA_TRAINER_F, MAC_3
+	loadtrainer SPA_TRAINER, MAC_3
 	jump .cont
 .fourbadges
-	loadtrainer SPA_TRAINER_F, MAC_4
+	loadtrainer SPA_TRAINER, MAC_4
 	jump .cont
 .fivebadges
-	loadtrainer SPA_TRAINER_F, MAC_5
+	loadtrainer SPA_TRAINER, MAC_5
 	jump .cont
 .sixbadges
-	loadtrainer SPA_TRAINER_F, MAC_6
+	loadtrainer SPA_TRAINER, MAC_6
 	jump .cont
 .sevenbadges
-	loadtrainer SPA_TRAINER_F, MAC_7
+	loadtrainer SPA_TRAINER, MAC_7
 	jump .cont
 .eightbadges
-	loadtrainer SPA_TRAINER_F, MAC_8
+	loadtrainer SPA_TRAINER, MAC_8
 .cont
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
@@ -124,17 +124,17 @@ TwinkleGymYellowRoomLeader:
 	iffalse .end
 	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_LEADER_REMATCH
 	iftrue .end2
-	writetext TwinkleGymYellowRoomLeaderRematchText1
+	writetext TwinkleGymBlueRoomLeaderRematchText1
 	jump .return
 .end
-	writetext TwinkleGymYellowRoomLeaderText2
+	writetext TwinkleGymBlueRoomLeaderText2
 	waitbutton
 	closetext
 	setevent EVENT_CAN_GET_RED_KEY
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_LEADER
 	end
 .end2
-	writetext TwinkleGymYellowRoomLeaderRematchText2
+	writetext TwinkleGymBlueRoomLeaderRematchText2
 	waitbutton
 	closetext
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_LEADER_REMATCH
@@ -410,9 +410,9 @@ TwinkleGymYellowRoomTrainer1:
 	playmapmusic
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_1
 	checkevent EVENT_BEAT_CHARLIE
-	iffalse .skip
+	iffalse .end
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_1_REMATCH
-	jump .skip
+	jump .end
 .FightDone
 	checkevent EVENT_BEAT_CHARLIE
 	iffalse .skip
@@ -422,6 +422,7 @@ TwinkleGymYellowRoomTrainer1:
 	writetext TwinkleGymYellowRoomTrainer1RegularText
 	waitbutton
 	closetext
+.end
 	end
 .rematch
 	playmusic MUSIC_HIKER_ENCOUNTER
@@ -493,9 +494,9 @@ TwinkleGymYellowRoomTrainer2:
 	playmapmusic
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_2
 	checkevent EVENT_BEAT_CHARLIE
-	iffalse .skip
+	iffalse .end
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_2_REMATCH
-	jump .skip
+	jump .end
 .FightDone
 	checkevent EVENT_BEAT_CHARLIE
 	iffalse .skip
@@ -505,6 +506,7 @@ TwinkleGymYellowRoomTrainer2:
 	writetext TwinkleGymYellowRoomTrainer2RegularText
 	waitbutton
 	closetext
+.end
 	end
 .rematch
 	playmusic MUSIC_HIKER_ENCOUNTER
@@ -600,62 +602,62 @@ Movement_TwinkleGymYellowRoomLeader:
 	step_end
 	
 TwinkleGymYellowRoomBather1RegularText:
-	text "NORMAL TEXT"
+	text "I love jumping out"
+	line "and scaring people!"
 	done
 	
 TwinkleGymYellowRoomBather1SeenText:
 	text "Surprise!"
+	
+	para "Weren't expecting"
+	line "that, were ya?"
 	done
 	
 TwinkleGymYellowRoomBather1RematchSeenText:
 	text "Surprise!"
+	
+	para "Oh, it's only you"
+	line "again…"
 	done
 	
 TwinkleGymYellowRoomBather1BeatenText:
-	text "YOU WIN"
+	text "Did I get you?"
 	done
 	
 TwinkleGymYellowRoomBather1RematchBeatenText:
-	text "YOU WIN"
+	text "You got me again!"
 	done
 	
 TwinkleGymYellowRoomBather2RegularText:
-	text "NORMAL TEXT"
+	text "You're in the bath"
+	line "in your regular"
+	cont "clothes?"
+	
+	para "What a freak!"
 	done
 	
 TwinkleGymYellowRoomBather2SeenText:
-	text "Surprise!"
+	text "Isn't this bath"
+	line "so nice?"
 	done
 	
 TwinkleGymYellowRoomBather2RematchSeenText:
-	text "Surprise!"
+	text "I think I've been"
+	line "in here too long."
+	
+	para "I'm starting to"
+	line "prune!"
 	done
 	
 TwinkleGymYellowRoomBather2BeatenText:
-	text "YOU WIN"
+	text "Ah, who cares?"
+	
+	para "This is too nice!"
 	done
 	
 TwinkleGymYellowRoomBather2RematchBeatenText:
-	text "YOU WIN"
-	done
+	text "Ah, who cares?"
 	
-TwinkleGymYellowRoomLeaderText1:
-	text "TEXT 1"
-	done
-	
-TwinkleGymYellowRoomLeaderRematchText1:
-	text "TEXT 1"
-	done
-	
-TwinkleGymYellowRoomLeaderText2:
-	text "TEXT 2"
-	done
-	
-TwinkleGymYellowRoomLeaderRematchText2:
-	text "TEXT 2"
-	done
-	
-TwinkleGymYellowRoomLeaderWinText:
-	text "YOU WIN"
+	para "This is too nice!"
 	done
 	

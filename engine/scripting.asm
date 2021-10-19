@@ -2926,7 +2926,8 @@ Script_changeblock:
 	call GetBlockLocation
 	call GetScriptByte
 	ld [hl], a
-	jp BufferScreen
+	call BufferScreen
+	jp GetMovementPermissions
 
 Script_reloadmappart::
 	xor a

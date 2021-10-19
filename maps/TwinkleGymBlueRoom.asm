@@ -81,9 +81,9 @@ TwinkleGymBlueRoomTrainer:
 	playmapmusic
 	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER
 	checkevent EVENT_BEAT_CHARLIE
-	iffalse .skip
+	iffalse .end
 	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER_REMATCH
-	jump .skip
+	jump .end
 .FightDone
 	checkevent EVENT_BEAT_CHARLIE
 	iffalse .skip
@@ -93,6 +93,7 @@ TwinkleGymBlueRoomTrainer:
 	writetext TwinkleGymBlueRoomTrainerRegularText
 	waitbutton
 	closetext
+.end
 	end
 .rematch
 	playmusic MUSIC_HIKER_ENCOUNTER
@@ -139,22 +140,22 @@ TwinkleGymBlueRoomLeader:
 	ifequal 6, .sixbadges
 	ifequal 7, .sevenbadges
 	ifequal 8, .eightbadges
-	loadtrainer SPA_TRAINER_F, DENNIS_3
+	loadtrainer SPA_TRAINER, DENNIS_3
 	jump .cont
 .fourbadges
-	loadtrainer SPA_TRAINER_F, DENNIS_4
+	loadtrainer SPA_TRAINER, DENNIS_4
 	jump .cont
 .fivebadges
-	loadtrainer SPA_TRAINER_F, DENNIS_5
+	loadtrainer SPA_TRAINER, DENNIS_5
 	jump .cont
 .sixbadges
-	loadtrainer SPA_TRAINER_F, DENNIS_6
+	loadtrainer SPA_TRAINER, DENNIS_6
 	jump .cont
 .sevenbadges
-	loadtrainer SPA_TRAINER_F, DENNIS_7
+	loadtrainer SPA_TRAINER, DENNIS_7
 	jump .cont
 .eightbadges
-	loadtrainer SPA_TRAINER_F, DENNIS_8
+	loadtrainer SPA_TRAINER, DENNIS_8
 .cont
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle

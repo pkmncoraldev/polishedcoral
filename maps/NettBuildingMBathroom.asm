@@ -47,7 +47,6 @@ NettBuildingMBathroomTrigger0:
 	closetext
 	spriteface PLAYER, DOWN
 	changeblock $2, $6, $7e
-	callasm GetMovementPermissions
 	pause 5
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
@@ -94,13 +93,11 @@ NettBuildingMBathroomToilet1:
 	callasm BathroomSeatAsm
 	pause 1
 	changeblock $0, $0, $1a
-	callasm GetMovementPermissions
 	playsound SFX_WALL_OPEN
 	callasm GenericFinishBridge
 	waitbuttonseat
 	closetext
 	changeblock $0, $0, $98
-	callasm GetMovementPermissions
 	playsound SFX_WALL_OPEN
 	callasm GenericFinishBridge
 	waitsfx
@@ -116,13 +113,11 @@ NettBuildingMBathroomToilet2:
 	callasm BathroomSeatAsm
 	pause 1
 	changeblock $0, $2, $14
-	callasm GetMovementPermissions
 	playsound SFX_WALL_OPEN
 	callasm GenericFinishBridge
 	waitbuttonseat
 	closetext
 	changeblock $0, $2, $97
-	callasm GetMovementPermissions
 	playsound SFX_WALL_OPEN
 	callasm GenericFinishBridge
 	waitsfx
@@ -136,7 +131,6 @@ NettBuildingMBathroomDoor1:
 	checkevent EVENT_BATHROOM_DOOR_1
 	iftrue NettBuildingMBathroomDoor1Close
 	changeblock $0, $0, $98
-	callasm GetMovementPermissions
 	playsound SFX_WALL_OPEN
 	callasm GenericFinishBridge
 	setevent EVENT_BATHROOM_DOOR_1
@@ -144,7 +138,6 @@ NettBuildingMBathroomDoor1:
 	
 NettBuildingMBathroomDoor1Close:
 	changeblock $0, $0, $1a
-	callasm GetMovementPermissions
 	playsound SFX_WALL_OPEN
 	callasm GenericFinishBridge
 	clearevent EVENT_BATHROOM_DOOR_1
@@ -155,7 +148,6 @@ NettBuildingMBathroomDoor2:
 	checkevent EVENT_BATHROOM_DOOR_2
 	iftrue NettBuildingMBathroomDoor2Close
 	changeblock $0, $2, $97
-	callasm GetMovementPermissions
 	playsound SFX_WALL_OPEN
 	callasm GenericFinishBridge
 	setevent EVENT_BATHROOM_DOOR_2
@@ -163,7 +155,6 @@ NettBuildingMBathroomDoor2:
 	
 NettBuildingMBathroomDoor2Close:
 	changeblock $0, $2, $14
-	callasm GetMovementPermissions
 	playsound SFX_WALL_OPEN
 	callasm GenericFinishBridge
 	clearevent EVENT_BATHROOM_DOOR_2

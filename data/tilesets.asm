@@ -27,9 +27,10 @@ INCLUDE "data/tilesets/player_room_collision.asm"
 SECTION "Tileset Data - playerhouse", ROMX
 
 TilesetPlayerHouseGFX0::
-INCBIN "gfx/tilesets/playerhouse.2bpp.lz"
+INCBIN "gfx/tilesets/playerhouse.2bpp.vram0.lz"
 
-TilesetPlayerHouseGFX1 EQU 0
+TilesetPlayerHouseGFX1::
+INCBIN "gfx/tilesets/playerhouse.2bpp.vram1.lz"
 
 TilesetPlayerHouseGFX2 EQU 0
 

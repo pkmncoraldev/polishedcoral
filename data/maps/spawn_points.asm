@@ -5,7 +5,7 @@ spawn: MACRO
 ENDM
 
 SpawnPoints: ; 0x152ab
-	spawn PLAYER_HOUSE_2F,              3,  3
+	spawn PLAYER_HOUSE_2F,              4,  3
 	spawn SUNSET_BAY,                  25,  8
 	spawn DAYBREAK_VILLAGE,            13,  8
 	spawn GLINT_CITY,                  27, 16

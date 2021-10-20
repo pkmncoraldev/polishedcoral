@@ -48,7 +48,8 @@ FlickerTrainStationCallback:
 	return
 	
 FlickerTrainStationClerk:
-;	jumptextfaceplayer FlickerTrainStationClerkTextDemo
+	checkdebugmode
+	iffalse .end_demo
 	faceplayer
 	opentext
 	writetext FlickerTrainStationClerkText1
@@ -78,6 +79,8 @@ FlickerTrainStationClerk:
 	closetext
 	end
 	
+.end_demo
+	jumptextfaceplayer FlickerTrainStationClerkTextDemo
 	
 FlickerTrainStationNPC1:
 	faceplayer

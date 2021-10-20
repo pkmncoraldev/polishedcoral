@@ -352,7 +352,7 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 
 .PlacePhoneBars: ; 90e98 (24:4e98)
 	hlcoord 17, 1
-	ld a, $68
+	ld a, $58
 	ld [hli], a
 	inc a
 	ld [hl], a
@@ -363,7 +363,7 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 	and a
 	ret nz
 	hlcoord 18, 2
-	ld [hl], $6b
+	ld [hl], $5b
 	ret
 
 Pokegear_FinishTilemap: ; 90eb0 (24:4eb0)

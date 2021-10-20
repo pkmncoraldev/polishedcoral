@@ -265,6 +265,7 @@ ScriptCommandTable:
 	dw Script_waitbuttonseat
 	dw Script_warp2
 	dw Script_giveitemnotification
+	dw Script_checkdebug
 
 StartScript:
 	ld hl, wScriptFlags
@@ -3373,4 +3374,16 @@ Script_warp2:
 	ld a, 1
 	ld [wMapStatus], a
 	jp StopScript
+	
+Script_checkdebug:
+	ld a, [wOptions1]
+	bit DEBUG_MODE, a
+	jp nz, .set
+	xor a
+	ld [wScriptVar], a
+	ret
+.set
+	ld a, 1
+	ld [wScriptVar], a
+	ret
 	

@@ -324,6 +324,10 @@ PlayerHouse2FInitializeRoom:
 
 PlayerHouse2FSetSpawn:
 ;	special ToggleMaptileDecorations
+	checkdebugmode
+	iffalse .skip_debug
+	changeblock $4, $6, $2c
+.skip_debug
 	checkevent EVENT_N64
 	iftrue .n64
 	return
@@ -565,3 +569,4 @@ SetPlayerPalKrisHouse:
 	sub $1
 	ld [wPlayerPalette], a
 	jp ReplaceKrisSprite
+	

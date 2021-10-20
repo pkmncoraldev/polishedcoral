@@ -258,8 +258,7 @@ _SewerSurfText::
 	text "The water smells"
 	line "disgusting."
 	
-	para "Better not touch"
-	line "it…"
+	para "Want to SURF?"
 	done
 	
 UnknownText_0x1c068e::

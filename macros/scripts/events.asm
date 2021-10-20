@@ -1264,6 +1264,11 @@ giveitemnotification: macro
 	db giveitemnotification_command
 	endm
 	
+	enum checkdebugmode_command
+checkdebugmode: macro
+	db checkdebugmode_command
+	endm
+	
 thisasm: macro
 	callasm .asm\@
 	end

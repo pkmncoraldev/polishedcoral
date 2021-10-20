@@ -21,8 +21,8 @@ LusterTrainStation_MapScriptHeader:
 	person_event SPRITE_CAMERAMAN, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterTrainStationCameraman, EVENT_MET_MR_NETT
 	person_event SPRITE_CORY, 12, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
 	person_event SPRITE_CUTE_GIRL, 11, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
-	person_event SPRITE_SUPER_NERD, 12, 21, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
-	person_event SPRITE_POKEFAN_F, 10, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
+	person_event SPRITE_SUPER_NERD, 14, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
+	person_event SPRITE_ROCKER, 13, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
 	person_event SPRITE_FAT_GUY, 10, 21, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
 	person_event SPRITE_OFFICER,  7, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterTrainStationConductor, -1
 
@@ -124,6 +124,12 @@ LusterTrainStationCallback:
 	disappear LUSTER_TRAIN_STATION_CROWD2
 	disappear LUSTER_TRAIN_STATION_CROWD3
 	disappear LUSTER_TRAIN_STATION_CROWD4
+	changeblock $16, $8, $59
+	changeblock $16, $a, $5a
+	changeblock $14, $a, $56
+	changeblock $14, $c, $56
+	changeblock $16, $c, $56
+	callasm GenericFinishBridge
 	waitsfx
 	special FadeInTextboxPalettes
 	pause 20
@@ -138,7 +144,7 @@ LusterTrainStationCallback:
 	applyonemovement LUSTER_TRAIN_STATION_NETT, step_down
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, LUSTER_TRAIN_STATION_NETT, 15
-	pause 10
+	pause 25
 	applyonemovement LUSTER_TRAIN_STATION_NETT, step_up
 	opentext
 	writetext LusterStationNettText2
@@ -337,11 +343,13 @@ LusterTrainStationConductorText3:
 	para "YOU'LL HAVE TO GO"
 	line "THROUGH ME!”"
 	
-	para "Well, that did it."
+	para "Well, needless to"
+	line "say, that did it!"
 	
 	para "Those crooks"
-	line "turned tail"
-	cont "immediately!"
+	line "turned tail and"
+	cont "ran right outta"
+	cont "there!"
 	
 	para "I can't say I blame"
 	line "them."

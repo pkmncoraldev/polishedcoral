@@ -154,3 +154,8 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 99
 	tilecoll FLOOR, WALL, FLOOR, BOOKSHELF ; 9a
 	tilecoll COUNTER, COUNTER, LADDER, LADDER ; 9b
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9c
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9d
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9e
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 9f
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a0

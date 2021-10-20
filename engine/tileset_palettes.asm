@@ -181,10 +181,25 @@ LoadSpecialMapPalette: ; 494ac
 	
 .lab
 	ld a, [wMapGroup]
+	cp GROUP_LUSTER_TRAIN_STATION
+	jr z, .luster_train
+	ld a, [wMapGroup]
 	cp GROUP_SHIMMER_CITY
 	jp nz, .do_nothing
 	ld hl, FossilLabPalette
 	ld de, wUnknBGPals + 6 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
+	
+.luster_train
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_TRAIN_STATION
+	jp nz, .do_nothing
+	ld hl, LusterTrainPalette
+	ld de, wUnknBGPals + 2 palettes
 	ld bc, 1 palettes
 	ld a, $5
 	call FarCopyWRAM
@@ -629,3 +644,6 @@ INCLUDE "maps/palettes/bgpals/bgdeserttent.pal"
 
 SunbeamViewPalette:
 INCLUDE "maps/palettes/bgpals/sunbeamview.pal"
+
+LusterTrainPalette:
+INCLUDE "maps/palettes/bgpals/lustertrain.pal"

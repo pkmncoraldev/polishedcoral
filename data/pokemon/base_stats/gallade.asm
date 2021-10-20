@@ -6,7 +6,7 @@
 	db 233 ; base exp
 	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2
-	dn FEMALE_50, 3 ; gender, step cycles to hatch
+	dn ALL_MALE, 3 ; gender, step cycles to hatch
 	dn 7, 7 ; frontpic dimensions
 	db STEADFAST ; ability 1
 	db JUSTIFIED ; ability 2

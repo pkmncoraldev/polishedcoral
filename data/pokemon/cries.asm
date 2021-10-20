@@ -435,93 +435,93 @@ CryHeaders2::
 	mon_cry CRY_LARVITAR,    $05f,  $0d0 	; Larvitar
 	mon_cry CRY_PUPITAR,   	-$1db,  $150 	; Pupitar
 	mon_cry CRY_LARVITAR,   -$100,  $180 	; Tyranitar
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Wingull
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Pelipper
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Ralts
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Kirlia
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Gardevoir
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Shroomish
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Breloom
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Aron
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Lairon
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Aggron
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Meditite
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Medicham
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Carvanha
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Sharpedo
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Numel
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Camerupt
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Swablu
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Altaria
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Snorunt
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Glalie
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Buizel
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Floatzel
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Drifloon
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Drifblim
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Buneary
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Lopunny
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Honchkrow
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Spiritomb
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Munchlax
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Riolu
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Lucario
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Croagunk
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Toxicroak
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Snover
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Abomasnow
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Weavile
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Magnezone
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Electivire
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Magmortar
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Togekiss
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Leafeon
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Glaceon
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Gliscor
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Mamoswine
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; PorygonZ
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Gallade
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Froslass
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Drilbur
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Excadrill
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Venipede
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Whirlipede
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Scolipede
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cottonee
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Whimsicott
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Sandile
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Krokorok
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Krookodile
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Maractus
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Dwebble
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Crustle
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Scraggy
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Scrafty
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Minccino
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cinccino
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Joltik
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Galvantula
-	mon_cry CRY_CHARMANDER,  $000,  $100 	; Litwick
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Lampent
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Chandelure
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Larvesta
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Volcarona
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Pancham
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Pangoro
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Tyrunt
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Tyrantrum
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Amaura
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Aurorus
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Sylveon
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Phantump
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Trevenant
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Noibat
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Noivern
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Pikipek
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Trumbeak
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Toucannon
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Mareanie
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Toxapex
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Wingull - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Pelipper - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Ralts - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Kirlia - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Gardevoir - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Shroomish - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Breloom - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Aron - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Lairon - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Aggron - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Meditite - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Medicham - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Carvanha - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Sharpedo - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Numel - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Camerupt - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Swablu - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Altaria - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Snorunt - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Glalie - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Buizel - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Floatzel - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Drifloon - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Drifblim - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Buneary - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Lopunny - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Honchkrow - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Spiritomb - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Munchlax - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Riolu - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Lucario - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Croagunk - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Toxicroak - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Snover - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Abomasnow - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Weavile - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Magnezone - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Electivire - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Magmortar - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Togekiss - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Leafeon - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Glaceon - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Gliscor - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Mamoswine - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; PorygonZ - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Gallade - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Froslass - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Drilbur - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Excadrill - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Venipede - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Whirlipede - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Scolipede - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cottonee - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Whimsicott - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Sandile - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Krokorok - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Krookodile - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Maractus - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Dwebble - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Crustle - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Scraggy - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Scrafty - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Minccino - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cinccino - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Joltik - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Galvantula - PLACEHOLDER
+	mon_cry CRY_WOOPER,     -$010,  $210 	; Litwick
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Lampent - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Chandelure - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Larvesta - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Volcarona - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Pancham - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Pangoro - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Tyrunt - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Tyrantrum - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Amaura - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Aurorus - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Sylveon - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Phantump - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Trevenant - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Noibat - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Noivern - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Pikipek - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Trumbeak - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Toucannon - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Mareanie - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Toxapex - PLACEHOLDER
 	mon_cry CRY_RAICHU,      $0ee,  $088 	; Raichu_A
 	mon_cry CRY_DODUO,   	 $000,  $100 	; Exeggcute_A
 	mon_cry CRY_EXEGGUTOR,   $000,  $100 	; Exeggutor_A

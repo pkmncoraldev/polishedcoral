@@ -1279,31 +1279,31 @@
 	db 22, SWINUB		;20%
 	db 22, MACHOP		;10%
 	db 22, MACHOP		;5%
-	db 22, ONIX			;4%
-	db 22, ONIX			;1%
+	db 22, NOIBAT		;4%
+	db 22, NOIBAT			;1%
 	; day
 	db 22, ZUBAT		;30%
 	db 22, GEODUDE		;30%
 	db 22, SWINUB		;20%
 	db 22, MACHOP		;10%
 	db 22, MACHOP		;5%
-	db 22, ONIX			;4%
-	db 22, ONIX			;1%
+	db 22, NOIBAT		;4%
+	db 22, NOIBAT		;1%
 	; nite
 	db 22, ZUBAT		;30%
 	db 22, GEODUDE		;30%
 	db 22, SWINUB		;20%
 	db 22, MACHOP		;10%
 	db 22, MACHOP		;5%
-	db 22, ONIX			;4%
-	db 22, ONIX			;1%
+	db 22, NOIBAT		;4%
+	db 22, NOIBAT		;1%
 	
 	map_id ROUTE_10 ; used on Route 9 during clear weather
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
 	db 23, SNOVER		;30%
 	db 23, SWINUB		;30%
-	db 23, MACHOP		;20%
+	db 23, SNOVER		;20%
 	db 23, MEDITITE		;10%
 	db 23, SNORUNT		;5%
 	db 23, SNEASEL		;4%
@@ -1311,7 +1311,7 @@
 	; day
 	db 23, SNOVER		;30%
 	db 23, SWINUB		;30%
-	db 23, MACHOP		;20%
+	db 23, SNOVER		;20%
 	db 23, MEDITITE		;10%
 	db 23, SNORUNT		;5%
 	db 23, SNEASEL		;4%
@@ -1319,7 +1319,7 @@
 	; nite
 	db 23, SNOVER		;30%
 	db 23, SWINUB		;30%
-	db 23, MACHOP		;20%
+	db 23, SNOVER		;20%
 	db 23, MEDITITE		;10%
 	db 23, SNORUNT		;5%
 	db 23, SNEASEL		;4%

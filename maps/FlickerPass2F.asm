@@ -124,10 +124,10 @@ TrainerFlickerPass2F_4:
 
 	text "Alright, fine!"
 	
+	para "I'll admit it!"
+	
 	para "I can't get my"
 	line "skis off!"
-	
-	para "They're stuck!"
 	done
 
 .SeenText:
@@ -144,7 +144,7 @@ TrainerFlickerPass2F_4:
 	done
 	
 TrainerFlickerPass2F_5:
-	generictrainer FIREBREATHER, SIMION, EVENT_BEAT_FLICKER_PASS_2F_TRAINER_5, .SeenText, .BeatenText
+	generictrainer FIREBREATHER, GARTH, EVENT_BEAT_FLICKER_PASS_2F_TRAINER_5, .SeenText, .BeatenText
 
 	text "Your heart was"
 	line "too icy cold for"

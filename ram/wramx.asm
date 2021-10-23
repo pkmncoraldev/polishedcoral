@@ -1006,6 +1006,7 @@ wSpookhouseTVRoomTrigger:: ds 1
 wRoute9Trigger:: ds 1
 wDodrioRanchRaceTrackTrigger:: ds 1
 wFlickerStationTrigger:: ds 1
+wFlickerTrainGraveyardTrigger:: ds 1
 wFlickerPass2FTrigger:: ds 1
 wFlickerTrainCutsceneTrigger:: ds 1
 wRoute10Trigger:: ds 1
@@ -1040,7 +1041,7 @@ wShimmerHarborTrigger:: ds 1
 wBrilloTownTrigger:: ds 1
 wRoute12NorthTrigger:: ds 1
 
-ds 20
+ds 19
 
 ; fight counts
 wJackFightCount::    ds 1

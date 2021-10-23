@@ -24,7 +24,7 @@ FlickerTrainCutscene_MapScriptHeader:
 	const FLICKER_TRAIN_CUTSCENE_NPC3
 	
 FlickerTrainCutsceneTrigger0:
-	applymovement PLAYER, Movement_FlickerStation3Girls2
+	applymovement PLAYER, Movement_FlickerTrainGraveyard3Girls2
 	playsound SFX_ENTER_DOOR
 	applyonemovement PLAYER, hide_person
 	waitsfx

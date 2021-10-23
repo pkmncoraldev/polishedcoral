@@ -102,8 +102,8 @@ ItemDescriptions:
 	dw LostItemDesc
 	dw RivalPokedexDesc
 	dw SkateboardDesc
-	dw ClearBellDesc
-	dw GSBallDesc
+	dw TrainTicketDesc
+	dw TrainPassDesc
 	dw BlueCardDesc
 	dw OrangeTicketDesc
 	dw MysticTicketDesc
@@ -641,13 +641,13 @@ SkateboardDesc:
 	db   "A cool skateboard."
 	next "Can do tricks!@"
 
-ClearBellDesc:
-	db   "Makes a gentle"
-	next "ringing.@"
+TrainTicketDesc:
+	db   "Lets you ride the"
+	next "train. (One time)@"
 
-GSBallDesc:
-	db   "The mysterious"
-	next "BALL.@"
+TrainPassDesc:
+	db   "Lets you ride the"
+	next "train. (Unlimited)@"
 
 BlueCardDesc:
 	db   "Card to save"

@@ -122,6 +122,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_READ_JASMINE_JOURNAL
 	setflag ENGINE_READ_PRYCE_JOURNAL
 	setflag ENGINE_READ_CLAIR_JOURNAL
+	domaptrigger FLICKER_STATION, 1
 .hms
 	writetext PlayerHouseDebugText4
 	yesorno

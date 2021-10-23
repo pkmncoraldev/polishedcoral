@@ -303,7 +303,7 @@ CoinVendor_WelcomeText:
 	done
 
 CoinVendor_WelcomeText2:
-	text "I threw in 50"
+	text "I threw in"
 	line "50 COINs on the"
 	cont "house."
 	

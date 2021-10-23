@@ -234,6 +234,9 @@ EventideGym_BlockData:
 FlickerStation_BlockData:
 	INCBIN "maps/FlickerStation.ablk.lz"
 	
+FlickerTrainGraveyard_BlockData:
+	INCBIN "maps/FlickerTrainGraveyard.ablk.lz"
+	
 FlickerTrainStation_BlockData:
 	INCBIN "maps/FlickerTrainStation.ablk.lz"
 	

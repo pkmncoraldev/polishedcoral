@@ -251,6 +251,10 @@ EventideGymWendy:
 	writetext EventideGymWendyTextTMSpeech
 	waitbutton
 	closetext
+	checkevent EVENT_BEAT_CHARLIE
+	iffalse .end
+	domaptrigger FLICKER_STATION, 1
+.end
 	end
 
 .GotTMFromWendy:

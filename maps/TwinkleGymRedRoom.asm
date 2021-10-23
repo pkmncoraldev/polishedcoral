@@ -63,6 +63,10 @@ TwinkleGymCharlie:
 	writetext TwinkleGymCharlieTextTMSpeech
 	waitbutton
 	closetext
+	checkevent EVENT_BEAT_WENDY
+	iffalse .end
+	domaptrigger FLICKER_STATION, 1
+.end
 	end
 
 .GotTMFromCharlie:

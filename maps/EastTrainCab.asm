@@ -134,6 +134,7 @@ EastTrainCabLocke:
 	setevent EVENT_ALWAYS_SET
 	setevent EVENT_BEAT_TRAIN_CABIN_1_SNARE_1
 	setevent EVENT_SAVED_TRAIN
+	setevent EVENT_FLICKER_TRAIN_STATION_SNARE
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	special Special_FadeOutMusic
 	waitsfx

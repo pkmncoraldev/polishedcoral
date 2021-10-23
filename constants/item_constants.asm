@@ -119,9 +119,9 @@
 	const R_ROOM_KEY   ; 64
 	const LOST_ITEM    ; 65 - replace
 	const RIVAL_POKEDEX; 66
-	const SKATEBOARD  ; 67
-	const CLEAR_BELL   ; 68 - replace
-	const GS_BALL      ; 69 - replace
+	const SKATEBOARD   ; 67
+	const TRAIN_TICKET ; 68
+	const TRAIN_PASS   ; 69
 	const BLUE_CARD    ; 6a - replace
 	const ORANGETICKET ; 6b - replace
 	const MYSTICTICKET ; 6c - replace
@@ -334,7 +334,7 @@
 	const NAM_CHOICE_SCARF ; 25
 	const NAM_CHOICE_SPECS ; 26
 	const NAM_CLEANSE_TAG  ; 27
-	const NAM_CLEAR_BELL   ; 28
+	const NAM_TRAIN_TICKET ; 28
 	const NAM_COIN_CASE    ; 29
 	const NAM_DAMP_ROCK    ; 2a
 	const NAM_DESTINY_KNOT ; 2b
@@ -373,7 +373,7 @@
 	const NAM_GOOD_ROD     ; 4c
 	const NAM_GREAT_BALL   ; 4d
 	const NAM_GRIP_CLAW    ; 4e
-	const NAM_GS_BALL      ; 4f
+	const NAM_TRAIN_PASS   ; 4f
 	const NAM_GUARD_SPEC   ; 50
 	const NAM_HARD_STONE   ; 51
 	const NAM_HEAL_BALL    ; 52

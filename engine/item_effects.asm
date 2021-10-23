@@ -117,8 +117,8 @@ ItemEffects: ; e73c
 	dw NoEffect         ; LOST_ITEM
 	dw NoEffect         ; RIVAL_POKEDEX
 	dw Skateboard       ; SKATEBOARD
-	dw NoEffect         ; CLEAR_BELL
-	dw NoEffect         ; GS_BALL
+	dw NoEffect         ; TRAIN_TICKET
+	dw NoEffect         ; TRAIN_PASS
 	dw BlueCard         ; BLUE_CARD
 	dw NoEffect         ; ORANGETICKET
 	dw NoEffect         ; MYSTICTICKET

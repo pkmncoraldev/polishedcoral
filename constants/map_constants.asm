@@ -185,7 +185,7 @@ MAP_NONE   EQU 0
 
 	newgroup													 ; 10
 	
-	map_const FLICKER_STATION,							  36, 18 ; 1
+	map_const FLICKER_STATION,							  22, 19 ; 1
 	map_const FLICKER_SOUND_SPEECH_HOUSE,				   4,  4 ; 2
 	map_const FLICKER_NAME_SPEECH_HOUSE,				   4,  4 ; 3
 	map_const FLICKER_POKECENTER,                          6,  4 ; 4
@@ -196,6 +196,7 @@ MAP_NONE   EQU 0
 	map_const LUSTER_TRAIN_CUTSCENE,					  33,  4 ; 9
 	map_const LUSTER_TRAIN_STATION,						  16,  8 ; 10
 	map_const LUSTER_CITY_BUSINESS,					      24, 24 ; 11
+	map_const FLICKER_TRAIN_GRAVEYARD,					  14, 18 ; 12
 	
 	newgroup													 ; 11
 	

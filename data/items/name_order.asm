@@ -120,8 +120,8 @@ ItemNameOrder:
 	db NAM_LOST_ITEM    ; 6b
 	db NAM_RIVAL_POKEDEX ; b9
 	db NAM_SKATEBOARD  ; d5
-	db NAM_CLEAR_BELL   ; 28
-	db NAM_GS_BALL      ; 4f
+	db NAM_TRAIN_TICKET   ; 28
+	db NAM_TRAIN_PASS      ; 4f
 	db NAM_BLUE_CARD    ; 17
 	db NAM_ORANGETICKET ; 97
 	db NAM_MYSTICTICKET ; 8d

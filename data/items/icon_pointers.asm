@@ -103,8 +103,8 @@ ItemIconPointers:
 	dw LostItemIcon
 	dw RivalPokedexIcon
 	dw SkateboardIcon
-	dw ClearBellIcon
-	dw GSBallIcon
+	dw TrainTicketIcon
+	dw TrainPassIcon
 	dw BlueCardIcon
 	dw OrangeTicketIcon
 	dw MysticTicketIcon

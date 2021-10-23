@@ -150,7 +150,7 @@ ENDM
 	connection east, StarglowValley, STARGLOW_VALLEY, 0
 	
 	map_attributes Route9, ROUTE_9, $d1, NORTH | WEST
-	connection north, FlickerStation, FLICKER_STATION, -9
+	connection north, FlickerStation, FLICKER_STATION, 5
 	connection west, EventideVillage, EVENTIDE_VILLAGE, 16
 	
 	map_attributes Route10, ROUTE_10, 5, NORTH | EAST
@@ -163,12 +163,16 @@ ENDM
 	map_attributes EventideVillage, EVENTIDE_VILLAGE, $d9, EAST
 	connection east, Route9, ROUTE_9, -16
 
-	map_attributes FlickerStation, FLICKER_STATION, $d1, NORTH | SOUTH
-	connection north, FlickerPassOutside, FLICKER_PASS_OUTSIDE, 21
-	connection south, Route9, ROUTE_9, 9
+	map_attributes FlickerStation, FLICKER_STATION, $d1, NORTH | SOUTH | WEST
+	connection north, FlickerPassOutside, FLICKER_PASS_OUTSIDE, 7
+	connection south, Route9, ROUTE_9, -5
+	connection west, FlickerTrainGraveyard, FLICKER_TRAIN_GRAVEYARD, 0
+	
+	map_attributes FlickerTrainGraveyard, FLICKER_TRAIN_GRAVEYARD, $d1, EAST
+	connection east, FlickerStation, FLICKER_STATION, 0
 	
 	map_attributes FlickerPassOutside, FLICKER_PASS_OUTSIDE, 113, SOUTH
-	connection south, FlickerStation, FLICKER_STATION, -21
+	connection south, FlickerStation, FLICKER_STATION, -7
 	
 	map_attributes LakeOnwa, LAKE_ONWA, $30, NORTH | EAST
 	connection north, Route8, ROUTE_8, 5

@@ -1984,9 +1984,8 @@ UnknownText_0xcf58: ; 0xcf58
 	db "@"
 
 AskRockSmashScript: ; 0xcf5d
-	ld a, [wOptions1]
-	bit DEBUG_MODE, a
-	jr nz, .debugrocksmash
+	checkdebugmode
+	iftrue .debugrocksmash
 	callasm HasRockSmash
 	ifequal 1, .no
 	playsound SFX_READ_TEXT_2
@@ -2658,9 +2657,8 @@ HasCutAvailable:: ; d186
 	ret
 
 AskCutTreeScript: ; 0xd1a9
-	ld a, [wOptions1]
-	bit DEBUG_MODE, a
-	jr nz, .debugcut
+	checkdebugmode
+	iftrue .debugcut
 	callasm HasCutAvailable
 	ifequal 1, .no
 	playsound SFX_READ_TEXT_2

@@ -34,6 +34,7 @@ SpookyForestReset:
 	special Special_FadeBlackQuickly
 	playsound SFX_PERISH_SONG
 	waitsfx
+	pause 5
 	special FadeOutPalettes
 	special Special_StopRunning
 	checkflag ENGINE_HAVE_FOLLOWER

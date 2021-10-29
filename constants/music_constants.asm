@@ -64,6 +64,7 @@
 	const MUSIC_CLOWN
 	const MUSIC_MINIBOSS_BATTLE
 	const MUSIC_SHIMMER_CITY
+	const MUSIC_OASIS
 	
 NUM_SONGS EQU const_value
 

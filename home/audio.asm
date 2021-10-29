@@ -514,10 +514,13 @@ ChannelsOff:: ; 3e10
 SFXChannelsOff:: ; 3e21
 ; Quickly turn off sound effect channels
 	xor a
+	ld [wSoundInput], a
+	
+KillSFX::
+	xor a
 	ld [wChannel5Flags], a
 	ld [wChannel6Flags], a
 	ld [wChannel7Flags], a
 	ld [wChannel8Flags], a
-	ld [wSoundInput], a
 	ret
 ; 3e32

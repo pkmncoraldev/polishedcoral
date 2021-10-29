@@ -302,4 +302,15 @@ MAP_NONE   EQU 0
 	map_const BRILLO_MART,                    			   5,  4 ; 7
 	map_const BRILLO_GAME_CORNER,              			   7,  5 ; 8
 	map_const ROUTE_12,         	           			  24, 17 ; 9
-	map_const ROUTE_12_NORTH,       	           		  11, 13 ; 10
+	map_const ROUTE_12_NORTH,       	           		  13, 15 ; 10
+	map_const DESERT_WASTELAND_1,              			   9,  9 ; 11
+	map_const DESERT_WASTELAND_2,              			   9,  9 ; 12
+	map_const DESERT_WASTELAND_3,              			   9,  9 ; 13
+	map_const DESERT_WASTELAND_4,              			   9,  9 ; 14
+	map_const DESERT_WASTELAND_5,              			   9,  9 ; 15
+	map_const DESERT_WASTELAND_6,              			   9,  9 ; 16
+	map_const DESERT_WASTELAND_7,              			   9,  9 ; 17
+	map_const DESERT_WASTELAND_8,              			   9,  9 ; 18
+	map_const DESERT_WASTELAND_9,              			   9,  9 ; 19
+	map_const DESERT_WASTELAND_OASIS,          			  11, 10 ; 20
+	map_const DESERT_TEMPLE_OUTSIDE,           			   9,  9 ; 21

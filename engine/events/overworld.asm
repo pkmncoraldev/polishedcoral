@@ -2691,10 +2691,12 @@ UnknownText_0xd1d0: ; 0xd1d0
 
 HandleEventsFly:
 	clearevent EVENT_SNOWSTORM_HAPPENING
+	clearevent EVENT_SANDSTORM_HAPPENING
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	domaptrigger SUNSET_CAPE, $0
 	domaptrigger ROUTE_10, $0
-	domaptrigger SUNSET_CAPE, $0
+	domaptrigger ROUTE_12_NORTH, $0
+	domaptrigger DESERT_WASTELAND_1, $0
 	clearevent EVENT_ON_DODRIO_RANCH
 	clearflag ENGINE_NEAR_CAMPFIRE
 	clearevent EVENT_IN_RESIDENTIAL_DISTRICT

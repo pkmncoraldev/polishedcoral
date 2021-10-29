@@ -204,15 +204,15 @@ TilesetDesertAnim::
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw NULL,  WaitTileAnimation
 	dw VTiles2 tile $14, WriteTileFromBuffer
+	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw FlagFrames, AnimateWaterfallTiles
 	dw FlagFrames2, AnimateWaterfallTiles
-    dw NULL,  WaitTileAnimation
-    dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+	dw ShorelineFrames3,  AnimateWaterfallTiles
+	dw ShorelineFrames,  AnimateWaterfallTiles
+	dw ShorelineFrames2,  AnimateWaterfallTiles
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

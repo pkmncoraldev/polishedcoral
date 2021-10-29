@@ -602,3 +602,26 @@ Route12_BlockData:
 Route12North_BlockData:
 	INCBIN "maps/Route12North.ablk.lz"
 	
+DesertWasteland1_BlockData:
+DesertWasteland3_BlockData:
+DesertWasteland9_BlockData:
+	INCBIN "maps/DesertWastelandNorth.ablk.lz"
+	
+DesertWasteland2_BlockData:
+DesertWasteland6_BlockData:
+	INCBIN "maps/DesertWastelandWest.ablk.lz"
+	
+DesertWasteland4_BlockData:
+	INCBIN "maps/DesertWastelandEast.ablk.lz"
+	
+DesertWasteland5_BlockData:
+DesertWasteland7_BlockData:
+DesertTempleOutside_BlockData:
+	INCBIN "maps/DesertWastelandSouth.ablk.lz"
+	
+DesertWasteland8_BlockData:
+	INCBIN "maps/DesertWastelandSecret.ablk.lz"
+	
+DesertWastelandOasis_BlockData:
+	INCBIN "maps/DesertWastelandOasis.ablk.lz"
+	

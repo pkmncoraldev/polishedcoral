@@ -87,6 +87,7 @@ INCLUDE "maps/Route9.asm"
 INCLUDE "maps/Route10.asm"
 INCLUDE "maps/Route12.asm"
 INCLUDE "maps/Route12North.asm"
+INCLUDE "maps/DesertWastelandOasis.asm"
 
 
 SECTION "Routes Scripts2", ROMX
@@ -313,3 +314,15 @@ SECTION "Dodrio Ranch Scripts", ROMX
 INCLUDE "maps/DodrioRanchHouse.asm"
 INCLUDE "maps/DodrioRanchBarn.asm"
 INCLUDE "maps/DodrioRanchRaceTrack.asm"
+
+SECTION "Desert Wasteland Scripts", ROMX
+INCLUDE "maps/DesertWasteland1.asm"
+INCLUDE "maps/DesertWasteland2.asm"
+INCLUDE "maps/DesertWasteland3.asm"
+INCLUDE "maps/DesertWasteland4.asm"
+INCLUDE "maps/DesertWasteland5.asm"
+INCLUDE "maps/DesertWasteland6.asm"
+INCLUDE "maps/DesertWasteland7.asm"
+INCLUDE "maps/DesertWasteland8.asm"
+INCLUDE "maps/DesertWasteland9.asm"
+INCLUDE "maps/DesertTempleOutside.asm"

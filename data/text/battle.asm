@@ -103,7 +103,7 @@ SandstormHitsText: ; 0x8084d
 HailHitsText:
 	text "<USER> is"
 	line "buffeted by"
-	cont "the hail!"
+	cont "the HAIL!"
 	prompt
 
 PerishCountText: ; 0x80864
@@ -281,7 +281,7 @@ BattleText_TheSandstormRages: ; 0x80951
 ; 0x80967
 
 BattleText_TheHailContinuesToFall:
-	text "The hail continues"
+	text "The HAIL continues"
 	line "to fall."
 	prompt
 
@@ -297,13 +297,13 @@ BattleText_TheSunlightFaded: ; 0x8097a
 ; 0x8098f
 
 BattleText_TheSandstormSubsided: ; 0x8098f
-	text "The sandstorm"
+	text "The SANDSTORM"
 	line "subsided."
 	prompt
 ; 0x809a8
 
 BattleText_TheHailStopped:
-	text "The hail stopped."
+	text "The HAIL stopped."
 	prompt
 
 BattleText_EnemyPkmnFainted: ; 0x809a8
@@ -461,7 +461,7 @@ BattleText_UserFledUsingAStringBuffer1: ; 0x80b89
 
 BattleText_UserHurtBySpikes: ; 0x80bae
 	text "<USER> is"
-	line "hurt by spikes!"
+	line "hurt by SPIKES!"
 	prompt
 ; 0x80bc2
 
@@ -1370,24 +1370,24 @@ PutACurseText: ; 0x8163d
 
 ProtectedItselfText: ; 0x81665
 	text "<USER>"
-	line "protected itself!"
+	line "PROTECTED itself!"
 	prompt
 ; 0x8167a
 
 ProtectingItselfText: ; 0x8167a
 	text "<TARGET> is"
-	line "protecting itself!"
+	line "PROTECTING itself!"
 	done
 ; 0x81691
 
 SpikesText:
-	text "Spikes scattered"
+	text "SPIKES scattered"
 	line "all around"
 	cont "<TARGET>!"
 	prompt
 
 ToxicSpikesText:
-	text "Toxic spikes"
+	text "TOXIC SPIKES"
 	line "scattered around"
 	cont "<TARGET>!"
 	prompt
@@ -1405,20 +1405,20 @@ TookAimText: ; 0x816b1
 	prompt
 
 StartPerishText: ; 0x816c2
-	text "Both #mon will"
+	text "Both #MON will"
 	line "faint in 3 turns!"
 	prompt
 ; 0x816e4
 
 SandstormBrewedText: ; 0x816e4
-	text "A sandstorm"
+	text "A SANDSTORM"
 	line "brewed!"
 	prompt
 ; 0x816f9
 
 HailStartedText:
 	text "It started to"
-	line "hail!"
+	line "HAIL!"
 	prompt
 
 BracedItselfText: ; 0x816f9
@@ -1447,7 +1447,7 @@ WishCameTrueText:
 SafeguardProtectText: ; 0x81733
 	text "<TARGET>"
 	line "is protected by"
-	cont "Safeguard!"
+	cont "SAFEGUARD!"
 	prompt
 ; 0x81751
 
@@ -1473,13 +1473,13 @@ ShedLeechSeedText: ; 0x8177a
 
 BlewSpikesText:
 	text "<USER>"
-	line "blew away Spikes!"
+	line "blew away SPIKES!"
 	prompt
 
 BlewToxicSpikesText:
 	text "<USER>"
-	line "blew away Toxic"
-	cont "Spikes!"
+	line "blew away TOXIC"
+	cont "SPIKES!"
 	prompt
 
 DownpourText: ; 0x817a3
@@ -1487,6 +1487,10 @@ DownpourText: ; 0x817a3
 	line "to rain!"
 	prompt
 ; 0x817b8
+
+HailingText:
+	text "It is HAILING!"
+	prompt
 
 SunGotBrightText: ; 0x817b8
 	text "The sunlight"
@@ -1497,7 +1501,7 @@ SunGotBrightText: ; 0x817b8
 BellyDrumText: ; 0x817d2
 	text "<USER>"
 	line "cut its HP and"
-	cont "maximized Attack!"
+	cont "maximized ATTACK!"
 	prompt
 ; 0x817f6
 
@@ -1548,7 +1552,7 @@ NotifyCloudNine:
 NotifyPressure:
 	text "<USER> is"
 	line "exerting its"
-	cont "Pressure!"
+	cont "PRESSURE!"
 	prompt
 
 NotifyMoldBreaker:
@@ -1559,7 +1563,7 @@ NotifyMoldBreaker:
 NotifyUnnerve:
 	text "<TARGET> is"
 	line "too afraid to eat"
-	cont "Berries!"
+	cont "BERRIES!"
 	prompt
 
 FriskedItemText:
@@ -1590,25 +1594,25 @@ HarvestedItemText:
 
 PoisonHealText:
 	text "<USER>'s"
-	line "Poison Heal"
+	line "POISON HEAL"
 	cont "restored health!"
 	prompt
 
 FirePoweredUpText:
 	text "<USER>'s"
-	line "Fire-type moves"
+	line "FIRE-type moves"
 	cont "were powered up!"
 	prompt
 
 AngerPointMaximizedAttackText:
 	text "<USER>"
-	line "maximized Attack"
-	cont "with Anger Point!"
+	line "maximized ATTACK"
+	cont "with ANGER POINT!"
 	prompt
 
 DampAbilityText:
 	text "<USER>'s"
-	line "Damp prevented"
+	line "DAMP prevented"
 	cont "the explosion!"
 	prompt
 

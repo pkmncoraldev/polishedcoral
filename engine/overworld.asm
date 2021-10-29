@@ -297,7 +297,7 @@ LoadEmoteGFX::
 	cp TILESET_SNOW
 	jp z, .snow
 	cp TILESET_DESERT
-	jp z, .snow
+	jp z, .desert
 	cp TILESET_SHIMMER
 	jp z, .outdoor
 	cp TILESET_PLAYER_HOUSE
@@ -319,6 +319,10 @@ LoadEmoteGFX::
 	jp LoadEmote
 ; 14236
 
+.desert
+	ld a, [wMapNumber]
+	cp MAP_DESERT_WASTELAND_OASIS
+	jp z, .outdoor
 .snow
 	ld c, EMOTE_SHAKING_SNOW
 	call LoadEmote

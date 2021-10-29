@@ -2141,12 +2141,19 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	eventflagcheck EVENT_SNOWSTORM_HAPPENING
 	jr nz, .snowstorm
 .not_on_snowstorm_map
+	ld a, [wTileset]
+	cp TILESET_DESERT
+	jr nz, .not_on_sandstorm_map
+	eventflagcheck EVENT_SANDSTORM_HAPPENING
+	jr nz, .sandstorm
+.not_on_sandstorm_map
 	call CheckSFX
 	ret c
 	
 	ld de, SFX_BUMP
 	jp PlaySFX
 .snowstorm
+.sandstorm
 	ld a, [wCurSFX]
 	cp SFX_SNOWSTORM_INTRO
 	jr z, .skip

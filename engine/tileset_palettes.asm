@@ -147,20 +147,108 @@ LoadSpecialMapPalette: ; 494ac
 	jp nz, .do_nothing
 	ld a, [wMapNumber]
 	cp MAP_BRILLO_GAME_CORNER
-	jr nz, .desert_house
+	jp nz, .desert_house
 	ld hl, GameCornerPalette
 	jp LoadSevenBGPalettes
 	
 .desert
-	ld a, [wMapNumber]
-	cp MAP_ROUTE_12_NORTH
-	jr z, .desert_tent
+	ld a, [wTimeOfDayPalFlags]
+	and $3F
+	cp 1
+	jp z, .sandstorm
 	ld hl, OutsideDesertPalette
-	jp LoadSevenTimeOfDayBGPalettes
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals
+	ld bc, 7 palettes
+	call FarCopyWRAM
+	ld a, [wMapGroup]
+	cp GROUP_DESERT_WASTELAND_OASIS
+	jp nz, .nett2_end
+	ld a, [wMapNumber]
+	cp MAP_BRILLO_TOWN
+	jp z, .brillo
+	cp MAP_ROUTE_12_NORTH
+	jp z, .desert_tent
+	cp MAP_DESERT_WASTELAND_OASIS
+	jr z, .oasis1
+	cp MAP_DESERT_WASTELAND_8
+	jr z, .oasis1
+	jp .nett2_end
+	
+.sandstorm
+	ld a, [wIsNearCampfire]
+	bit 0, a
+	jr nz, .desert_tent
+	ld hl, OutsideSandstormPalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals
+	ld bc, 7 palettes
+	call FarCopyWRAM
+	ld a, [wMapGroup]
+	cp GROUP_DESERT_WASTELAND_OASIS
+	jp nz, .nett2_end
+	ld a, [wMapNumber]
+	cp MAP_DESERT_WASTELAND_OASIS
+	jr z, .oasis2
+	cp MAP_DESERT_WASTELAND_8
+	jr z, .oasis2
+	jp .nett2_end
+	
+.oasis1
+	ld hl, OasisPalette1
+	jr .oasis_cont
+.oasis2
+	ld hl, OasisPalette2
+.oasis_cont
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals + 6 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 	
 .desert_tent
-	ld hl, OutsideDesertTentPalette
-	jp LoadSevenTimeOfDayBGPalettes
+	ld hl, OutsideDesertPalette
+	call LoadSevenTimeOfDayBGPalettes
+	ld hl, DesertTentPalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
+	
+.brillo
+	ld hl, BrilloWindowPalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals + 3 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 	
 .desert_house
 	ld hl, DesertHousePalette
@@ -541,10 +629,10 @@ LoadSpecialMapOBPalette:
 	ret
 
 GameCornerPalette:
-INCLUDE "maps/palettes/bgpals/game_corner.pal"
+INCLUDE "maps/palettes/bgpals/gamecorner.pal"
 	
 DesertHousePalette:
-INCLUDE "maps/palettes/bgpals/desert_house.pal"
+INCLUDE "maps/palettes/bgpals/deserthouse.pal"
 	
 StarglowCavernPalette:
 INCLUDE "maps/palettes/bgpals/starglow_cavern.pal"
@@ -621,6 +709,9 @@ INCLUDE "maps/palettes/bgpals/bgsnowtent.pal"
 OutsideSnowStormPalette:
 INCLUDE "maps/palettes/bgpals/bgsnowstorm.pal"
 
+OutsideSandstormPalette:
+INCLUDE "maps/palettes/bgpals/bgsandstorm.pal"
+
 OutsideSnowStormTentPalette:
 INCLUDE "maps/palettes/bgpals/bgsnowstormtent.pal"
 
@@ -639,11 +730,21 @@ INCLUDE "maps/palettes/bgpals/bgskatepark.pal"
 OutsideDesertPalette:
 INCLUDE "maps/palettes/bgpals/bgdesert.pal"
 
-OutsideDesertTentPalette:
-INCLUDE "maps/palettes/bgpals/bgdeserttent.pal"
-
 SunbeamViewPalette:
 INCLUDE "maps/palettes/bgpals/sunbeamview.pal"
 
 LusterTrainPalette:
 INCLUDE "maps/palettes/bgpals/lustertrain.pal"
+
+DesertTentPalette:
+INCLUDE "maps/palettes/bgpals/deserttent.pal"
+
+OasisPalette1:
+INCLUDE "maps/palettes/bgpals/oasis1.pal"
+
+OasisPalette2:
+INCLUDE "maps/palettes/bgpals/oasis2.pal"
+
+BrilloWindowPalette:
+INCLUDE "maps/palettes/bgpals/brillo.pal"
+

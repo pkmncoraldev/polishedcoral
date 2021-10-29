@@ -64,4 +64,5 @@ Music:
 	dba Music_Clown
 	dba Music_MinibossBattle
 	dba Music_ShimmerCity
+	dba Music_Oasis
 	

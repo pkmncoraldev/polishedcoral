@@ -122,7 +122,8 @@ DoBattle: ; 3c000
 
 .not_linked_2
 	call HandleFirstAirBalloon
-;	call BoostGiovannisArmoredMewtwo
+	call AutomaticHailWhenSnowstorm
+	call AutomaticSandstormInDesert
 	call RunBothActivationAbilities
 	jp BattleTurn
 ; 3c0e5
@@ -9722,17 +9723,29 @@ CheckPluralTrainer:
 	and a
 	ret
 
-AutomaticRainWhenOvercast:
-	call GetOvercastIndex
-	and a
+AutomaticHailWhenSnowstorm:
+	eventflagcheck EVENT_SNOWSTORM_HAPPENING
 	ret z
-	ld a, WEATHER_RAIN
+	ld a, WEATHER_HAIL
 	ld [wWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
-	ld de, RAIN_DANCE
+	ld de, HAIL
 	call Call_PlayBattleAnim
-	ld hl, DownpourText
+	ld hl, HailingText
+	call StdBattleTextBox
+	jp EmptyBattleTextBox
+	
+AutomaticSandstormInDesert:
+	eventflagcheck EVENT_SNOWSTORM_HAPPENING
+	ret z
+	ld a, WEATHER_HAIL
+	ld [wWeather], a
+	ld a, 255
+	ld [wWeatherCount], a
+	ld de, HAIL
+	call Call_PlayBattleAnim
+	ld hl, HailingText
 	call StdBattleTextBox
 	jp EmptyBattleTextBox
 

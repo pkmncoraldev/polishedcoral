@@ -282,8 +282,52 @@ ENDM
 	connection north, Route12North, ROUTE_12_NORTH, 14
 	connection west, BrilloTown, BRILLO_TOWN, 7
 	
-	map_attributes Route12North, ROUTE_12_NORTH, $71, SOUTH
+	map_attributes Route12North, ROUTE_12_NORTH, $02, NORTH | SOUTH
+	connection north, DesertWasteland1, DESERT_WASTELAND_1, 3
 	connection south, Route12, ROUTE_12, -14
+	
+	map_attributes DesertWasteland1, DESERT_WASTELAND_1, $02, NORTH | SOUTH
+	connection north, DesertWasteland2, DESERT_WASTELAND_2, 0
+	connection south, Route12North, ROUTE_12_NORTH, -3
+	
+	map_attributes DesertWasteland2, DESERT_WASTELAND_2, $02, SOUTH | WEST
+	connection south, DesertWasteland1, DESERT_WASTELAND_1, 0
+	connection west, DesertWasteland3, DESERT_WASTELAND_3, 0
+	
+	map_attributes DesertWasteland3, DESERT_WASTELAND_3, $02, NORTH | EAST
+	connection north, DesertWasteland4, DESERT_WASTELAND_4, 0
+	connection east, DesertWasteland2, DESERT_WASTELAND_2, 0
+	
+	map_attributes DesertWasteland4, DESERT_WASTELAND_4, $02, SOUTH | EAST
+	connection south, DesertWasteland3, DESERT_WASTELAND_3, 0
+	connection east, DesertWasteland5, DESERT_WASTELAND_5, 0
+	
+	map_attributes DesertWasteland5, DESERT_WASTELAND_5, $02, SOUTH | WEST
+	connection south, DesertWasteland6, DESERT_WASTELAND_6, 0
+	connection west, DesertWasteland4, DESERT_WASTELAND_4, 0
+	
+	map_attributes DesertWasteland6, DESERT_WASTELAND_6, $02, NORTH | WEST
+	connection north, DesertWasteland5, DESERT_WASTELAND_5, 0
+	connection west, DesertWasteland7, DESERT_WASTELAND_7, 0
+	
+	map_attributes DesertWasteland7, DESERT_WASTELAND_7, $02, SOUTH | EAST
+	connection south, DesertWasteland8, DESERT_WASTELAND_8, 0
+	connection east, DesertWasteland6, DESERT_WASTELAND_6, 0
+	
+	map_attributes DesertWasteland8, DESERT_WASTELAND_8, $02, NORTH | SOUTH | WEST
+	connection north, DesertWasteland7, DESERT_WASTELAND_7, 0
+	connection south, DesertWastelandOasis, DESERT_WASTELAND_OASIS, 1
+	connection west, DesertWasteland9, DESERT_WASTELAND_9, 0
+	
+	map_attributes DesertWasteland9, DESERT_WASTELAND_9, $02, NORTH | EAST
+	connection north, DesertTempleOutside, DESERT_TEMPLE_OUTSIDE, 0
+	connection east, DesertWasteland8, DESERT_WASTELAND_8, 0
+	
+	map_attributes DesertWastelandOasis, DESERT_WASTELAND_OASIS, $02, NORTH
+	connection north, DesertWasteland8, DESERT_WASTELAND_8, -1
+	
+	map_attributes DesertTempleOutside, DESERT_TEMPLE_OUTSIDE, $02, SOUTH
+	connection south, DesertWasteland9, DESERT_WASTELAND_9, 0
 	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0

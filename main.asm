@@ -142,7 +142,6 @@ SECTION "Code 2", ROMX
 INCLUDE "engine/player_object.asm"
 INCLUDE "data/predef_pointers.asm"
 INCLUDE "engine/color.asm"
-INCLUDE "data/items/attributes.asm"
 
 CheckTime:: ; c000
 	ld a, [wTimeOfDay]
@@ -384,6 +383,7 @@ INCLUDE "data/items/marts.asm"
 INCLUDE "engine/events/mom.asm"
 INCLUDE "engine/events/daycare.asm"
 INCLUDE "engine/breeding.asm"
+INCLUDE "data/items/attributes.asm"
 
 
 SECTION "Code 6", ROMX

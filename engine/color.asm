@@ -912,11 +912,17 @@ LoadMapPals::
 	jp FarCopyWRAM
 	
 .desert
+	ld a, [wTimeOfDayPalFlags]
+	and $3F
+	cp 1
+	jp z, .sandstorm
 	ld a, [wMapNumber]
 	cp MAP_BRILLO_TOWN
 	jp z, .sailboat
 	cp MAP_ROUTE_12_NORTH
 	jp z, .desertfire
+	cp MAP_DESERT_WASTELAND_OASIS
+	jp z, .oasis
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
@@ -924,6 +930,32 @@ LoadMapPals::
 	call AddNTimes
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+	
+.oasis
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	ld hl, StandardGrassPalette
+	call AddNTimes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+	
+.sandstorm
+	ld a, [wIsNearCampfire]
+	bit 0, a
+	jr nz, .desertfirecont1
+	ld a, [wTimeOfDayPal]
+	and 3
+	
+	ld bc, 8 palettes
+	ld hl, MapObjectPalsSandstorm
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	jp FarCopyWRAM
 	
@@ -1658,6 +1690,9 @@ INCLUDE "maps/palettes/obpals/obsnowstorm.pal"
 MapObjectPalsSnowstormFire::
 INCLUDE "maps/palettes/obpals/obsnowstormfire.pal"
 
+MapObjectPalsSandstorm::
+INCLUDE "maps/palettes/obpals/obsandstorm.pal"
+
 MapObjectPalsSailboat::
 INCLUDE "maps/palettes/obpals/obsailboat.pal"
 
@@ -1714,6 +1749,9 @@ INCLUDE "maps/palettes/obpals/casino.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"
+
+StandardGrassPalette::
+INCLUDE "maps/palettes/obpals/grass.pal"
 
 RoofPalsDusk::
 INCLUDE "maps/palettes/roofpals/roofdusk.pal"

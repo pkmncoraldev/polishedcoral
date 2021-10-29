@@ -377,6 +377,7 @@ GlintGroveSecondPile:
 GlintGroveGivePetal:
 	verbosegiveitem FLOWER_PETAL
 	closetext
+	callasm MakePalGreen
 	end
 	
 GlintGroveFirstPile2:

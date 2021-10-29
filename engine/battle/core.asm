@@ -9737,15 +9737,15 @@ AutomaticHailWhenSnowstorm:
 	jp EmptyBattleTextBox
 	
 AutomaticSandstormInDesert:
-	eventflagcheck EVENT_SNOWSTORM_HAPPENING
+	eventflagcheck EVENT_SANDSTORM_HAPPENING
 	ret z
-	ld a, WEATHER_HAIL
+	ld a, WEATHER_SANDSTORM
 	ld [wWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
-	ld de, HAIL
+	ld de, SANDSTORM
 	call Call_PlayBattleAnim
-	ld hl, HailingText
+	ld hl, SandstormText
 	call StdBattleTextBox
 	jp EmptyBattleTextBox
 

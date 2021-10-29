@@ -96,7 +96,7 @@ HurtByCurseText: ; 0x80836
 SandstormHitsText: ; 0x8084d
 	text "<USER> is"
 	line "buffeted by"
-	cont "the sandstorm!"
+	cont "the SANDSTORM!"
 	prompt
 ; 0x80864
 
@@ -275,7 +275,7 @@ BattleText_TheSunlightIsStrong: ; 0x80938
 ; 0x80951
 
 BattleText_TheSandstormRages: ; 0x80951
-	text "The sandstorm"
+	text "The SANDSTORM"
 	line "rages."
 	prompt
 ; 0x80967
@@ -1490,6 +1490,11 @@ DownpourText: ; 0x817a3
 
 HailingText:
 	text "It is HAILING!"
+	prompt
+	
+SandstormText: ; 0x80951
+	text "A SANDSTORM"
+	line "rages."
 	prompt
 
 SunGotBrightText: ; 0x817b8

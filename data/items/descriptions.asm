@@ -96,9 +96,9 @@ ItemDescriptions:
 	dw TorchDesc
 	dw OldKeyDesc
 	dw ClayPotDesc
-	dw SSTicketDesc
-	dw PassDesc
-	dw MachinePartDesc
+	dw BRoomKeyDesc
+	dw YRoomKeyDesc
+	dw RRoomKeyDesc
 	dw LostItemDesc
 	dw RivalPokedexDesc
 	dw SkateboardDesc
@@ -617,17 +617,11 @@ ClayPotDesc:
 	db   "A plain looking"
 	next "piece of junk.@"
 
-SSTicketDesc:
-	db   "A ticket for the"
-	next "S.S.AQUA.@"
-
-PassDesc:
-	db   "A ticket for the"
-	next "MAGNET TRAIN.@"
-
-MachinePartDesc:
-	db   "A machine part for"
-	next "the POWER PLANT.@"
+BRoomKeyDesc:
+YRoomKeyDesc:
+RRoomKeyDesc:
+	db   "Key for a door"
+	next "in TWINKLE GYM.@"
 
 LostItemDesc:
 	db   "The # DOLL lost"

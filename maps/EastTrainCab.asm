@@ -164,7 +164,7 @@ EastTrainCabLocke:
 	opentext
 	writetext EastTrainCabEngineerText6
 	waitbutton
-	verbosegiveitem POTION
+	verbosegiveitem TRAIN_PASS
 	writetext EastTrainCabEngineerText7
 	waitbutton
 	closetext

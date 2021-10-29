@@ -213,9 +213,9 @@ TheThingIcon: INCBIN "gfx/items/thething.2bpp.lz"
 TorchIcon:     INCBIN "gfx/items/torch.2bpp.lz"
 OldKeyIcon:      INCBIN "gfx/items/old_key.2bpp.lz"
 ClayPotIcon:  INCBIN "gfx/items/clay_pot.2bpp.lz"
-SSTicketIcon:     INCBIN "gfx/items/s_s_ticket.2bpp.lz"
-PassIcon:         INCBIN "gfx/items/pass.2bpp.lz"
-MachinePartIcon:  INCBIN "gfx/items/machine_part.2bpp.lz"
+BRoomKeyIcon:
+YRoomKeyIcon:
+RRoomKeyIcon:  INCBIN "gfx/items/twinkle_room_key.2bpp.lz"
 LostItemIcon:     INCBIN "gfx/items/lost_item.2bpp.lz"
 RivalPokedexIcon:  INCBIN "gfx/items/rival_pokedex.2bpp.lz"
 SkateboardIcon:   INCBIN "gfx/items/skateboard.2bpp.lz"

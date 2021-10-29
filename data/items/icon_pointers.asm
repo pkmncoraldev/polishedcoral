@@ -97,9 +97,9 @@ ItemIconPointers:
 	dw TorchIcon
 	dw OldKeyIcon
 	dw ClayPotIcon
-	dw SSTicketIcon
-	dw PassIcon
-	dw MachinePartIcon
+	dw BRoomKeyIcon
+	dw YRoomKeyIcon
+	dw RRoomKeyIcon
 	dw LostItemIcon
 	dw RivalPokedexIcon
 	dw SkateboardIcon

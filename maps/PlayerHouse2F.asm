@@ -59,8 +59,8 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke BULBASAUR, 100
-	givepoke LITWICK, 5
-	givepoke GARDEVOIR, 5
+	givepoke CLEFAIRY, 5
+	givepoke CLEFABLE, 5
 .items
 	writetext PlayerHouseDebugText6
 	yesorno
@@ -98,6 +98,10 @@ PlayerHouseDebugPoster:
 	giveitem RIVAL_POKEDEX
 	giveitem OVAL_CHARM
 	giveitem COIN_CASE
+	giveitem TRAIN_TICKET
+	giveitem TRAIN_PASS
+	giveitem TORCH
+	giveitem CLAY_POT
 	givecoins 20
 	setevent EVENT_KNOW_OLLIE
 	setevent EVENT_KNOW_GRIND

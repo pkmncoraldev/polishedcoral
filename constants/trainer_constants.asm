@@ -193,7 +193,6 @@ PLAYER_F EQU __enum__
 	const HARVEY
 	const TED
 	const LEROY
-	const SAMSON
 	const DARRYL
 	const HENRY
 	
@@ -443,7 +442,9 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass DELINQUENT_F
-	
+	const HELGA
+	const MERTLE
+	const REGINA
 	
 	trainerclass BUNEARY_M
 	const BOY_1

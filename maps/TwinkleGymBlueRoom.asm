@@ -105,23 +105,38 @@ TwinkleGymBlueRoomTrainer:
 	jump .return
 
 TwinkleGymBlueRoomTrainerRegularText:
-	text "REGULAR TEXT"
+	text "Ahh!"
+	
+	line "Let the steam melt"
+	line "all your stress"
+	cont "away!"
 	done
 
 TwinkleGymBlueRoomTrainerSeenText:
-	text "SEEN TEXT"
+	text "Turn down the"
+	line "steam?"
+	
+	para "You musta got me"
+	line "confused with"
+	cont "someone else."
+	
+	para "I love the steam!"
 	done
 	
 TwinkleGymBlueRoomTrainerRematchSeenText:
-	text "SEEN TEXT"
+	text "I love battles"
+	line "as much as I love"
+	cont "the steam!"
 	done
 
 TwinkleGymBlueRoomTrainerBeatenText:
-	text "YOU WIN"
+	text "I'm all steamed"
+	line "up!"
 	done
 	
 TwinkleGymBlueRoomTrainerRematchBeatenText:
-	text "YOU WIN"
+	text "I'm all steamed"
+	line "up!"
 	done
 	
 TwinkleGymBlueRoomLeader:

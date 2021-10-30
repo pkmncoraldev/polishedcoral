@@ -434,23 +434,35 @@ TwinkleGymYellowRoomTrainer1:
 	jump .return
 
 TwinkleGymYellowRoomTrainer1RegularText:
-	text "REGULAR TEXT"
+	text "I got burned…"
+	
+	para "You're good."
 	done
 
 TwinkleGymYellowRoomTrainer1SeenText:
-	text "SEEN TEXT"
+	text "Battle! Battle!"
+	
+	para "I'll burn you down,"
+	line "kid!"
 	done
 	
 TwinkleGymYellowRoomTrainer1RematchSeenText:
-	text "SEEN TEXT"
+	text "Battle! Battle!"
+	
+	para "I'll burn you down,"
+	line "kid!"
 	done
 
 TwinkleGymYellowRoomTrainer1BeatenText:
-	text "YOU WIN"
+	text "Ah!"
+	
+	para "It burns!"
 	done
 	
 TwinkleGymYellowRoomTrainer1RematchBeatenText:
-	text "YOU WIN"
+	text "Ah!"
+	
+	para "It burns!"
 	done
 	
 TwinkleGymYellowRoomTrainer2:
@@ -518,23 +530,29 @@ TwinkleGymYellowRoomTrainer2:
 	jump .return
 
 TwinkleGymYellowRoomTrainer2RegularText:
-	text "REGULAR TEXT"
+	text "What a hot"
+	line "battle!"
 	done
 
 TwinkleGymYellowRoomTrainer2SeenText:
-	text "SEEN TEXT"
+	text "Battle time!"
+	
+	para "Let's do this!"
 	done
 	
 TwinkleGymYellowRoomTrainer2RematchSeenText:
-	text "SEEN TEXT"
+	text "Battle time once"
+	line "again!"
+	
+	para "Let's do this!"
 	done
 
 TwinkleGymYellowRoomTrainer2BeatenText:
-	text "YOU WIN"
+	text "Well that's that!"
 	done
 	
 TwinkleGymYellowRoomTrainer2RematchBeatenText:
-	text "YOU WIN"
+	text "Well that's that!"
 	done
 	
 TwinkleGymYellowRoomWorker1:
@@ -639,6 +657,8 @@ TwinkleGymYellowRoomBather2RegularText:
 TwinkleGymYellowRoomBather2SeenText:
 	text "Isn't this bath"
 	line "so nice?"
+	
+	para "Splish splash!"
 	done
 	
 TwinkleGymYellowRoomBather2RematchSeenText:

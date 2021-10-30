@@ -427,6 +427,11 @@ EventideGymWendyTextTMSpeech:
 	line "wings and soar on"
 	cont "the wind!"
 	
+	para "Come back and beat"
+	line "all the TRAINERS"
+	cont "in the GYM if you"
+	cont "want a rematch."
+	
 	para "Good luck out"
 	line "there!"
 	done
@@ -444,6 +449,11 @@ EventideGymWendyTextLoop:
 	para "Now go spread your"
 	line "wings and soar on"
 	cont "the wind!"
+	
+	para "Come back and beat"
+	line "all the TRAINERS"
+	cont "in the GYM if you"
+	cont "want a rematch."
 	
 	para "Good luck out"
 	line "there!"

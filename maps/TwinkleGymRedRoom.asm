@@ -58,7 +58,7 @@ TwinkleGymCharlie:
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2
 	writetext TwinkleGymCharlieTextAfterBattle
 	buttonsound
-	verbosegivetmhm TM_FAKE_OUT
+	verbosegivetmhm TM_SUNNY_DAY
 	setevent EVENT_GOT_TM_FROM_CHARLIE
 	writetext TwinkleGymCharlieTextTMSpeech
 	waitbutton
@@ -140,45 +140,150 @@ TwinkleGymCharlieRematch:
 	
 Text_ReceivedFourthBadge:
 	text "<PLAYER> received"
-	line "the SAUNABADGE."
+	line "the BURNBADGE."
 	done
 
 TwinkleGymCharlieTextBeforeBattle:
-	text "BEFORE BATTLE"
+	text "CHARLIE: Aha!"
+	
+	para "You're that kid I"
+	line "met on SUNBEAM"
+	cont "ISLAND!"
+	
+	para "How've you been!"
+	
+	para "You decided to come"
+	line "test your skills"
+	cont "in battle, huh?"
+	
+	para "Good for you!"
+	
+	para "Crazy hot GYM for"
+	line "such a cold town,"
+	cont "huh?"
+	
+	para "I bet it's not"
+	line "what you expected!"
+	
+	para "But I'm rambling,"
+	line "aren't I?"
+	
+	para "If you think you"
+	line "can stand up to"
+	cont "my white hot"
+	cont "#MON,"
+	
+	para "then let's get"
+	line "this started!"
 	done
 	
 TwinkleGymCharlieTextWin:
-	text "YOU WIN"
+	text "You're on fire,"
+	line "kid!"
+	
+	para "I knew you could"
+	line "do it!"
+	
+	para "You've earned the"
+	line "BURNBADGE!"
 	done
 	
 TwinkleGymCharlieTextWinRematch:
-	text "YOU WIN AGAIN"
+	text "You're on fire,"
+	line "kid!"
+	
+	para "Another great battle!"
 	done
 	
 TwinkleGymCharlieTextLoss:
-	text "YOU LOSE"
+	text "Tough luck!"
+	
+	para "Try again, I know"
+	line "you have it in ya!"
 	done
 	
 TwinkleGymCharlieTextAfterBattle:
-	text "AFTER BATTLE"
+	text "That BADGE shows just"
+	line "how tough you are!"
+	
+	para "It let's you use the"
+	line "HM ROCK CLIMB"
+	cont "outside of battle."
+	
+	para "You should also"
+	line "take this."
 	done
 	
 TwinkleGymCharlieTextTMSpeech:
-	text "TM SPEECH"
+	text "That TM contains"
+	line "SUNNY DAY."
+	
+	para "Use it, and the sun"
+	line "will shine no matter"
+	cont "the weather!"
+	
+	para "FIRE-type moves"
+	line "are boosted in the"
+	cont "sun."
+	
+	para "It's sure to come"
+	line "in handy!"
+	
+	para "…"
+	
+	para "You may have beaten"
+	line "me, but you still"
+	cont "have a long ways to"
+	cont "go!"
+	
+	para "Never lose your drive"
+	line "to improve."
+	
+	para "Never let that flame"
+	line "die!"
+	
+	para "You're welcome back"
+	line "anytime you want a"
+	cont "rematch!"
 	done
 	
 TwinkleGymCharlieTextLoop:
-	text "TEXT LOOP"
+	text "You may have beaten"
+	line "me, but you still"
+	cont "have a long ways to"
+	cont "go!"
+	
+	para "Never lose your drive"
+	line "to improve."
+	
+	para "Never let that flame"
+	line "die!"
+	
+	para "You're welcome back"
+	line "anytime you want a"
+	cont "rematch!"
 	done
 	
 TwinkleGymCharlieTextBeforeBattle1Rematch:
-	text "REMATCH?"
+	text "Haha!"
+	
+	para "You beat everyone"
+	line "else!"
+	
+	para "That means you want"
+	line "a rematch, right?"
 	done
 	
 TwinkleGymCharlieTextBeforeBattle2Rematch:
-	text "REMATCH START"
+	text "If you think you"
+	line "can stand up to"
+	cont "my white hot"
+	cont "#MON,"
+	
+	para "then let's get"
+	line "this started!"
 	done
 	
 TwinkleGymCharlieTextNoRematch:
-	text "NO REMATCH"
+	text "No way!"
 	done

@@ -65,7 +65,7 @@ FlickerTrainGraveyard3Girls:
 	closetext
 	winlosstext TrainerFlickerTrainGraveyard_1BeatenText, 0
 	setlasttalked FLICKER_STATION_TRAINER1
-	loadtrainer DELINQUENT_F, 2
+	loadtrainer DELINQUENT_F, 1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_TRAINGRAVEYARD_TRAINER_1
@@ -83,7 +83,7 @@ FlickerTrainGraveyard3Girls:
 	closetext
 	winlosstext TrainerFlickerTrainGraveyard_3BeatenText, 0
 	setlasttalked FLICKER_STATION_TRAINER3
-	loadtrainer DELINQUENT_F, 4
+	loadtrainer DELINQUENT_F, 3
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_TRAINGRAVEYARD_TRAINER_3
@@ -99,7 +99,7 @@ FlickerTrainGraveyard3Girls:
 	closetext
 	winlosstext TrainerFlickerTrainGraveyard_2BeatenText, 0
 	setlasttalked FLICKER_STATION_TRAINER2
-	loadtrainer DELINQUENT_F, 3
+	loadtrainer DELINQUENT_F, 2
 	startbattle
 	reloadmapafterbattle
 	playmusic MUSIC_GLINT_GROVE

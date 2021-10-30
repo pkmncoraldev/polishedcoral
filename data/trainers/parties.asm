@@ -136,9 +136,16 @@ CharlieGroup:
 
 	; CHARLIE
 	db "CHARLIE@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_ITEM | TRAINERTYPE_EVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 32, HOUNDOOM, NO_ITEM, 48, ABILITY_2 | QUIRKY, MALE
+		db SUNNY_DAY, FIRE_FANG, BITE, SWAGGER
+	db 32, FLOATZEL, NO_ITEM, 48, HIDDEN_ABILITY | CAREFUL, FEMALE
+		db AQUA_JET, SCALD, PURSUIT, DOUBLE_HIT
+	db 33, CAMERUPT, HEAT_ROCK, 48, ABILITY_1 | CALM, MALE
+		db SUNNY_DAY, AMNESIA, FLAMETHROWER, REST
+	db 36, MAROWAK_A, NO_ITEM, 48, HIDDEN_ABILITY | QUIRKY, MALE
+		db FLARE_BLITZ, SHADOW_BONE, BONE_CLUB, HEADBUTT
 	db -1 ; end
 
 ; ================
@@ -1496,15 +1503,6 @@ HikerGroup:
 	; party
 	db 18, LARVITAR
 	db 20, MAGBY
-	db -1 ; end
-
-; ================
-
-	; HIKER
-	db "SAMSON@" ;UNUSED
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -2997,7 +2995,7 @@ DelinquentfGroup:
 ; ================
 
 	; DELINQUENT_F
-	db "UNUSED@"
+	db "HELGA@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3006,7 +3004,7 @@ DelinquentfGroup:
 ; ================
 
 	; DELINQUENT_F
-	db "UNUSED@"
+	db "MERTLE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3015,16 +3013,7 @@ DelinquentfGroup:
 ; ================
 
 	; DELINQUENT_F
-	db "UNUSED@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; DELINQUENT_F
-	db "UNUSED@"
+	db "REGINA@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3158,8 +3147,28 @@ SpaTrainerGroup:
 ; ================================
 ; ================
 
-	; DENNIS_3
-	db "DENNIS@"
+	; SPA_TRAINER
+	db "DENNIS@"	;3 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 27, CHARMELEON
+	db 30, NUMEL
+	db -1 ; end
+
+; ================
+
+	; SPA_TRAINER
+	db "DENNIS@"	;4 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 27, CHARMELEON
+	db 30, NUMEL
+	db -1 ; end
+
+; ================
+
+	; SPA_TRAINER
+	db "DENNIS@"	;5 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3167,8 +3176,8 @@ SpaTrainerGroup:
 
 ; ================
 
-	; DENNIS_4
-	db "DENNIS@"
+	; SPA_TRAINER
+	db "DENNIS@"	;6 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3176,8 +3185,8 @@ SpaTrainerGroup:
 
 ; ================
 
-	; DENNIS_5
-	db "DENNIS@"
+	; SPA_TRAINER
+	db "DENNIS@"	;7 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3185,8 +3194,8 @@ SpaTrainerGroup:
 
 ; ================
 
-	; DENNIS_6
-	db "DENNIS@"
+	; SPA_TRAINER
+	db "DENNIS@"	;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3194,8 +3203,28 @@ SpaTrainerGroup:
 
 ; ================
 
-	; DENNIS_7
-	db "DENNIS@"
+	; SPA_TRAINER
+	db "SHAYMUS@"	;3 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 28, SLUGMA
+	db 28, NUMEL
+	db -1 ; end
+
+; ================
+
+	; SPA_TRAINER
+	db "SHAYMUS@"	;4 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 28, SLUGMA
+	db 28, NUMEL
+	db -1 ; end
+
+; ================
+
+	; SPA_TRAINER
+	db "SHAYMUS@"	;5 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3203,8 +3232,8 @@ SpaTrainerGroup:
 
 ; ================
 
-	; DENNIS_8
-	db "DENNIS@"
+	; SPA_TRAINER
+	db "SHAYMUS@"	;6 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3212,8 +3241,8 @@ SpaTrainerGroup:
 
 ; ================
 
-	; SHAYMUS_3
-	db "SHAYMUS@"
+	; SPA_TRAINER
+	db "SHAYMUS@"	;7 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3221,8 +3250,8 @@ SpaTrainerGroup:
 
 ; ================
 
-	; SHAYMUS_4
-	db "SHAYMUS@"
+	; SPA_TRAINER
+	db "SHAYMUS@"	;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3230,8 +3259,30 @@ SpaTrainerGroup:
 
 ; ================
 
-	; SHAYMUS_5
-	db "SHAYMUS@"
+	; SPA_TRAINER
+	db "CHUCK@"	;3 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 29, NUMEL
+	db 28, GROWLITHE
+	db 27, MACHOP
+	db -1 ; end
+
+; ================
+
+	; SPA_TRAINER
+	db "CHUCK@"	;4 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 29, NUMEL
+	db 28, GROWLITHE
+	db 27, MACHOP
+	db -1 ; end
+
+; ================
+
+	; SPA_TRAINER
+	db "CHUCK@"	;5 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3239,8 +3290,8 @@ SpaTrainerGroup:
 
 ; ================
 
-	; SHAYMUS_6
-	db "SHAYMUS@"
+	; SPA_TRAINER
+	db "CHUCK@"	;6 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3248,8 +3299,8 @@ SpaTrainerGroup:
 
 ; ================
 
-	; SHAYMUS_7
-	db "SHAYMUS@"
+	; SPA_TRAINER
+	db "CHUCK@"	;7 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3257,8 +3308,8 @@ SpaTrainerGroup:
 
 ; ================
 
-	; SHAYMUS_8
-	db "SHAYMUS@"
+	; SPA_TRAINER
+	db "CHUCK@"	;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3266,8 +3317,30 @@ SpaTrainerGroup:
 
 ; ================
 
-	; CHUCK_3
-	db "CHUCK@"
+	; SPA_TRAINER
+	db "SEYMOUR@"	;3 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 29, MAGBY
+	db 27, MEDITITE
+	db 28, PONYTA
+	db -1 ; end
+
+; ================
+
+	; SPA_TRAINER
+	db "SEYMOUR@"	;4 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 29, MAGBY
+	db 27, MEDITITE
+	db 28, PONYTA
+	db -1 ; end
+
+; ================
+
+	; SPA_TRAINER
+	db "SEYMOUR@"	;5 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3275,8 +3348,8 @@ SpaTrainerGroup:
 
 ; ================
 
-	; CHUCK_4
-	db "CHUCK@"
+	; SPA_TRAINER
+	db "SEYMOUR@"	;6 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3284,8 +3357,8 @@ SpaTrainerGroup:
 
 ; ================
 
-	; CHUCK_5
-	db "CHUCK@"
+	; SPA_TRAINER
+	db "SEYMOUR@"	;7 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3293,8 +3366,8 @@ SpaTrainerGroup:
 
 ; ================
 
-	; CHUCK_6
-	db "CHUCK@"
+	; SPA_TRAINER
+	db "SEYMOUR@"	;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3302,8 +3375,28 @@ SpaTrainerGroup:
 
 ; ================
 
-	; CHUCK_7
-	db "CHUCK@"
+	; SPA_TRAINER
+	db "MAC@"	;3 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 27, QUILAVA
+	db 28, MAROWAK
+	db -1 ; end
+
+; ================
+
+	; SPA_TRAINER
+	db "MAC@"	;4 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 27, QUILAVA
+	db 28, MAROWAK
+	db -1 ; end
+
+; ================
+
+	; SPA_TRAINER
+	db "MAC@"	;5 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3311,8 +3404,8 @@ SpaTrainerGroup:
 
 ; ================
 
-	; CHUCK_8
-	db "CHUCK@"
+	; SPA_TRAINER
+	db "MAC@"	;6 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3320,8 +3413,8 @@ SpaTrainerGroup:
 
 ; ================
 
-	; SEYMOUR_3
-	db "SEYMOUR@"
+	; SPA_TRAINER
+	db "MAC@"	;7 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3329,98 +3422,8 @@ SpaTrainerGroup:
 
 ; ================
 
-	; SEYMOUR_4
-	db "SEYMOUR@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SEYMOUR_5
-	db "SEYMOUR@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SEYMOUR_6
-	db "SEYMOUR@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SEYMOUR_7
-	db "SEYMOUR@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SEYMOUR_8
-	db "SEYMOUR@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; MAC_3
-	db "MAC@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; MAC_4
-	db "MAC@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; MAC_5
-	db "MAC@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; MAC_6
-	db "MAC@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; MAC_7
-	db "MAC@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; MAC_8
-	db "MAC@"
+	; SPA_TRAINER
+	db "MAC@"	;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3434,8 +3437,30 @@ SpaTrainerFGroup:
 ; ================================
 ; ================
 
-	; LAURA_3
-	db "LAURA@"
+	; SPA_TRAINER_F
+	db "LAURA@"	;3 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 29, HOUNDOUR
+	db 30, BUIZEL
+	db 30, MAGBY
+	db -1 ; end
+
+; ================
+
+	; SPA_TRAINER_F
+	db "LAURA@"	;4 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 29, HOUNDOUR
+	db 30, BUIZEL
+	db 30, MAGBY
+	db -1 ; end
+
+; ================
+
+	; SPA_TRAINER_F
+	db "LAURA@"	;5 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3443,8 +3468,8 @@ SpaTrainerFGroup:
 
 ; ================
 
-	; LAURA_4
-	db "LAURA@"
+	; SPA_TRAINER_F
+	db "LAURA@"	;6 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3452,8 +3477,8 @@ SpaTrainerFGroup:
 
 ; ================
 
-	; LAURA_5
-	db "LAURA@"
+	; SPA_TRAINER_F
+	db "LAURA@"	;7 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3461,8 +3486,8 @@ SpaTrainerFGroup:
 
 ; ================
 
-	; LAURA_6
-	db "LAURA@"
+	; SPA_TRAINER_F
+	db "LAURA@"	;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3470,8 +3495,30 @@ SpaTrainerFGroup:
 
 ; ================
 
-	; LAURA_7
-	db "LAURA@"
+	; SPA_TRAINER_F
+	db "BETTY@"	;3 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 29, NUMEL
+	db 29, SLUGMA
+	db 30, BUIZEL
+	db -1 ; end
+
+; ================
+
+	; SPA_TRAINER_F
+	db "BETTY@"	;4 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 29, NUMEL
+	db 29, PONYTA
+	db 30, BUIZEL
+	db -1 ; end
+
+; ================
+
+	; SPA_TRAINER_F
+	db "BETTY@"	;5 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3479,8 +3526,8 @@ SpaTrainerFGroup:
 
 ; ================
 
-	; LAURA_8
-	db "LAURA@"
+	; SPA_TRAINER_F
+	db "BETTY@"	;6 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3488,8 +3535,8 @@ SpaTrainerFGroup:
 
 ; ================
 
-	; BETTY_3
-	db "BETTY@"
+	; SPA_TRAINER_F
+	db "BETTY@"	;7 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3497,44 +3544,8 @@ SpaTrainerFGroup:
 
 ; ================
 
-	; BETTY_4
-	db "BETTY@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BETTY_5
-	db "BETTY@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BETTY_6
-	db "BETTY@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BETTY_7
-	db "BETTY@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BETTY_8
-	db "BETTY@"
+	; SPA_TRAINER_F
+	db "BETTY@"	;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

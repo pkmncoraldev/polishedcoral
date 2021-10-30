@@ -306,7 +306,6 @@ INCLUDE "maps/SpookhouseDiningRoom.asm"
 INCLUDE "maps/SpookhouseBedroom.asm"
 INCLUDE "maps/SpookhouseHallway1.asm"
 INCLUDE "maps/SpookhouseHallway2.asm"
-INCLUDE "maps/SpookhouseHallway3.asm"
 INCLUDE "maps/SpookhouseTVRoom.asm"
 
 SECTION "Dodrio Ranch Scripts", ROMX

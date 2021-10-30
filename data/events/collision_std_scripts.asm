@@ -1,6 +1,8 @@
 ; stdscripts associated with tile collisions
 
 TileCollisionStdScripts:
+	dbw COLL_DEAD_LAMP,       deadlamp
+	dbw COLL_LIT_LAMP,        litlamp
 	dbw COLL_ICE_BLOCK,       iceblock
 	dbw COLL_BOOKSHELF,       magazinebookshelf
 	dbw COLL_TRASH_CAN,       trashcan

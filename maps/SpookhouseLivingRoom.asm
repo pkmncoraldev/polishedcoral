@@ -22,11 +22,9 @@ SpookhouseLivingRoom_MapScriptHeader:
 	xy_trigger 1, 6, 5, 0, SpookHouseGhost1, 0, 0
 	xy_trigger 1, 6, 4, 0, SpookHouseGhost2, 0, 0
 
-	db 6 ; bg events
+	db 4 ; bg events
 	signpost 3, 10, SIGNPOST_READ, SpookHouseLockedDoor
 	signpost 2, 10, SIGNPOST_READ, SpookHouseLockedDoor
-	signpost 5, 3, SIGNPOST_READ, SpookHouseFlickerLight
-	signpost 5, 6, SIGNPOST_READ, SpookHouseDeadLight
 	signpost 3, -1, SIGNPOST_IFNOTSET, SpookHouseLockedDoor2
 	signpost 2, -1, SIGNPOST_IFNOTSET, SpookHouseLockedDoor2
 
@@ -127,12 +125,6 @@ SpookHouseDontUnlockDoor:
 	closetext
 	end
 	
-SpookHouseFlickerLight:
-	jumptext SpookHouseFlickerLightText
-
-SpookHouseDeadLight:
-	jumptext SpookHouseDeadLightText
-	
 Movement_SpookHouseGhost1_0:
 	step_sleep 48
 	step_end
@@ -189,15 +181,4 @@ SpookHouseUnlockDoorText:
 	cont "door."
 	
 	para "Unlock the door?"
-	done
-	
-SpookHouseFlickerLightText:
-	text "It's trying its"
-	line "hardest to stay"
-	cont "lit."
-	done
-	
-SpookHouseDeadLightText:
-	text "It seems to be"
-	line "dead."
 	done

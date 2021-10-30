@@ -65,4 +65,5 @@ Music:
 	dba Music_MinibossBattle
 	dba Music_ShimmerCity
 	dba Music_Oasis
+	dba Music_TVStatic
 	

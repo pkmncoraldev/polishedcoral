@@ -126,3 +126,14 @@ Sfx_FossilMachine_Ch8: ; f2754
 	noise F_,  1, $0, $0
 	noise E_,  4, $0, $0
 	endchannel
+	
+Sfx_TVStatic:
+	musicheader 1, 8, Sfx_TVStatic_Ch8
+	
+Sfx_TVStatic_Ch8:
+	togglesfx
+	notetype $C
+	sfxtogglenoise 6
+Sfx_TVStatic_Ch8_loop:
+	note E_, 16
+	loopchannel 0, Sfx_TVStatic_Ch8_loop

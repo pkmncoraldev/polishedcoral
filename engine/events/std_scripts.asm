@@ -61,6 +61,8 @@ StdScripts::
 	dba IceBlockScript
 	dba AtmScript
 	dba PokeCenterChanseyScript
+	dba DeadLampScript
+	dba LitLampScript
 
 PokeCenterNurseScript:
 	opentext
@@ -198,6 +200,12 @@ PokeCenterChanseyScript:
 PokeCenterChanseyText:
 	text "CHANSEY: Sii!"
 	done
+	
+DeadLampScript:
+	farjumptext DeadLampText
+	
+LitLampScript:
+	farjumptext LitLampText
 	
 DifficultBookshelfScript:
 	farjumptext DifficultBookshelfText

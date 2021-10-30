@@ -8,8 +8,8 @@ SpookhouseTVRoom_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def  8,  2, 7, SPOOKHOUSE_HALLWAY_3
-	warp_def  8,  3, 7, SPOOKHOUSE_HALLWAY_3
+	warp_def  8,  2, 1, SPOOKHOUSE_HALLWAY_2
+	warp_def  8,  3, 1, SPOOKHOUSE_HALLWAY_2
 
 	db 0 ; coord events
 
@@ -91,14 +91,15 @@ SpookHouseNPC3:
 	iftrue .girlleft
 	changemap SpookhouseTVRoom3_BlockData
 .return
-	reloadmappart
+	callasm GenericFinishBridge
 	closetext
 	playsound SFX_SCREAM
 	waitsfx
 	loadwildmon SPIRITOMB, 30
 	startbattle
 	changemap SpookhouseTVRoom_BlockData
-	reloadmapafterbattle
+	dontrestartmapmusic
+	reloadmap
 	applyonemovement PLAYER, show_person
 	opentext
 	writetext SpookHouseGhostText2
@@ -201,7 +202,8 @@ SpookHouseNPC2:
 	disappear SPOOKHOUSE_TVROOM_NPC1
 	closetext
 	changeblock $2, $2, $73
-	reloadmappart
+	callasm GenericFinishBridge
+	playmusic MUSIC_NONE
 	setevent EVENT_SPOOKHOUSE_GHOSTBEGONE
 	setevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
 	dotrigger $1

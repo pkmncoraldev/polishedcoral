@@ -92,6 +92,17 @@ IceBlockText:
 	text "A solid block of"
 	line "ice."
 	done
+	
+DeadLampText:
+	text "It seems to be"
+	line "dead."
+	done
+
+LitLampText:
+	text "It's trying its"
+	line "hardest to stay"
+	cont "lit."
+	done
 
 DifficultBookshelfText:
 	text "It's full of"

@@ -34,9 +34,6 @@ MapTriggers::
 	scene_var SUNBEAM_RESERVE,						  wSunbeamReserveTrigger
 	scene_var EVENTIDE_FOREST,						  wEventideForestTrigger
 	scene_var SPOOKHOUSE_LIVING_ROOM,				  wSpookhouseLivingRoomTrigger
-	scene_var SPOOKHOUSE_HALLWAY_1,					  wSpookhouseHallway1Trigger
-	scene_var SPOOKHOUSE_HALLWAY_2,					  wSpookhouseHallway2Trigger
-	scene_var SPOOKHOUSE_HALLWAY_3,					  wSpookhouseHallway3Trigger
 	scene_var SPOOKHOUSE_TV_ROOM,					  wSpookhouseTVRoomTrigger
 	scene_var ROUTE_9,								  wRoute9Trigger
 	scene_var DODRIO_RANCH_RACETRACK,				  wDodrioRanchRaceTrackTrigger

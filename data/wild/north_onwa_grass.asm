@@ -1161,33 +1161,6 @@
 	db 21, RATTATA		;5%
 	db 21, RATTATA		;4%
 	db 21, RATTATA		;1%
-	
-	map_id SPOOKHOUSE_HALLWAY_3
-	db 8 percent, 8 percent, 8 percent ; encounter rates: morn/day/nite
-	; morn
-	db 21, LITWICK		;30%
-	db 21, GASTLY		;30%
-	db 21, RATTATA		;20%
-	db 21, RATTATA		;10%
-	db 21, RATTATA		;5%
-	db 21, RATTATA		;4%
-	db 21, RATTATA		;1%
-	; day
-	db 21, LITWICK		;30%
-	db 21, GASTLY		;30%
-	db 21, RATTATA		;20%
-	db 21, RATTATA		;10%
-	db 21, RATTATA		;5%
-	db 21, RATTATA		;4%
-	db 21, RATTATA		;1%
-	; nite
-	db 21, LITWICK		;30%
-	db 21, GASTLY		;30%
-	db 21, RATTATA		;20%
-	db 21, RATTATA		;10%
-	db 21, RATTATA		;5%
-	db 21, RATTATA		;4%
-	db 21, RATTATA		;1%
 
 	map_id ROUTE_9 ; used on Route 9 when EVENT_ON_DODRIO_RANCH is not set
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite

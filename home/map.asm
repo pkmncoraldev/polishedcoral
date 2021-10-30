@@ -2046,6 +2046,8 @@ GetMapHeaderMusic:: ; 2cbd
 	jr z, .jungle
 	cp MUSIC_TRAIN_RIDE
 	jr z, .train
+	cp MUSIC_TV_ROOM
+	jr z, .tvroom
 	call Function8b342
 	ld e, c
 	ld d, 0
@@ -2085,6 +2087,14 @@ GetMapHeaderMusic:: ; 2cbd
 
 .clearedtrain
 	ld de, MUSIC_TRAIN
+	jr .done
+	
+.tvroom
+	ld de, MUSIC_TV_STATIC
+	ld a, [wSpookhouseTVRoomTrigger]
+	cp 0
+	jr z, .done
+	ld de, MUSIC_NONE
 	jr .done
 
 Function8b342: ; 8b342

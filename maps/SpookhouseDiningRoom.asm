@@ -12,8 +12,7 @@ SpookhouseDiningRoom_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
-	signpost 1, 0, SIGNPOST_READ, SpookHouseDeadLight
+	db 2 ; bg events
 	signpost 3, 8, SIGNPOST_READ, SpookHouseRottonFood
 	signpost 2, 3, SIGNPOST_READ, SpookHouseRottonFood
 

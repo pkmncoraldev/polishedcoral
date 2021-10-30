@@ -999,9 +999,6 @@ wSprucesLabTrigger:: ds 1
 wSunbeamReserveTrigger:: ds 1
 wEventideForestTrigger:: ds 1
 wSpookhouseLivingRoomTrigger:: ds 1
-wSpookhouseHallway1Trigger:: ds 1
-wSpookhouseHallway2Trigger:: ds 1
-wSpookhouseHallway3Trigger:: ds 1
 wSpookhouseTVRoomTrigger:: ds 1
 wRoute9Trigger:: ds 1
 wDodrioRanchRaceTrackTrigger:: ds 1
@@ -1041,7 +1038,7 @@ wShimmerHarborTrigger:: ds 1
 wBrilloTownTrigger:: ds 1
 wRoute12NorthTrigger:: ds 1
 
-ds 19
+ds 22
 
 ; fight counts
 wJackFightCount::    ds 1

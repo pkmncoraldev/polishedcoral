@@ -249,6 +249,13 @@ ENDM
 	map_attributes OldManorExterior, OLD_MANOR_EXTERIOR, 92, SOUTH
 	connection south, SpookyForest8, SPOOKY_FOREST_8, 4
 	
+	map_attributes SpookhouseHallway1, SPOOKHOUSE_HALLWAY_1, $00, WEST
+	connection west, SpookhouseHallway2, SPOOKHOUSE_HALLWAY_2, 0
+	
+	map_attributes SpookhouseHallway2, SPOOKHOUSE_HALLWAY_2, $00, WEST | EAST
+	connection west, SpookhouseHallway2, SPOOKHOUSE_HALLWAY_2, 0
+	connection east, SpookhouseHallway1, SPOOKHOUSE_HALLWAY_1, 0
+	
 	map_attributes TwinkleTown, TWINKLE_TOWN, 5, SOUTH
 	connection south, Route10, ROUTE_10, -5
 	
@@ -413,9 +420,6 @@ ENDM
 	map_attributes SpookhouseLivingRoom, SPOOKHOUSE_LIVING_ROOM, $00, 0
 	map_attributes SpookhouseDiningRoom, SPOOKHOUSE_DINING_ROOM, $00, 0
 	map_attributes SpookhouseBedroom, SPOOKHOUSE_BEDROOM, $00, 0
-	map_attributes SpookhouseHallway1, SPOOKHOUSE_HALLWAY_1, $00, 0
-	map_attributes SpookhouseHallway2, SPOOKHOUSE_HALLWAY_2, $00, 0
-	map_attributes SpookhouseHallway3, SPOOKHOUSE_HALLWAY_3, $00, 0
 	map_attributes SpookhouseTVRoom, SPOOKHOUSE_TV_ROOM, $00, 0
 	map_attributes EventideGymSpeechHouse, EVENTIDE_GYM_SPEECH_HOUSE, 0, 0
 	map_attributes EventideSootheBellHouse, EVENTIDE_SOOTHE_BELL_HOUSE, 0, 0

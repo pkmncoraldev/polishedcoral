@@ -554,11 +554,10 @@ SpookhouseBedroom_BlockData:
 	INCBIN "maps/SpookhouseBedroom.ablk.lz"
 	
 SpookhouseHallway1_BlockData:
-SpookhouseHallway2_BlockData:
 	INCBIN "maps/SpookhouseHallway1.ablk.lz"
 	
-SpookhouseHallway3_BlockData:
-	INCBIN "maps/SpookhouseHallway3.ablk.lz"
+SpookhouseHallway2_BlockData:
+	INCBIN "maps/SpookhouseHallway2.ablk.lz"
 	
 SpookhouseTVRoom_BlockData:
 	INCBIN "maps/SpookhouseTVRoom.ablk.lz"

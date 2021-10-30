@@ -16,7 +16,7 @@ IceCaveB1F_MapScriptHeader:
 	db 3 ; object events
 	person_event SPRITE_HIKER,  6, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, IceCaveB1FNPC1, -1
 	person_event SPRITE_HIKER,  5, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, IceCaveB1FNPC2, -1
-	person_event SPRITE_BALL_CUT_FRUIT,  9, 20, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, IceCaveB1FPokeballRockClimb, EVENT_GOT_HM0X_ROCK_CLIMB
+	person_event SPRITE_BALL_CUT_FRUIT,  9, 20, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, IceCaveB1FPokeballRockClimb, EVENT_GOT_HM08_ROCK_CLIMB
 	
 	
 IceCaveB1FNPC1:
@@ -35,7 +35,7 @@ IceCaveB1FPokeballRockClimb:
 	writetext ReceivedRockClimbText2
 	waitbutton
 	closetext
-	setevent EVENT_GOT_HM0X_ROCK_CLIMB
+	setevent EVENT_GOT_HM08_ROCK_CLIMB
 	setflag ENGINE_GOT_ROCK_CLIMB
 	end
 
@@ -59,10 +59,10 @@ IceCaveB1FNPC2Text:
 	
 ReceivedRockClimbText1:
 	text "<PLAYER> found"
-	line "HM0X ROCK CLIMB!"
+	line "HM08 ROCK CLIMB!"
 	done
 	
 ReceivedRockClimbText2:
-	text "<PLAYER> put HM0X"
+	text "<PLAYER> put HM08"
 	line "in the TM POCKET."
 	done

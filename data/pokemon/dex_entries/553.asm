@@ -1,5 +1,5 @@
 ; KrookodilePokedexEntry: ; 0x181695
-	db "INTIMIDATION@" ; species name
+	db "INTIMIDATE@" ; species name
 	dw 411, 2123 ; height, width
 
 	db   "A very violent"

@@ -59,8 +59,9 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke BULBASAUR, 100
-	givepoke CARVANHA, 5
-	givepoke SHARPEDO, 5
+	givepoke NOIVERN, 5
+	givepoke TOGEKISS, 5
+	givepoke HONCHKROW, 5
 
 .items
 	writetext PlayerHouseDebugText6

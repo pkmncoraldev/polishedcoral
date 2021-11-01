@@ -94,8 +94,8 @@ SpiritombDEDData:: INCBIN "audio/ded/spiritomb.ded"
 MaractusDEDData::  INCBIN "audio/ded/maractus.ded"
 
 SECTION "DED 20", ROMX
-PanchamDEDData:: INCBIN "audio/ded/pancham.ded"
-PangoroDEDData:: INCBIN "audio/ded/pangoro.ded"
+TirtougaDEDData:: INCBIN "audio/ded/tirtouga.ded"
+CarracostaDEDData:: INCBIN "audio/ded/carracosta.ded"
 PhantumpDEDData:: INCBIN "audio/ded/phantump.ded"
 
 SECTION "DED 21", ROMX
@@ -132,15 +132,15 @@ CroagunkDEDData::  INCBIN "audio/ded/croagunk.ded"
 ToxicroakDEDData::  INCBIN "audio/ded/toxicroak.ded"
 
 SECTION "DED 28", ROMX
-TyruntDEDData::  INCBIN "audio/ded/tyrunt.ded"
-TyrantrumDEDData::  INCBIN "audio/ded/tyrantrum.ded"
+CacneaDEDData::  INCBIN "audio/ded/cacnea.ded"
+CacturneDEDData::  INCBIN "audio/ded/cacturne.ded"
 
 SECTION "DED 29", ROMX
-AurorusDEDData::  INCBIN "audio/ded/aurorus.ded"
+ArcheopsDEDData::  INCBIN "audio/ded/archeops.ded"
 DrilburDEDData::  INCBIN "audio/ded/drilbur.ded"
 
 SECTION "DED 30", ROMX
-AmauraDEDData::  INCBIN "audio/ded/amaura.ded"
+ArchenDEDData::  INCBIN "audio/ded/archen.ded"
 ExcadrillDEDData::  INCBIN "audio/ded/excadrill.ded"
 
 SECTION "DED 31", ROMX

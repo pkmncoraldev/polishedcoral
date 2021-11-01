@@ -1758,7 +1758,7 @@ PokefanMGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 15, PHANPY
-	db 16, PSYDUCK
+	db 16, WINGULL
 	db -1 ; end
 
 ; ================
@@ -2013,7 +2013,7 @@ LassGroup:
 	; party
 	db 15, WINGULL
 	db 15, MEOWTH
-	db 15, PSYDUCK
+	db 15, PIKACHU
 	db -1 ; end
 
 ; ================
@@ -2811,7 +2811,7 @@ CooltrainerFGroup:
 	db "JULES@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 23, PINSIR
+	db 22, HERACROSS
 	db -1 ; end
 
 ; ================

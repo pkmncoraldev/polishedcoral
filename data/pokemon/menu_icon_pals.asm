@@ -38,8 +38,6 @@ MenuMonIconColors::
 	iconpal RED, GREEN ; VILEPLUME
 	iconpal BROWN, RED ; MEOWTH
 	iconpal BROWN, RED ; PERSIAN
-	iconpal BROWN, BLUE ; PSYDUCK
-	iconpal BLUE, BLUE ; GOLDUCK
 	iconpal RED, BLUE ; GROWLITHE
 	iconpal RED, BLUE ; ARCANINE
 	iconpal BLUE, BLUE ; POLIWAG
@@ -84,7 +82,6 @@ MenuMonIconColors::
 	iconpal GREEN, RED ; SCYTHER
 	iconpal BROWN, RED ; ELECTABUZZ
 	iconpal RED, BROWN ; MAGMAR
-	iconpal BROWN, BLUE ; PINSIR
 	iconpal BROWN, RED ; TAUROS
 	iconpal RED, BROWN ; MAGIKARP
 	iconpal BLUE, BROWN ; GYARADOS
@@ -95,6 +92,7 @@ MenuMonIconColors::
 	iconpal BROWN, GREEN ; JOLTEON
 	iconpal RED, BLUE ; FLAREON
 	iconpal BLUE, PURPLE ; PORYGON
+	iconpal GRAY, PURPLE ; AERODACTYL
 	iconpal RED, BLUE ; SNORLAX
 	iconpal BLUE, PINK ; DRATINI
 	iconpal BLUE, RED ; DRAGONAIR
@@ -179,6 +177,8 @@ MenuMonIconColors::
 	iconpal BLUE, PURPLE ; SHARPEDO
 	iconpal GREEN, BLUE ; NUMEL
 	iconpal RED, GRAY ; CAMERUPT
+	iconpal GREEN, RED ; CACNEA
+	iconpal GREEN, RED ; CACTURNE
 	iconpal TEAL, BROWN ; SWABLU
 	iconpal TEAL, BROWN ; ALTARIA
 	iconpal BROWN, BLUE ; SNORUNT
@@ -225,6 +225,10 @@ MenuMonIconColors::
 	iconpal BROWN, GREEN ; CRUSTLE
 	iconpal RED, BROWN ; SCRAGGY
 	iconpal RED, GREEN ; SCRAFTY
+	iconpal BLUE, TEAL ; TIRTOUGA
+	iconpal BLUE, TEAL ; CARRACOSTA
+	iconpal BLUE, TEAL ; ARCHEN
+	iconpal BLUE, TEAL ; ARCHEOPS
 	iconpal GRAY, RED ; MINCCINO
 	iconpal GRAY, RED ; CINCCINO
 	iconpal BROWN, GREEN ; JOLTIK
@@ -234,12 +238,6 @@ MenuMonIconColors::
 	iconpal PURPLE, RED ; CHANDELURE
 	iconpal RED, BROWN ; LARVESTA
 	iconpal RED, BROWN ; VOLCARONA
-	iconpal GRAY, RED ; PANCHAM
-	iconpal GRAY, RED ; PANGORO
-	iconpal BLUE, RED ; TYRUNT
-	iconpal BLUE, RED ; TYRANTRUM
-	iconpal TEAL, GRAY ; AMAURA
-	iconpal TEAL, GRAY ; AURORUS
 	iconpal PINK, BLUE ; SYLVEON
 	iconpal BROWN, GRAY ; PHANTUMP
 	iconpal BROWN, GRAY ; TREVENANT
@@ -250,6 +248,7 @@ MenuMonIconColors::
 	iconpal RED, PURPLE ; TOUCANNON
 	iconpal BLUE, RED ; MAREANIE
 	iconpal BLUE, RED ; TOXAPEX
+	iconpal GRAY, RED ; WYRDEER
 	iconpal BROWN, BROWN ; RAICHU_A
 	iconpal PINK, TEAL ; EXEGGCUTE_A
 	iconpal GREEN, RED ; EXEGGUTOR_A

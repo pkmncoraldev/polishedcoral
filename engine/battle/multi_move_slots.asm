@@ -2211,7 +2211,6 @@ HardenUsers:
 	db STEELIX
 	db STARYU
 	db STARMIE
-	db PINSIR
 	db SLUGMA
 	db MAGCARGO
 	db CORSOLA
@@ -2226,8 +2225,6 @@ TailWhipUsers:
 	db BLASTOISE
 	db RATTATA
 	db RATICATE
-	db PSYDUCK
-	db GOLDUCK
 	db SNUBBULL
 	db GRANBULL
 	db NIDORAN_F

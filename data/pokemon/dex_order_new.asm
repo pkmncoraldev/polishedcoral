@@ -34,8 +34,6 @@ NewPokedexOrder:
 	db VILEPLUME
 	db MEOWTH
 	db PERSIAN
-	db PSYDUCK
-	db GOLDUCK
 	db GROWLITHE
 	db ARCANINE
 	db POLIWAG
@@ -80,7 +78,6 @@ NewPokedexOrder:
 	db SCYTHER
 	db ELECTABUZZ
 	db MAGMAR
-	db PINSIR
 	db TAUROS
 	db MAGIKARP
 	db GYARADOS
@@ -91,6 +88,7 @@ NewPokedexOrder:
 	db JOLTEON
 	db FLAREON
 	db PORYGON
+	db AERODACTYL
 	db SNORLAX
 	db DRATINI
 	db DRAGONAIR
@@ -175,6 +173,8 @@ NewPokedexOrder:
 	db SHARPEDO
 	db NUMEL
 	db CAMERUPT
+	db CACNEA
+	db CACTURNE
 	db SWABLU
 	db ALTARIA
 	db SNORUNT
@@ -221,6 +221,10 @@ NewPokedexOrder:
 	db CRUSTLE
 	db SCRAGGY
 	db SCRAFTY
+	db TIRTOUGA
+	db CARRACOSTA
+	db ARCHEN
+	db ARCHEOPS
 	db MINCCINO
 	db CINCCINO
 	db JOLTIK
@@ -230,12 +234,6 @@ NewPokedexOrder:
 	db CHANDELURE
 	db LARVESTA
 	db VOLCARONA
-	db PANCHAM
-	db PANGORO
-	db TYRUNT
-	db TYRANTRUM
-	db AMAURA
-	db AURORUS
 	db SYLVEON
 	db PHANTUMP
 	db TREVENANT
@@ -246,3 +244,4 @@ NewPokedexOrder:
 	db TOUCANNON
 	db MAREANIE
 	db TOXAPEX
+	db WYRDEER

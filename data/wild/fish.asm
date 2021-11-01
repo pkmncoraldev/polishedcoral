@@ -37,10 +37,10 @@ FishGroups: ; 92488
 	db 100 percent, MAGIKARP,   10	;15%
 .Lake_Super:
 .Lake_Good:
-	db  40 percent, PSYDUCK,    15	;40%
-	db  70 percent, MARILL,  	15	;30%
-	db  90 percent, CARVANHA,   15	;20%
-	db 100 percent, PSYDUCK,    15	;10%
+	db  40 percent, MARILL,     15	;40%
+	db  70 percent, CARVANHA,  	15	;30%
+	db  90 percent, WOOPER,     15	;20%
+	db 100 percent, CARVANHA,   15	;10%
 	
 .Sunbeam_Old:
 	db  70 percent, MAGIKARP,   10	;70%

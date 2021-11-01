@@ -35,8 +35,6 @@
 	const VILEPLUME
 	const MEOWTH
 	const PERSIAN
-	const PSYDUCK
-	const GOLDUCK
 	const GROWLITHE
 	const ARCANINE
 	const POLIWAG
@@ -81,7 +79,6 @@
 	const SCYTHER
 	const ELECTABUZZ
 	const MAGMAR
-	const PINSIR
 	const TAUROS
 	const MAGIKARP
 	const GYARADOS
@@ -92,6 +89,7 @@
 	const JOLTEON
 	const FLAREON
 	const PORYGON
+	const AERODACTYL
 	const SNORLAX
 	const DRATINI
 	const DRAGONAIR
@@ -176,6 +174,8 @@
 	const SHARPEDO ;319
 	const NUMEL ;322
 	const CAMERUPT ;323
+	const CACNEA ;331
+	const CACTURNE ;332
 	const SWABLU ;333
 	const ALTARIA ;334
 	const SNORUNT ;361
@@ -222,6 +222,10 @@
 	const CRUSTLE ;558
 	const SCRAGGY ;559
 	const SCRAFTY ;560
+	const TIRTOUGA ;563
+	const CARRACOSTA ;564
+	const ARCHEN ;565
+	const ARCHEOPS ;566
 	const MINCCINO ;572
 	const CINCCINO ;573
 	const JOLTIK ;595
@@ -231,12 +235,6 @@
 	const CHANDELURE ;609
 	const LARVESTA ;636
 	const VOLCARONA ;637
-	const PANCHAM ;674
-	const PANGORO ;675
-	const TYRUNT ;696
-	const TYRANTRUM ;697
-	const AMAURA ;698
-	const AURORUS ;699
 	const SYLVEON ;700
 	const PHANTUMP ;708
 	const TREVENANT ;709
@@ -247,6 +245,7 @@
 	const TOUCANNON ;733
 	const MAREANIE ;747
 	const TOXAPEX ;748
+	const WYRDEER
 NUM_SPECIES EQU const_value - 1
 	const RAICHU_A
 	const EXEGGCUTE_A

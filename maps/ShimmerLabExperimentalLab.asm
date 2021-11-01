@@ -48,37 +48,20 @@ ShimmerLabExperimentalLabBook:
 	loadmenudata ShimmerLabExperimentalLabBookMenuData
 	verticalmenu
 	closewindow
-	if_equal $1, .jaw
-	if_equal $2, .sail
-	if_equal $3, .dome
-	if_equal $4, .plume
-	if_equal $5, .cancel
+	if_equal $1, .dome
+	if_equal $2, .plume
+	if_equal $3, .cancel
 	jump .cancel
-	
-.jaw
-	closetext
-	pokepic TYRUNT
-	waitbutton
-	closepokepic
-	callasm SetJawDex
-	end
-.sail
-	closetext
-	pokepic AMAURA
-	waitbutton
-	closepokepic
-	callasm SetSailDex
-	end
 .dome
 	closetext
-	pokepic BULBASAUR
+	pokepic TIRTOUGA
 	waitbutton
 	closepokepic
 	callasm SetDomeDex
 	end
 .plume
 	closetext
-	pokepic BULBASAUR
+	pokepic ARCHEN
 	waitbutton
 	closepokepic
 	callasm SetPlumeDex
@@ -87,20 +70,12 @@ ShimmerLabExperimentalLabBook:
 	closetext
 	end
 	
-SetJawDex:
-	ld a, TYRUNT
-	jp SetSeenMon
-	
-SetSailDex:
-	ld a, AMAURA
-	jp SetSeenMon
-	
 SetDomeDex:
-	ld a, BULBASAUR ;TIRTOUGA
+	ld a, TIRTOUGA
 	jp SetSeenMon
 	
 SetPlumeDex:
-	ld a, BULBASAUR ;ARCHEN
+	ld a, ARCHEN
 	jp SetSeenMon
 	
 ShimmerLabExperimentalLabBookMenuData:
@@ -112,9 +87,7 @@ ShimmerLabExperimentalLabBookMenuData:
 
 .MenuData:
 	db $80 ; flags
-	db 5 ; items
-	db "JAW FOSSIL@"
-	db "SAIL FOSSIL@"
+	db 3 ; items
 	db "DOME FOSSIL@"
 	db "PLUME FOSSIL@"
 	db "CANCEL@"
@@ -397,10 +370,10 @@ endr
 	opentext
 	writetext ShimmerLabLabFossilCutsceneText9
 	waitbutton
-	writetext ShimmerLabLabFossilTyruntText
+	writetext ShimmerLabLabFossilTirtougaText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke TYRUNT, 20
+	givepoke TIRTOUGA, 20
 	writetext ShimmerLabLabFossilCutsceneText10
 	waitbutton
 	closetext
@@ -495,9 +468,9 @@ ShimmerLabLabFossilCutsceneText10:
 	cont "travels!"
 	done
 	
-ShimmerLabLabFossilTyruntText:
+ShimmerLabLabFossilTirtougaText:
 	text "<PLAYER> received"
-	line "TYRUNT!"
+	line "TIRTOUGA!"
 	done
 	
 Movement_ShimmerLabLabFossilCutscenePlayer1:

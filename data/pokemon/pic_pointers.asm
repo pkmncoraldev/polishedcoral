@@ -69,10 +69,6 @@ PicPointers::
 	dba MeowthBackpic
 	dba PersianFrontpic
 	dba PersianBackpic
-	dba PsyduckFrontpic
-	dba PsyduckBackpic
-	dba GolduckFrontpic
-	dba GolduckBackpic
 	dba GrowlitheFrontpic
 	dba GrowlitheBackpic
 	dba ArcanineFrontpic
@@ -161,8 +157,6 @@ PicPointers::
 	dba ElectabuzzBackpic
 	dba MagmarFrontpic
 	dba MagmarBackpic
-	dba PinsirFrontpic
-	dba PinsirBackpic
 	dba TaurosFrontpic
 	dba TaurosBackpic
 	dba MagikarpFrontpic
@@ -183,6 +177,8 @@ PicPointers::
 	dba FlareonBackpic
 	dba PorygonFrontpic
 	dba PorygonBackpic
+	dba AerodactylFrontpic
+	dba AerodactylBackpic
 	dba SnorlaxFrontpic
 	dba SnorlaxBackpic
 	dba DratiniFrontpic
@@ -351,6 +347,10 @@ PicPointers::
 	dba NumelBackpic
 	dba CameruptFrontpic
 	dba CameruptBackpic
+	dba CacneaFrontpic
+	dba CacneaBackpic
+	dba CacturneFrontpic
+	dba CacturneBackpic
 	dba SwabluFrontpic
 	dba SwabluBackpic
 	dba AltariaFrontpic
@@ -443,6 +443,14 @@ PicPointers::
 	dba ScraggyBackpic
 	dba ScraftyFrontpic
 	dba ScraftyBackpic
+	dba TirtougaFrontpic
+	dba TirtougaBackpic
+	dba CarracostaFrontpic
+	dba CarracostaBackpic
+	dba ArchenFrontpic
+	dba ArchenBackpic
+	dba ArcheopsFrontpic
+	dba ArcheopsBackpic
 	dba MinccinoFrontpic
 	dba MinccinoBackpic
 	dba CinccinoFrontpic
@@ -461,18 +469,6 @@ PicPointers::
 	dba LarvestaBackpic
 	dba VolcaronaFrontpic
 	dba VolcaronaBackpic
-	dba PanchamFrontpic
-	dba PanchamBackpic
-	dba PangoroFrontpic
-	dba PangoroBackpic
-	dba TyruntFrontpic
-	dba TyruntBackpic
-	dba TyrantrumFrontpic
-	dba TyrantrumBackpic
-	dba AmauraFrontpic
-	dba AmauraBackpic
-	dba AurorusFrontpic
-	dba AurorusBackpic
 	dba SylveonFrontpic
 	dba SylveonBackpic
 	dba PhantumpFrontpic
@@ -493,6 +489,8 @@ PicPointers::
 	dba MareanieBackpic
 	dba ToxapexFrontpic
 	dba ToxapexBackpic
+	dba WyrdeerFrontpic
+	dba WyrdeerBackpic
 	dba Raichu_AFrontpic
 	dba Raichu_ABackpic
 	dba ExeggcuteFrontpic

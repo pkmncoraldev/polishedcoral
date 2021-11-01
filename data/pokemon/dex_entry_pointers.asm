@@ -35,8 +35,6 @@
 	dw VileplumePokedexEntry
 	dw MeowthPokedexEntry
 	dw PersianPokedexEntry
-	dw PsyduckPokedexEntry
-	dw GolduckPokedexEntry
 	dw GrowlithePokedexEntry
 	dw ArcaninePokedexEntry
 	dw PoliwagPokedexEntry
@@ -81,7 +79,6 @@
 	dw ScytherPokedexEntry
 	dw ElectabuzzPokedexEntry
 	dw MagmarPokedexEntry
-	dw PinsirPokedexEntry
 	dw TaurosPokedexEntry
 	dw MagikarpPokedexEntry
 	dw GyaradosPokedexEntry
@@ -92,6 +89,7 @@
 	dw JolteonPokedexEntry
 	dw FlareonPokedexEntry
 	dw PorygonPokedexEntry
+	dw AerodactylPokedexEntry
 	dw SnorlaxPokedexEntry
 	dw DratiniPokedexEntry
 	dw DragonairPokedexEntry
@@ -176,6 +174,8 @@
 	dw SharpedoPokedexEntry
 	dw NumelPokedexEntry
 	dw CameruptPokedexEntry
+	dw CacneaPokedexEntry
+	dw CacturnePokedexEntry
 	dw SwabluPokedexEntry
 	dw AltariaPokedexEntry
 	dw SnoruntPokedexEntry
@@ -222,6 +222,10 @@
 	dw CrustlePokedexEntry
 	dw ScraggyPokedexEntry
 	dw ScraftyPokedexEntry
+	dw TirtougaPokedexEntry
+	dw CarracostaPokedexEntry
+	dw ArchenPokedexEntry
+	dw ArcheopsPokedexEntry
 	dw MinccinoPokedexEntry
 	dw CinccinoPokedexEntry
 	dw JoltikPokedexEntry
@@ -231,12 +235,6 @@
 	dw ChandelurePokedexEntry
 	dw LarvestaPokedexEntry
 	dw VolcaronaPokedexEntry
-	dw PanchamPokedexEntry
-	dw PangoroPokedexEntry
-	dw TyruntPokedexEntry
-	dw TyrantrumPokedexEntry
-	dw AmauraPokedexEntry
-	dw AurorusPokedexEntry
 	dw SylveonPokedexEntry
 	dw PhantumpPokedexEntry
 	dw TrevenantPokedexEntry
@@ -247,3 +245,4 @@
 	dw ToucannonPokedexEntry
 	dw MareaniePokedexEntry
 	dw ToxapexPokedexEntry
+	dw WyrdeerPokedexEntry

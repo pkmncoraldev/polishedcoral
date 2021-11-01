@@ -34,8 +34,6 @@ AnimationExtraPointers:
 	dw VileplumeAnimationExtra
 	dw MeowthAnimationExtra
 	dw PersianAnimationExtra
-	dw PsyduckAnimationExtra
-	dw GolduckAnimationExtra
 	dw GrowlitheAnimationExtra
 	dw ArcanineAnimationExtra
 	dw PoliwagAnimationExtra
@@ -80,7 +78,6 @@ AnimationExtraPointers:
 	dw ScytherAnimationExtra
 	dw ElectabuzzAnimationExtra
 	dw MagmarAnimationExtra
-	dw PinsirAnimationExtra
 	dw TaurosAnimationExtra
 	dw MagikarpAnimationExtra
 	dw GyaradosAnimationExtra
@@ -91,6 +88,7 @@ AnimationExtraPointers:
 	dw JolteonAnimationExtra
 	dw FlareonAnimationExtra
 	dw PorygonAnimationExtra
+	dw AerodactylAnimationExtra
 	dw SnorlaxAnimationExtra
 	dw DratiniAnimationExtra
 	dw DragonairAnimationExtra
@@ -175,6 +173,8 @@ AnimationExtraPointers:
 	dw SharpedoAnimationExtra
 	dw NumelAnimationExtra
 	dw CameruptAnimationExtra
+	dw CacneaAnimationExtra
+	dw CacturneAnimationExtra
 	dw SwabluAnimationExtra
 	dw AltariaAnimationExtra
 	dw SnoruntAnimationExtra
@@ -221,6 +221,10 @@ AnimationExtraPointers:
 	dw CrustleAnimationExtra
 	dw ScraggyAnimationExtra
 	dw ScraftyAnimationExtra
+	dw TirtougaAnimationExtra
+	dw CarracostaAnimationExtra
+	dw ArchenAnimationExtra
+	dw ArcheopsAnimationExtra
 	dw MinccinoAnimationExtra
 	dw CinccinoAnimationExtra
 	dw JoltikAnimationExtra
@@ -230,12 +234,6 @@ AnimationExtraPointers:
 	dw ChandelureAnimationExtra
 	dw LarvestaAnimationExtra
 	dw VolcaronaAnimationExtra
-	dw PanchamAnimationExtra
-	dw PangoroAnimationExtra
-	dw TyruntAnimationExtra
-	dw TyrantrumAnimationExtra
-	dw AmauraAnimationExtra
-	dw AurorusAnimationExtra
 	dw SylveonAnimationExtra
 	dw PhantumpAnimationExtra
 	dw TrevenantAnimationExtra
@@ -246,6 +244,7 @@ AnimationExtraPointers:
 	dw ToucannonAnimationExtra
 	dw MareanieAnimationExtra
 	dw ToxapexAnimationExtra
+	dw WyrdeerAnimationExtra
 	dw Raichu_AAnimationExtra
 	dw ExeggcuteAnimationExtra
 	dw Exeggutor_AAnimationExtra

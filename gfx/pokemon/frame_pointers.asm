@@ -34,8 +34,6 @@ FramesPointers:
 	dw VileplumeFrames
 	dw MeowthFrames
 	dw PersianFrames
-	dw PsyduckFrames
-	dw GolduckFrames
 	dw GrowlitheFrames
 	dw ArcanineFrames
 	dw PoliwagFrames
@@ -80,7 +78,6 @@ FramesPointers:
 	dw ScytherFrames
 	dw ElectabuzzFrames
 	dw MagmarFrames
-	dw PinsirFrames
 	dw TaurosFrames
 	dw MagikarpFrames
 	dw GyaradosFrames
@@ -91,6 +88,7 @@ FramesPointers:
 	dw JolteonFrames
 	dw FlareonFrames
 	dw PorygonFrames
+	dw AerodactylFrames
 	dw SnorlaxFrames
 	dw DratiniFrames
 	dw DragonairFrames
@@ -175,6 +173,8 @@ FramesPointers:
 	dw SharpedoFrames
 	dw NumelFrames
 	dw CameruptFrames
+	dw CacneaFrames
+	dw CacturneFrames
 	dw SwabluFrames
 	dw AltariaFrames
 	dw SnoruntFrames
@@ -221,6 +221,10 @@ FramesPointers:
 	dw CrustleFrames
 	dw ScraggyFrames
 	dw ScraftyFrames
+	dw TirtougaFrames
+	dw CarracostaFrames
+	dw ArchenFrames
+	dw ArcheopsFrames
 	dw MinccinoFrames
 	dw CinccinoFrames
 	dw JoltikFrames
@@ -230,12 +234,6 @@ FramesPointers:
 	dw ChandelureFrames
 	dw LarvestaFrames
 	dw VolcaronaFrames
-	dw PanchamFrames
-	dw PangoroFrames
-	dw TyruntFrames
-	dw TyrantrumFrames
-	dw AmauraFrames
-	dw AurorusFrames
 	dw SylveonFrames
 	dw PhantumpFrames
 	dw TrevenantFrames
@@ -246,6 +244,7 @@ FramesPointers:
 	dw ToucannonFrames
 	dw MareanieFrames
 	dw ToxapexFrames
+	dw WyrdeerFrames
 	dw Raichu_AFrames
 	dw ExeggcuteFrames
 	dw Exeggutor_AFrames

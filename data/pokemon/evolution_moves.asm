@@ -34,8 +34,6 @@ EvolutionMoves::
 	db NO_MOVE      						; VILEPLUME
 	db NO_MOVE      						; MEOWTH
 	db SWIFT        						; PERSIAN
-	db NO_MOVE      						; PSYDUCK
-	db NO_MOVE      						; GOLDUCK
 	db NO_MOVE      						; GROWLITHE
 	db EXTREMESPEED 						; ARCANINE
 	db NO_MOVE      						; POLIWAG
@@ -80,7 +78,6 @@ EvolutionMoves::
 	db NO_MOVE      						; SCYTHER
 	db NO_MOVE      						; ELECTABUZZ
 	db NO_MOVE      						; MAGMAR
-	db NO_MOVE      						; PINSIR
 	db NO_MOVE      						; TAUROS
 	db NO_MOVE      						; MAGIKARP
 	db NO_MOVE      						; GYARADOS
@@ -91,6 +88,7 @@ EvolutionMoves::
 	db THUNDERSHOCK 						; JOLTEON
 	db EMBER        						; FLAREON
 	db NO_MOVE      						; PORYGON
+	db NO_MOVE								; AERODACTYL
 	db NO_MOVE      						; SNORLAX
 	db NO_MOVE      						; DRATINI
 	db NO_MOVE      						; DRAGONAIR
@@ -175,6 +173,8 @@ EvolutionMoves::
 	db SLASH	      						; SHARPEDO
 	db NO_MOVE      						; NUMEL
 	db ROCK_SLIDE   						; CAMERUPT
+	db NO_MOVE      						; CACNEA
+	db NO_MOVE      						; CACTURNE
 	db NO_MOVE      						; SWABLU
 	db DRAGONBREATH      					; ALTARIA
 	db NO_MOVE      						; SNORUNT
@@ -221,6 +221,10 @@ EvolutionMoves::
 	db NO_MOVE      						; CRUSTLE
 	db NO_MOVE      						; SCRAGGY
 	db NO_MOVE      						; SCRAFTY
+	db NO_MOVE      						; TIRTOUGA
+	db NO_MOVE      						; CARRACOSTA
+	db NO_MOVE      						; ARCHEN
+	db NO_MOVE      						; ARCHEOPS
 	db NO_MOVE      						; MINCCINO
 	db NO_MOVE      						; CINCCINO
 	db NO_MOVE      						; JOLTIK
@@ -230,12 +234,6 @@ EvolutionMoves::
 	db NO_MOVE      						; CHANDELURE
 	db NO_MOVE      						; LARVESTA
 	db QUIVER_DANCE      					; VOLCARONA
-	db NO_MOVE      						; PANCHAM
-	db NO_MOVE      						; PANGORO
-	db NO_MOVE      						; TYRUNT
-	db NO_MOVE      						; TYRANTRUM
-	db NO_MOVE      						; AMAURA
-	db NO_MOVE      						; AURORUS
 	db FAIRY_WIND      						; SYLVEON
 	db NO_MOVE      						; PHANTUMP
 	db SHADOW_CLAW      					; TREVENANT
@@ -246,6 +244,7 @@ EvolutionMoves::
 	db NO_MOVE 								; TOUCANNON		;BEAK_BLAST
 	db NO_MOVE 								; MAREANIE
 	db NO_MOVE 								; TOXAPEX
+	db NO_MOVE 								; WYRDEER
 	db PSYCHIC_M    						; RAICHU_A
 	db NO_MOVE								; EXEGGCUTE_A
 	db WOOD_HAMMER ;DRAGON_HAMMER     						; EXEGGUTOR_A

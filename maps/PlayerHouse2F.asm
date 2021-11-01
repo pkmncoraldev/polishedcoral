@@ -59,8 +59,11 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke BULBASAUR, 100
-	givepoke CLEFAIRY, 5
-	givepoke CLEFABLE, 5
+	givepoke TIRTOUGA, 5
+	givepoke CARRACOSTA, 5
+	givepoke ARCHEN, 5
+	givepoke ARCHEOPS, 5
+
 .items
 	writetext PlayerHouseDebugText6
 	yesorno

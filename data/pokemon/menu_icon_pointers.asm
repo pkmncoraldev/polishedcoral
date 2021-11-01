@@ -35,8 +35,6 @@ IconPointers:
 	dw VileplumeIcon
 	dw MeowthIcon
 	dw PersianIcon
-	dw PsyduckIcon
-	dw GolduckIcon
 	dw GrowlitheIcon
 	dw ArcanineIcon
 	dw PoliwagIcon
@@ -81,7 +79,6 @@ IconPointers:
 	dw ScytherIcon
 	dw ElectabuzzIcon
 	dw MagmarIcon
-	dw PinsirIcon
 	dw TaurosIcon
 	dw MagikarpIcon
 	dw GyaradosIcon
@@ -92,6 +89,7 @@ IconPointers:
 	dw JolteonIcon
 	dw FlareonIcon
 	dw PorygonIcon
+	dw AerodactylIcon
 	dw SnorlaxIcon
 	dw DratiniIcon
 	dw DragonairIcon
@@ -176,6 +174,8 @@ IconPointers:
 	dw SharpedoIcon
 	dw NumelIcon
 	dw CameruptIcon
+	dw CacneaIcon
+	dw CacturneIcon
 	dw SwabluIcon
 	dw AltariaIcon
 	dw SnoruntIcon
@@ -222,6 +222,10 @@ IconPointers:
 	dw CrustleIcon
 	dw ScraggyIcon
 	dw ScraftyIcon
+	dw TirtougaIcon
+	dw CarracostaIcon
+	dw ArchenIcon
+	dw ArcheopsIcon
 	dw MinccinoIcon
 	dw CinccinoIcon
 	dw JoltikIcon
@@ -231,12 +235,6 @@ IconPointers:
 	dw ChandelureIcon
 	dw LarvestaIcon
 	dw VolcaronaIcon
-	dw PanchamIcon
-	dw PangoroIcon
-	dw TyruntIcon
-	dw TyrantrumIcon
-	dw AmauraIcon
-	dw AurorusIcon
 	dw SylveonIcon
 	dw PhantumpIcon
 	dw TrevenantIcon
@@ -247,6 +245,7 @@ IconPointers:
 	dw ToucannonIcon
 	dw MareanieIcon
 	dw ToxapexIcon
+	dw WyrdeerIcon
 	dw Raichu_AIcon
 	dw Exeggcute_AIcon
 	dw Exeggutor_AIcon

@@ -34,8 +34,6 @@ AnimationPointers:
 	dw VileplumeAnimation
 	dw MeowthAnimation
 	dw PersianAnimation
-	dw PsyduckAnimation
-	dw GolduckAnimation
 	dw GrowlitheAnimation
 	dw ArcanineAnimation
 	dw PoliwagAnimation
@@ -80,7 +78,6 @@ AnimationPointers:
 	dw ScytherAnimation
 	dw ElectabuzzAnimation
 	dw MagmarAnimation
-	dw PinsirAnimation
 	dw TaurosAnimation
 	dw MagikarpAnimation
 	dw GyaradosAnimation
@@ -91,6 +88,7 @@ AnimationPointers:
 	dw JolteonAnimation
 	dw FlareonAnimation
 	dw PorygonAnimation
+	dw AerodactylAnimation
 	dw SnorlaxAnimation
 	dw DratiniAnimation
 	dw DragonairAnimation
@@ -175,6 +173,8 @@ AnimationPointers:
 	dw SharpedoAnimation
 	dw NumelAnimation
 	dw CameruptAnimation
+	dw CacneaAnimation
+	dw CacturneAnimation
 	dw SwabluAnimation
 	dw AltariaAnimation
 	dw SnoruntAnimation
@@ -221,6 +221,10 @@ AnimationPointers:
 	dw CrustleAnimation
 	dw ScraggyAnimation
 	dw ScraftyAnimation
+	dw TirtougaAnimation
+	dw CarracostaAnimation
+	dw ArchenAnimation
+	dw ArcheopsAnimation
 	dw MinccinoAnimation
 	dw CinccinoAnimation
 	dw JoltikAnimation
@@ -230,12 +234,6 @@ AnimationPointers:
 	dw ChandelureAnimation
 	dw LarvestaAnimation
 	dw VolcaronaAnimation
-	dw PanchamAnimation
-	dw PangoroAnimation
-	dw TyruntAnimation
-	dw TyrantrumAnimation
-	dw AmauraAnimation
-	dw AurorusAnimation
 	dw SylveonAnimation
 	dw PhantumpAnimation
 	dw TrevenantAnimation
@@ -246,6 +244,7 @@ AnimationPointers:
 	dw ToucannonAnimation
 	dw MareanieAnimation
 	dw ToxapexAnimation
+	dw WyrdeerAnimation
 	dw Raichu_AAnimation
 	dw ExeggcuteAnimation
 	dw Exeggutor_AAnimation

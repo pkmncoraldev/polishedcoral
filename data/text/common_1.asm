@@ -1109,8 +1109,7 @@ UnknownText_TradeCompleteText1::
 UnknownText_TradeAfterText1::
 	text "Yo!"
 	
-	para "How's SIR SNIPS"
-	line "been?"
+	para "How's HERC been?"
 	
 	para "I've been taking"
 	line "real good care of"

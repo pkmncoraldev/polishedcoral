@@ -38,8 +38,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw VileplumeEvosAttacks
 	dw MeowthEvosAttacks
 	dw PersianEvosAttacks
-	dw PsyduckEvosAttacks
-	dw GolduckEvosAttacks
 	dw GrowlitheEvosAttacks
 	dw ArcanineEvosAttacks
 	dw PoliwagEvosAttacks
@@ -84,7 +82,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw ScytherEvosAttacks
 	dw ElectabuzzEvosAttacks
 	dw MagmarEvosAttacks
-	dw PinsirEvosAttacks
 	dw TaurosEvosAttacks
 	dw MagikarpEvosAttacks
 	dw GyaradosEvosAttacks
@@ -95,6 +92,7 @@ EvosAttacksPointers:: ; 0x425b1
 	dw JolteonEvosAttacks
 	dw FlareonEvosAttacks
 	dw PorygonEvosAttacks
+	dw AerodactylEvosAttacks
 	dw SnorlaxEvosAttacks
 	dw DratiniEvosAttacks
 	dw DragonairEvosAttacks
@@ -179,6 +177,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw SharpedoEvosAttacks
 	dw NumelEvosAttacks
 	dw CameruptEvosAttacks
+	dw CacneaEvosAttacks
+	dw CacturneEvosAttacks
 	dw SwabluEvosAttacks
 	dw AltariaEvosAttacks
 	dw SnoruntEvosAttacks
@@ -225,6 +225,10 @@ EvosAttacksPointers:: ; 0x425b1
 	dw CrustleEvosAttacks
 	dw ScraggyEvosAttacks
 	dw ScraftyEvosAttacks
+	dw TirtougaEvosAttacks
+	dw CarracostaEvosAttacks
+	dw ArchenEvosAttacks
+	dw ArcheopsEvosAttacks
 	dw MinccinoEvosAttacks
 	dw CinccinoEvosAttacks
 	dw JoltikEvosAttacks
@@ -234,12 +238,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw ChandelureEvosAttacks
 	dw LarvestaEvosAttacks
 	dw VolcaronaEvosAttacks
-	dw PanchamEvosAttacks
-	dw PangoroEvosAttacks
-	dw TyruntEvosAttacks
-	dw TyrantrumEvosAttacks
-	dw AmauraEvosAttacks
-	dw AurorusEvosAttacks
 	dw SylveonEvosAttacks
 	dw PhantumpEvosAttacks
 	dw TrevenantEvosAttacks
@@ -250,6 +248,7 @@ EvosAttacksPointers:: ; 0x425b1
 	dw ToucannonEvosAttacks
 	dw MareanieEvosAttacks
 	dw ToxapexEvosAttacks
+	dw WyrdeerEvosAttacks
 	dw Raichu_AEvosAttacks
 	dw Exeggcute_AEvosAttacks
 	dw Exeggutor_AEvosAttacks

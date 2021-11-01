@@ -1,8 +1,8 @@
 NPCTrades:
 ; OT names have 3 characters less padding so the total struct is 32 bytes
-; TRADE_WITH_JAKE_FOR_PINSIR in Route 5 Gate
-	db 0, SCYTHER,       PINSIR,     "SIR SNIPS@@"
-	db $DD, $DD, $DD, ABILITY_1 | ADAMANT, MALE,   POKE_BALL,   SITRUS_BERRY
+; TRADE_WITH_JAKE_FOR_HERACROSS in Route 5 Gate
+	db 0, SCYTHER,       HERACROSS,     "HERC@@@@@@@"
+	db $DD, $DD, $DD, ABILITY_2 | ADAMANT, MALE,   POKE_BALL,   SITRUS_BERRY
 	dw 64582
 	db "JAKE@@@@", $00
 ; TRADE_WITH_PAUL_FOR_EXEGGCUTE on Sunbeam Island

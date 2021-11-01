@@ -34,8 +34,6 @@ BitmasksPointers:
 	dw VileplumeBitmasks
 	dw MeowthBitmasks
 	dw PersianBitmasks
-	dw PsyduckBitmasks
-	dw GolduckBitmasks
 	dw GrowlitheBitmasks
 	dw ArcanineBitmasks
 	dw PoliwagBitmasks
@@ -80,7 +78,6 @@ BitmasksPointers:
 	dw ScytherBitmasks
 	dw ElectabuzzBitmasks
 	dw MagmarBitmasks
-	dw PinsirBitmasks
 	dw TaurosBitmasks
 	dw MagikarpBitmasks
 	dw GyaradosBitmasks
@@ -91,6 +88,7 @@ BitmasksPointers:
 	dw JolteonBitmasks
 	dw FlareonBitmasks
 	dw PorygonBitmasks
+	dw AerodactylBitmasks
 	dw SnorlaxBitmasks
 	dw DratiniBitmasks
 	dw DragonairBitmasks
@@ -175,6 +173,8 @@ BitmasksPointers:
 	dw SharpedoBitmasks
 	dw NumelBitmasks
 	dw CameruptBitmasks
+	dw CacneaBitmasks
+	dw CacturneBitmasks
 	dw SwabluBitmasks
 	dw AltariaBitmasks
 	dw SnoruntBitmasks
@@ -221,6 +221,10 @@ BitmasksPointers:
 	dw CrustleBitmasks
 	dw ScraggyBitmasks
 	dw ScraftyBitmasks
+	dw TirtougaBitmasks
+	dw CarracostaBitmasks
+	dw ArchenBitmasks
+	dw ArcheopsBitmasks
 	dw MinccinoBitmasks
 	dw CinccinoBitmasks
 	dw JoltikBitmasks
@@ -230,12 +234,6 @@ BitmasksPointers:
 	dw ChandelureBitmasks
 	dw LarvestaBitmasks
 	dw VolcaronaBitmasks
-	dw PanchamBitmasks
-	dw PangoroBitmasks
-	dw TyruntBitmasks
-	dw TyrantrumBitmasks
-	dw AmauraBitmasks
-	dw AurorusBitmasks
 	dw SylveonBitmasks
 	dw PhantumpBitmasks
 	dw TrevenantBitmasks
@@ -246,6 +244,7 @@ BitmasksPointers:
 	dw ToucannonBitmasks
 	dw MareanieBitmasks
 	dw ToxapexBitmasks
+	dw WyrdeerBitmasks
 	dw Raichu_ABitmasks
 	dw ExeggcuteBitmasks
 	dw Exeggutor_ABitmasks

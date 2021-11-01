@@ -24,7 +24,7 @@ Route6_MapScriptHeader:
 
 	db 13 ; object events
 	person_event SPRITE_CUTE_GIRL, 13, 52, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route6Lass2, -1
-	object_event 51, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, PSYDUCK, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, Route6Psyduck, -1
+	object_event 51, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, RATICATE, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, Route6Raticate, -1
 	person_event SPRITE_CAMPER, 8, 43, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_2, -1
 	person_event SPRITE_PICNICKER, 8, 44, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_1, -1
 	person_event SPRITE_POKEFAN_M,  6, 39, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute6_3, -1
@@ -39,7 +39,7 @@ Route6_MapScriptHeader:
 	
 	const_def 1 ; object constants
 	const ROUTE6LASS2
-	const ROUTE6PSYDUCK
+	const ROUTE6RATICATE
 	const ROUTE6TRAINER1
 	const ROUTE6TRAINER2
 	const ROUTE6TRAINER3
@@ -296,10 +296,10 @@ Route6Lass2:
 	spriteface ROUTE6LASS2, DOWN
 	end
 	
-Route6Psyduck:
+Route6Raticate:
 	opentext
-	writetext Route6PsyducklText
-	cry PSYDUCK
+	writetext Route6RaticateText
+	cry RATICATE
 	waitbutton
 	closetext
 	end
@@ -368,9 +368,9 @@ Route6Lass2Text:
 	line "to take a boat…"
 	done
 	
-Route6PsyducklText:
-	text "PSYDUCK: Sai-ai-"
-	line "ai!"
+Route6RaticateText:
+	text "RATICATE: Rati-"
+	line "ra!"
 	done
 	
 Route6Lass3Text:

@@ -51,8 +51,6 @@ CryHeaders::
 	mon_cry CRY_VILEPLUME,   $022,  $17f 	; Vileplume
 	mon_cry CRY_CLEFAIRY,    $077,  $090 	; Meowth
 	mon_cry CRY_CLEFAIRY,    $099,  $17f 	; Persian
-	mon_cry CRY_PSYDUCK,     $020,  $0e0 	; Psyduck
-	mon_cry CRY_PSYDUCK,     $0ff,  $0c0 	; Golduck
 	mon_cry CRY_GROWLITHE,   $020,  $0c0 	; Growlithe
 	mon_cry CRY_WEEDLE,      $000,  $100 	; Arcanine
 	mon_cry CRY_PIDGEY,      $0ff,  $17f 	; Poliwag
@@ -97,7 +95,6 @@ CryHeaders::
 	mon_cry CRY_SCYTHER,     $000,  $100 	; Scyther
 	mon_cry CRY_VOLTORB,     $08f,  $17f 	; Electabuzz
 	mon_cry CRY_CHARMANDER,  $0ff,  $0b0 	; Magmar
-	mon_cry CRY_PIDGEOTTO,   $000,  $100 	; Pinsir
 	mon_cry CRY_SQUIRTLE,    $011,  $0c0 	; Tauros
 	mon_cry CRY_EKANS,       $080,  $080 	; Magikarp
 	mon_cry CRY_EKANS,       $000,  $100 	; Gyarados
@@ -108,6 +105,7 @@ CryHeaders::
 	mon_cry CRY_EEVEE,    	 $03d,  $100 	; Jolteon
 	mon_cry CRY_EEVEE,    	 $010,  $0a0 	; Flareon
 	mon_cry CRY_PONYTA,  	 $0aa,  $17f 	; Porygon
+	mon_cry CRY_VILEPLUME,   $020,  $170 	; Aerodactyl
 	mon_cry CRY_GRIMER,      $055,  $081 	; Snorlax
 	mon_cry CRY_BULBASAUR,   $060,  $0c0 	; Dratini
 	mon_cry CRY_BULBASAUR,   $040,  $100 	; Dragonair
@@ -192,6 +190,8 @@ CryHeaders::
 	mon_cry SHARPEDO,   SharpedoDEDData	 	; Sharpedo
 	mon_cry NUMEL,   	NumelDEDData	 	; Numel
 	mon_cry CAMERUPT,   CameruptDEDData	 	; Camerupt
+	mon_cry CACNEA,   	CacneaDEDData	 	; Cacnea
+	mon_cry CACTURNE,  	CacturneDEDData	 	; Cacturne
 	mon_cry SWABLU,   	SwabluDEDData	 	; Swablu
 	mon_cry ALTARIA,   	AltariaDEDData	 	; Altaria
 	mon_cry SNORUNT,   	SnoruntDEDData	 	; Snorunt
@@ -238,6 +238,10 @@ CryHeaders::
 	mon_cry CRUSTLE,   	CrustleDEDData	 	; Crustle
 	mon_cry SCRAGGY,    ScraggyDEDData	 	; Scraggy
 	mon_cry SCRAFTY,   	ScraftyDEDData	 	; Scrafty
+	mon_cry TIRTOUGA, 	TirtougaDEDData 	; Tirtouga
+	mon_cry CARRACOSTA, CarracostaDEDData 	; Carracosta
+	mon_cry ARCHEN,		ArchenDEDData		; Archen
+	mon_cry ARCHEOPS,	ArcheopsDEDData		; Archeops
 	mon_cry MINCCINO,   MinccinoDEDData	 	; Minccino
 	mon_cry CINCCINO,   CinccinoDEDData	 	; Cinccino
 	mon_cry JOLTIK,   	JoltikDEDData	 	; Joltik
@@ -247,12 +251,6 @@ CryHeaders::
 	mon_cry CHANDELURE, ChandelureDEDData 	; Chandelure
 	mon_cry LARVESTA,   LarvestaDEDData	 	; Larvesta
 	mon_cry VOLCARONA,  VolcaronaDEDData 	; Volcarona
-	mon_cry PANCHAM, 	PanchamDEDData 		; Pancham
-	mon_cry PANGORO, 	PangoroDEDData 		; Pangoro
-	mon_cry TYRUNT, 	TyruntDEDData 		; Tyrunt
-	mon_cry TYRANTRUM, 	TyrantrumDEDData 	; Tyrantrum
-	mon_cry AMAURA,		AmauraDEDData		; Amaura
-	mon_cry AURORUS,	AurorusDEDData		; Aurorus
 	mon_cry SYLVEON,   	SylveonDEDData	 	; Sylveon
 	mon_cry PHANTUMP,	PhantumpDEDData		; Phantump
 	mon_cry TREVENANT,	TrevenantDEDData	; Trevenant
@@ -263,6 +261,7 @@ CryHeaders::
 	mon_cry	TOUCANNON, 	ToucannonDEDData 	; Toucannon
 	mon_cry MAREANIE,	MareanieDEDData		; Mareanie
 	mon_cry TOXAPEX,	ToxapexDEDData		; Toxapex
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Wyrdeer - PLACEHOLDER
 	mon_cry CRY_RAICHU,      $0ee,  $088 	; Raichu_A
 	mon_cry CRY_DODUO,   	 $000,  $100 	; Exeggcute_A
 	mon_cry CRY_EXEGGUTOR,   $000,  $100 	; Exeggutor_A
@@ -310,8 +309,6 @@ CryHeaders2::
 	mon_cry CRY_VILEPLUME,   $022,  $17f 	; Vileplume
 	mon_cry CRY_CLEFAIRY,    $077,  $090 	; Meowth
 	mon_cry CRY_CLEFAIRY,    $099,  $17f 	; Persian
-	mon_cry CRY_PSYDUCK,     $020,  $0e0 	; Psyduck
-	mon_cry CRY_PSYDUCK,     $0ff,  $0c0 	; Golduck
 	mon_cry CRY_GROWLITHE,   $020,  $0c0 	; Growlithe
 	mon_cry CRY_WEEDLE,      $000,  $100 	; Arcanine
 	mon_cry CRY_PIDGEY,      $0ff,  $17f 	; Poliwag
@@ -356,7 +353,6 @@ CryHeaders2::
 	mon_cry CRY_SCYTHER,     $000,  $100 	; Scyther
 	mon_cry CRY_VOLTORB,     $08f,  $17f 	; Electabuzz
 	mon_cry CRY_CHARMANDER,  $0ff,  $0b0 	; Magmar
-	mon_cry CRY_PIDGEOTTO,   $000,  $100 	; Pinsir
 	mon_cry CRY_SQUIRTLE,    $011,  $0c0 	; Tauros
 	mon_cry CRY_EKANS,       $080,  $080 	; Magikarp
 	mon_cry CRY_EKANS,       $000,  $100 	; Gyarados
@@ -367,6 +363,7 @@ CryHeaders2::
 	mon_cry CRY_EEVEE,    	 $03d,  $100 	; Jolteon
 	mon_cry CRY_EEVEE,    	 $010,  $0a0 	; Flareon
 	mon_cry CRY_PONYTA,  	 $0aa,  $17f 	; Porygon
+	mon_cry CRY_VILEPLUME,   $020,  $170 	; Aerodactyl
 	mon_cry CRY_GRIMER,      $055,  $081 	; Snorlax
 	mon_cry CRY_BULBASAUR,   $060,  $0c0 	; Dratini
 	mon_cry CRY_BULBASAUR,   $040,  $100 	; Dragonair
@@ -451,6 +448,8 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Sharpedo - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Numel - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Camerupt - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cacnea - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cacturne - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Swablu - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Altaria - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Snorunt - PLACEHOLDER
@@ -497,6 +496,10 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Crustle - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Scraggy - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Scrafty - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Tirtouga - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Carracosta - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Archen - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Archeops - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Minccino - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cinccino - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Joltik - PLACEHOLDER
@@ -506,12 +509,6 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Chandelure - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Larvesta - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Volcarona - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Pancham - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Pangoro - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Tyrunt - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Tyrantrum - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Amaura - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Aurorus - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Sylveon - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Phantump - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Trevenant - PLACEHOLDER
@@ -522,6 +519,7 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Toucannon - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Mareanie - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Toxapex - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Wyrdeer - PLACEHOLDER
 	mon_cry CRY_RAICHU,      $0ee,  $088 	; Raichu_A
 	mon_cry CRY_DODUO,   	 $000,  $100 	; Exeggcute_A
 	mon_cry CRY_EXEGGUTOR,   $000,  $100 	; Exeggutor_A

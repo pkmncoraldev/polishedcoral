@@ -58,8 +58,8 @@ RestoreMusic::
 	rst CopyBytes
 	ei
 
-	xor a
-	ld [wSoundEngineBackup], a
+;	xor a
+;	ld [wSoundEngineBackup], a
 
 	jr HomeRestoreMusic_PopAFBCDEHL
 

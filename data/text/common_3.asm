@@ -70,6 +70,10 @@ _SpruceTextD::
 	text "So this is you?"
 	done
 
+_SpruceTextE::
+	text "This world "
+	done
+	
 UnknownText_0x1c40e6::
 	text "The clock's time"
 	line "may be wrong."

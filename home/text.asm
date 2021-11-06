@@ -149,6 +149,7 @@ PrintTextNoBox::
 
 PrintTextBoxText::
 	bccoord TEXTBOX_INNERX, TEXTBOX_INNERY
+PrintTextBoxText2::
 	jp PlaceWholeStringInBoxAtOnce
 
 SetUpTextBox::

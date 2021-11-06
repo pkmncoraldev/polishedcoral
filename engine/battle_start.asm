@@ -65,7 +65,10 @@ Predef_StartBattle: ; 8c20f
 ; 8c26d
 
 .InitGFX: ; 8c26d
+	eventflagcheck EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
+	jr nz, .skip
 	farcall ReanchorBGMap_NoOAMUpdate
+.skip
 	call UpdateSprites
 	call DelayFrame
 	call .LoadPokeballTiles

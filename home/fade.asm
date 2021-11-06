@@ -11,7 +11,13 @@ SetWhitePals::
 	jp ByteFill
 
 StartBattleFlash::
+	eventflagcheck EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
+	jr nz, .skip
 	ld a, PALFADE_BG | PALFADE_FLASH | PALFADE_SKIP_LAST
+	jr .cont
+.skip
+	ld a, PALFADE_BG | PALFADE_FLASH
+.cont
 	ld [wPalFadeMode], a
 	ld c, 10
 	jr DoFadePalettes

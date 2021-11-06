@@ -871,6 +871,120 @@ ProfSpruceSpeech: ; 0x5f99
 	ld [wPlayerInitialPalette], a
 	ret
 	
+FakeProfSpruceSpeech::
+	ld c, 31
+	call FadeToBlack
+	call ClearTileMap
+
+	ld de, MUSIC_ROUTE_2
+	call PlayMusic
+
+	
+	ld c, 31
+	call FadeToWhite
+	
+	xor a
+	ld [wCurPartySpecies], a
+	ld a, PROF_SPRUCE
+	ld [wTrainerClass], a
+	call Intro_PrepTrainerPic
+
+	ld b, CGB_INTRO_PALS
+	call GetCGBLayout
+	call Intro_RotatePalettesLeftFrontpic
+
+	ld hl, SpruceText1
+	call PrintText
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap
+
+	ld a, SPIRITOMB
+	ld [wCurSpecies], a
+	ld [wCurPartySpecies], a
+	call GetBaseData
+
+	hlcoord 6, 4
+	call PrepMonFrontpic
+
+	xor a
+	ld [wTempMonDVs], a
+	ld [wTempMonDVs + 1], a
+	ld [wTempMonDVs + 2], a
+
+	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
+	call Intro_RotatePalettesLeftFrontpic
+	
+	ld a, [wOptions1]
+	push af
+	ld a, $3
+	ld c, a
+	ld a, [wOptions1]
+	and $fc
+	or c
+	ld [wOptions1], a
+	
+	set 6, a
+	ld [wInputFlags], a
+	
+	call SetUpTextBox
+	push hl
+	call ClearSpeechBox
+	pop hl
+	
+	call SaveMusic
+	
+	bccoord TEXTBOX_INNERX, TEXTBOX_INNERY
+	ld d, 9
+.loop
+	push de
+	ld hl, SpruceTextE
+	call PrintTextBoxText2
+	call RestoreMusic
+	inc bc
+	inc bc
+	inc bc
+	pop de
+	dec d
+	jr nz, .loop
+
+	
+	ld a, 60
+	ld [wPlaceBallsY], a
+.loop2
+	ld c, 2
+	call DelayFrames
+	call RestoreMusic
+	ld a, [wPlaceBallsY]
+	dec a
+	ld [wPlaceBallsY], a
+	cp 0
+	jr nz, .loop2
+	
+	ld de, MUSIC_NONE
+	call PlayMusic
+	
+	ld c, 150
+	call DelayFrames
+	
+	pop af
+	ld [wOptions1], a
+	
+	xor a
+	ld [wInputFlags], a
+	ret
+
+
+	ld hl, SpruceText2
+	call PrintText
+	ld hl, SpruceText4
+	call PrintText
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap
+	ret
+	
 SpruceText1: ; 0x6045
 	text_jump _SpruceText1
 	db "@"
@@ -926,6 +1040,10 @@ SpruceTextC: ; 0x606f
 	
 SpruceTextD: ; 0x606f
 	text_jump _SpruceTextD
+	db "@"
+	
+SpruceTextE: ; 0x606f
+	text_jump _SpruceTextE
 	db "@"
 ; 48dfc (12:4dfc)
 

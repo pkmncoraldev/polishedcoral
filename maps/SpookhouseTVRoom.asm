@@ -92,15 +92,34 @@ SpookHouseNPC3:
 	changemap SpookhouseTVRoom3_BlockData
 .return
 	callasm GenericFinishBridge
-	closetext
 	playsound SFX_SCREAM
+	closetext
 	waitsfx
+	setevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
+	callasm SpookHouseMenuAsm1
+;	warp2 UP, SPOOKHOUSE_TV_ROOM, $1, $1
+.return2
+	loadmenudata SpookHouseTVRoomMenuData
+	verticalmenu
+	closewindow
+	if_equal $1, .newgame
+	if_equal $2, .options
+.newgame
+	callasm SpookHouseMenuAsm2
+	jump .cont
+.options
+	callasm SpookHouseMenuAsm3
+	jump .return2
+.cont
 	loadwildmon SPIRITOMB, 30
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
-	changemap SpookhouseTVRoom_BlockData
+	changemap SpookhouseTVRoom2_BlockData
 	dontrestartmapmusic
+	playmusic MUSIC_NONE
 	reloadmap
 	applyonemovement PLAYER, show_person
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	opentext
 	writetext SpookHouseGhostText2
 	playsound SFX_EMBER
@@ -111,81 +130,26 @@ SpookHouseNPC3:
 	pause 15
 	setevent EVENT_SPOOKHOUSE_GHOSTBEGONE
 	setevent EVENT_SPOOKHOUSE_BEATEN
+	clearevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
 	warp OLD_MANOR_EXTERIOR, 14, 10
 	end
 .girlleft
 	changemap SpookhouseTVRoom4_BlockData
 	jump .return
 	
-SpookHouseTVRoom5:
-	checkevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
-	iffalse .end
-	clearevent EVENT_SPOOKHOUSE_GHOSTBEGONE
-	clearevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
-	appear SPOOKHOUSE_TVROOM_NPC4
-	opentext
-	writetext SpookHouseGhostText3
-	waitbutton
-	closetext
-	disappear SPOOKHOUSE_TVROOM_NPC4
-	wait 8
-	appear SPOOKHOUSE_TVROOM_NPC2
-	reloadmappart
-	wait 4
-	spriteface PLAYER, LEFT
-	opentext
-	writetext SpookHouseGhostText4
-	waitbutton
-	closetext
-	disappear SPOOKHOUSE_TVROOM_NPC2
-	wait 8
-	appear SPOOKHOUSE_TVROOM_NPC3
-	reloadmappart
-	wait 4
-	spriteface PLAYER, RIGHT
-	opentext
-	writetext SpookHouseGhostText5
-	waitbutton
-	closetext
-	disappear SPOOKHOUSE_TVROOM_NPC3
-	wait 16
-	appear SPOOKHOUSE_TVROOM_NPC4
-	reloadmappart
-	wait 4
-	spriteface PLAYER, DOWN
-	wait 8
-	opentext
-	writetext SpookHouseGhostText6
-	waitbutton
-	closetext
-	disappear SPOOKHOUSE_TVROOM_NPC4
-	wait 8
-	opentext
-	writetext SpookHouseGhostText7
-	wait 32
-	closetext
-	appear SPOOKHOUSE_TVROOM_NPC5
-	spriteface PLAYER, UP
-	cry BULBASAUR
-	opentext
-	writetext SpookHouseGhostText8
-	wait 8
-	closetext
-	loadwildmon BULBASAUR, 1
-	startbattle
-	disappear SPOOKHOUSE_TVROOM_NPC5
-	reloadmapafterbattle
-	opentext
-	writetext SpookHouseGhostText2
-	playsound SFX_EMBER
-	earthquake 60
-	waitsfx
-	closetext
-	special FadeOutPalettes
-	pause 15
-	setevent EVENT_SPOOKHOUSE_GHOSTBEGONE
-	warp OLD_MANOR_EXTERIOR, 14, 10
-.end
+SpookHouseTVRoomMenuData: ; 49d14
+	db $40 ; flags
+	db 00, 00 ; start coords
+	db 07, 16 ; end coords
+	dw .MenuData2
+	db 1 ; default option
+; 49d1c
+
+.MenuData2: ; 49d1c
+	db $a1 ; flags
+	db 2 ; items
+	db "NEW GAME@"
+	db "OPTIONS@"
 	end
 	
 SpookHouseNPC2:
@@ -216,6 +180,30 @@ SpookHouseTV:
 	
 .tvoff
 	jumptext SpookHouseTVTextOff
+	
+SpookHouseMenuAsm1:
+	call SetBlackPals
+	ld c, 1
+	call FadePalettes
+	call ClearScreen
+	ld de, MUSIC_NONE
+	call PlayMusic
+	call LoadStandardFont
+	ld c, 250
+	call DelayFrames
+	ld b, CGB_DIPLOMA
+	call GetCGBLayout
+	call SetPalettes
+	ret
+	
+SpookHouseMenuAsm2:
+	farcall FakeProfSpruceSpeech
+	ret
+	
+SpookHouseMenuAsm3:
+	farcall _OptionsMenu
+	call ClearScreen
+	ret
 	
 SpookHouseGhostText1:
 	text "You shouldn't be"

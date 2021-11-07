@@ -634,6 +634,11 @@ Continue_DisplayGameTime: ; 5f84
 ; 5f99
 
 ProfSpruceSpeech: ; 0x5f99
+	ld de, OriginalGameByGFX
+	ld hl, VTiles0
+	lb bc, BANK(OriginalGameByGFX), $0c
+	call Request2bpp
+
 	farcall InitClock
 	ld c, 31
 	call FadeToBlack
@@ -643,18 +648,25 @@ ProfSpruceSpeech: ; 0x5f99
 	call PlayMusic
 
 	
+	call SetWhitePals
 	ld c, 31
-	call FadeToWhite
+	call FadePalettes
 	
 	xor a
 	ld [wCurPartySpecies], a
 	ld a, PROF_SPRUCE
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
+	call ApplyTilemap
 
-	ld b, CGB_INTRO_PALS
+	ld c, 60
+	call DelayFrames
+	
+	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
-	call Intro_RotatePalettesLeftFrontpic
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
 
 	ld hl, SpruceText1
 	call PrintText
@@ -675,9 +687,13 @@ ProfSpruceSpeech: ; 0x5f99
 	ld [wTempMonDVs + 1], a
 	ld [wTempMonDVs + 2], a
 
-	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
+	call ApplyTilemap
+	
+	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
-	call Intro_RotatePalettesLeftFrontpic
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
 
 	ld hl, SpruceText2
 	call PrintText
@@ -692,34 +708,112 @@ ProfSpruceSpeech: ; 0x5f99
 	ld a, PROF_SPRUCE
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
+	call ApplyTilemap
 
-	ld b, CGB_INTRO_PALS
+	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
-	call Intro_RotatePalettesLeftFrontpic
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
 
 	ld hl, SpruceText5
 	call PrintText
 	ld c, 15
 	call FadeToWhite
 	call ClearTileMap
+	
+	call DelayFrame
+	hlbgcoord 0, 0
+	ld bc, BG_MAP_HEIGHT * BG_MAP_WIDTH
+	ld a, " "
+	call ByteFill
+	call RefreshScreen
 
 .ChooseGender:
+	ld b, CGB_INTRO_PLAYER_PALS
+	call GetCGBLayout
+	
+	ld hl, PlayerIntroPaletteWhite
+	ld de, wUnknBGPals palette 1
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	ld hl, PlayerIntroPaletteWhite
+	ld de, wUnknBGPals palette 2
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	
+	ld c, 30
+	call FadePalettes
+	ld hl, SpruceTextB
+	call PrintText
+	
+	xor a
+	ld [wCurPartySpecies], a
+	call FinishPrepIntroPicBoy
+	call FinishPrepIntroPicGirl
+	call DelayFrame
+	
+	ld hl, PlayerIntroPaletteGray
+	ld de, wUnknBGPals palette 1
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	ld hl, PlayerIntroPaletteGray
+	ld de, wUnknBGPals palette 2
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	ld c, 60
+	call FadePalettes
+	
+.genderloop
+	call JoyTextDelay
+	ld a, [hJoyLast]
+	and A_BUTTON
+	jr nz, .got_gender
+	call ChooseGender_HandleJoypad
+	call ChooseGender_UpdateCursorOAM
+	call DelayFrame
+	jr .genderloop
+	
+;	ld hl, .MenuDataHeader
+;	call LoadMenuDataHeader
+;	call ApplyAttrAndTilemapInVBlank
+;	call VerticalMenu
+;	call CloseWindow
+;	ld a, [wMenuCursorY]
+;	dec a
+.got_gender
+	call ClearSprites
+	ld de, SFX_READ_TEXT
+	call PlaySFX
+
+	ld a, [wPlaceBallsY]
+	ld [wPlayerGender], a
+	cp 0
+	jr nz, .girl
+	call Intro_PlayerFadeGirl
+	ld hl, SpruceTextF
+	call PrintText
+	call Intro_PlayerFadeBoy
+	jr .gender_done
+.girl
+	call Intro_PlayerFadeBoy
+	ld hl, SpruceTextF
+	call PrintText
+	call Intro_PlayerFadeGirl
+.gender_done
+	call ClearTileMap
+
 	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
-	call Intro_RotatePalettesLeftFrontpic
-	ld hl, SpruceTextB
-	call PrintText	
-	ld hl, .MenuDataHeader
-	call LoadMenuDataHeader
 	call ApplyAttrAndTilemapInVBlank
-	call VerticalMenu
-	call CloseWindow
-	ld a, [wMenuCursorY]
-	dec a
-	ld [wPlayerGender], a
-	
+
 	ld hl, SpruceTextC
 	call PrintText
+	call ClearTileMap
 	ld hl, .MenuDataHeaderPal
 	call LoadMenuDataHeader
 	call ApplyAttrAndTilemapInVBlank
@@ -734,16 +828,19 @@ ProfSpruceSpeech: ; 0x5f99
 	call ClearTileMap
 
 	ld c, 15
-	call FadeToWhite
-	call ClearTileMap
+	call DelayFrames
+	
+	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
+	call ApplyAttrAndTilemapInVBlank
 	
 	xor a
 	ld [wCurPartySpecies], a
 	farcall DrawIntroPlayerPic
-
-	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
-	call GetCGBLayout
-	call Intro_RotatePalettesLeftFrontpic
+	
+	ld c, 60
+	call FadePalettes
+	
 	ld hl, SpruceTextD
 	call PrintText
 	call YesNoBox
@@ -806,14 +903,17 @@ ProfSpruceSpeech: ; 0x5f99
 	ld c, 15
 	call FadeToWhite
 	call ClearTileMap
-	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
-	call GetCGBLayout
 
 	xor a
 	ld [wCurPartySpecies], a
 	farcall DrawIntroPlayerPic
 
-	call Intro_RotatePalettesLeftFrontpic
+	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
+	
 	ld hl, SpruceText8
 	call PrintText
 .endpippiscreen
@@ -827,10 +927,14 @@ ProfSpruceSpeech: ; 0x5f99
 	ld a, RIVAL
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
+	call ApplyTilemap
 	
-	ld b, CGB_INTRO_PALS
+	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
-	call Intro_RotatePalettesLeftFrontpic
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
+	
 	ld hl, SpruceText9
 	call PrintText
 	call NameRival
@@ -843,10 +947,13 @@ ProfSpruceSpeech: ; 0x5f99
 	ld a, RIVAL
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
+	call ApplyTilemap
 	
-	ld b, CGB_INTRO_PALS
+	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
-	call Intro_RotatePalettesLeftFrontpic	
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
 	
 	ld hl, SpruceText7
 	call PrintText
@@ -857,9 +964,13 @@ ProfSpruceSpeech: ; 0x5f99
 	xor a
 	ld [wCurPartySpecies], a
 	farcall DrawIntroPlayerPic
+
 	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
-	call Intro_RotatePalettesLeftFrontpic
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
+	
 	ld hl, SpruceTextA
 	call PrintText
 	
@@ -870,6 +981,77 @@ ProfSpruceSpeech: ; 0x5f99
 	ld [wPlayerPalette], a
 	ld [wPlayerInitialPalette], a
 	ret
+	
+Intro_PlayerFadeBoy:
+	ld hl, PlayerIntroPaletteWhite
+	ld de, wUnknBGPals palette 1
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	ld c, 30
+	jp FadePalettes
+	
+Intro_PlayerFadeGirl:
+	ld hl, PlayerIntroPaletteWhite
+	ld de, wUnknBGPals palette 2
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	ld c, 30
+	jp FadePalettes
+	
+ChooseGender_HandleJoypad: ; e089c
+	ld hl, hJoyLast
+	ld a, [hl]
+	and D_LEFT
+	jp nz, .d_left
+	ld a, [hl]
+	and D_RIGHT
+	jp nz, .d_right
+	ret
+.d_left
+	ld a, [wPlaceBallsY]
+	cp 0
+	ret z
+	dec a
+	ld [wPlaceBallsY], a
+	ld de, SFX_READ_TEXT
+	call PlaySFX
+	ret
+.d_right
+	ld a, [wPlaceBallsY]
+	cp 1
+	ret z
+	inc a
+	ld [wPlaceBallsY], a
+	ld de, SFX_READ_TEXT
+	call PlaySFX
+	ret
+	
+ChooseGender_UpdateCursorOAM:
+	ld a, [wPlaceBallsY]
+	cp 0
+	jr z, .one
+.two
+	ld hl, ChooseGender_OAM02
+	ld de, wSprites
+	ld bc, 9
+	jp CopyBytes
+.one
+	ld hl, ChooseGender_OAM01
+	ld de, wSprites
+	ld bc, 9
+	jp CopyBytes
+	
+ChooseGender_OAM01:
+;y pos, x pos, tile, palette
+	dsprite  4,  4, 6,  0, $09, $0 | BEHIND_BG
+	dsprite  4,  4, 7,  0, $0a, $0 | BEHIND_BG
+	
+ChooseGender_OAM02:
+;y pos, x pos, tile, palette
+	dsprite  4,  4, 15,  0, $09, $0 | BEHIND_BG
+	dsprite  4,  4, 16,  0, $0a, $0 | BEHIND_BG
 	
 FakeProfSpruceSpeech::
 	ld c, 31
@@ -889,7 +1071,7 @@ FakeProfSpruceSpeech::
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 
-	ld b, CGB_INTRO_PALS
+	ld b, CGB_BATTLE_GRAYSCALE
 	call GetCGBLayout
 	call Intro_RotatePalettesLeftFrontpic
 
@@ -1045,7 +1227,10 @@ SpruceTextD: ; 0x606f
 SpruceTextE: ; 0x606f
 	text_jump _SpruceTextE
 	db "@"
-; 48dfc (12:4dfc)
+
+SpruceTextF: ; 0x606f
+	text_jump _SpruceTextF
+	db "@"
 
 
 
@@ -1131,6 +1316,17 @@ ShrinkPlayer: ; 610f
 	jp ClearTileMap
 ; 616a
 
+Intro_PleaseJustFuckingWork:
+	ld hl, IntroFadeTestThing
+	ld a, [hli]
+	call DmgToCgbBGPals
+;	ld c, 10
+;	call DelayFrames
+	ret
+	
+IntroFadeTestThing:
+	db %11100100
+
 Intro_RotatePalettesLeftFrontpic: ; 616a
 	ld hl, IntroFadePalettes
 	ld b, IntroFadePalettesEnd - IntroFadePalettes
@@ -1188,7 +1384,30 @@ FinishPrepIntroPic:
 	lb bc, 7, 7
 	predef PlaceGraphic
 	ret
-; 61cd
+
+FinishPrepIntroPicBoy:
+	ld a, PLAYER_CORY
+	ld [wTrainerClass], a
+	ld de, VTiles2
+	farcall GetTrainerPic
+	xor a
+	ld [hGraphicStartTile], a
+	hlcoord 2, 4
+	lb bc, 7, 7
+	predef PlaceGraphic
+	ret
+	
+FinishPrepIntroPicGirl:
+	ld a, PLAYER_CORA
+	ld [wTrainerClass], a
+	ld de, VTiles2 tile 49
+	farcall GetTrainerPic
+	ld a, 49
+	ld [hGraphicStartTile], a
+	hlcoord 11, 4
+	lb bc, 7, 7
+	predef PlaceGraphic
+	ret
 
 Intro_PlacePlayerSprite: ; 61cd
 	farcall GetPlayerIcon
@@ -1234,7 +1453,6 @@ Intro_PlacePlayerSprite: ; 61cd
 	db 10 * 8 + 4,  9 * 8, 2
 	db 10 * 8 + 4, 10 * 8, 3
 ; 620b
-
 
 CrystalIntroSequence: ; 620b
 	farcall Copyright_GFPresents
@@ -1767,3 +1985,16 @@ GameInit:: ; 642e
 	call ApplyTilemapInVBlank
 	jp CrystalIntroSequence
 ; 6454
+
+PlayerIntroPaletteWhite:
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+PlayerIntroPaletteGray:
+	RGB 31, 31, 31
+	RGB 24, 24, 24
+	RGB 12, 12, 12
+	RGB 00, 00, 00
+	

@@ -54,7 +54,7 @@ Predef_LoadCGBLayout: ; 8d59
 	dw _CGB_UnownPuzzle
 	dw _CGB_GameFreakLogo
 	dw _CGB_TradeTube
-	dw _CGB_IntroPals
+	dw _CGB_IntroPlayerPals
 	dw _CGB_PlayerOrMonFrontpicPals
 	dw _CGB_TrainerOrMonFrontpicPals
 	dw _CGB_CoraldevLogo
@@ -1272,42 +1272,37 @@ else
 	MONOCHROME_RGB_FOUR
 endc
 
+_CGB_IntroPlayerPals: ; 9591
+;	ld de, wUnknBGPals
+;	ld a, [wCurPartySpecies]
+;	ld bc, wTempMonPersonality
+;	call GetFrontpicPalettePointer
+;	call LoadPalette_White_Col1_Col2_Black
+	call WipeAttrMap
+	
+	hlcoord 2, 4, wAttrMap
+	lb bc, 7, 7
+	ld a, $1
+	call FillBoxCGB
+	
+	hlcoord 11, 4, wAttrMap
+	lb bc, 7, 7
+	ld a, $2
+	call FillBoxCGB
 
-_CGB_IntroPals: ; 9591
-	ld de, wUnknBGPals
-	ld a, [wCurPartySpecies]
-	ld bc, wTempMonPersonality
-	call GetFrontpicPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
-	push de
-;	call VaryBGPal0ByTempMonDVs
-	pop de
-
-	ld hl, .IntroGradientPalette
+	ld hl, IntroOAMPalette
+	ld de, wUnknOBPals
 	ld bc, 1 palettes
 	ld a, $5
 	call FarCopyWRAM
-
-	call WipeAttrMap
-
-	hlcoord 0, 0, wAttrMap
-	lb bc, 3, 20
-	ld a, $1
-	call FillBoxCGB
-
-	call ApplyAttrMap
-	jp ApplyPals
-; 95e0
-
-.IntroGradientPalette:
-if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 27, 31, 31
-	RGB 19, 31, 31
-	RGB 09, 30, 31
-else
-	MONOCHROME_RGB_FOUR
-endc
+	
+	jp ApplyAttrMap
+	
+IntroOAMPalette:
+	RGB 31, 00, 00
+	RGB 31, 00, 00
+	RGB 31, 00, 00
+	RGB 31, 00, 00
 
 
 _CGB_PlayerOrMonFrontpicPals: ; 9529
@@ -1318,7 +1313,7 @@ _CGB_PlayerOrMonFrontpicPals: ; 9529
 	call LoadPalette_White_Col1_Col2_Black
 ;	call VaryBGPal0ByTempMonDVs
 	call WipeAttrMap
-	call ApplyAttrMap
+	jp ApplyAttrMap
 	jp ApplyPals
 ; 9542
 
@@ -1331,7 +1326,7 @@ _CGB_TrainerOrMonFrontpicPals: ; 9578
 	call LoadPalette_White_Col1_Col2_Black
 ;	call VaryBGPal0ByTempMonDVs
 	call WipeAttrMap
-	call ApplyAttrMap
+	jp ApplyAttrMap
 	jp ApplyPals
 ; 9591
 

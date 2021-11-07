@@ -133,7 +133,6 @@ INCLUDE "engine/learn.asm"
 INCLUDE "engine/math.asm"
 INCLUDE "engine/npc_movement.asm"
 INCLUDE "engine/events/happiness_egg.asm"
-INCLUDE "engine/events/specials_2.asm"
 
 
 
@@ -389,6 +388,7 @@ INCLUDE "data/items/attributes.asm"
 SECTION "Code 6", ROMX
 
 INCLUDE "engine/clock_reset.asm"
+INCLUDE "engine/events/specials_2.asm"
 
 
 ;SECTION "Effect Command Pointers", ROMX

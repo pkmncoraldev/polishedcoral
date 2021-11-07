@@ -74,6 +74,11 @@ _SpruceTextE::
 	text "This world "
 	done
 	
+_SpruceTextF::
+	text "Got it!"
+	prompt
+	done
+	
 UnknownText_0x1c40e6::
 	text "The clock's time"
 	line "may be wrong."

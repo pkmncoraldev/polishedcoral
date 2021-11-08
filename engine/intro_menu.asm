@@ -1062,18 +1062,25 @@ FakeProfSpruceSpeech::
 	call PlayMusic
 
 	
+	call SetWhitePals
 	ld c, 31
-	call FadeToWhite
+	call FadePalettes
 	
 	xor a
 	ld [wCurPartySpecies], a
 	ld a, PROF_SPRUCE
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
+	call ApplyTilemap
 
-	ld b, CGB_BATTLE_GRAYSCALE
+	ld c, 60
+	call DelayFrames
+	
+	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
-	call Intro_RotatePalettesLeftFrontpic
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
 
 	ld hl, SpruceText1
 	call PrintText
@@ -1094,9 +1101,13 @@ FakeProfSpruceSpeech::
 	ld [wTempMonDVs + 1], a
 	ld [wTempMonDVs + 2], a
 
-	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
+	call ApplyTilemap
+	
+	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
-	call Intro_RotatePalettesLeftFrontpic
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
 	
 	ld a, [wOptions1]
 	push af

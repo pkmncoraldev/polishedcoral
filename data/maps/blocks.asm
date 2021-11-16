@@ -41,8 +41,8 @@ SunbeamSurfShop_BlockData:
 	
 Route1Gate_BlockData:
 Route8Gate_BlockData:
-ParkGate_BlockData:
 Route11Gate_BlockData:
+Route12Gate_BlockData:
 	INCBIN "maps/NorthSouthGate.ablk.lz"
 	
 Route5Gate1F_BlockData:
@@ -113,10 +113,6 @@ BrilloGameCorner_BlockData:
 	INCBIN "maps/BrilloGameCorner.ablk.lz"
 	
 SECTION "Map Blockdata 1", ROMX
-
-
-Park_BlockData:
-	INCBIN "maps/Park.ablk.lz"
 
 Skatepark_BlockData:
 	INCBIN "maps/Skatepark.ablk.lz"
@@ -253,7 +249,7 @@ LusterTrainStation_BlockData:
 	INCBIN "maps/LusterTrainStation.ablk.lz"
 	
 Route10Tent_BlockData:
-Route12Tent_BlockData:
+DesertRouteTent_BlockData:
 	INCBIN "maps/Route10Tent.ablk.lz"
 	
 TwinkleTown_BlockData:
@@ -451,6 +447,15 @@ Route10_BlockData:
 Route10East_BlockData:
 	INCBIN "maps/Route10East.ablk.lz"
 	
+Route11_BlockData:
+	INCBIN "maps/Route11.ablk.lz"
+	
+Route12_BlockData:
+	INCBIN "maps/Route12.ablk.lz"
+	
+OnwaIntlAirport_BlockData:
+	INCBIN "maps/OnwaIntlAirport.ablk.lz"
+	
 FlickerPassOutside_BlockData:
 	INCBIN "maps/FlickerPassOutside.ablk.lz"
 	
@@ -595,11 +600,11 @@ ShimmerUnderBoardwalk_BlockData:
 BrilloTown_BlockData:
 	INCBIN "maps/BrilloTown.ablk.lz"
 	
-Route12_BlockData:
-	INCBIN "maps/Route12.ablk.lz"
+DesertRoute_BlockData:
+	INCBIN "maps/DesertRoute.ablk.lz"
 	
-Route12North_BlockData:
-	INCBIN "maps/Route12North.ablk.lz"
+DesertRouteNorth_BlockData:
+	INCBIN "maps/DesertRouteNorth.ablk.lz"
 	
 DesertWasteland1_BlockData:
 DesertWasteland3_BlockData:

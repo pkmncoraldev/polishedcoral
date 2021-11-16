@@ -316,25 +316,25 @@ FadeToMapMusic:: ; 3cbc
 
 	jr PopAFBCDEHL
 
-FadeToMapMusic2:: ; 3cbc
-	eventflagcheck EVENT_YOU_CHEATED
-	ret nz
-	push hl
-	push de
-	push bc
-	push af
+;FadeToMapMusic2:: ; 3cbc
+;	eventflagcheck EVENT_YOU_CHEATED
+;	ret nz
+;	push hl
+;	push de
+;	push bc
+;	push af
 
-	call GetMapMusic
+;	call GetMapMusic
 	
-	ld a, 8
-	ld [wMusicFade], a
-	ld a, e
-	ld [wMusicFadeIDLo], a
-	ld a, d
-	ld [wMusicFadeIDHi], a
-	ld a, e
-	ld [wMapMusic], a
-	jr PopAFBCDEHL
+;	ld a, 8
+;	ld [wMusicFade], a
+;	ld a, e
+;	ld [wMusicFadeIDLo], a
+;	ld a, d
+;	ld [wMusicFadeIDHi], a
+;	ld a, e
+;	ld [wMapMusic], a
+;	jr PopAFBCDEHL
 
 PlayMapMusic:: ; 3cdf
 	eventflagcheck EVENT_YOU_CHEATED
@@ -409,7 +409,7 @@ GetMapMusic::
 .loop:
 	ld a, [hli]
 	and a
-	jr z, GetPlayerStateMusic
+	jp z, GetMapHeaderMusic
 	cp b
 	jr nz, .wrong_group
 	ld a, [hli]
@@ -426,12 +426,6 @@ GetMapMusic::
 	inc hl
 	inc hl
 	jr .loop
-
-GetPlayerStateMusic:
-;	ld a, [wPlayerState]
-;	cp PLAYER_BIKE
-;	jr z, .bike
-	jp GetMapHeaderMusic
 
 DoSurfMusic:
 	ld a, [wPlayerState]
@@ -450,8 +444,9 @@ music_map: MACRO
 ENDM
 	music_map SUNSET_BAY, DoSurfMusic
 	music_map SUNSET_CAPE, DoSurfMusic
-;	music_map SHIMMER_CITY, DoSurfMusic
-;	music_map INDIGO_PLATEAU, GetMapHeaderMusic
+	music_map SHIMMER_CITY, DoSurfMusic
+	music_map SHIMMER_HARBOR, DoSurfMusic
+	music_map SHIMMER_UNDER_BOARDWALK, DoSurfMusic
 ;	music_map QUIET_CAVE_1F, GetMapHeaderMusic
 ;	music_map QUIET_CAVE_B1F, GetMapHeaderMusic
 ;	music_map QUIET_CAVE_B2F, GetMapHeaderMusic

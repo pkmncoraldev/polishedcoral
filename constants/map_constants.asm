@@ -212,7 +212,7 @@ MAP_NONE   EQU 0
 	map_const TWINKLE_GYM_BLUE_ROOM,					   7,  9 ; 11
 	map_const TWINKLE_GYM_YELLOW_ROOM,					   8, 11 ; 12
 	map_const TWINKLE_GYM_RED_ROOM,						  24, 28 ; 13
-	map_const ROUTE_12_TENT,							   2,  3 ; 14
+	map_const DESERT_ROUTE_TENT,						   2,  3 ; 14
 	
 	newgroup													 ; 12
 	
@@ -259,12 +259,8 @@ MAP_NONE   EQU 0
 	map_const LUSTER_SKYSCRAPER_2_2F,					   4,  4 ; 34
 	map_const LUSTER_SKYSCRAPER_2_3F,					   4,  4 ; 35
 	map_const LUSTER_SKYSCRAPER_2_ELEVATOR,				   2,  2 ; 36
-	map_const PARK,										  21, 31 ; 
-	map_const SKATEPARK,								  15, 32 ; 
-	map_const PARK_GATE,							   	   4,  4 ; 
-	map_const ROUTE_11_GATE,							   4,  4 ; 
 	
-	newgroup
+	newgroup													 ; 14
 	
 	map_const NETT_BUILDING_1F,							   9,  7 ; 1
 	map_const NETT_BUILDING_2F,							   6,  7 ; 2
@@ -274,7 +270,15 @@ MAP_NONE   EQU 0
 	map_const NETT_BUILDING_STAIRWELL,					   3,  5 ; 6
 	map_const NETT_BUILDING_OFFICE,						   5,  5 ; 7
 	
-	newgroup													 ; 14
+	newgroup													 ; 15
+	map_const ROUTE_11,									  21, 31 ; 1
+	map_const SKATEPARK,								  15, 32 ; 2
+	map_const ROUTE_11_GATE,							   4,  4 ; 3
+	map_const ROUTE_12_GATE,							   4,  4 ; 4
+	map_const ROUTE_12,									  24,  1 ; 5
+	map_const ONWA_INTL_AIRPORT,						  24, 16 ; 6
+	
+	newgroup													 ; 16
 	
 	map_const SHIMMER_CITY,					  			  26, 17 ; 1
 	map_const SHIMMER_HARBOR,					  		  11, 14 ; 2
@@ -290,7 +294,7 @@ MAP_NONE   EQU 0
 	map_const SHIMMER_HOUSE_3,							   4,  4 ; 12
 	
 	
-	newgroup													 ; 15
+	newgroup													 ; 17
 	
 	map_const BRILLO_TOWN,								  22, 17 ; 1
 	map_const BRILLO_BOAT_HOUSE,                    	   4,  3 ; 2
@@ -300,8 +304,8 @@ MAP_NONE   EQU 0
 	map_const BRILLO_POKECENTER,                    	   6,  4 ; 6
 	map_const BRILLO_MART,                    			   5,  4 ; 7
 	map_const BRILLO_GAME_CORNER,              			   7,  5 ; 8
-	map_const ROUTE_12,         	           			  24, 17 ; 9
-	map_const ROUTE_12_NORTH,       	           		  13, 15 ; 10
+	map_const DESERT_ROUTE,         	           		  24, 17 ; 9
+	map_const DESERT_ROUTE_NORTH,       	           	  13, 15 ; 10
 	map_const DESERT_WASTELAND_1,              			   9,  9 ; 11
 	map_const DESERT_WASTELAND_2,              			   9,  9 ; 12
 	map_const DESERT_WASTELAND_3,              			   9,  9 ; 13

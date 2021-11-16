@@ -16,8 +16,8 @@ LusterCityResidential_MapScriptHeader:
 	warp_def 44,  6, 1, LUSTER_APARTMENT_4_1F
 	warp_def 34, 17, 1, LUSTER_APARTMENT_5_1F
 	warp_def 44, 17, 1, LUSTER_APARTMENT_6_1F
-	warp_def 55, 22, 1, PARK_GATE
-	warp_def 55, 23, 2, PARK_GATE
+	warp_def 55, 22, 1, ROUTE_11_GATE
+	warp_def 55, 23, 2, ROUTE_11_GATE
 
 	db 18 ; coord events
 	xy_trigger 0, 41, 21, 0, LusterCityResidentialLight, 0, 0

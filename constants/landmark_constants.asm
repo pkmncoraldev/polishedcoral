@@ -42,10 +42,13 @@
 	const FROZEN_RUINS		 ; 20
 	const LUSTER_CITY		 ; 21
 	const LUSTER_SEWERS		 ; 22
-	const PARK				 ; 23
-	const SHIMMER_CITY		 ; 24
-	const BRILLO_TOWN		 ; 25
-	const ROUTE_12			 ; 26
+	const ROUTE_11			 ; 23
+	const ROUTE_12			 ; 24
+	const AIRPORT			 ; 25
+	const SHIMMER_CITY		 ; 26
+	const BRILLO_TOWN		 ; 27
+	const DESERT_ROUTE		 ; 28
+
 	
 	const LUSTER_STATION
 	const RESIDENTIAL_DISTRICT

@@ -855,6 +855,8 @@ LoadMapPals::
 	jp z, .starglow
 	cp TILESET_RANCH
 	jp z, .ranch
+	cp TILESET_PARK
+	jp z, .park
 	cp TILESET_SNOW
 	jp z, .snow
 	cp TILESET_LUSTER
@@ -919,7 +921,7 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_BRILLO_TOWN
 	jp z, .sailboat
-	cp MAP_ROUTE_12_NORTH
+	cp MAP_DESERT_ROUTE_NORTH
 	jp z, .desertfire
 	cp MAP_DESERT_WASTELAND_OASIS
 	jp z, .oasis
@@ -1251,6 +1253,7 @@ LoadMapPals::
 	and $3F
 	cp 1
 	jr z, .ranchyellow
+.park
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes

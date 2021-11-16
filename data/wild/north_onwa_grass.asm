@@ -1487,7 +1487,7 @@
 	db 30, RATTATA		;4%
 	db 30, RATTATA		;1%
 	
-	map_id ROUTE_12
+	map_id DESERT_ROUTE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, BULBASAUR	;30%

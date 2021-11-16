@@ -39,10 +39,12 @@ Landmarks: ; 0x1ca8c3
 	landmark 124,  28, FrozenRuinsName
 	landmark 136,  80, LusterCityName
 	landmark 132,  80, LusterSewersName
-	landmark 132,  92, ParkName
+	landmark 132,  92, Route11Name
+	landmark   0,   0, Route12Name
+	landmark   0,   0, AirportName
 	landmark   0,   0, ShimmerName
 	landmark   0,   0, BrilloTownName
-	landmark   0,   0, Route12Name
+	landmark   0,   0, DesertRouteName
 	
 	landmark 136,  80, LusterStationName
 	landmark 136,  80, ResidentialName
@@ -85,11 +87,12 @@ TwinkleTownName: 	   db "TWINKLE¯TOWN@"
 FrozenRuinsName: 	   db "FROZEN¯RUINS@"
 LusterCityName:		   db "LUSTER¯CITY@"
 LusterSewersName:	   db "LUSTER¯SEWERS@"
-ParkName:			   db "PARK@"
+Route11Name:		   db "ROUTE 11@"
+Route12Name:		   db "ROUTE 12@"
+AirportName:		   db "ONWA INTL. AIRPORT@"
 ShimmerName:           db "SHIMMER¯CITY@"
 BrilloTownName:	   	   db "BRILLO¯TOWN@"
-Route12Name:		   db "ROUTE 12@"
-;AirportName:		   db "ONWA INTL. AIRPORT@"
+DesertRouteName:	   db "DESERT¯ROUTE@"
 
 LusterStationName:	   db "LUSTER¯CITY@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"

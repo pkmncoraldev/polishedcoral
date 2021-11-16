@@ -80,10 +80,11 @@ MapTriggers::
 	scene_var NETT_BUILDING_OFFICE,					  wNettBuildingOfficeTrigger
 	scene_var NETT_BUILDING_M_BATHROOM,				  wAlways0Trigger
 	scene_var NETT_BUILDING_F_BATHROOM,				  wAlways0Trigger
+	scene_var ONWA_INTL_AIRPORT,					  wOnwaIntlAirportTrigger
 	scene_var SHIMMER_HARBOR,						  wShimmerHarborTrigger
 	scene_var BRILLO_TOWN,							  wBrilloTownTrigger
 	scene_var BRILLO_MART,							  wAlways0Trigger
-	scene_var ROUTE_12_NORTH,						  wRoute12NorthTrigger
+	scene_var DESERT_ROUTE_NORTH,					  wDesertRouteNorthTrigger
 	scene_var DESERT_WASTELAND_1,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_2,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_3,					  wSpookyForestEscortTrigger
@@ -93,6 +94,6 @@ MapTriggers::
 	scene_var DESERT_WASTELAND_7,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_8,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_9,					  wSpookyForestEscortTrigger
-	scene_var DESERT_WASTELAND_OASIS,				  wRoute12NorthTrigger
+	scene_var DESERT_WASTELAND_OASIS,				  wDesertRouteNorthTrigger
 	scene_var SAILBOAT_CUTSCENE,					  wAlways0Trigger
 	db -1

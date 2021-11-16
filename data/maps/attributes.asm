@@ -269,11 +269,17 @@ ENDM
 	map_attributes LusterCityBusiness, LUSTER_CITY_BUSINESS, 113, WEST
 	connection west, LusterCityShopping, LUSTER_CITY_SHOPPING, -6
 	
-	map_attributes Park, PARK, $02, EAST
+	map_attributes Route11, ROUTE_11, $02, EAST
 	connection east, Skatepark, SKATEPARK, 1
 	
+	map_attributes Route12, ROUTE_12, $02, NORTH
+	connection north, OnwaIntlAirport, ONWA_INTL_AIRPORT, 0
+	
+	map_attributes OnwaIntlAirport, ONWA_INTL_AIRPORT, $02, SOUTH
+	connection south, Route12, ROUTE_12, 0
+	
 	map_attributes Skatepark, SKATEPARK, $02, WEST
-	connection west, Park, PARK, -1
+	connection west, Route11, ROUTE_11, -1
 	
 	map_attributes ShimmerCity, SHIMMER_CITY, $71, NORTH | WEST
 	connection north, SunsetBay, SUNSET_BAY, -2
@@ -283,19 +289,19 @@ ENDM
 	connection east, ShimmerCity, SHIMMER_CITY, 0
 	
 	map_attributes BrilloTown, BRILLO_TOWN, $35, EAST
-	connection east, Route12, ROUTE_12, -7
+	connection east, DesertRoute, DESERT_ROUTE, -7
 	
-	map_attributes Route12, ROUTE_12, $71, NORTH | WEST
-	connection north, Route12North, ROUTE_12_NORTH, 14
+	map_attributes DesertRoute, DESERT_ROUTE, $71, NORTH | WEST
+	connection north, DesertRouteNorth, DESERT_ROUTE_NORTH, 14
 	connection west, BrilloTown, BRILLO_TOWN, 7
 	
-	map_attributes Route12North, ROUTE_12_NORTH, $02, NORTH | SOUTH
+	map_attributes DesertRouteNorth, DESERT_ROUTE_NORTH, $02, NORTH | SOUTH
 	connection north, DesertWasteland1, DESERT_WASTELAND_1, 3
-	connection south, Route12, ROUTE_12, -14
+	connection south, DesertRoute, DESERT_ROUTE, -14
 	
 	map_attributes DesertWasteland1, DESERT_WASTELAND_1, $02, NORTH | SOUTH
 	connection north, DesertWasteland2, DESERT_WASTELAND_2, 0
-	connection south, Route12North, ROUTE_12_NORTH, -3
+	connection south, DesertRouteNorth, DESERT_ROUTE_NORTH, -3
 	
 	map_attributes DesertWasteland2, DESERT_WASTELAND_2, $02, SOUTH | WEST
 	connection south, DesertWasteland1, DESERT_WASTELAND_1, 0
@@ -511,7 +517,7 @@ ENDM
 	map_attributes BrilloPokeCenter, BRILLO_POKECENTER, $0, 0
 	map_attributes BrilloMart, BRILLO_MART, $0, 0
 	map_attributes BrilloGameCorner, BRILLO_GAME_CORNER, $0, 0
-	map_attributes Route12Tent, ROUTE_12_TENT, $0, 0
+	map_attributes DesertRouteTent, DESERT_ROUTE_TENT, $0, 0
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0
@@ -520,5 +526,5 @@ ENDM
 	map_attributes Route8Gate, ROUTE_8_GATE, $0, 0
 	map_attributes Route4EventideGate, ROUTE_4_EVENTIDE_GATE, $0, 0
 	map_attributes EventideVillageGate, EVENTIDE_VILLAGE_GATE, $0, 0
-	map_attributes ParkGate, PARK_GATE, $0, 0
 	map_attributes Route11Gate, ROUTE_11_GATE, $0, 0
+	map_attributes Route12Gate, ROUTE_12_GATE, $0, 0

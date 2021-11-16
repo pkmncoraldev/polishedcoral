@@ -85,15 +85,15 @@ INCLUDE "maps/Route8Garden.asm"
 INCLUDE "maps/Route8.asm"
 INCLUDE "maps/Route9.asm"
 INCLUDE "maps/Route10.asm"
-INCLUDE "maps/Route12.asm"
-INCLUDE "maps/Route12North.asm"
+INCLUDE "maps/DesertRoute.asm"
+INCLUDE "maps/DesertRouteNorth.asm"
 INCLUDE "maps/DesertWastelandOasis.asm"
 
 
 SECTION "Routes Scripts2", ROMX
 INCLUDE "maps/Route10East.asm"
 INCLUDE "maps/Route10Tent.asm"
-INCLUDE "maps/Route12Tent.asm"
+INCLUDE "maps/DesertRouteTent.asm"
 
 
 SECTION "Sunset Bay Scripts", ROMX
@@ -215,10 +215,12 @@ INCLUDE "maps/LusterApartment5_1F.asm"
 INCLUDE "maps/LusterApartment5_2F.asm"
 INCLUDE "maps/LusterApartment6_1F.asm"
 INCLUDE "maps/LusterApartment6_2F.asm"
-INCLUDE "maps/Park.asm"
+INCLUDE "maps/Route11.asm"
 INCLUDE "maps/Skatepark.asm"
-INCLUDE "maps/ParkGate.asm"
 INCLUDE "maps/Route11Gate.asm"
+INCLUDE "maps/Route12Gate.asm"
+INCLUDE "maps/Route12.asm"
+INCLUDE "maps/OnwaIntlAirport.asm"
 
 SECTION "Luster City Scripts2", ROMX
 

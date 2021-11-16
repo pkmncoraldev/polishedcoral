@@ -53,16 +53,16 @@ DesertWasteland1_MapScriptHeader:
 DesertWastelandTrigger0:
 	setevent EVENT_SANDSTORM_HAPPENING
 	loadvar wTimeOfDayPalFlags, $40 | 1
-	domaptrigger ROUTE_12_NORTH, $2
+	domaptrigger DESERT_ROUTE_NORTH, $2
 	playsound SFX_SNOWSTORM_INTRO
 	dotrigger $1
 	end
 	
 DesertWastelandTrigger1:
-	callasm Route12SfxAsm
+	callasm DesertRouteSfxAsm
 	end
 	
-Route12SfxAsm:
+DesertRouteSfxAsm:
 	farcall CheckSFX
 	ret c
 	ld de, SFX_SNOWSTORM
@@ -78,6 +78,6 @@ DesertWastelandReset:
 	pause 5
 	special FadeOutPalettes
 	special Special_StopRunning
-	warp2 DOWN, ROUTE_12_NORTH, $c, $0
+	warp2 DOWN, DESERT_ROUTE_NORTH, $c, $0
 	end
 	

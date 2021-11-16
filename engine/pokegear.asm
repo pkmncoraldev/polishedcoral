@@ -780,7 +780,7 @@ TownMap_ConvertLineBreakCharacters: ; 1de2c5
 	jp PlaceString
 
 TownMap_GetNorthOnwaLandmarkLimits:
-	lb de, PARK, SUNSET_BAY
+	lb de, DESERT_ROUTE, SUNSET_BAY
 	ret
 
 TownMap_GetSouthOnwaLandmarkLimits: ; 910e8

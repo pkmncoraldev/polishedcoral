@@ -57,9 +57,10 @@ WhiteoutHandleEvents:
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	domaptrigger SUNSET_CAPE, $0
 	domaptrigger ROUTE_10, $0
-	domaptrigger ROUTE_12_NORTH, $0
+	domaptrigger DESERT_ROUTE_NORTH, $0
 	domaptrigger DESERT_WASTELAND_1, $0
 	clearevent EVENT_ON_DODRIO_RANCH
+	clearevent EVENT_AT_AIRPORT
 	clearflag ENGINE_NEAR_CAMPFIRE
 	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
 	clearevent EVENT_IN_SHOPPING_DISTRICT

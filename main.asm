@@ -202,7 +202,6 @@ INCLUDE "engine/items.asm"
 INCLUDE "engine/anim_hp_bar.asm"
 INCLUDE "engine/move_mon.asm"
 INCLUDE "engine/billspctop.asm"
-INCLUDE "engine/item_effects.asm"
 INCLUDE "engine/trainer_scripts.asm"
 
 BugContest_SetCaughtContestMon: ; e6ce
@@ -389,6 +388,7 @@ SECTION "Code 6", ROMX
 
 INCLUDE "engine/clock_reset.asm"
 INCLUDE "engine/events/specials_2.asm"
+INCLUDE "engine/item_effects.asm"
 
 
 ;SECTION "Effect Command Pointers", ROMX

@@ -1973,8 +1973,13 @@ GetWorldMapLocation:: ; 0x2caf
 	push de
 	push bc
 
+	
 	eventflagcheck EVENT_ON_DODRIO_RANCH
 	ld a, DODRIO_RANCH
+	jr nz, .end
+	
+	eventflagcheck EVENT_AT_AIRPORT
+	ld a, AIRPORT
 	jr nz, .end
 	
 	eventflagcheck EVENT_IN_RESIDENTIAL_DISTRICT

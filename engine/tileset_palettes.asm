@@ -171,7 +171,7 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, [wMapNumber]
 	cp MAP_BRILLO_TOWN
 	jp z, .brillo
-	cp MAP_ROUTE_12_NORTH
+	cp MAP_DESERT_ROUTE_NORTH
 	jp z, .desert_tent
 	cp MAP_DESERT_WASTELAND_OASIS
 	jr z, .oasis1
@@ -426,8 +426,39 @@ LoadSpecialMapPalette: ; 494ac
 	jp LoadSevenTimeOfDayBGPalettes
 	
 .park
+	ld a, [wMapNumber]
+	cp MAP_ONWA_INTL_AIRPORT
+	jr z, .airport
+	ld hl, OutsideLusterPalette
+	call LoadSevenTimeOfDayBGPalettes
 	ld hl, OutsideSkateparkPalette
-	jp LoadSevenTimeOfDayBGPalettes
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals + 6 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
+	
+.airport
+	ld hl, OutsideLusterPalette
+	call LoadSevenTimeOfDayBGPalettes
+	ld hl, AirportFencePalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals + 6 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 	
 .mall
 	ld hl, MallPalette
@@ -747,4 +778,7 @@ INCLUDE "maps/palettes/bgpals/oasis2.pal"
 
 BrilloWindowPalette:
 INCLUDE "maps/palettes/bgpals/brillo.pal"
+
+AirportFencePalette:
+INCLUDE "maps/palettes/bgpals/airportfence.pal"
 

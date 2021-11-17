@@ -857,6 +857,8 @@ LoadMapPals::
 	jp z, .ranch
 	cp TILESET_PARK
 	jp z, .park
+	cp TILESET_AIRPORT
+	jp z, .airport
 	cp TILESET_SNOW
 	jp z, .snow
 	cp TILESET_LUSTER
@@ -1254,6 +1256,7 @@ LoadMapPals::
 	cp 1
 	jr z, .ranchyellow
 .park
+.airport
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
@@ -1522,6 +1525,8 @@ LoadMapPals::
 	cp TILESET_SNOW
 	ret z
 	cp TILESET_PARK
+	ret z
+	cp TILESET_AIRPORT
 	ret z
 	cp TILESET_DESERT
 	ret z

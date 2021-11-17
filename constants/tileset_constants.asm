@@ -31,6 +31,7 @@
 	const TILESET_NETT_BUILDING		;30
 	const TILESET_SHIMMER			;31
 	const TILESET_DESERT			;32
+	const TILESET_AIRPORT			;33
 	
 
 	const_def

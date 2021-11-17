@@ -269,6 +269,7 @@ TilesetMountainAnim::
 TilesetSpookyAnim::
 TilesetRanchAnim::
 TilesetParkAnim::
+TilesetAirportAnim::
 	dw VTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft

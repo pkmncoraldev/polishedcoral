@@ -276,7 +276,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_11_GATE,							   4,  4 ; 3
 	map_const ROUTE_12_GATE,							   4,  4 ; 4
 	map_const ROUTE_12,									  24,  1 ; 5
-	map_const ONWA_INTL_AIRPORT,						  24, 16 ; 6
+	map_const ONWA_INTL_AIRPORT,						  26, 17 ; 6
 	
 	newgroup													 ; 16
 	

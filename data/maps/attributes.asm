@@ -275,7 +275,7 @@ ENDM
 	map_attributes Route12, ROUTE_12, $02, NORTH
 	connection north, OnwaIntlAirport, ONWA_INTL_AIRPORT, 0
 	
-	map_attributes OnwaIntlAirport, ONWA_INTL_AIRPORT, $02, SOUTH
+	map_attributes OnwaIntlAirport, ONWA_INTL_AIRPORT, $c4, SOUTH
 	connection south, Route12, ROUTE_12, 0
 	
 	map_attributes Skatepark, SKATEPARK, $02, WEST

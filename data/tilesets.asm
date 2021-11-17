@@ -626,6 +626,26 @@ INCBIN "data/tilesets/desert_attributes.bin.lz"
 TilesetDesertColl::
 INCLUDE "data/tilesets/desert_collision.asm"
 
+SECTION "Tileset Data - airport", ROMX
+
+TilesetAirportGFX0::
+INCBIN "gfx/tilesets/airport.2bpp.vram0.lz"
+
+TilesetAirportGFX1::
+INCBIN "gfx/tilesets/airport.2bpp.vram1.lz"
+
+TilesetAirportGFX2::
+INCBIN "gfx/tilesets/airport.2bpp.vram2.lz"
+
+TilesetAirportMeta::
+INCBIN "data/tilesets/airport_metatiles.bin.lz"
+
+TilesetAirportAttr::
+INCBIN "data/tilesets/airport_attributes.bin.lz"
+
+TilesetAirportColl::
+INCLUDE "data/tilesets/airport_collision.asm"
+
 
 SECTION "Tileset Headers", ROMX
 
@@ -669,3 +689,4 @@ Tilesets::
 	tileset TilesetNettBuilding
 	tileset TilesetShimmer
 	tileset TilesetDesert
+	tileset TilesetAirport

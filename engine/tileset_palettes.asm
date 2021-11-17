@@ -113,6 +113,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .luster
 	cp TILESET_PARK
 	jp z, .park
+	cp TILESET_AIRPORT
+	jp z, .airport
 	cp TILESET_MALL_1
 	jp z, .mall
 	cp TILESET_MALL_2
@@ -426,9 +428,6 @@ LoadSpecialMapPalette: ; 494ac
 	jp LoadSevenTimeOfDayBGPalettes
 	
 .park
-	ld a, [wMapNumber]
-	cp MAP_ONWA_INTL_AIRPORT
-	jr z, .airport
 	ld hl, OutsideLusterPalette
 	call LoadSevenTimeOfDayBGPalettes
 	ld hl, OutsideSkateparkPalette

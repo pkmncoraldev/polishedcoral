@@ -23,8 +23,15 @@ OnwaIntlAirport_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 7 ; object events
 	cuttree_event  9, 16, EVENT_ONWA_INTL_AIRPORT_CUT_TREE
+	itemball_event 29, 14, SUPER_REPEL, 1, EVENT_AIRPORT_POKE_BALL_1
+	itemball_event  8,  4, SUPER_REPEL, 1, EVENT_AIRPORT_POKE_BALL_2
+	person_event SPRITE_CORY_MISC,  8, 22, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_CORY_MISC,  8, 23, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_CORY_MISC,  8, 24, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_CORY_MISC,  8, 25, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	
 
 	
 Route12MapSignThing::

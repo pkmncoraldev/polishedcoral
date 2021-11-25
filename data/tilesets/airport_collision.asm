@@ -126,9 +126,9 @@
 	tilecoll WALL, WALL, WALL, WALL ; 7d
 	tilecoll WALL, WALL, WALL, WALL ; 7e
 	tilecoll WALL, WALL, WALL, WALL ; 7f
-	tilecoll WALL, WALL, WALL, WALL ; 80
-	tilecoll WALL, WALL, WALL, WALL ; 81
-	tilecoll WALL, WALL, WALL, WALL ; 82
+	tilecoll SKATE, WALL, SKATE, SKATE ; 80
+	tilecoll SKATE, SKATE, SKATE, SKATE ; 81
+	tilecoll WALL, WALL, NO_OLLIE, NO_OLLIE ; 82
 	tilecoll WALL, WALL, WALL, WALL ; 83
 	tilecoll GRIND, SKATE, GRIND, SKATE ; 84
 	tilecoll SKATE, SKATE, SKATE, GRIND ; 85
@@ -158,7 +158,7 @@
 	tilecoll SKATE, GRIND, SKATE, GRIND ; 9d
 	tilecoll GRIND, SKATE, GRIND, SKATE ; 9e
 	tilecoll GRIND, SKATE, GRIND, SKATE ; 9f
-	tilecoll WALL, WALL, WALL, WALL ; a0
+	tilecoll WALL, WALL, NO_OLLIE, NO_OLLIE ; a0
 	tilecoll WALL, WALL, WALL, WALL ; a1
 	tilecoll WALL, WALL, WALL, WALL ; a2
 	tilecoll WALL, WALL, WALL, WALL ; a3

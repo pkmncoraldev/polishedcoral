@@ -21,9 +21,10 @@ OnwaIntlAirport_MapScriptHeader:
 	xy_trigger 2, 16,  9, 0, OnwaIntlAirportInFrontFence, 0, 0
 	xy_trigger 2, 17,  9, 0, OnwaIntlAirportInFrontFence, 0, 0
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 22,  9, SIGNPOST_ITEM + FULL_RESTORE, EVENT_AIRPORT_HIDDEN_FULL_RESTORE
 
-	db 7 ; object events
+	db 13 ; object events
 	cuttree_event  9, 16, EVENT_ONWA_INTL_AIRPORT_CUT_TREE
 	itemball_event 29, 14, SUPER_REPEL, 1, EVENT_AIRPORT_POKE_BALL_1
 	itemball_event  8,  4, SUPER_REPEL, 1, EVENT_AIRPORT_POKE_BALL_2
@@ -31,6 +32,12 @@ OnwaIntlAirport_MapScriptHeader:
 	person_event SPRITE_CORY_MISC,  8, 23, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_CORY_MISC,  8, 24, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_CORY_MISC,  8, 25, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_OFFICER,  9, 27, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
+	person_event SPRITE_OFFICER,  5, 24, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
+	person_event SPRITE_OFFICER,  4, 12, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
+	person_event SPRITE_OFFICER, 10, 14, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
+	person_event SPRITE_OFFICER,  9,  5, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
+	person_event SPRITE_OFFICER,  8,  2, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
 	
 
 	
@@ -81,3 +88,15 @@ OnwaIntlAirportInFrontFence:
 	callasm GenericFinishBridge
 	dotrigger $1
 	end
+	
+OnwaIntlAirportGuard:
+	generictrainer PLAYER_CORY, -1, -1, .SeenText, -1
+
+.SeenText
+	text "Hold it!"
+	
+	para "Are you crazy?"
+	
+	para "You can't be out"
+	line "here!"
+	done

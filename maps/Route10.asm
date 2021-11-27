@@ -6,12 +6,15 @@ Route10_MapScriptHeader:
 	scene_script Route10Trigger3
 	scene_script Route10Trigger4
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_OBJECTS, Route10Random
+	callback MAPCALLBACK_TILES, Route10Callback
 
-	db 2 ; warp events
+	db 4 ; warp events
 	warp_def 35, 13, 3, FLICKER_PASS_2F
 	warp_def 47,  7, 4, FLICKER_PASS_2F
+	warp_def 31, 11, 1, ROUTE_10_REST_HOUSE
+	warp_def  3, 33, 1, ROUTE_10_MOVE_REMINDER_HOUSE
 
 	db 44 ; coord events
 	xy_trigger 1, 30, 19, 0, Route10StartSnowstorm, 0, 0
@@ -59,9 +62,19 @@ Route10_MapScriptHeader:
 	xy_trigger 2, 22, 55, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 2, 23, 55, 0, Route10StartSnowstorm, 0, 0
 
-	db 0 ; bg events
+	db 10 ; bg events
+	bg_event 35, 47, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_10_HIDDEN_ITEM_1
+	bg_event  8, 30, SIGNPOST_ITEM + PP_UP, EVENT_ROUTE_10_HIDDEN_ITEM_2
+	signpost 36,  9, SIGNPOST_READ, Route10Snowman1
+	signpost  9, 41, SIGNPOST_READ, Route10Snowman2
+	signpost 32, 16, SIGNPOST_READ, Route10Sign
+	signpost  4, 35, SIGNPOST_READ, Route10MoveRelearnerSign
+	signpost  3, 36, SIGNPOST_READ, TwinkleTownWood
+	signpost  2, 36, SIGNPOST_READ, TwinkleTownWood
+	signpost 31,  9, SIGNPOST_READ, TwinkleTownWood
+	signpost 30,  9, SIGNPOST_READ, TwinkleTownWood
 
-	db 7 ; object events
+	db 9 ; object events
 	person_event SPRITE_BOARDER, 34, 19, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_1, -1
 	person_event SPRITE_SKIER, 33, 27, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_2, -1
 	person_event SPRITE_BOARDER, 30, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_3, -1
@@ -69,6 +82,8 @@ Route10_MapScriptHeader:
 	person_event SPRITE_BOARDER, 22, 42, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_5, -1
 	person_event SPRITE_FIREBREATHER, 24, 50, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_6, -1
 	person_event SPRITE_BOARDER, 12, 33, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute10_7, -1
+	itemball_event 30, 47, MAX_ETHER, 1, EVENT_ROUTE_10_POKE_BALL_1
+	itemball_event 40, 26, BURN_HEAL, 1, EVENT_ROUTE_10_POKE_BALL_2
 
 Route10Trigger0:
 	end
@@ -243,6 +258,124 @@ TrainerRoute10_7:
 	text "Holding up well!"
 	done
 	
+Route10Sign:
+	jumptext Route10SignText
+	
+Route10SignText:
+	text "ROUTE 10"
+	
+	para "NORTH: TWINKLE"
+	line "TOWN"
+	
+	para "SOUTH: FLICKER"
+	line "PASS"
+	done
+	
+Route10MoveRelearnerSign:
+	jumptext Route10MoveRelearnerSignText
+	
+Route10MoveRelearnerSignText:
+	text "MOVE RELEARNER"
+	
+	para "Inquire inside."
+	done
+	
+Route10Snowman1:
+	opentext
+	checkevent EVENT_ROUTE_10_SNOWMAN_1_2
+	iftrue .tooksecondeye
+	checkevent EVENT_ROUTE_10_SNOWMAN_1_1
+	iftrue .tookfirsteye
+	writetext TwinkleTownSnowman1Text1
+	yesorno
+	iffalse .no
+	writetext TwinkleTownSnowman1TextAreYouSure
+	yesorno
+	iffalse .no
+	closetext
+	changeblock $8, $24, $bd
+	opentext
+	verbosegiveitem BOTTLE_CAP
+	writetext TwinkleTownSnowman1Text2
+	waitbutton
+	closetext
+	setevent EVENT_ROUTE_10_SNOWMAN_1_1
+	end
+.tookfirsteye
+	writetext TwinkleTownSnowman1Text3
+	yesorno
+	iffalse .no
+	writetext TwinkleTownSnowman1TextAreYouSure
+	yesorno
+	iffalse .no
+	closetext
+	changeblock $8, $24, $be
+	opentext
+	verbosegiveitem BOTTLE_CAP
+	writetext TwinkleTownSnowman1Text4
+	waitbutton
+	closetext
+	setevent EVENT_ROUTE_10_SNOWMAN_1_2
+	end
+.tooksecondeye
+	writetext TwinkleTownSnowman1Text5
+	waitbutton
+	closetext
+	end
+.no
+	writetext TwinkleTownSnowman1TextNo
+	waitbutton
+	closetext
+	end
+	
+Route10Snowman2:
+	opentext
+	checkevent EVENT_ROUTE_10_SNOWMAN_2_2
+	iftrue .tooksecondeye
+	checkevent EVENT_ROUTE_10_SNOWMAN_2_1
+	iftrue .tookfirsteye
+	writetext TwinkleTownSnowman1Text1
+	yesorno
+	iffalse .no
+	writetext TwinkleTownSnowman1TextAreYouSure
+	yesorno
+	iffalse .no
+	closetext
+	changeblock $28, $8, $bf
+	opentext
+	verbosegiveitem BOTTLE_CAP
+	writetext TwinkleTownSnowman1Text2
+	waitbutton
+	closetext
+	setevent EVENT_ROUTE_10_SNOWMAN_2_1
+	end
+.tookfirsteye
+	writetext TwinkleTownSnowman1Text3
+	yesorno
+	iffalse .no
+	writetext TwinkleTownSnowman1TextAreYouSure
+	yesorno
+	iffalse .no
+	closetext
+	changeblock $28, $8, $c0
+	opentext
+	verbosegiveitem BOTTLE_CAP
+	writetext TwinkleTownSnowman1Text4
+	waitbutton
+	closetext
+	setevent EVENT_ROUTE_10_SNOWMAN_2_2
+	end
+.tooksecondeye
+	writetext TwinkleTownSnowman1Text5
+	waitbutton
+	closetext
+	end
+.no
+	writetext TwinkleTownSnowman1TextNo
+	waitbutton
+	closetext
+	end
+	
 Route10Random:
 	checkevent EVENT_HAD_FIRST_SNOWSTORM
 	iffalse .first_storm
@@ -254,6 +387,27 @@ Route10Random:
 	callasm Route10FirstTimeRandomAsm
 	setevent EVENT_HAD_FIRST_SNOWSTORM
 .endcallback
+	return
+	
+Route10Callback:
+	checkevent EVENT_ROUTE_10_SNOWMAN_1_2
+	iffalse .no1
+	changeblock $8, $24, $be
+	jump .snowman2
+.no1
+	checkevent EVENT_ROUTE_10_SNOWMAN_1_1
+	iffalse .snowman2
+	changeblock $8, $24, $bd
+.snowman2
+	checkevent EVENT_ROUTE_10_SNOWMAN_2_2
+	iffalse .no2
+	changeblock $28, $8, $c0
+	jump .snowmanend
+.no2
+	checkevent EVENT_ROUTE_10_SNOWMAN_2_1
+	iffalse .snowmanend
+	changeblock $28, $8, $bf
+.snowmanend
 	return
 	
 Route10SfxAsm:

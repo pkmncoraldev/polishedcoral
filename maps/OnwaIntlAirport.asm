@@ -21,15 +21,17 @@ OnwaIntlAirport_MapScriptHeader:
 	xy_trigger 2, 16,  9, 0, OnwaIntlAirportInFrontFence, 0, 0
 	xy_trigger 2, 17,  9, 0, OnwaIntlAirportInFrontFence, 0, 0
 
-	db 2 ; bg events
+	db 3 ; bg events
 	signpost 19, 25, SIGNPOST_READ, OnwaIntlAirportSign
-	bg_event 22,  9, SIGNPOST_ITEM + EVIOLITE, EVENT_AIRPORT_HIDDEN_EVIOLITE
+	bg_event 14,  7, SIGNPOST_ITEM + NUGGET, EVENT_AIRPORT_HIDDEN_ITEM_1
+	bg_event 24,  8, SIGNPOST_ITEM + ELIXIR, EVENT_AIRPORT_HIDDEN_ITEM_2
 
-	db 14 ; object events
+	db 15 ; object events
 	person_event SPRITE_PSYCHIC, 16, 29, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC1, -1
 	cuttree_event  9, 16, EVENT_ONWA_INTL_AIRPORT_CUT_TREE
 	itemball_event 29, 15, SUPER_REPEL, 1, EVENT_AIRPORT_POKE_BALL_1
 	itemball_event  8,  4, FULL_RESTORE, 1, EVENT_AIRPORT_POKE_BALL_2
+	itemball_event 22,  9, EVIOLITE, 1, EVENT_AIRPORT_POKE_BALL_3
 	person_event SPRITE_CORY_MISC,  8, 22, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_CORY_MISC,  8, 23, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_CORY_MISC,  8, 24, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1

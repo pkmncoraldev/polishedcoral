@@ -455,6 +455,8 @@ ENDM
 	map_attributes TwinkleGymBlueRoom, TWINKLE_GYM_BLUE_ROOM, 0, 0
 	map_attributes TwinkleGymYellowRoom, TWINKLE_GYM_YELLOW_ROOM, 0, 0
 	map_attributes TwinkleGymRedRoom, TWINKLE_GYM_RED_ROOM, 0, 0
+	map_attributes Route10RestHouse, ROUTE_10_REST_HOUSE, 0, 0
+	map_attributes Route10MoveReminderHouse, ROUTE_10_MOVE_REMINDER_HOUSE, 0, 0
 	map_attributes TrainCabin1, TRAIN_CABIN_1, 0, 0
 	map_attributes TrainCabin2, TRAIN_CABIN_2, 0, 0
 	map_attributes EastTrainCab, EAST_TRAIN_CAB, 0, 0

@@ -95,6 +95,8 @@ DodrioRanchHouse_BlockData:
 TwinkleRockHouse_BlockData:
 TwinkleTradeHouse_BlockData:
 TwinkleSnowHouse_BlockData:
+Route10RestHouse_BlockData:
+Route10MoveReminderHouse_BlockData:
 	INCBIN "maps/TwinkleHouse.ablk.lz"
 
 SunsetCaptainsHouse_BlockData:

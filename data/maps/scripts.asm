@@ -84,7 +84,6 @@ INCLUDE "maps/Route8EncounterHouse.asm"
 INCLUDE "maps/Route8Garden.asm"
 INCLUDE "maps/Route8.asm"
 INCLUDE "maps/Route9.asm"
-INCLUDE "maps/Route10.asm"
 INCLUDE "maps/DesertRoute.asm"
 INCLUDE "maps/DesertRouteNorth.asm"
 INCLUDE "maps/DesertWastelandOasis.asm"
@@ -196,6 +195,9 @@ INCLUDE "maps/TwinkleGymEntry.asm"
 INCLUDE "maps/TwinkleGymBlueRoom.asm"
 INCLUDE "maps/TwinkleGymYellowRoom.asm"
 INCLUDE "maps/TwinkleGymRedRoom.asm"
+INCLUDE "maps/Route10.asm"
+INCLUDE "maps/Route10RestHouse.asm"
+INCLUDE "maps/Route10MoveReminderHouse.asm"
 
 SECTION "Luster City Scripts", ROMX
 

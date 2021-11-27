@@ -112,15 +112,15 @@
 	tilecoll WALL, SKATE, WALL, WALL ; 6f
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 70
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 71
-	tilecoll SKATE, SKATE, SKATE, SKATE ; 72
+	tilecoll SKATE, NO_OLLIE, WALL, WALL ; 72
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 73
 	tilecoll WALL, WALL, WALL, WALL ; 74
 	tilecoll WALL, WALL, WALL, WALL ; 75
 	tilecoll WALL, WALL, WALL, WALL ; 76
-	tilecoll WALL, SKATE, WALL, SKATE ; 77
+	tilecoll WALL, WALL, WALL, WALL ; 77
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 78
 	tilecoll SKATE, WALL, SKATE, SKATE ; 79
-	tilecoll WALL, WALL, SKATE, SKATE ; 7a
+	tilecoll WALL, WALL, WALL, WALL ; 7a
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 7b
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 7c
 	tilecoll WALL, WALL, WALL, WALL ; 7d

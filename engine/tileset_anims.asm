@@ -140,6 +140,7 @@ TilesetHouse2Anim::
 	dw wTileAnimBuffer, ScrollTileRight2
 	dw VTiles2 tile $6d, WriteTileFromBuffer
 	dw NULL,  AnimateConveyorTile
+	dw TwinkleFireplaceFrames, AnimateWaterfallTiles
 	dw NULL,  DoneTileAnimation
 
 TilesetSewerAnim::
@@ -1201,6 +1202,10 @@ FlagTiles: INCBIN "gfx/tilesets/flag/1.2bpp"
 FlagFrames2: dw VTiles2 tile $32, FlagTiles2
 
 FlagTiles2: INCBIN "gfx/tilesets/flag/2.2bpp"
+
+TwinkleFireplaceFrames: dw VTiles2 tile $48, TwinkleFireplaceTiles
+
+TwinkleFireplaceTiles: INCBIN "gfx/tilesets/fireplace/1.2bpp"
 ; fc5cc
 
 	

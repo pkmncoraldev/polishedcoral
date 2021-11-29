@@ -131,6 +131,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .gate
 	cp TILESET_HOUSE_1
 	jp z, .house1
+	cp TILESET_HOUSE_2
+	jp z, .house2
 	cp TILESET_NETT_BUILDING
 	jp z, .nett
 	cp TILESET_SHIMMER
@@ -268,6 +270,18 @@ LoadSpecialMapPalette: ; 494ac
 	jp .spookhouse
 .house1_nope
 	jp .do_nothing
+	
+.house2
+	ld a, [wMapGroup]
+	cp GROUP_TWINKLE_TOWN
+	jp nz, .do_nothing
+	ld hl, TwinkleFireplacePalette
+	ld de, wUnknBGPals + 4 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 	
 .lab
 	ld a, [wMapGroup]
@@ -678,6 +692,9 @@ INCLUDE "maps/palettes/bgpals/train.pal"
 
 FossilLabPalette:
 INCLUDE "maps/palettes/bgpals/fossillab.pal"
+
+TwinkleFireplacePalette:
+INCLUDE "maps/palettes/bgpals/twinklefireplace.pal"
 
 BoardwalkPalette:
 INCLUDE "maps/palettes/bgpals/boardwalk.pal"

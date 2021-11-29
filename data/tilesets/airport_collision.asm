@@ -135,8 +135,8 @@
 	tilecoll WALL, WALL, WALL, WALL ; 86
 	tilecoll WALL, WALL, WALL, WALL ; 87
 	tilecoll SKATE, GRIND, SKATE, GRIND ; 88
-	tilecoll WALL, WALL, WALL, WALL ; 89
-	tilecoll WALL, WALL, WALL, WALL ; 8a
+	tilecoll SKATE, SKATE, WALL, WALL ; 89
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 8a
 	tilecoll SKATE, GRIND, STAIRS, GRIND ; 8b
 	tilecoll WALL, WALL, WALL, WALL ; 8c
 	tilecoll WALL, WALL, WALL, WALL ; 8d

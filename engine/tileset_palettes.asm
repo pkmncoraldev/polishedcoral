@@ -442,7 +442,7 @@ LoadSpecialMapPalette: ; 494ac
 	jp LoadSevenTimeOfDayBGPalettes
 	
 .park
-	ld hl, OutsideLusterPalette
+	ld hl, OutsideRanchPalette
 	call LoadSevenTimeOfDayBGPalettes
 	ld hl, OutsideSkateparkPalette
 	ld a, [wTimeOfDayPal]
@@ -458,6 +458,9 @@ LoadSpecialMapPalette: ; 494ac
 	ret
 	
 .airport
+	ld a, [wMapNumber]
+	cp MAP_ONWA_INTL_AIRPORT
+	jp nz, .ranch
 	ld hl, OutsideLusterPalette
 	call LoadSevenTimeOfDayBGPalettes
 	ld hl, AirportFencePalette

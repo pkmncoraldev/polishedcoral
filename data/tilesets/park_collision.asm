@@ -26,16 +26,16 @@
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; 19
 	tilecoll HEADBUTT_TREE, WALL, WALL, WALL ; 1a
 	tilecoll WALL, SKATE, SKATE, SKATE ; 1b
-	tilecoll WALL, WALL, WALL, WALL ; 1c
-	tilecoll WALL, WALL, WALL, WALL ; 1d
-	tilecoll WALL, WALL, WALL, WALL ; 1e
+	tilecoll FLOOR, FLOOR, FLOOR, NO_OLLIE ; 1c
+	tilecoll FLOOR, FLOOR, NO_OLLIE, FLOOR ; 1d
+	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; 1e
 	tilecoll WALL, HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE ; 1f
-	tilecoll WALL, WALL, WALL, WALL ; 20
-	tilecoll WALL, WALL, WALL, WALL ; 21
-	tilecoll WALL, WALL, WALL, WALL ; 22
+	tilecoll FLOOR, UP_WALL, FLOOR, FLOOR ; 20
+	tilecoll UP_WALL, FLOOR, FLOOR, FLOOR ; 21
+	tilecoll FLOOR, NO_OLLIE, FLOOR, FLOOR ; 22
 	tilecoll HEADBUTT_TREE, WALL, HEADBUTT_TREE, HEADBUTT_TREE ; 23
-	tilecoll WALL, WALL, WALL, WALL ; 24
-	tilecoll WALL, WALL, WALL, WALL ; 25
+	tilecoll NO_OLLIE, NO_OLLIE, NO_OLLIE, FLOOR ; 24
+	tilecoll NO_OLLIE, FLOOR, FLOOR, FLOOR ; 25
 	tilecoll WALL, WALL, WALL, WALL ; 26
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE, WALL ; 27
 	tilecoll WALL, WALL, WALL, WALL ; 28
@@ -221,7 +221,7 @@
 	tilecoll NO_OLLIE, UP_WALL, NO_OLLIE, FLOOR ; dc
 	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; dd
 	tilecoll UP_WALL, NO_OLLIE, FLOOR, NO_OLLIE ; de
-	tilecoll WALL, WALL, WALL, WALL ; df
+	tilecoll FLOOR, NO_OLLIE, FLOOR, NO_OLLIE ; df
 	tilecoll NO_OLLIE, FLOOR, NO_OLLIE, NO_OLLIE ; e0
 	tilecoll FLOOR, FLOOR, NO_OLLIE, NO_OLLIE ; e1
 	tilecoll FLOOR, NO_OLLIE, NO_OLLIE, NO_OLLIE ; e2
@@ -245,3 +245,12 @@
 	tilecoll NO_OLLIE, NO_OLLIE, NO_OLLIE, NO_OLLIE ; f4
 	tilecoll NO_OLLIE, NO_OLLIE, NO_OLLIE, NO_OLLIE ; f5
 	tilecoll WALL, WALL, HEADBUTT_TREE, WALL ; f6
+	tilecoll WALL, WALL, WALL, WALL ; f7
+	tilecoll WALL, WALL, WALL, WALL ; f8
+	tilecoll WALL, WALL, WALL, WALL ; f9
+	tilecoll WALL, WALL, WALL, WALL ; fa
+	tilecoll NO_OLLIE, NO_OLLIE, FLOOR, FLOOR ; fb
+	tilecoll WALL, WALL, WALL, WALL ; fc
+	tilecoll WALL, WALL, WALL, WALL ; fd
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; fe
+	tilecoll NO_OLLIE, NO_OLLIE, FLOOR, NO_OLLIE ; ff

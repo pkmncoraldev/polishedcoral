@@ -460,10 +460,26 @@ LoadSpecialMapPalette: ; 494ac
 .airport
 	ld a, [wMapNumber]
 	cp MAP_ONWA_INTL_AIRPORT
-	jp nz, .ranch
+	jp nz, .construction
 	ld hl, OutsideLusterPalette
 	call LoadSevenTimeOfDayBGPalettes
 	ld hl, AirportFencePalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals + 6 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
+	
+.construction
+	ld hl, OutsideLusterPalette
+	call LoadSevenTimeOfDayBGPalettes
+	ld hl, ConstructionPalette
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
@@ -800,4 +816,7 @@ INCLUDE "maps/palettes/bgpals/brillo.pal"
 
 AirportFencePalette:
 INCLUDE "maps/palettes/bgpals/airportfence.pal"
+
+ConstructionPalette:
+INCLUDE "maps/palettes/bgpals/construction.pal"
 

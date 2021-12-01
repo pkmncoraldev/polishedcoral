@@ -12,78 +12,95 @@ Route10MoveReminderHouse_MapScriptHeader:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, MoveReminderScript, -1
+	object_event  2,  4, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, MoveReminderScript, -1
 
 MoveReminderScript:
 	faceplayer
 	opentext
+	checkevent EVENT_MOVE_REMINDER_INTRO
+	iftrue .skip_intro
+	setevent EVENT_MOVE_REMINDER_INTRO
 	writetext MoveReminderIntroText
-	waitbutton
-	checkitem BOTTLE_CAP
-	iffalse .no_bottle_cap
+	buttonsound
+	farwritetext StdBlankText
+.skip_intro
 	writetext MoveReminderPromptText
 	yesorno
-	iffalse .refused
+	iffalse .done
+	checkitem BOTTLE_CAP
+	iffalse .none
+	takeitem BOTTLE_CAP
+	checkitem BOTTLE_CAP
+	iffalse .one
+	takeitem BOTTLE_CAP
+	checkitem BOTTLE_CAP
+	iffalse .two
+	takeitem BOTTLE_CAP
 	writebyte NO_MOVE ; to toggle move relearner
 	writetext MoveReminderWhichMonText
 	waitbutton
 	special Special_MoveTutor
-	ifequal $0, .teach_move
-.refused
+	ifequal 0, .done
+.cancel
+	giveitem BOTTLE_CAP
+	giveitem BOTTLE_CAP
+	giveitem BOTTLE_CAP
+.done
 	jumpopenedtext MoveReminderCancelText
 
-.no_bottle_cap
-	jumpopenedtext MoveReminderNoGoldLeafText
-
-.teach_move
-	takeitem BOTTLE_CAP
-	jumpopenedtext MoveReminderCancelText
+.two
+	giveitem BOTTLE_CAP
+.one
+	giveitem BOTTLE_CAP
+.none
+	jumpopenedtext MoveReminderNoBottleCapText
 
 MoveReminderIntroText::
-	text "Me? I'm the"
-	line "Move Maniac."
+	text "Yo! I'm the"
+	line "MOVE REMINDER."
 
-	para "I'll make your"
-	line "#mon remember"
+	para "I can make your"
+	line "#MON remember"
+	cont "moves they've"
+	cont "forgotten."
 
-	para "a move if you'll"
-	line "trade me a"
-	cont "Gold Leaf."
+	para "Or sometimes"
+	line "moves they've"
+	cont "never even known!"
+	
+	para "Money?"
+	
+	para "Nah! I collect"
+	line "BOTTLE CAPs!"
 	done
 
 MoveReminderPromptText::
 	text "Do you want me to"
 	line "teach one of your"
-	cont "#mon a move?"
+	cont "#MON a move?"
+	
+	para "I'll do it for"
+	line "3 BOTTLE CAPs."
 	done
 
 MoveReminderWhichMonText::
-	text "Which #mon"
+	text "Which #MON"
 	line "needs tutoring?"
 	done
 
-MoveReminderNoGoldLeafText::
+MoveReminderNoBottleCapText::
 	text "Huh? You don't"
-	line "have any Gold"
-	cont "Leaves."
+	line "have the BOTTLE"
+	cont "CAPs?"
 
-	para "Sometimes you can"
-	line "find them on wild"
-	cont "Bellsprout."
-	done
-
-MoveReminderNoMovesText::
-	text "Sorry… There isn't"
-	line "any move I can"
-
-	para "make that #mon"
-	line "remember."
+	para "Don't you ever"
+	line "drink SODA POP?"
 	done
 
 MoveReminderCancelText::
-	text "If your #mon"
-	line "needs to learn a"
+	text "If your #MON"
+	line "needs more moves,"
 
-	para "move, come back"
-	line "with a Gold Leaf."
+	para "come back with"
+	line "some BOTTLE CAPs."
 	done

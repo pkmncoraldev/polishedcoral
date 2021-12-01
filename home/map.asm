@@ -1702,11 +1702,6 @@ CloseSubmenu:: ; 2b3c
 	call UpdateSprites
 	call ExitMenu
 	call FinishExitMenu
-	ld de, EVENT_SPOOKHOUSE_DARK
-	farcall CheckEventFlag
-	ret z
-	ld a, 3
-	ld [wSpookhouseTVRoomTrigger], a
 	ret
 ; 2b4d
 

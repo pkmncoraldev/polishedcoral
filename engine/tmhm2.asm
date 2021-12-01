@@ -507,3 +507,8 @@ Text_TMHMNotCompatible: ; 0x2c8ce
 	text_jump UnknownText_0x1c03c2
 	db "@"
 ; 0x2c8d3
+
+Text_ReminderNotCompatible: ; 0x2c8ce
+	; It can't remember anything...
+	text_jump UnknownText_ReminderNotCompatible
+	db "@"

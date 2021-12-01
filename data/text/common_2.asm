@@ -1413,3 +1413,8 @@ _NoBikeText::
 	para "You can't bike"
 	line "here."
 	done
+
+UnknownText_ReminderNotCompatible::
+	text "It can't remember"
+	line "anything…"
+	prompt

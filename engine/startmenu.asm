@@ -387,6 +387,14 @@ StartMenu_Status: ; 12928
 	farcall TrainerCard
 ;	call EnableSpriteUpdates
 	call CloseSubmenu
+	
+	ld de, EVENT_SPOOKHOUSE_DARK
+	farcall CheckEventFlag
+	jr z, .end
+	ld a, 3
+	ld [wSpookhouseTVRoomTrigger], a
+	
+.end
 	xor a
 	ret
 ; 12937
@@ -403,6 +411,12 @@ StartMenu_Pokedex: ; 12937
 ;	call EnableSpriteUpdates
 	call CloseSubmenu
 
+	ld de, EVENT_SPOOKHOUSE_DARK
+	farcall CheckEventFlag
+	jr z, .asm_12949
+	ld a, 3
+	ld [wSpookhouseTVRoomTrigger], a
+
 .asm_12949
 	xor a
 	ret
@@ -416,6 +430,14 @@ StartMenu_Pokegear: ; 1294c
 	farcall PokeGear
 ;	call EnableSpriteUpdates
 	call CloseSubmenu
+	
+	ld de, EVENT_SPOOKHOUSE_DARK
+	farcall CheckEventFlag
+	jr z, .end
+	ld a, 3
+	ld [wSpookhouseTVRoomTrigger], a
+	
+.end	
 	call ApplyTilemapInVBlank
 	call SetPalettes
 	call DelayFrame
@@ -433,6 +455,14 @@ StartMenu_Pack: ; 1295b
 	jr nz, .used_item
 ;	call EnableSpriteUpdates
 	call CloseSubmenu
+	
+	ld de, EVENT_SPOOKHOUSE_DARK
+	farcall CheckEventFlag
+	jr z, .end
+	ld a, 3
+	ld [wSpookhouseTVRoomTrigger], a
+	
+.end
 	xor a
 	ret
 
@@ -487,6 +517,14 @@ StartMenu_Pokemon: ; 12976
 .return
 ;	call EnableSpriteUpdates
 	call CloseSubmenu
+	
+	ld de, EVENT_SPOOKHOUSE_DARK
+	farcall CheckEventFlag
+	jr z, .end
+	ld a, 3
+	ld [wSpookhouseTVRoomTrigger], a
+	
+.end
 	xor a
 	ret
 
@@ -1760,7 +1798,11 @@ GetForgottenMoves::
 
 	ld de, wMoveScreenMoves
 	ld c, a
-	ld b, 100 ; Gen VII behaviour
+	push hl
+	ld a, MON_LEVEL
+	call GetPartyParamLocation
+	ld b, [hl]
+	pop hl
 	inc b ; so that we can use jr nc
 .loop
 	ld a, BANK(EvosAttacks)

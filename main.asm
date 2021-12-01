@@ -1511,8 +1511,17 @@ CheckCanLearnMoveTutorMove: ; 492b9
 	ld de, SFX_WRONG
 	call PlaySFX
 	pop de
+	ld a, [wPutativeTMHMMove]
+	and a
+	jr z, .reminder2
 	ld a, BANK(Text_TMHMNotCompatible)
 	ld hl, Text_TMHMNotCompatible
+	call FarPrintText
+	jr .didnt_learn
+
+.reminder2
+	ld a, BANK(Text_ReminderNotCompatible)
+	ld hl, Text_ReminderNotCompatible
 	call FarPrintText
 	jr .didnt_learn
 

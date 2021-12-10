@@ -59,7 +59,7 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke BULBASAUR, 100
-	givepoke NOIVERN, 5
+	givepoke TOTODILE, 17
 	givepoke TOGEKISS, 5
 	givepoke HONCHKROW, 5
 

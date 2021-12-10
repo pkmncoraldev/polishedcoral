@@ -153,7 +153,7 @@ Route4PlayedFluteForSnorlax::
 	waitbutton
 	closetext
 	waitsfx
-	loadwildmon SNORLAX, 28
+	loadwildmon SNORLAX, 25
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	disappear ROUTE4SNORLAX1

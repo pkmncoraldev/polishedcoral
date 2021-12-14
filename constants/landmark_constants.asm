@@ -45,9 +45,11 @@
 	const ROUTE_11			 ; 23
 	const ROUTE_12			 ; 24
 	const AIRPORT			 ; 25
-	const SHIMMER_CITY		 ; 26
-	const BRILLO_TOWN		 ; 27
-	const DESERT_ROUTE		 ; 28
+	const ROUTE_13			 ; 26
+	const ROUTE_14			 ; 27
+	const SHIMMER_CITY		 ; 28
+	const BRILLO_TOWN		 ; 29
+	const DESERT_ROUTE		 ; 2a
 
 	
 	const LUSTER_STATION

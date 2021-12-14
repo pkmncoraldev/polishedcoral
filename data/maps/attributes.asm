@@ -87,12 +87,12 @@ ENDM
 
 
 	map_attributes SunsetBay, SUNSET_BAY, $71, SOUTH | EAST
-	connection south, ShimmerCity, SHIMMER_CITY, 2
+	connection south, Route13, ROUTE_13, 6
 	connection east, SunsetCape, SUNSET_CAPE, 1
 	
 	map_attributes SunsetCape, SUNSET_CAPE, 53, WEST
 	connection west, SunsetBay, SUNSET_BAY, -1
-
+	
 	map_attributes Route1, ROUTE_1, $71, NORTH
 	connection north, DaybreakVillage, DAYBREAK_VILLAGE, 5
 	
@@ -181,7 +181,8 @@ ENDM
 	map_attributes SunbeamIsland, SUNBEAM_ISLAND, $35, WEST
 	connection west, SunbeamBeach, SUNBEAM_BEACH, 0
 	
-	map_attributes SunbeamBeach, SUNBEAM_BEACH, $35, EAST
+	map_attributes SunbeamBeach, SUNBEAM_BEACH, $35, WEST | EAST
+	connection west, Route14, ROUTE_14, 14
 	connection east, SunbeamIsland, SUNBEAM_ISLAND, 0
 	
 	map_attributes EventideForest, EVENTIDE_FOREST, $80, NORTH
@@ -281,12 +282,21 @@ ENDM
 	map_attributes Skatepark, SKATEPARK, $02, WEST
 	connection west, Route11, ROUTE_11, -1
 	
-	map_attributes ShimmerCity, SHIMMER_CITY, $71, NORTH | WEST
-	connection north, SunsetBay, SUNSET_BAY, -2
-	connection west, ShimmerHarbor, SHIMMER_HARBOR, 0
+	map_attributes Route13, ROUTE_13, $35, NORTH | EAST
+	connection north, SunsetBay, SUNSET_BAY, -6
+	connection east, Route14, ROUTE_14, 14
 	
-	map_attributes ShimmerHarbor, SHIMMER_HARBOR, $71, EAST
-	connection east, ShimmerCity, SHIMMER_CITY, 0
+	map_attributes Route14, ROUTE_14, $35, SOUTH | WEST | EAST
+	connection south, ShimmerCity, SHIMMER_CITY, 2
+	connection west, Route13, ROUTE_13, -14
+	connection east, SunbeamBeach, SUNBEAM_BEACH, -14
+	
+	map_attributes ShimmerCity, SHIMMER_CITY, $35, NORTH | WEST
+	connection north, Route14, ROUTE_14, -2
+	connection west, ShimmerHarbor, SHIMMER_HARBOR, 2
+	
+	map_attributes ShimmerHarbor, SHIMMER_HARBOR, $35, EAST
+	connection east, ShimmerCity, SHIMMER_CITY, -2
 	
 	map_attributes BrilloTown, BRILLO_TOWN, $35, EAST
 	connection east, DesertRoute, DESERT_ROUTE, -7

@@ -42,6 +42,8 @@ Landmarks: ; 0x1ca8c3
 	landmark 132,  92, Route11Name
 	landmark   0,   0, Route12Name
 	landmark   0,   0, AirportName
+	landmark   0,   0, Route13Name
+	landmark   0,   0, Route14Name
 	landmark   0,   0, ShimmerName
 	landmark   0,   0, BrilloTownName
 	landmark   0,   0, DesertRouteName
@@ -90,6 +92,8 @@ LusterSewersName:	   db "LUSTER¯SEWERS@"
 Route11Name:		   db "ROUTE 11@"
 Route12Name:		   db "ROUTE 12@"
 AirportName:		   db "ONWA INTL. AIRPORT@"
+Route13Name:		   db "ROUTE 13@"
+Route14Name:		   db "ROUTE 14@"
 ShimmerName:           db "SHIMMER¯CITY@"
 BrilloTownName:	   	   db "BRILLO¯TOWN@"
 DesertRouteName:	   db "DESERT¯ROUTE@"

@@ -87,6 +87,8 @@ INCLUDE "maps/Route9.asm"
 INCLUDE "maps/DesertRoute.asm"
 INCLUDE "maps/DesertRouteNorth.asm"
 INCLUDE "maps/DesertWastelandOasis.asm"
+INCLUDE "maps/Route13.asm"
+INCLUDE "maps/Route14.asm"
 
 
 SECTION "Routes Scripts2", ROMX

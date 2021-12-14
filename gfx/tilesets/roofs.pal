@@ -73,8 +73,18 @@
 	RGB 11, 11, 11
 	RGB 21, 21, 21
 	RGB 11, 11, 11
-;15 - Shimmer City
+;15 - Airport
+	RGB 21, 21, 21
+	RGB 11, 11, 11
+	RGB 21, 21, 21
+	RGB 11, 11, 11
+;16 - Shimmer City
 	RGB 21, 21, 21
 	RGB 11, 09, 25
 	RGB 11, 11, 19
 	RGB 05, 03, 15
+;17 - Brillo
+	RGB 21, 21, 21
+	RGB 11, 11, 11
+	RGB 21, 21, 21
+	RGB 11, 11, 11

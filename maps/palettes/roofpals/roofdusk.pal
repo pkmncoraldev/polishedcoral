@@ -73,12 +73,17 @@
 	RGB 00, 00, 00
 	RGB 31, 31, 31
 	RGB 21, 21, 21
-;15 - Shimmer City
+;15 - Airport
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+;16 - Shimmer City
 	RGB 21, 15, 08
 	RGB 10, 09, 08
 	RGB 29, 28, 31
 	RGB 11, 09, 25
-;16 - Brillo Town
+;17 - Brillo Town
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 30, 30, 28

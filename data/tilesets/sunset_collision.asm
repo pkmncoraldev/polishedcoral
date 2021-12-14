@@ -185,7 +185,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; b8
 	tilecoll WALL, WALL, WALL, WALL ; b9
 	tilecoll WALL, WALL, WALL, WALL ; ba
-	tilecoll WALL, WALL, WATER, WALL ; bb
+	tilecoll NO_OLLIE, NO_OLLIE, WALL, WATER ; bb
 	tilecoll WALL, WALL, WALL, WALL ; bc
 	tilecoll WALL, WALL, WALL, WALL ; bd
 	tilecoll WALL, WALL, WALL, WALL ; be

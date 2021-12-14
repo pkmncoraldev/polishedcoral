@@ -55,8 +55,8 @@ MAP_NONE   EQU 0
 
 	newgroup                                                     ;  2
 
-	map_const SUNSET_BAY,                                 22, 21 ;  1
-	map_const SUNSET_CAPE,                                13, 20 ;  2
+	map_const SUNSET_BAY,                                 22, 24 ;  1
+	map_const SUNSET_CAPE,                                13, 23 ;  2
 	map_const SUNSET_POKECENTER,                    	   6,  4 ;  3
 	map_const SUNSET_LIGHTHOUSE,                           5,  5 ;  4
 	map_const SUNSET_WATER_GRASS_HOUSE,                    4,  4 ;  5
@@ -116,7 +116,7 @@ MAP_NONE   EQU 0
 
 	newgroup                                                     ;  6
 
-	map_const ROUTE_6,                                    37, 19 ;  1
+	map_const ROUTE_6,                                    37, 23 ;  1
 	map_const ROUTE_7,                                    19, 12 ;  2
 	map_const LAKE_ONWA,                                  32, 26 ;  3
 	map_const LAKE_ONWA_BOAT_HOUSE_RIGHT,                  4,  3 ;  4
@@ -128,7 +128,7 @@ MAP_NONE   EQU 0
 	newgroup                                                     ;  7
 
 	map_const SUNBEAM_ISLAND,                             25, 29 ;  1
-	map_const SUNBEAM_BEACH,                               8, 29 ;  2
+	map_const SUNBEAM_BEACH,                              10, 29 ;  2
 	map_const SUNBEAM_POKECENTER,                          6,  4 ;  3
 	map_const SUNBEAM_MART,								   6,  4 ;  4
 	map_const SUNBEAM_BOAT_HOUSE,                   	   4,  3 ;  5
@@ -282,7 +282,7 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 16
 	
-	map_const SHIMMER_CITY,					  			  26, 17 ; 1
+	map_const SHIMMER_CITY,					  			  26, 19 ; 1
 	map_const SHIMMER_HARBOR,					  		  11, 14 ; 2
 	map_const SHIMMER_LAB_LOBBY,			  			   7,  3 ; 3
 	map_const SHIMMER_LAB_RESEARCH_ROOM,				   5,  5 ; 4
@@ -294,6 +294,8 @@ MAP_NONE   EQU 0
 	map_const SHIMMER_HOUSE_1,							   4,  4 ; 10
 	map_const SHIMMER_HOUSE_2,							   4,  4 ; 11
 	map_const SHIMMER_HOUSE_3,							   4,  4 ; 12
+	map_const ROUTE_13,									  15, 24
+	map_const ROUTE_14,									  44, 16
 	
 	
 	newgroup													 ; 17

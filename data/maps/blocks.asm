@@ -503,12 +503,6 @@ GlintGroveDeep_BlockData:
 GlintGroveEntrance_BlockData:
 	INCBIN "maps/GlintGroveEntrance.ablk.lz"
 	
-LakeOnwaNameRaterHouse_BlockData:
-	INCBIN "maps/LakeOnwaNameRaterHouse.ablk.lz"
-	
-Route8EncounterHouse_BlockData:
-	INCBIN "maps/Route8EncounterHouse.ablk.lz"
-	
 	
 SECTION "Map Blockdata 2", ROMX
 	
@@ -630,4 +624,16 @@ DesertWasteland8_BlockData:
 	
 DesertWastelandOasis_BlockData:
 	INCBIN "maps/DesertWastelandOasis.ablk.lz"
+	
+LakeOnwaNameRaterHouse_BlockData:
+	INCBIN "maps/LakeOnwaNameRaterHouse.ablk.lz"
+	
+Route8EncounterHouse_BlockData:
+	INCBIN "maps/Route8EncounterHouse.ablk.lz"
+	
+Route13_BlockData:
+	INCBIN "maps/Route13.ablk.lz"
+	
+Route14_BlockData:
+	INCBIN "maps/Route14.ablk.lz"
 	

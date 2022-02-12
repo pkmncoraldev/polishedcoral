@@ -73,6 +73,7 @@ EventideBikeShopOwnerGiveBikeText2:
 EventideBikeShopOwnerGiveBikeText3:
 	text "Thank you so much"
 	line "for all your help!"
+	done
 	
 EventideBikeShopKidText:
 	text "Thanks for helping"

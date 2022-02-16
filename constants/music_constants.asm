@@ -66,6 +66,7 @@
 	const MUSIC_SHIMMER_CITY
 	const MUSIC_OASIS
 	const MUSIC_TV_STATIC
+	const MUSIC_WILD_BOSS_BATTLE
 	
 NUM_SONGS EQU const_value
 

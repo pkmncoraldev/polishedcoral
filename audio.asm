@@ -83,6 +83,7 @@ INCLUDE "audio/music/waterroute.asm"
 INCLUDE "audio/music/eventidevillage.asm"
 INCLUDE "audio/music/snarevictory.asm"
 INCLUDE "audio/music/tvstatic.asm"
+INCLUDE "audio/music/wildboss.asm"
 
 
 SECTION "Music 5", ROMX

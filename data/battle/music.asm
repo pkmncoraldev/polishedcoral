@@ -28,7 +28,7 @@ PlayBattleMusic: ; 2ee6c
 	jr .done
 
 .legendary
-	ld de, MUSIC_DODRIO_RACE
+	ld de, MUSIC_WILD_BOSS_BATTLE
 	jr .done
 	
 .trainermusic

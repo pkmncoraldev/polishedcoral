@@ -2429,8 +2429,7 @@ FaintYourPokemon: ; 3cef1
 	ld a, $f0
 	ld [wCryTracks], a
 	ld a, [wBattleMonSpecies]
-	ld b, a
-	farcall PlayFaintingCry
+	call PlayStereoCry
 	ld de, SFX_KINESIS
 	call PlaySFX
 	call PlayerMonFaintedAnimation
@@ -2446,8 +2445,7 @@ FaintEnemyPokemon: ; 3cf14
 	ld a, $f
 	ld [wCryTracks], a
 	ld a, [wEnemyMonSpecies]
-	ld b, a
-	farcall PlayFaintingCry
+	call PlayStereoCry
 	ld de, SFX_KINESIS
 	call PlaySFX
 	call EnemyMonFaintedAnimation
@@ -4244,8 +4242,7 @@ PursuitSwitch: ; 3dc5b
 	ld a, $f0
 	ld [wCryTracks], a
 	ld a, [wBattleMonSpecies]
-	ld b, a
-	farcall PlayFaintingCry
+	call PlayStereoCry
 	ld a, [wLastPlayerMon]
 	ld c, a
 	ld hl, wBattleParticipantsNotFainted
@@ -4262,8 +4259,7 @@ PursuitSwitch: ; 3dc5b
 	ld a, $f
 	ld [wCryTracks], a
 	ld a, [wEnemyMonSpecies]
-	ld b, a
-	farcall PlayFaintingCry
+	call PlayStereoCry
 	ld de, SFX_KINESIS
 	call PlaySFX
 	call WaitSFX

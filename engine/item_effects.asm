@@ -1632,6 +1632,8 @@ RareCandy: ; ef14
 	ld [wMonType], a
 	ld a, [wCurPartySpecies]
 	ld [wd265], a
+	ld a, [wCurPartyMon]
+	ld [wPlaceBallsX], a
 	predef LearnLevelMoves
 
 	xor a

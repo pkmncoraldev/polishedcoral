@@ -59,7 +59,7 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke BULBASAUR, 100
-	givepoke BUIZEL, 5
+	givepoke VENIPEDE, 20
 	givepoke STANTLER, 5
 
 .items
@@ -68,6 +68,8 @@ PlayerHouseDebugPoster:
 	iffalse .keyitems
 	giveitem UP_GRADE, 2
 	giveitem RARE_CANDY, 99
+	giveitem PROTEIN, 99
+	giveitem EXP_SHARE, 99
 	giveitem THUNDERSTONE, 3
 	giveitem FIRE_STONE, 3
 	giveitem LEAF_STONE, 3

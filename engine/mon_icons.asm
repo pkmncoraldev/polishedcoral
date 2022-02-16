@@ -119,6 +119,8 @@ ProcessMenuMonIconColor:
 	jr nz, .colorIcon
 
 .finish
+	ld a, [wPlaceBallsX]
+	ld [wCurPartyMon], a
 	pop af
 	pop bc
 	pop de

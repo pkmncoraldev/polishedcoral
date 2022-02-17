@@ -4194,7 +4194,7 @@ HandleAirBalloon:
 PursuitSwitchIfFirstAndAlive:
 	; Avoids double-usage of Pursuit when Pursuit user goes first
 	; Performed from Pursuit user's POV
-	call CheckOpponentWentFirst
+	farcall CheckOpponentWentFirst
 	jp z, PursuitSwitch_done
 	call HasUserFainted
 	jp z, PursuitSwitch_done

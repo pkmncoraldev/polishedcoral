@@ -1,9 +1,13 @@
 DoPlayerTurn: ; 34000
 	call SetPlayerTurn
 	
+	call CheckUserIsSwitching
+	jr nz, .skip
+	
 	ld hl, wPlayerTurnsTaken
 	inc [hl]
 	
+.skip
 	ld a, [wBattleMonSpecies]
 	ld [wCurPartySpecies], a
 	
@@ -26,9 +30,13 @@ DoPlayerTurn: ; 34000
 DoEnemyTurn: ; 3400a
 	call SetEnemyTurn
 	
+	call CheckUserIsSwitching
+	jr nz, .skip
+	
 	ld hl, wEnemyTurnsTaken
 	inc [hl]
 	
+.skip
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurPartySpecies], a
 
@@ -1045,11 +1053,24 @@ CheckUserIsCharging:
 .end
 	and a
 	ret
+	
+CheckUserIsSwitching:
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wPlayerIsSwitching]
+	jr z, .end
+	ld a, [wEnemyIsSwitching]
+.end
+	and a
+	ret
 
 BattleCommand_doturn:
 	call CheckUserIsCharging
 	ret nz
 
+	call CheckUserIsSwitching
+	ret nz
+	
 	ld a, [hBattleTurn]
 	and a
 	ld hl, wPlayerTurnsTaken

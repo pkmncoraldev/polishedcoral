@@ -59,7 +59,7 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke BULBASAUR, 100
-	givepoke VENIPEDE, 20
+	givepoke MEDITITE, 21
 	givepoke STANTLER, 5
 
 .items

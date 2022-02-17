@@ -59,8 +59,8 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke BULBASAUR, 100
-	givepoke MEDITITE, 21
-	givepoke STANTLER, 5
+	givepoke ODDISH, 35
+	givepoke ODDISH, 20
 
 .items
 	writetext PlayerHouseDebugText6

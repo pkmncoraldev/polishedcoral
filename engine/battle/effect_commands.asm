@@ -5236,27 +5236,20 @@ BattleCommand_poisontarget:
 	jp PostStatusWithSynchronize
 	
 BattleCommand_toxictarget:
-	call CheckSubstituteOpp
+	call CanPoisonTargetVerbose
 	ret nz
-	ld b, 1
-	call CanPoisonTarget
-	ret nz
-	ld a, [wTypeModifier]
+	ld a, [hBattleTurn]
 	and a
-	ret z
-	ld a, [wEffectFailed]
-	and a
-	ret nz
-
-	call ToxicOpponent
-	ld de, ANIM_PSN
-	call PlayOpponentBattleAnim
-	call RefreshBattleHuds
-
-	ld hl, BadlyPoisonedText
-	call StdBattleTextBox
-
-	jp PostStatusWithSynchronize
+	ld de, wEnemyToxicCount
+	jr z, .ok
+	ld de, wPlayerToxicCount
+.ok
+	xor a
+	ld [de], a
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	set TOX, [hl]
+	jp ApplyPoison.skip
 
 CanPoisonTargetVerbose:
 	; different from CanPoisonTarget: common function for BC_(Poison|Toxic)
@@ -5312,6 +5305,9 @@ BattleCommand_poison:
 	ret nz
 ApplyPoison:
 	call AnimateCurrentMove
+.skip
+	ld de, ANIM_PSN
+	call PlayOpponentBattleAnim
 	call PoisonOpponent
 	call RefreshBattleHuds
 	ld a, BATTLE_VARS_STATUS_OPP

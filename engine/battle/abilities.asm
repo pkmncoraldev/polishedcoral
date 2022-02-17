@@ -613,7 +613,7 @@ CuteCharmAbility:
 	jp EnableAnimations
 
 RoughSkinAbility:
-	farcall GetSixthMaxHP
+	farcall GetEighthMaxHP
 	ld a, b
 	or c
 	jr nz, .damage_ok

@@ -965,8 +965,8 @@ wTradeFlags:: flag_array PARTY_LENGTH
 
 ds 1 ; unused
 
-wMooMooBerries:: ds 1
-wUndergroundSwitchPositions:: ds 1
+wRanchRaceFrames:: ds 1
+wRanchRaceSeconds:: ds 1
 wFarfetchdPosition:: ds 1
 
 ; map triggers

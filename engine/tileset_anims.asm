@@ -843,6 +843,31 @@ GetForestTreeFrame: ; fc54c
 
 
 AnimateFlowerTile: ; fc56d
+	eventflagcheck EVENT_DODRIO_RANCH_TIMER
+	jr z, .skip
+	
+	ld hl, wRanchRaceFrames
+	ld a, [hl]
+	inc a
+	
+	cp 3 ; frames/second
+	jr nc, .second
+	
+	ld [hl], a
+	jr .skip
+	
+.second
+	xor a
+	ld [hl], a
+	
+; +1 second
+	ld hl, wRanchRaceSeconds
+	ld a, [hl]
+	inc a	
+	ld [hl], a
+
+.skip
+
 ; No parameters.
 
 ; Save sp in bc (see WriteTile).

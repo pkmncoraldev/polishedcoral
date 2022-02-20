@@ -464,6 +464,10 @@ CheckTimeEvents: ; 9693a
 	and a
 	jr nz, .nothing
 
+	ld a, [wRanchRaceSeconds]
+	cp 45 ; time limit
+	jr nc, .ranch_times_up
+	
 	ld hl, wStatusFlags2
 	bit 2, [hl] ; ENGINE_BUG_CONTEST_TIMER
 	jr z, .do_daily
@@ -481,6 +485,13 @@ CheckTimeEvents: ; 9693a
 
 .nothing
 	xor a
+	ret
+	
+.ranch_times_up
+	ld a, BANK(RanchRideRaceTimesUp)
+	ld hl, RanchRideRaceTimesUp
+	call CallScript
+	scf
 	ret
 
 .end_bug_contest

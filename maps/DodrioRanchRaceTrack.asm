@@ -144,6 +144,12 @@ RanchRideDoduo:
 RanchRideRaceLogs:
 	jumptext RanchRideRaceLogsText
 	
+DodrioRanchRaceTrackResetTimerAsm:
+	xor a
+	ld [wRanchRaceFrames], a
+	ld [wRanchRaceSeconds], a
+	ret
+	
 RanchRideRaceCheckpoint1:
 	setevent EVENT_RANCH_RACE_CHECKPOINT1
 	end
@@ -182,6 +188,7 @@ RanchRideRaceFinishLine:
 	end
 .lap3
 	setflag ENGINE_DONE_RANCH_RACE_TODAY
+	clearevent EVENT_DODRIO_RANCH_TIMER
 	clearevent EVENT_RANCH_RACE_CHECKPOINT1
 	clearevent EVENT_RANCH_RACE_CHECKPOINT2
 	clearevent EVENT_RANCH_RACE_CHECKPOINT3
@@ -202,16 +209,21 @@ RanchRideRaceFinishLine:
 	applyonemovement PLAYER, step_left
 .endwalking
 	opentext
-;	checkcode VAR_CONTESTMINUTES
-;	RAM2MEM $0
+	checkcode VAR_RANCHRACESECONDS
+	addvar $1
+	RAM2MEM $0
 	writetext RanchRideRaceText4
 	clearevent EVENT_JUST_FAILED_RANCH_RACE
 	pause 20
+	playsound SFX_LEVEL_UP
+	writetext RanchRideRaceTimeText
+	waitsfx
+	buttonsound
 	checkevent EVENT_FINISHED_RANCH_RACE_ONCE
 	iffalse .firsttime
 	checkevent EVENT_FINISHED_RANCH_RACE_TWICE
 	iffalse .secondtime
-	writetext RanchRideRaceTimeText
+	writetext RanchRideRaceTimeTextThirdTime
 	waitbutton
 	checkcode VAR_WEEKDAY
 	if_equal SUNDAY, .ranchsunday
@@ -245,7 +257,7 @@ RanchRideRaceFinishLine:
 	writetext RanchRideRaceText8
 	waitbutton
 	closetext
-	clearflag ENGINE_BUG_CONTEST_TIMER
+	callasm DodrioRanchRaceTrackResetTimerAsm
 	end
 .firsttime
 	writetext RanchRideRaceTimeTextFirstTime
@@ -256,8 +268,8 @@ RanchRideRaceFinishLine:
 	writetext RanchRideRaceText11
 	waitbutton
 	closetext
-	clearflag ENGINE_BUG_CONTEST_TIMER
 	setevent EVENT_FINISHED_RANCH_RACE_ONCE
+	callasm DodrioRanchRaceTrackResetTimerAsm
 	end
 .secondtime
 	writetext RanchRideRaceTimeTextSecondTime
@@ -272,17 +284,17 @@ RanchRideRaceFinishLine:
 	writetext RanchRideRaceText7
 	waitbutton
 	closetext
-	clearflag ENGINE_BUG_CONTEST_TIMER
 	setevent EVENT_FINISHED_RANCH_RACE_TWICE
 	setevent EVENT_RANCH_GOT_DODUO
+	callasm DodrioRanchRaceTrackResetTimerAsm
 	end
 	
 .PartyFull:
 	writetext RanchRidePartyFullText
 	waitbutton
 	closetext
-	clearflag ENGINE_BUG_CONTEST_TIMER
 	setevent EVENT_FINISHED_RANCH_RACE_ONCE
+	callasm DodrioRanchRaceTrackResetTimerAsm
 	end
 	
 .skippedcheckpoint
@@ -291,7 +303,8 @@ RanchRideRaceFinishLine:
 	clearevent EVENT_RANCH_RACE_CHECKPOINT3
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_1
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_2
-	clearflag ENGINE_BUG_CONTEST_TIMER
+	clearevent EVENT_DODRIO_RANCH_TIMER
+	callasm DodrioRanchRaceTrackResetTimerAsm
 	dotrigger $2
 	playmusic MUSIC_NONE
 	playsound SFX_WRONG
@@ -314,7 +327,8 @@ RanchRideRaceBackwards:
 	clearevent EVENT_RANCH_RACE_CHECKPOINT3
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_1
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_2
-	clearflag ENGINE_BUG_CONTEST_TIMER
+	clearevent EVENT_DODRIO_RANCH_TIMER
+	callasm DodrioRanchRaceTrackResetTimerAsm
 	dotrigger $2
 	playmusic MUSIC_NONE
 	playsound SFX_WRONG
@@ -333,7 +347,8 @@ RanchRideRaceOffTrack:
 	clearevent EVENT_RANCH_RACE_CHECKPOINT3
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_1
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_2
-	clearflag ENGINE_BUG_CONTEST_TIMER
+	clearevent EVENT_DODRIO_RANCH_TIMER
+	callasm DodrioRanchRaceTrackResetTimerAsm
 	dotrigger $2
 	playmusic MUSIC_NONE
 	playsound SFX_WRONG
@@ -346,10 +361,30 @@ RanchRideRaceOffTrack:
 	warp DODRIO_RANCH_RACETRACK, $1d, $11
 	end
 	
+RanchRideRaceTimesUp::
+	clearevent EVENT_RANCH_RACE_CHECKPOINT1
+	clearevent EVENT_RANCH_RACE_CHECKPOINT2
+	clearevent EVENT_RANCH_RACE_CHECKPOINT3
+	clearevent EVENT_RANCH_RACE_FINISHED_LAP_1
+	clearevent EVENT_RANCH_RACE_FINISHED_LAP_2
+	clearevent EVENT_DODRIO_RANCH_TIMER
+	callasm DodrioRanchRaceTrackResetTimerAsm
+	dotrigger $2
+	playmusic MUSIC_NONE
+	playsound SFX_WRONG
+	waitsfx
+	pause 10
+	opentext
+	writetext RanchRideRaceTimesUpText
+	waitbutton
+	special FadeOutPalettes
+	warp DODRIO_RANCH_RACETRACK, $1d, $11
+	end
+	
 RanchRideRaceGuy:
 	faceplayer
 	opentext
-	checkflag ENGINE_BUG_CONTEST_TIMER
+	checkevent EVENT_DODRIO_RANCH_TIMER
 	iffalse .trytostartrace
 ;	checkcode VAR_CONTESTMINUTES
 ;	addvar $1
@@ -438,8 +473,7 @@ RanchRideRaceGuy:
 	pause 25
 	closetext
 	playmusic MUSIC_DODRIO_RACE
-	setflag ENGINE_BUG_CONTEST_TIMER
-	special Special_StartRanchRaceTimer
+	setevent EVENT_DODRIO_RANCH_TIMER
 	end
 .pickednoranchrace
 	writetext RanchRideRaceText2
@@ -495,7 +529,7 @@ RanchRideRaceText2:
 RanchRideRaceText3:
 	text "Great!"
 	
-	para "You have 1 minute"
+	para "You have 45 seconds"
 	line "to complete 3 laps"
 	cont "on the track."
 	
@@ -519,23 +553,15 @@ RanchRideRaceText3:
 RanchRideRaceText4:
 	text "Great job!"
 	
-	para "Your remaining"
-	line "time was…"
+	para "Your time was…"
 	done
 RanchRideRaceTimeText:
-;	text_from_ram wStringBuffer3
+	text_from_ram wStringBuffer3
 	text " seconds!"
-	
-	para "Alright!"
-	
-	para "Here's your prize!"
 	done
 	
 RanchRideRaceTimeTextFirstTime:
-;	text_from_ram wStringBuffer3
-	text " seconds!"
-	
-	para "Wow, kid!"
+	text "Wow, kid!"
 	
 	para "You were really"
 	line "flying out there!"
@@ -546,16 +572,19 @@ RanchRideRaceTimeTextFirstTime:
 	done
 	
 RanchRideRaceTimeTextSecondTime:
-;	text_from_ram wStringBuffer3
-	text " seconds!"
-	
-	para "Alright!"
+	text "Alright!"
 	
 	para "Here's your prize!"
 	
 	para "A bonafide DODRIO"
 	line "RANCH racing"
 	cont "DODUO!"	
+	done
+	
+RanchRideRaceTimeTextThirdTime:
+	text "Alright!"
+	
+	para "Here's your prize!"
 	done
 	
 RanchRideRaceText5:
@@ -624,17 +653,23 @@ RanchRideRaceWhatAreYouDoingText:
 	done
 	
 RanchRideRaceBackwardsText:
-	text "Stop!"
+	text "STOP!"
 	
 	para "You're going the"
 	line "wrong way!"
 	done
 	
 RanchRideRaceOffTrackText:
-	text "Stop!"
+	text "STOP!"
 	
 	para "You have to stay"
 	line "on the track!"
+	done
+	
+RanchRideRaceTimesUpText:
+	text "STOP!"
+	
+	para "Time's up!"
 	done
 	
 RanchRideRaceCountdown3:

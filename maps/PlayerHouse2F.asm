@@ -59,8 +59,10 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke BULBASAUR, 100
-	givepoke ODDISH, 35
-	givepoke ODDISH, 20
+	givepoke MARACTUS, 20
+	givepoke CORSOLA, 20
+	givepoke RAICHU, 20
+	givepoke MEOWTH, 20
 
 .items
 	writetext PlayerHouseDebugText6

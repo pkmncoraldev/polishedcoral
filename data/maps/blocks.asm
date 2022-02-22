@@ -637,3 +637,6 @@ Route13_BlockData:
 Route14_BlockData:
 	INCBIN "maps/Route14.ablk.lz"
 	
+Airport_BlockData:
+	INCBIN "maps/Airport.ablk.lz"
+	

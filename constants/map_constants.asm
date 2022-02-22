@@ -279,6 +279,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_12_GATE,							   4,  4 ; 4
 	map_const ROUTE_12,									  16, 16 ; 5
 	map_const ONWA_INTL_AIRPORT,						  26, 17 ; 6
+	map_const AIRPORT,									   7,  7 ; 7
 	
 	newgroup													 ; 16
 	

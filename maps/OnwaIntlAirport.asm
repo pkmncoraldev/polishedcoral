@@ -6,8 +6,8 @@ OnwaIntlAirport_MapScriptHeader:
 	db 4 ; warp events
 	warp_def 25, 42, 3, ROUTE_12_GATE
 	warp_def 25, 43, 4, ROUTE_12_GATE
-	warp_def 16, 22, 1, ROUTE_1
-	warp_def 16, 23, 2, ROUTE_1
+	warp_def 18, 22, 1, AIRPORT
+	warp_def 18, 23, 2, AIRPORT
 
 	db 10 ; coord events
 	xy_trigger 0, 24, 24, 0, OnwaIntlAirportMapSignThing, 0, 0

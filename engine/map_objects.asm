@@ -630,6 +630,7 @@ MapObjectMovementPattern:
 	dw .MovementDealerLeft
 	dw .MovementDealerRight
 	dw .MovementSailboatTopRight          ; SPRITEMOVEFN_SAILBOAT_TOP_RIGHT
+	dw .MovementBaggage		; SPRITEMOVEFN_BAGGAGE
 
 .RandomWalkY:
 	call Random
@@ -650,6 +651,63 @@ MapObjectMovementPattern:
 	and %00000011
 	jp .RandomWalkContinue
 
+.MovementBaggage:
+	xor a
+	ld [wAirportTrigger], a
+	ld a, [wRanchRaceSeconds]
+	inc a
+	ld [wRanchRaceSeconds], a
+	cp 1
+	jr z, .one
+	cp 3
+	jr z, .three
+	cp 7
+	jr z, .seven
+	cp 9
+	jr z, .nine
+	cp 13
+	jr z, .thirteen
+.return
+	ld a, [wRanchRaceFrames]
+	and %00000011
+	call InitStep
+;	call Function6ec1 ; check whether the object can move in that direction
+;	jp c, .NewDuration
+;	call UpdateTallGrassFlags
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], PERSON_ACTION_STAND
+	ld hl, wCenteredObject
+	ld a, [hMapObjectIndexBuffer]
+;	cp [hl]
+;	jp z, .load_6
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_NPC_WALK
+	ret
+.one
+	ld a, 3
+	ld [wRanchRaceFrames], a 
+	jr .return
+.three
+	ld a, 1
+	ld [wRanchRaceFrames], a 
+	jr .return
+.seven
+	ld a, 2
+	ld [wRanchRaceFrames], a 
+	jr .return
+.nine
+	xor a
+	ld [wRanchRaceFrames], a 
+	jr .return
+.thirteen
+	ld a, 3
+	ld [wRanchRaceFrames], a
+	ld a, 1
+	ld [wRanchRaceSeconds], a	
+	jr .return
+	
 .RandomSpin1:
 	call Random
 	ld a, [hRandomAdd]

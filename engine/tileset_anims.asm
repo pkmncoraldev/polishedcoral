@@ -39,7 +39,6 @@ Tileset00Anim::
 TilesetPlayerRoomAnim::
 TilesetPokeCenterAnim::
 TilesetLighthouseAnim::
-TilesetLabAnim::
 TilesetLibraryAnim::
 TilesetSnowAnim::
 TilesetMall2Anim::
@@ -133,6 +132,7 @@ TilesetMall1Anim::
 	dw NULL,  DoneTileAnimation
 	
 TilesetHouse2Anim::
+TilesetLabAnim::
 	dw VTiles2 tile $6c, WriteTileToBuffer
 	dw wTileAnimBuffer, ScrollTileDown2
 	dw VTiles2 tile $6c, WriteTileFromBuffer

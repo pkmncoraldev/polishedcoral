@@ -225,6 +225,7 @@ INCLUDE "maps/Route11Gate.asm"
 INCLUDE "maps/Route12Gate.asm"
 INCLUDE "maps/Route12.asm"
 INCLUDE "maps/OnwaIntlAirport.asm"
+INCLUDE "maps/Airport.asm"
 
 SECTION "Luster City Scripts2", ROMX
 

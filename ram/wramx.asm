@@ -1038,8 +1038,9 @@ wOnwaIntlAirportTrigger:: ds 1
 wShimmerHarborTrigger:: ds 1
 wBrilloTownTrigger:: ds 1
 wDesertRouteNorthTrigger:: ds 1
+wAirportTrigger:: ds 1
 
-ds 21
+ds 20
 
 ; fight counts
 wJackFightCount::    ds 1

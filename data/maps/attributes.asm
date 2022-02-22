@@ -530,6 +530,7 @@ ENDM
 	map_attributes BrilloMart, BRILLO_MART, $0, 0
 	map_attributes BrilloGameCorner, BRILLO_GAME_CORNER, $0, 0
 	map_attributes DesertRouteTent, DESERT_ROUTE_TENT, $0, 0
+	map_attributes Airport, AIRPORT, $0, 0
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0

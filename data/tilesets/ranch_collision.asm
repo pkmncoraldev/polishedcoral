@@ -3,7 +3,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 02
 	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 03
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 04
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 05
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 05
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 06
 	tilecoll WALL, WALL, WALL, WALL ; 07
 	tilecoll WALL, WALL, WALL, WALL ; 08
@@ -18,8 +18,8 @@
 	tilecoll WALL, WALL, WALL, WALL ; 11
 	tilecoll WALL, WALL, WALL, DOOR ; 12
 	tilecoll WALL, WALL, WALL, WALL ; 13
-	tilecoll WALL, WALL, WALL, DOOR ; 14
-	tilecoll WALL, WALL, WALL, WALL ; 15
+	tilecoll WALL, WALL, WALL, WALL ; 14
+	tilecoll WALL, WALL, DOOR, DOOR ; 15
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; 16
 	tilecoll WALL, WALL, WALL, WALL ; 17
 	tilecoll WALL, WALL, WALL, WALL ; 18
@@ -42,7 +42,7 @@
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 29
 	tilecoll TALL_GRASS, TALL_GRASS, WALL, WALL ; 2a
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 2b
-	tilecoll WALL, WALL, WALL, DOOR ; 2c
+	tilecoll WALL, WALL, WALL, WALL ; 2c
 	tilecoll WALL, WALL, WALL, WALL ; 2d
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 2e
 	tilecoll FLOOR, WALL, WALL, WALL ; 2f
@@ -114,10 +114,10 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 71
 	tilecoll FLOOR, FLOOR, NO_OLLIE, NO_OLLIE ; 72
 	tilecoll FLOOR, WALL, FLOOR, HEADBUTT_TREE ; 73
-	tilecoll FLOOR, WALL, WALL, WALL ; 74
-	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 75
+	tilecoll WALL, WALL, WALL, WALL ; 74
+	tilecoll WALL, WALL, WALL, WALL ; 75
 	tilecoll WALL, WALL, WALL, WALL ; 76
-	tilecoll WALL, WALL, WALL, WALL ; 77
+	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 77
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 78
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 79
 	tilecoll WALL, FLOOR, WALL, WALL ; 7a
@@ -163,7 +163,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; a2
 	tilecoll WALL, WALL, WALL, WALL ; a3
 	tilecoll WALL, WALL, FLOOR, WALL ; a4
-	tilecoll WALL, WALL, HEADBUTT_TREE, HEADBUTT_TREE ; a5
+	tilecoll FLOOR, WALL, FLOOR, WALL ; a5
 	tilecoll FLOOR, WALL, FLOOR, WALL ; a6
 	tilecoll FLOOR, WALL, FLOOR, WALL ; a7
 	tilecoll TALL_GRASS, WALL, TALL_GRASS, WALL ; a8

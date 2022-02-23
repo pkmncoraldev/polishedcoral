@@ -72,7 +72,7 @@ DodrioRanchRaceTrack_MapScriptHeader:
 	object_event 11, 9, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODUO, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
 	person_event SPRITE_BEAUTY, 12,  5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
 	person_event SPRITE_BIRD_KEEPER, 3, 9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
-	fruittree_event  28, 30, FRUITTREE_DODRIO_RANCH, LEPPA_BERRY
+	fruittreeinvis_event  28, 30, FRUITTREE_DODRIO_RANCH, LEPPA_BERRY
 
 
 	const_def 1 ; object constants

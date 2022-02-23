@@ -3,9 +3,10 @@ Route9_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_def 25, 21, 1, DODRIO_RANCH_HOUSE
-	warp_def 11, 31, 1, DODRIO_RANCH_BARN
+	warp_def 13, 30, 1, DODRIO_RANCH_BARN
+	warp_def 13, 31, 2, DODRIO_RANCH_BARN
 
 	db 27 ; coord events
 	xy_trigger 0, 26, 18, 0, DodrioRanchMapSignThing, 0, 0
@@ -36,7 +37,7 @@ Route9_MapScriptHeader:
 	xy_trigger 1, 28, 16, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 29, 16, 0, Route9MapSignThing, 0, 0
 
-	db 12 ; bg events
+	db 11 ; bg events
 	signpost 24, 28, SIGNPOST_READ, RanchLogs
 	signpost 24, 25, SIGNPOST_READ, RanchLogs
 	signpost 23, 24, SIGNPOST_READ, RanchLogs
@@ -44,7 +45,6 @@ Route9_MapScriptHeader:
 	signpost 17, 30, SIGNPOST_READ, RanchLogs
 	signpost 17, 31, SIGNPOST_READ, RanchLogs
 	signpost 16, 30, SIGNPOST_READ, RanchLogs
-	signpost 12, 29, SIGNPOST_READ, RanchLogs
 	signpost 26, 20, SIGNPOST_READ, RanchSign
 	signpost 47,  2, SIGNPOST_READ, Route9Sign
 	signpost 35,  8, SIGNPOST_READ, Route9Sign2
@@ -65,7 +65,7 @@ Route9_MapScriptHeader:
 	person_event SPRITE_BEAUTY, 18, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_3, -1
 	person_event SPRITE_BUG_CATCHER, 12, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_4, -1
 	person_event SPRITE_BIRD_KEEPER,  9, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRanch_5, -1
-	fruittree_event  12, 10, FRUITTREE_ROUTE_9, ASPEAR_BERRY
+	fruittreeinvis_event  12, 10, FRUITTREE_ROUTE_9, ASPEAR_BERRY
 
 
 Route9MapSignThing::

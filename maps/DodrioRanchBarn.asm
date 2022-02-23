@@ -5,7 +5,7 @@ DodrioRanchBarn_MapScriptHeader:
 
 	db 2 ; warp events
 	warp_def  7,  4, 2, ROUTE_9
-	warp_def  7,  3, 2, ROUTE_9
+	warp_def  7,  5, 3, ROUTE_9
 
 	db 0 ; coord events
 

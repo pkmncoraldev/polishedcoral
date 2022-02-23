@@ -50,7 +50,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 31
 	tilecoll WALL, WALL, WALL, WALL ; 32
 	tilecoll MART_SHELF, FLOOR, MART_SHELF, FLOOR ; 33
-	tilecoll WALL, WALL, WALL, WALL ; 34
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 34
 	tilecoll WALL, WALL, WALL, WALL ; 35
 	tilecoll WALL, WALL, WALL, WALL ; 36
 	tilecoll WALL, WALL, FLOOR, WALL ; 37

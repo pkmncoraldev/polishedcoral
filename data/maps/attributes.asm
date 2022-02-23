@@ -160,7 +160,7 @@ ENDM
 	map_attributes Route10East, ROUTE_10_EAST, 5, WEST
 	connection west, Route10, ROUTE_10, 1
 
-	map_attributes EventideVillage, EVENTIDE_VILLAGE, $d9, EAST
+	map_attributes EventideVillage, EVENTIDE_VILLAGE, $0d, EAST
 	connection east, Route9, ROUTE_9, -16
 
 	map_attributes FlickerStation, FLICKER_STATION, $d1, NORTH | SOUTH | WEST

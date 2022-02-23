@@ -499,12 +499,12 @@ GlintGrove_BlockData:
 	
 GlintGroveDeep_BlockData:
 	INCBIN "maps/GlintGroveDeep.ablk.lz"
-
-GlintGroveEntrance_BlockData:
-	INCBIN "maps/GlintGroveEntrance.ablk.lz"
 	
 	
 SECTION "Map Blockdata 2", ROMX
+	
+GlintGroveEntrance_BlockData:
+	INCBIN "maps/GlintGroveEntrance.ablk.lz"
 	
 EventideForest_BlockData:
 	INCBIN "maps/EventideForest.ablk.lz"

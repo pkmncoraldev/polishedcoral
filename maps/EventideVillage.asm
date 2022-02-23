@@ -16,7 +16,9 @@ EventideVillage_MapScriptHeader:
 	warp_event 31, 37, EVENTIDE_GYM, 1
 	warp_event 32, 37, EVENTIDE_GYM, 2
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event 11, 31, 0, EventideMakeYellowEvent
+	coord_event 11, 29, 1, EventideMakeGrayEvent
 
 	db 9 ; bg events
 	bg_event 24, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
@@ -29,17 +31,21 @@ EventideVillage_MapScriptHeader:
 	signpost 17, 14, SIGNPOST_READ, EventideVillagePokeCenterSign
 	signpost 25, 24, SIGNPOST_READ, EventideVillageMartSign
 
-	db 11 ; object events
+	db 15 ; object events
 	person_event SPRITE_HANGAR_PARTS, 32, 33, SPRITEMOVEDATA_HANGAR_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 21, 32, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
 	object_event 19, 34, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
 	object_event 22, 36, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
-	object_event 13, 33, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
-	object_event 12, 38, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
-	object_event 14, 43, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
+	object_event  8, 42, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
+	object_event  8, 33, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
+	object_event 14, 45, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
+	object_event 14, 37, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
+	object_event 13, 31, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TAUROS, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageTauros, -1
+	object_event 13, 41, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TAUROS, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageTauros, -1
 	person_event SPRITE_COWGIRL, 34, 20, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EventideVillageMilkGirl, -1
 	person_event SPRITE_ROCKER, 20, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageNPC1, -1
 	person_event SPRITE_CUTE_GIRL, 15, 30, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideVillageNPC2, -1
+	person_event SPRITE_N64, 36, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageScarecrow, -1
 	itemball_event  8, 18, PROTEIN, 1, EVENT_EVENTIDE_VILLAGE_POKEBALL
 
 EventideVillageFlypointCallback:
@@ -57,6 +63,18 @@ EventideVillageWendyRematch:
 	clearevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_5_REMATCH
 .end
 	return
+	
+EventideMakeYellowEvent:
+	loadvar wTimeOfDayPalFlags, $40 | 1
+	special Special_UpdatePalsInstant
+	dotrigger $1
+	end
+	
+EventideMakeGrayEvent:
+	loadvar wTimeOfDayPalFlags, $40 | 0
+	special Special_UpdatePalsInstant
+	dotrigger $0
+	end
 	
 EventideVillagePokeCenterSign:
 	jumpstd pokecentersign
@@ -77,6 +95,17 @@ EventideVillageMiltank:
 	waitbutton
 	closetext
 	end
+	
+EventideVillageTauros:
+	opentext
+	writetext EventideVillageTaurosText
+	cry TAUROS
+	waitbutton
+	closetext
+	end
+	
+EventideVillageScarecrow:
+	jumptext EventideVillageScarecrowText
 	
 EventideVillageMilkGirl:
 	faceplayer
@@ -247,6 +276,10 @@ EventideVillageMiltankText:
 	text "MILTANK: Mooo!"
 	done
 	
+EventideVillageTaurosText:
+	text "TAUROS: Raurs!"
+	done
+	
 EventideVillageSignText:
 	text "EVENTIDE VILLAGE"
 	
@@ -258,7 +291,6 @@ EventideVillageBikeShopSignText:
 	text "EVENTIDE BIKE SHOP"
 	done
 
-
 EventideVillageGymSignText:
 	text "EVENTIDE VILLAGE"
 	line "#MON GYM"
@@ -268,4 +300,10 @@ EventideVillageGymSignText:
 	line "aviator."
 	done
 	
+EventideVillageScarecrowText:
+	text "It's a SCARE-"
+	line "MURKROW."
+	
+	para "So life-like…"
+	done
 	

@@ -1000,6 +1000,7 @@ wSunbeamReserveTrigger:: ds 1
 wEventideForestTrigger:: ds 1
 wSpookhouseLivingRoomTrigger:: ds 1
 wSpookhouseTVRoomTrigger:: ds 1
+wEventideVillageTrigger:: ds 1
 wRoute9Trigger:: ds 1
 wDodrioRanchRaceTrackTrigger:: ds 1
 wFlickerStationTrigger:: ds 1
@@ -1040,7 +1041,7 @@ wBrilloTownTrigger:: ds 1
 wDesertRouteNorthTrigger:: ds 1
 wAirportTrigger:: ds 1
 
-ds 20
+ds 19
 
 ; fight counts
 wJackFightCount::    ds 1

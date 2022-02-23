@@ -35,6 +35,7 @@ MapTriggers::
 	scene_var EVENTIDE_FOREST,						  wEventideForestTrigger
 	scene_var SPOOKHOUSE_LIVING_ROOM,				  wSpookhouseLivingRoomTrigger
 	scene_var SPOOKHOUSE_TV_ROOM,					  wSpookhouseTVRoomTrigger
+	scene_var EVENTIDE_VILLAGE,						  wEventideVillageTrigger
 	scene_var ROUTE_9,								  wRoute9Trigger
 	scene_var DODRIO_RANCH_RACETRACK,				  wDodrioRanchRaceTrackTrigger
 	scene_var FLICKER_STATION,						  wFlickerStationTrigger

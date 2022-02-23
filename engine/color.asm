@@ -1280,6 +1280,10 @@ LoadMapPals::
 	jp .outside
 	
 .hangar
+	ld a, [wTimeOfDayPalFlags]
+	and $3F
+	cp 1
+	jr z, .ranchyellow
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes

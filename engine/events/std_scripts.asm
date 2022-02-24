@@ -586,6 +586,7 @@ InitializeEventsScript:
 	variablesprite SPRITE_BATHER_VARIABLE_2, SPRITE_BATHER_1
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
 	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_SNOWGIRL_SKATE
+	variablesprite SPRITE_BAGGAGE, SPRITE_ICE_BLOCK
 	return
 
 AskNumber1MScript:

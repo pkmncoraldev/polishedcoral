@@ -967,7 +967,7 @@ ds 1 ; unused
 
 wRanchRaceFrames:: ds 1
 wRanchRaceSeconds:: ds 1
-wFarfetchdPosition:: ds 1
+wCurrentAirportBaggage:: ds 1
 
 ; map triggers
 wAlways0Trigger:: ds 1

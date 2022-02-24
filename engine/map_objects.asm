@@ -652,22 +652,21 @@ MapObjectMovementPattern:
 	jp .RandomWalkContinue
 
 .MovementBaggage:
-	xor a
-	ld [wAirportTrigger], a
 	ld a, [wRanchRaceSeconds]
-	inc a
-	ld [wRanchRaceSeconds], a
-	cp 1
-	jr z, .one
-	cp 3
-	jr z, .three
-	cp 7
-	jr z, .seven
-	cp 9
-	jr z, .nine
+	cp 0
+	jr z, .zero
+	cp 4
+	jr z, .four
+	cp 6
+	jr z, .six
+	cp 10
+	jr z, .ten
 	cp 13
 	jr z, .thirteen
 .return
+	ld a, [wRanchRaceSeconds]
+	inc a
+	ld [wRanchRaceSeconds], a
 	ld a, [wRanchRaceFrames]
 	and %00000011
 	call InitStep
@@ -676,7 +675,7 @@ MapObjectMovementPattern:
 ;	call UpdateTallGrassFlags
 	ld hl, OBJECT_ACTION
 	add hl, bc
-	ld [hl], PERSON_ACTION_STAND
+	ld [hl], PERSON_ACTION_STEP
 	ld hl, wCenteredObject
 	ld a, [hMapObjectIndexBuffer]
 ;	cp [hl]
@@ -685,27 +684,26 @@ MapObjectMovementPattern:
 	add hl, bc
 	ld [hl], STEP_TYPE_NPC_WALK
 	ret
-.one
-	ld a, 3
-	ld [wRanchRaceFrames], a 
+.zero
+	ld a, 0
+	ld [wRanchRaceFrames], a
 	jr .return
-.three
-	ld a, 1
-	ld [wRanchRaceFrames], a 
-	jr .return
-.seven
-	ld a, 2
-	ld [wRanchRaceFrames], a 
-	jr .return
-.nine
-	xor a
-	ld [wRanchRaceFrames], a 
-	jr .return
-.thirteen
+.four
 	ld a, 3
 	ld [wRanchRaceFrames], a
+	jr .return
+.six
 	ld a, 1
-	ld [wRanchRaceSeconds], a	
+	ld [wRanchRaceFrames], a
+	jr .return
+.ten
+	ld a, 2
+	ld [wRanchRaceFrames], a
+	jr .return
+.thirteen
+	ld a, 0
+	ld [wRanchRaceSeconds], a
+	ld [wRanchRaceFrames], a
 	jr .return
 	
 .RandomSpin1:

@@ -31,7 +31,12 @@ EventideVillage_MapScriptHeader:
 	signpost 17, 14, SIGNPOST_READ, EventideVillagePokeCenterSign
 	signpost 25, 24, SIGNPOST_READ, EventideVillageMartSign
 
-	db 15 ; object events
+	db 16 ; object events
+	person_event SPRITE_COWGIRL, 34, 20, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EventideVillageMilkGirl, -1
+	person_event SPRITE_ROCKER, 20, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageNPC1, -1
+	person_event SPRITE_CUTE_GIRL, 15, 30, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideVillageNPC2, -1
+	person_event SPRITE_BUG_CATCHER, 29, 10, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, EventideVillageNPC3, -1
+	person_event SPRITE_N64, 36, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageScarecrow, -1
 	person_event SPRITE_HANGAR_PARTS, 32, 33, SPRITEMOVEDATA_HANGAR_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 21, 32, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
 	object_event 19, 34, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
@@ -42,12 +47,15 @@ EventideVillage_MapScriptHeader:
 	object_event 14, 37, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
 	object_event 13, 31, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TAUROS, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageTauros, -1
 	object_event 13, 41, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TAUROS, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageTauros, -1
-	person_event SPRITE_COWGIRL, 34, 20, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EventideVillageMilkGirl, -1
-	person_event SPRITE_ROCKER, 20, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageNPC1, -1
-	person_event SPRITE_CUTE_GIRL, 15, 30, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideVillageNPC2, -1
-	person_event SPRITE_N64, 36, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageScarecrow, -1
 	itemball_event  8, 18, PROTEIN, 1, EVENT_EVENTIDE_VILLAGE_POKEBALL
 
+	
+	const_def 1 ; object constants
+	const EVENTIDE_VILLAGE_MILK_GIRL
+	const EVENTIDE_VILLAGE_NPC1
+	const EVENTIDE_VILLAGE_NPC2
+	const EVENTIDE_VILLAGE_NPC3
+	
 EventideVillageFlypointCallback:
 	setflag ENGINE_FLYPOINT_EVENTIDE
 	return
@@ -65,6 +73,7 @@ EventideVillageWendyRematch:
 	return
 	
 EventideMakeYellowEvent:
+	setevent EVENT_JUMPED_EVENTIDE_FENCE
 	loadvar wTimeOfDayPalFlags, $40 | 1
 	special Special_UpdatePalsInstant
 	dotrigger $1
@@ -87,6 +96,21 @@ EventideVillageNPC1:
 	
 EventideVillageNPC2:
 	jumptextfaceplayer EventideVillageNPC2Text
+	
+EventideVillageNPC3:
+	faceplayer
+	opentext
+	checkevent EVENT_JUMPED_EVENTIDE_FENCE
+	iftrue .jumped
+	writetext EventideVillageNPC3Text1
+	jump .cont
+.jumped
+	writetext EventideVillageNPC3Text2
+.cont
+	waitbutton
+	closetext
+	spriteface EVENTIDE_VILLAGE_NPC3, DOWN
+	end
 	
 EventideVillageMiltank:
 	opentext
@@ -136,6 +160,7 @@ EventideVillageMilkGirl:
 	buttonsound
 	verbosegiveitem MOOMOO_MILK
 	closetext
+	spriteface EVENTIDE_VILLAGE_MILK_GIRL, LEFT
 	end
 .dozen
 	checkmoney $0, 6000
@@ -151,21 +176,25 @@ EventideVillageMilkGirl:
 	buttonsound
 	verbosegiveitem MOOMOO_MILK, 12
 	closetext
+	spriteface EVENTIDE_VILLAGE_MILK_GIRL, LEFT
 	end
 .nomoney
 	writetext EventideVillageMilkGirlTextNoMoney
 	waitbutton
 	closetext
+	spriteface EVENTIDE_VILLAGE_MILK_GIRL, LEFT
 	end
 .noroom
 	writetext EventideVillageMilkGirlTextNoRoom
 	waitbutton
 	closetext
+	spriteface EVENTIDE_VILLAGE_MILK_GIRL, LEFT
 	end
 .no
 	writetext EventideVillageMilkGirlTextNo
 	waitbutton
 	closetext
+	spriteface EVENTIDE_VILLAGE_MILK_GIRL, LEFT
 	end
 	
 EventideVillageMilkMenuData:
@@ -203,6 +232,25 @@ EventideVillageNPC2Text:
 	
 	para "there isn't much to"
 	line "do around here."
+	done
+	
+EventideVillageNPC3Text1:
+	text "There's some rare"
+	line "#MON in that"
+	cont "field over there!"
+	
+	para "Too bad I can't"
+	line "jump the fence"
+	cont "and catch 'em…"
+	done
+	
+EventideVillageNPC3Text2:
+	text "Woah!"
+	
+	para "You hopped the"
+	line "fence!"
+	
+	para "That's so cool!"
 	done
 	
 EventideVillageMilkGirlText1:

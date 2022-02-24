@@ -1162,6 +1162,34 @@
 	db 21, RATTATA		;4%
 	db 21, RATTATA		;1%
 
+	
+	map_id EVENTIDE_VILLAGE
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 27, MILTANK		;30%
+	db 27, TAUROS		;30%
+	db 27, MURKROW		;20%
+	db 27, HOUNDOUR		;10%
+	db 27, PIDGEOTTO	;5%
+	db 27, PIDGEOTTO	;4%
+	db 28, PIDGEOTTO	;1%
+	; day
+	db 27, MILTANK		;30%
+	db 27, TAUROS		;30%
+	db 27, MURKROW		;20%
+	db 27, HOUNDOUR		;10%
+	db 27, PIDGEOTTO	;5%
+	db 27, PIDGEOTTO	;4%
+	db 28, PIDGEOTTO	;1%
+	; nite
+	db 27, MILTANK		;30%
+	db 27, TAUROS		;30%
+	db 27, MURKROW		;20%
+	db 27, HOUNDOUR		;10%
+	db 27, PIDGEOTTO	;5%
+	db 27, PIDGEOTTO	;4%
+	db 28, PIDGEOTTO	;1%
+	
 	map_id ROUTE_9 ; used on Route 9 when EVENT_ON_DODRIO_RANCH is not set
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn

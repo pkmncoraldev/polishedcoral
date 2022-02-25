@@ -661,8 +661,12 @@ MapObjectMovementPattern:
 	jr z, .six
 	cp 10
 	jr z, .ten
+	cp 12
+	jr z, .twelve
 	cp 13
 	jr z, .thirteen
+	cp 15
+	jr z, .fifteen
 .return
 	ld a, [wRanchRaceSeconds]
 	inc a
@@ -675,7 +679,7 @@ MapObjectMovementPattern:
 ;	call UpdateTallGrassFlags
 	ld hl, OBJECT_ACTION
 	add hl, bc
-	ld [hl], PERSON_ACTION_STEP
+	ld [hl], PERSON_ACTION_TILE_LEFT
 	ld hl, wCenteredObject
 	ld a, [hMapObjectIndexBuffer]
 ;	cp [hl]
@@ -689,6 +693,7 @@ MapObjectMovementPattern:
 	ld [wRanchRaceFrames], a
 	jr .return
 .four
+.twelve
 	ld a, 3
 	ld [wRanchRaceFrames], a
 	jr .return
@@ -697,10 +702,11 @@ MapObjectMovementPattern:
 	ld [wRanchRaceFrames], a
 	jr .return
 .ten
+.thirteen
 	ld a, 2
 	ld [wRanchRaceFrames], a
 	jr .return
-.thirteen
+.fifteen
 	ld a, 0
 	ld [wRanchRaceSeconds], a
 	ld [wRanchRaceFrames], a

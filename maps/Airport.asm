@@ -29,11 +29,16 @@ Airport_MapScriptHeader:
 	const AIRPORT_X_RAY_GIRL
 	
 AirportCallback:
+	setevent EVENT_AIRPORT_LUGGAGE_1
+	clearevent EVENT_AIRPORT_LUGGAGE_2
+	clearevent EVENT_AIRPORT_LUGGAGE_3
+	clearevent EVENT_AIRPORT_LUGGAGE_4
+	clearevent EVENT_AIRPORT_SLOWPOKE
+	variablesprite SPRITE_BAGGAGE, SPRITE_ICE_BLOCK
 	callasm AirportBaggageAsm
 	return
 	
 AirportTrigger0:
-.return
 	callasm AiportTriggerAsm
 	ifequal 1, .change1
 	ifequal 2, .change2
@@ -42,31 +47,61 @@ AirportTrigger0:
 	ifequal 5, .change5
 	jump .end
 .change1
+	setevent EVENT_AIRPORT_LUGGAGE_1
+	clearevent EVENT_AIRPORT_LUGGAGE_2
+	clearevent EVENT_AIRPORT_LUGGAGE_3
+	clearevent EVENT_AIRPORT_LUGGAGE_4
+	clearevent EVENT_AIRPORT_SLOWPOKE
+	special Special_UpdatePalsInstant
 	variablesprite SPRITE_BAGGAGE, SPRITE_ICE_BLOCK
 	jump .end
 .change2
+	clearevent EVENT_AIRPORT_LUGGAGE_1
+	setevent EVENT_AIRPORT_LUGGAGE_2
+	clearevent EVENT_AIRPORT_LUGGAGE_3
+	clearevent EVENT_AIRPORT_LUGGAGE_4
+	clearevent EVENT_AIRPORT_SLOWPOKE
+	special Special_UpdatePalsInstant
 	variablesprite SPRITE_BAGGAGE, SPRITE_MALL_SIGN
 	jump .end
 .change3
+	clearevent EVENT_AIRPORT_LUGGAGE_1
+	clearevent EVENT_AIRPORT_LUGGAGE_2
+	setevent EVENT_AIRPORT_LUGGAGE_3
+	clearevent EVENT_AIRPORT_LUGGAGE_4
+	clearevent EVENT_AIRPORT_SLOWPOKE
+	special Special_UpdatePalsInstant
 	variablesprite SPRITE_BAGGAGE, SPRITE_MISC_OVERHEAD
 	jump .end
 .change4
+	clearevent EVENT_AIRPORT_LUGGAGE_1
+	clearevent EVENT_AIRPORT_LUGGAGE_2
+	clearevent EVENT_AIRPORT_LUGGAGE_3
+	setevent EVENT_AIRPORT_LUGGAGE_4
+	clearevent EVENT_AIRPORT_SLOWPOKE
+	special Special_UpdatePalsInstant
 	variablesprite SPRITE_BAGGAGE, SPRITE_VALVE_1
 	jump .end
 .change5
+	clearevent EVENT_AIRPORT_LUGGAGE_1
+	clearevent EVENT_AIRPORT_LUGGAGE_2
+	clearevent EVENT_AIRPORT_LUGGAGE_3
+	clearevent EVENT_AIRPORT_LUGGAGE_4
+	setevent EVENT_AIRPORT_SLOWPOKE
+	special Special_UpdatePalsInstant
 	variablesprite SPRITE_BAGGAGE, SPRITE_VALVE_2
 .end
 	end
 	
 AiportTriggerAsm:
 	ld a, [wRanchRaceSeconds]
-	cp 11
+	cp 14
 	jr z, .change
 	ld a, FALSE
 	ld [wScriptVar], a
 	ret
 .change
-	ld a, 12
+	ld a, 15
 	ld [wRanchRaceSeconds], a
 	call Random
 	cp $7f ; 50 percent
@@ -165,5 +200,7 @@ AirportXRayGirlStopYouText:
 	
 AirportBaggageAsm:
 	xor a
-	ld [wRanchRaceSeconds], a 
+	ld [wRanchRaceSeconds], a
+	ld a, 1
+	ld [wCurrentAirportBaggage], a
 	ret

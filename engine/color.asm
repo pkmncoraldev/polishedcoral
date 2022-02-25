@@ -887,6 +887,8 @@ LoadMapPals::
 	jp z, .desert
 	cp TILESET_MART
 	jp z, .mart
+	cp TILESET_LAB
+	jp z, .lab
 	jp .normal
 .playerhouse
 	ld a, [wMapGroup]
@@ -1460,8 +1462,38 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	jr .outside
+	jp .outside
 
+.lab
+	call .normal
+	eventflagcheck EVENT_AIRPORT_LUGGAGE_2
+	jr nz, .luggage2
+	eventflagcheck EVENT_AIRPORT_LUGGAGE_3
+	jr nz, .luggage3
+	eventflagcheck EVENT_AIRPORT_LUGGAGE_4
+	jr nz, .luggage4
+	eventflagcheck EVENT_AIRPORT_SLOWPOKE
+	jr nz, .slowpoke
+.luggage1
+	ld hl, MapObjectPalsLuggage1
+	jr .lab_end
+.luggage2
+	ld hl, MapObjectPalsLuggage2
+	jr .lab_end
+.luggage3
+	ld hl, MapObjectPalsLuggage3
+	jr .lab_end
+.luggage4
+	ld hl, MapObjectPalsLuggage4
+	jr .lab_end
+.slowpoke
+	ld hl, MapObjectPalsSlowpoke
+.lab_end
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+	
 .shimmer
 	ld a, [wMapNumber]
 	cp MAP_SHIMMER_CITY
@@ -1758,6 +1790,21 @@ INCLUDE "maps/palettes/obpals/obsand.pal"
 
 MapObjectPalsCasino::
 INCLUDE "maps/palettes/obpals/casino.pal"
+
+MapObjectPalsLuggage1::
+INCLUDE "maps/palettes/obpals/luggage1.pal"
+
+MapObjectPalsLuggage2::
+INCLUDE "maps/palettes/obpals/luggage2.pal"
+
+MapObjectPalsLuggage3::
+INCLUDE "maps/palettes/obpals/luggage3.pal"
+
+MapObjectPalsLuggage4::
+INCLUDE "maps/palettes/obpals/luggage4.pal"
+
+MapObjectPalsSlowpoke::
+INCLUDE "maps/palettes/obpals/slowpoke.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

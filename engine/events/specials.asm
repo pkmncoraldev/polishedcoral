@@ -575,8 +575,8 @@ Special_UpdatePalsInstant:
 	ld a, d
 	ld [rSVBK], a
 
-	ld a, [wPermission]
-	cp INDOOR
+	ld a, [wTileset]
+	cp TILESET_PLAYER_HOUSE
 	jp z, .skip
 ; update palettes
 	farcall _UpdateTimePals

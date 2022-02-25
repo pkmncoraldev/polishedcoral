@@ -34,7 +34,7 @@
 	const CRY_STARYU
 	const CRY_GROWLITHE
 	const CRY_UNUSED4
-	const CRY_UNUSED9
+	const CRY_PSYDUCK
 	const CRY_RATTATA
 	const CRY_VILEPLUME
 	const CRY_GEODUDE

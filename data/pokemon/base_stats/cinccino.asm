@@ -7,7 +7,7 @@
 	db CHESTO_BERRY ; item 1
 	db CHESTO_BERRY ; item 2
 	dn FEMALE_75, 3 ; gender, step cycles to hatch
-	dn 5, 5 ; frontpic dimensions
+	dn 6, 6 ; frontpic dimensions
 	db CUTE_CHARM ; ability 1
 	db TECHNICIAN ; ability 2
 	db SKILL_LINK ; hidden ability

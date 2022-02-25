@@ -500,8 +500,8 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Carracosta - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Archen - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Archeops - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Minccino - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cinccino - PLACEHOLDER
+	mon_cry CRY_SLOWPOKE,    $1CD,  $140  	; Minccino
+	mon_cry CRY_PSYDUCK,     $265,  $170	; Cinccino
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Joltik - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Galvantula - PLACEHOLDER
 	mon_cry CRY_WOOPER,     -$010,  $210 	; Litwick

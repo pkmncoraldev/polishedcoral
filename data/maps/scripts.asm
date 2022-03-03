@@ -223,9 +223,6 @@ INCLUDE "maps/Route11.asm"
 INCLUDE "maps/Skatepark.asm"
 INCLUDE "maps/Route11Gate.asm"
 INCLUDE "maps/Route12Gate.asm"
-INCLUDE "maps/Route12.asm"
-INCLUDE "maps/OnwaIntlAirport.asm"
-INCLUDE "maps/Airport.asm"
 
 SECTION "Luster City Scripts2", ROMX
 
@@ -258,6 +255,11 @@ INCLUDE "maps/NettBuildingMBathroom.asm"
 INCLUDE "maps/NettBuildingFBathroom.asm"
 INCLUDE "maps/NettBuildingStairwell.asm"
 INCLUDE "maps/NettBuildingOffice.asm"
+
+SECTION "Route 12 Scripts", ROMX
+INCLUDE "maps/Route12.asm"
+INCLUDE "maps/OnwaIntlAirport.asm"
+INCLUDE "maps/Airport.asm"
 
 SECTION "Shimmer City Scripts", ROMX
 

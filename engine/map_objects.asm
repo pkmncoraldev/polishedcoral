@@ -679,7 +679,7 @@ MapObjectMovementPattern:
 ;	call UpdateTallGrassFlags
 	ld hl, OBJECT_ACTION
 	add hl, bc
-	ld [hl], PERSON_ACTION_TILE_LEFT
+	ld [hl], PERSON_ACTION_STAND
 	ld hl, wCenteredObject
 	ld a, [hMapObjectIndexBuffer]
 ;	cp [hl]

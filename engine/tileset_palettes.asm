@@ -289,7 +289,18 @@ LoadSpecialMapPalette: ; 494ac
 	jr z, .luster_train
 	ld a, [wMapGroup]
 	cp GROUP_SHIMMER_CITY
+	jr z, .fossil_lab
+	ld a, [wMapGroup]
+	cp GROUP_AIRPORT
 	jp nz, .do_nothing
+	ld hl, AirportPalette
+	ld de, wUnknBGPals + 4 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
+.fossil_lab
 	ld hl, FossilLabPalette
 	ld de, wUnknBGPals + 6 palettes
 	ld bc, 1 palettes
@@ -711,6 +722,9 @@ INCLUDE "maps/palettes/bgpals/train.pal"
 
 FossilLabPalette:
 INCLUDE "maps/palettes/bgpals/fossillab.pal"
+
+AirportPalette:
+INCLUDE "maps/palettes/bgpals/airport.pal"
 
 TwinkleFireplacePalette:
 INCLUDE "maps/palettes/bgpals/twinklefireplace.pal"

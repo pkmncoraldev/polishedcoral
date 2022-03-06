@@ -102,7 +102,7 @@ FlickerTrainGraveyard3Girls:
 	loadtrainer DELINQUENT_F, 2
 	startbattle
 	reloadmapafterbattle
-	playmusic MUSIC_GLINT_GROVE
+	playmusic MUSIC_FLICKER_STATION
 	setevent EVENT_BEAT_TRAINGRAVEYARD_TRAINER_2
 	dotrigger $1
 	end

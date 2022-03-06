@@ -75,6 +75,7 @@ INCLUDE "audio/music/oasis.asm"
 INCLUDE "audio/music/mountaintop.asm"
 INCLUDE "audio/music/snarebattle.asm"
 INCLUDE "audio/music/snareadminbattle.asm"
+INCLUDE "audio/music/snareleaderbattle.asm"
 INCLUDE "audio/music/train.asm"
 INCLUDE "audio/music/trainstartup.asm"
 INCLUDE "audio/music/snaretheme.asm"
@@ -84,6 +85,7 @@ INCLUDE "audio/music/eventidevillage.asm"
 INCLUDE "audio/music/snarevictory.asm"
 INCLUDE "audio/music/tvstatic.asm"
 INCLUDE "audio/music/wildboss.asm"
+INCLUDE "audio/music/flickerstation.asm"
 
 
 SECTION "Music 5", ROMX

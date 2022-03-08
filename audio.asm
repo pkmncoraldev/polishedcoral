@@ -86,6 +86,7 @@ INCLUDE "audio/music/snarevictory.asm"
 INCLUDE "audio/music/tvstatic.asm"
 INCLUDE "audio/music/wildboss.asm"
 INCLUDE "audio/music/flickerstation.asm"
+INCLUDE "audio/music/route12.asm"
 
 
 SECTION "Music 5", ROMX

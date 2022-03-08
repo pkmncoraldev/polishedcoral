@@ -50,6 +50,7 @@ Music:
 	dba Music_LusterCity
 	dba Music_HardcoreEncounter
 	dba Music_MinibossBattle
+	dba Music_Route12
 	dba Music_WaterRoute
 	dba Music_ShimmerCity
 	dba Music_GscGameCorner

@@ -111,9 +111,10 @@ Music_SnareLeaderBattle_Ch1_loop:
 	note D#, 2
 	note D_, 2
 	note __, 6
-	note F_, 8
 	
 	intensity $a6
+	note F_, 8
+	
 	note G_, 3
 	octave 4
 	note C_, 1
@@ -396,6 +397,7 @@ Music_SnareLeaderBattle_Ch2_loop:
 	note G_, 2
 	note F_, 2
 	note __, 6
+	intensity $c6
 	note B_, 8
 	
 	callchannel Music_SnareLeaderBattle_Ch2_Part_3
@@ -1171,6 +1173,11 @@ Music_SnareLeaderBattle_Ch3_Part_7:
 	note G_, 2
 	endchannel
 	
-Music_SnareLeaderBattle_Ch4:	
-	endchannel 0	
+Music_SnareLeaderBattle_Ch4:
+	togglenoise $3
+	notetype $c
+	note D_, 1
+	note D_, 1
+	note B_, 16
+	endchannel
 

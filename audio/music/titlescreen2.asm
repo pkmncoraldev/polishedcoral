@@ -1175,6 +1175,7 @@ Music_TitleScreen2_Ch3:
 
 Music_TitleScreen2_Ch4:
 	togglenoise 3
+Music_TitleScreen2_Ch4_skip: ;required for Ch4 to work in sound test
 	notetype $8
 	note B_, 2
 	note G_, 2

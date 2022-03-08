@@ -788,4 +788,4 @@ Music_TitleScreen_Ch4:
 	note D_, 2
 	note D_, 2
 	note D_, 2
-	jumpchannel Music_TitleScreen2_Ch4
+	jumpchannel Music_TitleScreen2_Ch4_skip

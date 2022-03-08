@@ -7,8 +7,8 @@ Airport_MapScriptHeader:
 	callback MAPCALLBACK_TILES, AirportCallback
 
 	db 2 ; warp events
-	warp_event  6, 15, ONWA_INTL_AIRPORT, 3
-	warp_event  7, 15, ONWA_INTL_AIRPORT, 4
+	warp_event  4, 19, ONWA_INTL_AIRPORT, 3
+	warp_event  5, 19, ONWA_INTL_AIRPORT, 4
 
 	db 4 ; coord events
 	coord_event  7,  9, 0, AirportStopYou
@@ -16,19 +16,17 @@ Airport_MapScriptHeader:
 	coord_event  7,  8, 1, AirportXRay
 	coord_event  3,  8, 1, AirportXRay
 
-	db 3 ; bg events
-	signpost 13,  4, SIGNPOST_READ, AirportNpc1
-	signpost 13,  6, SIGNPOST_READ, AirportNpc3
-	signpost 13,  8, SIGNPOST_READ, AirportNpc5
+	db 0 ; bg events
 
-	db 8 ; object events
-	person_event SPRITE_RECEPTIONIST, 13,  2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportReceptionist, -1
+	db 9 ; object events
+	person_event SPRITE_RECEPTIONIST, 14,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportReceptionist, -1
 	person_event SPRITE_RECEPTIONIST,  1,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportGateGirl, -1
 	person_event SPRITE_RECEPTIONIST,  9,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportXRayGirl, -1
-	person_event SPRITE_BIRD_KEEPER, 13,  5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, AirportNpc2, -1
-	person_event SPRITE_GENTLEMAN, 13,  7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, AirportNpc4, -1
-	person_event SPRITE_CUTE_GIRL, 13,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, AirportNpc6, -1
-	person_event SPRITE_BEAUTY, 11, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, AirportNpc7, -1
+	person_event SPRITE_GRANNY, 16,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportNpc1, -1
+	person_event SPRITE_BIRD_KEEPER, 17,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, AirportNpc2, -1
+	person_event SPRITE_GENTLEMAN, 18,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, AirportNpc3, -1
+	person_event SPRITE_CUTE_GIRL, 19,  4, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, AirportNpc4, -1
+	person_event SPRITE_BEAUTY, 11, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, AirportNpc5, -1
 	object_event 11,  8, SPRITE_BAGGAGE, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 
 
@@ -36,10 +34,11 @@ Airport_MapScriptHeader:
 	const AIRPORT_RECEPTIONIST
 	const AIRPORT_GATE_GIRL
 	const AIRPORT_X_RAY_GIRL
+	const AIRPORT_NPC_1
 	const AIRPORT_NPC_2
+	const AIRPORT_NPC_3
 	const AIRPORT_NPC_4
-	const AIRPORT_NPC_6
-	const AIRPORT_NPC_7
+	const AIRPORT_NPC_5
 	const AIRPORT_BAGGAGE
 	
 	
@@ -207,30 +206,24 @@ AirportNpc2:
 	jumptext AirportNpc2Text
 	
 AirportNpc3:
-	jumptext AirportNpc3Text
-	
-AirportNpc4:
 	faceplayer
 	opentext
-	writetext AirportNpc4Text
+	writetext AirportNpc3Text
 	waitbutton
 	closetext
-	spriteface AIRPORT_NPC_4, LEFT
+	spriteface AIRPORT_NPC_3, UP
 	end
 	
+AirportNpc4:
+	jumptextfaceplayer AirportNpc4Text
+	
 AirportNpc5:
-	jumptext AirportNpc5Text
-	
-AirportNpc6:
-	jumptextfaceplayer AirportNpc6Text
-	
-AirportNpc7:
 	faceplayer
 	opentext
-	writetext AirportNpc7Text
+	writetext AirportNpc5Text
 	waitbutton
 	closetext
-	spriteface AIRPORT_NPC_7, RIGHT
+	spriteface AIRPORT_NPC_5, RIGHT
 	end
 	
 AirportReceptionist:
@@ -308,24 +301,16 @@ AirportNpc2Text:
 	done
 	
 AirportNpc3Text:
-	text "Grumble… Grumble…"
-	done
-	
-AirportNpc4Text:
 	text "This sure is"
 	line "taking a while…"
 	done
 	
-AirportNpc5Text:
-	text "Grumble… Grumble…"
-	done
-	
-AirportNpc6Text:
+AirportNpc4Text:
 	text "Is this line even"
 	line "moving?"
 	done
 	
-AirportNpc7Text:
+AirportNpc5Text:
 	text "I don't see my"
 	line "bag!"
 	

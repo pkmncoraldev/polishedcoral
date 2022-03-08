@@ -259,6 +259,7 @@ INCLUDE "maps/NettBuildingOffice.asm"
 SECTION "Route 12 Scripts", ROMX
 INCLUDE "maps/Route12.asm"
 INCLUDE "maps/OnwaIntlAirport.asm"
+INCLUDE "maps/AirportRunway.asm"
 INCLUDE "maps/Airport.asm"
 
 SECTION "Shimmer City Scripts", ROMX

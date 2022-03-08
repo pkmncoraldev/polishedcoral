@@ -274,10 +274,14 @@ ENDM
 	connection east, Skatepark, SKATEPARK, 1
 	
 	map_attributes Route12, ROUTE_12, $02, NORTH
-	connection north, OnwaIntlAirport, ONWA_INTL_AIRPORT, -11
+	connection north, OnwaIntlAirport, ONWA_INTL_AIRPORT, -12
 	
-	map_attributes OnwaIntlAirport, ONWA_INTL_AIRPORT, $c4, SOUTH
-	connection south, Route12, ROUTE_12, 11
+	map_attributes OnwaIntlAirport, ONWA_INTL_AIRPORT, $c4, NORTH | SOUTH
+	connection north, AirportRunway, AIRPORT_RUNWAY, 0
+	connection south, Route12, ROUTE_12, 12
+	
+	map_attributes AirportRunway, AIRPORT_RUNWAY, $c4, SOUTH
+	connection south, OnwaIntlAirport, ONWA_INTL_AIRPORT, 0
 	
 	map_attributes Skatepark, SKATEPARK, $02, WEST
 	connection west, Route11, ROUTE_11, -1

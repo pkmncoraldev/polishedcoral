@@ -38,7 +38,7 @@ AirportGuardScript:
 	playsound SFX_EXIT_BUILDING
 	waitsfx
 	domaptrigger ONWA_INTL_AIRPORT, $1
-	warpfacing DOWN, ONWA_INTL_AIRPORT, 9, 16
+	warpfacing DOWN, ONWA_INTL_AIRPORT, $0d, $00
 	end
 	
 StartBattleWithMapTrainerScript: ; 0xbe68a

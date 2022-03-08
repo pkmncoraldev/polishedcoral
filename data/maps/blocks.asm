@@ -458,6 +458,9 @@ Route12_BlockData:
 OnwaIntlAirport_BlockData:
 	INCBIN "maps/OnwaIntlAirport.ablk.lz"
 	
+AirportRunway_BlockData:
+	INCBIN "maps/AirportRunway.ablk.lz"
+	
 FlickerPassOutside_BlockData:
 	INCBIN "maps/FlickerPassOutside.ablk.lz"
 	

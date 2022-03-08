@@ -5,61 +5,41 @@ OnwaIntlAirport_MapScriptHeader:
 	callback MAPCALLBACK_TILES, OnwaIntlAirportCallback
 
 	db 4 ; warp events
-	warp_def 25, 44, 3, ROUTE_12_GATE
-	warp_def 25, 45, 4, ROUTE_12_GATE
-	warp_def 18, 24, 1, AIRPORT
-	warp_def 18, 25, 2, AIRPORT
+	warp_def  9, 46, 3, ROUTE_12_GATE
+	warp_def  9, 47, 4, ROUTE_12_GATE
+	warp_def  2, 26, 1, AIRPORT
+	warp_def  2, 27, 2, AIRPORT
 
-	db 21 ; coord events
-	xy_trigger 0, 24, 26, 0, OnwaIntlAirportMapSignThing, 0, 0
-	xy_trigger 0, 24, 27, 0, OnwaIntlAirportMapSignThing, 0, 0
-	xy_trigger 0, 24, 28, 0, OnwaIntlAirportMapSignThing, 0, 0
-	xy_trigger 1, 26, 26, 0, Route12MapSignThing, 0, 0
-	xy_trigger 1, 26, 27, 0, Route12MapSignThing, 0, 0
-	xy_trigger 1, 26, 28, 0, Route12MapSignThing, 0, 0
-	xy_trigger 1, 14, 11, 0, OnwaIntlAirportBehindFence, 0, 0
-	xy_trigger 1, 15, 11, 0, OnwaIntlAirportBehindFence, 0, 0
-	xy_trigger 1, 18, 25, 0, OnwaIntlAirportWendy, 0, 0
-	xy_trigger 2, 16, 11, 0, OnwaIntlAirportInFrontFence, 0, 0
-	xy_trigger 2, 17, 11, 0, OnwaIntlAirportInFrontFence, 0, 0
-	xy_trigger 3, 24, 26, 0, OnwaIntlAirportMapSignThing, 0, 0
-	xy_trigger 3, 24, 27, 0, OnwaIntlAirportMapSignThing, 0, 0
-	xy_trigger 3, 24, 28, 0, OnwaIntlAirportMapSignThing, 0, 0
-	xy_trigger 4, 26, 26, 0, Route12MapSignThing, 0, 0
-	xy_trigger 4, 26, 27, 0, Route12MapSignThing, 0, 0
-	xy_trigger 4, 26, 28, 0, Route12MapSignThing, 0, 0
-	xy_trigger 4, 14, 11, 0, OnwaIntlAirportBehindFence, 0, 0
-	xy_trigger 4, 15, 11, 0, OnwaIntlAirportBehindFence, 0, 0
-	xy_trigger 5, 16, 11, 0, OnwaIntlAirportInFrontFence, 0, 0
-	xy_trigger 5, 17, 11, 0, OnwaIntlAirportInFrontFence, 0, 0
+	db 13 ; coord events
+	xy_trigger 0,  8, 28, 0, OnwaIntlAirportMapSignThing, 0, 0
+	xy_trigger 0,  8, 29, 0, OnwaIntlAirportMapSignThing, 0, 0
+	xy_trigger 0,  8, 30, 0, OnwaIntlAirportMapSignThing, 0, 0
+	xy_trigger 1, 10, 28, 0, Route12MapSignThing, 0, 0
+	xy_trigger 1, 10, 29, 0, Route12MapSignThing, 0, 0
+	xy_trigger 1, 10, 30, 0, Route12MapSignThing, 0, 0
+	xy_trigger 1,  2, 27, 0, OnwaIntlAirportWendy, 0, 0
+	xy_trigger 3,  8, 28, 0, OnwaIntlAirportMapSignThing, 0, 0
+	xy_trigger 3,  8, 29, 0, OnwaIntlAirportMapSignThing, 0, 0
+	xy_trigger 3,  8, 30, 0, OnwaIntlAirportMapSignThing, 0, 0
+	xy_trigger 4, 10, 28, 0, Route12MapSignThing, 0, 0
+	xy_trigger 4, 10, 29, 0, Route12MapSignThing, 0, 0
+	xy_trigger 4, 10, 30, 0, Route12MapSignThing, 0, 0
 
-	db 3 ; bg events
-	signpost 18, 21, SIGNPOST_READ, OnwaIntlAirportSign
-	bg_event 19, 18, SIGNPOST_ITEM + NUGGET, EVENT_AIRPORT_HIDDEN_ITEM_1
-	bg_event 26,  8, SIGNPOST_ITEM + ELIXIR, EVENT_AIRPORT_HIDDEN_ITEM_2
+	db 2 ; bg events
+	signpost  2, 23, SIGNPOST_READ, OnwaIntlAirportSign
+	bg_event 21,  2, SIGNPOST_ITEM + NUGGET, EVENT_AIRPORT_HIDDEN_ITEM_1
 
-	db 17 ; object events
-	person_event SPRITE_PSYCHIC, 16, 31, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC1, -1
-	person_event SPRITE_FAT_GUY, 19, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC2, -1
-	person_event SPRITE_BEAUTY, 20, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC3, -1
-	person_event SPRITE_SKATER, 21, 21, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC4, -1
-	person_event SPRITE_POKEFAN_F, 18, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC5, -1
-	person_event SPRITE_POKEFAN_M, 32, 32, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC6, -1
+	db 10 ; object events
+	person_event SPRITE_PSYCHIC,  0, 33, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC1, -1
+	person_event SPRITE_FAT_GUY,  3, 26, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC2, -1
+	person_event SPRITE_BEAUTY,  4, 26, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC3, -1
+	person_event SPRITE_SKATER,  5, 23, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC4, -1
+	person_event SPRITE_POKEFAN_F,  2, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC5, -1
+	person_event SPRITE_POKEFAN_M, 16, 34, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC6, -1
 	person_event SPRITE_WENDY, -1, -1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_PLAYER_CUTSCENE, 33,  2, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_PLAYER_CUTSCENE_SILVER
-
-	cuttree_event 11, 16, EVENT_ONWA_INTL_AIRPORT_CUT_TREE
-	itemball_event 31, 15, SUPER_REPEL, 1, EVENT_AIRPORT_POKE_BALL_1
-	itemball_event 10,  4, FULL_RESTORE, 1, EVENT_AIRPORT_POKE_BALL_2
-	itemball_event 25,  9, EVIOLITE, 1, EVENT_AIRPORT_POKE_BALL_3
-	person_event SPRITE_CORY_MISC,  8, 25, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_CORY_MISC,  8, 26, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_OFFICER,  9, 29, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
-	person_event SPRITE_OFFICER,  5, 26, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
-	person_event SPRITE_OFFICER,  7, 15, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
-	person_event SPRITE_OFFICER, 10, 16, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
-	person_event SPRITE_OFFICER,  9,  7, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
-	person_event SPRITE_OFFICER,  4,  4, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
+	person_event SPRITE_PLAYER_CUTSCENE, -1, -1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_PLAYER_CUTSCENE_SILVER
+	cuttree_event 13,  0, EVENT_ONWA_INTL_AIRPORT_CUT_TREE
+	itemball_event 33, -1, SUPER_REPEL, 1, EVENT_AIRPORT_POKE_BALL_1
 	
 	const_def 1 ; object constants
 	const ONWA_INTL_AIRPORT_NPC1
@@ -72,11 +52,25 @@ OnwaIntlAirport_MapScriptHeader:
 	const ONWA_INTL_AIRPORT_PLAYER_CUTSCENE
 	
 OnwaIntlAirportCallback:
+	changeblock $c, -$1, $ed
+	changeblock $e, -$1, $84
+	changeblock $10, -$1, $84
+	changeblock $12, -$1, $84
+	changeblock $14, -$1, $84
+	changeblock $20, -$1, $8c
+	changeblock $c, $0, $eb
+	changeblock $e, $0, $05
+	changeblock $10, $0, $4c
+	changeblock $12, $0, $4e
+	changeblock $14, $0, $05
+	changeblock $20, $0, $05
+;	callasm GenericFinishBridge
+	
 	checkevent EVENT_AIRPORT_WENDY
 	iftrue .wendy_done
 	return
 .wendy_done
-	changeblock $18, $12, $d0
+	changeblock $1a, $02, $d0
 	return
 	
 Route12MapSignThing::
@@ -195,8 +189,8 @@ OnwaIntlAirportInFrontFence:
 OnwaIntlAirportWendy:
 	special Special_StopRunning
 	disappear ONWA_INTL_AIRPORT_WENDY
-	moveperson ONWA_INTL_AIRPORT_WENDY, $19, $12
-	moveperson ONWA_INTL_AIRPORT_PLAYER_CUTSCENE, $19, $14
+	moveperson ONWA_INTL_AIRPORT_WENDY, $1b, $02
+	moveperson ONWA_INTL_AIRPORT_PLAYER_CUTSCENE, $1b, $04
 	appear ONWA_INTL_AIRPORT_WENDY
 	playsound SFX_EXIT_BUILDING
 	applymovement PLAYER, Movement_OnwaIntlAirportWendyBump
@@ -219,6 +213,7 @@ OnwaIntlAirportWendy:
 	applyonemovement PLAYER, hide_person
 	pause 10
 	applymovement PLAYER, Movement_OnwaIntlAirportCutscene0
+	appear ONWA_INTL_AIRPORT_NPC2
 	pause 25
 	opentext
 	writetext OnwaIntlAirportWendyText2
@@ -227,7 +222,7 @@ OnwaIntlAirportWendy:
 	pause 25
 	special FadeOutPalettesBlack
 	disappear ONWA_INTL_AIRPORT_WENDY
-	moveperson ONWA_INTL_AIRPORT_WENDY, $19, $13
+	moveperson ONWA_INTL_AIRPORT_WENDY, $1b, $03
 	appear ONWA_INTL_AIRPORT_WENDY
 	setevent EVENT_PLAYER_CUTSCENE_SILVER
 	disappear ONWA_INTL_AIRPORT_PLAYER_CUTSCENE
@@ -254,7 +249,7 @@ OnwaIntlAirportWendy:
 	
 	applymovement ONWA_INTL_AIRPORT_WENDY, Movement_OnwaIntlAirportWendyLeave
 	setevent EVENT_AIRPORT_WENDY
-	changeblock $18, $12, $d0
+	changeblock $1a, $02, $d0
 	callasm GenericFinishBridge
 	disappear ONWA_INTL_AIRPORT_WENDY
 	special Special_FadeOutMusic
@@ -262,18 +257,6 @@ OnwaIntlAirportWendy:
 	playmusic MUSIC_ROUTE_12
 	dotrigger $4
 	end
-	
-OnwaIntlAirportGuard:
-	generictrainer PLAYER_CORY, -1, -1, .SeenText, -1
-
-.SeenText
-	text "Hold it!"
-	
-	para "Are you crazy?"
-	
-	para "You can't be out"
-	line "here!"
-	done
 	
 OnwaIntlAirportNPC1Text:
 	text "Look at that!"
@@ -447,18 +430,29 @@ Movement_OnwaIntlAirportCutscene1:
 	slow_step_up
 	slow_step_up
 	slow_step_up
-	slow_step_up
-	slow_step_up
 	step_end
 	
 Movement_OnwaIntlAirportCutscene2:
-	big_step_up
-	big_step_up
-	big_step_up
-	big_step_up
-	big_step_up
-	big_step_up
-	big_step_up
+	big_step_down
+	big_step_down
+	big_step_down
+	big_step_down
+	big_step_down
+	big_step_down
+	big_step_down
+	big_step_down
+	big_step_down
+	big_step_down
+	big_step_down
+	big_step_down
+	big_step_down
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
 	big_step_left
 	big_step_left
 	big_step_left
@@ -493,19 +487,22 @@ Movement_OnwaIntlAirportCutscene3:
 	big_step_right
 	big_step_right
 	big_step_right
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_up
+	big_step_up
+	big_step_up
+	big_step_up
+	big_step_up
+	big_step_up
+	big_step_up
+	big_step_up
+	big_step_up
 	step_end
 	
 Movement_OnwaIntlAirportWendyLeave:

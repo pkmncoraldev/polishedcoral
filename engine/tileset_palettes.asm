@@ -471,7 +471,10 @@ LoadSpecialMapPalette: ; 494ac
 .airport
 	ld a, [wMapNumber]
 	cp MAP_ONWA_INTL_AIRPORT
+	jp z, .airport_cont
+	cp MAP_AIRPORT_RUNWAY
 	jp nz, .construction
+.airport_cont
 	ld hl, OutsideLusterPalette
 	call LoadSevenTimeOfDayBGPalettes
 	ld hl, AirportFencePalette

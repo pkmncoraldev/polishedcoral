@@ -159,9 +159,9 @@
 	tilecoll WALL, WALL, WALL, WALL ; 9e
 	tilecoll WALL, WALL, WALL, WALL ; 9f
 	tilecoll WALL, WALL, NO_OLLIE, NO_OLLIE ; a0
-	tilecoll WALL, WALL, WALL, SKATE ; a1
-	tilecoll WALL, SKATE, SKATE, SKATE ; a2
-	tilecoll WALL, WALL, WALL, WALL ; a3
+	tilecoll WALL, SKATE, WALL, SKATE ; a1
+	tilecoll WALL, WALL, SKATE, SKATE ; a2
+	tilecoll SKATE, SKATE, SKATE, WALL ; a3
 	tilecoll WALL, WALL, WALL, WALL ; a4
 	tilecoll WALL, WALL, WALL, WALL ; a5
 	tilecoll WALL, WALL, WALL, WALL ; a6

@@ -54,6 +54,7 @@ Script_Whiteout: ; 0x124ce
 WhiteoutHandleEvents:
 	clearevent EVENT_SNOWSTORM_HAPPENING
 	clearevent EVENT_SANDSTORM_HAPPENING
+	clearevent EVENT_AIRPORT_FENCE
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	domaptrigger SUNSET_CAPE, $0
 	domaptrigger ROUTE_10, $0

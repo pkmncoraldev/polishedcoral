@@ -27,19 +27,25 @@ OnwaIntlAirport_MapScriptHeader:
 
 	db 2 ; bg events
 	signpost  2, 23, SIGNPOST_READ, OnwaIntlAirportSign
-	bg_event 21,  2, SIGNPOST_ITEM + NUGGET, EVENT_AIRPORT_HIDDEN_ITEM_1
+	bg_event 21,  2, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_AIRPORT_HIDDEN_ITEM_3
 
-	db 10 ; object events
+	db 16 ; object events
 	person_event SPRITE_PSYCHIC,  0, 33, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC1, -1
 	person_event SPRITE_FAT_GUY,  3, 26, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC2, -1
 	person_event SPRITE_BEAUTY,  4, 26, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC3, -1
-	person_event SPRITE_SKATER,  5, 23, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC4, -1
+	person_event SPRITE_SKATER,  5, 22, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC4, -1
 	person_event SPRITE_POKEFAN_F,  2, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC5, -1
 	person_event SPRITE_POKEFAN_M, 16, 34, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC6, -1
+	person_event SPRITE_BATTLE_GIRL,  4, 31, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC7, -1
+	person_event SPRITE_SUPER_NERD, 12, 42, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC8, -1
+	object_event 32,  4, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, XATU, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportXatu, -1
 	person_event SPRITE_WENDY, -1, -1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_PLAYER_CUTSCENE, -1, -1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_PLAYER_CUTSCENE_SILVER
 	cuttree_event 13,  0, EVENT_ONWA_INTL_AIRPORT_CUT_TREE
 	itemball_event 33, -1, SUPER_REPEL, 1, EVENT_AIRPORT_POKE_BALL_1
+	itemball_event  6, 10, FULL_RESTORE, 1, EVENT_AIRPORT_POKE_BALL_2
+	person_event SPRITE_OFFICER, 15,  3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
+	person_event SPRITE_OFFICER, 10,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
 	
 	const_def 1 ; object constants
 	const ONWA_INTL_AIRPORT_NPC1
@@ -48,10 +54,15 @@ OnwaIntlAirport_MapScriptHeader:
 	const ONWA_INTL_AIRPORT_NPC4
 	const ONWA_INTL_AIRPORT_NPC5
 	const ONWA_INTL_AIRPORT_NPC6
+	const ONWA_INTL_AIRPORT_NPC7
+	const ONWA_INTL_AIRPORT_NPC8
+	const ONWA_INTL_AIRPORT_XATU
 	const ONWA_INTL_AIRPORT_WENDY
 	const ONWA_INTL_AIRPORT_PLAYER_CUTSCENE
 	
 OnwaIntlAirportCallback:
+	checkevent EVENT_AIRPORT_FENCE
+	iffalse .skip
 	changeblock $c, -$1, $ed
 	changeblock $e, -$1, $84
 	changeblock $10, -$1, $84
@@ -64,8 +75,9 @@ OnwaIntlAirportCallback:
 	changeblock $12, $0, $4e
 	changeblock $14, $0, $05
 	changeblock $20, $0, $05
-;	callasm GenericFinishBridge
-	
+	callasm GenericFinishBridge
+.skip
+	clearevent EVENT_AIRPORT_FENCE
 	checkevent EVENT_AIRPORT_WENDY
 	iftrue .wendy_done
 	return
@@ -139,6 +151,34 @@ OnwaIntlAirportNPC5:
 OnwaIntlAirportNPC6:
 	jumptextfaceplayer OnwaIntlAirportNPC6Text
 	
+OnwaIntlAirportNPC7:
+	opentext
+	writetext OnwaIntlAirportNPC7Text1
+	waitbutton
+	closetext
+	faceplayer
+	pause 10
+	opentext
+	writetext OnwaIntlAirportNPC7Text2
+	waitbutton
+	closetext
+	spriteface ONWA_INTL_AIRPORT_NPC7, RIGHT
+	end
+	
+OnwaIntlAirportNPC8:
+	jumptextfaceplayer OnwaIntlAirportNPC8Text
+	
+OnwaIntlAirportXatu:
+	opentext
+	writetext OnwaIntlAirportXatuText1
+	cry XATU
+	waitsfx
+	buttonsound
+	writetext OnwaIntlAirportXatuText2
+	waitbutton
+	closetext
+	end
+	
 OnwaIntlAirportSign:
 	jumptext OnwaIntlAirportSignText
 	
@@ -200,7 +240,7 @@ OnwaIntlAirportWendy:
 	writetext OnwaIntlAirportWendyText1
 	waitbutton
 	closetext
-	pause 10
+	pause 20
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, ONWA_INTL_AIRPORT_WENDY, 15
 	opentext
@@ -306,12 +346,48 @@ OnwaIntlAirportNPC5Text:
 	
 OnwaIntlAirportNPC6Text:
 	text "ROUTE 12 is closed"
-	line "for construction?"
+	line "for construction!"
 	
 	para "What am I"
 	line "supposed to do,"
 	cont "fly a plane to"
 	cont "SHINE CITY?"
+	done
+	
+OnwaIntlAirportNPC7Text1:
+	text "It's ok, buddy."
+	
+	para "It'll be over"
+	line "before you know"
+	cont "it!"
+	done
+	
+OnwaIntlAirportNPC7Text2:
+	text "My XATU is scared"
+	line "of flying!"
+	done
+	
+OnwaIntlAirportNPC8Text:
+	text "Are you from"
+	line "around here?"
+	
+	para "I just flew in"
+	line "today."
+	
+	para "The plane was"
+	line "super crowded,"
+	
+	para "but the pilot sure"
+	line "pretty."
+	done
+	
+OnwaIntlAirportXatuText1:
+	text "XATU: Tu… Tu…"
+	done
+	
+OnwaIntlAirportXatuText2:
+	text "It's shaking"
+	line "nervously…"
 	done
 	
 OnwaIntlAirportWendyText1:

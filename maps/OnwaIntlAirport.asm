@@ -44,7 +44,7 @@ OnwaIntlAirport_MapScriptHeader:
 	cuttree_event 13,  0, EVENT_ONWA_INTL_AIRPORT_CUT_TREE
 	itemball_event 33, -1, SUPER_REPEL, 1, EVENT_AIRPORT_POKE_BALL_1
 	itemball_event  6, 10, FULL_RESTORE, 1, EVENT_AIRPORT_POKE_BALL_2
-	person_event SPRITE_OFFICER, 15,  3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
+	person_event SPRITE_OFFICER, 16,  3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
 	person_event SPRITE_OFFICER, 10,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
 	
 	const_def 1 ; object constants

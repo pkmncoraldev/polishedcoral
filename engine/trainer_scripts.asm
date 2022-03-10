@@ -22,6 +22,7 @@ SeenByTrainerScript:: ; 0xbe675
 	jump StartBattleWithMapTrainerScript
 
 AirportGuardScript:
+	clearevent EVENT_AIRPORT_FENCE
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, LAST_TALKED, 30
 	callasm TrainerWalkToPlayer

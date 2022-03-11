@@ -94,9 +94,14 @@ LavaCaveBF1Trainer3:
 LavaCaveBF1NPC1:
 	faceplayer 
 	opentext
-	readvar VAR_PLAYER_GENDER
-	if_equal FEMALE, .girl
-	if_equal PIPPI, .girl
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl
 	writetext LavaCaveBF1NPC1Text_boy
 	jump .cont
 .girl
@@ -109,9 +114,14 @@ LavaCaveBF1NPC1:
 LavaCaveBF1NPC2:
 	faceplayer 
 	opentext
-	readvar VAR_PLAYER_GENDER
-	if_equal FEMALE, .girl
-	if_equal PIPPI, .girl
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl
 	writetext LavaCaveBF1NPC2Text_boy
 	jump .cont
 .girl

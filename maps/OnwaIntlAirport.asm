@@ -11,19 +11,19 @@ OnwaIntlAirport_MapScriptHeader:
 	warp_def  2, 27, 2, AIRPORT
 
 	db 13 ; coord events
+	xy_trigger 0,  7, 28, 0, OnwaIntlAirportMapSignThing, 0, 0
+	xy_trigger 0,  7, 29, 0, OnwaIntlAirportMapSignThing, 0, 0
+	xy_trigger 0,  7, 30, 0, OnwaIntlAirportMapSignThing, 0, 0
 	xy_trigger 0,  8, 28, 0, OnwaIntlAirportMapSignThing, 0, 0
 	xy_trigger 0,  8, 29, 0, OnwaIntlAirportMapSignThing, 0, 0
 	xy_trigger 0,  8, 30, 0, OnwaIntlAirportMapSignThing, 0, 0
 	xy_trigger 1, 10, 28, 0, Route12MapSignThing, 0, 0
 	xy_trigger 1, 10, 29, 0, Route12MapSignThing, 0, 0
 	xy_trigger 1, 10, 30, 0, Route12MapSignThing, 0, 0
+	xy_trigger 1, 11, 28, 0, Route12MapSignThing, 0, 0
+	xy_trigger 1, 11, 29, 0, Route12MapSignThing, 0, 0
+	xy_trigger 1, 11, 30, 0, Route12MapSignThing, 0, 0
 	xy_trigger 1,  2, 27, 0, OnwaIntlAirportWendy, 0, 0
-	xy_trigger 3,  8, 28, 0, OnwaIntlAirportMapSignThing, 0, 0
-	xy_trigger 3,  8, 29, 0, OnwaIntlAirportMapSignThing, 0, 0
-	xy_trigger 3,  8, 30, 0, OnwaIntlAirportMapSignThing, 0, 0
-	xy_trigger 4, 10, 28, 0, Route12MapSignThing, 0, 0
-	xy_trigger 4, 10, 29, 0, Route12MapSignThing, 0, 0
-	xy_trigger 4, 10, 30, 0, Route12MapSignThing, 0, 0
 
 	db 2 ; bg events
 	signpost  2, 23, SIGNPOST_READ, OnwaIntlAirportSign
@@ -42,8 +42,8 @@ OnwaIntlAirport_MapScriptHeader:
 	person_event SPRITE_WENDY, -1, -1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_PLAYER_CUTSCENE, -1, -1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_PLAYER_CUTSCENE_SILVER
 	cuttree_event 13,  0, EVENT_ONWA_INTL_AIRPORT_CUT_TREE
-	itemball_event 33, -1, SUPER_REPEL, 1, EVENT_AIRPORT_POKE_BALL_1
-	itemball_event  6, 10, FULL_RESTORE, 1, EVENT_AIRPORT_POKE_BALL_2
+	itemball_event 33, -1, FULL_RESTORE, 1, EVENT_AIRPORT_POKE_BALL_1
+	itemball_event  6, 10, QUICK_POWDER, 1, EVENT_AIRPORT_POKE_BALL_2
 	person_event SPRITE_OFFICER, 16,  3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
 	person_event SPRITE_OFFICER, 10,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
 	
@@ -89,25 +89,15 @@ Route12MapSignThing::
 	clearevent EVENT_AT_AIRPORT
 	loadvar wEnteredMapFromContinue, 0
 	callasm ReturnFromMapSetupScript
-	checkevent EVENT_AIRPORT_WENDY
-	iftrue .wendy_done
 	dotrigger $0
 	end
-.wendy_done
-	dotrigger $3
-    end
 
 OnwaIntlAirportMapSignThing::
 	setevent EVENT_AT_AIRPORT
 	loadvar wEnteredMapFromContinue, 0
 	callasm ReturnFromMapSetupScript
-	checkevent EVENT_AIRPORT_WENDY
-	iftrue .wendy_done
 	dotrigger $1
 	end
-.wendy_done
-	dotrigger $4
-    end
 	
 OnwaIntlAirportNPC1:
 	faceplayer
@@ -182,50 +172,6 @@ OnwaIntlAirportXatu:
 OnwaIntlAirportSign:
 	jumptext OnwaIntlAirportSignText
 	
-OnwaIntlAirportBehindFence:
-	changeblock $a, $e, $c3
-	changeblock $c, $e, $bd
-	changeblock $e, $e, $bd
-	changeblock $10, $e, $bd
-	changeblock $12, $e, $bd
-	changeblock $1e, $e, $86
-	changeblock $a, $10, $ef
-	changeblock $c, $10, $e5
-	changeblock $e, $10, $f4
-	changeblock $10, $10, $f5
-	changeblock $12, $10, $e5
-	changeblock $1e, $10, $e5
-	callasm GenericFinishBridge
-	checkevent EVENT_AIRPORT_WENDY
-	iftrue .wendy_done
-	dotrigger $2
-	end
-.wendy_done
-	dotrigger $5
-	end
-	
-OnwaIntlAirportInFrontFence:
-	changeblock $a, $e, $ed
-	changeblock $c, $e, $84
-	changeblock $e, $e, $84
-	changeblock $10, $e, $84
-	changeblock $12, $e, $84
-	changeblock $1e, $e, $8c
-	changeblock $a, $10, $eb
-	changeblock $c, $10, $05
-	changeblock $e, $10, $4c
-	changeblock $10, $10, $4e
-	changeblock $12, $10, $05
-	changeblock $1e, $10, $05
-	callasm GenericFinishBridge
-	checkevent EVENT_AIRPORT_WENDY
-	iftrue .wendy_done
-	dotrigger $1
-	end
-.wendy_done
-	dotrigger $4
-	end
-	
 OnwaIntlAirportWendy:
 	special Special_StopRunning
 	disappear ONWA_INTL_AIRPORT_WENDY
@@ -295,7 +241,6 @@ OnwaIntlAirportWendy:
 	special Special_FadeOutMusic
 	pause 15
 	playmusic MUSIC_ROUTE_12
-	dotrigger $4
 	end
 	
 OnwaIntlAirportNPC1Text:

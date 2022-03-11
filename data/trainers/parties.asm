@@ -2732,7 +2732,7 @@ BikerGroup:
 ; ================
 
 	; BIKER
-	db "UNUSED@"
+	db "HANK@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -2778,6 +2778,15 @@ CooltrainerMGroup:
 	db -1 ; end
 
 ; ================
+
+	; COOLTRAINERM
+	db "ANDY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2812,6 +2821,15 @@ CooltrainerFGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 22, HERACROSS
+	db -1 ; end
+
+; ================
+
+	; COOLTRAINERF
+	db "MARY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================

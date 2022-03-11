@@ -389,6 +389,7 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass BIKER
+	const HANK
 
 
 	trainerclass CUE_BALL
@@ -397,12 +398,14 @@ PLAYER_F EQU __enum__
 	trainerclass COOLTRAINERM
 	const CODY
 	const SAMMY
+	const ANDY
 
 
 	trainerclass COOLTRAINERF
 	const CASEY
 	const SALLY
 	const JULES
+	const MARY
 
 
 	trainerclass PROF_SPRUCE

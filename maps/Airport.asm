@@ -16,17 +16,20 @@ Airport_MapScriptHeader:
 	coord_event  7,  8, 1, AirportXRay
 	coord_event  3,  8, 1, AirportXRay
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost 17,  4, SIGNPOST_READ, AirportNpcSign
 
-	db 9 ; object events
+	db 11 ; object events
 	person_event SPRITE_RECEPTIONIST, 14,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportReceptionist, -1
 	person_event SPRITE_RECEPTIONIST,  1,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportGateGirl, -1
 	person_event SPRITE_RECEPTIONIST,  9,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportXRayGirl, -1
-	person_event SPRITE_GRANNY, 16,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportNpc1, -1
-	person_event SPRITE_BIRD_KEEPER, 17,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, AirportNpc2, -1
+	person_event SPRITE_GRANNY, 16,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, AirportNpc1, -1
+	person_event SPRITE_POKEFAN_F, 15, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, AirportNpc2, -1
 	person_event SPRITE_GENTLEMAN, 18,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, AirportNpc3, -1
 	person_event SPRITE_CUTE_GIRL, 19,  4, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, AirportNpc4, -1
 	person_event SPRITE_BEAUTY, 11, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, AirportNpc5, -1
+	person_event SPRITE_CHILD, 16,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, AirportNpc6, -1
+	person_event SPRITE_FAT_GUY, 11,  6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, AirportNpc7, -1
 	object_event 11,  8, SPRITE_BAGGAGE, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 
 
@@ -39,6 +42,8 @@ Airport_MapScriptHeader:
 	const AIRPORT_NPC_3
 	const AIRPORT_NPC_4
 	const AIRPORT_NPC_5
+	const AIRPORT_NPC_6
+	const AIRPORT_NPC_7
 	const AIRPORT_BAGGAGE
 	
 	
@@ -203,7 +208,13 @@ AirportNpc1:
 	jumptext AirportNpc1Text
 	
 AirportNpc2:
-	jumptext AirportNpc2Text
+	faceplayer
+	opentext
+	writetext AirportNpc2Text
+	waitbutton
+	closetext
+	spriteface AIRPORT_NPC_2, UP
+	end
 	
 AirportNpc3:
 	faceplayer
@@ -225,6 +236,15 @@ AirportNpc5:
 	closetext
 	spriteface AIRPORT_NPC_5, RIGHT
 	end
+	
+AirportNpc6:
+	jumptextfaceplayer AirportNpc6Text
+	
+AirportNpc7:
+	jumptextfaceplayer AirportNpc7Text
+	
+AirportNpcSign:
+	jumptext AirportNpcSignText
 	
 AirportReceptionist:
 	faceplayer
@@ -253,8 +273,8 @@ AirportXRayGirlStopYouText:
 	cont "ticket."
 	
 	para "You'll have to wait"
-	line "in that line if"
-	cont "you want one."
+	line "in line if you"
+	cont "want one."
 	done
 	
 AirportReceptionistText:
@@ -294,10 +314,16 @@ AirportNpc1Text:
 	done
 	
 AirportNpc2Text:
-	text "Come on, lady!"
+	text "Huh?"
 	
-	para "I have places"
-	line "to be!"
+	para "Oh, I've already"
+	line "got my bag."
+	
+	para "I just can't stop"
+	line "looking at the"
+	cont "baggage claim."
+	
+	para "It's hypnotizing…"
 	done
 	
 AirportNpc3Text:
@@ -316,6 +342,27 @@ AirportNpc5Text:
 	
 	para "They'd better not"
 	line "have lost it!"
+	done
+	
+AirportNpc6Text:
+	text "I'm traveling by"
+	line "myself for the"
+	cont "first time."
+	
+	para "This is so cool!"
+	done
+	
+AirportNpc7Text:
+	text "So busy and loud!"
+	
+	para "I hate airports!"
+	done
+	
+AirportNpcSignText:
+	text "Come on, lady!"
+	
+	para "I have places"
+	line "to be!"
 	done
 	
 AirportBaggageAsm:

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, ICE_PUNCH, RAIN_DANCE, HAIL
+	tmhm ROCK_SMASH, ICE_PUNCH, RAIN_DANCE, HAIL, CURSE
 	; end

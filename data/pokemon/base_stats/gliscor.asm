@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, FAKE_OUT, METAL_CLAW, FALSE_SWIPE, RAIN_DANCE
+	tmhm ROCK_SMASH, FAKE_OUT, METAL_CLAW, FALSE_SWIPE, RAIN_DANCE, DIG, CURSE
 	; end

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CUT, FALSE_SWIPE
+	tmhm CUT, FALSE_SWIPE, CURSE
 	; end

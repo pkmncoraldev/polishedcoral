@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, CHARM
+	tmhm ROCK_SMASH, CHARM, DIG, CURSE
 	; end

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CUT, RAIN_DANCE, FLY
+	tmhm CUT, RAIN_DANCE, FLY, CURSE
 	; end

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, FAKE_OUT, ICE_PUNCH, HAIL
+	tmhm ROCK_SMASH, FAKE_OUT, ICE_PUNCH, HAIL, DIG, CURSE
 	; end

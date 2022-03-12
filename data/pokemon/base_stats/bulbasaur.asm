@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, FAKE_OUT, METAL_CLAW, CUT, CHARM
+	tmhm ROCK_SMASH, FAKE_OUT, METAL_CLAW, CUT, CHARM, CURSE
 	; end

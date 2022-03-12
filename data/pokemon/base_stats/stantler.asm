@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm FAKE_OUT, RAIN_DANCE
+	tmhm FAKE_OUT, RAIN_DANCE, CURSE
 	; end

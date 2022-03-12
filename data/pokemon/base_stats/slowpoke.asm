@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm FALSE_SWIPE, RAIN_DANCE, HAIL
+	tmhm FALSE_SWIPE, RAIN_DANCE, HAIL, DIG, CURSE
 	; end

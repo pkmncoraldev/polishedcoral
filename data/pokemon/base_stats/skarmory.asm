@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, CUT, FALSE_SWIPE, ROOST, FLY
+	tmhm ROCK_SMASH, CUT, FALSE_SWIPE, ROOST, FLY, CURSE
 	; end

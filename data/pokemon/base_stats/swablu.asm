@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, FAKE_OUT, RAIN_DANCE, ROOST, FLY
+	tmhm ROCK_SMASH, FAKE_OUT, RAIN_DANCE, ROOST, FLY, CURSE
 	; end

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm FAKE_OUT, CUT, FALSE_SWIPE, THUNDERPUNCH
+	tmhm FAKE_OUT, CUT, FALSE_SWIPE, THUNDERPUNCH, CURSE
 	; end

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, FAKE_OUT, ROOST, FLY, CURSE, SUNNY_DAY, WORK_UP_GROWTH
+	tmhm ROCK_SMASH, FAKE_OUT, ROOST, FLY, CURSE, SUNNY_DAY, WORK_UP_GROWTH, STEEL_WING
 	; end

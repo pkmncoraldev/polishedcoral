@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm FAKE_OUT, CUT, CHARM, CURSE
+	tmhm FAKE_OUT, CUT, CHARM, CURSE, SUNNY_DAY
 	; end

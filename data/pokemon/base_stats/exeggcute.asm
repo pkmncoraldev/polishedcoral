@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CURSE
+	tmhm CURSE, SUNNY_DAY
 	; end

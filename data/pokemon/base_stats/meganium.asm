@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, FAKE_OUT, CUT, FALSE_SWIPE, CHARM, CURSE
+	tmhm ROCK_SMASH, FAKE_OUT, CUT, FALSE_SWIPE, CHARM, CURSE, SUNNY_DAY, WORK_UP_GROWTH, ROCK_CLIMB
 	; end

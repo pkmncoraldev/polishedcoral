@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CUT, ROOST, FLY, CURSE
+	tmhm CUT, ROOST, FLY, CURSE, SUNNY_DAY
 	; end

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CUT, FALSE_SWIPE, CURSE
+	tmhm CUT, FALSE_SWIPE, CURSE, SUNNY_DAY
 	; end

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, CUT, FALSE_SWIPE, DIG, CURSE
+	tmhm ROCK_SMASH, CUT, FALSE_SWIPE, DIG, CURSE, SUNNY_DAY
 	; end

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm RAIN_DANCE, CURSE
+	tmhm RAIN_DANCE, CURSE, SUNNY_DAY
 	; end

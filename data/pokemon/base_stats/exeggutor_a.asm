@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, CURSE
+	tmhm ROCK_SMASH, CURSE, SUNNY_DAY
 	; end

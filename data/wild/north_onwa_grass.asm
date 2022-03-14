@@ -1490,7 +1490,7 @@
 	
 	map_id LUSTER_SEWERS_MUK_ROOM
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-;	; morn
+	; morn
 	db 30, GRIMER_A		;30%
 	db 30, GRIMER_A		;30%
 	db 30, GRIMER		;20%
@@ -1498,7 +1498,7 @@
 	db 30, RATTATA		;5%
 	db 30, RATTATA		;4%
 	db 30, RATTATA		;1%
-;	; day
+	; day
 	db 30, GRIMER_A		;30%
 	db 30, GRIMER_A		;30%
 	db 30, GRIMER		;20%
@@ -1506,7 +1506,7 @@
 	db 30, RATTATA		;5%
 	db 30, RATTATA		;4%
 	db 30, RATTATA		;1%
-;	; nite
+	; nite
 	db 30, GRIMER_A		;30%
 	db 30, GRIMER_A		;30%
 	db 30, GRIMER		;20%

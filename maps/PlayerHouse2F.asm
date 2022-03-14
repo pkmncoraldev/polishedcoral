@@ -82,6 +82,9 @@ PlayerHouseDebugPoster:
 	giveitem MASTER_BALL, 10
 	giveitem BLOSSOM_TEA, 3
 	giveitem FLOWER_PETAL, 6
+	giveitem COVER_FOSSIL, 1
+	giveitem PLUME_FOSSIL, 1
+	giveitem OLD_AMBER, 1
 .keyitems
 	writetext PlayerHouseDebugText2
 	yesorno

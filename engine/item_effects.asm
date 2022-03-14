@@ -253,8 +253,8 @@ ItemEffects: ; e73c
 	dw NoEffect         ; GOLD_LEAF
 	dw NoEffect         ; SLOWPOKETAIL
 	dw NoEffect         ; BOTTLE_CAP
-	dw NoEffect         ; JAW_FOSSIL
-	dw NoEffect         ; SAIL_FOSSIL
+	dw NoEffect         ; COVER_FOSSIL
+	dw NoEffect         ; PLUME_FOSSIL
 	dw NoEffect         ; OLD_AMBER
 	dw NoEffect         ; MULCH
 	dw NoEffect         ; SWEET_HONEY

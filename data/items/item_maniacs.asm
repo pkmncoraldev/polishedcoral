@@ -59,7 +59,7 @@ OreManiacItemRewards:
 
 FossilManiacItemRewards:
 	dbw RARE_BONE,    5000
-	dbw JAW_FOSSIL, 1000
-	dbw SAIL_FOSSIL,  1000
+	dbw COVER_FOSSIL, 1000
+	dbw PLUME_FOSSIL, 1000
 	dbw OLD_AMBER,    1000
 	db -1

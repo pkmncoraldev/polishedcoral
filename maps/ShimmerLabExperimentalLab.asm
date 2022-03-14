@@ -48,16 +48,16 @@ ShimmerLabExperimentalLabBook:
 	loadmenudata ShimmerLabExperimentalLabBookMenuData
 	verticalmenu
 	closewindow
-	if_equal $1, .dome
+	if_equal $1, .cover
 	if_equal $2, .plume
 	if_equal $3, .cancel
 	jump .cancel
-.dome
+.cover
 	closetext
 	pokepic TIRTOUGA
 	waitbutton
 	closepokepic
-	callasm SetDomeDex
+	callasm SetCoverDex
 	end
 .plume
 	closetext
@@ -70,7 +70,7 @@ ShimmerLabExperimentalLabBook:
 	closetext
 	end
 	
-SetDomeDex:
+SetCoverDex:
 	ld a, TIRTOUGA
 	jp SetSeenMon
 	
@@ -88,13 +88,15 @@ ShimmerLabExperimentalLabBookMenuData:
 .MenuData:
 	db $80 ; flags
 	db 3 ; items
-	db "DOME FOSSIL@"
+	db "COVER FOSSIL@"
 	db "PLUME FOSSIL@"
 	db "CANCEL@"
 	end
 	
 ShimmerLabExperimentalLabBookText1:
-	text "TEXT 1"
+	text "A book with an"
+	line "artist's renders"
+	cont "of ancient #MON!"
 	done
 
 ShimmerLabExperimentalLabBookTextWhich:
@@ -104,7 +106,153 @@ ShimmerLabExperimentalLabBookTextWhich:
 ShimmerLabFossilCutscene:
 	faceplayer
 	opentext
-	writetext ShimmerLabLabFossilCutsceneText1
+	writetext ShimmerLabFossilCutsceneText1
+	checkitem COVER_FOSSIL
+	iftrue .own_cover
+	checkitem PLUME_FOSSIL
+	iftrue .own_plume
+	checkitem OLD_AMBER
+	iftrue .ask_old_amber
+	jumpopenedtext NoFossilsText
+
+.own_cover
+	checkitem PLUME_FOSSIL
+	iftrue .own_cover_and_plume
+	checkitem OLD_AMBER
+	iftrue .ask_cover_amber
+	writetext AskCoverFossilText
+	yesorno
+	iftrue ResurrectCoverFossil
+	jump .maybe_later
+
+.own_plume
+	checkitem OLD_AMBER
+	iftrue .ask_plume_amber
+	writetext AskPlumeFossilText
+	yesorno
+	iftrue ResurrectPlumeFossil
+	jump .maybe_later
+
+.own_cover_and_plume
+	checkitem OLD_AMBER
+	iftrue .ask_cover_plume_amber
+	loadmenu CoverDomeMenuDataHeader
+	verticalmenu
+	closewindow
+	ifequal $1, ResurrectCoverFossil
+	ifequal $2, ResurrectPlumeFossil
+	jump .maybe_later
+
+.ask_old_amber
+	writetext AskOldAmberText
+	yesorno
+	iftrue ResurrectOldAmber
+	jump .maybe_later
+
+.ask_cover_amber
+	loadmenu CoverAmberMenuDataHeader
+	verticalmenu
+	closewindow
+	ifequal $1, ResurrectCoverFossil
+	ifequal $2, ResurrectOldAmber
+	jump .maybe_later
+
+.ask_plume_amber
+	loadmenu DomeAmberMenuDataHeader
+	verticalmenu
+	closewindow
+	ifequal $1, ResurrectPlumeFossil
+	ifequal $2, ResurrectOldAmber
+	jump .maybe_later
+
+.ask_cover_plume_amber
+	loadmenu CoverDomeAmberMenuDataHeader
+	verticalmenu
+	closewindow
+	ifequal $1, ResurrectCoverFossil
+	ifequal $2, ResurrectPlumeFossil
+	ifequal $3, ResurrectOldAmber
+.maybe_later:
+	jumpopenedtext MaybeLaterText
+
+CoverDomeMenuDataHeader:
+	db $40 ; flags
+	db 04, 00 ; start coords
+	db 11, 15 ; end coords
+	dw .MenuData2
+	db 1 ; default option
+
+.MenuData2:
+	db $80 ; flags
+	db 3 ; items
+	db "COVER FOSSIL@"
+	db "DOME FOSSIL@"
+	db "CANCEL@"
+
+CoverAmberMenuDataHeader:
+	db $40 ; flags
+	db 04, 00 ; start coords
+	db 11, 15 ; end coords
+	dw .MenuData2
+	db 1 ; default option
+
+.MenuData2:
+	db $80 ; flags
+	db 3 ; items
+	db "COVER FOSSIL@"
+	db "OLD AMBER@"
+	db "CANCEL@"
+
+DomeAmberMenuDataHeader:
+	db $40 ; flags
+	db 04, 00 ; start coords
+	db 11, 14 ; end coords
+	dw .MenuData2
+	db 1 ; default option
+
+.MenuData2:
+	db $80 ; flags
+	db 3 ; items
+	db "DOME FOSSIL@"
+	db "OLD AMBER@"
+	db "CANCEL@"
+
+CoverDomeAmberMenuDataHeader:
+	db $40 ; flags
+	db 02, 00 ; start coords
+	db 11, 15 ; end coords
+	dw .MenuData2
+	db 1 ; default option
+
+.MenuData2:
+	db $80 ; flags
+	db 4 ; items
+	db "COVER FOSSIL@"
+	db "DOME FOSSIL@"
+	db "OLD AMBER@"
+	db "CANCEL@"
+	
+ResurrectCoverFossil:
+	takeitem COVER_FOSSIL
+	setevent EVENT_REVIVING_COVER
+	clearevent EVENT_REVIVING_PLUME
+	writetext ShimmerLabHandOverCover
+	jump ShimmerLabFossilCutsceneCont
+	
+ResurrectPlumeFossil:
+	takeitem PLUME_FOSSIL
+	clearevent EVENT_REVIVING_COVER
+	setevent EVENT_REVIVING_PLUME
+	writetext ShimmerLabHandOverPlume
+	jump ShimmerLabFossilCutsceneCont
+	
+ResurrectOldAmber:
+	takeitem OLD_AMBER
+	clearevent EVENT_REVIVING_COVER
+	clearevent EVENT_REVIVING_PLUME
+	writetext ShimmerLabHandOverAmber
+	
+ShimmerLabFossilCutsceneCont:
 	playsound SFX_LEVEL_UP 
 	waitsfx
 	waitbutton
@@ -114,7 +262,7 @@ ShimmerLabFossilCutscene:
 	checkcode VAR_FACING
 	if_equal RIGHT, .YouAreFacingRight
 	if_equal UP, .YouAreFacingUp
-	applymovement SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, Movement_ShimmerLabLabFossilCutscene1
+	applymovement SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, Movement_ShimmerLabFossilCutscene1
 	spriteface SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, UP
 	spriteface PLAYER, UP
 	pause 10
@@ -124,7 +272,7 @@ ShimmerLabFossilCutscene:
 	callasm GenericFinishBridge
 	pause 10
 	opentext
-	writetext ShimmerLabLabFossilCutsceneText2
+	writetext ShimmerLabFossilCutsceneText2
 	waitbutton
 	closetext
 	pause 5
@@ -141,7 +289,7 @@ ShimmerLabFossilCutscene:
 	applyonemovement PLAYER, step_left
 	jump .cont
 .YouAreFacingRight
-	applymovement SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, Movement_ShimmerLabLabFossilCutscene2
+	applymovement SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, Movement_ShimmerLabFossilCutscene2
 	spriteface SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, UP
 	spriteface PLAYER, UP
 	pause 10
@@ -151,7 +299,7 @@ ShimmerLabFossilCutscene:
 	callasm GenericFinishBridge
 	pause 10
 	opentext
-	writetext ShimmerLabLabFossilCutsceneText2
+	writetext ShimmerLabFossilCutsceneText2
 	waitbutton
 	closetext
 	pause 5
@@ -168,7 +316,7 @@ ShimmerLabFossilCutscene:
 	applyonemovement PLAYER, step_right
 	jump .cont
 .YouAreFacingUp
-	applymovement SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, Movement_ShimmerLabLabFossilCutscene2
+	applymovement SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, Movement_ShimmerLabFossilCutscene2
 	applyonemovement PLAYER, step_up
 	spriteface SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, UP
 	pause 10
@@ -178,7 +326,7 @@ ShimmerLabFossilCutscene:
 	callasm GenericFinishBridge
 	pause 10
 	opentext
-	writetext ShimmerLabLabFossilCutsceneText2
+	writetext ShimmerLabFossilCutsceneText2
 	waitbutton
 	closetext
 	pause 5
@@ -196,7 +344,7 @@ ShimmerLabFossilCutscene:
 	spriteface PLAYER, UP
 	pause 5
 	opentext
-	writetext ShimmerLabLabFossilCutsceneText3
+	writetext ShimmerLabFossilCutsceneText3
 	waitbutton
 	closetext
 
@@ -250,7 +398,7 @@ ShimmerLabFossilCutscene:
 	pause 10
 	applyonemovement PLAYER, hide_person
 	special Special_FadeOutMusic
-	applymovement PLAYER, Movement_ShimmerLabLabFossilCutscenePlayer1
+	applymovement PLAYER, Movement_ShimmerLabFossilCutscenePlayer1
 	pause 20
 	spriteface PLAYER, DOWN
 	pause 20
@@ -264,7 +412,7 @@ ShimmerLabFossilCutscene:
 	
 	playmusic MUSIC_MOM
 	opentext
-	writetext ShimmerLabLabFossilCutsceneText4
+	writetext ShimmerLabFossilCutsceneText4
 	waitbutton
 	closetext
 	pause 10
@@ -289,11 +437,11 @@ endr
 	waitsfx
 	pause 10
 	
-	applymovement PLAYER, Movement_ShimmerLabLabFossilCutscenePlayer2
+	applymovement PLAYER, Movement_ShimmerLabFossilCutscenePlayer2
 	spriteface PLAYER, DOWN
 	pause 5
 	opentext
-	writetext ShimmerLabLabFossilCutsceneText5
+	writetext ShimmerLabFossilCutsceneText5
 	playsound SFX_HIT_END_OF_EXP_BAR
 	waitsfx
 	pause 5
@@ -301,16 +449,16 @@ endr
 	spriteface PLAYER, UP
 	pause 10
 	opentext
-	writetext ShimmerLabLabFossilCutsceneText6
+	writetext ShimmerLabFossilCutsceneText6
 	waitbutton
 	closetext
 	pause 10
 	
-	applymovement PLAYER, Movement_ShimmerLabLabFossilCutscenePlayer2
+	applymovement PLAYER, Movement_ShimmerLabFossilCutscenePlayer2
 	spriteface PLAYER, DOWN
 	pause 5
 	opentext
-	writetext ShimmerLabLabFossilCutsceneText7
+	writetext ShimmerLabFossilCutsceneText7
 	waitbutton
 	closetext
 	pause 10
@@ -347,7 +495,7 @@ endr
 	pause 50
 	playsound SFX_DEX_FANFARE_170_199
 	opentext
-	writetext ShimmerLabLabFossilCutsceneText8
+	writetext ShimmerLabFossilCutsceneText8
 	waitsfx
 	closetext
 	pause 10
@@ -357,10 +505,10 @@ endr
 	pause 10
 	playmusic MUSIC_SHIMMER_CITY
 	pause 15
-	applymovement PLAYER, Movement_ShimmerLabLabFossilCutscenePlayer3
+	applymovement PLAYER, Movement_ShimmerLabFossilCutscenePlayer3
 	appear SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST2
 	pause 15
-	applymovement PLAYER, Movement_ShimmerLabLabFossilCutscenePlayer4
+	applymovement PLAYER, Movement_ShimmerLabFossilCutscenePlayer4
 	spriteface PLAYER, RIGHT
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
 	special Special_RestorePlayerPalette
@@ -368,16 +516,36 @@ endr
 	applyonemovement PLAYER, show_person
 	pause 10
 	opentext
-	writetext ShimmerLabLabFossilCutsceneText9
+	writetext ShimmerLabFossilCutsceneText9
 	waitbutton
-	writetext ShimmerLabLabFossilTirtougaText
+	
+	checkevent EVENT_REVIVING_COVER
+	iftrue .tirtouga
+	checkevent EVENT_REVIVING_PLUME
+	iftrue .archen
+	writetext ShimmerLabAerodactylText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke AERODACTYL, 20
+	jump .end
+.tirtouga
+	writetext ShimmerLabTirtougaText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	givepoke TIRTOUGA, 20
-	writetext ShimmerLabLabFossilCutsceneText10
+	jump .end
+.archen
+	writetext ShimmerLabArchenText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke ARCHEN, 20
+.end
+	writetext ShimmerLabFossilCutsceneText10
 	waitbutton
 	closetext
 	setevent EVENT_ALWAYS_SET
+	clearevent EVENT_REVIVING_COVER
+	clearevent EVENT_REVIVING_PLUME
 	disappear SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_RED
 	disappear SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_BLUE
 	disappear SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_GREEN
@@ -387,19 +555,39 @@ endr
 	disappear SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_PINK
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
 	end
-	
-ShimmerLabLabFossilCutsceneText1:
+
+ShimmerLabHandOverCover:
 	text "<PLAYER> handed over"
-	line "the JAW FOSSIL."
+	line "the COVER FOSSIL."
 	done
 	
-ShimmerLabLabFossilCutsceneText2:
+ShimmerLabHandOverPlume:
+	text "<PLAYER> handed over"
+	line "the PLUME FOSSIL."
+	done
+	
+ShimmerLabHandOverAmber:
+	text "<PLAYER> handed over"
+	line "the OLD AMBER."
+	done
+	
+ShimmerLabFossilCutsceneText1:
+	text "I'm working on a"
+	line "machine that can"
+	cont "clone #MON from"
+	cont "fossils!"
+	
+	para "Do you have a"
+	line "fossil for me?"
+	done
+	
+ShimmerLabFossilCutsceneText2:
 	text "I'll put the fossil"
 	line "into the chamber"
 	cont "and we can begin!"
 	done
 	
-ShimmerLabLabFossilCutsceneText3:
+ShimmerLabFossilCutsceneText3:
 	text "Ready?"
 	
 	para "Go ahead and press"
@@ -409,7 +597,7 @@ ShimmerLabLabFossilCutsceneText3:
 	cont "up."
 	done
 	
-ShimmerLabLabFossilCutsceneText4:
+ShimmerLabFossilCutsceneText4:
 	text "Alright!"
 	
 	para "First, the machine"
@@ -422,7 +610,7 @@ ShimmerLabLabFossilCutsceneText4:
 	cont "DNA."
 	done
 	
-ShimmerLabLabFossilCutsceneText5:
+ShimmerLabFossilCutsceneText5:
 	text "Next, we process"
 	line "that DNA into data"
 	cont "the machine can"
@@ -434,11 +622,11 @@ ShimmerLabLabFossilCutsceneText5:
 	cont "very very long-"
 	done
 	
-ShimmerLabLabFossilCutsceneText6:
+ShimmerLabFossilCutsceneText6:
 	text "That was quick!"
 	done
 	
-ShimmerLabLabFossilCutsceneText7:
+ShimmerLabFossilCutsceneText7:
 	text "Lastly, we use the"
 	line "data from the last"
 	cont "step to create a"
@@ -446,18 +634,18 @@ ShimmerLabLabFossilCutsceneText7:
 	cont "ancient #MON."
 	done
 	
-ShimmerLabLabFossilCutsceneText8:
+ShimmerLabFossilCutsceneText8:
 	text "Success!"
 	done
 	
-ShimmerLabLabFossilCutsceneText9:
+ShimmerLabFossilCutsceneText9:
 	text "It turned out"
 	line "wonderfully!"
 	
 	para "Here you are!"
 	done
 	
-ShimmerLabLabFossilCutsceneText10:
+ShimmerLabFossilCutsceneText10:
 	text "You've really"
 	line "helped with our"
 	cont "research!"
@@ -468,26 +656,64 @@ ShimmerLabLabFossilCutsceneText10:
 	cont "travels!"
 	done
 	
-ShimmerLabLabFossilTirtougaText:
+ShimmerLabTirtougaText:
 	text "<PLAYER> received"
 	line "TIRTOUGA!"
 	done
 	
-Movement_ShimmerLabLabFossilCutscenePlayer1:
+ShimmerLabArchenText:
+	text "<PLAYER> received"
+	line "ARCHEN!"
+	done
+	
+ShimmerLabAerodactylText:
+	text "<PLAYER> received"
+	line "AERODACTYL!"
+	done
+	
+AskCoverFossilText:
+	text "Do you want to"
+	line "resurrect the"
+	cont "COVER FOSSIL?"
+	done
+
+AskPlumeFossilText:
+	text "Do you want to"
+	line "resurrect the"
+	cont "PLUME FOSSIL?"
+	done
+
+AskOldAmberText:
+	text "Do you want to"
+	line "resurrect the"
+	cont "OLD AMBER?"
+	done
+	
+NoFossilsText:
+	text "You don't seem to"
+	line "have any fossils."
+	done
+	
+MaybeLaterText:
+	text "Come back if you"
+	line "change your mind."
+	done
+	
+Movement_ShimmerLabFossilCutscenePlayer1:
 	slow_step_up
 	slow_step_up
 	slow_step_up
 	slow_step_left
 	step_end
 	
-Movement_ShimmerLabLabFossilCutscenePlayer2:
+Movement_ShimmerLabFossilCutscenePlayer2:
 	step_right
 	step_right
 	step_right
 	step_right
 	step_end
 	
-Movement_ShimmerLabLabFossilCutscenePlayer3:
+Movement_ShimmerLabFossilCutscenePlayer3:
 	step_left
 	step_left
 	step_left
@@ -499,12 +725,12 @@ Movement_ShimmerLabLabFossilCutscenePlayer3:
 	step_left
 	step_end
 	
-Movement_ShimmerLabLabFossilCutscenePlayer4:
+Movement_ShimmerLabFossilCutscenePlayer4:
 	hide_person
 	slow_step_left
 	step_end
 	
-Movement_ShimmerLabLabFossilCutscene1:
+Movement_ShimmerLabFossilCutscene1:
 	step_down
 	step_right
 	step_right
@@ -519,7 +745,7 @@ Movement_ShimmerLabLabFossilCutscene1:
 	step_left
 	step_end
 	
-Movement_ShimmerLabLabFossilCutscene2:
+Movement_ShimmerLabFossilCutscene2:
 	step_right
 	step_right
 	step_right
@@ -532,14 +758,14 @@ Movement_ShimmerLabLabFossilCutscene2:
 	step_left
 	step_end
 	
-Movement_ShimmerLabLabFossilCutsceneRight:
+Movement_ShimmerLabFossilCutsceneRight:
 	step_down
 	step_right
 	step_right
 	step_up
 	step_end
 	
-Movement_ShimmerLabLabFossilCutsceneUp:
+Movement_ShimmerLabFossilCutsceneUp:
 	step_right
 	step_up
 	step_end

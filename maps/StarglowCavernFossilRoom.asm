@@ -14,15 +14,15 @@ StarglowCavernFossilRoom_MapScriptHeader:
 	db 4 ; object events
 	person_event SPRITE_SUPER_NERD,  4,  3, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowCavernFossilRoomNpc, EVENT_BEAT_STARGLOW_CAVERN_FOSSIL_GUY
 	person_event SPRITE_SUPER_NERD,  2,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowCavernFossilRoomNpc2, EVENT_STARGLOW_CAVERN_FOSSIL_GUY
-	person_event SPRITE_BOULDER_ROCK_FOSSIL,  3,  4, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, StarglowCavernFossilRoomJawFossil, EVENT_GOT_FOSSIL
-	person_event SPRITE_BOULDER_ROCK_FOSSIL,  3,  2, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, StarglowCavernFossilRoomSailFossil, EVENT_GOT_FOSSIL
+	person_event SPRITE_BOULDER_ROCK_FOSSIL,  3,  4, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, StarglowCavernFossilRoomCoverFossil, EVENT_GOT_FOSSIL
+	person_event SPRITE_BOULDER_ROCK_FOSSIL,  3,  2, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, StarglowCavernFossilRoomPlumeFossil, EVENT_GOT_FOSSIL
 	
 	
 	const_def 1 ; object constants
 	const STARGLOWCAVERNFOSSILGUY1
 	const STARGLOWCAVERNFOSSILGUY2
-	const STARGLOWCAVERNJAWFOSSIL
-	const STARGLOWCAVERNSAILFOSSIL
+	const STARGLOWCAVERNCOVERFOSSIL
+	const STARGLOWCAVERNPLUMEFOSSIL
 	
 StarglowCavernFossilRoomNpc:
 	opentext
@@ -78,14 +78,14 @@ StarglowCavernFossilRoomNpc2:
 	closetext
 	end
 	
-StarglowCavernFossilRoomJawFossil:
+StarglowCavernFossilRoomCoverFossil:
 	opentext
-	writetext StarglowCavernFossilRoomJawFossilText
+	writetext StarglowCavernFossilRoomCoverFossilText
 	yesorno
 	iffalse StarglowCavernFossilRoomNo
-	disappear STARGLOWCAVERNJAWFOSSIL
+	disappear STARGLOWCAVERNCOVERFOSSIL
 	setevent EVENT_GOT_FOSSIL
-	verbosegiveitem JAW_FOSSIL
+	verbosegiveitem COVER_FOSSIL
 	closetext
 	pause 5
 	spriteface PLAYER, UP
@@ -96,23 +96,23 @@ StarglowCavernFossilRoomJawFossil:
 	applyonemovement STARGLOWCAVERNFOSSILGUY2, step_left
 	spriteface STARGLOWCAVERNFOSSILGUY2, DOWN
 	pause 5
-	disappear STARGLOWCAVERNSAILFOSSIL
+	disappear STARGLOWCAVERNPLUMEFOSSIL
 	opentext
-	writetext FossilGuyPickedSailFossilText
+	writetext FossilGuyPickedPlumeFossilText
 	playsound SFX_LEVEL_UP 
 	waitsfx
 	waitbutton
 	closetext
 	end
 	
-StarglowCavernFossilRoomSailFossil:
+StarglowCavernFossilRoomPlumeFossil:
 	opentext
-	writetext StarglowCavernFossilRoomSailFossilText
+	writetext StarglowCavernFossilRoomPlumeFossilText
 	yesorno
 	iffalse StarglowCavernFossilRoomNo
-	disappear STARGLOWCAVERNSAILFOSSIL
+	disappear STARGLOWCAVERNPLUMEFOSSIL
 	setevent EVENT_GOT_FOSSIL
-	verbosegiveitem SAIL_FOSSIL
+	verbosegiveitem PLUME_FOSSIL
 	closetext
 	pause 5
 	spriteface PLAYER, UP
@@ -123,9 +123,9 @@ StarglowCavernFossilRoomSailFossil:
 	applyonemovement STARGLOWCAVERNFOSSILGUY2, step_right
 	spriteface STARGLOWCAVERNFOSSILGUY2, DOWN
 	pause 5
-	disappear STARGLOWCAVERNJAWFOSSIL
+	disappear STARGLOWCAVERNCOVERFOSSIL
 	opentext
-	writetext FossilGuyPickedJawFossilText
+	writetext FossilGuyPickedCoverFossilText
 	playsound SFX_LEVEL_UP 
 	waitsfx
 	waitbutton
@@ -138,31 +138,32 @@ StarglowCavernFossilRoomNo:
 	closetext
 	end
 	
-StarglowCavernFossilRoomJawFossilText:
+StarglowCavernFossilRoomCoverFossilText:
 	text "A fossil of a"
-	line "#MON's jaw!"
+	line "#MON's shell-"
+	cont "like cover!"
 	
-	para "Take the JAW"
-	line "FOSSIL?"
+	para "Take the"
+	line "COVER FOSSIL?"
 	done
 	
-StarglowCavernFossilRoomSailFossilText:
+StarglowCavernFossilRoomPlumeFossilText:
 	text "A fossil of a"
-	line "#MON's sail-like"
+	line "#MON's feathery"
 	cont "plume!"
 	
-	para "Take the SAIL"
-	line "FOSSIL?"
+	para "Take the"
+	line "PLUME FOSSIL?"
 	done
 	
-FossilGuyPickedJawFossilText:
+FossilGuyPickedCoverFossilText:
 	text "LARRY took the"
-	line "JAW FOSSIL!"
+	line "COVER FOSSIL!"
 	done
 	
-FossilGuyPickedSailFossilText:
+FossilGuyPickedPlumeFossilText:
 	text "LARRY took the"
-	line "SAIL FOSSIL!"
+	line "PLUME FOSSIL!"
 	done
 	
 StarglowCavernFossilTextNo:
@@ -233,10 +234,8 @@ StarglowCavernFossilRoomNpcText5:
 	
 StarglowCavernFossilRoomNpcText6:
 	text "Ok, you got your"
-	line "fossil,"
-	
-	para "now leave us"
-	line "alone!"
+	line "fossil, now leave"
+	cont "us alone!"
 	done
 	
 StarglowCavernFossilRoomNpcText7:

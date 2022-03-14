@@ -272,8 +272,8 @@
 	const SLOWPOKETAIL ; ee
 	const BOTTLE_CAP   ; ef
 
-	const JAW_FOSSIL ; f0
-	const SAIL_FOSSIL  ; f1
+	const COVER_FOSSIL ; f0
+	const PLUME_FOSSIL ; f1
 	const OLD_AMBER    ; f2
 
 	const MULCH        ; f3 - replace

@@ -87,7 +87,7 @@ FindNest: ; 2a01f
 	ld a, [hli]
 	ld c, a
 	inc hl
-	ld a, 3
+	ld a, NUM_WATERMON * 3
 	call .SearchMapForMon
 	jr nc, .next_water
 	ld [de], a
@@ -95,7 +95,7 @@ FindNest: ; 2a01f
 
 .next_water
 	pop hl
-	ld bc, 3 * 3
+	ld bc, WATER_WILDDATA_LENGTH
 	add hl, bc
 	jr .FindWater
 ; 2a088

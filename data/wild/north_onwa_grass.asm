@@ -574,26 +574,26 @@
 	db 15, SWABLU		;30%
 	db 15, BUNEARY		;30%
 	db 15, PHANPY		;20%
-	db 15, MAGBY		;10%
-	db 15, ELEKID		;5%
-	db 15, ELEKID		;4%
-	db 15, ELEKID		;1%
+	db 15, ELEKID		;10%
+	db 15, MAGBY		;5%
+	db 15, MUNCHLAX		;4%
+	db 15, MUNCHLAX		;1%
 	; day
 	db 15, SWABLU		;30%
 	db 15, BUNEARY		;30%
 	db 15, PHANPY		;20%
-	db 15, MAGBY		;10%
-	db 15, ELEKID		;5%
-	db 15, ELEKID		;4%
-	db 15, ELEKID		;1%
+	db 15, ELEKID		;10%
+	db 15, MAGBY		;5%
+	db 15, MUNCHLAX		;4%
+	db 15, MUNCHLAX		;1%
 	; nite
 	db 15, SWABLU		;30%
 	db 15, BUNEARY		;30%
 	db 15, PHANPY		;20%
-	db 15, MAGBY		;10%
-	db 15, ELEKID		;5%
-	db 15, ELEKID		;4%
-	db 15, ELEKID		;1%
+	db 15, ELEKID		;10%
+	db 15, MAGBY		;5%
+	db 15, MUNCHLAX		;4%
+	db 15, MUNCHLAX		;1%
 	
 	map_id SUNBEAM_JUNGLE
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
@@ -1514,6 +1514,60 @@
 	db 30, RATTATA		;5%
 	db 30, RATTATA		;4%
 	db 30, RATTATA		;1%
+	
+	map_id ROUTE_11
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 28, MINCCINO		;30%
+	db 28, BUNEARY		;30%
+	db 28, PIDGEOTTO	;20%
+	db 28, GLOOM		;10%
+	db 28, ODDISH		;5%
+	db 28, CHANSEY		;4%
+	db 28, CHANSEY		;1%
+	; day
+	db 28, MINCCINO		;30%
+	db 28, BUNEARY		;30%
+	db 28, PIDGEOTTO	;20%
+	db 28, GLOOM		;10%
+	db 28, ODDISH		;5%
+	db 28, CHANSEY		;4%
+	db 28, CHANSEY		;1%
+	; nite
+	db 28, MINCCINO		;30%
+	db 28, BUNEARY		;30%
+	db 28, PIDGEOTTO	;20%
+	db 28, GLOOM		;10%
+	db 28, ODDISH		;5%
+	db 28, CHANSEY		;4%
+	db 28, CHANSEY		;1%
+	
+	map_id ROUTE_12
+	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
+	; morn
+	db 29, MACHOKE		;30%
+	db 29, DITTO		;30%
+	db 29, MINCCINO		;20%
+	db 29, DWEBBLE		;10%
+	db 29, MINCCINO		;5%
+	db 29, DWEBBLE		;4%
+	db 29, DWEBBLE		;1%
+	; day
+	db 29, MACHOKE		;30%
+	db 29, DITTO		;30%
+	db 29, MINCCINO		;20%
+	db 29, DWEBBLE		;10%
+	db 29, MINCCINO		;5%
+	db 29, DWEBBLE		;4%
+	db 29, DWEBBLE		;1%
+	; nite
+	db 29, MACHOKE		;30%
+	db 29, DITTO		;30%
+	db 29, MINCCINO		;20%
+	db 29, DWEBBLE		;10%
+	db 29, MINCCINO		;5%
+	db 29, DWEBBLE		;4%
+	db 29, DWEBBLE		;1%
 	
 	map_id DESERT_ROUTE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

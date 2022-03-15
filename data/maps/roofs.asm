@@ -16,9 +16,9 @@ MapGroupRoofs:
 	db -1 ; group 12 (Train)
 	db -1 ; group 13 (Luster City)
 	db -1 ; group 14 (Nett Building)
-	db  3 ; group 15 (Shimmer City)
-	db -1 ; group 16
-	db -1 ; group 17
+	db -1 ; group 15 (Airport)
+	db  3 ; group 16 (Shimmer City)
+	db -1 ; group 17 (Brillo Town)
 	db -1 ; group 18
 	db -1 ; group 19
 	db -1 ; group 20

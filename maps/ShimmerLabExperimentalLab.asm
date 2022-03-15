@@ -95,8 +95,8 @@ ShimmerLabExperimentalLabBookMenuData:
 	
 ShimmerLabExperimentalLabBookText1:
 	text "A book with an"
-	line "artist's renders"
-	cont "of ancient #MON!"
+	line "artist's renders of"
+	cont "ancient #MON!"
 	done
 
 ShimmerLabExperimentalLabBookTextWhich:

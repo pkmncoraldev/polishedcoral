@@ -1,5 +1,5 @@
 FishGroups: ; 92488
-	dbwww 00 percent + 1, .Glint_Old,        	 .Glint_Old,         	 .Glint_Old
+	dbwww 75 percent + 1, .Glint_Old,     		 .Route_3_Pond_Good,     .Route_3_Pond_Super
 	dbwww 75 percent + 1, .Glint_Old,        	 .Glint_Good,        	 .Glint_Super
 	dbwww 75 percent + 1, .Starglow_Old,         .Starglow_Good,         .Starglow_Super
 	dbwww 75 percent + 1, .Lake_Old,             .Lake_Good,             .Lake_Super

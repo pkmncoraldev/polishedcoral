@@ -538,6 +538,26 @@ LusterPunkLeader:
 	pause 10
 	opentext
 	writetext LusterPunkLeaderText9
+	waitbutton
+	closetext
+	applyonemovement LUSTERPUNK2, step_right
+	spriteface LUSTERPUNK2, DOWN
+	spriteface PLAYER, UP
+	opentext
+	writetext LusterPunkLeaderText9_2
+	waitbutton
+	closetext
+	applyonemovement LUSTERPUNK1, step_right
+	spriteface LUSTERPUNK1, UP
+	spriteface PLAYER, DOWN
+	opentext
+	writetext LusterPunkLeaderText9_3
+	waitbutton
+	closetext
+	spriteface PLAYER, LEFT
+	applyonemovement LUSTERPUNKLEADER, turn_step_right
+	opentext
+	writetext LusterPunkLeaderText9_4
 .yesnoloop
 	yesorno
 	iffalse .saidno
@@ -948,15 +968,21 @@ LusterPunkLeaderText9:
 	para "We're known around"
 	line "these parts as"
 	cont "“THE NIDOKINGS”!"
+	done
 	
-	para "“You'll wish you"
+LusterPunkLeaderText9_2:
+	text "“You'll wish you"
 	line "NIDO-RAN while you"
 	cont "could."
+	done
 	
-	para "But now there's"
+LusterPunkLeaderText9_3:
+	text "But now there's"
 	line "NIDORI-NO escape!"
+	done
 	
-	para "Cuz we're THE"
+LusterPunkLeaderText9_4:
+	text "Cuz we're THE"
 	line "NIDOKINGS!”"
 	
 	para "We strike fear in"
@@ -981,6 +1007,9 @@ LusterPunkLeaderText9:
 	cont "came in and forced"
 	cont "us out!"
 	
+	para "They're makin' a"
+	line "mess of the place!"
+	
 	para "There's only room"
 	line "for one group of"
 	cont "no-good thugs"
@@ -996,8 +1025,17 @@ LusterPunkLeaderText9:
 	cont "into those losers."
 	
 	para "I'd do it myself,"
-	line "but I have this"
-	cont "trick knee and…"
+	line "but they've done"
+	cont "somethin' to the"
+	cont "water."
+	
+	para "It's NASTY!"
+	
+	para "Even worse than"
+	line "usual…"
+	
+	para "My #MON won't"
+	line "get near it!"
 	
 	para "Anyway, if you"
 	line "can take out their"
@@ -1018,8 +1056,8 @@ LusterPunkLeaderText9:
 LusterPunkLeaderText10:
 	text "Alright, now get"
 	line "down there and"
-	cont "do it for “THE"
-	cont "NIDOKINGS”!"
+	cont "do it for"
+	cont "“THE NIDOKINGS”!"
 
 	para "You got this, kid."
 	
@@ -1093,6 +1131,10 @@ LusterPunkLeaderText12:
 	
 	para "and made them wet"
 	line "their pants!"
+	
+	para "I'll bet the water's"
+	line "even started to"
+	cont "clear up by now!"
 	
 	para "Thank you!"
 	

@@ -258,7 +258,14 @@ _SewerSurfText::
 	text "The water smells"
 	line "disgusting."
 	
-	para "Want to SURF?"
+	para "It might clear up"
+	line "if you can kick"
+	cont "those punks out!"
+	done
+	
+_SewerSurf2Text::
+	text "The water smells"
+	line "disgusting."
 	done
 	
 UnknownText_0x1c068e::

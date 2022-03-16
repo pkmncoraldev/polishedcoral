@@ -682,6 +682,7 @@ TrySurfOW:: ; c9e7
 	cp TILESET_SEWER
 	jr z, .sewer
 	
+.regular_surf
 	ld a, BANK(AskSurfScript)
 	ld hl, AskSurfScript
 	call CallScript
@@ -761,10 +762,23 @@ TrySurfOW:: ; c9e7
 	ret
 	
 .sewer
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_SEWERS_MUK_ROOM
+	jr z, .muk_room
+	eventflagcheck EVENT_CLEARED_LUSTER_SEWERS
+	jp nz, .regular_surf
 	ld a, BANK(SewerSurfScript)
 	ld hl, SewerSurfScript
 	call CallScript
-
+	scf
+	ret
+	
+.muk_room
+	eventflagcheck EVENT_LUSTER_SEWERS_BEAT_MUK
+	jp nz, .regular_surf
+	ld a, BANK(SewerSurf2Script)
+	ld hl, SewerSurf2Script
+	call CallScript
 	scf
 	ret
 	
@@ -796,16 +810,23 @@ AskLavaSurfText: ; ca36
 	db "@"              ; Want to ride?
 
 SewerSurfScript:
-	checkflag ENGINE_AUTOSURF_ACTIVE
-	iftrue AutoSurfScript
 	opentext
 	writetext SewerSurfText
-	yesorno
-	iftrue UsedSurfScript
+	waitbutton
 	endtext
 	
 SewerSurfText:
 	text_jump _SewerSurfText
+	db "@"
+	
+SewerSurf2Script:
+	opentext
+	writetext SewerSurf2Text
+	waitbutton
+	endtext
+	
+SewerSurf2Text:
+	text_jump _SewerSurf2Text
 	db "@"
 	
 CheckFlyAllowedOnMap:

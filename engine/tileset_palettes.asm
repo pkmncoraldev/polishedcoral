@@ -512,7 +512,25 @@ LoadSpecialMapPalette: ; 494ac
 	
 .sewer
 	ld hl, LusterSewerPalette
-	jp LoadSevenBGPalettes
+	call LoadSevenBGPalettes
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_SEWERS_MUK_ROOM
+	jr z, .muk_room
+	eventflagcheck EVENT_CLEARED_LUSTER_SEWERS
+	ret z
+.sewer_return
+	ld hl, LusterSewerPalette + 7 palettes
+	ld de, wUnknBGPals + 3 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
+	
+.muk_room
+	eventflagcheck EVENT_LUSTER_SEWERS_BEAT_MUK
+	ret z
+	jr .sewer_return
 	
 .ice_cave
 	eventflagcheck EVENT_TORCH_LIT

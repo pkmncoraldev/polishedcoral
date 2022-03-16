@@ -109,6 +109,7 @@ LusterSewersMukRoomTrigger0:
 	opentext
 	writetext LusterSewersMukRoomMukText2
 	cry MUK_A
+	waitsfx
 	waitbutton
 	closetext
 	waitsfx
@@ -117,6 +118,7 @@ LusterSewersMukRoomTrigger0:
 	disappear LUSTER_SEWERS_MUK
 	reloadmapafterbattle
 	setevent EVENT_LUSTER_SEWERS_MUK_ROOM_MUK
+	setevent EVENT_LUSTER_SEWERS_BEAT_MUK
 	checkcode VAR_MONJUSTCAUGHT
 	if_equal MUK_A, .CaughtMuk
 	opentext
@@ -125,6 +127,8 @@ LusterSewersMukRoomTrigger0:
 	closetext
 .CaughtMuk
 	dotrigger $1
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	loadvar wTimeOfDayPalFlags, $40 | 0
 .end
 	end
 .top

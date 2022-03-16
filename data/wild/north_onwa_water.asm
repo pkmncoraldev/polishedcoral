@@ -50,6 +50,16 @@
 	db 29, QUAGSIRE		;4%
 	db 29, QUAGSIRE		;1%
 	
+	map_id DAYBREAK_GROTTO_3
+	db 8 percent ; encounter rate
+	db 29, SLOWPOKE		;30%
+	db 29, SLOWPOKE		;30%
+	db 29, SLOWPOKE		;20%
+	db 29, SLOWPOKE		;10%
+	db 29, SLOWPOKE		;5%
+	db 29, SLOWPOKE		;4%
+	db 29, SLOWPOKE		;1%
+	
 	map_id GLINT_GROVE
 	db 8 percent ; encounter rate
 	db 29, POLIWHIRL	;30%

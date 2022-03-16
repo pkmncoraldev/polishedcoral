@@ -343,6 +343,15 @@ TilesetCaveAnim::
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw NULL,  WaitTileAnimation
 	dw VTiles2 tile $14, WriteTileFromBuffer
+	dw VTiles2 tile $40, WriteTileToBuffer
+	dw NULL,  WaitTileAnimation
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  WaitTileAnimation
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  WaitTileAnimation
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $40, WriteTileFromBuffer
 	dw NULL,  DoneTileAnimation
 
 TilesetStarglowCavernAnim::

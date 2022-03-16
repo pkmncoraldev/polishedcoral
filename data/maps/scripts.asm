@@ -30,6 +30,7 @@ SECTION "Dungeon Scripts", ROMX
 
 INCLUDE "maps/DaybreakGrotto1.asm"
 INCLUDE "maps/DaybreakGrotto2.asm"
+INCLUDE "maps/DaybreakGrotto3.asm"
 INCLUDE "maps/GlintGrove.asm"
 INCLUDE "maps/GlintGroveDeep.asm"
 INCLUDE "maps/StarglowCavern1F.asm"

@@ -148,6 +148,9 @@ DaybreakGrotto1_BlockData:
 	
 DaybreakGrotto2_BlockData:
 	INCBIN "maps/DaybreakGrotto2.ablk.lz"
+	
+DaybreakGrotto3_BlockData:
+	INCBIN "maps/DaybreakGrotto3.ablk.lz"
 
 StarglowCavern1F_BlockData:
 	INCBIN "maps/StarglowCavern1F.ablk.lz"
@@ -496,15 +499,15 @@ MtOnwaCliff_BlockData:
 	
 MtOnwaLowerCliff_BlockData:
 	INCBIN "maps/MtOnwaLowerCliff.ablk.lz"
-
+	
+	
+SECTION "Map Blockdata 2", ROMX
+	
 GlintGrove_BlockData:
 	INCBIN "maps/GlintGrove.ablk.lz"
 	
 GlintGroveDeep_BlockData:
 	INCBIN "maps/GlintGroveDeep.ablk.lz"
-	
-	
-SECTION "Map Blockdata 2", ROMX
 	
 GlintGroveEntrance_BlockData:
 	INCBIN "maps/GlintGroveEntrance.ablk.lz"

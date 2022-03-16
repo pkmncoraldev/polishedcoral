@@ -8,7 +8,7 @@ SunsetCape_MapScriptHeader:
 	db 3 ; warp events
 	warp_event  3, 29, SUNSET_LIGHTHOUSE, 1
 	warp_event  5,  5, ROUTE_1_GATE, 4
-	warp_event 15, 15, PLAYER_HOUSE_1F, 2 ;DAYBREAK_GROTTO_WATERWAY
+	warp_event 15, 15, DAYBREAK_GROTTO_3, 4
 
 	db 4 ; coord events
 	xy_trigger 0, 30, 1, 0, SunsetCapeDisappear, 0, 0

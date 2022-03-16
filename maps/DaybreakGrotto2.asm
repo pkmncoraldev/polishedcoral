@@ -3,9 +3,10 @@ DaybreakGrotto2_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event  9, 17, DAYBREAK_GROTTO_1, 2
 	warp_event  9,  3, MT_ONWA_LOWER_CLIFF, 2
+	warp_event  1, 1, DAYBREAK_GROTTO_3, 1
 
 	db 0 ; coord events
 

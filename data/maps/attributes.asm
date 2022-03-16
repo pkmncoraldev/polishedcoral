@@ -358,6 +358,7 @@ ENDM
 	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0
+	map_attributes DaybreakGrotto3, DAYBREAK_GROTTO_3, $9, 0
 	map_attributes GlintGrove, GLINT_GROVE, $11, 0
 	map_attributes GlintGroveDeep, GLINT_GROVE_DEEP, $11, 0
 	map_attributes StarglowCavern1F, STARGLOW_CAVERN_1F, $9, 0

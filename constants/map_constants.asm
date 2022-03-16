@@ -24,34 +24,35 @@ MAP_NONE   EQU 0
 	map_const PLAYER_HOUSE_2F,                            10, 12 ;  2
 	map_const DAYBREAK_GROTTO_1,                           9,  7 ;  3
 	map_const DAYBREAK_GROTTO_2,                           9, 11 ;  4
-	map_const GLINT_GROVE,                                27, 30 ;  5
-	map_const GLINT_GROVE_DEEP,							   7,  8 ;  6
-	map_const STARGLOW_CAVERN_1F,                         19, 16 ;  7
-	map_const STARGLOW_CAVERN_2F,                         14, 13 ;  8
-	map_const STARGLOW_CAVERN_3F,                          4,  8 ;  9
-	map_const STARGLOW_CAVERN_FOSSIL_ROOM,                 4,  6 ; 10
-	map_const MT_ONWA_1F,                       		  14, 13 ; 11
-	map_const MT_ONWA_2F,                                 17, 14 ; 12
-	map_const MT_ONWA_B1F,								  18, 20 ; 13
-	map_const MT_ONWA_B2F,								  23, 15 ; 14
-	map_const MT_ONWA_B3F,								  11, 14 ; 15
-	map_const MT_ONWA_CLIFF,							  20, 20 ; 16
-	map_const MT_ONWA_LOWER_CLIFF,						  13, 12 ; 17
-	map_const FLICKER_PASS_1F,							  21, 22 ; 18
-	map_const FLICKER_PASS_2F,							  25, 26 ; 19
-	map_const LUSTER_SEWERS_B1F,						  15, 12 ; 20
-	map_const LUSTER_SEWERS_B2F,						  15, 11 ; 21
-	map_const LUSTER_SEWERS_VALVE_ROOM,				      16,  3 ; 22
-	map_const LUSTER_SEWERS_THRONE_ROOM,				   6,  7 ; 23
-	map_const LUSTER_SEWERS_MUK_ROOM,				  	   6,  6 ; 24
-	map_const ICE_CAVE_B1F,								  15,  7 ; 25
-	map_const ICE_CAVE_B2F,								  15, 16 ; 26
-	map_const ICE_CAVE_B3F,								  16, 16 ; 27
-	map_const ICE_TEMPLE_B1F_1,							  14, 11 ; 28
-	map_const ICE_TEMPLE_B1F_2,							  14, 10 ; 29
-	map_const ICE_TEMPLE_B1F_3,							   4, 4  ; 30
-	map_const ICE_TEMPLE_B2F_1,							   8, 6  ; 31
-	map_const ICE_TEMPLE_B2F_2,							  13, 7  ; 32
+	map_const DAYBREAK_GROTTO_3,                           6, 20 ;  5
+	map_const GLINT_GROVE,                                27, 30 ;  6
+	map_const GLINT_GROVE_DEEP,							   7,  8 ;  7
+	map_const STARGLOW_CAVERN_1F,                         19, 16 ;  8
+	map_const STARGLOW_CAVERN_2F,                         14, 13 ;  9
+	map_const STARGLOW_CAVERN_3F,                          4,  8 ; 10
+	map_const STARGLOW_CAVERN_FOSSIL_ROOM,                 4,  6 ; 11
+	map_const MT_ONWA_1F,                       		  14, 13 ; 12
+	map_const MT_ONWA_2F,                                 17, 14 ; 13
+	map_const MT_ONWA_B1F,								  18, 20 ; 14
+	map_const MT_ONWA_B2F,								  23, 15 ; 15
+	map_const MT_ONWA_B3F,								  11, 14 ; 16
+	map_const MT_ONWA_CLIFF,							  20, 20 ; 17
+	map_const MT_ONWA_LOWER_CLIFF,						  13, 12 ; 18
+	map_const FLICKER_PASS_1F,							  21, 22 ; 19
+	map_const FLICKER_PASS_2F,							  25, 26 ; 20
+	map_const LUSTER_SEWERS_B1F,						  15, 12 ; 21
+	map_const LUSTER_SEWERS_B2F,						  15, 11 ; 22
+	map_const LUSTER_SEWERS_VALVE_ROOM,				      16,  3 ; 23
+	map_const LUSTER_SEWERS_THRONE_ROOM,				   6,  7 ; 24
+	map_const LUSTER_SEWERS_MUK_ROOM,				  	   6,  6 ; 25
+	map_const ICE_CAVE_B1F,								  15,  7 ; 26
+	map_const ICE_CAVE_B2F,								  15, 16 ; 27
+	map_const ICE_CAVE_B3F,								  16, 16 ; 28
+	map_const ICE_TEMPLE_B1F_1,							  14, 11 ; 29
+	map_const ICE_TEMPLE_B1F_2,							  14, 10 ; 30
+	map_const ICE_TEMPLE_B1F_3,							   4, 4  ; 31
+	map_const ICE_TEMPLE_B2F_1,							   8, 6  ; 32
+	map_const ICE_TEMPLE_B2F_2,							  13, 7  ; 33
 
 	newgroup                                                     ;  2
 

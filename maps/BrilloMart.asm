@@ -1,6 +1,7 @@
 BrilloMart_MapScriptHeader:
-	db 1 ; scene scripts
+	db 2 ; scene scripts
 	scene_script BrilloMartTrigger0
+	scene_script BrilloMartTrigger1
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, BrilloMartCallback
@@ -10,7 +11,8 @@ BrilloMart_MapScriptHeader:
 	warp_event  2,  7, BRILLO_TOWN, 6
 	warp_event  8,  0, BRILLO_GAME_CORNER, 1
 
-	db 0 ; coord events
+	db 1 ; coord events
+	xy_trigger 1,  1,  8, 0, BrilloMartDoorReset, 0, 0
 
 	db 2 ; bg events
 	signpost  0,  8, SIGNPOST_IFNOTSET, BrilloMartDoor
@@ -26,14 +28,24 @@ BrilloMart_MapScriptHeader:
 	
 	
 BrilloMartCallback:
+	checkevent EVENT_BRILLO_DOOR
+	iffalse .end
 	changeblock $8, $0, $39
+	clearevent EVENT_BRILLO_DOOR
+	dotrigger $1
+.end
 	return
 	
 BrilloMartTrigger0:
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .end
+	end
+	
+BrilloMartTrigger1:
+	end
+	
+BrilloMartDoorReset:
 	changeblock $8, $0, $38
-.end
+;	callasm GenericFinishBridge
+	dotrigger $0
 	end
 	
 BrilloMartClerk:
@@ -73,7 +85,7 @@ BrilloMartShelf:
 	farjumptext MerchandiseShelfText
 	
 BrilloMartDoor:
-	dw EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	dw EVENT_BRILLO_DOOR
 	playsound SFX_PECK
 	appear BRILLO_MART_DOOR
 	pause 1
@@ -112,7 +124,7 @@ BrilloMartDoor:
 	waitbutton
 	closetext
 	callasm BrilloMartInitializeBackupName
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	setevent EVENT_BRILLO_DOOR
 	end
 	
 .nothing

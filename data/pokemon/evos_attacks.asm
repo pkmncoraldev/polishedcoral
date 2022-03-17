@@ -2414,7 +2414,9 @@ Porygon2EvosAttacks:
 	db 0 ; no more level-up moves
 
 StantlerEvosAttacks:
-	db EVOLVE_LEVEL, 1, WYRDEER
+	db EVOLVE_LOCATION, ROUTE_10, WYRDEER
+	db EVOLVE_LOCATION, TWINKLE_TOWN, WYRDEER
+	db EVOLVE_LOCATION, FROZEN_RUINS, WYRDEER
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 5, LEER_TAIL_WHIP

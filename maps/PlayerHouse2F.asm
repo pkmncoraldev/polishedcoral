@@ -60,10 +60,7 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke BULBASAUR, 100
-	givepoke MINCCINO, 20
-	givepoke CINCCINO, 20
-	givepoke RAICHU, 20
-	givepoke MEOWTH, 20
+	givepoke STANTLER, 20
 
 .items
 	writetext PlayerHouseDebugText6

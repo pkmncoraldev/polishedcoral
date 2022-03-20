@@ -2006,8 +2006,8 @@ _MoogooMankey:
 	call ClearBGPalettes
 	call ClearTileMap
 	call ClearSprites
-	ld de, MUSIC_NONE
-	call PlayMusic
+;	ld de, MUSIC_NONE
+;	call PlayMusic
 	call DelayFrame
 	call DisableLCD
 	call LoadStandardFont
@@ -2063,8 +2063,6 @@ _MoogooMankey:
 ;	call PlaceCardMoogoo5
 ;	call ApplyTilemapInVBlank
 	
-	ld de, MUSIC_GSC_GAME_CORNER
-	call PlayMusic
 	ld c, 20
 	call DelayFrames
 .MasterLoop:

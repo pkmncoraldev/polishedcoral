@@ -252,7 +252,7 @@ SetUpNamingScreen: ; 116f8
 	hlcoord 2, 2
 	ld de, .PasswordString
 	call PlaceString
-	jp .StoreMonIconParams
+	jp .StorePasswordParams
 
 .PasswordString:
 	db "Say the password!@"
@@ -283,6 +283,11 @@ SetUpNamingScreen: ; 116f8
 	ld a, c
 	depixel 4, 4, 4, 0
 	farjp _InitSpriteAnimStruct
+
+.StorePasswordParams:
+	ld a, PKMN_NAME_LENGTH
+	hlcoord 5, 6
+	jr .StoreParams
 
 .StoreMonIconParams: ; 1187b (4:587b)
 	ld a, PKMN_NAME_LENGTH - 1

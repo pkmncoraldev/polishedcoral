@@ -576,6 +576,7 @@ InitializeEventsScript:
 	setevent EVENT_BRILLO_BOATMAN
 	setevent EVENT_FLICKER_STATION_TRAIN_TICKET
 	setevent EVENT_FLICKER_TRAIN_STATION_SNARE
+	setevent EVENT_BRILLO_CLERK_2_GONE
 	setevent EVENT_ALWAYS_SET
 	setflag ENGINE_PHONE_CARD
 	setflag ENGINE_PUNKS_IN_STARGLOW
@@ -1658,6 +1659,8 @@ GameCornerCoinVendorScript: ; 0xbcdcd
 	waitbutton
 	verbosegiveitem COIN_CASE
 	givecoins 50
+	setevent EVENT_BRILLO_CLERK_1_GONE
+	clearevent EVENT_BRILLO_CLERK_2_GONE
 	farwritetext CoinVendor_WelcomeText2
 	waitendtext
 ; 0xbcde0

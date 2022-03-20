@@ -318,6 +318,11 @@ CoinVendor_WelcomeText2:
 	line "50 COINs on the"
 	cont "house."
 	
+	para "Say the password"
+	line "to the guy up"
+	cont "front to exhange"
+	cont "'em for prizes."
+	
 	para "Now, stop asking"
 	line "questions."
 	
@@ -339,12 +344,22 @@ CoinVendor_Buy50CoinsText:
 	text "Here."
 	
 	para "50 COINs."
+	
+	para "Say the password"
+	line "to the guy up"
+	cont "front to exhange"
+	cont "'em for prizes."
 	done
 
 CoinVendor_Buy500CoinsText:
 	text "Here."
 	
 	para "500 COINs."
+	
+	para "Say the password"
+	line "to the guy up"
+	cont "front to exhange"
+	cont "'em for prizes."
 	done
 
 CoinVendor_NotEnoughMoneyText:

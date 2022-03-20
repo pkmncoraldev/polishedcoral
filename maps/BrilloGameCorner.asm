@@ -15,7 +15,7 @@ BrilloGameCorner_MapScriptHeader:
 	signpost  5,  6, SIGNPOST_READ, BrilloGameCornerTableWrong
 	signpost  6,  6, SIGNPOST_READ, BrilloGameCornerMoogooMankey
 	signpost  6,  7, SIGNPOST_READ, BrilloGameCornerMoogooMankey
-	signpost  2,  2, SIGNPOST_READ, BrilloGameCornerCardFlip
+	signpost  2,  2, SIGNPOST_LEFT, BrilloGameCornerCardFlip
 	signpost  6,  1, SIGNPOST_READ, BrilloGameCornerSlotsBlue
 	signpost  7,  1, SIGNPOST_READ, BrilloGameCornerSlots
 

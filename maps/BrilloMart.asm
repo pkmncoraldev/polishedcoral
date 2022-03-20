@@ -18,12 +18,14 @@ BrilloMart_MapScriptHeader:
 	signpost  0,  8, SIGNPOST_IFNOTSET, BrilloMartDoor
 	signpost  1,  6, SIGNPOST_UP, BrilloMartShelf
 
-	db 2 ; object events
-	person_event SPRITE_SAILOR,  3,  1, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrilloMartClerk, -1
+	db 3 ; object events
+	object_event  1,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STANDARD, MART_BRILLO, EVENT_BRILLO_CLERK_1_GONE
+	person_event SPRITE_SAILOR,  3,  1, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrilloMartClerk, EVENT_BRILLO_CLERK_2_GONE
 	person_event SPRITE_PEEP_HOLE,  0,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 
 	const_def 1 ; object constants
-	const BRILLO_MART_CLERK
+	const BRILLO_MART_CLERK_1
+	const BRILLO_MART_CLERK_2
 	const BRILLO_MART_DOOR
 	
 	
@@ -95,6 +97,8 @@ BrilloMartDoor:
 	pause 1
 	spriteface BRILLO_MART_DOOR, LEFT
 	pause 5
+	checkevent EVENT_SAID_PASSWORD
+	iftrue .donepassword
 	opentext
 	writetext BrilloMartDoorText1
 	waitbutton
@@ -103,7 +107,7 @@ BrilloMartDoor:
 	callasm BrilloMartCheckPassword
 	iffalse .wrong
 	ifequal 2, .nothing
-
+.return
 	writetext BrilloMartDoorText2
 	waitbutton
 	closetext
@@ -125,6 +129,7 @@ BrilloMartDoor:
 	closetext
 	callasm BrilloMartInitializeBackupName
 	setevent EVENT_BRILLO_DOOR
+	setevent EVENT_SAID_PASSWORD
 	end
 	
 .nothing
@@ -145,7 +150,13 @@ BrilloMartDoor:
 	disappear BRILLO_MART_DOOR
 	callasm BrilloMartInitializeBackupName
 	end
-
+.donepassword
+	opentext
+	writetext BrilloMartDoorText1
+	waitbutton
+	callasm BrilloMartInitializeCorrectPassword
+	jump .return
+	
 BrilloMartClerkBuyAsm:
 	ld a, MARTTYPE_BUY_ONLY
 	ld c, a
@@ -239,19 +250,25 @@ BrilloMartCheckPassword:
 	ret
 	
 BrilloMartInitializeBackupName:
-	ld hl, .Backup
+	ld hl, BackupPassword
+BrilloMartInitialize:
 	ld de, wBackupName
 	ld bc, NAME_LENGTH
 	rst CopyBytes
 	ret
-	
-.Backup: db "???@"
+
+BrilloMartInitializeCorrectPassword:
+	ld hl, CorrectPassword
+	jr BrilloMartInitialize
 	
 DefaultPassword:
-	db "¯@@@@@@@@@@"
+	db "¯@@@@@@@@@@@"
 	
 CorrectPassword:
-	db "PASSWORD@@@"
+	db "STORM DRAIN@"
+	
+BackupPassword:
+	db "???@"
 	
 BrilloMartDoorText1:
 	text "What's da password?"

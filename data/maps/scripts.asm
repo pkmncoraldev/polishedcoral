@@ -280,9 +280,9 @@ SECTION "Brillo Town Scripts", ROMX
 
 INCLUDE "maps/BrilloTown.asm"
 INCLUDE "maps/BrilloBoatHouse.asm"
-INCLUDE "maps/BrilloHouse1.asm"
-INCLUDE "maps/BrilloHouse2.asm"
-INCLUDE "maps/BrilloHouse3.asm"
+INCLUDE "maps/BrilloRockHouse.asm"
+INCLUDE "maps/BrilloTradeHouse.asm"
+INCLUDE "maps/BrilloLegendSpeechHouse.asm"
 INCLUDE "maps/BrilloGameCorner.asm"
 
 SECTION "Train Scripts", ROMX

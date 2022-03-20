@@ -8,16 +8,16 @@ BrilloTown_MapScriptHeader:
 
 	db 6 ; warp events
 	warp_event 19, 21, BRILLO_BOAT_HOUSE, 1
-	warp_event 17, 15, BRILLO_HOUSE_1, 1
-	warp_event 29, 17, BRILLO_HOUSE_2, 1
-	warp_event 15,  9, BRILLO_HOUSE_3, 1
+	warp_event 17, 15, BRILLO_ROCK_HOUSE, 1
+	warp_event 29, 17, BRILLO_TRADE_HOUSE, 1
+	warp_event 15,  9, BRILLO_LEGEND_SPEECH_HOUSE, 1
 	warp_event 23, 11, BRILLO_POKECENTER, 1
 	warp_event 29, 11, BRILLO_MART, 1
 
 	db 0 ; coord events
 
 	db 1 ; bg events
-	signpost 17, 15, SIGNPOST_READ, BrilloCardTest
+	signpost 17, 15, SIGNPOST_READ, BrilloTownSign
 
 	db 6 ; object events
 	object_event 17, 24, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NULL, EVENT_BRILLO_BOATMAN
@@ -59,14 +59,18 @@ JustRodeBoatBrillo:
 	dotrigger $0
 	end
 	
-BrilloCardTest:
-	opentext
-	special Special_MoogooMankey
-	closetext
-	end
+BrilloTownSign:
+	jumptext BrilloTownSignText
 	
 BrilloSailboat:
 	jumptext BrilloSailboatText
+	
+BrilloTownSignText:
+	text "BRILLO TOWN"
+	
+	para "The vibrant rose"
+	line "of the desert."
+	done
 	
 BrilloSailboatText:
 	text "It's a sailboat."

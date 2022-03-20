@@ -106,9 +106,9 @@ EventideGymSpeechHouse_BlockData:
 EventideSootheBellHouse_BlockData:
 	INCBIN "maps/TraditionalHouse.ablk.lz"
 
-BrilloHouse1_BlockData:
-BrilloHouse2_BlockData:
-BrilloHouse3_BlockData:
+BrilloRockHouse_BlockData:
+BrilloTradeHouse_BlockData:
+BrilloLegendSpeechHouse_BlockData:
 	INCBIN "maps/DesertHouse.ablk.lz"
 	
 BrilloGameCorner_BlockData:

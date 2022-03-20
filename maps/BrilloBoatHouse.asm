@@ -12,18 +12,24 @@ BrilloBoatHouse_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	person_event SPRITE_FAT_GUY,  1,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BrilloBoatHouseNPC, -1
+	db 3 ; object events
+	person_event SPRITE_FAT_GUY,  1,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BrilloBoatHouseClerk, -1
+	person_event SPRITE_SAGE,  3,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloBoatHouseNPC1, -1
+	person_event SPRITE_REDS_MOM,  3,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BrilloBoatHouseNPC2, -1
 	
+	const_def 1 ; object constants
+	const BRILLO_BOAT_HOUSE_CLERK
+	const BRILLO_BOAT_HOUSE_NPC_1
+	const BRILLO_BOAT_HOUSE_NPC_2
 	
-BrilloBoatHouseNPC:
+BrilloBoatHouseClerk:
 	opentext
-	writetext BrilloBoatHouseNPCText2
+	writetext BrilloBoatHouseClerkText2
 	special PlaceMoneyTopRight
 	yesorno
 	iffalse .end
 .return
-	writetext BrilloBoatHouseNPCText3
+	writetext BrilloBoatHouseClerkText3
 	waitbutton
 	closetext
 	refreshscreen $0
@@ -39,7 +45,7 @@ BrilloBoatHouseNPC:
 	jump .end
 	
 .Sunset
-	writetext BrilloBoatHouseNPCText4
+	writetext BrilloBoatHouseClerkText4
 	yesorno
 	iffalse .return
 	checkmoney $0, 500
@@ -47,7 +53,7 @@ BrilloBoatHouseNPC:
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
-	writetext BrilloBoatHouseNPCText7
+	writetext BrilloBoatHouseClerkText7
 .SunsetCont
 	clearevent EVENT_SUNSET_STRAND
 	warpmod 2, SAILBOAT_CUTSCENE
@@ -55,7 +61,7 @@ BrilloBoatHouseNPC:
 	jump .DoBoatEnd
 	
 .LakeL
-	writetext BrilloBoatHouseNPCText5
+	writetext BrilloBoatHouseClerkText5
 	yesorno
 	iffalse .return
 	checkmoney $0, 500
@@ -63,7 +69,7 @@ BrilloBoatHouseNPC:
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
-	writetext BrilloBoatHouseNPCText7
+	writetext BrilloBoatHouseClerkText7
 .LakeLCont
 	setevent EVENT_TAKEN_LAKE_BOAT_ONCE
 	setevent EVENT_LAKE_BOAT_LEFT
@@ -73,7 +79,7 @@ BrilloBoatHouseNPC:
 	jump .DoBoatEnd
 	
 .LakeR
-	writetext BrilloBoatHouseNPCText6
+	writetext BrilloBoatHouseClerkText6
 	yesorno
 	iffalse .return
 	checkmoney $0, 500
@@ -81,7 +87,7 @@ BrilloBoatHouseNPC:
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
-	writetext BrilloBoatHouseNPCText7
+	writetext BrilloBoatHouseClerkText7
 .LakeRCont
 	setevent EVENT_TAKEN_LAKE_BOAT_ONCE
 	clearevent EVENT_LAKE_BOAT_LEFT
@@ -91,7 +97,7 @@ BrilloBoatHouseNPC:
 	jump .DoBoatEnd
 	
 .Sunbeam
-	writetext BrilloBoatHouseNPCText8
+	writetext BrilloBoatHouseClerkText8
 	yesorno
 	iffalse .return
 	checkmoney $0, 500
@@ -99,7 +105,7 @@ BrilloBoatHouseNPC:
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
-	writetext BrilloBoatHouseNPCText7
+	writetext BrilloBoatHouseClerkText7
 .SunbeamCont
 	clearevent EVENT_ISLAND_BOATMAN
 	warpmod 2, SAILBOAT_CUTSCENE
@@ -107,7 +113,7 @@ BrilloBoatHouseNPC:
 	jump .DoBoatEnd
 	
 .Shimmer
-	writetext BrilloBoatHouseNPCText9
+	writetext BrilloBoatHouseClerkText9
 	yesorno
 	iffalse .return
 	checkmoney $0, 500
@@ -115,7 +121,7 @@ BrilloBoatHouseNPC:
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
 	special PlaceMoneyTopRight
-	writetext BrilloBoatHouseNPCText7
+	writetext BrilloBoatHouseClerkText7
 .ShimmerCont
 	clearevent EVENT_SHIMMER_BOATMAN
 	warpmod 2, SAILBOAT_CUTSCENE
@@ -139,7 +145,7 @@ BrilloBoatHouseNPC:
 	jump .nomoneynoride
 	
 .nomoneySunset2
-	writetext BrilloBoatHouseNPCTextNoMoney
+	writetext BrilloBoatHouseClerkTextNoMoney
 	jump .SunsetCont
 	
 .nomoneyLakeL
@@ -147,7 +153,7 @@ BrilloBoatHouseNPC:
 	if_equal $2, .nomoneyLakeL2
 	
 .nomoneyLakeL2
-	writetext BrilloBoatHouseNPCTextNoMoney
+	writetext BrilloBoatHouseClerkTextNoMoney
 	jump .LakeLCont
 	
 .nomoneyLakeR
@@ -155,7 +161,7 @@ BrilloBoatHouseNPC:
 	if_equal $2, .nomoneyLakeR2
 	
 .nomoneyLakeR2
-	writetext BrilloBoatHouseNPCTextNoMoney
+	writetext BrilloBoatHouseClerkTextNoMoney
 	jump .LakeRCont
 	
 .nomoneySunbeam
@@ -164,7 +170,7 @@ BrilloBoatHouseNPC:
 	jump .nomoneynoride
 	
 .nomoneySunbeam2
-	writetext BrilloBoatHouseNPCTextNoMoney
+	writetext BrilloBoatHouseClerkTextNoMoney
 	jump .SunbeamCont
 	
 .nomoneyShimmer
@@ -173,16 +179,16 @@ BrilloBoatHouseNPC:
 	jump .nomoneynoride
 	
 .nomoneyShimmer2
-	writetext BrilloBoatHouseNPCTextNoMoney
+	writetext BrilloBoatHouseClerkTextNoMoney
 	jump .ShimmerCont
 	
 .nomoneynoride
-	writetext BrilloBoatHouseNPCTextNoMoney2
+	writetext BrilloBoatHouseClerkTextNoMoney2
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
 .end
-	writetext BrilloBoatHouseNPCTextEnd
+	writetext BrilloBoatHouseClerkTextEnd
 	waitbutton
 	closetext
 	end
@@ -221,14 +227,26 @@ BrilloBoatHouseBrilloMenuData:
 	db "BRILLO TOWN@"
 	end
 	
-BrilloBoatHouseNPCText1:
+BrilloBoatHouseNPC1:
+	jumptextfaceplayer BrilloBoatHouseNPC1Text
+	
+BrilloBoatHouseNPC2:
+	faceplayer
+	opentext
+	writetext BrilloBoatHouseNPC2Text
+	waitbutton
+	closetext
+	spriteface BRILLO_BOAT_HOUSE_NPC_2, DOWN
+	end
+	
+BrilloBoatHouseClerkText1:
 	text "Sorry, kid."
 	
 	para "No boats are"
 	line "running for now."
 	done
 	
-BrilloBoatHouseNPCText2:
+BrilloBoatHouseClerkText2:
 	text "Welcome to the"
 	line "BRILLO BOAT HOUSE."
 	
@@ -239,50 +257,50 @@ BrilloBoatHouseNPCText2:
 	line "ride?"
 	done
 
-BrilloBoatHouseNPCText3:
+BrilloBoatHouseClerkText3:
 	text "Where would you"
 	line "like to go today?"
 	done
 
-BrilloBoatHouseNPCText4:
+BrilloBoatHouseClerkText4:
 	text "Travel to"
 	line "SUNSET BAY?"
 	done
 
-BrilloBoatHouseNPCText5:
+BrilloBoatHouseClerkText5:
 	text "Travel to the"
 	line "WEST end to"
 	cont "LAKE ONWA?"
 	done
 
-BrilloBoatHouseNPCText6:
+BrilloBoatHouseClerkText6:
 	text "Travel to the"
 	line "EAST end to"
 	cont "LAKE ONWA?"
 	done
 
-BrilloBoatHouseNPCText7:
+BrilloBoatHouseClerkText7:
 	text "Alright."
 	
 	para "We'll head out"
 	line "soon."
 	done
 	
-BrilloBoatHouseNPCText8:
+BrilloBoatHouseClerkText8:
 	text "Travel to"
 	line "SUNBEAM ISLAND?"
 	done
 	
-BrilloBoatHouseNPCText9:
+BrilloBoatHouseClerkText9:
 	text "Travel to"
 	line "SHIMMER CITY?"
 	done
 	
-BrilloBoatHouseNPCTextEnd:
+BrilloBoatHouseClerkTextEnd:
 	text "Come again."
 	done
 	
-BrilloBoatHouseNPCTextNoMoney:
+BrilloBoatHouseClerkTextNoMoney:
 	text "You don't seem"
 	line "to have enough"
 	cont "money…"
@@ -298,8 +316,34 @@ BrilloBoatHouseNPCTextNoMoney:
 	line "soon."
 	done
 	
-BrilloBoatHouseNPCTextNoMoney2:
+BrilloBoatHouseClerkTextNoMoney2:
 	text "You don't seem"
 	line "to have enough"
 	cont "money…"
 	done
+	
+BrilloBoatHouseNPC1Text:
+	text "A prickly desert"
+	line "#MON."
+	
+	para "It has the ABILITY"
+	line "to DRAIN certain"
+	cont "moves and power"
+	cont "itself up!"
+	
+	para "You'd do well to"
+	line "remember that if"
+	cont "you like fun and"
+	cont "games!"
+	done
+	
+BrilloBoatHouseNPC2Text:
+	text "The old guy by the"
+	line "counter won't stop"
+	cont "speaking in"
+	cont "riddles!"
+	
+	para "How annoying…"
+	done
+
+	

@@ -528,9 +528,9 @@ ENDM
 	map_attributes ShimmerHouse2, SHIMMER_HOUSE_2, $0, 0
 	map_attributes ShimmerHouse3, SHIMMER_HOUSE_3, $0, 0
 	map_attributes BrilloBoatHouse, BRILLO_BOAT_HOUSE, $0, 0
-	map_attributes BrilloHouse1, BRILLO_HOUSE_1, $0, 0
-	map_attributes BrilloHouse2, BRILLO_HOUSE_2, $0, 0
-	map_attributes BrilloHouse3, BRILLO_HOUSE_3, $0, 0
+	map_attributes BrilloRockHouse, BRILLO_ROCK_HOUSE, $0, 0
+	map_attributes BrilloTradeHouse, BRILLO_TRADE_HOUSE, $0, 0
+	map_attributes BrilloLegendSpeechHouse, BRILLO_LEGEND_SPEECH_HOUSE, $0, 0
 	map_attributes BrilloPokeCenter, BRILLO_POKECENTER, $0, 0
 	map_attributes BrilloMart, BRILLO_MART, $0, 0
 	map_attributes BrilloGameCorner, BRILLO_GAME_CORNER, $0, 0

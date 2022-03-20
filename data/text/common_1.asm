@@ -1356,6 +1356,61 @@ UnknownText_TradeAfterText5::
 	cont "schedule."
 	done
 	
+UnknownText_TradeIntroText6::
+	text "I love cactus"
+	line "#MON, but my"
+	cont "MARACTUS keeps me"
+	cont "up all night with"
+	cont "it's dancing!"
+	
+	para "I wish I had a"
+	line "more quiet cactus"
+	cont "#MON…"
+	
+	para "Do you have a"
+	line "CACNEA?"
+	
+	para "Would you trade"
+	line "for my MARACTUS?"
+	done
+	
+UnknownText_TradeCancelText6::
+	text "No sleep for me,"
+	line "then!"
+	done
+	
+UnknownText_TradeWrongText6::
+	text "I really wanted"
+	line "another cactus"
+	cont "#MON…"
+	done
+	
+UnknownText_TradeCompleteText6::
+	text "Nice!"
+	
+	para "I hope SAMBA's"
+	line "dancing will bring"
+	cont "a smile to your"
+	cont "face!"
+	done
+	
+UnknownText_TradeAfterText6::
+	text "Oh hi!"
+	
+	para "How is SAMBA?"
+	
+	para "Still dancing into"
+	line "into the night?"
+	
+	para "@"
+	text_from_ram wTradeCacneaName
+	text "'s so"
+	line "quiet!"
+	
+	para "I've been sleeping"
+	line "like never before!"
+	done
+	
 UnknownText_0x1bd88e::
 	text "Transaction"
 	line "cancelled!"

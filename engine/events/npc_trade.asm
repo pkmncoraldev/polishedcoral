@@ -107,6 +107,11 @@ NPCTrade:: ; fcba8
 	rst CopyBytes
 	jr .cont
 .trade6
+	ld hl, wBackupName
+	ld de, wTradeCacneaName
+	ld bc, NAME_LENGTH
+	rst CopyBytes
+	jr .cont
 .trade7
 .trade8
 .trade9
@@ -459,7 +464,7 @@ TradeTexts: ; fcf53
 	dw TradeIntroText3
 	dw TradeIntroText4
 	dw TradeIntroText5
-	dw TradeIntroText1
+	dw TradeIntroText6
 	dw TradeIntroText1
 	dw TradeIntroText1
 	dw TradeIntroText1
@@ -471,7 +476,7 @@ TradeTexts: ; fcf53
 	dw TradeCancelText3
 	dw TradeCancelText4
 	dw TradeCancelText5
-	dw TradeCancelText1
+	dw TradeCancelText6
 	dw TradeCancelText1
 	dw TradeCancelText1
 	dw TradeCancelText1
@@ -483,7 +488,7 @@ TradeTexts: ; fcf53
 	dw TradeWrongText3
 	dw TradeWrongText4
 	dw TradeWrongText5
-	dw TradeWrongText1
+	dw TradeWrongText6
 	dw TradeWrongText1
 	dw TradeWrongText1
 	dw TradeWrongText1
@@ -495,7 +500,7 @@ TradeTexts: ; fcf53
 	dw TradeCompleteText3
 	dw TradeCompleteText4
 	dw TradeCompleteText5
-	dw TradeCompleteText1
+	dw TradeCompleteText6
 	dw TradeCompleteText1
 	dw TradeCompleteText1
 	dw TradeCompleteText1
@@ -507,7 +512,7 @@ TradeTexts: ; fcf53
 	dw TradeAfterText3
 	dw TradeAfterText4
 	dw TradeAfterText5
-	dw TradeAfterText1
+	dw TradeAfterText6
 	dw TradeAfterText1
 	dw TradeAfterText1
 	dw TradeAfterText1
@@ -638,4 +643,24 @@ TradeCompleteText5:
 
 TradeAfterText5:
 	text_jump UnknownText_TradeAfterText5
+	db "@"
+	
+TradeIntroText6:
+	text_jump UnknownText_TradeIntroText6
+	db "@"
+
+TradeCancelText6:
+	text_jump UnknownText_TradeCancelText6
+	db "@"
+
+TradeWrongText6:
+	text_jump UnknownText_TradeWrongText6
+	db "@"
+
+TradeCompleteText6:
+	text_jump UnknownText_TradeCompleteText6
+	db "@"
+
+TradeAfterText6:
+	text_jump UnknownText_TradeAfterText6
 	db "@"

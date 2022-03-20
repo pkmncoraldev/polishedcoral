@@ -4,8 +4,8 @@ BrilloLegendSpeechHouse_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  2,  7, BRILLO_TOWN, 3
-	warp_event  3,  7, BRILLO_TOWN, 3
+	warp_event  2,  7, BRILLO_TOWN, 4
+	warp_event  3,  7, BRILLO_TOWN, 4
 
 	db 0 ; coord events
 

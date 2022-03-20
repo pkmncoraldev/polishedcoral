@@ -22,14 +22,14 @@ NPCTrades:
 	db "EMY@@@@@", $00
 ; TRADE_WITH_TABBY_FOR_HOUNDOUR in Luster City Business
 	db 4, MEOWTH,     HOUNDOUR,  "MITTENS@@@@"
-	db $EE, $EE, $EE, HIDDEN_ABILITY | BRAVE,   FEMALE,   POKE_BALL,    DESTINY_KNOT
+	db $DD, $DD, $DD, HIDDEN_ABILITY | BRAVE,   FEMALE,   POKE_BALL,    DESTINY_KNOT
 	dw 12817
 	db "TABBY@@@", $00
-; TRADE_WITH_KIM_FOR_NUMEL in Route 14
-	db 3, BULBASAUR,  BULBASAUR,    "C","h","a","n","c","e","@","@","@","@","@"
-	db $EE, $EE, $EE, HIDDEN_ABILITY | CALM,    FEMALE, HEAL_BALL,    LUCKY_EGG
-	dw 26491
-	db "K","i","m","@","@","@","@","@", $00
+; TRADE_WITH_CARRIE_FOR_MARACTUS in Brillo Town
+	db 5, CACNEA,  MARACTUS,    "SAMBA@S@@@@"
+	db $DD, $DD, $DD, HIDDEN_ABILITY | MODEST,    FEMALE, POKE_BALL,    LUM_BERRY
+	dw 43876
+	db "CARRIE@@", $00
 ; TRADE_WITH_JACQUES_FOR_GRIMER in Goldenrod Harbor
 	db 1, BULBASAUR,  BULBASAUR,     "G","a","i","l","@","@","@","@","@","@","@"
 	db $EE, $EE, $EE, HIDDEN_ABILITY | CAREFUL, FEMALE, LURE_BALL,    EVIOLITE

@@ -60,7 +60,8 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke BULBASAUR, 100
-	givepoke STANTLER, 20
+	givepoke CACNEA, 20
+	givepoke SNEASEL, 20
 
 .items
 	writetext PlayerHouseDebugText6

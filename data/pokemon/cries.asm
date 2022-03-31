@@ -448,8 +448,8 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Sharpedo - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Numel - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Camerupt - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cacnea - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cacturne - PLACEHOLDER
+	mon_cry CRY_SCYTHER,    -$096,  $0a0 	; Cacnea
+	mon_cry CRY_TOTODILE,   -$1c0,  $170 	; Cacturne
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Swablu - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Altaria - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Snorunt - PLACEHOLDER

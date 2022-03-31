@@ -61,7 +61,7 @@ PlayerHouseDebugPoster:
 	iffalse .items
 	givepoke BULBASAUR, 100
 	givepoke CACNEA, 20
-	givepoke SNEASEL, 20
+	givepoke CACTURNE, 20
 
 .items
 	writetext PlayerHouseDebugText6

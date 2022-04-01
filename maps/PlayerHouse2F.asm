@@ -60,8 +60,10 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke BULBASAUR, 100
-	givepoke CACNEA, 20
-	givepoke CACTURNE, 20
+	givepoke SHROOMISH, 20
+	givepoke BRELOOM, 20
+;	givepoke GARDEVOIR, 20
+;	givepoke GALLADE, 20
 
 .items
 	writetext PlayerHouseDebugText6

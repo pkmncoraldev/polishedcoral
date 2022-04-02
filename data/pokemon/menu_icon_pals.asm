@@ -179,9 +179,9 @@ MenuMonIconColors::
 	iconpal RED, GRAY ; CAMERUPT
 	iconpal GREEN, RED ; CACNEA
 	iconpal GREEN, RED ; CACTURNE
-	iconpal TEAL, BROWN ; SWABLU
-	iconpal TEAL, BROWN ; ALTARIA
-	iconpal BROWN, BLUE ; SNORUNT
+	iconpal BLUE, BROWN ; SWABLU
+	iconpal BLUE, BROWN ; ALTARIA
+	iconpal RED, BLUE ; SNORUNT
 	iconpal BLUE, RED ; GLALIE
 	iconpal RED, BROWN ; BUIZEL
 	iconpal RED, BROWN ; FLOATZEL
@@ -209,7 +209,7 @@ MenuMonIconColors::
 	iconpal BROWN, GREEN ; MAMOSWINE
 	iconpal BLUE, PURPLE ; PORYGON_Z
 	iconpal GREEN, BLUE ; GALLADE
-	iconpal RED, PINK ; FROSLASS
+	iconpal BLUE, PINK ; FROSLASS
 	iconpal BLUE, RED ; DRILBUR
 	iconpal RED, BLUE ; EXCADRILL
 	iconpal RED, BROWN ; VENIPEDE

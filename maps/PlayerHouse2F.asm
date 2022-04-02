@@ -59,9 +59,9 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke EXEGGUTOR, 100
-	givepoke EXEGGUTOR_A, 20
-;	givepoke MAROWAK_A, 20
+	givepoke LITWICK, 100
+	givepoke LAMPENT, 20
+	givepoke CHANDELURE, 20
 ;	givepoke GARDEVOIR, 20
 ;	givepoke GALLADE, 20
 

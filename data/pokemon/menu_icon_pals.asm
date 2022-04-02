@@ -168,9 +168,9 @@ MenuMonIconColors::
 	iconpal GREEN, BLUE ; GARDEVOIR
 	iconpal GREEN, RED ; SHROOMISH
 	iconpal GREEN, RED ; BRELOOM
-	iconpal BLUE, RED ; ARON
-	iconpal BLUE, RED ; LAIRON
-	iconpal BLUE, RED ; AGGRON
+	iconpal GRAY, RED ; ARON
+	iconpal GRAY, RED ; LAIRON
+	iconpal GRAY, RED ; AGGRON
 	iconpal BLUE, RED ; MEDITITE
 	iconpal RED, BLUE ; MEDICHAM
 	iconpal BLUE, GREEN ; CARVANHA
@@ -214,7 +214,7 @@ MenuMonIconColors::
 	iconpal RED, BLUE ; EXCADRILL
 	iconpal RED, BROWN ; VENIPEDE
 	iconpal PURPLE, BLUE ; WHIRLIPEDE
-	iconpal RED, TEAL ; SCOLIPEDE
+	iconpal PURPLE, RED ; SCOLIPEDE
 	iconpal GREEN, RED ; COTTONEE
 	iconpal GREEN, BLUE ; WHIMSICOTT
 	iconpal RED, BLUE ; SANDILE
@@ -242,7 +242,7 @@ MenuMonIconColors::
 	iconpal BROWN, GRAY ; PHANTUMP
 	iconpal BROWN, GRAY ; TREVENANT
 	iconpal PURPLE, TEAL ; NOIBAT
-	iconpal PURPLE, TEAL ; NOIVERN
+	iconpal GRAY, TEAL ; NOIVERN
 	iconpal RED, PINK ; PIKIPEK
 	iconpal RED, PURPLE ; TRUMBEAK
 	iconpal RED, PURPLE ; TOUCANNON

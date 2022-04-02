@@ -24,7 +24,15 @@ Snak - Wingull Menu Sprite
 Gargoyle - Pelipper Menu Sprite
 Molk - Carvanha Menu Sprite
 Kedöshim - Meditite and Medicham Menu Sprites
-Internet_Goblin - Sharpedo Menu Sprite
+Internet_Goblin - Sharpedo, Trevenant, and Abomasnow Menu Sprites
+Sadfish - Cacturne, Sandile, and A-Raichu Menu Sprites
+SCHLIEMONI - Croagunk Menu Sprite
+Turner - Snover Menu Sprite
+EeVeeEe - Drilbur, Excadrill, and Maractus Menu Sprites
+peach-n-key - Venipede Menu Sprites
+CuervoTerras - Scolipede Menu Sprites
+Goose - Phantump, Litwick, Lampent, and Chandelure Menu Sprite
+Ayinai - Noibat and Noivern Menu Sprites
 Megaman-Omega - Menu Sprites
 
 SPECIAL THANKS-
@@ -39,3 +47,5 @@ luckytyphlosion
 Nuuk
 StarGaazar
 Rool
+Pokemon Wilds
+SheerSt

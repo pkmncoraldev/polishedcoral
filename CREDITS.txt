@@ -26,7 +26,6 @@ Molk - Carvanha Menu Sprite
 Kedöshim - Meditite and Medicham Menu Sprites
 Internet_Goblin - Sharpedo, Trevenant, and Abomasnow Menu Sprites
 Sadfish - Cacturne, Sandile, and A-Raichu Menu Sprites
-SCHLIEMONI - Croagunk Menu Sprite
 Turner - Snover Menu Sprite
 EeVeeEe - Drilbur, Excadrill, and Maractus Menu Sprites
 peach-n-key - Venipede Menu Sprites

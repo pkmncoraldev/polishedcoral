@@ -248,7 +248,7 @@ MenuMonIconColors::
 	iconpal RED, PURPLE ; TOUCANNON
 	iconpal BLUE, RED ; MAREANIE
 	iconpal BLUE, RED ; TOXAPEX
-	iconpal GRAY, RED ; WYRDEER
+	iconpal GRAY, GREEN ; WYRDEER
 	iconpal BROWN, BROWN ; RAICHU_A
 	iconpal PINK, TEAL ; EXEGGCUTE_A
 	iconpal GREEN, RED ; EXEGGUTOR_A

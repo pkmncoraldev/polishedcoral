@@ -59,8 +59,8 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke CROAGUNK, 100
-	givepoke TOXICROAK, 20
+	givepoke MINCCINO, 100
+	givepoke CINCCINO, 20
 ;	givepoke CHANDELURE, 20
 ;	givepoke GARDEVOIR, 20
 ;	givepoke GALLADE, 20

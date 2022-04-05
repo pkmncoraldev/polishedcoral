@@ -583,5 +583,6 @@ SetPlayerPalKrisHouse:
 	ld a, [wMenuCursorY] ; 1 - 8
 	sub $1
 	ld [wPlayerPalette], a
+	ld [wPlayerInitialPalette], a
 	jp ReplaceKrisSprite
 	

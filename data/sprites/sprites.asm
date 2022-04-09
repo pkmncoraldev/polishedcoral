@@ -21,6 +21,10 @@ SpriteHeaders:
 	overworld_sprite CoraRunSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CoraMiscSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CoraSkateboardSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite CoraSkateboard2SpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite CoraSkateboardGrindingSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite CoraSkateboardFallingSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite CoraBathingSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite PippiSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite PippiRunSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite PippiBikeSpriteGFX, WALKING_SPRITE, PAL_OW_PINK

@@ -1526,6 +1526,9 @@ LoadMapPals::
 	jr .outside
 	
 .candle
+	ld a, [wMapGroup]
+	cp GROUP_LUSTER_CITY_RESIDENTIAL
+	jp nz, .normal
 	ld hl, MapObjectPalsCandle
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes

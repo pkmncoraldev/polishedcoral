@@ -243,7 +243,19 @@ IceTempleFire:
 	writetext IceTempleFireText1
 	yesorno
 	iffalse IceTempleTorchNo
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .playerfemale
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .playerfemale
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .playerfemale
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .playerfemale
 	writetext IceTempleFireText2Boy
+	jump .cont
+.playerfemale
+	writetext IceTempleFireText2Girl
+.cont
 	waitbutton
 	callasm LightTorchAsm
 	setevent EVENT_TORCH_LIT

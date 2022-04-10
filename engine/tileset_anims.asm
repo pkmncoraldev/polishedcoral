@@ -1810,6 +1810,9 @@ FlickeringLightbulbPalette:
 	ret
 	
 TileAnimationPaletteCasino: ; fc6d7
+	ld a, [wMapGroup]
+	cp GROUP_BRILLO_MART
+	ret nz
 
 ; No palette changes on DMG.
 	ld a, [hCGB]

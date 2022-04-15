@@ -59,11 +59,11 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke MINCCINO, 100
-	givepoke CINCCINO, 20
-;	givepoke CHANDELURE, 20
-;	givepoke GARDEVOIR, 20
-;	givepoke GALLADE, 20
+	givepoke SWABLU, 100
+	givepoke ALTARIA, 20
+;	loadwildmon SWABLU, 10
+;	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+;	startbattle
 
 .items
 	writetext PlayerHouseDebugText6

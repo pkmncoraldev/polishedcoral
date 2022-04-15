@@ -7,7 +7,7 @@
 	db DRAGON_FANG ; item 1
 	db DRAGON_FANG ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
-	dn 5, 5 ; frontpic dimensions
+	dn 7, 7 ; frontpic dimensions
 	db NATURAL_CURE ; ability 1
 	db NATURAL_CURE ; ability 2
 	db CLOUD_NINE ; hidden ability

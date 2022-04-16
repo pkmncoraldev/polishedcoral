@@ -1439,6 +1439,8 @@ MoveScreenLoop:
 	ld [wMoveScreenCursor], a
 	ld [wMoveScreenOffset], a
 	ld [wMoveScreenNumMoves], a
+	ld a, [wCurPartyMon]
+	ld [wPlaceBallsX], a
 
 	; Zero the first 4 moves to avoid oddities if we have less than 4 total
 	ld hl, wMoveScreenMoves

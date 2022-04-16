@@ -60,7 +60,7 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke SWABLU, 100
-	givepoke ALTARIA, 20
+	givepoke JOLTIK, 22
 ;	loadwildmon SWABLU, 10
 ;	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 ;	startbattle

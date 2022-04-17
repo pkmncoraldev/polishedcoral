@@ -11,13 +11,14 @@ Route3East_MapScriptHeader:
 	db 1 ; bg events
 	signpost  8,  7, SIGNPOST_READ, Route3East_sign
 
-	db 7 ; object events
+	db 8 ; object events
 	person_event SPRITE_FISHER, 23, 11, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRouteEast3_1, -1
 	person_event SPRITE_CAMPER, 17, 27, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerRouteEast3_2, -1
 	person_event SPRITE_PICNICKER,  8, 29, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRouteEast3_3, -1
 	person_event SPRITE_LASS, 21, 32, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerRouteEast3_4, -1
 	person_event SPRITE_FISHER, 11, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route3Rodman, -1
 	itemball_event 28,  8, GREAT_BALL, 1, EVENT_ROUTE_3_GREAT_BALL
+	itemball_event  4, 14, GREAT_BALL, 1, EVENT_ROUTE_3_SUPER_POTION
 	fruittree_event 35,  8, FRUITTREE_ROUTE_3, LEPPA_BERRY
 	
 	const_def 1 ; object constants
@@ -27,6 +28,7 @@ Route3East_MapScriptHeader:
 	const ROUTE3EAST_TRAINER4
 	const ROUTE3EAST_RODMAN
 	const ROUTE3EAST_POKEBALL
+	const ROUTE3EAST_POKEBALL2
 	const ROUTE3EAST_FRUITTREE
 	
 	

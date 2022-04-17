@@ -2864,9 +2864,22 @@ SacredAsh: ; f753
 ; f763
 
 NoEffect: ; f77d
-	jp IsntTheTimeMessage
-; f780
+	ld a, [wOptions1]
+	bit DEBUG_MODE, a
+	jp nz, .debugwhiteout
+	xor a
+	ld [wItemEffectSucceeded], a
+	ret
 
+.debugwhiteout
+	ld hl, .Whiteout
+	call QueueScript
+	ld a, $1
+	ld [wItemEffectSucceeded], a
+	ret
+
+.Whiteout
+	farjump Script_OverworldWhiteout
 
 Play_SFX_FULL_HEAL: ; f780
 	push de
@@ -2963,9 +2976,9 @@ CantUseOnEggMessage: ; f7e8
 	ld hl, CantUseOnEggText
 	jr CantUseItemMessage
 
-IsntTheTimeMessage: ; f7ed
-	ld hl, IsntTheTimeText
-	jr CantUseItemMessage
+;IsntTheTimeMessage: ; f7ed
+;	ld hl, IsntTheTimeText
+;	jr CantUseItemMessage
 
 WontHaveAnyEffectMessage: ; f7f2
 	ld hl, WontHaveAnyEffectText
@@ -2995,10 +3008,10 @@ CantUseOnEggText: ; 0xf810
 	db "@"
 ; 0xf815
 
-IsntTheTimeText: ; 0xf815
+;IsntTheTimeText: ; 0xf815
 	; OAK:  ! This isn't the time to use that!
-	text_jump UnknownText_0x1c5d6e
-	db "@"
+;	text_jump UnknownText_0x1c5d6e
+;	db "@"
 ; 0xf81a
 
 WontHaveAnyEffectText: ; 0xf81f

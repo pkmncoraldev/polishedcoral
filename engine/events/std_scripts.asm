@@ -253,25 +253,10 @@ WrongSideScript:
 	farjumptext WrongSideText
 
 Radio1Script:
-	end
-	callasm IsKantoRadioOffAir
-	iftrue RadioOffAirScript
-	opentext
-	writebyte MAPRADIO_POKEMON_CHANNEL
-	special MapRadio
-	endtext
+	farjumptext RadioText
 
 Radio2Script:
-	end
-	callasm IsKantoRadioOffAir
-	iftrue RadioOffAirScript
-	opentext
-	writebyte MAPRADIO_LUCKY_CHANNEL
-	special MapRadio
-	endtext
-
-RadioOffAirScript:
-	farjumptext RadioOffAirText
+	farjumptext RadioText
 
 IsKantoRadioOffAir:
 	call RegionCheck

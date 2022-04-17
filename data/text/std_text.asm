@@ -164,9 +164,8 @@ WrongSideText::
 	text "Oops, wrong side."
 	done
 
-RadioOffAirText:
-	text "The radio is just"
-	line "playing static…"
+RadioText:
+	text "It's a radio."
 	done
 
 RefrigeratorText:

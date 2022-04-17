@@ -18,7 +18,7 @@ Route3East_MapScriptHeader:
 	person_event SPRITE_LASS, 21, 32, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerRouteEast3_4, -1
 	person_event SPRITE_FISHER, 11, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route3Rodman, -1
 	itemball_event 28,  8, GREAT_BALL, 1, EVENT_ROUTE_3_GREAT_BALL
-	itemball_event  4, 14, GREAT_BALL, 1, EVENT_ROUTE_3_SUPER_POTION
+	itemball_event  4, 14, SUPER_POTION, 1, EVENT_ROUTE_3_SUPER_POTION
 	fruittree_event 35,  8, FRUITTREE_ROUTE_3, LEPPA_BERRY
 	
 	const_def 1 ; object constants

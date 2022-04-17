@@ -31,6 +31,14 @@ Script_Whiteout: ; 0x124ce
 	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
 	newloadmap MAPSETUP_WARP
+	checkevent EVENT_VISITED_POKEMON_CENTER_ONCE
+	iffalse .nolandmarksign
+	special Special_StartLandmarkTimer
+	endall
+	
+.nolandmarksign
+	special Special_StopLandmarkTimer
+	domaptrigger SUNSET_BAY, $4
 	endall
 
 .bug_contest

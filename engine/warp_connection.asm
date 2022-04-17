@@ -242,6 +242,7 @@ LoadWarpData: ; 1046c6
 	ld [wLastSpawnMapGroup], a
 	ld a, [wPrevMapNumber]
 	ld [wLastSpawnMapNumber], a
+	eventflagset EVENT_VISITED_POKEMON_CENTER_ONCE
 	ret
 
 LoadMapTimeOfDay: ; 104750

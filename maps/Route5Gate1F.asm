@@ -59,7 +59,42 @@ Route5Gate1FNPC1:
 	end
 	
 Route5Gate1FNPC2:
-	jumptextfaceplayer Route5Gate1FNPC2Text
+	faceplayer
+	opentext
+	checkevent EVENT_ROUTE_5_GATE_1F_GUY
+	iftrue .donetrade
+	writetext Route5Gate1FNPC2Text1
+	jump .cont
+.donetrade
+	writetext Route5Gate1FNPC2Text2
+.cont
+	yesorno
+	iffalse .no1
+	checkitem RAGECANDYBAR
+	iffalse .no2
+	writetext Route5Gate1FNPC2GiveText
+	takeitem RAGECANDYBAR
+	playsound SFX_LEVEL_UP 
+	waitsfx
+	writetext Route5Gate1FGetPokeballsText
+	playsound SFX_ITEM
+	waitsfx
+	buttonsound
+	writetext Route5Gate1FPutAwayPokeballsText
+	buttonsound
+	giveitem POKE_BALL, 3
+	setevent EVENT_ROUTE_5_GATE_1F_GUY
+	writetext Route5Gate1FNPC2Text3
+	jump .end
+.no1
+	writetext Route5Gate1FNPC2Text4
+	jump .end
+.no2
+	writetext Route5Gate1FNPC2Text5
+.end
+	waitbutton
+	closetext
+	end
 	
 Route5Gate1FNPC3:
 	jumptextfaceplayer Route5Gate1FNPC3Text
@@ -116,6 +151,7 @@ Route5Gate1FNPC4:
 	checkitem SODA_POP
 	iffalse .no4
 	writetext Route5Gate1FNPC4GiveText
+	takeitem SODA_POP
 	playsound SFX_LEVEL_UP 
 	waitsfx
 	writetext Route5Gate1FNPC4Text5
@@ -159,13 +195,63 @@ Route5Gate1FNPC1Text:
 	cont "food!"
 	done
 	
-Route5Gate1FNPC2Text:
-	text "I sure am glad"
-	line "there's a rest stop"
-	cont "here."
+Route5Gate1FNPC2Text1:
+	text "Man, I would give"
+	line "ANYTHING for a"
+	cont "RAGECANDYBAR!"
 	
-	para "This road is long"
-	line "and I'm tired!"
+	para "But I spent all"
+	line "my allowance on"
+	cont "#BALLS!"
+	
+	para "Hey, you wanna"
+	line "trade?"
+	
+	para "1 RAGECANDYBAR"
+	line "for 3 #BALLS?"
+	done
+	
+Route5Gate1FNPC2Text2:
+	text "Do you wanna trade"
+	line "again?"
+	
+	para "1 RAGECANDYBAR"
+	line "for 3 #BALLS?"
+	done
+	
+Route5Gate1FNPC2Text3:
+	text "Come back if you"
+	line "want to trade"
+	cont "more!"
+	done
+	
+Route5Gate1FNPC2Text4:
+	text "Oh, come on!"
+	
+	para "That's a fair"
+	line "trade!"
+	done
+	
+Route5Gate1FNPC2Text5:
+	text "But you don't have"
+	line "a RAGECANDYBAR"
+	cont "either!"
+	done
+	
+Route5Gate1FNPC2GiveText:
+	text "<PLAYER> handed"
+	line "over RAGECANDYBAR."
+	done
+	
+Route5Gate1FGetPokeballsText:
+	text "<PLAYER> received"
+	line "3 #BALLS!"
+	done
+	
+Route5Gate1FPutAwayPokeballsText:
+	text "<PLAYER> put the"
+	line "#BALLS in"
+	cont "the BALL POCKET."
 	done
 	
 Route5Gate1FNPC3Text:

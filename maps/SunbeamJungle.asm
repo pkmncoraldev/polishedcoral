@@ -265,6 +265,7 @@ SunbeamJungleKageScript:
 	setevent EVENT_SAVED_SUNBEAM
 	clearevent EVENT_HAVENT_SAVED_SUNBEAM
 	clearevent EVENT_SUNBEAM_BOAT_GONE
+	playmusic MUSIC_LAVA
 .end
 	end
 

@@ -1,8 +1,8 @@
 RefreshmentsShopData:
 	db 5
-	dbw BERRY_JUICE,  1000
-	dbw FRESH_WATER,   800
-	dbw SODA_POP,     1200
-	dbw LEMONADE,     1600
-	dbw RAGECANDYBAR, 2000
+	dbw BERRY_JUICE,   800
+	dbw FRESH_WATER,   700
+	dbw SODA_POP,      800
+	dbw LEMONADE,      900
+	dbw RAGECANDYBAR,  800
 	db -1

@@ -787,7 +787,7 @@ LakeSudowoodoTextHaveFlute:
 	
 	para "Is it…"
 	
-	para "Sleeping?"
+	para "Snoring?"
 	
 	para "Play the"
 	line "# FLUTE?"

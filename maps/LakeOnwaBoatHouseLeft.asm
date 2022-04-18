@@ -379,8 +379,8 @@ LakeBoatManText8:
 	para "The SUNBEAM BOAT"
 	line "HOUSE won't give"
 	cont "us the 10-4 to"
-	cont "ship out for"
-	cont "some reason…"
+	cont "ship out for some"
+	cont "reason…"
 	
 	para "Maybe you should"
 	line "call the person"
@@ -404,8 +404,8 @@ LakeBoatManText10:
 	para "The SUNBEAM BOAT"
 	line "HOUSE won't give"
 	cont "us the 10-4 to"
-	cont "ship out for"
-	cont "some reason…"
+	cont "ship out for some"
+	cont "reason…"
 	
 	para "Maybe you should"
 	line "call the person"

@@ -20,6 +20,7 @@ SunbeamBoatHouseSnare:
 	jumptextfaceplayer SunbeamBoatHouseSnareText
 	
 SunbeamBoatHouseNPC:
+	clearevent EVENT_LAKE_ROCKS_BROWN
 	opentext
 	writetext SunbeamBoatHouseNPCText2
 	special PlaceMoneyTopRight

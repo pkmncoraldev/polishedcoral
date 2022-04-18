@@ -17,6 +17,7 @@ ShimmerBoatHouse_MapScriptHeader:
 	
 	
 ShimmerBoatHouseNPC:
+	clearevent EVENT_LAKE_ROCKS_BROWN
 	opentext
 	writetext ShimmerBoatHouseNPCText2
 	special PlaceMoneyTopRight

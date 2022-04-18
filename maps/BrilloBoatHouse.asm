@@ -23,6 +23,7 @@ BrilloBoatHouse_MapScriptHeader:
 	const BRILLO_BOAT_HOUSE_NPC_2
 	
 BrilloBoatHouseClerk:
+	clearevent EVENT_LAKE_ROCKS_BROWN
 	opentext
 	writetext BrilloBoatHouseClerkText2
 	special PlaceMoneyTopRight

@@ -472,9 +472,6 @@ SunbeamIslandNPC6:
 	end
 
 SunBeamLabSign:
-	setflag ENGINE_THIRDBADGE
-	clearevent EVENT_SPRUCELAB_SPRUCE1_GONE
-	setevent EVENT_SPRUCELAB_SPRUCE3_GONE
 	jumptext SunBeamLabSignText
 
 SunBeamJungleSign:

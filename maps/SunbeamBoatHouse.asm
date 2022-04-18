@@ -303,13 +303,13 @@ SunbeamBoatHouseNPCText4:
 
 SunbeamBoatHouseNPCText5:
 	text "Travel to the"
-	line "WEST end to"
+	line "WEST end of"
 	cont "LAKE ONWA?"
 	done
 
 SunbeamBoatHouseNPCText6:
 	text "Travel to the"
-	line "EAST end to"
+	line "EAST end of"
 	cont "LAKE ONWA?"
 	done
 

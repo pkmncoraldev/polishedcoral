@@ -266,13 +266,13 @@ ShimmerBoatHouseNPCText4:
 
 ShimmerBoatHouseNPCText5:
 	text "Travel to the"
-	line "WEST end to"
+	line "WEST end of"
 	cont "LAKE ONWA?"
 	done
 
 ShimmerBoatHouseNPCText6:
 	text "Travel to the"
-	line "EAST end to"
+	line "EAST end of"
 	cont "LAKE ONWA?"
 	done
 

@@ -15,9 +15,10 @@ Route3_MapScriptHeader:
 	coord_event 47, 30, 0, Route3MakeSilverBrown
 	coord_event 47, 31, 0, Route3MakeSilverBrown
 
-	db 2 ; bg events
+	db 3 ; bg events
 	signpost  7, 17, SIGNPOST_READ, Route3_sign
 	signpost 9, 0, SIGNPOST_READ, Route3_sign2
+	signpost 18, 34, SIGNPOST_READ, Route3_sign3
 
 	db 10 ; object events
 	person_event SPRITE_YOUNGSTER, 8, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute3West_1, -1
@@ -103,6 +104,9 @@ Route3_sign:
 Route3_sign2:
 	jumptext Route3_sign2text
 	
+Route3_sign3:
+	jumptext Route3_sign3text
+	
 Route3_signtext:
 	text "STARGLOW CAVERN"
 	done
@@ -112,6 +116,17 @@ Route3_sign2text:
 	
 	para "EAST:"
 	line "STARGLOW CAVERN"
+	
+	para "WEST:"
+	line "GLINT CITY"
+	done
+	
+Route3_sign3text:
+	text "ROUTE 3"
+	
+	para "EAST:"
+	line "STARGLOW CAVERN"
+	cont "(ALT ENTRANCE)"
 	
 	para "WEST:"
 	line "GLINT CITY"

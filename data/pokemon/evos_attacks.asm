@@ -1664,6 +1664,7 @@ LedybaEvosAttacks:
 	db  1, TACKLE_SCRATCH_POUND
 	db  5, SUPERSONIC
 	db  8, SWIFT
+	db 10, GUST
 	db 12, LIGHT_SCREEN
 	db 12, REFLECT
 	db 15, MACH_PUNCH
@@ -1682,6 +1683,7 @@ LedianEvosAttacks:
 	db  1, TACKLE_SCRATCH_POUND
 	db  1, SUPERSONIC
 	db  1, SWIFT
+	db  1, GUST
 	db  1, LIGHT_SCREEN
 	db  1, REFLECT
 	db  1, SAFEGUARD

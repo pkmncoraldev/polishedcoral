@@ -1725,9 +1725,9 @@ KageGroup:
 	db "KAGE@";"KAGE1@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 25, AZUMARILL
-	db 25, RATICATE
-	db 30, URSARING
+	db 24, AZUMARILL
+	db 24, RATICATE
+	db 25, URSARING
 	db -1 ; end
 
 ; ================

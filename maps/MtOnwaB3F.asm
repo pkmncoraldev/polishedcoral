@@ -33,7 +33,7 @@ LavaCaveBF3Magmar:
 	waitbutton
 	closetext
 	waitsfx
-	loadwildmon MAGMAR, 20
+	loadwildmon MAGMAR, 30
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	disappear MTONWABF3_MAGMAR

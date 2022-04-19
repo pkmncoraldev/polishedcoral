@@ -84,7 +84,6 @@ INCLUDE "maps/Route8Gate.asm"
 INCLUDE "maps/Route8EncounterHouse.asm"
 INCLUDE "maps/Route8Garden.asm"
 INCLUDE "maps/Route8.asm"
-INCLUDE "maps/Route9.asm"
 INCLUDE "maps/DesertRoute.asm"
 INCLUDE "maps/DesertRouteNorth.asm"
 INCLUDE "maps/DesertWastelandOasis.asm"
@@ -321,6 +320,7 @@ INCLUDE "maps/SpookhouseTVRoom.asm"
 
 SECTION "Dodrio Ranch Scripts", ROMX
 
+INCLUDE "maps/Route9.asm"
 INCLUDE "maps/DodrioRanchHouse.asm"
 INCLUDE "maps/DodrioRanchBarn.asm"
 INCLUDE "maps/DodrioRanchRaceTrack.asm"

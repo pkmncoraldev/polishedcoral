@@ -88,7 +88,7 @@
 	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, STAIRS ; 57
 	tilecoll WALL, STAIRS, FLOOR, FLOOR ; 58
 	tilecoll STAIRS, WALL, FLOOR, FLOOR ; 59
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 5a
+	tilecoll FLOOR, FLOOR, COUNTER, COUNTER ; 5a
 	tilecoll LEDGE_DOWN, LEDGE_DOWN, STAIRS, WALL ; 5b
 	tilecoll WALL, WALL, WALL, FLOOR ; 5c
 	tilecoll WALL, FLOOR, WALL, WALL ; 5d

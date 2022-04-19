@@ -1114,9 +1114,9 @@ BirdKeeperGroup:
 	db "RICKY@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 23, PIDGEOTTO
-	db 25, DODUO
-	db 24, TRUMBEAK
+	db 26, PIDGEOTTO
+	db 28, DODUO
+	db 27, TRUMBEAK
 	db -1 ; end
 
 ; ================
@@ -1170,8 +1170,8 @@ BirdKeeperGroup:
 	db "VERN@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 25, NATU
-	db 25, SWABLU
+	db 28, NATU
+	db 28, SWABLU
 	db -1 ; end
 
 ; ================
@@ -1225,9 +1225,9 @@ BirdKeeperGroup:
 	db "ROY@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 24, WINGULL
-	db 24, WINGULL
-	db 24, TRUMBEAK
+	db 27, WINGULL
+	db 27, WINGULL
+	db 27, TRUMBEAK
 	db -1 ; end
 
 ; ================
@@ -1281,7 +1281,7 @@ BirdKeeperGroup:
 	db "CHANCE@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 25, PELIPPER
+	db 29, PELIPPER
 	db -1 ; end
 
 ; ================
@@ -1335,9 +1335,9 @@ BirdKeeperGroup:
 	db "CALEB@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 24, NATU
-	db 24, NATU
-	db 24, PIDGEOTTO
+	db 27, NATU
+	db 27, NATU
+	db 27, PIDGEOTTO
 	db -1 ; end
 
 ; ================

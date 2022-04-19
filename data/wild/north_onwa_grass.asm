@@ -785,7 +785,7 @@
 	db 19, RATICATE		;1%
 	
 	map_id SPOOKY_FOREST_1
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, ZUBAT		;30%
 	db 19, PHANTUMP		;30%
@@ -812,7 +812,7 @@
 	db 19, LITWICK		;1%
 	
 	map_id SPOOKY_FOREST_2
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, ZUBAT		;30%
 	db 19, PHANTUMP		;30%
@@ -839,7 +839,7 @@
 	db 19, LITWICK		;1%
 	
 	map_id SPOOKY_FOREST_3
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, ZUBAT		;30%
 	db 19, PHANTUMP		;30%
@@ -866,7 +866,7 @@
 	db 19, LITWICK		;1%
 	
 	map_id SPOOKY_FOREST_4
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, ZUBAT		;30%
 	db 19, PHANTUMP		;30%
@@ -893,7 +893,7 @@
 	db 19, LITWICK		;1%
 	
 	map_id SPOOKY_FOREST_5
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, ZUBAT		;30%
 	db 19, PHANTUMP		;30%
@@ -920,7 +920,7 @@
 	db 19, LITWICK		;1%
 	
 	map_id SPOOKY_FOREST_6
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, ZUBAT		;30%
 	db 19, PHANTUMP		;30%
@@ -947,7 +947,7 @@
 	db 19, LITWICK		;1%
 	
 	map_id SPOOKY_FOREST_7
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, ZUBAT		;30%
 	db 19, PHANTUMP		;30%
@@ -974,7 +974,7 @@
 	db 19, LITWICK		;1%
 	
 	map_id SPOOKY_FOREST_8
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, ZUBAT		;30%
 	db 19, PHANTUMP		;30%
@@ -1001,7 +1001,7 @@
 	db 19, LITWICK		;1%
 	
 	map_id SPOOKY_FOREST_ESCORT
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, ZUBAT		;30%
 	db 19, PHANTUMP		;30%
@@ -1028,7 +1028,7 @@
 	db 19, LITWICK		;1%
 	
 	map_id SPOOKHOUSE_LIVING_ROOM
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 21, LITWICK		;30%
 	db 21, GASTLY		;30%
@@ -1055,7 +1055,7 @@
 	db 21, RATTATA		;1%
 	
 	map_id SPOOKHOUSE_DINING_ROOM
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 21, LITWICK		;30%
 	db 21, GASTLY		;30%
@@ -1082,7 +1082,7 @@
 	db 21, RATTATA		;1%
 	
 	map_id SPOOKHOUSE_BEDROOM
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 21, LITWICK		;30%
 	db 21, GASTLY		;30%

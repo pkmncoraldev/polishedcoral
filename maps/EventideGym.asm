@@ -975,7 +975,19 @@ EventideGymGuyText:
 	cont "types away easily,"
 	cont "though."
 	
-	para "You've got this!"
+	para "Just a word of"
+	line "warning,"
+	
+	para "this place is"
+	line "super tough, even"
+	cont "for a GYM!"
+	
+	para "You might need to"
+	line "come back after"
+	cont "some training!"
+	
+	para "Give it your best"
+	line "shot!"
 	done
 	
 EventideGymGuyWinText:

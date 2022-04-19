@@ -56,9 +56,8 @@ RanchHouseDodrioGirlText1:
 	
 	para "The DODRIO we"
 	line "raise here are the"
-	
-	para "fastest in the"
-	line "world!"
+	cont "fastest in the"
+	cont "world!"
 	
 	para "People come from"
 	line "far and wide to"

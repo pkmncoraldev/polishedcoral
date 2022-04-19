@@ -529,9 +529,9 @@ RanchRideRaceText2:
 RanchRideRaceText3:
 	text "Great!"
 	
-	para "You have 45 seconds"
-	line "to complete 3 laps"
-	cont "on the track."
+	para "You must do 3 laps"
+	line "on the track in"
+	cont "45 seconds."
 	
 	para "Remember to press"
 	line "the A BUTTON to"

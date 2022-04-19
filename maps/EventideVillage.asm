@@ -27,7 +27,7 @@ EventideVillage_MapScriptHeader:
 	bg_event 27, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
 	bg_event 18, 19, SIGNPOST_JUMPTEXT, EventideVillageSignText
 	bg_event 24, 15, SIGNPOST_JUMPTEXT, EventideVillageBikeShopSignText
-	bg_event 29, 38, SIGNPOST_JUMPTEXT, EventideVillageGymSignText
+	bg_event 30, 38, SIGNPOST_JUMPTEXT, EventideVillageGymSignText
 	signpost 17, 14, SIGNPOST_READ, EventideVillagePokeCenterSign
 	signpost 25, 24, SIGNPOST_READ, EventideVillageMartSign
 

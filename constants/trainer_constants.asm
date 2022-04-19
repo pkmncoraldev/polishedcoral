@@ -167,12 +167,12 @@ PLAYER_F EQU __enum__
 	const ROY_6
 	const ROY_7
 	const ROY_8
-	const SPENCER_3
-	const SPENCER_4
-	const SPENCER_5
-	const SPENCER_6
-	const SPENCER_7
-	const SPENCER_8
+	const CHANCE_3
+	const CHANCE_4
+	const CHANCE_5
+	const CHANCE_6
+	const CHANCE_7
+	const CHANCE_8
 	const CALEB_3
 	const CALEB_4
 	const CALEB_5

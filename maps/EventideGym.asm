@@ -542,7 +542,7 @@ EventideGymTrainer3:
 	done
 	
 EventideGymTrainer4:
-	generictrainer BIRD_KEEPER, SPENCER_3, EVENT_BEAT_EVENTIDE_GYM_TRAINER_4, .SeenText, .BeatenText
+	generictrainer BIRD_KEEPER, CHANCE_3, EVENT_BEAT_EVENTIDE_GYM_TRAINER_4, .SeenText, .BeatenText
 
 	text "Gotta head back"
 	line "the way you came!"
@@ -811,22 +811,22 @@ EventideGymTrainer4Rematch:
 	iftrue .sevenbadges
 	checkflag ENGINE_EIGHTHBADGE
 	iftrue .eightbadges
-	loadtrainer BIRD_KEEPER, SPENCER_3
+	loadtrainer BIRD_KEEPER, CHANCE_3
 	jump .cont
 .fourbadges
-	loadtrainer BIRD_KEEPER, SPENCER_4
+	loadtrainer BIRD_KEEPER, CHANCE_4
 	jump .cont
 .fivebadges
-	loadtrainer BIRD_KEEPER, SPENCER_5
+	loadtrainer BIRD_KEEPER, CHANCE_5
 	jump .cont
 .sixbadges
-	loadtrainer BIRD_KEEPER, SPENCER_6
+	loadtrainer BIRD_KEEPER, CHANCE_6
 	jump .cont
 .sevenbadges
-	loadtrainer BIRD_KEEPER, SPENCER_7
+	loadtrainer BIRD_KEEPER, CHANCE_7
 	jump .cont
 .eightbadges
-	loadtrainer BIRD_KEEPER, SPENCER_8
+	loadtrainer BIRD_KEEPER, CHANCE_8
 .cont
 	startbattle
 	dontrestartmapmusic

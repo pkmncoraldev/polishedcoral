@@ -1278,7 +1278,7 @@ BirdKeeperGroup:
 ; ================
 
 	; BIRD_KEEPER
-	db "SPENCER@"	;3 BADGES
+	db "CHANCE@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 25, PELIPPER
@@ -1287,7 +1287,7 @@ BirdKeeperGroup:
 ; ================
 
 	; BIRD_KEEPER
-	db "SPENCER@"	;4 BADGES
+	db "CHANCE@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1296,7 +1296,7 @@ BirdKeeperGroup:
 ; ================
 
 	; BIRD_KEEPER
-	db "SPENCER@"	;5 BADGES
+	db "CHANCE@"	;5 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1305,7 +1305,7 @@ BirdKeeperGroup:
 ; ================
 
 	; BIRD_KEEPER
-	db "SPENCER@"	;6 BADGES
+	db "CHANCE@"	;6 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1314,7 +1314,7 @@ BirdKeeperGroup:
 ; ================
 
 	; BIRD_KEEPER
-	db "SPENCER@"	;7 BADGES
+	db "CHANCE@"	;7 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1323,7 +1323,7 @@ BirdKeeperGroup:
 ; ================
 
 	; BIRD_KEEPER
-	db "SPENCER@"	;8 BADGES
+	db "CHANCE@"	;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

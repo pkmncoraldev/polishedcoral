@@ -527,7 +527,7 @@ EventideGymTrainer3:
 	cont "you press is,"
 
 	para "the gray conveyors"
-	cont "will change too!"
+	line "will change too!"
 	done
 
 .SeenText:

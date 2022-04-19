@@ -59,8 +59,9 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke SWABLU, 100
-	givepoke JOLTIK, 22
+	givepoke COTTONEE, 100
+	givepoke PHANTUMP, 100
+	givepoke TREVENANT, 100
 ;	loadwildmon SWABLU, 10
 ;	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 ;	startbattle

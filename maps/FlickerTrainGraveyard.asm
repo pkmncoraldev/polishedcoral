@@ -26,7 +26,7 @@ FlickerTrainGraveyard_MapScriptHeader:
 	person_event SPRITE_DELINQUENT_F, 26,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerTrainGraveyardGirl1, -1
 	person_event SPRITE_DELINQUENT_F, 28,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerTrainGraveyardGirl2, -1
 	person_event SPRITE_DELINQUENT_F, 31,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerTrainGraveyardGirl3, -1
-	tmhmball_event  7, 30, TM_THUNDERPUNCH, EVENT_FLICKER_STATION_
+	tmhmball_event  7, 30, WILL_O_WISP, EVENT_FLICKER_STATION_WILL_O_WISP
 
 
 	const_def 1 ; object constants

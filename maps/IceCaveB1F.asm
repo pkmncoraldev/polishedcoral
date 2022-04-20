@@ -35,6 +35,7 @@ IceCaveB1FPokeballRockClimb:
 	writetext ReceivedRockClimbText2
 	waitbutton
 	closetext
+	givetmhm HM_ROCK_CLIMB
 	setevent EVENT_GOT_HM08_ROCK_CLIMB
 	setflag ENGINE_GOT_ROCK_CLIMB
 	end

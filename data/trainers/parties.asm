@@ -2602,6 +2602,15 @@ BoarderGroup:
 	db -1 ; end
 
 ; ================
+
+	; BOARDER
+	db "GEORGE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 27, WYRDEER
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2645,6 +2654,16 @@ SkierGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 28, GLACEON
+	db -1 ; end
+
+; ================
+
+	; SKIER
+	db "LEXI@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 26, LOPUNNY
+	db 27, SNORUNT
 	db -1 ; end
 
 ; ================

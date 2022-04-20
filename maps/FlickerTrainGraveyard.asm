@@ -119,47 +119,73 @@ FlickerTrainGraveyardGirl1:
 	jumptextfaceplayer TrainerFlickerTrainGraveyard_1NormalText
 	
 FlickerTrainGraveyardGirl2:
+	checkevent EVENT_FLICKER_STATION_GIRL_TALKED
+	iftrue .skip1
+	setevent EVENT_FLICKER_STATION_GIRL_TALKED
+	jump .skip2
+.skip1
 	checkevent EVENT_FLICKER_STATION_GIRL_STEP_ASIDE
-	iftrue .skip
+	iftrue .skip2
 	faceplayer
 	opentext
-	writetext TrainerFlickerTrainGraveyard_2NormalText1
+	writetext TrainerFlickerTrainGraveyard_2NormalText2
 	waitbutton
 	closetext
 	applyonemovement FLICKER_STATION_TRAINER2, step_left
 	setevent EVENT_FLICKER_STATION_GIRL_STEP_ASIDE
 	end
-	
-.skip
-	jumptextfaceplayer TrainerFlickerTrainGraveyard_2NormalText2
+.skip2
+	jumptextfaceplayer TrainerFlickerTrainGraveyard_2NormalText1
 	
 FlickerTrainGraveyardGirl3:
 	jumptextfaceplayer TrainerFlickerTrainGraveyard_3NormalText
 	
 TrainerFlickerTrainGraveyard_1SeenText:
-	text "SEEN TEXT"
+	text "Eeek!"
+	
+	para "What are you doing"
+	line "stalking around"
+	cont "back here?"
 	done
 	
 TrainerFlickerTrainGraveyard_1BeatenText:
-	text "BEATEN TEXT"
+	text "Eeek!"
 	done
 	
 TrainerFlickerTrainGraveyard_1NormalText:
-	text "NORMAL TEXT"
+	text "You've got some"
+	line "nerve creeping up"
+	cont "on sweet, innocent"
+	cont "girls like us!"
 	done
 	
 TrainerFlickerTrainGraveyard_2SeenText:
-	text "SEEN TEXT"
+	text "You think you're"
+	line "tough, huh?"
+	
+	para "Well, too bad!"
+	
+	para "This is OUR secret"
+	line "spot!"
 	done
 	
 TrainerFlickerTrainGraveyard_2BeatenText:
-	text "BEATEN TEXT"
+	text "Gah!"
+	
+	para "You ARE tough!"
 	done
 	
 TrainerFlickerTrainGraveyard_2NormalText1:
-	text "NORMAL TEXT"
+	text "Well, whatever…"
 	
-	para "Huh?"
+	para "Just because you"
+	line "beat me, doesn't"
+	cont "mean this is your"
+	cont "spot!"
+	done
+	
+TrainerFlickerTrainGraveyard_2NormalText2:
+	text "Huh?"
 	
 	para "Oh."
 	
@@ -169,20 +195,21 @@ TrainerFlickerTrainGraveyard_2NormalText1:
 	para "Right…"
 	done
 	
-TrainerFlickerTrainGraveyard_2NormalText2:
-	text "NORMAL TEXT"
-	done
-	
 TrainerFlickerTrainGraveyard_3SeenText:
-	text "SEEN TEXT"
+	text "Hehe!"
+	
+	para "You're kinda"
+	line "cute…"
 	done
 	
 TrainerFlickerTrainGraveyard_3BeatenText:
-	text "BEATEN TEXT"
+	text "Hehehe!"
 	done
 	
 TrainerFlickerTrainGraveyard_3NormalText:
-	text "NORMAL TEXT"
+	text "Later, cutie!"
+	
+	para "Hehe!"
 	done
 	
 Movement_FlickerTrainGraveyard3Girls2:

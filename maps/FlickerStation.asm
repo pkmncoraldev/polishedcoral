@@ -3,8 +3,9 @@ FlickerStation_MapScriptHeader:
 	scene_script FlickerStationTrigger0
 	scene_script FlickerStationTrigger1
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, FlickerStationFlypointCallback
+	callback MAPCALLBACK_TILES, FlickerStationCallback
 
 	db 7 ; warp events
 	warp_def 29,  9, 1, FLICKER_POKECENTER
@@ -71,6 +72,13 @@ FlickerStationPlayerSeatAsm:
 	
 FlickerStationFlypointCallback:
 	setflag ENGINE_FLYPOINT_FLICKER
+	return
+	
+FlickerStationCallback:
+	checkevent EVENT_BEAT_TRAINGRAVEYARD_TRAINER_2
+	iffalse .end
+	setevent EVENT_FLICKER_STATION_GIRL_STEP_ASIDE
+.end
 	return
 	
 FlickerStationSnare2:

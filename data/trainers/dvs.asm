@@ -39,7 +39,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; kris
 	db 252, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; stanley
 	db 100, $99, $99, $99, ABILITY_1 | QUIRKY, MALE   ; rodney
-	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE ; wendy
+	db 252, $A7, $7A, $AA, ABILITY_1 | QUIRKY, FEMALE ; wendy
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; charlie
 	db 252, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE   ; chuck
 	db 252, $EE, $EE, $EE, ABILITY_1 | QUIRKY, FEMALE ; jasmine

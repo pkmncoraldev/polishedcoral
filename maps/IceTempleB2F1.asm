@@ -126,11 +126,12 @@ IceTempleMamoswineCutscene:
 	pause 40
 	opentext
 	writetext IceTempleMamoswineText4
-	cry BULBASAUR
+	cry MAMOSWINE
 	waitbutton
 	closetext
 	waitsfx
-	loadwildmon BULBASAUR, 20
+	loadwildmon MAMOSWINE, 30
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	if_equal $1, .cont
 	disappear ICE_TEMPLE_B2F_1_MAMOSWINEP1

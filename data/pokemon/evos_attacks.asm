@@ -1278,6 +1278,20 @@ MagmarEvosAttacks:
 TaurosEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 5, RAGE
+	db 8, HORN_ATTACK
+	db 11, SCARY_FACE_COTTON_SPORE_STRING_SHOT
+	db 15, PURSUIT
+	db 19, REST
+	db 24, PURSUIT
+	db 29, WORK_UP_GROWTH
+	db 35, TAKE_DOWN
+	db 41, ZEN_HEADBUTT
+	db 48, SWAGGER
+	db 55, THRASH
+	db 63, DOUBLE_EDGE
+	db 71, GIGA_IMPACT
 	db 0 ; no more level-up moves
 
 MagikarpEvosAttacks:
@@ -2088,7 +2102,20 @@ ForretressEvosAttacks:
 GligarEvosAttacks:
 	db EVOLVE_HOLDING_NITE, RAZOR_FANG, GLISCOR
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, POISON_STING
+	db 4, SAND_ATTACK_SMOKESCREEN
+	db 7, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 10, KNOCK_OFF
+	db 13, QUICK_ATTACK
+	db 16, FURY_CUTTER
+	db 19, FEINT_ATTACK
+	db 22, ACROBATICS
+	db 27, SLASH
+	db 30, REVERSAL
+	db 35, SCREECH
+	db 40, X_SCISSOR
+	db 45, BRICK_BREAK
+	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 SteelixEvosAttacks:
@@ -2200,6 +2227,21 @@ SneaselEvosAttacks:
 	db EVOLVE_HOLDING_NITE, RAZOR_CLAW, WEAVILE
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 1, TAUNT
+	db 8, QUICK_ATTACK
+	db 10, FEINT_ATTACK
+	db 14, ICY_WIND
+	db 16, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
+	db 20, AGILITY_ROCK_POLISH
+	db 22, METAL_CLAW
+	db 25, SHARPEN_HOWL_MEDITATE
+	db 28, PURSUIT
+	db 32, SCREECH
+	db 35, SLASH
+	db 40, KNOCK_OFF
+	db 44, CRUNCH
+	db 47, ICE_SHARD
 	db 0 ; no more level-up moves
 
 TeddiursaEvosAttacks:
@@ -2275,12 +2317,45 @@ SwinubEvosAttacks:
 	db EVOLVE_LEVEL, 33, PILOSWINE
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
+	db 5, SAND_ATTACK_SMOKESCREEN
+	db 8, HAIL
+	db 11, MUD_SLAP
+	db 14, ENDURE
+	db 18, MAGNITUDE
+	db 21, ICY_WIND
+	db 24, ICE_SHARD
+	db 28, TAKE_DOWN
+	db 35, HAZE
+	db 37, EARTHQUAKE
+	db 40, FLAIL
+	db 44, BLIZZARD
+	db 48, AMNESIA
 	db 0 ; no more level-up moves
 
 PiloswineEvosAttacks:
 	db EVOLVE_MOVE, ANCIENTPOWER, MAMOSWINE
 	db 0 ; no more evolutions
+	db 1, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
+	db 1, ANCIENTPOWER
+	db 1, FLAIL
+	db 1, ICE_SHARD
+	db 1, PECK
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
+	db 5, SAND_ATTACK_SMOKESCREEN
+	db 8, HAIL
+	db 11, MUD_SLAP
+	db 14, ENDURE
+	db 18, MAGNITUDE
+	db 21, ICY_WIND
+	db 24, ICE_FANG
+	db 28, TAKE_DOWN
+	db 37, HAZE
+	db 41, THRASH
+	db 46, EARTHQUAKE
+	db 52, BLIZZARD
+	db 58, AMNESIA
 	db 0 ; no more level-up moves
 
 CorsolaEvosAttacks:
@@ -2477,7 +2552,21 @@ MagbyEvosAttacks:
 
 MiltankEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, BRICK_BREAK
+	db 1, REST
+	db 1, SNORE
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 1, RAGE
+	db 11, SOFTBOILED_MILK_DRINK
+	db 15, STOMP
+	db 19, ROLLOUT
+	db 24, BODY_SLAM
+	db 29, ZEN_HEADBUTT
+	db 35, ATTRACT
+	db 48, HEAL_BELL
+	db 50, CROSS_CHOP
 	db 0 ; no more level-up moves
 	
 BlisseyEvosAttacks:
@@ -2898,11 +2987,34 @@ SnoruntEvosAttacks:
 	db EVOLVE_ITEM_FEMALE, DAWN_STONE, FROSLASS
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 5, DOUBLE_TEAM
+	db 10, ICE_SHARD
+	db 14, ICY_WIND
+	db 19, BITE
+	db 23, AURORA_BEAM
+	db 28, HEADBUTT
+	db 34, PROTECT
+	db 41, CRUNCH
+	db 46, BLIZZARD
+	db 50, HAIL
 	db 0 ; no more level-up moves
 	
 GlalieEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, ICE_FANG
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 5, DOUBLE_TEAM
+	db 10, ICE_SHARD
+	db 14, ICY_WIND
+	db 19, BITE
+	db 23, AURORA_BEAM
+	db 28, HEADBUTT
+	db 34, PROTECT
+	db 41, CRUNCH
+	db 48, BLIZZARD
+	db 54, HAIL
 	db 0 ; no more level-up moves
 	
 BuizelEvosAttacks:
@@ -3048,16 +3160,58 @@ SnoverEvosAttacks:
 	db EVOLVE_LEVEL, 40, ABOMASNOW
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 5, RAZOR_LEAF
+	db 9, ICY_WIND
+	db 13, SING
+	db 17, SWAGGER
+	db 21, HAZE
+	db 26, AURORA_BEAM
+	db 31, LEECH_SEED
+	db 36, ICE_SHARD
+	db 41, WOOD_HAMMER
+	db 46, BLIZZARD
 	db 0 ; no more level-up moves
 	
 AbomasnowEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, ICE_PUNCH
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 5, RAZOR_LEAF
+	db 9, ICY_WIND
+	db 13, SING
+	db 17, SWAGGER
+	db 21, HAZE
+	db 26, AURORA_BEAM
+	db 31, LEECH_SEED
+	db 36, ICE_SHARD
+	db 47, WOOD_HAMMER
+	db 58, BLIZZARD
 	db 0 ; no more level-up moves
 	
 WeavileEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, ICE_SHARD
+	db 1, SLASH
+	db 1, AGILITY_ROCK_POLISH
+	db 1, BRICK_BREAK
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 1, TAUNT
+	db 8, QUICK_ATTACK
+	db 10, FEINT_ATTACK
+	db 14, ICY_WIND
+	db 16, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
+	db 20, NASTY_PLOT
+	db 22, METAL_CLAW
+	db 25, SHARPEN_HOWL_MEDITATE
+	db 28, PURSUIT
+	db 32, SCREECH
+	db 35, NIGHT_SLASH
+	db 40, KNOCK_OFF
+	db 44, CRUNCH
+	db 47, DARK_PULSE
 	db 0 ; no more level-up moves
 	
 MagnezoneEvosAttacks:
@@ -3138,7 +3292,7 @@ LeafeonEvosAttacks:
 	db 5, SAND_ATTACK_SMOKESCREEN
 	db 9, CHARM_FEATHER_DANCE
 	db 13, QUICK_ATTACK
-	db 17, SLEEP_POWDER
+	db 17, SING
 	db 21, RAZOR_LEAF
 	db 25, GIGA_DRAIN
 	db 29, SWORDS_DANCE
@@ -3158,7 +3312,7 @@ GlaceonEvosAttacks:
 	db 9, CHARM_FEATHER_DANCE
 	db 13, QUICK_ATTACK
 	db 17, BITE
-	db 21, ICE_FANG
+	db 21, AURORA_BEAM
 	db 25, ICE_SHARD
 	db 29, BARRIER_IRON_DEFENSE_ACID_ARMOR
 	db 33, HAZE
@@ -3169,12 +3323,51 @@ GlaceonEvosAttacks:
 	
 GliscorEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, THUNDER_FANG
+	db 1, ICE_FANG
+	db 1, FIRE_FANG
+	db 1, POISON_JAB
+	db 1, SLASH
+	db 1, POISON_STING
+	db 4, SAND_ATTACK_SMOKESCREEN
+	db 7, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 10, KNOCK_OFF
+	db 13, QUICK_ATTACK
+	db 16, FURY_CUTTER
+	db 19, FEINT_ATTACK
+	db 22, ACROBATICS
+	db 27, NIGHT_SLASH
+	db 30, REVERSAL
+	db 35, SCREECH
+	db 40, X_SCISSOR
+	db 45, BRICK_BREAK
+	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 	
 MamoswineEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
+	db 1, SCARY_FACE_COTTON_SPORE_STRING_SHOT
+	db 1, ANCIENTPOWER
+	db 1, FLAIL
+	db 1, ICE_SHARD
+	db 1, PECK
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
+	db 5, SAND_ATTACK_SMOKESCREEN
+	db 8, HAIL
+	db 11, MUD_SLAP
+	db 14, ENDURE
+	db 18, MAGNITUDE
+	db 21, ICY_WIND
+	db 24, ICE_FANG
+	db 28, TAKE_DOWN
+	db 33, DOUBLE_HIT
+	db 37, HAZE
+	db 41, THRASH
+	db 46, EARTHQUAKE
+	db 52, BLIZZARD
+	db 58, AMNESIA
 	db 0 ; no more level-up moves
 	
 PorygonZEvosAttacks:
@@ -3220,7 +3413,23 @@ GalladeEvosAttacks:
 	
 FroslassEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, OMINOUS_WIND
+	db 1, DESTINY_BOND
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 5, DOUBLE_TEAM
+	db 10, ICE_SHARD
+	db 14, ICY_WIND
+	db 19, NIGHT_SHADE
+	db 23, MEGA_DRAIN
+	db 28, WILL_O_WISP
+	db 32, CONFUSE_RAY
+	db 37, BRICK_BREAK
+	db 40, ATTRACT
+	db 42, SHADOW_BALL
+	db 48, BLIZZARD
+	db 54, HAIL
+	db 61, DESTINY_BOND
 	db 0 ; no more level-up moves
 	
 DrilburEvosAttacks:

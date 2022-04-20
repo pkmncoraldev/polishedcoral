@@ -2177,6 +2177,11 @@ PoundUsers:
 	db DRATINI
 	db DRAGONAIR
 	db DRAGONITE
+	db SNOVER
+	db ABOMASNOW
+	db SNORUNT
+	db GLALIE
+	db FROSLASS
 	db -1
 	
 ScratchUsers:
@@ -2196,6 +2201,8 @@ ScratchUsers:
 	db NIDOQUEEN
 	db TEDDIURSA
 	db URSARING
+	db SNEASEL
+	db WEAVILE
 	db -1
 	
 WithdrawUsers:
@@ -2217,6 +2224,8 @@ HardenUsers:
 	db ARON
 	db LAIRON
 	db AGGRON
+	db GLIGAR
+	db GLISCOR
 	db -1
 
 TailWhipUsers:
@@ -2243,6 +2252,7 @@ TailWhipUsers:
 	db LEAFEON
 	db GLACEON
 	db SYLVEON
+	db TAUROS
 	db -1
 	
 IronDefenseUsers:
@@ -2273,6 +2283,8 @@ HowlUsers:
 	db ARCANINE
 	db HOUNDOUR
 	db HOUNDOOM
+	db SNEASEL
+	db WEAVILE
 	db -1
 	
 FuryAttackUsers:
@@ -2283,6 +2295,9 @@ FuryAttackUsers:
 	db DODUO
 	db DODRIO
 	db HERACROSS
+	db SWINUB
+	db PILOSWINE
+	db MAMOSWINE
 	db -1
 	
 CometPunchUsers:
@@ -2371,7 +2386,7 @@ SmokescreenUsers:
 	db -1
 	
 MilkDrinkUsers:
-	db SMEARGLE
+	db MILTANK
 	db -1
 	
 OdorSleuthUsers:
@@ -2379,6 +2394,9 @@ OdorSleuthUsers:
 	db ARCANINE
 	db MUNCHLAX
 	db SNORLAX
+	db SWINUB
+	db PILOSWINE
+	db MAMOSWINE
 	db -1
 	
 MiracleEyeUsers:

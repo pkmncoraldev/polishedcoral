@@ -139,7 +139,7 @@ EvolutionMoves::
 	db NO_MOVE      						; SLUGMA
 	db SHELL_SMASH  						; MAGCARGO
 	db NO_MOVE      						; SWINUB
-	db NO_MOVE      						; PILOSWINE
+	db FURY_SWIPES_FURY_ATTACK_COMET_PUNCH  ; PILOSWINE
 	db NO_MOVE      						; CORSOLA
 	db NO_MOVE      						; SKARMORY
 	db NO_MOVE      						; HOUNDOUR
@@ -178,7 +178,7 @@ EvolutionMoves::
 	db NO_MOVE      						; SWABLU
 	db DRAGONBREATH      					; ALTARIA
 	db NO_MOVE      						; SNORUNT
-	db NO_MOVE      						; GLALIE
+	db ICE_FANG      						; GLALIE
 	db NO_MOVE      						; BUIZEL
 	db ICE_FANG     						; FLOATZEL
 	db NO_MOVE      						; DRIFLOON
@@ -205,7 +205,7 @@ EvolutionMoves::
 	db NO_MOVE      						; MAMOSWINE
 	db NO_MOVE      						; PORYGON_Z
 	db SLASH								; GALLADE
-	db NO_MOVE								; FROSLASS
+	db OMINOUS_WIND							; FROSLASS
 	db NO_MOVE     							; DRILBUR
 	db NO_MOVE     							; EXCADRILL
 	db NO_MOVE     							; VENIPEDE

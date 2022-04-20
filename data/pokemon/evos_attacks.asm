@@ -3933,6 +3933,15 @@ ToxapexEvosAttacks:
 WyrdeerEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 5, LEER_TAIL_WHIP
+	db 10, HYPNOSIS
+	db 14, STOMP
+	db 19, SAND_ATTACK_SMOKESCREEN
+	db 23, TAKE_DOWN
+	db 28, CONFUSE_RAY
+	db 32, CALM_MIND
+	db 37, ZEN_HEADBUTT
+	db 46, JUMP_KICK
 	db 0 ; no more level-up moves
 	
 Raichu_AEvosAttacks:

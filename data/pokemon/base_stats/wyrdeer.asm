@@ -1,4 +1,4 @@
-	db  73,  95,  62,  85,  85,  65
+	db 103, 105,  72,  65, 105,  75
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, PSYCHIC ; type

@@ -152,7 +152,7 @@ TwinkleGymCharlieTextBeforeBattle:
 	
 	para "How've you been!"
 	
-	para "You decided to come"
+	para "So you came to"
 	line "test your skills"
 	cont "in battle, huh?"
 	
@@ -203,11 +203,12 @@ TwinkleGymCharlieTextLoss:
 	done
 	
 TwinkleGymCharlieTextAfterBattle:
-	text "That BADGE shows just"
-	line "how tough you are!"
+	text "That BADGE shows"
+	line "just how tough"
+	cont "you are!"
 	
-	para "It let's you use the"
-	line "HM ROCK CLIMB"
+	para "It let's you use"
+	line "the HM ROCK CLIMB"
 	cont "outside of battle."
 	
 	para "You should also"
@@ -218,9 +219,10 @@ TwinkleGymCharlieTextTMSpeech:
 	text "That TM contains"
 	line "SUNNY DAY."
 	
-	para "Use it, and the sun"
-	line "will shine no matter"
-	cont "the weather!"
+	para "Use it, and the"
+	line "sun will shine no"
+	cont "matter the"
+	cont "weather!"
 	
 	para "FIRE-type moves"
 	line "are boosted in the"
@@ -231,16 +233,18 @@ TwinkleGymCharlieTextTMSpeech:
 	
 	para "…"
 	
-	para "You may have beaten"
-	line "me, but you still"
-	cont "have a long ways to"
-	cont "go!"
+	para "You may have"
+	line "beaten me,"
 	
-	para "Never lose your drive"
-	line "to improve."
+	para "but you still have"
+	line "have a long ways"
+	cont "to go!"
 	
-	para "Never let that flame"
-	line "die!"
+	para "Never lose your"
+	line "drive to improve."
+	
+	para "Never let that"
+	line "flame die!"
 	
 	para "You're welcome back"
 	line "anytime you want a"
@@ -248,16 +252,18 @@ TwinkleGymCharlieTextTMSpeech:
 	done
 	
 TwinkleGymCharlieTextLoop:
-	text "You may have beaten"
-	line "me, but you still"
-	cont "have a long ways to"
-	cont "go!"
+	text "You may have"
+	line "beaten me,"
 	
-	para "Never lose your drive"
-	line "to improve."
+	para "but you still have"
+	line "have a long ways"
+	cont "to go!"
 	
-	para "Never let that flame"
-	line "die!"
+	para "Never lose your"
+	line "drive to improve."
+	
+	para "Never let that"
+	line "flame die!"
 	
 	para "You're welcome back"
 	line "anytime you want a"
@@ -270,8 +276,9 @@ TwinkleGymCharlieTextBeforeBattle1Rematch:
 	para "You beat everyone"
 	line "else!"
 	
-	para "That means you want"
-	line "a rematch, right?"
+	para "That means you"
+	line "want a rematch,"
+	cont "right?"
 	done
 	
 TwinkleGymCharlieTextBeforeBattle2Rematch:

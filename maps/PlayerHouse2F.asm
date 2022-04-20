@@ -26,7 +26,7 @@ PlayerHouse2F_MapScriptHeader:
 
 	db 17 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
-	bg_event  5,  1, SIGNPOST_READ, PlayerHouseRadio
+	bg_event  5,  1, SIGNPOST_JUMPSTD, radio2
 	bg_event  7,  1, SIGNPOST_READ, PlayerHouseBookshelf
 	bg_event  3,  1, SIGNPOST_READ, PlayerHouseCloset
 ;	powergap
@@ -405,9 +405,10 @@ PlayerHouseRadio:
 	end
 
 PlayerHousePC:
-	opentext
-	special Special_PlayerHousePC
-	endtext
+	jumptext PlayerHousePCText
+;	opentext
+;	special Special_PlayerHousePC
+;	endtext
 
 PlayerHouseCloset:
 	opentext
@@ -571,6 +572,15 @@ KrisRadioText3:
 KrisRadioText4:
 	text "#MON!"
 	line "#MON CHANNEL…"
+	done
+
+PlayerHousePCText:
+	text "Your PC."
+	
+	para "It has a cool"
+	line "desktop background"
+	cont "you picked out"
+	cont "yourself!"
 	done
 
 FixPlayerPalKrisHouse:

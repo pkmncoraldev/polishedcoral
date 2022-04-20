@@ -2267,6 +2267,9 @@ IronDefenseUsers:
 	db SCYTHER
 	db SCIZOR
 	db CORSOLA
+	db LARVITAR
+	db PUPITAR
+	db TYRANITAR
 	db -1
 	
 AcidArmorUsers:
@@ -2455,7 +2458,7 @@ LeerNames:
 	
 BarrierNames:
 	db "IRON DEFENSE@"
-	db "ACID ARMOR"
+	db "ACID ARMOR@"
 	db "BARRIER@"
 	db -1
 	

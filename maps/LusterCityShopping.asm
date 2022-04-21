@@ -7,7 +7,7 @@ LusterCityShopping_MapScriptHeader:
 	callback MAPCALLBACK_TILES, ShoppingCallback
 
 	db 8 ; warp events
-	warp_def 11,  0, 1, ROUTE_1
+	warp_def 11,  0, 1, LUSTER_TRAIN_STATION
 	warp_def 11,  1, 2, LUSTER_TRAIN_STATION
 	warp_def 33, 12, 1, LUSTER_MALL
 	warp_def 33, 13, 2, LUSTER_MALL

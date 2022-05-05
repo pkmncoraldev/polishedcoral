@@ -1063,7 +1063,7 @@ ExeggutorEvosAttacks:
 	db 0 ; no more level-up moves
 
 CuboneEvosAttacks:
-	db EVOLVE_LEVEL_DAY, 39, MAROWAK
+	db EVOLVE_LEVEL_DAY, 28, MAROWAK
 	db EVOLVE_LEVEL_NITE, 28, MAROWAK_A
 	db  0 ; no more evolutions
 	db  1, GROWL

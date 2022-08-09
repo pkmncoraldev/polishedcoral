@@ -1014,12 +1014,38 @@ OnixEvosAttacks:
 VoltorbEvosAttacks:
 	db EVOLVE_LEVEL, 30, ELECTRODE
 	db 0 ; no more evolutions
+	db 1, SONIC_BOOM
 	db 1, TACKLE_SCRATCH_POUND
+	db 9, SPARK
+	db 11, ROLLOUT
+	db 13, SCREECH
+	db 16, THUNDERSHOCK
+	db 20, SWIFT
+	db 22, ELECTRO_BALL
+	db 27, SELFDESTRUCT
+	db 32, LIGHT_SCREEN
+	db 37, THUNDERBOLT
+	db 41, EXPLOSION
+	db 46, GYRO_BALL
+	db 50, MIRROR_MOVE
 	db 0 ; no more level-up moves
 
 ElectrodeEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, SONIC_BOOM
 	db 1, TACKLE_SCRATCH_POUND
+	db 9, SPARK
+	db 11, ROLLOUT
+	db 13, SCREECH
+	db 16, THUNDERSHOCK
+	db 20, SWIFT
+	db 22, ELECTRO_BALL
+	db 27, SELFDESTRUCT
+	db 35, LIGHT_SCREEN
+	db 41, THUNDERBOLT
+	db 46, EXPLOSION
+	db 48, GYRO_BALL
+	db 55, MIRROR_MOVE
 	db 0 ; no more level-up moves
 
 ExeggcuteEvosAttacks:
@@ -2509,7 +2535,16 @@ StantlerEvosAttacks:
 
 SmeargleEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, SKETCH
+	db 11, SKETCH
+	db 21, SKETCH
+	db 31, SKETCH
+	db 41, SKETCH
+	db 51, SKETCH
+	db 61, SKETCH
+	db 71, SKETCH
+	db 81, SKETCH
+	db 91, SKETCH
 	db 0 ; no more level-up moves
 
 ElekidEvosAttacks:

@@ -20,7 +20,7 @@ Route3_MapScriptHeader:
 	signpost 9, 0, SIGNPOST_READ, Route3_sign2
 	signpost 18, 34, SIGNPOST_READ, Route3_sign3
 
-	db 10 ; object events
+	db 11 ; object events
 	person_event SPRITE_YOUNGSTER, 8, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute3West_1, -1
 	person_event SPRITE_COOLTRAINER_M, 16, 30, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute3West_2, -1
 	itemball_event 46, 30, RARE_CANDY, 1, EVENT_ROUTE_3_RARE_CANDY
@@ -31,6 +31,7 @@ Route3_MapScriptHeader:
 	smashrock_event 47, 15
 	smashrock_event 44, 10
 	smashrock_event 47, 11
+	fruittree_event 22, 10, FRUITTREE_ROUTE_3_1, CHERI_BERRY
 
 	const_def 1 ; object constants
 	const ROUTE3WEST_TRAINER1

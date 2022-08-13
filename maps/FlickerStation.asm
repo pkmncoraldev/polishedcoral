@@ -36,7 +36,7 @@ FlickerStation_MapScriptHeader:
 	person_event SPRITE_HIKER, 13, 20, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC7, -1
 	person_event SPRITE_SNARE, 35, 17, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	itemball_event 22, 34, TRAIN_TICKET, 1, EVENT_FLICKER_STATION_TRAIN_TICKET
-	itemball_event 13, 10, POTION, 1, EVENT_FLICKER_STATION_POKEBALL
+	itemball_event 13, 10, MAX_REVIVE, 1, EVENT_FLICKER_STATION_POKEBALL
 
 
 	const_def 1 ; object constants

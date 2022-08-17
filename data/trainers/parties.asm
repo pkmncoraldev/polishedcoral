@@ -535,7 +535,7 @@ YoungsterGroup:
 
 ; ================
 
-	; YOUNGSTER
+	; YOUNGSTER ;TRAIN
 	db "JIMMY@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -729,7 +729,7 @@ TwinsGroup:
 
 ; ================
 
-	; TWINS
+	; TWINS :TRAIN
 	db "TIA & MIA@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -738,7 +738,7 @@ TwinsGroup:
 
 ; ================
 
-	; TWINS
+	; TWINS :TRAIN
 	db "MIA & TIA@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -1101,7 +1101,7 @@ BirdKeeperGroup:
 
 ; ================
 
-	; BIRD_KEEPER
+	; BIRD_KEEPER ;TRAIN
 	db "JAZZ@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -1610,7 +1610,8 @@ GruntMGroup:
 	db "TRAINM1@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 30, TRUMBEAK
+	db 31, PIDGEOTTO
 	db -1 ; end
 
 ; ================
@@ -1619,7 +1620,8 @@ GruntMGroup:
 	db "TRAINM2@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 30, GOLBAT
+	db 31, ZUBAT
 	db -1 ; end
 
 ; ================
@@ -1628,7 +1630,8 @@ GruntMGroup:
 	db "TRAINM3@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 32, NIDORINO
+	db 33, NIDORAN_F
 	db -1 ; end
 
 ; ================
@@ -1637,7 +1640,9 @@ GruntMGroup:
 	db "TRAINM4@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 28, GLOOM
+	db 26, RATICATE
+	db 30, WINGULL
 	db -1 ; end
 
 ; ================
@@ -1646,13 +1651,14 @@ GruntMGroup:
 	db "TRAINM5@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 32, SHROOMISH
+	db 31, PERSIAN
 	db -1 ; end
 
 ; ================
 
-	; LUSTER_GRUNTM
-	db "TRAINM@"
+	; LUSTER_GRUNTM ;PART TIME JOB
+	db "LUSTERM@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1699,9 +1705,14 @@ GruntFGroup:
 
 	; TRAIN_GRUNTF_1
 	db "TRAINF1@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 31, KIRLIA
+		db PSYCHIC_M, CALM_MIND, WISH, SAFEGUARD
+	db 32, DODUO
+		db FLAIL, MIRROR_MOVE, AGILITY_ROCK_POLISH, DOUBLE_HIT
+	db 33, LEDIAN
+		db LIGHT_SCREEN, REFLECT, SIGNAL_BEAM, 0
 	db -1 ; end
 
 ; ================
@@ -1710,7 +1721,8 @@ GruntFGroup:
 	db "TRAINF2@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 31, BUNEARY
+	db 31, PIKACHU
 	db -1 ; end
 
 ; ================
@@ -1742,7 +1754,9 @@ LockeGroup:
 	db "LOCKE@";"LOCKE1@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 34, BRELOOM
+	db 35, NIDORINA
+	db 36, MACHOKE
 	db -1 ; end
 
 ; ================
@@ -1832,7 +1846,7 @@ PokefanFGroup:
 
 ; ================
 
-	; POKEFANF
+	; POKEFANF :TRAIN
 	db "URSALA@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -2423,7 +2437,7 @@ GentlemanGroup:
 
 ; ================
 
-	; GENTLEMAN
+	; GENTLEMAN ;TRAIN
 	db "HOWARD@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -2463,7 +2477,7 @@ LadyGroup:
 
 ; ================
 
-	; LADY
+	; LADY ;TRAIN
 	db "GRETCHEN@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -3035,7 +3049,8 @@ DelinquentfGroup:
 	db "HELGA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 29, DWEBBLE
+	db 30, JOLTIK
 	db -1 ; end
 
 ; ================
@@ -3044,7 +3059,8 @@ DelinquentfGroup:
 	db "MERTLE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 29, FLAAFFY
+	db 30, HORSEA
 	db -1 ; end
 
 ; ================
@@ -3053,7 +3069,7 @@ DelinquentfGroup:
 	db "REGINA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 32, MACHOKE
 	db -1 ; end
 
 ; ================

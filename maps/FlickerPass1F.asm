@@ -124,8 +124,8 @@ TrainerFlickerPass1F_5:
 	text "Hold on!"
 	
 	para "One more battle"
-	line "before you climb"
-	cont "that ladder!"
+	line "before you move"
+	cont "on!"
 	done
 
 .BeatenText:

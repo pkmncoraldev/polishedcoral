@@ -85,6 +85,7 @@ PlayerHouseDebugPoster:
 	giveitem COVER_FOSSIL, 1
 	giveitem PLUME_FOSSIL, 1
 	giveitem OLD_AMBER, 1
+	giveitem SAFE_GOGGLES, 1
 .keyitems
 	writetext PlayerHouseDebugText2
 	yesorno

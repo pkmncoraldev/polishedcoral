@@ -185,7 +185,7 @@ ItemNames::
 	db "MUSCLE BAND@"
 	db "PROTECT PADS@"
 	db "ROCKY HELMET@"
-	db "SAFE GOGGLES@"
+	db "SAFETYGOGGLE@"
 	db "SHED SHELL@"
 	db "SHELL BELL@"
 	db "SOOTHE BELL@"

@@ -168,8 +168,11 @@ EvolveAfterBattle_MasterLoop:
 .trade
 	ld a, [wLinkMode]
 	and a
-	jp z, .dont_evolve_2
-
+	jr nz, .trading
+	ld a, [wCurItem]
+	cp LINK_CABLE
+	jp nz, .dont_evolve_2
+.trading
 	call IsMonHoldingEverstone
 	jp z, .dont_evolve_2
 

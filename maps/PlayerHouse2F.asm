@@ -58,8 +58,8 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke COTTONEE, 100
-	givepoke PHANTUMP, 100
+	givepoke NIDORINO, 100
+	givepoke PIKACHU, 100
 	givepoke TREVENANT, 100
 ;	loadwildmon SWABLU, 10
 ;	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
@@ -69,6 +69,8 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
+	giveitem KINGS_ROCK, 1
+	giveitem LINK_CABLE, 99
 	giveitem UP_GRADE, 2
 	giveitem RARE_CANDY, 99
 	giveitem PROTEIN, 99
@@ -85,7 +87,7 @@ PlayerHouseDebugPoster:
 	giveitem COVER_FOSSIL, 1
 	giveitem PLUME_FOSSIL, 1
 	giveitem OLD_AMBER, 1
-	giveitem SAFE_GOGGLES, 1
+	giveitem EVERSTONE, 1
 .keyitems
 	writetext PlayerHouseDebugText2
 	yesorno

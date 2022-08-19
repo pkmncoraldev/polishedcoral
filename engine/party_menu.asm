@@ -460,6 +460,10 @@ PlacePartyMonEvoStoneCompatibility:
 	ld a, b
 	cp EVERSTONE
 	jr z, .loop2
+	ld a, [wCurItem]
+	cp LINK_CABLE
+	jr nz, .loop2
+	ld a, b
 	jr .checkHeldItem
 .checkItemMale
 	ld a, c

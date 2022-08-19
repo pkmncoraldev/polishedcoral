@@ -179,7 +179,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; SMOKE_BALL
 	dw NoEffect         ; BERSERK_GENE
 	dw NoEffect         ; LIGHT_BALL
-	dw NoEffect         ; STICK
+	dw NoEffect         ; LINK_CABLE
 	dw NoEffect         ; THICK_CLUB
 	dw NoEffect         ; LUCKY_PUNCH
 	dw NoEffect         ; METAL_POWDER

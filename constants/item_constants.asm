@@ -189,7 +189,7 @@
 	const BERSERK_GENE ; a4 - replace
 
 	const LIGHT_BALL   ; a5
-	const STICK        ; a6 - replace
+	const LINK_CABLE   ; a6 - replace
 	const THICK_CLUB   ; a7
 	const LUCKY_PUNCH  ; a8
 	const METAL_POWDER ; a9
@@ -520,7 +520,7 @@
 	const NAM_SQUIRTBOTTLE ; df
 	const NAM_STAR_PIECE   ; e0
 	const NAM_STARDUST     ; e1
-	const NAM_STICK        ; e2
+	const NAM_LINK_CABLE        ; e2
 	const NAM_SUN_STONE    ; e3
 	const NAM_SUPER_POTION ; e4
 	const NAM_SUPER_REPEL  ; e5

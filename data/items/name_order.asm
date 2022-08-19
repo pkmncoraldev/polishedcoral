@@ -188,7 +188,7 @@ ItemNameOrder:
 	db NAM_BERSERK_GENE ; 0d
 
 	db NAM_LIGHT_BALL   ; 68
-	db NAM_STICK        ; e2
+	db NAM_LINK_CABLE        ; e2
 	db NAM_THICK_CLUB   ; ea
 	db NAM_LUCKY_PUNCH  ; 6f
 	db NAM_METAL_POWDER ; 80

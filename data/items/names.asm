@@ -164,7 +164,7 @@ ItemNames::
 	db "SMOKE BALL@"
 	db "BERSERK GENE@"
 	db "LIGHT BALL@"
-	db "STICK@"
+	db "LINK CABLE@"
 	db "THICK CLUB@"
 	db "LUCKY PUNCH@"
 	db "METAL POWDER@"

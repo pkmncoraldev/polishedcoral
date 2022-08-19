@@ -22,7 +22,6 @@ GourmetManiacItemRewards:
 	dbw MOOMOO_MILK,  500
 	dbw RAGECANDYBAR, 300
 	dbw RARE_CANDY,   10000
-	dbw STICK,        2000
 	dbw LEFTOVERS,    4000
 	dbw LUCKY_EGG,    4000
 	dbw TINYMUSHROOM, 500

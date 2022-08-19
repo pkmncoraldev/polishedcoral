@@ -56,14 +56,6 @@ LusterMallSkateShop_Clerk:
 	end
 .no_board
 	writetext LusterMallSkateShop_ClerkText1
-	yesorno
-	iffalse .no_board_no
-	writetext LusterMallSkateShop_ClerkText5
-	waitbutton
-	closetext
-	end
-.no_board_no
-	writetext LusterMallSkateShop_ClerkText6
 	waitbutton
 	closetext
 	end
@@ -135,11 +127,16 @@ LusterMallSkateShop_ClerkText1:
 	
 	para "I'll give you the"
 	line "“annoying kid”"
-	cont "discount."
+	cont "deal."
 	
-	para "I'll give it to"
-	line "you for just"
-	cont "¥1,000,000."
+	para "You get out of"
+	line "my shop,"
+	
+	para "and I won't pummle"
+	line "you into the"
+	cont "ground."
+	
+	para "Sound good to you?"
 	done
 	
 LusterMallSkateShop_ClerkText2:
@@ -180,44 +177,6 @@ LusterMallSkateShop_ClerkTextNo:
 	text "Whatever."
 
 	para "Your loss."
-	done
-	
-LusterMallSkateShop_ClerkText5:
-	text "You can't afford"
-	line "that!"
-	
-	para "Maybe you'll find"
-	line "a SKATEBOARD"
-	cont "somewhere else."
-	
-	para "Hehe…"
-	
-	para "As if…"
-	
-	para "Now get outta"
-	line "here, kid!"
-	
-	para "You're holding up"
-	line "the line!"
-	done
-	
-LusterMallSkateShop_ClerkText6:
-	text "That's what I"
-	line "thought."
-	
-	para "Maybe you'll find"
-	line "a SKATEBOARD"
-	cont "somewhere else."
-	
-	para "Hehe…"
-	
-	para "As if…"
-	
-	para "Now get outta"
-	line "here, kid!"
-	
-	para "You're holding up"
-	line "the line!"
 	done
 	
 LusterMallSkateShop_ClerkText7:

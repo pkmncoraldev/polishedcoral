@@ -102,8 +102,18 @@ FlickerMart:
 	db -1
 	
 TwinkleMart:
-	db 1 ; # items
-	db POTION
+	db 11 ; # items
+	db POKE_BALL
+	db GREAT_BALL
+	db SUPER_POTION
+	db ESCAPE_ROPE
+	db REPEL
+	db SUPER_REPEL
+	db ANTIDOTE
+	db PARALYZEHEAL
+	db AWAKENING
+	db BURN_HEAL
+	db ICE_HEAL
 	db -1
 	
 LusterMart:
@@ -113,7 +123,8 @@ LusterMart:
 	
 LusterMallElectronics:
 	db 1 ; # items
-	db POTION
+	db UP_GRADE
+	db LINK_CABLE
 	db -1
 	
 LusterMallElectronicsTM:
@@ -132,24 +143,39 @@ LusterMallAntique:
 	db -1
 	
 LusterMallHerb:
-	db 1 ; # items
-	db POTION
+	db 7 ; # items
+	db ENERGYPOWDER
+	db ENERGY_ROOT
+	db HEAL_POWDER
+	db REVIVAL_HERB
+	db MENTAL_HERB
+	db POWER_HERB
+	db WHITE_HERB
 	db -1
 	
 LusterMallStone:
-	db 1 ; # items
-	db POTION
+	db 10 ; # items
+	db LEAF_STONE
+	db FIRE_STONE
+	db WATER_STONE
+	db THUNDERSTONE
+	db MOON_STONE
+	db SUN_STONE
+	db DUSK_STONE
+	db SHINY_STONE
+	db DAWN_STONE
+	db EVERSTONE
 	db -1
 	
 LusterMallClothes:
 	db 7 ; # items
-	dbw RED_CLOTHES, 	100
-	dbw BLUE_CLOTHES, 	100
-	dbw GREEN_CLOTHES, 	100
-	dbw BROWN_CLOTHES,	100
-	dbw PURPLE_CLOTHES, 100
-	dbw TEAL_CLOTHES, 	100
-	dbw PINK_CLOTHES, 	100
+	dbw RED_CLOTHES, 	5000
+	dbw BLUE_CLOTHES, 	5000
+	dbw GREEN_CLOTHES, 	5000
+	dbw BROWN_CLOTHES,	5000
+	dbw PURPLE_CLOTHES, 5000
+	dbw TEAL_CLOTHES, 	5000
+	dbw PINK_CLOTHES, 	5000
 	db -1
 	
 ShimmerFishMarket:

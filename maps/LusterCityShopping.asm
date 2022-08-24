@@ -43,10 +43,10 @@ LusterCityShopping_MapScriptHeader:
 	signpost 26,  5, SIGNPOST_READ, LusterShoppingTrashcan2
 	signpost 24, 25, SIGNPOST_READ, LusterShoppingTrashcan3
 	signpost 26, 25, SIGNPOST_READ, LusterShoppingTrashcan4
-	bg_event  7, 21, SIGNPOST_ITEM + POTION, EVENT_LUSTER_SHOPPING_HIDDEN_ITEM_1
+	bg_event  7, 21, SIGNPOST_ITEM + MAX_REVIVE, EVENT_LUSTER_SHOPPING_HIDDEN_ITEM_1
 	bg_event 25, 27, SIGNPOST_ITEM + POTION, EVENT_LUSTER_SHOPPING_HIDDEN_ITEM_2
 
-	db 14 ; object events
+	db 16 ; object events
 	person_event SPRITE_TRAFFIC_LIGHT, 44, -3, SPRITEMOVEDATA_TILE_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
 	person_event SPRITE_MALL_SIGN, 44,  7, SPRITEMOVEDATA_MALL_SIGN_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
 	person_event SPRITE_MALL_SIGN, 44,  8, SPRITEMOVEDATA_MALL_SIGN_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
@@ -60,7 +60,7 @@ LusterCityShopping_MapScriptHeader:
 	person_event SPRITE_COOL_DUDE, 33, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Luster2NPC6, -1
 	person_event SPRITE_FISHER, 40, 15, SPRITEMOVEDATA_STANDING_LEFT, 2, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster2NPC7, -1
 	person_event SPRITE_SUPER_NERD, 29, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster2NPC8, -1
-	itemball_event 25, 25, POTION, 1, EVENT_LUSTER_SHOPPING_POKEBALL
+	itemball_event 25, 25, LEFTOVERS, 1, EVENT_LUSTER_SHOPPING_POKEBALL
 	person_event SPRITE_SNARE, 18, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster2Snare, EVENT_PART_TIME_JOB_BEAT_SNARE
 	person_event SPRITE_FAT_GUY, 18, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster2Delivery, EVENT_PART_TIME_JOB_SAVED_DELIVERY
 
@@ -136,7 +136,7 @@ ShoppingCallback:
 LusterShoppingTrashcan1:
 	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_1
 	iftrue LusterTrashcanOnlyTrash
-	changeblock $4, $16, $dd
+	changeblock $4, $18, $52
 	opentext
 	writetext LusterTrashcanText1
 	playsound SFX_SANDSTORM
@@ -153,7 +153,7 @@ LusterShoppingTrashcan1:
 LusterShoppingTrashcan2:
 	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_2
 	iftrue LusterTrashcanOnlyTrash
-	changeblock $4, $18, $dd
+	changeblock $4, $1a, $52
 	opentext
 	writetext LusterTrashcanText1
 	playsound SFX_SANDSTORM
@@ -170,7 +170,7 @@ LusterShoppingTrashcan2:
 LusterShoppingTrashcan3:
 	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_3
 	iftrue LusterTrashcanOnlyTrash
-	changeblock $18, $16, $dd
+	changeblock $18, $18, $52
 	opentext
 	writetext LusterTrashcanText1
 	playsound SFX_SANDSTORM
@@ -187,7 +187,7 @@ LusterShoppingTrashcan3:
 LusterShoppingTrashcan4:
 	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_4
 	iftrue LusterTrashcanOnlyTrash
-	changeblock $18, $18, $dd
+	changeblock $18, $1a, $52
 	opentext
 	writetext LusterTrashcanText1
 	playsound SFX_SANDSTORM

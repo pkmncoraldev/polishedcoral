@@ -26,7 +26,7 @@ GlintCity_MapScriptHeader:
 	signpost 3, 8, SIGNPOST_READ, GlintCityRivalHouseSign
 	signpost 15, 28, SIGNPOST_READ, GlintCityPokeCenterSign
 	signpost 9, 28, SIGNPOST_READ, GlintCityMartSign
-	signpost 21, 18, SIGNPOST_ITEM + REVIVE, EVENT_GLINT_CITY_HIDDEN_REVIVE
+	signpost 17,  2, SIGNPOST_ITEM + REVIVE, EVENT_GLINT_CITY_HIDDEN_REVIVE
 	signpost 9, 38, SIGNPOST_READ, GlintCityRoute3sign
 
 	db 11 ; object events

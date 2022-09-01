@@ -539,7 +539,8 @@ YoungsterGroup:
 	db "JIMMY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 30, SLOWPOKE
+	db 30, POLIWHIRL
 	db -1 ; end
 
 ; ================
@@ -729,20 +730,22 @@ TwinsGroup:
 
 ; ================
 
-	; TWINS :TRAIN
+	; TWINS ;TRAIN
 	db "TIA & MIA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 30, ELEKID
+	db 30, MAGBY
 	db -1 ; end
 
 ; ================
 
-	; TWINS :TRAIN
+	; TWINS ;TRAIN
 	db "MIA & TIA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 30, MAGBY
+	db 30, ELEKID
 	db -1 ; end
 
 ; ================
@@ -1105,7 +1108,8 @@ BirdKeeperGroup:
 	db "JAZZ@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 29, SWABLU
+	db 27, XATU
 	db -1 ; end
 
 ; ================
@@ -1661,7 +1665,8 @@ GruntMGroup:
 	db "LUSTERM@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 28, GRIMER
+	db 30, ELECTRODE
 	db -1 ; end
 
 ; ================
@@ -1688,7 +1693,7 @@ GruntFGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 18, GLOOM
-	db 18, RATTATA
+	db 18, STARYU
 	db -1 ; end
 
 ; ================
@@ -1846,11 +1851,13 @@ PokefanFGroup:
 
 ; ================
 
-	; POKEFANF :TRAIN
+	; POKEFANF ;TRAIN
 	db "URSALA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 29, PONYTA
+	db 29, EXEGGCUTE
+	db 23, STARYU
 	db -1 ; end
 
 ; ================
@@ -2441,7 +2448,7 @@ GentlemanGroup:
 	db "HOWARD@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 31, ARCANINE
 	db -1 ; end
 
 ; ================
@@ -2481,7 +2488,8 @@ LadyGroup:
 	db "GRETCHEN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 29, CORSOLA
+	db 28, HAUNTER
 	db -1 ; end
 
 ; ================

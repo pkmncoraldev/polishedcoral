@@ -128,5 +128,6 @@ PetalMons:
 	
 TrashMons:
 	db 70, MEOWTH,   	20
-	db 30, SCRAGGY,		20
+;	db 30, SCRAGGY,		20
+	db 30, MEOWTH,		20
 	db -1

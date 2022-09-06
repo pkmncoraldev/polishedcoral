@@ -3653,7 +3653,7 @@ ListMoves: ; 50d6f
 	farcall GetSandAttackName
 	jr .cont
 .not_sand_attack
-	cp SOFTBOILED_MILK_DRINK
+	cp SOFTBOILED_MILK_DRINK_RECOVER
 	jr nz, .not_softboiled
 	farcall GetSoftboiledName
 	jr .cont

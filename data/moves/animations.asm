@@ -104,7 +104,7 @@ BattleAnimations::
 	dw BattleAnim_DragonPulse
 	dw BattleAnim_Screech
 	dw BattleAnim_DoubleTeam
-	dw BattleAnim_Recover
+	dw BattleAnim_Recover ;Bulldoze
 	dw BattleAnim_RockBlast
 	dw BattleAnim_Minimize
 	dw BattleAnim_SandAttack
@@ -134,7 +134,7 @@ BattleAnimations::
 	dw BattleAnim_WorkUp
 	dw BattleAnim_Amnesia
 	dw BattleAnim_Roost
-	dw BattleAnim_Softboiled
+	dw BattleAnim_Recover
 	dw BattleAnim_HiJumpKick
 	dw BattleAnim_FieryDance
 	dw BattleAnim_DreamEater
@@ -2327,6 +2327,8 @@ BattleAnim_DoubleTeam:
 	anim_ret
 
 BattleAnim_Recover:
+	anim_jumpif $1, BattleAnim_MilkDrink
+	anim_jumpif $2, BattleAnim_Softboiled
 	anim_1gfx ANIM_GFX_BUBBLE
 	anim_call BattleAnim_FollowEnemyFeet_0
 	anim_sound 0, 0, SFX_FULL_HEAL
@@ -2403,7 +2405,6 @@ BattleAnim_Amnesia:
 	anim_ret
 
 BattleAnim_Softboiled:
-	anim_jumpif $1, BattleAnim_MilkDrink
 	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_BUBBLE
 	anim_call BattleAnim_FollowEnemyFeet_0
 	anim_sound 0, 0, SFX_SWITCH_POKEMON

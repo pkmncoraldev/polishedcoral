@@ -134,7 +134,7 @@
 	const WORK_UP_GROWTH      ; $84
 	const AMNESIA      ; $85
 	const ROOST        ; $86
-	const SOFTBOILED_MILK_DRINK   				; $87
+	const SOFTBOILED_MILK_DRINK_RECOVER 				; $87
 	const HI_JUMP_KICK ; $88
 	const FIERY_DANCE  ; $89
 	const DREAM_EATER  ; $8a

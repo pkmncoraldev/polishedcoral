@@ -254,7 +254,7 @@ InitBattleAnimBuffer: ; ccaaa
 	ld a, [wFXAnimIDLo]
 	cp PSYSHOCK
 	jr z, .sub_8
-	cp SOFTBOILED_MILK_DRINK
+	cp SOFTBOILED_MILK_DRINK_RECOVER
 	jr nz, .no_sub
 .sub_8
 	pop af

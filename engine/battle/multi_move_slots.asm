@@ -949,7 +949,7 @@ GetSoftboiledName::
 	push de
 
 	call CheckMilkDrinkUsers
-	jr nc, .not_milkdrink
+	jr nc, .not_milk_drink
 	ld hl, SoftboiledNames
 	ld a, 0
 	call GetNthString
@@ -957,9 +957,19 @@ GetSoftboiledName::
 	ld bc, ITEM_NAME_LENGTH
 	rst CopyBytes
 	jr .done
-.not_milkdrink
+.not_milk_drink
+	call CheckSoftboiledUsers
+	jr nc, .not_softboiled
 	ld hl, SoftboiledNames
 	ld a, 1
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	jr .done
+.not_softboiled
+	ld hl, SoftboiledNames
+	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
 	ld bc, ITEM_NAME_LENGTH
@@ -972,7 +982,7 @@ GetSoftboiledName::
 	pop af
 	rst Bankswitch
 	ret
-	
+
 GetMoveNameSoftboiled:: ; 34f8
 	ld a, [hROMBank]
 	push af
@@ -981,14 +991,21 @@ GetMoveNameSoftboiled:: ; 34f8
 
 	
 	call CheckMilkDrinkUsers
-	jr nc, .not_milkdrink
+	jr nc, .not_milk_drink
 	ld hl, SoftboiledNames
 	ld a, 0
 	jr .done
 	
-.not_milkdrink
+.not_milk_drink
+	call CheckSoftboiledUsers
+	jr nc, .not_softboiled
 	ld hl, SoftboiledNames
 	ld a, 1
+	jr .done
+	
+.not_softboiled
+	ld hl, SoftboiledNames
+	ld a, 2
 	
 .done
 	call GetNthString
@@ -1449,6 +1466,14 @@ CheckMilkDrinkUsers2::
 	call IsInArray
 	ret
 	
+CheckSoftboiledUsers::
+	ld a, [wCurPartySpecies]
+CheckSoftboiledUsers2::
+	ld hl, SoftboiledUsers
+	ld de, 1
+	call IsInArray
+	ret
+	
 CheckOdorSleuthUsers::
 	ld a, [wCurPartySpecies]
 CheckOdorSleuthUsers2::
@@ -1526,7 +1551,7 @@ GetMultiMoveSlotName2::
 	jr z, .roar
 	cp SAND_ATTACK_SMOKESCREEN
 	jr z, .sand_attack
-	cp SOFTBOILED_MILK_DRINK
+	cp SOFTBOILED_MILK_DRINK_RECOVER
 	jr z, .softboiled
 	cp FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	jr z, .foresight
@@ -2020,26 +2045,48 @@ CheckSandAttackThing::
 CheckSoftboiledThing::
 	ld a, [wMirrorMoveUsed]
 	and a
-	jr z, .skip
+	jr z, .skip1
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
-	jr z, .got_user_species
+	jr z, .got_user_species1
 	ld a, [wBattleMonSpecies]
-	jr .got_user_species
+	jr .got_user_species1
 	
-.skip
+.skip1
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
-	jr z, .got_user_species
+	jr z, .got_user_species1
 	ld a, [wEnemyMonSpecies]
-.got_user_species
+.got_user_species1
 	farcall CheckMilkDrinkUsers2
 	jr nc, .not_milk_drink
 	ld a, $1
 	ret
 .not_milk_drink
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species2
+	
+.skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wEnemyMonSpecies]
+.got_user_species2
+	farcall CheckSoftboiledUsers2
+	jr nc, .not_softboiled
+	ld a, $2
+	ret
+.not_softboiled
 	ret
 	
 CheckForesightThing::
@@ -2390,6 +2437,17 @@ SmokescreenUsers:
 	
 MilkDrinkUsers:
 	db MILTANK
+	db TAUROS
+	db -1
+	
+SoftboiledUsers:
+	db CHANSEY
+	db BLISSEY
+	db CLEFAIRY
+	db CLEFABLE
+	db TOGEPI
+	db TOGETIC
+	db TOGEKISS
 	db -1
 	
 OdorSleuthUsers:
@@ -2516,6 +2574,7 @@ SandAttackNames:
 SoftboiledNames:
 	db "MILK DRINK@"
 	db "SOFTBOILED@"
+	db "RECOVER@"
 	db -1
 	
 ForesightNames:
@@ -2553,7 +2612,7 @@ MultiSlotMoves:
 	db SCARY_FACE_COTTON_SPORE_STRING_SHOT
 	db ROAR_WHIRLWIND
 	db SAND_ATTACK_SMOKESCREEN
-	db SOFTBOILED_MILK_DRINK
+	db SOFTBOILED_MILK_DRINK_RECOVER
 	db FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db AGILITY_ROCK_POLISH
 	db WORK_UP_GROWTH

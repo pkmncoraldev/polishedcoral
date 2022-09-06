@@ -58,9 +58,9 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke NIDORINO, 100
-	givepoke PIKACHU, 100
-	givepoke TREVENANT, 100
+	givepoke ABRA, 20
+	givepoke MILTANK, 20
+	givepoke MEDITITE, 37
 ;	loadwildmon SWABLU, 10
 ;	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 ;	startbattle

@@ -102,11 +102,24 @@ GetMonMenuString: ; 24db0
 	ld a, [hli]
 	cp MONMENU_MENUOPTION
 	jr z, .NotMove
+	cp MONMENU_FIELD_MOVE2
+	jr z, .MultiMove
 	inc hl
 	ld a, [hl]
 	ld [wd265], a
 	jp GetMoveName
 
+.MultiMove:
+	inc hl
+	ld a, [hl]
+	cp SOFTBOILED_MILK_DRINK_RECOVER
+	jr z, .softboiled_milkdrink
+	dec a
+	ld hl, MonMenuOptionStrings
+	call GetNthString
+	ld d, h
+	ld e, l
+	ret
 .NotMove:
 	inc hl
 	ld a, [hl]
@@ -116,7 +129,10 @@ GetMonMenuString: ; 24db0
 	ld d, h
 	ld e, l
 	ret
-; 24dd4
+.softboiled_milkdrink
+	farcall GetSoftboiledName
+	ld de, wStringBuffer1
+	ret
 
 GetMonSubmenuItems: ; 24dd4
 	call ResetMonSubmenu
@@ -127,9 +143,33 @@ GetMonSubmenuItems: ; 24dd4
 	and a
 	jr nz, .skip_moves
 
+	ld a, MON_MOVES
+	call GetPartyParamLocation
+	ld d, h
+	ld e, l
+	ld c, NUM_MOVES
+.loop
+	push bc
+	push de
+	ld a, [de]
+	and a
+	jr z, .next
+	push hl
+	call IsFieldMove
+	pop hl
+	jr nc, .next
+	call AddMonMenuItem
+
+.next
+	pop de
+	inc de
+	pop bc
+	dec c
+	jr nz, .loop
+
 	call TryLoadFlyMenu
-	call TryLoadRockSmashMenu
-	call TryLoadCutMenu
+;	call TryLoadRockSmashMenu
+;	call TryLoadCutMenu
 .skip_moves
 	ld a, MONMENU_STATS
 	call AddMonMenuItem
@@ -182,6 +222,8 @@ IsFieldMove: ; 24e52
 	ret z
 	cp MONMENU_MENUOPTION
 	ret z
+	cp MONMENU_FIELD_MOVE2
+	jr z, .multimove
 	ld d, [hl]
 	inc hl
 	ld a, [hli]
@@ -190,7 +232,28 @@ IsFieldMove: ; 24e52
 	ld a, d
 	scf
 	ret
-; 24e68
+.multimove
+	ld d, [hl]
+	inc hl
+	ld a, [hl]
+	cp b
+	jr nz, .next
+	cp SOFTBOILED_MILK_DRINK_RECOVER
+	jr z, .softboiled_milkdrink
+	ret
+.softboiled_milkdrink
+	push de
+	farcall CheckMilkDrinkUsers
+	jr c, .yes
+	farcall CheckSoftboiledUsers
+	jr c, .yes
+	pop de
+	ret
+.yes
+	pop de
+	ld a, d
+	scf
+	ret
 
 ResetMonSubmenu: ; 24e68
 	xor a

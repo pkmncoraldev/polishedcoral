@@ -88,6 +88,22 @@ PlayerHouseDebugPoster:
 	giveitem PLUME_FOSSIL, 1
 	giveitem OLD_AMBER, 1
 	giveitem EVERSTONE, 1
+	givetmhm TM_FAKE_OUT
+	givetmhm TM_METAL_CLAW
+	givetmhm TM_BULLDOZE
+	givetmhm TM_RAIN_DANCE
+	givetmhm TM_CHARM
+	givetmhm TM_FIRE_PUNCH
+	givetmhm TM_THUNDERPUNCH
+	givetmhm TM_ICE_PUNCH
+	givetmhm TM_ROOST
+	givetmhm TM_HAIL
+	givetmhm TM_DIG
+	givetmhm TM_SUNNY_DAY
+	givetmhm TM_WILL_O_WISP
+	givetmhm TM_CURSE
+	givetmhm TM_WORK_UP_GROWTH
+	givetmhm TM_STEEL_WING
 .keyitems
 	writetext PlayerHouseDebugText2
 	yesorno

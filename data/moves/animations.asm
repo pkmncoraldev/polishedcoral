@@ -104,7 +104,7 @@ BattleAnimations::
 	dw BattleAnim_DragonPulse
 	dw BattleAnim_Screech
 	dw BattleAnim_DoubleTeam
-	dw BattleAnim_Recover ;Bulldoze
+	dw BattleAnim_Bulldoze
 	dw BattleAnim_RockBlast
 	dw BattleAnim_Minimize
 	dw BattleAnim_SandAttack
@@ -332,6 +332,7 @@ BattleAnim_BrickBreak:
 BattleAnim_Wish:
 BattleAnim_Taunt:
 BattleAnim_WoodHammer:
+BattleAnim_Bulldoze:
 	anim_ret
 	
 BattleAnim_RockPolish:

@@ -104,7 +104,7 @@
 	const DRAGON_PULSE ; $66
 	const SCREECH      ; $67
 	const DOUBLE_TEAM  ; $68
-	const RECOVER      ; $69
+	const BULLDOZE      ; $69
 	const ROCK_BLAST   ; $6a
 	const MINIMIZE     ; $6b
 	const SAND_ATTACK_SMOKESCREEN  				; $6c

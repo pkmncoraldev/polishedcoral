@@ -103,7 +103,7 @@ MoveDescriptions::
 	dw DragonPulseDescription
 	dw ScreechDescription
 	dw DoubleTeamDescription
-	dw RecoverDescription
+	dw BulldozeDescription
 	dw RockBlastDescription
 	dw MinimizeDescription
 	dw SandAttackDescription
@@ -408,11 +408,11 @@ DynamicpunchDescription:
 
 MetalClawDescription:
 	db   "An attack that may"
-	next "up user's Attack.@"
+	next "up user's ATTACK.@"
 
 SteelWingDescription:
 	db   "An attack that may"
-	next "up user's Defense.@"
+	next "up user's DEFENSE.@"
 
 AncientpowerDescription:
 OminousWindDescription:
@@ -422,30 +422,30 @@ OminousWindDescription:
 AuroraBeamDescription:
 PlayRoughDescription:
 	db   "An attack that may"
-	next "lower Attack.@"
+	next "lower ATTACK.@"
 
 RockSmashDescription:
 CrunchDescription:
 IronTailDescription:
 ShadowBoneDescription:
 	db   "An attack that may"
-	next "lower Defense.@"
+	next "lower DEFENSE.@"
 
 BubbleBeamDescription:
 	db   "An attack that may"
-	next "lower Speed.@"
+	next "lower SPEED.@"
 
 BulldozeDescription:
-	db   "A Ground attack"
-	next "that lowers Speed.@"
+	db   "A GROUND attack"
+	next "that lowers SPEED.@"
 
 IcyWindDescription:
 	db   "An icy attack that"
-	next "lowers Speed.@"
+	next "lowers SPEED.@"
 
 MoonblastDescription:
 	db   "An attack that may"
-	next "lower Spcl.Atk.@"
+	next "lower SPCL.ATK.@"
 
 AcidDescription:
 PsychicMDescription:
@@ -456,7 +456,7 @@ EnergyBallDescription:
 FlashCannonDescription:
 FocusBlastDescription:
 	db   "An attack that may"
-	next "lower Spcl.Def.@"
+	next "lower SPCL.DEF.@"
 
 MudSlapDescription:
 	db   "An attack that"
@@ -616,10 +616,6 @@ ReflectDescription:
 LightScreenDescription:
 	db   "Ups Spcl.Def with"
 	next "a wall of light.@"
-
-RecoverDescription:
-	db   "Restores HP by 1/2"
-	next "the max HP.@"
 
 SoftboiledDescription:
 	db   "Restores HP by 1/2"

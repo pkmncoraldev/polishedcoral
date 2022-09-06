@@ -4542,7 +4542,7 @@ ItemRecoveryAnim::
 	push de
 	push bc
 	call EmptyBattleTextBox
-	ld a, RECOVER
+	ld a, SOFTBOILED_MILK_DRINK_RECOVER
 	ld [wFXAnimIDLo], a
 	xor a
 	ld [wNumHits], a

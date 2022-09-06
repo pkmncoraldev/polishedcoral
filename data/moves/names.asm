@@ -103,7 +103,7 @@ MoveNames::
 	db "DRAGON PULSE@"
 	db "SCREECH@"
 	db "DOUBLE TEAM@"
-	db "RECOVER@"
+	db "BULLDOZE@"
 	db "ROCK BLAST@"
 	db "MINIMIZE@"
 	db "ERROR!@" ; SAND_ATTACK_SMOKESCREEN

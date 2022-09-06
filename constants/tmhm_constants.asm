@@ -84,7 +84,7 @@ ENDM
 	add_tm DRAGON_PULSE ; $3a
 	add_tm DRAIN_PUNCH  ; $3b
 	add_tm WILL_O_WISP  ; $3c
-	add_tm EMBER   ; $3d
+	add_tm BULLDOZE   ; $3d
 	add_tm TOXIC_SPIKES  ; $3e
 	add_tm EXPLOSION    ; $3f
 	add_tm SHADOW_CLAW  ; $40
@@ -98,46 +98,21 @@ ENDM
 	add_tm THUNDER_WAVE ; $48
 	add_tm GYRO_BALL    ; $49
 	add_tm SWORDS_DANCE ; $4a
-	add_tm THUNDERPUNCH
-	add_tm FIRE_PUNCH
-	add_tm ICE_PUNCH
+	add_tm THUNDERPUNCH ; $4b
+	add_tm FIRE_PUNCH	; $4c
+	add_tm ICE_PUNCH	; $4d
 NUM_TMS = const_value - TM01
 
-	add_hm CUT          ; $4b
-	add_hm FLY          ; $4c
-	add_hm SURF         ; $4d
-	add_hm STRENGTH     ; $4e
-	add_hm EGG_BOMB    ; $4f
-	add_hm WATERFALL    ; $50
-	add_hm ROCK_SMASH   ; $1e
-	add_hm ROCK_CLIMB
+	add_hm CUT          ; $4e
+	add_hm FLY          ; $4f
+	add_hm SURF         ; $50
+	add_hm STRENGTH     ; $51
+	add_hm EGG_BOMB     ; $52
+	add_hm WATERFALL    ; $53
+	add_hm ROCK_SMASH   ; $54
+	add_hm ROCK_CLIMB	;55
 NUM_HMS = const_value - HM01
 
-	add_mt AQUA_TAIL    ; $51
-	add_mt BODY_SLAM    ; $52
-	add_mt COUNTER      ; $53
 	add_mt DEFENSE_CURL_HARDEN_WITHDRAW ; $54
-	add_mt DOUBLE_EDGE  ; $55
-	add_mt DREAM_EATER  ; $56
-	add_mt EARTH_POWER  ; $57
-	add_mt FIRE_PUNCH_MT   ; $58
-	add_mt HEADBUTT     ; $59
-	add_mt HYPER_VOICE  ; $5a
-	add_mt ICE_PUNCH_MT    ; $5b
-	add_mt ICY_WIND     ; $5c
-	add_mt MIRROR_MOVE    ; $5d
-	add_mt KNOCK_OFF    ; $5e
-	add_mt PAY_DAY      ; $5f
-	add_mt ROLLOUT      ; $60
-	add_mt NUZZLE    ; $61
-	add_mt SEISMIC_TOSS ; $62
-	add_mt COTTON_GUARD   ; $63
-	add_mt SNORE   ; $64
-	add_mt SUCKER_PUNCH ; $65
-	add_mt SWAGGER      ; $66
-	add_mt THUNDERPUNCH_MT ; $67
-	add_mt ICE_FANG        ; $68
-	add_mt ZAP_CANNON   ; $69
-	add_mt ZEN_HEADBUTT ; $6a
 
 NUM_TMHMS EQU __enum__ +- 1

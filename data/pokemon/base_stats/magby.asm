@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, FIRE_PUNCH, THUNDERPUNCH, CURSE, SUNNY_DAY
+	tmhm ROCK_SMASH, FIRE_PUNCH, THUNDERPUNCH, CURSE, SUNNY_DAY, WILL_O_WISP
 	; end

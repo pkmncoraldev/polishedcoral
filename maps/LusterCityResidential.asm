@@ -300,119 +300,59 @@ LusterTrashcan1:
 	checkevent EVENT_LUSTER_TRASHCAN_1
 	iftrue LusterTrashcanOnlyTrash
 	changeblock $c, $12, $52
-	opentext
-	writetext LusterTrashcanText1
-	playsound SFX_SANDSTORM
-	waitsfx
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext LusterTrashcanTextOnlyTrash
-	waitbutton
-	closetext
 	setevent EVENT_LUSTER_TRASHCAN_1
-	end
+	jump LusterTrashcanEnd
 	
 LusterTrashcan2:
 	checkevent EVENT_LUSTER_TRASHCAN_2
 	iftrue LusterTrashcanOnlyTrash
 	changeblock $e, $12, $53
-	opentext
-	writetext LusterTrashcanText1
-	playsound SFX_SANDSTORM
-	waitsfx
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext LusterTrashcanTextOnlyTrash
-	waitbutton
-	closetext
 	setevent EVENT_LUSTER_TRASHCAN_2
-	end
+	jump LusterTrashcanEnd
 	
 LusterTrashcan3:
 	checkevent EVENT_LUSTER_TRASHCAN_3
 	iftrue LusterTrashcanOnlyTrash
 	changeblock $e, $22, $4d
-	opentext
-	writetext LusterTrashcanText1
-	playsound SFX_SANDSTORM
-	waitsfx
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext LusterTrashcanTextOnlyTrash
-	waitbutton
-	closetext
 	setevent EVENT_LUSTER_TRASHCAN_3
-	end
+	jump LusterTrashcanEnd
 	
 LusterTrashcan4:
 	checkevent EVENT_LUSTER_TRASHCAN_4
 	iftrue LusterTrashcanOnlyTrash
 	changeblock $14, $22, $4c
-	opentext
-	writetext LusterTrashcanText1
-	playsound SFX_SANDSTORM
-	waitsfx
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext LusterTrashcanTextOnlyTrash
-	waitbutton
-	closetext
 	setevent EVENT_LUSTER_TRASHCAN_4
-	end
+	jump LusterTrashcanEnd
 	
 LusterTrashcan5:
 	checkevent EVENT_LUSTER_TRASHCAN_5
 	iftrue LusterTrashcanOnlyTrash
 	changeblock $e, $2c, $4d
-	opentext
-	writetext LusterTrashcanText1
-	playsound SFX_SANDSTORM
-	waitsfx
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext LusterTrashcanTextOnlyTrash
-	waitbutton
-	closetext
 	setevent EVENT_LUSTER_TRASHCAN_5
-	end
+	jump LusterTrashcanEnd
 	
 LusterTrashcan6:
 	checkevent EVENT_LUSTER_TRASHCAN_6
 	iftrue LusterTrashcanOnlyTrash
 	changeblock $14, $2c, $4c
-	opentext
-	writetext LusterTrashcanText1
-	playsound SFX_SANDSTORM
-	waitsfx
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext LusterTrashcanTextOnlyTrash
-	waitbutton
-	closetext
 	setevent EVENT_LUSTER_TRASHCAN_6
-	end
+	jump LusterTrashcanEnd
 	
 LusterTrashcan7:
 	checkevent EVENT_LUSTER_TRASHCAN_7
 	iftrue LusterTrashcanOnlyTrash
 	changeblock $8, $2c, $58
+	setevent EVENT_LUSTER_TRASHCAN_7
+;fallthrough
+	
+LusterTrashcanEnd:
 	opentext
 	writetext LusterTrashcanText1
 	playsound SFX_SANDSTORM
 	waitsfx
 	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext LusterTrashcanTextOnlyTrash
-	waitbutton
+	callasm LusterTrashcanAsm
 	closetext
-	setevent EVENT_LUSTER_TRASHCAN_7
 	end
 	
 LusterTrashcanEmpty:
@@ -825,6 +765,105 @@ LusterShadyGuy:
 	closetext
 	spriteface LUSTERSHADYGUY, LEFT
 	end
+	
+LusterTrashcanAsm:
+	call Random
+	cp 1 + 33 percent
+	jr c, LusterTrashcanAsmBattle
+	call Random
+	cp 1 + 33 percent
+	jr c, LusterTrashcanAsmItem
+	jr LusterTrashcanAsmText
+	ret
+	
+LusterTrashcanAsmBattle:
+	farcall TrashMonEncounter
+	ld a, BANK(LusterTrashcanWildBattleScript)
+	ld hl, LusterTrashcanWildBattleScript
+	call CallScript
+	scf
+	ret
+
+	
+LusterTrashcanAsmItem:
+	ld hl, .TrashcanItems
+	call Random
+.loop
+	sub [hl]
+	jr c, .ok
+	inc hl
+	inc hl
+	jr .loop
+.ok
+	ld a, [hli]
+	cp -1
+	ld a, NO_ITEM
+	jr z, .done
+	ld a, [hl]
+.done
+	ld [wScriptVar], a
+	
+	ld b, BANK(LusterTrashcanItemScript)
+	ld de, LusterTrashcanItemScript
+	push de
+	ld hl, wScriptStackSize
+	ld e, [hl]
+	inc [hl]
+	ld d, $0
+	ld hl, wScriptStack
+	add hl, de
+	add hl, de
+	add hl, de
+	pop de
+	ld a, [wScriptBank]
+	ld [hli], a
+	ld a, [wScriptPos]
+	ld [hli], a
+	ld a, [wScriptPos + 1]
+	ld [hl], a
+	ld a, b
+	ld [wScriptBank], a
+	ld a, e
+	ld [wScriptPos], a
+	ld a, d
+	ld [wScriptPos + 1], a
+	ret
+
+.TrashcanItems:
+	db 2, MASTER_BALL
+	db 5, BIG_NUGGET
+	db 18, STAR_PIECE
+	db 18, LEFTOVERS
+	db 25, NUGGET
+	db 36, BLACK_SLUDGE
+	db 47, STARDUST
+	db 52, SUPER_REPEL
+	db 52, SUPER_POTION
+	db -1
+
+LusterTrashcanItemScript:
+	verbosegiveitem ITEM_FROM_MEM
+	closetext
+	end
+	
+LusterTrashcanAsmText:
+	ld hl, LusterTrashcanTextJump1
+	call PrintText
+	ret
+	
+LusterTrashcanWildBattleScript:
+	copybytetovar wTempWildMonSpecies
+	randomwildmon
+	startbattle
+	reloadmapafterbattle
+	end
+	
+LusterTrashcanTextJump1:
+	text_jump LusterTrashcanTextOnlyTrash
+	text_waitbutton
+	
+LusterTrashcanTextJump2:
+	db "@@"
 	
 LusterTrashcanText1:
 	text "<PLAYER> dug"

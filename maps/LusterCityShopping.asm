@@ -137,69 +137,29 @@ LusterShoppingTrashcan1:
 	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_1
 	iftrue LusterTrashcanOnlyTrash
 	changeblock $4, $18, $52
-	opentext
-	writetext LusterTrashcanText1
-	playsound SFX_SANDSTORM
-	waitsfx
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext LusterTrashcanTextOnlyTrash
-	waitbutton
-	closetext
 	setevent EVENT_LUSTER_SHOPPING_TRASHCAN_1
-	end
+	jump LusterTrashcanEnd
 	
 LusterShoppingTrashcan2:
 	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_2
 	iftrue LusterTrashcanOnlyTrash
 	changeblock $4, $1a, $52
-	opentext
-	writetext LusterTrashcanText1
-	playsound SFX_SANDSTORM
-	waitsfx
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext LusterTrashcanTextOnlyTrash
-	waitbutton
-	closetext
 	setevent EVENT_LUSTER_SHOPPING_TRASHCAN_2
-	end
+	jump LusterTrashcanEnd
 	
 LusterShoppingTrashcan3:
 	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_3
 	iftrue LusterTrashcanOnlyTrash
 	changeblock $18, $18, $52
-	opentext
-	writetext LusterTrashcanText1
-	playsound SFX_SANDSTORM
-	waitsfx
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext LusterTrashcanTextOnlyTrash
-	waitbutton
-	closetext
 	setevent EVENT_LUSTER_SHOPPING_TRASHCAN_3
-	end
+	jump LusterTrashcanEnd
 	
 LusterShoppingTrashcan4:
 	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_4
 	iftrue LusterTrashcanOnlyTrash
 	changeblock $18, $1a, $52
-	opentext
-	writetext LusterTrashcanText1
-	playsound SFX_SANDSTORM
-	waitsfx
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext LusterTrashcanTextOnlyTrash
-	waitbutton
-	closetext
 	setevent EVENT_LUSTER_SHOPPING_TRASHCAN_4
-	end
+	jump LusterTrashcanEnd
 	
 Luster2Snare:
 	faceplayer

@@ -778,10 +778,26 @@ PetalMonEncounter:: ; b8219
 	call GetTreeMons
 	jr nc, .no_battle
 
-;	ld a, 10
-;	call RandomRange
-;	cp 4
-;	jr nc, .no_battle
+	call SelectTreeMon
+	jr nc, .no_battle
+
+	ret
+
+.no_battle
+	xor a
+	ret
+	
+TrashMonEncounter::
+	xor a
+	ld [wTempWildMonSpecies], a
+	ld [wCurPartyLevel], a
+
+	ld hl, PetalMonMaps
+	call GetTreeMonSet
+	jr nc, .no_battle
+
+	call GetTreeMons
+	jr nc, .no_battle
 
 	call SelectTreeMon
 	jr nc, .no_battle

@@ -14,3 +14,8 @@ RockMonMaps:
 PetalMonMaps:
 	treemon_map GLINT_GROVE, 7
 	db -1
+	
+TrashMonMaps:
+	treemon_map LUSTER_CITY_RESIDENTIAL, 7
+	treemon_map LUSTER_CITY_SHOPPING, 7
+	db -1

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, FIRE_PUNCH, THUNDERPUNCH, RAIN_DANCE, CURSE
+	tmhm ROCK_SMASH, FIRE_PUNCH, THUNDERPUNCH, RAIN_DANCE, CURSE, BULLDOZE
 	; end

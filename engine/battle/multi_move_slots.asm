@@ -2229,6 +2229,10 @@ PoundUsers:
 	db SNORUNT
 	db GLALIE
 	db FROSLASS
+	db GRIMER
+	db MUK
+	db GRIMER_A
+	db MUK_A
 	db -1
 	
 ScratchUsers:
@@ -2273,6 +2277,10 @@ HardenUsers:
 	db AGGRON
 	db GLIGAR
 	db GLISCOR
+	db GRIMER
+	db MUK
+	db GRIMER_A
+	db MUK_A
 	db -1
 
 TailWhipUsers:
@@ -2321,6 +2329,10 @@ IronDefenseUsers:
 	
 AcidArmorUsers:
 	db VAPOREON
+	db GRIMER
+	db MUK
+	db GRIMER_A
+	db MUK_A
 	db -1
 	
 MeditateUsers:

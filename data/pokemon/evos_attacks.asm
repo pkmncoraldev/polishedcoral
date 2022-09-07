@@ -261,7 +261,7 @@ PikachuEvosAttacks:
 	db 14, ELECTRO_BALL
 	db 20, DOUBLE_TEAM
 	db 24, SPARK
-	db 29, NUZZLE
+	db 29, THUNDER_WAVE
 	db 34, BODY_SLAM
 	db 41, THUNDERBOLT
 	db 45, AGILITY_ROCK_POLISH
@@ -280,7 +280,7 @@ RaichuEvosAttacks:
 	db  1, ELECTRO_BALL
 	db  1, DOUBLE_TEAM
 	db  1, SPARK
-	db  1, NUZZLE
+	db  1, THUNDER_WAVE
 	db  1, BODY_SLAM
 	db  1, THUNDERBOLT
 	db  1, AGILITY_ROCK_POLISH
@@ -929,11 +929,33 @@ GrimerEvosAttacks:
 	db EVOLVE_LEVEL, 38, MUK
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 4, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 7, MUD_SLAP
+	db 12, DISABLE
+	db 15, SLUDGE
+	db 18, BULLDOZE
+	db 21, MINIMIZE
+	db 26, KNOCK_OFF
+	db 30, SLUDGE_BOMB
+	db 37, SCREECH
+	db 43, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 46, GUNK_SHOT
 	db 0 ; no more level-up moves
 	
 MukEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 1, MUD_SLAP
+	db 12, DISABLE
+	db 15, SLUDGE
+	db 18, BULLDOZE
+	db 21, MINIMIZE
+	db 26, KNOCK_OFF
+	db 30, SLUDGE_BOMB
+	db 37, SCREECH
+	db 40, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 46, GUNK_SHOT
 	db 0 ; no more level-up moves
 	
 GastlyEvosAttacks:
@@ -3990,7 +4012,7 @@ Raichu_AEvosAttacks:
 	db  1, ELECTRO_BALL
 	db  1, DOUBLE_TEAM
 	db  1, SPARK
-	db  1, NUZZLE
+	db  1, THUNDER_WAVE
 	db  1, BODY_SLAM
 	db  1, THUNDERBOLT
 	db  1, AGILITY_ROCK_POLISH
@@ -4061,9 +4083,30 @@ Grimer_AEvosAttacks:
 	db EVOLVE_LEVEL, 38, MUK
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 4, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 7, BITE
+	db 12, DISABLE
+	db 18, POISON_FANG
+	db 21, MINIMIZE
+	db 26, KNOCK_OFF
+	db 30, CRUNCH
+	db 37, SCREECH
+	db 43, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 46, GUNK_SHOT
 	db 0 ; no more level-up moves
 	
 Muk_AEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 1, BITE
+	db 12, DISABLE
+	db 15, SLUDGE
+	db 18, POISON_FANG
+	db 21, MINIMIZE
+	db 26, KNOCK_OFF
+	db 30, CRUNCH
+	db 37, SCREECH
+	db 40, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 46, GUNK_SHOT
 	db 0 ; no more level-up moves

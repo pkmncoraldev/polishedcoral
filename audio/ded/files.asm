@@ -151,3 +151,6 @@ MareanieDEDData::  INCBIN "audio/ded/mareanie.ded"
 SECTION "DED 32", ROMX
 ToxapexDEDData::  INCBIN "audio/ded/toxapex.ded"
 ToucannonDEDData:: INCBIN "audio/ded/toucannon.ded"
+
+SECTION "DED 33", ROMX
+WyrdeerDEDData:: INCBIN "audio/ded/wyrdeer.ded"

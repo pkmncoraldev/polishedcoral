@@ -176,7 +176,7 @@ MoveNames::
 	db "GYRO BALL@"
 	db "ENERGY BALL@"
 	db "MIMIC@"
-	db "NUZZLE@"
+	db "GUNK SHOT@"
 	db "REVERSAL@"
 	db "SLUDGE@"
 	db "ICE SHARD@"

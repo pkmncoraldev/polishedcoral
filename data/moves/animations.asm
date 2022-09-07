@@ -177,7 +177,7 @@ BattleAnimations::
 	dw BattleAnim_GyroBall
 	dw BattleAnim_EnergyBall
 	dw BattleAnim_Mimic
-	dw BattleAnim_Nuzzle
+	dw BattleAnim_GunkShot
 	dw BattleAnim_Reversal
 	dw BattleAnim_Sludge
 	dw BattleAnim_IceShard
@@ -387,23 +387,23 @@ BattleAnim_KnockOff:
 	anim_wait 8
 	anim_ret
 	
-BattleAnim_Nuzzle:
-	anim_1gfx ANIM_GFX_LIGHTNING
-	anim_call BattleAnim_FollowPlayerHead_0
-	anim_sound 0, 0, SFX_ZAP_CANNON
-	anim_obj ANIM_OBJ_31, 44, 88, $0
-	anim_wait 16
-	anim_bgeffect ANIM_BG_26, $0, $1, $0
-	anim_wait 24
-	anim_incbgeffect ANIM_BG_26
-	anim_call BattleAnim_ShowMon_0
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
-	anim_sound 0, 1, SFX_THUNDERSHOCK
-	anim_obj ANIM_OBJ_THUNDER_WAVE, 136, 56, $0
-	anim_wait 16
-	anim_incobj 3
-	anim_wait 32
-	anim_ret
+;BattleAnim_Nuzzle:
+;	anim_1gfx ANIM_GFX_LIGHTNING
+;	anim_call BattleAnim_FollowPlayerHead_0
+;	anim_sound 0, 0, SFX_ZAP_CANNON
+;	anim_obj ANIM_OBJ_31, 44, 88, $0
+;	anim_wait 16
+;	anim_bgeffect ANIM_BG_26, $0, $1, $0
+;	anim_wait 24
+;	anim_incbgeffect ANIM_BG_26
+;	anim_call BattleAnim_ShowMon_0
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
+;	anim_sound 0, 1, SFX_THUNDERSHOCK
+;	anim_obj ANIM_OBJ_THUNDER_WAVE, 136, 56, $0
+;	anim_wait 16
+;	anim_incobj 3
+;	anim_wait 32
+;	anim_ret
 	
 BattleAnim_PoisonFang:
 	anim_3gfx ANIM_GFX_CUT, ANIM_GFX_HIT, ANIM_GFX_POISON

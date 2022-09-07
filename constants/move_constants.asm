@@ -177,7 +177,7 @@
 	const GYRO_BALL    ; $af
 	const ENERGY_BALL  ; $b0
 	const MIMIC		   ; $b1
-	const NUZZLE       ; $b2
+	const GUNK_SHOT    ; $b2
 	const REVERSAL     ; $b3
 	const SLUDGE       ; $b4
 	const ICE_SHARD    ; $b5

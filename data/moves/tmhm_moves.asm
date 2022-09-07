@@ -101,7 +101,7 @@ TMHMMoves:
 	db KNOCK_OFF    ; MT14
 	db PAY_DAY      ; MT15
 	db ROLLOUT      ; MT16
-	db NUZZLE    ; MT17
+	db GUNK_SHOT    ; MT17
 	db SEISMIC_TOSS ; MT18
 	db COTTON_GUARD   ; MT20
 	db SNORE   ; MT19

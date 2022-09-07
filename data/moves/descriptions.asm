@@ -176,7 +176,7 @@ MoveDescriptions::
 	dw GyroBallDescription
 	dw EnergyBallDescription
 	dw MimicDescription
-	dw NuzzleDescription
+	dw GunkShotDescription
 	dw ReversalDescription
 	dw SludgeDescription
 	dw IceShardDescription
@@ -385,7 +385,6 @@ SparkDescription:
 	next "cause paralysis.@"
 
 ZapCannonDescription:
-NuzzleDescription:
 	db   "An attack that"
 	next "always paralyzes.@"
 

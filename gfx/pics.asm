@@ -629,11 +629,11 @@ MareanieFrontpic:         INCBIN "gfx/pokemon/mareanie/front.2bpp.lz"
 MareanieBackpic:          INCBIN "gfx/pokemon/mareanie/back.2bpp.lz"
 ToxapexFrontpic:          INCBIN "gfx/pokemon/toxapex/front.2bpp.lz"
 ToxapexBackpic:           INCBIN "gfx/pokemon/toxapex/back.2bpp.lz"
-WyrdeerFrontpic:     	  INCBIN "gfx/pokemon/wyrdeer/front.2bpp.lz"
-WyrdeerBackpic:           INCBIN "gfx/pokemon/wyrdeer/back.2bpp.lz"
 
 SECTION "Pokemon Pics 27", ROMX
 
+WyrdeerFrontpic:     	  INCBIN "gfx/pokemon/wyrdeer/front.2bpp.lz"
+WyrdeerBackpic:           INCBIN "gfx/pokemon/wyrdeer/back.2bpp.lz"
 MarillFrontpic:      	  INCBIN "gfx/pokemon/marill/front.2bpp.lz"
 MarillBackpic:       	  INCBIN "gfx/pokemon/marill/back.2bpp.lz"
 AzumarillFrontpic:        INCBIN "gfx/pokemon/azumarill/front.2bpp.lz"

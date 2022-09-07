@@ -1,5 +1,5 @@
 	frame 0, 04
-	frame 2, 12
-	frame 1, 08
-	frame 2, 28
+	frame 1, 12
+	frame 2, 08
+	frame 1, 28
 	endanim

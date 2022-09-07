@@ -3,11 +3,10 @@
 	dw .frame3
 .frame1
 	db $00 ; bitmask
-	db $19, $1a, $1b, $1c, $1d, $1e, $1f, $20, $21
+	db $24, $25, $26, $27, $28, $29, $2a
 .frame2
 	db $01 ; bitmask
-	db $19, $1a, $1b, $1c, $1d, $1e, $1f, $20, $21, $22, $23
+	db $2b, $2c, $2d, $2e, $2f, $30, $31, $32
 .frame3
 	db $02 ; bitmask
-	db $22, $23
-; 0xd4ef3
+	db $33, $34, $35

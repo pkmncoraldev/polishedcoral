@@ -58,9 +58,12 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke ABRA, 20
-	givepoke MILTANK, 20
-	givepoke MEDITITE, 37
+	givepoke WEAVILE, 100
+	givepoke SNOVER, 100
+	givepoke ABOMASNOW, 100
+	givepoke GRIMER_A, 100
+	givepoke MAMOSWINE, 100
+	givepoke WYRDEER, 100
 ;	loadwildmon SWABLU, 10
 ;	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 ;	startbattle
@@ -176,11 +179,10 @@ FillPokedex:
 	call .Fill
 	ld hl, wPokedexCaught
 .Fill:
-	ld a, %11111111 ; 001-240
-	ld bc, 30
+	ld a, %11111111
+	ld bc, 31 ; 001-248
 	call ByteFill
-	ld [hl], %00011111 ; 241-245
-	ret	
+	ret
 	
 PlayerHouseDebugText1:
 	text "DEBUG POSTER"

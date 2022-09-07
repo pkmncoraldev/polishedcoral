@@ -7,7 +7,7 @@
 	db NEVERMELTICE ; item 1
 	db NEVERMELTICE ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
-	dn 5, 5 ; frontpic dimensions
+	dn 6, 6 ; frontpic dimensions
 	db SNOW_WARNING ; ability 1
 	db SNOW_WARNING ; ability 2
 	db SNOW_WARNING ; hidden ability

@@ -7,7 +7,7 @@
 	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2
 	dn ALL_FEMALE, 3 ; gender, step cycles to hatch
-	dn 5, 5 ; frontpic dimensions
+	dn 6, 6 ; frontpic dimensions
 	db SNOW_CLOAK ; ability 1
 	db SNOW_CLOAK ; ability 2
 	db CURSED_BODY ; hidden ability

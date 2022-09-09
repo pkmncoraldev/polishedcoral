@@ -9,6 +9,7 @@ PLAYER_M EQU __enum__
 	trainerclass TRAINER_NONE ; 0
 	const PHONECONTACT_MOM
 	const PHONECONTACT_SPRUCE
+	const PHONECONTACT_WENDY
 
 PLAYER_F EQU __enum__
 

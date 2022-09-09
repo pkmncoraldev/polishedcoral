@@ -5,6 +5,10 @@ UnusedPhoneScript: ; 0xbcea5
 ; Mom
 
 MomPhoneScript: ; 0xbceaa
+	checkevent EVENT_TALKED_TO_MOM
+	iffalse .beginning
+	checkevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
+	iffalse .gogetmon
 	checkcode VAR_SPECIALPHONECALL
 	if_equal SPECIALCALL_MOMCOMEGETTRAINERCARD, .comegettrainercard1
 	checkevent EVENT_CAN_CALL_TRAINER_CARD
@@ -17,6 +21,14 @@ MomPhoneScript: ; 0xbceaa
 
 .normal
 	farwritetext MomPhoneNormalText
+	end
+
+.beginning
+	farwritetext MomPhoneBeginningText
+	end
+
+.gogetmon
+	farwritetext SunsetMomText2
 	end
 
 .callaboutisland1

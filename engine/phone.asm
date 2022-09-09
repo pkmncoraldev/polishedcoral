@@ -666,14 +666,15 @@ NonTrainerCallerNames: ; 903d6
 	dw .none
 	dw .mom
 	dw .spruce
-;	dw .bill
+	dw .wendy
 ;	dw .elm
 ;	dw .lyra
 ;	dw .buena
 
 .none db "@"
-.mom db "MOM:@"
+.mom db "MOM:<LNBRK>           HOME@"
 .spruce db "PROF.SPRUCE:<LNBRK>   #MON PROF.@"
+.wendy db "WENDY:<LNBRK>     GYM LEADER@"
 ; 90423
 
 Phone_GetTrainerName: ; 90423 (24:4423)

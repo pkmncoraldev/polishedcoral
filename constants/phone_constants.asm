@@ -2,6 +2,7 @@
 	const PHONE_00
 	const PHONE_MOM
 	const PHONE_SPRUCE
+	const PHONE_WENDY
 ;	const PHONE_SCHOOLBOY_JACK
 
 	const_def

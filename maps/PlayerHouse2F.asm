@@ -264,6 +264,7 @@ PlayerHouse2FInitializeRoom:
 	checkevent EVENT_INITIALIZED_EVENTS
 	iftrue .SkipInizialization
 	callasm FixPlayerPalKrisHouse
+	addcellnum PHONE_MOM
 	readvar VAR_PLAYER_GENDER
 	if_equal CORY, .cory
 	if_equal CORA, .cora

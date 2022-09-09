@@ -30,7 +30,7 @@ Route1GateTrigger0:
 	
 Route1GateTrigger1:
 	specialphonecall SPECIALCALL_MOMCOMEGETTRAINERCARD
-	addcellnum PHONE_MOM
+;	addcellnum PHONE_MOM
 	end
 	
 Route1GateTrigger2:

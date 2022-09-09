@@ -159,7 +159,7 @@ SunsetMomGotAPokemon:
 	scall UnknownScript_0x7a57e
 	setflag ENGINE_TRAINER_CARD
 	setevent EVENT_MOM_GOT_POKEGEAR
-	addcellnum PHONE_MOM
+;	addcellnum PHONE_MOM
 	clearevent EVENT_CAN_CALL_TRAINER_CARD
 ;	writetext SetDayOfWeekText
 ;	buttonsound
@@ -396,7 +396,7 @@ SunsetMomText1:
 	cont "today!"
 	done
 
-SunsetMomText2:
+SunsetMomText2::
 	text "What are you"
 	line "waiting for?"
 	

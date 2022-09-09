@@ -14,6 +14,12 @@ MomPhoneNormalText:
 	line "there!"
 	done
 
+MomPhoneBeginningText:
+	text "You can hear the"
+	line "phone ringing"
+	cont "downstairs."
+	done
+
 MomPhoneGoToIsland1Text:
 	text "Hello?"
 	

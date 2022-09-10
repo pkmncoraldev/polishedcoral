@@ -101,25 +101,34 @@ Route10TentNPCText1:
 	done
 	
 Route10TentNPCText2:
-	text "I work at a"
-	line "RESEARCH LAB in"
-	cont "SHIMMER CITY."
+;	text "I work at a"
+;	line "RESEARCH LAB in"
+;	cont "SHIMMER CITY."
 	
-	para "This looks just"
-	line "like an artifact"
-	cont "we have there."
+;	para "This looks just"
+;	line "like an artifact"
+;	cont "we have there."
 	
-	para "There's a great"
-	line "researcher there"
-	cont "named UNFINISHED."
+;	para "There's a great"
+;	line "researcher there"
+;	cont "named UNFINISHED."
 	
-	para "You should take it"
-	line "to him and see if"
-	cont "he knows anything"
-	cont "about it."
+;	para "You should take it"
+;	line "to him and see if"
+;	cont "he knows anything"
+;	cont "about it."
 	
-	para "We could have a"
+;	para "We could have a"
+;	line "big find here!"
+;	done
+
+	text "We could have a"
 	line "big find here!"
+	
+	para "I need to stay"
+	line "a bit longer and"
+	cont "wrap some things"
+	cont "up here."
 	done
 	
 Route10TentNPCText3:
@@ -177,26 +186,42 @@ Route10TentNPCText8:
 	done
 	
 Route10TentNPCText9:
-	text "Ok, kid!"
+;	text "Ok, kid!"
 	
-	para "I work at a"
-	line "RESEARCH LAB in"
-	cont "SHIMMER CITY."
+;	para "I work at a"
+;	line "RESEARCH LAB in"
+;	cont "SHIMMER CITY."
 	
-	para "This looks just"
-	line "like an artifact"
-	cont "we have there."
+;	para "This looks just"
+;	line "like an artifact"
+;	cont "we have there."
 	
-	para "There's a great"
-	line "researcher there"
-	cont "named UNFINISHED."
+;	para "There's a great"
+;	line "researcher there"
+;	cont "named UNFINISHED."
 	
-	para "You should take it"
-	line "to him and see if"
-	cont "he knows anything"
-	cont "about it."
+;	para "You should take it"
+;	line "to him and see if"
+;	cont "he knows anything"
+;	cont "about it."
 	
-	para "We could have a"
+;	para "We could have a"
+;	line "big find here!"
+	
+;	para "I need to stay"
+;	line "a bit longer and"
+;	cont "wrap some things"
+;	cont "up here."
+	
+;	para "For now, though,"
+;	line "take this as a"
+;	cont "thank you."
+	
+;	para "It's said to bring"
+;	line "great fortune!"
+;	done
+
+	text "We could have a"
 	line "big find here!"
 	
 	para "I need to stay"

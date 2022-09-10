@@ -507,6 +507,8 @@ GetSpeed::
 	ld a, b
 	cp HELD_QUICK_POWDER
 	jr z, .quick_powder
+	cp HELD_PAINTBRUSH
+	jr z, .paintbrush
 	cp HELD_CHOICE
 	jr nz, .done
 	ld a, c
@@ -524,6 +526,19 @@ GetSpeed::
 .got_species
 	ld a, [hl]
 	cp DITTO
+	jr nz, .done
+	ld a, $21
+	jr .apply_item_mod
+.paintbrush
+	; Double speed, but only for Smeargle
+	ld a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpecies
+	jr z, .got_species2
+	ld hl, wEnemyMonSpecies
+.got_species2
+	ld a, [hl]
+	cp SMEARGLE
 	jr nz, .done
 	ld a, $21
 .apply_item_mod

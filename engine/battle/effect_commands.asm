@@ -3360,9 +3360,6 @@ DittoMetalPowder: ; 352b1
 	rr c
 	ret
 
-; 352dc
-
-
 UnevolvedEviolite:
 	ld a, MON_SPECIES
 	call UserPartyAttr
@@ -3531,12 +3528,12 @@ endc
 
 .lightball
 ; Note: Returns player special attack at hl in hl.
-	call LightBallBoost
+	call PaintbrushOrLightBallBoost
 	jr .done
 
 .thickcluborlightball
 ; Note: Returns player attack at hl in hl.
-	call ThickClubOrLightBallBoost
+	call ThickClubPaintbrushOrLightBallBoost
 
 .done
 	call TruncateHL_BC
@@ -3631,12 +3628,12 @@ endc
 
 .lightball
 ; Note: Returns enemy special attack at hl in hl.
-	call LightBallBoost
+	call PaintbrushOrLightBallBoost
 	jr .done
 
 .thickcluborlightball
 ; Note: Returns enemy attack at hl in hl.
-	call ThickClubOrLightBallBoost
+	call ThickClubPaintbrushOrLightBallBoost
 
 .done
 	call TruncateHL_BC
@@ -3681,7 +3678,7 @@ TruncateHL_BC: ; 3534d
 	ld b, l
 	ret
 
-ThickClubOrLightBallBoost: ; 353b5
+ThickClubPaintbrushOrLightBallBoost: ; 353b5
 ; Return in hl the stat value at hl.
 
 ; If the attacking monster is Cubone or Marowak and
@@ -3695,15 +3692,23 @@ ThickClubOrLightBallBoost: ; 353b5
 	ld a, [hBattleTurn]
 	and a
 	ld a, [hl]
-	jr z, .checkpikachu
+	jr z, .checkspecies
 	ld a, [wTempEnemyMonSpecies]
-.checkpikachu:
+.checkspecies:
 	pop hl
 	cp PIKACHU
 	lb bc, PIKACHU, PIKACHU
 	ld d, LIGHT_BALL
 	jr z, .ok
-	lb bc, CUBONE, MAROWAK
+	cp SMEARGLE
+	lb bc, SMEARGLE, SMEARGLE
+	ld d, PAINTBRUSH
+	jr z, .ok
+	cp CUBONE
+	lb bc, CUBONE, CUBONE
+	ld d, THICK_CLUB
+	jr z, .ok
+	lb bc, MAROWAK, MAROWAK_A
 	ld d, THICK_CLUB
 .ok
 	call SpeciesItemBoost
@@ -3714,15 +3719,30 @@ ThickClubOrLightBallBoost: ; 353b5
 ; 353c3
 
 
-LightBallBoost: ; 353c3
+PaintbrushOrLightBallBoost: ; 353c3
 ; Return in hl the stat value at hl.
 
 ; If the attacking monster is Pikachu and it's
 ; holding a Light Ball, double it.
 	push bc
 	push de
+	push hl
+	ld a, MON_SPECIES
+	call UserPartyAttr
+	ld a, [hBattleTurn]
+	and a
+	ld a, [hl]
+	jr z, .checkspecies
+	ld a, [wTempEnemyMonSpecies]
+.checkspecies:
+	pop hl
+	cp PIKACHU
 	lb bc, PIKACHU, PIKACHU
 	ld d, LIGHT_BALL
+	jr z, .ok
+	lb bc, SMEARGLE, SMEARGLE
+	ld d, PAINTBRUSH
+.ok
 	call SpeciesItemBoost
 	pop de
 	pop bc

@@ -131,7 +131,7 @@
 	const FLOWER_PETAL ; 70
 	const BLOSSOM_TEA  ; 71
 
-	const TERU_SAMA    ; 72 - replace
+	const PAINTBRUSH    ; 72
 
 	const CHERI_BERRY  ; 73
 	const CHESTO_BERRY ; 74

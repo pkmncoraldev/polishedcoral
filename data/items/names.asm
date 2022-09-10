@@ -112,7 +112,7 @@ ItemNames::
 	db "OVAL CHARM@"
 	db "FLOWER PETAL@"
 	db "BLOSSOM TEA@"
-	db "TERU-SAMA@"
+	db "PAINTBRUSH@"
 	db "CHERI BERRY@"
 	db "CHESTO BERRY@"
 	db "PECHA BERRY@"

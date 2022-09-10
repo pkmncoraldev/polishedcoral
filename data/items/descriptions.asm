@@ -112,7 +112,7 @@ ItemDescriptions:
 	dw OvalCharmDesc
 	dw FlowerPetalDesc
 	dw BlossomTeaDesc
-	dw TeruSamaDesc
+	dw PaintbrushDesc
 	dw CheriBerryDesc
 	dw ChestoBerryDesc
 	dw PechaBerryDesc
@@ -164,7 +164,7 @@ ItemDescriptions:
 	dw SmokeBallDesc
 	dw BerserkGeneDesc
 	dw LightBallDesc
-	dw StickDesc
+	dw LinkCableDesc
 	dw ThickClubDesc
 	dw LuckyPunchDesc
 	dw MetalPowderDesc
@@ -716,102 +716,83 @@ FigyBerryDesc:
 	db   "Self-restore item."
 	next "(1/2 max HP, Hold)@"
 	
-;begin unused
-
-;TeruSamaDesc:
-
-;TeruSamaDesc:
-
-;TeruSamaDesc:
-
-;TeruSamaDesc:
-
-;TeruSamaDesc:
-
-;TeruSamaDesc:
-
-;TeruSamaDesc:
-
-;TeruSamaDesc:
-
-;TeruSamaDesc:
-
-;end unused
+TeruSamaDesc:
+	db   "?@"
 
 BerryJuiceDesc:
 	db   "A self-restore"
 	next "item. (20HP, Hold)@"
 
 SilkScarfDesc:
-	db   "Powers up Normal-"
+	db   "Powers up NORMAL-"
 	next "type moves. (Hold)@"
 
 BlackBeltDesc:
-	db   "Boosts Fighting-"
+	db   "Boosts FIGHTING-"
 	next "type moves. (Hold)@"
 
 SharpBeakDesc:
-	db   "Powers up Flying-"
+	db   "Powers up FLYING-"
 	next "type moves. (Hold)@"
 
 PoisonBarbDesc:
-	db   "Powers up Poison-"
+	db   "Powers up POISON-"
 	next "type moves. (Hold)@"
 
 SoftSandDesc:
-	db   "Powers up Ground-"
+	db   "Powers up GROUND-"
 	next "type moves. (Hold)@"
 
 HardStoneDesc:
-	db   "Powers up Rock-"
+	db   "Powers up ROCK-"
 	next "type moves. (Hold)@"
 
 SilverPowderDesc:
-	db   "Powers up Bug-type"
+	db   "Powers up BUG-type"
 	next "moves. (Hold)@"
 
 SpellTagDesc:
-	db   "Powers up Ghost-"
+	db   "Powers up GHOST-"
 	next "type moves. (Hold)@"
 
 MetalCoatDesc:
-	db   "Powers up Steel-"
+	db   "Powers up STEEL-"
 	next "type moves. (Hold)@"
 
 CharcoalDesc:
-	db   "Powers up Fire-"
+	db   "Powers up FIRE-"
 	next "type moves. (Hold)@"
 
 MysticWaterDesc:
-	db   "Powers up Water-"
+	db   "Powers up WATER-"
 	next "type moves. (Hold)@"
 
 MiracleSeedDesc:
-	db   "Powers up Grass-"
+	db   "Powers up GRASS-"
 	next "type moves. (Hold)@"
 
 MagnetDesc:
-	db   "Boosts Electric-"
+	db   "Boosts ELECTRIC-"
 	next "type moves. (Hold)@"
 
 TwistedSpoonDesc:
-	db   "Powers up Psychic-"
+	db   "Powers up PSYCHIC-"
 	next "type moves. (Hold)@"
 
 NeverMeltIceDesc:
-	db   "Powers up Ice-type"
+	db   "Powers up ICE-type"
 	next "moves. (Hold)@"
 
 DragonFangDesc:
-	db   "Powers up Dragon-"
+	db   "Powers up DRAGON-"
 	next "type moves. (Hold)@"
 
 BlackGlassesDesc:
-	db   "Powers up Dark-"
+	db   "Powers up DARK-"
 	next "type moves. (Hold)@"
 
 PinkBowDesc:
-	db   "Powers up Fairy-"
+	db   "Powers up FAIRY-"
 	next "type moves. (Hold)@"
 
 BrightPowderDesc:
@@ -861,35 +842,35 @@ BerserkGeneDesc:
 	next "causes confusion.@"
 
 LightBallDesc:
-	db   "An odd, electrical"
-	next "orb. (Hold)@"
+	db   "Ups PIKACHU's ATK +"
+	next "SPCL. ATK. (Hold)@"
 
-StickDesc:
-	db   "An ordinary stick."
-	next "Sell low.@"
+LinkCableDesc:
+	db   "Evolves trade evo."
+	next "#MON.@"
 
 ThickClubDesc:
-	db   "A bone of some"
-	next "sort. Sell low.@"
+	db   "Ups CUBONE/MAROWAK"
+	next "ATTACK. (Hold)@"
 
 LuckyPunchDesc:
 	db   "Ups critical hit"
-	next "ratio of Numel.@"
+	next "ratio of CHANSEY.@"
 
 MetalPowderDesc:
 	db   "Raises DEFENSE of"
-	next "Ditto. (Hold)@"
+	next "DITTO. (Hold)@"
 
 QuickPowderDesc:
 	db   "Raises SPEED of"
-	next "Ditto. (Hold)@"
+	next "DITTO. (Hold)@"
 
 ArmorSuitDesc:
 	db   "A suit of armor"
 	next "for some #MON.@"
 
 AirBalloonDesc:
-	db   "Avoids one Ground"
+	db   "Avoids one GROUND"
 	next "attack. (Hold)@"
 
 AssaultVestDesc:
@@ -1018,7 +999,7 @@ ToxicOrbDesc:
 
 BlackSludgeDesc:
 	db   "Restores HP for"
-	next "Poison #MON.@"
+	next "POISON #MON.@"
 
 MachoBraceDesc:
 	db   "Boosts stat gain,"
@@ -1209,8 +1190,9 @@ MirageMailDesc:
 	db   "Mew-print Mail."
 	next "(Hold)@"
 
-TeruSamaDesc:
-	db   "?@"
+PaintbrushDesc:
+	db   "Raises stats of"
+	next "SMEARGLE. (Hold)@"
 
 	
 ClothesDescriptions:

@@ -58,21 +58,21 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke WEAVILE, 100
-	givepoke SNOVER, 100
-	givepoke ABOMASNOW, 100
-	givepoke GRIMER_A, 100
-	givepoke MAMOSWINE, 100
-	givepoke WYRDEER, 100
-;	loadwildmon SWABLU, 10
-;	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-;	startbattle
+	givepoke DITTO, 50
+	givepoke CUBONE, 50
+	givepoke MAROWAK, 50
+	givepoke MAROWAK_A, 50
+	givepoke SMEARGLE, 50
 
 .items
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
+	giveitem CHOICE_SCARF, 1
+	giveitem QUICK_POWDER, 1
 	giveitem KINGS_ROCK, 1
+	giveitem THICK_CLUB, 1
+	giveitem PAINTBRUSH, 1
 	giveitem LINK_CABLE, 99
 	giveitem UP_GRADE, 2
 	giveitem RARE_CANDY, 99
@@ -111,6 +111,9 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText2
 	yesorno
 	iffalse .badges
+	loadwildmon BLISSEY, 100
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
 	setflag ENGINE_TRAINER_CARD
 	setflag ENGINE_POKEDEX
 	setflag ENGINE_PHONE_CARD

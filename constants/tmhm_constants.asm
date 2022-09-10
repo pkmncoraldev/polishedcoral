@@ -43,7 +43,7 @@ ENDM
 	add_tm RAIN_DANCE		; $11
 	add_tm GIGA_DRAIN		; $12
 	add_tm SAFEGUARD		; $13
-	add_tm WORK_UP_GROWTH	; $14
+	add_tm BULLDOZE			; $14
 	add_tm SOLAR_BEAM		; $15
 	add_tm IRON_TAIL		; $16
 	add_tm THUNDERBOLT		; $17
@@ -84,7 +84,7 @@ ENDM
 	add_tm DRAGON_PULSE		; $3a
 	add_tm DRAIN_PUNCH		; $3b
 	add_tm WILL_O_WISP		; $3c
-	add_tm BULLDOZE			; $3d
+	add_tm WORK_UP_GROWTH	; $3d
 	add_tm TOXIC_SPIKES		; $3e
 	add_tm EXPLOSION		; $3f
 	add_tm SHADOW_CLAW		; $40

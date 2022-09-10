@@ -135,6 +135,8 @@ LusterMallElectronics:
 	db 2 ; # items
 	db UP_GRADE
 	db LINK_CABLE
+	db ELECTIRIZER
+	db MAGMARIZER
 	db -1
 	
 LusterMallElectronicsTM:
@@ -164,7 +166,15 @@ LusterMallCoffee:
 	
 LusterMallAntique:
 	db 1 ; # items
-	db POTION
+	db KINGS_ROCK
+	db DRAGON_SCALE
+	db METAL_COAT
+	db RAZOR_CLAW
+	db RAZOR_FANG
+	db THICK_CLUB
+	db LIGHT_BALL
+	db PAINTBRUSH
+	db FOCUS_SASH
 	db -1
 	
 LusterMallHerb:

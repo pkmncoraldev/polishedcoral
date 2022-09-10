@@ -522,6 +522,7 @@ GetSpeed::
 	jr z, .got_species
 	ld hl, wEnemyMonSpecies
 .got_species
+	ld a, [hl]
 	cp DITTO
 	jr nz, .done
 	ld a, $21

@@ -189,7 +189,7 @@
 	const BERSERK_GENE ; a4 - replace
 
 	const LIGHT_BALL   ; a5
-	const LINK_CABLE   ; a6 - replace
+	const LINK_CABLE   ; a6
 	const THICK_CLUB   ; a7
 	const LUCKY_PUNCH  ; a8
 	const METAL_POWDER ; a9

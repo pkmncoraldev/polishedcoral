@@ -117,24 +117,49 @@ TwinkleMart:
 	db -1
 	
 LusterMart:
-	db 1 ; # items
-	db POTION
+	db 11 ; # items
+	db POKE_BALL
+	db GREAT_BALL
+	db SUPER_POTION
+	db ESCAPE_ROPE
+	db REPEL
+	db SUPER_REPEL
+	db ANTIDOTE
+	db PARALYZEHEAL
+	db AWAKENING
+	db BURN_HEAL
+	db ICE_HEAL
 	db -1
 	
 LusterMallElectronics:
-	db 1 ; # items
+	db 2 ; # items
 	db UP_GRADE
 	db LINK_CABLE
 	db -1
 	
 LusterMallElectronicsTM:
-	db 1 ; # items
-	dbw TM_DYNAMICPUNCH, 	100
+	db 11 ; # items
+	dbw TM_SAFEGUARD, 		6000
+	dbw TM_SUBSTITUTE, 		6000
+	dbw TM_PROTECT, 		8000
+	dbw TM_LIGHT_SCREEN, 	8000
+	dbw TM_REFLECT,		 	8000
+	dbw TM_THUNDER, 		10000
+	dbw TM_BLIZZARD, 		10000
+	dbw TM_FIRE_BLAST, 		10000
+	dbw TM_SOLAR_BEAM, 		10000
+	dbw TM_HYPER_BEAM, 		12000
+	dbw TM_GIGA_IMPACT,		12000
 	db -1
 	
 LusterMallCoffee:
-	db 1 ; # items
-	db POTION
+	db 6 ; # items
+	db FRESH_WATER
+	db BERRY_JUICE
+	db SODA_POP
+	db LEMONADE
+	db MOOMOO_MILK
+	db RAGECANDYBAR
 	db -1
 	
 LusterMallAntique:

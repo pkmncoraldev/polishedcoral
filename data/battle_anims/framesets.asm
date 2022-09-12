@@ -184,8 +184,23 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_b6 ; b6
 	dw .Frameset_b7 ; b7
 	dw .Frameset_b8 ; b8
-	dw .Frameset_c4
+	dw .Frameset_b9
+	dw .Frameset_be
 	dw .Frameset_c1
+	dw .Frameset_c3
+	dw .Frameset_c4
+	dw .Frameset_c7
+	dw .Frameset_d1
+	dw .Frameset_d2
+	dw .Frameset_d3
+	dw .Frameset_dc
+	dw .Frameset_e2
+	dw .Frameset_e5
+	dw .Frameset_e6
+	dw .Frameset_e7
+	dw .Frameset_e9
+	dw .Frameset_ec
+	dw .Frameset_ed
 
 	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
 .Frameset_00:
@@ -776,7 +791,7 @@ BattleAnimFrameData: ; ce85e
 	db -1
 
 .Frameset_5b:
-	db BATTLEANIMOAMSET_6E, $88
+	db BATTLEANIMOAMSET_6E, $48
 	db -1
 
 .Frameset_5c:
@@ -1268,15 +1283,125 @@ BattleAnimFrameData: ; ce85e
 .Frameset_b8:
 	db BATTLEANIMOAMSET_D7, $08
 	db -1
+
+.Frameset_b9:
+	frame BATTLEANIMOAMSET_1B,  20
+	frame BATTLEANIMOAMSET_94,  10
+	dorestart
+
+.Frameset_be:
+	frame BATTLEANIMOAMSET_03,  4
+	frame BATTLEANIMOAMSET_01,  1
+	dorestart
+
+.Frameset_c1:
+	frame BATTLEANIMOAMSET_54, 40
+	endanim
+	
+.Frameset_c3:
+	frame BATTLEANIMOAMSET_1E,  3
+	frame BATTLEANIMOAMSET_55,  3
+	frame BATTLEANIMOAMSET_54,  3
+	frame BATTLEANIMOAMSET_53,  3
+	delanim
 	
 .Frameset_c4:
 	frame BATTLEANIMOAMSET_1E,  4
 	frame BATTLEANIMOAMSET_55,  8
 	frame BATTLEANIMOAMSET_54,  20
 	delanim
-
-.Frameset_c1:
-	frame BATTLEANIMOAMSET_54, 40
+	
+.Frameset_c7:
+	frame BATTLEANIMOAMSET_E0,  8
 	endanim
 	
+.Frameset_d1:
+	frame BATTLEANIMOAMSET_18,  0
+	frame BATTLEANIMOAMSET_70,  0
+	frame BATTLEANIMOAMSET_71,  0
+	frame BATTLEANIMOAMSET_72,  0
+	frame BATTLEANIMOAMSET_73,  0
+	frame BATTLEANIMOAMSET_E1,  0
+	delanim
+	
+.Frameset_d2:
+	frame BATTLEANIMOAMSET_E2,  4
+	frame BATTLEANIMOAMSET_02,  1
+	frame BATTLEANIMOAMSET_E2,  4
+	frame BATTLEANIMOAMSET_02,  1
+	frame BATTLEANIMOAMSET_E2,  4
+	frame BATTLEANIMOAMSET_02,  1
+	frame BATTLEANIMOAMSET_E2,  4
+	frame BATTLEANIMOAMSET_02,  1
+	delanim
+	
+.Frameset_d3:
+	frame BATTLEANIMOAMSET_CD,  $02
+	frame BATTLEANIMOAMSET_CD,  $42
+	frame BATTLEANIMOAMSET_CD,  $c2
+	frame BATTLEANIMOAMSET_CD,  $a2
+	dorestart
+	
+.Frameset_dc:
+	frame BATTLEANIMOAMSET_14, 30
+	delanim
+	
+.Frameset_e2:
+	frame BATTLEANIMOAMSET_E9,  2
+	frame BATTLEANIMOAMSET_EA,  2
+	frame BATTLEANIMOAMSET_EB,  2
+	dorestart
+	
+.Frameset_e5:
+	frame BATTLEANIMOAMSET_EC,  50
+	delanim
+	
+.Frameset_e6:
+	frame BATTLEANIMOAMSET_BD,  4
+	frame BATTLEANIMOAMSET_EE,  4
+	frame BATTLEANIMOAMSET_ED,  4
+	delanim
+
+.Frameset_e7:
+	frame BATTLEANIMOAMSET_BD,  $24
+	frame BATTLEANIMOAMSET_EE,  $24
+	frame BATTLEANIMOAMSET_ED,  $24
+	delanim
+	
+.Frameset_e9:
+	frame BATTLEANIMOAMSET_54,  1
+	frame BATTLEANIMOAMSET_EF,  1
+	dorestart
+	
+.Frameset_ec:
+	db BATTLEANIMOAMSET_F3,  1
+	db BATTLEANIMOAMSET_F4,  1
+	db BATTLEANIMOAMSET_F5,  1
+	db BATTLEANIMOAMSET_F6,  1
+	db BATTLEANIMOAMSET_F7,  1
+	db BATTLEANIMOAMSET_F8,  1
+	db BATTLEANIMOAMSET_F9,  2
+	db -3, $02
+	db BATTLEANIMOAMSET_F9,  2
+	db -3, $02
+	db BATTLEANIMOAMSET_F9,  2
+	db -3, $02
+	db BATTLEANIMOAMSET_F9,  2
+	delanim
+
+.Frameset_ed:
+	db BATTLEANIMOAMSET_F3,  $41
+	db BATTLEANIMOAMSET_F4,  $41
+	db BATTLEANIMOAMSET_F5,  $41
+	db BATTLEANIMOAMSET_F6,  $41
+	db BATTLEANIMOAMSET_F7,  $41
+	db BATTLEANIMOAMSET_F8,  $41
+	db BATTLEANIMOAMSET_F9,  $42
+	db -3, $02
+	db BATTLEANIMOAMSET_F9,  $42
+	db -3, $02
+	db BATTLEANIMOAMSET_F9,  $42
+	db -3, $02
+	db BATTLEANIMOAMSET_F9,  $42
+	delanim
 ; ceeae

@@ -80,7 +80,8 @@ endr
 
 BattleAnimOAMUpdate: ; cca09
 	call InitBattleAnimBuffer
-	call GetBattleAnimFrame
+	farcall GetBattleAnimFrame
+	ld a, h
 	cp -3
 	jp z, .done
 	cp -4

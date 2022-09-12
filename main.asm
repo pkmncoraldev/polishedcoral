@@ -4343,6 +4343,10 @@ CopyrightGFX:: ; e4000
 INCBIN "gfx/splash/copyright.2bpp"
 
 
+SECTION "Move Animation Framesets", ROMX
+
+INCLUDE "engine/battle_anims/framesets.asm"
+
 SECTION "Title Screen", ROMX
 
 INCLUDE "engine/title.asm"
@@ -4380,7 +4384,6 @@ INCLUDE "data/battle_anims/objects.asm"
 INCLUDE "engine/growl_roar_ded_vblank_hook.asm"
 INCLUDE "engine/battle_anims/functions.asm"
 INCLUDE "engine/battle_anims/helpers.asm"
-INCLUDE "data/battle_anims/framesets.asm"
 INCLUDE "data/battle_anims/oam.asm"
 INCLUDE "data/battle_anims/object_gfx.asm"
 

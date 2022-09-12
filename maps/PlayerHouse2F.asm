@@ -58,11 +58,7 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke DITTO, 50
-	givepoke CUBONE, 50
-	givepoke MAROWAK, 50
-	givepoke MAROWAK_A, 50
-	givepoke SMEARGLE, 50
+	givepoke SMEARGLE, 100
 
 .items
 	writetext PlayerHouseDebugText6

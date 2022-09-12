@@ -235,7 +235,7 @@ MoveNames::
 	db "ERROR!@"
 	db "HURRICANE@"
 	db "KNOCK OFF@"
-	db "HIDDEN POWER@"
+	db "SUPERPOWER@"
 	db "CROSS CHOP@"
 	db "AQUA JET@"
 	db "RAIN DANCE@"

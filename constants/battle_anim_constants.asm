@@ -27,7 +27,7 @@ BATTLEANIMSTRUCT_LENGTH EQU const_value
 NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 
 	const_def
-	const ANIM_OBJ_00
+	const ANIM_OBJ_HIT_BIG_YFIX
 	const ANIM_OBJ_01
 	const ANIM_OBJ_02
 	const ANIM_OBJ_03
@@ -52,8 +52,8 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_16
 	const ANIM_OBJ_17
 	const ANIM_OBJ_18
-	const ANIM_OBJ_19
-	const ANIM_OBJ_1A
+	const ANIM_OBJ_ACID
+	const ANIM_OBJ_SLUDGE
 	const ANIM_OBJ_1B
 	const ANIM_OBJ_1C
 	const ANIM_OBJ_1D
@@ -82,9 +82,9 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_34
 	const ANIM_OBJ_35
 	const ANIM_OBJ_BITE
-	const ANIM_OBJ_37
+	const ANIM_OBJ_CUT_DOWN_LEFT
 	const ANIM_OBJ_38
-	const ANIM_OBJ_39
+	const ANIM_OBJ_CUT_UP_RIGHT
 	const ANIM_OBJ_3A
 	const ANIM_OBJ_3B
 	const ANIM_OBJ_3C
@@ -195,7 +195,7 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_A5
 	const ANIM_OBJ_PERISH_SONG
 	const ANIM_OBJ_FORESIGHT
-	const ANIM_OBJ_A8
+	const ANIM_OBJ_RAPID_SPIN
 	const ANIM_OBJ_A9
 	const ANIM_OBJ_AA
 	const ANIM_OBJ_AB
@@ -280,6 +280,7 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_ANGER
 	const ANIM_OBJ_TAUNT
 	const ANIM_OBJ_WOOD_HAMMER
+	const ANIM_OBJ_GUNKSHOT
 
 	const_def
 	const BATTLEANIMFUNC_00
@@ -843,7 +844,7 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_BG_1C
 	const ANIM_BG_1D
 	const ANIM_BG_1E
-	const ANIM_BG_1F
+	const ANIM_BG_SHAKE_SCREEN_X
 	const ANIM_BG_20
 	const ANIM_BG_WITHDRAW
 	const ANIM_BG_BOUNCE_DOWN

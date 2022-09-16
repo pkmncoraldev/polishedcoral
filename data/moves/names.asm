@@ -130,7 +130,7 @@ MoveNames::
 	db "SWIFT@"
 	db "MIRROR MOVE@"
 	db "ROCK WRECKER@"
-	db "ERROR!@" ; WORK_UP_GROWTH
+	db "WORK UP@" ; WORK_UP_GROWTH
 	db "AMNESIA@"
 	db "ROOST@"
 	db "ERROR!@" ; SOFTBOILED_MILK_DRINK_RECOVER

@@ -32,20 +32,72 @@ Route11GateCallback:
 Route11GateEndDemoNPC:
 	faceplayer
 	opentext
-	writetext Route11GateEndDemoNPCText
+	writetext Route11GateEndDemoNPCText1
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	checkitem SKATEBOARD
+	iftrue .ask_skatepark
+.return
+	farwritetext StdBlankText
+	pause 6
+	checkevent EVENT_GOT_HM03_SURF
+	iftrue .ask_end_demo
+	writetext Route11GateEndDemoNPCText2
 	waitbutton
+	jump .endtext
+.ask_skatepark
+	writetext Route11GateEndDemoNPCText3
+	yesorno
+	iffalse .return
+	closetext
+	warpfacing LEFT, SKATEPARK, 17, 26
+	end
+.ask_end_demo
+	writetext Route11GateEndDemoNPCText4
+	yesorno
+	iffalse .demo_end_no
+	credits
+.demo_end_no
+	writetext Route11GateEndDemoNPCText5
+	waitbutton
+.endtext
 	closetext
 	spriteface ROUTE_11_GATE_END_DEMO_NPC1, UP
 	spriteface ROUTE_11_GATE_END_DEMO_NPC2, UP
 	end
 	
-Route11GateEndDemoNPCText:
+Route11GateEndDemoNPCText1:
 	text "Sorry…"
 	
 	para "This area isn't"
 	line "available in the"
 	cont "demo!"
+	done
 	
-	para "Come back in the"
-	line "full release!"
+Route11GateEndDemoNPCText2:
+	text "There's still"
+	line "more to do in"
+	cont "LUSTER CITY."
+	
+	para "Come talk to me"
+	line "when you finish"
+	cont "up!"
+	done
+	
+Route11GateEndDemoNPCText3:
+	text "Would you like"
+	line "to warp to the"
+	cont "SKATEPARK?"
+	done
+	
+Route11GateEndDemoNPCText4:
+	text "Would you like"
+	line "to end the demo?"
+	done
+	
+Route11GateEndDemoNPCText5:
+	text "Come talk to me"
+	line "when you want to"
+	cont "end the demo."
 	done

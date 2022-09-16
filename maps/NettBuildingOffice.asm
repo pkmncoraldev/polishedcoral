@@ -28,7 +28,7 @@ NettBuildingOffice_MapScriptHeader:
 	signpost  9,  7, SIGNPOST_READ, NettBuildingOfficeRoseBushes
 
 	db 4 ; object events
-	person_event SPRITE_CORY,  3,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, NettBuildingOfficeNett, EVENT_NETT_BUILDING_DUNGEON
+	person_event SPRITE_PSYCHIC,  3,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, NettBuildingOfficeNett, EVENT_NETT_BUILDING_DUNGEON
 	person_event SPRITE_PLAYER_CUTSCENE,  6,  5, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_PLAYER_CUTSCENE_SILVER
 	person_event SPRITE_GOLD_TROPHY,  4,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NettBuildingOfficeTrophySilver, -1
 	person_event SPRITE_GOLD_TROPHY,  5,  0, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NettBuildingOfficeTrophyGold, -1
@@ -378,6 +378,15 @@ NettBuildingOfficeNettText8:
 	line "from LUSTER CITY"
 	cont "to use it outside"
 	cont "of battle."
+	
+	para "Unfortunately,"
+	line "the GYM is not"
+	cont "available in this"
+	cont "demo,"
+	
+	para "so you'll have"
+	line "to come back when"
+	cont "the game is done…"
 	done
 	
 NettBuildingOfficeNettText9:

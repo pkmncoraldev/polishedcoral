@@ -20,6 +20,8 @@ SECTION "Music 1", ROMX
 
 INCLUDE "audio/music/titlescreen.asm"
 INCLUDE "audio/music/titlescreen2.asm"
+INCLUDE "audio/music/devmessage.asm"
+INCLUDE "audio/music/devmessageend.asm"
 INCLUDE "audio/music/mom.asm"
 INCLUDE "audio/music/wildpokemonvictory.asm" ; shares with successfulcapture.asm
 INCLUDE "audio/music/successfulcapture.asm" ; shares with wildpokemonvictory.asm

@@ -71,4 +71,6 @@ Music:
 	dba Music_AfterTheRivalFight
 	dba Music_AfterTeamSnareEncounter
 	dba Music_TrainStartup
+	dba Music_DevMessage
+	dba Music_DevMessageEnd
 	

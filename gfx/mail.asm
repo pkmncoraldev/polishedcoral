@@ -105,7 +105,7 @@ MailGFXPointers: ; b92f8
 	db -1
 ; b9317
 
-LoadSurfMailGFX: ; b9317
+LoadSurfMailGFX:: ; b9317
 	push bc
 	ld hl, VTiles2 tile $31
 	ld de, SurfMailBorderGFX

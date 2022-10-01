@@ -84,6 +84,7 @@ NewGame: ; 5b6b
 _NewGame_FinishSetup:
 	call ResetWRAM
 	call NewGame_ClearTileMapEtc
+	call NewGame_DeveloperMessage
 	call SetInitialOptions
 	call ProfSpruceSpeech
 	call InitializeWorld
@@ -632,6 +633,22 @@ Continue_DisplayGameTime: ; 5f84
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
 	jp PrintNum
 ; 5f99
+NewGame_DeveloperMessage:
+	ld a, $10
+	ld [wMusicFade], a
+	ld a, MUSIC_NONE % $100
+	ld [wMusicFadeIDLo], a
+	ld a, MUSIC_NONE / $100
+	ld [wMusicFadeIDHi], a
+	ld c, 31
+	call FadeToBlack
+	call ClearTileMap
+	ld c, 120
+	call DelayFrames
+	ld c, 15
+	call FadeToWhite
+	farcall _DeveloperMessage
+	ret
 
 ProfSpruceSpeech: ; 0x5f99
 	ld de, OriginalGameByGFX

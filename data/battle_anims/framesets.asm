@@ -199,6 +199,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_e6
 	dw .Frameset_e7
 	dw .Frameset_e9
+	dw .Frameset_ea
 	dw .Frameset_ec
 	dw .Frameset_ed
 
@@ -1372,6 +1373,10 @@ BattleAnimFrameData: ; ce85e
 	frame BATTLEANIMOAMSET_54,  1
 	frame BATTLEANIMOAMSET_EF,  1
 	dorestart
+	
+.Frameset_ea:
+	frame BATTLEANIMOAMSET_82,  8
+	endanim
 	
 .Frameset_ec:
 	db BATTLEANIMOAMSET_F3,  1

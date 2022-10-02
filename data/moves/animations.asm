@@ -292,13 +292,68 @@ BattleAnim_FieryDance:
 BattleAnim_ClearSmog:
 BattleAnim_CosmicPower:
 BattleAnim_Block:
-BattleAnim_Shockwave:
 BattleAnim_RockWrecker:
 BattleAnim_OminousWind:
 BattleAnim_Wish:
 	anim_ret
 
-
+BattleAnim_Shockwave:
+	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_CHARGE
+	anim_bgeffect ANIM_BG_06, $0, $2, $0
+	anim_sound 0, 0, SFX_WARP_TO
+	anim_obj ANIM_OBJ_SHOCK_WAVE_CHARGE, 48, 88, $38
+	anim_wait 4
+	anim_obj ANIM_OBJ_SHOCK_WAVE_CHARGE, 48, 88, $20
+	anim_wait 4
+	anim_obj ANIM_OBJ_SHOCK_WAVE_CHARGE, 48, 88, $8
+	anim_wait 4
+	anim_obj ANIM_OBJ_SHOCK_WAVE_CHARGE, 48, 88, $10
+	anim_wait 4
+	anim_obj ANIM_OBJ_SHOCK_WAVE_CHARGE, 48, 88, $28
+	anim_wait 4
+	anim_obj ANIM_OBJ_SHOCK_WAVE_CHARGE, 48, 88, $0
+	anim_wait 4
+	anim_obj ANIM_OBJ_SHOCK_WAVE_CHARGE, 48, 88, $18
+	anim_wait 4
+	anim_obj ANIM_OBJ_SHOCK_WAVE_CHARGE, 48, 88, $30
+	anim_wait 4
+.loop
+	anim_sound 0, 0, SFX_ZAP_CANNON
+	anim_obj ANIM_OBJ_SHOCK_WAVE, 48, 88, $30
+	anim_wait 2
+	anim_loop 5, .loop
+	anim_wait 2
+.loop2
+	anim_sound 0, 0, SFX_ZAP_CANNON
+	anim_obj ANIM_OBJ_SHOCK_WAVE_2, 64, 0, $10
+	anim_wait 2
+	anim_loop 5, .loop2
+	anim_wait 2
+.loop3
+	anim_sound 0, 0, SFX_ZAP_CANNON
+	anim_obj ANIM_OBJ_SHOCK_WAVE, 80, 72, $30
+	anim_wait 2
+	anim_loop 5, .loop3
+	anim_wait 2
+.loop4
+	anim_sound 0, 0, SFX_ZAP_CANNON
+	anim_obj ANIM_OBJ_SHOCK_WAVE_2, 96, 0, $10
+	anim_wait 2
+	anim_loop 5, .loop4
+	anim_wait 2
+.loop5
+	anim_sound 0, 0, SFX_ZAP_CANNON
+	anim_obj ANIM_OBJ_SHOCK_WAVE, 112, 72, $30
+	anim_wait 2
+	anim_loop 5, .loop5
+	anim_wait 8
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_sound 0, 1, SFX_THUNDER
+	anim_obj ANIM_OBJ_SHOCK_WAVE_3, 136, 0, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_2D, 136, 68, $0
+	anim_wait 48
+	anim_ret
 
 BattleAnim_ToxicSpikes:
 	anim_1gfx ANIM_GFX_MISC

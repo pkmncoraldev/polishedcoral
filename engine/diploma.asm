@@ -108,11 +108,22 @@ _DeveloperMessage:
 	call ClearSprites
 	call DisableLCD
 	
+	xor a
+	ld [wPlaceBallsY], a
+	ld [wPlaceBallsX], a
+	ld [wMoogooTurn], a
+	ld a, 1
+	ld [wNumHits], a
+	
 	ld de, MUSIC_DEV_MESSAGE
 	call PlayMusic
 	
 	ld hl, DeveloperMessageCorsolaGFX
 	ld de, VTiles0
+	call Decompress
+	
+	ld hl, DeveloperMessageBallGFX
+	ld de, VTiles0 + $48 tiles
 	call Decompress
 	
 	ld hl, DeveloperMessageGFX
@@ -122,120 +133,36 @@ _DeveloperMessage:
 	decoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	rst CopyBytes
-	ld de, .String1
+	ld de, DeveloperMessageString1
 	hlcoord 2, 2
 	call PlaceString
 	call _DeveloperMessageAnimate
+	
+	ld hl, DevMessage_BallOAM
+	ld de, wSprites
+	ld bc, 16
+	call CopyBytes
+	
 	call EnableLCD
 	call ApplyTilemapInVBlank	
 	ld hl, DeveloperMessagePalette
 	ld de, wUnknBGPals
-	ld bc, 4 palettes
+	ld bc, 5 palettes
 	ld a, $5
 	call FarCopyWRAM
-	ld hl, DeveloperMessageCorsolaPalette
+	ld hl, DeveloperMessageOBPalette
 	ld de, wUnknOBPals
-	ld bc, 1 palettes
+	ld bc, 5 palettes
 	ld a, $5
 	call FarCopyWRAM
-;the following is mad ugly, but idc im evil
+	
 	ld a, 1
 	ld [rVBK], a
 	
-	hlcoord 0, 0, wAttrMap
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
-	ld a, 0
-	call ByteFill
-	
-	hlcoord 0, 0, wAttrMap
-	ld bc, 1 * 1
-	ld a, 1
-	call ByteFill
-	
-	hlcoord 0, 17, wAttrMap
-	ld bc, 1 * 1
-	ld a, 1
-	call ByteFill
-	
-	hlcoord 19, 0, wAttrMap
-	ld bc, 1 * 1
-	ld a, 1
-	call ByteFill
-	
-	hlcoord 19, 17, wAttrMap
-	ld bc, 1 * 1
-	ld a, 1
-	call ByteFill
-	
-	hlcoord 0, 2, wAttrMap
-	ld bc, 1 * SCREEN_WIDTH
-	ld a, 2
-	call ByteFill
-	
-	hlcoord 0, 4, wAttrMap
-	ld bc, 1 * SCREEN_WIDTH
-	ld a, 2
-	call ByteFill
-	
-	hlcoord 0, 6, wAttrMap
-	ld bc, 1 * SCREEN_WIDTH
-	ld a, 2
-	call ByteFill
-	
-	hlcoord 0, 8, wAttrMap
-	ld bc, 1 * SCREEN_WIDTH
-	ld a, 2
-	call ByteFill
-	
-	hlcoord 0, 10, wAttrMap
-	ld bc, 1 * SCREEN_WIDTH
-	ld a, 2
-	call ByteFill
-	
-	hlcoord 0, 12, wAttrMap
-	ld bc, 1 * SCREEN_WIDTH
-	ld a, 2
-	call ByteFill
-	
-	hlcoord 0, 14, wAttrMap
-	ld bc, 1 * SCREEN_WIDTH
-	ld a, 2
-	call ByteFill
-	
-	hlcoord 1, 2, wAttrMap
-	ld bc, 1 * 18
-	ld a, 3
-	call ByteFill
-	
-	hlcoord 1, 4, wAttrMap
-	ld bc, 1 * 18
-	ld a, 3
-	call ByteFill
-	
-	hlcoord 1, 6, wAttrMap
-	ld bc, 1 * 18
-	ld a, 3
-	call ByteFill
-	
-	hlcoord 1, 8, wAttrMap
-	ld bc, 1 * 18
-	ld a, 3
-	call ByteFill
-	
-	hlcoord 1, 10, wAttrMap
-	ld bc, 1 * 18
-	ld a, 3
-	call ByteFill
-	
-	hlcoord 1, 12, wAttrMap
-	ld bc, 1 * 18
-	ld a, 3
-	call ByteFill
-	
-	hlcoord 1, 14, wAttrMap
-	ld bc, 1 * 18
-	ld a, 3
-	call ByteFill
+	ld hl, DeveloperMessageAttrmap
+	decoord 0, 0, wAttrMap
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	rst CopyBytes
 	
 	xor a
 	ld [rVBK], a
@@ -246,11 +173,10 @@ _DeveloperMessage:
 	call FadePalettes
 	call DelayFrame
 	
-	xor a
-	ld [wPlaceBallsY], a
-	ld [wPlaceBallsX], a
-
-
+	ld a, [wMoogooTurn]
+	inc a
+	ld [wMoogooTurn], a
+	
 .page_1
 	call _DeveloperMessageAnimate
 	call GetJoypad
@@ -262,35 +188,10 @@ _DeveloperMessage:
 	ld de, SFX_READ_TEXT
 	call PlaySFX
 	
-	ld hl, DeveloperMessagePalette3
-	ld de, wUnknBGPals + 3 palettes
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
-	ld c, 15
-	call FadePalettes
-	
-	ld hl, DeveloperMessageTilemap
-	decoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	rst CopyBytes
-	ld de, .String2
-	hlcoord 2, 2
-	call PlaceString
-	
-	ld c, 2
-	call DelayFrames
-	
-	ld hl, DeveloperMessagePalette2
-	ld de, wUnknBGPals + 3 palettes
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
-	ld c, 15
-	call FadePalettes
-	
-	ld c, 1
-	call DelayFrames
+	ld a, [wMoogooTurn]
+	inc a
+	ld [wMoogooTurn], a
+	call _DeveloperMessageNextPage	
 	
 .page_2
 	call _DeveloperMessageAnimate
@@ -303,9 +204,92 @@ _DeveloperMessage:
 	ld de, SFX_READ_TEXT
 	call PlaySFX
 	
+	ld a, [wMoogooTurn]
+	inc a
+	ld [wMoogooTurn], a
+	call _DeveloperMessageNextPage
+	
+.page_3
+	call _DeveloperMessageAnimate
+	call GetJoypad
+	ld hl, hJoyPressed
+	bit A_BUTTON_F, [hl]
+	jr z, .page_3
+	
+	call _DeveloperMessageAnimatePageTurnLast
+	ld de, SFX_READ_TEXT
+	call PlaySFX
+	
+	ld a, [wMoogooTurn]
+	inc a
+	ld [wMoogooTurn], a
+	call _DeveloperMessageNextPage
+	
+	call _DeveloperMessageAnimateEnding
+	ld c, 100
+	jp DelayFrames
+	ld c, 31
+	call FadeToBlack
+	jp ClearTileMap
+; 1dd760
+	
+DeveloperMessageString1:
+	db	 "#MON CORAL<LNBRK>"
+	db	 "VERSION DEMO 3"
+	
+	next "This demo goes<LNBRK>"
+	db	 "to the 4th GYM<LNBRK>"
+	db	 "and beyond!"
+	
+	next "Most of the game<LNBRK>"
+	db	 "has been redone<LNBRK>"
+	db	 "since the last<LNBRK>"
+	db	 "release, and I<LNBRK>"
+	db	 "feel it is<LNBRK>"
+	db	 "much better."
+	db   "@"
+	
+DeveloperMessageString2:
+	db   "This demo will<LNBRK>"
+	db	 "probably be the<LNBRK>"
+	db	 "last before the<LNBRK>"
+	db	 "full release,<LNBRK>"
+	db	 "but that's still<LNBRK>"
+	db	 "quite a ways<LNBRK>"
+	db	 "away!"
+	
+	next "Sorry for the<LNBRK>"
+	db	 "long wait!"
+	db   "@"
+	
+DeveloperMessageString3:
+	db   "Remember that<LNBRK>"
+	db	 "some moves and<LNBRK>"
+	db	 "mechanics may be<LNBRK>"
+	db	 "differenate than<LNBRK>"
+	db	 "in other #MON<LNBRK>"
+	db	 "games."
+	
+	next "You should pay<LNBRK>"
+	db	 "attention to<LNBRK>"
+	db	 "what NPCs say<LNBRK>"
+	db	 "and avoid your<LNBRK>"
+	db	 "emulator's<LNBRK>"
+	db	 "speedup key!"
+	db   "@"
+	
+DeveloperMessageString4:
+	db	 "Thanks for<LNBRK>"
+	db	 "playing #MON<LNBRK>"
+	db	 "CORAL VERSION!"
+	
+	next "Have fun!"
+	db   "@"
+	
+_DeveloperMessageNextPage:
 	ld hl, DeveloperMessagePalette3
-	ld de, wUnknBGPals + 3 palettes
-	ld bc, 1 palettes
+	ld de, wUnknBGPals + 2 palettes
+	ld bc, 2 palettes
 	ld a, $5
 	call FarCopyWRAM
 	ld c, 15
@@ -315,7 +299,20 @@ _DeveloperMessage:
 	decoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	rst CopyBytes
-	ld de, .String3
+	
+	ld a, [wMoogooTurn]
+	cp 2
+	jr z, .page_2
+	cp 3
+	jr z, .page_3
+	ld de, DeveloperMessageString4
+	jr .cont
+.page_2
+	ld de, DeveloperMessageString2
+	jr .cont
+.page_3
+	ld de, DeveloperMessageString3
+.cont
 	hlcoord 2, 2
 	call PlaceString
 	
@@ -323,85 +320,39 @@ _DeveloperMessage:
 	call DelayFrames
 	
 	ld hl, DeveloperMessagePalette2
-	ld de, wUnknBGPals + 3 palettes
-	ld bc, 1 palettes
+	ld de, wUnknBGPals + 2 palettes
+	ld bc, 2 palettes
 	ld a, $5
 	call FarCopyWRAM
 	ld c, 15
 	call FadePalettes
 	
 	ld c, 1
-	call DelayFrames
+	jp DelayFrames
 	
-.page_3
-	call _DeveloperMessageAnimate
-	call GetJoypad
-	ld hl, hJoyPressed
-	bit A_BUTTON_F, [hl]
-	jr z, .page_3
-	
-	ld de, MUSIC_DEV_MESSAGE_END
-	call PlayMusic
-	ld c, 31
-	call FadeToBlack
-	call ClearTileMap
-	ret
-; 1dd760
-	
-.String1:
-	db   "Page 1"
-	next "This is the"
-	next "first page."
-	next "Words, Words,"
-	next "many words!"
-	db   "@"
-	
-.String2:
-	db   "Page 2"
-	next "Page 2"
-	next "Page 2"
-	next "Page 2"
-	next "Page 2"
-	db   "@"
-	
-.String3:
-	db   "Page 3"
-	next "Page 3"
-	next "Page 3"
-	next "Page 3"
-	next "Page 3"
-	db   "@"
 	
 _DeveloperMessageAnimate:
 	.loop
-	ld a, [wPlaceBallsX]
+	ld a, [wNumHits]
 	cp 0
 	jr z, .frame_1
-	cp 1
-	jr z, .frame_1
 	cp 2
-	jr z, .frame_1
-	cp 6
-	jr z, .frame_3
-	cp 7
-	jr z, .frame_3
-	cp 8
 	jr z, .frame_3
 .frame_2
 	ld hl, DevMessage_OAM2
-	ld de, wSprites
+	ld de, wSprites + 16
 	ld bc, 64
 	call CopyBytes
 	jr .cont
 .frame_1
 	ld hl, DevMessage_OAM1
-	ld de, wSprites
+	ld de, wSprites + 16
 	ld bc, 64
 	call CopyBytes
 	jr .cont
 .frame_3
 	ld hl, DevMessage_OAM3
-	ld de, wSprites
+	ld de, wSprites + 16
 	ld bc, 64
 	call CopyBytes
 .cont
@@ -409,24 +360,96 @@ _DeveloperMessageAnimate:
 	inc a
 	ld [wPlaceBallsY], a
 	cp $ff
-	jr nz, .dont_inc
+	ret nz
 	ld a, [wPlaceBallsX]
 	inc a
 	ld [wPlaceBallsX], a
-	cp 12
-	jr nz, .dont_reset
+	cp 8
+	ret nz
 	xor a
 	ld [wPlaceBallsX], a
-.dont_inc
-.dont_reset
+	ld a, [wNumHits]
+	inc a
+	ld [wNumHits], a
+	cp 4
+	ret nz
+	xor a
+	ld [wNumHits], a
 	ret
 	
 _DeveloperMessageAnimatePageTurn:
 	xor a
 	ld [wPlaceBallsY], a
 	ld [wPlaceBallsX], a
+	ld a, 1
+	ld [wNumHits], a
 	ld hl, DevMessage_OAM4
-	ld de, wSprites
+	ld de, wSprites + 16
+	ld bc, 64
+	jp CopyBytes
+	
+_DeveloperMessageAnimatePageTurnLast:
+	xor a
+	ld [wPlaceBallsY], a
+	ld [wPlaceBallsX], a
+	ld a, 1
+	ld [wNumHits], a
+	ld hl, DevMessage_OAM5
+	ld de, wSprites + 16
+	ld bc, 64
+	jp CopyBytes
+	
+_DeveloperMessageAnimateEnding:
+	xor a
+	ld [wPlaceBallsY], a
+	ld [wPlaceBallsX], a
+	ld [wNumHits], a
+	ld hl, DevMessage_OAM2
+	ld de, wSprites + 16
+	ld bc, 64
+	call CopyBytes
+	
+	ld c, 2
+	call DelayFrames
+	ld hl, DevMessage_OAM6
+	ld de, wSprites + 16
+	ld bc, 64
+	call CopyBytes
+	ld c, 2
+	call DelayFrames
+	
+	ld hl, DevMessage_OAM8
+	ld de, wSprites + 16
+	ld bc, 64
+	call CopyBytes
+	ld c, 1
+	call DelayFrames
+	
+	ld de, MUSIC_DEV_MESSAGE_END
+	call PlayMusic
+	ld hl, DevMessage_OAM9
+	ld de, wSprites + 16
+	ld bc, 64
+	call CopyBytes
+	ld c, 1
+	call DelayFrames
+	
+	ld hl, DevMessage_OAM10
+	ld de, wSprites + 16
+	ld bc, 64
+	call CopyBytes
+	ld c, 1
+	call DelayFrames
+	
+	ld hl, DevMessage_OAM7
+	ld de, wSprites + 16
+	ld bc, 64
+	call CopyBytes
+	ld c, 4
+	call DelayFrames
+	
+	ld hl, DevMessage_OAM11
+	ld de, wSprites + 16
 	ld bc, 64
 	jp CopyBytes
 	
@@ -506,14 +529,160 @@ DevMessage_OAM4:
 	dsprite  18,  0, 17,  4, $3e, $0
 	dsprite  18,  0, 18,  4, $3f, $0
 	
-DeveloperMessageGFX: ; 1dd805
+DevMessage_OAM5:
+;y pos, x pos, tile, palette
+	dsprite  15,  0, 15,  4, $40, $0
+	dsprite  15,  0, 16,  4, $41, $0
+	dsprite  15,  0, 17,  4, $42, $0
+	dsprite  15,  0, 18,  4, $43, $0
+	dsprite  16,  0, 15,  4, $50, $0
+	dsprite  16,  0, 16,  4, $51, $0
+	dsprite  16,  0, 17,  4, $52, $0
+	dsprite  16,  0, 18,  4, $53, $0
+	dsprite  17,  0, 15,  4, $60, $0
+	dsprite  17,  0, 16,  4, $61, $0
+	dsprite  17,  0, 17,  4, $62, $0
+	dsprite  17,  0, 18,  4, $63, $0
+	dsprite  18,  0, 15,  4, $70, $0
+	dsprite  18,  0, 16,  4, $71, $0
+	dsprite  18,  0, 17,  4, $72, $0
+	dsprite  18,  0, 18,  4, $73, $0
+	
+DevMessage_OAM6:
+;y pos, x pos, tile, palette
+	dsprite  15,  0, 15,  4, $44, $0
+	dsprite  15,  0, 16,  4, $45, $0
+	dsprite  15,  0, 17,  4, $46, $0
+	dsprite  15,  0, 18,  4, $47, $0
+	dsprite  16,  0, 15,  4, $54, $0
+	dsprite  16,  0, 16,  4, $55, $0
+	dsprite  16,  0, 17,  4, $56, $0
+	dsprite  16,  0, 18,  4, $57, $0
+	dsprite  17,  0, 15,  4, $64, $0
+	dsprite  17,  0, 16,  4, $65, $0
+	dsprite  17,  0, 17,  4, $66, $0
+	dsprite  17,  0, 18,  4, $67, $0
+	dsprite  18,  0, 15,  4, $74, $0
+	dsprite  18,  0, 16,  4, $75, $0
+	dsprite  18,  0, 17,  4, $76, $0
+	dsprite  18,  0, 18,  4, $77, $0
+	
+DevMessage_OAM7:
+;y pos, x pos, tile, palette
+	dsprite  13,  0, 15,  4, $04, $0
+	dsprite  13,  0, 16,  4, $05, $0
+	dsprite  13,  0, 17,  4, $06, $0
+	dsprite  13,  0, 18,  4, $07, $0
+	dsprite  14,  0, 15,  4, $14, $0
+	dsprite  14,  0, 16,  4, $15, $0
+	dsprite  14,  0, 17,  4, $16, $0
+	dsprite  14,  0, 18,  4, $17, $0
+	dsprite  15,  0, 15,  4, $24, $0
+	dsprite  15,  0, 16,  4, $25, $0
+	dsprite  15,  0, 17,  4, $26, $0
+	dsprite  15,  0, 18,  4, $27, $0
+	dsprite  16,  0, 15,  4, $34, $0
+	dsprite  16,  0, 16,  4, $35, $0
+	dsprite  16,  0, 17,  4, $36, $0
+	dsprite  16,  0, 18,  4, $37, $0
+	
+DevMessage_OAM8:
+;y pos, x pos, tile, palette
+	dsprite  14,  4, 15,  4, $44, $0
+	dsprite  14,  4, 16,  4, $45, $0
+	dsprite  14,  4, 17,  4, $46, $0
+	dsprite  14,  4, 18,  4, $47, $0
+	dsprite  15,  4, 15,  4, $54, $0
+	dsprite  15,  4, 16,  4, $55, $0
+	dsprite  15,  4, 17,  4, $56, $0
+	dsprite  15,  4, 18,  4, $57, $0
+	dsprite  16,  4, 15,  4, $64, $0
+	dsprite  16,  4, 16,  4, $65, $0
+	dsprite  16,  4, 17,  4, $66, $0
+	dsprite  16,  4, 18,  4, $67, $0
+	dsprite  17,  4, 15,  4, $74, $0
+	dsprite  17,  4, 16,  4, $75, $0
+	dsprite  17,  4, 17,  4, $76, $0
+	dsprite  17,  4, 18,  4, $77, $0
+
+DevMessage_OAM9:
+;y pos, x pos, tile, palette
+	dsprite  14,  0, 15,  4, $44, $0
+	dsprite  14,  0, 16,  4, $45, $0
+	dsprite  14,  0, 17,  4, $46, $0
+	dsprite  14,  0, 18,  4, $47, $0
+	dsprite  15,  0, 15,  4, $54, $0
+	dsprite  15,  0, 16,  4, $55, $0
+	dsprite  15,  0, 17,  4, $56, $0
+	dsprite  15,  0, 18,  4, $57, $0
+	dsprite  16,  0, 15,  4, $64, $0
+	dsprite  16,  0, 16,  4, $65, $0
+	dsprite  16,  0, 17,  4, $66, $0
+	dsprite  16,  0, 18,  4, $67, $0
+	dsprite  17,  0, 15,  4, $74, $0
+	dsprite  17,  0, 16,  4, $75, $0
+	dsprite  17,  0, 17,  4, $76, $0
+	dsprite  17,  0, 18,  4, $77, $0
+
+DevMessage_OAM10:
+;y pos, x pos, tile, palette
+	dsprite  13,  4, 15,  4, $44, $0
+	dsprite  13,  4, 16,  4, $45, $0
+	dsprite  13,  4, 17,  4, $46, $0
+	dsprite  13,  4, 18,  4, $47, $0
+	dsprite  14,  4, 15,  4, $54, $0
+	dsprite  14,  4, 16,  4, $55, $0
+	dsprite  14,  4, 17,  4, $56, $0
+	dsprite  14,  4, 18,  4, $57, $0
+	dsprite  15,  4, 15,  4, $64, $0
+	dsprite  15,  4, 16,  4, $65, $0
+	dsprite  15,  4, 17,  4, $66, $0
+	dsprite  15,  4, 18,  4, $67, $0
+	dsprite  16,  4, 15,  4, $74, $0
+	dsprite  16,  4, 16,  4, $75, $0
+	dsprite  16,  4, 17,  4, $76, $0
+	dsprite  16,  4, 18,  4, $77, $0
+	
+DevMessage_OAM11:
+;y pos, x pos, tile, palette
+	dsprite  13,  2, 15,  4, $0c, $0
+	dsprite  13,  2, 16,  4, $0d, $0
+	dsprite  13,  2, 17,  4, $0e, $0
+	dsprite  13,  2, 18,  4, $0f, $0
+	dsprite  14,  2, 15,  4, $1c, $0
+	dsprite  14,  2, 16,  4, $1d, $0
+	dsprite  14,  2, 17,  4, $1e, $0
+	dsprite  14,  2, 18,  4, $1f, $0
+	dsprite  15,  2, 15,  4, $2c, $0
+	dsprite  15,  2, 16,  4, $2d, $0
+	dsprite  15,  2, 17,  4, $2e, $0
+	dsprite  15,  2, 18,  4, $2f, $0
+	dsprite  16,  2, 15,  4, $3c, $0
+	dsprite  16,  2, 16,  4, $3d, $0
+	dsprite  16,  2, 17,  4, $3e, $0
+	dsprite  16,  2, 18,  4, $3f, $0
+
+DevMessage_BallOAM:
+;y pos, x pos, tile, palette
+	dsprite  2,  4, 1,  4, $48, $1
+	dsprite  2,  4, 19, 4, $48, $2
+	dsprite  18, 4, 1,  4, $48, $3
+	dsprite  18, 4, 19, 4, $48, $4
+	
+DeveloperMessageGFX:
 INCBIN "gfx/diploma/devmessage.2bpp.lz"
 
-DeveloperMessageCorsolaGFX: ; 1dd805
+DeveloperMessageCorsolaGFX:
 INCBIN "gfx/diploma/corsola.2bpp.lz"
 
-DeveloperMessageTilemap: ; 1ddc4b
+DeveloperMessageBallGFX:
+INCBIN "gfx/diploma/ball.2bpp.lz"
+
+DeveloperMessageTilemap:
 INCBIN "gfx/diploma/devmessage.tilemap"
+
+DeveloperMessageAttrmap:
+INCBIN "gfx/diploma/devmessage.attrmap"
 
 DeveloperMessagePalette:
 	RGB 31, 27, 19
@@ -521,30 +690,60 @@ DeveloperMessagePalette:
 	RGB 27, 17, 07
 	RGB 22, 13, 04
 	
-	RGB 31, 31, 31
-	RGB 29, 20, 11
-	RGB 27, 17, 07
-	RGB 22, 13, 04
-
-DeveloperMessagePalette2:
 	RGB 31, 29, 23
 	RGB 29, 20, 11
 	RGB 27, 17, 07
 	RGB 22, 13, 04
 	
+DeveloperMessagePalette2:
+	RGB 31, 27, 19
+	RGB 29, 20, 11
+	RGB 27, 17, 07
+	RGB 22, 13, 04
+	
 	RGB 31, 29, 23
+	RGB 29, 20, 11
+	RGB 27, 17, 07
+	RGB 22, 13, 04
+	
+	RGB 31, 31, 31
 	RGB 29, 20, 11
 	RGB 27, 17, 07
 	RGB 22, 13, 04
 	
 DeveloperMessagePalette3:
+	RGB 31, 27, 19
+	RGB 29, 20, 11
+	RGB 27, 17, 07
+	RGB 31, 27, 19
+
 	RGB 31, 29, 23
 	RGB 29, 20, 11
 	RGB 27, 17, 07
 	RGB 31, 29, 23
 	
-DeveloperMessageCorsolaPalette:
+DeveloperMessageOBPalette:
 	RGB 31, 31, 00
 	RGB 31, 31, 31
 	RGB 31, 11, 31
 	RGB 00, 00, 00
+	
+	RGB 31, 31, 00
+	RGB 31, 31, 31
+	RGB 12, 18, 30
+	RGB 00, 06, 10
+	
+	RGB 31, 31, 00
+	RGB 31, 31, 31
+	RGB 12, 18, 30
+	RGB 00, 06, 10
+	
+	RGB 31, 31, 00
+	RGB 31, 31, 31
+	RGB 12, 18, 30
+	RGB 00, 06, 10
+	
+	RGB 31, 31, 00
+	RGB 31, 31, 31
+	RGB 12, 18, 30
+	RGB 00, 06, 10

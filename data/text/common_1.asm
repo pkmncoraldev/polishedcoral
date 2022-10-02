@@ -135,14 +135,8 @@ UnknownText_0x1bc16e::
 	done
 
 UnknownText_0x1bc29c::
-	text "………………………………"
-	line "………………………………"
-
-	para "Zzz… Hm? Wha…?"
-	line "You woke me up!"
-
-	para "Will you check the"
-	line "clock for me?"
+	text "Please set the"
+	line "time."
 	prompt
 
 UnknownText_0x1bc2eb::
@@ -169,7 +163,7 @@ UnknownText_0x1bc323::
 
 UnknownText_0x1bc326::
 	text "!"
-	line "I overslept!"
+	line "Got it!"
 	done
 
 UnknownText_0x1bc336::

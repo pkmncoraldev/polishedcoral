@@ -227,9 +227,10 @@ _DeveloperMessage:
 	
 	call _DeveloperMessageAnimateEnding
 	ld c, 100
-	jp DelayFrames
+	call DelayFrames
 	ld c, 31
-	call FadeToBlack
+	call FadeToWhite
+	call ClearSprites
 	jp ClearTileMap
 ; 1dd760
 	
@@ -266,7 +267,7 @@ DeveloperMessageString3:
 	db   "Remember that<LNBRK>"
 	db	 "some moves and<LNBRK>"
 	db	 "mechanics may be<LNBRK>"
-	db	 "differenate than<LNBRK>"
+	db	 "different than<LNBRK>"
 	db	 "in other #MON<LNBRK>"
 	db	 "games."
 	
@@ -731,19 +732,19 @@ DeveloperMessageOBPalette:
 	RGB 31, 31, 00
 	RGB 31, 31, 31
 	RGB 12, 18, 30
-	RGB 00, 06, 10
+	RGB 00, 08, 12
 	
 	RGB 31, 31, 00
 	RGB 31, 31, 31
 	RGB 12, 18, 30
-	RGB 00, 06, 10
+	RGB 00, 08, 12
 	
 	RGB 31, 31, 00
 	RGB 31, 31, 31
 	RGB 12, 18, 30
-	RGB 00, 06, 10
+	RGB 00, 08, 12
 	
 	RGB 31, 31, 00
 	RGB 31, 31, 31
 	RGB 12, 18, 30
-	RGB 00, 06, 10
+	RGB 00, 08, 12

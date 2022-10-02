@@ -84,8 +84,21 @@ NewGame: ; 5b6b
 _NewGame_FinishSetup:
 	call ResetWRAM
 	call NewGame_ClearTileMapEtc
-	call NewGame_DeveloperMessage
 	call SetInitialOptions
+	farcall InitClock
+	ld c, 31
+	call FadeToBlack
+	call ClearTileMap
+	ld c, 40
+	call DelayFrames
+	ld c, 15
+	call FadeToWhite
+	farcall _DeveloperMessage
+	call ClearTileMap
+	
+	ld c, 90
+	call DelayFrames
+	
 	call ProfSpruceSpeech
 	call InitializeWorld
 	ld a, 1
@@ -633,33 +646,12 @@ Continue_DisplayGameTime: ; 5f84
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
 	jp PrintNum
 ; 5f99
-NewGame_DeveloperMessage:
-	ld a, $10
-	ld [wMusicFade], a
-	ld a, MUSIC_NONE % $100
-	ld [wMusicFadeIDLo], a
-	ld a, MUSIC_NONE / $100
-	ld [wMusicFadeIDHi], a
-	ld c, 31
-	call FadeToBlack
-	call ClearTileMap
-	ld c, 120
-	call DelayFrames
-	ld c, 15
-	call FadeToWhite
-	farcall _DeveloperMessage
-	ret
 
 ProfSpruceSpeech: ; 0x5f99
 	ld de, OriginalGameByGFX
 	ld hl, VTiles0
 	lb bc, BANK(OriginalGameByGFX), $0c
 	call Request2bpp
-
-	farcall InitClock
-	ld c, 31
-	call FadeToBlack
-	call ClearTileMap
 
 	ld de, MUSIC_ROUTE_2
 	call PlayMusic

@@ -3092,7 +3092,8 @@ BunearymGroup:
 	db "BOY1@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 31, BUNEARY
+	db 30, GRIMER
 	db -1 ; end
 
 ; ================
@@ -3101,7 +3102,8 @@ BunearymGroup:
 	db "BOY2@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 32, BUNEARY
+	db 32, MEOWTH
 	db -1 ; end
 	
 ; ================
@@ -3110,7 +3112,9 @@ BunearymGroup:
 	db "BOY3@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 30, RATICATE
+	db 31, GRIMER
+	db 32, BUNEARY
 	db -1 ; end
 	
 ; ================
@@ -3119,7 +3123,9 @@ BunearymGroup:
 	db "BOY4@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 31, BUNEARY
+	db 32, CROAGUNK
+	db 32, GRIMER
 	db -1 ; end
 	
 ; ================
@@ -3128,7 +3134,7 @@ BunearymGroup:
 	db "BOY5@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 30, LOPUNNY
 	db -1 ; end
 	
 ; ================
@@ -3143,7 +3149,8 @@ BunearyfGroup:
 	db "GAL1@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 30, CROAGUNK
+	db 31, BUNEARY
 	db -1 ; end
 
 ; ================
@@ -3152,7 +3159,9 @@ BunearyfGroup:
 	db "GAL2@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 30, GOLBAT
+	db 32, BUNEARY
+	db 32, CROAGUNK
 	db -1 ; end
 
 ; ================
@@ -3165,9 +3174,14 @@ FrankieGroup:
 
 	; FRANKIE
 	db "THE KID@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 37, LOPUNNY
+		db FAKE_OUT, DOUBLE_HIT, SWEET_KISS, CHARM_FEATHER_DANCE
+	db 36, CLEFABLE
+		db REFLECT, CHARM_FEATHER_DANCE, DAZZLINGLEAM, ICE_PUNCH
+	db 37, TOXICROAK
+		db TAUNT, TOXIC, FEINT_ATTACK, VENOSHOCK
 	db -1 ; end
 
 ; ================

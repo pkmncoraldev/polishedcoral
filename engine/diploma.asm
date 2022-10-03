@@ -112,7 +112,7 @@ _DeveloperMessage:
 	ld [wPlaceBallsY], a
 	ld [wPlaceBallsX], a
 	ld [wMoogooTurn], a
-	ld a, 1
+	ld a, 4
 	ld [wNumHits], a
 	
 	ld de, MUSIC_DEV_MESSAGE
@@ -260,7 +260,9 @@ DeveloperMessageString2:
 	db	 "away!"
 	
 	next "Sorry for the<LNBRK>"
-	db	 "long wait!"
+	db	 "wait, and thank<LNBRK>"
+	db	 "you for your<LNBRK>"
+	db	 "patience!"
 	db   "@"
 	
 DeveloperMessageString3:
@@ -337,10 +339,22 @@ _DeveloperMessageAnimate:
 	ld a, [wNumHits]
 	cp 0
 	jr z, .frame_1
+	cp 1
+	jr z, .frame_1
 	cp 2
-	jr z, .frame_3
-.frame_2
-	ld hl, DevMessage_OAM2
+	jr z, .frame_1
+	cp 3
+	jr z, .frame_1
+	cp 4
+;	jr z, .frame_1
+;	cp 5
+;	jr z, .frame_1
+;	cp 6
+	jr z, .frame_2
+	cp 9
+	jr z, .frame_2
+.frame_3
+	ld hl, DevMessage_OAM3
 	ld de, wSprites + 16
 	ld bc, 64
 	call CopyBytes
@@ -351,8 +365,8 @@ _DeveloperMessageAnimate:
 	ld bc, 64
 	call CopyBytes
 	jr .cont
-.frame_3
-	ld hl, DevMessage_OAM3
+.frame_2
+	ld hl, DevMessage_OAM2
 	ld de, wSprites + 16
 	ld bc, 64
 	call CopyBytes
@@ -365,14 +379,14 @@ _DeveloperMessageAnimate:
 	ld a, [wPlaceBallsX]
 	inc a
 	ld [wPlaceBallsX], a
-	cp 8
+	cp 2
 	ret nz
 	xor a
 	ld [wPlaceBallsX], a
 	ld a, [wNumHits]
 	inc a
 	ld [wNumHits], a
-	cp 4
+	cp 10
 	ret nz
 	xor a
 	ld [wNumHits], a
@@ -382,7 +396,7 @@ _DeveloperMessageAnimatePageTurn:
 	xor a
 	ld [wPlaceBallsY], a
 	ld [wPlaceBallsX], a
-	ld a, 1
+	ld a, 9
 	ld [wNumHits], a
 	ld hl, DevMessage_OAM4
 	ld de, wSprites + 16
@@ -393,7 +407,7 @@ _DeveloperMessageAnimatePageTurnLast:
 	xor a
 	ld [wPlaceBallsY], a
 	ld [wPlaceBallsX], a
-	ld a, 1
+	ld a, 9
 	ld [wNumHits], a
 	ld hl, DevMessage_OAM5
 	ld de, wSprites + 16
@@ -570,22 +584,22 @@ DevMessage_OAM6:
 	
 DevMessage_OAM7:
 ;y pos, x pos, tile, palette
-	dsprite  13,  0, 15,  4, $04, $0
-	dsprite  13,  0, 16,  4, $05, $0
-	dsprite  13,  0, 17,  4, $06, $0
-	dsprite  13,  0, 18,  4, $07, $0
-	dsprite  14,  0, 15,  4, $14, $0
-	dsprite  14,  0, 16,  4, $15, $0
-	dsprite  14,  0, 17,  4, $16, $0
-	dsprite  14,  0, 18,  4, $17, $0
-	dsprite  15,  0, 15,  4, $24, $0
-	dsprite  15,  0, 16,  4, $25, $0
-	dsprite  15,  0, 17,  4, $26, $0
-	dsprite  15,  0, 18,  4, $27, $0
-	dsprite  16,  0, 15,  4, $34, $0
-	dsprite  16,  0, 16,  4, $35, $0
-	dsprite  16,  0, 17,  4, $36, $0
-	dsprite  16,  0, 18,  4, $37, $0
+	dsprite  13,  0, 15,  4, $40, $0
+	dsprite  13,  0, 16,  4, $41, $0
+	dsprite  13,  0, 17,  4, $42, $0
+	dsprite  13,  0, 18,  4, $43, $0
+	dsprite  14,  0, 15,  4, $50, $0
+	dsprite  14,  0, 16,  4, $51, $0
+	dsprite  14,  0, 17,  4, $52, $0
+	dsprite  14,  0, 18,  4, $53, $0
+	dsprite  15,  0, 15,  4, $60, $0
+	dsprite  15,  0, 16,  4, $61, $0
+	dsprite  15,  0, 17,  4, $62, $0
+	dsprite  15,  0, 18,  4, $63, $0
+	dsprite  16,  0, 15,  4, $70, $0
+	dsprite  16,  0, 16,  4, $71, $0
+	dsprite  16,  0, 17,  4, $72, $0
+	dsprite  16,  0, 18,  4, $73, $0
 	
 DevMessage_OAM8:
 ;y pos, x pos, tile, palette
@@ -726,8 +740,8 @@ DeveloperMessagePalette3:
 DeveloperMessageOBPalette:
 	RGB 31, 31, 00
 	RGB 31, 31, 31
-	RGB 31, 11, 31
-	RGB 00, 00, 00
+	RGB 31, 16, 23
+	RGB 17, 00, 12
 	
 	RGB 31, 31, 00
 	RGB 31, 31, 31

@@ -184,14 +184,14 @@ _DeveloperMessage:
 	bit A_BUTTON_F, [hl]
 	jr z, .page_1
 	
-	call _DeveloperMessageAnimatePageTurn
+	call _DeveloperMessageAnimatePageTurn1
 	ld de, SFX_READ_TEXT
 	call PlaySFX
 	
 	ld a, [wMoogooTurn]
 	inc a
 	ld [wMoogooTurn], a
-	call _DeveloperMessageNextPage	
+	call _DeveloperMessageNextPage
 	
 .page_2
 	call _DeveloperMessageAnimate
@@ -200,7 +200,7 @@ _DeveloperMessage:
 	bit A_BUTTON_F, [hl]
 	jr z, .page_2
 	
-	call _DeveloperMessageAnimatePageTurn
+	call _DeveloperMessageAnimatePageTurn1
 	ld de, SFX_READ_TEXT
 	call PlaySFX
 	
@@ -216,7 +216,7 @@ _DeveloperMessage:
 	bit A_BUTTON_F, [hl]
 	jr z, .page_3
 	
-	call _DeveloperMessageAnimatePageTurnLast
+	call _DeveloperMessageAnimatePageTurn1
 	ld de, SFX_READ_TEXT
 	call PlaySFX
 	
@@ -331,7 +331,11 @@ _DeveloperMessageNextPage:
 	call FadePalettes
 	
 	ld c, 1
-	jp DelayFrames
+	call DelayFrames
+	ld a, [wMoogooTurn]
+	cp 4
+	ret z
+	jp _DeveloperMessageAnimatePageTurn2
 	
 	
 _DeveloperMessageAnimate:
@@ -392,18 +396,7 @@ _DeveloperMessageAnimate:
 	ld [wNumHits], a
 	ret
 	
-_DeveloperMessageAnimatePageTurn:
-	xor a
-	ld [wPlaceBallsY], a
-	ld [wPlaceBallsX], a
-	ld a, 9
-	ld [wNumHits], a
-	ld hl, DevMessage_OAM4
-	ld de, wSprites + 16
-	ld bc, 64
-	jp CopyBytes
-	
-_DeveloperMessageAnimatePageTurnLast:
+_DeveloperMessageAnimatePageTurn1:
 	xor a
 	ld [wPlaceBallsY], a
 	ld [wPlaceBallsX], a
@@ -413,6 +406,61 @@ _DeveloperMessageAnimatePageTurnLast:
 	ld de, wSprites + 16
 	ld bc, 64
 	jp CopyBytes
+	
+_DeveloperMessageAnimatePageTurn2:
+	xor a
+	ld [wPlaceBallsY], a
+	ld [wPlaceBallsX], a
+	ld a, 9
+	ld [wNumHits], a
+	ld hl, DevMessage_OAM2
+	ld de, wSprites + 16
+	ld bc, 64
+	call CopyBytes
+	ld c, 2
+	call DelayFrames
+	
+	ld hl, DevMessage_OAM6
+	ld de, wSprites + 16
+	ld bc, 64
+	call CopyBytes
+	ld c, 2
+	call DelayFrames
+	
+	ld hl, DevMessage_OAM8
+	ld de, wSprites + 16
+	ld bc, 64
+	call CopyBytes
+	ld c, 2
+	call DelayFrames
+	
+	ld hl, DevMessage_OAM12
+	ld de, wSprites + 16
+	ld bc, 64
+	call CopyBytes
+	ld c, 24
+	call DelayFrames
+	
+	ld hl, DevMessage_OAM8
+	ld de, wSprites + 16
+	ld bc, 64
+	call CopyBytes
+	ld c, 2
+	call DelayFrames
+	
+	ld hl, DevMessage_OAM6
+	ld de, wSprites + 16
+	ld bc, 64
+	call CopyBytes
+	ld c, 2
+	call DelayFrames
+	
+	ld hl, DevMessage_OAM5
+	ld de, wSprites + 16
+	ld bc, 64
+	call CopyBytes
+	ld c, 4
+	jp DelayFrames
 	
 _DeveloperMessageAnimateEnding:
 	xor a
@@ -453,14 +501,7 @@ _DeveloperMessageAnimateEnding:
 	ld de, wSprites + 16
 	ld bc, 64
 	call CopyBytes
-	ld c, 1
-	call DelayFrames
-	
-	ld hl, DevMessage_OAM7
-	ld de, wSprites + 16
-	ld bc, 64
-	call CopyBytes
-	ld c, 4
+	ld c, 2
 	call DelayFrames
 	
 	ld hl, DevMessage_OAM11
@@ -525,24 +566,24 @@ DevMessage_OAM3:
 	dsprite  18,  0, 17,  4, $3a, $0
 	dsprite  18,  0, 18,  4, $3b, $0
 	
-DevMessage_OAM4:
+;DevMessage_OAM4:
 ;y pos, x pos, tile, palette
-	dsprite  15,  0, 15,  4, $0c, $0
-	dsprite  15,  0, 16,  4, $0d, $0
-	dsprite  15,  0, 17,  4, $0e, $0
-	dsprite  15,  0, 18,  4, $0f, $0
-	dsprite  16,  0, 15,  4, $1c, $0
-	dsprite  16,  0, 16,  4, $1d, $0
-	dsprite  16,  0, 17,  4, $1e, $0
-	dsprite  16,  0, 18,  4, $1f, $0
-	dsprite  17,  0, 15,  4, $2c, $0
-	dsprite  17,  0, 16,  4, $2d, $0
-	dsprite  17,  0, 17,  4, $2e, $0
-	dsprite  17,  0, 18,  4, $2f, $0
-	dsprite  18,  0, 15,  4, $3c, $0
-	dsprite  18,  0, 16,  4, $3d, $0
-	dsprite  18,  0, 17,  4, $3e, $0
-	dsprite  18,  0, 18,  4, $3f, $0
+;	dsprite  15,  0, 15,  4, $0c, $0
+;	dsprite  15,  0, 16,  4, $0d, $0
+;	dsprite  15,  0, 17,  4, $0e, $0
+;	dsprite  15,  0, 18,  4, $0f, $0
+;	dsprite  16,  0, 15,  4, $1c, $0
+;	dsprite  16,  0, 16,  4, $1d, $0
+;	dsprite  16,  0, 17,  4, $1e, $0
+;	dsprite  16,  0, 18,  4, $1f, $0
+;	dsprite  17,  0, 15,  4, $2c, $0
+;	dsprite  17,  0, 16,  4, $2d, $0
+;	dsprite  17,  0, 17,  4, $2e, $0
+;	dsprite  17,  0, 18,  4, $2f, $0
+;	dsprite  18,  0, 15,  4, $3c, $0
+;	dsprite  18,  0, 16,  4, $3d, $0
+;	dsprite  18,  0, 17,  4, $3e, $0
+;	dsprite  18,  0, 18,  4, $3f, $0
 	
 DevMessage_OAM5:
 ;y pos, x pos, tile, palette
@@ -582,24 +623,24 @@ DevMessage_OAM6:
 	dsprite  18,  0, 17,  4, $76, $0
 	dsprite  18,  0, 18,  4, $77, $0
 	
-DevMessage_OAM7:
+;DevMessage_OAM7:
 ;y pos, x pos, tile, palette
-	dsprite  13,  0, 15,  4, $40, $0
-	dsprite  13,  0, 16,  4, $41, $0
-	dsprite  13,  0, 17,  4, $42, $0
-	dsprite  13,  0, 18,  4, $43, $0
-	dsprite  14,  0, 15,  4, $50, $0
-	dsprite  14,  0, 16,  4, $51, $0
-	dsprite  14,  0, 17,  4, $52, $0
-	dsprite  14,  0, 18,  4, $53, $0
-	dsprite  15,  0, 15,  4, $60, $0
-	dsprite  15,  0, 16,  4, $61, $0
-	dsprite  15,  0, 17,  4, $62, $0
-	dsprite  15,  0, 18,  4, $63, $0
-	dsprite  16,  0, 15,  4, $70, $0
-	dsprite  16,  0, 16,  4, $71, $0
-	dsprite  16,  0, 17,  4, $72, $0
-	dsprite  16,  0, 18,  4, $73, $0
+;	dsprite  13,  0, 15,  4, $40, $0
+;	dsprite  13,  0, 16,  4, $41, $0
+;	dsprite  13,  0, 17,  4, $42, $0
+;	dsprite  13,  0, 18,  4, $43, $0
+;	dsprite  14,  0, 15,  4, $50, $0
+;	dsprite  14,  0, 16,  4, $51, $0
+;	dsprite  14,  0, 17,  4, $52, $0
+;	dsprite  14,  0, 18,  4, $53, $0
+;	dsprite  15,  0, 15,  4, $60, $0
+;	dsprite  15,  0, 16,  4, $61, $0
+;	dsprite  15,  0, 17,  4, $62, $0
+;	dsprite  15,  0, 18,  4, $63, $0
+;	dsprite  16,  0, 15,  4, $70, $0
+;	dsprite  16,  0, 16,  4, $71, $0
+;	dsprite  16,  0, 17,  4, $72, $0
+;	dsprite  16,  0, 18,  4, $73, $0
 	
 DevMessage_OAM8:
 ;y pos, x pos, tile, palette
@@ -660,22 +701,41 @@ DevMessage_OAM10:
 	
 DevMessage_OAM11:
 ;y pos, x pos, tile, palette
-	dsprite  13,  2, 15,  4, $0c, $0
-	dsprite  13,  2, 16,  4, $0d, $0
-	dsprite  13,  2, 17,  4, $0e, $0
-	dsprite  13,  2, 18,  4, $0f, $0
-	dsprite  14,  2, 15,  4, $1c, $0
-	dsprite  14,  2, 16,  4, $1d, $0
-	dsprite  14,  2, 17,  4, $1e, $0
-	dsprite  14,  2, 18,  4, $1f, $0
-	dsprite  15,  2, 15,  4, $2c, $0
-	dsprite  15,  2, 16,  4, $2d, $0
-	dsprite  15,  2, 17,  4, $2e, $0
-	dsprite  15,  2, 18,  4, $2f, $0
-	dsprite  16,  2, 15,  4, $3c, $0
-	dsprite  16,  2, 16,  4, $3d, $0
-	dsprite  16,  2, 17,  4, $3e, $0
-	dsprite  16,  2, 18,  4, $3f, $0
+	dsprite  13,  0, 15,  4, $0c, $0
+	dsprite  13,  0, 16,  4, $0d, $0
+	dsprite  13,  0, 17,  4, $0e, $0
+	dsprite  13,  0, 18,  4, $0f, $0
+	dsprite  14,  0, 15,  4, $1c, $0
+	dsprite  14,  0, 16,  4, $1d, $0
+	dsprite  14,  0, 17,  4, $1e, $0
+	dsprite  14,  0, 18,  4, $1f, $0
+	dsprite  15,  0, 15,  4, $2c, $0
+	dsprite  15,  0, 16,  4, $2d, $0
+	dsprite  15,  0, 17,  4, $2e, $0
+	dsprite  15,  0, 18,  4, $2f, $0
+	dsprite  16,  0, 15,  4, $3c, $0
+	dsprite  16,  0, 16,  4, $3d, $0
+	dsprite  16,  0, 17,  4, $3e, $0
+	dsprite  16,  0, 18,  4, $3f, $0
+	
+DevMessage_OAM12:
+;y pos, x pos, tile, palette
+	dsprite  14,  4, 15,  4, $0c, $0
+	dsprite  14,  4, 16,  4, $0d, $0
+	dsprite  14,  4, 17,  4, $0e, $0
+	dsprite  14,  4, 18,  4, $0f, $0
+	dsprite  15,  4, 15,  4, $1c, $0
+	dsprite  15,  4, 16,  4, $1d, $0
+	dsprite  15,  4, 17,  4, $1e, $0
+	dsprite  15,  4, 18,  4, $1f, $0
+	dsprite  16,  4, 15,  4, $2c, $0
+	dsprite  16,  4, 16,  4, $2d, $0
+	dsprite  16,  4, 17,  4, $2e, $0
+	dsprite  16,  4, 18,  4, $2f, $0
+	dsprite  17,  4, 15,  4, $3c, $0
+	dsprite  17,  4, 16,  4, $3d, $0
+	dsprite  17,  4, 17,  4, $3e, $0
+	dsprite  17,  4, 18,  4, $3f, $0
 
 DevMessage_BallOAM:
 ;y pos, x pos, tile, palette

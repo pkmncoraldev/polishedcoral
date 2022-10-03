@@ -3207,11 +3207,37 @@ CroagunkEvosAttacks:
 	db EVOLVE_LEVEL, 37, TOXICROAK
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 3, MUD_SLAP
+	db 8, POISON_STING
+	db 10, TAUNT
+	db 15, PURSUIT
+	db 17, FEINT_ATTACK
+	db 22, REVERSAL
+	db 24, SWAGGER
+	db 29, BULLDOZE
+	db 31, SUCKER_PUNCH
+	db 36, VENOSHOCK
+	db 38, NASTY_PLOT
+	db 43, POISON_JAB
+	db 47, SLUDGE_BOMB
 	db 0 ; no more level-up moves
 	
 ToxicroakEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 3, MUD_SLAP
+	db 8, POISON_STING
+	db 10, TAUNT
+	db 15, PURSUIT
+	db 17, FEINT_ATTACK
+	db 22, REVERSAL
+	db 24, SWAGGER
+	db 29, BULLDOZE
+	db 31, SUCKER_PUNCH
+	db 36, VENOSHOCK
+	db 41, NASTY_PLOT
+	db 49, POISON_JAB
+	db 56, SLUDGE_BOMB
 	db 0 ; no more level-up moves
 	
 SnoverEvosAttacks:

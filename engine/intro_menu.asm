@@ -893,6 +893,7 @@ ProfSpruceSpeech: ; 0x5f99
 	ld c, 15
 	call FadeToWhite
 	call ClearTileMap
+	farcall LoadNamingScreenGFX
 	jp .ChooseGender
 
 .ContinueOpening
@@ -907,7 +908,12 @@ ProfSpruceSpeech: ; 0x5f99
 	call FadeToWhite
 	call ClearTileMap	
 	farcall _PippiScreen
-	jr .endpippiscreen
+	
+	ld de, MUSIC_ROUTE_2 ; remove after demo
+	call PlayMusic ; remove after demo
+	jp .cancel ; remove after demo
+	
+;	jr .endpippiscreen ;uncomment after demo
 .notpippi2
 	ld c, 15
 	call FadeToWhite

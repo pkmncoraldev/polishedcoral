@@ -615,7 +615,8 @@ NamingScreenJoypadLoop: ; 11915
 	ret
 
 .PippiModeString: ; 117a3
-	db "PIPPI MODE!@"
+;	db "PIPPI MODE!@"
+	db "PIPPI!     @"
 	
 .PIPPI: ; 4e5da
 	db "PIPPI@@@@@@"

@@ -113,7 +113,8 @@ LusterSewersMukRoomTrigger0:
 	waitbutton
 	closetext
 	waitsfx
-	loadwildmon MUK_A, 20
+	loadwildmon MUK_A, 40
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	disappear LUSTER_SEWERS_MUK
 	reloadmapafterbattle

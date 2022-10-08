@@ -58,7 +58,7 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke SMEARGLE, 100
+	givepoke NIDOKING, 100
 
 .items
 	writetext PlayerHouseDebugText6

@@ -49,7 +49,6 @@ LusterSewerThroneRoomGrunt2:
 	
 LusterSewersThroneRoomFrankieCutscene:
 	spriteface PLAYER, UP	
-	appear LUSTERSEWERSTHRONEROOM_CUTSCENE
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, LUSTERSEWERSTHRONEROOM_GRUNT2, 15
 	pause 7
@@ -60,7 +59,6 @@ LusterSewersThroneRoomFrankieCutscene:
 	writetext LusterSewersThroneRoomFrankieCutsceneText1
 	waitbutton
 	closetext
-	applyonemovement PLAYER, hide_person
 	pause 32
 	playmusic MUSIC_NONE
 	opentext
@@ -115,6 +113,15 @@ LusterSewersThroneRoomFrankieCutscene:
 	writetext LusterSewersThroneRoomFrankieCutsceneText2
 	waitbutton
 	closetext
+	
+	pause 10
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, LUSTERSEWERSTHRONEROOM_FAKE_FRANKIE, 15
+	pause 7
+	appear LUSTERSEWERSTHRONEROOM_CUTSCENE
+	spriteface LUSTERSEWERSTHRONEROOM_FAKE_FRANKIE, UP
+	applyonemovement PLAYER, hide_person
+	
 	pause 32
 	applymovement PLAYER, Movement_LusterSewerThroneRoomPlayerCutscene
 	pause 32
@@ -123,10 +130,9 @@ LusterSewersThroneRoomFrankieCutscene:
 	waitbutton
 	closetext
 	pause 10
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, LUSTERSEWERSTHRONEROOM_FAKE_FRANKIE, 15
-	pause 7
-	spriteface LUSTERSEWERSTHRONEROOM_FAKE_FRANKIE, UP
+	
+	applyonemovement LUSTERSEWERSTHRONEROOM_FAKE_FRANKIE, turn_step_up
+
 	opentext
 	writetext LusterSewersThroneRoomFrankieCutsceneText10
 	waitbutton

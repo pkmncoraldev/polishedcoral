@@ -4,109 +4,51 @@ INCLUDE "constants.asm"
 SECTION "Credits", ROMX
 
 	const_def
-	const SATOSHI_TAJIRI
-	const JUNICHI_MASUDA
-	const TETSUYA_WATANABE
-	const SHIGEKI_MORIMOTO
-	const SOUSUKE_TAMADA
-	const TAKENORI_OOTA
-	const KEN_SUGIMORI
-	const MOTOFUMI_FUJIWARA
-	const ATSUKO_NISHIDA
-	const MUNEO_SAITO
-	const SATOSHI_OOTA
-	const RENA_YOSHIKAWA
-	const JUN_OKUTANI
-	const HIRONOBU_YOSHIDA
-	const ASUKA_IWASHITA
-	const GO_ICHINOSE
-	const MORIKAZU_AOKI
-	const KOHJI_NISHINO
-	const KENJI_MATSUSHIMA
-	const TOSHINOBU_MATSUMIYA
-	const SATORU_IWATA
-	const NOBUHIRO_SEYA
-	const KAZUHITO_SEKINE
-	const TETSUJI_OOTA
-	const NCL_SUPER_MARIO_CLUB
-	const SARUGAKUCHO
-	const AKITO_MORI
-	const TAKAHIRO_HARADA
-	const TOHRU_HASHIMOTO
-	const NOBORU_MATSUMOTO
-	const TAKEHIRO_IZUSHI
-	const TAKASHI_KAWAGUCHI
-	const TSUNEKAZU_ISHIHARA
-	const HIROSHI_YAMAUCHI
-	const KENJI_SAIKI
-	const ATSUSHI_TADA
-	const NAOKO_KAWAKAMI
-	const HIROYUKI_ZINNAI
-	const KUNIMI_KAWAMURA
-	const HISASHI_SOGABE
-	const KEITA_KAGAYA
-	const YOSHINORI_MATSUDA
-	const HITOMI_SATO
-	const TORU_OSAWA
-	const TAKAO_OHARA
-	const YUICHIRO_ITO
-	const TAKAO_SHIMIZU
-	const PLANNING
-	const KEITA_NAKAMURA
-	const HIROTAKA_UEMURA
-	const HIROAKI_TAMURA
-	const NORIAKI_SAKAGUCHI
-	const MIYUKI_SATO
-	const GAKUZI_NOMOTO
-	const AI_MASHIMA
-	const MIKIHIRO_ISHIKAWA
-	const HIDEYUKI_HASHIMOTO
-	const SATOSHI_YAMATO
-	const SHIGERU_MIYAMOTO
-	const GAIL_TILDEN
-	const NOB_OGASAWARA
-	const SETH_MCMAHILL
-	const HIROTO_ALEXANDER
-	const TERESA_LILLYGREN
-	const THOMAS_HERTZOG
-	const ERIK_JOHNSON
-	const HIRO_NAKAMURA
-	const TERUKI_MURAKAWA
-	const KAZUYOSHI_OSAWA
-	const KIMIKO_NAKAMICHI
-	const CREDIT_END
-	const CREDIT_UNKNOWN
-	const STAFF
-	const DIRECTOR
-	const CODIRECTOR
-	const PROGRAMMERS
-	const GRAPHICS_DIRECTOR
-	const MONSTER_DESIGN
-	const GRAPHICS_DESIGN
-	const CREDIT_MUSIC
-	const CREDIT_SOUND_EFFECTS
-	const GAME_DESIGN
-	const GAME_SCENARIO
-	const TOOL_PROGRAMMING
-	const PARAMETRIC_DESIGN
-	const SCRIPT_DESIGN
-	const MAP_DATA_DESIGN
-	const MAP_DESIGN
-	const PRODUCT_TESTING
-	const SPECIAL_THANKS
-	const PRODUCERS
-	const EXECUTIVE_PRODUCER
-	const POKEMON_ANIMATION
-	const POKEDEX_TEXT
-	const MOBILE_PRJ_LEADER
-	const MOBILE_SYSTEM_AD
-	const MOBILE_STADIUM_DIR
-	const COORDINATION
+	const CORAL
+	const BY
+	const CORALDEV
+	const POLISHED
+	const RANGI
+	const FIQ
+	const PROGRAMMING
+	const PFERO
+	const LUCKY
+	const ADDPROGRAMMING
+	const CHAMBER
+	const GRAPHICS
+	const NUUK
+	const ADDGRAPHICS
+	const STARGAZAAR
+	const AHAB
+	const LUNA
+	const DAZ
+	const ROOL_SOUR
+	const PIA_SMALLS
+	const PIK_VARMINTZ
+	const QUIDOMEE
+	const BATTLEANIM
+	const SOUR
+	const MOVESETS
+	const DENIM
+	const MENUSPRITES
+	const MENU1
+	const MENU2
+	const MENU3
+	const MENU4
+	const MENU5
+	const MENU6
+	const MENU7
+	const MENU8
+	const MENU9
+	const SPECIALTHANKS
+	const SPECIAL1
+	const SPECIAL2
+	const SPECIAL3
+	const SPECIAL4
+	const SPECIAL5
+	const ORIGINALGAME
 	const COPYRIGHT
-	const US_VERSION_STAFF
-	const US_COORDINATION
-	const TEXT_TRANSLATION
-	const PAAD_TESTING
+	const THANKS
 
 	const_def -7
 	const CREDITS_THEEND
@@ -332,6 +274,7 @@ Credits_RequestGFX: ; 10997b (42:597b)
 	jp Credits_Next
 
 Credits_LYOverride: ; 109986 (42:5986)
+	jp Credits_Next
 	ld a, [rLY]
 	cp $30
 	jr c, Credits_LYOverride
@@ -375,8 +318,8 @@ ParseCredits: ; 1099aa
 ; starting from line 5.
 	xor a
 	ld [hBGMapMode], a
-	hlcoord 0, 5
-	ld bc, 20 * 12
+	hlcoord 0, 0
+	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
 	ld a, " "
 	call ByteFill
 
@@ -419,20 +362,20 @@ ParseCredits: ; 1099aa
 	cp COPYRIGHT
 	jr z, .copyright
 
-	cp STAFF
-	jr c, .staff
+	cp CORAL
+	jr c, .coral
 
 ; The rest start from line 6.
 
-	hlcoord 0, 6
+	hlcoord 0, 2
 	jr .print
 
 .copyright
-	hlcoord 2, 6
+	hlcoord 2, 2
 	jr .print
 
-.staff
-	hlcoord 0, 6
+.coral
+	hlcoord 0, 2
 
 .print
 ; Print strings spaced every two lines.
@@ -549,38 +492,38 @@ ConstructCreditsTilemap: ; 109a95 (42:5a95)
 	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
 	call ByteFill
 
-	ld a, $7f
-	hlcoord 0, 4
-	ld bc, (SCREEN_HEIGHT - 4) * SCREEN_WIDTH
-	call ByteFill
+;	ld a, $7f
+;	hlcoord 0, 2
+;	ld bc, (SCREEN_HEIGHT - 4) * SCREEN_WIDTH
+;	call ByteFill
 
-	hlcoord 0, 4
-	ld a, $24
-	call DrawCreditsBorder
+;	hlcoord 0, 2
+;	ld a, $24
+;	call DrawCreditsBorder
 
-	hlcoord 0, 17
-	ld a, $20
-	call DrawCreditsBorder
+;	hlcoord 0, 17
+;	ld a, $20
+;	call DrawCreditsBorder
 
 	hlcoord 0, 0, wAttrMap
-	ld bc, 4 * SCREEN_WIDTH
+	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
 	xor a
 	call ByteFill
 
-	hlcoord 0, 4, wAttrMap
-	ld bc, SCREEN_WIDTH
-	ld a, $1
-	call ByteFill
+;	hlcoord 0, 2, wAttrMap
+;	ld bc, SCREEN_WIDTH
+;	ld a, $1
+;	call ByteFill
 
-	hlcoord 0, 5, wAttrMap
-	ld bc, 12 * SCREEN_WIDTH
-	ld a, $2
-	call ByteFill
+;	hlcoord 0, 5, wAttrMap
+;	ld bc, 12 * SCREEN_WIDTH
+;	ld a, $2
+;	call ByteFill
 
-	hlcoord 0, 17, wAttrMap
-	ld bc, SCREEN_WIDTH
-	ld a, $1
-	call ByteFill
+;	hlcoord 0, 17, wAttrMap
+;	ld bc, SCREEN_WIDTH
+;	ld a, $1
+;	call ByteFill
 
 	call ApplyAttrAndTilemapInVBlank
 	xor a
@@ -616,6 +559,7 @@ endr
 	ret
 
 DrawCreditsBorder: ; 109b1d (42:5b1d)
+	ret
 	ld c, SCREEN_WIDTH / 4
 .loop
 	push af
@@ -682,132 +626,132 @@ CreditsPalettes:
 
 if !DEF(MONOCHROME)
 ; Pichu
-	RGB 31, 00, 31
-	RGB 31, 25, 00
-	RGB 11, 14, 31
-	RGB 07, 07, 07
-
-	RGB 31, 05, 05
-	RGB 11, 14, 31
-	RGB 11, 14, 31
-	RGB 31, 31, 31
-
-	RGB 31, 05, 05
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 31, 31, 31
+
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 31, 31, 31
 
 ; Sentret
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 31, 31, 31
-	RGB 22, 15, 10
-	RGB 31, 19, 09
-	RGB 07, 07, 07
 
-	RGB 31, 31, 31
-	RGB 31, 19, 09
-	RGB 31, 19, 09
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 00, 00, 00
 
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
 	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 31, 31, 31
 
 ; Ditto
-	RGB 31, 31, 31
-	RGB 23, 12, 28
-	RGB 31, 22, 00
-	RGB 07, 07, 07
-
-	RGB 03, 20, 00
-	RGB 31, 22, 00
-	RGB 31, 22, 00
-	RGB 31, 31, 31
-
-	RGB 03, 20, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 31, 31, 31
+
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 31, 31, 31
 
 ; Togepi
-	RGB 31, 31, 31
-	RGB 30, 26, 11
-	RGB 31, 11, 27
-	RGB 07, 07, 07
-
-	RGB 04, 19, 31
-	RGB 31, 11, 27
-	RGB 31, 11, 27
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 31, 31, 31
 
-	RGB 04, 19, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 31, 31, 31
 
 ; Smoochum
-	RGB 31, 31, 31
-	RGB 31, 27, 00
-	RGB 26, 06, 31
-	RGB 07, 07, 07
-
-	RGB 03, 13, 31
-	RGB 20, 00, 24
-	RGB 26, 06, 31
-	RGB 31, 31, 31
-
-	RGB 03, 13, 31
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 31, 31, 31
+
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 31, 31, 31
 
 ; Munchlax
-	RGB 31, 31, 31
-	RGB 08, 17, 17
-	RGB 30, 28, 16
-	RGB 07, 07, 07
-
-	RGB 16, 15, 08
-	RGB 30, 28, 16
-	RGB 30, 28, 16
-	RGB 31, 31, 31
-
-	RGB 16, 15, 08
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 31, 31, 31
+
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 31, 31, 31
 
 ; Elekid
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 31, 31, 31
-	RGB 31, 31, 05
-	RGB 17, 23, 31
-	RGB 07, 07, 07
 
-	RGB 29, 05, 05
-	RGB 17, 23, 31
-	RGB 17, 23, 31
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 00, 00, 00
 
-	RGB 29, 05, 05
-	RGB 31, 31, 31
-	RGB 31, 31, 31
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 31, 31, 31
 
 ; Bellossom
-	RGB 30, 30, 10
-	RGB 29, 08, 27
-	RGB 15, 24, 12
-	RGB 07, 07, 07
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 31, 31, 31
 
-	RGB 27, 27, 12
-	RGB 15, 24, 12
-	RGB 15, 24, 12
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 	RGB 00, 00, 00
 
-	RGB 27, 27, 12
-	RGB 09, 15, 07
-	RGB 09, 15, 07
 	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 31, 31, 31
 else
 	MONOCHROME_RGB_FOUR
 	MONOCHROME_RGB_FOUR
@@ -944,9 +888,9 @@ Credits_LoadBorderGFX: ; 109bca (42:5bca)
 
 Credits_TheEnd: ; 109c11 (42:5c11)
 	ld a, $40
-	hlcoord 6, 9
+	hlcoord 6, 5
 	call .Load
-	hlcoord 6, 10
+	hlcoord 6, 6
 .Load: ; 109c1c (42:5c1c)
 	ld c, 8
 .loop
@@ -979,7 +923,7 @@ CreditsScript: ; 10acb4
 	db CREDITS_CLEAR
 
 ; Pokemon Crystal Version Staff
-	db                STAFF, 1
+	db                CORAL, 1
 
 	db CREDITS_WAIT, 8
 
@@ -993,267 +937,97 @@ CreditsScript: ; 10acb4
 ; Update the banner.
 	db CREDITS_SCENE, 0 ; Pichu or Smoochum
 
-	db             DIRECTOR, 1
-	db       SATOSHI_TAJIRI, 2
-
-	db CREDITS_WAIT, 12
-
-	db           CODIRECTOR, 1
-	db       JUNICHI_MASUDA, 2
-
-	db CREDITS_WAIT, 12
-
-	db          PROGRAMMERS, 0
-	db       SOUSUKE_TAMADA, 1
-	db       HISASHI_SOGABE, 2
-	db         KEITA_KAGAYA, 3
-	db    YOSHINORI_MATSUDA, 4
-
-	db CREDITS_WAIT, 12
-
-	db          PROGRAMMERS, 0
-	db     SHIGEKI_MORIMOTO, 1
-	db     TETSUYA_WATANABE, 2
-	db        TAKENORI_OOTA, 3
-
-	db CREDITS_WAIT, 12
-
-	db    GRAPHICS_DIRECTOR, 1
-	db         KEN_SUGIMORI, 2
-
-	db CREDITS_WAIT, 12
-
-	db       MONSTER_DESIGN, 0
-	db         KEN_SUGIMORI, 1
-	db    MOTOFUMI_FUJIWARA, 2
-	db     SHIGEKI_MORIMOTO, 3
-	db     HIRONOBU_YOSHIDA, 4
-	db         SATOSHI_OOTA, 5
-
-	db CREDITS_WAIT, 12
-
-	db       MONSTER_DESIGN, 0
-	db       ATSUKO_NISHIDA, 1
-	db          MUNEO_SAITO, 2
-	db       RENA_YOSHIKAWA, 3
-
-	db CREDITS_WAIT, 12
-
-	db    POKEMON_ANIMATION, 1
-	db     HIRONOBU_YOSHIDA, 2
-	db          JUN_OKUTANI, 3
-
-	db CREDITS_WAIT, 12
-
-; Clear the banner.
-	db CREDITS_CLEAR
-
-	db CREDITS_WAIT, 1
-
-; Update the banner.
-	db CREDITS_SCENE, 1 ; Sentret or Munchlax
-
-	db      GRAPHICS_DESIGN, 0
-	db     HIRONOBU_YOSHIDA, 1
-	db          JUN_OKUTANI, 2
-	db       ASUKA_IWASHITA, 3
-	db     TETSUYA_WATANABE, 4
-
-	db CREDITS_WAIT, 12
-
-	db         CREDIT_MUSIC, 0
-	db       JUNICHI_MASUDA, 1
-	db        MORIKAZU_AOKI, 2
-	db          GO_ICHINOSE, 3
-
-	db CREDITS_WAIT, 12
-
-	db CREDIT_SOUND_EFFECTS, 0
-	db        MORIKAZU_AOKI, 1
-	db       JUNICHI_MASUDA, 2
-	db     TETSUYA_WATANABE, 3
-
-	db CREDITS_WAIT, 12
-
-	db          GAME_DESIGN, 0
-	db       JUNICHI_MASUDA, 1
-	db     SHIGEKI_MORIMOTO, 2
-	db        KOHJI_NISHINO, 3
-
-	db CREDITS_WAIT, 12
-
-	db          GAME_DESIGN, 0
-	db         TETSUJI_OOTA, 1
-	db          HITOMI_SATO, 2
-	db     KENJI_MATSUSHIMA, 3
-
-	db CREDITS_WAIT, 12
-
-	db        GAME_SCENARIO, 0
-	db       JUNICHI_MASUDA, 1
-	db        KOHJI_NISHINO, 2
-	db  TOSHINOBU_MATSUMIYA, 3
-	db     KENJI_MATSUSHIMA, 4
-
-	db CREDITS_WAIT, 12
-
-	db         POKEDEX_TEXT, 1
-	db  TOSHINOBU_MATSUMIYA, 2
-
-	db CREDITS_WAIT, 12
-
-	db     TOOL_PROGRAMMING, 1
-	db       SOUSUKE_TAMADA, 2
-	db        TAKENORI_OOTA, 3
-
-	db CREDITS_WAIT, 12
-
-	db    PARAMETRIC_DESIGN, 1
-	db        KOHJI_NISHINO, 2
-
-	db CREDITS_WAIT, 12
-
-; Clear the banner.
-	db CREDITS_CLEAR
-
-	db CREDITS_WAIT, 1
-
-; Update the banner.
-	db CREDITS_SCENE, 2 ; Ditto or Elekid
-
-	db        SCRIPT_DESIGN, 1
-	db         TETSUJI_OOTA, 2
-	db        NOBUHIRO_SEYA, 3
-
-	db CREDITS_WAIT, 12
-
-	db      MAP_DATA_DESIGN, 1
-	db         TETSUJI_OOTA, 2
-	db      KAZUHITO_SEKINE, 3
-
-	db CREDITS_WAIT, 12
-
-	db           MAP_DESIGN, 0
-	db         TETSUJI_OOTA, 1
-	db        KOHJI_NISHINO, 2
-	db        NOBUHIRO_SEYA, 3
-
-	db CREDITS_WAIT, 12
-
-	db         COORDINATION, 1
-	db      HIROYUKI_ZINNAI, 2
-
-	db CREDITS_WAIT, 12
-
-	db            PRODUCERS, 0
-	db         SATORU_IWATA, 1
-	db       SATOSHI_YAMATO, 2
-	db     SHIGERU_MIYAMOTO, 3
-
-	db CREDITS_WAIT, 12
-
-	db            PRODUCERS, 1
-	db   TSUNEKAZU_ISHIHARA, 2
-
-	db CREDITS_WAIT, 12
-
-; Clear the banner.
-	db CREDITS_CLEAR
-
-	db CREDITS_WAIT, 1
-
-; Update the banner.
-	db CREDITS_SCENE, 3 ; Togepi or Bellossom
-
-	db     US_VERSION_STAFF, 2
+	db                 BY, 2
+	db           CORALDEV, 3
 
 	db CREDITS_WAIT, 9
 
-	db      US_COORDINATION, 1
-	db          GAIL_TILDEN, 2
-	db        HIRO_NAKAMURA, 3
+	db           POLISHED, 1
+	db              RANGI, 3
+	db                FIQ, 4
 
+	db CREDITS_WAIT, 9
+	
+	db		  PROGRAMMING, 1
+	db           CORALDEV, 3
+	db              PFERO, 4
+	db              LUCKY, 5
+	
+	db CREDITS_WAIT, 9
+	
+	db	   ADDPROGRAMMING, 1
+	db              RANGI, 3
+	db                FIQ, 4
+	db            CHAMBER, 5
+
+	db CREDITS_WAIT, 9
+	
+	db	   		 GRAPHICS, 1
+	db               NUUK, 3
+	db           CORALDEV, 4
+
+	db CREDITS_WAIT, 9
+	
+	db	       ADDGRAPHICS, 0
+	db 			STARGAZAAR, 2
+	db 				  AHAB, 3
+	db 				  LUNA, 4
+	db 				   DAZ, 5
+	
+	db CREDITS_WAIT, 9
+	
+	db	       ADDGRAPHICS, 0
+	db 			 ROOL_SOUR, 2
+	db 			PIA_SMALLS, 3
+	db 	  	  PIK_VARMINTZ, 4
+	db			  QUIDOMEE, 5
+	
+	db CREDITS_WAIT, 12
+	
+	db			BATTLEANIM, 2
+	db 				  SOUR, 4
+	
+	db CREDITS_WAIT, 9
+	
+	db 			  MOVESETS, 1
+	db 				  SOUR, 3
+	db 				 DENIM, 4
+	
+	db CREDITS_WAIT, 9
+	
+	db 		   MENUSPRITES, 0
+	db 				 MENU1, 2
+	db 				 MENU2, 3
+	db 				 MENU3, 4
+	db 				 MENU4, 5
+	db 				 MENU5, 6
+	
+	db CREDITS_WAIT, 12
+	
+	db 		   MENUSPRITES, 0
+	db 				 MENU6, 2
+	db 				 MENU7, 3
+	db 				 MENU8, 4
+	db 				 MENU9, 5
+	
+	db CREDITS_WAIT, 12
+	
+	db 		 SPECIALTHANKS, 0
+	db 			  SPECIAL1, 2
+	db 			  SPECIAL2, 3
+	db 			  SPECIAL3, 4
+	db 			  SPECIAL4, 5
+	db 			  SPECIAL5, 6
+	
 	db CREDITS_WAIT, 12
 
-	db      US_COORDINATION, 1
-	db       JUNICHI_MASUDA, 2
-	db        SETH_MCMAHILL, 3
-
-	db CREDITS_WAIT, 12
-
-	db      US_COORDINATION, 1
-	db     HIROTO_ALEXANDER, 2
-	db     TERESA_LILLYGREN, 3
-
-	db CREDITS_WAIT, 12
-
-	db     TEXT_TRANSLATION, 1
-	db        NOB_OGASAWARA, 2
-
-	db CREDITS_WAIT, 12
-
-	db          PROGRAMMERS, 1
-	db      TERUKI_MURAKAWA, 2
-	db      KAZUYOSHI_OSAWA, 3
-
-	db CREDITS_WAIT, 12
-
-	db         PAAD_TESTING, 1
-	db       THOMAS_HERTZOG, 2
-	db         ERIK_JOHNSON, 3
-
-	db CREDITS_WAIT, 12
-
-	db      PRODUCT_TESTING, 0
-	db             PLANNING, 1
-
-	db CREDITS_WAIT, 12
-
-	db      PRODUCT_TESTING, 0
-	db       KEITA_NAKAMURA, 1
-	db      HIROTAKA_UEMURA, 2
-	db       HIROAKI_TAMURA, 3
-	db    NORIAKI_SAKAGUCHI, 4
-
-	db CREDITS_WAIT, 12
-
-	db      PRODUCT_TESTING, 0
-	db NCL_SUPER_MARIO_CLUB, 1
-	db          KENJI_SAIKI, 2
-	db         ATSUSHI_TADA, 3
-	db          MIYUKI_SATO, 4
-
-	db CREDITS_WAIT, 12
-
-	db       SPECIAL_THANKS, 0
-	db     KIMIKO_NAKAMICHI, 1
-	db           AKITO_MORI, 2
-
-	db CREDITS_WAIT, 12
-
-	db       SPECIAL_THANKS, 0
-	db        GAKUZI_NOMOTO, 1
-	db           AI_MASHIMA, 2
-	db      KUNIMI_KAWAMURA, 3
-
-	db CREDITS_WAIT, 12
-
-	db       SPECIAL_THANKS, 0
-	db    MIKIHIRO_ISHIKAWA, 1
-	db   HIDEYUKI_HASHIMOTO, 2
-
-	db CREDITS_WAIT, 12
-
-	db   EXECUTIVE_PRODUCER, 1
-	db     HIROSHI_YAMAUCHI, 2
-
-	db CREDITS_WAIT, 12
-
-	db            COPYRIGHT, 1
+	db 		   ORIGINALGAME, 2
+	db            COPYRIGHT, 3
 
 	db CREDITS_WAIT, 9
 
 ; Display "The End" graphic.
+	db 				 THANKS, 4
 	db CREDITS_THEEND
 
 	db CREDITS_WAIT, 20
@@ -1263,216 +1037,111 @@ CreditsScript: ; 10acb4
 
 
 CreditsStrings:
-	dw .SatoshiTajiri
-	dw .JunichiMasuda
-	dw .TetsuyaWatanabe
-	dw .ShigekiMorimoto
-	dw .SousukeTamada
-	dw .TakenoriOota
-	dw .KenSugimori
-	dw .MotofumiFujiwara
-	dw .AtsukoNishida
-	dw .MuneoSaito
-	dw .SatoshiOota
-	dw .RenaYoshikawa
-	dw .JunOkutani
-	dw .HironobuYoshida
-	dw .AsukaIwashita
-	dw .GoIchinose
-	dw .MorikazuAoki
-	dw .KohjiNishino
-	dw .KenjiMatsushima
-	dw .ToshinobuMatsumiya
-	dw .SatoruIwata
-	dw .NobuhiroSeya
-	dw .KazuhitoSekine
-	dw .TetsujiOota
-	dw .NclSuperMarioClub
-	dw .Sarugakucho
-	dw .AkitoMori
-	dw .TakahiroHarada
-	dw .TohruHashimoto
-	dw .NoboruMatsumoto
-	dw .TakehiroIzushi
-	dw .TakashiKawaguchi
-	dw .TsunekazuIshihara
-	dw .HiroshiYamauchi
-	dw .KenjiSaiki
-	dw .AtsushiTada
-	dw .NaokoKawakami
-	dw .HiroyukiZinnai
-	dw .KunimiKawamura
-	dw .HisashiSogabe
-	dw .KeitaKagaya
-	dw .YoshinoriMatsuda
-	dw .HitomiSato
-	dw .ToruOsawa
-	dw .TakaoOhara
-	dw .YuichiroIto
-	dw .TakaoShimizu
-	dw .Planning
-	dw .KeitaNakamura
-	dw .HirotakaUemura
-	dw .HiroakiTamura
-	dw .NoriakiSakaguchi
-	dw .MiyukiSato
-	dw .GakuziNomoto
-	dw .AiMashima
-	dw .MikihiroIshikawa
-	dw .HideyukiHashimoto
-	dw .SatoshiYamato
-	dw .ShigeruMiyamoto
-	dw .GailTilden
-	dw .NobOgasawara
-	dw .SethMcMahill
-	dw .HirotoAlexander
-	dw .TeresaLillygren
-	dw .ThomasHertzog
-	dw .ErikJohnson
-	dw .HiroNakamura
-	dw .TerukiMurakawa
-	dw .KazuyoshiOsawa
-	dw .KimikoNakamichi
-	dw .End
-	dw .Unknown
-	dw .Staff
-	dw .Director
-	dw .CoDirector
-	dw .Programmers
-	dw .GraphicsDirector
-	dw .MonsterDesign
-	dw .GraphicsDesign
-	dw .Music
-	dw .SoundEffects
-	dw .GameDesign
-	dw .GameScenario
-	dw .ToolProgramming
-	dw .ParametricDesign
-	dw .ScriptDesign
-	dw .MapDataDesign
-	dw .MapDesign
-	dw .ProductTesting
-	dw .SpecialThanks
-	dw .Producers
-	dw .ExecutiveProducer
-	dw .PokemonAnimation
-	dw .PokedexText
-	dw .MobilePrjLeader
-	dw .MobileSystemAd
-	dw .MobileStadiumDir
-	dw .Coordination
+	dw .coral
+	dw .by
+	dw .coraldev
+	dw .polished
+	dw .rangi
+	dw .fiq
+	dw .programming
+	dw .pfero
+	dw .lucky
+	dw .addprogramming
+	dw .chamber
+	dw .graphics
+	dw .nuuk
+	dw .addgraphics
+	dw .stargazaar
+	dw .ahab
+	dw .luna
+	dw .daz
+	dw .rool_sour
+	dw .pia_smalls
+	dw .pik_varmintz
+	dw .quidomee
+	dw .battleanim
+	dw .sour
+	dw .movesets
+	dw .denim
+	dw .menusprites
+	dw .menu1
+	dw .menu2
+	dw .menu3
+	dw .menu4
+	dw .menu5
+	dw .menu6
+	dw .menu7
+	dw .menu8
+	dw .menu9
+	dw .specialthanks
+	dw .special1
+	dw .special2
+	dw .special3
+	dw .special4
+	dw .special5
+	dw .originalgame
 	dw .Copyright
-	dw .UsVersionStaff
-	dw .UsCoordination
-	dw .TextTranslation
-	dw .PaadTesting
+	dw .thanks
+	
 
-.SatoshiTajiri:       db "   Satoshi Tajiri@"
-.JunichiMasuda:       db "   Junichi Masuda@"
-.TetsuyaWatanabe:     db "  Tetsuya Watanabe@"
-.ShigekiMorimoto:     db "  Shigeki Morimoto@"
-.SousukeTamada:       db "   Sousuke Tamada@"
-.TakenoriOota:        db "   Takenori Oota@"
-.KenSugimori:         db "    Ken Sugimori@"
-.MotofumiFujiwara:    db " Motofumi Fujiwara@"
-.AtsukoNishida:       db "   Atsuko Nishida@"
-.MuneoSaito:          db "    Muneo Saito@"
-.SatoshiOota:         db "    Satoshi Oota@"
-.RenaYoshikawa:       db "   Rena Yoshikawa@"
-.JunOkutani:          db "    Jun Okutani@"
-.HironobuYoshida:     db "  Hironobu Yoshida@"
-.AsukaIwashita:       db "   Asuka Iwashita@"
-.GoIchinose:          db "    Go Ichinose@"
-.MorikazuAoki:        db "   Morikazu Aoki@"
-.KohjiNishino:        db "   Kohji Nishino@"
-.KenjiMatsushima:     db "  Kenji Matsushima@"
-.ToshinobuMatsumiya:  db "Toshinobu Matsumiya@"
-.SatoruIwata:         db "    Satoru Iwata@"
-.NobuhiroSeya:        db "   Nobuhiro Seya@"
-.KazuhitoSekine:      db "  Kazuhito Sekine@"
-.TetsujiOota:         db "    Tetsuji Oota@"
-.NclSuperMarioClub:   db "NCL Super Mario Club@"
-.Sarugakucho:         db "    Sarugakucho@"
-.AkitoMori:           db "     Akito Mori@"
-.TakahiroHarada:      db "  Takahiro Harada@"
-.TohruHashimoto:      db "  Tohru Hashimoto@"
-.NoboruMatsumoto:     db "  Noboru Matsumoto@"
-.TakehiroIzushi:      db "  Takehiro Izushi@"
-.TakashiKawaguchi:    db " Takashi Kawaguchi@"
-.TsunekazuIshihara:   db " Tsunekazu Ishihara@"
-.HiroshiYamauchi:     db "  Hiroshi Yamauchi@"
-.KenjiSaiki:          db "    Kenji Saiki@"
-.AtsushiTada:         db "    Atsushi Tada@"
-.NaokoKawakami:       db "   Naoko Kawakami@"
-.HiroyukiZinnai:      db "  Hiroyuki Zinnai@"
-.KunimiKawamura:      db "  Kunimi Kawamura@"
-.HisashiSogabe:       db "   Hisashi Sogabe@"
-.KeitaKagaya:         db "    Keita Kagaya@"
-.YoshinoriMatsuda:    db " Yoshinori Matsuda@"
-.HitomiSato:          db "    Hitomi Sato@"
-.ToruOsawa:           db "     Toru Osawa@"
-.TakaoOhara:          db "    Takao Ohara@"
-.YuichiroIto:         db "    Yuichiro Ito@"
-.TakaoShimizu:        db "   Takao Shimizu@"
-.Planning:            db " Special Production"
-                    next "      Planning"
-                    next " & Development Dept.@"
-.KeitaNakamura:       db "   Keita Nakamura@"
-.HirotakaUemura:      db "  Hirotaka Uemura@"
-.HiroakiTamura:       db "   Hiroaki Tamura@"
-.NoriakiSakaguchi:    db " Noriaki Sakaguchi@"
-.MiyukiSato:          db "    Miyuki Sato@"
-.GakuziNomoto:        db "   Gakuzi Nomoto@"
-.AiMashima:           db "     Ai Mashima@"
-.MikihiroIshikawa:    db " Mikihiro Ishikawa@"
-.HideyukiHashimoto:   db " Hideyuki Hashimoto@"
-.SatoshiYamato:       db "   Satoshi Yamato@"
-.ShigeruMiyamoto:     db "  Shigeru Miyamoto@"
-.End:                 db "        End@"
-.Unknown:             db "      ????????@"
-.GailTilden:          db "    Gail Tilden@"
-.NobOgasawara:        db "   Nob Ogasawara@"
-.SethMcMahill:        db "   Seth McMahill@"
-.HirotoAlexander:     db "  Hiroto Alexander@"
-.TeresaLillygren:     db "  Teresa Lillygren@"
-.ThomasHertzog:       db "   Thomas Hertzog@"
-.ErikJohnson:         db "    Erik Johnson@"
-.HiroNakamura:        db "   Hiro Nakamura@"
-.TerukiMurakawa:      db "  Teruki Murakawa@"
-.KazuyoshiOsawa:      db "  Kazuyoshi Osawa@"
-.KimikoNakamichi:     db "  Kimiko Nakamichi@"
-.Staff:               db "      #mon"
-                    next "  Crystal Version"
-                    next "       Staff@"
-.Director:            db "      Director@"
-.CoDirector:          db "    Co-Director@"
-.Programmers:         db "    Programmers@"
-.GraphicsDirector:    db " Graphics Director@"
-.MonsterDesign:       db "   Monster Design@"
-.GraphicsDesign:      db "  Graphics Design@"
-.Music:               db "       Music@"
-.SoundEffects:        db "   Sound Effects@"
-.GameDesign:          db "    Game Design@"
-.GameScenario:        db "   Game Scenario@"
-.ToolProgramming:     db "  Tool Programming@"
-.ParametricDesign:    db " Parametric Design@"
-.ScriptDesign:        db "   Script Design@"
-.MapDataDesign:       db "  Map Data Design@"
-.MapDesign:           db "     Map Design@"
-.ProductTesting:      db "  Product Testing@"
-.SpecialThanks:       db "   Special Thanks@"
-.Producers:           db "     Producers@"
-.ExecutiveProducer:   db " Executive Producer@"
-.PokemonAnimation:    db " #mon Animation@"
-.PokedexText:         db "    #dex Text@"
-.MobilePrjLeader:     db " Mobile Prj. Leader@"
-.MobileSystemAd:      db " Mobile System Ad.@"
-.MobileStadiumDir:    db "Mobile Stadium Dir.@"
-.Coordination:        db "    Coordination@"
-.UsVersionStaff:      db "  US Version Staff@"
-.UsCoordination:      db "  US Coordination@"
-.TextTranslation:     db "  Text Translation@"
-.PaadTesting:         db "    PAAD Testing@"
+.coral:			  db "      #MON"
+				next "   CORAL VERSION"
+				next "       DEMO 3@"
+
+.by:		 	  db "         By@"
+.coraldev:		  db "      coraldev@"
+
+.polished:		  db "  Polished Engine@"
+.rangi:			  db "        Rangi@"
+.fiq:			  db "         FIQ@"
+
+.programming:	  db "     Programing@"
+.pfero:			  db "        Pfero@"
+.lucky:			  db "   luckytyphlosion@"
+
+.addprogramming:  db "   Add. Programing@"
+.chamber:		  db "      Chamber",$01,"@"
+
+.graphics:		  db "      Graphics@"
+.nuuk:			  db "        Nuuk@"
+
+.addgraphics:	  db "   Add. Graphics@"
+.stargazaar:	  db "    Star★Gazaar@"
+.ahab:			  db "    Ahab Studios@"
+.luna:			  db "   Luna Maddalena@"
+.daz:			  db "        Daz@"
+
+.rool_sour:		  db " Rool     SourApple@"
+.pia_smalls:	  db " PiaCRT   Smalls@"
+.pik_varmintz:	  db " Pik      Varmintz@"
+.quidomee:		  db " Quidomee@"
+
+.battleanim:	  db "  Battle Animation@"
+.sour:			  db "      SourApple@"
+
+.movesets:		  db "  Moves and Balance@"
+.denim:			  db "      BigDenim@"
+
+.menusprites:	  db "    Menu Sprites@"
+.menu1:			  db " Gargoyle   Molk@"
+.menu2:			  db " Kedoshim   Goose@"
+.menu3:			  db " Sadfish    Snak@"
+.menu4:			  db " Turner     EeVeeEe@"
+.menu5:			  db " Soloo993   Ayinai@"
+
+.menu6:			  db "  CuervoTerras@"
+.menu7:			  db "  Megaman-Omega@"
+.menu8:			  db "  peach-n-key@"
+.menu9:			  db "  Internet",$01,"Goblin@"
+
+.specialthanks:	  db "    Add.  Thanks@"
+.special1:		  db "   FroggestSpirit@"
+.special2:		  db "    StarMagician@"
+.special3:		  db "       gmerc@"
+.special4:		  db "   SheerSt   Padz@"
+.special5:		  db "      /yehaw/@"
+
+.originalgame:	  db "   Original Game:@"
 
 .Copyright:
 	;    (C) 1  9  9  5 - 2  0  0  1     N  i  n  t  e  n  d  o
@@ -1482,3 +1151,6 @@ CreditsStrings:
 	;    (C) 1  9  9  5 - 2  0  0  1  G   A   M   E   F   R   E   A   K     i  n  c .
 	next $60,$61,$62,$63,$64,$65,$66, $73, $74, $75, $76, $77, $78, $79,  $7a, $7b, $7c
 	db "@"
+
+.thanks:		  db "     Thanks for"
+				next "      playing!@"  

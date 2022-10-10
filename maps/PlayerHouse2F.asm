@@ -53,6 +53,7 @@ PlayerHouse2F_MapScriptHeader:
 	const PLAYERHOUSE2F_SNES
 	
 PlayerHouseDebugPoster:
+	credits
 	opentext
 	waitsfx
 	writetext PlayerHouseDebugText1

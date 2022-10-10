@@ -662,7 +662,7 @@ TrySurfOW:: ; c9e7
 	jr z, .lava
 
 .skip_lava
-	ld de, ENGINE_FOURTHBADGE
+	ld de, ENGINE_GOT_SURF
 	call CheckEngineFlag
 	jr c, .quit
 
@@ -852,9 +852,9 @@ FlyFunction: ; ca3b
 
 .TryFly: ; ca52
 ; Fly
-;	ld de, ENGINE_SIXTHBADGE		;debug
-;	call CheckBadge					;debug
-;	jr c, .nobadge					;debug
+	ld de, ENGINE_THIRDBADGE		;debug
+	call CheckBadge					;debug
+	jr c, .nobadge					;debug
 	ld a, [wTileset]
 	cp TILESET_SPOOKY
 	jr z, .outdoors
@@ -877,9 +877,9 @@ FlyFunction: ; ca3b
 	ld a, $1
 	ret
 
-;.nobadge
-;	ld a, $82
-;	ret
+.nobadge
+	ld a, $82
+	ret
 
 .indoors
 	ld a, $2
@@ -1662,7 +1662,7 @@ RockClimbFunction: ; cade
 
 .TryRockClimb: ; cae7
 ; RockClimb
-	ld de, ENGINE_EIGHTHBADGE
+	ld de, ENGINE_FOURTHBADGE
 	farcall CheckBadge
 	ld a, $80
 	ret c

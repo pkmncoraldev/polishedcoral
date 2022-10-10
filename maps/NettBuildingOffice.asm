@@ -374,19 +374,15 @@ NettBuildingOfficeNettText8:
 	line "help you in the"
 	cont "future."
 	
-	para "You need the BADGE"
-	line "from LUSTER CITY"
-	cont "to use it outside"
-	cont "of battle."
+	para "In this demo, you"
+	line "don't even need a"
+	cont "BADGE to use it"
+	cont "outside of battle!"
 	
-	para "Unfortunately,"
-	line "the GYM is not"
-	cont "available in this"
-	cont "demo,"
-	
-	para "so you'll have"
-	line "to come back when"
-	cont "the game is done…"
+;	para "You need the BADGE"
+;	line "from LUSTER CITY"
+;	cont "to use it outside"
+;	cont "of battle."
 	done
 	
 NettBuildingOfficeNettText9:

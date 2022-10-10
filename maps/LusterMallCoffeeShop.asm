@@ -390,7 +390,7 @@ LusterMallCoffeeShop_NPC1:
 	opentext
 	writetext LusterMallCoffeeShop_NPC1Text4
 	waitbutton
-	verbosegiveitem POTION
+	verbosegiveitem MAX_REVIVE
 	setevent EVENT_GAVE_COFFE_SHOP_MAN_TEA
 .already_done
 	writetext LusterMallCoffeeShop_NPC1Text5

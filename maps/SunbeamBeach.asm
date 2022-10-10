@@ -130,7 +130,7 @@ SunbeamPlayedFluteForSleepingBeauty::
 	iftrue .gotitem
 	writetext SunbeamIslandSunbatherText4
 	waitbutton
-	verbosegiveitem POTION
+	verbosegiveitem BLACKGLASSES
 	writetext SunbeamIslandSunbatherText3
 	waitbutton
 	closetext

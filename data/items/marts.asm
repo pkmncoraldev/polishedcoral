@@ -102,7 +102,7 @@ FlickerMart:
 	db -1
 	
 TwinkleMart:
-	db 11 ; # items
+	db 19 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db SUPER_POTION
@@ -114,10 +114,18 @@ TwinkleMart:
 	db AWAKENING
 	db BURN_HEAL
 	db ICE_HEAL
+	db X_ATTACK
+	db X_DEFEND
+	db X_SPEED
+	db X_SPCL_ATK
+	db X_SPCL_DEF
+	db X_ACCURACY
+	db DIRE_HIT
+	db GUARD_SPEC
 	db -1
 	
 LusterMart:
-	db 11 ; # items
+	db 19 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db SUPER_POTION
@@ -129,6 +137,14 @@ LusterMart:
 	db AWAKENING
 	db BURN_HEAL
 	db ICE_HEAL
+	db X_ATTACK
+	db X_DEFEND
+	db X_SPEED
+	db X_SPCL_ATK
+	db X_SPCL_DEF
+	db X_ACCURACY
+	db DIRE_HIT
+	db GUARD_SPEC
 	db -1
 	
 LusterMallElectronics:

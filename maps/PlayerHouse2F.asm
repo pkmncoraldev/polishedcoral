@@ -58,7 +58,7 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke NIDOKING, 100
+	givepoke MUNCHLAX, 100
 
 .items
 	writetext PlayerHouseDebugText6
@@ -107,9 +107,9 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText2
 	yesorno
 	iffalse .badges
-	loadwildmon BLISSEY, 100
-	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	startbattle
+;	loadwildmon BLISSEY, 100
+;	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+;	startbattle
 	setflag ENGINE_TRAINER_CARD
 	setflag ENGINE_POKEDEX
 	setflag ENGINE_PHONE_CARD

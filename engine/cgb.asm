@@ -57,7 +57,6 @@ Predef_LoadCGBLayout: ; 8d59
 	dw _CGB_IntroPlayerPals
 	dw _CGB_PlayerOrMonFrontpicPals
 	dw _CGB_TrainerOrMonFrontpicPals
-	dw _CGB_CoraldevLogo
 	dw _CGB_SplashScreen
 	dw _CGB_PippiScreen
 ; 8db8
@@ -1329,33 +1328,6 @@ _CGB_TrainerOrMonFrontpicPals: ; 9578
 	jp ApplyAttrMap
 	jp ApplyPals
 ; 9591
-
-
-_CGB_CoraldevLogo: ; 94fa
-	ld de, wUnknBGPals
-	ld hl, .CoraldevLogoPalette
-	call LoadHLPaletteIntoDE
-
-	ld de, wUnknOBPals
-rept 2
-	ld hl, .CoraldevOBPalette
-	call LoadHLPaletteIntoDE
-endr
-	ret
-
-.CoraldevLogoPalette:
-	RGB 00, 00, 00
-	RGB 15, 07, 00
-	RGB 31, 14, 22
-	RGB 31, 31, 31
-
-.CoraldevOBPalette: ; 9521
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-; 9529
-
 
 _CGB_SplashScreen: ; 94fa
 	ld hl, .SplashScreenPalette

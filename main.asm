@@ -4732,11 +4732,8 @@ SECTION "Coral Data 1", ROMX
 CoralDevScreenGFX:: ; e4000
 INCBIN "gfx/intro/splash/coraldev.2bpp"
 
-CoralDevScreenWinkGFX:: ; e4000
-INCBIN "gfx/intro/splash/coraldevwink.2bpp"
-
-CoralDevScreenWink2GFX:: ; e4000
-INCBIN "gfx/intro/splash/coraldevwink2.2bpp"
+BusterGFX::
+INCBIN "gfx/intro/splash/buster.2bpp"
 
 DisclaimerScreenGFX:: ; e4000
 INCBIN "gfx/intro/splash/disclaimer.2bpp"
@@ -4771,8 +4768,8 @@ INCLUDE "engine/titlescreen_cutscene.asm"
 INCLUDE "engine/trainer_card.asm"
 
 
-;SECTION "Coral Data 4", ROMX
-;INCLUDE "engine/map_object_pals.asm"
+SECTION "Coral Data 4", ROMX
+INCLUDE "engine/busterscreen.asm"
 
 DrawBattleHPBar:: ; 3750
 ; Draw an HP bar d tiles long at hl

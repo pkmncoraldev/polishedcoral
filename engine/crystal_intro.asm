@@ -105,29 +105,7 @@ StartIntroSequence::
 	call ClearTileMap
 	ld c, 80
 	call DelayFrames
-	ld b, CGB_CORALDEV_LOGO
-	call GetCGBLayout
 	farcall CoralDevScreen
-	call ApplyTilemapInVBlank
-	ld c, 15
-	call FadePalettes
-	ld c, 30
-	call DelayFrames
-;	ld de, MUSIC_CORALDEV_1
-;	call PlayMusic
-	ld c, 100
-	call DelayFrames
-	farcall CoralDevScreenWink
-	ld c, 15
-	call DelayFrames
-	farcall CoralDevScreenWink2
-	ld c, 60
-	call DelayFrames
-	call SetWhitePals
-	ld c, 15
-	call FadePalettes
-	ld c, 60
-	call DelayFrames
 	ret
 ; e45e8
 

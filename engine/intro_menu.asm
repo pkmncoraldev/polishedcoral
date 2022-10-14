@@ -1865,134 +1865,43 @@ ClearSplashScreenPalettes:
 	xor a
 	ld [rVBK], a
 	ret
-
-CoralDevScreen:
-	call ClearTileMap
-	ld de, CoralDevScreenGFX
-	ld hl, VTiles2 tile $60
-	lb bc, BANK(CoralDevScreenGFX), $1d
-	call Request2bpp
-	hlcoord 0, 0
-	ld de, CoralDevScreenString
-	jp PlaceString
-
-CoralDevScreenWink:
-	ld de, CoralDevScreenWinkGFX
-	ld hl, VTiles2 tile $6a
-	lb bc, BANK(CoralDevScreenWinkGFX), $1
-	call Request2bpp
+	
+BusterScreenTilemapAndAttrMap::
+	ld hl, CoralDevScreenTilemap
+	decoord 0, 0
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	rst CopyBytes
+	
+	ld a, 1
+	ld [rVBK], a
+	
+	ld hl, CoralDevScreenAttrmap
+	decoord 0, 0, wAttrMap
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	rst CopyBytes
 	ret
 	
-CoralDevScreenWink2:
-	ld de, CoralDevScreenWink2GFX
-	ld hl, VTiles2 tile $6a
-	lb bc, BANK(CoralDevScreenWink2GFX), $1
-	call Request2bpp
+BusterScreenTilemap2::
+	ld hl, CoralDevScreenTilemap2
+	decoord $08, $06
+	ld bc, 4 * 1
+	rst CopyBytes
+	
+	ld hl, CoralDevScreenTilemap2 + 4
+	decoord $08, $07
+	ld bc, 4 * 1
+	rst CopyBytes
+	
+	ld hl, CoralDevScreenTilemap2 + 8
+	decoord $08, $08
+	ld bc, 4 * 1
+	rst CopyBytes
+	
+	ld hl, CoralDevScreenTilemap2 + 12
+	decoord $08, $09
+	ld bc, 4 * 1
+	rst CopyBytes
 	ret
-	
-CoralDevScreenString:		
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	
-	db   $60, $61, $62, $63
-	
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70	
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	
-	db   $64, $65, $66, $67
-	
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	
-	db   $68, $69, $6a, $6b
-	
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	
-	db   $6c, $6d, $6e, $6f
-	
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70
-	
-	db   $71, $72, $73, $74, $75, $76
-	
-	db   $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	db   $70, $70, $70, $70
-	
-	db "@"
 	
 GameInit:: ; 642e
 	farcall TryLoadSaveData
@@ -2024,3 +1933,45 @@ PlayerIntroPaletteGray:
 	RGB 12, 12, 12
 	RGB 00, 00, 00
 	
+CoralDevScreenBusterPalette:
+	RGB 31, 00, 31
+	RGB 31, 31, 31
+	RGB 14, 17, 30
+	RGB 00, 00, 00
+	
+	RGB 31, 00, 31
+	RGB 31, 08, 23
+	RGB 15, 07, 00
+	RGB 00, 00, 00
+	
+CoralDevScreenTilemap:
+INCBIN "gfx/intro/splash/coraldev.tilemap"
+
+CoralDevScreenTilemap2:
+INCBIN "gfx/intro/splash/coraldev2.tilemap"
+
+CoralDevScreenAttrmap:
+INCBIN "gfx/intro/splash/coraldev.attrmap"
+	
+	
+CoralDevScreenPalette1:
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 00, 00, 00
+	
+CoralDevScreenPalette2:
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	
+	RGB 31, 31, 31
+	RGB 31, 30, 25
+	RGB 31, 25, 27
+	RGB 00, 00, 00

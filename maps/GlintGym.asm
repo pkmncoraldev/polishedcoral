@@ -16,8 +16,8 @@ GlintGym_MapScriptHeader:
 	xy_trigger 0, 15, 6, 0, GlintGymLibrarianStopsYou4, 0, 0
 
 	db 20 ; bg events
-	signpost 13, 3, SIGNPOST_READ, GlintGymStatue
-	signpost 13, 6, SIGNPOST_READ, GlintGymStatue
+	signpost -1, -1, SIGNPOST_READ, GlintGymStatue
+	signpost -1, -1, SIGNPOST_READ, GlintGymStatue
 	signpost 13, 9, SIGNPOST_READ, GlintGymBook1
 	signpost 13, 8, SIGNPOST_READ, GlintGymBook2
 	signpost 13, 7, SIGNPOST_READ, GlintGymBook3

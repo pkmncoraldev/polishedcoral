@@ -7,7 +7,8 @@ SunsetGengarHouse_MapScriptHeader:
 	warp_event  2,  7, SUNSET_BAY, 7
 	warp_event  3,  7, SUNSET_BAY, 7
 
-	db 3 ; coord events
+	db 4 ; coord events
+	coord_event  5,  2, 1, SunsetGengarHouseTrip
 	coord_event  7,  4, 1, SunsetGengarHouseTrip
 	coord_event  6,  5, 1, SunsetGengarHouseTrip
 	coord_event  7,  2, 1, SunsetGengarHouseTrip
@@ -36,6 +37,19 @@ SunsetGengarHouseGengar:
 	writetext SunsetGengarHouseGengarText2
 	waitbutton
 	closetext
+	
+	checkcode VAR_FACING
+	if_equal DOWN, .FallLeft
+	if_equal RIGHT, .FallUp
+	callasm SunsetGengarHouseFallDownAsm
+	dotrigger $1
+	end
+.FallLeft
+	callasm SunsetGengarHouseFallLeftAsm
+	dotrigger $1
+	end
+.FallUp
+	callasm SunsetGengarHouseFallUpAsm
 	dotrigger $1
 	end
 	
@@ -43,6 +57,21 @@ SunsetGengarHouseTrip:
 	callasm SunsetGengarHouseAsm
 	dotrigger $0
 	end
+	
+SunsetGengarHouseFallLeftAsm:
+	ld a, 2
+	ld [wPlaceBallsY], a
+	ret
+	
+SunsetGengarHouseFallUpAsm:
+	ld a, 1
+	ld [wPlaceBallsY], a
+	ret
+	
+SunsetGengarHouseFallDownAsm:
+	ld a, 0
+	ld [wPlaceBallsY], a
+	ret
 	
 SunsetGengarHouseAsm:
 	ld a, 69

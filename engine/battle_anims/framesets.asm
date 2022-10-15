@@ -17,24 +17,25 @@ GetBattleAnimFrame:
 	inc [hl]
 	call .GetPointer
 	ld a, [hli]
-	cp dorestart_command
+	cp -2
 	jr z, .restart
-	cp endanim_command
+	cp -1
 	jr z, .repeat_last
-
 	push af
 	ld a, [hl]
 	push hl
-	and $1f
+	and $3f
 	ld hl, BATTLEANIMSTRUCT_DURATION
 	add hl, bc
 	ld [hl], a
 	pop hl
+
 .okay
 	ld a, [hl]
-	and $e0
+	and $c0
+	srl a
 	ld [wBattleAnimTemp7], a
-	pop hl
+	pop af
 	ret
 
 .repeat_last
@@ -42,7 +43,6 @@ GetBattleAnimFrame:
 	ld hl, BATTLEANIMSTRUCT_DURATION
 	add hl, bc
 	ld [hl], a
-
 	ld hl, BATTLEANIMSTRUCT_FRAME
 	add hl, bc
 	dec [hl]
@@ -74,7 +74,7 @@ GetBattleAnimFrame:
 	ld hl, BATTLEANIMSTRUCT_FRAME
 	add hl, bc
 	ld l, [hl]
-	ld h, 0
+	ld h, $0
 	add hl, hl
 	add hl, de
 	ret

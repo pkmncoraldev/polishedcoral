@@ -1501,11 +1501,10 @@ MoveScreenLoop:
 	farcall PlaySpriteAnimationsAndDelayFrame
 	call JoyTextDelay
 
-	; allow d-pad to be held, but not a/b/start/select
 	ld a, [hJoyPressed]
 	and BUTTONS
 	ld b, a
-	ld a, [hJoyDown]
+	ld a, [hJoyPressed]
 	and D_PAD
 	or b
 	rrca

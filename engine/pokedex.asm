@@ -298,13 +298,13 @@ Pokedex_InitDexEntryScreen: ; 40217 (10:4217)
 	xor a
 	ld [hBGMapMode], a
 	call ClearSprites
-	call Pokedex_LoadCurrentFootprint
+;	call Pokedex_LoadCurrentFootprint
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_InitArrowCursor
 	call Pokedex_GetSelectedMon
 	ld [wLastDexEntry], a
 	farcall DisplayDexEntry
-	call Pokedex_DrawFootprint
+;	call Pokedex_DrawFootprint
 	call ApplyTilemapInVBlank
 	ld a, $a7
 	ld [hWX], a
@@ -375,11 +375,11 @@ Pokedex_ReinitDexEntryScreen: ; 402aa (10:42aa)
 	ld [hBGMapMode], a
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_InitArrowCursor
-	call Pokedex_LoadCurrentFootprint
+;	call Pokedex_LoadCurrentFootprint
 	call Pokedex_GetSelectedMon
 	ld [wLastDexEntry], a
 	farcall DisplayDexEntry
-	call Pokedex_DrawFootprint
+;	call Pokedex_DrawFootprint
 	call Pokedex_LoadSelectedMonTiles
 	call ApplyTilemapInVBlank
 	call Pokedex_GetSelectedMon
@@ -457,11 +457,12 @@ DexEntryScreen_MenuActionJumptable: ; 402f2
 
 Pokedex_RedisplayDexEntry: ; 4038d
 	call Pokedex_LoadGFX
-	call Pokedex_LoadAnyFootprint
+;	call Pokedex_LoadAnyFootprint
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_GetSelectedMon
 	farcall DisplayDexEntry
-	jp Pokedex_DrawFootprint
+	ret
+;	jp Pokedex_DrawFootprint
 
 Pokedex_InitOptionScreen: ; 4039d (10:439d)
 	xor a
@@ -2539,7 +2540,7 @@ NewPokedexEntry: ; fb877
 	call LoadStandardFont
 	call LoadFontsExtra
 	call Pokedex_LoadGFX2
-	call Pokedex_LoadAnyFootprint
+;	call Pokedex_LoadAnyFootprint
 	ld a, [wd265]
 	ld [wTempMonSpecies], a
 	cp RAICHU_A
@@ -2563,7 +2564,7 @@ NewPokedexEntry: ; fb877
 .cont
 	ld [wCurPartySpecies], a
 	call Pokedex_DrawDexEntryScreenBG
-	call Pokedex_DrawFootprint
+;	call Pokedex_DrawFootprint
 	hlcoord 0, 17
 	ld [hl], $3b
 	inc hl

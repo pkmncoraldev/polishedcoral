@@ -85,6 +85,7 @@ _NewGame_FinishSetup:
 	call ResetWRAM
 	call NewGame_ClearTileMapEtc
 	call SetInitialOptions
+	call CheckExtendedSpace
 	farcall InitClock
 	ld c, 31
 	call FadeToBlack

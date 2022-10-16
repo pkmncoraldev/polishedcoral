@@ -112,7 +112,7 @@ UnknownText_0x1c4183::
 
 UnknownText_0x1c41b1::
 	text "If you trade that"
-	line "#mon, you won't"
+	line "#MON, you won't"
 	cont "be able to battle."
 	prompt
 
@@ -169,13 +169,13 @@ UnknownText_ClownSaveText::
 
 UnknownText_0x1c462a::
 	text "When you change a"
-	line "#mon Box, data"
+	line "#MON BOX, data"
 	cont "will be saved. OK?"
 	done
 
 UnknownText_0x1c465f::
 	text "Each time you move"
-	line "a #mon, data"
+	line "a #MON, data"
 	cont "will be saved. OK?"
 	done
 
@@ -898,20 +898,20 @@ UnknownText_0x1c5962::
 	done
 
 Text_OnlyThreePkmnMayBeEntered::
-	text "Three #mon"
+	text "Three #MON"
 	line "must be entered."
 	para ""
 	done
 
 Text_ThePkmnMustAllBeDifferentKinds::
-	text "The three #mon"
+	text "The three #MON"
 	line "must all be"
 	cont "different kinds."
 	para ""
 	done
 
 Text_ThePkmnMustNotHoldTheSameItems::
-	text "The three #mon"
+	text "The three #MON"
 	line "must not hold the"
 	cont "same items."
 	para ""
@@ -931,7 +931,7 @@ Text_UberRestriction::
 	done
 
 UnknownText_0x1c5aa6::
-	text "Oh no! The #mon"
+	text "Oh no! The #MON"
 	line "broke free!"
 	prompt
 
@@ -972,7 +972,7 @@ UnknownText_0x1c5b53::
 	text_from_ram wEnemyMonNick
 	text "'s data"
 	line "was newly added to"
-	cont "the #dex.@"
+	cont "the #DEX.@"
 	sound_slot_machine_start
 	text_waitbutton
 	db "@@"
@@ -994,11 +994,11 @@ UnknownText_0x1c5b9a::
 
 UnknownText_0x1c5bac::
 	text "That can't be used"
-	line "on this #mon."
+	line "on this #MON."
 	prompt
 
 Text_RepelUsedEarlierIsStillInEffect::
-	text "The Repel used"
+	text "The REPEL used"
 	line "earlier is still"
 	cont "in effect."
 	prompt
@@ -1232,7 +1232,7 @@ WonderTradePromptText::
 
 ;UnknownText_0x613c8::
 ;	text "Sorry, but your"
-;	line "#mon appears to"
+;	line "#MON appears to"
 ;
 ;	para "be abnormal. We"
 ;	line "can't accept it."

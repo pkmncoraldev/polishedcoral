@@ -997,15 +997,15 @@ UnknownText_0x1c1474::
 	text "BILL's PC"
 	line "accessed."
 
-	para "#mon Storage"
-	line "System opened."
+	para "#MON STORAGE"
+	line "SYSTEM opened."
 	prompt
 
 UnknownText_0x1c14a4::
 	text "Accessed own PC."
 
-	para "Item Storage"
-	line "System opened."
+	para "ITEM STORAGE"
+	line "SYSTEM opened."
 	prompt
 
 UnknownText_0x1c14d2::

@@ -543,10 +543,10 @@ Continue_LoadMenuHeader: ; 5ebf
 .MenuData2_Dex: ; 5ee1
 	db $00 ; flags
 	db 4 ; items
-	db "Player@"
-	db "Badges@"
-	db "#dex@"
-	db "Time@"
+	db "PLAYER@"
+	db "BADGES@"
+	db "#DEX@"
+	db "TIME@"
 ; 5efb
 
 .MenuDataHeader_NoDex: ; 5efb
@@ -560,10 +560,10 @@ Continue_LoadMenuHeader: ; 5ebf
 .MenuData2_NoDex: ; 5f03
 	db $00 ; flags
 	db 4 ; items
-	db "Player <PLAYER>@"
-	db "Badges@"
+	db "PLAYER <PLAYER>@"
+	db "BADGES@"
 	db " @"
-	db "Time@"
+	db "TIME@"
 ; 5f1c
 
 

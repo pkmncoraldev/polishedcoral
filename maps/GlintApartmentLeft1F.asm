@@ -106,8 +106,8 @@ GlintApt11FNpc2Text2:
 	done
 	
 GlintApt11FNpc2Text3:
-	text "That HM teachs the"
-	line "move ROCK SMASH."
+	text "That HM will teach"
+	line "ROCK SMASH."
 	
 	para "It's a FIGHTING"
 	line "TYPE move,"

@@ -216,7 +216,7 @@ GlintGymTrainer1:
 GlintGymTrainer2:
 	generictrainer SCHOOLBOY, DAMIAN_1, EVENT_BEAT_GLINT_GYM_TRAINER_2, .SeenText, .BeatenText
 
-	text "At least I now I"
+	text "At least now I"
 	line "can study in"
 	cont "peace."
 	done
@@ -376,7 +376,7 @@ GlintGymTrainer2Rematch:
 	end
 
 GlintGymTrainer2RematchRegularText:
-	text "At least I now I"
+	text "At least now I"
 	line "can study in"
 	cont "peace."
 	done

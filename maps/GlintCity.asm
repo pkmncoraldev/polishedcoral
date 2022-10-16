@@ -238,7 +238,7 @@ GlintNPC1Text:
 	cont "park."
 	
 	para "I have to keep her"
-	line "on the lease,"
+	line "on the leash,"
 	cont "or she'll try to"
 	cont "chase the PIKIPEK!"
 	done

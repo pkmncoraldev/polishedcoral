@@ -5245,7 +5245,13 @@ BattleCommand_poisontarget:
 	jp PostStatusWithSynchronize
 	
 BattleCommand_toxictarget:
-	call CanPoisonTargetVerbose
+	call CanPoisonTarget
+	ret nz
+	ld a, [wTypeModifier]
+	and a
+	ret z
+	ld a, [wEffectFailed]
+	and a
 	ret nz
 	ld a, [hBattleTurn]
 	and a

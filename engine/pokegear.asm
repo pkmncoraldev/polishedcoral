@@ -741,6 +741,21 @@ PokegearMap_UpdateLandmarkName: ; 910b4
 ;	hlcoord 9, 1
 ;	ld [hl], "<UPDN>"
 	ret
+	
+PokegearMap_UpdateLandmarkName2: ; 910b4
+	push af
+	hlcoord 8, 0
+	lb bc, 2, 12
+	call ClearBox
+	pop af
+	ld e, a
+	push de
+	farcall GetLandmarkName
+	pop de
+	call TownMap_ConvertLineBreakCharacters2
+;	hlcoord 9, 1
+;	ld [hl], "<UPDN>"
+	ret
 
 ; 910d4
 
@@ -777,6 +792,27 @@ TownMap_ConvertLineBreakCharacters: ; 1de2c5
 .end
 	ld de, wStringBuffer1
 	hlcoord 9, 1
+	jp PlaceString
+	
+TownMap_ConvertLineBreakCharacters2: ; 1de2c5
+	ld hl, wStringBuffer1
+.loop
+	ld a, [hl]
+	cp "@"
+	jr z, .end
+	cp "<NEXT>"
+	jr z, .line_break
+	cp "¯"
+	jr z, .line_break
+	inc hl
+	jr .loop
+
+.line_break
+	ld [hl], "<LNBRK>"
+
+.end
+	ld de, wStringBuffer1
+	hlcoord 8, 0
 	jp PlaceString
 
 TownMap_GetNorthOnwaLandmarkLimits:
@@ -1882,7 +1918,7 @@ _TownMap: ; 9191c
 
 .next
 	ld a, [wTownMapCursorLandmark]
-	call PokegearMap_UpdateLandmarkName
+	call PokegearMap_UpdateLandmarkName2
 	ld a, [wTownMapCursorObjectPointer]
 	ld c, a
 	ld a, [wTownMapCursorObjectPointer + 1]
@@ -1914,7 +1950,7 @@ _TownMap: ; 9191c
 	hlcoord 19, 2
 	ld [hl], $17
 	ld a, [wTownMapCursorLandmark]
-	call PokegearMap_UpdateLandmarkName
+	call PokegearMap_UpdateLandmarkName2
 	call TownMapPals
 
 	ld a, [wTownMapPlayerIconLandmark]

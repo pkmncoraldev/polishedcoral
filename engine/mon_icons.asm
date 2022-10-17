@@ -23,7 +23,18 @@ SetMenuMonIconColor:
 	ld a, [wd265]
 	ld [wCurPartySpecies], a
 	call GetMenuMonIconPalette
-	jr ProcessMenuMonIconColor
+	jp ProcessMenuMonIconColor
+
+SetMenuMonIconColor2:
+	push hl
+	push de
+	push bc
+	push af
+
+	ld a, [wd265]
+	ld [wCurPartySpecies], a
+	call GetMenuMonIconPalette
+	jp ProcessMenuMonIconColor2
 
 SetMenuMonIconColor_NoShiny:
 	push hl
@@ -127,6 +138,24 @@ ProcessMenuMonIconColor:
 	pop hl
 	ret
 
+ProcessMenuMonIconColor2:
+	ld hl, wSprites + 3
+	ld c, 4
+	ld de, 4
+
+.colorIcon
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, .colorIcon
+
+.finish
+	pop af
+	pop bc
+	pop de
+	pop hl
+	ret
+
 GetMonIconPalette::
 	push af
 	ld a, [wCurIcon]
@@ -218,7 +247,7 @@ LoadNamingScreenMonIcon:
 	push bc
 
 	ld hl, wTempMonShiny
-	call SetMenuMonIconColor
+	call SetMenuMonIconColor2
 
 	ld a, [wd265]
 	ld [wCurIcon], a

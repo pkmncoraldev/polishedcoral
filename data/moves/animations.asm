@@ -286,6 +286,21 @@ BattleAnim_0:
 	anim_ret
 
 BattleAnim_PowerWhip:
+	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_WHIP
+	anim_sound 0, 1, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_40,  14, 4,   6, 4, $80
+	anim_wait 4
+	anim_sound 0, 1, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_3F,  16, 0,   7, 4, $0
+	anim_wait 8
+	anim_bgeffect ANIM_BG_18, $0, $1, $40
+	anim_sound 0, 1, SFX_CUT
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $10
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $28, $2, $0
+	anim_obj ANIM_OBJ_POWER_WHIP, -13, 0,   5, 0, $0
+	anim_wait 32
+	anim_ret
+
 BattleAnim_ElectroBall:
 BattleAnim_FlameBurst:
 BattleAnim_FieryDance:
@@ -2871,15 +2886,16 @@ BattleAnim_Surf:
 	anim_ret
 
 BattleAnim_VineWhip:
-	anim_1gfx ANIM_GFX_WHIP
+	anim_2gfx ANIM_GFX_WHIP, ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_VINE_WHIP
 	anim_obj ANIM_OBJ_40,  14, 4,   6, 4, $80
 	anim_wait 4
 	anim_sound 0, 1, SFX_VINE_WHIP
 	anim_obj ANIM_OBJ_3F,  16, 0,   7, 4, $0
 	anim_wait 4
+	anim_obj ANIM_OBJ_01, -15, 0,   7, 0, $0
 	anim_incobj  1
-	anim_wait 4
+	anim_wait 16
 	anim_ret
 
 BattleAnim_LeechSeed:

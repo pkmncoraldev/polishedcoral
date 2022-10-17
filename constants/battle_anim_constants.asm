@@ -295,6 +295,7 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_SHOCK_WAVE
 	const ANIM_OBJ_SHOCK_WAVE_2
 	const ANIM_OBJ_SHOCK_WAVE_3
+	const ANIM_OBJ_POWER_WHIP
 
 	const_def
 	const BATTLEANIMFUNC_00

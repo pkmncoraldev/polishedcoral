@@ -75,6 +75,7 @@ SunbeamIslandSurfShopNPC1:
 	playsound SFX_ENTER_DOOR
 	special FadeOutPalettes
 	waitsfx
+	setevent EVENT_SUNBEAM_BIKINIS_GONE
 	warpfacing UP, SUNBEAM_BIKINI_CONTEST, $6, $5
 	end
 .saidnotocontest:

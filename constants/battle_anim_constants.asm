@@ -40,7 +40,7 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_HIT_BIG_YFIX
 	const ANIM_OBJ_01
 	const ANIM_OBJ_02
-	const ANIM_OBJ_03
+	const ANIM_OBJ_HIT_BIG
 	const ANIM_OBJ_04
 	const ANIM_OBJ_05
 	const ANIM_OBJ_06
@@ -149,7 +149,7 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_6D
 	const ANIM_OBJ_SKY_ATTACK_BIRD
 ;	const ANIM_OBJ_LICK
-	const ANIM_OBJ_70
+	const ANIM_OBJ_WITHDRAW
 	const ANIM_OBJ_71
 	const ANIM_OBJ_GROWTH
 	const ANIM_OBJ_73
@@ -854,8 +854,8 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_BG_16
 	const ANIM_BG_17
 	const ANIM_BG_18
-	const ANIM_BG_19
-	const ANIM_BG_1A
+	const ANIM_BG_FADE_MON_TO_BLACK_REPEATING
+	const ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING
 	const ANIM_BG_1B
 	const ANIM_BG_1C
 	const ANIM_BG_1D

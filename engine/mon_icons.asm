@@ -33,7 +33,7 @@ SetMenuMonIconColor2:
 
 	ld a, [wd265]
 	ld [wCurPartySpecies], a
-	call GetMenuMonIconPalette
+	call GetMenuMonIconPalette2
 	jp ProcessMenuMonIconColor2
 
 SetMenuMonIconColor_NoShiny:
@@ -163,23 +163,35 @@ GetMonIconPalette::
 	jr GetMenuMonIconPalette.got_species
 
 GetMenuMonIconPalette::
-	ld a, [wCurPartySpecies]
-	cp GYARADOS
-	jr nz, .not_red_gyarados
-
-	inc hl ; Form is in the byte after Shiny
-	ld a, [hl]
-	dec hl
-	and FORM_MASK
-	cp GYARADOS_RED_FORM
-	jr nz, .not_red_gyarados
-	xor a ; PAL_OW_RED
-	jr .done
-
-.not_red_gyarados
-; check shininess at hl
 	ld a, [hl]
 	and SHINY_MASK
+	jr z, .not_shiny
+	scf
+	jr .got_shininess
+.not_shiny
+	and a
+.got_shininess:
+	push af
+	ld a, [wCurPartySpecies]
+.got_species:
+	dec a
+	ld c, a
+	ld b, 0
+	ld hl, MenuMonIconColors
+	add hl, bc
+	ld e, [hl]
+	pop af
+	ld a, e
+	jr c, .shiny
+	swap a
+.shiny
+	and $f
+.done
+	ld l, a
+	ret
+	
+GetMenuMonIconPalette2::
+	farcall GetShininess
 	jr z, .not_shiny
 	scf
 	jr .got_shininess

@@ -393,7 +393,8 @@ BattleAnim_Wish:
 	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_STARS
 	anim_bgp $1b
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $0, $0
-	anim_wait 32
+	anim_wait 48
+	anim_sound 0, 0, SFX_MOONLIGHT
 	anim_obj ANIM_OBJ_WISH, 128, 24, $2
 	anim_wait 4
 	anim_obj ANIM_OBJ_WISH2, 126, 20, $2
@@ -402,14 +403,8 @@ BattleAnim_Wish:
 	anim_obj ANIM_OBJ_WISH2, 124, 16, $2
 	anim_obj ANIM_OBJ_WISH2, 128, 24, $2
 	anim_obj ANIM_OBJ_WISH2, 132, 32, $2
-	anim_wait 48
+	anim_wait 80
 	anim_clearobjs
-	anim_obj ANIM_OBJ_9E,   0, 0,   5, 0, $0
-	anim_obj ANIM_OBJ_9E,   2, 0,   7, 0, $0
-	anim_obj ANIM_OBJ_9E,   4, 0,   9, 0, $0
-	anim_obj ANIM_OBJ_9E,   6, 0,  11, 0, $0
-	anim_obj ANIM_OBJ_9E,   8, 0,  13, 0, $0
-	anim_wait 1	
 	anim_sound 0, 0, SFX_METRONOME
 	anim_obj ANIM_OBJ_GLIMMER,   5, 4,   8, 0, $0
 	anim_wait 5

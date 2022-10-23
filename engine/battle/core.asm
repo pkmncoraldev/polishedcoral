@@ -4557,6 +4557,8 @@ ItemRecoveryAnim::
 	push hl
 	push de
 	push bc
+	xor a
+	ld [wKickCounter], a
 	call EmptyBattleTextBox
 	ld a, SOFTBOILED_MILK_DRINK_RECOVER
 	ld [wFXAnimIDLo], a

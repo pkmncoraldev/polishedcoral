@@ -61,6 +61,10 @@ EventideVillageFlypointCallback:
 	return
 	
 EventideVillageWendyRematch:
+	setevent EVENT_EVENTIDE_GYM_BLUE_SWITCH
+	setevent EVENT_EVENTIDE_GYM_BLACK_SWITCH
+	clearevent EVENT_EVENTIDE_GYM_RED_SWITCH
+	clearevent EVENT_EVENTIDE_GYM_YELLOW_SWITCH
 	checkevent EVENT_BEAT_WENDY_REMATCH
 	iffalse .end
 	clearevent EVENT_BEAT_WENDY_REMATCH

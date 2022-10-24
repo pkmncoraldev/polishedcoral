@@ -25,17 +25,6 @@
 	const BATTLEANIMSTRUCT_17
 BATTLEANIMSTRUCT_LENGTH EQU const_value
 NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
-
-;the following are unused and can be cut to make room as needed
-;ANIM_OBJ_09
-;ANIM_OBJ_BIG_ICE_CHUNK
-;ANIM_OBJ_SKY_ATTACK_BIRD
-;ANIM_OBJ_8B
-;ANIM_OBJ_7F
-;ANIM_OBJ_B3
-;ANIM_OBJ_A4
-;ANIM_OBJ_94
-
 	const_def
 	const ANIM_OBJ_HIT_BIG_YFIX
 	const ANIM_OBJ_01
@@ -176,7 +165,7 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_88
 	const ANIM_OBJ_89
 	const ANIM_OBJ_8A
-	const ANIM_OBJ_8B
+;	const ANIM_OBJ_8B
 	const ANIM_OBJ_8C
 	const ANIM_OBJ_8D
 	const ANIM_OBJ_SPIKES
@@ -185,7 +174,7 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_CONVERSION
 	const ANIM_OBJ_92
 	const ANIM_OBJ_93
-	const ANIM_OBJ_94
+;	const ANIM_OBJ_94
 	const ANIM_OBJ_95
 	const ANIM_OBJ_96
 	const ANIM_OBJ_97
@@ -196,12 +185,12 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_9C
 	const ANIM_OBJ_GLIMMER
 	const ANIM_OBJ_9E
-	const ANIM_OBJ_9F
+;	const ANIM_OBJ_9F
 	const ANIM_OBJ_A0
 	const ANIM_OBJ_A1
 	const ANIM_OBJ_A2
 	const ANIM_OBJ_ZAP_CANNON
-	const ANIM_OBJ_A4
+;	const ANIM_OBJ_A4
 	const ANIM_OBJ_A5
 	const ANIM_OBJ_PERISH_SONG
 	const ANIM_OBJ_FORESIGHT
@@ -216,7 +205,7 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_B0
 	const ANIM_OBJ_B1
 	const ANIM_OBJ_B2
-	const ANIM_OBJ_B3
+;	const ANIM_OBJ_B3
 	const ANIM_OBJ_B4
 	const ANIM_OBJ_ROCK_SMASH
 	const ANIM_OBJ_FLOWER
@@ -299,6 +288,11 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_COSMIC_POWER
 	const ANIM_OBJ_WISH
 	const ANIM_OBJ_WISH2
+	const ANIM_OBJ_ROCK_WRECKER_CHARGE
+    const ANIM_OBJ_ROCK_WRECKER
+    const ANIM_OBJ_ROCK_WRECKER_GROW
+	const ANIM_OBJ_BLOCK
+	const ANIM_OBJ_BLOCK2
 
 	const_def
 	const BATTLEANIMFUNC_00
@@ -596,6 +590,8 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const BATTLEANIMFRAMESET_EC
 	const BATTLEANIMFRAMESET_ED
 	const BATTLEANIMFRAMESET_WISH
+	const BATTLEANIMFRAMESET_F3
+	const BATTLEANIMFRAMESET_BLOCK
 
 	const_def
 	const BATTLEANIMOAMSET_00
@@ -937,6 +933,8 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_GFX_HORN_LEECH
 	const ANIM_GFX_TAUNT
 	const ANIM_GFX_WOOD
+	const ANIM_GFX_HUGE_ROCK
+	const ANIM_GFX_RED_X
 
 	const_def
 	const BG_EFFECT_STRUCT_FUNCTION

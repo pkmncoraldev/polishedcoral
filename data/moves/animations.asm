@@ -286,7 +286,21 @@ BattleAnim_0:
 	anim_ret
 
 BattleAnim_Block:
-	anim_ret
+	anim_1gfx ANIM_GFX_RED_X
+	anim_obj ANIM_OBJ_BLOCK2,  16, 4,   7, 0, $40
+	anim_wait 14
+	anim_sound 0, 0, SFX_GLASS_TING_2
+	anim_wait 30
+	anim_obj ANIM_OBJ_BLOCK,   16, 4,   7, 0, $40
+	anim_sound 6, 6, SFX_GLASS_TING
+	anim_wait 22
+.loop
+	anim_clearobjs
+	anim_wait 1
+	anim_obj ANIM_OBJ_BLOCK,   16, 4,   7, 0, $40
+	anim_wait 1
+	anim_loop 3, .loop
+	anim_ret 
 
 BattleAnim_PowerWhip:
 	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_WHIP
@@ -357,17 +371,58 @@ BattleAnim_CosmicPower:
 	anim_ret
 
 BattleAnim_RockWrecker:
-	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
-	anim_bgeffect ANIM_BG_20, $10, $1, $20
-	anim_sound 0, 0, SFX_STRENGTH
-	anim_obj ANIM_OBJ_1F,   8, 0,  13, 0, $1
-	anim_wait 128
-	anim_incobj  1
-	anim_wait 20
-	anim_sound 0, 1, SFX_MEGA_PUNCH
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $4
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, -16, 4,   5, 0, $0
-	anim_jump BattleAnim_RockSmash.jump
+    anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HUGE_ROCK
+    anim_obj ANIM_OBJ_ROCK_WRECKER_GROW, 48, 96, $0
+.loop
+    anim_sound 0, 0, SFX_OUTRAGE
+    anim_obj ANIM_OBJ_ROCK_WRECKER_CHARGE, 48, 96, $38
+    anim_wait 4
+    anim_sound 0, 0, SFX_OUTRAGE
+    anim_obj ANIM_OBJ_ROCK_WRECKER_CHARGE, 48, 96, $20
+    anim_wait 4
+    anim_sound 0, 0, SFX_OUTRAGE
+    anim_obj ANIM_OBJ_ROCK_WRECKER_CHARGE, 48, 96, $8
+    anim_wait 4
+    anim_sound 0, 0, SFX_OUTRAGE
+    anim_obj ANIM_OBJ_ROCK_WRECKER_CHARGE, 48, 96, $10
+    anim_wait 4
+    anim_sound 0, 0, SFX_OUTRAGE
+    anim_obj ANIM_OBJ_ROCK_WRECKER_CHARGE, 48, 96, $28
+    anim_wait 4
+    anim_sound 0, 0, SFX_OUTRAGE
+    anim_obj ANIM_OBJ_ROCK_WRECKER_CHARGE, 48, 96, $0
+    anim_wait 4
+    anim_sound 0, 0, SFX_OUTRAGE
+    anim_obj ANIM_OBJ_ROCK_WRECKER_CHARGE, 48, 96, $18
+    anim_wait 4
+    anim_sound 0, 0, SFX_OUTRAGE
+    anim_obj ANIM_OBJ_ROCK_WRECKER_CHARGE, 48, 96, $30
+    anim_wait 4
+    anim_loop 4, .loop
+    anim_sound 0, 0, SFX_OUTRAGE
+    anim_obj ANIM_OBJ_ROCK_WRECKER, 48, 90, $1
+    anim_wait 80
+    anim_sound 0, 0, SFX_OUTRAGE
+    anim_incobj 34
+    anim_sound 0, 1, SFX_RAZOR_WIND
+    anim_wait 10
+    anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
+    anim_clearobjs
+    anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $4, $10
+    anim_sound 0, 1, SFX_EGG_BOMB
+    anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $28
+    anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $5c
+    anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $10
+    anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $e8
+    anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $9c
+    anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $d0
+    anim_wait 6
+    anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $1c
+    anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $50
+    anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $dc
+    anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $90
+    anim_wait 32
+    anim_ret
 	
 BattleAnim_OminousWind:
 	anim_1gfx ANIM_GFX_WIND

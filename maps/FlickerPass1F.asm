@@ -97,7 +97,7 @@ TrainerFlickerPass1F_4:
 	text "This is too close"
 	line "quarters for me."
 	
-	para "You're breath"
+	para "Your breath"
 	line "stinks!"
 	done
 

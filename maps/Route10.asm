@@ -423,7 +423,8 @@ TrainerRoute10_7:
 
 	text "Keep going!"
 	
-	para "You're almost there!"
+	para "You're almost"
+	line "there!"
 	done
 
 .SeenText:

@@ -273,7 +273,12 @@ TwinkleGymEntryClerk:
 	end
 	
 TwinkleGymGuyScript:
+	checkevent EVENT_BEAT_CHARLIE
+	iftrue .TwinkleGymGuyWinScript
 	jumptextfaceplayer TwinkleGymGuyText1
+	
+.TwinkleGymGuyWinScript:
+	jumptextfaceplayer TwinkleGymGuyText2
 	
 TwinkleGymGuyText1:
 	text "Yo!"

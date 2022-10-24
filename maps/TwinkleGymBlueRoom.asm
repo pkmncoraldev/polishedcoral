@@ -107,7 +107,7 @@ TwinkleGymBlueRoomTrainer:
 TwinkleGymBlueRoomTrainerRegularText:
 	text "Ahh!"
 	
-	line "Let the steam melt"
+	para "Let the steam melt"
 	line "all your stress"
 	cont "away!"
 	done

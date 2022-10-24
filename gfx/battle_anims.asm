@@ -46,4 +46,5 @@ AnimObjMoonGFX:      INCBIN "gfx/battle_anims/moon.2bpp.lz"
 AnimObjHornLeechGFX: INCBIN "gfx/battle_anims/horn_leech.2bpp.lz"
 AnimObjTauntGFX:     INCBIN "gfx/battle_anims/taunt.2bpp.lz"
 AnimObjWoodGFX:      INCBIN "gfx/battle_anims/wood.2bpp.lz"
+AnimObjHugeRockGFX:  INCBIN "gfx/battle_anims/huge_rock.2bpp.lz"
 ; 8640e

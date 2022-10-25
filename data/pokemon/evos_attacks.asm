@@ -3655,10 +3655,10 @@ MaractusEvosAttacks:
 DwebbleEvosAttacks:
 	db EVOLVE_LEVEL, 34, CRUSTLE
 	db  0 ; no more evolutions
-	db  1, FURY_CUTTER
+	db  1, SAND_ATTACK_SMOKESCREEN
 	db  5, ROCK_BLAST
 	db  7, DEFENSE_CURL_HARDEN_WITHDRAW
-	db 11, SAND_ATTACK_SMOKESCREEN
+	db 11, FURY_CUTTER
 	db 13, FEINT_ATTACK
 	db 18, AGILITY_ROCK_POLISH
 	db 23, METAL_CLAW
@@ -3672,10 +3672,10 @@ DwebbleEvosAttacks:
 	
 CrustleEvosAttacks:
 	db  0 ; no more evolutions
-	db  1, FURY_CUTTER
+	db  1, SAND_ATTACK_SMOKESCREEN
 	db  1, ROCK_BLAST
 	db  1, DEFENSE_CURL_HARDEN_WITHDRAW
-	db  1, SAND_ATTACK_SMOKESCREEN
+	db  1, FURY_CUTTER
 	db  1, FEINT_ATTACK
 	db  1, AGILITY_ROCK_POLISH
 	db  1, METAL_CLAW

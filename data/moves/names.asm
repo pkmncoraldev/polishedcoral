@@ -45,7 +45,7 @@ MoveNames::
 	db "BITE@"
 	db "GROWL@"
 	db "ERROR!@" ; ROAR_WHIRLWIND
-	db "SING@"
+	db "ERROR!@" ; SING_HYPNOSIS
 	db "SUPERSONIC@"
 	db "SONIC BOOM@"
 	db "DISABLE@"

@@ -8,7 +8,7 @@
 	db NO_ITEM ; item 2
 	dn GENDERLESS, 3 ; gender, step cycles to hatch
 	dn 5, 5 ; frontpic dimensions
-	db SOUNDPROOF ; ability 1
+	db STATIC ; ability 1
 	db STATIC ; ability 2
 	db AFTERMATH ; hidden ability
 	db MEDIUM_FAST ; growth rate

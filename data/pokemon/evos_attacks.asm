@@ -398,7 +398,7 @@ ClefairyEvosAttacks:
 	db  1, TACKLE_SCRATCH_POUND
 	db  1, GROWL
 	db  1, ENCORE
-	db  8, SING
+	db  8, SING_HYPNOSIS
 	db 13, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 17, DEFENSE_CURL_HARDEN_WITHDRAW
 	db 22, BODY_SLAM
@@ -416,7 +416,7 @@ ClefableEvosAttacks:
 	db  1, TACKLE_SCRATCH_POUND
 	db  1, GROWL
 	db  1, ENCORE
-	db  1, SING
+	db  1, SING_HYPNOSIS
 	db  1, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db  1, DEFENSE_CURL_HARDEN_WITHDRAW
 	db  1, BODY_SLAM
@@ -431,7 +431,7 @@ ClefableEvosAttacks:
 JigglypuffEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, WIGGLYTUFF
 	db  0 ; no more evolutions
-	db  1, SING
+	db  1, SING_HYPNOSIS
 	db  3, DEFENSE_CURL_HARDEN_WITHDRAW
 	db  5, TACKLE_SCRATCH_POUND
 	db  9, FAIRY_WIND
@@ -448,7 +448,7 @@ JigglypuffEvosAttacks:
 
 WigglytuffEvosAttacks:
 	db  0 ; no more evolutions
-	db  1, SING
+	db  1, SING_HYPNOSIS
 	db  1, DEFENSE_CURL_HARDEN_WITHDRAW
 	db  1, TACKLE_SCRATCH_POUND
 	db  1, FAIRY_WIND
@@ -640,7 +640,7 @@ PoliwagEvosAttacks:
 	db EVOLVE_LEVEL, 25, POLIWHIRL
 	db  0 ; no more evolutions
 	db  1, WATER_GUN
-	db  1, HYPNOSIS
+	db  1, SING_HYPNOSIS
 	db  6, TACKLE_SCRATCH_POUND
 	db 12, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 18, RAIN_DANCE
@@ -657,7 +657,7 @@ PoliwhirlEvosAttacks:
 	db EVOLVE_TRADE, KINGS_ROCK, POLITOED
 	db  0 ; no more evolutions
 	db  1, WATER_GUN
-	db  1, HYPNOSIS
+	db  1, SING_HYPNOSIS
 	db  6, TACKLE_SCRATCH_POUND
 	db 12, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 18, RAIN_DANCE
@@ -683,7 +683,7 @@ PoliwrathEvosAttacks:
 	db  1, BELLY_DRUM
 	db  1, DOUBLE_EDGE
 	db  1, WATER_GUN
-	db  1, HYPNOSIS
+	db  1, SING_HYPNOSIS
 	db  1, TACKLE_SCRATCH_POUND
 	db  1, BUBBLE_BEAM
 	db 0 ; no more level-up moves
@@ -961,7 +961,7 @@ MukEvosAttacks:
 GastlyEvosAttacks:
 	db EVOLVE_LEVEL, 25, HAUNTER
 	db  0 ; no more evolutions
-	db  1, HYPNOSIS
+	db  1, SING_HYPNOSIS
 	db  1, BITE
 	db  8, MEAN_LOOK_BLOCK_SPIDER_WEB
 	db 12, CURSE
@@ -979,7 +979,7 @@ HaunterEvosAttacks:
 	db EVOLVE_TRADE, -1, GENGAR
 	db  0 ; no more evolutions
 	db  1, SHADOW_CLAW
-	db  1, HYPNOSIS
+	db  1, SING_HYPNOSIS
 	db  1, BITE
 	db  1, MEAN_LOOK_BLOCK_SPIDER_WEB
 	db  1, CURSE
@@ -996,7 +996,7 @@ HaunterEvosAttacks:
 GengarEvosAttacks:
 	db  0 ; no more evolutions
 	db  1, SHADOW_CLAW
-	db  1, HYPNOSIS
+	db  1, SING_HYPNOSIS
 	db  1, BITE
 	db  1, MEAN_LOOK_BLOCK_SPIDER_WEB
 	db  1, CURSE
@@ -1075,7 +1075,7 @@ ExeggcuteEvosAttacks:
 	db EVOLVE_ITEM, LEAF_STONE, EXEGGUTOR
 	db  0 ; no more evolutions
 	db  1, ABSORB
-	db  1, HYPNOSIS
+	db  1, SING_HYPNOSIS
 	db  7, REFLECT
 	db 11, BULLET_SEED
 	db 14, LEECH_SEED
@@ -1094,7 +1094,7 @@ ExeggutorEvosAttacks:
 	db 0 ; no more evolutions
 	db  1, STOMP
 	db  1, ABSORB
-	db  1, HYPNOSIS
+	db  1, SING_HYPNOSIS
 	db  1, REFLECT
 	db  1, LEECH_SEED
 	db  1, BULLET_SEED
@@ -1819,7 +1819,7 @@ TogepiEvosAttacks:
 	db  1, GROWL
 	db  1, CHARM_FEATHER_DANCE
 	db  5, METRONOME
-	db  9, SING
+	db  9, SING_HYPNOSIS
 	db 13, FAIRY_WIND
 	db 15, ENCORE
 	db 21, SAFEGUARD
@@ -1837,7 +1837,7 @@ TogeticEvosAttacks:
 	db  1, GROWL
 	db  1, CHARM_FEATHER_DANCE
 	db  5, METRONOME
-	db  9, SING
+	db  9, SING_HYPNOSIS
 	db 13, FAIRY_WIND
 	db 15, ENCORE
 	db 21, SAFEGUARD
@@ -2020,7 +2020,7 @@ PolitoedEvosAttacks:
 	db  1, BELLY_DRUM
 	db  1, DOUBLE_EDGE
 	db  1, BUBBLE_BEAM
-	db  1, HYPNOSIS
+	db  1, SING_HYPNOSIS
 	db  1, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db  1, PERISH_SONG
 	db 27, SWAGGER
@@ -2546,7 +2546,7 @@ StantlerEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 5, LEER_TAIL_WHIP
-	db 10, HYPNOSIS
+	db 10, SING_HYPNOSIS
 	db 14, STOMP
 	db 19, SAND_ATTACK_SMOKESCREEN
 	db 23, TAKE_DOWN
@@ -2745,7 +2745,7 @@ RaltsEvosAttacks:
 	db 27, PSYCHIC_M
 	db 32, FUTURE_SIGHT
 	db 34, CHARM_FEATHER_DANCE
-	db 37, HYPNOSIS
+	db 37, SING_HYPNOSIS
 	db 39, DREAM_EATER
 	db 42, MOONBLAST
 	db 0 ; no more level-up moves
@@ -2766,7 +2766,7 @@ KirliaEvosAttacks:
 	db 31, PSYCHIC_M
 	db 35, FUTURE_SIGHT
 	db 37, CHARM_FEATHER_DANCE
-	db 40, HYPNOSIS
+	db 40, SING_HYPNOSIS
 	db 42, DREAM_EATER
 	db 45, MOONBLAST
 	db 0 ; no more level-up moves
@@ -2787,7 +2787,7 @@ GardevoirEvosAttacks:
 	db 34, PSYCHIC_M
 	db 38, FUTURE_SIGHT
 	db 40, CHARM_FEATHER_DANCE
-	db 43, HYPNOSIS
+	db 43, SING_HYPNOSIS
 	db 46, DREAM_EATER
 	db 50, MOONBLAST
 	db 0 ; no more level-up moves
@@ -3003,7 +3003,7 @@ SwabluEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, GROWL
-	db 4, SING
+	db 4, SING_HYPNOSIS
 	db 7, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 10, SAFEGUARD
 	db 13, FAIRY_WIND
@@ -3024,7 +3024,7 @@ AltariaEvosAttacks:
 	db 1, HURRICANE
 	db 1, PECK
 	db 1, GROWL
-	db 1, SING
+	db 1, SING_HYPNOSIS
 	db 1, FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	db 10, SAFEGUARD
 	db 13, FAIRY_WIND
@@ -3167,7 +3167,7 @@ SpiritombEvosAttacks:
 	db 14, HEX
 	db 19, CURSE
 	db 23, FEINT_ATTACK
-	db 28, HYPNOSIS
+	db 28, SING_HYPNOSIS
 	db 32, DREAM_EATER
 	db 37, SUCKER_PUNCH
 	db 41, SHADOW_BALL
@@ -3247,7 +3247,7 @@ SnoverEvosAttacks:
 	db 1, LEER_TAIL_WHIP
 	db 5, RAZOR_LEAF
 	db 9, ICY_WIND
-	db 13, SING
+	db 13, SING_HYPNOSIS
 	db 17, SWAGGER
 	db 21, HAZE
 	db 26, AURORA_BEAM
@@ -3264,7 +3264,7 @@ AbomasnowEvosAttacks:
 	db 1, LEER_TAIL_WHIP
 	db 5, RAZOR_LEAF
 	db 9, ICY_WIND
-	db 13, SING
+	db 13, SING_HYPNOSIS
 	db 17, SWAGGER
 	db 21, HAZE
 	db 26, AURORA_BEAM
@@ -3356,7 +3356,7 @@ TogekissEvosAttacks:
 	db  1, GROWL
 	db  1, CHARM_FEATHER_DANCE
 	db  1, METRONOME
-	db  1, SING
+	db  1, SING_HYPNOSIS
 	db  1, FAIRY_WIND
 	db  1, ENCORE
 	db  1, SAFEGUARD
@@ -3376,7 +3376,7 @@ LeafeonEvosAttacks:
 	db 5, SAND_ATTACK_SMOKESCREEN
 	db 9, CHARM_FEATHER_DANCE
 	db 13, QUICK_ATTACK
-	db 17, SING
+	db 17, SING_HYPNOSIS
 	db 21, RAZOR_LEAF
 	db 25, GIGA_DRAIN
 	db 29, SWORDS_DANCE
@@ -4018,7 +4018,7 @@ WyrdeerEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 5, LEER_TAIL_WHIP
-	db 10, HYPNOSIS
+	db 10, SING_HYPNOSIS
 	db 14, STOMP
 	db 19, SAND_ATTACK_SMOKESCREEN
 	db 23, TAKE_DOWN
@@ -4051,7 +4051,7 @@ Exeggcute_AEvosAttacks:
 	db EVOLVE_ITEM, LEAF_STONE, EXEGGUTOR_A
 	db  0 ; no more evolutions
 	db  1, ABSORB
-	db  1, HYPNOSIS
+	db  1, SING_HYPNOSIS
 	db  7, REFLECT
 	db 11, BULLET_SEED
 	db 14, LEECH_SEED
@@ -4070,7 +4070,7 @@ Exeggutor_AEvosAttacks:
 	db  0 ; no more evolutions
 ;	db  1, DRAGON_HAMMER
 	db  1, ABSORB
-	db  1, HYPNOSIS
+	db  1, SING_HYPNOSIS
 	db  1, REFLECT
 	db  1, LEECH_SEED
 	db  1, BULLET_SEED

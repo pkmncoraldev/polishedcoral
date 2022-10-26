@@ -3366,6 +3366,7 @@ BattleAnim_RockSlide:
 ;	anim_ret
 
 BattleAnim_Sing:
+	anim_jumpif $1, BattleAnim_Hypnosis
 	anim_1gfx ANIM_GFX_NOISE
 	anim_sound 16, 2, SFX_SING
 .loop

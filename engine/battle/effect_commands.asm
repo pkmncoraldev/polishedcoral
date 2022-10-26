@@ -8094,30 +8094,11 @@ PrintParalyze: ; 37372
 ; 37378
 
 CheckSubstituteOpp: ; 37378
-; returns z when not behind a sub (or if overridden by Infiltrator or sound)
+; returns z when not behind a sub (or if overridden by Infiltrator)
 	ld a, BATTLE_VARS_ABILITY
 	call GetBattleVar
 	cp INFILTRATOR
 	ret z
-	; don't let move effects impact ability processing
-	ld a, [wAnimationsDisabled]
-	and a
-	jr nz, .no_sound_move
-	push bc
-	push de
-	push hl
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVar
-	ld hl, SoundMoves
-	ld de, 1
-	call IsInArray
-	pop hl
-	pop de
-	pop bc
-	jr nc, .no_sound_move
-	xor a
-	ret
-.no_sound_move
 	ld a, BATTLE_VARS_SUBSTATUS4_OPP
 	call GetBattleVar
 	bit SUBSTATUS_SUBSTITUTE, a

@@ -1281,6 +1281,66 @@ GetMoveNameTransform:: ; 34f8
 	rst Bankswitch
 	ret
 	
+GetSingName::
+	ld a, [hROMBank]
+	push af
+	push hl
+	push bc
+	push de
+
+	call CheckHypnosisUsers
+	jr nc, .not_hypnosis
+	ld hl, SingNames
+	ld a, 0
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	jr .done
+.not_hypnosis
+	ld hl, SingNames
+	ld a, 1
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	
+.done
+	pop de
+	pop bc
+	pop hl
+	pop af
+	rst Bankswitch
+	ret
+	
+GetMoveNameSing:: ; 34f8
+	ld a, [hROMBank]
+	push af
+	push hl
+	push bc
+
+	
+	call CheckHypnosisUsers
+	jr nc, .not_hypnosis
+	ld hl, SingNames
+	ld a, 0
+	jr .done
+	
+.not_hypnosis
+	ld hl, SingNames
+	ld a, 1
+	
+.done
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	ld de, wStringBuffer1
+	pop bc
+	pop hl
+	pop af
+	rst Bankswitch
+	ret
 	
 CheckPoundUsers::
 	ld a, [wCurPartySpecies]
@@ -1514,6 +1574,14 @@ CheckTransformUsers2::
 	call IsInArray
 	ret
 	
+CheckHypnosisUsers::
+	ld a, [wCurPartySpecies]
+CheckHypnosisUsers2::
+	ld hl, HypnosisUsers
+	ld de, 1
+	call IsInArray
+	ret
+	
 CheckMultiMoveSlot::
 	ld a, [wCurMove]
 CheckMultiMoveSlot2::
@@ -1561,6 +1629,8 @@ GetMultiMoveSlotName2::
 	jr z, .workup
 	cp TRANSFORM_SPLASH
 	jr z, .transform
+	cp SING_HYPNOSIS
+	jr z, .sing
 	jr .end
 .tackle
 	call GetMoveNameTackle
@@ -1615,6 +1685,9 @@ GetMultiMoveSlotName2::
 	jr .end
 .transform
 	call GetMoveNameTransform
+	jr .end
+.sing
+	call GetMoveNameSing
 .end
 	ret
 
@@ -2509,6 +2582,28 @@ TransformUsers:
 	db DITTO
 	db -1
 	
+HypnosisUsers:
+	db SMEARGLE
+	db POLIWAG
+	db POLIWHIRL
+	db POLIWRATH
+	db POLITOED
+	db GASTLY
+	db HAUNTER
+	db GENGAR
+	db EXEGGCUTE
+	db EXEGGUTOR
+	db STANTLER
+	db WYRDEER
+	db RALTS
+	db KIRLIA
+	db GARDEVOIR
+	db GALLADE
+	db SPIRITOMB
+	db EXEGGCUTE_A
+	db EXEGGUTOR_A
+	db -1
+	
 TackleNames:
 	db "POUND@"
 	db "SCRATCH@"
@@ -2610,6 +2705,11 @@ TransformNames:
 	db "SPLASH@"
 	db -1
 	
+SingNames:
+	db "SING@"
+	db "HYPNOSIS@"
+	db -1
+	
 MultiSlotMoves:
 	db TACKLE_SCRATCH_POUND
 	db DEFENSE_CURL_HARDEN_WITHDRAW
@@ -2646,7 +2746,7 @@ MultiSlotMoveTypes::
 	cp SYNTHESIS_MOONLIGHT_MORNING_SUN
 	jr z, .synthesis
 	cp MEAN_LOOK_BLOCK_SPIDER_WEB
-	jr z, .mean_look
+	jp z, .mean_look
 	cp SAND_ATTACK_SMOKESCREEN
 	jp z, .sand_attack
 	cp SCARY_FACE_COTTON_SPORE_STRING_SHOT
@@ -2657,6 +2757,8 @@ MultiSlotMoveTypes::
 	jp z, .charm
 	cp AGILITY_ROCK_POLISH
 	jp z, .agility
+	cp SING_HYPNOSIS
+	jp z, .sing
 	pop af
 	pop de
 	pop bc
@@ -2837,6 +2939,22 @@ MultiSlotMoveTypes::
 	ret
 .not_rock_polish
 	ld a, PSYCHIC
+	pop de
+	pop bc
+	pop hl
+	ret
+	
+.sing
+	pop af
+	call CheckHypnosisUsers
+	jr nc, .not_hypnosis
+	ld a, PSYCHIC
+	pop de
+	pop bc
+	pop hl
+	ret
+.not_hypnosis
+	ld a, NORMAL
 	pop de
 	pop bc
 	pop hl

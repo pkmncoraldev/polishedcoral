@@ -721,8 +721,6 @@ CheckNullificationAbilities:
 	call GetOpponentAbilityAfterMoldBreaker
 	cp DAMP
 	jr z, .damp
-	cp SOUNDPROOF
-	jr z, .soundproof
 	ld b, a
 	ld hl, .NullificationAbilityTypes
 .loop
@@ -752,14 +750,6 @@ CheckNullificationAbilities:
 	cp EFFECT_EXPLOSION
 	jr z, .ability_ok
 	ret
-
-.soundproof
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVar
-	ld hl, SoundMoves
-	ld de, 1
-	call IsInArray
-	ret nc
 
 .ability_ok
 	; Set wAttackMissed to 3 (means ability immunity kicked in), and wTypeMatchup

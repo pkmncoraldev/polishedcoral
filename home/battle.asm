@@ -535,17 +535,6 @@ BitingMoves::
 	db THUNDER_FANG
 	db -1
 
-SoundMoves::
-	db BUG_BUZZ
-	db GROWL
-	db HYPER_VOICE
-	db PERISH_SONG
-	db ROAR_WHIRLWIND
-	db SCREECH
-	db SING
-	db SUPERSONIC
-	db -1
-
 SubstituteBypassMoves::
 ; used by Magic Bounce so it can check Substitute unconditionally as long as it isn't here
 ; (Sound moves aren't included)

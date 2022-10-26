@@ -46,7 +46,7 @@
 	const BITE         ; $2c
 	const GROWL        ; $2d
 	const ROAR_WHIRLWIND        	 			; $2e
-	const SING         ; $2f - COMBINE
+	const SING_HYPNOSIS         ; $2f
 	const SUPERSONIC   ; $30
 	const SONIC_BOOM   ; $31
 	const DISABLE      ; $32
@@ -94,7 +94,7 @@
 	const TOXIC        ; $5c
 	const CONFUSION    ; $5d
 	const PSYCHIC_M    ; $5e
-	const HYPNOSIS     ; $5f - COMBINE
+	const HYPNOSIS     ; $5f - REMOVE
 	const SIGNAL_BEAM  ; $60
 	const AGILITY_ROCK_POLISH      ; $61
 	const QUICK_ATTACK ; $62
@@ -185,7 +185,7 @@
 	const MACH_PUNCH   ; $b7
 	const SCARY_FACE_COTTON_SPORE_STRING_SHOT   ; $b8
 	const FEINT_ATTACK ; $b9
-	const SWEET_KISS   ; $ba - COMBINE
+	const SWEET_KISS   ; $ba - REMOVE
 	const BELLY_DRUM   ; $bb
 	const SLUDGE_BOMB  ; $bc
 	const MUD_SLAP     ; $bd
@@ -253,7 +253,7 @@
 	const DARK_PULSE   ; $fb
 	const MOONBLAST    ; $fc
 	const PLAY_ROUGH   ; $fd
-	const SKULL_BASH   ; $fe
+	const SKULL_BASH   ; $fe - REMOVE
 	const STRUGGLE     ; $ff
 
 ; Battle animations use the same constants

@@ -3511,15 +3511,15 @@ OfferSwitch: ; 3d74b
 	push af
 	farcall Battle_GetTrainerName
 
-	ld a, [wOptions2]
-	bit BATTLE_PREDICT, a
-	jr nz, .predict
-	ld hl, BattleText_EnemyAreAboutToSwitchWillPlayerSwitchPkmn
-	call CheckPluralTrainer
-	jr nz, .PlaceBattleChangeText
-	ld hl, BattleText_EnemyIsAboutToSwitchWillPlayerSwitchPkmn
-	jr .PlaceBattleChangeText
-.predict
+;	ld a, [wOptions2]
+;	bit BATTLE_PREDICT, a
+;	jr nz, .predict
+;	ld hl, BattleText_EnemyAreAboutToSwitchWillPlayerSwitchPkmn
+;	call CheckPluralTrainer
+;	jr nz, .PlaceBattleChangeText
+;	ld hl, BattleText_EnemyIsAboutToSwitchWillPlayerSwitchPkmn
+;	jr .PlaceBattleChangeText
+;.predict
 	ld hl, BattleText_EnemyAreAboutToUseWillPlayerSwitchPkmn
 	call CheckPluralTrainer
 	jr nz, .PlaceBattleChangeText
@@ -3723,7 +3723,7 @@ CheckIfCurPartyMonIsFitToFight: ; 3d887
 	rst AddNTimes
 	ld a, [hl]
 	and IS_EGG_MASK
-	ld hl, BattleText_AnEGGCantBattle
+	ld hl, BattleText_AnEggCantBattle
 	jr nz, .print_textbox
 
 	ld hl, BattleText_TheresNoWillToBattle

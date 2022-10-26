@@ -343,15 +343,15 @@ SentSomeToMomText:
 	deciram wBattleReward, 3, 6
 	text ""
 	line "for winning!"
-	cont "Sent some to Mom!"
+	cont "Sent some to MOM!"
 	prompt
 
 SentHalfToMomText:
-	text "Sent half to Mom!"
+	text "Sent half to MOM!"
 	prompt
 
 SentAllToMomText:
-	text "Sent all to Mom!"
+	text "Sent all to MOM!"
 	prompt
 
 BattleText_PkmnFainted: ; 0x80a75
@@ -362,7 +362,7 @@ BattleText_PkmnFainted: ; 0x80a75
 ; 0x80a83
 
 BattleText_UseNextMon: ; 0x80a83
-	text "Use next #mon?"
+	text "Use next #MON?"
 	done
 ; 0x80a93
 
@@ -380,7 +380,7 @@ BattleText_EnemyIsAboutToUseWillPlayerSwitchPkmn: ; 0x80aca
 	text "."
 
 	para "Will you switch"
-	line "your #mon?"
+	line "your #MON?"
 	done
 ; 0x80af8
 
@@ -392,26 +392,26 @@ BattleText_EnemyAreAboutToUseWillPlayerSwitchPkmn:
 	text "."
 
 	para "Will you switch"
-	line "your #mon?"
+	line "your #MON?"
 	done
 
 BattleText_EnemyIsAboutToSwitchWillPlayerSwitchPkmn:
 	text "<ENEMY>"
 	line "is about to switch"
-	cont "#mon."
+	cont "#MON."
 
 	para "Will you switch"
-	line "your #mon?"
+	line "your #MON?"
 	done
 ; 0x80af8
 
 BattleText_EnemyAreAboutToSwitchWillPlayerSwitchPkmn:
 	text "<ENEMY>"
 	line "are about to"
-	cont "switch #mon."
+	cont "switch #MON."
 
 	para "Will you switch"
-	line "your #mon?"
+	line "your #MON?"
 	done
 
 BattleText_EnemySentOut: ; 0x80af8
@@ -429,8 +429,8 @@ BattleText_TheresNoWillToBattle: ; 0x80b0b
 	prompt
 ; 0x80b26
 
-BattleText_AnEGGCantBattle: ; 0x80b26
-	text "An Egg can't"
+BattleText_AnEggCantBattle: ; 0x80b26
+	text "An EGG can't"
 	line "battle!"
 	prompt
 ; 0x80b3b
@@ -476,7 +476,7 @@ RecoveredUsingText: ; 0x80bc2
 
 AirBalloonPoppedText:
 	text "<TARGET>'s"
-	line "Air Balloon"
+	line "AIR BALLOON"
 	cont "popped!"
 	prompt
 
@@ -1317,7 +1317,7 @@ CuredInfatuationWithItem:
 
 CuredEncoreWithItem:
 	text "<USER>"
-	line "cured Encore"
+	line "cured ENCORE"
 	cont "with @"
 	text_from_ram wStringBuffer1
 	text "!"
@@ -1325,7 +1325,7 @@ CuredEncoreWithItem:
 
 CuredDisableWithItem:
 	text "<USER>"
-	line "cured Disable"
+	line "cured DISABLE"
 	cont "with @"
 	text_from_ram wStringBuffer1
 	text "!"
@@ -1489,11 +1489,11 @@ DownpourText: ; 0x817a3
 ; 0x817b8
 
 HailingText:
-	text "It is HAILING!"
+	text "It is hailing!"
 	prompt
 	
 SandstormText: ; 0x80951
-	text "A SANDSTORM"
+	text "A sandstorm"
 	line "rages."
 	prompt
 

@@ -2049,9 +2049,9 @@ BattleAnim_FlameCharge:
 	anim_sound 6, 2, SFX_EMBER
 	anim_obj ANIM_OBJ_FLAME_CHARGE, 56, 86, $90
 	anim_wait 12
-	anim_loop 6, .loop
+	anim_loop 4, .loop
 	anim_wait 96
-	anim_wait 96
+;	anim_wait 96
 	anim_incbgeffect ANIM_BG_18
 	anim_call BattleAnim_FollowEnemyFeet_0
 	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
@@ -2065,7 +2065,7 @@ BattleAnim_FlameCharge:
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
 	anim_wait 8
 	anim_incobj  9
-	anim_wait 16
+;	anim_wait 16
 	anim_ret
 	
 BattleAnim_FireFang:

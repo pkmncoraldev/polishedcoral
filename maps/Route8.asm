@@ -13,7 +13,7 @@ Route8_MapScriptHeader:
 	bg_event 35, 20, SIGNPOST_ITEM + DAWN_STONE, EVENT_ROUTE_8_HIDDEN_DAWN_STONE
 
 	db 4 ; bg events
-	signpost 34, 47, SIGNPOST_READ, Route8Sign
+	signpost 34, 48, SIGNPOST_READ, Route8Sign
 	signpost 10, 24, SIGNPOST_READ, Route8Flowers
 	signpost 11, 24, SIGNPOST_READ, Route8Flowers
 	signpost 12, 18, SIGNPOST_READ, Route8FlowerHouseSign

@@ -178,6 +178,7 @@ LusterMallCoffee:
 	db LEMONADE
 	db MOOMOO_MILK
 	db RAGECANDYBAR
+	db BIG_MALASADA
 	db -1
 	
 LusterMallAntique:

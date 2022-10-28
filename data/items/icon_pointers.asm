@@ -217,7 +217,7 @@ ItemIconPointers:
 	dw DragonScaleIcon
 	dw UpGradeIcon
 	dw DubiousDiscIcon
-	dw ProtectorIcon
+	dw BigMalasadaIcon
 	dw ElectirizerIcon
 	dw MagmarizerIcon
 	dw RazorFangIcon

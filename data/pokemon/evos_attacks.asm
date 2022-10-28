@@ -252,7 +252,7 @@ RaticateEvosAttacks:
 
 PikachuEvosAttacks:
 	db EVOLVE_ITEM, THUNDERSTONE, RAICHU
-	db EVOLVE_ITEM, FIRE_STONE, RAICHU_A
+	db EVOLVE_ITEM, BIG_MALASADA, RAICHU_A
 	db 	0 ; no more evolutions
 	db 	1, LEER_TAIL_WHIP
 	db  1, THUNDERSHOCK

@@ -216,7 +216,7 @@ ItemNames::
 	db "DRAGON SCALE@"
 	db "UP-GRADE@"
 	db "DUBIOUS DISC@"
-	db "PROTECTOR@"
+	db "BIG MALASADA@"
 	db "ELECTIRIZER@"
 	db "MAGMARIZER@"
 	db "RAZOR FANG@"

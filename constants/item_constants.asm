@@ -248,7 +248,7 @@
 	const DRAGON_SCALE ; d7
 	const UP_GRADE     ; d8
 	const DUBIOUS_DISC ; d9
-	const PROTECTOR    ; da - replace
+	const BIG_MALASADA ; da
 	const ELECTIRIZER  ; db
 	const MAGMARIZER   ; dc
 	const RAZOR_FANG   ; dd
@@ -473,7 +473,7 @@
 	const NAM_PP_UP        ; b0
 	const NAM_PREMIER_BALL ; b1
 	const NAM_PROTECT_PADS ; b2
-	const NAM_PROTECTOR    ; b3
+	const NAM_BIG_MALASADA ; b3
 	const NAM_PROTEIN      ; b4
 	const NAM_QUICK_BALL   ; b5
 	const NAM_QUICK_CLAW   ; b6

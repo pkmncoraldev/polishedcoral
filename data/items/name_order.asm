@@ -247,7 +247,7 @@ ItemNameOrder:
 	db NAM_DRAGON_SCALE ; 30
 	db NAM_UP_GRADE     ; f1
 	db NAM_DUBIOUS_DISC ; 31
-	db NAM_PROTECTOR    ; b3
+	db NAM_BIG_MALASADA ; b3
 	db NAM_ELECTIRIZER  ; 34
 	db NAM_MAGMARIZER   ; 75
 	db NAM_RAZOR_FANG   ; be

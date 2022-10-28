@@ -231,7 +231,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; DRAGON_SCALE
 	dw NoEffect         ; UP_GRADE
 	dw NoEffect         ; DUBIOUS_DISC
-	dw NoEffect         ; PROTECTOR
+	dw EvoStoneEffect         ; PROTECTOR
 	dw NoEffect         ; ELECTIRIZER
 	dw NoEffect         ; MAGMARIZER
 	dw NoEffect         ; RAZOR_FANG

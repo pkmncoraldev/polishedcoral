@@ -216,7 +216,7 @@ ItemDescriptions:
 	dw DragonScaleDesc
 	dw UpGradeDesc
 	dw DubiousDiscDesc
-	dw ProtectorDesc
+	dw BigMalasadaDesc
 	dw ElectirizerDesc
 	dw MagmarizerDesc
 	dw RazorFangDesc
@@ -1061,9 +1061,9 @@ DubiousDiscDesc:
 	db   "A transparent disc"
 	next "of unknown origin.@"
 
-ProtectorDesc:
-	db   "A protective item."
-	next "Stiff and heavy.@"
+BigMalasadaDesc:
+	db   "Loved by a certain"
+	next "#MON!@"
 
 ElectirizerDesc:
 	db   "A box packed with"

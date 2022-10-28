@@ -58,7 +58,7 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke CROAGUNK, 100
+	givepoke PIKACHU, 100
 	givepoke TOXICROAK, 100
 
 .items
@@ -75,6 +75,7 @@ PlayerHouseDebugPoster:
 	giveitem RARE_CANDY, 99
 	giveitem PROTEIN, 99
 	giveitem EXP_SHARE, 99
+	giveitem BIG_MALASADA, 3
 	giveitem THUNDERSTONE, 3
 	giveitem FIRE_STONE, 3
 	giveitem LEAF_STONE, 3

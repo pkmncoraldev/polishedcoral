@@ -58,7 +58,7 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke SMEARGLE, 100
+	givepoke EXEGGCUTE_A, 100
 	givepoke POLIWAG, 100
 
 .items

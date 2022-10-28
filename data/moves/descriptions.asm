@@ -93,7 +93,7 @@ MoveDescriptions::
 	dw ToxicDescription
 	dw ConfusionDescription
 	dw PsychicMDescription
-	dw HypnosisDescription
+	dw DragonHammerDescription
 	dw SignalBeamDescription
 	dw AgilityDescription
 	dw QuickAttackDescription
@@ -252,7 +252,7 @@ MoveDescriptions::
 	dw DarkPulseDescription
 	dw MoonblastDescription
 	dw PlayRoughDescription
-	dw SkullBashDescription
+	dw Conversion2Description
 	dw StruggleDescription
 	dw Move00Description
 
@@ -319,6 +319,10 @@ BulletSeedDescription:
 WoodHammerDescription:
 	db   "Attack that also"
 	next "hurts the user.@"
+	
+DragonHammerDescription:
+	db   "Attacks using it's"
+	next "body as a hammer.@"
 	
 TakeDownDescription:
 DoubleEdgeDescription:
@@ -493,7 +497,6 @@ ThunderWaveDescription:
 
 SingDescription:
 SleepPowderDescription:
-HypnosisDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
@@ -659,7 +662,6 @@ FalseSwipeDescription:
 	next "with at least 1HP.@"
 
 SolarBeamDescription:
-SkullBashDescription:
 	db   "1st turn: Prepare"
 	next "2nd turn: Attack@"
 
@@ -898,6 +900,10 @@ RestDescription:
 ConversionDescription:
 	db   "Change user's type"
 	next "to a move's type.@"
+	
+Conversion2Description:
+	db   "The user's type is"
+	next "made resistant.@"
 
 TriAttackDescription:
 	db   "Fires three kinds"

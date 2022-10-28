@@ -198,6 +198,7 @@ BattleCommandPointers:
 	command cosmicpower
 	command wish
 	command taunt
+	command conversion2
 	
 
 	enum_start -1, -1

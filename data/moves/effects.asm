@@ -42,6 +42,7 @@ WaterGun:
 WingAttack:
 XScissor:
 NightSlash:
+DragonHammer:
 	checkobedience
 	usedmovetext
 	doturn
@@ -950,7 +951,6 @@ ThunderWave:
 
 DoSleep:
 SleepPowder:
-Hypnosis:
 Sing:
 Spore:
 	checkobedience
@@ -1602,6 +1602,13 @@ Conversion:
 	usedmovetext
 	doturn
 	conversion
+	endmove
+	
+Conversion2:
+	checkobedience
+	usedmovetext
+	doturn
+	conversion2
 	endmove
 
 PayDay:
@@ -2375,28 +2382,28 @@ FuryCutter:
 	pickpocket
 	endmove
 	
-SkullBash:
-	checkcharge
-	checkobedience
-	doturn
-	pressure
-	charge
-	usedmovetext
-	critical
-	damagestats
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	hittarget
-	failuretext
-	checkfaint
-	criticaltext
-	supereffectivetext
-	postfainteffects
-	posthiteffects
-	pickpocket
-	endmove
+;SkullBash:
+;	checkcharge
+;	checkobedience
+;	doturn
+;	pressure
+;	charge
+;	usedmovetext
+;	critical
+;	damagestats
+;	damagecalc
+;	stab
+;	damagevariation
+;	checkhit
+;	hittarget
+;	failuretext
+;	checkfaint
+;	criticaltext
+;	supereffectivetext
+;	postfainteffects
+;	posthiteffects
+;	pickpocket
+;	endmove
 
 Earthquake:
 	checkobedience

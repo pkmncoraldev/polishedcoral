@@ -338,6 +338,7 @@ AI_Smart: ; 386be
 
 .table_386f2
 	dbw EFFECT_CONVERSION,		  AI_Smart_Conversion
+	dbw EFFECT_CONVERSION2,		  AI_Smart_Conversion2
 	dbw EFFECT_FAKE_OUT,		  AI_Smart_FakeOut
 	dbw EFFECT_SLEEP,             AI_Smart_Sleep
 	dbw EFFECT_LEECH_HIT,         AI_Smart_LeechHit
@@ -436,6 +437,45 @@ AI_Smart_Conversion:
 	
 	dec [hl]
 	dec [hl]
+	ret
+	
+AI_Smart_Conversion2: ; 38d98
+	ld a, [wLastPlayerMove]
+	and a
+	jr nz, .asm_38dc9
+
+	push hl
+	dec a
+	ld hl, Moves + MOVE_TYPE
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+
+	ld a, BANK(Moves)
+	call GetFarByte
+	ld [wPlayerMoveStruct + MOVE_TYPE], a
+
+	xor a
+	ld [hBattleTurn], a
+
+	farcall BattleCheckTypeMatchup
+
+	ld a, [wd265]
+	cp $a
+	pop hl
+	jr c, .asm_38dc9
+	ret z
+
+	call AI_50_50
+	ret c
+
+	dec [hl]
+	ret
+
+.asm_38dc9
+	call Random
+	cp 25
+	ret c
+	inc [hl]
 	ret
 
 
@@ -1286,6 +1326,7 @@ AI_Smart_Encore: ; 38c3b
 .EncoreMoves:
 	db AGILITY_ROCK_POLISH
 	db CONVERSION
+	db CONVERSION2
 	db DISABLE
 	db DREAM_EATER
 
@@ -2648,6 +2689,7 @@ AI_Opportunist: ; 39315
 	db BULK_UP
 	db CALM_MIND
 	db CONVERSION
+	db CONVERSION2
 	db DEFENSE_CURL_HARDEN_WITHDRAW
 	db DISABLE
 	db DRAGON_DANCE
@@ -2851,6 +2893,7 @@ AI_Cautious: ; 39418
 
 .residualmoves
 	db CONVERSION
+	db CONVERSION2
 	db FOCUS_ENERGY
 	db LEECH_SEED
 	db POISONPOWDER

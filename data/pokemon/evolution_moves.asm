@@ -247,7 +247,7 @@ EvolutionMoves::
 	db NO_MOVE 								; WYRDEER
 	db PSYCHIC_M    						; RAICHU_A
 	db NO_MOVE								; EXEGGCUTE_A
-	db WOOD_HAMMER ;DRAGON_HAMMER     						; EXEGGUTOR_A
+	db DRAGONHAMMER     					; EXEGGUTOR_A
 	db SHADOW_BONE  						; MAROWAK_A
 	db NO_MOVE      						; GRIMER_A
 	db NO_MOVE      						; MUK_A

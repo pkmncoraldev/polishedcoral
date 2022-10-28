@@ -123,7 +123,7 @@ MoveEffectsPointers:
 	dw SunnyDay
 	dw BellyDrum
 	dw MirrorCoat
-	dw SkullBash
+	dw Conversion2
 	dw Earthquake
 	dw FutureSight
 	dw Gust

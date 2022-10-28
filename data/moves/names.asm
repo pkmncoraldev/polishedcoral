@@ -93,7 +93,7 @@ MoveNames::
 	db "TOXIC@"
 	db "CONFUSION@"
 	db "PSYCHIC@"
-	db "HYPNOSIS@"
+	db "DRAGONHAMMER@"
 	db "SIGNAL BEAM@"
 	db "ERROR!@" ; AGILITY_ROCK_POLISH
 	db "QUICK ATTACK@"
@@ -252,5 +252,5 @@ MoveNames::
 	db "DARK PULSE@"
 	db "MOONBLAST@"
 	db "PLAY ROUGH@"
-	db "SKULL BASH@"
+	db "CONVERSION2@"
 	db "STRUGGLE@"

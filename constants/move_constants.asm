@@ -94,7 +94,7 @@
 	const TOXIC        ; $5c
 	const CONFUSION    ; $5d
 	const PSYCHIC_M    ; $5e
-	const HYPNOSIS     ; $5f - REMOVE
+	const DRAGONHAMMER	    ; $5f
 	const SIGNAL_BEAM  ; $60
 	const AGILITY_ROCK_POLISH      ; $61
 	const QUICK_ATTACK ; $62
@@ -253,7 +253,7 @@
 	const DARK_PULSE   ; $fb
 	const MOONBLAST    ; $fc
 	const PLAY_ROUGH   ; $fd
-	const SKULL_BASH   ; $fe - REMOVE
+	const CONVERSION2  ; $fe
 	const STRUGGLE     ; $ff
 
 ; Battle animations use the same constants

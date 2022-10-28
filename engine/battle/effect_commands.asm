@@ -6407,13 +6407,13 @@ BattleCommand_checkrampage: ; 3671a
 	jr nz, .continue_rampage
 
 	res SUBSTATUS_RAMPAGE, [hl]
-	call SwitchTurn
-	call SafeCheckSafeguard
-	jr nz, .switchturn_continue_rampage
 	ld a, BATTLE_VARS_ABILITY
 	call GetBattleVar
 	cp OWN_TEMPO
-	jr z, .switchturn_continue_rampage
+	jr z, .continue_rampage
+	call SwitchTurn
+	call SafeCheckSafeguard
+	jr nz, .switchturn_continue_rampage
 
 	set SUBSTATUS_CONFUSED, [hl]
 	call BattleRandom

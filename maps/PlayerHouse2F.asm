@@ -58,7 +58,7 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke PIKACHU, 100
+	givepoke SHROOMISH, 27
 	givepoke TOXICROAK, 100
 
 .items

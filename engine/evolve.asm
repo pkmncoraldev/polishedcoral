@@ -418,14 +418,6 @@ endr
 
 	ld a, [wCurSpecies]
 	ld [wd265], a
-	xor a
-	ld [wMonType], a
-	ld a, [wd265]
-	push af
-	call LearnEvolutionMove
-	call LearnLevelMoves
-	pop af
-	ld [wd265], a
 	cp RAICHU_A
 	jr nz, .not_raichu_a
 	ld a, RAICHU
@@ -453,6 +445,10 @@ endr
 	ld a, [wTempMonSpecies]
 	ld [hl], a
 	push hl
+	push de
+	call LearnEvolutionMove
+	call LearnLevelMoves
+	pop de
 	ld l, e
 	ld h, d
 	jp EvolveAfterBattle_MasterLoop
@@ -558,7 +554,8 @@ Text_WhatEvolving: ; 0x42482
 
 
 LearnEvolutionMove:
-	ld a, [wd265]
+	; c = species
+	ld a, [wTempMonSpecies]
 	ld [wCurPartySpecies], a
 	dec a
 	ld b, 0
@@ -569,7 +566,6 @@ LearnEvolutionMove:
 	and a
 	ret z
 
-	push hl
 	ld d, a
 	ld hl, wPartyMon1Moves
 	ld a, [wCurPartyMon]
@@ -580,45 +576,25 @@ LearnEvolutionMove:
 .check_move
 	ld a, [hli]
 	cp d
-	jr z, .has_move
+	ret z
 	dec b
 	jr nz, .check_move
 
 	ld a, d
 	ld [wPutativeTMHMMove], a
-	ld [wd265], a
-	
-	ld [wCurMove], a
 	ld [wNamedObjectIndexBuffer], a
-	push hl
-	push de
-	farcall CheckMultiMoveSlot
-	jr nc, .not_multi_move_slot
-	pop de
-	pop hl
-	dec a
-	farcall GetMultiMoveSlotName
-	jr .got_move_name
-.not_multi_move_slot
-	pop de
-	pop hl
-	ld a, [wCurMove]
-	dec a
 	call GetMoveName
-	
-.got_move_name	
 	call CopyName1
-	predef LearnMove
 	ld a, [wCurPartySpecies]
-	ld [wd265], a
-
-.has_move
-	pop hl
+	push af
+	predef LearnMove
+	pop af
+	ld [wCurPartySpecies], a
+	ld [wTempMonSpecies], a
 	ret
 
-
-LearnLevelMoves: ; 42487
-	ld a, [wd265]
+LearnLevelMoves:
+	ld a, [wTempMonSpecies]
 	ld [wCurPartySpecies], a
 	dec a
 	ld b, 0
@@ -638,7 +614,7 @@ LearnLevelMoves: ; 42487
 .find_move
 	ld a, [hli]
 	and a
-	jr z, .done
+	ret z
 
 	ld b, a
 	ld a, [wCurPartyLevel]
@@ -660,48 +636,21 @@ LearnLevelMoves: ; 42487
 	jr z, .has_move
 	dec b
 	jr nz, .check_move
-	jr .learn
-.has_move
 
-	pop hl
-	jr .find_move
-
-.learn
-;	pop hl
-;	push hl
 	ld a, d
 	ld [wPutativeTMHMMove], a
-	ld [wd265], a
-	
-	ld [wCurMove], a
 	ld [wNamedObjectIndexBuffer], a
-	push hl
-	push de
-	farcall CheckMultiMoveSlot
-	jr nc, .not_multi_move_slot
-	pop de
-	pop hl
-	dec a
-	farcall GetMultiMoveSlotName
-	jr .got_move_name
-.not_multi_move_slot
-	pop de
-	pop hl
-	ld a, [wCurMove]
-	dec a
 	call GetMoveName
-	
-.got_move_name
 	call CopyName1
+	ld a, [wCurPartySpecies]
+	push af
 	predef LearnMove
+	pop af
+	ld [wCurPartySpecies], a
+	ld [wTempMonSpecies], a
+.has_move
 	pop hl
 	jr .find_move
-
-.done
-	ld a, [wCurPartySpecies]
-	ld [wd265], a
-	ret
-; 424e1
 
 
 FillMoves: ; 424e1
@@ -887,7 +836,7 @@ GetPreEvolution:: ; 42581
 ClearTileMapEvo:
 	; Fill wTileMap with blank tiles.
 	hlcoord 0, 0
-	ld a, 0
+	ld a, $7f
 	ld bc, wTileMapEnd - wTileMap
 	call ByteFill
 

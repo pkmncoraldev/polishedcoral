@@ -114,6 +114,7 @@ SpookHouseNPC3:
 	loadwildmon SPIRITOMB, 25
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
+	if_equal $1, .lost
 	changemap SpookhouseTVRoom2_BlockData
 	dontrestartmapmusic
 	playmusic MUSIC_NONE
@@ -128,14 +129,20 @@ SpookHouseNPC3:
 	closetext
 	special FadeOutPalettes
 	pause 15
+	warp OLD_MANOR_EXTERIOR, 14, 10
 	setevent EVENT_SPOOKHOUSE_GHOSTBEGONE
 	setevent EVENT_SPOOKHOUSE_BEATEN
-	clearevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
-	warp OLD_MANOR_EXTERIOR, 14, 10
 	end
 .girlleft
 	changemap SpookhouseTVRoom4_BlockData
 	jump .return
+.lost
+	clearevent EVENT_SPOOKHOUSE_GHOSTBEGONE
+	clearevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
+	clearevent EVENT_SCARY_DOOR_LEFT
+	clearevent EVENT_SPOOKHOUSE_DARK
+	reloadmapafterbattle
+	end
 	
 SpookHouseTVRoomMenuData: ; 49d14
 	db $40 ; flags

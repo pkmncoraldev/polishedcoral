@@ -3143,7 +3143,7 @@ LopunnyEvosAttacks:
 	db 30, AGILITY_ROCK_POLISH
 	db 36, DOUBLE_HIT
 	db 42, CHARM_FEATHER_DANCE
-	db 48, SWEET_KISS
+	db 48, ATTRACT
 	db 54, ACROBATICS
 	db 0 ; no more level-up moves
 	

@@ -46,4 +46,5 @@ MetronomeExcepts:
 	db SKETCH
 	db SNORE
 	db TRANSFORM_SPLASH
+	db SWEET_KISS
 	db -1

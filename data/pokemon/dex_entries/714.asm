@@ -4,6 +4,6 @@
 
 	db   "They live in pitch"
 	next "black caves. Their"
-	page "enormous ears can"
-	next "emit ultrasonic"
+	next "enormous ears can"
+	page "emit ultrasonic"
 	next "waves of 200,000hz.@"

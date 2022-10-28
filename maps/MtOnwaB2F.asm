@@ -200,7 +200,7 @@ MtOnwa_DisguiseMan1Text3:
 	line "greedy TRAINER!"
 	
 	para "I knew you'd win!"
-	line "'Twas a no-brainer!"
+	line "What a no-brainer!"
 	
 	para "We'll meet again."
 	line "I tell no lies,"

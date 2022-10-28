@@ -390,12 +390,11 @@ GlintRivalText2:
 	
 	para "Whatever…"
 	
+	para "My #MON weren't"
+	line "even trying!"
+	
 	para "I don't need to"
 	line "deal with this."
-	
-	para "You can't keep"
-	line "getting lucky"
-	cont "forever."
 	
 	para "Outta my way!"
 	done
@@ -403,7 +402,7 @@ GlintRivalText2:
 GlintRivalWinText:
 	text "What?"
 	
-	para "Again?"
+	para "How?"
 	done
 	
 GlintRivalLoseText:

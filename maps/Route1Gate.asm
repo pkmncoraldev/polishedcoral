@@ -37,9 +37,10 @@ Route1GateTrigger2:
 	end
 
 Route1OfficerScript1:
+	faceplayer
+	opentext
 	checkevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	iftrue Route1OfficerScript2
-	opentext
 	writetext Route1OfficerText1
 	waitbutton
 	closetext
@@ -48,14 +49,12 @@ Route1OfficerScript1:
 Route1OfficerScript2:
 	checkevent EVENT_MOM_GOT_POKEGEAR
 	iftrue Route1OfficerScript3
-	opentext
 	writetext Route1OfficerText2
 	waitbutton
 	closetext
 	end
 	
 Route1OfficerScript3:
-	opentext
 	writetext Route1OfficerText3
 	waitbutton
 	closetext

@@ -5075,6 +5075,15 @@ BattleCommand_sleeptarget:
 	ld hl, AttackMissedText
 	jr nz, .failed
 
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld e, a
+	ld d, 0
+	cp SING_HYPNOSIS
+	jr nz, .not_sing
+	farcall CheckSingThing
+	ld [wKickCounter], a
+.not_sing
 	call AnimateCurrentMove
 	ld c, 30
 	call DelayFrames

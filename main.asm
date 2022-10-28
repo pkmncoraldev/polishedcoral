@@ -3621,7 +3621,7 @@ ListMoves: ; 50d6f
 	cp FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
 	jr nz, .not_fury_swipes
 	farcall GetFurySwipesName
-	jr .cont
+	jp .cont
 .not_fury_swipes
 	cp SYNTHESIS_MOONLIGHT_MORNING_SUN
 	jr nz, .not_synthesis
@@ -3678,6 +3678,11 @@ ListMoves: ; 50d6f
 	farcall GetTransformName
 	jr .cont
 .not_transform
+	cp SING_HYPNOSIS
+	jr nz, .not_sing
+	farcall GetSingName
+	jr .cont
+.not_sing
 	ld [wCurSpecies], a
 	ld a, MOVE_NAME
 	ld [wNamedObjectTypeBuffer], a

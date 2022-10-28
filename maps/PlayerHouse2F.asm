@@ -58,8 +58,8 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke SHROOMISH, 27
-	givepoke TOXICROAK, 100
+	givepoke SMEARGLE, 100
+	givepoke POLIWAG, 100
 
 .items
 	writetext PlayerHouseDebugText6

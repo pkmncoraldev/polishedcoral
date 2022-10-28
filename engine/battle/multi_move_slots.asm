@@ -2283,6 +2283,31 @@ CheckTransformThing::
 	ret
 .not_transform
 	ret
+	
+CheckSingThing::
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species
+	
+.skip
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species
+	ld a, [wEnemyMonSpecies]
+.got_user_species
+	farcall CheckHypnosisUsers2
+	jr nc, .not_hypnosis
+	ld a, $1
+	ret
+.not_hypnosis
+	ret
 
 PoundUsers:
 	db CLEFAIRY
@@ -2706,8 +2731,8 @@ TransformNames:
 	db -1
 	
 SingNames:
-	db "SING@"
 	db "HYPNOSIS@"
+	db "SING@"
 	db -1
 	
 MultiSlotMoves:
@@ -2729,6 +2754,7 @@ MultiSlotMoves:
 	db AGILITY_ROCK_POLISH
 	db WORK_UP_GROWTH
 	db TRANSFORM_SPLASH
+	db SING_HYPNOSIS
 	db -1
 	
 MultiSlotMoveTypes::

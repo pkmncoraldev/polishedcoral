@@ -111,7 +111,7 @@ SpookHouseNPC3:
 	callasm SpookHouseMenuAsm3
 	jump .return2
 .cont
-	loadwildmon SPIRITOMB, 30
+	loadwildmon SPIRITOMB, 25
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	changemap SpookhouseTVRoom2_BlockData

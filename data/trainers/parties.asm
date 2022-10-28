@@ -1740,11 +1740,11 @@ KageGroup:
 
 	; SUNBEAM_KAGE
 	db "KAGE@";"KAGE1@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_DVS
 	; party
-	db 24, AZUMARILL
-	db 24, RATICATE
-	db 25, URSARING
+	db 24, AZUMARILL, $DD, $8D, $D8
+	db 24, RATICATE, $DD, $DD, $DD
+	db 25, URSARING, $D8, $AD, $DA
 	db -1 ; end
 
 ; ================
@@ -2977,11 +2977,11 @@ DisguiseGroup:
 	db "MASTER@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 12, VOLTORB
+	db 19, VOLTORB
 		db TACKLE_SCRATCH_POUND, ROLLOUT, 0, 0
-	db 12, MARILL
+	db 19, MARILL
 		db TACKLE_SCRATCH_POUND, ROLLOUT, 0, 0
-	db 12, JIGGLYPUFF
+	db 19, JIGGLYPUFF
 		db TACKLE_SCRATCH_POUND, ROLLOUT, 0, 0
 	db -1 ; end
 

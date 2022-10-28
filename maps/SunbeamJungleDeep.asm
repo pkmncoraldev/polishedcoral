@@ -28,7 +28,7 @@ SunbeamJungleDeepElectabuzz:
 	waitbutton
 	closetext
 	waitsfx
-	loadwildmon ELECTABUZZ, 30
+	loadwildmon ELECTABUZZ, 25
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	disappear SUNBEAM_JUNGLE_DEEP_ELECTABUZZ

@@ -780,6 +780,8 @@ PokeBallEffect: ; e8a2
 
 	call ClearBGPalettes
 	call ClearTileMap
+	xor a
+	ld [wPlaceBallsX], a
 
 .toss
 	ld hl, wNumItems

@@ -8680,19 +8680,19 @@ BattleCommand_gyroball_electroball_cont:
 	rr e
 	jr .scaledown_loop
 .scaledown_ok
-	; Base Power = 50 * (DE Speed / BC Speed), capped at 150
+	; Base Power = 25 * (Target Speed / User Speed), capped at 150
 	xor a
-	ld [hMultiplicand + 0], a
+	ldh [hMultiplicand + 0], a
 	ld a, d
-	ld [hMultiplicand + 1], a
+	ldh [hMultiplicand + 1], a
 	ld a, e
-	ld [hMultiplicand + 2], a
-	ld a, 60
-	ld [hMultiplier], a
+	ldh [hMultiplicand + 2], a
+	ld a, 25
+	ldh [hMultiplier], a
 	call Multiply
 
 	ld a, c
-	ld [hDivisor], a
+	ldh [hDivisor], a
 	ld b, 4
 	call Divide
 

@@ -14,7 +14,8 @@ LusterCityBusiness_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost 12, 23, SIGNPOST_READ, NettBuildingSign
 
 	db 11 ; object events
 	person_event SPRITE_TRAFFIC_LIGHT, 24, 14, SPRITEMOVEDATA_TILE_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
@@ -50,6 +51,9 @@ BusinessCallback:
 	clearevent EVENT_IN_SHOPPING_DISTRICT
 	setevent EVENT_IN_BUSINESS_DISTRICT
 	return
+	
+NettBuildingSign:
+	jumptext NettBuildingSignText
 	
 Luster3NPC1:
 	jumptextfaceplayer Luster3NPC1Text
@@ -265,4 +269,11 @@ Luster3NPC10:
 Luster3NPC10Text:
 	text "The light is NEVER"
 	line "gonna change…"
+	done
+
+NettBuildingSignText:
+	text "NETT CORP."
+	
+	para "“To Capture a"
+	line "Better Tomorrow”"
 	done

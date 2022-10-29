@@ -39,7 +39,7 @@ LusterCityResidential_MapScriptHeader:
 	xy_trigger 1, 31,  5, 0, LusterCityResidentialDark, 0, 0
 	xy_trigger 1, 35,  5, 0, LusterCityResidentialDark, 0, 0
 
-	db 9 ; bg events
+	db 10 ; bg events
 	signpost 18, 13, SIGNPOST_READ, LusterTrashcan1
 	signpost 18, 14, SIGNPOST_READ, LusterTrashcan2
 	signpost 35, 14, SIGNPOST_READ, LusterTrashcan3
@@ -49,6 +49,7 @@ LusterCityResidential_MapScriptHeader:
 	signpost 45,  9, SIGNPOST_READ, LusterTrashcan7
 	signpost 12, 27, SIGNPOST_READ, LusterSign1
 	signpost 15, 23, SIGNPOST_READ, LusterSign2
+	signpost 53, 21, SIGNPOST_READ, LusterSign3
 
 	db 20 ; object events
 	person_event SPRITE_TRAFFIC_LIGHT, 44, 25, SPRITEMOVEDATA_TILE_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -237,6 +238,9 @@ LusterSign1:
 	
 LusterSign2:
 	jumptext LusterSign2Text
+	
+LusterSign3:
+	jumptext LusterSign3Text
 	
 Luster1NPC1:
 	jumptextfaceplayer Luster1NPC1Text
@@ -896,6 +900,11 @@ LusterSign2Text:
 	para "The bustling"
 	line "center of the"
 	cont "ONWA REGION."
+	done
+	
+LusterSign3Text:
+	text "SOUTH:"
+	line "ROUTE 8"
 	done
 	
 LusterPunkLeaderText1:

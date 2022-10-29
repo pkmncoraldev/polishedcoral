@@ -10,7 +10,8 @@ LusterSkyscraper1_1F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost  2,  5, SIGNPOST_UP, Skyscraper1FSign
 
 	db 3 ; object events
 	person_event SPRITE_RECEPTIONIST, 3, 2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterSkyscraper1_1F_NPC1, -1
@@ -67,3 +68,23 @@ LusterSkyscraper1_1F_NPC3Text:
 	line "work on again?"
 	done
 	
+Skyscraper1FSign:
+	jumptext Skyscraper1FSignText
+	
+Skyscraper2FSign:
+	jumptext Skyscraper2FSignText
+	
+Skyscraper3FSign:
+	jumptext Skyscraper3FSignText
+	
+Skyscraper1FSignText:
+	text "1st Floor"
+	done
+	
+Skyscraper2FSignText:
+	text "2nd Floor"
+	done
+	
+Skyscraper3FSignText:
+	text "3rd Floor"
+	done

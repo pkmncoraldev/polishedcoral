@@ -10,7 +10,8 @@ LusterSkyscraper2_1F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost  2,  5, SIGNPOST_UP, Skyscraper1FSign
 
 	db 3 ; object events
 	person_event SPRITE_RECEPTIONIST, 3, 2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterSkyscraper2_1F_NPC1, -1

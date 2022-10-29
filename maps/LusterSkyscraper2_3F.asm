@@ -8,7 +8,8 @@ LusterSkyscraper2_3F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost  1,  5, SIGNPOST_UP, Skyscraper3FSign
 
 	db 7 ; object events
 	person_event SPRITE_POKEMANIAC, 5, 6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterSkyscraper2_3F_NPC1, -1

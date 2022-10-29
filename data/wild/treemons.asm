@@ -7,7 +7,6 @@ TreeMons:
 	dw TreeMons6
 	dw RockMons
 	dw PetalMons
-	dw TrashMons
 
 ; Two tables each (normal, rare).
 ; Structure:
@@ -124,10 +123,4 @@ PetalMons:
 	db 50, VENIPEDE,	5
 	db 25, PIKACHU,		5
 	db 25, PIKACHU,		5
-	db -1
-	
-TrashMons:
-	db 70, MEOWTH,   	20
-;	db 30, SCRAGGY,		20
-	db 30, MEOWTH,		20
 	db -1

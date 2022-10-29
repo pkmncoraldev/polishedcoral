@@ -788,24 +788,17 @@ PetalMonEncounter:: ; b8219
 	ret
 	
 TrashMonEncounter::
-	xor a
+	call Random
+	cp $7f ; 50 percent
+	jr c, .meowth
+	ld a, SCRAGGY
+	jr .got_it
+.meowth
+	ld a, MEOWTH
+.got_it
 	ld [wTempWildMonSpecies], a
+	ld a, 20
 	ld [wCurPartyLevel], a
-
-	ld hl, PetalMonMaps
-	call GetTreeMonSet
-	jr nc, .no_battle
-
-	call GetTreeMons
-	jr nc, .no_battle
-
-	call SelectTreeMon
-	jr nc, .no_battle
-
-	ret
-
-.no_battle
-	xor a
 	ret
 
 	db $05 ; ????

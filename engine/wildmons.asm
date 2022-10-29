@@ -40,6 +40,8 @@ FindNest: ; 2a01f
 	ld hl, NorthOnwaGrassWildMons
 	call .FindGrass
 	ld hl, NorthOnwaWaterWildMons
+	call .FindWater
+	ld hl, SpecialCaseWildMons
 	jp .FindWater
 ;	call .RoamMon1
 ;	call .RoamMon2
@@ -1296,3 +1298,6 @@ INCLUDE "data/wild/swarm_grass.asm"
 
 SwarmWaterWildMons: ; 0x2b92f
 INCLUDE "data/wild/swarm_water.asm"
+
+SpecialCaseWildMons:
+INCLUDE "data/wild/special_cases.asm"

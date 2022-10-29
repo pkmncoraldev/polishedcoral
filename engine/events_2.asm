@@ -791,7 +791,7 @@ TrashMonEncounter::
 	call Random
 	cp $7f ; 50 percent
 	jr c, .meowth
-	ld a, SCRAGGY
+	ld a, MEOWTH;SCRAGGY
 	jr .got_it
 .meowth
 	ld a, MEOWTH

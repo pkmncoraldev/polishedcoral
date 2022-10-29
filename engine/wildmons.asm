@@ -40,10 +40,10 @@ FindNest: ; 2a01f
 	ld hl, NorthOnwaGrassWildMons
 	call .FindGrass
 	ld hl, NorthOnwaWaterWildMons
-	call .FindWater
-	call .RoamMon1
-	call .RoamMon2
-	jp .RoamMon3
+	jp .FindWater
+;	call .RoamMon1
+;	call .RoamMon2
+;	jp .RoamMon3
 
 .south
 	decoord 0, 0
@@ -87,7 +87,7 @@ FindNest: ; 2a01f
 	ld a, [hli]
 	ld c, a
 	inc hl
-	ld a, NUM_WATERMON * 3
+	ld a, NUM_WATERMON; * 3
 	call .SearchMapForMon
 	jr nc, .next_water
 	ld [de], a

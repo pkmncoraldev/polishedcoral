@@ -1,7 +1,8 @@
 SpookhouseBedroom_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, SpookhouseBedroomCallback
 
 	db 3 ; warp events
 	warp_def 7, 4, 5, SPOOKHOUSE_LIVING_ROOM
@@ -19,6 +20,13 @@ SpookhouseBedroom_MapScriptHeader:
 	signpost 3, 7, SIGNPOST_READ, SpookHouseJournal
 
 	db 0 ; object events
+	
+SpookhouseBedroomCallback:
+	checkevent EVENT_SPOOKHOUSE_GOT_BALL
+	iftrue .end
+	clearevent EVENT_SPOOKHOUSE_BLOCKER_GONE
+.end
+	return
 	
 SpookHouseBookshelf:
 	jumptext SpookHouseBookshelfText

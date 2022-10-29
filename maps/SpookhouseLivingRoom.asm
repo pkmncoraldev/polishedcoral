@@ -42,6 +42,7 @@ SpookhouseLivingRoomTrigger1:
 	end
 	
 SpookhouseLivingRoomCheckSideDoor:
+	setevent EVENT_SPOOKHOUSE_BLOCKER_GONE
 	checkevent EVENT_SPOOKHOUSE_DOOR_UNLOCKED
 	iftrue .OpenSesame
 	return

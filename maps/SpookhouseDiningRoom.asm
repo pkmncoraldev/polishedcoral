@@ -16,12 +16,13 @@ SpookhouseDiningRoom_MapScriptHeader:
 	signpost 3, 8, SIGNPOST_READ, SpookHouseRottonFood
 	signpost 2, 3, SIGNPOST_READ, SpookHouseRottonFood
 
-	db 1 ; object events
+	db 2 ; object events
 	person_event SPRITE_BALL_CUT_FRUIT, 3, 2, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FloatBall, EVENT_SPOOKHOUSE_GOT_BALL
-
+	person_event SPRITE_INVISIBLE,  4,  2, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FloatBall, EVENT_SPOOKHOUSE_BLOCKER_GONE
 
 	const_def 1 ; object constants
 	const SPOOKHOUSE_FLOATBALL
+	const SPOOKHOUSE_BLOCKER
 	
 FloatBall:
 	checkcode VAR_FACING
@@ -49,9 +50,11 @@ FloatBall:
 	
 .YouAreFacingDown:
 	disappear SPOOKHOUSE_FLOATBALL
+	disappear SPOOKHOUSE_BLOCKER
 	opentext
 	verbosegiveitem OLD_KEY
 	closetext
+	setevent EVENT_SPOOKHOUSE_BLOCKER_GONE
 	setevent EVENT_SPOOKHOUSE_GOT_BALL
 	setevent EVENT_SPOOKHOUSE_GHOST_WILL_APPEAR
 	domaptrigger SPOOKHOUSE_LIVING_ROOM, $1

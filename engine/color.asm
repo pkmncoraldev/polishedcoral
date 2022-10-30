@@ -1317,7 +1317,11 @@ LoadMapPals::
 	ld a, [wPlayerPalette]
 	cp 3
 	jr z, .snowbrown
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
 	ld hl, MapObjectPalsLuster
+	call AddNTimes
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)

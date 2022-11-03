@@ -162,6 +162,7 @@ LusterSewersB1FChangeBlocks:
 	return
 	
 LusterSewersB1FUnderBridge:
+	special Special_StopLandmarkTimer
 	changeblock $6, $6, $40
 	changeblock $6, $8, $44
 	changeblock $c, $12, $40

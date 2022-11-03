@@ -2458,6 +2458,9 @@ FuryAttackUsers:
 	db SWINUB
 	db PILOSWINE
 	db MAMOSWINE
+	db PIKIPEK
+	db TRUMBEAK
+	db TOUCANNON
 	db -1
 	
 CometPunchUsers:

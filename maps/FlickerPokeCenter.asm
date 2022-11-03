@@ -37,7 +37,7 @@ FlickerCenterNPC1Text:
 FlickerCenterNPC2Text:
 	text "There's a group of"
 	line "kids that hang out"
-	cont "in the train"
-	cont "tunnel and cause"
+	cont "at the old train"
+	cont "depot and cause"
 	cont "problems."
 	done

@@ -965,7 +965,7 @@ Text_Waitbutton_2::
 UnknownText_0x1c5b38::
 	text_from_ram wMonOrItemNameBuffer
 	text " was"
-	line "sent to Bill's PC."
+	line "sent to BILL's PC."
 	prompt
 
 UnknownText_0x1c5b53::

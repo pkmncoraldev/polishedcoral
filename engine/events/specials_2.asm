@@ -354,7 +354,7 @@ SpecialGiveShinyTogepi:
 	ld [wCurPartyLevel], a
 
 	predef TryAddMonToParty
-	jr nc, .NotGiven
+	jp nc, .NotGiven
 
 ; Caught data.
 	lb bc, FEMALE, POKE_BALL
@@ -417,6 +417,43 @@ endr
 
 	ld a, TRUE
 	ld [wScriptVar], a
+	
+; Happiness
+	ld a, [wPartyCount]
+	cp 2
+	jr z, .two_mons
+	cp 3
+	jr z, .three_mons
+	cp 4
+	jr z, .four_mons
+	cp 5
+	jr z, .five_mons
+	cp 6
+	jr z, .six_mons
+;one_mon (shouldn't be possible)
+	ld a, 140
+	ld [wPartyMon1Happiness], a
+	jr .end
+.two_mons
+	ld a, 140
+	ld [wPartyMon2Happiness], a
+	jr .end
+.three_mons
+	ld a, 140
+	ld [wPartyMon3Happiness], a
+	jr .end
+.four_mons
+	ld a, 140
+	ld [wPartyMon4Happiness], a
+	jr .end
+.five_mons
+	ld a, 140
+	ld [wPartyMon5Happiness], a
+	jr .end
+.six_mons
+	ld a, 140
+	ld [wPartyMon6Happiness], a
+.end
 	ret
 
 .NotGiven:

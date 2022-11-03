@@ -21,6 +21,7 @@ EastTrainCaboose_MapScriptHeader:
 	const EAST_TRAIN_CABOOSE_SNARE_GRUNT
 
 EastTrainCabooseTrigger0:
+	applyonemovement PLAYER, remove_fixed_facing
 	applyonemovement PLAYER, step_left
 	playsound SFX_EXIT_BUILDING
 	appear EAST_TRAIN_CABOOSE_SNARE_OFFICER

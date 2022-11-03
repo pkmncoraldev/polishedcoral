@@ -1611,7 +1611,7 @@ GruntMGroup:
 ; ================
 
 	; TRAIN_GRUNTM_1
-	db "TRAINM1@"
+	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 30, TRUMBEAK
@@ -1621,7 +1621,7 @@ GruntMGroup:
 ; ================
 
 	; TRAIN_GRUNTM_2
-	db "TRAINM2@"
+	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 30, GOLBAT
@@ -1631,7 +1631,7 @@ GruntMGroup:
 ; ================
 
 	; TRAIN_GRUNTM_3
-	db "TRAINM3@"
+	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 32, NIDORINO
@@ -1641,7 +1641,7 @@ GruntMGroup:
 ; ================
 
 	; TRAIN_GRUNTM_4
-	db "TRAINM4@"
+	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 28, GLOOM
@@ -1652,7 +1652,7 @@ GruntMGroup:
 ; ================
 
 	; TRAIN_GRUNTM_5
-	db "TRAINM5@"
+	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 32, SHROOMISH
@@ -1662,7 +1662,7 @@ GruntMGroup:
 ; ================
 
 	; LUSTER_GRUNTM ;PART TIME JOB
-	db "LUSTERM@"
+	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 28, GRIMER
@@ -1709,7 +1709,7 @@ GruntFGroup:
 ; ================
 
 	; TRAIN_GRUNTF_1
-	db "TRAINF1@"
+	db "GRUNT@"
 	db TRAINERTYPE_MOVES
 	; party
 	db 31, KIRLIA
@@ -1723,7 +1723,7 @@ GruntFGroup:
 ; ================
 
 	; TRAIN_GRUNTF_2
-	db "TRAINF2@"
+	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 31, BUNEARY
@@ -3089,7 +3089,7 @@ BunearymGroup:
 ; ================
 
 	; BUNEARY_M
-	db "BOY1@"
+	db "BOY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 31, BUNEARY
@@ -3099,7 +3099,7 @@ BunearymGroup:
 ; ================
 
 	; BUNEARY_M
-	db "BOY2@"
+	db "BOY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 32, BUNEARY
@@ -3109,7 +3109,7 @@ BunearymGroup:
 ; ================
 
 	; BUNEARY_M
-	db "BOY3@"
+	db "BOY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 30, RATICATE
@@ -3120,7 +3120,7 @@ BunearymGroup:
 ; ================
 
 	; BUNEARY_M
-	db "BOY4@"
+	db "BOY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 31, BUNEARY
@@ -3131,7 +3131,7 @@ BunearymGroup:
 ; ================
 
 	; BUNEARY_M
-	db "BOY5@"
+	db "BOY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 30, LOPUNNY
@@ -3146,7 +3146,7 @@ BunearyfGroup:
 ; ================
 
 	; BUNEARY_F
-	db "GAL1@"
+	db "GAL@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 30, CROAGUNK
@@ -3156,7 +3156,7 @@ BunearyfGroup:
 ; ================
 
 	; BUNEARY_F
-	db "GAL2@"
+	db "GAL@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 30, GOLBAT

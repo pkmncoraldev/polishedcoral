@@ -73,7 +73,7 @@ TwinklePokeCenterGirlText:
 	line "was cold up here,"
 	
 	para "b-b-but this is"
-	line "rediculous…"
+	line "ridiculous…"
 	
 	para "I can b-b-barely"
 	line "even step out of "

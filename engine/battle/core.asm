@@ -3643,6 +3643,7 @@ NewEnemyMonStatus: ; 3d834
 	ld [wEnemyDisableCount], a
 	ld [wEnemyProtectCount], a
 	ld [wEnemyToxicCount], a
+	ld [wEnemyPerishCount], a
 	ld [wEnemyDisabledMove], a
 	ld [wEnemyMinimized], a
 	ld [wPlayerWrapCount], a

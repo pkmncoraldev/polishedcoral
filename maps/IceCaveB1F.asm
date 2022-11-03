@@ -1,7 +1,8 @@
 IceCaveB1F_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, IceCaveB1FStopSnowstorm
 
 	db 4 ; warp events
 	warp_def 11, 22, 6, TWINKLE_TOWN
@@ -18,6 +19,12 @@ IceCaveB1F_MapScriptHeader:
 	person_event SPRITE_HIKER,  5, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, IceCaveB1FNPC2, -1
 	person_event SPRITE_BALL_CUT_FRUIT,  9, 20, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, IceCaveB1FPokeballRockClimb, EVENT_GOT_HM08_ROCK_CLIMB
 	
+	
+IceCaveB1FStopSnowstorm:
+	clearevent EVENT_SNOWSTORM_HAPPENING
+	loadvar wTimeOfDayPalFlags, $40 | 0
+	domaptrigger ROUTE_10, $0
+	return
 	
 IceCaveB1FNPC1:
 	jumptextfaceplayer IceCaveB1FNPC1Text

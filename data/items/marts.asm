@@ -102,7 +102,7 @@ FlickerMart:
 	db -1
 	
 TwinkleMart:
-	db 19 ; # items
+	db 17 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db SUPER_POTION
@@ -120,12 +120,10 @@ TwinkleMart:
 	db X_SPCL_ATK
 	db X_SPCL_DEF
 	db X_ACCURACY
-	db DIRE_HIT
-	db GUARD_SPEC
 	db -1
 	
 LusterMart:
-	db 19 ; # items
+	db 17 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db SUPER_POTION
@@ -143,12 +141,10 @@ LusterMart:
 	db X_SPCL_ATK
 	db X_SPCL_DEF
 	db X_ACCURACY
-	db DIRE_HIT
-	db GUARD_SPEC
 	db -1
 	
 LusterMallElectronics:
-	db 2 ; # items
+	db 4 ; # items
 	db UP_GRADE
 	db LINK_CABLE
 	db ELECTIRIZER
@@ -171,7 +167,7 @@ LusterMallElectronicsTM:
 	db -1
 	
 LusterMallCoffee:
-	db 6 ; # items
+	db 7 ; # items
 	db FRESH_WATER
 	db BERRY_JUICE
 	db SODA_POP
@@ -182,7 +178,7 @@ LusterMallCoffee:
 	db -1
 	
 LusterMallAntique:
-	db 1 ; # items
+	db 9 ; # items
 	db KINGS_ROCK
 	db DRAGON_SCALE
 	db METAL_COAT

@@ -1915,6 +1915,10 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr z, .carpet
 	cp COLL_WARP_CARPET_RIGHT
 	jr z, .carpet
+	cp COLL_DOOR
+	jr z, .NotWalkable
+	cp COLL_CAVE
+	jr z, .NotWalkable
 .RunTileChecksReturn
 	call .CheckWalkable
 	jr c, .NotWalkable
@@ -2093,6 +2097,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp COLL_NO_OLLIE
 	jr z, .CheckNoJumpTileNope
 	cp COLL_CAVE
+	jr z, .CheckNoJumpTileNope
+	cp COLL_DOOR
 	jr z, .CheckNoJumpTileNope
 	cp COLL_ROCK_CLIMB
 	jr z, .CheckNoJumpTileNope

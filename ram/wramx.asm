@@ -963,7 +963,7 @@ wPlayerState:: ds 1
 wHallOfFameCount:: ds 2
 wTradeFlags:: flag_array PARTY_LENGTH
 
-ds 1 ; unused
+wPokedexWindowColor:: ds 1
 
 wRanchRaceFrames:: ds 1
 wRanchRaceSeconds:: ds 1

@@ -415,7 +415,21 @@ _CGB_Pokedex: ; 8f70
 	ld a, [wCurPartySpecies]
 	cp $ff
 	jr nz, .is_pokemon
+	ld a, [wPokedexWindowColor]
 	ld hl, .GreenPicPalette
+	cp 0
+	jr z, .got_color
+	ld hl, .OrangePicPalette
+	cp 1
+	jr z, .got_color
+	ld hl, .BluePicPalette
+	cp 2
+	jr z, .got_color
+	ld hl, .PinkPicPalette
+	cp 3
+	jr z, .got_color
+	ld hl, .GrayPicPalette
+.got_color
 	call LoadHLPaletteIntoDE
 	jr .got_palette
 .is_pokemon
@@ -437,7 +451,21 @@ _CGB_Pokedex: ; 8f70
 	ld a, $5
 	call FarCopyWRAM
 
-	ld hl, .CursorPalette
+	ld a, [wPokedexWindowColor]
+	ld hl, .GreenPicPalette
+	cp 0
+	jr z, .got_color2
+	ld hl, .OrangePicPalette
+	cp 1
+	jr z, .got_color2
+	ld hl, .BluePicPalette
+	cp 2
+	jr z, .got_color2
+	ld hl, .PinkPicPalette
+	cp 3
+	jr z, .got_color2
+	ld hl, .GrayPicPalette
+.got_color2
 	ld de, wUnknOBPals palette 7
 	ld bc, 1 palettes
 	ld a, $5
@@ -446,26 +474,35 @@ _CGB_Pokedex: ; 8f70
 	jp _CGB_FinishLayout
 ; 8fba
 
-.GreenPicPalette: ; 8fba
-if !DEF(MONOCHROME)
+.GreenPicPalette:
 	RGB 11, 23, 00
-	RGB 07, 17, 00
+	RGB 07, 19, 00
 	RGB 06, 16, 03
 	RGB 05, 12, 01
-else
-	MONOCHROME_RGB_FOUR
-endc
+	
+.OrangePicPalette:
+	RGB 28, 14, 00
+	RGB 25, 11, 00
+	RGB 22, 09, 00
+	RGB 18, 07, 00
 
-.CursorPalette: ; 8fc2
-if !DEF(MONOCHROME)
-	RGB 00, 00, 00
-	RGB 11, 23, 00
-	RGB 07, 17, 00
-	RGB 00, 00, 00
-else
-	MONOCHROME_RGB_FOUR
-endc
-; 8fca
+.BluePicPalette:
+	RGB 00, 17, 29
+	RGB 00, 14, 26
+	RGB 00, 11, 23
+	RGB 00, 07, 18
+
+.PinkPicPalette:
+	RGB 26, 09, 18
+	RGB 24, 05, 15
+	RGB 22, 02, 09
+	RGB 18, 00, 07
+
+.GrayPicPalette:
+	RGB 18, 18, 18
+	RGB 15, 15, 15
+	RGB 12, 12, 12
+	RGB 09, 09, 09
 
 
 _CGB_SlotMachine: ; 906e

@@ -267,13 +267,23 @@ Pokedex_UpdateMainScreen: ; 401ae (10:41ae)
 	ret
 
 .select
-	call Pokedex_BlackOutBG
-	ld a, DEXSTATE_OPTION_SCR
-	ld [wJumptableIndex], a
+	ld de, SFX_PUSH_BUTTON
+	call PlaySFX
+	ld a, [wCurPartySpecies]
+	push af
+	ld a, $ff
+	ld [wCurPartySpecies], a
+	ld a, [wPokedexWindowColor]
+	inc a
+	cp 5
+	jr nz, .got_it
 	xor a
-	ld [hSCX], a
-	ld a, $a7
-	ld [hWX], a
+.got_it
+	ld [wPokedexWindowColor], a
+	ld a, CGB_POKEDEX
+	call Pokedex_GetCGBLayout
+	pop af
+	ld [wCurPartySpecies], a
 	jp DelayFrame
 
 .start
@@ -1041,7 +1051,7 @@ Pokedex_DrawMainScreenBG: ; 4074c (10:474c)
 	lb bc, 1, 3
 	call PrintNum
 	hlcoord 1, 17
-	ld de, String_SELECT_OPTION
+	ld de, String_SELECT_COLOR
 	call Pokedex_PlaceString
 	hlcoord 8, 1
 	ld b, 7
@@ -1062,11 +1072,11 @@ Pokedex_DrawMainScreenBG: ; 4074c (10:474c)
 	jp Pokedex_PlaceFrontpicTopLeftCorner
 
 String_SEEN: ; 407e1
-	db "S","e","e","n", $ff
+	db "S","E","E","N", $ff
 String_OWN: ; 407e6
-	db "O","w","n", $ff
-String_SELECT_OPTION: ; 407ea
-;	db $3b, $48, $49, $4a, $44, $45, $46, $47 ; SELECT > OPTION
+	db "O","W","N", $ff
+String_SELECT_COLOR: ; 407ea
+;	db $3b, $48, $49, $4a, $44, $45, $46, $47 ; SELECT > COLOR
 	db $3b, $41, $42, $43, $44, $45, $46, $47
 String_START_SEARCH: ; 407f2
 ;	db $3c, $3b, $41, $42, $43, $4b, $4c, $4d, $4e, $3c, $ff ; START > SEARCH
@@ -2245,10 +2255,10 @@ Pokedex_MoveArrowCursor: ; 4135a (10:535a)
 	and D_RIGHT | D_DOWN
 	and b
 	jr nz, .move_right_or_down
-	ld a, [hl]
-	and SELECT
-	and b
-	jr nz, .select
+;	ld a, [hl]
+;	and SELECT
+;	and b
+;	jr nz, .select
 	call Pokedex_ArrowCursorDelay
 	jr c, .no_action
 	ld hl, hJoyLast
@@ -2295,13 +2305,13 @@ Pokedex_MoveArrowCursor: ; 4135a (10:535a)
 	and a
 	ret
 
-.select
-	call Pokedex_GetArrowCursorPos
-	ld [hl], " "
-	ld a, [wDexArrowCursorPosIndex]
-	cp c
-	jr c, .update
-	ld a, -1
+;.select
+;	call Pokedex_GetArrowCursorPos
+;	ld [hl], " "
+;	ld a, [wDexArrowCursorPosIndex]
+;	cp c
+;	jr c, .update
+;	ld a, -1
 .update
 	inc a
 	ld [wDexArrowCursorPosIndex], a

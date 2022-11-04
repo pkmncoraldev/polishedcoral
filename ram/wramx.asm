@@ -308,9 +308,7 @@ wMailboxItems:: ds MAILBOX_CAPACITY
 wMailboxEnd:: ds 1
 ENDU
 
-wEncounterHouse:: ds 1
-
-	ds 1 
+	ds 2 
 
 wMonJustCaught:: ds 1
 
@@ -735,7 +733,9 @@ wReceiveCallDelay_StartTime:: ds 3
 wBugContestMinsRemaining:: ds 1
 wBugContestSecsRemaining:: ds 1
 
-	ds 2 ; unused
+wEncounterHouse:: ds 1
+
+	ds 1 ; unused
 
 wMapStatusEnd::
 

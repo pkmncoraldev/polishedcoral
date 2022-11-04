@@ -1578,7 +1578,19 @@ LeppaRestorePP:
 	add hl, bc
 	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
+	push hl
+	push de
+	farcall CheckMultiMoveSlot2
+	jr nc, .not_multi_move_slot
+	pop de
+	pop hl
+	farcall GetMultiMoveSlotName2
+	jr .done_multi_move
+.not_multi_move_slot
+	pop de
+	pop hl
 	call GetMoveName
+.done_multi_move
 	ld hl, wStringBuffer1
 	ld de, wStringBuffer2
 	ld bc, MOVE_NAME_LENGTH
@@ -6076,7 +6088,7 @@ MoveSelectionScreen:
 	ld c, a
 	call CheckUsableMove
 	dec a
-	jr z, .no_pp_left
+	jp z, .no_pp_left
 	dec a
 	jr z, .move_disabled
 	dec a
@@ -6105,7 +6117,19 @@ MoveSelectionScreen:
 	; Load item into wStringBuffer1, move into wStringBuffer2
 	ld a, [wPlayerSelectedMove]
 	ld [wNamedObjectIndexBuffer], a
+	push hl
+	push de
+	farcall CheckMultiMoveSlot2
+	jr nc, .not_multi_move_slot1
+	pop de
+	pop hl
+	farcall GetMultiMoveSlotName2
+	jr .done_multi_move1
+.not_multi_move_slot1
+	pop de
+	pop hl
 	call GetMoveName
+.done_multi_move1
 
 	; The above places move name into buffer 1, now copy into 2
 	ld hl, wStringBuffer1
@@ -6124,7 +6148,19 @@ MoveSelectionScreen:
 .assault_vest
 	ld a, [wBattleMonItem]
 	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
+	push hl
+	push de
+	farcall CheckMultiMoveSlot2
+	jr nc, .not_multi_move_slot2
+	pop de
+	pop hl
+	farcall GetMultiMoveSlotName2
+	jr .done_multi_move2
+.not_multi_move_slot2
+	pop de
+	pop hl
+	call GetMoveName
+.done_multi_move2
 
 	ld hl, BattleText_ItemPreventsStatusMoves
 	jr .place_textbox_start_over

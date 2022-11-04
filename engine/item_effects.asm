@@ -2608,7 +2608,19 @@ RestorePPEffect: ; f5bf
 	push hl
 	ld a, [hl]
 	ld [wd265], a
+	push hl
+	push de
+	farcall CheckMultiMoveSlot2
+	jr nc, .not_multi_move_slot
+	pop de
+	pop hl
+	farcall GetMultiMoveSlotName2
+	jr .done_multi_move
+.not_multi_move_slot
+	pop de
+	pop hl
 	call GetMoveName
+.done_multi_move
 	call CopyName1
 	pop hl
 
@@ -2633,7 +2645,7 @@ RestorePPEffect: ; f5bf
 .pp_is_maxed_out
 	ld hl, TextJump_PPIsMaxedOut
 	call PrintText
-	jr .loop2
+	jp .loop2
 
 .do_ppup
 	ld a, [wd002]

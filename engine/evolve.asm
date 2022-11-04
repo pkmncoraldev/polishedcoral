@@ -583,7 +583,20 @@ LearnEvolutionMove:
 	ld a, d
 	ld [wPutativeTMHMMove], a
 	ld [wNamedObjectIndexBuffer], a
+	
+	push hl
+	push de
+	farcall CheckMultiMoveSlot2
+	jr nc, .not_multi_move_slot
+	pop de
+	pop hl
+	farcall GetMultiMoveSlotName2
+	jr .done_multi_move
+.not_multi_move_slot
+	pop de
+	pop hl
 	call GetMoveName
+.done_multi_move
 	call CopyName1
 	ld a, [wCurPartySpecies]
 	push af
@@ -640,7 +653,20 @@ LearnLevelMoves:
 	ld a, d
 	ld [wPutativeTMHMMove], a
 	ld [wNamedObjectIndexBuffer], a
+	
+	push hl
+	push de
+	farcall CheckMultiMoveSlot2
+	jr nc, .not_multi_move_slot
+	pop de
+	pop hl
+	farcall GetMultiMoveSlotName2
+	jr .done_multi_move
+.not_multi_move_slot
+	pop de
+	pop hl
 	call GetMoveName
+.done_multi_move
 	call CopyName1
 	ld a, [wCurPartySpecies]
 	push af

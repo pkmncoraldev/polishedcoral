@@ -478,7 +478,14 @@ FlickerTrainStationScheduleFrontText:
 	done
 	
 FlickerTrainStationScheduleBackText:
-	text "PLACEHOLDER"
+	text "Something is"
+	line "scribbled on the"
+	cont "back of the sign…"
+	
+	para "…"
+	
+	para "Better not repeat"
+	line "that out loud…"
 	done
 	
 FlickerTrainStationFlowersText:

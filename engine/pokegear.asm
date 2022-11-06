@@ -2926,12 +2926,7 @@ TownMapMon: ; 91f7b
 
 	farcall LoadFlyMonColor
 ; Get FlyMon species
-	ld a, [wCurPartyMon]
-	ld hl, wPartySpecies
-	ld e, a
-	ld d, $0
-	add hl, de
-	ld a, [hl]
+	ld a, [wCurPartySpecies]
 	ld [wd265], a
 ; Get FlyMon icon
 	ld e, 8 ; starting tile in VRAM

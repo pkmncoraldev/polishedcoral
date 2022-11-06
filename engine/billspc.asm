@@ -237,10 +237,10 @@ BillsPCDepositMenuDataHeader: ; 0xe253d (38:653d)
 .MenuData2: ; 0xe2545 (38:6545)
 	db $80 ; flags
 	db 4 ; items
-	db "Deposit@"
-	db "Stats@"
-	db "Release@"
-	db "Cancel@"
+	db "DEPOSIT@"
+	db "STATS@"
+	db "RELEASE@"
+	db "CANCEL@"
 ; 0xe2564 (38:6564)
 
 _WithdrawPKMN: ; e2583 (38:6583)
@@ -474,10 +474,10 @@ BillsPC_Withdraw: ; e2675 (38:6675)
 .MenuData: ; 0xe2739
 	db $80 ; flags
 	db 4 ; items
-	db "Withdraw@"
-	db "Stats@"
-	db "Release@"
-	db "Cancel@"
+	db "WITHDRAW@"
+	db "STATS@"
+	db "RELEASE@"
+	db "CANCEL@"
 ; 0xe2759
 
 _MovePKMNWithoutMail: ; e2759
@@ -691,9 +691,9 @@ _MovePKMNWithoutMail: ; e2759
 .MenuData2: ; 0xe28cb
 	db $80 ; flags
 	db 3 ; items
-	db "Move@"
-	db "Stats@"
-	db "Cancel@"
+	db "MOVE@"
+	db "STATS@"
+	db "CANCEL@"
 ; 0xe28df
 
 .PrepInsertCursor: ; e28df
@@ -1323,7 +1323,7 @@ BillsPC_RefreshTextboxes: ; e2c2c (38:6c2c)
 ; e2c67 (38:6c67)
 
 .CancelString:
-	db "Cancel@"
+	db "CANCEL@"
 ; e2c6e
 
 .PlaceNickname: ; e2c6e (38:6c6e)

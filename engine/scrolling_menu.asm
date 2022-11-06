@@ -436,7 +436,7 @@ ScrollingMenu_UpdateDisplay:
 ; 2486e
 
 ScrollingMenu_CancelString:
-	db "Cancel@"
+	db "CANCEL@"
 
 ScrollingMenu_CallFunctions1and2: ; 2486e
 	push hl

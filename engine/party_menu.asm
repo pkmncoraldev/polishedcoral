@@ -119,7 +119,7 @@ PlacePartyNicknames: ; 5009b
 ; 500c8
 
 .CANCEL: ; 500c8
-	db "Cancel@"
+	db "CANCEL@"
 ; 500cf
 
 

@@ -673,7 +673,7 @@ InitTradeSpeciesList: ; 16d673
 INCBIN "gfx/link_trade/16d465.tilemap"
 
 .Cancel: ; 16d68f
-	db "Cancel@"
+	db "CANCEL@"
 ; 16d696
 
 PlaceTradePartnerNamesAndParty: ; fb60d
@@ -1681,8 +1681,8 @@ LinkTrade: ; 28b87
 	jp Gen2ToGen2LinkComms
 
 .TradeCancel: ; 28eab
-	db   "Trade"
-	next "Cancel@"
+	db   "TRADE"
+	next "CANCEL@"
 ; 28ea3
 
 .TradeThisForThat: ; 0x28eb8

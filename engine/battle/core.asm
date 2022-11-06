@@ -5408,10 +5408,10 @@ BattleMenuPKMN_Loop:
 .MenuData: ; 24edc
 	db $c0 ; flags
 	db 4 ; items
-	db "Stats@"
-	db "Switch@"
-	db "Moves@"
-	db "Cancel@"
+	db "STATS@"
+	db "SWITCH@"
+	db "MOVES@"
+	db "CANCEL@"
 ; 24ef2
 
 Battle_StatsScreen: ; 3e308

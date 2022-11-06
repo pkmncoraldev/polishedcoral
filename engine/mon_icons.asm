@@ -53,6 +53,8 @@ LoadFlyMonColor:
 	push de
 	push bc
 	push af
+	ld a, [wCurPartyMon]
+	ld [wMoogooCard1Value], a 
 	ld a, MON_SPECIES
 	call GetPartyParamLocation
 	ld a, [hl]

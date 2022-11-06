@@ -2926,7 +2926,13 @@ TownMapMon: ; 91f7b
 
 	farcall LoadFlyMonColor
 ; Get FlyMon species
-	ld a, [wCurPartySpecies]
+	ld a, [wMoogooCard1Value]
+	ld [wCurPartyMon], a
+	ld hl, wPartySpecies
+	ld e, a
+	ld d, $0
+	add hl, de
+	ld a, [hl]
 	ld [wd265], a
 ; Get FlyMon icon
 	ld e, 8 ; starting tile in VRAM
@@ -2941,6 +2947,8 @@ TownMapMon: ; 91f7b
 	ld hl, SPRITEANIMSTRUCT_ANIM_SEQ_ID
 	add hl, bc
 	ld [hl], SPRITE_ANIM_SEQ_NULL
+	xor a
+	ld [wMoogooCard1Value], a 
 	ret
 
 ; 91fa6

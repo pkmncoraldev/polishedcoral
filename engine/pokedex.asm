@@ -1736,14 +1736,14 @@ Pokedex_OrderMonsByMode: ; 40bdc
 
 .Jumptable: ; 40bf0 (10:4bf0)
 	dw .NewMode
-	dw .OldMode
-	dw Pokedex_ABCMode
+	dw .NewMode
+	dw .NewMode
 
 
 .NewMode: ; 40bf6 (10:4bf6)
 	ld de, NewPokedexOrder
 	ld hl, wPokedexDataStart
-	ld c, NUM_SPECIES
+	ld c, 209;NUM_SPECIES
 .loopnew
 	ld a, [de]
 	inc de

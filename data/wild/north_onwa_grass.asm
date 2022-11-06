@@ -1245,6 +1245,33 @@
 	db 20, PIDGEOTTO	;4%
 	db 28, DODRIO		;1%
 	
+	map_id FLICKER_PASS_OUTSIDE
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, HOUNDOUR		;30%
+	db 20, MURKROW		;30%
+	db 20, FLAAFFY		;20%
+	db 20, COTTONEE		;10%
+	db 20, FLAAFFY		;5%
+	db 20, DODUO		;4%
+	db 20, DODUO		;1%
+	; day
+	db 20, HOUNDOUR		;30%
+	db 20, MURKROW		;30%
+	db 20, FLAAFFY		;20%
+	db 20, COTTONEE		;10%
+	db 20, FLAAFFY		;5%
+	db 20, DODUO		;4%
+	db 20, DODUO		;1%
+	; nite
+	db 20, HOUNDOUR		;30%
+	db 20, MURKROW		;30%
+	db 20, FLAAFFY		;20%
+	db 20, COTTONEE		;10%
+	db 20, FLAAFFY		;5%
+	db 20, DODUO		;4%
+	db 20, DODUO		;1%
+	
 	map_id FLICKER_PASS_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn

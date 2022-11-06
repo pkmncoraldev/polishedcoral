@@ -14,8 +14,7 @@ GetFirstPokemonHappiness: ; 718d
 	ld [wd265], a
 	ld a, [hl]
 	ld [wScriptVar], a
-	call GetPokemonName
-	jp CopyPokemonName_Buffer1_Buffer3
+	jp GetPokemonName
 
 CheckFirstMonIsEgg: ; 71ac
 	ld a, [wPartySpecies]

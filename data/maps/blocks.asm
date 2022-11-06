@@ -69,6 +69,7 @@ StarglowGrandpaHouse_BlockData:
 SunbeamDodrioHouse_BlockData:
 ShimmerHouse1_BlockData:
 ShimmerHouse3_BlockData:
+Route3FriendshipHouse_BlockData:
 	INCBIN "maps/NormalHouse1.ablk.lz"
 	
 SunsetGengarHouse_BlockData:

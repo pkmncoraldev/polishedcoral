@@ -92,10 +92,11 @@ MAP_NONE   EQU 0
 	map_const GLINT_RIVAL_HOUSE,                  		   4,  4 ; 10
 	map_const GLINT_EVO_HOUSE,                             4,  4 ; 11
 	map_const ROUTE_3,                                    28, 16 ; 12
-	map_const ROUTE_8,                                    31, 20 ; 13
-	map_const ROUTE_8_ENCOUNTER_HOUSE,                     4,  4 ; 14
-	map_const ROUTE_8_GARDEN,                             31, 20 ; 15
-	map_const ROUTE_8_GATE,                                4,  4 ; 16
+	map_const ROUTE_3_FRIENDSHIP_HOUSE,                    4,  4 ; 13
+	map_const ROUTE_8,                                    31, 20 ; 14
+	map_const ROUTE_8_ENCOUNTER_HOUSE,                     4,  4 ; 15
+	map_const ROUTE_8_GARDEN,                             31, 20 ; 16
+	map_const ROUTE_8_GATE,                                4,  4 ; 17
 
 	newgroup                                                     ;  5
 

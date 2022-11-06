@@ -3,9 +3,10 @@ Route3_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_def  7, 20, 1, STARGLOW_CAVERN_1F
 	warp_def  7, 46, 1, STARGLOW_CAVERN_3F
+	warp_def 15, 39, 1, ROUTE_3_FRIENDSHIP_HOUSE
 
 	db 6 ; coord events
 	coord_event 40, 16, 0, Route3MakeSilverBrown

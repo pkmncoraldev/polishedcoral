@@ -193,7 +193,10 @@ LusterApartment4_2F_Buneary2Text:
 	done
 	
 LusterApartment4_2F_Buneary3Text:
-	text "BUNEARY 3"
+	text "Get outta my face!"
+	
+	para "I can't even look"
+	line "at you!"
 	done
 	
 LusterApartment4_2F_Buneary4Text:

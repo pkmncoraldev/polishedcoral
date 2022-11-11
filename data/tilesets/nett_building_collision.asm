@@ -101,7 +101,7 @@
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 64
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 65
 	tilecoll WALL, WALL, FLOOR, WALL ; 66
-	tilecoll WALL, WALL, FLOOR, WALL ; 67
+	tilecoll WALL, WALL, WALL, FLOOR ; 67
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 68
 	tilecoll WALL, WALL, STAIRCASE, ELEVATOR_BUTTON ; 69
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 6a

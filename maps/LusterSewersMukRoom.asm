@@ -57,6 +57,7 @@ LusterSewersMukRoomTrigger0:
 	applyonemovement PLAYER, step_down
 .return
 	spriteface PLAYER, UP
+	special SaveMusic
 	playmusic MUSIC_NONE
 	pause 30
 	playsound SFX_EMBER
@@ -118,6 +119,7 @@ LusterSewersMukRoomTrigger0:
 	startbattle
 	disappear LUSTER_SEWERS_MUK
 	reloadmapafterbattle
+	special RestoreMusic
 	setevent EVENT_LUSTER_SEWERS_MUK_ROOM_MUK
 	setevent EVENT_LUSTER_SEWERS_BEAT_MUK
 	checkcode VAR_MONJUSTCAUGHT

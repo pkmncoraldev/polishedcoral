@@ -38,11 +38,12 @@ LusterCityShopping_MapScriptHeader:
 	coord_event 20, 18, 2, LusterShoppingDeliveryEvent
 	coord_event 20, 19, 2, LusterShoppingDeliveryEvent
 
-	db 6 ; bg events
+	db 7 ; bg events
 	signpost 24,  5, SIGNPOST_READ, LusterShoppingTrashcan1
 	signpost 26,  5, SIGNPOST_READ, LusterShoppingTrashcan2
 	signpost 24, 25, SIGNPOST_READ, LusterShoppingTrashcan3
 	signpost 26, 25, SIGNPOST_READ, LusterShoppingTrashcan4
+	signpost 28, 24, SIGNPOST_READ, LusterShoppingFenceKid
 	bg_event  7, 21, SIGNPOST_ITEM + MAX_REVIVE, EVENT_LUSTER_SHOPPING_HIDDEN_ITEM_1
 	bg_event 25, 27, SIGNPOST_ITEM + RARE_CANDY, EVENT_LUSTER_SHOPPING_HIDDEN_ITEM_2
 
@@ -132,6 +133,9 @@ ShoppingCallback:
 	changeblock -4, 20, $84
 .end
 	return
+	
+LusterShoppingFenceKid:
+	jumptext LusterShoppingFenceKidText
 	
 LusterShoppingTrashcan1:
 	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_1
@@ -383,6 +387,20 @@ Luster2NPC8Text:
 	line "getting a job just"
 	cont "to see what goes"
 	cont "on back there…"
+	done
+	
+LusterShoppingFenceKidText:
+	text "Woah!"
+	
+	para "You got behind the"
+	line "SHOPPING MALL!"
+	
+	para "What's it like"
+	line "back there?"
+	
+	para "Sigh…"
+	
+	para "Someday…"
 	done
 	
 LusterShoppingSnareText1:

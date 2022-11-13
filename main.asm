@@ -375,13 +375,6 @@ INCLUDE "engine/save.asm"
 INCLUDE "engine/spawn_points.asm"
 INCLUDE "engine/map_setup.asm"
 INCLUDE "engine/pokecenter_pc.asm"
-INCLUDE "engine/mart.asm"
-INCLUDE "engine/money.asm"
-INCLUDE "data/items/marts.asm"
-INCLUDE "engine/events/mom.asm"
-INCLUDE "engine/events/daycare.asm"
-INCLUDE "engine/breeding.asm"
-INCLUDE "data/items/attributes.asm"
 
 
 SECTION "Code 6", ROMX
@@ -4787,6 +4780,13 @@ INCLUDE "engine/trainer_card.asm"
 
 SECTION "Coral Data 4", ROMX
 INCLUDE "engine/busterscreen.asm"
+INCLUDE "engine/events/mom.asm"
+INCLUDE "engine/mart.asm"
+INCLUDE "engine/money.asm"
+INCLUDE "data/items/marts.asm"
+INCLUDE "engine/events/daycare.asm"
+INCLUDE "engine/breeding.asm"
+INCLUDE "data/items/attributes.asm"
 
 DrawBattleHPBar:: ; 3750
 ; Draw an HP bar d tiles long at hl

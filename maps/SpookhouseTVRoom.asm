@@ -1,9 +1,10 @@
 SpookhouseTVRoom_MapScriptHeader:
-	db 4 ; scene scripts
+	db 5 ; scene scripts
 	scene_script SpookhouseTVRoomTrigger0
 	scene_script SpookhouseTVRoomTrigger1
 	scene_script SpookhouseTVRoomTrigger2
 	scene_script SpookhouseTVRoomTrigger3
+	scene_script SpookhouseTVRoomTrigger4
 
 	db 0 ; callbacks
 
@@ -50,7 +51,10 @@ SpookhouseTVRoomTrigger2:
 SpookhouseTVRoomTrigger3:
 	callasm SpookHouseTVRoomAsmThing
 	appear SPOOKHOUSE_TVROOM_NPC5
-	dotrigger $0
+	dotrigger $4
+	end
+	
+SpookhouseTVRoomTrigger4:
 	end
 	
 SpookHouseTVRoomAsmThing:
@@ -129,9 +133,10 @@ SpookHouseNPC3:
 	closetext
 	special FadeOutPalettes
 	pause 15
-	warp OLD_MANOR_EXTERIOR, 14, 10
 	setevent EVENT_SPOOKHOUSE_GHOSTBEGONE
 	setevent EVENT_SPOOKHOUSE_BEATEN
+	clearevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
+	warp OLD_MANOR_EXTERIOR, 14, 10
 	end
 .girlleft
 	changemap SpookhouseTVRoom4_BlockData
@@ -141,6 +146,7 @@ SpookHouseNPC3:
 	clearevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
 	clearevent EVENT_SCARY_DOOR_LEFT
 	clearevent EVENT_SPOOKHOUSE_DARK
+	dotrigger $0
 	reloadmapafterbattle
 	end
 	

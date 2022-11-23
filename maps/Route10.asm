@@ -135,11 +135,12 @@ Route10NPC:
 	disappear ROUTE_10_BLUSH
 	checkcode VAR_FACING
 	if_equal LEFT, .YouAreFacingLeft
-	spriteface PLAYER, RIGHT
+	if_equal RIGHT, .YouAreFacingRight
+;	spriteface PLAYER, RIGHT
 	applyonemovement ROUTE_10_GOGGLES_GIRL, turn_step_down
 	playsound SFX_SWEET_KISS_2
 	wait 3
-	spriteface PLAYER, UP
+;	spriteface PLAYER, UP
 	closetext
 	moveperson ROUTE_10_BLUSH, $d, $21
 	wait 15
@@ -157,11 +158,11 @@ Route10NPC:
 	opentext
 	jump .cont
 .YouAreFacingLeft
-	spriteface PLAYER, UP
+;	spriteface PLAYER, UP
 	applyonemovement ROUTE_10_GOGGLES_GIRL, turn_step_right
 	playsound SFX_SWEET_KISS_2
 	wait 3
-	spriteface PLAYER, LEFT
+;	spriteface PLAYER, LEFT
 	closetext
 	moveperson ROUTE_10_BLUSH, $e, $20
 	wait 15
@@ -176,6 +177,29 @@ Route10NPC:
 	wait 5
 	disappear ROUTE_10_BLUSH
 	spriteface PLAYER, LEFT
+	opentext
+	jump .cont
+.YouAreFacingRight
+;	spriteface PLAYER, UP
+	applyonemovement ROUTE_10_GOGGLES_GIRL, turn_step_left
+	playsound SFX_SWEET_KISS_2
+	wait 3
+;	spriteface PLAYER, LEFT
+	closetext
+	moveperson ROUTE_10_BLUSH, $c, $20
+	wait 15
+	spriteface PLAYER, DOWN
+	closetext
+	wait 10
+	appear ROUTE_10_BLUSH
+	opentext
+	writetext Route10NPCText7
+	waitbutton
+	closetext
+	wait 5
+	disappear ROUTE_10_BLUSH
+	spriteface PLAYER, RIGHT
+	opentext
 .cont
 	takeitem SAFE_GOGGLES
 	writetext Route10NPCText8

@@ -1815,7 +1815,7 @@ BattleAnim_MiracleEye:
 	anim_ret
 	
 BattleAnim_OdorSleuth:
-	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_SHINE
+	anim_1gfx ANIM_GFX_SHINE
 	anim_call BattleAnim_FollowEnemyFeet_1
 	anim_sound 0, 0, SFX_TAIL_WHIP
 	anim_bgeffect ANIM_BG_26, $0, $0, $0

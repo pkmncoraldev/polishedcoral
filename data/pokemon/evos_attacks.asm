@@ -1351,6 +1351,7 @@ MagikarpEvosAttacks:
 
 GyaradosEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, GUST
 	db 1, BITE
 	db 1, THRASH
 	db 21, LEER_TAIL_WHIP

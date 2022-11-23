@@ -4,7 +4,7 @@
 	db GRASS, POISON
 	db 255 ; catch rate
 	db 78 ; base exp
-	db SILVER_LEAF ; item 1
+	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
 	dn 5, 5 ; frontpic dimensions

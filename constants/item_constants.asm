@@ -257,18 +257,18 @@
 
 	const NUGGET       ; e0
 	const BIG_NUGGET   ; e1
-	const TINYMUSHROOM ; e2
-	const BIG_MUSHROOM ; e3
-	const BALMMUSHROOM ; e4
+	const TINYMUSHROOM ; e2 - replace
+	const BIG_MUSHROOM ; e3 - replace
+	const BALMMUSHROOM ; e4 - replace
 	const PEARL        ; e5
 	const BIG_PEARL    ; e6
 	const PEARL_STRING ; e7 - replace
 	const STARDUST     ; e8
 	const STAR_PIECE   ; e9
 	const BRICK_PIECE  ; ea - replace
-	const RARE_BONE    ; eb
-	const SILVER_LEAF  ; ec
-	const GOLD_LEAF    ; ed
+	const RARE_BONE    ; eb - replace
+	const SILVER_LEAF  ; ec - replace
+	const GOLD_LEAF    ; ed - replace
 	const SLOWPOKETAIL ; ee
 	const BOTTLE_CAP   ; ef
 

@@ -700,7 +700,7 @@ RockItemEncounter:
 
 .RockItems:
 	db 1, BIG_NUGGET
-	db 2, RARE_BONE
+	db 2, NUGGET
 	db 4, NUGGET
 	db 6, STAR_PIECE
 	db 12, BIG_PEARL

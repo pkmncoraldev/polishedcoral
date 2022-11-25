@@ -35,7 +35,6 @@ SpookhouseLivingRoom_MapScriptHeader:
 	const SPOOKHOUSE_NPC1
 	
 SpookhouseLivingRoomTrigger0:
-	clearevent EVENT_SPOOKHOUSE_BALL_WILL_MOVE_LEFT
 	end
 	
 SpookhouseLivingRoomTrigger1:

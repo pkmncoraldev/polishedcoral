@@ -24,7 +24,12 @@ SpookhouseBedroom_MapScriptHeader:
 SpookhouseBedroomCallback:
 	checkevent EVENT_SPOOKHOUSE_GOT_BALL
 	iftrue .end
+	checkevent EVENT_SPOOKHOUSE_BALL_LEFT_GONE
+	iftrue .remove
 	clearevent EVENT_SPOOKHOUSE_BLOCKER_GONE
+	jump .end
+.remove
+	setevent EVENT_SPOOKHOUSE_BLOCKER_GONE
 .end
 	return
 	

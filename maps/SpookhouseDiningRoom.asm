@@ -16,48 +16,56 @@ SpookhouseDiningRoom_MapScriptHeader:
 	signpost 3, 8, SIGNPOST_READ, SpookHouseRottonFood
 	signpost 2, 3, SIGNPOST_READ, SpookHouseRottonFood
 
-	db 2 ; object events
-	person_event SPRITE_BALL_CUT_FRUIT, 3, 2, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FloatBall, EVENT_SPOOKHOUSE_GOT_BALL
-	person_event SPRITE_INVISIBLE,  4,  2, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FloatBall, EVENT_SPOOKHOUSE_BLOCKER_GONE
+	db 3 ; object events
+	person_event SPRITE_BALL_CUT_FRUIT, 3, 2, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FloatBallL, EVENT_SPOOKHOUSE_BALL_LEFT_GONE
+	person_event SPRITE_BALL_CUT_FRUIT, 3, 4, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FloatBallR, EVENT_SPOOKHOUSE_BALL_RIGHT_GONE
+	person_event SPRITE_INVISIBLE,  4,  2, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_SPOOKHOUSE_BLOCKER_GONE
 
 	const_def 1 ; object constants
-	const SPOOKHOUSE_FLOATBALL
+	const SPOOKHOUSE_FLOATBALL_L
+	const SPOOKHOUSE_FLOATBALL_R
 	const SPOOKHOUSE_BLOCKER
 	
-FloatBall:
+FloatBallL:
 	checkcode VAR_FACING
 	if_equal DOWN, .YouAreFacingDown
-;	killsfx
 	playsound SFX_SHARPEN
-	checkevent EVENT_SPOOKHOUSE_BALL_WILL_MOVE_LEFT
-	iftrue .left
-	applymovement SPOOKHOUSE_FLOATBALL, Movement_SpookHouseFloatRight
+	applymovement SPOOKHOUSE_FLOATBALL_L, Movement_SpookHouseFloatRight
+	appear SPOOKHOUSE_FLOATBALL_R
 	opentext
 	writetext SpookHouseBallFloatText
 	waitbutton
 	closetext
-	setevent EVENT_SPOOKHOUSE_BALL_WILL_MOVE_LEFT
-	end
-	
-.left:
-	applymovement SPOOKHOUSE_FLOATBALL, Movement_SpookHouseFloatLeft
-	opentext
-	writetext SpookHouseBallFloatText
-	waitbutton
-	closetext
-	clearevent EVENT_SPOOKHOUSE_BALL_WILL_MOVE_LEFT
+	disappear SPOOKHOUSE_FLOATBALL_L
+	setevent EVENT_SPOOKHOUSE_BALL_LEFT_GONE
+	clearevent EVENT_SPOOKHOUSE_BALL_RIGHT_GONE
 	end
 	
 .YouAreFacingDown:
-	disappear SPOOKHOUSE_FLOATBALL
+	disappear SPOOKHOUSE_FLOATBALL_L
 	disappear SPOOKHOUSE_BLOCKER
 	opentext
 	verbosegiveitem OLD_KEY
 	closetext
 	setevent EVENT_SPOOKHOUSE_BLOCKER_GONE
-	setevent EVENT_SPOOKHOUSE_GOT_BALL
+	setevent EVENT_SPOOKHOUSE_BALL_LEFT_GONE
+	setevent EVENT_SPOOKHOUSE_BALL_RIGHT_GONE
 	setevent EVENT_SPOOKHOUSE_GHOST_WILL_APPEAR
+	setevent EVENT_SPOOKHOUSE_GOT_BALL
 	domaptrigger SPOOKHOUSE_LIVING_ROOM, $1
+	end
+	
+FloatBallR:
+	playsound SFX_SHARPEN
+	applymovement SPOOKHOUSE_FLOATBALL_R, Movement_SpookHouseFloatLeft
+	appear SPOOKHOUSE_FLOATBALL_L
+	opentext
+	writetext SpookHouseBallFloatText
+	waitbutton
+	closetext
+	disappear SPOOKHOUSE_FLOATBALL_R
+	clearevent EVENT_SPOOKHOUSE_BALL_LEFT_GONE
+	setevent EVENT_SPOOKHOUSE_BALL_RIGHT_GONE
 	end
 	
 SpookHouseRottonFood:

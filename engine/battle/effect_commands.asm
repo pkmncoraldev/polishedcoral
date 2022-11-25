@@ -1334,16 +1334,16 @@ BattleCommand_critical: ; 34631
 	;   0     1     2     3+
 ; 346b2
 
-CheckAirBalloon:
+;CheckAirBalloon:
 ; Returns z if the user is holding an Air Balloon
-	push bc
-	push hl
-	call GetOpponentItem
-	pop hl
-	ld a, b
-	pop bc
-	cp HELD_AIR_BALLOON
-	ret
+;	push bc
+;	push hl
+;	call GetOpponentItem
+;	pop hl
+;	ld a, b
+;	pop bc
+;	cp HELD_AIR_BALLOON
+;	ret
 
 BattleCommand_kickcounter: ; 346cd
 ; kickcounter
@@ -1503,20 +1503,20 @@ CheckTypeMatchup:
 	jr z, .end
 
 	; check Air Balloon for Ground-type attacks
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
+;	ld a, BATTLE_VARS_MOVE_TYPE
+;	call GetBattleVar
 	
-	farcall MultiSlotMoveTypes
+;	farcall MultiSlotMoveTypes
 	
-	cp GROUND
-	jr nz, .done_air_balloon
+;	cp GROUND
+;	jr nz, .done_air_balloon
 
-	call CheckAirBalloon
-	jr nz, .done_air_balloon
-	xor a
-	ld [wTypeMatchup], a
+;	call CheckAirBalloon
+;	jr nz, .done_air_balloon
+;	xor a
+;	ld [wTypeMatchup], a
 
-.done_air_balloon
+;.done_air_balloon
 	farcall CheckNullificationAbilities
 .end
 	pop bc
@@ -2963,9 +2963,9 @@ ConsumeUserItem::
 	call GetPartyLocation
 
 	; Air Balloons are consumed permanently, so don't write it to UsedItems
-	ld a, [de]
-	cp AIR_BALLOON
-	jr z, .consume_item
+;	ld a, [de]
+;	cp AIR_BALLOON
+;	jr z, .consume_item
 	push hl
 	push af
 	call GetUsedItemAddr
@@ -3101,16 +3101,16 @@ BattleCommand_posthiteffects:
 	farcall RunHitAbilities
 
 	; Burst air balloons
-	call HasOpponentFainted
-	jr z, .air_balloon_done
-	call CheckAirBalloon
-	jr nz, .air_balloon_done
+;	call HasOpponentFainted
+;	jr z, .air_balloon_done
+;	call CheckAirBalloon
+;	jr nz, .air_balloon_done
 
-	ld hl, AirBalloonPoppedText
-	call StdBattleTextBox
-	call ConsumeOpponentItem
+;	ld hl, AirBalloonPoppedText
+;	call StdBattleTextBox
+;	call ConsumeOpponentItem
 
-.air_balloon_done
+;.air_balloon_done
 	call HasOpponentFainted
 	jr z, .rage_done
 	ld a, BATTLE_VARS_SUBSTATUS4_OPP
@@ -3470,10 +3470,6 @@ PlayerAttackDamage: ; 352e2
 	ld b, a
 	ld c, [hl]
 
-if !DEF(FAITHFUL)
-	call HailDefenseBoost
-endc
-
 	ld hl, wBattleMonAttack
 	ld a, [wEnemyAbility]
 	cp INFILTRATOR
@@ -3569,10 +3565,6 @@ EnemyAttackDamage: ; 353f6
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
-
-if !DEF(FAITHFUL)
-	call HailDefenseBoost
-endc
 
 	ld hl, wEnemyMonAttack
 	ld a, [wPlayerAbility]
@@ -5239,6 +5231,8 @@ BattleCommand_poisontarget:
 	ld a, [wEffectFailed]
 	and a
 	ret nz
+	call SafeCheckSafeguard
+	ret nz
 
 	call PoisonOpponent
 	ld de, ANIM_PSN
@@ -5258,6 +5252,8 @@ BattleCommand_toxictarget:
 	ret z
 	ld a, [wEffectFailed]
 	and a
+	ret nz
+	call SafeCheckSafeguard
 	ret nz
 	ld a, [hBattleTurn]
 	and a
@@ -5446,6 +5442,8 @@ BattleCommand_burntarget:
 	ld a, [wEffectFailed]
 	and a
 	ret nz
+	call SafeCheckSafeguard
+	ret nz
 
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
@@ -5544,6 +5542,8 @@ BattleCommand_paralyzetarget:
 	ret z
 	ld a, [wEffectFailed]
 	and a
+	ret nz
+	call SafeCheckSafeguard
 	ret nz
 
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -6542,8 +6542,8 @@ CheckIfTrappedByAbility:
 	ld a, BATTLE_VARS_ABILITY
 	cp LEVITATE
 	jr z, .not_trapped
-	call CheckAirBalloon
-	jr z, .not_trapped
+;	call CheckAirBalloon
+;	jr z, .not_trapped
 	xor a
 	ret
 

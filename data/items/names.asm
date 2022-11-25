@@ -29,7 +29,7 @@ ItemNames::
 	db "MAX POTION@"
 	db "ANTIDOTE@"
 	db "BURN HEAL@"
-	db "PARALYZEHEAL@"
+	db "PARLYZ HEAL@"
 	db "AWAKENING@"
 	db "ICE HEAL@"
 	db "FULL HEAL@"

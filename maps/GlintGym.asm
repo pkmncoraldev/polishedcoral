@@ -989,7 +989,7 @@ GlintGymBookText1:
 	
 	para "“FARFETCH'D"
 	line "Fricasseé with"
-	cont "Grilled LEAK”"
+	cont "Grilled LEEK”"
 	
 	para "Is this…"
 	

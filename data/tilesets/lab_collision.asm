@@ -45,7 +45,7 @@
 	tilecoll FLOOR, COUNTER, FLOOR, FLOOR ; 2c
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 2d
 	tilecoll COUNTER, WALL, FLOOR, FLOOR ; 2e
-	tilecoll FLOOR, WALL, RIGHT_WALL, FLOOR ; 2f
+	tilecoll WALL, WALL, RIGHT_WALL, FLOOR ; 2f
 	tilecoll COUNTER, COUNTER, FLOOR, FLOOR ; 30
 	tilecoll WALL, WALL, WALL, WALL ; 31
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 32

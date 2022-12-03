@@ -499,7 +499,8 @@ EventideGymTrainer1:
 	done
 
 .BeatenText:
-	text "Well you showed me!"
+	text "Well you showed"
+	line "me!"
 	done
 	
 EventideGymTrainer2:

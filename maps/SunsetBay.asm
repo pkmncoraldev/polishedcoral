@@ -439,7 +439,7 @@ SunsetNPC6Text:
 	
 SunsetJustRodeBoatText:
 	text "Here we are,"
-	line "SUNET BAY."
+	line "SUNSET BAY."
 	
 	para "Thanks for riding."
 	

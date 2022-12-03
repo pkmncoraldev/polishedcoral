@@ -290,7 +290,7 @@ LakeBoatHouseRMenuData:
 
 .MenuData:
 	db $80 ; flags
-	db 4 ; items
+	db 3 ; items
 	db "SUNSET BAY@"
 	db "LAKE ONWA WEST@"
 	db "SUNBEAM ISLAND@"
@@ -321,7 +321,7 @@ LakeBoatHouseRBrilloMenuData:
 
 .MenuData:
 	db $80 ; flags
-	db 6 ; items
+	db 5 ; items
 	db "SUNSET BAY@"
 	db "LAKE ONWA WEST@"
 	db "SUNBEAM ISLAND@"

@@ -81,7 +81,7 @@ SunbeamBoatHouseNPC:
 	clearevent EVENT_SUNSET_STRAND
 	warpmod 1, SAILBOAT_CUTSCENE
 	setevent EVENT_SAILBOAT_LEFT
-	setevent EVENT_BOAT_GOING_TO_LAKE_R
+	setevent EVENT_BOAT_GOING_TO_SUNSET
 	jump .DoBoatEnd
 	
 .LakeL
@@ -100,7 +100,7 @@ SunbeamBoatHouseNPC:
 	setevent EVENT_JUST_TOOK_BOAT
 	warpmod 1, SAILBOAT_CUTSCENE
 	setevent EVENT_SAILBOAT_LEFT
-	setevent EVENT_BOAT_GOING_TO_LAKE_R
+	setevent EVENT_BOAT_GOING_TO_LAKE_L
 	jump .DoBoatEnd
 	
 .LakeR

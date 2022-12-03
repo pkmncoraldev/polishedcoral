@@ -97,7 +97,7 @@ StartIntroSequence::
 	call ApplyTilemapInVBlank
 	ld c, 0
 	call FadePalettes
-	ld c, 180
+	ld c, 143
 	call DelayFrames
 	call SetBlackPals
 	ld c, 15

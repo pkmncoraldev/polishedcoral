@@ -7919,10 +7919,10 @@ BattleCommand_heal:
 	farcall GetMaxHP
 	jr .finish
 .not_rest
-	farcall GetHalfMaxHP
-.finish
 	farcall CheckSoftboiledThing
 	ld [wKickCounter], a
+	farcall GetHalfMaxHP
+.finish
 	call AnimateCurrentMove
 	farcall RestoreHP
 	call UpdateUserInParty

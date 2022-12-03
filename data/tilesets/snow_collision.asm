@@ -156,8 +156,8 @@
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 9b
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 9c
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 9d
-	tilecoll WALL, STAIRS, FLOOR, FLOOR ; 9e
-	tilecoll STAIRS, WALL, FLOOR, FLOOR ; 9f
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 9e
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 9f
 	tilecoll WALL, FLOOR, WALL, FLOOR ; a0
 	tilecoll FLOOR, WALL, FLOOR, WALL ; a1
 	tilecoll WALL, WALL, WALL, WALL ; a2

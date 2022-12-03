@@ -316,16 +316,21 @@ StarglowHouse1Rocket:
 	applymovement STARGLOWHOUSE1_ROCKET, Movement_StarglowHouse1Rocket5
 	disappear STARGLOWHOUSE1_ROCKET
 	playsound SFX_EXIT_BUILDING
+	special Special_FadeOutMusic
+	pause 10
+	playmusic MUSIC_SNARE_INVASION
 	applymovement STARGLOWHOUSE1_MOMMY, Movement_StarglowHouse1Mommy2
 	spriteface STARGLOWHOUSE1_MOMMY, DOWN
-	spriteface PLAYER, UP
 	appear STARGLOWHOUSE1_MOMMY2
+	spriteface PLAYER, UP
+	disappear STARGLOWHOUSE1_MOMMY
 	opentext
 	writetext StarglowHouse1MommyText3
 	waitbutton
 	closetext
 	applymovement STARGLOWHOUSE1_LITTLEGIRL, Movement_StarglowHouse1LittleGirl4
 	spriteface PLAYER, LEFT
+	spriteface STARGLOWHOUSE1_LITTLEGIRL, RIGHT
 	opentext
 	writetext StarglowHouse1LittleGirlText3
 	waitbutton
@@ -340,7 +345,8 @@ StarglowHouse1Rocket:
 	clearevent EVENT_STARGLOW_HAVENT_HELPED_GIRL_TOGEPI
 	dotrigger $2
 	domaptrigger STARGLOW_VALLEY, $2
-	disappear STARGLOWHOUSE1_LITTLEGIRL
+	setevent EVENT_STARGLOW_HELPED_LITTLEGIRL
+	setevent EVENT_STARGLOW_HOUSE
 	end
 	
 StarglowHouse1Togepi:

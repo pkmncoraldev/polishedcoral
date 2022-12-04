@@ -113,7 +113,7 @@ ItemIconPointers:
 	dw OvalCharmIcon
 	dw FlowerPetalIcon
 	dw BlossomTeaIcon
-	dw NoItemIcon
+	dw PaintbrushIcon
 	dw CheriBerryIcon
 	dw ChestoBerryIcon
 	dw PechaBerryIcon

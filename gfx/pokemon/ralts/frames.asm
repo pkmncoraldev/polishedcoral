@@ -11,10 +11,10 @@
 	db $1d, $1e, $1f, $1b, $20
 .frame3
 	db $02 ; bitmask
-	db $21, $22, $23, $24, $25, $26
+	db $21, $22, $1e, $23, $24, $25
 .frame4
 	db $03 ; bitmask
-	db $27, $28
+	db $26, $27
 .frame5
 	db $04 ; bitmask
-	db $29, $2a
+	db $28, $29, $2a

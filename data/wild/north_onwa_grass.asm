@@ -251,25 +251,25 @@
 	db 10, PIKIPEK		;30%
 	db 10, MARILL		;20%
 	db 10, PIKACHU		;10%
-	db 10, EXEGGCUTE	;5%
-	db 10, EXEGGCUTE	;4%
-	db 10, EXEGGCUTE	;1%
+	db 10, JOLTIK		;5%
+	db 10, JOLTIK		;4%
+	db 10, JOLTIK		;1%
 	; day
 	db 10, SHROOMISH	;30%
 	db 10, PIKIPEK		;30%
 	db 10, MARILL		;20%
 	db 10, PIKACHU		;10%
-	db 10, EXEGGCUTE	;5%
-	db 10, EXEGGCUTE	;4%
-	db 10, EXEGGCUTE	;1%
+	db 10, JOLTIK		;5%
+	db 10, JOLTIK		;4%
+	db 10, JOLTIK		;1%
 	; nite
 	db 10, SHROOMISH	;30%
 	db 10, PIKIPEK		;30%
 	db 10, MARILL		;20%
 	db 10, PIKACHU		;10%
-	db 11, EXEGGCUTE	;5%
-	db 11, EXEGGCUTE	;4%
-	db 11, EXEGGCUTE	;1%
+	db 10, JOLTIK		;5%
+	db 10, JOLTIK		;4%
+	db 10, JOLTIK		;1%
 	
 	map_id ROUTE_5
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
@@ -278,7 +278,7 @@
 	db 12, JOLTIK		;30%
 	db 12, TEDDIURSA	;20%
 	db 12, STANTLER		;10%
-	db 12, ODDISH		;5%
+	db 12, EXEGGCUTE	;5%
 	db 12, PIDGEY		;4%
 	db 12, SCYTHER		;1%
 	; day
@@ -286,7 +286,7 @@
 	db 12, JOLTIK		;30%
 	db 12, TEDDIURSA	;20%
 	db 12, STANTLER		;10%
-	db 12, ODDISH		;5%
+	db 12, EXEGGCUTE	;5%
 	db 12, PIDGEY		;4%
 	db 12, SCYTHER		;1%
 	; nite
@@ -294,7 +294,7 @@
 	db 12, JOLTIK		;30%
 	db 12, TEDDIURSA	;20%
 	db 12, STANTLER		;10%
-	db 12, ODDISH		;5%
+	db 12, EXEGGCUTE	;5%
 	db 12, PIDGEY		;4%
 	db 12, SCYTHER		;1%
 	
@@ -304,7 +304,7 @@
 	db 13, STANTLER		;30%
 	db 13, TEDDIURSA	;30%
 	db 10, EEVEE		;20%
-	db 13, ODDISH		;10%
+	db 13, EXEGGCUTE	;10%
 	db 13, PIDGEY		;5%
 	db 13, SCYTHER		;4%
 	db 13, SCYTHER		;1%
@@ -312,7 +312,7 @@
 	db 13, STANTLER		;30%
 	db 13, TEDDIURSA	;30%
 	db 10, EEVEE		;20%
-	db 13, ODDISH		;10%
+	db 13, EXEGGCUTE	;10%
 	db 13, PIDGEY		;5%
 	db 13, SCYTHER		;4%
 	db 13, SCYTHER		;1%
@@ -320,7 +320,7 @@
 	db 13, STANTLER		;30%
 	db 13, TEDDIURSA	;30%
 	db 10, EEVEE		;20%
-	db 13, ODDISH		;10%
+	db 13, EXEGGCUTE	;10%
 	db 13, PIDGEY		;5%
 	db 13, SCYTHER		;4%
 	db 13, GASTLY		;1%

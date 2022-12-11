@@ -4114,7 +4114,7 @@ SpikesDamage_GotAbility:
 	push hl
 	call .Spikes
 	pop hl
-	;call .ToxicSpikes
+	call .ToxicSpikes
 	ret
 
 .Spikes:
@@ -4158,6 +4158,8 @@ SpikesDamage_GotAbility:
 	; Grounded Poison types absorb the Toxic Spikes
 	xor [hl]
 	ld [hl], a
+	ld hl, BattleText_UserAbsorbedToxicSpikes
+	jp StdBattleTextBox
 	ret
 
 .no_poison_type

@@ -465,6 +465,12 @@ BattleText_UserHurtBySpikes: ; 0x80bae
 	prompt
 ; 0x80bc2
 
+BattleText_UserAbsorbedToxicSpikes:
+	text "<USER>"
+	line "absorbed the"
+	cont "TOXIC SPIKES!"
+	prompt
+
 RecoveredUsingText: ; 0x80bc2
 	text "<USER>"
 	line "recovered using a"

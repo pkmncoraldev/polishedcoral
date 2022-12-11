@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, RAIN_DANCE, HAIL, CURSE, BULLDOZE
+	tmhm ROCK_SMASH, RAIN_DANCE, HAIL, CURSE, BULLDOZE, SURF
 	; end

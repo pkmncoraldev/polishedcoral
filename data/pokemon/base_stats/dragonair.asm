@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm RAIN_DANCE, HAIL, CURSE, SUNNY_DAY
+	tmhm RAIN_DANCE, HAIL, CURSE, SUNNY_DAY, SURF
 	; end

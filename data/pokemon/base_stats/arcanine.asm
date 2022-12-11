@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, METAL_CLAW, CHARM, DIG, CURSE, SUNNY_DAY, BULLDOZE, WILL_O_WISP
+	tmhm ROCK_SMASH, METAL_CLAW, CHARM, DIG, CURSE, SUNNY_DAY, BULLDOZE, WILL_O_WISP, SAFEGUARD
 	; end

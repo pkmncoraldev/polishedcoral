@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, FAKE_OUT, THUNDERPUNCH, RAIN_DANCE, CHARM, DIG, CURSE
+	tmhm ROCK_SMASH, FAKE_OUT, THUNDERPUNCH, RAIN_DANCE, CHARM, DIG, CURSE, SAFEGUARD
 	; end

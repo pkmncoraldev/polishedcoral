@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm FAKE_OUT, RAIN_DANCE, CHARM, DIG, CURSE, SUNNY_DAY, WORK_UP_GROWTH
+	tmhm FAKE_OUT, RAIN_DANCE, CHARM, DIG, CURSE, SUNNY_DAY, WORK_UP_GROWTH, SAFEGUARD
 	; end

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CURSE, SUNNY_DAY, WILL_O_WISP
+	tmhm CURSE, SUNNY_DAY, WILL_O_WISP, SAFEGUARD
 	; end

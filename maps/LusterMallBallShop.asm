@@ -164,9 +164,6 @@ LusterMallBallShop_NPC2Text4:
 	line "you the employee"
 	cont "discount?"
 	
-	para "Half off on every"
-	line "item in the store!"
-	
 	para "You've earned it!"
 	done
 	

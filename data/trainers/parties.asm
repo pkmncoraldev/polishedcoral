@@ -790,7 +790,8 @@ FisherGroup:
 	db "GERALD@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 30, POLIWAG
+	db 29, MARILL
 	db -1 ; end
 
 ; ================
@@ -857,7 +858,9 @@ FisherGroup:
 	db "WALTER@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 29, CHINCHOU
+	db 30, SQUIRTLE
+	db 30, TOTODILE
 	db -1 ; end
 
 ; ================
@@ -920,7 +923,7 @@ FisherGroup:
 	db "BORRIS@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 31, WARTORTLE
 	db -1 ; end
 
 ; ================
@@ -985,7 +988,8 @@ FisherGroup:
 	db "CLINT@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 24, BUIZEL
+	db 25, WOOPER
 	db -1 ; end
 
 ; ================
@@ -1053,6 +1057,7 @@ FisherGroup:
 	; party
 	db 14, CARVANHA
 	db 13, CARVANHA
+	db 16, MAGIKARP
 	db -1 ; end
 
 ; ================
@@ -1129,7 +1134,9 @@ BirdKeeperGroup:
 	db "RICKY@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 26, PIDGEOTTO
+	db 28, DODUO
+	db 27, TRUMBEAK
 	db -1 ; end
 
 ; ================
@@ -1184,7 +1191,8 @@ BirdKeeperGroup:
 	db "VERN@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 28, NATU
+	db 28, SWABLU
 	db -1 ; end
 
 ; ================
@@ -1240,7 +1248,9 @@ BirdKeeperGroup:
 	db "ROY@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 27, WINGULL
+	db 27, WINGULL
+	db 27, TRUMBEAK
 	db -1 ; end
 
 ; ================
@@ -1294,7 +1304,7 @@ BirdKeeperGroup:
 	db "CHANCE@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 29, PELIPPER
 	db -1 ; end
 
 ; ================
@@ -1350,7 +1360,9 @@ BirdKeeperGroup:
 	db "CALEB@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 27, NATU
+	db 27, NATU
+	db 27, PIDGEOTTO
 	db -1 ; end
 
 ; ================
@@ -2252,7 +2264,8 @@ SchoolboyGroup:
 	db "TIMMY@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 30, PIDGEOTTO
+	db 29, RATICATE
 	db -1 ; end
 
 ; ================
@@ -2327,7 +2340,8 @@ SchoolboyGroup:
 	db "DAMIAN@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 30, TRUMBEAK
+	db 29, RATICATE
 	db -1 ; end
 
 ; ================
@@ -3194,9 +3208,12 @@ MallCopGroup:
 
 	; PHIL
 	db "PHIL@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 40, LEDYBA
+		db TACKLE_SCRATCH_POUND, LIGHT_SCREEN, REFLECT, 0
+	db 40, MAGIKARP
+		db TACKLE_SCRATCH_POUND, TRANSFORM_SPLASH, 0, 0
 	db -1 ; end
 
 ; ================

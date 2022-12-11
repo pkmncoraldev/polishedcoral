@@ -506,9 +506,9 @@ TrainerClassAttributes: ; 3959c
 	
 ;MallCop
 	db 0, 0 ; items
-	db 10 ; base reward
-	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	db 40 ; base reward
+	dw AI_BASIC + AI_SETUP
+	dw CONTEXT_USE
 	
 ; Skater
 	db 0, 0 ; items

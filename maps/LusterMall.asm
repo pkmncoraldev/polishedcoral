@@ -43,7 +43,7 @@ LusterMall_MapScriptHeader:
 	coord_event 21, 17, -1, LusterMallEscalatorClear
 	coord_event 35, 18, 0, LusterMallEmployeesOnly
 
-	db 12 ; bg events
+	db 13 ; bg events
 	signpost 26, 16, SIGNPOST_JUMPTEXT, LusterMallEscalatorSignText
 	signpost  8, 16, SIGNPOST_JUMPTEXT, LusterMallEscalatorSignText
 	signpost 16, 15, SIGNPOST_READ, LusterMallPokeCenterSign
@@ -56,6 +56,7 @@ LusterMall_MapScriptHeader:
 	signpost 16, 26, SIGNPOST_JUMPTEXT, LusterMallBallSignText
 	signpost 16, 32, SIGNPOST_JUMPTEXT, LusterMallClothesSignText
 	signpost 11, 15, SIGNPOST_JUMPTEXT, LusterMall_PaperText
+	signpost  5, 15, SIGNPOST_JUMPTEXT, LusterMall_GymSignText
 	
 
 	db 19 ; object events
@@ -847,6 +848,16 @@ LusterMall_NPC16Text2:
 LusterMall_PaperText:
 	text "An issue of “THE"
 	line "LUSTER TIMES”."
+	done
+	
+LusterMall_GymSignText:
+	text "LUSTER GYM"
+	
+	para "Closed for"
+	line "construction."
+	
+	para "Come back in"
+	line "the final game."
 	done
 	
 LusterMall_CopText:

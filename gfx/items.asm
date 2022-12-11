@@ -284,7 +284,7 @@ CleanseTagIcon:   INCBIN "gfx/items/cleanse_tag.2bpp.lz"
 SmokeBallIcon:    INCBIN "gfx/items/smoke_ball.2bpp.lz"
 BerserkGeneIcon:  INCBIN "gfx/items/berserk_gene.2bpp.lz"
 LightBallIcon:    INCBIN "gfx/items/light_ball.2bpp.lz"
-StickIcon:        INCBIN "gfx/items/stick.2bpp.lz"
+LinkCableIcon:        INCBIN "gfx/items/link_cable.2bpp.lz"
 ThickClubIcon:
 RareBoneIcon:     INCBIN "gfx/items/bone.2bpp.lz"
 LuckyPunchIcon:   INCBIN "gfx/items/lucky_punch.2bpp.lz"

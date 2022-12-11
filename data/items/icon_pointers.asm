@@ -165,7 +165,7 @@ ItemIconPointers:
 	dw SmokeBallIcon
 	dw BerserkGeneIcon
 	dw LightBallIcon
-	dw StickIcon
+	dw LinkCableIcon
 	dw ThickClubIcon
 	dw LuckyPunchIcon
 	dw MetalPowderIcon

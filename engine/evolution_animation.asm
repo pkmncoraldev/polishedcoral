@@ -51,7 +51,16 @@ EvolutionAnimation: ; 4e5e1
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
 	call .PlaceFrontpic
-
+	
+	ld a, $1
+	ld [rVBK], a
+	ld de, .GFXBlank
+	ld hl, VTiles2 tile $7f
+	lb bc, BANK(.GFXBlank), 1
+	call Request2bpp
+	xor a
+	ld [rVBK], a
+	
 	ld de, VTiles2
 	ld hl, VTiles2 tile $31
 	ld bc, 7 * 7
@@ -353,3 +362,6 @@ EvolutionAnimation: ; 4e5e1
 .GFX:
 INCBIN "gfx/evo/bubble_large.2bpp"
 INCBIN "gfx/evo/bubble.2bpp"
+
+.GFXBlank:
+INCBIN "gfx/evo/blank.2bpp"

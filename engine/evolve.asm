@@ -377,6 +377,7 @@ endr
 	ld c, 40
 	call DelayFrames
 
+	call ClearTileMapEvo
 	call UpdateSpeciesNameIfNotNicknamed
 	call GetBaseData
 
@@ -510,6 +511,7 @@ UpdateSpeciesNameIfNotNicknamed: ; 42414
 CancelEvolution: ; 42454
 	ld hl, Text_StoppedEvolving
 	call PrintText
+	call ClearTileMapEvo
 	pop hl
 	jp EvolveAfterBattle_MasterLoop
 ; 42461
@@ -856,3 +858,16 @@ GetPreEvolution:: ; 42581
 	scf
 	ret
 ; 425b1
+
+ClearTileMapEvo:
+	; Fill wTileMap with blank tiles.
+	hlcoord 0, 0
+	ld a, $7f
+	ld bc, wTileMapEnd - wTileMap
+	call ByteFill
+
+	; Update the BG Map.
+	ld a, [rLCDC]
+	bit 7, a
+	ret z
+	jp ApplyTilemapInVBlank

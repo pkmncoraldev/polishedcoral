@@ -564,11 +564,11 @@ MinimizeDescription:
 
 BulkUpDescription:
 	db   "Raises the user's"
-	next "ATK and Def.@"
+	next "ATK and DEF.@"
 
 CalmMindDescription:
 	db   "Raises the user's"
-	next "SPCL.ATK and SPCL.DEF.@"
+	next "SPECIAL STATS.@"
 
 DragonDanceDescription:
 	db   "Raises the user's"

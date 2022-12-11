@@ -1316,9 +1316,6 @@ LoadMapPals::
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	ld a, [wPlayerPalette]
-	cp 3
-	jr z, .snowbrown
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes

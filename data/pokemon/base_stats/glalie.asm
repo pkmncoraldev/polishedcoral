@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm RAIN_DANCE, HAIL, CURSE, BULLDOZE, SAFEGUARD
+	tmhm RAIN_DANCE, HAIL, CURSE, BULLDOZE, SAFEGUARD, SUBSTITUTE, PROTECT
 	; end

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm RAIN_DANCE, HAIL, DIG, CURSE, BULLDOZE, SURF
+	tmhm RAIN_DANCE, HAIL, DIG, CURSE, BULLDOZE, SURF, SUBSTITUTE, PROTECT
 	; end

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ICE_PUNCH, RAIN_DANCE, CHARM, HAIL, CURSE, WILL_O_WISP, SAFEGUARD
+	tmhm ICE_PUNCH, RAIN_DANCE, CHARM, HAIL, CURSE, WILL_O_WISP, SAFEGUARD, SUBSTITUTE, PROTECT
 	; end

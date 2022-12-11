@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, DIG, CURSE, BULLDOZE
+	tmhm ROCK_SMASH, DIG, CURSE, BULLDOZE, SUBSTITUTE, PROTECT
 	; end

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, METAL_CLAW, RAIN_DANCE, DIG, CURSE, SUNNY_DAY
+	tmhm ROCK_SMASH, METAL_CLAW, RAIN_DANCE, DIG, CURSE, SUNNY_DAY, SUBSTITUTE, PROTECT
 	; end

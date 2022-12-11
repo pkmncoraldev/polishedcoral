@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm RAIN_DANCE, ROOST, FLY, HAIL, CURSE, STEEL_WING, SURF
+	tmhm RAIN_DANCE, ROOST, FLY, HAIL, CURSE, STEEL_WING, SURF, SUBSTITUTE, PROTECT
 	; end

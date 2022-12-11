@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm METAL_CLAW, CUT, DIG, CURSE, ROCK_CLIMB, BULLDOZE
+	tmhm METAL_CLAW, CUT, DIG, CURSE, ROCK_CLIMB, BULLDOZE, SUBSTITUTE, PROTECT
 	; end

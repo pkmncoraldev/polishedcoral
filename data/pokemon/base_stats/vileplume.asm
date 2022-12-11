@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm FAKE_OUT, CUT, CHARM, CURSE, SUNNY_DAY, SAFEGUARD
+	tmhm FAKE_OUT, CUT, CHARM, CURSE, SUNNY_DAY, SAFEGUARD, SUBSTITUTE, PROTECT
 	; end

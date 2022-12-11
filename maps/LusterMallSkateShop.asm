@@ -132,7 +132,7 @@ LusterMallSkateShop_ClerkText1:
 	para "You get out of"
 	line "my shop,"
 	
-	para "and I won't pummle"
+	para "and I won't pummel"
 	line "you into the"
 	cont "ground."
 	

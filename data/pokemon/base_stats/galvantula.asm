@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CUT, RAIN_DANCE, CURSE, ROCK_CLIMB, SUBSTITUTE, PROTECT
+	tmhm CUT, RAIN_DANCE, CURSE, ROCK_CLIMB, SUBSTITUTE, PROTECT, HYPER_BEAM, GIGA_IMPACT
 	; end

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm FAKE_OUT, RAIN_DANCE, CURSE, SUNNY_DAY, SUBSTITUTE, PROTECT
+	tmhm FAKE_OUT, RAIN_DANCE, CURSE, SUNNY_DAY, SUBSTITUTE, PROTECT, HYPER_BEAM, GIGA_IMPACT
 	; end

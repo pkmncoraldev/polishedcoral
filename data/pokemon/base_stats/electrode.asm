@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm RAIN_DANCE, CURSE, SUBSTITUTE, PROTECT
+	tmhm RAIN_DANCE, CURSE, SUBSTITUTE, PROTECT, HYPER_BEAM, GIGA_IMPACT
 	; end

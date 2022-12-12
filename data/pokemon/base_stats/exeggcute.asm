@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CURSE, SUNNY_DAY, SUBSTITUTE, PROTECT
+	tmhm CURSE, SUNNY_DAY, SUBSTITUTE, PROTECT, LIGHT_SCREEN, REFLECT
 	; end

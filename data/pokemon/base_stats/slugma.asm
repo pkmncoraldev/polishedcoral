@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, CURSE, SUNNY_DAY, WILL_O_WISP, SUBSTITUTE, PROTECT
+	tmhm ROCK_SMASH, CURSE, SUNNY_DAY, WILL_O_WISP, SUBSTITUTE, PROTECT, LIGHT_SCREEN, REFLECT
 	; end

@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm FAKE_OUT, CUT, CHARM, CURSE, SUNNY_DAY, SUBSTITUTE, PROTECT
+	tmhm FAKE_OUT, CUT, CHARM, CURSE, SUNNY_DAY, SUBSTITUTE, PROTECT, SOLAR_BEAM
 	; end

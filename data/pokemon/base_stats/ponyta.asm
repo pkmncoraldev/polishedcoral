@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm CHARM, CURSE, SUNNY_DAY, WILL_O_WISP, SUBSTITUTE, PROTECT
+	tmhm CHARM, CURSE, SUNNY_DAY, WILL_O_WISP, SUBSTITUTE, PROTECT, SOLAR_BEAM
 	; end

@@ -74,9 +74,10 @@ SunbeamMart: ; 16106
 	db -1
 
 EventideMart: ; 16118
-	db 10 ; # items
+	db 11 ; # items
 	db POKE_BALL
 	db GREAT_BALL
+	db POTION
 	db SUPER_POTION
 	db ESCAPE_ROPE
 	db REPEL
@@ -88,9 +89,10 @@ EventideMart: ; 16118
 	db -1
 	
 FlickerMart:
-	db 10 ; # items
+	db 11 ; # items
 	db POKE_BALL
 	db GREAT_BALL
+	db POTION
 	db SUPER_POTION
 	db ESCAPE_ROPE
 	db REPEL
@@ -105,6 +107,7 @@ TwinkleMart:
 	db 17 ; # items
 	db POKE_BALL
 	db GREAT_BALL
+	db POTION
 	db SUPER_POTION
 	db ESCAPE_ROPE
 	db REPEL
@@ -119,13 +122,13 @@ TwinkleMart:
 	db X_SPEED
 	db X_SPCL_ATK
 	db X_SPCL_DEF
-	db X_ACCURACY
 	db -1
 	
 LusterMart:
 	db 17 ; # items
 	db POKE_BALL
 	db GREAT_BALL
+	db POTION
 	db SUPER_POTION
 	db ESCAPE_ROPE
 	db REPEL
@@ -140,7 +143,6 @@ LusterMart:
 	db X_SPEED
 	db X_SPCL_ATK
 	db X_SPCL_DEF
-	db X_ACCURACY
 	db -1
 	
 LusterMallElectronics:

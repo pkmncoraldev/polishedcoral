@@ -2358,6 +2358,9 @@ WithdrawUsers:
 	db SQUIRTLE
 	db WARTORTLE
 	db BLASTOISE
+	db SLOWPOKE
+	db SLOWBRO
+	db SLOWKING
 	db DWEBBLE
 	db CRUSTLE
 	db -1
@@ -2616,6 +2619,9 @@ HypnosisUsers:
 	db POLIWHIRL
 	db POLIWRATH
 	db POLITOED
+	db SLOWPOKE
+	db SLOWBRO
+	db SLOWKING
 	db GASTLY
 	db HAUNTER
 	db GENGAR

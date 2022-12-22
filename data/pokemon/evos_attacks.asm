@@ -866,12 +866,39 @@ SlowpokeEvosAttacks:
 	db EVOLVE_LEVEL, 37, SLOWBRO
 	db EVOLVE_TRADE, KINGS_ROCK, SLOWKING
 	db 0 ; no more evolutions
+	db 1, CURSE
+	db 1, SING_HYPNOSIS
 	db 1, TACKLE_SCRATCH_POUND
+	db 5, GROWL
+	db 9, WATER_GUN
+	db 14, CONFUSION
+	db 19, DISABLE
+	db 23, HEADBUTT
+	db 28, BUBBLE_BEAM
+	db 32, ZEN_HEADBUTT
+	db 36, REST
+	db 45, AMNESIA
+	db 49, SNORE
+	db 54, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 SlowbroEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 1, CURSE
+	db 1, SING_HYPNOSIS
 	db 1, TACKLE_SCRATCH_POUND
+	db 5, GROWL
+	db 9, WATER_GUN
+	db 14, CONFUSION
+	db 19, DISABLE
+	db 23, HEADBUTT
+	db 28, BUBBLE_BEAM
+	db 32, ZEN_HEADBUTT
+	db 36, REST
+	db 45, AMNESIA
+	db 49, SNORE
+	db 54, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 MagnemiteEvosAttacks:
@@ -1610,7 +1637,7 @@ MeganiumEvosAttacks:
 	db  1, REFLECT
 	db  1, LIGHT_SCREEN
 	db  1, BODY_SLAM
-	db  1, PSYCHIC
+	db  1, PSYCHIC_M
 	db 43, SAFEGUARD
 	db 48, HEAL_BELL
 	db 54, PETAL_DANCE
@@ -2116,7 +2143,22 @@ MurkrowEvosAttacks:
 
 SlowkingEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, POWER_GEM
+	db 1, NASTY_PLOT
+	db 1, CURSE
+	db 1, SING_HYPNOSIS
 	db 1, TACKLE_SCRATCH_POUND
+	db 5, GROWL
+	db 9, WATER_GUN
+	db 14, CONFUSION
+	db 19, DISABLE
+	db 23, HEADBUTT
+	db 28, BUBBLE_BEAM
+	db 32, ZEN_HEADBUTT
+	db 36, REST
+	db 45, AMNESIA
+	db 49, SNORE
+	db 54, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 PinecoEvosAttacks:

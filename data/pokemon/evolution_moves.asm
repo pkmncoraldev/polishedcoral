@@ -51,7 +51,7 @@ EvolutionMoves::
 	db NO_MOVE      						; PONYTA
 	db FURY_SWIPES_FURY_ATTACK_COMET_PUNCH  ; RAPIDASH
 	db NO_MOVE      						; SLOWPOKE
-	db NO_MOVE      						; SLOWBRO
+	db DEFENSE_CURL_HARDEN_WITHDRAW      	; SLOWBRO
 	db NO_MOVE      						; MAGNEMITE
 	db NO_MOVE      						; MAGNETON
 	db NO_MOVE      						; DODUO
@@ -124,7 +124,7 @@ EvolutionMoves::
 	db CONFUSION      						; ESPEON
 	db PURSUIT      						; UMBREON
 	db NO_MOVE      						; MURKROW
-	db NO_MOVE      						; SLOWKING
+	db NASTY_PLOT      						; SLOWKING
 	db NO_MOVE      						; PINECO
 	db NO_MOVE      						; FORRETRESS
 	db NO_MOVE      						; GLIGAR

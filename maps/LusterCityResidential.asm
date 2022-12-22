@@ -39,7 +39,7 @@ LusterCityResidential_MapScriptHeader:
 	xy_trigger 1, 31,  5, 0, LusterCityResidentialDark, 0, 0
 	xy_trigger 1, 35,  5, 0, LusterCityResidentialDark, 0, 0
 
-	db 10 ; bg events
+	db 11 ; bg events
 	signpost 18, 13, SIGNPOST_READ, LusterTrashcan1
 	signpost 18, 14, SIGNPOST_READ, LusterTrashcan2
 	signpost 35, 14, SIGNPOST_READ, LusterTrashcan3
@@ -50,6 +50,7 @@ LusterCityResidential_MapScriptHeader:
 	signpost 12, 27, SIGNPOST_READ, LusterSign1
 	signpost 15, 23, SIGNPOST_READ, LusterSign2
 	signpost 53, 21, SIGNPOST_READ, LusterSign3
+	signpost 34, 11, SIGNPOST_READ, LusterEmptyApartment
 
 	db 20 ; object events
 	person_event SPRITE_TRAFFIC_LIGHT, 44, 25, SPRITEMOVEDATA_TILE_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -241,6 +242,9 @@ LusterSign2:
 	
 LusterSign3:
 	jumptext LusterSign3Text
+	
+LusterEmptyApartment:
+	jumptext LusterEmptyApartmentText
 	
 Luster1NPC1:
 	jumptextfaceplayer Luster1NPC1Text
@@ -868,6 +872,15 @@ LusterTrashcanTextJump1:
 	
 LusterTrashcanTextJump2:
 	db "@@"
+	
+LusterEmptyApartmentText:
+	text "It's locked…"
+	
+	para "There's a sign on"
+	line "the door."
+	
+	para "“FOR RENT”"
+	done
 	
 LusterTrashcanText1:
 	text "<PLAYER> dug"

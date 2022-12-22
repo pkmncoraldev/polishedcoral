@@ -1028,7 +1028,7 @@
 	db 19, LITWICK		;1%
 	
 	map_id SPOOKHOUSE_LIVING_ROOM
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 21, LITWICK		;30%
 	db 21, GASTLY		;30%
@@ -1055,7 +1055,7 @@
 	db 21, RATTATA		;1%
 	
 	map_id SPOOKHOUSE_DINING_ROOM
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 21, LITWICK		;30%
 	db 21, GASTLY		;30%
@@ -1082,7 +1082,7 @@
 	db 21, RATTATA		;1%
 	
 	map_id SPOOKHOUSE_BEDROOM
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 21, LITWICK		;30%
 	db 21, GASTLY		;30%
@@ -1109,7 +1109,7 @@
 	db 21, RATTATA		;1%
 	
 	map_id SPOOKHOUSE_HALLWAY_1
-	db 8 percent, 8 percent, 8 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 21, LITWICK		;30%
 	db 21, GASTLY		;30%
@@ -1136,7 +1136,7 @@
 	db 21, RATTATA		;1%
 	
 	map_id SPOOKHOUSE_HALLWAY_2
-	db 8 percent, 8 percent, 8 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 21, LITWICK		;30%
 	db 21, GASTLY		;30%

@@ -186,6 +186,7 @@ LusterApartment3_1F_BlockData:
 	
 GlintApartmentRight2F_BlockData:
 LusterApartment2_2F_BlockData:
+LusterApartment3_2F_BlockData:
 	INCBIN "maps/Apartment2FBlue.ablk.lz"
 	
 LusterApartment1_1F_BlockData:
@@ -193,7 +194,6 @@ LusterApartment5_1F_BlockData:
 	INCBIN "maps/Apartment1FGreen.ablk.lz"
 	
 LusterApartment1_2F_BlockData:
-LusterApartment3_2F_BlockData:
 	INCBIN "maps/Apartment2FGreen.ablk.lz"
 	
 LusterApartment4_1F_BlockData:

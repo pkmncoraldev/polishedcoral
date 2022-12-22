@@ -21,6 +21,7 @@ EastTrainCaboose_MapScriptHeader:
 	const EAST_TRAIN_CABOOSE_SNARE_GRUNT
 
 EastTrainCabooseTrigger0:
+	setevent EVENT_BEAT_TRAIN_CABIN_1_SNARE_1
 	applyonemovement PLAYER, remove_fixed_facing
 	applyonemovement PLAYER, step_left
 	playsound SFX_EXIT_BUILDING
@@ -118,6 +119,7 @@ EastTrainCabooseTrigger0:
 	closetext
 	pause 5
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_SNARE_GIRL
+	clearevent EVENT_BEAT_TRAIN_CABIN_1_SNARE_1
 	dotrigger $1
 	end
 	

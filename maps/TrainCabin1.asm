@@ -108,8 +108,6 @@ TrainCabin1Trigger0:
 	end
 	
 TrainCabin1Trigger1:
-;	TODO: set blackoutmod to the train
-	setevent EVENT_DONE_SNARE_TRAIN
 	dotrigger $2
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_OFFICER
 	disappear TRAIN_CABIN_1_SNARE_OFFICER_STAND

@@ -45,6 +45,14 @@ LusterTrainStationTrigger1:
 	end
 
 LusterTrainStationCallback:
+	checkevent EVENT_MET_MR_NETT
+	iffalse .skip
+	changeblock $16, $8, $59
+	changeblock $16, $a, $5a
+	changeblock $14, $a, $56
+	changeblock $14, $c, $56
+	changeblock $16, $c, $56
+.skip
 	checkmapscene LUSTER_TRAIN_STATION, $1
 	iffalse .end
 	special Special_StopLandmarkTimer

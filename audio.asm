@@ -68,10 +68,10 @@ INCLUDE "audio/music/lustersewer.asm"
 INCLUDE "audio/music/wildbattle.asm"
 INCLUDE "audio/music/trainerbattle.asm"
 INCLUDE "audio/music/dodriorace.asm"
+INCLUDE "audio/music/encountergymleader.asm"
 
 
 SECTION "Music 4", ROMX
-INCLUDE "audio/music/encountergymleader.asm"
 INCLUDE "audio/music/gscgamecorner.asm"
 INCLUDE "audio/music/oasis.asm"
 INCLUDE "audio/music/mountaintop.asm"

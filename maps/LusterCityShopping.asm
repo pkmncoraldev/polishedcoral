@@ -348,7 +348,8 @@ Luster2NPC4Text:
 	cont "cribe as pretty."
 	
 	para "Well, there is the"
-	line "park, I guess."
+	line "ROUTE 11 park,"
+	cont "I guess."
 	
 	para "But, that place is"
 	line "always so crowded."

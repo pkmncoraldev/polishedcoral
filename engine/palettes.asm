@@ -1428,52 +1428,46 @@ endc
 
 
 JohtoBadgePalettes:
-if !DEF(MONOCHROME)
-; Zephyr Badge
-	RGB 31, 31, 31
-	RGB 21, 21, 24
-	RGB 13, 13, 16
-	RGB 00, 00, 00
-; Hive Badge
-	RGB 31, 31, 31
-	RGB 31, 12, 12
-	RGB 29, 00, 00
-	RGB 00, 00, 00
-; Plain Badge
-	RGB 31, 31, 31
-	RGB 29, 29, 29
-	RGB 27, 24, 00
-	RGB 00, 00, 00
-; Fog Badge
-	RGB 31, 31, 31
-	RGB 23, 22, 26
-	RGB 11, 10, 23
-	RGB 00, 00, 00
-; Storm Badge
-	RGB 31, 31, 31
-	RGB 27, 16, 08
-	RGB 12, 07, 04
-	RGB 00, 00, 00
-; Mineral Badge
+; 1
 	RGB 31, 31, 31
 	RGB 23, 26, 29
 	RGB 15, 19, 23
 	RGB 00, 00, 00
-; Glacier Badge
+; 2
 	RGB 31, 31, 31
-	RGB 19, 27, 30
-	RGB 00, 22, 26
+	RGB 23, 22, 26
+	RGB 11, 10, 23
 	RGB 00, 00, 00
-; Rising Badge
+; 3
 	RGB 31, 31, 31
-	RGB 30, 09, 05
-	RGB 05, 05, 06
+	RGB 29, 29, 29
+	RGB 27, 24, 00
 	RGB 00, 00, 00
-else
-rept 8
-	MONOCHROME_RGB_FOUR
-endr
-endc
+; 4
+	RGB 31, 31, 31
+	RGB 31, 12, 12
+	RGB 29, 00, 00
+	RGB 00, 00, 00
+; 5
+	RGB 31, 31, 31
+	RGB 23, 26, 29
+	RGB 15, 19, 23
+	RGB 00, 00, 00
+; 6
+	RGB 31, 31, 31
+	RGB 23, 26, 29
+	RGB 15, 19, 23
+	RGB 00, 00, 00
+; 7
+	RGB 31, 31, 31
+	RGB 23, 26, 29
+	RGB 15, 19, 23
+	RGB 00, 00, 00
+; 8
+	RGB 31, 31, 31
+	RGB 23, 26, 29
+	RGB 15, 19, 23
+	RGB 00, 00, 00
 
 
 KantoBadgePalettes:

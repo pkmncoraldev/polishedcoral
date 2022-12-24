@@ -3499,8 +3499,8 @@ CheckWhetherToAskSwitch: ; 3d714
 	and a
 	jp nz, .return_nc
 	ld a, [wOptions2]
-	and (1 << BATTLE_SWITCH) | (1 << BATTLE_PREDICT)
-	jr z, .return_nc
+	bit BATTLE_SWITCH, a
+	jr nz, .return_nc
 	ld a, [wCurPartyMon]
 	push af
 	ld a, [wCurBattleMon]

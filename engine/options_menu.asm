@@ -198,7 +198,7 @@ Options_BattleEffects: ; e4365
 ; e43a0
 
 
-Options_BattleStyle: ; e43a0
+Options_BattleStyle:
 	ld hl, wOptions2
 	ld a, [hJoyPressed]
 	bit D_LEFT_F, a
@@ -220,25 +220,21 @@ Options_BattleStyle: ; e43a0
 
 .ToggleShift:
 	res BATTLE_SWITCH, [hl]
-	ld de, .Set
+	ld de, .Shift
 	jr .Display
 
 .ToggleSet:
 	set BATTLE_SWITCH, [hl]
-	ld de, .Shift
+	ld de, .Set
 
 .Display:
 	hlcoord 11, 7
 	call PlaceString
 	and a
 	ret
-; e43d1
 
-.Shift:
-	db "SHIFT@"
-.Set:
-	db "SET  @"
-; e43dd
+.Shift: db "SHIFT@"
+.Set:   db "SET  @"
 
 
 Options_Frame: ; e44fa

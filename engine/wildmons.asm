@@ -29,6 +29,12 @@ FindNest: ; 2a01f
 ; Parameters:
 ; e: 0 = North Onwa, 1 = South Onwa
 ; wNamedObjectIndexBuffer: species
+	ld a, [wCurSpecies]
+	cp SMEARGLE
+	jr nz, .not_smeargle
+	ld a, DITTO
+	ld [wNamedObjectIndexBuffer], a
+.not_smeargle
 	hlcoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	xor a

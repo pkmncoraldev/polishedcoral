@@ -973,6 +973,15 @@ CheckMenuOW: ; 96b30
 	jp z, .NoMenu
 	cp COLL_CONVEYOR_RIGHT
 	jp z, .NoMenu
+	ld a, [wPlayerState]
+	cp PLAYER_SITTING
+	jp z, .NoMenu
+	cp PLAYER_SKATEBOARD_GRINDING
+	jp z, .NoMenu
+	cp PLAYER_FALLING
+	jp z, .NoMenu
+	cp PLAYER_SAND
+	jp z, .NoMenu
 
 	xor a
 	ld [hMenuReturn], a

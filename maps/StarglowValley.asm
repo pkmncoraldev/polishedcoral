@@ -340,7 +340,7 @@ StarglowSnare3:
 	applymovement PLAYER, Movement_StarglowPlayerSnare3
 	spriteface PLAYER, LEFT
 .cont
-	setflag ENGINE_MET_RODNEY
+	setevent EVENT_MET_RODNEY
 	callasm .MetRodney
 	faceplayer
 	opentext

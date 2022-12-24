@@ -363,6 +363,7 @@ SunbeamFirstContest:
 	dotrigger $2
 	setevent EVENT_FIRST_BIKINI_CONTEST
 	setevent EVENT_SUNBEAM_CROWD_GONE
+	setevent EVENT_MET_CHARLIE
 	setflag ENGINE_DAILY_BIKINI_CONTEST
 	end
 

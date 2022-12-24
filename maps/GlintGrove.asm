@@ -594,7 +594,7 @@ GlintGroveStanley:
 	writetext GlintGroveStanleyText3
 	buttonsound
 	verbosegiveitem LIBRARY_CARD
-	setflag ENGINE_MET_STANLEY
+	setevent EVENT_MET_STANLEY
 ;	callasm .MetStanley
 	writetext GlintGroveStanleyText4
 	buttonsound

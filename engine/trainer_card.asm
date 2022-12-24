@@ -705,23 +705,29 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	ld de, .Faces2Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	
-	ld a, [wMetGymLeaderFlags]
-	bit 7, a
-	call nz, .leader8
-	bit 6, a
-	call nz, .leader7
-	bit 5, a
-	call nz, .leader6
-	bit 4, a
-	call nz, .leader5
-	bit 3, a
-	call nz, .leader4
-	bit 2, a
-	call nz, .wendy
-	bit 1, a
-	call nz, .rodney
-	bit 0, a
-	call nz, .stanley
+	eventflagcheck EVENT_MET_LEADER8
+	jp nz, .leader8
+.return_1
+	eventflagcheck EVENT_MET_LEADER7
+	jp nz, .leader7
+.return_2
+	eventflagcheck EVENT_MET_LEADER6
+	jp nz, .leader6
+.return_3
+	eventflagcheck EVENT_MET_LEADER5
+	jp nz, .leader5
+.return_4
+	eventflagcheck EVENT_MET_CHARLIE
+	jp nz, .charlie
+.return_5
+	eventflagcheck EVENT_MET_WENDY
+	jp nz, .wendy
+.return_6
+	eventflagcheck EVENT_MET_RODNEY
+	jp nz, .rodney
+.return_7
+	eventflagcheck EVENT_MET_STANLEY
+	jp nz, .stanley
 	ret
 	
 .leader8
@@ -731,7 +737,7 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	hlcoord $f, $f
 	ld de, .Leader82Tilemap
 	call TrainerCardSetup_PlaceTilemapString
-	ret
+	jp .return_1
 	
 .leader7
 	hlcoord $b, $e
@@ -740,7 +746,7 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	hlcoord $b, $f
 	ld de, .Leader72Tilemap
 	call TrainerCardSetup_PlaceTilemapString
-	ret
+	jp .return_2
 	
 .leader6
 	hlcoord 7, $e
@@ -749,7 +755,7 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	hlcoord 7, $f
 	ld de, .Leader62Tilemap
 	call TrainerCardSetup_PlaceTilemapString
-	ret
+	jp .return_3
 	
 .leader5
 	hlcoord 3, $e
@@ -758,16 +764,16 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	hlcoord 3, $f
 	ld de, .Leader52Tilemap
 	call TrainerCardSetup_PlaceTilemapString
-	ret
+	jp .return_4
 	
-.leader4
+.charlie
 	hlcoord $f, $b
 	ld de, .Leader41Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	hlcoord $f, $c
 	ld de, .Leader42Tilemap
 	call TrainerCardSetup_PlaceTilemapString
-	ret
+	jp .return_5
 	
 .wendy
 	hlcoord $b, $b
@@ -776,7 +782,7 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	hlcoord $b, $c
 	ld de, .Leader32Tilemap
 	call TrainerCardSetup_PlaceTilemapString
-	ret
+	jp .return_6
 	
 .rodney
 	hlcoord 7, $b
@@ -785,7 +791,7 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	hlcoord 7, $c
 	ld de, .Rodney2Tilemap
 	call TrainerCardSetup_PlaceTilemapString
-	ret
+	jp .return_7
 	
 .stanley
 	hlcoord 3, $b

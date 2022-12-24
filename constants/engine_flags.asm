@@ -219,6 +219,7 @@
 	const ENGINE_GOT_ROCK_CLIMB
 	const ENGINE_GOT_SURF
 
+;old and unused
 	const ENGINE_MET_STANLEY
 	const ENGINE_MET_RODNEY
 	const ENGINE_MET_WENDY

@@ -220,6 +220,7 @@ EventideGymNoSwitchScript:
 	end
 	
 EventideGymWendy:
+	setevent EVENT_MET_WENDY
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_WENDY

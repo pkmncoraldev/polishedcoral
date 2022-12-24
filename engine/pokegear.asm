@@ -2561,7 +2561,16 @@ _Area: ; 91d11
 	ld h, b
 	ld l, c
 	ld de, .String_SNest
+	call PlaceString
+	ld a, [wCurSpecies]
+	cp MAGIKARP
+	ret nz
+	hlcoord 5, 6
+	ld de, .magikarp_string
 	jp PlaceString
+	
+.magikarp_string:
+	db "Many Areas@"
 
 ; 91e16
 

@@ -10,4 +10,34 @@
 	db 0, 0
 	db 0, 0
 	
+	map_id ROUTE_2
+	db 0
+	db 0, POLIWAG
+	db 0, 0
+	db 0, 0
+	db 0, 0
+	db 0, 0
+	db 0, 0
+	db 0, 0
+	
+	map_id STARGLOW_VALLEY
+	db 0
+	db 0, POLIWAG
+	db 0, 0
+	db 0, 0
+	db 0, 0
+	db 0, 0
+	db 0, 0
+	db 0, 0
+	
+	map_id ROUTE_4
+	db 0
+	db 0, POLIWAG
+	db 0, 0
+	db 0, 0
+	db 0, 0
+	db 0, 0
+	db 0, 0
+	db 0, 0
+	
 	db -1 ; end

@@ -1867,7 +1867,7 @@ PokefanFGroup:
 	db "URSALA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 29, PONYTA
+	db 27, VAPOREON
 	db 29, EXEGGCUTE
 	db 23, STARYU
 	db -1 ; end
@@ -2084,7 +2084,7 @@ BeautyGroup:
 	; party
 	db 25, TOGETIC
 	db 23, WHIMSICOTT
-	db 24, NATU
+	db 22, LEAFEON
 	db -1 ; end
 
 ; ================
@@ -2605,7 +2605,7 @@ BoarderGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 27, SWINUB
-	db 27, RATICATE
+	db 25, JOLTEON
 	db -1 ; end
 
 ; ================
@@ -3071,8 +3071,8 @@ DelinquentfGroup:
 	db "HELGA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 29, DWEBBLE
-	db 30, JOLTIK
+	db 29, FLAAFFY
+	db 28, UMBREON
 	db -1 ; end
 
 ; ================
@@ -3081,8 +3081,8 @@ DelinquentfGroup:
 	db "MERTLE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 29, FLAAFFY
-	db 30, HORSEA
+	db 29, DWEBBLE
+	db 28, ESPEON
 	db -1 ; end
 
 ; ================
@@ -3091,7 +3091,8 @@ DelinquentfGroup:
 	db "REGINA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 32, MACHOKE
+	db 29, MACHOKE
+	db 28, SYLVEON
 	db -1 ; end
 
 ; ================

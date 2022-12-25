@@ -133,6 +133,10 @@ Options_TextSpeed: ; e42f5
 	ld a, [wOptions1]
 	and $fc
 	or c
+	cp $c0
+	jr nz, .skip
+	ld a, $c1
+.skip
 	ld [wOptions1], a
 
 .NonePressed:
@@ -162,7 +166,7 @@ Options_TextSpeed: ; e42f5
 .Slow:
 	db "SLOW   @"
 .Instant:
-	db "INSTANT@"
+	db "FAST   @"
 ; e4346
 
 

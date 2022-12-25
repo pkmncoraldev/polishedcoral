@@ -134,7 +134,7 @@ MainMenuJoypadLoop: ; 49de4
 MainMenu_PrintCurrentTimeAndDay: ; 49e09
 	ld a, [wSaveFileExists]
 	and a
-	ret z
+	jr z, .nofile
 	xor a
 	ld [hBGMapMode], a
 	call .PlaceBox
@@ -148,8 +148,12 @@ MainMenu_PrintCurrentTimeAndDay: ; 49e09
 	ld a, $1
 	ld [hBGMapMode], a
 	ret
-; 49e27
 
+.nofile
+	hlcoord 0, 17
+	ld de, .VersionNumberText
+	call PlaceString
+	ret
 
 .PlaceBox: ; 49e27
 	call CheckRTCStatus
@@ -202,13 +206,13 @@ endc
 ; 49e75
 
 .VersionNumberPrint:
-	hlcoord 10, 15
+	hlcoord 0, 13
 	ld de, .VersionNumberText
 	call PlaceString
 	ret
 	
 .VersionNumberText
-	db "indev@"
+	db "2022 Demo Ver.   1.0@"
 
 .PrintTimeNotSet: ; 49e75
 	hlcoord 1, 14

@@ -432,6 +432,7 @@ Script_ReceivePhoneCall: ; 0x90241
 	callasm RingTwice_StartCall
 	ptcall wPhoneScriptPointer
 	waitbutton
+	playsound SFX_HANG_UP
 	callasm HangUp
 	closetext
 	callasm InitCallReceiveDelay

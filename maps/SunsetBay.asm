@@ -103,7 +103,12 @@ SunsetBayTrigger3:
 	
 SunsetBayTrigger4:
 	special Special_StartLandmarkTimer
+	checkevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
+	iftrue .got_pokegear
 	dotrigger $0
+	end
+.got_pokegear
+	dotrigger $1
 	end
 	
 SunsetBayFlyPoint:

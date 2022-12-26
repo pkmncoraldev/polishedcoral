@@ -148,7 +148,7 @@ MoveDescriptions::
 	dw SporeDescription
 	dw FlashDescription
 	dw LockOnDescription
-	dw SplashDescription
+	dw ClearSmogDescription
 	dw DragonDanceDescription
 	dw OminousWindDescription
 	dw ExplosionDescription

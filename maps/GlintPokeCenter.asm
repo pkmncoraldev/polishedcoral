@@ -59,7 +59,8 @@ GlintPokeCenterTeaLady:
 	closetext
 	spriteface GLINT_POKECENTER_TEA_LADY, RIGHT
 	pause 40
-	spriteface GLINT_POKECENTER_TEA_LADY, LEFT
+	setlasttalked GLINT_POKECENTER_TEA_LADY
+	faceplayer
 	opentext
 	writetext GlintPokeCenterTeaLadyText6
 	waitbutton

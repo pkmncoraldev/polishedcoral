@@ -129,6 +129,9 @@ SprucePhoneScript: ; 0xbd081
 	if_equal SPECIALCALL_COMETOISLAND, .cometoisland
 	if_equal SPECIALCALL_POKERUS, .pokerus
 	
+	checkevent EVENT_SPRUCELAB_SPRUCE3_GONE ;done pokeflute cutscene
+	iftrue .normal
+	
 	checkevent EVENT_FIRST_TRIP_TO_ISLAND
 	iftrue .onisland
 	

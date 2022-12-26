@@ -155,7 +155,7 @@ SunbeamReserveSlowpoke:
 SunbeamReserveLopunny:
 	opentext
 	writetext SunbeamReserveLopunnyText
-	cry BULBASAUR ;LOPUNNY
+	cry LOPUNNY
 	waitbutton
 	closetext
 	end
@@ -163,7 +163,7 @@ SunbeamReserveLopunny:
 SunbeamReserveAltaria:
 	opentext
 	writetext SunbeamReserveAltariaText
-	cry BULBASAUR ;ALTARIA
+	cry ALTARIA
 	waitbutton
 	closetext
 	end

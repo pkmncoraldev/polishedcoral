@@ -24,7 +24,7 @@ DaybreakMarcusMom:
 DaybreakMarcusHouseBreloom:
 	opentext
 	writetext DaybreakMarcusHouseBreloomText
-	cry BULBASAUR
+	cry BRELOOM
 	waitbutton
 	closetext
 	end

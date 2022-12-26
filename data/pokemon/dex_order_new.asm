@@ -72,6 +72,8 @@ NewPokedexOrder:
 	db CRUSTLE
 	db ONIX
 	db STEELIX
+	db VOLTORB
+	db ELECTRODE
 	db MAGIKARP
 	db GYARADOS
 	db POLIWAG

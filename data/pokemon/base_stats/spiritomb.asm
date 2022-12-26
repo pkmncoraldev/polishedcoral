@@ -1,4 +1,4 @@
-	db  50,  92, 108,  92, 108,  35
+	db  50,  92, 108,  35, 92,  108
 	;   hp  atk  def  spd  sat  sdf
 
 	db GHOST, DARK

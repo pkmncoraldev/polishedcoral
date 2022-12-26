@@ -170,7 +170,7 @@ MoveNames::
 	db "WILL-O-WISP@"
 	db "ZEN HEADBUTT@"
 	db "BRICK BREAK@"
-	db "FLAME WHEEL@"
+	db "FLAME BURST@"
 	db "HYPER VOICE@"
 	db "CURSE@"
 	db "GYRO BALL@"

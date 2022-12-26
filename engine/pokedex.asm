@@ -1682,8 +1682,18 @@ Pokedex_CheckCaught: ; 40bc4 (10:4bc4)
 	jr .cont
 .not_exeggutor_a
 	cp MAROWAK_A
-	jr nz, .cont
+	jr nz, .not_marowak_a
 	ld a, MAROWAK
+	jr .cont
+.not_marowak_a
+	cp GRIMER_A
+	jr nz, .not_grimer_a
+	ld a, GRIMER
+	jr .cont
+.not_grimer_a
+	cp MUK_A
+	jr nz, .cont
+	ld a, MUK
 .cont
 	dec a
 	call CheckCaughtMon
@@ -1712,8 +1722,18 @@ Pokedex_CheckSeen: ; 40bd0
 	jr .cont
 .not_exeggutor_a
 	cp MAROWAK_A
-	jr nz, .cont
+	jr nz, .not_marowak_a
 	ld a, MAROWAK
+	jr .cont
+.not_marowak_a
+	cp GRIMER_A
+	jr nz, .not_grimer_a
+	ld a, GRIMER
+	jr .cont
+.not_grimer_a
+	cp MUK_A
+	jr nz, .cont
+	ld a, MUK
 .cont
 	dec a
 	call CheckSeenMon
@@ -2569,6 +2589,18 @@ NewPokedexEntry: ; fb877
 	jr .cont
 .not_exeggutor_a
 	cp MAROWAK_A
+	jr nz, .not_marowak_a
+	ld a, MAROWAK
+	jr .cont
+.not_marowak_a
+	cp GRIMER_A
+	jr nz, .not_grimer_a
+	ld a, GRIMER
+	jr .cont
+.not_grimer_a
+	cp MUK_A
+	jr nz, .cont
+	ld a, MUK
 	jr nz, .cont
 	ld a, MAROWAK
 .cont

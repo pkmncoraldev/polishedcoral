@@ -535,18 +535,15 @@ PokeBallEffect: ; e8a2
 	ld hl, wEnemyMonDVs - (MON_DVS - (MON_EVS -1))
 	predef CalcPkmnStats
 
+	ld a, [wEnemyMonSpecies]
+	ld [wPlaceBallsY], a
+
 	pop af
 	ld [wMonJustCaught], a
 	ld [wWildMon], a
 	ld [wCurPartySpecies], a
 	ld [wd265], a
 
-	dec a
-	call CheckCaughtMon
-
-	ld a, c
-	push af
-	ld a, [wd265]
 	cp RAICHU_A
 	jr nz, .not_raichu_a
 	ld a, RAICHU
@@ -563,9 +560,56 @@ PokeBallEffect: ; e8a2
 	jr .cont
 .not_exeggutor_a
 	cp MAROWAK_A
-	jr nz, .cont
+	jr nz, .not_marowak_a
 	ld a, MAROWAK
+	jr .cont
+.not_marowak_a
+	cp GRIMER_A
+	jr nz, .not_grimer_a
+	ld a, GRIMER
+	jr .cont
+.not_grimer_a
+	cp MUK_A
+	jr nz, .cont
+	ld a, MUK
 .cont
+
+	dec a
+	call CheckCaughtMon
+
+	ld a, c
+	push af
+	ld a, [wd265]
+	cp RAICHU_A
+	jr nz, .not_raichu_a2
+	ld a, RAICHU
+	jr .cont2
+.not_raichu_a2
+	cp EXEGGCUTE_A
+	jr nz, .not_exeggcute_a2
+	ld a, EXEGGCUTE
+	jr .cont2
+.not_exeggcute_a2
+	cp EXEGGUTOR_A
+	jr nz, .not_exeggutor_a2
+	ld a, EXEGGUTOR
+	jr .cont2
+.not_exeggutor_a2
+	cp MAROWAK_A
+	jr nz, .not_marowak_a2
+	ld a, MAROWAK
+	jr .cont2
+.not_marowak_a2
+	cp GRIMER_A
+	jr nz, .not_grimer_a2
+	ld a, GRIMER
+	jr .cont2
+.not_grimer_a2
+	cp MUK_A
+	jr nz, .cont2
+	ld a, MUK
+.cont2
+	ld [wEnemyMonSpecies], a
 	dec a
 	call SetSeenAndCaughtMon
 	pop af
@@ -585,6 +629,10 @@ PokeBallEffect: ; e8a2
 	predef NewPokedexEntry
 
 .skip_pokedex
+	ld a, [wPlaceBallsY]
+	ld [wMonJustCaught], a
+	ld [wWildMon], a
+	ld [wCurPartySpecies], a
 	ld a, [wBattleType]
 	cp BATTLETYPE_CONTEST
 	jp z, .catch_bug_contest_mon

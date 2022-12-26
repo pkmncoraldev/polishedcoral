@@ -271,8 +271,18 @@ HatchEggs: ; 16f70 (5:6f70)
 	jr .cont
 .not_exeggutor_a
 	cp MAROWAK_A
-	jr nz, .cont
+	jr nz, .not_marowak_a
 	ld a, MAROWAK
+	jr .cont
+.not_marowak_a
+	cp GRIMER_A
+	jr nz, .not_grimer_a
+	ld a, GRIMER
+	jr .cont
+.not_grimer_a
+	cp MUK_A
+	jr nz, .cont
+	ld a, MUK
 .cont
 	dec a
 	call SetSeenAndCaughtMon

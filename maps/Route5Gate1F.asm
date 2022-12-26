@@ -413,7 +413,7 @@ UnknownText_0x19ab1f:
 	line "SUNBEAM ISLAND."
 
 	para "The #MON PROF."
-	line "conductes his"
+	line "conducts his"
 	cont "research on the"
 	cont "island."
 	done

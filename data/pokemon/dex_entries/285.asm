@@ -6,5 +6,5 @@
 	next "places. By day it"
 	next "remains still in"
 	page "the forest shade."
-	next "It releases toxic"
+	next "It releases spores"
 	next "from its head.@"

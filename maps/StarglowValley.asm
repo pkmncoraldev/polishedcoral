@@ -645,7 +645,7 @@ StarglowFisher3Text:
 	cont "get a bite."
 	
 	para "In times like"
-	line "that, persistance"
+	line "that, persistence"
 	cont "is the key."
 	
 	para "Don't give up!"

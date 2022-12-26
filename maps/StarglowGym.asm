@@ -561,8 +561,8 @@ StarglowGymRodneyTextBeforeBattle:
 	cont "before you."
 	
 	para "I, in turn, use"
-	line "those skills train"
-	cont "my own WATER-type"
+	line "those skills to"
+	cont "train my own"
 	cont "#MON!"
 	
 	para "Let me show you"

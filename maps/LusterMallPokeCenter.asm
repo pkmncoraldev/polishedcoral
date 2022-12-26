@@ -52,7 +52,8 @@ LusterMallPokeCenterNPC2Text:
 	text "The #MON"
 	line "CENTER is the only"
 	cont "thing in this MALL"
-	cont "that doesn't money!"
+	cont "that doesn't cost"
+	cont "money!"
 	
 	para "I gotta make some"
 	line "cash!"

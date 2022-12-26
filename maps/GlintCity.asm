@@ -298,7 +298,7 @@ GlintNPC6Text:
 	
 	para "Make sure to stock"
 	line "up before you"
-	cont "challange the GYM"
+	cont "challenge the GYM"
 	cont "LEADER!"
 	
 	para "Here."

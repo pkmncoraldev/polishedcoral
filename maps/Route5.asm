@@ -84,7 +84,7 @@ TrainerRoute5_3:
 
 	text "Nyehehe…"
 	
-	para "No on understands"
+	para "No one understands"
 	line "me or my bugs…"
 	done
 

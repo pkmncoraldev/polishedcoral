@@ -659,7 +659,7 @@ GlintGymStanleyTextBeforeBattle1:
 	
 	para "Sure, they don't"
 	line "have many"
-	cont "strentghs,"
+	cont "strengths,"
 	
 	para "but they don't have"
 	line "many weaknesses"

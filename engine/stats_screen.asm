@@ -813,7 +813,7 @@ TN_PrintToD:
 	call PlaceString
 	ld a, [wTempMonCaughtTime]
 	and CAUGHTTIME_MASK
-	ld de, .unknown
+	ld de, .dusk
 	jr z, .print
 	rlca
 	rlca
@@ -840,8 +840,8 @@ TN_PrintToD:
 .nite
 	db "NITE@"
 
-.unknown
-	db "???@"
+.dusk
+	db "DUSK@"
 
 TN_PrintLocation:
 	ld a, [wTempMonCaughtLocation]

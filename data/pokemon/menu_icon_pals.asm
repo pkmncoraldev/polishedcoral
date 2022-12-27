@@ -126,7 +126,7 @@ MenuMonIconColors::
 	iconpal BLUE, RED ; WOOPER
 	iconpal BLUE, RED ; QUAGSIRE
 	iconpal PURPLE, GREEN ; ESPEON
-	iconpal PURPLE, GREEN ; UMBREON
+	iconpal GRAY, BLUE ; UMBREON
 	iconpal BLUE, PURPLE ; MURKROW
 	iconpal PINK, PURPLE ; SLOWKING
 	iconpal GRAY, RED ; PINECO

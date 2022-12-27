@@ -82,7 +82,7 @@ RodneyTextLoop:
 	
 StarglowGymRodneyRematch:
 	checkevent EVENT_BEAT_RODNEY_REMATCH
-	iftrue StarglowGymRodneyTextLoop
+	iftrue RodneyTextLoop
 	writetext StarglowGymRodneyTextBeforeBattle1Rematch
 	yesorno
 	iffalse .end

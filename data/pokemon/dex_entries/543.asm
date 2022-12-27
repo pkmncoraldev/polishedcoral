@@ -5,6 +5,6 @@
 	db   "Its bite injects"
 	next "a potent poison,"
 	next "enough to para-"
-	page "lyze lare bird"
+	page "lyze large bird"
 	next "#MON that try"
 	next "to prey on it.@"

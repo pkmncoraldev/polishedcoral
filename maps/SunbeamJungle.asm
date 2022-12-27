@@ -274,8 +274,8 @@ SunbeamJungleSnare2:
 
 	text "Run along now."
 	
-	para "I won't ask anymore"
-	line "questions…"
+	para "I won't ask any"
+	line "more questions…"
 	done
 
 .SeenText:

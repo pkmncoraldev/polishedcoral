@@ -6,4 +6,4 @@
 	next "black caves. Their"
 	next "enormous ears can"
 	page "emit ultrasonic"
-	next "waves of 200,000hz.@"
+	next "waves of 200kHz.@"

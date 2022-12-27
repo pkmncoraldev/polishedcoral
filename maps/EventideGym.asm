@@ -402,11 +402,11 @@ EventideGymWendyTextTMSpeech:
 	text "That TM contains"
 	line "ROOST."
 	
-	para "It let's your"
+	para "It lets your"
 	line "#MON land and"
 	cont "rest for a while"
 	cont "which will restore"
-	cont "half of it's HP!"
+	cont "half of its HP!"
 	
 	para "Keep in mind that"
 	line "they can be hit by"

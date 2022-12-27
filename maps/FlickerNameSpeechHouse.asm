@@ -42,7 +42,7 @@ FlickerHouse2NPC2Text:
 	line "the name of this"
 	cont "town,"
 	
-	para "but it's, also the"
+	para "but it's also the"
 	line "name of the train"
 	cont "station."
 	

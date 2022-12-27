@@ -71,6 +71,6 @@ EventidePokeCenterLitwickText1:
 	done
 	
 EventidePokeCenterLitwickText2:
-	text "It looks fully of"
+	text "It looks full of"
 	line "energy!"
 	done

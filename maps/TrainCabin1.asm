@@ -82,6 +82,7 @@ TrainCabin1Callback:
 	return
 	
 TrainCabin1Trigger0:
+	applyonemovement PLAYER, remove_fixed_facing
 	pause 20
 	playsound SFX_ELEVATOR_END
 	opentext

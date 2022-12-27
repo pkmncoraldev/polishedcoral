@@ -65,6 +65,9 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
+	giveitem LUM_BERRY, 1
+	giveitem RAWST_BERRY, 1
+	giveitem PERSIM_BERRY, 1
 	giveitem PP_UP, 99
 	giveitem CHOICE_SCARF, 1
 	giveitem QUICK_POWDER, 1

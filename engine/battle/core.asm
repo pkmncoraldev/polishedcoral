@@ -4660,13 +4660,14 @@ UseConfusionHealingItem: ; 3de51
 	ret nz
 
 .heal_status
+	call UseBattleItem
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVarAddr
 	res SUBSTATUS_CONFUSED, [hl]
 	call GetCurItemName
 	call ItemRecoveryAnim
-	ld hl, BattleText_ItemHealedConfusion
-	call StdBattleTextBox
+;	ld hl, BattleText_ItemHealedConfusion
+;	call StdBattleTextBox
 	ld a, [hBattleTurn]
 	and a
 	jr z, .do_partymon

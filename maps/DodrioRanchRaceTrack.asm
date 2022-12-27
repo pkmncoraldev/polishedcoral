@@ -274,6 +274,7 @@ RanchRideRaceFinishLine:
 .secondtime
 	writetext RanchRideRaceTimeTextSecondTime
 	waitbutton
+	setevent EVENT_FINISHED_RANCH_RACE_TWICE
 	checkcode VAR_PARTYCOUNT
 	if_equal 6, .PartyFull
 	writetext RanchRideGotDoduoText
@@ -284,7 +285,6 @@ RanchRideRaceFinishLine:
 	writetext RanchRideRaceText7
 	waitbutton
 	closetext
-	setevent EVENT_FINISHED_RANCH_RACE_TWICE
 	setevent EVENT_RANCH_GOT_DODUO
 	callasm DodrioRanchRaceTrackResetTimerAsm
 	end

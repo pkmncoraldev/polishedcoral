@@ -60,6 +60,14 @@ Script_Whiteout: ; 0x124ce
 	db "@"
 
 WhiteoutHandleEvents:
+	checkevent EVENT_TRAIN_GOING_EAST
+	iffalse .skip
+	checkitem TRAIN_PASS
+	iftrue .skip
+	giveitem TRAIN_TICKET
+.skip
+	clearevent EVENT_TRAIN_GOING_EAST
+	clearevent EVENT_TRAIN_GOING_WEST
 	clearevent EVENT_SNOWSTORM_HAPPENING
 	clearevent EVENT_SANDSTORM_HAPPENING
 	clearevent EVENT_AIRPORT_FENCE

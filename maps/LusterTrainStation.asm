@@ -167,6 +167,8 @@ LusterTrainStationCallback:
 	playmusic MUSIC_NONE
 	callasm LusterStationMusicAsm
 	setevent EVENT_MET_MR_NETT
+	clearevent EVENT_TRAIN_GOING_EAST
+	clearevent EVENT_TRAIN_GOING_WEST
 	dotrigger $0
 	jump .end
 .met_nett

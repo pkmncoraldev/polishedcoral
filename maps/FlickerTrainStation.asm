@@ -89,7 +89,6 @@ FlickerTrainStationClerk:
 	checkitem TRAIN_TICKET
 	iffalse .no
 	setevent EVENT_FLICKER_STATION_RIVAL
-	takeitem TRAIN_TICKET
 	writetext FlickerTrainStationClerkText6
 	waitbutton
 	writetext FlickerTrainStationFlashedTicketText
@@ -98,6 +97,7 @@ FlickerTrainStationClerk:
 	writetext FlickerTrainStationClerkText10
 	yesorno
 	iffalse .end
+	takeitem TRAIN_TICKET
 .return
 	closetext
 	domaptrigger TRAIN_CABIN_1, $0

@@ -140,7 +140,7 @@ Moves:: ; 41afb
 	move ICICLE_CRASH, EFFECT_FLINCH_HIT,         85, ICE,        90, 10,  30, PHYSICAL
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,    100, 20,   0, SPECIAL
 	move MIRROR_MOVE,  EFFECT_MIRROR_MOVE,         0, FLYING,    100, 20,   0, STATUS
-	move ROCK_WRECKER, EFFECT_HYPER_BEAM,        150, NORMAL,     90,  5,   0, PHYSICAL
+	move ROCK_WRECKER, EFFECT_HYPER_BEAM,        150, ROCK,       90,  5,   0, PHYSICAL
 	move WORK_UP_GROWTH,      EFFECT_GROWTH,             0, NORMAL,    100, 30, 100, STATUS
 	move AMNESIA,      EFFECT_SP_DEF_UP_2,         0, PSYCHIC,   100, 20,   0, STATUS
 	move ROOST,        EFFECT_ROOST,               0, FLYING,    100, 10,   0, STATUS

@@ -84,10 +84,37 @@ TwinkleGymYellowRoomPool2Asm:
 	
 TwinkleGymYellowRoomLeader:
 	opentext
+	checkevent EVENT_BEAT_CHARLIE
+	iftrue .rematch
 	checkevent EVENT_CAN_GET_RED_KEY
-	iftrue .checkrematch
+	iftrue .end
 	writetext TwinkleGymBlueRoomLeaderText1
-.return
+	waitbutton
+	closetext
+	winlosstext TwinkleGymBlueRoomLeaderWinText, 0
+	setlasttalked TWINKLE_GYM_YELLOW_ROOM_LEADER
+	checkcode VAR_BADGES
+	ifequal 4, .fourbadges2
+	loadtrainer SPA_TRAINER, MAC_3
+	jump .cont2
+.fourbadges2
+	loadtrainer SPA_TRAINER, MAC_4
+.cont2
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	opentext
+.end
+	writetext TwinkleGymBlueRoomLeaderText2
+	waitbutton
+	closetext
+	setevent EVENT_CAN_GET_RED_KEY
+	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_LEADER
+	end
+.rematch
+	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_LEADER_REMATCH
+	iftrue .end2
+	writetext TwinkleGymBlueRoomLeaderRematchText1
 	waitbutton
 	closetext
 	winlosstext TwinkleGymBlueRoomLeaderWinText, 0
@@ -119,20 +146,6 @@ TwinkleGymYellowRoomLeader:
 	startbattle
 	reloadmapafterbattle
 	opentext
-.checkrematch
-	checkevent EVENT_BEAT_CHARLIE
-	iffalse .end
-	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_LEADER_REMATCH
-	iftrue .end2
-	writetext TwinkleGymBlueRoomLeaderRematchText1
-	jump .return
-.end
-	writetext TwinkleGymBlueRoomLeaderText2
-	waitbutton
-	closetext
-	setevent EVENT_CAN_GET_RED_KEY
-	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_LEADER
-	end
 .end2
 	writetext TwinkleGymBlueRoomLeaderRematchText2
 	waitbutton
@@ -183,7 +196,7 @@ TwinkleGymYellowRoomDoor:
 	
 TwinkleGymYellowRoomBather1Script:
 	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1
-	iftrue .end
+	iftrue .checkrematch
 	setlasttalked TWINKLE_GYM_YELLOW_ROOM_BATHER_1
 	playmusic MUSIC_GENTLEMAN_ENCOUNTER
 	showemote EMOTE_SHOCK, TWINKLE_GYM_YELLOW_ROOM_BATHER_1,  30

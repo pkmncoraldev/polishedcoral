@@ -150,6 +150,16 @@
 	db 29, STARYU		;4%
 	db 29, STARYU		;1%
 	
+	map_id LAKE_ONWA
+	db 8 percent ; encounter rate
+	db 29, MARILL		;30%
+	db 29, CARVANHA		;30%
+	db 29, FLOATZEL		;20%
+	db 29, POLIWHIRL	;10%
+	db 29, CARVANHA		;5%
+	db 29, FLOATZEL		;4%
+	db 29, FLOATZEL		;1%
+	
 	map_id MT_ONWA_B1F
 	db 5 percent ; encounter rate
 	db 16, SLUGMA		;30%

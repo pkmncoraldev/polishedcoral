@@ -1342,8 +1342,19 @@ GetMoveNameSing:: ; 34f8
 	rst Bankswitch
 	ret
 	
+CheckDitto:
+	cp DITTO
+	ret nz
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	ret z
+	ld a, [wEnemyMonSpecies]
+	ret
+	
 CheckPoundUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckPoundUsers2::
 	ld hl, PoundUsers
 	ld de, 1
@@ -1352,6 +1363,7 @@ CheckPoundUsers2::
 	
 CheckScratchUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckScratchUsers2::
 	ld hl, ScratchUsers
 	ld de, 1
@@ -1360,6 +1372,7 @@ CheckScratchUsers2::
 	
 CheckWithdrawUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckWithdrawUsers2::
 	ld hl, WithdrawUsers
 	ld de, 1
@@ -1368,6 +1381,7 @@ CheckWithdrawUsers2::
 	
 CheckHardenUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckHardenUsers2::
 	ld hl, HardenUsers
 	ld de, 1
@@ -1376,6 +1390,7 @@ CheckHardenUsers2::
 	
 CheckTailWhipUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckTailWhipUsers2::
 	ld hl, TailWhipUsers
 	ld de, 1
@@ -1384,6 +1399,7 @@ CheckTailWhipUsers2::
 	
 CheckIronDefenseUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckIronDefenseUsers2::
 	ld hl, IronDefenseUsers
 	ld de, 1
@@ -1392,6 +1408,7 @@ CheckIronDefenseUsers2::
 	
 CheckAcidArmorUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckAcidArmorUsers2::
 	ld hl, AcidArmorUsers
 	ld de, 1
@@ -1400,6 +1417,7 @@ CheckAcidArmorUsers2::
 	
 CheckMindReaderUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckMindReaderUsers2::
 	ld hl, MindReaderUsers
 	ld de, 1
@@ -1408,6 +1426,7 @@ CheckMindReaderUsers2::
 	
 CheckMeditateUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckMeditateUsers2::
 	ld hl, MeditateUsers
 	ld de, 1
@@ -1416,6 +1435,7 @@ CheckMeditateUsers2::
 	
 CheckHowlUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckHowlUsers2::
 	ld hl, HowlUsers
 	ld de, 1
@@ -1424,6 +1444,7 @@ CheckHowlUsers2::
 	
 CheckFuryAttackUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckFuryAttackUsers2::
 	ld hl, FuryAttackUsers
 	ld de, 1
@@ -1432,6 +1453,7 @@ CheckFuryAttackUsers2::
 	
 CheckCometPunchUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckCometPunchUsers2::
 	ld hl, CometPunchUsers
 	ld de, 1
@@ -1440,6 +1462,7 @@ CheckCometPunchUsers2::
 	
 CheckDoubleSlapUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckDoubleSlapUsers2::
 	ld hl, DoubleSlapUsers
 	ld de, 1
@@ -1448,6 +1471,7 @@ CheckDoubleSlapUsers2::
 	
 CheckMoonlightUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckMoonlightUsers2::
 	ld hl, MoonlightUsers
 	ld de, 1
@@ -1456,6 +1480,7 @@ CheckMoonlightUsers2::
 	
 CheckMorningSunUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckMorningSunUsers2::
 	ld hl, MorningSunUsers
 	ld de, 1
@@ -1464,6 +1489,7 @@ CheckMorningSunUsers2::
 	
 CheckBlockUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckBlockUsers2::
 	ld hl, BlockUsers
 	ld de, 1
@@ -1472,6 +1498,7 @@ CheckBlockUsers2::
 	
 CheckSpiderWebUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckSpiderWebUsers2::
 	ld hl, SpiderWebUsers
 	ld de, 1
@@ -1480,6 +1507,7 @@ CheckSpiderWebUsers2::
 	
 CheckFeatherDanceUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckFeatherDanceUsers2::
 	ld hl, FeatherDanceUsers
 	ld de, 1
@@ -1488,6 +1516,7 @@ CheckFeatherDanceUsers2::
 	
 CheckCottonSporeUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckCottonSporeUsers2::
 	ld hl, CottonSporeUsers
 	ld de, 1
@@ -1496,6 +1525,7 @@ CheckCottonSporeUsers2::
 	
 CheckStringShotUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckStringShotUsers2::
 	ld hl, CottonSporeUsers
 	ld de, 2
@@ -1504,6 +1534,7 @@ CheckStringShotUsers2::
 	
 CheckWhirlwindUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckWhirlwindUsers2::
 	ld hl, WhirlwindUsers
 	ld de, 1
@@ -1512,6 +1543,7 @@ CheckWhirlwindUsers2::
 	
 CheckSmokescreenUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckSmokescreenUsers2::
 	ld hl, SmokescreenUsers
 	ld de, 1
@@ -1520,6 +1552,7 @@ CheckSmokescreenUsers2::
 	
 CheckMilkDrinkUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckMilkDrinkUsers2::
 	ld hl, MilkDrinkUsers
 	ld de, 1
@@ -1528,6 +1561,7 @@ CheckMilkDrinkUsers2::
 	
 CheckSoftboiledUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckSoftboiledUsers2::
 	ld hl, SoftboiledUsers
 	ld de, 1
@@ -1536,6 +1570,7 @@ CheckSoftboiledUsers2::
 	
 CheckOdorSleuthUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckOdorSleuthUsers2::
 	ld hl, OdorSleuthUsers
 	ld de, 1
@@ -1544,6 +1579,7 @@ CheckOdorSleuthUsers2::
 	
 CheckMiracleEyeUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckMiracleEyeUsers2::
 	ld hl, MiracleEyeUsers
 	ld de, 1
@@ -1552,6 +1588,7 @@ CheckMiracleEyeUsers2::
 	
 CheckRockPolishUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckRockPolishUsers2::
 	ld hl, RockPolishUsers
 	ld de, 1
@@ -1560,6 +1597,7 @@ CheckRockPolishUsers2::
 	
 CheckGrowthUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckGrowthUsers2::
 	ld hl, GrowthUsers
 	ld de, 1
@@ -1576,6 +1614,7 @@ CheckTransformUsers2::
 	
 CheckHypnosisUsers::
 	ld a, [wCurPartySpecies]
+	call CheckDitto
 CheckHypnosisUsers2::
 	ld hl, HypnosisUsers
 	ld de, 1

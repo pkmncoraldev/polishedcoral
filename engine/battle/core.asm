@@ -1205,7 +1205,7 @@ HandleResidualDamage:
 	call SubtractHPFromUser
 	pop bc
 	call SwitchTurn
-	farcall GetHPAbsorption
+	farcall HandleBigRoot
 	ld a, $1
 	ld [hBGMapMode], a
 	ld a, BATTLE_VARS_ABILITY_OPP

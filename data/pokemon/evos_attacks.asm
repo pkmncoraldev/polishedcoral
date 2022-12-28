@@ -1313,7 +1313,7 @@ ScytherEvosAttacks:
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
-	db EVOLVE_HOLDING, ELECTIRIZER, ELECTIVIRE
+	db EVOLVE_TRADE, ELECTIRIZER, ELECTIVIRE
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER_TAIL_WHIP
@@ -1332,7 +1332,7 @@ ElectabuzzEvosAttacks:
 	db 0 ; no more level-up moves
 
 MagmarEvosAttacks:
-	db EVOLVE_HOLDING, MAGMARIZER, MAGMORTAR
+	db EVOLVE_TRADE, MAGMARIZER, MAGMORTAR
 	db 0 ; no more evolutions
 	db 1, SMOG
 	db 1, LEER_TAIL_WHIP

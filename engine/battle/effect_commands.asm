@@ -8644,6 +8644,9 @@ BattleCommand_fakeout: ; 37683
 	dec a
 	jr nz, .failed
 .cont
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
 	call CheckIfTargetIsGhostType
 	jr z, .failed
 	jp FlinchTarget

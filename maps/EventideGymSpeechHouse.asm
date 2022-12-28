@@ -43,6 +43,6 @@ EventideGymSpeechHouseNPC2Text:
 	cont "when she could fly"
 	cont "anywhere."
 	
-	para "She must this love"
+	para "She must love this"
 	line "quiet little town!"
 	done

@@ -212,7 +212,7 @@ endc
 	ret
 	
 .VersionNumberText
-	db "2022 Demo Ver.   1.0@"
+	db " 2022 Demo Ver. 1.1@"
 
 .PrintTimeNotSet: ; 49e75
 	hlcoord 1, 14

@@ -247,7 +247,7 @@ EventideGymWendy:
 	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_2
 	writetext EventideGymWendyTextAfterBattle
 	buttonsound
-	verbosegivetmhm TM_FAKE_OUT
+	verbosegivetmhm TM_ROOST
 	setevent EVENT_GOT_TM_FROM_WENDY
 	writetext EventideGymWendyTextTMSpeech
 	waitbutton

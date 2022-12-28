@@ -2175,36 +2175,37 @@ TownMapBubble: ; 91bb5
 ; Draw the bubble containing the location text in the town map HUD
 
 ; Top-left corner
-	hlcoord 0, 0
-	ld a, $30
-	ld [hli], a
+	hlcoord 1, 1
+;	ld a, $30
+;	ld [hli], a
 ; Top row
 	ld bc, 18
 	ld a, " "
 	call ByteFill
 ; Top-right corner
-	ld a, $31
-	ld [hli], a
+;	ld a, $31
+;	ld [hli], a
 
 ; Bottom-left corner
-	ld a, $32
-	ld [hli], a
+;	ld a, $32
+;	ld [hli], a
 ; Bottom row
+	hlcoord 1, 2
 	ld bc, 18
 	ld a, " "
 	call ByteFill
 ; Bottom-right corner
-	ld a, $33
-	ld [hl], a
+;	ld a, $33
+;	ld [hl], a
 
 ; Print "Where?"
-	hlcoord 1, 0
+	hlcoord 1, 1
 	ld de, .Where
 	call PlaceString
 ; Print the name of the default flypoint
 	call .Name
 ; Up/down arrows
-	hlcoord 19, 1
+	hlcoord 18, 2
 	ld [hl], "<UPDN>"
 	ret
 
@@ -2221,7 +2222,7 @@ TownMapBubble: ; 91bb5
 	add hl, de
 	ld e, [hl]
 	farcall GetLandmarkName
-	hlcoord 2, 1
+	hlcoord 2, 2
 	ld de, wStringBuffer1
 	jp PlaceString
 

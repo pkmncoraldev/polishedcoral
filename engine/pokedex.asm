@@ -1466,6 +1466,9 @@ Pokedex_FillBackgroundColor2: ; 40aa6
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	jp ByteFill
 
+Pokedex_PlaceFrontpicNickname:
+	hlcoord 4, 3
+	jr Pokedex_PlaceFrontpicAtHL
 Pokedex_PlaceFrontpicTopLeftCorner: ; 40ab2
 	hlcoord 1, 1
 Pokedex_PlaceFrontpicAtHL: ; 40ab5
@@ -2556,6 +2559,7 @@ NewPokedexEntry: ; fb877
 	ld a, [hSCX]
 	add -5
 	ld [hSCX], a
+	
 	call .ReturnFromDexRegistration
 	pop af
 	ld [hMapAnims], a
@@ -2626,16 +2630,23 @@ NewPokedexEntry: ; fb877
 	jp PlayCry
 
 .ReturnFromDexRegistration:
+	ld a, [wPlaceBallsY]
+	ld [wEnemyMonSpecies], a
+	ld [wd265], a
+	ld [wCurPartySpecies], a
 	call ClearTileMap
 	call LoadFontsExtra
 	call LoadStandardFont
-	call Pokedex_PlaceFrontpicTopLeftCorner
+	call GetBaseData
+	ld de, VTiles2
+	predef GetFrontpic
+	call Pokedex_PlaceFrontpicNickname
 	call ApplyAttrAndTilemapInVBlank
-	farcall GetEnemyMonPersonality
-	ld a, [hli]
-	ld [wTempMonPersonality], a
-	ld a, [hl]
-	ld [wTempMonPersonality + 1], a
+;	farcall GetEnemyMonPersonality
+;	ld a, [hli]
+;	ld [wTempMonPersonality], a
+;	ld a, [hl]
+;	ld [wTempMonPersonality + 1], a
 	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
 	jp SetPalettes

@@ -157,12 +157,12 @@ StarglowCavernFossilRoomPlumeFossilText:
 	done
 	
 FossilGuyPickedCoverFossilText:
-	text "LARRY took the"
+	text "CHESTER took the"
 	line "COVER FOSSIL!"
 	done
 	
 FossilGuyPickedPlumeFossilText:
-	text "LARRY took the"
+	text "CHESTER took the"
 	line "PLUME FOSSIL!"
 	done
 	

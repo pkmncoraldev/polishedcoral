@@ -430,10 +430,14 @@ LusterMallCoffeeShop_Paper:
 	playsound SFX_PAY_DAY
 	checkcode VAR_FACING
 	if_equal UP, .YouAreFacingUp
+	if_equal LEFT, .YouAreFacingLeft
 	spriteface LUSTER_MALL_COFFEE_SHOP_NPC2, UP
 	jump .cont
 .YouAreFacingUp
 	spriteface LUSTER_MALL_COFFEE_SHOP_NPC2, DOWN
+	jump .cont
+.YouAreFacingLeft
+	spriteface LUSTER_MALL_COFFEE_SHOP_NPC2, RIGHT
 .cont
 	showemote EMOTE_SHOCK, LUSTER_MALL_COFFEE_SHOP_NPC2, 15
 	opentext

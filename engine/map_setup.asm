@@ -280,6 +280,9 @@ CheckReplaceKrisSprite: ; 154f7
 .surfing
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
+	xor a
+	ld [wOnBike], a
+	ld [wOnSkateboard], a
 	scf
 	ret
 

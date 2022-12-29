@@ -4165,7 +4165,7 @@ Marowak_AEvosAttacks:
 	db 0 ; no more level-up moves
 	
 Grimer_AEvosAttacks:
-	db EVOLVE_LEVEL, 38, MUK
+	db EVOLVE_LEVEL, 38, MUK_A
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 4, DEFENSE_CURL_HARDEN_WITHDRAW

@@ -75,7 +75,7 @@ SprucePhoneComeToIslandText:
 	para "You can catch a"
 	line "ride to at the"
 	cont "BOAT HOUSE at LAKE"
-	cont "OWNA."
+	cont "ONWA."
 	
 	para "It's to the SOUTH"
 	line "of STARGLOW"
@@ -99,7 +99,7 @@ SprucePhoneComeToIsland2Text:
 	para "You can catch a"
 	line "ride to at the"
 	cont "BOAT HOUSE at LAKE"
-	cont "OWNA."
+	cont "ONWA."
 	
 	para "It's to the SOUTH"
 	line "of STARGLOW"

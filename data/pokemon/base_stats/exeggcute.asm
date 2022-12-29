@@ -11,7 +11,7 @@
 	db CHLOROPHYLL ; ability 1
 	db CHLOROPHYLL ; ability 2
 	db HARVEST ; hidden ability
-	db MEDIUM_FAST ; growth rate
+	db SLOW ; growth rate
 	dn PLANT, PLANT ; egg groups
 
 	; ev_yield

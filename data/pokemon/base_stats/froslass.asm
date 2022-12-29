@@ -11,7 +11,7 @@
 	db SNOW_CLOAK ; ability 1
 	db SNOW_CLOAK ; ability 2
 	db CURSED_BODY ; hidden ability
-	db MEDIUM_SLOW ; growth rate
+	db MEDIUM_FAST ; growth rate
 	dn FAERY, INANIMATE ; egg groups
 
 	; ev_yield

@@ -11,7 +11,7 @@
 	db FLASH_FIRE ; ability 1
 	db FLAME_BODY ; ability 2
 	db INFILTRATOR ; hidden ability
-	db MEDIUM_SLOW ; growth rate
+	db FAST ; growth rate
 	dn AMORPHOUS, AMORPHOUS ; egg groups
 
 	; ev_yield

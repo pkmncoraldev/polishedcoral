@@ -806,6 +806,7 @@ GravelerEvosAttacks:
 	db 42, EXPLOSION
 	db 47, DOUBLE_EDGE
 	db 53, STONE_EDGE
+	db 0 ; no more level-up moves
 
 GolemEvosAttacks:
 	db  0 ; no more evolutions
@@ -823,6 +824,7 @@ GolemEvosAttacks:
 	db 47, DOUBLE_EDGE
 	db 53, STONE_EDGE
 	db 60, ROCK_WRECKER
+	db 0 ; no more level-up moves
 
 PonytaEvosAttacks:
 	db EVOLVE_LEVEL, 40, RAPIDASH
@@ -4160,6 +4162,7 @@ Marowak_AEvosAttacks:
 	db 43, SLASH
 	db 48, FLARE_BLITZ
 	db 56, EARTHQUAKE
+	db 0 ; no more level-up moves
 	
 Grimer_AEvosAttacks:
 	db EVOLVE_LEVEL, 38, MUK

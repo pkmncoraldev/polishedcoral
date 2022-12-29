@@ -1,4 +1,4 @@
-	db  70, 105, 125,  65,  75,  45
+	db  70, 105, 125,  45,  65,  75
 	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, ROCK

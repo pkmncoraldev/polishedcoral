@@ -5720,6 +5720,16 @@ BattleCommand_accuracyup2: ; 361dc
 
 BattleCommand_evasionup2: ; 361e0
 ; evasionup2
+	ld a, [hBattleTurn]
+	and a
+	jr z, .PlayerTurn
+	xor a
+	ld [wEnemyMinimized], a
+	jr .cont
+.PlayerTurn
+	xor a
+	ld [wPlayerMinimized], a
+.cont
 	ld b, $10 | EVASION
 	; fallthrough
 

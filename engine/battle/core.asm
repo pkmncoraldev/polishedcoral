@@ -8716,13 +8716,13 @@ DropEnemySub: ; 3f486
 ; 3f4b4
 
 GetFrontpic_DoAnim: ; 3f4b4
-;	ld a, [hBattleTurn]
-;	push af
-;	call SetEnemyTurn
-;	ld a, BANK(BattleAnimCommands)
-;	call FarCall_hl
-;	pop af
-;	ld [hBattleTurn], a
+	ld a, [hBattleTurn]
+	push af
+	call SetEnemyTurn
+	ld a, BANK(BattleAnimCommands)
+	call FarCall_hl
+	pop af
+	ld [hBattleTurn], a
 	ret
 ; 3f4c1
 

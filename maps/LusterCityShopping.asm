@@ -129,10 +129,38 @@ ShoppingCallback:
 	moveperson LUSTER2SNARE, $18, $11
 .skip2
 	checktime 1<<NITE
-	iffalse .end
+	iffalse .notnite
 	changeblock -4, 20, $84
-.end
+.notnite
+	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_1
+	iftrue .OpenSesame1
+.cont1
+	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_2
+	iftrue .OpenSesame2
+.cont2
+	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_3
+	iftrue .OpenSesame3
+.cont3
+	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_4
+	iftrue .OpenSesame4
+.cont4
 	return
+	
+.OpenSesame1:
+	changeblock $4, $18, $52
+	jump .cont1
+
+.OpenSesame2:
+	changeblock $4, $1a, $52
+	jump .cont2
+	
+.OpenSesame3:
+	changeblock $18, $18, $52
+	jump .cont3
+	
+.OpenSesame4:
+	changeblock $18, $1a, $52
+	jump .cont4
 	
 LusterShoppingFenceKid:
 	jumptext LusterShoppingFenceKidText

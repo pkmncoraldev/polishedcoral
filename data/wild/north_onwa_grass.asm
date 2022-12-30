@@ -380,7 +380,7 @@
 	db 13, MARILL		;1%
 	
 	map_id MT_ONWA_1F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 14, ARON			;30%
 	db 14, ZUBAT		;30%
@@ -407,7 +407,7 @@
 	db 14, ONIX			;1%
 	
 	map_id MT_ONWA_2F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 14, ARON			;30%
 	db 14, GEODUDE		;30%
@@ -434,7 +434,7 @@
 	db 14, ONIX			;1%
 	
 	map_id MT_ONWA_B1F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 16, SLUGMA		;30%
 	db 16, NUMEL		;30%

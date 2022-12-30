@@ -405,7 +405,7 @@ Route6SignText:
 	line "ROUTE 5"
 	
 	para "WEST:"
-	line "LAKE OWNA"
+	line "LAKE ONWA"
 	done
 	
 Route6LakeSignText:

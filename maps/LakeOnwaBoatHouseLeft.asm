@@ -434,7 +434,7 @@ LakeBoatManText12:
 LakeBoatManText13:
 	text "Travel to the"
 	line "other side of"
-	cont "LAKE OWNA?"
+	cont "LAKE ONWA?"
 	done
 	
 LakeBoatManText14:

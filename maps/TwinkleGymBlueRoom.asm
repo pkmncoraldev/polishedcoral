@@ -53,11 +53,11 @@ TwinkleGymBlueRoomTrainer:
 	winlosstext TwinkleGymBlueRoomTrainerBeatenText, 0
 .return
 	checkcode VAR_BADGES
-	ifequal 4, .fourbadges
-	ifequal 5, .fivebadges
-	ifequal 6, .sixbadges
-	ifequal 7, .sevenbadges
 	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
 	loadtrainer SPA_TRAINER, SHAYMUS_3
 	jump .cont
 .fourbadges
@@ -177,11 +177,11 @@ TwinkleGymBlueRoomLeader:
 	winlosstext TwinkleGymBlueRoomLeaderWinText, 0
 	setlasttalked TWINKLE_GYM_BLUE_ROOM_LEADER
 	checkcode VAR_BADGES
-	ifequal 4, .fourbadges
-	ifequal 5, .fivebadges
-	ifequal 6, .sixbadges
-	ifequal 7, .sevenbadges
 	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
 	loadtrainer SPA_TRAINER, DENNIS_3
 	jump .cont
 .fourbadges

@@ -102,27 +102,27 @@ TwinkleGymCharlieRematch:
 	waitsfx
 	winlosstext TwinkleGymCharlieTextWinRematch, TwinkleGymCharlieTextLoss
 	checkcode VAR_BADGES
-	ifequal 4, .fourbadges
-	ifequal 5, .fivebadges
-	ifequal 6, .sixbadges
-	ifequal 7, .sevenbadges
 	ifequal 8, .eightbadges
-	loadtrainer CHARLIE, 1;3
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
+	loadtrainer CHARLIE, 3
 	jump .cont
 .fourbadges
-	loadtrainer CHARLIE, 1;4
+	loadtrainer CHARLIE, 4
 	jump .cont
 .fivebadges
-	loadtrainer CHARLIE, 1;5
+	loadtrainer CHARLIE, 5
 	jump .cont
 .sixbadges
-	loadtrainer CHARLIE, 1;6
+	loadtrainer CHARLIE, 6
 	jump .cont
 .sevenbadges
-	loadtrainer CHARLIE, 1;7
+	loadtrainer CHARLIE, 7
 	jump .cont
 .eightbadges
-	loadtrainer CHARLIE, 1;8
+	loadtrainer CHARLIE, 8
 .cont
 	startbattle
 	reloadmapafterbattle

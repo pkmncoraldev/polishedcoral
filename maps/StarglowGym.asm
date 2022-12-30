@@ -43,8 +43,6 @@ StarglowGymRodneyScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_SECONDBADGE
-	checkcode VAR_BADGES
-	
 	
 .FightDone:	
 	checkevent EVENT_GOT_TM_FROM_RODNEY
@@ -91,37 +89,32 @@ StarglowGymRodneyRematch:
 	closetext
 	waitsfx
 	winlosstext StarglowGymRodneyTextWinRematch, StarglowGymRodneyTextLoss
-	checkflag ENGINE_THIRDBADGE
-	iftrue .threebadges
-	checkflag ENGINE_FOURTHBADGE
-	iftrue .fourbadges
-	checkflag ENGINE_FIFTHBADGE
-	iftrue .fivebadges
-	checkflag ENGINE_SIXTHBADGE
-	iftrue .sixbadges
-	checkflag ENGINE_SEVENTHBADGE
-	iftrue .sevenbadges
-	checkflag ENGINE_EIGHTHBADGE
-	iftrue .eightbadges
-	loadtrainer RODNEY, 1;2
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
+	ifequal 3, .threebadges
+	loadtrainer RODNEY, 2
 	jump .cont
 .threebadges
-	loadtrainer RODNEY, 1;3
+	loadtrainer RODNEY, 3
 	jump .cont
 .fourbadges
-	loadtrainer RODNEY, 1;4
+	loadtrainer RODNEY, 4
 	jump .cont
 .fivebadges
-	loadtrainer RODNEY, 1;5
+	loadtrainer RODNEY, 5
 	jump .cont
 .sixbadges
-	loadtrainer RODNEY, 1;6
+	loadtrainer RODNEY, 6
 	jump .cont
 .sevenbadges
-	loadtrainer RODNEY, 1;7
+	loadtrainer RODNEY, 7
 	jump .cont
 .eightbadges
-	loadtrainer RODNEY, 1;8
+	loadtrainer RODNEY, 8
 .cont
 	startbattle
 	reloadmapafterbattle
@@ -253,18 +246,13 @@ StarglowGymTrainer1Rematch:
 	closetext
 	waitsfx
 	winlosstext StarglowGymTrainer1RematchBeatenText, 0
-	checkflag ENGINE_THIRDBADGE
-	iftrue .threebadges
-	checkflag ENGINE_FOURTHBADGE
-	iftrue .fourbadges
-	checkflag ENGINE_FIFTHBADGE
-	iftrue .fivebadges
-	checkflag ENGINE_SIXTHBADGE
-	iftrue .sixbadges
-	checkflag ENGINE_SEVENTHBADGE
-	iftrue .sevenbadges
-	checkflag ENGINE_EIGHTHBADGE
-	iftrue .eightbadges
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
+	ifequal 3, .threebadges
 	loadtrainer FISHER, GERALD_2
 	jump .cont
 .threebadges
@@ -324,18 +312,13 @@ StarglowGymTrainer2Rematch:
 	closetext
 	waitsfx
 	winlosstext StarglowGymTrainer2RematchBeatenText, 0
-	checkflag ENGINE_THIRDBADGE
-	iftrue .threebadges
-	checkflag ENGINE_FOURTHBADGE
-	iftrue .fourbadges
-	checkflag ENGINE_FIFTHBADGE
-	iftrue .fivebadges
-	checkflag ENGINE_SIXTHBADGE
-	iftrue .sixbadges
-	checkflag ENGINE_SEVENTHBADGE
-	iftrue .sevenbadges
-	checkflag ENGINE_EIGHTHBADGE
-	iftrue .eightbadges
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
+	ifequal 3, .threebadges
 	loadtrainer FISHER, WALTER_2
 	jump .cont
 .threebadges
@@ -398,18 +381,13 @@ StarglowGymTrainer3Rematch:
 	closetext
 	waitsfx
 	winlosstext StarglowGymTrainer3RematchBeatenText, 0
-	checkflag ENGINE_THIRDBADGE
-	iftrue .threebadges
-	checkflag ENGINE_FOURTHBADGE
-	iftrue .fourbadges
-	checkflag ENGINE_FIFTHBADGE
-	iftrue .fivebadges
-	checkflag ENGINE_SIXTHBADGE
-	iftrue .sixbadges
-	checkflag ENGINE_SEVENTHBADGE
-	iftrue .sevenbadges
-	checkflag ENGINE_EIGHTHBADGE
-	iftrue .eightbadges
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
+	ifequal 3, .threebadges
 	loadtrainer FISHER, BORRIS_2
 	jump .cont
 .threebadges
@@ -470,18 +448,13 @@ StarglowGymTrainer4Rematch:
 	closetext
 	waitsfx
 	winlosstext StarglowGymTrainer4RematchBeatenText, 0
-	checkflag ENGINE_THIRDBADGE
-	iftrue .threebadges
-	checkflag ENGINE_FOURTHBADGE
-	iftrue .fourbadges
-	checkflag ENGINE_FIFTHBADGE
-	iftrue .fivebadges
-	checkflag ENGINE_SIXTHBADGE
-	iftrue .sixbadges
-	checkflag ENGINE_SEVENTHBADGE
-	iftrue .sevenbadges
-	checkflag ENGINE_EIGHTHBADGE
-	iftrue .eightbadges
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
+	ifequal 3, .threebadges
 	loadtrainer FISHER, CLINT_2
 	jump .cont
 .threebadges

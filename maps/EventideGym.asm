@@ -287,27 +287,27 @@ EventideGymWendyRematch:
 	waitsfx
 	winlosstext EventideGymWendyTextWinRematch, EventideGymWendyTextLoss
 	checkcode VAR_BADGES
-	ifequal 4, .fourbadges
-	ifequal 5, .fivebadges
-	ifequal 6, .sixbadges
-	ifequal 7, .sevenbadges
 	ifequal 8, .eightbadges
-	loadtrainer WENDY, 1;3
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
+	loadtrainer WENDY, 3
 	jump .cont
 .fourbadges
-	loadtrainer WENDY, 1;4
+	loadtrainer WENDY, 4
 	jump .cont
 .fivebadges
-	loadtrainer WENDY, 1;5
+	loadtrainer WENDY, 5
 	jump .cont
 .sixbadges
-	loadtrainer WENDY, 1;6
+	loadtrainer WENDY, 6
 	jump .cont
 .sevenbadges
-	loadtrainer WENDY, 1;7
+	loadtrainer WENDY, 7
 	jump .cont
 .eightbadges
-	loadtrainer WENDY, 1;8
+	loadtrainer WENDY, 8
 .cont
 	startbattle
 	reloadmapafterbattle
@@ -597,16 +597,12 @@ EventideGymTrainer1Rematch:
 	closetext
 	waitsfx
 	winlosstext EventideGymTrainer1RematchBeatenText, 0
-	checkflag ENGINE_FOURTHBADGE
-	iftrue .fourbadges
-	checkflag ENGINE_FIFTHBADGE
-	iftrue .fivebadges
-	checkflag ENGINE_SIXTHBADGE
-	iftrue .sixbadges
-	checkflag ENGINE_SEVENTHBADGE
-	iftrue .sevenbadges
-	checkflag ENGINE_EIGHTHBADGE
-	iftrue .eightbadges
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
 	loadtrainer BIRD_KEEPER, RICKY_3
 	jump .cont
 .fourbadges
@@ -668,16 +664,12 @@ EventideGymTrainer2Rematch:
 	closetext
 	waitsfx
 	winlosstext EventideGymTrainer2RematchBeatenText, 0
-	checkflag ENGINE_FOURTHBADGE
-	iftrue .fourbadges
-	checkflag ENGINE_FIFTHBADGE
-	iftrue .fivebadges
-	checkflag ENGINE_SIXTHBADGE
-	iftrue .sixbadges
-	checkflag ENGINE_SEVENTHBADGE
-	iftrue .sevenbadges
-	checkflag ENGINE_EIGHTHBADGE
-	iftrue .eightbadges
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
 	loadtrainer BIRD_KEEPER, VERN_3
 	jump .cont
 .fourbadges
@@ -733,16 +725,12 @@ EventideGymTrainer3Rematch:
 	closetext
 	waitsfx
 	winlosstext EventideGymTrainer3RematchBeatenText, 0
-	checkflag ENGINE_FOURTHBADGE
-	iftrue .fourbadges
-	checkflag ENGINE_FIFTHBADGE
-	iftrue .fivebadges
-	checkflag ENGINE_SIXTHBADGE
-	iftrue .sixbadges
-	checkflag ENGINE_SEVENTHBADGE
-	iftrue .sevenbadges
-	checkflag ENGINE_EIGHTHBADGE
-	iftrue .eightbadges
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
 	loadtrainer BIRD_KEEPER, ROY_3
 	jump .cont
 .fourbadges
@@ -803,16 +791,12 @@ EventideGymTrainer4Rematch:
 	closetext
 	waitsfx
 	winlosstext EventideGymTrainer4RematchBeatenText, 0
-	checkflag ENGINE_FOURTHBADGE
-	iftrue .fourbadges
-	checkflag ENGINE_FIFTHBADGE
-	iftrue .fivebadges
-	checkflag ENGINE_SIXTHBADGE
-	iftrue .sixbadges
-	checkflag ENGINE_SEVENTHBADGE
-	iftrue .sevenbadges
-	checkflag ENGINE_EIGHTHBADGE
-	iftrue .eightbadges
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
 	loadtrainer BIRD_KEEPER, CHANCE_3
 	jump .cont
 .fourbadges
@@ -873,16 +857,12 @@ EventideGymTrainer5Rematch:
 	closetext
 	waitsfx
 	winlosstext EventideGymTrainer5RematchBeatenText, 0
-	checkflag ENGINE_FOURTHBADGE
-	iftrue .fourbadges
-	checkflag ENGINE_FIFTHBADGE
-	iftrue .fivebadges
-	checkflag ENGINE_SIXTHBADGE
-	iftrue .sixbadges
-	checkflag ENGINE_SEVENTHBADGE
-	iftrue .sevenbadges
-	checkflag ENGINE_EIGHTHBADGE
-	iftrue .eightbadges
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
 	loadtrainer BIRD_KEEPER, CALEB_3
 	jump .cont
 .fourbadges

@@ -120,11 +120,11 @@ TwinkleGymYellowRoomLeader:
 	winlosstext TwinkleGymBlueRoomLeaderWinText, 0
 	setlasttalked TWINKLE_GYM_YELLOW_ROOM_LEADER
 	checkcode VAR_BADGES
-	ifequal 4, .fourbadges
-	ifequal 5, .fivebadges
-	ifequal 6, .sixbadges
-	ifequal 7, .sevenbadges
 	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
 	loadtrainer SPA_TRAINER, MAC_3
 	jump .cont
 .fourbadges
@@ -222,11 +222,11 @@ TwinkleGymYellowRoomBather1Script:
 	winlosstext TwinkleGymYellowRoomBather1BeatenText, 0
 .return
 	checkcode VAR_BADGES
-	ifequal 4, .fourbadges
-	ifequal 5, .fivebadges
-	ifequal 6, .sixbadges
-	ifequal 7, .sevenbadges
 	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
 	loadtrainer SPA_TRAINER_F, LAURA_3
 	jump .cont
 .fourbadges
@@ -313,11 +313,11 @@ TwinkleGymYellowRoomBather2Script:
 	winlosstext TwinkleGymYellowRoomBather2BeatenText, 0
 .return
 	checkcode VAR_BADGES
-	ifequal 4, .fourbadges
-	ifequal 5, .fivebadges
-	ifequal 6, .sixbadges
-	ifequal 7, .sevenbadges
 	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
 	loadtrainer SPA_TRAINER_F, BETTY_3
 	jump .cont
 .fourbadges
@@ -395,11 +395,11 @@ TwinkleGymYellowRoomTrainer1:
 	winlosstext TwinkleGymYellowRoomTrainer1BeatenText, 0
 .return
 	checkcode VAR_BADGES
-	ifequal 4, .fourbadges
-	ifequal 5, .fivebadges
-	ifequal 6, .sixbadges
-	ifequal 7, .sevenbadges
 	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
 	loadtrainer SPA_TRAINER, CHUCK_3
 	jump .cont
 .fourbadges
@@ -491,11 +491,11 @@ TwinkleGymYellowRoomTrainer2:
 	winlosstext TwinkleGymYellowRoomTrainer2BeatenText, 0
 .return
 	checkcode VAR_BADGES
-	ifequal 4, .fourbadges
-	ifequal 5, .fivebadges
-	ifequal 6, .sixbadges
-	ifequal 7, .sevenbadges
 	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
 	loadtrainer SPA_TRAINER, SEYMOUR_3
 	jump .cont
 .fourbadges

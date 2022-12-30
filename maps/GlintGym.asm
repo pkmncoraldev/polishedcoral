@@ -137,42 +137,36 @@ GlintGymStanleyRematch:
 	closetext
 	waitsfx
 	winlosstext GlintGymStanleyTextWinRematch, GlintGymStanleyTextLoss
-	checkflag ENGINE_SECONDBADGE
-	iftrue .twobadges
-	checkflag ENGINE_THIRDBADGE
-	iftrue .threebadges
-	checkflag ENGINE_FOURTHBADGE
-	iftrue .fourbadges
-	checkflag ENGINE_FIFTHBADGE
-	iftrue .fivebadges
-	checkflag ENGINE_SIXTHBADGE
-	iftrue .sixbadges
-	checkflag ENGINE_SEVENTHBADGE
-	iftrue .sevenbadges
-	checkflag ENGINE_EIGHTHBADGE
-	iftrue .eightbadges
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
+	ifequal 3, .threebadges
+	ifequal 2, .twobadges
 	loadtrainer STANLEY, 1
 	jump .cont
 .twobadges
-	loadtrainer STANLEY, 1;2
+	loadtrainer STANLEY, 2
 	jump .cont
 .threebadges
-	loadtrainer STANLEY, 1;3
+	loadtrainer STANLEY, 3
 	jump .cont
 .fourbadges
-	loadtrainer STANLEY, 1;4
+	loadtrainer STANLEY, 4
 	jump .cont
 .fivebadges
-	loadtrainer STANLEY, 1;5
+	loadtrainer STANLEY, 5
 	jump .cont
 .sixbadges
-	loadtrainer STANLEY, 1;6
+	loadtrainer STANLEY, 6
 	jump .cont
 .sevenbadges
-	loadtrainer STANLEY, 1;7
+	loadtrainer STANLEY, 7
 	jump .cont
 .eightbadges
-	loadtrainer STANLEY, 1;8
+	loadtrainer STANLEY, 8
 .cont
 	startbattle
 	reloadmapafterbattle
@@ -246,20 +240,14 @@ GlintGymTrainer1Rematch:
 	closetext
 	waitsfx
 	winlosstext GlintGymTrainer1RematchBeatenText, 0
-	checkflag ENGINE_SECONDBADGE
-	iftrue .twobadges
-	checkflag ENGINE_THIRDBADGE
-	iftrue .threebadges
-	checkflag ENGINE_FOURTHBADGE
-	iftrue .fourbadges
-	checkflag ENGINE_FIFTHBADGE
-	iftrue .fivebadges
-	checkflag ENGINE_SIXTHBADGE
-	iftrue .sixbadges
-	checkflag ENGINE_SEVENTHBADGE
-	iftrue .sevenbadges
-	checkflag ENGINE_EIGHTHBADGE
-	iftrue .eightbadges
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
+	ifequal 3, .threebadges
+	ifequal 2, .twobadges
 	loadtrainer SCHOOLBOY, TIMMY_1
 	jump .cont
 .twobadges
@@ -326,20 +314,14 @@ GlintGymTrainer2Rematch:
 	closetext
 	waitsfx
 	winlosstext GlintGymTrainer2RematchBeatenText, 0
-	checkflag ENGINE_SECONDBADGE
-	iftrue .twobadges
-	checkflag ENGINE_THIRDBADGE
-	iftrue .threebadges
-	checkflag ENGINE_FOURTHBADGE
-	iftrue .fourbadges
-	checkflag ENGINE_FIFTHBADGE
-	iftrue .fivebadges
-	checkflag ENGINE_SIXTHBADGE
-	iftrue .sixbadges
-	checkflag ENGINE_SEVENTHBADGE
-	iftrue .sevenbadges
-	checkflag ENGINE_EIGHTHBADGE
-	iftrue .eightbadges
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	ifequal 7, .sevenbadges
+	ifequal 6, .sixbadges
+	ifequal 5, .fivebadges
+	ifequal 4, .fourbadges
+	ifequal 3, .threebadges
+	ifequal 2, .twobadges
 	loadtrainer SCHOOLBOY, DAMIAN_1
 	jump .cont
 .twobadges

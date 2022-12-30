@@ -1,4 +1,4 @@
-	db  60, 140,  80,  70,  60,  60
+	db  60, 130,  80,  70,  60,  60
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, FIGHTING

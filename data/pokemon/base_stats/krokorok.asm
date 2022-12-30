@@ -1,4 +1,4 @@
-	db  60,  82,  65,  74,  65,  65
+	db  60,  82,  45,  74,  45,  45
 	;   hp  atk  def  spd  sat  sdf
 
 	db GROUND, DARK

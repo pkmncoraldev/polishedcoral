@@ -1,4 +1,4 @@
-	db  55, 112,  45,  70, 74,  45
+	db  75, 140,  65, 110, 112,  65
 	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, FLYING

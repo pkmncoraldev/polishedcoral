@@ -12,61 +12,61 @@ SunbeamIsland_MapScriptHeader:
 	callback MAPCALLBACK_TILES, SunbeamIslandCallback
 
 	db 14 ; warp events
-	warp_def 29, 27, 2, SUNBEAM_MART
-	warp_def 33, 17, 1, SUNBEAM_POKECENTER
-	warp_def 18, 34, 1, SUNBEAM_JUNGLE
-	warp_def  9, 25, 1, SUNBEAM_TRADE_HOUSE
-	warp_def  9, 31, 1, SUNBEAM_DODRIO_HOUSE
-	warp_def 15, 16, 1, SPRUCES_LAB
-	warp_def 25, 11, 1, SUNBEAM_OLD_COUPLES_HOUSE
-	warp_def 25, 17, 1, SUNBEAM_SOFT_SAND_HOUSE
-	warp_def 41, 17, 1, SUNBEAM_SURF_SHOP
-	warp_def 11, 16, 3, SPRUCES_LAB
-	warp_def 11, 17, 3, SPRUCES_LAB
-	warp_def 18, 35, 2, SUNBEAM_JUNGLE
-	warp_def 47,  9, 1, SUNBEAM_BOAT_HOUSE
-	warp_def 42, 17, 1, SUNBEAM_SURF_SHOP
+	warp_def 31, 27, 2, SUNBEAM_MART
+	warp_def 35, 17, 1, SUNBEAM_POKECENTER
+	warp_def 20, 34, 1, SUNBEAM_JUNGLE
+	warp_def 11, 25, 1, SUNBEAM_TRADE_HOUSE
+	warp_def 11, 31, 1, SUNBEAM_DODRIO_HOUSE
+	warp_def 17, 16, 1, SPRUCES_LAB
+	warp_def 27, 11, 1, SUNBEAM_OLD_COUPLES_HOUSE
+	warp_def 27, 17, 1, SUNBEAM_SOFT_SAND_HOUSE
+	warp_def 43, 17, 1, SUNBEAM_SURF_SHOP
+	warp_def 13, 16, 3, SPRUCES_LAB
+	warp_def 13, 17, 3, SPRUCES_LAB
+	warp_def 20, 35, 2, SUNBEAM_JUNGLE
+	warp_def 49,  9, 1, SUNBEAM_BOAT_HOUSE
+	warp_def 44, 17, 1, SUNBEAM_SURF_SHOP
 
 	db 6 ; coord events
-	xy_trigger 2, 21, 32, 0, SunbeamSnareStopsYouD, 0, 0
-	xy_trigger 3, 20, 32, 0, SunbeamSnareStopsYouU, 0, 0
-	xy_trigger 6, 42, 20, 0, SunbeamFirstContest1, 0, 0
-	xy_trigger 6, 43, 20, 0, SunbeamFirstContest2, 0, 0
-	xy_trigger 6, 44, 20, 0, SunbeamFirstContest3, 0, 0
-	xy_trigger 6, 45, 20, 0, SunbeamFirstContest4, 0, 0
+	xy_trigger 2, 23, 32, 0, SunbeamSnareStopsYouD, 0, 0
+	xy_trigger 3, 22, 32, 0, SunbeamSnareStopsYouU, 0, 0
+	xy_trigger 6, 44, 20, 0, SunbeamFirstContest1, 0, 0
+	xy_trigger 6, 45, 20, 0, SunbeamFirstContest2, 0, 0
+	xy_trigger 6, 46, 20, 0, SunbeamFirstContest3, 0, 0
+	xy_trigger 6, 47, 20, 0, SunbeamFirstContest4, 0, 0
 
 	db 9 ; bg events
-	signpost 29, 21, SIGNPOST_READ, SunBeamSign
-	signpost 16, 18, SIGNPOST_READ, SunBeamLabSign
-	signpost 19, 25, SIGNPOST_READ, SunBeamJungleSign
-	signpost 42, 16, SIGNPOST_READ, SunBeamSurfSign
-	signpost 41, 18, SIGNPOST_READ, SunBeamSurfboards
-	signpost 41, 19, SIGNPOST_READ, SunBeamSurfboards
-	signpost 33, 18, SIGNPOST_READ, SunBeamPokeSign
-	signpost 29, 28, SIGNPOST_READ, SunBeamMartSign
-	signpost 45, 12, SIGNPOST_READ, SunBeamBoatSign
+	signpost 31, 21, SIGNPOST_READ, SunBeamSign
+	signpost 18, 18, SIGNPOST_READ, SunBeamLabSign
+	signpost 21, 25, SIGNPOST_READ, SunBeamJungleSign
+	signpost 44, 16, SIGNPOST_READ, SunBeamSurfSign
+	signpost 43, 18, SIGNPOST_READ, SunBeamSurfboards
+	signpost 43, 19, SIGNPOST_READ, SunBeamSurfboards
+	signpost 35, 18, SIGNPOST_READ, SunBeamPokeSign
+	signpost 31, 28, SIGNPOST_READ, SunBeamMartSign
+	signpost 47, 12, SIGNPOST_READ, SunBeamBoatSign
 
 	db 20 ; object events
-	person_event SPRITE_MATRON, 22, 24, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC1, -1
-	person_event SPRITE_FAT_GUY, 10, 28, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC2, -1
-	person_event SPRITE_CUTE_GIRL, 16,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC3, -1
-	person_event SPRITE_GENERAL_VARIABLE_1, 15, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC4, -1
-	person_event SPRITE_CUTE_GIRL, 43, 19, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC5, -1
-	person_event SPRITE_SUPER_NERD, 45,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC6, -1
-	object_event 19, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DONPHAN, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveDonphan, -1
-	person_event SPRITE_SLOWPOKETAIL, 14,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamReserveSlowpoke, -1
-	object_event 13, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MAGMAR, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveMagmar, -1
-	object_event 20, 11, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, ELECTABUZZ, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamReserveElectabuzz, -1
-	person_event SPRITE_TRUNKS, 41, 29, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamCrowd, EVENT_SUNBEAM_CROWD_GONE
-	person_event SPRITE_COOL_DUDE, 41, 25, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamCrowd, EVENT_SUNBEAM_CROWD_GONE
-	person_event SPRITE_BIKINI_3, 41, 28, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamCrowd, EVENT_SUNBEAM_CROWD_GONE
-	person_event SPRITE_POKEFAN_M, 42, 29, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunbeamCrowd, EVENT_SUNBEAM_CROWD_GONE
-	person_event SPRITE_BATTLE_GIRL, 42, 26, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SunbeamCrowd, EVENT_SUNBEAM_CROWD_GONE
-	person_event SPRITE_SNARE, 20, 33, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SumbeamSnare, EVENT_SAVED_SUNBEAM
-	object_event  7, 50, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, EVENT_SUNBEAM_BOAT_GONE
-	object_event  7, 51, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, EVENT_SUNBEAM_BOAT_GONE
-	object_event  6, 51, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, EVENT_SUNBEAM_BOAT_GONE
-	object_event  6, 50, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, EVENT_SUNBEAM_BOAT_GONE
+	person_event SPRITE_MATRON, 24, 24, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC1, -1
+	person_event SPRITE_FAT_GUY, 12, 28, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC2, -1
+	person_event SPRITE_CUTE_GIRL, 18,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC3, -1
+	person_event SPRITE_GENERAL_VARIABLE_1, 17, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC4, -1
+	person_event SPRITE_CUTE_GIRL, 45, 19, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC5, -1
+	person_event SPRITE_SUPER_NERD, 47,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC6, -1
+	object_event 19,  8, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DONPHAN, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveDonphan, -1
+	person_event SPRITE_SLOWPOKETAIL, 16,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamReserveSlowpoke, -1
+	object_event 13, 15, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MAGMAR, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveMagmar, -1
+	object_event 20, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, ELECTABUZZ, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamReserveElectabuzz, -1
+	person_event SPRITE_TRUNKS, 43, 29, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamCrowd, EVENT_SUNBEAM_CROWD_GONE
+	person_event SPRITE_COOL_DUDE, 43, 25, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamCrowd, EVENT_SUNBEAM_CROWD_GONE
+	person_event SPRITE_BIKINI_3, 43, 28, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamCrowd, EVENT_SUNBEAM_CROWD_GONE
+	person_event SPRITE_POKEFAN_M, 44, 29, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunbeamCrowd, EVENT_SUNBEAM_CROWD_GONE
+	person_event SPRITE_BATTLE_GIRL, 44, 26, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SunbeamCrowd, EVENT_SUNBEAM_CROWD_GONE
+	person_event SPRITE_SNARE, 22, 33, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SumbeamSnare, EVENT_SAVED_SUNBEAM
+	object_event  7, 52, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, EVENT_SUNBEAM_BOAT_GONE
+	object_event  7, 53, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, EVENT_SUNBEAM_BOAT_GONE
+	object_event  6, 53, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, EVENT_SUNBEAM_BOAT_GONE
+	object_event  6, 52, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_COMMAND, end, NULL, EVENT_SUNBEAM_BOAT_GONE
 
 
 	const_def 1 ; object constants
@@ -119,24 +119,24 @@ SunbeamIslandFlyPoint:
 SunbeamIslandCallback:
 	checkevent EVENT_ISLAND_STRAND
 	iffalse .dontmoveboat
-	moveperson SUNBEAM_SAILBOAT_T1, 13, 50
-	moveperson SUNBEAM_SAILBOAT_T2, 13, 51
-	moveperson SUNBEAM_SAILBOAT_B1, 12, 51
-	moveperson SUNBEAM_SAILBOAT_B2, 12, 50
+	moveperson SUNBEAM_SAILBOAT_T1, 13, 52
+	moveperson SUNBEAM_SAILBOAT_T2, 13, 53
+	moveperson SUNBEAM_SAILBOAT_B1, 12, 53
+	moveperson SUNBEAM_SAILBOAT_B2, 12, 52
 	disappear SUNBEAM_NPC4
-	moveperson SUNBEAM_NPC4, 13, 50
+	moveperson SUNBEAM_NPC4, 13, 52
 	appear SUNBEAM_NPC4
 	jump .skipsunbeamboatman
 .dontmoveboat
 	checkevent EVENT_ISLAND_BOATMAN
 	iftrue .skipsunbeamboatman
 	disappear SUNBEAM_NPC4
-	moveperson SUNBEAM_NPC4, 7, 49
+	moveperson SUNBEAM_NPC4, 7, 51
 	appear SUNBEAM_NPC4
 .skipsunbeamboatman
 	checkevent EVENT_SUNBEAM_SNARE_STEPPED_DOWN
 	iffalse .skipsnarestepdown
-	moveperson SUNBEAM_SNARE, $21, $15
+	moveperson SUNBEAM_SNARE, $21, $17
 .skipsnarestepdown
 	checkflag ENGINE_DAILY_BIKINI_CONTEST
 	iftrue .donebikinicontest
@@ -163,7 +163,7 @@ JustRodeBoatSunbeamStrand:
 	disappear SUNBEAM_SAILBOAT_T2
 	disappear SUNBEAM_SAILBOAT_B1
 	disappear SUNBEAM_SAILBOAT_B2
-	moveperson SUNBEAM_NPC4, 15, 23
+	moveperson SUNBEAM_NPC4, 15, 25
 	appear SUNBEAM_NPC4
 	waitsfx
 	special Special_FadeInQuickly
@@ -197,7 +197,7 @@ JustRodeBoatSunbeamNormal:
 	applymovement SUNBEAM_NPC4, Movement_SunbeamBoatmanLeave
 	playsound SFX_EXIT_BUILDING
 	disappear SUNBEAM_NPC4
-	moveperson SUNBEAM_NPC4, 15, 23
+	moveperson SUNBEAM_NPC4, 15, 25
 	appear SUNBEAM_NPC4
 	waitsfx
 	special Special_StartLandmarkTimer
@@ -230,16 +230,16 @@ JustRodeBoatSunbeamStrand2:
 	special Special_FadeBlackQuickly
 	special Special_ReloadSpritesNoPalettes
 	disappear SUNBEAM_NPC4
-	moveperson SUNBEAM_NPC4, 15, 23
+	moveperson SUNBEAM_NPC4, 15, 25
 	appear SUNBEAM_NPC4
 	disappear SUNBEAM_SAILBOAT_T1
 	disappear SUNBEAM_SAILBOAT_T2
 	disappear SUNBEAM_SAILBOAT_B1
 	disappear SUNBEAM_SAILBOAT_B2
-	moveperson SUNBEAM_SAILBOAT_T1, 7, 50
-	moveperson SUNBEAM_SAILBOAT_T2, 7, 51
-	moveperson SUNBEAM_SAILBOAT_B1, 6, 51
-	moveperson SUNBEAM_SAILBOAT_B2, 6, 50
+	moveperson SUNBEAM_SAILBOAT_T1, 7, 52
+	moveperson SUNBEAM_SAILBOAT_T2, 7, 53
+	moveperson SUNBEAM_SAILBOAT_B1, 6, 53
+	moveperson SUNBEAM_SAILBOAT_B2, 6, 52
 	appear SUNBEAM_SAILBOAT_T1
 	appear SUNBEAM_SAILBOAT_T2
 	appear SUNBEAM_SAILBOAT_B1
@@ -267,7 +267,7 @@ JustRodeBoatSunbeamStrand2:
 SunbeamFirstContest1:
 	disappear SUNBEAM_NPC4
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CHARLIE
-	moveperson SUNBEAM_NPC4, $1c, $2a
+	moveperson SUNBEAM_NPC4, $1c, $2c
 	appear SUNBEAM_NPC4
 	playmusic MUSIC_GSC_GAME_CORNER
 	opentext
@@ -281,7 +281,7 @@ SunbeamFirstContest1:
 SunbeamFirstContest2:
 	disappear SUNBEAM_NPC4
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CHARLIE
-	moveperson SUNBEAM_NPC4, $1c, $2a
+	moveperson SUNBEAM_NPC4, $1c, $2c
 	appear SUNBEAM_NPC4
 	playmusic MUSIC_GSC_GAME_CORNER
 	opentext
@@ -295,7 +295,7 @@ SunbeamFirstContest2:
 SunbeamFirstContest3:
 	disappear SUNBEAM_NPC4
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CHARLIE
-	moveperson SUNBEAM_NPC4, $1c, $2a
+	moveperson SUNBEAM_NPC4, $1c, $2c
 	appear SUNBEAM_NPC4
 	playmusic MUSIC_GSC_GAME_CORNER
 	opentext
@@ -309,7 +309,7 @@ SunbeamFirstContest3:
 SunbeamFirstContest4:
 	disappear SUNBEAM_NPC4
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CHARLIE
-	moveperson SUNBEAM_NPC4, $1c, $2a
+	moveperson SUNBEAM_NPC4, $1c, $2c
 	appear SUNBEAM_NPC4
 	playmusic MUSIC_GSC_GAME_CORNER
 	opentext
@@ -357,7 +357,7 @@ SunbeamFirstContest:
 	closetext
 	applymovement SUNBEAM_NPC4, Movement_SunbeamFirstContest2
 	disappear SUNBEAM_NPC4
-	moveperson SUNBEAM_NPC4, 15, 23
+	moveperson SUNBEAM_NPC4, 23, 17
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_GRANNY
 	appear SUNBEAM_NPC4
 	dotrigger $2
@@ -378,7 +378,7 @@ SunbeamSnareStopsYouD:
 	waitbutton
 	closetext
 	setevent EVENT_SUNBEAM_SNARE_STEPPED_DOWN
-	moveperson SUNBEAM_SNARE, $21, $15
+	moveperson SUNBEAM_SNARE, $21, $17
 	end
 
 SunbeamSnareStopsYouU:
@@ -392,7 +392,7 @@ SunbeamSnareStopsYouU:
 	waitbutton
 	closetext
 	clearevent EVENT_SUNBEAM_SNARE_STEPPED_DOWN
-	moveperson SUNBEAM_SNARE, $21, $14
+	moveperson SUNBEAM_SNARE, $21, $16
 	end
 
 SumbeamSnare:

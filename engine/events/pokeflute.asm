@@ -93,8 +93,11 @@ _PokeFlute: ; 50730
 	iftrue .NothingHappenedScript
 	farjump SunbeamPlayedFluteForSleepySnare
 .sunbeam_sleeping_beauty_script
+	checktime 1<<DUSK
+	iftrue .beauty
 	checktime 1<<NITE
 	iffalse .NothingHappenedScript
+.beauty
 	farjump SunbeamPlayedFluteForSleepingBeauty
 
 .NothingHappenedScript:

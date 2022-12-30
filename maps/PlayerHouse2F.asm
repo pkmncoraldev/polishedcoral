@@ -519,7 +519,7 @@ ChangeColorMovement1:
 	
 SunbeamWarp:
 	domaptrigger SUNBEAM_ISLAND, $0
-	warp SUNBEAM_ISLAND, 8, 49
+	warp SUNBEAM_ISLAND, 8, 51
 	end
 	
 GameConsoleText_SMW:

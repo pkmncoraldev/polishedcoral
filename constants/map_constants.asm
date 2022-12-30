@@ -129,8 +129,8 @@ MAP_NONE   EQU 0
 	
 	newgroup                                                     ;  7
 
-	map_const SUNBEAM_ISLAND,                             25, 29 ;  1
-	map_const SUNBEAM_BEACH,                              10, 29 ;  2
+	map_const SUNBEAM_ISLAND,                             25, 30 ;  1
+	map_const SUNBEAM_BEACH,                              10, 30 ;  2
 	map_const SUNBEAM_POKECENTER,                          6,  4 ;  3
 	map_const SUNBEAM_MART,								   6,  4 ;  4
 	map_const SUNBEAM_BOAT_HOUSE,                   	   4,  3 ;  5

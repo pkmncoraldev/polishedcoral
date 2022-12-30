@@ -705,7 +705,7 @@ TrySurfOW:: ; c9e7
 	cp a, -1
 	jr z, .quit
 	dec a
-	ld hl, BaseData + 7
+	ld hl, BaseData + 6
 	ld bc, BaseData1 - BaseData0
 	call AddNTimes
 	ld a, BANK(BaseData)

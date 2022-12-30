@@ -1,4 +1,6 @@
 PokemonCenterPC: ; 1559a
+	eventflagcheck EVENT_YOU_CHEATED
+	ret nz
 	call PC_CheckPartyForPokemon
 	ret c
 	call PC_PlayBootSound

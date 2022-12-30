@@ -58,7 +58,8 @@ MomPhoneGoToIsland1Text:
 	line "get home from"
 	cont "where you are?"
 	
-	para "Cross LAKE ONWA"
+	para "Have the man take"
+	line "you across the lake"
 	line "and you should be"
 	cont "at the foot of"
 	cont "MT. ONWA."
@@ -87,7 +88,8 @@ MomPhoneGoToIsland2Text:
 	para "Did you forget my"
 	line "directions?"
 	
-	para "Cross LAKE ONWA"
+	para "Have the man take"
+	line "you across the lake"
 	line "and you should be"
 	cont "at the foot of"
 	cont "MT. ONWA."

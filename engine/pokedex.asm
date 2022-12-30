@@ -2642,11 +2642,11 @@ NewPokedexEntry: ; fb877
 	predef GetFrontpic
 	call Pokedex_PlaceFrontpicNickname
 	call ApplyAttrAndTilemapInVBlank
-;	farcall GetEnemyMonPersonality
-;	ld a, [hli]
-;	ld [wTempMonPersonality], a
-;	ld a, [hl]
-;	ld [wTempMonPersonality + 1], a
+	farcall GetEnemyMonPersonality
+	ld a, [hli]
+	ld [wTempMonPersonality], a
+	ld a, [hl]
+	ld [wTempMonPersonality + 1], a
 	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
 	jp SetPalettes

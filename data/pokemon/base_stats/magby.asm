@@ -2,7 +2,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db FIRE, FIRE
-	db 45 ; catch rate
+	db 90 ; catch rate
 	db 117 ; base exp
 	db ASPEAR_BERRY ; item 1
 	db MAGMARIZER ; item 2

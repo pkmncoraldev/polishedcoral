@@ -2,7 +2,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db ELECTRIC, ELECTRIC
-	db 45 ; catch rate
+	db 90 ; catch rate
 	db 106 ; base exp
 	db SITRUS_BERRY ; item 1
 	db ELECTIRIZER ; item 2

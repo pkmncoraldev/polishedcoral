@@ -11,7 +11,7 @@
 	db FRISK ; ability 1
 	db FRISK ; ability 2
 	db HARVEST ; hidden ability
-	db SLOW ; growth rate
+	db MEDIUM_SLOW ; growth rate
 	dn PLANT, PLANT ; egg groups
 
 	; ev_yield

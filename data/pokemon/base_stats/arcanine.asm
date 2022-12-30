@@ -11,7 +11,7 @@
 	db INTIMIDATE ; ability 1
 	db FLASH_FIRE ; ability 2
 	db JUSTIFIED ; hidden ability
-	db SLOW ; growth rate
+	db MEDIUM_SLOW ; growth rate
 	dn FIELD, FIELD ; egg groups
 
 	; ev_yield

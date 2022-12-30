@@ -2090,7 +2090,11 @@ FishFunction: ; cf8e
 	jr z, .fail
 	ld a, [wMapMusic]
 	cp MUSIC_LAVA
+	jr nz, .skip_lava
+	ld a, [wMapGroup]
+	cp GROUP_MT_ONWA_1F
 	jr z, .fail
+.skip_lava
 	call GetFacingTileCoord
 	call GetTileCollision
 	cp $1

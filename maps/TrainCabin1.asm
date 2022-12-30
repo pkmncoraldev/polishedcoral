@@ -300,9 +300,14 @@ TrainCabin1NPC2:
 	opentext
 	checkevent EVENT_GOT_TRAIN_CABIN_1_NUGGET
 	iftrue .gotnugget
-	readvar VAR_PLAYER_GENDER
-	if_equal FEMALE, .girl
-	if_equal PIPPI, .girl
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl
 	writetext TrainCabin1NPC2Text3Boy
 	jump .cont
 .girl

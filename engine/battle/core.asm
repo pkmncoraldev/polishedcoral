@@ -5507,6 +5507,7 @@ TryPlayerSwitch: ; 3e358
 	ld a, [wCurPartyMon]
 	ld [wCurBattleMon], a
 PlayerSwitch: ; 3e3ad
+	call GetMonBackpic
 	ld a, 1
 	ld [wPlayerIsSwitching], a
 	ld a, [wLinkMode]

@@ -64,7 +64,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 3f
 	tilecoll SKATE, WALL, SKATE, WALL ; 40
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 41
-	tilecoll WALL, WALL, SKATE, WALL ; 42
+	tilecoll NO_OLLIE, WALL, SKATE, WALL ; 42
 	tilecoll WALL, WALL, WALL, WALL ; 43
 	tilecoll SKATE, SKATE, WALL, WALL ; 44
 	tilecoll WALL, SKATE, SKATE, SKATE ; 45

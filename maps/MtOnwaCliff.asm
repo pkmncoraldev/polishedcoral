@@ -39,9 +39,11 @@ MtOnwaCliffCallback:
 	checkevent EVENT_PLAYER_IS_KRIS
 	iftrue .playerfemale
 	disappear MT_ONWA_NPC1
+	disappear MT_ONWA_NPC2
 	appear MT_ONWA_NPC2
 	return
 .playerfemale
+	disappear MT_ONWA_NPC1
 	appear MT_ONWA_NPC1
 	disappear MT_ONWA_NPC2
 	return

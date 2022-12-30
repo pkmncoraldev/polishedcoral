@@ -173,10 +173,10 @@ JustRodeBoatSunbeamStrand:
 	setevent EVENT_SUNBEAM_BOAT_GONE
 	clearevent EVENT_ISLAND_STRAND
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_GRANNY
-	checkevent EVENT_FIRST_BIKINI_CONTEST
-	iftrue .firstcontestdone
 	checkevent EVENT_SNARE_ASLEEP
 	iftrue .sunbeamsnareasleep
+	checkevent EVENT_FIRST_BIKINI_CONTEST
+	iftrue .firstcontestdone
 	dotrigger $6
 	end
 .firstcontestdone
@@ -204,10 +204,10 @@ JustRodeBoatSunbeamNormal:
 	waitsfx
 	setevent EVENT_ISLAND_BOATMAN
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_GRANNY
-	checkevent EVENT_FIRST_BIKINI_CONTEST
-	iftrue .firstcontestdone
 	checkevent EVENT_SNARE_ASLEEP
 	iftrue .sunbeamsnareasleep
+	checkevent EVENT_FIRST_BIKINI_CONTEST
+	iftrue .firstcontestdone
 	dotrigger $6
 	end
 .firstcontestdone
@@ -251,10 +251,10 @@ JustRodeBoatSunbeamStrand2:
 	setevent EVENT_ISLAND_BOATMAN
 	clearevent EVENT_ISLAND_STRAND
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_GRANNY
-	checkevent EVENT_FIRST_BIKINI_CONTEST
-	iftrue .firstcontestdone
 	checkevent EVENT_SNARE_ASLEEP
 	iftrue .sunbeamsnareasleep
+	checkevent EVENT_FIRST_BIKINI_CONTEST
+	iftrue .firstcontestdone
 	dotrigger $6
 	end
 .firstcontestdone

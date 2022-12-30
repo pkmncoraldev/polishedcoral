@@ -266,7 +266,7 @@ JustRodeBoatSunbeamStrand2:
 	
 SunbeamFirstContest1:
 	disappear SUNBEAM_NPC4
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_TRUNKS
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CHARLIE
 	moveperson SUNBEAM_NPC4, $1c, $2a
 	appear SUNBEAM_NPC4
 	playmusic MUSIC_GSC_GAME_CORNER
@@ -280,7 +280,7 @@ SunbeamFirstContest1:
 	jump SunbeamFirstContest
 SunbeamFirstContest2:
 	disappear SUNBEAM_NPC4
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_TRUNKS
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CHARLIE
 	moveperson SUNBEAM_NPC4, $1c, $2a
 	appear SUNBEAM_NPC4
 	playmusic MUSIC_GSC_GAME_CORNER
@@ -294,7 +294,7 @@ SunbeamFirstContest2:
 	jump SunbeamFirstContest
 SunbeamFirstContest3:
 	disappear SUNBEAM_NPC4
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_TRUNKS
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CHARLIE
 	moveperson SUNBEAM_NPC4, $1c, $2a
 	appear SUNBEAM_NPC4
 	playmusic MUSIC_GSC_GAME_CORNER
@@ -308,7 +308,7 @@ SunbeamFirstContest3:
 	jump SunbeamFirstContest
 SunbeamFirstContest4:
 	disappear SUNBEAM_NPC4
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_TRUNKS
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CHARLIE
 	moveperson SUNBEAM_NPC4, $1c, $2a
 	appear SUNBEAM_NPC4
 	playmusic MUSIC_GSC_GAME_CORNER
@@ -364,7 +364,7 @@ SunbeamFirstContest:
 	setevent EVENT_FIRST_BIKINI_CONTEST
 	setevent EVENT_SUNBEAM_CROWD_GONE
 	setevent EVENT_MET_CHARLIE
-	setflag ENGINE_DAILY_BIKINI_CONTEST
+;	setflag ENGINE_DAILY_BIKINI_CONTEST
 	end
 
 SunbeamSnareStopsYouD:

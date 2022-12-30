@@ -34,6 +34,7 @@ MomPhoneScript: ; 0xbceaa
 .callaboutisland1
 	farwritetext MomPhoneGoToIsland1Text
 	setevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
+	setevent EVENT_LAKEHOUSE_SOFTLOCK_PREVENTION
 	end
 
 .callaboutisland2

@@ -28,9 +28,9 @@ LakeBoatMan1:
 	iftrue .normal
 	checkevent EVENT_CAPTAIN_GIVES_RIDES_TO_ISLAND
 	iftrue .talkedbeforeandcalled
-;	checkevent EVENT_CALLED_SPRUCE_CANT_GET_ON_ISLAND
-;	iftrue .talkedbeforeandcalled
 	checkevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
+	iftrue .talkedbeforeandcalled
+	checkevent EVENT_LAKEHOUSE_SOFTLOCK_PREVENTION
 	iftrue .talkedbeforeandcalled
 	checkevent EVENT_TALKED_TO_BOAT_MAN_CANT_GET_ON_ISLAND
 	iftrue .talkedbefore

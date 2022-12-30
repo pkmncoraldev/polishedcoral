@@ -192,7 +192,8 @@ TwinkleGymCharlieTextWinRematch:
 	text "You're on fire,"
 	line "kid!"
 	
-	para "Another great battle!"
+	para "Another great"
+	line "battle!"
 	done
 	
 TwinkleGymCharlieTextLoss:

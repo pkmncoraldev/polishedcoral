@@ -232,8 +232,9 @@ BattleAnimFrameData: ; ce85e
 	db -4
 
 .Frameset_06:
-	db BATTLEANIMOAMSET_06, $06
-	db -4
+	db BATTLEANIMOAMSET_06,  1
+	db BATTLEANIMOAMSET_0C,  1
+	db -2
 
 .Frameset_07:
 	db BATTLEANIMOAMSET_03, $04

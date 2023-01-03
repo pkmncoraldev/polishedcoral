@@ -35,7 +35,6 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_06
 	const ANIM_OBJ_07
 	const ANIM_OBJ_08
-;	const ANIM_OBJ_09
 	const ANIM_OBJ_0A
 	const ANIM_OBJ_EMBER
 	const ANIM_OBJ_0C
@@ -79,7 +78,6 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_LIGHTNING_BOLT
 	const ANIM_OBJ_33
 	const ANIM_OBJ_34
-	const ANIM_OBJ_35
 	const ANIM_OBJ_BITE
 	const ANIM_OBJ_CUT_DOWN_LEFT
 	const ANIM_OBJ_38
@@ -99,7 +97,7 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_46
 	const ANIM_OBJ_47
 	const ANIM_OBJ_48
-	const ANIM_OBJ_49
+	const ANIM_OBJ_49 ; UNUSED
 	const ANIM_OBJ_4A
 	const ANIM_OBJ_4B
 	const ANIM_OBJ_4C
@@ -120,13 +118,13 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_5B
 	const ANIM_OBJ_5C
 	const ANIM_OBJ_5D
-	const ANIM_OBJ_5E
+	const ANIM_OBJ_5E ; UNUSED
 	const ANIM_OBJ_5F
 	const ANIM_OBJ_60
 	const ANIM_OBJ_61
 	const ANIM_OBJ_62
 	const ANIM_OBJ_63
-	const ANIM_OBJ_64
+	const ANIM_OBJ_64 ; UNUSED
 	const ANIM_OBJ_65
 	const ANIM_OBJ_66
 	const ANIM_OBJ_67
@@ -136,8 +134,6 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_6B
 	const ANIM_OBJ_6C
 	const ANIM_OBJ_6D
-;	const ANIM_OBJ_SKY_ATTACK_BIRD
-;	const ANIM_OBJ_LICK
 	const ANIM_OBJ_WITHDRAW
 	const ANIM_OBJ_71
 	const ANIM_OBJ_GROWTH
@@ -165,7 +161,6 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_88
 	const ANIM_OBJ_89
 	const ANIM_OBJ_8A
-;	const ANIM_OBJ_8B
 	const ANIM_OBJ_8C
 	const ANIM_OBJ_8D
 	const ANIM_OBJ_SPIKES
@@ -174,7 +169,6 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_CONVERSION
 	const ANIM_OBJ_92
 	const ANIM_OBJ_93
-;	const ANIM_OBJ_94
 	const ANIM_OBJ_95
 	const ANIM_OBJ_96
 	const ANIM_OBJ_97
@@ -185,12 +179,10 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_9C
 	const ANIM_OBJ_GLIMMER
 	const ANIM_OBJ_9E
-;	const ANIM_OBJ_9F
 	const ANIM_OBJ_A0
 	const ANIM_OBJ_A1
 	const ANIM_OBJ_A2
 	const ANIM_OBJ_ZAP_CANNON
-;	const ANIM_OBJ_A4
 	const ANIM_OBJ_A5
 	const ANIM_OBJ_PERISH_SONG
 	const ANIM_OBJ_FORESIGHT
@@ -220,16 +212,12 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_POWER_GEM
 	const ANIM_OBJ_FOCUS_BLAST
 	const ANIM_OBJ_ICICLE
-;	const ANIM_OBJ_BIG_ICE_CHUNK
 	const ANIM_OBJ_SMALL_ICE_CHUNK
-;	const ANIM_OBJ_HONE_CLAWS_LEFT
-;	const ANIM_OBJ_HONE_CLAWS_RIGHT
 	const ANIM_OBJ_FLAME_CHARGE
 	const ANIM_OBJ_SHELL_SMASH
 	const ANIM_OBJ_CHARGE
 	const ANIM_OBJ_FEATHER_DANCE
 	const ANIM_OBJ_BULLET_SEED
-	const ANIM_OBJ_SIGNAL_BEAM
 	const ANIM_OBJ_COTTON_GUARD
 	const ANIM_OBJ_BLUE_FLAME
 	const ANIM_OBJ_HEX
@@ -289,10 +277,12 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_WISH
 	const ANIM_OBJ_WISH2
 	const ANIM_OBJ_ROCK_WRECKER_CHARGE
-    const ANIM_OBJ_ROCK_WRECKER
-    const ANIM_OBJ_ROCK_WRECKER_GROW
+	const ANIM_OBJ_ROCK_WRECKER
+	const ANIM_OBJ_ROCK_WRECKER_GROW
 	const ANIM_OBJ_BLOCK
 	const ANIM_OBJ_BLOCK2
+	const ANIM_OBJ_SIGNAL_BEAM_R
+	const ANIM_OBJ_SIGNAL_BEAM_B
 
 	const_def
 	const BATTLEANIMFUNC_00

@@ -1873,19 +1873,17 @@ BattleAnim_CottonGuard:
 	anim_ret
 	
 BattleAnim_SignalBeam:
-	anim_1gfx ANIM_GFX_MISC
-	anim_enemyfeetobj
-	anim_bgeffect ANIM_BG_06, $0, $2, $0
-	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
+	anim_1gfx ANIM_GFX_CHARGE
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
 .loop
-	anim_sound 0, 0, SFX_ESCAPE_ROPE
-	anim_obj ANIM_OBJ_SIGNAL_BEAM, 64, 92, $0
-	anim_wait 3
-	anim_loop 16, .loop
-	anim_bgeffect ANIM_BG_FEET_FOLLOW, $0, $1, $0
+	anim_sound 0, 0, SFX_SPITE
+	anim_obj ANIM_OBJ_SIGNAL_BEAM_R, 64, 92, $0
+	anim_wait 4
+	anim_sound 0, 0, SFX_SPITE
+	anim_obj ANIM_OBJ_SIGNAL_BEAM_B, 64, 92, $0
+	anim_wait 4
+	anim_loop 8, .loop
 	anim_wait 64
-	anim_incbgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_ret
 	
 BattleAnim_BulletSeed:
@@ -2928,20 +2926,6 @@ BattleAnim_Blizzard:
 	anim_wait 8
 	anim_sound 0, 1, SFX_SHINE
 	anim_wait 24
-	anim_ret
-
-BattleAnim_Bubble: ; removed
-	anim_1gfx ANIM_GFX_BUBBLE
-	anim_sound 32, 2, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_21,   8, 0,  11, 4, $c1
-	anim_wait 6
-	anim_sound 32, 2, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_21,   8, 0,  11, 4, $e1
-	anim_wait 6
-	anim_sound 32, 2, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_21,   8, 0,  11, 4, $d1
-	anim_wait 128
-	anim_wait 32
 	anim_ret
 
 BattleAnim_BubbleBeam:
@@ -6798,7 +6782,7 @@ BattleAnim_SpiderWeb: ; removed
 	anim_wait 64
 	anim_ret
 
-BattleAnim_CometPunch: ; removed
+BattleAnim_CometPunch: ; used for FuryStrikes
 	anim_1gfx ANIM_GFX_HIT
 	anim_jumpif $1, BattleAnim_CometPunch_branch_c9641
 	anim_sound 0, 1, SFX_COMET_PUNCH
@@ -6984,7 +6968,7 @@ BattleAnim_Twister: ; removed
 	anim_wait 32
 	anim_ret
 
-BattleAnim_EggBomb: ; removed
+BattleAnim_EggBomb:
 	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_EXPLOSION
 	anim_sound 0, 0, SFX_SWITCH_POKEMON
 	anim_obj ANIM_OBJ_46,   5, 4,  13, 0, $1

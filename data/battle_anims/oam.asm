@@ -12,7 +12,7 @@ BattleAnimOAMData: ; ceeae
 	dbbw $08, 16, .OAMData_09 ; 09
 	dbbw $00,  4, .OAMData_04 ; 0a
 	dbbw $02,  4, .OAMData_03 ; 0b
-	dbbw $09,  4, .OAMData_02 ; 0c
+	dbbw $06,  2, .OAMData_0c ; 0c
 	dbbw $07,  2, .OAMData_0c ; 0d
 	dbbw $02,  4, .OAMData_04 ; 0e
 	dbbw $04,  1, .OAMData_0f ; 0f
@@ -101,7 +101,7 @@ BattleAnimOAMData: ; ceeae
 	dbbw $00,  5, .OAMData_61 ; 62
 	dbbw $00,  9, .OAMData_61 ; 63
 	dbbw $09,  9, .OAMData_61 ; 64
-	dbbw $00,  4, .OAMData_65 ; 65
+	dbbw $09,  4, .OAMData_02 ; 65
 	dbbw $00,  7, .OAMData_65 ; 66
 	dbbw $00,  9, .OAMData_65 ; 67
 	dbbw $09,  9, .OAMData_65 ; 68

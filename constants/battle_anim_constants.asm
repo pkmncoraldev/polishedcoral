@@ -47,7 +47,7 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_13
 	const ANIM_OBJ_RAZOR_LEAF
 	const ANIM_OBJ_POKE_BALL
-	const ANIM_OBJ_16
+	const ANIM_OBJ_POKE_BALL_BLOCKED
 	const ANIM_OBJ_17
 	const ANIM_OBJ_18
 	const ANIM_OBJ_ACID
@@ -150,7 +150,7 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_AGILITY
 	const ANIM_OBJ_HEART
 	const ANIM_OBJ_7F
-	const ANIM_OBJ_80
+	const ANIM_OBJ_SACRED_FIRE
 	const ANIM_OBJ_COTTON_SPORE
 	const ANIM_OBJ_82
 	const ANIM_OBJ_83

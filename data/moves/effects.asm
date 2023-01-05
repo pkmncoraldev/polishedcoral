@@ -2297,6 +2297,8 @@ RapidSpin:
 	postfainteffects
 	posthiteffects
 	pickpocket
+	speedup
+	statupmessage
 	endmove
 
 HealingLight:

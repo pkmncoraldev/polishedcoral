@@ -236,10 +236,10 @@ anim_clearsprites: macro
 	db anim_clearsprites_command
 	endm
 
-	enum anim_0xf5_command ; f5
-anim_0xf5: macro
-	db anim_0xf5_command
-	endm
+	enum anim_clearenemyhud_command ; $f5
+anim_clearenemyhud: macro
+	db anim_clearenemyhud_command
+ENDM
 
 	enum anim_0xf6_command ; f6
 anim_0xf6: macro

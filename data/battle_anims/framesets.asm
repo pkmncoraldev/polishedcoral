@@ -1365,9 +1365,9 @@ BattleAnimFrameData: ; ce85e
 	delanim
 
 .Frameset_e7:
-	frame BATTLEANIMOAMSET_BD,  $24
-	frame BATTLEANIMOAMSET_EE,  $24
-	frame BATTLEANIMOAMSET_ED,  $24
+	frame BATTLEANIMOAMSET_BD,  4, OAM_X_FLIP
+	frame BATTLEANIMOAMSET_EE,  4, OAM_X_FLIP
+	frame BATTLEANIMOAMSET_ED,  4, OAM_X_FLIP
 	delanim
 	
 .Frameset_e9:

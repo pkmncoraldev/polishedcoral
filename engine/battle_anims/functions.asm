@@ -4392,7 +4392,7 @@ BattleAnimFunction_RadialMoveOut_Slow:
 	pop hl
 	ld [hli], a
 	ld [hl], e
-	cp 60 ; final position
+	cp 120 ; final position
 	jp nc, DeinitBattleAnimation
 	ld hl, BATTLEANIMSTRUCT_0B
 	add hl, bc

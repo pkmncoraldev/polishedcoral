@@ -97,7 +97,6 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_46
 	const ANIM_OBJ_47
 	const ANIM_OBJ_48
-	const ANIM_OBJ_49 ; UNUSED
 	const ANIM_OBJ_4A
 	const ANIM_OBJ_4B
 	const ANIM_OBJ_4C
@@ -197,7 +196,6 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_B0
 	const ANIM_OBJ_B1
 	const ANIM_OBJ_B2
-;	const ANIM_OBJ_B3
 	const ANIM_OBJ_B4
 	const ANIM_OBJ_ROCK_SMASH
 	const ANIM_OBJ_FLOWER
@@ -283,6 +281,7 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_BLOCK2
 	const ANIM_OBJ_SIGNAL_BEAM_R
 	const ANIM_OBJ_SIGNAL_BEAM_B
+	const ANIM_OBJ_ROCK_CLIMB
 
 	const_def
 	const BATTLEANIMFUNC_00

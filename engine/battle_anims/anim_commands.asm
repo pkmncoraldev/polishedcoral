@@ -251,21 +251,26 @@ BattleAnimRequestPals: ; cc1e2
 	ret
 ; cc1fb
 
-ClearActorHud: ; cc207
+ClearEnemyHud:
+	ldh a, [hBattleTurn]
+	xor 1
+	jr ClearActorHud.continue
 
-	ld a, [hBattleTurn]
+ClearActorHud:
+	ldh a, [hBattleTurn]
 	and a
+.continue
 	jr z, .player
 
-	hlcoord 0, 0
-	lb bc, 4, 11
-	jp ClearBox
+	hlcoord 1, 0
+	lb bc, 4, 10
+	jr .clear_box
 
 .player
 	hlcoord 9, 7
 	lb bc, 5, 11
+.clear_box
 	jp ClearBox
-; cc220
 
 
 BattleAnim_ClearCGB_OAMFlags: ; cc23d
@@ -423,7 +428,7 @@ BattleAnimCommands:: ; cc2a4 (33:42a4)
 	dw BattleAnimCmd_OBP0
 	dw BattleAnimCmd_OBP1
 	dw BattleAnimCmd_ClearSprites
-	dw BattleAnimCmd_F5 ; dummy
+	dw ClearEnemyHud    ; f5
 	dw BattleAnimCmd_F6 ; dummy
 ;	dw BattleAnimCmd_F7 ; dummy
 	dw BattleAnimCmd_ClearFirstBGEffect

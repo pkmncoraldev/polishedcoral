@@ -233,8 +233,6 @@ BattleAnimOAMData: ; ceeae
 	dbbw $02,  9, .OAMData_f7 ; BATTLEANIMOAMSET_F7
 	dbbw $02, 10, .OAMData_f8 ; BATTLEANIMOAMSET_F8
 	dbbw $02,  6, .OAMData_f8 ; BATTLEANIMOAMSET_F9
-	dbbw $04,  1, .OAMData_0f ; BATTLEANIMOAMSET_WISH
-	dbbw $05,  1, .OAMData_0f ; BATTLEANIMOAMSET_WISH2
 
 .OAMData_11:
 	dsprite  -1, 0,  -1, 4, $00, $0

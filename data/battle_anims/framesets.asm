@@ -202,7 +202,6 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_ea
 	dw .Frameset_ec
 	dw .Frameset_ed
-	dw .Frameset_wish
 	dw .Frameset_f3 ; BATTLEANIMFRAMESET_F3
 	dw .Frameset_block
 
@@ -333,8 +332,9 @@ BattleAnimFrameData: ; ce85e
 	db -2
 
 .Frameset_0a:
-	db BATTLEANIMOAMSET_0C, $08
-	db -1
+	db BATTLEANIMOAMSET_54,  1
+	db BATTLEANIMOAMSET_53,  1
+	db -2
 
 .Frameset_0b:
 	db BATTLEANIMOAMSET_0D, $08
@@ -1410,11 +1410,6 @@ BattleAnimFrameData: ; ce85e
 	db -3, $02
 	db BATTLEANIMOAMSET_F9,  $42
 	delanim
-	
-.Frameset_wish:
-	db BATTLEANIMOAMSET_WISH, $01
-	db BATTLEANIMOAMSET_WISH2, $01
-	db -2
 
 .Frameset_f3:
 	db -3, 20

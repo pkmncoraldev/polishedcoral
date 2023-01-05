@@ -90,7 +90,7 @@ Moves:: ; 41afb
 	move STUN_SPORE,   EFFECT_STUN_SPORE,          0, GRASS,      75, 30,   0, STATUS
 	move SLEEP_POWDER, EFFECT_SLEEP_POWDER,        0, GRASS,      75, 15,   0, STATUS
 	move PETAL_DANCE,  EFFECT_RAMPAGE,           120, GRASS,     100, 10,   0, SPECIAL
-	move TAUNT,		   EFFECT_TAUNT,        	   0, DARK,      100, 20,   0, STATUS
+	move TAUNT,        EFFECT_TAUNT,               0, DARK,      100, 20,   0, STATUS
 	move DRAGON_RAGE,  EFFECT_STATIC_DAMAGE,      40, DRAGON,    100, 10,   0, SPECIAL
 	move FIRE_SPIN,    EFFECT_TRAP,               35, FIRE,       85, 15,   0, SPECIAL
 	move THUNDERSHOCK, EFFECT_PARALYZE_HIT,       40, ELECTRIC,  100, 30,  10, SPECIAL
@@ -99,7 +99,7 @@ Moves:: ; 41afb
 	move THUNDER,      EFFECT_THUNDER,           110, ELECTRIC,   70, 10,  30, SPECIAL
 	move ROCK_THROW,   EFFECT_NORMAL_HIT,         50, ROCK,       90, 15,   0, PHYSICAL
 	move EARTHQUAKE,   EFFECT_EARTHQUAKE,        100, GROUND,    100, 10,   0, PHYSICAL
-	move FAIRY_WIND,   EFFECT_NORMAL_HIT, 		  40, FAIRY,     100, 30,   0, SPECIAL
+	move FAIRY_WIND,   EFFECT_NORMAL_HIT,         40, FAIRY,     100, 30,   0, SPECIAL
 	move DIG,          EFFECT_FLY,                80, GROUND,    100, 10,   0, PHYSICAL
 	move TOXIC,        EFFECT_TOXIC,               0, POISON,     90, 10,   0, STATUS
 	move CONFUSION,    EFFECT_CONFUSE_HIT,        50, PSYCHIC,   100, 25,  10, SPECIAL

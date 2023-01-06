@@ -216,6 +216,7 @@ BattleAnimOAMData: ; ceeae
 	dbbw $00,  6, .OAMData_d5 ; d5
 	dbbw $00, 14, .OAMData_d6 ; d6
 	dbbw $00, 12, .OAMData_d7 ; d7
+	dbbw $00,  6, .OAMData_d8 ; d8
 	dbbw $1b,  4, .OAMData_03 ; BATTLEANIMOAMSET_E0
 	dbbw $07, 10, .OAMData_e1 ; BATTLEANIMOAMSET_E1
 	dbbw $1f,  4, .OAMData_03 ; BATTLEANIMOAMSET_E2
@@ -1184,4 +1185,11 @@ BattleAnimOAMData: ; ceeae
 	dsprite   0, 4,  -6, 4, $00, X_FLIP
 	dsprite   1, 4,  -7, 4, $00, Y_FLIP
 	dsprite   1, 4,  -6, 4, $00, X_FLIP | Y_FLIP
-; cfcf6
+
+.OAMData_d8
+	dsprite  -1, 0,  -1, 0, $00, $0
+	dsprite  -1, 0,   0, 0, $01, $0
+	dsprite   0, 0,  -1, 0, $02, $0
+	dsprite   0, 0,   0, 0, $03, $0
+	dsprite   1, 0,  -1, 0, $04, $0
+	dsprite   1, 0,   0, 0, $05, $0

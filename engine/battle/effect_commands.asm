@@ -7885,15 +7885,13 @@ BattleCommand_resetfoestats:
 	and a
 	jr z, .enemy
 	farcall ResetPlayerStatLevels
-	call AnimateCurrentMove
 
-	ld hl, EliminatedStatsText
+	ld hl, EnemyEliminatedStatsText
 	jp StdBattleTextBox
 .enemy
 	farcall ResetEnemyStatLevels
-	call AnimateCurrentMove
 
-	ld hl, EliminatedStatsText
+	ld hl, EnemyEliminatedStatsText
 	jp StdBattleTextBox
 	
 BattleCommand_heal:

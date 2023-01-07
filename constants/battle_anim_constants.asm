@@ -156,15 +156,14 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_88
 	const ANIM_OBJ_89
 	const ANIM_OBJ_8A
-	const ANIM_OBJ_8D ; UNUSED
 	const ANIM_OBJ_SPIKES
 	const ANIM_OBJ_8F
 	const ANIM_OBJ_90
 	const ANIM_OBJ_CONVERSION
 	const ANIM_OBJ_92
-	const ANIM_OBJ_93
+	const ANIM_OBJ_93 ; UNUSED
 	const ANIM_OBJ_95
-	const ANIM_OBJ_96
+	const ANIM_OBJ_96 ; UNUSED
 	const ANIM_OBJ_97
 	const ANIM_OBJ_98
 	const ANIM_OBJ_99
@@ -188,8 +187,7 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_AD
 	const ANIM_OBJ_AE
 	const ANIM_OBJ_AF
-	const ANIM_OBJ_B0
-	const ANIM_OBJ_B1
+	const ANIM_OBJ_B1 ; UNUSED
 	const ANIM_OBJ_B2
 	const ANIM_OBJ_B4
 	const ANIM_OBJ_ROCK_SMASH
@@ -197,8 +195,8 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_COTTON ; UNUSED
 	const ANIM_OBJ_PLAYERFEETFOLLOW
 	const ANIM_OBJ_ENEMYFEETFOLLOW
-	const ANIM_OBJ_BA
-	const ANIM_OBJ_BB
+	const ANIM_OBJ_BA ; UNUSED
+	const ANIM_OBJ_BB ; UNUSED
 	const ANIM_OBJ_MOON
 	const ANIM_OBJ_ENERGY_BALL
 	const ANIM_OBJ_HAIL
@@ -281,6 +279,8 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_VORTEX_YELLOW
 	const ANIM_OBJ_SCALD
 	const ANIM_OBJ_STEAM
+	const ANIM_OBJ_CLEAR_SMOG
+	const ANIM_OBJ_OMINOUS_WIND
 
 	const_def
 	const BATTLEANIMFUNC_00

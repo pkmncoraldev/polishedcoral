@@ -364,7 +364,7 @@ BattleAnim_ClearSmog:
 	anim_1gfx ANIM_GFX_HAZE
 	anim_sound 0, 0, SFX_SURF
 .loop
-	anim_obj ANIM_OBJ_5C,   -16, 4,   2, 0, $0
+	anim_obj ANIM_OBJ_CLEAR_SMOG, 44, 80, $2
 	anim_wait 8
 	anim_loop 10, .loop
 	anim_wait 96
@@ -462,23 +462,24 @@ BattleAnim_RockWrecker:
 	anim_ret
 
 BattleAnim_OminousWind:
-	anim_1gfx ANIM_GFX_WIND
-	anim_sound 0, 0, SFX_PERISH_SONG
+	anim_1gfx ANIM_GFX_HAZE
+	anim_sound 0, 0, SFX_SPITE
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_bgp $1b
-	anim_bgeffect ANIM_BG_PSYCHIC, $0, $0, $0
-	anim_obj ANIM_OBJ_AGILITY,   1, 0,   3, 0, $10
-	anim_obj ANIM_OBJ_AGILITY,   1, 0,   6, 0, $2
-	anim_obj ANIM_OBJ_AGILITY,   1, 0,  11, 0, $8
-	anim_wait 4
-	anim_obj ANIM_OBJ_AGILITY,   1, 0,   4, 0, $6
-	anim_obj ANIM_OBJ_AGILITY,   1, 0,   7, 0, $c
-	anim_obj ANIM_OBJ_AGILITY,   1, 0,  10, 0, $4
-	anim_obj ANIM_OBJ_AGILITY,   1, 0,  13, 0, $e
+	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
 .loop
-	anim_wait 16
-	anim_loop 8, .loop
-	anim_incbgeffect ANIM_BG_PSYCHIC
+	anim_obj ANIM_OBJ_OMINOUS_WIND, 88, 32, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_OMINOUS_WIND, 56, 48, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_OMINOUS_WIND, 72, 64, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_OMINOUS_WIND, 24, 80, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_OMINOUS_WIND, 40, 96, $1
+	anim_loop 3, .loop
+	anim_wait 32
+	anim_incbgeffect ANIM_BG_WHIRLPOOL
 	anim_ret
 
 BattleAnim_Wish:
@@ -573,7 +574,7 @@ BattleAnim_Shockwave:
 	anim_ret
 
 BattleAnim_ToxicSpikes:
-	anim_1gfx ANIM_GFX_MISC
+	anim_2gfx ANIM_GFX_MISC, ANIM_GFX_POISON
 	anim_sound 6, 2, SFX_MENU
 	anim_obj ANIM_OBJ_SPIKES,   6, 0,  11, 0, $20
 	anim_wait 8
@@ -583,18 +584,16 @@ BattleAnim_ToxicSpikes:
 	anim_sound 6, 2, SFX_MENU
 	anim_obj ANIM_OBJ_SPIKES,   6, 0,  11, 0, $28
 	anim_wait 32
-.loop
-	anim_1gfx ANIM_GFX_POISON
 	anim_sound 0, 1, SFX_TOXIC
-	anim_obj ANIM_OBJ_SLUDGE, -16, 4,   9, 0, $0
+	anim_obj ANIM_OBJ_SLUDGE, 132, 72, $0
 	anim_wait 8
 	anim_sound 0, 1, SFX_TOXIC
-	anim_obj ANIM_OBJ_SLUDGE,  14, 4,   9, 0, $0
+	anim_obj ANIM_OBJ_SLUDGE, 116, 72, $0
 	anim_wait 8
 	anim_sound 0, 1, SFX_TOXIC
-	anim_obj ANIM_OBJ_SLUDGE, -14, 4,   9, 0, $0
+	anim_obj ANIM_OBJ_SLUDGE, 148, 72, $0
 	anim_wait 8
-	anim_loop 5, .loop
+	anim_wait 32
 	anim_ret
 
 BattleAnim_GunkShot:
@@ -2255,7 +2254,7 @@ BattleAnim_Scald:
 	anim_sound 0, 1, SFX_POISON_STING
 	anim_obp0 $54
 .loop2
-	anim_obj ANIM_OBJ_STEAM, 48, 96, $0
+	anim_obj ANIM_OBJ_STEAM, 136, 52, $0
 	anim_wait 8
 	anim_loop 5, .loop2
 	anim_wait 32
@@ -2598,17 +2597,22 @@ BattleAnim_Acrobatics:
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_KINESIS
 	anim_call BattleAnim_FollowEnemyFeet_0
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $1, $0
 	anim_bgeffect ANIM_BG_1D, $0, $1, $20
+	anim_wait 2
+	anim_sound 0, 0, SFX_KINESIS
+	anim_wait 2
+	anim_sound 0, 0, SFX_KINESIS
 	anim_wait 16
-	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj ANIM_OBJ_01, -15, 0,   7, 0, $0
-	anim_wait 12
-	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj ANIM_OBJ_01, -14, 0,   5, 0, $0
-	anim_wait 12
-	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj ANIM_OBJ_01, -15, 0,   3, 0, $0
-	anim_wait 24
+	anim_sound 0, 1, SFX_DOUBLE_SLAP
+	anim_obj ANIM_OBJ_01, 120, 32, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_DOUBLE_SLAP
+	anim_obj ANIM_OBJ_01, 152, 40, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_DOUBLE_SLAP
+	anim_obj ANIM_OBJ_01, 136, 48, $0
+	anim_wait 32
 	anim_incbgeffect ANIM_BG_1D
 	anim_call BattleAnim_ShowMon_0
 	anim_wait 4
@@ -4066,13 +4070,34 @@ BattleAnim_PoisonSting:
 
 BattleAnim_PoisonJab:
 	anim_3gfx ANIM_GFX_HORN, ANIM_GFX_HIT, ANIM_GFX_POISON
+	anim_obp0 $ef
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $55, $1, $0
+	anim_obj ANIM_OBJ_5F, 72, 80, $3
+.loop
 	anim_sound 0, 1, SFX_HORN_ATTACK
-	anim_obj ANIM_OBJ_5F,   9, 0,  12, 0, $1
-	anim_wait 6
-	anim_obj ANIM_OBJ_01, 17, 0,  7, 0, $0
+	anim_obj ANIM_OBJ_01, 132, 40, $0
 	anim_wait 8
-	anim_call BattleAnim_PoisonJab_branch_cbc15
-	anim_wait 24
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_01, 136, 56, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_01, 126, 50, $0
+	anim_wait 8
+	anim_loop 3, .loop
+	anim_clearobjs
+	anim_obp0 $e4
+.loop2
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 132, 72, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 116, 72, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 148, 72, $0
+	anim_wait 8
+	anim_loop 2, .loop2
+	anim_wait 32
 	anim_ret
 
 BattleAnim_PinMissile:

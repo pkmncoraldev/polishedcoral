@@ -1218,6 +1218,18 @@ EliminatedStatsText: ; 0x81476
 	prompt
 ; 0x81499
 
+UserEliminatedStatsText:
+	text "<USER>'s"
+	line "stat changes were"
+	cont "eliminated!"
+	prompt
+
+EnemyEliminatedStatsText:
+	text "<TARGET>'s"
+	line "stat changes were"
+	cont "eliminated!"
+	prompt
+
 TransformedText: ; 0x81499
 	text "<USER>"
 	line "transformed into"

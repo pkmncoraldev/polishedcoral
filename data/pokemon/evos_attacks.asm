@@ -170,19 +170,7 @@ BlastoiseEvosAttacks:
 PidgeyEvosAttacks:
 	db EVOLVE_LEVEL, 18, PIDGEOTTO
 	db  0 ; no more evolutions
-	db  1, TACKLE_SCRATCH_POUND
-	db  4, SAND_ATTACK_SMOKESCREEN
-	db  8, GUST
-	db 13, QUICK_ATTACK
-	db 17, ROAR_WHIRLWIND
-	db 21, TWISTER
-	db 25, CHARM_FEATHER_DANCE
-	db 27, WING_ATTACK
-	db 29, AGILITY_ROCK_POLISH
-	db 33, ROOST
-	db 41, MIRROR_MOVE
-	db 45, AIR_SLASH
-	db 53, BRAVE_BIRD
+	db  1, ELECTRO_BALL
 	db  0 ; no more level-up moves
 
 PidgeottoEvosAttacks:

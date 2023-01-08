@@ -157,13 +157,10 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_89
 	const ANIM_OBJ_8A
 	const ANIM_OBJ_SPIKES
-	const ANIM_OBJ_8F
 	const ANIM_OBJ_90
 	const ANIM_OBJ_CONVERSION
 	const ANIM_OBJ_92
-	const ANIM_OBJ_93 ; UNUSED
 	const ANIM_OBJ_95
-	const ANIM_OBJ_96 ; UNUSED
 	const ANIM_OBJ_97
 	const ANIM_OBJ_98
 	const ANIM_OBJ_99
@@ -281,6 +278,9 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_STEAM
 	const ANIM_OBJ_CLEAR_SMOG
 	const ANIM_OBJ_OMINOUS_WIND
+	const ANIM_OBJ_WILL_O_WISP
+	const ANIM_OBJ_LEECH_LIFE
+	const ANIM_OBJ_ICE_SHARD
 
 	const_def
 	const BATTLEANIMFUNC_00

@@ -6645,8 +6645,7 @@ BattleCommand_forceswitch: ; 3680f
 	xor a
 	ld [wPlaceBallsX], a
 	ld [wPlaceBallsY], a
-	ld hl, FledInFearText
-	jp StdBattleTextBox
+	jp EndTurn
 
 .trainer
 	call CheckAnyOtherAliveOpponentMons

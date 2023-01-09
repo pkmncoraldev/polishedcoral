@@ -3671,32 +3671,51 @@ BattleAnim_Earthquake:
 
 BattleAnim_Growl:
 	anim_1gfx ANIM_GFX_NOISE
+	anim_battlergfx_2row
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_cry $0
 .loop
-	anim_call BattleAnim_Growl_branch_cbbbc
+	anim_call BattleAnimSub_Sound
 	anim_wait 16
 	anim_loop 3, .loop
-	anim_clearfirstbgeffect
-	anim_wait 17
+	anim_wait 9
+	anim_bgeffect ANIM_BG_FEET_FOLLOW, $0, $1, $0
+	anim_wait 8
 	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
 	anim_wait 64
 	anim_incbgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING
-	anim_wait 6
+	anim_wait 1
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 5
 	anim_incobj 10
 	anim_wait 8
 	anim_ret
+
+BattleAnim_Howl:
+	anim_1gfx ANIM_GFX_NOISE
+	anim_battlergfx_2row
+	anim_call BattleAnim_FollowEnemyFeet_0
+	anim_wait 1
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $1, $0
+	anim_bgeffect ANIM_BG_06, $0, $2, $0
+	anim_bgeffect ANIM_BG_18, $0, $1, $40
+	anim_cry $0
+.loop
+	anim_call BattleAnimSub_Sound
+	anim_wait 16
+	anim_loop 3, .loop
+	anim_wait 16
+	anim_jump BattleAnim_ShowMon_0
 
 BattleAnim_Roar:
 	anim_jumpif $2, BattleAnim_Whirlwind
 	anim_1gfx ANIM_GFX_NOISE
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
-	anim_cry $1
+	anim_cry $0
 .loop
-	anim_call BattleAnim_Roar_branch_cbbbc
+	anim_call BattleAnimSub_Sound
 	anim_wait 16
 	anim_loop 3, .loop
-	anim_clearfirstbgeffect
 	anim_wait 16
 	anim_jumpif $0, .done
 	anim_bgeffect ANIM_BG_27, $0, $0, $0
@@ -3989,10 +4008,10 @@ BattleAnim_Whirlwind:
 	anim_incobj  9
 	anim_sound 16, 2, SFX_WHIRLWIND
 	anim_wait 128
-;	anim_jumpif $0, .done
-;	anim_bgeffect ANIM_BG_27, $0, $0, $0
-;	anim_wait 64
-;.done
+	anim_jumpif $0, .done
+	anim_bgeffect ANIM_BG_27, $0, $0, $0
+	anim_wait 64
+.done
 	anim_ret
 
 BattleAnim_Hypnosis:
@@ -6099,9 +6118,7 @@ BattleAnim_Selfdestruct_branch_cbb8f:
 	anim_obj ANIM_OBJ_17, -16, 4,   6, 4, $0
 	anim_ret
 
-BattleAnim_Growl_branch_cbbbc:
-BattleAnim_Roar_branch_cbbbc:
-BattleAnim_Snore_branch_cbbbc:
+BattleAnimSub_Sound:
 	anim_obj ANIM_OBJ_4B,   8, 0,   9, 4, $0
 	anim_obj ANIM_OBJ_4B,   8, 0,  11, 0, $1
 	anim_obj ANIM_OBJ_4B,   8, 0,  12, 4, $2
@@ -6229,7 +6246,7 @@ BattleAnim_ShowMon_1:
 
 BattleAnim_Sharpen:
 	anim_jumpif $1, BattleAnim_Meditate
-	anim_jumpif $2, BattleAnim_Growl
+	anim_jumpif $2, BattleAnim_Howl
 	anim_1gfx ANIM_GFX_SHAPES
 	anim_obp0 $e4
 	anim_call BattleAnim_FollowEnemyFeet_0
@@ -6375,7 +6392,7 @@ BattleAnim_Snore:
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $2, $0
 	anim_sound 0, 0, SFX_SNORE
 .loop
-	anim_call BattleAnim_Snore_branch_cbbbc
+	anim_call BattleAnimSub_Sound
 	anim_wait 16
 	anim_loop 2, .loop
 	anim_wait 8

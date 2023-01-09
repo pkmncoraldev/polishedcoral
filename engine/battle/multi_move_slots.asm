@@ -2356,20 +2356,21 @@ PoundUsers:
 	db POLIWAG
 	db POLIWHIRL
 	db POLIWRATH
-	db POLITOED
-	db SUDOWOODO
+	db GRIMER
+	db GRIMER_A
+	db MUK
+	db MUK_A
+	db CHANSEY
 	db DRATINI
 	db DRAGONAIR
 	db DRAGONITE
+	db POLITOED
+	db SUDOWOODO
 	db SNOVER
 	db ABOMASNOW
 	db SNORUNT
 	db GLALIE
 	db FROSLASS
-	db GRIMER
-	db MUK
-	db GRIMER_A
-	db MUK_A
 	db -1
 	
 ScratchUsers:

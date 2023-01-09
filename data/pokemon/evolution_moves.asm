@@ -1,13 +1,13 @@
 EvolutionMoves::
-	db NO_MOVE      						; BULBASAUR
-	db SLUDGE       						; IVYSAUR
-	db PETAL_DANCE  						; VENUSAUR
-	db NO_MOVE      						; CHARMANDER
-	db DRAGONBREATH  						; CHARMELEON
+	db NO_MOVE                              ; BULBASAUR
+	db SLUDGE                               ; IVYSAUR
+	db PETAL_DANCE                          ; VENUSAUR
+	db NO_MOVE                              ; CHARMANDER
+	db DRAGONBREATH                         ; CHARMELEON
 	db AIR_SLASH                            ; CHARIZARD
 	db NO_MOVE                              ; SQUIRTLE
 	db ICY_WIND                             ; WARTORTLE
-	db BARRIER_IRON_DEFENSE_ACID_ARMOR      ; BLASTOISE
+	db FLASH_CANNON                         ; BLASTOISE
 	db NO_MOVE      						; PIDGEY
 	db NO_MOVE      						; PIDGEOTTO
 	db NO_MOVE      						; PIDGEOT

@@ -40,7 +40,7 @@ EvolutionMoves::
 	db NO_MOVE                              ; POLIWHIRL
 	db DYNAMICPUNCH                         ; POLIWRATH
 	db NO_MOVE                              ; ABRA
-	db NO_MOVE                              ; KADABRA
+	db SAND_ATTACK_SMOKESCREEN              ; KADABRA
 	db NO_MOVE                              ; ALAKAZAM
 	db NO_MOVE                              ; MACHOP
 	db NO_MOVE                              ; MACHOKE
@@ -49,25 +49,25 @@ EvolutionMoves::
 	db NO_MOVE                              ; GRAVELER
 	db NO_MOVE                              ; GOLEM
 	db NO_MOVE                              ; PONYTA
-	db FURY_SWIPES_FURY_ATTACK_COMET_PUNCH  ; RAPIDASH
-	db NO_MOVE      						; SLOWPOKE
-	db DEFENSE_CURL_HARDEN_WITHDRAW      	; SLOWBRO
-	db NO_MOVE      						; MAGNEMITE
-	db NO_MOVE      						; MAGNETON
-	db NO_MOVE      						; DODUO
-	db NO_MOVE      						; DODRIO
-	db NO_MOVE      						; GRIMER
-	db NO_MOVE      						; MUK
-	db NO_MOVE      						; GASTLY
-	db SHADOW_CLAW  						; HAUNTER
-	db SHADOW_CLAW  						; GENGAR
-	db NO_MOVE      						; ONIX
-	db NO_MOVE      						; VOLTORB
-	db NO_MOVE      						; ELECTRODE
-	db NO_MOVE      						; EXEGGCUTE
-	db WOOD_HAMMER     						; EXEGGUTOR
-	db NO_MOVE      						; CUBONE
-	db NO_MOVE      						; MAROWAK
+	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP  ; RAPIDASH
+	db NO_MOVE                              ; SLOWPOKE
+	db DEFENSE_CURL_HARDEN_WITHDRAW         ; SLOWBRO
+	db NO_MOVE                              ; MAGNEMITE
+	db NO_MOVE                              ; MAGNETON
+	db NO_MOVE                              ; DODUO
+	db NO_MOVE                              ; DODRIO
+	db NO_MOVE                              ; GRIMER
+	db NO_MOVE                              ; MUK
+	db NO_MOVE                              ; GASTLY
+	db SHADOW_CLAW                          ; HAUNTER
+	db SHADOW_CLAW                          ; GENGAR
+	db NO_MOVE                              ; ONIX
+	db NO_MOVE                              ; VOLTORB
+	db NO_MOVE                              ; ELECTRODE
+	db NO_MOVE                              ; EXEGGCUTE
+	db WOOD_HAMMER                          ; EXEGGUTOR
+	db NO_MOVE                              ; CUBONE
+	db NO_MOVE                              ; MAROWAK
 	db NO_MOVE      						; KOFFING
 	db DOUBLE_HIT      						; WEEZING
 	db NO_MOVE      						; CHANSEY
@@ -139,14 +139,14 @@ EvolutionMoves::
 	db NO_MOVE      						; SLUGMA
 	db SHELL_SMASH  						; MAGCARGO
 	db NO_MOVE      						; SWINUB
-	db FURY_SWIPES_FURY_ATTACK_COMET_PUNCH  ; PILOSWINE
+	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP  ; PILOSWINE
 	db NO_MOVE      						; CORSOLA
 	db NO_MOVE      						; SKARMORY
 	db NO_MOVE      						; HOUNDOUR
 	db NO_MOVE      						; HOUNDOOM
 	db NO_MOVE      						; KINGDRA
 	db NO_MOVE      						; PHANPY
-	db FURY_SWIPES_FURY_ATTACK_COMET_PUNCH  ; DONPHAN
+	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP  ; DONPHAN
 	db NO_MOVE      						; PORYGON2
 	db NO_MOVE      						; STANTLER
 	db NO_MOVE      						; SMEARGLE

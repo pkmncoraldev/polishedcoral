@@ -802,10 +802,10 @@ BattleAnim_Taunt:
 	anim_loop 3, .loop
 	anim_clearobjs
 	anim_sound 0, 1, SFX_KINESIS_2
-	anim_obj ANIM_OBJ_ANGER, 112, 50, $0
+	anim_obj ANIM_OBJ_83, 112, 50, $0
 	anim_wait 16
 	anim_sound 0, 1, SFX_KINESIS_2
-	anim_obj ANIM_OBJ_ANGER, 148, 32, $0
+	anim_obj ANIM_OBJ_83, 148, 32, $0
 	anim_wait 32
 	anim_ret
 	
@@ -3395,6 +3395,7 @@ BattleAnim_Scratch:
 	anim_ret
 
 BattleAnim_FuryStrikes:
+	anim_jumpif $5, BattleAnim_Barrage
 	anim_jumpif $4, BattleAnim_DoubleSlap
 	anim_jumpif $3, BattleAnim_CometPunch
 	anim_jumpif $2, BattleAnim_FuryAttack
@@ -3407,6 +3408,16 @@ BattleAnim_FurySwipes:
 	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, -15, 0,   5, 0, $0
 	anim_sound 0, 1, SFX_SCRATCH
 	anim_wait 32
+	anim_ret
+	
+BattleAnim_Barrage:
+	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_EXPLOSION
+	anim_sound 6, 2, SFX_THROW_BALL
+	anim_obj ANIM_OBJ_62,   8, 0,  11, 4, $10
+	anim_wait 36
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_18, -15, 0,   7, 0, $0
+	anim_wait 16
 	anim_ret
 
 BattleAnim_FurySwipes_branch_c9dd9:
@@ -5140,6 +5151,7 @@ BattleAnim_PerishSong:
 	anim_ret
 
 BattleAnim_IcyWind:
+;	anim_jumpif $0, BattleAnim_MudShot
 	anim_1gfx ANIM_GFX_SPEED
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
@@ -5165,6 +5177,22 @@ BattleAnim_IcyWind:
 	anim_incobj  7
 	anim_wait 1
 	anim_ret
+
+;BattleAnim_MudShot:
+;	anim_1gfx ANIM_GFX_POISON
+;.loop
+;	anim_sound 6, 2, SFX_BUBBLE_BEAM
+;	anim_obj ANIM_OBJ_GUNKSHOT, 64, 92, $4
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_GUNKSHOT, 64, 92, $4
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_MUD_SPLASH, 136, 56, $5c
+;	anim_obj ANIM_OBJ_MUD_SPLASH, 136, 56, $e8
+;	anim_obj ANIM_OBJ_MUD_SPLASH, 136, 56, $d0
+;	anim_obj ANIM_OBJ_MUD_SPLASH, 136, 56, $50
+;	anim_loop 8, .loop
+;	anim_wait 16
+;	anim_ret
 
 BattleAnim_Outrage:
 	anim_1gfx ANIM_GFX_HIT

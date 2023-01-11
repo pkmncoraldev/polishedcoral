@@ -1,7 +1,7 @@
 MovePriorities:
-	db FAKE_OUT,	  5
 	db PROTECT,       4
 	db ENDURE,        4
+	db FAKE_OUT,	  3
 	db EXTREMESPEED,  2
 	db AQUA_JET,      1
 	db SUCKER_PUNCH,  1

@@ -80,19 +80,19 @@ EvolutionMoves::
 	db NO_MOVE                              ; MAGMAR
 	db NO_MOVE                              ; TAUROS
 	db NO_MOVE                              ; MAGIKARP
-	db NO_MOVE                              ; GYARADOS
+	db BITE                                 ; GYARADOS
 	db NO_MOVE                              ; LAPRAS
 	db NO_MOVE                              ; DITTO
 	db NO_MOVE                              ; EEVEE
 	db WATER_GUN                            ; VAPOREON
 	db THUNDERSHOCK                         ; JOLTEON
 	db EMBER                                ; FLAREON
-	db NO_MOVE      						; PORYGON
-	db NO_MOVE								; AERODACTYL
-	db NO_MOVE      						; SNORLAX
-	db NO_MOVE      						; DRATINI
-	db NO_MOVE      						; DRAGONAIR
-	db NO_MOVE      						; DRAGONITE
+	db NO_MOVE                              ; PORYGON
+	db NO_MOVE                              ; AERODACTYL
+	db NO_MOVE                              ; SNORLAX
+	db NO_MOVE                              ; DRATINI
+	db NO_MOVE                              ; DRAGONAIR
+	db WING_ATTACK                          ; DRAGONITE
 	db NO_MOVE      						; CHIKORITA
 	db MEGA_DRAIN   						; BAYLEEF
 	db CALM_MIND    						; MEGANIUM

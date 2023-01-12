@@ -68,25 +68,25 @@ EvolutionMoves::
 	db WOOD_HAMMER                          ; EXEGGUTOR
 	db NO_MOVE                              ; CUBONE
 	db NO_MOVE                              ; MAROWAK
-	db NO_MOVE      						; KOFFING
-	db DOUBLE_HIT      						; WEEZING
-	db NO_MOVE      						; CHANSEY
-	db NO_MOVE      						; HORSEA
-	db NO_MOVE      						; SEADRA
-	db NO_MOVE      						; STARYU
-	db NO_MOVE      						; STARMIE
-	db NO_MOVE      						; SCYTHER
-	db NO_MOVE      						; ELECTABUZZ
-	db NO_MOVE      						; MAGMAR
-	db NO_MOVE      						; TAUROS
-	db NO_MOVE      						; MAGIKARP
-	db NO_MOVE      						; GYARADOS
-	db NO_MOVE      						; LAPRAS
-	db NO_MOVE      						; DITTO
-	db NO_MOVE      						; EEVEE
-	db WATER_GUN    						; VAPOREON
-	db THUNDERSHOCK 						; JOLTEON
-	db EMBER        						; FLAREON
+	db NO_MOVE                              ; KOFFING
+	db DOUBLE_HIT                           ; WEEZING
+	db NO_MOVE                              ; CHANSEY
+	db NO_MOVE                              ; HORSEA
+	db NO_MOVE                              ; SEADRA
+	db NO_MOVE                              ; STARYU
+	db NO_MOVE                              ; STARMIE
+	db NO_MOVE                              ; SCYTHER
+	db NO_MOVE                              ; ELECTABUZZ
+	db NO_MOVE                              ; MAGMAR
+	db NO_MOVE                              ; TAUROS
+	db NO_MOVE                              ; MAGIKARP
+	db NO_MOVE                              ; GYARADOS
+	db NO_MOVE                              ; LAPRAS
+	db NO_MOVE                              ; DITTO
+	db NO_MOVE                              ; EEVEE
+	db WATER_GUN                            ; VAPOREON
+	db THUNDERSHOCK                         ; JOLTEON
+	db EMBER                                ; FLAREON
 	db NO_MOVE      						; PORYGON
 	db NO_MOVE								; AERODACTYL
 	db NO_MOVE      						; SNORLAX

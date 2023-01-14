@@ -49,7 +49,7 @@ EvolutionMoves::
 	db NO_MOVE                              ; GRAVELER
 	db NO_MOVE                              ; GOLEM
 	db NO_MOVE                              ; PONYTA
-	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP  ; RAPIDASH
+	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP   ; RAPIDASH
 	db NO_MOVE                              ; SLOWPOKE
 	db DEFENSE_CURL_HARDEN_WITHDRAW         ; SLOWBRO
 	db NO_MOVE                              ; MAGNEMITE
@@ -93,70 +93,70 @@ EvolutionMoves::
 	db NO_MOVE                              ; DRATINI
 	db NO_MOVE                              ; DRAGONAIR
 	db WING_ATTACK                          ; DRAGONITE
-	db NO_MOVE      						; CHIKORITA
-	db MEGA_DRAIN   						; BAYLEEF
-	db CALM_MIND    						; MEGANIUM
-	db NO_MOVE      						; CYNDAQUIL
-	db FLAME_CHARGE 						; QUILAVA
+	db NO_MOVE                              ; CHIKORITA
+	db MEGA_DRAIN                           ; BAYLEEF
+	db CALM_MIND                            ; MEGANIUM
+	db NO_MOVE                              ; CYNDAQUIL
+	db FLAME_CHARGE                         ; QUILAVA
 	db WORK_UP_GROWTH                       ; TYPHLOSION
-	db NO_MOVE      						; TOTODILE
-	db AQUA_JET     						; CROCONAW
-	db BULK_UP      						; FERALIGATR
-	db NO_MOVE      						; LEDYBA
-	db NO_MOVE      						; LEDIAN
-	db NO_MOVE      						; CROBAT
-	db NO_MOVE      						; CHINCHOU
-	db NO_MOVE      						; LANTURN
-	db NO_MOVE      						; TOGEPI
-	db NO_MOVE      						; TOGETIC
-	db NO_MOVE      						; NATU
-	db AIR_SLASH    						; XATU
-	db NO_MOVE      						; MAREEP
-	db NO_MOVE      						; FLAFFY
-	db THUNDERPUNCH 						; AMPHAROS
-	db ENERGY_BALL  						; BELLOSSOM
-	db NO_MOVE      						; MARILL
-	db NO_MOVE      						; AZUMARILL
-	db NO_MOVE      						; SUDOWOODO
-	db NO_MOVE      						; POLITOED
-	db NO_MOVE      						; WOOPER
-	db NO_MOVE      						; QUAGSIRE
-	db CONFUSION      						; ESPEON
-	db PURSUIT      						; UMBREON
-	db NO_MOVE      						; MURKROW
-	db NASTY_PLOT      						; SLOWKING
-	db NO_MOVE      						; PINECO
-	db NO_MOVE      						; FORRETRESS
-	db NO_MOVE      						; GLIGAR
-	db NO_MOVE      						; STEELIX
-	db NO_MOVE      						; SNUBBULL
-	db NO_MOVE      						; GRANBULL
-	db NO_MOVE      						; SCIZOR
-	db NO_MOVE      						; HERACROSS
-	db NO_MOVE      						; SNEASEL
-	db NO_MOVE      						; TEDDIURSA
-	db BULK_UP      						; URSARING
-	db NO_MOVE      						; SLUGMA
-	db SHELL_SMASH  						; MAGCARGO
-	db NO_MOVE      						; SWINUB
-	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP  ; PILOSWINE
-	db NO_MOVE      						; CORSOLA
-	db NO_MOVE      						; SKARMORY
-	db NO_MOVE      						; HOUNDOUR
-	db NO_MOVE      						; HOUNDOOM
-	db NO_MOVE      						; KINGDRA
-	db NO_MOVE      						; PHANPY
-	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP  ; DONPHAN
-	db NO_MOVE      						; PORYGON2
-	db NO_MOVE      						; STANTLER
-	db NO_MOVE      						; SMEARGLE
-	db NO_MOVE      						; ELEKID
-	db NO_MOVE      						; MAGBY
-	db NO_MOVE      						; MILTANK
-	db NO_MOVE      						; BLISSEY
-	db NO_MOVE      						; LARVITAR
+	db NO_MOVE                              ; TOTODILE
+	db AQUA_JET                             ; CROCONAW
+	db BULK_UP                              ; FERALIGATR
+	db NO_MOVE                              ; LEDYBA
+	db NO_MOVE                              ; LEDIAN
+	db X_SCISSOR                            ; CROBAT
+	db NO_MOVE                              ; CHINCHOU
+	db DAZZLINGLEAM                         ; LANTURN
+	db NO_MOVE                              ; TOGEPI
+	db AIR_SLASH                            ; TOGETIC
+	db NO_MOVE                              ; NATU
+	db AIR_SLASH                            ; XATU
+	db NO_MOVE                              ; MAREEP
+	db NO_MOVE                              ; FLAFFY
+	db THUNDERPUNCH                         ; AMPHAROS
+	db ENERGY_BALL                          ; BELLOSSOM
+	db NO_MOVE                              ; MARILL
+	db NO_MOVE                              ; AZUMARILL
+	db NO_MOVE                              ; SUDOWOODO
+	db NO_MOVE                              ; POLITOED
+	db NO_MOVE                              ; WOOPER
+	db NO_MOVE                              ; QUAGSIRE
+	db CONFUSION                            ; ESPEON
+	db PURSUIT                              ; UMBREON
+	db NO_MOVE                              ; MURKROW
+	db NO_MOVE                              ; SLOWKING
+	db NO_MOVE                              ; PINECO
+	db BODY_SLAM                            ; FORRETRESS
+	db NO_MOVE                              ; GLIGAR
+	db NO_MOVE                              ; STEELIX
+	db NO_MOVE                              ; SNUBBULL
+	db NO_MOVE                              ; GRANBULL
+	db BULLET_PUNCH                         ; SCIZOR
+	db NO_MOVE                              ; HERACROSS
+	db NO_MOVE                              ; SNEASEL
+	db NO_MOVE                              ; TEDDIURSA
+	db BULK_UP                              ; URSARING
+	db NO_MOVE                              ; SLUGMA
+	db SHELL_SMASH                          ; MAGCARGO
+	db NO_MOVE                              ; SWINUB
+	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP   ; PILOSWINE
+	db NO_MOVE                              ; CORSOLA
+	db NO_MOVE                              ; SKARMORY
+	db NO_MOVE                              ; HOUNDOUR
+	db NO_MOVE                              ; HOUNDOOM
+	db NO_MOVE                              ; KINGDRA
+	db NO_MOVE                              ; PHANPY
+	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP   ; DONPHAN
+	db NO_MOVE                              ; PORYGON2
+	db NO_MOVE                              ; STANTLER
+	db NO_MOVE                              ; SMEARGLE
+	db NO_MOVE                              ; ELEKID
+	db NO_MOVE                              ; MAGBY
+	db NO_MOVE                              ; MILTANK
+	db NO_MOVE                              ; BLISSEY
+	db NO_MOVE                              ; LARVITAR
 	db BARRIER_IRON_DEFENSE_ACID_ARMOR      ; PUPITAR
-	db NO_MOVE      						; TYRANITAR
+	db NO_MOVE                              ; TYRANITAR
 	db NO_MOVE      						; WINGULL
 	db PROTECT      						; PELIPPER
 	db NO_MOVE      						; RALTS

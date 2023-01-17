@@ -141,7 +141,7 @@ MAP_NONE   EQU 0
 	map_const SUNBEAM_SOFT_SAND_HOUSE,               	   4,  4 ; 10
 	map_const SUNBEAM_TRADE_HOUSE,						   4,  4 ; 11
 	map_const SPRUCES_LAB, 								   5,  4 ; 12
-	map_const SUNBEAM_RESERVE,                            25, 10 ; 13
+	map_const SUNBEAM_RESERVE,                            25, 11 ; 13
 	map_const SUNBEAM_JUNGLE,  			             	  16, 16 ; 14
 	map_const SUNBEAM_JUNGLE_CAVE,  			           9,  6 ; 15
 	map_const SUNBEAM_JUNGLE_DEEP,  			          20, 17 ; 16

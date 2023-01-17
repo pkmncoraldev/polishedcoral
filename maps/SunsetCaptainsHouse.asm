@@ -143,7 +143,7 @@ SunsetCaptain:
 	setevent EVENT_ISLAND_STRAND
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
 	domaptrigger SUNBEAM_ISLAND, $5
-	warpfacing DOWN, SUNBEAM_ISLAND, 13, 49
+	warpfacing DOWN, SUNBEAM_ISLAND, 13, 51
 	end
 	
 .end
@@ -207,7 +207,7 @@ CaptainGoToIsland:
 	special Special_FadeOutMusic
 	domaptrigger SUNBEAM_ISLAND, $0
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
-	warpfacing DOWN, SUNBEAM_ISLAND, 13, 49
+	warpfacing DOWN, SUNBEAM_ISLAND, 13, 51
 	end
 	
 SunsetCaptainRidetoIsland:

@@ -5252,7 +5252,9 @@ BattleMenu_SafariBall:
 	call ClearTileMap
 	call ClearPalettes
 	call DelayFrame
+	call Load1bppFont
 	call _LoadBattleFontsHPBar
+	call Load1bppFrame
 	call GetMonBackpic
 	call GetMonFrontpic
 	call ExitMenu
@@ -9554,8 +9556,9 @@ InitBattleDisplay: ; 3fb6c
 	hlcoord 1, 5
 	lb bc, 3, 7
 	call ClearBox
-	call LoadStandardFont
+	call Load1bppFont
 	call _LoadBattleFontsHPBar
+	call Load1bppFrame
 	call .BlankBGMap
 	xor a
 	ld [hMapAnims], a

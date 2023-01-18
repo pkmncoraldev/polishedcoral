@@ -12,8 +12,8 @@ _CardFlip: ; e00ee (38:40ee)
 ;	call PlayMusic
 	call DelayFrame
 	call DisableLCD
-	call LoadStandardFont
-	call LoadFontsExtra
+	call Load1bppFont
+	call Load1bppFrame
 
 	ld hl, CardFlipLZ01
 	ld de, VTiles2 tile $00
@@ -2010,8 +2010,8 @@ _MoogooMankey:
 ;	call PlayMusic
 	call DelayFrame
 	call DisableLCD
-	call LoadStandardFont
-	call LoadFontsExtra
+	call Load1bppFont
+	call Load1bppFrame
 
 	ld hl, MoogooLZ01
 	ld de, VTiles2 tile $00

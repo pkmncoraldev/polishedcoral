@@ -16,7 +16,7 @@ _OptionsMenu:: ; e41d0
 
 	xor a
 	ld [wJumptableIndex], a
-	ld b, CGB_DIPLOMA
+	ld b, CGB_OPTIONS
 	call GetCGBLayout
 	call SetPalettes
 

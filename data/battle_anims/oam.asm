@@ -217,6 +217,7 @@ BattleAnimOAMData: ; ceeae
 	dbbw $00, 14, .OAMData_d6 ; d6
 	dbbw $00, 12, .OAMData_d7 ; d7
 	dbbw $00,  6, .OAMData_d8 ; d8
+	dbbw $07,  1, .OAMData_0f ; d9
 	dbbw $1b,  4, .OAMData_03 ; BATTLEANIMOAMSET_E0
 	dbbw $07, 10, .OAMData_e1 ; BATTLEANIMOAMSET_E1
 	dbbw $1f,  4, .OAMData_03 ; BATTLEANIMOAMSET_E2

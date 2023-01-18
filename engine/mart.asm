@@ -736,6 +736,8 @@ BuyMenu_InitGFX::
 	call ClearSprites
 	call DisableSpriteUpdates
 	call DisableLCD
+	call Load1bppFont
+	call Load1bppFrame
 	ld hl, PackLeftColumnGFX
 	ld de, VTiles2 tile $15
 	ld bc, 18 tiles

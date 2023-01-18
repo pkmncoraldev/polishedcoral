@@ -84,7 +84,7 @@ SailboatCutsceneTrigger0:
 	clearevent EVENT_BOAT_GOING_TO_SUNBEAM
 	domaptrigger SUNBEAM_ISLAND, $1
 	special FadeOutPalettes
-	warpfacing UP, SUNBEAM_ISLAND, 7, 50
+	warpfacing UP, SUNBEAM_ISLAND, 7, 52
 	end
 .shimmer
 	clearevent EVENT_BOAT_GOING_TO_SHIMMER

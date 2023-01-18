@@ -115,7 +115,7 @@ TextBoxPalette::
 	inc b
 	inc c
 	inc c
-	ld a, PAL_BG_TEXT
+	ld a, PAL_BG_PRIORITY_TEXT
 .col
 	push bc
 	push hl

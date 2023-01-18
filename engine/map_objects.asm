@@ -2680,120 +2680,120 @@ IsObjectOnScreen: ; 56a3
 	ret
 ; 56cd
 
-CheckCurSpriteCoveredByTextBox: ; 56cd
-; x coord
-	ld a, [wPlayerBGMapOffsetX]
-	ld d, a
-	ld hl, OBJECT_SPRITE_X_OFFSET
-	add hl, bc
-	ld a, [hl]
-	ld hl, OBJECT_SPRITE_X
-	add hl, bc
-	add [hl]
-	add d
-	cp -2 * 8
-	jr nc, .ok1
-	cp SCREEN_WIDTH * 8
-	jp nc, .nope
-.ok1
-	and %00000111
-	ld d, 2
-	cp 4
-	jr c, .ok2
-	ld d, 3
-.ok2
-	ld a, [hl]
-	srl a
-	srl a
-	srl a
-	cp SCREEN_WIDTH
-	jr c, .ok3
-	sub BG_MAP_WIDTH
-.ok3
-	ld [hCurSpriteXCoord], a
-; y coord
-	ld a, [wPlayerBGMapOffsetY]
-	ld e, a
-	ld hl, OBJECT_SPRITE_Y_OFFSET
-	add hl, bc
-	ld a, [hl]
-	ld hl, OBJECT_SPRITE_Y
-	add hl, bc
-	add [hl]
-	add e
-	cp -2 * 8
-	jr nc, .ok4
-	cp SCREEN_HEIGHT * 8
-	jr nc, .nope
-.ok4
-	and %00000111
-	ld e, 2
-	cp 4
-	jr c, .ok5
-	ld e, 3
-.ok5
-	ld a, [hl]
-	srl a
-	srl a
-	srl a
-	cp SCREEN_HEIGHT
-	jr c, .ok6
-	sub BG_MAP_HEIGHT
-.ok6
-	ld [hCurSpriteYCoord], a
-	; priority check
-	ld hl, OBJECT_PALETTE
-	add hl, bc
-	bit OAM_PRIORITY, [hl]
-	jr z, .ok7
-	ld a, d
-	add 2
-	ld d, a
-	ld a, e
-	add 2
-	ld e, a
-.ok7
-	ld a, d
-	ld [hCurSpriteXPixel], a
-.loop
-	ld a, [hCurSpriteXPixel]
-	ld d, a
-	ld a, [hUsedSpriteTile]
-	add e
-	dec a
-	cp SCREEN_HEIGHT
-	jr nc, .ok9
-	ld b, a
-.next
-	ld a, [hUsedSpriteIndex]
-	add d
-	dec a
-	cp SCREEN_WIDTH
-	jr nc, .ok8
-	ld c, a
-	push bc
-	call Coord2Attr
-	pop bc
-	bit OAM_TILE_BANK, [hl] ; show sprites standing on tiles $1:00-FF
-	jr nz, .ok8
-	push bc
-	call Coord2Tile
-	pop bc
-	ld a, [hl]
-	cp $7f ; hide sprites standing on tiles $0:7F-FF
-	jr nc, .nope
-.ok8
-	dec d
-	jr nz, .next
-.ok9
-	dec e
-	jr nz, .loop
-	and a
-	ret
+;CheckCurSpriteCoveredByTextBox: ; 56cd
+;; x coord
+;	ld a, [wPlayerBGMapOffsetX]
+;	ld d, a
+;	ld hl, OBJECT_SPRITE_X_OFFSET
+;	add hl, bc
+;	ld a, [hl]
+;	ld hl, OBJECT_SPRITE_X
+;	add hl, bc
+;	add [hl]
+;	add d
+;	cp -2 * 8
+;	jr nc, .ok1
+;	cp SCREEN_WIDTH * 8
+;	jp nc, .nope
+;.ok1
+;	and %00000111
+;	ld d, 2
+;	cp 4
+;	jr c, .ok2
+;	ld d, 3
+;.ok2
+;	ld a, [hl]
+;	srl a
+;	srl a
+;	srl a
+;	cp SCREEN_WIDTH
+;	jr c, .ok3
+;	sub BG_MAP_WIDTH
+;.ok3
+;	ld [hCurSpriteXCoord], a
+;; y coord
+;	ld a, [wPlayerBGMapOffsetY]
+;	ld e, a
+;	ld hl, OBJECT_SPRITE_Y_OFFSET
+;	add hl, bc
+;	ld a, [hl]
+;	ld hl, OBJECT_SPRITE_Y
+;	add hl, bc
+;	add [hl]
+;	add e
+;	cp -2 * 8
+;	jr nc, .ok4
+;	cp SCREEN_HEIGHT * 8
+;	jr nc, .nope
+;.ok4
+;	and %00000111
+;	ld e, 2
+;	cp 4
+;	jr c, .ok5
+;	ld e, 3
+;.ok5
+;	ld a, [hl]
+;	srl a
+;	srl a
+;	srl a
+;	cp SCREEN_HEIGHT
+;	jr c, .ok6
+;	sub BG_MAP_HEIGHT
+;.ok6
+;	ld [hCurSpriteYCoord], a
+;	; priority check
+;	ld hl, OBJECT_PALETTE
+;	add hl, bc
+;	bit OAM_PRIORITY, [hl]
+;	jr z, .ok7
+;	ld a, d
+;	add 2
+;	ld d, a
+;	ld a, e
+;	add 2
+;	ld e, a
+;.ok7
+;	ld a, d
+;	ld [hCurSpriteXPixel], a
+;.loop
+;	ld a, [hCurSpriteXPixel]
+;	ld d, a
+;	ld a, [hUsedSpriteTile]
+;	add e
+;	dec a
+;	cp SCREEN_HEIGHT
+;	jr nc, .ok9
+;	ld b, a
+;.next
+;	ld a, [hUsedSpriteIndex]
+;	add d
+;	dec a
+;	cp SCREEN_WIDTH
+;	jr nc, .ok8
+;	ld c, a
+;	push bc
+;	call Coord2Attr
+;	pop bc
+;	bit OAM_TILE_BANK, [hl] ; show sprites standing on tiles $1:00-FF
+;	jr nz, .ok8
+;	push bc
+;	call Coord2Tile
+;	pop bc
+;	ld a, [hl]
+;	cp $7f ; hide sprites standing on tiles $0:7F-FF
+;	jr nc, .nope
+;.ok8
+;	dec d
+;	jr nz, .next
+;.ok9
+;	dec e
+;	jr nz, .loop
+;	and a
+;	ret
 
-.nope
-	scf
-	ret
+;.nope
+;	scf
+;	ret
 ; 576a
 
 HandleNPCStep::

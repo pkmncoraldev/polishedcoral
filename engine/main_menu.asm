@@ -3,9 +3,6 @@ MainMenu: ; 49cdc
 	call MainMenu_Palettes
 	farcall ApplyPals
 	call Function49ed0
-;	ld b, CGB_EVOLUTION
-;	call GetCGBLayout
-;	call SetPalettes
 	ld hl, wGameTimerPause
 	res 0, [hl]
 	call MainMenu_GetWhichMenu

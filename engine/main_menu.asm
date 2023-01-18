@@ -1,7 +1,8 @@
 MainMenu: ; 49cdc	
 	call DeleteSavedMusic
-	call MainMenu_Palettes
-	farcall ApplyPals
+	ld b, CGB_OPTIONS
+	call GetCGBLayout
+	call SetPalettes
 	call Function49ed0
 	ld hl, wGameTimerPause
 	res 0, [hl]
@@ -258,13 +259,6 @@ Function49ed0: ; 49ed0
 	call LoadStandardFont
 	jp ClearWindowData
 ; 49ee0
-
-MainMenu_Palettes:
-	ld a, $5
-	ld de, wUnknBGPals
-	ld hl, BlindingFlashPalette
-	ld bc, 1 palettes
-	jp FarCopyWRAM
 
 
 MainMenu_NewGame: ; 49ee0

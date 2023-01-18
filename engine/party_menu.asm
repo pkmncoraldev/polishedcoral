@@ -49,6 +49,8 @@ LoadPartyMenuGFX: ; 5004f
 
 
 WritePartyMenuTilemap: ; 0x5005f
+	call Load1bppFont
+	call Load1bppFrame
 	ld hl, wOptions1
 	ld a, [hl]
 	push af

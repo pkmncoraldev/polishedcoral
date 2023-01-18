@@ -777,7 +777,7 @@ Pokedex_UpdateUnownMode: ; 405df (10:45df)
 	ld [wOptions2], a
 	xor a
 	ld [wOptionsBuffer], a
-	call LoadStandardFont
+	call Load1bppFont
 	ld a, DEXSTATE_OPTION_SCR
 	ld [wJumptableIndex], a
 	call DelayFrame
@@ -2507,8 +2507,8 @@ Pokedex_LoadGFX2:
 	ld bc, $31 tiles
 	xor a
 	call ByteFill
-	call LoadStandardFont
-	call LoadFontsExtra
+	call Load1bppFont
+	call Load1bppFrame
 	ld hl, PokedexLZ
 	ld de, VTiles2 tile $31
 	call Decompress
@@ -2571,8 +2571,8 @@ NewPokedexEntry: ; fb877
 	farcall Pokedex_DrawDexEntryScreenRightEdge
 	call Pokedex_ResetBGMapMode
 	call DisableLCD
-	call LoadStandardFont
-	call LoadFontsExtra
+	call Load1bppFont
+	call Load1bppFrame
 	call Pokedex_LoadGFX2
 ;	call Pokedex_LoadAnyFootprint
 	ld a, [wd265]
@@ -2635,8 +2635,8 @@ NewPokedexEntry: ; fb877
 	ld [wd265], a
 	ld [wCurPartySpecies], a
 	call ClearTileMap
-	call LoadFontsExtra
-	call LoadStandardFont
+	call Load1bppFrame
+	call Load1bppFont
 	call GetBaseData
 	ld de, VTiles2
 	predef GetFrontpic

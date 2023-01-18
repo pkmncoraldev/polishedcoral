@@ -353,7 +353,7 @@ endr
 	cp " "
 	jr nz, .not_space
 .space
-	ld hl, TextBoxSpaceGFX
+	ld hl, TextBoxSpace1bppGFX
 	jr .got_tile
 .not_space
 	sub $80
@@ -369,7 +369,7 @@ endr
 	pop hl
 	; hl = start of font tile graphic
 	push de
-	farcall LoadStandardFontPointer
+	ld hl, FontNormal1bpp
 	pop de
 	add hl, bc
 .got_tile

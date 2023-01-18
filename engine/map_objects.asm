@@ -2616,7 +2616,7 @@ MaskAllObjectStructs: ; 5645
 
 UpdateCurObjectData: ; 565c
 	push bc
-	call CheckCurSpriteCoveredByTextBox
+;	call CheckCurSpriteCoveredByTextBox
 	pop bc
 	jr c, SetFacing_Standing
 	call IsObjectOnScreen

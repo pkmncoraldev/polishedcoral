@@ -49,7 +49,7 @@ EvolutionMoves::
 	db NO_MOVE                              ; GRAVELER
 	db NO_MOVE                              ; GOLEM
 	db NO_MOVE                              ; PONYTA
-	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP   ; RAPIDASH
+	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON  ; RAPIDASH
 	db NO_MOVE                              ; SLOWPOKE
 	db DEFENSE_CURL_HARDEN_WITHDRAW         ; SLOWBRO
 	db NO_MOVE                              ; MAGNEMITE
@@ -139,14 +139,14 @@ EvolutionMoves::
 	db NO_MOVE                              ; SLUGMA
 	db SHELL_SMASH                          ; MAGCARGO
 	db NO_MOVE                              ; SWINUB
-	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP   ; PILOSWINE
+	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON  ; PILOSWINE
 	db NO_MOVE                              ; CORSOLA
 	db NO_MOVE                              ; SKARMORY
 	db NO_MOVE                              ; HOUNDOUR
 	db NO_MOVE                              ; HOUNDOOM
 	db NO_MOVE                              ; KINGDRA
 	db NO_MOVE                              ; PHANPY
-	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP   ; DONPHAN
+	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON  ; DONPHAN
 	db NO_MOVE                              ; PORYGON2
 	db NO_MOVE                              ; STANTLER
 	db NO_MOVE                              ; SMEARGLE
@@ -157,50 +157,50 @@ EvolutionMoves::
 	db NO_MOVE                              ; LARVITAR
 	db BARRIER_IRON_DEFENSE_ACID_ARMOR      ; PUPITAR
 	db NO_MOVE                              ; TYRANITAR
-	db NO_MOVE      						; WINGULL
-	db PROTECT      						; PELIPPER
-	db NO_MOVE      						; RALTS
-	db NO_MOVE      						; KIRLIA
-	db DAZZLINGLEAM      					; GARDEVOIR
-	db NO_MOVE      						; SHROOMISH
-	db MACH_PUNCH   						; BRELOOM
-	db NO_MOVE      						; ARON
-	db NO_MOVE      						; LAIRON
-	db NO_MOVE      						; AGGRON
-	db NO_MOVE      						; MEDITITE
-	db ZEN_HEADBUTT      				    ; MEDICHAM
-	db NO_MOVE      						; CARVANHA
-	db SLASH	      						; SHARPEDO
-	db NO_MOVE      						; NUMEL
-	db ROCK_SLIDE   						; CAMERUPT
-	db NO_MOVE      						; CACNEA
-	db NO_MOVE      						; CACTURNE
-	db NO_MOVE      						; SWABLU
-	db DRAGONBREATH      					; ALTARIA
-	db NO_MOVE      						; SNORUNT
-	db ICE_FANG      						; GLALIE
-	db NO_MOVE      						; BUIZEL
-	db ICE_FANG     						; FLOATZEL
-	db NO_MOVE      						; DRIFLOON
-	db NO_MOVE      						; DRIFBLIM
-	db NO_MOVE      						; BUNEARY
-	db NO_MOVE      						; LOPUNNY
-	db NO_MOVE      						; HONCHKROW
-	db NO_MOVE      						; SPIRITOMB
-	db NO_MOVE      						; MUNCHLAX
-	db NO_MOVE      						; RIOLU
-	db NO_MOVE      						; LUCARIO
-	db NO_MOVE      						; CROAGUNK
-	db NO_MOVE      						; TOXICROAK
-	db NO_MOVE      						; SNOVER
-	db NO_MOVE      						; ABOMASNOW
-	db NO_MOVE      						; WEAVILE
-	db NO_MOVE      						; MAGNEZONE
-	db NO_MOVE      						; ELECTIVIRE
-	db NO_MOVE      						; MAGMORTAR
-	db NO_MOVE      						; TOGEKISS
-	db RAZOR_LEAF      						; LEAFEON
-	db ICY_WIND      						; GLACEON
+	db NO_MOVE                              ; WINGULL
+	db PROTECT                              ; PELIPPER
+	db NO_MOVE                              ; RALTS
+	db NO_MOVE                              ; KIRLIA
+	db DAZZLINGLEAM                         ; GARDEVOIR
+	db NO_MOVE                              ; SHROOMISH
+	db MACH_PUNCH                           ; BRELOOM
+	db NO_MOVE                              ; ARON
+	db NO_MOVE                              ; LAIRON
+	db NO_MOVE                              ; AGGRON
+	db NO_MOVE                              ; MEDITITE
+	db ZEN_HEADBUTT                         ; MEDICHAM
+	db NO_MOVE                              ; CARVANHA
+	db SLASH                                ; SHARPEDO
+	db NO_MOVE                              ; NUMEL
+	db ROCK_SLIDE                           ; CAMERUPT
+	db NO_MOVE                              ; CACNEA
+	db NO_MOVE                              ; CACTURNE
+	db NO_MOVE                              ; SWABLU
+	db DRAGONBREATH                         ; ALTARIA
+	db NO_MOVE                              ; SNORUNT
+	db ICE_BEAM                             ; GLALIE
+	db NO_MOVE                              ; BUIZEL
+	db ICE_FANG                             ; FLOATZEL
+	db NO_MOVE                              ; DRIFLOON
+	db NO_MOVE                              ; DRIFBLIM
+	db NO_MOVE                              ; BUNEARY
+	db NO_MOVE                              ; LOPUNNY
+	db NO_MOVE                              ; HONCHKROW
+	db NO_MOVE                              ; SPIRITOMB
+	db NO_MOVE                              ; MUNCHLAX
+	db NO_MOVE                              ; RIOLU
+	db NO_MOVE                              ; LUCARIO
+	db NO_MOVE                              ; CROAGUNK
+	db NO_MOVE                              ; TOXICROAK
+	db NO_MOVE                              ; SNOVER
+	db ICE_PUNCH                            ; ABOMASNOW
+	db NO_MOVE                              ; WEAVILE
+	db NO_MOVE                              ; MAGNEZONE
+	db NO_MOVE                              ; ELECTIVIRE
+	db NO_MOVE                              ; MAGMORTAR
+	db NO_MOVE                              ; TOGEKISS
+	db RAZOR_LEAF                           ; LEAFEON
+	db ICY_WIND                             ; GLACEON
 	db NO_MOVE      						; GLISCOR
 	db NO_MOVE      						; MAMOSWINE
 	db NO_MOVE      						; PORYGON_Z

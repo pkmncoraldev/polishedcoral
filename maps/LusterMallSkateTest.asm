@@ -303,10 +303,10 @@ LusterMallSkateTest_ClerkText8:
 	para "Easier than it"
 	line "looks, huh?"
 	
-	para "You'll do an OLLIE"
-	line "automatically when"
-	cont "you hit the end of"
-	cont "a rail."
+	para "Remember to OLLIE"
+	line "off the rail as"
+	cont "well, or you'll"
+	cont "bail."
 	
 	para "You can also GRIND"
 	line "fountains and"

@@ -347,7 +347,7 @@ TrainCabin2Snare1:
 	text "I don't deserve"
 	line "this!"
 	
-	para "I'm the forth"
+	para "I'm the fourth"
 	line "highest ranked"
 	cont "grunt on this"
 	cont "train!"
@@ -356,7 +356,7 @@ TrainCabin2Snare1:
 .SeenText:
 	text "Listen here."
 	
-	para "I'm the forth"
+	para "I'm the fourth"
 	line "highest ranked"
 	cont "grunt on this"
 	cont "train!"

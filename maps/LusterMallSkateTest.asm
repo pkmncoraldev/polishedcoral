@@ -236,7 +236,7 @@ LusterMallSkateTest_ClerkText4:
 	para "where your wheels"
 	line "can't spin,"
 	
-	para "you'll whipout!"
+	para "you'll wipe out!"
 	
 	para "So, watch out for"
 	line "that."

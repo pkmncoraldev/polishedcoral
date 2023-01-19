@@ -1553,7 +1553,7 @@ Luster1NPC14Text:
 	para "There's also the"
 	line "SHOPPING DISTRICT"
 	cont "and the BUSINESS"
-	cont "DISCTRICT."
+	cont "DISTRICT."
 	done
 	
 Movement_LusterResidentialPunkLeader1:

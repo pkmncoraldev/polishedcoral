@@ -780,7 +780,7 @@ LusterMall_NPC12Text:
 	
 	para "Why?"
 	
-	para "Becuase I'm not"
+	para "Because I'm not"
 	line "supposed to!"
 	done
 	

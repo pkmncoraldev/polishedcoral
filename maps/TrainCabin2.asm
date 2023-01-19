@@ -111,9 +111,14 @@ TrainCabin2NPC2:
 	iftrue .snare
 	checkevent EVENT_BEAT_TRAIN_CABIN_2_TRAINER_2
 	iftrue .afterbattle
-	readvar VAR_PLAYER_GENDER
-	if_equal FEMALE, .girl
-	if_equal PIPPI, .girl
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl
 	writetext TrainCabin2NPC2Text1Boy
 	jump .cont
 .girl
@@ -138,9 +143,14 @@ TrainCabin2NPC2:
 	setevent EVENT_BEAT_TRAIN_CABIN_2_TRAINER_2
 	end
 .afterbattle
-	readvar VAR_PLAYER_GENDER
-	if_equal FEMALE, .girl
-	if_equal PIPPI, .girl
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl2
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl2
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl2
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl2
 	writetext TrainCabin2NPC2AfterBattleTextBoy
 	jump .cont2
 .girl2

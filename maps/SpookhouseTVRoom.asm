@@ -201,7 +201,8 @@ SpookHouseMenuAsm1:
 	call ClearScreen
 	ld de, MUSIC_NONE
 	call PlayMusic
-	call LoadStandardFont
+	call Load1bppFont
+	call Load1bppFrame
 	ld c, 250
 	call DelayFrames
 	ld b, CGB_DIPLOMA
@@ -216,6 +217,8 @@ SpookHouseMenuAsm2:
 SpookHouseMenuAsm3:
 	farcall _OptionsMenu
 	call ClearScreen
+	call Load1bppFont
+	call Load1bppFrame
 	ret
 	
 SpookHouseGhostText1:

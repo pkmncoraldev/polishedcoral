@@ -23,7 +23,8 @@ InitClock: ; 90672 (24:4672)
 	call GetCGBLayout
 	xor a
 	ld [hBGMapMode], a
-	call LoadStandardFont
+	call Load1bppFont
+	call Load1bppFrame
 	ld de, TimesetBackgroundGFX
 	ld hl, VTiles2 tile $00
 	lb bc, BANK(TimesetBackgroundGFX), 1

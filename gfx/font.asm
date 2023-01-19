@@ -153,17 +153,7 @@ _LoadFontsBattleExtra:: ; fb4be
 	ld hl, VTiles2 tile BATTLEEXTRA_GFX_START
 	lb bc, BANK(BattleExtrasGFX), 32
 	call Get2bpp
-	ld a, [wTextBoxFrame]
-	ld bc, TILES_PER_FRAME * LEN_2BPP_TILE
-	ld hl, Frames
-	rst AddNTimes
-	ld d, h
-	ld e, l
-	ld hl, VTiles0 tile "┌"
-	lb bc, BANK(Frames), TILES_PER_FRAME
-	jp Get2bpp
-	
-; fb4cc
+	jp LoadFrame1bpp
 
 LoadFrame:: ; fb4cc
 	ld a, [wTextBoxFrame]

@@ -82,7 +82,7 @@ StartMenu:: ; 125cd
 	push af
 	ld a, 1
 	ld [hOAMUpdate], a
-	call LoadFontsExtra
+	call Load1bppFrame
 	pop af
 	ld [hOAMUpdate], a
 .ReturnEnd:

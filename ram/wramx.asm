@@ -735,7 +735,7 @@ wBugContestSecsRemaining:: ds 1
 
 wEncounterHouse:: ds 1
 
-	ds 1 ; unused
+wPokePic::	ds 1
 
 wMapStatusEnd::
 

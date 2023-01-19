@@ -1165,7 +1165,7 @@ LusterPunkLeaderText11:
 	line "news!"
 	
 	para "Didja drive out"
-	line "that rotton,"
+	line "that rotten,"
 	cont "no-good, FRANKIE?"	
 	done
 	

@@ -412,7 +412,7 @@ LusterMallAntiqueSignText:
 LusterMallHerbSignText:
 	text "THE WEEPIN' BELL"
 	
-	para "“Natrual Medicine"
+	para "“Natural Medicine"
 	line "for what ails ya!”"
 	done
 

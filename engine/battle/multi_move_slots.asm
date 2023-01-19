@@ -6,22 +6,22 @@ GetTackleName::
 	push de
 
 	call CheckPoundUsers
-	jr nc, .not_tackle
+	jr nc, .not_pound
 	ld hl, TackleNames
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
-.not_tackle
+.not_pound
 	call CheckScratchUsers
 	jr nc, .not_scratch
 	ld hl, TackleNames
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_scratch
@@ -29,7 +29,7 @@ GetTackleName::
 	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -48,12 +48,12 @@ GetMoveNameTackle:: ; 34f8
 
 	
 	call CheckPoundUsers
-	jr nc, .not_tackle
+	jr nc, .not_pound
 	ld hl, TackleNames
 	ld a, 0
 	jr .done
 	
-.not_tackle
+.not_pound
 	call CheckScratchUsers
 	jr nc, .not_scratch
 	ld hl, TackleNames
@@ -67,7 +67,7 @@ GetMoveNameTackle:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -89,7 +89,7 @@ GetDefenseCurlName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_withdraw
@@ -99,7 +99,7 @@ GetDefenseCurlName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_harden
@@ -107,7 +107,7 @@ GetDefenseCurlName::
 	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -145,7 +145,7 @@ GetMoveNameDefenseCurl:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -167,7 +167,7 @@ GetLeerName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_tailwhip
@@ -175,7 +175,7 @@ GetLeerName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -206,7 +206,7 @@ GetMoveNameLeer:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -228,7 +228,7 @@ GetBarrierName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_iron_defense
@@ -238,7 +238,7 @@ GetBarrierName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_acid_armor
@@ -246,7 +246,7 @@ GetBarrierName::
 	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -284,7 +284,7 @@ GetMoveNameBarrier:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -306,7 +306,7 @@ GetLockOnName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_mind_reader
@@ -314,7 +314,7 @@ GetLockOnName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -345,7 +345,7 @@ GetMoveNameLockOn:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -367,7 +367,7 @@ GetSharpenName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_meditate
@@ -377,7 +377,7 @@ GetSharpenName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_howl
@@ -385,7 +385,7 @@ GetSharpenName::
 	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -423,7 +423,7 @@ GetMoveNameSharpen:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -445,7 +445,7 @@ GetFurySwipesName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_fury_attack
@@ -455,7 +455,7 @@ GetFurySwipesName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_comet_punch
@@ -465,7 +465,7 @@ GetFurySwipesName::
 	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_doubleslap
@@ -473,7 +473,7 @@ GetFurySwipesName::
 	ld a, 3
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 .done
 	pop de
@@ -516,7 +516,7 @@ GetMoveNameFurySwipes:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -538,7 +538,7 @@ GetSynthesisName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_moonlight
@@ -548,7 +548,7 @@ GetSynthesisName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_morning_sun
@@ -556,7 +556,7 @@ GetSynthesisName::
 	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -594,7 +594,7 @@ GetMoveNameSynthesis:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -616,7 +616,7 @@ GetMeanLookName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_block
@@ -626,7 +626,7 @@ GetMeanLookName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_spider_web
@@ -634,7 +634,7 @@ GetMeanLookName::
 	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -672,7 +672,7 @@ GetMoveNameMeanLook:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -694,7 +694,7 @@ GetCharmName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_feather_dance
@@ -702,7 +702,7 @@ GetCharmName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -733,7 +733,7 @@ GetMoveNameCharm:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -755,7 +755,7 @@ GetScaryFaceName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_cotton_spore
@@ -765,7 +765,7 @@ GetScaryFaceName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_string_shot
@@ -773,7 +773,7 @@ GetScaryFaceName::
 	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -810,7 +810,7 @@ GetMoveNameScaryFace:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -832,7 +832,7 @@ GetRoarName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_whirlwind
@@ -840,7 +840,7 @@ GetRoarName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -871,7 +871,7 @@ GetMoveNameRoar:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -893,7 +893,7 @@ GetSandAttackName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_smokescreen
@@ -901,7 +901,7 @@ GetSandAttackName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -932,7 +932,7 @@ GetMoveNameSandAttack:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -954,7 +954,7 @@ GetSoftboiledName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_milk_drink
@@ -964,7 +964,7 @@ GetSoftboiledName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_softboiled
@@ -972,7 +972,7 @@ GetSoftboiledName::
 	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -1010,7 +1010,7 @@ GetMoveNameSoftboiled:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -1032,7 +1032,7 @@ GetForesightName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_odor_sleuth
@@ -1042,7 +1042,7 @@ GetForesightName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_miracle_eye
@@ -1050,7 +1050,7 @@ GetForesightName::
 	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -1088,7 +1088,7 @@ GetMoveNameForesight:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -1110,7 +1110,7 @@ GetAgilityName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_rock_polish
@@ -1118,7 +1118,7 @@ GetAgilityName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -1149,7 +1149,7 @@ GetMoveNameAgility:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -1171,7 +1171,7 @@ GetWorkUpName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_growth
@@ -1179,7 +1179,7 @@ GetWorkUpName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -1210,7 +1210,7 @@ GetMoveNameWorkUp:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -1233,7 +1233,7 @@ GetTransformName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .transform
@@ -1241,7 +1241,7 @@ GetTransformName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -1272,7 +1272,7 @@ GetMoveNameTransform:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc
@@ -1294,7 +1294,7 @@ GetSingName::
 	ld a, 0
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	jr .done
 .not_hypnosis
@@ -1302,7 +1302,7 @@ GetSingName::
 	ld a, 1
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	
 .done
@@ -1333,7 +1333,7 @@ GetMoveNameSing:: ; 34f8
 .done
 	call GetNthString
 	ld de, wStringBuffer1
-	ld bc, ITEM_NAME_LENGTH
+	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
 	ld de, wStringBuffer1
 	pop bc

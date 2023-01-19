@@ -351,7 +351,7 @@ UnknownText_AntiqueShop_Intro::
 	
 UnknownText_TMMart_HowMayIHelpYou::
 	text "Welcome to"
-	line "MAGENTON BROS."
+	line "MAGNETON BROS."
 	cont "ELECTRONICS."
 	
 	para "This is the TM"
@@ -363,7 +363,7 @@ UnknownText_TMMart_HowMayIHelpYou::
 	
 UnknownText_ElectronicsShop_Intro::
 	text "Welcome to"
-	line "MAGENTON BROS."
+	line "MAGNETON BROS."
 	cont "ELECTRONICS."
 	
 	para "How can I help"

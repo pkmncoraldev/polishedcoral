@@ -569,6 +569,8 @@ PlacePartyMonRemindable: ; 501e0
 	add hl, de
 	ld a, [hl]
 	ld [wCurPartySpecies], a
+	ld a, b
+	ld [wCurPartyMon], a
 	farcall GetForgottenMoves
 	pop hl
 	call .PlaceAbleNotAble

@@ -1552,7 +1552,7 @@ CheckCanLearnMoveTutorMove: ; 492b9
 
 	farcall ChooseMoveToRelearn ; contains call to WritePartyMenuTilemap which overwrites [wCurPartySpecies]
 
-	; reset [wCurPartySpecies] after ForgetMove
+	; reset [wCurPartySpecies] after ChooseMoveToRelearn
 	ld a, [wLearnMonSpecies]
 	ld [wCurPartySpecies], a
 

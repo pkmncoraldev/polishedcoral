@@ -327,9 +327,13 @@ PlacePartyMonTMHMCompatibility: ; 501e0
 	ld e, b
 	ld d, 0
 	add hl, de
+	ld a, [wCurPartySpecies] ; saved [wCurPartySpecies]
+	push af
 	ld a, [hl]
 	ld [wCurPartySpecies], a
 	predef CanLearnTMHMMove
+	pop af
+	ld [wCurPartySpecies], a
 	pop hl
 	call .PlaceAbleNotAble
 	call PlaceString
@@ -515,9 +519,15 @@ PlacePartyMonGender: ; 502b1
 	push hl
 	call PartyMenuCheckEgg
 	jr z, .next
+	
+	ld e, a ; new [wCurPartySpecies]
+	ld a, [wCurPartySpecies]
+	ld d, a ; saved [wCurPartySpecies]
+	ld a, e
 	ld [wCurPartySpecies], a
 	ld a, [wCurPartyMon]
-	push af
+	ld e, a ; saved [wCurPartyMon]
+	push de ; d,e holds [wCurPartySpecies],[wCurPartyMon]
 	ld a, b
 	ld [wCurPartyMon], a
 	push hl
@@ -533,8 +543,11 @@ PlacePartyMonGender: ; 502b1
 .got_gender
 	pop hl
 	ld [hli], a
-	pop af
+	pop de ; d,e holds [wCurPartySpecies],[wCurPartyMon]
+	ld a, e
 	ld [wCurPartyMon], a
+	ld a, d
+	ld [wCurPartySpecies], a
 
 .next
 	pop hl
@@ -567,11 +580,25 @@ PlacePartyMonRemindable: ; 501e0
 	ld e, b
 	ld d, 0
 	add hl, de
+
+	ld a, [wCurPartySpecies]
+	ld d, a
+	ld a, [wCurPartyMon]
+	ld e, a
+	push de ; d,e holds [wCurPartySpecies],[wCurPartyMon]
+
 	ld a, [hl]
 	ld [wCurPartySpecies], a
 	ld a, b
 	ld [wCurPartyMon], a
 	farcall GetForgottenMoves
+
+	pop de ; d,e holds [wCurPartySpecies],[wCurPartyMon]
+	ld a, e
+	ld [wCurPartyMon], a
+	ld a, d
+	ld [wCurPartySpecies], a
+
 	pop hl
 	call .PlaceAbleNotAble
 	call PlaceString

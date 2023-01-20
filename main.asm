@@ -1546,15 +1546,7 @@ CheckCanLearnMoveTutorMove: ; 492b9
 	jr .learned
 
 .reminder
-	; store [wCurPartySpecies]
-	ld a, [wCurPartySpecies]
-	ld [wLearnMonSpecies], a
-
-	farcall ChooseMoveToRelearn ; contains call to WritePartyMenuTilemap which overwrites [wCurPartySpecies]
-
-	; reset [wCurPartySpecies] after ChooseMoveToRelearn
-	ld a, [wLearnMonSpecies]
-	ld [wCurPartySpecies], a
+	farcall ChooseMoveToRelearn
 
 	jr nc, .can_remind
 	push de

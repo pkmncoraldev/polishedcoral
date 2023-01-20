@@ -68,6 +68,7 @@ LoadPartyMenuMonIconColors:
 	push hl
 	push de
 	push bc
+	ld a, [wCurPartySpecies] ; not sure if this is safe, storing [wCurPartySpecies] in register af
 	push af
 
 	ld a, [wPartyCount]
@@ -135,6 +136,7 @@ ProcessMenuMonIconColor:
 	ld a, [wPlaceBallsX]
 	ld [wCurPartyMon], a
 	pop af
+	ld [wCurPartySpecies], a
 	pop bc
 	pop de
 	pop hl

@@ -326,9 +326,6 @@ wCurItemQuantity::
 	ds 1
 wCurPartySpecies::
 	ds 1
-wLearnMonSpecies::
-; saves wCurPartySpecies during move learning
-	ds 1
 wCurPartyMon::
 ; contains which monster in a party
 ; is being dealt with at the moment

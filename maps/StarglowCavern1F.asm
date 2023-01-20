@@ -221,20 +221,22 @@ StarglowCavern1FNPC2:
 	loadtrainer DISGUISE, MASTER_1
 	startbattle
 	reloadmapafterbattle
-	readvar VAR_PLAYER_GENDER
-	if_equal FEMALE, .girl
-	if_equal PIPPI, .girl
 	opentext
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl
 	writetext StarglowCavern_DisguiseMan1Text3_boy
-	waitbutton
-	closetext
 	jump .cont
 .girl
-	opentext
 	writetext StarglowCavern_DisguiseMan1Text3_girl
+.cont
 	waitbutton
 	closetext
-.cont
 	applymovement STARGLOWCAVERN_DISGUISEMAN, Movement_StarglowCavern_DisguiseMan2
 	disappear STARGLOWCAVERN_DISGUISEMAN
 	opentext

@@ -9,14 +9,14 @@ Route8_MapScriptHeader:
 	warp_def 39, 46, 2, ROUTE_8_GATE
 	warp_def 11, 17, 1, ROUTE_8_ENCOUNTER_HOUSE
 
-	db 1 ; coord events
-	bg_event 35, 20, SIGNPOST_ITEM + DAWN_STONE, EVENT_ROUTE_8_HIDDEN_DAWN_STONE
+	db 0 ; coord events
 
-	db 4 ; bg events
+	db 5 ; bg events
 	signpost 34, 48, SIGNPOST_READ, Route8Sign
 	signpost 10, 24, SIGNPOST_READ, Route8Flowers
 	signpost 11, 24, SIGNPOST_READ, Route8Flowers
 	signpost 12, 18, SIGNPOST_READ, Route8FlowerHouseSign
+	signpost 20, 35, SIGNPOST_ITEM + DAWN_STONE, EVENT_ROUTE_8_HIDDEN_DAWN_STONE
 
 	db 11 ; object events
 	person_event SPRITE_YOUNGSTER, 13, 25, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route8NPC1, -1

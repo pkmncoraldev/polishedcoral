@@ -556,9 +556,18 @@ Script_pokepic:
 	ld [wCurPartySpecies], a
 	call GetScriptByte
 	ld [wIsCurMonInParty], a
+	
+	ld a, 1
+	ld [wPokePic], a
+	
+	call Load1bppFont
+	call Load1bppFrame
+	
 	farjp Pokepic
 
 Script_closepokepic:
+	xor a
+	ld [wPokePic], a
 	farjp ClosePokepic
 
 Script_verticalmenu:

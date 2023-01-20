@@ -634,7 +634,7 @@ Movement_TwinkleGymYellowRoomLeader:
 	
 TwinkleGymYellowRoomBather1RegularText:
 	text "I love jumping out"
-	line "and scaring people!"
+	line "to scare people!"
 	done
 	
 TwinkleGymYellowRoomBather1SeenText:

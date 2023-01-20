@@ -253,4 +253,4 @@
 	tilecoll ICE, ICE, ICE, ICE ; fc
 	tilecoll ICE, ICE, ICE, ICE ; fd
 	tilecoll WALL, ICE, ICE, ICE ; fe
-	tilecoll ICE, WATER, ICE, ICE ; ff
+	tilecoll ICE, WALL, ICE, ICE ; ff

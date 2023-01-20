@@ -262,14 +262,14 @@ ENDM
 	map_attributes TwinkleTown, TWINKLE_TOWN, 5, SOUTH
 	connection south, Route10, ROUTE_10, -5
 	
-	map_attributes LusterCityResidential, LUSTER_CITY_RESIDENTIAL, 113, EAST
+	map_attributes LusterCityResidential, LUSTER_CITY_RESIDENTIAL, 0, EAST
 	connection east, LusterCityShopping, LUSTER_CITY_SHOPPING, 0
 	
-	map_attributes LusterCityShopping, LUSTER_CITY_SHOPPING, 113, WEST | EAST
+	map_attributes LusterCityShopping, LUSTER_CITY_SHOPPING, 0, WEST | EAST
 	connection west, LusterCityResidential, LUSTER_CITY_RESIDENTIAL, 0
 	connection east, LusterCityBusiness, LUSTER_CITY_BUSINESS, 6
 	
-	map_attributes LusterCityBusiness, LUSTER_CITY_BUSINESS, 113, WEST
+	map_attributes LusterCityBusiness, LUSTER_CITY_BUSINESS, 0, WEST
 	connection west, LusterCityShopping, LUSTER_CITY_SHOPPING, -6
 	
 	map_attributes Route11, ROUTE_11, $02, EAST

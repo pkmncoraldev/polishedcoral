@@ -157,8 +157,9 @@ LusterMallSkateShop_ClerkText3:
 	done
 	
 LusterMallSkateShop_ClerkText4:
-	text "You know everything"
-	line "I can teach you!"
+	text "You know every-"
+	line "thing I can teach"
+	cont "you!"
 	
 	para "Say hi to"
 	line "“THE NIDOKINGS”"

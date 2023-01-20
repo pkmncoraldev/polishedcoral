@@ -412,7 +412,7 @@ LusterMallAntiqueSignText:
 LusterMallHerbSignText:
 	text "THE WEEPIN' BELL"
 	
-	para "“Natrual Medicine"
+	para "“Natural Medicine"
 	line "for what ails ya!”"
 	done
 
@@ -780,7 +780,7 @@ LusterMall_NPC12Text:
 	
 	para "Why?"
 	
-	para "Becuase I'm not"
+	para "Because I'm not"
 	line "supposed to!"
 	done
 	

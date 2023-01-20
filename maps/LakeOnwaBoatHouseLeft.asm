@@ -382,6 +382,10 @@ LakeBoatManText8:
 	cont "ship out for some"
 	cont "reason…"
 	
+	para "The best I can do"
+	line "is go across the"
+	cont "lake."
+	
 	para "Maybe you should"
 	line "call the person"
 	cont "you were supposed"
@@ -406,6 +410,10 @@ LakeBoatManText10:
 	cont "us the 10-4 to"
 	cont "ship out for some"
 	cont "reason…"
+	
+	para "The best I can do"
+	line "is go across the"
+	cont "lake."
 	
 	para "Maybe you should"
 	line "call the person"

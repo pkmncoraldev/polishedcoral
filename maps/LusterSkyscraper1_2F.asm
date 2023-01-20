@@ -55,7 +55,7 @@ LusterSkyscraper1_2F_NPC1Text:
 	text "I couldn't imagine"
 	line "having an office"
 	cont "job and being a"
-	cont "#MON TRIANER."
+	cont "#MON TRAINER."
 	
 	para "There's just not"
 	line "enough time!"

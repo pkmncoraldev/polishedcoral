@@ -12,7 +12,7 @@ SunbeamReserve_MapScriptHeader:
 	db 0 ; coord events
 
 	db 1 ; bg events
-	signpost 15,  6, SIGNPOST_READ, SunbeamSlowpokeGirlSign
+	signpost 17,  6, SIGNPOST_READ, SunbeamSlowpokeGirlSign
 
 	db 11 ; object events
 	person_event SPRITE_SPRUCE, 48,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ISLAND_BOATMAN

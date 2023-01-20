@@ -41,7 +41,7 @@ LoadRegularTextboxPalette::
 BlindingFlashPalette: ; 49418
 if !DEF(MONOCHROME)
 	RGB 31, 31, 31
-	RGB 08, 19, 28
+	RGB 31, 31, 31
 	RGB 05, 05, 16
 	RGB 00, 00, 00
 else

@@ -59,6 +59,7 @@ Predef_LoadCGBLayout: ; 8d59
 	dw _CGB_TrainerOrMonFrontpicPals
 	dw _CGB_SplashScreen
 	dw _CGB_PippiScreen
+	dw _CGB_Options
 ; 8db8
 
 
@@ -1426,3 +1427,23 @@ _CGB_PippiScreen: ; 91ad
 	RGB 04, 02, 13
 	RGB 00, 00, 00
 	
+_CGB_Options: ; 91ad
+	ld hl, DiplomaPals
+	ld de, wUnknBGPals
+	ld bc, 16 palettes
+	ld a, $5
+	call FarCopyWRAM
+
+	ld de, wUnknBGPals
+	ld hl, .DiplomaPalette
+	call LoadHLPaletteIntoDE
+
+	call WipeAttrMap
+	jp ApplyAttrMap
+; 91c8
+
+.DiplomaPalette
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 00, 00, 00
+	RGB 00, 00, 00

@@ -8,6 +8,8 @@ SLOTS_STARYU EQU $14
 REEL_SIZE EQU 15
 
 _SlotMachine:
+	call Load1bppFont
+	call Load1bppFrame
 	ld hl, wOptions1
 	set NO_TEXT_SCROLL, [hl]
 	call .InitGFX

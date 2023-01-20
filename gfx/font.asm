@@ -1,6 +1,6 @@
 FontTiles::
 FontNormal:
-INCBIN "gfx/font/normal.1bpp"
+INCBIN "gfx/font/normal.2bpp"
 FontNarrow:
 INCBIN "gfx/font/narrow.1bpp"
 FontBold:
@@ -12,9 +12,24 @@ INCBIN "gfx/font/serif.1bpp"
 FontUnown:
 INCBIN "gfx/font/unown.1bpp"
 FontCommon:
+INCBIN "gfx/font/common.2bpp"
+FontNormal1bpp:
+INCBIN "gfx/font/normal.1bpp"
+FontCommon1bpp:
 INCBIN "gfx/font/common.1bpp"
 
-Frames: ; f8800
+Frames:
+INCBIN "gfx/frames/1.2bpp"
+INCBIN "gfx/frames/2.2bpp"
+INCBIN "gfx/frames/3.2bpp"
+INCBIN "gfx/frames/4.2bpp"
+INCBIN "gfx/frames/5.2bpp"
+INCBIN "gfx/frames/6.2bpp"
+INCBIN "gfx/frames/7.2bpp"
+INCBIN "gfx/frames/8.2bpp"
+INCBIN "gfx/frames/9.2bpp"
+
+FramesBattle:
 INCBIN "gfx/frames/1.1bpp"
 INCBIN "gfx/frames/2.1bpp"
 INCBIN "gfx/frames/3.1bpp"
@@ -24,7 +39,6 @@ INCBIN "gfx/frames/6.1bpp"
 INCBIN "gfx/frames/7.1bpp"
 INCBIN "gfx/frames/8.1bpp"
 INCBIN "gfx/frames/9.1bpp"
-; f89b0
 
 ; Various misc graphics here.
 
@@ -52,6 +66,9 @@ INCBIN "gfx/town_map/town_map.2bpp.lz"
 ; f8ea4
 
 TextBoxSpaceGFX:: ; f9204
+INCBIN "gfx/frames/space.2bpp"
+
+TextBoxSpace1bppGFX::
 INCBIN "gfx/frames/space.1bpp"
 ; f9214
 
@@ -80,22 +97,27 @@ _LoadStandardOpaqueFont::
 _LoadStandardFont::
 	xor a
 _LoadStandardMaybeOpaqueFont:
-	push af
 	call LoadStandardFontPointer
 	ld d, h
 	ld e, l
 	ld hl, VTiles0 tile "A"
+	ld de, FontNormal
 	lb bc, BANK(FontNormal), 111
-	pop af
-	ld [hRequestOpaque1bpp], a
-	push af
-	call GetMaybeOpaque1bpp
+	call Get2bpp
 	ld de, FontCommon
 	ld hl, VTiles0 tile "▷"
 	lb bc, BANK(FontCommon), 11
-	pop af
-	ld [hRequestOpaque1bpp], a
-	jp GetMaybeOpaque1bpp
+	jp Get2bpp
+	
+_Load1bppFont::
+	ld de, FontNormal1bpp
+	ld hl, VTiles0 tile "A"
+	lb bc, BANK(FontNormal1bpp), 111
+	call Get1bpp
+	ld de, FontCommon1bpp
+	ld hl, VTiles0 tile "▷"
+	lb bc, BANK(FontCommon1bpp), 11
+	jp Get1bpp
 
 LoadStandardFontPointer::
 	ld hl, .FontPointers
@@ -123,27 +145,45 @@ LoadStandardFontPointer::
 	dw FontNormal
 
 _LoadFontsBattleExtra:: ; fb4be
+	call LoadStandardFontPointer
+	ld d, h
+	ld e, l
+	ld hl, VTiles0 tile "A"
 	ld de, BattleExtrasGFX
 	ld hl, VTiles2 tile BATTLEEXTRA_GFX_START
 	lb bc, BANK(BattleExtrasGFX), 32
 	call Get2bpp
-; fb4cc
+	jp LoadFrame1bpp
 
 LoadFrame:: ; fb4cc
 	ld a, [wTextBoxFrame]
-	ld bc, TILES_PER_FRAME * LEN_1BPP_TILE
+	ld bc, TILES_PER_FRAME * LEN_2BPP_TILE
 	ld hl, Frames
 	rst AddNTimes
 	ld d, h
 	ld e, l
 	ld hl, VTiles0 tile "┌"
 	lb bc, BANK(Frames), TILES_PER_FRAME
-	call Get1bpp
+	call Get2bpp
 	ld hl, VTiles2 tile " "
 	ld de, TextBoxSpaceGFX
 	lb bc, BANK(TextBoxSpaceGFX), 1
+	jp Get2bpp
+
+LoadFrame1bpp:: ; fb4cc
+	ld a, [wTextBoxFrame]
+	ld bc, TILES_PER_FRAME * LEN_1BPP_TILE
+	ld hl, FramesBattle
+	rst AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, VTiles0 tile "┌"
+	lb bc, BANK(FramesBattle), TILES_PER_FRAME
+	call Get1bpp
+	ld hl, VTiles2 tile " "
+	ld de, TextBoxSpace1bppGFX
+	lb bc, BANK(TextBoxSpace1bppGFX), 1
 	jp Get1bpp
-; fb4f2
 
 LoadBattleFontsHPBar: ; fb4f2
 	call _LoadFontsBattleExtra

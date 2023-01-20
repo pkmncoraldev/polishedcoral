@@ -153,7 +153,7 @@
 	const DRAGON_DANCE ; $97
 	const OMINOUS_WIND ; $98
 	const EXPLOSION    ; $99
-	const FURY_SWIPES_FURY_ATTACK_COMET_PUNCH  	; $9a
+	const MULTI_MOVE_FURY_COMET_BARRAGE_SLAP  	; $9a
 	const BONEMERANG   ; $9b
 	const REST         ; $9c
 	const ROCK_SLIDE   ; $9d

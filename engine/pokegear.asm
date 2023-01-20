@@ -5,6 +5,8 @@
 	const RADIO_CARD
 
 PokeGear: ; 90b8d (24:4b8d)
+	call Load1bppFont
+	call Load1bppFrame
 	ld hl, wOptions1
 	ld a, [hl]
 	push af

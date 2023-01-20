@@ -469,12 +469,23 @@ GetFurySwipesName::
 	rst CopyBytes
 	jr .done
 .not_doubleslap
+	call CheckBarrageUsers
+	jr nc, .not_barrage
 	ld hl, FurySwipesNames
 	ld a, 3
 	call GetNthString
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
+	jr .done
+.not_barrage
+	ld hl, FurySwipesNames
+	ld a, 4
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+
 .done
 	pop de
 	pop bc
@@ -509,9 +520,17 @@ GetMoveNameFurySwipes:: ; 34f8
 	ld hl, FurySwipesNames
 	ld a, 2
 	jr .done
+	
 .not_doubleslap
+	call CheckBarrageUsers
+	jr nc, .not_barrage
 	ld hl, FurySwipesNames
 	ld a, 3
+	jr .done
+	
+.not_barrage
+	ld hl, FurySwipesNames
+	ld a, 4
 	
 .done
 	call GetNthString
@@ -1469,6 +1488,15 @@ CheckDoubleSlapUsers2::
 	call IsInArray
 	ret
 	
+CheckBarrageUsers::
+	ld a, [wCurPartySpecies]
+	call CheckDitto
+CheckBarrageUsers2::
+	ld hl, BarrageUsers
+	ld de, 1
+	call IsInArray
+	ret
+	
 CheckMoonlightUsers::
 	ld a, [wCurPartySpecies]
 	call CheckDitto
@@ -1644,7 +1672,7 @@ GetMultiMoveSlotName2::
 	jr z, .lock_on
 	cp SHARPEN_HOWL_MEDITATE
 	jr z, .sharpen
-	cp FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
+	cp MULTI_MOVE_FURY_COMET_BARRAGE_SLAP
 	jr z, .fury_swipes
 	cp SYNTHESIS_MOONLIGHT_MORNING_SUN
 	jr z, .synthesis
@@ -1861,6 +1889,31 @@ CheckFuryStrikesThing::
 	ld [wKickCounter], a
 	ret
 .not_doubleslap
+	push de
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip4
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species4
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species4
+	
+.skip4
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species4
+	ld a, [wEnemyMonSpecies]
+.got_user_species4
+	farcall CheckBarrageUsers2
+	pop de
+	jr nc, .not_barrage
+	ld a, $5
+	ld [wKickCounter], a
+	ret
+.not_barrage
 	ld a, $1
 	ld [wKickCounter], a
 	ret
@@ -2356,20 +2409,21 @@ PoundUsers:
 	db POLIWAG
 	db POLIWHIRL
 	db POLIWRATH
-	db POLITOED
-	db SUDOWOODO
+	db GRIMER
+	db GRIMER_A
+	db MUK
+	db MUK_A
+	db CHANSEY
 	db DRATINI
 	db DRAGONAIR
 	db DRAGONITE
+	db POLITOED
+	db SUDOWOODO
 	db SNOVER
 	db ABOMASNOW
 	db SNORUNT
 	db GLALIE
 	db FROSLASS
-	db GRIMER
-	db MUK
-	db GRIMER_A
-	db MUK_A
 	db -1
 	
 ScratchUsers:
@@ -2381,9 +2435,6 @@ ScratchUsers:
 	db FERALIGATR
 	db BUIZEL
 	db FLOATZEL
-	db CUBONE
-	db MAROWAK
-	db MAROWAK_A
 	db NIDORAN_F
 	db NIDORINA
 	db NIDOQUEEN
@@ -2504,7 +2555,12 @@ FuryAttackUsers:
 	db TRUMBEAK
 	db TOUCANNON
 	db -1
-	
+
+BarrageUsers:
+	db EXEGGCUTE
+	db EXEGGUTOR
+	db -1
+
 CometPunchUsers:
 	db LEDYBA
 	db LEDIAN
@@ -2723,6 +2779,7 @@ FurySwipesNames:
 	db "FURY ATTACK@"
 	db "COMET PUNCH@"
 	db "DOUBLESLAP@"
+	db "BARRAGE@"
 	db "FURY SWIPES@"
 	db -1
 	
@@ -2798,7 +2855,7 @@ MultiSlotMoves:
 	db BARRIER_IRON_DEFENSE_ACID_ARMOR
 	db LOCK_ON_MIND_READER
 	db SHARPEN_HOWL_MEDITATE
-	db FURY_SWIPES_FURY_ATTACK_COMET_PUNCH
+	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP
 	db SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db MEAN_LOOK_BLOCK_SPIDER_WEB
 	db CHARM_FEATHER_DANCE

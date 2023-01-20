@@ -2615,9 +2615,13 @@ MaskAllObjectStructs: ; 5645
 ; 565c
 
 UpdateCurObjectData: ; 565c
+	ld a, [wPokePic]
+	cp 0
+	jr z, .not_pokepic
 	push bc
 	call CheckCurSpriteCoveredByTextBox
 	pop bc
+.not_pokepic
 	jr c, SetFacing_Standing
 	call IsObjectOnScreen
 	jr c, SetFacing_Standing

@@ -61,8 +61,8 @@ NewGame_ClearTileMapEtc: ; 5b44
 	xor a
 	ld [hMapAnims], a
 	call ClearTileMap
-	call LoadFontsExtra
-	call LoadStandardFont
+	call Load1bppFrame
+	call Load1bppFont
 	jp ClearWindowData
 ; 5b54
 
@@ -506,7 +506,7 @@ DisplayNormalContinueData: ; 5e9f
 	call Continue_LoadMenuHeader
 	call Continue_DisplayBadgesDexPlayerName
 	call Continue_PrintGameTime
-	call LoadFontsExtra
+	call Load1bppFrame
 	jp UpdateSprites
 ; 5eaf
 
@@ -514,7 +514,7 @@ DisplayContinueDataWithRTCError: ; 5eaf
 	call Continue_LoadMenuHeader
 	call Continue_DisplayBadgesDexPlayerName
 	call Continue_UnknownGameTime
-	call LoadFontsExtra
+	call Load1bppFrame
 	jp UpdateSprites
 ; 5ebf
 
@@ -836,6 +836,9 @@ ProfSpruceSpeech: ; 0x5f99
 	ld c, 15
 	call FadeToWhite
 	call ClearTileMap
+	
+	call Load1bppFont
+	call Load1bppFrame
 
 	ld c, 15
 	call DelayFrames
@@ -1333,7 +1336,7 @@ ShrinkPlayer: ; 610f
 	call DelayFrames
 
 	call Intro_PlacePlayerSprite
-	call LoadFontsExtra
+	call Load1bppFrame
 
 	ld c, 50
 	call DelayFrames

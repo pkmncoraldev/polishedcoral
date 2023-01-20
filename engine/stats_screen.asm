@@ -1127,8 +1127,8 @@ StatsScreen_LoadTextBoxSpaceGFX: ; 4e307 (13:6307)
 	push af
 	ld a, $1
 	ld [rVBK], a
-	ld de, TextBoxSpaceGFX
-	lb bc, BANK(TextBoxSpaceGFX), 1
+	ld de, TextBoxSpace1bppGFX
+	lb bc, BANK(TextBoxSpace1bppGFX), 1
 	ld hl, VTiles2 tile $7f
 	call Get1bpp
 	pop af

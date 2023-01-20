@@ -125,11 +125,11 @@
 	tilecoll WALL, WALL, SKATE, VENDING_MACHINE ; 7c
 	tilecoll WALL, WALL, VENDING_MACHINE, SKATE ; 7d
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 7e
-	tilecoll WALL, WALL, WALL, WALL ; 7f
+	tilecoll SKATE, SKATE, SKATE, SKATE ; 7f
 	tilecoll SKATE, WALL, SKATE, WALL ; 80
 	tilecoll WALL, SKATE, WALL, SKATE ; 81
-	tilecoll WALL, WALL, WALL, WALL ; 82
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 83
+	tilecoll WALL, WALL, WALL, FLOOR ; 82
+	tilecoll WALL, WALL, FLOOR, WALL ; 83
 	tilecoll SKATE, WALL, SKATE, WALL ; 84
 	tilecoll WALL, SKATE, WALL, SKATE ; 85
 	tilecoll SKATE, WALL, SKATE, WALL ; 86
@@ -219,7 +219,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; da
 	tilecoll WALL, WALL, WALL, WALL ; db
 	tilecoll WALL, WALL, WALL, WALL ; dc
-	tilecoll NO_OLLIE, WALL, WALL, FLOOR ; dd
+	tilecoll SKATE, SKATE, SKATE, SKATE ; dd
 	tilecoll NO_OLLIE, DOOR, WALL, FLOOR ; de
 	tilecoll WALL, WALL, WALL, WALL ; df
 	tilecoll WALL, WALL, WALL, FLOOR ; e0

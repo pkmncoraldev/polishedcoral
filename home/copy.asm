@@ -9,6 +9,9 @@ LoadStandardFont:: ; e51
 	farjp _LoadStandardFont
 ; e58
 
+Load1bppFont:: ; e51
+	farjp _Load1bppFont
+
 LoadFontsBattleExtra:: ; e58
 	farjp _LoadFontsBattleExtra
 ; e5f
@@ -16,6 +19,9 @@ LoadFontsBattleExtra:: ; e58
 LoadFontsExtra:: ; e5f
 	farjp LoadFrame
 ; e6c
+
+Load1bppFrame::
+	farjp LoadFrame1bpp
 
 ApplyTilemap::
 ; Tell VBlank to update BG Map
@@ -148,7 +154,7 @@ GetMaybeOpaque1bpp::
 	jr _Copy1bpp
 
 GetOpaque1bppSpaceTile::
-	ld de, TextBoxSpaceGFX
+	ld de, TextBoxSpace1bppGFX
 GetOpaque1bppFontTile::
 ; Two bytes in VRAM define eight pixels (2 bits/pixel)
 ; Bits are paired from the bytes, e.g. %ABCDEFGH %abcdefgh defines pixels
@@ -165,7 +171,7 @@ CopyOpaque1bpp:
 	jr _Copy1bpp
 
 Get1bppSpaceTile::
-	ld de, TextBoxSpaceGFX
+	ld de, TextBoxSpace1bppGFX
 Get1bppFontTile::
 	lb bc, BANK(FontTiles), 1
 Get1bpp:: ; f9d

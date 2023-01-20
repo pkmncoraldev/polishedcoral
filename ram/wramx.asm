@@ -738,7 +738,7 @@ wBugContestSecsRemaining:: ds 1
 
 wEncounterHouse:: ds 1
 
-	ds 1 ; unused
+wPokePic::	ds 1
 
 wMapStatusEnd::
 
@@ -1251,7 +1251,10 @@ wPartyMonNicknamesEnd::
 	
 wEncounterHouseMon:: ds 1
 
-	ds 10 ; unused
+wPlayerSplitHandleMonFaint:: ds 1
+wEnemySplitHandleMonFaint:: ds 1
+
+	ds 8 ; unused
 
 wPokedexCaught:: flag_array NUM_SPECIES
 wEndPokedexCaught::

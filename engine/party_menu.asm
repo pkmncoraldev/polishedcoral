@@ -596,11 +596,11 @@ PlacePartyMonRemindable: ; 501e0
 ; 50221
 
 .string_able ; 50221
-	db "Able@"
+	db "ABLE@"
 ; 50226
 
 .string_not_able ; 50226
-	db "Not able@"
+	db "NOT ABLE@"
 ; 5022f
 
 

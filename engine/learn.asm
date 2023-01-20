@@ -31,8 +31,13 @@ LearnMove: ; 6508
 	jr nz, .next
 ; If we're here, we enter the routine for forgetting a move
 ; to make room for the new move we're trying to learn.
+
+	; store [wCurPartySpecies]
+	ld a, [wCurPartySpecies]
+	ld [wLearnMonSpecies], a
+
 	push de
-	call ForgetMove
+	call ForgetMove ; contains call to WritePartyMenuTilemap which overwrites [wCurPartySpecies]
 	pop de
 	jp c, .cancel
 
@@ -41,6 +46,11 @@ LearnMove: ; 6508
 	ld [wd265], a
 
 	ld b, a
+
+	; reset [wCurPartySpecies] after ForgetMove
+	ld a, [wLearnMonSpecies]
+	ld [wCurPartySpecies], a
+
 	ld a, [wBattleMode]
 	and a
 	jr z, .not_disabled

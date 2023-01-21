@@ -4217,10 +4217,11 @@ NoivernEvosAttacks:
 	
 PikipekEvosAttacks:
 	db EVOLVE_LEVEL, 14, TRUMBEAK
-	db  0 ; no more evolutions
-	db  1, PECK
-	db  3, GROWL
-	db  8, GUST
+	db 0 ; no more evolutions
+	db 1, PECK
+	db 3, GROWL
+	db 7, SWIFT
+	db 9, ROCK_SMASH
 	db 13, SUPERSONIC
 	db 15, WING_ATTACK
 	db 19, ROOST
@@ -4230,42 +4231,44 @@ PikipekEvosAttacks:
 	db 31, BULLET_SEED
 	db 33, CHARM_FEATHER_DANCE
 	db 37, HYPER_VOICE
-	db  0 ; no more level-up moves
+	db 0 ; no more level-up moves
 	
 TrumbeakEvosAttacks:
 	db EVOLVE_LEVEL, 28, TOUCANNON
-	db  0 ; no more evolutions
-	db  1, ROCK_BLAST
-	db  1, PECK
-	db  1, GROWL
-	db  1, GUST
-	db  1, SUPERSONIC
+	db 0 ; no more evolutions
+	db 1, ROCK_BLAST
+	db 1, PECK
+	db 1, GROWL
+	db 1, SWIFT
+	db 1, ROCK_SMASH
+	db 1, SUPERSONIC
 	db 16, WING_ATTACK
 	db 21, ROOST
 	db 24, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
 	db 29, SCREECH
 	db 32, DRILL_PECK
-	db 35, BULLET_SEED
-	db 38, CHARM_FEATHER_DANCE
-	db 43, HYPER_VOICE
-	db  0 ; no more level-up moves
+	db 37, BULLET_SEED
+	db 40, CHARM_FEATHER_DANCE
+	db 45, HYPER_VOICE
+	db 0 ; no more level-up moves
 
 ToucannonEvosAttacks:
-	db  0 ; no more evolutions
-	db  1, ROCK_BLAST
-	db  1, PECK
-	db  1, GROWL
-	db  1, GUST
-	db  1, SUPERSONIC
-	db  1, WING_ATTACK
-	db  1, ROOST
-	db  1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db 0 ; no more evolutions
+	db 1, ACROBATICS
+	db 1, ROCK_BLAST
+	db 1, PECK
+	db 1, GROWL
+	db 1, SWIFT
+	db 1, ROCK_SMASH
+	db 1, SUPERSONIC
+	db 1, WING_ATTACK
+	db 1, ROOST
+	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
 	db 30, SCREECH
 	db 34, DRILL_PECK
-	db 37, BULLET_SEED
-	db 42, CHARM_FEATHER_DANCE
-	db 48, HYPER_VOICE
-	db 50, POWER_GEM
+	db 40, BULLET_SEED
+	db 44, CHARM_FEATHER_DANCE
+	db 50, HYPER_VOICE
 	db  0 ; no more level-up moves
 	
 MareanieEvosAttacks:
@@ -4281,124 +4284,141 @@ ToxapexEvosAttacks:
 	
 WyrdeerEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, PSYSHOCK
 	db 1, TACKLE_SCRATCH_POUND
-	db 5, LEER_TAIL_WHIP
-	db 10, SING_HYPNOSIS
-	db 14, STOMP
-	db 19, SAND_ATTACK_SMOKESCREEN
-	db 23, TAKE_DOWN
-	db 28, CONFUSE_RAY
-	db 32, CALM_MIND
-	db 37, ZEN_HEADBUTT
-	db 46, JUMP_KICK
+	db 1, LEER_TAIL_WHIP
+	db 1, DISABLE
+	db 1, SING_HYPNOSIS
+	db 13, STOMP
+	db 16, SAND_ATTACK_SMOKESCREEN
+	db 21, TAKE_DOWN
+	db 23, CONFUSE_RAY
+	db 27, CALM_MIND
+	db 33, SUBSTITUTE
+	db 38, ZEN_HEADBUTT
+	db 43, JUMP_KICK
+	db 49, SWAGGER
+	db 55, DOUBLE_EDGE
+	db 62, MEGAHORN
 	db 0 ; no more level-up moves
 	
 Raichu_AEvosAttacks:
 	db  0 ; no more evolutions
-	db  1, PSYCHIC_M
-	db 	1, LEER_TAIL_WHIP
-	db  1, THUNDERSHOCK
-	db  1, GROWL
-	db  1, QUICK_ATTACK
-	db  1, THUNDER_WAVE
-	db  1, DOUBLE_TEAM
-	db  1, SPARK
-	db  1, ELECTRO_BALL
-	db  1, BODY_SLAM
-	db  1, THUNDERBOLT
-	db  1, AGILITY_ROCK_POLISH
-	db  1, WILD_CHARGE
-	db  1, LIGHT_SCREEN
-	db  1, THUNDER
-	db  0 ; no more level-up moves
+	db 1, PSYCHIC_M
+	db 1, THUNDERSHOCK
+	db 1, GROWL
+	db 1, LEER_TAIL_WHIP
+	db 1, QUICK_ATTACK
+	db 1, ELECTRO_BALL
+	db 1, THUNDER_WAVE
+	db 1, DOUBLE_TEAM
+	db 1, SPARK
+	db 1, AGILITY_ROCK_POLISH
+	db 1, IRON_TAIL
+	db 1, THUNDERBOLT
+	db 1, WILD_CHARGE
+	db 1, LIGHT_SCREEN
+	db 1, THUNDER
+	db 0 ; no more level-up moves
 	
 Exeggcute_AEvosAttacks:
 	db EVOLVE_ITEM, LEAF_STONE, EXEGGUTOR_A
-	db  0 ; no more evolutions
-	db  1, ABSORB
-	db  1, SING_HYPNOSIS
-	db  7, REFLECT
-	db 11, BULLET_SEED
-	db 14, LEECH_SEED
-	db 17, CONFUSION
-	db 19, STUN_SPORE
-	db 21, POISONPOWDER
-	db 23, SLEEP_POWDER
-	db 27, MEGA_DRAIN
-	db 33, PSYBEAM
+	db 0 ; no more evolutions
+	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db 1, ABSORB
+	db 1, SING_HYPNOSIS
+	db 7, REFLECT
+	db 11, LEECH_SEED
+	db 15, MEGA_DRAIN
+	db 20, CONFUSION
+	db 24, BULLET_SEED
+	db 26, STUN_SPORE
+	db 28, POISONPOWDER
+	db 32, SLEEP_POWDER
 	db 37, SYNTHESIS_MOONLIGHT_MORNING_SUN
-	db 43, SOLAR_BEAM
-	db 47, PSYSHOCK
+	db 41, GIGA_DRAIN
+	db 45, PSYSHOCK
+	db 49, SOLAR_BEAM
 	db 0 ; no more level-up moves
 	
 Exeggutor_AEvosAttacks:
-	db  0 ; no more evolutions
-	db  1, DRAGONHAMMER
-	db  1, ABSORB
-	db  1, SING_HYPNOSIS
-	db  1, REFLECT
-	db  1, LEECH_SEED
-	db  1, BULLET_SEED
-	db  1, CONFUSION
-	db  1, STUN_SPORE
-	db  1, POISONPOWDER
-	db  1, SLEEP_POWDER
-	db  1, MEGA_DRAIN
-	db  1, PSYBEAM
-	db  1, SYNTHESIS_MOONLIGHT_MORNING_SUN
-	db  1, SOLAR_BEAM
-	db 27, PSYSHOCK
-	db 37, EGG_BOMB
-	db 47, WOOD_HAMMER
+	db 0 ; no more evolutions
+	db 1, DRAGONHAMMER
+	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db 1, ABSORB
+	db 1, SING_HYPNOSIS
+	db 1, REFLECT
+	db 1, LEECH_SEED
+	db 1, MEGA_DRAIN
+	db 1, CONFUSION
+	db 1, STUN_SPORE
+	db 1, POISONPOWDER
+	db 1, SLEEP_POWDER
+	db 1, BULLET_SEED
+	db 1, SYNTHESIS_MOONLIGHT_MORNING_SUN
+	db 1, GIGA_DRAIN
+	db 1, PSYSHOCK
+	db 1, SOLAR_BEAM
+	db 45, EGG_BOMB
+	db 49, WOOD_HAMMER
 	db 0 ; no more level-up moves
 	
 Marowak_AEvosAttacks:
 	db  0 ; no more evolutions
-	db  1, FLAME_BURST
-	db  1, GROWL
-	db  1, TACKLE_SCRATCH_POUND
-	db  1, BONE_CLUB
-	db  1, HEADBUTT
-	db  1, LEER_TAIL_WHIP
-	db  1, HEX
-	db  1, BONEMERANG
-	db  1, WILL_O_WISP
-	db  1, FALSE_SWIPE
+	db 1, SHADOW_BONE
+	db 1, DOUBLE_EDGE
+	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 1, BONE_CLUB
+	db 1, HEADBUTT
+	db 1, HEX
+	db 1, LEER_TAIL_WHIP
+	db 1, FOCUS_ENERGY
+	db 1, BONEMERANG
+	db 1, WILL_O_WISP
+	db 1, FLAME_CHARGE
+	db 1, RAGE
+	db 1, FALSE_SWIPE
 	db 33, THRASH
 	db 37, DIG
-	db 43, SLASH
-	db 48, FLARE_BLITZ
-	db 56, EARTHQUAKE
+	db 43, SWORDS_DANCE
+	db 49, FLARE_BLITZ
+	db 53, EARTHQUAKE
 	db 0 ; no more level-up moves
 	
 Grimer_AEvosAttacks:
 	db EVOLVE_LEVEL, 38, MUK_A
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
-	db 4, DEFENSE_CURL_HARDEN_WITHDRAW
-	db 7, BITE
-	db 12, DISABLE
-	db 18, POISON_FANG
-	db 21, MINIMIZE
-	db 26, KNOCK_OFF
-	db 30, CRUNCH
-	db 37, SCREECH
-	db 43, BARRIER_IRON_DEFENSE_ACID_ARMOR
-	db 46, GUNK_SHOT
+	db 1, SMOG
+	db 6, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 9, BITE
+	db 14, DISABLE
+	db 17, ACID
+	db 22, POISON_FANG
+	db 25, MINIMIZE
+	db 30, KNOCK_OFF
+	db 33, CRUNCH
+	db 38, SCREECH
+	db 41, TOXIC
+	db 46, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 49, GUNK_SHOT
 	db 0 ; no more level-up moves
 	
 Muk_AEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, SMOG
 	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
 	db 1, BITE
-	db 12, DISABLE
-	db 15, SLUDGE
-	db 18, POISON_FANG
-	db 21, MINIMIZE
-	db 26, KNOCK_OFF
-	db 30, CRUNCH
-	db 37, SCREECH
-	db 40, BARRIER_IRON_DEFENSE_ACID_ARMOR
-	db 46, GUNK_SHOT
+	db 1, DISABLE
+	db 1, ACID
+	db 1, POISON_FANG
+	db 1, MINIMIZE
+	db 1, KNOCK_OFF
+	db 1, CRUNCH
+	db 1, SCREECH
+	db 42, TOXIC
+	db 48, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 52, GUNK_SHOT
 	db 0 ; no more level-up moves

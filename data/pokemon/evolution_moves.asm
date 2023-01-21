@@ -241,10 +241,10 @@ EvolutionMoves::
 	db DRAGON_PULSE                         ; NOIVERN
 	db NO_MOVE                              ; PIKIPEK
 	db NO_MOVE                              ; TRUMBEAK
-	db NO_MOVE                              ; TOUCANNON ;BEAK_BLAST
+	db ACROBATICS                           ; TOUCANNON ;BEAK_BLAST
 	db NO_MOVE                              ; MAREANIE
 	db NO_MOVE                              ; TOXAPEX
-	db NO_MOVE                              ; WYRDEER
+	db PSYSHOCK                             ; WYRDEER
 	db PSYCHIC_M                            ; RAICHU_A
 	db NO_MOVE                              ; EXEGGCUTE_A
 	db DRAGONHAMMER                         ; EXEGGUTOR_A

@@ -62,7 +62,7 @@
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 3d
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 3e
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 3f
-	tilecoll WALL, WALL, FLOOR, WALL ; 40
+	tilecoll WALL, WALL, WALL, WALL ; 40
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 41
 	tilecoll WALL, WALL, WALL, FLOOR ; 42
 	tilecoll WATER, WATER, WATER, WATER ; 43
@@ -133,11 +133,11 @@
 	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 84
 	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 85
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 86
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 87
+	tilecoll WALL, WALL, WALL, WALL ; 87
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 88
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 89
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 8a
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 8b
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 89
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8a
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8b
 	tilecoll WALL, WALL, WALL, WALL ; 8c
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8d
 	tilecoll WALL, WALL, WALL, WALL ; 8e
@@ -165,19 +165,19 @@
 	tilecoll WALL, WALL, WALL, DOOR ; a4
 	tilecoll WALL, FLOOR, WALL, FLOOR ; a5
 	tilecoll STAIRS, STAIRS, FLOOR, FLOOR ; a6
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a7
+	tilecoll WALL, WALL, WALL, WALL ; a7
 	tilecoll NO_OLLIE, UP_WALL, NO_OLLIE, FLOOR ; a8
 	tilecoll UP_WALL, FLOOR, UP_WALL, FLOOR ; a9
 	tilecoll UP_WALL, NO_OLLIE, FLOOR, NO_OLLIE ; aa
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ab
+	tilecoll DOOR, DOOR, FLOOR, FLOOR ; ab
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ac
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ad
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ae
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; af
+	tilecoll WALL, WALL, WALL, WALL ; ae
+	tilecoll WALL, WALL, WALL, WALL ; af
 	tilecoll WATER, WATER, WALL, WALL ; b0
 	tilecoll WALL, WALL, WATER, WATER ; b1
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; b2
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; b3
+	tilecoll WALL, WALL, FLOOR, WALL ; b2
+	tilecoll WALL, WALL, FLOOR, FLOOR ; b3
 	tilecoll NO_OLLIE, NO_OLLIE, FLOOR, FLOOR ; b4
 	tilecoll WALL, WALL, WALL, WALL ; b5
 	tilecoll WALL, WALL, WALL, WALL ; b6

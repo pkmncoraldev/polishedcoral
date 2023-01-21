@@ -24,6 +24,7 @@ BrilloBoatHouse_MapScriptHeader:
 	
 BrilloBoatHouseClerk:
 	clearevent EVENT_LAKE_ROCKS_BROWN
+	clearevent EVENT_BRILLO_MARACTUS_GREEN
 	opentext
 	writetext BrilloBoatHouseClerkText2
 	special PlaceMoneyTopRight

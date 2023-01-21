@@ -169,7 +169,7 @@
 	tilecoll NO_OLLIE, UP_WALL, NO_OLLIE, FLOOR ; a8
 	tilecoll UP_WALL, FLOOR, UP_WALL, FLOOR ; a9
 	tilecoll UP_WALL, NO_OLLIE, FLOOR, NO_OLLIE ; aa
-	tilecoll DOOR, DOOR, FLOOR, WALL ; ab
+	tilecoll DOOR, WALL, FLOOR, FLOOR ; ab
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ac
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ad
 	tilecoll WALL, WALL, WALL, WALL ; ae

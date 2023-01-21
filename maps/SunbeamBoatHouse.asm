@@ -21,6 +21,7 @@ SunbeamBoatHouseSnare:
 	
 SunbeamBoatHouseNPC:
 	clearevent EVENT_LAKE_ROCKS_BROWN
+	clearevent EVENT_BRILLO_MARACTUS_GREEN
 	opentext
 	writetext SunbeamBoatHouseNPCText2
 	special PlaceMoneyTopRight

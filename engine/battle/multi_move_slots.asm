@@ -479,12 +479,23 @@ GetFurySwipesName::
 	rst CopyBytes
 	jr .done
 .not_barrage
+	call CheckSpikeCannonUsers
+	jr nc, .not_spike_cannon
 	ld hl, FurySwipesNames
 	ld a, 4
 	call GetNthString
 	ld de, wStringBuffer1
 	ld bc, ITEM_NAME_LENGTH
 	rst CopyBytes
+	jr .done
+.not_spike_cannon
+	ld hl, FurySwipesNames
+	ld a, 5
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+
 
 .done
 	pop de
@@ -529,8 +540,15 @@ GetMoveNameFurySwipes:: ; 34f8
 	jr .done
 	
 .not_barrage
+	call CheckSpikeCannonUsers
+	jr nc, .not_spike_cannon
 	ld hl, FurySwipesNames
 	ld a, 4
+	jr .done
+	
+.not_spike_cannon
+	ld hl, FurySwipesNames
+	ld a, 5
 	
 .done
 	call GetNthString
@@ -1496,7 +1514,16 @@ CheckBarrageUsers2::
 	ld de, 1
 	call IsInArray
 	ret
-	
+
+CheckSpikeCannonUsers::
+	ld a, [wCurPartySpecies]
+	call CheckDitto
+CheckSpikeCannonUsers2::
+	ld hl, SpikeCannonUsers
+	ld de, 1
+	call IsInArray
+	ret
+
 CheckMoonlightUsers::
 	ld a, [wCurPartySpecies]
 	call CheckDitto
@@ -1672,7 +1699,7 @@ GetMultiMoveSlotName2::
 	jr z, .lock_on
 	cp SHARPEN_HOWL_MEDITATE
 	jr z, .sharpen
-	cp MULTI_MOVE_FURY_COMET_BARRAGE_SLAP
+	cp MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
 	jr z, .fury_swipes
 	cp SYNTHESIS_MOONLIGHT_MORNING_SUN
 	jr z, .synthesis
@@ -1914,6 +1941,32 @@ CheckFuryStrikesThing::
 	ld [wKickCounter], a
 	ret
 .not_barrage
+	push de
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip5
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species4
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species5
+	
+.skip5
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species5
+	ld a, [wEnemyMonSpecies]
+.got_user_species5
+	farcall CheckSpikeCannonUsers2
+	pop de
+	jr nc, .not_spike_cannon
+	ld a, $6
+	ld [wKickCounter], a
+	ret
+
+.not_spike_cannon
 	ld a, $1
 	ld [wKickCounter], a
 	ret
@@ -2677,6 +2730,8 @@ OdorSleuthUsers:
 	db SWINUB
 	db PILOSWINE
 	db MAMOSWINE
+	db PHANPY
+	db DONPHAN
 	db -1
 	
 MiracleEyeUsers:
@@ -2780,6 +2835,7 @@ FurySwipesNames:
 	db "COMET PUNCH@"
 	db "DOUBLESLAP@"
 	db "BARRAGE@"
+	db "SPIKE CANNON@"
 	db "FURY SWIPES@"
 	db -1
 	
@@ -2855,7 +2911,7 @@ MultiSlotMoves:
 	db BARRIER_IRON_DEFENSE_ACID_ARMOR
 	db LOCK_ON_MIND_READER
 	db SHARPEN_HOWL_MEDITATE
-	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP
+	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
 	db SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db MEAN_LOOK_BLOCK_SPIDER_WEB
 	db CHARM_FEATHER_DANCE

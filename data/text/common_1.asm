@@ -1355,7 +1355,7 @@ UnknownText_TradeIntroText6::
 	line "#MON, but my"
 	cont "MARACTUS keeps me"
 	cont "up all night with"
-	cont "it's dancing!"
+	cont "its dancing!"
 	
 	para "I wish I had a"
 	line "more quiet cactus"

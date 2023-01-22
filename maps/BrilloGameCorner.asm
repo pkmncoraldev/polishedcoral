@@ -1,7 +1,8 @@
 BrilloGameCorner_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, BrilloGameCornerCallback
 
 	db 2 ; warp events
 	warp_event  8,  9, BRILLO_MART, 3
@@ -9,28 +10,30 @@ BrilloGameCorner_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 8 ; bg events
+	db 9 ; bg events
+	signpost  3,  8, SIGNPOST_READ, BrilloGameCornerSign
 	signpost  4,  6, SIGNPOST_READ, BrilloGameCornerNpc5_2
 	signpost  5,  7, SIGNPOST_READ, BrilloGameCornerTableWrong
 	signpost  5,  6, SIGNPOST_READ, BrilloGameCornerTableWrong
 	signpost  6,  6, SIGNPOST_READ, BrilloGameCornerMoogooMankey
 	signpost  6,  7, SIGNPOST_READ, BrilloGameCornerMoogooMankey
 	signpost  2,  2, SIGNPOST_LEFT, BrilloGameCornerCardFlip
-	signpost  6,  1, SIGNPOST_READ, BrilloGameCornerSlotsBlue
-	signpost  7,  1, SIGNPOST_READ, BrilloGameCornerSlots
+	signpost  7,  1, SIGNPOST_READ, BrilloGameCornerSlotsBlue
+	signpost  6,  1, SIGNPOST_READ, BrilloGameCornerSlots
 
-	db 13 ; object events
+	db 14 ; object events
 	object_event 12,  5, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_COMMAND, jumpstd, gamecornercoinvendor, -1
 	person_event SPRITE_GENTLEMAN,  2,  1, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloGameCornerNpc1, -1
 	person_event SPRITE_FAT_GUY,  8,  2, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BrilloGameCornerNpc2, -1
-	person_event SPRITE_POKEMANIAC,  6,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, BrilloGameCornerNpc3, -1
+	person_event SPRITE_POKEMANIAC,  6,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BrilloGameCornerNpc3, -1
 	person_event SPRITE_REDS_MOM,  6,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrilloGameCornerNpc4, -1
 	person_event SPRITE_COOL_DUDE,  4,  7, SPRITEMOVEDATA_DEALER_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloGameCornerNpc5_1, -1
 	person_event SPRITE_BEAUTY,  8, 12, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BrilloGameCornerNpc6, -1
 	person_event SPRITE_CASINO,  6,  6, SPRITEMOVEDATA_CARD_TABLE_3, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_CASINO,  6,  7, SPRITEMOVEDATA_CARD_TABLE_4, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_CASINO,  3,  6, SPRITEMOVEDATA_CASINO_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_CASINO,  3,  7, SPRITEMOVEDATA_CASINO_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_CASINO,  3,  7, SPRITEMOVEDATA_CASINO_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_BROWN
+	person_event SPRITE_CASINO,  3,  7, SPRITEMOVEDATA_CASINO_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_TEAL
 
 	const_def 1 ; object constants
 	const BRILLO_GAME_CORNER_CLERK
@@ -41,6 +44,21 @@ BrilloGameCorner_MapScriptHeader:
 	const BRILLO_GAME_CORNER_NPC_5
 	const BRILLO_GAME_CORNER_NPC_6
 	
+BrilloGameCornerCallback:
+	readvar VAR_PLAYER_COLOR
+	if_equal 3, .brown
+	setevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
+	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	return
+.brown
+	setevent EVENT_HIDE_OW_OBJECTS_BROWN
+	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	return
+	
+BrilloGameCornerSign:
+	jumptext BrilloGameCornerSignText
 
 BrilloGameCornerNpc1:
 	faceplayer
@@ -238,6 +256,10 @@ BrilloGameCornerClearBlueFlagAsm:
 	xor a
 	ld [wPlaceBallsY], a
 	ret	
+	
+BrilloGameCornerSignText:
+	text "The MARACTUS ROOM"
+	done
 	
 BrilloGameCornerMoogooMankeyText:
 	text "MOOGOO MANKEY."

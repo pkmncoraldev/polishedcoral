@@ -499,8 +499,10 @@ DisplaySaveInfoOnContinue: ; 5e85
 
 DisplaySaveInfoOnSave: ; 5e9a
 	lb de, 0, 0
-	; fallthrough
-; 5e9f
+	call Continue_LoadMenuHeader
+	call Continue_DisplayBadgesDexPlayerName
+	call Continue_PrintGameTime
+	jp UpdateSprites
 
 DisplayNormalContinueData: ; 5e9f
 	call Continue_LoadMenuHeader

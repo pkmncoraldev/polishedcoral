@@ -915,6 +915,20 @@ LoadMapPals::
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ld a, [wPlayerPalette]
+	cp 3
+	jr z, .casinobrown
+	ld hl, MapObjectPalsCasino2
+	ld de, wUnknOBPals + 3 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+.casinobrown
+	ld hl, MapObjectPalsCasino2
+	ld de, wUnknOBPals + 5 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
 	jp FarCopyWRAM
 	
 .desert
@@ -1811,6 +1825,9 @@ INCLUDE "maps/palettes/obpals/obmaractusgraffiti.pal"
 
 MapObjectPalsCasino::
 INCLUDE "maps/palettes/obpals/casino.pal"
+
+MapObjectPalsCasino2::
+INCLUDE "maps/palettes/obpals/casino2.pal"
 
 MapObjectPalsLuggage1::
 INCLUDE "maps/palettes/obpals/luggage1.pal"

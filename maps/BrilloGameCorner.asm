@@ -27,12 +27,10 @@ BrilloGameCorner_MapScriptHeader:
 	person_event SPRITE_REDS_MOM,  6,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrilloGameCornerNpc4, -1
 	person_event SPRITE_COOL_DUDE,  4,  7, SPRITEMOVEDATA_DEALER_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloGameCornerNpc5_1, -1
 	person_event SPRITE_BEAUTY,  8, 12, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BrilloGameCornerNpc6, -1
-	person_event SPRITE_CASINO,  5,  6, SPRITEMOVEDATA_CARD_TABLE_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_CASINO,  5,  7, SPRITEMOVEDATA_CARD_TABLE_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_CASINO,  6,  6, SPRITEMOVEDATA_CARD_TABLE_3, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_CASINO,  6,  7, SPRITEMOVEDATA_CARD_TABLE_4, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_CASINO,  3,  8, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_CASINO,  1,  2, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_CASINO,  3,  6, SPRITEMOVEDATA_CASINO_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_CASINO,  3,  7, SPRITEMOVEDATA_CASINO_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 
 	const_def 1 ; object constants
 	const BRILLO_GAME_CORNER_CLERK

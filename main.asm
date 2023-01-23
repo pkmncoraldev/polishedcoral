@@ -3634,7 +3634,7 @@ ListMoves: ; 50d6f
 	farcall GetSharpenName
 	jp .cont
 .not_sharpen
-	cp MULTI_MOVE_FURY_COMET_BARRAGE_SLAP
+	cp MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
 	jr nz, .not_fury_swipes
 	farcall GetFurySwipesName
 	jp .cont

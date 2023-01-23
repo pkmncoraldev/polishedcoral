@@ -13,7 +13,7 @@ GetTackleName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_pound
 	call CheckScratchUsers
 	jr nc, .not_scratch
@@ -23,7 +23,7 @@ GetTackleName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_scratch
 	ld hl, TackleNames
 	ld a, 2
@@ -31,14 +31,7 @@ GetTackleName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 
 GetMoveNameTackle:: ; 34f8
 	ld a, [hROMBank]
@@ -51,30 +44,19 @@ GetMoveNameTackle:: ; 34f8
 	jr nc, .not_pound
 	ld hl, TackleNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_pound
 	call CheckScratchUsers
 	jr nc, .not_scratch
 	ld hl, TackleNames
 	ld a, 1
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_scratch
 	ld hl, TackleNames
 	ld a, 2
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 
 GetDefenseCurlName::
 	ld a, [hROMBank]
@@ -91,7 +73,7 @@ GetDefenseCurlName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_withdraw
 	call CheckHardenUsers
 	jr nc, .not_harden
@@ -101,7 +83,7 @@ GetDefenseCurlName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_harden
 	ld hl, DefenseCurlNames
 	ld a, 2
@@ -109,14 +91,7 @@ GetDefenseCurlName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 
 GetMoveNameDefenseCurl:: ; 34f8
 	ld a, [hROMBank]
@@ -129,30 +104,19 @@ GetMoveNameDefenseCurl:: ; 34f8
 	jr nc, .not_withdraw
 	ld hl, DefenseCurlNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_withdraw
 	call CheckHardenUsers
 	jr nc, .not_harden
 	ld hl, DefenseCurlNames
 	ld a, 1
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_harden
 	ld hl, DefenseCurlNames
 	ld a, 2
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 	
 GetLeerName::
 	ld a, [hROMBank]
@@ -169,7 +133,7 @@ GetLeerName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_tailwhip
 	ld hl, LeerNames
 	ld a, 1
@@ -177,14 +141,7 @@ GetLeerName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 	
 GetMoveNameLeer:: ; 34f8
 	ld a, [hROMBank]
@@ -197,24 +154,13 @@ GetMoveNameLeer:: ; 34f8
 	jr nc, .not_tailwhip
 	ld hl, LeerNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_tailwhip
 	ld hl, LeerNames
 	ld a, 1
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
-	
+	jp GetMoveNameDone2
+
 GetBarrierName::
 	ld a, [hROMBank]
 	push af
@@ -230,7 +176,7 @@ GetBarrierName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_iron_defense
 	call CheckAcidArmorUsers
 	jr nc, .not_acid_armor
@@ -240,7 +186,7 @@ GetBarrierName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_acid_armor
 	ld hl, BarrierNames
 	ld a, 2
@@ -248,14 +194,7 @@ GetBarrierName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 	
 GetMoveNameBarrier:: ; 34f8
 	ld a, [hROMBank]
@@ -268,30 +207,19 @@ GetMoveNameBarrier:: ; 34f8
 	jr nc, .not_iron_defense
 	ld hl, BarrierNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_iron_defense
 	call CheckAcidArmorUsers
 	jr nc, .not_acid_armor
 	ld hl, BarrierNames
 	ld a, 1
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_acid_armor
 	ld hl, BarrierNames
 	ld a, 2
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 	
 GetLockOnName::
 	ld a, [hROMBank]
@@ -308,7 +236,7 @@ GetLockOnName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_mind_reader
 	ld hl, LockOnNames
 	ld a, 1
@@ -316,14 +244,7 @@ GetLockOnName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 	
 GetMoveNameLockOn:: ; 34f8
 	ld a, [hROMBank]
@@ -336,23 +257,12 @@ GetMoveNameLockOn:: ; 34f8
 	jr nc, .not_mind_reader
 	ld hl, LockOnNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_mind_reader
 	ld hl, LockOnNames
 	ld a, 1
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 	
 GetSharpenName::
 	ld a, [hROMBank]
@@ -369,7 +279,7 @@ GetSharpenName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_meditate
 	call CheckHowlUsers
 	jr nc, .not_howl
@@ -379,7 +289,7 @@ GetSharpenName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_howl
 	ld hl, SharpenNames
 	ld a, 2
@@ -387,14 +297,7 @@ GetSharpenName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 
 GetMoveNameSharpen:: ; 34f8
 	ld a, [hROMBank]
@@ -407,30 +310,19 @@ GetMoveNameSharpen:: ; 34f8
 	jr nc, .not_meditate
 	ld hl, SharpenNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_meditate
 	call CheckHowlUsers
 	jr nc, .not_howl
 	ld hl, SharpenNames
 	ld a, 1
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_howl
 	ld hl, SharpenNames
 	ld a, 2
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 	
 GetFurySwipesName::
 	ld a, [hROMBank]
@@ -447,7 +339,7 @@ GetFurySwipesName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_fury_attack
 	call CheckCometPunchUsers
 	jr nc, .not_comet_punch
@@ -457,7 +349,7 @@ GetFurySwipesName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_comet_punch
 	call CheckDoubleSlapUsers
 	jr nc, .not_doubleslap
@@ -467,7 +359,7 @@ GetFurySwipesName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_doubleslap
 	call CheckBarrageUsers
 	jr nc, .not_barrage
@@ -477,22 +369,25 @@ GetFurySwipesName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_barrage
+	call CheckSpikeCannonUsers
+	jr nc, .not_spike_cannon
 	ld hl, FurySwipesNames
 	ld a, 4
 	call GetNthString
 	ld de, wStringBuffer1
 	ld bc, ITEM_NAME_LENGTH
 	rst CopyBytes
-
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
+.not_spike_cannon
+	ld hl, FurySwipesNames
+	ld a, 5
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	jp GetMoveNameDone
 	
 GetMoveNameFurySwipes:: ; 34f8
 	ld a, [hROMBank]
@@ -505,44 +400,40 @@ GetMoveNameFurySwipes:: ; 34f8
 	jr nc, .not_fury_attack
 	ld hl, FurySwipesNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_fury_attack
 	call CheckCometPunchUsers
 	jr nc, .not_comet_punch
 	ld hl, FurySwipesNames
 	ld a, 1
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_comet_punch
 	call CheckDoubleSlapUsers
 	jr nc, .not_doubleslap
 	ld hl, FurySwipesNames
 	ld a, 2
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_doubleslap
 	call CheckBarrageUsers
 	jr nc, .not_barrage
 	ld hl, FurySwipesNames
 	ld a, 3
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_barrage
+	call CheckSpikeCannonUsers
+	jr nc, .not_spike_cannon
 	ld hl, FurySwipesNames
 	ld a, 4
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
+
+.not_spike_cannon
+	ld hl, FurySwipesNames
+	ld a, 5
+	jp GetMoveNameDone2
 	
 GetSynthesisName::
 	ld a, [hROMBank]
@@ -559,7 +450,7 @@ GetSynthesisName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_moonlight
 	call CheckMorningSunUsers
 	jr nc, .not_morning_sun
@@ -569,7 +460,7 @@ GetSynthesisName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_morning_sun
 	ld hl, SynthesisNames
 	ld a, 2
@@ -577,14 +468,7 @@ GetSynthesisName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 
 GetMoveNameSynthesis:: ; 34f8
 	ld a, [hROMBank]
@@ -597,30 +481,19 @@ GetMoveNameSynthesis:: ; 34f8
 	jr nc, .not_moonlight
 	ld hl, SynthesisNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_moonlight
 	call CheckMorningSunUsers
 	jr nc, .not_morning_sun
 	ld hl, SynthesisNames
 	ld a, 1
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_morning_sun
 	ld hl, SynthesisNames
 	ld a, 2
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 	
 GetMeanLookName::
 	ld a, [hROMBank]
@@ -637,7 +510,7 @@ GetMeanLookName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_block
 	call CheckSpiderWebUsers
 	jr nc, .not_spider_web
@@ -647,7 +520,7 @@ GetMeanLookName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_spider_web
 	ld hl, MeanLookNames
 	ld a, 2
@@ -655,14 +528,7 @@ GetMeanLookName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 
 GetMoveNameMeanLook:: ; 34f8
 	ld a, [hROMBank]
@@ -675,30 +541,19 @@ GetMoveNameMeanLook:: ; 34f8
 	jr nc, .not_block
 	ld hl, MeanLookNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_block
 	call CheckSpiderWebUsers
 	jr nc, .not_spider_web
 	ld hl, MeanLookNames
 	ld a, 1
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_spider_web
 	ld hl, MeanLookNames
 	ld a, 2
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 	
 GetCharmName::
 	ld a, [hROMBank]
@@ -715,7 +570,7 @@ GetCharmName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_feather_dance
 	ld hl, CharmNames
 	ld a, 1
@@ -723,14 +578,7 @@ GetCharmName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 	
 GetMoveNameCharm:: ; 34f8
 	ld a, [hROMBank]
@@ -743,23 +591,12 @@ GetMoveNameCharm:: ; 34f8
 	jr nc, .not_feather_dance
 	ld hl, CharmNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_feather_dance
 	ld hl, CharmNames
 	ld a, 1
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 	
 GetScaryFaceName::
 	ld a, [hROMBank]
@@ -776,7 +613,7 @@ GetScaryFaceName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_cotton_spore
 	call CheckStringShotUsers
 	jr nc, .not_string_shot
@@ -786,7 +623,7 @@ GetScaryFaceName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_string_shot
 	ld hl, ScaryFaceNames
 	ld a, 2
@@ -794,14 +631,7 @@ GetScaryFaceName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 	
 GetMoveNameScaryFace:: ; 34f8
 	ld a, [hROMBank]
@@ -814,29 +644,18 @@ GetMoveNameScaryFace:: ; 34f8
 	jr nc, .not_cotton_spore
 	ld hl, ScaryFaceNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_cotton_spore
 	call CheckStringShotUsers
 	jr nc, .not_string_shot
 	ld hl, ScaryFaceNames
 	ld a, 1
-	jr .done
+	jp GetMoveNameDone2
 .not_string_shot
 	ld hl, ScaryFaceNames
 	ld a, 2
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 	
 GetRoarName::
 	ld a, [hROMBank]
@@ -853,7 +672,7 @@ GetRoarName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_whirlwind
 	ld hl, RoarNames
 	ld a, 1
@@ -861,14 +680,7 @@ GetRoarName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 	
 GetMoveNameRoar:: ; 34f8
 	ld a, [hROMBank]
@@ -876,28 +688,16 @@ GetMoveNameRoar:: ; 34f8
 	push hl
 	push bc
 
-	
 	call CheckWhirlwindUsers
 	jr nc, .not_whirlwind
 	ld hl, RoarNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_whirlwind
 	ld hl, RoarNames
 	ld a, 1
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 	
 GetSandAttackName::
 	ld a, [hROMBank]
@@ -914,7 +714,7 @@ GetSandAttackName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_smokescreen
 	ld hl, SandAttackNames
 	ld a, 1
@@ -922,14 +722,7 @@ GetSandAttackName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 	
 GetMoveNameSandAttack:: ; 34f8
 	ld a, [hROMBank]
@@ -942,23 +735,12 @@ GetMoveNameSandAttack:: ; 34f8
 	jr nc, .not_smokescreen
 	ld hl, SandAttackNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_smokescreen
 	ld hl, SandAttackNames
 	ld a, 1
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 	
 GetSoftboiledName::
 	ld a, [hROMBank]
@@ -975,7 +757,7 @@ GetSoftboiledName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_milk_drink
 	call CheckSoftboiledUsers
 	jr nc, .not_softboiled
@@ -985,7 +767,7 @@ GetSoftboiledName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_softboiled
 	ld hl, SoftboiledNames
 	ld a, 2
@@ -993,14 +775,7 @@ GetSoftboiledName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 
 GetMoveNameSoftboiled:: ; 34f8
 	ld a, [hROMBank]
@@ -1013,30 +788,19 @@ GetMoveNameSoftboiled:: ; 34f8
 	jr nc, .not_milk_drink
 	ld hl, SoftboiledNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_milk_drink
 	call CheckSoftboiledUsers
 	jr nc, .not_softboiled
 	ld hl, SoftboiledNames
 	ld a, 1
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_softboiled
 	ld hl, SoftboiledNames
 	ld a, 2
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 	
 GetForesightName::
 	ld a, [hROMBank]
@@ -1053,7 +817,7 @@ GetForesightName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_odor_sleuth
 	call CheckMiracleEyeUsers
 	jr nc, .not_miracle_eye
@@ -1063,7 +827,7 @@ GetForesightName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_miracle_eye
 	ld hl, ForesightNames
 	ld a, 2
@@ -1071,14 +835,7 @@ GetForesightName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 
 GetMoveNameForesight:: ; 34f8
 	ld a, [hROMBank]
@@ -1091,30 +848,19 @@ GetMoveNameForesight:: ; 34f8
 	jr nc, .not_odor_sleuth
 	ld hl, ForesightNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_odor_sleuth
 	call CheckMiracleEyeUsers
 	jr nc, .not_miracle_eye
 	ld hl, ForesightNames
 	ld a, 1
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_miracle_eye
 	ld hl, ForesightNames
 	ld a, 2
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 	
 GetAgilityName::
 	ld a, [hROMBank]
@@ -1131,7 +877,7 @@ GetAgilityName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_rock_polish
 	ld hl, AgilityNames
 	ld a, 1
@@ -1139,14 +885,7 @@ GetAgilityName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 	
 GetMoveNameAgility:: ; 34f8
 	ld a, [hROMBank]
@@ -1159,23 +898,12 @@ GetMoveNameAgility:: ; 34f8
 	jr nc, .not_rock_polish
 	ld hl, AgilityNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_rock_polish
 	ld hl, AgilityNames
 	ld a, 1
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 	
 GetWorkUpName::
 	ld a, [hROMBank]
@@ -1192,7 +920,7 @@ GetWorkUpName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_growth
 	ld hl, WorkUpNames
 	ld a, 1
@@ -1200,14 +928,7 @@ GetWorkUpName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 
 GetMoveNameWorkUp:: ; 34f8
 	ld a, [hROMBank]
@@ -1220,23 +941,12 @@ GetMoveNameWorkUp:: ; 34f8
 	jr nc, .not_growth
 	ld hl, WorkUpNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_growth
 	ld hl, WorkUpNames
 	ld a, 1
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 	
 	
 GetTransformName::
@@ -1254,7 +964,7 @@ GetTransformName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .transform
 	ld hl, TransformNames
 	ld a, 0
@@ -1262,14 +972,7 @@ GetTransformName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 	
 GetMoveNameTransform:: ; 34f8
 	ld a, [hROMBank]
@@ -1282,23 +985,12 @@ GetMoveNameTransform:: ; 34f8
 	jr c, .transform
 	ld hl, TransformNames
 	ld a, 1
-	jr .done
+	jp GetMoveNameDone2
 	
 .transform
 	ld hl, TransformNames
 	ld a, 0
-	
-.done
-	call GetNthString
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	rst CopyBytes
-	ld de, wStringBuffer1
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone2
 	
 GetSingName::
 	ld a, [hROMBank]
@@ -1315,7 +1007,7 @@ GetSingName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	jr .done
+	jp GetMoveNameDone
 .not_hypnosis
 	ld hl, SingNames
 	ld a, 1
@@ -1323,14 +1015,7 @@ GetSingName::
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
 	rst CopyBytes
-	
-.done
-	pop de
-	pop bc
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+	jp GetMoveNameDone
 	
 GetMoveNameSing:: ; 34f8
 	ld a, [hROMBank]
@@ -1343,13 +1028,22 @@ GetMoveNameSing:: ; 34f8
 	jr nc, .not_hypnosis
 	ld hl, SingNames
 	ld a, 0
-	jr .done
+	jp GetMoveNameDone2
 	
 .not_hypnosis
 	ld hl, SingNames
 	ld a, 1
-	
-.done
+	jp GetMoveNameDone2
+
+GetMoveNameDone:
+	pop de
+	pop bc
+	pop hl
+	pop af
+	rst Bankswitch
+	ret
+
+GetMoveNameDone2:
 	call GetNthString
 	ld de, wStringBuffer1
 	ld bc, MOVE_NAME_LENGTH
@@ -1360,7 +1054,7 @@ GetMoveNameSing:: ; 34f8
 	pop af
 	rst Bankswitch
 	ret
-	
+
 CheckDitto:
 	cp DITTO
 	ret nz
@@ -1388,7 +1082,7 @@ CheckScratchUsers2::
 	ld de, 1
 	call IsInArray
 	ret
-	
+
 CheckWithdrawUsers::
 	ld a, [wCurPartySpecies]
 	call CheckDitto
@@ -1496,7 +1190,16 @@ CheckBarrageUsers2::
 	ld de, 1
 	call IsInArray
 	ret
-	
+
+CheckSpikeCannonUsers::
+	ld a, [wCurPartySpecies]
+	call CheckDitto
+CheckSpikeCannonUsers2::
+	ld hl, SpikeCannonUsers
+	ld de, 1
+	call IsInArray
+	ret
+
 CheckMoonlightUsers::
 	ld a, [wCurPartySpecies]
 	call CheckDitto
@@ -1672,7 +1375,7 @@ GetMultiMoveSlotName2::
 	jr z, .lock_on
 	cp SHARPEN_HOWL_MEDITATE
 	jr z, .sharpen
-	cp MULTI_MOVE_FURY_COMET_BARRAGE_SLAP
+	cp MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
 	jr z, .fury_swipes
 	cp SYNTHESIS_MOONLIGHT_MORNING_SUN
 	jr z, .synthesis
@@ -1794,7 +1497,7 @@ CheckTackleThing::
 	jr z, .got_user_species2
 	ld a, [wBattleMonSpecies]
 	jr .got_user_species2
-	
+
 .skip2
 	ld a, [hBattleTurn]
 	and a
@@ -1808,6 +1511,7 @@ CheckTackleThing::
 	ld a, $3
 	ld [wKickCounter], a
 	ret
+
 .not_scratch
 	ld a, $1
 	ld [wKickCounter], a
@@ -1914,6 +1618,32 @@ CheckFuryStrikesThing::
 	ld [wKickCounter], a
 	ret
 .not_barrage
+	push de
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip5
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species4
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species5
+	
+.skip5
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species5
+	ld a, [wEnemyMonSpecies]
+.got_user_species5
+	farcall CheckSpikeCannonUsers2
+	pop de
+	jr nc, .not_spike_cannon
+	ld a, $6
+	ld [wKickCounter], a
+	ret
+
+.not_spike_cannon
 	ld a, $1
 	ld [wKickCounter], a
 	ret
@@ -2443,7 +2173,7 @@ ScratchUsers:
 	db SNEASEL
 	db WEAVILE
 	db -1
-	
+
 WithdrawUsers:
 	db SQUIRTLE
 	db WARTORTLE
@@ -2677,6 +2407,8 @@ OdorSleuthUsers:
 	db SWINUB
 	db PILOSWINE
 	db MAMOSWINE
+	db PHANPY
+	db DONPHAN
 	db -1
 	
 MiracleEyeUsers:
@@ -2780,6 +2512,7 @@ FurySwipesNames:
 	db "COMET PUNCH@"
 	db "DOUBLESLAP@"
 	db "BARRAGE@"
+	db "SPIKE CANNON@"
 	db "FURY SWIPES@"
 	db -1
 	
@@ -2855,7 +2588,7 @@ MultiSlotMoves:
 	db BARRIER_IRON_DEFENSE_ACID_ARMOR
 	db LOCK_ON_MIND_READER
 	db SHARPEN_HOWL_MEDITATE
-	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP
+	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
 	db SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db MEAN_LOOK_BLOCK_SPIDER_WEB
 	db CHARM_FEATHER_DANCE
@@ -2899,203 +2632,133 @@ MultiSlotMoveTypes::
 	cp SING_HYPNOSIS
 	jp z, .sing
 	pop af
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 .defense_curl
 	pop af
 	call CheckWithdrawUsers
 	jr nc, .not_withdraw
 	ld a, WATER
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 .not_withdraw
 	ld a, NORMAL
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 	
 .barrier
 	pop af
 	call CheckIronDefenseUsers
 	jr nc, .not_iron_defense
 	ld a, STEEL
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 .not_iron_defense
 	call CheckAcidArmorUsers
 	jr nc, .not_acid_armor
 	ld a, POISON
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 .not_acid_armor
 	ld a, PSYCHIC
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 	
 .sharpen
 	pop af
 	call CheckMeditateUsers
 	jr nc, .not_meditate
 	ld a, PSYCHIC
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 .not_meditate
 	ld a, NORMAL
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 	
 .synthesis
 	pop af
 	call CheckMoonlightUsers
 	jr nc, .not_moonlight
 	ld a, FAIRY
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 .not_moonlight
 	call CheckMorningSunUsers
 	jr nc, .not_morning_sun
 	ld a, NORMAL
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 .not_morning_sun
 	ld a, GRASS
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 	
 .mean_look
 	pop af
 	call CheckSpiderWebUsers
 	jr nc, .not_spider_web
 	ld a, BUG
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 .not_spider_web
 	ld a, NORMAL
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 	
 .sand_attack
 	pop af
 	call CheckSmokescreenUsers
 	jr nc, .not_smokescreen
 	ld a, NORMAL
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 .not_smokescreen
 	ld a, GROUND
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 	
 .scary_face
 	pop af
 	call CheckCottonSporeUsers
 	jr nc, .not_cotton_spore
 	ld a, GRASS
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 .not_cotton_spore
 	call CheckStringShotUsers
 	jr nc, .not_string_shot
 	ld a, BUG
 .not_string_shot
 	ld a, NORMAL
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 	
 .foresight
 	pop af
 	call CheckMiracleEyeUsers
 	jr nc, .not_miracle_eye
 	ld a, PSYCHIC
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 .not_miracle_eye
 	ld a, NORMAL
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 	
 .charm
 	pop af
 	call CheckFeatherDanceUsers
 	jr nc, .not_feather_dance
 	ld a, FLYING
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 .not_feather_dance
 	ld a, FAIRY
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 	
 .agility
 	pop af
 	call CheckRockPolishUsers
 	jr nc, .not_rock_polish
 	ld a, ROCK
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 .not_rock_polish
 	ld a, PSYCHIC
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 	
 .sing
 	pop af
 	call CheckHypnosisUsers
 	jr nc, .not_hypnosis
 	ld a, PSYCHIC
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp MultiSlotMoveTypesFinish
 .not_hypnosis
 	ld a, NORMAL
+	jp MultiSlotMoveTypesFinish
+
+MultiSlotMoveTypesFinish:
 	pop de
 	pop bc
 	pop hl
 	ret
-	

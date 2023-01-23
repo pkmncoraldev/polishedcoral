@@ -18,6 +18,7 @@ ShimmerBoatHouse_MapScriptHeader:
 	
 ShimmerBoatHouseNPC:
 	clearevent EVENT_LAKE_ROCKS_BROWN
+	clearevent EVENT_BRILLO_MARACTUS_GREEN
 	opentext
 	writetext ShimmerBoatHouseNPCText2
 	special PlaceMoneyTopRight

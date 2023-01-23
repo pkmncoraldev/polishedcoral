@@ -260,3 +260,4 @@ RedSkateboardGrindingSpriteGFX::	   INCBIN "gfx/sprites/red_skateboard_grinding.
 LeafSkateboardGrindingSpriteGFX::	   INCBIN "gfx/sprites/leaf_skateboard_grinding.2bpp"
 GoldSkateboardGrindingSpriteGFX::	   INCBIN "gfx/sprites/gold_skateboard_grinding.2bpp"
 KrisSkateboardGrindingSpriteGFX::	   INCBIN "gfx/sprites/kris_skateboard_grinding.2bpp"
+MaractusGraffitiSpriteGFX::			   INCBIN "gfx/sprites/maractus_graffiti.2bpp"

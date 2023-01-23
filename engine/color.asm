@@ -915,6 +915,20 @@ LoadMapPals::
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ld a, [wPlayerPalette]
+	cp 3
+	jr z, .casinobrown
+	ld hl, MapObjectPalsCasino2
+	ld de, wUnknOBPals + 3 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+.casinobrown
+	ld hl, MapObjectPalsCasino2
+	ld de, wUnknOBPals + 5 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
 	jp FarCopyWRAM
 	
 .desert
@@ -924,7 +938,7 @@ LoadMapPals::
 	jp z, .sandstorm
 	ld a, [wMapNumber]
 	cp MAP_BRILLO_TOWN
-	jp z, .sailboat
+	jp z, .brillo
 	cp MAP_DESERT_ROUTE_NORTH
 	jp z, .desertfire
 	cp MAP_DESERT_WASTELAND_OASIS
@@ -939,6 +953,18 @@ LoadMapPals::
 	ld a, $5 ; BANK(UnknOBPals)
 	jp FarCopyWRAM
 	
+.brillo
+	eventflagcheck EVENT_BRILLO_MARACTUS_GREEN
+	jp z, .sailboat
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	ld hl, MapObjectPalsMaractusGraffiti
+	call AddNTimes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
 .oasis
 	ld a, [wTimeOfDayPal]
 	and 3
@@ -1794,8 +1820,14 @@ INCLUDE "maps/palettes/obpals/candle.pal"
 MapObjectPalsSand::
 INCLUDE "maps/palettes/obpals/obsand.pal"
 
+MapObjectPalsMaractusGraffiti::
+INCLUDE "maps/palettes/obpals/obmaractusgraffiti.pal"
+
 MapObjectPalsCasino::
 INCLUDE "maps/palettes/obpals/casino.pal"
+
+MapObjectPalsCasino2::
+INCLUDE "maps/palettes/obpals/casino2.pal"
 
 MapObjectPalsLuggage1::
 INCLUDE "maps/palettes/obpals/luggage1.pal"

@@ -54,6 +54,7 @@ Music:
 	dba Music_WaterRoute
 	dba Music_ShimmerCity
 	dba Music_GscGameCorner
+	dba Music_BrilloTown
 	dba Music_Oasis
 	dba Music_SnareLeaderBattle
 	dba Music_GentlemanEncounter

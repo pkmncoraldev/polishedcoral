@@ -62,6 +62,7 @@ SunsetCaptainsHouseTrigger0Event:
 SunsetCaptain:
 ;	jump .captaingivesallrides ;UNCOMMENT FOR TESTING
 	clearevent EVENT_LAKE_ROCKS_BROWN
+	clearevent EVENT_BRILLO_MARACTUS_GREEN
 	checkevent EVENT_SAVED_SUNBEAM
 	iftrue .captaingivesallrides
 	checkevent EVENT_CAPTAIN_GIVES_RIDES_TO_ISLAND

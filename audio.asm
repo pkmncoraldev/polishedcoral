@@ -92,7 +92,7 @@ INCLUDE "audio/music/route12.asm"
 
 
 SECTION "Music 5", ROMX
-
+INCLUDE "audio/music/brillotown.asm"
 
 
 

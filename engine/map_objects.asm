@@ -625,12 +625,13 @@ MapObjectMovementPattern:
 	dw .MovementCardTable2
 	dw .MovementCardTable3
 	dw .MovementCardTable4
-	dw .MovementPlaySign
 	dw .MovementDealerDown
 	dw .MovementDealerLeft
 	dw .MovementDealerRight
 	dw .MovementSailboatTopRight          ; SPRITEMOVEFN_SAILBOAT_TOP_RIGHT
 	dw .MovementBaggage		; SPRITEMOVEFN_BAGGAGE
+	dw .MovementCasino1
+	dw .MovementCasino2
 
 .RandomWalkY:
 	call Random
@@ -1010,11 +1011,11 @@ MapObjectMovementPattern:
 	
 .MovementBigMuk:
 	ld a, PERSON_ACTION_BIG_MUK
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementBigMuk2:
 	ld a, PERSON_ACTION_BIG_MUK_2
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementBigMuk3:
 	ld a, PERSON_ACTION_BIG_MUK_3
@@ -1064,10 +1065,6 @@ MapObjectMovementPattern:
 	ld a, PERSON_ACTION_CARD_TABLE_4
 	jr ._ActionA_StepType04
 	
-.MovementPlaySign
-	ld a, PERSON_ACTION_PLAY_SIGN
-	jr ._ActionA_StepType04
-	
 .MovementDealerDown
 	ld a, PERSON_ACTION_DEALER_DOWN
 	jr ._ActionA_StepType04
@@ -1079,6 +1076,14 @@ MapObjectMovementPattern:
 .MovementDealerRight
 	ld a, PERSON_ACTION_DEALER_RIGHT
 	jr ._ActionA_StepType04
+	
+.MovementCasino1:
+	ld a, PERSON_ACTION_CASINO_1
+	jp ._ActionA_StepType04
+	
+.MovementCasino2:
+	ld a, PERSON_ACTION_CASINO_2
+	jp ._ActionA_StepType04
 	
 .MovementUmbrellaLeft:
 	call EndSpriteMovement

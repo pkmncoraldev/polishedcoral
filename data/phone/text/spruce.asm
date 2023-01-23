@@ -73,7 +73,7 @@ SprucePhoneComeToIslandText:
 	cont "tour."
 	
 	para "You can catch a"
-	line "ride to at the"
+	line "ride at the"
 	cont "BOAT HOUSE at LAKE"
 	cont "ONWA."
 	
@@ -97,7 +97,7 @@ SprucePhoneComeToIsland2Text:
 	line "lost?"
 	
 	para "You can catch a"
-	line "ride to at the"
+	line "ride at the"
 	cont "BOAT HOUSE at LAKE"
 	cont "ONWA."
 	

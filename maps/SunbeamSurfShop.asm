@@ -103,7 +103,19 @@ SunbeamIslandSurfShopNPC1:
 	spriteface SUNBEAM_SURF_SHOP_CLERK, DOWN
 	showemote EMOTE_SHOCK, SUNBEAM_SURF_SHOP_CLERK, 15
 	opentext
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl
 	writetext SunbeamIslandSurfShopNPC1Text8
+	jump .cont
+.girl
+	writetext SunbeamIslandSurfShopNPC1Text8_girl
+.cont
 	waitbutton
 	changeblock $6, $6, $34
 	closetext
@@ -185,6 +197,17 @@ SunbeamIslandSurfShopNPC1Text7:
 	
 SunbeamIslandSurfShopNPC1Text8:
 	text "Sir!"
+	
+	para "You are not allow-"
+	line "ed back here!"
+	
+	para "I'm going to have"
+	line "to ask you to"
+	cont "leave."
+	done
+	
+SunbeamIslandSurfShopNPC1Text8_girl:
+	text "Ma'am!"
 	
 	para "You are not allow-"
 	line "ed back here!"

@@ -173,8 +173,8 @@ LavaCaveBF1NPC1Text_girl:
 	para "You're the real"
 	line "deal!"
 	
-	para "Stay spicy, little"
-	line "mama!"
+	para "Stay spicy,"
+	line "sister!"
 	done
 	
 LavaCaveBF1NPC2Text_boy:
@@ -204,5 +204,5 @@ LavaCaveBF1NPC2Text_girl:
 	cont "all the time."
 	
 	para "You should try it,"
-	line "mama."
+	line "sister."
 	done

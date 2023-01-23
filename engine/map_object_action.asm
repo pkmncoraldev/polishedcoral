@@ -68,11 +68,12 @@ Pointers445f: ; 445f
 	dw SetFacingCardTable2,    		   SetFacingCardTable2		  ; PERSON_ACTION_CARD_TABLE_2
 	dw SetFacingCardTable3,    		   SetFacingCardTable3		  ; PERSON_ACTION_CARD_TABLE_3
 	dw SetFacingCardTable4,    		   SetFacingCardTable4		  ; PERSON_ACTION_CARD_TABLE_4
-	dw SetFacingPlaySign,    		   SetFacingPlaySign		  ; PERSON_ACTION_PLAY_SIGN
 	dw SetFacingDealerDown,    		   SetFacingDealerDown		  ; PERSON_ACTION_DEALER_DOWN
 	dw SetFacingDealerLeft,    		   SetFacingDealerLeft		  ; PERSON_ACTION_DEALER_LEFT
 	dw SetFacingDealerRight,   		   SetFacingDealerRight		  ; PERSON_ACTION_DEALER_RIGHT
 	dw SetFacingSailboatTopRight,      SetFacingSailboatTopRight  ; PERSON_ACTION_SAILBOAT_TOP_RIGHT
+	dw SetFacingCasino1,      		   SetFacingCasino1  		  ; PERSON_ACTION_CASINO_1
+	dw SetFacingCasino2,      		   SetFacingCasino2  		  ; PERSON_ACTION_CASINO_2
 	
 ; 44a3
 
@@ -640,10 +641,6 @@ SetFacingCardTable4:
 	ld a, FACING_CARD_TABLE_4
 	jp SetFixedFacing
 	
-SetFacingPlaySign:
-	ld a, FACING_PLAY_SIGN
-	jp SetFixedFacing
-	
 SetFacingDealerDown:
 	ld a, FACING_DEALER_DOWN
 	jp SetFixedFacing
@@ -655,4 +652,13 @@ SetFacingDealerLeft:
 SetFacingDealerRight:
 	ld a, FACING_DEALER_RIGHT
 	jp SetFixedFacing
+	
+SetFacingCasino1:
+	ld a, FACING_CASINO_1
+	jp SetFixedFacing
+	
+SetFacingCasino2:
+	ld a, FACING_CASINO_2
+	jp SetFixedFacing
+
 	

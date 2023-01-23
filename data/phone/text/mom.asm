@@ -58,7 +58,7 @@ MomPhoneGoToIsland1Text:
 	line "get home from"
 	cont "where you are?"
 	
-	para "Have the man there"
+	para "Have the boat man"
 	line "take you across"
 	cont "the lake."
 	
@@ -90,7 +90,7 @@ MomPhoneGoToIsland2Text:
 	para "Did you forget my"
 	line "directions?"
 	
-	para "Have the man there"
+	para "Have the boat man"
 	line "take you across"
 	cont "the lake."
 	

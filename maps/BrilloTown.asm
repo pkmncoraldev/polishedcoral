@@ -1,7 +1,8 @@
 BrilloTown_MapScriptHeader:
-	db 2 ; scene scripts
+	db 3 ; scene scripts
 	scene_script BrilloTownTrigger0
 	scene_script BrilloTownTrigger1
+	scene_script BrilloTownTrigger2
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, BrilloTownFlyPoint
@@ -14,18 +15,29 @@ BrilloTown_MapScriptHeader:
 	warp_event 23, 11, BRILLO_POKECENTER, 1
 	warp_event 29, 11, BRILLO_MART, 1
 
-	db 0 ; coord events
+	db 4 ; coord events
+	coord_event 32, 12, 0, BrilloMakeSilverGreen
+	coord_event 32, 13, 0, BrilloMakeSilverGreen
+	coord_event 31, 12, 2, BrilloMakeSilverBlue
+	coord_event 31, 13, 2, BrilloMakeSilverBlue
 
-	db 1 ; bg events
+	db 4 ; bg events
+	signpost 11, 30, SIGNPOST_READ, BrilloTownMartSign
 	signpost 17, 15, SIGNPOST_READ, BrilloTownSign
+	signpost 10, 33, SIGNPOST_READ, BrilloTownPoliceSign
+	signpost  9, 34, SIGNPOST_READ, BrilloTownGoP
 
-	db 6 ; object events
+	db 10 ; object events
 	object_event 17, 24, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NULL, EVENT_BRILLO_BOATMAN
 	object_event 17, 25, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
 	object_event 17, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
 	object_event 16, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
 	object_event 16, 25, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
-	person_event SPRITE_MALL_SIGN, 11, 24, SPRITEMOVEDATA_PC_SIGN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, NULL, -1
+	person_event SPRITE_MALL_SIGN, 11, 24, SPRITEMOVEDATA_PC_SIGN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrilloTownPokeCenterSign, -1
+	object_event 38,  9, SPRITE_MARACTUS_GRAFFITI, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
+	object_event 38, 10, SPRITE_MARACTUS_GRAFFITI, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
+	object_event 39,  9, SPRITE_MARACTUS_GRAFFITI, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
+	object_event 39, 10, SPRITE_CORA_MISC, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
 
 	const_def 1 ; object constants
 	const BRILLO_BOAT_MAN
@@ -36,6 +48,9 @@ BrilloTownTrigger0:
 	
 BrilloTownTrigger1:
 	priorityjump JustRodeBoatBrillo
+	end
+	
+BrilloTownTrigger2:
 	end
 	
 BrilloTownFlyPoint:
@@ -59,8 +74,34 @@ JustRodeBoatBrillo:
 	dotrigger $0
 	end
 	
+BrilloMakeSilverGreen:
+	setevent EVENT_BRILLO_MARACTUS_GREEN
+;	loadvar wTimeOfDayPalFlags, $40 | 1
+	special Special_UpdatePalsInstant
+	dotrigger $2
+	end
+	
+BrilloMakeSilverBlue:
+	clearevent EVENT_BRILLO_MARACTUS_GREEN
+;	loadvar wTimeOfDayPalFlags, $40 | 0
+	special Special_UpdatePalsInstant
+	dotrigger $0
+	end
+	
+BrilloTownPokeCenterSign:
+	jumpstd pokecentersign
+	
+BrilloTownMartSign:
+	jumpstd martsign
+	
 BrilloTownSign:
 	jumptext BrilloTownSignText
+	
+BrilloTownPoliceSign:
+	jumptext BrilloTownPoliceSignText
+	
+BrilloTownGoP:
+	jumptext BrilloTownGoPText
 	
 BrilloSailboat:
 	jumptext BrilloSailboatText
@@ -70,6 +111,19 @@ BrilloTownSignText:
 	
 	para "The vibrant rose"
 	line "of the desert."
+	done
+	
+BrilloTownPoliceSignText:
+	text "POLICE STATION"
+	done
+	
+BrilloTownGoPText:
+	text "“Go-P” is"
+	line "spray-painted on"
+	cont "on the wall."
+	
+	para "What could that"
+	line "mean?"
 	done
 	
 BrilloSailboatText:

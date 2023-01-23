@@ -187,6 +187,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_b9 ; b9
 	dw .Frameset_ba ; ba
 	dw .Frameset_bb ; bb
+	dw .Frameset_bc ; bc
 	dw .Frameset_be
 	dw .Frameset_c1
 	dw .Frameset_c2 ; c2
@@ -1440,3 +1441,7 @@ BattleAnimFrameData: ; ce85e
 .Frameset_bb:
 	db BATTLEANIMOAMSET_D9,  8
 	endanim
+
+.Frameset_bc:
+	frame BATTLEANIMOAMSET_DA,  9
+	delanim

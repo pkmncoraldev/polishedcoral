@@ -51,7 +51,14 @@ MtOnwaCliffCallback:
 MtOnwaPanNPC:
 	faceplayer
 	opentext
-	writetext MtOnwaPanNPCTextYesorNo
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue .ask_heal
+	writetext MtOnwaPanNPCTextYesorNo1
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+.ask_cutscene
+	writetext MtOnwaPanNPCTextYesorNo2
 	yesorno
 	iffalse .end
 	writetext MtOnwaPanNPCText1
@@ -108,6 +115,9 @@ MtOnwaPanNPC:
 	spriteface MT_ONWA_NPC2, LEFT
 	spriteface PLAYER, RIGHT
 	opentext
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue .no_heal2
+.ask_heal
 	writetext MtOnwaPanNPCText7
 	yesorno
 	iffalse .no_heal
@@ -122,11 +132,15 @@ MtOnwaPanNPC:
 	special FadeInPalettes
 	opentext
 .no_heal
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue .ask_cutscene
+.no_heal2
 	writetext MtOnwaPanNPCText3
 	waitbutton
 	closetext
 	spriteface MT_ONWA_NPC1, UP
 	spriteface MT_ONWA_NPC2, UP
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	end
 .end
 	writetext MtOnwaPanNPCText4
@@ -134,6 +148,7 @@ MtOnwaPanNPC:
 	closetext
 	spriteface MT_ONWA_NPC1, UP
 	spriteface MT_ONWA_NPC2, UP
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	end
 	
 TrainerMtOnwaOutside_1:
@@ -246,11 +261,13 @@ MtOnwaPanNPCText7:
 	cont "while?"
 	done
 	
-MtOnwaPanNPCTextYesorNo:
+MtOnwaPanNPCTextYesorNo1:
 	text "The view from here"
 	line "is amazing!"
+	done
 	
-	para "Want to look with"
+MtOnwaPanNPCTextYesorNo2:
+	text "Want to look with"
 	line "me for a while?"
 	done
 	

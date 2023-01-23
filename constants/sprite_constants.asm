@@ -215,6 +215,7 @@
 	const SPRITE_BALLOONS
 	const SPRITE_PEEP_HOLE
 	const SPRITE_CASINO
+	const SPRITE_MARACTUS_GRAFFITI
 
 	
 	const_def $f1

@@ -11,8 +11,7 @@ SunbeamSoftSandHouse_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 2 ; object events
-	
+	db 1 ; object events
 	person_event SPRITE_POKEFAN_M, 3, 5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandSoftSandHouseNPC, -1
 
 	const_def 1 ; object constants

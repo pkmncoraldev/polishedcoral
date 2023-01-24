@@ -537,6 +537,7 @@ ENDM
 	map_attributes BrilloPokeCenter, BRILLO_POKECENTER, $0, 0
 	map_attributes BrilloMart, BRILLO_MART, $0, 0
 	map_attributes BrilloGameCorner, BRILLO_GAME_CORNER, $0, 0
+	map_attributes BrilloPoliceStation, BRILLO_POLICE_STATION, $0, 0
 	map_attributes DesertRouteTent, DESERT_ROUTE_TENT, $0, 0
 	map_attributes Airport, AIRPORT, $0, 0
 	

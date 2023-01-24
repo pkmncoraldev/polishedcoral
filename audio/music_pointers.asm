@@ -58,6 +58,8 @@ Music:
 	dba Music_Oasis
 	dba Music_SnareLeaderBattle
 	dba Music_GentlemanEncounter
+	dba Music_BrilloSong
+	dba Music_BrilloSongBad
 	
 	dba Music_SuccessfulCapture
 	dba Music_HallOfFame

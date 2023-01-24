@@ -284,6 +284,7 @@ INCLUDE "maps/BrilloRockHouse.asm"
 INCLUDE "maps/BrilloTradeHouse.asm"
 INCLUDE "maps/BrilloLegendSpeechHouse.asm"
 INCLUDE "maps/BrilloGameCorner.asm"
+INCLUDE "maps/BrilloPoliceStation.asm"
 
 SECTION "Train Scripts", ROMX
 

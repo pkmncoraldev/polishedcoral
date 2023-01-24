@@ -220,3 +220,5 @@ SpriteHeaders:
 	overworld_sprite PeepHoleSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite CasinoSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite MaractusGraffitiSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite CopScrubSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite SingerSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE

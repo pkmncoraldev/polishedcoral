@@ -160,7 +160,7 @@
 	tilecoll WALL, WALL, BOOKSHELF, BOOKSHELF ; 9f
 	tilecoll WALL, WALL, BOOKSHELF, BOOKSHELF ; a0
 	tilecoll WALL, TOWN_MAP, TV, FLOOR ; a1
-	tilecoll WALL, WINDOW, FLOOR, FLOOR ; a2
+	tilecoll WALL, WALL, FLOOR, FLOOR ; a2
 	tilecoll WALL, WALL, FLOOR, RADIO ; a3
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a4
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; a5
@@ -175,3 +175,30 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ae
 	tilecoll FLOOR, WALL, FLOOR, WALL ; af
 	tilecoll WATER, WATER, WATER, WATER ; b0
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; b1
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; b2
+	tilecoll WALL, WALL, WALL, WALL ; b3
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; b4
+	tilecoll WALL, WALL, WALL, WALL ; b5
+	tilecoll WALL, WALL, WALL, WALL ; b6
+	tilecoll WALL, WALL, WALL, WALL ; b7
+	tilecoll FLOOR, COUNTER, FLOOR, FLOOR ; b8
+	tilecoll WALL, WALL, WALL, WALL ; b9
+	tilecoll WALL, WALL, WALL, COUNTER ; ba
+	tilecoll WALL, WALL, WALL, WALL ; bb
+	tilecoll WALL, WALL, FLOOR, COUNTER ; bc
+	tilecoll WALL, WALL, WALL, WALL ; bd
+	tilecoll WALL, WALL, WALL, WALL ; be
+	tilecoll WALL, WALL, WALL, WALL ; bf
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c0
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c1
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c2
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c3
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c4
+	tilecoll WALL, WALL, WALL, WALL ; c5
+	tilecoll COUNTER, WALL, WALL, WALL ; c6
+	tilecoll WALL, COUNTER, WALL, WALL ; c7
+	tilecoll WALL, WALL, WALL, WALL ; c8
+	tilecoll WALL, WALL, WALL, WALL ; c9
+	tilecoll WALL, WALL, WALL, WALL ; ca
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cb

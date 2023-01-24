@@ -29,15 +29,17 @@ DesertRouteNorth_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event  0,  4, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, DesertRouteNorthCampfire, EVENT_HIDE_OW_OBJECTS_BROWN
 	object_event  0,  4, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, DesertRouteNorthCampfire, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event  0,  4, SPRITE_MISC_OVERHEAD, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 12, 13, SPRITE_POKEMANIAC, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, DesertRouteNorthNPC1, -1
 	
 	const_def 1 ; object constants
 	const DESERT_ROUTE_NORTH_FIRE_BROWN
 	const DESERT_ROUTE_NORTH_FIRE_TEAL
 	const DESERT_ROUTE_NORTH_FIREBOTTOM
+	const DESERT_ROUTE_NORTH_NPC1
 	
 	
 DesertRouteNorthTrigger0:
@@ -107,3 +109,62 @@ KillSandstormSound:
 	ret z
 	call KillSFX
 	ret
+	
+DesertRouteNorthNPC1:
+	special SaveMusic
+	callasm BrilloSingerTextScrollAsm1
+	opentext
+	playmusic MUSIC_BRILLO_SONG_BAD
+	writetext DesertRouteNorthNPC1Text1
+	wait 27
+	writetext DesertRouteNorthNPC1Text2
+	wait 27
+	writetext DesertRouteNorthNPC1Text3
+	wait 28
+	writetext DesertRouteNorthNPC1Text4
+	wait 34
+	playmusic MUSIC_NONE
+	callasm BrilloSingerTextScrollAsm2
+	special RestoreMusic
+	special DeleteSavedMusic
+	closetext
+	
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, DESERT_ROUTE_NORTH_NPC1, 15
+	faceplayer
+	opentext
+	writetext DesertRouteNorthNPC1Text5
+	waitbutton
+	closetext
+	spriteface DESERT_ROUTE_NORTH_NPC1, UP
+	end
+	
+DesertRouteNorthNPC1Text1:
+	text "They say that once"
+	line "there was this guy"
+	done
+	
+DesertRouteNorthNPC1Text2:
+	text "he got some sand"
+	line "up in his eye"
+	done
+	
+DesertRouteNorthNPC1Text3:
+	text "But he was hungry"
+	line "mumble mumble…"
+	done
+	
+DesertRouteNorthNPC1Text4:
+	text "so he baked an"
+	line "apple pie!"
+	done
+	
+DesertRouteNorthNPC1Text5:
+	text "Oh sorry about"
+	line "that."
+	
+	para "I just have this"
+	line "song I heard in"
+	cont "town stuck in"
+	cont "my head!"
+	done

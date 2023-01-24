@@ -304,7 +304,7 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 17
 	
-	map_const BRILLO_TOWN,								  22, 17 ; 1
+	map_const BRILLO_TOWN,								  23, 17 ; 1
 	map_const BRILLO_BOAT_HOUSE,                    	   4,  3 ; 2
 	map_const BRILLO_ROCK_HOUSE,						   4,  4 ; 3
 	map_const BRILLO_TRADE_HOUSE,						   4,  4 ; 4
@@ -312,16 +312,17 @@ MAP_NONE   EQU 0
 	map_const BRILLO_POKECENTER,                    	   6,  4 ; 6
 	map_const BRILLO_MART,                    			   5,  4 ; 7
 	map_const BRILLO_GAME_CORNER,              			   7,  5 ; 8
-	map_const DESERT_ROUTE,         	           		  24, 17 ; 9
-	map_const DESERT_ROUTE_NORTH,       	           	  13, 15 ; 10
-	map_const DESERT_WASTELAND_1,              			   9,  9 ; 11
-	map_const DESERT_WASTELAND_2,              			   9,  9 ; 12
-	map_const DESERT_WASTELAND_3,              			   9,  9 ; 13
-	map_const DESERT_WASTELAND_4,              			   9,  9 ; 14
-	map_const DESERT_WASTELAND_5,              			   9,  9 ; 15
-	map_const DESERT_WASTELAND_6,              			   9,  9 ; 16
-	map_const DESERT_WASTELAND_7,              			   9,  9 ; 17
-	map_const DESERT_WASTELAND_8,              			   9,  9 ; 18
-	map_const DESERT_WASTELAND_9,              			   9,  9 ; 19
-	map_const DESERT_WASTELAND_OASIS,          			  11, 10 ; 20
-	map_const DESERT_TEMPLE_OUTSIDE,           			   9,  9 ; 21
+	map_const BRILLO_POLICE_STATION,           			   8,  5 ; 9
+	map_const DESERT_ROUTE,         	           		  24, 17 ; 10
+	map_const DESERT_ROUTE_NORTH,       	           	  13, 15 ; 11
+	map_const DESERT_WASTELAND_1,              			   9,  9 ; 12
+	map_const DESERT_WASTELAND_2,              			   9,  9 ; 13
+	map_const DESERT_WASTELAND_3,              			   9,  9 ; 14
+	map_const DESERT_WASTELAND_4,              			   9,  9 ; 15
+	map_const DESERT_WASTELAND_5,              			   9,  9 ; 16
+	map_const DESERT_WASTELAND_6,              			   9,  9 ; 17
+	map_const DESERT_WASTELAND_7,              			   9,  9 ; 18
+	map_const DESERT_WASTELAND_8,              			   9,  9 ; 19
+	map_const DESERT_WASTELAND_9,              			   9,  9 ; 20
+	map_const DESERT_WASTELAND_OASIS,          			  11, 10 ; 21
+	map_const DESERT_TEMPLE_OUTSIDE,           			   9,  9 ; 22

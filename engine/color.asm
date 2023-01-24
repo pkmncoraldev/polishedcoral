@@ -880,7 +880,7 @@ LoadMapPals::
 	cp TILESET_GATE
 	jp z, .gate
 	cp TILESET_HOUSE_1
-	jp z, .candle
+	jp z, .house1
 	cp TILESET_NETT_BUILDING
 	jp z, .nett
 	cp TILESET_DESERT
@@ -1554,8 +1554,10 @@ LoadMapPals::
 	call FarCopyWRAM
 	jr .outside
 	
-.candle
+.house1
 	ld a, [wMapGroup]
+	cp GROUP_BRILLO_TOWN
+	jp z, .snes
 	cp GROUP_LUSTER_CITY_RESIDENTIAL
 	jp nz, .normal
 	ld hl, MapObjectPalsCandle

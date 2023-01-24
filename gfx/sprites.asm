@@ -44,6 +44,7 @@ GrimerAOWSpriteGFX::      	   INCBIN "gfx/sprites/grimer_a_ow.2bpp"
 BalloonsSpriteGFX::      	   INCBIN "gfx/sprites/balloons.2bpp"
 PeepHoleSpriteGFX::      	   INCBIN "gfx/sprites/peep_hole.2bpp"
 CasinoSpriteGFX::      	  	   INCBIN "gfx/sprites/casino.2bpp"
+CopScrubSpriteGFX::      	   INCBIN "gfx/sprites/cop_scrub.2bpp"
 
 
 SECTION "Overworld Sprites 2", ROMX
@@ -261,3 +262,4 @@ LeafSkateboardGrindingSpriteGFX::	   INCBIN "gfx/sprites/leaf_skateboard_grindin
 GoldSkateboardGrindingSpriteGFX::	   INCBIN "gfx/sprites/gold_skateboard_grinding.2bpp"
 KrisSkateboardGrindingSpriteGFX::	   INCBIN "gfx/sprites/kris_skateboard_grinding.2bpp"
 MaractusGraffitiSpriteGFX::			   INCBIN "gfx/sprites/maractus_graffiti.2bpp"
+SingerSpriteGFX::					   INCBIN "gfx/sprites/singer.2bpp"

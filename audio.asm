@@ -73,7 +73,6 @@ INCLUDE "audio/music/encountergymleader.asm"
 
 SECTION "Music 4", ROMX
 INCLUDE "audio/music/gscgamecorner.asm"
-INCLUDE "audio/music/oasis.asm"
 INCLUDE "audio/music/mountaintop.asm"
 INCLUDE "audio/music/snarebattle.asm"
 INCLUDE "audio/music/snareadminbattle.asm"
@@ -93,7 +92,9 @@ INCLUDE "audio/music/route12.asm"
 
 SECTION "Music 5", ROMX
 INCLUDE "audio/music/brillotown.asm"
-
+INCLUDE "audio/music/brillosong.asm"
+INCLUDE "audio/music/brillosongbad.asm"
+INCLUDE "audio/music/oasis.asm"
 
 
 SECTION "Music 6", ROMX

@@ -78,6 +78,7 @@ TwinkleTownFlypointCallback:
 	return
 	
 TwinkleTownCallback:
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_SNOWGIRL_SKATE
 	readvar VAR_PLAYER_COLOR
 	if_equal 3, .brown
 	setevent EVENT_HIDE_OW_OBJECTS_TEAL

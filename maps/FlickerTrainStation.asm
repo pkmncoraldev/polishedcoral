@@ -471,10 +471,10 @@ FlickerTrainStationScheduleFrontText:
 	text "The train sche-"
 	line "dule."
 	
-	para "“The train headed"
+	para "The train headed"
 	line "for LUSTER CITY"
 	cont "will be departing"
-	cont "soon.”"
+	cont "soon."
 	done
 	
 FlickerTrainStationScheduleBackText:

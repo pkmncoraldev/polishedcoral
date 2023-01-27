@@ -14,9 +14,10 @@ BrilloMart_MapScriptHeader:
 	db 1 ; coord events
 	xy_trigger 1,  1,  8, 0, BrilloMartDoorReset, 0, 0
 
-	db 2 ; bg events
+	db 3 ; bg events
 	signpost  0,  8, SIGNPOST_IFNOTSET, BrilloMartDoor
-	signpost  1,  6, SIGNPOST_UP, BrilloMartShelf
+	signpost  1,  8, SIGNPOST_IFNOTSET, BrilloMartShelf
+	signpost  1,  6, SIGNPOST_UP, BrilloMartCooler
 
 	db 3 ; object events
 	object_event  1,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STANDARD, MART_BRILLO, EVENT_BRILLO_CLERK_1_GONE
@@ -30,6 +31,13 @@ BrilloMart_MapScriptHeader:
 	
 	
 BrilloMartCallback:
+	checkevent EVENT_BRILLO_SHELF
+	iffalse .checkdoor
+	changeblock $8, $0, $38
+	changeblock $8, $2, $36
+	changeblock $6, $0, $48
+	changeblock $6, $2, $30
+.checkdoor
 	checkevent EVENT_BRILLO_DOOR
 	iffalse .end
 	changeblock $8, $0, $39
@@ -84,6 +92,60 @@ BrilloMartClerk:
 	end
 	
 BrilloMartShelf:
+	dw EVENT_BRILLO_SHELF
+	checkcode VAR_FACING
+	if_equal RIGHT, .YouAreFacingRight
+	opentext
+	writetext BrilloMartShelfUpText1
+	yesorno
+	iffalse .no
+	writetext BrilloMartShelfYesText
+	waitbutton
+	closetext
+	special FadeOutPalettesBlack
+	changeblock $8, $0, $38
+	changeblock $8, $2, $36
+	changeblock $6, $0, $48
+	changeblock $6, $2, $30
+	callasm GenericFinishBridge
+	setevent EVENT_BRILLO_SHELF
+	wait 5
+	playsound SFX_STRENGTH
+	waitsfx
+	callasm LoadMapPals
+	special FadeInPalettes
+	end
+.no
+	jumptext BrilloMartShelfNoText
+.YouAreFacingRight
+	jumptext BrilloMartShelfRightText
+	end
+	
+BrilloMartShelfRightText:
+	text "The shelf here"
+	line "seems kinda loose."
+	
+	para "Maybe you could"
+	line "push it from the"
+	cont "other side…"
+	done
+	
+BrilloMartShelfUpText1:
+	text "The shelf here"
+	line "seems kinda loose."
+	
+	para "Push it?"
+	done
+	
+BrilloMartShelfYesText:
+	text "Who wouldn't?"
+	done
+	
+BrilloMartShelfNoText:
+	text "Better not…"
+	done
+	
+BrilloMartCooler:
 	farjumptext MerchandiseShelfText
 	
 BrilloMartDoor:

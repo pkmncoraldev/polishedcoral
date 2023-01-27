@@ -146,7 +146,7 @@ DesertRouteNorthNPC1Text1:
 	
 DesertRouteNorthNPC1Text2:
 	text "he got some sand"
-	line "up in his eye"
+	line "caught in his eye"
 	done
 	
 DesertRouteNorthNPC1Text3:

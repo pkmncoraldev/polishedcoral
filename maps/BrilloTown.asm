@@ -381,7 +381,7 @@ BrilloSinger:
 	spriteface BRILLO_SINGER_R, DOWN
 	spriteface BRILLO_SINGER_M, DOWN
 	wait 7
-	writetext SongText19
+	writetext SongText23
 	wait 7
 	spriteface BRILLO_SINGER_L, RIGHT
 	spriteface BRILLO_SINGER_R, LEFT
@@ -402,7 +402,7 @@ BrilloSinger:
 	spriteface BRILLO_SINGER_M, DOWN
 	wait 7
 	
-	writetext SongText23
+	writetext SongText19
 	wait 7
 	spriteface BRILLO_SINGER_L, RIGHT
 	spriteface BRILLO_SINGER_R, LEFT
@@ -494,7 +494,7 @@ SongText2:
 	done
 	
 SongText3:
-	text "He wanted treasure"
+	text "He wanted fortune,"
 	line "wanted riches…"
 	done
 	
@@ -514,8 +514,8 @@ SongText6:
 	done
 	
 SongText7:
-	text "It spoke of for-"
-	line "tune for the lucky"
+	text "It spoke of trea-"
+	line "sure for the lucky"
 	done
 	
 SongText8:
@@ -554,7 +554,7 @@ SongText14:
 	done
 	
 SongText15:
-	text "but he could not"
+	text "but he did not"
 	line "comprehend!"
 	done
 	
@@ -590,7 +590,7 @@ SongText21:
 	
 SongText22:
 	text "you'd better listen"
-	line "when I say:"
+	line "when we say:"
 	done
 	
 SongText23:

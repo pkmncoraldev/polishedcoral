@@ -71,6 +71,7 @@ BrilloTownFlyPoint:
 	return
 	
 BrilloTownCallback:
+	clearevent EVENT_BRILLO_SHELF
 	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_COP_SCRUB
 	return
 	
@@ -494,7 +495,7 @@ SongText2:
 	done
 	
 SongText3:
-	text "He wanted fortune,"
+	text "He wanted money,"
 	line "wanted riches…"
 	done
 	
@@ -514,8 +515,8 @@ SongText6:
 	done
 	
 SongText7:
-	text "It spoke of trea-"
-	line "sure for the lucky"
+	text "It spoke of for-"
+	line "tune for the lucky"
 	done
 	
 SongText8:

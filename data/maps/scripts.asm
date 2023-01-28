@@ -93,6 +93,7 @@ SECTION "Routes Scripts2", ROMX
 INCLUDE "maps/Route10East.asm"
 INCLUDE "maps/Route10Tent.asm"
 INCLUDE "maps/DesertRoute.asm"
+INCLUDE "maps/DesertRoute2.asm"
 INCLUDE "maps/DesertRouteNorth.asm"
 INCLUDE "maps/DesertWastelandOasis.asm"
 INCLUDE "maps/DesertRouteTent.asm"

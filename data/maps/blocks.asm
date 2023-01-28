@@ -609,6 +609,9 @@ BrilloTown_BlockData:
 DesertRoute_BlockData:
 	INCBIN "maps/DesertRoute.ablk.lz"
 	
+DesertRoute2_BlockData:
+	INCBIN "maps/DesertRoute2.ablk.lz"
+	
 DesertRouteNorth_BlockData:
 	INCBIN "maps/DesertRouteNorth.ablk.lz"
 	

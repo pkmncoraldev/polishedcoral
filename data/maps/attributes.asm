@@ -308,12 +308,16 @@ ENDM
 	connection east, DesertRoute, DESERT_ROUTE, -7
 	
 	map_attributes DesertRoute, DESERT_ROUTE, $71, NORTH | WEST
-	connection north, DesertRouteNorth, DESERT_ROUTE_NORTH, 14
+	connection north, DesertRoute2, DESERT_ROUTE_2, 14
 	connection west, BrilloTown, BRILLO_TOWN, 7
+	
+	map_attributes DesertRoute2, DESERT_ROUTE_2, $71, NORTH | SOUTH
+	connection north, DesertRouteNorth, DESERT_ROUTE_NORTH, 5
+	connection south, DesertRoute, DESERT_ROUTE, -14
 	
 	map_attributes DesertRouteNorth, DESERT_ROUTE_NORTH, $02, NORTH | SOUTH
 	connection north, DesertWasteland1, DESERT_WASTELAND_1, 3
-	connection south, DesertRoute, DESERT_ROUTE, -14
+	connection south, DesertRoute2, DESERT_ROUTE_2, -5
 	
 	map_attributes DesertWasteland1, DESERT_WASTELAND_1, $02, NORTH | SOUTH
 	connection north, DesertWasteland2, DESERT_WASTELAND_2, 0

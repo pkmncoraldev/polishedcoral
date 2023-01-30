@@ -251,3 +251,6 @@ EvolutionMoves::
 	db SHADOW_BONE                          ; MAROWAK_A
 	db NO_MOVE                              ; GRIMER_A
 	db NO_MOVE                              ; MUK_A
+	db NO_MOVE                              ; EGG
+	
+	db DRAGONHAMMER                         ; EXEGGUTOR_A

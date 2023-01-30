@@ -65,7 +65,7 @@ BitmasksPointers:
 	dw VoltorbBitmasks
 	dw ElectrodeBitmasks
 	dw ExeggcuteBitmasks
-	dw ExeggutorBitmasks
+	dw -1 ; see ExeggutorBitmasksPointers
 	dw CuboneBitmasks
 	dw MarowakBitmasks
 	dw KoffingBitmasks

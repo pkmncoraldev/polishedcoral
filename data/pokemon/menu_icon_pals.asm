@@ -256,3 +256,5 @@ MenuMonIconColors::
 	iconpal GREEN, PURPLE ; GRIMER_A
 	iconpal GREEN, PURPLE ; MUK_A
 	iconpal RED, BLUE ; EGG
+
+	iconpal GREEN, RED ; EXEGGUTOR_A

@@ -1,0 +1,3 @@
+ExeggutorBitmasksPointers:
+	dw ExeggutorBitmasks
+	dw Exeggutor_ABitmasks

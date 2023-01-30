@@ -46,6 +46,7 @@ INCLUDE "home/predef.asm"
 INCLUDE "home/window.asm"
 INCLUDE "home/flag.asm"
 INCLUDE "home/restore_music.asm"
+INCLUDE "data/pokemon/variant_forms.asm"
 
 DisableSpriteUpdates:: ; 0x2ed3
 ; disables overworld sprite updating?
@@ -932,8 +933,8 @@ LoadTrainer_continue:: ; 367e
 	ld a, [wEngineBuffer1]
 	call GetFarHalfword
 	ld de, wTempTrainerHeader
-	pop af
-	push af
+;	pop af
+;	push af
 	ld bc, wGenericTempTrainerHeaderEnd - wTempTrainerHeader
 	jr z, .skipCopyingLossPtrAndScriptPtr
 	ld bc, wTempTrainerHeaderEnd - wTempTrainerHeader
@@ -1072,10 +1073,7 @@ GetBaseData:: ; 3856
 	ld [wBasePicSize], a
 
 .end
-	pop hl
-	pop de
-	pop bc
-	ret
+	jp HomePopHlDeBc
 ; 389c
 
 
@@ -1115,10 +1113,7 @@ GetLeadAbility::
 	ld b, a
 	call GetAbility
 	ld a, b
-	pop hl
-	pop de
-	pop bc
-	ret
+	jp HomePopHlDeBc
 
 GetAbility::
 ; 'b' contains the target ability to check
@@ -1173,11 +1168,7 @@ GetNick:: ; 38a2
 	push de
 	ld bc, PKMN_NAME_LENGTH
 	rst CopyBytes
-	pop de
-
-	pop bc
-	pop hl
-	ret
+	jp HomePopDeBcHl
 ; 38bb
 
 GetNickTradeMon:: ; 38a2
@@ -1192,10 +1183,47 @@ GetNickTradeMon:: ; 38a2
 	push de
 	ld bc, PKMN_NAME_LENGTH
 	rst CopyBytes
-	pop de
+	jp HomePopDeBcHl
 
+HomePopDeBcHl:
+	pop de
 	pop bc
 	pop hl
+	ret
+	
+HomePopHlDeBc:
+	pop hl
+	pop de
+	pop bc
+	ret
+
+GetSpeciesAndFormIndex::
+; input: c = species, b = form
+; output: bc = extended index
+	ld hl, VariantSpeciesAndFormTable - 1
+.next
+	inc hl
+.loop
+	ld a, [hli]
+	and a
+	jr z, .normal
+	cp c
+	jr nz, .next
+	ld a, [hli]
+	cp b
+	jr nz, .loop
+	ld bc, -VariantSpeciesAndFormTable
+	add hl, bc
+	srl h
+	rr l
+	dec l
+	inc h
+	ld b, h
+	ld c, l
+	ret
+
+.normal
+	ld b, 0
 	ret
 
 PrintBCDNumber:: ; 38bb

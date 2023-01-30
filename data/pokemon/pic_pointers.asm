@@ -131,8 +131,8 @@ PicPointers::
 	dba ElectrodeBackpic
 	dba ExeggcuteFrontpic
 	dba ExeggcuteBackpic
-	dba ExeggutorFrontpic
-	dba ExeggutorBackpic
+	dbw -1, -1 ; see ExeggutorPicPointers
+	dbw -1, -1 ; see ExeggutorPicPointers
 	dba CuboneFrontpic
 	dba CuboneBackpic
 	dba MarowakFrontpic

@@ -518,3 +518,14 @@ EggShinyPalette:        INCLUDE "gfx/pokemon/egg/shiny.pal"
 ; 255 shiny
 	RGB 30, 22, 17
 	RGB 16, 14, 19
+	
+
+	RGB 30, 22, 17
+	RGB 16, 14, 19
+
+	RGB 30, 22, 17
+	RGB 16, 14, 19
+	
+	INCLUDE "gfx/pokemon/exeggutor_a/normal.pal"
+	INCLUDE "gfx/pokemon/exeggutor_a/shiny.pal"
+	

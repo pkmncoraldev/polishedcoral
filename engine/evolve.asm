@@ -581,9 +581,13 @@ LearnEvolutionMove:
 	; c = species
 	ld a, [wTempMonSpecies]
 	ld [wCurPartySpecies], a
-	dec a
-	ld b, 0
 	ld c, a
+	; b = form
+	ld a, [wCurForm]
+	ld b, a
+	; bc = index
+	call GetSpeciesAndFormIndex
+	dec bc
 	ld hl, EvolutionMoves
 	add hl, bc
 	ld a, [hl]

@@ -1,0 +1,3 @@
+ExeggutorAnimationPointers:
+	dw ExeggutorAnimation
+	dw Exeggutor_AAnimation

@@ -141,7 +141,7 @@ DesertRouteNorthNPC1:
 	
 DesertRouteNorthNPC1Text1:
 	text "They say that once"
-	line "there was this guy"
+	line "there was a guy,"
 	done
 	
 DesertRouteNorthNPC1Text2:
@@ -160,7 +160,7 @@ DesertRouteNorthNPC1Text4:
 	done
 	
 DesertRouteNorthNPC1Text5:
-	text "Oh sorry about"
+	text "Oh, sorry about"
 	line "that."
 	
 	para "I just have this"

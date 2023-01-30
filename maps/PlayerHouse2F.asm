@@ -59,10 +59,11 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	; exeggutor test
-	givepoke EXEGGUTOR, 100
-	givepoke EXEGGUTOR, 5
-	loadvar wPartyMon1Form, MALE | EXEGGUTOR_PLAIN_FORM
-	loadvar wPartyMon2Form, FEMALE | EXEGGUTOR_ALOLAN_FORM
+	givepoke EXEGGCUTE, 44
+	givepoke EXEGGCUTE, 44
+	givepoke PIKACHU, 20
+	loadvar wPartyMon1Form, MALE | PLAIN_FORM
+	loadvar wPartyMon2Form, FEMALE | ALOLAN_FORM
 
 .items
 	writetext PlayerHouseDebugText6

@@ -1033,10 +1033,16 @@ LureBallMultiplier:
 MoonBallMultiplier:
 ; multiply catch rate by 4 if mon evolves with moon stone
 	push bc
+	; c = species
 	ld a, [wTempEnemyMonSpecies]
-	dec a
 	ld c, a
-	ld b, 0
+	; b = form
+	ld a, [wEnemyMonForm]
+	and FORM_MASK
+	ld b, a
+	; bc = index
+	call GetSpeciesAndFormIndex
+	dec bc
 	ld hl, EvosAttacksPointers
 	add hl, bc
 	add hl, bc
@@ -1612,6 +1618,10 @@ RareCandy_StatBooster_GetParameters: ; eef5
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
 	ld [wd265], a
+	ld a, MON_FORM
+	call GetPartyParamLocation
+	ld a, [hl]
+	ld [wCurForm], a
 	ld a, MON_LEVEL
 	call GetPartyParamLocation
 	ld a, [hl]

@@ -4341,28 +4341,6 @@ Exeggcute_AEvosAttacks:
 	db 49, SOLAR_BEAM
 	db 0 ; no more level-up moves
 	
-Exeggutor_AEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, DRAGONHAMMER
-	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
-	db 1, ABSORB
-	db 1, SING_HYPNOSIS
-	db 1, REFLECT
-	db 1, LEECH_SEED
-	db 1, MEGA_DRAIN
-	db 1, CONFUSION
-	db 1, STUN_SPORE
-	db 1, POISONPOWDER
-	db 1, SLEEP_POWDER
-	db 1, BULLET_SEED
-	db 1, SYNTHESIS_MOONLIGHT_MORNING_SUN
-	db 1, GIGA_DRAIN
-	db 1, PSYSHOCK
-	db 1, SOLAR_BEAM
-	db 45, EGG_BOMB
-	db 49, WOOD_HAMMER
-	db 0 ; no more level-up moves
-	
 Marowak_AEvosAttacks:
 	db  0 ; no more evolutions
 	db 1, SHADOW_BONE
@@ -4421,4 +4399,30 @@ Muk_AEvosAttacks:
 	db 42, TOXIC
 	db 48, BARRIER_IRON_DEFENSE_ACID_ARMOR
 	db 52, GUNK_SHOT
+	db 0 ; no more level-up moves
+	
+EggEvosAttacks::
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+
+Exeggutor_AEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, DRAGONHAMMER
+	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db 1, ABSORB
+	db 1, SING_HYPNOSIS
+	db 1, REFLECT
+	db 1, LEECH_SEED
+	db 1, MEGA_DRAIN
+	db 1, CONFUSION
+	db 1, STUN_SPORE
+	db 1, POISONPOWDER
+	db 1, SLEEP_POWDER
+	db 1, BULLET_SEED
+	db 1, SYNTHESIS_MOONLIGHT_MORNING_SUN
+	db 1, GIGA_DRAIN
+	db 1, PSYSHOCK
+	db 1, SOLAR_BEAM
+	db 45, EGG_BOMB
+	db 49, WOOD_HAMMER
 	db 0 ; no more level-up moves

@@ -1201,6 +1201,12 @@ GetSpeciesAndFormIndex::
 ; input: c = species, b = form
 ; output: bc = extended index
 	ld hl, VariantSpeciesAndFormTable - 1
+	ld a, b
+	and FORM_MASK
+	jr nz, .ok
+	inc a ; PLAIN_FORM
+.ok
+	ld b, a
 .next
 	inc hl
 .loop
@@ -1216,12 +1222,12 @@ GetSpeciesAndFormIndex::
 	add hl, bc
 	srl h
 	rr l
-	dec l
+	dec hl
 	inc h
 	ld b, h
 	ld c, l
 	ret
-
+	
 .normal
 	ld b, 0
 	ret

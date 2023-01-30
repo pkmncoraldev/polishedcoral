@@ -32,9 +32,9 @@ PlayCry2:: ; 37d5
 	; fallthrough
 
 _PlayCry:: ; 37e2
-	push hl
-	push de
 	push bc
+	push de
+	push hl
 
 	call GetCryIndex
 ;	jr c, .done
@@ -46,10 +46,7 @@ _PlayCry:: ; 37e2
 ;.done
 	call nc, PlayCryHeader
 PlayCry_PopBCDEHLOff::
-	pop bc
-	pop de
-	pop hl
-	ret
+	jp HomePopHlDeBc
 ; 37f3
 
 LoadCryHeader:: ; 37f3
@@ -112,10 +109,7 @@ GetCryIndex:: ; 381e
 	dec a
 	ld c, a
 	ld b, 0
-	ld a, BANK(wExtendedSpace)
-	ld hl, wExtendedSpace
-	call GetFarWRAMByte
-	; value is now in a
+	ld a, [wExtendedSpace]
 	cp 0
 	jr z, .no_extended_space
 	ld hl, CryHeaders

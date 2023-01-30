@@ -253,4 +253,6 @@ EvolutionMoves::
 	db NO_MOVE                              ; MUK_A
 	db NO_MOVE                              ; EGG
 	
+	db NO_MOVE                              ;
+	db NO_MOVE                              ;
 	db DRAGONHAMMER                         ; EXEGGUTOR_A

@@ -255,3 +255,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw Marowak_AEvosAttacks
 	dw Grimer_AEvosAttacks
 	dw Muk_AEvosAttacks
+	dw EggEvosAttacks
+	
+	dw -1
+	dw -1
+	dw Exeggutor_AEvosAttacks

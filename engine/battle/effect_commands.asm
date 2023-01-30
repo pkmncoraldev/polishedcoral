@@ -3358,20 +3358,20 @@ DittoMetalPowder: ; 352b1
 	ret
 
 UnevolvedEviolite:
-	ld a, MON_SPECIES
-	call UserPartyAttr
-	ld a, [hBattleTurn]
-	and a
-	ld a, [hl]
-	jr nz, .continue
-	ld a, [wTempEnemyMonSpecies]
-
-.continue:
-	dec a
 	push hl
 	push bc
+	; c = species
+	ld a, MON_SPECIES
+	call OpponentPartyAttr
 	ld c, a
-	ld b, 0
+	; b = form
+	ld a, MON_FORM
+	call OpponentPartyAttr
+	and FORM_MASK
+	ld b, a
+	; bc = index
+	call GetSpeciesAndFormIndex
+	dec bc
 	ld hl, EvosAttacksPointers
 	add hl, bc
 	add hl, bc
@@ -3383,20 +3383,17 @@ UnevolvedEviolite:
 	pop bc
 	pop hl
 	ret z
-
 	push bc
 	call GetOpponentItem
 	ld a, [hl]
 	cp EVIOLITE
 	pop bc
 	ret nz
-
 	ld a, c
 	srl a
 	add c
 	ld c, a
 	ret nc
-
 	srl b
 	ld a, b
 	and a

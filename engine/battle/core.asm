@@ -3614,6 +3614,8 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
+	ld a, [wEnemyMonForm]
+	ld [wCurForm], a
 	call GetBaseData
 	ld a, OTPARTYMON
 	ld [wMonType], a
@@ -3788,6 +3790,8 @@ InitBattleMon: ; 3da0d
 	ld [wTempBattleMonSpecies], a
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
+	ld a, [wBattleMonForm]
+	ld [wCurForm], a
 	call GetBaseData
 	ld a, [wBaseType1]
 	ld [wBattleMonType1], a
@@ -3880,6 +3884,8 @@ InitEnemyMon: ; 3dabd
 	rst CopyBytes ; copy Level, Status, Unused, HP, MaxHP, Stats
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
+	ld a, [wEnemyMonForm]
+	ld [wCurForm], a
 	call GetBaseData
 	ld hl, wOTPartyMonNicknames
 	ld a, [wCurPartyMon]
@@ -8709,6 +8715,8 @@ DropEnemySub: ; 3f486
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
+	ld a, [wEnemyMonForm]
+	ld [wCurForm], a
 	call GetBaseData
 	ld de, VTiles2
 	predef FrontpicPredef

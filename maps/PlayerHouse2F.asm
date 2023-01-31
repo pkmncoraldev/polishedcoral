@@ -59,9 +59,9 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	; exeggutor test
+	givepoke CLEFAIRY, 16
 	givepoke EXEGGCUTE, 44
 	givepoke EXEGGCUTE, 44
-	givepoke PIKACHU, 20
 	loadvar wPartyMon1Form, MALE | PLAIN_FORM
 	loadvar wPartyMon2Form, FEMALE | ALOLAN_FORM
 

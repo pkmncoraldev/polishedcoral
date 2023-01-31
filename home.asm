@@ -1054,25 +1054,17 @@ GetBaseData:: ; 3856
 
 ; Egg doesn't have BaseData
 	ld a, [wCurSpecies]
-	cp EGG
-	jr z, .egg
-
-; Get BaseData
-	dec a
-	ld bc, BASEMON_STRUCT_LENGTH
+	ld c, a
+	ld a, [wCurForm]
+	ld b, a
+	call GetSpeciesAndFormIndex
+	dec bc
+	ld a, BASEMON_STRUCT_LENGTH
 	ld hl, BaseData
 	rst AddNTimes
 	ld de, wCurBaseData
 	ld bc, BASEMON_STRUCT_LENGTH
 	rst CopyBytes
-	jr .end
-
-.egg
-;; Sprite dimensions
-	ld a, $55 ; 5x5
-	ld [wBasePicSize], a
-
-.end
 	jp HomePopHlDeBc
 ; 389c
 

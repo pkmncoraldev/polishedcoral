@@ -1,3 +1,7 @@
+ExeggcuteAnimationExtraPointers:
+	dw ExeggcuteAnimationExtra
+	dw Exeggcute_AAnimationExtra
+
 ExeggutorAnimationExtraPointers:
 	dw ExeggutorAnimationExtra
 	dw Exeggutor_AAnimationExtra

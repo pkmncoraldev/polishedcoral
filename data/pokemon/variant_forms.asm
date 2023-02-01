@@ -2,5 +2,6 @@
 ; then continue with entries for these species+form combinations.
 
 VariantSpeciesAndFormTable:
+	db EXEGGCUTE, ALOLAN_FORM
 	db EXEGGUTOR, ALOLAN_FORM
 	db 0 ; end

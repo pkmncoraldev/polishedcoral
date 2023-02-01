@@ -247,7 +247,7 @@ EvolutionMoves::
 	db PSYSHOCK                             ; WYRDEER
 	db PSYCHIC_M                            ; RAICHU_A
 	db NO_MOVE                              ; EXEGGCUTE_A
-	db DRAGONHAMMER                         ; EXEGGUTOR_A
+	db NO_MOVE          	                ; EXEGGUTOR_A
 	db SHADOW_BONE                          ; MAROWAK_A
 	db NO_MOVE                              ; GRIMER_A
 	db NO_MOVE                              ; MUK_A
@@ -255,4 +255,5 @@ EvolutionMoves::
 	
 	db NO_MOVE                              ;
 	db NO_MOVE                              ;
+	db NO_MOVE                              ; EXEGGCUTE_A
 	db DRAGONHAMMER                         ; EXEGGUTOR_A

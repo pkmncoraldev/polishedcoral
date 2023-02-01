@@ -129,8 +129,8 @@ PicPointers::
 	dba VoltorbBackpic
 	dba ElectrodeFrontpic
 	dba ElectrodeBackpic
-	dba ExeggcuteFrontpic
-	dba ExeggcuteBackpic
+	dbw -1, -1 ; see ExeggcutePicPointers
+	dbw -1, -1 ; see ExeggcutePicPointers
 	dbw -1, -1 ; see ExeggutorPicPointers
 	dbw -1, -1 ; see ExeggutorPicPointers
 	dba CuboneFrontpic

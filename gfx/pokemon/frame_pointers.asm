@@ -64,7 +64,7 @@ FramesPointers:
 	dw OnixFrames
 	dw VoltorbFrames
 	dw ElectrodeFrames
-	dw ExeggcuteFrames
+	dw -1 ; see ExeggcuteFramesPointers
 	dw -1 ; see ExeggutorFramesPointers
 	dw CuboneFrames
 	dw MarowakFrames

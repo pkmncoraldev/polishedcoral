@@ -4321,26 +4321,6 @@ Raichu_AEvosAttacks:
 	db 1, THUNDER
 	db 0 ; no more level-up moves
 	
-Exeggcute_AEvosAttacks:
-	db EVOLVE_ITEM, LEAF_STONE, EXEGGUTOR_A
-	db 0 ; no more evolutions
-	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
-	db 1, ABSORB
-	db 1, SING_HYPNOSIS
-	db 7, REFLECT
-	db 11, LEECH_SEED
-	db 15, MEGA_DRAIN
-	db 20, CONFUSION
-	db 24, BULLET_SEED
-	db 26, STUN_SPORE
-	db 28, POISONPOWDER
-	db 32, SLEEP_POWDER
-	db 37, SYNTHESIS_MOONLIGHT_MORNING_SUN
-	db 41, GIGA_DRAIN
-	db 45, PSYSHOCK
-	db 49, SOLAR_BEAM
-	db 0 ; no more level-up moves
-	
 Marowak_AEvosAttacks:
 	db  0 ; no more evolutions
 	db 1, SHADOW_BONE

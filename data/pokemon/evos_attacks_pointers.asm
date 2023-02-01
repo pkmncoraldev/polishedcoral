@@ -250,8 +250,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw ToxapexEvosAttacks
 	dw WyrdeerEvosAttacks
 	dw Raichu_AEvosAttacks
-	dw Exeggcute_AEvosAttacks
-	dw Exeggutor_AEvosAttacks
+	dw -1
+	dw -1
 	dw Marowak_AEvosAttacks
 	dw Grimer_AEvosAttacks
 	dw Muk_AEvosAttacks
@@ -259,4 +259,5 @@ EvosAttacksPointers:: ; 0x425b1
 	
 	dw -1
 	dw -1
+	dw ExeggcuteEvosAttacks
 	dw Exeggutor_AEvosAttacks

@@ -257,4 +257,5 @@ MenuMonIconColors::
 	iconpal GREEN, PURPLE ; MUK_A
 	iconpal RED, BLUE ; EGG
 
+	iconpal PINK, TEAL ; EXEGGCUTE_A
 	iconpal GREEN, RED ; EXEGGUTOR_A

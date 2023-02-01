@@ -81,6 +81,7 @@ GeneratePartyMonStats: ; d906
 	ld e, l
 	ld d, h
 	push hl
+	predef GetVariant
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
 	call GetBaseData
@@ -235,6 +236,9 @@ endr
 	call GetAbility
 	pop af
 	push bc
+	push af
+	predef GetVariant
+	pop af
 	ld [wCurSpecies], a
 	call GetBaseData
 	pop bc
@@ -1088,6 +1092,7 @@ SentPkmnIntoBox: ; de6e
 	inc a
 	ld [de], a
 
+	predef GetVariant
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
 	ld c, a
@@ -1533,6 +1538,10 @@ ComputeNPCTrademonStats: ; e134
 	call GetPartyParamLocation
 	ld a, [hl]
 	ld [wCurSpecies], a
+	ld a, MON_FORM
+	call GetPartyParamLocation
+	ld a, [hl]
+	ld [wCurForm], a
 	call GetBaseData
 	ld a, MON_MAXHP
 	call GetPartyParamLocation
@@ -1560,6 +1569,10 @@ UpdatePkmnStats:
 	call GetPartyParamLocation
 	ld a, [hl]
 	ld [wCurSpecies], a
+	ld a, MON_FORM
+	call GetPartyParamLocation
+	ld a, [hl]
+	ld [wCurForm], a
 	call GetBaseData
 	ld a, MON_LEVEL
 	call GetPartyParamLocation

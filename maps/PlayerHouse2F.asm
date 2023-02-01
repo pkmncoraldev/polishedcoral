@@ -59,7 +59,6 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	; exeggutor test
-	givepoke CLEFAIRY, 16
 	givepoke EXEGGCUTE, 44
 	givepoke EXEGGCUTE, 44
 	loadvar wPartyMon1Form, MALE | PLAIN_FORM

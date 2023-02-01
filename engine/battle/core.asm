@@ -4802,6 +4802,8 @@ endr
 	ld a, [hl]
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
+	ld a, [wPartyMon1Form]
+	ld [wCurForm], a
 	call GetBaseData
 
 	pop hl
@@ -4859,6 +4861,8 @@ DrawEnemyHUD: ; 3e043
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
+	ld a, [wEnemyMonForm]
+	ld [wCurForm], a
 	call GetBaseData
 	ld de, wEnemyMonNick
 	hlcoord 1, 0
@@ -8010,6 +8014,8 @@ GiveBattleEVs:
 	push bc
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
+	ld a, [wEnemyMonForm]
+	ld [wCurForm], a
 	call GetBaseData
 	; EV yield format:
 	; Byte 1: xxyyzzmm x: HP, y: Atk, z: Def, m: Spd
@@ -8513,6 +8519,8 @@ HandleSafariAngerEatingStatus:
 	; reset the catch rate to normal if bait/rock effects have worn off
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
+	ld a, [wEnemyMonForm]
+	ld [wCurForm], a
 	call GetBaseData
 	ld a, [wBaseCatchRate]
 	ld [wEnemyMonCatchRate], a

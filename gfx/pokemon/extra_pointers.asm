@@ -64,7 +64,7 @@ AnimationExtraPointers:
 	dw OnixAnimationExtra
 	dw VoltorbAnimationExtra
 	dw ElectrodeAnimationExtra
-	dw ExeggcuteAnimationExtra
+	dw -1 ; see ExeggcuteAnimationExtraPointers
 	dw -1 ; see ExeggutorAnimationExtraPointers
 	dw CuboneAnimationExtra
 	dw MarowakAnimationExtra

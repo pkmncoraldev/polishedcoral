@@ -435,6 +435,8 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 	ld a, [wCurPartySpecies]
 	ld [wd265], a
 	ld [wCurSpecies], a
+	ld hl, wTempMonForm
+	predef GetVariant
 	xor a
 	ld [hBGMapMode], a
 	call .ClearBox

@@ -8687,12 +8687,20 @@ DropPlayerSub: ; 3f447
 	push af
 	ld a, [wBattleMonSpecies]
 	ld [wCurPartySpecies], a
+	call GetBattleMonVariant
 	ld de, VTiles2 tile $31
 	predef GetBackpic
 	pop af
 	ld [wCurPartySpecies], a
 	ret
 ; 3f46f
+
+GetBattleMonVariant:
+	ld a, [wCurBattleMon]
+_GetPlayerMonVariant:
+	ld hl, wPartyMon1Form
+	call GetPartyLocation
+	predef_jump GetVariant
 
 GetBackpic_DoAnim: ; 3f46f
 	ld a, [hBattleTurn]

@@ -77,7 +77,11 @@ GetFrontpicPointer: ; 510d7
 	call GetRelevantPicPointers
 	ld a, [wCurPartySpecies]
 	jr nc, .notvariant
+	; form 0 and 1 are one and the same
 	ld a, [wCurForm]
+	and a
+	jr nz, .notvariant
+	inc a
 .notvariant
 	dec a
 	ld bc, 6
@@ -184,19 +188,19 @@ LoadFrontpicTiles: ; 5114f
 	jr nz, .loop
 	ret
 
-GetBackpic:
+GetBackpic: ; 5116c
 	ld a, [wCurPartySpecies]
-	and a
-	ret z
+	call IsAPokemon
+	ret c
 
 	ld a, [wCurPartySpecies]
 	ld b, a
 	ld a, [wCurForm]
 	ld c, a
-	ldh a, [rSVBK]
+	ld a, [rSVBK]
 	push af
 	ld a, $6
-	ldh [rSVBK], a
+	ld [rSVBK], a
 	push de
 	ld a, b
 	push bc
@@ -225,11 +229,11 @@ GetBackpic:
 	call FixBackpicAlignment
 	pop hl
 	ld de, wDecompressScratch
-	ldh a, [hROMBank]
+	ld a, [hROMBank]
 	ld b, a
 	call Get2bpp
 	pop af
-	ldh [rSVBK], a
+	ld [rSVBK], a
 	ret
 
 GetTrainerPic: ; 5120d

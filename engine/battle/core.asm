@@ -6811,35 +6811,8 @@ LoadEnemyMon: ; 3e8eb
 	ld [wEnemyMonSpecies], a
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
-	cp RAICHU_A
-	jr nz, .not_raichu_a
-	ld a, RAICHU
-	jr .cont
-.not_raichu_a
-	cp EXEGGCUTE_A
-	jr nz, .not_exeggcute_a
-	ld a, EXEGGCUTE
-	jr .cont
-.not_exeggcute_a
-	cp EXEGGUTOR_A
-	jr nz, .not_exeggutor_a
-	ld a, EXEGGUTOR
-	jr .cont
-.not_exeggutor_a
-	cp MAROWAK_A
-	jr nz, .not_marowak_a
-	ld a, MAROWAK
-	jr .cont
-.not_marowak_a
-	cp GRIMER_A
-	jr nz, .not_grimer_a
-	ld a, GRIMER
-	jr .cont
-.not_grimer_a
-	cp MUK_A
-	jr nz, .cont
-	ld a, MUK
-.cont
+	
+	call GenerateWildForm
 
 	; Mark as seen
 	dec a
@@ -7125,7 +7098,7 @@ endc
 .Female
 	ld b, a
 
-	ld a, 1 ; default form 1
+	ld a, [wCurForm]
 	add b
 	ld [hl], a
 
@@ -7344,6 +7317,37 @@ CheckSleepingTreeMon: ; 3eb38
 
 INCLUDE "data/wild/treemons_asleep.asm"
 
+GenerateWildForm:
+	push hl
+	push de
+	push bc
+	call .do_it
+	jp PopBCDEHL
+
+.do_it
+	ld a, [wTempEnemyMonSpecies]
+	cp EXEGGUTOR
+	jr z, .ElecForm
+.Default:
+	ld a, 1
+.GotForm:
+	ld [wCurForm], a
+	ret
+
+.ElecForm:
+	ld hl, ElecLandmarks
+;	jr .LandmarkForm
+;.LandmarkForm:
+	ld a, [wCurrentLandmark]
+	ld de, 1
+	call IsInArray
+	ret nc
+	ld a, ALOLAN_FORM
+	jr .GotForm
+
+ElecLandmarks:
+	db ROUTE_1
+	db -1
 
 CheckUnownLetter: ; 3eb75
 ; Return carry if the Unown letter hasn't been unlocked yet

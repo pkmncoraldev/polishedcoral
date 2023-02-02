@@ -3240,9 +3240,9 @@ TeacherFastGroup:
 
 	; TEACHER_FAST
 	db "KATE@"
-	db TRAINERTYPE_PERSONALITY
+	db TRAINERTYPE_NORMAL
 	; party
-	db 36, MAROWAK, ABILITY_1 | QUIRKY, MALE | ALOLAN_FORM
+	db 6, MEOWTH
 	db -1 ; end
 
 ; ================

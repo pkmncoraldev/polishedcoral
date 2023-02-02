@@ -123,6 +123,12 @@ rept NUM_MOVES + -1
 endr
 	ld [hl], a
 	ld [wBuffer1], a
+	; c = species
+	ld a, [wCurSpecies]
+	ld c, a
+	; b = form
+	ld a, [wCurForm]
+	ld b, a
 	predef FillMoves
 
 .next
@@ -986,6 +992,10 @@ Functiondd64: ; dd64
 	ld e, l
 	ld a, $1
 	ld [wBuffer1], a
+	ld a, [wCurSpecies]
+	ld c, a
+	ld a, [wCurForm]
+	ld b, a
 	predef FillMoves
 	ld a, [wPartyCount]
 	dec a

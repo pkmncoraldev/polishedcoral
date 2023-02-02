@@ -271,7 +271,7 @@ RaticateEvosAttacks:
 
 PikachuEvosAttacks:
 	db EVOLVE_ITEM, THUNDERSTONE, RAICHU
-	db EVOLVE_ITEM, BIG_MALASADA, RAICHU_A
+	db EVOLVE_ITEM, BIG_MALASADA, RAICHU
 	db 0 ; no more evolutions
 	db 1, THUNDERSHOCK
 	db 1, GROWL
@@ -1223,7 +1223,7 @@ ExeggutorEvosAttacks:
 
 CuboneEvosAttacks:
 	db EVOLVE_CUBONE, TR_MORNDAY, MAROWAK
-	db EVOLVE_CUBONE, TR_NITE, MAROWAK_A
+	db EVOLVE_CUBONE, TR_NITE, MAROWAK
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 3, GROWL
@@ -4302,6 +4302,10 @@ WyrdeerEvosAttacks:
 	db 62, MEGAHORN
 	db 0 ; no more level-up moves
 	
+EggEvosAttacks::
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 Raichu_AEvosAttacks:
 	db  0 ; no more evolutions
 	db 1, PSYCHIC_M
@@ -4321,31 +4325,8 @@ Raichu_AEvosAttacks:
 	db 1, THUNDER
 	db 0 ; no more level-up moves
 	
-Marowak_AEvosAttacks:
-	db  0 ; no more evolutions
-	db 1, SHADOW_BONE
-	db 1, DOUBLE_EDGE
-	db 1, TACKLE_SCRATCH_POUND
-	db 1, GROWL
-	db 1, BONE_CLUB
-	db 1, HEADBUTT
-	db 1, HEX
-	db 1, LEER_TAIL_WHIP
-	db 1, FOCUS_ENERGY
-	db 1, BONEMERANG
-	db 1, WILL_O_WISP
-	db 1, FLAME_CHARGE
-	db 1, RAGE
-	db 1, FALSE_SWIPE
-	db 33, THRASH
-	db 37, DIG
-	db 43, SWORDS_DANCE
-	db 49, FLARE_BLITZ
-	db 53, EARTHQUAKE
-	db 0 ; no more level-up moves
-	
 Grimer_AEvosAttacks:
-	db EVOLVE_LEVEL, 38, MUK_A
+	db EVOLVE_LEVEL, 38, MUK
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 1, SMOG
@@ -4381,10 +4362,6 @@ Muk_AEvosAttacks:
 	db 52, GUNK_SHOT
 	db 0 ; no more level-up moves
 	
-EggEvosAttacks::
-	db 0 ; no more evolutions
-	db 0 ; no more level-up moves
-
 Exeggutor_AEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DRAGONHAMMER
@@ -4405,4 +4382,27 @@ Exeggutor_AEvosAttacks:
 	db 1, SOLAR_BEAM
 	db 45, EGG_BOMB
 	db 49, WOOD_HAMMER
+	db 0 ; no more level-up moves
+	
+Marowak_AEvosAttacks:
+	db  0 ; no more evolutions
+	db 1, SHADOW_BONE
+	db 1, DOUBLE_EDGE
+	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 1, BONE_CLUB
+	db 1, HEADBUTT
+	db 1, HEX
+	db 1, LEER_TAIL_WHIP
+	db 1, FOCUS_ENERGY
+	db 1, BONEMERANG
+	db 1, WILL_O_WISP
+	db 1, FLAME_CHARGE
+	db 1, RAGE
+	db 1, FALSE_SWIPE
+	db 33, THRASH
+	db 37, DIG
+	db 43, SWORDS_DANCE
+	db 49, FLARE_BLITZ
+	db 53, EARTHQUAKE
 	db 0 ; no more level-up moves

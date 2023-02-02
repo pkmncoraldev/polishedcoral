@@ -14,7 +14,7 @@ FramesPointers:
 	dw RattataFrames
 	dw RaticateFrames
 	dw PikachuFrames
-	dw RaichuFrames
+	dw -1 ; see RaichuFramesPointers
 	dw SandshrewFrames
 	dw SandslashFrames
 	dw NidoranFFrames
@@ -56,8 +56,8 @@ FramesPointers:
 	dw MagnetonFrames
 	dw DoduoFrames
 	dw DodrioFrames
-	dw GrimerFrames
-	dw MukFrames
+	dw -1 ; see GrimerFramesPointers
+	dw -1 ; see MukFramesPointers
 	dw GastlyFrames
 	dw HaunterFrames
 	dw GengarFrames
@@ -67,7 +67,7 @@ FramesPointers:
 	dw -1 ; see ExeggcuteFramesPointers
 	dw -1 ; see ExeggutorFramesPointers
 	dw CuboneFrames
-	dw MarowakFrames
+	dw -1 ; see MarowakFramesPointers
 	dw KoffingFrames
 	dw WeezingFrames
 	dw ChanseyFrames

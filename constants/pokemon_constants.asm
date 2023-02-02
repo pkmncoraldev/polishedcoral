@@ -247,12 +247,12 @@
 	const TOXAPEX ;748
 	const WYRDEER
 NUM_SPECIES EQU const_value - 1
-	const RAICHU_A
-	const EXEGGCUTE_A
-	const EXEGGUTOR_A
-	const MAROWAK_A
-	const GRIMER_A
-	const MUK_A
+	const UNUSED_1
+	const UNUSED_2
+	const UNUSED_3
+	const UNUSED_4
+	const UNUSED_5
+	const UNUSED_6
 NUM_POKEMON EQU const_value +- 1
 	const EGG        ; $fe
 	const CANCEL     ; $ff

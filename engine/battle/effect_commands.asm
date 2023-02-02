@@ -3694,7 +3694,7 @@ ThickClubPaintbrushOrLightBallBoost: ; 353b5
 	lb bc, CUBONE, CUBONE
 	ld d, THICK_CLUB
 	jr z, .ok
-	lb bc, MAROWAK, MAROWAK_A
+	lb bc, MAROWAK, MAROWAK
 	ld d, THICK_CLUB
 .ok
 	call SpeciesItemBoost

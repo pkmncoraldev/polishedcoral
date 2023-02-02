@@ -29,8 +29,8 @@ PicPointers::
 	dba RaticateBackpic
 	dba PikachuFrontpic
 	dba PikachuBackpic
-	dba RaichuFrontpic
-	dba RaichuBackpic
+	dbw -1, -1 ; see RaichuPicPointers
+	dbw -1, -1 ; see RaichuPicPointers
 	dba SandshrewFrontpic
 	dba SandshrewBackpic
 	dba SandslashFrontpic
@@ -113,10 +113,10 @@ PicPointers::
 	dba DoduoBackpic
 	dba DodrioFrontpic
 	dba DodrioBackpic
-	dba GrimerFrontpic
-	dba GrimerBackpic
-	dba MukFrontpic
-	dba MukBackpic
+	dbw -1, -1 ; see GrimerPicPointers
+	dbw -1, -1 ; see GrimerPicPointers
+	dbw -1, -1 ; see MukPicPointers
+	dbw -1, -1 ; see MukPicPointers
 	dba GastlyFrontpic
 	dba GastlyBackpic
 	dba HaunterFrontpic
@@ -135,8 +135,8 @@ PicPointers::
 	dbw -1, -1 ; see ExeggutorPicPointers
 	dba CuboneFrontpic
 	dba CuboneBackpic
-	dba MarowakFrontpic
-	dba MarowakBackpic
+	dbw -1, -1 ; see MarowakPicPointers
+	dbw -1, -1 ; see MarowakPicPointers
 	dba KoffingFrontpic
 	dba KoffingBackpic
 	dba WeezingFrontpic

@@ -14,7 +14,7 @@ BitmasksPointers:
 	dw RattataBitmasks
 	dw RaticateBitmasks
 	dw PikachuBitmasks
-	dw RaichuBitmasks
+	dw -1 ; see RaichuBitmasksPointers
 	dw SandshrewBitmasks
 	dw SandslashBitmasks
 	dw NidoranFBitmasks
@@ -56,8 +56,8 @@ BitmasksPointers:
 	dw MagnetonBitmasks
 	dw DoduoBitmasks
 	dw DodrioBitmasks
-	dw GrimerBitmasks
-	dw MukBitmasks
+	dw -1 ; see GrimerBitmasksPointers
+	dw -1 ; see MukBitmasksPointers
 	dw GastlyBitmasks
 	dw HaunterBitmasks
 	dw GengarBitmasks
@@ -67,7 +67,7 @@ BitmasksPointers:
 	dw -1 ; see ExeggcuteBitmasksPointers
 	dw -1 ; see ExeggutorBitmasksPointers
 	dw CuboneBitmasks
-	dw MarowakBitmasks
+	dw -1 ; see MarowakBitmasksPointers
 	dw KoffingBitmasks
 	dw WeezingBitmasks
 	dw ChanseyBitmasks

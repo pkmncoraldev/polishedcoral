@@ -14,7 +14,7 @@ AnimationPointers:
 	dw RattataAnimation
 	dw RaticateAnimation
 	dw PikachuAnimation
-	dw RaichuAnimation
+	dw -1 ; see RaichuAnimationPointers
 	dw SandshrewAnimation
 	dw SandslashAnimation
 	dw NidoranFAnimation
@@ -56,8 +56,8 @@ AnimationPointers:
 	dw MagnetonAnimation
 	dw DoduoAnimation
 	dw DodrioAnimation
-	dw GrimerAnimation
-	dw MukAnimation
+	dw -1 ; see GrimerAnimationPointers
+	dw -1 ; see MukAnimationPointers
 	dw GastlyAnimation
 	dw HaunterAnimation
 	dw GengarAnimation
@@ -67,7 +67,7 @@ AnimationPointers:
 	dw -1 ; see ExeggcuteAnimationPointers
 	dw -1 ; see ExeggutorAnimationPointers
 	dw CuboneAnimation
-	dw MarowakAnimation
+	dw -1 ; see MarowakAnimationPointers
 	dw KoffingAnimation
 	dw WeezingAnimation
 	dw ChanseyAnimation

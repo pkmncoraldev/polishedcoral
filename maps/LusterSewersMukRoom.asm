@@ -15,13 +15,13 @@ LusterSewersMukRoom_MapScriptHeader:
 	db 0 ; bg events
 
 	db 10 ; object events
-	object_event 6, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GRIMER_A, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer1, EVENT_LUSTER_SEWERS_GRIMER_1
+	object_event 6, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GRIMER, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer1, EVENT_LUSTER_SEWERS_GRIMER_1
 	person_event SPRITE_GRIMER_A_OW,  6,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer1, EVENT_PLAYER_CUTSCENE_SILVER
-	object_event 7, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GRIMER_A, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer2, EVENT_LUSTER_SEWERS_GRIMER_2
+	object_event 7, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GRIMER, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer2, EVENT_LUSTER_SEWERS_GRIMER_2
 	person_event SPRITE_GRIMER_A_OW,  6,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer2, EVENT_PLAYER_CUTSCENE_SILVER
-	object_event 8, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GRIMER_A, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer3, EVENT_LUSTER_SEWERS_GRIMER_3
+	object_event 8, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GRIMER, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer3, EVENT_LUSTER_SEWERS_GRIMER_3
 	person_event SPRITE_GRIMER_A_OW,  6,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer3, EVENT_PLAYER_CUTSCENE_SILVER
-	object_event 9, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GRIMER_A, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer4, EVENT_LUSTER_SEWERS_GRIMER_4
+	object_event 9, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GRIMER, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer4, EVENT_LUSTER_SEWERS_GRIMER_4
 	person_event SPRITE_GRIMER_A_OW,  6,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer4, EVENT_PLAYER_CUTSCENE_SILVER
 	person_event SPRITE_BIG_MUK,  4,  7, SPRITEMOVEDATA_BIG_MUK_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterSewersMukRoomGrimer1, EVENT_PLAYER_CUTSCENE_SILVER
 	person_event SPRITE_PLAYER_CUTSCENE,  7,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_PLAYER_CUTSCENE_SILVER
@@ -109,12 +109,12 @@ LusterSewersMukRoomTrigger0:
 	disappear LUSTER_SEWERS_MUK_CUTSCENE
 	opentext
 	writetext LusterSewersMukRoomMukText2
-	cry MUK_A
+	cry MUK
 	waitsfx
 	waitbutton
 	closetext
 	waitsfx
-	loadwildmon MUK_A, 40
+	loadwildmon MUK, 40
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	disappear LUSTER_SEWERS_MUK
@@ -123,7 +123,7 @@ LusterSewersMukRoomTrigger0:
 	setevent EVENT_LUSTER_SEWERS_MUK_ROOM_MUK
 	setevent EVENT_LUSTER_SEWERS_BEAT_MUK
 	checkcode VAR_MONJUSTCAUGHT
-	if_equal MUK_A, .CaughtMuk
+	if_equal MUK, .CaughtMuk
 	opentext
 	writetext LusterSewersMukRoomMukText2
 	waitbutton
@@ -197,7 +197,7 @@ LusterSewersMukRoomGrimer1:
 	appear LUSTER_SEWERS_GRIMER_1_2
 	opentext
 	writetext LusterSewersMukRoomGrimerText
-	cry GRIMER_A
+	cry GRIMER
 	waitbutton
 	closetext
 	disappear LUSTER_SEWERS_GRIMER_1_1
@@ -217,7 +217,7 @@ LusterSewersMukRoomGrimer2:
 	appear LUSTER_SEWERS_GRIMER_2_2
 	opentext
 	writetext LusterSewersMukRoomGrimerText
-	cry GRIMER_A
+	cry GRIMER
 	waitbutton
 	closetext
 	disappear LUSTER_SEWERS_GRIMER_2_1
@@ -237,7 +237,7 @@ LusterSewersMukRoomGrimer3:
 	appear LUSTER_SEWERS_GRIMER_3_2
 	opentext
 	writetext LusterSewersMukRoomGrimerText
-	cry GRIMER_A
+	cry GRIMER
 	waitbutton
 	closetext
 	disappear LUSTER_SEWERS_GRIMER_3_1
@@ -257,7 +257,7 @@ LusterSewersMukRoomGrimer4:
 	appear LUSTER_SEWERS_GRIMER_4_2
 	opentext
 	writetext LusterSewersMukRoomGrimerText
-	cry GRIMER_A
+	cry GRIMER
 	waitbutton
 	closetext
 	disappear LUSTER_SEWERS_GRIMER_4_1

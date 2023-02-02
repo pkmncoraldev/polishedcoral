@@ -14,7 +14,7 @@ AnimationExtraPointers:
 	dw RattataAnimationExtra
 	dw RaticateAnimationExtra
 	dw PikachuAnimationExtra
-	dw RaichuAnimationExtra
+	dw -1 ; see RaichuAnimationExtraPointers
 	dw SandshrewAnimationExtra
 	dw SandslashAnimationExtra
 	dw NidoranFAnimationExtra
@@ -56,8 +56,8 @@ AnimationExtraPointers:
 	dw MagnetonAnimationExtra
 	dw DoduoAnimationExtra
 	dw DodrioAnimationExtra
-	dw GrimerAnimationExtra
-	dw MukAnimationExtra
+	dw -1 ; see GrimerAnimationExtraPointers
+	dw -1 ; see MukAnimationExtraPointers
 	dw GastlyAnimationExtra
 	dw HaunterAnimationExtra
 	dw GengarAnimationExtra
@@ -67,7 +67,7 @@ AnimationExtraPointers:
 	dw -1 ; see ExeggcuteAnimationExtraPointers
 	dw -1 ; see ExeggutorAnimationExtraPointers
 	dw CuboneAnimationExtra
-	dw MarowakAnimationExtra
+	dw -1 ; see MarowakAnimationExtraPointers
 	dw KoffingAnimationExtra
 	dw WeezingAnimationExtra
 	dw ChanseyAnimationExtra

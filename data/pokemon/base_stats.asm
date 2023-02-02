@@ -310,16 +310,20 @@ INCLUDE "data/pokemon/base_stats/toxapex.asm"
 
 INCLUDE "data/pokemon/base_stats/wyrdeer.asm"
 
+INCLUDE "data/pokemon/base_stats/egg.asm"
+INCLUDE "data/pokemon/base_stats/egg.asm"
+INCLUDE "data/pokemon/base_stats/egg.asm"
+INCLUDE "data/pokemon/base_stats/egg.asm"
+INCLUDE "data/pokemon/base_stats/egg.asm"
+INCLUDE "data/pokemon/base_stats/egg.asm"
+
+INCLUDE "data/pokemon/base_stats/egg.asm"
+
+INCLUDE "data/pokemon/base_stats/egg.asm"
+INCLUDE "data/pokemon/base_stats/egg.asm"
 INCLUDE "data/pokemon/base_stats/raichu_a.asm"
-INCLUDE "data/pokemon/base_stats/egg.asm"
-INCLUDE "data/pokemon/base_stats/egg.asm"
-INCLUDE "data/pokemon/base_stats/marowak_a.asm"
 INCLUDE "data/pokemon/base_stats/grimer_a.asm"
 INCLUDE "data/pokemon/base_stats/muk_a.asm"
-
-INCLUDE "data/pokemon/base_stats/egg.asm"
-
-INCLUDE "data/pokemon/base_stats/egg.asm"
-INCLUDE "data/pokemon/base_stats/egg.asm"
 INCLUDE "data/pokemon/base_stats/exeggcute.asm"
 INCLUDE "data/pokemon/base_stats/exeggutor_a.asm"
+INCLUDE "data/pokemon/base_stats/marowak_a.asm"

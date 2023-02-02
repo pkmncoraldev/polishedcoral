@@ -2140,9 +2140,7 @@ PoundUsers:
 	db POLIWHIRL
 	db POLIWRATH
 	db GRIMER
-	db GRIMER_A
 	db MUK
-	db MUK_A
 	db CHANSEY
 	db DRATINI
 	db DRAGONAIR
@@ -2200,8 +2198,6 @@ HardenUsers:
 	db GLISCOR
 	db GRIMER
 	db MUK
-	db GRIMER_A
-	db MUK_A
 	db -1
 
 TailWhipUsers:
@@ -2252,8 +2248,6 @@ AcidArmorUsers:
 	db VAPOREON
 	db GRIMER
 	db MUK
-	db GRIMER_A
-	db MUK_A
 	db -1
 	
 MeditateUsers:
@@ -2469,8 +2463,6 @@ HypnosisUsers:
 	db GARDEVOIR
 	db GALLADE
 	db SPIRITOMB
-	db EXEGGCUTE_A
-	db EXEGGUTOR_A
 	db -1
 	
 TackleNames:

@@ -58,7 +58,6 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	; exeggutor test
 	givepoke EXEGGCUTE, 44
 	givepoke EXEGGCUTE, 44
 	loadvar wPartyMon1Form, MALE | PLAIN_FORM

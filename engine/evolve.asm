@@ -208,6 +208,12 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wLinkMode]
 	and a
 	jp nz, .dont_evolve_3
+	
+	ld a, [wCurItem]
+	cp BIG_MALASADA
+	jp nz, .proceed
+	ld a, ALOLAN_FORM
+	ld [wTempMonForm], a
 	jp .proceed
 
 .holding_day
@@ -300,9 +306,12 @@ endr
 ; TR_NITE
 	ld a, [wTimeOfDay]
 	cp DUSK
-	jp z, .proceed
+	jp z, .set_cubone_form
 	cp NITE
 	jp nz, .dont_evolve_3
+.set_cubone_form
+	ld a, ALOLAN_FORM
+	ld [wTempMonForm], a
 	jp .proceed
 
 .cubone_daylight

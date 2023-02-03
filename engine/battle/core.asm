@@ -7322,29 +7322,42 @@ GenerateWildForm:
 	push hl
 	push de
 	push bc
-	call .do_it
+	ld a, [wTempEnemyMonSpecies]
+	ld b, a
+	ld hl, WildSpeciesForms
+.loop
+	ld a, [hli]
+	and a
+	jr z, .ok
+	cp b
+	jr z, .ok
+	inc hl
+	inc hl
+	jr .loop
+.ok
+	call IndirectHL
+	ld [wCurForm], a
 	jp PopBCDEHL
 
-.do_it
-	ld a, [wTempEnemyMonSpecies]
-	cp EXEGGUTOR
-	jr z, .ExeggcuteForm
+WildSpeciesForms:
+	dbw EXEGGCUTE,	.ExeggcuteForm
+	dbw EXEGGUTOR,	.ExeggcuteForm
+	dbw 0,			.Default
+
 .Default:
-	ld a, 1
-.GotForm:
-	ld [wCurForm], a
+	ld a, PLAIN_FORM
 	ret
 
 .ExeggcuteForm:
 	ld hl, ExeggcuteLandmarks
-;	jr .LandmarkForm
-;.LandmarkForm:
+	;fallthrough
+.LandmarkForm:
 	ld a, [wCurrentLandmark]
 	ld de, 1
 	call IsInArray
 	jr nc, .Default
 	ld a, ALOLAN_FORM
-	jr .GotForm
+	ret
 
 ExeggcuteLandmarks:
 	db ROUTE_1

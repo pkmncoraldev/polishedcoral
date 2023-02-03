@@ -109,10 +109,11 @@ _Jumptable:
 	ld d, 0
 	add hl, de
 	add hl, de
+	pop de
+IndirectHL::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	pop de
 	jp hl
 
 LoadTileMapToTempTileMap:: ; 309d

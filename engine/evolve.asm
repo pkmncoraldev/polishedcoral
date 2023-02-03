@@ -212,12 +212,7 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wCurItem]
 	cp BIG_MALASADA
 	jp nz, .proceed
-	ld a, ALOLAN_FORM
-	ld b, a
-	ld a, [wTempMonForm]
-	and $ff - FORM_MASK
-	or b
-	ld [wTempMonForm], a
+	call SetAlolanFormOnEvo
 	jp .proceed
 
 .holding_day
@@ -314,12 +309,7 @@ endr
 	cp NITE
 	jp nz, .dont_evolve_3
 .set_cubone_form
-	ld a, ALOLAN_FORM
-	ld b, a
-	ld a, [wTempMonForm]
-	and $ff - FORM_MASK
-	or b
-	ld [wTempMonForm], a
+	call SetAlolanFormOnEvo
 	jp .proceed
 
 .cubone_daylight
@@ -890,4 +880,21 @@ GetEvosAttacksPointer:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+	ret
+	
+SetAlolanFormOnEvo:
+	ld a, ALOLAN_FORM
+	ld b, a
+	ld a, [wTempMonForm]
+	and $ff - FORM_MASK
+	or b
+	ld [wTempMonForm], a
+	
+	push hl
+	ld hl, wPartyMon1Form
+	ld a, [wCurPartyMon]
+	call GetPartyLocation
+	ld a, [wTempMonForm]
+	ld [hl], a
+	pop hl
 	ret

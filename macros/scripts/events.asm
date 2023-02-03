@@ -574,7 +574,13 @@ loadmemtrainer: macro
 loadwildmon: macro
 	db loadwildmon_command
 	db \1 ; pokemon
+if _NARG == 3
+	db \2 ; form
+	db \3 ; level
+else
+	db 0  ; form
 	db \2 ; level
+endc
 	endm
 
 	enum loadtrainer_command

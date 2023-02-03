@@ -7322,6 +7322,9 @@ GenerateWildForm:
 	push hl
 	push de
 	push bc
+	ld a, [wWildMonForm]
+	and a
+	jr nz, .done
 	ld a, [wTempEnemyMonSpecies]
 	ld b, a
 	ld hl, WildSpeciesForms
@@ -7336,6 +7339,7 @@ GenerateWildForm:
 	jr .loop
 .ok
 	call IndirectHL
+.done
 	ld [wCurForm], a
 	jp PopBCDEHL
 

@@ -715,7 +715,9 @@ wWildEncounterCooldown:: ds 1
 
 wWildBattlePanic:: ds 1
 
-wBattleScriptFlags:: ds 2
+wBattleScriptFlags:: ds 1
+wWildMonForm:: ds 1
+
 wPlayerSpriteSetupFlags::
 ; bit 7: if set, cancel PlayerAction
 ; bit 5: if set, set facing according to bits 0-1

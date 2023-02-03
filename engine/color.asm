@@ -643,7 +643,7 @@ LoadPartyMonPalette:
 	ld a, $5
 	ld de, wUnknBGPals palette PAL_BG_TEXT + 2
 	ld bc, 4
-	call FarCopyWRAM
+	jp FarCopyWRAM
 	; hl = DVs
 ;	ld hl, wPartyMon1DVs
 ;	ld a, [wCurPartyMon]

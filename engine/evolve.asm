@@ -213,6 +213,10 @@ EvolveAfterBattle_MasterLoop:
 	cp BIG_MALASADA
 	jp nz, .proceed
 	ld a, ALOLAN_FORM
+	ld b, a
+	ld a, [wTempMonForm]
+	and $ff - FORM_MASK
+	or b
 	ld [wTempMonForm], a
 	jp .proceed
 
@@ -311,6 +315,10 @@ endr
 	jp nz, .dont_evolve_3
 .set_cubone_form
 	ld a, ALOLAN_FORM
+	ld b, a
+	ld a, [wTempMonForm]
+	and $ff - FORM_MASK
+	or b
 	ld [wTempMonForm], a
 	jp .proceed
 

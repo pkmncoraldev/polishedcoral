@@ -3687,22 +3687,24 @@ NewEnemyMonStatus: ; 3d834
 ; 3d867
 
 ResetPlayerAbility:
-	ld a, [wBattleMonAbility]
-	ld b, a
+	push hl
+	ld hl, wBattleMonPersonality
 	ld a, [wBattleMonSpecies]
 	ld c, a
 	call GetAbility
+	pop hl
 	ld a, b
 	ld [wPlayerAbility], a
 	xor a
 	ret
 
 ResetEnemyAbility:
-	ld a, [wEnemyMonAbility]
-	ld b, a
+	push hl
+	ld hl, wEnemyMonPersonality
 	ld a, [wEnemyMonSpecies]
 	ld c, a
 	call GetAbility
+	pop hl
 	ld a, b
 	ld [wEnemyAbility], a
 	xor a
@@ -6988,7 +6990,7 @@ endc
 	; If the ability is Pickup, 10% chance of holding an item from that instead
 	push hl
 	push bc
-	ld b, a ; still the ability index, 1/2/hidden
+	ld hl, wEnemyMonPersonality
 	ld a, [wCurPartySpecies]
 	ld c, a
 	call GetAbility
@@ -7284,8 +7286,7 @@ CheckSleepingTreeMon: ; 3eb38
 	jr nz, .NotSleeping
 
 ; Nor if the Pokémon has Insomnia/Vital Spirit
-	ld a, [wEnemyMonAbility] ; is properly updated at this point, so OK to check
-	ld b, a
+	ld hl, wEnemyMonPersonality ; ability is properly updated at this point, so OK to check
 	ld a, [wTempEnemyMonSpecies]
 	ld c, a
 	call GetAbility
@@ -7327,25 +7328,25 @@ GenerateWildForm:
 .do_it
 	ld a, [wTempEnemyMonSpecies]
 	cp EXEGGUTOR
-	jr z, .ElecForm
+	jr z, .ExeggcuteForm
 .Default:
 	ld a, 1
 .GotForm:
 	ld [wCurForm], a
 	ret
 
-.ElecForm:
-	ld hl, ElecLandmarks
+.ExeggcuteForm:
+	ld hl, ExeggcuteLandmarks
 ;	jr .LandmarkForm
 ;.LandmarkForm:
 	ld a, [wCurrentLandmark]
 	ld de, 1
 	call IsInArray
-	ret nc
+	jr nc, .Default
 	ld a, ALOLAN_FORM
 	jr .GotForm
 
-ElecLandmarks:
+ExeggcuteLandmarks:
 	db ROUTE_1
 	db -1
 
@@ -8735,8 +8736,9 @@ DropEnemySub: ; 3f486
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
-	ld a, [wEnemyMonForm]
-	ld [wCurForm], a
+	ld hl, wEnemyMonForm
+	predef GetVariant
+	
 	call GetBaseData
 	ld de, VTiles2
 	predef FrontpicPredef

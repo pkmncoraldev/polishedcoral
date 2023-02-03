@@ -58,8 +58,8 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke EXEGGCUTE, 44
-	givepoke EXEGGCUTE, 44
+	givepoke EXEGGUTOR, 44
+	givepoke EXEGGUTOR, 44
 	loadvar wPartyMon1Form, MALE | PLAIN_FORM
 	loadvar wPartyMon2Form, FEMALE | ALOLAN_FORM
 

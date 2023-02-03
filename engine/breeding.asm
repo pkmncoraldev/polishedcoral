@@ -160,12 +160,17 @@ DoEggStep:: ; 16f3e
 .ability_loop
 	ld a, [de]
 	inc de
-	cp -1
+	inc a
 	jr z, .no_ability_bonus
-	cp EGG
-	jr z, .ability_next
+	push hl
+	push de
+	ld de, wPartyMon1IsEgg - wPartyMon1Ability
+	add hl, de
+	bit MON_IS_EGG_F, [hl]
+	pop de
+	pop hl
+	jr nz, .ability_next
 	ld c, a
-	ld b, [hl]
 	push de
 	push hl
 	call GetAbility

@@ -123,12 +123,6 @@ rept NUM_MOVES + -1
 endr
 	ld [hl], a
 	ld [wBuffer1], a
-	; c = species
-	ld a, [wCurSpecies]
-	ld c, a
-	; b = form
-	ld a, [wCurForm]
-	ld b, a
 	predef FillMoves
 
 .next
@@ -203,28 +197,15 @@ endr
 	pop hl
 
 ; Random nature from 0 to 24
-; This overwrites the base data struct, so reload it afterwards
-	ld a, [wCurSpecies]
-	push af
-	ld a, [wPartyMon1Ability]
-	ld b, a
+	push hl
+	ld hl, wPartyMon1Personality
 	ld a, [wPartyMon1Species]
 	ld c, a
 	call GetAbility
-	pop af
-	push bc
-	push af
-	predef GetVariant
-	pop af
-	ld [wCurSpecies], a
-	call GetBaseData
-	pop bc
+	pop hl
 	ld a, b
 	cp SYNCHRONIZE
 	jr nz, .no_synchronize
-	call Random
-	and $1
-	jr z, .no_synchronize
 	ld a, [wPartyMon1Nature]
 	and NATURE_MASK
 	jr .got_nature
@@ -992,10 +973,6 @@ Functiondd64: ; dd64
 	ld e, l
 	ld a, $1
 	ld [wBuffer1], a
-	ld a, [wCurSpecies]
-	ld c, a
-	ld a, [wCurForm]
-	ld b, a
 	predef FillMoves
 	ld a, [wPartyCount]
 	dec a

@@ -1750,13 +1750,12 @@ RunPostBattleAbilities::
 	ld [wCurPartyMon], a
 
 	push bc
-	ld a, MON_ABILITY
-	call GetPartyParamLocation
-	ld b, [hl]
 	ld a, MON_SPECIES
 	call GetPartyParamLocation
 	ld c, [hl]
-	farcall GetAbility
+	ld a, MON_PERSONALITY
+	call GetPartyParamLocation
+	call GetAbility
 	ld a, b
 	pop bc
 	cp NATURAL_CURE

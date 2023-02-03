@@ -792,11 +792,10 @@ OrangePage_:
 	hlcoord 1, 12
 	ld de, .ability
 	call PlaceString
-	ld a, [wTempMonAbility]
-	ld b, a
+	ld hl, wTempMonPersonality
 	ld a, [wTempMonSpecies]
 	ld c, a
-	farcall GetAbility
+	call GetAbility
 	; PlaceString as used in PrintAbility doesn't preserve any register, so push it.
 	push bc
 	predef PrintAbility

@@ -1908,8 +1908,8 @@ SetUpMoveScreenBG: ; 13172
 	farcall CopyPkmnToTempMon
 	pop hl
 	call PrintLevel
-	ld hl, wPlayerHPPal
-	call SetHPPal
+;	ld hl, wPlayerHPPal
+;	call SetHPPal
 	call SetPalettes
 	hlcoord 16, 0
 	lb bc, 1, 3

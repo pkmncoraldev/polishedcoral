@@ -536,8 +536,10 @@ buttonsound: macro
 pokepic: macro
 	db pokepic_command
 	db \1 ; pokemon
-if _NARG == 2
-	db \2 ; party flag
+if \1 == 0
+	db -1 ; party mon
+elif _NARG == 2
+	db \2 ; form
 else
 	db 0
 endc
@@ -572,7 +574,13 @@ loadmemtrainer: macro
 loadwildmon: macro
 	db loadwildmon_command
 	db \1 ; pokemon
+if _NARG == 3
+	db \2 ; form
+	db \3 ; level
+else
+	db 0  ; form
 	db \2 ; level
+endc
 	endm
 
 	enum loadtrainer_command

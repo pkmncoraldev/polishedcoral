@@ -160,12 +160,17 @@ DoEggStep:: ; 16f3e
 .ability_loop
 	ld a, [de]
 	inc de
-	cp -1
+	inc a
 	jr z, .no_ability_bonus
-	cp EGG
-	jr z, .ability_next
+	push hl
+	push de
+	ld de, wPartyMon1IsEgg - wPartyMon1Ability
+	add hl, de
+	bit MON_IS_EGG_F, [hl]
+	pop de
+	pop hl
+	jr nz, .ability_next
 	ld c, a
-	ld b, [hl]
 	push de
 	push hl
 	call GetAbility
@@ -255,35 +260,7 @@ HatchEggs: ; 16f70 (5:6f70)
 	rst AddNTimes
 	ld a, [hl]
 	ld [wCurPartySpecies], a
-	cp RAICHU_A
-	jr nz, .not_raichu_a
-	ld a, RAICHU
-	jr .cont
-.not_raichu_a
-	cp EXEGGCUTE_A
-	jr nz, .not_exeggcute_a
-	ld a, EXEGGCUTE
-	jr .cont
-.not_exeggcute_a
-	cp EXEGGUTOR_A
-	jr nz, .not_exeggutor_a
-	ld a, EXEGGUTOR
-	jr .cont
-.not_exeggutor_a
-	cp MAROWAK_A
-	jr nz, .not_marowak_a
-	ld a, MAROWAK
-	jr .cont
-.not_marowak_a
-	cp GRIMER_A
-	jr nz, .not_grimer_a
-	ld a, GRIMER
-	jr .cont
-.not_grimer_a
-	cp MUK_A
-	jr nz, .cont
-	ld a, MUK
-.cont
+
 	dec a
 	call SetSeenAndCaughtMon
 
@@ -555,10 +532,16 @@ InitEggMoves:
 
 InheritLevelMove:
 ; If move d is part of the level up moveset, inherit that move
+	; c = species
 	ld a, [wEggMonSpecies]
-	dec a
 	ld c, a
-	ld b, 0
+	; b = form
+	ld a, [wEggMonForm]
+	and FORM_MASK
+	ld b, a
+	; bc = index
+	call GetSpeciesAndFormIndex
+	dec bc
 	ld hl, EvosAttacksPointers
 	add hl, bc
 	add hl, bc

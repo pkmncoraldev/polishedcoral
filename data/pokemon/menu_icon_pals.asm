@@ -248,11 +248,14 @@ MenuMonIconColors::
 	iconpal RED, PURPLE ; TOUCANNON
 	iconpal BLUE, RED ; MAREANIE
 	iconpal BLUE, RED ; TOXAPEX
+	iconpal PURPLE, GRAY ; CURSOLA
 	iconpal GRAY, GREEN ; WYRDEER
 	iconpal BROWN, BROWN ; RAICHU_A
 	iconpal PINK, TEAL ; EXEGGCUTE_A
 	iconpal GREEN, RED ; EXEGGUTOR_A
 	iconpal GRAY, BLUE ; MAROWAK_A
 	iconpal GREEN, PURPLE ; GRIMER_A
-	iconpal GREEN, PURPLE ; MUK_A
 	iconpal RED, BLUE ; EGG
+
+	iconpal PINK, TEAL ; EXEGGCUTE_A
+	iconpal GREEN, RED ; EXEGGUTOR_A

@@ -582,13 +582,26 @@ GetPaintingPalettePointer:
 	ret
 
 GetMonPalettePointer:
-	ld l, a
-	ld h, $0
+	push af
+	ld h, b
+	ld l, c
+	; c = species
+	ld c, a
+	; b = form
+	inc hl ; Form is in the byte after Shiny
+	ld a, [hl]
+	and FORM_MASK
+	ld b, a
+	; bc = index
+	call GetSpeciesAndFormIndex
+	ld h, b
+	ld l, c
 	add hl, hl
 	add hl, hl
 	add hl, hl
 	ld bc, PokemonPalettes
 	add hl, bc
+	pop af
 	ret
 
 GetMonNormalOrShinyPalettePointer:
@@ -630,7 +643,7 @@ LoadPartyMonPalette:
 	ld a, $5
 	ld de, wUnknBGPals palette PAL_BG_TEXT + 2
 	ld bc, 4
-	call FarCopyWRAM
+	jp FarCopyWRAM
 	; hl = DVs
 ;	ld hl, wPartyMon1DVs
 ;	ld a, [wCurPartyMon]

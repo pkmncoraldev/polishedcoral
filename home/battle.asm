@@ -190,40 +190,17 @@ UserCanLoseItem::
 	farcall GetUserItem
 	ld a, [hl]
 	and a
-	jr z, .pop_and_ret_z
+	jr z, .cannot_lose
 	ld d, a
 	call ItemIsMail
-	jr c, .pop_and_ret_z
-	ld de, 2
-	ld hl, .StuckItems
-	call IsInArray
-	jr nc, .pop_and_ret_nz
-	inc hl
-	ld a, [hBattleTurn]
-	and a
-	ld de, wBattleMonSpecies
-	jr z, .got_species
-	ld de, wEnemyMonSpecies
-.got_species
-	ld a, [de]
-	cp [hl]
-	jr nz, .pop_and_ret_z
-.pop_and_ret_nz
-	pop bc
-	pop de
-	pop hl
+	jr c, .cannot_lose
 	or 1
-	ret
-.pop_and_ret_z
-	pop bc
-	pop de
-	pop hl
+	jr .done
+	
+.cannot_lose
 	xor a
-	ret
-
-.StuckItems
-;	db ARMOR_SUIT, MEWTWO
-	db -1
+.done
+	jp PopBCDEHL
 
 GetOpponentUsedItemAddr::
 	call CallOpponentTurn

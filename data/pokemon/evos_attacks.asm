@@ -271,7 +271,7 @@ RaticateEvosAttacks:
 
 PikachuEvosAttacks:
 	db EVOLVE_ITEM, THUNDERSTONE, RAICHU
-	db EVOLVE_ITEM, BIG_MALASADA, RAICHU_A
+	db EVOLVE_ITEM, BIG_MALASADA, RAICHU
 	db 0 ; no more evolutions
 	db 1, THUNDERSHOCK
 	db 1, GROWL
@@ -1223,7 +1223,7 @@ ExeggutorEvosAttacks:
 
 CuboneEvosAttacks:
 	db EVOLVE_CUBONE, TR_MORNDAY, MAROWAK
-	db EVOLVE_CUBONE, TR_NITE, MAROWAK_A
+	db EVOLVE_CUBONE, TR_NITE, MAROWAK
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 3, GROWL
@@ -2621,13 +2621,14 @@ PiloswineEvosAttacks:
 CorsolaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
 	db 4, DEFENSE_CURL_HARDEN_WITHDRAW
 	db 8, WATER_GUN
 	db 10, SOFTBOILED_MILK_DRINK_RECOVER
 	db 13, PROTECT
 	db 17, ANCIENTPOWER
 	db 20, BUBBLE_BEAM
-	db 23, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db 23, FLAIL
 	db 27, SAFEGUARD
 	db 29, BARRIER_IRON_DEFENSE_ACID_ARMOR
 	db 31, ROCK_BLAST
@@ -4282,6 +4283,28 @@ ToxapexEvosAttacks:
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
+CursolaEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, PERISH_SONG
+	db 1, TACKLE_SCRATCH_POUND
+	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db 4, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 8, WATER_GUN
+	db 10, SOFTBOILED_MILK_DRINK_RECOVER
+	db 13, PROTECT
+	db 17, ANCIENTPOWER
+	db 20, HEX
+	db 23, CURSE
+	db 27, SAFEGUARD
+	db 29, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 31, ROCK_BLAST
+	db 35, ENDURE
+	db 38, NIGHT_SHADE
+	db 41, POWER_GEM
+	db 45, EARTH_POWER
+	db 48, FLAIL
+	db 0 ; no more level-up moves
+	
 WyrdeerEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PSYSHOCK
@@ -4300,6 +4323,10 @@ WyrdeerEvosAttacks:
 	db 49, SWAGGER
 	db 55, DOUBLE_EDGE
 	db 62, MEGAHORN
+	db 0 ; no more level-up moves
+	
+EggEvosAttacks::
+	db 0 ; no more evolutions
 	db 0 ; no more level-up moves
 	
 Raichu_AEvosAttacks:
@@ -4321,24 +4348,52 @@ Raichu_AEvosAttacks:
 	db 1, THUNDER
 	db 0 ; no more level-up moves
 	
-Exeggcute_AEvosAttacks:
-	db EVOLVE_ITEM, LEAF_STONE, EXEGGUTOR_A
+Sandshrew_AEvosAttacks:
+	db EVOLVE_LEVEL, 22, SANDSLASH
 	db 0 ; no more evolutions
-	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
-	db 1, ABSORB
-	db 1, SING_HYPNOSIS
-	db 7, REFLECT
-	db 11, LEECH_SEED
-	db 15, MEGA_DRAIN
-	db 20, CONFUSION
-	db 24, BULLET_SEED
-	db 26, STUN_SPORE
-	db 28, POISONPOWDER
-	db 32, SLEEP_POWDER
-	db 37, SYNTHESIS_MOONLIGHT_MORNING_SUN
-	db 41, GIGA_DRAIN
-	db 45, PSYSHOCK
-	db 49, SOLAR_BEAM
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+
+Sandslash_AEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+Grimer_AEvosAttacks:
+	db EVOLVE_LEVEL, 38, MUK
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 1, SMOG
+	db 6, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 9, BITE
+	db 14, DISABLE
+	db 17, ACID
+	db 22, POISON_FANG
+	db 25, MINIMIZE
+	db 30, KNOCK_OFF
+	db 33, CRUNCH
+	db 38, SCREECH
+	db 41, TOXIC
+	db 46, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 49, GUNK_SHOT
+	db 0 ; no more level-up moves
+	
+Muk_AEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 1, SMOG
+	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 1, BITE
+	db 1, DISABLE
+	db 1, ACID
+	db 1, POISON_FANG
+	db 1, MINIMIZE
+	db 1, KNOCK_OFF
+	db 1, CRUNCH
+	db 1, SCREECH
+	db 42, TOXIC
+	db 48, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 52, GUNK_SHOT
 	db 0 ; no more level-up moves
 	
 Exeggutor_AEvosAttacks:
@@ -4386,39 +4441,24 @@ Marowak_AEvosAttacks:
 	db 53, EARTHQUAKE
 	db 0 ; no more level-up moves
 	
-Grimer_AEvosAttacks:
-	db EVOLVE_LEVEL, 38, MUK_A
+Corsola_GEvosAttacks:
+	db EVOLVE_LEVEL, 38, CURSOLA
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
-	db 1, SMOG
-	db 6, DEFENSE_CURL_HARDEN_WITHDRAW
-	db 9, BITE
-	db 14, DISABLE
-	db 17, ACID
-	db 22, POISON_FANG
-	db 25, MINIMIZE
-	db 30, KNOCK_OFF
-	db 33, CRUNCH
-	db 38, SCREECH
-	db 41, TOXIC
-	db 46, BARRIER_IRON_DEFENSE_ACID_ARMOR
-	db 49, GUNK_SHOT
-	db 0 ; no more level-up moves
-	
-Muk_AEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 1, SMOG
-	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
-	db 1, BITE
-	db 1, DISABLE
-	db 1, ACID
-	db 1, POISON_FANG
-	db 1, MINIMIZE
-	db 1, KNOCK_OFF
-	db 1, CRUNCH
-	db 1, SCREECH
-	db 42, TOXIC
-	db 48, BARRIER_IRON_DEFENSE_ACID_ARMOR
-	db 52, GUNK_SHOT
+	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db 4, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 8, WATER_GUN
+	db 10, SOFTBOILED_MILK_DRINK_RECOVER
+	db 13, PROTECT
+	db 17, ANCIENTPOWER
+	db 20, HEX
+	db 23, CURSE
+	db 27, SAFEGUARD
+	db 29, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 31, ROCK_BLAST
+	db 35, ENDURE
+	db 38, NIGHT_SHADE
+	db 41, POWER_GEM
+	db 45, EARTH_POWER
+	db 48, FLAIL
 	db 0 ; no more level-up moves

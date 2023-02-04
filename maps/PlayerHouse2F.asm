@@ -19,7 +19,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event  9, 14, TWINKLE_TOWN, 1
 	warp_event 11, 14, LUSTER_CITY_SHOPPING, 1
 	warp_event 13, 14, BRILLO_TOWN, 1
-	warp_event 15, 14, ROUTE_11, 1
+	warp_event 15, 14, LUSTER_SEWERS_MUK_ROOM, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
@@ -58,8 +58,10 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke MUK_A, 100
-	givepoke POLIWAG, 100
+	givepoke MAROWAK, 44
+	givepoke MAROWAK, 44
+	loadvar wPartyMon1Form, MALE | PLAIN_FORM
+	loadvar wPartyMon2Form, FEMALE | ALOLAN_FORM
 
 .items
 	writetext PlayerHouseDebugText6

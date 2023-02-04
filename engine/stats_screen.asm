@@ -435,6 +435,8 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 	ld a, [wCurPartySpecies]
 	ld [wd265], a
 	ld [wCurSpecies], a
+	ld hl, wTempMonForm
+	predef GetVariant
 	xor a
 	ld [hBGMapMode], a
 	call .ClearBox
@@ -790,11 +792,10 @@ OrangePage_:
 	hlcoord 1, 12
 	ld de, .ability
 	call PlaceString
-	ld a, [wTempMonAbility]
-	ld b, a
+	ld hl, wTempMonPersonality
 	ld a, [wTempMonSpecies]
 	ld c, a
-	farcall GetAbility
+	call GetAbility
 	; PlaceString as used in PrintAbility doesn't preserve any register, so push it.
 	push bc
 	predef PrintAbility

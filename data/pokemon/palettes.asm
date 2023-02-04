@@ -496,20 +496,20 @@ MareaniePalette:        INCLUDE "gfx/pokemon/mareanie/normal.pal"
 MareanieShinyPalette:   INCLUDE "gfx/pokemon/mareanie/shiny.pal"
 ToxapexPalette:       	INCLUDE "gfx/pokemon/toxapex/normal.pal"
 ToxapexShinyPalette:  	INCLUDE "gfx/pokemon/toxapex/shiny.pal"
+CursolaPalette:			INCLUDE "gfx/pokemon/cursola/normal.pal"
+CursolaShinyPalette:  	INCLUDE "gfx/pokemon/cursola/shiny.pal"
 WyrdeerPalette:     	INCLUDE "gfx/pokemon/wyrdeer/normal.pal"
 WyrdeerShinyPalette: 	INCLUDE "gfx/pokemon/wyrdeer/shiny.pal"
-Raichu_APalette:         INCLUDE "gfx/pokemon/raichu_a/normal.pal"
-Raichu_AShinyPalette:    INCLUDE "gfx/pokemon/raichu_a/shiny.pal"
-Exeggcute_APalette:		 INCLUDE "gfx/pokemon/exeggcute/normal.pal"
-Exeggcute_AShinyPalette: INCLUDE "gfx/pokemon/exeggcute/shiny.pal"
-Exeggutor_APalette:      INCLUDE "gfx/pokemon/exeggutor_a/normal.pal"
-Exeggutor_AShinyPalette: INCLUDE "gfx/pokemon/exeggutor_a/shiny.pal"
-Marowak_APalette:        INCLUDE "gfx/pokemon/marowak_a/normal.pal"
-Marowak_AShinyPalette:   INCLUDE "gfx/pokemon/marowak_a/shiny.pal"
-Grimer_APalette:         INCLUDE "gfx/pokemon/grimer_a/normal.pal"
-Grimer_AShinyPalette:    INCLUDE "gfx/pokemon/grimer_a/shiny.pal"
-Muk_APalette:         	 INCLUDE "gfx/pokemon/muk_a/normal.pal"
-Muk_AShinyPalette:    	 INCLUDE "gfx/pokemon/muk_a/shiny.pal"
+	INCLUDE "gfx/pokemon/egg/normal.pal"
+	INCLUDE "gfx/pokemon/egg/shiny.pal"
+	INCLUDE "gfx/pokemon/egg/normal.pal"
+	INCLUDE "gfx/pokemon/egg/shiny.pal"
+	INCLUDE "gfx/pokemon/egg/normal.pal"
+	INCLUDE "gfx/pokemon/egg/shiny.pal"
+	INCLUDE "gfx/pokemon/egg/normal.pal"
+	INCLUDE "gfx/pokemon/egg/shiny.pal"
+	INCLUDE "gfx/pokemon/egg/normal.pal"
+	INCLUDE "gfx/pokemon/egg/shiny.pal"
 EggPalette:             INCLUDE "gfx/pokemon/egg/normal.pal"
 EggShinyPalette:        INCLUDE "gfx/pokemon/egg/shiny.pal"
 ; 255
@@ -518,3 +518,30 @@ EggShinyPalette:        INCLUDE "gfx/pokemon/egg/shiny.pal"
 ; 255 shiny
 	RGB 30, 22, 17
 	RGB 16, 14, 19
+	
+
+	RGB 30, 22, 17
+	RGB 16, 14, 19
+
+	RGB 30, 22, 17
+	RGB 16, 14, 19
+	
+	INCLUDE "gfx/pokemon/raichu_a/normal.pal"
+	INCLUDE "gfx/pokemon/raichu_a/shiny.pal"
+	INCLUDE "gfx/pokemon/sandshrew_a/normal.pal"
+	INCLUDE "gfx/pokemon/sandshrew_a/shiny.pal"
+	INCLUDE "gfx/pokemon/sandslash_a/normal.pal"
+	INCLUDE "gfx/pokemon/sandslash_a/shiny.pal"
+	INCLUDE "gfx/pokemon/grimer_a/normal.pal"
+	INCLUDE "gfx/pokemon/grimer_a/shiny.pal"
+	INCLUDE "gfx/pokemon/muk_a/normal.pal"
+	INCLUDE "gfx/pokemon/muk_a/shiny.pal"
+	INCLUDE "gfx/pokemon/exeggcute_a/normal.pal"
+	INCLUDE "gfx/pokemon/exeggcute_a/shiny.pal"
+	INCLUDE "gfx/pokemon/exeggutor_a/normal.pal"
+	INCLUDE "gfx/pokemon/exeggutor_a/shiny.pal"
+	INCLUDE "gfx/pokemon/marowak_a/normal.pal"
+	INCLUDE "gfx/pokemon/marowak_a/shiny.pal"
+	INCLUDE "gfx/pokemon/corsola_g/normal.pal"
+	INCLUDE "gfx/pokemon/corsola_g/shiny.pal"
+	

@@ -245,11 +245,11 @@ IconPointers:
 	dw ToucannonIcon
 	dw MareanieIcon
 	dw ToxapexIcon
+	dw CursolaIcon
 	dw WyrdeerIcon
 	dw Raichu_AIcon
 	dw Exeggcute_AIcon
 	dw Exeggutor_AIcon
 	dw Marowak_AIcon
 	dw Grimer_AIcon
-	dw Muk_AIcon
 	dw EggIcon

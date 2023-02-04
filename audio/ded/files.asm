@@ -153,4 +153,5 @@ ToxapexDEDData::  INCBIN "audio/ded/toxapex.ded"
 ToucannonDEDData:: INCBIN "audio/ded/toucannon.ded"
 
 SECTION "DED 33", ROMX
+CursolaDEDData:: INCBIN "audio/ded/cursola.ded"
 WyrdeerDEDData:: INCBIN "audio/ded/wyrdeer.ded"

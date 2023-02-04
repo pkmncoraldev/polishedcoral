@@ -46,6 +46,7 @@ INCLUDE "home/predef.asm"
 INCLUDE "home/window.asm"
 INCLUDE "home/flag.asm"
 INCLUDE "home/restore_music.asm"
+INCLUDE "data/pokemon/variant_forms.asm"
 
 DisableSpriteUpdates:: ; 0x2ed3
 ; disables overworld sprite updating?
@@ -108,10 +109,11 @@ _Jumptable:
 	ld d, 0
 	add hl, de
 	add hl, de
+	pop de
+IndirectHL::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	pop de
 	jp hl
 
 LoadTileMapToTempTileMap:: ; 309d
@@ -932,8 +934,8 @@ LoadTrainer_continue:: ; 367e
 	ld a, [wEngineBuffer1]
 	call GetFarHalfword
 	ld de, wTempTrainerHeader
-	pop af
-	push af
+;	pop af
+;	push af
 	ld bc, wGenericTempTrainerHeaderEnd - wTempTrainerHeader
 	jr z, .skipCopyingLossPtrAndScriptPtr
 	ld bc, wTempTrainerHeaderEnd - wTempTrainerHeader
@@ -1053,29 +1055,18 @@ GetBaseData:: ; 3856
 
 ; Egg doesn't have BaseData
 	ld a, [wCurSpecies]
-	cp EGG
-	jr z, .egg
-
-; Get BaseData
-	dec a
-	ld bc, BASEMON_STRUCT_LENGTH
+	ld c, a
+	ld a, [wCurForm]
+	ld b, a
+	call GetSpeciesAndFormIndex
+	dec bc
+	ld a, BASEMON_STRUCT_LENGTH
 	ld hl, BaseData
 	rst AddNTimes
 	ld de, wCurBaseData
 	ld bc, BASEMON_STRUCT_LENGTH
 	rst CopyBytes
-	jr .end
-
-.egg
-;; Sprite dimensions
-	ld a, $55 ; 5x5
-	ld [wBasePicSize], a
-
-.end
-	pop hl
-	pop de
-	pop bc
-	ret
+	jp HomePopHlDeBc
 ; 389c
 
 
@@ -1111,17 +1102,13 @@ GetLeadAbility::
 	push de
 	push hl
 	ld c, a
-	ld a, [wPartyMon1Ability]
-	ld b, a
+	ld hl, wPartyMon1Personality
 	call GetAbility
 	ld a, b
-	pop hl
-	pop de
-	pop bc
-	ret
+	jp HomePopHlDeBc
 
 GetAbility::
-; 'b' contains the target ability to check
+; 'hl' contains the target personality to check (ability and form)
 ; 'c' contains the target species
 ; returns ability in b
 ; preserves curspecies and base data
@@ -1132,16 +1119,23 @@ GetAbility::
 	and ABILITIES_OPTMASK
 	jr z, .got_ability
 
+	inc hl
+	ld a, [hld]
+	and FORM_MASK
+	ld b, a
+
 	push hl
 	push bc
-	ld hl, BASEMON_ABILITIES
-	ld b, 0
+
+	push hl
+	call GetSpeciesAndFormIndex
+	dec bc
 	ld a, BASEMON_STRUCT_LENGTH
-	dec c
+	ld hl, BASEMON_ABILITIES
 	rst AddNTimes
 	pop bc
-	push bc
-	ld a, b
+
+	ld a, [bc]
 	and ABILITY_MASK
 	cp ABILITY_1
 	jr z, .got_ability_ptr
@@ -1151,8 +1145,10 @@ GetAbility::
 	inc hl
 .got_ability_ptr
 	ld a, [hl]
+
 	pop bc
 	pop hl
+
 .got_ability
 	ld b, a
 	ret
@@ -1173,11 +1169,7 @@ GetNick:: ; 38a2
 	push de
 	ld bc, PKMN_NAME_LENGTH
 	rst CopyBytes
-	pop de
-
-	pop bc
-	pop hl
-	ret
+	jp HomePopDeBcHl
 ; 38bb
 
 GetNickTradeMon:: ; 38a2
@@ -1192,11 +1184,80 @@ GetNickTradeMon:: ; 38a2
 	push de
 	ld bc, PKMN_NAME_LENGTH
 	rst CopyBytes
-	pop de
+	jp HomePopDeBcHl
 
+HomePopDeBcHl:
+	pop de
 	pop bc
 	pop hl
 	ret
+	
+HomePopHlDeBc:
+	pop hl
+	pop de
+	pop bc
+	ret
+	
+PopBCDEHL::
+	pop bc
+	pop de
+	pop hl
+	ret
+
+GetSpeciesAndFormIndex::
+; input: c = species, b = form
+; output: bc = extended index
+	ld hl, VariantSpeciesAndFormTable - 1
+	ld a, b
+	and FORM_MASK
+	ld b, a
+.next
+	inc hl
+.loop
+	ld a, [hli]
+	and a
+	jr z, .normal
+	cp c
+	jr nz, .next
+	ld a, [hli]
+	cp b
+	jr nz, .loop
+	ld bc, -VariantSpeciesAndFormTable
+	add hl, bc
+	srl h
+	rr l
+	dec hl
+	inc h
+	ld b, h
+	ld c, l
+	ret
+
+.normal
+	ld b, 0
+	ret
+
+GetGenderRatio::
+; 'c' contains the target species
+; returns gender ratio in c
+; preserves curspecies and base data
+	anonbankpush BaseData
+
+.Function:
+	push hl
+	push bc
+	ld hl, BASEMON_GENDER
+	ld b, 0
+	ld a, BASEMON_STRUCT_LENGTH
+	dec c
+	rst AddNTimes
+	pop bc
+	ld a, [hl]
+	pop hl
+	swap a
+	and $f
+	ld c, a
+	ret
+
 
 PrintBCDNumber:: ; 38bb
 ; function to print a BCD (Binary-coded decimal) number

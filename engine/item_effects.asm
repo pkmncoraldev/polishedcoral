@@ -543,72 +543,12 @@ PokeBallEffect: ; e8a2
 	ld [wWildMon], a
 	ld [wCurPartySpecies], a
 	ld [wd265], a
-
-	cp RAICHU_A
-	jr nz, .not_raichu_a
-	ld a, RAICHU
-	jr .cont
-.not_raichu_a
-	cp EXEGGCUTE_A
-	jr nz, .not_exeggcute_a
-	ld a, EXEGGCUTE
-	jr .cont
-.not_exeggcute_a
-	cp EXEGGUTOR_A
-	jr nz, .not_exeggutor_a
-	ld a, EXEGGUTOR
-	jr .cont
-.not_exeggutor_a
-	cp MAROWAK_A
-	jr nz, .not_marowak_a
-	ld a, MAROWAK
-	jr .cont
-.not_marowak_a
-	cp GRIMER_A
-	jr nz, .not_grimer_a
-	ld a, GRIMER
-	jr .cont
-.not_grimer_a
-	cp MUK_A
-	jr nz, .cont
-	ld a, MUK
-.cont
-
 	dec a
 	call CheckCaughtMon
 
 	ld a, c
 	push af
 	ld a, [wd265]
-	cp RAICHU_A
-	jr nz, .not_raichu_a2
-	ld a, RAICHU
-	jr .cont2
-.not_raichu_a2
-	cp EXEGGCUTE_A
-	jr nz, .not_exeggcute_a2
-	ld a, EXEGGCUTE
-	jr .cont2
-.not_exeggcute_a2
-	cp EXEGGUTOR_A
-	jr nz, .not_exeggutor_a2
-	ld a, EXEGGUTOR
-	jr .cont2
-.not_exeggutor_a2
-	cp MAROWAK_A
-	jr nz, .not_marowak_a2
-	ld a, MAROWAK
-	jr .cont2
-.not_marowak_a2
-	cp GRIMER_A
-	jr nz, .not_grimer_a2
-	ld a, GRIMER
-	jr .cont2
-.not_grimer_a2
-	cp MUK_A
-	jr nz, .cont2
-	ld a, MUK
-.cont2
 	ld [wEnemyMonSpecies], a
 	dec a
 	call SetSeenAndCaughtMon
@@ -1033,10 +973,16 @@ LureBallMultiplier:
 MoonBallMultiplier:
 ; multiply catch rate by 4 if mon evolves with moon stone
 	push bc
+	; c = species
 	ld a, [wTempEnemyMonSpecies]
-	dec a
 	ld c, a
-	ld b, 0
+	; b = form
+	ld a, [wEnemyMonForm]
+	and FORM_MASK
+	ld b, a
+	; bc = index
+	call GetSpeciesAndFormIndex
+	dec bc
 	ld hl, EvosAttacksPointers
 	add hl, bc
 	add hl, bc
@@ -1612,6 +1558,10 @@ RareCandy_StatBooster_GetParameters: ; eef5
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
 	ld [wd265], a
+	ld a, MON_FORM
+	call GetPartyParamLocation
+	ld a, [hl]
+	ld [wCurForm], a
 	ld a, MON_LEVEL
 	call GetPartyParamLocation
 	ld a, [hl]

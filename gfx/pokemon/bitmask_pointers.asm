@@ -14,9 +14,9 @@ BitmasksPointers:
 	dw RattataBitmasks
 	dw RaticateBitmasks
 	dw PikachuBitmasks
-	dw RaichuBitmasks
-	dw SandshrewBitmasks
-	dw SandslashBitmasks
+	dw -1 ; see RaichuBitmasksPointers
+	dw -1 ; see SandshrewBitmasksPointers
+	dw -1 ; see SandslashBitmasksPointers
 	dw NidoranFBitmasks
 	dw NidorinaBitmasks
 	dw NidoqueenBitmasks
@@ -56,18 +56,18 @@ BitmasksPointers:
 	dw MagnetonBitmasks
 	dw DoduoBitmasks
 	dw DodrioBitmasks
-	dw GrimerBitmasks
-	dw MukBitmasks
+	dw -1 ; see GrimerBitmasksPointers
+	dw -1 ; see MukBitmasksPointers
 	dw GastlyBitmasks
 	dw HaunterBitmasks
 	dw GengarBitmasks
 	dw OnixBitmasks
 	dw VoltorbBitmasks
 	dw ElectrodeBitmasks
-	dw ExeggcuteBitmasks
-	dw ExeggutorBitmasks
+	dw -1 ; see ExeggcuteBitmasksPointers
+	dw -1 ; see ExeggutorBitmasksPointers
 	dw CuboneBitmasks
-	dw MarowakBitmasks
+	dw -1 ; see MarowakBitmasksPointers
 	dw KoffingBitmasks
 	dw WeezingBitmasks
 	dw ChanseyBitmasks
@@ -140,7 +140,7 @@ BitmasksPointers:
 	dw MagcargoBitmasks
 	dw SwinubBitmasks
 	dw PiloswineBitmasks
-	dw CorsolaBitmasks
+	dw -1 ; see CorsolaBitmasksPointers
 	dw SkarmoryBitmasks
 	dw HoundourBitmasks
 	dw HoundoomBitmasks
@@ -244,12 +244,12 @@ BitmasksPointers:
 	dw ToucannonBitmasks
 	dw MareanieBitmasks
 	dw ToxapexBitmasks
+	dw CursolaBitmasks
 	dw WyrdeerBitmasks
 	dw Raichu_ABitmasks
 	dw ExeggcuteBitmasks
 	dw Exeggutor_ABitmasks
 	dw Marowak_ABitmasks
 	dw Grimer_ABitmasks
-	dw Muk_ABitmasks
 	dw EggBitmasks
 	dw -1 ; unused

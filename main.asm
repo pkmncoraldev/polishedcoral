@@ -226,6 +226,8 @@ BugContest_SetCaughtContestMon: ; e6ce
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
+	ld a, [wOTPartyMon1Form]
+	ld [wCurForm], a
 	call GetBaseData
 	xor a
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -1155,35 +1157,6 @@ DisplayDexEntry:
 	call PrintNum
 ; Check to see if we caught it.  Get out of here if we haven't.
 	ld a, [wd265]
-	cp RAICHU_A
-	jr nz, .not_raichu_a
-	ld a, RAICHU
-	jr .cont
-.not_raichu_a
-	cp EXEGGCUTE_A
-	jr nz, .not_exeggcute_a
-	ld a, EXEGGCUTE
-	jr .cont
-.not_exeggcute_a
-	cp EXEGGUTOR_A
-	jr nz, .not_exeggutor_a
-	ld a, EXEGGUTOR
-	jr .cont
-.not_exeggutor_a
-	cp MAROWAK_A
-	jr nz, .not_marowak_a
-	ld a, MAROWAK
-	jr .cont
-.not_marowak_a
-	cp GRIMER_A
-	jr nz, .not_grimer_a
-	ld a, GRIMER
-	jr .cont
-.not_grimer_a
-	cp MUK_A
-	jr nz, .cont
-	ld a, MUK
-.cont
 	dec a
 	call CheckCaughtMon
 	pop hl
@@ -3349,9 +3322,8 @@ GetGender: ; 50bdd
 	ld a, 1
 	call z, GetSRAMBank
 
-; Gender
+; Gender and form are stored in the same byte
 	ld a, [hl]
-	and GENDER_MASK
 	ld b, a
 
 ; Close SRAM if we were dealing with a sBoxMon.
@@ -3360,20 +3332,19 @@ GetGender: ; 50bdd
 	call z, CloseSRAM
 
 ; We need the gender ratio to do anything with this.
-	push bc
 	ld a, [wCurPartySpecies]
-	dec a
-	ld hl, BASEMON_GENDER
-	ld bc, BASEMON_STRUCT_LENGTH
-	rst AddNTimes
-	pop bc
-
-	ld a, BANK(BaseData)
-	call GetFarByte
-	swap a
-	and $f
+	ld c, a
+	push bc ; b == gender|form
+	ld a, b
+	and FORM_MASK
+	ld b, a
+	call GetGenderRatio ; c = gender ratio
+	pop af ; a = gender|form
+	and GENDER_MASK
+	ld b, a
 
 ; Fixed values ignore the Personality gender value.
+	ld a, c
 	cp GENDERLESS
 	jr z, .Genderless
 	and a ; cp ALL_MALE
@@ -4192,7 +4163,6 @@ InsertDataIntoBoxOrParty: ; 513e0
 	ret
 
 INCLUDE "data/pokemon/base_stats.asm"
-INCLUDE "data/pokemon/names.asm"
 
 
 SECTION "Code 14", ROMX
@@ -4786,6 +4756,7 @@ SECTION "Coral Data 3", ROMX
 
 INCLUDE "engine/titlescreen_cutscene.asm"
 INCLUDE "engine/trainer_card.asm"
+INCLUDE "data/pokemon/names.asm"
 
 
 SECTION "Coral Data 4", ROMX

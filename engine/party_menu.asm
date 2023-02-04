@@ -378,23 +378,32 @@ PlacePartyMonEvoStoneCompatibility:
 	call PartyMenuCheckEgg
 	jr z, .next
 	push hl
-	ld a, b
-	push af
-	ld bc, PARTYMON_STRUCT_LENGTH
+	
+	; d = party index
+	ld d, b
+	; e = species
+	ld a, d
 	ld hl, wPartyMon1Species
+	ld bc, PARTYMON_STRUCT_LENGTH
 	rst AddNTimes
 	ld e, [hl]
-	ld bc, MON_ITEM
-	add hl, bc
-	ld b, [hl]
-	pop af
-	call .GetGenderAndWriteInC
-
-	dec e
-	ld d, 0
+	; b = form
+	ld a, d
+	ld hl, wPartyMon1Form
+	ld bc, PARTYMON_STRUCT_LENGTH
+	rst AddNTimes
+	ld a, [hl]
+	
+	and FORM_MASK
+	ld b, a
+	; c = species
+	ld c, e
+	; bc = index
+	call GetSpeciesAndFormIndex
+	dec bc
 	ld hl, EvosAttacksPointers
-	add hl, de
-	add hl, de
+	add hl, bc
+	add hl, bc
 
 	call .DetermineCompatibility
 	pop hl

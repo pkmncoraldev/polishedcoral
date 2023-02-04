@@ -29,10 +29,10 @@ PicPointers::
 	dba RaticateBackpic
 	dba PikachuFrontpic
 	dba PikachuBackpic
-	dba RaichuFrontpic
-	dba RaichuBackpic
-	dba SandshrewFrontpic
-	dba SandshrewBackpic
+	dbw -1, -1 ; see RaichuPicPointers
+	dbw -1, -1 ; see RaichuPicPointers
+	dbw -1, -1 ; see SandshrewPicPointers
+	dbw -1, -1 ; see SandshrewPicPointers
 	dba SandslashFrontpic
 	dba SandslashBackpic
 	dba NidoranFFrontpic
@@ -113,10 +113,10 @@ PicPointers::
 	dba DoduoBackpic
 	dba DodrioFrontpic
 	dba DodrioBackpic
-	dba GrimerFrontpic
-	dba GrimerBackpic
-	dba MukFrontpic
-	dba MukBackpic
+	dbw -1, -1 ; see GrimerPicPointers
+	dbw -1, -1 ; see GrimerPicPointers
+	dbw -1, -1 ; see MukPicPointers
+	dbw -1, -1 ; see MukPicPointers
 	dba GastlyFrontpic
 	dba GastlyBackpic
 	dba HaunterFrontpic
@@ -129,14 +129,14 @@ PicPointers::
 	dba VoltorbBackpic
 	dba ElectrodeFrontpic
 	dba ElectrodeBackpic
-	dba ExeggcuteFrontpic
-	dba ExeggcuteBackpic
-	dba ExeggutorFrontpic
-	dba ExeggutorBackpic
+	dbw -1, -1 ; see ExeggcutePicPointers
+	dbw -1, -1 ; see ExeggcutePicPointers
+	dbw -1, -1 ; see ExeggutorPicPointers
+	dbw -1, -1 ; see ExeggutorPicPointers
 	dba CuboneFrontpic
 	dba CuboneBackpic
-	dba MarowakFrontpic
-	dba MarowakBackpic
+	dbw -1, -1 ; see MarowakPicPointers
+	dbw -1, -1 ; see MarowakPicPointers
 	dba KoffingFrontpic
 	dba KoffingBackpic
 	dba WeezingFrontpic
@@ -281,8 +281,8 @@ PicPointers::
 	dba SwinubBackpic
 	dba PiloswineFrontpic
 	dba PiloswineBackpic
-	dba CorsolaFrontpic
-	dba CorsolaBackpic
+	dbw -1, -1 ; see CorsolaPic
+	dbw -1, -1 ; see CorsolaPic
 	dba SkarmoryFrontpic
 	dba SkarmoryBackpic
 	dba HoundourFrontpic
@@ -489,6 +489,8 @@ PicPointers::
 	dba MareanieBackpic
 	dba ToxapexFrontpic
 	dba ToxapexBackpic
+	dba CursolaFrontpic
+	dba CursolaBackpic
 	dba WyrdeerFrontpic
 	dba WyrdeerBackpic
 	dba Raichu_AFrontpic
@@ -501,6 +503,4 @@ PicPointers::
 	dba Marowak_ABackpic
 	dba Grimer_AFrontpic
 	dba Grimer_ABackpic
-	dba Muk_AFrontpic
-	dba Muk_ABackpic
 	dba EggPic

@@ -492,7 +492,7 @@ DayCare_GiveEgg: ; 169ac
 	ld hl, wPartyCount
 	ld a, [hl]
 	cp PARTY_LENGTH
-	jr nc, .PartyFull
+	jp nc, .PartyFull
 	inc a
 	ld [hl], a
 
@@ -526,6 +526,8 @@ DayCare_GiveEgg: ; 169ac
 	ld bc, wEggMonEnd - wEggMon
 	rst CopyBytes
 
+	ld a, [wEggMonForm]
+	ld [wCurForm], a
 	call GetBaseData
 	ld a, [wPartyCount]
 	dec a
@@ -768,10 +770,15 @@ DayCare_InitBreeding: ; 16a3b
 	inc a
 
 .LoadWhichBreedmonIsTheMother:
+	; load wCurForm for base data check later
 	ld [wBreedMotherOrNonDitto], a
 	and a
+	ld a, [wBreedMon1Form]
+	ld [wCurForm], a
 	ld a, [wBreedMon1Species]
 	jr z, .GotMother
+	ld a, [wBreedMon2Form]
+	ld [wCurForm], a
 	ld a, [wBreedMon2Species]
 
 .GotMother:
@@ -782,13 +789,14 @@ DayCare_InitBreeding: ; 16a3b
 	ld [wCurPartyLevel], a
 
 	ld a, [wCurPartySpecies]
-	cp NIDORAN_F
-	jr z, .NidoranFamilyMother
-	cp NIDORINA
-	jr z, .NidoranFamilyMother
-	cp NIDOQUEEN
+;	cp NIDORAN_F
+;	jr z, .NidoranFamilyMother
+;	cp NIDORINA
+;	jr z, .NidoranFamilyMother
+;	cp NIDOQUEEN
 	jr nz, .GotEggSpecies
-.NidoranFamilyMother:
+;.NidoranFamilyMother:
+	; random Nidoran offspring
 	call Random
 	cp 1 + 50 percent
 	ld a, NIDORAN_F
@@ -1016,24 +1024,17 @@ DayCare_InitBreeding: ; 16a3b
 	ld [hl], a
 .not_shiny
 	; Gender
+	ld a, [wEggMonSpecies]
+	ld c, a
+	ld a, [wEggMonForm]
+	and FORM_MASK
+	ld b, a
+	call GetGenderRatio
+	; if rnd(0..7) < c: female, else male
 	ld a, 8
 	call RandomRange
-	ld b, a
-	ld a, [wEggMonSpecies]
-	dec a
-	push bc
-	ld hl, BASEMON_GENDER
-	ld bc, BASEMON_STRUCT_LENGTH
-	rst AddNTimes
-	ld a, BANK(BaseData)
-	call GetFarByte
-	swap a
-	and $f
-	pop bc
-	ld c, a
-	ld a, b
-	; if rnd(0..7) < c: female, else male
 	cp c
+	; a = carry (rnd(0..7) < c) ? FEMALE : MALE (0)
 	ld a, FEMALE
 	jr c, .got_gender
 	xor a ; ld a, MALE

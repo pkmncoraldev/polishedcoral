@@ -254,31 +254,31 @@
 	db 6 percent ; encounter rate
 	db 29, GRIMER		;30%
 	db 29, GRIMER		;30%
-	db 29, GRIMER_A		;20%
+	db 29, GRIMER		;20%
 	db 29, GRIMER		;10%
-	db 29, GRIMER_A		;5%
-	db 29, GRIMER_A		;4%
-	db 29, GRIMER_A		;1%
+	db 29, GRIMER		;5%
+	db 29, GRIMER		;4%
+	db 29, GRIMER		;1%
 	
 	map_id LUSTER_SEWERS_B2F
 	db 8 percent ; encounter rate
 	db 29, GRIMER		;30%
 	db 29, GRIMER		;30%
-	db 29, GRIMER_A		;20%
+	db 29, GRIMER		;20%
 	db 29, GRIMER		;10%
-	db 29, GRIMER_A		;5%
-	db 29, GRIMER_A		;4%
-	db 29, GRIMER_A		;1%
+	db 29, GRIMER		;5%
+	db 29, GRIMER		;4%
+	db 29, GRIMER		;1%
 	
 	map_id LUSTER_SEWERS_MUK_ROOM
 	db 15 percent ; encounter rate
 	db 29, GRIMER		;30%
 	db 29, GRIMER		;30%
-	db 29, GRIMER_A		;20%
+	db 29, GRIMER		;20%
 	db 29, GRIMER		;10%
-	db 29, GRIMER_A		;5%
-	db 29, GRIMER_A		;4%
-	db 29, GRIMER_A		;1%
+	db 29, GRIMER		;5%
+	db 29, GRIMER		;4%
+	db 29, GRIMER		;1%
 
 	map_id ROUTE_11
 	db 6 percent ; encounter rate

@@ -81,6 +81,7 @@ GeneratePartyMonStats: ; d906
 	ld e, l
 	ld d, h
 	push hl
+	predef GetVariant
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
 	call GetBaseData
@@ -168,35 +169,6 @@ rept 6 ; EVs
 	inc de
 endr
 	ld a, [wCurPartySpecies]
-	cp RAICHU_A
-	jr nz, .not_raichu_a
-	ld a, RAICHU
-	jr .cont
-.not_raichu_a
-	cp EXEGGCUTE_A
-	jr nz, .not_exeggcute_a
-	ld a, EXEGGCUTE
-	jr .cont
-.not_exeggcute_a
-	cp EXEGGUTOR_A
-	jr nz, .not_exeggutor_a
-	ld a, EXEGGUTOR
-	jr .cont
-.not_exeggutor_a
-	cp MAROWAK_A
-	jr nz, .not_marowak_a
-	ld a, MAROWAK
-	jr .cont
-.not_marowak_a
-	cp GRIMER_A
-	jr nz, .not_grimer_a
-	ld a, GRIMER
-	jr .cont
-.not_grimer_a
-	cp MUK_A
-	jr nz, .cont
-	ld a, MUK
-.cont
 	ld [wd265], a
 	dec a
 	push de
@@ -225,25 +197,15 @@ endr
 	pop hl
 
 ; Random nature from 0 to 24
-; This overwrites the base data struct, so reload it afterwards
-	ld a, [wCurSpecies]
-	push af
-	ld a, [wPartyMon1Ability]
-	ld b, a
+	push hl
+	ld hl, wPartyMon1Personality
 	ld a, [wPartyMon1Species]
 	ld c, a
 	call GetAbility
-	pop af
-	push bc
-	ld [wCurSpecies], a
-	call GetBaseData
-	pop bc
+	pop hl
 	ld a, b
 	cp SYNCHRONIZE
 	jr nz, .no_synchronize
-	call Random
-	and $1
-	jr z, .no_synchronize
 	ld a, [wPartyMon1Nature]
 	and NATURE_MASK
 	jr .got_nature
@@ -335,22 +297,11 @@ endr
 .cute_charm_ok
 	ld b, a
 ; We need the gender ratio to do anything with this.
-	push hl
-	push bc
 	ld a, [wCurPartySpecies]
-	dec a
-	ld hl, BASEMON_GENDER
-	ld bc, BASEMON_STRUCT_LENGTH
-	rst AddNTimes
-	ld a, BANK(BaseData)
-	call GetFarByte
-	swap a
-	and $f
-	pop bc
-	pop hl
 	ld c, a
-	ld a, b
+	call GetGenderRatio
 ; Ratios below the value are female, and vice-versa.
+	ld a, b
 	cp c
 	ld a, FEMALE
 	jr c, .Female
@@ -1099,6 +1050,7 @@ SentPkmnIntoBox: ; de6e
 	inc a
 	ld [de], a
 
+	predef GetVariant
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
 	ld c, a
@@ -1544,6 +1496,10 @@ ComputeNPCTrademonStats: ; e134
 	call GetPartyParamLocation
 	ld a, [hl]
 	ld [wCurSpecies], a
+	ld a, MON_FORM
+	call GetPartyParamLocation
+	ld a, [hl]
+	ld [wCurForm], a
 	call GetBaseData
 	ld a, MON_MAXHP
 	call GetPartyParamLocation
@@ -1571,6 +1527,10 @@ UpdatePkmnStats:
 	call GetPartyParamLocation
 	ld a, [hl]
 	ld [wCurSpecies], a
+	ld a, MON_FORM
+	call GetPartyParamLocation
+	ld a, [hl]
+	ld [wCurForm], a
 	call GetBaseData
 	ld a, MON_LEVEL
 	call GetPartyParamLocation

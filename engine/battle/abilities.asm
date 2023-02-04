@@ -586,6 +586,8 @@ RunContactAbilities:
 	ld a, b
 	cp ROUGH_SKIN
 	jp z, RoughSkinAbility
+	cp PERISH_BODY
+	jp z, PerishBodyAbility
 	
 	call BattleRandom
 	cp 1 + 30 percent
@@ -633,6 +635,38 @@ RoughSkinAbility:
 .damage_ok
 	farcall SubtractHPFromOpponent
 	ld hl, BattleText_HurtByRoughSkin
+	jp StdBattleTextBox
+	
+PerishBodyAbility:
+	ld hl, wPlayerSubStatus1
+	ld de, wEnemySubStatus1
+	bit SUBSTATUS_PERISH, [hl]
+	jr z, .ok
+
+	ld a, [de]
+	bit SUBSTATUS_PERISH, a
+	ret nz
+
+.ok
+	bit SUBSTATUS_PERISH, [hl]
+	jr nz, .enemy
+
+	set SUBSTATUS_PERISH, [hl]
+	ld a, 4
+	ld [wPlayerPerishCount], a
+
+.enemy
+	ld a, [de]
+	bit SUBSTATUS_PERISH, a
+	jr nz, .done
+
+	set SUBSTATUS_PERISH, a
+	ld [de], a
+	ld a, 4
+	ld [wEnemyPerishCount], a
+
+.done
+	ld hl, PerishBodyText
 	jp StdBattleTextBox
 	
 EffectSporeAbility:
@@ -992,6 +1026,8 @@ ApplySpeedAbilities:
 	jr z, .clorophyll
 	cp SAND_RUSH
 	jr z, .sand_rush
+	cp SLUSH_RUSH
+	jr z, .slush_rush
 	cp QUICK_FEET
 	ret nz
 	ld a, BATTLE_VARS_STATUS
@@ -1007,6 +1043,9 @@ ApplySpeedAbilities:
 	jr .weather_ability
 .sand_rush
 	ld h, WEATHER_SANDSTORM
+	jr .weather_ability
+.slush_rush
+	ld h, WEATHER_HAIL
 .weather_ability
 	call GetWeatherAfterCloudNine
 	cp h
@@ -1750,13 +1789,12 @@ RunPostBattleAbilities::
 	ld [wCurPartyMon], a
 
 	push bc
-	ld a, MON_ABILITY
-	call GetPartyParamLocation
-	ld b, [hl]
 	ld a, MON_SPECIES
 	call GetPartyParamLocation
 	ld c, [hl]
-	farcall GetAbility
+	ld a, MON_PERSONALITY
+	call GetPartyParamLocation
+	call GetAbility
 	ld a, b
 	pop bc
 	cp NATURAL_CURE

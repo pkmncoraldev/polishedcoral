@@ -3614,6 +3614,8 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
+	ld a, [wEnemyMonForm]
+	ld [wCurForm], a
 	call GetBaseData
 	ld a, OTPARTYMON
 	ld [wMonType], a
@@ -3685,22 +3687,24 @@ NewEnemyMonStatus: ; 3d834
 ; 3d867
 
 ResetPlayerAbility:
-	ld a, [wBattleMonAbility]
-	ld b, a
+	push hl
+	ld hl, wBattleMonPersonality
 	ld a, [wBattleMonSpecies]
 	ld c, a
 	call GetAbility
+	pop hl
 	ld a, b
 	ld [wPlayerAbility], a
 	xor a
 	ret
 
 ResetEnemyAbility:
-	ld a, [wEnemyMonAbility]
-	ld b, a
+	push hl
+	ld hl, wEnemyMonPersonality
 	ld a, [wEnemyMonSpecies]
 	ld c, a
 	call GetAbility
+	pop hl
 	ld a, b
 	ld [wEnemyAbility], a
 	xor a
@@ -3788,6 +3792,8 @@ InitBattleMon: ; 3da0d
 	ld [wTempBattleMonSpecies], a
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
+	ld a, [wBattleMonForm]
+	ld [wCurForm], a
 	call GetBaseData
 	ld a, [wBaseType1]
 	ld [wBattleMonType1], a
@@ -3880,6 +3886,8 @@ InitEnemyMon: ; 3dabd
 	rst CopyBytes ; copy Level, Status, Unused, HP, MaxHP, Stats
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
+	ld a, [wEnemyMonForm]
+	ld [wCurForm], a
 	call GetBaseData
 	ld hl, wOTPartyMonNicknames
 	ld a, [wCurPartyMon]
@@ -4796,6 +4804,8 @@ endr
 	ld a, [hl]
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
+	ld a, [wPartyMon1Form]
+	ld [wCurForm], a
 	call GetBaseData
 
 	pop hl
@@ -4853,6 +4863,8 @@ DrawEnemyHUD: ; 3e043
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
+	ld a, [wEnemyMonForm]
+	ld [wCurForm], a
 	call GetBaseData
 	ld de, wEnemyMonNick
 	hlcoord 1, 0
@@ -6801,35 +6813,8 @@ LoadEnemyMon: ; 3e8eb
 	ld [wEnemyMonSpecies], a
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
-	cp RAICHU_A
-	jr nz, .not_raichu_a
-	ld a, RAICHU
-	jr .cont
-.not_raichu_a
-	cp EXEGGCUTE_A
-	jr nz, .not_exeggcute_a
-	ld a, EXEGGCUTE
-	jr .cont
-.not_exeggcute_a
-	cp EXEGGUTOR_A
-	jr nz, .not_exeggutor_a
-	ld a, EXEGGUTOR
-	jr .cont
-.not_exeggutor_a
-	cp MAROWAK_A
-	jr nz, .not_marowak_a
-	ld a, MAROWAK
-	jr .cont
-.not_marowak_a
-	cp GRIMER_A
-	jr nz, .not_grimer_a
-	ld a, GRIMER
-	jr .cont
-.not_grimer_a
-	cp MUK_A
-	jr nz, .cont
-	ld a, MUK
-.cont
+	
+	call GenerateWildForm
 
 	; Mark as seen
 	dec a
@@ -7005,7 +6990,7 @@ endc
 	; If the ability is Pickup, 10% chance of holding an item from that instead
 	push hl
 	push bc
-	ld b, a ; still the ability index, 1/2/hidden
+	ld hl, wEnemyMonPersonality
 	ld a, [wCurPartySpecies]
 	ld c, a
 	call GetAbility
@@ -7115,13 +7100,7 @@ endc
 .Female
 	ld b, a
 
-	; Form
-	ld a, [wBattleType]
-	cp BATTLETYPE_SHINY
-	ld a, GYARADOS_RED_FORM
-	jr z, .red_form
-	ld a, 1 ; default form 1
-.red_form
+	ld a, [wCurForm]
 	add b
 	ld [hl], a
 
@@ -7307,8 +7286,7 @@ CheckSleepingTreeMon: ; 3eb38
 	jr nz, .NotSleeping
 
 ; Nor if the Pokémon has Insomnia/Vital Spirit
-	ld a, [wEnemyMonAbility] ; is properly updated at this point, so OK to check
-	ld b, a
+	ld hl, wEnemyMonPersonality ; ability is properly updated at this point, so OK to check
 	ld a, [wTempEnemyMonSpecies]
 	ld c, a
 	call GetAbility
@@ -7340,6 +7318,54 @@ CheckSleepingTreeMon: ; 3eb38
 
 INCLUDE "data/wild/treemons_asleep.asm"
 
+GenerateWildForm:
+	push hl
+	push de
+	push bc
+	ld a, [wWildMonForm]
+	and a
+	jr nz, .done
+	ld a, [wTempEnemyMonSpecies]
+	ld b, a
+	ld hl, WildSpeciesForms
+.loop
+	ld a, [hli]
+	and a
+	jr z, .ok
+	cp b
+	jr z, .ok
+	inc hl
+	inc hl
+	jr .loop
+.ok
+	call IndirectHL
+.done
+	ld [wCurForm], a
+	jp PopBCDEHL
+
+WildSpeciesForms:
+	dbw EXEGGCUTE,	.ExeggcuteForm
+	dbw EXEGGUTOR,	.ExeggcuteForm
+	dbw 0,			.Default
+
+.Default:
+	ld a, PLAIN_FORM
+	ret
+
+.ExeggcuteForm:
+	ld hl, ExeggcuteLandmarks
+	;fallthrough
+.LandmarkForm:
+	ld a, [wCurrentLandmark]
+	ld de, 1
+	call IsInArray
+	jr nc, .Default
+	ld a, ALOLAN_FORM
+	ret
+
+ExeggcuteLandmarks:
+	db ROUTE_1
+	db -1
 
 CheckUnownLetter: ; 3eb75
 ; Return carry if the Unown letter hasn't been unlocked yet
@@ -8010,6 +8036,8 @@ GiveBattleEVs:
 	push bc
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
+	ld a, [wEnemyMonForm]
+	ld [wCurForm], a
 	call GetBaseData
 	; EV yield format:
 	; Byte 1: xxyyzzmm x: HP, y: Atk, z: Def, m: Spd
@@ -8513,6 +8541,8 @@ HandleSafariAngerEatingStatus:
 	; reset the catch rate to normal if bait/rock effects have worn off
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
+	ld a, [wEnemyMonForm]
+	ld [wCurForm], a
 	call GetBaseData
 	ld a, [wBaseCatchRate]
 	ld [wEnemyMonCatchRate], a
@@ -8679,12 +8709,20 @@ DropPlayerSub: ; 3f447
 	push af
 	ld a, [wBattleMonSpecies]
 	ld [wCurPartySpecies], a
+	call GetBattleMonVariant
 	ld de, VTiles2 tile $31
 	predef GetBackpic
 	pop af
 	ld [wCurPartySpecies], a
 	ret
 ; 3f46f
+
+GetBattleMonVariant:
+	ld a, [wCurBattleMon]
+_GetPlayerMonVariant:
+	ld hl, wPartyMon1Form
+	call GetPartyLocation
+	predef_jump GetVariant
 
 GetBackpic_DoAnim: ; 3f46f
 	ld a, [hBattleTurn]
@@ -8715,6 +8753,9 @@ DropEnemySub: ; 3f486
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
+	ld hl, wEnemyMonForm
+	predef GetVariant
+	
 	call GetBaseData
 	ld de, VTiles2
 	predef FrontpicPredef

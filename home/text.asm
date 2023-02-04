@@ -58,7 +58,16 @@ TextBox::
 	call TextBoxBorder
 	pop hl
 	pop bc
-	jr TextBoxPalette
+TextBoxPalette::
+; Fill text box width c height b at hl with pal 7
+	ld de, wAttrMap - wTileMap
+	add hl, de
+	inc b
+	inc b
+	inc c
+	inc c
+	ld a, PAL_BG_PRIORITY_TEXT
+	jr FillBoxWithByte
 
 TextBoxBorder::
 
@@ -107,30 +116,6 @@ TextBoxBorder::
 	jr nz, .loop
 	ret
 
-TextBoxPalette::
-; Fill text box width c height b at hl with pal 7
-	ld de, wAttrMap - wTileMap
-	add hl, de
-	inc b
-	inc b
-	inc c
-	inc c
-	ld a, PAL_BG_PRIORITY_TEXT
-.col
-	push bc
-	push hl
-.row
-	ld [hli], a
-	dec c
-	jr nz, .row
-	pop hl
-	ld de, SCREEN_WIDTH
-	add hl, de
-	pop bc
-	dec b
-	jr nz, .col
-	ret
-
 RadioTerminator::
 	ld hl, .stop
 	ret
@@ -150,7 +135,15 @@ PrintTextNoBox::
 PrintTextBoxText::
 	bccoord TEXTBOX_INNERX, TEXTBOX_INNERY
 PrintTextBoxText2::
-	jp PlaceWholeStringInBoxAtOnce
+PlaceWholeStringInBoxAtOnce::
+	ld a, [wTextBoxFlags]
+	push af
+	set 1, a
+	ld [wTextBoxFlags], a
+	call DoTextUntilTerminator
+	pop af
+	ld [wTextBoxFlags], a
+	ret
 
 SetUpTextBox::
 	push hl
@@ -351,31 +344,24 @@ PlaceMoveTargetsName_5A:
 .EnemyText:
 	db "Foe @"
 
+SpaceText:
+	db " @"
+
 PlaceEnemysName::
 	push de
-
+	ld de, wOTClassName
 	ld a, [wLinkMode]
 	and a
-	jr nz, .linkbattle
-
-	ld de, wOTClassName
+	jr nz, PlaceCommandCharacter
 	call PlaceString
 	ld h, b
 	ld l, c
-	ld de, .SpaceText
+	ld de, SpaceText
 	call PlaceString
 	push bc
 	farcall Battle_GetTrainerName
 	pop hl
 	ld de, wStringBuffer1
-	jr PlaceCommandCharacter
-
-.linkbattle:
-	ld de, wOTClassName
-	jr PlaceCommandCharacter
-
-.SpaceText:
-	db " @"
 
 PlaceCommandCharacter::
 	call PlaceString
@@ -613,18 +599,6 @@ FarString::
 
 	pop af
 	rst Bankswitch
-	ret
-
-PlaceWholeStringInBoxAtOnce::
-	ld a, [wTextBoxFlags]
-	push af
-	set 1, a
-	ld [wTextBoxFlags], a
-
-	call DoTextUntilTerminator
-
-	pop af
-	ld [wTextBoxFlags], a
 	ret
 
 DoTextUntilTerminator::

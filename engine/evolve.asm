@@ -42,15 +42,7 @@ EvolveAfterBattle_MasterLoop:
 	jp z, EvolveAfterBattle_MasterLoop
 
 	ld a, [wEvolutionOldSpecies]
-	dec a
-	ld b, 0
-	ld c, a
-	ld hl, EvosAttacksPointers
-	add hl, bc
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
+	call GetEvosAttacksPointer
 
 	push hl
 	xor a
@@ -216,6 +208,11 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wLinkMode]
 	and a
 	jp nz, .dont_evolve_3
+	
+	ld a, [wCurItem]
+	cp BIG_MALASADA
+	jp nz, .proceed
+	call SetAlolanFormOnEvo
 	jp .proceed
 
 .holding_day
@@ -308,9 +305,11 @@ endr
 ; TR_NITE
 	ld a, [wTimeOfDay]
 	cp DUSK
-	jp z, .proceed
+	jp z, .set_cubone_form
 	cp NITE
 	jp nz, .dont_evolve_3
+.set_cubone_form
+	call SetAlolanFormOnEvo
 	jp .proceed
 
 .cubone_daylight
@@ -332,6 +331,9 @@ endr
 .proceed
 	ld a, [wTempMonLevel]
 	ld [wCurPartyLevel], a
+	ld a, [wTempMonForm]
+	and FORM_MASK
+	ld [wCurForm], a
 	ld a, $1
 	ld [wMonTriedToEvolve], a
 
@@ -432,35 +434,6 @@ endr
 
 	ld a, [wCurSpecies]
 	ld [wd265], a
-	cp RAICHU_A
-	jr nz, .not_raichu_a
-	ld a, RAICHU
-	jr .cont
-.not_raichu_a
-	cp EXEGGCUTE_A
-	jr nz, .not_exeggcute_a
-	ld a, EXEGGCUTE
-	jr .cont
-.not_exeggcute_a
-	cp EXEGGUTOR_A
-	jr nz, .not_exeggutor_a
-	ld a, EXEGGUTOR
-	jr .cont
-.not_exeggutor_a
-	cp MAROWAK_A
-	jr nz, .not_marowak_a
-	ld a, MAROWAK
-	jr .cont
-.not_marowak_a
-	cp GRIMER_A
-	jr nz, .not_grimer_a
-	ld a, GRIMER
-	jr .cont
-.not_grimer_a
-	cp MUK_A
-	jr nz, .cont
-	ld a, MUK
-.cont
 	dec a
 	call SetSeenAndCaughtMon
 
@@ -581,9 +554,13 @@ LearnEvolutionMove:
 	; c = species
 	ld a, [wTempMonSpecies]
 	ld [wCurPartySpecies], a
-	dec a
-	ld b, 0
 	ld c, a
+	; b = form
+	ld a, [wCurForm]
+	ld b, a
+	; bc = index
+	call GetSpeciesAndFormIndex
+	dec bc
 	ld hl, EvolutionMoves
 	add hl, bc
 	ld a, [hl]
@@ -633,15 +610,7 @@ LearnEvolutionMove:
 LearnLevelMoves:
 	ld a, [wTempMonSpecies]
 	ld [wCurPartySpecies], a
-	dec a
-	ld b, 0
-	ld c, a
-	ld hl, EvosAttacksPointers
-	add hl, bc
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
+	call GetEvosAttacksPointer
 
 .skip_evos
 	ld a, [hli]
@@ -709,17 +678,9 @@ FillMoves: ; 424e1
 	push hl
 	push de
 	push bc
-	ld hl, EvosAttacksPointers
-	ld b, 0
 	ld a, [wCurPartySpecies]
-	dec a
-	add a
-	rl b
-	ld c, a
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
+	call GetEvosAttacksPointer
+	
 .GoToAttacks:
 	ld a, [hli]
 	and a
@@ -843,6 +804,7 @@ GetPreEvolution:: ; 42581
 	ld c, 0
 .loop ; For each Pokemon...
 	ld hl, EvosAttacksPointers
+	; this does not need to use the extended GetSpeciesAndFormIndex
 	ld b, 0
 	add hl, bc
 	add hl, bc
@@ -895,3 +857,44 @@ ClearTileMapEvo:
 	bit 7, a
 	ret z
 	jp ApplyTilemapInVBlank
+	
+GetEvosAttacksPointer:
+	push af
+	; b = form
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Form
+	ld bc, PARTYMON_STRUCT_LENGTH
+	rst AddNTimes
+	ld a, [hl]
+	and FORM_MASK
+	ld b, a
+	; c = species
+	pop af
+	ld c, a
+	; bc = index
+	call GetSpeciesAndFormIndex
+	dec bc
+	ld hl, EvosAttacksPointers
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ret
+	
+SetAlolanFormOnEvo:
+	ld a, ALOLAN_FORM
+	ld b, a
+	ld a, [wTempMonForm]
+	and $ff - FORM_MASK
+	or b
+	ld [wTempMonForm], a
+	
+	push hl
+	ld hl, wPartyMon1Form
+	ld a, [wCurPartyMon]
+	call GetPartyLocation
+	ld a, [wTempMonForm]
+	ld [hl], a
+	pop hl
+	ret

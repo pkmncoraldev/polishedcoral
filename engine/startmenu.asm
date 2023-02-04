@@ -1779,12 +1779,20 @@ MoveScreenLoop:
 GetForgottenMoves::
 ; retrieve a list of a mon's forgotten moves, excluding ones beyond level
 ; and moves the mon already knows
+	; c = species
 	ld a, MON_SPECIES
 	call GetPartyParamLocation
 	ld a, [hl]
-	dec a
-	ld b, 0
 	ld c, a
+	; b = form
+	ld a, MON_FORM
+	call GetPartyParamLocation
+	ld a, [hl]
+	and FORM_MASK
+	ld b, a
+	; bc = index
+	call GetSpeciesAndFormIndex
+	dec bc
 	ld hl, EvosAttacksPointers
 	add hl, bc
 	add hl, bc

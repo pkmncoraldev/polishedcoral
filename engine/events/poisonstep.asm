@@ -77,12 +77,11 @@ DoPoisonStep:: ; 505da
 ; check for immunity or poison heal
 	push hl
 	push bc
-	ld a, MON_ABILITY
-	call GetPartyParamLocation
-	ld b, [hl]
 	ld a, MON_SPECIES
 	call GetPartyParamLocation
 	ld c, [hl]
+	ld a, MON_ABILITY
+	call GetPartyParamLocation
 	call GetAbility
 	ld a, b
 	pop bc
@@ -91,6 +90,8 @@ DoPoisonStep:: ; 505da
 	jr z, .heal_poison
 	cp POISON_HEAL
 	ret z ; keep poison, but don't deal damage for it
+	cp MAGIC_GUARD
+	ret z
 
 ; check if 1 HP
 	ld a, b

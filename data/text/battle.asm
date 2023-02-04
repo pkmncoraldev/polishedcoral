@@ -1428,6 +1428,15 @@ StartPerishText: ; 0x816c2
 	prompt
 ; 0x816e4
 
+PerishBodyText:
+	text "<USER>'s"
+	line "PERISH BODY"
+	cont "activated!"
+
+	para "Both #MON will"
+	line "faint in 3 turns!"
+	prompt
+
 SandstormBrewedText: ; 0x816e4
 	text "A SANDSTORM"
 	line "brewed!"

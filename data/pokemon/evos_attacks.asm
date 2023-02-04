@@ -2621,13 +2621,14 @@ PiloswineEvosAttacks:
 CorsolaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
 	db 4, DEFENSE_CURL_HARDEN_WITHDRAW
 	db 8, WATER_GUN
 	db 10, SOFTBOILED_MILK_DRINK_RECOVER
 	db 13, PROTECT
 	db 17, ANCIENTPOWER
 	db 20, BUBBLE_BEAM
-	db 23, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db 23, FLAIL
 	db 27, SAFEGUARD
 	db 29, BARRIER_IRON_DEFENSE_ACID_ARMOR
 	db 31, ROCK_BLAST
@@ -4282,6 +4283,28 @@ ToxapexEvosAttacks:
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
+CursolaEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, PERISH_SONG
+	db 1, TACKLE_SCRATCH_POUND
+	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db 4, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 8, WATER_GUN
+	db 10, SOFTBOILED_MILK_DRINK_RECOVER
+	db 13, PROTECT
+	db 17, ANCIENTPOWER
+	db 20, HEX
+	db 23, CURSE
+	db 27, SAFEGUARD
+	db 29, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 31, ROCK_BLAST
+	db 35, ENDURE
+	db 38, NIGHT_SHADE
+	db 41, POWER_GEM
+	db 45, EARTH_POWER
+	db 48, FLAIL
+	db 0 ; no more level-up moves
+	
 WyrdeerEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PSYSHOCK
@@ -4323,6 +4346,17 @@ Raichu_AEvosAttacks:
 	db 1, WILD_CHARGE
 	db 1, LIGHT_SCREEN
 	db 1, THUNDER
+	db 0 ; no more level-up moves
+	
+Sandshrew_AEvosAttacks:
+	db EVOLVE_LEVEL, 22, SANDSLASH
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+
+Sandslash_AEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
 Grimer_AEvosAttacks:
@@ -4405,4 +4439,26 @@ Marowak_AEvosAttacks:
 	db 43, SWORDS_DANCE
 	db 49, FLARE_BLITZ
 	db 53, EARTHQUAKE
+	db 0 ; no more level-up moves
+	
+Corsola_GEvosAttacks:
+	db EVOLVE_LEVEL, 38, CURSOLA
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db 4, DEFENSE_CURL_HARDEN_WITHDRAW
+	db 8, WATER_GUN
+	db 10, SOFTBOILED_MILK_DRINK_RECOVER
+	db 13, PROTECT
+	db 17, ANCIENTPOWER
+	db 20, HEX
+	db 23, CURSE
+	db 27, SAFEGUARD
+	db 29, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 31, ROCK_BLAST
+	db 35, ENDURE
+	db 38, NIGHT_SHADE
+	db 41, POWER_GEM
+	db 45, EARTH_POWER
+	db 48, FLAIL
 	db 0 ; no more level-up moves

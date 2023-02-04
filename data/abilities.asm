@@ -137,6 +137,8 @@ AbilityNames:
 	dw StrongJaw
 	dw Refrigerate
 	dw Merciless
+	dw SlushRush
+	dw PerishBody
 
 NoAbility:     db "-","-","-","@"
 Stench:        db "STENCH@"
@@ -276,6 +278,8 @@ RoughSkin:	   db "ROUGH SKIN@"
 StrongJaw:	   db "STRONG JAW@"
 Refrigerate:   db "REFRIGERATE@"
 Merciless:	   db "MERCILESS@"
+SlushRush:	   db "SLUSH RUSH@"
+PerishBody:	   db "PERISH BODY@"
 
 
 AbilityDescriptions:
@@ -417,6 +421,8 @@ AbilityDescriptions:
 	dw StrongJawDescription
 	dw RefrigerateDescription
 	dw MercilessDescription
+	dw SlushRushDescription
+	dw PerishBodyDescription
 
 NoAbilityDescription:
 	db    "Abilities are"
@@ -960,3 +966,11 @@ RefrigerateDescription:
 MercilessDescription:
 	db    "Always crit if"
 	next1 "foe is poisoned.@"
+	
+SlushRushDescription:
+	db    "Boosts its SPEED"
+	next1 "in hail.@"
+	
+PerishBodyDescription:
+	db    "Activates perish"
+	next1 "count on touch.@"

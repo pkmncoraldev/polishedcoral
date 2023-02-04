@@ -2,6 +2,14 @@ RaichuAnimationExtraPointers:
 	dw RaichuAnimationExtra
 	dw Raichu_AAnimationExtra
 	
+SandshrewAnimationExtraPointers:
+	dw SandshrewAnimationExtra
+	dw Sandshrew_AAnimationExtra
+	
+SandslashAnimationExtraPointers:
+	dw SandslashAnimationExtra
+	dw Sandslash_AAnimationExtra
+	
 GrimerAnimationExtraPointers:
 	dw GrimerAnimationExtra
 	dw Grimer_AAnimationExtra
@@ -21,3 +29,7 @@ ExeggutorAnimationExtraPointers:
 MarowakAnimationExtraPointers:
 	dw MarowakAnimationExtra
 	dw Marowak_AAnimationExtra
+	
+CorsolaAnimationExtraPointers:
+	dw CorsolaAnimationExtra
+	dw Corsola_GAnimationExtra

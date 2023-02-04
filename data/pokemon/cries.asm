@@ -261,13 +261,13 @@ CryHeaders::
 	mon_cry	TOUCANNON, 	ToucannonDEDData 	; Toucannon
 	mon_cry MAREANIE,	MareanieDEDData		; Mareanie
 	mon_cry TOXAPEX,	ToxapexDEDData		; Toxapex
+	mon_cry CURSOLA,	CursolaDEDData		; Cursola
 	mon_cry WYRDEER,    WyrdeerDEDData		; Wyrdeer
 	mon_cry CRY_RAICHU,      $0ee,  $088 	; Raichu_A
 	mon_cry CRY_DODUO,   	 $000,  $100 	; Exeggcute_A
 	mon_cry CRY_EXEGGUTOR,   $000,  $100 	; Exeggutor_A
 	mon_cry CRY_ODDISH,      $04f,  $0e0 	; Marowak_A
 	mon_cry CRY_GRIMER,      $000,  $100    ; Grimer_A
-	mon_cry CRY_MUK,         $0ef,  $17f    ; Muk_A
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg
 	mon_cry CRY_NIDORAN_M,      0,     0 	; 255
 	
@@ -519,12 +519,12 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Toucannon - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Mareanie - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Toxapex - PLACEHOLDER
+	mon_cry CRY_MAGCARGO,    $081,  $0ff 	; Cursola
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Wyrdeer - PLACEHOLDER
 	mon_cry CRY_RAICHU,      $0ee,  $088 	; Raichu_A
 	mon_cry CRY_DODUO,   	 $000,  $100 	; Exeggcute_A
 	mon_cry CRY_EXEGGUTOR,   $000,  $100 	; Exeggutor_A
 	mon_cry CRY_ODDISH,      $04f,  $0e0 	; Marowak_A
 	mon_cry CRY_GRIMER,      $000,  $100    ; Grimer_A
-	mon_cry CRY_MUK,         $0ef,  $17f    ; Muk_A
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg
 	mon_cry CRY_NIDORAN_M,      0,     0 	; 255

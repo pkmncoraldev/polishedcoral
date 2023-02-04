@@ -15,8 +15,8 @@ AnimationExtraPointers:
 	dw RaticateAnimationExtra
 	dw PikachuAnimationExtra
 	dw -1 ; see RaichuAnimationExtraPointers
-	dw SandshrewAnimationExtra
-	dw SandslashAnimationExtra
+	dw -1 ; see SandshrewAnimationExtraPointers
+	dw -1 ; see SandslashAnimationExtraPointers
 	dw NidoranFAnimationExtra
 	dw NidorinaAnimationExtra
 	dw NidoqueenAnimationExtra
@@ -140,7 +140,7 @@ AnimationExtraPointers:
 	dw MagcargoAnimationExtra
 	dw SwinubAnimationExtra
 	dw PiloswineAnimationExtra
-	dw CorsolaAnimationExtra
+	dw -1 ; see CorsolaAnimationExtraPointers
 	dw SkarmoryAnimationExtra
 	dw HoundourAnimationExtra
 	dw HoundoomAnimationExtra
@@ -244,12 +244,12 @@ AnimationExtraPointers:
 	dw ToucannonAnimationExtra
 	dw MareanieAnimationExtra
 	dw ToxapexAnimationExtra
+	dw CursolaAnimationExtra
 	dw WyrdeerAnimationExtra
 	dw Raichu_AAnimationExtra
 	dw ExeggcuteAnimationExtra
 	dw Exeggutor_AAnimationExtra
 	dw Marowak_AAnimationExtra
 	dw Grimer_AAnimationExtra
-	dw Muk_AAnimationExtra
 	dw EggAnimationExtra
 	dw -1 ; unused

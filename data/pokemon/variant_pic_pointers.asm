@@ -1,3 +1,21 @@
+RaichuPicPointers::
+	dba RaichuFrontpic
+	dba RaichuBackpic
+	dba Raichu_AFrontpic
+	dba Raichu_ABackpic
+
+SandshrewPicPointers::
+	dba SandshrewFrontpic
+	dba SandshrewBackpic
+	dba Sandshrew_AFrontpic
+	dba Sandshrew_ABackpic
+	
+SandslashPicPointers::
+	dba SandslashFrontpic
+	dba SandslashBackpic
+	dba Sandslash_AFrontpic
+	dba Sandslash_ABackpic
+
 GrimerPicPointers::
 	dba GrimerFrontpic
 	dba GrimerBackpic
@@ -9,12 +27,6 @@ MukPicPointers::
 	dba MukBackpic
 	dba Muk_AFrontpic
 	dba Muk_ABackpic
-
-RaichuPicPointers::
-	dba RaichuFrontpic
-	dba RaichuBackpic
-	dba Raichu_AFrontpic
-	dba Raichu_ABackpic
 
 ExeggcutePicPointers::
 	dba ExeggcuteFrontpic
@@ -33,3 +45,9 @@ MarowakPicPointers::
 	dba MarowakBackpic
 	dba Marowak_AFrontpic
 	dba Marowak_ABackpic
+
+CorsolaPicPointers::
+	dba CorsolaFrontpic
+	dba CorsolaBackpic
+	dba Corsola_GFrontpic
+	dba Corsola_GBackpic

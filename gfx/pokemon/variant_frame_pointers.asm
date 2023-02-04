@@ -2,6 +2,14 @@ RaichuFramesPointers:
 	dw RaichuFrames
 	dw Raichu_AFrames
 	
+SandshrewFramesPointers:
+	dw SandshrewFrames
+	dw Sandshrew_AFrames
+	
+SandslashFramesPointers:
+	dw SandslashFrames
+	dw Sandslash_AFrames
+	
 GrimerFramesPointers:
 	dw GrimerFrames
 	dw Grimer_AFrames
@@ -21,3 +29,7 @@ ExeggutorFramesPointers:
 MarowakFramesPointers:
 	dw MarowakFrames
 	dw Marowak_AFrames
+	
+CorsolaFramesPointers:
+	dw CorsolaFrames
+	dw Corsola_GFrames

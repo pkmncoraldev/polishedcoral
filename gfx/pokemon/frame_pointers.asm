@@ -15,8 +15,8 @@ FramesPointers:
 	dw RaticateFrames
 	dw PikachuFrames
 	dw -1 ; see RaichuFramesPointers
-	dw SandshrewFrames
-	dw SandslashFrames
+	dw -1 ; see SandshrewFramesPointers
+	dw -1 ; see SandslashFramesPointers
 	dw NidoranFFrames
 	dw NidorinaFrames
 	dw NidoqueenFrames
@@ -140,7 +140,7 @@ FramesPointers:
 	dw MagcargoFrames
 	dw SwinubFrames
 	dw PiloswineFrames
-	dw CorsolaFrames
+	dw -1 ; see CorsolaFramesPointers
 	dw SkarmoryFrames
 	dw HoundourFrames
 	dw HoundoomFrames
@@ -244,12 +244,12 @@ FramesPointers:
 	dw ToucannonFrames
 	dw MareanieFrames
 	dw ToxapexFrames
+	dw CursolaFrames
 	dw WyrdeerFrames
 	dw Raichu_AFrames
 	dw ExeggcuteFrames
 	dw Exeggutor_AFrames
 	dw Marowak_AFrames
 	dw Grimer_AFrames
-	dw Muk_AFrames
 	dw EggFrames
 	dw -1 ; unused

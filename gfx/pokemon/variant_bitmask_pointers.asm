@@ -1,6 +1,14 @@
 RaichuBitmasksPointers:
 	dw RaichuBitmasks
 	dw Raichu_ABitmasks
+	
+SandshrewBitmasksPointers:
+	dw SandshrewBitmasks
+	dw Sandshrew_ABitmasks
+	
+SandslashBitmasksPointers:
+	dw SandslashBitmasks
+	dw Sandslash_ABitmasks
 
 GrimerBitmasksPointers:
 	dw GrimerBitmasks
@@ -21,3 +29,7 @@ ExeggutorBitmasksPointers:
 MarowakBitmasksPointers:
 	dw MarowakBitmasks
 	dw Marowak_ABitmasks
+	
+CorsolaBitmasksPointers:
+	dw CorsolaBitmasks
+	dw Corsola_GBitmasks

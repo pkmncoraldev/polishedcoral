@@ -126,6 +126,7 @@
 	dw UmbreonPokedexEntry
 	dw MurkrowPokedexEntry
 	dw SlowkingPokedexEntry
+	dw GirafarigPokedexEntry
 	dw PinecoPokedexEntry
 	dw ForretressPokedexEntry
 	dw GligarPokedexEntry
@@ -246,3 +247,4 @@
 	dw MareaniePokedexEntry
 	dw ToxapexPokedexEntry
 	dw WyrdeerPokedexEntry
+	dw FarigirafPokedexEntry

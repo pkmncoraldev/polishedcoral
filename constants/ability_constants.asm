@@ -140,6 +140,8 @@
 	const MERCILESS
 	const SLUSH_RUSH
 	const PERISH_BODY
+	const CUD_CHEW
+	const ARMOR_TAIL
 NUM_ABILITIES EQU const_value
 
 ABILITY_1      EQU %00100000

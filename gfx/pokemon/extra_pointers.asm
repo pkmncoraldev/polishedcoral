@@ -125,6 +125,7 @@ AnimationExtraPointers:
 	dw UmbreonAnimationExtra
 	dw MurkrowAnimationExtra
 	dw SlowkingAnimationExtra
+	dw GirafarigAnimationExtra
 	dw PinecoAnimationExtra
 	dw ForretressAnimationExtra
 	dw GligarAnimationExtra
@@ -246,10 +247,9 @@ AnimationExtraPointers:
 	dw ToxapexAnimationExtra
 	dw CursolaAnimationExtra
 	dw WyrdeerAnimationExtra
+	dw FarigirafAnimationExtra
 	dw Raichu_AAnimationExtra
 	dw ExeggcuteAnimationExtra
 	dw Exeggutor_AAnimationExtra
-	dw Marowak_AAnimationExtra
-	dw Grimer_AAnimationExtra
 	dw EggAnimationExtra
 	dw -1 ; unused

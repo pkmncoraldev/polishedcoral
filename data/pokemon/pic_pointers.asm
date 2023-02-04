@@ -251,6 +251,8 @@ PicPointers::
 	dba MurkrowBackpic
 	dba SlowkingFrontpic
 	dba SlowkingBackpic
+	dba GirafarigFrontpic
+	dba GirafarigBackpic
 	dba PinecoFrontpic
 	dba PinecoBackpic
 	dba ForretressFrontpic
@@ -493,14 +495,12 @@ PicPointers::
 	dba CursolaBackpic
 	dba WyrdeerFrontpic
 	dba WyrdeerBackpic
+	dba FarigirafFrontpic
+	dba FarigirafBackpic
 	dba Raichu_AFrontpic
 	dba Raichu_ABackpic
 	dba ExeggcuteFrontpic
 	dba ExeggcuteBackpic
 	dba Exeggutor_AFrontpic
 	dba Exeggutor_ABackpic
-	dba Marowak_AFrontpic
-	dba Marowak_ABackpic
-	dba Grimer_AFrontpic
-	dba Grimer_ABackpic
 	dba EggPic

@@ -129,6 +129,7 @@ EvosAttacksPointers:: ; 0x425b1
 	dw UmbreonEvosAttacks
 	dw MurkrowEvosAttacks
 	dw SlowkingEvosAttacks
+	dw GirafarigEvosAttacks
 	dw PinecoEvosAttacks
 	dw ForretressEvosAttacks
 	dw GligarEvosAttacks
@@ -250,8 +251,7 @@ EvosAttacksPointers:: ; 0x425b1
 	dw ToxapexEvosAttacks
 	dw CursolaEvosAttacks
 	dw WyrdeerEvosAttacks
-	dw -1
-	dw -1
+	dw FarigirafEvosAttacks
 	dw -1
 	dw -1
 	dw -1

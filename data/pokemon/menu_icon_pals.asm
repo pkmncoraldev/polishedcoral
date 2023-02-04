@@ -129,6 +129,7 @@ MenuMonIconColors::
 	iconpal GRAY, BLUE ; UMBREON
 	iconpal BLUE, PURPLE ; MURKROW
 	iconpal PINK, PURPLE ; SLOWKING
+	iconpal BROWN, BLUE ; GIRAFARIG
 	iconpal GRAY, RED ; PINECO
 	iconpal PURPLE, BROWN ; FORRETRESS
 	iconpal PURPLE, GRAY ; GLIGAR
@@ -250,11 +251,10 @@ MenuMonIconColors::
 	iconpal BLUE, RED ; TOXAPEX
 	iconpal PURPLE, GRAY ; CURSOLA
 	iconpal GRAY, GREEN ; WYRDEER
+	iconpal BROWN, RED ; FARIGIRAF
 	iconpal BROWN, BROWN ; RAICHU_A
 	iconpal PINK, TEAL ; EXEGGCUTE_A
 	iconpal GREEN, RED ; EXEGGUTOR_A
-	iconpal GRAY, BLUE ; MAROWAK_A
-	iconpal GREEN, PURPLE ; GRIMER_A
 	iconpal RED, BLUE ; EGG
 
 	iconpal PINK, TEAL ; EXEGGCUTE_A

@@ -142,6 +142,7 @@ CryHeaders::
 	mon_cry CRY_EEVEE,   	-$0e9,  $0f0 	; Umbreon
 	mon_cry CRY_MARILL,     -$01f,  $180 	; Murkrow
 	mon_cry CRY_SLOWKING,    $104,  $200 	; Slowking
+	mon_cry CRY_PORYGON2,    $041,  $200	; Girafarig
 	mon_cry CRY_SLOWKING,    $080,  $100 	; Pineco
 	mon_cry CRY_SLOWKING,    $000,  $180 	; Forretress
 	mon_cry CRY_GLIGAR,     -$102,  $100 	; Gligar
@@ -263,11 +264,10 @@ CryHeaders::
 	mon_cry TOXAPEX,	ToxapexDEDData		; Toxapex
 	mon_cry CURSOLA,	CursolaDEDData		; Cursola
 	mon_cry WYRDEER,    WyrdeerDEDData		; Wyrdeer
+	mon_cry CRY_PORYGON2,    $041,  $200	; Farigiraf - PLACEHOLDER
 	mon_cry CRY_RAICHU,      $0ee,  $088 	; Raichu_A
 	mon_cry CRY_DODUO,   	 $000,  $100 	; Exeggcute_A
 	mon_cry CRY_EXEGGUTOR,   $000,  $100 	; Exeggutor_A
-	mon_cry CRY_ODDISH,      $04f,  $0e0 	; Marowak_A
-	mon_cry CRY_GRIMER,      $000,  $100    ; Grimer_A
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg
 	mon_cry CRY_NIDORAN_M,      0,     0 	; 255
 	
@@ -400,6 +400,7 @@ CryHeaders2::
 	mon_cry CRY_EEVEE,   	-$0e9,  $0f0 	; Umbreon
 	mon_cry CRY_MARILL,     -$01f,  $180 	; Murkrow
 	mon_cry CRY_SLOWKING,    $104,  $200 	; Slowking
+	mon_cry CRY_PORYGON2,    $041,  $200	; Girafarig
 	mon_cry CRY_SLOWKING,    $080,  $100 	; Pineco
 	mon_cry CRY_SLOWKING,    $000,  $180 	; Forretress
 	mon_cry CRY_GLIGAR,     -$102,  $100 	; Gligar
@@ -521,10 +522,9 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Toxapex - PLACEHOLDER
 	mon_cry CRY_MAGCARGO,    $081,  $0ff 	; Cursola
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Wyrdeer - PLACEHOLDER
+	mon_cry CRY_PORYGON2,    $041,  $200	; Farigiraf - PLACEHOLDER
 	mon_cry CRY_RAICHU,      $0ee,  $088 	; Raichu_A
 	mon_cry CRY_DODUO,   	 $000,  $100 	; Exeggcute_A
 	mon_cry CRY_EXEGGUTOR,   $000,  $100 	; Exeggutor_A
-	mon_cry CRY_ODDISH,      $04f,  $0e0 	; Marowak_A
-	mon_cry CRY_GRIMER,      $000,  $100    ; Grimer_A
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg
 	mon_cry CRY_NIDORAN_M,      0,     0 	; 255

@@ -126,6 +126,7 @@ IconPointers:
 	dw UmbreonIcon
 	dw MurkrowIcon
 	dw SlowkingIcon
+	dw GirafarigIcon
 	dw PinecoIcon
 	dw ForretressIcon
 	dw GligarIcon
@@ -247,9 +248,8 @@ IconPointers:
 	dw ToxapexIcon
 	dw CursolaIcon
 	dw WyrdeerIcon
+	dw FarigirafIcon
 	dw Raichu_AIcon
 	dw Exeggcute_AIcon
 	dw Exeggutor_AIcon
-	dw Marowak_AIcon
-	dw Grimer_AIcon
 	dw EggIcon

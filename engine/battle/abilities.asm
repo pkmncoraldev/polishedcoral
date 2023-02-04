@@ -767,6 +767,8 @@ CheckNullificationAbilities:
 	call GetOpponentAbilityAfterMoldBreaker
 	cp DAMP
 	jr z, .damp
+	cp ARMOR_TAIL
+	jr z, .armor_tail
 	ld b, a
 	ld hl, .NullificationAbilityTypes
 .loop
@@ -796,6 +798,13 @@ CheckNullificationAbilities:
 	cp EFFECT_EXPLOSION
 	jr z, .ability_ok
 	ret
+	
+.armor_tail
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld hl, PriorityMoves
+	call IsInArray
+	ret nc
 
 .ability_ok
 	; Set wAttackMissed to 3 (means ability immunity kicked in), and wTypeMatchup
@@ -1178,6 +1187,7 @@ HandleAbilities:
 	jp UserAbilityJumptable
 
 EndTurnAbilities:
+	dbw CUD_CHEW, CudChewAbility
 	dbw HARVEST, HarvestAbility
 	dbw MOODY, MoodyAbility
 	dbw PICKUP, PickupAbility
@@ -1189,12 +1199,12 @@ HarvestAbility:
 ; At end of turn, re-harvest an used up Berry (100% in sun, 50% otherwise)
 	call GetWeatherAfterCloudNine
 	cp WEATHER_SUN
-	jr z, .ok
+	jr z, CudChewAbility
 	call BattleRandom
 	and 1
 	ret z
-
-.ok
+;fallthrough
+CudChewAbility:
 	; Don't do anything if we have an item already
 	farcall GetUserItem
 	ld a, [hl]

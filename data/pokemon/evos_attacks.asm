@@ -2308,6 +2308,12 @@ SlowkingEvosAttacks:
 	db 46, SAFEGUARD
 	db 0 ; no more level-up moves
 
+GirafarigEvosAttacks:
+	db EVOLVE_LEVEL, 31, FARIGIRAF
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+
 PinecoEvosAttacks:
 	db EVOLVE_LEVEL, 31, FORRETRESS
 	db 0 ; no more evolutions
@@ -2450,11 +2456,6 @@ ScizorEvosAttacks:
 	db 49, NIGHT_SLASH
 	db 53, AIR_SLASH
 	db 58, SWORDS_DANCE
-	db 0 ; no more level-up moves
-
-ShuckleEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 
 HeracrossEvosAttacks:
@@ -4323,6 +4324,11 @@ WyrdeerEvosAttacks:
 	db 49, SWAGGER
 	db 55, DOUBLE_EDGE
 	db 62, MEGAHORN
+	db 0 ; no more level-up moves
+	
+FarigirafEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
 EggEvosAttacks::

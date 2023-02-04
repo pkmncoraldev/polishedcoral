@@ -126,6 +126,7 @@
 	const UMBREON
 	const MURKROW
 	const SLOWKING
+	const GIRAFARIG
 	const PINECO
 	const FORRETRESS
 	const GLIGAR
@@ -247,12 +248,11 @@
 	const TOXAPEX ;748
 	const CURSOLA
 	const WYRDEER
+	const FARIGIRAF
 NUM_SPECIES EQU const_value - 1
 	const UNUSED_1
 	const UNUSED_2
 	const UNUSED_3
-	const UNUSED_4
-	const UNUSED_5
 NUM_POKEMON EQU const_value +- 1
 	const EGG        ; $fe
 	const CANCEL     ; $ff

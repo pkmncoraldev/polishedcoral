@@ -139,6 +139,8 @@ AbilityNames:
 	dw Merciless
 	dw SlushRush
 	dw PerishBody
+	dw CudChew
+	dw ArmorTail
 
 NoAbility:     db "-","-","-","@"
 Stench:        db "STENCH@"
@@ -280,6 +282,8 @@ Refrigerate:   db "REFRIGERATE@"
 Merciless:	   db "MERCILESS@"
 SlushRush:	   db "SLUSH RUSH@"
 PerishBody:	   db "PERISH BODY@"
+CudChew:	   db "CUD CHEW@"
+ArmorTail:	   db "ARMOR TAIL@"
 
 
 AbilityDescriptions:
@@ -423,6 +427,8 @@ AbilityDescriptions:
 	dw MercilessDescription
 	dw SlushRushDescription
 	dw PerishBodyDescription
+	dw CudChewDescription
+	dw ArmorTailDescription
 
 NoAbilityDescription:
 	db    "Abilities are"
@@ -708,7 +714,7 @@ SnowCloakDescription:
 
 GluttonyDescription:
 	db    "Encourages early"
-	next1 "Berry use.@"
+	next1 "BERRY use.@"
 
 AngerPointDescription:
 	db    "Maxes ATTACK after"
@@ -856,8 +862,9 @@ MultiscaleDescription:
 	next1 "when HP is full.@"
 
 HarvestDescription:
+CudChewDescription:
 	db    "May recreate a"
-	next1 "Berry after use.@"
+	next1 "BERRY after use.@"
 
 MoodyDescription:
 	db    "Raises a stat and"
@@ -974,3 +981,7 @@ SlushRushDescription:
 PerishBodyDescription:
 	db    "Activates perish"
 	next1 "count on touch.@"
+	
+ArmorTailDescription:
+	db    "Priority moves"
+	next1 "will fail.@"

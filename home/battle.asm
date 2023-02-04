@@ -535,6 +535,20 @@ DynamicPowerMoves::
 	db SONIC_BOOM
 	db ELECTRO_BALL
 	db -1
+	
+PriorityMoves::
+; used by Armor Tail
+	db FAKE_OUT
+	db PROTECT
+	db ENDURE
+	db EXTREMESPEED
+	db AQUA_JET
+	db SUCKER_PUNCH
+	db BULLET_PUNCH
+	db ICE_SHARD
+	db MACH_PUNCH
+	db QUICK_ATTACK
+	db -1
 
 ; These routines return z if the user is of the given type
 CheckIfTargetIsGrassType::

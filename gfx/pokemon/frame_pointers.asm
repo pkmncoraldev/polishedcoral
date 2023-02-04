@@ -125,6 +125,7 @@ FramesPointers:
 	dw UmbreonFrames
 	dw MurkrowFrames
 	dw SlowkingFrames
+	dw GirafarigFrames
 	dw PinecoFrames
 	dw ForretressFrames
 	dw GligarFrames
@@ -246,10 +247,9 @@ FramesPointers:
 	dw ToxapexFrames
 	dw CursolaFrames
 	dw WyrdeerFrames
+	dw FarigirafFrames
 	dw Raichu_AFrames
 	dw ExeggcuteFrames
 	dw Exeggutor_AFrames
-	dw Marowak_AFrames
-	dw Grimer_AFrames
 	dw EggFrames
 	dw -1 ; unused

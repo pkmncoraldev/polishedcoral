@@ -125,6 +125,7 @@ BitmasksPointers:
 	dw UmbreonBitmasks
 	dw MurkrowBitmasks
 	dw SlowkingBitmasks
+	dw GirafarigBitmasks
 	dw PinecoBitmasks
 	dw ForretressBitmasks
 	dw GligarBitmasks
@@ -246,10 +247,9 @@ BitmasksPointers:
 	dw ToxapexBitmasks
 	dw CursolaBitmasks
 	dw WyrdeerBitmasks
+	dw FarigirafBitmasks
 	dw Raichu_ABitmasks
 	dw ExeggcuteBitmasks
 	dw Exeggutor_ABitmasks
-	dw Marowak_ABitmasks
-	dw Grimer_ABitmasks
 	dw EggBitmasks
 	dw -1 ; unused

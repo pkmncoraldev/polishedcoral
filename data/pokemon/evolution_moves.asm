@@ -125,6 +125,7 @@ EvolutionMoves::
 	db PURSUIT                              ; UMBREON
 	db NO_MOVE                              ; MURKROW
 	db NO_MOVE                              ; SLOWKING
+	db NO_MOVE                              ; GIRAFARIG
 	db NO_MOVE                              ; PINECO
 	db BODY_SLAM                            ; FORRETRESS
 	db NO_MOVE                              ; GLIGAR
@@ -246,11 +247,10 @@ EvolutionMoves::
 	db NO_MOVE                              ; TOXAPEX
 	db NO_MOVE                              ; CURSOLA
 	db PSYSHOCK                             ; WYRDEER
+	db NO_MOVE                              ; FARIGIRAF
 	db NO_MOVE	                            ; UNUSED_1
 	db NO_MOVE                              ; UNUSED_2
 	db NO_MOVE          	                ; UNUSED_3
-	db NO_MOVE		                        ; UNUSED_4
-	db NO_MOVE                              ; UNUSED_5
 	db NO_MOVE                              ; EGG
 	
 	db NO_MOVE                              ;

@@ -109,7 +109,10 @@ GetCryIndex:: ; 381e
 	dec a
 	ld c, a
 	ld b, 0
-	ld a, [wExtendedSpace]
+	ld a, BANK(wExtendedSpace)
+	ld hl, wExtendedSpace
+	call GetFarWRAMByte
+	; value is now in a
 	cp 0
 	jr z, .no_extended_space
 	ld hl, CryHeaders

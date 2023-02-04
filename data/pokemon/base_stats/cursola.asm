@@ -8,8 +8,8 @@
 	db NO_ITEM ; item 2
 	dn FEMALE_75, 3 ; gender, step cycles to hatch
 	dn 7, 7 ; frontpic dimensions
-	db PERISH_BODY ; ability 1
-	db PERISH_BODY ; ability 2
+	db WEAK_ARMOR ; ability 1
+	db WEAK_ARMOR ; ability 2
 	db PERISH_BODY ; hidden ability
 	db FAST ; growth rate
 	dn AMPHIBIAN, INVERTEBRATE ; egg groups

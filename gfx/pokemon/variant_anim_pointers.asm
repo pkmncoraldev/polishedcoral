@@ -10,6 +10,14 @@ SandslashAnimationPointers:
 	dw SandslashAnimation
 	dw Sandslash_AAnimation
 
+MeowthAnimationPointers:
+	dw MeowthAnimation
+	dw Meowth_AAnimation
+
+PersianAnimationPointers:
+	dw PersianAnimation
+	dw Persian_AAnimation
+
 GrimerAnimationPointers:
 	dw GrimerAnimation
 	dw Grimer_AAnimation

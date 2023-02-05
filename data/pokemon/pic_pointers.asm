@@ -33,8 +33,8 @@ PicPointers::
 	dbw -1, -1 ; see RaichuPicPointers
 	dbw -1, -1 ; see SandshrewPicPointers
 	dbw -1, -1 ; see SandshrewPicPointers
-	dba SandslashFrontpic
-	dba SandslashBackpic
+	dbw -1, -1 ; see SandslashPicPointers
+	dbw -1, -1 ; see SandslashPicPointers
 	dba NidoranFFrontpic
 	dba NidoranFBackpic
 	dba NidorinaFrontpic
@@ -65,10 +65,10 @@ PicPointers::
 	dba GloomBackpic
 	dba VileplumeFrontpic
 	dba VileplumeBackpic
-	dba MeowthFrontpic
-	dba MeowthBackpic
-	dba PersianFrontpic
-	dba PersianBackpic
+	dbw -1, -1 ; see MeowthPicPointers
+	dbw -1, -1 ; see MeowthPicPointers
+	dbw -1, -1 ; see PersianPicPointers
+	dbw -1, -1 ; see PersianPicPointers
 	dba GrowlitheFrontpic
 	dba GrowlitheBackpic
 	dba ArcanineFrontpic

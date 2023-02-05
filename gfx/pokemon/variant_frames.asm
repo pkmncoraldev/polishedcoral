@@ -10,6 +10,14 @@ SandslashsFrames:
 SandslashFrames:  INCLUDE "gfx/pokemon/sandslash/frames.asm"
 Sandslash_AFrames: INCLUDE "gfx/pokemon/sandslash_a/frames.asm"
 
+MeowthsFrames:
+MeowthFrames:  INCLUDE "gfx/pokemon/meowth/frames.asm"
+Meowth_AFrames: INCLUDE "gfx/pokemon/meowth_a/frames.asm"
+
+PersiansFrames:
+PersianFrames:  INCLUDE "gfx/pokemon/persian/frames.asm"
+Persian_AFrames: INCLUDE "gfx/pokemon/persian_a/frames.asm"
+
 GrimersFrames:
 GrimerFrames:  INCLUDE "gfx/pokemon/grimer/frames.asm"
 Grimer_AFrames: INCLUDE "gfx/pokemon/grimer_a/frames.asm"

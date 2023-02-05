@@ -10,6 +10,14 @@ SandslashAnimations:
 SandslashAnimation:  INCLUDE "gfx/pokemon/sandslash/anim0.asm"
 Sandslash_AAnimation: INCLUDE "gfx/pokemon/sandslash_a/anim0.asm"
 
+MeowthAnimations:
+MeowthAnimation:  INCLUDE "gfx/pokemon/meowth/anim0.asm"
+Meowth_AAnimation: INCLUDE "gfx/pokemon/meowth_a/anim0.asm"
+
+PersianAnimations:
+PersianAnimation:  INCLUDE "gfx/pokemon/persian/anim0.asm"
+Persian_AAnimation: INCLUDE "gfx/pokemon/persian_a/anim0.asm"
+
 GrimerAnimations:
 GrimerAnimation:  INCLUDE "gfx/pokemon/grimer/anim0.asm"
 Grimer_AAnimation: INCLUDE "gfx/pokemon/grimer_a/anim0.asm"

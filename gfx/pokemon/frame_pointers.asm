@@ -32,8 +32,8 @@ FramesPointers:
 	dw OddishFrames
 	dw GloomFrames
 	dw VileplumeFrames
-	dw MeowthFrames
-	dw PersianFrames
+	dw -1 ; see MeowthFramesPointers
+	dw -1 ; see PersianFramesPointers
 	dw GrowlitheFrames
 	dw ArcanineFrames
 	dw PoliwagFrames

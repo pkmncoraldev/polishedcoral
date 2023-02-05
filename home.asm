@@ -46,7 +46,6 @@ INCLUDE "home/predef.asm"
 INCLUDE "home/window.asm"
 INCLUDE "home/flag.asm"
 INCLUDE "home/restore_music.asm"
-INCLUDE "data/pokemon/variant_forms.asm"
 
 DisableSpriteUpdates:: ; 0x2ed3
 ; disables overworld sprite updating?
@@ -1207,6 +1206,10 @@ PopBCDEHL::
 GetSpeciesAndFormIndex::
 ; input: c = species, b = form
 ; output: bc = extended index
+	ld a, [hROMBank]
+	push af
+	ld a, BANK(VariantSpeciesAndFormTable)
+	rst Bankswitch
 	ld hl, VariantSpeciesAndFormTable - 1
 	ld a, b
 	and FORM_MASK
@@ -1230,10 +1233,14 @@ GetSpeciesAndFormIndex::
 	inc h
 	ld b, h
 	ld c, l
+	pop af
+	rst Bankswitch
 	ret
 
 .normal
 	ld b, 0
+	pop af
+	rst Bankswitch
 	ret
 
 GetGenderRatio::

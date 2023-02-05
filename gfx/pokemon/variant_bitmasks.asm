@@ -7,6 +7,12 @@ Sandshrew_ABitmasks: INCLUDE "gfx/pokemon/sandshrew_a/bitmask.asm"
 SandslashBitmasks:  INCLUDE "gfx/pokemon/sandslash/bitmask.asm"
 Sandslash_ABitmasks: INCLUDE "gfx/pokemon/sandslash_a/bitmask.asm"
 
+MeowthBitmasks:  INCLUDE "gfx/pokemon/meowth/bitmask.asm"
+Meowth_ABitmasks: INCLUDE "gfx/pokemon/meowth_a/bitmask.asm"
+
+PersianBitmasks:  INCLUDE "gfx/pokemon/persian/bitmask.asm"
+Persian_ABitmasks: INCLUDE "gfx/pokemon/persian_a/bitmask.asm"
+
 GrimerBitmasks:  INCLUDE "gfx/pokemon/grimer/bitmask.asm"
 Grimer_ABitmasks: INCLUDE "gfx/pokemon/grimer_a/bitmask.asm"
 

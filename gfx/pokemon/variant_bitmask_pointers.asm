@@ -10,6 +10,14 @@ SandslashBitmasksPointers:
 	dw SandslashBitmasks
 	dw Sandslash_ABitmasks
 
+MeowthBitmasksPointers:
+	dw MeowthBitmasks
+	dw Meowth_ABitmasks
+	
+PersianBitmasksPointers:
+	dw PersianBitmasks
+	dw Persian_ABitmasks
+
 GrimerBitmasksPointers:
 	dw GrimerBitmasks
 	dw Grimer_ABitmasks

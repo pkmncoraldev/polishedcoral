@@ -4365,6 +4365,44 @@ Sandslash_AEvosAttacks:
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
+Meowth_AEvosAttacks:
+	db EVOLVE_LEVEL, 28, PERSIAN
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 6, BITE
+	db 10, FAKE_OUT
+	db 15, PAY_DAY
+	db 17, SCREECH
+	db 22, FEINT_ATTACK
+	db 25, TAUNT
+	db 30, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db 33, NIGHT_SLASH
+	db 38, NASTY_PLOT
+	db 41, SWAGGER
+	db 46, NIGHT_SLASH
+	db 50, PLAY_ROUGH
+	db 0 ; no more level-up moves
+
+Persian_AEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, POWER_GEM
+	db 1, TACKLE_SCRATCH_POUND
+	db 1, GROWL
+	db 1, BITE
+	db 1, FAKE_OUT
+	db 1, PAY_DAY
+	db 1, SCREECH
+	db 1, FEINT_ATTACK
+	db 1, TAUNT
+	db 32, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db 37, NIGHT_SLASH
+	db 44, NASTY_PLOT
+	db 49, SWAGGER
+	db 56, NIGHT_SLASH
+	db 61, PLAY_ROUGH
+	db 0 ; no more level-up moves
+	
 Grimer_AEvosAttacks:
 	db EVOLVE_LEVEL, 38, MUK
 	db 0 ; no more evolutions

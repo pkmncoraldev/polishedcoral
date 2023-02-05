@@ -262,6 +262,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw Raichu_AEvosAttacks
 	dw Sandshrew_AEvosAttacks
 	dw Sandslash_AEvosAttacks
+	dw Meowth_AEvosAttacks
+	dw Persian_AEvosAttacks
 	dw Grimer_AEvosAttacks
 	dw Muk_AEvosAttacks
 	dw ExeggcuteEvosAttacks

@@ -16,6 +16,18 @@ SandslashPicPointers::
 	dba Sandslash_AFrontpic
 	dba Sandslash_ABackpic
 
+MeowthPicPointers::
+	dba MeowthFrontpic
+	dba MeowthBackpic
+	dba Meowth_AFrontpic
+	dba Meowth_ABackpic
+
+PersianPicPointers::
+	dba PersianFrontpic
+	dba PersianBackpic
+	dba Persian_AFrontpic
+	dba Persian_ABackpic
+
 GrimerPicPointers::
 	dba GrimerFrontpic
 	dba GrimerBackpic

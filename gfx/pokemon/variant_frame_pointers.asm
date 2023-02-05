@@ -10,6 +10,14 @@ SandslashFramesPointers:
 	dw SandslashFrames
 	dw Sandslash_AFrames
 	
+MeowthFramesPointers:
+	dw MeowthFrames
+	dw Meowth_AFrames
+	
+PersianFramesPointers:
+	dw PersianFrames
+	dw Persian_AFrames
+	
 GrimerFramesPointers:
 	dw GrimerFrames
 	dw Grimer_AFrames

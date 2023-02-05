@@ -662,6 +662,10 @@ CursolaFrontpic:          INCBIN "gfx/pokemon/cursola/front.2bpp.lz"
 CursolaBackpic:           INCBIN "gfx/pokemon/cursola/back.2bpp.lz"
 FarigirafFrontpic:        INCBIN "gfx/pokemon/farigiraf/front.2bpp.lz"
 FarigirafBackpic:         INCBIN "gfx/pokemon/farigiraf/back.2bpp.lz"
+Meowth_AFrontpic:         INCBIN "gfx/pokemon/meowth_a/front.2bpp.lz"
+Meowth_ABackpic:          INCBIN "gfx/pokemon/meowth_a/back.2bpp.lz"
+Persian_AFrontpic:        INCBIN "gfx/pokemon/persian_a/front.2bpp.lz"
+Persian_ABackpic:         INCBIN "gfx/pokemon/persian_a/back.2bpp.lz"
 EggPic:                   INCBIN "gfx/pokemon/egg/front.2bpp.lz"
 
 

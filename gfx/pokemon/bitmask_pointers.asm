@@ -32,8 +32,8 @@ BitmasksPointers:
 	dw OddishBitmasks
 	dw GloomBitmasks
 	dw VileplumeBitmasks
-	dw MeowthBitmasks
-	dw PersianBitmasks
+	dw -1 ; see MeowthBitmasksPointers
+	dw -1 ; see PersianBitmasksPointers
 	dw GrowlitheBitmasks
 	dw ArcanineBitmasks
 	dw PoliwagBitmasks

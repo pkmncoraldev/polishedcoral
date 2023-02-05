@@ -10,6 +10,14 @@ SandslashAnimationExtraPointers:
 	dw SandslashAnimationExtra
 	dw Sandslash_AAnimationExtra
 	
+MeowthAnimationExtraPointers:
+	dw MeowthAnimationExtra
+	dw Meowth_AAnimationExtra
+	
+PersianAnimationExtraPointers:
+	dw PersianAnimationExtra
+	dw Persian_AAnimationExtra
+	
 GrimerAnimationExtraPointers:
 	dw GrimerAnimationExtra
 	dw Grimer_AAnimationExtra

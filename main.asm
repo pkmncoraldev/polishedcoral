@@ -4163,7 +4163,7 @@ InsertDataIntoBoxOrParty: ; 513e0
 	ret
 
 INCLUDE "data/pokemon/base_stats.asm"
-
+INCLUDE "data/pokemon/variant_forms.asm"
 
 SECTION "Code 14", ROMX
 

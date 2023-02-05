@@ -7,6 +7,12 @@ Sandshrew_AAnimationExtra: INCLUDE "gfx/pokemon/sandshrew_a/anim1.asm"
 SandslashAnimationExtra:  INCLUDE "gfx/pokemon/sandslash/anim1.asm"
 Sandslash_AAnimationExtra: INCLUDE "gfx/pokemon/sandslash_a/anim1.asm"
 
+MeowthAnimationExtra:  INCLUDE "gfx/pokemon/meowth/anim1.asm"
+Meowth_AAnimationExtra: INCLUDE "gfx/pokemon/meowth_a/anim1.asm"
+
+PersianAnimationExtra:  INCLUDE "gfx/pokemon/persian/anim1.asm"
+Persian_AAnimationExtra: INCLUDE "gfx/pokemon/persian_a/anim1.asm"
+
 GrimerAnimationExtra:  INCLUDE "gfx/pokemon/grimer/anim1.asm"
 Grimer_AAnimationExtra: INCLUDE "gfx/pokemon/grimer_a/anim1.asm"
 

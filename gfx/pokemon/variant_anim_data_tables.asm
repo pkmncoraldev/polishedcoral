@@ -2,6 +2,8 @@ VariantSpeciesTable:
 	db RAICHU
 	db SANDSHREW
 	db SANDSLASH
+	db MEOWTH
+	db PERSIAN
 	db GRIMER
 	db MUK
 	db EXEGGCUTE
@@ -11,9 +13,11 @@ VariantSpeciesTable:
 	db -1
 
 VariantAnimPointerTable:
-	dbbww RAICHU, BANK(RaichuAnimations), RaichuAnimationPointers, RaichuAnimationExtraPointers
+	dbbww RAICHU, BANK(PersianAnimations), PersianAnimationPointers, PersianAnimationExtraPointers
 	dbbww SANDSHREW, BANK(SandshrewAnimations), SandshrewAnimationPointers, SandshrewAnimationExtraPointers
 	dbbww SANDSLASH, BANK(SandslashAnimations), SandslashAnimationPointers, SandslashAnimationExtraPointers
+	dbbww MEOWTH, BANK(MeowthAnimations), MeowthAnimationPointers, MeowthAnimationExtraPointers
+	dbbww PERSIAN, BANK(PersianAnimations), PersianAnimationPointers, PersianAnimationExtraPointers
 	dbbww GRIMER, BANK(GrimerAnimations), GrimerAnimationPointers, GrimerAnimationExtraPointers
 	dbbww MUK, BANK(MukAnimations), MukAnimationPointers, MukAnimationExtraPointers
 	dbbww EXEGGCUTE, BANK(ExeggcuteAnimations), ExeggcuteAnimationPointers, ExeggcuteAnimationExtraPointers
@@ -23,9 +27,11 @@ VariantAnimPointerTable:
 	dbbww -1, BANK(PicAnimations), AnimationPointers, AnimationExtraPointers
 
 VariantFramesPointerTable:
-	dbbba RAICHU, BANK(RaichusFrames), RaichuFramesPointers
+	dbbba RAICHU, BANK(PersiansFrames), PersianFramesPointers
 	dbbba SANDSHREW, BANK(SandshrewsFrames), SandshrewFramesPointers
 	dbbba SANDSLASH, BANK(SandslashsFrames), SandslashFramesPointers
+	dbbba MEOWTH, BANK(MeowthsFrames), MeowthFramesPointers
+	dbbba PERSIAN, BANK(PersiansFrames), PersianFramesPointers
 	dbbba GRIMER, BANK(GrimersFrames), GrimerFramesPointers
 	dbbba MUK, BANK(MuksFrames), MukFramesPointers
 	dbbba EXEGGCUTE, BANK(ExeggcutesFrames), ExeggcuteFramesPointers
@@ -35,9 +41,11 @@ VariantFramesPointerTable:
 	dbbba -1, BANK(PokemonFrames), FramesPointers
 
 VariantBitmasksPointerTable:
-	dbba RAICHU, RaichuBitmasksPointers
+	dbba RAICHU, PersianBitmasksPointers
 	dbba SANDSHREW, SandshrewBitmasksPointers
 	dbba SANDSLASH, SandslashBitmasksPointers
+	dbba MEOWTH, MeowthBitmasksPointers
+	dbba PERSIAN, PersianBitmasksPointers
 	dbba GRIMER, GrimerBitmasksPointers
 	dbba MUK, MukBitmasksPointers
 	dbba EXEGGCUTE, ExeggcuteBitmasksPointers

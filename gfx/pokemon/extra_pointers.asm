@@ -32,8 +32,8 @@ AnimationExtraPointers:
 	dw OddishAnimationExtra
 	dw GloomAnimationExtra
 	dw VileplumeAnimationExtra
-	dw MeowthAnimationExtra
-	dw PersianAnimationExtra
+	dw -1 ; see MeowthAnimationExtraPointers
+	dw -1 ; see PersianAnimationExtraPointers
 	dw GrowlitheAnimationExtra
 	dw ArcanineAnimationExtra
 	dw PoliwagAnimationExtra

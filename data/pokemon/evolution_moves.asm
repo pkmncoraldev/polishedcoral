@@ -258,6 +258,8 @@ EvolutionMoves::
 	db PSYCHIC_M                            ; RAICHU_A
 	db NO_MOVE                              ; SANDSHREW_A
 	db NO_MOVE                              ; SANDSLASH_A
+	db NO_MOVE                              ; MEOWTH_A
+	db POWER_GEM                            ; PERSIAN_A
 	db NO_MOVE                              ; GRIMER_A
 	db NO_MOVE                              ; MUK_A
 	db NO_MOVE                              ; EXEGGCUTE_A

@@ -246,5 +246,6 @@
 	dw ToucannonPokedexEntry
 	dw MareaniePokedexEntry
 	dw ToxapexPokedexEntry
+	dw CursolaPokedexEntry
 	dw WyrdeerPokedexEntry
 	dw FarigirafPokedexEntry

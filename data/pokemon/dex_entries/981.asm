@@ -1,10 +1,10 @@
-; BulbasaurPokedexEntry: ; 0x181695
-	db "???@" ; species name
-	dw 0, 0 ; height, width
+; FarigirafPokedexEntry: ; 0x181695
+	db "LONG NECK@" ; species name
+	dw 1006, 3527 ; height, width
 
-	db   "UNFINISHED@"
-	next ""
-	next ""
-	page "UNFINISHED"
-	next ""
-	next "@"
+	db   "The hardened head"
+	next "of its tail will"
+	next "protect the head"
+	page "of the main body"
+	next "as it headbutts"
+	next "enemies.@"

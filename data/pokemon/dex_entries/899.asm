@@ -1,10 +1,10 @@
-; BulbasaurPokedexEntry: ; 0x181695
-	db "???@" ; species name
-	dw 0, 0 ; height, width
+; WyrdeerPokedexEntry: ; 0x181695
+	db "BIG HORN@" ; species name
+	dw 511, 2097 ; height, width
 
-	db   "UNFINISHED@"
-	next ""
-	next ""
-	page "UNFINISHED"
-	next ""
-	next "@"
+	db   "The fur shed from"
+	next "its beard retains"
+	next "heat well and is"
+	page "a highly useful"
+	next "material for"
+	next "winter clothing.@"

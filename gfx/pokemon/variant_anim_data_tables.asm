@@ -13,7 +13,7 @@ VariantSpeciesTable:
 	db -1
 
 VariantAnimPointerTable:
-	dbbww RAICHU, BANK(PersianAnimations), PersianAnimationPointers, PersianAnimationExtraPointers
+	dbbww RAICHU, BANK(RaichuAnimations), RaichuAnimationPointers, RaichuAnimationExtraPointers
 	dbbww SANDSHREW, BANK(SandshrewAnimations), SandshrewAnimationPointers, SandshrewAnimationExtraPointers
 	dbbww SANDSLASH, BANK(SandslashAnimations), SandslashAnimationPointers, SandslashAnimationExtraPointers
 	dbbww MEOWTH, BANK(MeowthAnimations), MeowthAnimationPointers, MeowthAnimationExtraPointers
@@ -27,7 +27,7 @@ VariantAnimPointerTable:
 	dbbww -1, BANK(PicAnimations), AnimationPointers, AnimationExtraPointers
 
 VariantFramesPointerTable:
-	dbbba RAICHU, BANK(PersiansFrames), PersianFramesPointers
+	dbbba RAICHU, BANK(RaichusFrames), RaichuFramesPointers
 	dbbba SANDSHREW, BANK(SandshrewsFrames), SandshrewFramesPointers
 	dbbba SANDSLASH, BANK(SandslashsFrames), SandslashFramesPointers
 	dbbba MEOWTH, BANK(MeowthsFrames), MeowthFramesPointers
@@ -41,7 +41,7 @@ VariantFramesPointerTable:
 	dbbba -1, BANK(PokemonFrames), FramesPointers
 
 VariantBitmasksPointerTable:
-	dbba RAICHU, PersianBitmasksPointers
+	dbba RAICHU, RaichuBitmasksPointers
 	dbba SANDSHREW, SandshrewBitmasksPointers
 	dbba SANDSLASH, SandslashBitmasksPointers
 	dbba MEOWTH, MeowthBitmasksPointers

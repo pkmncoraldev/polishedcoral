@@ -680,7 +680,7 @@ PokedexShow1:
 	call StartRadioStation
 .loop
 	call Random
-	cp NUM_SPECIES
+	cp NUM_POKEMON
 	jr nc, .loop
 	ld c, a
 	push bc

@@ -249,14 +249,15 @@
 	const CURSOLA
 	const WYRDEER
 	const FARIGIRAF
-NUM_SPECIES EQU const_value - 1
+NUM_POKEMON EQU const_value - 1
 	const UNUSED_1
 	const UNUSED_2
 	const UNUSED_3
-NUM_POKEMON EQU const_value +- 1
-	const EGG        ; $fe
-	const CANCEL     ; $ff
+	const UNUSED_4
+	const UNUSED_5
+	const EGG        ; $ff
 
+CANCEL EQU -1
 ; form values
 
 ; generic

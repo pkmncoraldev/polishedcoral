@@ -1255,10 +1255,10 @@ wEnemySplitHandleMonFaint:: ds 1
 
 	ds 8 ; unused
 
-wPokedexCaught:: flag_array NUM_SPECIES
+wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::
 
-wPokedexSeen:: flag_array NUM_SPECIES
+wPokedexSeen:: flag_array NUM_POKEMON
 wEndPokedexSeen::
 
 wUnownDex:: ds NUM_UNOWN

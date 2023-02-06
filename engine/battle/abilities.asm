@@ -1959,9 +1959,14 @@ DisguiseAbility::
 	and a
 	jr z, .enemy
 	ld a, [wBattleMonForm]
+	and FORM_MASK
 	cp 1
 	ret nz
-	ld a, 2
+	ld a, BROKEN_FORM
+	ld b, a
+	ld a, [wBattleMonForm]
+	and $ff - FORM_MASK
+	or b
 	ld [wBattleMonForm], a
 	
 	call SwitchTurn
@@ -1980,10 +1985,17 @@ DisguiseAbility::
 	farcall LoadAnim
 	call SwitchTurn
 	
+	ld hl, wPartyMon1Form
+	ld a, [wCurBattleMon]
+	ld [wCurPartyMon], a
+	call GetPartyLocation
+	ld a, [wBattleMonForm]
+	ld [hl], a
 	scf
 	ret
 .enemy
 	ld a, [wEnemyMonForm]
+	and FORM_MASK
 	cp 1
 	ret nz
 	ld a, 2
@@ -2004,8 +2016,98 @@ DisguiseAbility::
 	ld a, TRANSFORM_SPLASH
 	farcall LoadAnim
 	call SwitchTurn
-	
 	scf
 	ret
 	
+HandleDisguiseAfterBattle:
+	ld hl, wPartyMon1Personality
+	ld a, [wPartyMon1Species]
+	ld c, a
+	call GetAbility
+	ld a, b
+	cp DISGUISE_A
+	jr nz, .skip1
+	ld a, PLAIN_FORM
+	ld b, a
+	ld a, [wPartyMon1Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wPartyMon1Form
+	ld [hl], a
+.skip1
+	ld hl, wPartyMon2Personality
+	ld a, [wPartyMon2Species]
+	ld c, a
+	call GetAbility
+	ld a, b
+	cp DISGUISE_A
+	jr nz, .skip2
+	ld a, PLAIN_FORM
+	ld b, a
+	ld a, [wPartyMon2Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wPartyMon2Form
+	ld [hl], a
+.skip2
+	ld hl, wPartyMon3Personality
+	ld a, [wPartyMon3Species]
+	ld c, a
+	call GetAbility
+	ld a, b
+	cp DISGUISE_A
+	jr nz, .skip3
+	ld a, PLAIN_FORM
+	ld b, a
+	ld a, [wPartyMon3Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wPartyMon3Form
+	ld [hl], a
+.skip3
+	ld hl, wPartyMon4Personality
+	ld a, [wPartyMon4Species]
+	ld c, a
+	call GetAbility
+	ld a, b
+	cp DISGUISE_A
+	jr nz, .skip4
+	ld a, PLAIN_FORM
+	ld b, a
+	ld a, [wPartyMon4Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wPartyMon4Form
+	ld [hl], a
+.skip4
+	ld hl, wPartyMon5Personality
+	ld a, [wPartyMon5Species]
+	ld c, a
+	call GetAbility
+	ld a, b
+	cp DISGUISE_A
+	jr nz, .skip5
+	ld a, PLAIN_FORM
+	ld b, a
+	ld a, [wPartyMon5Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wPartyMon5Form
+	ld [hl], a
+.skip5
+	ld hl, wPartyMon6Personality
+	ld a, [wPartyMon6Species]
+	ld c, a
+	call GetAbility
+	ld a, b
+	cp DISGUISE_A
+	ret nz
+	ld a, PLAIN_FORM
+	ld b, a
+	ld a, [wPartyMon6Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wPartyMon6Form
+	ld [hl], a
+	ret
 	

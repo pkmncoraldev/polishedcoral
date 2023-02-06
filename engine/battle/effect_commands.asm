@@ -4932,6 +4932,9 @@ TakeDamage:
 	jp RefreshBattleHuds
 .disguise
 	pop bc
+	ld hl, DisguiseText
+	call StdBattleTextBox
+	
 	jr .did_no_damage
 ; 35de0
 

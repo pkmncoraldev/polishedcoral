@@ -1168,6 +1168,11 @@ SubFadedText: ; 0x813d0
 	prompt
 ; 0x813e6
 
+DisguiseText:
+	text "<TARGET>'s"
+	line "DISGUISE broke!"
+	prompt
+
 MimicLearnedMoveText:
 	text "<USER>"
 	line "learned"

@@ -58,10 +58,8 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke GIRAFARIG, 44
-	givepoke FARIGIRAF, 44
-;	loadvar wPartyMon1Form, MALE | PLAIN_FORM
-;	loadvar wPartyMon2Form, FEMALE | ALOLAN_FORM
+	givepoke RAICHU, 44
+	givepoke RAICHU, ALOLAN_FORM, 44
 
 .items
 	writetext PlayerHouseDebugText6

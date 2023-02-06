@@ -2685,6 +2685,8 @@ Script_givepoke:
 	call GetScriptByte
 	ld [wCurPartySpecies], a
 	call GetScriptByte
+	ld [wCurForm], a
+	call GetScriptByte
 	ld [wCurPartyLevel], a
 	call GetScriptByte
 	ld [wCurItem], a

@@ -81,7 +81,7 @@ GeneratePartyMonStats: ; d906
 	ld e, l
 	ld d, h
 	push hl
-	predef GetVariant
+
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
 	call GetBaseData
@@ -310,7 +310,11 @@ endr
 	ld b, a
 
 ; Form 1
-	ld a, 1
+	ld a, [wCurForm]
+	cp 0
+	jr nz, .got_form
+	inc a ;no form becomes plain form
+.got_form
 	add b
 	ld [wDVAndPersonalityBuffer + 4], a
 

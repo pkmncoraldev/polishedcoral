@@ -42,6 +42,9 @@ EvolveAfterBattle_MasterLoop:
 	jp z, EvolveAfterBattle_MasterLoop
 
 	ld a, [wEvolutionOldSpecies]
+	ld c, a
+	ld a, [wCurForm]
+	ld b, a
 	call GetEvosAttacksPointer
 
 	push hl
@@ -610,6 +613,9 @@ LearnEvolutionMove:
 LearnLevelMoves:
 	ld a, [wTempMonSpecies]
 	ld [wCurPartySpecies], a
+	ld c, a
+	ld a, [wCurForm]
+	ld b, a
 	call GetEvosAttacksPointer
 
 .skip_evos
@@ -679,6 +685,9 @@ FillMoves: ; 424e1
 	push de
 	push bc
 	ld a, [wCurPartySpecies]
+	ld c, a
+	ld a, [wCurForm]
+	ld b, a
 	call GetEvosAttacksPointer
 	
 .GoToAttacks:
@@ -859,18 +868,7 @@ ClearTileMapEvo:
 	jp ApplyTilemapInVBlank
 	
 GetEvosAttacksPointer:
-	push af
-	; b = form
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1Form
-	ld bc, PARTYMON_STRUCT_LENGTH
-	rst AddNTimes
-	ld a, [hl]
-	and FORM_MASK
-	ld b, a
-	; c = species
-	pop af
-	ld c, a
+; input: b = form, c = species
 	; bc = index
 	call GetSpeciesAndFormIndex
 	dec bc

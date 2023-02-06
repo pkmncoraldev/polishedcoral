@@ -3842,19 +3842,21 @@ BattleAnim_CalmMind:
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_sound 0, 0, SFX_GAME_FREAK_LOGO_GS
 .loop
-	anim_obj ANIM_OBJ_88, 48, 88, $3
-	anim_obj ANIM_OBJ_88, 48, 88, $12
-	anim_obj ANIM_OBJ_88, 48, 88, $20
-	anim_obj ANIM_OBJ_88, 48, 88, $31
+	anim_call BattleAnim_CalmMindbranch
 	anim_wait 8
-	anim_obj ANIM_OBJ_88, 48, 88, $3
-	anim_obj ANIM_OBJ_88, 48, 88, $12
-	anim_obj ANIM_OBJ_88, 48, 88, $20
-	anim_obj ANIM_OBJ_88, 48, 88, $31
+	anim_call BattleAnim_CalmMindbranch
 	anim_wait 42
 	anim_clearobjs
 	anim_loop 2, .loop
 	anim_ret
+
+BattleAnim_CalmMindbranch:
+	anim_obj ANIM_OBJ_88, 48, 88, $3
+	anim_obj ANIM_OBJ_88, 48, 88, $12
+	anim_obj ANIM_OBJ_88, 48, 88, $20
+	anim_obj ANIM_OBJ_88, 48, 88, $31
+	anim_ret
+	
 
 BattleAnim_Rest:
 	anim_1gfx ANIM_GFX_STATUS
@@ -4179,6 +4181,7 @@ BattleAnim_SpikeCannon:
 	anim_ret
 
 BattleAnim_Transform:
+	anim_jumpif $6, BattleAnim_Disguise
 	anim_jumpif $9, BattleAnim_Splash
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_FollowPlayerHead_0
@@ -4189,6 +4192,13 @@ BattleAnim_Transform:
 	anim_updateactorpic
 	anim_incbgeffect ANIM_BG_WAVE_DEFORM_USER
 	anim_wait 48
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+	
+BattleAnim_Disguise:
+	anim_wait 48
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_updateactorpic
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 

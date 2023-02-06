@@ -1948,3 +1948,64 @@ GetRandomPickupItem::
 	db BIG_NUGGET
 	db LEFTOVERS
 	db BOTTLE_CAP
+	
+DisguiseAbility::
+	ld a, BATTLE_VARS_ABILITY_OPP
+	call GetBattleVar
+	cp DISGUISE_A
+	ret nz
+	
+	ld a, [hBattleTurn]
+	and a
+	jr z, .enemy
+	ld a, [wBattleMonForm]
+	cp 1
+	ret nz
+	ld a, 2
+	ld [wBattleMonForm], a
+	
+	call SwitchTurn
+	ld a, [wBattleMonSpecies] ; TempBattleMonSpecies
+	ld [wCurPartySpecies], a ; CurPartySpecies
+	ld hl, wBattleMonForm
+	predef GetVariant
+	ld de, VTiles0 tile $00
+	predef GetBackpic
+	xor a
+	ld [wNumHits], a
+	ld [wFXAnimIDHi], a
+	ld a, 6
+	ld [wKickCounter], a
+	ld a, TRANSFORM_SPLASH
+	farcall LoadAnim
+	call SwitchTurn
+	
+	scf
+	ret
+.enemy
+	ld a, [wEnemyMonForm]
+	cp 1
+	ret nz
+	ld a, 2
+	ld [wEnemyMonForm], a
+	
+	call SwitchTurn
+	ld a, [wEnemyMonSpecies] ; TempBattleMonSpecies
+	ld [wCurPartySpecies], a ; CurPartySpecies
+	ld hl, wEnemyMonForm
+	predef GetVariant
+	ld de, VTiles0 tile $00
+	predef GetFrontpic
+	xor a
+	ld [wNumHits], a
+	ld [wFXAnimIDHi], a
+	ld a, 6
+	ld [wKickCounter], a
+	ld a, TRANSFORM_SPLASH
+	farcall LoadAnim
+	call SwitchTurn
+	
+	scf
+	ret
+	
+	

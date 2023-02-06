@@ -141,6 +141,7 @@ AbilityNames:
 	dw PerishBody
 	dw CudChew
 	dw ArmorTail
+	dw Disguise
 
 NoAbility:     db "-","-","-","@"
 Stench:        db "STENCH@"
@@ -284,6 +285,7 @@ SlushRush:	   db "SLUSH RUSH@"
 PerishBody:	   db "PERISH BODY@"
 CudChew:	   db "CUD CHEW@"
 ArmorTail:	   db "ARMOR TAIL@"
+Disguise:	   db "DISGUISE@"
 
 
 AbilityDescriptions:
@@ -429,6 +431,7 @@ AbilityDescriptions:
 	dw PerishBodyDescription
 	dw CudChewDescription
 	dw ArmorTailDescription
+	dw DisguiseDescription
 
 NoAbilityDescription:
 	db    "Abilities are"
@@ -985,3 +988,7 @@ PerishBodyDescription:
 ArmorTailDescription:
 	db    "Priority moves"
 	next1 "will fail.@"
+	
+DisguiseDescription:
+	db    "Protects from"
+	next1 "an attack once.@"

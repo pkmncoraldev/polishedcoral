@@ -4911,7 +4911,10 @@ TakeDamage:
 	ld a, [hl]
 	or b
 	jr z, .did_no_damage
-
+	push bc
+	farcall DisguiseAbility
+	jr c, .disguise
+	pop bc
 	ld a, c
 	and a
 	jr nz, .mimic_sub_check
@@ -4927,7 +4930,9 @@ TakeDamage:
 	farcall SubtractHPFromOpponent
 .did_no_damage
 	jp RefreshBattleHuds
-
+.disguise
+	pop bc
+	jr .did_no_damage
 ; 35de0
 
 

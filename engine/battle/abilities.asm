@@ -1957,8 +1957,10 @@ DisguiseAbility::
 	ld a, BATTLE_VARS_ABILITY_OPP
 	call GetBattleVar
 	cp DISGUISE_A
-	ret nz
-	
+	jp z, .cont
+	xor a
+	ret
+.cont
 	ld a, [hBattleTurn]
 	and a
 	jr z, .enemy

@@ -245,16 +245,16 @@ EvolutionMoves::
 	db ACROBATICS                           ; TOUCANNON ;BEAK_BLAST
 	db NO_MOVE                              ; MAREANIE
 	db NO_MOVE                              ; TOXAPEX
+	db NO_MOVE                              ; MIMIKYU
 	db NO_MOVE                              ; CURSOLA
 	db PSYSHOCK                             ; WYRDEER
 	db NO_MOVE                              ; FARIGIRAF
 	db NO_MOVE	                            ; UNUSED_1
 	db NO_MOVE                              ; UNUSED_2
 	db NO_MOVE          	                ; UNUSED_3
+	db NO_MOVE                              ; UNUSED_4
 	db NO_MOVE                              ; EGG
 	
-	db NO_MOVE                              ;
-	db NO_MOVE                              ;
 	db PSYCHIC_M                            ; RAICHU_A
 	db NO_MOVE                              ; SANDSHREW_A
 	db NO_MOVE                              ; SANDSLASH_A

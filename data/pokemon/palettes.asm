@@ -498,6 +498,8 @@ MareaniePalette:        INCLUDE "gfx/pokemon/mareanie/normal.pal"
 MareanieShinyPalette:   INCLUDE "gfx/pokemon/mareanie/shiny.pal"
 ToxapexPalette:       	INCLUDE "gfx/pokemon/toxapex/normal.pal"
 ToxapexShinyPalette:  	INCLUDE "gfx/pokemon/toxapex/shiny.pal"
+MimikyuPalette:       	INCLUDE "gfx/pokemon/mimikyu/normal.pal"
+MimikyuShinyPalette:  	INCLUDE "gfx/pokemon/mimikyu/shiny.pal"
 CursolaPalette:			INCLUDE "gfx/pokemon/cursola/normal.pal"
 CursolaShinyPalette:  	INCLUDE "gfx/pokemon/cursola/shiny.pal"
 WyrdeerPalette:     	INCLUDE "gfx/pokemon/wyrdeer/normal.pal"
@@ -510,22 +512,10 @@ FarigirafShinyPalette:  INCLUDE "gfx/pokemon/farigiraf/shiny.pal"
 	INCLUDE "gfx/pokemon/egg/shiny.pal"
 	INCLUDE "gfx/pokemon/egg/normal.pal"
 	INCLUDE "gfx/pokemon/egg/shiny.pal"
+	INCLUDE "gfx/pokemon/egg/normal.pal"
+	INCLUDE "gfx/pokemon/egg/shiny.pal"
 EggPalette:             INCLUDE "gfx/pokemon/egg/normal.pal"
 EggShinyPalette:        INCLUDE "gfx/pokemon/egg/shiny.pal"
-; 255
-	RGB 30, 22, 17
-	RGB 16, 14, 19
-; 255 shiny
-	RGB 30, 22, 17
-	RGB 16, 14, 19
-	
-
-	RGB 30, 22, 17
-	RGB 16, 14, 19
-
-	RGB 30, 22, 17
-	RGB 16, 14, 19
-	
 	INCLUDE "gfx/pokemon/raichu_a/normal.pal"
 	INCLUDE "gfx/pokemon/raichu_a/shiny.pal"
 	INCLUDE "gfx/pokemon/sandshrew_a/normal.pal"
@@ -548,4 +538,6 @@ EggShinyPalette:        INCLUDE "gfx/pokemon/egg/shiny.pal"
 	INCLUDE "gfx/pokemon/marowak_a/shiny.pal"
 	INCLUDE "gfx/pokemon/corsola_g/normal.pal"
 	INCLUDE "gfx/pokemon/corsola_g/shiny.pal"
+	INCLUDE "gfx/pokemon/mimikyu/normal.pal"
+	INCLUDE "gfx/pokemon/mimikyu/shiny.pal"
 	

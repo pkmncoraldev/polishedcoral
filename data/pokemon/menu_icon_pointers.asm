@@ -246,10 +246,12 @@ IconPointers:
 	dw ToucannonIcon
 	dw MareanieIcon
 	dw ToxapexIcon
+	dw MimikyuIcon
 	dw CursolaIcon
 	dw WyrdeerIcon
 	dw FarigirafIcon
-	dw Raichu_AIcon
-	dw Exeggcute_AIcon
-	dw Exeggutor_AIcon
+	dw EggIcon
+	dw EggIcon
+	dw EggIcon
+	dw EggIcon
 	dw EggIcon

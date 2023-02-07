@@ -17,8 +17,8 @@ MenuMonIconColors::
 	iconpal RED, BROWN ; PIDGEOT
 	iconpal PURPLE, GRAY ; RATTATA
 	iconpal BROWN, RED ; RATICATE
-	iconpal RED, BLUE ; PIKACHU
-	iconpal RED, BLUE ; RAICHU
+	iconpal BROWN, RED ; PIKACHU
+	iconpal BROWN, RED ; RAICHU
 	iconpal BROWN, TEAL ; SANDSHREW
 	iconpal BROWN, RED ; SANDSLASH
 	iconpal TEAL, PURPLE ; NIDORAN_F
@@ -249,12 +249,14 @@ MenuMonIconColors::
 	iconpal RED, PURPLE ; TOUCANNON
 	iconpal BLUE, RED ; MAREANIE
 	iconpal BLUE, RED ; TOXAPEX
+	iconpal BROWN, GRAY ; MIMIKYU
 	iconpal PURPLE, GRAY ; CURSOLA
 	iconpal GRAY, GREEN ; WYRDEER
 	iconpal BROWN, RED ; FARIGIRAF
-	iconpal BROWN, BROWN ; RAICHU_A
-	iconpal PINK, TEAL ; EXEGGCUTE_A
-	iconpal GREEN, RED ; EXEGGUTOR_A
+	iconpal RED, RED ; UNUSED_1
+	iconpal RED, RED ; UNUSED_2
+	iconpal RED, RED ; UNUSED_3
+	iconpal RED, RED ; UNUSED_4
 	iconpal RED, BLUE ; EGG
 
 	iconpal PINK, TEAL ; EXEGGCUTE_A

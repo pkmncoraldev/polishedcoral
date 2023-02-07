@@ -41,3 +41,7 @@ Marowak_AFrames: INCLUDE "gfx/pokemon/marowak_a/frames.asm"
 CorsolasFrames:
 CorsolaFrames:  INCLUDE "gfx/pokemon/corsola/frames.asm"
 Corsola_GFrames: INCLUDE "gfx/pokemon/corsola_g/frames.asm"
+
+MimikyusFrames:
+MimikyuFrames:  INCLUDE "gfx/pokemon/mimikyu/frames.asm"
+Mimikyu_BFrames: INCLUDE "gfx/pokemon/mimikyu_b/frames.asm"

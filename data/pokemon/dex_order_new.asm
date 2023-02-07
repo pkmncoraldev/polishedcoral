@@ -246,6 +246,7 @@ NewPokedexOrder:
 	db VOLCARONA
 	db MAREANIE
 	db TOXAPEX
+	db MIMIKYU
 	db CURSOLA
 	db GIRAFARIG
 	db FARIGIRAF
@@ -253,4 +254,3 @@ NewPokedexOrder:
 	db UNUSED_2
 	db UNUSED_3
 	db UNUSED_4
-	db UNUSED_5

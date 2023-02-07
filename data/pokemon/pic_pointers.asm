@@ -491,16 +491,20 @@ PicPointers::
 	dba MareanieBackpic
 	dba ToxapexFrontpic
 	dba ToxapexBackpic
+	dbw -1, -1 ; see MimikyuPicPointers
+	dbw -1, -1 ; see MimikyuPicPointers
 	dba CursolaFrontpic
 	dba CursolaBackpic
 	dba WyrdeerFrontpic
 	dba WyrdeerBackpic
 	dba FarigirafFrontpic
 	dba FarigirafBackpic
-	dba Raichu_AFrontpic
-	dba Raichu_ABackpic
-	dba ExeggcuteFrontpic
-	dba ExeggcuteBackpic
-	dba Exeggutor_AFrontpic
-	dba Exeggutor_ABackpic
+	dba BulbasaurFrontpic
+	dba BulbasaurBackpic
+	dba BulbasaurFrontpic
+	dba BulbasaurBackpic
+	dba BulbasaurFrontpic
+	dba BulbasaurBackpic
+	dba BulbasaurFrontpic
+	dba BulbasaurBackpic
 	dba EggPic

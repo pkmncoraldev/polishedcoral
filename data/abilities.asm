@@ -2,7 +2,7 @@ AbilityNames:
 	dw NoAbility
 	dw Stench
 	dw Drizzle
-	dw SPEEDBoost
+	dw SpeedBoost
 	dw BattleArmor
 	dw Sturdy
 	dw Damp
@@ -10,13 +10,13 @@ AbilityNames:
 	dw SandVeil
 	dw Static
 	dw VoltAbsorb
-	dw WATERAbsorb
+	dw WaterAbsorb
 	dw Oblivious
 	dw CloudNine
 	dw CompoundEyes
 	dw Insomnia
 	dw Immunity
-	dw FlashFIRE
+	dw FlashFire
 	dw ShieldDust
 	dw OwnTempo
 	dw SuctionCups
@@ -37,7 +37,7 @@ AbilityNames:
 	dw PoisonPoint
 	dw InnerFocus
 	dw MagmaArmor
-	dw WATERVeil
+	dw WaterVeil
 	dw MagnetPull
 	dw Soundproof
 	dw RainDish
@@ -97,7 +97,7 @@ AbilityNames:
 	dw TintedLens
 	dw Filter
 	dw Scrappy
-	dw ICEBody
+	dw IceBody
 	dw SolidRock
 	dw SnowWarning
 	dw Frisk
@@ -147,7 +147,7 @@ AbilityNames:
 NoAbility:     db "-","-","-","@"
 Stench:        db "STENCH@"
 Drizzle:       db "DRIZZLE@"
-SPEEDBoost:    db "SPEED BOOST@"
+SpeedBoost:    db "SPEED BOOST@"
 BattleArmor:   db "BATTLE ARMOR@"
 Sturdy:        db "STURDY@"
 Damp:          db "DAMP@"
@@ -155,13 +155,13 @@ Limber:        db "LIMBER@"
 SandVeil:      db "SAND VEIL@"
 Static:        db "STATIC@"
 VoltAbsorb:    db "VOLT ABSORB@"
-WATERAbsorb:   db "WATER ABSORB@"
+WaterAbsorb:   db "WATER ABSORB@"
 Oblivious:     db "OBLIVIOUS@"
 CloudNine:     db "CLOUD NINE@"
 CompoundEyes:  db "COMPOUND EYES@"
 Insomnia:      db "INSOMNIA@"
 Immunity:      db "IMMUNITY@"
-FlashFIRE:     db "FLASH FIRE@"
+FlashFire:     db "FLASH FIRE@"
 ShieldDust:    db "SHIELD DUST@"
 OwnTempo:      db "OWN TEMPO@"
 SuctionCups:   db "SUCTION CUPS@"
@@ -182,7 +182,7 @@ HugePower:     db "HUGE POWER@"
 PoisonPoint:   db "POISON POINT@"
 InnerFocus:    db "INNER FOCUS@"
 MagmaArmor:    db "MAGMA ARMOR@"
-WATERVeil:     db "WATER VEIL@"
+WaterVeil:     db "WATER VEIL@"
 MagnetPull:    db "MAGNET PULL@"
 Soundproof:    db "SOUNDPROOF@"
 RainDish:      db "RAIN DISH@"
@@ -242,7 +242,7 @@ Unaware:       db "UNAWARE@"
 TintedLens:    db "TINTED LENS@"
 Filter:        db "FILTER@"
 Scrappy:       db "SCRAPPY@"
-ICEBody:       db "ICE BODY@"
+IceBody:       db "ICE BODY@"
 SolidRock:     db "SOLID ROCK@"
 SnowWarning:   db "SNOW WARNING@"
 Frisk:         db "FRISK@"
@@ -294,7 +294,7 @@ AbilityDescriptions:
 	dw NoAbilityDescription
 	dw StenchDescription
 	dw DrizzleDescription
-	dw SPEEDBoostDescription
+	dw SpeedBoostDescription
 	dw BattleArmorDescription
 	dw SturdyDescription
 	dw DampDescription
@@ -302,13 +302,13 @@ AbilityDescriptions:
 	dw SandVeilDescription
 	dw StaticDescription
 	dw VoltAbsorbDescription
-	dw WATERAbsorbDescription
+	dw WaterAbsorbDescription
 	dw ObliviousDescription
 	dw CloudNineDescription
 	dw CompoundEyesDescription
 	dw InsomniaDescription
 	dw ImmunityDescription
-	dw FlashFIREDescription
+	dw FlashFireDescription
 	dw ShieldDustDescription
 	dw OwnTempoDescription
 	dw SuctionCupsDescription
@@ -329,7 +329,7 @@ AbilityDescriptions:
 	dw PoisonPointDescription
 	dw InnerFocusDescription
 	dw MagmaArmorDescription
-	dw WATERVeilDescription
+	dw WaterVeilDescription
 	dw MagnetPullDescription
 	dw SoundproofDescription
 	dw RainDishDescription
@@ -389,7 +389,7 @@ AbilityDescriptions:
 	dw TintedLensDescription
 	dw FilterDescription
 	dw ScrappyDescription
-	dw ICEBodyDescription
+	dw IceBodyDescription
 	dw SolidRockDescription
 	dw SnowWarningDescription
 	dw FriskDescription
@@ -448,7 +448,7 @@ DrizzleDescription:
 	db    "Summons rain when"
 	next1 "switched in.@"
 
-SPEEDBoostDescription:
+SpeedBoostDescription:
 	db    "Its SPEED stat is"
 	next1 "gradually boosted.@"
 
@@ -481,7 +481,7 @@ VoltAbsorbDescription:
 	db    "Restores HP if hit"
 	next1 "by ELECTRIC moves.@"
 
-WATERAbsorbDescription:
+WaterAbsorbDescription:
 	db    "Restores HP if hit"
 	next1 "by WATER moves.@"
 
@@ -506,7 +506,7 @@ ImmunityDescription:
 	db    "Prevents it from"
 	next1 "getting poisoned.@"
 
-FlashFIREDescription:
+FlashFireDescription:
 	db    "Boosts FIRE moves"
 	next1 "if hit by one.@"
 
@@ -590,7 +590,7 @@ MagmaArmorDescription:
 	db    "Prevents it from"
 	next1 "becoming frozen.@"
 
-WATERVeilDescription:
+WaterVeilDescription:
 	db    "Prevents it from"
 	next1 "getting a burn.@"
 
@@ -823,7 +823,7 @@ ScrappyDescription:
 	db    "Enables moves to"
 	next1 "hit GHOST-TYPE.@"
 
-ICEBodyDescription:
+IceBodyDescription:
 	db    "Gradually regains"
 	next1 "HP in hail.@"
 

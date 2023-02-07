@@ -41,3 +41,7 @@ MarowakFramesPointers:
 CorsolaFramesPointers:
 	dw CorsolaFrames
 	dw Corsola_GFrames
+	
+MimikyuFramesPointers:
+	dw MimikyuFrames
+	dw Mimikyu_BFrames

@@ -41,3 +41,7 @@ MarowakBitmasksPointers:
 CorsolaBitmasksPointers:
 	dw CorsolaBitmasks
 	dw Corsola_GBitmasks
+	
+MimikyuBitmasksPointers:
+	dw MimikyuBitmasks
+	dw Mimikyu_BBitmasks

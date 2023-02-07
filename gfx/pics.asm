@@ -666,6 +666,13 @@ Meowth_AFrontpic:         INCBIN "gfx/pokemon/meowth_a/front.2bpp.lz"
 Meowth_ABackpic:          INCBIN "gfx/pokemon/meowth_a/back.2bpp.lz"
 Persian_AFrontpic:        INCBIN "gfx/pokemon/persian_a/front.2bpp.lz"
 Persian_ABackpic:         INCBIN "gfx/pokemon/persian_a/back.2bpp.lz"
+
+SECTION "Pokemon Pics 28", ROMX
+
+MimikyuFrontpic:          INCBIN "gfx/pokemon/mimikyu/front.2bpp.lz"
+MimikyuBackpic:           INCBIN "gfx/pokemon/mimikyu/back.2bpp.lz"
+Mimikyu_BFrontpic:        INCBIN "gfx/pokemon/mimikyu_b/front.2bpp.lz"
+Mimikyu_BBackpic:         INCBIN "gfx/pokemon/mimikyu_b/back.2bpp.lz"
 EggPic:                   INCBIN "gfx/pokemon/egg/front.2bpp.lz"
 
 

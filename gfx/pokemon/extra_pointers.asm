@@ -245,11 +245,12 @@ AnimationExtraPointers:
 	dw ToucannonAnimationExtra
 	dw MareanieAnimationExtra
 	dw ToxapexAnimationExtra
+	dw -1 ; see MimikyuAnimationExtraPointers
 	dw CursolaAnimationExtra
 	dw WyrdeerAnimationExtra
 	dw FarigirafAnimationExtra
-	dw Raichu_AAnimationExtra
-	dw ExeggcuteAnimationExtra
-	dw Exeggutor_AAnimationExtra
+	dw BulbasaurAnimationExtra
+	dw BulbasaurAnimationExtra
+	dw BulbasaurAnimationExtra
+	dw BulbasaurAnimationExtra
 	dw EggAnimationExtra
-	dw -1 ; unused

@@ -41,3 +41,7 @@ MarowakAnimationPointers:
 CorsolaAnimationPointers:
 	dw CorsolaAnimation
 	dw Corsola_GAnimation
+	
+MimikyuAnimationPointers:
+	dw MimikyuAnimation
+	dw Mimikyu_BAnimation

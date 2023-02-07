@@ -245,11 +245,12 @@ BitmasksPointers:
 	dw ToucannonBitmasks
 	dw MareanieBitmasks
 	dw ToxapexBitmasks
+	dw -1 ; see MimikyuBitmasksPointers
 	dw CursolaBitmasks
 	dw WyrdeerBitmasks
 	dw FarigirafBitmasks
-	dw Raichu_ABitmasks
-	dw ExeggcuteBitmasks
-	dw Exeggutor_ABitmasks
+	dw BulbasaurBitmasks
+	dw BulbasaurBitmasks
+	dw BulbasaurBitmasks
+	dw BulbasaurBitmasks
 	dw EggBitmasks
-	dw -1 ; unused

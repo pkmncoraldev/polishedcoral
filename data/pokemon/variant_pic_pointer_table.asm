@@ -10,4 +10,5 @@ VariantPicPointerTable:
 	dbba EXEGGUTOR, ExeggutorPicPointers
 	dbba MAROWAK, MarowakPicPointers
 	dbba CORSOLA, CorsolaPicPointers
+	dbba MIMIKYU, MimikyuPicPointers
 	dbba -1,       PicPointers

@@ -245,11 +245,13 @@ FramesPointers:
 	dw ToucannonFrames
 	dw MareanieFrames
 	dw ToxapexFrames
+	dw -1 ; see MimikyuFramesPointers
 	dw CursolaFrames
 	dw WyrdeerFrames
 	dw FarigirafFrames
-	dw Raichu_AFrames
-	dw ExeggcuteFrames
-	dw Exeggutor_AFrames
+	dw BulbasaurFrames
+	dw BulbasaurFrames
+	dw BulbasaurFrames
+	dw BulbasaurFrames
 	dw EggFrames
 	dw -1 ; unused

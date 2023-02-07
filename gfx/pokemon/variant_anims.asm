@@ -41,3 +41,7 @@ Marowak_AAnimation: INCLUDE "gfx/pokemon/marowak_a/anim0.asm"
 CorsolaAnimations:
 CorsolaAnimation:  INCLUDE "gfx/pokemon/corsola/anim0.asm"
 Corsola_GAnimation: INCLUDE "gfx/pokemon/corsola_g/anim0.asm"
+
+MimikyuAnimations:
+MimikyuAnimation:  INCLUDE "gfx/pokemon/mimikyu/anim0.asm"
+Mimikyu_BAnimation: INCLUDE "gfx/pokemon/mimikyu_b/anim0.asm"

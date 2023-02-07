@@ -249,16 +249,16 @@ EvosAttacksPointers:: ; 0x425b1
 	dw ToucannonEvosAttacks
 	dw MareanieEvosAttacks
 	dw ToxapexEvosAttacks
+	dw MimikyuEvosAttacks
 	dw CursolaEvosAttacks
 	dw WyrdeerEvosAttacks
 	dw FarigirafEvosAttacks
 	dw -1
 	dw -1
 	dw -1
+	dw -1
 	dw EggEvosAttacks
 	
-	dw -1
-	dw -1
 	dw Raichu_AEvosAttacks
 	dw Sandshrew_AEvosAttacks
 	dw Sandslash_AEvosAttacks
@@ -270,3 +270,4 @@ EvosAttacksPointers:: ; 0x425b1
 	dw Exeggutor_AEvosAttacks
 	dw Marowak_AEvosAttacks
 	dw Corsola_GEvosAttacks
+	dw MimikyuEvosAttacks

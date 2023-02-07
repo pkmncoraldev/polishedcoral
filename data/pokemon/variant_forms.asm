@@ -13,4 +13,5 @@ VariantSpeciesAndFormTable::
 	db EXEGGUTOR, ALOLAN_FORM
 	db MAROWAK, ALOLAN_FORM
 	db CORSOLA, GALARIAN_FORM
+	db MIMIKYU, BUSTED_FORM
 	db 0 ; end

@@ -63,3 +63,9 @@ CorsolaPicPointers::
 	dba CorsolaBackpic
 	dba Corsola_GFrontpic
 	dba Corsola_GBackpic
+	
+MimikyuPicPointers::
+	dba MimikyuFrontpic
+	dba MimikyuBackpic
+	dba Mimikyu_BFrontpic
+	dba Mimikyu_BBackpic

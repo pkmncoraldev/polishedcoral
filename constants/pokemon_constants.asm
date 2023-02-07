@@ -246,6 +246,7 @@
 	const TOUCANNON ;733
 	const MAREANIE ;747
 	const TOXAPEX ;748
+	const MIMIKYU
 	const CURSOLA
 	const WYRDEER
 	const FARIGIRAF
@@ -254,7 +255,6 @@ NUM_POKEMON EQU const_value - 1
 	const UNUSED_2
 	const UNUSED_3
 	const UNUSED_4
-	const UNUSED_5
 	const EGG        ; $ff
 
 CANCEL EQU -1

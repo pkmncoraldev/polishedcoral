@@ -142,6 +142,7 @@ AbilityNames:
 	dw CudChew
 	dw ArmorTail
 	dw Disguise
+	dw SurgeSurfer
 
 NoAbility:     db "-","-","-","@"
 Stench:        db "STENCH@"
@@ -286,6 +287,7 @@ PerishBody:	   db "PERISH BODY@"
 CudChew:	   db "CUD CHEW@"
 ArmorTail:	   db "ARMOR TAIL@"
 Disguise:	   db "DISGUISE@"
+SurgeSurfer:   db "SURGE SURFER@"
 
 
 AbilityDescriptions:
@@ -432,6 +434,7 @@ AbilityDescriptions:
 	dw CudChewDescription
 	dw ArmorTailDescription
 	dw DisguiseDescription
+	dw MotorDriveDescription
 
 NoAbilityDescription:
 	db    "Abilities are"

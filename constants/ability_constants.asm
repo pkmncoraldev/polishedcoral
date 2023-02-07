@@ -143,6 +143,7 @@
 	const CUD_CHEW
 	const ARMOR_TAIL
 	const DISGUISE_A
+	const SURGE_SURFER
 NUM_ABILITIES EQU const_value
 
 ABILITY_1      EQU %00100000

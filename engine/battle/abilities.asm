@@ -819,6 +819,7 @@ CheckNullificationAbilities:
 	db VOLT_ABSORB,   ELECTRIC
 	db LIGHTNING_ROD, ELECTRIC
 	db MOTOR_DRIVE,   ELECTRIC
+	db SURGE_SURFER,   ELECTRIC
 	db DRY_SKIN,      WATER
 	db WATER_ABSORB,  WATER
 	db STORM_DRAIN,   WATER
@@ -849,6 +850,7 @@ NullificationAbilities:
 	dbw FLASH_FIRE, FlashFireAbility
 	dbw LIGHTNING_ROD, LightningRodAbility
 	dbw MOTOR_DRIVE, MotorDriveAbility
+	dbw SURGE_SURFER, MotorDriveAbility
 	dbw SAP_SIPPER, SapSipperAbility
 	dbw VOLT_ABSORB, VoltAbsorbAbility
 	dbw WATER_ABSORB, WaterAbsorbAbility
@@ -941,12 +943,14 @@ StatUpAbility:
 	farcall BattleCommand_statupmessage
 	jr .done
 .cant_raise
-; Lightning Rod, Motor Drive, Storm Drain and Sap Sipper prints a "doesn't affect" message instead.
+; Lightning Rod, Motor Drive, Surge Surfer, Storm Drain and Sap Sipper prints a "doesn't affect" message instead.
 	ld a, BATTLE_VARS_ABILITY
 	call GetBattleVar
 	cp LIGHTNING_ROD
 	jr z, .print_immunity
 	cp MOTOR_DRIVE
+	jr z, .print_immunity
+	cp SURGE_SURFER
 	jr z, .print_immunity
 	cp STORM_DRAIN
 	jr z, .print_immunity

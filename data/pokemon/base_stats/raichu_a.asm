@@ -8,9 +8,9 @@
 	db ORAN_BERRY ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
 	dn 7, 7 ; frontpic dimensions
-	db NO_ABILITY ; ability 1
-	db NO_ABILITY ; ability 2
-	db NO_ABILITY ; hidden ability
+	db SURGE_SURFER ; ability 1
+	db SURGE_SURFER ; ability 2
+	db SURGE_SURFER ; hidden ability
 	db MEDIUM_FAST ; growth rate
 	dn FIELD, FAERY ; egg groups
 

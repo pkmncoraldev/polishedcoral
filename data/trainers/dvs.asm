@@ -30,92 +30,92 @@ endr
 TrainerClassDVsAndPersonality: ; 270d6
 	;  EVs  HP   Def  SAt  Ability  Gender
 	;  *    Atk  Spd  SDf  Nature   Form
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; cory
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; cora
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; pippi
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; red
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; leaf
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; gold
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; kris
-	db 252, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; stanley
-	db 100, $99, $99, $99, ABILITY_1 | QUIRKY, MALE   ; rodney
-	db 252, $77, $7A, $77, ABILITY_1 | QUIRKY, FEMALE ; wendy
-	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; charlie
-	db 252, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE   ; chuck
-	db 252, $EE, $EE, $EE, ABILITY_1 | QUIRKY, FEMALE ; jasmine
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; pryce
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; clair
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; will
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; koga
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; bruno
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE ; karen
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; champion
-	db   0, $99, $99, $99, ABILITY_1 | QUIRKY, MALE   ; rival
-	db   0, $33, $33, $33, ABILITY_1 | QUIRKY, MALE   ; youngster
-	db   0, $33, $33, $33, ABILITY_1 | QUIRKY, MALE   ; bug catcher
-	db   0, $55, $55, $55, ABILITY_1 | QUIRKY, MALE   ; camper
-	db   0, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE ; picnicker
-	db   0, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE ; twins
-	db   8, $55, $55, $55, ABILITY_1 | QUIRKY, MALE   ; fisher
-	db   8, $77, $77, $77, ABILITY_1 | QUIRKY, MALE   ; bird keeper
-	db  16, $77, $77, $77, ABILITY_1 | QUIRKY, MALE   ; hiker
-	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE   ; gruntm
-	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE ; gruntf
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; kage
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE ; locke
-	db   8, $88, $88, $88, ABILITY_1 | QUIRKY, MALE   ; pokefanm
-	db   8, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE ; pokefanf
-	db  24, $DD, $BB, $DB, ABILITY_1 | QUIRKY, MALE   ; officerm
-	db  24, $7B, $DB, $FF, ABILITY_1 | QUIRKY, FEMALE ; officerf
-	db  24, $E5, $FA, $D6, ABILITY_1 | QUIRKY, FEMALE ; nurse
-	db  20, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE   ; pokemaniac
-	db  20, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE   ; super nerd
-	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE ; lass
-	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE ; beauty
-	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, MALE   ; firebreather
-	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, MALE   ; juggler
-	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, MALE   ; schoolboy
-	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE ; schoolgirl
-	db  24, $AA, $CC, $EE, ABILITY_1 | QUIRKY, MALE   ; psychic
-	db  24, $AA, $CC, $EE, ABILITY_1 | QUIRKY, FEMALE ; hex maniac
-	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; couple
-	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; gentleman
-	db 100, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; rich boy (high EVs from vitamins)
-	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, FEMALE ; lady
-	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; sailor
-	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE   ; swimmerm
-	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, FEMALE ; swimmerf
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; burglar
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; scientist
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; boarder
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE ; skier
-	db  48, $FF, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; blackbelt
-	db  48, $FF, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE ; battle girl
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE ; teacher
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; guitaristm
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; guitaristf
-	db  48, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; biker
-	db  48, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; roughneck
-	db  48, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE   ; cooltrainerm
-	db  48, $EE, $EE, $EE, ABILITY_1 | QUIRKY, FEMALE ; cooltrainerf
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; prof elm
-	db   0, $DD, $DF, $DD, ABILITY_1 | TIMID, FEMALE  ; teacherfast
-	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; triobror
-	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; triobrob
-	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; triobroy
-	db  24, $99, $99, $99, ABILITY_1 | QUIRKY, MALE   ; disguiseman
-	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE ; bikinip
-	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE ; bikinir
-	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE ; bikiniy
-	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, MALE   ; delinquentm
-	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE ; delinquentf
-	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, MALE   ; bunearym
-	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE ; bunearyf
-	db  32, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE ; frankie
-	db   0, $66, $66, $66, ABILITY_1 | QUIRKY, MALE   ; mall cop
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE   ; skater
-	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE   ; spatrainer
-	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE ; spatrainerf
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE   ; towertycoon
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; cory
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; cora
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; pippi
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; red
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; leaf
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; gold
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; kris
+	db 252, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; stanley
+	db 100, $99, $99, $99, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; rodney
+	db 252, $77, $7A, $77, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; wendy
+	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; charlie
+	db 252, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; chuck
+	db 252, $EE, $EE, $EE, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; jasmine
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; pryce
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; clair
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; will
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; koga
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; bruno
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; karen
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; champion
+	db   0, $99, $99, $99, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; rival
+	db   0, $33, $33, $33, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; youngster
+	db   0, $33, $33, $33, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; bug catcher
+	db   0, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; camper
+	db   0, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; picnicker
+	db   0, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; twins
+	db   8, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; fisher
+	db   8, $77, $77, $77, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; bird keeper
+	db  16, $77, $77, $77, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; hiker
+	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; gruntm
+	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; gruntf
+	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; kage
+	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; locke
+	db   8, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; pokefanm
+	db   8, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; pokefanf
+	db  24, $DD, $BB, $DB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; officerm
+	db  24, $7B, $DB, $FF, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; officerf
+	db  24, $E5, $FA, $D6, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; nurse
+	db  20, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; pokemaniac
+	db  20, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; super nerd
+	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; lass
+	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; beauty
+	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; firebreather
+	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; juggler
+	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; schoolboy
+	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; schoolgirl
+	db  24, $AA, $CC, $EE, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; psychic
+	db  24, $AA, $CC, $EE, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; hex maniac
+	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; couple
+	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; gentleman
+	db 100, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; rich boy (high EVs from vitamins)
+	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; lady
+	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; sailor
+	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; swimmerm
+	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; swimmerf
+	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; burglar
+	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; scientist
+	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; boarder
+	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; skier
+	db  48, $FF, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; blackbelt
+	db  48, $FF, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; battle girl
+	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; teacher
+	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; guitaristm
+	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; guitaristf
+	db  48, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; biker
+	db  48, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; roughneck
+	db  48, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; cooltrainerm
+	db  48, $EE, $EE, $EE, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; cooltrainerf
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; prof elm
+	db   0, $DD, $DF, $DD, ABILITY_1 | TIMID, FEMALE | PLAIN_FORM  ; teacherfast
+	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; triobror
+	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; triobrob
+	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; triobroy
+	db  24, $99, $99, $99, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; disguiseman
+	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bikinip
+	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bikinir
+	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bikiniy
+	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; delinquentm
+	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; delinquentf
+	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; bunearym
+	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bunearyf
+	db  32, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; frankie
+	db   0, $66, $66, $66, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; mall cop
+	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; skater
+	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; spatrainer
+	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; spatrainerf
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; towertycoon
 
 ; 2715c

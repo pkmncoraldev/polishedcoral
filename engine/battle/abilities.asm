@@ -1962,7 +1962,7 @@ DisguiseAbility::
 	and FORM_MASK
 	cp 1
 	ret nz
-	ld a, BROKEN_FORM
+	ld a, BUSTED_FORM
 	ld b, a
 	ld a, [wBattleMonForm]
 	and $ff - FORM_MASK
@@ -2027,7 +2027,7 @@ HandleDisguiseAfterBattle:
 	ld a, b
 	cp DISGUISE_A
 	jr nz, .skip1
-	ld a, PLAIN_FORM
+	ld a, DISGUISED_FORM
 	ld b, a
 	ld a, [wPartyMon1Form]
 	and $ff - FORM_MASK
@@ -2042,7 +2042,7 @@ HandleDisguiseAfterBattle:
 	ld a, b
 	cp DISGUISE_A
 	jr nz, .skip2
-	ld a, PLAIN_FORM
+	ld a, DISGUISED_FORM
 	ld b, a
 	ld a, [wPartyMon2Form]
 	and $ff - FORM_MASK
@@ -2057,7 +2057,7 @@ HandleDisguiseAfterBattle:
 	ld a, b
 	cp DISGUISE_A
 	jr nz, .skip3
-	ld a, PLAIN_FORM
+	ld a, DISGUISED_FORM
 	ld b, a
 	ld a, [wPartyMon3Form]
 	and $ff - FORM_MASK
@@ -2072,7 +2072,7 @@ HandleDisguiseAfterBattle:
 	ld a, b
 	cp DISGUISE_A
 	jr nz, .skip4
-	ld a, PLAIN_FORM
+	ld a, DISGUISED_FORM
 	ld b, a
 	ld a, [wPartyMon4Form]
 	and $ff - FORM_MASK
@@ -2087,7 +2087,7 @@ HandleDisguiseAfterBattle:
 	ld a, b
 	cp DISGUISE_A
 	jr nz, .skip5
-	ld a, PLAIN_FORM
+	ld a, DISGUISED_FORM
 	ld b, a
 	ld a, [wPartyMon5Form]
 	and $ff - FORM_MASK
@@ -2102,7 +2102,7 @@ HandleDisguiseAfterBattle:
 	ld a, b
 	cp DISGUISE_A
 	ret nz
-	ld a, PLAIN_FORM
+	ld a, DISGUISED_FORM
 	ld b, a
 	ld a, [wPartyMon6Form]
 	and $ff - FORM_MASK

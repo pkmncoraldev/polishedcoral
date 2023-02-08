@@ -695,12 +695,7 @@ BattleAnim_GyroBall:
 	anim_wait 16
 	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
-	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
-	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
-	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
-	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
-	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
-	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+	anim_call BattleAnim_GyroBall_branch
 	anim_wait 12
 	anim_bgp $90
 	anim_sound 0, 1, SFX_MEGA_PUNCH
@@ -720,6 +715,15 @@ BattleAnim_GyroBall:
 	anim_wait 3
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_wait 16
+	anim_ret
+
+BattleAnim_GyroBall_branch:
+	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
+	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
+	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
+	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
+	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
+	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
 	anim_ret
 
 BattleAnim_Bulldoze:
@@ -926,12 +930,7 @@ BattleAnim_AquaJet:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_sound 0, 1, SFX_BUBBLE_BEAM
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
-	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
-	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
-	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
-	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
-	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
-	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+	anim_call BattleAnim_GyroBall_branch
 	anim_wait 6
 	anim_2gfx ANIM_GFX_WATER, ANIM_GFX_HIT
 	anim_obj ANIM_OBJ_HYDRO_PUMP, 64, 96, $0
@@ -1097,12 +1096,7 @@ BattleAnim_SuckerPunch:
 	anim_sound 0, 1, SFX_KARATE_CHOP
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 122, 52, $0
 	anim_wait 12
-	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
-	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
-	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
-	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
-	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
-	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+	anim_call BattleAnim_GyroBall_branch
 	anim_wait 8
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_wait 4
@@ -2201,12 +2195,7 @@ BattleAnim_PlayRough:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_sound 6, 2, SFX_THROW_BALL
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
-	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
-	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
-	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
-	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
-	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
-	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+	anim_call BattleAnim_GyroBall_branch
 	anim_wait 12
 	anim_3gfx ANIM_GFX_STARS, ANIM_GFX_HIT, ANIM_GFX_HEARTS
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $55, $2, $0
@@ -4183,6 +4172,8 @@ BattleAnim_SpikeCannon:
 BattleAnim_Transform:
 	anim_jumpif $6, BattleAnim_Disguise
 	anim_jumpif $9, BattleAnim_Splash
+	anim_jumpif $12, BattleAnim_FormChange1
+	anim_jumpif $13, BattleAnim_FormChange2
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_FollowPlayerHead_0
 	anim_transform
@@ -4193,6 +4184,29 @@ BattleAnim_Transform:
 	anim_incbgeffect ANIM_BG_WAVE_DEFORM_USER
 	anim_wait 48
 	anim_call BattleAnim_ShowMon_0
+	anim_ret
+	
+BattleAnim_FormChange1:
+	anim_sound 0, 0, SFX_FORESIGHT
+	anim_bgeffect ANIM_BG_16, $0, $1, $80
+	anim_wait 24
+	anim_wait 1
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_wait 4
+	anim_incobj  1
+	anim_wait 1
+	anim_incbgeffect ANIM_BG_1D
+	anim_ret
+	
+BattleAnim_FormChange2:
+	anim_bgeffect ANIM_BG_1D, $0, $1, $20
+	anim_wait 32
+	anim_updateactorpic
+	anim_call BattleAnim_ShowMon_1
+	anim_sound 0, 0, SFX_MORNING_SUN
+	anim_wait 48
+	anim_incbgeffect ANIM_BG_1D
+	anim_wait 4
 	anim_ret
 	
 BattleAnim_Disguise:
@@ -4525,18 +4539,22 @@ BattleAnim_QuickAttack:
 	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_MENU
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
-	anim_obj ANIM_OBJ_SPEED_LINE,   3, 0,  11, 0, $2
-	anim_obj ANIM_OBJ_SPEED_LINE,   4, 0,  11, 0, $1
-	anim_obj ANIM_OBJ_SPEED_LINE,   5, 0,  11, 0, $0
-	anim_obj ANIM_OBJ_SPEED_LINE,   6, 0,  11, 0, $80
-	anim_obj ANIM_OBJ_SPEED_LINE,   7, 0,  11, 0, $81
-	anim_obj ANIM_OBJ_SPEED_LINE,   8, 0,  11, 0, $82
+	anim_call BattleAnim_QuickAttack_branch
 	anim_wait 12
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj ANIM_OBJ_01, -15, 0,   7, 0, $0
 	anim_wait 8
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_wait 16
+	anim_ret
+
+BattleAnim_QuickAttack_branch:
+	anim_obj ANIM_OBJ_SPEED_LINE,   3, 0,  11, 0, $2
+	anim_obj ANIM_OBJ_SPEED_LINE,   4, 0,  11, 0, $1
+	anim_obj ANIM_OBJ_SPEED_LINE,   5, 0,  11, 0, $0
+	anim_obj ANIM_OBJ_SPEED_LINE,   6, 0,  11, 0, $80
+	anim_obj ANIM_OBJ_SPEED_LINE,   7, 0,  11, 0, $81
+	anim_obj ANIM_OBJ_SPEED_LINE,   8, 0,  11, 0, $82
 	anim_ret
 
 BattleAnim_BulkUp:
@@ -4952,12 +4970,7 @@ BattleAnim_MachPunch:
 	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
 	anim_sound 0, 0, SFX_MENU
-	anim_obj ANIM_OBJ_SPEED_LINE,   3, 0,  11, 0, $2
-	anim_obj ANIM_OBJ_SPEED_LINE,   4, 0,  11, 0, $1
-	anim_obj ANIM_OBJ_SPEED_LINE,   5, 0,  11, 0, $0
-	anim_obj ANIM_OBJ_SPEED_LINE,   6, 0,  11, 0, $80
-	anim_obj ANIM_OBJ_SPEED_LINE,   7, 0,  11, 0, $81
-	anim_obj ANIM_OBJ_SPEED_LINE,   8, 0,  11, 0, $82
+	anim_call BattleAnim_QuickAttack_branch
 	anim_wait 12
 	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_obj ANIM_OBJ_06, -15, 0,   7, 0, $0
@@ -5986,12 +5999,7 @@ BattleAnim_Extremespeed:
 	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_CUT
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
 	anim_sound 0, 0, SFX_MENU
-	anim_obj ANIM_OBJ_SPEED_LINE,   3, 0,  11, 0, $2
-	anim_obj ANIM_OBJ_SPEED_LINE,   4, 0,  11, 0, $1
-	anim_obj ANIM_OBJ_SPEED_LINE,   5, 0,  11, 0, $0
-	anim_obj ANIM_OBJ_SPEED_LINE,   6, 0,  11, 0, $80
-	anim_obj ANIM_OBJ_SPEED_LINE,   7, 0,  11, 0, $81
-	anim_obj ANIM_OBJ_SPEED_LINE,   8, 0,  11, 0, $82
+	anim_call BattleAnim_QuickAttack_branch
 	anim_wait 12
 	anim_sound 0, 1, SFX_CUT
 	anim_obj ANIM_OBJ_3A, -13, 0,   5, 0, $0

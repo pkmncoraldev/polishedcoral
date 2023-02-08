@@ -1966,7 +1966,7 @@ DisguiseAbility::
 	jr z, .enemy
 	ld a, [wBattleMonForm]
 	and FORM_MASK
-	cp 1
+	cp PLAIN_FORM
 	ret nz
 	ld a, BUSTED_FORM
 	ld b, a
@@ -2004,7 +2004,13 @@ DisguiseAbility::
 	and FORM_MASK
 	cp 1
 	ret nz
-	ld a, 2
+	cp PLAIN_FORM
+	ret nz
+	ld a, BUSTED_FORM
+	ld b, a
+	ld a, [wEnemyMonForm]
+	and $ff - FORM_MASK
+	or b
 	ld [wEnemyMonForm], a
 	
 	call SwitchTurn
@@ -2117,3 +2123,55 @@ HandleDisguiseAfterBattle:
 	ld [hl], a
 	ret
 	
+ChangePlayerFormAnimation:
+	call SwitchTurn
+	ld a, [wBattleMonSpecies] ; TempBattleMonSpecies
+	ld [wCurPartySpecies], a ; CurPartySpecies
+	ld hl, wBattleMonForm
+	predef GetVariant
+	ld de, VTiles0 tile $00
+	predef GetBackpic
+	xor a
+	ld [wNumHits], a
+	ld [wFXAnimIDHi], a
+	ld a, $12
+	ld [wKickCounter], a
+	ld a, TRANSFORM_SPLASH
+	farcall LoadAnim
+	ld a, $13
+	ld [wKickCounter], a
+	ld a, TRANSFORM_SPLASH
+	farcall LoadAnim
+	jp SwitchTurn
+
+	
+ChangeEnemyFormAnimation:
+	call SwitchTurn
+	ld a, [wEnemyMonSpecies] ; TempBattleMonSpecies
+	ld [wCurPartySpecies], a ; CurPartySpecies
+	ld hl, wEnemyMonForm
+	predef GetVariant
+	ld de, VTiles0 tile $00
+	predef GetFrontpic
+	xor a
+	ld [wNumHits], a
+	ld [wFXAnimIDHi], a
+	ld a, $12
+	ld [wKickCounter], a
+	ld a, TRANSFORM_SPLASH
+	farcall LoadAnim
+	
+	ld hl, wOTPartyMon1Form
+	ld a, [wOTPartyMonOT]
+	ld [wCurOTMon], a
+	call GetPartyLocation
+	ld a, [wEnemyMonForm]
+	ld [hl], a
+	
+	farcall FinishBattleAnim
+	
+	ld a, $13
+	ld [wKickCounter], a
+	ld a, TRANSFORM_SPLASH
+	farcall LoadAnim
+	jp SwitchTurn

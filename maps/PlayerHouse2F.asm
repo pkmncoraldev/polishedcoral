@@ -58,8 +58,8 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke RAICHU, 44
-	givepoke RAICHU, ALOLAN_FORM, 44
+	givepoke MIMIKYU, 44
+	givepoke MIMIKYU, 44
 
 .items
 	writetext PlayerHouseDebugText6

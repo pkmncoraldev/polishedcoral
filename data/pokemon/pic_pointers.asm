@@ -365,6 +365,10 @@ PicPointers::
 	dba BuizelBackpic
 	dba FloatzelFrontpic
 	dba FloatzelBackpic
+	dba CherubiFrontpic
+	dba CherubiBackpic
+	dba CherrimFrontpic
+	dba CherrimBackpic
 	dba DrifloonFrontpic
 	dba DrifloonBackpic
 	dba DrifblimFrontpic

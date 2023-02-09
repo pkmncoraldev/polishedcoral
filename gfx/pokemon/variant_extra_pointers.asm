@@ -42,6 +42,10 @@ CorsolaAnimationExtraPointers:
 	dw CorsolaAnimationExtra
 	dw Corsola_GAnimationExtra
 	
+CherrimAnimationExtraPointers:
+	dw CherrimAnimationExtra
+	dw Cherrim_SAnimationExtra
+	
 MimikyuAnimationExtraPointers:
 	dw MimikyuAnimationExtra
 	dw Mimikyu_BAnimationExtra

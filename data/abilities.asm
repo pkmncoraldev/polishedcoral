@@ -143,6 +143,7 @@ AbilityNames:
 	dw ArmorTail
 	dw Disguise
 	dw SurgeSurfer
+	dw FlowerGift
 
 NoAbility:     db "-","-","-","@"
 Stench:        db "STENCH@"
@@ -288,6 +289,7 @@ CudChew:	   db "CUD CHEW@"
 ArmorTail:	   db "ARMOR TAIL@"
 Disguise:	   db "DISGUISE@"
 SurgeSurfer:   db "SURGE SURFER@"
+FlowerGift:	   db "FLOWER GIFT@"
 
 
 AbilityDescriptions:
@@ -435,6 +437,7 @@ AbilityDescriptions:
 	dw ArmorTailDescription
 	dw DisguiseDescription
 	dw MotorDriveDescription
+	dw FlowerGiftDescription
 
 NoAbilityDescription:
 	db    "Abilities are"
@@ -909,7 +912,7 @@ ImposterDescription:
 	next1 "into the foe.@"
 
 InfiltratorDescription:
-	db    "ATTACKs bypass the"
+	db    "Attacks bypass the"
 	next1 "foe's barriers.@"
 
 MoxieDescription:
@@ -995,3 +998,7 @@ ArmorTailDescription:
 DisguiseDescription:
 	db    "Protects from"
 	next1 "an attack once.@"
+	
+FlowerGiftDescription:
+	db    "Boosts ATK and"
+	next1 "SP.ATK in sun.@" 

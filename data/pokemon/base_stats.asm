@@ -242,6 +242,8 @@ INCLUDE "data/pokemon/base_stats/glalie.asm"
 
 INCLUDE "data/pokemon/base_stats/buizel.asm"
 INCLUDE "data/pokemon/base_stats/floatzel.asm"
+INCLUDE "data/pokemon/base_stats/cherubi.asm"
+INCLUDE "data/pokemon/base_stats/cherrim.asm"
 INCLUDE "data/pokemon/base_stats/drifloon.asm"
 INCLUDE "data/pokemon/base_stats/drifblim.asm"
 INCLUDE "data/pokemon/base_stats/buneary.asm"
@@ -316,8 +318,6 @@ INCLUDE "data/pokemon/base_stats/farigiraf.asm"
 
 INCLUDE "data/pokemon/base_stats/egg.asm"
 INCLUDE "data/pokemon/base_stats/egg.asm"
-INCLUDE "data/pokemon/base_stats/egg.asm"
-INCLUDE "data/pokemon/base_stats/egg.asm"
 
 INCLUDE "data/pokemon/base_stats/egg.asm"
 
@@ -332,4 +332,5 @@ INCLUDE "data/pokemon/base_stats/exeggcute.asm"
 INCLUDE "data/pokemon/base_stats/exeggutor_a.asm"
 INCLUDE "data/pokemon/base_stats/marowak_a.asm"
 INCLUDE "data/pokemon/base_stats/corsola_g.asm"
+INCLUDE "data/pokemon/base_stats/cherrim.asm"
 INCLUDE "data/pokemon/base_stats/mimikyu.asm"

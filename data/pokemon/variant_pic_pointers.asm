@@ -64,6 +64,12 @@ CorsolaPicPointers::
 	dba Corsola_GFrontpic
 	dba Corsola_GBackpic
 	
+CherrimPicPointers::
+	dba CherrimFrontpic
+	dba CherrimBackpic
+	dba Cherrim_SFrontpic
+	dba Cherrim_SBackpic
+	
 MimikyuPicPointers::
 	dba MimikyuFrontpic
 	dba MimikyuBackpic

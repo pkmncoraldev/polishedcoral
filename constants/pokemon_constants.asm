@@ -183,6 +183,8 @@
 	const GLALIE ;362
 	const BUIZEL ;418
 	const FLOATZEL ;419
+	const CHERUBI ;420
+	const CHERRIM ;421
 	const DRIFLOON ;425
 	const DRIFBLIM ;426
 	const BUNEARY ;427
@@ -253,8 +255,6 @@
 NUM_POKEMON EQU const_value - 1
 	const UNUSED_1
 	const UNUSED_2
-	const UNUSED_3
-	const UNUSED_4
 	const EGG        ; $ff
 
 CANCEL EQU -1
@@ -266,6 +266,7 @@ PLAIN_FORM EQU 1
 DISGUISED_FORM EQU 1
 ALOLAN_FORM EQU 2
 GALARIAN_FORM EQU 2
+SUNNY_FORM EQU 2
 BUSTED_FORM EQU 2
 
 ; unown

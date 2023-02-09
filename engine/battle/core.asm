@@ -8957,6 +8957,7 @@ InitEnemyWildmon: ; 3f607
 ExitBattle: ; 3f69e
 	call .HandleEndOfBattle
 	farcall HandleDisguiseAfterBattle
+	farcall HandleFlowerGiftAfterBattle
 	call HandleNuzlockeFlags
 	jp CleanUpBattleRAM
 ; 3f6a5

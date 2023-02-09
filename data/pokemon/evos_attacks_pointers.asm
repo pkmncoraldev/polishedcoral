@@ -186,6 +186,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw GlalieEvosAttacks
 	dw BuizelEvosAttacks
 	dw FloatzelEvosAttacks
+	dw CherubiEvosAttacks
+	dw CherrimEvosAttacks
 	dw DrifloonEvosAttacks
 	dw DrifblimEvosAttacks
 	dw BunearyEvosAttacks
@@ -253,8 +255,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw CursolaEvosAttacks
 	dw WyrdeerEvosAttacks
 	dw FarigirafEvosAttacks
-	dw -1
-	dw -1
 	dw -1
 	dw -1
 	dw EggEvosAttacks

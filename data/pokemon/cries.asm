@@ -199,6 +199,8 @@ CryHeaders::
 	mon_cry GLALIE,   	GlalieDEDData	 	; Glalie
 	mon_cry BUIZEL,   	BuizelDEDData	 	; Buizel
 	mon_cry FLOATZEL,   FloatzelDEDData	 	; Floatzel
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cherubi - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cherrim - PLACEHOLDER
 	mon_cry DRIFLOON,   DrifloonDEDData	 	; Drifloon
 	mon_cry DRIFBLIM,   DrifblimDEDData	 	; Drifblim
 	mon_cry BUNEARY,   	BunearyDEDData	 	; Buneary
@@ -266,8 +268,6 @@ CryHeaders::
 	mon_cry CURSOLA,	CursolaDEDData		; Cursola
 	mon_cry WYRDEER,    WyrdeerDEDData		; Wyrdeer
 	mon_cry CRY_PORYGON2,    $041,  $200	; Farigiraf - PLACEHOLDER
-	mon_cry CRY_NIDORAN_M,      0,     0 	; 251
-	mon_cry CRY_NIDORAN_M,      0,     0 	; 252
 	mon_cry CRY_NIDORAN_M,      0,     0 	; 253
 	mon_cry CRY_NIDORAN_M,      0,     0 	; 254
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg
@@ -458,6 +458,8 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Glalie - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Buizel - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Floatzel - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cherubi - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cherrim - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Drifloon - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Drifblim - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Buneary - PLACEHOLDER
@@ -525,8 +527,6 @@ CryHeaders2::
 	mon_cry CRY_MAGCARGO,    $081,  $0ff 	; Cursola
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Wyrdeer - PLACEHOLDER
 	mon_cry CRY_PORYGON2,    $041,  $200	; Farigiraf - PLACEHOLDER
-	mon_cry CRY_NIDORAN_M,      0,     0 	; 251
-	mon_cry CRY_NIDORAN_M,      0,     0 	; 252
 	mon_cry CRY_NIDORAN_M,      0,     0 	; 253
 	mon_cry CRY_NIDORAN_M,      0,     0 	; 254
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg

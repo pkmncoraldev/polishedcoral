@@ -673,6 +673,12 @@ MimikyuFrontpic:          INCBIN "gfx/pokemon/mimikyu/front.2bpp.lz"
 MimikyuBackpic:           INCBIN "gfx/pokemon/mimikyu/back.2bpp.lz"
 Mimikyu_BFrontpic:        INCBIN "gfx/pokemon/mimikyu_b/front.2bpp.lz"
 Mimikyu_BBackpic:         INCBIN "gfx/pokemon/mimikyu_b/back.2bpp.lz"
+CherubiFrontpic:          INCBIN "gfx/pokemon/cherubi/front.2bpp.lz"
+CherubiBackpic:           INCBIN "gfx/pokemon/cherubi/back.2bpp.lz"
+CherrimFrontpic:          INCBIN "gfx/pokemon/cherrim/front.2bpp.lz"
+CherrimBackpic:           INCBIN "gfx/pokemon/cherrim/back.2bpp.lz"
+Cherrim_SFrontpic:        INCBIN "gfx/pokemon/cherrim_s/front.2bpp.lz"
+Cherrim_SBackpic:         INCBIN "gfx/pokemon/cherrim_s/back.2bpp.lz"
 EggPic:                   INCBIN "gfx/pokemon/egg/front.2bpp.lz"
 
 

@@ -42,6 +42,10 @@ CorsolaFramesPointers:
 	dw CorsolaFrames
 	dw Corsola_GFrames
 	
+CherrimFramesPointers:
+	dw CherrimFrames
+	dw Cherrim_SFrames
+	
 MimikyuFramesPointers:
 	dw MimikyuFrames
 	dw Mimikyu_BFrames

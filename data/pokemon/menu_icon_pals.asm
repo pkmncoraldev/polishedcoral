@@ -186,6 +186,8 @@ MenuMonIconColors::
 	iconpal BLUE, RED ; GLALIE
 	iconpal RED, BROWN ; BUIZEL
 	iconpal RED, BROWN ; FLOATZEL
+	iconpal RED, PINK ; CHERUBI
+	iconpal PURPLE, TEAL ; CHERRIM
 	iconpal PURPLE, BLUE ; DRIFLOON
 	iconpal PURPLE, BLUE ; DRIFBLIM
 	iconpal BROWN, PINK ; BUNEARY
@@ -255,8 +257,6 @@ MenuMonIconColors::
 	iconpal BROWN, RED ; FARIGIRAF
 	iconpal RED, RED ; UNUSED_1
 	iconpal RED, RED ; UNUSED_2
-	iconpal RED, RED ; UNUSED_3
-	iconpal RED, RED ; UNUSED_4
 	iconpal RED, BLUE ; EGG
 
 	iconpal PINK, TEAL ; EXEGGCUTE_A

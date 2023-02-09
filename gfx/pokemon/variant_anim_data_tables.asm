@@ -10,6 +10,7 @@ VariantSpeciesTable:
 	db EXEGGUTOR
 	db MAROWAK
 	db CORSOLA
+	db CHERRIM
 	db MIMIKYU
 	db -1
 
@@ -25,6 +26,7 @@ VariantAnimPointerTable:
 	dbbww EXEGGUTOR, BANK(ExeggutorAnimations), ExeggutorAnimationPointers, ExeggutorAnimationExtraPointers
 	dbbww MAROWAK, BANK(MarowakAnimations), MarowakAnimationPointers, MarowakAnimationExtraPointers
 	dbbww CORSOLA, BANK(CorsolaAnimations), CorsolaAnimationPointers, CorsolaAnimationExtraPointers
+	dbbww CHERRIM, BANK(CherrimAnimations), CherrimAnimationPointers, CherrimAnimationExtraPointers
 	dbbww MIMIKYU, BANK(MimikyuAnimations), MimikyuAnimationPointers, MimikyuAnimationExtraPointers
 	dbbww -1, BANK(PicAnimations), AnimationPointers, AnimationExtraPointers
 
@@ -40,6 +42,7 @@ VariantFramesPointerTable:
 	dbbba EXEGGUTOR, BANK(ExeggutorsFrames), ExeggutorFramesPointers
 	dbbba MAROWAK, BANK(MarowaksFrames), MarowakFramesPointers
 	dbbba CORSOLA, BANK(CorsolasFrames), CorsolaFramesPointers
+	dbbba CHERRIM, BANK(CherrimsFrames), CherrimFramesPointers
 	dbbba MIMIKYU, BANK(MimikyusFrames), MimikyuFramesPointers
 	dbbba -1, BANK(PokemonFrames), FramesPointers
 
@@ -55,5 +58,6 @@ VariantBitmasksPointerTable:
 	dbba EXEGGUTOR, ExeggutorBitmasksPointers
 	dbba MAROWAK, MarowakBitmasksPointers
 	dbba CORSOLA, CorsolaBitmasksPointers
+	dbba CHERRIM, CherrimBitmasksPointers
 	dbba MIMIKYU, MimikyuBitmasksPointers
 	dbba -1, BitmasksPointers

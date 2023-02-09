@@ -182,6 +182,8 @@ FramesPointers:
 	dw GlalieFrames
 	dw BuizelFrames
 	dw FloatzelFrames
+	dw CherubiFrames
+	dw -1 ; see CherrimFramesPointers
 	dw DrifloonFrames
 	dw DrifblimFrames
 	dw BunearyFrames

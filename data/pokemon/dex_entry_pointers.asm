@@ -183,6 +183,8 @@
 	dw GlaliePokedexEntry
 	dw BuizelPokedexEntry
 	dw FloatzelPokedexEntry
+	dw CherubiPokedexEntry
+	dw CherrimPokedexEntry
 	dw DrifloonPokedexEntry
 	dw DrifblimPokedexEntry
 	dw BunearyPokedexEntry

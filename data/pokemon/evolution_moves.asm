@@ -182,6 +182,8 @@ EvolutionMoves::
 	db ICE_BEAM                             ; GLALIE
 	db NO_MOVE                              ; BUIZEL
 	db ICE_FANG                             ; FLOATZEL
+	db NO_MOVE                              ; CHERUBI
+	db SUNNY_DAY                            ; CHERRIM
 	db NO_MOVE                              ; DRIFLOON
 	db NO_MOVE                              ; DRIFBLIM
 	db NO_MOVE                              ; BUNEARY
@@ -251,8 +253,6 @@ EvolutionMoves::
 	db NO_MOVE                              ; FARIGIRAF
 	db NO_MOVE	                            ; UNUSED_1
 	db NO_MOVE                              ; UNUSED_2
-	db NO_MOVE          	                ; UNUSED_3
-	db NO_MOVE                              ; UNUSED_4
 	db NO_MOVE                              ; EGG
 	
 	db PSYCHIC_M                            ; RAICHU_A

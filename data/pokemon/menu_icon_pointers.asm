@@ -183,6 +183,8 @@ IconPointers:
 	dw GlalieIcon
 	dw BuizelIcon
 	dw FloatzelIcon
+	dw CherubiIcon
+	dw CherrimIcon
 	dw DrifloonIcon
 	dw DrifblimIcon
 	dw BunearyIcon
@@ -250,8 +252,6 @@ IconPointers:
 	dw CursolaIcon
 	dw WyrdeerIcon
 	dw FarigirafIcon
-	dw EggIcon
-	dw EggIcon
 	dw EggIcon
 	dw EggIcon
 	dw EggIcon

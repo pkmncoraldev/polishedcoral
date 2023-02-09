@@ -205,6 +205,8 @@ NewPokedexOrder:
 	db TOGETIC
 	db TOGEKISS
 	
+	db CHERUBI
+	db CHERRIM
 	db CHANSEY
 	db BLISSEY
 	db AERODACTYL
@@ -252,5 +254,3 @@ NewPokedexOrder:
 	db FARIGIRAF
 	db UNUSED_1
 	db UNUSED_2
-	db UNUSED_3
-	db UNUSED_4

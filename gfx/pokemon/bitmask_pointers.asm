@@ -182,6 +182,8 @@ BitmasksPointers:
 	dw GlalieBitmasks
 	dw BuizelBitmasks
 	dw FloatzelBitmasks
+	dw CherubiBitmasks
+	dw -1 ; see CherrimBitmasksPointers
 	dw DrifloonBitmasks
 	dw DrifblimBitmasks
 	dw BunearyBitmasks
@@ -249,8 +251,6 @@ BitmasksPointers:
 	dw CursolaBitmasks
 	dw WyrdeerBitmasks
 	dw FarigirafBitmasks
-	dw BulbasaurBitmasks
-	dw BulbasaurBitmasks
 	dw BulbasaurBitmasks
 	dw BulbasaurBitmasks
 	dw EggBitmasks

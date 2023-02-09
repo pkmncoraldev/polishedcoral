@@ -3370,6 +3370,19 @@ FloatzelEvosAttacks:
 	db 57, HYDRO_PUMP
 	db 0 ; no more level-up moves
 	
+CherubiEvosAttacks:
+	db EVOLVE_LEVEL, 25, CHERRIM
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 1, SUNNY_DAY
+	db 0 ; no more level-up moves
+	
+CherrimEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 1, SUNNY_DAY
+	db 0 ; no more level-up moves
+	
 DrifloonEvosAttacks:
 	db EVOLVE_LEVEL, 28, DRIFBLIM
 	db 0 ; no more evolutions

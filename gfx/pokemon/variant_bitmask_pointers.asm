@@ -42,6 +42,10 @@ CorsolaBitmasksPointers:
 	dw CorsolaBitmasks
 	dw Corsola_GBitmasks
 	
+CherrimBitmasksPointers:
+	dw CherrimBitmasks
+	dw Cherrim_SBitmasks
+	
 MimikyuBitmasksPointers:
 	dw MimikyuBitmasks
 	dw Mimikyu_BBitmasks

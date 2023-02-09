@@ -182,6 +182,8 @@ AnimationPointers:
 	dw GlalieAnimation
 	dw BuizelAnimation
 	dw FloatzelAnimation
+	dw CherubiAnimation
+	dw -1 ; see CherrimAnimationPointers
 	dw DrifloonAnimation
 	dw DrifblimAnimation
 	dw BunearyAnimation
@@ -249,8 +251,6 @@ AnimationPointers:
 	dw CursolaAnimation
 	dw WyrdeerAnimation
 	dw FarigirafAnimation
-	dw BulbasaurAnimation
-	dw BulbasaurAnimation
 	dw BulbasaurAnimation
 	dw BulbasaurAnimation
 	dw EggAnimation

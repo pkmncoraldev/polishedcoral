@@ -15,6 +15,7 @@ AbilityJumptable:
 	jp BattleJumptable
 
 BattleEntryAbilities:
+	dbw FLOWER_GIFT, FlowerGiftAbility
 	dbw TRACE, TraceAbility
 	dbw IMPOSTER, ImposterAbility
 	dbw DRIZZLE, DrizzleAbility
@@ -114,6 +115,54 @@ ObliviousAbility:
 	res SUBSTATUS_IN_LOVE, [hl]
 	ld hl, ConfusedNoMoreText
 	jp StdBattleTextBox
+
+FlowerGiftAbility:
+	call GetWeatherAfterCloudNine
+	cp WEATHER_SUN
+	ret nz
+	ld a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+	ld a, [wBattleMonForm]
+	and FORM_MASK
+	cp PLAIN_FORM
+	ret nz
+	ld a, SUNNY_FORM
+	ld b, a
+	ld a, [wBattleMonForm]
+	and $ff - FORM_MASK
+	or b
+	ld [wBattleMonForm], a
+	
+	call ChangePlayerFormAnimation
+	
+	ld hl, wPartyMon1Form
+	ld a, [wCurBattleMon]
+	ld [wCurPartyMon], a
+	call GetPartyLocation
+	ld a, [wBattleMonForm]
+	ld [hl], a
+	scf
+	ret
+	
+.enemy
+	ld a, [wEnemyMonForm]
+	and FORM_MASK
+	cp 1
+	ret nz
+	cp PLAIN_FORM
+	ret nz
+	ld a, SUNNY_FORM
+	ld b, a
+	ld a, [wEnemyMonForm]
+	and $ff - FORM_MASK
+	or b
+	ld [wEnemyMonForm], a
+	
+	call ChangeEnemyFormAnimation
+	
+	scf
+	ret
 
 TraceAbility:
 	ld a, BATTLE_VARS_ABILITY_OPP
@@ -1138,6 +1187,7 @@ WeatherAbilities:
 	dbw ICE_BODY, IceBodyAbility
 	dbw RAIN_DISH, RainDishAbility
 	dbw HYDRATION, HydrationAbility
+	dbw FLOWER_GIFT, FlowerGiftAbility
 	dbw -1, -1
 
 DrySkinWeatherAbility:
@@ -2032,12 +2082,20 @@ DisguiseAbility::
 	ret
 	
 HandleDisguiseAfterBattle:
+	ld a, DISGUISE_A
+	ld e, a
+	jr HandleFormRevertsAfterBattle
+HandleFlowerGiftAfterBattle:
+	ld a, FLOWER_GIFT
+	ld e, a
+;fallthrough
+HandleFormRevertsAfterBattle:
 	ld hl, wPartyMon1Personality
 	ld a, [wPartyMon1Species]
 	ld c, a
 	call GetAbility
 	ld a, b
-	cp DISGUISE_A
+	cp e
 	jr nz, .skip1
 	ld a, DISGUISED_FORM
 	ld b, a
@@ -2052,7 +2110,7 @@ HandleDisguiseAfterBattle:
 	ld c, a
 	call GetAbility
 	ld a, b
-	cp DISGUISE_A
+	cp e
 	jr nz, .skip2
 	ld a, DISGUISED_FORM
 	ld b, a
@@ -2067,7 +2125,7 @@ HandleDisguiseAfterBattle:
 	ld c, a
 	call GetAbility
 	ld a, b
-	cp DISGUISE_A
+	cp e
 	jr nz, .skip3
 	ld a, DISGUISED_FORM
 	ld b, a
@@ -2082,7 +2140,7 @@ HandleDisguiseAfterBattle:
 	ld c, a
 	call GetAbility
 	ld a, b
-	cp DISGUISE_A
+	cp e
 	jr nz, .skip4
 	ld a, DISGUISED_FORM
 	ld b, a
@@ -2097,7 +2155,7 @@ HandleDisguiseAfterBattle:
 	ld c, a
 	call GetAbility
 	ld a, b
-	cp DISGUISE_A
+	cp e
 	jr nz, .skip5
 	ld a, DISGUISED_FORM
 	ld b, a
@@ -2112,7 +2170,7 @@ HandleDisguiseAfterBattle:
 	ld c, a
 	call GetAbility
 	ld a, b
-	cp DISGUISE_A
+	cp e
 	ret nz
 	ld a, DISGUISED_FORM
 	ld b, a
@@ -2124,7 +2182,6 @@ HandleDisguiseAfterBattle:
 	ret
 	
 ChangePlayerFormAnimation:
-	call SwitchTurn
 	ld a, [wBattleMonSpecies] ; TempBattleMonSpecies
 	ld [wCurPartySpecies], a ; CurPartySpecies
 	ld hl, wBattleMonForm
@@ -2142,11 +2199,10 @@ ChangePlayerFormAnimation:
 	ld [wKickCounter], a
 	ld a, TRANSFORM_SPLASH
 	farcall LoadAnim
-	jp SwitchTurn
+	ret
 
 	
 ChangeEnemyFormAnimation:
-	call SwitchTurn
 	ld a, [wEnemyMonSpecies] ; TempBattleMonSpecies
 	ld [wCurPartySpecies], a ; CurPartySpecies
 	ld hl, wEnemyMonForm
@@ -2174,4 +2230,4 @@ ChangeEnemyFormAnimation:
 	ld [wKickCounter], a
 	ld a, TRANSFORM_SPLASH
 	farcall LoadAnim
-	jp SwitchTurn
+	ret

@@ -42,6 +42,10 @@ CorsolaAnimations:
 CorsolaAnimation:  INCLUDE "gfx/pokemon/corsola/anim0.asm"
 Corsola_GAnimation: INCLUDE "gfx/pokemon/corsola_g/anim0.asm"
 
+CherrimAnimations:
+CherrimAnimation:  INCLUDE "gfx/pokemon/cherrim/anim0.asm"
+Cherrim_SAnimation: INCLUDE "gfx/pokemon/cherrim_s/anim0.asm"
+
 MimikyuAnimations:
 MimikyuAnimation:  INCLUDE "gfx/pokemon/mimikyu/anim0.asm"
 Mimikyu_BAnimation: INCLUDE "gfx/pokemon/mimikyu_b/anim0.asm"

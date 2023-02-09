@@ -197,6 +197,8 @@ SnoruntPokedexEntry::    INCLUDE "data/pokemon/dex_entries/361.asm"
 GlaliePokedexEntry::	 INCLUDE "data/pokemon/dex_entries/362.asm"
 BuizelPokedexEntry::     INCLUDE "data/pokemon/dex_entries/418.asm"
 FloatzelPokedexEntry::   INCLUDE "data/pokemon/dex_entries/419.asm"
+CherubiPokedexEntry::    INCLUDE "data/pokemon/dex_entries/420.asm"
+CherrimPokedexEntry::    INCLUDE "data/pokemon/dex_entries/421.asm"
 DrifloonPokedexEntry:: 	 INCLUDE "data/pokemon/dex_entries/425.asm"
 DrifblimPokedexEntry:: 	 INCLUDE "data/pokemon/dex_entries/426.asm"
 BunearyPokedexEntry::    INCLUDE "data/pokemon/dex_entries/427.asm"
@@ -204,13 +206,14 @@ LopunnyPokedexEntry::    INCLUDE "data/pokemon/dex_entries/428.asm"
 HonchkrowPokedexEntry::  INCLUDE "data/pokemon/dex_entries/430.asm"
 SpiritombPokedexEntry::  INCLUDE "data/pokemon/dex_entries/442.asm"
 MunchlaxPokedexEntry::   INCLUDE "data/pokemon/dex_entries/446.asm"
-RioluPokedexEntry:: 	 INCLUDE "data/pokemon/dex_entries/447.asm"
-LucarioPokedexEntry:: 	 INCLUDE "data/pokemon/dex_entries/448.asm"
+
 
 
 SECTION "Pokedex Entries 193-253", ROMX
 
 PokedexEntries4::
+RioluPokedexEntry:: 	 INCLUDE "data/pokemon/dex_entries/447.asm"
+LucarioPokedexEntry:: 	 INCLUDE "data/pokemon/dex_entries/448.asm"
 CroagunkPokedexEntry::   INCLUDE "data/pokemon/dex_entries/453.asm"
 ToxicroakPokedexEntry::  INCLUDE "data/pokemon/dex_entries/454.asm"
 SnoverPokedexEntry::   	 INCLUDE "data/pokemon/dex_entries/459.asm"

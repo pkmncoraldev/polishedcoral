@@ -182,6 +182,8 @@ AnimationExtraPointers:
 	dw GlalieAnimationExtra
 	dw BuizelAnimationExtra
 	dw FloatzelAnimationExtra
+	dw CherubiAnimationExtra
+	dw -1 ; see CherrimAnimationExtraPointers
 	dw DrifloonAnimationExtra
 	dw DrifblimAnimationExtra
 	dw BunearyAnimationExtra
@@ -249,8 +251,6 @@ AnimationExtraPointers:
 	dw CursolaAnimationExtra
 	dw WyrdeerAnimationExtra
 	dw FarigirafAnimationExtra
-	dw BulbasaurAnimationExtra
-	dw BulbasaurAnimationExtra
 	dw BulbasaurAnimationExtra
 	dw BulbasaurAnimationExtra
 	dw EggAnimationExtra

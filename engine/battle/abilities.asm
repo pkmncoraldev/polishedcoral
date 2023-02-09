@@ -116,6 +116,21 @@ ObliviousAbility:
 	ld hl, ConfusedNoMoreText
 	jp StdBattleTextBox
 
+HandleUserAndOppFlowerGift:
+	ld a, BATTLE_VARS_ABILITY
+	call GetBattleVar
+	cp FLOWER_GIFT
+	jr nz, .skip
+	call FlowerGiftAbility
+.skip
+	call SwitchTurn
+	ld a, BATTLE_VARS_ABILITY
+	call GetBattleVar
+	cp FLOWER_GIFT
+	ret nz
+	call FlowerGiftAbility
+	jp SwitchTurn
+
 FlowerGiftAbility:
 	call GetWeatherAfterCloudNine
 	cp WEATHER_SUN
@@ -142,8 +157,7 @@ FlowerGiftAbility:
 	call GetPartyLocation
 	ld a, [wBattleMonForm]
 	ld [hl], a
-	scf
-	ret
+	jr .end
 	
 .enemy
 	ld a, [wEnemyMonForm]
@@ -158,11 +172,10 @@ FlowerGiftAbility:
 	and $ff - FORM_MASK
 	or b
 	ld [wEnemyMonForm], a
-	
 	call ChangeEnemyFormAnimation
-	
-	scf
-	ret
+.end
+	ld hl, FlowerGiftTransformedText
+	jp StdBattleTextBox
 
 TraceAbility:
 	ld a, BATTLE_VARS_ABILITY_OPP
@@ -1507,6 +1520,7 @@ OffensiveDamageAbilities:
 	dbw PIXILATE, PixilateAbility
 	dbw STRONG_JAW,	StrongJawAbility
 	dbw REFRIGERATE, RefrigerateAbility
+	dbw FLOWER_GIFT, SolarPowerAbility
 	dbw -1, -1
 
 DefensiveDamageAbilities:
@@ -1515,6 +1529,7 @@ DefensiveDamageAbilities:
 	dbw THICK_FAT, EnemyThickFatAbility
 	dbw DRY_SKIN, EnemyDrySkinAbility
 	dbw FUR_COAT, EnemyFurCoatAbility
+	dbw FLOWER_GIFT, EnemyFlowerGiftAbility
 	dbw -1, -1
 
 TechnicianAbility:
@@ -1702,6 +1717,13 @@ EnemyMarvelScaleAbility:
 	call GetBattleVar
 	and a
 	ret z
+	ld a, $23
+	jp ApplyPhysicalDefenseDamageMod
+
+EnemyFlowerGiftAbility:
+	call GetWeatherAfterCloudNine
+	cp WEATHER_SUN
+	ret nz
 	ld a, $23
 	jp ApplyPhysicalDefenseDamageMod
 
@@ -2231,3 +2253,154 @@ ChangeEnemyFormAnimation:
 	ld a, TRANSFORM_SPLASH
 	farcall LoadAnim
 	ret
+	
+ResetEnemyFlowerGift:
+	ld hl, wOTPartyMon1Personality
+	ld a, [wOTPartyMon1Species]
+	ld c, a
+	call GetAbility
+	ld a, b
+	cp FLOWER_GIFT
+	jr nz, .skip1
+	ld a, DISGUISED_FORM
+	ld b, a
+	ld a, [wOTPartyMon1Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wOTPartyMon1Form
+	ld [hl], a
+.skip1
+	ld hl, wOTPartyMon2Personality
+	ld a, [wOTPartyMon2Species]
+	ld c, a
+	call GetAbility
+	ld a, b
+	cp FLOWER_GIFT
+	jr nz, .skip2
+	ld a, DISGUISED_FORM
+	ld b, a
+	ld a, [wOTPartyMon2Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wOTPartyMon2Form
+	ld [hl], a
+.skip2
+	ld hl, wOTPartyMon3Personality
+	ld a, [wOTPartyMon3Species]
+	ld c, a
+	call GetAbility
+	ld a, b
+	cp FLOWER_GIFT
+	jr nz, .skip3
+	ld a, DISGUISED_FORM
+	ld b, a
+	ld a, [wOTPartyMon3Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wOTPartyMon3Form
+	ld [hl], a
+.skip3
+	ld hl, wOTPartyMon4Personality
+	ld a, [wOTPartyMon4Species]
+	ld c, a
+	call GetAbility
+	ld a, b
+	cp FLOWER_GIFT
+	jr nz, .skip4
+	ld a, DISGUISED_FORM
+	ld b, a
+	ld a, [wOTPartyMon4Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wPartyMon4Form
+	ld [hl], a
+.skip4
+	ld hl, wOTPartyMon5Personality
+	ld a, [wOTPartyMon5Species]
+	ld c, a
+	call GetAbility
+	ld a, b
+	cp FLOWER_GIFT
+	jr nz, .skip5
+	ld a, DISGUISED_FORM
+	ld b, a
+	ld a, [wOTPartyMon5Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wOTPartyMon5Form
+	ld [hl], a
+.skip5
+	ld hl, wOTPartyMon6Personality
+	ld a, [wOTPartyMon6Species]
+	ld c, a
+	call GetAbility
+	ld a, b
+	cp FLOWER_GIFT
+	ret nz
+	ld a, DISGUISED_FORM
+	ld b, a
+	ld a, [wOTPartyMon6Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wOTPartyMon6Form
+	ld [hl], a
+	ret
+	
+RevertFlowerGiftAfterWeather:
+	ld a, BATTLE_VARS_ABILITY
+	call GetBattleVar
+	cp FLOWER_GIFT
+	jr nz, .skip
+	call RevertFlowerGift
+.skip
+	call SwitchTurn
+	ld a, BATTLE_VARS_ABILITY
+	call GetBattleVar
+	cp FLOWER_GIFT
+	jr nz, .skip2
+	call RevertFlowerGift
+.skip2
+	jp SwitchTurn
+	
+RevertFlowerGift:
+	ld a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+	ld a, [wBattleMonForm]
+	and FORM_MASK
+	cp SUNNY_FORM
+	ret nz
+	ld a, PLAIN_FORM
+	ld b, a
+	ld a, [wBattleMonForm]
+	and $ff - FORM_MASK
+	or b
+	ld [wBattleMonForm], a
+	
+	call ChangePlayerFormAnimation
+	
+	ld hl, wPartyMon1Form
+	ld a, [wCurBattleMon]
+	ld [wCurPartyMon], a
+	call GetPartyLocation
+	ld a, [wBattleMonForm]
+	ld [hl], a
+	call HandleFlowerGiftAfterBattle
+	jr .end
+	
+.enemy
+	ld a, [wEnemyMonForm]
+	and FORM_MASK
+	cp SUNNY_FORM
+	ret nz	
+	ld a, PLAIN_FORM
+	ld b, a
+	ld a, [wEnemyMonForm]
+	and $ff - FORM_MASK
+	or b
+	ld [wEnemyMonForm], a
+	call ChangeEnemyFormAnimation
+	call ResetEnemyFlowerGift
+.end
+	ld hl, FlowerGiftTransformedText
+	jp StdBattleTextBox

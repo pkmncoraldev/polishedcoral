@@ -1881,6 +1881,7 @@ HandleWeather:
 .ended
 	ld hl, .WeatherEndedMessages
 	call .PrintWeatherMessage
+	farcall RevertFlowerGiftAfterWeather
 	xor a
 	ld [wWeather], a
 	ret
@@ -2549,6 +2550,7 @@ EnemyPartyMonEntrance: ; 3cf78
 	xor a
 	ld [wEnemySwitchMonIndex], a
 	call NewEnemyMonStatus
+	farcall ResetEnemyFlowerGift
 	call ResetEnemyStatLevels
 	call BreakAttraction
 	pop af
@@ -3940,6 +3942,7 @@ ForcePlayerSwitch: ; 3db32
 
 
 SendOutPlayerMon: ; 3db5f
+	farcall HandleFlowerGiftAfterBattle
 	hlcoord 1, 5
 	lb bc, 7, 8
 	call ClearBox

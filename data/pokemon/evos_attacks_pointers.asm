@@ -270,4 +270,5 @@ EvosAttacksPointers:: ; 0x425b1
 	dw Exeggutor_AEvosAttacks
 	dw Marowak_AEvosAttacks
 	dw Corsola_GEvosAttacks
+	dw CherrimEvosAttacks
 	dw MimikyuEvosAttacks

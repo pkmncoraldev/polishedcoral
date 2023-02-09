@@ -9251,7 +9251,13 @@ StartWeather:
 	call GetItemBoostedDuration
 	ld [wWeatherCount], a
 	call AnimateCurrentMove
-	jp StdBattleTextBox ; hl has text pointer already
+	call StdBattleTextBox ; hl has text pointer already
+	call GetWeatherAfterCloudNine
+	cp WEATHER_SUN
+	jr nz, .revert
+	farjp HandleUserAndOppFlowerGift
+.revert
+	farjp RevertFlowerGiftAfterWeather
 
 
 BattleCommand_bellydrum: ; 37c1a

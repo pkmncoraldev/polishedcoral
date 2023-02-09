@@ -1700,3 +1700,8 @@ CopiedStatsText:
 	para "changes of"
 	line "<TARGET>!"
 	prompt
+	
+FlowerGiftTransformedText:
+	text "<USER>"
+	line "transformed!"
+	prompt

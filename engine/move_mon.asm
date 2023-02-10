@@ -1653,7 +1653,7 @@ CalcPkmnStatC: ; e17b
 	bit PERFECT_IVS_OPT, a
 	ld a, $f
 	jr nz, .GotDV
-	ld a, b
+	ld a, d
 	push bc
 .hyper_training_loop
 	rlca

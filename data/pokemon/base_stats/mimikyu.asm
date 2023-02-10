@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm 
+	tmhm FAKE_OUT, CHARM, WILL_O_WISP, CURSE, SAFEGUARD, SUBSTITUTE, PROTECT, HYPER_BEAM, REFLECT, LIGHT_SCREEN, THUNDER
 	; end

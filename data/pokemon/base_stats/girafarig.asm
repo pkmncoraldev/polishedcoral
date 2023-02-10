@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm 
+	tmhm ROCK_SMASH, FAKE_OUT, BULLDOZE, RAIN_DANCE, CHARM, SUNNY_DAY, CURSE, WORK_UP_GROWTH, SUBSTITUTE, PROTECT, HYPER_BEAM, GIGA_IMPACT
 	; end

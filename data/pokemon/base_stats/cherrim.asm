@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm 
+	tmhm FAKE_OUT, SOLAR_BEAM, SAFEGUARD, PROTECT, SUNNY_DAY, SUBSTITUTE, HYPER_BEAM, GIGA_IMPACT
 	; end

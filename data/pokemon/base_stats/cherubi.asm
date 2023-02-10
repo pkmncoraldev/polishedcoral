@@ -1,23 +1,23 @@
-	db  75,  70,  90,  80,  70, 105
+	db  45,  35,  45,  35,  62,  53
 	;   hp  atk  def  spd  sat  sdf
 
-	db DRAGON, FLYING
-	db 45 ; catch rate
-	db 188 ; base exp
-	db DRAGON_FANG ; item 1
-	db DRAGON_FANG ; item 2
+	db GRASS, GRASS
+	db 190 ; catch rate
+	db 68 ; base exp
+	db NO_ITEM ; item 1
+	db MIRACLE_SEED ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
 	dn 6, 6 ; frontpic dimensions
-	db NATURAL_CURE ; ability 1
-	db NATURAL_CURE ; ability 2
-	db CLOUD_NINE ; hidden ability
-	db FAST ; growth rate
-	dn AVIAN, REPTILE ; egg groups
+	db CHLOROPHYLL ; ability 1
+	db CHLOROPHYLL ; ability 2
+	db CHLOROPHYLL ; hidden ability
+	db MEDIUM_FAST ; growth rate
+	dn FAERY, PLANT ; egg groups
 
 	; ev_yield
-	ev_yield   0,   0,   0,   0,   0,   2
+	ev_yield   0,   0,   0,   0,   1,   0
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm ROCK_SMASH, FAKE_OUT, RAIN_DANCE, ROOST, FLY, CHARM, CURSE, SUNNY_DAY, STEEL_WING, BULLDOZE, SAFEGUARD, SUBSTITUTE, PROTECT, HYPER_BEAM, GIGA_IMPACT, SOLAR_BEAM, FIRE_BLAST
+	tmhm 
 	; end

@@ -44,25 +44,25 @@ TrainerClassAttributes: ; 3959c
 
 ; Stanley
 	db 0, 0 ; items
-	db 30 ; base reward
+	db 25 ; base reward
 	dw AI_BASIC + AI_SMART + AI_STATUS + AI_SETUP + AI_TYPES
 	dw CONTEXT_USE
 
 ; Rodney
 	db FULL_HEAL, 0 ; items
-	db 30 ; base reward
+	db 25 ; base reward
 	dw AI_BASIC + AI_SMART + AI_STATUS + AI_SETUP + AI_TYPES
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Wendy
 	db 0, 0 ; items
-	db 30 ; base reward
+	db 25 ; base reward
 	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Charlie
 	db SUPER_POTION, 0 ; items
-	db 30 ; base reward
+	db 25 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
@@ -122,7 +122,7 @@ TrainerClassAttributes: ; 3959c
 
 ; Rival
 	db 0, 0 ; items
-	db 20 ; base reward
+	db 15 ; base reward
 	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
@@ -176,49 +176,49 @@ TrainerClassAttributes: ; 3959c
 
 ; Gruntm
 	db 0, 0 ; items
-	db 15 ; base reward
+	db 4 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_RARELY
 
 ; Gruntf
 	db 0, 0 ; items
-	db 15 ; base reward
+	db 4 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_RARELY
 	
 ; Kage
 	db 0, 0 ; items
-	db 25 ; base reward
+	db 15 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_RARELY
 	
 ; Locke
 	db 0, 0 ; items
-	db 25 ; base reward
+	db 15 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_RARELY
 
 ; Pokefanm
 	db 0, 0 ; items
-	db 15 ; base reward
+	db 7 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_TYPES + AI_STATUS
 	dw CONTEXT_USE + SWITCH_RARELY
 
 ; Pokefanf
 	db 0, 0 ; items
-	db 15 ; base reward
+	db 7 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_TYPES + AI_STATUS
 	dw CONTEXT_USE + SWITCH_RARELY
 
 ; Officerm
 	db FRESH_WATER, 0 ; items
-	db 15 ; base reward
+	db 10 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Officerf
 	db FRESH_WATER, 0 ; items
-	db 15 ; base reward
+	db 10 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
@@ -230,37 +230,37 @@ TrainerClassAttributes: ; 3959c
 
 ; Pokemaniac
 	db X_SPEED, 0 ; items
-	db 13 ; base reward
+	db 7 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_OFFENSIVE + AI_AGGRESSIVE + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Super Nerd
 	db DIRE_HIT, 0 ; items
-	db 13 ; base reward
+	db 10 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Lass
 	db 0, 0 ; items
-	db 15 ; base reward
+	db 5 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE + SWITCH_RARELY
 
 ; Beauty
 	db 0, 0 ; items
-	db 20 ; base reward
+	db 7 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Firebreather
 	db 0, 0 ; items
-	db 15 ; base reward
+	db 7 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_OFFENSIVE + AI_OPPORTUNIST + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Juggler
 	db 0, 0 ; items
-	db 15 ; base reward
+	db 7 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_TYPES + AI_STATUS
 	dw CONTEXT_USE + SWITCH_OFTEN
 
@@ -290,31 +290,31 @@ TrainerClassAttributes: ; 3959c
 
 ; Couple
 	db LEMONADE, 0 ; items
-	db 18 ; base reward
+	db 10 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Gentleman
 	db 0, 0 ; items
-	db 16 ; base reward
+	db 10 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_AGGRESSIVE + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Rich Boy
 	db MAX_POTION, 0 ; items
-	db 50 ; base reward
+	db 10 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Lady
 	db MAX_POTION, 0 ; items
-	db 50 ; base reward
+	db 10 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Sailor
 	db 0, 0 ; items
-	db 16 ; base reward
+	db 10 ; base reward
 	dw AI_BASIC + AI_OFFENSIVE + AI_OPPORTUNIST + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
@@ -344,13 +344,13 @@ TrainerClassAttributes: ; 3959c
 
 ; Boarder
 	db 0, 0 ; items
-	db 18 ; base reward
+	db 7 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Skier
 	db 0, 0 ; items
-	db 18 ; base reward
+	db 7 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
@@ -398,13 +398,13 @@ TrainerClassAttributes: ; 3959c
 
 ; Cooltrainerm
 	db FULL_HEAL, 0 ; items
-	db 15 ; base reward
+	db 10 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Cooltrainerf
 	db FULL_HEAL, 0 ; items
-	db 15 ; base reward
+	db 10 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
@@ -416,7 +416,7 @@ TrainerClassAttributes: ; 3959c
 
 ; TeacherFast
 	db 0, 0 ; items
-	db 25 ; base reward
+	db 10 ; base reward
 	dw AI_BASIC + AI_STATUS
 	dw CONTEXT_USE + SWITCH_RARELY
 
@@ -440,91 +440,79 @@ TrainerClassAttributes: ; 3959c
 	
 ;DisguiseMan
 	db 0, 0 ; items
-	db 25 ; base reward
-	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
-	
-;Lady
-	db 0, 0 ; items
-	db 18 ; base reward
+	db 20 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 	
 ;BikiniP
 	db 0, 0 ; items
-	db 25 ; base reward
+	db 20 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 	
 ;BikiniR
 	db 0, 0 ; items
-	db 25 ; base reward
+	db 20 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 	
 ;BikiniY
 	db 0, 0 ; items
-	db 25 ; base reward
-	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
-	
-;Couple
-	db 0, 0 ; items
-	db 25 ; base reward
+	db 20 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 	
 ;Delinquentm
 	db 0, 0 ; items
-	db 10 ; base reward
+	db 7 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 	
 ;Delinquentf
 	db 0, 0 ; items
-	db 10 ; base reward
+	db 7 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 	
 ;Bunearym
 	db 0, 0 ; items
-	db 20 ; base reward
+	db 10 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 	
 ;Bunearyf
 	db 0, 0 ; items
-	db 20 ; base reward
+	db 10 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 	
 ;Frankie
 	db FULL_HEAL, SODA_POP ; items
-	db 25 ; base reward
+	db 15 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 	
 ;MallCop
 	db 0, 0 ; items
-	db 40 ; base reward
+	db 25 ; base reward
 	dw AI_BASIC + AI_SETUP
 	dw CONTEXT_USE
 	
 ; Skater
 	db 0, 0 ; items
-	db 18 ; base reward
+	db 7 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 	
 ; SpaTrainer
 	db 0, 0 ; items
-	db 15 ; base reward
+	db 7 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_TYPES + AI_STATUS
 	dw CONTEXT_USE + SWITCH_RARELY
 	
 ; SpaTrainerf
 	db 0, 0 ; items
-	db 15 ; base reward
+	db 7 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_TYPES + AI_STATUS
 	dw CONTEXT_USE + SWITCH_RARELY
 	

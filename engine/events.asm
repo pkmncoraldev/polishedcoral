@@ -398,11 +398,18 @@ SetUpFiveStepWildEncounterCooldown: ; 968d1
 	ld a, [wStuckInSandCounter]
 	cp 0
 	jr nz, .sand
+	ld a, [wPermission]
+	cp CAVE
+	jr z, .cave
 	ld a, 5
 	ld [wWildEncounterCooldown], a
 	ret
+.cave
+	ld a, 10
+	ld [wWildEncounterCooldown], a
+	ret
 .sand
-	ld a, 6
+	ld a, 7
 	ld [wWildEncounterCooldown], a
 ; 968d7
 

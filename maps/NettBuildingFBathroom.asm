@@ -272,7 +272,7 @@ NettBuildingFBathroomDoor1Text:
 	text "LADY: Can I help"
 	line "you?"
 	
-	para "This I'm a little"
+	para "I'm a little busy"
 	line "busy in here!"
 	done
 	

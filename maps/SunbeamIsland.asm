@@ -44,7 +44,7 @@ SunbeamIsland_MapScriptHeader:
 	signpost 43, 19, SIGNPOST_READ, SunBeamSurfboards
 	signpost 35, 18, SIGNPOST_READ, SunBeamPokeSign
 	signpost 31, 28, SIGNPOST_READ, SunBeamMartSign
-	signpost 47, 12, SIGNPOST_READ, SunBeamBoatSign
+	signpost 47,  9, SIGNPOST_READ, SunBeamBoatSign
 
 	db 20 ; object events
 	person_event SPRITE_MATRON, 24, 24, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC1, -1

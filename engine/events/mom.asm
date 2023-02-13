@@ -190,6 +190,8 @@ Special_BankOfMom: ; 16218
 	call Mom_SetUpWithdrawMenu
 	call WaitSFX
 	call Mom_Wait10Frames
+	ld c, 20
+	call DelayFrames
 	call Mom_WithdrawDepositMenuJoypad
 	call CloseWindow
 	jr c, .CancelDeposit

@@ -561,7 +561,7 @@ TrainerGlintGrove_6:
 .SeenText:
 	text "I figured I could"
 	line "catch a bunch of"
-	cont "different BUG TYPE"
+	cont "different BUG-type"
 	cont "#MON in this"
 	cont "grove,"
 	
@@ -1039,8 +1039,8 @@ GlintGroveStanleyText2:
 	
 	para "I believe that"
 	line "energy is what"
-	cont "attracts FAIRY"
-	cont "TYPE #MON to"
+	cont "attracts FAIRY-"
+	cont "type #MON to"
 	cont "this forest."
 	done
 	

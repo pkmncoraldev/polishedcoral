@@ -535,7 +535,7 @@ ShadowTagDescription:
 
 LevitateDescription:
 	db    "Gives immunity to"
-	next1 "GROUND-TYPE moves.@"
+	next1 "GROUND-type moves.@"
 
 EffectSporeDescription:
 	db    "Contact may cause"
@@ -599,7 +599,7 @@ WaterVeilDescription:
 
 MagnetPullDescription:
 	db    "Prevents escape by"
-	next1 "STEEL-TYPE foes.@"
+	next1 "STEEL-type foes.@"
 
 SoundproofDescription:
 	db    "Gives immunity to"
@@ -824,7 +824,7 @@ SolidRockDescription:
 
 ScrappyDescription:
 	db    "Enables moves to"
-	next1 "hit GHOST-TYPE.@"
+	next1 "hit GHOST-type.@"
 
 IceBodyDescription:
 	db    "Gradually regains"
@@ -952,8 +952,8 @@ CompetitiveDescription:
 	next1 "stat reduction.@"
 
 PixilateDescription:
-	db    "NORMAL-TYPE moves"
-	next1 "become FAIRY-TYPE.@"
+	db    "NORMAL-type moves"
+	next1 "become FAIRY-type.@"
 
 TanglingHairDescription:
 	db    "Contact may lower"
@@ -976,8 +976,8 @@ StrongJawDescription:
 	next1 "biting moves.@"
 	
 RefrigerateDescription:
-	db    "NORMAL-TYPE moves"
-	next1 "become ICE-TYPE.@"
+	db    "NORMAL-type moves"
+	next1 "become ICE-type.@"
 	
 MercilessDescription:
 	db    "Always crit if"

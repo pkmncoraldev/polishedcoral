@@ -58,10 +58,10 @@ GlintApt11FNpc1Text:
 	
 	para "For example,"
 	
-	para "a FIGHTING TYPE"
+	para "a FIGHTING-type"
 	line "move will be"
 	cont "stronger if used"
-	cont "by a FIGHTING TYPE"
+	cont "by a FIGHTING-type"
 	cont "#MON!"
 	done
 	
@@ -109,12 +109,12 @@ GlintApt11FNpc2Text3:
 	text "That HM will teach"
 	line "ROCK SMASH."
 	
-	para "It's a FIGHTING"
-	line "TYPE move,"
+	para "It's a FIGHTING-"
+	line "type move,"
 	
 	para "so it might come"
 	line "in handy against"
-	cont "NORMAL TYPE"
+	cont "NORMAL-type"
 	cont "#MON!"
 	done
 	

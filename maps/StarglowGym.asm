@@ -179,9 +179,9 @@ TrainerStarglowGym_2:
 
 .SeenText:
 	text "Did you know that"
-	line "WATER TYPE is the"
+	line "WATER-type is the"
 	cont "most common #-"
-	cont "MON TYPE?"
+	cont "MON type?"
 	
 	para "That doesn't mean"
 	line "they're weak!"
@@ -358,7 +358,7 @@ StarglowGymTrainer2RematchRegularText:
 	done
 
 StarglowGymTrainer2RematchSeenText:
-	text "WATER TYPES are"
+	text "WATER-types are"
 	line "very common,"
 	
 	para "but I won't give"
@@ -663,13 +663,13 @@ StarglowGymGuyText:
 	cont "WATER #MON."
 	
 	para "Hit 'em with an"
-	line "ELECTRIC or GRASS"
-	cont "TYPE move to take"
+	line "ELECTRIC or GRASS-"
+	cont "type move to take"
 	cont "'em out easily."
 	
 	para "You won't get very"
 	line "far with a FIRE or"
-	cont "ROCK TYPE, though…"
+	cont "ROCK-type, though…"
 	
 	para "I'm sure you can"
 	line "handle it!"

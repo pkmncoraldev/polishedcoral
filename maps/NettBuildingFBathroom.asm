@@ -273,7 +273,7 @@ NettBuildingFBathroomDoor1Text:
 	line "you?"
 	
 	para "I'm a little busy"
-	line "busy in here!"
+	line "in here!"
 	done
 	
 Movement_NettBuildingFBathroom:

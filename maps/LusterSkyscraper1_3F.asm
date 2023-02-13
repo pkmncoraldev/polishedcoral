@@ -91,7 +91,7 @@ LusterSkyscraper1_3F_NPC1Text1:
 	
 	para "I'll give it to you"
 	line "if you let me have"
-	cont "your UP GRADE."
+	cont "your UP-GRADE."
 	done
 	
 LusterSkyscraper1_3F_NPC1Text2:
@@ -99,7 +99,7 @@ LusterSkyscraper1_3F_NPC1Text2:
 	line "discs again?"
 	
 	para "I'll take your"
-	line "UP GRADE."
+	line "UP-GRADE."
 	done
 	
 LusterSkyscraper1_3F_NPC1Text3:

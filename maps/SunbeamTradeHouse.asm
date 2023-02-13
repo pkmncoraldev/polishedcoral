@@ -47,7 +47,7 @@ SunbeamTradeHouseNpc2Text:
 	cont "sunny skies and"
 	cont "bright blue water."
 	
-	para "GRASS TYPE #MON"
+	para "GRASS-type #MON"
 	line "thrive in this"
 	cont "island's sunny"
 	cont "weather!"

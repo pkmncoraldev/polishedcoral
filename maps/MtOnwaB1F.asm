@@ -180,8 +180,8 @@ LavaCaveBF1NPC1Text_girl:
 LavaCaveBF1NPC2Text_boy:
 	text "Hey, little bro."
 	
-	para "You have a FIRE"
-	line "TYPE #MON?"
+	para "You have a FIRE-"
+	line "type #MON?"
 	
 	para "Me and my bro surf"
 	line "over the lava on"
@@ -195,8 +195,8 @@ LavaCaveBF1NPC2Text_boy:
 LavaCaveBF1NPC2Text_girl:
 	text "Hey, little mama."
 	
-	para "You have a FIRE"
-	line "TYPE #MON?"
+	para "You have a FIRE-"
+	line "type #MON?"
 	
 	para "Me and my bro surf"
 	line "over the lava on"

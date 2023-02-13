@@ -172,7 +172,7 @@ GlintPokeCenterTeaLadyText7:
 GlintPokeCenterNpc1Text:
 	text "Our GYM LEADER"
 	line "specializes in"
-	cont "NORMAL TYPE"
+	cont "NORMAL-type"
 	cont "#MON."
 	
 	para "NORMAL doesn't"
@@ -189,7 +189,7 @@ GlintPokeCenterNpc2Text:
 	line "NORTH of GLINT"
 	cont "CITY."
 	
-	para "FAIRY TYPE #MON"
+	para "FAIRY-type #MON"
 	line "seem to be drawn"
 	
 	para "to it for some"

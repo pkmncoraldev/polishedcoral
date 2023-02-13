@@ -66,7 +66,7 @@ TrainerStarglowCavern_1:
 
 .SeenText:
 	text "You'll find a bunch"
-	line "of ROCK TYPE #-"
+	line "of ROCK-type #-"
 	cont "MON in this cave."
 	
 	para "Hope you're"

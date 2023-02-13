@@ -3367,9 +3367,10 @@ BikiniPGroup:
 
 	; BIKINIY
 	db "LILAC@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
 	db 23, GLIGAR
+		db KNOCK_OFF, QUICK_ATTACK, FURY_CUTTER, FEINT_ATTACK
 	db -1 ; end
 
 ; ================

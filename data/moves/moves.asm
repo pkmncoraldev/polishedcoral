@@ -153,7 +153,7 @@ Moves:: ; 41afb
 	move LEECH_LIFE,               EFFECT_LEECH_HIT,          80, BUG,       100, 10,   0, PHYSICAL
 	move DOUBLE_HIT,               EFFECT_DOUBLE_HIT,         35, NORMAL,    100, 10,   0, PHYSICAL
 	move BRAVE_BIRD,               EFFECT_RECOIL_HIT,        120, FLYING,    100, 15,   0, PHYSICAL
-	move TRANSFORM_SPLASH,         EFFECT_TRANSFORM,           0, NORMAL,    100, 10,   0, STATUS
+	move TRANSFORM_SKETCH_MIMIC_SPLASH,         EFFECT_TRANSFORM,           0, NORMAL,    100, 10,   0, STATUS
 	move TOXIC_SPIKES,             EFFECT_TOXIC_SPIKES,        0, POISON,    100, 20,   0, STATUS
 	move POISON_FANG,              EFFECT_POISON_FANG,        50, POISON,    100, 15,  50, PHYSICAL
 	move SPORE,                    EFFECT_SLEEP,               0, GRASS,     100, 15,   0, STATUS

@@ -58,9 +58,10 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke CHERUBI, 44
-	givepoke CHERRIM, 44
-	givepoke CHERRIM, SUNNY_FORM, 44
+	givepoke MAGIKARP, 44
+	givepoke SMEARGLE, 44
+	givepoke DITTO, 44
+	givepoke SUDOWOODO, 25
 
 .items
 	writetext PlayerHouseDebugText6

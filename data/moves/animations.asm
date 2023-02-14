@@ -4170,6 +4170,8 @@ BattleAnim_SpikeCannon:
 	anim_ret
 
 BattleAnim_Transform:
+	anim_jumpif $2, BattleAnim_Sketch
+	anim_jumpif $3, BattleAnim_Mimic
 	anim_jumpif $6, BattleAnim_Disguise
 	anim_jumpif $9, BattleAnim_Splash
 	anim_jumpif $12, BattleAnim_FormChange1

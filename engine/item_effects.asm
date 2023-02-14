@@ -2630,7 +2630,7 @@ RestorePPEffect: ; f5bf
 
 .ppup2
 	ld a, [hl]
-	cp SKETCH
+	cp TRANSFORM_SKETCH_MIMIC_SPLASH ;TODO: Only do this for Smeargle
 	jr z, .CantUsePPUpOnSketch
 
 	ld bc, MON_PP - MON_MOVES

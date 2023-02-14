@@ -2059,7 +2059,7 @@ DisguiseAbility::
 	ld [wFXAnimIDHi], a
 	ld a, 6
 	ld [wKickCounter], a
-	ld a, TRANSFORM_SPLASH
+	ld a, TRANSFORM_SKETCH_MIMIC_SPLASH
 	farcall LoadAnim
 	call SwitchTurn
 	
@@ -2097,7 +2097,7 @@ DisguiseAbility::
 	ld [wFXAnimIDHi], a
 	ld a, 6
 	ld [wKickCounter], a
-	ld a, TRANSFORM_SPLASH
+	ld a, TRANSFORM_SKETCH_MIMIC_SPLASH
 	farcall LoadAnim
 	call SwitchTurn
 	scf
@@ -2215,11 +2215,11 @@ ChangePlayerFormAnimation:
 	ld [wFXAnimIDHi], a
 	ld a, $12
 	ld [wKickCounter], a
-	ld a, TRANSFORM_SPLASH
+	ld a, TRANSFORM_SKETCH_MIMIC_SPLASH
 	farcall LoadAnim
 	ld a, $13
 	ld [wKickCounter], a
-	ld a, TRANSFORM_SPLASH
+	ld a, TRANSFORM_SKETCH_MIMIC_SPLASH
 	farcall LoadAnim
 	ret
 
@@ -2236,7 +2236,7 @@ ChangeEnemyFormAnimation:
 	ld [wFXAnimIDHi], a
 	ld a, $12
 	ld [wKickCounter], a
-	ld a, TRANSFORM_SPLASH
+	ld a, TRANSFORM_SKETCH_MIMIC_SPLASH
 	farcall LoadAnim
 	
 	ld hl, wOTPartyMon1Form
@@ -2250,7 +2250,7 @@ ChangeEnemyFormAnimation:
 	
 	ld a, $13
 	ld [wKickCounter], a
-	ld a, TRANSFORM_SPLASH
+	ld a, TRANSFORM_SKETCH_MIMIC_SPLASH
 	farcall LoadAnim
 	ret
 	

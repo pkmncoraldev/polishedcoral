@@ -473,7 +473,7 @@ JigglypuffEvosAttacks:
 	db 29, REST
 	db 33, BODY_SLAM
 	db 37, GYRO_BALL
-	db 41, MIMIC
+	db 41, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db 45, HYPER_VOICE
 	db 49, DOUBLE_EDGE
 	db 0 ; no more level-up moves
@@ -492,7 +492,7 @@ WigglytuffEvosAttacks:
 	db 1, REST
 	db 1, BODY_SLAM
 	db 1, GYRO_BALL
-	db 1, MIMIC
+	db 1, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db 1, HYPER_VOICE
 	db 1, DOUBLE_EDGE
 	db 0 ; no more level-up moves
@@ -1456,7 +1456,7 @@ TaurosEvosAttacks:
 MagikarpEvosAttacks:
 	db EVOLVE_LEVEL, 20, GYARADOS
 	db 0 ; no more evolutions
-	db 1, TRANSFORM_SPLASH
+	db 1, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db 0 ; no more level-up moves
 
 GyaradosEvosAttacks:
@@ -1485,7 +1485,7 @@ LaprasEvosAttacks:
 
 DittoEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TRANSFORM_SPLASH
+	db 1, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db 0 ; no more level-up moves
 
 EeveeEvosAttacks:
@@ -1508,7 +1508,7 @@ EeveeEvosAttacks:
 	db 13, QUICK_ATTACK
 	db 17, BITE
 	db 17, SWIFT
-	db 20, MIMIC
+	db 20, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db 25, TAKE_DOWN
 	db 29, CHARM_FEATHER_DANCE
 	db 33, BATON_PASS
@@ -2166,7 +2166,7 @@ SudowoodoEvosAttacks:
 	db 5, FLAIL
 	db 8, LOW_KICK
 	db 12, ROCK_THROW
-	db 15, MIMIC
+	db 15, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db 19, FEINT_ATTACK
 	db 22, BODY_SLAM
 	db 26, ROLLOUT
@@ -2785,16 +2785,16 @@ StantlerEvosAttacks:
 
 SmeargleEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SKETCH
-	db 11, SKETCH
-	db 21, SKETCH
-	db 31, SKETCH
-	db 41, SKETCH
-	db 51, SKETCH
-	db 61, SKETCH
-	db 71, SKETCH
-	db 81, SKETCH
-	db 91, SKETCH
+	db 1, TRANSFORM_SKETCH_MIMIC_SPLASH
+	db 11, TRANSFORM_SKETCH_MIMIC_SPLASH
+	db 21, TRANSFORM_SKETCH_MIMIC_SPLASH
+	db 31, TRANSFORM_SKETCH_MIMIC_SPLASH
+	db 41, TRANSFORM_SKETCH_MIMIC_SPLASH
+	db 51, TRANSFORM_SKETCH_MIMIC_SPLASH
+	db 61, TRANSFORM_SKETCH_MIMIC_SPLASH
+	db 71, TRANSFORM_SKETCH_MIMIC_SPLASH
+	db 81, TRANSFORM_SKETCH_MIMIC_SPLASH
+	db 91, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db 0 ; no more level-up moves
 
 ElekidEvosAttacks:
@@ -3399,7 +3399,7 @@ BunearyEvosAttacks:
 LopunnyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
-	db 1, TRANSFORM_SPLASH
+	db 1, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db 1, TACKLE_SCRATCH_POUND
 	db 1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db 6, ENDURE
@@ -4145,7 +4145,7 @@ SylveonEvosAttacks:
 	db 9, SAND_ATTACK_SMOKESCREEN
 	db 13, QUICK_ATTACK
 	db 17, SWIFT
-	db 20, MIMIC
+	db 20, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db 25, DAZZLINGLEAM
 	db 29, LIGHT_SCREEN
 	db 33, ATTRACT

@@ -1,12 +1,14 @@
 BattleCommand_transform:
 	farcall CheckTransformThing
 	ld [wKickCounter], a
+	cp $2
+	jp z, BattleCommand_sketch
+	cp $3
+	jp z, BattleCommand_mimic
 	cp $9
-	jr nz, .do_transform
-	call AnimateCurrentMove
-	jp PrintNothingHappened
-	
-.do_transform
+	jp z, BattleCommand_splash
+
+;transform
 	call ClearLastMove
 
 	ld a, BATTLE_VARS_SUBSTATUS2_OPP
@@ -116,7 +118,7 @@ BattleCommand_transform:
 	inc de
 	and a
 	jr z, .done_move
-	cp SKETCH
+	cp TRANSFORM_SKETCH_MIMIC_SPLASH
 	ld a, 1
 	jr z, .done_move
 	ld a, 5
@@ -145,7 +147,7 @@ BattleCommand_transform:
 	jr nz, .mimic_anims
 	; Animation is done "raw" to allow Imposter
 	; to use the correct animation
-	ld de, TRANSFORM_SPLASH
+	ld de, TRANSFORM_SKETCH_MIMIC_SPLASH
 	call FarPlayBattleAnimation
 	jr .after_anim
 
@@ -190,3 +192,187 @@ BattleCommand_transform:
 	cp IMPOSTER
 	ret z ; avoid infinite loop
 	farjp RunActivationAbilitiesInner
+
+BattleCommand_mimic:
+	farcall MimicCommand
+	ret
+
+BattleCommand_sketch: ; 35a74
+; sketch
+
+	call ClearLastMove
+; Don't sketch during a link battle
+	ld a, [wLinkMode]
+	and a
+	jr z, .not_linked
+	call AnimateFailedMove
+	jp PrintNothingHappened
+
+.not_linked
+; If the opponent has a substitute up, fail.
+	call CheckSubstituteOpp
+	jp nz, .fail
+; If the opponent is transformed, fail.
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_TRANSFORMED, [hl]
+	jp nz, .fail
+; If the user is transformed, fail.
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	bit SUBSTATUS_TRANSFORMED, [hl]
+	jp nz, .fail
+; Get the user's moveset in its party struct.
+; This move replacement shall be permanent.
+; Pointer will be in de.
+	ld a, MON_MOVES
+	call UserPartyAttr
+	ld d, h
+	ld e, l
+; Get the battle move structs.
+	ld hl, wBattleMonMoves
+	ld a, [hBattleTurn]
+	and a
+	jr z, .get_last_move
+	ld hl, wEnemyMonMoves
+.get_last_move
+	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
+	call GetBattleVar
+	ld [wTypeMatchup], a
+	ld b, a
+; Fail if move is invalid or is Struggle.
+	and a
+	jp z, .fail
+	cp STRUGGLE
+	jp z, .fail
+	cp TRANSFORM_SKETCH_MIMIC_SPLASH
+	jp z, .fail
+; Fail if user already knows that move
+	ld c, NUM_MOVES
+.does_user_already_know_move
+	ld a, [hli]
+	cp b
+	jp z, .fail
+	dec c
+	jr nz, .does_user_already_know_move
+; Find Sketch in the user's moveset.
+; Pointer in hl, and index in c.
+	dec hl
+	ld c, NUM_MOVES
+.find_sketch
+	dec c
+	ld a, [hld]
+	cp TRANSFORM_SKETCH_MIMIC_SPLASH
+	jr nz, .find_sketch
+	inc hl
+; The Sketched move is loaded to that slot.
+	ld a, b
+	ld [hl], a
+; Copy the base PP from that move.
+	push bc
+	push hl
+	dec a
+	ld hl, Moves + MOVE_PP
+	call GetMoveAttr
+	pop hl
+	ld bc, wBattleMonPP - wBattleMonMoves
+	add hl, bc
+	ld [hl], a
+	pop bc
+
+	ld a, [hBattleTurn]
+	and a
+	jr z, .user_trainer
+	ld a, [wBattleMode]
+	dec a
+	jr nz, .user_trainer
+; wildmon
+	ld a, [hl]
+	push bc
+	ld hl, wWildMonPP
+	ld b, 0
+	add hl, bc
+	ld [hl], a
+	ld hl, wWildMonMoves
+	add hl, bc
+	pop bc
+	ld [hl], b
+	jr .done_copy
+
+.user_trainer
+	ld a, [hl]
+	push af
+	ld l, c
+	ld h, 0
+	add hl, de
+	ld a, b
+	ld [hl], a
+	pop af
+	ld de, MON_PP - MON_MOVES
+	add hl, de
+	ld [hl], a
+.done_copy
+	ld a, [hBattleTurn] ; Get opponent move name information. wStringBuffer2
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species
+	ld a, [wEnemyMonSpecies]
+.got_user_species
+	ld [wCurPartySpecies], a
+	ld a, [wNamedObjectIndexBuffer]
+	ld [wCurMove], a
+	push hl
+	push de
+	farcall CheckMultiMoveSlot
+	jr nc, .not_multi_move_slot
+	pop de
+	pop hl
+	farcall GetMultiMoveSlotName
+	call CopyName1
+	
+	
+	ld a, [hBattleTurn] ; Get user move name information. wStringBuffer1
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wBattleMonSpecies]
+.got_user_species2
+	ld [wCurPartySpecies], a
+	ld a, [wNamedObjectIndexBuffer]
+	ld [wCurMove], a
+	farcall GetMultiMoveSlotName
+	
+	jr .done
+.not_multi_move_slot
+	pop de
+	pop hl
+	ld a, [wCurMove]
+	call GetMoveName
+	call AnimateCurrentMove
+
+	ld hl, SketchedText
+	jp StdBattleTextBox
+.done
+	call AnimateCurrentMove
+
+	ld hl, SketchedText
+	call StdBattleTextBox
+	
+	ld hl, wStringBuffer1
+	ld a, [hli]
+	ld b, a
+	ld hl, wStringBuffer2
+	ld a, [hli]
+	cp b
+	ret z
+	
+	ld hl, SketchedText2
+	jp StdBattleTextBox
+
+.fail
+	call AnimateFailedMove
+	jp PrintDidntAffect
+
+BattleCommand_splash:
+	call AnimateCurrentMove
+	jp PrintNothingHappened

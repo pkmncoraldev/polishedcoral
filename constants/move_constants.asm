@@ -143,7 +143,7 @@
 	const LEECH_LIFE   ; $8d
 	const DOUBLE_HIT   ; $8e
 	const BRAVE_BIRD   ; $8f
-	const TRANSFORM_SPLASH    ; $90
+	const TRANSFORM_SKETCH_MIMIC_SPLASH    ; $90
 	const TOXIC_SPIKES ; $91
 	const POISON_FANG  ; $92
 	const SPORE        ; $93

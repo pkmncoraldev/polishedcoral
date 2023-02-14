@@ -958,6 +958,28 @@ GetTransformName::
 
 	call CheckTransformUsers
 	jr c, .transform
+	call CheckSketchUsers
+	jr c, .sketch
+	call CheckMimicUsers
+	jr c, .mimic
+	ld hl, TransformNames
+	ld a, 3
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	jp GetMoveNameDone
+	
+.transform
+	ld hl, TransformNames
+	ld a, 0
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	jp GetMoveNameDone
+	
+.sketch
 	ld hl, TransformNames
 	ld a, 1
 	call GetNthString
@@ -965,9 +987,10 @@ GetTransformName::
 	ld bc, ITEM_NAME_LENGTH
 	rst CopyBytes
 	jp GetMoveNameDone
-.transform
+	
+.mimic
 	ld hl, TransformNames
-	ld a, 0
+	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
 	ld bc, ITEM_NAME_LENGTH
@@ -983,14 +1006,29 @@ GetMoveNameTransform:: ; 34f8
 	
 	call CheckTransformUsers
 	jr c, .transform
+	call CheckSketchUsers
+	jr c, .sketch
+	call CheckMimicUsers
+	jr c, .mimic
 	ld hl, TransformNames
-	ld a, 1
+	ld a, 3
 	jp GetMoveNameDone2
 	
 .transform
 	ld hl, TransformNames
 	ld a, 0
 	jp GetMoveNameDone2
+
+.sketch
+	ld hl, TransformNames
+	ld a, 1
+	jp GetMoveNameDone2
+	
+.mimic
+	ld hl, TransformNames
+	ld a, 2
+	jp GetMoveNameDone2
+
 	
 GetSingName::
 	ld a, [hROMBank]
@@ -1343,6 +1381,24 @@ CheckTransformUsers2::
 	call IsInArray
 	ret
 	
+CheckSketchUsers::
+	ld a, [wCurPartySpecies]
+	call CheckDitto
+CheckSketchUsers2::
+	ld hl, SketchUsers
+	ld de, 1
+	call IsInArray
+	ret
+	
+CheckMimicUsers::
+	ld a, [wCurPartySpecies]
+	call CheckDitto
+CheckMimicUsers2::
+	ld hl, MimicUsers
+	ld de, 1
+	call IsInArray
+	ret
+	
 CheckHypnosisUsers::
 	ld a, [wCurPartySpecies]
 	call CheckDitto
@@ -1397,7 +1453,7 @@ GetMultiMoveSlotName2::
 	jr z, .agility
 	cp WORK_UP_GROWTH
 	jr z, .workup
-	cp TRANSFORM_SPLASH
+	cp TRANSFORM_SKETCH_MIMIC_SPLASH
 	jr z, .transform
 	cp SING_HYPNOSIS
 	jr z, .sing
@@ -2084,26 +2140,72 @@ CheckWorkUpThing::
 CheckTransformThing::
 	ld a, [wMirrorMoveUsed]
 	and a
-	jr z, .skip
+	jr z, .skip1
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
-	jr z, .got_user_species
+	jr z, .got_user_species1
 	ld a, [wBattleMonSpecies]
-	jr .got_user_species
+	jr .got_user_species1
 	
-.skip
+.skip1
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
-	jr z, .got_user_species
+	jr z, .got_user_species1
 	ld a, [wEnemyMonSpecies]
-.got_user_species
+.got_user_species1
 	farcall CheckTransformUsers2
-	jr c, .not_transform
-	ld a, $9
+	jr nc, .not_transform
+	ld a, $1
 	ret
 .not_transform
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species2
+	
+.skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wEnemyMonSpecies]
+.got_user_species2
+	farcall CheckSketchUsers2
+	jr nc, .not_sketch
+	ld a, $2
+	ret
+.not_sketch
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip3
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species3
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species3
+	
+.skip3
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species3
+	ld a, [wEnemyMonSpecies]
+.got_user_species3
+	farcall CheckMimicUsers2
+	jr nc, .not_mimic
+	ld a, $3
+	ret
+.not_mimic
+;splash
+	ld a, $9
 	ret
 	
 CheckSingThing::
@@ -2442,6 +2544,30 @@ TransformUsers:
 	db DITTO
 	db -1
 	
+SketchUsers:
+	db SMEARGLE
+	db -1
+	
+MimicUsers:
+	db JIGGLYPUFF
+	db WIGGLYTUFF
+	db EEVEE
+	db VAPOREON
+	db JOLTEON
+	db FLAREON
+	db SUDOWOODO
+	db ESPEON
+	db UMBREON
+	db LEAFEON
+	db GLACEON
+	db SYLVEON
+	db MIMIKYU
+	db CLEFAIRY
+	db CLEFABLE
+	db SNUBBULL
+	db GRANBULL
+	db -1
+	
 HypnosisUsers:
 	db SMEARGLE
 	db POLIWAG
@@ -2565,6 +2691,8 @@ WorkUpNames:
 	
 TransformNames:
 	db "TRANSFORM@"
+	db "SKETCH@"
+	db "MIMIC@"
 	db "SPLASH@"
 	db -1
 	
@@ -2591,7 +2719,7 @@ MultiSlotMoves:
 	db FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db AGILITY_ROCK_POLISH
 	db WORK_UP_GROWTH
-	db TRANSFORM_SPLASH
+	db TRANSFORM_SKETCH_MIMIC_SPLASH
 	db SING_HYPNOSIS
 	db -1
 	

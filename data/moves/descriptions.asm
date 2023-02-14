@@ -272,7 +272,7 @@ LowKickDescription:
 	db	 "Does more damage"
 	next "to heavier foes.@"
 	
-MimicDescription:
+MimicDescription::
 	db   "Copies foe's last"
 	next "move. Goes first.@"
 
@@ -877,7 +877,7 @@ DreamEaterDescription:
 	db   "Steals HP from a"
 	next "sleeping victim.@"
 
-TransformDescription:
+TransformDescription::
 	db   "The user assumes"
 	next "the foe's guise.@"
 
@@ -885,7 +885,7 @@ ClearSmogDescription:
 	db   "Eliminates foe's"
 	next "stat changes.@"
 	
-SplashDescription:
+SplashDescription::
 	db   "Has no effect"
 	next "whatsoever.@"
 
@@ -917,7 +917,7 @@ StruggleDescription:
 	db   "Used only if all"
 	next "PP are exhausted.@"
 
-SketchDescription:
+SketchDescription::
 	db   "Copies the foe's"
 	next "move permanently.@"
 

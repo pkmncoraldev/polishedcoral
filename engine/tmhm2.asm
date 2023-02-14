@@ -308,6 +308,8 @@ PrintMoveDesc: ; 2cb3e
 	push hl
 	ld hl, MoveDescriptions
 	ld a, [wCurSpecies]
+	cp TRANSFORM_SKETCH_MIMIC_SPLASH
+	jr z, .transform_multimove
 	dec a
 	ld c, a
 	ld b, 0
@@ -316,9 +318,27 @@ PrintMoveDesc: ; 2cb3e
 	ld a, [hli]
 	ld e, a
 	ld d, [hl]
+.return
 	pop hl
 	jp PlaceString
-; 2cb52
+.transform_multimove
+	farcall CheckTransformUsers
+	jr c, .transform
+	farcall CheckSketchUsers
+	jr c, .sketch
+	farcall CheckMimicUsers
+	jr c, .mimic
+	ld de, SplashDescription
+	jr .return
+.transform
+	ld de, TransformDescription
+	jr .return
+.sketch
+	ld de, SketchDescription
+	jr .return
+.mimic
+	ld de, MimicDescription
+	jr .return
 
 AskTeachTMHM: ; 2c7bf (b:47bf)
 	ld hl, wOptions1

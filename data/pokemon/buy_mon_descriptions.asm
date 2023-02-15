@@ -169,6 +169,7 @@ BuyMonDescriptions::
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
+	dw NoBuyMonDesc
 	dw CarvanhaBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
@@ -245,12 +246,14 @@ BuyMonDescriptions::
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
-	dw NoBuyMonDesc ;Raichu_A
-	dw NoBuyMonDesc ;Exeggcute_A
-	dw NoBuyMonDesc ;Exeggutor_A
-	dw NoBuyMonDesc ;Marowak_A
-	dw NoBuyMonDesc ;Grimer_A
-	dw NoBuyMonDesc ;Muk_A
+	dw NoBuyMonDesc
+	dw NoBuyMonDesc
+	dw NoBuyMonDesc
+	dw NoBuyMonDesc
+	dw NoBuyMonDesc
+	dw NoBuyMonDesc
+	dw NoBuyMonDesc
+	dw NoBuyMonDesc
 	
 NoBuyMonDesc:
 	db   "ERROR!!!!!"

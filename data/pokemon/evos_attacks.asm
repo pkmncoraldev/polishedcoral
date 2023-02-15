@@ -2309,7 +2309,7 @@ SlowkingEvosAttacks:
 	db 0 ; no more level-up moves
 
 GirafarigEvosAttacks:
-	db EVOLVE_LEVEL, 31, FARIGIRAF
+	db EVOLVE_MOVE, TWIN_BEAM, FARIGIRAF
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
@@ -2763,9 +2763,7 @@ Porygon2EvosAttacks:
 	db 0 ; no more level-up moves
 
 StantlerEvosAttacks:
-	db EVOLVE_LOCATION, ROUTE_10, WYRDEER
-	db EVOLVE_LOCATION, TWINKLE_TOWN, WYRDEER
-	db EVOLVE_LOCATION, FROZEN_RUINS, WYRDEER
+	db EVOLVE_MOVE, PSYSHIELD_BASH,  WYRDEER
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 3, LEER_TAIL_WHIP

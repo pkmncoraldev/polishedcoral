@@ -175,7 +175,7 @@ Moves:: ; 41afb
 	move SLASH,                    EFFECT_NORMAL_HIT,         70, NORMAL,    100, 20,   0, PHYSICAL
 	move SUBSTITUTE,               EFFECT_SUBSTITUTE,          0, NORMAL,    100, 10,   0, STATUS
 	move GIGA_IMPACT,              EFFECT_HYPER_BEAM,        150, NORMAL,     90,  5,   0, PHYSICAL
-	move SKETCH,                   EFFECT_SKETCH,              0, NORMAL,    100,  1,   0, STATUS
+	move TWIN_BEAM,                EFFECT_DOUBLE_HIT,         40, PSYCHIC,   100, 10,   0, SPECIAL
 	move DRAIN_PUNCH,              EFFECT_LEECH_HIT,          75, FIGHTING,  100, 10,   0, PHYSICAL
 	move ACROBATICS,               EFFECT_CONDITIONAL_BOOST,  55, FLYING,    100, 15,   0, PHYSICAL
 	move WILL_O_WISP,              EFFECT_BURN,                0, FIRE,       85, 15,   0, STATUS
@@ -186,7 +186,7 @@ Moves:: ; 41afb
 	move CURSE,                    EFFECT_CURSE,               0, GHOST,     100, 10,   0, STATUS
 	move GYRO_BALL,                EFFECT_GYRO_BALL,           1, STEEL,     100,  5,   0, PHYSICAL
 	move ENERGY_BALL,              EFFECT_SP_DEF_DOWN_HIT,    90, GRASS,     100, 10,  10, SPECIAL
-	move MIMIC,                    EFFECT_MIMIC,               0, NORMAL,    100, 10,   0, STATUS
+	move PSYSHIELD_BASH,            EFFECT_DEFENSE_UP_HIT,     70, PSYCHIC,    90, 10, 100, PHYSICAL
 	move GUNK_SHOT,                EFFECT_POISON_HIT,        120, POISON,     80,  5,  30, PHYSICAL
 	move REVERSAL,                 EFFECT_REVERSAL,            1, FIGHTING,  100, 15,   0, PHYSICAL
 	move SLUDGE,                   EFFECT_POISON_HIT,         65, POISON,    100, 20,  30, SPECIAL

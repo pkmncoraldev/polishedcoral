@@ -165,7 +165,7 @@ BattleAnimations::
 	dw BattleAnim_Slash
 	dw BattleAnim_Substitute
 	dw BattleAnim_GigaImpact
-	dw BattleAnim_Sketch
+	dw BattleAnim_TwinBeam
 	dw BattleAnim_DrainPunch
 	dw BattleAnim_Acrobatics
 	dw BattleAnim_WillOWisp
@@ -176,7 +176,7 @@ BattleAnimations::
 	dw BattleAnim_Curse
 	dw BattleAnim_GyroBall
 	dw BattleAnim_EnergyBall
-	dw BattleAnim_Mimic
+	dw BattleAnim_PsyshieldBash
 	dw BattleAnim_GunkShot
 	dw BattleAnim_Reversal
 	dw BattleAnim_Sludge
@@ -283,6 +283,9 @@ BattleAnimations::
 
 BattleAnim_MirrorMove:
 BattleAnim_0:
+
+BattleAnim_PsyshieldBash:
+BattleAnim_TwinBeam:
 	anim_ret
 
 BattleAnim_Block:

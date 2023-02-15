@@ -165,7 +165,7 @@
 	const SLASH        ; $a3
 	const SUBSTITUTE   ; $a4
 	const GIGA_IMPACT  ; $a5
-	const SKETCH       ; $a6
+	const TWIN_BEAM    ; $a6
 	const DRAIN_PUNCH  ; $a7
 	const ACROBATICS   ; $a8
 	const WILL_O_WISP  ; $a9
@@ -176,7 +176,7 @@
 	const CURSE        ; $ae
 	const GYRO_BALL    ; $af
 	const ENERGY_BALL  ; $b0
-	const MIMIC		   ; $b1
+	const PSYSHIELD_BASH		   ; $b1
 	const GUNK_SHOT    ; $b2
 	const REVERSAL     ; $b3
 	const SLUDGE       ; $b4

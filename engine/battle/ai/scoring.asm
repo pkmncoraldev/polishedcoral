@@ -2635,6 +2635,8 @@ UsefulMoves: ; 39301
 	db PLAY_ROUGH
 	db HURRICANE
 	db FIERY_DANCE
+	db TWIN_BEAM
+	db PSYSHIELD_BASH
 	db $ff
 ; 39315
 

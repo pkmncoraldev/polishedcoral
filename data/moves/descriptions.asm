@@ -164,7 +164,7 @@ MoveDescriptions::
 	dw SlashDescription
 	dw SubstituteDescription
 	dw GigaImpactDescription
-	dw SketchDescription
+	dw TwinBeamDescription
 	dw DrainPunchDescription
 	dw AcrobaticsDescription
 	dw WillOWispDescription
@@ -175,7 +175,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw GyroBallDescription
 	dw EnergyBallDescription
-	dw MimicDescription
+	dw PsyshieldBashDescription
 	dw GunkShotDescription
 	dw ReversalDescription
 	dw SludgeDescription
@@ -258,6 +258,11 @@ MoveDescriptions::
 
 Move00Description:
 	db "?@"
+
+PsyshieldBashDescription:
+	db   "Slams with psychic"
+	next "cloak. Ups DEFENSE@"
+	
 
 RazorLeafDescription:
 SlashDescription:
@@ -793,6 +798,7 @@ HexDescription:
 	next "foe has status.@"
 	
 DoubleHitDescription:
+TwinBeamDescription:
 	db   "A double hitting"
 	next "attack.@"
 

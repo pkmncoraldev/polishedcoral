@@ -9,10 +9,27 @@ ShimmerLabExperimentalLab_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 18 ; bg events
 	signpost  7,  8, SIGNPOST_READ, ShimmerLabExperimentalLabBook
+	signpost  5,  2, SIGNPOST_UP, ShimmerLabBooks
+	signpost  5, 10, SIGNPOST_UP, ShimmerLabBooks
+	signpost  5, 11, SIGNPOST_UP, ShimmerLabBooks
+	signpost  2,  1, SIGNPOST_READ, ShimmerLabMachine
+	signpost  2,  2, SIGNPOST_READ, ShimmerLabMachine
+	signpost  2,  5, SIGNPOST_READ, ShimmerLabMachine
+	signpost  1,  6, SIGNPOST_READ, ShimmerLabMachine
+	signpost  2,  7, SIGNPOST_READ, ShimmerLabMachine
+	signpost  2, 10, SIGNPOST_READ, ShimmerLabMachine
+	signpost  2, 11, SIGNPOST_READ, ShimmerLabMachine
+	signpost  1,  3, SIGNPOST_READ, ShimmerLabMachine2
+	signpost  1,  4, SIGNPOST_READ, ShimmerLabMachine2
+	signpost  1,  8, SIGNPOST_READ, ShimmerLabMachine2
+	signpost  1,  9, SIGNPOST_READ, ShimmerLabMachine2
+	signpost  5,  1, SIGNPOST_READ, ShimmerLabMachine
+	signpost  5,  8, SIGNPOST_READ, ShimmerLabMachine
+	signpost  5,  9, SIGNPOST_READ, ShimmerLabMachine
 
-	db 11 ; object events
+	db 12 ; object events
 	person_event SPRITE_SCIENTIST,  6,  3, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabFossilCutscene, -1
 	person_event SPRITE_PLAYER_CUTSCENE,  6,  3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_PLAYER_CUTSCENE_ALT
 	person_event SPRITE_PLAYER_CUTSCENE,  6,  3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, -1, EVENT_PLAYER_CUTSCENE_ALT
@@ -24,6 +41,7 @@ ShimmerLabExperimentalLab_MapScriptHeader:
 	person_event SPRITE_SCIENTIST,  6,  4, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, 0, EVENT_ALWAYS_SET
 	person_event SPRITE_BOOK_PAPER_POKEDEX,  2,  1, SPRITEMOVEDATA_FOSSIL_MACHINE, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_BOOK_PAPER_POKEDEX,  2, 10, SPRITEMOVEDATA_FOSSIL_MACHINE, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
+	person_event SPRITE_SCIENTIST_F,  6,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabFossilNpc, -1
 	
 	const_def 1 ; object constants
 	const SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST
@@ -37,6 +55,17 @@ ShimmerLabExperimentalLab_MapScriptHeader:
 	const SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST2
 	
 	
+ShimmerLabBooks:
+	jumptext ShimmerLabBooksText
+	
+ShimmerLabMachine:
+	jumptext ShimmerLabMachineText
+	
+ShimmerLabMachine2:
+	jumptext ShimmerLabMachine2Text
+	
+ShimmerLabFossilNpc:
+	jumptextfaceplayer ShimmerLabFossilNpcText
 	
 ShimmerLabExperimentalLabBook:
 	opentext
@@ -107,71 +136,40 @@ ShimmerLabFossilCutscene:
 	faceplayer
 	opentext
 	writetext ShimmerLabFossilCutsceneText1
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
 	checkitem COVER_FOSSIL
 	iftrue .own_cover
 	checkitem PLUME_FOSSIL
 	iftrue .own_plume
-	checkitem OLD_AMBER
-	iftrue .ask_old_amber
-	jumpopenedtext NoFossilsText
+	writetext NoFossilsText
+	waitbutton
+	closetext
+	spriteface SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, UP
+	end
 
 .own_cover
 	checkitem PLUME_FOSSIL
 	iftrue .own_cover_and_plume
-	checkitem OLD_AMBER
-	iftrue .ask_cover_amber
 	writetext AskCoverFossilText
 	yesorno
 	iftrue ResurrectCoverFossil
 	jump .maybe_later
 
 .own_plume
-	checkitem OLD_AMBER
-	iftrue .ask_plume_amber
 	writetext AskPlumeFossilText
 	yesorno
 	iftrue ResurrectPlumeFossil
 	jump .maybe_later
 
 .own_cover_and_plume
-	checkitem OLD_AMBER
-	iftrue .ask_cover_plume_amber
 	loadmenu CoverDomeMenuDataHeader
 	verticalmenu
 	closewindow
 	ifequal $1, ResurrectCoverFossil
 	ifequal $2, ResurrectPlumeFossil
-	jump .maybe_later
 
-.ask_old_amber
-	writetext AskOldAmberText
-	yesorno
-	iftrue ResurrectOldAmber
-	jump .maybe_later
-
-.ask_cover_amber
-	loadmenu CoverAmberMenuDataHeader
-	verticalmenu
-	closewindow
-	ifequal $1, ResurrectCoverFossil
-	ifequal $2, ResurrectOldAmber
-	jump .maybe_later
-
-.ask_plume_amber
-	loadmenu DomeAmberMenuDataHeader
-	verticalmenu
-	closewindow
-	ifequal $1, ResurrectPlumeFossil
-	ifequal $2, ResurrectOldAmber
-	jump .maybe_later
-
-.ask_cover_plume_amber
-	loadmenu CoverDomeAmberMenuDataHeader
-	verticalmenu
-	closewindow
-	ifequal $1, ResurrectCoverFossil
-	ifequal $2, ResurrectPlumeFossil
-	ifequal $3, ResurrectOldAmber
 .maybe_later:
 	jumpopenedtext MaybeLaterText
 
@@ -188,49 +186,6 @@ CoverDomeMenuDataHeader:
 	db "COVER FOSSIL@"
 	db "DOME FOSSIL@"
 	db "CANCEL@"
-
-CoverAmberMenuDataHeader:
-	db $40 ; flags
-	db 04, 00 ; start coords
-	db 11, 15 ; end coords
-	dw .MenuData2
-	db 1 ; default option
-
-.MenuData2:
-	db $80 ; flags
-	db 3 ; items
-	db "COVER FOSSIL@"
-	db "OLD AMBER@"
-	db "CANCEL@"
-
-DomeAmberMenuDataHeader:
-	db $40 ; flags
-	db 04, 00 ; start coords
-	db 11, 14 ; end coords
-	dw .MenuData2
-	db 1 ; default option
-
-.MenuData2:
-	db $80 ; flags
-	db 3 ; items
-	db "DOME FOSSIL@"
-	db "OLD AMBER@"
-	db "CANCEL@"
-
-CoverDomeAmberMenuDataHeader:
-	db $40 ; flags
-	db 02, 00 ; start coords
-	db 11, 15 ; end coords
-	dw .MenuData2
-	db 1 ; default option
-
-.MenuData2:
-	db $80 ; flags
-	db 4 ; items
-	db "COVER FOSSIL@"
-	db "DOME FOSSIL@"
-	db "OLD AMBER@"
-	db "CANCEL@"
 	
 ResurrectCoverFossil:
 	takeitem COVER_FOSSIL
@@ -244,13 +199,6 @@ ResurrectPlumeFossil:
 	clearevent EVENT_REVIVING_COVER
 	setevent EVENT_REVIVING_PLUME
 	writetext ShimmerLabHandOverPlume
-	jump ShimmerLabFossilCutsceneCont
-	
-ResurrectOldAmber:
-	takeitem OLD_AMBER
-	clearevent EVENT_REVIVING_COVER
-	clearevent EVENT_REVIVING_PLUME
-	writetext ShimmerLabHandOverAmber
 	
 ShimmerLabFossilCutsceneCont:
 	playsound SFX_LEVEL_UP 
@@ -523,11 +471,6 @@ endr
 	iftrue .tirtouga
 	checkevent EVENT_REVIVING_PLUME
 	iftrue .archen
-	writetext ShimmerLabAerodactylText
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	givepoke AERODACTYL, 20
-	jump .end
 .tirtouga
 	writetext ShimmerLabTirtougaText
 	playsound SFX_CAUGHT_MON
@@ -556,6 +499,32 @@ endr
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
 	end
 
+ShimmerLabBooksText:
+	text "It's stuffed full"
+	line "of dense journals"
+	cont "and textbooks."
+	done
+
+ShimmerLabMachineText:
+	text "A very complex"
+	line "machine!"
+	
+	para "Better not touch…"
+	done
+	
+ShimmerLabMachine2Text:
+	text "A shiny pipe"
+	line "connects the"
+	cont "machines!"
+	done
+
+ShimmerLabFossilNpcText:
+	text "We study fossils"
+	line "to determine how"
+	cont "ancient #MON"
+	cont "looked and acted!"
+	done
+
 ShimmerLabHandOverCover:
 	text "<PLAYER> handed over"
 	line "the COVER FOSSIL."
@@ -564,11 +533,6 @@ ShimmerLabHandOverCover:
 ShimmerLabHandOverPlume:
 	text "<PLAYER> handed over"
 	line "the PLUME FOSSIL."
-	done
-	
-ShimmerLabHandOverAmber:
-	text "<PLAYER> handed over"
-	line "the OLD AMBER."
 	done
 	
 ShimmerLabFossilCutsceneText1:
@@ -666,11 +630,6 @@ ShimmerLabArchenText:
 	line "ARCHEN!"
 	done
 	
-ShimmerLabAerodactylText:
-	text "<PLAYER> received"
-	line "AERODACTYL!"
-	done
-	
 AskCoverFossilText:
 	text "Do you want to"
 	line "resurrect the"
@@ -681,12 +640,6 @@ AskPlumeFossilText:
 	text "Do you want to"
 	line "resurrect the"
 	cont "PLUME FOSSIL?"
-	done
-
-AskOldAmberText:
-	text "Do you want to"
-	line "resurrect the"
-	cont "OLD AMBER?"
 	done
 	
 NoFossilsText:

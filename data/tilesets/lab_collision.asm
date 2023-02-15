@@ -107,12 +107,12 @@
 	tilecoll WALL, WALL, WALL, DOOR ; 6a
 	tilecoll DOOR, WALL, FLOOR, COUNTER ; 6b
 	tilecoll WALL, WALL, WALL, DOOR ; 6c
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 6d
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 6d
 	tilecoll FLOOR, FLOOR, FLOOR, WARP_CARPET_DOWN ; 6e
 	tilecoll FLOOR, COUNTER, COUNTER, WALL ; 6f
 	tilecoll WALL, WALL, LEFT_WALL, LEFT_WALL ; 70
 	tilecoll WALL, WALL, LEFT_WALL, LEFT_WALL ; 71
-	tilecoll WALL, WALL, WALL, WALL ; 72
+	tilecoll WALL, WALL, WINDOW, WALL ; 72
 	tilecoll WALL, WALL, WALL, WALL ; 73
 	tilecoll WALL, WALL, WALL, WALL ; 74
 	tilecoll WALL, WALL, WALL, WALL ; 75
@@ -129,7 +129,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 80
 	tilecoll WALL, WALL, WALL, FLOOR ; 81
 	tilecoll STAIRS, WALL, FLOOR, FLOOR ; 82
-	tilecoll WALL, WALL, WALL, WALL ; 83
+	tilecoll WALL, WALL, WINDOW, WALL ; 83
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 84
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 85
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 86
@@ -152,7 +152,7 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 97
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 98
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 99
-	tilecoll FLOOR, WALL, FLOOR, BOOKSHELF ; 9a
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 9a
 	tilecoll COUNTER, COUNTER, LADDER, LADDER ; 9b
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9c
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9d

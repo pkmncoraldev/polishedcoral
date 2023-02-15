@@ -58,10 +58,8 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke MAGIKARP, 44
-	givepoke SMEARGLE, 44
-	givepoke DITTO, 44
-	givepoke SUDOWOODO, 25
+	givepoke WYRDEER, 10
+	givepoke FARIGIRAF, 10
 
 .items
 	writetext PlayerHouseDebugText6

@@ -283,9 +283,29 @@ BattleAnimations::
 
 BattleAnim_MirrorMove:
 BattleAnim_0:
+	anim_ret
 
-BattleAnim_PsyshieldBash:
 BattleAnim_TwinBeam:
+	anim_1gfx ANIM_GFX_BEAM
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
+
+	anim_sound 1, 0, SFX_SHINE
+	;anim_obj ANIM_OBJ_27,   8, 2,  10, 4, $0
+	anim_obj ANIM_OBJ_27,   10, 0,  11, 4, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_27,  10, 2,   9, 4, $0
+	anim_obj ANIM_OBJ_27,  12, 0,  10, 4, $0
+	anim_wait 4
+	anim_sound 1, 0, SFX_SHINE
+	anim_obj ANIM_OBJ_27,  12, 2,   8, 4, $0
+	anim_obj ANIM_OBJ_27,  14, 0,   9, 4, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_27,  14, 2,   7, 4, $0
+	anim_obj ANIM_OBJ_27,  16, 0,   8, 4, $0
+	anim_obj ANIM_OBJ_28,  15, 6,   7, 6, $0
+	anim_wait 10
 	anim_ret
 
 BattleAnim_Block:
@@ -1413,6 +1433,12 @@ BattleAnim_Hurricane:
 	anim_wait 16
 	anim_ret
 	
+BattleAnim_PsyshieldBash:
+	anim_call BattleAnim_Protect
+	anim_wait 16
+	anim_call BattleAnim_Headbutt
+	anim_ret
+
 BattleAnim_ZenHeadbutt:
 	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_HIT
 	anim_battlergfx_1row
@@ -3922,10 +3948,11 @@ BattleAnim_StringShot:
 	anim_ret
 
 BattleAnim_Headbutt:
-	anim_1gfx ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
 	anim_wait 32
+	anim_clearobjs
 	anim_call BattleAnim_FollowEnemyFeet_0
+	anim_1gfx ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
 	anim_wait 4
 	anim_sound 0, 1, SFX_HEADBUTT

@@ -38,9 +38,9 @@ ShimmerLabLobbyNPCText:
 	done
 	
 ShimmerLabResearchSignText:
-	text "RESEARCH LAB"
+	text "ANTHROPOLOGY LAB"
 	done
 	
 ShimmerLabExperimentSignText:
-	text "EXPERMIMENTAL LAB"
+	text "#ZOOLOGY LAB"
 	done

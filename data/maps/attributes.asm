@@ -293,16 +293,24 @@ ENDM
 	connection east, Route14, ROUTE_14, 14
 	
 	map_attributes Route14, ROUTE_14, $35, SOUTH | WEST | EAST
-	connection south, ShimmerCity, SHIMMER_CITY, 2
+	connection south, ShimmerCity, SHIMMER_CITY, 4
 	connection west, Route13, ROUTE_13, -14
 	connection east, SunbeamBeach, SUNBEAM_BEACH, -14
 	
-	map_attributes ShimmerCity, SHIMMER_CITY, $35, NORTH | WEST
-	connection north, Route14, ROUTE_14, -2
+	map_attributes ShimmerCity, SHIMMER_CITY, $35, NORTH | WEST | EAST
+	connection north, Route14, ROUTE_14, -4
 	connection west, ShimmerHarbor, SHIMMER_HARBOR, 2
+	connection east, Route17, ROUTE_17, 5
 	
 	map_attributes ShimmerHarbor, SHIMMER_HARBOR, $35, EAST
 	connection east, ShimmerCity, SHIMMER_CITY, -2
+	
+	map_attributes Route17, ROUTE_17, $30, SOUTH | WEST
+	connection south, RadiantTownship, RADIANT_TOWNSHIP, 13
+	connection west, ShimmerCity, SHIMMER_CITY, -5
+	
+	map_attributes RadiantTownship, RADIANT_TOWNSHIP, $30, NORTH
+	connection north, Route17, ROUTE_17, -13
 	
 	map_attributes BrilloTown, BRILLO_TOWN, $35, EAST
 	connection east, DesertRoute, DESERT_ROUTE, -7

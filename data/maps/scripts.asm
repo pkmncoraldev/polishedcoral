@@ -87,6 +87,7 @@ INCLUDE "maps/Route8Garden.asm"
 INCLUDE "maps/Route8.asm"
 INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route14.asm"
+INCLUDE "maps/Route17.asm"
 
 
 SECTION "Routes Scripts2", ROMX
@@ -276,6 +277,10 @@ INCLUDE "maps/ShimmerBoatHouse.asm"
 INCLUDE "maps/ShimmerHouse1.asm"
 INCLUDE "maps/ShimmerHouse2.asm"
 INCLUDE "maps/ShimmerHouse3.asm"
+
+SECTION "Radiant Township Scripts", ROMX
+
+INCLUDE "maps/RadiantTownship.asm"
 
 SECTION "Brillo Town Scripts", ROMX
 

@@ -50,6 +50,8 @@
 	const SHIMMER_CITY		 ; 28
 	const BRILLO_TOWN		 ; 29
 	const DESERT_ROUTE		 ; 2a
+	const ROUTE_17			 ; 2b
+	const RADIANT_TOWNSHIP	 ; 2c
 
 	
 	const LUSTER_STATION

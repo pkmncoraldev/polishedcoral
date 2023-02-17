@@ -17,6 +17,7 @@ Flypoints:
 	flypoint TWINKLE,			TWINKLE_TOWN
 	flypoint LUSTER,			LUSTER_CITY
 	flypoint SHIMMER,			SHIMMER_CITY
+	flypoint RADIANT,			RADIANT_TOWNSHIP
 	
 	flypoint LASTFLYPOINT,		SHIMMER_CITY
 KANTO_FLYPOINT EQU const_value

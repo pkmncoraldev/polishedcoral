@@ -66,6 +66,7 @@ const_value = -1
 	const SPAWN_TWINKLE
 	const SPAWN_LUSTER
 	const SPAWN_SHIMMER
+	const SPAWN_RADIANT
 	const SPAWN_LASTFLYPOINT
 	const SPAWN_KANTO
 NUM_SPAWNS EQU const_value

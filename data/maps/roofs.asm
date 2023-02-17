@@ -19,7 +19,7 @@ MapGroupRoofs:
 	db -1 ; group 15 (Airport)
 	db  3 ; group 16 (Shimmer City)
 	db -1 ; group 17 (Brillo Town)
-	db -1 ; group 18
+	db  1 ; group 18 (Radiant Township)
 	db -1 ; group 19
 	db -1 ; group 20
 	db -1 ; group 21

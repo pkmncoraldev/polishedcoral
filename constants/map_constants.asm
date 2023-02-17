@@ -286,7 +286,7 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 16
 	
-	map_const SHIMMER_CITY,					  			  26, 19 ; 1
+	map_const SHIMMER_CITY,					  			  25, 19 ; 1
 	map_const SHIMMER_HARBOR,					  		  11, 14 ; 2
 	map_const SHIMMER_LAB_LOBBY,			  			   7,  3 ; 3
 	map_const SHIMMER_LAB_RESEARCH_ROOM,				   5,  5 ; 4
@@ -298,8 +298,8 @@ MAP_NONE   EQU 0
 	map_const SHIMMER_HOUSE_1,							   4,  4 ; 10
 	map_const SHIMMER_HOUSE_2,							   4,  4 ; 11
 	map_const SHIMMER_HOUSE_3,							   4,  4 ; 12
-	map_const ROUTE_13,									  15, 24
-	map_const ROUTE_14,									  44, 16
+	map_const ROUTE_13,									  15, 24 ; 13
+	map_const ROUTE_14,									  44, 16 ; 14
 	
 	
 	newgroup													 ; 17
@@ -327,3 +327,9 @@ MAP_NONE   EQU 0
 	map_const DESERT_WASTELAND_9,              			   9,  9 ; 21
 	map_const DESERT_WASTELAND_OASIS,          			  11, 10 ; 22
 	map_const DESERT_TEMPLE_OUTSIDE,           			   9,  9 ; 23
+	
+	
+	newgroup													 ; 18
+	
+	map_const ROUTE_17,									  20, 22 ; 1
+	map_const RADIANT_TOWNSHIP,							  20, 11 ; 2

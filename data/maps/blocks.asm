@@ -603,6 +603,9 @@ ShimmerLabExperimentalLab_BlockData:
 ShimmerUnderBoardwalk_BlockData:
 	INCBIN "maps/ShimmerUnderBoardwalk.ablk.lz"
 	
+RadiantTownship_BlockData:
+	INCBIN "maps/RadiantTownship.ablk.lz"
+	
 BrilloTown_BlockData:
 	INCBIN "maps/BrilloTown.ablk.lz"
 	
@@ -652,4 +655,7 @@ Route14_BlockData:
 	
 Airport_BlockData:
 	INCBIN "maps/Airport.ablk.lz"
+	
+Route17_BlockData:
+	INCBIN "maps/Route17.ablk.lz"
 	

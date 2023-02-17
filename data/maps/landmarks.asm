@@ -47,6 +47,8 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, ShimmerName
 	landmark   0,   0, BrilloTownName
 	landmark   0,   0, DesertRouteName
+	landmark   0,   0, Route17Name
+	landmark   0,   0, RadiantName
 	
 	landmark 136,  80, LusterStationName
 	landmark 136,  80, ResidentialName
@@ -97,6 +99,8 @@ Route14Name:		   db "ROUTE 14@"
 ShimmerName:           db "SHIMMER¯CITY@"
 BrilloTownName:	   	   db "BRILLO¯TOWN@"
 DesertRouteName:	   db "DESERT¯ROUTE@"
+Route17Name:		   db "ROUTE 17@"
+RadiantName:	 	   db "RADIANT¯TOWNSHIP@"
 
 LusterStationName:	   db "LUSTER¯CITY@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"

@@ -446,7 +446,7 @@ ENDM
 	music_map SUNSET_CAPE, DoSurfMusic
 	music_map SHIMMER_CITY, DoSurfMusic
 	music_map SHIMMER_HARBOR, DoSurfMusic
-;	music_map SHIMMER_UNDER_BOARDWALK, DoSurfMusic
+	music_map SHIMMER_UNDER_BOARDWALK, DoSurfMusic
 ;	music_map QUIET_CAVE_1F, GetMapHeaderMusic
 ;	music_map QUIET_CAVE_B1F, GetMapHeaderMusic
 ;	music_map QUIET_CAVE_B2F, GetMapHeaderMusic

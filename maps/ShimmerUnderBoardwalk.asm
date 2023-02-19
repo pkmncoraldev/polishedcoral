@@ -3,7 +3,7 @@ ShimmerUnderBoardwalk_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 36 ; warp events
+	db 38 ; warp events
 	warp_event 11, 20, SHIMMER_CITY, 4
 	warp_event 11, 21, SHIMMER_CITY, 4
 	warp_event 11, 22, SHIMMER_CITY, 3
@@ -13,7 +13,7 @@ ShimmerUnderBoardwalk_MapScriptHeader:
 	warp_event 11, 13, SHIMMER_CITY, 6
 	warp_event 11, 14, SHIMMER_CITY, 5
 	warp_event 11, 15, SHIMMER_CITY, 5
-	warp_event 11, 16, SHIMMER_CITY, 5
+	warp_event  3,  2, SHIMMER_CITY, 14
 	warp_event 11,  4, SHIMMER_CITY, 9
 	warp_event 11,  5, SHIMMER_CITY, 9
 	warp_event 11,  6, SHIMMER_CITY, 8
@@ -34,12 +34,14 @@ ShimmerUnderBoardwalk_MapScriptHeader:
 	warp_event 2, 13, SHIMMER_CITY, 18
 	warp_event 2, 14, SHIMMER_CITY, 19
 	warp_event 2, 15, SHIMMER_CITY, 19
-	warp_event 2, 16, SHIMMER_CITY, 19
+	warp_event  2,  2, SHIMMER_CITY, 14
 	warp_event 2,  4, SHIMMER_CITY, 15
 	warp_event 2,  5, SHIMMER_CITY, 15
 	warp_event 2,  6, SHIMMER_CITY, 16
 	warp_event 2,  7, SHIMMER_CITY, 17
 	warp_event 2,  8, SHIMMER_CITY, 17
+	warp_event 10,  2, SHIMMER_CITY, 10
+	warp_event 11,  2, SHIMMER_CITY, 10
 
 	db 0 ; coord events
 

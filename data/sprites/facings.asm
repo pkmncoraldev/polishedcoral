@@ -93,6 +93,8 @@ Facings:
 	dw FacingSailboatTopRight
 	dw FacingCasino1
 	dw FacingCasino2
+	dw FacingFlower1         ; FACING_FLOWER_1
+	dw FacingFlower2         ; FACING_FLOWER_2
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -780,3 +782,15 @@ FacingCasino2:
 	db 2 ; #
 	db 10, 10, 0, $04
 	db 10, 18, 0, $05
+	
+FacingFlower1:
+	db 2 ; #
+	db  8,  0, 4, $7d
+	db  8,  8, Y_FLIP | X_FLIP, $7d
+; 426a
+
+FacingFlower2:
+	db 2 ; #
+	db  9, -1, Y_FLIP | X_FLIP, $7d
+	db  9,  9, 4, $7d
+; 4273

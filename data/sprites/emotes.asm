@@ -21,3 +21,4 @@ EmotesPointers:
 	emote PuddleSplashGFX, 1, $7f ; EMOTE_PUDDLE_SPLASH
 	emote ShakingSnowGFX,  1, $7e ; EMOTE_SHAKING_SNOW
 	emote PuddleSplashGFX, 1, $7f ; EMOTE_PUDDLE_SPLASH_2
+	emote ShakingPollenGFX, 1, $7d ; EMOTE_POLLEN_PUFF

@@ -250,6 +250,8 @@ SetTallGrassFlags: ; 4661
 	jr z, .set
 	cp COLL_TALL_GRASS
 	jr z, .set
+	cp COLL_FLOWERS
+	jr z, .set
 	res OVERHEAD, [hl]
 	ret
 
@@ -632,6 +634,7 @@ MapObjectMovementPattern:
 	dw .MovementBaggage		; SPRITEMOVEFN_BAGGAGE
 	dw .MovementCasino1
 	dw .MovementCasino2
+	dw .MovementShakingFlower
 
 .RandomWalkY:
 	call Random
@@ -1343,6 +1346,14 @@ MapObjectMovementPattern:
 	ld hl, OBJECT_ACTION
 	add hl, bc
 	ld [hl], PERSON_ACTION_GRASS_SHAKE
+	jr ._MovementGrass_Puddle_End
+
+.MovementShakingFlower:
+	call EndSpriteMovement
+	call ._MovementShadow_Grass_Puddle_Dust_Emote
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], PERSON_ACTION_FLOWER_SHAKE
 	jr ._MovementGrass_Puddle_End
 
 .MovementSplashingPuddle:
@@ -2405,6 +2416,17 @@ ShakeGrass: ; 5556
 .data_5562
 	db $80, PAL_OW_SILVER, SPRITEMOVEDATA_GRASS
 ; 5565
+
+ShakeFlower:
+	push bc
+	ld de, .data_5562
+	call CopyTempObjectData
+	call InitTempObject
+	pop bc
+	ret
+
+.data_5562
+	db $80, PAL_OW_SILVER, SPRITEMOVEDATA_FLOWER
 
 ShakeSnow:
 	push bc

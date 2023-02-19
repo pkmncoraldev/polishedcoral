@@ -1281,19 +1281,15 @@ LoadMapPals::
 	jp z, .outside
 	ret
 .sunflowers
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_17
+	jp z, .outside
 	ld hl, MapObjectPalsSunflowers
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
 	call AddNTimes
-	ld a, [wPlayerPalette]
-	cp 3
-	jr z, .sunflowersbrown
-	ld de, wUnknOBPals + 3 palettes
-	jr .sunflowersend
-.sunflowersbrown
-	ld de, wUnknOBPals + 5 palettes
-.sunflowersend
+	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM

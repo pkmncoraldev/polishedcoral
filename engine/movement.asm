@@ -1051,7 +1051,8 @@ NormalStep: ; 5412
 	jr z, .shake_grass
 	cp COLL_SAND
 	jr z, .shake_grass
-
+	cp COLL_FLOWERS
+	jr z, .shake_flower
 	cp COLL_PUDDLE
 	jr nz, .skip_effect
 	call SplashPuddle
@@ -1070,7 +1071,9 @@ NormalStep: ; 5412
 	jr z, .snow
 	call ShakeGrass
 	jr .skip_effect
-	
+.shake_flower
+	call ShakeFlower
+	jr .skip_effect
 .snow
 	call ShakeSnow
 

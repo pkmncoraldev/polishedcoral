@@ -296,10 +296,10 @@ LoadEmoteGFX::
 	jp z, .outdoor
 	cp TILESET_SNOW
 	jp z, .snow
+	cp TILESET_SHIMMER
+	jp z, .flowers
 	cp TILESET_DESERT
 	jp z, .desert
-	cp TILESET_SHIMMER
-	jp z, .outdoor
 	cp TILESET_PLAYER_HOUSE
 	jp z, .playerhouse
 	call GetMapPermission
@@ -312,17 +312,19 @@ LoadEmoteGFX::
 	ld c, EMOTE_PUDDLE_SPLASH_2
 	jp LoadEmote
 	
+.flowers
+	ld c, EMOTE_POLLEN_PUFF
+	call LoadEmote
 .outdoor
 	ld c, EMOTE_SHAKING_GRASS
 	call LoadEmote
 	ld c, EMOTE_PUDDLE_SPLASH
 	jp LoadEmote
 ; 14236
-
 .desert
 	ld a, [wMapNumber]
 	cp MAP_DESERT_WASTELAND_OASIS
-	jp z, .outdoor
+	jr z, .outdoor
 .snow
 	ld c, EMOTE_SHAKING_SNOW
 	call LoadEmote

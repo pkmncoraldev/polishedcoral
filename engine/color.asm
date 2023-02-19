@@ -1282,6 +1282,10 @@ LoadMapPals::
 	ret
 .sunflowers
 	ld hl, MapObjectPalsSunflowers
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	call AddNTimes
 	ld a, [wPlayerPalette]
 	cp 3
 	jr z, .sunflowersbrown

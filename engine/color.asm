@@ -860,6 +860,8 @@ LoadMapPals::
 	jp z, .skateparkcheck
 	cp GROUP_SHIMMER_CITY
 	jp z, .shimmer
+	cp GROUP_RADIANT_TOWNSHIP
+	jp z, .sunflowers
 .got_pals_cont
 	ld a, [wTileset]
 	cp TILESET_CAVE
@@ -1260,10 +1262,11 @@ LoadMapPals::
 	eventflagcheck EVENT_ROUTE_3_ROCKS_BROWN
 	jp z, .got_pals_cont
 .rocks
+	ld hl, MapObjectPalsRocks
+.rockscont
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
-	ld hl, MapObjectPalsRocks
 	call AddNTimes
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
@@ -1277,6 +1280,20 @@ LoadMapPals::
 	cp ROUTE
 	jp z, .outside
 	ret
+.sunflowers
+	ld hl, MapObjectPalsSunflowers
+	ld a, [wPlayerPalette]
+	cp 3
+	jr z, .sunflowersbrown
+	ld de, wUnknOBPals + 3 palettes
+	jr .sunflowersend
+.sunflowersbrown
+	ld de, wUnknOBPals + 5 palettes
+.sunflowersend
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	jp .outside
 .starglow
 	ld hl, MapObjectPalsStarglow
 	ld de, wUnknOBPals + 7 palettes
@@ -1726,6 +1743,9 @@ INCLUDE "maps/palettes/obpals/ob.pal"
 
 MapObjectPalsRocks::
 INCLUDE "maps/palettes/obpals/obrocks.pal"
+
+MapObjectPalsSunflowers::
+INCLUDE "maps/palettes/obpals/obsunflowers.pal"
 
 MapObjectPalsUmbrella::
 INCLUDE "maps/palettes/obpals/obumbrella.pal"

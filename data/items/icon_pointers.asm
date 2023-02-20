@@ -170,7 +170,7 @@ ItemIconPointers:
 	dw LuckyPunchIcon
 	dw MetalPowderIcon
 	dw QuickPowderIcon
-	dw ArmorSuitIcon
+	dw PollenPouchIcon
 	dw AirBalloonIcon
 	dw AssaultVestIcon
 	dw BigRootIcon

@@ -169,7 +169,7 @@ ItemNames::
 	db "LUCKY PUNCH@"
 	db "METAL POWDER@"
 	db "QUICK POWDER@"
-	db "ARMOR SUIT@"
+	db "POLLEN POUCH@"
 	db "AIR BALLOON@"
 	db "ASSAULT VEST@"
 	db "BIG ROOT@"

@@ -194,7 +194,7 @@
 	const LUCKY_PUNCH  ; a8
 	const METAL_POWDER ; a9
 	const QUICK_POWDER ; aa
-	const ARMOR_SUIT   ; ab - replace
+	const POLLEN_POUCH   ; ab - replace
 
 	const AIR_BALLOON  ; ac
 	const ASSAULT_VEST ; ad
@@ -301,7 +301,7 @@
 	const NAM_ANTIDOTE     ; 04
 	const NAM_UNUSED5      ; 05
 	const NAM_BLOSSOM_TEA  ; 06
-	const NAM_ARMOR_SUIT   ; 07
+	const NAM_POLLEN_POUCH   ; 07
 	const NAM_ASPEAR_BERRY ; 08
 	const NAM_ASSAULT_VEST ; 09
 	const NAM_AWAKENING    ; 0a

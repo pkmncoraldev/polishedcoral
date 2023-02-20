@@ -184,7 +184,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; LUCKY_PUNCH
 	dw NoEffect         ; METAL_POWDER
 	dw NoEffect         ; QUICK_POWDER
-	dw NoEffect         ; ARMOR_SUIT
+	dw PollenPouch       ; POLLEN_POUCH
 	dw NoEffect         ; AIR_BALLOON
 	dw NoEffect         ; ASSAULT_VEST
 	dw NoEffect         ; BIG_ROOT
@@ -2492,8 +2492,14 @@ CoinCase: ; f59a
 .coincasetext
 	text_jump UnknownText_0x1c5c7b
 	db "@"
-; f5a5
 
+PollenPouch:
+	ld hl, .pollenpouchtext
+	jp MenuTextBoxWaitButton
+
+.pollenpouchtext
+	text_jump PollenPouchText
+	db "@"
 
 ApricornBox:
 	ld hl, .MenuDataHeader

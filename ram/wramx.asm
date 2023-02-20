@@ -1102,7 +1102,7 @@ wCurrMapTriggerHeaderPointer:: ds 2
 wCurrMapCallbackCount:: ds 1
 wCurrMapCallbackHeaderPointer:: ds 2
 
-	ds 1 ; unused
+wPollenSteps::	ds 1
 
 ; Sprite id of each decoration
 wBed:: ds 1

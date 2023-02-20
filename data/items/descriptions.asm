@@ -169,7 +169,7 @@ ItemDescriptions:
 	dw LuckyPunchDesc
 	dw MetalPowderDesc
 	dw QuickPowderDesc
-	dw ArmorSuitDesc
+	dw PollenPouchDesc
 	dw AirBalloonDesc
 	dw AssaultVestDesc
 	dw BigRootDesc
@@ -865,9 +865,9 @@ QuickPowderDesc:
 	db   "Raises SPEED of"
 	next "DITTO. (Hold)@"
 
-ArmorSuitDesc:
-	db   "A suit of armor"
-	next "for some #MON.@"
+PollenPouchDesc:
+	db   "Holds up to 250"
+	next "POLLEN PUFFs.@"
 
 AirBalloonDesc:
 	db   "Avoids one GROUND"

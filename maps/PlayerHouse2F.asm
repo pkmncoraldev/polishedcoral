@@ -127,6 +127,7 @@ PlayerHouseDebugPoster:
 	setevent EVENT_MOM_GOT_POKEGEAR
 	giveitem SKATEBOARD
 	giveitem BICYCLE
+	giveitem POLLEN_POUCH
 	giveitem LIBRARY_CARD
 	giveitem POKE_FLUTE
 	giveitem OLD_ROD

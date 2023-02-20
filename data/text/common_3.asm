@@ -1015,6 +1015,12 @@ UnknownText_0x1c5c7b::
 	line "@"
 	deciram wCoins, 2, 5
 	db "@@"
+	
+PollenPouchText::
+	text "POLLEN PUFFS:"
+	line "@"
+	deciram wPollenSteps, 1, 3
+	db "@@"
 
 Text_RaiseThePPOfWhichMove::
 	text "Raise the PP of"
@@ -1383,6 +1389,11 @@ ItemCantBeSelectedText::
 TorchWentOutText::
 	text "Your TORCH went"
 	line "out."
+	done
+	
+FullPollenText::
+	text "Your POLLEN POUCH"
+	line "is full!"
 	done
 	
 BetterNotText::

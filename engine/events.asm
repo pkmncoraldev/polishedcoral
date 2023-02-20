@@ -1066,6 +1066,9 @@ CountStep: ; 96b79
 	
 	call DoTorchStep
 	jr c, .doscript
+	
+	call DoPollenStep
+	jr c, .doscript
 
 	; Count the step for poison and total steps
 	ld hl, wPoisonStepCount
@@ -1194,6 +1197,35 @@ DoSkateboardStep:
 	ld a, 1
 	ld [wSkateboardSteps], a
 	ret
+	
+DoPollenStep:
+	ld a, [wPollenSteps]
+	cp 250
+	jr z, .no
+	ld a, [wPlayerStandingTile]
+	cp COLL_FLOWERS
+	jr nz, .no
+	ld a, [wPollenSteps]
+	inc a
+	ld [wPollenSteps], a
+	cp 250
+	jr nz, .no
+	
+	ld a, BANK(FullPollenScript)
+	ld hl, FullPollenScript
+	call CallScript
+	scf
+	ret
+.no
+	xor a
+	ret
+	
+FullPollenScript:
+	special Special_StopRunning
+	thistext
+
+	text_jump FullPollenText
+	db "@"
 	
 DoTorchStep: ; 96bd7
 	ld a, [wTorchSteps]

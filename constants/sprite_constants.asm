@@ -218,6 +218,7 @@
 	const SPRITE_MARACTUS_GRAFFITI
 	const SPRITE_COP_SCRUB
 	const SPRITE_SINGER
+	const SPRITE_DAISY
 
 	
 	const_def $f1

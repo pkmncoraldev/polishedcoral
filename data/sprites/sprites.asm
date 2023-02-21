@@ -222,3 +222,4 @@ SpriteHeaders:
 	overworld_sprite MaractusGraffitiSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite CopScrubSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SingerSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite DaisySpriteGFX, WALKING_SPRITE, PAL_OW_RED

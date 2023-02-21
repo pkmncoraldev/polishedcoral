@@ -281,6 +281,7 @@ INCLUDE "maps/ShimmerHouse3.asm"
 SECTION "Radiant Township Scripts", ROMX
 
 INCLUDE "maps/RadiantTownship.asm"
+INCLUDE "maps/RadiantFlowerShop.asm"
 
 SECTION "Brillo Town Scripts", ROMX
 

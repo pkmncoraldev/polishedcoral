@@ -1281,6 +1281,9 @@ LoadMapPals::
 	jp z, .outside
 	ret
 .sunflowers
+	ld a, [wTileset]
+	cp TILESET_SHIMMER
+	ret nz
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_17
 	jp z, .outside

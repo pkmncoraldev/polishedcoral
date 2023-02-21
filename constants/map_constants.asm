@@ -333,3 +333,5 @@ MAP_NONE   EQU 0
 	
 	map_const ROUTE_17,									  20, 22 ; 1
 	map_const RADIANT_TOWNSHIP,							  20, 12 ; 2
+	
+	map_const RADIANT_FLOWER_SHOP,						   5,  4 ; 4

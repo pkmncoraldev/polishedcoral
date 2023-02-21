@@ -3,7 +3,8 @@ RadiantTownship_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 0 ; warp events
+	db 1 ; warp events
+	warp_def 13, 35, 1, RADIANT_FLOWER_SHOP
 
 	db 0 ; coord events
 
@@ -41,21 +42,23 @@ RadiantTownship_MapScriptHeader:
 
 	db 12 ; object events
 	person_event SPRITE_CUTE_GIRL, 15, 16, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantTownshipSign, -1
-	person_event SPRITE_CASINO, 10,  2, SPRITEMOVEDATA_TILE_RIGHT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 10,  3, SPRITEMOVEDATA_TILE_RIGHT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 17, 14, SPRITEMOVEDATA_TILE_RIGHT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 17, 15, SPRITEMOVEDATA_TILE_RIGHT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 13, 23, SPRITEMOVEDATA_TILE_RIGHT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 13, 24, SPRITEMOVEDATA_TILE_RIGHT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 13, 25, SPRITEMOVEDATA_TILE_RIGHT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 18, 26, SPRITEMOVEDATA_TILE_RIGHT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 18, 27, SPRITEMOVEDATA_TILE_RIGHT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 13, 36, SPRITEMOVEDATA_TILE_RIGHT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 13, 37, SPRITEMOVEDATA_TILE_RIGHT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 10,  2, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 10,  3, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 17, 14, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 17, 15, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 13, 23, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 13, 24, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 13, 25, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 18, 26, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 18, 27, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 13, 36, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 13, 37, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 
 
 Sunflower1:
 	opentext
+	checkitem POLLEN_POUCH
+	iffalse SunflowerNoPouch
 	checkevent EVENT_SUNFLOWER_1
 	iftrue SunflowerDoneForToday
 	callasm CheckSunflowerPollenAsm
@@ -65,6 +68,8 @@ Sunflower1:
 	
 Sunflower2:
 	opentext
+	checkitem POLLEN_POUCH
+	iffalse SunflowerNoPouch
 	checkevent EVENT_SUNFLOWER_2
 	iftrue SunflowerDoneForToday
 	callasm CheckSunflowerPollenAsm
@@ -74,6 +79,8 @@ Sunflower2:
 	
 Sunflower3:
 	opentext
+	checkitem POLLEN_POUCH
+	iffalse SunflowerNoPouch
 	checkevent EVENT_SUNFLOWER_3
 	iftrue SunflowerDoneForToday
 	callasm CheckSunflowerPollenAsm
@@ -83,6 +90,8 @@ Sunflower3:
 	
 Sunflower4:
 	opentext
+	checkitem POLLEN_POUCH
+	iffalse SunflowerNoPouch
 	checkevent EVENT_SUNFLOWER_4
 	iftrue SunflowerDoneForToday
 	callasm CheckSunflowerPollenAsm
@@ -92,6 +101,8 @@ Sunflower4:
 	
 Sunflower5:
 	opentext
+	checkitem POLLEN_POUCH
+	iffalse SunflowerNoPouch
 	checkevent EVENT_SUNFLOWER_5
 	iftrue SunflowerDoneForToday
 	callasm CheckSunflowerPollenAsm
@@ -101,6 +112,8 @@ Sunflower5:
 	
 Sunflower6:
 	opentext
+	checkitem POLLEN_POUCH
+	iffalse SunflowerNoPouch
 	checkevent EVENT_SUNFLOWER_6
 	iftrue SunflowerDoneForToday
 	callasm CheckSunflowerPollenAsm
@@ -110,6 +123,8 @@ Sunflower6:
 	
 Sunflower7:
 	opentext
+	checkitem POLLEN_POUCH
+	iffalse SunflowerNoPouch
 	checkevent EVENT_SUNFLOWER_7
 	iftrue SunflowerDoneForToday
 	callasm CheckSunflowerPollenAsm
@@ -119,6 +134,8 @@ Sunflower7:
 	
 Sunflower8:
 	opentext
+	checkitem POLLEN_POUCH
+	iffalse SunflowerNoPouch
 	checkevent EVENT_SUNFLOWER_8
 	iftrue SunflowerDoneForToday
 	callasm CheckSunflowerPollenAsm
@@ -128,6 +145,8 @@ Sunflower8:
 	
 Sunflower9:
 	opentext
+	checkitem POLLEN_POUCH
+	iffalse SunflowerNoPouch
 	checkevent EVENT_SUNFLOWER_9
 	iftrue SunflowerDoneForToday
 	callasm CheckSunflowerPollenAsm
@@ -137,6 +156,8 @@ Sunflower9:
 	
 Sunflower10:
 	opentext
+	checkitem POLLEN_POUCH
+	iffalse SunflowerNoPouch
 	checkevent EVENT_SUNFLOWER_10
 	iftrue SunflowerDoneForToday
 	callasm CheckSunflowerPollenAsm
@@ -146,6 +167,8 @@ Sunflower10:
 	
 Sunflower11:
 	opentext
+	checkitem POLLEN_POUCH
+	iffalse SunflowerNoPouch
 	checkevent EVENT_SUNFLOWER_11
 	iftrue SunflowerDoneForToday
 	callasm CheckSunflowerPollenAsm
@@ -180,6 +203,12 @@ SunflowerGivePollen:
 	waitsfx
 	writetext PutAway1PollenText
 	jump .cont
+
+SunflowerNoPouch:
+	writetext NoPouchText
+	waitbutton
+	closetext
+	end
 
 SunflowerDoneForToday:
 	writetext NoPollenText
@@ -227,6 +256,11 @@ PollenFullText:
 NoPollenText:
 	text "It has no more"
 	line "POLLEN PUFFs…"
+	done
+	
+NoPouchText:
+	text "It's covered in"
+	line "pollen…"
 	done
 
 CheckSunflowerPollenAsm:

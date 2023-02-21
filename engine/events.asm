@@ -1210,6 +1210,11 @@ DoPollenStep:
 	ld [wPollenSteps], a
 	cp 250
 	jr nz, .no
+	ld a, POLLEN_POUCH
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .no
 	
 	ld a, BANK(FullPollenScript)
 	ld hl, FullPollenScript

@@ -2599,7 +2599,7 @@ RestorePPEffect: ; f5bf
 	ld [wCurMoveNum], a
 	inc a
 	ld [wMoveSelectionMenuType], a
-	farcall MoveSelectionScreen
+	farcall MoveSelectionScreen2
 	pop bc
 
 	ld a, b

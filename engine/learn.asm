@@ -53,11 +53,12 @@ LearnMove: ; 6508
 .not_disabled
 	push hl
 	push de
-	farcall CheckMultiMoveSlot
+	ld a, [wMoveScreenSelectedMove]
+	farcall CheckMultiMoveSlot2
 	jr nc, .not_multi_move_slot
 	pop de
 	pop hl
-	farcall GetMultiMoveSlotName
+	farcall GetMultiMoveSlotName2
 	jr .done
 .not_multi_move_slot
 	pop de

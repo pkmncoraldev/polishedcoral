@@ -5954,7 +5954,7 @@ MoveSelectionScreen:
 	; (possible if we learned a new move and replaced the old)
 	ld a, [wBattleMonSpecies]
 	ld [wCurPartySpecies], a
-	
+MoveSelectionScreen2:
 	ld a, [wMoveSelectionMenuType]
 	cp 2
 	jr z, .ether_elixer_menu

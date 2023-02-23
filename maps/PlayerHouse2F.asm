@@ -58,8 +58,8 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke WYRDEER, 10
-	givepoke FARIGIRAF, 10
+	givepoke WYRDEER, 100
+	givepoke CLEFAIRY, 5
 
 .items
 	writetext PlayerHouseDebugText6

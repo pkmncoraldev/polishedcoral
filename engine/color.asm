@@ -1175,6 +1175,7 @@ LoadMapPals::
 	jr z, .ice_cave_purple
 	eventflagcheck EVENT_TORCH_LIT
 	jr nz, .torch
+	ld a, [wTimeOfDayPal]
 	jr .ice_cave_cont
 .torch
 	ld a, 1
@@ -1198,6 +1199,7 @@ LoadMapPals::
 .ice_cave_purple
 	eventflagcheck EVENT_TORCH_LIT
 	jr nz, .torch_purple
+	ld a, [wTimeOfDayPal]
 	jr .ice_cave_purple_cont
 .torch_purple
 	ld a, 1

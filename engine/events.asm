@@ -315,6 +315,8 @@ CheckTileEvent: ; 96874
 	ld a, [wPlayerState]
 	cp PLAYER_BIKE
 	jr nz, .cont
+	xor a
+	ld [wOnBike], a
 	ld a, BANK(NoBikeScript)
 	ld hl, NoBikeScript
 	jp CallScript

@@ -2345,7 +2345,7 @@ BikeFunction: ; d0b3
 	jr nz, .CannotUseBike ;set
 	ld a, [wPlayerStandingTile]
 	cp COLL_NO_BIKE
-	jp z, .floortoobumpy
+	jp z, .CannotUseBike
 	
 	call .CheckEnvironment
 	jr c, .CannotUseBike
@@ -2390,11 +2390,6 @@ BikeFunction: ; d0b3
 .CannotUseBike:
 	xor a
 	ret
-
-.floortoobumpy
-	call RefreshScreen
-	ld hl, Script_FloorTooBumpyBike
-	jr .done
 	
 .done
 	call QueueScript
@@ -2485,14 +2480,6 @@ GotOffTheBikeText: ; 0xd181
 	; got off the @ .
 	text_jump UnknownText_0x1c09c7
 	db "@"
-
-Script_FloorTooBumpyBike: ; 0xd171
-	writetext .FloorTooBumpyBikeText
-	waitendtext
-
-.FloorTooBumpyBikeText
-	text_jump _NoBikeText
-	db "@"
 	
 SkateboardFunction: ; d0b3
 	call .TrySkateboard
@@ -2504,9 +2491,6 @@ SkateboardFunction: ; d0b3
 	ld hl, wHaveFollower
 	bit 0, [hl] ; ENGINE_BIKE_GEAR
 	jr nz, .CannotUseSkateboard ;set
-	ld a, [wPlayerStandingTile]
-	cp COLL_NO_BIKE
-	jp z, .floortoobumpy
 	
 	call .CheckEnvironmentSkateboard
 	jr c, .CannotUseSkateboard
@@ -2551,11 +2535,6 @@ SkateboardFunction: ; d0b3
 .CannotUseSkateboard:
 	xor a
 	ret
-
-.floortoobumpy
-	call RefreshScreen
-	ld hl, Script_FloorTooBumpySkateboard
-	jr .done
 	
 .done
 	call QueueScript
@@ -2648,14 +2627,6 @@ GotOnTheSkateboardText: ; 0xd17c
 GotOffTheSkateboardText: ; 0xd181
 	; got off the @ .
 	text_jump UnknownText_0x1c09c7
-	db "@"
-
-Script_FloorTooBumpySkateboard: ; 0xd171
-	writetext .FloorTooBumpySkateboardText
-	waitendtext
-
-.FloorTooBumpySkateboardText
-	text_jump _NoBikeText                                          ;TODO: change this
 	db "@"
 
 HasCutAvailable:: ; d186

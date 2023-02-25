@@ -628,15 +628,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jp .slow
 
 .conveyorup
-	ld a, [wPlayerState]
-	cp PLAYER_BIKE
-	jr z, .conveyorup_bike_gear_check
-	push bc
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite ; UpdateSprites
-	pop bc
-.conveyorup_return
+;	call SetConveyorState
 	ld a, [wMapMusic]
 	cp MUSIC_LUSTER_CITY
 	jr nz, .conveyorup_notinmall
@@ -645,7 +637,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	
 	ld a, [wWalkingDirection]
 	cp DOWN
-	jr z, .conveyorup_down_bike
+	jr z, .conveyorup_up_down_mall
 	jr .conveyorup_cont
 
 .conveyorup_notinmall
@@ -667,45 +659,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	scf
 	ret
 
-.conveyorup_bike_gear_check
-	call CheckBikeGear
-	jr nz, .conveyorup_return
-	
-.conveyorup_bike
-	ld a, [wWalkingDirection]
-	cp UP
-	jr z, .conveyorup_up_bike
-	cp DOWN
-	jr z, .conveyorup_down_bike
-	ld a, UP
-	ld [wWalkingDirection], a
-	ld a, STEP_SLIDE
-	call .DoStep
-	scf
-	ret	
-
-.conveyorup_up_bike
-	ld a, STEP_BIKE
-	call .DoStep
-	scf
-	ret
-
-.conveyorup_down_bike
-	ld a, STEP_SLOW
-	call .DoStep
-	scf
-	ret
-
 .conveyordown
-	ld a, [wPlayerState]
-	cp PLAYER_BIKE
-	jr z, .conveyordown_bike_gear_check
-	push bc
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite ; UpdateSprites
-	pop bc
-.conveyordown_return
+;	call SetConveyorState
 	ld a, [wMapMusic]
 	cp MUSIC_LUSTER_CITY
 	jr nz, .conveyordown_notinmall
@@ -714,7 +669,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	
 	ld a, [wWalkingDirection]
 	cp UP
-	jr z, .conveyordown_up_bike
+	jr z, .conveyorup_up_down_mall
 	jr .conveyordown_cont
 
 .conveyordown_notinmall
@@ -735,46 +690,15 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call .DoStep
 	scf
 	ret
-
-.conveyordown_bike_gear_check
-	call CheckBikeGear
-	jr nz, .conveyordown_return
 	
-.conveyordown_bike
-	ld a, [wWalkingDirection]
-	cp DOWN
-	jr z, .conveyordown_down_bike
-	cp UP
-	jr z, .conveyordown_up_bike
-	ld a, DOWN
-	ld [wWalkingDirection], a
-	ld a, STEP_SLIDE
-	call .DoStep
-	scf
-	ret	
-
-.conveyordown_down_bike
-	ld a, STEP_BIKE
-	call .DoStep
-	scf
-	ret
-	
-.conveyordown_up_bike
+.conveyorup_up_down_mall
 	ld a, STEP_SLOW
 	call .DoStep
 	scf
 	ret
 
 .conveyorleft
-	ld a, [wPlayerState]
-	cp PLAYER_BIKE
-	jr z, .conveyorleft_bike_gear_check
-	push bc
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite ; UpdateSprites
-	pop bc
-.conveyorleft_return
+;	call SetConveyorState
 	ld a, [wWalkingDirection]
 	cp LEFT
 	jr z, .conveyorleft_left
@@ -791,45 +715,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	scf
 	ret
 
-.conveyorleft_bike_gear_check
-	call CheckBikeGear
-	jr nz, .conveyorleft_return
-	
-.conveyorleft_bike
-	ld a, [wWalkingDirection]
-	cp LEFT
-	jr z, .conveyorleft_left_bike
-	cp RIGHT
-	jr z, .conveyorleft_right_bike
-	ld a, LEFT
-	ld [wWalkingDirection], a
-	ld a, STEP_SLIDE
-	call .DoStep
-	scf
-	ret	
-
-.conveyorleft_left_bike
-	ld a, STEP_BIKE
-	call .DoStep
-	scf
-	ret
-
-.conveyorleft_right_bike
-	ld a, STEP_SLOW
-	call .DoStep
-	scf
-	ret
-
 .conveyorright
-	ld a, [wPlayerState]
-	cp PLAYER_BIKE
-	jr z, .conveyorright_bike_gear_check
-	push bc
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite ; UpdateSprites
-	pop bc
-.conveyorright_return
+;	call SetConveyorState
 	ld a, [wWalkingDirection]
 	cp RIGHT
 	jr z, .conveyorright_right
@@ -844,44 +731,6 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, STEP_FAST
 	call .DoStep
 	scf
-	ret
-
-.conveyorright_bike_gear_check
-	call CheckBikeGear
-	jr nz, .conveyorright_return
-	
-.conveyorright_bike
-	ld a, [wWalkingDirection]
-	cp RIGHT
-	jr z, .conveyorright_right_bike
-	cp LEFT
-	jr z, .conveyorright_left_bike
-	ld a, RIGHT
-	ld [wWalkingDirection], a
-	ld a, STEP_SLIDE
-	call .DoStep
-	scf
-	ret	
-
-.conveyorright_right_bike
-	ld a, STEP_BIKE
-	call .DoStep
-	scf
-	ret
-
-.conveyorright_left_bike
-	ld a, STEP_SLOW
-	call .DoStep
-	scf
-	ret
-
-.nobike
-	ld a, [wPlayerState]
-	cp PLAYER_BIKE
-	jp nz, .contreturn
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite ; UpdateSprites
 	ret
 	
 .change_grind_direction
@@ -2324,6 +2173,17 @@ FindFreeFallSpot::
 	and a ; cp LANDTILE
 	ret z
 	scf
+	ret
+	
+SetConveyorState:
+	push bc
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	xor a
+	ld [wOnBike], a
+	ld [wOnSkateboard], a
+	call ReplaceKrisSprite ; UpdateSprites
+	pop bc
 	ret
 	
 SkateboardTiles::

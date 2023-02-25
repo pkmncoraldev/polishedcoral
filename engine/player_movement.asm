@@ -573,6 +573,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	eventflagset EVENT_YOU_CHEATED
 	ld a, PLAYER_CLOWN
 	ld [wPlayerState], a
+	xor a
+	ld [wOnBike], a
+	ld [wOnSkateboard], a
 	call ReplaceKrisSprite
 	
 .contreturn
@@ -1110,6 +1113,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, [wFacingDirection]
 	and [hl]
 	jr z, .DontJump
+	ld a, [wWalkingDirection]
+	ld [wLastWalkingDirection], a
 
 .DoJump
 	ld a, [wOnSkateboard]

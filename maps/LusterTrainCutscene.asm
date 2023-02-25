@@ -17,6 +17,7 @@ LusterTrainCutscene_MapScriptHeader:
 	
 LusterTrainCutsceneTrigger0:
 	callasm LusterTrainThing
+	applyonemovement PLAYER, remove_fixed_facing
 	applymovement PLAYER, Movement_LusterTrainArrives
 	special FadeOutPalettes
 	warpcheck

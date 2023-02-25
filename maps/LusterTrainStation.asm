@@ -59,6 +59,7 @@ LusterTrainStationCallback:
 	earthquake 5
 	playmusic MUSIC_NONE
 	callasm LusterTrainThing
+	applyonemovement PLAYER, remove_fixed_facing
 	applymovement PLAYER, Movement_LusterTrainArrives2
 	pause 5
 	earthquake 5

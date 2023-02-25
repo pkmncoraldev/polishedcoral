@@ -2699,7 +2699,9 @@ endr
 	ld [wKickCounter], a
 	call LoadMoveAnim
 	ld c, $1
-	jp TakeDamage
+	call SwitchTurn
+	call TakeDamage
+	jp SwitchTurn
 
 FailText_CheckOpponentProtect: ; 35157
 ; Print an appropriate failure message, usually wAttackMissed.

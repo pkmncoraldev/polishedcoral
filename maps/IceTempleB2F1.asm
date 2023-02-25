@@ -143,6 +143,8 @@ IceTempleMamoswineCutscene:
 	disappear ICE_TEMPLE_B2F_1_MAMOSWINET3
 	disappear ICE_TEMPLE_B2F_1_MAMOSWINET4
 	setevent EVENT_BEAT_MAMOSWINE
+	clearevent EVENT_ICE_TEMPLE_CAMPFIRE_5_UNLIT
+	clearevent EVENT_ICE_TEMPLE_CAMPFIRE_6_UNLIT
 .cont
 	reloadmapafterbattle
 	playmusic MUSIC_LUSTER_SEWER
@@ -210,14 +212,15 @@ IceTempleCampfire5:
 	writetext IceTempleCampfireText2
 	waitbutton
 	closetext
-	clearevent EVENT_ICE_TEMPLE_CAMPFIRE_5_UNLIT
 	checkevent EVENT_ICE_TEMPLE_CAMPFIRE_6_UNLIT
 	iftrue .end
 	pause 5
 	applyonemovement PLAYER, step_right
 	spriteface PLAYER, UP
 	jump IceTempleMamoswineCutscene
+	end
 .end
+	clearevent EVENT_ICE_TEMPLE_CAMPFIRE_5_UNLIT
 	end
 	
 IceTempleCampfire6:
@@ -238,14 +241,15 @@ IceTempleCampfire6:
 	writetext IceTempleCampfireText2
 	waitbutton
 	closetext
-	clearevent EVENT_ICE_TEMPLE_CAMPFIRE_6_UNLIT
 	checkevent EVENT_ICE_TEMPLE_CAMPFIRE_5_UNLIT
 	iftrue .end
 	applyonemovement PLAYER, step_left
 	applyonemovement PLAYER, step_left
 	spriteface PLAYER, UP
 	jump IceTempleMamoswineCutscene
+	end
 .end
+	clearevent EVENT_ICE_TEMPLE_CAMPFIRE_6_UNLIT
 	end
 	
 IceTempleMamoswineText1:

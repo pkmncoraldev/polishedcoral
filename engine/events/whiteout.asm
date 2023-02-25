@@ -66,6 +66,7 @@ WhiteoutHandleEvents:
 	iftrue .skip
 	giveitem TRAIN_TICKET
 .skip
+	setevent EVENT_ALWAYS_SET
 	clearevent EVENT_TRAIN_GOING_EAST
 	clearevent EVENT_TRAIN_GOING_WEST
 	clearevent EVENT_SNOWSTORM_HAPPENING

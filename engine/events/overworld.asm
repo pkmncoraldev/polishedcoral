@@ -1176,7 +1176,7 @@ dig_incave:
 	scall FieldMovePokepicScript
 
 .UsedDigOrEscapeRopeScript: ; 0xcc3c
-	scall HandleEventsFly
+	scall HandleEventsEscapeRope
 	playsound SFX_WARP_TO
 	applymovement PLAYER, .DigOut
 	farscall Script_AbortBugContest
@@ -2686,6 +2686,8 @@ UnknownText_0xd1d0: ; 0xd1d0
 	db "@"
 
 HandleEventsFly:
+	clearevent EVENT_LAKE_ROCKS_BROWN
+HandleEventsEscapeRope:
 	clearevent EVENT_SNOWSTORM_HAPPENING
 	clearevent EVENT_SANDSTORM_HAPPENING
 	clearevent EVENT_AIRPORT_FENCE
@@ -2701,7 +2703,6 @@ HandleEventsFly:
 	clearevent EVENT_IN_SHOPPING_DISTRICT
 	clearevent EVENT_IN_BUSINESS_DISTRICT
 	clearevent EVENT_DOUBLE_LANDMARK_SIGN
-	clearevent EVENT_LAKE_ROCKS_BROWN
 	clearevent EVENT_BRILLO_MARACTUS_GREEN
 	clearevent EVENT_ROUTE_3_ROCKS_BROWN
 	clearflag ENGINE_ENCOUNTER_HOUSE

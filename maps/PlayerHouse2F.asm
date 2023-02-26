@@ -65,6 +65,7 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
+	giveitem ESCAPE_ROPE, 5
 	giveitem LUM_BERRY, 1
 	giveitem RAWST_BERRY, 1
 	giveitem PERSIM_BERRY, 1

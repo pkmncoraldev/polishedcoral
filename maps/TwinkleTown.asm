@@ -152,13 +152,20 @@ TwinkleTownTrigger0:
 	iffalse .end
 .changevending
 	changeblock $14, $28, $26
+	callasm CheckLandmarkSignTimer
+	iffalse .end
 	setflag ENGINE_STREETLIGHTS
 	callasm GenericFinishBridge
 	end
 .checkmorn
 	checktime 1<<MORN
+	iftrue .morn_day
+	checktime 1<<DAY
 	iffalse .end
+.morn_day
 	changeblock $14, $28, $b6
+	callasm CheckLandmarkSignTimer
+	iffalse .end
 	clearflag ENGINE_STREETLIGHTS
 	callasm GenericFinishBridge
 .end

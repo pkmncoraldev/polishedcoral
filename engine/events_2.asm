@@ -124,6 +124,19 @@ ReturnFromMapSetupScript:: ; b8000
 ;	ret
 ; b8098
 
+CheckLandmarkSignTimer::
+	ld hl, wLandmarkSignTimer
+	ld a, [hl]
+	cp 0
+	jr z, .true
+	ld a, FALSE
+	jr .end
+.true
+	ld a, TRUE
+.end
+	ld [wScriptVar], a
+	ret
+	
 
 PlaceMapNameSign:: ; b8098 (2e:4098)
 	ld a, [wPlayerState]

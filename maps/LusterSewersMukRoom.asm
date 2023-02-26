@@ -141,39 +141,50 @@ LusterSewersMukRoomTrigger0:
 	ifequal 8, .topthree
 	ifequal 9, .topfour
 	ifequal 10, .topfive
+	applyonemovement PLAYER, remove_fixed_facing
 	applymovement PLAYER, Movement_LusterSewersMukRoomPlayer6
 	jump .return
 .topone
+	applyonemovement PLAYER, remove_fixed_facing
 	applymovement PLAYER, Movement_LusterSewersMukRoomPlayer1
 	jump .return
 .toptwo
+	applyonemovement PLAYER, remove_fixed_facing
 	applymovement PLAYER, Movement_LusterSewersMukRoomPlayer7
 	jump .return
 .topthree
+	applyonemovement PLAYER, remove_fixed_facing
 	applymovement PLAYER, Movement_LusterSewersMukRoomPlayer6
 	jump .moveperson
 .topfour
+	applyonemovement PLAYER, remove_fixed_facing
 	applymovement PLAYER, Movement_LusterSewersMukRoomPlayer8
 	jump .moveperson
 .topfive
+	applyonemovement PLAYER, remove_fixed_facing
 	applymovement PLAYER, Movement_LusterSewersMukRoomPlayer4
 	jump .moveperson
 .bottomone
+	applyonemovement PLAYER, remove_fixed_facing
 	applymovement PLAYER, Movement_LusterSewersMukRoomPlayer2
 	jump .return
 .bottomtwo
+	applyonemovement PLAYER, remove_fixed_facing
 	applyonemovement PLAYER, step_down
 	jump .moveperson
 .bottomthree
+	applyonemovement PLAYER, remove_fixed_facing
 	applymovement PLAYER, Movement_LusterSewersMukRoomPlayer3
 .moveperson
 	moveperson LUSTER_SEWERS_MUK_CUTSCENE, 8, 7
 	jump .return
 .right
 	setevent EVENT_LUSTER_SEWERS_MUK_RIGHT
+	applyonemovement PLAYER, remove_fixed_facing
 	applymovement PLAYER, Movement_LusterSewersMukRoomPlayerRight
 	jump .return2
 .right2
+	applyonemovement PLAYER, remove_fixed_facing
 	applymovement PLAYER, Movement_LusterSewersMukRoomPlayerRight2
 	jump .return3
 	

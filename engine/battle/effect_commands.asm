@@ -2937,7 +2937,7 @@ ConsumeUserItem::
 	call GetPartyLocation
 
 	; Air Balloons are consumed permanently, so don't write it to UsedItems
-;	ld a, [de]
+	ld a, [de]
 ;	cp AIR_BALLOON
 ;	jr z, .consume_item
 	push hl

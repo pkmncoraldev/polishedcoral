@@ -275,6 +275,8 @@ CheckReplaceKrisSprite: ; 154f7
 	jr nz, .not_skateboarding
 	jr .surfing
 .not_skateboarding
+	cp PLAYER_FALLING
+	jr z, .surfing
 	cp PLAYER_BIKE
 	jr nz, .nope
 .surfing

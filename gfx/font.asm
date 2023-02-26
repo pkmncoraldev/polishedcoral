@@ -92,7 +92,8 @@ _LoadStandardOpaqueFont::
 	call _LoadStandardMaybeOpaqueFont
 	ld hl, VTiles2 tile " "
 	ld de, TextBoxSpaceGFX
-	jp GetOpaque1bppFontTile
+	lb bc, BANK(TextBoxSpaceGFX), 1
+	jp Get2bpp
 
 _LoadStandardFont::
 	xor a

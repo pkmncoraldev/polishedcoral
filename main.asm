@@ -1683,9 +1683,9 @@ Shrink2Pic: ; 4d2d9
 INCBIN "gfx/new_game/shrink2.2bpp.lz"
 
 _ResetClock: ; 4d3b1
-	farcall BlankScreen
-	ld b, CGB_DIPLOMA
+	ld b, CGB_OPTIONS
 	call GetCGBLayout
+	call SetPalettes
 	call LoadStandardFont
 	call LoadFontsExtra
 	ld de, MUSIC_NONE
@@ -1731,9 +1731,9 @@ _ResetClock: ; 4d3b1
 	db "Yes@"
 
 _DeleteSaveData: ; 4d54c
-	farcall BlankScreen
-	ld b, CGB_DIPLOMA
+	ld b, CGB_OPTIONS
 	call GetCGBLayout
+	call SetPalettes
 	call LoadStandardFont
 	call LoadFontsExtra
 	ld de, MUSIC_NONE

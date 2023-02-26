@@ -1470,9 +1470,9 @@ CheckTypeMatchup:
 	push bc
 	call _CheckTypeMatchup
 	; if the attack is ineffective, bypass ability checks
-	ld a, [wTypeMatchup]
-	and a
-	jr z, .end
+;	ld a, [wTypeMatchup]
+;	and a
+;	jr z, .end
 
 	; check Air Balloon for Ground-type attacks
 ;	ld a, BATTLE_VARS_MOVE_TYPE

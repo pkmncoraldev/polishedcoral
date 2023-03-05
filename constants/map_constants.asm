@@ -332,6 +332,6 @@ MAP_NONE   EQU 0
 	newgroup													 ; 18
 	
 	map_const ROUTE_17,									  20, 22 ; 1
-	map_const RADIANT_TOWNSHIP,							  20, 12 ; 2
-	
+	map_const RADIANT_TOWNSHIP,							  20, 14 ; 2
+	map_const RADIANT_FIELD,							  13, 14 ; 3
 	map_const RADIANT_FLOWER_SHOP,						   5,  4 ; 4

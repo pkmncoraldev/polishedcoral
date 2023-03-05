@@ -1283,12 +1283,12 @@ LoadMapPals::
 	jp z, .outside
 	ret
 .sunflowers
-	ld a, [wTileset]
-	cp TILESET_SHIMMER
-	ret nz
+	ld a, [wPermission]
+	cp INDOOR
+	ret z
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_17
-	jp z, .outside
+	jp z, .outside_cont
 	ld hl, MapObjectPalsSunflowers
 	ld a, [wTimeOfDayPal]
 	and 3
@@ -1298,7 +1298,7 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	jp .outside
+	jp .outside_cont
 .starglow
 	ld hl, MapObjectPalsStarglow
 	ld de, wUnknOBPals + 7 palettes
@@ -1636,6 +1636,7 @@ LoadMapPals::
 	cp TILESET_DESERT
 	ret z
 	
+.outside_cont
 	ld a, [wTimeOfDayPal]
 	and 3
 	cp DUSK

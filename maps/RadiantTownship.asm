@@ -3,8 +3,10 @@ RadiantTownship_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 1 ; warp events
+	db 3 ; warp events
 	warp_def 13, 35, 1, RADIANT_FLOWER_SHOP
+	warp_def 25, 18, 1, RADIANT_FIELD
+	warp_def 25, 19, 2, RADIANT_FIELD
 
 	db 0 ; coord events
 
@@ -28,6 +30,7 @@ RadiantTownship_MapScriptHeader:
 	signpost 12, 33, SIGNPOST_READ, RadiantTownshipSolarPanel
 	signpost  7,  6, SIGNPOST_READ, RadiantTownshipPokeCenterSign
 	signpost 15,  6, SIGNPOST_READ, RadiantTownshipMartSign
+	signpost 15,  6, SIGNPOST_READ, RadiantTownshipFlwoerShopSign
 	signpost 11,  2, SIGNPOST_READ, Sunflower1
 	signpost 11,  3, SIGNPOST_READ, Sunflower2
 	signpost 18, 14, SIGNPOST_READ, Sunflower3
@@ -37,10 +40,9 @@ RadiantTownship_MapScriptHeader:
 	signpost 14, 25, SIGNPOST_READ, Sunflower7
 	signpost 19, 26, SIGNPOST_READ, Sunflower8
 	signpost 19, 27, SIGNPOST_READ, Sunflower9
-	signpost 14, 36, SIGNPOST_READ, Sunflower10
-	signpost 14, 37, SIGNPOST_READ, Sunflower11
+	signpost 14, 37, SIGNPOST_READ, Sunflower10
 
-	db 12 ; object events
+	db 11 ; object events
 	person_event SPRITE_CUTE_GIRL, 15, 16, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantTownshipSign, -1
 	person_event SPRITE_CASINO, 10,  2, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 10,  3, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
@@ -51,7 +53,6 @@ RadiantTownship_MapScriptHeader:
 	person_event SPRITE_CASINO, 13, 25, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 18, 26, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 18, 27, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 13, 36, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 13, 37, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 
 
@@ -163,17 +164,6 @@ Sunflower10:
 	callasm CheckSunflowerPollenAsm
 	ifequal 0, SunflowerFull
 	setevent EVENT_SUNFLOWER_10
-	jump SunflowerGivePollen
-	
-Sunflower11:
-	opentext
-	checkitem POLLEN_POUCH
-	iffalse SunflowerNoPouch
-	checkevent EVENT_SUNFLOWER_11
-	iftrue SunflowerDoneForToday
-	callasm CheckSunflowerPollenAsm
-	ifequal 0, SunflowerFull
-	setevent EVENT_SUNFLOWER_11
 
 SunflowerGivePollen:
 	ifequal 1, .almost
@@ -330,6 +320,9 @@ RadiantTownshipPokeCenterSign:
 RadiantTownshipMartSign:
 	jumpstd martsign
 	
+RadiantTownshipFlwoerShopSign:
+	jumptext RadiantTownshipFlwoerShopSignText
+	
 RadiantTownshipSignText:
 	text "RADIANT TOWNSHIP"
 	
@@ -349,6 +342,10 @@ RadiantTownshipGymSignText:
 RadiantTownshipRoute18SignText:
 	text "NORTH:"
 	line "ROUTE 18"
+	done
+	
+RadiantTownshipFlwoerShopSignText:
+	text "TEXT 1"
 	done
 	
 RadiantTownshipSolarPanelText:

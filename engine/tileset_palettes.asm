@@ -386,11 +386,31 @@ LoadSpecialMapPalette: ; 494ac
 	jp LoadSevenBGPalettes
 	
 .grove
+	ld a, [wMapGroup]
+	cp GROUP_RADIANT_TOWNSHIP
+	jr z, .radiant
 	ld a, [wPermission]
 	cp INDOOR
 	ret z
 	ld hl, OutsideGrovePalette
 	jp LoadSevenTimeOfDayBGPalettes
+	
+.radiant
+	ld a, [wMapNumber]
+	cp MAP_RADIANT_FIELD
+	jp nz, .do_nothing
+	ld hl, FlowerFieldPalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 	
 .mountain
 	ld hl, OutsideMountainPalette
@@ -722,6 +742,9 @@ LoadLinkTradePalette: ; 49811
 
 LoadSpecialMapOBPalette:
 	ret
+
+FlowerFieldPalette:
+INCLUDE "maps/palettes/bgpals/radiantfield.pal"
 
 GameCornerPalette:
 INCLUDE "maps/palettes/bgpals/gamecorner.pal"

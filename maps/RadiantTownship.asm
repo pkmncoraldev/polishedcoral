@@ -31,16 +31,16 @@ RadiantTownship_MapScriptHeader:
 	signpost  7,  6, SIGNPOST_READ, RadiantTownshipPokeCenterSign
 	signpost 15,  6, SIGNPOST_READ, RadiantTownshipMartSign
 	signpost 15,  6, SIGNPOST_READ, RadiantTownshipFlwoerShopSign
-	signpost 11,  2, SIGNPOST_READ, Sunflower1
-	signpost 11,  3, SIGNPOST_READ, Sunflower2
-	signpost 18, 14, SIGNPOST_READ, Sunflower3
-	signpost 18, 15, SIGNPOST_READ, Sunflower4
-	signpost 14, 23, SIGNPOST_READ, Sunflower5
-	signpost 14, 24, SIGNPOST_READ, Sunflower6
-	signpost 14, 25, SIGNPOST_READ, Sunflower7
-	signpost 19, 26, SIGNPOST_READ, Sunflower8
-	signpost 19, 27, SIGNPOST_READ, Sunflower9
-	signpost 14, 37, SIGNPOST_READ, Sunflower10
+	signpost 11,  2, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 11,  3, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 18, 14, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 18, 15, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 14, 23, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 14, 24, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 14, 25, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 19, 26, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 19, 27, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 14, 37, SIGNPOST_READ, RadiantTownshipSunflower
 
 	db 11 ; object events
 	person_event SPRITE_CUTE_GIRL, 15, 16, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantTownshipSign, -1
@@ -55,6 +55,9 @@ RadiantTownship_MapScriptHeader:
 	person_event SPRITE_CASINO, 18, 27, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 13, 37, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 
+
+RadiantTownshipSunflower:
+	jumptext RadiantTownshipSunflowerText
 
 Sunflower1:
 	opentext
@@ -211,6 +214,10 @@ SunflowerFull:
 	waitbutton
 	closetext
 	end
+
+RadiantTownshipSunflowerText:
+	text "A huge sunflower!"
+	done
 
 Received1PollenText:
 	text "<PLAYER> received"

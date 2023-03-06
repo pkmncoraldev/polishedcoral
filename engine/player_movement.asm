@@ -1099,11 +1099,16 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr z, .bump
 	
 	ld a, [wPlayerStandingTile]
+	cp $bb
 	ld e, a
+	jr z, .ledge_cont
+;	ld a, [wPlayerStandingTile]
+;	ld e, a
 	and $f0
 	cp $a0 ; ledge
 	jr nz, .DontJump
 
+.ledge_cont
 	ld a, e
 	and 15
 	ld e, a

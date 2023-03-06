@@ -21,4 +21,5 @@ TileCollisionStdScripts:
 	dbw COLL_INCENSE,         incenseburner
 	dbw COLL_ELEVATOR_BUTTON, elevatorbutton
 	dbw COLL_ATM,			  atm
+	dbw COLL_SUNFLOWER,		  sunflower
 	db -1 ; end

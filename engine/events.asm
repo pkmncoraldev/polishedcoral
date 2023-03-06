@@ -1205,8 +1205,11 @@ DoPollenStep:
 	cp 250
 	jr z, .no
 	ld a, [wPlayerStandingTile]
+	cp COLL_FLOWERS_LEDGE_DOWN
+	jr z, .yes
 	cp COLL_FLOWERS
 	jr nz, .no
+.yes
 	ld a, [wPollenSteps]
 	inc a
 	ld [wPollenSteps], a

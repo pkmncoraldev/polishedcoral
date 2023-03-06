@@ -1,3 +1,8 @@
+SunflowerText:
+	text "A field of huge"
+	line "sunflowers!"
+	done
+
 NurseMornText:
 	text "Good morning!"
 	line "Welcome to our"

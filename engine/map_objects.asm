@@ -252,6 +252,8 @@ SetTallGrassFlags: ; 4661
 	jr z, .set
 	cp COLL_FLOWERS
 	jr z, .set
+	cp COLL_FLOWERS_LEDGE_DOWN
+	jr z, .set
 	res OVERHEAD, [hl]
 	ret
 

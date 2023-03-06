@@ -63,3 +63,4 @@
 	enum pokecenterchansey
 	enum deadlamp
 	enum litlamp
+	enum sunflower

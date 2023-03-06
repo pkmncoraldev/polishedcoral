@@ -63,6 +63,7 @@ StdScripts::
 	dba PokeCenterChanseyScript
 	dba DeadLampScript
 	dba LitLampScript
+	dba SunflowerScript
 
 PokeCenterNurseScript:
 	opentext
@@ -200,6 +201,9 @@ PokeCenterChanseyScript:
 PokeCenterChanseyText:
 	text "CHANSEY: Sii!"
 	done
+	
+SunflowerScript:
+	farjumptext SunflowerText
 	
 DeadLampScript:
 	farjumptext DeadLampText

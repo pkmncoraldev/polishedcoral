@@ -1053,6 +1053,8 @@ NormalStep: ; 5412
 	jr z, .shake_grass
 	cp COLL_FLOWERS
 	jr z, .shake_flower
+	cp COLL_FLOWERS_LEDGE_DOWN
+	jr z, .shake_flower
 	cp COLL_PUDDLE
 	jr nz, .skip_effect
 	call SplashPuddle

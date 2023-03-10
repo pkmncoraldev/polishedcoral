@@ -646,6 +646,26 @@ INCBIN "data/tilesets/airport_attributes.bin.lz"
 TilesetAirportColl::
 INCLUDE "data/tilesets/airport_collision.asm"
 
+SECTION "Tileset Data - orphanage", ROMX
+
+TilesetOrphanageGFX0::
+INCBIN "gfx/tilesets/orphanage.2bpp.vram0.lz"
+
+TilesetOrphanageGFX1::
+INCBIN "gfx/tilesets/orphanage.2bpp.vram1.lz"
+
+TilesetOrphanageGFX2::
+INCBIN "gfx/tilesets/orphanage.2bpp.vram2.lz"
+
+TilesetOrphanageMeta::
+INCBIN "data/tilesets/orphanage_metatiles.bin.lz"
+
+TilesetOrphanageAttr::
+INCBIN "data/tilesets/orphanage_attributes.bin.lz"
+
+TilesetOrphanageColl::
+INCLUDE "data/tilesets/orphanage_collision.asm"
+
 
 SECTION "Tileset Headers", ROMX
 
@@ -690,3 +710,4 @@ Tilesets::
 	tileset TilesetShimmer
 	tileset TilesetDesert
 	tileset TilesetAirport
+	tileset TilesetOrphanage

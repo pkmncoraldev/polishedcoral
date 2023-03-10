@@ -3,10 +3,11 @@ RadiantTownship_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 3 ; warp events
+	db 4 ; warp events
 	warp_def 13, 35, 1, RADIANT_FLOWER_SHOP
 	warp_def 25, 18, 1, RADIANT_FIELD
 	warp_def 25, 19, 2, RADIANT_FIELD
+	warp_def 13, 22, 1, RADIANT_ORPHANAGE_1F
 
 	db 0 ; coord events
 

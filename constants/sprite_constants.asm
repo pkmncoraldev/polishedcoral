@@ -219,6 +219,7 @@
 	const SPRITE_COP_SCRUB
 	const SPRITE_SINGER
 	const SPRITE_DAISY
+	const SPRITE_LEILANI
 
 	
 	const_def $f1

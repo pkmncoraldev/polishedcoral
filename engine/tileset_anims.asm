@@ -48,6 +48,14 @@ TilesetIceCaveAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
+
+TilesetOrphanageAnim::
+	dw VTiles2 tile $10, WriteTileToBuffer
+	dw wTileAnimBuffer, ScrollTileDown2
+	dw VTiles2 tile $10, WriteTileFromBuffer
+	dw NULL,  WaitTileAnimation
+	dw TwinkleFireplaceFrames, AnimateWaterfallTiles
+	dw NULL,  DoneTileAnimation
 	
 TilesetHouse1Anim::
 	dw VTiles2 tile $14, WriteTileToBuffer

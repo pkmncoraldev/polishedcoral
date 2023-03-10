@@ -4,8 +4,8 @@ RadiantField_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def  4, 16, 2, RADIANT_TOWNSHIP
-	warp_def  4, 17, 3, RADIANT_TOWNSHIP
+	warp_def  6, 16, 2, RADIANT_TOWNSHIP
+	warp_def  6, 17, 3, RADIANT_TOWNSHIP
 
 	db 0 ; coord events
 

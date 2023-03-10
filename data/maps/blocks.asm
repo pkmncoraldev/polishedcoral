@@ -662,6 +662,9 @@ Route17_BlockData:
 RadiantFlowerShop_BlockData:
 	INCBIN "maps/RadiantFlowerShop.ablk.lz"
 	
-	RadiantField_BlockData:
+RadiantOrphanage1F_BlockData:
+	INCBIN "maps/RadiantOrphanage1F.ablk.lz"
+	
+RadiantField_BlockData:
 	INCBIN "maps/RadiantField.ablk.lz"
 	

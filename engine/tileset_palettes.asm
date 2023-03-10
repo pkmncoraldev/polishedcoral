@@ -133,6 +133,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .house1
 	cp TILESET_HOUSE_2
 	jp z, .house2
+	cp TILESET_ORPHANAGE
+	jp z, .orphanage
 	cp TILESET_NETT_BUILDING
 	jp z, .nett
 	cp TILESET_SHIMMER
@@ -271,12 +273,16 @@ LoadSpecialMapPalette: ; 494ac
 .house1_nope
 	jp .do_nothing
 	
+.orphanage
+	ld de, wUnknBGPals + 6 palettes
+	jr .house2_cont
 .house2
 	ld a, [wMapGroup]
 	cp GROUP_TWINKLE_TOWN
 	jp nz, .do_nothing
-	ld hl, TwinkleFireplacePalette
 	ld de, wUnknBGPals + 4 palettes
+.house2_cont
+	ld hl, TwinkleFireplacePalette
 	ld bc, 1 palettes
 	ld a, $5
 	call FarCopyWRAM

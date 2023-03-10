@@ -264,3 +264,4 @@ KrisSkateboardGrindingSpriteGFX::		INCBIN "gfx/sprites/kris_skateboard_grinding.
 MaractusGraffitiSpriteGFX::				INCBIN "gfx/sprites/maractus_graffiti.2bpp"
 SingerSpriteGFX::						INCBIN "gfx/sprites/singer.2bpp"
 DaisySpriteGFX::						INCBIN "gfx/sprites/daisy.2bpp"
+LeilaniSpriteGFX::						INCBIN "gfx/sprites/leilani.2bpp"

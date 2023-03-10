@@ -223,3 +223,4 @@ SpriteHeaders:
 	overworld_sprite CopScrubSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SingerSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite DaisySpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite LeilaniSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN

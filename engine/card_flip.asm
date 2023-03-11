@@ -689,7 +689,7 @@ CardFlip_FillBox: ; e04e7 (38:44e7)
 	jr nz, .row
 	ret
 
-CardFlip_CopyToBox: ; e04f7 (38:44f7)
+CardFlip_CopyToBox:: ; e04f7 (38:44f7)
 .row
 	push bc
 	push hl

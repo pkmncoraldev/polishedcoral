@@ -334,10 +334,7 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 
 .Radio: ; 90e72
 	ld de, RadioTilemapRLE
-	call Pokegear_LoadTilemapRLE
-	hlcoord 0, 12
-	lb bc, 4, 18
-	jp TextBox
+	jp Pokegear_LoadTilemapRLE
 
 ; 90e82
 
@@ -836,6 +833,13 @@ TownMap_GetOrangeLandmarkLimits:
 ; 910f9
 
 PokegearRadio_Init: ; 910f9 (24:50f9)
+	ld hl, RadioGFX
+	ld de, VTiles2
+	lb bc, BANK(RadioGFX), $40
+	call DecompressRequest2bpp
+
+	ld de, MUSIC_NONE
+	call PlayMusic
 	call InitPokegearTilemap
 	depixel 4, 10, 4, 4
 	ld a, SPRITE_ANIM_INDEX_RADIO_TUNING_KNOB
@@ -1475,7 +1479,6 @@ PhoneTilemapRLE: ; 9158a
 INCBIN "gfx/pokegear/phone.tilemap.rle"
 ClockTilemapRLE: ; 915db
 INCBIN "gfx/pokegear/clock.tilemap.rle"
-; 9163e
 
 _UpdateRadioStation: ; 9163e (24:563e)
 	jr UpdateRadioStation
@@ -1486,10 +1489,10 @@ AnimateTuningKnob: ; 91640 (24:5640)
 	push bc
 	call .TuningKnob
 	pop bc
-	ld a, [wRadioTuningKnob]
-	ld hl, SPRITEANIMSTRUCT_XOFFSET
-	add hl, bc
-	ld [hl], a
+;	ld a, [wRadioTuningKnob]
+;	ld hl, SPRITEANIMSTRUCT_XOFFSET
+;	add hl, bc
+;	ld [hl], a
 	ret
 
 .TuningKnob: ; 9164e (24:564e)
@@ -1507,7 +1510,7 @@ AnimateTuningKnob: ; 91640 (24:5640)
 	ld a, [hl]
 	and a
 	ret z
-	dec [hl]
+;	dec [hl]
 	dec [hl]
 	jr .update
 
@@ -1516,25 +1519,25 @@ AnimateTuningKnob: ; 91640 (24:5640)
 	ld a, [hl]
 	cp 80
 	ret nc
-	inc [hl]
+;	inc [hl]
 	inc [hl]
 .update
 UpdateRadioStation: ; 9166f (24:566f)
-	ld hl, wRadioTuningKnob
-	ld d, [hl]
-	ld hl, RadioChannels
-.loop
-	ld a, [hli]
-	cp -1
-	jr z, .nostation
-	cp d
-	jr z, .foundstation
-	inc hl
-	inc hl
-	jr .loop
-
-.nostation
-	jp NoRadioStation
+	ld de, MUSIC_NONE
+	call PlayMusic
+	call DelayFrame
+	ld de, RadioTilemapRLE
+	call Pokegear_LoadTilemapRLE
+	call Pokegear_FinishTilemap
+	ld a, [wRadioTuningKnob]
+	inc a
+	farcall DrawSongInfo
+	ld a, [wRadioTuningKnob]
+	inc a
+	ld [wMapMusic], a
+	ld e, a
+	ld d, 0
+	jp PlayMusic
 
 .foundstation
 	ld a, [hli]
@@ -3076,3 +3079,6 @@ INCBIN "gfx/town_map/dexmap_nest_icon.2bpp"
 
 PokegearGFX: ; 1de2e4
 INCBIN "gfx/pokegear/pokegear.2bpp.lz"
+
+RadioGFX:
+INCBIN "gfx/pokegear/tape1.2bpp.lz"

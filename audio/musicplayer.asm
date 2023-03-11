@@ -1516,7 +1516,7 @@ GetIntensityAddr:
 	ret
 
 GetSongInfo:
-	ld a, [wSongSelection]
+;	ld a, [wSongSelection]
 	ld b, a
 	ld c, 0
 	ld hl, SongInfo
@@ -1546,8 +1546,8 @@ GetSongInfo:
 	scf
 	ret
 
-DrawSongInfo:
-	ld a, [wSongSelection]
+DrawSongInfo::
+;	ld a, [wSongSelection]
 	call GetSongInfo
 	ret c ; no data
 
@@ -1558,32 +1558,33 @@ DrawSongInfo:
 	jr DrawSongID
 
 .info:
+
 	call GetSongTitle
-	hlcoord 0, 3
+	hlcoord 1, 9
 	call PlaceString
 	inc de
 
-	push de
-	call GetSongOrigin
-	hlcoord 0, 1
-	push de
-	call DrawSongID
-	pop de
-	inc hl
-	call PlaceString
-	pop de
+;	push de
+;	call GetSongOrigin
+;	hlcoord 0, 1
+;	push de
+;	call DrawSongID
+;	pop de
+;	inc hl
+;	call PlaceString
+;	pop de
 	inc de
 
 	push de
 	call GetSongArtist
-	hlcoord 0, 7
+	hlcoord 1, 13
 	call PlaceString
 	pop de
 	inc de
 
 	push de
 	call GetSongArtist2
-	hlcoord 0, 10
+	hlcoord 1, 16
 	call PlaceString
 	pop de
 	ret
@@ -1622,13 +1623,19 @@ GetSongArtist:
 	call GetNthString
 	push hl
 	ld de, .Composer
-	hlcoord 0, 6
+	hlcoord 1, 12
+	call PlaceString
+	ld de, .Title
+	hlcoord 1, 8
 	call PlaceString
 	pop de
 	ret
 
 .Composer:
-	db "Composer:@"
+	db "COMPOSER:@"
+	
+.Title:
+	db "TITLE:@"
 
 GetSongArtist2:
 	ld a, [de]
@@ -1639,14 +1646,14 @@ GetSongArtist2:
 	cp "@"
 	jr z, .finish
 	ld de, .Arranger
-	hlcoord 0, 9
+	hlcoord 1, 15
 	call PlaceString
 .finish
 	pop de
 	ret
 
 .Arranger:
-	db "Arranger:@"
+	db "ARRANGER:@"
 
 SongSelector:
 	hlcoord 0, 0

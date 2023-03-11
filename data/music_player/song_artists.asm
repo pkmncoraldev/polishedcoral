@@ -2,7 +2,7 @@ SongArtists:
 	db "@"
 	db "coraldev@"
 	db "CCCP@"
-	db "Saxophone of Time@"
-	db "Junichi Masuda@"
-	db "CCCP                coraldev@"
+	db "SAXOPHONE OF TIME@"
+	db "JUNICHI MASUDA@"
+	db "CCCP<LNBRK>coraldev@"
 	

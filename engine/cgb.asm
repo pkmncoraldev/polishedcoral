@@ -60,6 +60,7 @@ Predef_LoadCGBLayout: ; 8d59
 	dw _CGB_SplashScreen
 	dw _CGB_PippiScreen
 	dw _CGB_Options
+	dw _CGB_Radio
 ; 8db8
 
 
@@ -231,6 +232,23 @@ _CGB_FinishBattleScreenLayout: ; 8e23
 	jp ApplyAttrMap
 ; 8e85
 
+_CGB_Radio:
+	ld hl, RadioPals
+	ld de, wUnknBGPals
+	ld bc, 8 palettes
+	ld a, $5
+	call FarCopyWRAM
+	
+	ld hl, RadioObjectPals
+	ld de, wUnknOBPals
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+
+	call ApplyPals
+	ld a, $1
+	ld [hCGBPalUpdate], a
+	ret
 
 _CGB_PokegearPals: ; 8eb9
 	ld hl, PokegearPals

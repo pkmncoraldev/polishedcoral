@@ -52,6 +52,7 @@ SpriteAnimFrameData: ; 8d6e6
 	dw .Frameset_44
 	dw .Frameset_45
 	dw .Frameset_46
+	dw .Frameset_47 ; SPRITE_ANIM_FRAMESET_TAPE
 ; 8d76a
 
 ; OAM idx (see SpriteAnimOAMData), flip flags/duration
@@ -362,4 +363,8 @@ SpriteAnimFrameData: ; 8d6e6
 	frame SPRITE_ANIM_FRAME_IDX_94,  8
 	frame SPRITE_ANIM_FRAME_IDX_95,  8, OAM_X_FLIP
 	dorestart
-; 8d94d
+
+.Frameset_47:
+	frame SPRITE_ANIM_FRAME_IDX_96,  8
+	frame SPRITE_ANIM_FRAME_IDX_97,  8
+	dorestart

@@ -441,6 +441,7 @@ PokegearJumptable: ; 90f04 (24:4f04)
 	dw PokegearPhone_FinishPhoneCall
 	dw PokegearRadio_Init
 	dw PokegearRadio_Joypad
+	dw PokegearRadio_Reset
 
 PokegearClock_Init: ; 90f2d (24:4f2d)
 	call InitPokegearTilemap
@@ -832,14 +833,31 @@ TownMap_GetOrangeLandmarkLimits:
 
 ; 910f9
 
+PlaceTapes:
+	ld a, 56
+	ld d, a
+	ld a, 88
+	ld e, a
+	call TapeAnimate
+	ld a, 144
+	ld e, a
+	call TapeAnimate
+	ret	
+
 PokegearRadio_Init: ; 910f9 (24:50f9)
+	
+	ld b, CGB_RADIO_PALS
+	call GetCGBLayout
+	call SetPalettes
+	
 	ld hl, RadioGFX
 	ld de, VTiles2
 	lb bc, BANK(RadioGFX), $40
 	call DecompressRequest2bpp
 
-	ld de, MUSIC_NONE
-	call PlayMusic
+;	call PlaceTapes
+;	ld de, MUSIC_NONE
+;	call PlayMusic
 	call InitPokegearTilemap
 	depixel 4, 10, 4, 4
 	ld a, SPRITE_ANIM_INDEX_RADIO_TUNING_KNOB
@@ -848,8 +866,29 @@ PokegearRadio_Init: ; 910f9 (24:50f9)
 	add hl, bc
 	ld [hl], $8
 	call _UpdateRadioStation
+	call LoadStandardFont
+	call LoadFontsExtra
+	
+	ld a, [wRanchRaceFrames]
+	cp $00
+	jr z, .skip
+	call PlaceTapes
+	
+.skip
 	ld hl, wJumptableIndex
 	inc [hl]
+	ret
+
+PokegearRadio_Reset:
+	depixel 4, 10, 4, 4
+	ld a, SPRITE_ANIM_INDEX_RADIO_TUNING_KNOB
+	farcall _InitSpriteAnimStruct
+	ld hl, SPRITEANIMSTRUCT_TILE_ID
+	add hl, bc
+	ld [hl], $8
+	call _UpdateRadioStation
+	ld hl, wJumptableIndex
+	ld [hl], $e
 	ret
 
 PokegearRadio_Joypad: ; 91112 (24:5112)
@@ -907,6 +946,8 @@ PokegearPhone_Init: ; 91156 (24:5156)
 
 	call InitPokegearTilemap
 	call ExitPokegearRadio_HandleMusic
+	call Load1bppFont
+	call Load1bppFrame
 	ld hl, PokegearText_WhomToCall
 	jp PrintText
 
@@ -1393,6 +1434,7 @@ PokegearPhoneContactSubmenu: ; 91342 (24:5342)
 Pokegear_SwitchPage: ; 91480 (24:5480)
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX
+.skipsound
 	ld a, c
 	ld [wJumptableIndex], a
 	ld a, b
@@ -1503,8 +1545,26 @@ AnimateTuningKnob: ; 91640 (24:5640)
 	ld a, [hl]
 	and D_UP
 	jr nz, .up
+	ld hl, hJoyPressed
+	ld a, [hl]
+	and A_BUTTON
+	jr nz, .A
 	ret
-
+.A
+	ld a, [wRanchRaceFrames]
+	cp $00
+	jr z, .start
+	xor a
+	ld [wRanchRaceFrames], a
+	ld de, MUSIC_NONE
+	call PlayMusic
+	lb bc, RADIO_CARD, $f
+	jp Pokegear_SwitchPage.skipsound
+.start
+	ld a, 1
+	ld [wRanchRaceFrames], a
+	call PlaceTapes
+	jr .update
 .down
 	ld hl, wRadioTuningKnob
 	ld a, [hl]
@@ -1535,6 +1595,12 @@ UpdateRadioStation: ; 9166f (24:566f)
 	ld a, [wRadioTuningKnob]
 	inc a
 	ld [wMapMusic], a
+	
+	ld a, [wRanchRaceFrames]
+	cp $00
+	ret z
+	
+	ld a, [wMapMusic]
 	ld e, a
 	ld d, 0
 	jp PlayMusic
@@ -2820,7 +2886,7 @@ AssignPokeGearPals: ; 91f13
 	push hl
 	cp $40 ; tiles after TownMapGFX use palette 0
 	jr nc, .pal0
-	call GetNextTownMapTilePalette
+	call GetNextPokegearTilePalette
 	jr .update
 .pal0
 	xor a
@@ -2906,6 +2972,48 @@ endm
 	townmappals 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 3, 3, 2, 7, 1, 1
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+
+GetNextPokegearTilePalette:
+; The palette data is condensed to nybbles, least-significant first.
+	ld hl, .PalMap
+	srl a
+	jr c, .odd
+; Even-numbered tile ids take the bottom nybble...
+	add l
+	ld l, a
+	ld a, h
+	adc 0
+	ld h, a
+	ld a, [hl]
+	and %111
+	ret
+
+.odd
+; ...and odd ids take the top.
+	add l
+	ld l, a
+	ld a, h
+	adc 0
+	ld h, a
+	ld a, [hl]
+	swap a
+	and %111
+	ret
+
+.PalMap:
+pokegearpals: MACRO
+rept _NARG / 2
+	dn \2, \1
+	shift
+	shift
+endr
+endm
+	pokegearpals 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	pokegearpals 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	pokegearpals 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	pokegearpals 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	pokegearpals 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	pokegearpals 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
 TownMapNorthOnwaFlips:
 	decoord 0, 0, NorthOnwaMap
@@ -3053,6 +3161,36 @@ TownMapPlayerIcon: ; 91fa6
 	ld [hl], d
 	ret
 
+TapeAnimate: ; 91fa6
+; Draw the player icon at town map location in de
+	push de
+	ld de, RadioGFX2
+	ld b, BANK(RadioGFX2)
+; Standing icon
+	ld hl, VTiles0 tile $20
+	ld c, 12 ; # tiles
+	push bc
+	push de
+	call Request2bpp
+	pop de
+	pop bc
+; Animation/palette
+	depixel 0, 0
+	ld b, SPRITE_ANIM_INDEX_TAPE
+	ld a, b
+	farcall _InitSpriteAnimStruct
+	ld hl, SPRITEANIMSTRUCT_TILE_ID
+	add hl, bc
+	ld [hl], $20
+	pop de
+	ld hl, SPRITEANIMSTRUCT_XCOORD
+	add hl, bc
+	ld [hl], e
+	ld hl, SPRITEANIMSTRUCT_YCOORD
+	add hl, bc
+	ld [hl], d
+	ret
+
 ; 0x91ff2
 
 LoadTownMapGFX: ; 91ff2
@@ -3082,3 +3220,6 @@ INCBIN "gfx/pokegear/pokegear.2bpp.lz"
 
 RadioGFX:
 INCBIN "gfx/pokegear/tape1.2bpp.lz"
+
+RadioGFX2:
+INCBIN "gfx/pokegear/tape2.2bpp"

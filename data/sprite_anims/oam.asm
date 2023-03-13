@@ -84,6 +84,8 @@ SpriteAnimOAMData: ; 8d94d
 	dbw $04, .OAMData_89
 	dbw $00, .OAMData_90
 	dbw $04, .OAMData_90
+	dbw $00, .OAMData_91
+	dbw $06, .OAMData_91
 
 .OAMData_02:
 	db 1
@@ -137,6 +139,15 @@ SpriteAnimOAMData: ; 8d94d
 	dsprite  1,  0,  0,  0, $01, $0 | X_FLIP | Y_FLIP
 	dsprite  1,  0,  1,  0, $00, $0 | X_FLIP | Y_FLIP
 
+.OAMData_91
+;animate tape in pokegear
+	db 6
+	dsprite -2,  3, -2,  4, $04, $7
+	dsprite -1,  0, -1,  0, $00, $0
+	dsprite -1,  0,  0,  0, $01, $0
+	dsprite  0,  0, -1,  0, $02, $0
+	dsprite  0,  0,  0,  0, $03, $0
+	dsprite  1, -3,  1, -4, $05, $7
 .OAMData_00:
 ; former party menu icons
 	db 4

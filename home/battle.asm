@@ -302,8 +302,8 @@ ApplySpecialDefenseDamageMod::
 ApplyDamageMod::
 ; a = $xy: multiply multiplicands by x, then divide by y
 ; Used by things other than damage
-	push bc
 	push hl
+	push bc
 	ld b, a
 	swap a
 	and $f
@@ -317,9 +317,7 @@ ApplyDamageMod::
 	ld [hl], a
 	ld b, 4
 	call Divide
-	pop hl
-	pop bc
-	ret
+	jp PopBCHL
 
 
 GetOpponentAbilityAfterMoldBreaker:: ; 39e1

@@ -63,15 +63,12 @@ Multiply:: ; 3119
 ; Multiply hMultiplicand (3 bytes) by hMultiplier. Result in hProduct.
 ; All values are big endian.
 	push hl
-	push bc
 	push de
+	push bc
 
 	farcall _Multiply
 
-	pop de
-	pop bc
-	pop hl
-	ret
+	jp PopBCDEHL
 ; 3124
 
 
@@ -84,8 +81,4 @@ Divide:: ; 3124
 
 	homecall _Divide
 
-	pop bc
-	pop de
-	pop hl
-	ret
-; 3136
+	jp PopBCDEHL

@@ -98,10 +98,7 @@ PopAFBankThenAFBCDEHL:
 
 _PopAFBCDEHL:
 	pop af
-	pop bc
-	pop de
-	pop hl
-	ret
+	jp PopBCDEHL
 ; 3bbc
 
 WaitPlaySFX::
@@ -388,8 +385,8 @@ TryRestartMapMusic:: ; 3d2f
 	ld a, [wDontPlayMapMusicOnReload]
 	and a
 	jp z, RestoreMusic
-	xor a
-	ld [wMapMusic], a
+;	xor a
+;	ld [wMapMusic], a
 	ld de, MUSIC_NONE
 	call PlayMusic
 	call DelayFrame
@@ -401,6 +398,9 @@ TryRestartMapMusic:: ; 3d2f
 GetMapMusic::
 	eventflagcheck EVENT_YOU_CHEATED
 	ret nz
+	ld a, [wTapePlayerActive]
+	cp 1
+	jr z, .tape_player
 	ld hl, SpecialMusicMaps
 	ld a, [wMapGroup]
 	ld b, a
@@ -426,6 +426,11 @@ GetMapMusic::
 	inc hl
 	inc hl
 	jr .loop
+.tape_player
+	ld a, [wRadioTuningKnob]
+	inc a
+	ld e, a
+	ret
 
 DoSurfMusic:
 	ld a, [wPlayerState]

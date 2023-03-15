@@ -240,7 +240,7 @@ _CGB_Radio:
 	call FarCopyWRAM
 	
 	ld hl, RadioObjectPals
-	ld de, wUnknOBPals
+	ld de, wUnknOBPals palette 6
 	ld bc, 1 palettes
 	ld a, $5
 	call FarCopyWRAM

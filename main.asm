@@ -4265,7 +4265,7 @@ INCLUDE "engine/slot_machine.asm"
 SECTION "Code 19", ROMX
 
 INCLUDE "engine/events_2.asm"
-INCLUDE "engine/radio.asm"
+;INCLUDE "engine/radio.asm"
 INCLUDE "gfx/mail.asm"
 
 

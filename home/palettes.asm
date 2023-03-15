@@ -134,10 +134,7 @@ DmgToCgbObjPals:: ; ccb
 
 	pop af
 	ld [rSVBK], a
-	pop bc
-	pop de
-	pop hl
-	ret
+	jp PopBCDEHL
 ; cf8
 
 

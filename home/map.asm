@@ -970,9 +970,7 @@ GetScriptByte:: ; 0x26d4
 	pop af
 	rst Bankswitch
 	ld a, b
-	pop bc
-	pop hl
-	ret
+	jp PopBCHL
 ; 0x26ef
 
 ObjectEvent:: ; 0x26ef
@@ -1047,10 +1045,7 @@ LoadGraphicsAndDelay::
 	call z, DelayFrame
 	pop af
 	ld [rVBK], a
-	pop bc
-	pop de
-	pop hl
-	ret
+	jp PopBCDEHL
 
 _LoadTileset:
 	jr z, _LoadTileset0
@@ -1936,10 +1931,7 @@ GetMapPermission:: ; 2c8a
 	ld de, 2 ; permission
 	call GetMapHeaderMember
 	ld a, c
-	pop bc
-	pop de
-	pop hl
-	ret
+	jp PopBCDEHL
 ; 2c98
 
 GetAnyMapPermission:: ; 2c99
@@ -1949,10 +1941,7 @@ GetAnyMapPermission:: ; 2c99
 	ld de, 2 ; permission
 	call GetAnyMapHeaderMember
 	ld a, c
-	pop bc
-	pop de
-	pop hl
-	ret
+	jp PopBCDEHL
 ; 2ca7
 
 GetAnyMapTileset:: ; 2ca7
@@ -1996,10 +1985,7 @@ GetWorldMapLocation:: ; 0x2caf
 	ld a, c
 
 .end
-	pop bc
-	pop de
-	pop hl
-	ret
+	jp PopBCDEHL
 ; 0x2cbd
 
 GetCurrentLandmark::
@@ -2052,9 +2038,7 @@ GetMapHeaderMusic:: ; 2cbd
 	ld e, c
 	ld d, 0
 .done
-	pop bc
-	pop hl
-	ret
+	jp PopBCHL
 
 .starglow
 	ld a, [wSnareFlags]
@@ -2125,24 +2109,19 @@ GetPhoneServiceTimeOfDayByte:: ; 2d0d
 	call GetMapHeaderMember
 	ld a, c
 
-	pop bc
-	pop hl
-	ret
+	jp PopBCHL
 ; 2d19
 
 GetFishingGroup:: ; 2d19
-	push de
 	push hl
+	push de
 	push bc
 
 	ld de, 8 ; fishing group
 	call GetMapHeaderMember
 	ld a, c
 
-	pop bc
-	pop hl
-	pop de
-	ret
+	jp PopBCDEHL
 ; 2d27
 
 TilesetUnchanged::
@@ -2173,6 +2152,8 @@ LoadTilesetHeader::
 	ld a, BANK(Tilesets)
 	call FarCopyBytes
 
+;fallthrough
+PopBCHL:
 	pop bc
 	pop hl
 	ret

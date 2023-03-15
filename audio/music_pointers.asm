@@ -4,7 +4,7 @@ Music:
 	dba Music_SunsetBay
 	dba Music_Mom
 	dba Music_PokemonCenter
-	dba Music_HealPokemon
+	
 	dba Music_RivalEncounter
 	dba Music_RivalBattle
 	dba Music_Route1
@@ -33,7 +33,6 @@ Music:
 	dba Music_HikerEncounter
 	dba Music_Lava
 	dba Music_WildBossBattle
-	dba Music_Mountaintop
 	dba Music_SunbeamIsland
 	dba Music_SpruceLab
 	dba Music_SnareTheme
@@ -58,10 +57,12 @@ Music:
 	dba Music_Oasis
 	dba Music_SnareLeaderBattle
 	dba Music_GentlemanEncounter
+	
+	dba Music_Mountaintop
+	dba Music_HealPokemon
+	dba Music_SuccessfulCapture
 	dba Music_BrilloSong
 	dba Music_BrilloSongBad
-	
-	dba Music_SuccessfulCapture
 	dba Music_HallOfFame
 	dba Music_Credits
 	dba Music_PostCredits

@@ -312,7 +312,7 @@ ENDU
 
 wMonJustCaught:: ds 1
 
-	ds 1 ; unused
+wTapePlayerActive::	ds 1
 	
 wMirrorMoveUsed:: ds 1
 

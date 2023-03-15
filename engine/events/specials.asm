@@ -177,9 +177,10 @@ BugContestJudging: ; c34a
 ; c355
 
 MapRadio: ; c355
-	ld a, [wScriptVar]
-	ld e, a
-	farjp PlayRadio
+	ret
+;	ld a, [wScriptVar]
+;	ld e, a
+;	farjp PlayRadio
 ; c360
 
 Special_UnownPuzzle: ; c360

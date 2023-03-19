@@ -2688,6 +2688,7 @@ UnknownText_0xd1d0: ; 0xd1d0
 HandleEventsFly:
 	clearevent EVENT_LAKE_ROCKS_BROWN
 HandleEventsEscapeRope:
+	clearevent EVENT_ROUTE_18_GRASS_YELLOW
 	clearevent EVENT_SNOWSTORM_HAPPENING
 	clearevent EVENT_SANDSTORM_HAPPENING
 	clearevent EVENT_AIRPORT_FENCE
@@ -2696,6 +2697,7 @@ HandleEventsEscapeRope:
 	domaptrigger ROUTE_10, $0
 	domaptrigger DESERT_ROUTE_NORTH, $0
 	domaptrigger DESERT_WASTELAND_1, $0
+	domaptrigger ROUTE_18, $0
 	clearevent EVENT_ON_DODRIO_RANCH
 	clearevent EVENT_AT_AIRPORT
 	clearflag ENGINE_NEAR_CAMPFIRE

@@ -67,6 +67,7 @@ WhiteoutHandleEvents:
 	giveitem TRAIN_TICKET
 .skip
 	setevent EVENT_ALWAYS_SET
+	clearevent EVENT_ROUTE_18_GRASS_YELLOW
 	clearevent EVENT_TRAIN_GOING_EAST
 	clearevent EVENT_TRAIN_GOING_WEST
 	clearevent EVENT_SNOWSTORM_HAPPENING
@@ -77,6 +78,7 @@ WhiteoutHandleEvents:
 	domaptrigger ROUTE_10, $0
 	domaptrigger DESERT_ROUTE_NORTH, $0
 	domaptrigger DESERT_WASTELAND_1, $0
+	domaptrigger ROUTE_18, $0
 	clearevent EVENT_ON_DODRIO_RANCH
 	clearevent EVENT_AT_AIRPORT
 	clearflag ENGINE_NEAR_CAMPFIRE

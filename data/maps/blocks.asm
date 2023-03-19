@@ -659,6 +659,9 @@ Airport_BlockData:
 Route17_BlockData:
 	INCBIN "maps/Route17.ablk.lz"
 	
+Route18_BlockData:
+	INCBIN "maps/Route18.ablk.lz"
+	
 RadiantFlowerShop_BlockData:
 	INCBIN "maps/RadiantFlowerShop.ablk.lz"
 	

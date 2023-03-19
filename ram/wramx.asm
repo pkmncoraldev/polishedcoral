@@ -1042,8 +1042,9 @@ wShimmerHarborTrigger:: ds 1
 wBrilloTownTrigger:: ds 1
 wDesertRouteNorthTrigger:: ds 1
 wAirportTrigger:: ds 1
+wRoute18Trigger:: ds 1
 
-ds 19
+ds 18
 
 ; fight counts
 wJackFightCount::    ds 1

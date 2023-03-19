@@ -1289,6 +1289,11 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_17
 	jp z, .outside_cont
+	cp MAP_ROUTE_18
+	jp nz, .not_route_18
+	eventflagcheck EVENT_ROUTE_18_GRASS_YELLOW
+	jp z, .outside_cont
+.not_route_18
 	ld hl, MapObjectPalsSunflowers
 	ld a, [wTimeOfDayPal]
 	and 3

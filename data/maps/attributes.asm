@@ -306,11 +306,15 @@ ENDM
 	connection east, ShimmerCity, SHIMMER_CITY, -2
 	
 	map_attributes Route17, ROUTE_17, $30, SOUTH | WEST
-	connection south, RadiantTownship, RADIANT_TOWNSHIP, 13
+	connection south, Route18, ROUTE_18, 11
 	connection west, ShimmerCity, SHIMMER_CITY, -5
 	
+	map_attributes Route18, ROUTE_18, $30, NORTH | SOUTH
+	connection north, Route17, ROUTE_17, -11
+	connection south, RadiantTownship, RADIANT_TOWNSHIP, 1
+	
 	map_attributes RadiantTownship, RADIANT_TOWNSHIP, $30, NORTH
-	connection north, Route17, ROUTE_17, -13
+	connection north, Route18, ROUTE_18, -1
 	
 	map_attributes BrilloTown, BRILLO_TOWN, $35, EAST
 	connection east, DesertRoute, DESERT_ROUTE, -7

@@ -98,4 +98,5 @@ MapTriggers::
 	scene_var DESERT_WASTELAND_OASIS,				  wDesertRouteNorthTrigger
 	scene_var SAILBOAT_CUTSCENE,					  wAlways0Trigger
 	scene_var AIRPORT,								  wAirportTrigger
+	scene_var ROUTE_18,								  wRoute18Trigger
 	db -1

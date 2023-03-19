@@ -174,10 +174,12 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_GOT_CUT
 	setflag ENGINE_GOT_FLY
 	setflag ENGINE_GOT_ROCK_CLIMB
+	setflag ENGINE_GOT_SURF
 	givetmhm HM_ROCK_SMASH
 	givetmhm HM_CUT
 	givetmhm HM_FLY
 	givetmhm HM_ROCK_CLIMB
+	givetmhm HM_SURF
 .done
 	writetext PlayerHouseDebugText5
 	waitbutton

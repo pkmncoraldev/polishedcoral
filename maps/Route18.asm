@@ -8,7 +8,7 @@ Route18_MapScriptHeader:
 
 	db 0 ; warp events
 
-	db 8 ; coord events
+	db 12 ; coord events
 	coord_event  6, 18, 1, Route18MakeGrassGreen
 	coord_event  7, 18, 1, Route18MakeGrassGreen
 	coord_event  6, 19, 0, Route18MakeGrassYellow
@@ -17,15 +17,20 @@ Route18_MapScriptHeader:
 	coord_event 11, 26, 1, Route18MakeGrassGreen
 	coord_event 10, 28, 0, Route18MakeGrassYellow
 	coord_event 10, 29, 0, Route18MakeGrassYellow
+	coord_event  9,  6, 1, Route18MakeGrassGreen
+	coord_event  9,  7, 1, Route18MakeGrassGreen
+	coord_event  8,  6, 0, Route18MakeGrassYellow
+	coord_event  8,  7, 0, Route18MakeGrassYellow
 
 	db 2 ; bg events
 	signpost 29,  2, SIGNPOST_READ, Route18Sunflower
 	signpost 29,  3, SIGNPOST_READ, Route18Sunflower
 
-	db 3 ; object events
+	db 4 ; object events
 	person_event SPRITE_CASINO, 28,  2, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 28,  3, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	itemball_event  2, 28, POTION, 1, EVENT_ROUTE_18_POKE_BALL
+	itemball_event  2,  6, POTION, 1, EVENT_ROUTE_18_POKE_BALL_1
+	tmhmball_event  2, 28, TM_DAZZLINGLEAM, EVENT_ROUTE_18_POKE_BALL_2
 
 Route18Sunflower:
 	jumptext Route18SunflowerText

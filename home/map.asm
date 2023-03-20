@@ -2006,18 +2006,18 @@ GetBackupLandmark::
 	jp GetWorldMapLocation
 	
 RegionCheck::
-; Checks if the player is in Kanto or Johto.
-; If in Johto, returns 0 in e.
-; If in Kanto, returns 1 in e.
+; Checks if the player is in South Onwa or North Onwa.
+; If in North Onwa, returns 0 in e.
+; If in South Onwa, returns 1 in e.
 ; If on Shamouti Island, returns 2 in e.
 	call GetCurrentLandmark
 	ld e, ORANGE_REGION
 	cp SHAMOUTI_LANDMARK
 	ret nc
-	dec e ; KANTO_REGION
-	cp KANTO_LANDMARK
+	dec e ; SOUTH_ONWA_REGION
+	cp SOUTH_ONWA_LANDMARK
 	ret nc
-	dec e ; JOHTO_REGION
+	dec e ; NORTH_ONWA_REGION
 	ret
 
 GetMapHeaderMusic:: ; 2cbd

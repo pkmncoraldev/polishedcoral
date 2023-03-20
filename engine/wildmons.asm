@@ -40,7 +40,7 @@ FindNest: ; 2a01f
 	xor a
 	call ByteFill
 	ld a, e
-	cp KANTO_REGION
+	cp SOUTH_ONWA_REGION
 	jr z, .south
 	decoord 0, 0
 	ld hl, NorthOnwaGrassWildMons
@@ -636,7 +636,7 @@ _GetGrassWildmonPointer:
 	call RegionCheck
 	ld a, e
 	ld hl, NorthOnwaGrassWildMons
-	and a ; cp JOHTO_REGION
+	and a ; cp NORTH_ONWA_REGION
 	ret z
 	ld hl, SouthOnwaGrassWildMons
 	ret
@@ -645,7 +645,7 @@ _GetWaterWildmonPointer:
 	call RegionCheck
 	ld a, e
 	ld hl, NorthOnwaWaterWildMons
-	and a ; cp JOHTO_REGION
+	and a ; cp NORTH_ONWA_REGION
 	ret z
 	ld hl, SouthOnwaWaterWildMons
 	ret

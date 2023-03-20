@@ -60,6 +60,7 @@ PlayerHouseDebugPoster:
 	iffalse .items
 	givepoke WYRDEER, 100
 	givepoke CLEFAIRY, 5
+	givepoke CHARIZARD, 100
 
 .items
 	writetext PlayerHouseDebugText6
@@ -180,6 +181,19 @@ PlayerHouseDebugPoster:
 	givetmhm HM_FLY
 	givetmhm HM_ROCK_CLIMB
 	givetmhm HM_SURF
+	setflag ENGINE_FLYPOINT_HOME
+	setflag ENGINE_FLYPOINT_SUNSET
+	setflag ENGINE_FLYPOINT_DAYBREAK
+	setflag ENGINE_FLYPOINT_GLINT
+	setflag ENGINE_FLYPOINT_STARGLOW
+	setflag ENGINE_FLYPOINT_LAKE_ONWA
+	setflag ENGINE_FLYPOINT_SUNBEAM
+	setflag ENGINE_FLYPOINT_EVENTIDE
+	setflag ENGINE_FLYPOINT_FLICKER
+	setflag ENGINE_FLYPOINT_TWINKLE
+	setflag ENGINE_FLYPOINT_LUSTER
+	setflag ENGINE_FLYPOINT_SHIMMER
+	setflag ENGINE_FLYPOINT_BRILLO
 .done
 	writetext PlayerHouseDebugText5
 	waitbutton

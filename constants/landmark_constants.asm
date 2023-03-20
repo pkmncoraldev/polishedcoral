@@ -1,6 +1,6 @@
 	const_def
-	const JOHTO_REGION
-	const KANTO_REGION
+	const NORTH_ONWA_REGION
+	const SOUTH_ONWA_REGION
 	const ORANGE_REGION
 
 
@@ -47,26 +47,23 @@
 	const AIRPORT			 ; 25
 	const ROUTE_13			 ; 26
 	const ROUTE_14			 ; 27
-	const SHIMMER_CITY		 ; 28
-	const BRILLO_TOWN		 ; 29
-	const DESERT_ROUTE		 ; 2a
-	const ROUTE_17			 ; 2b
-	const ROUTE_18			 ; 2
-	const RADIANT_TOWNSHIP	 ; 2d
+	const LUSTER_STATION	 		; 28
+	const RESIDENTIAL_DISTRICT		; 29
+	const SHOPPING_DISTRICT			; 2a
+	const BUSINESS_DISTRICT			; 2b
 
-	
-	const LUSTER_STATION
-	const RESIDENTIAL_DISTRICT
-	const SHOPPING_DISTRICT
-	const BUSINESS_DISTRICT
-	const GATE_LANDMARK
+SOUTH_ONWA_LANDMARK EQU const_value
 
-KANTO_LANDMARK EQU const_value
-
-	const CINNABAR_LAB       ; 80
+	const SHIMMER_CITY		 ; 2c
+	const BRILLO_TOWN		 ; 2d
+	const DESERT_ROUTE		 ; 2e
+	const ROUTE_17			 ; 2f
+	const ROUTE_18			 ; 30
+	const RADIANT_TOWNSHIP	 ; 31
 
 SHAMOUTI_LANDMARK EQU const_value
 
-	const FARAWAY_ISLAND     ; 8f
+	const GATE_LANDMARK
+	const FARAWAY_ISLAND
 
 NUM_LANDMARKS EQU const_value

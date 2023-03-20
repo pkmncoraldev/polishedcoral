@@ -523,11 +523,11 @@ PokegearMap_CheckRegion: ; 90fb4 (24:4fb4)
 	ld a, [wPokegearMapPlayerIconLandmark]
 	cp SHAMOUTI_LANDMARK
 	jr nc, .orange
-	cp KANTO_LANDMARK
-	jr nc, .kanto
+	cp SOUTH_ONWA_LANDMARK
+	jr nc, .south_onwa
 	ld a, 3
 	jr .done
-.kanto
+.south_onwa
 	ld a, 5
 	jr .done
 .orange
@@ -816,11 +816,11 @@ TownMap_ConvertLineBreakCharacters2: ; 1de2c5
 	jp PlaceString
 
 TownMap_GetNorthOnwaLandmarkLimits:
-	lb de, ROUTE_11, SUNSET_BAY
+	lb de, ROUTE_14, SUNSET_BAY
 	ret
 
 TownMap_GetSouthOnwaLandmarkLimits: ; 910e8
-	lb de, SUNSET_BAY, SUNSET_BAY
+	lb de, RADIANT_TOWNSHIP, SHIMMER_CITY
 ;	ld a, [wStatusFlags]
 ;	bit 6, a
 ;	ret z
@@ -1786,11 +1786,11 @@ _TownMap: ; 9191c
 	ld a, [wTownMapPlayerIconLandmark]
 	cp SHAMOUTI_LANDMARK
 	jr nc, .orange
-	cp KANTO_LANDMARK
-	jr nc, .kanto
+	cp SOUTH_ONWA_LANDMARK
+	jr nc, .south_onwa
 	call TownMap_GetNorthOnwaLandmarkLimits
 	jr .resume
-.kanto
+.south_onwa
 	call TownMap_GetSouthOnwaLandmarkLimits
 	jr .resume
 .orange
@@ -1895,7 +1895,7 @@ _TownMap: ; 9191c
 	ld a, [wTownMapPlayerIconLandmark]
 	cp SHAMOUTI_LANDMARK
 	jp nc, TownMapOrangeFlips
-	cp KANTO_LANDMARK
+	cp SOUTH_ONWA_LANDMARK
 	jp nc, TownMapSouthOnwaFlips
 	jp TownMapNorthOnwaFlips
 ; 91a53
@@ -1905,12 +1905,23 @@ PokegearMap: ; 91ae1
 	ld a, [wPokegearMapPlayerIconLandmark]
 	cp SHAMOUTI_LANDMARK
 	jp nc, FillOrangeMap
-	cp KANTO_LANDMARK
+	cp SOUTH_ONWA_LANDMARK
 	jp nc, FillSouthOnwaMap
 	jp FillNorthOnwaMap
 ; 91af3
 
 _FlyMap: ; 91af3
+	call GetCurrentLandmark
+; The first 46 locations are part of NorthOnwa. The rest are in SouthOnwa
+	cp SOUTH_ONWA_LANDMARK
+	jr nc, .SouthOnwaFlyMap
+	xor a
+	ld [wWarpNumber], a
+	jr .cont
+.SouthOnwaFlyMap
+	ld a, 1
+	ld [wWarpNumber], a
+.cont
 	call ClearBGPalettes
 	call ClearTileMap
 	call ClearSprites
@@ -1920,8 +1931,9 @@ _FlyMap: ; 91af3
 	ld [hl], $1
 	xor a
 	ld [hBGMapMode], a
+.cont2
 	farcall ClearSpriteAnims
-	call LoadTownMapGFX
+	call LoadTownMapGFX	
 	call FlyMap
 	ld b, CGB_POKEGEAR_PALS
 	call GetCGBLayout
@@ -1929,6 +1941,9 @@ _FlyMap: ; 91af3
 .loop
 	call JoyTextDelay
 	ld hl, hJoyPressed
+	ld a, [hl]
+	and SELECT
+	jr nz, .pressedSelect
 	ld a, [hl]
 	and B_BUTTON
 	jr nz, .pressedB
@@ -1940,6 +1955,28 @@ _FlyMap: ; 91af3
 	farcall PlaySpriteAnimations
 	call DelayFrame
 	jr .loop
+
+.pressedSelect
+	ld a, [wWarpNumber]
+	cp 1
+	jr z, .switch_to_north
+	ld a, 1
+	ld [wWarpNumber], a
+	call ClearBGPalettes
+	call ClearTileMap
+	call ClearSprites
+	xor a
+	ld [hBGMapMode], a
+	jr _FlyMap.cont2
+.switch_to_north
+	xor a
+	ld [wWarpNumber], a
+	call ClearBGPalettes
+	call ClearTileMap
+	call ClearSprites
+	xor a
+	ld [hBGMapMode], a
+	jr _FlyMap.cont2
 
 .pressedB
 	ld a, -1
@@ -2057,7 +2094,7 @@ TownMapBubble: ; 91bb5
 	ret
 
 .Where:
-	db "Where?@"
+	db "Where to?@"
 
 .Name:
 ; We need the map location of the default flypoint
@@ -2132,12 +2169,10 @@ HasVisitedSpawn: ; 91c50
 INCLUDE "data/maps/flypoints.asm"
 
 FlyMap: ; 91c90
-	call GetCurrentLandmark
-; The first 46 locations are part of NorthOnwa. The rest are in SouthOnwa
-	;cp KANTO_LANDMARK
-	;jr nc, .SouthOnwaFlyMap
+	ld a, [wWarpNumber]
+	cp 1
+	jr z, .SouthOnwaFlyMap
 .NorthOnwaFlyMap:
-; Note that .NoSouthOnwa should be modified in tandem with this branch
 	push af
 ; Start from Sunset Bay
 	ld a, FLY_SUNSET
@@ -2154,63 +2189,35 @@ FlyMap: ; 91c90
 	call TownMapNorthOnwaFlips
 	call .MapHud
 	pop af
+	call GetCurrentLandmark
+; The first 46 locations are part of NorthOnwa. The rest are in SouthOnwa
+	cp SOUTH_ONWA_LANDMARK
+	ret nc
 	jp TownMapPlayerIcon
 
-;.SouthOnwaFlyMap:
-; The event that there are no flypoints enabled in a map is not
-
-; accounted for. As a result, if you attempt to select a flypoint
-; when there are none enabled, the game will crash. Additionally,
-
-; the flypoint selection has a default starting point that
-; can be flown to even if none are enabled
-
-; To prevent both of these things from happening when the player
-; enters SouthOnwa, fly access is restricted until Indigo Plateau is
-
-; visited and its flypoint enabled
-	;push af
-	;ld c, SPAWN_INDIGO
-	;call HasVisitedSpawn
-	;and a
-	;jr z, .NoSouthOnwa
-; SouthOnwa's map is only loaded if we've visited Indigo Plateau
-
-; Flypoints begin at Pallet Town...
-	;ld a, FLY_PALLET
-	;ld [wStartFlypoint], a
-; ...and end at Indigo Plateau
-	;ld a, FLY_INDIGO
-	;ld [wEndFlypoint], a
-; Because Indigo Plateau is the first flypoint the player
-
-; visits, it's made the default flypoint
-	;ld [wTownMapPlayerIconLandmark], a
+.SouthOnwaFlyMap:
+	push af
+; Start from Sunset Bay
+	ld a, FLY_SHIMMER
+	ld [wTownMapPlayerIconLandmark], a
+; Flypoints begin at Shimmer City...
+	ld [wStartFlypoint], a
+; ..and end at TODO
+	ld a, FLY_RADIANT
+	ld [wEndFlypoint], a
 ; Fill out the map
-	;call FillSouthOnwaMap
-	;call TownMapBubble
-	;call TownMapPals
-	;call TownMapSouthOnwaFlips
-	;call .MapHud
-	;pop af
-	;jp TownMapPlayerIcon
+	call FillSouthOnwaMap
+	call TownMapBubble
+	call TownMapPals
+	call TownMapSouthOnwaFlips
+	call .MapHud
+	pop af
+	call GetCurrentLandmark
+; The first 46 locations are part of NorthOnwa. The rest are in SouthOnwa
+	cp SOUTH_ONWA_LANDMARK
+	ret c
+	jp TownMapPlayerIcon
 
-;.NoSouthOnwa:
-; If Indigo Plateau hasn't been visited, we use NorthOnwa's map instead
-
-; Start from New Bark Town
-	;ld a, FLY_SUNSET
-	;ld [wTownMapPlayerIconLandmark], a
-; Flypoints begin at New Bark Town...
-	;ld [wStartFlypoint], a
-; ..and end at Silver Cave
-	;ld a, FLY_STARGLOW
-	;ld [wEndFlypoint], a
-	;call FillNorthOnwaMap
-	;pop af
-	;call TownMapBubble
-	;call TownMapPals
-	;call TownMapNorthOnwaFlips
 .MapHud:
 	hlbgcoord 0, 0 ; BG Map 0
 	call TownMapBGUpdate
@@ -2249,16 +2256,16 @@ _Area: ; 91d11
 	ld a, [wTownMapPlayerIconLandmark]
 ;	cp SHAMOUTI_LANDMARK
 ;	jr nc, .shamouti
-	cp KANTO_LANDMARK
-	jr nc, .kanto
-.johto
-	ld a, JOHTO_REGION
+	cp SOUTH_ONWA_LANDMARK
+	jr nc, .south_onwa
+.north_onwa
+	ld a, NORTH_ONWA_REGION
 	jr .set_region
 ;.shamouti
 ;	ld a, ORANGE_REGION
 ;	jr .set_region
-.kanto
-	ld a, KANTO_REGION
+.south_onwa
+	ld a, SOUTH_ONWA_REGION
 .set_region
 	ld [wTownMapCursorLandmark], a
 	call .UpdateGFX
@@ -2303,7 +2310,7 @@ _Area: ; 91d11
 
 .left
 	ld a, [wTownMapCursorLandmark]
-	and a ; cp JOHTO_REGION ; min
+	and a ; cp NORTH_ONWA ; min
 	ret z
 
 	dec a
@@ -2314,7 +2321,7 @@ _Area: ; 91d11
 	ld a, [wTownMapCursorLandmark]
 	cp ORANGE_REGION ; max
 	ret z
-	cp KANTO_REGION
+	cp SOUTH_ONWA_REGION
 	jr z, .check_seen_orange_island
 	ld a, [wStatusFlags]
 	bit 6, a ; ENGINE_CREDITS_SKIP
@@ -2338,7 +2345,7 @@ _Area: ; 91d11
 	call ClearSprites
 	farcall _Pokedex_JustBlackOutBG
 	ld a, [wTownMapCursorLandmark]
-	cp KANTO_REGION
+	cp SOUTH_ONWA_REGION
 	jr z, .SouthOnwaGFX
 	cp ORANGE_REGION
 	jr z, .OrangeGFX
@@ -2526,18 +2533,18 @@ _Area: ; 91d11
 	ld a, [wTownMapPlayerIconLandmark]
 	cp SHAMOUTI_LANDMARK
 	jr nc, .player_in_orange
-	cp KANTO_LANDMARK
-	jr nc, .player_in_kanto
+	cp SOUTH_ONWA_LANDMARK
+	jr nc, .player_in_south_onwa
 	ld a, [wTownMapCursorLandmark]
-	and a ; cp JOHTO_REGION
+	and a ; cp NORTH_ONWA
 	jr nz, .clear
 .ok
 	and a
 	ret
 
-.player_in_kanto
+.player_in_south_onwa
 	ld a, [wTownMapCursorLandmark]
-	cp KANTO_REGION
+	cp SOUTH_ONWA_REGION
 	jr nz, .clear
 	jr .ok
 

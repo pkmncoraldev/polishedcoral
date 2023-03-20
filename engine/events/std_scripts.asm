@@ -265,7 +265,7 @@ Radio2Script:
 IsKantoRadioOffAir:
 	call RegionCheck
 	ld a, e
-	cp KANTO_REGION
+	cp SOUTH_ONWA_REGION
 	jr nz, .no
 	ld a, [wPokegearFlags]
 	bit 3, a

@@ -44,17 +44,19 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, AirportName
 	landmark   0,   0, Route13Name
 	landmark   0,   0, Route14Name
-	landmark   0,   0, ShimmerName
-	landmark   0,   0, BrilloTownName
-	landmark   0,   0, DesertRouteName
-	landmark   0,   0, Route17Name
-	landmark   0,   0, Route18Name
-	landmark   0,   0, RadiantName
 	
 	landmark 136,  80, LusterStationName
 	landmark 136,  80, ResidentialName
 	landmark 136,  80, ShoppingName
 	landmark 136,  80, BusinessName
+	
+	landmark  20, 100, ShimmerName
+	landmark   0,   0, BrilloTownName
+	landmark   0,   0, DesertRouteName
+	landmark   0,   0, Route17Name
+	landmark   0,   0, Route18Name
+	landmark  28,  92, RadiantName
+	
 	landmark -16, -16, GateName
 
 

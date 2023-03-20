@@ -16,11 +16,11 @@ Flypoints:
 	flypoint FLICKER,			FLICKER_STATION
 	flypoint TWINKLE,			TWINKLE_TOWN
 	flypoint LUSTER,			LUSTER_CITY
+	
+SOUTH_ONWA_FLYPOINT EQU const_value
+	
 	flypoint SHIMMER,			SHIMMER_CITY
 	flypoint RADIANT,			RADIANT_TOWNSHIP
 	
 	flypoint LASTFLYPOINT,		SHIMMER_CITY
-KANTO_FLYPOINT EQU const_value
-	
-	flypoint KANTO,      CINNABAR_LAB
 	db -1

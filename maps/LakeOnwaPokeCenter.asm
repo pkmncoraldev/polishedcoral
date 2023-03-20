@@ -36,7 +36,7 @@ LakeOwnaCenterNPC1Text:
 	cont "fairly new."
 	
 	para "There were so many"
-	line "TRAINERs whose"
+	line "TRAINERS whose"
 	cont "#MON were get-"
 	cont "ting injured in"
 	cont "MT. ONWA,"

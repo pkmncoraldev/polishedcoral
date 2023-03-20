@@ -264,7 +264,7 @@ SunbeamReserveSpruceText4:
 	line "live their lives"
 	cont "as they would in"
 	cont "the wild and study"
-	cont "behavior."
+	cont "their behavior."
 	done
 	
 SunbeamReserveSpruceText5:

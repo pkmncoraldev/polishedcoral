@@ -72,7 +72,7 @@ LakeItemHouseNPC1Text1:
 	line "#MON hold CHAR-"
 	cont "COAL,"
 	
-	para "the power of it's"
+	para "the power of its"
 	line "FIRE-type moves"
 	cont "will be boosted!"
 	done

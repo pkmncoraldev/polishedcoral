@@ -51,8 +51,8 @@ MomPhoneGoToIsland1Text:
 	line "you're coming."
 	
 	para "Just come on back"
-	line "to SUNSET BAY pay"
-	cont "him a visit."
+	line "to SUNSET BAY and"
+	cont "pay him a visit."
 	
 	para "Do you know how to"
 	line "get home from"

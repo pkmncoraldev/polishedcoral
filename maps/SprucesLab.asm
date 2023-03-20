@@ -224,7 +224,7 @@ SpruceLabComeBackInside:
 	disappear SPRUCELAB_MUNCHLAX1
 	opentext
 	writetext SpruceLabMunchlaxText2
-	cry SNORLAX
+	cry MUNCHLAX
 	waitsfx
 	buttonsound
 	writetext SpruceLabPokeFluteText3
@@ -283,7 +283,7 @@ SpruceLabMunchlaxSleep:
 SpruceLabMunchlax:
 	opentext
 	writetext SpruceLabMunchlaxText2
-	cry SNORLAX
+	cry MUNCHLAX
 	waitsfx
 	waitbutton
 	closetext

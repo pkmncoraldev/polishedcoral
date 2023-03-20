@@ -89,7 +89,7 @@ SunbeamJungleDeepNPC2Text:
 	line "they aren't up to"
 	cont "anything."
 	
-	para "There's a lot of"
+	para "There are lots of"
 	line "rare and powerful"
 	cont "#MON around"
 	cont "here…"

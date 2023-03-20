@@ -47,7 +47,7 @@ TrainerMtOnwa2_2:
 	text "My LARVITAR can"
 	line "eat rocks, so it"
 	cont "never runs out of"
-	cont "of food."
+	cont "food."
 	
 	para "Me, on the other"
 	line "hand…"

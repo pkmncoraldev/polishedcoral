@@ -138,7 +138,7 @@ LavaCaveBF1NPC1Text_boy:
 	line "surfer!"
 	
 	para "You see my bro by"
-	line "by the entrance?"
+	line "the entrance?"
 	
 	para "I thought we were"
 	line "the only two cool"
@@ -161,7 +161,7 @@ LavaCaveBF1NPC1Text_girl:
 	line "surfer!"
 	
 	para "You see my bro by"
-	line "by the entrance?"
+	line "the entrance?"
 	
 	para "I thought we were"
 	line "the only two cool"

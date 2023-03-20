@@ -764,7 +764,7 @@ LakeNpc4Text2:
 	text "If you give that"
 	line "seed to a #MON,"
 	
-	para "the power of it's"
+	para "the power of its"
 	line "GRASS-type moves"
 	cont "will grow as beau-"
 	cont "tifully as my"
@@ -876,7 +876,7 @@ LakeRivalText2:
 	para "Well that's gonna"
 	line "change."
 	
-	para "This wont happen"
+	para "This won't happen"
 	line "next time,"
 	cont "<PLAYER>!"
 	

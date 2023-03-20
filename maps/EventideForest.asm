@@ -172,7 +172,7 @@ TrainerEventide_5:
 	
 	para "It sneaks up on"
 	line "unsuspecting young"
-	cont "TRAINERs, and…"
+	cont "TRAINERS, and…"
 	
 	para "…"
 	

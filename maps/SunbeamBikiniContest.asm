@@ -441,7 +441,7 @@ SunBeamContestBikiniP:
 
 SunbeamContestText1:
 	text "Welcome ladies and"
-	line "gentleman to the"
+	line "gentlemen to the"
 	cont "SUNBEAM ISLAND"
 	cont "BEACH BATTLE"
 	cont "BEAUTY CONTEST!"
@@ -478,8 +478,8 @@ SunbeamContestText3:
 SunbeamContestText4:
 	text "PA: Excellent!"
 	
-	para "A great battle by"
-	line "both sides!"
+	para "A great battle"
+	line "from both sides!"
 	
 	para "Make some noise"
 	line "for ASTER!"
@@ -610,7 +610,7 @@ SunBeamContestBikiniPWinText:
 	
 SunBeamContestBikiniBLText1:
 	text "This is a bit"
-	line "embarassing,"
+	line "embarrassing,"
 	
 	para "but I'll still give"
 	line "it my all!"

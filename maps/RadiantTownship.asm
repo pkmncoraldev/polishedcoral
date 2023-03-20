@@ -31,7 +31,7 @@ RadiantTownship_MapScriptHeader:
 	signpost 12, 33, SIGNPOST_READ, RadiantTownshipSolarPanel
 	signpost  7,  6, SIGNPOST_READ, RadiantTownshipPokeCenterSign
 	signpost 15,  6, SIGNPOST_READ, RadiantTownshipMartSign
-	signpost 15,  6, SIGNPOST_READ, RadiantTownshipFlwoerShopSign
+	signpost 14, 36, SIGNPOST_READ, RadiantTownshipFlwoerShopSign
 	signpost 11,  2, SIGNPOST_READ, RadiantTownshipSunflower
 	signpost 11,  3, SIGNPOST_READ, RadiantTownshipSunflower
 	signpost 18, 14, SIGNPOST_READ, RadiantTownshipSunflower
@@ -156,7 +156,8 @@ RadiantTownshipRoute18SignText:
 	done
 	
 RadiantTownshipFlwoerShopSignText:
-	text "TEXT 1"
+	text "POLLEN PUFF"
+	line "FLOWER SHOP."
 	done
 	
 RadiantTownshipSolarPanelText:

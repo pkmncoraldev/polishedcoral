@@ -67,7 +67,7 @@ RadiantFlowerShopClerk:
 	
 CheckIfPlayerIsCoveredInPollen:
 	ld a, [wPollenSteps]
-	cp 10
+	cp 25
 	jr nc, .yes
 	ld a, FALSE
 	ld [wScriptVar], a

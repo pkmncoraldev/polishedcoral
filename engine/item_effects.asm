@@ -127,7 +127,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; OVAL_CHARM
 	dw NoEffect         ; FLOWER_PETAL
 	dw RestoreHPEffect  ; BLOSSOM_TEA
-	dw NoEffect         ; TERU_SAMA
+	dw NoEffect         ; PAINTBRUSH
 	dw HealStatusEffect ; CHERI_BERRY
 	dw HealStatusEffect ; CHESTO_BERRY
 	dw HealStatusEffect ; PECHA_BERRY
@@ -177,7 +177,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; AMULET_COIN
 	dw NoEffect         ; CLEANSE_TAG
 	dw NoEffect         ; SMOKE_BALL
-	dw NoEffect         ; BERSERK_GENE
+	dw TapePlayer         ; TAPE_PLAYER
 	dw NoEffect         ; LIGHT_BALL
 	dw EvoStoneEffect   ; LINK_CABLE
 	dw NoEffect         ; THICK_CLUB
@@ -2483,7 +2483,8 @@ BlueCard: ; f58f
 	text_jump UnknownText_0x1c5c5e
 	db "@"
 ; f59a
-
+TapePlayer:
+	farjp TapePlayerFunction
 
 CoinCase: ; f59a
 	ld hl, .coincasetext

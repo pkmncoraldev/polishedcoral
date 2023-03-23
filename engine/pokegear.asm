@@ -2,7 +2,94 @@
 	const CLOCK_CARD
 	const MAP_CARD
 	const PHONE_CARD
-	const RADIO_CARD
+	const BANK_CARD
+	const TAPE_PLAYER_CARD
+
+TapePlayerFunction: ; 90b8d (24:4b8d)
+	call Load1bppFont
+	call Load1bppFrame
+	ld hl, wOptions1
+	ld a, [hl]
+	push af
+	set NO_TEXT_SCROLL, [hl]
+	ld a, [hInMenu]
+	push af
+	ld a, $1
+	ld [hInMenu], a
+	ld [wInPokegear], a
+	ld a, [wVramState]
+	push af
+	xor a
+	ld [wVramState], a
+	call .InitTilemap
+	call DelayFrame
+.loop
+	call UpdateTime
+	call JoyTextDelay
+	ld a, [wJumptableIndex]
+	bit 7, a
+	jr nz, .done
+	call TapePlayerJumptable
+	farcall PlaySpriteAnimations
+	call DelayFrame
+	jr .loop
+
+.done
+	ld de, SFX_READ_TEXT_2
+	call PlaySFX
+	call WaitSFX
+	pop af
+	ld [wVramState], a
+	pop af
+	ld [hInMenu], a
+	pop af
+	ld [wOptions1], a
+	call ClearBGPalettes
+	xor a
+	ld [hBGMapAddress], a
+	ld [wInPokegear], a
+	ld a, VBGMap0 / $100
+	ld [hBGMapAddress + 1], a
+	ld a, $90
+	ld [hWY], a
+	ret
+
+.InitTilemap: ; 90bea (24:4bea)
+	call ClearBGPalettes
+	call ClearTileMap
+	call ClearSprites
+	call DisableLCD
+	xor a
+	ld [hSCY], a
+	ld [hSCX], a
+	ld a, $7
+	ld [hWX], a
+	call Pokegear_LoadGFX
+	farcall ClearSpriteAnims
+;	call InitPokegearModeIndicatorArrow
+	ld a, 8
+	call SkipMusic
+	ld a, %11100011
+	ld [rLCDC], a
+	call TownMap_InitCursorAndPlayerIconPositions
+	xor a
+	ld [wJumptableIndex], a
+	ld [wcf64], a
+	ld [wcf65], a
+	ld [wcf66], a
+	ld [wPokegearPhoneScrollPosition], a
+	ld [wPokegearPhoneCursorPosition], a
+	ld [wPokegearPhoneSelectedPerson], a
+	ld [wPokegearRadioChannelBank], a
+	ld [wPokegearRadioChannelAddr], a
+	ld [wPokegearRadioChannelAddr + 1], a
+	call Pokegear_InitJumptableIndices
+	call InitTapePlayerTilemap
+	ld b, CGB_POKEGEAR_PALS
+	call GetCGBLayout
+	call SetPalettes
+	ld a, %11100100
+	jp DmgToCgbObjPal0
 
 PokeGear: ; 90b8d (24:4b8d)
 	call Load1bppFont
@@ -214,6 +301,17 @@ Pokegear_InitJumptableIndices: ; 90d9e (24:4d9e)
 	ld [wcf64], a
 	ret
 
+InitTapePlayerTilemap:
+	xor a
+	ld [hBGMapMode], a
+	hlcoord 0, 0
+	ld bc, wTileMapEnd - wTileMap
+	ld a, $4f
+	call ByteFill
+	ld de, RadioTilemapRLE
+	call Pokegear_LoadTilemapRLE
+	jp InitPokegearTilemap.cont_from_tape_player
+
 InitPokegearTilemap: ; 90da8 (24:4da8)
 	xor a
 	ld [hBGMapMode], a
@@ -237,6 +335,7 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 
 .return_from_jumptable
 	call Pokegear_FinishTilemap
+.cont_from_tape_player
 	call TownMapPals
 	ld a, [wcf64]
 	cp MAP_CARD
@@ -292,10 +391,11 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 	dw .Clock
 	dw .Map
 	dw .Phone
-	dw .Radio
+	dw .Bank
+	dw .Tape
 
 ; 90e1a
-
+.Bank:
 .Clock: ; 90e1a
 	ld de, ClockTilemapRLE
 	call Pokegear_LoadTilemapRLE
@@ -332,7 +432,7 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 
 ; 90e72
 
-.Radio: ; 90e72
+.Tape: ; 90e72
 	ld de, RadioTilemapRLE
 	jp Pokegear_LoadTilemapRLE
 
@@ -413,6 +513,23 @@ Pokegear_FinishTilemap: ; 90eb0 (24:4eb0)
 	ld [hld], a
 	ret
 
+TapePlayerJumptable: ; 90f04 (24:4f04)
+	ld a, [wJumptableIndex]
+	ld e, a
+	ld d, 0
+	ld hl, .Jumptable
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp hl
+
+.Jumptable: ; 90f13 (24:4f13)
+	dw PokegearRadio_Init
+	dw PokegearRadio_Joypad
+	dw PokegearRadio_Reset
+
 PokegearJumptable: ; 90f04 (24:4f04)
 	ld a, [wJumptableIndex]
 	ld e, a
@@ -439,9 +556,8 @@ PokegearJumptable: ; 90f04 (24:4f04)
 	dw PokegearPhone_Joypad
 	dw PokegearPhone_MakePhoneCall
 	dw PokegearPhone_FinishPhoneCall
-	dw PokegearRadio_Init
-	dw PokegearRadio_Joypad
-	dw PokegearRadio_Reset
+	dw PokegearClock_Init
+	dw PokegearClock_Joypad
 
 PokegearClock_Init: ; 90f2d (24:4f2d)
 	call InitPokegearTilemap
@@ -477,7 +593,7 @@ PokegearClock_Joypad: ; 90f3e (24:4f3e)
 	ld a, [wPokegearFlags]
 	bit 1, a
 	ret z
-	lb bc, RADIO_CARD, $d
+	lb bc, BANK_CARD, $d
 .done
 	jp Pokegear_SwitchPage
 
@@ -584,7 +700,7 @@ PokegearMap_ContinueMap: ; 90ff2 (24:4ff2)
 	ld a, [wPokegearFlags]
 	bit 1, a
 	ret z
-	lb bc, RADIO_CARD, $d
+	lb bc, BANK_CARD, $d
 	jr .done
 
 .left
@@ -854,7 +970,6 @@ PokegearRadio_Init: ; 910f9 (24:50f9)
 	ld de, VTiles2
 	lb bc, BANK(RadioGFX), $40
 	call DecompressRequest2bpp
-	call InitPokegearTilemap
 	depixel 4, 10, 4, 4
 	ld a, SPRITE_ANIM_INDEX_RADIO_TUNING_KNOB
 	farcall _InitSpriteAnimStruct
@@ -899,7 +1014,7 @@ PokegearRadio_Reset:
 	ld [hl], $8
 	call _UpdateRadioStation
 	ld hl, wJumptableIndex
-	ld [hl], $e
+	ld [hl], $0
 	ret
 
 PokegearRadio_Joypad: ; 91112 (24:5112)
@@ -929,9 +1044,9 @@ PokegearRadio_Joypad: ; 91112 (24:5112)
 	ld a, [hl]
 	and B_BUTTON
 	jr nz, .cancel
-	ld a, [hl]
-	and D_LEFT
-	jr nz, .left
+;	ld a, [hl]
+;	and D_LEFT
+;	jr nz, .left
 	ld a, [wPokegearRadioChannelAddr]
 	ld l, a
 	ld a, [wPokegearRadioChannelAddr + 1]
@@ -1015,7 +1130,7 @@ PokegearPhone_Joypad: ; 91171 (24:5171)
 	ld a, [wPokegearFlags]
 	bit 1, a
 	ret z
-	lb bc, RADIO_CARD, $d
+	lb bc, BANK_CARD, $d
 .switch_page
 	jp Pokegear_SwitchPage
 
@@ -1592,7 +1707,7 @@ AnimateTuningKnob: ; 91640 (24:5640)
 	ld [wPlaceBallsX], a
 	ld de, MUSIC_NONE
 	call PlayMusic
-	lb bc, RADIO_CARD, $f
+	lb bc, TAPE_PLAYER_CARD, $2
 	jp Pokegear_SwitchPage.skipsound
 .start
 	set 6, a
@@ -1602,12 +1717,11 @@ AnimateTuningKnob: ; 91640 (24:5640)
 	
 	ld de, SFX_SWITCH_POCKETS
 	call PlaySFX
-	call WaitSFX
 	call PlaceTapes
 	
 	ld de, RadioButtonsPlayTilemapRLE
 	call Pokegear_LoadTilemapRLE
-	call Pokegear_FinishTilemap
+;	call Pokegear_FinishTilemap
 	ret
 .down
 	ld hl, wRadioTuningKnob
@@ -1621,7 +1735,7 @@ AnimateTuningKnob: ; 91640 (24:5640)
 	
 	ld de, RadioButtonsBackTilemapRLE
 	call Pokegear_LoadTilemapRLE
-	call Pokegear_FinishTilemap
+;	call Pokegear_FinishTilemap
 	ld a, [wPlaceBallsX]
 	cp 68
 	jr z, .skip_sound_1
@@ -1644,7 +1758,7 @@ AnimateTuningKnob: ; 91640 (24:5640)
 	
 	ld de, RadioButtonsForwardTilemapRLE
 	call Pokegear_LoadTilemapRLE
-	call Pokegear_FinishTilemap
+;	call Pokegear_FinishTilemap
 	ld a, [wPlaceBallsX]
 	cp 69
 	jr z, .skip_sound_2
@@ -1659,7 +1773,7 @@ AnimateTuningKnob: ; 91640 (24:5640)
 	ld [wTapePlayerActive], a
 	ld de, MUSIC_NONE
 	call PlayMusic
-	lb bc, RADIO_CARD, $f
+	lb bc, TAPE_PLAYER_CARD, $2
 	jp Pokegear_SwitchPage.skipsound
 .update
 UpdateRadioStation: ; 9166f (24:566f)
@@ -1715,12 +1829,12 @@ DrawRadioScreen:
 .left
 	ld de, RadioButtonsBackTilemapRLE
 	call Pokegear_LoadTilemapRLE
-	call Pokegear_FinishTilemap
+;	call Pokegear_FinishTilemap
 	jr .skip_play
 .right
 	ld de, RadioButtonsForwardTilemapRLE
 	call Pokegear_LoadTilemapRLE
-	call Pokegear_FinishTilemap
+;	call Pokegear_FinishTilemap
 	jr .skip_play
 .try_play
 	ld a, [wTapePlayerActive]
@@ -1729,7 +1843,7 @@ DrawRadioScreen:
 	ld de, RadioButtonsPlayTilemapRLE
 	call Pokegear_LoadTilemapRLE
 .skip_play
-	call Pokegear_FinishTilemap
+;	call Pokegear_FinishTilemap
 	ld a, [wRadioTuningKnob]
 	inc a
 	farcall DrawSongInfo

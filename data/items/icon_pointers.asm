@@ -163,7 +163,7 @@ ItemIconPointers:
 	dw AmuletCoinIcon
 	dw CleanseTagIcon
 	dw SmokeBallIcon
-	dw BerserkGeneIcon
+	dw TapePlayerIcon
 	dw LightBallIcon
 	dw LinkCableIcon
 	dw ThickClubIcon

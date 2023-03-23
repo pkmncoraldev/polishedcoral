@@ -282,7 +282,7 @@ LuckyEggIcon:     INCBIN "gfx/items/lucky_egg.2bpp.lz"
 AmuletCoinIcon:   INCBIN "gfx/items/amulet_coin.2bpp.lz"
 CleanseTagIcon:   INCBIN "gfx/items/cleanse_tag.2bpp.lz"
 SmokeBallIcon:    INCBIN "gfx/items/smoke_ball.2bpp.lz"
-BerserkGeneIcon:  INCBIN "gfx/items/berserk_gene.2bpp.lz"
+TapePlayerIcon:  INCBIN "gfx/items/tape_player.2bpp.lz"
 LightBallIcon:    INCBIN "gfx/items/light_ball.2bpp.lz"
 LinkCableIcon:        INCBIN "gfx/items/link_cable.2bpp.lz"
 ThickClubIcon:

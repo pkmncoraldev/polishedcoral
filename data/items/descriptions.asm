@@ -162,7 +162,7 @@ ItemDescriptions:
 	dw AmuletCoinDesc
 	dw CleanseTagDesc
 	dw SmokeBallDesc
-	dw BerserkGeneDesc
+	dw TapePlayerDesc
 	dw LightBallDesc
 	dw LinkCableDesc
 	dw ThickClubDesc
@@ -837,9 +837,9 @@ SmokeBallDesc:
 	db   "Escape from wild"
 	next "#MON. (Hold)@"
 
-BerserkGeneDesc:
-	db   "Boosts ATTACK but"
-	next "causes confusion.@"
+TapePlayerDesc:
+	db   "Allows playback of"
+	next "audio tapes.@"
 
 LightBallDesc:
 	db   "Ups PIKACHU's ATK +"

@@ -186,7 +186,7 @@
 	const AMULET_COIN  ; a1
 	const CLEANSE_TAG  ; a2
 	const SMOKE_BALL   ; a3
-	const BERSERK_GENE ; a4 - replace
+	const TAPE_PLAYER ; a4
 
 	const LIGHT_BALL   ; a5
 	const LINK_CABLE   ; a6
@@ -194,7 +194,7 @@
 	const LUCKY_PUNCH  ; a8
 	const METAL_POWDER ; a9
 	const QUICK_POWDER ; aa
-	const POLLEN_POUCH   ; ab - replace
+	const POLLEN_POUCH ; ab
 
 	const AIR_BALLOON  ; ac
 	const ASSAULT_VEST ; ad
@@ -307,7 +307,7 @@
 	const NAM_AWAKENING    ; 0a
 	const NAM_BALMMUSHROOM ; 0b
 	const NAM_CLAY_POT ; 0c
-	const NAM_BERSERK_GENE ; 0d
+	const NAM_TAPE_PLAYER ; 0d
 	const NAM_BICYCLE      ; 0e
 	const NAM_BIG_MUSHROOM ; 0f
 	const NAM_BIG_NUGGET   ; 10

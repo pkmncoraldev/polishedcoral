@@ -162,7 +162,7 @@ ItemNames::
 	db "AMULET COIN@"
 	db "CLEANSE TAG@"
 	db "SMOKE BALL@"
-	db "BERSERK GENE@"
+	db "TAPE PLAYER@"
 	db "LIGHT BALL@"
 	db "LINK CABLE@"
 	db "THICK CLUB@"

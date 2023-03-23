@@ -185,7 +185,7 @@ ItemNameOrder:
 	db NAM_AMULET_COIN  ; 03
 	db NAM_CLEANSE_TAG  ; 27
 	db NAM_SMOKE_BALL   ; d9
-	db NAM_BERSERK_GENE ; 0d
+	db NAM_TAPE_PLAYER ; 0d
 
 	db NAM_LIGHT_BALL   ; 68
 	db NAM_LINK_CABLE        ; e2

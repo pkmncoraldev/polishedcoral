@@ -122,12 +122,13 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_POKEDEX
 	setflag ENGINE_PHONE_CARD
 	setflag ENGINE_MAP_CARD
-	setflag ENGINE_RADIO_CARD
+;	setflag ENGINE_RADIO_CARD
 	setevent EVENT_RUNNING_SHOES
 	setevent EVENT_BIKE_UPGRADED
 	addcellnum PHONE_MOM
 	addcellnum PHONE_SPRUCE
 	setevent EVENT_MOM_GOT_POKEGEAR
+	giveitem TAPE_PLAYER
 	giveitem SKATEBOARD
 	giveitem BICYCLE
 	giveitem POLLEN_POUCH

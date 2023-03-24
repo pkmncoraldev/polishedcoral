@@ -1418,8 +1418,13 @@ UnknownText_0x1bd8da::
 UnknownText_0x1bd942::
 	text "Welcome!"
 	
-	para "What do you want"
-	line "to do?"
+	para "Please make a"
+	line "selection…"
+	done
+	
+UnknownText_0x1bd942_2::
+	text "Please make a"
+	line "selection…"
 	done
 
 UnknownText_0x1bd95b::

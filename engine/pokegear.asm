@@ -392,10 +392,12 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 	dw .Map
 	dw .Phone
 	dw .Bank
-	dw .Tape
 
 ; 90e1a
 .Bank:
+	ld de, ClockTilemapRLE
+	jp Pokegear_LoadTilemapRLE
+
 .Clock: ; 90e1a
 	ld de, ClockTilemapRLE
 	call Pokegear_LoadTilemapRLE
@@ -556,9 +558,16 @@ PokegearJumptable: ; 90f04 (24:4f04)
 	dw PokegearPhone_Joypad
 	dw PokegearPhone_MakePhoneCall
 	dw PokegearPhone_FinishPhoneCall
-	dw PokegearClock_Init
-	dw PokegearClock_Joypad
+	dw PokegearBank_Init
+	dw PokegearBank_Joypad
 
+PokegearBank_Init:
+	call InitPokegearTilemap
+	ld hl, PokegearText_BankMakeSelection
+	call PrintText
+	ld hl, wJumptableIndex
+	inc [hl]
+	ret
 PokegearClock_Init: ; 90f2d (24:4f2d)
 	call InitPokegearTilemap
 	ld hl, PokegearText_PressAnyButtonToExit
@@ -1055,6 +1064,52 @@ PokegearRadio_Joypad: ; 91112 (24:5112)
 	and a
 	ret z
 	jp FarCall_hl
+	
+.cancel
+	ld hl, wJumptableIndex
+	set 7, [hl]
+	ret
+
+PokegearBank_Joypad:
+	ld hl, hJoyPressed
+	ld a, [hl]
+	and B_BUTTON
+	jr nz, .cancel
+	ld a, [hl]
+	and A_BUTTON
+	jr nz, .a
+	ld hl, hJoyLast
+	ld a, [hl]
+	and D_LEFT
+	jr nz, .left
+	ld a, [hl]
+	and D_UP
+	jr nz, .up
+	ld a, [hl]
+	and D_DOWN
+	jr nz, .down
+	ret
+	
+.up
+	ld a, [wPokegearPhoneCursorPosition]
+	cp 0
+	ret z
+	dec a
+	ld [wPokegearPhoneCursorPosition], a
+	jr .done_updown
+	
+.down
+	ld a, [wPokegearPhoneCursorPosition]
+	cp 0
+	ret nz
+	inc a
+	ld [wPokegearPhoneCursorPosition], a
+	
+.done_updown
+	xor a
+	ld [hBGMapMode], a
+	call PokegearBank_UpdateCursor
+	jp ApplyTilemapInVBlank
 
 .left
 	ld a, [wPokegearFlags]
@@ -1074,6 +1129,8 @@ PokegearRadio_Joypad: ; 91112 (24:5112)
 	lb bc, CLOCK_CARD, $0
 .switch_page
 	jp Pokegear_SwitchPage
+
+.a
 
 .cancel
 	ld hl, wJumptableIndex
@@ -1301,6 +1358,19 @@ PokegearPhone_UpdateCursor: ; 912b7 (24:52b7)
 	hlcoord 1, 10
 	ld [hl], a
 	hlcoord 1, 4
+	ld a, [wPokegearPhoneCursorPosition]
+	ld bc, 2 * SCREEN_WIDTH
+	rst AddNTimes
+	ld [hl], "▶"
+	ret
+	
+PokegearBank_UpdateCursor: ; 912b7 (24:52b7)
+	ld a, " "
+	hlcoord 2, 4
+	ld [hl], a
+	hlcoord 2, 6
+	ld [hl], a
+	hlcoord 2, 4
 	ld a, [wPokegearPhoneCursorPosition]
 	ld bc, 2 * SCREEN_WIDTH
 	rst AddNTimes
@@ -1631,7 +1701,9 @@ PokegearText_PressAnyButtonToExit: ; 0x914d3
 	text_jump UnknownText_0x1c5862
 	db "@"
 
-; 0x914d8
+PokegearText_BankMakeSelection:
+	text_jump UnknownText_0x1bd942_2
+	db "@"
 
 PokegearText_DeleteStoredNumber: ; 0x914d8
 	; Delete this stored phone number?

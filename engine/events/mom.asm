@@ -523,18 +523,18 @@ Mom_WithdrawDepositMenuJoypad: ; 16571
 	call .dpadaction
 	xor a
 	ld [hBGMapMode], a
-	hlcoord 9, 7
+	hlcoord 11, 6
 	ld bc, 8
 	ld a, " "
 	call ByteFill
-	hlcoord 9, 7
+	hlcoord 11, 6
 	ld de, wStringBuffer2
 	lb bc, PRINTNUM_MONEY | PRINTNUM_LEADINGZEROS | 3, 7
 	call PrintNum
 	ld a, [hVBlankCounter]
 	and $10
 	jr nz, .skip
-	hlcoord 10, 7
+	hlcoord 12, 6
 	ld a, [wMomBankDigitCursorPosition]
 	ld c, a
 	ld b, 0

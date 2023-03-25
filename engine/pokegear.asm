@@ -395,7 +395,7 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 
 ; 90e1a
 .Bank:
-	ld de, ClockTilemapRLE
+	ld de, BankTilemapRLE
 	jp Pokegear_LoadTilemapRLE
 
 .Clock: ; 90e1a
@@ -562,12 +562,33 @@ PokegearJumptable: ; 90f04 (24:4f04)
 	dw PokegearBank_Joypad
 
 PokegearBank_Init:
+	ld b, CGB_BANK_CARD_PALS
+	call GetCGBLayout
+	call SetPalettes
+	
 	call InitPokegearTilemap
 	ld hl, PokegearText_BankMakeSelection
 	call PrintText
+	
+	hlcoord 6, 6
+	ld de, .Withdraw
+	call PlaceString
+	
+	hlcoord 6, 8
+	ld de, .Deposit
+	call PlaceString
+	
+	call PokegearBank_UpdateCursor
 	ld hl, wJumptableIndex
 	inc [hl]
 	ret
+	
+.Withdraw:
+	db "WITHDRAW@"
+	
+.Deposit:
+	db "DEPOSIT@"
+	
 PokegearClock_Init: ; 90f2d (24:4f2d)
 	call InitPokegearTilemap
 	ld hl, PokegearText_PressAnyButtonToExit
@@ -1074,7 +1095,7 @@ PokegearBank_Joypad:
 	ld hl, hJoyPressed
 	ld a, [hl]
 	and B_BUTTON
-	jr nz, .cancel
+	jp nz, .cancel
 	ld a, [hl]
 	and A_BUTTON
 	jr nz, .a
@@ -1131,11 +1152,44 @@ PokegearBank_Joypad:
 	jp Pokegear_SwitchPage
 
 .a
-
+	hlcoord 4, 6
+	ld de, .blank
+	call PlaceString
+	hlcoord 4, 8
+	ld de, .blank
+	call PlaceString
+	ld a, [wPokegearPhoneCursorPosition]
+	cp 1
+	jr z, .deposit
+	farcall BankCard_TakeMoney
+	jr .end
+.deposit
+	farcall BankCard_StoreMoney
+.end	
+	ld c, 20
+	call DelayFrames
+	
+	ld hl, PokegearText_BankMakeSelection
+	call PrintText
+	
+	ld a, BANK_CARD
+	ld [wcf64], a
+	ld hl, wJumptableIndex
+	dec [hl]
+	ret
+	
 .cancel
 	ld hl, wJumptableIndex
 	set 7, [hl]
 	ret
+.Withdraw:
+	db "WITHDRAW@"
+	
+.Deposit:
+	db "DEPOSIT@"
+	
+.blank:
+	db "          @"
 
 PokegearPhone_Init: ; 91156 (24:5156)
 	ld hl, wJumptableIndex
@@ -1366,11 +1420,11 @@ PokegearPhone_UpdateCursor: ; 912b7 (24:52b7)
 	
 PokegearBank_UpdateCursor: ; 912b7 (24:52b7)
 	ld a, " "
-	hlcoord 2, 4
+	hlcoord 5, 6
 	ld [hl], a
-	hlcoord 2, 6
+	hlcoord 5, 8
 	ld [hl], a
-	hlcoord 2, 4
+	hlcoord 5, 6
 	ld a, [wPokegearPhoneCursorPosition]
 	ld bc, 2 * SCREEN_WIDTH
 	rst AddNTimes
@@ -1716,6 +1770,8 @@ PokegearSpritesGFX: ; 914dd
 INCBIN "gfx/pokegear/pokegear_sprites.2bpp.lz"
 ; 9150d
 
+BankTilemapRLE: ; 915db
+INCBIN "gfx/pokegear/bank.tilemap.rle"
 RadioTilemapRLE: ; 9150d
 INCBIN "gfx/pokegear/radio.tilemap.rle"
 PhoneTilemapRLE: ; 9158a

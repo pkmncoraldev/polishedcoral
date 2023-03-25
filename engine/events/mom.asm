@@ -262,6 +262,115 @@ Special_BankOfMom: ; 16218
 	ret
 ; 16439
 
+BankCard_StoreMoney:
+	ld de, SFX_CHOOSE_PC_OPTION
+	call ATM_WaitPlaySFX
+	ld hl, UnknownText_0x16662
+	call PrintText
+	xor a
+	ld hl, wStringBuffer2
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	ld a, $6
+	ld [wcf64], a
+	call LoadStandardMenuDataHeader
+	call BankCard_SetUpDepositMenu
+	call WaitSFX
+	call Mom_Wait10Frames
+	call BankCard_WithdrawDepositMenuJoypad
+	call CloseWindow
+	jp c, .CancelDeposit
+	ld hl, wStringBuffer2
+	ld a, [hli]
+	or [hl]
+	inc hl
+	or [hl]
+	jr z, .CancelDeposit
+	ld de, wMoney
+	ld bc, wStringBuffer2
+	farcall CompareMoney
+	jp c, Special_BankOfMom.DontHaveThatMuchToDeposit
+	ld hl, wStringBuffer2
+	ld de, wStringBuffer2 + 3
+	ld bc, 3
+	rst CopyBytes
+	ld bc, wMomsMoney
+	ld de, wStringBuffer2
+	farcall GiveMoney
+	jp c, Special_BankOfMom.CantDepositThatMuch
+	ld bc, wStringBuffer2 + 3
+	ld de, wMoney
+	farcall TakeMoney
+	ld hl, wStringBuffer2
+	ld de, wMomsMoney
+	ld bc, 3
+	rst CopyBytes
+	ld de, SFX_TRANSACTION
+	call ATM_WaitPlaySFX
+	ld hl, UnknownText_0x1668f
+	call PrintText
+	jp WaitSFX
+	
+.CancelDeposit:
+	ld de, SFX_POKEBALLS_PLACED_ON_TABLE
+	call ATM_WaitPlaySFX
+	ld hl, UnknownText_0x16653
+	call PrintText
+	jp WaitSFX
+
+BankCard_TakeMoney:
+	ld de, SFX_CHOOSE_PC_OPTION
+	call ATM_WaitPlaySFX
+	ld hl, UnknownText_0x16667
+	call PrintText
+	xor a
+	ld hl, wStringBuffer2
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	ld a, $6
+	ld [wcf64], a
+	call LoadStandardMenuDataHeader
+	call BankCard_SetUpWithdrawMenu
+	call WaitSFX
+	call Mom_Wait10Frames
+	ld c, 20
+	call DelayFrames
+	call BankCard_WithdrawDepositMenuJoypad
+	call CloseWindow
+	jr c, BankCard_StoreMoney.CancelDeposit
+	ld hl, wStringBuffer2
+	ld a, [hli]
+	or [hl]
+	inc hl
+	or [hl]
+	jr z, BankCard_StoreMoney.CancelDeposit
+	ld hl, wStringBuffer2
+	ld de, wStringBuffer2 + 3
+	ld bc, 3
+	rst CopyBytes
+	ld de, wMomsMoney
+	ld bc, wStringBuffer2
+	farcall CompareMoney
+	jp c, Special_BankOfMom.InsufficientFundsInBank
+	ld bc, wMoney
+	ld de, wStringBuffer2
+	farcall GiveMoney
+	jp c, Special_BankOfMom.NotEnoughRoomInWallet
+	ld bc, wStringBuffer2 + 3
+	ld de, wMomsMoney
+	farcall TakeMoney
+	ld hl, wStringBuffer2
+	ld de, wMoney
+	ld bc, 3
+	rst CopyBytes
+	ld de, SFX_TRANSACTION
+	call ATM_WaitPlaySFX
+	ld hl, UnknownText_0x1668f
+	call PrintText
+	jp WaitSFX
+
 ATM_CheckCard:
 	ld hl, wPokegearFlags
 	bit 7, [hl]
@@ -321,12 +430,81 @@ Mom_ContinueMenuSetup: ; 1651a
 	call PrintNum
 	call UpdateSprites
 	jp CopyTilemapAtOnce
-; 1656b
+
+
+BankCard_SetUpWithdrawMenu: ; 16512
+	ld de, Mom_WithdrawString
+	jr BankCard_ContinueMenuSetup
+
+BankCard_SetUpDepositMenu: ; 16517
+	ld de, Mom_DepositString
+
+BankCard_ContinueMenuSetup: ; 1651a
+	push de
+	xor a
+	ld [hBGMapMode], a
+	hlcoord 2, 4
+	ld de, Mom_SavedString
+	call PlaceString
+	hlcoord 10, 5
+	ld de, wMomsMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
+	hlcoord 2, 6
+	ld de, Mom_HeldString
+	call PlaceString
+	hlcoord 10, 7
+	ld de, wMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
+	hlcoord 2, 9
+	pop de
+	call PlaceString
+	hlcoord 10, 10
+	ld de, wStringBuffer2
+	lb bc, PRINTNUM_MONEY | PRINTNUM_LEADINGZEROS | 3, 7
+	call PrintNum
+	call UpdateSprites
+	jp CopyTilemapAtOnce
 
 Mom_Wait10Frames: ; 1656b
 	ld c, 10
 	jp DelayFrames
 ; 16571
+
+BankCard_WithdrawDepositMenuJoypad: ; 16571
+.loop
+	call JoyTextDelay
+	ld hl, hJoyPressed
+	ld a, [hl]
+	and B_BUTTON
+	jr nz, Mom_WithdrawDepositMenuJoypad.pressedB
+	ld a, [hl]
+	and A_BUTTON
+	jr nz, Mom_WithdrawDepositMenuJoypad.pressedA
+	call Mom_WithdrawDepositMenuJoypad.dpadaction
+	xor a
+	ld [hBGMapMode], a
+	hlcoord 10, 10
+	ld bc, 8
+	ld a, " "
+	call ByteFill
+	hlcoord 10, 10
+	ld de, wStringBuffer2
+	lb bc, PRINTNUM_MONEY | PRINTNUM_LEADINGZEROS | 3, 7
+	call PrintNum
+	ld a, [hVBlankCounter]
+	and $10
+	jr nz, .skip
+	hlcoord 11, 10
+	ld a, [wMomBankDigitCursorPosition]
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld [hl], " "
+.skip
+	call ApplyTilemapInVBlank
+	jr .loop
 
 Mom_WithdrawDepositMenuJoypad: ; 16571
 .loop
@@ -341,18 +519,18 @@ Mom_WithdrawDepositMenuJoypad: ; 16571
 	call .dpadaction
 	xor a
 	ld [hBGMapMode], a
-	hlcoord 11, 6
+	hlcoord 9, 7
 	ld bc, 8
 	ld a, " "
 	call ByteFill
-	hlcoord 11, 6
+	hlcoord 9, 7
 	ld de, wStringBuffer2
 	lb bc, PRINTNUM_MONEY | PRINTNUM_LEADINGZEROS | 3, 7
 	call PrintNum
 	ld a, [hVBlankCounter]
 	and $10
 	jr nz, .skip
-	hlcoord 12, 6
+	hlcoord 10, 7
 	ld a, [wMomBankDigitCursorPosition]
 	ld c, a
 	ld b, 0

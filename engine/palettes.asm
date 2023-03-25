@@ -1207,8 +1207,8 @@ TMHMTypes:
 	db FIGHTING ; ROCK_SMASH
 	db NORMAL 	; ROCK_CLIMB
 
+BankCardPals:
 RadioPals:
-
 PokegearPals:
 ; map 0
 	RGB 28, 31, 20

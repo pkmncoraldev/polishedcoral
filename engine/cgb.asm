@@ -61,6 +61,7 @@ Predef_LoadCGBLayout: ; 8d59
 	dw _CGB_PippiScreen
 	dw _CGB_Options
 	dw _CGB_Radio
+	dw _CGB_BankCard
 ; 8db8
 
 
@@ -245,6 +246,24 @@ _CGB_Radio:
 	ld a, $5
 	call FarCopyWRAM
 
+	call ApplyPals
+	ld a, $1
+	ld [hCGBPalUpdate], a
+	ret
+
+_CGB_BankCard:
+	ld hl, RadioPals
+	ld de, wUnknBGPals
+	ld bc, 8 palettes
+	ld a, $5
+	call FarCopyWRAM
+
+	ld hl, BankCardPals
+	ld de, wUnknBGPals palette 7
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	
 	call ApplyPals
 	ld a, $1
 	ld [hCGBPalUpdate], a

@@ -1208,6 +1208,10 @@ TMHMTypes:
 	db NORMAL 	; ROCK_CLIMB
 
 BankCardPals:
+	RGB 28, 31, 20
+	RGB 28, 31, 20
+	RGB 21, 21, 21
+	RGB 00, 00, 00
 RadioPals:
 PokegearPals:
 ; map 0

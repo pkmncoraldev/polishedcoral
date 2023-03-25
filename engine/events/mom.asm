@@ -274,12 +274,12 @@ BankCard_StoreMoney:
 	ld [hl], a
 	ld a, $6
 	ld [wcf64], a
-	call LoadStandardMenuDataHeader
+;	call LoadStandardMenuDataHeader
 	call BankCard_SetUpDepositMenu
 	call WaitSFX
 	call Mom_Wait10Frames
 	call BankCard_WithdrawDepositMenuJoypad
-	call CloseWindow
+;	call CloseWindow
 	jp c, .CancelDeposit
 	ld hl, wStringBuffer2
 	ld a, [hli]
@@ -331,14 +331,14 @@ BankCard_TakeMoney:
 	ld [hl], a
 	ld a, $6
 	ld [wcf64], a
-	call LoadStandardMenuDataHeader
+;	call LoadStandardMenuDataHeader
 	call BankCard_SetUpWithdrawMenu
 	call WaitSFX
 	call Mom_Wait10Frames
 	ld c, 20
 	call DelayFrames
 	call BankCard_WithdrawDepositMenuJoypad
-	call CloseWindow
+;	call CloseWindow
 	jr c, BankCard_StoreMoney.CancelDeposit
 	ld hl, wStringBuffer2
 	ld a, [hli]
@@ -398,7 +398,7 @@ Mom_SetUpWithdrawMenu: ; 16512
 	jr Mom_ContinueMenuSetup
 
 Mom_SetUpDepositMenu: ; 16517
-	ld de, Mom_DepositString
+	ld de, Mom_WithdrawString
 
 Mom_ContinueMenuSetup: ; 1651a
 	push de
@@ -433,7 +433,7 @@ Mom_ContinueMenuSetup: ; 1651a
 
 
 BankCard_SetUpWithdrawMenu: ; 16512
-	ld de, Mom_WithdrawString
+	ld de, BankCard_WithdrawString
 	jr BankCard_ContinueMenuSetup
 
 BankCard_SetUpDepositMenu: ; 16517
@@ -446,21 +446,25 @@ BankCard_ContinueMenuSetup: ; 1651a
 	hlcoord 2, 4
 	ld de, Mom_SavedString
 	call PlaceString
-	hlcoord 10, 5
+	hlcoord 10, 4
 	ld de, wMomsMoney
 	lb bc, PRINTNUM_MONEY | 3, 7
 	call PrintNum
 	hlcoord 2, 6
 	ld de, Mom_HeldString
 	call PlaceString
-	hlcoord 10, 7
+	hlcoord 2, 7
+	ld bc, 16
+	ld a, $68 ;dividing line
+	call ByteFill
+	hlcoord 10, 6
 	ld de, wMoney
 	lb bc, PRINTNUM_MONEY | 3, 7
 	call PrintNum
 	hlcoord 2, 9
 	pop de
 	call PlaceString
-	hlcoord 10, 10
+	hlcoord 10, 9
 	ld de, wStringBuffer2
 	lb bc, PRINTNUM_MONEY | PRINTNUM_LEADINGZEROS | 3, 7
 	call PrintNum
@@ -485,18 +489,18 @@ BankCard_WithdrawDepositMenuJoypad: ; 16571
 	call Mom_WithdrawDepositMenuJoypad.dpadaction
 	xor a
 	ld [hBGMapMode], a
-	hlcoord 10, 10
+	hlcoord 10, 9
 	ld bc, 8
 	ld a, " "
 	call ByteFill
-	hlcoord 10, 10
+	hlcoord 10, 9
 	ld de, wStringBuffer2
 	lb bc, PRINTNUM_MONEY | PRINTNUM_LEADINGZEROS | 3, 7
 	call PrintNum
 	ld a, [hVBlankCounter]
 	and $10
 	jr nz, .skip
-	hlcoord 11, 10
+	hlcoord 11, 9
 	ld a, [wMomBankDigitCursorPosition]
 	ld c, a
 	ld b, 0
@@ -723,7 +727,9 @@ Mom_SavedString: ; 16699
 
 Mom_WithdrawString: ; 1669f
 	db "WITHDRAW@"
-; 166a8
+
+BankCard_WithdrawString:
+	db "AMOUNT  @"
 
 Mom_DepositString: ; 166a8
 	db "DEPOSIT@"

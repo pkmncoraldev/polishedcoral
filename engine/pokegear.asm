@@ -396,7 +396,10 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 ; 90e1a
 .Bank:
 	ld de, BankTilemapRLE
-	jp Pokegear_LoadTilemapRLE
+	call Pokegear_LoadTilemapRLE
+	hlcoord 0, 12
+	lb bc, 4, 18
+	jp TextBox
 
 .Clock: ; 90e1a
 	ld de, ClockTilemapRLE
@@ -560,6 +563,7 @@ PokegearJumptable: ; 90f04 (24:4f04)
 	dw PokegearPhone_FinishPhoneCall
 	dw PokegearBank_Init
 	dw PokegearBank_Joypad
+	dw PokegearBank_Reset
 
 PokegearBank_Init:
 	ld b, CGB_BANK_CARD_PALS
@@ -570,24 +574,66 @@ PokegearBank_Init:
 	ld hl, PokegearText_BankMakeSelection
 	call PrintText
 	
-	hlcoord 6, 6
-	ld de, .Withdraw
+	hlcoord 3, 4
+	ld de, .Welcome
 	call PlaceString
 	
 	hlcoord 6, 8
+	ld de, .Withdraw
+	call PlaceString
+	
+	hlcoord 6, 10
 	ld de, .Deposit
 	call PlaceString
+	
+	call LoadStandardFont
+	call LoadFontsExtra
+	
+	call CopyTilemapAtOnce
 	
 	call PokegearBank_UpdateCursor
 	ld hl, wJumptableIndex
 	inc [hl]
 	ret
 	
+.Welcome:
+	db "Welcome to your<LNBRK>     ATM!@"
+	
 .Withdraw:
 	db "WITHDRAW@"
 	
 .Deposit:
 	db "DEPOSIT@"
+	
+PokegearBank_Reset:
+	ld b, CGB_BANK_CARD_PALS
+	call GetCGBLayout
+	call SetPalettes
+	
+	call InitPokegearTilemap
+	ld hl, PokegearText_BankMakeSelection
+	call PrintText
+	
+	hlcoord 3, 4
+	ld de, PokegearBank_Init.Welcome
+	call PlaceString
+	
+	hlcoord 6, 8
+	ld de, PokegearBank_Init.Withdraw
+	call PlaceString
+	
+	hlcoord 6, 10
+	ld de, PokegearBank_Init.Deposit
+	call PlaceString
+	
+	call CopyTilemapAtOnce
+	
+	call PokegearBank_UpdateCursor
+	ld hl, wJumptableIndex
+	ld a, [hl]
+	dec a
+	ld [wJumptableIndex], a
+	ret
 	
 PokegearClock_Init: ; 90f2d (24:4f2d)
 	call InitPokegearTilemap
@@ -1152,10 +1198,22 @@ PokegearBank_Joypad:
 	jp Pokegear_SwitchPage
 
 .a
-	hlcoord 4, 6
+	hlcoord 2, 4
 	ld de, .blank
 	call PlaceString
-	hlcoord 4, 8
+	hlcoord 2, 5
+	ld de, .blank
+	call PlaceString
+	hlcoord 2, 6
+	ld de, .blank
+	call PlaceString
+	hlcoord 2, 7
+	ld de, .blank
+	call PlaceString
+	hlcoord 2, 8
+	ld de, .blank
+	call PlaceString
+	hlcoord 2, 10
 	ld de, .blank
 	call PlaceString
 	ld a, [wPokegearPhoneCursorPosition]
@@ -1172,10 +1230,12 @@ PokegearBank_Joypad:
 	ld hl, PokegearText_BankMakeSelection
 	call PrintText
 	
+;	call CopyTilemapAtOnce
+	
 	ld a, BANK_CARD
 	ld [wcf64], a
 	ld hl, wJumptableIndex
-	dec [hl]
+	inc [hl]
 	ret
 	
 .cancel
@@ -1189,7 +1249,7 @@ PokegearBank_Joypad:
 	db "DEPOSIT@"
 	
 .blank:
-	db "          @"
+	db "                @"
 
 PokegearPhone_Init: ; 91156 (24:5156)
 	ld hl, wJumptableIndex
@@ -1199,10 +1259,6 @@ PokegearPhone_Init: ; 91156 (24:5156)
 	ld [wPokegearPhoneCursorPosition], a
 	ld [wPokegearPhoneSelectedPerson], a
 
-	ld b, CGB_POKEGEAR_PALS
-	call GetCGBLayout
-	call SetPalettes
-
 	call InitPokegearTilemap
 	call Load1bppFont
 	call Load1bppFrame
@@ -1210,6 +1266,10 @@ PokegearPhone_Init: ; 91156 (24:5156)
 	jp PrintText
 
 PokegearPhone_Joypad: ; 91171 (24:5171)
+	ld b, CGB_POKEGEAR_PALS
+	call GetCGBLayout
+	call SetPalettes
+
 	ld hl, hJoyPressed
 	ld a, [hl]
 	and B_BUTTON
@@ -1420,11 +1480,11 @@ PokegearPhone_UpdateCursor: ; 912b7 (24:52b7)
 	
 PokegearBank_UpdateCursor: ; 912b7 (24:52b7)
 	ld a, " "
-	hlcoord 5, 6
-	ld [hl], a
 	hlcoord 5, 8
 	ld [hl], a
-	hlcoord 5, 6
+	hlcoord 5, 10
+	ld [hl], a
+	hlcoord 5, 8
 	ld a, [wPokegearPhoneCursorPosition]
 	ld bc, 2 * SCREEN_WIDTH
 	rst AddNTimes

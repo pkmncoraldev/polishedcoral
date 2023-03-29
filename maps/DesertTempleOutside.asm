@@ -1,5 +1,7 @@
 DesertTempleOutside_MapScriptHeader:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script DesertWastelandTrigger0
+	scene_script DesertWastelandTrigger1
 
 	db 0 ; callbacks
 

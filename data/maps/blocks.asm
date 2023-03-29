@@ -632,8 +632,10 @@ DesertWasteland4_BlockData:
 	
 DesertWasteland5_BlockData:
 DesertWasteland7_BlockData:
-DesertTempleOutside_BlockData:
 	INCBIN "maps/DesertWastelandSouth.ablk.lz"
+	
+DesertTempleOutside_BlockData:
+	INCBIN "maps/DesertTempleOutside.ablk.lz"
 	
 DesertWasteland8_BlockData:
 	INCBIN "maps/DesertWastelandSecret.ablk.lz"

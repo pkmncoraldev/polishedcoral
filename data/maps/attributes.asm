@@ -328,12 +328,12 @@ ENDM
 	connection south, DesertRoute, DESERT_ROUTE, -14
 	
 	map_attributes DesertRouteNorth, DESERT_ROUTE_NORTH, $02, NORTH | SOUTH
-	connection north, DesertWasteland1, DESERT_WASTELAND_1, 3
+	connection north, DesertWasteland1, DESERT_WASTELAND_1, 2
 	connection south, DesertRoute2, DESERT_ROUTE_2, -5
 	
 	map_attributes DesertWasteland1, DESERT_WASTELAND_1, $02, NORTH | SOUTH
 	connection north, DesertWasteland2, DESERT_WASTELAND_2, 0
-	connection south, DesertRouteNorth, DESERT_ROUTE_NORTH, -3
+	connection south, DesertRouteNorth, DESERT_ROUTE_NORTH, -2
 	
 	map_attributes DesertWasteland2, DESERT_WASTELAND_2, $02, SOUTH | WEST
 	connection south, DesertWasteland1, DESERT_WASTELAND_1, 0
@@ -365,14 +365,14 @@ ENDM
 	connection west, DesertWasteland9, DESERT_WASTELAND_9, 0
 	
 	map_attributes DesertWasteland9, DESERT_WASTELAND_9, $02, NORTH | EAST
-	connection north, DesertTempleOutside, DESERT_TEMPLE_OUTSIDE, 0
+	connection north, DesertTempleOutside, DESERT_TEMPLE_OUTSIDE, -4
 	connection east, DesertWasteland8, DESERT_WASTELAND_8, 0
 	
 	map_attributes DesertWastelandOasis, DESERT_WASTELAND_OASIS, $02, NORTH
 	connection north, DesertWasteland8, DESERT_WASTELAND_8, -1
 	
 	map_attributes DesertTempleOutside, DESERT_TEMPLE_OUTSIDE, $02, SOUTH
-	connection south, DesertWasteland9, DESERT_WASTELAND_9, 0
+	connection south, DesertWasteland9, DESERT_WASTELAND_9, 4
 	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0

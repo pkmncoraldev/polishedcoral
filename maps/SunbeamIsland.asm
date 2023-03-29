@@ -11,7 +11,7 @@ SunbeamIsland_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, SunbeamIslandFlyPoint
 	callback MAPCALLBACK_TILES, SunbeamIslandCallback
 
-	db 14 ; warp events
+	db 13 ; warp events
 	warp_def 31, 27, 2, SUNBEAM_MART
 	warp_def 35, 17, 1, SUNBEAM_POKECENTER
 	warp_def 20, 34, 1, SUNBEAM_JUNGLE
@@ -25,7 +25,6 @@ SunbeamIsland_MapScriptHeader:
 	warp_def 13, 17, 3, SPRUCES_LAB
 	warp_def 20, 35, 2, SUNBEAM_JUNGLE
 	warp_def 49,  9, 1, SUNBEAM_BOAT_HOUSE
-	warp_def 44, 17, 1, SUNBEAM_SURF_SHOP
 
 	db 6 ; coord events
 	xy_trigger 2, 23, 32, 0, SunbeamSnareStopsYouD, 0, 0

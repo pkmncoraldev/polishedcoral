@@ -76,7 +76,7 @@ SunbeamIslandSurfShopNPC1:
 	writetext SunbeamIslandSurfShopNPC1Text2
 	waitbutton
 	closetext
-	playsound SFX_ENTER_DOOR
+	playsound SFX_EXIT_BUILDING
 	special FadeOutPalettes
 	waitsfx
 	setevent EVENT_SUNBEAM_BIKINIS_GONE
@@ -117,11 +117,12 @@ SunbeamIslandSurfShopNPC1:
 	writetext SunbeamIslandSurfShopNPC1Text8_girl
 .cont
 	waitbutton
-	changeblock $6, $6, $34
 	closetext
+	playsound SFX_EXIT_BUILDING
 	special FadeOutPalettes
-	applyonemovement PLAYER, big_step_down
-	warpcheck
+	special Special_StopRunning
+	waitsfx
+	warp2 DOWN, SUNBEAM_ISLAND, $11, $2c
 	end
 	
 SunbeamIslandSurfShopNPC2:

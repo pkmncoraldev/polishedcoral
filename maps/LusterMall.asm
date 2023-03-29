@@ -157,7 +157,7 @@ LusterMallEscalator1:
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
 	waitsfx
-	warpfacing DOWN, LUSTER_CITY_SHOPPING, $0d, $22
+	warp2 DOWN, LUSTER_CITY_SHOPPING, $0d, $22
 .end
 	end
 	
@@ -202,7 +202,7 @@ LusterMallEscalator2:
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
 	waitsfx
-	warpfacing DOWN, LUSTER_CITY_SHOPPING, $0d, $22
+	warp2 DOWN, LUSTER_CITY_SHOPPING, $0d, $22
 .end
 	end
 	
@@ -249,7 +249,7 @@ LusterMallEscalator3:
 	playsound SFX_EXIT_BUILDING
 	waitsfx
 	spriteface PLAYER, DOWN
-	warpfacing DOWN, LUSTER_CITY_SHOPPING, $10, $22
+	warp2 DOWN, LUSTER_CITY_SHOPPING, $10, $22
 .end
 	end
 	
@@ -297,7 +297,7 @@ LusterMallEscalator4:
 	playsound SFX_EXIT_BUILDING
 	waitsfx
 	spriteface PLAYER, DOWN
-	warpfacing DOWN, LUSTER_CITY_SHOPPING, $10, $22
+	warp2 DOWN, LUSTER_CITY_SHOPPING, $10, $22
 .end
 	end
 	

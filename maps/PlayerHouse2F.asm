@@ -88,7 +88,30 @@ PlayerHouseDebugPoster:
 	giveitem WATER_STONE, 3
 	giveitem DAWN_STONE, 3
 	giveitem DUSK_STONE, 3
-	giveitem MASTER_BALL, 10
+	giveitem MASTER_BALL, 99
+	giveitem POKE_BALL, 99
+	giveitem GREAT_BALL, 99
+	giveitem ULTRA_BALL, 99
+	giveitem SAFARI_BALL, 99
+	giveitem LEVEL_BALL, 99
+	giveitem LURE_BALL, 99
+	giveitem MOON_BALL, 99
+	giveitem FRIEND_BALL, 99
+	giveitem FAST_BALL, 99
+	giveitem HEAVY_BALL, 99
+	giveitem LOVE_BALL, 99
+	giveitem PARK_BALL, 99
+	giveitem REPEAT_BALL, 99
+	giveitem TIMER_BALL, 99
+	giveitem NEST_BALL, 99
+	giveitem NET_BALL, 99
+	giveitem DIVE_BALL, 99
+	giveitem LUXURY_BALL, 99
+	giveitem HEAL_BALL, 99
+	giveitem QUICK_BALL, 99
+	giveitem DUSK_BALL, 99
+	giveitem PREMIER_BALL, 99
+	giveitem CHERISH_BALL, 99	
 	giveitem BLOSSOM_TEA, 3
 	giveitem FLOWER_PETAL, 6
 	giveitem COVER_FOSSIL, 1

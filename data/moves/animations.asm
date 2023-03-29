@@ -2300,13 +2300,13 @@ BattleAnim_ThrowPokeBall:
 	; any other ball
 	anim_2gfx ANIM_GFX_POKE_BALL, ANIM_GFX_SMOKE
 	anim_sound 6, 2, SFX_THROW_BALL
-	anim_obj ANIM_OBJ_POKE_BALL,   8, 4,  11, 4, $40
+	anim_obj ANIM_OBJ_POKE_BALL, 68, 92, $40
 	anim_wait 36
-	anim_obj ANIM_OBJ_POKE_BALL, -15, 0,   8, 1, $0
+	anim_obj ANIM_OBJ_POKE_BALL, 136, 65, $0
 	anim_setobj $2, $7
 	anim_wait 16
 	anim_sound 0, 1, SFX_BALL_POOF
-	anim_obj ANIM_OBJ_1C, -15, 0,   8, 0, $10
+	anim_obj ANIM_OBJ_1C, 136, 64, $10
 	anim_wait 16
 	anim_jump .Shake
 
@@ -2322,13 +2322,13 @@ BattleAnim_ThrowPokeBall:
 .MasterBall:
 	anim_3gfx ANIM_GFX_POKE_BALL, ANIM_GFX_SMOKE, ANIM_GFX_SPEED
 	anim_sound 6, 2, SFX_THROW_BALL
-	anim_obj ANIM_OBJ_POKE_BALL,   8, 0,  11, 4, $20
+	anim_obj ANIM_OBJ_POKE_BALL, 68, 92, $40
 	anim_wait 36
-	anim_obj ANIM_OBJ_POKE_BALL, -15, 0,   8, 1, $0
+	anim_obj ANIM_OBJ_POKE_BALL, 136, 65, $0
 	anim_setobj $2, $7
 	anim_wait 16
 	anim_sound 0, 1, SFX_BALL_POOF
-	anim_obj ANIM_OBJ_1C, -15, 0,   8, 0, $10
+	anim_obj ANIM_OBJ_1C, 136, 64, $10
 	anim_wait 24
 	anim_sound 0, 1, SFX_MASTER_BALL
 	anim_obj ANIM_OBJ_2B, -15, 0,   7, 0, $30

@@ -1913,11 +1913,11 @@ AnimateTuningKnob: ; 91640 (24:5640)
 .TuningKnob: ; 9164e (24:564e)
 	ld hl, hJoypadDown
 	ld a, [hl]
-	and D_DOWN
-	jr nz, .down
+	and D_LEFT
+	jr nz, .left
 	ld a, [hl]
-	and D_UP
-	jp nz, .up
+	and D_RIGHT
+	jp nz, .right
 	ld hl, hJoyPressed
 	ld a, [hl]
 	and A_BUTTON
@@ -1961,7 +1961,7 @@ AnimateTuningKnob: ; 91640 (24:5640)
 	call Pokegear_LoadTilemapRLE
 ;	call Pokegear_FinishTilemap
 	ret
-.down
+.left
 	ld hl, wRadioTuningKnob
 	ld a, [hl]
 	and a
@@ -1983,8 +1983,8 @@ AnimateTuningKnob: ; 91640 (24:5640)
 .skip_sound_1
 	ld a, 68
 	ld [wPlaceBallsX], a
-	jr .up_down_end
-.up
+	jr .left_right_end
+.right
 	ld hl, wRadioTuningKnob
 	ld a, [hl]
 	cp NUM_SONGS - 2
@@ -2006,7 +2006,7 @@ AnimateTuningKnob: ; 91640 (24:5640)
 .skip_sound_2
 	ld a, 69
 	ld [wPlaceBallsX], a
-.up_down_end
+.left_right_end
 	xor a
 	ld [wTapePlayerActive], a
 	ld de, MUSIC_NONE

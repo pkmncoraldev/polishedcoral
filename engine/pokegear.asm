@@ -19,6 +19,8 @@ TapePlayerFunction: ; 90b8d (24:4b8d)
 	ld [wInPokegear], a
 	ld a, [wVramState]
 	push af
+	ld a, [wCurrPocket]
+	push af
 	xor a
 	ld [wVramState], a
 	call .InitTilemap
@@ -38,6 +40,10 @@ TapePlayerFunction: ; 90b8d (24:4b8d)
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX
 	call WaitSFX
+	ld a, 11
+	ld [wJumptableIndex], a
+	pop af
+	ld [wCurrPocket], a
 	pop af
 	ld [wVramState], a
 	pop af
@@ -64,7 +70,7 @@ TapePlayerFunction: ; 90b8d (24:4b8d)
 	ld [hSCX], a
 	ld a, $7
 	ld [hWX], a
-	call Pokegear_LoadGFX
+	call TapePlayer_LoadGFX
 	farcall ClearSpriteAnims
 ;	call InitPokegearModeIndicatorArrow
 	ld a, 8
@@ -182,6 +188,50 @@ Pokegear_LoadGFX: ; 90c4e
 	ld hl, TownMapGFX
 	ld de, VTiles2
 	ld a, BANK(TownMapGFX)
+	call FarDecompress
+	ld hl, PokegearGFX
+	ld de, VTiles2 tile $40
+	ld a, BANK(PokegearGFX)
+	call Decompress
+	ld hl, PokegearSpritesGFX
+	ld de, VTiles0
+	ld a, BANK(PokegearSpritesGFX)
+	call Decompress
+	ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+;	call GetWorldMapLocation
+;	cp FAST_SHIP
+;	jr z, .ssaqua
+;	cp SINJOH_RUINS
+;	jr z, .sinjoh
+;	cp MYSTRI_STAGE
+;	jr z, .sinjoh
+	farcall GetPlayerIcon
+	push de
+	ld h, d
+	ld l, e
+	ld a, b
+	; standing sprite
+	push af
+	ld de, VTiles0 tile $10
+	ld bc, 4 tiles
+	call FarCopyBytes
+	pop af
+	pop hl
+	; walking sprite
+	ld de, 12 tiles
+	add hl, de
+	ld de, VTiles0 tile $14
+	ld bc, 4 tiles
+	jp FarCopyBytes
+
+TapePlayer_LoadGFX: ; 90c4e
+	call ClearVBank1
+	ld hl, RadioGFX
+	ld de, VTiles2
+	ld a, BANK(RadioGFX)
 	call FarDecompress
 	ld hl, PokegearGFX
 	ld de, VTiles2 tile $40

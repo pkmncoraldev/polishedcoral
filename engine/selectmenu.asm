@@ -101,6 +101,7 @@ UseRegisteredItem:
 	dw .Current
 	dw .Party
 	dw .Overworld
+	dw .NewMenu
 
 .NoFunction:
 	call OpenText
@@ -117,6 +118,7 @@ UseRegisteredItem:
 	ret
 
 .Party:
+.NewMenu:
 	call RefreshScreen
 	call FadeToMenu
 	call DoItemEffect

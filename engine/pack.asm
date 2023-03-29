@@ -529,6 +529,7 @@ UseItem: ; 10311
 	dw .Current
 	dw .Party
 	dw .Field
+	dw .NewMenu
 ; 1035c
 
 .Oak: ; 1032d (4:432d)
@@ -542,6 +543,7 @@ UseItem: ; 10311
 	ld a, [wPartyCount]
 	and a
 	jr z, .NoPokemon
+.NewMenu:
 	call DoItemEffect
 	xor a
 	ld [hBGMapMode], a

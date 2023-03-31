@@ -186,22 +186,22 @@
 	tilecoll SAND, WALL, SAND, WALL ; b9
 	tilecoll WALL, SAND, WALL, SAND ; ba
 	tilecoll WALL, WALL, WATER, WALL ; bb
-	tilecoll WALL, WALL, WALL, WALL ; bc
-	tilecoll WALL, WALL, WALL, WALL ; bd
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; bc
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; bd
 	tilecoll STAIRS, STAIRS, FLOOR, FLOOR ; be
 	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; bf
-	tilecoll WALL, WALL, WALL, WALL ; c0
-	tilecoll WALL, WALL, WALL, WALL ; c1
-	tilecoll STAIRS, STAIRS, SKATE, SKATE ; c2
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c0
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c1
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c2
 	tilecoll FLOOR, FLOOR, NO_OLLIE, NO_OLLIE ; c3
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c4
-	tilecoll FLOOR, FLOOR, NO_OLLIE, NO_OLLIE ; c5
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c5
 	tilecoll NO_OLLIE, FLOOR, NO_OLLIE, NO_OLLIE ; c6
-	tilecoll NO_OLLIE, NO_OLLIE, WATER, WATER ; c7
-	tilecoll WATER, WATER, WATER, WATER ; c8
-	tilecoll WALL, WALL, WALL, WALL ; c9
-	tilecoll WATER, WATER, WATER, WATER ; ca
-	tilecoll WALL, NO_OLLIE, WALL, NO_OLLIE ; cb
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c7
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c8
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c9
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ca
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cb
 	tilecoll WALL, WALL, WALL, WALL ; cc
 	tilecoll WALL, WALL, WALL, WALL ; cd
 	tilecoll WALL, WALL, WALL, WALL ; ce

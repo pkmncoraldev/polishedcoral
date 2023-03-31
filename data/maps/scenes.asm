@@ -96,6 +96,7 @@ MapTriggers::
 	scene_var DESERT_WASTELAND_8,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_9,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_OASIS,				  wDesertRouteNorthTrigger
+	scene_var DESERT_TEMPLE_OUTSIDE,				  wSpookyForestEscortTrigger
 	scene_var SAILBOAT_CUTSCENE,					  wAlways0Trigger
 	scene_var AIRPORT,								  wAirportTrigger
 	scene_var ROUTE_18,								  wRoute18Trigger

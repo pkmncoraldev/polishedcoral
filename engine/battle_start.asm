@@ -1,5 +1,6 @@
 Predef_StartBattle: ; 8c20f
-
+	ld a, [wTileset]
+	ld [wMoogoo], a ;wTileset gets temporarily overwriten during the pal fade
 	ld a, [wPlayerState]
 	cp PLAYER_RUN
 	jr nz, .not_running
@@ -654,6 +655,12 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	ld de, wUnknBGPals palette PAL_BG_TEXT
 	call .copy
 	ld de, wUnknOBPals palette PAL_OW_SILVER
+	call .copy
+	ld a, [wMoogoo]
+	cp TILESET_SNOW
+	ret nz
+	ld hl, .snowtimepals
+	ld de, wUnknBGPals palette PAL_BG_WATER
 
 .copy ; 8c698 (23:4698)
 	push hl
@@ -682,7 +689,6 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	db -1
 
 .timepals
-if !DEF(MONOCHROME)
 ; morn
 	RGB 31, 18, 29
 	RGB 31, 11, 15
@@ -703,15 +709,8 @@ if !DEF(MONOCHROME)
 	RGB 31, 11, 15
 	RGB 31, 05, 05
 	RGB 07, 07, 07
-else
-	MONOCHROME_RGB_FOUR
-	MONOCHROME_RGB_FOUR
-	MONOCHROME_RGB_FOUR
-	MONOCHROME_RGB_FOUR_NIGHT
-endc
 
 .snaretimepals
-if !DEF(MONOCHROME)
 ; morn
 	RGB 11, 31, 15
 	RGB 05, 31, 05
@@ -732,12 +731,28 @@ if !DEF(MONOCHROME)
 	RGB 05, 31, 05
 	RGB 04, 27, 04
 	RGB 07, 07, 07
-else
-	MONOCHROME_RGB_FOUR
-	MONOCHROME_RGB_FOUR
-	MONOCHROME_RGB_FOUR
-	MONOCHROME_RGB_FOUR_NIGHT
-endc
+	
+.snowtimepals
+; morn
+	RGB 31, 18, 29
+	RGB 31, 18, 29
+	RGB 31, 11, 15
+	RGB 07, 07, 07
+; day
+;	RGB 31, 18, 29
+;	RGB 31, 18, 29
+;	RGB 31, 11, 15
+;	RGB 07, 07, 07
+; nite
+;	RGB 31, 18, 29
+;	RGB 31, 18, 29
+;	RGB 31, 11, 15
+;	RGB 07, 07, 07
+; dusk
+;	RGB 31, 18, 29
+;	RGB 31, 18, 29
+;	RGB 31, 11, 15
+;	RGB 07, 07, 07
 
 PokeBallTransition:
 	db %00000011, %11000000

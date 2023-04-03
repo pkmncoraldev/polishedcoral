@@ -19,7 +19,7 @@ SprucesLab_MapScriptHeader:
 	signpost 3, 9, SIGNPOST_READ, SpruceLabTrashcan
 	signpost  1,  2, SIGNPOST_READ, SpruceLabHealMachine
 
-	db 5 ; object events
+	db 6 ; object events
 	person_event SPRITE_SPRUCE, 3, 3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE1_GONE
 	person_event SPRITE_SPRUCE, 0, 5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE2_GONE
 	person_event SPRITE_SPRUCE,  5,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE3_GONE
@@ -141,37 +141,6 @@ SpruceLabComeBackInside:
 	applymovement SPRUCELAB_SPRUCE2, Movement_SpruceLabSpruce5
 	spriteface PLAYER, DOWN
 	spriteface SPRUCELAB_SPRUCE2, UP
-	
-	opentext
-	writetext SpruceLabSpruceText12
-	waitbutton
-	closetext
-	pause 7
-	follow SPRUCELAB_SPRUCE2, PLAYER
-	applymovement SPRUCELAB_SPRUCE2, Movement_SpruceLabSpruce11
-	stopfollow
-	applymovement PLAYER, Movement_SpruceLabPlayer3
-	pause 7
-	spriteface PLAYER, RIGHT
-	spriteface SPRUCELAB_SPRUCE2, LEFT
-	opentext
-	writetext SpruceLabSpruceText13
-	waitbutton
-	closetext
-	pause 10
-	turnobject PLAYER, LEFT
-	pause 10
-	special HealParty
-	special SaveMusic
-	blackoutmod SUNBEAM_ISLAND
-	playmusic MUSIC_NONE
-	writebyte 1 ; Machine is at a Pokemon Center
-	special HealMachineAnim
-	pause 30
-	special RestoreMusic
-	turnobject PLAYER, RIGHT
-	spriteface SPRUCELAB_SPRUCE2, LEFT
-	pause 10
 	
 	opentext
 	writetext SpruceLabSpruceText3
@@ -318,13 +287,9 @@ SpruceLabHealingMachineText2:
 SpruceLabSpruceText1:
 	text "Ah!"
 	
-	para "You must be"
-	line "<PLAYER>!"
+	para "<PLAYER>!"
 	
-	para "I'm so glad you"
-	line "made it!"
-	
-	para "I'm PROF. SPRUCE."
+	para "You came!"
 	
 	para "How is the #MON"
 	line "I sent for you?"
@@ -347,17 +312,7 @@ SpruceLabSpruceText2:
 	done
 	
 SpruceLabSpruceText3:
-	text "See?"
-	
-	para "Good as new!"
-	
-	para "Feel free to use"
-	line "this machine when-"
-	cont "ever you like!"
-
-	para "…"
-	
-	para "Well, that's about"
+	text "Well, that's about"
 	line "it."
 	
 	para "…"
@@ -598,9 +553,6 @@ Movement_SpruceLabSpruce5:
 	step_end
 	
 Movement_SpruceLabSpruce6:
-	step_right
-	step_right
-	step_down
 	step_down
 	step_right
 	step_right

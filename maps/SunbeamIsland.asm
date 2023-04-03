@@ -34,7 +34,7 @@ SunbeamIsland_MapScriptHeader:
 	xy_trigger 6, 46, 20, 0, SunbeamFirstContest3, 0, 0
 	xy_trigger 6, 47, 20, 0, SunbeamFirstContest4, 0, 0
 
-	db 9 ; bg events
+	db 10 ; bg events
 	signpost 31, 21, SIGNPOST_READ, SunBeamSign
 	signpost 18, 18, SIGNPOST_READ, SunBeamLabSign
 	signpost 21, 25, SIGNPOST_READ, SunBeamJungleSign
@@ -44,6 +44,7 @@ SunbeamIsland_MapScriptHeader:
 	signpost 35, 18, SIGNPOST_READ, SunBeamPokeSign
 	signpost 31, 28, SIGNPOST_READ, SunBeamMartSign
 	signpost 47,  9, SIGNPOST_READ, SunBeamBoatSign
+	signpost 17, 16, SIGNPOST_IFNOTSET, SunBeamLabLocked
 
 	db 20 ; object events
 	person_event SPRITE_MATRON, 24, 24, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC1, -1
@@ -116,6 +117,10 @@ SunbeamIslandFlyPoint:
 	return
 
 SunbeamIslandCallback:
+	checkevent EVENT_MET_SPRUCE_AT_CENTER
+	iftrue .dooropen
+	changeblock $10, $10, $c9
+.dooropen
 	checkevent EVENT_ISLAND_STRAND
 	iffalse .dontmoveboat
 	moveperson SUNBEAM_SAILBOAT_T1, 13, 52
@@ -501,6 +506,18 @@ SunBeamPokeSign:
 
 SunBeamMartSign:
 	jumpstd martsign
+	
+SunBeamLabLocked:
+	dw EVENT_MET_SPRUCE_AT_CENTER
+	jumptext SunBeamLabLockedText
+
+SunBeamLabLockedText:
+	text "I've stepped out to"
+	line "run some errands at"
+	cont "the #MON CENTER."
+	
+	para "-PROF. SPRUCE"
+	done
 
 SunbeamCrowdText:
 	text "The BIKINI CONTEST"

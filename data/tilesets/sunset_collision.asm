@@ -199,7 +199,7 @@
 	tilecoll WATER, NO_OLLIE, WATER, NO_OLLIE ; c6
 	tilecoll NO_OLLIE, NO_OLLIE, WATER, WATER ; c7
 	tilecoll FLOOR, WALL, FLOOR, WALL ; c8
-	tilecoll WALL, FLOOR, WALL, FLOOR ; c9
+	tilecoll WALL, WALL, WALL, WALL ; c9
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ca
 	tilecoll WALL, NO_OLLIE, WALL, NO_OLLIE ; cb
 	tilecoll LONG_GRASS, LONG_GRASS, LONG_GRASS, LONG_GRASS ; cc

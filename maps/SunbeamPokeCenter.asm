@@ -11,12 +11,13 @@ SunbeamPokeCenter_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 5 ; object events
+	db 6 ; object events
 	pc_nurse_event  4, 1
 	pc_chansey_event  5, 1
 	person_event SPRITE_SUPER_NERD, 3, 8, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunbeamPokecenterNPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 5, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunbeamPokecenterNPC2, -1
 	object_event 1, 5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MEOWTH, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamPokecenterNPC3, -1
+	person_event SPRITE_SPRUCE, 3, 4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamPokecenterSpruce, EVENT_MET_SPRUCE_AT_CENTER
 
 	
 	const_def 1 ; object constants
@@ -25,6 +26,7 @@ SunbeamPokeCenter_MapScriptHeader:
 	const SUNBEAM_POKECENTER_NPC1
 	const SUNBEAM_POKECENTER_NPC2
 	const SUNBEAM_POKECENTER_NPC3
+	const SUNBEAM_POKECENTER_SPRUCE
 	
 SunbeamPokecenterNPC1:
 	jumptextfaceplayer SunbeamPokecenterNPC1Text
@@ -39,6 +41,31 @@ SunbeamPokecenterNPC3:
 	waitsfx
 	waitbutton
 	closetext
+	end
+	
+SunbeamPokecenterSpruce:
+	setevent EVENT_MET_SPRUCE_AT_CENTER
+	opentext
+	writetext SunbeamPokecenterSpruceText1
+	waitbutton
+	closetext
+	pause 7
+	faceplayer
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, SUNBEAM_POKECENTER_SPRUCE, 15
+	pause 7
+	opentext
+	writetext SunbeamPokecenterSpruceText2
+	waitbutton
+	closetext
+	checkcode VAR_FACING
+	if_not_equal UP, .cont
+	applyonemovement SUNBEAM_POKECENTER_SPRUCE, step_right
+.cont
+	applymovement SUNBEAM_POKECENTER_SPRUCE, Movement_SunbeamPokecenterSpruce
+	disappear SUNBEAM_POKECENTER_SPRUCE
+	playsound SFX_EXIT_BUILDING
+	pause 4
 	end
 	
 SunbeamPokecenterNPC1Text:
@@ -65,3 +92,51 @@ SunbeamPokecenterNPC3Text:
 	text "MEOWTH: OWTH!"
 	line "ME-OWTH!"
 	done
+	
+SunbeamPokecenterSpruceText1:
+	text "Yes ma'am."
+	
+	para "Same time next"
+	line "week."
+	
+	para "Good day."
+	done
+	
+SunbeamPokecenterSpruceText2:
+	text "Oh, excuse me."
+	
+	para "…"
+	
+	para "Ah, hold on a"
+	line "moment…"
+	
+	para "You are"
+	line "<PLAYER>, are"
+	cont "you not?"
+	
+	para "…"
+	
+	para "Ah ha!"
+	
+	para "I was sure of it!"
+	
+	para "I'm PROF. SPRUCE."
+	
+	para "I'm so glad you"
+	line "made it!"
+	
+	para "Please, come to my"
+	line "LAB and we can"
+	cont "continue our"
+	cont "conversation!"
+	
+	para "I look forward to"
+	line "it!"
+	done
+	
+Movement_SunbeamPokecenterSpruce:
+	step_down
+	step_down
+	step_down
+	step_down
+	step_end

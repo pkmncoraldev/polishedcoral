@@ -18,9 +18,9 @@ ItemDescriptions:
 	dw NetBallDesc
 	dw DiveBallDesc
 	dw LuxuryBallDesc
-	dw HealBallDesc
 	dw QuickBallDesc
 	dw DuskBallDesc
+	dw HealBallDesc
 	dw PremierBallDesc
 	dw CherishBallDesc
 	dw PotionDesc
@@ -332,10 +332,6 @@ LuxuryBallDesc:
 	db   "A cozy BALL to"
 	next "befriend #MON.@"
 
-HealBallDesc:
-	db   "A remedial BALL to"
-	next "heal #MON.@"
-
 QuickBallDesc:
 	db   "A BALL for early"
 	next "in a battle.@"
@@ -343,6 +339,10 @@ QuickBallDesc:
 DuskBallDesc:
 	db   "A BALL for night-"
 	next "time or caves.@"
+
+HealBallDesc:
+	db   "A remedial BALL to"
+	next "heal #MON.@"
 
 PremierBallDesc:
 	db   "A rare commemor-"

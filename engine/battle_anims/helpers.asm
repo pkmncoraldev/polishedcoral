@@ -27,6 +27,8 @@ LoadBattleAnimObj: ; ce846 (33:6846)
 	push hl
 	cp ANIM_GFX_POKE_BALL
 	call z, .LoadBallPalette
+	cp ANIM_GFX_POKE_BALL_2
+	call z, .LoadBallPalette
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -47,6 +49,7 @@ LoadBattleAnimObj: ; ce846 (33:6846)
 	ret
 
 .LoadBallPalette:
+	push af
 	; save the current WRAM bank
 	ld a, [rSVBK]
 	push af
@@ -88,7 +91,7 @@ endr
 	pop af
 	ld [rSVBK], a
 	; restore the graphics index to be loaded
-	ld a, ANIM_GFX_POKE_BALL
+	pop af
 	ret
 
 INCLUDE "data/battle_anims/ball_colors.asm"

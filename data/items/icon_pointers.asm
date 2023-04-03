@@ -19,9 +19,9 @@ ItemIconPointers:
 	dw NetBallIcon
 	dw DiveBallIcon
 	dw LuxuryBallIcon
-	dw HealBallIcon
 	dw QuickBallIcon
 	dw DuskBallIcon
+	dw HealBallIcon
 	dw PremierBallIcon
 	dw CherishBallIcon
 	dw PotionIcon

@@ -92,7 +92,7 @@ PlayerHouseDebugPoster:
 	giveitem POKE_BALL, 99
 	giveitem GREAT_BALL, 99
 	giveitem ULTRA_BALL, 99
-	giveitem SAFARI_BALL, 99
+;	giveitem SAFARI_BALL, 99
 	giveitem LEVEL_BALL, 99
 	giveitem LURE_BALL, 99
 	giveitem MOON_BALL, 99
@@ -100,7 +100,7 @@ PlayerHouseDebugPoster:
 	giveitem FAST_BALL, 99
 	giveitem HEAVY_BALL, 99
 	giveitem LOVE_BALL, 99
-	giveitem PARK_BALL, 99
+;	giveitem PARK_BALL, 99
 	giveitem REPEAT_BALL, 99
 	giveitem TIMER_BALL, 99
 	giveitem NEST_BALL, 99

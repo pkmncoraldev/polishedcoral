@@ -400,6 +400,7 @@ _CGB_StatsScreenHPPals: ; 8edb
 	ld bc, $4
 	ld a, [wTempMonCaughtBall]
 	and CAUGHTBALL_MASK
+	dec a
 	rst AddNTimes
 	ld de, wUnknBGPals palette 7
 	call LoadPalette_White_Col1_Col2_Black
@@ -436,8 +437,8 @@ _CGB_StatsScreenHPPals: ; 8edb
 	ld a, $6
 	call FillBoxCGB
 
-	hlcoord 8, 6, wAttrMap
-	lb bc, 1, 1
+	hlcoord 8, 5, wAttrMap
+	lb bc, 2, 2
 	ld a, $7
 	call FillBoxCGB
 

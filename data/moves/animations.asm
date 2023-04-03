@@ -2296,9 +2296,15 @@ BattleAnim_Scald:
 
 BattleAnim_ThrowPokeBall:
 	anim_jumpif NO_ITEM, .TheTrainerBlockedTheBall
-	anim_jumpif MASTER_BALL, .MasterBall
-	; any other ball
-	anim_2gfx ANIM_GFX_POKE_BALL, ANIM_GFX_SMOKE
+	anim_3gfx ANIM_GFX_POKE_BALL, ANIM_GFX_SMOKE, ANIM_GFX_SPEED
+	anim_jumpif DIVE_BALL, .LoadBallGfx2
+	anim_jumpif LUXURY_BALL, .LoadBallGfx2
+	anim_jumpif HEAL_BALL, .LoadBallGfx3
+	anim_jumpif QUICK_BALL, .LoadBallGfx2
+	anim_jumpif DUSK_BALL, .LoadBallGfx2
+	anim_jumpif PREMIER_BALL, .LoadBallGfx3
+	anim_jumpif CHERISH_BALL, .LoadBallGfx3
+.return
 	anim_sound 6, 2, SFX_THROW_BALL
 	anim_obj ANIM_OBJ_POKE_BALL, 68, 92, $40
 	anim_wait 36
@@ -2307,9 +2313,16 @@ BattleAnim_ThrowPokeBall:
 	anim_wait 16
 	anim_sound 0, 1, SFX_BALL_POOF
 	anim_obj ANIM_OBJ_1C, 136, 64, $10
+	anim_jumpif MASTER_BALL, .MasterBall
+	; any other ball
 	anim_wait 16
 	anim_jump .Shake
-
+.LoadBallGfx2:
+	anim_1gfx ANIM_GFX_POKE_BALL_2
+	anim_jump .return
+.LoadBallGfx3:
+	anim_1gfx ANIM_GFX_POKE_BALL_3
+	anim_jump .return
 .TheTrainerBlockedTheBall:
 	anim_2gfx ANIM_GFX_POKE_BALL, ANIM_GFX_HIT
 	anim_sound 6, 2, SFX_THROW_BALL
@@ -2320,15 +2333,6 @@ BattleAnim_ThrowPokeBall:
 	anim_ret
 
 .MasterBall:
-	anim_3gfx ANIM_GFX_POKE_BALL, ANIM_GFX_SMOKE, ANIM_GFX_SPEED
-	anim_sound 6, 2, SFX_THROW_BALL
-	anim_obj ANIM_OBJ_POKE_BALL, 68, 92, $40
-	anim_wait 36
-	anim_obj ANIM_OBJ_POKE_BALL, 136, 65, $0
-	anim_setobj $2, $7
-	anim_wait 16
-	anim_sound 0, 1, SFX_BALL_POOF
-	anim_obj ANIM_OBJ_1C, 136, 64, $10
 	anim_wait 24
 	anim_sound 0, 1, SFX_MASTER_BALL
 	anim_obj ANIM_OBJ_2B, -15, 0,   7, 0, $30

@@ -24,9 +24,9 @@
 	const NET_BALL     ; 11
 	const DIVE_BALL    ; 12
 	const LUXURY_BALL  ; 13
-	const HEAL_BALL    ; 14
-	const QUICK_BALL   ; 15
-	const DUSK_BALL    ; 16
+	const QUICK_BALL   ; 14
+	const DUSK_BALL    ; 15
+	const HEAL_BALL    ; 16
 	const PREMIER_BALL ; 17
 	const CHERISH_BALL ; 18
 

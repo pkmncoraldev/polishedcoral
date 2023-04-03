@@ -928,6 +928,8 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_GFX_HUGE_ROCK
 	const ANIM_GFX_RED_X
 	const ANIM_GFX_ICICLE
+	const ANIM_GFX_POKE_BALL_2
+	const ANIM_GFX_POKE_BALL_3
 
 	const_def
 	const BG_EFFECT_STRUCT_FUNCTION

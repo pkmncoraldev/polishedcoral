@@ -462,32 +462,32 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 	jp ClearBox
 
 .LoadPokeBall:
-	; draw border
-	hlcoord 8, 5
-	ld [hl], $32 ; top
-	hlcoord 7, 6
-	ld [hl], $33 ; left
-	hlcoord 9, 6
-	ld [hl], $34 ; right
-	hlcoord 8, 7
-	ld [hl], $35 ; bottom
-	; get index for center graphics
-	; CaughtBallsGFX + [wTempMonCaughtBall] tiles
-	ld hl, CaughtBallsGFX
-	ld bc, 1 tiles
 	ld a, [wTempMonCaughtBall]
 	and CAUGHTBALL_MASK
-	rst AddNTimes
-	; load center graphics
-	ld d, h
-	ld e, l
+	cp DIVE_BALL
+	jr nc, .trygfx2
+	ld de, CaughtBallsGFX
+	jr .cont
+.trygfx2
+	cp HEAL_BALL
+	jr nc, .gfx3
+	ld de, CaughtBallsGFX + 4 tiles
+	jr .cont
+.gfx3
+	ld de, CaughtBallsGFX + 8 tiles
+.cont
 	ld hl, VTiles2 tile $3e
-	lb bc, BANK(CaughtBallsGFX), 1
+	lb bc, BANK(CaughtBallsGFX), 4
 	call Request2bpp
 	; draw center
+	hlcoord 8, 5
+	ld [hl], $3e ; top left
+	hlcoord 9, 5
+	ld [hl], $3f ; top right
 	hlcoord 8, 6
-	ld a, $3e ; center
-	ld [hl], a
+	ld [hl], $40 ; bottom left
+	hlcoord 9, 6
+	ld [hl], $41 ; bottom right
 	ret
 
 .LoadPals: ; 4dfed (13:5fed)

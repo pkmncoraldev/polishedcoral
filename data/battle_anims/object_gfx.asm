@@ -57,4 +57,6 @@ AnimObjGFX:
 	anim_obj_gfx 16, AnimObjHugeRockGFX
 	anim_obj_gfx  4, AnimObjRedXGFX
 	anim_obj_gfx  6, AnimObjIcicleGFX
+	anim_obj_gfx 10, AnimObjPokeBall2GFX
+	anim_obj_gfx 10, AnimObjPokeBall3GFX
 	anim_obj_gfx  1, NULL

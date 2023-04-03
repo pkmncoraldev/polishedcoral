@@ -24,9 +24,9 @@ ItemNameOrder:
 	db NAM_NET_BALL     ; 8f
 	db NAM_DIVE_BALL    ; 2d
 	db NAM_LUXURY_BALL  ; 72
-	db NAM_HEAL_BALL    ; 52
+	db NAM_DUSK_BALL    ; 52
 	db NAM_QUICK_BALL   ; b5
-	db NAM_DUSK_BALL    ; 32
+	db NAM_HEAL_BALL    ; 32
 	db NAM_PREMIER_BALL ; b1
 	db NAM_CHERISH_BALL ; 22
 

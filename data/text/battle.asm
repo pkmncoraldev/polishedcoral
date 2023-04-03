@@ -1135,7 +1135,18 @@ RecoilText: ; 0x8134d
 	text "<USER> is"
 	line "hit with recoil!"
 	prompt
-; 0x81362
+
+NoRecoilRockHeadText:
+	text "<USER>'s"
+	line "ROCK HEAD"
+	cont "prevents recoil!"
+	prompt
+	
+NoRecoilMagicGuardText:
+	text "<USER>'s"
+	line "MAGIC GUARD"
+	cont "prevents recoil!"
+	prompt
 
 MadeSubstituteText: ; 0x81362
 	text "<USER>"

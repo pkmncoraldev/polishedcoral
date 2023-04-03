@@ -6910,10 +6910,15 @@ BattleCommand_recoil: ; 36cb2
 	ld a, BATTLE_VARS_ABILITY
 	call GetBattleVar
 	cp ROCK_HEAD
-	ret z
+	jr nz, .no_rock_head
+	ld hl, NoRecoilRockHeadText
+	jp StdBattleTextBox
+.no_rock_head
 	cp MAGIC_GUARD
-	ret z
-
+	jr nz, .no_magic_guard
+	ld hl, NoRecoilMagicGuardText
+	jp StdBattleTextBox
+.no_magic_guard
 	ld a, b
 	cp DOUBLE_EDGE
 	jr z, .OneThirdRecoil

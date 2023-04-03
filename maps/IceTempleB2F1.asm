@@ -130,7 +130,7 @@ IceTempleMamoswineCutscene:
 	waitbutton
 	closetext
 	waitsfx
-	loadwildmon MAMOSWINE, 30
+	loadwildmon MAMOSWINE, 38
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	if_equal $1, .cont

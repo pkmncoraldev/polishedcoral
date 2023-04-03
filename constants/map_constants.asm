@@ -314,7 +314,7 @@ MAP_NONE   EQU 0
 	map_const BRILLO_GAME_CORNER,              			   7,  5 ; 8
 	map_const BRILLO_POLICE_STATION,           			   8,  5 ; 9
 	map_const DESERT_ROUTE,         	           		  24, 17 ; 10
-	map_const DESERT_ROUTE_2,         	           		  14, 18 ; 11
+	map_const DESERT_ROUTE_2,         	           		  15, 18 ; 11
 	map_const DESERT_ROUTE_NORTH,       	           	  13, 15 ; 12
 	map_const DESERT_WASTELAND_1,              			   9,  9 ; 13
 	map_const DESERT_WASTELAND_2,              			   9,  9 ; 14

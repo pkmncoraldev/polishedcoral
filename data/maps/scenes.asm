@@ -100,4 +100,5 @@ MapTriggers::
 	scene_var SAILBOAT_CUTSCENE,					  wAlways0Trigger
 	scene_var AIRPORT,								  wAirportTrigger
 	scene_var ROUTE_18,								  wRoute18Trigger
+	scene_var FAKE_ROUTE_1,							  wEastTrainCabooseTrigger
 	db -1

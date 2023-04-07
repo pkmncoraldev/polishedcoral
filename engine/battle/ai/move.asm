@@ -36,6 +36,8 @@ AIChooseMove: ; 440ce
 	jr z, .legendary
 	cp BATTLETYPE_SHINY_LEGENDARY
 	jr z, .legendary
+	cp BATTLETYPE_PORYGON
+	jr z, .legendary
 	; Wildmons choose moves at random
 	ld a, [wBattleMode]
 	dec a

@@ -283,7 +283,10 @@ PokeBallEffect: ; e8a2
 	ld a, [wBattleType]
 	cp BATTLETYPE_GHOST
 	jp z, Ball_MonCantBeCaughtMessage
+	cp BATTLETYPE_PORYGON
+	jr z, .porygon
 
+.not_porygon
 	ld a, [wEnemySubStatus3] ; BATTLE_VARS_SUBSTATUS3_OPP
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	jp nz, Ball_MonIsHiddenMessage
@@ -305,6 +308,30 @@ PokeBallEffect: ; e8a2
 	ld a, [wEnemyMonItem]
 	ld [hl], a
 	jr .room_in_party
+
+.porygon
+	ld a, [wWalkingOnBridge]
+	cp 5
+	jr z, .not_porygon
+	call ReturnToBattle_UseBall
+	ld de, ANIM_THROW_POKE_BALL
+	ld a, e
+	ld [wFXAnimIDLo], a
+	ld a, d
+	ld [wFXAnimIDHi], a
+	ld a, BLOSSOM_TEA
+	ld [wBattleAnimParam], a
+	xor a
+	ld [hBattleTurn], a
+	ld [wNumHits], a
+	predef PlayBattleAnim
+	ld hl, wOptions1
+	res NO_TEXT_SCROLL, [hl]
+	ld hl, BallPhasedThruText
+	call PrintText
+;	ld hl, DontBeAThiefText
+;	call PrintText
+	jp UseDisposableItem
 
 .check_room
 	ld a, BANK(sBoxCount)
@@ -766,8 +793,8 @@ PokeBallEffect: ; e8a2
 	and a
 	jr z, .toss
 
-	call ClearBGPalettes
-	call ClearTileMap
+;	call ClearBGPalettes
+;	call ClearTileMap
 	xor a
 	ld [wPlaceBallsX], a
 
@@ -3049,7 +3076,10 @@ DontBeAThiefText: ; 0xf829
 	; Don't be a thief!
 	text_jump UnknownText_0x1c5def
 	db "@"
-; 0xf82e
+
+BallPhasedThruText: ; 0xf824
+	text_jump UnknownText_BallPhasedThru
+	db "@"
 
 Ball_BoxIsFullText: ; 0xf838
 	; The #MON BOX is full. That can't be used now.

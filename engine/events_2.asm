@@ -19,6 +19,10 @@ ReturnFromMapSetupScript:: ; b8000
 
 	call .CheckSpecialMap
 	jr z, .dont_do_map_sign
+	
+	ld a, [wMapGroup]
+	cp GROUP_FAKE_ROUTE_1
+	jp z, .dont_do_map_sign
 
 ;	ld a, [wCurrentLandmark]
 ;	cp LUCKY_ISLAND

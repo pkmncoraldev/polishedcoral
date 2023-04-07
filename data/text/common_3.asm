@@ -1077,6 +1077,13 @@ UnknownText_0x1c5dd0::
 	text "The trainer"
 	line "blocked the BALL!"
 	prompt
+	
+UnknownText_BallPhasedThru::
+	text "It phased through"
+	line "the #MON!?"
+	
+	para "Is it an illusion?"
+	prompt
 
 UnknownText_0x1c5def::
 	text "Don't be a thief!"

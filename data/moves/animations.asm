@@ -1488,8 +1488,7 @@ BattleAnim_BulletPunch:
 	anim_wait 3
 	anim_obj ANIM_OBJ_BULLET_PUNCH, 132, 68, $0
 	anim_sound 0, 1, SFX_TACKLE
-	anim_wait 3
-	anim_wait 32
+	anim_wait 34
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_ret
 	
@@ -1663,8 +1662,7 @@ BattleAnim_DazzlinGleam:
 	anim_obj ANIM_OBJ_GLIMMER, 56, 64, $0
 	anim_wait 5
 	anim_obj ANIM_OBJ_GLIMMER, 40, 84, $0
-	anim_wait 5
-	anim_wait 32
+	anim_wait 37
 	anim_ret
 	
 BattleAnim_RockPolish:
@@ -1821,8 +1819,7 @@ BattleAnim_Hex:
 	anim_obj ANIM_OBJ_HEX, 160, 72, $8
 	anim_wait 2
 	anim_loop 3, .loop
-	anim_wait 8
-	anim_wait 16
+	anim_wait 24
 	anim_ret
 	
 BattleAnim_ShadowBone:
@@ -2308,6 +2305,7 @@ BattleAnim_ThrowPokeBall:
 	anim_sound 6, 2, SFX_THROW_BALL
 	anim_obj ANIM_OBJ_POKE_BALL, 68, 92, $40
 	anim_wait 36
+	anim_jumpif BLOSSOM_TEA, .porygon
 	anim_obj ANIM_OBJ_POKE_BALL, 136, 65, $0
 	anim_setobj $2, $7
 	anim_wait 16
@@ -2329,8 +2327,13 @@ BattleAnim_ThrowPokeBall:
 	anim_obj ANIM_OBJ_POKE_BALL_BLOCKED,   8, 0,  11, 4, $20
 	anim_wait 20
 	anim_obj ANIM_OBJ_01,  14, 0,   5, 0, $0
+.end
 	anim_wait 32
 	anim_ret
+	
+.porygon
+	anim_clearobjs
+	anim_jump .end
 
 .MasterBall:
 	anim_wait 24
@@ -2353,10 +2356,11 @@ BattleAnim_ThrowPokeBall:
 	anim_incobj  1
 	anim_wait 32
 	anim_sound 0, 1, SFX_BALL_BOUNCE
-	anim_wait 32
-	anim_wait 32
-	anim_wait 32
-	anim_wait 8
+;	anim_wait 32
+;	anim_wait 32
+;	anim_wait 32
+;	anim_wait 8
+	anim_wait 104
 	anim_setvar $0
 .Loop:
 	anim_wait 48
@@ -5166,8 +5170,7 @@ BattleAnim_ElectroBall:
 	anim_sound 0, 0, SFX_SWORDS_DANCE
 	anim_wait 8
 	anim_loop 4, .loop
-	anim_wait 8
-	anim_wait 56
+	anim_wait 64
 	anim_sound 6, 2, SFX_THUNDERSHOCK
 	anim_obj ANIM_OBJ_ZAP_CANNON, 64, 92, $2
 	anim_wait 32

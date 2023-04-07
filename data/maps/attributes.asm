@@ -374,6 +374,14 @@ ENDM
 	map_attributes DesertTempleOutside, DESERT_TEMPLE_OUTSIDE, $02, SOUTH
 	connection south, DesertWasteland9, DESERT_WASTELAND_9, 4
 	
+	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
+	connection north, FakeRoute2, FAKE_ROUTE_2, 0
+	connection south, FakeRoute2, FAKE_ROUTE_2, 0
+	
+	map_attributes FakeRoute2, FAKE_ROUTE_2, $89, NORTH | SOUTH
+	connection north, FakeRoute2, FAKE_ROUTE_2, 0
+	connection south, FakeRoute2, FAKE_ROUTE_2, 0
+	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0
 	map_attributes DaybreakGrotto3, DAYBREAK_GROTTO_3, $9, 0

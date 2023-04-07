@@ -19,7 +19,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event  9, 14, TWINKLE_TOWN, 1
 	warp_event 11, 14, LUSTER_CITY_SHOPPING, 1
 	warp_event 13, 14, BRILLO_TOWN, 1
-	warp_event 15, 14, LUSTER_SEWERS_MUK_ROOM, 1
+	warp_event 15, 14, FAKE_ROUTE_1, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
@@ -58,8 +58,8 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke WYRDEER, 100
-	givepoke CLEFAIRY, 5
+	givepoke WYRDEER, 98
+	givepoke CHARMANDER, 35
 	givepoke CHARIZARD, 100
 
 .items

@@ -108,7 +108,7 @@ TilesetGateAnim::
     dw NULL,  WaitTileAnimation
     dw VTiles2 tile $14, WriteTileFromBuffer
     dw NULL,  WaitTileAnimation
-    dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
     dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -898,7 +898,15 @@ AnimateFlowerTile: ; fc56d
 	ld e, a
 
 ; CGB has different color mappings for flowers.
-	ld a, [hCGB]
+;	ld a, [hCGB]
+	ld a, [wMapGroup]
+	cp GROUP_FAKE_ROUTE_1
+	jr nz, .dmg
+	xor a
+	jr .cont
+.dmg
+	ld a, 1
+.cont
 	and 1
 
 	add e

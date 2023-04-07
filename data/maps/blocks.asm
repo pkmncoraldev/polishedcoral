@@ -673,3 +673,9 @@ RadiantOrphanage1F_BlockData:
 RadiantField_BlockData:
 	INCBIN "maps/RadiantField.ablk.lz"
 	
+FakeRoute1_BlockData:
+	INCBIN "maps/FakeRoute1.ablk.lz"
+	
+FakeRoute2_BlockData:
+	INCBIN "maps/FakeRoute2.ablk.lz"
+	

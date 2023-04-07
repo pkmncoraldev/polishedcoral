@@ -16,6 +16,10 @@ BattleText_PlayerPickedUpPayDayMoney: ; 0x80730
 	prompt
 ; 0x80746
 
+BattleText_PorygonEncounterHuh:
+	text "Huh?"
+	done
+
 WildPokemonAppearedText: ; 0x80746
 	text "A wild @"
 LegendaryAppearedText: ; 0x80793
@@ -23,7 +27,19 @@ LegendaryAppearedText: ; 0x80793
 	text ""
 	line "appeared!"
 	prompt
-; 0x8075c
+
+QuestionAppearedText: ; 0x80793
+	text "A wild @"
+	text_from_ram wEnemyMonNick
+	text ""
+	line "appeared?"
+	done
+	
+RevealedItselfText: ; 0x80793
+	text_from_ram wEnemyMonNick
+	text " finally"
+	line "revealed itself!"
+	done
 
 HookedPokemonAttackedText: ; 0x8075c
 	text "The hooked"

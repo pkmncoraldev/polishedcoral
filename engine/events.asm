@@ -1238,6 +1238,10 @@ FullPollenScript:
 	db "@"
 	
 DoTorchStep: ; 96bd7
+	ld a, [wMapGroup]
+	cp GROUP_FAKE_ROUTE_1
+	jp z, .porygon
+
 	ld a, [wTorchSteps]
 	and a
 	ret z
@@ -1252,6 +1256,49 @@ DoTorchStep: ; 96bd7
 	scf
 	ret
 	
+.porygon
+	ld a, [wWalkingDirection]
+	cp UP
+	jr z, .upcheck
+	cp DOWN
+	jr z, .downcheck
+	cp LEFT
+	jr z, .leftcheck
+	cp RIGHT
+	jr z, .rightcheck
+.upcheck
+	ld a, [wTileUp]
+	jr .checkcont
+.downcheck
+	ld a, [wTileDown]
+	jr .checkcont
+.leftcheck
+	ld a, [wTileLeft]
+	jr .checkcont
+.rightcheck
+	ld a, [wTileRight]
+.checkcont
+	cp COLL_TALL_GRASS
+	jr nz, .no
+	
+	ld a, [wTorchSteps]
+	and a
+	ret z
+
+	dec a
+	ld [wTorchSteps], a
+	ret nz
+
+	ld a, BANK(PorygonEncounterScript)
+	ld hl, PorygonEncounterScript
+	call CallScript
+	scf
+	ret
+	
+.no
+	xor a
+	ret
+	
 TorchWentOutScript:
 	domaptrigger ICE_TEMPLE_B1F_1, $0
 	special Special_StopRunning
@@ -1261,6 +1308,14 @@ TorchWentOutScript:
 
 	text_jump TorchWentOutText
 	db "@"
+	
+PorygonEncounterScript:
+	loadwildmon RATTATA, 5
+	writecode VAR_BATTLETYPE, BATTLETYPE_PORYGON
+	startbattle
+	special FadeOutPalettes
+	warp2 UP, SPOOKY_FOREST_ESCORT, $24, $13
+	end
 	
 DoPlayerEvent: ; 96beb
 	ld a, [wScriptRunning]

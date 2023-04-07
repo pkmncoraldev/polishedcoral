@@ -1732,6 +1732,7 @@ Script_loadwildmon:
 	ld [wWildMonForm], a
 	call GetScriptByte
 	ld [wCurPartyLevel], a
+	ld [wTileUp], a		; for porygon encounter
 	ret
 
 Script_loadtrainer:

@@ -89,6 +89,7 @@ INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route14.asm"
 INCLUDE "maps/Route17.asm"
 INCLUDE "maps/Route18.asm"
+INCLUDE "maps/FakeRoute1.asm"
 
 
 SECTION "Routes Scripts2", ROMX

@@ -53,6 +53,7 @@ INCLUDE "audio/music/eventide.asm"
 INCLUDE "audio/music/clown.asm"
 INCLUDE "audio/music/minibossbattle.asm"
 INCLUDE "audio/music/shimmercity.asm"
+INCLUDE "audio/music/fakeroute1.asm"
 
 
 SECTION "Music 3", ROMX
@@ -86,6 +87,7 @@ INCLUDE "audio/music/eventidevillage.asm"
 INCLUDE "audio/music/snarevictory.asm"
 INCLUDE "audio/music/tvstatic.asm"
 INCLUDE "audio/music/wildboss.asm"
+INCLUDE "audio/music/wildboss2.asm"
 INCLUDE "audio/music/flickerstation.asm"
 INCLUDE "audio/music/route12.asm"
 

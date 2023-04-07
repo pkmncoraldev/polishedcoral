@@ -1042,6 +1042,10 @@ NormalStep: ; 5412
 	bit INVISIBLE, [hl]
 	jr nz, .skip_effect
 
+	ld a, [wMapGroup]
+	cp GROUP_FAKE_ROUTE_1
+	jr z, .skip_effect
+
 	ld hl, OBJECT_NEXT_TILE
 	add hl, bc
 	ld a, [hl]

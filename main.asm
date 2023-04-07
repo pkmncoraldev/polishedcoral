@@ -4989,3 +4989,6 @@ GetTMHMName:: ; 3487
 .HMTextEnd:
 	db "@"
 ; 34df
+
+SECTION "Coral Data 5", ROMX
+INCLUDE "engine/battle/porygon_encounter.asm"

@@ -116,15 +116,16 @@ DoBattle: ; 3c000
 	call BreakAttraction
 	call EnemySwitch
 	call SetEnemyTurn
-	call HandleFirstAirBalloon
+;	call HandleFirstAirBalloon
 	call RunBothActivationAbilities
 	jp BattleTurn
 
 .not_linked_2
-	call HandleFirstAirBalloon
+;	call HandleFirstAirBalloon
 	call AutomaticHailWhenSnowstorm
 	call AutomaticSandstormInDesert
 	call RunBothActivationAbilities
+.return_pory
 	jp BattleTurn
 ; 3c0e5
 
@@ -2141,11 +2142,15 @@ ContinueHandleEnemyMonFaint:
 	and a
 	jp z, LostBattle
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_PORYGON
+	jr z, .porygon			;this is super stupid and janky but I don't care anymore I've been here for hours
+
 	ld hl, wBattleMonHP
 	ld a, [hli]
 	or [hl]
 	call nz, UpdatePlayerHUD
-
+.return
 	ld a, $1
 	ld [hBGMapMode], a
 	ld c, 60
@@ -2154,13 +2159,27 @@ ContinueHandleEnemyMonFaint:
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .trainer
-
+	
 	ld a, 1
 	ld [wBattleEnded], a
 	xor a
 	ld [wPlaceBallsX], a
 	ld [wPlaceBallsY], a
 	ret
+	
+.porygon
+	ld a, [wWalkingOnBridge]
+	cp 5
+	jr nz, .return
+	ld c, 10				;this area gets called as many times as I have extra encounters and idk why
+	call DelayFrames		;I want 60 delay frames, I have 6 encounters in the event, so 10x6.
+	ld a, 1
+	ld [wBattleEnded], a
+	xor a
+	ld [wPlaceBallsX], a
+	ld [wPlaceBallsY], a
+	ret
+	
 
 .trainer
 	call CheckEnemyTrainerDefeated
@@ -2280,9 +2299,21 @@ UpdateBattleStateAndExperienceAfterEnemyFaint: ; 3ce01
 	ld a, d
 	and a
 	ret z
+	ld a, [wTileDown]
+	cp BATTLETYPE_PORYGON
+	jr nz, .do_it
+	ld a, [wWalkingOnBridge]
+	cp 1
+	jr z, .skip
+	cp 2
+	jr z, .skip
+	cp 3
+	jr z, .skip
+.do_it
 	ld a, [wBattleMode]
 	dec a
 	call z, PlayVictoryMusic
+.skip
 	call EmptyBattleTextBox
 	call LoadTileMapToTempTileMap
 	ld a, [wBattleResult]
@@ -2303,7 +2334,7 @@ GiveExperiencePointsAfterCatch:
 	ld [wGivingExperienceToExpShareHolders], a
 	call GiveExperiencePoints
 	call IsAnyMonHoldingExpShare
-	ret z
+	jr z, .check_porygon_encounter
 ; give experience to Exp.Share holders
 	ld a, [wBattleParticipantsNotFainted]
 	push af
@@ -2316,8 +2347,27 @@ GiveExperiencePointsAfterCatch:
 	call GiveExperiencePoints
 	pop af
 	ld [wBattleParticipantsNotFainted], a
-	ret
-; 3ceaa
+	
+.check_porygon_encounter
+	ld a, [wBattleType]
+	cp BATTLETYPE_PORYGON
+	ret nz
+	ld a, [wWalkingOnBridge]
+	cp 5
+	ret z
+	cp 4
+	jp z, _PorygonEncounter
+	jp _PorygonPreEncounterMon
+	
+.pory_encounter_cont
+	call HasPlayerFainted
+	jr nz, .skipswitch
+	call ForcePlayerMonChoice
+.skipswitch
+	call SetEnemyTurn
+	call SpikesDamage
+	call RunActivationAbilities
+	jp BattleTurn
 
 IsAnyMonHoldingExpShare: ; 3ceaa
 	ld a, [wPartyCount]
@@ -3279,6 +3329,7 @@ ForceEnemySwitch: ; 3d4c3
 	ld b, a
 	call LoadEnemyPkmnToSwitchTo
 	call ClearEnemyMonBox
+.porygon
 	call NewEnemyMonStatus
 	call ResetEnemyStatLevels
 	call Function_SetEnemyPkmnAndSendOutAnimation
@@ -3550,9 +3601,50 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 	ld [wNumHits], a
 	ld [wBattleAnimParam], a
 	call SetEnemyTurn
+	
+	ld a, [wBattleType]
+	cp BATTLETYPE_PORYGON
+	jr z, .porygon_encounter
+;.not_porygon_encounter
 	ld de, ANIM_SEND_OUT_MON
 	call Call_PlayBattleAnim
-
+	jr .cont
+.porygon_encounter
+	ld a, [wWalkingOnBridge]
+	cp 5
+	jr z, .porygon
+	cp 2
+	jr nc, .not_first
+	ld c, 40
+	call DelayFrames
+	ld de, MUSIC_NONE
+	call PlayMusic
+	ld hl, BattleText_PorygonEncounterHuh
+	call StdBattleTextBox
+.return
+	ld a, $13
+	ld [wKickCounter], a
+	ld de, TRANSFORM_SKETCH_MIMIC_SPLASH
+	call Call_PlayBattleAnim
+	
+	ld c, 60
+	call DelayFrames
+	jr .cont
+.not_first
+	ld a, $13
+	ld [wKickCounter], a
+	ld de, TRANSFORM_SKETCH_MIMIC_SPLASH
+	call Call_PlayBattleAnim
+	jr .cont
+.porygon
+	ld de, MUSIC_NONE
+	call PlayMusic
+	ld a, $0
+	ld [wKickCounter], a
+	ld de, SHARPEN_HOWL_MEDITATE
+	call Call_PlayBattleAnim
+	jr .return
+.cont
 	call BattleCheckEnemyShininess
 	jr nc, .not_shiny
 	ld a, 1 ; shiny anim
@@ -3956,18 +4048,18 @@ BreakAttraction: ; 3dc18
 	ret
 ; 3dc23
 
-HandleFirstAirBalloon:
+;HandleFirstAirBalloon:
 ; for the first mon, Spikes logic doesn't run by itself, and we also want to perform
 ; speed checks to see whose air balloon to announce first.
-	ld a, [hBattleTurn]
-	push af
-	call SetFastestTurn
-	call SpikesDamage
-	call SwitchTurn
-	call SpikesDamage
-	pop af
-	ld [hBattleTurn], a
-	ret
+;	ld a, [hBattleTurn]
+;	push af
+;	call SetFastestTurn
+;	call SpikesDamage
+;	call SwitchTurn
+;	call SpikesDamage
+;	pop af
+;	ld [hBattleTurn], a
+;	ret
 
 PostBattleTasks::
 	push bc
@@ -4041,10 +4133,10 @@ SpikesDamage: ; 3dc23
 	ld c, 0
 SpikesDamage_GotAbility:
 ; Input: b: ability, c: 1 if forced out, 0 otherwise
-	push bc
-	call HandleAirBalloon
-	pop bc
-	ret z
+;	push bc
+;	call HandleAirBalloon
+;	pop bc
+;	ret z
 
 	ld a, b
 	cp LEVITATE
@@ -4161,17 +4253,17 @@ SpikesDamage_GotAbility:
 .poststatus_done
 	jp SwitchTurn
 
-HandleAirBalloon:
+;HandleAirBalloon:
 ; prints air balloon msg and returns z if we have air balloon
-	farcall GetUserItem
-	ld a, b
-	cp HELD_AIR_BALLOON
-	ret nz
-	call GetCurItemName
-	ld hl, NotifyAirBalloonText
-	call StdBattleTextBox
-	xor a
-	ret
+;	farcall GetUserItem
+;	ld a, b
+;	cp HELD_AIR_BALLOON
+;	ret nz
+;	call GetCurItemName
+;	ld hl, NotifyAirBalloonText
+;	call StdBattleTextBox
+;	xor a
+;	ret
 
 PursuitSwitch: ; 3dc5b
 	ld a, BATTLE_VARS_MOVE
@@ -8868,6 +8960,10 @@ InitEnemyWildmon: ; 3f607
 	ld bc, 5
 	rst CopyBytes
 
+	ld a, [wTileDown]
+	cp BATTLETYPE_PORYGON
+	ret z
+
 	ld de, VTiles2
 	predef FrontpicPredef
 	xor a
@@ -9739,6 +9835,8 @@ BattleStartMessage: ; 3fc8b
 	jr .PlaceBattleStartText
 
 .NotFishing:
+	cp BATTLETYPE_PORYGON
+	jr z, .pory
 	ld hl, PokemonFellFromTreeText
 	cp BATTLETYPE_TREE
 	jr z, .PlaceBattleStartText
@@ -9747,6 +9845,7 @@ BattleStartMessage: ; 3fc8b
 	jr z, .PlaceBattleStartText
 	cp BATTLETYPE_LEGENDARY ; or BATTLETYPE_SHINY_LEGENDARY
 	jr nc, .PlaceBattleStartText
+.pory
 	ld hl, WildPokemonAppearedText
 
 .PlaceBattleStartText:
@@ -9816,6 +9915,8 @@ CheckUniqueWildMove:
 	cp BATTLETYPE_LEGENDARY
 	jp z, .boss
 	cp BATTLETYPE_SHINY_LEGENDARY
+	jp z, .boss
+	cp BATTLETYPE_PORYGON
 	jp z, .boss
 	ld a, [wMapGroup]
 	ld b, a
@@ -9906,3 +10007,23 @@ CheckUniqueWildMove:
 
 INCLUDE "data/pokemon/unique_wild_moves.asm"
 INCLUDE "data/pokemon/boss_wild_moves.asm"
+
+_PorygonEncounter:
+	farcall PorygonEncounter
+	call InitEnemyWildmon
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
+	call SetPalettes
+	call ForceEnemySwitch.porygon
+	farcall PorygonEncounter2
+	jp GiveExperiencePointsAfterCatch.pory_encounter_cont
+
+_PorygonPreEncounterMon:
+	farcall PorygonPreEncounterMon
+	call InitEnemyWildmon
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
+	call SetPalettes
+	call ForceEnemySwitch.porygon
+	farcall PorygonPreEncounterMon2
+	jp GiveExperiencePointsAfterCatch.pory_encounter_cont

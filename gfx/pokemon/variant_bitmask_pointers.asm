@@ -1,3 +1,7 @@
+RattataBitmasksPointers:
+	dw RattataBitmasks
+	dw Rattata_RGBitmasks
+
 RaichuBitmasksPointers:
 	dw RaichuBitmasks
 	dw Raichu_ABitmasks

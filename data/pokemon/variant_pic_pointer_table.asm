@@ -1,4 +1,5 @@
 VariantPicPointerTable:
+	dbba RATTATA, RattataPicPointers
 	dbba RAICHU, RaichuPicPointers
 	dbba SANDSHREW, SandshrewPicPointers
 	dbba SANDSLASH, SandslashPicPointers

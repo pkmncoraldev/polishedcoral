@@ -1,3 +1,7 @@
+RattataFramesPointers:
+	dw RattataFrames
+	dw Rattata_RGFrames
+
 RaichuFramesPointers:
 	dw RaichuFrames
 	dw Raichu_AFrames

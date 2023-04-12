@@ -321,6 +321,7 @@ INCLUDE "data/pokemon/base_stats/egg.asm"
 
 INCLUDE "data/pokemon/base_stats/egg.asm"
 
+INCLUDE "data/pokemon/base_stats/rattata.asm"
 INCLUDE "data/pokemon/base_stats/raichu_a.asm"
 INCLUDE "data/pokemon/base_stats/sandshrew_a.asm"
 INCLUDE "data/pokemon/base_stats/sandslash_a.asm"

@@ -11,7 +11,7 @@ AnimationPointers:
 	dw PidgeyAnimation
 	dw PidgeottoAnimation
 	dw PidgeotAnimation
-	dw RattataAnimation
+	dw -1 ; see  RattataAnimationPointers
 	dw RaticateAnimation
 	dw PikachuAnimation
 	dw -1 ; see RaichuAnimationPointers

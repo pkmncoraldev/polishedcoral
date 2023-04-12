@@ -1,3 +1,9 @@
+RattataPicPointers::
+	dba RattataFrontpic
+	dba RattataBackpic
+	dba Rattata_RGFrontpic
+	dba RattataBackpic
+
 RaichuPicPointers::
 	dba RaichuFrontpic
 	dba RaichuBackpic

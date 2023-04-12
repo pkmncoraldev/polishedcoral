@@ -11,7 +11,7 @@ BitmasksPointers:
 	dw PidgeyBitmasks
 	dw PidgeottoBitmasks
 	dw PidgeotBitmasks
-	dw RattataBitmasks
+	dw -1 ; see RattataBitmasksPointers
 	dw RaticateBitmasks
 	dw PikachuBitmasks
 	dw -1 ; see RaichuBitmasksPointers

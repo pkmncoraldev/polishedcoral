@@ -2,6 +2,7 @@
 ; then continue with entries for these species+form combinations.
 
 VariantSpeciesAndFormTable::
+	db RATTATA, GEN_1_FORM
 	db RAICHU, ALOLAN_FORM
 	db SANDSHREW, ALOLAN_FORM
 	db SANDSLASH, ALOLAN_FORM

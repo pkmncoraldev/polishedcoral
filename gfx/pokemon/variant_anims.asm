@@ -1,3 +1,7 @@
+RattataAnimations:
+RattataAnimation:  INCLUDE "gfx/pokemon/rattata/anim0.asm"
+Rattata_RGAnimation: INCLUDE "gfx/pokemon/rattata_rg/anim0.asm"
+
 RaichuAnimations:
 RaichuAnimation:  INCLUDE "gfx/pokemon/raichu/anim0.asm"
 Raichu_AAnimation: INCLUDE "gfx/pokemon/raichu_a/anim0.asm"

@@ -53,6 +53,7 @@ PidgeotFrontpic:          INCBIN "gfx/pokemon/pidgeot/front.2bpp.lz"
 PidgeotBackpic:           INCBIN "gfx/pokemon/pidgeot/back.2bpp.lz"
 RattataFrontpic:          INCBIN "gfx/pokemon/rattata/front.2bpp.lz"
 RattataBackpic:           INCBIN "gfx/pokemon/rattata/back.2bpp.lz"
+Rattata_RGFrontpic:       INCBIN "gfx/pokemon/rattata_rg/front.2bpp.lz"
 
 
 SECTION "Pokemon Pics 3", ROMX

@@ -1,3 +1,7 @@
+RattataAnimationExtraPointers:
+	dw RattataAnimationExtra
+	dw Rattata_RGAnimationExtra
+
 RaichuAnimationExtraPointers:
 	dw RaichuAnimationExtra
 	dw Raichu_AAnimationExtra

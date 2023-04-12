@@ -1,4 +1,5 @@
 VariantSpeciesTable:
+	db RATTATA
 	db RAICHU
 	db SANDSHREW
 	db SANDSLASH
@@ -15,6 +16,7 @@ VariantSpeciesTable:
 	db -1
 
 VariantAnimPointerTable:
+	dbbww RATTATA, BANK(RattataAnimations), RattataAnimationPointers, RattataAnimationExtraPointers
 	dbbww RAICHU, BANK(RaichuAnimations), RaichuAnimationPointers, RaichuAnimationExtraPointers
 	dbbww SANDSHREW, BANK(SandshrewAnimations), SandshrewAnimationPointers, SandshrewAnimationExtraPointers
 	dbbww SANDSLASH, BANK(SandslashAnimations), SandslashAnimationPointers, SandslashAnimationExtraPointers
@@ -31,6 +33,7 @@ VariantAnimPointerTable:
 	dbbww -1, BANK(PicAnimations), AnimationPointers, AnimationExtraPointers
 
 VariantFramesPointerTable:
+	dbbba RATTATA, BANK(RattatasFrames), RattataFramesPointers
 	dbbba RAICHU, BANK(RaichusFrames), RaichuFramesPointers
 	dbbba SANDSHREW, BANK(SandshrewsFrames), SandshrewFramesPointers
 	dbbba SANDSLASH, BANK(SandslashsFrames), SandslashFramesPointers
@@ -47,6 +50,7 @@ VariantFramesPointerTable:
 	dbbba -1, BANK(PokemonFrames), FramesPointers
 
 VariantBitmasksPointerTable:
+	dbba RATTATA, RattataBitmasksPointers
 	dbba RAICHU, RaichuBitmasksPointers
 	dbba SANDSHREW, SandshrewBitmasksPointers
 	dbba SANDSLASH, SandslashBitmasksPointers

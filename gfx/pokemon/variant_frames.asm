@@ -1,3 +1,7 @@
+RattatasFrames:
+RattataFrames:  INCLUDE "gfx/pokemon/rattata/frames.asm"
+Rattata_RGFrames: INCLUDE "gfx/pokemon/rattata_rg/frames.asm"
+
 RaichusFrames:
 RaichuFrames:  INCLUDE "gfx/pokemon/raichu/frames.asm"
 Raichu_AFrames: INCLUDE "gfx/pokemon/raichu_a/frames.asm"

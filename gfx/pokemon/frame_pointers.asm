@@ -11,7 +11,7 @@ FramesPointers:
 	dw PidgeyFrames
 	dw PidgeottoFrames
 	dw PidgeotFrames
-	dw RattataFrames
+	dw -1 ; see RattataFramesPointers
 	dw RaticateFrames
 	dw PikachuFrames
 	dw -1 ; see RaichuFramesPointers

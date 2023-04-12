@@ -1,3 +1,6 @@
+RattataBitmasks:  INCLUDE "gfx/pokemon/rattata/bitmask.asm"
+Rattata_RGBitmasks: INCLUDE "gfx/pokemon/rattata_rg/bitmask.asm"
+
 RaichuBitmasks:  INCLUDE "gfx/pokemon/raichu/bitmask.asm"
 Raichu_ABitmasks: INCLUDE "gfx/pokemon/raichu_a/bitmask.asm"
 

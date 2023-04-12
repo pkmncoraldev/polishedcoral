@@ -249,13 +249,13 @@ SetUpNamingScreen: ; 116f8
 	db "Box name?@"
 
 .Password:
-	hlcoord 2, 2
+	hlcoord 6, 2
 	ld de, .PasswordString
 	call PlaceString
 	jp .StorePasswordParams
 
 .PasswordString:
-	db "Say the password!@"
+	db "Password?@"
 ; 1182c
 
 .LoadSprite: ; 11847 (4:5847)

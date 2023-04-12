@@ -9,9 +9,11 @@ FakeRoute2_MapScriptHeader:
 	db 1 ; warp events
 	warp_event 20, 29, FAKE_ROUTE_1, 1
 
-	db 2 ; coord events
-	coord_event 21, 12, 0, FakeRoute1ChangeBlocks
-	coord_event 21, 13, 0, FakeRoute1ChangeBlocks
+	db 4 ; coord events
+	coord_event 18, 24, 0, FakeRoute1ChangeBlocks
+	coord_event 19, 24, 0, FakeRoute1ChangeBlocks
+	coord_event 20, 24, 0, FakeRoute1ChangeBlocks
+	coord_event 21, 24, 0, FakeRoute1ChangeBlocks
 
 	db 5 ; bg events
 	signpost 30, 19, SIGNPOST_IFNOTSET, FakeRoute1DoorSign

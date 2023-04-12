@@ -30,11 +30,14 @@ LusterSkyscraperPorygonRoom_MapScriptHeader:
 	signpost 11,  4, SIGNPOST_JUMPTEXT, LusterSkyscraperPorygonRoomServerText
 	signpost  2,  2, SIGNPOST_READ, LusterSkyscraperPorygonRoomComputer
 
-	db 1 ; object events
+	db 2 ; object events
 	person_event SPRITE_PLANK_BRIDGE,  2,  2, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LusterSkyscraperPorygonRoomComputer, EVENT_DONE_PORYGON_ENCOUNTER
+	person_event SPRITE_RED,  2,  2, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LusterSkyscraperPorygonRoomComputer, EVENT_DONE_PORYGON_ENCOUNTER
+
 	
 	const_def 1 ; object constants
 	const PORYGON_ROOM_SCREEN
+	const PORYGON_ROOM_SCREEN_SHINE
 
 
 LusterSkyscraperPorygonRoomComputer:
@@ -51,48 +54,135 @@ LusterSkyscraperPorygonRoomComputer:
 	iffalse .wrong
 	ifequal 2, .nothing
 
+	writetext PorygonRoomSaidPasswordText
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext PorygonRoomRightText
+	waitbutton
 	closetext
+	wait 14
 	callasm SetupPorygonEncounterAsm
-	special FadeOutPalettes
+;	special FadeOutPalettes
+	callasm LoadMapPals
+	special FadeInPalettes
 	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	callasm LoadMapPals
+	special FadeInPalettes
 	wait 10
 	killsfx
 	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	callasm LoadMapPals
+	special FadeInPalettes
 	wait 9
+	
 	killsfx
 	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	callasm LoadMapPals
+	special FadeInPalettes
 	wait 8
+	
 	killsfx
 	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	callasm LoadMapPals
+	special FadeInPalettes
 	wait 7
+	
 	killsfx
 	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	callasm LoadMapPals
+	special FadeInPalettes
 	wait 6
+	
 	killsfx
 	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	callasm LoadMapPals
+	special FadeInPalettes
 	wait 5
+	
 	killsfx
 	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	callasm LoadMapPals
+	special FadeInPalettes
 	wait 4
+	
 	killsfx
 	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	callasm LoadMapPals
+	special FadeInPalettes
 	wait 3
+	
 	killsfx
 	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	callasm LoadMapPals
+	special FadeInPalettes
 	wait 2
-	killsfx
-	playsound SFX_WARP_TO
-	wait 1
-	killsfx
-	playsound SFX_WARP_TO
-	wait 1
-	killsfx
 	
-	
+	killsfx
 	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	callasm LoadMapPals
+	special FadeInPalettes
+	wait 1
+	
+	killsfx
+	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	callasm LoadMapPals
+	special FadeInPalettes
+	
+	killsfx
+	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	callasm LoadMapPals
+	special FadeInPalettes
+	
+	killsfx
+	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	callasm LoadMapPals
+	special FadeInPalettes
+	
+	killsfx
+	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	applyonemovement PLAYER, hide_person
+	callasm LoadMapPals
+	special FadeInPalettes
 	waitsfx
-	warp2 UP, FAKE_ROUTE_1, $14, $1d
+	wait 10
+	
+	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	applyonemovement PLAYER, show_person
+	waitsfx
+;	warp2 UP, FAKE_ROUTE_1, $14, $1d
+;	scall HandleEventsFly
+	reloadmappart
+	special UpdateTimePals
+	applymovement PLAYER, .TeleportFrom
+;	special WarpToSpawnPoint
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	newloadmap MAPSETUP_TELEPORT
+	playsound SFX_WARP_FROM
+	applymovement PLAYER, .TeleportTo
 	end
+.TeleportFrom: ; cce1
+	teleport_from
+	step_end
+
+.TeleportTo: ; cce3
+	teleport_to
+	step_end
 	
 .nothing
 	writetext PorygonRoomNothingText
@@ -126,7 +216,7 @@ PorygonRoomCheckPassword:
 	
 	ld hl, CorrectPorygonPassword
 	ld de, wBackupName
-	ld c, 4
+	ld c, 4	;Password Length
 	call StringCmp
 	jr z, .correct
 	ld a, 0
@@ -163,6 +253,8 @@ BackupPorygonPassword:
 SetupPorygonEncounterAsm:
 	ld a, 9
 	ld [wTorchSteps], a
+	ld a, SPAWN_FAKE_ROUTE_1
+	ld [wDefaultSpawnpoint], a
 	ret
 	
 LusterSkyscraperPorygonRoomComputerDoneText:
@@ -189,8 +281,14 @@ PorygonRoomNothingText:
 	done
 	
 PorygonRoomSaidPasswordText:
-	text "<PLAYER> said"
+	text "<PLAYER> typed"
 	line "“<BACKUP>”."
+	done
+	
+PorygonRoomRightText:
+	text "…"
+	
+	para "ACCESS GRANTED!"
 	done
 	
 PorygonRoomWrongText:

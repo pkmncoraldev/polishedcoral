@@ -67,6 +67,9 @@ const_value = -1
 	const SPAWN_LUSTER
 	const SPAWN_SHIMMER
 	const SPAWN_RADIANT
+	
+	const SPAWN_FAKE_ROUTE_1
+	
 	const SPAWN_LASTFLYPOINT
 	const SPAWN_KANTO
 NUM_SPAWNS EQU const_value

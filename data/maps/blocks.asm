@@ -365,6 +365,12 @@ LusterSkyscraper2_Elevator_BlockData:
 NettBuildingElevator_BlockData:
 	INCBIN "maps/LusterSkyscraperElevator.ablk.lz"
 	
+LusterSkyscraperB1F_BlockData:
+	INCBIN "maps/LusterSkyscraperB1F.ablk.lz"
+	
+LusterSkyscraperPorygonRoom_BlockData:
+	INCBIN "maps/LusterSkyscraperPorygonRoom.ablk.lz"
+	
 NettBuilding1F_BlockData:
 	INCBIN "maps/NettBuilding1F.ablk.lz"
 	

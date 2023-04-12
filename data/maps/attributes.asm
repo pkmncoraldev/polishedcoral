@@ -537,6 +537,8 @@ ENDM
 	map_attributes LusterSkyscraper2_2F, LUSTER_SKYSCRAPER_2_2F, 0, 0
 	map_attributes LusterSkyscraper2_3F, LUSTER_SKYSCRAPER_2_3F, 0, 0
 	map_attributes LusterSkyscraper2_Elevator, LUSTER_SKYSCRAPER_2_ELEVATOR, 0, 0
+	map_attributes LusterSkyscraperB1F, LUSTER_SKYSCRAPER_B1F, 0, 0
+	map_attributes LusterSkyscraperPorygonRoom, LUSTER_SKYSCRAPER_PORYGON_ROOM, 0, 0
 	map_attributes NettBuilding1F, NETT_BUILDING_1F, 0, 0
 	map_attributes NettBuilding2F, NETT_BUILDING_2F, 0, 0
 	map_attributes NettBuildingElevator, NETT_BUILDING_ELEVATOR, 0, 0

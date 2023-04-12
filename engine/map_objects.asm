@@ -658,6 +658,21 @@ MapObjectMovementPattern:
 	jp .RandomWalkContinue
 
 .MovementBaggage:
+	ld a, [wTileset]
+	cp TILESET_LAB
+	jr z, .baggage
+;shadow
+	ld a, [wPlayerSpriteX]
+	ld [wObject1SpriteX], a
+	ld a, [wPlayerSpriteY]
+	add $f
+	ld [wObject1SpriteY], a
+	ld a, [wPlayerStandingMapX]
+	ld [wObject1StandingMapX], a
+	ld a, [wPlayerStandingMapY]
+	ld [wObject1StandingMapY], a
+	ret
+.baggage:
 	ld a, [wRanchRaceSeconds]
 	cp 0
 	jr z, .zero

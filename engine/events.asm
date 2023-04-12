@@ -1314,7 +1314,8 @@ PorygonEncounterScript:
 	writecode VAR_BATTLETYPE, BATTLETYPE_PORYGON
 	startbattle
 	special FadeOutPalettes
-	warp2 UP, SPOOKY_FOREST_ESCORT, $24, $13
+	setevent EVENT_DONE_PORYGON_ENCOUNTER
+	warp2 UP, LUSTER_SKYSCRAPER_PORYGON_ROOM, $2, $3
 	end
 	
 DoPlayerEvent: ; 96beb

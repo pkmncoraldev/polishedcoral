@@ -49,6 +49,7 @@ Landmarks: ; 0x1ca8c3
 	landmark 136,  80, ResidentialName
 	landmark 136,  80, ShoppingName
 	landmark 136,  80, BusinessName
+	landmark  28,  92, Route1Name
 	
 	landmark  20, 100, ShimmerName
 	landmark   0,   0, BrilloTownName

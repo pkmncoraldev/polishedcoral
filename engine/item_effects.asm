@@ -284,6 +284,8 @@ PokeBallEffect: ; e8a2
 	cp BATTLETYPE_GHOST
 	jp z, Ball_MonCantBeCaughtMessage
 	cp BATTLETYPE_PORYGON
+	jr z, .check_porygon
+	cp BATTLETYPE_GEN_1
 	jr z, .porygon
 
 .not_porygon
@@ -309,10 +311,11 @@ PokeBallEffect: ; e8a2
 	ld [hl], a
 	jr .room_in_party
 
-.porygon
+.check_porygon
 	ld a, [wWalkingOnBridge]
 	cp 5
 	jr z, .not_porygon
+.porygon
 	call ReturnToBattle_UseBall
 	ld de, ANIM_THROW_POKE_BALL
 	ld a, e

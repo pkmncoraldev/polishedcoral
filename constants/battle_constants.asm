@@ -153,6 +153,7 @@ endc
 	const BATTLETYPE_LEGENDARY
 	const BATTLETYPE_SHINY_LEGENDARY
 	const BATTLETYPE_PORYGON
+	const BATTLETYPE_GEN_1
 
 ; attack failure modes, higher gives priority
 ; TODO: complete this functionality

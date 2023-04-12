@@ -77,6 +77,6 @@ Music:
 	dba Music_TrainStartup
 	dba Music_DevMessage
 	dba Music_DevMessageEnd
-	dba Music_WildBossBattle2
+	dba Music_WildBattle2
 	dba Music_FakeRoute1
 	

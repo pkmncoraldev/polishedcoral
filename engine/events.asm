@@ -1257,27 +1257,7 @@ DoTorchStep: ; 96bd7
 	ret
 	
 .porygon
-	ld a, [wWalkingDirection]
-	cp UP
-	jr z, .upcheck
-	cp DOWN
-	jr z, .downcheck
-	cp LEFT
-	jr z, .leftcheck
-	cp RIGHT
-	jr z, .rightcheck
-.upcheck
-	ld a, [wTileUp]
-	jr .checkcont
-.downcheck
-	ld a, [wTileDown]
-	jr .checkcont
-.leftcheck
-	ld a, [wTileLeft]
-	jr .checkcont
-.rightcheck
-	ld a, [wTileRight]
-.checkcont
+	ld a, [wPlayerStandingTile]
 	cp COLL_TALL_GRASS
 	jr nz, .no
 	
@@ -1542,6 +1522,12 @@ RandomEncounter:: ; 97cc0
 	farcall TryWildEncounter
 	jr nz, .nope
 .ok
+	ld a, [wMapGroup]
+	cp GROUP_FAKE_ROUTE_1
+	jr nz, .normal
+	ld a, BATTLETYPE_GEN_1
+	ld [wBattleType], a
+.normal
 	ld a, BANK(WildBattleScript)
 	ld hl, WildBattleScript
 .done

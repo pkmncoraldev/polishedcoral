@@ -30,14 +30,12 @@ LusterSkyscraperPorygonRoom_MapScriptHeader:
 	signpost 11,  4, SIGNPOST_JUMPTEXT, LusterSkyscraperPorygonRoomServerText
 	signpost  2,  2, SIGNPOST_READ, LusterSkyscraperPorygonRoomComputer
 
-	db 2 ; object events
+	db 1 ; object events
 	person_event SPRITE_PLANK_BRIDGE,  2,  2, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LusterSkyscraperPorygonRoomComputer, EVENT_DONE_PORYGON_ENCOUNTER
-	person_event SPRITE_RED,  2,  2, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LusterSkyscraperPorygonRoomComputer, EVENT_DONE_PORYGON_ENCOUNTER
 
 	
 	const_def 1 ; object constants
 	const PORYGON_ROOM_SCREEN
-	const PORYGON_ROOM_SCREEN_SHINE
 
 
 LusterSkyscraperPorygonRoomComputer:
@@ -49,7 +47,6 @@ LusterSkyscraperPorygonRoomComputer:
 	writetext LusterSkyscraperPorygonRoomComputerPasswordText
 	waitbutton
 	
-	callasm PorygonRoomDoorAsm
 	callasm PorygonRoomCheckPassword
 	iffalse .wrong
 	ifequal 2, .nothing
@@ -164,6 +161,12 @@ LusterSkyscraperPorygonRoomComputer:
 	playsound SFX_WARP_TO
 	special FadeOutPalettes
 	applyonemovement PLAYER, show_person
+	
+	clearevent EVENT_DOUBLE_LANDMARK_SIGN
+	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
+	clearevent EVENT_IN_SHOPPING_DISTRICT
+	clearevent EVENT_IN_BUSINESS_DISTRICT
+	
 	waitsfx
 ;	warp2 UP, FAKE_ROUTE_1, $14, $1d
 ;	scall HandleEventsFly
@@ -199,15 +202,14 @@ LusterSkyscraperPorygonRoomComputer:
 	callasm PorygonRoomInitializeBackupName
 	end
 	
-PorygonRoomDoorAsm:
+PorygonRoomCheckPassword:
 	ld b, $5 ; password
 	ld de, wBackupName
 	farcall _NamingScreen
 	ld hl, wBackupName
 	ld de, DefaultPorygonPassword
-	jp InitName
-	
-PorygonRoomCheckPassword:
+	call InitName
+
 	ld hl, DefaultPorygonPassword
 	ld de, wBackupName
 	ld c, PLAYER_NAME_LENGTH
@@ -251,8 +253,8 @@ BackupPorygonPassword:
 	db "???@"
 	
 SetupPorygonEncounterAsm:
-	ld a, 9
-	ld [wTorchSteps], a
+;	ld a, 9
+;	ld [wTorchSteps], a
 	ld a, SPAWN_FAKE_ROUTE_1
 	ld [wDefaultSpawnpoint], a
 	ret

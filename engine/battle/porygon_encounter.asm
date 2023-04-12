@@ -32,7 +32,7 @@ PorygonPreEncounterMon2::
 	cp 5
 	jr nz, .others
 .first_or_last_time
-	ld de, MUSIC_WILD_BOSS_BATTLE_2
+	ld de, MUSIC_WILD_BATTLE_2
 	call PlayMusic
 	ld hl, QuestionAppearedText
 	call StdBattleTextBox

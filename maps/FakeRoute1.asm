@@ -6,8 +6,7 @@ FakeRoute2_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 1 ; warp events
-	warp_event 20, 29, FAKE_ROUTE_1, 1
+	db 0 ; warp events
 
 	db 4 ; coord events
 	coord_event 18, 24, 0, FakeRoute1ChangeBlocks

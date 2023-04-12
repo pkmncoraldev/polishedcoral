@@ -7361,6 +7361,7 @@ GenerateWildForm:
 	jp PopBCDEHL
 
 WildSpeciesForms:
+	dbw RATTATA,	.RattataForm
 	dbw EXEGGCUTE,	.ExeggcuteForm
 	dbw EXEGGUTOR,	.ExeggcuteForm
 	dbw 0,			.Default
@@ -7368,6 +7369,10 @@ WildSpeciesForms:
 .Default:
 	ld a, PLAIN_FORM
 	ret
+	
+.RattataForm
+	ld hl, RattataLandmarks
+	jr .LandmarkForm
 
 .ExeggcuteForm:
 	ld hl, ExeggcuteLandmarks
@@ -7382,6 +7387,10 @@ WildSpeciesForms:
 
 ExeggcuteLandmarks:
 	db ROUTE_1
+	db -1
+
+RattataLandmarks:
+	db FAKE_ROUTE_1
 	db -1
 
 CheckUnownLetter: ; 3eb75
@@ -9836,6 +9845,8 @@ BattleStartMessage: ; 3fc8b
 
 .NotFishing:
 	cp BATTLETYPE_PORYGON
+	jr z, .pory
+	cp BATTLETYPE_GEN_1
 	jr z, .pory
 	ld hl, PokemonFellFromTreeText
 	cp BATTLETYPE_TREE

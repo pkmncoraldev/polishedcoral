@@ -3617,10 +3617,10 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 	jr nc, .not_first
 	ld c, 40
 	call DelayFrames
-	ld de, MUSIC_NONE
-	call PlayMusic
 	ld hl, BattleText_PorygonEncounterHuh
 	call StdBattleTextBox
+	ld de, MUSIC_NONE
+	call PlayMusic
 .return
 	ld a, $13
 	ld [wKickCounter], a
@@ -3660,6 +3660,7 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 	jr c, .cry_no_anim
 	hlcoord 12, 0
 	lb de, $0, ANIM_MON_SLOW
+	call GenerateWildForm ; for porygon encounter
 	predef AnimateFrontpic
 	jr .skip_cry
 

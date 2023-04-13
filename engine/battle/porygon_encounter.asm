@@ -32,6 +32,8 @@ PorygonPreEncounterMon2::
 	cp 5
 	jr nz, .others
 .first_or_last_time
+	ld c, 50
+	call DelayFrames
 	ld de, MUSIC_WILD_BATTLE_2
 	call PlayMusic
 	ld hl, QuestionAppearedText

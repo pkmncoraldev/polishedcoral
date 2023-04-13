@@ -3625,7 +3625,7 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 	ld a, $13
 	ld [wKickCounter], a
 	ld de, TRANSFORM_SKETCH_MIMIC_SPLASH
-	call Call_PlayBattleAnim
+	call ForcePlayBattleAnim
 	
 	ld c, 60
 	call DelayFrames
@@ -3634,7 +3634,7 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 	ld a, $13
 	ld [wKickCounter], a
 	ld de, TRANSFORM_SKETCH_MIMIC_SPLASH
-	call Call_PlayBattleAnim
+	call ForcePlayBattleAnim
 	jr .cont
 .porygon
 	ld de, MUSIC_NONE
@@ -3642,7 +3642,7 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 	ld a, $0
 	ld [wKickCounter], a
 	ld de, SHARPEN_HOWL_MEDITATE
-	call Call_PlayBattleAnim
+	call ForcePlayBattleAnim
 	jr .return
 .cont
 	call BattleCheckEnemyShininess
@@ -10039,3 +10039,13 @@ _PorygonPreEncounterMon:
 	call ForceEnemySwitch.porygon
 	farcall PorygonPreEncounterMon2
 	jp GiveExperiencePointsAfterCatch.pory_encounter_cont
+	
+ForcePlayBattleAnim:
+	ld a, [wOptions1]
+	push af
+	ld hl, wOptions1
+	set BATTLE_EFFECTS, [hl]
+	call Call_PlayBattleAnim
+	pop af
+	ld [wOptions1], a
+	ret

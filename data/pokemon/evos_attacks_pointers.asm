@@ -254,8 +254,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw MimikyuEvosAttacks
 	dw CursolaEvosAttacks
 	dw WyrdeerEvosAttacks
+	dw ClodsireEvosAttacks
 	dw FarigirafEvosAttacks
-	dw -1
 	dw -1
 	dw EggEvosAttacks
 	
@@ -275,6 +275,7 @@ EvosAttacksPointers:: ; 0x425b1
 	dw ExeggcuteEvosAttacks
 	dw Marowak_AEvosAttacks
 	dw GyaradosEvosAttacks
+	dw Wooper_PEvosAttacks
 	dw Corsola_GEvosAttacks
 	dw CherrimEvosAttacks
 	dw MimikyuEvosAttacks

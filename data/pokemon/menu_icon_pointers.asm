@@ -251,7 +251,7 @@ IconPointers:
 	dw MimikyuIcon
 	dw CursolaIcon
 	dw WyrdeerIcon
+	dw ClodsireIcon
 	dw FarigirafIcon
-	dw EggIcon
 	dw EggIcon
 	dw EggIcon

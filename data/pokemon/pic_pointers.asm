@@ -501,14 +501,10 @@ PicPointers::
 	dba CursolaBackpic
 	dba WyrdeerFrontpic
 	dba WyrdeerBackpic
+	dba ClodsireFrontpic
+	dba ClodsireBackpic
 	dba FarigirafFrontpic
 	dba FarigirafBackpic
-	dba BulbasaurFrontpic
-	dba BulbasaurBackpic
-	dba BulbasaurFrontpic
-	dba BulbasaurBackpic
-	dba BulbasaurFrontpic
-	dba BulbasaurBackpic
 	dba BulbasaurFrontpic
 	dba BulbasaurBackpic
 	dba EggPic

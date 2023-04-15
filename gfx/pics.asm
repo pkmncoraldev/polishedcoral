@@ -685,6 +685,10 @@ CherrimFrontpic:          INCBIN "gfx/pokemon/cherrim/front.2bpp.lz"
 CherrimBackpic:           INCBIN "gfx/pokemon/cherrim/back.2bpp.lz"
 Cherrim_SFrontpic:        INCBIN "gfx/pokemon/cherrim_s/front.2bpp.lz"
 Cherrim_SBackpic:         INCBIN "gfx/pokemon/cherrim_s/back.2bpp.lz"
+Wooper_PFrontpic:         INCBIN "gfx/pokemon/wooper_p/front.2bpp.lz"
+Wooper_PBackpic:          INCBIN "gfx/pokemon/wooper_p/back.2bpp.lz"
+ClodsireFrontpic:         INCBIN "gfx/pokemon/clodsire/front.2bpp.lz"
+ClodsireBackpic:          INCBIN "gfx/pokemon/clodsire/back.2bpp.lz"
 EggPic:                   INCBIN "gfx/pokemon/egg/front.2bpp.lz"
 
 

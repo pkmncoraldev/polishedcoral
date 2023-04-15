@@ -119,7 +119,7 @@ FramesPointers:
 	dw AzumarillFrames
 	dw SudowoodoFrames
 	dw PolitoedFrames
-	dw WooperFrames
+	dw -1 ; see WooperFramesPointers
 	dw QuagsireFrames
 	dw EspeonFrames
 	dw UmbreonFrames
@@ -250,10 +250,8 @@ FramesPointers:
 	dw -1 ; see MimikyuFramesPointers
 	dw CursolaFrames
 	dw WyrdeerFrames
+	dw ClodsireFrames
 	dw FarigirafFrames
-	dw BulbasaurFrames
-	dw BulbasaurFrames
-	dw BulbasaurFrames
 	dw BulbasaurFrames
 	dw EggFrames
 	dw -1 ; unused

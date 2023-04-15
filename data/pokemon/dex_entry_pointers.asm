@@ -251,4 +251,5 @@
 	dw MimikyuPokedexEntry
 	dw CursolaPokedexEntry
 	dw WyrdeerPokedexEntry
+	dw ClodsirePokedexEntry
 	dw FarigirafPokedexEntry

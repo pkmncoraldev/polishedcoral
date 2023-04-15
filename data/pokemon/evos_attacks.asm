@@ -4344,6 +4344,11 @@ WyrdeerEvosAttacks:
 	db 62, MEGAHORN
 	db 0 ; no more level-up moves
 	
+ClodsireEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
 FarigirafEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
@@ -4501,6 +4506,12 @@ Marowak_AEvosAttacks:
 	db 43, SWORDS_DANCE
 	db 49, FLARE_BLITZ
 	db 53, EARTHQUAKE
+	db 0 ; no more level-up moves
+	
+Wooper_PEvosAttacks:
+	db EVOLVE_LEVEL, 20, CLODSIRE
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
 Corsola_GEvosAttacks:

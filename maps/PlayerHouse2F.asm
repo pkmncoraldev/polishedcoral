@@ -59,8 +59,9 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke WYRDEER, 98
-	givepoke CHARMANDER, 35
-	givepoke CHARIZARD, 100
+	givepoke WOOPER, 99
+	givepoke WOOPER, ALOLAN_FORM, 99
+	givepoke CLODSIRE, 99
 
 .items
 	writetext PlayerHouseDebugText6

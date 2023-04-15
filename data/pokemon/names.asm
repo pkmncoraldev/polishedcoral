@@ -250,7 +250,7 @@ PokemonNames::
 	db "MIMIKYU@@@"
 	db "CURSOLA@@@"
 	db "WYRDEER@@@"
+	db "CLODSIRE@@"
 	db "FARIGIRAF@"
-	db "ERROR!!@@@"
 	db "ERROR!!@@@"
 	db "EGG@@@@@@@"

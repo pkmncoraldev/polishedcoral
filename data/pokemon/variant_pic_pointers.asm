@@ -86,6 +86,12 @@ GyaradosPicPointers::
 	dba Gyarados_RGFrontpic
 	dba GyaradosBackpic
 
+WooperPicPointers::
+	dba WooperFrontpic
+	dba WooperBackpic
+	dba Wooper_PFrontpic
+	dba Wooper_PBackpic
+
 CorsolaPicPointers::
 	dba CorsolaFrontpic
 	dba CorsolaBackpic

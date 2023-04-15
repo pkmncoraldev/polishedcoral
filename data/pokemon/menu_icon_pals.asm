@@ -254,9 +254,9 @@ MenuMonIconColors::
 	iconpal BROWN, GRAY ; MIMIKYU
 	iconpal PURPLE, GRAY ; CURSOLA
 	iconpal GRAY, GREEN ; WYRDEER
+	iconpal BROWN, PURPLE ; CLODSIRE
 	iconpal BROWN, RED ; FARIGIRAF
 	iconpal RED, RED ; UNUSED_1
-	iconpal RED, RED ; UNUSED_2
 	iconpal RED, BLUE ; EGG
 
 	iconpal PINK, TEAL ; EXEGGCUTE_A

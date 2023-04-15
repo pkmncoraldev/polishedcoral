@@ -56,6 +56,10 @@ GyaradosBitmasksPointers:
 	dw GyaradosBitmasks
 	dw Pidgey_RGBitmasks
 	
+WooperBitmasksPointers:
+	dw WooperBitmasks
+	dw Wooper_PBitmasks
+	
 CorsolaBitmasksPointers:
 	dw CorsolaBitmasks
 	dw Corsola_GBitmasks

@@ -250,7 +250,7 @@ NewPokedexOrder:
 	db TOXAPEX
 	db MIMIKYU
 	db CURSOLA
+	db CLODSIRE
 	db GIRAFARIG
 	db FARIGIRAF
 	db UNUSED_1
-	db UNUSED_2

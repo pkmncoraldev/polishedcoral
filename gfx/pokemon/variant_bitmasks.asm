@@ -37,6 +37,9 @@ Marowak_ABitmasks: INCLUDE "gfx/pokemon/marowak_a/bitmask.asm"
 
 GyaradosBitmasks:  INCLUDE "gfx/pokemon/gyarados/bitmask.asm"
 
+WooperBitmasks:  INCLUDE "gfx/pokemon/wooper/bitmask.asm"
+Wooper_PBitmasks: INCLUDE "gfx/pokemon/wooper_p/bitmask.asm"
+
 CorsolaBitmasks:  INCLUDE "gfx/pokemon/corsola/bitmask.asm"
 Corsola_GBitmasks: INCLUDE "gfx/pokemon/corsola_g/bitmask.asm"
 

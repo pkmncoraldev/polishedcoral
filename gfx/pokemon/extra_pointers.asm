@@ -119,7 +119,7 @@ AnimationExtraPointers:
 	dw AzumarillAnimationExtra
 	dw SudowoodoAnimationExtra
 	dw PolitoedAnimationExtra
-	dw WooperAnimationExtra
+	dw -1 ; see WooperAnimationExtraPointers
 	dw QuagsireAnimationExtra
 	dw EspeonAnimationExtra
 	dw UmbreonAnimationExtra
@@ -250,7 +250,7 @@ AnimationExtraPointers:
 	dw -1 ; see MimikyuAnimationExtraPointers
 	dw CursolaAnimationExtra
 	dw WyrdeerAnimationExtra
+	dw ClodsireAnimationExtra
 	dw FarigirafAnimationExtra
-	dw BulbasaurAnimationExtra
 	dw BulbasaurAnimationExtra
 	dw EggAnimationExtra

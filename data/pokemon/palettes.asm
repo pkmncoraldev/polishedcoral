@@ -508,10 +508,10 @@ ClefairyPalette:	INCLUDE "gfx/pokemon/clefairy/normal.pal"
 	INCLUDE "gfx/pokemon/cursola/shiny.pal"
 	INCLUDE "gfx/pokemon/wyrdeer/normal.pal"
 	INCLUDE "gfx/pokemon/wyrdeer/shiny.pal"
+	INCLUDE "gfx/pokemon/clodsire/normal.pal"
+	INCLUDE "gfx/pokemon/clodsire/shiny.pal"
 	INCLUDE "gfx/pokemon/farigiraf/normal.pal"
 	INCLUDE "gfx/pokemon/farigiraf/shiny.pal"
-	INCLUDE "gfx/pokemon/egg/normal.pal"	;empty
-	INCLUDE "gfx/pokemon/egg/shiny.pal"		;empty
 	INCLUDE "gfx/pokemon/egg/normal.pal"	;empty
 	INCLUDE "gfx/pokemon/egg/shiny.pal"		;empty
 	INCLUDE "gfx/pokemon/egg/normal.pal"
@@ -549,6 +549,8 @@ ClefairyPalette:	INCLUDE "gfx/pokemon/clefairy/normal.pal"
 	INCLUDE "gfx/pokemon/marowak_a/shiny.pal"
 	INCLUDE "gfx/pokemon/gyarados_rg/normal.pal"
 	INCLUDE "gfx/pokemon/gyarados_rg/normal.pal"
+	INCLUDE "gfx/pokemon/wooper_p/normal.pal"
+	INCLUDE "gfx/pokemon/wooper_p/shiny.pal"
 	INCLUDE "gfx/pokemon/corsola_g/normal.pal"
 	INCLUDE "gfx/pokemon/corsola_g/shiny.pal"
 	INCLUDE "gfx/pokemon/cherrim_s/normal.pal"

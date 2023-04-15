@@ -250,9 +250,9 @@ EvolutionMoves::
 	db NO_MOVE                              ; MIMIKYU
 	db NO_MOVE                              ; CURSOLA
 	db PSYSHOCK                             ; WYRDEER
+	db AMNESIA                              ; CLODSIRE
 	db NO_MOVE                              ; FARIGIRAF
 	db NO_MOVE	                            ; UNUSED_1
-	db NO_MOVE                              ; UNUSED_2
 	db NO_MOVE                              ; EGG
 	
 	db NO_MOVE                              ; PIDGEY_RG
@@ -271,4 +271,5 @@ EvolutionMoves::
 	db NO_MOVE                              ; EXEGGUTOR_RG
 	db SHADOW_BONE                          ; MAROWAK_A
 	db NO_MOVE                              ; GYARADOS_RG
+	db NO_MOVE                              ; WOOPER_P
 	db NO_MOVE                              ; CORSOLA_G

@@ -119,7 +119,7 @@ BitmasksPointers:
 	dw AzumarillBitmasks
 	dw SudowoodoBitmasks
 	dw PolitoedBitmasks
-	dw WooperBitmasks
+	dw -1 ; see WooperBitmasksPointers
 	dw QuagsireBitmasks
 	dw EspeonBitmasks
 	dw UmbreonBitmasks
@@ -250,7 +250,7 @@ BitmasksPointers:
 	dw -1 ; see MimikyuBitmasksPointers
 	dw CursolaBitmasks
 	dw WyrdeerBitmasks
+	dw ClodsireBitmasks
 	dw FarigirafBitmasks
-	dw BulbasaurBitmasks
 	dw BulbasaurBitmasks
 	dw EggBitmasks

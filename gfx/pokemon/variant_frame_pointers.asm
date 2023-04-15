@@ -56,6 +56,10 @@ GyaradosFramesPointers:
 	dw GyaradosFrames
 	dw Pidgey_RGFrames
 	
+WooperFramesPointers:
+	dw WooperFrames
+	dw Wooper_PFrames
+	
 CorsolaFramesPointers:
 	dw CorsolaFrames
 	dw Corsola_GFrames

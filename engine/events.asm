@@ -1257,6 +1257,9 @@ DoTorchStep: ; 96bd7
 	ret
 	
 .porygon
+	ld a, [wMapNumber]
+	cp MAP_FAKE_ROUTE_1
+	jp z, .no
 	ld a, [wPlayerStandingTile]
 	cp COLL_TALL_GRASS
 	jr nz, .no
@@ -1527,6 +1530,13 @@ RandomEncounter:: ; 97cc0
 	jr nz, .normal
 	ld a, BATTLETYPE_GEN_1
 	ld [wBattleType], a
+	
+	ld a, [wTorchSteps]
+	cp 4
+	jr nc, .normal
+	ld a, 4
+	ld [wTorchSteps], a
+	
 .normal
 	ld a, BANK(WildBattleScript)
 	ld hl, WildBattleScript

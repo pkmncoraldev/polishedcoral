@@ -4,7 +4,8 @@ FakeRoute2_MapScriptHeader:
 	scene_script FakeRoute1Trigger0
 	scene_script FakeRoute1Trigger1
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, FakeRoute1Callback
 
 	db 0 ; warp events
 
@@ -18,8 +19,8 @@ FakeRoute2_MapScriptHeader:
 	signpost 30, 19, SIGNPOST_IFNOTSET, FakeRoute1DoorSign
 	signpost 30, 20, SIGNPOST_IFNOTSET, FakeRoute1DoorSign
 	signpost 26, 21, SIGNPOST_JUMPTEXT, FakeRoute1SignText
-	signpost 11, 22, SIGNPOST_JUMPTEXT, FakeRoute1TreeText
-	signpost 17, 15, SIGNPOST_JUMPTEXT, FakeRoute1TreeText
+	signpost 11, 22, SIGNPOST_JUMPTEXT, FakeRoute1DoorSignText
+	signpost 17, 15, SIGNPOST_JUMPTEXT, FakeRoute1DoorSignText
 
 	db 0 ; object events
 
@@ -29,6 +30,13 @@ FakeRoute1Trigger0:
 	
 FakeRoute1Trigger1:
 	end
+	
+FakeRoute1Callback:
+	checkscene
+	ifequal $0, .end
+	ifequal $1, FakeRoute1ChangeBlocks
+.end
+	return
 	
 FakeRoute1ChangeBlocks:
 	changeblock $12, $1c, $a0
@@ -62,8 +70,4 @@ FakeRoute1DoorSignText:
 	
 	para "Better keep"
 	line "moving…"
-	done
-	
-FakeRoute1TreeText:
-	text "Can't be cut…"
 	done

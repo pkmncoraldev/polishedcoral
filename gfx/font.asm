@@ -157,7 +157,14 @@ _LoadFontsBattleExtra:: ; fb4be
 	jp LoadFrame1bpp
 
 LoadFrame:: ; fb4cc
+	ld a, [wMapGroup]
+	cp GROUP_FAKE_ROUTE_1
+	jr nz, .normal
+	ld a, 8
+	jr .cont
+.normal
 	ld a, [wTextBoxFrame]
+.cont
 	ld bc, TILES_PER_FRAME * LEN_2BPP_TILE
 	ld hl, Frames
 	rst AddNTimes
@@ -172,7 +179,14 @@ LoadFrame:: ; fb4cc
 	jp Get2bpp
 
 LoadFrame1bpp:: ; fb4cc
+	ld a, [wMapGroup]
+	cp GROUP_FAKE_ROUTE_1
+	jr nz, .normal
+	ld a, 8
+	jr .cont
+.normal
 	ld a, [wTextBoxFrame]
+.cont
 	ld bc, TILES_PER_FRAME * LEN_1BPP_TILE
 	ld hl, FramesBattle
 	rst AddNTimes

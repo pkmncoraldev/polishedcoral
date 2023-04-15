@@ -8,11 +8,11 @@ FramesPointers:
 	dw SquirtleFrames
 	dw WartortleFrames
 	dw BlastoiseFrames
-	dw PidgeyFrames
+	dw -1 ; see PidgeyFramesPointers
 	dw PidgeottoFrames
 	dw PidgeotFrames
 	dw -1 ; see RattataFramesPointers
-	dw RaticateFrames
+	dw -1 ; see  RaticateFramesPointers
 	dw PikachuFrames
 	dw -1 ; see RaichuFramesPointers
 	dw -1 ; see SandshrewFramesPointers
@@ -80,7 +80,7 @@ FramesPointers:
 	dw MagmarFrames
 	dw TaurosFrames
 	dw MagikarpFrames
-	dw GyaradosFrames
+	dw -1 ; see  GyaradosFramesPointers
 	dw LaprasFrames
 	dw DittoFrames
 	dw EeveeFrames

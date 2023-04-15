@@ -1,5 +1,7 @@
 VariantPicPointerTable:
+	dbba PIDGEY, PidgeyPicPointers
 	dbba RATTATA, RattataPicPointers
+	dbba RATICATE, RaticatePicPointers
 	dbba RAICHU, RaichuPicPointers
 	dbba SANDSHREW, SandshrewPicPointers
 	dbba SANDSLASH, SandslashPicPointers
@@ -10,6 +12,7 @@ VariantPicPointerTable:
 	dbba EXEGGCUTE, ExeggcutePicPointers
 	dbba EXEGGUTOR, ExeggutorPicPointers
 	dbba MAROWAK, MarowakPicPointers
+	dbba GYARADOS, GyaradosPicPointers
 	dbba CORSOLA, CorsolaPicPointers
 	dbba CHERRIM, CherrimPicPointers
 	dbba MIMIKYU, MimikyuPicPointers

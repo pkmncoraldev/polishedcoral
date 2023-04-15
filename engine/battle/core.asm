@@ -7362,19 +7362,40 @@ GenerateWildForm:
 	jp PopBCDEHL
 
 WildSpeciesForms:
-	dbw RATTATA,	.RattataForm
+	dbw PIDGEY,		.PidgeyForm
+	dbw RATTATA,	.PidgeyForm
+	dbw RATICATE,	.PidgeyForm
+	dbw RAICHU,		.ExeggcuteForm
 	dbw EXEGGCUTE,	.ExeggcuteForm
 	dbw EXEGGUTOR,	.ExeggcuteForm
+	dbw GYARADOS,	.PidgeyForm
 	dbw 0,			.Default
 
+.CheckGen1: ; used for mons that have an alt for in addition to a gen 1 form
+	ld a, [wTempEnemyMonSpecies]
+	ld hl, Gen1Form3Mons
+	ld de, 1
+	call IsInArray
+	jr nc, .Default
+	ld a, [wCurrentLandmark]
+	cp FAKE_ROUTE_1
+	jr nz, .Default
+	ld a, GEN_1_FORM_2
+	ret
 .Default:
 	ld a, PLAIN_FORM
 	ret
 	
-.RattataForm
-	ld hl, RattataLandmarks
-	jr .LandmarkForm
+.Gen1Form
+	ld a, [wCurrentLandmark]
+	cp FAKE_ROUTE_1
+	ret nz
+	ld a, 3 ; raichu gen 1 form
+	ret
 
+.PidgeyForm
+	ld hl, FakeRoute1Landmarks
+	jr .LandmarkForm
 .ExeggcuteForm:
 	ld hl, ExeggcuteLandmarks
 	;fallthrough
@@ -7382,66 +7403,71 @@ WildSpeciesForms:
 	ld a, [wCurrentLandmark]
 	ld de, 1
 	call IsInArray
-	jr nc, .Default
-	ld a, ALOLAN_FORM
+	jr nc, .CheckGen1
+	ld a, ALOLAN_FORM ; most alt forms
 	ret
 
 ExeggcuteLandmarks:
 	db ROUTE_1
 	db -1
-
-RattataLandmarks:
+	
+FakeRoute1Landmarks:
 	db FAKE_ROUTE_1
 	db -1
+	
+Gen1Form3Mons:
+	db RAICHU
+	db EXEGGUTOR
+	db -1
 
-CheckUnownLetter: ; 3eb75
+;CheckUnownLetter: ; 3eb75
 ; Return carry if the Unown letter hasn't been unlocked yet
 
-	ld a, [wUnlockedUnowns]
-	ld c, a
-	ld de, 0
+;	ld a, [wUnlockedUnowns]
+;	ld c, a
+;	ld de, 0
 
-.loop
+;.loop
 
 ; Don't check this set unless it's been unlocked
-	srl c
-	jr nc, .next
+;	srl c
+;	jr nc, .next
 
 ; Is our letter in the set?
-	ld hl, UnlockedUnownLetterSets
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
+;	ld hl, UnlockedUnownLetterSets
+;	add hl, de
+;	ld a, [hli]
+;	ld h, [hl]
+;	ld l, a
 
-	push de
-	ld a, [wCurForm]
-	ld de, 1
-	push bc
-	call IsInArray
-	pop bc
-	pop de
+;	push de
+;	ld a, [wCurForm]
+;	ld de, 1
+;	push bc
+;	call IsInArray
+;	pop bc
+;	pop de
 
-	jr c, .match
+;	jr c, .match
 
-.next
+;.next
 ; Make sure we haven't gone past the end of the table
-	inc e
-	inc e
-	ld a, e
-	cp UnlockedUnownLetterSets.End - UnlockedUnownLetterSets
-	jr c, .loop
+;	inc e
+;	inc e
+;	ld a, e
+;	cp UnlockedUnownLetterSets.End - UnlockedUnownLetterSets
+;	jr c, .loop
 
 ; Hasn't been unlocked, or the letter is invalid
-	scf
-	ret
+;	scf
+;	ret
 
-.match
+;.match
 ; Valid letter
-	and a
-	ret
+;	and a
+;	ret
 
-INCLUDE "data/wild/unlocked_unowns.asm"
+;INCLUDE "data/wild/unlocked_unowns.asm"
 
 
 FinalPkmnSlideInEnemyMonFrontpic:
@@ -10037,6 +10063,8 @@ _PorygonPreEncounterMon:
 	call GetCGBLayout
 	call SetPalettes
 	call ForceEnemySwitch.porygon
+	ld c, 50
+	call DelayFrames
 	farcall PorygonPreEncounterMon2
 	jp GiveExperiencePointsAfterCatch.pory_encounter_cont
 	

@@ -1,5 +1,9 @@
+PidgeyBitmasks:  INCLUDE "gfx/pokemon/pidgey/bitmask.asm"
+Pidgey_RGBitmasks: INCLUDE "gfx/pokemon/pidgey_rg/bitmask.asm"
+
 RattataBitmasks:  INCLUDE "gfx/pokemon/rattata/bitmask.asm"
-Rattata_RGBitmasks: INCLUDE "gfx/pokemon/rattata_rg/bitmask.asm"
+
+RaticateBitmasks:  INCLUDE "gfx/pokemon/raticate/bitmask.asm"
 
 RaichuBitmasks:  INCLUDE "gfx/pokemon/raichu/bitmask.asm"
 Raichu_ABitmasks: INCLUDE "gfx/pokemon/raichu_a/bitmask.asm"
@@ -30,6 +34,8 @@ Exeggutor_ABitmasks: INCLUDE "gfx/pokemon/exeggutor_a/bitmask.asm"
 
 MarowakBitmasks:  INCLUDE "gfx/pokemon/marowak/bitmask.asm"
 Marowak_ABitmasks: INCLUDE "gfx/pokemon/marowak_a/bitmask.asm"
+
+GyaradosBitmasks:  INCLUDE "gfx/pokemon/gyarados/bitmask.asm"
 
 CorsolaBitmasks:  INCLUDE "gfx/pokemon/corsola/bitmask.asm"
 Corsola_GBitmasks: INCLUDE "gfx/pokemon/corsola_g/bitmask.asm"

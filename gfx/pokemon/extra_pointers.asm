@@ -8,11 +8,11 @@ AnimationExtraPointers:
 	dw SquirtleAnimationExtra
 	dw WartortleAnimationExtra
 	dw BlastoiseAnimationExtra
-	dw PidgeyAnimationExtra
+	dw -1 ; see PidgeyAnimationExtraPointers
 	dw PidgeottoAnimationExtra
 	dw PidgeotAnimationExtra
 	dw -1 ; see RattataAnimationExtraPointers
-	dw RaticateAnimationExtra
+	dw -1 ; see  RaticateAnimationExtraPointers
 	dw PikachuAnimationExtra
 	dw -1 ; see RaichuAnimationExtraPointers
 	dw -1 ; see SandshrewAnimationExtraPointers
@@ -80,7 +80,7 @@ AnimationExtraPointers:
 	dw MagmarAnimationExtra
 	dw TaurosAnimationExtra
 	dw MagikarpAnimationExtra
-	dw GyaradosAnimationExtra
+	dw -1 ; see  GyaradosAnimationExtraPointers
 	dw LaprasAnimationExtra
 	dw DittoAnimationExtra
 	dw EeveeAnimationExtra

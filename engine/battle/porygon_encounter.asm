@@ -32,8 +32,7 @@ PorygonPreEncounterMon2::
 	cp 5
 	jr nz, .others
 .first_or_last_time
-	ld c, 50
-	call DelayFrames
+
 	ld de, MUSIC_WILD_BATTLE_2
 	call PlayMusic
 	ld hl, QuestionAppearedText
@@ -92,31 +91,31 @@ DeterminePorygonEncounterMon:
 	cp 4
 	jr z, .mon5
 .mon2
-	ld a, RATTATA
+	ld a, RATICATE
 	ld [wTempEnemyMonSpecies], a
 	ld [wCurPartySpecies], a
-	ld a, 30
+	ld a, 36
 	ld [wCurPartyLevel], a
 	ret
 .mon3
-	ld a, RATTATA
+	ld a, RAICHU
+	ld [wTempEnemyMonSpecies], a
+	ld [wCurPartySpecies], a
+	ld a, 36
+	ld [wCurPartyLevel], a
+	ret
+.mon4
+	ld a, EXEGGUTOR
 	ld [wTempEnemyMonSpecies], a
 	ld [wCurPartySpecies], a
 	ld a, 35
 	ld [wCurPartyLevel], a
 	ret
-.mon4
-	ld a, RATTATA
-	ld [wTempEnemyMonSpecies], a
-	ld [wCurPartySpecies], a
-	ld a, 40
-	ld [wCurPartyLevel], a
-	ret
 .mon5
-	ld a, RATTATA
+	ld a, GYARADOS
 	ld [wTempEnemyMonSpecies], a
 	ld [wCurPartySpecies], a
-	ld a, 45
+	ld a, 35
 	ld [wCurPartyLevel], a
 	ret
 

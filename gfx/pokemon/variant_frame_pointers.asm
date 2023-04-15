@@ -1,10 +1,19 @@
+PidgeyFramesPointers:
+	dw PidgeyFrames
+	dw Pidgey_RGFrames
+
 RattataFramesPointers:
 	dw RattataFrames
-	dw Rattata_RGFrames
+	dw Pidgey_RGFrames
+	
+RaticateFramesPointers:
+	dw RaticateFrames
+	dw Pidgey_RGFrames
 
 RaichuFramesPointers:
 	dw RaichuFrames
 	dw Raichu_AFrames
+	dw Pidgey_RGFrames
 	
 SandshrewFramesPointers:
 	dw SandshrewFrames
@@ -37,10 +46,15 @@ ExeggcuteFramesPointers:
 ExeggutorFramesPointers:
 	dw ExeggutorFrames
 	dw Exeggutor_AFrames
+	dw Pidgey_RGFrames
 	
 MarowakFramesPointers:
 	dw MarowakFrames
 	dw Marowak_AFrames
+	
+GyaradosFramesPointers:
+	dw GyaradosFrames
+	dw Pidgey_RGFrames
 	
 CorsolaFramesPointers:
 	dw CorsolaFrames

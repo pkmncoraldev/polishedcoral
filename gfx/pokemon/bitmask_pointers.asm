@@ -8,11 +8,11 @@ BitmasksPointers:
 	dw SquirtleBitmasks
 	dw WartortleBitmasks
 	dw BlastoiseBitmasks
-	dw PidgeyBitmasks
+	dw -1 ; see PidgeyBitmasksPointers
 	dw PidgeottoBitmasks
 	dw PidgeotBitmasks
 	dw -1 ; see RattataBitmasksPointers
-	dw RaticateBitmasks
+	dw -1 ; see  RaticateBitmasksPointers
 	dw PikachuBitmasks
 	dw -1 ; see RaichuBitmasksPointers
 	dw -1 ; see SandshrewBitmasksPointers
@@ -80,7 +80,7 @@ BitmasksPointers:
 	dw MagmarBitmasks
 	dw TaurosBitmasks
 	dw MagikarpBitmasks
-	dw GyaradosBitmasks
+	dw -1 ; see  GyaradosBitmasksPointers
 	dw LaprasBitmasks
 	dw DittoBitmasks
 	dw EeveeBitmasks

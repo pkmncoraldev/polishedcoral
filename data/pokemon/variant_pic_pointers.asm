@@ -1,14 +1,28 @@
+PidgeyPicPointers::
+	dba PidgeyFrontpic
+	dba PidgeyBackpic
+	dba Pidgey_RGFrontpic
+	dba PidgeyBackpic
+
 RattataPicPointers::
 	dba RattataFrontpic
 	dba RattataBackpic
 	dba Rattata_RGFrontpic
 	dba RattataBackpic
+	
+RaticatePicPointers::
+	dba RaticateFrontpic
+	dba RaticateBackpic
+	dba Raticate_RGFrontpic
+	dba RaticateBackpic
 
 RaichuPicPointers::
 	dba RaichuFrontpic
 	dba RaichuBackpic
 	dba Raichu_AFrontpic
 	dba Raichu_ABackpic
+	dba Raichu_RGFrontpic
+	dba RaichuBackpic
 
 SandshrewPicPointers::
 	dba SandshrewFrontpic
@@ -57,12 +71,20 @@ ExeggutorPicPointers::
 	dba ExeggutorBackpic
 	dba Exeggutor_AFrontpic
 	dba Exeggutor_ABackpic
+	dba Exeggutor_RGFrontpic
+	dba ExeggutorBackpic
 	
 MarowakPicPointers::
 	dba MarowakFrontpic
 	dba MarowakBackpic
 	dba Marowak_AFrontpic
 	dba Marowak_ABackpic
+
+GyaradosPicPointers::
+	dba GyaradosFrontpic
+	dba GyaradosBackpic
+	dba Gyarados_RGFrontpic
+	dba GyaradosBackpic
 
 CorsolaPicPointers::
 	dba CorsolaFrontpic

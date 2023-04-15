@@ -1600,54 +1600,54 @@
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
 	db 2, RATTATA		;30%
-	db 2, RATTATA		;30%
+	db 2, PIDGEY		;30%
 	db 2, RATTATA		;20%
-	db 2, RATTATA		;10%
-	db 2, RATTATA		;5%
-	db 2, RATTATA		;4%
-	db 2, RATTATA		;1%
+	db 2, PIDGEY		;10%
+	db 2, PIDGEY		;5%
+	db 2, PIDGEY		;4%
+	db 2, PIDGEY		;1%
 	; day
 	db 2, RATTATA		;30%
-	db 2, RATTATA		;30%
+	db 2, PIDGEY		;30%
 	db 2, RATTATA		;20%
-	db 2, RATTATA		;10%
-	db 2, RATTATA		;5%
-	db 2, RATTATA		;4%
-	db 2, RATTATA		;1%
+	db 2, PIDGEY		;10%
+	db 2, PIDGEY		;5%
+	db 2, PIDGEY		;4%
+	db 2, PIDGEY		;1%
 	; nite
 	db 2, RATTATA		;30%
-	db 2, RATTATA		;30%
+	db 2, PIDGEY		;30%
 	db 2, RATTATA		;20%
-	db 2, RATTATA		;10%
-	db 2, RATTATA		;5%
-	db 2, RATTATA		;4%
-	db 2, RATTATA		;1%
+	db 2, PIDGEY		;10%
+	db 2, PIDGEY		;5%
+	db 2, PIDGEY		;4%
+	db 2, PIDGEY		;1%
 	
 	map_id FAKE_ROUTE_2
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
 	db 2, RATTATA		;30%
-	db 2, RATTATA		;30%
+	db 2, PIDGEY		;30%
 	db 2, RATTATA		;20%
-	db 2, RATTATA		;10%
-	db 2, RATTATA		;5%
-	db 2, RATTATA		;4%
-	db 2, RATTATA		;1%
+	db 2, PIDGEY		;10%
+	db 2, PIDGEY		;5%
+	db 2, PIDGEY		;4%
+	db 2, PIDGEY		;1%
 	; day
 	db 2, RATTATA		;30%
-	db 2, RATTATA		;30%
+	db 2, PIDGEY		;30%
 	db 2, RATTATA		;20%
-	db 2, RATTATA		;10%
-	db 2, RATTATA		;5%
-	db 2, RATTATA		;4%
-	db 2, RATTATA		;1%
+	db 2, PIDGEY		;10%
+	db 2, PIDGEY		;5%
+	db 2, PIDGEY		;4%
+	db 2, PIDGEY		;1%
 	; nite
 	db 2, RATTATA		;30%
-	db 2, RATTATA		;30%
+	db 2, PIDGEY		;30%
 	db 2, RATTATA		;20%
-	db 2, RATTATA		;10%
-	db 2, RATTATA		;5%
-	db 2, RATTATA		;4%
-	db 2, RATTATA		;1%
+	db 2, PIDGEY		;10%
+	db 2, PIDGEY		;5%
+	db 2, PIDGEY		;4%
+	db 2, PIDGEY		;1%
 	
 	db -1 ; end

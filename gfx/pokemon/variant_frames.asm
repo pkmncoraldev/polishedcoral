@@ -1,6 +1,12 @@
+PidgeysFrames:
+PidgeyFrames:  INCLUDE "gfx/pokemon/pidgey/frames.asm"
+Pidgey_RGFrames: INCLUDE "gfx/pokemon/pidgey_rg/frames.asm"
+
 RattatasFrames:
 RattataFrames:  INCLUDE "gfx/pokemon/rattata/frames.asm"
-Rattata_RGFrames: INCLUDE "gfx/pokemon/rattata_rg/frames.asm"
+
+RaticatesFrames:
+RaticateFrames:  INCLUDE "gfx/pokemon/raticate/frames.asm"
 
 RaichusFrames:
 RaichuFrames:  INCLUDE "gfx/pokemon/raichu/frames.asm"
@@ -41,6 +47,9 @@ Exeggutor_AFrames: INCLUDE "gfx/pokemon/exeggutor_a/frames.asm"
 MarowaksFrames:
 MarowakFrames:  INCLUDE "gfx/pokemon/marowak/frames.asm"
 Marowak_AFrames: INCLUDE "gfx/pokemon/marowak_a/frames.asm"
+
+GyaradossFrames:
+GyaradosFrames:  INCLUDE "gfx/pokemon/gyarados/frames.asm"
 
 CorsolasFrames:
 CorsolaFrames:  INCLUDE "gfx/pokemon/corsola/frames.asm"

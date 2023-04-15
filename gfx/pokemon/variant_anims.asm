@@ -1,6 +1,12 @@
+PidgeyAnimations:
+PidgeyAnimation:  INCLUDE "gfx/pokemon/pidgey/anim0.asm"
+Pidgey_RGAnimation: INCLUDE "gfx/pokemon/pidgey_rg/anim0.asm"
+
 RattataAnimations:
 RattataAnimation:  INCLUDE "gfx/pokemon/rattata/anim0.asm"
-Rattata_RGAnimation: INCLUDE "gfx/pokemon/rattata_rg/anim0.asm"
+
+RaticateAnimations:
+RaticateAnimation:  INCLUDE "gfx/pokemon/raticate/anim0.asm"
 
 RaichuAnimations:
 RaichuAnimation:  INCLUDE "gfx/pokemon/raichu/anim0.asm"
@@ -41,6 +47,9 @@ Exeggutor_AAnimation: INCLUDE "gfx/pokemon/exeggutor_a/anim0.asm"
 MarowakAnimations:
 MarowakAnimation:  INCLUDE "gfx/pokemon/marowak/anim0.asm"
 Marowak_AAnimation: INCLUDE "gfx/pokemon/marowak_a/anim0.asm"
+
+GyaradosAnimations:
+GyaradosAnimation:  INCLUDE "gfx/pokemon/gyarados/anim0.asm"
 
 CorsolaAnimations:
 CorsolaAnimation:  INCLUDE "gfx/pokemon/corsola/anim0.asm"

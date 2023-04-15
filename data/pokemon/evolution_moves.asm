@@ -255,7 +255,11 @@ EvolutionMoves::
 	db NO_MOVE                              ; UNUSED_2
 	db NO_MOVE                              ; EGG
 	
+	db NO_MOVE                              ; PIDGEY_RG
+	db NO_MOVE                              ; RATTATA_RG
+	db NO_MOVE                              ; RATICATE_RG
 	db PSYCHIC_M                            ; RAICHU_A
+	db NO_MOVE                              ; RAICHU_RG
 	db NO_MOVE                              ; SANDSHREW_A
 	db NO_MOVE                              ; SANDSLASH_A
 	db NO_MOVE                              ; MEOWTH_A
@@ -264,5 +268,7 @@ EvolutionMoves::
 	db NO_MOVE                              ; MUK_A
 	db NO_MOVE                              ; EXEGGCUTE_A
 	db DRAGONHAMMER                         ; EXEGGUTOR_A
+	db NO_MOVE                              ; EXEGGUTOR_RG
 	db SHADOW_BONE                          ; MAROWAK_A
+	db NO_MOVE                              ; GYARADOS_RG
 	db NO_MOVE                              ; CORSOLA_G

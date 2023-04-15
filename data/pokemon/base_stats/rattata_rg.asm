@@ -1,0 +1,23 @@
+	db  30,  56,  35,  72,  25,  25
+	;   hp  atk  def  spd  sat  sdf
+
+	db NORMAL, NORMAL
+	db 255 ; catch rate
+	db 57 ; base exp
+	db NO_ITEM ; item 1
+	db NO_ITEM ; item 2
+	dn GENDERLESS, 2 ; gender, step cycles to hatch
+	dn 5, 5 ; frontpic dimensions
+	db NO_ABILITY ; ability 1
+	db NO_ABILITY ; ability 2
+	db NO_ABILITY ; hidden ability
+	db MEDIUM_FAST ; growth rate
+	dn FIELD, FIELD ; egg groups
+
+	; ev_yield
+	ev_yield   0,   0,   0,   1,   0,   0
+	;         hp, atk, def, spd, sat, sdf
+
+	; tmhm
+	tmhm ROCK_SMASH, METAL_CLAW, CUT, FALSE_SWIPE, RAIN_DANCE, CURSE, SUNNY_DAY, WORK_UP_GROWTH, SUBSTITUTE, PROTECT, THUNDER, BLIZZARD
+	; end

@@ -259,7 +259,11 @@ EvosAttacksPointers:: ; 0x425b1
 	dw -1
 	dw EggEvosAttacks
 	
+	dw PidgeyEvosAttacks
+	dw RattataEvosAttacks
+	dw RaticateEvosAttacks
 	dw Raichu_AEvosAttacks
+	dw RaichuEvosAttacks
 	dw Sandshrew_AEvosAttacks
 	dw Sandslash_AEvosAttacks
 	dw Meowth_AEvosAttacks
@@ -268,7 +272,9 @@ EvosAttacksPointers:: ; 0x425b1
 	dw Muk_AEvosAttacks
 	dw ExeggcuteEvosAttacks
 	dw Exeggutor_AEvosAttacks
+	dw ExeggcuteEvosAttacks
 	dw Marowak_AEvosAttacks
+	dw GyaradosEvosAttacks
 	dw Corsola_GEvosAttacks
 	dw CherrimEvosAttacks
 	dw MimikyuEvosAttacks

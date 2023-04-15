@@ -1,10 +1,19 @@
+PidgeyAnimationPointers:
+	dw PidgeyAnimation
+	dw Pidgey_RGAnimation
+
 RattataAnimationPointers:
 	dw RattataAnimation
-	dw Rattata_RGAnimation
+	dw Pidgey_RGAnimation
+
+RaticateAnimationPointers:
+	dw RaticateAnimation
+	dw Pidgey_RGAnimation
 
 RaichuAnimationPointers:
 	dw RaichuAnimation
 	dw Raichu_AAnimation
+	dw Pidgey_RGAnimation
 
 SandshrewAnimationPointers:
 	dw SandshrewAnimation
@@ -33,14 +42,20 @@ MukAnimationPointers:
 ExeggcuteAnimationPointers:
 	dw ExeggcuteAnimation
 	dw Exeggcute_AAnimation
+	dw Pidgey_RGAnimation
 
 ExeggutorAnimationPointers:
 	dw ExeggutorAnimation
 	dw Exeggutor_AAnimation
+	dw Pidgey_RGAnimation
 	
 MarowakAnimationPointers:
 	dw MarowakAnimation
 	dw Marowak_AAnimation
+	
+GyaradosAnimationPointers:
+	dw GyaradosAnimation
+	dw Pidgey_RGAnimation
 	
 CorsolaAnimationPointers:
 	dw CorsolaAnimation

@@ -1,10 +1,19 @@
+PidgeyBitmasksPointers:
+	dw PidgeyBitmasks
+	dw Pidgey_RGBitmasks
+
 RattataBitmasksPointers:
 	dw RattataBitmasks
-	dw Rattata_RGBitmasks
+	dw Pidgey_RGBitmasks
+	
+RaticateBitmasksPointers:
+	dw RaticateBitmasks
+	dw Pidgey_RGBitmasks
 
 RaichuBitmasksPointers:
 	dw RaichuBitmasks
 	dw Raichu_ABitmasks
+	dw Pidgey_RGBitmasks
 	
 SandshrewBitmasksPointers:
 	dw SandshrewBitmasks
@@ -33,6 +42,7 @@ MukBitmasksPointers:
 ExeggcuteBitmasksPointers:
 	dw ExeggcuteBitmasks
 	dw Exeggcute_ABitmasks
+	dw Pidgey_RGBitmasks
 
 ExeggutorBitmasksPointers:
 	dw ExeggutorBitmasks
@@ -41,6 +51,10 @@ ExeggutorBitmasksPointers:
 MarowakBitmasksPointers:
 	dw MarowakBitmasks
 	dw Marowak_ABitmasks
+	
+GyaradosBitmasksPointers:
+	dw GyaradosBitmasks
+	dw Pidgey_RGBitmasks
 	
 CorsolaBitmasksPointers:
 	dw CorsolaBitmasks

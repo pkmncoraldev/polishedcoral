@@ -1252,10 +1252,10 @@ GetGenderRatio::
 .Function:
 	push hl
 	push bc
+	call GetSpeciesAndFormIndex
+	dec bc
 	ld hl, BASEMON_GENDER
-	ld b, 0
 	ld a, BASEMON_STRUCT_LENGTH
-	dec c
 	rst AddNTimes
 	pop bc
 	ld a, [hl]

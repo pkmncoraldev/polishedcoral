@@ -73,6 +73,9 @@ BugCatchingContestBattleScript:: ; 0x135eb
 	text_jump UnknownText_0x1bd2e7
 	db "@"
 
+TempleTimerOverScript:: ; 0x135f8
+	jumpstd templetimerend
+
 BugCatchingContestOverScript:: ; 0x135f8
 	playsound SFX_ELEVATOR_END
 	opentext

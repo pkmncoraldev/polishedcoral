@@ -482,7 +482,7 @@ CheckTimeEvents: ; 9693a
 	jr z, .do_daily
 
 	farcall CheckBugContestTimer
-	jr c, .end_bug_contest
+	jr c, .end_timer_event
 	xor a
 	ret
 
@@ -499,6 +499,16 @@ CheckTimeEvents: ; 9693a
 .ranch_times_up
 	ld a, BANK(RanchRideRaceTimesUp)
 	ld hl, RanchRideRaceTimesUp
+	call CallScript
+	scf
+	ret
+
+.end_timer_event
+	ld a, [wMapGroup]
+	cp GROUP_DESERT_TEMPLE_1
+	jr nz, .end_bug_contest
+	ld a, BANK(TempleTimerOverScript)
+	ld hl, TempleTimerOverScript
 	call CallScript
 	scf
 	ret
@@ -1646,7 +1656,11 @@ TryWildEncounter_BugContest: ; 97d64
 	cp COLL_LONG_GRASS
 	ld b, 40 percent
 	jr z, .ok
+	cp COLL_TALL_GRASS
 	ld b, 20 percent
+	jr z, .ok
+	xor a
+	ret
 
 .ok
 	farcall ApplyMusicEffectOnEncounterRate

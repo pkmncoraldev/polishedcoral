@@ -685,3 +685,6 @@ FakeRoute1_BlockData:
 FakeRoute2_BlockData:
 	INCBIN "maps/FakeRoute2.ablk.lz"
 	
+DesertTemple1_BlockData:
+	INCBIN "maps/DesertTemple1.ablk.lz"
+	

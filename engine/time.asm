@@ -173,6 +173,15 @@ StartRanchRaceTimer: ; 11490
 	ld hl, wBugContestStartTime
 	call CopyDayHourMinSecToHL
 	ret
+	
+StartTempleTimer::
+	xor a
+	ld [wBugContestMinsRemaining], a
+	ld a, 5
+	ld [wBugContestSecsRemaining], a
+	call UpdateTime
+	ld hl, wBugContestStartTime
+	jp CopyDayHourMinSecToHL
 
 CheckBugContestTimer:: ; 114a4 (4:54a4)
 	ld hl, wBugContestStartTime

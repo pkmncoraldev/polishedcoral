@@ -64,3 +64,4 @@
 	enum deadlamp
 	enum litlamp
 	enum sunflower
+	enum templetimerend

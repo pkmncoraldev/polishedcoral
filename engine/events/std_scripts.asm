@@ -64,6 +64,7 @@ StdScripts::
 	dba DeadLampScript
 	dba LitLampScript
 	dba SunflowerScript
+	dba TempleTimerEndScript
 
 PokeCenterNurseScript:
 	opentext
@@ -353,6 +354,12 @@ GoldenrodRocketsScript:
 	end
 
 RadioTowerRocketsScript:
+	end
+
+TempleTimerEndScript:
+	special ClearBGPalettes
+	clearflag ENGINE_BUG_CONTEST_TIMER
+	warp DESERT_TEMPLE_1, 1, 3
 	end
 
 BugContestResultsWarpScript:

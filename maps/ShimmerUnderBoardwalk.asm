@@ -19,12 +19,12 @@ ShimmerUnderBoardwalk_MapScriptHeader:
 	warp_event 11,  6, SHIMMER_CITY, 8
 	warp_event 11,  7, SHIMMER_CITY, 7
 	warp_event 11,  8, SHIMMER_CITY, 7
-	warp_event  4,  2, SHIMMER_CITY, 14
+	warp_event  4,  2, SHIMMER_CITY, 13
 	warp_event  5,  2, SHIMMER_CITY, 13
 	warp_event  6,  2, SHIMMER_CITY, 12
-	warp_event  7,  2, SHIMMER_CITY, 12
+	warp_event  7,  2, SHIMMER_CITY, 27
 	warp_event  8,  2, SHIMMER_CITY, 11
-	warp_event  9,  2, SHIMMER_CITY, 10
+	warp_event  9,  2, SHIMMER_CITY, 11
 	warp_event 2, 20, SHIMMER_CITY, 20
 	warp_event 2, 21, SHIMMER_CITY, 20
 	warp_event 2, 22, SHIMMER_CITY, 21

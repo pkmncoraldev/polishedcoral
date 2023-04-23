@@ -4,7 +4,7 @@ ShimmerCity_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, ShimmerCityFlyPoint
 
-	db 26 ; warp events
+	db 27 ; warp events
 	warp_event  4, 31, SHIMMER_LAB_LOBBY, 1
 	warp_event  5, 31, SHIMMER_LAB_LOBBY, 2
 	warp_event  7, 21, SHIMMER_UNDER_BOARDWALK, 4
@@ -14,23 +14,24 @@ ShimmerCity_MapScriptHeader:
 	warp_event  8, 14, SHIMMER_UNDER_BOARDWALK, 14
 	warp_event  8, 13, SHIMMER_UNDER_BOARDWALK, 13
 	warp_event  8, 12, SHIMMER_UNDER_BOARDWALK, 12
-	warp_event  7,  9, SHIMMER_UNDER_BOARDWALK, 21
+	warp_event  7,  9, SHIMMER_UNDER_BOARDWALK, 37
 	warp_event  6,  9, SHIMMER_UNDER_BOARDWALK, 20
-	warp_event  5,  9, SHIMMER_UNDER_BOARDWALK, 18
-	warp_event  4,  9, SHIMMER_UNDER_BOARDWALK, 17
-	warp_event  3,  9, SHIMMER_UNDER_BOARDWALK, 16
-	warp_event  2, 12, SHIMMER_UNDER_BOARDWALK, 33
-	warp_event  2, 13, SHIMMER_UNDER_BOARDWALK, 34
-	warp_event  2, 14, SHIMMER_UNDER_BOARDWALK, 35
-	warp_event  3, 16, SHIMMER_UNDER_BOARDWALK, 28
-	warp_event  3, 17, SHIMMER_UNDER_BOARDWALK, 30
-	warp_event  3, 20, SHIMMER_UNDER_BOARDWALK, 23
-	warp_event  3, 21, SHIMMER_UNDER_BOARDWALK, 25
+	warp_event  4,  9, SHIMMER_UNDER_BOARDWALK, 18
+	warp_event  3,  9, SHIMMER_UNDER_BOARDWALK, 17
+	warp_event  2,  9, SHIMMER_UNDER_BOARDWALK, 10
+	warp_event  1, 12, SHIMMER_UNDER_BOARDWALK, 33
+	warp_event  1, 13, SHIMMER_UNDER_BOARDWALK, 34
+	warp_event  1, 14, SHIMMER_UNDER_BOARDWALK, 35
+	warp_event  2, 16, SHIMMER_UNDER_BOARDWALK, 28
+	warp_event  2, 17, SHIMMER_UNDER_BOARDWALK, 30
+	warp_event  2, 20, SHIMMER_UNDER_BOARDWALK, 23
+	warp_event  2, 21, SHIMMER_UNDER_BOARDWALK, 25
 	warp_event 33, 21, SHIMMER_POKECENTER, 1
 	warp_event 39, 21, SHIMMER_MART, 1
 	warp_event 15, 29, SHIMMER_HOUSE_1, 1
 	warp_event 21, 29, SHIMMER_HOUSE_2, 1
 	warp_event 37, 29, SHIMMER_HOUSE_3, 1
+	warp_event  5,  9, SHIMMER_UNDER_BOARDWALK, 19
 
 	db 0 ; coord events
 
@@ -48,7 +49,7 @@ ShimmerCity_MapScriptHeader:
 	person_event SPRITE_BALLOONS, 21, 16, SPRITEMOVEDATA_BALLOONS_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_BALLOONS, 18, 16, SPRITEMOVEDATA_BALLOONS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_BOOK_PAPER_POKEDEX, 21, 15, SPRITEMOVEDATA_STALL, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
-	person_event SPRITE_BOOK_PAPER_POKEDEX,  9,  4, SPRITEMOVEDATA_BINOCULARS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
+	person_event SPRITE_BOOK_PAPER_POKEDEX,  9,  3, SPRITEMOVEDATA_BINOCULARS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_BOOK_PAPER_POKEDEX,  9,  6, SPRITEMOVEDATA_BINOCULARS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 
 	

@@ -569,6 +569,7 @@ ENDM
 	map_attributes Airport, AIRPORT, $0, 0
 	map_attributes RadiantFlowerShop, RADIANT_FLOWER_SHOP, $0, 0
 	map_attributes RadiantOrphanage1F, RADIANT_ORPHANAGE_1F, $0, 0
+	map_attributes RadiantOrphanageLeilanisRoom, RADIANT_ORPHANAGE_LEILANIS_ROOM, $0, 0
 	map_attributes RadiantField, RADIANT_FIELD, $59, 0
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0

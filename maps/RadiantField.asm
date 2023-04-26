@@ -28,7 +28,13 @@ RadiantField_MapScriptHeader:
 RadiantFieldLittleGirlRed:
 	faceplayer
 	opentext
-	writetext RadiantFieldLittleGirlRedText
+	writetext RadiantFieldLittleGirlRedText1
+	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	iffalse NoErika
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext RadiantFieldLittleGirlRedText2
 	waitbutton
 	closetext
 	setevent EVENT_RADIANT_FIELD_LITTLE_GIRL_RED
@@ -51,7 +57,13 @@ RadiantFieldLittleGirlRed:
 RadiantFieldLittleGirlBlue:
 	faceplayer
 	opentext
-	writetext RadiantFieldLittleGirlBlueText
+	writetext RadiantFieldLittleGirlBlueText1
+	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	iffalse NoErika
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext RadiantFieldLittleGirlBlueText2
 	waitbutton
 	closetext
 	setevent EVENT_RADIANT_FIELD_LITTLE_GIRL_BLUE
@@ -75,7 +87,13 @@ RadiantFieldLittleGirlBlue:
 RadiantFieldLittleGirlPurple:
 	faceplayer
 	opentext
-	writetext RadiantFieldLittleGirlPurpleText
+	writetext RadiantFieldLittleGirlPurpleText1
+	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	iffalse NoErika
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext RadiantFieldLittleGirlPurpleText2
 	waitbutton
 	closetext
 	setevent EVENT_RADIANT_FIELD_LITTLE_GIRL_PURPLE
@@ -88,6 +106,11 @@ RadiantFieldLittleGirlPurple:
 	iffalse .end
 	jump RadiantFieldFoundAllLittleGirls
 .end
+	end
+	
+NoErika:
+	waitbutton
+	closetext
 	end
 	
 RadiantFieldFoundAllLittleGirls:
@@ -110,18 +133,23 @@ RadiantFieldFoundAllLittleGirlsText1:
 	
 RadiantFieldFoundAllLittleGirlsText2:
 	text "Better go tell"
-	line "GRAMMA LEILANI!"
+	line "ERIKA."
 	done
 	
-RadiantFieldLittleGirlRedText:
-	text "Teehee!"
+RadiantFieldLittleGirlRedText1:
+	text "I've gotta find"
+	line "pretty flowers"
+	cont "for GRAMMA!"
+	done
 	
-	para "You found me!"
+RadiantFieldLittleGirlRedText2:
+	text "What?"
 	
-	para "What?"
+	para "MS. ERIKA sent you?"
 	
-	para "GRAMMA is looking"
-	line "for me?"
+	para "I have enougn"
+	line "flowers for"
+	cont "GRAMMA LEILANI."
 	
 	para "Ok, I'm going home"
 	line "now."
@@ -129,28 +157,36 @@ RadiantFieldLittleGirlRedText:
 	para "Bye bye!"
 	done
 	
-RadiantFieldLittleGirlBlueText:
+RadiantFieldLittleGirlBlueText1:
 	text "La la la!"
 	
-	para "I love the pretty"
-	line "flowers."
+	para "I'm collecting"
+	line "flowers for GRAMMA"
+	cont "LEILANI."
+	done
 	
-	para "GRAMMA LEILANI is"
-	line "waiting for me?"
+RadiantFieldLittleGirlBlueText2:
+	text "Oh!"
+	
+	para "MS. ERIKA wants me"
+	line "to come home?"
 	
 	para "I didn't mean to"
 	line "make her worry…"
 	done
 	
-RadiantFieldLittleGirlPurpleText:
-	text "Oh hi!"
+RadiantFieldLittleGirlPurpleText1:
+	text "Oh hi."
 	
-	para "GRAMMA sent you to"
-	line "check on me?"
+	para "GRAMMA is sick…"
 	
-	para "I'm fine!"
+	para "Maybe flowers will"
+	line "maker her feel"
+	cont "better…"
+	done
 	
-	para "I'll head back so"
+RadiantFieldLittleGirlPurpleText2:	
+	text "I'll head back so"
 	line "she doesn't worry."
 	done
 	

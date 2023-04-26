@@ -220,6 +220,8 @@
 	const SPRITE_SINGER
 	const SPRITE_DAISY
 	const SPRITE_LEILANI
+	const SPRITE_ERIKA
+	const SPRITE_LEILANI_BED
 
 	
 	const_def $f1

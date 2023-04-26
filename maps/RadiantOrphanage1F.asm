@@ -3,9 +3,10 @@ RadiantOrphanage1F_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_def  9,  4, 4, RADIANT_TOWNSHIP
 	warp_def  9,  5, 4, RADIANT_TOWNSHIP
+	warp_def  2,  9, 1, RADIANT_ORPHANAGE_LEILANIS_ROOM
 
 	db 0 ; coord events
 

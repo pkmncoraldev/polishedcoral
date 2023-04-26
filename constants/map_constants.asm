@@ -338,8 +338,9 @@ MAP_NONE   EQU 0
 	map_const ROUTE_18,									  10, 16 ; 2
 	map_const RADIANT_TOWNSHIP,							  20, 14 ; 3
 	map_const RADIANT_FLOWER_SHOP,						   5,  4 ; 4
-	map_const RADIANT_ORPHANAGE_1F,						   5,  5 ; 5
-	map_const RADIANT_FIELD,							  13, 14 ; 6
+	map_const RADIANT_ORPHANAGE_1F,						   6,  5 ; 5
+	map_const RADIANT_ORPHANAGE_LEILANIS_ROOM,			   3,  3 ; 6
+	map_const RADIANT_FIELD,							  13, 14 ; 
 	
 	
 	newgroup													 ; 19

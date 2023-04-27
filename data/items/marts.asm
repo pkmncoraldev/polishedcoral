@@ -19,6 +19,7 @@ Marts: ; 160a9
 	dw ShimmerBerryMarket
 	dw ShimmerMart
 	dw BrilloMart
+	dw RadiantMart
 MartsEnd:
 
 
@@ -247,6 +248,11 @@ ShimmerMart:
 	db -1
 	
 BrilloMart:
+	db 1 ; # items
+	db POTION
+	db -1
+	
+RadiantMart:
 	db 1 ; # items
 	db POTION
 	db -1

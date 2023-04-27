@@ -676,8 +676,24 @@ RadiantFlowerShop_BlockData:
 RadiantOrphanage1F_BlockData:
 	INCBIN "maps/RadiantOrphanage1F.ablk.lz"
 	
+;
+	
 RadiantOrphanageLeilanisRoom_BlockData:
 	INCBIN "maps/RadiantOrphanageLeilanisRoom.ablk.lz"
+	
+;
+	
+RadiantPokeCenter_BlockData:
+	INCBIN "maps/PokeCenter.ablk.lz"
+	
+RadiantMart_BlockData:
+	INCBIN "maps/Mart.ablk.lz"
+	
+RadiantGate_BlockData:
+	INCBIN "maps/NorthSouthGate.ablk.lz"
+	
+RadiantHouse_BlockData:
+	INCBIN "maps/NormalHouse2.ablk.lz"
 	
 RadiantField_BlockData:
 	INCBIN "maps/RadiantField.ablk.lz"

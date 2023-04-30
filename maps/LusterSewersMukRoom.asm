@@ -54,7 +54,6 @@ LusterSewersMukRoomTrigger0:
 	ifequal 6, .bottomone
 	ifequal 8, .bottomtwo
 	ifequal 9, .bottomthree
-	applyonemovement PLAYER, step_down
 .return
 	spriteface PLAYER, UP
 	special SaveMusic
@@ -170,7 +169,6 @@ LusterSewersMukRoomTrigger0:
 	jump .return
 .bottomtwo
 	applyonemovement PLAYER, remove_fixed_facing
-	applyonemovement PLAYER, step_down
 	jump .moveperson
 .bottomthree
 	applyonemovement PLAYER, remove_fixed_facing

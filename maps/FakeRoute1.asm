@@ -34,7 +34,13 @@ FakeRoute1Trigger1:
 FakeRoute1Callback:
 	checkscene
 	ifequal $0, .end
-	ifequal $1, FakeRoute1ChangeBlocks
+	changeblock $12, $1c, $a0
+	changeblock $14, $1c, $a0
+	changeblock $12, $1e, $a0
+	changeblock $14, $1e, $a0
+	changeblock $10, $20, $89
+	changeblock $12, $20, $92
+	changeblock $14, $20, $a0
 .end
 	return
 	

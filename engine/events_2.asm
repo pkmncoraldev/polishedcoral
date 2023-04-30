@@ -23,7 +23,12 @@ ReturnFromMapSetupScript:: ; b8000
 	ld a, [wMapGroup]
 	cp GROUP_FAKE_ROUTE_1
 	jp z, .dont_do_map_sign
-
+	cp GROUP_LUSTER_SKYSCRAPER_PORYGON_ROOM
+	jr nz, .landmark_sign
+	
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_SKYSCRAPER_PORYGON_ROOM
+	jp z, .dont_do_map_sign
 ;	ld a, [wCurrentLandmark]
 ;	cp LUCKY_ISLAND
 ;	jr nz, .not_lucky_island

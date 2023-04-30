@@ -1043,8 +1043,9 @@ wBrilloTownTrigger:: ds 1
 wDesertRouteNorthTrigger:: ds 1
 wAirportTrigger:: ds 1
 wRoute18Trigger:: ds 1
+wLusterSkyscraperPorygonRoomTrigger:: ds 1
 
-ds 18
+ds 17
 
 ; fight counts
 wJackFightCount::    ds 1

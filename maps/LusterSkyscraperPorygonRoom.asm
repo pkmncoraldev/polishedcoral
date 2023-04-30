@@ -1,5 +1,7 @@
 LusterSkyscraperPorygonRoom_MapScriptHeader:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script LusterSkyscraperPorygonRoomTrigger0
+	scene_script LusterSkyscraperPorygonRoomTrigger1
 
 	db 0 ; callbacks
 
@@ -38,6 +40,17 @@ LusterSkyscraperPorygonRoom_MapScriptHeader:
 	const PORYGON_ROOM_SCREEN
 
 
+LusterSkyscraperPorygonRoomTrigger0:
+	end
+	
+LusterSkyscraperPorygonRoomTrigger1:
+	opentext
+	writetext LusterSkyscraperPorygonRoomPoryGONE
+	waitbutton
+	closetext
+	dotrigger $0
+	end
+	
 LusterSkyscraperPorygonRoomComputer:
 	checkevent EVENT_DONE_PORYGON_ENCOUNTER
 	iffalse .havent_done_event
@@ -60,6 +73,7 @@ LusterSkyscraperPorygonRoomComputer:
 	closetext
 	wait 14
 	callasm SetupPorygonEncounterAsm
+	domaptrigger FAKE_ROUTE_1, $0
 ;	special FadeOutPalettes
 	callasm LoadMapPals
 	special FadeInPalettes
@@ -259,6 +273,11 @@ SetupPorygonEncounterAsm:
 	ld [wDefaultSpawnpoint], a
 	ret
 	
+LusterSkyscraperPorygonRoomPoryGONE:
+	text "PORYGON's illusion"
+	line "faded…"
+	done
+	
 LusterSkyscraperPorygonRoomComputerDoneText:
 	text "It's turned off…"
 	done
@@ -266,7 +285,7 @@ LusterSkyscraperPorygonRoomComputerDoneText:
 LusterSkyscraperPorygonRoomServerText:
 	text "A huge stack of"
 	line "computer servers"
-	cont "are whirring."
+	cont "click and whir."
 	done
 	
 LusterSkyscraperPorygonRoomComputerPasswordText:

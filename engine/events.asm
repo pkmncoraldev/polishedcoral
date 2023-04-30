@@ -1308,6 +1308,11 @@ PorygonEncounterScript:
 	startbattle
 	special FadeOutPalettes
 	setevent EVENT_DONE_PORYGON_ENCOUNTER
+	setevent EVENT_DOUBLE_LANDMARK_SIGN
+	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
+	clearevent EVENT_IN_SHOPPING_DISTRICT
+	setevent EVENT_IN_BUSINESS_DISTRICT
+	domaptrigger LUSTER_SKYSCRAPER_PORYGON_ROOM, $1
 	warp2 UP, LUSTER_SKYSCRAPER_PORYGON_ROOM, $2, $3
 	end
 	

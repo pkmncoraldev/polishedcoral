@@ -2367,7 +2367,7 @@ BillsPC_PrintBoxCountAndCapacity: ; e3632
 ; e3663
 
 .Pokemon: ; e3663
-	db "#mon@"
+	db "#MON@"
 ; e3668
 
 .out_of_20 ; e3668

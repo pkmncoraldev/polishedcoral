@@ -222,7 +222,7 @@ endm
 	dict "and",      PlaceAnd
 	dict "the",      PlaceThe
 	dict "you",      PlaceYou
-	dict "#mon",     PlacePokemon
+	dict "#MON",     PlacePokemon
 	dict "to",       PlaceTo
 	dict "have",     PlaceHave
 	dict "that",     PlaceThat
@@ -294,7 +294,7 @@ PlaceYou: print_name .YouText
 .YouText: db "y", "o", "u", "@"
 
 PlacePokemon: print_name .PokemonText
-.PokemonText: db "Pokémon@"
+.PokemonText: db "POKéMON@"
 
 PlaceTo: print_name .ToText
 .ToText: db "t", "o", "@"

@@ -378,7 +378,7 @@ _OPT_IntroText1::
 
 _OPT_IntroText2::
 	text ""
-	line "#mon Talk!"
+	line "#MON Talk!"
 	done
 
 _OPT_IntroText3::
@@ -572,7 +572,7 @@ OPT_Speedy::
 	done
 
 _OPT_PokemonChannelText::
-	text "#mon"
+	text "#MON"
 	done
 
 _PokedexShowText::
@@ -585,7 +585,7 @@ _PokedexShowText::
 
 _BenIntroText1::
 	text ""
-	line "Ben: #mon Music"
+	line "Ben: #MON Music"
 	done
 
 _BenIntroText2::
@@ -627,12 +627,12 @@ _BenFernText2B::
 
 _BenFernText3A::
 	text ""
-	line "#mon March!"
+	line "#MON March!"
 	done
 
 _BenFernText3B::
 	text ""
-	line "#mon Lullaby!"
+	line "#MON Lullaby!"
 	done
 
 ; Lucky Channel
@@ -1020,7 +1020,7 @@ UnknownText_0x1bd34b::
 
 	para "I'll call you if I"
 	line "see another rare"
-	cont "#mon, OK?"
+	cont "#MON, OK?"
 	prompt
 
 UnknownText_0x1bd39e::
@@ -1487,7 +1487,7 @@ UnknownText_0x1bda90::
 UnknownText_0x1bdaa9::
 	text "I'm the Day-Care"
 	line "Man. Want me to"
-	cont "raise a #mon?"
+	cont "raise a #MON?"
 	done
 
 UnknownText_0x1bdad8::
@@ -1496,7 +1496,7 @@ UnknownText_0x1bdad8::
 	cont "about Eggs?"
 
 	para "I was raising"
-	line "#mon with my"
+	line "#MON with my"
 	cont "wife, you see."
 
 	para "We were shocked to"
@@ -1506,7 +1506,7 @@ UnknownText_0x1bdad8::
 	line "that?"
 
 	para "So, want me to"
-	line "raise a #mon?"
+	line "raise a #MON?"
 	done
 
 UnknownText_0x1bdb85::
@@ -1514,7 +1514,7 @@ UnknownText_0x1bdb85::
 	line "Lady."
 
 	para "Should I raise a"
-	line "#mon for you?"
+	line "#MON for you?"
 	done
 
 UnknownText_0x1bdbbb::
@@ -1524,7 +1524,7 @@ UnknownText_0x1bdbbb::
 
 	para "My husband and I"
 	line "were raising some"
-	cont "#mon, you see."
+	cont "#MON, you see."
 
 	para "We were shocked to"
 	line "find an Egg!"
@@ -1533,7 +1533,7 @@ UnknownText_0x1bdbbb::
 	line "could that be?"
 
 	para "Should I raise a"
-	line "#mon for you?"
+	line "#MON for you?"
 	done
 
 UnknownText_0x1bdc79::
@@ -1543,7 +1543,7 @@ UnknownText_0x1bdc79::
 
 UnknownText_0x1bdc97::
 	text "Oh? But you have"
-	line "just one #mon."
+	line "just one #MON."
 	prompt
 
 UnknownText_0x1bdcb8::
@@ -1594,7 +1594,7 @@ UnknownText_0x1bdd96::
 	text "."
 
 	para "If you want your"
-	line "#mon back, it"
+	line "#MON back, it"
 	cont "will cost ¥@"
 	deciram wStringBuffer2 + 2, 3, 4
 	text "."
@@ -1602,7 +1602,7 @@ UnknownText_0x1bdd96::
 
 UnknownText_0x1bde04::
 	text "Perfect! Here's"
-	line "your #mon."
+	line "your #MON."
 	prompt
 
 UnknownText_0x1bde1f::
@@ -1621,7 +1621,7 @@ UnknownText_0x1bde32::
 	line "more time with us."
 
 	para "If you want your"
-	line "#mon back, it"
+	line "#MON back, it"
 	cont "will cost ¥100."
 	done
 
@@ -1651,18 +1651,18 @@ UnknownText_0x1bdf00::
 	text "Ah, it's you!"
 
 	para "We were raising"
-	line "your #mon, and"
+	line "your #MON, and"
 
 	para "my goodness, were"
 	line "we surprised!"
 
-	para "Your #mon had"
+	para "Your #MON had"
 	line "an Egg!"
 
 	para "We don't know how"
 	line "it got there, but"
 
-	para "your #mon had"
+	para "your #MON had"
 	line "it. You want it?"
 	done
 

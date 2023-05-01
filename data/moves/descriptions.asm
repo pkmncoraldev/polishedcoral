@@ -868,7 +868,7 @@ AquaTailDescription:
 
 MetronomeDescription:
 	db   "Randomly uses any"
-	next "#mon move.@"
+	next "#MON move.@"
 
 CottonGuardDescription:
 	db   "Drastically raises"
@@ -1047,7 +1047,7 @@ EncoreDescription:
 
 PursuitDescription:
 	db   "Heavily strikes"
-	next "switching #mon.@"
+	next "switching #MON.@"
 
 RapidSpinDescription:
 	db   "A high-speed"

@@ -37,7 +37,7 @@ SpecialStatsJudge: ; 4f0bc
 
 	para "I can discern the"
 	line "overall potential"
-	cont "of your #mon."
+	cont "of your #MON."
 
 	para "Want me to judge"
 	line "one of your #-"
@@ -45,7 +45,7 @@ SpecialStatsJudge: ; 4f0bc
 	done
 
 .Which
-	text "Which #mon"
+	text "Which #MON"
 	line "should I judge?"
 	prompt
 
@@ -203,20 +203,20 @@ JudgePokemon:
 	prompt
 
 .decent_total
-	text "This #mon's"
+	text "This #MON's"
 	line "potential is"
 	cont "decent all around."
 	prompt
 
 .above_average_total
-	text "This #mon's"
+	text "This #MON's"
 	line "potential is"
 	cont "above-average"
 	cont "overall."
 	prompt
 
 .relatively_superior_total
-	text "This #mon's"
+	text "This #MON's"
 	line "potential is"
 	cont "relatively"
 	cont "superior"
@@ -224,7 +224,7 @@ JudgePokemon:
 	prompt
 
 .outstanding_total
-	text "This #mon's"
+	text "This #MON's"
 	line "potential is"
 	cont "outstanding"
 	cont "overall."
@@ -301,7 +301,7 @@ JudgePokemon:
 	prompt
 
 .fantastic_best
-	text "This #mon has"
+	text "This #MON has"
 	line "some fantastic"
 	cont "stats."
 	prompt

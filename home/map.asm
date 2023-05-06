@@ -1077,8 +1077,7 @@ _LoadTileset0:
 	cp TILESET_SPOOKY
 	jr z, .load_roof
 	cp TILESET_SHIMMER
-	jr z, .load_roof
-	jr .skip_roof
+	jr nz, .skip_roof
 
 .load_roof
 	farcall LoadMapGroupRoof

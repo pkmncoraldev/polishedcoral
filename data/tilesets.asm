@@ -666,6 +666,26 @@ INCBIN "data/tilesets/orphanage_attributes.bin.lz"
 TilesetOrphanageColl::
 INCLUDE "data/tilesets/orphanage_collision.asm"
 
+SECTION "Tileset Data - highway", ROMX
+
+TilesetHighwayGFX0::
+INCBIN "gfx/tilesets/highway.2bpp.vram0.lz"
+
+TilesetHighwayGFX1::
+INCBIN "gfx/tilesets/highway.2bpp.vram1.lz"
+
+TilesetHighwayGFX2::
+INCBIN "gfx/tilesets/highway.2bpp.vram2.lz"
+
+TilesetHighwayMeta::
+INCBIN "data/tilesets/highway_metatiles.bin.lz"
+
+TilesetHighwayAttr::
+INCBIN "data/tilesets/highway_attributes.bin.lz"
+
+TilesetHighwayColl::
+INCLUDE "data/tilesets/highway_collision.asm"
+
 
 SECTION "Tileset Headers", ROMX
 
@@ -711,3 +731,4 @@ Tilesets::
 	tileset TilesetDesert
 	tileset TilesetAirport
 	tileset TilesetOrphanage
+	tileset TilesetHighway

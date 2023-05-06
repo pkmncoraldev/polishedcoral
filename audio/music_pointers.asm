@@ -57,6 +57,7 @@ Music:
 	dba Music_Oasis
 	dba Music_SnareLeaderBattle
 	dba Music_GentlemanEncounter
+	dba Music_Bar
 	
 	dba Music_Mountaintop
 	dba Music_HealPokemon

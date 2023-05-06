@@ -334,7 +334,7 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 18
 	
-	map_const ROUTE_17,									  22, 22 ; 1
+	map_const ROUTE_17,									  24, 24 ; 1
 	map_const ROUTE_18,									  10, 16 ; 2
 	map_const RADIANT_TOWNSHIP,							  20, 14 ; 3
 	map_const RADIANT_FLOWER_SHOP,						   5,  4 ; 4
@@ -349,7 +349,11 @@ MAP_NONE   EQU 0
 	map_const RADIANT_FIELD,							  13, 14 ; 13
 	
 	
-	newgroup													 ; 19
+	newgroup
+	
+	map_const ROUTE_19,									  24, 30 ; 1
+	
+	newgroup													 ; last
 	
 	map_const FAKE_ROUTE_1,                               14, 17 ;  1
 	map_const FAKE_ROUTE_2,                               14, 17 ;  2

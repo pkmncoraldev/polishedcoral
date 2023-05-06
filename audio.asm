@@ -97,6 +97,7 @@ INCLUDE "audio/music/brillotown.asm"
 INCLUDE "audio/music/brillosong.asm"
 INCLUDE "audio/music/brillosongbad.asm"
 INCLUDE "audio/music/oasis.asm"
+INCLUDE "audio/music/bar.asm"
 
 
 SECTION "Music 6", ROMX

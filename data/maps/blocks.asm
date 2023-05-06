@@ -698,6 +698,9 @@ RadiantHouse_BlockData:
 RadiantField_BlockData:
 	INCBIN "maps/RadiantField.ablk.lz"
 	
+Route19_BlockData:
+	INCBIN "maps/Route19.ablk.lz"
+	
 FakeRoute1_BlockData:
 	INCBIN "maps/FakeRoute1.ablk.lz"
 	

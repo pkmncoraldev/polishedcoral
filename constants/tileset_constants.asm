@@ -33,6 +33,7 @@
 	const TILESET_DESERT			;32
 	const TILESET_AIRPORT			;33
 	const TILESET_ORPHANAGE			;34
+	const TILESET_HIGHWAY			;35
 	
 
 	const_def

@@ -300,14 +300,14 @@ ENDM
 	map_attributes ShimmerCity, SHIMMER_CITY, $35, NORTH | WEST | EAST
 	connection north, Route14, ROUTE_14, -4
 	connection west, ShimmerHarbor, SHIMMER_HARBOR, 2
-	connection east, Route17, ROUTE_17, 5
+	connection east, Route17, ROUTE_17, 3
 	
 	map_attributes ShimmerHarbor, SHIMMER_HARBOR, $35, EAST
 	connection east, ShimmerCity, SHIMMER_CITY, -2
 	
 	map_attributes Route17, ROUTE_17, $30, SOUTH | WEST
 	connection south, Route18, ROUTE_18, 11
-	connection west, ShimmerCity, SHIMMER_CITY, -5
+	connection west, ShimmerCity, SHIMMER_CITY, -3
 	
 	map_attributes Route18, ROUTE_18, $30, NORTH | SOUTH
 	connection north, Route17, ROUTE_17, -11
@@ -373,6 +373,8 @@ ENDM
 	
 	map_attributes DesertTempleOutside, DESERT_TEMPLE_OUTSIDE, $02, SOUTH
 	connection south, DesertWasteland9, DESERT_WASTELAND_9, 4
+	
+	map_attributes Route19, ROUTE_19, 0, 0
 	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0

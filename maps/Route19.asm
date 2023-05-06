@@ -4,8 +4,8 @@ Route19_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event 10, 26, ROUTE_17, 1
-	warp_event 10, 27, ROUTE_17, 2
+	warp_event  8, 26, ROUTE_17, 1
+	warp_event  8, 27, ROUTE_17, 2
 
 	db 0 ; coord events
 

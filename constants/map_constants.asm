@@ -351,7 +351,7 @@ MAP_NONE   EQU 0
 	
 	newgroup
 	
-	map_const ROUTE_19,									  24, 30 ; 1
+	map_const ROUTE_19,									  23, 34 ; 1
 	
 	newgroup													 ; last
 	

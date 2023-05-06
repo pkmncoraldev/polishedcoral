@@ -293,12 +293,12 @@ ENDM
 	connection east, Route14, ROUTE_14, 14
 	
 	map_attributes Route14, ROUTE_14, $35, SOUTH | WEST | EAST
-	connection south, ShimmerCity, SHIMMER_CITY, 4
+	connection south, ShimmerCity, SHIMMER_CITY, 5
 	connection west, Route13, ROUTE_13, -14
 	connection east, SunbeamBeach, SUNBEAM_BEACH, -14
 	
 	map_attributes ShimmerCity, SHIMMER_CITY, $35, NORTH | WEST | EAST
-	connection north, Route14, ROUTE_14, -4
+	connection north, Route14, ROUTE_14, -5
 	connection west, ShimmerHarbor, SHIMMER_HARBOR, 2
 	connection east, Route17, ROUTE_17, 3
 	

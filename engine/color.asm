@@ -904,6 +904,8 @@ LoadMapPals::
 	jp z, .mart
 	cp TILESET_LAB
 	jp z, .lab
+	cp TILESET_HIGHWAY
+	jp z, .highway
 	jp .normal
 .playerhouse
 	ld a, [wMapGroup]
@@ -1046,6 +1048,7 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsWaterfallCave
 	call AddNTimes
+.copy_single_pal_to_pal_7
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
@@ -1245,11 +1248,7 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsUmbrella
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	jp .outside
+	jp .copy_single_pal_to_pal_7
 .rockscheck1
 	ld a, [wMapNumber]
 	cp MAP_LAKE_ONWA
@@ -1332,22 +1331,14 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsRanch
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	jp .outside
+	jp .copy_single_pal_to_pal_7
 .ranchyellow
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsRanchYellow
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	jp .outside
+	jp .copy_single_pal_to_pal_7
 	
 .hangar
 	ld a, [wTimeOfDayPalFlags]
@@ -1359,11 +1350,7 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsHangar
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	jp .outside
+	jp .copy_single_pal_to_pal_7
 	
 .luster
 	ld a, [wIsNearCampfire]
@@ -1387,11 +1374,7 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsLuster
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	jp .outside
+	jp .copy_single_pal_to_pal_7
 	
 .snow
 	eventflagcheck EVENT_SNOWSTORM_HAPPENING
@@ -1493,11 +1476,7 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsSkatepark
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	jp .outside
+	jp .copy_single_pal_to_pal_7
 	
 .sunset
 	ld a, [wMapNumber]
@@ -1515,11 +1494,7 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsSailboat
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	jp .outside
+	jp .copy_single_pal_to_pal_7
 	
 .lighthouse
 	ld a, [wTimeOfDayPal]
@@ -1527,12 +1502,13 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsLighthouse
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	jp .outside
-
+	jp .copy_single_pal_to_pal_7
+.highway
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_19
+	jp nz, .normal
+	ld hl, MapObjectPalsMoomoo
+	jp .copy_single_pal_to_pal_7
 .lab
 	call .normal
 	eventflagcheck EVENT_AIRPORT_LUGGAGE_2
@@ -1889,6 +1865,9 @@ INCLUDE "maps/palettes/obpals/luggage4.pal"
 
 MapObjectPalsSlowpoke::
 INCLUDE "maps/palettes/obpals/slowpoke.pal"
+
+MapObjectPalsMoomoo::
+INCLUDE "maps/palettes/obpals/moomoo.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

@@ -20,26 +20,12 @@ MapGroupRoofs:
 	db  3 ; group 16 (Shimmer City)
 	db -1 ; group 17 (Brillo Town)
 	db  1 ; group 18 (Radiant Township)
-	db -1 ; group 19 (Fake Route 1)
-	db -1 ; group 20
-	db -1 ; group 21
-	db -1 ; group 22
-	db -1 ; group 23
-	db -1 ; group 24
-	db -1 ; group 25
-	db -1 ; group 26
-	db -1 ; group 27
-	db -1 ; group 28
-	db -1 ; group 29
-	db -1 ; group 30
-	db -1 ; group 31
-	db -1 ; group 32
-	db -1 ; group 33
-	db -1 ; group 34
-	db -1 ; group 35
+	db  4 ; group 19 (Highway)
+	db -1 ; group last (Fake Route 1)
 
 Roofs:
 INCBIN "gfx/tilesets/roofs/0.2bpp"
 INCBIN "gfx/tilesets/roofs/1.2bpp"
 INCBIN "gfx/tilesets/roofs/2.2bpp"
 INCBIN "gfx/tilesets/roofs/3.2bpp"
+INCBIN "gfx/tilesets/roofs/4.2bpp"

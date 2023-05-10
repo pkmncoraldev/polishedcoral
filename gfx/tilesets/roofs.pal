@@ -93,7 +93,12 @@
 	RGB 21, 12, 31
 	RGB 12, 07, 20
 	RGB 10, 03, 16
-;19 - Fake Route 1
+;19 - Highway
+	RGB 18, 19, 31
+	RGB 27, 31, 27
+	RGB 18, 19, 31
+	RGB 27, 31, 27
+;last - Fake Route 1
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 00, 00, 00

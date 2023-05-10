@@ -235,7 +235,7 @@ LoadSpecialMapPalette: ; 494ac
 	ld bc, 1 palettes
 	rst AddNTimes
 	ld a, $5
-	ld de, wUnknBGPals
+	ld de, wUnknBGPals + 6 palettes
 	ld bc, 1 palettes
 	ld a, $5
 	call FarCopyWRAM

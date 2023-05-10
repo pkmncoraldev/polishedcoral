@@ -71,8 +71,6 @@ FramesPointers:
 	dw KoffingFrames
 	dw WeezingFrames
 	dw ChanseyFrames
-	dw HorseaFrames
-	dw SeadraFrames
 	dw StaryuFrames
 	dw StarmieFrames
 	dw ScytherFrames
@@ -145,7 +143,6 @@ FramesPointers:
 	dw SkarmoryFrames
 	dw HoundourFrames
 	dw HoundoomFrames
-	dw KingdraFrames
 	dw PhanpyFrames
 	dw DonphanFrames
 	dw Porygon2Frames
@@ -249,6 +246,9 @@ FramesPointers:
 	dw ToxapexFrames
 	dw -1 ; see MimikyuFramesPointers
 	dw CursolaFrames
+	dw DreepyFrames
+	dw DrakloakFrames
+	dw DragapultFrames
 	dw WyrdeerFrames
 	dw ClodsireFrames
 	dw FarigirafFrames

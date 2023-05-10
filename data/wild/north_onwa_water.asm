@@ -2,23 +2,23 @@
 
 	map_id SUNSET_BAY
 	db 6 percent ; encounter rate
-	db 29, WINGULL; MAREANIE		;30%
-	db 29, HORSEA		;30%
+	db 29, CHINCHOU		;30%
+	db 29, CARVANHA		;30%
 	db 29, WINGULL		;20%
-	db 29, CORSOLA		;10%
-	db 29, STARYU		;5%
-	db 29, STARYU		;4%
-	db 29, STARYU		;1%
+	db 29, WINGULL; MAREANIE		;10%
+	db 29, CORSOLA		;5%
+	db 29, DREEPY		;4%
+	db 29, DREEPY		;1%
 
 	map_id SUNSET_CAPE
 	db 6 percent ; encounter rate
-	db 29, WINGULL		;30%
 	db 29, CHINCHOU		;30%
-	db 29, HORSEA		;20%
+	db 29, CARVANHA		;30%
+	db 29, WINGULL		;20%
 	db 29, WINGULL; MAREANIE		;10%
-	db 29, WINGULL; MAREANIE		;5%
-	db 29, STARYU		;4%
-	db 29, STARYU		;1%
+	db 29, CORSOLA		;5%
+	db 29, DREEPY		;4%
+	db 29, DREEPY		;1%
 	
 	map_id DAYBREAK_VILLAGE
 	db 15 percent ; encounter rate
@@ -144,11 +144,11 @@
 	db 6 percent ; encounter rate
 	db 29, WINGULL		;30%
 	db 29, CHINCHOU		;30%
-	db 29, HORSEA		;20%
+	db 29, CARVANHA		;20%
 	db 29, WINGULL; MAREANIE		;10%
 	db 29, WINGULL; MAREANIE		;5%
-	db 29, STARYU		;4%
-	db 29, STARYU		;1%
+	db 29, CORSOLA		;4%
+	db 29, CORSOLA		;1%
 	
 	map_id LAKE_ONWA
 	db 8 percent ; encounter rate
@@ -192,23 +192,23 @@
 	
 	map_id SUNBEAM_ISLAND
 	db 6 percent ; encounter rate
-	db 29, CORSOLA		;30%
-	db 29, HORSEA		;30%
-	db 29, WINGULL		;20%
-	db 29, WINGULL; MAREANIE		;10%
-	db 29, STARYU		;5%
-	db 29, STARYU		;4%
-	db 29, STARYU		;1%
+	db 29, WINGULL		;30%
+	db 29, CHINCHOU		;30%
+	db 29, WINGULL; MAREANIE		;20%
+	db 29, CORSOLA		;10%
+	db 29, WINGULL		;5%
+	db 29, CORSOLA		;4%
+	db 29, CORSOLA		;1%
 	
 	map_id SUNBEAM_BEACH
 	db 6 percent ; encounter rate
 	db 29, WINGULL		;30%
 	db 29, CHINCHOU		;30%
-	db 29, HORSEA		;20%
-	db 29, WINGULL; MAREANIE		;10%
-	db 29, WINGULL; MAREANIE		;5%
-	db 29, STARYU		;4%
-	db 29, STARYU		;1%
+	db 29, WINGULL; MAREANIE		;20%
+	db 29, CORSOLA		;10%
+	db 29, WINGULL		;5%
+	db 29, CORSOLA		;4%
+	db 29, CORSOLA		;1%
 	
 	map_id SUNBEAM_RESERVE
 	db 6 percent ; encounter rate
@@ -292,22 +292,22 @@
 
 	map_id ROUTE_13
 	db 6 percent ; encounter rate
-	db 29, WINGULL		;30%
 	db 29, CHINCHOU		;30%
-	db 29, HORSEA		;20%
+	db 29, CARVANHA		;30%
+	db 29, WINGULL		;20%
 	db 29, WINGULL; MAREANIE		;10%
-	db 29, WINGULL; MAREANIE		;5%
-	db 29, STARYU		;4%
-	db 29, STARYU		;1%
+	db 29, CORSOLA		;5%
+	db 29, DREEPY		;4%
+	db 29, DREEPY		;1%
 
 	map_id ROUTE_14
 	db 6 percent ; encounter rate
-	db 29, WINGULL; MAREANIE		;30%
-	db 29, HORSEA		;30%
+	db 29, CHINCHOU		;30%
+	db 29, CARVANHA		;30%
 	db 29, WINGULL		;20%
-	db 29, CORSOLA		;10%
-	db 29, STARYU		;5%
-	db 29, STARYU		;4%
-	db 29, STARYU		;1%
+	db 29, WINGULL; MAREANIE		;10%
+	db 29, CORSOLA		;5%
+	db 29, DREEPY		;4%
+	db 29, DREEPY		;1%
 
 	db -1 ; end

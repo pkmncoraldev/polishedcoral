@@ -72,8 +72,6 @@ IconPointers:
 	dw KoffingIcon
 	dw WeezingIcon
 	dw ChanseyIcon
-	dw HorseaIcon
-	dw SeadraIcon
 	dw StaryuIcon
 	dw StarmieIcon
 	dw ScytherIcon
@@ -146,7 +144,6 @@ IconPointers:
 	dw SkarmoryIcon
 	dw HoundourIcon
 	dw HoundoomIcon
-	dw KingdraIcon
 	dw PhanpyIcon
 	dw DonphanIcon
 	dw Porygon2Icon
@@ -250,6 +247,9 @@ IconPointers:
 	dw ToxapexIcon
 	dw MimikyuIcon
 	dw CursolaIcon
+	dw DreepyIcon
+	dw DrakloakIcon
+	dw DragapultIcon
 	dw WyrdeerIcon
 	dw ClodsireIcon
 	dw FarigirafIcon

@@ -1301,42 +1301,6 @@ ChanseyEvosAttacks:
 	db  1, SOFTBOILED_MILK_DRINK_RECOVER
 	db  0 ; no more level-up moves
 
-HorseaEvosAttacks:
-	db EVOLVE_LEVEL, 32, SEADRA
-	db 0 ; no more evolutions
-	db 1, WATER_GUN
-	db 4, LEER_TAIL_WHIP
-	db 9, SAND_ATTACK_SMOKESCREEN
-	db 13, TWISTER
-	db 18, BUBBLE_BEAM
-	db 22, FOCUS_ENERGY
-	db 27, DRAGONBREATH
-	db 31, FLAIL
-	db 36, AGILITY_ROCK_POLISH
-	db 40, HYDRO_PUMP
-	db 45, DRAGON_PULSE
-	db 49, DRAGON_DANCE
-	db 54, RAIN_DANCE
-	db 0 ; no more level-up moves
-
-SeadraEvosAttacks:
-	db EVOLVE_TRADE, DRAGON_SCALE, KINGDRA
-	db 0 ; no more evolutions
-	db 1, WATER_GUN
-	db 1, LEER_TAIL_WHIP
-	db 1, SAND_ATTACK_SMOKESCREEN
-	db 1, TWISTER
-	db 1, DRAGONBREATH
-	db 1, BUBBLE_BEAM
-	db 1, FOCUS_ENERGY
-	db 1, FLAIL
-	db 37, AGILITY_ROCK_POLISH
-	db 43, DRAGON_PULSE
-	db 49, HYDRO_PUMP
-	db 55, DRAGON_DANCE
-	db 61, RAIN_DANCE
-	db 0 ; no more level-up moves
-
 StaryuEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, STARMIE
 	db 0 ; no more evolutions
@@ -2683,23 +2647,6 @@ HoundoomEvosAttacks:
 	db 45, CRUNCH
 	db 50, NASTY_PLOT
 	db 56, FIRE_BLAST
-	db 0 ; no more level-up moves
-
-KingdraEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, WATER_GUN
-	db 1, LEER_TAIL_WHIP
-	db 1, SAND_ATTACK_SMOKESCREEN
-	db 1, TWISTER
-	db 1, DRAGONBREATH
-	db 1, BUBBLE_BEAM
-	db 1, FOCUS_ENERGY
-	db 1, FLAIL
-	db 37, AGILITY_ROCK_POLISH
-	db 43, DRAGON_PULSE
-	db 49, HYDRO_PUMP
-	db 55, DRAGON_DANCE
-	db 61, RAIN_DANCE
 	db 0 ; no more level-up moves
 
 PhanpyEvosAttacks:
@@ -4322,6 +4269,23 @@ CursolaEvosAttacks:
 	db 41, POWER_GEM
 	db 45, EARTH_POWER
 	db 48, FLAIL
+	db 0 ; no more level-up moves
+	
+DreepyEvosAttacks:
+	db EVOLVE_LEVEL, 50, DRAKLOAK
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+DrakloakEvosAttacks:
+	db EVOLVE_LEVEL, 60, DRAGAPULT
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+DragapultEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
 WyrdeerEvosAttacks:

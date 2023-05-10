@@ -71,8 +71,6 @@ AnimationPointers:
 	dw KoffingAnimation
 	dw WeezingAnimation
 	dw ChanseyAnimation
-	dw HorseaAnimation
-	dw SeadraAnimation
 	dw StaryuAnimation
 	dw StarmieAnimation
 	dw ScytherAnimation
@@ -145,7 +143,6 @@ AnimationPointers:
 	dw SkarmoryAnimation
 	dw HoundourAnimation
 	dw HoundoomAnimation
-	dw KingdraAnimation
 	dw PhanpyAnimation
 	dw DonphanAnimation
 	dw Porygon2Animation
@@ -249,6 +246,9 @@ AnimationPointers:
 	dw ToxapexAnimation
 	dw -1 ; see MimikyuAnimationPointers
 	dw CursolaAnimation
+	dw DreepyAnimation
+	dw DrakloakAnimation
+	dw DragapultAnimation
 	dw WyrdeerAnimation
 	dw ClodsireAnimation
 	dw FarigirafAnimation

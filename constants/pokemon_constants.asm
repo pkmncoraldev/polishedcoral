@@ -72,8 +72,6 @@
 	const KOFFING
 	const WEEZING
 	const CHANSEY
-	const HORSEA
-	const SEADRA
 	const STARYU
 	const STARMIE
 	const SCYTHER
@@ -146,7 +144,6 @@
 	const SKARMORY
 	const HOUNDOUR
 	const HOUNDOOM
-	const KINGDRA
 	const PHANPY
 	const DONPHAN
 	const PORYGON2
@@ -250,6 +247,9 @@
 	const TOXAPEX ;748
 	const MIMIKYU
 	const CURSOLA
+	const DREEPY
+	const DRAKLOAK
+	const DRAGAPULT
 	const WYRDEER
 	const CLODSIRE
 	const FARIGIRAF

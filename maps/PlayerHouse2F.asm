@@ -58,10 +58,10 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke WYRDEER, 98
-	givepoke WOOPER, 99
-	givepoke WOOPER, ALOLAN_FORM, 99
-	givepoke CLODSIRE, 99
+	givepoke CHARIZARD, 98
+	givepoke DREEPY, 99
+	givepoke DRAKLOAK, 99
+	givepoke DRAGAPULT, 99
 
 .items
 	writetext PlayerHouseDebugText6

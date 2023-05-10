@@ -48,9 +48,9 @@ FishGroups: ; 92488
 	db 100 percent, MAGIKARP,   10	;15%
 .Sunbeam_Super:
 .Sunbeam_Good:
-	db  40 percent, HORSEA,   	16	;40%
-	db  70 percent, CHINCHOU,  	16	;30%
-	db  90 percent, STARYU,   	16	;20%
+	db  40 percent, CHINCHOU,   16	;40%
+	db  70 percent, CARVANHA,  	16	;30%
+	db  90 percent, CARVANHA,   16	;20%
 	db 100 percent, CORSOLA, 	16	;10%
 	
 .Cave_Old:

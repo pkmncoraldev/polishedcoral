@@ -2469,10 +2469,7 @@ SmokescreenUsers:
 	db CHARIZARD
 	db KOFFING
 	db WEEZING
-	db HORSEA
-	db SEADRA
 	db MAGMAR
-	db KINGDRA
 	db MAGBY
 	db MAGMORTAR
 	db CYNDAQUIL

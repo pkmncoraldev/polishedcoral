@@ -143,10 +143,6 @@ PicPointers::
 	dba WeezingBackpic
 	dba ChanseyFrontpic
 	dba ChanseyBackpic
-	dba HorseaFrontpic
-	dba HorseaBackpic
-	dba SeadraFrontpic
-	dba SeadraBackpic
 	dba StaryuFrontpic
 	dba StaryuBackpic
 	dba StarmieFrontpic
@@ -291,8 +287,6 @@ PicPointers::
 	dba HoundourBackpic
 	dba HoundoomFrontpic
 	dba HoundoomBackpic
-	dba KingdraFrontpic
-	dba KingdraBackpic
 	dba PhanpyFrontpic
 	dba PhanpyBackpic
 	dba DonphanFrontpic
@@ -499,6 +493,12 @@ PicPointers::
 	dbw -1, -1 ; see MimikyuPicPointers
 	dba CursolaFrontpic
 	dba CursolaBackpic
+	dba DreepyFrontpic
+	dba DreepyBackpic
+	dba DrakloakFrontpic
+	dba DrakloakBackpic
+	dba DragapultFrontpic
+	dba DragapultBackpic
 	dba WyrdeerFrontpic
 	dba WyrdeerBackpic
 	dba ClodsireFrontpic

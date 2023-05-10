@@ -71,8 +71,6 @@ BitmasksPointers:
 	dw KoffingBitmasks
 	dw WeezingBitmasks
 	dw ChanseyBitmasks
-	dw HorseaBitmasks
-	dw SeadraBitmasks
 	dw StaryuBitmasks
 	dw StarmieBitmasks
 	dw ScytherBitmasks
@@ -145,7 +143,6 @@ BitmasksPointers:
 	dw SkarmoryBitmasks
 	dw HoundourBitmasks
 	dw HoundoomBitmasks
-	dw KingdraBitmasks
 	dw PhanpyBitmasks
 	dw DonphanBitmasks
 	dw Porygon2Bitmasks
@@ -249,6 +246,9 @@ BitmasksPointers:
 	dw ToxapexBitmasks
 	dw -1 ; see MimikyuBitmasksPointers
 	dw CursolaBitmasks
+	dw DreepyBitmasks
+	dw DrakloakBitmasks
+	dw DragapultBitmasks
 	dw WyrdeerBitmasks
 	dw ClodsireBitmasks
 	dw FarigirafBitmasks

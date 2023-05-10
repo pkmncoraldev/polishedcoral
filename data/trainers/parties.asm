@@ -1374,7 +1374,7 @@ FisherGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 14, CHINCHOU
-	db 14, HORSEA
+	db 14, 0 ;BARBOACH
 	db -1 ; end
 
 ; ================
@@ -1923,7 +1923,7 @@ GruntMGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 20, NOIBAT
-	db 19, HORSEA
+	db 19, 0 ;BARBOACH
 	db 18, ODDISH
 	db -1 ; end
 

@@ -72,8 +72,6 @@
 	dw KoffingPokedexEntry
 	dw WeezingPokedexEntry
 	dw ChanseyPokedexEntry
-	dw HorseaPokedexEntry
-	dw SeadraPokedexEntry
 	dw StaryuPokedexEntry
 	dw StarmiePokedexEntry
 	dw ScytherPokedexEntry
@@ -146,7 +144,6 @@
 	dw SkarmoryPokedexEntry
 	dw HoundourPokedexEntry
 	dw HoundoomPokedexEntry
-	dw KingdraPokedexEntry
 	dw PhanpyPokedexEntry
 	dw DonphanPokedexEntry
 	dw Porygon2PokedexEntry
@@ -250,6 +247,9 @@
 	dw ToxapexPokedexEntry
 	dw MimikyuPokedexEntry
 	dw CursolaPokedexEntry
+	dw DreepyPokedexEntry
+	dw DrakloakPokedexEntry
+	dw DragapultPokedexEntry
 	dw WyrdeerPokedexEntry
 	dw ClodsirePokedexEntry
 	dw FarigirafPokedexEntry

@@ -75,8 +75,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw KoffingEvosAttacks
 	dw WeezingEvosAttacks
 	dw ChanseyEvosAttacks
-	dw HorseaEvosAttacks
-	dw SeadraEvosAttacks
 	dw StaryuEvosAttacks
 	dw StarmieEvosAttacks
 	dw ScytherEvosAttacks
@@ -149,7 +147,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw SkarmoryEvosAttacks
 	dw HoundourEvosAttacks
 	dw HoundoomEvosAttacks
-	dw KingdraEvosAttacks
 	dw PhanpyEvosAttacks
 	dw DonphanEvosAttacks
 	dw Porygon2EvosAttacks
@@ -253,6 +250,9 @@ EvosAttacksPointers:: ; 0x425b1
 	dw ToxapexEvosAttacks
 	dw MimikyuEvosAttacks
 	dw CursolaEvosAttacks
+	dw DreepyEvosAttacks
+	dw DrakloakEvosAttacks
+	dw DragapultEvosAttacks
 	dw WyrdeerEvosAttacks
 	dw ClodsireEvosAttacks
 	dw FarigirafEvosAttacks

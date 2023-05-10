@@ -88,8 +88,6 @@ CryHeaders::
 	mon_cry CRY_GOLEM,       $0e6,  $15d 	; Koffing
 	mon_cry CRY_GOLEM,       $0ff,  $17f 	; Weezing
 	mon_cry CRY_PIDGEOTTO,   $00a,  $140 	; Chansey
-	mon_cry CRY_CLEFAIRY,    $099,  $090 	; Horsea
-	mon_cry CRY_CLEFAIRY,    $03c,  $081 	; Seadra
 	mon_cry CRY_STARYU,      $002,  $0a0 	; Staryu
 	mon_cry CRY_STARYU,      $000,  $100 	; Starmie
 	mon_cry CRY_SCYTHER,     $000,  $100 	; Scyther
@@ -162,7 +160,6 @@ CryHeaders::
 	mon_cry CRY_AMPHAROS,    $8a9,  $180 	; Skarmory
 	mon_cry CRY_CYNDAQUIL,   $039,  $140 	; Houndour
 	mon_cry CRY_TOTODILE,   -$10a,  $100 	; Houndoom
-	mon_cry CRY_SLUGMA,      $2fb,  $100 	; Kingdra
 	mon_cry CRY_PHANPY,    	 $048,  $230 	; Phanpy
 	mon_cry CRY_DONPHAN,     $000,  $1a0 	; Donphan
 	mon_cry CRY_PORYGON2,  	 $073,  $240 	; Porygon2
@@ -266,6 +263,9 @@ CryHeaders::
 	mon_cry TOXAPEX,	ToxapexDEDData		; Toxapex
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Mimikyu - PLACEHOLDER
 	mon_cry CURSOLA,	CursolaDEDData		; Cursola
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Dreepy - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Drakloak - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Dragapult - PLACEHOLDER
 	mon_cry WYRDEER,    WyrdeerDEDData		; Wyrdeer
 	mon_cry CRY_WOOPER,     -$0c6,  $140 	; Clodsire - PLACEHOLDER
 	mon_cry CRY_PORYGON2,    $041,  $200	; Farigiraf - PLACEHOLDER
@@ -347,8 +347,6 @@ CryHeaders2::
 	mon_cry CRY_GOLEM,       $0e6,  $15d 	; Koffing
 	mon_cry CRY_GOLEM,       $0ff,  $17f 	; Weezing
 	mon_cry CRY_PIDGEOTTO,   $00a,  $140 	; Chansey
-	mon_cry CRY_CLEFAIRY,    $099,  $090 	; Horsea
-	mon_cry CRY_CLEFAIRY,    $03c,  $081 	; Seadra
 	mon_cry CRY_STARYU,      $002,  $0a0 	; Staryu
 	mon_cry CRY_STARYU,      $000,  $100 	; Starmie
 	mon_cry CRY_SCYTHER,     $000,  $100 	; Scyther
@@ -421,7 +419,6 @@ CryHeaders2::
 	mon_cry CRY_AMPHAROS,    $8a9,  $180 	; Skarmory
 	mon_cry CRY_CYNDAQUIL,   $039,  $140 	; Houndour
 	mon_cry CRY_TOTODILE,   -$10a,  $100 	; Houndoom
-	mon_cry CRY_SLUGMA,      $2fb,  $100 	; Kingdra
 	mon_cry CRY_PHANPY,    	 $048,  $230 	; Phanpy
 	mon_cry CRY_DONPHAN,     $000,  $1a0 	; Donphan
 	mon_cry CRY_PORYGON2,  	 $073,  $240 	; Porygon2
@@ -525,6 +522,9 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Toxapex - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Mimikyu - PLACEHOLDER
 	mon_cry CRY_MAGCARGO,    $081,  $0ff 	; Cursola
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Dreepy - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Drakloak - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Dragapult - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Wyrdeer - PLACEHOLDER
 	mon_cry CRY_WOOPER,     -$0c6,  $140 	; Clodsire - PLACEHOLDER
 	mon_cry CRY_PORYGON2,    $041,  $200	; Farigiraf - PLACEHOLDER

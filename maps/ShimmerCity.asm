@@ -178,7 +178,7 @@ ShimmerCityHorseaKidAsm:
 	farcall SelectTradeOrDaycareMon
 	jr c, .cancel
 	ld a, [wCurPartySpecies]
-	cp HORSEA
+	cp BULBASAUR
 	jr z, .yes
 	ld a, FALSE
 	ld [wScriptVar], a

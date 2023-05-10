@@ -144,9 +144,6 @@ NewPokedexOrder:
 	db ELEKID
 	db ELECTABUZZ
 	db ELECTIVIRE
-	db HORSEA
-	db SEADRA
-	db KINGDRA
 	db STARYU
 	db STARMIE
 	db CHINCHOU
@@ -250,6 +247,9 @@ NewPokedexOrder:
 	db TOXAPEX
 	db MIMIKYU
 	db CURSOLA
+	db DREEPY
+	db DRAKLOAK
+	db DRAGAPULT
 	db CLODSIRE
 	db GIRAFARIG
 	db FARIGIRAF

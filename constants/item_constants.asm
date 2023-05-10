@@ -127,7 +127,7 @@
 	const MYSTICTICKET ; 6c - replace
 	const OLD_SEA_MAP  ; 6d - replace
 	const SHINY_CHARM  ; 6e
-	const OVAL_CHARM   ; 6f
+	const OVAL_CHARM   ; 6f - replace
 	const FLOWER_PETAL ; 70
 	const BLOSSOM_TEA  ; 71
 
@@ -245,7 +245,7 @@
 	const POWER_BAND   ; d5
 	const POWER_ANKLET ; d6
 
-	const DRAGON_SCALE ; d7
+	const DRAGON_SCALE ; d7 - replace
 	const UP_GRADE     ; d8
 	const DUBIOUS_DISC ; d9
 	const BIG_MALASADA ; da

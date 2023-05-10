@@ -71,8 +71,6 @@ BuyMonDescriptions::
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
-	dw HorseaBuyMonDesc
-	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
@@ -106,7 +104,6 @@ BuyMonDescriptions::
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw ChinchouBuyMonDesc
-	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
@@ -254,14 +251,13 @@ BuyMonDescriptions::
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
+	dw NoBuyMonDesc
+	dw NoBuyMonDesc
+	dw NoBuyMonDesc
 	
 NoBuyMonDesc:
 	db   "ERROR!!!!!"
 	next "@"
-
-HorseaBuyMonDesc:
-	db   "DRAGON #MON"
-	next "TYPE: WATER@"
 	
 MagikarpBuyMonDesc:
 	db   "FISH #MON"

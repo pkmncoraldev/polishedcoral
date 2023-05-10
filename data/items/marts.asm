@@ -234,7 +234,6 @@ ShimmerFishMarket:
 	dbw MAGIKARP, 	200
 	dbw CHINCHOU, 	200
 	dbw CARVANHA, 	200
-	dbw HORSEA, 	200
 	db -1
 	
 ShimmerBerryMarket:

@@ -1169,26 +1169,26 @@
 	db 27, MILTANK		;30%
 	db 27, TAUROS		;30%
 	db 27, MURKROW		;20%
-	db 27, HOUNDOUR		;10%
+	db 27, PIDGEOTTO	;10%
 	db 27, PIDGEOTTO	;5%
-	db 27, PIDGEOTTO	;4%
-	db 28, PIDGEOTTO	;1%
+	db 27, HOUNDOUR		;4%
+	db 28, HOUNDOUR		;1%
 	; day
 	db 27, MILTANK		;30%
 	db 27, TAUROS		;30%
 	db 27, MURKROW		;20%
-	db 27, HOUNDOUR		;10%
+	db 27, PIDGEOTTO	;10%
 	db 27, PIDGEOTTO	;5%
-	db 27, PIDGEOTTO	;4%
-	db 28, PIDGEOTTO	;1%
+	db 27, HOUNDOUR		;4%
+	db 28, HOUNDOUR		;1%
 	; nite
 	db 27, MILTANK		;30%
 	db 27, TAUROS		;30%
 	db 27, MURKROW		;20%
-	db 27, HOUNDOUR		;10%
+	db 27, PIDGEOTTO	;10%
 	db 27, PIDGEOTTO	;5%
-	db 27, PIDGEOTTO	;4%
-	db 28, PIDGEOTTO	;1%
+	db 27, HOUNDOUR		;4%
+	db 28, HOUNDOUR		;1%
 	
 	map_id ROUTE_9 ; used on Route 9 when EVENT_ON_DODRIO_RANCH is not set
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
@@ -1196,24 +1196,24 @@
 	db 20, COTTONEE		;30%
 	db 20, MURKROW		;30%
 	db 20, FLAAFFY		;20%
-	db 20, HOUNDOUR		;10%
-	db 20, FLAAFFY		;5%
+	db 20, FLAAFFY		;10%
+	db 20, HOUNDOUR		;5%
 	db 20, DODUO		;4%
 	db 20, DODUO		;1%
 	; day
 	db 20, COTTONEE		;30%
 	db 20, MURKROW		;30%
 	db 20, FLAAFFY		;20%
-	db 20, HOUNDOUR		;10%
-	db 20, FLAAFFY		;5%
+	db 20, FLAAFFY		;10%
+	db 20, HOUNDOUR		;5%
 	db 20, DODUO		;4%
 	db 20, DODUO		;1%
 	; nite
 	db 20, COTTONEE		;30%
 	db 20, MURKROW		;30%
 	db 20, FLAAFFY		;20%
-	db 20, HOUNDOUR		;10%
-	db 20, FLAAFFY		;5%
+	db 20, FLAAFFY		;10%
+	db 20, HOUNDOUR		;5%
 	db 20, DODUO		;4%
 	db 20, DODUO		;1%
 	
@@ -1223,54 +1223,54 @@
 	; morn
 	db 20, DODUO		;30%
 	db 20, MURKROW		;30%
-	db 20, HOUNDOUR		;20%
-	db 20, HOUNDOUR		;10%
-	db 20, PIDGEOTTO	;5%
-	db 20, PIDGEOTTO	;4%
+	db 20, PIDGEOTTO	;20%
+	db 20, PIDGEOTTO	;10%
+	db 20, HOUNDOUR		;5%
+	db 20, HOUNDOUR		;4%
 	db 28, DODRIO		;1%
 	; day
 	db 20, DODUO		;30%
 	db 20, MURKROW		;30%
-	db 20, HOUNDOUR		;20%
-	db 20, HOUNDOUR		;10%
-	db 20, PIDGEOTTO	;5%
-	db 20, PIDGEOTTO	;4%
+	db 20, PIDGEOTTO	;20%
+	db 20, PIDGEOTTO	;10%
+	db 20, HOUNDOUR		;5%
+	db 20, HOUNDOUR		;4%
 	db 28, DODRIO		;1%
 	; nite
 	db 20, DODUO		;30%
 	db 20, MURKROW		;30%
-	db 20, HOUNDOUR		;20%
-	db 20, HOUNDOUR		;10%
-	db 20, PIDGEOTTO	;5%
-	db 20, PIDGEOTTO	;4%
+	db 20, PIDGEOTTO	;20%
+	db 20, PIDGEOTTO	;10%
+	db 20, HOUNDOUR		;5%
+	db 20, HOUNDOUR		;4%
 	db 28, DODRIO		;1%
 	
 	map_id FLICKER_PASS_OUTSIDE
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, HOUNDOUR		;30%
-	db 20, MURKROW		;30%
-	db 20, FLAAFFY		;20%
-	db 20, SKARMORY		;10%
-	db 20, FLAAFFY		;5%
-	db 20, DODUO		;4%
-	db 20, DODUO		;1%
+	db 23, FLAAFFY		;30%
+	db 23, MURKROW		;30%
+	db 23, HOUNDOUR		;20%
+	db 24, SKARMORY		;10%
+	db 23, MURKROW		;5%
+	db 24, SKARMORY		;4%
+	db 24, SKARMORY		;1%
 	; day
-	db 20, HOUNDOUR		;30%
-	db 20, MURKROW		;30%
-	db 20, FLAAFFY		;20%
-	db 20, SKARMORY		;10%
-	db 20, FLAAFFY		;5%
-	db 20, DODUO		;4%
-	db 20, DODUO		;1%
+	db 23, FLAAFFY		;30%
+	db 23, MURKROW		;30%
+	db 23, HOUNDOUR		;20%
+	db 24, SKARMORY		;10%
+	db 23, MURKROW		;5%
+	db 24, SKARMORY		;4%
+	db 24, SKARMORY		;1%
 	; nite
-	db 20, HOUNDOUR		;30%
-	db 20, MURKROW		;30%
-	db 20, FLAAFFY		;20%
-	db 20, SKARMORY		;10%
-	db 20, FLAAFFY		;5%
-	db 20, DODUO		;4%
-	db 20, DODUO		;1%
+	db 23, FLAAFFY		;30%
+	db 23, MURKROW		;30%
+	db 23, HOUNDOUR		;20%
+	db 24, SKARMORY		;10%
+	db 23, MURKROW		;5%
+	db 24, SKARMORY		;4%
+	db 24, SKARMORY		;1%
 	
 	map_id FLICKER_PASS_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -1308,7 +1308,7 @@
 	db 22, MACHOP		;10%
 	db 22, MACHOP		;5%
 	db 22, NOIBAT		;4%
-	db 22, NOIBAT			;1%
+	db 22, NOIBAT		;1%
 	; day
 	db 22, ZUBAT		;30%
 	db 22, GEODUDE		;30%

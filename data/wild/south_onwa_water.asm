@@ -5,7 +5,7 @@
 	db 29, CHINCHOU		;30%
 	db 29, CARVANHA		;30%
 	db 29, WINGULL		;20%
-	db 29, WINGULL; MAREANIE		;10%
+	db 29, MAREANIE		;10%
 	db 29, CORSOLA		;5%
 	db 29, DREEPY		;4%
 	db 29, DREEPY		;1%
@@ -15,7 +15,7 @@
 	db 29, CHINCHOU		;30%
 	db 29, CARVANHA		;30%
 	db 29, WINGULL		;20%
-	db 29, WINGULL; MAREANIE		;10%
+	db 29, MAREANIE		;10%
 	db 29, CORSOLA		;5%
 	db 29, DREEPY		;4%
 	db 29, DREEPY		;1%

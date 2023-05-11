@@ -127,7 +127,7 @@ Moves:: ; 41afb
 	move REFLECT,                  EFFECT_REFLECT,             0, PSYCHIC,   100, 20,   0, STATUS
 	move FOCUS_ENERGY,             EFFECT_FOCUS_ENERGY,        0, NORMAL,    100, 30,   0, STATUS
 	move FLASH_CANNON,             EFFECT_SP_DEF_DOWN_HIT,    80, STEEL,     100, 10,  10, SPECIAL
-	move METRONOME,                EFFECT_METRONOME,           0, NORMAL,    100, 10,   0, STATUS
+	move DRAGON_DARTS,             EFFECT_DOUBLE_HIT,    	  50, DRAGON,    100, 10,   0, PHYSICAL
 	move SCALD,                    EFFECT_BURN_HIT,           80, WATER,     100, 15,  30, SPECIAL
 	move SELFDESTRUCT,             EFFECT_EXPLOSION,         200, NORMAL,    100,  5,   0, PHYSICAL
 	move COTTON_GUARD,             EFFECT_COTTON_GUARD,        0, GRASS,     100, 10, 100, STATUS

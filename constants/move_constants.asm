@@ -117,7 +117,7 @@
 	const REFLECT      ; $73
 	const FOCUS_ENERGY ; $74
 	const FLASH_CANNON ; $75
-	const METRONOME    ; $76
+	const DRAGON_DARTS    ; $76
 	const SCALD        ; $77
 	const SELFDESTRUCT ; $78
 	const COTTON_GUARD ; $79

@@ -962,8 +962,10 @@ GetTransformName::
 	jr c, .sketch
 	call CheckMimicUsers
 	jr c, .mimic
+	call CheckMetronomeUsers
+	jr c, .metronome
 	ld hl, TransformNames
-	ld a, 3
+	ld a, 4
 	call GetNthString
 	ld de, wStringBuffer1
 	ld bc, ITEM_NAME_LENGTH
@@ -991,6 +993,15 @@ GetTransformName::
 .mimic
 	ld hl, TransformNames
 	ld a, 2
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	jp GetMoveNameDone
+	
+.metronome
+	ld hl, TransformNames
+	ld a, 3
 	call GetNthString
 	ld de, wStringBuffer1
 	ld bc, ITEM_NAME_LENGTH
@@ -1010,6 +1021,8 @@ GetMoveNameTransform:: ; 34f8
 	jr c, .sketch
 	call CheckMimicUsers
 	jr c, .mimic
+	call CheckMetronomeUsers
+	jr c, .metronome
 	ld hl, TransformNames
 	ld a, 3
 	jp GetMoveNameDone2
@@ -1027,6 +1040,11 @@ GetMoveNameTransform:: ; 34f8
 .mimic
 	ld hl, TransformNames
 	ld a, 2
+	jp GetMoveNameDone2
+	
+.metronome
+	ld hl, TransformNames
+	ld a, 3
 	jp GetMoveNameDone2
 
 	
@@ -1395,6 +1413,15 @@ CheckMimicUsers::
 	call CheckDitto
 CheckMimicUsers2::
 	ld hl, MimicUsers
+	ld de, 1
+	call IsInArray
+	ret
+	
+CheckMetronomeUsers::
+	ld a, [wCurPartySpecies]
+	call CheckDitto
+CheckMetronomeUsers2::
+	ld hl, MetronomeUsers
 	ld de, 1
 	call IsInArray
 	ret
@@ -2204,6 +2231,28 @@ CheckTransformThing::
 	ld a, $3
 	ret
 .not_mimic
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip4
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species4
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species4
+	
+.skip4
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species4
+	ld a, [wEnemyMonSpecies]
+.got_user_species4
+	farcall CheckMetronomeUsers2
+	jr nc, .not_metronome
+	ld a, $14
+	ret
+.not_metronome
 ;splash
 	ld a, $9
 	ret
@@ -2565,6 +2614,17 @@ MimicUsers:
 	db GRANBULL
 	db -1
 	
+MetronomeUsers:
+	db DREEPY
+	db CLEFAIRY
+	db CLEFABLE
+	db MUNCHLAX
+	db SNORLAX
+	db TOGEPI
+	db TOGETIC
+	db TOGEKISS
+	db -1
+	
 HypnosisUsers:
 	db SMEARGLE
 	db POLIWAG
@@ -2690,6 +2750,7 @@ TransformNames:
 	db "TRANSFORM@"
 	db "SKETCH@"
 	db "MIMIC@"
+	db "METRONOME@"
 	db "SPLASH@"
 	db -1
 	

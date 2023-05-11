@@ -1039,9 +1039,9 @@ TwinsGroup:
 	db TRAINERTYPE_ITEM | TRAINERTYPE_MOVES
 	; party
 	db 7, TOGEPI, NO_ITEM
-		db METRONOME, 0, 0, 0
+		db TRANSFORM_SKETCH_MIMIC_SPLASH, 0, 0, 0
 	db 8, TOGEPI, ORAN_BERRY
-		db METRONOME, 0, 0, 0
+		db TRANSFORM_SKETCH_MIMIC_SPLASH, 0, 0, 0
 	db -1 ; end
 
 ; ================
@@ -1051,9 +1051,9 @@ TwinsGroup:
 	db TRAINERTYPE_ITEM | TRAINERTYPE_MOVES
 	; party
 	db 7, TOGEPI, NO_ITEM
-		db METRONOME, 0, 0, 0
+		db TRANSFORM_SKETCH_MIMIC_SPLASH, 0, 0, 0
 	db 8, TOGEPI, ORAN_BERRY
-		db METRONOME, 0, 0, 0
+		db TRANSFORM_SKETCH_MIMIC_SPLASH, 0, 0, 0
 	db -1 ; end
 
 ; ================
@@ -3242,7 +3242,7 @@ TeacherFastGroup:
 	db "KATE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 6, MEOWTH
+	db 6, DREEPY
 	db -1 ; end
 
 ; ================

@@ -208,6 +208,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_ed
 	dw .Frameset_f3 ; BATTLEANIMFRAMESET_F3
 	dw .Frameset_block
+	dw .Frameset_dragondarts
 
 	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
 .Frameset_00:
@@ -1445,3 +1446,7 @@ BattleAnimFrameData: ; ce85e
 .Frameset_bc:
 	frame BATTLEANIMOAMSET_DA,  9
 	delanim
+	
+.Frameset_dragondarts:
+	db BATTLEANIMOAMSET_93, $08
+	db -1

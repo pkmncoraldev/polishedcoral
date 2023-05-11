@@ -117,7 +117,7 @@ BattleAnimations::
 	dw BattleAnim_Reflect
 	dw BattleAnim_FocusEnergy
 	dw BattleAnim_FlashCannon
-	dw BattleAnim_Metronome
+	dw BattleAnim_DragonDarts
 	dw BattleAnim_Scald
 	dw BattleAnim_Selfdestruct
 	dw BattleAnim_CottonGuard
@@ -404,19 +404,7 @@ BattleAnim_CosmicPower:
 .loop
 	anim_sound 0, 0, SFX_MOONLIGHT
 	anim_obj ANIM_OBJ_COSMIC_POWER, 48, 104, $0
-	anim_obj ANIM_OBJ_47,   5, 4,  13, 4, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   4, 4,  13, 4, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   6, 4,  13, 4, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   3, 4,  13, 4, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   7, 4,  13, 4, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   2, 4,  13, 4, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   8, 4,  13, 4, $8
+	anim_call BattleAnim_CosmicPowerCharge
 	anim_wait 2
 	anim_loop 4, .loop
 	anim_wait 32
@@ -1039,11 +1027,7 @@ BattleAnim_DragonClaw:
 	
 BattleAnim_AuraSphere:
 	anim_2gfx ANIM_GFX_LEAF_STORM, ANIM_GFX_WIND
-	anim_obj ANIM_OBJ_AGILITY, 8, 24, $10
-	anim_obj ANIM_OBJ_AGILITY, 8, 88, $8
-	anim_wait 4
-	anim_obj ANIM_OBJ_AGILITY, 8, 32, $6
-	anim_obj ANIM_OBJ_AGILITY, 8, 80, $4
+	anim_call BattleAnim_AuraSphereLines
 	anim_sound 6, 2, SFX_OUTRAGE
 	anim_obj ANIM_OBJ_VORTEX_BLUE, 48, 96, $30
 	anim_wait 63
@@ -1588,11 +1572,7 @@ BattleAnim_NightSlash:
 	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_WIND
 	anim_bgp $1b
 	anim_obp0 $c0
-	anim_obj ANIM_OBJ_AGILITY, 8, 24, $10
-	anim_obj ANIM_OBJ_AGILITY, 8, 88, $8
-	anim_wait 4
-	anim_obj ANIM_OBJ_AGILITY, 8, 32, $6
-	anim_obj ANIM_OBJ_AGILITY, 8, 80, $4
+	anim_call BattleAnim_AuraSphereLines
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $08, $2, $0
 	anim_sound 0, 1, SFX_CUT
 	anim_obj ANIM_OBJ_NIGHT_SLASH_2, 112, 38, $0
@@ -2739,11 +2719,7 @@ BattleAnim_HiJumpKick_branch_c971e:
 BattleAnim_FocusBlast:
 	anim_2gfx ANIM_GFX_LEAF_STORM, ANIM_GFX_WIND
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
-	anim_obj ANIM_OBJ_AGILITY, 8, 24, $10
-	anim_obj ANIM_OBJ_AGILITY, 8, 88, $8
-	anim_wait 4
-	anim_obj ANIM_OBJ_AGILITY, 8, 32, $6
-	anim_obj ANIM_OBJ_AGILITY, 8, 80, $4
+	anim_call BattleAnim_AuraSphereLines
 	anim_sound 6, 2, SFX_OUTRAGE
 	anim_obj ANIM_OBJ_VORTEX_YELLOW, 48, 96, $30
 	anim_wait 63
@@ -2874,15 +2850,7 @@ BattleAnim_FireBlast:
 	anim_sound 0, 1, SFX_EMBER
 	anim_wait 8
 	anim_loop 10, .loop2
-	anim_incobj  1
-	anim_incobj  2
-	anim_incobj  3
-	anim_incobj  4
-	anim_incobj  5
-	anim_incobj  6
-	anim_incobj  7
-	anim_incobj  8
-	anim_incobj  9
+	anim_call BattleAnim_IncObj1to9
 	anim_incobj 10
 	anim_wait 2
 .loop3
@@ -3653,19 +3621,7 @@ BattleAnim_FocusEnergy:
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 .loop
 	anim_sound 0, 0, SFX_SWORDS_DANCE
-	anim_obj ANIM_OBJ_47,   5, 4,  13, 4, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   4, 4,  13, 4, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   6, 4,  13, 4, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   3, 4,  13, 4, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   7, 4,  13, 4, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   2, 4,  13, 4, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   8, 4,  13, 4, $8
+	anim_call BattleAnim_CosmicPowerCharge
 	anim_wait 2
 	anim_loop 3, .loop
 	anim_wait 8
@@ -4038,15 +3994,7 @@ BattleAnim_Whirlwind:
 	anim_obj ANIM_OBJ_GUST,   8, 0,  14, 0, $0
 	anim_wait 6
 	anim_loop 9, .loop
-	anim_incobj  1
-	anim_incobj  2
-	anim_incobj  3
-	anim_incobj  4
-	anim_incobj  5
-	anim_incobj  6
-	anim_incobj  7
-	anim_incobj  8
-	anim_incobj  9
+	anim_call BattleAnim_IncObj1to9
 	anim_sound 16, 2, SFX_WHIRLWIND
 	anim_wait 128
 	anim_jumpif $0, .done
@@ -4214,6 +4162,7 @@ BattleAnim_Transform:
 	anim_jumpif $9, BattleAnim_Splash
 	anim_jumpif $12, BattleAnim_FormChange1
 	anim_jumpif $13, BattleAnim_FormChange2
+	anim_jumpif $14, BattleAnim_Metronome
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_FollowPlayerHead_0
 	anim_transform
@@ -4224,6 +4173,36 @@ BattleAnim_Transform:
 	anim_incbgeffect ANIM_BG_WAVE_DEFORM_USER
 	anim_wait 48
 	anim_call BattleAnim_ShowMon_0
+	anim_ret
+	
+BattleAnim_DragonDarts:
+	anim_checkturn
+	anim_jumpvar 1, BattleAnim_EnemyDreepy
+	anim_2gfx ANIM_GFX_DREEPY_BACK, ANIM_GFX_HIT
+	anim_jumpif $0, BattleAnim_DragonDartsPlayer_Second
+;BattleAnim_DragonDartsPlayer_First:
+	anim_obj ANIM_OBJ_DRAGON_DARTS_PLAYER,   8, 0,  8, 4, $14
+	anim_jump BattleAnim_DragonDarts_end
+	
+BattleAnim_DragonDartsPlayer_Second:
+	anim_obj ANIM_OBJ_DRAGON_DARTS_PLAYER,   8, 0,  12, 4, $14
+	anim_jump BattleAnim_DragonDarts_end
+	
+BattleAnim_EnemyDreepy:
+	anim_2gfx ANIM_GFX_DREEPY_FRONT, ANIM_GFX_HIT
+	anim_jumpif $0, BattleAnim_DragonDartsEnemy_Second
+;BattleAnim_DragonDartsEnemy_First:
+	anim_obj ANIM_OBJ_DRAGON_DARTS_ENEMY,   8, 0,  8, 4, $14
+	anim_jump BattleAnim_DragonDarts_end
+	
+BattleAnim_DragonDartsEnemy_Second:
+	anim_obj ANIM_OBJ_DRAGON_DARTS_ENEMY,   8, 0,  12, 4, $14
+	
+BattleAnim_DragonDarts_end:
+	anim_wait 16
+	anim_sound 0, 1, SFX_POISON_STING
+	anim_obj ANIM_OBJ_05, -15, 0,   7, 0, $0
+	anim_wait 16
 	anim_ret
 	
 BattleAnim_FormChange1:
@@ -4882,19 +4861,7 @@ BattleAnim_Curse:
 	anim_bgeffect ANIM_BG_16, $0, $1, $40
 .loop
 	anim_sound 0, 0, SFX_SWORDS_DANCE
-	anim_obj ANIM_OBJ_47,   5, 4,  13, 4, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   4, 4,  13, 4, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   6, 4,  13, 4, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   3, 4,  13, 4, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   7, 4,  13, 4, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   2, 4,  13, 4, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   8, 4,  13, 4, $8
+	anim_call BattleAnim_CosmicPowerCharge
 	anim_wait 2
 	anim_loop 3, .loop
 	anim_wait 8
@@ -5388,19 +5355,7 @@ BattleAnim_Endure:
 	anim_bgeffect ANIM_BG_07, $0, $2, $0
 .loop
 	anim_sound 0, 0, SFX_SWORDS_DANCE
-	anim_obj ANIM_OBJ_47,   5, 4,  13, 4, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   4, 4,  13, 4, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   6, 4,  13, 4, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   3, 4,  13, 4, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   7, 4,  13, 4, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   2, 4,  13, 4, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_47,   8, 4,  13, 4, $8
+	anim_call BattleAnim_CosmicPowerCharge
 	anim_wait 2
 	anim_loop 5, .loop
 	anim_wait 8
@@ -6517,15 +6472,7 @@ BattleAnim_Twister:
 	anim_sound 0, 0, SFX_RAZOR_WIND
 	anim_wait 8
 	anim_loop 8, .loop2
-	anim_incobj  1
-	anim_incobj  2
-	anim_incobj  3
-	anim_incobj  4
-	anim_incobj  5
-	anim_incobj  6
-	anim_incobj  7
-	anim_incobj  8
-	anim_incobj  9
+	anim_call BattleAnim_IncObj1to9
 	anim_wait 64
 	anim_obj ANIM_OBJ_01, -14, 0,   8, 0, $18
 .loop3
@@ -6537,15 +6484,7 @@ BattleAnim_Twister:
 	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 8
 	anim_loop 4, .loop4
-	anim_incobj  1
-	anim_incobj  2
-	anim_incobj  3
-	anim_incobj  4
-	anim_incobj  5
-	anim_incobj  6
-	anim_incobj  7
-	anim_incobj  8
-	anim_incobj  9
+	anim_call BattleAnim_IncObj1to9
 	anim_wait 32
 	anim_ret
 
@@ -6600,3 +6539,40 @@ BattleAnim_Smog:
 	anim_loop 10, .loop
 	anim_wait 96
 	anim_ret
+
+BattleAnim_IncObj1to9:
+	anim_incobj  1
+	anim_incobj  2
+	anim_incobj  3
+	anim_incobj  4
+	anim_incobj  5
+	anim_incobj  6
+	anim_incobj  7
+	anim_incobj  8
+	anim_incobj  9
+	anim_ret
+	
+BattleAnim_CosmicPowerCharge:
+	anim_obj ANIM_OBJ_47,   5, 4,  13, 4, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_47,   4, 4,  13, 4, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_47,   6, 4,  13, 4, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_47,   3, 4,  13, 4, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_47,   7, 4,  13, 4, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_47,   2, 4,  13, 4, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_47,   8, 4,  13, 4, $8
+	anim_ret
+	
+BattleAnim_AuraSphereLines:
+	anim_obj ANIM_OBJ_AGILITY, 8, 24, $10
+	anim_obj ANIM_OBJ_AGILITY, 8, 88, $8
+	anim_wait 4
+	anim_obj ANIM_OBJ_AGILITY, 8, 32, $6
+	anim_obj ANIM_OBJ_AGILITY, 8, 80, $4
+	anim_ret
+	

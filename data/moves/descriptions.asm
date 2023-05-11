@@ -1092,3 +1092,7 @@ ThunderFangDescription:
 LockOnDescription:
 	db   "Ensures the next"
 	next "attack will hit.@"
+	
+DragonDartsDescription:
+	db   "Attacks twice"
+	next "using DREEPY.@"

@@ -156,9 +156,9 @@ anim_beatup: macro
 	db anim_beatup_command
 	endm
 
-	enum anim_0xe7_command ; e7
-anim_0xe7: macro
-	db anim_0xe7_command
+	enum anim_checkturn_command ; e7
+anim_checkturn: macro
+	db anim_checkturn_command
 	endm
 
 	enum anim_updateactorpic_command ; e8

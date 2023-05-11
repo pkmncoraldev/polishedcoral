@@ -7,6 +7,8 @@ BattleCommand_transform:
 	jp z, BattleCommand_mimic
 	cp $9
 	jp z, BattleCommand_splash
+	cp $14
+	jp z, BattleCommand_metronome
 
 ;transform
 	call ClearLastMove

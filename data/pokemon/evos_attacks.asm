@@ -434,7 +434,7 @@ ClefairyEvosAttacks:
 	db 17, DEFENSE_CURL_HARDEN_WITHDRAW
 	db 22, BODY_SLAM
 	db 25, MINIMIZE
-	db 31, METRONOME
+	db 31, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db 34, COSMIC_POWER
 	db 39, CHARM_FEATHER_DANCE
 	db 42, SYNTHESIS_MOONLIGHT_MORNING_SUN
@@ -452,7 +452,7 @@ ClefableEvosAttacks:
 	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
 	db 1, BODY_SLAM
 	db 1, MINIMIZE
-	db 1, METRONOME
+	db 1, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db 1, COSMIC_POWER
 	db 1, CHARM_FEATHER_DANCE
 	db 1, SYNTHESIS_MOONLIGHT_MORNING_SUN
@@ -1563,7 +1563,7 @@ AerodactylEvosAttacks:
 	
 SnorlaxEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, METRONOME
+	db 1, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db 1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db 1, TACKLE_SCRATCH_POUND
 	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
@@ -1929,7 +1929,7 @@ TogepiEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWL
 	db 1, CHARM_FEATHER_DANCE
-	db 5, METRONOME
+	db 5, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db 9, SWEET_KISS
 	db 13, FAIRY_WIND
 	db 17, SING_HYPNOSIS
@@ -1949,7 +1949,7 @@ TogeticEvosAttacks:
 	db 1, AIR_SLASH
 	db 1, GROWL
 	db 1, CHARM_FEATHER_DANCE
-	db 1, METRONOME
+	db 1, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db 9, SING_HYPNOSIS
 	db 13, FAIRY_WIND
 	db 15, ENCORE
@@ -3401,7 +3401,7 @@ SpiritombEvosAttacks:
 MunchlaxEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, SNORLAX
 	db 0 ; no more evolutions
-	db 1, METRONOME
+	db 1, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db 1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db 1, TACKLE_SCRATCH_POUND
 	db 4, DEFENSE_CURL_HARDEN_WITHDRAW
@@ -3579,7 +3579,7 @@ TogekissEvosAttacks:
 	db  1, AIR_SLASH
 	db  1, GROWL
 	db  1, CHARM_FEATHER_DANCE
-	db  1, METRONOME
+	db  1, TRANSFORM_SKETCH_MIMIC_SPLASH
 	db  1, SING_HYPNOSIS
 	db  1, FAIRY_WIND
 	db  1, ENCORE
@@ -4274,7 +4274,7 @@ CursolaEvosAttacks:
 DreepyEvosAttacks:
 	db EVOLVE_LEVEL, 50, DRAKLOAK
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, DRAGON_DARTS
 	db 0 ; no more level-up moves
 	
 DrakloakEvosAttacks:
@@ -4285,7 +4285,8 @@ DrakloakEvosAttacks:
 	
 DragapultEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+;	db 1, TACKLE_SCRATCH_POUND
+	db 1, DRAGON_DARTS
 	db 0 ; no more level-up moves
 	
 WyrdeerEvosAttacks:

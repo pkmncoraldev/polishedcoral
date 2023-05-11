@@ -116,7 +116,7 @@ MoveNames::
 	db "REFLECT@"
 	db "FOCUS ENERGY@"
 	db "FLASH CANNON@"
-	db "METRONOME@"
+	db "DRAGON DARTS@"
 	db "SCALD@"
 	db "SELFDESTRUCT@"
 	db "COTTON GUARD@"

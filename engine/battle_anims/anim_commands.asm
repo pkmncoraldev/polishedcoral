@@ -414,7 +414,7 @@ BattleAnimCommands:: ; cc2a4 (33:42a4)
 	dw BattleAnimCmd_OAMOff
 	dw BattleAnimCmd_ClearObjs
 	dw BattleAnimCmd_BeatUp
-	dw BattleAnimCmd_E7 ; dummy
+	dw BattleAnimCmd_CheckTurn ; dummy
 	dw BattleAnimCmd_UpdateActorPic
 	dw BattleAnimCmd_Minimize
 	dw BattleAnimCmd_EA ; dummy
@@ -633,6 +633,19 @@ BattleAnimCmd_IfParamEqual: ; cc3d6 (33:43d6)
 	ld [hl], e
 	inc hl
 	ld [hl], d
+	ret
+	
+BattleAnimCmd_CheckTurn: ; cc3d6 (33:43d6)
+	ld a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+	xor a
+	ld [wBattleAnimVar], a
+	ret
+
+.enemy
+	ld a, 1
+	ld [wBattleAnimVar], a
 	ret
 
 BattleAnimCmd_IfParamAnd: ; cc3fa (33:43fa)

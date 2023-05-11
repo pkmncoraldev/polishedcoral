@@ -328,6 +328,8 @@ PrintMoveDesc: ; 2cb3e
 	jr c, .sketch
 	farcall CheckMimicUsers
 	jr c, .mimic
+	farcall CheckMetronomeUsers
+	jr c, .metronome
 	ld de, SplashDescription
 	jr .return
 .transform
@@ -338,6 +340,9 @@ PrintMoveDesc: ; 2cb3e
 	jr .return
 .mimic
 	ld de, MimicDescription
+	jr .return
+.metronome
+	ld de, MetronomeDescription
 	jr .return
 
 AskTeachTMHM: ; 2c7bf (b:47bf)

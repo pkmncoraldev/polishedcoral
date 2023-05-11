@@ -2325,6 +2325,8 @@ BattleCommand_hittargetnosub: ; 34f60
 	jr z, .conversion
 	cp EFFECT_DOUBLE_HIT
 	jr z, .doublehit
+	cp EFFECT_TRANSFORM
+	jr z, .doublehit
 
 .normal_move
 	ld a, BATTLE_VARS_MOVE_ANIM

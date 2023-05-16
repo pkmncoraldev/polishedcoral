@@ -2608,8 +2608,6 @@ MimicUsers:
 	db GLACEON
 	db SYLVEON
 	db MIMIKYU
-	db CLEFAIRY
-	db CLEFABLE
 	db SNUBBULL
 	db GRANBULL
 	db -1

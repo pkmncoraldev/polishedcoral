@@ -10,8 +10,9 @@ BrilloGameCorner_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 9 ; bg events
+	db 10 ; bg events
 	signpost  3,  8, SIGNPOST_READ, BrilloGameCornerSign
+	signpost  4,  7, SIGNPOST_READ, BrilloGameCornerNpc5_1
 	signpost  4,  6, SIGNPOST_READ, BrilloGameCornerNpc5_2
 	signpost  5,  7, SIGNPOST_READ, BrilloGameCornerTableWrong
 	signpost  5,  6, SIGNPOST_READ, BrilloGameCornerTableWrong

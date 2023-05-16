@@ -701,6 +701,9 @@ RadiantField_BlockData:
 Route19_BlockData:
 	INCBIN "maps/Route19.ablk.lz"
 	
+Route19Tunnel_BlockData:
+	INCBIN "maps/Route19Tunnel.ablk.lz"
+	
 FakeRoute1_BlockData:
 	INCBIN "maps/FakeRoute1.ablk.lz"
 	

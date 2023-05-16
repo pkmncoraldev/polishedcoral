@@ -352,6 +352,7 @@ MAP_NONE   EQU 0
 	newgroup
 	
 	map_const ROUTE_19,									  23, 34 ; 1
+	map_const ROUTE_19_TUNNEL,							  15, 12 ; 2
 	
 	newgroup													 ; last
 	

@@ -43,7 +43,6 @@ TilesetLibraryAnim::
 TilesetSnowAnim::
 TilesetMall2Anim::
 TilesetIceCaveAnim::
-TilesetHighwayAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -187,6 +186,7 @@ TilesetTrainAnim::
 TilesetSunsetAnim::
 TilesetGlintAnim::
 TilesetStarglowAnim::
+TilesetHighwayAnim::
 	dw VTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft

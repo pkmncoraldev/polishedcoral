@@ -145,6 +145,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .desert
 	cp TILESET_MART
 	jp z, .mart
+	cp TILESET_HIGHWAY
+	jp z, .highway
 	jp .do_nothing
 	
 .mart
@@ -156,6 +158,20 @@ LoadSpecialMapPalette: ; 494ac
 	jp nz, .desert_house
 	ld hl, GameCornerPalette
 	jp LoadSevenBGPalettes
+	
+.highway
+	ld hl, HighwayPalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 3 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals + 4 palettes
+	ld bc, 3 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 	
 .desert
 	ld a, [wTimeOfDayPalFlags]
@@ -892,4 +908,7 @@ INCLUDE "maps/palettes/bgpals/airportfence.pal"
 
 ConstructionPalette:
 INCLUDE "maps/palettes/bgpals/construction.pal"
+
+HighwayPalette:
+INCLUDE "maps/palettes/bgpals/highway.pal"
 

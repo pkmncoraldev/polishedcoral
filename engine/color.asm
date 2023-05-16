@@ -1052,8 +1052,7 @@ LoadMapPals::
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
-	jp .outside
+	jp FarCopyWRAM
 	
 .nett
 	ld a, [wMapGroup]
@@ -1248,7 +1247,8 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsUmbrella
 	call AddNTimes
-	jp .copy_single_pal_to_pal_7
+	call .copy_single_pal_to_pal_7
+	jp .outside
 .rockscheck1
 	ld a, [wMapNumber]
 	cp MAP_LAKE_ONWA
@@ -1331,15 +1331,16 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsRanch
 	call AddNTimes
-	jp .copy_single_pal_to_pal_7
+	call .copy_single_pal_to_pal_7
+	jp .outside
 .ranchyellow
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsRanchYellow
 	call AddNTimes
-	jp .copy_single_pal_to_pal_7
-	
+	call .copy_single_pal_to_pal_7
+	jp .outside
 .hangar
 	ld a, [wTimeOfDayPalFlags]
 	and $3F
@@ -1350,8 +1351,8 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsHangar
 	call AddNTimes
-	jp .copy_single_pal_to_pal_7
-	
+	call .copy_single_pal_to_pal_7
+	jp .outside	
 .luster
 	ld a, [wIsNearCampfire]
 	bit 0, a
@@ -1374,8 +1375,8 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsLuster
 	call AddNTimes
-	jp .copy_single_pal_to_pal_7
-	
+	call .copy_single_pal_to_pal_7
+	jp .outside
 .snow
 	eventflagcheck EVENT_SNOWSTORM_HAPPENING
 	jr nz, .snowstorm
@@ -1476,8 +1477,8 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsSkatepark
 	call AddNTimes
-	jp .copy_single_pal_to_pal_7
-	
+	call .copy_single_pal_to_pal_7
+	jp .outside
 .sunset
 	ld a, [wMapNumber]
 	cp MAP_SUNSET_BAY
@@ -1494,8 +1495,8 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsSailboat
 	call AddNTimes
-	jp .copy_single_pal_to_pal_7
-	
+	call .copy_single_pal_to_pal_7
+	jp .outside
 .lighthouse
 	ld a, [wTimeOfDayPal]
 	and 3
@@ -1507,7 +1508,11 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_19
 	jp nz, .normal
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
 	ld hl, MapObjectPalsMoomoo
+	call AddNTimes
 	jp .copy_single_pal_to_pal_7
 .lab
 	call .normal

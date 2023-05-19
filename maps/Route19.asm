@@ -76,8 +76,8 @@ Route19Trigger1:
 	changeblock $22, $10, $aa
 	changeblock $2c, $10, $aa
 	changeblock $1c, $0c, $f3
-	changeblock $16, $14, $f6
-	changeblock $16, $16, $fa
+	changeblock $16, $14, $85
+	changeblock $16, $16, $89
 	clearflag ENGINE_STREETLIGHTS
 	callasm GenericFinishBridge
 	callasm Route19StreetlightPaletteUpdateThingMoreWordsExtraLongStyle

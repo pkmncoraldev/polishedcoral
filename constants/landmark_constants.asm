@@ -61,6 +61,7 @@ SOUTH_ONWA_LANDMARK EQU const_value
 	const ROUTE_17			 ; 2f
 	const ROUTE_18			 ; 30
 	const RADIANT_TOWNSHIP	 ; 31
+	const ROUTE_19			 ; 32
 
 SHAMOUTI_LANDMARK EQU const_value
 

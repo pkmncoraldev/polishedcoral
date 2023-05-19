@@ -1533,7 +1533,7 @@ LoadMapPals::
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
-	call .copy_single_pal_to_pal_7
+	jp .copy_single_pal_to_pal_7
 .lab
 	call .normal
 	eventflagcheck EVENT_AIRPORT_LUGGAGE_2

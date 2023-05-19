@@ -238,12 +238,12 @@
 	const BLACK_SLUDGE ; cf
 
 	const MACHO_BRACE  ; d0
-	const POWER_WEIGHT ; d1
-	const POWER_BRACER ; d2
-	const POWER_BELT   ; d3
-	const POWER_LENS   ; d4
-	const POWER_BAND   ; d5
-	const POWER_ANKLET ; d6
+	const POWER_WEIGHT ; d1 - replace
+	const POWER_BRACER ; d2 - replace
+	const POWER_BELT   ; d3 - replace
+	const POWER_LENS   ; d4 - replace
+	const POWER_BAND   ; d5 - replace
+	const POWER_ANKLET ; d6 - replace
 
 	const DRAGON_SCALE ; d7 - replace
 	const UP_GRADE     ; d8
@@ -274,7 +274,7 @@
 
 	const COVER_FOSSIL ; f0
 	const PLUME_FOSSIL ; f1
-	const OLD_AMBER    ; f2
+	const OLD_AMBER    ; f2 - replace
 
 	const MULCH        ; f3 - replace
 	const SWEET_HONEY  ; f4 - replace

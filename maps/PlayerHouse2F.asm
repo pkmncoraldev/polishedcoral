@@ -155,6 +155,7 @@ PlayerHouseDebugPoster:
 	giveitem TAPE_PLAYER
 	giveitem SKATEBOARD
 	giveitem BICYCLE
+	giveitem ITEMFINDER
 	giveitem POLLEN_POUCH
 	giveitem LIBRARY_CARD
 	giveitem POKE_FLUTE

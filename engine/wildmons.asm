@@ -32,7 +32,7 @@ FindNest: ; 2a01f
 	ld a, [wCurSpecies]
 	cp SMEARGLE
 	jr nz, .not_smeargle
-	ld a, DITTO
+	ld a, BULBASAUR ;pokemon with no nest
 	ld [wNamedObjectIndexBuffer], a
 .not_smeargle
 	hlcoord 0, 0

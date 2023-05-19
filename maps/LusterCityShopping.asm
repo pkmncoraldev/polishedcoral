@@ -61,7 +61,7 @@ LusterCityShopping_MapScriptHeader:
 	person_event SPRITE_COOL_DUDE, 33, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Luster2NPC6, -1
 	person_event SPRITE_FISHER, 40, 15, SPRITEMOVEDATA_STANDING_LEFT, 2, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster2NPC7, -1
 	person_event SPRITE_SUPER_NERD, 29, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster2NPC8, -1
-	itemball_event 25, 25, LEFTOVERS, 1, EVENT_LUSTER_SHOPPING_POKEBALL
+	itemball_event 25, 25, ITEMFINDER, 1, EVENT_LUSTER_SHOPPING_POKEBALL
 	person_event SPRITE_SNARE, 18, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster2Snare, EVENT_PART_TIME_JOB_BEAT_SNARE
 	person_event SPRITE_FAT_GUY, 18, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster2Delivery, EVENT_PART_TIME_JOB_SAVED_DELIVERY
 
@@ -337,7 +337,13 @@ Luster2NPC7:
 Luster2NPC8:
 	faceplayer
 	opentext
-	writetext Luster2NPC8Text
+	checkevent EVENT_LUSTER_SHOPPING_POKEBALL
+	iftrue .got_itemfinder
+	writetext Luster2NPC8Text1
+	jump .end
+.got_itemfinder
+	writetext Luster2NPC8Text2
+.end
 	waitbutton
 	closetext
 	spriteface LUSTER2NPC8, UP
@@ -407,7 +413,7 @@ Luster2NPC7Text:
 	line "day…"
 	done
 	
-Luster2NPC8Text:
+Luster2NPC8Text1:
 	text "Only employees are"
 	line "allowed behind the"
 	cont "SHOPPING MALL."
@@ -416,6 +422,20 @@ Luster2NPC8Text:
 	line "getting a job just"
 	cont "to see what goes"
 	cont "on back there…"
+	done
+	
+Luster2NPC8Text2:
+	text "What did you find"
+	line "back behind the"
+	cont "SHOPPING MALL?"
+	
+	para "…"
+	
+	para "Oh, just an old"
+	line "ITEMFINDER?"
+	
+	para "What a piece of"
+	line "junk!"
 	done
 	
 LusterShoppingFenceKidText:

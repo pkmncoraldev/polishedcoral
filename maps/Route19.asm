@@ -17,7 +17,7 @@ Route19_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 7 ; bg events
+	db 8 ; bg events
 	signpost 21, 31, SIGNPOST_JUMPTEXT, Route19BrokenCar
 	signpost 21, 32, SIGNPOST_JUMPTEXT, Route19BrokenCar
 	signpost 20, 23, SIGNPOST_JUMPTEXT, Route19Tire
@@ -25,6 +25,7 @@ Route19_MapScriptHeader:
 	signpost 22, 30, SIGNPOST_JUMPTEXT, Route19Tire
 	signpost 23, 30, SIGNPOST_JUMPTEXT, Route19Tire
 	signpost 24, 29, SIGNPOST_JUMPTEXT, Route19Tire
+	signpost  6, 15, SIGNPOST_READ, Route19Trashcan
 	
 
 	db 1 ; object events
@@ -106,6 +107,10 @@ Route19Callback:
 	changeblock $16, $16, $fa
 	setflag ENGINE_STREETLIGHTS
 .notnite
+	checkevent EVENT_ROUTE_19_TRASHCAN
+	iffalse .end
+	changeblock $0e, $06, $e7
+.end
 	return
 
 Route19StreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
@@ -117,6 +122,58 @@ Route19StreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
 	ld l, a
 	ld a, [wMapScriptHeaderBank]
 	farjp CallScript
+
+Route19Trashcan:
+	checkevent EVENT_LUSTER_TRASHCAN_1
+	iftrue .OnlyTrash
+	changeblock $0e, $06, $e7
+	setevent EVENT_LUSTER_TRASHCAN_1
+	opentext
+	writetext Route19TrashcanText1
+	playsound SFX_SANDSTORM
+	waitsfx
+	buttonsound
+	checkevent EVENT_LUSTER_TRASHCAN_1_ITEM
+	iffalse .get_item
+	callasm Route19TrashcanAsm
+	closetext
+	end
+	
+.get_item
+	verbosegiveitem LEFTOVERS
+	closetext
+	setevent EVENT_LUSTER_TRASHCAN_1_ITEM
+	end
+	
+.OnlyTrash
+	jumptext Route19TrashcanTextOnlyTrash
+
+Route19TrashcanAsm:
+	farcall TrashMonEncounter
+	ld a, BANK(LusterTrashcanWildBattleScript)
+	ld hl, LusterTrashcanWildBattleScript
+	call CallScript
+	scf
+	ret
+	
+Route19TrashcanWildBattleScript:
+	copybytetovar wTempWildMonSpecies
+	randomwildmon
+	startbattle
+	reloadmapafterbattle
+	end
+
+Route19TrashcanText1:
+	text "<PLAYER> dug"
+	line "through the trash…"
+	
+	para "Rustle… rustle…"
+	done
+
+Route19TrashcanTextOnlyTrash:
+	text "Nope, there's"
+	line "only trash here."
+	done
 
 Route19BrokenCar:
 	text "A broken down car."

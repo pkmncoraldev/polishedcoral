@@ -1506,6 +1506,8 @@ LoadMapPals::
 	jp .copy_single_pal_to_pal_7
 .highway
 	ld a, [wMapNumber]
+	cp MAP_ROUTE_19_TUNNEL
+	jr z, .tunnel
 	cp MAP_ROUTE_19
 	jp nz, .normal
 	ld a, [wTimeOfDayPal]
@@ -1514,6 +1516,24 @@ LoadMapPals::
 	ld hl, MapObjectPalsMoomoo
 	call AddNTimes
 	jp .copy_single_pal_to_pal_7
+.tunnel
+	ld a, [wIsNearCampfire]
+	bit 0, a
+	jr nz, .tunnelcont1
+	ld a, 2
+	jr .tunnelcont2
+.tunnelcont1
+	ld a, 1
+.tunnelcont2
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPals
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	call .copy_single_pal_to_pal_7
 .lab
 	call .normal
 	eventflagcheck EVENT_AIRPORT_LUGGAGE_2

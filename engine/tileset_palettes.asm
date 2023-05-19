@@ -160,18 +160,24 @@ LoadSpecialMapPalette: ; 494ac
 	jp LoadSevenBGPalettes
 	
 .highway
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_19_TUNNEL
+	jr z, .highway_tunnel
 	ld hl, HighwayPalette
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 3 palettes
 	rst AddNTimes
-	ld a, $5
 	ld de, wUnknBGPals + 4 palettes
 	ld bc, 3 palettes
 	ld a, $5
 	call FarCopyWRAM
 	scf
 	ret
+	
+.highway_tunnel
+	ld hl, HighwayTunnelPalette
+	jp LoadSevenTimeOfDayBGPalettes
 	
 .desert
 	ld a, [wTimeOfDayPalFlags]
@@ -911,4 +917,7 @@ INCLUDE "maps/palettes/bgpals/construction.pal"
 
 HighwayPalette:
 INCLUDE "maps/palettes/bgpals/highway.pal"
+
+HighwayTunnelPalette:
+INCLUDE "maps/palettes/bgpals/highwaytunnel.pal"
 

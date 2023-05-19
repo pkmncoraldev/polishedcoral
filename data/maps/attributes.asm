@@ -376,7 +376,7 @@ ENDM
 	
 	map_attributes Route19, ROUTE_19, 0, 0
 	
-	map_attributes Route19Tunnel, ROUTE_19_TUNNEL, 0, 0
+	map_attributes Route19Tunnel, ROUTE_19_TUNNEL, $d9, 0
 	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0

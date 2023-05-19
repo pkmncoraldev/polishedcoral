@@ -7366,6 +7366,7 @@ WildSpeciesForms:
 	dbw RATTATA,	.PidgeyForm
 	dbw RATICATE,	.PidgeyForm
 	dbw RAICHU,		.ExeggcuteForm
+	dbw MEOWTH,		.MeowthForm
 	dbw EXEGGCUTE,	.ExeggcuteForm
 	dbw EXEGGUTOR,	.ExeggcuteForm
 	dbw GYARADOS,	.PidgeyForm
@@ -7396,6 +7397,9 @@ WildSpeciesForms:
 .PidgeyForm
 	ld hl, FakeRoute1Landmarks
 	jr .LandmarkForm
+.MeowthForm
+	ld hl, MeowthLandmarks
+	jr .LandmarkForm
 .ExeggcuteForm:
 	ld hl, ExeggcuteLandmarks
 	;fallthrough
@@ -7406,6 +7410,10 @@ WildSpeciesForms:
 	jr nc, .CheckGen1
 	ld a, ALOLAN_FORM ; most alt forms
 	ret
+
+MeowthLandmarks:
+	db RESIDENTIAL_DISTRICT
+	db -1
 
 ExeggcuteLandmarks:
 	db ROUTE_1

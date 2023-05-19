@@ -813,13 +813,13 @@ TrashMonEncounter::
 	call Random
 	cp $7f ; 50 percent
 	jr c, .meowth
-	ld a, MEOWTH;SCRAGGY
+	ld a, SCRAGGY
 	jr .got_it
 .meowth
 	ld a, MEOWTH
 .got_it
 	ld [wTempWildMonSpecies], a
-	ld a, 20
+	ld a, 26
 	ld [wCurPartyLevel], a
 	ret
 

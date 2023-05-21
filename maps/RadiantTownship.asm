@@ -11,7 +11,7 @@ RadiantTownship_MapScriptHeader:
 	warp_def  7,  5, 1, RADIANT_POKECENTER
 	warp_def 15,  5, 1, RADIANT_MART
 	warp_def  9, 15, 1, RADIANT_HOUSE
-	warp_def  5, 31, 3, RADIANT_GATE
+	warp_def  5, 31, 3, ROUTE_19_GATE
 
 	db 0 ; coord events
 

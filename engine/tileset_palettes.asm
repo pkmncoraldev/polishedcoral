@@ -161,7 +161,7 @@ LoadSpecialMapPalette: ; 494ac
 	
 .highway
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_19_TUNNEL
+	cp MAP_ROUTE_20_TUNNEL
 	jr z, .highway_tunnel
 	ld hl, HighwayPalette
 	ld a, [wTimeOfDayPal]

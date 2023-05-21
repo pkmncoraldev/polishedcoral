@@ -1506,9 +1506,9 @@ LoadMapPals::
 	jp .copy_single_pal_to_pal_7
 .highway
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_19_TUNNEL
+	cp MAP_ROUTE_20_TUNNEL
 	jr z, .tunnel
-	cp MAP_ROUTE_19
+	cp MAP_HIGHWAY_TOWN
 	jp nz, .normal
 	ld a, [wTimeOfDayPal]
 	and 3

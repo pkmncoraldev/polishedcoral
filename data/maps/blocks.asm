@@ -689,7 +689,7 @@ RadiantPokeCenter_BlockData:
 RadiantMart_BlockData:
 	INCBIN "maps/Mart.ablk.lz"
 	
-RadiantGate_BlockData:
+Route19Gate_BlockData:
 	INCBIN "maps/NorthSouthGate.ablk.lz"
 	
 RadiantHouse_BlockData:
@@ -701,8 +701,11 @@ RadiantField_BlockData:
 Route19_BlockData:
 	INCBIN "maps/Route19.ablk.lz"
 	
-Route19Tunnel_BlockData:
-	INCBIN "maps/Route19Tunnel.ablk.lz"
+HighwayTown_BlockData:
+	INCBIN "maps/HighwayTown.ablk.lz"
+	
+Route20Tunnel_BlockData:
+	INCBIN "maps/Route20Tunnel.ablk.lz"
 	
 FakeRoute1_BlockData:
 	INCBIN "maps/FakeRoute1.ablk.lz"

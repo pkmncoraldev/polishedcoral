@@ -1044,8 +1044,8 @@ wDesertRouteNorthTrigger:: ds 1
 wAirportTrigger:: ds 1
 wRoute18Trigger:: ds 1
 wLusterSkyscraperPorygonRoomTrigger:: ds 1
-wRoute19Trigger:: ds 1
-wRoute19TunnelTrigger:: ds 1
+wHighwayTownTrigger:: ds 1
+wRoute20TunnelTrigger:: ds 1
 
 ds 15
 

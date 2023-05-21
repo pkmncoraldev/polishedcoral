@@ -344,15 +344,16 @@ MAP_NONE   EQU 0
 	
 	map_const RADIANT_POKECENTER,                      	   6,  4 ; 9
 	map_const RADIANT_MART,                                6,  4 ; 10
-	map_const RADIANT_GATE,                          	   4,  4 ; 11
+	map_const ROUTE_19_GATE,                          	   4,  4 ; 11
 	map_const RADIANT_HOUSE,     	             		   4,  4 ; 12
 	map_const RADIANT_FIELD,							  13, 14 ; 13
 	
 	
 	newgroup
 	
-	map_const ROUTE_19,									  23, 34 ; 1
-	map_const ROUTE_19_TUNNEL,							  15,  8 ; 2
+	map_const ROUTE_19,									  20, 16 ; 1
+	map_const HIGHWAY_TOWN,								  20, 19 ; 2
+	map_const ROUTE_20_TUNNEL,							  15,  8 ; 3
 	
 	newgroup													 ; last
 	

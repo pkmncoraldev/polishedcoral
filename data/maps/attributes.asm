@@ -374,9 +374,13 @@ ENDM
 	map_attributes DesertTempleOutside, DESERT_TEMPLE_OUTSIDE, $02, SOUTH
 	connection south, DesertWasteland9, DESERT_WASTELAND_9, 4
 	
-	map_attributes Route19, ROUTE_19, 0, 0
+	map_attributes Route19, ROUTE_19, 0, NORTH
+	connection north, HighwayTown, HIGHWAY_TOWN, 0
 	
-	map_attributes Route19Tunnel, ROUTE_19_TUNNEL, $d9, 0
+	map_attributes HighwayTown, HIGHWAY_TOWN, 0, SOUTH
+	connection south, Route19, ROUTE_19, 0
+	
+	map_attributes Route20Tunnel, ROUTE_20_TUNNEL, $d9, 0
 	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0
@@ -578,7 +582,7 @@ ENDM
 	
 	map_attributes RadiantPokeCenter, RADIANT_POKECENTER, $0, 0
 	map_attributes RadiantMart, RADIANT_MART, $0, 0
-	map_attributes RadiantGate, RADIANT_GATE, $0, 0
+	map_attributes Route19Gate, ROUTE_19_GATE, $0, 0
 	map_attributes RadiantHouse, RADIANT_HOUSE, $0, 0
 	map_attributes RadiantField, RADIANT_FIELD, $59, 0
 	

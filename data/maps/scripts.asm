@@ -90,7 +90,8 @@ INCLUDE "maps/Route14.asm"
 INCLUDE "maps/Route17.asm"
 INCLUDE "maps/Route18.asm"
 INCLUDE "maps/Route19.asm"
-INCLUDE "maps/Route19Tunnel.asm"
+INCLUDE "maps/HighwayTown.asm"
+INCLUDE "maps/Route20Tunnel.asm"
 INCLUDE "maps/FakeRoute1.asm"
 
 
@@ -295,7 +296,7 @@ INCLUDE "maps/RadiantOrphanageLeilanisRoom.asm"
 INCLUDE "maps/RadiantPokeCenter.asm"
 INCLUDE "maps/RadiantMart.asm"
 INCLUDE "maps/RadiantHouse.asm"
-INCLUDE "maps/RadiantGate.asm"
+INCLUDE "maps/Route19Gate.asm"
 INCLUDE "maps/RadiantField.asm"
 
 SECTION "Brillo Town Scripts", ROMX

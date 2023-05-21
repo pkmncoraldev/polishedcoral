@@ -3302,7 +3302,7 @@ DisguiseGroup:
 ; ================
 
 	; DISGUISE
-	db "MASTER@"
+	db "MASTER@" ;STARGLOW CAVERN
 	db TRAINERTYPE_MOVES
 	; party
 	db 12, VOLTORB
@@ -3316,7 +3316,7 @@ DisguiseGroup:
 ; ================
 
 	; DISGUISE
-	db "MASTER@"
+	db "MASTER@" ;MT ONWA
 	db TRAINERTYPE_MOVES
 	; party
 	db 19, VOLTORB
@@ -3325,6 +3325,26 @@ DisguiseGroup:
 		db TACKLE_SCRATCH_POUND, ROLLOUT, 0, 0
 	db 19, JIGGLYPUFF
 		db TACKLE_SCRATCH_POUND, ROLLOUT, 0, 0
+	db -1 ; end
+
+; ================
+
+	; DISGUISE
+	db "MASTER@" ;LUSTER SEWER
+	db TRAINERTYPE_MOVES
+	; party
+	db 1, BULBASAUR
+		db TACKLE_SCRATCH_POUND, 0, 0, 0
+	db -1 ; end
+
+; ================
+
+	; DISGUISE
+	db "MASTER@" ;ROUTE 16
+	db TRAINERTYPE_MOVES
+	; party
+	db 1, BULBASAUR
+		db TACKLE_SCRATCH_POUND, 0, 0, 0
 	db -1 ; end
 
 ; ================

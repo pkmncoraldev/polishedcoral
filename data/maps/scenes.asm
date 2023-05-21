@@ -85,6 +85,7 @@ MapTriggers::
 	scene_var SHIMMER_HARBOR,						  wShimmerHarborTrigger
 	scene_var BRILLO_TOWN,							  wBrilloTownTrigger
 	scene_var BRILLO_MART,							  wAlways0Trigger
+	scene_var DESERT_ROUTE_2,						  wRoute16Trigger
 	scene_var DESERT_ROUTE_NORTH,					  wDesertRouteNorthTrigger
 	scene_var DESERT_WASTELAND_1,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_2,					  wSpookyForestEscortTrigger

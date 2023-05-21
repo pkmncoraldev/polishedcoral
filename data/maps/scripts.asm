@@ -47,6 +47,7 @@ INCLUDE "maps/MtOnwaLowerCliff.asm"
 INCLUDE "maps/LusterSewersB1F.asm"
 INCLUDE "maps/LusterSewersB2F.asm"
 INCLUDE "maps/LusterSewersValveRoom.asm"
+INCLUDE "maps/DesertRoute2.asm"
 
 
 SECTION "Dungeon Scripts2", ROMX
@@ -99,7 +100,6 @@ SECTION "Routes Scripts2", ROMX
 INCLUDE "maps/Route10East.asm"
 INCLUDE "maps/Route10Tent.asm"
 INCLUDE "maps/DesertRoute.asm"
-INCLUDE "maps/DesertRoute2.asm"
 INCLUDE "maps/DesertRouteNorth.asm"
 INCLUDE "maps/DesertWastelandOasis.asm"
 INCLUDE "maps/DesertRouteTent.asm"

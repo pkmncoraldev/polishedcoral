@@ -7413,7 +7413,7 @@ WildSpeciesForms:
 
 MeowthLandmarks:
 	db RESIDENTIAL_DISTRICT
-	db ROUTE_20
+	db DUSK_TURNPIKE
 	db -1
 
 ExeggcuteLandmarks:

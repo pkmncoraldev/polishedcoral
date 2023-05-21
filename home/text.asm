@@ -222,7 +222,7 @@ endm
 	dict "and",      PlaceAnd
 	dict "the",      PlaceThe
 	dict "you",      PlaceYou
-	dict "#MON",     PlacePokemon
+	dict "#mon",     PlacePokemon
 	dict "to",       PlaceTo
 	dict "have",     PlaceHave
 	dict "that",     PlaceThat

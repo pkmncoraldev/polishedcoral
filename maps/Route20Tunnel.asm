@@ -7,11 +7,11 @@ Route20Tunnel_MapScriptHeader:
 	callback MAPCALLBACK_TILES, Route20TunnelCallback
 
 	db 5 ; warp events
-	warp_event 28, 11, HIGHWAY_TOWN, 3
-	warp_event 28, 12, HIGHWAY_TOWN, 4
-	warp_event 28, 13, HIGHWAY_TOWN, 5
-	warp_event 28, 14, HIGHWAY_TOWN, 6
-	warp_event 28, 15, HIGHWAY_TOWN, 7
+	warp_event 28, 11, DUSK_TURNPIKE, 3
+	warp_event 28, 12, DUSK_TURNPIKE, 4
+	warp_event 28, 13, DUSK_TURNPIKE, 5
+	warp_event 28, 14, DUSK_TURNPIKE, 6
+	warp_event 28, 15, DUSK_TURNPIKE, 7
 
 	db 62 ; coord events
 	xy_trigger 0, 11, 28, 0, Route20TunnelLightEntrance, 0, 0

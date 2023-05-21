@@ -90,7 +90,7 @@ INCLUDE "maps/Route14.asm"
 INCLUDE "maps/Route17.asm"
 INCLUDE "maps/Route18.asm"
 INCLUDE "maps/Route19.asm"
-INCLUDE "maps/HighwayTown.asm"
+INCLUDE "maps/DuskTurnpike.asm"
 INCLUDE "maps/Route20Tunnel.asm"
 INCLUDE "maps/FakeRoute1.asm"
 

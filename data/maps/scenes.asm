@@ -102,6 +102,6 @@ MapTriggers::
 	scene_var ROUTE_18,								  wRoute18Trigger
 	scene_var LUSTER_SKYSCRAPER_PORYGON_ROOM,		  wLusterSkyscraperPorygonRoomTrigger
 	scene_var FAKE_ROUTE_1,							  wEastTrainCabooseTrigger
-	scene_var HIGHWAY_TOWN,					 		  wHighwayTownTrigger
+	scene_var DUSK_TURNPIKE,					 	  wDuskTurnpikeTrigger
 	scene_var ROUTE_20_TUNNEL,						  wRoute20TunnelTrigger
 	db -1

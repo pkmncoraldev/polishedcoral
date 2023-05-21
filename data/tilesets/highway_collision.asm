@@ -189,7 +189,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; bc
 	tilecoll WALL, WALL, WALL, WALL ; bd
 	tilecoll WALL, WALL, WALL, WALL ; be
-	tilecoll WALL, WALL, WALL, WALL ; bf
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; bf
 	tilecoll WALL, WALL, WALL, WALL ; c0
 	tilecoll WALL, WALL, WALL, WALL ; c1
 	tilecoll SKATE, SKATE, SKATE, SKATE ; c2

@@ -375,9 +375,9 @@ ENDM
 	connection south, DesertWasteland9, DESERT_WASTELAND_9, 4
 	
 	map_attributes Route19, ROUTE_19, 0, NORTH
-	connection north, HighwayTown, HIGHWAY_TOWN, 0
+	connection north, DuskTurnpike, DUSK_TURNPIKE, 0
 	
-	map_attributes HighwayTown, HIGHWAY_TOWN, 0, SOUTH
+	map_attributes DuskTurnpike, DUSK_TURNPIKE, 0, SOUTH
 	connection south, Route19, ROUTE_19, 0
 	
 	map_attributes Route20Tunnel, ROUTE_20_TUNNEL, $d9, 0

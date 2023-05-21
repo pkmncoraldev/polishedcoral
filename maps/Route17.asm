@@ -4,8 +4,8 @@ Route17_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event 41, 42, HIGHWAY_TOWN, 1
-	warp_event 41, 43, HIGHWAY_TOWN, 2
+	warp_event 41, 42, DUSK_TURNPIKE, 1
+	warp_event 41, 43, DUSK_TURNPIKE, 2
 
 	db 0 ; coord events
 

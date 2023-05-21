@@ -701,8 +701,8 @@ RadiantField_BlockData:
 Route19_BlockData:
 	INCBIN "maps/Route19.ablk.lz"
 	
-HighwayTown_BlockData:
-	INCBIN "maps/HighwayTown.ablk.lz"
+DuskTurnpike_BlockData:
+	INCBIN "maps/DuskTurnpike.ablk.lz"
 	
 Route20Tunnel_BlockData:
 	INCBIN "maps/Route20Tunnel.ablk.lz"

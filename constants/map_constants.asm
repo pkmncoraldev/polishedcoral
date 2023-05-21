@@ -352,7 +352,7 @@ MAP_NONE   EQU 0
 	newgroup
 	
 	map_const ROUTE_19,									  20, 16 ; 1
-	map_const HIGHWAY_TOWN,								  20, 19 ; 2
+	map_const DUSK_TURNPIKE,							  20, 19 ; 2
 	map_const ROUTE_20_TUNNEL,							  15,  8 ; 3
 	
 	newgroup													 ; last

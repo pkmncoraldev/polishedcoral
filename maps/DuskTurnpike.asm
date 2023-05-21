@@ -1,10 +1,10 @@
-HighwayTown_MapScriptHeader:
+DuskTurnpike_MapScriptHeader:
 	db 2 ; scene scripts
-	scene_script HighwayTownTrigger0
-	scene_script HighwayTownTrigger1
+	scene_script DuskTurnpikeTrigger0
+	scene_script DuskTurnpikeTrigger1
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, HighwayTownCallback
+	callback MAPCALLBACK_TILES, DuskTurnpikeCallback
 
 	db 7 ; warp events
 	warp_event  8, 28, ROUTE_17, 1
@@ -18,22 +18,22 @@ HighwayTown_MapScriptHeader:
 	db 0 ; coord events
 
 	db 8 ; bg events
-	signpost 21, 31, SIGNPOST_JUMPTEXT, HighwayTownBrokenCar
-	signpost 21, 32, SIGNPOST_JUMPTEXT, HighwayTownBrokenCar
-	signpost 20, 23, SIGNPOST_JUMPTEXT, HighwayTownTire
-	signpost 20, 33, SIGNPOST_JUMPTEXT, HighwayTownTire
-	signpost 22, 30, SIGNPOST_JUMPTEXT, HighwayTownTire
-	signpost 23, 30, SIGNPOST_JUMPTEXT, HighwayTownTire
-	signpost 24, 29, SIGNPOST_JUMPTEXT, HighwayTownTire
-	signpost  6, 15, SIGNPOST_READ, HighwayTownTrashcan
+	signpost 21, 31, SIGNPOST_JUMPTEXT, DuskTurnpikeBrokenCar
+	signpost 21, 32, SIGNPOST_JUMPTEXT, DuskTurnpikeBrokenCar
+	signpost 20, 23, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
+	signpost 20, 33, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
+	signpost 22, 30, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
+	signpost 23, 30, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
+	signpost 24, 29, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
+	signpost  6, 15, SIGNPOST_READ, DuskTurnpikeTrashcan
 	
 
 	db 1 ; object events
 	person_event SPRITE_PLANK_BRIDGE,  5, 20, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 
 
-HighwayTownTrigger0:
-HighwayTownTrigger1:
+DuskTurnpikeTrigger0:
+DuskTurnpikeTrigger1:
 	checkflag ENGINE_STREETLIGHTS
 	iftrue .checkmorn
 	checktime 1<<NITE
@@ -57,7 +57,7 @@ HighwayTownTrigger1:
 	changeblock $16, $16, $fa
 	setflag ENGINE_STREETLIGHTS
 	callasm GenericFinishBridge
-	callasm HighwayTownStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
+	callasm DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
 	end
 .checkmorn
 	checktime 1<<MORN
@@ -81,11 +81,11 @@ HighwayTownTrigger1:
 	changeblock $16, $16, $89
 	clearflag ENGINE_STREETLIGHTS
 	callasm GenericFinishBridge
-	callasm HighwayTownStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
+	callasm DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
 .end
 	end
 
-HighwayTownCallback:
+DuskTurnpikeCallback:
 	checktime 1<<NITE
 	iffalse .notnite
 	changeblock $22, $0a, $5b
@@ -113,7 +113,7 @@ HighwayTownCallback:
 .end
 	return
 
-HighwayTownStreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
+DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
 	farcall CheckCurrentMapXYTriggers
 	ret nc
 	ld hl, wCurCoordEventScriptAddr
@@ -123,19 +123,19 @@ HighwayTownStreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
 	ld a, [wMapScriptHeaderBank]
 	farjp CallScript
 
-HighwayTownTrashcan:
+DuskTurnpikeTrashcan:
 	checkevent EVENT_LUSTER_TRASHCAN_1
 	iftrue .OnlyTrash
 	changeblock $0e, $06, $e7
 	setevent EVENT_LUSTER_TRASHCAN_1
 	opentext
-	writetext HighwayTownTrashcanText1
+	writetext DuskTurnpikeTrashcanText1
 	playsound SFX_SANDSTORM
 	waitsfx
 	buttonsound
 	checkevent EVENT_LUSTER_TRASHCAN_1_ITEM
 	iffalse .get_item
-	callasm HighwayTownTrashcanAsm
+	callasm DuskTurnpikeTrashcanAsm
 	closetext
 	end
 	
@@ -146,9 +146,9 @@ HighwayTownTrashcan:
 	end
 	
 .OnlyTrash
-	jumptext HighwayTownTrashcanTextOnlyTrash
+	jumptext DuskTurnpikeTrashcanTextOnlyTrash
 
-HighwayTownTrashcanAsm:
+DuskTurnpikeTrashcanAsm:
 	farcall TrashMonEncounter
 	ld a, BANK(LusterTrashcanWildBattleScript)
 	ld hl, LusterTrashcanWildBattleScript
@@ -156,30 +156,30 @@ HighwayTownTrashcanAsm:
 	scf
 	ret
 	
-HighwayTownTrashcanWildBattleScript:
+DuskTurnpikeTrashcanWildBattleScript:
 	copybytetovar wTempWildMonSpecies
 	randomwildmon
 	startbattle
 	reloadmapafterbattle
 	end
 
-HighwayTownTrashcanText1:
+DuskTurnpikeTrashcanText1:
 	text "<PLAYER> dug"
 	line "through the trash…"
 	
 	para "Rustle… rustle…"
 	done
 
-HighwayTownTrashcanTextOnlyTrash:
+DuskTurnpikeTrashcanTextOnlyTrash:
 	text "Nope, there's"
 	line "only trash here."
 	done
 
-HighwayTownBrokenCar:
+DuskTurnpikeBrokenCar:
 	text "A broken down car."
 	done
 	
-HighwayTownTire:
+DuskTurnpikeTire:
 	text "Tires are stacked"
 	line "around randomly."
 	done

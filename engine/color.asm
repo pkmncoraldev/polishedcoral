@@ -1508,7 +1508,7 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_20_TUNNEL
 	jr z, .tunnel
-	cp MAP_HIGHWAY_TOWN
+	cp MAP_DUSK_TURNPIKE
 	jp nz, .normal
 	ld a, [wTimeOfDayPal]
 	and 3

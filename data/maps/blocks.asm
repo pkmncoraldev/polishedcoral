@@ -258,7 +258,7 @@ LusterTrainStation_BlockData:
 	INCBIN "maps/LusterTrainStation.ablk.lz"
 	
 Route10Tent_BlockData:
-DesertRouteTent_BlockData:
+Route16Tent_BlockData:
 	INCBIN "maps/Route10Tent.ablk.lz"
 	
 TwinkleTown_BlockData:
@@ -615,14 +615,14 @@ RadiantTownship_BlockData:
 BrilloTown_BlockData:
 	INCBIN "maps/BrilloTown.ablk.lz"
 	
-DesertRoute_BlockData:
-	INCBIN "maps/DesertRoute.ablk.lz"
+Route15_BlockData:
+	INCBIN "maps/Route15.ablk.lz"
 	
-DesertRoute2_BlockData:
-	INCBIN "maps/DesertRoute2.ablk.lz"
+Route16_BlockData:
+	INCBIN "maps/Route16.ablk.lz"
 	
-DesertRouteNorth_BlockData:
-	INCBIN "maps/DesertRouteNorth.ablk.lz"
+Route16North_BlockData:
+	INCBIN "maps/Route16North.ablk.lz"
 	
 DesertWasteland1_BlockData:
 DesertWasteland3_BlockData:

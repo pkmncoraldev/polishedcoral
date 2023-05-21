@@ -1,4 +1,4 @@
-DesertRoute_MapScriptHeader:
+Route15_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks

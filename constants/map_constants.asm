@@ -216,7 +216,7 @@ MAP_NONE   EQU 0
 	map_const TWINKLE_GYM_RED_ROOM,						  24, 28 ; 13
 	map_const ROUTE_10_REST_HOUSE,						   4,  5 ; 14
 	map_const ROUTE_10_MOVE_REMINDER_HOUSE,				   4,  5 ; 15
-	map_const DESERT_ROUTE_TENT,						   2,  3 ; 16
+	map_const ROUTE_16_TENT,							   2,  3 ; 16
 	
 	newgroup													 ; 12
 	
@@ -315,9 +315,9 @@ MAP_NONE   EQU 0
 	map_const BRILLO_MART,                    			   5,  4 ; 7
 	map_const BRILLO_GAME_CORNER,              			   7,  5 ; 8
 	map_const BRILLO_POLICE_STATION,           			   8,  5 ; 9
-	map_const DESERT_ROUTE,         	           		  24, 17 ; 10
-	map_const DESERT_ROUTE_2,         	           		  15, 18 ; 11
-	map_const DESERT_ROUTE_NORTH,       	           	  13, 15 ; 12
+	map_const ROUTE_15,  		       	           		  24, 17 ; 10
+	map_const ROUTE_16,   		      	           		  15, 18 ; 11
+	map_const ROUTE_16_NORTH,       	           	  13, 15 ; 12
 	map_const DESERT_WASTELAND_1,              			   9,  9 ; 13
 	map_const DESERT_WASTELAND_2,              			   9,  9 ; 14
 	map_const DESERT_WASTELAND_3,              			   9,  9 ; 15

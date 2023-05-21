@@ -317,23 +317,23 @@ ENDM
 	connection north, Route18, ROUTE_18, -1
 	
 	map_attributes BrilloTown, BRILLO_TOWN, $35, EAST
-	connection east, DesertRoute, DESERT_ROUTE, -7
+	connection east, Route15, ROUTE_15, -7
 	
-	map_attributes DesertRoute, DESERT_ROUTE, $71, NORTH | WEST
-	connection north, DesertRoute2, DESERT_ROUTE_2, 14
+	map_attributes Route15, ROUTE_15, $71, NORTH | WEST
+	connection north, Route16, ROUTE_16, 14
 	connection west, BrilloTown, BRILLO_TOWN, 7
 	
-	map_attributes DesertRoute2, DESERT_ROUTE_2, $71, NORTH | SOUTH
-	connection north, DesertRouteNorth, DESERT_ROUTE_NORTH, 5
-	connection south, DesertRoute, DESERT_ROUTE, -14
+	map_attributes Route16, ROUTE_16, $71, NORTH | SOUTH
+	connection north, Route16North, ROUTE_16_NORTH, 5
+	connection south, Route15, ROUTE_15, -14
 	
-	map_attributes DesertRouteNorth, DESERT_ROUTE_NORTH, $02, NORTH | SOUTH
+	map_attributes Route16North, ROUTE_16_NORTH, $02, NORTH | SOUTH
 	connection north, DesertWasteland1, DESERT_WASTELAND_1, 2
-	connection south, DesertRoute2, DESERT_ROUTE_2, -5
+	connection south, Route16, ROUTE_16, -5
 	
 	map_attributes DesertWasteland1, DESERT_WASTELAND_1, $02, NORTH | SOUTH
 	connection north, DesertWasteland2, DESERT_WASTELAND_2, 0
-	connection south, DesertRouteNorth, DESERT_ROUTE_NORTH, -2
+	connection south, Route16North, ROUTE_16_NORTH, -2
 	
 	map_attributes DesertWasteland2, DESERT_WASTELAND_2, $02, SOUTH | WEST
 	connection south, DesertWasteland1, DESERT_WASTELAND_1, 0
@@ -573,7 +573,7 @@ ENDM
 	map_attributes BrilloMart, BRILLO_MART, $0, 0
 	map_attributes BrilloGameCorner, BRILLO_GAME_CORNER, $0, 0
 	map_attributes BrilloPoliceStation, BRILLO_POLICE_STATION, $0, 0
-	map_attributes DesertRouteTent, DESERT_ROUTE_TENT, $0, 0
+	map_attributes Route16Tent, ROUTE_16_TENT, $0, 0
 	map_attributes Airport, AIRPORT, $0, 0
 	map_attributes RadiantFlowerShop, RADIANT_FLOWER_SHOP, $0, 0
 	map_attributes RadiantOrphanage1F, RADIANT_ORPHANAGE_1F, $0, 0

@@ -85,8 +85,8 @@ MapTriggers::
 	scene_var SHIMMER_HARBOR,						  wShimmerHarborTrigger
 	scene_var BRILLO_TOWN,							  wBrilloTownTrigger
 	scene_var BRILLO_MART,							  wAlways0Trigger
-	scene_var DESERT_ROUTE_2,						  wRoute16Trigger
-	scene_var DESERT_ROUTE_NORTH,					  wDesertRouteNorthTrigger
+	scene_var ROUTE_16,								  wRoute16Trigger
+	scene_var ROUTE_16_NORTH,					  wRoute16NorthTrigger
 	scene_var DESERT_WASTELAND_1,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_2,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_3,					  wSpookyForestEscortTrigger
@@ -96,7 +96,7 @@ MapTriggers::
 	scene_var DESERT_WASTELAND_7,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_8,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_9,					  wSpookyForestEscortTrigger
-	scene_var DESERT_WASTELAND_OASIS,				  wDesertRouteNorthTrigger
+	scene_var DESERT_WASTELAND_OASIS,				  wRoute16NorthTrigger
 	scene_var DESERT_TEMPLE_OUTSIDE,				  wSpookyForestEscortTrigger
 	scene_var SAILBOAT_CUTSCENE,					  wAlways0Trigger
 	scene_var AIRPORT,								  wAirportTrigger

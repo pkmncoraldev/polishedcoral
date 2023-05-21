@@ -956,7 +956,7 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_BRILLO_TOWN
 	jp z, .brillo
-	cp MAP_DESERT_ROUTE_NORTH
+	cp MAP_ROUTE_16_NORTH
 	jp z, .desertfire
 	cp MAP_DESERT_WASTELAND_OASIS
 	jp z, .oasis

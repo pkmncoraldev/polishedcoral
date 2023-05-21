@@ -53,7 +53,9 @@ Landmarks: ; 0x1ca8c3
 	
 	landmark  20, 100, ShimmerName
 	landmark   0,   0, BrilloTownName
-	landmark   0,   0, DesertRouteName
+	landmark   0,   0, Route15Name
+	landmark   0,   0, Route16Name
+	landmark   0,   0, DesertWastelandName
 	landmark   0,   0, Route17Name
 	landmark   0,   0, Route18Name
 	landmark  28,  92, RadiantName
@@ -103,9 +105,11 @@ Route12Name:		   db "ROUTE 12@"
 AirportName:		   db "ONWA INTL.¯AIRPORT@"
 Route13Name:		   db "ROUTE 13@"
 Route14Name:		   db "ROUTE 14@"
-ShimmerName:           db "SHIMMER¯CITY@"
+ShimmerName:           db "PORT¯SHIMMER@"
 BrilloTownName:	   	   db "BRILLO¯TOWN@"
-DesertRouteName:	   db "DESERT¯ROUTE@"
+Route15Name:		   db "ROUTE 15@"
+Route16Name:		   db "ROUTE 16@"
+DesertWastelandName:   db "DESERT¯WASTELAND@"
 Route17Name:		   db "ROUTE 17@"
 Route18Name:		   db "ROUTE 18@"
 RadiantName:	 	   db "RADIANT¯TOWNSHIP@"

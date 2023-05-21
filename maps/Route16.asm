@@ -1,4 +1,4 @@
-DesertRoute2_MapScriptHeader:
+Route16_MapScriptHeader:
 	db 2 ; scene scripts
 	scene_script Route16Trigger0
 	scene_script Route16Trigger1

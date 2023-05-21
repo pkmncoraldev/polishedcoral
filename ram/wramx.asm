@@ -1041,7 +1041,7 @@ wOnwaIntlAirportTrigger:: ds 1
 wShimmerHarborTrigger:: ds 1
 wBrilloTownTrigger:: ds 1
 wRoute16Trigger:: ds 1
-wDesertRouteNorthTrigger:: ds 1
+wRoute16NorthTrigger:: ds 1
 wAirportTrigger:: ds 1
 wRoute18Trigger:: ds 1
 wLusterSkyscraperPorygonRoomTrigger:: ds 1

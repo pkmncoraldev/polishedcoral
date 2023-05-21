@@ -2695,7 +2695,7 @@ HandleEventsEscapeRope:
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	domaptrigger SUNSET_CAPE, $0
 	domaptrigger ROUTE_10, $0
-	domaptrigger DESERT_ROUTE_NORTH, $0
+	domaptrigger ROUTE_16_NORTH, $0
 	domaptrigger DESERT_WASTELAND_1, $0
 	domaptrigger ROUTE_18, $0
 	clearevent EVENT_ON_DODRIO_RANCH

@@ -69,7 +69,7 @@
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 44
 	tilecoll WALL, SKATE, SKATE, SKATE ; 45
 	tilecoll SKATE, WALL, SKATE, WALL ; 46
-	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 47
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 47
 	tilecoll WALL, WALL, SKATE, SKATE ; 48
 	tilecoll WALL, WALL, WALL, DOOR ; 49
 	tilecoll WALL, WALL, WALL, DOOR ; 4a

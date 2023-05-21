@@ -48,7 +48,7 @@ JustRodeBoatShimmer:
 	
 ShimmerJustRodeBoatText:
 	text "Here we are,"
-	line "SHIMMER CITY."
+	line "PORT SHIMMER."
 	
 	para "Thanks for riding."
 	

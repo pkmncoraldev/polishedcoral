@@ -103,7 +103,7 @@ Route10TentNPCText1:
 Route10TentNPCText2:
 	text "I work at a"
 	line "RESEARCH LAB in"
-	cont "SHIMMER CITY."
+	cont "PORT SHIMMER."
 	
 	para "This looks just"
 	line "like an artifact"
@@ -114,7 +114,7 @@ Route10TentNPCText2:
 	cont "named PROF. HILL."
 	
 	para "You should take it"
-	line "to him and see if"
+	line "to her and see if"
 	cont "he knows anything"
 	cont "about it."
 	
@@ -181,7 +181,7 @@ Route10TentNPCText9:
 	
 	para "I work at a"
 	line "RESEARCH LAB in"
-	cont "SHIMMER CITY."
+	cont "PORT SHIMMER."
 	
 	para "This looks just"
 	line "like an artifact"
@@ -192,7 +192,7 @@ Route10TentNPCText9:
 	cont "named PROF. HILL."
 	
 	para "You should take it"
-	line "to him and see if"
+	line "to her and see if"
 	cont "he knows anything"
 	cont "about it."
 	

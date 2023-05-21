@@ -278,7 +278,7 @@ LakeBoatHouseLShimmerMenuData:
 	db "SUNSET BAY@"
 	db "LAKE ONWA EAST@"
 	db "SUNBEAM ISLAND@"
-	db "SHIMMER CITY@"
+	db "PORT SHIMMER@"
 	end
 	
 LakeBoatHouseLBrilloMenuData:
@@ -294,7 +294,7 @@ LakeBoatHouseLBrilloMenuData:
 	db "SUNSET BAY@"
 	db "LAKE ONWA EAST@"
 	db "SUNBEAM ISLAND@"
-	db "SHIMMER CITY@"
+	db "PORT SHIMMER@"
 	db "BRILLO TOWN@"
 	end
 	
@@ -472,7 +472,7 @@ LakeBoatManText15:
 	
 LakeBoatManText16:
 	text "Travel to"
-	line "SHIMMER CITY?"
+	line "PORT SHIMMER?"
 	done
 	
 LakeBoatManText17:

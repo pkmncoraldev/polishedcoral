@@ -309,7 +309,7 @@ LakeBoatHouseRShimmerMenuData:
 	db "SUNSET BAY@"
 	db "LAKE ONWA WEST@"
 	db "SUNBEAM ISLAND@"
-	db "SHIMMER CITY@"
+	db "PORT SHIMMER@"
 	end
 	
 LakeBoatHouseRBrilloMenuData:
@@ -325,6 +325,6 @@ LakeBoatHouseRBrilloMenuData:
 	db "SUNSET BAY@"
 	db "LAKE ONWA WEST@"
 	db "SUNBEAM ISLAND@"
-	db "SHIMMER CITY@"
+	db "PORT SHIMMER@"
 	db "BRILLO TOWN@"
 	end

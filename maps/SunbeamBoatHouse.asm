@@ -248,7 +248,7 @@ SunbeamBoatHouseShimmerMenuData:
 	db "SUNSET BAY@"
 	db "LAKE ONWA WEST@"
 	db "LAKE ONWA EAST@"
-	db "SHIMMER CITY@"
+	db "PORT SHIMMER@"
 	end
 	
 SunbeamBoatHouseBrilloMenuData:
@@ -264,7 +264,7 @@ SunbeamBoatHouseBrilloMenuData:
 	db "SUNSET BAY@"
 	db "LAKE ONWA WEST@"
 	db "LAKE ONWA EAST@"
-	db "SHIMMER CITY@"
+	db "PORT SHIMMER@"
 	db "BRILLO TOWN@"
 	end
 	

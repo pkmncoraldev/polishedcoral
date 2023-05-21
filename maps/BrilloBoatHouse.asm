@@ -209,7 +209,7 @@ BrilloBoatHouseMenuData:
 	db "LAKE ONWA WEST@"
 	db "LAKE ONWA EAST@"
 	db "SUNBEAM ISLAND@"
-	db "SHIMMER CITY@"
+	db "PORT SHIMMER@"
 	end
 	
 BrilloBoatHouseBrilloMenuData:
@@ -295,7 +295,7 @@ BrilloBoatHouseClerkText8:
 	
 BrilloBoatHouseClerkText9:
 	text "Travel to"
-	line "SHIMMER CITY?"
+	line "PORT SHIMMER?"
 	done
 	
 BrilloBoatHouseClerkTextEnd:

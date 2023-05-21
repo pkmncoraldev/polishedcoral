@@ -160,7 +160,7 @@ ShimmerLabResearchRoomProfText4:
 ShimmerLabResearchRoomProfText5:
 	text "Take the boat from"
 	line "the harbor here in"
-	cont "SHIMMER CITY."
+	cont "PORT SHIMMER."
 	
 	para "They'll take you"
 	line "to BRILLO TOWN."

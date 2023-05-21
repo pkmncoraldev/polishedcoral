@@ -30,7 +30,7 @@ ShimmerLabExperimentSign:
 	
 ShimmerLabLobbyNPCText:
 	text "Welcome to the"
-	line "SHIMMER CITY LAB!"
+	line "PORT SHIMMER LAB!"
 	
 	para "All sorts of"
 	line "research is con-"

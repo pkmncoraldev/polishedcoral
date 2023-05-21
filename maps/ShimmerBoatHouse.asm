@@ -246,7 +246,7 @@ ShimmerBoatHouseNPCText1:
 	
 ShimmerBoatHouseNPCText2:
 	text "Welcome to the"
-	line "SHIMMER CITY"
+	line "PORT SHIMMER"
 	cont "BOAT HOUSE."
 	
 	para "We can ferry you"

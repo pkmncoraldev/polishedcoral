@@ -49,6 +49,7 @@ INCLUDE "maps/LusterSewersB2F.asm"
 INCLUDE "maps/LusterSewersValveRoom.asm"
 INCLUDE "maps/Route16.asm"
 INCLUDE "maps/SeasideCave1F.asm"
+INCLUDE "maps/SeasideCaveB1F.asm"
 
 
 SECTION "Dungeon Scripts2", ROMX

@@ -198,7 +198,7 @@ TilesetHighwayAnim::
     dw Waterfall2Frames, AnimateWaterfallTiles
     dw Waterfall3Frames, AnimateWaterfallTiles
 	dw VTiles2 tile $36, AnimateTopofWaterfall
-	dw ShorelineFrames3,  AnimateWaterfallTiles
+	dw NULL,  WaitTileAnimation
 	dw ShorelineFrames,  AnimateWaterfallTiles
 	dw ShorelineFrames2,  AnimateWaterfallTiles
 	dw NULL,  WaitTileAnimation
@@ -220,7 +220,7 @@ TilesetDesertAnim::
 	dw FlagFrames2, AnimateWaterfallTiles
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
-	dw ShorelineFrames3,  AnimateWaterfallTiles
+	dw NULL,  WaitTileAnimation
 	dw ShorelineFrames,  AnimateWaterfallTiles
 	dw ShorelineFrames2,  AnimateWaterfallTiles
 	dw NULL,  WaitTileAnimation
@@ -242,7 +242,7 @@ TilesetShimmerAnim::
     dw Waterfall2Frames, AnimateWaterfallTiles
     dw Waterfall3Frames, AnimateWaterfallTiles
 	dw VTiles2 tile $36, AnimateTopofWaterfall
-	dw ShorelineFrames3,  AnimateWaterfallTiles
+	dw NULL,  WaitTileAnimation
 	dw ShorelineFrames,  AnimateWaterfallTiles
 	dw ShorelineFrames2,  AnimateWaterfallTiles
 	dw NULL,  WaitTileAnimation
@@ -339,29 +339,24 @@ TilesetJungleAnim::
     dw NULL,  DoneTileAnimation
 	
 TilesetCaveAnim::
+	dw VTiles2 tile $5e, ScrollTileDown
+	dw VTiles2 tile $5f, ScrollTileRight
 	dw NULL,  LavaAnim2
-;	dw NULL,  WaitTileAnimation
 	dw WaterfallFrames, AnimateWaterfallTiles
 	dw Waterfall2Frames, AnimateWaterfallTiles
 	dw Waterfall3Frames, AnimateWaterfallTiles
 	dw VTiles2 tile $36, AnimateTopofWaterfall
+	dw VTiles2 tile $5e, ScrollTileDown
+	dw VTiles2 tile $5f, ScrollTileRight
 	dw NULL,  LavaAnim1
-;	dw NULL,  WaitTileAnimation
 	dw VTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw NULL,  WaitTileAnimation
 	dw VTiles2 tile $14, WriteTileFromBuffer
-	dw VTiles2 tile $40, WriteTileToBuffer
+	dw VTiles2 tile $5e, ScrollTileDown
+	dw VTiles2 tile $5f, ScrollTileRight
 	dw NULL,  WaitTileAnimation
-	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  WaitTileAnimation
-	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  WaitTileAnimation
-	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  WaitTileAnimation
-	dw VTiles2 tile $40, WriteTileFromBuffer
-	dw ShorelineFrames3,  AnimateWaterfallTiles
 	dw ShorelineFrames,  AnimateWaterfallTiles
 	dw ShorelineFrames2,  AnimateWaterfallTiles
 	dw NULL,  DoneTileAnimation
@@ -1216,10 +1211,6 @@ ShorelineTiles: INCBIN "gfx/tilesets/shoreline/shore.2bpp"
 ShorelineFrames2: dw VTiles2 tile $18, ShorelineTiles2
 
 ShorelineTiles2: INCBIN "gfx/tilesets/shoreline/shore2.2bpp"
-
-ShorelineFrames3: dw VTiles2 tile $24, ShorelineTiles3
-
-ShorelineTiles3: INCBIN "gfx/tilesets/shoreline/shore3.2bpp"
 
 SunbeamViewWaterFrames: dw VTiles2 tile $4e, SunbeamViewWaterTiles
 

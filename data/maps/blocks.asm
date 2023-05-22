@@ -719,3 +719,6 @@ DesertTemple1_BlockData:
 SeasideCave1F_BlockData:
 	INCBIN "maps/SeasideCave1F.ablk.lz"
 	
+SeasideCaveB1F_BlockData:
+	INCBIN "maps/SeasideCaveB1F.ablk.lz"
+	

@@ -111,8 +111,8 @@ SunbeamPokecenterSpruceText2:
 	line "moment…"
 	
 	para "You are"
-	line "<PLAYER>, are"
-	cont "you not?"
+	line "<PLAYER>, are you"
+	cont "not?"
 	
 	para "…"
 	
@@ -126,9 +126,11 @@ SunbeamPokecenterSpruceText2:
 	line "made it!"
 	
 	para "Please, come to my"
-	line "LAB and we can"
-	cont "continue our"
-	cont "conversation!"
+	line "LAB."
+	
+	para "We can continue"
+	line "our conversation"
+	cont "there."
 	
 	para "I look forward to"
 	line "it!"

@@ -512,11 +512,12 @@ SunBeamLabLocked:
 	jumptext SunBeamLabLockedText
 
 SunBeamLabLockedText:
-	text "I've stepped out to"
-	line "run some errands at"
-	cont "the #MON CENTER."
+	text "I've stepped out"
+	line "for a moment."
 	
-	para "-PROF. SPRUCE"
+	para "I'll be at the"
+	line "#MON CENTER."
+	cont "-PROF. SPRUCE"
 	done
 
 SunbeamCrowdText:

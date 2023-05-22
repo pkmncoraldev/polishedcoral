@@ -716,3 +716,6 @@ FakeRoute2_BlockData:
 DesertTemple1_BlockData:
 	INCBIN "maps/DesertTemple1.ablk.lz"
 	
+SeasideCave1F_BlockData:
+	INCBIN "maps/SeasideCave1F.ablk.lz"
+	

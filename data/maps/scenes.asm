@@ -86,7 +86,7 @@ MapTriggers::
 	scene_var BRILLO_TOWN,							  wBrilloTownTrigger
 	scene_var BRILLO_MART,							  wAlways0Trigger
 	scene_var ROUTE_16,								  wRoute16Trigger
-	scene_var ROUTE_16_NORTH,					  wRoute16NorthTrigger
+	scene_var ROUTE_16_NORTH,					 	  wRoute16NorthTrigger
 	scene_var DESERT_WASTELAND_1,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_2,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_3,					  wSpookyForestEscortTrigger

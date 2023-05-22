@@ -5,7 +5,7 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 17 ; warp events
+	db 18 ; warp events
 	warp_event  9,  0, PLAYER_HOUSE_1F, 3
 	warp_event  5, 10, SUNSET_BAY, 1
 	warp_event  7, 10, DAYBREAK_VILLAGE, 1
@@ -23,6 +23,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event 17, 14, DESERT_TEMPLE_1, 1
 	warp_event 19, 14, RADIANT_TOWNSHIP, 1
 	warp_event  5, 18, DUSK_TURNPIKE, 1
+	warp_event  7, 18, SEASIDE_CAVE_1F, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0

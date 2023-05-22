@@ -340,13 +340,13 @@ TilesetJungleAnim::
 	
 TilesetCaveAnim::
 	dw NULL,  LavaAnim2
-	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
 	dw WaterfallFrames, AnimateWaterfallTiles
 	dw Waterfall2Frames, AnimateWaterfallTiles
 	dw Waterfall3Frames, AnimateWaterfallTiles
 	dw VTiles2 tile $36, AnimateTopofWaterfall
 	dw NULL,  LavaAnim1
-	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
 	dw VTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft
@@ -361,6 +361,9 @@ TilesetCaveAnim::
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  WaitTileAnimation
 	dw VTiles2 tile $40, WriteTileFromBuffer
+	dw ShorelineFrames3,  AnimateWaterfallTiles
+	dw ShorelineFrames,  AnimateWaterfallTiles
+	dw ShorelineFrames2,  AnimateWaterfallTiles
 	dw NULL,  DoneTileAnimation
 
 TilesetStarglowCavernAnim::

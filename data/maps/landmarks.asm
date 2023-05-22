@@ -61,6 +61,7 @@ Landmarks: ; 0x1ca8c3
 	landmark  28,  92, RadiantName
 	landmark   0,   0, Route19Name
 	landmark   0,   0, DuskTurnpikeName
+	landmark   0,   0, SeasideCaveName
 	landmark   0,   0, Route20Name
 	
 	landmark -16, -16, GateName
@@ -115,6 +116,7 @@ Route18Name:		   db "ROUTE 18@"
 RadiantName:	 	   db "RADIANT¯TOWNSHIP@"
 Route19Name:		   db "ROUTE 19@"
 DuskTurnpikeName:	   db "DUSK¯TURNPIKE@"
+SeasideCaveName:	   db "SEASIDE¯CAVE@"
 Route20Name:		   db "ROUTE 20@"
 
 LusterStationName:	   db "LUSTER¯CITY@"

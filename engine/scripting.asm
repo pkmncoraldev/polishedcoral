@@ -2678,6 +2678,7 @@ Script_checkphonecall:
 Script_givepoke:
 ; parameters:
 ;     pokemon (PokemonParam)
+;     form (DecimalParam)
 ;     level (DecimalParam)
 ;     item (ItemLabelByte)
 ;     trainer (DecimalParam)

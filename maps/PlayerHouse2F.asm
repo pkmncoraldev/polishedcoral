@@ -5,7 +5,7 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 14 ; warp events
+	db 17 ; warp events
 	warp_event  9,  0, PLAYER_HOUSE_1F, 3
 	warp_event  5, 10, SUNSET_BAY, 1
 	warp_event  7, 10, DAYBREAK_VILLAGE, 1
@@ -18,13 +18,16 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event  7, 14, FLICKER_STATION, 1
 	warp_event  9, 14, TWINKLE_TOWN, 1
 	warp_event 11, 14, LUSTER_CITY_SHOPPING, 1
-	warp_event 13, 14, BRILLO_TOWN, 1
-	warp_event 15, 14, DESERT_TEMPLE_1, 1
+	warp_event 13, 14, SHIMMER_CITY, 1
+	warp_event 15, 14, BRILLO_TOWN, 1
+	warp_event 17, 14, DESERT_TEMPLE_1, 1
+	warp_event 19, 14, RADIANT_TOWNSHIP, 1
+	warp_event  5, 18, DUSK_TURNPIKE, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
 
-	db 17 ; bg events
+	db 23 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
 	bg_event  5,  1, SIGNPOST_JUMPSTD, radio2
 	bg_event  7,  1, SIGNPOST_READ, PlayerHouseBookshelf
@@ -43,6 +46,11 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event  6, 14, SIGNPOST_JUMPTEXT, PlayerHouseFlickerStation
 	bg_event  8, 14, SIGNPOST_JUMPTEXT, PlayerHouseTwinkle
 	bg_event 10, 14, SIGNPOST_JUMPTEXT, PlayerHouseLuster
+	bg_event 12, 14, SIGNPOST_JUMPTEXT, PlayerHouseShimmer
+	bg_event 14, 14, SIGNPOST_JUMPTEXT, PlayerHouseBrillo
+	bg_event 16, 14, SIGNPOST_JUMPTEXT, PlayerHouseDesertTemple
+	bg_event 18, 14, SIGNPOST_JUMPTEXT, PlayerHouseRadiant
+	bg_event  4, 18, SIGNPOST_JUMPTEXT, PlayerHouseDusk
 
 	db 3 ; object events
 	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_N64
@@ -309,6 +317,26 @@ PlayerHouseTwinkle:
 	
 PlayerHouseLuster:
 	text "LUSTER CITY"
+	done
+	
+PlayerHouseShimmer:
+	text "PORT SHIMMER"
+	done
+	
+PlayerHouseBrillo:
+	text "BRILLO TOWN"
+	done
+	
+PlayerHouseDesertTemple:
+	text "DESERT TEMPLE"
+	done
+	
+PlayerHouseRadiant:
+	text "RADIANT TOWNSHIP"
+	done
+	
+PlayerHouseDusk:
+	text "DUSK TURNPIKE"
 	done
 	
 PlayerHouse2FInitializeRoom:

@@ -28,8 +28,8 @@ ShimmerCity_MapScriptHeader:
 	warp_event  2, 21, SHIMMER_UNDER_BOARDWALK, 25
 	warp_event 33, 21, SHIMMER_POKECENTER, 1
 	warp_event 39, 21, SHIMMER_MART, 1
-	warp_event 15, 29, SHIMMER_HOUSE_1, 1
-	warp_event 21, 29, SHIMMER_HOUSE_2, 1
+	warp_event 13, 29, SHIMMER_HOUSE_1, 1
+	warp_event 19, 29, SHIMMER_HOUSE_2, 1
 	warp_event 37, 29, SHIMMER_HOUSE_3, 1
 	warp_event  5,  9, SHIMMER_UNDER_BOARDWALK, 19
 

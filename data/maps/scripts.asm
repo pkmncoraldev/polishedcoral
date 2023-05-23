@@ -48,8 +48,6 @@ INCLUDE "maps/LusterSewersB1F.asm"
 INCLUDE "maps/LusterSewersB2F.asm"
 INCLUDE "maps/LusterSewersValveRoom.asm"
 INCLUDE "maps/Route16.asm"
-INCLUDE "maps/SeasideCave1F.asm"
-INCLUDE "maps/SeasideCaveB1F.asm"
 
 
 SECTION "Dungeon Scripts2", ROMX
@@ -66,6 +64,8 @@ INCLUDE "maps/IceTempleB1F2.asm"
 INCLUDE "maps/IceTempleB1F3.asm"
 INCLUDE "maps/IceTempleB2F1.asm"
 INCLUDE "maps/IceTempleB2F2.asm"
+INCLUDE "maps/SeasideCave1F.asm"
+INCLUDE "maps/SeasideCaveB1F.asm"
 
 
 SECTION "Routes Scripts", ROMX

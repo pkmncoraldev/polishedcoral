@@ -24,7 +24,7 @@ MAP_NONE   EQU 0
 	map_const PLAYER_HOUSE_2F,                            10, 12 ;  2
 	map_const DAYBREAK_GROTTO_1,                           9,  7 ;  3
 	map_const DAYBREAK_GROTTO_2,                           9, 11 ;  4
-	map_const DAYBREAK_GROTTO_3,                           6, 20 ;  5
+	map_const DAYBREAK_GROTTO_3,                           9, 29 ;  5
 	map_const GLINT_GROVE,                                27, 30 ;  6
 	map_const GLINT_GROVE_DEEP,							   7,  8 ;  7
 	map_const STARGLOW_CAVERN_1F,                         19, 16 ;  8
@@ -54,7 +54,7 @@ MAP_NONE   EQU 0
 	map_const ICE_TEMPLE_B2F_1,							   8, 6  ; 32
 	map_const ICE_TEMPLE_B2F_2,							  13, 7  ; 33
 	map_const SEASIDE_CAVE_1F,							  12, 14 ; 34
-	map_const SEASIDE_CAVE_B1F,							  13, 17 ; 35
+	map_const SEASIDE_CAVE_B1F,							  13, 18 ; 35
 
 	newgroup                                                     ;  2
 

@@ -6,7 +6,7 @@ SeasideCaveB1F_MapScriptHeader:
 	db 3 ; warp events
 	warp_event 15,  5, SEASIDE_CAVE_1F, 2
 	warp_event 15, 21, SEASIDE_CAVE_1F, 3
-	warp_event 13, 31, ROUTE_1, 1
+	warp_event 13, 33, ROUTE_1, 1
 
 	db 0 ; coord events
 

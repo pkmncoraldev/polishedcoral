@@ -6,12 +6,13 @@ Route20Tunnel_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route20TunnelCallback
 
-	db 5 ; warp events
+	db 6 ; warp events
 	warp_event 28, 11, DUSK_TURNPIKE, 3
 	warp_event 28, 12, DUSK_TURNPIKE, 4
 	warp_event 28, 13, DUSK_TURNPIKE, 5
 	warp_event 28, 14, DUSK_TURNPIKE, 6
 	warp_event 28, 15, DUSK_TURNPIKE, 7
+	warp_event  9,  3, SEASIDE_CAVE_1F, 4
 
 	db 62 ; coord events
 	xy_trigger 0, 11, 28, 0, Route20TunnelLightEntrance, 0, 0
@@ -89,6 +90,8 @@ Route20TunnelTrigger1:
 	end
 
 Route20TunnelCallback:
+	checkcode VAR_FACING
+	if_equal DOWN, .nite
 	checktime 1<<NITE
 	iftrue .nite
 	setflag ENGINE_NEAR_CAMPFIRE

@@ -3,10 +3,11 @@ SeasideCave1F_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 3 ; warp events
+	db 4 ; warp events
 	warp_event  7,  1, ROUTE_17, 3
 	warp_event 15,  3, SEASIDE_CAVE_B1F, 1
 	warp_event 15, 19, SEASIDE_CAVE_B1F, 2
+	warp_event 17, 35, ROUTE_20_TUNNEL, 6
 
 	db 0 ; coord events
 

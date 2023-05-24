@@ -91,6 +91,8 @@ endc
 
 LoadSpecialMapPalette: ; 494ac
 	ld a, [wTileset]
+	cp TILESET_CAVE
+	jp z, .cave
 	cp TILESET_STARGLOW_CAVERN
 	jp z, .starglow_cavern
 	cp TILESET_GROVE
@@ -148,6 +150,21 @@ LoadSpecialMapPalette: ; 494ac
 	cp TILESET_HIGHWAY
 	jp z, .highway
 	jp .do_nothing
+	
+.cave
+	ld a, [wMapGroup]
+	cp GROUP_SEASIDE_CAVE_1F
+	jp z, .do_nothing
+	cp GROUP_UNDERGROUND_PASSAGE
+	jp z, .starglow_cavern
+	ld de, wUnknBGPals + 3 palettes
+	ld hl, StarglowCavernPalette + 3 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
+	
 	
 .mart
 	ld a, [wMapGroup]

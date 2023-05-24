@@ -6,9 +6,10 @@ SunsetLighthouse_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event 5, 9, SUNSET_CAPE, 1
 	warp_event 4, 9, SUNSET_CAPE, 1
+	warp_event  5,  2, DAYBREAK_GROTTO_3, 8
 
 	db 0 ; coord events
 

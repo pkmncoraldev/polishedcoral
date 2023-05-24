@@ -53,8 +53,6 @@ MAP_NONE   EQU 0
 	map_const ICE_TEMPLE_B1F_3,							   4, 4  ; 31
 	map_const ICE_TEMPLE_B2F_1,							   8, 6  ; 32
 	map_const ICE_TEMPLE_B2F_2,							  13, 7  ; 33
-	map_const SEASIDE_CAVE_1F,							  12, 19 ; 34
-	map_const SEASIDE_CAVE_B1F,							  13, 18 ; 35
 
 	newgroup                                                     ;  2
 
@@ -304,6 +302,7 @@ MAP_NONE   EQU 0
 	map_const SHIMMER_HOUSE_3,							   4,  4 ; 12
 	map_const ROUTE_13,									  15, 24 ; 13
 	map_const ROUTE_14,									  44, 16 ; 14
+	map_const UNDERGROUND_PASSAGE,						  20, 23 ; 15
 	
 	
 	newgroup													 ; 17
@@ -356,6 +355,8 @@ MAP_NONE   EQU 0
 	map_const ROUTE_19,									  20, 16 ; 1
 	map_const DUSK_TURNPIKE,							  20, 19 ; 2
 	map_const ROUTE_20_TUNNEL,							  15,  8 ; 3
+	map_const SEASIDE_CAVE_1F,							  12, 19 ; 4
+	map_const SEASIDE_CAVE_B1F,							  13, 18 ; 5
 	
 	newgroup													 ; last
 	

@@ -226,3 +226,4 @@ SpriteHeaders:
 	overworld_sprite LeilaniSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite ErikaSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite LeilaniBedSpriteGFX, STANDING_SPRITE, PAL_OW_GREEN
+	overworld_sprite TrunksWaterSpriteGFX, STANDING_SPRITE, PAL_OW_PURPLE

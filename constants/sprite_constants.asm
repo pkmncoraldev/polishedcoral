@@ -222,6 +222,7 @@
 	const SPRITE_LEILANI
 	const SPRITE_ERIKA
 	const SPRITE_LEILANI_BED
+	const SPRITE_TRUNKS_WATER
 
 	
 	const_def $f1

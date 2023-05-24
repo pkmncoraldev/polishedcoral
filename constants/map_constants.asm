@@ -53,7 +53,7 @@ MAP_NONE   EQU 0
 	map_const ICE_TEMPLE_B1F_3,							   4, 4  ; 31
 	map_const ICE_TEMPLE_B2F_1,							   8, 6  ; 32
 	map_const ICE_TEMPLE_B2F_2,							  13, 7  ; 33
-	map_const SEASIDE_CAVE_1F,							  12, 14 ; 34
+	map_const SEASIDE_CAVE_1F,							  12, 19 ; 34
 	map_const SEASIDE_CAVE_B1F,							  13, 18 ; 35
 
 	newgroup                                                     ;  2

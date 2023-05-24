@@ -121,6 +121,7 @@ LockeSpriteGFX::			   INCBIN "gfx/sprites/locke.2bpp"
 RoughneckSpriteGFX::           INCBIN "gfx/sprites/roughneck.2bpp"
 SageSpriteGFX::                INCBIN "gfx/sprites/sage.2bpp"
 SailorSpriteGFX::              INCBIN "gfx/sprites/sailor.2bpp"
+TrunksWaterSpriteGFX::		   INCBIN "gfx/sprites/trunks_water.2bpp"
 
 
 SECTION "Overworld Sprites 5", ROMX

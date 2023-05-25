@@ -70,7 +70,7 @@ TMHMMoves:
 	db THUNDER_FANG                        ; TM69
 	db FLASH                               ; TM70
 	db STONE_EDGE                          ; TM71
-	db FLAIL                               ; TM72
+	db ANCIENTPOWER                        ; TM72
 	db THUNDER_WAVE                        ; TM73
 	db GYRO_BALL                           ; TM74
 	db SWORDS_DANCE                        ; TM75

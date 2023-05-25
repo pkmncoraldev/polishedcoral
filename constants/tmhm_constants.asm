@@ -94,7 +94,7 @@ ENDM
 	add_tm FIRE_FANG		; $44
 	add_tm FLASH			; $45
 	add_tm STONE_EDGE		; $46
-	add_tm VOLT_SWITCH		; $47
+	add_tm ANCIENTPOWER		; $47
 	add_tm THUNDER_WAVE		; $48
 	add_tm GYRO_BALL		; $49
 	add_tm SWORDS_DANCE		; $4a

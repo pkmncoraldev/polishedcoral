@@ -354,7 +354,7 @@ MAP_NONE   EQU 0
 	
 	map_const ROUTE_19,									  20, 16 ; 1
 	map_const DUSK_TURNPIKE,							  20, 19 ; 2
-	map_const ROUTE_20_TUNNEL,							  15,  8 ; 3
+	map_const ROUTE_20_TUNNEL,							  15,  9 ; 3
 	map_const SEASIDE_CAVE_1F,							  12, 19 ; 4
 	map_const SEASIDE_CAVE_B1F,							  13, 18 ; 5
 	

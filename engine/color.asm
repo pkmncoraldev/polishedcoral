@@ -919,7 +919,6 @@ LoadMapPals::
 	cp MAP_TWINKLE_GYM_RED_ROOM
 	jp z, .red_room
 	jp .normal
-	
 .mart
 	ld a, [wMapGroup]
 	cp GROUP_BRILLO_TOWN
@@ -929,9 +928,7 @@ LoadMapPals::
 	jp nz, .normal
 	call .normal
 	ld hl, MapObjectPalsCasino
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	call FarCopyWRAM
 	ld a, [wPlayerPalette]
 	cp 3
@@ -965,9 +962,7 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsSand
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 	
 .brillo
@@ -978,9 +973,7 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsMaractusGraffiti
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 .oasis
 	ld a, [wTimeOfDayPal]
@@ -988,9 +981,7 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, StandardGrassPalette
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 	
 .sandstorm
@@ -1030,9 +1021,7 @@ LoadMapPals::
 	and 3
 	ld hl, MapObjectPalsRocks
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	call FarCopyWRAM
 	
 	jp .fire
@@ -1049,9 +1038,7 @@ LoadMapPals::
 	ld hl, MapObjectPalsWaterfallCave
 	call AddNTimes
 .copy_single_pal_to_pal_7
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 	
 .nett
@@ -1063,9 +1050,7 @@ LoadMapPals::
 	jr nz, .nett2
 	call .normal
 	ld hl, MapObjectPalsNett
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 	
 	
@@ -1074,9 +1059,7 @@ LoadMapPals::
 	jr nz, .nett2_dark
 	call .normal
 	ld hl, MapObjectPalsNett2
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 	
 .nett2_dark
@@ -1092,16 +1075,12 @@ LoadMapPals::
 .snes
 	call .normal
 	ld hl, MapObjectPalsSnes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 .n64
 	call .normal
 	ld hl, MapObjectPalsN64
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 	
 .gate
@@ -1166,9 +1145,7 @@ LoadMapPals::
 
 .no_steam
 	ld hl, MapObjectPalsTwinkleGym4
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 
 .ice_cave
@@ -1269,9 +1246,7 @@ LoadMapPals::
 	and 3
 	ld bc, 1 palettes
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	call FarCopyWRAM
 	ld a, [wPermission]
 	cp FOREST
@@ -1298,16 +1273,12 @@ LoadMapPals::
 	and 3
 	ld bc, 1 palettes
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	call FarCopyWRAM
 	jp .outside_cont
 .starglow
 	ld hl, MapObjectPalsStarglow
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 
 .ranch
@@ -1446,9 +1417,7 @@ LoadMapPals::
 
 .lustermall
 	ld hl, MapObjectPalsLusterMall
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 
 	
@@ -1462,9 +1431,7 @@ LoadMapPals::
 	ret
 .coffee
 	ld hl, MapObjectPalsCoffee
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 
 	
@@ -1559,9 +1526,7 @@ LoadMapPals::
 .slowpoke
 	ld hl, MapObjectPalsSlowpoke
 .lab_end
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 	
 .shimmer
@@ -1577,9 +1542,7 @@ LoadMapPals::
 .fossil_lab
 	call .normal
 	ld hl, MapObjectPalsFossilLab
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 
 	
@@ -1589,9 +1552,7 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsBinoculars
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	call FarCopyWRAM
 	jr .outside
 	
@@ -1602,9 +1563,7 @@ LoadMapPals::
 	cp GROUP_LUSTER_CITY_RESIDENTIAL
 	jp nz, .normal
 	ld hl, MapObjectPalsCandle
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 
 	
@@ -1716,6 +1675,12 @@ endr
 	db $08, $09, $0a, $0b, $0c, $0d, $0e, $0f ; day
 	db $10, $11, $12, $13, $14, $15, $16, $17 ; nite
 	db $18, $19, $1a, $1b, $1c, $1d, $1e, $1f ; dark
+
+LoadSingleOBPalLinePal7:
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	ret
 
 LoadTownSignPalette::
 	ld a, [wMapGroup]

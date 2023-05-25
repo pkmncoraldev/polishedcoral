@@ -72,13 +72,13 @@ SailboatCutsceneTrigger0:
 	clearevent EVENT_BOAT_GOING_TO_LAKE_L
 	domaptrigger LAKE_ONWA, $2
 	special FadeOutPalettes
-	warpfacing LEFT, LAKE_ONWA, $18, $19
+	warpfacing LEFT, LAKE_ONWA, $1a, $19
 	end
 .lakeR
 	clearevent EVENT_BOAT_GOING_TO_LAKE_R
 	domaptrigger LAKE_ONWA, $1
 	special FadeOutPalettes
-	warpfacing RIGHT, LAKE_ONWA, $27, $1f
+	warpfacing RIGHT, LAKE_ONWA, $29, $1f
 	end
 .sunbeam
 	clearevent EVENT_BOAT_GOING_TO_SUNBEAM

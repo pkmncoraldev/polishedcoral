@@ -97,6 +97,7 @@ INCLUDE "maps/Route19.asm"
 INCLUDE "maps/DuskTurnpike.asm"
 INCLUDE "maps/Route20Tunnel.asm"
 INCLUDE "maps/FakeRoute1.asm"
+INCLUDE "maps/Route3StarglowCavernTop.asm"
 
 
 SECTION "Routes Scripts2", ROMX

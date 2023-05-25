@@ -30,7 +30,7 @@ Route3_MapScriptHeader:
 	cuttree_event 18, 31, EVENT_ROUTE_3_CUT_TREE_3
 	smashrock_event 46, 14
 	smashrock_event 47, 15
-	smashrock_event 44, 10
+	smashrock_event 46,  8
 	smashrock_event 47, 11
 	fruittree_event 22, 10, FRUITTREE_ROUTE_3_1, CHERI_BERRY
 

@@ -18,7 +18,7 @@ Route8_MapScriptHeader:
 	signpost 12, 18, SIGNPOST_READ, Route8FlowerHouseSign
 	signpost 20, 35, SIGNPOST_ITEM + DAWN_STONE, EVENT_ROUTE_8_HIDDEN_DAWN_STONE
 
-	db 11 ; object events
+	db 12 ; object events
 	person_event SPRITE_YOUNGSTER, 13, 25, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route8NPC1, -1
 	person_event SPRITE_BATTLE_GIRL, 29, 45, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route8NPC2, -1
 	person_event SPRITE_POKEFAN_F, 10, 10, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route8NPC3, -1
@@ -30,6 +30,7 @@ Route8_MapScriptHeader:
 	fruittree_event 18, 16, FRUITTREE_ROUTE_8_1, CHESTO_BERRY
 	fruittree_event 16, 16, FRUITTREE_ROUTE_8_2, CHERI_BERRY
 	itemball_event 32, -2, RARE_CANDY, 1, EVENT_ROUTE_3_RARE_CANDY
+	tmhmball_event 22, 24, TM_ANCIENTPOWER, EVENT_ROUTE_8_POKE_BALL_ANCIENTPOWER
 
 Route8Callback:
 	clearflag ENGINE_ENCOUNTER_HOUSE

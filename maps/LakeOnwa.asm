@@ -12,17 +12,15 @@ LakeOnwa_MapScriptHeader:
 	callback MAPCALLBACK_TILES, LakeOnwaCallback
 
 	db 7 ; warp events
-	warp_def 29, 43, 1, LAKE_ONWA_BOAT_HOUSE_RIGHT
-	warp_def 23, 19, 1, LAKE_ONWA_BOAT_HOUSE_LEFT
-	warp_def  5, 36, 1, MT_ONWA_1F
-	warp_def 22,  5, 1, LAKE_ONWA_NAME_RATER_HOUSE
-	warp_def 16, 11, 1, LAKE_ONWA_ITEM_HOUSE
-	warp_def 17, 17, 1, LAKE_ONWA_POKECENTER
-	warp_def  3, 55, 3, ROUTE_8_GATE
+	warp_def 29, 45, 1, LAKE_ONWA_BOAT_HOUSE_RIGHT
+	warp_def 23, 21, 1, LAKE_ONWA_BOAT_HOUSE_LEFT
+	warp_def  5, 38, 1, MT_ONWA_1F
+	warp_def 22,  7, 1, LAKE_ONWA_NAME_RATER_HOUSE
+	warp_def 16, 13, 1, LAKE_ONWA_ITEM_HOUSE
+	warp_def 17, 19, 1, LAKE_ONWA_POKECENTER
+	warp_def  3, 57, 3, ROUTE_8_GATE
 
-	db 59 ; coord events
-	coord_event 20, 18, 0, LakeMakeSilverBrown
-	coord_event 21, 18, 0, LakeMakeSilverBrown
+	db 63 ; coord events
 	coord_event 22, 18, 0, LakeMakeSilverBrown
 	coord_event 23, 18, 0, LakeMakeSilverBrown
 	coord_event 24, 18, 0, LakeMakeSilverBrown
@@ -31,8 +29,8 @@ LakeOnwa_MapScriptHeader:
 	coord_event 27, 18, 0, LakeMakeSilverBrown
 	coord_event 28, 18, 0, LakeMakeSilverBrown
 	coord_event 29, 18, 0, LakeMakeSilverBrown
-	coord_event 32, 18, 0, LakeMakeSilverBrown
-	coord_event 33, 18, 0, LakeMakeSilverBrown
+	coord_event 30, 18, 0, LakeMakeSilverBrown
+	coord_event 31, 18, 0, LakeMakeSilverBrown
 	coord_event 34, 18, 0, LakeMakeSilverBrown
 	coord_event 35, 18, 0, LakeMakeSilverBrown
 	coord_event 36, 18, 0, LakeMakeSilverBrown
@@ -45,12 +43,14 @@ LakeOnwa_MapScriptHeader:
 	coord_event 43, 18, 0, LakeMakeSilverBrown
 	coord_event 44, 18, 0, LakeMakeSilverBrown
 	coord_event 45, 18, 0, LakeMakeSilverBrown
-	coord_event 48, 18, 0, LakeMakeSilverBrown
-	coord_event 49, 18, 0, LakeMakeSilverBrown
+	coord_event 46, 18, 0, LakeMakeSilverBrown
+	coord_event 47, 18, 0, LakeMakeSilverBrown
 	coord_event 50, 18, 0, LakeMakeSilverBrown
 	coord_event 51, 18, 0, LakeMakeSilverBrown
-	coord_event 20, 19, 5, LakeMakeSilverBlue
-	coord_event 21, 19, 5, LakeMakeSilverBlue
+	coord_event 52, 18, 0, LakeMakeSilverBrown
+	coord_event 53, 18, 0, LakeMakeSilverBrown
+	coord_event 17, 14, 0, LakeMakeSilverBrown
+	coord_event 17, 15, 0, LakeMakeSilverBrown
 	coord_event 22, 19, 5, LakeMakeSilverBlue
 	coord_event 23, 19, 5, LakeMakeSilverBlue
 	coord_event 24, 19, 5, LakeMakeSilverBlue
@@ -59,8 +59,8 @@ LakeOnwa_MapScriptHeader:
 	coord_event 27, 19, 5, LakeMakeSilverBlue
 	coord_event 28, 19, 5, LakeMakeSilverBlue
 	coord_event 29, 19, 5, LakeMakeSilverBlue
-	coord_event 32, 19, 5, LakeMakeSilverBlue
-	coord_event 33, 19, 5, LakeMakeSilverBlue
+	coord_event 30, 19, 5, LakeMakeSilverBlue
+	coord_event 31, 19, 5, LakeMakeSilverBlue
 	coord_event 34, 19, 5, LakeMakeSilverBlue
 	coord_event 35, 19, 5, LakeMakeSilverBlue
 	coord_event 36, 19, 5, LakeMakeSilverBlue
@@ -73,40 +73,46 @@ LakeOnwa_MapScriptHeader:
 	coord_event 43, 19, 5, LakeMakeSilverBlue
 	coord_event 44, 19, 5, LakeMakeSilverBlue
 	coord_event 45, 19, 5, LakeMakeSilverBlue
-	coord_event 48, 19, 5, LakeMakeSilverBlue
-	coord_event 49, 19, 5, LakeMakeSilverBlue
+	coord_event 46, 19, 5, LakeMakeSilverBlue
+	coord_event 47, 19, 5, LakeMakeSilverBlue
 	coord_event 50, 19, 5, LakeMakeSilverBlue
 	coord_event 51, 19, 5, LakeMakeSilverBlue
-	coord_event 19, 18, 5, LakeMakeSilverBlue
-	coord_event 35,  8, 5, LakeRivalT
-	coord_event 35,  9, 5, LakeRivalB
+	coord_event 52, 19, 5, LakeMakeSilverBlue
+	coord_event 53, 19, 5, LakeMakeSilverBlue
+	coord_event 21, 18, 5, LakeMakeSilverBlue
+	coord_event 17, 16, 5, LakeMakeSilverBlue
+	coord_event 17, 17, 5, LakeMakeSilverBlue
+	coord_event 37,  8, 5, LakeRivalT
+	coord_event 37,  9, 5, LakeRivalB
 
-	db 6 ; bg events
-	signpost 25, 59, SIGNPOST_READ, LakeSign
-	signpost 29, 46, SIGNPOST_READ, LakeBoatHouseSignR
-	signpost 23, 17, SIGNPOST_READ, LakeBoatHouseSignL
-	signpost 23, 6, SIGNPOST_READ, LakeNameRaterSign
-	signpost 17, 18, SIGNPOST_READ, LakeCenterSign
-	signpost 8, 30, SIGNPOST_READ, MtOnwaSign
+	db 7 ; bg events
+	signpost 25, 61, SIGNPOST_READ, LakeSign
+	signpost 29, 48, SIGNPOST_READ, LakeBoatHouseSignR
+	signpost 23, 19, SIGNPOST_READ, LakeBoatHouseSignL
+	signpost 23,  8, SIGNPOST_READ, LakeNameRaterSign
+	signpost 17, 20, SIGNPOST_READ, LakeCenterSign
+	signpost  8, 32, SIGNPOST_READ, MtOnwaSign
+	bg_event  4, 25, SIGNPOST_ITEM + MAX_REVIVE, EVENT_LAKE_ONWA_HIDDEN_ITEM
 
-	db 17 ; object events
-	person_event SPRITE_GENERAL_VARIABLE_1, 0, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 39, 31, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
-	object_event 40, 31, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
-	object_event 39, 32, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
-	object_event 40, 32, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
-	person_event SPRITE_COOL_DUDE, 32, 46, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LakeNpc1, -1
-	person_event SPRITE_FISHER, 26, 10, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LakeNpc2, -1
-	person_event SPRITE_CUTE_GIRL, 12, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LakeNpc3, -1
-	person_event SPRITE_GRANNY, 20, 8, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeNpc4, -1
-	itemball_event 39, 16, MASTER_BALL, 1, EVENT_LAKE_ONWA_POKE_BALL1
-	itemball_event 26, 6, HARD_STONE, 1, EVENT_LAKE_ONWA_POKE_BALL2
-	person_event SPRITE_HIKER,  7, 61, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerLake, -1
-	person_event SPRITE_WEIRD_TREE, 23, 56, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeSudowoodo, EVENT_FOUGHT_SUDOWOODO
-	smashrock_event 23, 10
-	smashrock_event 26,  9
-	smashrock_event 27,  8
-	person_event SPRITE_COLBY,  7, 37, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LakeBoat, EVENT_BEAT_LAKE_RIVAL
+	db 18 ; object events
+	person_event SPRITE_GENERAL_VARIABLE_1,  0,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 41, 31, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
+	object_event 42, 31, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
+	object_event 41, 32, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
+	object_event 42, 32, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
+	person_event SPRITE_COOL_DUDE, 32, 48, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LakeNpc1, -1
+	person_event SPRITE_FISHER, 26, 12, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LakeNpc2, -1
+	person_event SPRITE_CUTE_GIRL, 12, 26, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LakeNpc3, -1
+	person_event SPRITE_GRANNY, 20, 10, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeNpc4, -1
+	itemball_event 41, 16, BIG_NUGGET, 1, EVENT_LAKE_ONWA_POKE_BALL1
+	itemball_event 28,  6, HARD_STONE, 1, EVENT_LAKE_ONWA_POKE_BALL2
+	person_event SPRITE_HIKER,  7, 63, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerLake, -1
+	person_event SPRITE_WEIRD_TREE, 23, 58, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeSudowoodo, EVENT_FOUGHT_SUDOWOODO
+	smashrock_event 25, 10
+	smashrock_event 28,  9
+	smashrock_event 29,  8
+	person_event SPRITE_COLBY,  7, 39, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LakeBoat, EVENT_BEAT_LAKE_RIVAL
+	itemball_event  4, 24, PP_MAX, 1, EVENT_LAKE_ONWA_POKE_BALL3
 
 
 	const_def 1 ; object constants
@@ -157,10 +163,10 @@ LakeOnwaFlypointCallback:
 LakeOnwaCallback:
 	checkevent EVENT_LAKE_BOAT_LEFT
 	iffalse .boatnotleft
-	moveperson LAKEBOATT1, 23, 25
-	moveperson LAKEBOATT2, 24, 25
-	moveperson LAKEBOATB1, 23, 26
-	moveperson LAKEBOATB2, 24, 26
+	moveperson LAKEBOATT1, 25, 25
+	moveperson LAKEBOATT2, 26, 25
+	moveperson LAKEBOATB1, 25, 26
+	moveperson LAKEBOATB2, 26, 26
 .boatnotleft
 	checkscene
 	ifequal $1, .right
@@ -176,12 +182,12 @@ LakeOnwaCallback:
 	return
 .right
 	disappear LAKEBOATMANOUTSIDE
-	moveperson LAKEBOATMANOUTSIDE, 40, 31
+	moveperson LAKEBOATMANOUTSIDE, 42, 31
 	appear LAKEBOATMANOUTSIDE
 	return
 .left
 	disappear LAKEBOATMANOUTSIDE
-	moveperson LAKEBOATMANOUTSIDE, 23, 25
+	moveperson LAKEBOATMANOUTSIDE, 25, 25
 	appear LAKEBOATMANOUTSIDE
 	return	
 	
@@ -250,10 +256,10 @@ JustRodeBoatLakeStrandR:
 	disappear LAKEBOATT2
 	disappear LAKEBOATB1
 	disappear LAKEBOATB2
-	moveperson LAKEBOATT1, 23, 25
-	moveperson LAKEBOATT2, 24, 25
-	moveperson LAKEBOATB1, 23, 26
-	moveperson LAKEBOATB2, 24, 26
+	moveperson LAKEBOATT1, 25, 25
+	moveperson LAKEBOATT2, 26, 25
+	moveperson LAKEBOATB1, 26, 26
+	moveperson LAKEBOATB2, 25, 26
 	appear LAKEBOATT1
 	appear LAKEBOATT2
 	appear LAKEBOATB1
@@ -283,10 +289,10 @@ JustRodeBoatLakeStrandL:
 	disappear LAKEBOATT2
 	disappear LAKEBOATB1
 	disappear LAKEBOATB2
-	moveperson LAKEBOATT1, 39, 31
-	moveperson LAKEBOATT2, 40, 31
-	moveperson LAKEBOATB1, 39, 32
-	moveperson LAKEBOATB2, 40, 32
+	moveperson LAKEBOATT1, 41, 31
+	moveperson LAKEBOATT2, 42, 31
+	moveperson LAKEBOATB1, 41, 32
+	moveperson LAKEBOATB2, 42, 32
 	appear LAKEBOATT1
 	appear LAKEBOATT2
 	appear LAKEBOATB1

@@ -97,6 +97,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_8_ENCOUNTER_HOUSE,                     4,  4 ; 15
 	map_const ROUTE_8_GARDEN,                             31, 20 ; 16
 	map_const ROUTE_8_GATE,                                4,  4 ; 17
+	map_const ROUTE_3_STARGLOW_CAVERN_TOP,				  10, 13 ; 18
 
 	newgroup                                                     ;  5
 
@@ -120,7 +121,7 @@ MAP_NONE   EQU 0
 
 	map_const ROUTE_6,                                    37, 23 ;  1
 	map_const ROUTE_7,                                    19, 12 ;  2
-	map_const LAKE_ONWA,                                  32, 26 ;  3
+	map_const LAKE_ONWA,                                  33, 26 ;  3
 	map_const LAKE_ONWA_BOAT_HOUSE_RIGHT,                  4,  3 ;  4
 	map_const LAKE_ONWA_BOAT_HOUSE_LEFT,                   4,  3 ;  5
 	map_const LAKE_ONWA_NAME_RATER_HOUSE,                  4,  4 ;  6

@@ -8,17 +8,23 @@ Route2_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
 	signpost 40, 20, SIGNPOST_READ, Route2Sign
+	bg_event 33,  4, SIGNPOST_ITEM + MAX_REVIVE, EVENT_ROUTE_2_HIDDEN_ITEM
 
-	db 7 ; object events
+	db 12 ; object events
 	person_event SPRITE_YOUNGSTER, 23, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute2_1, -1
 	person_event SPRITE_LASS, 18, 16, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 5, TrainerRoute2_2, -1
 	person_event SPRITE_YOUNGSTER, 12, 11, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute2_3, -1
 	person_event SPRITE_HIKER, 28, 26, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route2NPC1, -1
 	itemball_event  23, 36, POTION, 1, EVENT_ROUTE_2_POKE_BALL
-	fruittree_event  4,  7, FRUITTREE_ROUTE_2, CHERI_BERRY
 	person_event SPRITE_BALL_CUT_FRUIT, 52, 17, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route2PokeballDummy, EVENT_DAYBREAK_RARE_CANDY
+	fruittree_event  4,  7, FRUITTREE_ROUTE_2_1, CHERI_BERRY
+	fruittree_event 30,  4, FRUITTREE_ROUTE_2_2, LUM_BERRY
+	fruittree_event 31,  4, FRUITTREE_ROUTE_2_3, LEPPA_BERRY
+	fruittree_event 34,  4, FRUITTREE_ROUTE_2_4, SITRUS_BERRY
+	fruittree_event 35,  4, FRUITTREE_ROUTE_2_5, FIGY_BERRY
+	tmhmball_event 32,  4, TM_GIGA_DRAIN, EVENT_ROUTE_2_POKE_BALL_GIGA_DRAIN
 
 	const_def 1 ; object constants
 	const ROUTE2_NPC1
@@ -27,7 +33,7 @@ Route2_MapScriptHeader:
 	const ROUTE2_NPC4
 	const ROUTE2_BALL1
 	const ROUTE2_BALL2
-	const ROUTE2_BALL3
+;	const ROUTE2_BALL3
 	
 TrainerRoute2_1:
 	generictrainer YOUNGSTER, JOEY, EVENT_BEAT_ROUTE_2_TRAINER_1, .SeenText, .BeatenText

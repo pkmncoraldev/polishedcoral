@@ -431,6 +431,9 @@ Route2_BlockData:
 Route3_BlockData:
 	INCBIN "maps/Route3.ablk.lz"
 	
+Route3StarglowCavernTop_BlockData:
+	INCBIN "maps/Route3StarglowCavernTop.ablk.lz"
+	
 Route3East_BlockData:
 	INCBIN "maps/Route3East.ablk.lz"
 

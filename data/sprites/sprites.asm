@@ -158,7 +158,7 @@ SpriteHeaders:
 	overworld_sprite FishingGuruSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite GameboyKidSpriteGFX, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite GamerGirlSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
-	overworld_sprite SilphEmployeeSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite PatchesSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite SafariOfficerSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ReporterSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CameramanSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE

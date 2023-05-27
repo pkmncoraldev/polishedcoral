@@ -8,30 +8,34 @@ Route3_MapScriptHeader:
 	warp_def  7, 46, 1, STARGLOW_CAVERN_3F
 	warp_def 15, 39, 1, ROUTE_3_FRIENDSHIP_HOUSE
 
-	db 6 ; coord events
-	coord_event 40, 16, 0, Route3MakeSilverBrown
-	coord_event 40, 17, 0, Route3MakeSilverBrown
-	coord_event 38, 17, 1, Route3MakeSilverGreen
-	coord_event 38, 16, 1, Route3MakeSilverGreen
+	db 8 ; coord events
+	coord_event 37, 16, 0, Route3MakeSilverBrown
+	coord_event 37, 17, 0, Route3MakeSilverBrown
+	coord_event 34, 17, 1, Route3MakeSilverGreen
+	coord_event 34, 16, 1, Route3MakeSilverGreen
 	coord_event 47, 30, 0, Route3MakeSilverBrown
 	coord_event 47, 31, 0, Route3MakeSilverBrown
+	coord_event 34, 19, 1, Route3MakeSilverGreen
+	coord_event 34, 20, 1, Route3MakeSilverGreen
 
 	db 3 ; bg events
 	signpost  7, 17, SIGNPOST_READ, Route3_sign
 	signpost 9, 0, SIGNPOST_READ, Route3_sign2
 	signpost 18, 34, SIGNPOST_READ, Route3_sign3
 
-	db 11 ; object events
+	db 13 ; object events
 	person_event SPRITE_YOUNGSTER, 8, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute3West_1, -1
 	person_event SPRITE_COOLTRAINER_M, 16, 30, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute3West_2, -1
 	itemball_event 46, 30, RARE_CANDY, 1, EVENT_ROUTE_3_RARE_CANDY
 	cuttree_event 24, 11, EVENT_ROUTE_3_CUT_TREE_1
 	cuttree_event 23, 26, EVENT_ROUTE_3_CUT_TREE_2
 	cuttree_event 18, 31, EVENT_ROUTE_3_CUT_TREE_3
-	smashrock_event 46, 14
+	smashrock_event 43, 13
+	smashrock_event 44, 12
+	smashrock_event 46,  9
+	smashrock_event 47,  8
 	smashrock_event 47, 15
-	smashrock_event 46,  8
-	smashrock_event 47, 11
+	smashrock_event 47, 12
 	fruittree_event 22, 10, FRUITTREE_ROUTE_3_1, CHERI_BERRY
 
 	const_def 1 ; object constants
@@ -45,6 +49,8 @@ Route3_MapScriptHeader:
 	const ROUTEWEST_ROCK_SMASH2
 	const ROUTEWEST_ROCK_SMASH3
 	const ROUTEWEST_ROCK_SMASH4
+	const ROUTEWEST_ROCK_SMASH5
+	const ROUTEWEST_ROCK_SMASH6
 	
 	
 Route3MakeSilverBrown:

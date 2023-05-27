@@ -77,6 +77,7 @@ MAP_NONE   EQU 0
 	map_const DAYBREAK_MARCUS_HOUSE,                	   4,  4 ;  5
 	map_const DAYBREAK_POKECENTER,                         6,  4 ;  6
 	map_const DAYBREAK_ALEX_HOUSE,                     	   4,  4 ;  7
+	map_const STARGLOW_CAVERN_DEPTHS,					   5,  5 ; 8
 
 	newgroup                                                     ;  4
 

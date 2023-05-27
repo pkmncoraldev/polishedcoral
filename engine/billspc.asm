@@ -1812,6 +1812,7 @@ DepositPokemon: ; e307c (38:707c)
 	ld hl, wBillsPC_ScrollPosition
 	add [hl]
 	ld [wCurPartyMon], a
+DepositPokemonPatches::
 	ld hl, wPartyMonNicknames
 	ld a, [wCurPartyMon]
 	call GetNick

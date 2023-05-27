@@ -2,7 +2,11 @@ BattleStart_TrainerHuds: ; 2c000
 	ld a, $e4
 	ld [rOBP0], a
 	call LoadBallIconGFX
+	ld a, [wPartyCount]
+	cp 0
+	jr z, .skip
 	call ShowPlayerMonsRemaining
+.skip
 	ld a, [wBattleMode]
 	dec a
 	ret z

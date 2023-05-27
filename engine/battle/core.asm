@@ -225,8 +225,8 @@ BattleTurn: ; 3c12f
 
 SafariBattleTurn:
 .loop
-	call CheckSafariBattleOver
-	ret c
+;	call CheckSafariBattleOver
+;	ret c
 
 	call BattleMenu
 	ret c
@@ -235,10 +235,12 @@ SafariBattleTurn:
 	and a
 	ret nz
 
-	call HandleSafariAngerEatingStatus
+;	call HandleSafariAngerEatingStatus
 
-	call CheckSafariMonRan
-	ret c
+;	call CheckSafariMonRan
+;	ret c
+
+	call PatchesMonStaring
 
 	ld a, [wBattleEnded]
 	and a
@@ -501,16 +503,16 @@ CheckContestBattleOver: ; 3c3f5
 	ret
 ; 3c410
 
-CheckSafariBattleOver:
-	ld a, [wSafariBallsRemaining]
-	and a
-	ret nz
-	ld a, [wBattleResult]
-	and $c0
-	add $2
-	ld [wBattleResult], a
-	scf
-	ret
+;CheckSafariBattleOver:
+;	ld a, [wSafariBallsRemaining]
+;	and a
+;	ret nz
+;	ld a, [wBattleResult]
+;	and $c0
+;	add $2
+;	ld [wBattleResult], a
+;	scf
+;	ret
 
 CheckPlayerLockedIn: ; 3c410
 	ld a, [wPlayerSubStatus4]
@@ -5094,7 +5096,7 @@ BattleMenu: ; 3e139
 BattleMenu_Fight: ; 3e192
 	ld a, [wBattleType]
 	cp BATTLETYPE_SAFARI
-	jp z, BattleMenu_SafariBall
+	jp z, BattleMenu_SafariFight
 
 	xor a
 	ld [wNumFleeAttempts], a
@@ -5146,40 +5148,47 @@ BattleMenu_BaitRock_Common:
 	and a
 	ret
 
-CheckSafariMonRan:
+PatchesMonStaring:
+	ld hl, GlaringText
+	call StdBattleTextBox
+	ld c, 50
+	call DelayFrames
+	ret
+
+;CheckSafariMonRan:
 ; Wildmon always runs when you are out of Safari Balls
-	ld a, [wSafariBallsRemaining]
-	and a
-	jp z, WildFled_EnemyFled_LinkBattleCanceled
+;	ld a, [wSafariBallsRemaining]
+;	and a
+;	jp z, WildFled_EnemyFled_LinkBattleCanceled
 ; otherwise, check its speed, bait, and rock factors
 ; this probably could stand to be cleaned up or rewritten later
 ; it is basically taken directly from Gen 1
-	ld a, [wEnemyMonSpeed + 1]
-	add a
-	ld b, a ; init b (which is later compared with random value) to (enemy speed % 256) * 2
-	jp c, WildFled_EnemyFled_LinkBattleCanceled ; if (enemy speed % 256) > 127, the enemy runs
-	ld a, [wSafariMonEating]
-	and a ; is bait factor 0?
-	jr z, .checkEscapeFactor
+;	ld a, [wEnemyMonSpeed + 1]
+;	add a
+;	ld b, a ; init b (which is later compared with random value) to (enemy speed % 256) * 2
+;	jp c, WildFled_EnemyFled_LinkBattleCanceled ; if (enemy speed % 256) > 127, the enemy runs
+;	ld a, [wSafariMonEating]
+;	and a ; is bait factor 0?
+;	jr z, .checkEscapeFactor
 ; bait factor is not 0
 ; divide b by 4 (making the mon less likely to run)
-	srl b
-	srl b
-.checkEscapeFactor
-	ld a, [wSafariMonAngerCount]
-	and a ; is escape factor 0?
-	jr z, .compareWithRandomValue
+;	srl b
+;	srl b
+;.checkEscapeFactor
+;	ld a, [wSafariMonAngerCount]
+;	and a ; is escape factor 0?
+;	jr z, .compareWithRandomValue
 ; escape factor is not 0
 ; multiply b by 2 (making the mon more likely to run)
-	sla b
-	jr nc, .compareWithRandomValue
+;	sla b
+;	jr nc, .compareWithRandomValue
 ; cap b at 255
-	ld b, $ff
-.compareWithRandomValue
-	call BattleRandom
-	cp b
-	ret nc
-	jp WildFled_EnemyFled_LinkBattleCanceled ; if b was greater than the random value, the enemy runs
+;	ld b, $ff
+;.compareWithRandomValue
+;	call BattleRandom
+;	cp b
+;	ret nc
+;	jp WildFled_EnemyFled_LinkBattleCanceled ; if b was greater than the random value, the enemy runs
 
 LoadBattleMenu2: ; 3e19b
 	farcall LoadBattleMenu
@@ -5187,10 +5196,28 @@ LoadBattleMenu2: ; 3e19b
 	ret
 ; 3e1c7
 
+BattleMenu_SafariFight:
+	ld hl, ThrewAPunchText
+	call StdBattleTextBox
+	ld c, 20
+	call DelayFrames
+	ld de, SFX_MEGA_PUNCH
+	call PlaySFX
+	ld c, 65
+	call DelayFrames
+	ld hl, UnaffectedText
+	call StdBattleTextBox
+	ret
+	
+BattleMenu_SafariPKMN:
+	ld hl, NoUsablePokemonText
+	call StdBattleTextBox
+	ret
+
 BattleMenu_Pack: ; 3e1c7
-	ld a, [wBattleType]
-	cp BATTLETYPE_SAFARI
-	jp z, BattleMenu_Rock
+;	ld a, [wBattleType]
+;	cp BATTLETYPE_SAFARI
+;	jp z, BattleMenu_Rock
 	; fallthrough
 
 BattleMenu_SafariBall:
@@ -5226,7 +5253,7 @@ BattleMenu_SafariBall:
 	jr .got_item
 
 .safari
-	ld a, SAFARI_BALL
+	ld a, POKE_BALL ;SAFARI_BALL
 	ld [wCurItem], a
 	call DoItemEffect
 	jr .got_item
@@ -5310,7 +5337,7 @@ BattleMenu_SafariBall:
 BattleMenu_PKMN: ; 3e28d
 	ld a, [wBattleType]
 	cp BATTLETYPE_SAFARI
-	jp z, BattleMenu_Bait ; "PKMN" is replaced with "Bait" in that mode
+	jp z, BattleMenu_SafariPKMN ; "PKMN" is replaced with "Bait" in that mode
 
 	call LoadStandardMenuDataHeader
 BattleMenuPKMN_ReturnFromStats:
@@ -8582,39 +8609,39 @@ TextJump_ComeBack: ; 3f35b
 ; 3f360
 
 
-HandleSafariAngerEatingStatus:
-	ld hl, wSafariMonEating
-	ld a, [hl]
-	and a
-	jr z, .angry
-	dec [hl]
-	ld hl, BattleText_WildPkmnIsEating
-	jr .finish
+;HandleSafariAngerEatingStatus:
+;	ld hl, wSafariMonEating
+;	ld a, [hl]
+;	and a
+;	jr z, .angry
+;	dec [hl]
+;	ld hl, BattleText_WildPkmnIsEating
+;	jr .finish
 
-.angry
-	dec hl ; wSafariMonAngerCount
-	ld a, [hl]
-	and a
-	ret z
-	dec [hl]
-	ld hl, BattleText_WildPkmnIsAngry
-	jr nz, .finish
-	push hl
-	; reset the catch rate to normal if bait/rock effects have worn off
-	ld a, [wEnemyMonSpecies]
-	ld [wCurSpecies], a
-	ld a, [wEnemyMonForm]
-	ld [wCurForm], a
-	call GetBaseData
-	ld a, [wBaseCatchRate]
-	ld [wEnemyMonCatchRate], a
-	pop hl
+;.angry
+;	dec hl ; wSafariMonAngerCount
+;	ld a, [hl]
+;	and a
+;	ret z
+;	dec [hl]
+;	ld hl, BattleText_WildPkmnIsAngry
+;	jr nz, .finish
+;	push hl
+;	; reset the catch rate to normal if bait/rock effects have worn off
+;	ld a, [wEnemyMonSpecies]
+;	ld [wCurSpecies], a
+;	ld a, [wEnemyMonForm]
+;	ld [wCurForm], a
+;	call GetBaseData
+;	ld a, [wBaseCatchRate]
+;	ld [wEnemyMonCatchRate], a
+;	pop hl
 
-.finish
-	push hl
-	call Call_LoadTempTileMapToTileMap
-	pop hl
-	jp StdBattleTextBox
+;.finish
+;	push hl
+;	call Call_LoadTempTileMapToTileMap
+;	pop hl
+;	jp StdBattleTextBox
 ;; 3f390
 
 
@@ -8841,6 +8868,9 @@ GetFrontpic_DoAnim: ; 3f4b4
 
 
 StartBattle: ; 3f4c1
+	ld hl, wStatusFlags2
+	bit 6, [hl] ; ENGINE_PATCHES_MODE
+	jr nz, .skip_0_mon_check
 ; This check prevents you from entering a battle without any Pokemon.
 ; Those using walk-through-walls to bypass getting a Pokemon experience
 ; the effects of this check.
@@ -8848,6 +8878,7 @@ StartBattle: ; 3f4c1
 	and a
 	ret z
 
+.skip_0_mon_check
 	ld a, [wTimeOfDayPal]
 	push af
 	call BattleIntro

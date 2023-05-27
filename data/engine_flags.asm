@@ -39,7 +39,7 @@ EngineFlags: ; 80462
 	engine_flag wStatusFlags2, 3 ; seen shamouti island
 	engine_flag wStatusFlags2, 4 ; bike shop call enabled (1024 bike steps reqd)
 	engine_flag wStatusFlags2, 5 ; give pokerus
-	engine_flag wStatusFlags2, 6 ; exorcised lav radio tower
+	engine_flag wStatusFlags2, 6 ; down the patches hole
 	engine_flag wStatusFlags2, 7 ; rockets in mahogany
 
 	engine_flag wOWState, OWSTATE_STRENGTH

@@ -3,8 +3,9 @@ Route3StarglowCavernTop_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 1 ; warp events
-	warp_def 12,  8, 1, ROUTE_1
+	db 2 ; warp events
+	warp_def 12,  8, 1, STARGLOW_CAVERN_DEPTHS
+	warp_def  3,  4, 1, GLINT_POKECENTER
 
 	db 0 ; coord events
 
@@ -37,6 +38,8 @@ Route3StarglowCavernTopPatches:
 .cont
 	spriteface PLAYER, UP
 	spriteface ROUTE_3_TOP_PATCHES, LEFT
+	callasm PatchesSwapPokemonAsm
+	setevent EVENT_PATCHES_MODE
 	wait 10
 	opentext
 	writetext Route3StarglowCavernTopPatchesText3
@@ -59,6 +62,7 @@ Route3StarglowCavernTopPatches:
 	closetext
 	applymovement ROUTE_3_TOP_PATCHES, Movement_Route3StarglowCavernTopPatches
 	playsound SFX_BUMP
+	callasm PatchesFallAsm
 	applyonemovement PLAYER, jump_step_up
 	warpcheck
 	end
@@ -73,6 +77,84 @@ Route3StarglowCavernTopPatches:
 	spriteface ROUTE_3_TOP_PATCHES, UP
 	end
 	
+PatchesFallAsm:
+	ld a, PLAYER_FALLING
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret
+	
+PatchesSwapPokemonAsm: ;taken from leafcrytal by atma
+; open sram
+	ld a, BANK(sScratch)
+	call OpenSRAM
+; copy party data to scratch
+	ld hl, wPokemonData
+	ld bc, wPartyMonNicknamesEnd - wPokemonData
+	ld de, sScratch
+	call CopyBytes
+; swap backup party with scratch
+	ld a, BANK(wBackupPartyData)
+	ldh [rSVBK], a
+	ld hl, sScratch
+	ld de, wBackupPartyData
+	ld bc, wPartyMonNicknamesEnd - wPokemonData
+	call SwapBytes
+	ld a, BANK(wPokemonData)
+	ldh [rSVBK], a
+; copy backup party from scratch to main party
+	ld hl, sScratch
+	ld bc, wPartyMonNicknamesEnd - wPokemonData
+	ld de, wPokemonData
+	call CopyBytes
+; close sram
+	call CloseSRAM	
+; turn patches mode on
+	ld hl, wStatusFlags2
+	set 6, [hl] ; ENGINE_PATCHES_MODE
+	ret
+
+SwapBytes::
+; swap bc bytes between hl and de
+.Loop:
+	; stash [hl] away on the stack
+	ld a, [hl]
+	push af
+
+	; copy a byte from [de] to [hl]
+	ld a, [de]
+	ld [hli], a
+
+	; retrieve the previous value of [hl]; put it in [de]
+	pop af
+	ld [de], a
+	inc de
+
+	; handle loop stuff
+	dec bc
+	ld a, b
+	or c
+	jr nz, .Loop
+	ret
+
+;	farcall SaveBox
+;	ld a, [wCurBox]
+;	ld [wMoogoo], a
+;	ld a, 13
+;	ld [wCurBox], a
+;	farcall LoadBox
+;.loop
+;	xor a
+;	ld [wCurPartyMon], a
+;	ld a, [wPartyMon1Species]
+;	ld [wCurPartySpecies], a
+;	farcall DepositPokemonPatches
+;	ld a, [wPartyCount]
+;	cp 1
+;	jr nz, .loop
+;	ld a, [wMoogoo]
+;	ld [wCurBox], a
+;	farcall LoadBox
+;	ret
 	
 Route3StarglowCavernTopPatchesText1:
 	text "Well, hi there."

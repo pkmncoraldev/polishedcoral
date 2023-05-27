@@ -253,6 +253,8 @@ endr
 	ld hl, wStatusFlags2
 	bit 2, [hl] ; ENGINE_BUG_CONTEST_TIMER
 	jr nz, .no_pack
+	bit 6, [hl] ; ENGINE_PATCHES_MODE
+	jr nz, .no_pack
 	ld a, 2 ; pack
 	call .AppendMenuList
 .no_pack
@@ -271,6 +273,8 @@ endr
 	and a
 	jr nz, .no_save
 	ld hl, wStatusFlags2
+	bit 6, [hl] ; ENGINE_PATCHES_MODE
+	jr nz, .no_save
 	bit 2, [hl] ; ENGINE_BUG_CONTEST_TIMER
 	ld a, 8 ; quit
 	jr nz, .write

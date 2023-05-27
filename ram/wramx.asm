@@ -1047,8 +1047,9 @@ wRoute18Trigger:: ds 1
 wLusterSkyscraperPorygonRoomTrigger:: ds 1
 wDuskTurnpikeTrigger:: ds 1
 wRoute20TunnelTrigger:: ds 1
+wStarglowCavernDepthsTrigger:: ds 1
 
-ds 14
+ds 13
 
 ; fight counts
 wJackFightCount::    ds 1
@@ -1328,6 +1329,28 @@ wRegisteredItems::
 
 wPokemonDataEnd::
 wGameDataEnd::
+
+
+SECTION "Team Backup RAM", WRAMX
+
+wBackupPartyData::
+wBackupPartyCount::   db
+wBackupPartySpecies:: ds PARTY_LENGTH
+wBackupPartyEnd::     db ; older code doesn't check wPartyCount
+
+wBackupPartyMons::
+wBackupPartyMon1:: party_struct wPartyBackupMon1
+wBackupPartyMon2:: party_struct wPartyBackupMon2
+wBackupPartyMon3:: party_struct wPartyBackupMon3
+wBackupPartyMon4:: party_struct wPartyBackupMon4
+wBackupPartyMon5:: party_struct wPartyBackupMon5
+wBackupPartyMon6:: party_struct wPartyBackupMon6
+
+wBackupPartyMonOT:: ds NAME_LENGTH * PARTY_LENGTH
+
+wBackupPartyMonNicknames:: ds PKMN_NAME_LENGTH * PARTY_LENGTH
+wBackupPartyMonNicknamesEnd::
+wBackupPartyDataEnd::
 
 
 SECTION "Pic Animations RAM", WRAMX

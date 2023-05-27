@@ -67,6 +67,7 @@ INCLUDE "maps/IceTempleB2F2.asm"
 INCLUDE "maps/SeasideCave1F.asm"
 INCLUDE "maps/SeasideCaveB1F.asm"
 INCLUDE "maps/UndergroundPassage.asm"
+INCLUDE "maps/StarglowCavernDepths.asm"
 
 
 SECTION "Routes Scripts", ROMX

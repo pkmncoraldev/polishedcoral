@@ -425,6 +425,7 @@ ENDM
 	map_attributes IceTempleB1F3, ICE_TEMPLE_B1F_3, 0, 0
 	map_attributes IceTempleB2F1, ICE_TEMPLE_B2F_1, 0, 0
 	map_attributes IceTempleB2F2, ICE_TEMPLE_B2F_2, 0, 0
+	map_attributes StarglowCavernDepths, STARGLOW_CAVERN_DEPTHS, $1, 0
 	map_attributes UndergroundPassage, UNDERGROUND_PASSAGE, $09, 0
 	map_attributes SeasideCave1F, SEASIDE_CAVE_1F, $09, 0
 	map_attributes SeasideCaveB1F, SEASIDE_CAVE_B1F, $09, 0

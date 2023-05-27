@@ -78,7 +78,7 @@ ShowParkBallsRemaining: ; 24fb2
 
 SafariBattleMenuDataHeader:
 	db $40 ; flags
-	db 12, 00 ; start coords
+	db 12, 08 ; start coords
 	db 17, 19 ; end coords
 	dw .MenuData2
 	db 1 ; default option
@@ -86,18 +86,25 @@ SafariBattleMenuDataHeader:
 .MenuData2:
 	db $81 ; flags
 	dn 2, 2 ; rows, columns
-	db 12 ; spacing
+	db 6 ; spacing
 	dba .Strings
 	dba ShowSafariBallsRemaining
 
 .Strings:
-	db "BALLS×  @"
-	db "BAIT@"
-	db "THROW ROCK@"
+	db "FIGHT@"
+	db "<PK><MN>@"
+	db "BALLS@"
 	db "RUN@"
 
+;.Strings:
+;	db "BALLS×  @"
+;	db "BAIT@"
+;	db "THROW ROCK@"
+;	db "RUN@"
+
 ShowSafariBallsRemaining:
-	hlcoord 7, 14
-	ld de, wSafariBallsRemaining
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
-	jp PrintNum
+	ret
+;	hlcoord 13, 16
+;	ld de, wSafariBallsRemaining
+;	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
+;	jp PrintNum

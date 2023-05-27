@@ -1537,6 +1537,9 @@ RandomEncounter:: ; 97cc0
 	jr nz, .safari_game
 	bit 2, [hl] ; ENGINE_BUG_CONTEST_TIMER
 	jr nz, .bug_contest
+	bit 6, [hl] ; ENGINE_PATCHES_MODE
+	jr nz, .check_safari_game
+.patches_return
 	farcall TryWildEncounter
 	jr nz, .nope
 .ok
@@ -1560,6 +1563,11 @@ RandomEncounter:: ; 97cc0
 	scf
 	ret
 
+
+.check_safari_game
+	ld a, [wPartyCount]
+	cp 0
+	jr nz, .patches_return
 .safari_game
 	farcall TryWildEncounter
 	jr nz, .nope

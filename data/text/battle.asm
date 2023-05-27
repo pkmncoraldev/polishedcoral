@@ -1732,3 +1732,20 @@ FlowerGiftTransformedText:
 	text "<USER>"
 	line "transformed!"
 	prompt
+	
+NoUsablePokemonText:
+	text "<PLAYER> is out of"
+	line "useable #MON!"
+	prompt
+	
+ThrewAPunchText:
+	text "<PLAYER> tried"
+	line "throwing a punch!"
+	done
+	
+GlaringText:
+	text "Wild @"
+	text_from_ram wEnemyMonNick
+	text ""
+	line "is glaring!"
+	done

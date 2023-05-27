@@ -158,7 +158,7 @@
 	tilecoll WALL, WALL, WALL, SKATE ; 9d
 	tilecoll FLOOR, FLOOR, SKATE, SKATE ; 9e
 	tilecoll WALL, WALL, SKATE, WALL ; 9f
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a0
+	tilecoll WALL, FLOOR, WALL, FLOOR ; a0
 	tilecoll SKATE_LEDGE_DOWN, SKATE, WALL, FLOOR ; a1
 	tilecoll LEDGE_DOWN, FLOOR, WALL, FLOOR ; a2
 	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; a3

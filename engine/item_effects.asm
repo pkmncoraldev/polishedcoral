@@ -550,8 +550,13 @@ PokeBallEffect: ; e8a2
 	ld b, SET_FLAG
 	predef FlagPredef
 
+
+ld a, [wPartyCount]
+	cp 0
+	jr z, .skip_exp
 	farcall GiveExperiencePointsAfterCatch
 
+.skip_exp
 	ld a, [wEnemyMonLevel]
 	ld [wCurPartyLevel], a
 

@@ -368,6 +368,15 @@ PokeBallEffect: ; e8a2
 	ld a, [wCurItem]
 	cp MASTER_BALL
 	jp z, .catch_without_fail
+	ld a, [wSafariBallsRemaining]
+	and a
+	jr z, .normal
+	ld a, [wSafariBallsRemaining]
+	cp 1
+	jp z, .catch_without_fail
+	ld a, 0
+	jp .fail_to_catch
+.normal
 	ld a, [wCurItem]
 	ld hl, BallMultiplierFunctionTable
 	call BattleJumptable

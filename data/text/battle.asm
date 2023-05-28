@@ -1749,3 +1749,9 @@ GlaringText:
 	text ""
 	line "is glaring!"
 	done
+
+NoBagText:
+	text "<PLAYER> doesn't"
+	line "have a BAG!"
+	prompt
+	done

@@ -9,6 +9,9 @@ ContestBattleMenu: ; 24f13
 ; 24f19
 
 SafariBattleMenu:
+	ld a, [wSafariBallsRemaining]
+	and a
+	jr z, LoadBattleMenu
 	ld hl, SafariBattleMenuDataHeader
 _BattleMenuCommon:
 	call LoadMenuDataHeader

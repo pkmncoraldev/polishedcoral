@@ -5207,12 +5207,13 @@ BattleMenu_SafariFight:
 	call DelayFrames
 	ld hl, UnaffectedText
 	call StdBattleTextBox
+	call EmptyBattleTextBox
 	ret
 	
 BattleMenu_SafariPKMN:
 	ld hl, NoUsablePokemonText
 	call StdBattleTextBox
-	ret
+	jp BattleMenu
 
 BattleMenu_Pack: ; 3e1c7
 ;	ld a, [wBattleType]
@@ -5238,6 +5239,10 @@ BattleMenu_SafariBall:
 	jr z, .contest
 	cp BATTLETYPE_SAFARI
 	jr z, .safari
+	
+	ld hl, wStatusFlags2
+	bit 6, [hl] ; ENGINE_PATCHES_MODE
+	jr nz, .safari
 
 	farcall BattlePack
 	ld a, [wBattlePlayerAction]
@@ -5253,6 +5258,9 @@ BattleMenu_SafariBall:
 	jr .got_item
 
 .safari
+	ld a, [wSafariBallsRemaining]
+	and a
+	jr z, .no_bag
 	ld a, POKE_BALL ;SAFARI_BALL
 	ld [wCurItem], a
 	call DoItemEffect
@@ -5265,6 +5273,11 @@ BattleMenu_SafariBall:
 
 .got_item
 	jp .UseItem
+	
+.no_bag
+	ld hl, NoBagText
+	call StdBattleTextBox
+	jp BattleMenu
 
 .didnt_use_item
 	call ClearTileMap

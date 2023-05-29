@@ -911,7 +911,7 @@ LoadMapPals::
 	ld a, [wTimeOfDayPal]
 	cp 3
 	jp nz, .rocks
-	ld a, 2
+	ld a, 2 ;nite
 	and 3
 	ld bc, 8 palettes
 	ld hl, MapObjectPals

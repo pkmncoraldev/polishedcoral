@@ -911,10 +911,8 @@ LoadMapPals::
 	ld a, [wTimeOfDayPal]
 	cp 3
 	jp nz, .rocks
-	ld a, 2 ;nite
-	and 3
-	ld bc, 8 palettes
-	ld hl, MapObjectPals
+.dark
+	ld hl, MapObjectPalsDark
 	call AddNTimes
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
@@ -1291,6 +1289,9 @@ LoadMapPals::
 	call FarCopyWRAM
 	jp .outside_cont
 .starglow
+	ld a, [wTimeOfDayPal]
+	cp 3
+	jp z, .dark
 	ld hl, MapObjectPalsStarglow
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
@@ -1872,6 +1873,9 @@ INCLUDE "maps/palettes/obpals/slowpoke.pal"
 
 MapObjectPalsMoomoo::
 INCLUDE "maps/palettes/obpals/moomoo.pal"
+
+MapObjectPalsDark::
+INCLUDE "maps/palettes/obpals/dark.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

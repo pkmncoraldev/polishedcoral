@@ -50,6 +50,7 @@ Landmarks: ; 0x1ca8c3
 	landmark 136,  80, ShoppingName
 	landmark 136,  80, BusinessName
 	landmark  28,  92, Route1Name
+	landmark   0,   0, StarglowDepthsName
 	
 	landmark  20, 100, ShimmerName
 	landmark   0,   0, BrilloTownName
@@ -107,6 +108,7 @@ Route12Name:		   db "ROUTE 12@"
 AirportName:		   db "ONWA INTL.¯AIRPORT@"
 Route13Name:		   db "ROUTE 13@"
 Route14Name:		   db "ROUTE 14@"
+StarglowDepthsName:    db "STARGLOW¯DEPTHS@"
 ShimmerName:           db "PORT¯SHIMMER@"
 BrilloTownName:	   	   db "BRILLO¯TOWN@"
 Route15Name:		   db "ROUTE 15@"

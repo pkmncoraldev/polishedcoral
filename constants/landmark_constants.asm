@@ -52,21 +52,22 @@
 	const SHOPPING_DISTRICT			; 2a
 	const BUSINESS_DISTRICT			; 2b
 	const FAKE_ROUTE_1
+	const STARGLOW_DEPTHS			; 2c
 
 SOUTH_ONWA_LANDMARK EQU const_value
 
-	const SHIMMER_CITY		 ; 2c
-	const BRILLO_TOWN		 ; 2d
-	const ROUTE_15			 ; 2e
-	const ROUTE_16			 ; 2f
-	const DESERT_WASTELAND	 ; 30
-	const ROUTE_17			 ; 31
-	const ROUTE_18			 ; 32
-	const RADIANT_TOWNSHIP	 ; 33
-	const ROUTE_19			 ; 34
-	const DUSK_TURNPIKE		 ; 35
-	const SEASIDE_CAVE		 ; 36
-	const ROUTE_20			 ; 37
+	const SHIMMER_CITY		 ; 2d
+	const BRILLO_TOWN		 ; 2e
+	const ROUTE_15			 ; 2f
+	const ROUTE_16			 ; 30
+	const DESERT_WASTELAND	 ; 31
+	const ROUTE_17			 ; 32
+	const ROUTE_18			 ; 33
+	const RADIANT_TOWNSHIP	 ; 34
+	const ROUTE_19			 ; 35
+	const DUSK_TURNPIKE		 ; 36
+	const SEASIDE_CAVE		 ; 37
+	const ROUTE_20			 ; 38
 
 SHAMOUTI_LANDMARK EQU const_value
 

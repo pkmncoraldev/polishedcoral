@@ -154,7 +154,7 @@ LoadSpecialMapPalette: ; 494ac
 .cave
 	ld a, [wTimeOfDayPal]
 	cp 3
-	jp z, .dark
+	jr z, .dark
 	ld a, [wMapGroup]
 	cp GROUP_SEASIDE_CAVE_1F
 	jp z, .do_nothing
@@ -433,6 +433,9 @@ LoadSpecialMapPalette: ; 494ac
 	jp .snow
 	
 .starglow_cavern
+	ld a, [wTimeOfDayPal]
+	cp 3
+	jp z, .dark
 	ld hl, StarglowCavernPalette
 	jp LoadSevenBGPalettes
 	

@@ -232,7 +232,7 @@ Route3StarglowCavernTopPatchesText4:
 	para "Keep looking!"
 	
 	para "It's definitely"
-	line "down there."
+	line "down there…"
 	done
 	
 Route3StarglowCavernTopPatchesText5:

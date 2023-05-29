@@ -1596,6 +1596,33 @@
 	db 29, DWEBBLE		;4%
 	db 29, DWEBBLE		;1%
 	
+	map_id STARGLOW_CAVERN_DEPTHS
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 15, ABRA			;30%
+	db 15, CLEFAIRY		;30%
+	db 15, MAGNEMITE	;20%
+	db 15, MAGNEMITE	;10%
+	db 15, MAGNEMITE	;5%
+	db 15, ABRA			;4%
+	db 15, ABRA			;1%
+	; day
+	db 15, ABRA			;30%
+	db 15, CLEFAIRY		;30%
+	db 15, MAGNEMITE	;20%
+	db 15, MAGNEMITE	;10%
+	db 15, MAGNEMITE	;5%
+	db 15, ABRA			;4%
+	db 15, ABRA			;1%
+	; nite
+	db 15, ABRA			;30%
+	db 15, CLEFAIRY		;30%
+	db 15, MAGNEMITE	;20%
+	db 15, MAGNEMITE	;10%
+	db 15, MAGNEMITE	;5%
+	db 15, ABRA			;4%
+	db 15, ABRA			;1%
+	
 	map_id FAKE_ROUTE_1
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn

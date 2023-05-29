@@ -10031,6 +10031,8 @@ CheckUniqueWildMove:
 	ld b, a
 	cp FLY
 	jr z, .TeachMove
+	cp FLASH
+	jr z, .TeachMove
 .ChanceToTeach
 	call Random
 	cp 50 percent + 1

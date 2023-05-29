@@ -410,6 +410,9 @@ OWFlash: ; c8ac
 	ld a, [wTimeOfDayPalset]
 	cp %11111111 ; 3, 3, 3, 3
 	jr nz, .notadarkcave
+	ld a, [wTileset]
+	cp TILESET_LAVA_CAVE
+	jr z, .notadarkcave
 .useflash
 	call UseFlash
 	ld a, $81

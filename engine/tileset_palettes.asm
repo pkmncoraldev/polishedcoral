@@ -152,6 +152,9 @@ LoadSpecialMapPalette: ; 494ac
 	jp .do_nothing
 	
 .cave
+	ld a, [wTimeOfDayPal]
+	cp 3
+	jp z, .dark
 	ld a, [wMapGroup]
 	cp GROUP_SEASIDE_CAVE_1F
 	jp z, .do_nothing
@@ -165,6 +168,9 @@ LoadSpecialMapPalette: ; 494ac
 	scf
 	ret
 	
+.dark
+	ld hl, DarkCavePalette
+	jp LoadSevenBGPalettes
 	
 .mart
 	ld a, [wMapGroup]
@@ -938,3 +944,5 @@ INCLUDE "maps/palettes/bgpals/highway.pal"
 HighwayTunnelPalette:
 INCLUDE "maps/palettes/bgpals/highwaytunnel.pal"
 
+DarkCavePalette:
+INCLUDE "maps/palettes/bgpals/darkcave.pal"

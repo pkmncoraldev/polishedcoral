@@ -227,25 +227,31 @@ SECTION "Tileset Data - cave", ROMX
 
 TilesetCaveGFX0::
 TilesetStarglowCavernGFX0::
+TilesetLavaCaveGFX0::
 INCBIN "gfx/tilesets/cave.2bpp.vram0.lz"
 
 TilesetCaveGFX1::
 TilesetStarglowCavernGFX1::
+TilesetLavaCaveGFX1::
 INCBIN "gfx/tilesets/cave.2bpp.vram1.lz"
 
 TilesetCaveGFX2::
 TilesetStarglowCavernGFX2::
+TilesetLavaCaveGFX2::
 INCBIN "gfx/tilesets/cave.2bpp.vram2.lz"
 
 TilesetCaveMeta::
 TilesetStarglowCavernMeta::
+TilesetLavaCaveMeta::
 INCBIN "data/tilesets/cave_metatiles.bin.lz"
 
 TilesetCaveAttr::
+TilesetLavaCaveAttr::
 INCBIN "data/tilesets/cave_attributes.bin.lz"
 
 TilesetCaveColl::
 TilesetStarglowCavernColl:
+TilesetLavaCaveColl::
 INCLUDE "data/tilesets/cave_collision.asm"
 
 TilesetStarglowCavernAttr::
@@ -732,3 +738,4 @@ Tilesets::
 	tileset TilesetAirport
 	tileset TilesetOrphanage
 	tileset TilesetHighway
+	tileset TilesetLavaCave

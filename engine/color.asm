@@ -865,7 +865,7 @@ LoadMapPals::
 .got_pals_cont
 	ld a, [wTileset]
 	cp TILESET_CAVE
-	jp z, .rocks
+	jp z, .cave
 	cp TILESET_STARGLOW_CAVERN
 	jp z, .starglow
 	cp TILESET_RANCH
@@ -907,6 +907,20 @@ LoadMapPals::
 	cp TILESET_HIGHWAY
 	jp z, .highway
 	jp .normal
+.cave
+	ld a, [wTimeOfDayPal]
+	cp 3
+	jp nz, .rocks
+	ld a, 2
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPals
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+	
 .playerhouse
 	ld a, [wMapGroup]
 	cp GROUP_TWINKLE_GYM_ENTRY

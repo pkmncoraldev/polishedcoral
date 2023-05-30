@@ -58,6 +58,7 @@ Music:
 	dba Music_SnareLeaderBattle
 	dba Music_GentlemanEncounter
 	dba Music_Bar
+	dba Music_Darkness
 	
 	dba Music_Mountaintop
 	dba Music_HealPokemon

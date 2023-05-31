@@ -118,7 +118,7 @@ ENDM
 	connection west, GlintCity, GLINT_CITY, 0
 	connection east, Route3East, ROUTE_3_EAST, 0
 	
-	map_attributes Route3StarglowCavernTop, ROUTE_3_STARGLOW_CAVERN_TOP, $d4, SOUTH
+	map_attributes Route3StarglowCavernTop, ROUTE_3_STARGLOW_CAVERN_TOP, $71, SOUTH
 	connection south, Route3, ROUTE_3, -10
 	
 	map_attributes Route3East, ROUTE_3_EAST, $d4, SOUTH | WEST

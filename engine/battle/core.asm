@@ -7182,11 +7182,11 @@ endr
 	; Set level
 	ld a, [wCurPartyLevel]
 	ld [wEnemyMonLevel], a
-	ld a, [wPartyCount]	;add 5 levels if you don't have any pokemon in your party
+	ld a, [wPartyCount]	;add 7 levels if you don't have any pokemon in your party
 	cp 0
 	jr nz, .got_level
 	ld a, [wEnemyMonLevel]
-	add 5
+	add 7
 	ld [wEnemyMonLevel], a
 .got_level
 	; Fill stats

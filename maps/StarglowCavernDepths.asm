@@ -6,8 +6,15 @@ StarglowCavernDepths_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, StarglowCavernDepths
 
-	db 1 ; warp events
+	db 8 ; warp events
 	warp_def 15, 16, 1, ROUTE_1
+	warp_def  5, 13, 3, STARGLOW_CAVERN_DEPTHS
+	warp_def  3, 23, 2, STARGLOW_CAVERN_DEPTHS
+	warp_def  2, 21, 5, STARGLOW_CAVERN_DEPTHS
+	warp_def  3, 31, 4, STARGLOW_CAVERN_DEPTHS
+	warp_def  2, 33, 7, STARGLOW_CAVERN_DEPTHS
+	warp_def 11, 31, 6, STARGLOW_CAVERN_DEPTHS
+	warp_def 17, 25, 2, ROUTE_3_STARGLOW_CAVERN_TOP
 
 	db 0 ; coord events
 

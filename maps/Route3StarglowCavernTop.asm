@@ -1,24 +1,30 @@
 Route3StarglowCavernTop_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, Route3StarglowCavernTopCallback
 
 	db 2 ; warp events
 	warp_def 12,  8, 1, STARGLOW_CAVERN_DEPTHS
-	warp_def  3,  4, 1, GLINT_POKECENTER
+	warp_def  3,  4, 8, STARGLOW_CAVERN_DEPTHS
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 1 ; object events
-	person_event SPRITE_PATCHES, 14,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route3StarglowCavernTopPatches, -1
+	person_event SPRITE_GENERAL_VARIABLE_1, 14,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route3StarglowCavernTopPatches, -1
 	
 	const_def 1 ; object constants
 	const ROUTE_3_TOP_PATCHES
 
+Route3StarglowCavernTopCallback:
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_PATCHES
+	return
 
 Route3StarglowCavernTopPatches:
+	checkevent EVENT_PATCHES_MODE
+	iftrue .darkcavedone
 	faceplayer
 	opentext
 	writetext Route3StarglowCavernTopPatchesText1
@@ -39,6 +45,7 @@ Route3StarglowCavernTopPatches:
 	spriteface PLAYER, UP
 	spriteface ROUTE_3_TOP_PATCHES, LEFT
 	callasm PatchesSwapPokemonAsm
+	callasm PatchesTurnOnPatchesModeAsm
 	setevent EVENT_PATCHES_MODE
 	wait 10
 	opentext
@@ -64,6 +71,7 @@ Route3StarglowCavernTopPatches:
 	playsound SFX_BUMP
 	callasm PatchesFallAsm
 	applyonemovement PLAYER, jump_step_up
+	blackoutmod STARGLOW_CAVERN_DEPTHS
 	warpcheck
 	end
 .saidno1
@@ -75,6 +83,53 @@ Route3StarglowCavernTopPatches:
 	waitbutton
 	closetext
 	spriteface ROUTE_3_TOP_PATCHES, UP
+	end
+
+.darkcavedone
+	checkcode VAR_FACING
+	if_equal RIGHT, .YouAreFacingRight
+	if_equal LEFT, .YouAreFacingLeft
+	jump .cont2
+.YouAreFacingRight
+	applymovement PLAYER, Movement_Route3StarglowCavernTopPlayer3
+	jump .cont2
+.YouAreFacingLeft
+	applymovement PLAYER, Movement_Route3StarglowCavernTopPlayer1
+.cont2
+	spriteface PLAYER, UP
+	wait 3
+	playsound SFX_PAY_DAY
+	spriteface ROUTE_3_TOP_PATCHES, DOWN
+	showemote EMOTE_SHOCK, ROUTE_3_TOP_PATCHES, 15
+	opentext
+	writetext Route3StarglowCavernTopPatchesDoneCaveText1
+	buttonsound
+	writetext Route3StarglowCavernTopPatchesReturnItemText
+	waitsfx
+	specialsound
+	waitbutton
+	callasm PatchesSwapPokemonAsm
+	callasm PatchesTurnOffPatchesModeAsm
+	clearevent EVENT_PATCHES_MODE
+	writetext Route3StarglowCavernTopPatchesDoneCaveText2
+	waitbutton
+	verbosegivetmhm TM_FLASH
+	writetext Route3StarglowCavernTopPatchesDoneCaveText3
+	yesorno
+	closetext
+	applyonemovement PLAYER, fix_facing
+	applymovement PLAYER, Movement_Route3StarglowCavernTopPatches
+	playsound SFX_BUMP
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_PATCHES_FALL
+	spriteface ROUTE_3_TOP_PATCHES, LEFT
+	applymovement ROUTE_3_TOP_PATCHES, Movement_Route3StarglowCavernTopPatchesFall
+	playsound SFX_KINESIS
+	spriteface ROUTE_3_TOP_PATCHES, DOWN
+	wait 4
+	spriteface ROUTE_3_TOP_PATCHES, UP
+	wait 4
+	disappear ROUTE_3_TOP_PATCHES
+	closetext
 	end
 	
 PatchesFallAsm:
@@ -108,9 +163,18 @@ PatchesSwapPokemonAsm: ;taken from leafcrytal by atma
 	call CopyBytes
 ; close sram
 	call CloseSRAM	
+	ret
+	
+PatchesTurnOnPatchesModeAsm:
 ; turn patches mode on
 	ld hl, wStatusFlags2
 	set 6, [hl] ; ENGINE_PATCHES_MODE
+	ret
+	
+PatchesTurnOffPatchesModeAsm:
+; turn patches mode off
+	ld hl, wStatusFlags2
+	res 6, [hl] ; ENGINE_PATCHES_MODE
 	ret
 
 SwapBytes::
@@ -250,9 +314,66 @@ Route3StarglowCavernTopPatchesTextSaidNo:
 	line "then…"
 	done
 	
+Route3StarglowCavernTopPatchesDoneCaveText1::
+	text "Ah!"
+	
+	para "It's you!"
+	
+	para "Um…"
+	
+	para "L-let's just talk"
+	line "about this for a"
+	cont "second…"
+	
+	para "I uh…"
+	
+	para "Joking!"
+	
+	para "I was just joking"
+	line "around!"
+	
+	para "I waited for you"
+	line "to come back up so"
+	cont "I could uh…"
+	
+	para "Give you all of"
+	line "your stuff back!"
+	
+	para "See?"
+	done
+	
+Route3StarglowCavernTopPatchesDoneCaveText2:
+	text "And just to show"
+	line "that there's no"
+	cont "ill will."
+	done
+	
+Route3StarglowCavernTopPatchesDoneCaveText3:
+	text "There!"
+	
+	para "No harm no foul!"
+	
+	para "…"
+	
+	para "You'll forgive me,"
+	line "right?"
+	done
+	
+Route3StarglowCavernTopPatchesReturnItemText:
+	text "He returned your"
+	line "BAG and #MON!"
+	done
+	
 Movement_Route3StarglowCavernTopPatches:
 	fast_step_down
 	fast_step_up
+	remove_fixed_facing
+	step_end
+	
+Movement_Route3StarglowCavernTopPatchesFall:
+	fix_facing
+	jump_step_up
+	step_down
 	remove_fixed_facing
 	step_end
 	
@@ -264,4 +385,9 @@ Movement_Route3StarglowCavernTopPlayer1:
 Movement_Route3StarglowCavernTopPlayer2:
 	step_left
 	step_up
+	step_end
+	
+Movement_Route3StarglowCavernTopPlayer3:
+	step_down
+	step_right
 	step_end

@@ -121,6 +121,10 @@ SunbeamIslandCallback:
 	iftrue .dooropen
 	changeblock $10, $10, $c9
 .dooropen
+	checkevent EVENT_SAVED_SUNBEAM
+	iffalse .havent_cleared_island
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_GRANNY
+.havent_cleared_island
 	checkevent EVENT_ISLAND_STRAND
 	iffalse .dontmoveboat
 	moveperson SUNBEAM_SAILBOAT_T1, 13, 52

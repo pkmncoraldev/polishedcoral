@@ -1574,6 +1574,9 @@ endr
 
 TileAnimationPaletteStarglow: ; fc6d7
 ; Transition between color values 0-2 for color 0 in palette 3.
+	ld a, [wTimeOfDayPal]
+	cp 3
+	ret z
 
 ; No palette changes on DMG.
 	ld a, [hCGB]

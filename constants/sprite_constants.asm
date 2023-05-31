@@ -223,6 +223,7 @@
 	const SPRITE_ERIKA
 	const SPRITE_LEILANI_BED
 	const SPRITE_TRUNKS_WATER
+	const SPRITE_PATCHES_FALL
 
 	
 	const_def $f1

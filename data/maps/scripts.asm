@@ -98,7 +98,6 @@ INCLUDE "maps/Route19.asm"
 INCLUDE "maps/DuskTurnpike.asm"
 INCLUDE "maps/Route20Tunnel.asm"
 INCLUDE "maps/FakeRoute1.asm"
-INCLUDE "maps/Route3StarglowCavernTop.asm"
 
 
 SECTION "Routes Scripts2", ROMX
@@ -108,6 +107,7 @@ INCLUDE "maps/Route15.asm"
 INCLUDE "maps/Route16North.asm"
 INCLUDE "maps/DesertWastelandOasis.asm"
 INCLUDE "maps/Route16Tent.asm"
+INCLUDE "maps/Route3StarglowCavernTop.asm"
 
 
 SECTION "Sunset Bay Scripts", ROMX

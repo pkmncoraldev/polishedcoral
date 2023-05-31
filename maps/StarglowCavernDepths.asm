@@ -20,8 +20,9 @@ StarglowCavernDepths_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	person_event SPRITE_MALL_SIGN, 11, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, StarglowCavernDepthsBag, EVENT_STARGLOW_DEPTHS_GOT_BAG
+	person_event SPRITE_PATCHES, 17, 16, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_BOTTOM_PATCHES_GONE
 	
 	const_def 1 ; object constants
 	const STARGLOW_CAVERN_DEPTHS_BAG

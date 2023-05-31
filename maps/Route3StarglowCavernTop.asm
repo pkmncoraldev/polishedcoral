@@ -23,6 +23,8 @@ Route3StarglowCavernTopCallback:
 	return
 
 Route3StarglowCavernTopPatches:
+	checkevent EVENT_FORGAVE_PATCHES
+	iftrue .forgave
 	checkevent EVENT_PATCHES_MODE
 	iftrue .darkcavedone
 	faceplayer
@@ -85,6 +87,9 @@ Route3StarglowCavernTopPatches:
 	spriteface ROUTE_3_TOP_PATCHES, UP
 	end
 
+.forgave
+	jumptextfaceplayer Route3StarglowCavernTopPatchesDoneCaveText5
+
 .darkcavedone
 	checkcode VAR_FACING
 	if_equal RIGHT, .YouAreFacingRight
@@ -116,6 +121,18 @@ Route3StarglowCavernTopPatches:
 	verbosegivetmhm TM_FLASH
 	writetext Route3StarglowCavernTopPatchesDoneCaveText3
 	yesorno
+	iffalse .pushthatbitch
+	writetext Route3StarglowCavernTopPatchesDoneCaveText4
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext Route3StarglowCavernTopPatchesDoneCaveText5
+	waitbutton
+	closetext
+	setevent EVENT_FORGAVE_PATCHES
+	end
+	
+.pushthatbitch
 	closetext
 	applyonemovement PLAYER, fix_facing
 	applymovement PLAYER, Movement_Route3StarglowCavernTopPatches
@@ -130,6 +147,7 @@ Route3StarglowCavernTopPatches:
 	wait 4
 	disappear ROUTE_3_TOP_PATCHES
 	closetext
+	clearevent EVENT_BOTTOM_PATCHES_GONE
 	end
 	
 PatchesFallAsm:
@@ -333,8 +351,8 @@ Route3StarglowCavernTopPatchesDoneCaveText1::
 	line "around!"
 	
 	para "I waited for you"
-	line "to come back up so"
-	cont "I could uh…"
+	line "to come back up"
+	cont "so I could uh…"
 	
 	para "Give you all of"
 	line "your stuff back!"
@@ -343,20 +361,55 @@ Route3StarglowCavernTopPatchesDoneCaveText1::
 	done
 	
 Route3StarglowCavernTopPatchesDoneCaveText2:
-	text "And just to show"
+	text "No harm no foul!"
+	
+	para "And just to show"
 	line "that there's no"
 	cont "ill will."
 	done
 	
 Route3StarglowCavernTopPatchesDoneCaveText3:
-	text "There!"
+	text "That TM contains"
+	line "the move FLASH."
 	
-	para "No harm no foul!"
+	para "You can use it"
+	line "to light up dark"
+	cont "caves."
+	
+	para "…but you already"
+	line "knew that, hehe…"
+	
+	para "Since it isn't an"
+	line "HM, you do need to"
+	cont "teach it to your"
+	cont "#MON to use it"
+	cont "outside of battle."
+	
+	para "But at least you"
+	line "don't need a badge!"
+	
+	para "Anyway…"
 	
 	para "…"
 	
 	para "You'll forgive me,"
 	line "right?"
+	done
+	
+Route3StarglowCavernTopPatchesDoneCaveText4:
+	text "Oh goody!"
+	
+	para "I knew you had it"
+	line "in you, kiddo!"
+	done
+	
+Route3StarglowCavernTopPatchesDoneCaveText5:
+	text "I'll turn over a"
+	line "new leaf, honest."
+	
+	para "I won't be causing"
+	line "anymore trouble"
+	cont "for anyone else."
 	done
 	
 Route3StarglowCavernTopPatchesReturnItemText:

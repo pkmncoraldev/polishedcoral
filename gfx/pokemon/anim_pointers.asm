@@ -39,9 +39,6 @@ AnimationPointers:
 	dw PoliwagAnimation
 	dw PoliwhirlAnimation
 	dw PoliwrathAnimation
-	dw AbraAnimation
-	dw KadabraAnimation
-	dw AlakazamAnimation
 	dw MachopAnimation
 	dw MachokeAnimation
 	dw MachampAnimation
@@ -117,6 +114,8 @@ AnimationPointers:
 	dw AzumarillAnimation
 	dw SudowoodoAnimation
 	dw PolitoedAnimation
+	dw SunkernAnimation
+	dw SunfloraAnimation
 	dw -1 ; see WooperAnimationPointers
 	dw QuagsireAnimation
 	dw EspeonAnimation
@@ -175,6 +174,8 @@ AnimationPointers:
 	dw CacturneAnimation
 	dw SwabluAnimation
 	dw AltariaAnimation
+	dw BarboachAnimation
+	dw WhiscashAnimation
 	dw SnoruntAnimation
 	dw GlalieAnimation
 	dw BuizelAnimation

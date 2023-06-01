@@ -202,6 +202,11 @@ NewPokedexOrder:
 	db TOGETIC
 	db TOGEKISS
 	
+;need placement
+	db SUNKERN
+	db SUNFLORA
+	db BARBOACH
+	db WHISCASH
 	db CHERUBI
 	db CHERRIM
 	db CHANSEY
@@ -211,9 +216,6 @@ NewPokedexOrder:
 	db FORRETRESS
 	db SANDSHREW
 	db SANDSLASH
-	db ABRA
-	db KADABRA
-	db ALAKAZAM
 	db MAGNEMITE
 	db MAGNETON
 	db LAPRAS
@@ -253,4 +255,3 @@ NewPokedexOrder:
 	db CLODSIRE
 	db GIRAFARIG
 	db FARIGIRAF
-	db UNUSED_1

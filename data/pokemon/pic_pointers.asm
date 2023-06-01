@@ -79,12 +79,6 @@ PicPointers::
 	dba PoliwhirlBackpic
 	dba PoliwrathFrontpic
 	dba PoliwrathBackpic
-	dba AbraFrontpic
-	dba AbraBackpic
-	dba KadabraFrontpic
-	dba KadabraBackpic
-	dba AlakazamFrontpic
-	dba AlakazamBackpic
 	dba MachopFrontpic
 	dba MachopBackpic
 	dba MachokeFrontpic
@@ -235,6 +229,10 @@ PicPointers::
 	dba SudowoodoBackpic
 	dba PolitoedFrontpic
 	dba PolitoedBackpic
+	dba SunkernFrontpic
+	dba SunkernBackpic
+	dba SunfloraFrontpic
+	dba SunfloraBackpic
 	dba WooperFrontpic
 	dba WooperBackpic
 	dba QuagsireFrontpic
@@ -351,6 +349,10 @@ PicPointers::
 	dba SwabluBackpic
 	dba AltariaFrontpic
 	dba AltariaBackpic
+	dba BarboachFrontpic
+	dba BarboachBackpic
+	dba WhiscashFrontpic
+	dba WhiscashBackpic
 	dba SnoruntFrontpic
 	dba SnoruntBackpic
 	dba GlalieFrontpic

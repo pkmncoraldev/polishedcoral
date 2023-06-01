@@ -43,9 +43,6 @@ MenuMonIconColors::
 	iconpal BLUE, BLUE ; POLIWAG
 	iconpal BLUE, BLUE ; POLIWHIRL
 	iconpal BLUE, TEAL ; POLIWRATH
-	iconpal BROWN, RED ; ABRA
-	iconpal BROWN, RED ; KADABRA
-	iconpal BROWN, RED ; ALAKAZAM
 	iconpal GRAY, GREEN ; MACHOP
 	iconpal GRAY, GREEN ; MACHOKE
 	iconpal GRAY, GREEN ; MACHAMP
@@ -121,6 +118,8 @@ MenuMonIconColors::
 	iconpal BLUE, PINK ; AZUMARILL
 	iconpal GREEN, RED ; SUDOWOODO
 	iconpal GREEN, TEAL ; POLITOED
+	iconpal BROWN, GREEN ; SUNKERN
+	iconpal GREEN, BROWN ; SUNFLORA
 	iconpal BLUE, RED ; WOOPER
 	iconpal BLUE, RED ; QUAGSIRE
 	iconpal PURPLE, GREEN ; ESPEON
@@ -179,6 +178,8 @@ MenuMonIconColors::
 	iconpal GREEN, RED ; CACTURNE
 	iconpal BLUE, BROWN ; SWABLU
 	iconpal BLUE, BROWN ; ALTARIA
+	iconpal BLUE, BROWN ; BARBOACH
+	iconpal BLUE, PURPLE ; WHISCASH
 	iconpal RED, BLUE ; SNORUNT
 	iconpal BLUE, RED ; GLALIE
 	iconpal RED, BROWN ; BUIZEL

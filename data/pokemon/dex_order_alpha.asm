@@ -1,2 +1,2 @@
 AlphabeticalPokedexOrder:
-	db ABRA
+	db BULBASAUR

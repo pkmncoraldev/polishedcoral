@@ -40,9 +40,6 @@
 	const POLIWAG
 	const POLIWHIRL
 	const POLIWRATH
-	const ABRA
-	const KADABRA
-	const ALAKAZAM
 	const MACHOP
 	const MACHOKE
 	const MACHAMP
@@ -118,6 +115,8 @@
 	const AZUMARILL
 	const SUDOWOODO
 	const POLITOED
+	const SUNKERN
+	const SUNFLORA
 	const WOOPER
 	const QUAGSIRE
 	const ESPEON
@@ -176,6 +175,8 @@
 	const CACTURNE ;332
 	const SWABLU ;333
 	const ALTARIA ;334
+	const BARBOACH
+	const WHISCASH
 	const SNORUNT ;361
 	const GLALIE ;362
 	const BUIZEL ;418
@@ -254,7 +255,6 @@
 	const CLODSIRE
 	const FARIGIRAF
 NUM_POKEMON EQU const_value - 1
-	const UNUSED_1
 	const EGG        ; $ff
 
 CANCEL EQU -1

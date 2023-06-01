@@ -39,9 +39,6 @@ EvolutionMoves::
 	db NO_MOVE                              ; POLIWAG
 	db NO_MOVE                              ; POLIWHIRL
 	db DYNAMICPUNCH                         ; POLIWRATH
-	db NO_MOVE                              ; ABRA
-	db SAND_ATTACK_SMOKESCREEN              ; KADABRA
-	db NO_MOVE                              ; ALAKAZAM
 	db NO_MOVE                              ; MACHOP
 	db NO_MOVE                              ; MACHOKE
 	db NO_MOVE                              ; MACHAMP
@@ -117,6 +114,8 @@ EvolutionMoves::
 	db NO_MOVE                              ; AZUMARILL
 	db NO_MOVE                              ; SUDOWOODO
 	db NO_MOVE                              ; POLITOED
+	db NO_MOVE                              ; SUNKERN
+	db NO_MOVE                              ; SUNFLORA
 	db NO_MOVE                              ; WOOPER
 	db NO_MOVE                              ; QUAGSIRE
 	db CONFUSION                            ; ESPEON
@@ -175,6 +174,8 @@ EvolutionMoves::
 	db NO_MOVE                              ; CACTURNE
 	db NO_MOVE                              ; SWABLU
 	db DRAGONBREATH                         ; ALTARIA
+	db NO_MOVE                              ; BARBOACH
+	db THRASH	                            ; WHISCASH
 	db NO_MOVE                              ; SNORUNT
 	db ICE_BEAM                             ; GLALIE
 	db NO_MOVE                              ; BUIZEL

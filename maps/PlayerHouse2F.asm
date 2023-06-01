@@ -68,9 +68,10 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke CHARIZARD, 98
-	givepoke DREEPY, 99
-	givepoke DRAKLOAK, 99
-	givepoke DRAGAPULT, 99
+	givepoke SUNKERN, 99
+	givepoke SUNFLORA, 99
+	givepoke BARBOACH, 99
+	givepoke WHISCASH, 99
 
 .items
 	writetext PlayerHouseDebugText6

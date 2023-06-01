@@ -39,9 +39,6 @@ BitmasksPointers:
 	dw PoliwagBitmasks
 	dw PoliwhirlBitmasks
 	dw PoliwrathBitmasks
-	dw AbraBitmasks
-	dw KadabraBitmasks
-	dw AlakazamBitmasks
 	dw MachopBitmasks
 	dw MachokeBitmasks
 	dw MachampBitmasks
@@ -117,6 +114,8 @@ BitmasksPointers:
 	dw AzumarillBitmasks
 	dw SudowoodoBitmasks
 	dw PolitoedBitmasks
+	dw SunkernBitmasks
+	dw SunfloraBitmasks
 	dw -1 ; see WooperBitmasksPointers
 	dw QuagsireBitmasks
 	dw EspeonBitmasks
@@ -175,6 +174,8 @@ BitmasksPointers:
 	dw CacturneBitmasks
 	dw SwabluBitmasks
 	dw AltariaBitmasks
+	dw BarboachBitmasks
+	dw WhiscashBitmasks
 	dw SnoruntBitmasks
 	dw GlalieBitmasks
 	dw BuizelBitmasks

@@ -40,9 +40,6 @@
 	dw PoliwagPokedexEntry
 	dw PoliwhirlPokedexEntry
 	dw PoliwrathPokedexEntry
-	dw AbraPokedexEntry
-	dw KadabraPokedexEntry
-	dw AlakazamPokedexEntry
 	dw MachopPokedexEntry
 	dw MachokePokedexEntry
 	dw MachampPokedexEntry
@@ -118,6 +115,8 @@
 	dw AzumarillPokedexEntry
 	dw SudowoodoPokedexEntry
 	dw PolitoedPokedexEntry
+	dw SunkernPokedexEntry
+	dw SunfloraPokedexEntry
 	dw WooperPokedexEntry
 	dw QuagsirePokedexEntry
 	dw EspeonPokedexEntry
@@ -176,6 +175,8 @@
 	dw CacturnePokedexEntry
 	dw SwabluPokedexEntry
 	dw AltariaPokedexEntry
+	dw BarboachPokedexEntry
+	dw WhiscashPokedexEntry
 	dw SnoruntPokedexEntry
 	dw GlaliePokedexEntry
 	dw BuizelPokedexEntry

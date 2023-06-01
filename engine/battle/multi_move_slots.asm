@@ -2554,9 +2554,8 @@ OdorSleuthUsers:
 	db -1
 	
 MiracleEyeUsers:
-	db ABRA
-	db KADABRA
-	db ALAKAZAM
+	db NATU
+	db XATU
 	db -1
 	
 RockPolishUsers:

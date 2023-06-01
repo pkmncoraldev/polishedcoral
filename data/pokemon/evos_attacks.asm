@@ -729,46 +729,6 @@ PoliwrathEvosAttacks:
 	db 48, BRICK_BREAK
 	db 0 ; no more level-up moves
 
-AbraEvosAttacks:
-	db EVOLVE_LEVEL, 16, KADABRA
-	db 0 ; no more evolutions
-	db 1, TELEPORT
-	db 0 ; no more level-up moves
-
-KadabraEvosAttacks:
-	db EVOLVE_TRADE, -1, ALAKAZAM
-	db 0 ; no more evolutions
-	db 1, SAND_ATTACK_SMOKESCREEN
-	db 1, TELEPORT
-	db 1, CONFUSION
-	db 16, CONFUSION
-	db 18, DISABLE
-	db 22, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
-	db 24, PSYBEAM
-	db 28, REFLECT
-	db 30, SOFTBOILED_MILK_DRINK_RECOVER
-	db 34, PSYSHOCK
-	db 36, SUBSTITUTE
-	db 40, PSYCHIC_M
-	db 42, FUTURE_SIGHT
-	db 0 ; no more level-up moves
-
-AlakazamEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, SAND_ATTACK_SMOKESCREEN
-	db 1, TELEPORT
-	db 1, CONFUSION
-	db 16, CONFUSION
-	db 18, DISABLE
-	db 22, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
-	db 24, PSYBEAM
-	db 26, REFLECT
-	db 31, SOFTBOILED_MILK_DRINK_RECOVER
-	db 31, DISABLE
-	db 38, PSYCHIC_M
-	db 43, FUTURE_SIGHT
-	db 0 ; no more level-up moves
-
 MachopEvosAttacks:
 	db EVOLVE_LEVEL, 28, MACHOKE
 	db 0 ; no more evolutions
@@ -2164,6 +2124,17 @@ PolitoedEvosAttacks:
 	db 48, HYPER_VOICE
 	db 0 ; no more level-up moves
 
+SunkernEvosAttacks:
+	db EVOLVE_ITEM, SUN_STONE, SUNFLORA
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+SunfloraEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+
 WooperEvosAttacks:
 	db EVOLVE_LEVEL, 20, QUAGSIRE
 	db 0 ; no more evolutions
@@ -3239,6 +3210,17 @@ AltariaEvosAttacks:
 	db 40, DRAGON_PULSE
 	db 46, PERISH_SONG
 	db 52, MOONBLAST
+	db 0 ; no more level-up moves
+	
+BarboachEvosAttacks:
+	db EVOLVE_LEVEL, 30, BULBASAUR ;WHISCASH
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+WhiscashEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
 SnoruntEvosAttacks:

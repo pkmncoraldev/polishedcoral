@@ -44,9 +44,6 @@ ArcaninePokedexEntry::   INCLUDE "data/pokemon/dex_entries/059.asm"
 PoliwagPokedexEntry::    INCLUDE "data/pokemon/dex_entries/060.asm"
 PoliwhirlPokedexEntry::  INCLUDE "data/pokemon/dex_entries/061.asm"
 PoliwrathPokedexEntry::  INCLUDE "data/pokemon/dex_entries/062.asm"
-AbraPokedexEntry::       INCLUDE "data/pokemon/dex_entries/063.asm"
-KadabraPokedexEntry::    INCLUDE "data/pokemon/dex_entries/064.asm"
-AlakazamPokedexEntry::   INCLUDE "data/pokemon/dex_entries/065.asm"
 MachopPokedexEntry::     INCLUDE "data/pokemon/dex_entries/066.asm"
 MachokePokedexEntry::    INCLUDE "data/pokemon/dex_entries/067.asm"
 MachampPokedexEntry::    INCLUDE "data/pokemon/dex_entries/068.asm"
@@ -68,14 +65,14 @@ HaunterPokedexEntry::    INCLUDE "data/pokemon/dex_entries/093.asm"
 GengarPokedexEntry::     INCLUDE "data/pokemon/dex_entries/094.asm"
 OnixPokedexEntry::       INCLUDE "data/pokemon/dex_entries/095.asm"
 VoltorbPokedexEntry::    INCLUDE "data/pokemon/dex_entries/100.asm"
+ElectrodePokedexEntry::  INCLUDE "data/pokemon/dex_entries/101.asm"
+ExeggcutePokedexEntry::  INCLUDE "data/pokemon/dex_entries/102.asm"
+ExeggutorPokedexEntry::  INCLUDE "data/pokemon/dex_entries/103.asm"
 
 
 SECTION "Pokedex Entries 065-128", ROMX
 
 PokedexEntries2::
-ElectrodePokedexEntry::  INCLUDE "data/pokemon/dex_entries/101.asm"
-ExeggcutePokedexEntry::  INCLUDE "data/pokemon/dex_entries/102.asm"
-ExeggutorPokedexEntry::  INCLUDE "data/pokemon/dex_entries/103.asm"
 CubonePokedexEntry::     INCLUDE "data/pokemon/dex_entries/104.asm"
 MarowakPokedexEntry::    INCLUDE "data/pokemon/dex_entries/105.asm"
 KoffingPokedexEntry::    INCLUDE "data/pokemon/dex_entries/109.asm"
@@ -127,6 +124,8 @@ MarillPokedexEntry::  	 INCLUDE "data/pokemon/dex_entries/183.asm"
 AzumarillPokedexEntry::  INCLUDE "data/pokemon/dex_entries/184.asm"
 SudowoodoPokedexEntry::  INCLUDE "data/pokemon/dex_entries/185.asm"
 PolitoedPokedexEntry::   INCLUDE "data/pokemon/dex_entries/186.asm"
+SunkernPokedexEntry::    INCLUDE "data/pokemon/dex_entries/191.asm"
+SunfloraPokedexEntry::   INCLUDE "data/pokemon/dex_entries/192.asm"
 WooperPokedexEntry::     INCLUDE "data/pokemon/dex_entries/194.asm"
 QuagsirePokedexEntry::   INCLUDE "data/pokemon/dex_entries/195.asm"
 EspeonPokedexEntry::     INCLUDE "data/pokemon/dex_entries/196.asm"
@@ -137,12 +136,12 @@ GirafarigPokedexEntry::  INCLUDE "data/pokemon/dex_entries/203.asm"
 PinecoPokedexEntry::     INCLUDE "data/pokemon/dex_entries/204.asm"
 ForretressPokedexEntry:: INCLUDE "data/pokemon/dex_entries/205.asm"
 GligarPokedexEntry::     INCLUDE "data/pokemon/dex_entries/207.asm"
+SteelixPokedexEntry::    INCLUDE "data/pokemon/dex_entries/208.asm"
 
 
 SECTION "Pokedex Entries 129-192", ROMX
 
 PokedexEntries3::
-SteelixPokedexEntry::    INCLUDE "data/pokemon/dex_entries/208.asm"
 SnubbullPokedexEntry::   INCLUDE "data/pokemon/dex_entries/209.asm"
 GranbullPokedexEntry::   INCLUDE "data/pokemon/dex_entries/210.asm"
 ScizorPokedexEntry::     INCLUDE "data/pokemon/dex_entries/212.asm"
@@ -190,6 +189,8 @@ CacneaPokedexEntry::     INCLUDE "data/pokemon/dex_entries/331.asm"
 CacturnePokedexEntry::   INCLUDE "data/pokemon/dex_entries/332.asm"
 SwabluPokedexEntry::     INCLUDE "data/pokemon/dex_entries/333.asm"
 AltariaPokedexEntry::    INCLUDE "data/pokemon/dex_entries/334.asm"
+BarboachPokedexEntry::   INCLUDE "data/pokemon/dex_entries/339.asm"
+WhiscashPokedexEntry::   INCLUDE "data/pokemon/dex_entries/340.asm"
 SnoruntPokedexEntry::    INCLUDE "data/pokemon/dex_entries/361.asm"
 GlaliePokedexEntry::	 INCLUDE "data/pokemon/dex_entries/362.asm"
 BuizelPokedexEntry::     INCLUDE "data/pokemon/dex_entries/418.asm"
@@ -205,13 +206,13 @@ SpiritombPokedexEntry::  INCLUDE "data/pokemon/dex_entries/442.asm"
 MunchlaxPokedexEntry::   INCLUDE "data/pokemon/dex_entries/446.asm"
 RioluPokedexEntry:: 	 INCLUDE "data/pokemon/dex_entries/447.asm"
 LucarioPokedexEntry:: 	 INCLUDE "data/pokemon/dex_entries/448.asm"
-CroagunkPokedexEntry::   INCLUDE "data/pokemon/dex_entries/453.asm"
 
 
 
 SECTION "Pokedex Entries 193-253", ROMX
 
 PokedexEntries4::
+CroagunkPokedexEntry::   INCLUDE "data/pokemon/dex_entries/453.asm"
 ToxicroakPokedexEntry::  INCLUDE "data/pokemon/dex_entries/454.asm"
 SnoverPokedexEntry::   	 INCLUDE "data/pokemon/dex_entries/459.asm"
 AbomasnowPokedexEntry::  INCLUDE "data/pokemon/dex_entries/460.asm"

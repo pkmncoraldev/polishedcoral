@@ -39,9 +39,6 @@ FramesPointers:
 	dw PoliwagFrames
 	dw PoliwhirlFrames
 	dw PoliwrathFrames
-	dw AbraFrames
-	dw KadabraFrames
-	dw AlakazamFrames
 	dw MachopFrames
 	dw MachokeFrames
 	dw MachampFrames
@@ -117,6 +114,8 @@ FramesPointers:
 	dw AzumarillFrames
 	dw SudowoodoFrames
 	dw PolitoedFrames
+	dw SunkernFrames
+	dw SunfloraFrames
 	dw -1 ; see WooperFramesPointers
 	dw QuagsireFrames
 	dw EspeonFrames
@@ -175,6 +174,8 @@ FramesPointers:
 	dw CacturneFrames
 	dw SwabluFrames
 	dw AltariaFrames
+	dw BarboachFrames
+	dw WhiscashFrames
 	dw SnoruntFrames
 	dw GlalieFrames
 	dw BuizelFrames

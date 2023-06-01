@@ -43,9 +43,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw PoliwagEvosAttacks
 	dw PoliwhirlEvosAttacks
 	dw PoliwrathEvosAttacks
-	dw AbraEvosAttacks
-	dw KadabraEvosAttacks
-	dw AlakazamEvosAttacks
 	dw MachopEvosAttacks
 	dw MachokeEvosAttacks
 	dw MachampEvosAttacks
@@ -121,6 +118,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw AzumarillEvosAttacks
 	dw SudowoodoEvosAttacks
 	dw PolitoedEvosAttacks
+	dw SunkernEvosAttacks
+	dw SunfloraEvosAttacks
 	dw WooperEvosAttacks
 	dw QuagsireEvosAttacks
 	dw EspeonEvosAttacks
@@ -179,6 +178,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw CacturneEvosAttacks
 	dw SwabluEvosAttacks
 	dw AltariaEvosAttacks
+	dw BarboachEvosAttacks
+	dw WhiscashEvosAttacks
 	dw SnoruntEvosAttacks
 	dw GlalieEvosAttacks
 	dw BuizelEvosAttacks

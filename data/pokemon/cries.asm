@@ -56,9 +56,6 @@ CryHeaders::
 	mon_cry CRY_PIDGEY,      $0ff,  $17f 	; Poliwag
 	mon_cry CRY_PIDGEY,      $077,  $0e0 	; Poliwhirl
 	mon_cry CRY_PIDGEY,      $000,  $17f 	; Poliwrath
-	mon_cry CRY_ABRA,   	 $0c0,  $081 	; Abra
-	mon_cry CRY_ABRA,   	 $0a8,  $140 	; Kadabra
-	mon_cry CRY_ABRA,   	 $098,  $17f 	; Alakazam
 	mon_cry CRY_GROWLITHE,   $0ee,  $081 	; Machop
 	mon_cry CRY_GROWLITHE,   $048,  $0e0 	; Machoke
 	mon_cry CRY_GROWLITHE,   $008,  $140 	; Machamp
@@ -134,6 +131,8 @@ CryHeaders::
 	mon_cry CRY_MARILL,      $0b6,  $180 	; Azumarill
 	mon_cry CRY_BELLOSSOM,   $f40,  $180 	; Sudowoodo
 	mon_cry CRY_BELLOSSOM,  -$2a3,  $1c8 	; Politoed
+	mon_cry CRY_MARILL,      $12b,  $0b8 	; Sunkern
+	mon_cry CRY_ELEKID,		-$020,  $180 	; Sunflora
 	mon_cry CRY_WOOPER,      $093,  $0af 	; Wooper
 	mon_cry CRY_WOOPER,     -$0c6,  $140 	; Quagsire
 	mon_cry CRY_ESPEON,   	 $0a2,  $140 	; Espeon
@@ -192,6 +191,8 @@ CryHeaders::
 	mon_cry CACTURNE,  	CacturneDEDData	 	; Cacturne
 	mon_cry SWABLU,   	SwabluDEDData	 	; Swablu
 	mon_cry ALTARIA,   	AltariaDEDData	 	; Altaria
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Barboach - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Whiscash - PLACEHOLDER
 	mon_cry SNORUNT,   	SnoruntDEDData	 	; Snorunt
 	mon_cry GLALIE,   	GlalieDEDData	 	; Glalie
 	mon_cry BUIZEL,   	BuizelDEDData	 	; Buizel
@@ -315,9 +316,6 @@ CryHeaders2::
 	mon_cry CRY_PIDGEY,      $0ff,  $17f 	; Poliwag
 	mon_cry CRY_PIDGEY,      $077,  $0e0 	; Poliwhirl
 	mon_cry CRY_PIDGEY,      $000,  $17f 	; Poliwrath
-	mon_cry CRY_ABRA,   	 $0c0,  $081 	; Abra
-	mon_cry CRY_ABRA,   	 $0a8,  $140 	; Kadabra
-	mon_cry CRY_ABRA,   	 $098,  $17f 	; Alakazam
 	mon_cry CRY_GROWLITHE,   $0ee,  $081 	; Machop
 	mon_cry CRY_GROWLITHE,   $048,  $0e0 	; Machoke
 	mon_cry CRY_GROWLITHE,   $008,  $140 	; Machamp
@@ -393,6 +391,8 @@ CryHeaders2::
 	mon_cry CRY_MARILL,      $0b6,  $180 	; Azumarill
 	mon_cry CRY_BELLOSSOM,   $f40,  $180 	; Sudowoodo
 	mon_cry CRY_BELLOSSOM,  -$2a3,  $1c8 	; Politoed
+	mon_cry CRY_MARILL,      $12b,  $0b8 	; Sunkern
+	mon_cry CRY_ELEKID,		-$020,  $180 	; Sunflora
 	mon_cry CRY_WOOPER,      $093,  $0af 	; Wooper
 	mon_cry CRY_WOOPER,     -$0c6,  $140 	; Quagsire
 	mon_cry CRY_ESPEON,   	 $0a2,  $140 	; Espeon
@@ -451,6 +451,8 @@ CryHeaders2::
 	mon_cry CRY_TOTODILE,   -$1c0,  $170 	; Cacturne
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Swablu - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Altaria - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Barboach - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Whiscash - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Snorunt - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Glalie - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Buizel - PLACEHOLDER

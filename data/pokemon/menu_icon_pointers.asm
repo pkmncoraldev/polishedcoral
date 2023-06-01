@@ -40,9 +40,6 @@ IconPointers:
 	dw PoliwagIcon
 	dw PoliwhirlIcon
 	dw PoliwrathIcon
-	dw AbraIcon
-	dw KadabraIcon
-	dw AlakazamIcon
 	dw MachopIcon
 	dw MachokeIcon
 	dw MachampIcon
@@ -118,6 +115,8 @@ IconPointers:
 	dw AzumarillIcon
 	dw SudowoodoIcon
 	dw PolitoedIcon
+	dw SunkernIcon
+	dw SunfloraIcon
 	dw WooperIcon
 	dw QuagsireIcon
 	dw EspeonIcon
@@ -176,6 +175,8 @@ IconPointers:
 	dw CacturneIcon
 	dw SwabluIcon
 	dw AltariaIcon
+	dw BarboachIcon
+	dw WhiscashIcon
 	dw SnoruntIcon
 	dw GlalieIcon
 	dw BuizelIcon

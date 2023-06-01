@@ -3,7 +3,8 @@ TwinkleGymYellowRoom_MapScriptHeader:
 	scene_script TwinkleGymYellowRoomTrigger0
 	scene_script TwinkleGymYellowRoomTrigger1
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, TwinkleGymYellowRoomCallback
 
 	db 2 ; warp events
 	warp_def 21,  6, 4, TWINKLE_GYM_ENTRY
@@ -33,8 +34,8 @@ TwinkleGymYellowRoom_MapScriptHeader:
 	object_event 14,  5, SPRITE_SPA_WORKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymYellowRoomWorker3, EVENT_BEAT_CHARLIE
 	object_event 14, 13, SPRITE_SPA_TRAINER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymYellowRoomTrainer1, -1
 	object_event  0,  5, SPRITE_SPA_TRAINER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymYellowRoomTrainer2, -1
-	object_event  9,  9, SPRITE_BATHER_VARIABLE_1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, TwinkleGymYellowRoomBather1, -1
-	object_event  5, 10, SPRITE_BATHER_VARIABLE_2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, TwinkleGymYellowRoomBather2, -1
+	object_event  9,  9, SPRITE_BATHER_VARIABLE_1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TwinkleGymYellowRoomBather1, -1
+	object_event  5, 10, SPRITE_BATHER_VARIABLE_2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TwinkleGymYellowRoomBather2, -1
 	object_event  6,  1, SPRITE_SPA_TRAINER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymYellowRoomLeader, -1
 	object_event  5, 11, SPRITE_STEAM, SPRITEMOVEDATA_STEAM, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  9, 10, SPRITE_STEAM, SPRITEMOVEDATA_STEAM, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -57,6 +58,27 @@ TwinkleGymYellowRoomTrigger0:
 	
 TwinkleGymYellowRoomTrigger1:
 	end
+
+TwinkleGymYellowRoomCallback:
+	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1
+	iffalse .check2ndbather
+	checkevent EVENT_BEAT_CHARLIE
+	iffalse .change1
+	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1_REMATCH
+	iffalse .check2ndbather
+.change1
+	changeblock $8, $8, $64
+.check2ndbather
+	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2
+	iffalse .end
+	checkevent EVENT_BEAT_CHARLIE
+	iffalse .change2
+	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2_REMATCH
+	iffalse .end
+.change2
+	changeblock $4, $a, $65
+.end
+	return
 
 TwinkleGymYellowRoomPoolScript:
 	callasm TwinkleGymYellowRoomPoolAsm
@@ -245,6 +267,8 @@ TwinkleGymYellowRoomBather1Script:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
+	changeblock $8, $8, $64
+	callasm GenericFinishBridge
 	playmapmusic
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1
 	checkevent EVENT_BEAT_CHARLIE
@@ -336,6 +360,8 @@ TwinkleGymYellowRoomBather2Script:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
+	changeblock $4, $a, $65
+	callasm GenericFinishBridge
 	playmapmusic
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2
 	checkevent EVENT_BEAT_CHARLIE

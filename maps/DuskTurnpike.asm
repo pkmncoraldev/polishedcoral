@@ -20,7 +20,7 @@ DuskTurnpike_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 8 ; bg events
+	db 14 ; bg events
 	signpost 21, 31, SIGNPOST_JUMPTEXT, DuskTurnpikeBrokenCar
 	signpost 21, 32, SIGNPOST_JUMPTEXT, DuskTurnpikeBrokenCar
 	signpost 20, 23, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
@@ -28,7 +28,13 @@ DuskTurnpike_MapScriptHeader:
 	signpost 22, 30, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
 	signpost 23, 30, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
 	signpost 24, 29, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
+	signpost 21, 22, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
+	signpost 22, 22, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
+	signpost 32, 18, SIGNPOST_JUMPTEXT, DuskTurnpikeSign
+	signpost 21, 18, SIGNPOST_JUMPTEXT, DuskTurnpikeHighwaySign
 	signpost  6, 15, SIGNPOST_READ, DuskTurnpikeTrashcan
+	signpost 31, 24, SIGNPOST_READ, DuskTurnpikePokeCenterSign
+	signpost 31, 32, SIGNPOST_READ, DuskTurnpikeMartSign
 	
 
 	db 1 ; object events
@@ -165,6 +171,27 @@ DuskTurnpikeTrashcanWildBattleScript:
 	startbattle
 	reloadmapafterbattle
 	end
+	
+DuskTurnpikePokeCenterSign:
+	jumpstd pokecentersign
+	
+DuskTurnpikeMartSign:
+	jumpstd martsign
+	
+DuskTurnpikeSign:
+	text "DUSK TURNPIKE"
+	
+	para "A breif pit-stop"
+	line "along the road."
+	done
+	
+DuskTurnpikeHighwaySign:
+	text "ROUTE 20 HIGHWAY"
+	line "ahead."
+	
+	para "Motor vehicles"
+	line "only."
+	done
 
 DuskTurnpikeTrashcanText1:
 	text "<PLAYER> dug"

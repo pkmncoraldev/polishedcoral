@@ -384,6 +384,10 @@ ENDM
 	map_attributes DuskTurnpike, DUSK_TURNPIKE, 0, SOUTH
 	connection south, Route19, ROUTE_19, 0
 	
+	map_attributes DuskAutoLobby, DUSK_AUTO_LOBBY, $00, 0
+	
+	map_attributes DuskAutoGarage, DUSK_AUTO_GARAGE, $00, 0
+	
 	map_attributes Route20Tunnel, ROUTE_20_TUNNEL, $d9, 0
 	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH

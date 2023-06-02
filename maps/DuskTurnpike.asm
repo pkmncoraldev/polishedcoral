@@ -6,7 +6,7 @@ DuskTurnpike_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, DuskTurnpikeCallback
 
-	db 7 ; warp events
+	db 10 ; warp events
 	warp_event  8, 28, ROUTE_17, 1
 	warp_event  8, 29, ROUTE_17, 2
 	warp_event  7, 13, ROUTE_20_TUNNEL, 1
@@ -14,6 +14,9 @@ DuskTurnpike_MapScriptHeader:
 	warp_event  7, 15, ROUTE_20_TUNNEL, 3
 	warp_event  7, 16, ROUTE_20_TUNNEL, 4
 	warp_event  7, 17, ROUTE_20_TUNNEL, 5
+	warp_event 25, 23, DUSK_AUTO_LOBBY, 1
+	warp_event 27, 23, DUSK_AUTO_GARAGE, 3
+	warp_event 28, 23, DUSK_AUTO_GARAGE, 6
 
 	db 0 ; coord events
 

@@ -130,6 +130,8 @@ INCLUDE "maps/DaybreakVillage.asm"
 INCLUDE "maps/DaybreakMarcusHouse.asm"
 INCLUDE "maps/DaybreakAlexHouse.asm"
 INCLUDE "maps/DaybreakPokemonTrainerSchool.asm"
+INCLUDE "maps/DuskAutoLobby.asm"
+INCLUDE "maps/DuskAutoGarage.asm"
 
 
 SECTION "Glint City Scripts", ROMX

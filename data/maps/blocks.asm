@@ -707,6 +707,12 @@ Route19_BlockData:
 DuskTurnpike_BlockData:
 	INCBIN "maps/DuskTurnpike.ablk.lz"
 	
+DuskAutoLobby_BlockData:
+	INCBIN "maps/DuskAutoLobby.ablk.lz"
+	
+DuskAutoGarage_BlockData:
+	INCBIN "maps/DuskAutoGarage.ablk.lz"
+	
 Route20Tunnel_BlockData:
 	INCBIN "maps/Route20Tunnel.ablk.lz"
 	

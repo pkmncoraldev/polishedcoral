@@ -165,9 +165,10 @@ INCLUDE "data/tilesets/pokecenter_collision.asm"
 SECTION "Tileset Data - lighthouse", ROMX
 
 TilesetLighthouseGFX0::
-INCBIN "gfx/tilesets/lighthouse.2bpp.lz"
+INCBIN "gfx/tilesets/lighthouse.2bpp.vram0.lz"
 
-TilesetLighthouseGFX1 EQU 0
+TilesetLighthouseGFX1::
+INCBIN "gfx/tilesets/lighthouse.2bpp.vram1.lz"
 
 TilesetLighthouseGFX2 EQU 0
 

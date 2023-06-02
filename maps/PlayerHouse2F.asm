@@ -67,7 +67,7 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke CHARIZARD, 98
+	givepoke DREEPY, 98
 	givepoke SUNKERN, 99
 	givepoke SUNFLORA, 99
 	givepoke BARBOACH, 99

@@ -72,6 +72,12 @@ PLAYER_F EQU __enum__
 	const RIVAL3_4
 	const RIVAL3_5
 	const RIVAL3_6
+	const RIVAL4_1
+	const RIVAL4_2
+	const RIVAL4_3
+	const RIVAL4_4
+	const RIVAL4_5
+	const RIVAL4_6
 
 	trainerclass YOUNGSTER
 	const JOEY

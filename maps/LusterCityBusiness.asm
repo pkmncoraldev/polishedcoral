@@ -1,5 +1,7 @@
 LusterCityBusiness_MapScriptHeader:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script LusterCityBusinessTrigger0
+	scene_script LusterCityBusinessTrigger1
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, BusinessCallback
@@ -12,12 +14,20 @@ LusterCityBusiness_MapScriptHeader:
 	warp_event 24, 11, NETT_BUILDING_1F, 1
 	warp_event 25, 11, NETT_BUILDING_1F, 2
 
-	db 0 ; coord events
+	db 8 ; coord events
+	coord_event 13, 26, 0, LusterCityBusinessRival1
+	coord_event 13, 27, 0, LusterCityBusinessRival2
+	coord_event 13, 28, 0, LusterCityBusinessRival3
+	coord_event 13, 29, 0, LusterCityBusinessRival4
+	coord_event 14, 26, 0, LusterCityBusinessRival5
+	coord_event 14, 27, 0, LusterCityBusinessRival6
+	coord_event 14, 28, 0, LusterCityBusinessRival7
+	coord_event 14, 29, 0, LusterCityBusinessRival8
 
 	db 1 ; bg events
 	signpost 12, 23, SIGNPOST_READ, NettBuildingSign
 
-	db 11 ; object events
+	db 12 ; object events
 	person_event SPRITE_TRAFFIC_LIGHT, 24, 14, SPRITEMOVEDATA_TILE_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
 	person_event SPRITE_POKEMANIAC, 33, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3NPC1, -1
 	person_event SPRITE_SUPER_NERD, 29, 30, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3NPC2, -1
@@ -29,6 +39,7 @@ LusterCityBusiness_MapScriptHeader:
 	person_event SPRITE_SUPER_NERD, 13, 26, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster3NPC8, -1
 	person_event SPRITE_POKEFAN_F, 24, 18, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster3NPC9, -1
 	person_event SPRITE_CHILD, 25, 18, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Luster3NPC10, -1
+	person_event SPRITE_COLBY,  0,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 
 	const_def 1 ; object constants
 	const LUSTERBUSINESS_TRAFFIC_LIGHT
@@ -42,7 +53,14 @@ LusterCityBusiness_MapScriptHeader:
 	const LUSTERBUSINESS_NPC8
 	const LUSTERBUSINESS_NPC9
 	const LUSTERBUSINESS_NPC10
+	const LUSTERBUSINESS_RIVAL
 	
+	
+LusterCityBusinessTrigger0:
+	end
+	
+LusterCityBusinessTrigger1:
+	end
 	
 BusinessCallback:
 	domaptrigger LUSTER_CITY_SHOPPING, $0
@@ -54,6 +72,237 @@ BusinessCallback:
 	
 NettBuildingSign:
 	jumptext NettBuildingSignText
+	
+LusterCityBusinessRival1:
+	moveperson LUSTERBUSINESS_RIVAL, $f, $15
+	clearevent EVENT_LUSTER_RIVAL_MOVE_UP
+	jump LusterCityBusinessRival
+	
+LusterCityBusinessRival2:
+	moveperson LUSTERBUSINESS_RIVAL, $f, $16
+	clearevent EVENT_LUSTER_RIVAL_MOVE_UP
+	jump LusterCityBusinessRival
+	
+LusterCityBusinessRival3:
+	moveperson LUSTERBUSINESS_RIVAL, $f, $17
+	clearevent EVENT_LUSTER_RIVAL_MOVE_UP
+	jump LusterCityBusinessRival
+	
+LusterCityBusinessRival4:
+	moveperson LUSTERBUSINESS_RIVAL, $f, $18
+	setevent EVENT_LUSTER_RIVAL_MOVE_UP
+	jump LusterCityBusinessRival
+	
+LusterCityBusinessRival5:
+	moveperson LUSTERBUSINESS_RIVAL, $10, $15
+	clearevent EVENT_LUSTER_RIVAL_MOVE_UP
+	jump LusterCityBusinessRival
+	
+LusterCityBusinessRival6:
+	moveperson LUSTERBUSINESS_RIVAL, $10, $16
+	clearevent EVENT_LUSTER_RIVAL_MOVE_UP
+	jump LusterCityBusinessRival
+	
+LusterCityBusinessRival7:
+	moveperson LUSTERBUSINESS_RIVAL, $10, $17
+	clearevent EVENT_LUSTER_RIVAL_MOVE_UP
+	jump LusterCityBusinessRival
+	
+LusterCityBusinessRival8:
+	moveperson LUSTERBUSINESS_RIVAL, $10, $18
+	setevent EVENT_LUSTER_RIVAL_MOVE_UP
+	
+LusterCityBusinessRival:
+	special Special_StopRunning
+	disappear LUSTERBUSINESS_RIVAL
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	appear LUSTERBUSINESS_RIVAL
+	applyonemovement LUSTERBUSINESS_RIVAL, step_sleep_1
+	wait 15
+	applymovement LUSTERBUSINESS_RIVAL, Movement_LusterCityBusinessRival1
+	opentext
+	writetext LusterCityBusinessRivalText1
+	waitbutton
+	closetext
+	waitsfx
+	checkevent EVENT_GOT_TOTODILE_FROM_SPRUCE
+	iftrue .totodile
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_SPRUCE
+	iftrue .cyndaquil
+	checkevent EVENT_GOT_CHIKORITA_FROM_SPRUCE
+	iftrue .chikorita
+	checkevent EVENT_GOT_SQUIRTLE_FROM_SPRUCE
+	iftrue .squirtle
+	checkevent EVENT_GOT_CHARMANDER_FROM_SPRUCE
+	iftrue .charmander
+	checkevent EVENT_GOT_BULBASAUR_FROM_SPRUCE
+	iftrue .bulbasaur
+.totodile
+	winlosstext LusterCityBusinessRivalWinText, LusterCityBusinessRivalLoseText
+	setlasttalked LUSTERBUSINESS_RIVAL
+	loadtrainer RIVAL, RIVAL4_6
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+	
+.chikorita
+	winlosstext LusterCityBusinessRivalWinText, LusterCityBusinessRivalLoseText
+	setlasttalked LUSTERBUSINESS_RIVAL
+	loadtrainer RIVAL, RIVAL4_5
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+	
+.cyndaquil
+	winlosstext LusterCityBusinessRivalWinText, LusterCityBusinessRivalLoseText
+	setlasttalked LUSTERBUSINESS_RIVAL
+	loadtrainer RIVAL, RIVAL4_4
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+	
+.squirtle
+	winlosstext LusterCityBusinessRivalWinText, LusterCityBusinessRivalLoseText
+	setlasttalked LUSTERBUSINESS_RIVAL
+	loadtrainer RIVAL, RIVAL4_3
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+	
+.bulbasaur
+	winlosstext LusterCityBusinessRivalWinText, LusterCityBusinessRivalLoseText
+	setlasttalked LUSTERBUSINESS_RIVAL
+	loadtrainer RIVAL, RIVAL4_2
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+
+.charmander
+	winlosstext LusterCityBusinessRivalWinText, LusterCityBusinessRivalLoseText
+	setlasttalked LUSTERBUSINESS_RIVAL
+	loadtrainer RIVAL, RIVAL4_1
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	
+.afterbattle
+	playmusic MUSIC_RIVAL_AFTER
+	opentext
+	writetext LusterCityBusinessRivalText2
+	waitbutton
+	closetext	
+	checkevent EVENT_LUSTER_RIVAL_MOVE_UP
+	iftrue .move_up
+	applyonemovement LUSTERBUSINESS_RIVAL, step_down
+	jump .finish
+.move_up
+	applyonemovement LUSTERBUSINESS_RIVAL, step_up
+.finish
+	applymovement LUSTERBUSINESS_RIVAL, Movement_LusterCityBusinessRival2
+	disappear LUSTERBUSINESS_RIVAL
+	special Special_FadeOutMusic
+	pause 15
+	special RestartMapMusic
+	setevent EVENT_LUSTER_RIVAL
+	dotrigger $1
+	end
+	
+LusterCityBusinessRivalText1:
+	text "You!"
+	
+	para "What are you doing"
+	line "here?"
+	
+	para "Look, I have more"
+	line "important things"
+	cont "to deal with!"
+	
+	para "I have a lot on"
+	line "my mind right now."
+	
+	para "Someone just said"
+	line "something to me"
+	cont "and it has me"
+	cont "thinking…"
+	
+	para "…"
+	
+	para "You know what?"
+	line "I'm actually glad"
+	cont "you're here."
+	
+	para "I need to vent"
+	line "some frustration!"
+	done
+	
+LusterCityBusinessRivalText2:
+	text "This… This isn't"
+	line "right!"
+	
+	para "How can a whimp"
+	line "like you keep"
+	cont "beating me?"
+	
+	para "This is no fluke…"
+	
+	para "…"
+	
+	para "Cheating!"
+	
+	para "You're cheating!"
+	
+	para "You've gotta be!"
+	
+	para "Well if you can"
+	line "cheat, then…"
+	
+	para "Then maybe I can"
+	line "cheat too."
+	
+	para "Someday you're"
+	line "gonna be sorry,"
+	cont "<PLAYER>."
+	done
+	
+LusterCityBusinessRivalWinText:
+	text "ARGH!"
+	done
+	
+LusterCityBusinessRivalLoseText:
+	text "Yeah!"
+	
+	para "That's what you"
+	line "get!"
+	done
+	
+Movement_LusterCityBusinessRival1:
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_left
+	step_end
+	
+Movement_LusterCityBusinessRival2:
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_end
 	
 Luster3NPC1:
 	jumptextfaceplayer Luster3NPC1Text

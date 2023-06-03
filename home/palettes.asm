@@ -91,13 +91,13 @@ DmgToCgbBGPals:: ; c9f
 
 	pop af
 	ld [rSVBK], a
+;fallthrough
+PopBCDEHLAF:
 	pop bc
 	pop de
 	pop hl
 	pop af
 	ret
-; ccb
-
 
 DmgToCgbObjPals:: ; ccb
 ; exists to forego reinserting cgb-converted image data
@@ -162,11 +162,7 @@ DmgToCgbObjPal0:: ; cf8
 	pop af
 	ld [rSVBK], a
 
-	pop bc
-	pop de
-	pop hl
-	pop af
-	ret
+	jp PopBCDEHLAF
 ; d24
 
 DmgToCgbObjPal1:: ; d24
@@ -193,11 +189,7 @@ DmgToCgbObjPal1:: ; d24
 	pop af
 	ld [rSVBK], a
 
-	pop bc
-	pop de
-	pop hl
-	pop af
-	ret
+	jp PopBCDEHLAF
 ; d50
 
 

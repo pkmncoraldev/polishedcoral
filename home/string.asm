@@ -13,7 +13,7 @@ _InitString:: ; 2efc
 	cp "@"
 	jr z, .blank
 	cp " "
-	jr nz, .notblank
+	jp nz, PopBCHL
 	dec c
 	jr nz, .loop
 .blank
@@ -25,8 +25,3 @@ _InitString:: ; 2efc
 	inc c
 	rst CopyBytes
 	ret
-.notblank
-	pop bc
-	pop hl
-	ret
-; 2f17

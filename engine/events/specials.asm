@@ -368,10 +368,10 @@ Diploma: ; c49f
 	jp ExitAllMenus
 ; c4ac
 
-Special_GetOvercastIndex::
-	call GetOvercastIndex
-	ld [wScriptVar], a
-	ret
+;Special_GetOvercastIndex::
+;	call GetOvercastIndex
+;	ld [wScriptVar], a
+;	ret
 
 CheckIfTrendyPhraseIsLucky:
 	xor a

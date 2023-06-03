@@ -1958,6 +1958,8 @@ GetWorldMapLocation:: ; 0x2caf
 	push de
 	push bc
 
+	eventflagcheck EVENT_IN_POKEDEX
+	jr nz, .skip
 	
 	eventflagcheck EVENT_ON_DODRIO_RANCH
 	ld a, DODRIO_RANCH
@@ -1979,6 +1981,7 @@ GetWorldMapLocation:: ; 0x2caf
 	ld a, BUSINESS_DISTRICT
 	jr nz, .end
 
+.skip
 	pop bc
 	push bc
 	ld de, 5 ; landmark
@@ -2159,7 +2162,7 @@ PopBCHL:
 	pop hl
 	ret
 
-GetOvercastIndex::
+;GetOvercastIndex::
 ; Some maps are overcast, depending on certain conditions
 ;	ld a, [wMapGroup]
 ;	cp GROUP_AZALEA_TOWN ; GROUP_ROUTE_33
@@ -2235,4 +2238,4 @@ GetOvercastIndex::
 ;	jr nz, .not_overcast
 ;.overcast_stormy_beach
 ;	ld a, STORMY_BEACH_OVERCAST
-	ret
+;	ret

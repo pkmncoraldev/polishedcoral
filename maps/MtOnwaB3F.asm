@@ -50,11 +50,13 @@ LavaCaveBF3Magmar:
 	end
 
 MtOnwaB3FTrainerStopsYou:
+	special Special_StopRunning
 	special SaveMusic
 	playmusic MUSIC_HIKER_ENCOUNTER
 	showemote EMOTE_SHOCK, MTONWABF3_TRAINER,  30
 	jump MtOnwaB3FTrainerStopsYouCont
 MtOnwaB3FTrainerStopsYou2:
+	special Special_StopRunning
 	special SaveMusic
 	playmusic MUSIC_HIKER_ENCOUNTER
 	showemote EMOTE_SHOCK, MTONWABF3_TRAINER,  30

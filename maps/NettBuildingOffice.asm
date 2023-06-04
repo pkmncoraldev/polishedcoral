@@ -374,15 +374,10 @@ NettBuildingOfficeNettText8:
 	line "help you in the"
 	cont "future."
 	
-	para "In this demo, you"
-	line "don't even need a"
-	cont "BADGE to use it"
-	cont "outside of battle!"
-	
-;	para "You need the BADGE"
-;	line "from LUSTER CITY"
-;	cont "to use it outside"
-;	cont "of battle."
+	para "You need the BADGE"
+	line "from LUSTER CITY"
+	cont "to use it outside"
+	cont "of battle."
 	done
 	
 NettBuildingOfficeNettText9:

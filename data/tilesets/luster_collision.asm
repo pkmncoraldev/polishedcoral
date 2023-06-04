@@ -134,7 +134,7 @@
 	tilecoll WALL, SKATE, WALL, SKATE ; 85
 	tilecoll SKATE, WALL, SKATE, WALL ; 86
 	tilecoll WALL, SKATE, WALL, SKATE ; 87
-	tilecoll WALL, SKATE, WALL, SKATE ; 88
+	tilecoll NO_OLLIE, SKATE, NO_OLLIE, SKATE ; 88
 	tilecoll WALL, WALL, WALL, WALL ; 89
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8a
 	tilecoll WALL, WALL, SKATE, SKATE ; 8b

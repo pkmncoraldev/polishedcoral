@@ -272,6 +272,7 @@ INCLUDE "maps/NettBuildingFBathroom.asm"
 INCLUDE "maps/NettBuildingStairwell.asm"
 INCLUDE "maps/NettBuildingOffice.asm"
 INCLUDE "maps/LusterSkyscraperPorygonRoom.asm"
+INCLUDE "maps/LusterGym.asm"
 
 SECTION "Route 12 Scripts", ROMX
 INCLUDE "maps/Route12.asm"

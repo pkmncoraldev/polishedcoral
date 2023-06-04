@@ -319,6 +319,9 @@ LusterCityBusiness_BlockData:
 	
 LusterMall_BlockData:
 	INCBIN "maps/LusterMall.ablk.lz"
+	
+LusterGym_BlockData:
+	INCBIN "maps/LusterGym.ablk.lz"
 
 LusterMallElectronicsShop_BlockData:
 	INCBIN "maps/LusterMallElectronicsShop.ablk.lz"

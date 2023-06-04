@@ -541,6 +541,7 @@ ENDM
 	map_attributes LusterPokeCenter, LUSTER_POKECENTER, 0, 0
 	map_attributes LusterMart, LUSTER_MART, 0, 0
 	map_attributes LusterMall, LUSTER_MALL, 0, 0
+	map_attributes LusterGym, LUSTER_GYM, 0, 0
 	map_attributes LusterMallPokeCenter, LUSTER_MALL_POKECENTER, 0, 0
 	map_attributes LusterMallElectronicsShop, LUSTER_MALL_ELECTRONICS_SHOP, 0, 0
 	map_attributes LusterMallCoffeeShop, LUSTER_MALL_COFFEE_SHOP, 0, 0

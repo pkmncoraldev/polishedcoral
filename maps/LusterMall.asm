@@ -6,7 +6,7 @@ LusterMall_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, LusterMallCallback
 
-	db 24 ; warp events
+	db 26 ; warp events
 	warp_def 29, 14, 3, LUSTER_CITY_SHOPPING
 	warp_def 29, 15, 4, LUSTER_CITY_SHOPPING
 	warp_def 29, 18, 5, LUSTER_CITY_SHOPPING
@@ -31,6 +31,8 @@ LusterMall_MapScriptHeader:
 	warp_def 15, 31, 2, LUSTER_MALL_CLOTHES_SHOP
 	warp_def 17, 35, 1, LUSTER_MALL_BACK_ROOM
 	warp_def 18, 35, 2, LUSTER_MALL_BACK_ROOM
+	warp_def  3, 16, 1, LUSTER_GYM
+	warp_def  3, 17, 2, LUSTER_GYM
 
 	db 9 ; coord events
 	coord_event 11, 17, -1, LusterMallEscalator1

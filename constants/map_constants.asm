@@ -267,6 +267,7 @@ MAP_NONE   EQU 0
 	map_const LUSTER_SKYSCRAPER_2_ELEVATOR,				   2,  2 ; 36
 	map_const LUSTER_SKYSCRAPER_B1F,					   8,  2 ; 37
 	map_const LUSTER_SKYSCRAPER_PORYGON_ROOM,			   3,  6 ; 38
+	map_const LUSTER_GYM,								   8, 11 ; 39
 	
 	newgroup													 ; 14
 	

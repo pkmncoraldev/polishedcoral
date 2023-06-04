@@ -198,8 +198,7 @@ MAP_NONE   EQU 0
 	map_const FLICKER_TRAIN_CUTSCENE,					  27,  7 ; 8
 	map_const LUSTER_TRAIN_CUTSCENE,					  33,  4 ; 9
 	map_const LUSTER_TRAIN_STATION,						  16,  8 ; 10
-	map_const LUSTER_CITY_BUSINESS,					      24, 24 ; 11
-	map_const FLICKER_TRAIN_GRAVEYARD,					  14, 18 ; 12
+	map_const FLICKER_TRAIN_GRAVEYARD,					  14, 18 ; 11
 	
 	newgroup													 ; 11
 	
@@ -222,10 +221,11 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 12
 	
-	map_const TRAIN_CABIN_1,						   8,  4 ; 1
-	map_const TRAIN_CABIN_2,						   8,  4 ; 2
+	map_const TRAIN_CABIN_1,						 	   8,  4 ; 1
+	map_const TRAIN_CABIN_2,						  	   8,  4 ; 2
 	map_const EAST_TRAIN_CAB,							   3,  2 ; 3
 	map_const EAST_TRAIN_CABOOSE,						   2,  2 ; 4
+	map_const LUSTER_CITY_BUSINESS,					      24, 24 ; 5
 	
 	newgroup													 ; 13
 	

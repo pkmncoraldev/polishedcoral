@@ -2273,7 +2273,7 @@ BattleAnim_Scald:
 
 BattleAnim_ThrowPokeBall:
 	anim_jumpif NO_ITEM, .TheTrainerBlockedTheBall
-	anim_3gfx ANIM_GFX_POKE_BALL, ANIM_GFX_SMOKE, ANIM_GFX_SPEED
+	anim_4gfx ANIM_GFX_POKE_BALL, ANIM_GFX_SMOKE, ANIM_GFX_SPEED, ANIM_GFX_STARS
 	anim_jumpif DIVE_BALL, .LoadBallGfx2
 	anim_jumpif LUXURY_BALL, .LoadBallGfx2
 	anim_jumpif HEAL_BALL, .LoadBallGfx3
@@ -2352,6 +2352,16 @@ BattleAnim_ThrowPokeBall:
 	anim_jump .Loop
 
 .Click:
+	anim_wait 20
+	anim_sound 0, 1, SFX_GRASS_RUSTLE
+	anim_wait 5
+	anim_clearobjs
+	anim_obj ANIM_OBJ_CAUGHT_BALL,  16, 8,   8, 0, $00
+	anim_obj ANIM_OBJ_STAR_BURST,  16, 12,   8, 0, $50
+	anim_obj ANIM_OBJ_STAR_BURST,  16, 12,   8, 0, $48
+	anim_obj ANIM_OBJ_STAR_BURST,  16, 12,   8, 0, $cf
+	anim_obj ANIM_OBJ_STAR_BURST,  16, 12,   8, 0, $dc
+	anim_wait 24
 	anim_clearsprites
 	anim_ret
 
@@ -3193,27 +3203,6 @@ BattleAnim_AirSlash:
 	anim_ret
 
 BattleAnim_Sonicboom:
-	anim_2gfx ANIM_GFX_WHIP, ANIM_GFX_HIT
-.loop
-	anim_sound 3, 0, SFX_RAZOR_WIND
-	anim_obj ANIM_OBJ_43,   8, 0,  10, 0, $3
-	anim_wait 8
-	anim_sound 3, 0, SFX_RAZOR_WIND
-	anim_obj ANIM_OBJ_43,   8, 0,  11, 0, $2
-	anim_wait 8
-	anim_sound 3, 0, SFX_RAZOR_WIND
-	anim_obj ANIM_OBJ_43,   8, 0,  12, 0, $4
-	anim_wait 8
-	anim_loop 2, .loop
-	anim_wait 32
-	anim_incobj  1
-	anim_incobj  2
-	anim_incobj  3
-	anim_incobj  4
-	anim_incobj  5
-	anim_incobj  6
-	anim_obj ANIM_OBJ_01, -15, 0,   7, 0, $0
-	anim_wait 16
 	anim_ret
 
 BattleAnim_Gust:

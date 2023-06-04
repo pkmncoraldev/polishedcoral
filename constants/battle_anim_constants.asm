@@ -91,7 +91,7 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const ANIM_OBJ_40
 	const ANIM_OBJ_DRAGON_DARTS_PLAYER
 	const ANIM_OBJ_42
-	const ANIM_OBJ_43
+	const ANIM_OBJ_CAUGHT_BALL
 	const ANIM_OBJ_44
 	const ANIM_OBJ_ABSORB
 	const ANIM_OBJ_46

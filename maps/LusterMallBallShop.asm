@@ -22,12 +22,13 @@ LusterMallBallShop_MapScriptHeader:
 	signpost  1,  4, SIGNPOST_JUMPTEXT, LusterMallBallShopPosterText3
 	signpost  1,  3, SIGNPOST_JUMPTEXT, LusterMallBallShopPosterText3
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event  1,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, pokemart, MARTTYPE_BALL, 0, EVENT_DONE_PART_TIME_JOB
 	object_event  1,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, pokemart, MARTTYPE_BALL_DISCOUNT, 0, EVENT_NO_BALL_SHOP_DISCOUNT
 	person_event SPRITE_LASS,  4,  7, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMallBallShop_NPC1, -1
 	person_event SPRITE_REDS_MOM,  4,  0, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallBallShop_NPC2, -1
 	person_event SPRITE_POKEFAN_M,  6,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMallBallShop_NPC3, -1
+	person_event SPRITE_POLLY,  3,  4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMallBallShopPolly, EVENT_POLLY_NOT_IN_BALL_SHOP
 	
 	const_def 1 ; object constants
 	const LUSTER_MALL_BALL_SHOP_CLERK
@@ -35,6 +36,63 @@ LusterMallBallShop_MapScriptHeader:
 	const LUSTER_MALL_BALL_SHOP_NPC_1
 	const LUSTER_MALL_BALL_SHOP_NPC_2
 	const LUSTER_MALL_BALL_SHOP_NPC_3
+	const LUSTER_MALL_BALL_SHOP_POLLY
+	
+	
+LusterMallBallShopPolly:
+	faceplayer
+	opentext
+	writetext LusterMallBallShopPollyText
+	waitbutton
+	closetext
+	setevent EVENT_POLLY_NOT_IN_BALL_SHOP
+	clearevent EVENT_POLLY_NOT_IN_SHINY_SHARDS
+	checkcode VAR_FACING
+	if_equal RIGHT, .YouAreFacingRight
+	applymovement LUSTER_MALL_BALL_SHOP_POLLY, Movement_LusterMallBallShopPolly1
+	playsound SFX_EXIT_BUILDING
+	disappear LUSTER_MALL_BALL_SHOP_POLLY
+	end
+.YouAreFacingRight
+	applymovement LUSTER_MALL_BALL_SHOP_POLLY, Movement_LusterMallBallShopPolly2
+	playsound SFX_EXIT_BUILDING
+	disappear LUSTER_MALL_BALL_SHOP_POLLY
+	end
+	
+Movement_LusterMallBallShopPolly1:
+	step_left
+	step_down
+	step_down
+	step_down
+	step_down
+	step_end
+	
+Movement_LusterMallBallShopPolly2:
+	step_down
+	step_left
+	step_down
+	step_down
+	step_down
+	step_end
+	
+LusterMallBallShopPollyText:
+	text "You again?"
+	
+	para "Can't you, like,"
+	line "take a hint?"
+	
+	para "I'm not going to"
+	line "battle you right"
+	cont "now!"
+	
+	para "Ugh…"
+	
+	para "This is totally"
+	line "stressing me out!"
+	
+	para "I wanna look at"
+	line "something pretty…"
+	done
 	
 LusterMallBallShop_NPC1:
 	jumptextfaceplayer LusterMallBallShop_NPC1Text

@@ -22,28 +22,81 @@ LusterMallElectronicsShop_MapScriptHeader:
 	bg_event  1,  7, SIGNPOST_READ, LusterMallElectronicsShop_N64
 	bg_event  2,  7, SIGNPOST_READ, LusterMallElectronicsShop_N64
 
-	db 9 ; object events
+	db 8 ; object events
 	object_event  2,  5, SPRITE_SNES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_Snes, -1
-	object_event  2,  5, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_Snes, -1
 	object_event  1,  5, SPRITE_SNES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_Snes, -1
-	object_event  1,  5, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_Snes, -1
 	person_event SPRITE_CHILD,  6,  1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC1, -1
 	person_event SPRITE_SUPER_NERD,  5,  0, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC2, -1
 	person_event SPRITE_CUTE_GIRL,  2,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC3, -1
 	object_event  9,  4, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_ELECTRONICS, MART_LUSTER_MALL_ELECTRONICS_TM, -1
 	object_event  9,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_TM, MART_LUSTER_MALL_ELECTRONICS, -1
+	person_event SPRITE_POLLY,  6,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShopPolly, EVENT_POLLY_NOT_IN_ELECTRONICS
 
 	const_def 1 ; object constants
 	const LUSTER_MALL_ELECTRONICS_SNES1
 	const LUSTER_MALL_ELECTRONICS_SNES2
-	const LUSTER_MALL_ELECTRONICS_SNES3
-	const LUSTER_MALL_ELECTRONICS_SNES4
 	const LUSTER_MALL_ELECTRONICS_NPC1
 	const LUSTER_MALL_ELECTRONICS_NPC2
 	const LUSTER_MALL_ELECTRONICS_NPC3
 	const LUSTER_MALL_ELECTRONICS_CLERK
 	const LUSTER_MALL_ELECTRONICS_CLERK2
+	const LUSTER_MALL_ELECTRONICS_POLLY
 	
+	
+LusterMallElectronicsShopPolly:
+	faceplayer
+	opentext
+	writetext LusterMallElectronicsShopPollyText
+	waitbutton
+	closetext
+	setevent EVENT_POLLY_NOT_IN_ELECTRONICS
+	clearevent EVENT_POLLY_NOT_IN_BALL_SHOP
+	checkcode VAR_FACING
+	if_equal RIGHT, .YouAreFacingRight
+	applymovement LUSTER_MALL_ELECTRONICS_POLLY, Movement_LusterMallElectronicsShopPolly1
+	playsound SFX_EXIT_BUILDING
+	disappear LUSTER_MALL_ELECTRONICS_POLLY
+	end
+.YouAreFacingRight
+	applymovement LUSTER_MALL_ELECTRONICS_POLLY, Movement_LusterMallElectronicsShopPolly2
+	playsound SFX_EXIT_BUILDING
+	disappear LUSTER_MALL_ELECTRONICS_POLLY
+	end
+	
+Movement_LusterMallElectronicsShopPolly1:
+	step_left
+	step_left
+	step_down
+	step_end
+
+Movement_LusterMallElectronicsShopPolly2:
+	step_down
+	step_left
+	step_left
+	turn_step_down
+	step_end
+	
+LusterMallElectronicsShopPollyText:
+	text "Ugh…"
+	
+	para "Like, not now!"
+	
+	para "They don't have"
+	line "the phone I want!"
+	
+	para "What?"
+	
+	para "No I won't battle"
+	line "you right now!"
+	
+	para "Leave me alone you"
+	line "little creep!"
+	
+	para "I'm going to get"
+	line "some cute #-"
+	cont "BALLS to match"
+	cont "my cute #MON."
+	done
 	
 LusterMallElectronicsShop_NPC1:
 	jumptextfaceplayer LusterMallElectronicsShop_NPC1Text

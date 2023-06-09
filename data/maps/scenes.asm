@@ -106,4 +106,5 @@ MapTriggers::
 	scene_var DUSK_TURNPIKE,					 	  wDuskTurnpikeTrigger
 	scene_var ROUTE_20_TUNNEL,						  wRoute20TunnelTrigger
 	scene_var STARGLOW_CAVERN_DEPTHS,				  wStarglowCavernDepthsTrigger
+	scene_var LUSTER_GYM,							  wLusterGymTrigger
 	db -1

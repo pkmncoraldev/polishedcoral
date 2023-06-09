@@ -1048,8 +1048,9 @@ wLusterSkyscraperPorygonRoomTrigger:: ds 1
 wDuskTurnpikeTrigger:: ds 1
 wRoute20TunnelTrigger:: ds 1
 wStarglowCavernDepthsTrigger:: ds 1
+wLusterGymTrigger:: ds 1
 
-ds 13
+ds 12
 
 ; fight counts
 wJackFightCount::    ds 1

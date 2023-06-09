@@ -9,13 +9,14 @@ LusterMallCoffeeShop_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 5 ; bg events
 	bg_event  3,  1, SIGNPOST_READ, LusterMallCoffeeShop_Koffing
 	bg_event  4,  1, SIGNPOST_READ, LusterMallCoffeeShop_Koffing
 	bg_event  5,  1, SIGNPOST_READ, LusterMallCoffeeShop_Koffing
 	bg_event  7,  1, SIGNPOST_READ, LusterMallCoffeeShop_Picture
+	bg_event  8,  5, SIGNPOST_LEFT, LusterMallCoffeeShop_NPC2
 
-	db 9 ; object events
+	db 10 ; object events
 	object_event  4,  1, SPRITE_N64, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	object_event  3,  1, SPRITE_KOFFING_BEAN, SPRITEMOVEDATA_TOP_HALF, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	object_event  5,  1, SPRITE_KOFFING_BEAN, SPRITEMOVEDATA_BOTTOM_HALF, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
@@ -25,6 +26,7 @@ LusterMallCoffeeShop_MapScriptHeader:
 	person_event SPRITE_ARTIST,  5,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterMallCoffeeShop_NPC2, -1
 	person_event SPRITE_POKEFAN_M,  6,  2, SPRITEMOVEDATA_STANDING_UP, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMallCoffeeShop_NPC3, -1
 	person_event SPRITE_BOOK_PAPER_POKEDEX,  5,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LusterMallCoffeeShop_Paper, -1
+	person_event SPRITE_POLLY,  3,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMallCoffeeShopPolly, EVENT_POLLY_NOT_IN_KOFFING_BEAN
 
 	const_def 1 ; object constants
 	const LUSTER_MALL_COFFEE_SHOP_SIGN_1
@@ -36,6 +38,72 @@ LusterMallCoffeeShop_MapScriptHeader:
 	const LUSTER_MALL_COFFEE_SHOP_NPC2
 	const LUSTER_MALL_COFFEE_SHOP_NPC3
 	const LUSTER_MALL_COFFEE_SHOP_PAPER
+	const LUSTER_MALL_COFFEE_SHOP_POLLY
+	
+LusterMallCoffeeShopPolly:
+	faceplayer
+	opentext
+	writetext LusterMallCoffeeShopPollyText
+	waitbutton
+	closetext
+	setevent EVENT_POLLY_NOT_IN_KOFFING_BEAN
+	domaptrigger LUSTER_GYM, $1
+	checkcode VAR_FACING
+	if_equal UP, .YouAreFacingUp
+	applymovement LUSTER_MALL_COFFEE_SHOP_POLLY, Movement_LusterMallCoffeeShopPolly1
+	playsound SFX_EXIT_BUILDING
+	disappear LUSTER_MALL_COFFEE_SHOP_POLLY
+	end
+.YouAreFacingUp
+	applymovement LUSTER_MALL_COFFEE_SHOP_POLLY, Movement_LusterMallCoffeeShopPolly2
+	playsound SFX_EXIT_BUILDING
+	disappear LUSTER_MALL_COFFEE_SHOP_POLLY
+	end
+	
+LusterMallCoffeeShopPollyText:
+	text "Yeah, I figured"
+	line "you'd follow me"
+	cont "again."
+	
+	para "You won't even let"
+	line "me eat in peace."
+	
+	para "Fine!"
+	line "You win."
+	
+	para "I'll battle you…"
+	
+	para "They always make"
+	line "me battle the GYM"
+	cont "challengers"
+	cont "anyway…"
+	
+	para "Sigh…"
+	
+	para "Come to the GYM"
+	line "and let's get this"
+	cont "over with…"
+	done
+	
+Movement_LusterMallCoffeeShopPolly1:
+	step_down
+	step_left
+	step_left
+	step_down
+	step_down
+	step_down
+	step_end
+	
+Movement_LusterMallCoffeeShopPolly2:
+	step_up
+	step_left
+	step_left
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_end
 	
 	
 LusterMallCoffeeShop_Cook:

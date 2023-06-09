@@ -22,11 +22,75 @@ LusterMallStoneShop_MapScriptHeader:
 	signpost  1,  3, SIGNPOST_JUMPTEXT, LusterMallStoneShopPosterText
 	signpost  1,  4, SIGNPOST_JUMPTEXT, LusterMallStoneShopPosterText
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event  6,  2, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STONE, MART_LUSTER_MALL_STONE, -1
 	person_event SPRITE_FAT_GUY,  4,  1, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallStoneShop_NPC1, -1
 	person_event SPRITE_POKEFAN_F,  5,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMallStoneShop_NPC2, -1
+	person_event SPRITE_POLLY,  5,  3, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMallStoneShopPolly, EVENT_POLLY_NOT_IN_SHINY_SHARDS
 
+	
+	const_def 1 ; object constants
+	const LUSTER_MALL_STONE_SHOP_CLERK
+	const LUSTER_MALL_STONE_SHOP_NPC1
+	const LUSTER_MALL_STONE_SHOP_NPC2
+	const LUSTER_MALL_STONE_SHOP_POLLY
+	
+LusterMallStoneShopPolly:
+	faceplayer
+	opentext
+	writetext LusterMallStoneShopPollyText
+	waitbutton
+	closetext
+	setevent EVENT_POLLY_NOT_IN_SHINY_SHARDS
+	clearevent EVENT_POLLY_NOT_IN_KOFFING_BEAN
+	checkcode VAR_FACING
+	if_equal LEFT, .YouAreFacingLeft
+	applymovement LUSTER_MALL_STONE_SHOP_POLLY, Movement_LusterMallStoneShopPolly1
+	playsound SFX_EXIT_BUILDING
+	disappear LUSTER_MALL_STONE_SHOP_POLLY
+	end
+.YouAreFacingLeft
+	applymovement LUSTER_MALL_STONE_SHOP_POLLY, Movement_LusterMallStoneShopPolly2
+	playsound SFX_EXIT_BUILDING
+	disappear LUSTER_MALL_STONE_SHOP_POLLY
+	end
+	
+LusterMallStoneShopPollyText:
+	text "Oh it's you…"
+	
+	para "Nope!"
+	
+	para "Still not gonna"
+	line "battle you!"
+	
+	para "But look at how"
+	line "beautiful all this"
+	cont "jewlery is!"
+	
+	para "It's, like, totally"
+	line "making my mouth"
+	cont "water…"
+	
+	para "…"
+	
+	para "…and my stomach"
+	line "grumble…"
+	
+	para "Maybe I'm just"
+	line "hungry!"
+	done
+	
+Movement_LusterMallStoneShopPolly1:
+	step_right
+	step_down
+	step_down
+	step_end
+	
+Movement_LusterMallStoneShopPolly2:
+	step_down
+	step_right
+	step_down
+	step_end
 	
 LusterMallStoneShop_NPC1:
 	jumptextfaceplayer LusterMallStoneShop_NPC1Text

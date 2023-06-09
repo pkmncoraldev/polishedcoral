@@ -631,11 +631,11 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jp .slow
 
 .conveyorup
-;	call SetConveyorState
 	ld a, [wMapMusic]
 	cp MUSIC_LUSTER_CITY
 	jr nz, .conveyorup_notinmall
 	
+	call SetConveyorState
 	eventflagset EVENT_ON_ESCALATOR
 	
 	ld a, [wWalkingDirection]
@@ -663,11 +663,11 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret
 
 .conveyordown
-;	call SetConveyorState
 	ld a, [wMapMusic]
 	cp MUSIC_LUSTER_CITY
 	jr nz, .conveyordown_notinmall
 	
+	call SetConveyorState
 	eventflagset EVENT_ON_ESCALATOR
 	
 	ld a, [wWalkingDirection]

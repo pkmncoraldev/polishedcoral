@@ -53,7 +53,7 @@ HuntersThicketLedian:
 	end
 
 HuntersThicketLedianText:
-	text "LEDEEEE!"
+	text "LEDIIIII!"
 	done
 
 HuntersThicketLedianTextGone:

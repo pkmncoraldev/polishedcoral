@@ -3,7 +3,7 @@ BossTrainers:
 	db RODNEY
 	db WENDY
 	db CHARLIE
-	db CHUCK
+	db POLLY
 	db JASMINE
 	db PRYCE
 	db CLAIR

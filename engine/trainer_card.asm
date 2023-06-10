@@ -714,8 +714,8 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	eventflagcheck EVENT_MET_LEADER6
 	jp nz, .leader6
 .return_3
-	eventflagcheck EVENT_MET_LEADER5
-	jp nz, .leader5
+	eventflagcheck EVENT_MET_POLLY
+	jp nz, .polly
 .return_4
 	eventflagcheck EVENT_MET_CHARLIE
 	jp nz, .charlie
@@ -757,7 +757,7 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	call TrainerCardSetup_PlaceTilemapString
 	jp .return_3
 	
-.leader5
+.polly
 	hlcoord 3, $e
 	ld de, .Leader51Tilemap
 	call TrainerCardSetup_PlaceTilemapString

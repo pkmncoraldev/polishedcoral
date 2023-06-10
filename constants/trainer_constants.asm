@@ -35,7 +35,7 @@ PLAYER_F EQU __enum__
 
 	trainerclass CHARLIE
 
-	trainerclass CHUCK
+	trainerclass POLLY
 
 	trainerclass JASMINE
 

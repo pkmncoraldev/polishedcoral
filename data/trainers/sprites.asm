@@ -10,7 +10,7 @@ BTTrainerClassSprites:
 	db SPRITE_RODNEY        ; RODNEY
 	db SPRITE_WENDY      	; WENDY
 	db SPRITE_CHARLIE       ; CHARLIE
-	db SPRITE_GOLD          ; CHUCK
+	db SPRITE_POLLY         ; POLLY
 	db SPRITE_GOLD      	; JASMINE
 	db SPRITE_GOLD          ; PRYCE
 	db SPRITE_GOLD          ; CLAIR

@@ -8,16 +8,17 @@ HuntersThicket_MapScriptHeader:
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event 27, 10, SIGNPOST_ITEM + SUN_STONE, EVENT_HUNTERS_THICKET_HIDDEN_SUN_STONE
+	bg_event 27, 18, SIGNPOST_ITEM + SUN_STONE, EVENT_HUNTERS_THICKET_HIDDEN_SUN_STONE
 
-	db 7 ; object events
-	itemball_event  3, 10, CALCIUM, 1, EVENT_HUNTERS_THICKET_BALL_1
-	itemball_event 16, 19, REPEL, 1, EVENT_HUNTERS_THICKET_BALL_2
-	itemball_event 12, 11, X_SPEED, 1, EVENT_HUNTERS_THICKET_BALL_3
-	person_event SPRITE_COOLTRAINER_F, 19, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_1, -1
-	person_event SPRITE_BUG_CATCHER, 6, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_2, -1
-	person_event SPRITE_PICNICKER, 9, 13, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_3, -1
-	fruittree_event  6,  4, FRUITTREE_HUNTERS_THICKET, CHESTO_BERRY
+	db 8 ; object events
+	itemball_event  3, 18, CALCIUM, 1, EVENT_HUNTERS_THICKET_BALL_1
+	itemball_event 16, 27, REPEL, 1, EVENT_HUNTERS_THICKET_BALL_2
+	itemball_event 12, 19, X_SPEED, 1, EVENT_HUNTERS_THICKET_BALL_3
+	person_event SPRITE_COOLTRAINER_F, 27, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_1, -1
+	person_event SPRITE_BUG_CATCHER, 14, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_2, -1
+	person_event SPRITE_PICNICKER, 17, 13, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_3, -1
+	object_event  8,  3, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, LEDIAN, -1, -1, (1 << 3) | PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, HuntersThicketLedian, EVENT_HUNTERS_THICKET_LEDIAN_GONE
+	fruittree_event  6, 12, FRUITTREE_HUNTERS_THICKET, CHESTO_BERRY
 
 	const_def 1 ; object constants
 	const HUNTERS_THICKET_POKE_BALL_1
@@ -26,6 +27,39 @@ HuntersThicket_MapScriptHeader:
 	const HUNTERS_THICKET_TRAINER_1
 	const HUNTERS_THICKET_TRAINER_2
 	const HUNTERS_THICKET_TRAINER_3
+	const HUNTERS_THICKET_LEDIAN
+
+HuntersThicketLedian:
+	opentext
+	writetext HuntersThicketLedianText
+	cry LEDIAN
+	waitbutton
+	closetext
+	waitsfx
+	loadwildmon LEDIAN, 19
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+	startbattle
+	disappear HUNTERS_THICKET_LEDIAN
+	reloadmapafterbattle
+	setevent EVENT_HUNTERS_THICKET_LEDIAN_GONE
+	checkcode VAR_MONJUSTCAUGHT
+	if_equal LEDIAN, .CaughtLedian
+	opentext
+	writetext HuntersThicketLedianTextGone
+	waitbutton
+	closetext
+.CaughtLedian
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	end
+
+HuntersThicketLedianText:
+	text "LEDEEEE!"
+	done
+
+HuntersThicketLedianTextGone:
+	text "LEDIAN flew off"
+	line "into the woods!"
+	done
 
 TrainerHunters_1:
 	generictrainer COOLTRAINERF, SALLY, EVENT_BEAT_HUNTERS_TRAINER_1, .SeenText, .BeatenText

@@ -749,27 +749,26 @@ BattleCommand_checkobedience: ; 343db
 	; The maximum obedience level is constrained by owned badges:
 	ld hl, wOnwaBadges
 
-	; risingbadge
 	bit EIGHTHBADGE, [hl]
 	ld a, MAX_LEVEL + 1
 	jr nz, .getlevel
 
-	; mineralbadge
 	bit FIFTHBADGE, [hl]
 	ld a, 70
 	jr nz, .getlevel
 
-	; fogbadge
 	bit FOURTHBADGE, [hl]
-	ld a, 50
+	ld a, 40
+	jr nz, .getlevel
+	
+	bit THIRDBADGE, [hl]
+	ld a, 40
 	jr nz, .getlevel
 
-	; hivebadge
 	bit SECONDBADGE, [hl]
 	ld a, 30
 	jr nz, .getlevel
 
-	; zephyrbadge
 	bit FIRSTBADGE, [hl]
 	ld a, 20
 	jr nz, .getlevel

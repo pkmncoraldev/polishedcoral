@@ -12,7 +12,7 @@ TrainerGroups: ; 0x39999
 	dba RodneyGroup
 	dba WendyGroup
 	dba CharlieGroup
-	dba ChuckGroup
+	dba PollyGroup
 	dba JasmineGroup
 	dba PryceGroup
 	dba ClairGroup

@@ -667,10 +667,14 @@ TrySurfOW:: ; c9e7
 .skip_lava
 	ld de, ENGINE_GOT_SURF
 	call CheckEngineFlag
-	jr c, .quit
+	jp c, .quit
 
 	ld d, SURF
 	call CheckPartyCanLearnMove
+	jr c, .quit
+	
+	ld de, ENGINE_FIFTHBADGE
+	call CheckEngineFlag
 	jr c, .quit
 
 	ld hl, wOWState
@@ -855,9 +859,9 @@ FlyFunction: ; ca3b
 
 .TryFly: ; ca52
 ; Fly
-	ld de, ENGINE_THIRDBADGE		;debug
-	call CheckBadge					;debug
-	jr c, .nobadge					;debug
+	ld de, ENGINE_THIRDBADGE
+	call CheckBadge
+	jr c, .nobadge
 	ld a, [wTileset]
 	cp TILESET_SPOOKY
 	jr z, .outdoors

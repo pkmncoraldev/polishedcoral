@@ -257,7 +257,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw WyrdeerEvosAttacks
 	dw ClodsireEvosAttacks
 	dw FarigirafEvosAttacks
-	dw -1
 	dw EggEvosAttacks
 	
 	dw PidgeyEvosAttacks

@@ -270,7 +270,6 @@ CryHeaders::
 	mon_cry WYRDEER,    WyrdeerDEDData		; Wyrdeer
 	mon_cry CRY_WOOPER,     -$0c6,  $140 	; Clodsire - PLACEHOLDER
 	mon_cry CRY_PORYGON2,    $041,  $200	; Farigiraf - PLACEHOLDER
-	mon_cry CRY_NIDORAN_M,      0,     0 	; 254
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg
 	
 CryHeaders2::
@@ -530,5 +529,4 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Wyrdeer - PLACEHOLDER
 	mon_cry CRY_WOOPER,     -$0c6,  $140 	; Clodsire - PLACEHOLDER
 	mon_cry CRY_PORYGON2,    $041,  $200	; Farigiraf - PLACEHOLDER
-	mon_cry CRY_NIDORAN_M,      0,     0 	; 254
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg

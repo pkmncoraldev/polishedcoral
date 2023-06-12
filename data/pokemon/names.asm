@@ -253,5 +253,4 @@ PokemonNames::
 	db "WYRDEER@@@"
 	db "CLODSIRE@@"
 	db "FARIGIRAF@"
-	db "ERROR!!@@@"
 	db "EGG@@@@@@@"

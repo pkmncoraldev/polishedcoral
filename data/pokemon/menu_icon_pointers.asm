@@ -255,4 +255,3 @@ IconPointers:
 	dw ClodsireIcon
 	dw FarigirafIcon
 	dw EggIcon
-	dw EggIcon

@@ -321,7 +321,6 @@ INCLUDE "data/pokemon/base_stats/farigiraf.asm"
 
 INCLUDE "data/pokemon/base_stats/egg.asm"
 
-INCLUDE "data/pokemon/base_stats/egg.asm"
 
 INCLUDE "data/pokemon/base_stats/pidgey_rg.asm"
 INCLUDE "data/pokemon/base_stats/rattata_rg.asm"

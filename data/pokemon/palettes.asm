@@ -514,8 +514,6 @@ ClefairyPalette:	INCLUDE "gfx/pokemon/clefairy/normal.pal"
 	INCLUDE "gfx/pokemon/clodsire/shiny.pal"
 	INCLUDE "gfx/pokemon/farigiraf/normal.pal"
 	INCLUDE "gfx/pokemon/farigiraf/shiny.pal"
-	INCLUDE "gfx/pokemon/egg/normal.pal"	;empty
-	INCLUDE "gfx/pokemon/egg/shiny.pal"		;empty
 	INCLUDE "gfx/pokemon/egg/normal.pal"
 	INCLUDE "gfx/pokemon/egg/shiny.pal"
 

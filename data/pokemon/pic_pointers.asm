@@ -507,6 +507,4 @@ PicPointers::
 	dba ClodsireBackpic
 	dba FarigirafFrontpic
 	dba FarigirafBackpic
-	dba BulbasaurFrontpic
-	dba BulbasaurBackpic
 	dba EggPic

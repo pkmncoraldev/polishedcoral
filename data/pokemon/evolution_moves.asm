@@ -253,7 +253,6 @@ EvolutionMoves::
 	db PSYSHOCK                             ; WYRDEER
 	db AMNESIA                              ; CLODSIRE
 	db NO_MOVE                              ; FARIGIRAF
-	db NO_MOVE	                            ; UNUSED_1
 	db NO_MOVE                              ; EGG
 	
 	db NO_MOVE                              ; PIDGEY_RG

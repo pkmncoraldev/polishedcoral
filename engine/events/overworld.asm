@@ -467,7 +467,7 @@ SurfFunction: ; c909
 	dw .AlreadySurfing
 
 .TrySurf: ; c922 (3:4922)
-	ld de, ENGINE_FOURTHBADGE
+	ld de, ENGINE_FIFTHBADGE
 	call CheckBadge
 	jr c, .asm_c956
 	ld hl, wOWState

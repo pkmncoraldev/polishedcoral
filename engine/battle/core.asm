@@ -3662,7 +3662,11 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 	jr c, .cry_no_anim
 	hlcoord 12, 0
 	lb de, $0, ANIM_MON_SLOW
+	ld a, [wBattleType]
+	cp BATTLETYPE_PORYGON
+	jr nz, .skipgenwildform
 	call GenerateWildForm ; for porygon encounter
+.skipgenwildform
 	predef AnimateFrontpic
 	jr .skip_cry
 

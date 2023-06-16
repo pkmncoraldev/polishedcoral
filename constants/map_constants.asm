@@ -69,7 +69,7 @@ MAP_NONE   EQU 0
 	map_const SAILBOAT_CUTSCENE,						   7,  1 ; 11
 	map_const SUNSET_LIGHTHOUSE_BASEMENT,				   4,  4 ; 12
 	map_const SUNSET_LIGHTHOUSE_ELEVATOR,				   2,  2 ; 13
-	map_const SUNSET_LIGHTHOUSE_TOP,					   8,  3 ; 14
+	map_const SUNSET_LIGHTHOUSE_TOP,					   9,  4 ; 14
 
 	newgroup                                                     ;  3
 

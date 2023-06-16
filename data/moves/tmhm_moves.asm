@@ -40,7 +40,7 @@ TMHMMoves:
 	db SWIFT                               ; TM39
 	db FAKE_OUT                            ; TM40 (Stanley)
 	db SUBSTITUTE                          ; TM41
-	db BRICK_BREAK                         ; TM42
+	db ZAP_CANNON                          ; TM42
 	db WILD_CHARGE                         ; TM43
 	db REST                                ; TM44
 	db ATTRACT                             ; TM45
@@ -109,6 +109,6 @@ TMHMMoves:
 	db SWAGGER                             ; MT22
 	db THUNDERPUNCH                        ; MT23
 	db ICE_FANG                            ; MT24
-	db ZAP_CANNON                          ; MT25
+	db BRICK_BREAK                         ; MT25
 	db ZEN_HEADBUTT                        ; MT26
 	db 0 ; end

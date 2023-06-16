@@ -129,22 +129,6 @@ PlayerHouseDebugPoster:
 	giveitem PLUME_FOSSIL, 1
 	giveitem OLD_AMBER, 1
 	giveitem EVERSTONE, 1
-	givetmhm TM_FAKE_OUT
-	givetmhm TM_METAL_CLAW
-	givetmhm TM_BULLDOZE
-	givetmhm TM_RAIN_DANCE
-	givetmhm TM_CHARM
-	givetmhm TM_FIRE_PUNCH
-	givetmhm TM_THUNDERPUNCH
-	givetmhm TM_ICE_PUNCH
-	givetmhm TM_ROOST
-	givetmhm TM_HAIL
-	givetmhm TM_DIG
-	givetmhm TM_SUNNY_DAY
-	givetmhm TM_WILL_O_WISP
-	givetmhm TM_CURSE
-	givetmhm TM_WORK_UP_GROWTH
-	givetmhm TM_STEEL_WING
 .keyitems
 	writetext PlayerHouseDebugText2
 	yesorno
@@ -212,11 +196,40 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_GOT_FLY
 	setflag ENGINE_GOT_ROCK_CLIMB
 	setflag ENGINE_GOT_SURF
-	givetmhm HM_ROCK_SMASH
+	givetmhm TM_CURSE
+	givetmhm TM_HAIL
+	givetmhm TM_ZAP_CANNON
+	givetmhm TM_CHARM
+	givetmhm TM_SUNNY_DAY
+	givetmhm TM_BLIZZARD
+	givetmhm TM_HYPER_BEAM
+	givetmhm TM_LIGHT_SCREEN
+	givetmhm TM_PROTECT
+	givetmhm TM_RAIN_DANCE
+	givetmhm TM_SAFEGUARD
+	givetmhm TM_BULLDOZE
+	givetmhm TM_SOLAR_BEAM
+	givetmhm TM_THUNDER
+	givetmhm TM_DIG
+	givetmhm TM_METAL_CLAW
+	givetmhm TM_REFLECT
+	givetmhm TM_FIRE_BLAST
+	givetmhm TM_FAKE_OUT
+	givetmhm TM_SUBSTITUTE
+	givetmhm TM_STEEL_WING
+	givetmhm TM_ROOST
+	givetmhm TM_WILL_O_WISP
+	givetmhm TM_WORK_UP_GROWTH
+	givetmhm TM_GIGA_IMPACT
+	givetmhm TM_FLASH
+	givetmhm TM_THUNDERPUNCH
+	givetmhm TM_FIRE_PUNCH
+	givetmhm TM_ICE_PUNCH
 	givetmhm HM_CUT
 	givetmhm HM_FLY
-	givetmhm HM_ROCK_CLIMB
 	givetmhm HM_SURF
+	givetmhm HM_ROCK_SMASH
+	givetmhm HM_ROCK_CLIMB
 	setflag ENGINE_FLYPOINT_HOME
 	setflag ENGINE_FLYPOINT_SUNSET
 	setflag ENGINE_FLYPOINT_DAYBREAK
@@ -262,7 +275,7 @@ PlayerHouseDebugText3:
 	done
 	
 PlayerHouseDebugText4:
-	text "HMs?"
+	text "TMs and HMs?"
 	done
 	
 PlayerHouseDebugText5:

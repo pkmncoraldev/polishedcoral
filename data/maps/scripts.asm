@@ -122,6 +122,9 @@ INCLUDE "maps/PlayerHouse2F.asm"
 INCLUDE "maps/SunsetGengarHouse.asm"
 INCLUDE "maps/SunsetLegendsHouse.asm"
 INCLUDE "maps/SunsetCafe.asm"
+INCLUDE "maps/SunsetLighthouseBasement.asm"
+INCLUDE "maps/SunsetLighthouseElevator.asm"
+INCLUDE "maps/SunsetLighthouseTop.asm"
 
 
 SECTION "Daybreak Village Scripts", ROMX

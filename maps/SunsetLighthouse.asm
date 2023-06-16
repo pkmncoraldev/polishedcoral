@@ -4,12 +4,13 @@ SunsetLighthouse_MapScriptHeader:
 	scene_script SunsetLighthouseTrigger0
 	scene_script SunsetLighthouseTrigger1
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, SunsetLighthouseCallback
 
 	db 3 ; warp events
 	warp_event 5, 9, SUNSET_CAPE, 1
 	warp_event 4, 9, SUNSET_CAPE, 1
-	warp_event  5,  2, DAYBREAK_GROTTO_3, 8
+	warp_event  5,  2, SUNSET_LIGHTHOUSE_ELEVATOR, 1
 
 	db 0 ; coord events
 
@@ -37,6 +38,13 @@ SunsetLighthouseTrigger0:
 
 SunsetLighthouseTrigger1:
 	end
+
+SunsetLighthouseCallback:
+	checkevent EVENT_SUNSET_LIGHTHOUSE_UNLOCKED
+	iffalse .end
+	changeblock $4, $2, $47
+.end
+	return
 
 DidntChooseStarterScript:
 	writetext DidntChooseStarterText

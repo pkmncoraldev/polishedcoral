@@ -439,6 +439,9 @@ ENDM
 	
 	map_attributes SunsetPokeCenter, SUNSET_POKECENTER, $0, 0
 	map_attributes SunsetLighthouse, SUNSET_LIGHTHOUSE, $0, 0
+	map_attributes SunsetLighthouseBasement, SUNSET_LIGHTHOUSE_BASEMENT, $0, 0
+	map_attributes SunsetLighthouseElevator, SUNSET_LIGHTHOUSE_ELEVATOR, $0, 0
+	map_attributes SunsetLighthouseTop, SUNSET_LIGHTHOUSE_TOP, $0, 0
 	map_attributes PlayerHouse1F, PLAYER_HOUSE_1F, $0, 0
 	map_attributes PlayerHouse2F, PLAYER_HOUSE_2F, $0, 0
 	map_attributes SunsetWaterGrassHouse, SUNSET_WATER_GRASS_HOUSE, $0, 0

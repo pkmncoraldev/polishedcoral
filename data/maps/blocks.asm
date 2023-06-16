@@ -740,3 +740,12 @@ SeasideCaveB1F_BlockData:
 StarglowCavernDepths_BlockData:
 	INCBIN "maps/StarglowCavernDepths.ablk.lz"
 	
+SunsetLighthouseBasement_BlockData:
+	INCBIN "maps/SunsetLighthouseBasement.ablk.lz"
+	
+SunsetLighthouseElevator_BlockData:
+	INCBIN "maps/SunsetLighthouseElevator.ablk.lz"
+	
+SunsetLighthouseTop_BlockData:
+	INCBIN "maps/SunsetLighthouseTop.ablk.lz"
+	

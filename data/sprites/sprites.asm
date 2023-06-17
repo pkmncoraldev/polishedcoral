@@ -228,3 +228,4 @@ SpriteHeaders:
 	overworld_sprite LeilaniBedSpriteGFX, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite TrunksWaterSpriteGFX, STANDING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite PatchesFallSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
+	overworld_sprite PorygonScreenGFX, STANDING_SPRITE, PAL_OW_SILVER

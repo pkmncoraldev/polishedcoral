@@ -214,6 +214,7 @@ FrankieSpriteGFX::             INCBIN "gfx/sprites/frankie.2bpp"
 SkaterSpriteGFX::              INCBIN "gfx/sprites/skater.2bpp"
 SpaWorkerSpriteGFX::           INCBIN "gfx/sprites/spa_worker.2bpp"
 SpaTrainerSpriteGFX::          INCBIN "gfx/sprites/spa_trainer.2bpp"
+PorygonScreenGFX::			   INCBIN "gfx/sprites/porygon_screen.2bpp"
 
 
 SECTION "Overworld Sprites 8", ROMX

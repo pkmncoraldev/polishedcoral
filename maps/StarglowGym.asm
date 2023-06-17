@@ -96,25 +96,25 @@ StarglowGymRodneyRematch:
 	ifequal 5, .fivebadges
 	ifequal 4, .fourbadges
 	ifequal 3, .threebadges
-	loadtrainer RODNEY, 2
+	loadtrainer RODNEY, 1
 	jump .cont
 .threebadges
-	loadtrainer RODNEY, 3
+	loadtrainer RODNEY, 2
 	jump .cont
 .fourbadges
-	loadtrainer RODNEY, 4
+	loadtrainer RODNEY, 3
 	jump .cont
 .fivebadges
-	loadtrainer RODNEY, 5
+	loadtrainer RODNEY, 4
 	jump .cont
 .sixbadges
-	loadtrainer RODNEY, 6
+	loadtrainer RODNEY, 5
 	jump .cont
 .sevenbadges
-	loadtrainer RODNEY, 7
+	loadtrainer RODNEY, 6
 	jump .cont
 .eightbadges
-	loadtrainer RODNEY, 8
+	loadtrainer RODNEY, 7
 .cont
 	startbattle
 	reloadmapafterbattle

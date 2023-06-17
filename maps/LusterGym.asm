@@ -324,8 +324,10 @@ LusterGymTrainer1Rematch:
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
-;	ifequal 6, .sixbadges
-;.sixbadges
+	ifequal 6, .sixbadges
+	loadtrainer SCHOOLBOY, TIMMY_5
+	jump .cont
+.sixbadges
 	loadtrainer SCHOOLBOY, TIMMY_6
 	jump .cont
 .sevenbadges
@@ -375,8 +377,10 @@ LusterGymTrainer2Rematch:
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
-;	ifequal 6, .sixbadges
-;.sixbadges
+	ifequal 6, .sixbadges
+	loadtrainer SCHOOLBOY, TIMMY_5
+	jump .cont
+.sixbadges
 	loadtrainer SCHOOLBOY, TIMMY_6
 	jump .cont
 .sevenbadges
@@ -426,8 +430,10 @@ LusterGymTrainer3Rematch:
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
-;	ifequal 6, .sixbadges
-;.sixbadges
+	ifequal 6, .sixbadges
+	loadtrainer SCHOOLBOY, TIMMY_5
+	jump .cont
+.sixbadges
 	loadtrainer SCHOOLBOY, TIMMY_6
 	jump .cont
 .sevenbadges
@@ -477,8 +483,10 @@ LusterGymTrainer4Rematch:
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
-;	ifequal 6, .sixbadges
-;.sixbadges
+	ifequal 6, .sixbadges
+	loadtrainer SCHOOLBOY, TIMMY_5
+	jump .cont
+.sixbadges
 	loadtrainer SCHOOLBOY, TIMMY_6
 	jump .cont
 .sevenbadges
@@ -528,8 +536,10 @@ LusterGymTrainer5Rematch:
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
-;	ifequal 6, .sixbadges
-;.sixbadges
+	ifequal 6, .sixbadges
+	loadtrainer SCHOOLBOY, TIMMY_5
+	jump .cont
+.sixbadges
 	loadtrainer SCHOOLBOY, TIMMY_6
 	jump .cont
 .sevenbadges
@@ -579,8 +589,10 @@ LusterGymTrainer6Rematch:
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
-;	ifequal 6, .sixbadges
-;.sixbadges
+	ifequal 6, .sixbadges
+	loadtrainer SCHOOLBOY, TIMMY_5
+	jump .cont
+.sixbadges
 	loadtrainer SCHOOLBOY, TIMMY_6
 	jump .cont
 .sevenbadges

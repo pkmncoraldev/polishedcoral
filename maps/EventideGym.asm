@@ -292,22 +292,22 @@ EventideGymWendyRematch:
 	ifequal 6, .sixbadges
 	ifequal 5, .fivebadges
 	ifequal 4, .fourbadges
-	loadtrainer WENDY, 3
+	loadtrainer WENDY, 1
 	jump .cont
 .fourbadges
-	loadtrainer WENDY, 4
+	loadtrainer WENDY, 2
 	jump .cont
 .fivebadges
-	loadtrainer WENDY, 5
+	loadtrainer WENDY, 3
 	jump .cont
 .sixbadges
-	loadtrainer WENDY, 6
+	loadtrainer WENDY, 4
 	jump .cont
 .sevenbadges
-	loadtrainer WENDY, 7
+	loadtrainer WENDY, 5
 	jump .cont
 .eightbadges
-	loadtrainer WENDY, 8
+	loadtrainer WENDY, 6
 .cont
 	startbattle
 	reloadmapafterbattle

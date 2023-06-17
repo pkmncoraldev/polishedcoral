@@ -107,22 +107,22 @@ TwinkleGymCharlieRematch:
 	ifequal 6, .sixbadges
 	ifequal 5, .fivebadges
 	ifequal 4, .fourbadges
-	loadtrainer CHARLIE, 3
+	loadtrainer CHARLIE, 1
 	jump .cont
 .fourbadges
-	loadtrainer CHARLIE, 4
+	loadtrainer CHARLIE, 2
 	jump .cont
 .fivebadges
-	loadtrainer CHARLIE, 5
+	loadtrainer CHARLIE, 3
 	jump .cont
 .sixbadges
-	loadtrainer CHARLIE, 6
+	loadtrainer CHARLIE, 4
 	jump .cont
 .sevenbadges
-	loadtrainer CHARLIE, 7
+	loadtrainer CHARLIE, 5
 	jump .cont
 .eightbadges
-	loadtrainer CHARLIE, 8
+	loadtrainer CHARLIE, 6
 .cont
 	startbattle
 	reloadmapafterbattle

@@ -68,6 +68,7 @@ const_value = -1
 	const SPAWN_SHIMMER
 	const SPAWN_RADIANT
 	
+	const SPAWN_STARGLOW_CAVERN_DEPTHS
 	const SPAWN_FAKE_ROUTE_1
 	
 	const SPAWN_LASTFLYPOINT

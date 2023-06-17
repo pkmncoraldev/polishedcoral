@@ -79,6 +79,9 @@ WhiteoutHandleEvents:
 	domaptrigger ROUTE_16_NORTH, $0
 	domaptrigger DESERT_WASTELAND_1, $0
 	domaptrigger ROUTE_18, $0
+	domaptrigger LUSTER_SEWERS_B1F, $0
+	domaptrigger LUSTER_SEWERS_B2F, $0
+	domaptrigger UNDERGROUND_PASSAGE, $0
 	clearevent EVENT_ON_DODRIO_RANCH
 	clearevent EVENT_AT_AIRPORT
 	clearflag ENGINE_NEAR_CAMPFIRE

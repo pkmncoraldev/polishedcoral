@@ -246,11 +246,11 @@
 	tilecoll FLOOR, FLOOR, STAIRS, ROCK_CLIMB ; f5
 	tilecoll WALL, WALL, WALL, WALL ; f6
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; f7
-	tilecoll WALL, WALL, WALL, WALL ; f8
-	tilecoll WALL, WALL, WALL, WALL ; f9
-	tilecoll WALL, WALL, WALL, WALL ; fa
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f8
+	tilecoll LEFT_WALL, RIGHT_WALL, LEFT_WALL, RIGHT_WALL ; f9
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; fa
 	tilecoll WALL, WALL, WALL, WALL ; fb
 	tilecoll WALL, WALL, WALL, WALL ; fc
-	tilecoll WALL, WALL, WALL, WALL ; fd
+	tilecoll WATER, WATER, WATER, WATER ; fd
 	tilecoll WALL, WALL, WALL, WALL ; fe
 	tilecoll WALL, WALL, WALL, WALL ; ff

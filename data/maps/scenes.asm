@@ -107,4 +107,5 @@ MapTriggers::
 	scene_var ROUTE_20_TUNNEL,						  wRoute20TunnelTrigger
 	scene_var STARGLOW_CAVERN_DEPTHS,				  wStarglowCavernDepthsTrigger
 	scene_var LUSTER_GYM,							  wLusterGymTrigger
+	scene_var UNDERGROUND_PASSAGE,					  wUndergroundPassageTrigger
 	db -1

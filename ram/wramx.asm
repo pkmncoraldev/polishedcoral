@@ -1049,8 +1049,9 @@ wDuskTurnpikeTrigger:: ds 1
 wRoute20TunnelTrigger:: ds 1
 wStarglowCavernDepthsTrigger:: ds 1
 wLusterGymTrigger:: ds 1
+wUndergroundPassageTrigger:: ds 1
 
-ds 12
+ds 11
 
 ; fight counts
 wJackFightCount::    ds 1

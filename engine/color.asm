@@ -1096,6 +1096,9 @@ LoadMapPals::
 	jp FarCopyWRAM
 	
 .gate
+	ld a, [wMapGroup]
+	cp GROUP_FAKE_ROUTE_1
+	jr z, .fake_route_1
 	ld a, [wTimeOfDayPalFlags]
 	and $3F
 	cp 1
@@ -1108,6 +1111,11 @@ LoadMapPals::
 	ld de, wUnknOBPals
 	ld bc, 3 palettes
 	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+	
+.fake_route_1
+	ld hl, MapObjectPalsFakeRoute1
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 	
 .blue_room
@@ -1876,6 +1884,9 @@ INCLUDE "maps/palettes/obpals/moomoo.pal"
 
 MapObjectPalsDark::
 INCLUDE "maps/palettes/obpals/dark.pal"
+
+MapObjectPalsFakeRoute1::
+INCLUDE "maps/palettes/obpals/fakeroute1.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

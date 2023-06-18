@@ -22,7 +22,9 @@ FakeRoute2_MapScriptHeader:
 	signpost 11, 22, SIGNPOST_JUMPTEXT, FakeRoute1DoorSignText
 	signpost 17, 15, SIGNPOST_JUMPTEXT, FakeRoute1DoorSignText
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event 10,  9, SPRITE_POKEMANIAC, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_SILVER, PERSONTYPE_SCRIPT, 0, FakeRoute1NPCScript, -1
+
 
 
 FakeRoute1Trigger0:
@@ -55,6 +57,9 @@ FakeRoute1ChangeBlocks:
 	setevent EVENT_FAKE_ROUTE_1_CHANGE_BLOCKS
 	dotrigger $1
 	end
+	
+FakeRoute1NPCScript:
+	jumptextfaceplayer FakeRoute1SignText
 	
 FakeRoute1SignText:
 	text "ROUTE 1"

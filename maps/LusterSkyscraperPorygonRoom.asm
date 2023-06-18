@@ -230,9 +230,9 @@ PorygonRoomCheckPassword:
 	call StringCmp
 	jr z, .default
 	
-	ld hl, CorrectPorygonPassword
+	ld hl, SecretWord
 	ld de, wBackupName
-	ld c, 4	;Password Length
+	ld c, 10
 	call StringCmp
 	jr z, .correct
 	ld a, 0
@@ -261,7 +261,7 @@ DefaultPorygonPassword:
 	db "¯@@@@@@@@@@@"
 	
 CorrectPorygonPassword:
-	db "TEST@"
+	db "PORYGON@"
 	
 BackupPorygonPassword:
 	db "???@"

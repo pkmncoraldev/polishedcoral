@@ -2366,6 +2366,15 @@ SuperNerdGroup:
 	db -1 ; end
 
 ; ================
+
+	; SUPER_NERD
+	db "PEDRO@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2606,6 +2615,15 @@ JugglerGroup:
 	db -1 ; end
 
 ; ================
+
+	; JUGGLER
+	db "RYAN@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2787,7 +2805,16 @@ PsychicGroup:
 ; ================
 
 	; PSYCHIC_T
-	db "UNUSED@"
+	db "RALPH@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; PSYCHIC_T
+	db "NELSON@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -2913,7 +2940,7 @@ SwimmerMGroup:
 ; ================
 
 	; SWIMMERM
-	db "UNUSED@"
+	db "MARK@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -2928,7 +2955,7 @@ SwimmerFGroup:
 ; ================
 
 	; SWIMMERF
-	db "UNUSED@"
+	db "BECKY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3225,6 +3252,15 @@ CooltrainerMGroup:
 	db -1 ; end
 
 ; ================
+
+	; COOLTRAINERM
+	db "SHAWN@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3265,6 +3301,15 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF
 	db "MARY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; COOLTRAINERF
+	db "JANE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

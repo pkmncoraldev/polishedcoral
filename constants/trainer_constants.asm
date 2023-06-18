@@ -268,6 +268,7 @@ PLAYER_F EQU __enum__
 
 	trainerclass SUPER_NERD
 	const CHESTER
+	const PEDRO
 
 
 	trainerclass LASS
@@ -301,6 +302,7 @@ PLAYER_F EQU __enum__
 	const ERNIE
 	const WILLY
 	const QUINN
+	const RYAN
 
 
 	trainerclass SCHOOLBOY
@@ -326,6 +328,8 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass PSYCHIC_T
+	const RALPH
+	const NELSON
 
 
 	trainerclass HEX_MANIAC
@@ -352,9 +356,11 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass SWIMMERM
+	const MARK
 
 
 	trainerclass SWIMMERF
+	const BECKY
 
 
 	trainerclass BURGLAR
@@ -406,6 +412,7 @@ PLAYER_F EQU __enum__
 	const CODY
 	const SAMMY
 	const ANDY
+	const SHAWN
 
 
 	trainerclass COOLTRAINERF
@@ -413,6 +420,7 @@ PLAYER_F EQU __enum__
 	const SALLY
 	const JULES
 	const MARY
+	const JANE
 
 
 	trainerclass PROF_SPRUCE

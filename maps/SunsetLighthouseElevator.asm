@@ -31,5 +31,5 @@ SunsetLighthouseElevatorButton:
 	db 3 ; floors
 	elevfloor _B1F, 2, SUNSET_LIGHTHOUSE_BASEMENT
 	elevfloor _1F, 3, SUNSET_LIGHTHOUSE
-	elevfloor _2F, 1, SUNSET_LIGHTHOUSE_TOP
+	elevfloor _4F, 1, SUNSET_LIGHTHOUSE_TOP
 	db -1 ; end

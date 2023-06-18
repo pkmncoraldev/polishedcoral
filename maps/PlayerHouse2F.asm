@@ -222,6 +222,7 @@ PlayerHouseDebugPoster:
 	givetmhm TM_WORK_UP_GROWTH
 	givetmhm TM_GIGA_IMPACT
 	givetmhm TM_FLASH
+	givetmhm TM_ANCIENTPOWER
 	givetmhm TM_THUNDERPUNCH
 	givetmhm TM_FIRE_PUNCH
 	givetmhm TM_ICE_PUNCH

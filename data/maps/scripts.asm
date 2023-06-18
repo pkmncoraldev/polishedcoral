@@ -124,7 +124,6 @@ INCLUDE "maps/SunsetLegendsHouse.asm"
 INCLUDE "maps/SunsetCafe.asm"
 INCLUDE "maps/SunsetLighthouseBasement.asm"
 INCLUDE "maps/SunsetLighthouseElevator.asm"
-INCLUDE "maps/SunsetLighthouseTop.asm"
 
 
 SECTION "Daybreak Village Scripts", ROMX
@@ -276,6 +275,7 @@ INCLUDE "maps/NettBuildingStairwell.asm"
 INCLUDE "maps/NettBuildingOffice.asm"
 INCLUDE "maps/LusterSkyscraperPorygonRoom.asm"
 INCLUDE "maps/LusterGym.asm"
+INCLUDE "maps/SunsetLighthouseTop.asm"
 
 SECTION "Route 12 Scripts", ROMX
 INCLUDE "maps/Route12.asm"

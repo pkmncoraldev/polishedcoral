@@ -10,7 +10,7 @@
 	dn 7, 7 ; frontpic dimensions
 	db KEEN_EYE ; ability 1
 	db TANGLED_FEET ; ability 2
-	db NO_GUARD ; hidden ability
+	db BIG_PECKS ; hidden ability
 	db MEDIUM_SLOW ; growth rate
 	dn AVIAN, AVIAN ; egg groups
 

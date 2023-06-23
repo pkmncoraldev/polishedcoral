@@ -1053,8 +1053,9 @@ wUndergroundPassageTrigger:: ds 1
 
 ds 11
 
+wAmpharosFood:: ds 1
 ; fight counts
-wJackFightCount::    ds 1
+;wJackFightCount::    ds 1
 wBeverlyFightCount:: ds 1 ; unused
 wHueyFightCount::    ds 1
 wGavenFightCount::   ds 1

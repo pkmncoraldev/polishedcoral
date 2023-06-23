@@ -1866,6 +1866,7 @@ Special_ChooseItem::
 	call LoadStandardMenuDataHeader
 	call DepositSellInitPackBuffers
 	call .PickItem
+	call SFXDelay2
 	farjp ReturnToMapWithSpeechTextbox
 
 .PickItem:

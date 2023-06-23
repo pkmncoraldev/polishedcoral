@@ -129,6 +129,17 @@ PlayerHouseDebugPoster:
 	giveitem PLUME_FOSSIL, 1
 	giveitem OLD_AMBER, 1
 	giveitem EVERSTONE, 1
+	giveitem ORAN_BERRY, 99
+	giveitem CHERI_BERRY, 99
+	giveitem CHESTO_BERRY, 99
+	giveitem PECHA_BERRY, 99
+	giveitem RAWST_BERRY, 99
+	giveitem ASPEAR_BERRY, 99
+	giveitem LEPPA_BERRY, 99
+	giveitem PERSIM_BERRY, 99
+	giveitem LUM_BERRY, 99
+	giveitem SITRUS_BERRY, 99
+	giveitem FIGY_BERRY, 99
 .keyitems
 	writetext PlayerHouseDebugText2
 	yesorno

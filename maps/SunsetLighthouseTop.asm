@@ -10,10 +10,10 @@ SunsetLighthouseTop_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 25 ; bg events
-	signpost  2,  6, SIGNPOST_JUMPTEXT, SunsetLighthouseTopFoodText
+	db 27 ; bg events
+	signpost  4,  6, SIGNPOST_JUMPTEXT, SunsetLighthouseTopFoodText
 	signpost  4,  0, SIGNPOST_DOWN, SunsetLighthouseTopTV
-	signpost  4,  1, SIGNPOST_DOWN, SunsetLighthouseTopTV
+	signpost  4,  1, SIGNPOST_JUMPTEXT, SunsetLighthouseTopFanText
 	signpost  6,  0, SIGNPOST_JUMPTEXT, SunsetLighthouseTopBedText
 	signpost  7,  0, SIGNPOST_JUMPTEXT, SunsetLighthouseTopBedText
 	signpost  0,  0, SIGNPOST_JUMPTEXT, SunsetLighthouseTopNorthText
@@ -21,7 +21,6 @@ SunsetLighthouseTop_MapScriptHeader:
 	signpost  0,  2, SIGNPOST_JUMPTEXT, SunsetLighthouseTopNorthText
 	signpost  0,  3, SIGNPOST_JUMPTEXT, SunsetLighthouseTopNorthText
 	signpost  0,  4, SIGNPOST_JUMPTEXT, SunsetLighthouseTopNorthText
-	signpost  0,  5, SIGNPOST_JUMPTEXT, SunsetLighthouseTopNorthText
 	signpost  1, -1, SIGNPOST_JUMPTEXT, SunsetLighthouseTopWestText
 	signpost  3, -1, SIGNPOST_JUMPTEXT, SunsetLighthouseTopWestText
 	signpost  5, -1, SIGNPOST_JUMPTEXT, SunsetLighthouseTopWestText
@@ -34,8 +33,11 @@ SunsetLighthouseTop_MapScriptHeader:
 	signpost  8,  7, SIGNPOST_JUMPTEXT, SunsetLighthouseTopSouthEastText
 	signpost  7,  8, SIGNPOST_JUMPTEXT, SunsetLighthouseTopSouthEastText
 	signpost  6,  8, SIGNPOST_JUMPTEXT, SunsetLighthouseTopSouthEastText
-	signpost  5,  8, SIGNPOST_JUMPTEXT, SunsetLighthouseTopSouthEastText
-	signpost  4,  8, SIGNPOST_JUMPTEXT, SunsetLighthouseTopSouthEastText
+	signpost  2,  8, SIGNPOST_JUMPTEXT, SunsetLighthouseTopSouthEastText
+	signpost  3,  7, SIGNPOST_JUMPTEXT, SunsetLighthouseTopFlowerText
+	signpost  1,  7, SIGNPOST_JUMPTEXT, SunsetLighthouseTopFridgeText
+	signpost  1,  6, SIGNPOST_JUMPTEXT, SunsetLighthouseTopStoveText
+	signpost  1,  5, SIGNPOST_JUMPTEXT, SunsetLighthouseTopSinkText
 
 	db 3 ; object events
 	object_event  3,  4, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, AMPHAROS, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, SunsetLighthouseTopAmpharos, -1
@@ -49,10 +51,99 @@ SunsetLighthouseTopAmpharos:
 	cry AMPHAROS
 	waitsfx
 	buttonsound
+	checkevent EVENT_SUNSET_LIGHTHOUSE_FED_AMPHAROS
+	iftrue .done
+	readmem wAmpharosFood
+	ifequal 0, .first
+	writetext SunsetLighthouseTopAmpharosTextSniff2
+	jump .cont
+.first
+	writetext SunsetLighthouseTopAmpharosTextSniff1
+.cont
+	yesorno
+	iffalse .no
+	special Special_ChooseItem
+	iffalse .no
+	callasm CheckItemFood
+	iffalse .not_interested
+	copybytetovar wCurItem
+	takeitem ITEM_FROM_MEM
+	writetext SunsetLighthouseTopAmpharosTextYum
+	cry AMPHAROS
+	waitsfx
+	waitbutton
+	readmem wAmpharosFood
+	addval 1
+	writemem wAmpharosFood
+	ifequal 4, .full
+	closetext
+	end
+.full
+	writetext SunsetLighthouseTopAmpharosTextFull
+	waitbutton
+	verbosegiveitem POKE_DOLL
+	closetext
+	setevent EVENT_SUNSET_LIGHTHOUSE_FED_AMPHAROS
+	end
+.done
 	writetext SunsetLighthouseTopAmpharosText2
 	waitbutton
 	closetext
 	end
+.no
+	writetext SunsetLighthouseTopAmpharosTextNo
+	waitbutton
+	closetext
+	end
+.not_interested
+	writetext SunsetLighthouseTopAmpharosTextNotInterested
+	waitbutton
+	closetext
+	end
+	
+CheckItemFood:
+	ld a, [wCurItem]
+	ld [wd265], a
+	call GetItemName
+	ld hl, wStringBuffer1
+	ld de, wMonOrItemNameBuffer
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	ld a, [wCurItem]
+	ld hl, TastyFoodItems
+	ld de, 1
+	call IsInArray
+	jr nc, .not_food
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+.not_food
+	ld a, FALSE
+	ld [wScriptVar], a
+	ret
+	
+TastyFoodItems:
+	db RARE_CANDY
+	db RAGECANDYBAR
+	db CHERI_BERRY
+	db CHESTO_BERRY
+	db PECHA_BERRY
+	db RAWST_BERRY
+	db ASPEAR_BERRY
+	db LEPPA_BERRY
+	db ORAN_BERRY
+	db PERSIM_BERRY
+	db LUM_BERRY
+	db SITRUS_BERRY
+	db FIGY_BERRY
+	db BIG_MALASADA
+	db SLOWPOKETAIL
+	db SODA_POP
+	db FRESH_WATER
+	db LEMONADE
+	db MOOMOO_MILK
+	db BLOSSOM_TEA
+	db -1
 	
 SunsetLighthouseTopTV:
 	callasm SunsetLighthouseTopTVAsm
@@ -77,6 +168,30 @@ SunsetLighthouseTopTVAsm:
 	ld [wScriptVar], a
 	ret
 	
+SunsetLighthouseTopStoveText:
+	text "It's a stove."
+	done
+	
+SunsetLighthouseTopSinkText:
+	text "A clean sparkly"
+	line "sink."
+	done
+	
+SunsetLighthouseTopFridgeText:
+	text "Let's see what's"
+	line "in the fridge…"
+	
+	para "…"
+	
+	para "Wow it's fully"
+	line "stocked!"
+	done
+	
+SunsetLighthouseTopFlowerText:
+	text "Some pretty"
+	line "flowers."
+	done
+	
 SunsetLighthouseTopAmpharosText1:
 	text "AMPHAROS: Far!"
 	line "Faro!"
@@ -87,10 +202,77 @@ SunsetLighthouseTopAmpharosText2:
 	line "and well fed."
 	done
 	
+SunsetLighthouseTopAmpharosTextSniff1:
+	text "It's sniffing at"
+	line "your bag."
+	
+	para "Maybe it's hungry…"
+	
+	para "Give it something"
+	line "to eat?"
+	done
+	
+SunsetLighthouseTopAmpharosTextSniff2:
+	text "It's sniffing at"
+	line "your bag."
+	
+	para "Maybe it's still"
+	line "hungry…"
+	
+	para "Give it something"
+	line "to eat?"
+	done
+	
+SunsetLighthouseTopAmpharosTextYum:
+	text "It gobbled down"
+	line "the @"
+	text_from_ram wMonOrItemNameBuffer
+	text "!"
+	
+	para "Yum!"
+	done
+	
+SunsetLighthouseTopAmpharosTextFull:
+	text "It's finally"
+	line "satisfied!"
+	
+	para "…"
+	
+	para "Oh!"
+	
+	para "It's clutching"
+	line "something in its"
+	cont "hand."
+	
+	para "It offers it to"
+	line "to you."
+	done
+	
+SunsetLighthouseTopAmpharosTextNo:
+	text "It looks"
+	line "disappointed…"
+	done
+	
+SunsetLighthouseTopAmpharosTextNotInterested:
+	text "It doesn't seem"
+	line "intereseted in"
+	cont "the @"
+	text_from_ram wMonOrItemNameBuffer
+	text "."
+	done
+	
+SunsetLighthouseTopFanText:
+	text "A small fan blows"
+	line "cool air."
+	done
+	
 SunsetLighthouseTopFoodText:
-	text "A plate of yummy"
+	text "A plate of tasty"
 	line "looking food."
 	done
+	
+SecretWord:
+	db "CONVERSION@"
 	
 SunsetLighthouseTopTVText:
 	text "It's playing an"
@@ -102,7 +284,8 @@ SunsetLighthouseTopTVText:
 	done
 	
 SunsetLighthouseTopTVText2:
-	text "UNFINISHED"
+	text "Nothing but"
+	line "static…"
 	done
 	
 SunsetLighthouseTopBedText:
@@ -130,7 +313,4 @@ SunsetLighthouseTopSouthEastText:
 	text "Ocean as far as"
 	line "the eye can see…"
 	done
-	
-SecretWord:
-	db "CONVERSION@"
 	

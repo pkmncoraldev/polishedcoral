@@ -38,11 +38,32 @@ _AnimateTileset:: ; fc000
 Tileset00Anim::
 TilesetPlayerRoomAnim::
 TilesetPokeCenterAnim::
-TilesetLighthouseAnim::
 TilesetLibraryAnim::
 TilesetSnowAnim::
 TilesetMall2Anim::
 TilesetIceCaveAnim::
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
+TilesetLighthouseAnim::
+	dw VTiles2 tile $14, WriteTileToBuffer
+    dw wTileAnimBuffer, ScrollTileRightLeft
+    dw VTiles2 tile $14, WriteTileFromBuffer
+	dw FanFrames, AnimateWaterfallTiles2
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -1273,7 +1294,10 @@ FlagTiles2: INCBIN "gfx/tilesets/flag/2.2bpp"
 TwinkleFireplaceFrames: dw VTiles2 tile $48, TwinkleFireplaceTiles
 
 TwinkleFireplaceTiles: INCBIN "gfx/tilesets/fireplace/1.2bpp"
-; fc5cc
+
+FanFrames: dw VTiles2 tile $24, FanTiles
+
+FanTiles: INCBIN "gfx/tilesets/fan/1.2bpp"
 
 	
 WriteTwoTiles:

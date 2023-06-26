@@ -26,7 +26,7 @@ StanleySpriteGFX::             INCBIN "gfx/sprites/stanley.2bpp"
 RodneySpriteGFX::              INCBIN "gfx/sprites/rodney.2bpp"
 WendySpriteGFX:: 	           INCBIN "gfx/sprites/wendy.2bpp"
 CharlieSpriteGFX::             INCBIN "gfx/sprites/charlie.2bpp"
-ChuckSpriteGFX::               INCBIN "gfx/sprites/chuck.2bpp"
+PollySpriteGFX::               INCBIN "gfx/sprites/polly.2bpp"
 JasmineSpriteGFX::             INCBIN "gfx/sprites/jasmine.2bpp"
 PryceSpriteGFX::               INCBIN "gfx/sprites/pryce.2bpp"
 ClairSpriteGFX::               INCBIN "gfx/sprites/clair.2bpp"
@@ -69,7 +69,6 @@ BoarderSpriteGFX::             INCBIN "gfx/sprites/boarder.2bpp"
 BreederSpriteGFX::             INCBIN "gfx/sprites/breeder.2bpp"
 BugCatcherSpriteGFX::          INCBIN "gfx/sprites/bug_catcher.2bpp"
 BugManiacSpriteGFX::           INCBIN "gfx/sprites/bug_maniac.2bpp"
-PollySpriteGFX::               INCBIN "gfx/sprites/polly.2bpp"
 
 
 SECTION "Overworld Sprites 3", ROMX

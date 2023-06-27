@@ -4,15 +4,15 @@ DesertTemple1_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  4,  1, PLAYER_HOUSE_2F, 14
-	warp_event  5,  1, PLAYER_HOUSE_2F, 14
+	warp_event 12, 27, PLAYER_HOUSE_2F, 14
+	warp_event 13, 27, PLAYER_HOUSE_2F, 14
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  1,  2, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MARACTUS, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, DesertTemple1TextNPC, -1
+	object_event 11,  7, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MARACTUS, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, DesertTemple1TextNPC, -1
 
 
 DesertTemple1TextNPC:

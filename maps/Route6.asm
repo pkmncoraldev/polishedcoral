@@ -64,6 +64,7 @@ Route6Trigger2:
 Route6PokeFanM:
 	checkevent EVENT_BEAT_ROUTE_6_TRAINER_3
 	iftrue .end
+	special Special_StopRunning
 	special SaveMusic
 	playmusic MUSIC_HIKER_ENCOUNTER
 	showemote EMOTE_SHOCK, ROUTE6TRAINER3,  30
@@ -87,6 +88,7 @@ Route6PokeFanM:
 Route6PokeFanF:
 	checkevent EVENT_BEAT_ROUTE_6_TRAINER_4
 	iftrue .end
+	special Special_StopRunning
 	special SaveMusic
 	playmusic MUSIC_GENTLEMAN_ENCOUNTER
 	showemote EMOTE_SHOCK, ROUTE6TRAINER4,  30

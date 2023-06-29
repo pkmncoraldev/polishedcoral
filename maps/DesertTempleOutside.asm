@@ -5,7 +5,9 @@ DesertTempleOutside_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 0 ; warp events
+	db 2 ; warp events
+	warp_event 16,  9, DESERT_TEMPLE_1, 1
+	warp_event 17,  9, DESERT_TEMPLE_1, 2
 
 	db 26 ; coord events
 	coord_event  4, 16, 1, DesertWastelandReset

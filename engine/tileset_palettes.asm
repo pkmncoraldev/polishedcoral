@@ -217,6 +217,8 @@ LoadSpecialMapPalette: ; 494ac
 	ld bc, 7 palettes
 	call FarCopyWRAM
 	ld a, [wMapGroup]
+	cp GROUP_DESERT_TEMPLE_1
+	jr z, .deserttemple
 	cp GROUP_DESERT_WASTELAND_OASIS
 	jp nz, .nett2_end
 	ld a, [wMapNumber]
@@ -229,6 +231,15 @@ LoadSpecialMapPalette: ; 494ac
 	cp MAP_DESERT_WASTELAND_8
 	jr z, .oasis1
 	jp .nett2_end
+	
+.deserttemple
+	ld hl, DesertTemplePalette
+	ld a, $5
+	ld de, wUnknBGPals + 2 palettes
+	ld bc, 2 palettes
+	call FarCopyWRAM
+	scf
+	ret
 	
 .sandstorm
 	ld a, [wIsNearCampfire]
@@ -949,3 +960,6 @@ INCLUDE "maps/palettes/bgpals/highwaytunnel.pal"
 
 DarkCavePalette:
 INCLUDE "maps/palettes/bgpals/darkcave.pal"
+
+DesertTemplePalette:
+INCLUDE "maps/palettes/bgpals/deserttemple.pal"

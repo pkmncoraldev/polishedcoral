@@ -261,7 +261,7 @@ TilesetDesertAnim::
 	dw FlagFrames, AnimateWaterfallTiles
 	dw FlagFrames2, AnimateWaterfallTiles
 	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+	dw DesertLightFrames, AnimateWaterfallTiles
 	dw NULL,  WaitTileAnimation
 	dw ShorelineFrames,  AnimateWaterfallTiles
 	dw ShorelineFrames2,  AnimateWaterfallTiles
@@ -1298,6 +1298,10 @@ TwinkleFireplaceTiles: INCBIN "gfx/tilesets/fireplace/1.2bpp"
 FanFrames: dw VTiles2 tile $24, FanTiles
 
 FanTiles: INCBIN "gfx/tilesets/fan/1.2bpp"
+
+DesertLightFrames: dw VTiles2 tile $34, DesertLightTiles
+
+DesertLightTiles: INCBIN "gfx/tilesets/desertlight/1.2bpp"
 
 	
 WriteTwoTiles:

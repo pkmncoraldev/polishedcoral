@@ -1050,8 +1050,9 @@ wRoute20TunnelTrigger:: ds 1
 wStarglowCavernDepthsTrigger:: ds 1
 wLusterGymTrigger:: ds 1
 wUndergroundPassageTrigger:: ds 1
+wDesertTemple1Trigger:: ds 1
 
-ds 11
+ds 10
 
 wAmpharosFood:: ds 1
 ; fight counts

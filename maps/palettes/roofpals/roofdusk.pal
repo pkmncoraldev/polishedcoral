@@ -88,12 +88,17 @@
 	RGB 00, 00, 00
 	RGB 30, 30, 28
 	RGB 20, 14, 04
-;18 - Radiant Township
+;18 - Desert Temple
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 30, 30, 28
+	RGB 20, 14, 04
+;19 - Radiant Township
 	RGB 18, 08, 14
 	RGB 13, 04, 10
 	RGB 31, 31, 23
 	RGB 19, 07, 31
-;19 - Highway
+;20 - Highway
 	RGB 18, 19, 31
 	RGB 27, 31, 27
 	RGB 31, 31, 31

@@ -160,6 +160,8 @@ EMOTE_MEM EQU -1
 	const FRUITTREE_ROUTE_2_3		; 18
 	const FRUITTREE_ROUTE_2_4		; 19
 	const FRUITTREE_ROUTE_2_5		; 20
+	const FRUITTREE_GLINT_GROVE_1	; 21
+	const FRUITTREE_GLINT_GROVE_2	; 22
 NUM_FRUIT_TREES EQU const_value +- 1
 
 ; hidden grottoes

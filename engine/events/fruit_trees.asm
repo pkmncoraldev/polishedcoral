@@ -8,7 +8,7 @@ FruitTreeScript:: ; 44000
 	copybytetovar wCurFruit
 	callasm CheckFruitTree
 	iffalse PickBerryScript
-	writetext NothingHereText
+	jumpopenedtext NothingHereText
 	buttonsound
 	farwritetext StdBlankText
 	pause 6

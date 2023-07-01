@@ -27,7 +27,7 @@ GlintGrove_MapScriptHeader:
 	db 0 ; bg events
 ;	signpost 50, 22, SIGNPOST_READ, GlintGroveClue
 
-	db 18 ; object events
+	db 20 ; object events
 	person_event SPRITE_LASS, 40, 34, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, TrainerGlintGrove_1, -1
 	person_event SPRITE_PICNICKER, 46, 6, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerGlintGrove_2, -1
 	person_event SPRITE_CAMPER, 17, 7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerGlintGrove_3, -1
@@ -46,6 +46,8 @@ GlintGrove_MapScriptHeader:
 	person_event SPRITE_ELDER, 44, 29, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintGrovePetalMan, -1
 	person_event SPRITE_MISC_OVERHEAD, -1, -1, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_GENERICTRAINER, 1, 0, -1
 	tmhmball_event 37, 22, TM_METAL_CLAW, EVENT_GLINT_GROVE_POKE_BALL2
+	fruittreeinvis_event 15, 41, FRUITTREE_GLINT_GROVE_1, CHESTO_BERRY
+	fruittreeinvis_event 17, 19, FRUITTREE_GLINT_GROVE_2, PECHA_BERRY
 	
 	const_def 1 ; object constants
 	const GLINTGROVE_TRAINER1

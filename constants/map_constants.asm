@@ -364,9 +364,10 @@ MAP_NONE   EQU 0
 	map_const DUSK_TURNPIKE,							  20, 19 ; 2
 	map_const DUSK_AUTO_LOBBY,							   4,  3 ; 3
 	map_const DUSK_AUTO_GARAGE,							   4,  4 ; 4
-	map_const ROUTE_20_TUNNEL,							  15,  9 ; 
-	map_const SEASIDE_CAVE_1F,							  12, 19 ; 
-	map_const SEASIDE_CAVE_B1F,							  13, 18 ; 
+	map_const ROUTE_20_TUNNEL,							  15,  9 ; 5
+	map_const SEASIDE_CAVE_1F,							  12, 19 ; 6
+	map_const SEASIDE_CAVE_B1F,							  13, 18 ; 7
+	map_const SEASIDE_CAVE_B2F,							   8, 10 ; 8
 	
 	newgroup													 ; last
 	

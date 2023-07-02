@@ -433,6 +433,7 @@ ENDM
 	map_attributes UndergroundPassage, UNDERGROUND_PASSAGE, $09, 0
 	map_attributes SeasideCave1F, SEASIDE_CAVE_1F, $09, 0
 	map_attributes SeasideCaveB1F, SEASIDE_CAVE_B1F, $09, 0
+	map_attributes SeasideCaveB2F, SEASIDE_CAVE_B2F, $09, 0
 	
 	
 	map_attributes DesertTemple1, DESERT_TEMPLE_1, 0, 0

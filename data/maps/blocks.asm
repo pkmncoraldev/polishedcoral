@@ -737,6 +737,9 @@ SeasideCave1F_BlockData:
 SeasideCaveB1F_BlockData:
 	INCBIN "maps/SeasideCaveB1F.ablk.lz"
 	
+SeasideCaveB2F_BlockData:
+	INCBIN "maps/SeasideCaveB2F.ablk.lz"
+	
 StarglowCavernDepths_BlockData:
 	INCBIN "maps/StarglowCavernDepths.ablk.lz"
 	

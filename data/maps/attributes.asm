@@ -605,6 +605,13 @@ ENDM
 	map_attributes RadiantHouse, RADIANT_HOUSE, $0, 0
 	map_attributes RadiantField, RADIANT_FIELD, $59, 0
 	
+	map_attributes DuskPokeCenter, DUSK_POKECENTER, $0, 0
+	map_attributes DuskMart, DUSK_MART, $0, 0
+	map_attributes DuskHouse1, DUSK_HOUSE_1, $0, 0
+	map_attributes DuskHouse2, DUSK_HOUSE_2, $0, 0
+	map_attributes DuskHouse3, DUSK_HOUSE_3, $0, 0
+	map_attributes Route17DuskGate, ROUTE_17_DUSK_GATE, $0, 0
+	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0
 	map_attributes Route5Gate1F, ROUTE_5_GATE_1F, $0, 0

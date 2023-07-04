@@ -13,6 +13,7 @@ INCLUDE "maps/LusterPokeCenter.asm"
 INCLUDE "maps/LusterMallPokeCenter.asm"
 INCLUDE "maps/ShimmerPokeCenter.asm"
 INCLUDE "maps/BrilloPokeCenter.asm"
+INCLUDE "maps/DuskPokeCenter.asm"
 
 SECTION "Pokemon Mart Scripts 1", ROMX
 INCLUDE "maps/GlintMart.asm"
@@ -24,6 +25,7 @@ INCLUDE "maps/TwinkleMart.asm"
 INCLUDE "maps/LusterMart.asm"
 INCLUDE "maps/ShimmerMart.asm"
 INCLUDE "maps/BrilloMart.asm"
+INCLUDE "maps/DuskMart.asm"
 
 
 SECTION "Dungeon Scripts", ROMX
@@ -96,8 +98,6 @@ INCLUDE "maps/Route14.asm"
 INCLUDE "maps/Route17.asm"
 INCLUDE "maps/Route18.asm"
 INCLUDE "maps/Route19.asm"
-INCLUDE "maps/DuskTurnpike.asm"
-INCLUDE "maps/Route20Tunnel.asm"
 INCLUDE "maps/FakeRoute1.asm"
 
 
@@ -133,8 +133,6 @@ INCLUDE "maps/DaybreakVillage.asm"
 INCLUDE "maps/DaybreakMarcusHouse.asm"
 INCLUDE "maps/DaybreakAlexHouse.asm"
 INCLUDE "maps/DaybreakPokemonTrainerSchool.asm"
-INCLUDE "maps/DuskAutoLobby.asm"
-INCLUDE "maps/DuskAutoGarage.asm"
 
 
 SECTION "Glint City Scripts", ROMX
@@ -374,3 +372,13 @@ INCLUDE "maps/DesertWasteland8.asm"
 INCLUDE "maps/DesertWasteland9.asm"
 INCLUDE "maps/DesertTempleOutside.asm"
 INCLUDE "maps/DesertTemple1.asm"
+
+SECTION "Dusk Turnpike Scripts", ROMX
+INCLUDE "maps/DuskTurnpike.asm"
+INCLUDE "maps/DuskHouse1.asm"
+INCLUDE "maps/DuskHouse2.asm"
+INCLUDE "maps/DuskHouse3.asm"
+INCLUDE "maps/DuskAutoLobby.asm"
+INCLUDE "maps/DuskAutoGarage.asm"
+INCLUDE "maps/Route17DuskGate.asm"
+INCLUDE "maps/Route20Tunnel.asm"

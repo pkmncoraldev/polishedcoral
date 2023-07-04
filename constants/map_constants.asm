@@ -362,12 +362,18 @@ MAP_NONE   EQU 0
 	
 	map_const ROUTE_19,									  20, 16 ; 1
 	map_const DUSK_TURNPIKE,							  20, 19 ; 2
-	map_const DUSK_AUTO_LOBBY,							   4,  3 ; 3
-	map_const DUSK_AUTO_GARAGE,							   4,  4 ; 4
-	map_const ROUTE_20_TUNNEL,							  15,  9 ; 5
-	map_const SEASIDE_CAVE_1F,							  12, 19 ; 6
-	map_const SEASIDE_CAVE_B1F,							  13, 18 ; 7
-	map_const SEASIDE_CAVE_B2F,							   8, 10 ; 8
+	map_const DUSK_POKECENTER,                      	   6,  4 ; 3
+	map_const DUSK_MART,                             	   6,  4 ; 4
+	map_const ROUTE_17_DUSK_GATE,						   5,  4 ; 5
+	map_const DUSK_HOUSE_1,     	             		   4,  4 ; 6
+	map_const DUSK_HOUSE_2,     	             		   4,  4 ; 7
+	map_const DUSK_HOUSE_3,     	             		   4,  4 ; 8
+	map_const DUSK_AUTO_LOBBY,							   4,  3 ; 9
+	map_const DUSK_AUTO_GARAGE,							   4,  4 ; 10
+	map_const ROUTE_20_TUNNEL,							  15,  9 ; 11
+	map_const SEASIDE_CAVE_1F,							  12, 19 ; 12
+	map_const SEASIDE_CAVE_B1F,							  13, 18 ; 13
+	map_const SEASIDE_CAVE_B2F,							   8, 10 ; 14
 	
 	newgroup													 ; last
 	

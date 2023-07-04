@@ -360,7 +360,7 @@ MAP_NONE   EQU 0
 	
 	newgroup
 	
-	map_const ROUTE_19,									  20, 16 ; 1
+	map_const ROUTE_19,									  20, 17 ; 1
 	map_const DUSK_TURNPIKE,							  20, 19 ; 2
 	map_const DUSK_POKECENTER,                      	   6,  4 ; 3
 	map_const DUSK_MART,                             	   6,  4 ; 4

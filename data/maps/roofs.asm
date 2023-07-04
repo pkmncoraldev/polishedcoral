@@ -20,7 +20,7 @@ MapGroupRoofs:
 	db  3 ; group 16 (Shimmer City)
 	db -1 ; group 17 (Brillo Town)
 	db -1 ; group 18 (Desert Temple)
-	db  1 ; group 19 (Radiant Township)
+	db  3 ; group 19 (Radiant Township)
 	db  4 ; group 20 (Highway)
 	db -1 ; group last (Fake Route 1)
 

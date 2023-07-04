@@ -1083,18 +1083,17 @@ _LoadTileset0:
 
 .load_roof
 	farcall LoadMapGroupRoof
-	ld hl, wTilesetGFX0Address
-	ld de, VTiles2
 	ld c, $ff
-	call _DoLoadTileset0
 	jr .done
 
 .skip_roof
+	ld c, $7f
+	
+.done
 	ld hl, wTilesetGFX0Address
 	ld de, VTiles2
-	ld c, $7f
 	call _DoLoadTileset0
-.done
+
 	pop af
 	ld [rSVBK], a
 	ret

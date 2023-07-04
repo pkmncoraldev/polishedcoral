@@ -40,7 +40,8 @@ SeasideCaveB2FDrakloak:
 	end
 	
 SeasideCaveB2FDrakloakText:
-	text "DRA-DRA!"
+	text "KLOOOOOOOO!"
+	line "DRA-DRA!"
 	done
 	
 SeasideCaveB2FDrakloakTextGone:

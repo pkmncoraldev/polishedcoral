@@ -910,7 +910,7 @@ LoadMapPals::
 .cave
 	ld a, [wTimeOfDayPal]
 	cp 3
-	jp nz, .rocks
+	jp nz, .rockscheck3
 .dark
 	ld hl, MapObjectPalsDark
 	call AddNTimes
@@ -1259,6 +1259,11 @@ LoadMapPals::
 	jp nz, .got_pals_cont
 	eventflagcheck EVENT_ROUTE_3_ROCKS_BROWN
 	jp z, .got_pals_cont
+	jr .rocks
+.rockscheck3
+	ld a, [wMapGroup]
+	cp GROUP_UNDERGROUND_PASSAGE
+	jp z, .starglow
 .rocks
 	ld hl, MapObjectPalsRocks
 .rockscont

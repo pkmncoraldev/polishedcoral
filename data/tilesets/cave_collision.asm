@@ -245,7 +245,7 @@
 	tilecoll WATER, WATER, WATER, WATER ; f4
 	tilecoll FLOOR, FLOOR, STAIRS, ROCK_CLIMB ; f5
 	tilecoll WALL, WALL, WALL, WALL ; f6
-	tilecoll WALL, UP_WALL, WALL, FLOOR ; f7
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; f7
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f8
 	tilecoll LEFT_WALL, RIGHT_WALL, LEFT_WALL, RIGHT_WALL ; f9
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; fa

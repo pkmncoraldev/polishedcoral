@@ -25,9 +25,9 @@ UndergroundPassage_MapScriptHeader:
 	person_event SPRITE_SWIMMER_GIRL, 33, 11, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerUndergroundPassage_6, -1
 	person_event SPRITE_SWIMMER_GUY, 39, 21, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerUndergroundPassage_7, -1
 	person_event SPRITE_JUGGLER, 39, 37, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerUndergroundPassage_8, -1
-	smashrock_event 30, 22
+	smashrock_event 32, 22
 	smashrock_event 31, 22
-	smashrock_event 16, 18
+	smashrock_event 18, 16
 
 
 UndergroundPassageChangeBlocks:

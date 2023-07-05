@@ -77,6 +77,9 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
+	giveitem REPEL, 99
+	giveitem SUPER_REPEL, 99
+	giveitem MAX_REPEL, 99
 	giveitem ESCAPE_ROPE, 5
 	giveitem LUM_BERRY, 1
 	giveitem RAWST_BERRY, 1

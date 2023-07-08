@@ -187,7 +187,6 @@ RanchRideRaceFinishLine:
 	playsound SFX_TALLY
 	end
 .lap3
-	setflag ENGINE_DONE_RANCH_RACE_TODAY
 	clearevent EVENT_DODRIO_RANCH_TIMER
 	clearevent EVENT_RANCH_RACE_CHECKPOINT1
 	clearevent EVENT_RANCH_RACE_CHECKPOINT2
@@ -219,6 +218,8 @@ RanchRideRaceFinishLine:
 	writetext RanchRideRaceTimeText
 	waitsfx
 	buttonsound
+	checkflag ENGINE_DONE_RANCH_RACE_TODAY
+	iftrue .noprize
 	checkevent EVENT_FINISHED_RANCH_RACE_ONCE
 	iffalse .firsttime
 	checkevent EVENT_FINISHED_RANCH_RACE_TWICE
@@ -257,6 +258,7 @@ RanchRideRaceFinishLine:
 	writetext RanchRideRaceText8
 	waitbutton
 	closetext
+	setflag ENGINE_DONE_RANCH_RACE_TODAY
 	callasm DodrioRanchRaceTrackResetTimerAsm
 	end
 .firsttime
@@ -269,6 +271,7 @@ RanchRideRaceFinishLine:
 	waitbutton
 	closetext
 	setevent EVENT_FINISHED_RANCH_RACE_ONCE
+	setflag ENGINE_DONE_RANCH_RACE_TODAY
 	callasm DodrioRanchRaceTrackResetTimerAsm
 	end
 .secondtime
@@ -286,6 +289,7 @@ RanchRideRaceFinishLine:
 	waitbutton
 	closetext
 	setevent EVENT_RANCH_GOT_DODUO
+	setflag ENGINE_DONE_RANCH_RACE_TODAY
 	callasm DodrioRanchRaceTrackResetTimerAsm
 	end
 	
@@ -295,6 +299,12 @@ RanchRideRaceFinishLine:
 	closetext
 	setevent EVENT_FINISHED_RANCH_RACE_ONCE
 	callasm DodrioRanchRaceTrackResetTimerAsm
+	end
+	
+.noprize
+	writetext RanchRideRaceText8
+	waitbutton
+	closetext
 	end
 	
 .skippedcheckpoint
@@ -329,16 +339,17 @@ RanchRideRaceBackwards:
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_2
 	clearevent EVENT_DODRIO_RANCH_TIMER
 	callasm DodrioRanchRaceTrackResetTimerAsm
-	dotrigger $2
 	playmusic MUSIC_NONE
 	playsound SFX_WRONG
 	waitsfx
 	pause 10
 	opentext
 	writetext RanchRideRaceBackwardsText
-	waitbutton
-	warp DODRIO_RANCH_RACETRACK, $1d, $11
-	end
+	yesorno
+	iffalse RanchRideRaceDontRetry
+	special FadeOutPalettes
+	warpfacing UP, DODRIO_RANCH_RACETRACK, $1d, $11
+	jump RanchRideRaceGuy.startranchrace
 .end
 	end
 RanchRideRaceOffTrack:
@@ -349,17 +360,17 @@ RanchRideRaceOffTrack:
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_2
 	clearevent EVENT_DODRIO_RANCH_TIMER
 	callasm DodrioRanchRaceTrackResetTimerAsm
-	dotrigger $2
 	playmusic MUSIC_NONE
 	playsound SFX_WRONG
 	waitsfx
 	pause 10
 	opentext
 	writetext RanchRideRaceOffTrackText
-	waitbutton
+	yesorno
+	iffalse RanchRideRaceDontRetry
 	special FadeOutPalettes
-	warp DODRIO_RANCH_RACETRACK, $1d, $11
-	end
+	warpfacing UP, DODRIO_RANCH_RACETRACK, $1d, $11
+	jump RanchRideRaceGuy.startranchrace
 	
 RanchRideRaceTimesUp::
 	clearevent EVENT_RANCH_RACE_CHECKPOINT1
@@ -369,14 +380,20 @@ RanchRideRaceTimesUp::
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_2
 	clearevent EVENT_DODRIO_RANCH_TIMER
 	callasm DodrioRanchRaceTrackResetTimerAsm
-	dotrigger $2
 	playmusic MUSIC_NONE
 	playsound SFX_WRONG
 	waitsfx
 	pause 10
 	opentext
 	writetext RanchRideRaceTimesUpText
-	waitbutton
+	yesorno
+	iffalse RanchRideRaceDontRetry
+	special FadeOutPalettes
+	warpfacing UP, DODRIO_RANCH_RACETRACK, $1d, $11
+	jump RanchRideRaceGuy.startranchrace
+	
+RanchRideRaceDontRetry:
+	dotrigger $2
 	special FadeOutPalettes
 	warp DODRIO_RANCH_RACETRACK, $1d, $11
 	end
@@ -394,7 +411,6 @@ RanchRideRaceGuy:
 	closetext
 	end
 .trytostartrace
-
 	checkevent EVENT_FINISHED_RANCH_RACE_ONCE
 	iffalse .trytostartracecont
 	checkevent EVENT_FINISHED_RANCH_RACE_TWICE
@@ -424,10 +440,13 @@ RanchRideRaceGuy:
 	
 .trytostartracecont
 	checkflag ENGINE_DONE_RANCH_RACE_TODAY
-	iftrue .doneracetoday
+	iftrue .donefortoday
 	checkevent EVENT_JUST_FAILED_RANCH_RACE
 	iftrue .justfailed
 	writetext RanchRideRaceText1
+	jump .trytostartracecont2
+.donefortoday
+	writetext RanchRideRaceTextDoneForToday
 	jump .trytostartracecont2
 .justfailed
 	writetext RanchRideRaceText10
@@ -477,11 +496,6 @@ RanchRideRaceGuy:
 	end
 .pickednoranchrace
 	writetext RanchRideRaceText2
-	waitbutton
-	closetext
-	end
-.doneracetoday
-	writetext RanchRideRaceText8
 	waitbutton
 	closetext
 	end
@@ -657,6 +671,9 @@ RanchRideRaceBackwardsText:
 	
 	para "You're going the"
 	line "wrong way!"
+	
+	para "Do you want to"
+	line "try again?"
 	done
 	
 RanchRideRaceOffTrackText:
@@ -664,12 +681,18 @@ RanchRideRaceOffTrackText:
 	
 	para "You have to stay"
 	line "on the track!"
+	
+	para "Do you want to"
+	line "try again?"
 	done
 	
 RanchRideRaceTimesUpText:
 	text "STOP!"
 	
 	para "Time's up!"
+	
+	para "Do you want to"
+	line "try again?"
 	done
 	
 RanchRideRaceCountdown3:
@@ -775,6 +798,15 @@ ReceivedFlyText1:
 ReceivedFlyText2:
 	text "<PLAYER> put HM02"
 	line "in the TM POCKET."
+	done
+	
+RanchRideRaceTextDoneForToday:
+	text "You want to try"
+	line "again?"
+	
+	para "I can't give you"
+	line "another prize for"
+	cont "today, though…"
 	done
 	
 Movement_RanchRideMovement1:

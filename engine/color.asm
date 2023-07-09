@@ -958,6 +958,9 @@ LoadMapPals::
 	jp FarCopyWRAM
 	
 .desert
+	ld a, [wMapGroup]
+	cp GROUP_DESERT_TEMPLE_1
+	jr z, .desert_cont
 	ld a, [wTimeOfDayPalFlags]
 	and $3F
 	cp 1
@@ -969,6 +972,7 @@ LoadMapPals::
 	jp z, .desertfire
 	cp MAP_DESERT_WASTELAND_OASIS
 	jp z, .oasis
+.desert_cont
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes

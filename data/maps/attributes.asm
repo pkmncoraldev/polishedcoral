@@ -437,6 +437,10 @@ ENDM
 	
 	
 	map_attributes DesertTemple1, DESERT_TEMPLE_1, 0, 0
+	map_attributes DesertTempleTopLeft, DESERT_TEMPLE_TOP_LEFT, 0, 0
+	map_attributes DesertTempleTopRight, DESERT_TEMPLE_TOP_RIGHT, 0, 0
+	map_attributes DesertTempleLowerLeft, DESERT_TEMPLE_LOWER_LEFT, 0, 0
+	map_attributes DesertTempleLowerRight, DESERT_TEMPLE_LOWER_RIGHT, 0, 0
 	
 	map_attributes SunsetPokeCenter, SUNSET_POKECENTER, $0, 0
 	map_attributes SunsetLighthouse, SUNSET_LIGHTHOUSE, $0, 0

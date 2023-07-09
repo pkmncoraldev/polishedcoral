@@ -4,9 +4,12 @@ DesertTemple1_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, DesertTemple1Callback
 
-	db 2 ; warp events
+	db 4 ; warp events
 	warp_event 12, 37, DESERT_TEMPLE_OUTSIDE, 1
 	warp_event 13, 37, DESERT_TEMPLE_OUTSIDE, 2
+	warp_event  4, 10, DESERT_TEMPLE_LOWER_LEFT, 1
+	warp_event  4, 11, DESERT_TEMPLE_LOWER_LEFT, 2
+	
 
 	db 8 ; coord events
 	coord_event 12, 24, 1, DesertTemple1Door1

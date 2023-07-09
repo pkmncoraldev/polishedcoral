@@ -734,6 +734,18 @@ FakeRoute2_BlockData:
 DesertTemple1_BlockData:
 	INCBIN "maps/DesertTemple1.ablk.lz"
 	
+DesertTempleTopLeft_BlockData:
+	INCBIN "maps/DesertTempleTopLeft.ablk.lz"
+	
+DesertTempleTopRight_BlockData:
+	INCBIN "maps/DesertTempleTopRight.ablk.lz"
+	
+DesertTempleLowerLeft_BlockData:
+	INCBIN "maps/DesertTempleLowerLeft.ablk.lz"
+	
+DesertTempleLowerRight_BlockData:
+	INCBIN "maps/DesertTempleLowerRight.ablk.lz"
+	
 UndergroundPassage_BlockData:
 	INCBIN "maps/UndergroundPassage.ablk.lz"
 	

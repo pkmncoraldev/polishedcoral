@@ -1051,8 +1051,9 @@ wStarglowCavernDepthsTrigger:: ds 1
 wLusterGymTrigger:: ds 1
 wUndergroundPassageTrigger:: ds 1
 wDesertTemple1Trigger:: ds 1
+wDesertTemple2Trigger:: ds 1
 
-ds 10
+ds 9
 
 wAmpharosFood:: ds 1
 ; fight counts

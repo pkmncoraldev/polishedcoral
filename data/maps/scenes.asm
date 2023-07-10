@@ -109,4 +109,8 @@ MapTriggers::
 	scene_var LUSTER_GYM,							  wLusterGymTrigger
 	scene_var UNDERGROUND_PASSAGE,					  wUndergroundPassageTrigger
 	scene_var DESERT_TEMPLE_1,					 	  wDesertTemple1Trigger
+	scene_var DESERT_TEMPLE_TOP_LEFT,				  wDesertTemple2Trigger
+	scene_var DESERT_TEMPLE_TOP_RIGHT,				  wDesertTemple2Trigger
+	scene_var DESERT_TEMPLE_LOWER_LEFT,				  wDesertTemple2Trigger
+	scene_var DESERT_TEMPLE_LOWER_RIGHT,			  wDesertTemple2Trigger
 	db -1

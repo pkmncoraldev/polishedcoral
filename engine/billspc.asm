@@ -2230,7 +2230,7 @@ BillsPC_InitGFX: ; e33e8 (38:73e8)
 	ld bc, $31 tiles
 	xor a
 	call ByteFill
-	call LoadStandardFont
+	call Load1bppFont
 	call LoadFontsBattleExtra
 	ld hl, PCMailGFX
 	ld de, VTiles2 tile $5c
@@ -2540,7 +2540,7 @@ BillsPC_ChangeBoxSubmenu: ; e36f9 (38:76f9)
 	ld de, wd002
 	farcall NamingScreen
 	call ClearTileMap
-	call LoadStandardFont
+	call Load1bppFont
 	call LoadFontsBattleExtra
 	ld a, [wMenuSelection]
 	dec a

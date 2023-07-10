@@ -246,7 +246,9 @@ TrainerCard_LoadGFX:
 	ld de, BadgeGFX
 	ld hl, VTiles0 tile $00
 	lb bc, BANK(BadgeGFX), $2c
-	jp Request2bpp
+	call Request2bpp
+	
+	jp Load1bppFont
 
 TrainerCard_PrintBorder: ; 253b0 (9:53b0)
 ;	hlcoord 1, 1

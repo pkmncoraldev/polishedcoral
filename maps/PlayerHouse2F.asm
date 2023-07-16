@@ -34,7 +34,7 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event  7,  1, SIGNPOST_READ, PlayerHouseBookshelf
 	bg_event  3,  1, SIGNPOST_READ, PlayerHouseCloset
 ;	powergap
-	bg_event  2, 10, SIGNPOST_READ, PlayerHouseDebugPoster
+	bg_event  2, 10, SIGNPOST_READ, PlayerHouseDebugPoster2
 	bg_event  4, 10, SIGNPOST_JUMPTEXT, PlayerHouseSunset
 	bg_event  6, 10, SIGNPOST_JUMPTEXT, PlayerHouseDaybreak
 	bg_event  8, 10, SIGNPOST_JUMPTEXT, PlayerHouseGlint
@@ -61,8 +61,141 @@ PlayerHouse2F_MapScriptHeader:
 	const_def 1 ; object constants
 	const PLAYERHOUSE2F_SNES
 	
-PlayerHouseDebugPoster:
+PlayerHouseDebugPoster2:
 	opentext
+	writetext PlayerHouseDebug2Text1
+;	refreshscreen $0
+	loadmenu .PlayerHouseDebug2MenuData
+	verticalmenu
+	closewindow
+	if_equal $1, .Sfx
+	if_equal $2, PlayerHouseDebugPoster
+	iffalse .end
+.Sfx
+	callasm PlayerRoomSfxTest
+	closetext
+	end
+.end
+	closetext
+	end
+	
+.PlayerHouseDebug2MenuData: ; 0x48dfc
+	db $40 ; flags
+	db 00, 00 ; start coords
+	db 11, 19 ; end coords
+	dw .MenuData2PlayerHouseDebug2
+	db 1 ; default option
+; 0x48e04
+
+.MenuData2PlayerHouseDebug2: ; 0x48e04
+	db $80 ; flags
+	db 2 ; items
+	db "SFX TEST@"
+	db "MONS, ITEMS, ETC@"
+	
+PlayerRoomSfxTest:
+	call WaitSFX
+	ld a, [hInMenu]
+	push af
+	ld a, $1
+	ld [hInMenu], a
+	ld de, MUSIC_NONE
+	call PlayMusic
+	
+	farcall _LoadHexFont
+	
+	xor a
+	ld [wPlaceBallsX], a
+	hlcoord 0, 12
+	lb bc, 4, 18
+	call TextBox
+	hlcoord 1, 14
+	ld de, PlayerRoomSfxTestString
+	call PlaceString
+	hlcoord 1, 16
+	ld de, PlayerRoomSfxTestString2
+	call PlaceString	
+	jr .drawnumbers
+.loop
+	call JoyTextDelay
+	ld hl, hJoyPressed
+	ld a, [hl]
+	and B_BUTTON
+	jr nz, .end
+	ld a, [hl]
+	and A_BUTTON
+	jr nz, .playsound
+	ld hl, hJoyLast
+	ld a, [hl]
+	and D_UP
+	jr nz, .up
+	ld a, [hl]
+	and D_DOWN
+	jr nz, .down
+	jr .loop
+.end
+	ld a, [wMapMusic]
+	ld e, a
+	ld d, 0
+	call PlayMusic
+	xor a
+	ld [wPlaceBallsX], a
+	pop af
+	ld [hInMenu], a
+	ret
+.playsound
+;kill old sound
+	xor a
+	ld [wChannel5Flags], a
+	ld [wChannel6Flags], a
+	ld [wChannel7Flags], a
+	ld [wChannel8Flags], a
+;play new sound
+	ld d, a
+	ld a, [wPlaceBallsX]
+	ld e, a
+	call PlaySFX
+	jr .loop
+.up
+	ld a, [wPlaceBallsX]
+	inc a
+	ld [wPlaceBallsX], a
+	jr .drawnumbers
+.down
+	ld a, [wPlaceBallsX]
+	dec a
+	ld [wPlaceBallsX], a
+;fallthrough
+.drawnumbers
+	hlcoord 15, 14
+	ld de, wPlaceBallsX
+	inc hl
+;	inc hl
+;	inc hl
+	ld a, [de]
+	call .place_tile
+	ld a, [de]
+	swap a
+	call .place_tile
+	jr .loop
+.place_tile
+	and $f
+	add $e0
+	ld [hld], a
+	ret
+	
+PlayerRoomSfxTestString:
+	db "A: Play     ↑    ↓@"
+	
+PlayerRoomSfxTestString2:
+	db "B: Quit@"
+	
+PlayerHouseDebug2Text1:
+	text "DEBUG POSTER"
+	done
+	
+PlayerHouseDebugPoster:
+;	opentext
 	waitsfx
 	writetext PlayerHouseDebugText1
 	yesorno
@@ -276,9 +409,7 @@ FillPokedex:
 	ret
 	
 PlayerHouseDebugText1:
-	text "DEBUG POSTER"
-	
-	para "#MON?"
+	text  "#MON?"
 	done
 	
 PlayerHouseDebugText2:

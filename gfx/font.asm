@@ -120,6 +120,12 @@ _Load1bppFont::
 	lb bc, BANK(FontCommon1bpp), 11
 	jp Get1bpp
 
+_LoadHexFont::
+	ld hl, VTiles0 tile "¥"
+	ld de, FontNormal
+	lb bc, BANK(FontNormal), 6
+	jp Get2bpp
+
 LoadStandardFontPointer::
 	ld hl, .FontPointers
 	ld a, [wOptions2]

@@ -358,9 +358,37 @@ RadioTowerRocketsScript:
 
 TempleTimerEndScript:
 	special ClearBGPalettes
+	special Special_ForcePlayerStateNormal
 	clearflag ENGINE_BUG_CONTEST_TIMER
-	warp DESERT_TEMPLE_1, 1, 3
+	clearevent EVENT_TEMPLE_RUMBLING
+	dotrigger $0
+	domaptrigger DESERT_TEMPLE_1, $0
+	disappear 1 ; DESERT_TEMPLE_SHAKE_OBJECT
+	callasm CheckTempleMapAsm
+	ifequal 2, .top_left		; DESERT_TEMPLE_TOP_LEFT
+	ifequal 3, .top_right	; DESERT_TEMPLE_TOP_RIGHT
+	ifequal 4, .lower_left	; DESERT_TEMPLE_LOWER_LEFT
+;.lower_right
+	clearevent EVENT_DESERT_TEMPLE_SWITCH_4
+	warpfacing RIGHT, DESERT_TEMPLE_LOWER_RIGHT, 0, 20
 	end
+.top_left
+	clearevent EVENT_DESERT_TEMPLE_SWITCH_5
+	warpfacing LEFT, DESERT_TEMPLE_TOP_LEFT, 11, 2
+	end
+.top_right
+	clearevent EVENT_DESERT_TEMPLE_SWITCH_6
+	warpfacing RIGHT, DESERT_TEMPLE_TOP_RIGHT, 0, 16
+	end
+.lower_left
+	clearevent EVENT_DESERT_TEMPLE_SWITCH_3
+	warpfacing LEFT, DESERT_TEMPLE_LOWER_LEFT, 9, 8
+	end
+	
+CheckTempleMapAsm:
+	ld a, [wMapNumber]
+	ld [wScriptVar], a
+	ret
 
 BugContestResultsWarpScript:
 ;	special ClearBGPalettes

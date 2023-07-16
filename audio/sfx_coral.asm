@@ -137,3 +137,59 @@ Sfx_TVStatic_Ch8:
 Sfx_TVStatic_Ch8_loop:
 	note E_, 16
 	loopchannel 0, Sfx_TVStatic_Ch8_loop
+	
+Sfx_ItemFake: ; f0c2f
+	musicheader 4, 5, Sfx_ItemFake_Ch5
+	musicheader 1, 6, Sfx_ItemFake_Ch6
+	musicheader 1, 7, Sfx_ItemFake_Ch7
+	musicheader 1, 8, Sfx_ItemFake_Ch8
+; f0c3b
+
+Sfx_ItemFake_Ch5: ; f0c3b
+	togglesfx
+	tempo 108
+	volume $77
+	vibrato $8, $27
+	dutycycle $2
+	notetype $8, $b2
+	octave 4
+	note C_, 6
+	note C_, 2
+	note F_, 2
+	note C_, 2
+	endchannel
+; f0c54
+
+Sfx_ItemFake_Ch6: ; f0c54
+	togglesfx
+	vibrato $8, $27
+	dutycycle $2
+	notetype $8, $c3
+	octave 4
+	note A_, 6
+	note A_, 2
+	note A_, 2
+	note A_, 2
+	endchannel
+; f0c68
+
+Sfx_ItemFake_Ch7: ; f0c68
+	togglesfx
+	notetype $8, $25
+	octave 4
+	note F_, 4
+	note __, 2
+	note F_, 1
+	note __, 1
+	note F_, 1
+	note __, 1
+	note F_, 1
+	note __, 1
+	endchannel
+	
+Sfx_ItemFake_Ch8: ; f0c81
+	togglesfx
+	sfxtogglenoise $4
+	notetype $c
+	note C_, 16
+	endchannel

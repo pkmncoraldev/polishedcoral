@@ -223,3 +223,4 @@ SFX:
 	dba Sfx_Scream
 	dba Sfx_Newton
 	dba Sfx_FossilMachine
+	dba Sfx_ItemFake

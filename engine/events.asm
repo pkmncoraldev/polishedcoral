@@ -1012,6 +1012,10 @@ CheckMenuOW: ; 96b30
 
 	bit 3, a ; START
 	jr z, .NoMenu
+	
+	ld de, EVENT_TEMPLE_RUMBLING
+	call CheckEventFlag
+	jr nz, .NoMenu
 
 	ld a, BANK(StartMenuScript)
 	ld hl, StartMenuScript
@@ -1528,6 +1532,9 @@ CheckFacingTileEvent: ; 97c5f
 
 RandomEncounter:: ; 97cc0
 ; Random encounter
+	ld de, EVENT_TEMPLE_RUMBLING
+	call CheckEventFlag
+	jr nz, .nope
 	call CheckWildEncounterCooldown
 	jr c, .nope
 	call CanUseSweetScent

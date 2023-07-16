@@ -478,6 +478,10 @@ Special_StopRunning:
 	ret
 	
 Special_ForcePlayerStateNormal:
+	xor a
+	ld [wOnBike], a
+	ld [wOnSkateboard], a
+	ld [wStuckInSandCounter], a
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
 	call ReplaceKrisSprite

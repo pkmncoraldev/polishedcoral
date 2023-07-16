@@ -376,6 +376,7 @@ INCLUDE "maps/DesertTempleTopLeft.asm"
 INCLUDE "maps/DesertTempleTopRight.asm"
 INCLUDE "maps/DesertTempleLowerLeft.asm"
 INCLUDE "maps/DesertTempleLowerRight.asm"
+INCLUDE "maps/DesertTemple2.asm"
 
 SECTION "Dusk Turnpike Scripts", ROMX
 INCLUDE "maps/DuskTurnpike.asm"

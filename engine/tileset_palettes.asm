@@ -234,6 +234,10 @@ LoadSpecialMapPalette: ; 494ac
 	
 .deserttemple
 	ld hl, DesertTemplePalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 2 palettes
+	rst AddNTimes
 	ld a, $5
 	ld de, wUnknBGPals + 2 palettes
 	ld bc, 2 palettes

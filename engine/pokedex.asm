@@ -336,6 +336,9 @@ Pokedex_UpdateDexEntryScreen: ; 40258 (10:4258)
 	bit 4, a ; ENGINE_HAVE_SHINY_CHARM
 	ld de, DexEntryScreen_ArrowCursorData_ShinyCharm
 	jr nz, .ok
+	ld a, [wOptions1]
+	bit DEBUG_MODE, a
+	jr nz, .ok
 	ld de, DexEntryScreen_ArrowCursorData
 .ok
 	call Pokedex_MoveArrowCursor
@@ -1127,6 +1130,9 @@ Pokedex_DrawDexEntryScreenBG: ; 407fd
 	ld a, [wCelebiEvent]
 	bit 4, a ; ENGINE_HAVE_SHINY_CHARM
 	ld de, .MenuItemsShinyCharm
+	jr nz, .ok
+	ld a, [wOptions1]
+	bit DEBUG_MODE, a
 	jr nz, .ok
 	ld de, .MenuItems
 .ok

@@ -124,7 +124,7 @@ PlayerRoomSfxTest:
 	jr nz, .end
 	ld a, [hl]
 	and A_BUTTON
-	jr nz, .playsound
+	jr nz, .A
 	ld hl, hJoyLast
 	ld a, [hl]
 	and D_UP
@@ -143,6 +143,12 @@ PlayerRoomSfxTest:
 	pop af
 	ld [hInMenu], a
 	ret
+.A
+	farcall CheckSFX
+	jr nc, .playsound
+	ld de, MUSIC_NONE
+	call PlayMusic
+	jr .loop
 .playsound
 ;kill old sound
 	xor a
@@ -189,7 +195,7 @@ PlayerRoomSfxTest:
 	ld a, [de]
 	swap a
 	call .place_tile
-	jr .loop
+	jp .loop
 .place_tile
 	and $f
 	add $e0
@@ -197,10 +203,10 @@ PlayerRoomSfxTest:
 	ret
 	
 PlayerRoomSfxTestString:
-	db "A: Play     ↑    ↓@"
+	db "A:Play/Stop ↑    ↓@"
 	
 PlayerRoomSfxTestString2:
-	db "B: Quit@"
+	db "B:Quit@"
 	
 PlayerHouseDebug2Text1:
 	text "DEBUG POSTER"

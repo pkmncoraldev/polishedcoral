@@ -219,3 +219,4 @@
 	const SFX_NEWTON					  ; d5
 	const SFX_FOSSIL_MACHINE			  ; d6
 	const SFX_ITEM_FAKE					  ; d7
+	const SFX_GRASS_WHISTLE				  ; d8

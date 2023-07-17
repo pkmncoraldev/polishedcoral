@@ -224,3 +224,4 @@ SFX:
 	dba Sfx_Newton
 	dba Sfx_FossilMachine
 	dba Sfx_ItemFake
+	dba Sfx_GrassWhistle

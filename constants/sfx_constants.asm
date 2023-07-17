@@ -220,3 +220,5 @@
 	const SFX_FOSSIL_MACHINE			  ; d6
 	const SFX_ITEM_FAKE					  ; d7
 	const SFX_GRASS_WHISTLE				  ; d8
+	
+NUM_SFX EQU const_value - 1

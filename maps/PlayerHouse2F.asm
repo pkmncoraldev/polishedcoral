@@ -158,11 +158,23 @@ PlayerRoomSfxTest:
 	jr .loop
 .up
 	ld a, [wPlaceBallsX]
+	cp NUM_SFX
+	jr nz, .cont_up
+	xor a
+	ld [wPlaceBallsX], a
+	jr .drawnumbers
+.cont_up
 	inc a
 	ld [wPlaceBallsX], a
 	jr .drawnumbers
 .down
 	ld a, [wPlaceBallsX]
+	cp 0
+	jr nz, .cont_down
+	ld a, NUM_SFX
+	ld [wPlaceBallsX], a
+	jr .drawnumbers
+.cont_down
 	dec a
 	ld [wPlaceBallsX], a
 ;fallthrough

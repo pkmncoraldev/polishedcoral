@@ -62,7 +62,7 @@ DesertTemple1Callback:
 	iffalse .door2
 	changeblock $c, $16, $ff
 .door2
-	checkevent EVENT_DESERT_TEMPLE_DOOR_1
+	checkevent EVENT_DESERT_TEMPLE_DOOR_2
 	iffalse .torches1
 	changeblock $8, $0, $cf
 .torches1

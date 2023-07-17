@@ -68,8 +68,8 @@ PlayerHouseDebugPoster2:
 	loadmenu .PlayerHouseDebug2MenuData
 	verticalmenu
 	closewindow
-	if_equal $1, .Sfx
-	if_equal $2, PlayerHouseDebugPoster
+	if_equal $1, PlayerHouseDebugPoster
+	if_equal $2, .Sfx
 	iffalse .end
 .Sfx
 	callasm PlayerRoomSfxTest
@@ -90,8 +90,8 @@ PlayerHouseDebugPoster2:
 .MenuData2PlayerHouseDebug2: ; 0x48e04
 	db $80 ; flags
 	db 2 ; items
-	db "SFX TEST@"
 	db "MONS, ITEMS, ETC@"
+	db "SFX TEST@"
 	
 PlayerRoomSfxTest:
 	call WaitSFX

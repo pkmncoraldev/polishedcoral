@@ -44,7 +44,7 @@ DesertTempleLowerLeftKeepShakingGoingAsm:
 DesertTempleShakeSfxAsm:
 	farcall CheckSFX
 	ret c
-	ld de, SFX_EMBER ;REPLACE WITH CUSTOM SOUND
+	ld de, SFX_TEMPLE_RUMBLE
 	farcall PlaySFX
 	ret
 

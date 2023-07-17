@@ -225,3 +225,4 @@ SFX:
 	dba Sfx_FossilMachine
 	dba Sfx_ItemFake
 	dba Sfx_GrassWhistle
+	dba Sfx_TempleRumble

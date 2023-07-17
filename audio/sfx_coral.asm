@@ -222,3 +222,12 @@ Sfx_GrassWhistle_Ch6:
 	note E_, 2
 	note G_, 12
 	endchannel
+	
+Sfx_TempleRumble:
+	musicheader 1, 8, Sfx_TempleRumble_Ch8
+	
+Sfx_TempleRumble_Ch8:
+	noise __,  5, $f8, $5d
+	noise __,  5, $d8, $6f
+	loopchannel 0, Sfx_TempleRumble_Ch8
+	endchannel

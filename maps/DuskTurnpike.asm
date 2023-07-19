@@ -67,8 +67,8 @@ DuskTurnpikeTrigger1:
 	changeblock $22, $10, $a4
 	changeblock $2c, $10, $a4
 	changeblock $1c, $0c, $f2
-	changeblock $16, $14, $f6
-	changeblock $16, $16, $fa
+	changeblock $16, $14, $f4
+	changeblock $16, $16, $f8
 	setflag ENGINE_STREETLIGHTS
 	callasm GenericFinishBridge
 	callasm DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle

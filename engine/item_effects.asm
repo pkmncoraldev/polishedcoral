@@ -710,15 +710,6 @@ PokeBallEffect: ; e8a2
 
 	farcall SetBoxMonCaughtData
 
-	ld a, BANK(sBoxCount)
-	call GetSRAMBank
-
-;	ld a, [sBoxCount]
-;	cp MONS_PER_BOX
-;	jr nz, .BoxNotFullYet
-;	ld hl, wBattleResult
-;	set 7, [hl]
-;.BoxNotFullYet:
 	ld a, [wCurItem]
 	cp FRIEND_BALL
 	jr nz, .SkipBoxMonFriendBall
@@ -779,6 +770,29 @@ PokeBallEffect: ; e8a2
 	ld hl, Text_SentToBillsPC
 	call PrintText
 
+	ld a, BANK(sBoxCount)
+	call GetSRAMBank
+	ld a, [sBoxCount]
+	cp MONS_PER_BOX
+	call CloseSRAM
+	jp nz, .BoxNotFullYet
+;	ld hl, wBattleResult
+;	set 7, [hl]
+	farcall BillBoxSwitchCheck
+	ld a, [wScriptVar]
+	cp 0
+	jr z, .BoxTotallyFull
+.BoxNotTotallyFullYet
+	ld hl, Ball_BoxIsFullAskSwitchText
+	call PrintText
+	call YesNoBox
+	jr c, .BoxNotFullYet
+	farcall BillBoxSwitch
+	jr .BoxNotFullYet
+.BoxTotallyFull
+	ld hl, Ball_BoxIsTotallyFullText
+	call PrintText
+.BoxNotFullYet:
 	ld c, 15
 	call FadeToWhite
 
@@ -3103,6 +3117,30 @@ Ball_BoxIsFullText: ; 0xf838
 	text_jump UnknownText_0x1c5e3a
 	db "@"
 ; 0xf83d
+
+Ball_BoxIsTotallyFullText:
+	text_jump BoxIsTotallyFullText
+	db "@"
+	
+BoxIsTotallyFullText:
+	text "Your PC BOX is"
+	line "completely full!"
+	
+	para "No more #MON"
+	line "can be caught!"
+	prompt
+
+Ball_BoxIsFullAskSwitchText:
+	text_jump BoxIsFullAskSwitchText
+	db "@"
+
+BoxIsFullAskSwitchText:
+	text "The #MON BOX"
+	line "is full."
+	
+	para "Save the game"
+	line "and switch boxes?"
+	done
 
 Ball_MonIsHiddenText:
 	; The #MON can't be seen!

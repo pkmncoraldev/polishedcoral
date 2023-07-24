@@ -403,7 +403,7 @@ RespawnOneOffs:
 .CaughtSudowoodo
 	ret
 
-BillBoxSwitchCheck:
+BillBoxSwitchCheck::
 	ld a, [wCurBox]
 	cp NUM_BOXES - 1
 	jr nz, .notbox14
@@ -440,7 +440,7 @@ BillBoxSwitchCheck:
 	ld [wEngineBuffer1], a
 	ret
 
-BillBoxSwitch:
+BillBoxSwitch::
 	; back up wMisc to wDecompressScratch
 	ld hl, wMisc
 	ld de, wDecompressScratch

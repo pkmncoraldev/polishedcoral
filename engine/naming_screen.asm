@@ -449,7 +449,7 @@ NamingScreenJoypadLoop: ; 11915
 
 .quit
 	farcall ClearSpriteAnims
-	call ClearSprites
+;	call ClearSprites
 	xor a
 	ld [hSCX], a
 	ld [hSCY], a

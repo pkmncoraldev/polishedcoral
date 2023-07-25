@@ -2453,6 +2453,78 @@ LassGroup:
 	db -1 ; end
 
 ; ================
+
+	; LASS
+	db "KATHY@"		;5 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; LASS
+	db "KATHY@"		;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; LASS
+	db "KATHY@"		;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; LASS
+	db "KATHY@"		;8 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; LASS
+	db "BEBE@"		;5 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; LASS
+	db "BEBE@"		;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; LASS
+	db "BEBE@"		;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; LASS
+	db "BEBE@"		;8 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2477,6 +2549,78 @@ BeautyGroup:
 	db 25, TOGETIC
 	db 23, WHIMSICOTT
 	db 22, LEAFEON
+	db -1 ; end
+
+; ================
+
+	; BEAUTY
+	db "CLAIRE@"		;5 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BEAUTY
+	db "CLAIRE@"		;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BEAUTY
+	db "CLAIRE@"		;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BEAUTY
+	db "CLAIRE@"		;8 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BEAUTY
+	db "SAM@"		;5 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BEAUTY
+	db "SAM@"		;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BEAUTY
+	db "SAM@"		;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BEAUTY
+	db "SAM@"		;8 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -3542,6 +3686,78 @@ DelinquentfGroup:
 	; party
 	db 29, MACHOKE
 	db 28, SYLVEON
+	db -1 ; end
+
+; ================
+
+	; DELINQUENT_F
+	db "LIZ@"		;5 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DELINQUENT_F
+	db "LIZ@"		;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DELINQUENT_F
+	db "LIZ@"		;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DELINQUENT_F
+	db "LIZ@"		;8 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DELINQUENT_F
+	db "MEGAN@"		;5 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DELINQUENT_F
+	db "MEGAN@"		;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DELINQUENT_F
+	db "MEGAN@"		;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DELINQUENT_F
+	db "MEGAN@"		;8 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================

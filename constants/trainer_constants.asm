@@ -279,11 +279,27 @@ PLAYER_F EQU __enum__
 	const MELANIE
 	const SARAH
 	const MARSHA
+	const KATHY_5
+	const KATHY_6
+	const KATHY_7
+	const KATHY_8
+	const BEBE_5
+	const BEBE_6
+	const BEBE_7
+	const BEBE_8
 
 
 	trainerclass BEAUTY
 	const BRITNEY
 	const SANDRA
+	const CLAIRE_5
+	const CLAIRE_6
+	const CLAIRE_7
+	const CLAIRE_8
+	const SAM_5
+	const SAM_6
+	const SAM_7
+	const SAM_8
 
 
 	trainerclass FIREBREATHER
@@ -465,6 +481,14 @@ PLAYER_F EQU __enum__
 	const HELGA
 	const MERTLE
 	const REGINA
+	const LIZ_5
+	const LIZ_6
+	const LIZ_7
+	const LIZ_8
+	const MEGAN_5
+	const MEGAN_6
+	const MEGAN_7
+	const MEGAN_8
 	
 	trainerclass BUNEARY_M
 	const BOY_1

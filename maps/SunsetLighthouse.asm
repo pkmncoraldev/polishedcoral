@@ -650,10 +650,21 @@ LighthouseGetStarterScene_part2:
 	end	
 	
 LighthouseAbner:
+	checkevent EVENT_SUNSET_LIGHTHOUSE_UNLOCKED
+	iftrue .elevator_unlocked
+	checkevent EVENT_SAVED_SUNBEAM
+	iftrue .beentoisland
+	checkevent EVENT_SPRUCE_CALLED_COME_TO_ISLAND
+	iftrue .second_visit
 	checkevent EVENT_MOM_SPEECH_LOOP
 	iftrue LighthouseAbnerPostPokeGear
 	jumptextfaceplayer LighthouseAbnerText
-	end
+.second_visit
+	jumptextfaceplayer LighthouseAbner2ndVisitText
+.beentoisland
+	jumptextfaceplayer LighthouseAbnerBeenToHouseText
+.elevator_unlocked
+	jumptextfaceplayer LighthouseAbnerElevatorUnlockedText
 	
 LighthouseRival:
 	end
@@ -1252,4 +1263,66 @@ LighthouseKid1Text:
 LighthouseKid2Text:
 	text "I can't believe"
 	line "I lost…"
+	done
+
+LighthouseAbner2ndVisitText:
+	text "<PLAYER>!"
+	
+	para "It's great to see"
+	line "you!"
+	
+	para "How is your #-"
+	line "MON?"
+	
+	para "A trip to the"
+	line "island?"
+	
+	para "You must be"
+	line "looking for my"
+	cont "brother."
+	
+	para "He lives on the"
+	line "beach to the SOUTH"
+	cont "of town."
+	
+	para "Good luck!"
+	done
+	
+LighthouseAbnerBeenToHouseText:
+	text "<PLAYER>!"
+	
+	para "It's great to see"
+	line "you!"
+	
+	para "I seem to have"
+	line "locked the door to"
+	cont "elevator from the"
+	cont "other side."
+	
+	para "I haven't seen the"
+	line "keys in years so I"
+	cont "can't get to the"
+	cont "top anymore."
+	
+	para "The only way in"
+	line "is through the"
+	cont "basement under the"
+	cont "lighthouse."
+	
+	para "I hope the #MON"
+	line "at the top is"
+	cont "alright…"
+	done
+	
+LighthouseAbnerElevatorUnlockedText:
+	text "<PLAYER>!"
+	
+	para "It's great to see"
+	line "you!"
+	
+	para "How is your"
+	line "journey going?"
+	
+	para "Say hi to your MOM"
+	line "for me!"
 	done

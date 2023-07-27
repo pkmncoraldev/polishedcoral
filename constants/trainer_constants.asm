@@ -149,6 +149,9 @@ PLAYER_F EQU __enum__
 	const HUE
 	const DARREN
 	const LESLIE
+	const DICK
+	const ROBBY
+	const ERIC
 
 
 	trainerclass BIRD_KEEPER
@@ -373,10 +376,14 @@ PLAYER_F EQU __enum__
 
 	trainerclass SWIMMERM
 	const MARK
+	const PABLO
+	const GARY
 
 
 	trainerclass SWIMMERF
 	const BECKY
+	const SHAE
+	const PEGGY
 
 
 	trainerclass BURGLAR

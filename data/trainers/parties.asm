@@ -1455,6 +1455,33 @@ FisherGroup:
 	db -1 ; end
 
 ; ================
+
+	; FISHER
+	db "DICK@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; FISHER
+	db "ROBBY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; FISHER
+	db "ERIC@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2402,7 +2429,7 @@ LassGroup:
 ; ================
 
 	; LASS
-	db "CHARLOTE@"
+	db "CHARLOTTE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 10, PIKACHU
@@ -3091,6 +3118,24 @@ SwimmerMGroup:
 	db -1 ; end
 
 ; ================
+
+	; SWIMMERM
+	db "PABLO@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SWIMMERM
+	db "GARY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3100,6 +3145,24 @@ SwimmerFGroup:
 
 	; SWIMMERF
 	db "BECKY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SWIMMERF
+	db "SHAE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SWIMMERF
+	db "PEGGY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

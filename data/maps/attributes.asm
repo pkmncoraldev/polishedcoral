@@ -86,12 +86,12 @@ endc
 ENDM
 
 
-	map_attributes SunsetBay, SUNSET_BAY, $71, SOUTH | EAST
+	map_attributes SunsetBay, SUNSET_BAY, 53, SOUTH | EAST
 	connection south, Route13, ROUTE_13, 6
-	connection east, SunsetCape, SUNSET_CAPE, 1
+	connection east, SunsetCape, SUNSET_CAPE, 2
 	
 	map_attributes SunsetCape, SUNSET_CAPE, 53, WEST
-	connection west, SunsetBay, SUNSET_BAY, -1
+	connection west, SunsetBay, SUNSET_BAY, -2
 	
 	map_attributes Route1, ROUTE_1, $71, NORTH
 	connection north, DaybreakVillage, DAYBREAK_VILLAGE, 5

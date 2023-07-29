@@ -66,7 +66,7 @@ SailboatCutsceneTrigger0:
 	clearevent EVENT_BOAT_GOING_TO_SUNSET
 	domaptrigger SUNSET_BAY, $3
 	special FadeOutPalettes
-	warpfacing DOWN, SUNSET_BAY, 29, 28
+	warpfacing DOWN, SUNSET_BAY, 29, 30
 	end
 .lakeL
 	clearevent EVENT_BOAT_GOING_TO_LAKE_L

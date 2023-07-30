@@ -151,12 +151,6 @@ PlaceMapNameSign:: ; b8098 (2e:4098)
 	ld a, [wPlayerState]
 	cp PLAYER_FALLING
 	jp z, .end
-	cp PLAYER_SURF
-	jr nz, .skip
-	ld a, [wPermission]
-	cp TOWN
-	jp z, .end
-.skip
 	ld a, [hLCDTrain]
 	and a
 	ret nz

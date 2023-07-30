@@ -2695,16 +2695,16 @@ UnknownText_0xd1d0: ; 0xd1d0
 HandleEventsFly:
 	clearevent EVENT_LAKE_ROCKS_BROWN
 HandleEventsEscapeRope:
-	clearevent EVENT_ROUTE_18_GRASS_YELLOW
+	clearevent EVENT_ROUTE_19_GRASS_YELLOW
 	clearevent EVENT_SNOWSTORM_HAPPENING
 	clearevent EVENT_SANDSTORM_HAPPENING
 	clearevent EVENT_AIRPORT_FENCE
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	domaptrigger SUNSET_CAPE, $0
 	domaptrigger ROUTE_10, $0
-	domaptrigger ROUTE_16_NORTH, $0
+	domaptrigger ROUTE_17_NORTH, $0
 	domaptrigger DESERT_WASTELAND_1, $0
-	domaptrigger ROUTE_18, $0
+	domaptrigger ROUTE_19, $0
 	domaptrigger LUSTER_SEWERS_B1F, $0
 	domaptrigger LUSTER_SEWERS_B2F, $0
 	domaptrigger UNDERGROUND_PASSAGE, $0

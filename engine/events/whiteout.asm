@@ -67,7 +67,7 @@ WhiteoutHandleEvents:
 	giveitem TRAIN_TICKET
 .skip
 	setevent EVENT_ALWAYS_SET
-	clearevent EVENT_ROUTE_18_GRASS_YELLOW
+	clearevent EVENT_ROUTE_19_GRASS_YELLOW
 	clearevent EVENT_TRAIN_GOING_EAST
 	clearevent EVENT_TRAIN_GOING_WEST
 	clearevent EVENT_SNOWSTORM_HAPPENING
@@ -76,9 +76,9 @@ WhiteoutHandleEvents:
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	domaptrigger SUNSET_CAPE, $0
 	domaptrigger ROUTE_10, $0
-	domaptrigger ROUTE_16_NORTH, $0
+	domaptrigger ROUTE_17_NORTH, $0
 	domaptrigger DESERT_WASTELAND_1, $0
-	domaptrigger ROUTE_18, $0
+	domaptrigger ROUTE_19, $0
 	domaptrigger LUSTER_SEWERS_B1F, $0
 	domaptrigger LUSTER_SEWERS_B2F, $0
 	domaptrigger UNDERGROUND_PASSAGE, $0

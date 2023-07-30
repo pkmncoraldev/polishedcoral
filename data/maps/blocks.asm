@@ -64,7 +64,7 @@ SunbeamViewNite_BlockData:
 
 Route4EventideGate_BlockData:
 EventideVillageGate_BlockData:
-Route17DuskGate_BlockData:
+Route18DuskGate_BlockData:
 	INCBIN "maps/EastWestGate.ablk.lz"
 
 SunsetWaterGrassHouse_BlockData:
@@ -264,7 +264,7 @@ LusterTrainStation_BlockData:
 	INCBIN "maps/LusterTrainStation.ablk.lz"
 	
 Route10Tent_BlockData:
-Route16Tent_BlockData:
+Route17Tent_BlockData:
 	INCBIN "maps/Route10Tent.ablk.lz"
 	
 TwinkleTown_BlockData:
@@ -627,14 +627,14 @@ RadiantTownship_BlockData:
 BrilloTown_BlockData:
 	INCBIN "maps/BrilloTown.ablk.lz"
 	
-Route15_BlockData:
-	INCBIN "maps/Route15.ablk.lz"
-	
 Route16_BlockData:
 	INCBIN "maps/Route16.ablk.lz"
 	
-Route16North_BlockData:
-	INCBIN "maps/Route16North.ablk.lz"
+Route17_BlockData:
+	INCBIN "maps/Route17.ablk.lz"
+	
+Route17North_BlockData:
+	INCBIN "maps/Route17North.ablk.lz"
 	
 DesertWasteland1_BlockData:
 DesertWasteland3_BlockData:
@@ -673,14 +673,17 @@ Route13_BlockData:
 Route14_BlockData:
 	INCBIN "maps/Route14.ablk.lz"
 	
+Route15_BlockData:
+	INCBIN "maps/Route15.ablk.lz"
+	
 Airport_BlockData:
 	INCBIN "maps/Airport.ablk.lz"
 	
-Route17_BlockData:
-	INCBIN "maps/Route17.ablk.lz"
-	
 Route18_BlockData:
 	INCBIN "maps/Route18.ablk.lz"
+	
+Route19_BlockData:
+	INCBIN "maps/Route19.ablk.lz"
 	
 RadiantFlowerShop_BlockData:
 	INCBIN "maps/RadiantFlowerShop.ablk.lz"
@@ -701,7 +704,7 @@ RadiantPokeCenter_BlockData:
 RadiantMart_BlockData:
 	INCBIN "maps/Mart.ablk.lz"
 	
-Route19Gate_BlockData:
+Route20Gate_BlockData:
 	INCBIN "maps/NorthSouthGate.ablk.lz"
 	
 RadiantHouse_BlockData:
@@ -710,8 +713,8 @@ RadiantHouse_BlockData:
 RadiantField_BlockData:
 	INCBIN "maps/RadiantField.ablk.lz"
 	
-Route19_BlockData:
-	INCBIN "maps/Route19.ablk.lz"
+Route20_BlockData:
+	INCBIN "maps/Route20.ablk.lz"
 	
 DuskTurnpike_BlockData:
 	INCBIN "maps/DuskTurnpike.ablk.lz"
@@ -722,8 +725,8 @@ DuskAutoLobby_BlockData:
 DuskAutoGarage_BlockData:
 	INCBIN "maps/DuskAutoGarage.ablk.lz"
 	
-Route20Tunnel_BlockData:
-	INCBIN "maps/Route20Tunnel.ablk.lz"
+Route21Tunnel_BlockData:
+	INCBIN "maps/Route21Tunnel.ablk.lz"
 	
 FakeRoute1_BlockData:
 	INCBIN "maps/FakeRoute1.ablk.lz"

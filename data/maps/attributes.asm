@@ -297,47 +297,51 @@ ENDM
 	connection east, Route14, ROUTE_14, 14
 	
 	map_attributes Route14, ROUTE_14, $35, SOUTH | WEST | EAST
-	connection south, ShimmerCity, SHIMMER_CITY, 5
+	connection south, Route15, ROUTE_15, 7
 	connection west, Route13, ROUTE_13, -14
 	connection east, SunbeamBeach, SUNBEAM_BEACH, -14
 	
+	map_attributes Route15, ROUTE_15, $35, NORTH | SOUTH
+	connection north, Route14, ROUTE_14, -7
+	connection south, ShimmerCity, SHIMMER_CITY, -3
+	
 	map_attributes ShimmerCity, SHIMMER_CITY, $35, NORTH | WEST | EAST
-	connection north, Route14, ROUTE_14, -5
-	connection west, ShimmerHarbor, SHIMMER_HARBOR, 2
-	connection east, Route17, ROUTE_17, 3
+	connection north, Route15, ROUTE_15, 3
+	connection west, ShimmerHarbor, SHIMMER_HARBOR, -1
+	connection east, Route18, ROUTE_18, 3
 	
 	map_attributes ShimmerHarbor, SHIMMER_HARBOR, $35, EAST
-	connection east, ShimmerCity, SHIMMER_CITY, -2
+	connection east, ShimmerCity, SHIMMER_CITY, 1
 	
-	map_attributes Route17, ROUTE_17, $30, SOUTH | WEST
-	connection south, Route18, ROUTE_18, 11
+	map_attributes Route18, ROUTE_18, $30, SOUTH | WEST
+	connection south, Route19, ROUTE_19, 11
 	connection west, ShimmerCity, SHIMMER_CITY, -3
 	
-	map_attributes Route18, ROUTE_18, $30, NORTH | SOUTH
-	connection north, Route17, ROUTE_17, -11
+	map_attributes Route19, ROUTE_19, $30, NORTH | SOUTH
+	connection north, Route18, ROUTE_18, -11
 	connection south, RadiantTownship, RADIANT_TOWNSHIP, 1
 	
 	map_attributes RadiantTownship, RADIANT_TOWNSHIP, $30, NORTH
-	connection north, Route18, ROUTE_18, -1
+	connection north, Route19, ROUTE_19, -1
 	
 	map_attributes BrilloTown, BRILLO_TOWN, $35, EAST
-	connection east, Route15, ROUTE_15, -7
+	connection east, Route16, ROUTE_16, -7
 	
-	map_attributes Route15, ROUTE_15, $71, NORTH | WEST
-	connection north, Route16, ROUTE_16, 14
+	map_attributes Route16, ROUTE_16, $71, NORTH | WEST
+	connection north, Route17, ROUTE_17, 14
 	connection west, BrilloTown, BRILLO_TOWN, 7
 	
-	map_attributes Route16, ROUTE_16, $71, NORTH | SOUTH
-	connection north, Route16North, ROUTE_16_NORTH, 5
-	connection south, Route15, ROUTE_15, -14
+	map_attributes Route17, ROUTE_17, $71, NORTH | SOUTH
+	connection north, Route17North, ROUTE_17_NORTH, 5
+	connection south, Route15, ROUTE_16, -14
 	
-	map_attributes Route16North, ROUTE_16_NORTH, $02, NORTH | SOUTH
+	map_attributes Route17North, ROUTE_17_NORTH, $02, NORTH | SOUTH
 	connection north, DesertWasteland1, DESERT_WASTELAND_1, 2
-	connection south, Route16, ROUTE_16, -5
+	connection south, Route17, ROUTE_17, -5
 	
 	map_attributes DesertWasteland1, DESERT_WASTELAND_1, $02, NORTH | SOUTH
 	connection north, DesertWasteland2, DESERT_WASTELAND_2, 0
-	connection south, Route16North, ROUTE_16_NORTH, -2
+	connection south, Route17North, ROUTE_17_NORTH, -2
 	
 	map_attributes DesertWasteland2, DESERT_WASTELAND_2, $02, SOUTH | WEST
 	connection south, DesertWasteland1, DESERT_WASTELAND_1, 0
@@ -378,17 +382,17 @@ ENDM
 	map_attributes DesertTempleOutside, DESERT_TEMPLE_OUTSIDE, $02, SOUTH
 	connection south, DesertWasteland9, DESERT_WASTELAND_9, 4
 	
-	map_attributes Route19, ROUTE_19, 0, NORTH
+	map_attributes Route20, ROUTE_20, 0, NORTH
 	connection north, DuskTurnpike, DUSK_TURNPIKE, 0
 	
 	map_attributes DuskTurnpike, DUSK_TURNPIKE, 0, SOUTH
-	connection south, Route19, ROUTE_19, 0
+	connection south, Route19, ROUTE_20, 0
 	
 	map_attributes DuskAutoLobby, DUSK_AUTO_LOBBY, $00, 0
 	
 	map_attributes DuskAutoGarage, DUSK_AUTO_GARAGE, $00, 0
 	
-	map_attributes Route20Tunnel, ROUTE_20_TUNNEL, $d9, 0
+	map_attributes Route21Tunnel, ROUTE_21_TUNNEL, $d9, 0
 	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0
@@ -597,7 +601,7 @@ ENDM
 	map_attributes BrilloMart, BRILLO_MART, $0, 0
 	map_attributes BrilloGameCorner, BRILLO_GAME_CORNER, $0, 0
 	map_attributes BrilloPoliceStation, BRILLO_POLICE_STATION, $0, 0
-	map_attributes Route16Tent, ROUTE_16_TENT, $0, 0
+	map_attributes Route17Tent, ROUTE_17_TENT, $0, 0
 	map_attributes Airport, AIRPORT, $0, 0
 	map_attributes RadiantFlowerShop, RADIANT_FLOWER_SHOP, $0, 0
 	map_attributes RadiantOrphanage1F, RADIANT_ORPHANAGE_1F, $0, 0
@@ -606,7 +610,7 @@ ENDM
 	
 	map_attributes RadiantPokeCenter, RADIANT_POKECENTER, $0, 0
 	map_attributes RadiantMart, RADIANT_MART, $0, 0
-	map_attributes Route19Gate, ROUTE_19_GATE, $0, 0
+	map_attributes Route20Gate, ROUTE_20_GATE, $0, 0
 	map_attributes RadiantHouse, RADIANT_HOUSE, $0, 0
 	map_attributes RadiantField, RADIANT_FIELD, $59, 0
 	
@@ -615,7 +619,7 @@ ENDM
 	map_attributes DuskHouse1, DUSK_HOUSE_1, $0, 0
 	map_attributes DuskHouse2, DUSK_HOUSE_2, $0, 0
 	map_attributes DuskHouse3, DUSK_HOUSE_3, $0, 0
-	map_attributes Route17DuskGate, ROUTE_17_DUSK_GATE, $0, 0
+	map_attributes Route18DuskGate, ROUTE_18_DUSK_GATE, $0, 0
 	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0

@@ -1040,13 +1040,13 @@ wNettBuildingOfficeTrigger:: ds 1
 wOnwaIntlAirportTrigger:: ds 1
 wShimmerHarborTrigger:: ds 1
 wBrilloTownTrigger:: ds 1
-wRoute16Trigger:: ds 1
-wRoute16NorthTrigger:: ds 1
+wRoute17Trigger:: ds 1
+wRoute17NorthTrigger:: ds 1
 wAirportTrigger:: ds 1
-wRoute18Trigger:: ds 1
+wRoute19Trigger:: ds 1
 wLusterSkyscraperPorygonRoomTrigger:: ds 1
 wDuskTurnpikeTrigger:: ds 1
-wRoute20TunnelTrigger:: ds 1
+wRoute21TunnelTrigger:: ds 1
 wStarglowCavernDepthsTrigger:: ds 1
 wLusterGymTrigger:: ds 1
 wUndergroundPassageTrigger:: ds 1

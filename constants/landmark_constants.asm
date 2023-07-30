@@ -47,27 +47,28 @@
 	const AIRPORT			 ; 25
 	const ROUTE_13			 ; 26
 	const ROUTE_14			 ; 27
-	const LUSTER_STATION	 		; 28
-	const RESIDENTIAL_DISTRICT		; 29
-	const SHOPPING_DISTRICT			; 2a
-	const BUSINESS_DISTRICT			; 2b
-	const FAKE_ROUTE_1
-	const STARGLOW_DEPTHS			; 2c
+	const ROUTE_15			 ; 28
+	const LUSTER_STATION	 		; 29
+	const RESIDENTIAL_DISTRICT		; 2a
+	const SHOPPING_DISTRICT			; 2b
+	const BUSINESS_DISTRICT			; 2c
+	const FAKE_ROUTE_1				; 2d
+	const STARGLOW_DEPTHS			; 2e
 
 SOUTH_ONWA_LANDMARK EQU const_value
 
-	const SHIMMER_CITY		 ; 2d
-	const BRILLO_TOWN		 ; 2e
-	const ROUTE_15			 ; 2f
-	const ROUTE_16			 ; 30
-	const DESERT_WASTELAND	 ; 31
+	const SHIMMER_CITY		 ; 2f
+	const BRILLO_TOWN		 ; 20
+	const ROUTE_16			 ; 31
 	const ROUTE_17			 ; 32
-	const ROUTE_18			 ; 33
-	const RADIANT_TOWNSHIP	 ; 34
+	const DESERT_WASTELAND	 ; 33
+	const ROUTE_18			 ; 34
 	const ROUTE_19			 ; 35
-	const DUSK_TURNPIKE		 ; 36
-	const SEASIDE_CAVE		 ; 37
-	const ROUTE_20			 ; 38
+	const RADIANT_TOWNSHIP	 ; 36
+	const ROUTE_20			 ; 37
+	const DUSK_TURNPIKE		 ; 38
+	const SEASIDE_CAVE		 ; 39
+	const ROUTE_21			 ; 3a
 
 SHAMOUTI_LANDMARK EQU const_value
 

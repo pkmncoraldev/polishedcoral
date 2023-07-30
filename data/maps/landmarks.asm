@@ -44,6 +44,7 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, AirportName
 	landmark   0,   0, Route13Name
 	landmark   0,   0, Route14Name
+	landmark   0,   0, Route15Name
 	
 	landmark 136,  80, LusterStationName
 	landmark 136,  80, ResidentialName
@@ -54,16 +55,16 @@ Landmarks: ; 0x1ca8c3
 	
 	landmark  20, 100, ShimmerName
 	landmark   0,   0, BrilloTownName
-	landmark   0,   0, Route15Name
 	landmark   0,   0, Route16Name
-	landmark   0,   0, DesertWastelandName
 	landmark   0,   0, Route17Name
+	landmark   0,   0, DesertWastelandName
 	landmark   0,   0, Route18Name
-	landmark  28,  92, RadiantName
 	landmark   0,   0, Route19Name
+	landmark  28,  92, RadiantName
+	landmark   0,   0, Route20Name
 	landmark   0,   0, DuskTurnpikeName
 	landmark   0,   0, SeasideCaveName
-	landmark   0,   0, Route20Name
+	landmark   0,   0, Route21Name
 	
 	
 	landmark -16, -16, GateName
@@ -108,19 +109,20 @@ Route12Name:		   db "ROUTE 12@"
 AirportName:		   db "ONWA INTL.¯AIRPORT@"
 Route13Name:		   db "ROUTE 13@"
 Route14Name:		   db "ROUTE 14@"
+Route15Name:		   db "ROUTE 15@"
 StarglowDepthsName:    db "STARGLOW¯DEPTHS@"
 ShimmerName:           db "PORT¯SHIMMER@"
 BrilloTownName:	   	   db "BRILLO¯TOWN@"
-Route15Name:		   db "ROUTE 15@"
 Route16Name:		   db "ROUTE 16@"
-DesertWastelandName:   db "DESERT¯WASTELAND@"
 Route17Name:		   db "ROUTE 17@"
+DesertWastelandName:   db "DESERT¯WASTELAND@"
 Route18Name:		   db "ROUTE 18@"
-RadiantName:	 	   db "RADIANT¯TOWNSHIP@"
 Route19Name:		   db "ROUTE 19@"
+RadiantName:	 	   db "RADIANT¯TOWNSHIP@"
+Route20Name:		   db "ROUTE 20@"
 DuskTurnpikeName:	   db "DUSK¯TURNPIKE@"
 SeasideCaveName:	   db "SEASIDE¯CAVE@"
-Route20Name:		   db "ROUTE 20@"
+Route21Name:		   db "ROUTE 21@"
 
 LusterStationName:	   db "LUSTER¯CITY@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"

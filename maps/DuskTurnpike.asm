@@ -7,13 +7,13 @@ DuskTurnpike_MapScriptHeader:
 	callback MAPCALLBACK_TILES, DuskTurnpikeCallback
 
 	db 15 ; warp events
-	warp_event  8, 28, ROUTE_17_DUSK_GATE, 3
-	warp_event  8, 29, ROUTE_17_DUSK_GATE, 4
-	warp_event  7, 13, ROUTE_20_TUNNEL, 1
-	warp_event  7, 14, ROUTE_20_TUNNEL, 2
-	warp_event  7, 15, ROUTE_20_TUNNEL, 3
-	warp_event  7, 16, ROUTE_20_TUNNEL, 4
-	warp_event  7, 17, ROUTE_20_TUNNEL, 5
+	warp_event  8, 28, ROUTE_18_DUSK_GATE, 3
+	warp_event  8, 29, ROUTE_18_DUSK_GATE, 4
+	warp_event  7, 13, ROUTE_21_TUNNEL, 1
+	warp_event  7, 14, ROUTE_21_TUNNEL, 2
+	warp_event  7, 15, ROUTE_21_TUNNEL, 3
+	warp_event  7, 16, ROUTE_21_TUNNEL, 4
+	warp_event  7, 17, ROUTE_21_TUNNEL, 5
 	warp_event 25, 23, DUSK_AUTO_LOBBY, 1
 	warp_event 27, 23, DUSK_AUTO_GARAGE, 3
 	warp_event 28, 23, DUSK_AUTO_GARAGE, 6
@@ -121,7 +121,7 @@ DuskTurnpikeCallback:
 	changeblock $16, $16, $fa
 	setflag ENGINE_STREETLIGHTS
 .notnite
-	checkevent EVENT_ROUTE_20_TRASHCAN
+	checkevent EVENT_ROUTE_21_TRASHCAN
 	iffalse .end
 	changeblock $0e, $06, $e7
 .end
@@ -191,7 +191,7 @@ DuskTurnpikeSign:
 	done
 	
 DuskTurnpikeHighwaySign:
-	text "ROUTE 20 HIGHWAY"
+	text "ROUTE 21 HIGHWAY"
 	line "ahead."
 	
 	para "Motor vehicles"

@@ -49,7 +49,7 @@ INCLUDE "maps/MtOnwaLowerCliff.asm"
 INCLUDE "maps/LusterSewersB1F.asm"
 INCLUDE "maps/LusterSewersB2F.asm"
 INCLUDE "maps/LusterSewersValveRoom.asm"
-INCLUDE "maps/Route16.asm"
+INCLUDE "maps/Route17.asm"
 
 
 SECTION "Dungeon Scripts2", ROMX
@@ -95,19 +95,20 @@ INCLUDE "maps/Route8Garden.asm"
 INCLUDE "maps/Route8.asm"
 INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route14.asm"
-INCLUDE "maps/Route17.asm"
+INCLUDE "maps/Route15.asm"
 INCLUDE "maps/Route18.asm"
 INCLUDE "maps/Route19.asm"
+INCLUDE "maps/Route20.asm"
 INCLUDE "maps/FakeRoute1.asm"
 
 
 SECTION "Routes Scripts2", ROMX
 INCLUDE "maps/Route10East.asm"
 INCLUDE "maps/Route10Tent.asm"
-INCLUDE "maps/Route15.asm"
-INCLUDE "maps/Route16North.asm"
+INCLUDE "maps/Route16.asm"
+INCLUDE "maps/Route17North.asm"
 INCLUDE "maps/DesertWastelandOasis.asm"
-INCLUDE "maps/Route16Tent.asm"
+INCLUDE "maps/Route17Tent.asm"
 INCLUDE "maps/Route3StarglowCavernTop.asm"
 
 
@@ -306,7 +307,7 @@ INCLUDE "maps/RadiantOrphanageLeilanisRoom.asm"
 INCLUDE "maps/RadiantPokeCenter.asm"
 INCLUDE "maps/RadiantMart.asm"
 INCLUDE "maps/RadiantHouse.asm"
-INCLUDE "maps/Route19Gate.asm"
+INCLUDE "maps/Route20Gate.asm"
 INCLUDE "maps/RadiantField.asm"
 
 SECTION "Brillo Town Scripts", ROMX
@@ -385,5 +386,5 @@ INCLUDE "maps/DuskHouse2.asm"
 INCLUDE "maps/DuskHouse3.asm"
 INCLUDE "maps/DuskAutoLobby.asm"
 INCLUDE "maps/DuskAutoGarage.asm"
-INCLUDE "maps/Route17DuskGate.asm"
-INCLUDE "maps/Route20Tunnel.asm"
+INCLUDE "maps/Route18DuskGate.asm"
+INCLUDE "maps/Route21Tunnel.asm"

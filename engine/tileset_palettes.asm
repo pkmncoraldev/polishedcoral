@@ -184,7 +184,7 @@ LoadSpecialMapPalette: ; 494ac
 	
 .highway
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_20_TUNNEL
+	cp MAP_ROUTE_21_TUNNEL
 	jr z, .highway_tunnel
 	ld hl, HighwayPalette
 	ld a, [wTimeOfDayPal]
@@ -224,7 +224,7 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, [wMapNumber]
 	cp MAP_BRILLO_TOWN
 	jp z, .brillo
-	cp MAP_ROUTE_16_NORTH
+	cp MAP_ROUTE_17_NORTH
 	jp z, .desert_tent
 	cp MAP_DESERT_WASTELAND_OASIS
 	jr z, .oasis1

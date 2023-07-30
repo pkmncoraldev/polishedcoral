@@ -220,7 +220,7 @@ MAP_NONE   EQU 0
 	map_const TWINKLE_GYM_RED_ROOM,						  24, 28 ; 13
 	map_const ROUTE_10_REST_HOUSE,						   4,  5 ; 14
 	map_const ROUTE_10_MOVE_REMINDER_HOUSE,				   4,  5 ; 15
-	map_const ROUTE_16_TENT,							   2,  3 ; 16
+	map_const ROUTE_17_TENT,							   2,  3 ; 16
 	
 	newgroup													 ; 12
 	
@@ -295,7 +295,7 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 16
 	
-	map_const SHIMMER_CITY,					  			  23, 20 ; 1
+	map_const SHIMMER_CITY,					  			  23, 17 ; 1
 	map_const SHIMMER_HARBOR,					  		  11, 18 ; 2
 	map_const SHIMMER_LAB_LOBBY,			  			   7,  3 ; 3
 	map_const SHIMMER_LAB_RESEARCH_ROOM,				   5,  5 ; 4
@@ -308,7 +308,8 @@ MAP_NONE   EQU 0
 	map_const SHIMMER_HOUSE_2,							   4,  4 ; 11
 	map_const SHIMMER_HOUSE_3,							   4,  4 ; 12
 	map_const ROUTE_13,									  15, 24 ; 13
-	map_const ROUTE_14,									  44, 16 ; 14
+	map_const ROUTE_14,									  44, 14 ; 14
+	map_const ROUTE_15,									   7,  4 ; 15
 	
 	
 	newgroup													 ; 17
@@ -322,9 +323,9 @@ MAP_NONE   EQU 0
 	map_const BRILLO_MART,                    			   5,  4 ; 7
 	map_const BRILLO_GAME_CORNER,              			   7,  5 ; 8
 	map_const BRILLO_POLICE_STATION,           			   8,  5 ; 9
-	map_const ROUTE_15,  		       	           		  24, 17 ; 10
-	map_const ROUTE_16,   		      	           		  15, 18 ; 11
-	map_const ROUTE_16_NORTH,       	           	  13, 15 ; 12
+	map_const ROUTE_16,  		       	           		  24, 17 ; 10
+	map_const ROUTE_17,   		      	           		  15, 18 ; 11
+	map_const ROUTE_17_NORTH,       	           	  13, 15 ; 12
 	map_const DESERT_WASTELAND_1,              			   9,  9 ; 13
 	map_const DESERT_WASTELAND_2,              			   9,  9 ; 14
 	map_const DESERT_WASTELAND_3,              			   9,  9 ; 15
@@ -348,8 +349,8 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 18
 	
-	map_const ROUTE_17,									  24, 24 ; 1
-	map_const ROUTE_18,									  10, 16 ; 2
+	map_const ROUTE_18,									  24, 24 ; 1
+	map_const ROUTE_19,									  10, 16 ; 2
 	map_const RADIANT_TOWNSHIP,							  20, 14 ; 3
 	map_const RADIANT_FLOWER_SHOP,						   5,  4 ; 4
 	map_const RADIANT_ORPHANAGE_1F,						   6,  5 ; 5
@@ -358,24 +359,24 @@ MAP_NONE   EQU 0
 	
 	map_const RADIANT_POKECENTER,                      	   6,  4 ; 9
 	map_const RADIANT_MART,                                6,  4 ; 10
-	map_const ROUTE_19_GATE,                          	   4,  4 ; 11
+	map_const ROUTE_20_GATE,                          	   4,  4 ; 11
 	map_const RADIANT_HOUSE,     	             		   4,  4 ; 12
 	map_const RADIANT_FIELD,							  13, 14 ; 13
 	
 	
 	newgroup
 	
-	map_const ROUTE_19,									  20, 17 ; 1
+	map_const ROUTE_20,									  20, 17 ; 1
 	map_const DUSK_TURNPIKE,							  20, 19 ; 2
 	map_const DUSK_POKECENTER,                      	   6,  4 ; 3
 	map_const DUSK_MART,                             	   6,  4 ; 4
-	map_const ROUTE_17_DUSK_GATE,						   5,  4 ; 5
+	map_const ROUTE_18_DUSK_GATE,						   5,  4 ; 5
 	map_const DUSK_HOUSE_1,     	             		   4,  4 ; 6
 	map_const DUSK_HOUSE_2,     	             		   4,  4 ; 7
 	map_const DUSK_HOUSE_3,     	             		   4,  4 ; 8
 	map_const DUSK_AUTO_LOBBY,							   4,  3 ; 9
 	map_const DUSK_AUTO_GARAGE,							   4,  4 ; 10
-	map_const ROUTE_20_TUNNEL,							  15,  9 ; 11
+	map_const ROUTE_21_TUNNEL,							  15,  9 ; 11
 	map_const SEASIDE_CAVE_1F,							  12, 19 ; 12
 	map_const SEASIDE_CAVE_B1F,							  13, 18 ; 13
 	map_const SEASIDE_CAVE_B2F,							   8, 10 ; 14

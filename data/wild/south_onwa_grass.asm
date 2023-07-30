@@ -1,32 +1,5 @@
 ; S. Onwa Pokémon in grass
 
-	map_id ROUTE_15
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
-	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
-	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
-	
 	map_id ROUTE_16
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
@@ -54,32 +27,59 @@
 	db 20, BULBASAUR	;4%
 	db 20, BULBASAUR	;1%
 	
-	map_id BRILLO_BOAT_HOUSE ; used in desert when stuck in sand
-;	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
+	map_id ROUTE_17
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-;	db 20, SQUIRTLE		;30%
-;	db 20, SQUIRTLE		;30%
-;	db 20, SQUIRTLE		;20%
-;	db 20, SQUIRTLE		;10%
-;	db 20, SQUIRTLE		;5%
-;	db 20, SQUIRTLE		;4%
-;	db 28, SQUIRTLE		;1%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
 	; day
-;	db 20, SQUIRTLE		;30%
-;	db 20, SQUIRTLE		;30%
-;	db 20, SQUIRTLE		;20%
-;	db 20, SQUIRTLE		;10%
-;	db 20, SQUIRTLE		;5%
-;	db 20, SQUIRTLE		;4%
-;	db 28, SQUIRTLE		;1%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
 	; nite
-;	db 20, SQUIRTLE		;30%
-;	db 20, SQUIRTLE		;30%
-;	db 20, SQUIRTLE		;20%
-;	db 20, SQUIRTLE		;10%
-;	db 20, SQUIRTLE		;5%
-;	db 20, SQUIRTLE		;4%
-;	db 28, SQUIRTLE		;1%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	
+	map_id BRILLO_BOAT_HOUSE ; used in desert when stuck in sand
+	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, SQUIRTLE		;30%
+	db 20, SQUIRTLE		;30%
+	db 20, SQUIRTLE		;20%
+	db 20, SQUIRTLE		;10%
+	db 20, SQUIRTLE		;5%
+	db 20, SQUIRTLE		;4%
+	db 28, SQUIRTLE		;1%
+	; day
+	db 20, SQUIRTLE		;30%
+	db 20, SQUIRTLE		;30%
+	db 20, SQUIRTLE		;20%
+	db 20, SQUIRTLE		;10%
+	db 20, SQUIRTLE		;5%
+	db 20, SQUIRTLE		;4%
+	db 28, SQUIRTLE		;1%
+	; nite
+	db 20, SQUIRTLE		;30%
+	db 20, SQUIRTLE		;30%
+	db 20, SQUIRTLE		;20%
+	db 20, SQUIRTLE		;10%
+	db 20, SQUIRTLE		;5%
+	db 20, SQUIRTLE		;4%
+	db 28, SQUIRTLE		;1%
 	
 	map_id DESERT_WASTELAND_1
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -299,6 +299,87 @@
 
 	map_id DESERT_WASTELAND_9
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	; day
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	; nite
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	
+	map_id ROUTE_18
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	; day
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	; nite
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	
+	map_id ROUTE_19
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	; day
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	; nite
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	
+	map_id ROUTE_20
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, BULBASAUR	;30%
 	db 20, BULBASAUR	;30%

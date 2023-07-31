@@ -27,25 +27,30 @@ ShimmerCity_MapScriptHeader:
 	warp_event  2, 14, SHIMMER_UNDER_BOARDWALK, 23
 	warp_event  2, 15, SHIMMER_UNDER_BOARDWALK, 25
 	warp_event 33, 15, SHIMMER_POKECENTER, 1
-	warp_event 39, 15, SHIMMER_MART, 1
-	warp_event 13, 23, SHIMMER_HOUSE_1, 1
-	warp_event 19, 23, SHIMMER_HOUSE_2, 1
-	warp_event 37, 23, SHIMMER_HOUSE_3, 1
+	warp_event 37, 23, SHIMMER_MART, 1
+	warp_event 15, 23, SHIMMER_HOUSE_1, 1
+	warp_event 21, 23, SHIMMER_HOUSE_2, 1
+	warp_event 22, 14, SHIMMER_CAFE, 1
 	warp_event  5,  3, SHIMMER_UNDER_BOARDWALK, 19
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 8 ; bg events
 	bg_event 14, 15, SIGNPOST_ITEM + BIG_NUGGET, EVENT_SHIMMER_CITY_HIDDEN_ITEM
 	signpost 14, 15, SIGNPOST_LEFT, ShimmerCityFishMarket
 	signpost 17, 15, SIGNPOST_LEFT, ShimmerCityBerryMarket
+	signpost 13, 19, SIGNPOST_READ, ShimmerCitySign
+	signpost 15, 23, SIGNPOST_READ, ShimmerCafeSign
+	signpost 26,  3, SIGNPOST_READ, ShimmerLabSign
+	signpost 14, 36, SIGNPOST_READ, ShimmerFlowers
+	signpost 15, 36, SIGNPOST_READ, ShimmerFlowers
 
 	db 10 ; object events
 	person_event SPRITE_FISHING_GURU, 14, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc1, -1
 	person_event SPRITE_POKEFAN_F, 17, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc2, -1
 	person_event SPRITE_REDS_MOM, 18, 18, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc3, -1
-	person_event SPRITE_CHILD, 14, 22, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc4, -1
-	person_event SPRITE_FAT_GUY, 13, 20, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc5, -1
+	person_event SPRITE_CHILD, 19, 23, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc4, -1
+	person_event SPRITE_FAT_GUY, 14, 20, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc5, -1
 	person_event SPRITE_BALLOONS, 15, 16, SPRITEMOVEDATA_BALLOONS_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_BALLOONS, 12, 16, SPRITEMOVEDATA_BALLOONS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_BOOK_PAPER_POKEDEX, 15, 15, SPRITEMOVEDATA_STALL, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
@@ -65,6 +70,18 @@ ShimmerCityFlyPoint:
 	setflag ENGINE_FLYPOINT_SHIMMER
 	setevent EVENT_CAN_GO_TO_SHIMMER
 	return
+	
+ShimmerCitySign:
+	jumptext ShimmerCitySignText
+	
+ShimmerCafeSign:
+	jumptext ShimmerCafeSignText
+	
+ShimmerLabSign:
+	jumptext ShimmerLabSignText
+	
+ShimmerFlowers:
+	jumptext ShimmerFlowersText
 	
 ShimmerCityFishMarket:
 	callasm ShimmerCityFishMarketAsm
@@ -191,6 +208,28 @@ ShimmerCityHorseaKidAsm:
 	ld a, TRUE
 	ld [wScriptVar], a
 	ret
+	
+ShimmerCitySignText:
+	text "PORT SHIMMER"
+	
+	para "The gateway to"
+	line "SOUTHERN ONWA."
+	done
+	
+ShimmerCafeSignText:
+	text "SHIMMER CAFE"
+	done
+	
+ShimmerLabSignText:
+	text "#MON LAB"
+	done
+	
+ShimmerFlowersText:
+	text "Some flowers."
+	
+	para "They remind you"
+	line "of home…"
+	done
 	
 ShimmerCityNpc1Text:
 	text "Woah!"

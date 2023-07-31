@@ -294,7 +294,7 @@ INCLUDE "maps/ShimmerUnderBoardwalk.asm"
 INCLUDE "maps/ShimmerBoatHouse.asm"
 INCLUDE "maps/ShimmerHouse1.asm"
 INCLUDE "maps/ShimmerHouse2.asm"
-INCLUDE "maps/ShimmerHouse3.asm"
+INCLUDE "maps/ShimmerCafe.asm"
 
 SECTION "Radiant Township Scripts", ROMX
 

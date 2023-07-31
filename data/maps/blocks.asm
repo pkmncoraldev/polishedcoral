@@ -71,7 +71,6 @@ SunsetWaterGrassHouse_BlockData:
 StarglowGrandpaHouse_BlockData:
 SunbeamDodrioHouse_BlockData:
 ShimmerHouse1_BlockData:
-ShimmerHouse3_BlockData:
 Route3FriendshipHouse_BlockData:
 DuskHouse1_BlockData:
 	INCBIN "maps/NormalHouse1.ablk.lz"
@@ -142,6 +141,7 @@ SunsetBay_BlockData:
 	INCBIN "maps/SunsetBay.ablk.lz"
 	
 SunsetCafe_BlockData:
+ShimmerCafe_BlockData:
 	INCBIN "maps/SunsetCafe.ablk.lz"
 	
 SunsetCape_BlockData:

@@ -308,14 +308,14 @@ ENDM
 	map_attributes ShimmerCity, SHIMMER_CITY, $35, NORTH | WEST | EAST
 	connection north, Route15, ROUTE_15, 3
 	connection west, ShimmerHarbor, SHIMMER_HARBOR, -1
-	connection east, Route18, ROUTE_18, 3
+	connection east, Route18, ROUTE_18, 0
 	
 	map_attributes ShimmerHarbor, SHIMMER_HARBOR, $35, EAST
 	connection east, ShimmerCity, SHIMMER_CITY, 1
 	
 	map_attributes Route18, ROUTE_18, $30, SOUTH | WEST
 	connection south, Route19, ROUTE_19, 11
-	connection west, ShimmerCity, SHIMMER_CITY, -3
+	connection west, ShimmerCity, SHIMMER_CITY, 0
 	
 	map_attributes Route19, ROUTE_19, $30, NORTH | SOUTH
 	connection north, Route18, ROUTE_18, -11
@@ -592,7 +592,7 @@ ENDM
 	map_attributes ShimmerMart, SHIMMER_MART, $0, 0
 	map_attributes ShimmerHouse1, SHIMMER_HOUSE_1, $0, 0
 	map_attributes ShimmerHouse2, SHIMMER_HOUSE_2, $0, 0
-	map_attributes ShimmerHouse3, SHIMMER_HOUSE_3, $0, 0
+	map_attributes ShimmerCafe, SHIMMER_CAFE, $0, 0
 	map_attributes BrilloBoatHouse, BRILLO_BOAT_HOUSE, $0, 0
 	map_attributes BrilloRockHouse, BRILLO_ROCK_HOUSE, $0, 0
 	map_attributes BrilloTradeHouse, BRILLO_TRADE_HOUSE, $0, 0

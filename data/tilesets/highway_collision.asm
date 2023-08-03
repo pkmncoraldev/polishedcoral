@@ -63,7 +63,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 3e
 	tilecoll WALL, WALL, WALL, WALL ; 3f
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 40
-	tilecoll WALL, WALL, WALL, WALL ; 41
+	tilecoll WATER, WATER, WATER, WATER ; 41
 	tilecoll WALL, WALL, WALL, WALL ; 42
 	tilecoll WALL, WALL, WALL, WALL ; 43
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 44
@@ -164,7 +164,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; a3
 	tilecoll SKATE, SKATE, SKATE, SKATE ; a4
 	tilecoll WARP_CARPET_LEFT, WARP_CARPET_RIGHT, WARP_CARPET_LEFT, WARP_CARPET_RIGHT ; a5
-	tilecoll WALL, WALL, WALL, DOOR ; a6
+	tilecoll WALL, WALL, WALL, WALL ; a6
 	tilecoll WALL, WALL, WALL, WALL ; a7
 	tilecoll WATER, WATER, WATER, WATER ; a8
 	tilecoll WALL, WALL, SKATE, SKATE ; a9

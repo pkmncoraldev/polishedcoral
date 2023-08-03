@@ -25,13 +25,11 @@ DuskTurnpike_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 14 ; bg events
+	db 13 ; bg events
 	signpost 21, 31, SIGNPOST_JUMPTEXT, DuskTurnpikeBrokenCar
 	signpost 21, 32, SIGNPOST_JUMPTEXT, DuskTurnpikeBrokenCar
 	signpost 20, 23, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
 	signpost 20, 33, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
-	signpost 22, 30, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
-	signpost 23, 30, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
 	signpost 24, 29, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
 	signpost 21, 22, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
 	signpost 22, 22, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
@@ -40,6 +38,7 @@ DuskTurnpike_MapScriptHeader:
 	signpost  6, 15, SIGNPOST_READ, DuskTurnpikeTrashcan
 	signpost 31, 24, SIGNPOST_READ, DuskTurnpikePokeCenterSign
 	signpost 31, 32, SIGNPOST_READ, DuskTurnpikeMartSign
+	signpost 13, 29, SIGNPOST_READ, DuskTurnpikeTollbooth
 	
 
 	db 1 ; object events
@@ -137,6 +136,10 @@ DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
 	ld a, [wMapScriptHeaderBank]
 	farjp CallScript
 
+DuskTurnpikeTollbooth:
+	setevent EVENT_TALKED_TO_TOLL_BOOTH
+	jumptext DuskTurnpikeTollboothText1
+
 DuskTurnpikeTrashcan:
 	checkevent EVENT_LUSTER_TRASHCAN_1
 	iftrue .OnlyTrash
@@ -217,4 +220,13 @@ DuskTurnpikeBrokenCar:
 DuskTurnpikeTire:
 	text "Tires are stacked"
 	line "around randomly."
+	done
+	
+DuskTurnpikeTollboothText1:
+	text "Motor vehicles"
+	line "only past this"
+	cont "point."
+	
+	para "Sorry, that's the"
+	line "rule."
 	done

@@ -2045,7 +2045,7 @@ GetMapHeaderMusic:: ; 2cbd
 
 .starglow
 	ld a, [wSnareFlags]
-	bit 0, a ; PUNKS_IN_STARGLOW
+	bit 0, a ; ENGINE_PUNKS_IN_STARGLOW
 	jr z, .clearedstarglow
 	ld de, MUSIC_SNARE_INVASION
 	jr .done
@@ -2056,7 +2056,7 @@ GetMapHeaderMusic:: ; 2cbd
 
 .jungle
 	ld a, [wSnareFlags]
-	bit 1, a ; PUNKS_ON_SUNBEAM
+	bit 1, a ; ENGINE_PUNKS_ON_SUNBEAM
 	jr z, .clearedsunbeam
 	ld de, MUSIC_SNARE_INVASION
 	jr .done
@@ -2067,7 +2067,7 @@ GetMapHeaderMusic:: ; 2cbd
 
 .train
 	ld a, [wSnareFlags]
-	bit 2, a ; PUNKS_ON_TRAIN
+	bit 2, a ; ENGINE_PUNKS_ON_TRAIN
 	jr z, .clearedtrain
 	ld de, MUSIC_SNARE_THEME
 	jr .done

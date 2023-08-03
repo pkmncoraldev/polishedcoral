@@ -196,7 +196,7 @@
 	tilecoll FLOOR, WALL, WALL, WALL ; c3
 	tilecoll DOWN_WALL, DOWN_WALL, LEFT_WALL, LEFT_WALL ; c4
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; c5
-	tilecoll FLOOR, WALL, FLOOR, WALL ; c6
+	tilecoll FLOOR, COUNTER, FLOOR, COUNTER ; c6
 	tilecoll WALL, FLOOR, WALL, FLOOR ; c7
 	tilecoll WALL, WALL, LEFT_WALL, WALL ; c8
 	tilecoll WALL, WALL, WALL, FLOOR ; c9

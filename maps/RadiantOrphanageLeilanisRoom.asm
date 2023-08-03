@@ -1,7 +1,8 @@
 RadiantOrphanageLeilanisRoom_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, RadiantOrphanageLeilanisRoomCallback
 
 	db 2 ; warp events
 	warp_def  5,  2, 3, RADIANT_ORPHANAGE_1F
@@ -11,17 +12,104 @@ RadiantOrphanageLeilanisRoom_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 9 ; object events
 	object_event  2,  1, SPRITE_ERIKA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomErika, -1
 	object_event  1,  1, SPRITE_LEILANI_BED, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  4,  2, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomRose, -1
+	object_event  3,  3, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomLily, -1
+	object_event  4,  1, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomIris, -1
+	object_event  1,  3, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomPoppy, -1
+	object_event  4,  3, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomViolet, -1
+	object_event  0,  3, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomClover, -1
+	object_event  5,  4, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomFelicia, -1
 
 
 	const_def 1 ; object constants
 	const RADIANT_ORPHANAGE_LEILANIS_ROOM_ERIKA
+	const RADIANT_ORPHANAGE_LEILANIS_ROOM_LEILANI_BED
+	const RADIANT_ORPHANAGE_LEILANIS_ROOM_ROSE
+	const RADIANT_ORPHANAGE_LEILANIS_ROOM_LILY
+	const RADIANT_ORPHANAGE_LEILANIS_ROOM_IRIS
+	const RADIANT_ORPHANAGE_LEILANIS_ROOM_POPPY
+	const RADIANT_ORPHANAGE_LEILANIS_ROOM_VIOLET
+	const RADIANT_ORPHANAGE_LEILANIS_ROOM_CLOVER
+	const RADIANT_ORPHANAGE_LEILANIS_ROOM_FELICIA
+	
+RadiantOrphanageLeilanisRoomCallback:
+	checkevent EVENT_SAVED_ROSE
+	iftrue .skip_rose
+	moveperson RADIANT_ORPHANAGE_LEILANIS_ROOM_ROSE, -5, -5
+.skip_rose
+	checkevent EVENT_SAVED_LILY
+	iftrue .skip_lily
+	moveperson RADIANT_ORPHANAGE_LEILANIS_ROOM_LILY, -5, -5
+.skip_lily
+	checkevent EVENT_SAVED_IRIS
+	iftrue .skip_iris
+	moveperson RADIANT_ORPHANAGE_LEILANIS_ROOM_IRIS, -5, -5
+.skip_iris
+	checkevent EVENT_SAVED_POPPY
+	iftrue .skip_poppy
+	moveperson RADIANT_ORPHANAGE_LEILANIS_ROOM_POPPY, -5, -5
+.skip_poppy
+	checkevent EVENT_SAVED_VIOLET
+	iftrue .skip_violet
+	moveperson RADIANT_ORPHANAGE_LEILANIS_ROOM_VIOLET, -5, -5
+.skip_violet
+	checkevent EVENT_SAVED_CLOVER
+	iftrue .skip_clover
+	moveperson RADIANT_ORPHANAGE_LEILANIS_ROOM_CLOVER, -5, -5
+.skip_clover
+	checkevent EVENT_SAVED_FELICIA
+	iftrue .skip_felicia
+	moveperson RADIANT_ORPHANAGE_LEILANIS_ROOM_FELICIA, -5, -5
+.skip_felicia
+	return
+
+RadiantOrphanageLeilanisRoomRose:
+	setevent EVENT_SAVED_ROSE
+	callasm SaveLostGirl
+	end
+	
+RadiantOrphanageLeilanisRoomLily:
+	setevent EVENT_SAVED_LILY
+	callasm SaveLostGirl
+	end
+	
+RadiantOrphanageLeilanisRoomIris:
+	setevent EVENT_SAVED_IRIS
+	callasm SaveLostGirl
+	end
+	
+RadiantOrphanageLeilanisRoomPoppy:
+	setevent EVENT_SAVED_POPPY
+	callasm SaveLostGirl
+	end
+	
+RadiantOrphanageLeilanisRoomViolet:
+	setevent EVENT_SAVED_VIOLET
+	callasm SaveLostGirl
+	end
+	
+RadiantOrphanageLeilanisRoomClover:
+	setevent EVENT_SAVED_CLOVER
+	callasm SaveLostGirl
+	end
+	
+RadiantOrphanageLeilanisRoomFelicia:
+	setevent EVENT_SAVED_FELICIA
+	callasm SaveLostGirl
+	end
 
 RadiantOrphanageLeilanisRoomErika:
+	callasm CalcRemainingLostGirlsAsm
+	ifequal 1, .saved_one
+	ifequal 6, .saved_almost_all
+	ifequal 7, .saved_all
+	ifnotequal 0, .saved_some
 	checkevent EVENT_TALKED_TO_ERIKA_ONCE
 	iftrue .talked_once
+	setevent EVENT_TALKED_TO_ERIKA_ONCE
 	opentext
 	writetext RadiantOrphanageLeilanisRoomErikaText1
 	waitbutton
@@ -45,7 +133,7 @@ RadiantOrphanageLeilanisRoomErika:
 	waitbutton
 	closetext
 	spriteface RADIANT_ORPHANAGE_LEILANIS_ROOM_ERIKA, LEFT
-	pause 40
+	pause 70
 .talked_once
 	faceplayer
 	opentext
@@ -53,8 +141,122 @@ RadiantOrphanageLeilanisRoomErika:
 	waitbutton
 	closetext
 	spriteface RADIANT_ORPHANAGE_LEILANIS_ROOM_ERIKA, LEFT
-	setevent EVENT_TALKED_TO_ERIKA_ONCE
 	end
+.saved_one
+	faceplayer
+	opentext
+	writetext RadiantOrphanageLeilanisRoomErikaSavedOneText
+	waitbutton
+	closetext
+	spriteface RADIANT_ORPHANAGE_LEILANIS_ROOM_ERIKA, LEFT
+	end
+.saved_some
+	faceplayer
+	opentext
+	writetext RadiantOrphanageLeilanisRoomErikaSavedSomeText
+	waitbutton
+	closetext
+	spriteface RADIANT_ORPHANAGE_LEILANIS_ROOM_ERIKA, LEFT
+	opentext
+	writetext RadiantOrphanageLeilanisRoomErikaSavedSomeText2
+	waitbutton
+	closetext
+	end
+.saved_almost_all
+	faceplayer
+	opentext
+	writetext RadiantOrphanageLeilanisRoomErikaSavedAlmostAllText
+	waitbutton
+	closetext
+	spriteface RADIANT_ORPHANAGE_LEILANIS_ROOM_ERIKA, LEFT
+	opentext
+	writetext RadiantOrphanageLeilanisRoomErikaSavedAlmostAllText2
+	waitbutton
+	closetext
+	end
+.saved_all
+	end
+	
+SaveLostGirl:
+	ld a, [wLostGirls]
+	inc a
+	ld [wLostGirls], a
+	ret
+	
+CalcRemainingLostGirlsAsm:
+	ld a, [wLostGirls]
+	ld c, a
+	ld a, 7
+	sub c
+	ld [wItemQuantityChangeBuffer], a
+	ld a, [wLostGirls]
+	ld [wScriptVar], a
+	ret
+	
+RadiantOrphanageLeilanisRoomErikaSavedOneText:
+	text "Oh my!"
+	
+	para "One of the girls"
+	line "has returned!"
+	
+	para "Did you find her?"
+	
+	para "Thank you!"
+	
+	para "Can I ask for your"
+	line "help in finding"
+	cont "the rest?"
+	
+	para "There are still 6"
+	line "girls missing."
+	done
+	
+RadiantOrphanageLeilanisRoomErikaSavedSomeText:
+	text "Oh my!"
+	
+	para "Some of the girls"
+	line "have returned!"
+	
+	para "Did you find them?"
+	
+	para "Thank you!"
+	
+	para "Can I ask for your"
+	line "help in finding"
+	cont "the rest?"
+	
+	para "There are still @"
+	deciram wItemQuantityChangeBuffer, 1, 2
+	text ""
+	line "girls missing."
+	done
+	
+RadiantOrphanageLeilanisRoomErikaSavedSomeText2:
+	text "Hang in there,"
+	line "GRAMMA…"
+	done
+	
+RadiantOrphanageLeilanisRoomErikaSavedAlmostAllText:
+	text "Thank goodness!"
+	
+	para "Most of the girls"
+	line "have returned!"
+	
+	para "Only 1 more is"
+	line "missing now!"
+	
+	para "Can I ask for your"
+	line "help in finding"
+	cont "her?"
+	done
+	
+RadiantOrphanageLeilanisRoomErikaSavedAlmostAllText2:
+	text "You hear that,"
+	line "GRAMMA?"
+	
+	para "It's going to be"
+	line "ok!"
+	done
 	
 RadiantOrphanageLeilanisRoomErikaText1:
 	text "Oh GRAMMA…"
@@ -77,8 +279,15 @@ RadiantOrphanageLeilanisRoomErikaText2:
 RadiantOrphanageLeilanisRoomErikaText3:
 	text "I came here from"
 	line "the KANTO REGION"
-	cont "when I heard she"
-	cont "was sick."
+	cont "to visit GRAMMA"
+	cont "and the girls of"
+	cont "the ORPHANAGE."
+	
+	para "When I got here,"
+	line "all the girls had"
+	cont "gone missing and"
+	cont "GRAMMA was bed-"
+	cont "ridden with worry."
 	
 	para "I've been taking"
 	line "care of her, but"
@@ -89,36 +298,32 @@ RadiantOrphanageLeilanisRoomErikaText3:
 	done
 	
 RadiantOrphanageLeilanisRoomErikaText4:
-	text "Not only does"
-	line "GRAMMA run the"
-	cont "GYM here,"
+	text "If the girls don't"
+	line "return soon…"
 	
-	para "but she also"
-	line "runs this little"
-	cont "ORPHANAGE."
+	para "I don't think she'll"
+	line "get any better!"
 	
-	para "She takes care"
-	line "of all the kids"
-	cont "here."
+	para "Oh, I hope they're"
+	line "ok…"
 	
-	para "If she doesn't"
-	line "get better…"
-	
-	para "The children…"
-	
+	para "…"
 	done
 	
 RadiantOrphanageLeilanisRoomErikaText5:
-	text "The girls ran off"
-	line "to the nearby"
-	cont "meadow to fetch"
-	cont "GRAMMA LEILANI"
-	cont "some flowers."
+	text "There are @"
+	deciram wItemQuantityChangeBuffer, 1, 2
+	text " girls"
+	line "that ran off."
+	
+	para "ROSE, LILY, IRIS,"
+	line "POPPY, FELICIA,"
+	cont "VIOLET and CLOVER."
 	
 	para "Could I ask you"
-	line "to go find them"
-	cont "and send them"
-	cont "back home?"
+	line "to keep an eye out"
+	cont "for them on your"
+	cont "travels?"
 	
 	para "I would really"
 	line "appreciate it."

@@ -213,5 +213,6 @@ NUM_GYM_LEADERS_MET EQU const_value
 
 	const_def
 	const PUNKS_IN_STARGLOW
+	const PUNKS_ON_SUNBEAM
 	const PUNKS_ON_TRAIN
 NUM_SNARE_FLAGS EQU const_value

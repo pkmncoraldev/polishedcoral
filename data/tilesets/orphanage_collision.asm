@@ -46,7 +46,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 2d
 	tilecoll FLOOR, RIGHT_WALL, FLOOR, FLOOR ; 2e
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 2f
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 30
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 30
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 31
 	tilecoll WALL, WINDOW, WALL, RADIO ; 32
 	tilecoll WALL, WALL, WALL, WALL ; 33

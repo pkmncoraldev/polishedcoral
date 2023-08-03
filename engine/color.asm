@@ -1286,6 +1286,9 @@ LoadMapPals::
 	jp z, .outside
 	ret
 .sunflowers
+	ld a, [wTileset]
+	cp TILESET_ORPHANAGE
+	jp z, .orphanage
 	ld a, [wPermission]
 	cp INDOOR
 	ret z
@@ -1503,6 +1506,13 @@ LoadMapPals::
 	ld hl, MapObjectPalsLighthouse
 	call AddNTimes
 	jp .copy_single_pal_to_pal_7
+.orphanage
+	ld a, [wMapNumber]
+	cp MAP_RADIANT_ORPHANAGE_LEILANIS_ROOM
+	jp nz, .normal
+	ld hl, MapObjectPalsLeilaniBed
+	call LoadSingleOBPalLinePal7
+	jp FarCopyWRAM
 .highway
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_21_TUNNEL
@@ -1896,6 +1906,9 @@ INCLUDE "maps/palettes/obpals/dark.pal"
 
 MapObjectPalsFakeRoute1::
 INCLUDE "maps/palettes/obpals/fakeroute1.pal"
+
+MapObjectPalsLeilaniBed::
+INCLUDE "maps/palettes/obpals/leilanibed.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

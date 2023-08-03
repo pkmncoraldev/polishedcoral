@@ -903,7 +903,9 @@ wTotalMoney:: ds 3
 MoneyEnd::
 wMomSavingMoney:: ds 1
 
-ds 3
+ds 2
+
+wLostGirls:: ds 1
 
 wCoins:: ds 2
 

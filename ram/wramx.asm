@@ -1055,38 +1055,9 @@ wUndergroundPassageTrigger:: ds 1
 wDesertTemple1Trigger:: ds 1
 wDesertTemple2Trigger:: ds 1
 
-ds 9
+ds 36
 
 wAmpharosFood:: ds 1
-; fight counts
-;wJackFightCount::    ds 1
-wBeverlyFightCount:: ds 1 ; unused
-wHueyFightCount::    ds 1
-wGavenFightCount::   ds 1
-wBethFightCount::    ds 1
-wJoseFightCount::    ds 1
-wReenaFightCount::   ds 1
-wJoeyFightCount::    ds 1
-wWadeFightCount::    ds 1
-wRalphFightCount::   ds 1
-wLizFightCount::     ds 1
-wAnthonyFightCount:: ds 1
-wToddFightCount::    ds 1
-wGinaFightCount::    ds 1
-wIrwinFightCount::   ds 1 ; unused
-wArnieFightCount::   ds 1
-wAlanFightCount::    ds 1
-wDanaFightCount::    ds 1
-wChadFightCount::    ds 1
-wDerekFightCount::   ds 1 ; unused
-wTullyFightCount::   ds 1
-wBrentFightCount::   ds 1
-wTiffanyFightCount:: ds 1
-wVanceFightCount::   ds 1
-wWiltonFightCount::  ds 1
-wKenjiFightCount::   ds 1 ; unused
-wParryFightCount::   ds 1
-wErinFightCount::    ds 1
 
 wEventFlags:: flag_array NUM_EVENTS
 

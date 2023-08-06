@@ -1,7 +1,8 @@
 DuskAutoLobby_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, DuskAutoLobbyCallback
 
 	db 2 ; warp events
 	warp_def  5,  2, 8, DUSK_TURNPIKE
@@ -12,7 +13,18 @@ DuskAutoLobby_MapScriptHeader:
 	db 0 ; bg events
 
 	db 1 ; object events
-	person_event SPRITE_FISHING_GURU,  4,  6, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, DuskAutoLobbyGuy, -1
+	person_event SPRITE_POKEMANIAC,  4,  6, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, DuskAutoLobbyGuy, -1
+	
+	
+	const_def 1 ; object constants
+	const DUSK_AUTO_LOBBY_GUY
+	
+DuskAutoLobbyCallback:
+	checkevent EVENT_SAVED_POPPY
+	iftrue .end
+	moveperson DUSK_AUTO_LOBBY_GUY, -5, -5
+.end
+	return
 	
 DuskAutoLobbyGuy:
 	opentext

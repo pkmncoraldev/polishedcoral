@@ -552,3 +552,76 @@ Special_UpdatePalsInstant:
 ; successful change
 	scf
 	ret
+	
+Special_SaveLostGirl:
+	ld c, 20
+	call DelayFrames
+	ld a, [wLostGirls]
+	inc a
+	ld [wLostGirls], a
+	ld c, a
+	ld a, NUM_LOST_GIRLS
+	sub c
+	ld [wItemQuantityChangeBuffer], a
+	ld a, [wLostGirls]
+	cp NUM_LOST_GIRLS - 1
+	jr z, .saved_all_but_one
+	cp NUM_LOST_GIRLS
+	jr z, .saved_all
+	ld a, BANK(SavedGirlScript)
+	ld hl, SavedGirlScript
+	call CallScript
+	ret
+.saved_all_but_one
+	ld a, BANK(SavedAlmostAllGirlsScript)
+	ld hl, SavedAlmostAllGirlsScript
+	call CallScript
+	ret
+.saved_all
+	ld a, BANK(SavedAllGirlsScript)
+	ld hl, SavedAllGirlsScript
+	call CallScript
+	ret
+
+SavedGirlScript:
+	jumptext SavedGirlText
+	
+SavedGirlText:
+	text "@"
+	deciram wItemQuantityChangeBuffer, 1, 2
+	text " girls"
+	line "remaining."
+	done
+	
+SavedAlmostAllGirlsScript:
+	jumptext SavedAlmostAllGirlsText
+	
+SavedAlmostAllGirlsText:
+	text "@"
+	deciram wItemQuantityChangeBuffer, 1, 2
+	text " girl"
+	line "remaining."
+	done
+	
+SavedAllGirlsScript:
+	opentext
+	writetext SavedAllGirlsText1
+	playsound SFX_REGISTER_PHONE_NUMBER
+	waitsfx
+	farwritetext StdBlankText
+	pause 6
+	writetext SavedAllGirlsText2
+	waitbutton
+	closetext
+	end
+	
+SavedAllGirlsText1:
+	text "You found all the"
+	line "girls!"
+	done
+	
+SavedAllGirlsText2:
+	text "Better go tell"
+	line "ERIKA."
+	done
+	

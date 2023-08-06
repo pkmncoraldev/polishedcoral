@@ -110,6 +110,7 @@ RadiantOrphanageLeilanisRoomErika:
 	checkevent EVENT_TALKED_TO_ERIKA_ONCE
 	iftrue .talked_once
 	setevent EVENT_TALKED_TO_ERIKA_ONCE
+	domaptrigger SHIMMER_UNDER_BOARDWALK, $1
 	opentext
 	writetext RadiantOrphanageLeilanisRoomErikaText1
 	waitbutton
@@ -186,7 +187,7 @@ SaveLostGirl:
 CalcRemainingLostGirlsAsm:
 	ld a, [wLostGirls]
 	ld c, a
-	ld a, 7
+	ld a, NUM_LOST_GIRLS
 	sub c
 	ld [wItemQuantityChangeBuffer], a
 	ld a, [wLostGirls]

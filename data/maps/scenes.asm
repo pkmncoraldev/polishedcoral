@@ -82,6 +82,7 @@ MapTriggers::
 	scene_var NETT_BUILDING_M_BATHROOM,				  wAlways0Trigger
 	scene_var NETT_BUILDING_F_BATHROOM,				  wAlways0Trigger
 	scene_var ONWA_INTL_AIRPORT,					  wOnwaIntlAirportTrigger
+	scene_var SHIMMER_UNDER_BOARDWALK,				  wShimmerUnderBoardwalkTrigger
 	scene_var SHIMMER_HARBOR,						  wShimmerHarborTrigger
 	scene_var BRILLO_TOWN,							  wBrilloTownTrigger
 	scene_var BRILLO_MART,							  wAlways0Trigger

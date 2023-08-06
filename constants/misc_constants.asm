@@ -39,6 +39,8 @@ LEAF   EQU 4
 GOLD   EQU 5
 KRIS   EQU 6
 
+NUM_LOST_GIRLS EQU 7
+
 ; movement
 	const_def
 	const STEP_SLOW

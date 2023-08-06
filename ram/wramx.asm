@@ -1040,6 +1040,7 @@ wMtOnwaB2FTrigger:: ds 1
 wMtOnwaB3FTrigger:: ds 1
 wNettBuildingOfficeTrigger:: ds 1
 wOnwaIntlAirportTrigger:: ds 1
+wShimmerUnderBoardwalkTrigger:: ds 1
 wShimmerHarborTrigger:: ds 1
 wBrilloTownTrigger:: ds 1
 wRoute17Trigger:: ds 1
@@ -1055,7 +1056,7 @@ wUndergroundPassageTrigger:: ds 1
 wDesertTemple1Trigger:: ds 1
 wDesertTemple2Trigger:: ds 1
 
-ds 36
+ds 35
 
 wAmpharosFood:: ds 1
 

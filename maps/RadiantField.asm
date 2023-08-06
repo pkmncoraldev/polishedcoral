@@ -12,152 +12,95 @@ RadiantField_MapScriptHeader:
 	db 0 ; bg events
 
 	db 6 ; object events
-	person_event SPRITE_SCHOOLGIRL, 13, 20, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantFieldLittleGirlRed, EVENT_RADIANT_FIELD_LITTLE_GIRL_RED
-	person_event SPRITE_SCHOOLGIRL, 20, 22, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantFieldLittleGirlBlue, EVENT_RADIANT_FIELD_LITTLE_GIRL_BLUE
-	person_event SPRITE_SCHOOLGIRL, 16,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantFieldLittleGirlPurple, EVENT_RADIANT_FIELD_LITTLE_GIRL_PURPLE
+	person_event SPRITE_TWIN, 13, 20, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantFieldRose, EVENT_SAVED_ROSE
+	person_event SPRITE_TWIN, 20, 22, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantFieldIris, EVENT_SAVED_IRIS
+	person_event SPRITE_TWIN, 16,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantFieldViolet, EVENT_SAVED_VIOLET
 	person_event SPRITE_CASINO,  9, 18, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO,  9, 19, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 24, 16, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	
 	
 	const_def 1 ; object constants
-	const RADIANT_FIELD_LITTLE_GIRL_RED
-	const RADIANT_FIELD_LITTLE_GIRL_BLUE
-	const RADIANT_FIELD_LITTLE_GIRL_PURPLE
+	const RADIANT_FIELD_ROSE
+	const RADIANT_FIELD_IRIS
+	const RADIANT_FIELD_VIOLET
 	
-RadiantFieldLittleGirlRed:
+RadiantFieldRose:
+	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	iftrue .time_to_save
+	jumptextfaceplayer RadiantFieldRoseText1
+.time_to_save
 	faceplayer
 	opentext
-	writetext RadiantFieldLittleGirlRedText1
-	checkevent EVENT_TALKED_TO_ERIKA_ONCE
-	iffalse NoErika
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext RadiantFieldLittleGirlRedText2
+	writetext RadiantFieldRoseText2
 	waitbutton
-	closetext
-	setevent EVENT_RADIANT_FIELD_LITTLE_GIRL_RED
+	closetext	
 	checkcode VAR_FACING
 	if_equal LEFT, .YouAreFacingLeft
-	applymovement RADIANT_FIELD_LITTLE_GIRL_RED, Movement_LittleGirlRed
+	applymovement RADIANT_FIELD_ROSE, Movement_Rose
 	jump .skip
 .YouAreFacingLeft
-	applymovement RADIANT_FIELD_LITTLE_GIRL_RED, Movement_LittleGirlRed2
+	applymovement RADIANT_FIELD_ROSE, Movement_Rose2
 .skip
-	disappear RADIANT_FIELD_LITTLE_GIRL_RED
-	checkevent EVENT_RADIANT_FIELD_LITTLE_GIRL_BLUE
-	iffalse .end
-	checkevent EVENT_RADIANT_FIELD_LITTLE_GIRL_PURPLE
-	iffalse .end
-	jump RadiantFieldFoundAllLittleGirls
+	disappear RADIANT_FIELD_ROSE
+	setevent EVENT_SAVED_ROSE
+	special Special_SaveLostGirl
 .end
 	end
 	
-RadiantFieldLittleGirlBlue:
+RadiantFieldIris:
+	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	iftrue .time_to_save
+	jumptextfaceplayer RadiantFieldIrisText1
+.time_to_save
 	faceplayer
 	opentext
-	writetext RadiantFieldLittleGirlBlueText1
-	checkevent EVENT_TALKED_TO_ERIKA_ONCE
-	iffalse NoErika
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext RadiantFieldLittleGirlBlueText2
+	writetext RadiantFieldIrisText2
 	waitbutton
 	closetext
-	setevent EVENT_RADIANT_FIELD_LITTLE_GIRL_BLUE
 	checkcode VAR_FACING
 	if_equal UP, .YouAreFacingUp
-	applymovement RADIANT_FIELD_LITTLE_GIRL_BLUE, Movement_LittleGirlBlue
+	applymovement RADIANT_FIELD_IRIS, Movement_Iris
 	jump .skip
 .YouAreFacingUp
-	applymovement RADIANT_FIELD_LITTLE_GIRL_BLUE, Movement_LittleGirlBlue2
-	applymovement RADIANT_FIELD_LITTLE_GIRL_BLUE, Movement_LittleGirlBlue3
+	applymovement RADIANT_FIELD_IRIS, Movement_Iris2
+	applymovement RADIANT_FIELD_IRIS, Movement_Iris3
 .skip
-	disappear RADIANT_FIELD_LITTLE_GIRL_BLUE
-	checkevent EVENT_RADIANT_FIELD_LITTLE_GIRL_RED
-	iffalse .end
-	checkevent EVENT_RADIANT_FIELD_LITTLE_GIRL_PURPLE
-	iffalse .end
-	jump RadiantFieldFoundAllLittleGirls
+	disappear RADIANT_FIELD_IRIS
+	setevent EVENT_SAVED_IRIS
+	special Special_SaveLostGirl
 .end
 	end
 	
-RadiantFieldLittleGirlPurple:
+RadiantFieldViolet:
+	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	iftrue .time_to_save
+	jumptextfaceplayer RadiantFieldVioletText1
+.time_to_save
 	faceplayer
 	opentext
-	writetext RadiantFieldLittleGirlPurpleText1
-	checkevent EVENT_TALKED_TO_ERIKA_ONCE
-	iffalse NoErika
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext RadiantFieldLittleGirlPurpleText2
+	writetext RadiantFieldVioletText2
 	waitbutton
 	closetext
-	setevent EVENT_RADIANT_FIELD_LITTLE_GIRL_PURPLE
 	playsound SFX_JUMP_OVER_LEDGE
-	applymovement RADIANT_FIELD_LITTLE_GIRL_PURPLE, Movement_LittleGirlPurple
-	disappear RADIANT_FIELD_LITTLE_GIRL_PURPLE
-	checkevent EVENT_RADIANT_FIELD_LITTLE_GIRL_RED
-	iffalse .end
-	checkevent EVENT_RADIANT_FIELD_LITTLE_GIRL_BLUE
-	iffalse .end
-	jump RadiantFieldFoundAllLittleGirls
+	applymovement RADIANT_FIELD_VIOLET, Movement_Violet
+	disappear RADIANT_FIELD_VIOLET
+	setevent EVENT_SAVED_VIOLET
+	special Special_SaveLostGirl
 .end
 	end
 	
-NoErika:
-	waitbutton
-	closetext
-	end
+
 	
-RadiantFieldFoundAllLittleGirls:
-	opentext
-	writetext RadiantFieldFoundAllLittleGirlsText1
-	playsound SFX_REGISTER_PHONE_NUMBER
-	waitsfx
-	farwritetext StdBlankText
-	pause 6
-	writetext RadiantFieldFoundAllLittleGirlsText2
-	waitbutton
-	closetext
-	setevent EVENT_RADIANT_FIELD_FOUND_ALL_GIRLS
-	end
-	
-RadiantFieldFoundAllLittleGirlsText1:
-	text "You found all the"
-	line "girls!"
+RadiantFieldRoseText1:
+	text "TEXT 1"
 	done
 	
-RadiantFieldFoundAllLittleGirlsText2:
-	text "Better go tell"
-	line "ERIKA."
+RadiantFieldRoseText2:
+	text "TEXT 2"
 	done
 	
-RadiantFieldLittleGirlRedText1:
-	text "I've gotta find"
-	line "pretty flowers"
-	cont "for GRAMMA!"
-	done
-	
-RadiantFieldLittleGirlRedText2:
-	text "What?"
-	
-	para "MS. ERIKA sent you?"
-	
-	para "I have enougn"
-	line "flowers for"
-	cont "GRAMMA LEILANI."
-	
-	para "Ok, I'm going home"
-	line "now."
-	
-	para "Bye bye!"
-	done
-	
-RadiantFieldLittleGirlBlueText1:
+RadiantFieldIrisText1:
 	text "La la la!"
 	
 	para "I'm collecting"
@@ -165,32 +108,31 @@ RadiantFieldLittleGirlBlueText1:
 	cont "LEILANI."
 	done
 	
-RadiantFieldLittleGirlBlueText2:
-	text "Oh!"
+RadiantFieldIrisText2:
+	text "La la la!"
 	
-	para "MS. ERIKA wants me"
-	line "to come home?"
+	para "I'm collecting"
+	line "flowers for GRAMMA"
+	cont "LEILANI."
+	
+	para "Oh!"
+	
+	para "GRAMMA is worried"
+	line "about me?"
 	
 	para "I didn't mean to"
 	line "make her worry…"
 	done
 	
-RadiantFieldLittleGirlPurpleText1:
-	text "Oh hi."
-	
-	para "GRAMMA is sick…"
-	
-	para "Maybe flowers will"
-	line "maker her feel"
-	cont "better…"
+RadiantFieldVioletText1:
+	text "TEXT 1"
 	done
 	
-RadiantFieldLittleGirlPurpleText2:	
-	text "I'll head back so"
-	line "she doesn't worry."
+RadiantFieldVioletText2:	
+	text "TEXT 2"
 	done
 	
-Movement_LittleGirlRed2:
+Movement_Rose2:
 	step_down
 	step_right
 	step_right
@@ -213,7 +155,7 @@ Movement_LittleGirlRed2:
 	step_up
 	step_end
 	
-Movement_LittleGirlRed:
+Movement_Rose:
 	step_right
 	step_down
 	step_right
@@ -236,10 +178,10 @@ Movement_LittleGirlRed:
 	step_up
 	step_end
 	
-Movement_LittleGirlBlue2:
+Movement_Iris2:
 	step_right
 	
-Movement_LittleGirlBlue:
+Movement_Iris:
 	step_down
 	step_down
 	step_down
@@ -250,12 +192,12 @@ Movement_LittleGirlBlue:
 	step_left
 	step_end
 	
-Movement_LittleGirlBlue3:
+Movement_Iris3:
 	step_left
 	step_left
 	step_end
 	
-Movement_LittleGirlPurple:
+Movement_Violet:
 	jump_step_down
 	step_right
 	step_right

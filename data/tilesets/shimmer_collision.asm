@@ -41,7 +41,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 28
 	tilecoll WALL, WALL, WALL, WALL ; 29
 	tilecoll WALL, WALL, WALL, WALL ; 2a
-	tilecoll WALL, WALL, WALL, WALL ; 2b
+	tilecoll WALL, WARP_CARPET_LEFT, WALL, WARP_CARPET_LEFT ; 2b
 	tilecoll SKATE, WALL, SKATE, WALL ; 2c
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2d
 	tilecoll SKATE, WALL, SKATE, WALL ; 2e
@@ -131,7 +131,7 @@
 	tilecoll WALL, WALL, WALL, DOOR ; 82
 	tilecoll WALL, WALL, WALL, WALL ; 83
 	tilecoll PUDDLE, FLOOR, PUDDLE, FLOOR ; 84
-	tilecoll WALL, WALL, WALL, WALL ; 85
+	tilecoll WALL, WALL, WARP_CARPET_UP, WARP_CARPET_UP ; 85
 	tilecoll WATER, WALL, WATER, WALL ; 86
 	tilecoll WATER, NO_OLLIE, WATER, NO_OLLIE ; 87
 	tilecoll WALL, WALL, WALL, WALL ; 88
@@ -168,8 +168,8 @@
 	tilecoll WALL, WALL, SKATE, WALL ; a7
 	tilecoll WALL, FLOOR, WALL, FLOOR ; a8
 	tilecoll WALL, WALL, FLOOR, FLOOR ; a9
-	tilecoll WALL, WALL, WALL, WALL ; aa
-	tilecoll WALL, WALL, WALL, WALL ; ab
+	tilecoll WARP_CARPET_RIGHT, WALL, WALL, WALL ; aa
+	tilecoll WALL, WARP_CARPET_LEFT, WALL, WALL ; ab
 	tilecoll STAIRS, WALL, SKATE, SKATE ; ac
 	tilecoll WALL, SKATE, SKATE, SKATE ; ad
 	tilecoll WALL, WALL, WALL, WALL ; ae
@@ -195,9 +195,9 @@
 	tilecoll SKATE, SKATE, SKATE, SKATE ; c2
 	tilecoll PUDDLE, PUDDLE, FLOOR, FLOOR ; c3
 	tilecoll SKATE, SKATE, WALL, WALL ; c4
-	tilecoll WALL, WALL, WALL, WALL ; c5
-	tilecoll WALL, WALL, WALL, WALL ; c6
-	tilecoll WALL, WALL, WALL, WALL ; c7
+	tilecoll WALL, WARP_CARPET_LEFT, WALL, WARP_CARPET_LEFT ; c5
+	tilecoll WARP_CARPET_RIGHT, WALL, WARP_CARPET_RIGHT, WALL ; c6
+	tilecoll WARP_CARPET_RIGHT, WALL, WARP_CARPET_RIGHT, WALL ; c7
 	tilecoll WATER, NO_OLLIE, WALL, WALL ; c8
 	tilecoll SKATE, SKATE, SKATE, SKATE ; c9
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ca
@@ -205,14 +205,14 @@
 	tilecoll WALL, SKATE, SKATE, SKATE ; cc
 	tilecoll WATER, PUDDLE, WATER, PUDDLE ; cd
 	tilecoll PUDDLE, WATER, PUDDLE, WATER ; ce
-	tilecoll WALL, WALL, WALL, WALL ; cf
+	tilecoll WARP_CARPET_RIGHT, WALL, WALL, WALL ; cf
 	tilecoll WALL, WALL, FLOWERS, FLOWERS ; d0
 	tilecoll WATER, PUDDLE, WATER, PUDDLE ; d1
 	tilecoll PUDDLE, WATER, PUDDLE, WATER ; d2
 	tilecoll WALL, WALL, WALL, WALL ; d3
 	tilecoll WARP_CARPET_UP, WARP_CARPET_UP, WATER, WATER ; d4
 	tilecoll SKATE, SKATE, SKATE, SKATE ; d5
-	tilecoll WALL, WALL, WALL, WALL ; d6
+	tilecoll WALL, WARP_CARPET_LEFT, WALL, WALL ; d6
 	tilecoll WALL, WALL, WALL, WALL ; d7
 	tilecoll WATER, WATER, PUDDLE, PUDDLE ; d8
 	tilecoll UP_WALL, UP_WALL, SKATE, SKATE ; d9

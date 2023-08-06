@@ -188,5 +188,6 @@ SpecialsPointers::
 	add_special FadeInTextboxPalettes
 	add_special Special_RestorePlayerPalette
 	add_special Special_MoogooMankey
+	add_special Special_SaveLostGirl
 
 	add_special SpecialNone

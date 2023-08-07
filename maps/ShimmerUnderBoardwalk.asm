@@ -62,9 +62,9 @@ ShimmerUnderBoardwalk_MapScriptHeader:
 
 	db 8 ; object events
 	object_event  7, 17, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkLily, EVENT_SAVED_LILY
-	object_event  6, 17, SPRITE_DELINQUENT_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk1, EVENT_SAVED_LILY
-	object_event  8, 17, SPRITE_DELINQUENT_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk2, EVENT_SAVED_LILY
-	object_event  7, 19, SPRITE_DELINQUENT_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk3, EVENT_SAVED_LILY
+	object_event  6, 17, SPRITE_DELINQUENT_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk1, EVENT_UNDER_BOARDWALK_BATTLE_2
+	object_event  8, 17, SPRITE_DELINQUENT_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk2, EVENT_UNDER_BOARDWALK_BATTLE_2
+	object_event  7, 19, SPRITE_DELINQUENT_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk3, EVENT_UNDER_BOARDWALK_BATTLE_2
 	object_event  8, 17, SPRITE_MON_ICON, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, CLEFAIRY, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	object_event  5, 21, SPRITE_DELINQUENT_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk1, EVENT_TALKED_TO_ERIKA_ONCE
 	object_event  6, 21, SPRITE_DELINQUENT_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk2, EVENT_TALKED_TO_ERIKA_ONCE
@@ -149,12 +149,34 @@ ShimmerUnderBoardwalkLilyCutsceneStart:
 	end
 	
 ShimmerUnderBoardwalkLily:
+	checkevent EVENT_UNDER_BOARDWALK_BATTLE_2
+	iftrue .saved
+	checkevent EVENT_UNDER_BOARDWALK_BATTLE_1
+	iftrue .helping
 	checkevent EVENT_TALKED_TO_ERIKA_ONCE
 	iftrue .being_bullied
 	jumptextfaceplayer ShimmerUnderBoardwalkLilyText1
 .being_bullied
 	scall ShimmerUnderBoardwalkBulliesThrowing
+.helping
 	jumptextfaceplayer ShimmerUnderBoardwalkLilyText2
+.saved
+	faceplayer
+	opentext
+	writetext ShimmerUnderBoardwalkLilyText5
+	waitbutton
+	closetext
+	checkcode VAR_FACING
+	ifnotequal LEFT, .YouAreNotFacingLeft
+	applyonemovement SHIMMER_UNDER_BOARDWALK_LILY, step_down
+.YouAreNotFacingLeft
+	applymovement SHIMMER_UNDER_BOARDWALK_LILY, Movement_ShimmerUnderBoardwalkLily
+.end
+	playsound SFX_EXIT_BUILDING
+	disappear SHIMMER_UNDER_BOARDWALK_LILY
+	setevent EVENT_SAVED_LILY
+	special Special_SaveLostGirl
+	end	
 	
 ShimmerUnderBoardwalkBulliesThrowing:
 	spriteface SHIMMER_UNDER_BOARDWALK_LILY, RIGHT
@@ -174,7 +196,16 @@ ShimmerUnderBoardwalkBulliesThrowing:
 	applyonemovement SHIMMER_UNDER_BOARDWALK_LILY, turn_step_right
 	disappear SHIMMER_UNDER_BOARDWALK_DOLL
 	moveperson SHIMMER_UNDER_BOARDWALK_DOLL,  8, 17
+	setevent EVENT_ALWAYS_SET
 	end
+	
+Movement_ShimmerUnderBoardwalkLily:
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_end
 	
 Movement_ShimmerUnderBoardwalkWalkLeft1:
 	step_left
@@ -229,7 +260,6 @@ Movement_ShimmerUnderBoardwalkThrowRight:
 	remove_fixed_facing
 	step_end
 	
-	
 ShimmerUnderBoardwalkLilyText1:
 	text "Hehehe!"
 	
@@ -258,14 +288,124 @@ ShimmerUnderBoardwalkLilyText4:
 	text "Snivel…"
 	done
 	
+ShimmerUnderBoardwalkLilyText5:
+	text "LILY: Sniff…"
+	
+	para "Thank you for"
+	line "helping me…"
+	
+	para "I left home to"
+	line "come play on the"
+	cont "beach with my"
+	cont "dolly."
+	
+	para "Then those mean"
+	line "big kids started"
+	cont "picking on me!"
+	
+	para "I think I want"
+	line "to go home, now…"
+	done
+	
 ShimmerUnderBoardwalkPunk1:
+	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	iftrue .bullying
 	jumptextfaceplayer ShimmerUnderBoardwalkPunk1Text1
+.bullying
+	setlasttalked SHIMMER_UNDER_BOARDWALK_PUNK_1
+	checkevent EVENT_UNDER_BOARDWALK_BATTLE_1
+	iftrue .checkbattle2
+	jump ShimmerUnderBoardwalkBattle1
+.checkbattle2
+	checkevent EVENT_UNDER_BOARDWALK_BATTLED_R
+	iftrue ShimmerUnderBoardwalkBattle2
+	jumptextfaceplayer ShimmerUnderBoardwalkPunk1Text3
+	
 	
 ShimmerUnderBoardwalkPunk2:
+	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	iftrue .bullying
 	jumptextfaceplayer ShimmerUnderBoardwalkPunk2Text1
+.bullying
+	setlasttalked SHIMMER_UNDER_BOARDWALK_PUNK_2
+	checkevent EVENT_UNDER_BOARDWALK_BATTLE_1
+	iftrue .checkbattle2
+	scall ShimmerUnderBoardwalkBattle1
+	setevent EVENT_UNDER_BOARDWALK_BATTLED_R
+	end
+.checkbattle2
+	checkevent EVENT_UNDER_BOARDWALK_BATTLED_R
+	iffalse ShimmerUnderBoardwalkBattle2
+	jumptextfaceplayer ShimmerUnderBoardwalkPunk1Text3
+	
+ShimmerUnderBoardwalkBattle1:
+	special SaveMusic
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
+	faceplayer
+	opentext
+	writetext ShimmerUnderBoardwalkPunk1Text2
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext ShimmerUnderBoardwalkPunk1WinText, 0
+	loadtrainer DELINQUENT_M, SPIKE
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+;	dontrestartmapmusic
+	reloadmapafterbattle
+	special RestoreMusic
+	opentext
+	writetext ShimmerUnderBoardwalkPunk1Text3
+	waitbutton
+	closetext
+	setevent EVENT_UNDER_BOARDWALK_BATTLE_1
+	end
+	
+ShimmerUnderBoardwalkBattle2:
+	special SaveMusic
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
+	faceplayer
+	opentext
+	writetext ShimmerUnderBoardwalkPunk2Text2
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext ShimmerUnderBoardwalkPunk2WinText, 0
+	loadtrainer DELINQUENT_M, IGGY
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	opentext
+	writetext ShimmerUnderBoardwalkPunk2Text3
+	waitbutton
+	closetext
+	setevent EVENT_UNDER_BOARDWALK_BATTLE_2
+	pause 5
+	playsound SFX_EXIT_BUILDING
+	special Special_FadeBlackQuickly
+	special Special_ReloadSpritesNoPalettes
+	disappear SHIMMER_UNDER_BOARDWALK_PUNK_1
+	disappear SHIMMER_UNDER_BOARDWALK_PUNK_2
+	disappear SHIMMER_UNDER_BOARDWALK_PUNK_3
+	disappear SHIMMER_UNDER_BOARDWALK_DOLL
+	special Special_FadeOutMusic
+	waitsfx
+	special Special_FadeInQuickly
+	pause 15
+	special RestartMapMusic
+	end
 	
 ShimmerUnderBoardwalkPunk3:
+	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	iftrue .bullying
 	jumptextfaceplayer ShimmerUnderBoardwalkPunk3Text1
+.bullying
+	checkevent EVENT_UNDER_BOARDWALK_BATTLE_1
+	iftrue .saving
+	jumptextfaceplayer ShimmerUnderBoardwalkPunk3Text2
+.saving
+	jumptextfaceplayer ShimmerUnderBoardwalkPunk3Text3
 
 ShimmerUnderBoardwalkBulliesText:
 	text "Haha!"
@@ -286,14 +426,60 @@ ShimmerUnderBoardwalkPunk1Text1:
 	line "shut her up!"
 	done
 	
+ShimmerUnderBoardwalkPunk1Text2:
+	text "What do you want?"
+	
+	para "You got a problem?"
+	done
+	
+ShimmerUnderBoardwalkPunk1Text3:
+	text "Whatever!"
+	done
+	
+ShimmerUnderBoardwalkPunk1WinText:
+	text "Guh!"
+	done
+	
 ShimmerUnderBoardwalkPunk2Text1:
 	text "Why does that girl"
 	line "think she can play"
 	cont "where we hang out?"
 	done
+	
+ShimmerUnderBoardwalkPunk2Text2:
+	text "Ah heck no!"
+	
+	para "We aren't goin'"
+	line "down like that!"
+	done
+
+ShimmerUnderBoardwalkPunk2Text3:
+	text "Whatever…"
+	
+	para "We don't need"
+	line "this…"
+	
+	para "Let's get outta"
+	line "here, you guys."
+	done
+
+ShimmerUnderBoardwalkPunk2WinText:
+	text "What the heck!?"
+	done
 
 ShimmerUnderBoardwalkPunk3Text1:
 	text "What are you"
 	line "lookin' at?"
+	done
+	
+ShimmerUnderBoardwalkPunk3Text2:
+	text "Haha!"
+	
+	para "Look at her go!"
+	done
+	
+ShimmerUnderBoardwalkPunk3Text3:
+	text "Who do you think"
+	line "you are?"
 	done
 	

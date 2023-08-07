@@ -44,9 +44,20 @@ RadiantFieldRose:
 .skip
 	disappear RADIANT_FIELD_ROSE
 	setevent EVENT_SAVED_ROSE
+	callasm RoseSetNameAsm
 	special Special_SaveLostGirl
 .end
 	end
+	
+RoseSetNameAsm:
+	ld hl, .rosestring
+	ld bc, PKMN_NAME_LENGTH
+	ld de, wStringBuffer1
+	rst CopyBytes
+	ret
+	
+.rosestring:
+	db "ROSE@@@@@@@"
 	
 RadiantFieldIris:
 	checkevent EVENT_TALKED_TO_ERIKA_ONCE
@@ -68,9 +79,20 @@ RadiantFieldIris:
 .skip
 	disappear RADIANT_FIELD_IRIS
 	setevent EVENT_SAVED_IRIS
+	callasm IrisSetNameAsm
 	special Special_SaveLostGirl
 .end
 	end
+	
+IrisSetNameAsm:
+	ld hl, .irisstring
+	ld bc, PKMN_NAME_LENGTH
+	ld de, wStringBuffer1
+	rst CopyBytes
+	ret
+	
+.irisstring:
+	db "IRIS@@@@@@@"
 	
 RadiantFieldViolet:
 	checkevent EVENT_TALKED_TO_ERIKA_ONCE
@@ -86,18 +108,27 @@ RadiantFieldViolet:
 	applymovement RADIANT_FIELD_VIOLET, Movement_Violet
 	disappear RADIANT_FIELD_VIOLET
 	setevent EVENT_SAVED_VIOLET
+	callasm VioletSetNameAsm
 	special Special_SaveLostGirl
 .end
 	end
 	
-
+VioletSetNameAsm:
+	ld hl, .violetstring
+	ld bc, PKMN_NAME_LENGTH
+	ld de, wStringBuffer1
+	rst CopyBytes
+	ret
+	
+.violetstring:
+	db "VIOLET@@@@@"
 	
 RadiantFieldRoseText1:
 	text "TEXT 1"
 	done
 	
 RadiantFieldRoseText2:
-	text "TEXT 2"
+	text "ROSE: TEXT 2"
 	done
 	
 RadiantFieldIrisText1:
@@ -109,7 +140,7 @@ RadiantFieldIrisText1:
 	done
 	
 RadiantFieldIrisText2:
-	text "La la la!"
+	text "IRIS: La la la!"
 	
 	para "I'm collecting"
 	line "flowers for GRAMMA"
@@ -129,7 +160,7 @@ RadiantFieldVioletText1:
 	done
 	
 RadiantFieldVioletText2:	
-	text "TEXT 2"
+	text "VIOLET: TEXT 2"
 	done
 	
 Movement_Rose2:

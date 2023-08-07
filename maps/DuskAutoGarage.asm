@@ -52,10 +52,22 @@ DuskAutoGaragePoppy:
 .YouAreFacingUp
 	applymovement DUSK_AUTO_GARAGE_POPPY, Movement_DuskAutoGaragePoppy2
 .end
+	playsound SFX_EXIT_BUILDING
 	disappear DUSK_AUTO_GARAGE_POPPY
 	setevent EVENT_SAVED_POPPY
+	callasm PoppySetNameAsm
 	special Special_SaveLostGirl
 	end
+	
+PoppySetNameAsm:
+	ld hl, .poppystring
+	ld bc, PKMN_NAME_LENGTH
+	ld de, wStringBuffer1
+	rst CopyBytes
+	ret
+	
+.poppystring:
+	db "POPPY@@@@@@"
 	
 DuskAutoGarageMechanic:
 	checkevent EVENT_SAVED_POPPY
@@ -95,7 +107,7 @@ DuskAutoGaragePoppyText1:
 	done
 	
 DuskAutoGaragePoppyText2:
-	text "Yaaay!"
+	text "POPPY: Yaaay!"
 	
 	para "Look at the cars!"
 	

@@ -587,7 +587,11 @@ SavedGirlScript:
 	jumptext SavedGirlText
 	
 SavedGirlText:
-	text "@"
+	text "You found @"
+	text_from_ram wStringBuffer1
+	text "!"
+	
+	para "@"
 	deciram wItemQuantityChangeBuffer, 1, 2
 	text " girls"
 	line "remaining."
@@ -597,7 +601,11 @@ SavedAlmostAllGirlsScript:
 	jumptext SavedAlmostAllGirlsText
 	
 SavedAlmostAllGirlsText:
-	text "@"
+	text "You found @"
+	text_from_ram wStringBuffer1
+	text "!"
+	
+	para "@"
 	deciram wItemQuantityChangeBuffer, 1, 2
 	text " girl"
 	line "remaining."

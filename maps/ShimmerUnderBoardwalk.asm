@@ -175,8 +175,19 @@ ShimmerUnderBoardwalkLily:
 	playsound SFX_EXIT_BUILDING
 	disappear SHIMMER_UNDER_BOARDWALK_LILY
 	setevent EVENT_SAVED_LILY
+	callasm LilySetNameAsm
 	special Special_SaveLostGirl
 	end	
+	
+LilySetNameAsm:
+	ld hl, .lilystring
+	ld bc, PKMN_NAME_LENGTH
+	ld de, wStringBuffer1
+	rst CopyBytes
+	ret
+	
+.lilystring:
+	db "LILY@@@@@@@"
 	
 ShimmerUnderBoardwalkBulliesThrowing:
 	spriteface SHIMMER_UNDER_BOARDWALK_LILY, RIGHT

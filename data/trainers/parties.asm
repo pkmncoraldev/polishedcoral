@@ -3096,7 +3096,7 @@ SailorGroup:
 ; ================
 
 	; SAILOR
-	db "UNUSED@"
+	db "RANDALL@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3136,6 +3136,33 @@ SwimmerMGroup:
 	db -1 ; end
 
 ; ================
+
+	; SWIMMERM
+	db "DEVIN@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SWIMMERM
+	db "IAN@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SWIMMERM
+	db "DEON@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3163,6 +3190,33 @@ SwimmerFGroup:
 
 	; SWIMMERF
 	db "PEGGY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SWIMMERF
+	db "RACHEL@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SWIMMERF
+	db "ROSA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SWIMMERM
+	db "CONNIE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3647,7 +3701,7 @@ DisguiseGroup:
 ; ================
 
 	; DISGUISE
-	db "MASTER@" ;ROUTE 16
+	db "MASTER@" ;ROUTE 17
 	db TRAINERTYPE_MOVES
 	; party
 	db 1, BULBASAUR
@@ -3709,7 +3763,16 @@ DelinquentmGroup:
 ; ================
 
 	; DELINQUENT_M
-	db "UNUSED@"
+	db "SPIKE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DELINQUENT_M
+	db "IGGY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

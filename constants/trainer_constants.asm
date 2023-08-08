@@ -372,18 +372,25 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass SAILOR
+	const RANDALL
 
 
 	trainerclass SWIMMERM
 	const MARK
 	const PABLO
 	const GARY
+	const DEVIN
+	const IAN
+	const DEON
 
 
 	trainerclass SWIMMERF
 	const BECKY
 	const SHAE
 	const PEGGY
+	const RACHEL
+	const ROSA
+	const CONNIE
 
 
 	trainerclass BURGLAR
@@ -482,6 +489,8 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass DELINQUENT_M
+	const SPIKE
+	const IGGY
 
 
 	trainerclass DELINQUENT_F

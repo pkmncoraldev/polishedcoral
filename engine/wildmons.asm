@@ -224,6 +224,7 @@ TryWildEncounter::
 
 .EncounterRate:
 	call GetMapEncounterRate
+	call ApplyLongGrassEffectOnEncounterRate
 	call ApplyMusicEffectOnEncounterRate
 	call ApplyCleanseTagEffectOnEncounterRate
 	call SetBattlerLevel
@@ -248,6 +249,14 @@ GetMapEncounterRate: ; 2a111
 	ld b, [hl]
 	ret
 ; 2a124
+
+ApplyLongGrassEffectOnEncounterRate:
+	ld a, [wPlayerStandingTile]
+	cp COLL_LONG_GRASS
+	ret nz
+;double
+	sla b
+	ret
 
 ApplyMusicEffectOnEncounterRate:: ; 2a124
 ; Pokemon March and Ruins of Alph signal double encounter rate.

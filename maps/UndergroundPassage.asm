@@ -4,11 +4,14 @@ UndergroundPassage_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, UndergroundPassageChangeBlocks
 
-	db 4; warp events
-	warp_event 31,  2, DAYBREAK_GROTTO_3, 7
-	warp_event 25,  3, UNDERGROUND_PASSAGE, 3
+	db 7 ; warp events
+	warp_event 37,  3, DAYBREAK_GROTTO_3, 7
+	warp_event 31,  3, UNDERGROUND_PASSAGE, 3
 	warp_event  9,  7, UNDERGROUND_PASSAGE, 2
 	warp_event 29, 43, SEASIDE_CAVE_B1F, 4
+	warp_event  3, 28, UNDERGROUND_PASSAGE, 6
+	warp_event 19,  3, UNDERGROUND_PASSAGE, 5
+	warp_event 23,  3, UNDERGROUND_PASSAGE_ENTRANCE, 4
 
 	db 2 ; coord events
 	xy_trigger 1, 22, 30, 0, UndergroundPassageUnderBridge, 0, 0
@@ -16,7 +19,7 @@ UndergroundPassage_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 11 ; object events
+	db 12 ; object events
 	person_event SPRITE_COOLTRAINER_M, 10, 12, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerUndergroundPassage_1, -1
 	person_event SPRITE_COOLTRAINER_F, 16, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 3, TrainerUndergroundPassage_2, -1
 	person_event SPRITE_SUPER_NERD, 26, 21, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerUndergroundPassage_3, -1
@@ -28,9 +31,16 @@ UndergroundPassage_MapScriptHeader:
 	smashrock_event 32, 22
 	smashrock_event 31, 22
 	smashrock_event 18, 16
+	smashrock_event 20,  2
 
 
 UndergroundPassageChangeBlocks:
+	checktmhm TM_FLASH
+	iftrue .skip
+	checkevent EVENT_SNARKY_GIRL_1
+	iffalse .skip
+	setevent EVENT_SNARKY_GIRL_2
+.skip
 	checkscene
 	ifequal $1, .end
 	ifequal $0, .changeblocks

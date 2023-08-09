@@ -3,7 +3,8 @@ Route14_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 0 ; warp events
+	db 1 ; warp events
+	warp_event 36,  7, UNDERGROUND_PASSAGE_ENTRANCE, 1
 
 	db 0 ; coord events
 

@@ -119,6 +119,7 @@ Route3StarglowCavernTopPatches:
 	writetext Route3StarglowCavernTopPatchesDoneCaveText2
 	waitbutton
 	verbosegivetmhm TM_FLASH
+	setevent EVENT_HAVE_FLASH
 	writetext Route3StarglowCavernTopPatchesDoneCaveText3
 	yesorno
 	iffalse .pushthatbitch

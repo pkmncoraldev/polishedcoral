@@ -205,7 +205,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; cc
 	tilecoll FLOOR, FLOOR, FLOOR, LADDER ; cd
 	tilecoll FLOOR, FLOOR, FLOOR, LADDER ; ce
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; cf
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cf
 	tilecoll CURRENT_DOWN, CURRENT_DOWN, CURRENT_DOWN, CURRENT_DOWN ; d0
 	tilecoll CURRENT_RIGHT, CURRENT_RIGHT, CURRENT_RIGHT, CURRENT_RIGHT ; d1
 	tilecoll PUDDLE, PUDDLE, PUDDLE, LADDER ; d2
@@ -252,5 +252,5 @@
 	tilecoll WALL, WALL, WALL, WALL ; fb
 	tilecoll WALL, WALL, WALL, WALL ; fc
 	tilecoll WATER, WATER, WATER, WATER ; fd
-	tilecoll WALL, WALL, WALL, WALL ; fe
-	tilecoll WALL, WALL, WALL, WALL ; ff
+	tilecoll WALL, FLOOR, WALL, WALL ; fe
+	tilecoll FLOOR, FLOOR, LADDER, FLOOR ; ff

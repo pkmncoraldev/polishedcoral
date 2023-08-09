@@ -755,6 +755,9 @@ DesertTempleLowerRight_BlockData:
 UndergroundPassage_BlockData:
 	INCBIN "maps/UndergroundPassage.ablk.lz"
 	
+UndergroundPassageEntrance_BlockData:
+	INCBIN "maps/UndergroundPassageEntrance.ablk.lz"
+	
 SeasideCave1F_BlockData:
 	INCBIN "maps/SeasideCave1F.ablk.lz"
 	

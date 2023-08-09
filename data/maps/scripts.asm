@@ -70,6 +70,7 @@ INCLUDE "maps/SeasideCave1F.asm"
 INCLUDE "maps/SeasideCaveB1F.asm"
 INCLUDE "maps/SeasideCaveB2F.asm"
 INCLUDE "maps/UndergroundPassage.asm"
+INCLUDE "maps/UndergroundPassageEntrance.asm"
 INCLUDE "maps/StarglowCavernDepths.asm"
 
 

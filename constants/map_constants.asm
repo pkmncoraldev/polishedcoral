@@ -50,9 +50,10 @@ MAP_NONE   EQU 0
 	map_const ICE_CAVE_B3F,								  16, 16 ; 28
 	map_const ICE_TEMPLE_B1F_1,							  14, 11 ; 29
 	map_const ICE_TEMPLE_B1F_2,							  14, 10 ; 30
-	map_const ICE_TEMPLE_B1F_3,							   4, 4  ; 31
-	map_const ICE_TEMPLE_B2F_1,							   8, 6  ; 32
-	map_const ICE_TEMPLE_B2F_2,							  13, 7  ; 33
+	map_const ICE_TEMPLE_B1F_3,							   4,  4 ; 31
+	map_const ICE_TEMPLE_B2F_1,							   8,  6 ; 32
+	map_const ICE_TEMPLE_B2F_2,							  13,  7 ; 33
+	map_const UNDERGROUND_PASSAGE_ENTRANCE,				  10,  6 ; 34
 
 	newgroup                                                     ;  2
 

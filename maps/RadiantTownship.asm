@@ -15,8 +15,9 @@ RadiantTownship_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 30 ; bg events
+	db 31 ; bg events
 	signpost 14, 12, SIGNPOST_READ, RadiantTownshipSign
+	signpost 18, 20, SIGNPOST_READ, RadiantMeadowSign
 	signpost 14, 21, SIGNPOST_READ, RadiantTownshipGymSign
 	signpost  6, 32, SIGNPOST_READ, RadiantTownshipRoute19Sign
 	signpost  6,  2, SIGNPOST_READ, RadiantTownshipSolarPanel
@@ -35,7 +36,7 @@ RadiantTownship_MapScriptHeader:
 	signpost 12, 33, SIGNPOST_READ, RadiantTownshipSolarPanel
 	signpost  7,  6, SIGNPOST_READ, RadiantTownshipPokeCenterSign
 	signpost 15,  6, SIGNPOST_READ, RadiantTownshipMartSign
-	signpost 14, 36, SIGNPOST_READ, RadiantTownshipFlwoerShopSign
+	signpost 14, 36, SIGNPOST_READ, RadiantTownshipFlowerShopSign
 	signpost 11,  2, SIGNPOST_READ, RadiantTownshipSunflower
 	signpost 11,  3, SIGNPOST_READ, RadiantTownshipSunflower
 	signpost 18, 14, SIGNPOST_READ, RadiantTownshipSunflower
@@ -48,7 +49,7 @@ RadiantTownship_MapScriptHeader:
 	signpost 14, 37, SIGNPOST_READ, RadiantTownshipSunflower
 
 	db 11 ; object events
-	person_event SPRITE_CUTE_GIRL, 15, 16, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantTownshipSign, -1
+	person_event SPRITE_CUTE_GIRL, 10,  8, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC1, -1
 	person_event SPRITE_CASINO, 10,  2, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 10,  3, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 17, 14, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
@@ -117,8 +118,18 @@ SunflowerGivePollenAsm:
 	ret
 
 
+RadiantTownshipNPC1:
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
+	iftrue .lostgirls
+	jumptextfaceplayer RadiantTownshipNPC1Text1
+.lostgirls
+	jumptextfaceplayer RadiantTownshipNPC1Text2
+
 RadiantTownshipSign:
 	jumptext RadiantTownshipSignText
+	
+RadiantMeadowSign:
+	jumptext RadiantMeadowSignText
 	
 RadiantTownshipGymSign:
 	jumptext RadiantTownshipGymSignText
@@ -135,14 +146,18 @@ RadiantTownshipPokeCenterSign:
 RadiantTownshipMartSign:
 	jumpstd martsign
 	
-RadiantTownshipFlwoerShopSign:
-	jumptext RadiantTownshipFlwoerShopSignText
+RadiantTownshipFlowerShopSign:
+	jumptext RadiantTownshipFlowerShopSignText
 	
 RadiantTownshipSignText:
 	text "RADIANT TOWNSHIP"
 	
 	para "A little community"
 	line "among the flowers."
+	done
+	
+RadiantMeadowSignText:
+	text "RADIANT MEADOW"
 	done
 	
 RadiantTownshipGymSignText:
@@ -159,7 +174,7 @@ RadiantTownshipRoute19SignText:
 	line "ROUTE 20"
 	done
 	
-RadiantTownshipFlwoerShopSignText:
+RadiantTownshipFlowerShopSignText:
 	text "POLLEN PUFF"
 	line "FLOWER SHOP."
 	done
@@ -169,4 +184,24 @@ RadiantTownshipSolarPanelText:
 	line "solar panel."
 	
 	para "Shiny!"
+	done
+	
+RadiantTownshipNPC1Text1:
+	text "TEXT 1"
+	done
+	
+RadiantTownshipNPC1Text2:
+	text "The girls from the"
+	line "orhpanage have"
+	cont "gone missing?"
+	
+	para "How terrible!"
+	
+	para "I did see two"
+	line "girls run by a"
+	cont "while ago."
+	
+	para "It looked like"
+	line "they were heading"
+	cont "to PORT SHIMMER."
 	done

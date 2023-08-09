@@ -107,9 +107,9 @@ RadiantOrphanageLeilanisRoomErika:
 	ifequal 6, .saved_almost_all
 	ifequal 7, .saved_all
 	ifnotequal 0, .saved_some
-	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .talked_once
-	setevent EVENT_TALKED_TO_ERIKA_ONCE
+	setevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	domaptrigger SHIMMER_UNDER_BOARDWALK, $1
 	opentext
 	writetext RadiantOrphanageLeilanisRoomErikaText1

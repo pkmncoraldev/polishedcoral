@@ -66,9 +66,9 @@ ShimmerUnderBoardwalk_MapScriptHeader:
 	object_event  8, 17, SPRITE_DELINQUENT_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk2, EVENT_UNDER_BOARDWALK_BATTLE_2
 	object_event  7, 19, SPRITE_DELINQUENT_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk3, EVENT_UNDER_BOARDWALK_BATTLE_2
 	object_event  8, 17, SPRITE_MON_ICON, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, CLEFAIRY, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
-	object_event  5, 21, SPRITE_DELINQUENT_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk1, EVENT_TALKED_TO_ERIKA_ONCE
-	object_event  6, 21, SPRITE_DELINQUENT_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk2, EVENT_TALKED_TO_ERIKA_ONCE
-	object_event  7, 21, SPRITE_DELINQUENT_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk3, EVENT_TALKED_TO_ERIKA_ONCE
+	object_event  5, 21, SPRITE_DELINQUENT_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk1, EVENT_LOST_GIRLS_QUEST_ACTIVE
+	object_event  6, 21, SPRITE_DELINQUENT_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk2, EVENT_LOST_GIRLS_QUEST_ACTIVE
+	object_event  7, 21, SPRITE_DELINQUENT_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk3, EVENT_LOST_GIRLS_QUEST_ACTIVE
 	
 	
 	const_def 1 ; object constants
@@ -79,7 +79,7 @@ ShimmerUnderBoardwalk_MapScriptHeader:
 	const SHIMMER_UNDER_BOARDWALK_DOLL
 	
 ShimmerUnderBoardwalkCallback:
-	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .end
 	moveperson SHIMMER_UNDER_BOARDWALK_LILY,  7, 15
 	moveperson SHIMMER_UNDER_BOARDWALK_PUNK_1, -5, -5
@@ -153,7 +153,7 @@ ShimmerUnderBoardwalkLily:
 	iftrue .saved
 	checkevent EVENT_UNDER_BOARDWALK_BATTLE_1
 	iftrue .helping
-	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .being_bullied
 	jumptextfaceplayer ShimmerUnderBoardwalkLilyText1
 .being_bullied
@@ -319,7 +319,7 @@ ShimmerUnderBoardwalkLilyText5:
 	done
 	
 ShimmerUnderBoardwalkPunk1:
-	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .bullying
 	jumptextfaceplayer ShimmerUnderBoardwalkPunk1Text1
 .bullying
@@ -334,7 +334,7 @@ ShimmerUnderBoardwalkPunk1:
 	
 	
 ShimmerUnderBoardwalkPunk2:
-	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .bullying
 	jumptextfaceplayer ShimmerUnderBoardwalkPunk2Text1
 .bullying
@@ -408,7 +408,7 @@ ShimmerUnderBoardwalkBattle2:
 	end
 	
 ShimmerUnderBoardwalkPunk3:
-	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .bullying
 	jumptextfaceplayer ShimmerUnderBoardwalkPunk3Text1
 .bullying

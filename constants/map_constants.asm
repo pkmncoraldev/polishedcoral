@@ -362,7 +362,7 @@ MAP_NONE   EQU 0
 	map_const RADIANT_MART,                                6,  4 ; 10
 	map_const ROUTE_20_GATE,                          	   4,  4 ; 11
 	map_const RADIANT_HOUSE,     	             		   4,  4 ; 12
-	map_const RADIANT_FIELD,							  13, 14 ; 13
+	map_const RADIANT_FIELD,							  19, 15 ; 13
 	
 	
 	newgroup

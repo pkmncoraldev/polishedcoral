@@ -4,20 +4,22 @@ RadiantField_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def  6, 16, 2, RADIANT_TOWNSHIP
-	warp_def  6, 17, 3, RADIANT_TOWNSHIP
+	warp_def  4, 20, 2, RADIANT_TOWNSHIP
+	warp_def  4, 21, 3, RADIANT_TOWNSHIP
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 6 ; object events
-	person_event SPRITE_TWIN, 13, 20, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantFieldRose, EVENT_SAVED_ROSE
-	person_event SPRITE_TWIN, 20, 22, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantFieldIris, EVENT_SAVED_IRIS
-	person_event SPRITE_TWIN, 16,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantFieldViolet, EVENT_SAVED_VIOLET
-	person_event SPRITE_CASINO,  9, 18, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO,  9, 19, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 24, 16, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	db 8 ; object events
+	person_event SPRITE_TWIN, 11, 32, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantFieldRose, EVENT_SAVED_ROSE
+	person_event SPRITE_TWIN, 22, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantFieldIris, EVENT_SAVED_IRIS
+	person_event SPRITE_TWIN, 18,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantFieldViolet, EVENT_SAVED_VIOLET
+	person_event SPRITE_CASINO,  7, 22, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO,  7, 23, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO,  7, 18, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO,  7, 19, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 26, 28, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	
 	
 	const_def 1 ; object constants
@@ -26,7 +28,7 @@ RadiantField_MapScriptHeader:
 	const RADIANT_FIELD_VIOLET
 	
 RadiantFieldRose:
-	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .time_to_save
 	jumptextfaceplayer RadiantFieldRoseText1
 .time_to_save
@@ -60,7 +62,7 @@ RoseSetNameAsm:
 	db "ROSE@@@@@@@"
 	
 RadiantFieldIris:
-	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .time_to_save
 	jumptextfaceplayer RadiantFieldIrisText1
 .time_to_save
@@ -95,7 +97,7 @@ IrisSetNameAsm:
 	db "IRIS@@@@@@@"
 	
 RadiantFieldViolet:
-	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .time_to_save
 	jumptextfaceplayer RadiantFieldVioletText1
 .time_to_save
@@ -176,14 +178,8 @@ Movement_Rose2:
 	step_left
 	step_left
 	step_left
-	step_up
-	step_up
-	step_up
-	step_up
-	step_up
-	step_up
-	step_up
-	step_up
+	step_left
+	step_left
 	step_end
 	
 Movement_Rose:
@@ -199,14 +195,8 @@ Movement_Rose:
 	step_left
 	step_left
 	step_left
-	step_up
-	step_up
-	step_up
-	step_up
-	step_up
-	step_up
-	step_up
-	step_up
+	step_left
+	step_left
 	step_end
 	
 Movement_Iris2:

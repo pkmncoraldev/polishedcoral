@@ -45,12 +45,13 @@ ShimmerCity_MapScriptHeader:
 	signpost 14, 36, SIGNPOST_READ, ShimmerFlowers
 	signpost 15, 36, SIGNPOST_READ, ShimmerFlowers
 
-	db 10 ; object events
+	db 11 ; object events
 	person_event SPRITE_FISHING_GURU, 14, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc1, -1
 	person_event SPRITE_POKEFAN_F, 17, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc2, -1
 	person_event SPRITE_REDS_MOM, 18, 18, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc3, -1
 	person_event SPRITE_CHILD, 19, 23, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc4, -1
 	person_event SPRITE_FAT_GUY, 14, 20, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc5, -1
+	person_event SPRITE_BATTLE_GIRL, 10, 14, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc6, -1
 	person_event SPRITE_BALLOONS, 15, 16, SPRITEMOVEDATA_BALLOONS_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_BALLOONS, 12, 16, SPRITEMOVEDATA_BALLOONS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_BOOK_PAPER_POKEDEX, 15, 15, SPRITEMOVEDATA_STALL, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
@@ -64,6 +65,7 @@ ShimmerCity_MapScriptHeader:
 	const SHIIMER_CITY_NPC_3
 	const SHIIMER_CITY_NPC_4
 	const SHIIMER_CITY_NPC_5
+	const SHIIMER_CITY_NPC_6
 	
 	
 ShimmerCityFlyPoint:
@@ -190,6 +192,13 @@ ShimmerCityNpc5:
 	closetext
 	spriteface SHIIMER_CITY_NPC_5, DOWN
 	end
+	
+ShimmerCityNpc6:
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
+	iftrue .lost_girl
+	jumptextfaceplayer ShimmerCityNpc6Text1
+.lost_girl
+	jumptextfaceplayer ShimmerCityNpc6Text2
 	
 ShimmerCityHorseaKidAsm:
 	farcall SelectTradeOrDaycareMon
@@ -326,5 +335,25 @@ ShimmerCityNpc5Text:
 	
 	para "Everything's above"
 	line "the board!"
+	done
+	
+ShimmerCityNpc6Text1:
+	text "Did you come from"
+	line "up NORTH?"
+	
+	para "Well, welcome to"
+	line "SOUTH ONWA!"
+	
+	para "Take a look at"
+	line "your map!"
+	done
+	
+ShimmerCityNpc6Text2:
+	text "I saw a little"
+	line "girl playing under"
+	cont "the boardwalk."
+	
+	para "Shouldn't she have"
+	line "adult supervision?"
 	done
 	

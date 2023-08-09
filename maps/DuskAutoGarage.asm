@@ -36,7 +36,7 @@ DuskAutoGarageGuy:
 	jumptextfaceplayer DuskAutoGarageGuyText2
 	
 DuskAutoGaragePoppy:
-	checkevent EVENT_TALKED_TO_ERIKA_ONCE
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .time_to_save
 	jumptextfaceplayer DuskAutoGaragePoppyText1
 .time_to_save

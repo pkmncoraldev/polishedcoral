@@ -276,7 +276,7 @@ SunbeamReserveSpruceText6:
 	text "Recently, I've"
 	line "been letting"
 	cont "TRAINERS catch"
-	cont "POKEMON here."
+	cont "#MON here."
 	
 	para "It lets me see how"
 	line "they react to"

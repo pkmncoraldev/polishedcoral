@@ -24,7 +24,7 @@ DaybreakGrotto2NPCText:
 	cont "up ahead."
 	
 	para "I could pass with"
-	line "a POKEMON that can"
+	line "a #MON that can"
 	cont "learn CUT."
 	
 	para "Oh well…"

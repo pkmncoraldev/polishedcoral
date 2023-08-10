@@ -866,7 +866,7 @@ QuickPowderDesc:
 	next "DITTO. (Hold)@"
 
 PollenPouchDesc:
-	db   "Holds up to 250"
+	db   "Holds up to 1000"
 	next "POLLEN PUFFs.@"
 
 AirBalloonDesc:

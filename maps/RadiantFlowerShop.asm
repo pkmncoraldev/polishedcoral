@@ -20,23 +20,10 @@ RadiantFlowerShopClerk:
 	opentext
 	checkitem POLLEN_POUCH
 	iffalse .try_give_pouch
-	callasm CheckSunflowerPollenAsm
-	ifequal 0, .pouch_full
-	checkevent EVENT_GOT_POLLEN_REWARD
-	iftrue .got_pollen_reward_once
-	writetext RadiantFlowerShopClerkPouchNotFullText
-	waitbutton
-	closetext
-	end
-.pouch_full
 	writetext RadiantFlowerShopClerkPouchFullText1
 	yesorno
 	iffalse .said_no
-	callasm RadiantFlowerShopClerkClearPollenAsm
-	writetext RadiantFlowerShopHandedOverPollenText
-	playsound SFX_LEVEL_UP 
-	waitsfx
-	verbosegiveitem POTION
+	callasm RadiantFlowerShopClerkAsm
 .got_pollen_reward_once
 	writetext RadiantFlowerShopClerkPouchFullText2
 	waitbutton
@@ -65,8 +52,21 @@ RadiantFlowerShopClerk:
 	closetext
 	end
 	
+RadiantFlowerShopClerkAsm:
+	ld a, MARTTYPE_POLLEN
+	ld c, a
+	xor a
+	ld e, a
+	ld d, 0
+	ld a, [wScriptBank]
+	ld b, a
+	farjp OpenMartDialog
+	
 CheckIfPlayerIsCoveredInPollen:
 	ld a, [wPollenSteps]
+	cp 1
+	jr nc, .yes
+	ld a, [wPollenSteps + 1]
 	cp 25
 	jr nc, .yes
 	ld a, FALSE
@@ -80,6 +80,7 @@ CheckIfPlayerIsCoveredInPollen:
 RadiantFlowerShopClerkClearPollenAsm:
 	xor a
 	ld [wPollenSteps], a
+	ld [wPollenSteps + 1], a
 	ret
 	
 RadiantFlowerShopClerkNotCoveredInPollenText:
@@ -121,42 +122,37 @@ RadiantFlowerShopClerkGivePouchText2:
 	cont "walking through"
 	cont "the flowers."
 	
-	para "It can hold 250"
+	para "It can hold 1000"
 	line "POLLEN PUFFs!"
 	
-	para "Come see me when"
-	line "you fill it up"
-	cont "and I'll give you"
+	para "Come see me if"
+	line "you want to trade"
+	cont "your PUFFs for"
 	cont "something!"
 	done
 	
-RadiantFlowerShopClerkPouchNotFullText:
-	text "Come see me when"
-	line "you fill up your"
-	cont "POLLEN POUCH."
-	
-	para "I'll give you"
-	line "something!"
-	done
-	
-RadiantFlowerShopClerkPouchFullText1:	;TODO: Decide reward
+RadiantFlowerShopClerkPouchFullText1:
 	text "Oh!"
 	
-	para "Your POLLEN POUCH"
-	line "is full!"
+	para "Have you collected"
+	line "some POLLEN PUFFs?"
 	
-	para "Do you wanna trade"
-	line "for a POTION?"
+	para "Do you wanna"
+	line "trade?"
 	done
 	
 RadiantFlowerShopClerkPouchFullText2:
-	text "Come see me when"
-	line "you fill up your"
-	cont "POLLEN POUCH"
-	cont "again."
+	text "Come see me if"
+	line "you collect more"
+	cont "POLLEN PUFFs."
 	
 	para "We can trade some"
 	line "more!"
+	done
+	
+RadiantFlowerShopClerkPouchFullText3:
+	text "Which do you"
+	line "want?"
 	done
 	
 RadiantFlowerShopClerkNoText:

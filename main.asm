@@ -721,6 +721,19 @@ Special_DisplayCoinCaseBalance: ; 24b25
 	hlcoord 13, 1
 	jp PrintNum
 
+Special_DisplayPollenPouchBalance: ; 24b25
+	; Place a text box of size 1x7 at 11, 0.
+	hlcoord 11, 0
+	lb bc, 1, 7
+	call TextBox
+	hlcoord 12, 0
+	ld de, PuffString
+	call PlaceString
+	ld de, wPollenSteps
+	lb bc, 2, 4
+	hlcoord 13, 1
+	jp PrintNum
+
 Special_DisplayMoneyAndCoinBalance: ; 24b4e
 	hlcoord 5, 0
 	lb bc, 4, 13
@@ -744,6 +757,8 @@ MoneyString: ; 24b83
 	db "MONEY@"
 CoinString: ; 24b89
 	db "COINs@"
+PuffString:
+	db "PUFFs@"
 
 StartMenu_DrawBugContestStatusBox: ; 24bdc
 	hlcoord 0, 0

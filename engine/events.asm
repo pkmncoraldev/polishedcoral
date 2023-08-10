@@ -1215,41 +1215,21 @@ DoSkateboardStep:
 	ret
 	
 DoPollenStep:
-	ld a, [wPollenSteps]
-	cp 250
-	jr z, .no
 	ld a, [wPlayerStandingTile]
 	cp COLL_FLOWERS_LEDGE_DOWN
 	jr z, .yes
 	cp COLL_FLOWERS
 	jr nz, .no
 .yes
-	ld a, [wPollenSteps]
-	inc a
-	ld [wPollenSteps], a
-	cp 250
-	jr nz, .no
-	ld a, POLLEN_POUCH
-	ld [wCurItem], a
-	ld hl, wNumItems
-	call CheckItem
-	jr nc, .no
-	
-	ld a, BANK(FullPollenScript)
-	ld hl, FullPollenScript
-	call CallScript
-	scf
-	ret
+	ld a, 1
+	ld [hMoneyTemp + 1], a
+	ld a, 0
+	ld [hMoneyTemp], a
+	ld bc, hMoneyTemp
+	farcall GivePollen
 .no
 	xor a
 	ret
-	
-FullPollenScript:
-	special Special_StopRunning
-	thistext
-
-	text_jump FullPollenText
-	db "@"
 	
 DoTorchStep: ; 96bd7
 	ld a, [wMapGroup]

@@ -41,6 +41,7 @@ OpenMartDialog:: ; 15a45
 	dw BerryMarket
 	dw PasswordShop
 	dw BuyOnly
+	dw PollenShop
 ; 15a61
 
 MartDialog: ; 15a61
@@ -477,7 +478,6 @@ FishMarket: ; 15b47
 INCLUDE "data/items/coins_shop.asm"
 
 PasswordShop: ; 15b47
-	
 	ld b, BANK(CoinsShopData)
 	ld de, CoinsShopData
 	call LoadMartPointer
@@ -487,6 +487,17 @@ PasswordShop: ; 15b47
 	ld hl, Text_BrilloMartSecret2
 	call MartTextBox
 	call BuyMenuCoins
+	and a
+	ret
+	
+PollenShop:
+	ld b, BANK(PollenShopData)
+	ld de, PollenShopData
+	call LoadMartPointer
+	call ReadMart
+	ld hl, Text_PollenShopText
+	call MartTextBox
+	call BuyMenuPollen
 	and a
 	ret
 	
@@ -726,6 +737,13 @@ BuyMenuCoins: ; 15c62
 	call BuyMenuCoinsLoop ; menu loop
 	jr nc, .loop
 	jr BuyMenu_Finish
+	
+BuyMenuPollen:
+	call BuyMenu_InitGFX
+.loop
+	call BuyMenuPollenLoop ; menu loop
+	jr nc, .loop
+	jr BuyMenu_Finish
 
 BuyMenu_InitGFX::
 	xor a
@@ -864,6 +882,7 @@ GetMartDialogGroup: ; 15ca3
 	dwb .BerryMarketPointers, 0
 	dwb .CoinsMartPointers, 1
 	dwb .StandardMartPointers, 0
+	dwb .PollenMartPointers, 1
 ; 15cbf
 
 .StandardMartPointers: ; 15cbf
@@ -1018,6 +1037,14 @@ GetMartDialogGroup: ; 15ca3
 	dw Text_Mart_BagFull
 	dw Text_CoinMart_HereYouGo
 	dw BuyMenuLoop
+	
+.PollenMartPointers
+	dw Text_Mart_HowMany
+	dw Text_Pollen_CostsThisMuch
+	dw Text_Pollen_InsufficientFunds
+	dw Text_Mart_BagFull
+	dw Text_Mart_HereYouGo
+	dw BuyMenuCoinsLoop
 
 BuyMenuLoop: ; 15cef
 	farcall PlaceMoneyTopRight
@@ -1115,6 +1142,40 @@ BuyMenuCoinsLoop: ; 15cef
 	call LoadBuyMenuText
 	call PlayTransactionSound
 	farcall Special_DisplayCoinCaseBalance
+	call JoyWaitAorB
+.cancel
+	call SpeechTextBox
+	and a
+	ret
+	
+BuyMenuPollenLoop: ; 15cef
+	farcall Special_DisplayPollenPouchBalance
+	call UpdateSprites
+	ld hl, PollenMenuDataHeader_Buy
+	call CopyMenuDataHeader
+	call DoMartScrollingMenu
+	call SpeechTextBox
+	ld a, [wMenuJoypad]
+	cp B_BUTTON
+	jp z, MartMenuLoop_SetCarry
+	call MartAskPurchaseQuantity
+	jr c, .cancel
+	call MartConfirmPurchase
+	jr c, .cancel
+	ld de, wPollenSteps
+	ld bc, hMoneyTemp + 1
+	call CheckPollen
+	jp c, MartMenuLoop_InsufficientFunds
+	ld hl, wNumItems
+	call ReceiveItem
+	jp nc, MartMenuLoop_InsufficientBagSpace
+	ld de, wPollenSteps
+	ld bc, hMoneyTemp + 1
+	call TakePollen
+	ld a, MARTTEXT_HERE_YOU_GO
+	call LoadBuyMenuText
+	call PlayTransactionSound
+	farcall Special_DisplayPollenPouchBalance
 	call JoyWaitAorB
 .cancel
 	call SpeechTextBox
@@ -1662,6 +1723,14 @@ Text_BallDiscount_CostsThisMuch:
 	text_jump BallMartEmployeeDiscountText
 	db "@"
 
+Text_Pollen_CostsThisMuch:
+	text_jump UnknownText_Pollen_CostsThisMuch
+	db "@"
+	
+Text_Pollen_InsufficientFunds:
+	text_jump UnknownText_Pollen_InsufficientFunds
+	db "@"
+
 MenuDataHeader_Buy: ; 0x15e18
 	db $40 ; flags
 	db 03, 06 ; start coords
@@ -1695,6 +1764,23 @@ CoinsMenuDataHeader_Buy: ; 0x15e18
 	dbw 0, wCurMart
 	dba PlaceMartItemName
 	dba CoinMenu_PrintBCDPrices
+	dba UpdateItemIconAndDescriptionAndBagQuantity
+	
+PollenMenuDataHeader_Buy: ; 0x15e18
+	db $40 ; flags
+	db 03, 06 ; start coords
+	db 11, 19 ; end coords
+	dw .menudata2
+	db 1 ; default option
+; 0x15e20
+
+.menudata2 ; 0x15e20
+	db $30 ; pointers
+	db 4, 8 ; rows, columns
+	db 1 ; horizontal spacing
+	dbw 0, wCurMart
+	dba PlaceMartItemName
+	dba PollenMenu_PrintBCDPrices
 	dba UpdateItemIconAndDescriptionAndBagQuantity
 
 TMMenuDataHeader_Buy:
@@ -1787,6 +1873,28 @@ CoinMenu_PrintBCDPrices:
 
 .CoinsString:
 	db " COINs@"
+	
+PollenMenu_PrintBCDPrices:
+	ld a, [wScrollingMenuCursorPosition]
+	ld c, a
+	ld b, 0
+	ld hl, wMartItem1BCD
+	add hl, bc
+	add hl, bc
+	add hl, bc
+	push de
+	ld d, h
+	ld e, l
+	pop hl
+	ld bc, SCREEN_WIDTH - 8
+	add hl, bc
+	ld c, PRINTNUM_LEADINGZEROS | 3
+	call PrintBCDNumber
+	ld de, .PuffsString
+	jp PlaceString
+
+.PuffsString:
+	db " PUFFs@"
 	
 BlueCardMenuDataHeader_Buy:
 	db $40 ; flags
@@ -2131,6 +2239,10 @@ Text_BrilloMartSecret1: ; 0x15e6d
 	
 Text_BrilloMartSecret2: ; 0x15e6d
 	text_jump UnknownText_BrilloMartSecret2
+	db "@"
+
+Text_PollenShopText:
+	text_jump UnknownText_PollenShopText
 	db "@"
 
 SellMenu:: ; 15eb3

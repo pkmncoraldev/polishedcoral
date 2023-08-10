@@ -218,4 +218,51 @@ CheckCoins:: ; 160a1
 	ld a, 2
 	ld de, wCoins
 	jp CompareFunds
-; 160a9
+
+CheckPollen:: ; 160a1
+	ld a, 2
+	ld de, wPollenSteps
+	jp CompareFunds
+	
+GivePollen::
+	ld a, 2
+	ld de, wPollenSteps
+	call AddFunds
+	ld a, 2
+	ld bc, .maxpollen
+	call CompareFunds
+	jr c, .not_maxed
+	ld hl, .maxpollen
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	scf
+	ret
+
+.not_maxed
+	and a
+	ret
+; 1608d
+
+.maxpollen ; 1608d
+	bigdw 1000
+	
+	
+TakePollen:: ; 1608f
+	ld a, 2
+	ld de, wPollenSteps
+	call SubtractFunds
+	jr nc, .okay
+	; leave with 0 coins
+	xor a
+	ld [de], a
+	inc de
+	ld [de], a
+	scf
+	ret
+
+.okay
+	and a
+	ret

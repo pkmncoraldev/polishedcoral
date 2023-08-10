@@ -903,7 +903,7 @@ wTotalMoney:: ds 3
 MoneyEnd::
 wMomSavingMoney:: ds 1
 
-ds 2
+wPollenSteps::	ds 2
 
 wLostGirls:: ds 1
 
@@ -1087,7 +1087,7 @@ wCurrMapTriggerHeaderPointer:: ds 2
 wCurrMapCallbackCount:: ds 1
 wCurrMapCallbackHeaderPointer:: ds 2
 
-wPollenSteps::	ds 1
+ds 1 ;unused
 
 ; Sprite id of each decoration
 wBed:: ds 1

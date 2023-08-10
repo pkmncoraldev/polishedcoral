@@ -263,6 +263,17 @@ UnknownText_0x1c4c08::
 	text "."
 	done
 	
+UnknownText_Pollen_CostsThisMuch::
+	text "That's @"
+	deciram hMoneyTemp, 3, 7
+	text " PUFFs."
+	done
+	
+UnknownText_Pollen_InsufficientFunds::
+	text "Oops!"
+	line "Not enough PUFFs!"
+	done
+	
 BallMartEmployeeDiscountText::
 	deciram wItemQuantityChangeBuffer, 1, 2
 	text " @"
@@ -642,6 +653,11 @@ UnknownText_BrilloMartSecret2::
 	line "it quick!"
 	done
 	
+UnknownText_PollenShopText::
+	text "Which would you"
+	line "like?"
+	done
+	
 UnknownText_0x1c505e::
 	text "Start!"
 	done
@@ -1019,7 +1035,7 @@ UnknownText_0x1c5c7b::
 PollenPouchText::
 	text "POLLEN PUFFS:"
 	line "@"
-	deciram wPollenSteps, 1, 3
+	deciram wPollenSteps, 2, 4
 	db "@@"
 
 Text_RaiseThePPOfWhichMove::
@@ -1396,11 +1412,6 @@ ItemCantBeSelectedText::
 TorchWentOutText::
 	text "Your TORCH went"
 	line "out."
-	done
-	
-FullPollenText::
-	text "Your POLLEN POUCH"
-	line "is full!"
 	done
 	
 BetterNotText::

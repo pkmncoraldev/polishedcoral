@@ -69,55 +69,6 @@ RadiantTownshipSunflowerText:
 	text "A huge sunflower!"
 	done
 
-CheckSunflowerPollenAsm:
-	xor a
-	ld [wPlaceBallsX], a
-	ld a, [wPollenSteps]
-	cp 250
-	jr z, .full
-	cp 249
-	jr z, .almost
-	ld a, 2
-	ld [wScriptVar], a
-	ret
-.almost
-	ld a, 1
-	ld [wScriptVar], a
-	ret
-.full
-	ld a, 0
-	ld [wScriptVar], a
-	ret
-
-SunflowerGivePollenAsm:
-	xor a
-	ld e, a
-	ld a, [wPollenSteps]
-	inc e
-	inc a
-	cp 250
-	jr z, .end
-	inc e
-	inc a
-	cp 250
-	jr z, .end
-	inc e
-	inc a
-	cp 250
-	jr z, .end
-	inc e
-	inc a
-	cp 250
-	jr z, .end
-	inc e
-	inc a
-.end
-	ld [wPollenSteps], a
-	ld a, e
-	ld [wPlaceBallsX], a
-	ret
-
-
 RadiantTownshipNPC1:
 	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .lostgirls

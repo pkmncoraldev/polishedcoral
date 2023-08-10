@@ -1098,7 +1098,7 @@ ApplySpeedAbilities:
 	cp SWIFT_SWIM
 	jr z, .swift_swim
 	cp CHLOROPHYLL
-	jr z, .clorophyll
+	jr z, .chlorophyll
 	cp SAND_RUSH
 	jr z, .sand_rush
 	cp SLUSH_RUSH
@@ -1113,7 +1113,7 @@ ApplySpeedAbilities:
 .swift_swim
 	ld h, WEATHER_RAIN
 	jr .weather_ability
-.clorophyll
+.chlorophyll
 	ld h, WEATHER_SUN
 	jr .weather_ability
 .sand_rush
@@ -1125,6 +1125,7 @@ ApplySpeedAbilities:
 	call GetWeatherAfterCloudNine
 	cp h
 	ret nz
+	ld a, $21
 .apply_mod
 	jp ApplyDamageMod
 

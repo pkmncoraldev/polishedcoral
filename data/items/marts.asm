@@ -76,13 +76,14 @@ SunbeamMart: ; 16106
 	db -1
 
 EventideMart: ; 16118
-	db 11 ; # items
+	db 12 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db POTION
 	db SUPER_POTION
 	db ESCAPE_ROPE
 	db REPEL
+	db SUPER_REPEL
 	db ANTIDOTE
 	db PARALYZEHEAL
 	db AWAKENING
@@ -91,13 +92,14 @@ EventideMart: ; 16118
 	db -1
 	
 FlickerMart:
-	db 11 ; # items
+	db 12 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db POTION
 	db SUPER_POTION
 	db ESCAPE_ROPE
 	db REPEL
+	db SUPER_REPEL
 	db ANTIDOTE
 	db PARALYZEHEAL
 	db AWAKENING

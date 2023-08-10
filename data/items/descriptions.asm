@@ -670,7 +670,7 @@ FlowerPetalDesc:
 
 BlossomTeaDesc:
 	db   "A self-restore"
-	next "item. (25HP, Hold)@"
+	next "item. (30HP, Hold)@"
 
 CheriBerryDesc:
 	db   "A self-cure for"

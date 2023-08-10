@@ -222,7 +222,7 @@ ItemIconPointers:
 	dw MagmarizerIcon
 	dw RazorFangIcon
 	dw RazorClawIcon
-	dw OddSouvenirIcon
+	dw LiquidSunIcon
 	dw NuggetIcon
 	dw BigNuggetIcon
 	dw TinyMushroomIcon

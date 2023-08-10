@@ -221,7 +221,7 @@ ItemDescriptions:
 	dw MagmarizerDesc
 	dw RazorFangDesc
 	dw RazorClawDesc
-	dw OddSouvenirDesc
+	dw LiquidSunDesc
 	dw NuggetDesc
 	dw BigNuggetDesc
 	dw TinyMushroomDesc
@@ -986,7 +986,7 @@ ChoiceScarfDesc:
 	next "allows one move.@"
 
 ChoiceSpecsDesc:
-	db   "Boosts Sp.Atk, but"
+	db   "Boosts SP.ATK, but"
 	next "allows one move.@"
 
 FlameOrbDesc:
@@ -1073,9 +1073,9 @@ MagmarizerDesc:
 	db   "A box packed with"
 	next "magma energy.@"
 
-OddSouvenirDesc:
-	db   "An ornament from"
-	next "a far-away place.@"
+LiquidSunDesc:
+	db	 "Ups SPEED in sun"
+	next "of SUNFLORA.(Hold)@"
 
 NuggetDesc:
 	db   "Made of pure gold."

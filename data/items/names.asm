@@ -221,7 +221,7 @@ ItemNames::
 	db "MAGMARIZER@"
 	db "RAZOR FANG@"
 	db "RAZOR CLAW@"
-	db "ODD SOUVENIR@"
+	db "LIQUID SUN@"
 	db "NUGGET@"
 	db "BIG NUGGET@"
 	db "TINYMUSHROOM@"

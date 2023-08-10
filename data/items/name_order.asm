@@ -252,7 +252,7 @@ ItemNameOrder:
 	db NAM_MAGMARIZER   ; 75
 	db NAM_RAZOR_FANG   ; be
 	db NAM_RAZOR_CLAW   ; bd
-	db NAM_ODD_SOUVENIR ; 92
+	db NAM_LIQUID_SUN ; 92
 
 	db NAM_NUGGET       ; 91
 	db NAM_BIG_NUGGET   ; 10

@@ -176,6 +176,12 @@ BattleText_UserItemLetItMoveFirst::
 	cont "move first."
 	prompt
 
+BattleText_LiquidSun::
+	text "<USER>'s"
+	line "LIQUID SUN"
+	cont "activated!"
+	done
+
 BattleText_UserRecoveredPPUsing:
 	text "<USER>"
 	line "restored PP of"

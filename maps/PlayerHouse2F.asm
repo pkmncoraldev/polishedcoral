@@ -218,7 +218,7 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke DREEPY, 98
+	givepoke SUNFLORA, 30
 	givepoke DRAKLOAK, 99
 	givepoke DRAGAPULT, 99
 
@@ -239,6 +239,7 @@ PlayerHouseDebugPoster:
 	giveitem KINGS_ROCK, 1
 	giveitem THICK_CLUB, 1
 	giveitem PAINTBRUSH, 1
+	giveitem LIQUID_SUN, 1
 	giveitem LINK_CABLE, 99
 	giveitem UP_GRADE, 2
 	giveitem RARE_CANDY, 99

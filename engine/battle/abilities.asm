@@ -1,4 +1,36 @@
+CheckLiquidSunshine:
+	ld a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpecies
+	jr z, .got_species3
+	ld hl, wEnemyMonSpecies
+.got_species3
+	ld a, [hl]
+	cp SUNKERN
+	jr z, .sunkern
+	cp SUNFLORA
+	ret nz
+.sunkern
+	farcall GetUserItemAfterUnnerve
+	ld a, b
+	cp HELD_LIQUID_SUN
+	ret nz
+	ld a, WEATHER_SUN
+	ld b, a
+	ld a, [wWeather]
+	cp b
+	ret z ; don't re-activate it
+	farcall ItemRecoveryAnim
+	ld hl, BattleText_LiquidSun
+	call StdBattleTextBox
+	; Disable running animations as part of Start(wWeather) commands. This will not block
+	; Call_PlayBattleAnim that plays the animation manually.
+	call DisableAnimations
+	ld a, b
+	jp WeatherAbility.handlesun
+
 RunActivationAbilitiesInner:
+	call CheckLiquidSunshine
 	ld hl, BattleEntryAbilities
 	jr UserAbilityJumptable
 

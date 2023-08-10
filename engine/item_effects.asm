@@ -231,7 +231,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; DRAGON_SCALE
 	dw NoEffect         ; UP_GRADE
 	dw NoEffect         ; DUBIOUS_DISC
-	dw EvoStoneEffect         ; PROTECTOR
+	dw EvoStoneEffect         ; BIG_MALASADA
 	dw NoEffect         ; ELECTIRIZER
 	dw NoEffect         ; MAGMARIZER
 	dw NoEffect         ; RAZOR_FANG
@@ -256,7 +256,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; COVER_FOSSIL
 	dw NoEffect         ; PLUME_FOSSIL
 	dw NoEffect         ; OLD_AMBER
-	dw NoEffect         ; MULCH
+	dw RestoreHPEffect         ; SUNSHINE_TEA
 	dw NoEffect         ; SWEET_HONEY
 	dw NoEffect         ; FLOWER_MAIL
 	dw NoEffect         ; SURF_MAIL

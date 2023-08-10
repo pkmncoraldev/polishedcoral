@@ -9,18 +9,9 @@ FruitTreeScript:: ; 44000
 	callasm CheckFruitTree
 	iffalse PickBerryScript
 	jumpopenedtext NothingHereText
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	checkitem MULCH
-	iffalse_endtext
-	writetext WantToUseMulchText
-	yesorno
-	iffalse_endtext
-	takeitem MULCH
-	copybytetovar wCurFruit
-	callasm FertilizedFruitTree
-	jumpopenedtext UsedMulchText
+	waitbutton
+	closetext
+	end
 
 PickBerryScript:
 	copybytetovar wCurFruit

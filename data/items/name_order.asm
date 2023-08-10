@@ -275,7 +275,7 @@ ItemNameOrder:
 	db NAM_SAIL_FOSSIL  ; 2e
 	db NAM_OLD_AMBER    ; 93
 
-	db NAM_MULCH        ; 88
+	db NAM_SUNSHINE_TEA ; 88
 	db NAM_SWEET_HONEY  ; e8
 
 	db NAM_FLOWER_MAIL  ; 43

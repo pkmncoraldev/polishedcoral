@@ -1489,7 +1489,8 @@ CheckTypeMatchup:
 
 ;.done_air_balloon
 	farcall CheckNullificationAbilities
-.end
+;.end
+EffectCommandsPopBcDeHl:
 	pop bc
 	pop de
 	pop hl
@@ -9309,6 +9310,8 @@ EdibleBerries:
 	db LEPPA_BERRY
 	db FIGY_BERRY
 	db BERRY_JUICE
+	db BLOSSOM_TEA
+	db SUNSHINE_TEA
 	; not eaten, so unaffected: jaboca, rowap
 	db -1
 NoItem:
@@ -9350,10 +9353,7 @@ AnimateCurrentMove: ; 37e01
 	ld [wKickCounter], a
 	call LoadMoveAnim
 	call BattleCommand_raisesub
-	pop bc
-	pop de
-	pop hl
-	ret
+	jp EffectCommandsPopBcDeHl
 
 ; 37e19
 
@@ -9414,10 +9414,7 @@ PlayUserBattleAnim:
 	push de
 	push bc
 	farcall PlayBattleAnim
-	pop bc
-	pop de
-	pop hl
-	ret
+	jp EffectCommandsPopBcDeHl
 
 
 CallBattleCore: ; 37e73

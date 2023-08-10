@@ -241,7 +241,7 @@ ItemDescriptions:
 	dw JawFossilDesc
 	dw SailFossilDesc
 	dw OldAmberDesc
-	dw MulchDesc
+	dw SunshineTeaDesc
 	dw SweetHoneyDesc
 	dw FlowerMailDesc
 	dw SurfMailDesc
@@ -672,6 +672,10 @@ BlossomTeaDesc:
 	db   "A self-restore"
 	next "item. (30HP, Hold)@"
 
+SunshineTeaDesc:
+	db   "A self-restore"
+	next "item. (80HP, Hold)@"
+
 CheriBerryDesc:
 	db   "A self-cure for"
 	next "paralysis. (Hold)@"
@@ -1028,10 +1032,6 @@ PowerBandDesc:
 PowerAnkletDesc:
 	db   "Ups SPEED gain,"
 	next "but lowers SPEED.@"
-
-MulchDesc:
-	db   "Plant fertilizer"
-	next "for Berry soil.@"
 
 SweetHoneyDesc:
 	db   "The aroma attracts"

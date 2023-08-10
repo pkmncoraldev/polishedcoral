@@ -276,7 +276,7 @@
 	const PLUME_FOSSIL ; f1
 	const OLD_AMBER    ; f2 - replace
 
-	const MULCH        ; f3 - replace
+	const SUNSHINE_TEA ; f3
 	const SWEET_HONEY  ; f4 - replace
 
 	const FLOWER_MAIL  ; f5 - replace
@@ -430,7 +430,7 @@
 	const NAM_MOON_BALL    ; 85
 	const NAM_MOON_STONE   ; 86
 	const NAM_MORPH_MAIL   ; 87
-	const NAM_MULCH        ; 88
+	const NAM_SUNSHINE_TEA ; 88
 	const NAM_MUSCLE_BAND  ; 89
 	const NAM_MUSIC_MAIL   ; 8a
 	const NAM_LIBRARY_CARD ; 8b

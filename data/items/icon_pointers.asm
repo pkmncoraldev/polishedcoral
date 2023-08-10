@@ -242,7 +242,7 @@ ItemIconPointers:
 	dw JawFossilIcon
 	dw SailFossilIcon
 	dw OldAmberIcon
-	dw MulchIcon
+	dw SunshineTeaIcon
 	dw SweetHoneyIcon
 	dw FlowerMailIcon
 	dw SurfMailIcon

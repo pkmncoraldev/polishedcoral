@@ -241,7 +241,7 @@ ItemNames::
 	db "COVER FOSSIL@"
 	db "PLUME FOSSIL@"
 	db "OLD AMBER@"
-	db "MULCH@"
+	db "SUNSHINE TEA@"
 	db "SWEET HONEY@"
 	db "FLOWER MAIL@"
 	db "SURF MAIL@"

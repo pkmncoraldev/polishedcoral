@@ -357,7 +357,7 @@ BottleCapIcon:    INCBIN "gfx/items/bottle_cap.2bpp.lz"
 JawFossilIcon: 	  INCBIN "gfx/items/jaw_fossil.2bpp.lz"
 SailFossilIcon:   INCBIN "gfx/items/sail_fossil.2bpp.lz"
 OldAmberIcon:     INCBIN "gfx/items/old_amber.2bpp.lz"
-MulchIcon:        INCBIN "gfx/items/mulch.2bpp.lz"
+SunshineTeaIcon:        INCBIN "gfx/items/blossom_tea.2bpp.lz"
 SweetHoneyIcon:   INCBIN "gfx/items/sweet_honey.2bpp.lz"
 FlowerMailIcon:   INCBIN "gfx/items/flower_mail.2bpp.lz"
 SurfMailIcon:

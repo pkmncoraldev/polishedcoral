@@ -1759,6 +1759,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	xor a
 	ret
 .CheckLandPermsFarAheadGrind:
+	ld [wPlayerStandingTile], a
+	cp COLL_FLOOR
+	jr z, .CheckLandPermsFarAheadEnd
 	set 6, a
 	ld [wInputFlags], a
 	jr .CheckLandPermsFarAheadEnd

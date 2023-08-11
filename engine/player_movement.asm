@@ -94,7 +94,11 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	xor a
 	ld [wPlayerRunning], a
 	call .CheckForced
+	ld a, [wSkateboardGrinding]
+	cp 0
+	jr nz, .skip_action
 	call .GetAction
+.skip_action
 	call .CheckTile
 	ret c
 	call .CheckTurning
@@ -827,6 +831,12 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr nz, .skip_left
 	ld a, 2
 	ld [wPlaceBallsY], a
+	xor a
+	ld [wWalkingY], a
+	ld a, $ff
+	ld [wWalkingX], a
+	ld a, LEFT
+	ld [wLastWalkingDirection], a
 	jr .grindcont
 .skip_left
 	ld a, [hJoyDown]
@@ -837,6 +847,12 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr nz, .check_stop_grinding
 	ld a, 3
 	ld [wPlaceBallsY], a
+	xor a
+	ld [wWalkingY], a
+	ld a, 1
+	ld [wWalkingX], a
+	ld a, RIGHT
+	ld [wLastWalkingDirection], a
 	jr .grindcont
 	
 	
@@ -849,7 +865,13 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr nz, .skip_up
 	ld a, 1
 	ld [wPlaceBallsY], a
-	jr .grindcont
+	ld a, $ff
+	ld [wWalkingY], a
+	xor a
+	ld [wWalkingX], a
+	ld a, UP
+	ld [wLastWalkingDirection], a
+	jp .grindcont
 .skip_up
 	ld a, [hJoyDown]
 	and D_DOWN
@@ -859,7 +881,13 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr nz, .check_stop_grinding
 	ld a, 0
 	ld [wPlaceBallsY], a
-	jr .grindcont
+	ld a, 1
+	ld [wWalkingY], a
+	xor a
+	ld [wWalkingX], a
+	ld a, DOWN
+	ld [wLastWalkingDirection], a
+	jp .grindcont
 	
 .check_stop_grinding
 	ld a, [wSkateboardOllie]
@@ -878,7 +906,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call GetTileCollision
 	cp LANDTILE
 	jp nz, .change_grind_direction
-
+	call .CheckNPC
+	and a
+	jp z, .stop_grinding_fall
 	ld a, [wSkateboardGrinding]
 	cp 1
 	jr nz, .stop_grinding_fall

@@ -38,7 +38,7 @@
 	tilecoll WALL, SKATE, WALL, WALL ; 25
 	tilecoll SKATE, SKATE, WALL, WALL ; 26
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 27
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 28
+	tilecoll SKATE, SKATE, SKATE, SKATE ; 28
 	tilecoll WALL, WALL, WALL, WALL ; 29
 	tilecoll WALL, WALL, WALL, WALL ; 2a
 	tilecoll WALL, WARP_CARPET_LEFT, WALL, WARP_CARPET_LEFT ; 2b

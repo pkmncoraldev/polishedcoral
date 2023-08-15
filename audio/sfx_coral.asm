@@ -195,33 +195,33 @@ Sfx_ItemFake_Ch8: ; f0c81
 	endchannel
 	
 Sfx_GrassWhistle:
-	musicheader 2, 5, Sfx_GrassWhistle_Ch5
-	musicheader 1, 6, Sfx_GrassWhistle_Ch6
-	
-Sfx_GrassWhistle_Ch5: ; f24a5
-	togglesfx
-	vibrato $a, $24
-	dutycycle $0
-	notetype $a, $87
-	octave 5
-	note G_, 4
-	note A_, 2
-	note E_, 2
-	note G_, 12
-	endchannel
-	
+    musicheader 2, 5, Sfx_GrassWhistle_Ch5
+    musicheader 1, 6, Sfx_GrassWhistle_Ch6
+    
+Sfx_GrassWhistle_Ch5:
+    togglesfx
+    vibrato $a, $24
+    dutycycle $0
+    notetype $a, $f7
+    octave 5
+    note G_, 4
+    note A_, 2
+    note E_, 2
+    note G_, 6
+    endchannel
+    
 Sfx_GrassWhistle_Ch6:
-	togglesfx
-	vibrato $a, $23
-	dutycycle $0
-	notetype $b, $67
-	octave 5
-	note G_, 4
-	notetype $a, $67
-	note A_, 2
-	note E_, 2
-	note G_, 12
-	endchannel
+    togglesfx
+    vibrato $a, $23
+    dutycycle $0
+    notetype $b, $f7
+    octave 5
+    note G_, 4
+    notetype $a, $f7
+    note A_, 2
+    note E_, 2
+    note G_, 6
+    endchannel
 	
 Sfx_TempleRumble:
 	musicheader 1, 8, Sfx_TempleRumble_Ch8

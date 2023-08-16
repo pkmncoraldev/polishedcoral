@@ -41,7 +41,7 @@ TMHMMoves:
 	db FAKE_OUT                            ; TM40 (Stanley)
 	db SUBSTITUTE                          ; TM41
 	db ZAP_CANNON                          ; TM42
-	db WILD_CHARGE                         ; TM43
+	db BRICK_BREAK                         ; TM43
 	db REST                                ; TM44
 	db ATTRACT                             ; TM45
 	db ACROBATICS                          ; TM46
@@ -77,6 +77,7 @@ TMHMMoves:
 	db THUNDERPUNCH
 	db FIRE_PUNCH
 	db ICE_PUNCH
+	
 	db CUT                                 ; HM01
 	db FLY                                 ; HM02
 	db SURF                                ; HM03
@@ -85,6 +86,7 @@ TMHMMoves:
 	db WATERFALL                           ; HM06
 	db ROCK_SMASH                          ; HM07 (Glint Apartments)
 	db ROCK_CLIMB                          ; HM08
+	
 	db AQUA_TAIL                           ; MT01
 	db BODY_SLAM                           ; MT02
 	db SHOCK_WAVE                          ; MT03

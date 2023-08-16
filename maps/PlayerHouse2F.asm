@@ -363,6 +363,7 @@ PlayerHouseDebugPoster:
 	givetmhm TM_CURSE
 	givetmhm TM_HAIL
 	givetmhm TM_ZAP_CANNON
+	givetmhm TM_BRICK_BREAK
 	givetmhm TM_CHARM
 	givetmhm TM_SUNNY_DAY
 	givetmhm TM_BLIZZARD

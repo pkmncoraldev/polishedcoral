@@ -282,7 +282,7 @@ MAP_NONE   EQU 0
 	map_const NETT_BUILDING_F_BATHROOM,					   3,  4 ; 5
 	map_const NETT_BUILDING_STAIRWELL,					   3,  5 ; 6
 	map_const NETT_BUILDING_OFFICE,						   5,  5 ; 7
-	map_const UNDERGROUND_PASSAGE,						  20, 23 ; 8
+	map_const UNDERGROUND_PASSAGE,						  20, 24 ; 8
 	
 	newgroup													 ; 15
 	map_const ROUTE_11,									  21, 31 ; 1

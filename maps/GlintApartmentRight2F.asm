@@ -24,13 +24,13 @@ GlintApt22FNpc2:
 	faceplayer
 	checkevent EVENT_BEAT_STANLEY
 	iffalse .haventbeaten
-	checkevent EVENT_GOT_EXP_SHARE
+	checkevent EVENT_GOT_GLINT_CITY_EXP_SHARE
 	iftrue .got_expshare
 	opentext
 	writetext GlintApt22FNpc2Text2
 	waitbutton
 	verbosegiveitem EXP_SHARE
-	setevent EVENT_GOT_EXP_SHARE
+	setevent EVENT_GOT_GLINT_CITY_EXP_SHARE
 	closetext
 	end
 	

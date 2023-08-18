@@ -233,7 +233,7 @@ LusterMallClothes:
 	db -1
 	
 ShimmerFishMarket:
-	db 4 ; # items
+	db 3 ; # items
 	dbw MAGIKARP, 	200
 	dbw CHINCHOU, 	200
 	dbw CARVANHA, 	200

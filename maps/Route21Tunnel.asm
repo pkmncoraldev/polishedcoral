@@ -99,7 +99,8 @@ Route21Tunnel_MapScriptHeader:
 	xy_trigger 1, 17, 34, 0, Route21TunnelDark, 0, 0
 	xy_trigger 1, 17, 35, 0, Route21TunnelDark, 0, 0
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost 12, 21, SIGNPOST_READ, Route21TunnelGate
 
 	db 0 ; object events
 
@@ -122,6 +123,54 @@ Route21TunnelCallback:
 	clearflag ENGINE_NEAR_CAMPFIRE
 	return
 	
+Route21TunnelGate:
+	checkcode VAR_FACING
+	ifequal DOWN, .FacingGate
+	jumptext Route21TunnelGateText1
+.FacingGate
+	checkevent EVENT_ROUTE_21_TUNNEL_GATE_IS_UP
+	iftrue .gate_is_up
+	opentext
+	writetext Route21TunnelGateText2
+	yesorno
+	iffalse .saidno
+	writetext Route21TunnelGateTextPressedButton
+	waitbutton
+	closetext
+	playsound SFX_PUSH_BUTTON
+	pause 5
+	changeblock $12, $0c, $1c
+	changeblock $14, $0c, $a6
+	changeblock $14, $0a, $a2
+	pause 20
+	playsound SFX_POKEBALLS_PLACED_ON_TABLE
+	callasm GenericFinishBridge
+	setevent EVENT_ROUTE_21_TUNNEL_GATE_IS_UP
+	end
+.gate_is_up
+	opentext
+	writetext Route21TunnelGateText3
+	yesorno
+	iffalse .saidno
+	writetext Route21TunnelGateTextPressedButton
+	waitbutton
+	closetext
+	playsound SFX_PUSH_BUTTON
+	pause 5
+	changeblock $12, $0c, $b8
+	changeblock $14, $0c, $a7
+	changeblock $14, $0a, $a3
+	pause 20
+	playsound SFX_POKEBALLS_PLACED_ON_TABLE
+	callasm GenericFinishBridge
+	clearevent EVENT_ROUTE_21_TUNNEL_GATE_IS_UP
+	end
+.saidno
+	writetext Route21TunnelGateTextNo
+	waitbutton
+	closetext
+	end
+	
 Route21TunnelLightEntrance:
 	checktime 1<<NITE
 	iftrue Route21TunnelDark
@@ -142,3 +191,33 @@ Route21TunnelDark:
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	dotrigger $0
 	end
+	
+Route21TunnelGateText1:
+	text "A control panel"
+	line "for the gate arm."
+	
+	para "You can't reach"
+	line "the button from"
+	cont "this side…"
+	done
+	
+Route21TunnelGateText2:
+	text "The gate is down."
+	
+	para "Press the button?"
+	done
+	
+Route21TunnelGateText3:
+	text "The gate is up."
+	
+	para "Press the button?"
+	done
+	
+Route21TunnelGateTextPressedButton:
+	text "Who wouldn't?"
+	done
+	
+Route21TunnelGateTextNo:
+	text "Better not…"
+	done
+	

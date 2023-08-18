@@ -3603,7 +3603,7 @@ TeacherFastGroup:
 	db "KATE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 6, DREEPY
+	db 6, MEOWTH
 	db -1 ; end
 
 ; ================

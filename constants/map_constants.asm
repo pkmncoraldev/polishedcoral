@@ -377,7 +377,7 @@ MAP_NONE   EQU 0
 	map_const DUSK_HOUSE_3,     	             		   4,  4 ; 8
 	map_const DUSK_AUTO_LOBBY,							   4,  3 ; 9
 	map_const DUSK_AUTO_GARAGE,							   4,  4 ; 10
-	map_const ROUTE_21_TUNNEL,							  15,  9 ; 11
+	map_const ROUTE_21_TUNNEL,							  20, 12 ; 11
 	map_const SEASIDE_CAVE_1F,							  12, 19 ; 12
 	map_const SEASIDE_CAVE_B1F,							  13, 18 ; 13
 	map_const SEASIDE_CAVE_B2F,							   8, 10 ; 14

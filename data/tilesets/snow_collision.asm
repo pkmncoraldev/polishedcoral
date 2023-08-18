@@ -36,7 +36,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 23
 	tilecoll WALL, ICE, ICE, ICE ; 24
 	tilecoll ICE, ICE, ICE, WALL ; 25
-	tilecoll VENDING_MACHINE, WALL, FLOOR, FLOOR ; 26
+	tilecoll VENDING_MACHINE, NO_OLLIE, FLOOR, FLOOR ; 26
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 27
 	tilecoll ICE, WALL, ICE, ICE ; 28
 	tilecoll WALL, HEADBUTT_TREE, WALL, FLOOR ; 29
@@ -68,7 +68,7 @@
 	tilecoll FLOOR, WALL, HEADBUTT_TREE, WALL ; 43
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 44
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 45
-	tilecoll WALL, FLOOR, WALL, WALL ; 46
+	tilecoll NO_OLLIE, FLOOR, NO_OLLIE, WALL ; 46
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 47
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 48
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 49
@@ -134,8 +134,8 @@
 	tilecoll WALL, WALL, WALL, WALL ; 85
 	tilecoll WALL, WALL, WALL, WALL ; 86
 	tilecoll WALL, ICE, WALL, WALL ; 87
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 88
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 89
+	tilecoll FLOOR, NO_OLLIE, FLOOR, NO_OLLIE ; 88
+	tilecoll NO_OLLIE, FLOOR, NO_OLLIE, FLOOR ; 89
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 8a
 	tilecoll ICE, ICE, ICE, ICE ; 8b
 	tilecoll WALL, WALL, WALL, WALL ; 8c
@@ -174,10 +174,10 @@
 	tilecoll WALL, WALL, WALL, WALL ; ad
 	tilecoll WALL, WALL, WALL, WALL ; ae
 	tilecoll WALL, WALL, WALL, WALL ; af
-	tilecoll WALL, FLOOR, WALL, WALL ; b0
+	tilecoll NO_OLLIE, FLOOR, NO_OLLIE, WALL ; b0
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; b1
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; b2
-	tilecoll WALL, FLOOR, WALL, WALL ; b3
+	tilecoll NO_OLLIE, FLOOR, NO_OLLIE, WALL ; b3
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; b4
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; b5
 	tilecoll VENDING_MACHINE, WALL, FLOOR, FLOOR ; b6

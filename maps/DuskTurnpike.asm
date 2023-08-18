@@ -57,10 +57,10 @@ DuskTurnpikeTrigger1:
 	changeblock $18, $0c, $a1
 	changeblock $22, $0c, $a1
 	changeblock $2c, $0c, $a1
-	changeblock $0c, $0e, $a2
-	changeblock $18, $0e, $a2
-	changeblock $22, $0e, $a2
-	changeblock $2c, $0e, $a2
+	changeblock $0c, $0e, $a5
+	changeblock $18, $0e, $a5
+	changeblock $22, $0e, $a5
+	changeblock $2c, $0e, $a5
 	changeblock $0c, $10, $a4
 	changeblock $18, $10, $a4
 	changeblock $22, $10, $a4
@@ -107,10 +107,10 @@ DuskTurnpikeCallback:
 	changeblock $18, $0c, $a1
 	changeblock $22, $0c, $a1
 	changeblock $2c, $0c, $a1
-	changeblock $0c, $0e, $a2
-	changeblock $18, $0e, $a2
-	changeblock $22, $0e, $a2
-	changeblock $2c, $0e, $a2
+	changeblock $0c, $0e, $a5
+	changeblock $18, $0e, $a5
+	changeblock $22, $0e, $a5
+	changeblock $2c, $0e, $a5
 	changeblock $0c, $10, $a4
 	changeblock $18, $10, $a4
 	changeblock $22, $10, $a4

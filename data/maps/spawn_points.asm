@@ -19,7 +19,7 @@ SpawnPoints: ; 0x152ab
 	spawn SHIMMER_CITY,                37, 22
 	spawn RADIANT_TOWNSHIP,             5,  8
 	
-	spawn STARGLOW_CAVERN_DEPTHS,	   16, 17
+	spawn STARGLOW_CAVERN_DEPTHS,	   16, 15
 	spawn FAKE_ROUTE_1,   		       20, 29
 	
 	spawn N_A,                        -1, -1 ; SPAWN_LASTFLYPOINT

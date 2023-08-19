@@ -143,6 +143,7 @@ TastyFoodItems:
 	db LEMONADE
 	db MOOMOO_MILK
 	db BLOSSOM_TEA
+	db SUNSHINE_TEA
 	db -1
 	
 SunsetLighthouseTopTV:

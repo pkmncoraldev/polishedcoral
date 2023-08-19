@@ -163,7 +163,7 @@ Moves:: ; 41afb
 	move DRAGON_DANCE,             EFFECT_DRAGON_DANCE,        0, DRAGON,    100, 20,   0, STATUS
 	move OMINOUS_WIND,             EFFECT_ALL_UP_HIT,         60, GHOST,     100,  5,  10, SPECIAL
 	move EXPLOSION,                EFFECT_EXPLOSION,         250, NORMAL,    100,  5,   0, PHYSICAL
-	move MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON,  EFFECT_FURY_SWIPES,        18, NORMAL,     95, 15,   0, PHYSICAL
+	move MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON,  EFFECT_FURY_SWIPES,        20, NORMAL,     95, 15,   0, PHYSICAL
 	move BONEMERANG,               EFFECT_DOUBLE_HIT,         50, GROUND,     90, 10,   0, PHYSICAL
 	move REST,                     EFFECT_HEAL,                0, PSYCHIC,   100, 10,   0, STATUS
 	move ROCK_SLIDE,               EFFECT_FLINCH_HIT,         75, ROCK,       90, 10,  30, PHYSICAL

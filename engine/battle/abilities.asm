@@ -1652,13 +1652,13 @@ SolarPowerAbility:
 	jp ApplySpecialAttackDamageMod
 
 IronFistAbility:
-; 120% damage for punching moves
+; 150% damage for punching moves
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
 	ld hl, PunchingMoves
 	call IsInArray
 	ret c
-	ld a, $65
+	ld a, $32
 	jp ApplyDamageMod
 	
 StrongJawAbility:

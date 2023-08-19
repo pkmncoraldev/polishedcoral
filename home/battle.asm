@@ -500,6 +500,7 @@ PunchingMoves::
 	db MACH_PUNCH
 	db THUNDERPUNCH
 	db ICE_PUNCH
+	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
 	db -1
 	
 BitingMoves::

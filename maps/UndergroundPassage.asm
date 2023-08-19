@@ -23,14 +23,14 @@ UndergroundPassage_MapScriptHeader:
 	bg_event 37, 25, SIGNPOST_ITEM + MAX_ELIXIR, EVENT_UNDERGROUND_PASSAGE_HIDDEN_MAX_REVIVE
 
 	db 18 ; object events
-	person_event SPRITE_COOLTRAINER_M, 12, 12, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerUndergroundPassage_1, -1
+	person_event SPRITE_SAILOR, 12, 12, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerUndergroundPassage_1, -1
 	person_event SPRITE_COOLTRAINER_F, 18, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 3, TrainerUndergroundPassage_2, -1
 	person_event SPRITE_SUPER_NERD, 28, 21, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerUndergroundPassage_3, -1
-	person_event SPRITE_PSYCHIC, 21,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerUndergroundPassage_4, -1
+	person_event SPRITE_PSYCHIC, 41, 37, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerUndergroundPassage_4, -1
 	person_event SPRITE_PSYCHIC, 23, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 2, TrainerUndergroundPassage_5, -1
 	person_event SPRITE_SWIMMER_GIRL, 35, 11, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerUndergroundPassage_6, -1
 	person_event SPRITE_SWIMMER_GUY, 41, 21, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerUndergroundPassage_7, -1
-	person_event SPRITE_JUGGLER, 41, 37, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerUndergroundPassage_8, -1
+	person_event SPRITE_JUGGLER, 21,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerUndergroundPassage_8, -1
 	itemball_event 30, 15, EXP_SHARE, 1, EVENT_UNDERGROUND_PASSAGE_EXP_SHARE
 	itemball_event 27, 14, MAX_REVIVE, 1, EVENT_UNDERGROUND_PASSAGE_MAX_REVIVE
 	itemball_event 21, 29, RARE_CANDY, 1, EVENT_UNDERGROUND_PASSAGE_RARE_CANDY
@@ -76,114 +76,171 @@ UndergroundPassageOverBridge:
 	end
 	
 TrainerUndergroundPassage_1:
-	generictrainer COOLTRAINERM, SHAWN, EVENT_BEAT_UNDERGROUND_PASSAGE_TRAINER_1, .SeenText, .BeatenText
+	generictrainer SAILOR, SHAWN, EVENT_BEAT_UNDERGROUND_PASSAGE_TRAINER_1, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "What is someone"
+	line "like you even"
+	cont "doing down here?"
+	
+	para "What is someone"
+	line "like ME even"
+	cont "doing down here?"
 	done	
 
 .SeenText:
-	text "SEEN TEXT"
+	text "What am I even"
+	line "doing?"
+	
+	para "Wandering around"
+	line "in the dark…"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Gah, you got me!"
 	done
 	
 TrainerUndergroundPassage_2:
 	generictrainer COOLTRAINERF, JANE, EVENT_BEAT_UNDERGROUND_PASSAGE_TRAINER_2, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "You can tell a lot"
+	line "about a person by"
+	cont "looking at their"
+	cont "#MON."
 	done	
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Let me see your"
+	line "#MON."
+	
+	para "Are they strong?"
+	
+	para "Do they trust you?"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "I see!"
 	done
 	
 TrainerUndergroundPassage_3:
 	generictrainer SUPER_NERD, PEDRO, EVENT_BEAT_UNDERGROUND_PASSAGE_TRAINER_3, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Alright alright…"
+	
+	para "It's all yours…"
 	done	
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Heheh…"
+	
+	para "Lots of cool stuff"
+	line "down here…"
+	
+	para "Just free for the"
+	line "taking…"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Message recieved…"
 	done
 	
 TrainerUndergroundPassage_4:
 	generictrainer PSYCHIC_T, RALPH, EVENT_BEAT_UNDERGROUND_PASSAGE_TRAINER_4, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "I can see you are"
+	line "driven by your"
+	cont "love of #MON!"
 	done	
 
 .SeenText:
-	text "SEEN TEXT"
+	text "What drives you?"
+	
+	para "What makes you do"
+	line "the things you do?"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "I see!"
+	line "I see!"
 	done
 	
 TrainerUndergroundPassage_5:
 	generictrainer PSYCHIC_T, NELSON, EVENT_BEAT_UNDERGROUND_PASSAGE_TRAINER_5, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "The strong TRAINER"
+	line "in my vision…"
+	
+	para "It was you!"
 	done	
 
 .SeenText:
-	text "SEEN TEXT"
+	text "I came here due to"
+	line "a vision I had."
+	
+	para "I saw myself"
+	line "meeting a strong"
+	cont "TRAINER!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "It was you!"
 	done
 	
 TrainerUndergroundPassage_6:
 	generictrainer SWIMMERF, BECKY, EVENT_BEAT_UNDERGROUND_PASSAGE_TRAINER_6, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Maybe I should"
+	line "have just kept"
+	cont "swimming…"
 	done	
 
 .SeenText:
-	text "SEEN TEXT"
+	text "I was swimming"
+	line "around in the"
+	cont "ocean when I found"
+	cont "this cave."
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Guh huh?"
 	done
 	
 TrainerUndergroundPassage_7:
 	generictrainer SWIMMERM, MARK, EVENT_BEAT_UNDERGROUND_PASSAGE_TRAINER_7, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Swimming in the"
+	line "dark isn't weird,"
+	cont "right?"
 	done	
 
 .SeenText:
-	text "SEEN TEXT"
+	text "I love swimming"
+	line "in the dark!"
+	
+	para "It gets my blood"
+	line "pumping!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Blackout!"
 	done
 	
 TrainerUndergroundPassage_8:
 	generictrainer JUGGLER, RYAN, EVENT_BEAT_UNDERGROUND_PASSAGE_TRAINER_8, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Do you use"
+	line "different types of"
+	cont "#BALLs?"
+	
+	para "I use BALLs that"
+	line "match my #MON!"
 	done	
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Check out all of"
+	line "my #BALLs!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Cool, huh?"
 	done
 	

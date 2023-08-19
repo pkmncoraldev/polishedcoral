@@ -373,6 +373,7 @@ PLAYER_F EQU __enum__
 
 	trainerclass SAILOR
 	const RANDALL
+	const SHAWN
 
 
 	trainerclass SWIMMERM
@@ -442,7 +443,6 @@ PLAYER_F EQU __enum__
 	const CODY
 	const SAMMY
 	const ANDY
-	const SHAWN
 
 
 	trainerclass COOLTRAINERF

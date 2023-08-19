@@ -3103,6 +3103,15 @@ SailorGroup:
 	db -1 ; end
 
 ; ================
+
+	; SAILOR
+	db "SHAWN@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3507,15 +3516,6 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM
 	db "ANDY@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; COOLTRAINERM
-	db "SHAWN@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

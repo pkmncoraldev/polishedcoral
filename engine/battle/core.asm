@@ -3570,7 +3570,7 @@ OfferSwitch: ; 3d74b
 	call DelayFrame
 	call _LoadStatusIcons
 	pop af
-	ld [wCurPartyMon], a
+;	ld [wCurPartyMon], a
 	xor a
 	ld [wCurEnemyMove], a
 	ld [wCurPlayerMove], a

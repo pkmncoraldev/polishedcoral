@@ -22,7 +22,7 @@ UndergroundPassage_MapScriptHeader:
 	bg_event 22, 24, SIGNPOST_ITEM + MAX_ELIXIR, EVENT_UNDERGROUND_PASSAGE_HIDDEN_RARE_CANDY
 	bg_event 37, 25, SIGNPOST_ITEM + MAX_ELIXIR, EVENT_UNDERGROUND_PASSAGE_HIDDEN_MAX_REVIVE
 
-	db 18 ; object events
+	db 19 ; object events
 	person_event SPRITE_SAILOR, 12, 12, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerUndergroundPassage_1, -1
 	person_event SPRITE_COOLTRAINER_F, 18, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 3, TrainerUndergroundPassage_2, -1
 	person_event SPRITE_SUPER_NERD, 28, 21, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerUndergroundPassage_3, -1
@@ -31,6 +31,7 @@ UndergroundPassage_MapScriptHeader:
 	person_event SPRITE_SWIMMER_GIRL, 35, 11, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerUndergroundPassage_6, -1
 	person_event SPRITE_SWIMMER_GUY, 41, 21, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerUndergroundPassage_7, -1
 	person_event SPRITE_JUGGLER, 21,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerUndergroundPassage_8, -1
+	person_event SPRITE_BLACK_BELT, 12, 32, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, TrainerUndergroundPassage_9, -1
 	itemball_event 30, 15, EXP_SHARE, 1, EVENT_UNDERGROUND_PASSAGE_EXP_SHARE
 	itemball_event 27, 14, MAX_REVIVE, 1, EVENT_UNDERGROUND_PASSAGE_MAX_REVIVE
 	itemball_event 21, 29, RARE_CANDY, 1, EVENT_UNDERGROUND_PASSAGE_RARE_CANDY
@@ -244,3 +245,25 @@ TrainerUndergroundPassage_8:
 	text "Cool, huh?"
 	done
 	
+TrainerUndergroundPassage_9:
+	generictrainer BLACKBELT_T, TOSHI, EVENT_BEAT_UNDERGROUND_PASSAGE_TRAINER_9, .SeenText, .BeatenText
+
+	text "Depriving myself"
+	line "of my sense of"
+	cont "sight allows me to"
+	cont "focus my mind."
+	done	
+
+.SeenText:
+	text "I come here to"
+	line "train my body and"
+	cont "mind in the pitch"
+	cont "black."
+	
+	para "You are disturbing"
+	line "my training!"
+	done
+
+.BeatenText:
+	text "HIYA!"
+	done

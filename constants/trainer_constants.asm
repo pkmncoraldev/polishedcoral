@@ -403,6 +403,7 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass BLACKBELT_T
+	const TOSHI
 
 
 	trainerclass TEACHER

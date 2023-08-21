@@ -3316,7 +3316,7 @@ BlackbeltGroup:
 ; ================
 
 	; BLACKBELT_T
-	db "UNUSED@"
+	db "TOSHI@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

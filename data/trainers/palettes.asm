@@ -14,14 +14,14 @@ RodneyPalette:           INCLUDE "gfx/trainers/rodney.pal"
 WendyPalette:       	 INCLUDE "gfx/trainers/wendy.pal"
 CharliePalette:          INCLUDE "gfx/trainers/charlie.pal"
 PollyPalette:            INCLUDE "gfx/trainers/polly.pal"
-JasminePalette:
-PrycePalette:
-ClairPalette:
-WillPalette:
-KogaPalette:
-BrunoPalette:
-KarenPalette:
-ChampionPalette:
+JasminePalette:			 INCLUDE "gfx/trainers/player1.pal"
+PrycePalette:			 INCLUDE "gfx/trainers/player1.pal"
+ClairPalette:			 INCLUDE "gfx/trainers/player1.pal"
+WillPalette:			 INCLUDE "gfx/trainers/player1.pal"
+KogaPalette:			 INCLUDE "gfx/trainers/player1.pal"
+BrunoPalette:			 INCLUDE "gfx/trainers/player1.pal"
+KarenPalette:			 INCLUDE "gfx/trainers/player1.pal"
+ChampionPalette:		 INCLUDE "gfx/trainers/player1.pal"
 RivalPalette:            INCLUDE "gfx/trainers/rival.pal"
 YoungsterPalette:        INCLUDE "gfx/trainers/youngster.pal"
 BugCatcherPalette:       INCLUDE "gfx/trainers/bug_catcher.pal"

@@ -4318,6 +4318,18 @@ SpaTrainerFGroup:
 ; ================
 ; ================================
 
+AromaLadyGroup:
+; ================================
+; ================
+
+	; AROMA_LADY
+	db "LINDA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 
 TowerTycoonGroup:
 ; ================================

@@ -468,6 +468,12 @@ TrainerClassAttributes: ; 3959c
 	dw AI_BASIC + AI_TYPES + AI_TYPES + AI_STATUS
 	dw CONTEXT_USE + SWITCH_RARELY
 	
+; AromaLady
+	db 0, 0 ; items
+	db 10 ; base reward
+	dw AI_BASIC + AI_TYPES + AI_TYPES + AI_STATUS
+	dw CONTEXT_USE + SWITCH_RARELY
+	
 ; TowerTycoon
 	db FULL_HEAL, FULL_RESTORE ; items
 	db 25 ; base reward

@@ -77,5 +77,6 @@ TrainerClassNames::
 	db "SK8R BOY@"	       ; SKATER
 	db "STEAMER@"	       ; SPA_TRAINER
 	db "BATHER@"	       ; SPA_TRAINER_F
+	db "AROMA LADY@"	   ; AROMA_LADY
 	db "TYCOON@"		   ; TOWERTYCOON
 	

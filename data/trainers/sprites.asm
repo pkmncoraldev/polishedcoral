@@ -77,4 +77,5 @@ BTTrainerClassSprites:
 	db SPRITE_GOLD         ; Skater
 	db SPRITE_GOLD         ; SpaTrainer
 	db SPRITE_GOLD         ; SpaTrainerF
+	db SPRITE_AROMA_LADY   ; AromaLady
 	db SPRITE_GOLD         ; TOWERTYCOON

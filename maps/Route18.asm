@@ -11,7 +11,9 @@ Route18_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 2 ; bg events
+	signpost 23,  6, SIGNPOST_JUMPTEXT, Route18Sign1Text
+	signpost 30, 25, SIGNPOST_JUMPTEXT, Route18Sign2Text
 
 	db 2 ; object events
 	person_event SPRITE_TWIN, 36, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route18Clover, EVENT_SAVED_CLOVER
@@ -61,7 +63,7 @@ Route18CloverText1:
 	done
 	
 Route18CloverText2:
-	text "Hehe…"
+	text "CLOVER: Hehe…"
 	
 	para "Me and the other"
 	line "girls ran away"
@@ -89,3 +91,26 @@ Movement_Route18Clover:
 	step_down
 	step_down
 	step_end
+	
+Route18Sign1Text:
+	text "ROUTE 18"
+	
+	para "WEST:"
+	line "PORT SHIMMER"
+	
+	para "SOUTHEAST:"
+	line "RADIANT TOWNSHIP &"
+	cont "DUSK TURNPIKE"
+	done
+	
+Route18Sign2Text:
+	text "ROUTE 18"
+	
+	para "NORTHWEST:"
+	line "PORT SHIMMER"
+	
+	para "SOUTHEAST:"
+	line "RADIANT TOWNSHIP &"
+	cont "DUSK TURNPIKE"
+	done
+	

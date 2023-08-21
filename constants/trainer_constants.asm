@@ -548,6 +548,9 @@ PLAYER_F EQU __enum__
 	const BETTY_6
 	const BETTY_7
 	const BETTY_8
+	
+	trainerclass AROMA_LADY
+	const LINDA
 
 	trainerclass TOWERTYCOON ; 1
 

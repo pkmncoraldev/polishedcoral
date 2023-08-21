@@ -79,4 +79,5 @@ TrainerGroups: ; 0x39999
 	dba SkaterGroup
 	dba SpaTrainerGroup
 	dba SpaTrainerFGroup
+	dba AromaLadyGroup
 	dba TowerTycoonGroup

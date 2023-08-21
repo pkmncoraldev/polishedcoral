@@ -77,5 +77,6 @@ TrainerPicPointers::
 	dba SkaterPic
 	dba SpaTrainerPic
 	dba SpaTrainerFPic
+	dba AromaLadyPic
 	dba TowerTycoonPic
 	

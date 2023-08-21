@@ -34,9 +34,7 @@ TrainerClassNames::
 	db "SNARE ADMIN@"	   ; LOCKE
 	db "#FAN@"             ; POKEFANM
 	db "#FAN@"             ; POKEFANF
-	db "OFFICER@"          ; OFFICERM
-	db "OFFICER@"          ; OFFICERF
-	db "NURSE@"            ; NURSE
+	db "OFFICER@"          ; OFFICER
 	db "#MANIAC@"          ; POKEMANIAC
 	db "SUPER NERD@"       ; SUPER_NERD
 	db "LASS@"             ; LASS
@@ -44,12 +42,9 @@ TrainerClassNames::
 	db "FIREBREATHER@"     ; FIREBREATHER
 	db "JUGGLER@"          ; JUGGLER
 	db "SCHOOLBOY@"        ; SCHOOLBOY
-	db "SCHOOLGIRL@"       ; SCHOOLGIRL
 	db "PSYCHIC@"          ; PSYCHIC_T
-	db "HEX MANIAC@"       ; HEX_MANIAC
 	db "COUPLE@"           ; COUPLE
 	db "GENTLEMAN@"        ; GENTLEMAN
-	db "RICH BOY@"         ; RICH_BOY
 	db "LADY@"             ; LADY
 	db "SAILOR@"           ; SAILOR
 	db "SWIMMER@"          ; SWIMMERM
@@ -59,12 +54,9 @@ TrainerClassNames::
 	db "BOARDER@"          ; BOARDER
 	db "SKIER@"            ; SKIER
 	db "BLACK BELT@"       ; BLACKBELT_T
-	db "BATTLE GIRL@"      ; BATTLE_GIRL
 	db "TEACHER@"          ; TEACHER
-	db "GUITARIST@"        ; GUITARISTM
-	db "GUITARIST@"        ; GUITARISTF
+	db "GUITARIST@"        ; GUITARIST
 	db "BIKER@"            ; BIKER
-	db "CUE BALL@"         ; CUE_BALL
 	db "COOL TRAINER@"     ; COOLTRAINERM
 	db "COOL TRAINER@"     ; COOLTRAINERF
 	db "#MON PROF.@"       ; PROF_ELM

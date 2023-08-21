@@ -34,9 +34,7 @@ TrainerPicPointers::
 	dba LockePic
 	dba PokefanmPic
 	dba PokefanfPic
-	dba OfficermPic
-	dba OfficerfPic
-	dba NursePic
+	dba OfficerPic
 	dba PokemaniacPic
 	dba SuperNerdPic
 	dba LassPic
@@ -44,12 +42,9 @@ TrainerPicPointers::
 	dba FirebreatherPic
 	dba JugglerPic
 	dba SchoolboyPic
-	dba SchoolgirlPic
 	dba PsychicTPic
-	dba HexManiacPic
 	dba CouplePic
 	dba GentlemanPic
-	dba RichBoyPic
 	dba LadyPic
 	dba SailorPic
 	dba SwimmermPic
@@ -59,12 +54,9 @@ TrainerPicPointers::
 	dba BoarderPic
 	dba SkierPic
 	dba BlackbeltTPic
-	dba BattleGirlPic
 	dba TeacherPic
-	dba GuitaristmPic
-	dba GuitaristfPic
+	dba GuitaristPic
 	dba BikerPic
-	dba CueballPic
 	dba CooltrainermPic
 	dba CooltrainerfPic
 	dba ProfSprucePic

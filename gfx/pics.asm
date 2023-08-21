@@ -701,14 +701,14 @@ RodneyPic:                INCBIN "gfx/trainers/rodney.2bpp.lz"
 WendyPic:         	      INCBIN "gfx/trainers/wendy.2bpp.lz"
 CharliePic:               INCBIN "gfx/trainers/charlie.2bpp.lz"
 PollyPic:                 INCBIN "gfx/trainers/polly.2bpp.lz"
-JasminePic:               INCBIN "gfx/trainers/jasmine.2bpp.lz"
-PrycePic:                 INCBIN "gfx/trainers/pryce.2bpp.lz"
-ClairPic:                 INCBIN "gfx/trainers/clair.2bpp.lz"
-WillPic:                  INCBIN "gfx/trainers/will.2bpp.lz"
-KogaPic:                  INCBIN "gfx/trainers/koga.2bpp.lz"
-BrunoPic:                 INCBIN "gfx/trainers/bruno.2bpp.lz"
-KarenPic:                 INCBIN "gfx/trainers/karen.2bpp.lz"
-ChampionPic:              INCBIN "gfx/trainers/champion.2bpp.lz"
+JasminePic:
+PrycePic:
+ClairPic:
+WillPic:
+KogaPic:
+BrunoPic:
+KarenPic:
+ChampionPic:
 RivalPic:                 INCBIN "gfx/trainers/rival.2bpp.lz"
 YoungsterPic:             INCBIN "gfx/trainers/youngster.2bpp.lz"
 BugCatcherPic:            INCBIN "gfx/trainers/bug_catcher.2bpp.lz"
@@ -728,9 +728,7 @@ GruntfPic:                INCBIN "gfx/trainers/grunt_f.2bpp.lz"
 KagePic:				  INCBIN "gfx/trainers/kage.2bpp.lz"
 PokefanmPic:              INCBIN "gfx/trainers/pokefan_m.2bpp.lz"
 PokefanfPic:              INCBIN "gfx/trainers/pokefan_f.2bpp.lz"
-OfficermPic:              INCBIN "gfx/trainers/officer_m.2bpp.lz"
-OfficerfPic:              INCBIN "gfx/trainers/officer_f.2bpp.lz"
-NursePic:                 INCBIN "gfx/trainers/nurse.2bpp.lz"
+OfficerPic:               INCBIN "gfx/trainers/officer.2bpp.lz"
 PokemaniacPic:            INCBIN "gfx/trainers/pokemaniac.2bpp.lz"
 SuperNerdPic:			  INCBIN "gfx/trainers/super_nerd.2bpp.lz"
 LassPic:                  INCBIN "gfx/trainers/lass.2bpp.lz"
@@ -742,12 +740,9 @@ SECTION "Trainer Pics 3", ROMX
 FirebreatherPic:          INCBIN "gfx/trainers/firebreather.2bpp.lz"
 JugglerPic:               INCBIN "gfx/trainers/juggler.2bpp.lz"
 SchoolboyPic:             INCBIN "gfx/trainers/schoolboy.2bpp.lz"
-SchoolgirlPic:            INCBIN "gfx/trainers/schoolgirl.2bpp.lz"
 PsychicTPic:              INCBIN "gfx/trainers/psychic_t.2bpp.lz"
-HexManiacPic:             INCBIN "gfx/trainers/hex_maniac.2bpp.lz"
 CouplePic:                INCBIN "gfx/trainers/couple.2bpp.lz"
 GentlemanPic:             INCBIN "gfx/trainers/gentleman.2bpp.lz"
-RichBoyPic:               INCBIN "gfx/trainers/rich_boy.2bpp.lz"
 LadyPic:                  INCBIN "gfx/trainers/lady.2bpp.lz"
 SailorPic:                INCBIN "gfx/trainers/sailor.2bpp.lz"
 SwimmermPic:              INCBIN "gfx/trainers/swimmer_m.2bpp.lz"
@@ -761,13 +756,10 @@ SECTION "Trainer Pics 4", ROMX
 
 SkierPic:                 INCBIN "gfx/trainers/skier.2bpp.lz"
 BlackbeltTPic:            INCBIN "gfx/trainers/blackbelt_t.2bpp.lz"
-BattleGirlPic:            INCBIN "gfx/trainers/battle_girl.2bpp.lz"
 TeacherPic:               
 TeacherFastPic:			  INCBIN "gfx/trainers/teacher.2bpp.lz"
-GuitaristmPic:            INCBIN "gfx/trainers/guitarist_m.2bpp.lz"
-GuitaristfPic:            INCBIN "gfx/trainers/guitarist_f.2bpp.lz"
+GuitaristPic:          	  INCBIN "gfx/trainers/guitarist.2bpp.lz"
 BikerPic:                 INCBIN "gfx/trainers/biker.2bpp.lz"
-CueballPic:               INCBIN "gfx/trainers/cueball.2bpp.lz"
 CooltrainermPic:          INCBIN "gfx/trainers/cooltrainer_m.2bpp.lz"
 CooltrainerfPic:          INCBIN "gfx/trainers/cooltrainer_f.2bpp.lz"
 ProfSprucePic:            INCBIN "gfx/trainers/spruce.2bpp.lz"

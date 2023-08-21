@@ -36,9 +36,7 @@ TrainerGroups: ; 0x39999
 	dba LockeGroup
 	dba PokefanMGroup
 	dba PokefanFGroup
-	dba OfficerMGroup
-	dba OfficerFGroup
-	dba NurseGroup
+	dba OfficerGroup
 	dba PokemaniacGroup
 	dba SuperNerdGroup
 	dba LassGroup
@@ -46,12 +44,9 @@ TrainerGroups: ; 0x39999
 	dba FirebreatherGroup
 	dba JugglerGroup
 	dba SchoolboyGroup
-	dba SchoolgirlGroup
 	dba PsychicGroup
-	dba HexManiacGroup
 	dba CoupleGroup
 	dba GentlemanGroup
-	dba RichBoyGroup
 	dba LadyGroup
 	dba SailorGroup
 	dba SwimmerMGroup
@@ -61,12 +56,9 @@ TrainerGroups: ; 0x39999
 	dba BoarderGroup
 	dba SkierGroup
 	dba BlackbeltGroup
-	dba BattleGirlGroup
 	dba TeacherGroup
-	dba GuitaristMGroup
-	dba GuitaristFGroup
+	dba GuitaristGroup
 	dba BikerGroup
-	dba CueballGroup
 	dba CooltrainerMGroup
 	dba CooltrainerFGroup
 	dba ProfSpruceGroup

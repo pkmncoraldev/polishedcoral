@@ -2286,41 +2286,11 @@ PokefanFGroup:
 ; ================================
 
 
-OfficerMGroup:
+OfficerGroup:
 ; ================================
 ; ================
 
-	; OFFICERM
-	db "UNUSED@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-; ================================
-
-
-OfficerFGroup:
-; ================================
-; ================
-
-	; OFFICERF
-	db "UNUSED@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-; ================================
-
-
-NurseGroup:
-; ================================
-; ================
-
-	; NURSE
+	; OFFICER
 	db "UNUSED@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -2956,21 +2926,6 @@ SchoolboyGroup:
 ; ================================
 
 
-SchoolgirlGroup:
-; ================================
-; ================
-
-	; SCHOOLGIRL
-	db "UNUSED@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-; ================================
-
-
 PsychicGroup:
 ; ================================
 ; ================
@@ -2986,21 +2941,6 @@ PsychicGroup:
 
 	; PSYCHIC_T
 	db "NELSON@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-; ================================
-
-
-HexManiacGroup:
-; ================================
-; ================
-
-	; HEX_MANIAC
-	db "UNUSED@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3044,21 +2984,6 @@ GentlemanGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 31, ARCANINE
-	db -1 ; end
-
-; ================
-; ================================
-
-
-RichBoyGroup:
-; ================================
-; ================
-
-	; RICH_BOY
-	db "UNUSED@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -3401,21 +3326,6 @@ BlackbeltGroup:
 ; ================================
 
 
-BattleGirlGroup:
-; ================================
-; ================
-
-	; BATTLE_GIRL
-	db "UNUSED@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-; ================================
-
-
 TeacherGroup:
 ; ================================
 ; ================
@@ -3432,26 +3342,11 @@ TeacherGroup:
 
 
 
-GuitaristMGroup:
+GuitaristGroup:
 ; ================================
 ; ================
 
-	; GUITARISTM
-	db "UNUSED@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-; ================================
-
-
-GuitaristFGroup:
-; ================================
-; ================
-
-	; GUITARISTF
+	; GUITARIST
 	db "UNUSED@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -3468,21 +3363,6 @@ BikerGroup:
 
 	; BIKER
 	db "HANK@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-; ================================
-
-
-CueballGroup:
-; ================================
-; ================
-
-	; CUE_BALL
-	db "UNUSED@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

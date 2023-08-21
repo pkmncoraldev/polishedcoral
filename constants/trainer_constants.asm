@@ -253,13 +253,7 @@ PLAYER_F EQU __enum__
 	const URSALA
 
 
-	trainerclass OFFICERM
-
-
-	trainerclass OFFICERF
-
-
-	trainerclass NURSE
+	trainerclass OFFICER
 
 
 	trainerclass POKEMANIAC
@@ -343,15 +337,9 @@ PLAYER_F EQU __enum__
 	const DAMIAN_8
 
 
-	trainerclass SCHOOLGIRL
-
-
 	trainerclass PSYCHIC_T
 	const RALPH
 	const NELSON
-
-
-	trainerclass HEX_MANIAC
 
 
 	trainerclass COUPLE
@@ -361,9 +349,6 @@ PLAYER_F EQU __enum__
 	trainerclass GENTLEMAN
 	const DURWOOD
 	const HOWARD
-
-
-	trainerclass RICH_BOY
 
 
 	trainerclass LADY
@@ -420,23 +405,14 @@ PLAYER_F EQU __enum__
 	trainerclass BLACKBELT_T
 
 
-	trainerclass BATTLE_GIRL
-
-
 	trainerclass TEACHER
 
 
-	trainerclass GUITARISTM
-
-
-	trainerclass GUITARISTF
+	trainerclass GUITARIST
 
 
 	trainerclass BIKER
 	const HANK
-
-
-	trainerclass CUE_BALL
 
 
 	trainerclass COOLTRAINERM

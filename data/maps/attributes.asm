@@ -394,6 +394,8 @@ ENDM
 	
 	map_attributes Route21Tunnel, ROUTE_21_TUNNEL, $d4, 0
 	
+	map_attributes BarBackAlley, BAR_BACK_ALLEY, $d4, 0
+	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0
 	connection south, FakeRoute2, FAKE_ROUTE_2, 0

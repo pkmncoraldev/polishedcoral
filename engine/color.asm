@@ -1515,6 +1515,8 @@ LoadMapPals::
 	jp FarCopyWRAM
 .highway
 	ld a, [wMapNumber]
+	cp MAP_BAR_BACK_ALLEY
+	jr z, .tunnel
 	cp MAP_ROUTE_21_TUNNEL
 	jr z, .tunnel
 	cp MAP_DUSK_TURNPIKE

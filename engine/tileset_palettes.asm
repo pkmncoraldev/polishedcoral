@@ -186,6 +186,8 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_21_TUNNEL
 	jr z, .highway_tunnel
+	cp MAP_BAR_BACK_ALLEY
+	jr z, .back_alley
 	ld hl, HighwayPalette
 	ld a, [wTimeOfDayPal]
 	and 3
@@ -194,6 +196,19 @@ LoadSpecialMapPalette: ; 494ac
 	ld de, wUnknBGPals + 4 palettes
 	ld bc, 3 palettes
 	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
+	
+.back_alley
+	ld hl, BarBackAlleyPalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 2 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals + 4 palettes
+	ld bc, 2 palettes
 	call FarCopyWRAM
 	scf
 	ret
@@ -967,3 +982,6 @@ INCLUDE "maps/palettes/bgpals/darkcave.pal"
 
 DesertTemplePalette:
 INCLUDE "maps/palettes/bgpals/deserttemple.pal"
+
+BarBackAlleyPalette:
+INCLUDE "maps/palettes/bgpals/backalley.pal"

@@ -779,3 +779,6 @@ SunsetLighthouseElevator_BlockData:
 SunsetLighthouseTop_BlockData:
 	INCBIN "maps/SunsetLighthouseTop.ablk.lz"
 	
+BarBackAlley_BlockData:
+	INCBIN "maps/BarBackAlley.ablk.lz"
+	

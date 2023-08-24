@@ -23,9 +23,9 @@ BarBackAlley_MapScriptHeader:
 	signpost  7, 11, SIGNPOST_JUMPTEXT, BarBackAlleyJunkText
 
 	db 3 ; object events
-	person_event SPRITE_TWIN,  6,  9, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, BarBackAlleyFelicia, EVENT_SAVED_FELICIA
+	person_event SPRITE_PIGTAILS,  6,  9, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, BarBackAlleyFelicia, EVENT_SAVED_FELICIA
 	person_event SPRITE_SUNBATHER,  8,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
-	person_event SPRITE_TWIN,  6,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, BarBackAlleyFelicia, EVENT_ALWAYS_SET
+	person_event SPRITE_PIGTAILS,  6,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, BarBackAlleyFelicia, EVENT_ALWAYS_SET
 	
 
 	const_def 1 ; object constants

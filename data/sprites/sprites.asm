@@ -229,3 +229,4 @@ SpriteHeaders:
 	overworld_sprite TrunksWaterSpriteGFX, STANDING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite PatchesFallSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite PorygonScreenGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite PigtailsSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN

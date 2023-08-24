@@ -143,16 +143,16 @@ DuskTurnpikeTollbooth:
 	jumptext DuskTurnpikeTollboothText1
 
 DuskTurnpikeTrashcan:
-	checkevent EVENT_LUSTER_TRASHCAN_1
+	checkevent EVENT_ROUTE_21_TRASHCAN
 	iftrue .OnlyTrash
 	changeblock $0e, $06, $e7
-	setevent EVENT_LUSTER_TRASHCAN_1
+	setevent EVENT_ROUTE_21_TRASHCAN
 	opentext
 	writetext DuskTurnpikeTrashcanText1
 	playsound SFX_SANDSTORM
 	waitsfx
 	buttonsound
-	checkevent EVENT_LUSTER_TRASHCAN_1_ITEM
+	checkevent EVENT_ROUTE_21_TRASHCAN_ITEM
 	iffalse .get_item
 	callasm DuskTurnpikeTrashcanAsm
 	closetext
@@ -161,7 +161,7 @@ DuskTurnpikeTrashcan:
 .get_item
 	verbosegiveitem LEFTOVERS
 	closetext
-	setevent EVENT_LUSTER_TRASHCAN_1_ITEM
+	setevent EVENT_ROUTE_21_TRASHCAN_ITEM
 	end
 	
 .OnlyTrash

@@ -12,7 +12,7 @@ SunbeamBeach_MapScriptHeader:
 
 	db 10 ; object events
 	person_event SPRITE_CANDLE, 31, 14, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, 19, 4, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbatherNite, -1
-	person_event SPRITE_ROWBOAT, 31, 14, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbather, -1
+	person_event SPRITE_SUNBATHER, 31, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbather, -1
 	person_event SPRITE_TRUNKS, 20, 12, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, 4, 19, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamBeachTrunks1, -1
 	person_event SPRITE_TRUNKS, 35, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, 4, 19, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunbeamBeachTrunks2, -1
 	person_event SPRITE_BIKINI_2, 24, 14, SPRITEMOVEDATA_WANDER, 1, 1, 4, 19, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SunbeamBeachBikini, -1

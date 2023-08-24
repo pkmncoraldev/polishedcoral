@@ -130,7 +130,7 @@
 	tilecoll PUDDLE, PUDDLE, FLOOR, PUDDLE ; 81
 	tilecoll WALL, WALL, WALL, DOOR ; 82
 	tilecoll WALL, WALL, WALL, WALL ; 83
-	tilecoll PUDDLE, FLOOR, PUDDLE, FLOOR ; 84
+	tilecoll WALL, WALL, WALL, WALL ; 84
 	tilecoll FLOOR, WALL, WALL, WALL ; 85
 	tilecoll WALL, WALL, WALL, WALL ; 86
 	tilecoll WALL, WALL, WALL, WALL ; 87
@@ -203,18 +203,18 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ca
 	tilecoll WALL, WALL, WALL, WALL ; cb
 	tilecoll WARP_CARPET_RIGHT, NO_OLLIE, WARP_CARPET_RIGHT, NO_OLLIE ; cc
-	tilecoll WATER, PUDDLE, WATER, PUDDLE ; cd
-	tilecoll PUDDLE, WATER, PUDDLE, WATER ; ce
+	tilecoll WARP_CARPET_LEFT, WARP_CARPET_RIGHT, WALL, WALL ; cd
+	tilecoll WARP_CARPET_LEFT, WARP_CARPET_RIGHT, WALL, WALL ; ce
 	tilecoll WALL, WALL, WALL, WALL ; cf
 	tilecoll WARP_CARPET_RIGHT, NO_OLLIE, WARP_CARPET_RIGHT, NO_OLLIE ; d0
-	tilecoll WATER, PUDDLE, WATER, PUDDLE ; d1
-	tilecoll PUDDLE, WATER, PUDDLE, WATER ; d2
+	tilecoll WARP_CARPET_LEFT, WARP_CARPET_RIGHT, WALL, WALL ; d1
+	tilecoll WARP_CARPET_LEFT, WARP_CARPET_RIGHT, WALL, WALL ; d2
 	tilecoll WALL, WALL, WALL, WALL ; d3
 	tilecoll WALL, WALL, WALL, WALL ; d4
 	tilecoll FLOOR, FLOOR, NO_OLLIE, DOOR ; d5
 	tilecoll WALL, WALL, WALL, WALL ; d6
 	tilecoll WALL, WALL, WALL, WALL ; d7
-	tilecoll WATER, WATER, PUDDLE, PUDDLE ; d8
+	tilecoll WALL, WALL, WALL, WALL ; d8
 	tilecoll WALL, WALL, WALL, WALL ; d9
 	tilecoll WALL, WALL, WALL, WALL ; da
 	tilecoll WALL, WALL, WALL, WALL ; db

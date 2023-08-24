@@ -1544,6 +1544,12 @@ LoadMapPals::
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
+	ld a, [wMapNumber]
+	cp MAP_BAR_BACK_ALLEY
+	jr z, .alley
+	ret
+.alley
+	ld hl, MapObjectPalsEvilMeowth
 	jp .copy_single_pal_to_pal_7
 .lab
 	call .normal
@@ -1911,6 +1917,9 @@ INCLUDE "maps/palettes/obpals/fakeroute1.pal"
 
 MapObjectPalsLeilaniBed::
 INCLUDE "maps/palettes/obpals/leilanibed.pal"
+
+MapObjectPalsEvilMeowth::
+INCLUDE "maps/palettes/obpals/evilmeowth.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

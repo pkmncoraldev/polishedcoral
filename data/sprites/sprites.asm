@@ -178,7 +178,7 @@ SpriteHeaders:
 	overworld_sprite GoldTrophySpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite SailboatSpriteGFX, STANDING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite MiscOverheadSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
-	overworld_sprite RowboatSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite SunbatherSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite UmbrellaSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite SittingYoungsterGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite SittingBirdKeeperGFX, STANDING_SPRITE, PAL_OW_RED
@@ -198,7 +198,7 @@ SpriteHeaders:
 	overworld_sprite HangarPartsGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite KoffingBeanGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite ClothesRacksGFX, STANDING_SPRITE, PAL_OW_SILVER
-	overworld_sprite IceBlockGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite MiscBaggageGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite BigMamoswineSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite LighthouseSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite SunbeamViewSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER

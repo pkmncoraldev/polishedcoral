@@ -53,7 +53,7 @@ AirportCallback:
 	clearevent EVENT_AIRPORT_LUGGAGE_3
 	clearevent EVENT_AIRPORT_LUGGAGE_4
 	clearevent EVENT_AIRPORT_SLOWPOKE
-	variablesprite SPRITE_BAGGAGE, SPRITE_ICE_BLOCK
+	variablesprite SPRITE_BAGGAGE, SPRITE_MISC_BAGGAGE
 	callasm AirportBaggageAsm
 	return
 	
@@ -74,7 +74,7 @@ AirportTrigger2:
 	clearevent EVENT_AIRPORT_LUGGAGE_4
 	clearevent EVENT_AIRPORT_SLOWPOKE
 	special Special_UpdatePalsInstant
-	variablesprite SPRITE_BAGGAGE, SPRITE_ICE_BLOCK
+	variablesprite SPRITE_BAGGAGE, SPRITE_MISC_BAGGAGE
 	jump .end
 .change2
 	clearevent EVENT_AIRPORT_LUGGAGE_1

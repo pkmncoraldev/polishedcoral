@@ -18,6 +18,7 @@ DuskPokeCenter_BlockData:
 
 GlintMart_BlockData:
 StarglowMart_BlockData:
+LakeOnwaMart_BlockData:
 SunbeamMart_BlockData:
 EventideMart_BlockData:
 FlickerMart_BlockData:

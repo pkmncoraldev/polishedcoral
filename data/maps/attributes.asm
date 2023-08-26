@@ -487,6 +487,7 @@ ENDM
 	map_attributes LakeOnwaBoatHouseLeft, LAKE_ONWA_BOAT_HOUSE_LEFT, $0, 0
 	map_attributes LakeOnwaItemHouse, LAKE_ONWA_ITEM_HOUSE, $0, 0
 	map_attributes LakeOnwaPokeCenter, LAKE_ONWA_POKECENTER, $0, 0
+	map_attributes LakeOnwaMart, LAKE_ONWA_MART, $0, 0
 	map_attributes Route3FriendshipHouse, ROUTE_3_FRIENDSHIP_HOUSE, $0, 0
 	map_attributes Route8Garden, ROUTE_8_GARDEN, $d4, 0
 	map_attributes Route8EncounterHouse, ROUTE_8_ENCOUNTER_HOUSE, $0, 0

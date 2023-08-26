@@ -11,7 +11,7 @@ LakeOnwa_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, LakeOnwaFlypointCallback
 	callback MAPCALLBACK_TILES, LakeOnwaCallback
 
-	db 7 ; warp events
+	db 8 ; warp events
 	warp_def 29, 45, 1, LAKE_ONWA_BOAT_HOUSE_RIGHT
 	warp_def 23, 21, 1, LAKE_ONWA_BOAT_HOUSE_LEFT
 	warp_def  5, 38, 1, MT_ONWA_1F
@@ -19,8 +19,9 @@ LakeOnwa_MapScriptHeader:
 	warp_def 16, 13, 1, LAKE_ONWA_ITEM_HOUSE
 	warp_def 17, 19, 1, LAKE_ONWA_POKECENTER
 	warp_def  3, 57, 3, ROUTE_8_GATE
+	warp_def 13, 23, 1, LAKE_ONWA_MART
 
-	db 63 ; coord events
+	db 64 ; coord events
 	coord_event 22, 18, 0, LakeMakeSilverBrown
 	coord_event 23, 18, 0, LakeMakeSilverBrown
 	coord_event 24, 18, 0, LakeMakeSilverBrown
@@ -82,10 +83,11 @@ LakeOnwa_MapScriptHeader:
 	coord_event 21, 18, 5, LakeMakeSilverBlue
 	coord_event 17, 16, 5, LakeMakeSilverBlue
 	coord_event 17, 17, 5, LakeMakeSilverBlue
+	coord_event 20, 18, 5, LakeMakeSilverBlue
 	coord_event 37,  8, 5, LakeRivalT
 	coord_event 37,  9, 5, LakeRivalB
 
-	db 7 ; bg events
+	db 8 ; bg events
 	signpost 25, 61, SIGNPOST_READ, LakeSign
 	signpost 29, 48, SIGNPOST_READ, LakeBoatHouseSignR
 	signpost 23, 19, SIGNPOST_READ, LakeBoatHouseSignL
@@ -93,6 +95,7 @@ LakeOnwa_MapScriptHeader:
 	signpost 17, 20, SIGNPOST_READ, LakeCenterSign
 	signpost  8, 32, SIGNPOST_READ, MtOnwaSign
 	bg_event  4, 25, SIGNPOST_ITEM + MAX_REVIVE, EVENT_LAKE_ONWA_HIDDEN_ITEM
+	signpost 13, 24, SIGNPOST_READ, LakeMartSign
 
 	db 18 ; object events
 	person_event SPRITE_GENERAL_VARIABLE_1,  0,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -102,13 +105,13 @@ LakeOnwa_MapScriptHeader:
 	object_event 42, 32, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
 	person_event SPRITE_COOL_DUDE, 32, 48, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LakeNpc1, -1
 	person_event SPRITE_FISHER, 26, 12, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LakeNpc2, -1
-	person_event SPRITE_CUTE_GIRL, 12, 26, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LakeNpc3, -1
+	person_event SPRITE_CUTE_GIRL, 12, 27, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LakeNpc3, -1
 	person_event SPRITE_GRANNY, 20, 10, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeNpc4, -1
 	itemball_event 41, 16, BIG_NUGGET, 1, EVENT_LAKE_ONWA_POKE_BALL1
 	itemball_event 28,  6, HARD_STONE, 1, EVENT_LAKE_ONWA_POKE_BALL2
 	person_event SPRITE_HIKER,  7, 63, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerLake, -1
 	person_event SPRITE_WEIRD_TREE, 23, 58, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeSudowoodo, EVENT_FOUGHT_SUDOWOODO
-	smashrock_event 25, 10
+	smashrock_event 26, 10
 	smashrock_event 28,  9
 	smashrock_event 29,  8
 	person_event SPRITE_COLBY,  7, 39, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LakeBoat, EVENT_BEAT_LAKE_RIVAL
@@ -560,6 +563,9 @@ LakeNameRaterSign:
 
 LakeCenterSign:
 	jumpstd pokecentersign
+
+LakeMartSign:
+	jumpstd martsign
 
 LakeBoat:
 	jumptext LakeBoatText

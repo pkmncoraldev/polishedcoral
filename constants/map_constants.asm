@@ -132,6 +132,7 @@ MAP_NONE   EQU 0
 	map_const LAKE_ONWA_NAME_RATER_HOUSE,                  4,  4 ;  6
 	map_const LAKE_ONWA_ITEM_HOUSE,                 	   4,  4 ;  7
 	map_const LAKE_ONWA_POKECENTER,						   6,  4 ;  8
+	map_const LAKE_ONWA_MART,                              6,  4 ;  9
 	
 	newgroup                                                     ;  7
 

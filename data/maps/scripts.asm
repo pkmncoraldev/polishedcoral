@@ -18,6 +18,7 @@ INCLUDE "maps/DuskPokeCenter.asm"
 SECTION "Pokemon Mart Scripts 1", ROMX
 INCLUDE "maps/GlintMart.asm"
 INCLUDE "maps/StarglowMart.asm"
+INCLUDE "maps/LakeOnwaMart.asm"
 INCLUDE "maps/SunbeamMart.asm"
 INCLUDE "maps/EventideMart.asm"
 INCLUDE "maps/FlickerMart.asm"

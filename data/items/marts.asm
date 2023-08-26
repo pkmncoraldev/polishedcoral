@@ -3,6 +3,7 @@ Marts: ; 160a9
 	dw GlintMart
 	dw StarglowMart
 	dw Route5GateMart
+	dw LakeOnwaMart
 	dw SunbeamMart
 	dw EventideMart
 	dw FlickerMart
@@ -62,17 +63,31 @@ Route5GateMart: ; 160fa
 	db RAGECANDYBAR
 	db -1
 
-SunbeamMart: ; 16106
+LakeOnwaMart:
 	db 9 ; # items
 	db POKE_BALL
-	db GREAT_BALL
 	db REPEAT_BALL
+	db POTION
+	db ESCAPE_ROPE
+	db REPEL
+	db ANTIDOTE
+	db PARALYZEHEAL
+	db AWAKENING
+	db BURN_HEAL
+	db -1
+
+SunbeamMart: ; 16106
+	db 10 ; # items
+	db POKE_BALL
+	db GREAT_BALL
 	db POTION
 	db SUPER_POTION
 	db ESCAPE_ROPE
 	db REPEL
 	db ANTIDOTE
 	db PARALYZEHEAL
+	db AWAKENING
+	db BURN_HEAL
 	db -1
 
 EventideMart: ; 16118

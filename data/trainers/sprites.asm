@@ -78,4 +78,11 @@ BTTrainerClassSprites:
 	db SPRITE_GOLD         ; SpaTrainer
 	db SPRITE_GOLD         ; SpaTrainerF
 	db SPRITE_AROMA_LADY   ; AromaLady
+	db SPRITE_PIGTAILS	   ; Rose
+	db SPRITE_PIGTAILS	   ; Lily
+	db SPRITE_PIGTAILS	   ; Iris
+	db SPRITE_PIGTAILS	   ; Poppy
+	db SPRITE_PIGTAILS	   ; Felicia
+	db SPRITE_PIGTAILS	   ; Violet
+	db SPRITE_PIGTAILS	   ; Clover
 	db SPRITE_GOLD         ; TOWERTYCOON

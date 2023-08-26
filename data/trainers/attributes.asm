@@ -474,6 +474,48 @@ TrainerClassAttributes: ; 3959c
 	dw AI_BASIC + AI_TYPES + AI_TYPES + AI_STATUS
 	dw CONTEXT_USE + SWITCH_RARELY
 	
+; Rose
+	db 0, 0 ; items
+	db 10 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
+; Lily
+	db 0, 0 ; items
+	db 10 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
+; Iris
+	db 0, 0 ; items
+	db 10 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
+; Poppy
+	db 0, 0 ; items
+	db 10 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
+; Felicia
+	db 0, 0 ; items
+	db 10 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
+; Violet
+	db 0, 0 ; items
+	db 10 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
+; Clover
+	db 0, 0 ; items
+	db 10 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
 ; TowerTycoon
 	db FULL_HEAL, FULL_RESTORE ; items
 	db 25 ; base reward

@@ -785,6 +785,13 @@ LockePic:				  INCBIN "gfx/trainers/locke.2bpp.lz"
 SpaTrainerPic:			  INCBIN "gfx/trainers/spa_trainer.2bpp.lz"
 SpaTrainerFPic:			  INCBIN "gfx/trainers/spa_trainer_f.2bpp.lz"
 AromaLadyPic:			  INCBIN "gfx/trainers/aroma_lady.2bpp.lz"
+RosePic:
+LilyPic:
+IrisPic:
+PoppyPic:
+FeliciaPic:
+VioletPic:
+CloverPic:				  INCBIN "gfx/trainers/pigtails.2bpp.lz"
 TowerTycoonPic:
 CoryPic:				  INCBIN "gfx/trainers/cory.2bpp.lz"
 CoraPic:				  INCBIN "gfx/trainers/cora.2bpp.lz"

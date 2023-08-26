@@ -80,4 +80,11 @@ TrainerGroups: ; 0x39999
 	dba SpaTrainerGroup
 	dba SpaTrainerFGroup
 	dba AromaLadyGroup
+	dba RoseGroup
+	dba LilyGroup
+	dba IrisGroup
+	dba PoppyGroup
+	dba FeliciaGroup
+	dba VioletGroup
+	dba CloverGroup
 	dba TowerTycoonGroup

@@ -35,9 +35,7 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_TEAM_SNARE_ENCOUNTER	; locke
 	db MUSIC_HIKER_ENCOUNTER		; pokefanm
 	db MUSIC_GENTLEMAN_ENCOUNTER	; pokefanf
-	db MUSIC_HIKER_ENCOUNTER		; officerm
-	db MUSIC_HIKER_ENCOUNTER		; officerf
-	db MUSIC_LASS_ENCOUNTER			; nurse
+	db MUSIC_HIKER_ENCOUNTER		; officer
 	db MUSIC_POKEMANIAC_ENCOUNTER	; pokemaniac
 	db MUSIC_POKEMANIAC_ENCOUNTER	; super_nerd
 	db MUSIC_LASS_ENCOUNTER			; lass
@@ -45,12 +43,9 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_HARDCORE_ENCOUNTER		; firebreather
 	db MUSIC_POKEMANIAC_ENCOUNTER	; juggler
 	db MUSIC_YOUNGSTER_ENCOUNTER	; schoolboy
-	db MUSIC_LASS_ENCOUNTER			; schoolgirl
 	db MUSIC_HARDCORE_ENCOUNTER		; psychic_t
-	db MUSIC_POKEMANIAC_ENCOUNTER	; hex_maniac
 	db MUSIC_NONE					; couple
 	db MUSIC_GENTLEMAN_ENCOUNTER	; gentleman
-	db MUSIC_GENTLEMAN_ENCOUNTER	; rich_boy
 	db MUSIC_GENTLEMAN_ENCOUNTER	; lady
 	db MUSIC_HIKER_ENCOUNTER		; sailor
 	db MUSIC_HIKER_ENCOUNTER		; swimmerm
@@ -60,12 +55,9 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_HARDCORE_ENCOUNTER		; boarder
 	db MUSIC_LASS_ENCOUNTER			; skier
 	db MUSIC_HARDCORE_ENCOUNTER		; blackbelt_t
-	db MUSIC_HARDCORE_ENCOUNTER		; battle_girl
 	db MUSIC_LASS_ENCOUNTER			; teacher
-	db MUSIC_HARDCORE_ENCOUNTER		; guitaristm
-	db MUSIC_HARDCORE_ENCOUNTER		; guitaristf
+	db MUSIC_HARDCORE_ENCOUNTER		; guitarist
 	db MUSIC_HARDCORE_ENCOUNTER		; biker
-	db MUSIC_HARDCORE_ENCOUNTER		; cueball
 	db MUSIC_HARDCORE_ENCOUNTER		; cooltrainerm
 	db MUSIC_HARDCORE_ENCOUNTER		; cooltrainerf
 	db MUSIC_NONE					; profspruce
@@ -86,6 +78,12 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_HARDCORE_ENCOUNTER		; skater
 	db MUSIC_HIKER_ENCOUNTER		; spatrainer
 	db MUSIC_LASS_ENCOUNTER			; spatrainerf
+	db MUSIC_GENTLEMAN_ENCOUNTER	; aromalady
+	db MUSIC_NONE					; rose
+	db MUSIC_NONE					; lily
+	db MUSIC_NONE					; iris
+	db MUSIC_NONE					; poppy
+	db MUSIC_NONE					; felicia
+	db MUSIC_NONE					; violet
+	db MUSIC_NONE					; clover
 	db MUSIC_NONE			 		; towertycoon
-
-; e906e

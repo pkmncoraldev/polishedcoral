@@ -78,5 +78,12 @@ TrainerPicPointers::
 	dba SpaTrainerPic
 	dba SpaTrainerFPic
 	dba AromaLadyPic
+	dba RosePic
+	dba LilyPic
+	dba IrisPic
+	dba PoppyPic
+	dba FeliciaPic
+	dba VioletPic
+	dba CloverPic
 	dba TowerTycoonPic
 	

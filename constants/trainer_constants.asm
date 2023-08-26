@@ -551,6 +551,20 @@ PLAYER_F EQU __enum__
 	
 	trainerclass AROMA_LADY
 	const LINDA
+	
+	trainerclass ROSE
+	
+	trainerclass LILY
+	
+	trainerclass IRIS
+	
+	trainerclass POPPY
+	
+	trainerclass FELICIA
+	
+	trainerclass VIOLET
+	
+	trainerclass CLOVER
 
 	trainerclass TOWERTYCOON ; 1
 

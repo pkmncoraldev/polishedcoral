@@ -65,9 +65,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; locke
 	db   8, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; pokefanm
 	db   8, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; pokefanf
-	db  24, $DD, $BB, $DB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; officerm
-	db  24, $7B, $DB, $FF, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; officerf
-	db  24, $E5, $FA, $D6, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; nurse
+	db  24, $DD, $BB, $DB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; officer
 	db  20, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; pokemaniac
 	db  20, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; super nerd
 	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; lass
@@ -75,12 +73,9 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; firebreather
 	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; juggler
 	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; schoolboy
-	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; schoolgirl
 	db  24, $AA, $CC, $EE, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; psychic
-	db  24, $AA, $CC, $EE, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; hex maniac
 	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; couple
 	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; gentleman
-	db 100, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; rich boy (high EVs from vitamins)
 	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; lady
 	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; sailor
 	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; swimmerm
@@ -90,15 +85,12 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; boarder
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; skier
 	db  48, $FF, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; blackbelt
-	db  48, $FF, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; battle girl
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; teacher
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; guitaristm
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; guitaristf
+	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; guitarist
 	db  48, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; biker
-	db  48, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; roughneck
 	db  48, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; cooltrainerm
 	db  48, $EE, $EE, $EE, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; cooltrainerf
-	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; prof elm
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; prof spruce
 	db   0, $DD, $DF, $DD, ABILITY_1 | TIMID, FEMALE | PLAIN_FORM  ; teacherfast
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; triobror
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; triobrob
@@ -116,6 +108,14 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; skater
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; spatrainer
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; spatrainerf
+	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; aromalady
+	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; rose
+	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; lily
+	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; iris
+	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; poppy
+	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; felicia
+	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; violet
+	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; clover
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; towertycoon
 
 ; 2715c

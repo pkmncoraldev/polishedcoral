@@ -80,8 +80,15 @@ MallCopPalette:			 INCLUDE "gfx/trainers/mall_cop.pal"
 SkaterPalette:			 INCLUDE "gfx/trainers/skater.pal"
 SpatrainerPalette:		 INCLUDE "gfx/trainers/spa_trainer.pal"
 SpatrainerfPalette:		 INCLUDE "gfx/trainers/spa_trainer_f.pal"
-AromaLadyPalette:
-TowerTycoonPalette:		 INCLUDE "gfx/trainers/aroma_lady.pal"
+AromaLadyPalette:		 INCLUDE "gfx/trainers/aroma_lady.pal"
+RosePalette:			 INCLUDE "gfx/trainers/rose.pal"
+LilyPalette:			 INCLUDE "gfx/trainers/lily.pal"
+IrisPalette:			 INCLUDE "gfx/trainers/iris.pal"
+PoppyPalette:			 INCLUDE "gfx/trainers/poppy.pal"
+FeliciaPalette:			 INCLUDE "gfx/trainers/felicia.pal"
+VioletPalette:			 INCLUDE "gfx/trainers/violet.pal"
+CloverPalette:			 INCLUDE "gfx/trainers/clover.pal"
+TowerTycoonPalette:
 
 
 PlayerPalette:			 INCLUDE "gfx/trainers/player1.pal"

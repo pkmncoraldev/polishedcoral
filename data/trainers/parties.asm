@@ -4330,6 +4330,105 @@ AromaLadyGroup:
 	db -1 ; end
 
 ; ================
+; ================================
+
+RoseGroup:
+; ================================
+; ================
+
+	; ROSE
+	db "ROSE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+LilyGroup:
+; ================================
+; ================
+
+	; LILY
+	db "LILY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+IrisGroup:
+; ================================
+; ================
+
+	; IRIS
+	db "IRIS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+PoppyGroup:
+; ================================
+; ================
+
+	; POPPY
+	db "POPPY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+FeliciaGroup:
+; ================================
+; ================
+
+	; FELICIA
+	db "FELICIA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+VioletGroup:
+; ================================
+; ================
+
+	; VIOLET
+	db "VIOLET@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+CloverGroup:
+; ================================
+; ================
+
+	; CLOVER
+	db "CLOVER@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
 
 TowerTycoonGroup:
 ; ================================

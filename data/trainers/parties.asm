@@ -918,7 +918,7 @@ YoungsterGroup:
 
 ; ================
 
-	; YOUNGSTER ;TRAIN
+	; YOUNGSTER
 	db "JIMMY@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -1113,7 +1113,7 @@ TwinsGroup:
 
 ; ================
 
-	; TWINS ;TRAIN
+	; TWINS
 	db "TIA & MIA@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -1123,7 +1123,7 @@ TwinsGroup:
 
 ; ================
 
-	; TWINS ;TRAIN
+	; TWINS
 	db "MIA & TIA@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -1519,7 +1519,7 @@ BirdKeeperGroup:
 
 ; ================
 
-	; BIRD_KEEPER ;TRAIN
+	; BIRD_KEEPER
 	db "JAZZ@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -2273,7 +2273,7 @@ PokefanFGroup:
 
 ; ================
 
-	; POKEFANF ;TRAIN
+	; POKEFANF
 	db "URSALA@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -2923,6 +2923,24 @@ SchoolboyGroup:
 	db -1 ; end
 
 ; ================
+
+	; SCHOOLBOY
+	db "FREDDY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SCHOOLBOY
+	db "FLYNN@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2979,11 +2997,20 @@ GentlemanGroup:
 
 ; ================
 
-	; GENTLEMAN ;TRAIN
+	; GENTLEMAN
 	db "HOWARD@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 31, ARCANINE
+	db -1 ; end
+
+; ================
+
+	; GENTLEMAN
+	db "ELWARD@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -3004,7 +3031,7 @@ LadyGroup:
 
 ; ================
 
-	; LADY ;TRAIN
+	; LADY
 	db "GRETCHEN@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -3031,6 +3058,15 @@ SailorGroup:
 
 	; SAILOR
 	db "SHAWN@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SAILOR
+	db "SCOTT@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3363,6 +3399,24 @@ BikerGroup:
 
 	; BIKER
 	db "HANK@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIKER
+	db "GARRET@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIKER
+	db "DALE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -4324,6 +4378,15 @@ AromaLadyGroup:
 
 	; AROMA_LADY
 	db "LINDA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; AROMA_LADY
+	db "MARTHA@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

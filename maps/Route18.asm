@@ -15,9 +15,15 @@ Route18_MapScriptHeader:
 	signpost 23,  6, SIGNPOST_JUMPTEXT, Route18Sign1Text
 	signpost 30, 25, SIGNPOST_JUMPTEXT, Route18Sign2Text
 
-	db 2 ; object events
+	db 8 ; object events
 	person_event SPRITE_PIGTAILS, 36, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route18Clover, EVENT_SAVED_CLOVER
 	person_event SPRITE_SKATER, 24, 18, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_SAILOR, 28,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route18Trainer1, -1
+	person_event SPRITE_SCHOOLBOY, 31, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route18Trainer2, -1
+	person_event SPRITE_BIKER, 36,  6, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, Route18Trainer3, -1
+	person_event SPRITE_AROMA_LADY, 44, 14, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_GENERICTRAINER, 4, Route18Trainer4, -1
+	person_event SPRITE_BIKER, 43, 23, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route18Trainer5, -1
+	person_event SPRITE_GENTLEMAN, 41, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route18Trainer6, -1
 
 
 	const_def 1 ; object constants
@@ -50,6 +56,90 @@ CloverSetNameAsm:
 	
 .cloverstring:
 	db "CLOVER@@@@@"
+	
+Route18Trainer1:
+	generictrainer SAILOR, SCOTT, EVENT_BEAT_ROUTE_18_TRAINER_1, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "YOU WIN"
+	done
+	
+Route18Trainer2:
+	generictrainer SCHOOLBOY, FREDDY, EVENT_BEAT_ROUTE_18_TRAINER_2, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "YOU WIN"
+	done
+	
+Route18Trainer3:
+	generictrainer BIKER, GARRET, EVENT_BEAT_ROUTE_18_TRAINER_3, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "YOU WIN"
+	done
+	
+Route18Trainer4:
+	generictrainer AROMA_LADY, LINDA, EVENT_BEAT_ROUTE_18_TRAINER_4, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "YOU WIN"
+	done
+	
+Route18Trainer5:
+	generictrainer BIKER, DALE, EVENT_BEAT_ROUTE_18_TRAINER_5, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "YOU WIN"
+	done
+	
+Route18Trainer6:
+	generictrainer GENTLEMAN, ELWARD, EVENT_BEAT_ROUTE_18_TRAINER_6, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "YOU WIN"
+	done
 	
 Route18CloverText1:
 	text "Hehe…"

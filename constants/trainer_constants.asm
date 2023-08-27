@@ -335,6 +335,8 @@ PLAYER_F EQU __enum__
 	const DAMIAN_6
 	const DAMIAN_7
 	const DAMIAN_8
+	const FREDDY
+	const FLYNN
 
 
 	trainerclass PSYCHIC_T
@@ -349,6 +351,7 @@ PLAYER_F EQU __enum__
 	trainerclass GENTLEMAN
 	const DURWOOD
 	const HOWARD
+	const ELWARD
 
 
 	trainerclass LADY
@@ -359,6 +362,7 @@ PLAYER_F EQU __enum__
 	trainerclass SAILOR
 	const RANDALL
 	const SHAWN
+	const SCOTT
 
 
 	trainerclass SWIMMERM
@@ -414,6 +418,8 @@ PLAYER_F EQU __enum__
 
 	trainerclass BIKER
 	const HANK
+	const GARRET
+	const DALE
 
 
 	trainerclass COOLTRAINERM
@@ -551,6 +557,7 @@ PLAYER_F EQU __enum__
 	
 	trainerclass AROMA_LADY
 	const LINDA
+	const MARTHA
 	
 	trainerclass ROSE
 	

@@ -98,7 +98,6 @@ INCLUDE "maps/Route8.asm"
 INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route14.asm"
 INCLUDE "maps/Route15.asm"
-INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route20.asm"
 INCLUDE "maps/FakeRoute1.asm"
 
@@ -112,6 +111,7 @@ INCLUDE "maps/DesertWastelandOasis.asm"
 INCLUDE "maps/Route17Tent.asm"
 INCLUDE "maps/Route3StarglowCavernTop.asm"
 INCLUDE "maps/Route18.asm"
+INCLUDE "maps/Route19.asm"
 
 
 SECTION "Sunset Bay Scripts", ROMX

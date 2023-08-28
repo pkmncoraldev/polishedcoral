@@ -15,10 +15,11 @@ Route18_MapScriptHeader:
 	signpost 23,  6, SIGNPOST_JUMPTEXT, Route18Sign1Text
 	signpost 30, 25, SIGNPOST_JUMPTEXT, Route18Sign2Text
 
-	db 8 ; object events
+	db 9 ; object events
 	person_event SPRITE_PIGTAILS, 36, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route18Clover, EVENT_SAVED_CLOVER
-	person_event SPRITE_SKATER, 24, 18, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_SAILOR, 28,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route18Trainer1, -1
+	person_event SPRITE_SKATER, 24, 18, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route18Skater1, -1
+	person_event SPRITE_SKATER, 24, 13, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route18Skater2, -1
+	person_event SPRITE_SAILOR, 27,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route18Trainer1, -1
 	person_event SPRITE_SCHOOLBOY, 31, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route18Trainer2, -1
 	person_event SPRITE_BIKER, 36,  6, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, Route18Trainer3, -1
 	person_event SPRITE_AROMA_LADY, 44, 14, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_GENERICTRAINER, 4, Route18Trainer4, -1
@@ -57,88 +58,159 @@ CloverSetNameAsm:
 .cloverstring:
 	db "CLOVER@@@@@"
 	
+Route18Skater1:
+	jumptextfaceplayer Route18Skater1Text
+	
+Route18Skater1Text:
+	text "Grinding on the"
+	line "planters lets you"
+	cont "get to places you"
+	cont "shouldn't be."
+	
+	para "It's cool, I guess."
+	done
+	
+Route18Skater2:
+	jumptextfaceplayer Route18Skater2Text
+	
+Route18Skater2Text:
+	text "I love hopping"
+	line "right over people's"
+	cont "heads on my board."
+	
+	para "They never see it"
+	line "coming!"
+	done
+	
 Route18Trainer1:
 	generictrainer SAILOR, SCOTT, EVENT_BEAT_ROUTE_18_TRAINER_1, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "We just docked at"
+	line "PORT SHIMMER."
+	
+	para "It's so nice to be"
+	line "back on dry land!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "LAND HO!"
+	
+	para "Time for a battle,"
+	line "matey!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "I'm sunk!"
 	done
 	
 Route18Trainer2:
 	generictrainer SCHOOLBOY, FREDDY, EVENT_BEAT_ROUTE_18_TRAINER_2, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Your #MON are"
+	line "so cool!"
+	
+	para "We have some work"
+	line "to do!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Do you train"
+	line "#MON too?"
+	
+	para "Can I see?"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Woah!"
 	done
 	
 Route18Trainer3:
 	generictrainer BIKER, GARRET, EVENT_BEAT_ROUTE_18_TRAINER_3, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "These brick roads"
+	line "ain't a very smooth"
+	cont "ride!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Ahaha!"
+	
+	para "Listen to this"
+	line "baby purr!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Argh!"
 	done
 	
 Route18Trainer4:
 	generictrainer AROMA_LADY, LINDA, EVENT_BEAT_ROUTE_18_TRAINER_4, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "This place used to"
+	line "smell like sweet"
+	cont "flowers."
+	
+	para "Now it just smells"
+	line "like gasoline!"
+	
+	para "Cough! Cough!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Sniff… Sniff…"
+	
+	para "Do you smell that?"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Smells like a"
+	line "loss!"
 	done
 	
 Route18Trainer5:
 	generictrainer BIKER, DALE, EVENT_BEAT_ROUTE_18_TRAINER_5, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "I'll tell ya…"
+	
+	para "Life's an open road"
+	line "kid."
+	
+	para "You could never get"
+	line "me to settle down"
+	cont "in one place!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Out on the open"
+	line "road."
+	
+	para "Nothin' like it!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "You showed me!"
 	done
 	
 Route18Trainer6:
 	generictrainer GENTLEMAN, ELWARD, EVENT_BEAT_ROUTE_18_TRAINER_6, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Have you been to"
+	line "the establishment"
+	cont "up ahead?"
+	
+	para "Quite the rowdy"
+	line "bunch they are!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "A battle to pass"
+	line "the time?"
+	
+	para "Certainly."
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Very well."
 	done
 	
 Route18CloverText1:

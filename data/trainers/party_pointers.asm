@@ -59,6 +59,7 @@ TrainerGroups: ; 0x39999
 	dba TeacherGroup
 	dba GuitaristGroup
 	dba BikerGroup
+	dba CueballGroup
 	dba CooltrainerMGroup
 	dba CooltrainerFGroup
 	dba ProfSpruceGroup

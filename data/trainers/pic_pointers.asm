@@ -57,6 +57,7 @@ TrainerPicPointers::
 	dba TeacherPic
 	dba GuitaristPic
 	dba BikerPic
+	dba CueballPic
 	dba CooltrainermPic
 	dba CooltrainerfPic
 	dba ProfSprucePic

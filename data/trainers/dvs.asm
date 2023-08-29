@@ -87,7 +87,8 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  48, $FF, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; blackbelt
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; teacher
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; guitarist
-	db  48, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; biker
+	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; biker
+	db  48, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; cueball
 	db  48, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; cooltrainerm
 	db  48, $EE, $EE, $EE, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; cooltrainerf
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; prof spruce

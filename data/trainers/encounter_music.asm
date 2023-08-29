@@ -58,6 +58,7 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_LASS_ENCOUNTER			; teacher
 	db MUSIC_HARDCORE_ENCOUNTER		; guitarist
 	db MUSIC_HARDCORE_ENCOUNTER		; biker
+	db MUSIC_HARDCORE_ENCOUNTER		; cueball
 	db MUSIC_HARDCORE_ENCOUNTER		; cooltrainerm
 	db MUSIC_HARDCORE_ENCOUNTER		; cooltrainerf
 	db MUSIC_NONE					; profspruce

@@ -3377,7 +3377,6 @@ TeacherGroup:
 ; ================================
 
 
-
 GuitaristGroup:
 ; ================================
 ; ================
@@ -3417,6 +3416,21 @@ BikerGroup:
 
 	; BIKER
 	db "DALE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+
+CueballGroup:
+; ================================
+; ================
+
+	; CUEBALL
+	db "BUBBLES@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

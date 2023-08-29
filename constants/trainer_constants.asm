@@ -422,6 +422,9 @@ PLAYER_F EQU __enum__
 	const DALE
 
 
+	trainerclass CUEBALL
+
+
 	trainerclass COOLTRAINERM
 	const CODY
 	const SAMMY

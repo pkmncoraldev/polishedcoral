@@ -760,6 +760,7 @@ TeacherPic:
 TeacherFastPic:			  INCBIN "gfx/trainers/teacher.2bpp.lz"
 GuitaristPic:          	  INCBIN "gfx/trainers/guitarist.2bpp.lz"
 BikerPic:                 INCBIN "gfx/trainers/biker.2bpp.lz"
+CueballPic:               INCBIN "gfx/trainers/cueball.2bpp.lz"
 CooltrainermPic:          INCBIN "gfx/trainers/cooltrainer_m.2bpp.lz"
 CooltrainerfPic:          INCBIN "gfx/trainers/cooltrainer_f.2bpp.lz"
 ProfSprucePic:            INCBIN "gfx/trainers/spruce.2bpp.lz"

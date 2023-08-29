@@ -57,6 +57,7 @@ TrainerClassNames::
 	db "TEACHER@"          ; TEACHER
 	db "GUITARIST@"        ; GUITARIST
 	db "BIKER@"            ; BIKER
+	db "CUE BALL@"         ; CUEBALL
 	db "COOL TRAINER@"     ; COOLTRAINERM
 	db "COOL TRAINER@"     ; COOLTRAINERF
 	db "#MON PROF.@"       ; PROF_ELM

@@ -191,14 +191,14 @@ CryHeaders::
 	mon_cry CACTURNE,  	CacturneDEDData	 	; Cacturne
 	mon_cry SWABLU,   	SwabluDEDData	 	; Swablu
 	mon_cry ALTARIA,   	AltariaDEDData	 	; Altaria
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Barboach - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Whiscash - PLACEHOLDER
+	mon_cry BARBOACH,   BarboachDEDData 	; Barboach
+	mon_cry WHISCASH,   WhiscashDEDData 	; Whiscash
 	mon_cry SNORUNT,   	SnoruntDEDData	 	; Snorunt
 	mon_cry GLALIE,   	GlalieDEDData	 	; Glalie
 	mon_cry BUIZEL,   	BuizelDEDData	 	; Buizel
 	mon_cry FLOATZEL,   FloatzelDEDData	 	; Floatzel
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cherubi - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cherrim - PLACEHOLDER
+	mon_cry CHERUBI,    CherubiDEDData		; Cherubi
+	mon_cry CHERRIM,    CherrimDEDData		; Cherrim
 	mon_cry DRIFLOON,   DrifloonDEDData	 	; Drifloon
 	mon_cry DRIFBLIM,   DrifblimDEDData	 	; Drifblim
 	mon_cry BUNEARY,   	BunearyDEDData	 	; Buneary
@@ -262,14 +262,14 @@ CryHeaders::
 	mon_cry	TOUCANNON, 	ToucannonDEDData 	; Toucannon
 	mon_cry MAREANIE,	MareanieDEDData		; Mareanie
 	mon_cry TOXAPEX,	ToxapexDEDData		; Toxapex
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Mimikyu - PLACEHOLDER
+	mon_cry MIMIKYU,    MimikyuDEDData		; Mimikyu
 	mon_cry CURSOLA,	CursolaDEDData		; Cursola
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Dreepy - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Drakloak - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Dragapult - PLACEHOLDER
+	mon_cry DREEPY,     DreepyDEDData		; Dreepy
+	mon_cry DRAKLOAK,   DrakloakDEDData		; Drakloak
+	mon_cry DRAGAPULT,  DragapultDEDData	; Dragapult
 	mon_cry WYRDEER,    WyrdeerDEDData		; Wyrdeer
-	mon_cry CRY_WOOPER,     -$0c6,  $140 	; Clodsire - PLACEHOLDER
-	mon_cry CRY_PORYGON2,    $041,  $200	; Farigiraf - PLACEHOLDER
+	mon_cry CLODSIRE,   ClodsireDEDData		; Clodsire
+	mon_cry FARIGIRAF,  FarigirafDEDData	; Farigiraf
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg
 	
 CryHeaders2::

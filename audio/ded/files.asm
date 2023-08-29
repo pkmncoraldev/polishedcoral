@@ -155,3 +155,21 @@ ToucannonDEDData:: INCBIN "audio/ded/toucannon.ded"
 SECTION "DED 33", ROMX
 CursolaDEDData:: INCBIN "audio/ded/cursola.ded"
 WyrdeerDEDData:: INCBIN "audio/ded/wyrdeer.ded"
+BarboachDEDData:: INCBIN "audio/ded/barboach.ded"
+
+SECTION "DED 34", ROMX
+WhiscashDEDData:: INCBIN "audio/ded/whiscash.ded"
+CherubiDEDData:: INCBIN "audio/ded/cherubi.ded"
+CherrimDEDData:: INCBIN "audio/ded/cherrim.ded"
+
+SECTION "DED 35", ROMX
+DreepyDEDData:: INCBIN "audio/ded/dreepy.ded"
+DrakloakDEDData:: INCBIN "audio/ded/drakloak.ded"
+
+SECTION "DED 36", ROMX
+MimikyuDEDData:: INCBIN "audio/ded/mimikyu.ded"
+DragapultDEDData:: INCBIN "audio/ded/dragapult.ded"
+
+SECTION "DED 37", ROMX
+ClodsireDEDData:: INCBIN "audio/ded/clodsire.ded"
+FarigirafDEDData:: INCBIN "audio/ded/farigiraf.ded"

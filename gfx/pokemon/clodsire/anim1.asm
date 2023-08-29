@@ -1,2 +1,4 @@
+	frame 1, 08
+	frame 0, 08
+	frame 1, 10
 	endanim
-; 0xd1ea8

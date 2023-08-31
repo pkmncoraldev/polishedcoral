@@ -131,7 +131,7 @@ SpriteHeaders:
 	overworld_sprite KageSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite KageWaterSpriteGFX, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite LockeSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite RoughneckSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite CueballSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SageSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SailorSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SchoolboySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE

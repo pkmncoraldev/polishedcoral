@@ -1003,7 +1003,7 @@ LoadMapPals::
 .sandstorm
 	ld a, [wIsNearCampfire]
 	bit 0, a
-	jr nz, .desertfirecont1
+	jr nz, .desertfire
 	ld a, [wTimeOfDayPal]
 	and 3
 	
@@ -1016,22 +1016,7 @@ LoadMapPals::
 	jp FarCopyWRAM
 	
 .desertfire
-	ld a, [wIsNearCampfire]
-	bit 0, a
-	jr nz, .desertfirecont1
-	ld a, [wTimeOfDayPal]
-	jr .desertfirecont2
-.desertfirecont1
-	ld a, 1
-.desertfirecont2
-	and 3
-	ld bc, 8 palettes
-	ld hl, MapObjectPalsSnow
-	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
+	call LightUpPlayerPal
 	
 	ld a, 1
 	and 3
@@ -1360,22 +1345,7 @@ LoadMapPals::
 	call .copy_single_pal_to_pal_7
 	jp .outside	
 .luster
-	ld a, [wIsNearCampfire]
-	bit 0, a
-	jr nz, .lustercont1
-	ld a, [wTimeOfDayPal]
-	jr .lustercont2
-.lustercont1
-	ld a, 1
-.lustercont2
-	and 3
-	ld bc, 8 palettes
-	ld hl, MapObjectPals
-	call AddNTimes
-	ld de, wUnknOBPals
-	ld bc, 8 palettes
-	ld a, $5 ; BANK(UnknOBPals)
-	call FarCopyWRAM
+	call LightUpPlayerPal
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
@@ -1528,14 +1498,7 @@ LoadMapPals::
 	call AddNTimes
 	jp .copy_single_pal_to_pal_7
 .tunnel
-	ld a, [wIsNearCampfire]
-	bit 0, a
-	jr nz, .tunnelcont1
 	ld a, 2
-	jr .tunnelcont2
-.tunnelcont1
-	ld a, 1
-.tunnelcont2
 	and 3
 	ld bc, 8 palettes
 	ld hl, MapObjectPals
@@ -1547,7 +1510,7 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_BAR_BACK_ALLEY
 	jr z, .alley
-	ret
+	jp LightUpPlayerPal
 .alley
 	ld hl, MapObjectPalsEvilMeowth
 	jp .copy_single_pal_to_pal_7
@@ -1725,6 +1688,104 @@ endr
 	db $08, $09, $0a, $0b, $0c, $0d, $0e, $0f ; day
 	db $10, $11, $12, $13, $14, $15, $16, $17 ; nite
 	db $18, $19, $1a, $1b, $1c, $1d, $1e, $1f ; dark
+
+LightUpPlayerPal:
+	ld a, [wIsNearCampfire]
+	bit 0, a
+	ret z
+	call LoadPlayerPaletteBc
+	ld hl, MapObjectPals
+	call AddNTimes
+	call LoadPlayerPalettewUnknOBPalsDe
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+
+LoadPlayerPaletteBc:
+	ld a, [wPlayerPalette]
+	cp 1
+	jr z, .blue
+	cp 2
+	jr z, .green
+	cp 3
+	jr z, .brown
+	cp 4
+	jr z, .purple
+	cp 5
+	jr z, .teal
+	cp 6
+	jr z, .pink
+;.red
+	ld a, 1
+	and 3
+	ld bc, 8 palettes
+	ret
+.blue
+	ld a, 1
+	and 3
+	ld bc, 9 palettes
+	ret
+.green
+	ld a, 1
+	and 3
+	ld bc, 10 palettes
+	ret
+.brown
+	ld a, 1
+	and 3
+	ld bc, 11 palettes
+	ret
+.purple
+	ld a, 1
+	and 3
+	ld bc, 12 palettes
+	ret
+.teal
+	ld a, 1
+	and 3
+	ld bc, 13 palettes
+	ret
+.pink
+	ld a, 1
+	and 3
+	ld bc, 14 palettes
+	ret
+
+LoadPlayerPalettewUnknOBPalsDe:
+	ld a, [wPlayerPalette]
+	cp 1
+	jr z, .blue
+	cp 2
+	jr z, .green
+	cp 3
+	jr z, .brown
+	cp 4
+	jr z, .purple
+	cp 5
+	jr z, .teal
+	cp 6
+	jr z, .pink
+;.red
+	ld de, wUnknOBPals
+	ret
+.blue
+	ld de, wUnknOBPals + 1 palettes
+	ret
+.green
+	ld de, wUnknOBPals + 2 palettes
+	ret
+.brown
+	ld de, wUnknOBPals + 3 palettes
+	ret
+.purple
+	ld de, wUnknOBPals + 4 palettes
+	ret
+.teal
+	ld de, wUnknOBPals + 5 palettes
+	ret
+.pink
+	ld de, wUnknOBPals + 6 palettes
+	ret
 
 LoadSingleOBPalLinePal7:
 	ld de, wUnknOBPals + 7 palettes

@@ -3422,6 +3422,33 @@ BikerGroup:
 	db -1 ; end
 
 ; ================
+
+	; BIKER
+	db "REX@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIKER
+	db "JAMES@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIKER
+	db "HERB@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3430,7 +3457,7 @@ CueballGroup:
 ; ================
 
 	; CUEBALL
-	db "BUBBLES@"
+	db "CURLY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

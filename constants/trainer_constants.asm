@@ -420,9 +420,13 @@ PLAYER_F EQU __enum__
 	const HANK
 	const GARRET
 	const DALE
+	const REX
+	const JAMES
+	const HERB
 
 
 	trainerclass CUEBALL
+	const CURLY
 
 
 	trainerclass COOLTRAINERM

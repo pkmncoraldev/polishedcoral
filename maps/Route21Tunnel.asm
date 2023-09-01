@@ -102,13 +102,15 @@ Route21Tunnel_MapScriptHeader:
 	db 1 ; bg events
 	signpost 12, 21, SIGNPOST_READ, Route21TunnelGate
 
-	db 6 ; object events
-	person_event SPRITE_BIKER, 13, 29, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_BLUE
-	person_event SPRITE_BIKER, 17, 10, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_BLUE
-	person_event SPRITE_BIKER, 13,  8, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_BLUE
-	person_event SPRITE_BIKER, 13, 29, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_TEAL
-	person_event SPRITE_BIKER, 17, 10, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_TEAL
-	person_event SPRITE_BIKER, 13,  8, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_TEAL
+	db 8 ; object events
+	person_event SPRITE_BIKER, 14, 12, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route21TunnelTrainer1, EVENT_HIDE_OW_OBJECTS_BLUE
+	person_event SPRITE_BIKER, 17, 10, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route21TunnelTrainer2, EVENT_HIDE_OW_OBJECTS_BLUE
+	person_event SPRITE_BIKER, 13,  8, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route21TunnelTrainer3, EVENT_HIDE_OW_OBJECTS_BLUE
+	person_event SPRITE_CUEBALL, 17,  2, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route21TunnelTrainer4, EVENT_HIDE_OW_OBJECTS_BLUE
+	person_event SPRITE_BIKER, 14, 12, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 4, Route21TunnelTrainer1, EVENT_HIDE_OW_OBJECTS_TEAL
+	person_event SPRITE_BIKER, 17, 10, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 4, Route21TunnelTrainer2, EVENT_HIDE_OW_OBJECTS_TEAL
+	person_event SPRITE_BIKER, 13,  8, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 4, Route21TunnelTrainer3, EVENT_HIDE_OW_OBJECTS_TEAL
+	person_event SPRITE_CUEBALL, 17,  2, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route21TunnelTrainer4, EVENT_HIDE_OW_OBJECTS_TEAL
 
 
 Route21TunnelTrigger0:
@@ -141,6 +143,95 @@ Route21TunnelCallback:
 .nite
 	clearflag ENGINE_NEAR_CAMPFIRE
 	return
+	
+Route21TunnelTrainer1:
+	generictrainer BIKER, REX, EVENT_BEAT_ROUTE_21_TUNNEL_TRAINER_1, .SeenText, .BeatenText
+
+	text "MOOMOO'S brings in"
+	line "a real bad crowd…"
+	
+	para "Just a bunch of"
+	line "hooligans and"
+	cont "ner'er-do-wells."
+	
+	para "My people!"
+	
+	para "Gahaha!"
+	done
+
+.SeenText:
+	text "When we aren't"
+	line "hanging out in"
+	cont "this tunnel,"
+	
+	para "you can find us"
+	line "at MOOMOO'S!"
+	done
+
+.BeatenText:
+	text "That's no good!"
+	done
+	
+Route21TunnelTrainer2:
+	generictrainer BIKER, JAMES, EVENT_BEAT_ROUTE_21_TUNNEL_TRAINER_2, .SeenText, .BeatenText
+
+	text "There's no bridge"
+	line "to the desert"
+	cont "island."
+	
+	para "Only way there is"
+	line "by boat!"
+	done
+
+.SeenText:
+	text "You been to the"
+	line "desert island?"
+	
+	para "They say you can't"
+	line "get there by bike."
+	done
+
+.BeatenText:
+	text "Burnout!"
+	done
+	
+Route21TunnelTrainer3:
+	generictrainer BIKER, HERB, EVENT_BEAT_ROUTE_21_TUNNEL_TRAINER_3, .SeenText, .BeatenText
+
+	text "I guess you"
+	line "showed me, huh?"
+	done
+
+.SeenText:
+	text "Full throttle!"
+	done
+
+.BeatenText:
+	text "Crash and"
+	line "burn!"
+	done
+	
+Route21TunnelTrainer4:
+	generictrainer CUEBALL, CURLY, EVENT_BEAT_ROUTE_21_TUNNEL_TRAINER_4, .SeenText, .BeatenText
+
+	text "Alright! alright!"
+	
+	para "You win, just"
+	line "leave me alone!"
+	done
+
+.SeenText:
+	text "Guh! Huh! Huh!"
+	
+	para "What's a little"
+	line "runt like you"
+	cont "doin' inna place"
+	cont "like this?"
+	done
+
+.BeatenText:
+	text "Guh! Huh! Wuh!"
+	done
 	
 Route21TunnelGate:
 	checkcode VAR_FACING

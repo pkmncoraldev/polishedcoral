@@ -1,7 +1,8 @@
 SeasideCave1F_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, SeasideCave1FCallback
 
 	db 4 ; warp events
 	warp_event  7,  1, ROUTE_18, 3
@@ -22,6 +23,10 @@ SeasideCave1F_MapScriptHeader:
 	const_def 1 ; object constants
 	const SEASIDE_CAVE_NPC_1
 	const SEASIDE_CAVE_NPC_2
+	
+SeasideCave1FCallback:
+	domaptrigger ROUTE_21_TUNNEL, $0
+	return
 	
 SeasideCave1FNPC1:
 	faceplayer

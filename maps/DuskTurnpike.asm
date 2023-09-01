@@ -126,6 +126,7 @@ DuskTurnpikeCallback:
 	iffalse .end
 	changeblock $0e, $06, $e7
 .end
+	domaptrigger ROUTE_21_TUNNEL, $1
 	return
 
 DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle:

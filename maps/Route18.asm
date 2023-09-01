@@ -1,7 +1,8 @@
 Route18_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, Route18Callback
 
 	db 4 ; warp events
 	warp_event 41, 42, ROUTE_18_DUSK_GATE, 1
@@ -29,6 +30,10 @@ Route18_MapScriptHeader:
 
 	const_def 1 ; object constants
 	const ROUTE_18_CLOVER
+	
+Route18Callback:
+	domaptrigger ROUTE_21_TUNNEL, $0
+	return
 	
 Route18Clover:
 	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE

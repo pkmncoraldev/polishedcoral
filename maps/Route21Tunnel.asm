@@ -102,7 +102,13 @@ Route21Tunnel_MapScriptHeader:
 	db 1 ; bg events
 	signpost 12, 21, SIGNPOST_READ, Route21TunnelGate
 
-	db 0 ; object events
+	db 6 ; object events
+	person_event SPRITE_BIKER, 13, 29, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_BLUE
+	person_event SPRITE_BIKER, 17, 10, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_BLUE
+	person_event SPRITE_BIKER, 13,  8, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_BLUE
+	person_event SPRITE_BIKER, 13, 29, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_TEAL
+	person_event SPRITE_BIKER, 17, 10, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_TEAL
+	person_event SPRITE_BIKER, 13,  8, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_TEAL
 
 
 Route21TunnelTrigger0:
@@ -112,6 +118,19 @@ Route21TunnelTrigger1:
 	end
 
 Route21TunnelCallback:
+	readvar VAR_PLAYER_COLOR
+	if_equal 1, .blue
+	setevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
+	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	jump .cont
+.blue
+	setevent EVENT_HIDE_OW_OBJECTS_BLUE
+	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
+	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+.cont
 	checkcode VAR_FACING
 	if_equal DOWN, .nite
 	checktime 1<<NITE
@@ -183,6 +202,7 @@ Route21TunnelLightEntrance:
 Route21TunnelLight:
 	setflag ENGINE_NEAR_CAMPFIRE
 	loadvar wTimeOfDayPalFlags, $40 | 1
+	special Special_UpdatePalsInstant
 	dotrigger $1
 	end
 	

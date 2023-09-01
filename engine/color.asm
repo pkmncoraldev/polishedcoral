@@ -1507,6 +1507,18 @@ LoadMapPals::
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
+	
+	ld a, [wPlayerPalette]
+	cp 1
+	jr nz, .tunnelcont
+	ld bc, 17 palettes
+	ld hl, MapObjectPals
+	call AddNTimes
+	ld de, wUnknOBPals + 5 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+.tunnelcont
 	ld a, [wMapNumber]
 	cp MAP_BAR_BACK_ALLEY
 	jr z, .alley

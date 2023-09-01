@@ -63,11 +63,13 @@ Route17NorthCallback:
 	setevent EVENT_HIDE_OW_OBJECTS_TEAL
 	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
 	jump .cont
 .brown
 	setevent EVENT_HIDE_OW_OBJECTS_BROWN
 	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
 .cont
 	checktime 1<<NITE
 	iftrue .changecampfire

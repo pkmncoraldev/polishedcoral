@@ -51,11 +51,13 @@ BrilloGameCornerCallback:
 	setevent EVENT_HIDE_OW_OBJECTS_TEAL
 	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
 	return
 .brown
 	setevent EVENT_HIDE_OW_OBJECTS_BROWN
 	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
 	return
 	
 BrilloGameCornerSign:

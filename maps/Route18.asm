@@ -146,6 +146,8 @@ Route18Trainer3:
 
 .BeatenText:
 	text "Argh!"
+	
+	para "My ride!"
 	done
 	
 Route18Trainer4:
@@ -177,12 +179,12 @@ Route18Trainer5:
 
 	text "I'll tell ya…"
 	
-	para "Life's an open road"
-	line "kid."
+	para "Life's an open"
+	line "road, kid."
 	
-	para "You could never get"
-	line "me to settle down"
-	cont "in one place!"
+	para "I could never"
+	line "settle down in"
+	cont "one place!"
 	done
 
 .SeenText:
@@ -199,19 +201,22 @@ Route18Trainer5:
 Route18Trainer6:
 	generictrainer GENTLEMAN, ELWARD, EVENT_BEAT_ROUTE_18_TRAINER_6, .SeenText, .BeatenText
 
+	text "“MOOMOO'S” it's"
+	line "called."
+	
+	para "Never in all of"
+	line "my days have I"
+	cont "seen such a rowdy"
+	cont "bunch!"
+	done
+
+.SeenText:
 	text "Have you been to"
 	line "the establishment"
 	cont "up ahead?"
 	
 	para "Quite the rowdy"
 	line "bunch they are!"
-	done
-
-.SeenText:
-	text "A battle to pass"
-	line "the time?"
-	
-	para "Certainly."
 	done
 
 .BeatenText:

@@ -284,22 +284,17 @@ Route21TunnelGate:
 Route21TunnelLightEntrance:
 	checktime 1<<NITE
 	iftrue Route21TunnelDark
-	setflag ENGINE_NEAR_CAMPFIRE
-	special Special_UpdatePalsInstant
-	dotrigger $1
-.end
-	end
+;fallthrough
 
 Route21TunnelLight:
 	setflag ENGINE_NEAR_CAMPFIRE
-	loadvar wTimeOfDayPalFlags, $40 | 1
 	special Special_UpdatePalsInstant
 	dotrigger $1
 	end
 	
 Route21TunnelDark:
 	clearflag ENGINE_NEAR_CAMPFIRE
-	loadvar wTimeOfDayPalFlags, $40 | 0
+	special Special_UpdatePalsInstant
 	dotrigger $0
 	end
 	

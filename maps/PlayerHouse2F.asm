@@ -28,7 +28,7 @@ PlayerHouse2F_MapScriptHeader:
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
 
-	db 23 ; bg events
+	db 22 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
 	bg_event  5,  1, SIGNPOST_JUMPSTD, radio2
 	bg_event  7,  1, SIGNPOST_READ, PlayerHouseBookshelf

@@ -2230,13 +2230,7 @@ Script_NotEvenANibble: ; 0xd01e
 
 Script_GotAnItem:
 	scall Script_FishCastRod
-;	callasm MakePalGray
-	iffalse .NotFacingUp
-	applymovement PLAYER, Movement_HookedItemFacingUp
-	jump .GetTheHookedItem
-.NotFacingUp:
-	applymovement PLAYER, Movement_HookedItemNotFacingUp
-.GetTheHookedItem:
+	applymovement PLAYER, Movement_HookedItem
 	pause 40
 	applymovement PLAYER, Movement_RestoreRod
 	callasm PutTheRodAway
@@ -2247,14 +2241,7 @@ Script_GotAnItem:
 
 Script_GotABite: ; 0xd035
 	scall Script_FishCastRod
-;	callasm MakePalGray
-	callasm Fishing_CheckFacingUp
-	iffalse .NotFacingUp
-	applymovement PLAYER, Movement_BiteFacingUp
-	jump .FightTheHookedPokemon
-.NotFacingUp: ; 0xd046
-	applymovement PLAYER, Movement_BiteNotFacingUp
-.FightTheHookedPokemon: ; 0xd04a
+	applymovement PLAYER, Movement_Bite
 	pause 40
 	applymovement PLAYER, Movement_RestoreRod
 	opentext
@@ -2266,27 +2253,15 @@ Script_GotABite: ; 0xd035
 	reloadmapafterbattle
 	end
 
-Movement_BiteNotFacingUp: ; d05c
+Movement_Bite: ; d05c
 	fish_got_bite
 	fish_got_bite
 	fish_got_bite
-Movement_HookedItemNotFacingUp:
+Movement_HookedItem:
 	fish_got_bite
-;	show_emote
-	step_end
-
-Movement_BiteFacingUp: ; d062
-	fish_got_bite
-	fish_got_bite
-	fish_got_bite
-Movement_HookedItemFacingUp:
-	fish_got_bite
-	step_sleep_1
-;	show_emote
 	step_end
 
 Movement_RestoreRod: ; d069
-;	hide_emote
 	fish_cast_rod
 	step_end
 
@@ -2303,12 +2278,10 @@ Fishing_CheckFacingUp: ; d06c
 	ret
 
 Script_FishCastRod: ; 0xd07c
-;	reloadmappart
 	loadvar hBGMapMode, $0
 	special UpdateTimePals
 	loademote EMOTE_ROD
 	callasm LoadFishingGFX
-;	loademote EMOTE_SHOCK
 	applymovement PLAYER, MovementData_0xd093
 	pause 40
 	end

@@ -1059,7 +1059,7 @@ LoadFishingGFX: ; b84b3
 	call .LoadGFX
 	ld hl, VTiles0 tile $0a
 	call .LoadGFX
-	ld hl, VTiles0 tile $7c
+	ld hl, VTiles0 tile $7a
 	call .LoadGFX
 
 	pop af

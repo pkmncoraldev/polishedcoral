@@ -199,7 +199,7 @@ FacingFishDown:
 	db  0,  8, 0, $01
 	db  8,  0, 2, $02
 	db  8,  8, 2, $03
-	db 16,  0, 4, $7c
+	db 16,  0, 4, $7a
 ; 414a
 
 FacingFishUp:
@@ -208,7 +208,7 @@ FacingFishUp:
 	db  0,  8, 0, $05
 	db  8,  0, 2, $06
 	db  8,  8, 2, $07
-	db -8,  0, 4, $7c
+	db -8,  0, 4, $7a
 ; 415f
 
 FacingFishLeft:
@@ -217,7 +217,7 @@ FacingFishLeft:
 	db  0,  8, 0, $09
 	db  8,  0, 2, $0a
 	db  8,  8, 2, $0b
-	db  5, -8, 4 | X_FLIP, $7d
+	db  5, -8, 4 | X_FLIP, $7b
 ; 4174
 
 FacingFishRight:
@@ -226,7 +226,7 @@ FacingFishRight:
 	db  0,  0, 0 | X_FLIP, $09
 	db  8,  8, 2 | X_FLIP, $0a
 	db  8,  0, 2 | X_FLIP, $0b
-	db  5, 16, 4, $7d
+	db  5, 16, 4, $7b
 ; 4189
 
 FacingEmote:

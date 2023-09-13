@@ -248,6 +248,12 @@ LusterSewersThroneRoomFrankieCutscene:
 	disappear LUSTERSEWERSTHRONEROOM_FRANKIE
 	setevent EVENT_CLEARED_LUSTER_SEWERS
 	dotrigger $1
+	
+	checkevent EVENT_LUSTER_SEWERS_B1F_DISGUISEMAN
+	iftrue .end
+	clearevent EVENT_LUSTER_SEWERS_B1F_POKEBALL
+	setevent EVENT_LUSTER_SEWERS_B1F_DISGUISEMAN
+.end
 	end
 .saidyes
 	writetext LusterSewersThroneRoomFrankieYesText

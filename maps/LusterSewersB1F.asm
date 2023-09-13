@@ -24,7 +24,8 @@ LusterSewersB1F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 12 ; object events
+	db 13 ; object events
+	object_event  25, 19, SPRITE_DISGUISEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterSewersDisguiseman, EVENT_LUSTER_SEWERS_B1F_DISGUISEMAN
 	person_event SPRITE_PLANK_BRIDGE, 14, 17, SPRITEMOVEDATA_TILE_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_EMPTY
 	person_event SPRITE_PLANK_BRIDGE, 15, 17, SPRITEMOVEDATA_TILE_UP, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_EMPTY
 	person_event SPRITE_PLANK_BRIDGE, 15, 17, SPRITEMOVEDATA_TILE_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_FLOODED
@@ -34,9 +35,104 @@ LusterSewersB1F_MapScriptHeader:
 	person_event SPRITE_PLANK_BRIDGE_2,  5, 27, SPRITEMOVEDATA_TILE_UP, 2, 2, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, EVENT_LUSTER_SEWERS_FLOODED
 	person_event SPRITE_DELINQUENT_M,  9,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, TrainerLusterSewersB1F_1,  EVENT_CLEARED_LUSTER_SEWERS
 	person_event SPRITE_DELINQUENT_F, 21, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 4, TrainerLusterSewersB1F_2,  EVENT_CLEARED_LUSTER_SEWERS
-	person_event SPRITE_DELINQUENT_M, 18, 25, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerLusterSewersB1F_3,  EVENT_CLEARED_LUSTER_SEWERS
+	person_event SPRITE_DELINQUENT_M, 18, 25, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_TRAINER, 3, TrainerLusterSewersB1F_3,  EVENT_CLEARED_LUSTER_SEWERS
 	person_event SPRITE_DELINQUENT_M, 11, 28, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, TrainerLusterSewersB1F_4,  EVENT_CLEARED_LUSTER_SEWERS
-	itemball_event 25, 19, POTION, 1, EVENT_LUSTER_SEWERS_B1F_POKEBALL
+	itemball_event 25, 19, MASTER_BALL, 1, EVENT_LUSTER_SEWERS_B1F_POKEBALL
+	
+	const_def 1 ; object constants
+	const LUSTER_SEWERS_DISGUISEMAN
+	
+	
+LusterSewersDisguiseman:
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_FAT_GUY
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	applymovement LUSTER_SEWERS_DISGUISEMAN, Movement_StarglowCavern_DisguiseMan1
+	opentext
+	writetext StarglowCavern_DisguiseMan1Text1
+	waitbutton
+	closetext
+	faceplayer
+	opentext
+	writetext LusterSewers_DisguiseMan1Text2
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext LusterSewersDisguisemanBeatenText, 0
+	setlasttalked LUSTER_SEWERS_DISGUISEMAN
+	loadtrainer DISGUISE, MASTER_3
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext LusterSewers_DisguiseMan1Text3
+	waitbutton
+	closetext
+	applymovement LUSTER_SEWERS_DISGUISEMAN, Movement_StarglowCavern_DisguiseMan2
+	disappear LUSTER_SEWERS_DISGUISEMAN
+	opentext
+	writetext StarglowCavern_DisguiseMan1Text4
+	waitbutton
+	closetext
+	setevent EVENT_LUSTER_SEWERS_B1F_DISGUISEMAN
+	end
+	
+LusterSewers_DisguiseMan1Text2:
+	text "Didn't you hear"
+	line "what that BUNEARY"
+	cont "said?"
+	
+	para "You chose to"
+	line "ignore him and"
+	cont "take it instead?"
+	
+	para "To steal from a"
+	line "theif is surely"
+	cont "fair play."
+	
+	para "Isn't that what I'm"
+	line "hearing you say?"
+	
+	para "But search in your"
+	line "heart, and search"
+	cont "in your mind."
+	
+	para "You might be"
+	line "surprised at just"
+	cont "what you find."
+	
+	para "For you see, two"
+	line "wrongs do not make"
+	cont "a right."
+	
+	para "So now it's time"
+	line "us two to fight!"
+	done
+	
+LusterSewers_DisguiseMan1Text3:
+	text "I hope that today"
+	line "a lesson's been"
+	cont "learned."
+	
+	para "But unlike that"
+	line "item, your victory"
+	cont "was earned!"
+	
+	para "I'll see you again."
+	line "You might be"
+	cont "surprised,"
+	
+	para "for I'm the MASTER"
+	line "OF DISGUISE!"
+	done
+	
+LusterSewersDisguisemanBeatenText:
+	text "Game, set, and"
+	line "match! You win!"
+	cont "You win!"
+	
+	para "It was over before"
+	line "it could even"
+	cont "begin!"
+	done
 	
 TrainerLusterSewersB1F_1:
 	generictrainer BUNEARY_M, BOY_1, EVENT_BEAT_LUSTER_SEWERS_B1F_TRAINER_1, .SeenText, .BeatenText
@@ -83,12 +179,31 @@ TrainerLusterSewersB1F_2:
 	done
 	
 TrainerLusterSewersB1F_3:
-	generictrainer BUNEARY_M, BOY_2, EVENT_BEAT_LUSTER_SEWERS_B1F_TRAINER_3, .SeenText, .BeatenText
+	trainer EVENT_BEAT_LUSTER_SEWERS_B1F_TRAINER_3, BUNEARY_M, BOY_2, .SeenText, .BeatenText, 0, .Script
+	
+.Script:
+	end_if_just_battled
+	checkevent EVENT_LUSTER_SEWERS_B1F_DISGUISEMAN
+	iftrue .done_disguiseman
+	jumptextfaceplayer .NormalText
+	
+.done_disguiseman
+	jumptextfaceplayer .NormalText2
 
+.NormalText:
 	text "Just because we"
 	line "stole all of it"
 	cont "doesn't mean you"
 	cont "can steal it back!"
+	done
+	
+.NormalText2:
+	text "So THAT'S what"
+	line "that was!"
+	
+	para "I honestly had no"
+	line "idea what I was"
+	cont "even guarding!"
 	done
 
 .SeenText:
@@ -102,7 +217,9 @@ TrainerLusterSewersB1F_3:
 	done
 
 .BeatenText:
-	text "Man, whatever…"
+	text "I don't even know"
+	line "what this thing"
+	cont "is…"
 	done
 	
 TrainerLusterSewersB1F_4:

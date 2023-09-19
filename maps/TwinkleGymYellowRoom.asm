@@ -60,6 +60,10 @@ TwinkleGymYellowRoomTrigger1:
 	end
 
 TwinkleGymYellowRoomCallback:
+	checkevent EVENT_TWINKLE_GYM_YELLOW_ROOM_GLASS
+	iffalse .no_door
+	changeblock $6, $2, $77
+.no_door
 	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1
 	iffalse .check2ndbather
 	checkevent EVENT_BEAT_CHARLIE

@@ -3,7 +3,8 @@ TwinkleGymBlueRoom_MapScriptHeader:
 	scene_script TwinkleGymBlueRoomTrigger0
 	scene_script TwinkleGymBlueRoomTrigger1
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, TwinkleGymBlueRoomCallback
 
 	db 2 ; warp events
 	warp_def 17,  4, 3, TWINKLE_GYM_ENTRY
@@ -39,6 +40,13 @@ TwinkleGymBlueRoomTrigger0:
 	
 TwinkleGymBlueRoomTrigger1:
 	end
+	
+TwinkleGymBlueRoomCallback:
+	checkevent EVENT_TWINKLE_GYM_BLUE_ROOM_GLASS
+	iffalse .no_door
+	changeblock $4, $2, $77
+.no_door
+	return
 	
 TwinkleGymBlueRoomTrainer:
 	faceplayer

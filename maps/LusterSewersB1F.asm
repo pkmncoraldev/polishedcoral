@@ -179,7 +179,7 @@ TrainerLusterSewersB1F_2:
 	done
 	
 TrainerLusterSewersB1F_3:
-	trainer EVENT_BEAT_LUSTER_SEWERS_B1F_TRAINER_3, BUNEARY_M, BOY_2, .SeenText, .BeatenText, 0, .Script
+	trainer BUNEARY_M, BOY_2, EVENT_BEAT_LUSTER_SEWERS_B1F_TRAINER_3, .SeenText, .BeatenText, 0, .Script
 	
 .Script:
 	end_if_just_battled

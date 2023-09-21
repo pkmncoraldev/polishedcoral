@@ -113,11 +113,8 @@ RadiantMeadowSignText:
 	
 RadiantTownshipGymSignText:
 	text "RADIANT TOWNSHIP"
-	line "#MON GYM"
-	cont "LEADER: LEILANI"
-	
-	para "The ferocious"
-	line "flower."
+	line "ORPHANAGE &"
+	cont "#MON GYM"
 	done
 	
 RadiantTownshipRoute19SignText:

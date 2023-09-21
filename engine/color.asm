@@ -1478,9 +1478,15 @@ LoadMapPals::
 	jp .copy_single_pal_to_pal_7
 .orphanage
 	ld a, [wMapNumber]
+	cp MAP_RADIANT_ORPHANAGE_1F
+	jp z, .rocking_chair
 	cp MAP_RADIANT_ORPHANAGE_LEILANIS_ROOM
 	jp nz, .normal
 	ld hl, MapObjectPalsLeilaniBed
+	call LoadSingleOBPalLinePal7
+	jp FarCopyWRAM
+.rocking_chair
+	ld hl, MapObjectPalsLeilaniChair
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 .highway
@@ -1990,6 +1996,9 @@ INCLUDE "maps/palettes/obpals/fakeroute1.pal"
 
 MapObjectPalsLeilaniBed::
 INCLUDE "maps/palettes/obpals/leilanibed.pal"
+
+MapObjectPalsLeilaniChair::
+INCLUDE "maps/palettes/obpals/leilanichair.pal"
 
 MapObjectPalsEvilMeowth::
 INCLUDE "maps/palettes/obpals/evilmeowth.pal"

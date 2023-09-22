@@ -1,7 +1,8 @@
 RadiantOrphanage1F_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, RadiantOrphanage1FCallback
 
 	db 3 ; warp events
 	warp_def  9,  4, 4, RADIANT_TOWNSHIP
@@ -14,18 +15,19 @@ RadiantOrphanage1F_MapScriptHeader:
 	signpost  2,  1, SIGNPOST_READ, RadiantOrphanage1FLeilanisRoomSign
 	signpost  2,  7, SIGNPOST_READ, RadiantOrphanage1FGymRoomSign
 
-	db 11 ; object events
+	db 12 ; object events
 	object_event  3,  5, SPRITE_LEILANI_VARIABLE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
-	object_event  3,  5, SPRITE_LEILANI_CHAIR_2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, RadiantOrphanage1FChair, EVENT_ALWAYS_SET
-	object_event  3,  5, SPRITE_LEILANI_CHAIR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanage1FLeilani, -1
-	object_event  3,  5, SPRITE_LEILANI_CHAIR_2, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event -5, -5, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantOrphanage1FGirlsTest, -1
+	object_event  3,  5, SPRITE_LEILANI_CHAIR_2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, RadiantOrphanage1FChair, EVENT_RADIANT_GYM_INACTIVE
+	object_event  3,  5, SPRITE_LEILANI_CHAIR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanage1FLeilani, EVENT_RADIANT_GYM_ACTIVE
+	object_event  3,  5, SPRITE_LEILANI_CHAIR_2, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_RADIANT_GYM_ACTIVE
+	object_event -5, -5, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomRose, -1
 	object_event -5, -5, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomLily, -1
 	object_event -5, -5, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomIris, -1
 	object_event -5, -5, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomPoppy, -1
 	object_event -5, -5, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomViolet, -1
 	object_event -5, -5, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomClover, -1
 	object_event -5, -5, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomFelicia, -1
+	object_event  3,  5, SPRITE_LEILANI_CHAIR_2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, RadiantOrphanage1FChairDusty, EVENT_SAVED_ALL_LOST_GIRLS
 	
 
 	const_def 1 ; object constants
@@ -40,14 +42,26 @@ RadiantOrphanage1F_MapScriptHeader:
 	const RADIANT_ORPHANAGE_1F_VIOLET
 	const RADIANT_ORPHANAGE_1F_CLOVER
 	const RADIANT_ORPHANAGE_1F_FELICIA
+	const RADIANT_ORPHANAGE_1F_LEILANI_CHAIR_DUSTY
 
-RadiantOrphanage1FGirlsTest:
-	end
+RadiantOrphanage1FCallback:
+	checkevent EVENT_RADIANT_GYM_INACTIVE
+	iftrue .end
+	checkevent EVENT_RADIANT_GYM_ACTIVE
+	iffalse .end
+	changeblock $8, $2, $39
+	callasm GenericFinishBridge
+.end
+	return
 
 RadiantOrphanage1FChair:
 	jumptext RadiantOrphanage1FChairText
+	
+RadiantOrphanage1FChairDusty:
+	jumptext RadiantOrphanage1FChairDustyText
 
 RadiantOrphanage1FLeilani:
+	variablesprite SPRITE_LEILANI_VARIABLE, SPRITE_LEILANI_CHAIR
 	spriteface RADIANT_ORPHANAGE_1F_LEILANI_1, DOWN
 	spriteface RADIANT_ORPHANAGE_1F_LEILANI_1, DOWN
 	checkcode VAR_FACING
@@ -61,6 +75,8 @@ RadiantOrphanage1FLeilani:
 	appear RADIANT_ORPHANAGE_1F_LEILANI_2
 	appear RADIANT_ORPHANAGE_1F_LEILANI_CHAIR_2
 	setevent EVENT_ALWAYS_SET
+	setevent EVENT_RADIANT_GYM_ACTIVE
+	clearevent EVENT_RADIANT_GYM_INACTIVE
 	opentext
 	writetext RadiantOrphanage1FLeilaniText1
 	waitbutton
@@ -80,8 +96,8 @@ RadiantOrphanage1FLeilani:
 	waitbutton
 	closetext
 	applymovement RADIANT_ORPHANAGE_1F_LEILANI_2, Movement_RadiantOrphanage1FLeilani
-	spriteface PLAYER, RIGHT
 	spriteface RADIANT_ORPHANAGE_1F_LEILANI_2, DOWN
+	spriteface PLAYER, RIGHT
 	opentext
 	writetext RadiantOrphanage1FLeilaniText3
 	waitbutton
@@ -108,48 +124,50 @@ RadiantOrphanage1FLeilani:
 	moveperson RADIANT_ORPHANAGE_1F_VIOLET, 9, 3
 	moveperson RADIANT_ORPHANAGE_1F_CLOVER, 9, 3
 	moveperson RADIANT_ORPHANAGE_1F_FELICIA, 9, 3
-	pause 15
+	pause 20
 	appear RADIANT_ORPHANAGE_1F_ROSE
 	playsound SFX_EXIT_BUILDING
 	applymovement RADIANT_ORPHANAGE_1F_ROSE, Movement_RadiantOrphanage1FGirls
 	disappear RADIANT_ORPHANAGE_1F_ROSE
 	playsound SFX_ENTER_DOOR
-	pause 10
+	pause 15
 	appear RADIANT_ORPHANAGE_1F_LILY
 	playsound SFX_EXIT_BUILDING
 	applymovement RADIANT_ORPHANAGE_1F_LILY, Movement_RadiantOrphanage1FGirls
 	disappear RADIANT_ORPHANAGE_1F_LILY
 	playsound SFX_ENTER_DOOR
-	pause 10
+	pause 15
 	appear RADIANT_ORPHANAGE_1F_IRIS
 	playsound SFX_EXIT_BUILDING
 	applymovement RADIANT_ORPHANAGE_1F_IRIS, Movement_RadiantOrphanage1FGirls
 	disappear RADIANT_ORPHANAGE_1F_IRIS
 	playsound SFX_ENTER_DOOR
-	pause 10
+	pause 15
 	appear RADIANT_ORPHANAGE_1F_POPPY
 	playsound SFX_EXIT_BUILDING
 	applymovement RADIANT_ORPHANAGE_1F_POPPY, Movement_RadiantOrphanage1FGirls
 	disappear RADIANT_ORPHANAGE_1F_POPPY
 	playsound SFX_ENTER_DOOR
-	pause 10
+	pause 15
 	appear RADIANT_ORPHANAGE_1F_VIOLET
 	playsound SFX_EXIT_BUILDING
 	applymovement RADIANT_ORPHANAGE_1F_VIOLET, Movement_RadiantOrphanage1FGirls
 	disappear RADIANT_ORPHANAGE_1F_VIOLET
 	playsound SFX_ENTER_DOOR
-	pause 10
+	pause 15
 	appear RADIANT_ORPHANAGE_1F_CLOVER
 	playsound SFX_EXIT_BUILDING
 	applymovement RADIANT_ORPHANAGE_1F_CLOVER, Movement_RadiantOrphanage1FGirls
 	disappear RADIANT_ORPHANAGE_1F_CLOVER
 	playsound SFX_ENTER_DOOR
-	pause 10
+	pause 15
 	appear RADIANT_ORPHANAGE_1F_FELICIA
 	playsound SFX_EXIT_BUILDING
 	applymovement RADIANT_ORPHANAGE_1F_FELICIA, Movement_RadiantOrphanage1FGirls2
 	disappear RADIANT_ORPHANAGE_1F_FELICIA
 	playsound SFX_ENTER_DOOR
+	changeblock $8, $2, $39
+	callasm GenericFinishBridge
 	end
 	
 RadiantOrphanage1FLeilanisRoomSign:
@@ -175,7 +193,7 @@ Movement_RadiantOrphanage1FGirls2:
 	turn_step_left
 	step_sleep 20
 	turn_step_down
-	step_sleep 25
+	step_sleep 35
 	step_up
 	step_end
 	
@@ -199,6 +217,16 @@ RadiantOrphanage1FGymRoomSignText:
 	
 RadiantOrphanage1FChairText:
 	text "LEILANI's rocking"
+	line "chair."
+	
+	para "There are cute"
+	line "floral patterns"
+	cont "carved into the"
+	cont "wood."
+	done
+	
+RadiantOrphanage1FChairDustyText:
+	text "A dusty rocking"
 	line "chair."
 	
 	para "There are cute"

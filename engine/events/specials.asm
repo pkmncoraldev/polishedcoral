@@ -621,6 +621,9 @@ SavedAllGirlsScript:
 	writetext SavedAllGirlsText2
 	waitbutton
 	closetext
+	clearevent EVENT_RADIANT_GYM_ACTIVE
+	setevent EVENT_RADIANT_GYM_INACTIVE
+	setevent EVENT_SAVED_ALL_LOST_GIRLS
 	end
 	
 SavedAllGirlsText1:

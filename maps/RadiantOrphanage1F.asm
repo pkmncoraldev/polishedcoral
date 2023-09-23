@@ -15,7 +15,7 @@ RadiantOrphanage1F_MapScriptHeader:
 	signpost  2,  1, SIGNPOST_READ, RadiantOrphanage1FLeilanisRoomSign
 	signpost  2,  7, SIGNPOST_READ, RadiantOrphanage1FGymRoomSign
 
-	db 12 ; object events
+	db 13 ; object events
 	object_event  3,  5, SPRITE_LEILANI_VARIABLE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	object_event  3,  5, SPRITE_LEILANI_CHAIR_2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, RadiantOrphanage1FChair, EVENT_RADIANT_GYM_INACTIVE
 	object_event  3,  5, SPRITE_LEILANI_CHAIR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanage1FLeilani, EVENT_RADIANT_GYM_ACTIVE
@@ -28,6 +28,7 @@ RadiantOrphanage1F_MapScriptHeader:
 	object_event -5, -5, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomClover, -1
 	object_event -5, -5, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomFelicia, -1
 	object_event  3,  5, SPRITE_LEILANI_CHAIR_2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, RadiantOrphanage1FChairDusty, EVENT_SAVED_ALL_LOST_GIRLS
+	
 	
 
 	const_def 1 ; object constants
@@ -43,6 +44,7 @@ RadiantOrphanage1F_MapScriptHeader:
 	const RADIANT_ORPHANAGE_1F_CLOVER
 	const RADIANT_ORPHANAGE_1F_FELICIA
 	const RADIANT_ORPHANAGE_1F_LEILANI_CHAIR_DUSTY
+	const RADIANT_ORPHANAGE_1F_ERIKA
 
 RadiantOrphanage1FCallback:
 	checkevent EVENT_RADIANT_GYM_INACTIVE
@@ -53,6 +55,41 @@ RadiantOrphanage1FCallback:
 	callasm GenericFinishBridge
 .end
 	return
+
+RadiantOrphanage1FErika:
+	checkevent EVENT_RADIANT_GYM_ACTIVE
+	iftrue .gym_active
+	jumptextfaceplayer RadiantOrphanage1FErikaText1
+.gym_active
+	jumptextfaceplayer RadiantOrphanage1FErikaText2
+
+RadiantOrphanage1FErikaText1:
+	text "Everything's back"
+	line "to normal thanks"
+	cont "to you!"
+	
+	para "GRAMMA LEILANI is"
+	line "doing much better."
+	
+	para "I'm sure she would"
+	line "love to offer you"
+	cont "a GYM battle if"
+	cont "asked her."
+	done
+	
+RadiantOrphanage1FErikaText2:
+	text "Everything's back"
+	line "to normal thanks"
+	cont "to you!"
+	
+	para "Thank you so much!"	
+	
+	para "I'm going to stick"
+	line "around a while"
+	cont "longer before I"
+	cont "head back home to"
+	cont "KANTO."
+	done
 
 RadiantOrphanage1FChair:
 	jumptext RadiantOrphanage1FChairText

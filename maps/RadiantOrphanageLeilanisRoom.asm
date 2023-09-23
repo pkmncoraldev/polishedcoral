@@ -12,16 +12,17 @@ RadiantOrphanageLeilanisRoom_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 9 ; object events
-	object_event  2,  1, SPRITE_ERIKA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomErika, -1
-	object_event  1,  1, SPRITE_LEILANI_BED, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  4,  2, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomRose, -1
-	object_event  3,  3, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomLily, -1
-	object_event  4,  1, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomIris, -1
-	object_event  1,  3, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomPoppy, -1
-	object_event  4,  3, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomViolet, -1
-	object_event  0,  3, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomClover, -1
-	object_event  5,  4, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomFelicia, -1
+	db 10 ; object events
+	object_event  2,  1, SPRITE_ERIKA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomErika, EVENT_SAVED_ALL_LOST_GIRLS
+	object_event  1,  1, SPRITE_LEILANI_BED, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAVED_ALL_LOST_GIRLS
+	object_event  4,  2, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomRose, EVENT_SAVED_ALL_LOST_GIRLS
+	object_event  3,  3, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomLily, EVENT_SAVED_ALL_LOST_GIRLS
+	object_event  4,  1, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomIris, EVENT_SAVED_ALL_LOST_GIRLS
+	object_event  1,  3, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomPoppy, EVENT_SAVED_ALL_LOST_GIRLS
+	object_event  4,  3, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomViolet, EVENT_SAVED_ALL_LOST_GIRLS
+	object_event  0,  3, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomClover, EVENT_SAVED_ALL_LOST_GIRLS
+	object_event  5,  4, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomFelicia, EVENT_SAVED_ALL_LOST_GIRLS
+	object_event  3,  2, SPRITE_ERIKA, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanage1FErika, -1
 
 
 	const_def 1 ; object constants
@@ -34,8 +35,13 @@ RadiantOrphanageLeilanisRoom_MapScriptHeader:
 	const RADIANT_ORPHANAGE_LEILANIS_ROOM_VIOLET
 	const RADIANT_ORPHANAGE_LEILANIS_ROOM_CLOVER
 	const RADIANT_ORPHANAGE_LEILANIS_ROOM_FELICIA
+	const RADIANT_ORPHANAGE_LEILANIS_ROOM_ERIKA2
 	
 RadiantOrphanageLeilanisRoomCallback:
+	checkevent EVENT_SAVED_ALL_LOST_GIRLS
+	iftrue .done_erika
+	moveperson RADIANT_ORPHANAGE_LEILANIS_ROOM_ERIKA2, -5, -5
+.done_erika
 	checkevent EVENT_SAVED_ROSE
 	iftrue .skip_rose
 	moveperson RADIANT_ORPHANAGE_LEILANIS_ROOM_ROSE, -5, -5
@@ -67,39 +73,53 @@ RadiantOrphanageLeilanisRoomCallback:
 	return
 
 RadiantOrphanageLeilanisRoomRose:
-	setevent EVENT_SAVED_ROSE
-	callasm SaveLostGirl
-	end
+	jumptext RadiantOrphanageLeilanisRoomRoseText
+	
+RadiantOrphanageLeilanisRoomRoseText:
+	text "ROSE TEXT"
+	done
 	
 RadiantOrphanageLeilanisRoomLily:
-	setevent EVENT_SAVED_LILY
-	callasm SaveLostGirl
-	end
+	jumptext RadiantOrphanageLeilanisRoomLilyText
+	
+RadiantOrphanageLeilanisRoomLilyText:
+	text "LILY TEXT"
+	done
 	
 RadiantOrphanageLeilanisRoomIris:
-	setevent EVENT_SAVED_IRIS
-	callasm SaveLostGirl
-	end
+	jumptext RadiantOrphanageLeilanisRoomIrisText
+	
+RadiantOrphanageLeilanisRoomIrisText:
+	text "IRIS TEXT"
+	done
 	
 RadiantOrphanageLeilanisRoomPoppy:
-	setevent EVENT_SAVED_POPPY
-	callasm SaveLostGirl
-	end
+	jumptext RadiantOrphanageLeilanisRoomPoppyText
+	
+RadiantOrphanageLeilanisRoomPoppyText:
+	text "POPPY TEXT"
+	done
 	
 RadiantOrphanageLeilanisRoomViolet:
-	setevent EVENT_SAVED_VIOLET
-	callasm SaveLostGirl
-	end
+	jumptext RadiantOrphanageLeilanisRoomVioletText
+	
+RadiantOrphanageLeilanisRoomVioletText:
+	text "VIOLET TEXT"
+	done
 	
 RadiantOrphanageLeilanisRoomClover:
-	setevent EVENT_SAVED_CLOVER
-	callasm SaveLostGirl
-	end
+	jumptext RadiantOrphanageLeilanisRoomCloverText
+	
+RadiantOrphanageLeilanisRoomCloverText:
+	text "CLOVER TEXT"
+	done
 	
 RadiantOrphanageLeilanisRoomFelicia:
-	setevent EVENT_SAVED_FELICIA
-	callasm SaveLostGirl
-	end
+	jumptext RadiantOrphanageLeilanisRoomFeliciaText
+	
+RadiantOrphanageLeilanisRoomFeliciaText:
+	text "FELICIA TEXT"
+	done
 
 RadiantOrphanageLeilanisRoomErika:
 	callasm CalcRemainingLostGirlsAsm
@@ -177,12 +197,6 @@ RadiantOrphanageLeilanisRoomErika:
 	end
 .saved_all
 	end
-	
-SaveLostGirl:
-	ld a, [wLostGirls]
-	inc a
-	ld [wLostGirls], a
-	ret
 	
 CalcRemainingLostGirlsAsm:
 	ld a, [wLostGirls]

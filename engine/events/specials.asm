@@ -624,6 +624,7 @@ SavedAllGirlsScript:
 	clearevent EVENT_RADIANT_GYM_ACTIVE
 	setevent EVENT_RADIANT_GYM_INACTIVE
 	setevent EVENT_SAVED_ALL_LOST_GIRLS
+	setevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
 	end
 	
 SavedAllGirlsText1:

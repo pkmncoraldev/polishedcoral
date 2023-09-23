@@ -1,7 +1,8 @@
 RadiantTownship_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, RadiantTownshipCallback
 
 	db 8 ; warp events
 	warp_def 13, 35, 1, RADIANT_FLOWER_SHOP
@@ -48,7 +49,8 @@ RadiantTownship_MapScriptHeader:
 	signpost 19, 27, SIGNPOST_READ, RadiantTownshipSunflower
 	signpost 14, 37, SIGNPOST_READ, RadiantTownshipSunflower
 
-	db 11 ; object events
+	db 12 ; object events
+	person_event SPRITE_ERIKA, 15, 22, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantTownshipErika, -1
 	person_event SPRITE_CUTE_GIRL, 10,  8, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC1, -1
 	person_event SPRITE_CASINO, 10,  2, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 10,  3, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
@@ -61,6 +63,39 @@ RadiantTownship_MapScriptHeader:
 	person_event SPRITE_CASINO, 18, 27, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 13, 37, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 
+	const_def 1 ; object constants
+	const RADIANT_TOWNSHIP_ERIKA
+	
+
+RadiantTownshipCallback:
+	checkevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
+	iftrue .end
+	moveperson RADIANT_TOWNSHIP_ERIKA, -5, -5
+.end
+	return
+	
+RadiantTownshipErika:
+	faceplayer
+	opentext
+	writetext RadiantTownshipErikaText
+	waitbutton
+	closetext
+	applymovement RADIANT_TOWNSHIP_ERIKA, Movement_RadiantTownshipErika
+	disappear RADIANT_TOWNSHIP_ERIKA
+	playsound SFX_ENTER_DOOR
+	clearevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
+	end
+
+RadiantTownshipErikaText:
+	text "YIPPEE!"
+	
+	para "You did it!"
+	done
+
+Movement_RadiantTownshipErika:
+	step_up
+	step_up
+	step_end
 
 RadiantTownshipSunflower:
 	jumptext RadiantTownshipSunflowerText
@@ -70,6 +105,12 @@ RadiantTownshipSunflowerText:
 	done
 
 RadiantTownshipNPC1:
+	clearevent EVENT_RADIANT_GYM_ACTIVE
+	setevent EVENT_RADIANT_GYM_INACTIVE
+	setevent EVENT_SAVED_ALL_LOST_GIRLS
+	setevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
+	end
+
 	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .lostgirls
 	jumptextfaceplayer RadiantTownshipNPC1Text1

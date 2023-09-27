@@ -609,7 +609,7 @@ ENDM
 	map_attributes Airport, AIRPORT, $0, 0
 	map_attributes RadiantFlowerShop, RADIANT_FLOWER_SHOP, $0, 0
 	map_attributes RadiantOrphanage1F, RADIANT_ORPHANAGE_1F, $0, 0
-	
+	map_attributes RadiantOrphanage2F, RADIANT_ORPHANAGE_2F, $0, 0
 	map_attributes RadiantOrphanageLeilanisRoom, RADIANT_ORPHANAGE_LEILANIS_ROOM, $0, 0
 	
 	map_attributes RadiantPokeCenter, RADIANT_POKECENTER, $0, 0

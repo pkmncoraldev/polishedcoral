@@ -349,6 +349,9 @@ LoadSpecialMapPalette: ; 494ac
 	jp .do_nothing
 	
 .orphanage
+	ld a, [wMapNumber]
+	cp MAP_RADIANT_ORPHANAGE_2F
+	jr z, .orphanage_beds
 	ld de, wUnknBGPals + 6 palettes
 	jr .house2_cont
 .house2
@@ -363,6 +366,10 @@ LoadSpecialMapPalette: ; 494ac
 	call FarCopyWRAM
 	scf
 	ret
+	
+.orphanage_beds
+	ld hl, OrphanageBedsPalette
+	jp LoadSevenBGPalettes
 	
 .lab
 	ld a, [wMapGroup]
@@ -832,6 +839,9 @@ LoadLinkTradePalette: ; 49811
 
 LoadSpecialMapOBPalette:
 	ret
+
+OrphanageBedsPalette:
+INCLUDE "maps/palettes/bgpals/orphanagebeds.pal"
 
 FlowerFieldPalette:
 INCLUDE "maps/palettes/bgpals/radiantfield.pal"

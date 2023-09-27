@@ -4,10 +4,11 @@ RadiantOrphanage1F_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, RadiantOrphanage1FCallback
 
-	db 3 ; warp events
+	db 4 ; warp events
 	warp_def  9,  4, 4, RADIANT_TOWNSHIP
 	warp_def  9,  5, 4, RADIANT_TOWNSHIP
 	warp_def  2,  0, 1, RADIANT_ORPHANAGE_LEILANIS_ROOM
+	warp_def  3,  9, 1, RADIANT_ORPHANAGE_2F
 
 	db 0 ; coord events
 
@@ -186,6 +187,12 @@ RadiantOrphanage1FLeilani:
 	disappear RADIANT_ORPHANAGE_1F_POPPY
 	playsound SFX_ENTER_DOOR
 	pause 15
+	appear RADIANT_ORPHANAGE_1F_FELICIA
+	playsound SFX_EXIT_BUILDING
+	applymovement RADIANT_ORPHANAGE_1F_FELICIA, Movement_RadiantOrphanage1FGirls
+	disappear RADIANT_ORPHANAGE_1F_FELICIA
+	playsound SFX_ENTER_DOOR
+	pause 15
 	appear RADIANT_ORPHANAGE_1F_VIOLET
 	playsound SFX_EXIT_BUILDING
 	applymovement RADIANT_ORPHANAGE_1F_VIOLET, Movement_RadiantOrphanage1FGirls
@@ -194,14 +201,8 @@ RadiantOrphanage1FLeilani:
 	pause 15
 	appear RADIANT_ORPHANAGE_1F_CLOVER
 	playsound SFX_EXIT_BUILDING
-	applymovement RADIANT_ORPHANAGE_1F_CLOVER, Movement_RadiantOrphanage1FGirls
+	applymovement RADIANT_ORPHANAGE_1F_CLOVER, Movement_RadiantOrphanage1FGirls2
 	disappear RADIANT_ORPHANAGE_1F_CLOVER
-	playsound SFX_ENTER_DOOR
-	pause 15
-	appear RADIANT_ORPHANAGE_1F_FELICIA
-	playsound SFX_EXIT_BUILDING
-	applymovement RADIANT_ORPHANAGE_1F_FELICIA, Movement_RadiantOrphanage1FGirls2
-	disappear RADIANT_ORPHANAGE_1F_FELICIA
 	playsound SFX_ENTER_DOOR
 	changeblock $8, $2, $39
 	callasm GenericFinishBridge

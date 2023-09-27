@@ -303,7 +303,7 @@ SECTION "Radiant Township Scripts", ROMX
 INCLUDE "maps/RadiantTownship.asm"
 INCLUDE "maps/RadiantFlowerShop.asm"
 INCLUDE "maps/RadiantOrphanage1F.asm"
-
+INCLUDE "maps/RadiantOrphanage2F.asm"
 INCLUDE "maps/RadiantOrphanageLeilanisRoom.asm"
 
 INCLUDE "maps/RadiantPokeCenter.asm"

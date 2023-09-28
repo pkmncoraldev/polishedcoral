@@ -73,52 +73,74 @@ RadiantOrphanageLeilanisRoomCallback:
 	return
 
 RadiantOrphanageLeilanisRoomRose:
-	jumptext RadiantOrphanageLeilanisRoomRoseText
+	jumptextfaceplayer RadiantOrphanageLeilanisRoomRoseText
 	
 RadiantOrphanageLeilanisRoomRoseText:
-	text "ROSE TEXT"
+	text "FELICIA said some-"
+	line "thing about the"
+	cont "beach before she"
+	cont "ran off."
 	done
 	
 RadiantOrphanageLeilanisRoomLily:
-	jumptext RadiantOrphanageLeilanisRoomLilyText
+	jumptextfaceplayer RadiantOrphanageLeilanisRoomLilyText
 	
 RadiantOrphanageLeilanisRoomLilyText:
-	text "LILY TEXT"
+	text "CLOVER was with me"
+	line "but I lost track"
+	cont "of her when we got"
+	cont "to DUSK TURNPIKE."
 	done
 	
 RadiantOrphanageLeilanisRoomIris:
-	jumptext RadiantOrphanageLeilanisRoomIrisText
+	jumptextfaceplayer RadiantOrphanageLeilanisRoomIrisText
 	
 RadiantOrphanageLeilanisRoomIrisText:
-	text "IRIS TEXT"
+	text "I think LILY ran"
+	line "off toward DUSK"
+	cont "TURNPIKE."
 	done
 	
 RadiantOrphanageLeilanisRoomPoppy:
-	jumptext RadiantOrphanageLeilanisRoomPoppyText
+	jumptextfaceplayer RadiantOrphanageLeilanisRoomPoppyText
 	
 RadiantOrphanageLeilanisRoomPoppyText:
-	text "POPPY TEXT"
+	text "IRIS said she was"
+	line "going to pick some"
+	cont "flowers for GRAMMA"
+	cont "LEILANI."
 	done
 	
 RadiantOrphanageLeilanisRoomViolet:
-	jumptext RadiantOrphanageLeilanisRoomVioletText
+	jumptextfaceplayer RadiantOrphanageLeilanisRoomVioletText
 	
 RadiantOrphanageLeilanisRoomVioletText:
-	text "VIOLET TEXT"
+	text "POPPY told me she"
+	line "wanted to go look"
+	cont "at the cars at"
+	cont "DUSK TURNPIKE."
 	done
 	
 RadiantOrphanageLeilanisRoomClover:
-	jumptext RadiantOrphanageLeilanisRoomCloverText
+	jumptextfaceplayer RadiantOrphanageLeilanisRoomCloverText
 	
 RadiantOrphanageLeilanisRoomCloverText:
-	text "CLOVER TEXT"
+	text "VIOLET loves the"
+	line "smell of the"
+	cont "flowers at RADIANT"
+	cont "MEADOW."
 	done
 	
 RadiantOrphanageLeilanisRoomFelicia:
-	jumptext RadiantOrphanageLeilanisRoomFeliciaText
+	jumptextfaceplayer RadiantOrphanageLeilanisRoomFeliciaText
 	
 RadiantOrphanageLeilanisRoomFeliciaText:
-	text "FELICIA TEXT"
+	text "ROSE probably went"
+	line "off to RADIANT"
+	cont "MEADOW."
+	
+	para "She loves the"
+	line "sunflowers."
 	done
 
 RadiantOrphanageLeilanisRoomErika:

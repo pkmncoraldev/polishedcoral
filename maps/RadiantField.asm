@@ -126,11 +126,28 @@ VioletSetNameAsm:
 	db "VIOLET@@@@@"
 	
 RadiantFieldRoseText1:
-	text "TEXT 1"
+	text "Ah!"
+	
+	para "I love the"
+	line "sunflowers!"
+	
+	para "They're so pretty!"
 	done
 	
 RadiantFieldRoseText2:
-	text "ROSE: TEXT 2"
+	text "ROSE: Ah!"
+	
+	para "I love the"
+	line "sunflowers!"
+	
+	para "They're so pretty!"
+	
+	para "What?"
+	
+	para "MS. ERIKA wants us"
+	line "to come home?"
+	
+	para "Ok! Bye bye!"
 	done
 	
 RadiantFieldIrisText1:
@@ -158,11 +175,36 @@ RadiantFieldIrisText2:
 	done
 	
 RadiantFieldVioletText1:
-	text "TEXT 1"
+	text "I love the smell"
+	line "of these flowers!"
+	
+	para "I wish I could"
+	line "smell them forev-"
+	
+	para "Ah… Ah. AH!"
+	
+	para "ACHOO!"
 	done
 	
 RadiantFieldVioletText2:	
-	text "VIOLET: TEXT 2"
+	text "VIOLET: I love the"
+	line "smell of these"
+	cont "flowers!"
+	
+	para "I wish I could"
+	line "smell them forev-"
+	
+	para "Ah…"
+	
+	para "Ah…"
+	
+	para "AH!"
+	
+	para "…CHOO!"
+	
+	para "I better go home"
+	line "before GRAMMA"
+	cont "worries about me…"
 	done
 	
 Movement_Rose2:

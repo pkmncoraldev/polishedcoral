@@ -28,19 +28,19 @@
 	tilecoll FLOOR, WALL, WALL, WALL ; 1b
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1c
 	tilecoll WALL, WALL, FLOOR, RADIO ; 1d
-	tilecoll WALL, TOWN_MAP, TV, FLOOR ; 1e
+	tilecoll TOWN_MAP, WALL, FLOOR, TV ; 1e
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 1f
 	tilecoll TOWN_MAP, WALL, FLOOR, LEFT_WALL ; 20
 	tilecoll RIGHT_WALL, WALL, FLOOR, WALL ; 21
 	tilecoll WALL, RIGHT_WALL, WALL, FLOOR ; 22
 	tilecoll COUNTER, FLOOR, WALL, FLOOR ; 23
 	tilecoll WALL, WALL, FLOOR, LEFT_WALL ; 24
-	tilecoll LADDER, FLOOR, FLOOR, FLOOR ; 25
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 26
-	tilecoll FLOOR, COUNTER, FLOOR, COUNTER ; 27
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 25
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 26
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 27
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 28
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 29
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 2a
+	tilecoll WALL, WINDOW, BOOKSHELF, FLOOR ; 29
+	tilecoll WINDOW, WALL, FLOOR, FLOOR ; 2a
 	tilecoll WALL, TOWN_MAP, WALL, FLOOR ; 2b
 	tilecoll FLOOR, WALL, WALL, WALL ; 2c
 	tilecoll WALL, WALL, WALL, WALL ; 2d
@@ -117,7 +117,7 @@
 	tilecoll TOWN_MAP, WALL, FLOOR, LEFT_WALL ; 74
 	tilecoll WALL, WALL, FLOOR, LEFT_WALL ; 75
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 76
-	tilecoll LADDER, FLOOR, FLOOR, FLOOR ; 77
+	tilecoll WALL, WALL, LADDER, FLOOR ; 77
 	tilecoll WALL, WALL, WALL, WALL ; 78
 	tilecoll WALL, WALL, FLOOR, LADDER ; 79
 	tilecoll WALL, WALL, WALL, WALL ; 7a

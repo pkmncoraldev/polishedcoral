@@ -5,21 +5,21 @@ RadiantOrphanage2F_MapScriptHeader:
 	callback MAPCALLBACK_TILES, RadiantOrphanage2FCallback
 
 	db 1 ; warp events
-	warp_def  2,  6, 4, RADIANT_ORPHANAGE_1F
+	warp_def  3, 14, 4, RADIANT_ORPHANAGE_1F
 
 	db 0 ; coord events
 
 	db 1 ; bg events
-	signpost  2,  8, SIGNPOST_READ, RadiantOrphanage2FPhoto
+	signpost  2, 12, SIGNPOST_READ, RadiantOrphanage2FPhoto
 
 	db 7 ; object events
-	object_event  1,  2, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomRose, EVENT_RADIANT_GYM_ACTIVE
-	object_event  3,  2, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomLily, EVENT_RADIANT_GYM_ACTIVE
-	object_event  5,  2, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomIris, EVENT_RADIANT_GYM_ACTIVE
-	object_event  1,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomPoppy, EVENT_RADIANT_GYM_ACTIVE
-	object_event  5,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomViolet, EVENT_RADIANT_GYM_ACTIVE
-	object_event  7,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomClover, EVENT_RADIANT_GYM_ACTIVE
-	object_event  3,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomFelicia, EVENT_RADIANT_GYM_ACTIVE
+	object_event  7,  2, SPRITE_PIGTAILS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FRose, EVENT_RADIANT_GYM_ACTIVE
+	object_event  3,  5, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FLily, EVENT_RADIANT_GYM_ACTIVE
+	object_event 11,  3, SPRITE_PIGTAILS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FIris, EVENT_RADIANT_GYM_ACTIVE
+	object_event  1,  4, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FPoppy, EVENT_RADIANT_GYM_ACTIVE
+	object_event 11,  7, SPRITE_PIGTAILS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FViolet, EVENT_RADIANT_GYM_ACTIVE
+	object_event  2,  4, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FClover, EVENT_RADIANT_GYM_ACTIVE
+	object_event  9,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FFelicia, EVENT_RADIANT_GYM_ACTIVE
 
 
 	const_def 1 ; object constants
@@ -43,6 +43,108 @@ RadiantOrphanage2FCallback:
 	moveperson RADIANT_ORPHANAGE_2F_FELICIA, -5, -5
 .end
 	return
+
+RadiantOrphanage2FRose:
+	jumptextfaceplayer RadiantOrphanage2FRoseText
+	
+RadiantOrphanage2FRoseText:
+	text "MS. ERIKA told me"
+	line "that they don't"
+	cont "have sunflowers"
+	cont "where she lives."
+	
+	para "Isn't that sad?"
+	done
+	
+RadiantOrphanage2FLily:
+	faceplayer 
+	opentext
+	writetext RadiantOrphanage2FLilyText
+	waitbutton
+	closetext
+	spriteface RADIANT_ORPHANAGE_2F_LILY, UP
+	end
+	
+RadiantOrphanage2FLilyText:
+	text "Hehe!"
+	
+	para "Watching cartoons"
+	line "is fun!"
+	
+	para "The kitties on TV"
+	line "can't scratch me"
+	cont "like that mean"
+	cont "MEOWTH did!"
+	done
+	
+RadiantOrphanage2FIris:
+	jumptextfaceplayer RadiantOrphanage2FIrisText
+	
+RadiantOrphanage2FIrisText:
+	text "La la la!"
+	
+	para "Oh, hi!"
+	
+	para "Teehee!"
+	done
+	
+RadiantOrphanage2FPoppy:
+	faceplayer 
+	opentext
+	writetext RadiantOrphanage2FPoppyText
+	waitbutton
+	closetext
+	spriteface RADIANT_ORPHANAGE_2F_POPPY, LEFT
+	end
+	
+RadiantOrphanage2FPoppyText:
+	text "Training #MON"
+	line "is fun, but I"
+	cont "wanna build cars"
+	cont "when I grow up!"
+	done
+	
+RadiantOrphanage2FViolet:
+	jumptextfaceplayer RadiantOrphanage2FVioletText
+	
+RadiantOrphanage2FVioletText:
+	text "I love to sniff"
+	line "the flowers in"
+	cont "the meadow."
+	
+	para "But every time I"
+	line "do, I sneeze!"
+	
+	para "I hope I'm not"
+	line "allergic…"
+	done
+	
+RadiantOrphanage2FClover:
+	faceplayer 
+	opentext
+	writetext RadiantOrphanage2FCloverText
+	waitbutton
+	closetext
+	spriteface RADIANT_ORPHANAGE_2F_CLOVER, RIGHT
+	end
+	
+RadiantOrphanage2FCloverText:
+	text "I shouldn't act out"
+	line "if it's going to"
+	cont "make GRAMMA worry…"
+	done
+	
+RadiantOrphanage2FFelicia:
+	jumptextfaceplayer RadiantOrphanage2FFeliciaText
+	
+RadiantOrphanage2FFeliciaText:
+	text "GRAMMA is feeling"
+	line "better, but now"
+	cont "MS. ERIKA is going"
+	cont "to leave!"
+	
+	para "WAHHHH!"
+	done
 
 RadiantOrphanage2FPhoto:
 	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE

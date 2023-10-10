@@ -265,8 +265,10 @@ LusterTrainStation_BlockData:
 	INCBIN "maps/LusterTrainStation.ablk.lz"
 	
 Route10Tent_BlockData:
-Route17Tent_BlockData:
 	INCBIN "maps/Route10Tent.ablk.lz"
+	
+Route17Trailer_BlockData:
+	INCBIN "maps/Route17Trailer.ablk.lz"
 	
 TwinkleTown_BlockData:
 TwinkleGymRedRoom_BlockData:
@@ -520,11 +522,11 @@ MtOnwaB3F_BlockData:
 MtOnwaCliff_BlockData:
 	INCBIN "maps/MtOnwaCliff.ablk.lz"
 	
-MtOnwaLowerCliff_BlockData:
-	INCBIN "maps/MtOnwaLowerCliff.ablk.lz"
-	
 	
 SECTION "Map Blockdata 2", ROMX
+	
+MtOnwaLowerCliff_BlockData:
+	INCBIN "maps/MtOnwaLowerCliff.ablk.lz"
 	
 GlintGrove_BlockData:
 	INCBIN "maps/GlintGrove.ablk.lz"

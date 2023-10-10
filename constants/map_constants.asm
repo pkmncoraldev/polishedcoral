@@ -222,7 +222,7 @@ MAP_NONE   EQU 0
 	map_const TWINKLE_GYM_RED_ROOM,						  24, 28 ; 13
 	map_const ROUTE_10_REST_HOUSE,						   4,  5 ; 14
 	map_const ROUTE_10_MOVE_REMINDER_HOUSE,				   4,  5 ; 15
-	map_const ROUTE_17_TENT,							   2,  3 ; 16
+	map_const ROUTE_17_TRAILER,							   3,  2 ; 16
 	
 	newgroup													 ; 12
 	

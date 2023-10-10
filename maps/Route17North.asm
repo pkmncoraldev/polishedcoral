@@ -8,7 +8,7 @@ Route17North_MapScriptHeader:
 	callback MAPCALLBACK_TILES, Route17NorthCallback
 
 	db 1 ; warp events
-	warp_event  7, 19, ROUTE_17_TENT, 1
+	warp_event  7, 19, ROUTE_17_TRAILER, 1
 
 	db 15 ; coord events
 	xy_trigger 0, 21,  7, 0, Route17NorthLight, 0, 0
@@ -33,13 +33,12 @@ Route17North_MapScriptHeader:
 	object_event  0,  4, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route17NorthCampfire, EVENT_HIDE_OW_OBJECTS_BROWN
 	object_event  0,  4, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Route17NorthCampfire, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event  0,  4, SPRITE_MISC_OVERHEAD, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  7, 14, SPRITE_POKEMANIAC, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route17NorthNPC1, -1
+	object_event  7, 14, SPRITE_POKEMANIAC, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route17NorthNPC2, -1
 	
 	const_def 1 ; object constants
 	const ROUTE_17_NORTH_FIRE_BROWN
 	const ROUTE_17_NORTH_FIRE_TEAL
 	const ROUTE_17_NORTH_FIREBOTTOM
-	const ROUTE_17_NORTH_NPC1
 	
 	
 Route17NorthTrigger0:
@@ -132,13 +131,17 @@ Route17NorthNPC1:
 	closetext
 	
 	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, ROUTE_17_NORTH_NPC1, 15
+	showemote EMOTE_SHOCK, ROUTE_17_TRAILER_NPC, 15
 	faceplayer
 	opentext
 	writetext Route17NorthNPC1Text5
 	waitbutton
 	closetext
+	spriteface ROUTE_17_TRAILER_NPC, LEFT
 	end
+	
+Route17NorthNPC2:
+	jumptextfaceplayer Route17NorthNPC2Text
 	
 Route17NorthNPC1Text1:
 	text "They say that once"
@@ -168,4 +171,8 @@ Route17NorthNPC1Text5:
 	line "song I heard in"
 	cont "town stuck in"
 	cont "my head!"
+	done
+	
+Route17NorthNPC2Text:
+	text "TEXT 1"
 	done

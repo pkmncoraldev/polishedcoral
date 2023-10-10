@@ -605,7 +605,7 @@ ENDM
 	map_attributes BrilloMart, BRILLO_MART, $0, 0
 	map_attributes BrilloGameCorner, BRILLO_GAME_CORNER, $0, 0
 	map_attributes BrilloPoliceStation, BRILLO_POLICE_STATION, $0, 0
-	map_attributes Route17Tent, ROUTE_17_TENT, $0, 0
+	map_attributes Route17Trailer, ROUTE_17_TRAILER, $0, 0
 	map_attributes Airport, AIRPORT, $0, 0
 	map_attributes RadiantFlowerShop, RADIANT_FLOWER_SHOP, $0, 0
 	map_attributes RadiantOrphanage1F, RADIANT_ORPHANAGE_1F, $0, 0

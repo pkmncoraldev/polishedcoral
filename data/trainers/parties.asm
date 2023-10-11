@@ -2291,7 +2291,16 @@ OfficerGroup:
 ; ================
 
 	; OFFICER
-	db "UNUSED@"
+	db "SANCHEZ@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; OFFICER
+	db "HARTWELL@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -2516,6 +2525,15 @@ LassGroup:
 
 	; LASS
 	db "BEBE@"		;8 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; LASS
+	db "LENA@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3201,7 +3219,7 @@ BurglarGroup:
 ; ================
 
 	; BURGLAR
-	db "UNUSED@"
+	db "ZEDAKI@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3359,6 +3377,15 @@ BlackbeltGroup:
 	db -1 ; end
 
 ; ================
+
+	; BLACKBELT_T
+	db "ZERO@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3449,6 +3476,15 @@ BikerGroup:
 	db -1 ; end
 
 ; ================
+
+	; BIKER
+	db "TIM@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3458,6 +3494,15 @@ CueballGroup:
 
 	; CUEBALL
 	db "CURLY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; CUEBALL
+	db "PUDGE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3748,6 +3793,15 @@ DelinquentmGroup:
 
 	; DELINQUENT_M
 	db "IGGY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DELINQUENT_M
+	db "YANCY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

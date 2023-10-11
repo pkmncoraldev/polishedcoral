@@ -254,6 +254,8 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass OFFICER
+	const SANCHEZ
+	const HARTWELL
 
 
 	trainerclass POKEMANIAC
@@ -284,6 +286,7 @@ PLAYER_F EQU __enum__
 	const BEBE_6
 	const BEBE_7
 	const BEBE_8
+	const LENA
 
 
 	trainerclass BEAUTY
@@ -384,6 +387,7 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass BURGLAR
+	const ZEDAKI
 
 
 	trainerclass SCIENTIST
@@ -408,6 +412,7 @@ PLAYER_F EQU __enum__
 
 	trainerclass BLACKBELT_T
 	const TOSHI
+	const ZERO
 
 
 	trainerclass TEACHER
@@ -423,10 +428,12 @@ PLAYER_F EQU __enum__
 	const REX
 	const JAMES
 	const HERB
+	const TIM
 
 
 	trainerclass CUEBALL
 	const CURLY
+	const PUDGE
 
 
 	trainerclass COOLTRAINERM
@@ -481,6 +488,7 @@ PLAYER_F EQU __enum__
 	trainerclass DELINQUENT_M
 	const SPIKE
 	const IGGY
+	const YANCY
 
 
 	trainerclass DELINQUENT_F

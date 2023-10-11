@@ -1394,6 +1394,8 @@ CheckMakePal::
 	jp z, MakePalSnow
 	cp TILESET_RANCH
 	jp z, MakePalRanchGreen
+	cp TILESET_DESERT
+	jp z, MakePalDesert
 ;fallthrough
 MakePalGreen::
 	ld a, [wTimeOfDayPal]
@@ -1404,24 +1406,16 @@ MakePalGreen::
 	cp DUSK
 	jr z, .dusk
 	ld hl, StandardGrassDayPalette
-	jr .cont
+	jp MakePalFinished
 .nite
 	ld hl, StandardGrassNitePalette
-	jr .cont
+	jp MakePalFinished
 .morn
 	ld hl, StandardGrassMornPalette
-	jr .cont
+	jp MakePalFinished
 .dusk
 	ld hl, StandardGrassDuskPalette
-	jr .cont
-.cont
-	ld de, wOBPals + 8 * 7
-	ld bc, 8
-	ld a, $5
-	call FarCopyWRAM
-	ld a, $1
-	ld [hCGBPalUpdate], a
-	ret
+	jp MakePalFinished
 	
 MakePalRanchGreen::
 	ld a, [wTimeOfDayPal]
@@ -1432,24 +1426,16 @@ MakePalRanchGreen::
 	cp DUSK
 	jr z, .dusk
 	ld hl, RanchGrassDayPalette
-	jr .cont
+	jp MakePalFinished
 .nite
 	ld hl, RanchGrassNitePalette
-	jr .cont
+	jp MakePalFinished
 .morn
 	ld hl, RanchGrassMornPalette
-	jr .cont
+	jp MakePalFinished
 .dusk
 	ld hl, RanchGrassDuskPalette
-	jr .cont
-.cont
-	ld de, wOBPals + 8 * 7
-	ld bc, 8
-	ld a, $5
-	call FarCopyWRAM
-	ld a, $1
-	ld [hCGBPalUpdate], a
-	ret
+	jp MakePalFinished
 	
 MakePalPink::
 	ld a, [wTimeOfDayPal]
@@ -1460,24 +1446,16 @@ MakePalPink::
 	cp DUSK
 	jr z, .dusk
 	ld hl, PinkGrassDayPalette
-	jr .cont
+	jp MakePalFinished
 .nite
 	ld hl, PinkGrassNitePalette
-	jr .cont
+	jp MakePalFinished
 .morn
 	ld hl, PinkGrassMornPalette
-	jr .cont
+	jp MakePalFinished
 .dusk
 	ld hl, PinkGrassDuskPalette
-	jr .cont
-.cont
-	ld de, wOBPals + 8 * 7
-	ld bc, 8
-	ld a, $5
-	call FarCopyWRAM
-	ld a, $1
-	ld [hCGBPalUpdate], a
-	ret
+	jp MakePalFinished
 	
 MakePalSnow::
 	eventflagcheck EVENT_SNOWSTORM_HAPPENING
@@ -1490,24 +1468,16 @@ MakePalSnow::
 	cp DUSK
 	jr z, .dusk
 	ld hl, SnowGrassDayPalette
-	jr .cont
+	jp MakePalFinished
 .nite
 	ld hl, SnowGrassNitePalette
-	jr .cont
+	jp MakePalFinished
 .morn
 	ld hl, SnowGrassMornPalette
-	jr .cont
+	jp MakePalFinished
 .dusk
 	ld hl, SnowGrassDuskPalette
-	jr .cont
-.cont
-	ld de, wOBPals + 8 * 7
-	ld bc, 8
-	ld a, $5
-	call FarCopyWRAM
-	ld a, $1
-	ld [hCGBPalUpdate], a
-	ret
+	jp MakePalFinished
 	
 MakePalSnowstorm:
 	ld a, [wTimeOfDayPal]
@@ -1518,24 +1488,16 @@ MakePalSnowstorm:
 	cp DUSK
 	jr z, .dusk
 	ld hl, SnowstormGrassDayPalette
-	jr .cont
+	jp MakePalFinished
 .nite
 	ld hl, SnowstormGrassNitePalette
-	jr .cont
+	jr MakePalFinished
 .morn
 	ld hl, SnowstormGrassMornPalette
-	jr .cont
+	jr MakePalFinished
 .dusk
 	ld hl, SnowstormGrassDuskPalette
-	jr .cont
-.cont
-	ld de, wOBPals + 8 * 7
-	ld bc, 8
-	ld a, $5
-	call FarCopyWRAM
-	ld a, $1
-	ld [hCGBPalUpdate], a
-	ret
+	jr MakePalFinished
 	
 MakePalSnowTree::
 	eventflagcheck EVENT_SNOWSTORM_HAPPENING
@@ -1548,24 +1510,16 @@ MakePalSnowTree::
 	cp DUSK
 	jr z, .dusk
 	ld hl, SnowTreeDayPalette
-	jr .cont
+	jr MakePalFinished
 .nite
 	ld hl, SnowTreeNitePalette
-	jr .cont
+	jr MakePalFinished
 .morn
 	ld hl, SnowTreeMornPalette
-	jr .cont
+	jr MakePalFinished
 .dusk
 	ld hl, SnowTreeDuskPalette
-	jr .cont
-.cont
-	ld de, wOBPals + 8 * 7
-	ld bc, 8
-	ld a, $5
-	call FarCopyWRAM
-	ld a, $1
-	ld [hCGBPalUpdate], a
-	ret
+	jr MakePalFinished
 	
 MakePalSnowstormTree:
 	ld a, [wTimeOfDayPal]
@@ -1576,17 +1530,37 @@ MakePalSnowstormTree:
 	cp DUSK
 	jr z, .dusk
 	ld hl, SnowstormTreeDayPalette
-	jr .cont
+	jr MakePalFinished
 .nite
 	ld hl, SnowstormTreeNitePalette
-	jr .cont
+	jr MakePalFinished
 .morn
 	ld hl, SnowstormTreeMornPalette
-	jr .cont
+	jr MakePalFinished
 .dusk
 	ld hl, SnowstormTreeDuskPalette
-	jr .cont
-.cont
+	jr MakePalFinished
+
+MakePalDesert:
+	ld a, [wTimeOfDayPal]
+	cp NITE
+	jr z, .nite
+	cp MORN
+	jr z, .morn
+	cp DUSK
+	jr z, .dusk
+	ld hl, DesertGrassDayPalette
+	jr MakePalFinished
+.nite
+	ld hl, DesertGrassNitePalette
+	jr MakePalFinished
+.morn
+	ld hl, DesertGrassMornPalette
+	jr MakePalFinished
+.dusk
+	ld hl, DesertGrassDuskPalette
+;fallthru
+MakePalFinished:
 	ld de, wOBPals + 8 * 7
 	ld bc, 8
 	ld a, $5
@@ -1678,6 +1652,18 @@ INCLUDE "maps/palettes/bgpals/grass/snowstorm/tree/dusk.pal"
 
 SnowstormTreeNitePalette:
 INCLUDE "maps/palettes/bgpals/grass/snowstorm/tree/nite.pal"
+
+DesertGrassMornPalette:
+INCLUDE "maps/palettes/bgpals/grass/desert/morn.pal"
+	
+DesertGrassDayPalette:
+INCLUDE "maps/palettes/bgpals/grass/desert/day.pal"
+
+DesertGrassDuskPalette:
+INCLUDE "maps/palettes/bgpals/grass/desert/dusk.pal"
+
+DesertGrassNitePalette:
+INCLUDE "maps/palettes/bgpals/grass/desert/nite.pal"
 	
 Script_earthquake:
 ; parameters:

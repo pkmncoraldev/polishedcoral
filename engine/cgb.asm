@@ -924,7 +924,7 @@ _CGB_TrainerCard2: ; 9289
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld a, JASMINE
+	ld a, LEILANI
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 

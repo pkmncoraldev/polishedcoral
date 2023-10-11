@@ -240,8 +240,8 @@ EngineFlags: ; 80462
 	engine_flag wMetGymLeaderFlags, 1  ; rodney
 	engine_flag wMetGymLeaderFlags, 2  ; wendy
 	engine_flag wMetGymLeaderFlags, 3  ; charlie
-	engine_flag wMetGymLeaderFlags, 4  ; chuck
-	engine_flag wMetGymLeaderFlags, 5  ; jasmine
+	engine_flag wMetGymLeaderFlags, 4  ; polly
+	engine_flag wMetGymLeaderFlags, 5  ; leilani
 	engine_flag wMetGymLeaderFlags, 6  ; pryce
 	engine_flag wMetGymLeaderFlags, 7  ; clair
 	

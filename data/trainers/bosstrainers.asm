@@ -4,7 +4,7 @@ BossTrainers:
 	db WENDY
 	db CHARLIE
 	db POLLY
-	db JASMINE
+	db LEILANI
 	db PRYCE
 	db CLAIR
 	db WILL

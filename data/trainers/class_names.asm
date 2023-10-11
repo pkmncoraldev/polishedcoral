@@ -11,7 +11,7 @@ TrainerClassNames::
 	db "LEADER@"           ; WENDY
 	db "LEADER@"           ; CHARLIE
 	db "LEADER@"           ; POLLY
-	db "LEADER@"           ; JASMINE
+	db "LEADER@"           ; LEILANI
 	db "LEADER@"           ; PRYCE
 	db "LEADER@"           ; CLAIR
 	db "ELITE FOUR@"       ; WILL

@@ -37,7 +37,7 @@ PLAYER_F EQU __enum__
 
 	trainerclass POLLY
 
-	trainerclass JASMINE
+	trainerclass LEILANI
 
 	trainerclass PRYCE
 

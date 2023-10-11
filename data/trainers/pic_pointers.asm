@@ -11,7 +11,7 @@ TrainerPicPointers::
 	dba WendyPic
 	dba CharliePic
 	dba PollyPic
-	dba JasminePic
+	dba LeilaniPic
 	dba PrycePic
 	dba ClairPic
 	dba WillPic

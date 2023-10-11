@@ -11,7 +11,7 @@ BTTrainerClassSprites:
 	db SPRITE_WENDY      	; WENDY
 	db SPRITE_CHARLIE       ; CHARLIE
 	db SPRITE_POLLY         ; POLLY
-	db SPRITE_GOLD      	; JASMINE
+	db SPRITE_LEILANI      	; LEILANI
 	db SPRITE_GOLD          ; PRYCE
 	db SPRITE_GOLD          ; CLAIR
 	db SPRITE_GOLD          ; WILL

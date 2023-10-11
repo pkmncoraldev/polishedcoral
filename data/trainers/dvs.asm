@@ -41,8 +41,8 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db 100, $99, $99, $99, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; rodney
 	db 252, $77, $7A, $77, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; wendy
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; charlie
-	db 252, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; chuck
-	db 252, $EE, $EE, $EE, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; jasmine
+	db 252, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; polly
+	db 252, $EE, $EE, $EE, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; leilani
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; pryce
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; clair
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; will

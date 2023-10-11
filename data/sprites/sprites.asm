@@ -61,7 +61,7 @@ SpriteHeaders:
 	overworld_sprite WendySpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite CharlieSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite PollySpriteGFX, WALKING_SPRITE, PAL_OW_PINK
-	overworld_sprite JasmineSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite LeilaniSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite PryceSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ClairSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite Bikini1SpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
@@ -223,7 +223,6 @@ SpriteHeaders:
 	overworld_sprite CopScrubSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SingerSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite DaisySpriteGFX, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite LeilaniSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite ErikaSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite LeilaniBedSpriteGFX, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite TrunksWaterSpriteGFX, STANDING_SPRITE, PAL_OW_PURPLE

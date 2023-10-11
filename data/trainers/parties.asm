@@ -454,12 +454,12 @@ PollyGroup:
 ; ================================
 
 
-JasmineGroup:
+LeilaniGroup:
 ; ================================
 ; ================
 
-	; JASMINE
-	db "UNUSED@"
+	; LEILANI
+	db "LEILANI@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

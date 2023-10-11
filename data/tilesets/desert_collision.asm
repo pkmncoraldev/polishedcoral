@@ -216,11 +216,11 @@
 	tilecoll SKATE, SKATE, SKATE, SKATE ; d7
 	tilecoll SKATE, SKATE, SKATE, SKATE ; d8
 	tilecoll SKATE, SKATE, SKATE, SKATE ; d9
-	tilecoll WALL, WALL, WALL, WALL ; da
+	tilecoll WALL, WALL, SAND, SAND ; da
 	tilecoll SKATE, SKATE, FLOOR, FLOOR ; db
 	tilecoll WARP_CARPET_LEFT, SKATE, WARP_CARPET_LEFT, SKATE ; dc
 	tilecoll SKATE, WARP_CARPET_RIGHT, SKATE, WARP_CARPET_RIGHT ; dd
-	tilecoll WALL, WALL, WALL, WALL ; de
+	tilecoll SAND, SAND, WALL, SAND ; de
 	tilecoll SKATE, SKATE, FLOOR, SKATE ; df
 	tilecoll SKATE, SKATE, SKATE, SKATE ; e0
 	tilecoll SKATE, FLOOR, SKATE, FLOOR ; e1

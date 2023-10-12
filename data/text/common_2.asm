@@ -873,14 +873,7 @@ UnknownText_0x1c1203::
 	prompt
 
 UnknownText_0x1c123a::
-	text "Current Record"
-	para "@"
-	text_from_ram wStringBuffer1
-	text " caught by"
-	line "@"
-	text_from_ram wMagikarpRecordHoldersName
-	text_waitbutton
-	db "@@"
+	text "@"
 
 UnknownText_0x1c1261::
 	text "Congratulations!"

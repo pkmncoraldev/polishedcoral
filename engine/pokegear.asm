@@ -1934,6 +1934,8 @@ AnimateTuningKnob: ; 91640 (24:5640)
 	ld [wPlaceBallsX], a
 	jp .update
 .A
+	call CheckUnlockedSong
+	ret z
 	ld a, [wTapePlayerActive]
 	cp 0
 	jr z, .start
@@ -2054,7 +2056,26 @@ UpdateRadioStation: ; 9166f (24:566f)
 	ld [hBGMapMode], a
 	ret
 
+CheckUnlockedSong:
+	ld a, [wRadioTuningKnob]
+	inc a
+	ld c, a
+	ld hl, wUnlockedSongs
+	ld b, CHECK_FLAG
+	ld d, 0
+	predef FlagPredef
+	ld a, c
+	and a
+	ret
+
 DrawRadioScreen:
+;	ld a, MUSIC_POKEMON_CENTER
+;	ld c, a
+;	ld hl, wUnlockedSongs
+;	ld b, SET_FLAG
+;	ld d, 0
+;	predef FlagPredef
+
 	ld de, RadioTilemapRLE
 	call Pokegear_LoadTilemapRLE
 	
@@ -2082,11 +2103,37 @@ DrawRadioScreen:
 	call Pokegear_LoadTilemapRLE
 .skip_play
 ;	call Pokegear_FinishTilemap
+	
+	call CheckUnlockedSong
+	jr z, .song_not_unlocked
 	ld a, [wRadioTuningKnob]
 	inc a
 	farcall DrawSongInfo
 	ret
+.song_not_unlocked
+	ld de, .Unknown
+	hlcoord 1, 13
+	call PlaceString
+	ld de, .Composer
+	hlcoord 1, 12
+	call PlaceString
+	ld de, .Unknown
+	hlcoord 1, 9
+	call PlaceString
+	ld de, .Title
+	hlcoord 1, 8
+	call PlaceString
+	ret
 
+.Composer:
+	db "COMPOSER:@"
+	
+.Title:
+	db "TITLE:@"
+	
+.Unknown
+	db "???@"
+	
 _TownMap: ; 9191c
 	ld hl, wOptions1
 	ld a, [hl]

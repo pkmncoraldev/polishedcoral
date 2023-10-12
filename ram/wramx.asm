@@ -1230,15 +1230,13 @@ wPartyMonOT:: ds NAME_LENGTH * PARTY_LENGTH
 
 wPartyMonNicknames:: ds PKMN_NAME_LENGTH * PARTY_LENGTH
 wPartyMonNicknamesEnd::
-
-	ds 1 ; unused
 	
 wEncounterHouseMon:: ds 1
 
 wPlayerSplitHandleMonFaint:: ds 1
 wEnemySplitHandleMonFaint:: ds 1
 
-	ds 8 ; unused
+;	ds 22 ; unused
 
 wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::
@@ -1297,14 +1295,12 @@ wRoamMons_CurrentMapGroup:: ds 1
 wRoamMons_LastMapNumber:: ds 1
 wRoamMons_LastMapGroup:: ds 1
 
-wBestMagikarpLengthMm::
-wBestMagikarpLengthMmHi:: ds 1
-wBestMagikarpLengthMmLo:: ds 1
-wMagikarpRecordHoldersName:: ds NAME_LENGTH
-
 wRegisteredItems::
 ; You can map 4 items, to select + directions
 	ds 4
+
+wUnlockedSongs:: flag_array NUM_SONGS
+wEndUnlockedSongs::
 
 wPokemonDataEnd::
 wGameDataEnd::

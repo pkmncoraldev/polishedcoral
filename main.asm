@@ -4313,7 +4313,10 @@ SECTION "Code 23", ROMX
 INCLUDE "engine/battle/hidden_power.asm"
 INCLUDE "engine/battle/misc.asm"
 INCLUDE "engine/unowndex.asm"
-INCLUDE "engine/events/magikarp.asm"
+Special_CheckMagikarpLength:
+Special_MagikarpHouseSign:
+	ret
+;INCLUDE "engine/events/magikarp.asm"
 INCLUDE "engine/events/name_rater.asm"
 INCLUDE "audio/distorted_cries.asm"
 

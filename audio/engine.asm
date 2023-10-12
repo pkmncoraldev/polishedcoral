@@ -2346,6 +2346,7 @@ _PlayMusic:: ; e8b30
 	call NiteTempo
 	pop de
 	pop af
+	
 	ld hl, wMusicID
 	ld [hl], e ; song number
 	inc hl
@@ -2381,6 +2382,12 @@ _PlayMusic:: ; e8b30
 	ld [wNoiseSampleAddressHi], a
 	ld [wNoiseSampleDelay], a
 	ld [wMusicNoiseSampleSet], a
+	ld a, [wMusicID]
+	ld c, a
+	ld hl, wUnlockedSongs
+	ld b, SET_FLAG
+	ld d, 0
+	predef FlagPredef
 	jp MusicOn
 
 ; e8b79

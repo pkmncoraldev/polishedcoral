@@ -2104,6 +2104,17 @@ DrawRadioScreen:
 .skip_play
 ;	call Pokegear_FinishTilemap
 	
+	ld a, [wRadioTuningKnob]
+	inc a
+	ld [wRadioTuningKnob], a
+	ld de, wRadioTuningKnob
+	hlcoord 1, 3
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
+	call PrintNum
+	ld a, [wRadioTuningKnob]
+	dec a
+	ld [wRadioTuningKnob], a
+	
 	call CheckUnlockedSong
 	jr z, .song_not_unlocked
 	ld a, [wRadioTuningKnob]

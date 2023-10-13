@@ -118,6 +118,12 @@ BrilloSingerTextScrollAsm2:
 	ld [wOptions1], a
 	xor a
 	ld [wPlaceBallsX], a
+	ld a, MUSIC_OASIS
+	ld c, a
+	ld hl, wUnlockedSongs
+	ld b, SET_FLAG
+	ld d, 0
+	predef FlagPredef
 	ret
 	
 BrilloSinger:

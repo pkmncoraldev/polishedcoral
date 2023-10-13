@@ -59,7 +59,7 @@
 	const MUSIC_BAR
 	const MUSIC_DARKNESS
 	
-NUM_SONGS EQU const_value
+NUM_TAPE_PLAYER_SONGS EQU const_value
 	
 	const MUSIC_MOUNTAINTOP
 	const MUSIC_HEAL
@@ -82,6 +82,8 @@ NUM_SONGS EQU const_value
 	const MUSIC_DEV_MESSAGE_END
 	const MUSIC_WILD_BATTLE_2
 	const MUSIC_FAKE_ROUTE_1
+
+NUM_SONGS EQU const_value
 
 ; special
 MUSIC_STARGLOW EQU -1

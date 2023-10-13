@@ -2383,7 +2383,7 @@ _PlayMusic:: ; e8b30
 	ld [wNoiseSampleDelay], a
 	ld [wMusicNoiseSampleSet], a
 	ld a, [wMusicID]
-	cp NUM_SONGS
+	cp NUM_TAPE_PLAYER_SONGS
 	jr nc, .skip_unlock
 	ld c, a
 	ld hl, wUnlockedSongs

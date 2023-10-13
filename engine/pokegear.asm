@@ -1989,7 +1989,7 @@ AnimateTuningKnob: ; 91640 (24:5640)
 .right
 	ld hl, wRadioTuningKnob
 	ld a, [hl]
-	cp NUM_SONGS - 2
+	cp NUM_TAPE_PLAYER_SONGS - 2
 	ret nc
 ;	inc [hl]
 	call DelayFrame

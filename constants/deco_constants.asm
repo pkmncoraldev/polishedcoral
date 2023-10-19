@@ -93,6 +93,9 @@ __enum__ = 0
 	deco  BIG_SNORLAX_DOLL
 	deco  BIG_ONIX_DOLL
 	deco  BIG_LAPRAS_DOLL
+	deco  BIG_GYARADOS_DOLL
+	deco  BIG_MAMOSWINE_DOLL
+	deco  BIG_MUK_DOLL
 
 	const DOLLS
 	deco  PIKACHU_DOLL

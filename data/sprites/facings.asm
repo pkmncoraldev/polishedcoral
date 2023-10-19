@@ -249,18 +249,18 @@ FacingBigDollSym: ; big snorlax or lapras doll
 	db  0,  8, 0, $01
 	db  8,  0, 0, $02
 	db  8,  8, 0, $03
-	db 16,  0, 0, $04
-	db 16,  8, 0, $05
-	db 24,  0, 0, $06
-	db 24,  8, 0, $07
-	db  0, 24, 0 | X_FLIP, $00
-	db  0, 16, 0 | X_FLIP, $01
-	db  8, 24, 0 | X_FLIP, $02
-	db  8, 16, 0 | X_FLIP, $03
-	db 16, 24, 0 | X_FLIP, $04
-	db 16, 16, 0 | X_FLIP, $05
-	db 24, 24, 0 | X_FLIP, $06
-	db 24, 16, 0 | X_FLIP, $07
+	db  0, 16, 0, $04
+	db  0, 24, 0, $05
+	db  8, 16, 0, $06
+	db  8, 24, 0, $07
+	db 16,  0, 0, $08
+	db 16,  8, 0, $09
+	db 24,  0, 0, $0a
+	db 24,  8, 0, $0b
+	db 16, 24, 0 | X_FLIP, $08
+	db 16, 16, 0 | X_FLIP, $09
+	db 24, 24, 0 | X_FLIP, $0a
+	db 24, 16, 0 | X_FLIP, $0b
 ; 41e4
 
 FacingWeirdTree1:
@@ -343,7 +343,7 @@ FacingCutTree:
 	db 12,  8, 2, $07
 
 FacingBigGyarados1:
-	db 16 ; #
+	db 15 ; #
 	db  0,  0, 0, $00
 	db  0,  8, 0, $01
 	db  8,  0, 0, $02
@@ -359,10 +359,10 @@ FacingBigGyarados1:
 	db 16, 16, 0, $0c
 	db 16, 24, 0, $0d
 	db 24, 16, 0, $0e
-	db 24, 24, 0, $80
+;	db 24, 24, 0, $80
 
 FacingBigGyarados2:
-	db 16 ; #
+	db 15 ; #
 	db  0,  0, 0, $00
 	db  0,  8, 0, $01
 	db  8,  0, 0, $81
@@ -378,7 +378,7 @@ FacingBigGyarados2:
 	db 16, 16, 0, $8b
 	db 16, 24, 0, $8c
 	db 24, 16, 0, $8d
-	db 24, 24, 0, $8e
+;	db 24, 24, 0, $8e
 
 FacingStepDownFlip:
 	db 4 ; #

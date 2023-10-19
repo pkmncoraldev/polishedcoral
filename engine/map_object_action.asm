@@ -127,15 +127,22 @@ SetFacingUmbrellaRight:
 	ret
 	
 SetFacingBigDoll: ; 45c5
-;	ld a, [wVariableSprites + SPRITE_BIG_DOLL - SPRITE_VARS]
-;	cp SPRITE_BIG_ONIX
-;	ld a, FACING_BIG_DOLL_ASYM
-;	jr z, SetFixedFacing
+	ld a, [wVariableSprites + SPRITE_BIG_DOLL - SPRITE_VARS]
+	cp SPRITE_BIG_MUK
+	jp z, SetFacingBigMuk
+	cp SPRITE_BIG_ONIX
+	jr z, SetFacingBigOnix
+	cp SPRITE_BIG_GYARADOS
+	ld a, FACING_BIG_GYARADOS_1
+	jr z, SetFixedFacing
 SetFacingBigDollSym: ; 4589
-;	ld a, FACING_BIG_DOLL_SYM
-;	jr SetFixedFacing
+	ld a, FACING_BIG_DOLL_SYM
+	jr SetFixedFacing
 	ret
-; 4590
+SetFacingBigOnix:
+	ld a, FACING_BIG_DOLL_ASYM
+	jr SetFixedFacing
+	ret
 
 SetFacingFish: ; 456e
 	call GetSpriteDirection

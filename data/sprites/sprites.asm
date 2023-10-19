@@ -164,9 +164,11 @@ SpriteHeaders:
 	overworld_sprite CameramanSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SurfingPikachuSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite BigSnorlaxSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite BigOnixSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite BigLaprasSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
-	overworld_sprite BigMukSpriteGFX, BIG_MUK_SPRITE, PAL_OW_BROWN
-	overworld_sprite BigGyaradosSpriteGFX, BIG_GYARADOS_SPRITE, PAL_OW_RED
+	overworld_sprite BigGyaradosSpriteGFX, BIG_GYARADOS_SPRITE, PAL_OW_BLUE
+	overworld_sprite BigMamoswineSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite BigMukSpriteGFX, BIG_MUK_SPRITE, PAL_OW_GREEN
 	overworld_sprite SlowpoketailSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite WeirdTreeSpriteGFX, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite BallCutFruitSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
@@ -199,7 +201,6 @@ SpriteHeaders:
 	overworld_sprite KoffingBeanGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite ClothesRacksGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite MiscBaggageGFX, STANDING_SPRITE, PAL_OW_SILVER
-	overworld_sprite BigMamoswineSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite LighthouseSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite SunbeamViewSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite SunbeamViewSpriteCloudsGFX, WALKING_SPRITE, PAL_OW_SILVER

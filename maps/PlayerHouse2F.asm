@@ -30,9 +30,9 @@ PlayerHouse2F_MapScriptHeader:
 
 	db 22 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
-	bg_event  5,  1, SIGNPOST_JUMPSTD, radio2
-	bg_event  7,  1, SIGNPOST_READ, PlayerHouseBookshelf
-	bg_event  3,  1, SIGNPOST_READ, PlayerHouseCloset
+	bg_event  5,  1, SIGNPOST_READ, PlayerHouseRadio
+	bg_event -1, -1, SIGNPOST_READ, PlayerHouseBookshelf
+	bg_event  7,  1, SIGNPOST_READ, PlayerHouseCloset
 ;	powergap
 	bg_event  2, 10, SIGNPOST_READ, PlayerHouseDebugPoster2
 	bg_event  4, 10, SIGNPOST_JUMPTEXT, PlayerHouseSunset
@@ -53,13 +53,22 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event 18, 14, SIGNPOST_JUMPTEXT, PlayerHouseRadiant
 	bg_event  4, 18, SIGNPOST_JUMPTEXT, PlayerHouseDusk
 
-	db 3 ; object events
-	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_N64
-	object_event  6,  2, SPRITE_SNES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_N64
-	object_event  6,  2, SPRITE_N64, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_SNES
+	db 5 ; object events
+	object_event -5, -5, SPRITE_SNES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GameConsole, -1
+	object_event  6,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_KRISS_HOUSE_2F_CONSOLE
+	object_event  6,  4, SPRITE_DOLL_1, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_KRISS_HOUSE_2F_DOLL_1
+	object_event  7,  4, SPRITE_DOLL_2, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_KRISS_HOUSE_2F_DOLL_2
+	object_event  2,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_KRISS_HOUSE_2F_BIG_DOLL
+;	object_event  3,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_KRISS_HOUSE_2F_BIG_DOLL
+;	object_event  2,  2, SPRITE_BIG_DOLL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_KRISS_HOUSE_2F_BIG_DOLL
+;	object_event  3,  2, SPRITE_BIG_DOLL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_KRISS_HOUSE_2F_BIG_DOLL
 
 	const_def 1 ; object constants
-	const PLAYERHOUSE2F_SNES
+	const PLAYERHOUSE2F_SNES_BUTTONS
+	const PLAYERHOUSE2F_CONSOLE
+	const PLAYERHOUSE2F_DOLL_1
+	const PLAYERHOUSE2F_DOLL_2
+	const PLAYERHOUSE2F_BIG_DOLL
 	
 PlayerHouseDebugPoster2:
 	opentext
@@ -519,7 +528,7 @@ PlayerHouseDusk:
 	done
 	
 PlayerHouse2FInitializeRoom:
-;	special ToggleDecorationsVisibility
+	special ToggleDecorationsVisibility
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	checkevent EVENT_INITIALIZED_EVENTS
 	iftrue .SkipInizialization
@@ -576,7 +585,7 @@ PlayerHouse2FInitializeRoom:
 	clearevent EVENT_PLAYER_IS_LEAF
 	clearevent EVENT_PLAYER_IS_GOLD
 	clearevent EVENT_PLAYER_IS_KRIS
-	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_RED
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORY
 	jump .done
 .leaf
 	clearevent EVENT_PLAYER_IS_MALE
@@ -588,7 +597,7 @@ PlayerHouse2FInitializeRoom:
 	setevent EVENT_PLAYER_IS_LEAF
 	clearevent EVENT_PLAYER_IS_GOLD
 	clearevent EVENT_PLAYER_IS_KRIS
-	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_LEAF
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORY
 	jump .done
 .gold
 	setevent EVENT_PLAYER_IS_MALE
@@ -600,7 +609,7 @@ PlayerHouse2FInitializeRoom:
 	clearevent EVENT_PLAYER_IS_LEAF
 	setevent EVENT_PLAYER_IS_GOLD
 	clearevent EVENT_PLAYER_IS_KRIS
-	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_GOLD
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORY
 	jump .done
 .kris
 	clearevent EVENT_PLAYER_IS_MALE
@@ -612,7 +621,7 @@ PlayerHouse2FInitializeRoom:
 	clearevent EVENT_PLAYER_IS_LEAF
 	clearevent EVENT_PLAYER_IS_GOLD
 	setevent EVENT_PLAYER_IS_KRIS
-	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_KRIS
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORY
 .done
 	jumpstd initializeevents
 	return
@@ -621,18 +630,52 @@ PlayerHouse2FInitializeRoom:
 	return
 
 PlayerHouse2FSetSpawn:
-;	special ToggleMaptileDecorations
+	special ToggleMaptileDecorations
+	callasm PlayerHouseCheckConsoleAsm
+	ifequal 1, .snes
+	ifequal 2, .n64
+	clearevent EVENT_N64
+	clearevent EVENT_SNES
+	jump .finished_console
+.snes
+	clearevent EVENT_N64
+	setevent EVENT_SNES
+	moveperson PLAYERHOUSE2F_SNES_BUTTONS, 6, 2
+	jump .finished_console
+.n64
+	setevent EVENT_N64
+	clearevent EVENT_SNES
+	changeblock $6, $0, $22
+.finished_console
 	checkdebugmode
 	iffalse .skip_debug
-	changeblock $4, $6, $2c
+	changeblock $2, $6, $23
 .skip_debug
-	checkevent EVENT_N64
-	iftrue .n64
+;	checkevent EVENT_N64
+;	iftrue .n64
+;	return
+;.n64
+;	changeblock $6, $0, $2b
+;	changeblock $6, $2, $2a
 	return
+
+PlayerHouseCheckConsoleAsm:
+	ld a, [wConsole]
+	cp DECO_SNES
+	jr z, .snes
+	cp DECO_N64
+	jr z, .n64
+	xor a
+	ld [wScriptVar], a
+	ret
+.snes
+	ld a, 1
+	ld [wScriptVar], a
+	ret
 .n64
-	changeblock $6, $0, $2b
-	changeblock $6, $2, $2a
-	return
+	ld a, 2
+	ld [wScriptVar], a
+	ret
 
 PlayerHouseBookshelf:
 	jumpstd picturebookshelf
@@ -684,14 +727,73 @@ GameConsoleMusic:
 	ret
 	
 PlayerHouseRadio:
+	setevent EVENT_DECO_BED_1
+	setevent EVENT_DECO_BED_2
+	setevent EVENT_DECO_BED_3
+	setevent EVENT_DECO_BED_4
+	setevent EVENT_DECO_BED_5
+	setevent EVENT_DECO_BED_6
+	setevent EVENT_DECO_CARPET_1
+	setevent EVENT_DECO_CARPET_2
+	setevent EVENT_DECO_CARPET_3
+	setevent EVENT_DECO_CARPET_4
+	setevent EVENT_DECO_CARPET_5
+	setevent EVENT_DECO_PLANT_1
+	setevent EVENT_DECO_PLANT_2
+	setevent EVENT_DECO_PLANT_3
+	setevent EVENT_DECO_PLANT_4
+	setevent EVENT_DECO_POSTER_1
+	setevent EVENT_DECO_POSTER_2
+	setevent EVENT_DECO_POSTER_3
+	setevent EVENT_DECO_SNES
+	setevent EVENT_DECO_N64
+	setevent EVENT_DECO_BIG_SNORLAX_DOLL
+	setevent EVENT_DECO_BIG_ONIX_DOLL
+	setevent EVENT_DECO_BIG_LAPRAS_DOLL
+	setevent EVENT_DECO_PIKACHU_DOLL
+	setevent EVENT_DECO_RAICHU_DOLL
+	setevent EVENT_DECO_SURFING_PIKACHU_DOLL
+	setevent EVENT_DECO_CLEFAIRY_DOLL
+	setevent EVENT_DECO_JIGGLYPUFF_DOLL
+	setevent EVENT_DECO_BULBASAUR_DOLL
+	setevent EVENT_DECO_CHARMANDER_DOLL
+	setevent EVENT_DECO_SQUIRTLE_DOLL
+	setevent EVENT_DECO_CHIKORITA_DOLL
+	setevent EVENT_DECO_CYNDAQUIL_DOLL
+	setevent EVENT_DECO_TOTODILE_DOLL
+	setevent EVENT_DECO_POLIWAG_DOLL
+	setevent EVENT_DECO_MAREEP_DOLL
+	setevent EVENT_DECO_TOGEPI_DOLL
+	setevent EVENT_DECO_MAGIKARP_DOLL
+	setevent EVENT_DECO_ODDISH_DOLL
+	setevent EVENT_DECO_GENGAR_DOLL
+	setevent EVENT_DECO_MARACTUS_DOLL
+	setevent EVENT_DECO_DITTO_DOLL
+	setevent EVENT_DECO_VOLTORB_DOLL
+	setevent EVENT_DECO_STANTLER_DOLL
+	setevent EVENT_DECO_COTTONEE_DOLL
+	setevent EVENT_DECO_GEODUDE_DOLL
+	setevent EVENT_DECO_PINECO_DOLL
+	setevent EVENT_DECO_EXEGGCUTE_DOLL
+	setevent EVENT_DECO_TEDDIURSA_DOLL
+	setevent EVENT_DECO_MEOWTH_DOLL
+	setevent EVENT_DECO_BUIZEL_DOLL
+	setevent EVENT_DECO_GROWLITHE_DOLL
+	setevent EVENT_DECO_EEVEE_DOLL
+	setevent EVENT_DECO_GOLD_TROPHY
+	setevent EVENT_DECO_SILVER_TROPHY
 ;	jumpstd radio1
 	end
 
 PlayerHousePC:
-	jumptext PlayerHousePCText
-;	opentext
-;	special Special_PlayerHousePC
-;	endtext
+;	jumptext PlayerHousePCText
+	opentext
+	special Special_PlayerHousePC
+	iftrue .Warp
+	endtext
+.Warp:
+	warp NONE, 0, 0
+	end
 
 PlayerHouseCloset:
 	opentext

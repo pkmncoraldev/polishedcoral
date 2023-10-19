@@ -484,17 +484,17 @@ _GetSpritePalette:: ; 142c4
 	ret
 
 .is_pokemon
-;	ld a, [wMapGroup]
-;	cp GROUP_PLAYER_HOUSE_2F
-;	jr nz, .not_doll
-;	ld a, [wMapNumber]
-;	cp MAP_PLAYER_HOUSE_2F
-;	jr nz, .not_doll
-;	farcall GetMonIconPalette
-;	ld c, a
-;	ret
+	ld a, [wMapGroup]
+	cp GROUP_PLAYER_HOUSE_2F
+	jr nz, .not_doll
+	ld a, [wMapNumber]
+	cp MAP_PLAYER_HOUSE_2F
+	jr nz, .not_doll
+	farcall GetMonIconPalette
+	ld c, a
+	ret
 
-;.not_doll
+.not_doll
 ;	cp GROUP_ROUTE_34
 ;	jr nz, .not_daycare
 ;	ld a, [wMapNumber]

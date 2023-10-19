@@ -253,13 +253,13 @@ KrissPCMenuData: ; 0x15736
 	dw KrisLogOffMenu,       .LogOff
 	dw KrisLogOffMenu,       .TurnOff
 
-.WithdrawItem: db "WITHDRAW ITEM@"
-.DepositItem:  db "DEPOSIT ITEM@"
-.TossItem:     db "TOSS ITEM@"
-.MailBox:      db "MAIL BOX@"
-.Decoration:   db "DECORATION@"
-.TurnOff:      db "TURN OFF@"
-.LogOff:       db "LOG OFF@"
+.WithdrawItem: db "Withdraw Item@"
+.DepositItem:  db "Deposit Item@"
+.TossItem:     db "Toss Item@"
+.MailBox:      db "Mail Box@"
+.Decoration:   db "Decoration@"
+.TurnOff:      db "Turn Off@"
+.LogOff:       db "Log Off@"
 
 WITHDRAW_ITEM EQU 0
 DEPOSIT_ITEM  EQU 1
@@ -270,20 +270,20 @@ TURN_OFF      EQU 5
 LOG_OFF       EQU 6
 
 .KrissPCMenuList1:
-	db 4
-	db WITHDRAW_ITEM
-	db DEPOSIT_ITEM
-	db TOSS_ITEM
-;	db MAIL_BOX
-	db TURN_OFF
-	db -1
-;.KrissPCMenuList2:
 	db 5
 	db WITHDRAW_ITEM
 	db DEPOSIT_ITEM
 	db TOSS_ITEM
-;	db MAIL_BOX
-;	db DECORATION
+	db MAIL_BOX
+	db TURN_OFF
+	db -1
+;.KrissPCMenuList2:
+	db 6
+	db WITHDRAW_ITEM
+	db DEPOSIT_ITEM
+	db TOSS_ITEM
+	db MAIL_BOX
+	db DECORATION
 	db LOG_OFF
 	db -1
 

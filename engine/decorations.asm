@@ -1,8 +1,8 @@
 InitDecorations: ; 26751 (9:6751)
 	ld a, DECO_FEATHERY_BED
 	ld [wBed], a
-	ld a, DECO_TOWN_MAP
-	ld [wPoster], a
+;	ld a, DECO_RED_CARPET
+;	ld [wCarpet], a
 	ret
 
 _KrisDecorationMenu: ; 0x2675c
@@ -209,8 +209,10 @@ FindOwnedBeds: ; 268bd
 .beds ; 268c5
 	db DECO_FEATHERY_BED
 	db DECO_PINK_BED
-	db DECO_POLKADOT_BED
-	db DECO_PIKACHU_BED
+	db DECO_BLUE_BED
+	db DECO_YELLOW_BED
+	db DECO_GREEN_BED
+	db DECO_CHECKER_BED
 	db -1
 ; 268ca
 
@@ -232,6 +234,7 @@ FindOwnedCarpets: ; 268d2
 	db DECO_BLUE_CARPET
 	db DECO_YELLOW_CARPET
 	db DECO_GREEN_CARPET
+	db DECO_CHECKER_CARPET
 	db -1
 ; 268df
 
@@ -252,6 +255,7 @@ FindOwnedPlants: ; 268e7
 	db DECO_MAGNAPLANT
 	db DECO_TROPICPLANT
 	db DECO_JUMBOPLANT
+	db DECO_SPIKEYPLANT
 	db -1
 ; 268f3
 
@@ -269,10 +273,10 @@ FindOwnedPosters: ; 268fb
 ; 26903
 
 .posters ; 26903
-	db DECO_TOWN_MAP
+;	db DECO_TOWN_MAP
 	db DECO_PIKACHU_POSTER
 	db DECO_CLEFAIRY_POSTER
-	db DECO_SPEAROW_POSTER
+	db DECO_JIGGLYPUFF_POSTER
 	db -1
 ; 26908
 
@@ -292,8 +296,6 @@ FindOwnedConsoles: ; 26910
 .consoles ; 26918
 	db DECO_SNES
 	db DECO_N64
-	db DECO_GAMECUBE
-	db DECO_WII
 	db -1
 ; 2691d
 
@@ -328,14 +330,14 @@ FindOwnedOrnaments: ; 26925
 	db DECO_MAGIKARP_DOLL
 	db DECO_ODDISH_DOLL
 	db DECO_GENGAR_DOLL
-	db DECO_OCTILLERY_DOLL
+	db DECO_MARACTUS_DOLL
 	db DECO_DITTO_DOLL
 	db DECO_VOLTORB_DOLL
-	db DECO_ABRA_DOLL
-	db DECO_UNOWN_DOLL
+	db DECO_STANTLER_DOLL
+	db DECO_COTTONEE_DOLL
 	db DECO_GEODUDE_DOLL
 	db DECO_PINECO_DOLL
-	db DECO_SPEAROW_DOLL
+	db DECO_EXEGGCUTE_DOLL
 	db DECO_TEDDIURSA_DOLL
 	db DECO_MEOWTH_DOLL
 	db DECO_BUIZEL_DOLL
@@ -1074,10 +1076,10 @@ DecorationDesc_Poster: ; 26f69
 ; 26f84
 
 DecorationDesc_PosterPointers: ; 26f84
-	dbw DECO_TOWN_MAP, DecorationDesc_TownMapPoster
+;	dbw DECO_TOWN_MAP, DecorationDesc_TownMapPoster
 	dbw DECO_PIKACHU_POSTER, DecorationDesc_PikachuPoster
 	dbw DECO_CLEFAIRY_POSTER, DecorationDesc_ClefairyPoster
-	dbw DECO_SPEAROW_POSTER, DecorationDesc_SpearowPoster
+	dbw DECO_JIGGLYPUFF_POSTER, DecorationDesc_MarillPoster
 	db -1
 ; 26f91
 
@@ -1116,12 +1118,12 @@ DecorationDesc_ClefairyPoster: ; 0x26fa8
 	db "@"
 ; 0x26fb0
 
-DecorationDesc_SpearowPoster: ; 0x26fb0
-	jumptext .SpearowPosterText
+DecorationDesc_MarillPoster: ; 0x26fb0
+	jumptext .MarillPosterText
 ; 0x26fb3
 
-.SpearowPosterText: ; 0x26fb3
-	; It's a poster of a cute SPEAROW.
+.MarillPosterText: ; 0x26fb3
+	; It's a poster of a cute MARILL.
 	text_jump UnknownText_0x1bc5b3
 	db "@"
 ; 0x26fb8
@@ -1194,17 +1196,17 @@ DecorationDesc_GiantOrnament: ; 26fdd
 ; 0x26feb
 
 ToggleMaptileDecorations: ; 26feb
-	lb de, 0, 4
+	lb de, 2, 4
 	ld a, [wBed]
 	call SetDecorationTile
-	lb de, 7, 4
+	lb de, 8, 4
 	ld a, [wPlant]
 	call SetDecorationTile
-	lb de, 6, 0
+	lb de, 4, 0
 	ld a, [wPoster]
 	call SetDecorationTile
-	call SetPosterVisibility
-	lb de, 0, 0
+;	call SetPosterVisibility
+	lb de, 2, 0
 	call PadCoords_de
 	ld a, [wCarpet]
 	and a
@@ -1212,7 +1214,7 @@ ToggleMaptileDecorations: ; 26feb
 	call _GetDecorationSprite
 	ld [hl], a
 	push af
-	lb de, 0, 2
+	lb de, 2, 2
 	call PadCoords_de
 	pop af
 	inc a
@@ -1220,21 +1222,28 @@ ToggleMaptileDecorations: ; 26feb
 	inc a
 	ld [hli], a
 	dec a
-	ld [hl], a
+	ld [hli], a
+;	ld [hli], a
+;	push af
+;	lb de, 8, 0
+;	call PadCoords_de
+;	pop af
+;	inc a
+;	inc a
+;	ld [hl], a
 	ret
 ; 27027
 
 SetPosterVisibility: ; 27027
-;	ld b, SET_FLAG
-;	ld a, [wPoster]
-;	and a
-;	jr nz, .ok
-;	ld b, RESET_FLAG
+	ld b, SET_FLAG
+	ld a, [wPoster]
+	and a
+	jr nz, .ok
+	ld b, RESET_FLAG
 
-;.ok
-;	ld de, EVENT_KRISS_ROOM_POSTER
-;	jp EventFlagAction
-	ret
+.ok
+	ld de, EVENT_KRISS_ROOM_POSTER
+	jp EventFlagAction
 ; 27037
 
 SetDecorationTile: ; 27037
@@ -1249,4 +1258,39 @@ SetDecorationTile: ; 27037
 ; 27043
 
 ToggleDecorationsVisibility: ; 27043
-	ret
+	ld de, EVENT_KRISS_HOUSE_2F_CONSOLE
+	ld hl, wVariableSprites + SPRITE_CONSOLE - SPRITE_VARS
+	ld a, [wConsole]
+	call .ToggleDecorationVisibility
+	ld de, EVENT_KRISS_HOUSE_2F_BIG_DOLL
+	ld hl, wVariableSprites + SPRITE_BIG_DOLL - SPRITE_VARS
+	ld a, [wBigDoll]
+	call .ToggleDecorationVisibility
+	ld de, EVENT_KRISS_HOUSE_2F_DOLL_1
+	ld hl, wVariableSprites + SPRITE_DOLL_1 - SPRITE_VARS
+	ld a, [wLeftOrnament]
+	call .ToggleDecorationVisibility
+	ld de, EVENT_KRISS_HOUSE_2F_DOLL_2
+	ld hl, wVariableSprites + SPRITE_DOLL_2 - SPRITE_VARS
+	ld a, [wRightOrnament]
+	and a
+	jr z, .hide
+	call _GetDecorationSprite
+	cp SPRITE_MON_DOLL_1
+	jr nz, .ok
+	inc a ; SPRITE_MON_DOLL_2
+	jr .ok
+
+.ToggleDecorationVisibility: ; 27074
+	and a
+	jr z, .hide
+	call _GetDecorationSprite
+.ok
+	ld [hl], a
+	ld b, RESET_FLAG
+	jp EventFlagAction
+
+.hide
+	ld b, SET_FLAG
+	jp EventFlagAction
+; 27085

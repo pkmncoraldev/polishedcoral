@@ -11,11 +11,9 @@ const_value = 1
 	const MAGNAPLANT
 	const TROPICPLANT
 	const JUMBOPLANT
-	const TOWN_MAP_D
+	const SPIKEYPLANT
 	const SUPER_NES
 	const NINTENDO_64
-	const GAMECUBE
-	const WII
 	const GOLD_TROPHY
 	const SILVER_TROPHY
 	const SURF_PIKA_DOLL
@@ -25,13 +23,16 @@ const_value = 1
 	const _DOLL
 	const BIG_
 	const FEATHERY_BED
-	const PIKACHU_BED
 	const PINK_BED
-	const POLKADOT_BED
+	const BLUE_BED
+	const YELLOW_BED
+	const GREEN_BED
+	const CHECKER_BED
 	const RED_CARPET
 	const BLUE_CARPET
 	const YELLOW_CARPET
 	const GREEN_CARPET
+	const CHECKER_CARPET
 
 const_value = 1
 	const SET_UP_BED
@@ -61,31 +62,32 @@ __enum__ = 0
 	const BEDS
 	deco  FEATHERY_BED
 	deco  PINK_BED
-	deco  POLKADOT_BED
-	deco  PIKACHU_BED
+	deco  BLUE_BED
+	deco  YELLOW_BED
+	deco  GREEN_BED
+	deco  CHECKER_BED
 
 	const CARPETS
 	deco  RED_CARPET
 	deco  BLUE_CARPET
 	deco  YELLOW_CARPET
 	deco  GREEN_CARPET
+	deco  CHECKER_CARPET
 
 	const PLANTS
 	deco  MAGNAPLANT
 	deco  TROPICPLANT
 	deco  JUMBOPLANT
+	deco  SPIKEYPLANT
 
 	const POSTERS
-	deco  TOWN_MAP
 	deco  PIKACHU_POSTER
 	deco  CLEFAIRY_POSTER
-	deco  SPEAROW_POSTER
+	deco  JIGGLYPUFF_POSTER
 
 	const CONSOLES
 	deco  SNES
 	deco  N64
-	deco  GAMECUBE
-	deco  WII
 
 	const BIG_DOLLS
 	deco  BIG_SNORLAX_DOLL
@@ -110,14 +112,14 @@ __enum__ = 0
 	deco  MAGIKARP_DOLL
 	deco  ODDISH_DOLL
 	deco  GENGAR_DOLL
-	deco  OCTILLERY_DOLL
+	deco  MARACTUS_DOLL
 	deco  DITTO_DOLL
 	deco  VOLTORB_DOLL
-	deco  ABRA_DOLL
-	deco  UNOWN_DOLL
+	deco  STANTLER_DOLL
+	deco  COTTONEE_DOLL
 	deco  GEODUDE_DOLL
 	deco  PINECO_DOLL
-	deco  SPEAROW_DOLL
+	deco  EXEGGCUTE_DOLL
 	deco  TEDDIURSA_DOLL
 	deco  MEOWTH_DOLL
 	deco  BUIZEL_DOLL

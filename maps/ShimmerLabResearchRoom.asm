@@ -140,6 +140,10 @@ ShimmerLabResearchRoomProfText4:
 	para "However, it IS"
 	line "very similar."
 	
+	para "We found ours in"
+	cont "the desert on a"
+	cont "nearby island."
+	
 	para "To find such a"
 	line "similar artifact"
 	cont "so far from the"
@@ -147,6 +151,11 @@ ShimmerLabResearchRoomProfText4:
 	
 	para "Very interesting"
 	line "indeed!"
+	
+	para "It could imply the"
+	line "existence of another"
+	cont "ruined temple on"
+	cont "the island."
 	
 	para "We need to follow"
 	line "this lead."

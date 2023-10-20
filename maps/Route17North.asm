@@ -142,7 +142,12 @@ Route17NorthNPC1:
 	end
 	
 Route17NorthNPC2:
-	jumptextfaceplayer Route17NorthNPC2Text
+	checkevent EVENT_TALKED_TO_ROUTE_17_NORTH_NPC
+	iftrue .already_talked
+	setevent EVENT_TALKED_TO_ROUTE_17_NORTH_NPC
+	jumptextfaceplayer Route17NorthNPC2Text1
+.already_talked
+	jumptextfaceplayer Route17NorthNPC2Text2
 	
 Route17NorthNPC1Text1:
 	text "They say that once"
@@ -174,6 +179,59 @@ Route17NorthNPC1Text5:
 	cont "my head!"
 	done
 	
-Route17NorthNPC2Text:
-	text "TEXT 1"
+Route17NorthNPC2Text1:
+	text "Are you <PLAYER>?"
+	
+	para "You're the one"
+	line "PROF. HILL said"
+	cont "found the ruins"
+	cont "near TWINKLE TOWN."
+	
+	para "There's reason to"
+	line "believe that there"
+	cont "could be more"
+	cont "ruins around here."
+	
+	para "Unfortunately,"
+	line "we're at a dead"
+	cont "end."
+	
+	para "There is a wicked"
+	line "sandstorm up ahead"
+	cont "and it doesn't show"
+	cont "signs of stopping…"
+	
+	para "In fact, according"
+	line "to the locals, it's"
+	cont "been raging for"
+	cont "one hundred years!"
+	
+	para "Every time we try"
+	line "to brave the sand,"
+	cont "we somehow end up"
+	cont "right back where"
+	cont "we started!"
+	
+	para "It makes no sense…"
+	
+	para "Maybe you could"
+	line "find some more"
+	cont "information back"
+	cont "in town…"
+	done
+	
+	
+Route17NorthNPC2Text2:
+	text "Every time we try"
+	line "to brave the sand,"
+	cont "we somehow end up"
+	cont "right back where"
+	cont "we started!"
+	
+	para "It makes no sense…"
+	
+	para "Maybe you could"
+	line "find some more"
+	cont "information back"
+	cont "in town…"
 	done

@@ -99,7 +99,7 @@ ItemDescriptions:
 	dw BRoomKeyDesc
 	dw YRoomKeyDesc
 	dw RRoomKeyDesc
-	dw LostItemDesc
+	dw AncientBallDesc
 	dw RivalPokedexDesc
 	dw SkateboardDesc
 	dw TrainTicketDesc
@@ -623,16 +623,16 @@ RRoomKeyDesc:
 	db   "Key for a door"
 	next "in TWINKLE GYM.@"
 
-LostItemDesc:
-	db   "The # DOLL lost"
-	next "by the COPYCAT.@"
+AncientBallDesc:
+	db   "Relic that looks"
+	next "like a #BALL.@"
 
 RivalPokedexDesc:
 	db   "<RIVAL>'s"
 	next "#DEX.@"
 
 SkateboardDesc:
-	db   "A cool skateboard."
+	db   "A cool SKATEBOARD."
 	next "Can do tricks!@"
 
 TrainTicketDesc:

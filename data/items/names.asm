@@ -99,7 +99,7 @@ ItemNames::
 	db "B.ROOM KEY@"
 	db "Y.ROOM KEY@"
 	db "R.ROOM KEY@"
-	db "LOST ITEM@"
+	db "ANCIENT BALL@"
 	db "#DEX@"
 	db "SKATEBOARD@"
 	db "TRAIN TICKET@"

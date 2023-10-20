@@ -117,7 +117,7 @@ ItemNameOrder:
 	db NAM_B_ROOM_KEY   ; c6
 	db NAM_Y_ROOM_KEY         ; 9b
 	db NAM_R_ROOM_KEY ; 73
-	db NAM_LOST_ITEM    ; 6b
+	db NAM_ANCIENT_BALL    ; 6b
 	db NAM_RIVAL_POKEDEX ; b9
 	db NAM_SKATEBOARD  ; d5
 	db NAM_TRAIN_TICKET   ; 28

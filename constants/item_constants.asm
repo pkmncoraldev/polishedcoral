@@ -117,7 +117,7 @@
 	const B_ROOM_KEY   ; 62
 	const Y_ROOM_KEY   ; 63
 	const R_ROOM_KEY   ; 64
-	const LOST_ITEM    ; 65 - replace
+	const ANCIENT_BALL ; 65
 	const RIVAL_POKEDEX; 66
 	const SKATEBOARD   ; 67
 	const TRAIN_TICKET ; 68
@@ -401,7 +401,7 @@
 	const NAM_LIGHT_BALL   ; 68
 	const NAM_LIGHT_CLAY   ; 69
 	const NAM_LITEBLUEMAIL ; 6a
-	const NAM_LOST_ITEM    ; 6b
+	const NAM_ANCIENT_BALL    ; 6b
 	const NAM_LOVE_BALL    ; 6c
 	const NAM_LOVELY_MAIL  ; 6d
 	const NAM_LUCKY_EGG    ; 6e

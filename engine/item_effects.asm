@@ -114,7 +114,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; B_ROOM_KEY
 	dw NoEffect         ; Y_ROOM_KEY
 	dw NoEffect         ; R_ROOM_KEY
-	dw NoEffect         ; LOST_ITEM
+	dw NoEffect         ; ANCIENT_BALL
 	dw NoEffect         ; RIVAL_POKEDEX
 	dw Skateboard       ; SKATEBOARD
 	dw NoEffect         ; TRAIN_TICKET

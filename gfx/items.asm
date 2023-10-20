@@ -216,7 +216,7 @@ ClayPotIcon:  INCBIN "gfx/items/clay_pot.2bpp.lz"
 BRoomKeyIcon:
 YRoomKeyIcon:
 RRoomKeyIcon:  INCBIN "gfx/items/twinkle_room_key.2bpp.lz"
-LostItemIcon:     INCBIN "gfx/items/lost_item.2bpp.lz"
+AncientBallIcon:     INCBIN "gfx/items/ancient_ball.2bpp.lz"
 RivalPokedexIcon:  INCBIN "gfx/items/rival_pokedex.2bpp.lz"
 SkateboardIcon:   INCBIN "gfx/items/skateboard.2bpp.lz"
 TrainTicketIcon:    INCBIN "gfx/items/train_ticket.2bpp.lz"

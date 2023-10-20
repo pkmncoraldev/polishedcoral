@@ -100,7 +100,7 @@ ItemIconPointers:
 	dw BRoomKeyIcon
 	dw YRoomKeyIcon
 	dw RRoomKeyIcon
-	dw LostItemIcon
+	dw AncientBallIcon
 	dw RivalPokedexIcon
 	dw SkateboardIcon
 	dw TrainTicketIcon

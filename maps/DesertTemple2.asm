@@ -158,7 +158,7 @@ DesertTemple2ForceDayPal:
 	ret
 	
 DesertTemple2SetItemAsm:
-	ld a, CLAY_POT
+	ld a, ANCIENT_BALL
 	ld [wCurItemBallContents], a
 	ld a, 1
 	ld [wCurItemBallQuantity], a

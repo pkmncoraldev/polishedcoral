@@ -756,10 +756,10 @@ BuyMenu_InitGFX::
 	call DisableLCD
 	call Load1bppFont
 	call Load1bppFrame
-	ld hl, PackLeftColumnGFX
-	ld de, VTiles2 tile $15
-	ld bc, 18 tiles
-	ld a, BANK(PackLeftColumnGFX)
+;	ld hl, PackLeftColumnGFX
+;	ld de, VTiles2 tile $15
+;	ld bc, 18 tiles
+;	ld a, BANK(PackLeftColumnGFX)
 	call FarCopyBytes
 ; This is where the items themselves will be listed.
 ;	hlcoord 5, 3

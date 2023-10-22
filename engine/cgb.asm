@@ -875,13 +875,13 @@ endr
 	ld [hl], a
 	hlcoord 7, 10, wAttrMap
 	ld [hl], a
-	hlcoord 0, 2, wAttrMap
-	lb bc, 5, 5
-	call FillBoxCGB
+;	hlcoord 0, 3, wAttrMap
+;	lb bc, 3, 5
+;	call FillBoxCGB
 
-	hlcoord 1, 8, wAttrMap
-	lb bc, 3, 3
-	ld a, $7
+	hlcoord 0, 3, wAttrMap
+	lb bc, 7, 5
+	ld a, $1
 	call FillBoxCGB
 
 	jp _CGB_FinishLayout

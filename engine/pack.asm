@@ -57,6 +57,7 @@ Pack: ; 10000
 	ld a, ITEM - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -81,6 +82,7 @@ Pack: ; 10000
 	ld a, MEDICINE - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -105,6 +107,7 @@ Pack: ; 10000
 	ld a, BALL - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -129,6 +132,7 @@ Pack: ; 10000
 	ld a, TM_HM - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -196,6 +200,7 @@ Pack: ; 10000
 	ld a, BERRIES - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -220,6 +225,7 @@ Pack: ; 10000
 	ld a, KEY_ITEM - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -767,6 +773,7 @@ BattlePack: ; 10493
 	ld a, ITEM - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -791,6 +798,7 @@ BattlePack: ; 10493
 	ld a, MEDICINE - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -815,6 +823,7 @@ BattlePack: ; 10493
 	ld a, BALL - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -858,6 +867,7 @@ BattlePack: ; 10493
 	ld a, BERRIES - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -882,6 +892,7 @@ BattlePack: ; 10493
 	ld a, KEY_ITEM - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -1394,39 +1405,9 @@ DrawPackGFX: ; 1089d
 	call Load1bppFrame
 	ld a, [wCurrPocket]
 	and $7
-	push af
-	ld c, a
-	add a, a
-	add c
-	cp 10
-	jr c, .got_pocket
-	inc a
-	cp 14
-	jr c, .got_pocket
-	inc a
-.got_pocket
-	ld b, a
-	inc b
-	ld a, 2
-	ld c, 20
-	hlcoord 0, 0
-.loop
-	dec b
-	jr nz, .normal_insert
-	ld [hl], $1
-	inc hl
-	jr .insert_ok
-.normal_insert
-	ld [hli], a
-	inc a
-.insert_ok
-	dec c
-	jr nz, .loop
-
-	; place pack gfx
-	pop af
+	
 	ld d, a
-	ld bc, 25 tiles
+	ld bc, 20 tiles
 	ld hl, PackGFX
 	ld e, BANK(PackGFX)
 	ld a, [wBattleType]
@@ -1434,7 +1415,7 @@ DrawPackGFX: ; 1089d
 	jr z, .female
 	ld a, [wPlayerGender]
 	rrca
-	jr c, .male
+	jr nc, .male
 .female
 	ld hl, PackFGFX
 	ld e, BANK(PackFGFX)
@@ -1445,7 +1426,7 @@ DrawPackGFX: ; 1089d
 	ld c, 25
 	ld d, h
 	ld e, l
-	ld hl, VTiles2 tile $27
+	ld hl, VTiles2 tile $50
 	jp Request2bpp
 
 Pack_InterpretJoypad: ; 108d4 (4:48d4)
@@ -1544,53 +1525,89 @@ Pack_InitGFX: ; 10955
 	call ClearTileMap
 	call ClearSprites
 	call DisableLCD
-	ld hl, PackMenuGFX ; PackLeftColumnGFX is after it
-	ld de, VTiles2 tile $01
-	ld bc, (20 + 18) tiles
+	ld hl, PackMenuGFX
+	ld de, VTiles2
+	ld bc, $60 tiles
 	ld a, BANK(PackMenuGFX)
 	call FarCopyBytes
+; Background (blue if male, pink if female)
+	hlcoord 0, 1
+	ld bc, 11 * SCREEN_WIDTH
+	ld a, $24
+	call ByteFill
 ; This is where the items themselves will be listed.
 	hlcoord 5, 1
 	lb bc, 11, 15
 	call ClearBox
-; Place the left column
-	hlcoord 0, 1
-	ld de, .PackLeftColumnTilemapString
-	ld bc, SCREEN_WIDTH - 5
+; ◀▶ POCKET       ▼▲ ITEMS
+	hlcoord 0, 0
+	ld a, $28
+	ld c, SCREEN_WIDTH
 .loop
-	ld a, [de]
-	and a
-	jr nz, .continue
-	add hl, bc
-	jr .next
-.continue
-	cp $ff
-	jr z, .ok
 	ld [hli], a
-.next
-	inc de
-	jr .loop
-.ok
+	inc a
+	dec c
+	jr nz, .loop
+	call DrawPocketName
+	call PlacePackGFX
 ; Place the textbox for displaying the item description
 	hlcoord 0, SCREEN_HEIGHT - 4 - 2
 	lb bc, 4, SCREEN_WIDTH - 2
 	call TextBox
 	call EnableLCD
-	jp DrawPackGFX
-; 109a5
+	call DrawPackGFX
+	ret
 
-.PackLeftColumnTilemapString:
-	db $15, $15, $15, $15, $15, 0 ; Background (blue if male, pink if female)
-	db $27, $28, $29, $2a, $2b, 0 ; Pack image
-	db $2c, $2d, $2e, $2f, $30, 0
-	db $31, $32, $33, $34, $35, 0
-	db $36, $37, $38, $39, $3a, 0
-	db $3b, $3c, $3d, $3e, $3f, 0
-	db $16, $17, $17, $17, $18, 0 ; Item icon
-	db $19, $1e, $1f, $20, $1a, 0
-	db $19, $21, $22, $23, $1a, 0
-	db $19, $24, $25, $26, $1a, 0
-	db $1b, $1c, $1c, $1c, $1d, -1
+PlacePackGFX:
+	hlcoord 0, 3
+	ld a, $50
+	ld de, SCREEN_WIDTH - 5
+	ld b, 4
+.row
+	ld c, 5
+.column
+	ld [hli], a
+	inc a
+	dec c
+	jr nz, .column
+	add hl, de
+	dec b
+	jr nz, .row
+	ret
+
+DrawPocketName:
+	ld a, [wCurrPocket]
+	; * 15
+	ld d, a
+	swap a
+	sub d
+	ld d, 0
+	ld e, a
+	ld hl, .tilemap
+	add hl, de
+	ld d, h
+	ld e, l
+	hlcoord 0, 7
+	ld c, 3
+.row
+	ld b, 5
+.col
+	ld a, [de]
+	inc de
+	ld [hli], a
+	dec b
+	jr nz, .col
+	ld a, c
+	ld c, SCREEN_WIDTH - 5
+	add hl, bc
+	ld c, a
+	dec c
+	jr nz, .row
+	ret
+
+.tilemap: ; 5x12
+; the 5x3 pieces correspond to *_POCKET constants
+INCBIN "gfx/pack/pack_menu.tilemap"
 
 Pack_GetItemName: ; 10a1d
 	ld a, [wCurItem]
@@ -1857,9 +1874,7 @@ Text_PackEmptyString: ; 0x10b0c
 ; 0x10b11
 
 PackMenuGFX:
-INCBIN "gfx/pack/pack_top_row.2bpp"
-PackLeftColumnGFX:
-INCBIN "gfx/pack/pack_left_column.2bpp"
+INCBIN "gfx/pack/pack_menu.2bpp"
 
 Special_ChooseItem::
 	call DisableSpriteUpdates

@@ -542,6 +542,8 @@ GetQuantityInBag:
 	pop af
 	ret
 
+INCLUDE "data/items/icon_pointers.asm"
+
 PlaceMenuItemName:
 ; places a star near the name if registered
 	push de
@@ -588,13 +590,31 @@ PlaceMenuItemName:
 	pop de
 PlaceMartItemName:
 	push de
+	
 	ld a, [wMenuSelection]
 	cp a, -1 ; special case for Cancel in Key Items pocket
 	ld de, ScrollingMenu_CancelString ; found in scrolling_menu.asm
 	ld [wNamedObjectIndexBuffer], a
 	call nz, GetItemName
 	pop hl
-	jp PlaceString
+	call PlaceString
+	
+	ld a, [wCurSpecies]
+	ld e, a
+	ld d, 0
+	ld hl, ItemIconPointers
+	add hl, de
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld e, a
+	ld d, [hl]
+	ld a, 4
+	ld c, a
+	ld hl, VTiles0 tile $69
+	jp Get2bpp
 
 PlaceMenuTMHMName:
 	push de
@@ -1646,9 +1666,9 @@ Buena_ExitMenu: ; 4ae5e
 	ret
 
 PackGFX:
-INCBIN "gfx/pack/pack.w40.2bpp"
+INCBIN "gfx/pack/pack.2bpp"
 PackFGFX: ; 48e9b
-INCBIN "gfx/pack/pack_f.w40.2bpp"
+INCBIN "gfx/pack/pack_f.2bpp"
 
 
 SECTION "Code 12", ROMX

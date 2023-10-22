@@ -70,8 +70,8 @@ TMHM_ShowTMMoveDescription: ; 2c946 (b:4946)
 	hlcoord 0, 12
 	lb bc, 4, SCREEN_WIDTH - 2
 	call TextBox
-	farcall LoadTMHMIconPalette
-	call SetPalettes
+;	farcall LoadTMHMIconPalette
+;	call SetPalettes
 	ld a, [wCurTMHM]
 	cp NUM_TMS + NUM_HMS + 1
 	jr nc, .Cancel
@@ -81,11 +81,11 @@ TMHM_ShowTMMoveDescription: ; 2c946 (b:4946)
 	ld [wCurSpecies], a
 	hlcoord 1, 14
 	call PrintMoveDesc
-	farcall LoadTMHMIcon
+;	farcall LoadTMHMIcon
 	jp TMHM_JoypadLoop
 
 .Cancel:
-	farcall ClearTMHMIcon
+;	farcall ClearTMHMIcon
 	jp TMHM_JoypadLoop
 
 TMHM_ChooseTMorHM: ; 2c974 (b:4974)

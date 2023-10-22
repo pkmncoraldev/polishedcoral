@@ -592,6 +592,7 @@ PlaceMartItemName:
 	push de
 	
 	ld a, [wMenuSelection]
+	ld [wCurSpecies], a
 	cp a, -1 ; special case for Cancel in Key Items pocket
 	ld de, ScrollingMenu_CancelString ; found in scrolling_menu.asm
 	ld [wNamedObjectIndexBuffer], a
@@ -600,6 +601,8 @@ PlaceMartItemName:
 	call PlaceString
 	
 	ld a, [wCurSpecies]
+	cp a, -1
+	jr z, .clear
 	ld e, a
 	ld d, 0
 	ld hl, ItemIconPointers
@@ -613,8 +616,83 @@ PlaceMartItemName:
 	ld d, [hl]
 	ld a, 4
 	ld c, a
-	ld hl, VTiles0 tile $69
-	jp Get2bpp
+	ld a, [wPlaceBallsX]
+	cp 0
+	jr z, .first
+	cp 1
+	jr z, .second
+	cp 2
+	jr z, .third
+	cp 3
+	jr z, .forth
+	jr .fifth
+.first
+	ld hl, VTiles0 tile $68
+	jr .finish
+.second
+	ld hl, VTiles0 tile $6c
+	jr .finish
+.third
+	ld hl, VTiles0 tile $70
+	jr .finish
+.forth
+	ld hl, VTiles0 tile $74
+.finish
+	push af
+	call Get2bpp
+	farcall LoadItemIconPalette
+	call SetPalettes
+	pop af
+	inc a
+	ld [wPlaceBallsX], a
+	ret
+.fifth
+	ld hl, VTiles0 tile $78
+	call Get2bpp
+	farcall LoadItemIconPalette
+	call SetPalettes
+	xor a
+	ld [wPlaceBallsX], a
+	ret
+.clear
+	ld a, [wPlaceBallsX]
+	cp 0
+	jr z, .first2
+	cp 1
+	jr z, .second2
+	cp 2
+	jr z, .third2
+	cp 3
+	jr z, .forth2
+	jr .fifth2
+.first2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 4
+	ld hl, VTiles0 tile $68
+	call Get2bpp
+.second2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 4
+	ld hl, VTiles0 tile $6c
+	call Get2bpp
+.third2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 4
+	ld hl, VTiles0 tile $70
+	call Get2bpp
+.forth2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 4
+	ld hl, VTiles0 tile $74
+	call Get2bpp
+.fifth2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 4
+	ld hl, VTiles0 tile $78
+	call Get2bpp
+	xor a
+	ld [wPlaceBallsX], a
+	ret
 
 PlaceMenuTMHMName:
 	push de

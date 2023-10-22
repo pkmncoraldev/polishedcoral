@@ -1,4 +1,6 @@
 Pack: ; 10000
+	xor a
+	ld [wPlaceBallsX], a
 	ld hl, wOptions1
 	set NO_TEXT_SCROLL, [hl]
 	call InitPackBuffers
@@ -57,11 +59,14 @@ Pack: ; 10000
 	ld a, ITEM - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call Pack_ClearOBPalettes
+	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .ItemsPocketMenu: ; 10067 (4:4067)
+	call Pack_Draw_Sprites
 	ld hl, ItemsPocketMenuDataHeader
 	call CopyMenuDataHeader
 	ld a, [wItemsPocketCursor]
@@ -82,11 +87,14 @@ Pack: ; 10000
 	ld a, MEDICINE - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call Pack_ClearOBPalettes
+	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .MedicinePocketMenu:
+	call Pack_Draw_Sprites
 	ld hl, MedicinePocketMenuDataHeader
 	call CopyMenuDataHeader
 	ld a, [wMedicinePocketCursor]
@@ -107,11 +115,14 @@ Pack: ; 10000
 	ld a, BALL - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call Pack_ClearOBPalettes
+	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .BallsPocketMenu: ; 10198 (4:4198)
+	call Pack_Draw_Sprites
 	ld hl, BallsPocketMenuDataHeader
 	call CopyMenuDataHeader
 	ld a, [wBallsPocketCursor]
@@ -132,6 +143,8 @@ Pack: ; 10000
 	ld a, TM_HM - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call Pack_ClearOBPalettes
+	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
@@ -200,11 +213,14 @@ Pack: ; 10000
 	ld a, BERRIES - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call Pack_ClearOBPalettes
+	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .BerriesPocketMenu:
+	call Pack_Draw_Sprites
 	ld hl, BerriesPocketMenuDataHeader
 	call CopyMenuDataHeader
 	ld a, [wBerriesPocketCursor]
@@ -225,11 +241,14 @@ Pack: ; 10000
 	ld a, KEY_ITEM - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call Pack_ClearOBPalettes
+	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .KeyItemsPocketMenu: ; 100a6 (4:40a6)
+	call Pack_Draw_Sprites
 	ld hl, KeyItemsPocketMenuDataHeader
 	call CopyMenuDataHeader
 	ld a, [wKeyItemsPocketCursor]
@@ -773,11 +792,14 @@ BattlePack: ; 10493
 	ld a, ITEM - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call Pack_ClearOBPalettes
+	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .ItemsPocketMenu: ; 104fa (4:44fa)
+	call Pack_Draw_Sprites
 	ld hl, ItemsPocketMenuDataHeader
 	call CopyMenuDataHeader
 	ld a, [wItemsPocketCursor]
@@ -798,11 +820,14 @@ BattlePack: ; 10493
 	ld a, MEDICINE - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call Pack_ClearOBPalettes
+	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .MedicinePocketMenu:
+	call Pack_Draw_Sprites
 	ld hl, MedicinePocketMenuDataHeader
 	call CopyMenuDataHeader
 	ld a, [wMedicinePocketCursor]
@@ -823,11 +848,14 @@ BattlePack: ; 10493
 	ld a, BALL - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call Pack_ClearOBPalettes
+	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .BallsPocketMenu: ; 105a6 (4:45a6)
+	call Pack_Draw_Sprites
 	ld hl, BallsPocketMenuDataHeader
 	call CopyMenuDataHeader
 	ld a, [wBallsPocketCursor]
@@ -848,6 +876,7 @@ BattlePack: ; 10493
 	ld a, TM_HM - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call ClearSprites
 	xor a
 	ld [hBGMapMode], a
 	call WaitBGMap_DrawPackGFX
@@ -867,11 +896,14 @@ BattlePack: ; 10493
 	ld a, BERRIES - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call Pack_ClearOBPalettes
+	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .BerriesPocketMenu:
+	call Pack_Draw_Sprites
 	ld hl, BerriesPocketMenuDataHeader
 	call CopyMenuDataHeader
 	ld a, [wBerriesPocketCursor]
@@ -892,11 +924,14 @@ BattlePack: ; 10493
 	ld a, KEY_ITEM - 1
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call Pack_ClearOBPalettes
+	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .KeyItemsPocketMenu: ; 10539 (4:4539)
+	call Pack_Draw_Sprites
 	ld hl, KeyItemsPocketMenuDataHeader
 	call CopyMenuDataHeader
 	ld a, [wKeyItemsPocketCursor]
@@ -1176,6 +1211,8 @@ DepositSellPack: ; 106be
 InitPocket: ; 10762 (4:4762)
 	ld [wCurrPocket], a
 	call ClearPocketList
+	call Pack_ClearOBPalettes
+	call ClearSprites
 	jp WaitBGMap_DrawPackGFX
 
 DepositSellTutorial_InterpretJoypad: ; 1076f
@@ -1293,7 +1330,7 @@ TutorialPack: ; 107bb
 ; 0x107f7
 
 .ItemsMenuData2: ; 0x107f7
-	db $ee ; flags
+	db $ed ; flags
 	db 5, 8 ; rows, columns
 	db 2 ; horizontal spacing
 	dbw 0, wDudeNumItems
@@ -1317,7 +1354,7 @@ TutorialPack: ; 107bb
 ; 0x10816
 
 .MedicineMenuData2: ; 0x10816
-	db $ee ; flags
+	db $ed ; flags
 	db 5, 8 ; rows, columns
 	db 2 ; horizontal spacing
 	dbw 0, wDudeNumMedicine
@@ -1341,7 +1378,7 @@ TutorialPack: ; 107bb
 ; 0x1084a
 
 .BallsMenuData2: ; 0x1084a
-	db $ee ; flags
+	db $ed ; flags
 	db 5, 8 ; rows, columns
 	db 2 ; horizontal spacing
 	dbw 0, wDudeNumBalls
@@ -1523,6 +1560,7 @@ Pack_InterpretJoypad: ; 108d4 (4:48d4)
 Pack_InitGFX: ; 10955
 	call ClearBGPalettes
 	call ClearTileMap
+	call Pack_ClearOBPalettes
 	call ClearSprites
 	call DisableLCD
 	ld hl, PackMenuGFX
@@ -1637,7 +1675,7 @@ ItemsPocketMenuDataHeader: ; 0x10a4f
 ; 0x10a57
 
 .MenuData2: ; 0x10a57
-	db $ee ; flags
+	db $ed ; flags
 	db 5, 8 ; rows, columns
 	db 2 ; horizontal spacing
 	dbw 0, wNumItems
@@ -1672,7 +1710,7 @@ MedicinePocketMenuDataHeader:
 	db 1 ; default option
 
 .MenuData2:
-	db $ee ; flags
+	db $ed ; flags
 	db 5, 8 ; rows, columns
 	db 2 ; horizontal spacing
 	dbw 0, wNumMedicine
@@ -1705,7 +1743,7 @@ BallsPocketMenuDataHeader: ; 0x10aaf
 ; 0x10ab7
 
 .MenuData2: ; 0x10ab7
-	db $ee ; flags
+	db $ed ; flags
 	db 5, 8 ; rows, columns
 	db 2 ; horizontal spacing
 	dbw 0, wNumBalls
@@ -1740,7 +1778,7 @@ BerriesPocketMenuDataHeader:
 	db 1 ; default option
 
 .MenuData2:
-	db $ee ; flags
+	db $ed ; flags
 	db 5, 8 ; rows, columns
 	db 2 ; horizontal spacing
 	dbw 0, wNumBerries
@@ -1917,3 +1955,67 @@ Special_ChooseItem::
 .ItemCantBeSelectedText:
 	text_jump ItemCantBeSelectedText
 	db "@"
+
+Pack_ClearOBPalettes:
+	ld hl, PackWhitePalette
+	ld de, wUnknOBPals
+	ld bc, 5 palettes
+	ld a, $5
+	call FarCopyWRAM
+	jp SetPalettes
+
+Pack_Draw_Sprites:
+	ld hl, .SpriteData
+	bcpixel 3, 6
+;copy oam
+	ld de, wSprites
+	ld a, [hli]
+.loop
+	push af
+	ld a, [hli]
+	add b
+	ld [de], a
+	inc de
+	ld a, [hli]
+	add c
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	pop af
+	dec a
+	jr nz, .loop
+	ret
+.SpriteData:
+	db 20
+	dsprite 0, 4, 0, 0, $68, $0
+	dsprite 0, 4, 1, 0, $69, $0
+	dsprite 1, 4, 0, 0, $6a, $0
+	dsprite 1, 4, 1, 0, $6b, $0
+	
+	dsprite 2, 4, 0, 0, $6c, $1
+	dsprite 2, 4, 1, 0, $6d, $1
+	dsprite 3, 4, 0, 0, $6e, $1
+	dsprite 3, 4, 1, 0, $6f, $1
+	
+	dsprite 4, 4, 0, 0, $70, $2
+	dsprite 4, 4, 1, 0, $71, $2
+	dsprite 5, 4, 0, 0, $72, $2
+	dsprite 5, 4, 1, 0, $73, $2
+	
+	dsprite 6, 4, 0, 0, $74, $3
+	dsprite 6, 4, 1, 0, $75, $3
+	dsprite 7, 4, 0, 0, $76, $3
+	dsprite 7, 4, 1, 0, $77, $3
+	
+	dsprite 8, 4, 0, 0, $78, $4
+	dsprite 8, 4, 1, 0, $79, $4
+	dsprite 9, 4, 0, 0, $7a, $4
+	dsprite 9, 4, 1, 0, $7b, $4
+	
+PackWhitePalette:
+	INCLUDE "gfx/pack/blank.pal"

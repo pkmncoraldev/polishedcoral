@@ -840,6 +840,14 @@ _CGB_PackPals: ; 93d3
 	ld bc, 8 palettes
 	ld a, $5
 	call FarCopyWRAM
+	
+;temp
+;	ld hl, MalePackPals
+;	ld de, wUnknOBPals
+;	ld bc, 8 palettes
+;	ld a, $5
+;	call FarCopyWRAM
+;temp
 
 	call WipeAttrMap
 

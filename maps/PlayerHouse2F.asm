@@ -239,10 +239,10 @@ PlayerHouseDebugPoster:
 	giveitem SUPER_REPEL, 99
 	giveitem MAX_REPEL, 99
 	giveitem ESCAPE_ROPE, 5
-	giveitem LUM_BERRY, 1
-	giveitem RAWST_BERRY, 1
-	giveitem PERSIM_BERRY, 1
 	giveitem PP_UP, 99
+	giveitem AMULET_COIN, 1
+	giveitem BIG_MALASADA, 1
+	giveitem BERRY_JUICE, 1
 	giveitem CHOICE_SCARF, 1
 	giveitem QUICK_POWDER, 1
 	giveitem KINGS_ROCK, 1
@@ -254,7 +254,6 @@ PlayerHouseDebugPoster:
 	giveitem RARE_CANDY, 99
 	giveitem PROTEIN, 99
 	giveitem EXP_SHARE, 99
-	giveitem BIG_MALASADA, 3
 	giveitem THUNDERSTONE, 3
 	giveitem FIRE_STONE, 3
 	giveitem LEAF_STONE, 3
@@ -322,6 +321,7 @@ PlayerHouseDebugPoster:
 	giveitem TAPE_PLAYER
 	giveitem SKATEBOARD
 	giveitem BICYCLE
+	giveitem ANCIENT_BALL
 	giveitem ITEMFINDER
 	giveitem POLLEN_POUCH
 	giveitem LIBRARY_CARD

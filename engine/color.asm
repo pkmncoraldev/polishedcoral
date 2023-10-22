@@ -149,7 +149,31 @@ LoadItemIconPalette:
 	add hl, hl
 	add hl, hl
 	add hl, bc
-	ld de, wUnknBGPals palette 7 + 2
+	ld a, [wPlaceBallsX]
+	cp 0
+	jr z, .first
+	cp 1
+	jr z, .second
+	cp 2
+	jr z, .third
+	cp 3
+	jr z, .forth
+	jr .fifth
+.first
+	ld de, wUnknOBPals palette 0 + 2
+	jr .cont
+.second
+	ld de, wUnknOBPals palette 1 + 2
+	jr .cont
+.third
+	ld de, wUnknOBPals palette 2 + 2
+	jr .cont
+.forth
+	ld de, wUnknOBPals palette 3 + 2
+	jr .cont
+.fifth
+	ld de, wUnknOBPals palette 4 + 2
+.cont
 	ld bc, 4
 	ld a, $5
 	call FarCopyWRAM

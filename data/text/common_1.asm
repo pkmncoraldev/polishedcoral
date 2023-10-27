@@ -1029,17 +1029,17 @@ UnknownText_0x1bd39e::
 	done
 
 UnknownText_0x1bd3d7::
-	text "You have no coins."
+	text "You have no COINs."
 	prompt
 
 UnknownText_0x1bd3eb::
 	text "You don't have a"
-	line "Coin Case."
+	line "COIN CUP."
 	prompt
 
 UnknownText_0x1bd407::
 	text "OK, connect the"
-	line "Game Link Cable."
+	line "GAME LINK CABLE."
 	prompt
 
 UnknownText_0x1bd429::

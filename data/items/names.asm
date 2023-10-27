@@ -87,7 +87,7 @@ ItemNames::
 	db "OLD ROD@"
 	db "GOOD ROD@"
 	db "SUPER ROD@"
-	db "COIN CASE@"
+	db "COIN CUP@"
 	db "ITEMFINDER@"
 	db "EXP.SHARE@"
 	db "LIBRARY CARD@"

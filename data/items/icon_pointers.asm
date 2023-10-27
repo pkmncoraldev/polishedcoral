@@ -55,7 +55,7 @@ ItemIconPointers:
 	dba LemonadeIcon
 	dba MoomooMilkIcon
 	dba RageCandyBarIcon
-	dba SacredAshIcon
+	dba UnusedItemIcon
 	dba EnergyPowderIcon
 	dba EnergyRootIcon
 	dba HealPowderIcon
@@ -88,7 +88,7 @@ ItemIconPointers:
 	dba OldRodIcon
 	dba GoodRodIcon
 	dba SuperRodIcon
-	dba CoinCaseIcon
+	dba CoinCupIcon
 	dba ItemfinderIcon
 	dba ExpShareIcon
 	dba LibraryCardIcon
@@ -105,12 +105,12 @@ ItemIconPointers:
 	dba SkateboardIcon
 	dba TrainTicketIcon
 	dba TrainPassIcon
-	dba BlueCardIcon
-	dba OrangeTicketIcon
-	dba MysticTicketIcon
-	dba OldSeaMapIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
 	dba ShinyCharmIcon
-	dba OvalCharmIcon
+	dba UnusedItemIcon
 	dba FlowerPetalIcon
 	dba BlossomTeaIcon
 	dba PaintbrushIcon
@@ -125,15 +125,15 @@ ItemIconPointers:
 	dba LumBerryIcon
 	dba SitrusBerryIcon
 	dba FigyBerryIcon
-	dba LiechiBerryIcon
-	dba GanlonBerryIcon
-	dba SalacBerryIcon
-	dba PetayaBerryIcon
-	dba ApicotBerryIcon
-	dba JabocaBerryIcon
-	dba RowapBerryIcon
-	dba KeeBerryIcon
-	dba MarangaBerryIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
 	dba BerryJuiceIcon
 	dba SilkScarfIcon
 	dba BlackBeltIcon
@@ -208,12 +208,12 @@ ItemIconPointers:
 	dba ToxicOrbIcon
 	dba BlackSludgeIcon
 	dba MachoBraceIcon
-	dba PowerWeightIcon
-	dba PowerBracerIcon
-	dba PowerBeltIcon
-	dba PowerLensIcon
-	dba PowerBandIcon
-	dba PowerAnkletIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
 	dba DragonScaleIcon
 	dba UpGradeIcon
 	dba DubiousDiscIcon
@@ -225,33 +225,33 @@ ItemIconPointers:
 	dba LiquidSunIcon
 	dba NuggetIcon
 	dba BigNuggetIcon
-	dba TinyMushroomIcon
-	dba BigMushroomIcon
-	dba BalmMushroomIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
 	dba PearlIcon
 	dba BigPearlIcon
-	dba PearlStringIcon
+	dba UnusedItemIcon
 	dba StardustIcon
 	dba StarPieceIcon
-	dba BrickPieceIcon
-	dba RareBoneIcon
-	dba SilverLeafIcon
-	dba GoldLeafIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
 	dba SlowpokeTailIcon
 	dba BottleCapIcon
-	dba JawFossilIcon
-	dba SailFossilIcon
-	dba OldAmberIcon
+	dba CoverFossilIcon
+	dba PlumeFossilIcon
+	dba UnusedItemIcon
 	dba SunshineTeaIcon
-	dba SweetHoneyIcon
-	dba FlowerMailIcon
-	dba SurfMailIcon
-	dba LiteBlueMailIcon
-	dba PortraitMailIcon
-	dba LovelyMailIcon
-	dba EonMailIcon
-	dba MorphMailIcon
-	dba BlueSkyMailIcon
-	dba MusicMailIcon
-	dba MirageMailIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
+	dba UnusedItemIcon
 	dba NoItemIcon

@@ -235,31 +235,50 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
+	giveitem FRESH_WATER, 99
+	giveitem SODA_POP, 99
+	giveitem LEMONADE, 99
+	giveitem MOOMOO_MILK, 99
+	giveitem BOTTLE_CAP, 99
+	giveitem RAGECANDYBAR, 99
+	giveitem LUCKY_EGG, 99
+	giveitem HP_UP, 99
+	giveitem PROTEIN, 99
+	giveitem IRON, 99
+	giveitem CARBOS, 99
+	giveitem CALCIUM, 99
+	giveitem ZINC, 99
+	giveitem PP_UP, 99
+	giveitem PP_MAX, 99
+	giveitem ETHER, 99
+	giveitem MAX_ETHER, 99
+	giveitem ELIXIR, 99
+	giveitem MAX_ELIXIR, 99
+	giveitem REVIVE, 99
+	giveitem MAX_REVIVE, 99
+	giveitem FULL_HEAL, 99
+	giveitem ANTIDOTE, 99
+	giveitem BURN_HEAL, 99
+	giveitem PARALYZEHEAL, 99
+	giveitem AWAKENING, 99
+	giveitem ICE_HEAL, 99
+	giveitem FULL_RESTORE, 99
+	giveitem MAX_POTION, 99
+	giveitem POTION, 99
+	giveitem SUPER_POTION, 99
+	giveitem HYPER_POTION, 99
 	giveitem REPEL, 99
 	giveitem SUPER_REPEL, 99
 	giveitem MAX_REPEL, 99
-	giveitem ESCAPE_ROPE, 5
-	giveitem PP_UP, 99
 	giveitem AMULET_COIN, 1
 	giveitem BIG_MALASADA, 1
 	giveitem BERRY_JUICE, 1
-	giveitem CHOICE_SCARF, 1
-	giveitem QUICK_POWDER, 1
-	giveitem KINGS_ROCK, 1
-	giveitem THICK_CLUB, 1
-	giveitem PAINTBRUSH, 1
-	giveitem LIQUID_SUN, 1
-	giveitem LINK_CABLE, 99
-	giveitem UP_GRADE, 2
 	giveitem RARE_CANDY, 99
-	giveitem PROTEIN, 99
-	giveitem EXP_SHARE, 99
-	giveitem THUNDERSTONE, 3
-	giveitem FIRE_STONE, 3
-	giveitem LEAF_STONE, 3
-	giveitem WATER_STONE, 3
-	giveitem DAWN_STONE, 3
-	giveitem DUSK_STONE, 3
+	giveitem FLOWER_PETAL, 6
+	giveitem BLOSSOM_TEA, 3
+	giveitem SUNSHINE_TEA, 99
+	giveitem PAINTBRUSH, 99
+	
 	giveitem MASTER_BALL, 99
 	giveitem POKE_BALL, 99
 	giveitem GREAT_BALL, 99
@@ -283,24 +302,8 @@ PlayerHouseDebugPoster:
 	giveitem QUICK_BALL, 99
 	giveitem DUSK_BALL, 99
 	giveitem PREMIER_BALL, 99
-	giveitem CHERISH_BALL, 99	
-	giveitem BLOSSOM_TEA, 3
-	giveitem FLOWER_PETAL, 6
-	giveitem COVER_FOSSIL, 1
-	giveitem PLUME_FOSSIL, 1
-	giveitem OLD_AMBER, 1
-	giveitem EVERSTONE, 1
-	giveitem ORAN_BERRY, 99
-	giveitem CHERI_BERRY, 99
-	giveitem CHESTO_BERRY, 99
-	giveitem PECHA_BERRY, 99
-	giveitem RAWST_BERRY, 99
-	giveitem ASPEAR_BERRY, 99
-	giveitem LEPPA_BERRY, 99
-	giveitem PERSIM_BERRY, 99
-	giveitem LUM_BERRY, 99
-	giveitem SITRUS_BERRY, 99
-	giveitem FIGY_BERRY, 99
+	giveitem CHERISH_BALL, 99
+	
 .keyitems
 	writetext PlayerHouseDebugText2
 	yesorno
@@ -321,6 +324,9 @@ PlayerHouseDebugPoster:
 	giveitem TAPE_PLAYER
 	giveitem SKATEBOARD
 	giveitem BICYCLE
+	giveitem B_ROOM_KEY
+	giveitem R_ROOM_KEY
+	giveitem Y_ROOM_KEY
 	giveitem ANCIENT_BALL
 	giveitem ITEMFINDER
 	giveitem POLLEN_POUCH

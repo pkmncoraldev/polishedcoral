@@ -305,7 +305,7 @@ INCLUDE "maps/RadiantFlowerShop.asm"
 INCLUDE "maps/RadiantOrphanage1F.asm"
 INCLUDE "maps/RadiantOrphanage2F.asm"
 INCLUDE "maps/RadiantOrphanageLeilanisRoom.asm"
-
+INCLUDE "maps/RadiantGym.asm"
 INCLUDE "maps/RadiantPokeCenter.asm"
 INCLUDE "maps/RadiantMart.asm"
 INCLUDE "maps/RadiantHouse.asm"

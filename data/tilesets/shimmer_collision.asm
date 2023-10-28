@@ -71,8 +71,8 @@
 	tilecoll SKATE, WALL, SKATE, WALL ; 46
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 47
 	tilecoll WALL, WALL, SKATE, SKATE ; 48
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 49
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4a
+	tilecoll WALL, WALL, WALL, WALL ; 49
+	tilecoll WALL, WALL, WALL, WALL ; 4a
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 4b
 	tilecoll WALL, WALL, WALL, WALL ; 4c
 	tilecoll WATER, WATER, WALL, WALL ; 4d

@@ -4,11 +4,12 @@ RadiantOrphanage1F_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, RadiantOrphanage1FCallback
 
-	db 4 ; warp events
+	db 5 ; warp events
 	warp_def  9,  4, 4, RADIANT_TOWNSHIP
 	warp_def  9,  5, 4, RADIANT_TOWNSHIP
 	warp_def  2,  0, 1, RADIANT_ORPHANAGE_LEILANIS_ROOM
 	warp_def  3,  9, 1, RADIANT_ORPHANAGE_2F
+	warp_def  2,  8, 1, RADIANT_GYM
 
 	db 0 ; coord events
 

@@ -700,7 +700,8 @@ RadiantOrphanage2F_BlockData:
 RadiantOrphanageLeilanisRoom_BlockData:
 	INCBIN "maps/RadiantOrphanageLeilanisRoom.ablk.lz"
 	
-;
+RadiantGym_BlockData:
+	INCBIN "maps/RadiantGym.ablk.lz"
 	
 RadiantPokeCenter_BlockData:
 	INCBIN "maps/PokeCenter.ablk.lz"

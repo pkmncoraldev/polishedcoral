@@ -474,7 +474,7 @@ LusterGymTrainer1Rematch:
 	opentext
 	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_1_REMATCH
 	iftrue .FightDone
-	playmusic MUSIC_YOUNGSTER_ENCOUNTER
+	playmusic MUSIC_LASS_ENCOUNTER
 	writetext LusterGymTrainer1RematchSeenText
 	waitbutton
 	closetext
@@ -534,7 +534,7 @@ LusterGymTrainer2Rematch:
 	opentext
 	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_2_REMATCH
 	iftrue .FightDone
-	playmusic MUSIC_YOUNGSTER_ENCOUNTER
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
 	writetext LusterGymTrainer2RematchSeenText
 	waitbutton
 	closetext
@@ -591,7 +591,7 @@ LusterGymTrainer3Rematch:
 	opentext
 	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_3_REMATCH
 	iftrue .FightDone
-	playmusic MUSIC_YOUNGSTER_ENCOUNTER
+	playmusic MUSIC_LASS_ENCOUNTER
 	writetext LusterGymTrainer3RematchSeenText
 	waitbutton
 	closetext
@@ -652,7 +652,7 @@ LusterGymTrainer4Rematch:
 	opentext
 	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_4_REMATCH
 	iftrue .FightDone
-	playmusic MUSIC_YOUNGSTER_ENCOUNTER
+	playmusic MUSIC_GENTLEMAN_ENCOUNTER
 	writetext LusterGymTrainer4RematchSeenText
 	waitbutton
 	closetext
@@ -707,7 +707,7 @@ LusterGymTrainer5Rematch:
 	opentext
 	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_5_REMATCH
 	iftrue .FightDone
-	playmusic MUSIC_YOUNGSTER_ENCOUNTER
+	playmusic MUSIC_GENTLEMAN_ENCOUNTER
 	writetext LusterGymTrainer5RematchSeenText
 	waitbutton
 	closetext
@@ -769,7 +769,7 @@ LusterGymTrainer6Rematch:
 	opentext
 	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_6_REMATCH
 	iftrue .FightDone
-	playmusic MUSIC_YOUNGSTER_ENCOUNTER
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
 	writetext LusterGymTrainer6RematchSeenText
 	waitbutton
 	closetext

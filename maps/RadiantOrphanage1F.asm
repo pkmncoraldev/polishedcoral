@@ -13,9 +13,10 @@ RadiantOrphanage1F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	signpost  2,  1, SIGNPOST_READ, RadiantOrphanage1FLeilanisRoomSign
 	signpost  2,  7, SIGNPOST_READ, RadiantOrphanage1FGymRoomSign
+	signpost  2,  8, SIGNPOST_IFSET, RadiantOrphanage1FLockedDoor
 
 	db 13 ; object events
 	object_event  3,  5, SPRITE_LEILANI_VARIABLE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
@@ -215,6 +216,10 @@ RadiantOrphanage1FLeilanisRoomSign:
 RadiantOrphanage1FGymRoomSign:
 	jumptext RadiantOrphanage1FGymRoomSignText
 	
+RadiantOrphanage1FLockedDoor:
+	dw EVENT_RADIANT_GYM_INACTIVE
+	jumptext RadiantOrphanage1FLockedDoorText
+	
 Movement_RadiantOrphanage1FLeilani:
 	slow_step_right
 	slow_step_right
@@ -301,4 +306,9 @@ RadiantOrphanage1FLeilaniText3:
 	
 RadiantOrphanage1FGirlsText:
 	text "Coming GRAMMA!"
+	done
+	
+RadiantOrphanage1FLockedDoorText:
+	text "The door is"
+	line "locked."
 	done

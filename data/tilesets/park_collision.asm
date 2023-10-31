@@ -202,14 +202,14 @@
 	tilecoll WALL, WALL, WALL, WALL ; c9
 	tilecoll FLOOR, FLOOR, HEADBUTT_TREE, FLOOR ; ca
 	tilecoll FLOOR, FLOOR, FLOOR, HEADBUTT_TREE ; cb
-	tilecoll SKATE, SKATE, SKATE, SKATE ; cc
-	tilecoll SKATE, SKATE, SKATE, SKATE ; cd
-	tilecoll SKATE, SKATE, SKATE, SKATE ; ce
-	tilecoll SKATE, SKATE, SKATE, SKATE ; cf
+	tilecoll GRIND, GRIND, GRIND, GRIND ; cc
+	tilecoll GRIND, GRIND, GRIND, GRIND ; cd
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ce
+	tilecoll WALL, WALL, WALL, WALL ; cf
 	tilecoll SKATE, SKATE, SKATE, SKATE ; d0
-	tilecoll SKATE, SKATE, SKATE, SKATE ; d1
-	tilecoll SKATE, SKATE, SKATE, SKATE ; d2
-	tilecoll SKATE, SKATE, SKATE, SKATE ; d3
+	tilecoll WALL, WALL, HEADBUTT_TREE, HEADBUTT_TREE ; d1
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d2
+	tilecoll WALL, WALL, WALL, WALL ; d3
 	tilecoll SKATE, SKATE, SKATE, SKATE ; d4
 	tilecoll SKATE, SKATE, SKATE, SKATE ; d5
 	tilecoll SKATE, SKATE, SKATE, SKATE ; d6

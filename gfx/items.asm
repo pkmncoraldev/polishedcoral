@@ -167,12 +167,12 @@ SoftSandIcon:
 BrightPowderIcon:
 MetalPowderIcon:
 QuickPowderIcon:
-StardustIcon:     				INCBIN "gfx/items/1.2bpp"
+StardustIcon:     				INCBIN "gfx/items/stardust.2bpp"
 EnergyPowderIcon:
 HealPowderIcon:
-SilverPowderIcon: 				INCBIN "gfx/items/1.2bpp"
-EnergyRootIcon:   				INCBIN "gfx/items/1.2bpp"
-RevivalHerbIcon:  				INCBIN "gfx/items/1.2bpp"
+SilverPowderIcon: 				INCBIN "gfx/items/silver_powder.2bpp"
+EnergyRootIcon:   				INCBIN "gfx/items/energy_root.2bpp"
+RevivalHerbIcon:  				INCBIN "gfx/items/revival_herb.2bpp"
 XAttackIcon:
 XDefendIcon:
 XSpeedIcon:
@@ -180,24 +180,24 @@ XSpclAtkIcon:
 XSpclDefIcon:
 XAccuracyIcon:
 DireHitIcon:
-GuardSpecIcon:    				INCBIN "gfx/items/1.2bpp"
+GuardSpecIcon:    				INCBIN "gfx/items/x_item.2bpp"
 RepelIcon:
 SuperRepelIcon:
 MaxRepelIcon:     				INCBIN "gfx/items/repel.2bpp"
 EscapeRopeIcon:   				INCBIN "gfx/items/1.2bpp"
-PokeDollIcon:     				INCBIN "gfx/items/1.2bpp"
+PokeDollIcon:     				INCBIN "gfx/items/poke_doll.2bpp"
 AbilityCapIcon:   				INCBIN "gfx/items/1.2bpp"
-LeafStoneIcon:    				INCBIN "gfx/items/1.2bpp"
-FireStoneIcon:    				INCBIN "gfx/items/1.2bpp"
-WaterStoneIcon:   				INCBIN "gfx/items/1.2bpp"
-ThunderStoneIcon: 				INCBIN "gfx/items/1.2bpp"
-MoonStoneIcon:    				INCBIN "gfx/items/1.2bpp"
+LeafStoneIcon:    				INCBIN "gfx/items/leaf_stone.2bpp"
+FireStoneIcon:    				INCBIN "gfx/items/fire_stone.2bpp"
+WaterStoneIcon:   				INCBIN "gfx/items/water_stone.2bpp"
+ThunderStoneIcon: 				INCBIN "gfx/items/thunderstone.2bpp"
+MoonStoneIcon:    				INCBIN "gfx/items/moon_stone.2bpp"
 SunStoneIcon:     				INCBIN "gfx/items/1.2bpp"
 DuskStoneIcon:    				INCBIN "gfx/items/1.2bpp"
 ShinyStoneIcon:   				INCBIN "gfx/items/1.2bpp"
 DawnStoneIcon:    				INCBIN "gfx/items/1.2bpp"
 EverstoneIcon:    				INCBIN "gfx/items/1.2bpp"
-BicycleIcon:      				INCBIN "gfx/items/1.2bpp"
+BicycleIcon:      				INCBIN "gfx/items/bicycle.2bpp"				;done by gmerc
 OldRodIcon:       				INCBIN "gfx/items/1.2bpp"
 GoodRodIcon:      				INCBIN "gfx/items/1.2bpp"
 SuperRodIcon:     				INCBIN "gfx/items/1.2bpp"
@@ -292,7 +292,7 @@ WiseGlassesIcon:  				INCBIN "gfx/items/1.2bpp"
 ZoomLensIcon:     				INCBIN "gfx/items/1.2bpp"
 MentalHerbIcon:
 PowerHerbIcon:
-WhiteHerbIcon:    				INCBIN "gfx/items/1.2bpp"
+WhiteHerbIcon:    				INCBIN "gfx/items/white_herb.2bpp"
 DampRockIcon:     				INCBIN "gfx/items/1.2bpp"
 HeatRockIcon:     				INCBIN "gfx/items/1.2bpp"
 SmoothRockIcon:   				INCBIN "gfx/items/1.2bpp"

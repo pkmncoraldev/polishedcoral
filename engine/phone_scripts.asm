@@ -2,6 +2,26 @@ UnusedPhoneScript: ; 0xbcea5
 	farwritetext UnusedPhoneText
 	end
 
+AutoPhoneScript:
+	checkitem BICYCLE
+	iftrue .normal
+	checkcode VAR_SPECIALPHONECALL
+	if_equal SPECIALCALL_COMEGETUPGRADEDBIKE, .comegetupgradedbike
+	checkevent EVENT_CAN_PICK_UP_BIKE
+	iffalse .cantgetbikeyet
+	farwritetext AutoPhoneComeGetBikeText2
+	end
+.cantgetbikeyet
+	farwritetext AutoPhoneNotReadyText
+	end
+.normal
+	farwritetext AutoPhoneNormalText
+	end
+.comegetupgradedbike
+	farwritetext AutoPhoneComeGetBikeText
+	setevent EVENT_CAN_PICK_UP_BIKE
+	specialphonecall SPECIALCALL_NONE
+	end
 ; Mom
 
 MomPhoneScript: ; 0xbceaa

@@ -1,3 +1,71 @@
+AutoPhoneComeGetBikeText:
+	text "<PLAYER>!"
+	
+	para "You're BIKE is"
+	line "ready!"
+	
+	para "Oh you're gonna"
+	line "love this."
+	
+	para "Stop by the AUTO"
+	line "SHOP and pick it"
+	cont "up!"
+	done
+	
+AutoPhoneComeGetBikeText2:
+	text "DUSK AUTO SHOP."
+	line "How can I help"
+	cont "you?"
+	
+	para "Oh, <PLAYER>!"
+	
+	para "What are you"
+	line "waiting for?"
+	
+	para "Come pick up"
+	line "your BIKE!"
+	
+	para "I'm waiting in"
+	line "DUSK TURNPIKE!"
+	done
+
+AutoPhoneNotReadyText:
+	text "DUSK AUTO SHOP."
+	line "How can I help"
+	cont "you?"
+	
+	para "Oh, <PLAYER>!"
+	
+	para "Your BIKE isn't"
+	line "ready yet."
+	
+	para "It could take a"
+	line "while."
+	
+	para "I'll give you a"
+	line "call when it's"
+	cont "ready."
+	done
+
+AutoPhoneNormalText:
+	text "DUSK AUTO SHOP."
+	line "How can I help"
+	cont "you?"
+	
+	para "Oh, <PLAYER>!"
+	
+	para "How are you liking"
+	line "your new, souped"
+	cont "up bike?"
+	
+	para "Pretty neat,"
+	line "right?"
+	
+	para "Hope you're enjoy-"
+	line "ing it!"
+	
+	para "Take it easy!"
+	done
 
 UnknownText_0x64000: ; 0x64000
 	text "I hate having to"

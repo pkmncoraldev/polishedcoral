@@ -1055,8 +1055,9 @@ wLusterGymTrigger:: ds 1
 wUndergroundPassageTrigger:: ds 1
 wDesertTemple1Trigger:: ds 1
 wDesertTemple2Trigger:: ds 1
+wRadiantTownshipTrigger:: ds 1
 
-ds 35
+ds 34
 
 wAmpharosFood:: ds 1
 
@@ -1086,8 +1087,6 @@ wCurrMapTriggerCount:: ds 1
 wCurrMapTriggerHeaderPointer:: ds 2
 wCurrMapCallbackCount:: ds 1
 wCurrMapCallbackHeaderPointer:: ds 2
-
-ds 1 ;unused
 
 ; Sprite id of each decoration
 wBed:: ds 1
@@ -1174,6 +1173,8 @@ wRepelEffect:: ds 1 ; If a Repel is in use, it contains the nr of steps it's sti
 wRepelType:: ds 1
 
 wTorchSteps:: ds 1
+
+wBikeUpgradeSteps:: ds 1
 
 wOnBike::	ds 1
 

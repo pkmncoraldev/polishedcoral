@@ -668,7 +668,7 @@ NonTrainerCallerNames: ; 903d6
 	dw .mom
 	dw .spruce
 	dw .wendy
-;	dw .elm
+	dw .auto
 ;	dw .lyra
 ;	dw .buena
 
@@ -676,6 +676,7 @@ NonTrainerCallerNames: ; 903d6
 .mom db "MOM:<LNBRK>           HOME@"
 .spruce db "PROF.SPRUCE:<LNBRK>   #MON PROF.@"
 .wendy db "WENDY:<LNBRK>     GYM LEADER@"
+.auto db "DUSK AUTO SHOP@"
 ; 90423
 
 Phone_GetTrainerName: ; 90423 (24:4423)

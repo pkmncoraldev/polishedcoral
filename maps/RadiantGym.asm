@@ -33,6 +33,8 @@ RadiantGym_MapScriptHeader:
 	const_def 1 ; object constants
 	const RADIANT_GYM_LEILANI
 
+
+
 RadiantGymLeilani:
 	faceplayer
 	opentext

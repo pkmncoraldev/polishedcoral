@@ -114,4 +114,5 @@ MapTriggers::
 	scene_var DESERT_TEMPLE_TOP_RIGHT,				  wDesertTemple2Trigger
 	scene_var DESERT_TEMPLE_LOWER_LEFT,				  wDesertTemple2Trigger
 	scene_var DESERT_TEMPLE_LOWER_RIGHT,			  wDesertTemple2Trigger
+	scene_var RADIANT_TOWNSHIP,						  wRadiantTownshipTrigger
 	db -1

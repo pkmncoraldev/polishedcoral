@@ -1085,6 +1085,9 @@ CountStep: ; 96b79
 	
 	call DoPollenStep
 	jr c, .doscript
+	
+	call DoBikeUpgradeStep
+	jr c, .doscript
 
 	; Count the step for poison and total steps
 	ld hl, wPoisonStepCount
@@ -1230,6 +1233,29 @@ DoPollenStep:
 .no
 	xor a
 	ret
+	
+DoBikeUpgradeStep:
+	ld de, EVENT_BEAT_LEILANI
+	call CheckEventFlag
+	ret z
+	
+	ld a, [wBikeUpgradeSteps]
+	and a
+	ret z
+
+	dec a
+	ld [wBikeUpgradeSteps], a
+	ret nz
+
+	ld a, BANK(AutoShopSpecialCallScript)
+	ld hl, AutoShopSpecialCallScript
+	call CallScript
+	scf
+	ret
+	
+AutoShopSpecialCallScript:
+	specialphonecall SPECIALCALL_COMEGETUPGRADEDBIKE
+	end
 	
 DoTorchStep: ; 96bd7
 	ld a, [wMapGroup]

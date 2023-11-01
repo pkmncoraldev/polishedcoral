@@ -26,6 +26,11 @@ DuskAutoLobbyCallback:
 .end
 	return
 	
+SetUpBikeUpgradeStepsAsm:
+	ld a, 5
+	ld [wBikeUpgradeSteps], a
+	ret
+	
 DuskAutoLobbyGuy:
 	opentext
 	checkevent EVENT_CAN_PICK_UP_BIKE
@@ -80,7 +85,9 @@ DuskAutoLobbyGuy:
 	waitsfx
 	writetext DuskAutoLobbyGuyTextSaidYesText
 	closetext
+	addcellnum PHONE_AUTO
 	setevent EVENT_GAVE_BIKE_TO_AUTO_GUY
+	callasm SetUpBikeUpgradeStepsAsm
 	end
 .said_no
 	writetext DuskAutoLobbyGuyTextSaidNoText

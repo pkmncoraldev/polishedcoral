@@ -69,6 +69,7 @@ BoarderSpriteGFX::             INCBIN "gfx/sprites/boarder.2bpp"
 BreederSpriteGFX::             INCBIN "gfx/sprites/breeder.2bpp"
 BugCatcherSpriteGFX::          INCBIN "gfx/sprites/bug_catcher.2bpp"
 BugManiacSpriteGFX::           INCBIN "gfx/sprites/bug_maniac.2bpp"
+ScaryPaintingSpriteGFX::       INCBIN "gfx/sprites/scary_painting.2bpp"
 
 
 SECTION "Overworld Sprites 3", ROMX

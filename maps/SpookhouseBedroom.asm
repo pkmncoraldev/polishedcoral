@@ -11,15 +11,33 @@ SpookhouseBedroom_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 6 ; bg events
+	db 18 ; bg events
 	signpost 2, 11, SIGNPOST_READ, SpookHouseBookshelf
 	signpost 2, 10, SIGNPOST_READ, SpookHouseBookshelf
 	signpost 3, 2, SIGNPOST_READ, SpookHouseBed
-	signpost 3, 1, SIGNPOST_READ, SpookHouseBed
+	signpost  3,  1, SIGNPOST_READ, SpookHouseBed
 	signpost 2, 0, SIGNPOST_READ, SpookHouseTrashcan
 	signpost 3, 7, SIGNPOST_READ, SpookHouseJournal
+	signpost  4,  9, SIGNPOST_READ, SpookHouseDiningRoomBelow
+	signpost  5,  3, SIGNPOST_READ, SpookHouseDiningRoomBelow
+	signpost  5,  4, SIGNPOST_READ, SpookHouseDiningRoomBelow
+	signpost  5,  6, SIGNPOST_READ, SpookHouseDiningRoomBelow
+	signpost  5,  7, SIGNPOST_READ, SpookHouseDiningRoomBelow
+	signpost  6,  1, SIGNPOST_READ, SpookHouseDiningRoomBelow
+	signpost  7,  9, SIGNPOST_READ, SpookHouseDiningRoomBelow
+	signpost  7, 10, SIGNPOST_READ, SpookHouseDiningRoomBelow
+	signpost  7, 11, SIGNPOST_READ, SpookHouseDiningRoomBelow
+	signpost  3,  3, SIGNPOST_READ, SpookHouseDiningRoomBelow
+	signpost  3,  4, SIGNPOST_READ, SpookHouseDiningRoomBelow
+	signpost  3,  5, SIGNPOST_READ, SpookHouseDiningRoomBelow
 
-	db 0 ; object events
+	db 2 ; object events
+	person_event SPRITE_SCARY_PAINTING,  1,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SpookHouseNPC1, -1
+	person_event SPRITE_TWIN,  7,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SpookHouseNPC1, EVENT_ALWAYS_SET
+	
+	const_def 1 ; object constants
+	const SPOOKHOUSE_BEDROOM_PAINTING
+	const SPOOKHOUSE_BEDROOM_GIRL
 	
 SpookhouseBedroomCallback:
 	checkevent EVENT_SPOOKHOUSE_GOT_BALL
@@ -42,7 +60,11 @@ SpookHouseBed:
 SpookHouseTrashcan:
 	jumptext SpookHouseTrashcanText
 	
+SpookHouseDiningRoomBelow:
+	jumptext SpookHouseDiningRoomBelowText
+	
 SpookHouseJournal:
+	appear SPOOKHOUSE_BEDROOM_GIRL
 	opentext
 	writetext SpookHouseJournalText1
 	yesorno
@@ -56,17 +78,25 @@ SpookHouseJournal:
 	writetext SpookHouseJournalText5
 	yesorno
 	iffalse SpookHouseJournalNo
+	spriteface SPOOKHOUSE_BEDROOM_PAINTING, RIGHT
+	pause 1
+	spriteface SPOOKHOUSE_BEDROOM_PAINTING, UP
 	writetext SpookHouseJournalText6
 	yesorno
 	iffalse SpookHouseJournalNo
+	spriteface SPOOKHOUSE_BEDROOM_PAINTING, DOWN
 	writetext SpookHouseJournalText7
 	waitbutton
 	closetext
+	spriteface SPOOKHOUSE_BEDROOM_PAINTING, UP
+	pause 1
+	disappear SPOOKHOUSE_BEDROOM_GIRL
 	end
 	
 SpookHouseJournalNo:
 	farwritetext BetterNotText
 	waitbutton
+	disappear SPOOKHOUSE_BEDROOM_GIRL
 	closetext
 	end
 	
@@ -87,6 +117,13 @@ SpookHouseBedText:
 	
 SpookHouseTrashcanText:
 	text "It's full of dust."
+	done
+	
+SpookHouseDiningRoomBelowText:
+	text "You can see the"
+	line "dining room below"
+	cont "through the broken"
+	cont "floorboards."
 	done
 	
 SpookHouseJournalText1:

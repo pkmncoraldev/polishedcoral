@@ -232,3 +232,4 @@ SpriteHeaders:
 	overworld_sprite PigtailsSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite LeilaniChairSpriteGFX, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite LeilaniChair2SpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite ScaryPaintingSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER

@@ -930,6 +930,8 @@ LoadMapPals::
 	jp z, .lab
 	cp TILESET_HIGHWAY
 	jp z, .highway
+	cp TILESET_HAUNTED
+	jp z, .haunted
 	jp .normal
 .cave
 	ld a, [wTimeOfDayPal]
@@ -1513,6 +1515,10 @@ LoadMapPals::
 	ld hl, MapObjectPalsLeilaniChair
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
+.haunted
+	ld hl, MapObjectPalsSpookhouse
+	call LoadSingleOBPalLinePal7
+	jp FarCopyWRAM
 .highway
 	ld a, [wMapNumber]
 	cp MAP_BAR_BACK_ALLEY
@@ -2023,6 +2029,9 @@ INCLUDE "maps/palettes/obpals/leilanibed.pal"
 
 MapObjectPalsLeilaniChair::
 INCLUDE "maps/palettes/obpals/leilanichair.pal"
+
+MapObjectPalsSpookhouse::
+INCLUDE "maps/palettes/obpals/spookhouse.pal"
 
 MapObjectPalsEvilMeowth::
 INCLUDE "maps/palettes/obpals/evilmeowth.pal"

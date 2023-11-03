@@ -143,7 +143,7 @@ ShimmerLabResearchRoomProfText4:
 	line "very similar."
 	
 	para "We found ours in"
-	cont "the desert on a"
+	line "the desert on a"
 	cont "nearby island."
 	
 	para "To find such a"
@@ -155,9 +155,10 @@ ShimmerLabResearchRoomProfText4:
 	line "indeed!"
 	
 	para "It could imply the"
-	line "existence of another"
-	cont "ruined temple on"
-	cont "the island."
+	line "existence of a"
+	cont "similar temple to"
+	cont "the one you found"
+	cont "yours in."
 	
 	para "We need to follow"
 	line "this lead."

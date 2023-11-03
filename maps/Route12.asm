@@ -185,8 +185,8 @@ TrainerRoute12_3:
 	cont "or somethin'."
 	
 	para "I'm gonna rip it up"
-	line "on my bike when it's"
-	cont "done."
+	line "on my bike when"
+	cont "it's done."
 	done
 
 .BeatenText:

@@ -63,6 +63,7 @@ Pack: ; 10000
 	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
+	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .ItemsPocketMenu: ; 10067 (4:4067)
@@ -90,6 +91,7 @@ Pack: ; 10000
 	call Pack_ClearOBPalettes
 	call ClearSprites
 	call DrawPocketName
+	call WaitBGMap_DrawPackGFX
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -119,6 +121,7 @@ Pack: ; 10000
 	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
+	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .BallsPocketMenu: ; 10198 (4:4198)
@@ -146,6 +149,7 @@ Pack: ; 10000
 	call Pack_ClearOBPalettes
 	call ClearSprites
 	call DrawPocketName
+	call WaitBGMap_DrawPackGFX
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -217,6 +221,7 @@ Pack: ; 10000
 	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
+	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .BerriesPocketMenu:
@@ -244,6 +249,7 @@ Pack: ; 10000
 	call Pack_ClearOBPalettes
 	call ClearSprites
 	call DrawPocketName
+	call WaitBGMap_DrawPackGFX
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -796,6 +802,7 @@ BattlePack: ; 10493
 	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
+	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .ItemsPocketMenu: ; 104fa (4:44fa)
@@ -824,6 +831,7 @@ BattlePack: ; 10493
 	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
+	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .MedicinePocketMenu:
@@ -851,6 +859,7 @@ BattlePack: ; 10493
 	call Pack_ClearOBPalettes
 	call ClearSprites
 	call DrawPocketName
+	call WaitBGMap_DrawPackGFX
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -900,6 +909,7 @@ BattlePack: ; 10493
 	call ClearSprites
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
+	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
 .BerriesPocketMenu:
@@ -927,6 +937,7 @@ BattlePack: ; 10493
 	call Pack_ClearOBPalettes
 	call ClearSprites
 	call DrawPocketName
+	call WaitBGMap_DrawPackGFX
 	call WaitBGMap_DrawPackGFX
 	jp Pack_JumptableNext
 
@@ -1213,6 +1224,7 @@ InitPocket: ; 10762 (4:4762)
 	call ClearPocketList
 	call Pack_ClearOBPalettes
 	call ClearSprites
+	call WaitBGMap_DrawPackGFX
 	jp WaitBGMap_DrawPackGFX
 
 DepositSellTutorial_InterpretJoypad: ; 1076f

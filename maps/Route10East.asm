@@ -36,11 +36,16 @@ Route10East_MapScriptHeader:
 	signpost 20,  9, SIGNPOST_READ, Route10EastWood
 	signpost 21,  9, SIGNPOST_READ, Route10EastWood
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event 11, 24, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route10EastCampfire, EVENT_HIDE_OW_OBJECTS_BROWN
 	object_event 11, 24, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Route10EastCampfire, EVENT_HIDE_OW_OBJECTS_TEAL
 	tmhmball_event 20, 20, TM_HAIL, EVENT_ROUTE_10_EAST_POKE_BALL_HAIL
+	tmhmball_event 11, 21, TM_BLIZZARD, EVENT_ROUTE_10_EAST_POKE_BALL_BLIZZARD
 
+	const_def 1 ; object constants
+	const ROUTE_10_EAST_FIRE_1
+	const ROUTE_10_EAST_FIRE_2
+	
 	
 Route10EastTrigger0:
 	checkevent EVENT_SNOWSTORM_HAPPENING
@@ -57,6 +62,20 @@ Route10EastTrigger1:
 	end
 	
 Route10EastCallback:
+	checkevent EVENT_CAN_GO_TO_DESERT
+	iffalse .tent_done
+	changeblock $0a, $12, $02
+	changeblock $0c, $12, $02
+	changeblock $08, $14, $c1
+	changeblock $0a, $14, $03
+	changeblock $0c, $14, $45
+	changeblock $0a, $16, $34
+	changeblock $0c, $16, $02
+	changeblock $0a, $18, $c2
+	changeblock $0c, $18, $02
+	moveperson ROUTE_10_EAST_FIRE_1, -5, -5
+	moveperson ROUTE_10_EAST_FIRE_2, -5, -5
+.tent_done
 	readvar VAR_PLAYER_COLOR
 	if_equal 3, .brown
 	setevent EVENT_HIDE_OW_OBJECTS_TEAL

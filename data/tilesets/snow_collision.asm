@@ -191,3 +191,5 @@
 	tilecoll FLOOR, WALL, ROCK_CLIMB, WALL ; be
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; bf
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; c0
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c1
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; c2

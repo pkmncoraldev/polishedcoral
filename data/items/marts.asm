@@ -173,15 +173,12 @@ LusterMallElectronics:
 	db -1
 	
 LusterMallElectronicsTM:
-	db 11 ; # items
+	db 8 ; # items
 	dbw TM_SAFEGUARD, 		6000
 	dbw TM_SUBSTITUTE, 		6000
 	dbw TM_PROTECT, 		8000
 	dbw TM_LIGHT_SCREEN, 	8000
 	dbw TM_REFLECT,		 	8000
-	dbw TM_THUNDER, 		12000
-	dbw TM_BLIZZARD, 		12000
-	dbw TM_FIRE_BLAST, 		12000
 	dbw TM_SOLAR_BEAM, 		12000
 	dbw TM_HYPER_BEAM, 		14000
 	dbw TM_GIGA_IMPACT,		14000

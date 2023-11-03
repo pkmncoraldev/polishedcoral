@@ -121,10 +121,10 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 78
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 79
 	tilecoll WALL, WALL, WALL, WALL ; 7a
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 7b
+	tilecoll WALL, WALL, WALL, DEAD_LAMP ; 7b
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 7c
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 7d
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 7e
+	tilecoll WALL, WALL, DOOR, WALL ; 7e
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 7f
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 80
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 81

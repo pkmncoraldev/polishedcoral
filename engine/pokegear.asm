@@ -1391,6 +1391,8 @@ PokegearPhone_Joypad: ; 91171 (24:5171)
 	ret
 
 PokegearPhone_MakePhoneCall: ; 911eb (24:51eb)
+	eventflagcheck EVENT_SPOOKHOUSE_DARK
+	jr nz, .dark_room
 	call GetMapHeaderPhoneServiceNybble
 	and a
 	jr nz, .no_service
@@ -1411,6 +1413,7 @@ PokegearPhone_MakePhoneCall: ; 911eb (24:51eb)
 	ld a, [wPokegearPhoneSelectedPerson]
 	ld b, a
 	call Function90199
+.dark_room_return
 	ld c, 10
 	call DelayFrames
 	ld hl, wOptions1
@@ -1421,6 +1424,24 @@ PokegearPhone_MakePhoneCall: ; 911eb (24:51eb)
 	ld hl, wJumptableIndex
 	inc [hl]
 	ret
+.dark_room
+	ld hl, wOptions1
+	res NO_TEXT_SCROLL, [hl]
+	xor a
+	ld [hInMenu], a
+	ld de, SFX_CALL
+	call PlaySFX
+	ld hl, .dotdotdot
+	call PrintText
+	call WaitSFX
+	ld de, SFX_CALL
+	call PlaySFX
+	ld hl, .dotdotdot
+	call PrintText
+	call WaitSFX
+	ld hl, .NoUse
+	call PrintText
+	jr .dark_room_return
 
 .no_service
 	farcall Phone_NoSignal
@@ -1445,7 +1466,9 @@ PokegearPhone_MakePhoneCall: ; 911eb (24:51eb)
 	text_jump UnknownText_0x1c5827
 	db "@"
 
-; 0x91256
+.NoUse:
+	text_jump NoUseText
+	db "@"
 
 PokegearPhone_FinishPhoneCall: ; 91256 (24:5256)
 	ld a, [hJoyPressed]

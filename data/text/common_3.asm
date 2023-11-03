@@ -851,6 +851,14 @@ UnknownText_0x1c5827::
 	line "service area."
 	prompt
 
+NoUseText::
+	text "Teehee!"
+	
+	para "It's no use trying"
+	line "to call for help"
+	cont "now…"
+	done
+
 UnknownText_0x1c5847::
 	text "Whom do you want"
 	line "to call?"

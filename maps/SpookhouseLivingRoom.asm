@@ -13,7 +13,7 @@ SpookhouseLivingRoom_MapScriptHeader:
 	warp_def 5, 8, 3, SPOOKHOUSE_DINING_ROOM
 	warp_def 1, 4, 1, SPOOKHOUSE_BEDROOM
 	warp_def 1, 5, 2, SPOOKHOUSE_BEDROOM
-	warp_def 3, 0, 2, SPOOKHOUSE_HALLWAY_1
+	warp_def 3, 0, 1, SPOOKHOUSE_HALLWAY_1
 	warp_def 2, 0, 2, SPOOKHOUSE_HALLWAY_1
 	warp_def  3,  9, 1, ROUTE_1
 	warp_def 2, 9, 2, ROUTE_1

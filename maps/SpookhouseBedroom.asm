@@ -78,13 +78,13 @@ SpookHouseJournal:
 	writetext SpookHouseJournalText5
 	yesorno
 	iffalse SpookHouseJournalNo
-	spriteface SPOOKHOUSE_BEDROOM_PAINTING, RIGHT
+	spriteface SPOOKHOUSE_BEDROOM_PAINTING, DOWN
 	pause 1
 	spriteface SPOOKHOUSE_BEDROOM_PAINTING, UP
 	writetext SpookHouseJournalText6
 	yesorno
 	iffalse SpookHouseJournalNo
-	spriteface SPOOKHOUSE_BEDROOM_PAINTING, DOWN
+	spriteface SPOOKHOUSE_BEDROOM_PAINTING, RIGHT
 	writetext SpookHouseJournalText7
 	waitbutton
 	closetext

@@ -173,8 +173,8 @@ MAP_NONE   EQU 0
 	map_const SPOOKHOUSE_LIVING_ROOM,					   5,  6 ; 16
 	map_const SPOOKHOUSE_DINING_ROOM,					   7,  4 ; 17
 	map_const SPOOKHOUSE_BEDROOM,						   6,  4 ; 18
-	map_const SPOOKHOUSE_HALLWAY_1,						   4,  2 ; 19
-	map_const SPOOKHOUSE_HALLWAY_2,						   4,  2 ; 20
+	map_const SPOOKHOUSE_HALLWAY_1,						   5,  2 ; 19
+	map_const SPOOKHOUSE_HALLWAY_2,						   5,  2 ; 20
 	map_const SPOOKHOUSE_TV_ROOM,						   3,  6 ; 21
 
 	newgroup													 ;  9

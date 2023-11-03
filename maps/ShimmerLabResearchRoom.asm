@@ -32,12 +32,12 @@ ShimmerLabResearchRoom_MapScriptHeader:
 ShimmerLabResearchRoomProf:
 	faceplayer
 	opentext
-;	checkevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
-;	iftrue .checkpot
-;	writetext ShimmerLabResearchRoomProfText1
-;	waitbutton
-;	closetext
-;	end
+	checkevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
+	iftrue .checkpot
+	writetext ShimmerLabResearchRoomProfText1
+	waitbutton
+	closetext
+	end
 .checkpot
 	checkitem CLAY_POT
 	iftrue .startquest

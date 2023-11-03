@@ -33,6 +33,7 @@ LusterMallClothesShop_MapScriptHeader:
 	
 	
 LusterMallClothesShopPolly:
+	setevent EVENT_MET_POLLY
 	faceplayer
 	opentext
 	writetext LusterMallClothesShopPollyText

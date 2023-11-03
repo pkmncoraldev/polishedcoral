@@ -144,6 +144,7 @@ RadiantOrphanageLeilanisRoomFeliciaText:
 	done
 
 RadiantOrphanageLeilanisRoomErika:
+	setevent EVENT_MET_LEILANI
 	callasm CalcRemainingLostGirlsAsm
 	ifequal 1, .saved_one
 	ifequal 6, .saved_almost_all

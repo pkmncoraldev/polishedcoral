@@ -1133,7 +1133,8 @@ DepositSellPack: ; 106be
 .ItemsPocket: ; 106d9 (4:46d9)
 	ld a, ITEM - 1
 	call InitPocket
-	ld hl, PC_Mart_ItemsPocketMenuDataHeader
+	call Pack_Draw_Sprites
+	ld hl, ItemsPocketMenuDataHeader
 	call CopyMenuDataHeader
 	ld a, [wItemsPocketCursor]
 	ld [wMenuCursorBuffer], a
@@ -1149,7 +1150,8 @@ DepositSellPack: ; 106be
 .MedicinePocket:
 	ld a, MEDICINE - 1
 	call InitPocket
-	ld hl, PC_Mart_MedicinePocketMenuDataHeader
+	call Pack_Draw_Sprites
+	ld hl, MedicinePocketMenuDataHeader
 	call CopyMenuDataHeader
 	ld a, [wMedicinePocketCursor]
 	ld [wMenuCursorBuffer], a
@@ -1165,7 +1167,8 @@ DepositSellPack: ; 106be
 .BallsPocket: ; 1073b (4:473b)
 	ld a, BALL - 1
 	call InitPocket
-	ld hl, PC_Mart_BallsPocketMenuDataHeader
+	call Pack_Draw_Sprites
+	ld hl, BallsPocketMenuDataHeader
 	call CopyMenuDataHeader
 	ld a, [wBallsPocketCursor]
 	ld [wMenuCursorBuffer], a
@@ -1190,7 +1193,8 @@ DepositSellPack: ; 106be
 .BerriesPocket:
 	ld a, BERRIES - 1
 	call InitPocket
-	ld hl, PC_Mart_BerriesPocketMenuDataHeader
+	call Pack_Draw_Sprites
+	ld hl, BerriesPocketMenuDataHeader
 	call CopyMenuDataHeader
 	ld a, [wBerriesPocketCursor]
 	ld [wMenuCursorBuffer], a
@@ -1206,7 +1210,8 @@ DepositSellPack: ; 106be
 .KeyItemsPocket: ; 106ff (4:46ff)
 	ld a, KEY_ITEM - 1
 	call InitPocket
-	ld hl, PC_Mart_KeyItemsPocketMenuDataHeader
+	call Pack_Draw_Sprites
+	ld hl, KeyItemsPocketMenuDataHeader
 	call CopyMenuDataHeader
 	ld a, [wKeyItemsPocketCursor]
 	ld [wMenuCursorBuffer], a
@@ -1472,7 +1477,7 @@ DrawPackGFX: ; 1089d
 	ld a, d
 	rst AddNTimes
 	ld b, e
-	ld c, 25
+	ld c, 20
 	ld d, h
 	ld e, l
 	ld hl, VTiles2 tile $50
@@ -1696,24 +1701,6 @@ ItemsPocketMenuDataHeader: ; 0x10a4f
 	dba UpdateItemIconAndDescription
 ; 10a67
 
-PC_Mart_ItemsPocketMenuDataHeader: ; 0x10a67
-	db $40 ; flags
-	db 01, 07 ; start coords
-	db 11, 19 ; end coords
-	dw .MenuData2
-	db 1 ; default option
-; 0x10a6f
-
-.MenuData2: ; 0x10a6f
-	db $2e ; flags
-	db 5, 8 ; rows, columns
-	db 2 ; horizontal spacing
-	dbw 0, wNumItems
-	dba PlaceMartItemName
-	dba PlaceMenuItemQuantity
-	dba UpdateItemIconAndDescription
-; 10a7f
-
 MedicinePocketMenuDataHeader:
 	db $40 ; flags
 	db 01, 07 ; start coords
@@ -1727,22 +1714,6 @@ MedicinePocketMenuDataHeader:
 	db 2 ; horizontal spacing
 	dbw 0, wNumMedicine
 	dba PlaceMenuItemName
-	dba PlaceMenuItemQuantity
-	dba UpdateItemIconAndDescription
-
-PC_Mart_MedicinePocketMenuDataHeader:
-	db $40 ; flags
-	db 01, 07 ; start coords
-	db 11, 19 ; end coords
-	dw .MenuData2
-	db 1 ; default option
-
-.MenuData2:
-	db $2e ; flags
-	db 5, 8 ; rows, columns
-	db 2 ; horizontal spacing
-	dbw 0, wNumMedicine
-	dba PlaceMartItemName
 	dba PlaceMenuItemQuantity
 	dba UpdateItemIconAndDescription
 
@@ -1764,24 +1735,6 @@ BallsPocketMenuDataHeader: ; 0x10aaf
 	dba UpdateItemIconAndDescription
 ; 10ac7
 
-PC_Mart_BallsPocketMenuDataHeader: ; 0x10ac7
-	db $40 ; flags
-	db 01, 07 ; start coords
-	db 11, 19 ; end coords
-	dw .MenuData2
-	db 1 ; default option
-; 0x10acf
-
-.MenuData2: ; 0x10acf
-	db $2e ; flags
-	db 5, 8 ; rows, columns
-	db 2 ; horizontal spacing
-	dbw 0, wNumBalls
-	dba PlaceMartItemName
-	dba PlaceMenuItemQuantity
-	dba UpdateItemIconAndDescription
-; 10adf
-
 BerriesPocketMenuDataHeader:
 	db $40 ; flags
 	db 01, 07 ; start coords
@@ -1795,22 +1748,6 @@ BerriesPocketMenuDataHeader:
 	db 2 ; horizontal spacing
 	dbw 0, wNumBerries
 	dba PlaceMenuItemName
-	dba PlaceMenuItemQuantity
-	dba UpdateItemIconAndDescription
-
-PC_Mart_BerriesPocketMenuDataHeader:
-	db $40 ; flags
-	db 01, 07 ; start coords
-	db 11, 19 ; end coords
-	dw .MenuData2
-	db 1 ; default option
-
-.MenuData2:
-	db $2e ; flags
-	db 5, 8 ; rows, columns
-	db 2 ; horizontal spacing
-	dbw 0, wNumBerries
-	dba PlaceMartItemName
 	dba PlaceMenuItemQuantity
 	dba UpdateItemIconAndDescription
 
@@ -1831,24 +1768,6 @@ KeyItemsPocketMenuDataHeader: ; 0x10a7f
 	dba PlaceMenuItemQuantity
 	dba UpdateItemIconAndDescription
 ; 10a97
-
-PC_Mart_KeyItemsPocketMenuDataHeader: ; 0x10a97
-	db $40 ; flags
-	db 01, 07 ; start coords
-	db 11, 19 ; end coords
-	dw .MenuData2
-	db 1 ; default option
-; 0x10a9f
-
-.MenuData2: ; 0x10a9f
-	db $2e ; flags
-	db 5, 8 ; rows, columns
-	db 1 ; horizontal spacing
-	dbw 0, wNumKeyItems
-	dba PlaceMartItemName
-	dba PlaceMenuItemQuantity
-	dba UpdateItemIconAndDescription
-; 10aaf
 
 Text_SortItemsHow:
 	text "How do you want"

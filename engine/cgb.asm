@@ -787,35 +787,27 @@ _CGB_PokedexSearchOption: ; 93ba
 
 
 _CGB_BuyMenu: ; 9499
-	ld a, [wEngineBuffer1]
-	cp MARTTYPE_BLUECARD
-	ld hl, BlueCardMartMenuPals
-	jr z, .ok
-	cp MARTTYPE_BP
-	ld hl, BTMartMenuPals
-	jr z, .ok
 	ld hl, MartMenuPals
-.ok
 	ld de, wUnknBGPals
 	ld bc, 3 palettes
 	ld a, $5
 	call FarCopyWRAM
 
-rept 2
-	ld hl, CancelPalette
-	call LoadPalette_White_Col1_Col2_Black
-endr
-
 	call WipeAttrMap
 
-	hlcoord 6, 4, wAttrMap
-	lb bc, 7, 1
-	ld a, $2
+	hlcoord 7, 2, wAttrMap
+	lb bc, 9, 1
+	ld a, $1
 	call FillBoxCGB
 
-	hlcoord 1, 8, wAttrMap
-	lb bc, 3, 3
-	ld a, $7
+	hlcoord 0, 3, wAttrMap
+	lb bc, 7, 5
+	ld a, $1
+	call FillBoxCGB
+	
+	hlcoord 0, 0, wAttrMap
+	lb bc, 1, SCREEN_WIDTH
+	ld a, $2
 	call FillBoxCGB
 
 	jp _CGB_FinishLayout

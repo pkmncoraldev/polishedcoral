@@ -1,47 +1,33 @@
 UpdateItemIconAndDescription::
 	farcall UpdateItemDescription
-	jr UpdateItemIcon
+	jp UpdateItemIcon
 
 UpdateTMHMIconAndDescriptionAndOwnership::
 	farcall UpdateTMHMDescriptionAndOwnership
-	ld a, [wMenuSelection]
-	cp -1
-	jr z, .cancel
 	call LoadTMHMIcon
-	jr .ok
-.cancel
-	call ClearTMHMIcon
-.ok
 	farcall LoadTMHMIconPalette
 	jp SetPalettes
 	
 UpdateClothesIconAndDescriptionAndOwnership::
 	farcall UpdateClothesDescriptionAndOwnership
-	ld a, [wMenuSelection]
-	cp -1
-	jr z, .cancel
-	call LoadClothesIcon
-	jr .ok
-.cancel
-	call ClearTMHMIcon
-.ok
-	farcall LoadClothesIconPalette
+	call LoadClothesIcons
+;	farcall LoadClothesIconPalette
 	jp SetPalettes
 
 UpdateMonIconAndDescriptionAndOwnership::
 	farcall UpdateMonDescription
-	ld a, [wMenuSelection]
-	cp -1
-	jr z, .cancel
-	call LoadBuyMonIcon
-	jr .ok
-.cancel
-	call ClearTMHMIcon
-.ok
 	ld a, 1
 	ld [wCurSpecies], a
+rept 5
 	farcall LoadItemIconPalette
-	jp SetPalettes
+	ld a, [wPlaceBallsX]
+	inc a
+	ld [wPlaceBallsX], a
+	call SetPalettes
+endr
+	xor a
+	ld [wPlaceBallsX], a
+	ret
 	
 UpdateItemIconAndDescriptionAndBagQuantity::
 	farcall UpdateItemDescriptionAndBagQuantity
@@ -80,10 +66,99 @@ UpdateItemIcon::
 	ret
 
 LoadBuyMonIcon::
-	ld hl, PokeBallIcon
-	ld de, VTiles2 tile $1e
-	lb bc, BANK(PokeBallIcon), 9
-	jp DecompressRequest2bpp
+	ld a, [wMenuSelection]
+	cp a, -1
+	jr z, .clear
+	ld a, [wPlaceBallsX]
+	cp 0
+	jr z, .first
+	cp 1
+	jr z, .second
+	cp 2
+	jr z, .third
+	cp 3
+	jr z, .forth
+	jr .fifth
+.first
+	ld hl, VTiles0 tile $68
+	ld de, PokeBallIcon
+	lb bc, BANK(PokeBallIcon), 4
+	call Get2bpp
+	ld a, [wPlaceBallsX]
+	inc a
+	ld [wPlaceBallsX], a
+	ret
+.second
+	ld hl, VTiles0 tile $6c
+	ld de, PokeBallIcon
+	lb bc, BANK(PokeBallIcon), 4
+	call Get2bpp
+	ld a, [wPlaceBallsX]
+	inc a
+	ld [wPlaceBallsX], a
+	ret
+.third
+	ld hl, VTiles0 tile $70
+	ld de, PokeBallIcon
+	lb bc, BANK(PokeBallIcon), 4
+	call Get2bpp
+	ld a, [wPlaceBallsX]
+	inc a
+	ld [wPlaceBallsX], a
+	ret
+.forth
+	ld hl, VTiles0 tile $74
+	ld de, PokeBallIcon
+	lb bc, BANK(PokeBallIcon), 4
+	call Get2bpp
+	ld a, [wPlaceBallsX]
+	inc a
+	ld [wPlaceBallsX], a
+	ret
+.fifth
+	ld hl, VTiles0 tile $78
+	ld de, PokeBallIcon
+	lb bc, BANK(PokeBallIcon), 4
+	call Get2bpp
+	xor a
+	ld [wPlaceBallsX], a
+	ret
+.clear
+	ld a, [wPlaceBallsX]
+	cp 0
+	jr z, .first2
+	cp 1
+	jr z, .second2
+	cp 2
+	jr z, .third2
+	cp 3
+	jr z, .forth2
+	jr .fifth2
+.first2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 4
+	ld hl, VTiles0 tile $68
+	call Get2bpp
+.second2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 4
+	ld hl, VTiles0 tile $6c
+	call Get2bpp
+.third2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 4
+	ld hl, VTiles0 tile $70
+	call Get2bpp
+.forth2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 4
+	ld hl, VTiles0 tile $74
+	call Get2bpp
+.fifth2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 4
+	ld hl, VTiles0 tile $78
+	jp Get2bpp
 	
 LoadTMHMIcon::
 	ld hl, TMHMIcon
@@ -91,17 +166,22 @@ LoadTMHMIcon::
 	lb bc, BANK(TMHMIcon), 9
 	jp DecompressRequest2bpp
 	
-LoadClothesIcon::
-	ld hl, ClothesIcon
-	ld de, VTiles2 tile $1e
-	lb bc, BANK(ClothesIcon), 9
-	jp DecompressRequest2bpp
-
-ClearTMHMIcon::
-	ld hl, NoItemIcon
-	ld de, VTiles2 tile $1e
-	lb bc, BANK(NoItemIcon), 9
-	jp DecompressRequest2bpp
+LoadClothesIcons::
+	ld hl, VTiles0 tile $68
+	call LoadClothesIcon
+	ld hl, VTiles0 tile $6c
+	call LoadClothesIcon
+	ld hl, VTiles0 tile $70
+	call LoadClothesIcon
+	ld hl, VTiles0 tile $74
+	call LoadClothesIcon
+	ld hl, VTiles0 tile $78
+	jp LoadClothesIcon
+	
+LoadClothesIcon:
+	ld de, ClothesIcon
+	lb bc, BANK(ClothesIcon), 4
+	jp Get2bpp
 
 
 SECTION "Item Icons 1", ROMX

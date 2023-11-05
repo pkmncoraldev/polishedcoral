@@ -407,18 +407,18 @@ INCLUDE "engine/decorations.asm"
 INCLUDE "data/trainers/dvs.asm"
 
 UpdateItemDescriptionAndBagQuantity:
-	hlcoord 1, 1
+	hlcoord 0, 0
 	lb bc, 1, 8
 	call ClearBox
 	ld a, [wMenuSelection]
 	cp -1
 	jr z, UpdateItemDescription
-	hlcoord 1, 1
+	hlcoord 0, 0
 	ld de, BagXString
 	call PlaceString
 	ld a, [wMenuSelection]
 	call GetQuantityInBag
-	hlcoord 6, 1
+	hlcoord 4, 0
 	ld de, wBuffer1
 	lb bc, 2, 3
 	call PrintNum
@@ -438,7 +438,7 @@ BagXString:
 	db "Bag ×@"
 
 UpdateTMHMDescriptionAndOwnership:
-	hlcoord 1, 1
+	hlcoord 0, 0
 	lb bc, 1, 8
 	call ClearBox
 	ld a, [wMenuSelection]
@@ -450,7 +450,7 @@ UpdateTMHMDescriptionAndOwnership:
 	jr c, .GotString
 	ld de, UnownedTMString
 .GotString
-	hlcoord 1, 1
+	hlcoord 0, 0
 	call PlaceString
 UpdateTMHMDescription:
 	ld a, [wMenuSelection]
@@ -465,7 +465,7 @@ UpdateTMHMDescription:
 	farjp PrintTMHMDescription
 
 UpdateMonDescription:
-	hlcoord 1, 1
+	hlcoord 0, 0
 	lb bc, 1, 8
 	call ClearBox
 	ld a, [wMenuSelection]
@@ -483,7 +483,7 @@ UpdateMonDescription:
 	jr nz, .GotString
 	ld de, NewMonString
 .GotString
-	hlcoord 1, 1
+	hlcoord 0, 0
 	call PlaceString
 UpdateMonDescription2:
 	ld a, [wMenuSelection]
@@ -498,7 +498,7 @@ UpdateMonDescription2:
 	farjp PrintMonDescription
 	
 UpdateClothesDescriptionAndOwnership:
-	hlcoord 1, 1
+	hlcoord 0, 0
 	lb bc, 1, 8
 	call ClearBox
 	ld a, [wMenuSelection]
@@ -510,7 +510,7 @@ UpdateClothesDescriptionAndOwnership:
 	jr c, .GotString
 	ld de, UnownedTMString
 .GotString
-	hlcoord 1, 1
+	hlcoord 0, 0
 	call PlaceString
 UpdateClothesDescription:
 	ld a, [wMenuSelection]
@@ -588,7 +588,6 @@ PlaceMenuItemName:
 .not_registered
 	pop bc
 	pop de
-PlaceMartItemName:
 	push de
 	
 	ld a, [wMenuSelection]
@@ -720,7 +719,8 @@ PlaceMartPokemonName:
 	ld [wNamedObjectIndexBuffer], a
 	call nz, GetPokemonName
 	pop hl
-	jp PlaceString
+	call PlaceString
+	farjp LoadBuyMonIcon
 
 PlaceMenuItemQuantity: ; 0x24ac3
 	push de

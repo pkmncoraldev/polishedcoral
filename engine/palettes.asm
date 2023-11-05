@@ -1649,15 +1649,15 @@ MartMenuPals:
 	RGB 04, 17, 19
 	RGB 00, 00, 00
 
-	RGB 15, 15, 31
-	RGB 06, 22, 25
-	RGB 04, 17, 19
-	RGB 00, 00, 00
-
 	RGB 31, 31, 31
-	RGB 06, 22, 25
-	RGB 04, 17, 19
+	RGB 07, 19, 07
+	RGB 00, 00, 00
 	RGB 31, 00, 00
+
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 31, 31, 31
 
 BlueCardMartMenuPals:
 	RGB 31, 31, 31

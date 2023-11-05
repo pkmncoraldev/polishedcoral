@@ -9,6 +9,7 @@
 OpenMartDialog:: ; 15a45
 	ld a, c
 	ld [wEngineBuffer1], a
+	ld [wTileDown], a
 	call GetMart
 	call LoadMartPointer
 	ld a, [wEngineBuffer1]
@@ -756,21 +757,41 @@ BuyMenu_InitGFX::
 	call DisableLCD
 	call Load1bppFont
 	call Load1bppFrame
-;	ld hl, PackLeftColumnGFX
-;	ld de, VTiles2 tile $15
-;	ld bc, 18 tiles
-;	ld a, BANK(PackLeftColumnGFX)
+	ld hl, MenuLeftColumnGFX
+	ld de, VTiles2 tile $01
+	ld bc, $0c tiles
+	ld a, BANK(MenuLeftColumnGFX)
 	call FarCopyBytes
-; This is where the items themselves will be listed.
-;	hlcoord 5, 3
-;	lb bc, 9, 15
-;	call ClearBox
-; Place the text box for bag quantity
-	hlcoord 0, 0
-	lb bc, 1, 8
-	call TextBox
+	
+	ld a, [wTileDown]
+	cp MARTTYPE_COIN_MART
+	jr z, .coin
+	cp MARTTYPE_POLLEN
+	jr z, .pollen
+	xor a
+	jr .cont
+.coin
+	ld a, 1
+	jr .cont
+.pollen
+	ld a, 2
+.cont
+	and $7
+	ld d, a
+	ld bc, 20 tiles
+	ld hl, RegisterGFX
+	ld e, BANK(RegisterGFX)
+	ld a, d
+	rst AddNTimes
+	ld b, e
+	ld c, 20
+	ld d, h
+	ld e, l
+	ld hl, VTiles2 tile $50
+	call Get2bpp
+	
 ; Place the left column
-	hlcoord 0, 3
+	hlcoord 0, 1
 	ld de, .BuyLeftColumnTilemapString
 	ld bc, SCREEN_WIDTH - 5
 .loop
@@ -804,15 +825,17 @@ BuyMenu_InitGFX::
 	jp DelayFrame
 
 .BuyLeftColumnTilemapString:
-	db $15, $15, $15, $15, $15, 0
-	db $15, $15, $15, $15, $15, 0
-	db $15, $15, $15, $15, $15, 0
-	db $15, $15, $15, $15, $15, 0
-	db $16, $17, $17, $17, $18, 0
-	db $19, $1e, $1f, $20, $1a, 0
-	db $19, $21, $22, $23, $1a, 0
-	db $19, $24, $25, $26, $1a, 0
-	db $1b, $1c, $1c, $1c, $1d, -1
+	db $0c, $0c, $0c, $0c, $0c, 0
+	db $0c, $0c, $0c, $0c, $0c, 0
+	db $50, $51, $52, $53, $54, 0
+	db $55, $56, $57, $58, $59, 0
+	db $5a, $5b, $5c, $5d, $5e, 0
+	db $5f, $60, $61, $62, $63, 0
+	db $01, $05, $05, $05, $02, 0
+	db $07, $08, $09, $0a, $0b, 0
+	db $03, $06, $06, $06, $04, 0
+	db $0c, $0c, $0c, $0c, $0c, 0
+	db $0c, $0c, $0c, $0c, $0c, -1
 
 LoadBuyMenuText: ; 15c7d
 ; load text from a nested table
@@ -1047,8 +1070,12 @@ GetMartDialogGroup: ; 15ca3
 	dw BuyMenuCoinsLoop
 
 BuyMenuLoop: ; 15cef
-	farcall PlaceMoneyTopRight
+	hlcoord 12, 0
+	ld de, wMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
 	call UpdateSprites
+	farcall Pack_Draw_Sprites
 	ld hl, MenuDataHeader_Buy
 	call CopyMenuDataHeader
 	call DoMartScrollingMenu
@@ -1057,9 +1084,9 @@ BuyMenuLoop: ; 15cef
 	cp B_BUTTON
 	jp z, MartMenuLoop_SetCarry
 	call MartAskPurchaseQuantity
-	jr c, .cancel
+	jp c, .cancel
 	call MartConfirmPurchase
-	jr c, .cancel
+	jp c, .cancel
 	ld de, wMoney
 	ld bc, hMoneyTemp
 	call CompareMoney
@@ -1080,7 +1107,10 @@ BuyMenuLoop: ; 15cef
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
-	farcall PlaceMoneyTopRight
+	hlcoord 12, 0
+	ld de, wMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
 	call JoyWaitAorB
 	farcall CheckItemPocket
 	ld a, [wItemAttributeParamBuffer]
@@ -1117,6 +1147,7 @@ BuyMenuLoop: ; 15cef
 BuyMenuCoinsLoop: ; 15cef
 	farcall Special_DisplayCoinCaseBalance
 	call UpdateSprites
+	farcall Pack_Draw_Sprites
 	ld hl, CoinsMenuDataHeader_Buy
 	call CopyMenuDataHeader
 	call DoMartScrollingMenu
@@ -1151,6 +1182,7 @@ BuyMenuCoinsLoop: ; 15cef
 BuyMenuPollenLoop: ; 15cef
 	farcall Special_DisplayPollenPouchBalance
 	call UpdateSprites
+	farcall Pack_Draw_Sprites
 	ld hl, PollenMenuDataHeader_Buy
 	call CopyMenuDataHeader
 	call DoMartScrollingMenu
@@ -1183,8 +1215,12 @@ BuyMenuPollenLoop: ; 15cef
 	ret
 
 BuyRefreshmentsMenuLoop: ; 15cef
-	farcall PlaceMoneyTopRight
+	hlcoord 12, 0
+	ld de, wMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
 	call UpdateSprites
+	farcall Pack_Draw_Sprites
 	ld hl, MenuDataHeader_Buy
 	call CopyMenuDataHeader
 	call DoMartScrollingMenu
@@ -1209,7 +1245,10 @@ BuyRefreshmentsMenuLoop: ; 15cef
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
-	farcall PlaceMoneyTopRight
+	hlcoord 12, 0
+	ld de, wMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
 	call JoyWaitAorB
 	call Random
 	cp $3f ; 25 percent
@@ -1234,7 +1273,10 @@ BuyRefreshmentsMenuLoop: ; 15cef
 	db "@"
 	
 BuyTMMenuLoop:
-	farcall PlaceMoneyTopRight
+	hlcoord 12, 0
+	ld de, wMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
 	call UpdateSprites
 	ld hl, TMMenuDataHeader_Buy
 	call CopyMenuDataHeader
@@ -1258,7 +1300,10 @@ BuyTMMenuLoop:
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
-	farcall PlaceMoneyTopRight
+	hlcoord 12, 0
+	ld de, wMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
 	call JoyWaitAorB
 .cancel
 	call SpeechTextBox
@@ -1330,8 +1375,12 @@ BTBuyMenuLoop:
 	ret
 
 BuyClothesMenuLoop:
-	farcall PlaceMoneyTopRight
+	hlcoord 12, 0
+	ld de, wMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
 	call UpdateSprites
+	farcall Pack_Draw_Sprites
 	ld hl, ClothesMenuDataHeader_Buy
 	call CopyMenuDataHeader
 	call DoMartScrollingMenu
@@ -1354,7 +1403,10 @@ BuyClothesMenuLoop:
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
-	farcall PlaceMoneyTopRight
+	hlcoord 12, 0
+	ld de, wMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
 	call JoyWaitAorB
 .cancel
 	call SpeechTextBox
@@ -1362,8 +1414,12 @@ BuyClothesMenuLoop:
 	ret
 	
 BuyPokemonMenuLoop: ; 15cef
-	farcall PlaceMoneyTopRight
+	hlcoord 12, 0
+	ld de, wMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
 	call UpdateSprites
+	farcall Pack_Draw_Sprites
 	ld hl, PokemonMenuDataHeader_Buy
 	call CopyMenuDataHeader
 	call DoMartScrollingMenu
@@ -1385,7 +1441,10 @@ BuyPokemonMenuLoop: ; 15cef
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
-	farcall PlaceMoneyTopRight
+	hlcoord 12, 0
+	ld de, wMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
 	call JoyWaitAorB
 	
 	ld a, 1
@@ -1419,7 +1478,7 @@ BuyPokemonMenuLoop: ; 15cef
 	call SpeechTextBox
 	and a
 	ret
-		
+
 DoMartScrollingMenu:
 	ld a, [wMenuCursorBufferBackup]
 	ld [wMenuCursorBuffer], a
@@ -1733,59 +1792,59 @@ Text_Pollen_InsufficientFunds:
 
 MenuDataHeader_Buy: ; 0x15e18
 	db $40 ; flags
-	db 03, 06 ; start coords
+	db 01, 07 ; start coords
 	db 11, 19 ; end coords
 	dw .menudata2
 	db 1 ; default option
 ; 0x15e20
 
 .menudata2 ; 0x15e20
-	db $30 ; pointers
-	db 4, 8 ; rows, columns
+	db $e1 ; pointers
+	db 5, 8 ; rows, columns
 	db 1 ; horizontal spacing
 	dbw 0, wCurMart
-	dba PlaceMartItemName
+	dba PlaceMenuItemName
 	dba MartMenu_PrintBCDPrices
 	dba UpdateItemIconAndDescriptionAndBagQuantity
 ; 15e30
 
 CoinsMenuDataHeader_Buy: ; 0x15e18
 	db $40 ; flags
-	db 03, 06 ; start coords
+	db 01, 07 ; start coords
 	db 11, 19 ; end coords
 	dw .menudata2
 	db 1 ; default option
 ; 0x15e20
 
 .menudata2 ; 0x15e20
-	db $30 ; pointers
-	db 4, 8 ; rows, columns
+	db $e1 ; pointers
+	db 5, 8 ; rows, columns
 	db 1 ; horizontal spacing
 	dbw 0, wCurMart
-	dba PlaceMartItemName
+	dba PlaceMenuItemName
 	dba CoinMenu_PrintBCDPrices
 	dba UpdateItemIconAndDescriptionAndBagQuantity
 	
 PollenMenuDataHeader_Buy: ; 0x15e18
 	db $40 ; flags
-	db 03, 06 ; start coords
+	db 01, 07 ; start coords
 	db 11, 19 ; end coords
 	dw .menudata2
 	db 1 ; default option
 ; 0x15e20
 
 .menudata2 ; 0x15e20
-	db $30 ; pointers
-	db 4, 8 ; rows, columns
+	db $e1 ; pointers
+	db 5, 8 ; rows, columns
 	db 1 ; horizontal spacing
 	dbw 0, wCurMart
-	dba PlaceMartItemName
+	dba PlaceMenuItemName
 	dba PollenMenu_PrintBCDPrices
 	dba UpdateItemIconAndDescriptionAndBagQuantity
 
 TMMenuDataHeader_Buy:
 	db $40 ; flags
-	db 03, 06 ; start coords
+	db 01, 07 ; start coords
 	db 11, 19 ; end coords
 	dw .menudata2
 	db 1 ; default option
@@ -1793,7 +1852,7 @@ TMMenuDataHeader_Buy:
 
 .menudata2 ; 0x15e20
 	db $30 ; pointers
-	db 4, 8 ; rows, columns
+	db 5, 8 ; rows, columns
 	db 1 ; horizontal spacing
 	dbw 0, wCurMart
 	dba PlaceMenuTMHMName
@@ -1803,15 +1862,15 @@ TMMenuDataHeader_Buy:
 
 ClothesMenuDataHeader_Buy:
 	db $40 ; flags
-	db 03, 06 ; start coords
+	db 01, 07 ; start coords
 	db 11, 19 ; end coords
 	dw .menudata2
 	db 1 ; default option
 ; 0x15e20
 
 .menudata2 ; 0x15e20
-	db $30 ; pointers
-	db 4, 8 ; rows, columns
+	db $e1 ; pointers
+	db 5, 8 ; rows, columns
 	db 1 ; horizontal spacing
 	dbw 0, wCurMart
 	dba PlaceMartClothesName
@@ -1820,15 +1879,15 @@ ClothesMenuDataHeader_Buy:
 	
 PokemonMenuDataHeader_Buy:
 	db $40 ; flags
-	db 03, 06 ; start coords
+	db 01, 07 ; start coords
 	db 11, 19 ; end coords
 	dw .menudata2
 	db 1 ; default option
 ; 0x15e20
 
 .menudata2 ; 0x15e20
-	db $30 ; pointers
-	db 4, 8 ; rows, columns
+	db $e1 ; pointers
+	db 5, 8 ; rows, columns
 	db 1 ; horizontal spacing
 	dbw 0, wCurMart
 	dba PlaceMartPokemonName
@@ -1909,7 +1968,7 @@ BlueCardMenuDataHeader_Buy:
 	db 4, 8 ; rows, columns
 	db 1 ; horizontal spacing
 	dbw 0, wCurMart
-	dba PlaceMartItemName
+	dba PlaceMenuItemName
 	dba .PrintPointCosts
 	dba UpdateItemIconAndDescriptionAndBagQuantity
 
@@ -1938,7 +1997,7 @@ BTMenuDataHeader_Buy:
 	db 4, 8 ; rows, columns
 	db 1 ; horizontal spacing
 	dbw 0, wCurMart
-	dba PlaceMartItemName
+	dba PlaceMenuItemName
 	dba .PrintPointCosts
 	dba UpdateItemIconAndDescriptionAndBagQuantity
 
@@ -2246,6 +2305,7 @@ Text_PollenShopText:
 	db "@"
 
 SellMenu:: ; 15eb3
+	farcall FadeOutPalettes
 	call DisableSpriteUpdates
 	farcall DepositSellInitPackBuffers
 .loop
@@ -2469,3 +2529,9 @@ MartTextBox: ; 15fcd
 	call JoyWaitAorB
 	jp ExitMenu
 ; 15fd7
+	
+MenuLeftColumnGFX:
+INCBIN "gfx/pack/mart_menu.2bpp"
+
+RegisterGFX:
+INCBIN "gfx/pack/register.2bpp"

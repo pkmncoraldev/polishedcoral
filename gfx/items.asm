@@ -16,17 +16,6 @@ UpdateClothesIconAndDescriptionAndOwnership::
 
 UpdateMonIconAndDescriptionAndOwnership::
 	farcall UpdateMonDescription
-	ld a, 1
-	ld [wCurSpecies], a
-rept 5
-	farcall LoadItemIconPalette
-	ld a, [wPlaceBallsX]
-	inc a
-	ld [wPlaceBallsX], a
-	call SetPalettes
-endr
-	xor a
-	ld [wPlaceBallsX], a
 	ret
 	
 UpdateItemIconAndDescriptionAndBagQuantity::
@@ -69,6 +58,10 @@ LoadBuyMonIcon::
 	ld a, [wMenuSelection]
 	cp a, -1
 	jr z, .clear
+	ld de, PokeBallIcon
+	lb bc, BANK(PokeBallIcon), 4
+	ld a, 1
+	ld [wCurSpecies], a
 	ld a, [wPlaceBallsX]
 	cp 0
 	jr z, .first
@@ -81,45 +74,26 @@ LoadBuyMonIcon::
 	jr .fifth
 .first
 	ld hl, VTiles0 tile $68
-	ld de, PokeBallIcon
-	lb bc, BANK(PokeBallIcon), 4
-	call Get2bpp
-	ld a, [wPlaceBallsX]
-	inc a
-	ld [wPlaceBallsX], a
-	ret
+	jr .finish
 .second
 	ld hl, VTiles0 tile $6c
-	ld de, PokeBallIcon
-	lb bc, BANK(PokeBallIcon), 4
-	call Get2bpp
-	ld a, [wPlaceBallsX]
-	inc a
-	ld [wPlaceBallsX], a
-	ret
+	jr .finish
 .third
 	ld hl, VTiles0 tile $70
-	ld de, PokeBallIcon
-	lb bc, BANK(PokeBallIcon), 4
-	call Get2bpp
-	ld a, [wPlaceBallsX]
-	inc a
-	ld [wPlaceBallsX], a
-	ret
+	jr .finish
 .forth
 	ld hl, VTiles0 tile $74
-	ld de, PokeBallIcon
-	lb bc, BANK(PokeBallIcon), 4
+.finish
 	call Get2bpp
+	farcall LoadItemIconPalette
 	ld a, [wPlaceBallsX]
 	inc a
 	ld [wPlaceBallsX], a
 	ret
 .fifth
 	ld hl, VTiles0 tile $78
-	ld de, PokeBallIcon
-	lb bc, BANK(PokeBallIcon), 4
 	call Get2bpp
+	farcall LoadItemIconPalette
 	xor a
 	ld [wPlaceBallsX], a
 	ret

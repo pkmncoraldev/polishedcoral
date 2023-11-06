@@ -180,6 +180,7 @@ TMHM_DisplayPocketItems: ; 2c9e2 (b:49e2)
 	ld b, a
 	ld a, c
 	ld [wd265], a
+	ld [wPlaceBallsY], a
 	push hl
 	push de
 	push bc
@@ -188,20 +189,30 @@ TMHM_DisplayPocketItems: ; 2c9e2 (b:49e2)
 	ld a, [wd265]
 	cp NUM_TMS + 1
 	jr nc, .HM
-	ld de, wd265
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
-	call PrintNum
+;	ld de, wd265
+;	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
+;	call PrintNum
+
+	call GetTMIconDisc
+	call GetTMIconLeft
+	call GetTMIconRight
 	jr .okay
 
 .HM:
 	push af
 	sub NUM_TMS
+	add 90
 	ld [wd265], a
-	ld [hl], "H"
-	inc hl
-	ld de, wd265
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	call PrintNum
+	ld [wPlaceBallsY], a
+;	ld [hl], "H"
+;	inc hl
+;	ld de, wd265
+;	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+;	call PrintNum
+	
+	call GetTMIconDisc
+	call GetTMIconLeft
+	call GetTMIconRight
 	pop af
 	ld [wd265], a
 .okay
@@ -214,6 +225,7 @@ TMHM_DisplayPocketItems: ; 2c9e2 (b:49e2)
 	add hl, bc
 	push hl
 	call PlaceString
+	farcall Pack_Draw_Sprites
 	pop hl
 	pop bc
 	pop de
@@ -231,6 +243,13 @@ TMHM_DisplayPocketItems: ; 2c9e2 (b:49e2)
 	ld de, TMHM_String_Cancel
 	call PlaceString
 	pop de
+	ld a, -1
+	ld [wd265], a
+	ld [wPlaceBallsY], a
+	call GetTMIconDisc
+	call GetTMIconLeft
+	call GetTMIconRight
+	farcall Pack_Draw_Sprites
 	ret
 
 TMHMPocket_GetCurrentLineCoord: ; 2ca86 (b:4a86)
@@ -537,3 +556,277 @@ Text_ReminderNotCompatible: ; 0x2c8ce
 	; It can't remember anything...
 	text_jump UnknownText_ReminderNotCompatible
 	db "@"
+
+GetTMIconDisc:
+	ld a, [wd265]
+	cp a, -1
+	jr z, .clear
+	ld de, TMDiscIcon
+	lb bc, BANK(TMDiscIcon), 2
+	ld a, [wPlaceBallsX]
+	cp 0
+	jr z, .first
+	cp 1
+	jr z, .second
+	cp 2
+	jr z, .third
+	cp 3
+	jr z, .forth
+	jr .fifth
+.first
+	ld hl, VTiles0 tile $68
+	jp Get2bpp
+.second
+	ld hl, VTiles0 tile $6c
+	jp Get2bpp
+.third
+	ld hl, VTiles0 tile $70
+	jp Get2bpp
+.forth
+	ld hl, VTiles0 tile $74
+	jp Get2bpp
+.fifth
+	ld hl, VTiles0 tile $78
+	jp Get2bpp
+.clear
+	ld a, [wPlaceBallsX]
+	cp 0
+	jr z, .first2
+	cp 1
+	jr z, .second2
+	cp 2
+	jr z, .third2
+	cp 3
+	jr z, .forth2
+	jr .fifth2
+.first2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 2
+	ld hl, VTiles0 tile $68
+	call Get2bpp
+.second2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 2
+	ld hl, VTiles0 tile $6c
+	call Get2bpp
+.third2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 2
+	ld hl, VTiles0 tile $70
+	call Get2bpp
+.forth2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 2
+	ld hl, VTiles0 tile $74
+	call Get2bpp
+.fifth2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 2
+	ld hl, VTiles0 tile $78
+	jp Get2bpp
+
+GetTMIconLeft:
+	ld a, [wd265]
+	cp a, -1
+	jr z, .clear
+	
+	ld a, [wd265]
+	dec a
+	ld e, a
+	ld d, 0
+	ld hl, TMHMTilesLeft
+	add hl, de
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld e, a
+	ld d, [hl]
+	ld a, 1
+	ld c, a
+	ld a, [wPlaceBallsX]
+	cp 0
+	jr z, .first
+	cp 1
+	jr z, .second
+	cp 2
+	jr z, .third
+	cp 3
+	jr z, .forth
+	jr .fifth
+.first
+	ld hl, VTiles0 tile $6a
+	jp Get2bpp
+.second
+	ld hl, VTiles0 tile $6e
+	jp Get2bpp
+.third
+	ld hl, VTiles0 tile $72
+	jp Get2bpp
+.forth
+	ld hl, VTiles0 tile $76
+	jp Get2bpp
+.fifth
+	ld hl, VTiles0 tile $7a
+	jp Get2bpp
+.clear
+	ld a, [wPlaceBallsX]
+	cp 0
+	jr z, .first2
+	cp 1
+	jr z, .second2
+	cp 2
+	jr z, .third2
+	cp 3
+	jr z, .forth2
+	jr .fifth2
+.first2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 1
+	ld hl, VTiles0 tile $6a
+	call Get2bpp
+.second2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 1
+	ld hl, VTiles0 tile $6e
+	call Get2bpp
+.third2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 1
+	ld hl, VTiles0 tile $72
+	call Get2bpp
+.forth2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 1
+	ld hl, VTiles0 tile $76
+	call Get2bpp
+.fifth2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 1
+	ld hl, VTiles0 tile $7a
+	call Get2bpp
+	ret
+	
+GetTMIconRight:
+	ld a, [wd265]
+	cp a, -1
+	jr z, .clear
+	dec a
+	ld e, a
+	ld d, 0
+	ld hl, TMHMTilesRight
+	add hl, de
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld e, a
+	ld d, [hl]
+	ld a, 1
+	ld c, a
+	ld a, [wPlaceBallsX]
+	cp 0
+	jr z, .first
+	cp 1
+	jr z, .second
+	cp 2
+	jr z, .third
+	cp 3
+	jr z, .forth
+	jr .fifth
+.first
+	ld hl, VTiles0 tile $6b
+	jr .finish
+.second
+	ld hl, VTiles0 tile $6f
+	jr .finish
+.third
+	ld hl, VTiles0 tile $73
+	jr .finish
+.forth
+	ld hl, VTiles0 tile $77
+.finish
+	push af
+	call Get2bpp
+	farcall LoadTMHMIconPalette
+	call SetPalettes
+	pop af
+	inc a
+	ld [wPlaceBallsX], a
+	ret
+.fifth
+	ld hl, VTiles0 tile $7b
+	call Get2bpp
+	farcall LoadTMHMIconPalette
+	call SetPalettes
+	xor a
+	ld [wPlaceBallsX], a
+	ret
+.clear
+	ld a, [wPlaceBallsX]
+	cp 0
+	jr z, .first2
+	cp 1
+	jr z, .second2
+	cp 2
+	jr z, .third2
+	cp 3
+	jr z, .forth2
+	jr .fifth2
+.first2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 1
+	ld hl, VTiles0 tile $6b
+	call Get2bpp
+.second2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 1
+	ld hl, VTiles0 tile $6f
+	call Get2bpp
+.third2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 1
+	ld hl, VTiles0 tile $73
+	call Get2bpp
+.forth2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 1
+	ld hl, VTiles0 tile $77
+	call Get2bpp
+.fifth2
+	ld de, NoItemIcon
+	lb bc, BANK(NoItemIcon), 1
+	ld hl, VTiles0 tile $7b
+	call Get2bpp
+	xor a
+	ld [wPlaceBallsX], a
+	ret
+
+INCLUDE "data/tmhm_tiles.asm"
+
+TMDiscIcon:	INCBIN "gfx/tmhm/disc.2bpp"
+
+TMLeft0:	INCBIN "gfx/tmhm/L_0.2bpp"
+TMLeft1:	INCBIN "gfx/tmhm/L_1.2bpp"
+TMLeft2:	INCBIN "gfx/tmhm/L_2.2bpp"
+TMLeft3:	INCBIN "gfx/tmhm/L_3.2bpp"
+TMLeft4:	INCBIN "gfx/tmhm/L_4.2bpp"
+TMLeft5:	INCBIN "gfx/tmhm/L_5.2bpp"
+TMLeft6:	INCBIN "gfx/tmhm/L_6.2bpp"
+TMLeft7:	INCBIN "gfx/tmhm/L_7.2bpp"
+TMLeft8:	INCBIN "gfx/tmhm/L_8.2bpp"
+TMLeft9:	INCBIN "gfx/tmhm/L_9.2bpp"
+TMLeftH:	INCBIN "gfx/tmhm/L_H.2bpp"
+
+TMRight0:	INCBIN "gfx/tmhm/R_0.2bpp"
+TMRight1:	INCBIN "gfx/tmhm/R_1.2bpp"
+TMRight2:	INCBIN "gfx/tmhm/R_2.2bpp"
+TMRight3:	INCBIN "gfx/tmhm/R_3.2bpp"
+TMRight4:	INCBIN "gfx/tmhm/R_4.2bpp"
+TMRight5:	INCBIN "gfx/tmhm/R_5.2bpp"
+TMRight6:	INCBIN "gfx/tmhm/R_6.2bpp"
+TMRight7:	INCBIN "gfx/tmhm/R_7.2bpp"
+TMRight8:	INCBIN "gfx/tmhm/R_8.2bpp"
+TMRight9:	INCBIN "gfx/tmhm/R_9.2bpp"

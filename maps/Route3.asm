@@ -23,9 +23,10 @@ Route3_MapScriptHeader:
 	signpost 9, 0, SIGNPOST_READ, Route3_sign2
 	signpost 18, 34, SIGNPOST_READ, Route3_sign3
 
-	db 13 ; object events
+	db 14 ; object events
 	person_event SPRITE_YOUNGSTER, 8, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute3West_1, -1
 	person_event SPRITE_COOLTRAINER_M, 16, 30, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute3West_2, -1
+	person_event SPRITE_BATTLE_GIRL, 13, 36, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TrainerRoute3WestNpc, -1
 	itemball_event 46, 30, RARE_CANDY, 1, EVENT_ROUTE_3_RARE_CANDY
 	cuttree_event 24, 11, EVENT_ROUTE_3_CUT_TREE_1
 	cuttree_event 23, 26, EVENT_ROUTE_3_CUT_TREE_2
@@ -41,6 +42,7 @@ Route3_MapScriptHeader:
 	const_def 1 ; object constants
 	const ROUTE3WEST_TRAINER1
 	const ROUTE3WEST_TRAINER2
+	const ROUTE3WEST_NPC
 	const ROUTEWEST_POKEBALL
 	const ROUTEWEST_CUT_TREE1
 	const ROUTEWEST_CUT_TREE2
@@ -104,6 +106,21 @@ TrainerRoute3West_2:
 
 .BeatenText:
 	text "I can't believe it!"
+	done
+
+TrainerRoute3WestNpc:
+	jumptextfaceplayer TrainerRoute3WestNpcText
+
+TrainerRoute3WestNpcText:
+	text "I saw a weird man"
+	line "climb up that wall"
+	cont "over there."
+	
+	para "I wanted to follow"
+	line "and see what he's"
+	cont "up to, but my #-"
+	cont "MON can't climb"
+	cont "the rocks…"
 	done
 
 Route3_sign:

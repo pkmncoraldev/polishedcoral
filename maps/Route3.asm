@@ -118,9 +118,9 @@ TrainerRoute3WestNpcText:
 	
 	para "I wanted to follow"
 	line "and see what he's"
-	cont "up to, but my #-"
-	cont "MON can't climb"
-	cont "the rocks…"
+	cont "up to, but my"
+	cont "#MON can't"
+	cont "climb rocks…"
 	done
 
 Route3_sign:

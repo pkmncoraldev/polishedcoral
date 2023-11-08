@@ -2661,7 +2661,7 @@ DonphanEvosAttacks:
 	db 31, KNOCK_OFF
 	db 36, SCARY_FACE_COTTON_SPORE_STRING_SHOT
 	db 37, DOUBLE_EDGE
-	dc 43, EARTHQUAKE
+	db 43, EARTHQUAKE
 	db 50, GIGA_IMPACT
 	db 0 ; no more level-up moves
 

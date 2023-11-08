@@ -804,10 +804,10 @@ GeodudeEvosAttacks:
 	db 22, BULLDOZE
 	db 24, SELFDESTRUCT
 	db 28, ROCK_BLAST
-	db 30, EARTHQUAKE
-	db 34, EXPLOSION
-	db 36, DOUBLE_EDGE
-	db 40, STONE_EDGE
+	db 30, EXPLOSION
+	db 34, DOUBLE_EDGE
+	db 36, STONE_EDGE
+	db 40, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 GravelerEvosAttacks:
@@ -823,10 +823,10 @@ GravelerEvosAttacks:
 	db 1, BULLDOZE
 	db 1, SELFDESTRUCT
 	db 30, ROCK_BLAST
-	db 34, EARTHQUAKE
-	db 40, EXPLOSION
-	db 44, DOUBLE_EDGE
-	db 50, STONE_EDGE
+	db 34, EXPLOSION
+	db 40, DOUBLE_EDGE
+	db 44, STONE_EDGE
+	db 50, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 GolemEvosAttacks:
@@ -842,10 +842,10 @@ GolemEvosAttacks:
 	db 1, BULLDOZE
 	db 1, SELFDESTRUCT
 	db 30, ROCK_BLAST
-	db 34, EARTHQUAKE
-	db 40, EXPLOSION
-	db 44, DOUBLE_EDGE
-	db 50, STONE_EDGE
+	db 34, EXPLOSION
+	db 40, DOUBLE_EDGE
+	db 44, STONE_EDGE
+	db 50, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 PonytaEvosAttacks:
@@ -1392,10 +1392,10 @@ GyaradosEvosAttacks:
 	db 1, THRASH
 	db 21, LEER_TAIL_WHIP
 	db 24, TWISTER
-	db 27, ICE_FANG
+	db 27, DRAGON_RAGE
 	db 30, AQUA_TAIL
 	db 33, SCARY_FACE_COTTON_SPORE_STRING_SHOT
-	db 36, DRAGON_RAGE
+	db 36, ICE_FANG
 	db 39, CRUNCH
 	db 42, HYDRO_PUMP
 	db 45, DRAGON_DANCE
@@ -2150,9 +2150,9 @@ WooperEvosAttacks:
 	db 26, AQUA_TAIL
 	db 30, ENCORE
 	db 34, AMNESIA
-	db 37, EARTHQUAKE
-	db 41, TOXIC
-	db 45, HYDRO_PUMP
+	db 37, TOXIC
+	db 41, HYDRO_PUMP
+	db 45, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 QuagsireEvosAttacks:
@@ -2167,9 +2167,9 @@ QuagsireEvosAttacks:
 	db 28, AQUA_TAIL
 	db 33, ENCORE
 	db 38, AMNESIA
-	db 42, EARTHQUAKE
-	db 47, TOXIC
-	db 51, HYDRO_PUMP
+	db 42, TOXIC
+	db 47, HYDRO_PUMP
+	db 51, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 EspeonEvosAttacks:
@@ -2528,10 +2528,10 @@ SwinubEvosAttacks:
 	db 24, MAGNITUDE
 	db 28, TAKE_DOWN
 	db 35, HAZE
-	db 37, EARTHQUAKE
+	db 37, AMNESIA
 	db 40, FLAIL
 	db 44, BLIZZARD
-	db 48, AMNESIA
+	db 48, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 PiloswineEvosAttacks:
@@ -2552,10 +2552,10 @@ PiloswineEvosAttacks:
 	db 1, MAGNITUDE
 	db 1, TAKE_DOWN
 	db 37, HAZE
-	db 41, EARTHQUAKE
+	db 41, AMNESIA
 	db 46, THRASH
 	db 52, BLIZZARD
-	db 58, AMNESIA
+	db 58, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 CorsolaEvosAttacks:
@@ -2636,8 +2636,8 @@ PhanpyEvosAttacks:
 	db 24, RAPID_SPIN
 	db 28, TAKE_DOWN
 	db 33, CHARM_FEATHER_DANCE
-	db 37, EARTHQUAKE
-	db 42, DOUBLE_EDGE
+	db 37, DOUBLE_EDGE
+	db 42, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 DonphanEvosAttacks:
@@ -2660,8 +2660,9 @@ DonphanEvosAttacks:
 	db 1, RAPID_SPIN
 	db 31, KNOCK_OFF
 	db 36, SCARY_FACE_COTTON_SPORE_STRING_SHOT
-	db 37, EARTHQUAKE
-	db 42, GIGA_IMPACT
+	db 37, DOUBLE_EDGE
+	dc 43, EARTHQUAKE
+	db 50, GIGA_IMPACT
 	db 0 ; no more level-up moves
 
 Porygon2EvosAttacks:
@@ -3138,8 +3139,8 @@ NumelEvosAttacks:
 	db 29, CURSE
 	db 33, TAKE_DOWN
 	db 36, FLAMETHROWER
-	db 40, EARTHQUAKE
-	db 43, DOUBLE_EDGE
+	db 40, DOUBLE_EDGE
+	db 43, EARTHQUAKE
 	db 0 ; no more level-up moves
 	
 CameruptEvosAttacks:
@@ -3157,8 +3158,8 @@ CameruptEvosAttacks:
 	db 1, CURSE
 	db 35, TAKE_DOWN
 	db 40, FLAMETHROWER
-	db 46, EARTHQUAKE
-	db 51, DOUBLE_EDGE
+	db 46, DOUBLE_EDGE
+	db 51, EARTHQUAKE
 	db 0 ; no more level-up moves
 	
 CacneaEvosAttacks:
@@ -3654,10 +3655,10 @@ MamoswineEvosAttacks:
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_HIT
 	db 37, HAZE
-	db 41, EARTHQUAKE
+	db 41, AMNESIA
 	db 46, THRASH
 	db 52, BLIZZARD
-	db 58, AMNESIA
+	db 58, EARTHQUAKE
 	db 0 ; no more level-up moves
 	
 PorygonZEvosAttacks:

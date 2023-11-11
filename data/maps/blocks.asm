@@ -787,3 +787,6 @@ SunsetLighthouseTop_BlockData:
 BarBackAlley_BlockData:
 	INCBIN "maps/BarBackAlley.ablk.lz"
 	
+NewWaterRoute_BlockData:
+	INCBIN "maps/NewWaterRoute.ablk.lz"
+	

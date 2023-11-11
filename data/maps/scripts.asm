@@ -112,6 +112,7 @@ INCLUDE "maps/Route17Trailer.asm"
 INCLUDE "maps/Route3StarglowCavernTop.asm"
 INCLUDE "maps/Route18.asm"
 INCLUDE "maps/Route19.asm"
+INCLUDE "maps/NewWaterRoute.asm"
 
 
 SECTION "Sunset Bay Scripts", ROMX

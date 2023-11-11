@@ -90,8 +90,14 @@ ENDM
 	connection south, Route13, ROUTE_13, 6
 	connection east, SunsetCape, SUNSET_CAPE, 2
 	
-	map_attributes SunsetCape, SUNSET_CAPE, 53, WEST
+	map_attributes SunsetCape, SUNSET_CAPE, 53, WEST | EAST
 	connection west, SunsetBay, SUNSET_BAY, -2
+	connection east, NewWaterRoute, NEW_WATER_ROUTE, 3
+	
+	map_attributes NewWaterRoute, NEW_WATER_ROUTE, 53, NORTH | WEST | EAST
+	connection north, LakeOwna, LAKE_ONWA, -2
+	connection west, SunsetCape, SUNSET_CAPE, -3
+	connection east, Route6, ROUTE_6, -3
 	
 	map_attributes Route1, ROUTE_1, $71, NORTH
 	connection north, DaybreakVillage, DAYBREAK_VILLAGE, 5
@@ -141,9 +147,10 @@ ENDM
 	map_attributes Route5, ROUTE_5, $fb, NORTH
 	connection north, Route4, ROUTE_4, 3
 	
-	map_attributes Route6, ROUTE_6, $30, NORTH | SOUTH
+	map_attributes Route6, ROUTE_6, $30, NORTH | SOUTH | WEST
 	connection north, Route7, ROUTE_7, 0
 	connection south, SunbeamBeach, SUNBEAM_BEACH, 0
+	connection west, NewWaterRoute, NEW_WATER_ROUTE, 3
 	
 	map_attributes Route7, ROUTE_7, $30, SOUTH | WEST
 	connection south, Route6, ROUTE_6, 0
@@ -179,8 +186,9 @@ ENDM
 	map_attributes FlickerPassOutside, FLICKER_PASS_OUTSIDE, 113, SOUTH
 	connection south, FlickerStation, FLICKER_STATION, -7
 	
-	map_attributes LakeOnwa, LAKE_ONWA, $30, NORTH | EAST
+	map_attributes LakeOnwa, LAKE_ONWA, $30, NORTH | SOUTH | EAST
 	connection north, Route8, ROUTE_8, 6
+	connection south, NewWaterRoute, NEW_WATER_ROUTE, 2
 	connection east, Route7, ROUTE_7, 11
 	
 	map_attributes SunbeamIsland, SUNBEAM_ISLAND, $35, WEST

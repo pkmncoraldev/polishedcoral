@@ -52,8 +52,8 @@ Landmarks: ; 0x1ca8c3
 	landmark 136,  56, BusinessName
 	landmark  28,  88, Route1Name
 	landmark  60,  40, StarglowDepthsName
-	landmark   0,   0, UndergroundPassageName
-	landmark   0,   0, UndergroundPassageName
+	landmark   0,   0, UnkownPassageName
+	landmark  36, 116, UnderwaterCavernName
 	
 	landmark  28,  32, Route15Name
 	landmark  28,  44, ShimmerName
@@ -132,6 +132,7 @@ LusterStationName:	   db "LUSTER¯CITY@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"
 ShoppingName:		   db "SHOPPING¯DISTRICT@"
 BusinessName:	 	   db "BUSINESS¯DISTRICT@"
-UndergroundPassageName: db "UNDERGROUND¯PASSAGE@"
+UnkownPassageName:	   db "UNKNOWN PASSAGE@"
+UnderwaterCavernName:  db "UNDERWATER¯CAVERN@"
 GateName:	 	 	   db "UNKNOWN@"
 SpecialMapName:        db "?","@"

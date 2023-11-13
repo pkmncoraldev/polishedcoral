@@ -2630,13 +2630,13 @@ FlyMap: ; 91c90
 
 .SouthOnwaFlyMap:
 	push af
-; Start from Sunset Bay
+; Start from Port Shimmer
 	ld a, FLY_SHIMMER
 	ld [wTownMapPlayerIconLandmark], a
 ; Flypoints begin at Shimmer City...
 	ld [wStartFlypoint], a
 ; ..and end at TODO
-	ld a, FLY_RADIANT
+	ld a, FLY_DUSK
 	ld [wEndFlypoint], a
 ; Fill out the map
 	call FillSouthOnwaMap

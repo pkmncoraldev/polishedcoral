@@ -1,7 +1,8 @@
 RadiantTownship_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_NEWMAP, RadiantTownshipFlyPoint
 	callback MAPCALLBACK_TILES, RadiantTownshipCallback
 
 	db 8 ; warp events
@@ -66,6 +67,10 @@ RadiantTownship_MapScriptHeader:
 	const_def 1 ; object constants
 	const RADIANT_TOWNSHIP_ERIKA
 	
+
+RadiantTownshipFlyPoint:
+	setflag ENGINE_FLYPOINT_RADIANT
+	return
 
 RadiantTownshipCallback:
 	checkevent EVENT_ERIKA_OUTSIDE_ORPAHANGE

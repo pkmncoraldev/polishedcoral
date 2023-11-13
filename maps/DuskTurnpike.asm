@@ -3,7 +3,8 @@ DuskTurnpike_MapScriptHeader:
 	scene_script DuskTurnpikeTrigger0
 	scene_script DuskTurnpikeTrigger1
 
-	db 1 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_NEWMAP, DuskTurnpikeFlyPoint
 	callback MAPCALLBACK_TILES, DuskTurnpikeCallback
 
 	db 17 ; warp events
@@ -99,6 +100,10 @@ DuskTurnpikeTrigger1:
 	callasm DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
 .end
 	end
+	
+DuskTurnpikeFlyPoint:
+	setflag ENGINE_FLYPOINT_DUSK
+	return
 
 DuskTurnpikeCallback:
 	checktime 1<<NITE

@@ -20,7 +20,9 @@ Flypoints:
 SOUTH_ONWA_FLYPOINT EQU const_value
 	
 	flypoint SHIMMER,			SHIMMER_CITY
+	flypoint BRILLO,			BRILLO_TOWN
 	flypoint RADIANT,			RADIANT_TOWNSHIP
+	flypoint DUSK,				DUSK_TURNPIKE
 	
 	flypoint LASTFLYPOINT,		SHIMMER_CITY
 	db -1

@@ -451,6 +451,8 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_FLYPOINT_LUSTER
 	setflag ENGINE_FLYPOINT_SHIMMER
 	setflag ENGINE_FLYPOINT_BRILLO
+	setflag ENGINE_FLYPOINT_RADIANT
+	setflag ENGINE_FLYPOINT_DUSK
 .done
 	writetext PlayerHouseDebugText5
 	waitbutton

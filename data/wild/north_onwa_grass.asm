@@ -329,55 +329,55 @@
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 13, PIKIPEK		;30%
-	db 13, WINGULL		;30%
+	db 13, MARILL		;30%
 	db 13, PIDGEY		;20%
 	db 13, PHANPY		;10%
-	db 13, MEOWTH		;5%
-	db 13, MEOWTH		;4%
-	db 13, MEOWTH		;1%
+	db 13, WINGULL		;5%
+	db 13, WINGULL		;4%
+	db 13, WINGULL		;1%
 	; day
 	db 13, PIKIPEK		;30%
-	db 13, WINGULL		;30%
+	db 13, MARILL		;30%
 	db 13, PIDGEY		;20%
 	db 13, PHANPY		;10%
-	db 13, MEOWTH		;5%
-	db 13, MEOWTH		;4%
-	db 13, MEOWTH		;1%
+	db 13, WINGULL		;5%
+	db 13, WINGULL		;4%
+	db 13, WINGULL		;1%
 	; nite
 	db 13, PIKIPEK		;30%
-	db 13, WINGULL		;30%
+	db 13, MARILL		;30%
 	db 13, PIDGEY		;20%
 	db 13, PHANPY		;10%
-	db 13, MEOWTH		;5%
-	db 13, MEOWTH		;4%
-	db 13, MEOWTH		;1%
+	db 13, WINGULL		;5%
+	db 13, WINGULL		;4%
+	db 13, WINGULL		;1%
 	
 	map_id ROUTE_7
 	db 9 percent, 9 percent, 9 percent ; encounter rates: morn/day/nite
 	; morn
-	db 13, MEOWTH		;30%
+	db 13, RATTATA		;30%
 	db 13, PIDGEY		;30%
 	db 13, PIKIPEK		;20%
 	db 13, PHANPY		;10%
-	db 13, BUNEARY		;5%
-	db 13, MARILL		;4%
-	db 13, MARILL		;1%
+	db 13, RATTATA		;5%
+	db 13, PHANPY		;4%
+	db 13, PHANPY		;1%
 	; day
-	db 13, MEOWTH		;30%
+	db 13, RATTATA		;30%
 	db 13, PIDGEY		;30%
 	db 13, PIKIPEK		;20%
 	db 13, PHANPY		;10%
-	db 13, BUNEARY		;5%
-	db 13, MARILL		;4%
-	db 13, MARILL		;1%
+	db 13, RATTATA		;5%
+	db 13, PHANPY		;4%
+	db 13, PHANPY		;1%
 	; nite
-	db 13, MEOWTH		;30%
+	db 13, RATTATA		;30%
 	db 13, PIDGEY		;30%
 	db 13, PIKIPEK		;20%
 	db 13, PHANPY		;10%
-	db 13, BUNEARY		;5%
-	db 13, MARILL		;4%
-	db 13, MARILL		;1%
+	db 13, RATTATA		;5%
+	db 13, PHANPY		;4%
+	db 13, PHANPY		;1%
 	
 	map_id MT_ONWA_1F
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
@@ -517,7 +517,7 @@
 	map_id MT_ONWA_CLIFF
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 14, PONYTA		;30%
+	db 14, PIDGEOTTO	;30%
 	db 14, NATU			;30%
 	db 14, SWABLU		;20%
 	db 14, MAGBY		;10%
@@ -525,7 +525,7 @@
 	db 14, SWABLU		;4%
 	db 20, XATU			;1%
 	; day
-	db 14, PONYTA		;30%
+	db 14, PIDGEOTTO	;30%
 	db 14, NATU			;30%
 	db 14, SWABLU		;20%
 	db 14, MAGBY		;10%
@@ -533,7 +533,7 @@
 	db 14, SWABLU		;4%
 	db 20, XATU			;1%
 	; nite
-	db 14, PONYTA		;30%
+	db 14, PIDGEOTTO	;30%
 	db 14, NATU			;30%
 	db 14, SWABLU		;20%
 	db 14, MAGBY		;10%
@@ -544,7 +544,7 @@
 	map_id MT_ONWA_LOWER_CLIFF
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 15, PONYTA		;30%
+	db 15, PIDGEOTTO	;30%
 	db 15, NATU			;30%
 	db 15, SWABLU		;20%
 	db 15, MAGBY		;10%
@@ -552,7 +552,7 @@
 	db 15, SWABLU		;4%
 	db 20, XATU			;1%
 	; day
-	db 15, PONYTA		;30%
+	db 15, PIDGEOTTO	;30%
 	db 15, NATU			;30%
 	db 15, SWABLU		;20%
 	db 15, MAGBY		;10%
@@ -560,7 +560,7 @@
 	db 15, SWABLU		;4%
 	db 20, XATU			;1%
 	; nite
-	db 15, PONYTA		;30%
+	db 15, PIDGEOTTO	;30%
 	db 15, NATU			;30%
 	db 15, SWABLU		;20%
 	db 15, MAGBY		;10%
@@ -572,24 +572,24 @@
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
 	db 15, SWABLU		;30%
-	db 15, BUNEARY		;30%
-	db 15, PHANPY		;20%
+	db 15, PHANPY		;30%
+	db 15, TEDDIURSA	;20%
 	db 15, ELEKID		;10%
 	db 15, MAGBY		;5%
 	db 15, MUNCHLAX		;4%
 	db 15, MUNCHLAX		;1%
 	; day
 	db 15, SWABLU		;30%
-	db 15, BUNEARY		;30%
-	db 15, PHANPY		;20%
+	db 15, PHANPY		;30%
+	db 15, TEDDIURSA	;20%
 	db 15, ELEKID		;10%
 	db 15, MAGBY		;5%
 	db 15, MUNCHLAX		;4%
 	db 15, MUNCHLAX		;1%
 	; nite
 	db 15, SWABLU		;30%
-	db 15, BUNEARY		;30%
-	db 15, PHANPY		;20%
+	db 15, PHANPY		;30%
+	db 15, TEDDIURSA	;20%
 	db 15, ELEKID		;10%
 	db 15, MAGBY		;5%
 	db 15, MUNCHLAX		;4%
@@ -760,7 +760,7 @@
 	map_id EVENTIDE_FOREST
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, STANTLER		;30%
 	db 19, PHANTUMP		;20%
 	db 19, WHIRLIPEDE	;10%
@@ -768,7 +768,7 @@
 	db 19, RATICATE		;4%
 	db 19, RATICATE		;1%
 	; day
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, STANTLER		;30%
 	db 19, PHANTUMP		;20%
 	db 19, WHIRLIPEDE	;10%
@@ -776,7 +776,7 @@
 	db 19, RATICATE		;4%
 	db 19, RATICATE		;1%
 	; nite
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, STANTLER		;30%
 	db 19, PHANTUMP		;20%
 	db 19, WHIRLIPEDE	;10%
@@ -787,250 +787,250 @@
 	map_id SPOOKY_FOREST_1
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; day
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; nite
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_2
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; day
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; nite
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_3
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; day
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; nite
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_4
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; day
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; nite
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_5
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; day
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; nite
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_6
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; day
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; nite
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_7
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; day
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; nite
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_8
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; day
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; nite
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_ESCORT
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; day
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	; nite
-	db 19, ZUBAT		;30%
+	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, GASTLY		;20%
-	db 19, STANTLER		;10%
-	db 19, STANTLER		;5%
-	db 19, LITWICK		;4%
-	db 19, LITWICK		;1%
+	db 19, ZUBAT		;10%
+	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	
 	map_id SPOOKHOUSE_LIVING_ROOM
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 21, LITWICK		;30%
+	db 21, GASTLY		;30%
 	db 21, GASTLY		;30%
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
@@ -1038,7 +1038,7 @@
 	db 21, RATTATA		;4%
 	db 21, RATTATA		;1%
 	; day
-	db 21, LITWICK		;30%
+	db 21, GASTLY		;30%
 	db 21, GASTLY		;30%
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
@@ -1046,7 +1046,7 @@
 	db 21, RATTATA		;4%
 	db 21, RATTATA		;1%
 	; nite
-	db 21, LITWICK		;30%
+	db 21, GASTLY		;30%
 	db 21, GASTLY		;30%
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
@@ -1057,7 +1057,7 @@
 	map_id SPOOKHOUSE_DINING_ROOM
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 21, LITWICK		;30%
+	db 21, GASTLY		;30%
 	db 21, GASTLY		;30%
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
@@ -1065,7 +1065,7 @@
 	db 21, RATTATA		;4%
 	db 21, RATTATA		;1%
 	; day
-	db 21, LITWICK		;30%
+	db 21, GASTLY		;30%
 	db 21, GASTLY		;30%
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
@@ -1073,7 +1073,7 @@
 	db 21, RATTATA		;4%
 	db 21, RATTATA		;1%
 	; nite
-	db 21, LITWICK		;30%
+	db 21, GASTLY		;30%
 	db 21, GASTLY		;30%
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
@@ -1084,7 +1084,7 @@
 	map_id SPOOKHOUSE_BEDROOM
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 21, LITWICK		;30%
+	db 21, GASTLY		;30%
 	db 21, GASTLY		;30%
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
@@ -1092,7 +1092,7 @@
 	db 21, RATTATA		;4%
 	db 21, RATTATA		;1%
 	; day
-	db 21, LITWICK		;30%
+	db 21, GASTLY		;30%
 	db 21, GASTLY		;30%
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
@@ -1100,7 +1100,7 @@
 	db 21, RATTATA		;4%
 	db 21, RATTATA		;1%
 	; nite
-	db 21, LITWICK		;30%
+	db 21, GASTLY		;30%
 	db 21, GASTLY		;30%
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
@@ -1491,25 +1491,25 @@
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 28, MINCCINO		;30%
-	db 28, BUNEARY		;30%
+	db 28, GLOOM		;30%
 	db 28, PIDGEOTTO	;20%
-	db 28, GLOOM		;10%
+	db 28, BUNEARY		;10%
 	db 28, ODDISH		;5%
 	db 28, CHANSEY		;4%
 	db 28, CHANSEY		;1%
 	; day
 	db 28, MINCCINO		;30%
-	db 28, BUNEARY		;30%
+	db 28, GLOOM		;30%
 	db 28, PIDGEOTTO	;20%
-	db 28, GLOOM		;10%
+	db 28, BUNEARY		;10%
 	db 28, ODDISH		;5%
 	db 28, CHANSEY		;4%
 	db 28, CHANSEY		;1%
 	; nite
 	db 28, MINCCINO		;30%
-	db 28, BUNEARY		;30%
+	db 28, GLOOM		;30%
 	db 28, PIDGEOTTO	;20%
-	db 28, GLOOM		;10%
+	db 28, BUNEARY		;10%
 	db 28, ODDISH		;5%
 	db 28, CHANSEY		;4%
 	db 28, CHANSEY		;1%

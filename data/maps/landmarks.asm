@@ -5,66 +5,69 @@ ENDM
 
 Landmarks: ; 0x1ca8c3
 	landmark   0,   0, SpecialMapName
-	landmark  20, 100, SunsetBayName
-	landmark  28, 100, SunsetCapeName
-	landmark  28, 108, LighthouseName
-	landmark  28,  92, Route1Name
-	landmark  28,  84, DaybreakVillageName
-	landmark  28,  72, Route2Name
-	landmark  36,  76, DaybreakGrottoName
-	landmark  28,  60, GlintCityName
-	landmark  28,  52, GlintGroveName
-	landmark  42,  60, Route3Name
-	landmark  52,  52, StarglowCavernName
-	landmark  64,  76, StarglowValleyName
-	landmark  78,  76, Route4Name
-	landmark  76,  68, HuntersThicketName
-	landmark  72,  88, Route5Name
-	landmark  62, 100, Route6Name
-	landmark  52,  92, Route7Name
-	landmark  40,  92, LakeOnwaName
-	landmark  44,  84, MtOnwaName
-	landmark  60, 124, SunbeamIslandName
-	landmark  68, 124, SunbeamJungleName
-	landmark  52,  76, Route8Name
-	landmark  84,  84, EventideForestName
-	landmark  92,  80, OldManorName
-	landmark  92,  92, EventideVillageName
-	landmark 100,  88, Route9Name
-	landmark 108,  84, DodrioRanchName
-	landmark 100,  76, FlickerStationName
-	landmark 100,  68, FlickerPassName
-	landmark 120,  44, Route10Name
-	landmark 116,  36, TwinkleTownName
-	landmark 124,  28, FrozenRuinsName
-	landmark 136,  80, LusterCityName
-	landmark 132,  80, LusterSewersName
-	landmark 132,  92, Route11Name
-	landmark   0,   0, Route12Name
-	landmark   0,   0, AirportName
-	landmark   0,   0, Route13Name
-	landmark   0,   0, Route14Name
-	landmark   0,   0, Route15Name
+	landmark  20,  92, SunsetBayName
+	landmark  28,  92, SunsetCapeName
+	landmark  28, 100, LighthouseName
+	landmark  28,  88, Route1Name
+	landmark  28,  76, DaybreakVillageName
+	landmark  28,  64, Route2Name
+	landmark  36,  68, DaybreakGrottoName
+	landmark  28,  52, GlintCityName
+	landmark  28,  44, GlintGroveName
+	landmark  52,  52, Route3Name
+	landmark  52,  44, StarglowCavernName
+	landmark  64,  68, StarglowValleyName
+	landmark  76,  68, Route4Name
+	landmark  76,  60, HuntersThicketName
+	landmark  72,  80, Route5Name
+	landmark  62,  92, Route6Name
+	landmark  52,  84, Route7Name
+	landmark  40,  84, LakeOnwaName
+	landmark  44,  76, MtOnwaName
+	landmark  60, 116, SunbeamIslandName
+	landmark  68, 116, SunbeamJungleName
+	landmark  52,  68, Route8Name
+	landmark  84,  68, EventideForestName
+	landmark  92,  68, EventideVillageName
+	landmark 100,  64, Route9Name
+	landmark 108,  60, DodrioRanchName
+	landmark 100,  52, FlickerStationName
+	landmark 100,  44, FlickerPassName
+	landmark 100,  36, Route10Name
+	landmark 100,  28, TwinkleTownName
+	landmark 108,  28, FrozenRuinsName
+	landmark 136,  56, LusterCityName
+	landmark 132,  56, LusterSewersName
+	landmark 132,  76, Route11Name
+	landmark 124,  92, Route12Name
+	landmark 116,  84, AirportName
+	landmark  40, 108, NewWaterRouteName
+	landmark  20, 116, Route13Name
+	landmark  36, 124, Route14Name
 	
-	landmark 136,  80, LusterStationName
-	landmark 136,  80, ResidentialName
-	landmark 136,  80, ShoppingName
-	landmark 136,  80, BusinessName
-	landmark  28,  92, Route1Name
-	landmark   0,   0, StarglowDepthsName
+	landmark  84,  60, OldManorName
+	landmark 136,  56, LusterStationName
+	landmark 136,  56, ResidentialName
+	landmark 136,  56, ShoppingName
+	landmark 136,  56, BusinessName
+	landmark  28,  88, Route1Name
+	landmark  60,  40, StarglowDepthsName
+	landmark   0,   0, UndergroundPassageName
+	landmark   0,   0, UndergroundPassageName
 	
-	landmark  20, 100, ShimmerName
-	landmark   0,   0, BrilloTownName
-	landmark   0,   0, Route16Name
-	landmark   0,   0, Route17Name
-	landmark   0,   0, DesertWastelandName
-	landmark   0,   0, Route18Name
-	landmark   0,   0, Route19Name
-	landmark  28,  92, RadiantName
-	landmark   0,   0, Route20Name
-	landmark   0,   0, DuskTurnpikeName
-	landmark   0,   0, SeasideCaveName
-	landmark   0,   0, Route21Name
+	landmark  28,  32, Route15Name
+	landmark  28,  44, ShimmerName
+	landmark  12, 132, BrilloTownName
+	landmark  20, 132, Route16Name
+	landmark  20, 124, Route17Name
+	landmark  20, 116, DesertWastelandName
+	landmark  44,  52, Route18Name
+	landmark  52,  44, SeasideCaveName
+	landmark  44,  68, Route19Name
+	landmark  52,  76, RadiantName
+	landmark  60,  68, Route20Name
+	landmark  60,  48, DuskTurnpikeName
+	landmark  76,  44, Route21Name
 	
 	
 	landmark -16, -16, GateName
@@ -107,6 +110,7 @@ LusterSewersName:	   db "LUSTER¯SEWERS@"
 Route11Name:		   db "ROUTE 11@"
 Route12Name:		   db "ROUTE 12@"
 AirportName:		   db "ONWA INTL.¯AIRPORT@"
+NewWaterRouteName:		db "UNFINISHED@"
 Route13Name:		   db "ROUTE 13@"
 Route14Name:		   db "ROUTE 14@"
 Route15Name:		   db "ROUTE 15@"
@@ -128,5 +132,6 @@ LusterStationName:	   db "LUSTER¯CITY@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"
 ShoppingName:		   db "SHOPPING¯DISTRICT@"
 BusinessName:	 	   db "BUSINESS¯DISTRICT@"
+UndergroundPassageName: db "UNDERGROUND¯PASSAGE@"
 GateName:	 	 	   db "UNKNOWN@"
 SpecialMapName:        db "?","@"

@@ -31,44 +31,47 @@
 	const SUNBEAM_JUNGLE	 ; 15
 	const ROUTE_8			 ; 16
 	const EVENTIDE_FOREST	 ; 17
-	const OLD_MANOR			 ; 18
-	const EVENTIDE_VILLAGE	 ; 19
-	const ROUTE_9			 ; 1a
-	const DODRIO_RANCH		 ; 1b
-	const FLICKER_STATION	 ; 1c
-	const FLICKER_PASS		 ; 1d
-	const ROUTE_10			 ; 1e
-	const TWINKLE_TOWN		 ; 1f
-	const FROZEN_RUINS		 ; 20
-	const LUSTER_CITY		 ; 21
-	const LUSTER_SEWERS		 ; 22
-	const ROUTE_11			 ; 23
-	const ROUTE_12			 ; 24
-	const AIRPORT			 ; 25
+	const EVENTIDE_VILLAGE	 ; 18
+	const ROUTE_9			 ; 19
+	const DODRIO_RANCH		 ; 1a
+	const FLICKER_STATION	 ; 1b
+	const FLICKER_PASS		 ; 1c
+	const ROUTE_10			 ; 1d
+	const TWINKLE_TOWN		 ; 1e
+	const FROZEN_RUINS		 ; 1f
+	const LUSTER_CITY		 ; 20
+	const LUSTER_SEWERS		 ; 21
+	const ROUTE_11			 ; 22
+	const ROUTE_12			 ; 23
+	const AIRPORT			 ; 24
+	const NEW_WATER_ROUTE	 ; 25
 	const ROUTE_13			 ; 26
 	const ROUTE_14			 ; 27
-	const ROUTE_15			 ; 28
+	const OLD_MANOR			 ; 28
 	const LUSTER_STATION	 		; 29
 	const RESIDENTIAL_DISTRICT		; 2a
 	const SHOPPING_DISTRICT			; 2b
 	const BUSINESS_DISTRICT			; 2c
 	const FAKE_ROUTE_1				; 2d
 	const STARGLOW_DEPTHS			; 2e
+	const UNDERGROUND_PASSAGE_1
+	const UNDERGROUND_PASSAGE_2
 
 SOUTH_ONWA_LANDMARK EQU const_value
 
-	const SHIMMER_CITY		 ; 2f
-	const BRILLO_TOWN		 ; 20
-	const ROUTE_16			 ; 31
-	const ROUTE_17			 ; 32
-	const DESERT_WASTELAND	 ; 33
-	const ROUTE_18			 ; 34
-	const ROUTE_19			 ; 35
-	const RADIANT_TOWNSHIP	 ; 36
-	const ROUTE_20			 ; 37
-	const DUSK_TURNPIKE		 ; 38
-	const SEASIDE_CAVE		 ; 39
-	const ROUTE_21			 ; 3a
+	const ROUTE_15			 ; 2f
+	const SHIMMER_CITY		 ; 30
+	const BRILLO_TOWN		 ; 31
+	const ROUTE_16			 ; 32
+	const ROUTE_17			 ; 33
+	const DESERT_WASTELAND	 ; 34
+	const ROUTE_18			 ; 35
+	const SEASIDE_CAVE		 ; 3a
+	const ROUTE_19			 ; 36
+	const RADIANT_TOWNSHIP	 ; 37
+	const ROUTE_20			 ; 38
+	const DUSK_TURNPIKE		 ; 39
+	const ROUTE_21			 ; 3b
 
 SHAMOUTI_LANDMARK EQU const_value
 

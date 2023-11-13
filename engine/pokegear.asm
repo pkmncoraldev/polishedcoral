@@ -1062,7 +1062,7 @@ TownMap_GetNorthOnwaLandmarkLimits:
 	ret
 
 TownMap_GetSouthOnwaLandmarkLimits: ; 910e8
-	lb de, RADIANT_TOWNSHIP, SHIMMER_CITY
+	lb de, ROUTE_21, SHIMMER_CITY
 ;	ld a, [wStatusFlags]
 ;	bit 6, a
 ;	ret z
@@ -3183,10 +3183,10 @@ rept _NARG / 2
 	shift
 endr
 endm
-	townmappals 2, 2, 2, 3, 3, 7, 0, 0, 2, 2, 4, 2, 5, 6, 5, 5
-	townmappals 2, 2, 7, 3, 4, 5, 0, 0, 2, 2, 0, 3, 2, 3, 3, 3
+	townmappals 2, 2, 2, 3, 3, 7, 0, 0, 2, 2, 4, 2, 5, 6, 6, 5
+	townmappals 2, 2, 7, 3, 4, 5, 0, 0, 2, 2, 0, 7, 3, 3, 3, 3
 	townmappals 2, 2, 2, 2, 2, 7, 0, 0, 3, 7, 4, 0, 0, 0, 0, 0
-	townmappals 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 3, 3, 2, 7, 1, 1
+	townmappals 2, 2, 2, 2, 2, 2, 2, 2, 4, 6, 4, 0, 0, 0, 0, 0
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 

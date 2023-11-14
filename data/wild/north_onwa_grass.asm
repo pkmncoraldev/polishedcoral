@@ -1518,7 +1518,7 @@
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
 	db 29, MACHOKE		;30%
-	db 29, DITTO		;30%
+	db 29, BUNEARY		;30%
 	db 29, MINCCINO		;20%
 	db 29, DWEBBLE		;10%
 	db 29, MINCCINO		;5%
@@ -1526,7 +1526,7 @@
 	db 29, DWEBBLE		;1%
 	; day
 	db 29, MACHOKE		;30%
-	db 29, DITTO		;30%
+	db 29, BUNEARY		;30%
 	db 29, MINCCINO		;20%
 	db 29, DWEBBLE		;10%
 	db 29, MINCCINO		;5%
@@ -1534,7 +1534,7 @@
 	db 29, DWEBBLE		;1%
 	; nite
 	db 29, MACHOKE		;30%
-	db 29, DITTO		;30%
+	db 29, BUNEARY		;30%
 	db 29, MINCCINO		;20%
 	db 29, DWEBBLE		;10%
 	db 29, MINCCINO		;5%
@@ -1544,29 +1544,56 @@
 	map_id STARGLOW_CAVERN_DEPTHS
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 15, VOLTORB		;30%
-	db 15, MAGNEMITE	;30%
-	db 15, CLEFAIRY		;20%
-	db 15, RALTS		;10%
-	db 15, RALTS		;5%
-	db 15, RALTS		;4%
-	db 15, RALTS		;1%
+	db 24, VOLTORB		;30%
+	db 24, MAGNEMITE	;30%
+	db 24, CLEFAIRY		;20%
+	db 24, KIRLIA		;10%
+	db 24, KIRLIA		;5%
+	db 24, KIRLIA		;4%
+	db 24, KIRLIA		;1%
 	; day
-	db 15, VOLTORB		;30%
-	db 15, MAGNEMITE	;30%
-	db 15, CLEFAIRY		;20%
-	db 15, RALTS		;10%
-	db 15, RALTS		;5%
-	db 15, RALTS		;4%
-	db 15, RALTS		;1%
+	db 24, VOLTORB		;30%
+	db 24, MAGNEMITE	;30%
+	db 24, CLEFAIRY		;20%
+	db 24, KIRLIA		;10%
+	db 24, KIRLIA		;5%
+	db 24, KIRLIA		;4%
+	db 24, KIRLIA		;1%
 	; nite
-	db 15, VOLTORB		;30%
-	db 15, MAGNEMITE	;30%
-	db 15, CLEFAIRY		;20%
-	db 15, RALTS		;10%
-	db 15, RALTS		;5%
-	db 15, RALTS		;4%
-	db 15, RALTS		;1%
+	db 24, VOLTORB		;30%
+	db 24, MAGNEMITE	;30%
+	db 24, CLEFAIRY		;20%
+	db 24, KIRLIA		;10%
+	db 24, KIRLIA		;5%
+	db 24, KIRLIA		;4%
+	db 24, KIRLIA		;1%
+	
+	map_id ROUTE_14
+	db 25 percent, 25 percent, 25 percent ; encounter rates: morn/day/nite
+	; morn
+	db 29, TRUMBEAK		;30%
+	db 29, WINGULL		;30%
+	db 29, EXEGGCUTE	;20%
+	db 29, EXEGGCUTE	;10%
+	db 29, SCYTHER		;5%
+	db 29, SCYTHER		;4%
+	db 29, SCYTHER		;1%
+	; day
+	db 29, TRUMBEAK		;30%
+	db 29, WINGULL		;30%
+	db 29, EXEGGCUTE	;20%
+	db 29, EXEGGCUTE	;10%
+	db 29, SCYTHER		;5%
+	db 29, SCYTHER		;4%
+	db 29, SCYTHER		;1%
+	; nite
+	db 29, TRUMBEAK		;30%
+	db 29, WINGULL		;30%
+	db 29, EXEGGCUTE	;20%
+	db 29, EXEGGCUTE	;10%
+	db 29, SCYTHER		;5%
+	db 29, SCYTHER		;4%
+	db 29, SCYTHER		;1%
 	
 	map_id FAKE_ROUTE_1
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite

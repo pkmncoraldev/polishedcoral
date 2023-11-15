@@ -5,10 +5,10 @@ SeasideCave1F_MapScriptHeader:
 	callback MAPCALLBACK_TILES, SeasideCave1FCallback
 
 	db 4 ; warp events
-	warp_event  7,  1, ROUTE_18, 3
+	warp_event  7,  1, ROUTE_19, 3
 	warp_event 15,  3, SEASIDE_CAVE_B1F, 1
 	warp_event 15, 19, SEASIDE_CAVE_B1F, 2
-	warp_event 17, 35, ROUTE_21_TUNNEL, 6
+	warp_event 17, 35, ROUTE_22_TUNNEL, 6
 
 	db 0 ; coord events
 
@@ -25,7 +25,7 @@ SeasideCave1F_MapScriptHeader:
 	const SEASIDE_CAVE_NPC_2
 	
 SeasideCave1FCallback:
-	domaptrigger ROUTE_21_TUNNEL, $0
+	domaptrigger ROUTE_22_TUNNEL, $0
 	return
 	
 SeasideCave1FNPC1:

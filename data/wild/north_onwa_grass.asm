@@ -1568,7 +1568,7 @@
 	db 24, KIRLIA		;4%
 	db 24, KIRLIA		;1%
 	
-	map_id ROUTE_14
+	map_id ROUTE_15
 	db 25 percent, 25 percent, 25 percent ; encounter rates: morn/day/nite
 	; morn
 	db 29, TRUMBEAK		;30%

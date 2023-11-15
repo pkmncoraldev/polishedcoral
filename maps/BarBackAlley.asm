@@ -47,7 +47,7 @@ BarBackAlleyCallback:
 	iffalse .no3
 	changeblock $0a, $06, $ce
 .no3
-	checkevent EVENT_ROUTE_21_TRASHCAN
+	checkevent EVENT_ROUTE_22_TRASHCAN
 	iffalse .end
 	changeblock $02, $08, $e7
 .end

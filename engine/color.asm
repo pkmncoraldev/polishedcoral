@@ -1018,7 +1018,7 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_BRILLO_TOWN
 	jp z, .brillo
-	cp MAP_ROUTE_17_NORTH
+	cp MAP_ROUTE_18_NORTH
 	jp z, .desertfire
 	cp MAP_DESERT_WASTELAND_OASIS
 	jp z, .oasis
@@ -1328,11 +1328,11 @@ LoadMapPals::
 	cp INDOOR
 	ret z
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_18
-	jp z, .outside_cont
 	cp MAP_ROUTE_19
+	jp z, .outside_cont
+	cp MAP_ROUTE_20
 	jp nz, .not_route_19
-	eventflagcheck EVENT_ROUTE_19_GRASS_YELLOW
+	eventflagcheck EVENT_ROUTE_20_GRASS_YELLOW
 	jp z, .outside_cont
 .not_route_19
 	ld hl, MapObjectPalsSunflowers
@@ -1547,7 +1547,7 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_BAR_BACK_ALLEY
 	jr z, .tunnel
-	cp MAP_ROUTE_21_TUNNEL
+	cp MAP_ROUTE_22_TUNNEL
 	jr z, .tunnel
 	cp MAP_DUSK_TURNPIKE
 	jp nz, .normal

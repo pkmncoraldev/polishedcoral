@@ -41,9 +41,9 @@ Landmarks: ; 0x1ca8c3
 	landmark 132,  76, Route11Name
 	landmark 124,  92, Route12Name
 	landmark 116,  84, AirportName
-	landmark  40, 108, NewWaterRouteName
-	landmark  20, 116, Route13Name
-	landmark  36, 124, Route14Name
+	landmark  40, 108, Route13Name
+	landmark  20, 116, Route14Name
+	landmark  36, 124, Route15Name
 	
 	landmark  84,  60, OldManorName
 	landmark 136,  56, LusterStationName
@@ -55,19 +55,19 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, UnkownPassageName
 	landmark  36, 116, UnderwaterCavernName
 	
-	landmark  28,  32, Route15Name
+	landmark  28,  32, Route16Name
 	landmark  28,  44, ShimmerName
 	landmark  12, 132, BrilloTownName
-	landmark  20, 132, Route16Name
-	landmark  20, 124, Route17Name
+	landmark  20, 132, Route17Name
+	landmark  20, 124, Route18Name
 	landmark  20, 116, DesertWastelandName
-	landmark  44,  52, Route18Name
+	landmark  44,  52, Route19Name
 	landmark  52,  44, SeasideCaveName
-	landmark  44,  68, Route19Name
+	landmark  44,  68, Route20Name
 	landmark  52,  76, RadiantName
-	landmark  60,  68, Route20Name
+	landmark  60,  68, Route21Name
 	landmark  60,  48, DuskTurnpikeName
-	landmark  76,  44, Route21Name
+	landmark  76,  44, Route22Name
 	
 	
 	landmark -16, -16, GateName
@@ -110,23 +110,23 @@ LusterSewersName:	   db "LUSTER¯SEWERS@"
 Route11Name:		   db "ROUTE 11@"
 Route12Name:		   db "ROUTE 12@"
 AirportName:		   db "ONWA INTL.¯AIRPORT@"
-NewWaterRouteName:		db "UNFINISHED@"
 Route13Name:		   db "ROUTE 13@"
 Route14Name:		   db "ROUTE 14@"
 Route15Name:		   db "ROUTE 15@"
+Route16Name:		   db "ROUTE 16@"
 StarglowDepthsName:    db "STARGLOW¯DEPTHS@"
 ShimmerName:           db "PORT¯SHIMMER@"
 BrilloTownName:	   	   db "BRILLO¯TOWN@"
-Route16Name:		   db "ROUTE 16@"
 Route17Name:		   db "ROUTE 17@"
-DesertWastelandName:   db "DESERT¯WASTELAND@"
 Route18Name:		   db "ROUTE 18@"
+DesertWastelandName:   db "DESERT¯WASTELAND@"
 Route19Name:		   db "ROUTE 19@"
-RadiantName:	 	   db "RADIANT¯TOWNSHIP@"
 Route20Name:		   db "ROUTE 20@"
+RadiantName:	 	   db "RADIANT¯TOWNSHIP@"
+Route21Name:		   db "ROUTE 21@"
 DuskTurnpikeName:	   db "DUSK¯TURNPIKE@"
 SeasideCaveName:	   db "SEASIDE¯CAVE@"
-Route21Name:		   db "ROUTE 21@"
+Route22Name:		   db "ROUTE 22@"
 
 LusterStationName:	   db "LUSTER¯CITY@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"

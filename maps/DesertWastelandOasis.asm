@@ -1,8 +1,8 @@
 DesertWastelandOasis_MapScriptHeader:
 	db 3 ; scene scripts
-	scene_script Route17NorthTrigger0
-	scene_script Route17NorthTrigger1
-	scene_script Route17NorthTrigger2
+	scene_script Route18NorthTrigger0
+	scene_script Route18NorthTrigger1
+	scene_script Route18NorthTrigger2
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, DesertWastelandOasisCallback

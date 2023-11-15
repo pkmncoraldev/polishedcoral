@@ -4,7 +4,7 @@ UndergroundPassageEntrance_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 4 ; warp events
-	warp_event  7,  9, ROUTE_14, 1
+	warp_event  7,  9, ROUTE_15, 1
 	warp_event  9,  3, UNDERGROUND_PASSAGE_ENTRANCE, 3
 	warp_event 16,  9, UNDERGROUND_PASSAGE_ENTRANCE, 2
 	warp_event 17,  1, UNDERGROUND_PASSAGE, 7

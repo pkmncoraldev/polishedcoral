@@ -1058,11 +1058,11 @@ TownMap_ConvertLineBreakCharacters2: ; 1de2c5
 	jp PlaceString
 
 TownMap_GetNorthOnwaLandmarkLimits:
-	lb de, ROUTE_14, SUNSET_BAY
+	lb de, ROUTE_15, SUNSET_BAY
 	ret
 
 TownMap_GetSouthOnwaLandmarkLimits: ; 910e8
-	lb de, ROUTE_21, SHIMMER_CITY
+	lb de, ROUTE_22, SHIMMER_CITY
 ;	ld a, [wStatusFlags]
 ;	bit 6, a
 ;	ret z

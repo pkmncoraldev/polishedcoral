@@ -1,54 +1,54 @@
-Route17North_MapScriptHeader:
+Route18North_MapScriptHeader:
 	db 3 ; scene scripts
-	scene_script Route17NorthTrigger0
-	scene_script Route17NorthTrigger1
-	scene_script Route17NorthTrigger2
+	scene_script Route18NorthTrigger0
+	scene_script Route18NorthTrigger1
+	scene_script Route18NorthTrigger2
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, Route17NorthCallback
+	callback MAPCALLBACK_TILES, Route18NorthCallback
 
 	db 1 ; warp events
-	warp_event  7, 19, ROUTE_17_TRAILER, 1
+	warp_event  7, 19, ROUTE_18_TRAILER, 1
 
 	db 15 ; coord events
-	xy_trigger 0, 21,  7, 0, Route17NorthLight, 0, 0
-	xy_trigger 0, 22,  8, 0, Route17NorthLight, 0, 0
-	xy_trigger 0, 23,  7, 0, Route17NorthLight, 0, 0
-	xy_trigger 0, 22,  6, 0, Route17NorthLight, 0, 0
-	xy_trigger 0, 23,  8, 0, Route17NorthLight, 0, 0
-	xy_trigger 0, 23,  6, 0, Route17NorthLight, 0, 0
-	xy_trigger 0, 21,  8, 0, Route17NorthLight, 0, 0
-	xy_trigger 0, 21,  6, 0, Route17NorthLight, 0, 0
-	xy_trigger 1, 20,  7, 0, Route17NorthDark, 0, 0
-	xy_trigger 1, 22,  9, 0, Route17NorthDark, 0, 0
-	xy_trigger 1, 20,  6, 0, Route17NorthDark, 0, 0
-	xy_trigger 1, 21,  5, 0, Route17NorthDark, 0, 0
-	xy_trigger 1, 21,  9, 0, Route17NorthDark, 0, 0
-	xy_trigger 1, 20,  8, 0, Route17NorthDark, 0, 0
-	xy_trigger 1, 23,  9, 0, Route17NorthDark, 0, 0
+	xy_trigger 0, 21,  7, 0, Route18NorthLight, 0, 0
+	xy_trigger 0, 22,  8, 0, Route18NorthLight, 0, 0
+	xy_trigger 0, 23,  7, 0, Route18NorthLight, 0, 0
+	xy_trigger 0, 22,  6, 0, Route18NorthLight, 0, 0
+	xy_trigger 0, 23,  8, 0, Route18NorthLight, 0, 0
+	xy_trigger 0, 23,  6, 0, Route18NorthLight, 0, 0
+	xy_trigger 0, 21,  8, 0, Route18NorthLight, 0, 0
+	xy_trigger 0, 21,  6, 0, Route18NorthLight, 0, 0
+	xy_trigger 1, 20,  7, 0, Route18NorthDark, 0, 0
+	xy_trigger 1, 22,  9, 0, Route18NorthDark, 0, 0
+	xy_trigger 1, 20,  6, 0, Route18NorthDark, 0, 0
+	xy_trigger 1, 21,  5, 0, Route18NorthDark, 0, 0
+	xy_trigger 1, 21,  9, 0, Route18NorthDark, 0, 0
+	xy_trigger 1, 20,  8, 0, Route18NorthDark, 0, 0
+	xy_trigger 1, 23,  9, 0, Route18NorthDark, 0, 0
 
 	db 0 ; bg events
 
 	db 5 ; object events
-	object_event  0,  4, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route17NorthCampfire, EVENT_HIDE_OW_OBJECTS_BROWN
-	object_event  0,  4, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Route17NorthCampfire, EVENT_HIDE_OW_OBJECTS_TEAL
+	object_event  0,  4, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route18NorthCampfire, EVENT_HIDE_OW_OBJECTS_BROWN
+	object_event  0,  4, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Route18NorthCampfire, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event  0,  4, SPRITE_MISC_OVERHEAD, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  7, 14, SPRITE_POKEMANIAC, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route17NorthNPC2, -1
+	object_event  7, 14, SPRITE_POKEMANIAC, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route18NorthNPC2, -1
 	person_event SPRITE_CUEBALL, 32,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	
 	const_def 1 ; object constants
-	const ROUTE_17_NORTH_FIRE_BROWN
-	const ROUTE_17_NORTH_FIRE_TEAL
-	const ROUTE_17_NORTH_FIREBOTTOM
+	const ROUTE_18_NORTH_FIRE_BROWN
+	const ROUTE_18_NORTH_FIRE_TEAL
+	const ROUTE_18_NORTH_FIREBOTTOM
 	
 	
-Route17NorthTrigger0:
+Route18NorthTrigger0:
 	end
 	
-Route17NorthTrigger1:
+Route18NorthTrigger1:
 	end
 	
-Route17NorthTrigger2:
+Route18NorthTrigger2:
 	clearevent EVENT_SANDSTORM_HAPPENING
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	domaptrigger DESERT_WASTELAND_1, $0
@@ -57,7 +57,7 @@ Route17NorthTrigger2:
 	dotrigger $0
 	end
 	
-Route17NorthCallback:
+Route18NorthCallback:
 	readvar VAR_PLAYER_COLOR
 	if_equal 3, .brown
 	setevent EVENT_HIDE_OW_OBJECTS_TEAL
@@ -76,9 +76,9 @@ Route17NorthCallback:
 	checktime 1<<DUSK
 	iffalse .skip
 .changecampfire
-	moveperson ROUTE_17_NORTH_FIRE_BROWN, 7, 22
-	moveperson ROUTE_17_NORTH_FIRE_TEAL, 7, 22
-	moveperson ROUTE_17_NORTH_FIREBOTTOM, 7, 22
+	moveperson ROUTE_18_NORTH_FIRE_BROWN, 7, 22
+	moveperson ROUTE_18_NORTH_FIRE_TEAL, 7, 22
+	moveperson ROUTE_18_NORTH_FIREBOTTOM, 7, 22
 	changeblock $6, $14, $4e
 	changeblock $8, $14, $4f
 	changeblock $6, $16, $52
@@ -90,16 +90,16 @@ Route17NorthCallback:
 .end
 	return
 	
-Route17NorthCampfire:
+Route18NorthCampfire:
 	end
 	
-Route17NorthLight:
+Route18NorthLight:
 	setflag ENGINE_NEAR_CAMPFIRE
 	loadvar wTimeOfDayPalFlags, $40 | 1
 	dotrigger $1
 	end
 	
-Route17NorthDark:
+Route18NorthDark:
 	clearflag ENGINE_NEAR_CAMPFIRE
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	dotrigger $0
@@ -112,18 +112,18 @@ KillSandstormSound:
 	call KillSFX
 	ret
 	
-Route17NorthNPC1:
+Route18NorthNPC1:
 	special SaveMusic
 	callasm BrilloSingerTextScrollAsm1
 	opentext
 	playmusic MUSIC_BRILLO_SONG_BAD
-	writetext Route17NorthNPC1Text1
+	writetext Route18NorthNPC1Text1
 	wait 27
-	writetext Route17NorthNPC1Text2
+	writetext Route18NorthNPC1Text2
 	wait 27
-	writetext Route17NorthNPC1Text3
+	writetext Route18NorthNPC1Text3
 	wait 28
-	writetext Route17NorthNPC1Text4
+	writetext Route18NorthNPC1Text4
 	wait 34
 	playmusic MUSIC_NONE
 	callasm BrilloSingerTextScrollAsm2
@@ -132,44 +132,44 @@ Route17NorthNPC1:
 	closetext
 	
 	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, ROUTE_17_TRAILER_NPC, 15
+	showemote EMOTE_SHOCK, ROUTE_18_TRAILER_NPC, 15
 	faceplayer
 	opentext
-	writetext Route17NorthNPC1Text5
+	writetext Route18NorthNPC1Text5
 	waitbutton
 	closetext
-	spriteface ROUTE_17_TRAILER_NPC, LEFT
+	spriteface ROUTE_18_TRAILER_NPC, LEFT
 	end
 	
-Route17NorthNPC2:
-	checkevent EVENT_TALKED_TO_ROUTE_17_NORTH_NPC
+Route18NorthNPC2:
+	checkevent EVENT_TALKED_TO_ROUTE_18_NORTH_NPC
 	iftrue .already_talked
-	setevent EVENT_TALKED_TO_ROUTE_17_NORTH_NPC
-	jumptextfaceplayer Route17NorthNPC2Text1
+	setevent EVENT_TALKED_TO_ROUTE_18_NORTH_NPC
+	jumptextfaceplayer Route18NorthNPC2Text1
 .already_talked
-	jumptextfaceplayer Route17NorthNPC2Text2
+	jumptextfaceplayer Route18NorthNPC2Text2
 	
-Route17NorthNPC1Text1:
+Route18NorthNPC1Text1:
 	text "They say that once"
 	line "there was a guy,"
 	done
 	
-Route17NorthNPC1Text2:
+Route18NorthNPC1Text2:
 	text "he got some sand"
 	line "caught in his eye"
 	done
 	
-Route17NorthNPC1Text3:
+Route18NorthNPC1Text3:
 	text "But he was hungry"
 	line "mumble mumble…"
 	done
 	
-Route17NorthNPC1Text4:
+Route18NorthNPC1Text4:
 	text "so he baked an"
 	line "apple pie!"
 	done
 	
-Route17NorthNPC1Text5:
+Route18NorthNPC1Text5:
 	text "Oh, sorry about"
 	line "that."
 	
@@ -179,7 +179,7 @@ Route17NorthNPC1Text5:
 	cont "my head!"
 	done
 	
-Route17NorthNPC2Text1:
+Route18NorthNPC2Text1:
 	text "Are you <PLAYER>?"
 	
 	para "You're the one"
@@ -221,7 +221,7 @@ Route17NorthNPC2Text1:
 	done
 	
 	
-Route17NorthNPC2Text2:
+Route18NorthNPC2Text2:
 	text "Every time we try"
 	line "to brave the sand,"
 	cont "we somehow end up"

@@ -65,7 +65,7 @@ SunbeamViewNite_BlockData:
 
 Route4EventideGate_BlockData:
 EventideVillageGate_BlockData:
-Route18DuskGate_BlockData:
+Route19DuskGate_BlockData:
 	INCBIN "maps/EastWestGate.ablk.lz"
 
 SunsetWaterGrassHouse_BlockData:
@@ -267,8 +267,8 @@ LusterTrainStation_BlockData:
 Route10Tent_BlockData:
 	INCBIN "maps/Route10Tent.ablk.lz"
 	
-Route17Trailer_BlockData:
-	INCBIN "maps/Route17Trailer.ablk.lz"
+Route18Trailer_BlockData:
+	INCBIN "maps/Route18Trailer.ablk.lz"
 	
 TwinkleTown_BlockData:
 TwinkleGymRedRoom_BlockData:
@@ -630,14 +630,14 @@ RadiantTownship_BlockData:
 BrilloTown_BlockData:
 	INCBIN "maps/BrilloTown.ablk.lz"
 	
-Route16_BlockData:
-	INCBIN "maps/Route16.ablk.lz"
-	
 Route17_BlockData:
 	INCBIN "maps/Route17.ablk.lz"
 	
-Route17North_BlockData:
-	INCBIN "maps/Route17North.ablk.lz"
+Route18_BlockData:
+	INCBIN "maps/Route18.ablk.lz"
+	
+Route18North_BlockData:
+	INCBIN "maps/Route18North.ablk.lz"
 	
 DesertWasteland1_BlockData:
 DesertWasteland3_BlockData:
@@ -670,23 +670,23 @@ LakeOnwaNameRaterHouse_BlockData:
 Route8EncounterHouse_BlockData:
 	INCBIN "maps/Route8EncounterHouse.ablk.lz"
 	
-Route13_BlockData:
-	INCBIN "maps/Route13.ablk.lz"
-	
 Route14_BlockData:
 	INCBIN "maps/Route14.ablk.lz"
 	
 Route15_BlockData:
 	INCBIN "maps/Route15.ablk.lz"
 	
+Route16_BlockData:
+	INCBIN "maps/Route16.ablk.lz"
+	
 Airport_BlockData:
 	INCBIN "maps/Airport.ablk.lz"
 	
-Route18_BlockData:
-	INCBIN "maps/Route18.ablk.lz"
-	
 Route19_BlockData:
 	INCBIN "maps/Route19.ablk.lz"
+	
+Route20_BlockData:
+	INCBIN "maps/Route20.ablk.lz"
 	
 RadiantFlowerShop_BlockData:
 	INCBIN "maps/RadiantFlowerShop.ablk.lz"
@@ -709,7 +709,7 @@ RadiantPokeCenter_BlockData:
 RadiantMart_BlockData:
 	INCBIN "maps/Mart.ablk.lz"
 	
-Route20Gate_BlockData:
+Route21Gate_BlockData:
 	INCBIN "maps/NorthSouthGate.ablk.lz"
 	
 RadiantHouse_BlockData:
@@ -718,8 +718,8 @@ RadiantHouse_BlockData:
 RadiantField_BlockData:
 	INCBIN "maps/RadiantField.ablk.lz"
 	
-Route20_BlockData:
-	INCBIN "maps/Route20.ablk.lz"
+Route21_BlockData:
+	INCBIN "maps/Route21.ablk.lz"
 	
 DuskTurnpike_BlockData:
 	INCBIN "maps/DuskTurnpike.ablk.lz"
@@ -730,8 +730,8 @@ DuskAutoLobby_BlockData:
 DuskAutoGarage_BlockData:
 	INCBIN "maps/DuskAutoGarage.ablk.lz"
 	
-Route21Tunnel_BlockData:
-	INCBIN "maps/Route21Tunnel.ablk.lz"
+Route22Tunnel_BlockData:
+	INCBIN "maps/Route22Tunnel.ablk.lz"
 	
 FakeRoute1_BlockData:
 	INCBIN "maps/FakeRoute1.ablk.lz"
@@ -787,6 +787,6 @@ SunsetLighthouseTop_BlockData:
 BarBackAlley_BlockData:
 	INCBIN "maps/BarBackAlley.ablk.lz"
 	
-NewWaterRoute_BlockData:
-	INCBIN "maps/NewWaterRoute.ablk.lz"
+Route13_BlockData:
+	INCBIN "maps/Route13.ablk.lz"
 	

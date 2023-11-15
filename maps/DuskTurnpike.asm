@@ -8,13 +8,13 @@ DuskTurnpike_MapScriptHeader:
 	callback MAPCALLBACK_TILES, DuskTurnpikeCallback
 
 	db 17 ; warp events
-	warp_event  8, 28, ROUTE_18_DUSK_GATE, 3
-	warp_event  8, 29, ROUTE_18_DUSK_GATE, 4
-	warp_event  7, 13, ROUTE_21_TUNNEL, 1
-	warp_event  7, 14, ROUTE_21_TUNNEL, 2
-	warp_event  7, 15, ROUTE_21_TUNNEL, 3
-	warp_event  7, 16, ROUTE_21_TUNNEL, 4
-	warp_event  7, 17, ROUTE_21_TUNNEL, 5
+	warp_event  8, 28, ROUTE_19_DUSK_GATE, 3
+	warp_event  8, 29, ROUTE_19_DUSK_GATE, 4
+	warp_event  7, 13, ROUTE_22_TUNNEL, 1
+	warp_event  7, 14, ROUTE_22_TUNNEL, 2
+	warp_event  7, 15, ROUTE_22_TUNNEL, 3
+	warp_event  7, 16, ROUTE_22_TUNNEL, 4
+	warp_event  7, 17, ROUTE_22_TUNNEL, 5
 	warp_event 25, 23, DUSK_AUTO_LOBBY, 1
 	warp_event 27, 23, DUSK_AUTO_GARAGE, 3
 	warp_event 28, 23, DUSK_AUTO_GARAGE, 6
@@ -127,11 +127,11 @@ DuskTurnpikeCallback:
 	changeblock $16, $16, $f8
 	setflag ENGINE_STREETLIGHTS
 .notnite
-	checkevent EVENT_ROUTE_21_TRASHCAN
+	checkevent EVENT_ROUTE_22_TRASHCAN
 	iffalse .end
 	changeblock $0e, $06, $e7
 .end
-	domaptrigger ROUTE_21_TUNNEL, $1
+	domaptrigger ROUTE_22_TUNNEL, $1
 	return
 
 DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
@@ -149,16 +149,16 @@ DuskTurnpikeTollbooth:
 	jumptext DuskTurnpikeTollboothText1
 
 DuskTurnpikeTrashcan:
-	checkevent EVENT_ROUTE_21_TRASHCAN
+	checkevent EVENT_ROUTE_22_TRASHCAN
 	iftrue .OnlyTrash
 	changeblock $0e, $06, $e7
-	setevent EVENT_ROUTE_21_TRASHCAN
+	setevent EVENT_ROUTE_22_TRASHCAN
 	opentext
 	writetext DuskTurnpikeTrashcanText1
 	playsound SFX_SANDSTORM
 	waitsfx
 	buttonsound
-	checkevent EVENT_ROUTE_21_TRASHCAN_ITEM
+	checkevent EVENT_ROUTE_22_TRASHCAN_ITEM
 	iffalse .get_item
 	callasm DuskTurnpikeTrashcanAsm
 	closetext
@@ -167,7 +167,7 @@ DuskTurnpikeTrashcan:
 .get_item
 	verbosegiveitem LEFTOVERS
 	closetext
-	setevent EVENT_ROUTE_21_TRASHCAN_ITEM
+	setevent EVENT_ROUTE_22_TRASHCAN_ITEM
 	end
 	
 .OnlyTrash

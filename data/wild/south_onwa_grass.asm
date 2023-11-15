@@ -1,6 +1,6 @@
 ; S. Onwa Pokémon in grass
 
-	map_id ROUTE_16
+	map_id ROUTE_17
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, BULBASAUR	;30%
@@ -27,7 +27,7 @@
 	db 20, BULBASAUR	;4%
 	db 20, BULBASAUR	;1%
 	
-	map_id ROUTE_17
+	map_id ROUTE_18
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, BULBASAUR	;30%
@@ -324,33 +324,6 @@
 	db 20, BULBASAUR	;4%
 	db 20, BULBASAUR	;1%
 	
-	map_id ROUTE_18
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
-	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
-	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
-	
 	map_id ROUTE_19
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
@@ -379,6 +352,33 @@
 	db 20, BULBASAUR	;1%
 	
 	map_id ROUTE_20
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	; day
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	; nite
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	
+	map_id ROUTE_21
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, BULBASAUR	;30%

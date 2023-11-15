@@ -44,9 +44,9 @@
 	const ROUTE_11			 ; 22
 	const ROUTE_12			 ; 23
 	const AIRPORT			 ; 24
-	const NEW_WATER_ROUTE	 ; 25
-	const ROUTE_13			 ; 26
-	const ROUTE_14			 ; 27
+	const ROUTE_13	 ; 25
+	const ROUTE_14			 ; 26
+	const ROUTE_15			 ; 27
 	const OLD_MANOR			 ; 28
 	const LUSTER_STATION	 		; 29
 	const RESIDENTIAL_DISTRICT		; 2a
@@ -59,19 +59,19 @@
 
 SOUTH_ONWA_LANDMARK EQU const_value
 
-	const ROUTE_15			 ; 2f
+	const ROUTE_16			 ; 2f
 	const SHIMMER_CITY		 ; 30
 	const BRILLO_TOWN		 ; 31
-	const ROUTE_16			 ; 32
-	const ROUTE_17			 ; 33
+	const ROUTE_17			 ; 32
+	const ROUTE_18			 ; 33
 	const DESERT_WASTELAND	 ; 34
-	const ROUTE_18			 ; 35
+	const ROUTE_19			 ; 35
 	const SEASIDE_CAVE		 ; 3a
-	const ROUTE_19			 ; 36
+	const ROUTE_20			 ; 36
 	const RADIANT_TOWNSHIP	 ; 37
-	const ROUTE_20			 ; 38
+	const ROUTE_21			 ; 38
 	const DUSK_TURNPIKE		 ; 39
-	const ROUTE_21			 ; 3b
+	const ROUTE_22			 ; 3b
 
 SHAMOUTI_LANDMARK EQU const_value
 

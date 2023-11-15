@@ -3721,7 +3721,7 @@ DisguiseGroup:
 ; ================
 
 	; DISGUISE
-	db "MASTER@" ;ROUTE 17
+	db "MASTER@" ;ROUTE 18
 	db TRAINERTYPE_MOVES
 	; party
 	db 1, BULBASAUR

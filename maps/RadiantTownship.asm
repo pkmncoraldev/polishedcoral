@@ -13,7 +13,7 @@ RadiantTownship_MapScriptHeader:
 	warp_def  7,  5, 1, RADIANT_POKECENTER
 	warp_def 15,  5, 1, RADIANT_MART
 	warp_def  9, 15, 1, RADIANT_HOUSE
-	warp_def  5, 31, 3, ROUTE_20_GATE
+	warp_def  5, 31, 3, ROUTE_21_GATE
 
 	db 0 ; coord events
 
@@ -21,7 +21,7 @@ RadiantTownship_MapScriptHeader:
 	signpost 14, 12, SIGNPOST_READ, RadiantTownshipSign
 	signpost 18, 20, SIGNPOST_READ, RadiantMeadowSign
 	signpost 14, 21, SIGNPOST_READ, RadiantTownshipGymSign
-	signpost  6, 32, SIGNPOST_READ, RadiantTownshipRoute19Sign
+	signpost  6, 32, SIGNPOST_READ, RadiantTownshipRoute21Sign
 	signpost  6,  2, SIGNPOST_READ, RadiantTownshipSolarPanel
 	signpost  6,  3, SIGNPOST_READ, RadiantTownshipSolarPanel
 	signpost 14,  2, SIGNPOST_READ, RadiantTownshipSolarPanel
@@ -131,8 +131,8 @@ RadiantMeadowSign:
 RadiantTownshipGymSign:
 	jumptext RadiantTownshipGymSignText
 	
-RadiantTownshipRoute19Sign:
-	jumptext RadiantTownshipRoute19SignText
+RadiantTownshipRoute21Sign:
+	jumptext RadiantTownshipRoute21SignText
 	
 RadiantTownshipSolarPanel:
 	jumptext RadiantTownshipSolarPanelText
@@ -163,9 +163,9 @@ RadiantTownshipGymSignText:
 	cont "#MON GYM"
 	done
 	
-RadiantTownshipRoute19SignText:
+RadiantTownshipRoute21SignText:
 	text "NORTH:"
-	line "ROUTE 20"
+	line "ROUTE 21"
 	done
 	
 RadiantTownshipFlowerShopSignText:

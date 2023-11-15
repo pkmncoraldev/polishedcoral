@@ -290,7 +290,7 @@
 	db 29, AZUMARILL	;4%
 	db 29, AZUMARILL	;1%
 
-	map_id ROUTE_13
+	map_id ROUTE_14
 	db 6 percent ; encounter rate
 	db 29, CHINCHOU		;30%
 	db 29, CARVANHA		;30%
@@ -300,7 +300,7 @@
 	db 29, DREEPY		;4%
 	db 29, DREEPY		;1%
 
-	map_id ROUTE_14
+	map_id ROUTE_15
 	db 6 percent ; encounter rate
 	db 29, CHINCHOU		;30%
 	db 29, CARVANHA		;30%

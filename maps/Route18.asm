@@ -1,288 +1,192 @@
 Route18_MapScriptHeader:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script Route18Trigger0
+	scene_script Route18Trigger1
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, Route18Callback
+	db 0 ; callbacks
 
-	db 4 ; warp events
-	warp_event 41, 42, ROUTE_18_DUSK_GATE, 1
-	warp_event 41, 43, ROUTE_18_DUSK_GATE, 2
-	warp_event 22,  9, SEASIDE_CAVE_1F, 1
-	warp_event 27, 29, ROUTE_21_TUNNEL, 7
+	db 0 ; warp events
 
-	db 0 ; coord events
+	db 1 ; coord events
+	coord_event 23, 23, 0, Route18ChangeDisguiseman1
 
-	db 2 ; bg events
-	signpost 23,  6, SIGNPOST_JUMPTEXT, Route18Sign1Text
-	signpost 30, 25, SIGNPOST_JUMPTEXT, Route18Sign2Text
+	db 0 ; bg events
 
-	db 9 ; object events
-	person_event SPRITE_PIGTAILS, 36, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route18Clover, EVENT_SAVED_CLOVER
-	person_event SPRITE_SKATER, 24, 18, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route18Skater1, -1
-	person_event SPRITE_SKATER, 24, 13, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route18Skater2, -1
-	person_event SPRITE_SAILOR, 27,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route18Trainer1, -1
-	person_event SPRITE_SCHOOLBOY, 31, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route18Trainer2, -1
-	person_event SPRITE_BIKER, 36,  6, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, Route18Trainer3, -1
-	person_event SPRITE_AROMA_LADY, 44, 14, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_GENERICTRAINER, 4, Route18Trainer4, -1
-	person_event SPRITE_BIKER, 43, 23, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route18Trainer5, -1
-	person_event SPRITE_GENTLEMAN, 41, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route18Trainer6, -1
-
+	db 6 ; object events
+	object_event  8, 22, SPRITE_FAT_GUY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route18Disguiseman, EVENT_ROUTE_18_DISGUISEMAN1
+	object_event  8, 22, SPRITE_DISGUISEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route18Disguiseman, EVENT_ROUTE_18_DISGUISEMAN2
+	person_event SPRITE_BURGLAR, 18, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute18_1, -1
+	person_event SPRITE_DELINQUENT_M, 27, 19, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute18_2, -1
+	person_event SPRITE_BIKER, 10,  9, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRoute18_3, -1
+	person_event SPRITE_CUEBALL,  2, 18, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute18_4, -1
 
 	const_def 1 ; object constants
-	const ROUTE_18_CLOVER
+	const ROUTE_18_DISGUISEMAN1
+	const ROUTE_18_DISGUISEMAN2
 	
-Route18Callback:
-	domaptrigger ROUTE_21_TUNNEL, $0
-	return
-	
-Route18Clover:
-	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
-	iftrue .time_to_save
-	jumptextfaceplayer Route18CloverText1
-.time_to_save
-	faceplayer
-	opentext
-	writetext Route18CloverText2
-	waitbutton
-	closetext
-	playsound SFX_JUMP_OVER_LEDGE
-	applymovement ROUTE_18_CLOVER, Movement_Route18Clover
-	disappear ROUTE_18_CLOVER
-	setevent EVENT_SAVED_CLOVER
-	callasm CloverSetNameAsm
-	special Special_SaveLostGirl
+
+Route18Trigger0:
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	end
 	
-CloverSetNameAsm:
-	ld hl, .cloverstring
-	ld bc, PKMN_NAME_LENGTH
-	ld de, wStringBuffer1
-	rst CopyBytes
-	ret
-	
-.cloverstring:
-	db "CLOVER@@@@@"
-	
-Route18Skater1:
-	jumptextfaceplayer Route18Skater1Text
-	
-Route18Skater1Text:
-	text "Grinding on the"
-	line "planters lets you"
-	cont "get to places you"
-	cont "shouldn't be."
-	
-	para "It's cool, I guess."
-	done
-	
-Route18Skater2:
-	jumptextfaceplayer Route18Skater2Text
-	
-Route18Skater2Text:
-	text "I love hopping"
-	line "right over people's"
-	cont "heads on my board."
-	
-	para "They never see it"
-	line "coming!"
-	done
-	
-Route18Trainer1:
-	generictrainer SAILOR, SCOTT, EVENT_BEAT_ROUTE_18_TRAINER_1, .SeenText, .BeatenText
+Route18Trigger1:
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
+	end
 
-	text "We just docked at"
-	line "PORT SHIMMER."
+Route18ChangeDisguiseman1:
+	disappear ROUTE_18_DISGUISEMAN1
+	appear ROUTE_18_DISGUISEMAN2
+	dotrigger $1
+	end
+
+TrainerRoute18_1:
+	generictrainer BURGLAR, ZEDAKI, EVENT_BEAT_ROUTE_18_TRAINER_1, .SeenText, .BeatenText
+
+	text "The cops are"
+	line "lookin' for me!"
 	
-	para "It's so nice to be"
-	line "back on dry land!"
+	para "I gotta lay low"
+	line "for awhile!"
 	done
 
 .SeenText:
-	text "LAND HO!"
+	text "Hey there!"
 	
-	para "Time for a battle,"
-	line "matey!"
+	para "This is a holdup!"
+	
+	para "Give me all your"
+	line "money."
 	done
 
 .BeatenText:
-	text "I'm sunk!"
+	text "Ok fine!"
+	
+	para "Take my money"
+	line "instead…"
 	done
 	
-Route18Trainer2:
-	generictrainer SCHOOLBOY, FREDDY, EVENT_BEAT_ROUTE_18_TRAINER_2, .SeenText, .BeatenText
+TrainerRoute18_2:
+	generictrainer DELINQUENT_M, YANCY, EVENT_BEAT_ROUTE_18_TRAINER_2, .SeenText, .BeatenText
 
-	text "Your #MON are"
-	line "so cool!"
-	
-	para "We have some work"
-	line "to do!"
+	text "Maybe I'm not cut"
+	line "out for the desert"
+	cont "lifestyle…"
 	done
 
 .SeenText:
-	text "Do you train"
-	line "#MON too?"
+	text "Out in the desert"
+	line "no one can tell"
+	cont "me what to do."
 	
-	para "Can I see?"
+	para "I'm a free man!"
 	done
 
 .BeatenText:
-	text "Woah!"
+	text "I just can't win!"
 	done
 	
-Route18Trainer3:
-	generictrainer BIKER, GARRET, EVENT_BEAT_ROUTE_18_TRAINER_3, .SeenText, .BeatenText
+TrainerRoute18_3:
+	generictrainer BIKER, TIM, EVENT_BEAT_ROUTE_18_TRAINER_3, .SeenText, .BeatenText
 
-	text "These brick roads"
-	line "ain't a very smooth"
-	cont "ride!"
+	text "I knew I shouldn't"
+	line "have taken this"
+	cont "thing out here!"
+	
+	para "This ain't no"
+	line "dirtbike!"
 	done
 
 .SeenText:
-	text "Ahaha!"
+	text "Darn it!"
 	
-	para "Listen to this"
-	line "baby purr!"
+	para "My bike keeps"
+	line "gettin' stuck in"
+	cont "the sand!"
+	
+	para "I'll take it out"
+	line "on you!"
 	done
 
 .BeatenText:
-	text "Argh!"
-	
-	para "My ride!"
+	text "My wheels are"
+	line "spinnin!"
 	done
 	
-Route18Trainer4:
-	generictrainer AROMA_LADY, LINDA, EVENT_BEAT_ROUTE_18_TRAINER_4, .SeenText, .BeatenText
+TrainerRoute18_4:
+	generictrainer CUEBALL, PUDGE, EVENT_BEAT_ROUTE_18_TRAINER_4, .SeenText, .BeatenText
 
-	text "This place used to"
-	line "smell like sweet"
-	cont "flowers."
-	
-	para "Now it just smells"
-	line "like gasoline!"
-	
-	para "Cough! Cough!"
-	done
-
-.SeenText:
-	text "Sniff… Sniff…"
-	
-	para "Do you smell that?"
-	done
-
-.BeatenText:
-	text "Smells like a"
-	line "loss!"
-	done
-	
-Route18Trainer5:
-	generictrainer BIKER, DALE, EVENT_BEAT_ROUTE_18_TRAINER_5, .SeenText, .BeatenText
-
-	text "I'll tell ya…"
-	
-	para "Life's an open"
-	line "road, kid."
-	
-	para "I could never"
-	line "settle down in"
-	cont "one place!"
-	done
-
-.SeenText:
-	text "Out on the open"
-	line "road."
-	
-	para "Nothin' like it!"
-	done
-
-.BeatenText:
-	text "You showed me!"
-	done
-	
-Route18Trainer6:
-	generictrainer GENTLEMAN, ELWARD, EVENT_BEAT_ROUTE_18_TRAINER_6, .SeenText, .BeatenText
-
-	text "“MOOMOO'S” it's"
-	line "called."
-	
-	para "Never in all of"
-	line "my days have I"
-	cont "seen such a rowdy"
-	cont "bunch!"
-	done
-
-.SeenText:
-	text "Have you been to"
-	line "the establishment"
-	cont "up ahead?"
-	
-	para "Quite the rowdy"
-	line "bunch they are!"
-	done
-
-.BeatenText:
-	text "Very well."
-	done
-	
-Route18CloverText1:
-	text "Hehe…"
-	
-	para "Me and the other"
-	line "girls ran away"
-	cont "from home!"
-	
-	para "It's fun to act"
-	line "out!"
-	done
-	
-Route18CloverText2:
-	text "CLOVER: Hehe…"
-	
-	para "Me and the other"
-	line "girls ran away"
-	cont "from home!"
-	
-	para "It's fun to act"
-	line "out!"
+	text "You think yur"
+	line "better than me!?"
 	
 	para "…"
 	
-	para "Huh? GRAMMA is"
-	line "sick?"
+	para "Oh…"
 	
-	para "I didn't want to"
-	line "actually hurt"
-	cont "GRAMMA…"
+	para "I guess you are…"
 	
-	para "I guess I'll"
-	line "go home then."
+	para "HAW! HAW! HAW!"
+	done
+
+.SeenText:
+	text "HAW! HAW! HAW!"
+	
+	para "Little kiddy all"
+	line "alone out in the"
+	cont "desert!"
+	
+	para "I'll put ya outta"
+	line "yur misery!"
+	done
+
+.BeatenText:
+	text "ARRGH!"
+	done
+
+Route18Disguiseman:
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_FAT_GUY
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	applymovement ROUTE_18_DISGUISEMAN2, Movement_StarglowCavern_DisguiseMan1
+	opentext
+	writetext StarglowCavern_DisguiseMan1Text1
+	waitbutton
+	closetext
+	faceplayer
+	opentext
+	writetext Route18_DisguiseMan1Text2
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext Route18DisguisemanBeatenText, 0
+	setlasttalked ROUTE_18_DISGUISEMAN2
+	loadtrainer DISGUISE, MASTER_4
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext Route18_DisguiseMan1Text3
+	waitbutton
+	closetext
+	applymovement ROUTE_18_DISGUISEMAN2, Movement_StarglowCavern_DisguiseMan2
+	disappear ROUTE_18_DISGUISEMAN2
+	opentext
+	writetext StarglowCavern_DisguiseMan1Text4
+	waitbutton
+	closetext
+	setevent EVENT_ROUTE_18_DISGUISEMAN1
+	setevent EVENT_ROUTE_18_DISGUISEMAN2
+	end
+	
+Route18_DisguiseMan1Text2:
+	text "TEXT 2"
 	done
 	
-Movement_Route18Clover:
-	jump_step_down
-	step_down
-	step_down
-	step_down
-	step_end
-	
-Route18Sign1Text:
-	text "ROUTE 18"
-	
-	para "WEST:"
-	line "PORT SHIMMER"
-	
-	para "SOUTHEAST:"
-	line "RADIANT TOWNSHIP &"
-	cont "DUSK TURNPIKE"
+Route18_DisguiseMan1Text3:
+	text "TEXT 3"
 	done
+
+Route18DisguisemanBeatenText:
+	text "The battle's done."
+	line "You win, of course."
 	
-Route18Sign2Text:
-	text "ROUTE 18"
-	
-	para "NORTHWEST:"
-	line "PORT SHIMMER"
-	
-	para "SOUTHEAST:"
-	line "RADIANT TOWNSHIP &"
-	cont "DUSK TURNPIKE"
+	para "What an awesome"
+	line "show of force!"
 	done
-	

@@ -86,8 +86,8 @@ MapTriggers::
 	scene_var SHIMMER_HARBOR,						  wShimmerHarborTrigger
 	scene_var BRILLO_TOWN,							  wBrilloTownTrigger
 	scene_var BRILLO_MART,							  wAlways0Trigger
-	scene_var ROUTE_17,								  wRoute17Trigger
-	scene_var ROUTE_17_NORTH,					 	  wRoute17NorthTrigger
+	scene_var ROUTE_18,								  wRoute18Trigger
+	scene_var ROUTE_18_NORTH,					 	  wRoute18NorthTrigger
 	scene_var DESERT_WASTELAND_1,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_2,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_3,					  wSpookyForestEscortTrigger
@@ -97,15 +97,15 @@ MapTriggers::
 	scene_var DESERT_WASTELAND_7,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_8,					  wSpookyForestEscortTrigger
 	scene_var DESERT_WASTELAND_9,					  wSpookyForestEscortTrigger
-	scene_var DESERT_WASTELAND_OASIS,				  wRoute17NorthTrigger
+	scene_var DESERT_WASTELAND_OASIS,				  wRoute18NorthTrigger
 	scene_var DESERT_TEMPLE_OUTSIDE,				  wSpookyForestEscortTrigger
 	scene_var SAILBOAT_CUTSCENE,					  wAlways0Trigger
 	scene_var AIRPORT,								  wAirportTrigger
-	scene_var ROUTE_19,								  wRoute19Trigger
+	scene_var ROUTE_20,								  wRoute20Trigger
 	scene_var LUSTER_SKYSCRAPER_PORYGON_ROOM,		  wLusterSkyscraperPorygonRoomTrigger
 	scene_var FAKE_ROUTE_1,							  wEastTrainCabooseTrigger
 	scene_var DUSK_TURNPIKE,					 	  wDuskTurnpikeTrigger
-	scene_var ROUTE_21_TUNNEL,						  wRoute21TunnelTrigger
+	scene_var ROUTE_22_TUNNEL,						  wRoute22TunnelTrigger
 	scene_var STARGLOW_CAVERN_DEPTHS,				  wStarglowCavernDepthsTrigger
 	scene_var LUSTER_GYM,							  wLusterGymTrigger
 	scene_var UNDERGROUND_PASSAGE,					  wUndergroundPassageTrigger

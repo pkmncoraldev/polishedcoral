@@ -366,7 +366,6 @@ MAP_NONE   EQU 0
 	map_const RADIANT_HOUSE,     	             		   4,  4 ; 12
 	map_const RADIANT_FIELD,							  19, 15 ; 13
 	
-	
 	newgroup
 	
 	map_const ROUTE_21,									  20, 17 ; 1
@@ -384,6 +383,10 @@ MAP_NONE   EQU 0
 	map_const SEASIDE_CAVE_B1F,							  13, 18 ; 13
 	map_const SEASIDE_CAVE_B2F,							   8, 10 ; 14
 	map_const BAR_BACK_ALLEY,							  10,  6 ; 15
+	
+	newgroup
+	
+	map_const UMBRA_CROSSROADS,							  23, 14 ; 1
 	
 	newgroup													 ; last
 	

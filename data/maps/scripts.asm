@@ -365,6 +365,7 @@ INCLUDE "maps/DodrioRanchBarn.asm"
 INCLUDE "maps/DodrioRanchRaceTrack.asm"
 
 SECTION "Desert Wasteland Scripts", ROMX
+
 INCLUDE "maps/DesertWasteland1.asm"
 INCLUDE "maps/DesertWasteland2.asm"
 INCLUDE "maps/DesertWasteland3.asm"
@@ -383,6 +384,7 @@ INCLUDE "maps/DesertTempleLowerRight.asm"
 INCLUDE "maps/DesertTemple2.asm"
 
 SECTION "Dusk Turnpike Scripts", ROMX
+
 INCLUDE "maps/DuskTurnpike.asm"
 INCLUDE "maps/DuskHouse1.asm"
 INCLUDE "maps/DuskHouse2.asm"
@@ -392,3 +394,7 @@ INCLUDE "maps/DuskAutoGarage.asm"
 INCLUDE "maps/Route19DuskGate.asm"
 INCLUDE "maps/Route22Tunnel.asm"
 INCLUDE "maps/BarBackAlley.asm"
+
+SECTION "Umbra Crossroads Scripts", ROMX
+
+INCLUDE "maps/UmbraCrossroads.asm"

@@ -790,3 +790,6 @@ BarBackAlley_BlockData:
 Route13_BlockData:
 	INCBIN "maps/Route13.ablk.lz"
 	
+UmbraCrossroads_BlockData:
+	INCBIN "maps/UmbraCrossroads.ablk.lz"
+	

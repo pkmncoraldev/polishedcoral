@@ -1062,7 +1062,7 @@ TownMap_GetNorthOnwaLandmarkLimits:
 	ret
 
 TownMap_GetSouthOnwaLandmarkLimits: ; 910e8
-	lb de, ROUTE_22, SHIMMER_CITY
+	lb de, UMBRA_CROSSROADS, ROUTE_16
 ;	ld a, [wStatusFlags]
 ;	bit 6, a
 ;	ret z
@@ -2636,7 +2636,7 @@ FlyMap: ; 91c90
 ; Flypoints begin at Shimmer City...
 	ld [wStartFlypoint], a
 ; ..and end at TODO
-	ld a, FLY_DUSK
+	ld a, FLY_UMBRA
 	ld [wEndFlypoint], a
 ; Fill out the map
 	call FillSouthOnwaMap

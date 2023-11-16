@@ -103,6 +103,11 @@
 	RGB 27, 31, 27
 	RGB 31, 31, 31
 	RGB 21, 21, 21
+;21 - Umbra
+	RGB 14, 15, 01
+	RGB 09, 09, 00
+	RGB 28, 31, 28
+	RGB 16, 20, 02
 ;last - Fake Route 1
 	RGB 00, 00, 00
 	RGB 00, 00, 00

@@ -23,7 +23,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event 17, 14, DESERT_TEMPLE_1, 1
 	warp_event 19, 14, RADIANT_TOWNSHIP, 1
 	warp_event  5, 18, DUSK_TURNPIKE, 1
-	warp_event  7, 18, SEASIDE_CAVE_1F, 1
+	warp_event  7, 18, UMBRA_CROSSROADS, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
@@ -52,6 +52,7 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event 16, 14, SIGNPOST_JUMPTEXT, PlayerHouseDesertTemple
 	bg_event 18, 14, SIGNPOST_JUMPTEXT, PlayerHouseRadiant
 	bg_event  4, 18, SIGNPOST_JUMPTEXT, PlayerHouseDusk
+	bg_event  6, 18, SIGNPOST_JUMPTEXT, PlayerHouseUmbra
 
 	db 5 ; object events
 	object_event -5, -5, SPRITE_SNES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GameConsole, -1
@@ -560,6 +561,10 @@ PlayerHouseRadiant:
 	
 PlayerHouseDusk:
 	text "DUSK TURNPIKE"
+	done
+	
+PlayerHouseUmbra:
+	text "UMBRA CROSSROADS"
 	done
 	
 PlayerHouse2FInitializeRoom:

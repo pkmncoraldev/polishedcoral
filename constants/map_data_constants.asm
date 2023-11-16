@@ -69,6 +69,7 @@ const_value = -1
 	const SPAWN_BRILLO
 	const SPAWN_RADIANT
 	const SPAWN_DUSK
+	const SPAWN_UMBRA
 	
 	const SPAWN_STARGLOW_CAVERN_DEPTHS
 	const SPAWN_FAKE_ROUTE_1

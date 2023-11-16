@@ -393,8 +393,9 @@ ENDM
 	map_attributes Route21, ROUTE_21, 0, NORTH
 	connection north, DuskTurnpike, DUSK_TURNPIKE, 0
 	
-	map_attributes DuskTurnpike, DUSK_TURNPIKE, 0, SOUTH
+	map_attributes DuskTurnpike, DUSK_TURNPIKE, 0, SOUTH | EAST
 	connection south, Route21, ROUTE_21, 0
+	connection east, UmbraCrossroads, UMBRA_CROSSROADS, 0
 	
 	map_attributes DuskAutoLobby, DUSK_AUTO_LOBBY, $00, 0
 	
@@ -403,6 +404,9 @@ ENDM
 	map_attributes Route22Tunnel, ROUTE_22_TUNNEL, $d4, 0
 	
 	map_attributes BarBackAlley, BAR_BACK_ALLEY, $d4, 0
+	
+	map_attributes UmbraCrossroads, UMBRA_CROSSROADS, 0, WEST
+	connection west, DuskTurnpike, DUSK_TURNPIKE, 0
 	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0

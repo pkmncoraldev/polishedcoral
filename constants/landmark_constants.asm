@@ -72,6 +72,7 @@ SOUTH_ONWA_LANDMARK EQU const_value
 	const ROUTE_21			 ; 38
 	const DUSK_TURNPIKE		 ; 39
 	const ROUTE_22			 ; 3b
+	const UMBRA_CROSSROADS
 
 SHAMOUTI_LANDMARK EQU const_value
 

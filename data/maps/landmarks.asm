@@ -5,43 +5,43 @@ ENDM
 
 Landmarks: ; 0x1ca8c3
 	landmark   0,   0, SpecialMapName
-	landmark  20,  92, SunsetBayName
-	landmark  28,  92, SunsetCapeName
-	landmark  28, 100, LighthouseName
-	landmark  28,  88, Route1Name
-	landmark  28,  76, DaybreakVillageName
-	landmark  28,  64, Route2Name
-	landmark  36,  68, DaybreakGrottoName
-	landmark  28,  52, GlintCityName
-	landmark  28,  44, GlintGroveName
-	landmark  52,  52, Route3Name
-	landmark  52,  44, StarglowCavernName
-	landmark  64,  68, StarglowValleyName
-	landmark  76,  68, Route4Name
-	landmark  76,  60, HuntersThicketName
-	landmark  72,  80, Route5Name
-	landmark  62,  92, Route6Name
-	landmark  52,  84, Route7Name
-	landmark  40,  84, LakeOnwaName
-	landmark  44,  76, MtOnwaName
+	landmark  20, 100, SunsetBayName
+	landmark  28, 100, SunsetCapeName
+	landmark  28, 108, LighthouseName
+	landmark  28,  92, Route1Name
+	landmark  28,  84, DaybreakVillageName
+	landmark  28,  72, Route2Name
+	landmark  36,  76, DaybreakGrottoName
+	landmark  28,  60, GlintCityName
+	landmark  28,  52, GlintGroveName
+	landmark  52,  60, Route3Name
+	landmark  52,  52, StarglowCavernName
+	landmark  64,  76, StarglowValleyName
+	landmark  76,  76, Route4Name
+	landmark  76,  68, HuntersThicketName
+	landmark  72,  88, Route5Name
+	landmark  62, 100, Route6Name
+	landmark  52,  92, Route7Name
+	landmark  40,  92, LakeOnwaName
+	landmark  44,  84, MtOnwaName
 	landmark  60, 116, SunbeamIslandName
 	landmark  68, 116, SunbeamJungleName
-	landmark  52,  68, Route8Name
-	landmark  84,  68, EventideForestName
-	landmark  92,  68, EventideVillageName
-	landmark 100,  64, Route9Name
-	landmark 108,  60, DodrioRanchName
-	landmark 100,  52, FlickerStationName
-	landmark 100,  44, FlickerPassName
-	landmark 100,  36, Route10Name
-	landmark 100,  28, TwinkleTownName
-	landmark 108,  28, FrozenRuinsName
-	landmark 136,  56, LusterCityName
-	landmark 132,  56, LusterSewersName
-	landmark 132,  76, Route11Name
-	landmark 124,  92, Route12Name
-	landmark 116,  84, AirportName
-	landmark  40, 108, Route13Name
+	landmark  52,  76, Route8Name
+	landmark  84,  76, EventideForestName
+	landmark  92,  76, EventideVillageName
+	landmark 100,  72, Route9Name
+	landmark 108,  68, DodrioRanchName
+	landmark 100,  60, FlickerStationName
+	landmark 100,  52, FlickerPassName
+	landmark 104,  44, Route10Name
+	landmark 100,  36, TwinkleTownName
+	landmark 108,  36, FrozenRuinsName
+	landmark 136,  64, LusterCityName
+	landmark 132,  64, LusterSewersName
+	landmark 128,  84, Route11Name
+	landmark 124, 100, Route12Name
+	landmark 116, 100, AirportName
+	landmark  44, 108, Route13Name
 	landmark  20, 116, Route14Name
 	landmark  36, 124, Route15Name
 	
@@ -55,19 +55,20 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, UnkownPassageName
 	landmark  36, 116, UnderwaterCavernName
 	
-	landmark  28,  32, Route16Name
-	landmark  28,  44, ShimmerName
-	landmark  12, 132, BrilloTownName
-	landmark  20, 132, Route17Name
-	landmark  20, 124, Route18Name
-	landmark  20, 116, DesertWastelandName
-	landmark  44,  52, Route19Name
-	landmark  52,  44, SeasideCaveName
-	landmark  44,  68, Route20Name
-	landmark  52,  76, RadiantName
-	landmark  60,  68, Route21Name
-	landmark  60,  48, DuskTurnpikeName
-	landmark  76,  44, Route22Name
+	landmark  36,  40, Route16Name
+	landmark  36,  52, ShimmerName
+	landmark  20, 124, BrilloTownName
+	landmark  28, 124, Route17Name
+	landmark  28, 116, Route18Name
+	landmark  28, 108, DesertWastelandName
+	landmark  48,  60, Route19Name
+	landmark  60,  52, SeasideCaveName
+	landmark  52,  72, Route20Name
+	landmark  60,  84, RadiantName
+	landmark  68,  72, Route21Name
+	landmark  68,  60, DuskTurnpikeName
+	landmark  80,  52, Route22Name
+	landmark 100,  52, UmbraCrossroadsName
 	
 	
 	landmark -16, -16, GateName
@@ -127,6 +128,7 @@ Route21Name:		   db "ROUTE 21@"
 DuskTurnpikeName:	   db "DUSK¯TURNPIKE@"
 SeasideCaveName:	   db "SEASIDE¯CAVE@"
 Route22Name:		   db "ROUTE 22@"
+UmbraCrossroadsName:   db "UMBRA¯CROSSROADS@"
 
 LusterStationName:	   db "LUSTER¯CITY@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"

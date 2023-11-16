@@ -184,6 +184,8 @@ LoadSpecialMapPalette: ; 494ac
 	
 .highway
 	ld a, [wMapNumber]
+	cp MAP_UMBRA_CROSSROADS
+	ret z
 	cp MAP_ROUTE_22_TUNNEL
 	jr z, .highway_tunnel
 	cp MAP_BAR_BACK_ALLEY

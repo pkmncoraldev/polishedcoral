@@ -1056,8 +1056,9 @@ wUndergroundPassageTrigger:: ds 1
 wDesertTemple1Trigger:: ds 1
 wDesertTemple2Trigger:: ds 1
 wRadiantTownshipTrigger:: ds 1
+wUmbraCrossroadsTrigger:: ds 1
 
-ds 34
+ds 33
 
 wAmpharosFood:: ds 1
 

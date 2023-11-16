@@ -1193,6 +1193,12 @@ TMHMTypes:
 	db FIGHTING ; ROCK_SMASH
 	db NORMAL 	; ROCK_CLIMB
 
+PokegearDesertIslandPal:
+	RGB 28, 31, 20
+	RGB 31, 15, 00
+	RGB 00, 00, 31
+	RGB 00, 00, 00
+
 BankCardPals:
 	RGB 28, 31, 20
 	RGB 28, 31, 20

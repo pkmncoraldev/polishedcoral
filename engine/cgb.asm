@@ -276,6 +276,16 @@ _CGB_PokegearPals: ; 8eb9
 	ld a, $5
 	call FarCopyWRAM
 	
+	ld a, [wWarpNumber]
+	cp 1
+	jr c, .skip
+	ld hl, PokegearDesertIslandPal
+	ld de, wUnknBGPals palette 7
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	
+.skip
 	ld hl, PokegearObjectPals
 	ld de, wUnknOBPals
 	ld bc, 8 palettes

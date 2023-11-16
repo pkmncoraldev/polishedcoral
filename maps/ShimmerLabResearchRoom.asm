@@ -175,7 +175,8 @@ ShimmerLabResearchRoomProfText5:
 	cont "PORT SHIMMER."
 	
 	para "They'll take you"
-	line "to BRILLO TOWN."
+	line "to a town called"
+	cont "PUEBLO BRILLO."
 	
 	para "We have a research"
 	line "team stationed"

@@ -226,7 +226,7 @@ BrilloBoatHouseBrilloMenuData:
 	db "LAKE ONWA WEST@"
 	db "LAKE ONWA EAST@"
 	db "SUNBEAM ISLAND@"
-	db "BRILLO TOWN@"
+	db "PUEBLO BRILLO@"
 	end
 	
 BrilloBoatHouseNPC1:

@@ -265,7 +265,7 @@ SunbeamBoatHouseBrilloMenuData:
 	db "LAKE ONWA WEST@"
 	db "LAKE ONWA EAST@"
 	db "PORT SHIMMER@"
-	db "BRILLO TOWN@"
+	db "PUEBLO BRILLO@"
 	end
 	
 SunbeamBoatHouseSnareText:

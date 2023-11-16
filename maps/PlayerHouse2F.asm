@@ -548,7 +548,7 @@ PlayerHouseShimmer:
 	done
 	
 PlayerHouseBrillo:
-	text "BRILLO TOWN"
+	text "PUEBLO BRILLO"
 	done
 	
 PlayerHouseDesertTemple:

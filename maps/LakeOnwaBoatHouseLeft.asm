@@ -295,7 +295,7 @@ LakeBoatHouseLBrilloMenuData:
 	db "LAKE ONWA EAST@"
 	db "SUNBEAM ISLAND@"
 	db "PORT SHIMMER@"
-	db "BRILLO TOWN@"
+	db "PUEBLO BRILLO@"
 	end
 	
 LakeBoatTrashcanText:
@@ -477,7 +477,7 @@ LakeBoatManText16:
 	
 LakeBoatManText17:
 	text "Travel to"
-	line "BRILLO TOWN?"
+	line "PUEBLO BRILLO?"
 	done
 	
 Movement_LakeBoatManPhone1:

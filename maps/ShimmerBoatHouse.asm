@@ -234,7 +234,7 @@ ShimmerBoatHouseBrilloMenuData:
 	db "LAKE ONWA WEST@"
 	db "LAKE ONWA EAST@"
 	db "SUNBEAM ISLAND@"
-	db "BRILLO TOWN@"
+	db "PUEBLO BRILLO@"
 	end
 	
 ShimmerBoatHouseNPCText1:
@@ -292,7 +292,7 @@ ShimmerBoatHouseNPCText8:
 	
 ShimmerBoatHouseNPCText9:
 	text "Travel to"
-	line "BRILLO TOWN?"
+	line "PUEBLO BRILLO?"
 	done
 	
 ShimmerBoatHouseNPCTextEnd:

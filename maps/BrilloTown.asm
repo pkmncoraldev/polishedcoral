@@ -482,7 +482,7 @@ BrilloSingerText5:
 	
 	para "Alright, here's"
 	line "“THE BALLAD OF"
-	cont "BRILLO TOWN”."
+	cont "PUEBLO BRILLO”."
 	done
 	
 BrilloSingerText6:
@@ -648,7 +648,7 @@ BrilloSailboat:
 	jumptext BrilloSailboatText
 	
 BrilloTownSignText:
-	text "BRILLO TOWN"
+	text "PUEBLO BRILLO"
 	
 	para "The vibrant rose"
 	line "of the desert."
@@ -699,7 +699,7 @@ BrilloSailboatText:
 	
 BrilloJustRodeBoatText:
 	text "Here we are,"
-	line "BRILLO TOWN."
+	line "PUEBLO BRILLO."
 	
 	para "Thanks for riding."
 	

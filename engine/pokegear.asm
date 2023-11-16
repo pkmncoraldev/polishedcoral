@@ -1062,11 +1062,10 @@ TownMap_GetNorthOnwaLandmarkLimits:
 	ret
 
 TownMap_GetSouthOnwaLandmarkLimits: ; 910e8
-	lb de, UMBRA_CROSSROADS, ROUTE_16
-;	ld a, [wStatusFlags]
-;	bit 6, a
-;	ret z
-;	ld e, PALLET_TOWN
+	lb de, DESERT_WASTELAND, ROUTE_16
+	eventflagcheck EVENT_CAN_GO_TO_DESERT
+	ret nz
+	ld d, UMBRA_CROSSROADS
 	ret
 
 TownMap_GetOrangeLandmarkLimits:

@@ -57,10 +57,6 @@ Landmarks: ; 0x1ca8c3
 	
 	landmark  36,  40, Route16Name
 	landmark  36,  52, ShimmerName
-	landmark  20, 124, BrilloTownName
-	landmark  28, 124, Route17Name
-	landmark  28, 116, Route18Name
-	landmark  28, 108, DesertWastelandName
 	landmark  48,  60, Route19Name
 	landmark  60,  52, SeasideCaveName
 	landmark  52,  72, Route20Name
@@ -69,6 +65,11 @@ Landmarks: ; 0x1ca8c3
 	landmark  68,  60, DuskTurnpikeName
 	landmark  80,  52, Route22Name
 	landmark 100,  52, UmbraCrossroadsName
+	
+	landmark  20, 124, BrilloTownName
+	landmark  28, 124, Route17Name
+	landmark  28, 116, Route18Name
+	landmark  28, 108, DesertWastelandName
 	
 	
 	landmark -16, -16, GateName

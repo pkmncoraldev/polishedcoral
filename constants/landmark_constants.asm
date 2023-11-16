@@ -61,10 +61,6 @@ SOUTH_ONWA_LANDMARK EQU const_value
 
 	const ROUTE_16			 ; 2f
 	const SHIMMER_CITY		 ; 30
-	const BRILLO_TOWN		 ; 31
-	const ROUTE_17			 ; 32
-	const ROUTE_18			 ; 33
-	const DESERT_WASTELAND	 ; 34
 	const ROUTE_19			 ; 35
 	const SEASIDE_CAVE		 ; 3a
 	const ROUTE_20			 ; 36
@@ -73,6 +69,11 @@ SOUTH_ONWA_LANDMARK EQU const_value
 	const DUSK_TURNPIKE		 ; 39
 	const ROUTE_22			 ; 3b
 	const UMBRA_CROSSROADS
+	
+	const BRILLO_TOWN		 ; 31
+	const ROUTE_17			 ; 32
+	const ROUTE_18			 ; 33
+	const DESERT_WASTELAND	 ; 34
 
 SHAMOUTI_LANDMARK EQU const_value
 

@@ -120,6 +120,7 @@ LusterCityBusinessRival:
 	applyonemovement LUSTERBUSINESS_RIVAL, step_sleep_1
 	wait 15
 	applymovement LUSTERBUSINESS_RIVAL, Movement_LusterCityBusinessRival1
+	spriteface PLAYER, RIGHT
 	opentext
 	writetext LusterCityBusinessRivalText1
 	waitbutton

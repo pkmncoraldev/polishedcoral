@@ -148,7 +148,7 @@ RadiantTownshipFlowerShopSign:
 	jumptext RadiantTownshipFlowerShopSignText
 	
 RadiantTownshipSignText:
-	text "RADIANT TOWNSHIP"
+	text "RADIANT MEADOWS"
 	
 	para "A little community"
 	line "among the flowers."
@@ -159,7 +159,7 @@ RadiantMeadowSignText:
 	done
 	
 RadiantTownshipGymSignText:
-	text "RADIANT TOWNSHIP"
+	text "RADIANT MEADOWS"
 	line "ORPHANAGE &"
 	cont "#MON GYM"
 	done

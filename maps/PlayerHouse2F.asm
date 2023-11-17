@@ -556,7 +556,7 @@ PlayerHouseDesertTemple:
 	done
 	
 PlayerHouseRadiant:
-	text "RADIANT TOWNSHIP"
+	text "RADIANT MEADOWS"
 	done
 	
 PlayerHouseDusk:

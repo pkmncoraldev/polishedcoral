@@ -251,7 +251,7 @@ RadiantOrphanage1FLeilanisRoomSignText:
 	done
 	
 RadiantOrphanage1FGymRoomSignText:
-	text "RADIANT TOWNSHIP"
+	text "RADIANT MEADOWS"
 	line "#MON GYM"
 	cont "LEADER: LEILANI"
 	

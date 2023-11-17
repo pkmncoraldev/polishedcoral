@@ -267,7 +267,7 @@ BackupPorygonPassword:
 	db "???@"
 	
 SetupPorygonEncounterAsm:
-	ld a, 15
+	ld a, 30
 	ld [wTorchSteps], a
 	ld a, SPAWN_FAKE_ROUTE_1
 	ld [wDefaultSpawnpoint], a

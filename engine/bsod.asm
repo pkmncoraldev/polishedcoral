@@ -29,7 +29,7 @@ BSOD:
 	ld de, FontNormal
 	ld hl, VTiles1
 	lb bc, BANK(FontNormal), 111
-	call Get1bpp
+	call Get2bpp
 
 	ld de, .Message
 	hlcoord 1, 1

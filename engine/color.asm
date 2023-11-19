@@ -1558,7 +1558,8 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsMoomoo
 	call AddNTimes
-	jp .copy_single_pal_to_pal_7
+	call .copy_single_pal_to_pal_7
+	jp LightUpPlayerPal
 .crossroads
 	ld a, 1
 	and 3

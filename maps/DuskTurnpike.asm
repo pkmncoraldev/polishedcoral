@@ -18,35 +18,86 @@ DuskTurnpike_MapScriptHeader:
 	warp_event 25, 23, DUSK_AUTO_LOBBY, 1
 	warp_event 27, 23, DUSK_AUTO_GARAGE, 3
 	warp_event 28, 23, DUSK_AUTO_GARAGE, 6
-	warp_event 23, 31, DUSK_POKECENTER, 1
-	warp_event 31, 31, DUSK_MART, 1
+	warp_event 21, 31, DUSK_POKECENTER, 1
+	warp_event 29, 31, DUSK_MART, 1
 	warp_event 13, 27, DUSK_HOUSE_1, 1
 	warp_event 13, 33, DUSK_HOUSE_2, 1
-	warp_event 27, 31, DUSK_HOUSE_3, 1
+	warp_event 25, 31, DUSK_HOUSE_3, 1
 	warp_event 15,  5, BAR_BACK_ALLEY, 2
 	warp_event 22,  5, BAR_BACK_ALLEY, 5
 
-	db 0 ; coord events
+	db 48 ; coord events
+	xy_trigger 0, 14, 12, 0, DuskTurnpikeLight, 0, 0
+	xy_trigger 0, 14, 13, 0, DuskTurnpikeLight, 0, 0
+	xy_trigger 0, 13, 12, 0, DuskTurnpikeLight, 0, 0
+	xy_trigger 0, 13, 13, 0, DuskTurnpikeLight, 0, 0
+	xy_trigger 0, 14, 24, 0, DuskTurnpikeLight, 0, 0
+	xy_trigger 0, 14, 25, 0, DuskTurnpikeLight, 0, 0
+	xy_trigger 0, 13, 24, 0, DuskTurnpikeLight, 0, 0
+	xy_trigger 0, 13, 25, 0, DuskTurnpikeLight, 0, 0
+	xy_trigger 0, 17, 12, 0, DuskTurnpikeLight, 0, 0
+	xy_trigger 0, 17, 13, 0, DuskTurnpikeLight, 0, 0
+	xy_trigger 0, 17, 24, 0, DuskTurnpikeLight, 0, 0
+	xy_trigger 0, 17, 25, 0, DuskTurnpikeLight, 0, 0
+	xy_trigger 1, 14, 10, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 14, 11, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 13, 10, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 13, 11, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 14, 14, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 14, 15, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 13, 14, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 13, 15, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 14, 22, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 14, 23, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 13, 22, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 13, 23, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 14, 26, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 14, 27, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 13, 26, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 13, 27, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 17, 10, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 17, 11, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 15, 12, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 15, 13, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 16, 12, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 16, 13, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 17, 14, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 17, 15, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 17, 22, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 17, 23, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 15, 24, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 15, 25, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 16, 24, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 16, 25, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 17, 26, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 1, 17, 27, 0, DuskTurnpikeDark, 0, 0
+	xy_trigger 0, 14, 31, 0, DuskTurnpikeTollBoothStopsYou1, 0, 0
+	xy_trigger 0, 15, 31, 0, DuskTurnpikeTollBoothStopsYou2, 0, 0
+	xy_trigger 0, 16, 31, 0, DuskTurnpikeTollBoothStopsYou3, 0, 0
+	xy_trigger 0, 17, 31, 0, DuskTurnpikeTollBoothStopsYou4, 0, 0
 
-	db 13 ; bg events
-	signpost 21, 31, SIGNPOST_JUMPTEXT, DuskTurnpikeBrokenCar
-	signpost 21, 32, SIGNPOST_JUMPTEXT, DuskTurnpikeBrokenCar
+	db 12 ; bg events
+	signpost 22, 30, SIGNPOST_JUMPTEXT, DuskTurnpikeBrokenCar
+	signpost 22, 31, SIGNPOST_JUMPTEXT, DuskTurnpikeBrokenCar
 	signpost 20, 23, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
-	signpost 20, 33, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
+	signpost 20, 30, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
 	signpost 24, 29, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
 	signpost 21, 22, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
 	signpost 22, 22, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
-	signpost 32, 18, SIGNPOST_JUMPTEXT, DuskTurnpikeSign
-	signpost 21, 18, SIGNPOST_JUMPTEXT, DuskTurnpikeHighwaySign
+	signpost 32, 17, SIGNPOST_JUMPTEXT, DuskTurnpikeSign
+	signpost 20, 19, SIGNPOST_JUMPTEXT, DuskTurnpikeHighwaySign
 	signpost  6, 15, SIGNPOST_READ, DuskTurnpikeTrashcan
-	signpost 31, 24, SIGNPOST_READ, DuskTurnpikePokeCenterSign
-	signpost 31, 32, SIGNPOST_READ, DuskTurnpikeMartSign
-	signpost 13, 29, SIGNPOST_READ, DuskTurnpikeTollbooth
+	signpost 31, 22, SIGNPOST_READ, DuskTurnpikePokeCenterSign
+	signpost 31, 30, SIGNPOST_READ, DuskTurnpikeMartSign
 	
 
-	db 1 ; object events
+	db 2 ; object events
+	person_event SPRITE_INVISIBLE, 13, 31, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, DuskTurnpikeTollbooth, -1
 	person_event SPRITE_PLANK_BRIDGE,  5, 20, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 
+
+	const_def 1 ; object constants
+	const DUSK_TOLLBOOTH_GUY
 
 DuskTurnpikeTrigger0:
 DuskTurnpikeTrigger1:
@@ -64,21 +115,21 @@ DuskTurnpikeTrigger1:
 	changeblock $16, $16, $f8
 	setflag ENGINE_STREETLIGHTS2
 .dusk
-	changeblock $22, $0a, $5b
-	changeblock $2c, $0a, $5b
+;	changeblock $22, $0a, $5b
+;	changeblock $2c, $0a, $5b
 	changeblock $0c, $0c, $a1
 	changeblock $18, $0c, $a1
-	changeblock $22, $0c, $a1
-	changeblock $2c, $0c, $a1
+;	changeblock $22, $0c, $a1
+;	changeblock $2c, $0c, $a1
 	changeblock $0c, $0e, $a5
 	changeblock $18, $0e, $a5
-	changeblock $22, $0e, $a5
-	changeblock $2c, $0e, $a5
+;	changeblock $22, $0e, $a5
+;	changeblock $2c, $0e, $a5
 	changeblock $0c, $10, $a4
 	changeblock $18, $10, $a4
-	changeblock $22, $10, $a4
-	changeblock $2c, $10, $a4
-	changeblock $1c, $0c, $f2
+;	changeblock $22, $10, $a4
+;	changeblock $2c, $10, $a4
+	changeblock $1e, $0c, $f2
 	setflag ENGINE_STREETLIGHTS
 	callasm GenericFinishBridge
 	callasm DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
@@ -86,21 +137,21 @@ DuskTurnpikeTrigger1:
 .checkmorn
 	checktime 1<<MORN
 	iffalse .end
-	changeblock $22, $0a, $a8
-	changeblock $2c, $0a, $5b
+;	changeblock $22, $0a, $a8
+;	changeblock $2c, $0a, $5b
 	changeblock $0c, $0c, $a9
 	changeblock $18, $0c, $a9
-	changeblock $22, $0c, $a9
-	changeblock $2c, $0c, $a9
+;	changeblock $22, $0c, $a9
+;	changeblock $2c, $0c, $a9
 	changeblock $0c, $0e, $4e
 	changeblock $18, $0e, $20
-	changeblock $22, $0e, $20
-	changeblock $2c, $0e, $4e
+;	changeblock $22, $0e, $20
+;	changeblock $2c, $0e, $4e
 	changeblock $0c, $10, $aa
 	changeblock $18, $10, $aa
-	changeblock $22, $10, $aa
-	changeblock $2c, $10, $aa
-	changeblock $1c, $0c, $f3
+;	changeblock $22, $10, $aa
+;	changeblock $2c, $10, $aa
+	changeblock $1e, $0c, $f3
 	changeblock $16, $14, $85
 	changeblock $16, $16, $89
 	clearflag ENGINE_STREETLIGHTS
@@ -123,21 +174,21 @@ DuskTurnpikeCallback:
 	changeblock $16, $16, $f8
 	setflag ENGINE_STREETLIGHTS2
 .dusk
-	changeblock $22, $0a, $5b
-	changeblock $2c, $0a, $5b
+;	changeblock $22, $0a, $5b
+;	changeblock $2c, $0a, $5b
 	changeblock $0c, $0c, $a1
 	changeblock $18, $0c, $a1
-	changeblock $22, $0c, $a1
-	changeblock $2c, $0c, $a1
+;	changeblock $22, $0c, $a1
+;	changeblock $2c, $0c, $a1
 	changeblock $0c, $0e, $a5
 	changeblock $18, $0e, $a5
-	changeblock $22, $0e, $a5
-	changeblock $2c, $0e, $a5
+;	changeblock $22, $0e, $a5
+;	changeblock $2c, $0e, $a5
 	changeblock $0c, $10, $a4
 	changeblock $18, $10, $a4
-	changeblock $22, $10, $a4
-	changeblock $2c, $10, $a4
-	changeblock $1c, $0c, $f2
+;	changeblock $22, $10, $a4
+;	changeblock $2c, $10, $a4
+	changeblock $1e, $0c, $f2
 	setflag ENGINE_STREETLIGHTS
 .notnite
 	checkevent EVENT_ROUTE_22_TRASHCAN
@@ -157,9 +208,75 @@ DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
 	ld a, [wMapScriptHeaderBank]
 	farjp CallScript
 
+DuskTurnpikeLight:
+	checktime 1<<DUSK
+	iftrue .dusk
+	checktime 1<<NITE
+	iffalse .notnite
+.dusk
+	setflag ENGINE_NEAR_CAMPFIRE
+	special Special_UpdatePalsInstant
+	dotrigger $1
+.notnite
+	end
+	
+DuskTurnpikeDark:
+	clearflag ENGINE_NEAR_CAMPFIRE
+	special Special_UpdatePalsInstant
+	dotrigger $0
+	end
+
+DuskTurnpikeTollBoothStopsYou1:
+	special Special_StopRunning
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, DUSK_TOLLBOOTH_GUY, 15
+	opentext
+	writetext DuskTurnpikeTollboothText1
+	waitbutton
+	closetext
+	spriteface PLAYER, UP
+	jump DuskTurnpikeTollbooth
+	
+DuskTurnpikeTollBoothStopsYou2:
+	special Special_StopRunning
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, DUSK_TOLLBOOTH_GUY, 15
+	opentext
+	writetext DuskTurnpikeTollboothText1
+	waitbutton
+	closetext
+	applyonemovement PLAYER, step_up
+	jump DuskTurnpikeTollbooth
+	
+DuskTurnpikeTollBoothStopsYou3:
+	special Special_StopRunning
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, DUSK_TOLLBOOTH_GUY, 15
+	opentext
+	writetext DuskTurnpikeTollboothText1
+	waitbutton
+	closetext
+	applymovement PLAYER, Movement_DuskTollbooth1
+	jump DuskTurnpikeTollbooth
+	
+DuskTurnpikeTollBoothStopsYou4:
+	special Special_StopRunning
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, DUSK_TOLLBOOTH_GUY, 15
+	opentext
+	writetext DuskTurnpikeTollboothText1
+	waitbutton
+	closetext
+	applymovement PLAYER, Movement_DuskTollbooth2
+
 DuskTurnpikeTollbooth:
+	opentext
+	writetext DuskTurnpikeTollboothText2
+	waitbutton
+	closetext
+	applyonemovement PLAYER, step_left
 	setevent EVENT_TALKED_TO_TOLL_BOOTH
-	jumptext DuskTurnpikeTollboothText1
+	end
 
 DuskTurnpikeTrashcan:
 	checkevent EVENT_ROUTE_22_TRASHCAN
@@ -244,6 +361,10 @@ DuskTurnpikeTire:
 	done
 	
 DuskTurnpikeTollboothText1:
+	text "Hey!"
+	done
+	
+DuskTurnpikeTollboothText2:
 	text "Motor vehicles"
 	line "only past this"
 	cont "point."
@@ -251,3 +372,14 @@ DuskTurnpikeTollboothText1:
 	para "Sorry, that's the"
 	line "rule."
 	done
+	
+Movement_DuskTollbooth1:
+	step_up
+	step_up
+	step_end
+	
+Movement_DuskTollbooth2:
+	step_up
+	step_up
+	step_up
+	step_end

@@ -454,6 +454,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_FLYPOINT_BRILLO
 	setflag ENGINE_FLYPOINT_RADIANT
 	setflag ENGINE_FLYPOINT_DUSK
+	setflag ENGINE_FLYPOINT_CROSSROADS
 .done
 	writetext PlayerHouseDebugText5
 	waitbutton

@@ -20,7 +20,7 @@ SpawnPoints: ; 0x152ab
 	spawn BRILLO_TOWN,				   22, 12
 	spawn RADIANT_TOWNSHIP,             5,  8
 	spawn DUSK_TURNPIKE,			   23, 32
-	spawn CROSSROADS,      		       17, 20
+	spawn CROSSROADS,      		       29, 12
 	
 	spawn STARGLOW_CAVERN_DEPTHS,	   16, 15
 	spawn FAKE_ROUTE_1,   		       20, 29

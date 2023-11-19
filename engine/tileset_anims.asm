@@ -205,7 +205,6 @@ TilesetTrainAnim::
 	dw NULL,  DoneTileAnimation
 	
 TilesetSunsetAnim::
-TilesetHighwayAnim::
 	dw VTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft
@@ -220,6 +219,28 @@ TilesetHighwayAnim::
 	dw NULL,  WaitTileAnimation
 	dw ShorelineFrames,  AnimateWaterfallTiles
 	dw ShorelineFrames2,  AnimateWaterfallTiles
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
+TilesetHighwayAnim::
+	dw VTiles2 tile $14, WriteTileToBuffer
+	dw NULL,  WaitTileAnimation
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $14, WriteTileFromBuffer
+	dw NULL,  AnimateFlowerTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+    dw NULL,  WaitTileAnimation
+    dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

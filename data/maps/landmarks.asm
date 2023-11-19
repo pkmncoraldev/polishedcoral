@@ -64,7 +64,7 @@ Landmarks: ; 0x1ca8c3
 	landmark  68,  72, Route21Name
 	landmark  68,  60, DuskTurnpikeName
 	landmark  80,  52, Route22Name
-	landmark 100,  52, UmbraCrossroadsName
+	landmark 100,  52, CrossroadsName
 	
 	landmark  20, 124, BrilloTownName
 	landmark  28, 124, Route17Name
@@ -129,7 +129,7 @@ Route21Name:		   db "ROUTE 21@"
 DuskTurnpikeName:	   db "DUSK¯TURNPIKE@"
 SeasideCaveName:	   db "SEASIDE¯CAVE@"
 Route22Name:		   db "ROUTE 22@"
-UmbraCrossroadsName:   db "UMBRA¯CROSSROADS@"
+CrossroadsName: 	   db "CROSSROADS@"
 
 LusterStationName:	   db "LUSTER¯CITY@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"

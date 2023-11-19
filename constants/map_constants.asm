@@ -383,10 +383,11 @@ MAP_NONE   EQU 0
 	map_const SEASIDE_CAVE_B1F,							  13, 18 ; 13
 	map_const SEASIDE_CAVE_B2F,							   8, 10 ; 14
 	map_const BAR_BACK_ALLEY,							  10,  6 ; 15
+	map_const CROSSROADS,								  24, 14 ; 16
 	
-	newgroup
+;	newgroup
 	
-	map_const UMBRA_CROSSROADS,							  23, 14 ; 1
+	
 	
 	newgroup													 ; last
 	

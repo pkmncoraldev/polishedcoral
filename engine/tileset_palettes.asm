@@ -184,8 +184,8 @@ LoadSpecialMapPalette: ; 494ac
 	
 .highway
 	ld a, [wMapNumber]
-	cp MAP_UMBRA_CROSSROADS
-	ret z
+	cp MAP_CROSSROADS
+	jr z, .crossroads
 	cp MAP_ROUTE_22_TUNNEL
 	jr z, .highway_tunnel
 	cp MAP_BAR_BACK_ALLEY
@@ -197,6 +197,18 @@ LoadSpecialMapPalette: ; 494ac
 	rst AddNTimes
 	ld de, wUnknBGPals + 4 palettes
 	ld bc, 3 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
+.crossroads
+	ld hl, CrossroadsPalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 4 palettes
+	rst AddNTimes
+	ld de, wUnknBGPals + 3 palettes
+	ld bc, 4 palettes
 	ld a, $5
 	call FarCopyWRAM
 	scf
@@ -985,6 +997,9 @@ INCLUDE "maps/palettes/bgpals/construction.pal"
 
 HighwayPalette:
 INCLUDE "maps/palettes/bgpals/highway.pal"
+
+CrossroadsPalette:
+INCLUDE "maps/palettes/bgpals/crossroads.pal"
 
 HighwayTunnelPalette:
 INCLUDE "maps/palettes/bgpals/highwaytunnel.pal"

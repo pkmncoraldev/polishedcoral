@@ -22,7 +22,6 @@ MapGroupRoofs:
 	db -1 ; group 18 (Desert Temple)
 	db  3 ; group 19 (Radiant Township)
 	db  4 ; group 20 (Highway)
-	db  4 ; group 21 (Umbra)
 	db -1 ; group last (Fake Route 1)
 
 Roofs:

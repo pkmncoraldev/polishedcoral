@@ -394,7 +394,4 @@ INCLUDE "maps/DuskAutoGarage.asm"
 INCLUDE "maps/Route19DuskGate.asm"
 INCLUDE "maps/Route22Tunnel.asm"
 INCLUDE "maps/BarBackAlley.asm"
-
-SECTION "Umbra Crossroads Scripts", ROMX
-
-INCLUDE "maps/UmbraCrossroads.asm"
+INCLUDE "maps/Crossroads.asm"

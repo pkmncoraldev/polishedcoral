@@ -1056,7 +1056,7 @@ wUndergroundPassageTrigger:: ds 1
 wDesertTemple1Trigger:: ds 1
 wDesertTemple2Trigger:: ds 1
 wRadiantTownshipTrigger:: ds 1
-wUmbraCrossroadsTrigger:: ds 1
+wCrossroadsTrigger:: ds 1
 
 ds 33
 

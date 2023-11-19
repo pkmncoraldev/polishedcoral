@@ -115,5 +115,5 @@ MapTriggers::
 	scene_var DESERT_TEMPLE_LOWER_LEFT,				  wDesertTemple2Trigger
 	scene_var DESERT_TEMPLE_LOWER_RIGHT,			  wDesertTemple2Trigger
 	scene_var RADIANT_TOWNSHIP,						  wRadiantTownshipTrigger
-	scene_var UMBRA_CROSSROADS,						  wUmbraCrossroadsTrigger
+	scene_var CROSSROADS,						  wCrossroadsTrigger
 	db -1

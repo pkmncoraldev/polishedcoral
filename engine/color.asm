@@ -1549,12 +1549,21 @@ LoadMapPals::
 	jr z, .tunnel
 	cp MAP_ROUTE_22_TUNNEL
 	jr z, .tunnel
+	cp MAP_CROSSROADS
+	jp z, .crossroads
 	cp MAP_DUSK_TURNPIKE
 	jp nz, .normal
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsMoomoo
+	call AddNTimes
+	jp .copy_single_pal_to_pal_7
+.crossroads
+	ld a, 1
+	and 3
+	ld bc, 1 palettes
+	ld hl, MapObjectPalsRocks
 	call AddNTimes
 	jp .copy_single_pal_to_pal_7
 .tunnel

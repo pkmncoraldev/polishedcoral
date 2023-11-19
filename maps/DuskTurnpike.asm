@@ -50,10 +50,20 @@ DuskTurnpike_MapScriptHeader:
 
 DuskTurnpikeTrigger0:
 DuskTurnpikeTrigger1:
-	checkflag ENGINE_STREETLIGHTS
+	checkflag ENGINE_STREETLIGHTS2
 	iftrue .checkmorn
 	checktime 1<<NITE
-	iffalse .end
+	iftrue .nite
+	checkflag ENGINE_STREETLIGHTS
+	iftrue .end
+	checktime 1<<DUSK
+	iftrue .dusk
+	jump .end
+.nite
+	changeblock $16, $14, $f4
+	changeblock $16, $16, $f8
+	setflag ENGINE_STREETLIGHTS2
+.dusk
 	changeblock $22, $0a, $5b
 	changeblock $2c, $0a, $5b
 	changeblock $0c, $0c, $a1
@@ -69,8 +79,6 @@ DuskTurnpikeTrigger1:
 	changeblock $22, $10, $a4
 	changeblock $2c, $10, $a4
 	changeblock $1c, $0c, $f2
-	changeblock $16, $14, $f4
-	changeblock $16, $16, $f8
 	setflag ENGINE_STREETLIGHTS
 	callasm GenericFinishBridge
 	callasm DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
@@ -96,6 +104,7 @@ DuskTurnpikeTrigger1:
 	changeblock $16, $14, $85
 	changeblock $16, $16, $89
 	clearflag ENGINE_STREETLIGHTS
+	clearflag ENGINE_STREETLIGHTS2
 	callasm GenericFinishBridge
 	callasm DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
 .end
@@ -106,8 +115,14 @@ DuskTurnpikeFlyPoint:
 	return
 
 DuskTurnpikeCallback:
+	checktime 1<<DUSK
+	iftrue .dusk
 	checktime 1<<NITE
 	iffalse .notnite
+	changeblock $16, $14, $f4
+	changeblock $16, $16, $f8
+	setflag ENGINE_STREETLIGHTS2
+.dusk
 	changeblock $22, $0a, $5b
 	changeblock $2c, $0a, $5b
 	changeblock $0c, $0c, $a1
@@ -123,8 +138,6 @@ DuskTurnpikeCallback:
 	changeblock $22, $10, $a4
 	changeblock $2c, $10, $a4
 	changeblock $1c, $0c, $f2
-	changeblock $16, $14, $f4
-	changeblock $16, $16, $f8
 	setflag ENGINE_STREETLIGHTS
 .notnite
 	checkevent EVENT_ROUTE_22_TRASHCAN

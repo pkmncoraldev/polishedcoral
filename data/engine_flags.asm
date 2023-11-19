@@ -115,8 +115,8 @@ EngineFlags: ; 80462
 	engine_flag wDailyFlags, 3 ; daily route 8 garden
 	engine_flag wDailyFlags, 4 ; all fruit trees
 	engine_flag wDailyFlags, 5 ; daily dodrio race
-	engine_flag wDailyFlags, 6 ; goldenrod underground merchant closed
-	engine_flag wDailyFlags, 7 ; streetlights
+	engine_flag wDailyFlags, 6 ; streetlights
+	engine_flag wDailyFlags, 7 ; streetlights2
 
 	engine_flag wDailyFlags2, 0 ; gym leader rematch 1
 	engine_flag wDailyFlags2, 1 ; gym leader rematch 2

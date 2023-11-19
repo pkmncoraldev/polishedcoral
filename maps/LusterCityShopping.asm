@@ -84,8 +84,11 @@ LusterCityShopping_MapScriptHeader:
 	const LUSTER2DELIVERY
 
 LusterCityShoppingTrigger0:
+	checktime 1<<DUSK
+	iftrue .dusk
 	checktime 1<<NITE
 	iffalse .end
+.dusk
 	checkflag ENGINE_STREETLIGHTS
 	iftrue .end
 	changeblock -4, 20, $84
@@ -128,8 +131,11 @@ ShoppingCallback:
 	iffalse .skip2
 	moveperson LUSTER2SNARE, $18, $11
 .skip2
+	checktime 1<<DUSK
+	iftrue .dusk
 	checktime 1<<NITE
 	iffalse .notnite
+.dusk
 	changeblock -4, 20, $84
 .notnite
 	checkevent EVENT_LUSTER_SHOPPING_TRASHCAN_1

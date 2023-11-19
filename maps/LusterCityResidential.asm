@@ -101,8 +101,11 @@ LusterCityResidentialTrigger0:
 LusterCityResidentialTrigger1:
 	checkflag ENGINE_STREETLIGHTS
 	iftrue .checkmorn
+	checktime 1<<DUSK
+	iftrue .dusk
 	checktime 1<<NITE
 	iffalse .end
+.dusk
 	changeblock $18, $14, $84
 	changeblock $4, $20, $85
 	changeblock $14, $28, $85
@@ -135,8 +138,11 @@ LusterCityStreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
 	
 	
 ResidentialCallback:
+	checktime 1<<DUSK
+	iftrue .dusk
 	checktime 1<<NITE
 	iffalse .notnite
+.dusk
 	setflag ENGINE_STREETLIGHTS
 	changeblock $18, $14, $84
 	changeblock $4, $20, $85
@@ -219,8 +225,11 @@ ResidentialCallback:
 	jump .openmanhole
 	
 LusterCityResidentialLight:
+	checktime 1<<DUSK
+	iftrue .dusk
 	checktime 1<<NITE
 	iffalse .notnite
+.dusk
 	setflag ENGINE_NEAR_CAMPFIRE
 	special Special_UpdatePalsInstant
 	dotrigger $1

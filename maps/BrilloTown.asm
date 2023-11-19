@@ -141,7 +141,19 @@ BrilloSinger:
 	playsound SFX_TRANSACTION
 	takemoney $0, 1
 	special PlaceMoneyTopRight
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl1
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl1
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl1
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl1
 	writetext BrilloSingerText5
+	jump .cont1
+.girl1
+	writetext BrilloSingerText5Girl
+.cont1
 	waitbutton
 	closetext
 	pause 10
@@ -434,17 +446,53 @@ BrilloSinger:
 	wait 10
 	playmusic MUSIC_BRILLO_TOWN
 	opentext
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl2
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl2
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl2
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl2
 	writetext BrilloSingerText3
+	jump .cont2
+.girl2
+	writetext BrilloSingerText3Girl
+.cont2
 	waitbutton
 	closetext
 	end
 .no_money
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl3
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl3
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl3
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl3
 	writetext BrilloSingerText6
+	jump .cont3
+.girl3
+	writetext BrilloSingerText6Girl
+.cont3
 	waitbutton
 	closetext
 	end
 .end
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl4
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl4
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl4
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl4
 	writetext BrilloSingerText4
+	jump .cont4
+.girl4
+	writetext BrilloSingerText4Girl
+.cont4
 	waitbutton
 	closetext
 	end
@@ -464,7 +512,16 @@ BrilloSingerText2:
 	
 BrilloSingerText3:
 	text "Thanks for"
-	line "listening!"
+	line "listening, amigo!"
+	
+	para "We're always here"
+	line "if you want to"
+	cont "hear us again!"
+	done
+	
+BrilloSingerText3Girl:
+	text "Thanks for"
+	line "listening, amiga!"
 	
 	para "We're always here"
 	line "if you want to"
@@ -473,12 +530,26 @@ BrilloSingerText3:
 	
 BrilloSingerText4:
 	text "It's a good"
-	line "song…"
+	line "song, amigo…"
+	done
+	
+BrilloSingerText4Girl:
+	text "It's a good"
+	line "song, amiga…"
 	done
 	
 BrilloSingerText5:
 	text "You won't regret"
-	line "it!"
+	line "it, amigo!"
+	
+	para "Alright, here's"
+	line "“THE BALLAD OF"
+	cont "PUEBLO BRILLO”."
+	done
+	
+BrilloSingerText5Girl:
+	text "You won't regret"
+	line "it, amiga!"
 	
 	para "Alright, here's"
 	line "“THE BALLAD OF"
@@ -487,7 +558,14 @@ BrilloSingerText5:
 	
 BrilloSingerText6:
 	text "You seem to be"
-	line "short on cash…"
+	line "short on cash,"
+	cont "amigo…"
+	done
+	
+BrilloSingerText6Girl:
+	text "You seem to be"
+	line "short on cash,"
+	cont "amiga…"
 	done
 	
 SongText1:

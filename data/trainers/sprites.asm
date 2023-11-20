@@ -20,6 +20,7 @@ BTTrainerClassSprites:
 	db SPRITE_GOLD          ; KAREN
 	db SPRITE_GOLD          ; CHAMPION
 	db SPRITE_COLBY         ; RIVAL
+	db SPRITE_COLBY         ; RIVAL_S
 	db SPRITE_YOUNGSTER     ; YOUNGSTER
 	db SPRITE_BUG_CATCHER   ; BUG_CATCHER
 	db SPRITE_CAMPER        ; CAMPER

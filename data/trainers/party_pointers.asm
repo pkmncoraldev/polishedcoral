@@ -22,6 +22,7 @@ TrainerGroups: ; 0x39999
 	dba KarenGroup
 	dba ChampionGroup
 	dba RivalGroup
+	dba RivalSGroup
 	dba YoungsterGroup
 	dba BugCatcherGroup
 	dba CamperGroup

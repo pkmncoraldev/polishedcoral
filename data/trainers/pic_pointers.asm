@@ -20,6 +20,7 @@ TrainerPicPointers::
 	dba KarenPic
 	dba ChampionPic
 	dba RivalPic
+	dba RivalSPic
 	dba YoungsterPic
 	dba BugCatcherPic
 	dba CamperPic

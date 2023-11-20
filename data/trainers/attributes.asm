@@ -125,6 +125,12 @@ TrainerClassAttributes: ; 3959c
 	db 15 ; base reward
 	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
+; Rivals
+	db 0, 0 ; items
+	db 25 ; base reward
+	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Youngster
 	db 0, 0 ; items

@@ -710,6 +710,7 @@ BrunoPic:
 KarenPic:
 ChampionPic:
 RivalPic:                 INCBIN "gfx/trainers/rival.2bpp.lz"
+RivalSPic:                INCBIN "gfx/trainers/rival_s.2bpp.lz"
 YoungsterPic:             INCBIN "gfx/trainers/youngster.2bpp.lz"
 BugCatcherPic:            INCBIN "gfx/trainers/bug_catcher.2bpp.lz"
 

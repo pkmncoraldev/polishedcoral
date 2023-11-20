@@ -20,6 +20,7 @@ TrainerClassNames::
 	db "ELITE FOUR@"       ; KAREN
 	db "CHAMPION@"         ; CHAMPION
 	db "RIVAL@"            ; RIVAL
+	db "SNARE ADMIN@"	   ; RIVAL_S
 	db "YOUNGSTER@"        ; YOUNGSTER
 	db "BUG CATCHER@"      ; BUG_CATCHER
 	db "CAMPER@"           ; CAMPER

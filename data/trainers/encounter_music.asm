@@ -21,6 +21,7 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_NONE					; karen
 	db MUSIC_NONE					; champion
 	db MUSIC_RIVAL_ENCOUNTER		; rival
+	db MUSIC_RIVAL_ENCOUNTER		; rival_s
 	db MUSIC_YOUNGSTER_ENCOUNTER	; youngster
 	db MUSIC_YOUNGSTER_ENCOUNTER	; bug_catcher
 	db MUSIC_YOUNGSTER_ENCOUNTER	; camper

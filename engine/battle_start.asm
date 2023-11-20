@@ -685,6 +685,7 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	db GRUNTF
 	db KAGE
 	db LOCKE
+	db RIVAL_S
 
 	db -1
 

@@ -8,13 +8,13 @@ Crossroads_MapScriptHeader:
 	callback MAPCALLBACK_TILES, CrossroadsCallback
 
 	db 1 ; warp events
-	warp_event 17, 11, CROSSROADS, 1
+	warp_event 18, 11, CROSSROADS, 1
 
 	db 4 ; coord events
 	coord_event  8, 12, 0, CrossroadsCutsceneStart1
 	coord_event  8, 13, 0, CrossroadsCutsceneStart2
-	coord_event  8, 14, 0, CrossroadsCutsceneStart2
-	coord_event  8, 15, 0, CrossroadsCutsceneStart2
+	coord_event  8, 14, 0, CrossroadsCutsceneStart3
+	coord_event  8, 15, 0, CrossroadsCutsceneStart4
 
 	db 0 ; bg events
 
@@ -113,7 +113,9 @@ CrossroadsCutsceneStart1:
 	moveperson CROSSROADS_PLAYER_CUTSCENE_PURPLE, 11, 13
 	moveperson CROSSROADS_PLAYER_CUTSCENE_TEAL, 11, 13
 	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 11, 13
-	jump CrossroadsCutscene
+	scall CrossroadsCutscene1
+	applymovement PLAYER, Movement_CrossroadsCutsceneCameraPan1
+	jump CrossroadsCutscene2
 	
 CrossroadsCutsceneStart2:
 	playmusic MUSIC_SNARE_THEME
@@ -125,7 +127,9 @@ CrossroadsCutsceneStart2:
 	moveperson CROSSROADS_PLAYER_CUTSCENE_PURPLE, 11, 13
 	moveperson CROSSROADS_PLAYER_CUTSCENE_TEAL, 11, 13
 	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 11, 13
-	jump CrossroadsCutscene
+	scall CrossroadsCutscene1
+	applymovement PLAYER, Movement_CrossroadsCutsceneCameraPan1
+	jump CrossroadsCutscene2
 	
 CrossroadsCutsceneStart3:
 	playmusic MUSIC_SNARE_THEME
@@ -137,20 +141,25 @@ CrossroadsCutsceneStart3:
 	moveperson CROSSROADS_PLAYER_CUTSCENE_PURPLE, 11, 14
 	moveperson CROSSROADS_PLAYER_CUTSCENE_TEAL, 11, 14
 	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 11, 14
-	jump CrossroadsCutscene
+	scall CrossroadsCutscene1
+	applymovement PLAYER, Movement_CrossroadsCutsceneCameraPan2
+	jump CrossroadsCutscene2
 	
 CrossroadsCutsceneStart4:
 	playmusic MUSIC_SNARE_THEME
-	applymovement PLAYER, Movement_CrossroadsCutsceneStart2
-	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 11, 15
-	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 11, 15
-	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 11, 15
-	moveperson CROSSROADS_PLAYER_CUTSCENE_BROWN, 11, 15
-	moveperson CROSSROADS_PLAYER_CUTSCENE_PURPLE, 11, 15
-	moveperson CROSSROADS_PLAYER_CUTSCENE_TEAL, 11, 15
-	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 11, 15
+	applymovement PLAYER, Movement_CrossroadsCutsceneStart3
+	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 11, 14
+	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 11, 14
+	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 11, 14
+	moveperson CROSSROADS_PLAYER_CUTSCENE_BROWN, 11, 14
+	moveperson CROSSROADS_PLAYER_CUTSCENE_PURPLE, 11, 14
+	moveperson CROSSROADS_PLAYER_CUTSCENE_TEAL, 11, 14
+	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 11, 14
+	scall CrossroadsCutscene1
+	applymovement PLAYER, Movement_CrossroadsCutsceneCameraPan2
+	jump CrossroadsCutscene2
 	
-CrossroadsCutscene:
+CrossroadsCutscene1:
 	pause 40
 	copybytetovar wPlayerPalette
     if_equal 0, .red
@@ -205,10 +214,11 @@ CrossroadsCutscene:
 	closetext
 	disappear CROSSROADS_SNARE_GRUNT_1
 	disappear CROSSROADS_SNARE_GRUNT_2
-	applymovement PLAYER, Movement_CrossroadsCutsceneCameraPan
+	end
+CrossroadsCutscene2:
 	pause 30
 	special Special_FadeOutMusic
-	pause 70
+	pause 50
 	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 11, 14
 	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 11, 14
 	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 11, 14
@@ -223,18 +233,19 @@ CrossroadsCutscene:
 	special Special_SetPlayerPalette
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	playmusic MUSIC_RIVAL_ENCOUNTER
+	pause 30
 	playsound SFX_EXIT_BUILDING
 	appear CROSSROADS_COLBY
 	applyonemovement CROSSROADS_COLBY, step_down
 	pause 10
-	applyonemovement PLAYER, slow_step_down
+;	applyonemovement PLAYER, slow_step_down
 	applyonemovement PLAYER, show_person
 	pause 5
 	disappear CROSSROADS_COLBY
 	pause 25
 	applymovement PLAYER, Movement_CrossroadsColbyWalk1
 	appear CROSSROADS_COLBY2
-	pause 1
+	pause 10
 	applyonemovement PLAYER, hide_person
 	applyonemovement PLAYER, slow_step_left
 	spriteface PLAYER, RIGHT
@@ -255,6 +266,85 @@ CrossroadsCutscene:
 	writetext CrossroadsCutsceneColbyText1
 	waitbutton
 	closetext
+	waitsfx
+	checkevent EVENT_GOT_TOTODILE_FROM_SPRUCE
+	iftrue .totodile
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_SPRUCE
+	iftrue .cyndaquil
+	checkevent EVENT_GOT_CHIKORITA_FROM_SPRUCE
+	iftrue .chikorita
+	checkevent EVENT_GOT_SQUIRTLE_FROM_SPRUCE
+	iftrue .squirtle
+	checkevent EVENT_GOT_CHARMANDER_FROM_SPRUCE
+	iftrue .charmander
+	checkevent EVENT_GOT_BULBASAUR_FROM_SPRUCE
+	iftrue .bulbasaur
+.totodile
+	winlosstext CrossroadsCutsceneColbyWinText, CrossroadsCutsceneColbyLoseText
+	setlasttalked CROSSROADS_COLBY2
+	loadtrainer RIVAL_S, RIVAL_S_1_6
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+.chikorita
+	winlosstext CrossroadsCutsceneColbyWinText, CrossroadsCutsceneColbyLoseText
+	setlasttalked CROSSROADS_COLBY2
+	loadtrainer RIVAL_S, RIVAL_S_1_5
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+.cyndaquil
+	winlosstext CrossroadsCutsceneColbyWinText, CrossroadsCutsceneColbyLoseText
+	setlasttalked CROSSROADS_COLBY2
+	loadtrainer RIVAL_S, RIVAL_S_1_4
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+.squirtle
+	winlosstext CrossroadsCutsceneColbyWinText, CrossroadsCutsceneColbyLoseText
+	setlasttalked CROSSROADS_COLBY2
+	loadtrainer RIVAL_S, RIVAL_S_1_3
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+.bulbasaur
+	winlosstext CrossroadsCutsceneColbyWinText, CrossroadsCutsceneColbyLoseText
+	setlasttalked CROSSROADS_COLBY2
+	loadtrainer RIVAL_S, RIVAL_S_1_2
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+.charmander
+	winlosstext CrossroadsCutsceneColbyWinText, CrossroadsCutsceneColbyLoseText
+	setlasttalked CROSSROADS_COLBY2
+	loadtrainer RIVAL_S, RIVAL_S_1_1
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+.afterbattle
+	playmusic MUSIC_RIVAL_AFTER
+	opentext
+	writetext CrossroadsCutsceneColbyText2
+	waitbutton
+	closetext
+	applymovement CROSSROADS_COLBY2, Movement_CrossroadsColbyWalk2
+	disappear CROSSROADS_COLBY2
+	special Special_FadeOutMusic
+	pause 15
+	special RestartMapMusic
+	setevent EVENT_CROSSROADS_CUTSCENE_DONE
+	dotrigger $1
 	end
 	
 CrossroadsSign:
@@ -294,13 +384,33 @@ CrossroadsCutsceneColbyText1:
 	line "STYLE."
 	done
 	
+CrossroadsCutsceneColbyText2:
+	text "TEXT 2"
+	done
+	
+CrossroadsCutsceneColbyWinText:
+	text "YOU WIN"
+	done
+	
+CrossroadsCutsceneColbyLoseText:
+	text "YOU LOSE"
+	done
+	
 Movement_CrossroadsCutsceneStart1:
 	step_down
+	step_right
 	step_right
 	step_right
 	step_end
 	
 Movement_CrossroadsCutsceneStart2:
+	step_right
+	step_right
+	step_right
+	step_end
+	
+Movement_CrossroadsCutsceneStart3:
+	step_up
 	step_right
 	step_right
 	step_right
@@ -316,7 +426,18 @@ Movement_CrossroadsSnareRunAway:
 	run_step_right
 	step_end
 	
-Movement_CrossroadsCutsceneCameraPan:
+Movement_CrossroadsCutsceneCameraPan1:
+	slow_step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	slow_step_right
+	slow_step_up
+	step_end
+	
+Movement_CrossroadsCutsceneCameraPan2:
 	slow_step_right
 	step_right
 	step_right
@@ -337,4 +458,13 @@ Movement_CrossroadsColbyWalk1:
 	step_left
 	step_left
 	step_left
+	step_end
+
+Movement_CrossroadsColbyWalk2:
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
 	step_end

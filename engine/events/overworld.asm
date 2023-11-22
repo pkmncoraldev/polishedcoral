@@ -1573,7 +1573,6 @@ HeadbuttFunction: ; ce7d
 	ret
 
 TryHeadbuttFromMenu: ; ce86
-	jr .no_tree	;TODO undummy
 	call GetFacingTileCoord
 	cp COLL_HEADBUTT_TREE
 	jr nz, .no_tree
@@ -1635,7 +1634,6 @@ AutoHeadbuttScript:
 	jumptext UnknownText_0xcea2
 
 TryHeadbuttOW:: ; cec9
-;	jr .no	;TODO undummy
 	ld d, HEADBUTT
 	call CheckPartyMove
 	jr c, .no

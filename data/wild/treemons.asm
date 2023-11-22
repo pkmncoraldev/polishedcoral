@@ -1,10 +1,10 @@
 TreeMons:
+	dw -1
 	dw TreeMons1
 	dw TreeMons2
 	dw TreeMons3
 	dw TreeMons4
 	dw TreeMons5
-	dw TreeMons6
 	dw RockMons
 	dw PetalMons
 
@@ -81,23 +81,6 @@ TreeMons4:
 	db -1
 
 TreeMons5:
-	db 50, BULBASAUR,	10
-	db 15, BULBASAUR,	10
-	db 15, BULBASAUR,	10
-	db 10, BULBASAUR,	10
-	db  5, BULBASAUR,	10
-	db  5, BULBASAUR,	10
-	db -1
-	; rare
-	db 50, CHARMANDER,	10
-	db 15, CHARMANDER,	10
-	db 15, CHARMANDER,	10
-	db 10, CHARMANDER,	10
-	db  5, CHARMANDER,	10
-	db  5, CHARMANDER,	10
-	db -1
-
-TreeMons6:
 	db 50, BULBASAUR,	10
 	db 15, BULBASAUR,	10
 	db 15, BULBASAUR,	10

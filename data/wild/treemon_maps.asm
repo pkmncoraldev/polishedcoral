@@ -4,7 +4,7 @@ treemon_map: macro
 endm
 
 TreeMonMaps:
-	treemon_map SUNSET_BAY, 0
+	treemon_map SUNSET_BAY, 1
 	db -1
 
 RockMonMaps:

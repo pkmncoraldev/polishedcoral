@@ -1612,7 +1612,10 @@ HeadbuttScript: ; 0xceab
 
 AutoHeadbuttScript:
 	refreshscreen
-	callasm ShakeHeadbuttTree
+;	callasm ShakeHeadbuttTree
+	playsound SFX_STRENGTH
+	pause 15
+	earthquake 19
 
 	callasm TreeMonEncounter
 	iffalse .no_battle
@@ -1632,9 +1635,9 @@ AutoHeadbuttScript:
 	jumptext UnknownText_0xcea2
 
 TryHeadbuttOW:: ; cec9
-	jr .no	;TODO undummy
+;	jr .no	;TODO undummy
 	ld d, HEADBUTT
-	call CheckPartyCanLearnMove
+	call CheckPartyMove
 	jr c, .no
 
 	ld a, BANK(AskHeadbuttScript)

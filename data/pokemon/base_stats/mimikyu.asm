@@ -7,7 +7,7 @@
 	db NO_ITEM ; item 1
 	db CHESTO_BERRY ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
-	dn 6, 6 ; frontpic dimensions
+	dn 5, 5 ; frontpic dimensions
 	db DISGUISE_A ; ability 1
 	db DISGUISE_A ; ability 2
 	db DISGUISE_A ; hidden ability

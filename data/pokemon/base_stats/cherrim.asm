@@ -7,7 +7,7 @@
 	db NO_ITEM ; item 1
 	db MIRACLE_SEED ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
-	dn 7, 7 ; frontpic dimensions
+	dn 6, 6 ; frontpic dimensions
 	db FLOWER_GIFT ; ability 1
 	db FLOWER_GIFT ; ability 2
 	db FLOWER_GIFT ; hidden ability

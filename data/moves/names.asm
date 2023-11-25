@@ -184,7 +184,7 @@ MoveNames::
 	db "MACH PUNCH@"
 	db "ERROR!@" ; SCARY_FACE
 	db "FEINT ATTACK@"
-	db "SWEET KISS@"
+	db "DIVE@"
 	db "BELLY DRUM@"
 	db "SLUDGE BOMB@"
 	db "MUD-SLAP@"

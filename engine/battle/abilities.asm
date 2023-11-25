@@ -1097,7 +1097,7 @@ WeakArmorAbility:
 
 FlashFireAbility:
 	call ShowAbilityActivation
-	ld a, BATTLE_VARS_SUBSTATUS3
+	ld a, BATTLE_VARS_SUBSTATUS2
 	call GetBattleVarAddr
 	ld a, [hl]
 	and 1<<SUBSTATUS_FLASH_FIRE

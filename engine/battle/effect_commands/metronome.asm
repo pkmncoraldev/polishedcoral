@@ -44,5 +44,4 @@ MetronomeExcepts:
 	db PROTECT
 	db SNORE
 	db TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
-	db SWEET_KISS
 	db -1

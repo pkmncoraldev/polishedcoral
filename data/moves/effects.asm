@@ -34,7 +34,6 @@ ShadowClaw:
 Slash:
 StoneEdge:
 Strength:
-Surf:
 Swift:
 Tackle:
 VineWhip:
@@ -978,7 +977,6 @@ DoFreeze:
 DoConfuse:
 Supersonic:
 ConfuseRay:
-SweetKiss:
 	checkobedience
 	usedmovetext
 	doturn
@@ -2408,6 +2406,28 @@ FuryCutter:
 ;	pickpocket
 ;	endmove
 
+Surf:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	doubleunderwaterdamage
+	checkhit
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	pickpocket
+	endmove
+
 Earthquake:
 	checkobedience
 	usedmovetext
@@ -2576,6 +2596,7 @@ Teleport:
 
 Fly:
 Dig:
+Dive:
 	checkcharge
 	checkobedience
 	doturn

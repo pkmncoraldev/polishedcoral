@@ -489,10 +489,14 @@ CantMove:
 	cp FLY
 	jr z, .fly_dig
 
+	cp DIVE
+	jr z, .fly_dig
+
 	cp DIG
 	ret nz
 
 .fly_dig
+	res SUBSTATUS_UNDERWATER, [hl]
 	res SUBSTATUS_UNDERGROUND, [hl]
 	res SUBSTATUS_FLYING, [hl]
 	jp AppearUserRaiseSub
@@ -682,7 +686,7 @@ HitConfusion: ; 343a5
 	ld de, ANIM_HIT_CONFUSION
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_UNDERWATER
 	call z, PlayFXAnimID
 
 	ld a, [hBattleTurn]
@@ -1553,10 +1557,10 @@ _CheckTypeMatchup: ; 347d3
 	ld c, [hl]
 	ld a, $10 ; 1.0
 	ld [wTypeMatchup], a
-	ld hl, InverseTypeMatchup
-	ld a, [wBattleType]
-	cp BATTLETYPE_INVERSE
-	jr z, .TypesLoop
+;	ld hl, InverseTypeMatchup
+;	ld a, [wBattleType]
+;	cp BATTLETYPE_INVERSE
+;	jr z, .TypesLoop
 	ld hl, TypeMatchup
 .TypesLoop:
 	ld a, [hli]
@@ -1666,7 +1670,7 @@ BattleCommand_resettypematchup: ; 34833
 INCLUDE "engine/battle/ai/switch.asm"
 
 INCLUDE "data/types/type_matchups.asm"
-INCLUDE "data/types/inverse_type_matchups.asm"
+;INCLUDE "data/types/inverse_type_matchups.asm"
 
 
 BattleCommand_damagevariation: ; 34cfd
@@ -2039,18 +2043,18 @@ BattleCommand_checkhit:
 	res SUBSTATUS_LOCK_ON, [hl]
 	ret z
 
-	ld a, BATTLE_VARS_SUBSTATUS3_OPP
-	call GetBattleVar
-	bit SUBSTATUS_FLYING, a
-	jr z, .LockedOn
+;	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+;	call GetBattleVar
+;	bit SUBSTATUS_FLYING, a
+;	jr z, .LockedOn
 
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
+;	ld a, BATTLE_VARS_MOVE_ANIM
+;	call GetBattleVar
 
-	cp EARTHQUAKE
-	ret z
-	cp MAGNITUDE
-	ret z
+;	cp EARTHQUAKE
+;	ret z
+;	cp MAGNITUDE
+;	ret z
 
 .LockedOn:
 	ld a, 1
@@ -2095,8 +2099,11 @@ BattleCommand_checkhit:
 
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_UNDERWATER
 	ret z
+
+	bit SUBSTATUS_UNDERWATER, a
+	jr nz, .DivingMoves
 
 	bit SUBSTATUS_FLYING, a
 	jr z, .DigMoves
@@ -2120,6 +2127,13 @@ BattleCommand_checkhit:
 	cp EARTHQUAKE
 	ret z
 	cp MAGNITUDE
+	ret
+	
+.DivingMoves
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+
+	cp SURF
 	ret
 
 
@@ -2531,6 +2545,7 @@ BattleCommand_failuretext:
 	call GetBattleVarAddr
 	res SUBSTATUS_UNDERGROUND, [hl]
 	res SUBSTATUS_FLYING, [hl]
+	res SUBSTATUS_UNDERWATER, [hl]
 	call AppearUserRaiseSub
 	jp EndMoveEffect
 
@@ -2826,18 +2841,18 @@ BattleCommand_supereffectivetext: ; 351ad
 	cp $10 ; 1.0
 	ret z
 	push af
-	ld a, [wInverseBattleScore]
+;	ld a, [wInverseBattleScore]
 	ld hl, SuperEffectiveText
 	jr nc, .super_effective
 	ld hl, NotVeryEffectiveText
-	dec a
-	dec a
+;	dec a
+;	dec a
 .super_effective
-	inc a
-	cp $80
-	jr z, .score_ok
-	ld [wInverseBattleScore], a
-.score_ok
+;	inc a
+;	cp $80
+;	jr z, .score_ok
+;	ld [wInverseBattleScore], a
+;.score_ok
 	call StdBattleTextBox
 	pop af
 	ret c
@@ -3995,7 +4010,7 @@ BattleCommand_damagecalc: ; 35612
 
 .burn_done
 	; Flash Fire
-	ld a, BATTLE_VARS_SUBSTATUS3
+	ld a, BATTLE_VARS_SUBSTATUS2
 	call GetBattleVar
 	bit SUBSTATUS_FLASH_FIRE, a
 	jr z, .no_flash_fire
@@ -4677,7 +4692,7 @@ FarPlayBattleAnimation: ; 35d00
 
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_UNDERWATER
 	ret nz
 
 	; fallthrough
@@ -4771,7 +4786,7 @@ SelfInflictDamageToSubstitute: ; 35de0
 	call BattleCommand_lowersubnoanim
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_UNDERWATER
 	call z, AppearUserLowerSub
 	call SwitchTurn
 
@@ -6686,6 +6701,7 @@ BattleCommand_checkcharge: ; 36b3a
 	res SUBSTATUS_CHARGED, [hl]
 	res SUBSTATUS_UNDERGROUND, [hl]
 	res SUBSTATUS_FLYING, [hl]
+	res SUBSTATUS_UNDERWATER, [hl]
 	ld b, charge_command
 	jp SkipToBattleCommandAfter
 
@@ -6726,6 +6742,8 @@ BattleCommand_charge:
 	jr z, .flying
 	cp DIG
 	jr z, .flying
+	cp DIVE
+	jr z, .flying
 	call BattleCommand_raisesub
 	jr .not_flying
 
@@ -6739,6 +6757,8 @@ BattleCommand_charge:
 	ld b, a
 	cp FLY
 	jr z, .set_flying
+	cp DIVE
+	jr z, .set_diving
 	cp DIG
 	jr nz, .dont_set_digging
 	set SUBSTATUS_UNDERGROUND, [hl]
@@ -6746,6 +6766,10 @@ BattleCommand_charge:
 
 .set_flying
 	set SUBSTATUS_FLYING, [hl]
+	jr .dont_set_digging
+	
+.set_diving
+	set  SUBSTATUS_UNDERWATER, [hl]
 
 .dont_set_digging
 	; If we called this move from something else, update last move appropriately.
@@ -6779,6 +6803,10 @@ BattleCommand_charge:
 	cp SOLAR_BEAM
 	ret z
 
+	ld hl, .Dive
+	cp DIVE
+	ret z
+
 	ld hl, .Fly
 	cp FLY
 	ret z
@@ -6801,7 +6829,11 @@ BattleCommand_charge:
 ; 'dug a hole!'
 	text_jump UnknownText_0x1c0d6c
 	db "@"
-; 36c2c
+
+.Dive:
+; 'dove underwater!'
+	text_jump UnknownText_Dive
+	db "@"
 
 BattleCommand_traptarget: ; 36c2d
 ; traptarget
@@ -8236,6 +8268,12 @@ BattleCommand_doubleundergrounddamage:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
 	bit SUBSTATUS_UNDERGROUND, a
+	jr DoubleDamageIfNZ
+	
+BattleCommand_doubleunderwaterdamage:
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVar
+	bit SUBSTATUS_UNDERWATER, a
 	; fallthrough
 DoubleDamageIfNZ:
 	ret z
@@ -9242,7 +9280,7 @@ BattleCommand_thunderaccuracy: ; 37d94
 CheckHiddenOpponent: ; 37daa
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_UNDERWATER
 	ret
 
 ; 37db2

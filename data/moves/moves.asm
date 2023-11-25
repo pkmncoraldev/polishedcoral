@@ -66,7 +66,7 @@ Moves:: ; 41afb
 	move CALM_MIND,                EFFECT_CALM_MIND,           0, PSYCHIC,   100, 20,   0, STATUS
 	move WATER_GUN,                EFFECT_NORMAL_HIT,         40, WATER,     100, 25,   0, SPECIAL
 	move HYDRO_PUMP,               EFFECT_NORMAL_HIT,        110, WATER,      80,  5,   0, SPECIAL
-	move SURF,                     EFFECT_NORMAL_HIT,         90, WATER,     100, 15,   0, SPECIAL
+	move SURF,                     EFFECT_SURF,   		      90, WATER,     100, 15,   0, SPECIAL
 	move ICE_BEAM,                 EFFECT_FREEZE_HIT,         90, ICE,       100, 10,  10, SPECIAL
 	move BLIZZARD,                 EFFECT_FREEZE_HIT,        110, ICE,        70,  5,  10, SPECIAL
 	move PSYBEAM,                  EFFECT_CONFUSE_HIT,        65, PSYCHIC,   100, 20,  10, SPECIAL
@@ -186,7 +186,7 @@ Moves:: ; 41afb
 	move CURSE,                    EFFECT_CURSE,               0, GHOST,     100, 10,   0, STATUS
 	move GYRO_BALL,                EFFECT_GYRO_BALL,           1, STEEL,     100,  5,   0, PHYSICAL
 	move ENERGY_BALL,              EFFECT_SP_DEF_DOWN_HIT,    90, GRASS,     100, 10,  10, SPECIAL
-	move PSYSHIELD_BASH,            EFFECT_DEFENSE_UP_HIT,     70, PSYCHIC,    90, 10, 100, PHYSICAL
+	move PSYSHIELD_BASH,           EFFECT_DEFENSE_UP_HIT,     70, PSYCHIC,    90, 10, 100, PHYSICAL
 	move GUNK_SHOT,                EFFECT_POISON_HIT,        120, POISON,     80,  5,  30, PHYSICAL
 	move REVERSAL,                 EFFECT_REVERSAL,            1, FIGHTING,  100, 15,   0, PHYSICAL
 	move SLUDGE,                   EFFECT_POISON_HIT,         65, POISON,    100, 20,  30, SPECIAL
@@ -195,7 +195,7 @@ Moves:: ; 41afb
 	move MACH_PUNCH,               EFFECT_PRIORITY_HIT,       40, FIGHTING,  100, 30,   0, PHYSICAL
 	move SCARY_FACE_COTTON_SPORE_STRING_SHOT,   EFFECT_SPEED_DOWN_2,        0, NORMAL,    100, 10,   0, STATUS
 	move FEINT_ATTACK,             EFFECT_ALWAYS_HIT,         60, DARK,      100, 20,   0, PHYSICAL
-	move SWEET_KISS,               EFFECT_CONFUSE,             0, FAIRY,      75, 10,   0, STATUS
+	move DIVE,            		   EFFECT_FLY,  	          80, WATER,     100, 10,   0, PHYSICAL
 	move BELLY_DRUM,               EFFECT_BELLY_DRUM,          0, NORMAL,    100, 10,   0, STATUS
 	move SLUDGE_BOMB,              EFFECT_POISON_HIT,         90, POISON,    100, 10,  30, SPECIAL
 	move MUD_SLAP,                 EFFECT_ACCURACY_DOWN_HIT,  20, GROUND,    100, 10, 100, SPECIAL

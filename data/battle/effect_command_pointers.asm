@@ -199,6 +199,7 @@ BattleCommandPointers:
 	command wish
 	command taunt
 	command conversion2
+	command doubleunderwaterdamage
 	
 
 	enum_start -1, -1

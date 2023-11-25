@@ -185,7 +185,7 @@ BattleAnimations::
 	dw BattleAnim_MachPunch
 	dw BattleAnim_ScaryFace
 	dw BattleAnim_FeintAttack
-	dw BattleAnim_SweetKiss
+	dw BattleAnim_Dive
 	dw BattleAnim_BellyDrum
 	dw BattleAnim_SludgeBomb
 	dw BattleAnim_MudSlap
@@ -3870,8 +3870,12 @@ BattleAnim_Dig:
 
 .hit
 	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_bgeffect ANIM_BG_ENTER_MON, $0, $1, $0
+	anim_wait 24
+	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj ANIM_OBJ_01, -15, 0,   7, 0, $0
 	anim_wait 32
+	anim_ret
 .fail
 	anim_bgeffect ANIM_BG_ENTER_MON, $0, $1, $0
 	anim_wait 32
@@ -5007,14 +5011,19 @@ BattleAnim_FeintAttack:
 	anim_wait 4
 	anim_ret
 
-BattleAnim_SweetKiss:
-	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_ANGELS
-	anim_bgeffect ANIM_BG_07, $0, $2, $0
-	anim_obj ANIM_OBJ_97,  12, 0,   5, 0, $0
-	anim_sound 0, 1, SFX_SWEET_KISS
-	anim_wait 32
-	anim_sound 0, 1, SFX_SWEET_KISS_2
-	anim_obj ANIM_OBJ_HEART,  15, 0,   5, 0, $0
+BattleAnim_Dive:
+	anim_2gfx ANIM_GFX_SAND, ANIM_GFX_HIT
+	anim_jumpif $0, BattleAnim_Dig.hit
+	anim_jumpif $2, BattleAnim_Dig.fail
+	anim_call BattleAnim_FollowPlayerHead_0
+	anim_bgeffect ANIM_BG_BOUNCE_DOWN, $0, $1, $0
+	anim_sound 0, 0, SFX_WATER_GUN
+	anim_wait 16
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_wait 8
+	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
+;	anim_obj ANIM_OBJ_56, 72, 112, $0
+	anim_call BattleAnim_ShowMon_0
 	anim_wait 40
 	anim_ret
 

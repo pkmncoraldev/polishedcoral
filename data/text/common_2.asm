@@ -660,6 +660,11 @@ UnknownText_0x1c0d6c::
 	text ""
 	line "dug a hole!"
 	prompt
+	
+UnknownText_Dive::
+	text ""
+	line "dove underwater!"
+	prompt
 
 UnknownText_0x1c0db0::
 	text "Huh?"

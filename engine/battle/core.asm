@@ -65,8 +65,8 @@ DoBattle: ; 3c000
 .found_mon
 	call Call_LoadTempTileMapToTileMap
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jp z, BattleMenu ; No real turns in a tutorial
+;	cp BATTLETYPE_TUTORIAL
+;	jp z, BattleMenu ; No real turns in a tutorial
 	cp BATTLETYPE_SAFARI
 	jp z, SafariBattleTurn ; do not send out a player mon in a Safari Battle
 	xor a
@@ -1142,7 +1142,7 @@ HandleResidualDamage:
 	ld de, ANIM_SAP
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_UNDERWATER
 	call z, Call_PlayBattleAnim_OnlyIfVisible
 	call SwitchTurn
 
@@ -1302,7 +1302,7 @@ HandleWrap: ; 3c874
 
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_UNDERWATER
 	jr nz, .skip_anim
 	call SwitchTurn
 	xor a
@@ -5061,8 +5061,8 @@ BattleMenu: ; 3e139
 	call LoadTempTileMapToTileMap
 
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .ok
+;	cp BATTLETYPE_TUTORIAL
+;	jr z, .ok
 	cp BATTLETYPE_SAFARI
 	jr z, .ok
 	call EmptyBattleTextBox
@@ -5258,8 +5258,8 @@ BattleMenu_SafariBall:
 	call LoadStandardMenuDataHeader
 
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .tutorial
+;	cp BATTLETYPE_TUTORIAL
+;	jr z, .tutorial
 	cp BATTLETYPE_CONTEST
 	jr z, .contest
 	cp BATTLETYPE_SAFARI
@@ -5275,12 +5275,12 @@ BattleMenu_SafariBall:
 	jr z, .didnt_use_item
 	jr .got_item
 
-.tutorial
-	farcall TutorialPack
-	ld a, POKE_BALL
-	ld [wCurItem], a
-	call DoItemEffect
-	jr .got_item
+;.tutorial
+;	farcall TutorialPack
+;	ld a, POKE_BALL
+;	ld [wCurItem], a
+;	call DoItemEffect
+;	jr .got_item
 
 .safari
 	ld a, [wSafariBallsRemaining]
@@ -5339,8 +5339,8 @@ BattleMenu_SafariBall:
 	call _LoadBattleFontsHPBar
 	call ClearSprites
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .tutorial2
+;	cp BATTLETYPE_TUTORIAL
+;	jr z, .tutorial2
 	cp BATTLETYPE_SAFARI
 	jr z, .tutorial2
 	call GetMonBackpic
@@ -7765,7 +7765,7 @@ _BattleRandom:: ; 3edd8
 Call_PlayBattleAnim_OnlyIfVisible: ; 3ee0f
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_UNDERWATER
 	ret nz
 ; 3ee17
 

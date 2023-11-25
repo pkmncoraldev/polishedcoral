@@ -165,3 +165,4 @@ MoveEffectsPointers:
 	dw DoSleep
 	dw Wish
 	dw Taunt
+	dw Surf

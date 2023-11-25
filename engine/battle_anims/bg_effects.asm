@@ -2676,12 +2676,12 @@ BGEffect_CheckFlyDigStatus: ; c9042 (32:5042)
 	xor [hl]
 	jr nz, .player
 	ld a, [wEnemySubStatus3] ; EnemySubStatus3
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_UNDERWATER
 	ret
 
 .player
 	ld a, [wPlayerSubStatus3] ; PlayerSubStatus3
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_UNDERWATER
 	ret
 
 ; c906f (32:506f)

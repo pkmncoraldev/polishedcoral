@@ -184,7 +184,7 @@ MoveDescriptions::
 	dw MachPunchDescription
 	dw ScaryFaceDescription
 	dw FeintAttackDescription
-	dw SweetKissDescription
+	dw DiveDescription
 	dw BellyDrumDescription
 	dw SludgeBombDescription
 	dw MudSlapDescription
@@ -523,7 +523,6 @@ FieryDanceDescription:
 	
 ConfuseRayDescription:
 SupersonicDescription:
-SweetKissDescription:
 	db   "A move that may"
 	next "confuse the foe.@"
 
@@ -682,6 +681,10 @@ RockWreckerDescription:
 
 DigDescription:
 	db   "1st turn: Burrow"
+	next "2nd turn: Attack@"
+	
+DiveDescription:
+	db   "1st turn: Dive"
 	next "2nd turn: Attack@"
 
 FairyWindDescription:

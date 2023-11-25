@@ -290,7 +290,7 @@ PokeBallEffect: ; e8a2
 
 .not_porygon
 	ld a, [wEnemySubStatus3] ; BATTLE_VARS_SUBSTATUS3_OPP
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_UNDERWATER
 	jp nz, Ball_MonIsHiddenMessage
 
 	ld a, [wPartyCount]

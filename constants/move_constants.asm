@@ -185,7 +185,7 @@
 	const MACH_PUNCH   ; $b7
 	const SCARY_FACE_COTTON_SPORE_STRING_SHOT   ; $b8
 	const FEINT_ATTACK ; $b9
-	const SWEET_KISS   ; $ba - REMOVE
+	const DIVE   ; $ba
 	const BELLY_DRUM   ; $bb
 	const SLUDGE_BOMB  ; $bc
 	const MUD_SLAP     ; $bd

@@ -238,7 +238,6 @@ CrossroadsCutscene2:
 	appear CROSSROADS_COLBY
 	applyonemovement CROSSROADS_COLBY, step_down
 	pause 10
-;	applyonemovement PLAYER, slow_step_down
 	applyonemovement PLAYER, show_person
 	pause 5
 	disappear CROSSROADS_COLBY

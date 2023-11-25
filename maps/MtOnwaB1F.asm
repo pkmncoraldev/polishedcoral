@@ -4,7 +4,7 @@ MtOnwaB1F_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 7 ; warp events
-	warp_def 15, 17, 4, MT_ONWA_2F
+	warp_def 15, 17, 5, MT_ONWA_1F
 	warp_def 19, 31, 4, MT_ONWA_B1F
 	warp_def  3,  5, 5, MT_ONWA_B1F
 	warp_def 37, 29, 2, MT_ONWA_B1F

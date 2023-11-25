@@ -164,6 +164,7 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass BIRD_KEEPER
+	const TED
 	const BRYANT
 	const TODD
 	const RANDY
@@ -210,7 +211,6 @@ PLAYER_F EQU __enum__
 	const STEVEN
 	const GILL
 	const HARVEY
-	const TED
 	const LEROY
 	const DARRYL
 	const HENRY
@@ -268,6 +268,8 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass POKEMANIAC
+	const PAUL
+	const DEREK
 	const CARLOS
 	const TRISTEN
 	const SIMION
@@ -420,6 +422,8 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass BLACKBELT_T
+	const HIRO
+	const NAKA
 	const TOSHI
 	const ZERO
 

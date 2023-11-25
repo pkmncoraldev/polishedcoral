@@ -31,8 +31,8 @@ MAP_NONE   EQU 0
 	map_const STARGLOW_CAVERN_2F,                         14, 13 ;  9
 	map_const STARGLOW_CAVERN_3F,                          4,  8 ; 10
 	map_const STARGLOW_CAVERN_FOSSIL_ROOM,                 4,  6 ; 11
-	map_const MT_ONWA_1F,                       		  14, 13 ; 12
-	map_const MT_ONWA_2F,                                 17, 14 ; 13
+	map_const MT_ONWA_1F,                       		  29, 14 ; 12
+	map_const MT_ONWA_2F,                                 14, 10 ; 13
 	map_const MT_ONWA_B1F,								  18, 20 ; 14
 	map_const MT_ONWA_B2F,								  23, 15 ; 15
 	map_const MT_ONWA_B3F,								  11, 14 ; 16

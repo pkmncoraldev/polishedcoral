@@ -5,8 +5,8 @@ MtOnwaCliff_MapScriptHeader:
 	callback MAPCALLBACK_TILES, MtOnwaCliffCallback
 
 	db 2 ; warp events
-	warp_def 21, 28, 2, MT_ONWA_1F
-	warp_def 33, 4, 1, MT_ONWA_2F
+	warp_def 21, 28, 2, MT_ONWA_2F
+	warp_def 33, 4, 8, MT_ONWA_1F
 
 	db 0 ; coord events
 
@@ -15,7 +15,7 @@ MtOnwaCliff_MapScriptHeader:
 
 	db 6 ; object events
 	person_event SPRITE_ROCKER, 15, 30, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerMtOnwaOutside_1, -1
-	person_event SPRITE_HIKER, 13, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerMtOnwaOutside_2, -1
+	person_event SPRITE_BIRD_KEEPER, 13, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerMtOnwaOutside_2, -1
 	person_event SPRITE_COOLTRAINER_F, 29, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerMtOnwaOutside_3, -1
 	person_event SPRITE_YOUNGSTER, 8, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, MtOnwaPanNPC, EVENT_MT_ONWA_NPC_1
 	person_event SPRITE_CUTE_GIRL, 8, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, MtOnwaPanNPC, EVENT_MT_ONWA_NPC_2
@@ -177,7 +177,7 @@ TrainerMtOnwaOutside_1:
 	done
 	
 TrainerMtOnwaOutside_2:
-	generictrainer HIKER, TED, EVENT_BEAT_MT_ONWA_CLIFF_TRAINER_2, .SeenText, .BeatenText
+	generictrainer BIRD_KEEPER, TED, EVENT_BEAT_MT_ONWA_CLIFF_TRAINER_2, .SeenText, .BeatenText
 
 	text "You're strong,"
 	line "alright."

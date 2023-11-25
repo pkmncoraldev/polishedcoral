@@ -4,7 +4,7 @@ MtOnwaLowerCliff_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 20, 2, MT_ONWA_2F
+	warp_def 7, 20, 11, MT_ONWA_1F
 	warp_def 17, 6, 2, DAYBREAK_GROTTO_2
 
 	db 0 ; coord events

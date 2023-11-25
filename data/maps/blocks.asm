@@ -519,11 +519,11 @@ MtOnwaB2F_BlockData:
 MtOnwaB3F_BlockData:
 	INCBIN "maps/MtOnwaB3F.ablk.lz"
 	
-MtOnwaCliff_BlockData:
-	INCBIN "maps/MtOnwaCliff.ablk.lz"
-	
 	
 SECTION "Map Blockdata 2", ROMX
+	
+MtOnwaCliff_BlockData:
+	INCBIN "maps/MtOnwaCliff.ablk.lz"
 	
 MtOnwaLowerCliff_BlockData:
 	INCBIN "maps/MtOnwaLowerCliff.ablk.lz"

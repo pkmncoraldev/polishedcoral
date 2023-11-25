@@ -3,66 +3,73 @@ MtOnwa2F_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 4 ; warp events
-	warp_def 13, 31, 2, MT_ONWA_CLIFF
-	warp_def 1, 9, 1, MT_ONWA_LOWER_CLIFF
-	warp_def 25, 19, 3, MT_ONWA_1F
-	warp_def 23, 19, 1, MT_ONWA_B1F
+	db 2 ; warp events
+	warp_def 15, 19, 7, MT_ONWA_1F
+	warp_def  1,  9, 1, MT_ONWA_CLIFF
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 2 ; bg events
+	bg_event  9, 14, SIGNPOST_ITEM + HP_UP, EVENT_MT_ONWA_2F_HIDDEN_HP_UP
+	bg_event 21, 16, SIGNPOST_ITEM + STAR_PIECE, EVENT_MT_ONWA_2F_HIDDEN_STAR_PIECE
 
-	db 2 ; object events
-	person_event SPRITE_JUGGLER, 13, 25, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerMtOnwa2_1, -1
-	person_event SPRITE_HIKER, 11,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, TrainerMtOnwa2_2, -1
+	db 4 ; object events
+	person_event SPRITE_BLACK_BELT, 10, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, TrainerMtOnwa2F_1, -1
+	person_event SPRITE_POKEMANIAC,  7,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerMtOnwa2F_2, -1
+	person_event SPRITE_BLACK_BELT,  2, 11, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerMtOnwa2F_3, -1
+	itemball_event 20,  6, SUPER_REPEL, 1, EVENT_MT_ONWA_2F_POKE_BALL
+	
 
-TrainerMtOnwa2_1:
-	generictrainer JUGGLER, QUINN, EVENT_BEAT_MT_ONWA_2F_TRAINER_1, .SeenText, .BeatenText
+TrainerMtOnwa2F_1:
+	generictrainer BLACKBELT_T, HIRO, EVENT_BEAT_MT_ONWA_2F_TRAINER_1, .SeenText, .BeatenText
 
-	text "We're all jugglers"
-	line "in the circus of"
-	cont "life."
+	text "We train deep in"
+	line "the mountains to"
+	cont "hone our bodies"
+	cont "and minds!"
 	done
 
 .SeenText:
-	text "It's really hard"
-	line "juggling work,"
-	cont "responsibilities,"
-	cont "and #MON train-"
-	cont "ing."
-	
-	para "It gets exhausting"
-	line "pretty quickly."
+	text "Have you come here"
+	line "to train your"
+	cont "body and mind?"
 	done
 
 .BeatenText:
-	text "I dropped the"
-	line "ball…"
+	text "I see."
 	done
-
-TrainerMtOnwa2_2:
-	generictrainer HIKER, LEROY, EVENT_BEAT_MT_ONWA_2F_TRAINER_2, .SeenText, .BeatenText
-
-	text "My LARVITAR can"
-	line "eat rocks, so it"
-	cont "never runs out of"
-	cont "food."
 	
-	para "Me, on the other"
-	line "hand…"
+TrainerMtOnwa2F_2:
+	generictrainer POKEMANIAC, DEREK, EVENT_BEAT_MT_ONWA_2F_TRAINER_2, .SeenText, .BeatenText
+
+	text "Your collection"
+	line "trumps mine!"
 	done
 
 .SeenText:
-	text "My POKEMON is"
-	line "always hungry."
+	text "Do you collect"
+	line "#MON too?"
 	
-	para "Like TRAINER, like"
-	line "#MON."
+	para "Let me see!"
 	done
 
 .BeatenText:
-	text "Ooooh…"
+	text "Aha!"
+	done
 	
-	para "I'm so hungry…"
+TrainerMtOnwa2F_3:
+	generictrainer BLACKBELT_T, NAKA, EVENT_BEAT_MT_ONWA_2F_TRAINER_3, .SeenText, .BeatenText
+
+	text "I have much more"
+	line "training to do!"
+	done
+
+.SeenText:
+	text "HIYAH!"
+	
+	para "Fight me!"
+	done
+
+.BeatenText:
+	text "Hmph!"
 	done

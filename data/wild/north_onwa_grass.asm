@@ -56,7 +56,34 @@
 	db 3, LEDYBA		;1%
 	
 	map_id DAYBREAK_GROTTO_1
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 4, CUBONE		;30%
+	db 4, GEODUDE		;30%
+	db 4, MACHOP		;20%
+	db 4, ZUBAT			;10%
+	db 4, MACHOP		;5%
+	db 4, ZUBAT			;4%
+	db 4, MACHOP		;1%
+	; day
+	db 4, CUBONE		;30%
+	db 4, GEODUDE		;30%
+	db 4, MACHOP		;20%
+	db 4, ZUBAT			;10%
+	db 4, MACHOP		;5%
+	db 4, ZUBAT			;4%
+	db 4, MACHOP		;1%
+	; nite
+	db 4, CUBONE		;30%
+	db 4, GEODUDE		;30%
+	db 4, MACHOP		;20%
+	db 4, ZUBAT			;10%
+	db 4, MACHOP		;5%
+	db 4, ZUBAT			;4%
+	db 4, MACHOP		;1%
+	
+	map_id DAYBREAK_GROTTO_2
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
 	db 4, CUBONE		;30%
 	db 4, GEODUDE		;30%

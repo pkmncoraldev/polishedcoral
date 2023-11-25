@@ -18,7 +18,6 @@
 ; * DVs cannot be $ff -- use $00 instead (ReadTrainerParty converts it to $ff)
 ; * "9" cannot be used in nicknames
 
-; TODO: boss trainers need better movesets, held items, natures, and abilities
 ; TODO: swap ABILITY_1 and ABILITY_2 in base data as need so that ABILITY_1 is the better one for default NPCs (e.g. NPCs should have Sturdy when possible)
 
 
@@ -1548,6 +1547,17 @@ BirdKeeperGroup:
 ; ================
 
 	; BIRD_KEEPER
+	db "TED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 18, SWABLU
+	db 19, NATU
+	db 16, TRUMBEAK
+	db -1 ; end
+	
+; ================
+
+	; BIRD_KEEPER
 	db "BRYANT@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -1951,9 +1961,9 @@ HikerGroup:
 	db "GILL@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 18, NUMEL
+	db 17, NUMEL
 		db AMNESIA, FIRE_SPIN, MAGNITUDE, FOCUS_ENERGY
-	db 17, CORSOLA
+	db 15, CORSOLA
 		db TACKLE_SCRATCH_POUND, DEFENSE_CURL_HARDEN_WITHDRAW, WATER_GUN, SOFTBOILED_MILK_DRINK_RECOVER
 	db -1 ; end
 
@@ -1963,20 +1973,9 @@ HikerGroup:
 	db "HARVEY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 18, ARON
-	db 19, NOIBAT
-	db 19, ZUBAT
-	db -1 ; end
-
-; ================
-
-	; HIKER
-	db "TED@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 19, KOFFING
-	db 20, GEODUDE
-	db 20, ZUBAT
+	db 16, ARON
+	db 18, NOIBAT
+	db 18, ZUBAT
 	db -1 ; end
 
 ; ================
@@ -1985,8 +1984,8 @@ HikerGroup:
 	db "LEROY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 18, LARVITAR
-	db 20, MAGBY
+	db 17, LARVITAR
+	db 19, MAGBY
 	db -1 ; end
 
 ; ================
@@ -2370,6 +2369,24 @@ OfficerGroup:
 
 PokemaniacGroup:
 ; ================================
+; ================
+
+	; POKEMANIAC
+	db "PAUL@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; POKEMANIAC
+	db "DEREK@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
 ; ================
 
 	; POKEMANIAC
@@ -2806,8 +2823,8 @@ JugglerGroup:
 	db "ERNIE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 19, SWABLU
-	db 22, RALTS
+	db 17, SWABLU
+	db 20, RALTS
 	db 16, MEDITITE
 	db -1 ; end
 
@@ -2817,8 +2834,8 @@ JugglerGroup:
 	db "WILLY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 18, NATU
-	db 18, MEDITITE
+	db 17, NATU
+	db 17, MEDITITE
 	db -1 ; end
 
 ; ================
@@ -2827,7 +2844,7 @@ JugglerGroup:
 	db "QUINN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 20, KOFFING
+	db 18, KOFFING
 	db 16, MEDITITE
 	db -1 ; end
 
@@ -3428,6 +3445,24 @@ BlackbeltGroup:
 ; ================
 
 	; BLACKBELT_T
+	db "HIRO@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BLACKBELT_T
+	db "NAKA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BLACKBELT_T
 	db "TOSHI@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -3578,7 +3613,8 @@ CooltrainerMGroup:
 	db "CODY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 21, PONYTA
+	db 21, KOFFING
+	db 20, ARON
 	db -1 ; end
 
 ; ================
@@ -3615,6 +3651,7 @@ CooltrainerFGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 21, NUMEL
+	db 20, SLUGMA
 	db -1 ; end
 
 ; ================

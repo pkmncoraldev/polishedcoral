@@ -3774,7 +3774,7 @@ ListMoves: ; 50d6f
 	farcall GetWorkUpName
 	jr .cont
 .not_workup
-	cp TRANSFORM_SKETCH_MIMIC_SPLASH
+	cp TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	jr nz, .not_transform
 	farcall GetTransformName
 	jr .cont

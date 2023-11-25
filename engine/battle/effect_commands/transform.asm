@@ -120,7 +120,7 @@ BattleCommand_transform:
 	inc de
 	and a
 	jr z, .done_move
-	cp TRANSFORM_SKETCH_MIMIC_SPLASH
+	cp TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	ld a, 1
 	jr z, .done_move
 	ld a, 5
@@ -149,7 +149,7 @@ BattleCommand_transform:
 	jr nz, .mimic_anims
 	; Animation is done "raw" to allow Imposter
 	; to use the correct animation
-	ld de, TRANSFORM_SKETCH_MIMIC_SPLASH
+	ld de, TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	call FarPlayBattleAnimation
 	jr .after_anim
 
@@ -247,7 +247,7 @@ BattleCommand_sketch: ; 35a74
 	jp z, .fail
 	cp STRUGGLE
 	jp z, .fail
-	cp TRANSFORM_SKETCH_MIMIC_SPLASH
+	cp TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	jp z, .fail
 ; Fail if user already knows that move
 	ld c, NUM_MOVES
@@ -264,7 +264,7 @@ BattleCommand_sketch: ; 35a74
 .find_sketch
 	dec c
 	ld a, [hld]
-	cp TRANSFORM_SKETCH_MIMIC_SPLASH
+	cp TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	jr nz, .find_sketch
 	inc hl
 ; The Sketched move is loaded to that slot.

@@ -20,7 +20,7 @@ MimicCommand::
 	jp z, .fail
 	cp STRUGGLE
 	jp z, .fail
-	cp TRANSFORM_SKETCH_MIMIC_SPLASH
+	cp TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	jr z, .fail
 	ld b, a
 	ld c, NUM_MOVES
@@ -33,7 +33,7 @@ MimicCommand::
 	dec hl
 .find_mimic
 	ld a, [hld]
-	cp TRANSFORM_SKETCH_MIMIC_SPLASH
+	cp TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	jr nz, .find_mimic
 	inc hl
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP

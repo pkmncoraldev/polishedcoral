@@ -327,7 +327,7 @@ PrintMoveDesc: ; 2cb3e
 	push hl
 	ld hl, MoveDescriptions
 	ld a, [wCurSpecies]
-	cp TRANSFORM_SKETCH_MIMIC_SPLASH
+	cp TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	jr z, .transform_multimove
 	dec a
 	ld c, a

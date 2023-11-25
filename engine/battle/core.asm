@@ -3647,7 +3647,7 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 .return
 	ld a, $13
 	ld [wKickCounter], a
-	ld de, TRANSFORM_SKETCH_MIMIC_SPLASH
+	ld de, TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	call ForcePlayBattleAnim
 	
 	ld c, 60
@@ -3656,7 +3656,7 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 .not_first
 	ld a, $13
 	ld [wKickCounter], a
-	ld de, TRANSFORM_SKETCH_MIMIC_SPLASH
+	ld de, TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	call ForcePlayBattleAnim
 	jr .cont
 .porygon

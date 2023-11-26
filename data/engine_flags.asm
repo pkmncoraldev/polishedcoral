@@ -235,6 +235,7 @@ EngineFlags: ; 80462
 	engine_flag wGotHMFlags, 2 ; fly
 	engine_flag wGotHMFlags, 3 ; rock climb
 	engine_flag wGotHMFlags, 4 ; surf
+	engine_flag wGotHMFlags, 5 ; dive
 
 	engine_flag wMetGymLeaderFlags, 0  ; stanley
 	engine_flag wMetGymLeaderFlags, 1  ; rodney

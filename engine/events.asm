@@ -353,6 +353,8 @@ CheckTileEvent: ; 96874
 
 .warp_tile
 	ld a, [wPlayerStandingTile]
+	cp COLL_DIVE_WARP
+	jr z, .warp
 	cp COLL_HOLE
 	jr nz, .not_pit
 	ld a, PLAYEREVENT_FALL
@@ -361,6 +363,11 @@ CheckTileEvent: ; 96874
 
 .not_pit
 	ld a, PLAYEREVENT_WARP
+	scf
+	ret
+	
+.warp
+	ld a, PLAYEREVENT_DIVE_WARP
 	scf
 	ret
 
@@ -1364,6 +1371,7 @@ PlayerEventScriptPointers: ; 96c0c
 	dba HatchEggScript           ; PLAYEREVENT_HATCH
 	dba ChangeDirectionScript    ; PLAYEREVENT_JOYCHANGEFACING
 	dba FindTMHMInBallScript     ; PLAYEREVENT_TMHMBALL
+	dba DiveWarpScript			 ; PLAYEREVENT_DIVE_WARP
 	dba Invalid_0x96c2d          ; NUM_PLAYER_EVENTS
 ; 96c2d
 
@@ -1372,6 +1380,12 @@ HatchEggScript: ; 96c2f
 Invalid_0x96c2d: ; 96c2d
 	end
 ; 96c34
+
+DiveWarpScript: ; 96c34
+	callasm CheckStopLandmarkTimer
+;	warpsound
+	newloadmap MAPSETUP_DOOR
+	end
 
 WarpToNewMapScript: ; 96c34
 	callasm CheckStopLandmarkTimer
@@ -1474,6 +1488,9 @@ LoadScriptBDE:: ; 97c4f
 ; 97c5f
 
 CheckFacingTileEvent: ; 97c5f
+	ld a, [wPlayerStandingTile]
+	cp COLL_DIVE
+	jr z, .dive
 	call GetFacingTileCoord
 	ld [wEngineBuffer1], a
 	ld c, a
@@ -1501,6 +1518,11 @@ CheckFacingTileEvent: ; 97c5f
 	ld a, $ff
 	scf
 	ret
+
+.dive
+	farcall TryDiveOW
+	jr c, .done
+	jr .noevent
 
 .rockclimb
 	farcall TryRockClimbOW

@@ -1662,6 +1662,161 @@ UnknownText_0xcee6: ; 0xcee6
 	text_jump UnknownText_0x1c08bc
 	db "@"
 	
+DiveFunction: ; cade
+	call .TryDive
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.TryDive: ; cae7
+	ld de, ENGINE_SIXTHBADGE
+	farcall CheckBadge
+	ld a, $80
+	ret c
+	call CheckMapCanDive
+	jr c, .failed
+	ld hl, Script_DiveFromMenu
+	call QueueScript
+	ld a, $81
+	ret
+
+.failed
+	call FieldMoveFailed
+	ld a, $80
+	ret
+
+CheckMapCanDive:
+; I have literally 0 idea why this needs to be here.
+; It just won't work without it. Even if I xor a or scf by itself it doesnt work. It HAS to have the [wTileUp] check...
+; I gave it a tile that will never be nearby.
+	ld a, [wTileUp]
+	cp COLL_DODRIO_JUMP
+	jr nz, .failed
+	xor a
+	ret
+
+.failed
+	scf
+	ret
+	
+Script_DiveFromMenu: ; 0xcb1c
+	reloadmappart
+	special UpdateTimePals
+
+Script_UsedDive: ; 0xcb20
+	callasm PrepareOverworldMove
+	writetext .Text_UsedDive
+	waitbutton
+	closetext
+	scall FieldMovePokepicScript
+	jump Script_AutoDive
+
+.Text_UsedDive:
+	text_jump UsedDiveText
+	db "@"
+
+Script_AutoDive:
+	special FadeOutPalettesBlack
+	playsound SFX_WATER_GUN
+	pause 10
+	callasm DiveWarpAsm
+	warpcheck
+	end
+
+TryDiveOW:: ; cb56
+	ld a, [wOptions1]
+	bit DEBUG_MODE, a
+	jr nz, .debugdive
+
+	call HasDive
+	jr z, .no
+	ld a, BANK(Script_AskDive)
+	ld hl, Script_AskDive
+	call CallScript
+	scf
+	ret
+	
+.no
+	ld a, BANK(Script_SeaDeep)
+	ld hl, Script_SeaDeep
+	call CallScript
+	scf
+	ret
+	
+.debugdive
+	ld a, BANK(DebugDive)
+	ld hl, DebugDive
+	call CallScript
+	scf
+	ret
+
+DiveWarpAsm:
+	ld a, COLL_DIVE_WARP
+	ld [wPlayerStandingTile], a
+	ret
+
+Script_CantDoDive: ; 0xcb7e
+	jumptext .Text_CantDoDive
+
+.Text_CantDoDive: ; 0xcb81
+	text_jump CantDoDiveText
+	db "@"
+
+Script_SeaDeep:
+	opentext
+	writetext .SeaDeep
+	waitbutton
+	endtext
+
+.SeaDeep:
+	text_jump CantDoDiveText
+	db "@"
+
+Script_AskDive: ; 0xcb86
+	opentext
+	writetext .AskUseDive
+	yesorno
+	iftrue Script_UsedDive
+	endtext
+.no
+	end
+
+.AskUseDive: ; 0xcb90
+	text_jump AskUseDiveText
+	db "@"
+	
+DebugDive:
+	opentext
+	writetext DebugFieldMoveText
+	closetext
+	jump Script_AutoDive
+	
+HasDive: ; cf7c
+	ld d, DIVE
+	call CheckPartyCanLearnMove
+	jr c, .no
+	
+	ld de, ENGINE_GOT_DIVE
+	call CheckEngineFlag
+	jr c, .no
+	
+	ld de, ENGINE_SIXTHBADGE
+	call CheckEngineFlag
+	jr c, .no
+	
+	call CheckMapCanDive
+	jr c, .no
+	
+.yes
+	xor a
+	jr .done
+
+.no
+	ld a, 1
+.done
+	ld [wScriptVar], a
+	ret
+	
 RockClimbFunction: ; cade
 	call .TryRockClimb
 	and $7f
@@ -1769,7 +1924,10 @@ TryRockClimbOW:: ; cb56
 	ret
 	
 .no
-	xor a
+	ld a, BANK(Script_CouldClimb)
+	ld hl, Script_CouldClimb
+	call CallScript
+	scf
 	ret
 	
 .debugrockclimb
@@ -1783,6 +1941,16 @@ Script_CantDoRockClimb: ; 0xcb7e
 	jumptext .Text_CantDoRockClimb
 
 .Text_CantDoRockClimb: ; 0xcb81
+	text_jump CantDoRockClimbText
+	db "@"
+
+Script_CouldClimb:
+	opentext
+	writetext .CouldClimbText
+	waitbutton
+	endtext
+	
+.CouldClimbText
 	text_jump CantDoRockClimbText
 	db "@"
 

@@ -284,6 +284,25 @@ UnknownText_0x1c06bf::
 	line "WATERFALL?"
 	done
 
+AskUseDiveText::
+	text "The sea is deep"
+	line "here!"
+	
+	para "Do you want to use"
+	line "DIVE?"
+	done
+	
+UsedDiveText::
+	text_from_ram wStringBuffer2
+	text " used"
+	line "DIVE!"
+	done
+	
+CantDoDiveText::
+	text "The sea is deep"
+	line "here!"
+	done
+
 AskUseRockClimbText::
 	text "Looks like a #-"
 	line "MON could climb"

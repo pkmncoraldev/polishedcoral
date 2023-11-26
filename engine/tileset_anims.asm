@@ -205,11 +205,13 @@ TilesetTrainAnim::
 	dw NULL,  DoneTileAnimation
 	
 TilesetSunsetAnim::
-	dw VTiles2 tile $14, WriteTileToBuffer
-	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $0, WriteTileToBuffer
 	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw VTiles2 tile $0, WriteTileFromBuffer
 	dw NULL,  WaitTileAnimation
-	dw VTiles2 tile $14, WriteTileFromBuffer
+	dw WaterFrames, AnimateWaterfallTiles2
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw WaterfallFrames, AnimateWaterfallTiles
@@ -219,7 +221,6 @@ TilesetSunsetAnim::
 	dw NULL,  WaitTileAnimation
 	dw ShorelineFrames,  AnimateWaterfallTiles
 	dw ShorelineFrames2,  AnimateWaterfallTiles
-	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -711,44 +712,6 @@ AnimateTopofWaterfall:
 
 .frame1 INCBIN "gfx/tilesets/waterfall/6.2bpp"
 .frame2 INCBIN "gfx/tilesets/waterfall/7.2bpp"
-
-
-AnimateWaterTile: ; fc402
-; Draw a water tile for the current frame in VRAM tile at de.
-
-; Save sp in bc (see WriteTile).
-	ld hl, sp+0
-	ld b, h
-	ld c, l
-
-	ld a, [wTileAnimationTimer]
-
-; 4 tile graphics, updated every other frame.
-	and 3 << 1
-
-; 2 x 8 = 16 bytes per tile
-	add a
-	add a
-	add a
-
-	add WaterTileFrames % $100
-	ld l, a
-	ld a, 0
-	adc WaterTileFrames / $100
-	ld h, a
-
-; Stack now points to the start of the tile for this frame.
-	ld sp, hl
-
-	ld l, e
-	ld h, d
-
-	jp WriteTile
-; fc41c
-
-WaterTileFrames: ; fc41c
-	INCBIN "gfx/tilesets/water/water.2bpp"
-; fc45c
 
 
 ForestTreeLeftAnimation: ; fc45c
@@ -1323,6 +1286,14 @@ FanTiles: INCBIN "gfx/tilesets/fan/1.2bpp"
 DesertLightFrames: dw VTiles2 tile $34, DesertLightTiles
 
 DesertLightTiles: INCBIN "gfx/tilesets/desertlight/1.2bpp"
+
+WaterFrames: dw VTiles2 tile $14, WaterTiles
+
+WaterTiles: INCBIN "gfx/tilesets/water/water.2bpp"
+
+WaterFrames2: dw VTiles2 tile $15, WaterTiles2
+
+WaterTiles2: INCBIN "gfx/tilesets/water/water2.2bpp"
 
 	
 WriteTwoTiles:

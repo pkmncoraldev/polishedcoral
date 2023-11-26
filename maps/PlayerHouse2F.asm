@@ -403,6 +403,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_GOT_FLY
 	setflag ENGINE_GOT_ROCK_CLIMB
 	setflag ENGINE_GOT_SURF
+	setflag ENGINE_GOT_DIVE
 	givetmhm TM_CURSE
 	givetmhm TM_HAIL
 	givetmhm TM_ZAP_CANNON
@@ -439,6 +440,7 @@ PlayerHouseDebugPoster:
 	givetmhm HM_SURF
 	givetmhm HM_ROCK_SMASH
 	givetmhm HM_ROCK_CLIMB
+	givetmhm HM_DIVE
 	setflag ENGINE_FLYPOINT_HOME
 	setflag ENGINE_FLYPOINT_SUNSET
 	setflag ENGINE_FLYPOINT_DAYBREAK

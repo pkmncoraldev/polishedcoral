@@ -1,6 +1,8 @@
 CheckWarpCollision:: ; 1499a
 ; Is this tile a warp?
 	ld a, [wPlayerStandingTile]
+	cp COLL_DIVE_WARP
+	jr z, .warp
 	cp COLL_HOLE
 	jr z, .warp
 	and $f0

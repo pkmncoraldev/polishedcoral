@@ -82,7 +82,7 @@ TMHMMoves:
 	db FLY                                 ; HM02
 	db SURF                                ; HM03
 	db STRENGTH                            ; HM04
-	db EGG_BOMB                            ; HM05
+	db DIVE		                           ; HM05
 	db WATERFALL                           ; HM06
 	db ROCK_SMASH                          ; HM07 (Glint Apartments)
 	db ROCK_CLIMB                          ; HM08

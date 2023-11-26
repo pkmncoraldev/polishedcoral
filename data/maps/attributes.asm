@@ -316,14 +316,14 @@ ENDM
 	map_attributes ShimmerCity, SHIMMER_CITY, $35, NORTH | WEST | EAST
 	connection north, Route16, ROUTE_16, 3
 	connection west, ShimmerHarbor, SHIMMER_HARBOR, -1
-	connection east, Route19, ROUTE_19, 0
+	connection east, Route19, ROUTE_19, -2
 	
 	map_attributes ShimmerHarbor, SHIMMER_HARBOR, $35, EAST
 	connection east, ShimmerCity, SHIMMER_CITY, 1
 	
 	map_attributes Route19, ROUTE_19, $30, SOUTH | WEST
 	connection south, Route20, ROUTE_20, 11
-	connection west, ShimmerCity, SHIMMER_CITY, 0
+	connection west, ShimmerCity, SHIMMER_CITY, 2
 	
 	map_attributes Route20, ROUTE_20, $30, NORTH | SOUTH
 	connection north, Route19, ROUTE_19, -11

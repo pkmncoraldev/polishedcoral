@@ -62,3 +62,27 @@
 	tilecoll WATER, WATER, DIVE, DIVE ; 3d
 	tilecoll DIVE, DIVE, WATER, WATER ; 3e
 	tilecoll DIVE, WATER, DIVE, WATER ; 3f
+	tilecoll WATER, DIVE, WATER, DIVE ; 40
+	tilecoll WATER, WATER, DIVE, DIVE ; 41
+	tilecoll DIVE, DIVE, WATER, WATER ; 42
+	tilecoll DIVE, WATER, DIVE, WATER ; 43
+	tilecoll DIVE, DIVE, DIVE, DIVE ; 44
+	tilecoll DIVE, DIVE, DIVE, DIVE ; 45
+	tilecoll WATER, WATER, WATER, WATER ; 46
+	tilecoll WATER, WATER, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 47
+	tilecoll WALL, WALL, WALL, WATER ; 48
+	tilecoll WALL, WALL, WATER, WATER ; 49
+	tilecoll WALL, WALL, WATER, WALL ; 4a
+	tilecoll WALL, WALL, WALL, WALL ; 4b
+	tilecoll WALL, WATER, WALL, WATER ; 4c
+	tilecoll WALL, WALL, WALL, WALL ; 4d
+	tilecoll WATER, WALL, WATER, WALL ; 4e
+	tilecoll WALL, WALL, WALL, WALL ; 4f
+	tilecoll WALL, WATER, WALL, WALL ; 50
+	tilecoll WATER, WATER, WALL, WALL ; 51
+	tilecoll WATER, WALL, WALL, WALL ; 52
+	tilecoll WALL, WALL, WALL, WALL ; 53
+	tilecoll WALL, WATER, WATER, WATER ; 54
+	tilecoll WATER, WATER, WALL, WATER ; 55
+	tilecoll WATER, WALL, WATER, WATER ; 56
+	tilecoll WATER, WATER, WATER, WALL ; 57

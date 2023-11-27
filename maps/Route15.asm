@@ -3,8 +3,50 @@ Route15_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 1 ; warp events
+	db 43 ; warp events
 	warp_event 36,  7, UNDERGROUND_PASSAGE_ENTRANCE, 1
+	warp_event  6, 22, ROUTE_14_15_UNDERWATER, 17
+	warp_event  7, 22, ROUTE_14_15_UNDERWATER, 18
+	warp_event  6, 23, ROUTE_14_15_UNDERWATER, 19
+	warp_event  7, 23, ROUTE_14_15_UNDERWATER, 20
+	warp_event 18, 19, ROUTE_14_15_UNDERWATER, 21
+	warp_event 19, 19, ROUTE_14_15_UNDERWATER, 22
+	warp_event 17, 20, ROUTE_14_15_UNDERWATER, 23
+	warp_event 18, 20, ROUTE_14_15_UNDERWATER, 24
+	warp_event 19, 20, ROUTE_14_15_UNDERWATER, 25
+	warp_event 20, 20, ROUTE_14_15_UNDERWATER, 26
+	warp_event 17, 21, ROUTE_14_15_UNDERWATER, 27
+	warp_event 18, 21, ROUTE_14_15_UNDERWATER, 28
+	warp_event 19, 21, ROUTE_14_15_UNDERWATER, 29
+	warp_event 20, 21, ROUTE_14_15_UNDERWATER, 30
+	warp_event 18, 22, ROUTE_14_15_UNDERWATER, 31
+	warp_event 19, 22, ROUTE_14_15_UNDERWATER, 32
+	warp_event 70, 16, ROUTE_14_15_UNDERWATER, 33
+	warp_event 71, 16, ROUTE_14_15_UNDERWATER, 34
+	warp_event 70, 17, ROUTE_14_15_UNDERWATER, 35
+	warp_event 71, 17, ROUTE_14_15_UNDERWATER, 36
+	warp_event 63, 22, ROUTE_14_15_UNDERWATER, 37
+	warp_event 64, 22, ROUTE_14_15_UNDERWATER, 38
+	warp_event 65, 22, ROUTE_14_15_UNDERWATER, 39
+	warp_event 63, 23, ROUTE_14_15_UNDERWATER, 40
+	warp_event 64, 23, ROUTE_14_15_UNDERWATER, 41
+	warp_event 65, 23, ROUTE_14_15_UNDERWATER, 42
+	warp_event 68, 19, ROUTE_14_15_UNDERWATER, 43
+	warp_event 69, 19, ROUTE_14_15_UNDERWATER, 44
+	warp_event 66, 20, ROUTE_14_15_UNDERWATER, 45
+	warp_event 67, 20, ROUTE_14_15_UNDERWATER, 46
+	warp_event 68, 20, ROUTE_14_15_UNDERWATER, 47
+	warp_event 69, 20, ROUTE_14_15_UNDERWATER, 48
+	warp_event 66, 21, ROUTE_14_15_UNDERWATER, 49
+	warp_event 67, 21, ROUTE_14_15_UNDERWATER, 50
+	warp_event 68, 21, ROUTE_14_15_UNDERWATER, 51
+	warp_event 69, 21, ROUTE_14_15_UNDERWATER, 52
+	warp_event 68, 22, ROUTE_14_15_UNDERWATER, 53
+	warp_event 69, 22, ROUTE_14_15_UNDERWATER, 54
+	warp_event 70, 22, ROUTE_14_15_UNDERWATER, 55
+	warp_event 68, 23, ROUTE_14_15_UNDERWATER, 56
+	warp_event 69, 23, ROUTE_14_15_UNDERWATER, 57
+	warp_event 70, 23, ROUTE_14_15_UNDERWATER, 58
 
 	db 0 ; coord events
 

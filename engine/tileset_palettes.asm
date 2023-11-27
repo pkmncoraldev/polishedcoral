@@ -149,7 +149,18 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .mart
 	cp TILESET_HIGHWAY
 	jp z, .highway
+	cp TILESET_DIVE
+	jr z, .underwater
 	jp .do_nothing
+	
+.underwater
+	ld de, wUnknBGPals + 4 palettes
+	ld hl, UnderwaterPalette
+	ld bc, 2 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 	
 .cave
 	ld a, [wTimeOfDayPal]
@@ -1012,3 +1023,6 @@ INCLUDE "maps/palettes/bgpals/deserttemple.pal"
 
 BarBackAlleyPalette:
 INCLUDE "maps/palettes/bgpals/backalley.pal"
+
+UnderwaterPalette:
+INCLUDE "maps/palettes/bgpals/underwater.pal"

@@ -385,9 +385,9 @@ MAP_NONE   EQU 0
 	map_const BAR_BACK_ALLEY,							  10,  6 ; 15
 	map_const CROSSROADS,								  17, 14 ; 16
 	
-;	newgroup
+	newgroup
 	
-	
+	map_const ROUTE_14_15_UNDERWATER,					  36, 18 ; 1
 	
 	newgroup													 ; last
 	

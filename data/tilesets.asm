@@ -694,6 +694,27 @@ TilesetHighwayColl::
 INCLUDE "data/tilesets/highway_collision.asm"
 
 
+SECTION "Tileset Data - dive", ROMX
+
+TilesetDiveGFX0::
+INCBIN "gfx/tilesets/dive.2bpp.vram0.lz"
+
+TilesetDiveGFX1::
+INCBIN "gfx/tilesets/dive.2bpp.vram1.lz"
+
+TilesetDiveGFX2::
+INCBIN "gfx/tilesets/dive.2bpp.vram2.lz"
+
+TilesetDiveMeta::
+INCBIN "data/tilesets/dive_metatiles.bin.lz"
+
+TilesetDiveAttr::
+INCBIN "data/tilesets/dive_attributes.bin.lz"
+
+TilesetDiveColl::
+INCLUDE "data/tilesets/dive_collision.asm"
+
+
 SECTION "Tileset Headers", ROMX
 
 tileset: macro
@@ -739,4 +760,5 @@ Tilesets::
 	tileset TilesetAirport
 	tileset TilesetOrphanage
 	tileset TilesetHighway
+	tileset TilesetDive
 	tileset TilesetLavaCave

@@ -956,7 +956,15 @@ LoadMapPals::
 	jp z, .highway
 	cp TILESET_HAUNTED
 	jp z, .haunted
+	cp TILESET_DIVE
+	jr z, .underwater
 	jp .normal
+.underwater
+	ld hl, MapObjectPalsUnderwater
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
 .cave
 	ld a, [wTimeOfDayPal]
 	cp 3
@@ -2069,6 +2077,9 @@ INCLUDE "maps/palettes/obpals/spookhouse.pal"
 
 MapObjectPalsEvilMeowth::
 INCLUDE "maps/palettes/obpals/evilmeowth.pal"
+
+MapObjectPalsUnderwater::
+INCLUDE "maps/palettes/obpals/underwater.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

@@ -151,6 +151,7 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .highway
 	cp TILESET_DIVE
 	jr z, .underwater
+	call DiveSpotMapPals
 	jp .do_nothing
 	
 .underwater
@@ -749,6 +750,37 @@ LoadSpecialMapPalette: ; 494ac
 	and a
 	ret
 	
+DiveSpotMapPals:
+	ld a, [wMapGroup]
+	cp GROUP_ROUTE_5
+	jr z, .yes1
+	cp GROUP_ROUTE_14
+	jr z, .yes1
+	ret
+.yes1
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_5
+	jr z, .yes2
+	cp MAP_ROUTE_14
+	jr z, .yes2
+	cp MAP_ROUTE_15
+	jr z, .yes2
+	ret
+.yes2
+	ld hl, DiveSpotsPalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals + 3 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
+	
+	
 LoadSevenBGPalettes: ; 494f2
 	ld a, $5
 	ld de, wUnknBGPals
@@ -1026,3 +1058,6 @@ INCLUDE "maps/palettes/bgpals/backalley.pal"
 
 UnderwaterPalette:
 INCLUDE "maps/palettes/bgpals/underwater.pal"
+
+DiveSpotsPalette:
+INCLUDE "maps/palettes/bgpals/divespots.pal"

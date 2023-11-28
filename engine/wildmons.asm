@@ -235,9 +235,13 @@ TryWildEncounter::
 
 GetMapEncounterRate: ; 2a111
 	ld hl, wMornEncounterRate
+	ld a, [wTileset]
+	cp TILESET_DIVE
+	jr z, .skip
 	call CheckOnWater
 	ld a, 3
 	jr z, .ok
+.skip
 	ld a, [wTimeOfDay]
 	cp DUSK
 	jr nz, .ok
@@ -331,12 +335,16 @@ _ChooseWildEncounter:
 	inc hl
 	inc hl
 	inc hl
+	ld a, [wTileset]
+	cp TILESET_DIVE
+	jr z, .skip
 	push bc
 	call CheckOnWater
 	pop bc
 	ld de, WaterMonProbTable
 	ld b, $4
 	jr z, .got_table
+.skip
 	inc hl
 	inc hl
 	ld a, [wTimeOfDay]
@@ -607,6 +615,9 @@ ApplyAbilityEffectsOnEncounterMon:
 	ret
 
 LoadWildMonDataPointer: ; 2a200
+	ld a, [wTileset]
+	cp TILESET_DIVE
+	jr z, _GrassWildmonLookup
 	call CheckOnWater
 	jr z, _WaterWildmonLookup
 

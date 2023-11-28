@@ -405,4 +405,35 @@
 	db 20, BULBASAUR	;4%
 	db 20, BULBASAUR	;1%
 	
+	
+	
+	
+	
+	map_id ROUTE_14_15_UNDERWATER
+	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	; day
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	; nite
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;30%
+	db 20, BULBASAUR	;20%
+	db 20, BULBASAUR	;10%
+	db 20, BULBASAUR	;5%
+	db 20, BULBASAUR	;4%
+	db 20, BULBASAUR	;1%
+	
 	db -1 ; end

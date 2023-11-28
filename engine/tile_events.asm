@@ -64,6 +64,7 @@ CheckGrassCollision:: ; 149dd
 	db COLL_SAND
 	db COLL_FLOWERS
 	db COLL_FLOWERS_LEDGE_DOWN
+	db COLL_SEAWEED
 	db -1
 ; 149f5
 

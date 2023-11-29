@@ -960,7 +960,16 @@ LoadMapPals::
 	jr z, .underwater
 	jp .normal
 .underwater
+	ld a, [wPlayerPalette]
+	cp 4
+	jr z, .underwater_purple
 	ld hl, MapObjectPalsUnderwater
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+.underwater_purple
+	ld hl, MapObjectPalsUnderwaterPurple
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
@@ -2080,6 +2089,9 @@ INCLUDE "maps/palettes/obpals/evilmeowth.pal"
 
 MapObjectPalsUnderwater::
 INCLUDE "maps/palettes/obpals/underwater.pal"
+
+MapObjectPalsUnderwaterPurple::
+INCLUDE "maps/palettes/obpals/underwaterpurple.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

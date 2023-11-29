@@ -197,7 +197,7 @@ SpriteHeaders:
 	overworld_sprite PlankBridgeGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite PlankBridge2GFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite TrafficLightGFX, STANDING_SPRITE, PAL_OW_SILVER
-	overworld_sprite HangarPartsGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite HangarPartsGFX, BIG_MUK_SPRITE, PAL_OW_SILVER
 	overworld_sprite KoffingBeanGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite ClothesRacksGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite MiscBaggageGFX, STANDING_SPRITE, PAL_OW_SILVER

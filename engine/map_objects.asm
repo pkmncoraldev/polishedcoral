@@ -663,6 +663,8 @@ MapObjectMovementPattern:
 	ld a, [wTileset]
 	cp TILESET_LAB
 	jr z, .baggage
+	cp TILESET_DIVE
+	jr z, .bubbles
 ;shadow
 	ld a, [wPlayerSpriteX]
 	ld [wObject1SpriteX], a
@@ -674,6 +676,34 @@ MapObjectMovementPattern:
 	ld a, [wPlayerStandingMapY]
 	ld [wObject1StandingMapY], a
 	ret
+.bubbles:
+	ld a, [wRanchRaceSeconds]
+	cp 5
+	jr z, .bubble_five
+	ld a, 1
+	ld [wRanchRaceFrames], a
+	ld a, [wPlayerStandingMapX]
+	ld [wObject1StandingMapX], a
+	xor a
+	ld [wObject1Flags + 1], a
+	jr .return
+.bubble_five
+	xor a
+	ld [wRanchRaceSeconds], a
+	ld [wRanchRaceFrames], a
+	ld a, [wPlayerSpriteX]
+	ld [wObject1SpriteX], a
+	ld a, [wPlayerSpriteY]
+	ld [wObject1SpriteY], a
+	ld a, [wPlayerStandingMapX]
+	ld [wObject1StandingMapX], a
+	ld [wObject1LastMapX], a
+	ld a, [wPlayerStandingMapY]
+	ld [wObject1StandingMapY], a
+	ld a, [wPlayerStandingMapY]
+	ld [wObject1LastMapY], a
+	ret
+	
 .baggage:
 	ld a, [wRanchRaceSeconds]
 	cp 0
@@ -697,16 +727,11 @@ MapObjectMovementPattern:
 	ld a, [wRanchRaceFrames]
 	and %00000011
 	call InitStep
-;	call Function6ec1 ; check whether the object can move in that direction
-;	jp c, .NewDuration
-;	call UpdateTallGrassFlags
 	ld hl, OBJECT_ACTION
 	add hl, bc
 	ld [hl], PERSON_ACTION_STAND
 	ld hl, wCenteredObject
 	ld a, [hMapObjectIndexBuffer]
-;	cp [hl]
-;	jp z, .load_6
 	ld hl, OBJECT_STEP_TYPE
 	add hl, bc
 	ld [hl], STEP_TYPE_NPC_WALK

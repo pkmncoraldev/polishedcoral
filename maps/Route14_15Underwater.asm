@@ -1,7 +1,8 @@
 Route14_15Underwater_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, Route14_15UnderwaterCallback
 
 	db 58 ; warp events
 	warp_event 12,  5, ROUTE_14, 1
@@ -67,4 +68,57 @@ Route14_15Underwater_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 3 ; object events
+	object_event 13,  6, SPRITE_PLANK_BRIDGE_2, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
+	object_event 13,  6, SPRITE_PLANK_BRIDGE_2, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PURPLE
+	itemball_event 28, 28, BIG_PEARL, 1, ROUTE14_15_UNDERWATER_POKEBALL
+	
+	const_def 1 ; object constants
+	const ROUTE14_15_UNDERWATER_BUBBLE1
+	const ROUTE14_15_UNDERWATER_BUBBLE2
+
+
+Route14_15UnderwaterCallback:
+	callasm UnderwaterSetUpBubbles
+	readvar VAR_PLAYER_COLOR
+	if_equal 5, .teal
+	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
+	setevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	moveperson FLICKER_STATION_SNARE, $12, $23
+	jump .cont
+.teal
+	setevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
+	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+.cont
+	return
+	
+UnderwaterSetUpBubbles:
+	ld a, 1
+	ld b, a
+	ld a, [wXCoord]
+	add 4
+	ld d, a
+	ld a, [wYCoord]
+	add 4
+	ld e, a
+	farcall CopyDECoordsToMapObject
+	
+	ld a, 2
+	ld b, a
+	ld a, [wXCoord]
+	add 4
+	ld d, a
+	ld a, [wYCoord]
+	add 4
+	ld e, a
+	farcall CopyDECoordsToMapObject
+	
+	ld a, 5
+	ld [wRanchRaceSeconds], a
+	xor a
+	ld [wRanchRaceFrames], a
+	ret

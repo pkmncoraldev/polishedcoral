@@ -1057,8 +1057,9 @@ wDesertTemple1Trigger:: ds 1
 wDesertTemple2Trigger:: ds 1
 wRadiantTownshipTrigger:: ds 1
 wCrossroadsTrigger:: ds 1
+wRoute14_15UnderwaterTrigger:: ds 1
 
-ds 33
+ds 32
 
 wAmpharosFood:: ds 1
 

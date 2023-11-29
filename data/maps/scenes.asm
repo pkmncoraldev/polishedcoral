@@ -115,5 +115,6 @@ MapTriggers::
 	scene_var DESERT_TEMPLE_LOWER_LEFT,				  wDesertTemple2Trigger
 	scene_var DESERT_TEMPLE_LOWER_RIGHT,			  wDesertTemple2Trigger
 	scene_var RADIANT_TOWNSHIP,						  wRadiantTownshipTrigger
-	scene_var CROSSROADS,						  wCrossroadsTrigger
+	scene_var CROSSROADS,							  wCrossroadsTrigger
+	scene_var ROUTE_14_15_UNDERWATER,				  wRoute14_15UnderwaterTrigger
 	db -1

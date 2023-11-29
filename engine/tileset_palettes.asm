@@ -156,7 +156,26 @@ LoadSpecialMapPalette: ; 494ac
 	
 .underwater
 	ld hl, UnderwaterPalette
-	jp LoadSevenBGPalettes
+	call LoadSevenBGPalettes
+	ld a, [wMapGroup]
+	cp GROUP_ROUTE_14_15_UNDERWATER
+	ret nz
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_14_15_UNDERWATER
+	ret nz
+	eventflagcheck EVENT_ROUTE_14_15_UNDERWATER_EASTER_EGG
+	jr z, .underwater_eyes_dark
+	ld hl, UnderwaterEyesPalette + 1 palettes
+	jr .underwater_end
+.underwater_eyes_dark
+	ld hl, UnderwaterEyesPalette
+.underwater_end
+	ld de, wUnknBGPals + 1 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 	
 .cave
 	ld a, [wTimeOfDayPal]
@@ -1053,6 +1072,9 @@ INCLUDE "maps/palettes/bgpals/backalley.pal"
 
 UnderwaterPalette:
 INCLUDE "maps/palettes/bgpals/underwater.pal"
+
+UnderwaterEyesPalette:
+INCLUDE "maps/palettes/bgpals/underwatereyes.pal"
 
 DiveSpotsPalette:
 INCLUDE "maps/palettes/bgpals/divespots.pal"

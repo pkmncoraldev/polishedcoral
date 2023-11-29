@@ -1,5 +1,8 @@
 Route14_15Underwater_MapScriptHeader:
-	db 0 ; scene scripts
+	db 3 ; scene scripts
+	scene_script Route14_15UnderwaterTrigger0
+	scene_script Route14_15UnderwaterTrigger1
+	scene_script Route14_15UnderwaterTrigger2
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route14_15UnderwaterCallback
@@ -64,19 +67,60 @@ Route14_15Underwater_MapScriptHeader:
 	warp_event 63, 11, ROUTE_15, 42
 	warp_event 64, 11, ROUTE_15, 43
 
-	db 0 ; coord events
+	db 32 ; coord events
+	coord_event 23, 21, 1, Route14_15UnderwaterEasterEggOn
+	coord_event 23, 20, 1, Route14_15UnderwaterEasterEggOn
+	coord_event 23, 19, 1, Route14_15UnderwaterEasterEggOn
+	coord_event 24, 19, 1, Route14_15UnderwaterEasterEggOn
+	coord_event 25, 19, 1, Route14_15UnderwaterEasterEggOn
+	coord_event 26, 19, 1, Route14_15UnderwaterEasterEggOn
+	coord_event 26, 20, 1, Route14_15UnderwaterEasterEggOn
+	coord_event 26, 21, 1, Route14_15UnderwaterEasterEggOn
+	coord_event 24, 21, 1, Route14_15UnderwaterEasterEggOn
+	coord_event 25, 21, 1, Route14_15UnderwaterEasterEggOn
+	coord_event 21, 21, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 21, 20, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 21, 19, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 21, 18, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 22, 17, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 23, 17, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 24, 17, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 25, 17, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 26, 17, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 27, 17, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 28, 18, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 28, 19, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 28, 20, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 28, 21, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 27, 23, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 26, 23, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 23, 23, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 24, 23, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 25, 23, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 22, 23, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 28, 22, 2, Route14_15UnderwaterEasterEggOff
+	coord_event 21, 22, 2, Route14_15UnderwaterEasterEggOff
 
 	db 0 ; bg events
 
 	db 3 ; object events
-	object_event 13,  6, SPRITE_PLANK_BRIDGE_2, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
-	object_event 13,  6, SPRITE_PLANK_BRIDGE_2, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PURPLE
+	object_event -5, -5, SPRITE_PLANK_BRIDGE_2, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
+	object_event -5, -5, SPRITE_PLANK_BRIDGE_2, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PURPLE
 	itemball_event 28, 28, BIG_PEARL, 1, ROUTE14_15_UNDERWATER_POKEBALL
 	
 	const_def 1 ; object constants
 	const ROUTE14_15_UNDERWATER_BUBBLE1
 	const ROUTE14_15_UNDERWATER_BUBBLE2
 
+
+Route14_15UnderwaterTrigger0:
+	end
+	
+Route14_15UnderwaterTrigger1:
+	end
+	
+Route14_15UnderwaterTrigger2:
+	end
 
 Route14_15UnderwaterCallback:
 	callasm UnderwaterSetUpBubbles
@@ -94,7 +138,38 @@ Route14_15UnderwaterCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 .cont
+	callasm CheckUnderwaterEasterEggAsm
+	if_equal 1, .easter_egg
+	dotrigger $0
 	return
+.easter_egg
+	dotrigger $1
+	return
+	
+CheckUnderwaterEasterEggAsm:
+	call Random
+	cp 1 percent
+	jr c, .easter_egg
+	xor a
+	ld [wScriptVar], a
+	ret
+.easter_egg
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+	
+	
+Route14_15UnderwaterEasterEggOn:
+	setevent EVENT_ROUTE_14_15_UNDERWATER_EASTER_EGG
+	loadvar wTimeOfDayPalFlags, $40 | 1
+	dotrigger $2
+	end
+	
+Route14_15UnderwaterEasterEggOff:
+	clearevent EVENT_ROUTE_14_15_UNDERWATER_EASTER_EGG
+	loadvar wTimeOfDayPalFlags, $40 | 0
+	dotrigger $0
+	end
 	
 UnderwaterSetUpBubbles:
 	ld a, 1

@@ -42,7 +42,23 @@ TilesetLibraryAnim::
 TilesetSnowAnim::
 TilesetMall2Anim::
 TilesetIceCaveAnim::
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
 TilesetDiveAnim::
+	dw NULL,  StandingTileFrame
+	dw SeaweedFrames, AnimateWaterfallTiles
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -1292,9 +1308,9 @@ WaterFrames: dw VTiles2 tile $14, WaterTiles
 
 WaterTiles: INCBIN "gfx/tilesets/water/water.2bpp"
 
-WaterFrames2: dw VTiles2 tile $15, WaterTiles2
+SeaweedFrames: dw VTiles2 tile $12, SeaweedTiles
 
-WaterTiles2: INCBIN "gfx/tilesets/water/water2.2bpp"
+SeaweedTiles: INCBIN "gfx/tilesets/water/seaweed.2bpp"
 
 	
 WriteTwoTiles:

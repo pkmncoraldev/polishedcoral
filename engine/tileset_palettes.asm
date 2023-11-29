@@ -155,13 +155,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp .do_nothing
 	
 .underwater
-	ld de, wUnknBGPals + 4 palettes
 	ld hl, UnderwaterPalette
-	ld bc, 2 palettes
-	ld a, $5
-	call FarCopyWRAM
-	scf
-	ret
+	jp LoadSevenBGPalettes
 	
 .cave
 	ld a, [wTimeOfDayPal]

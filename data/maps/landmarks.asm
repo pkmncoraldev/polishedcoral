@@ -53,7 +53,7 @@ Landmarks: ; 0x1ca8c3
 	landmark  28,  88, Route1Name
 	landmark  60,  40, StarglowDepthsName
 	landmark   0,   0, UnkownPassageName
-	landmark  36, 116, UnderwaterCavernName
+	landmark  36, 116, ConnectingCavernName
 	
 	landmark  36,  40, Route16Name
 	landmark  36,  52, ShimmerName
@@ -136,6 +136,6 @@ ResidentialName:	   db "HOUSING¯DISTRICT@"
 ShoppingName:		   db "SHOPPING¯DISTRICT@"
 BusinessName:	 	   db "BUSINESS¯DISTRICT@"
 UnkownPassageName:	   db "UNKNOWN PASSAGE@"
-UnderwaterCavernName:  db "UNDERWATER¯CAVERN@"
+ConnectingCavernName:  db "CONNECTING¯CAVERN@"
 GateName:	 	 	   db "UNKNOWN@"
 SpecialMapName:        db "?","@"

@@ -53,7 +53,7 @@ MAP_NONE   EQU 0
 	map_const ICE_TEMPLE_B1F_3,							   4,  4 ; 31
 	map_const ICE_TEMPLE_B2F_1,							   8,  6 ; 32
 	map_const ICE_TEMPLE_B2F_2,							  13,  7 ; 33
-	map_const UNDERGROUND_PASSAGE_ENTRANCE,				  10,  6 ; 34
+	map_const CONNECTING_CAVERN_ENTRANCE,				  10,  6 ; 34
 
 	newgroup                                                     ;  2
 
@@ -284,7 +284,7 @@ MAP_NONE   EQU 0
 	map_const NETT_BUILDING_F_BATHROOM,					   3,  4 ; 5
 	map_const NETT_BUILDING_STAIRWELL,					   3,  5 ; 6
 	map_const NETT_BUILDING_OFFICE,						   5,  5 ; 7
-	map_const UNDERGROUND_PASSAGE,						  20, 24 ; 8
+	map_const CONNECTING_CAVERN,						  20, 24 ; 8
 	
 	newgroup													 ; 15
 	map_const ROUTE_11,									  21, 31 ; 1

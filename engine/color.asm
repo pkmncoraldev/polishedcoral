@@ -1318,7 +1318,7 @@ LoadMapPals::
 	jr .rocks
 .rockscheck3
 	ld a, [wMapGroup]
-	cp GROUP_UNDERGROUND_PASSAGE
+	cp GROUP_CONNECTING_CAVERN
 	jp z, .starglow
 .rocks
 	ld hl, MapObjectPalsRocks

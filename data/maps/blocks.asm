@@ -757,11 +757,11 @@ DesertTempleLowerLeft_BlockData:
 DesertTempleLowerRight_BlockData:
 	INCBIN "maps/DesertTempleLowerRight.ablk.lz"
 	
-UndergroundPassage_BlockData:
-	INCBIN "maps/UndergroundPassage.ablk.lz"
+ConnectingCavern_BlockData:
+	INCBIN "maps/ConnectingCavern.ablk.lz"
 	
-UndergroundPassageEntrance_BlockData:
-	INCBIN "maps/UndergroundPassageEntrance.ablk.lz"
+ConnectingCavernEntrance_BlockData:
+	INCBIN "maps/ConnectingCavernEntrance.ablk.lz"
 	
 SeasideCave1F_BlockData:
 	INCBIN "maps/SeasideCave1F.ablk.lz"

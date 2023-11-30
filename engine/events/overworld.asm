@@ -2849,7 +2849,7 @@ HandleEventsEscapeRope:
 	domaptrigger ROUTE_20, $0
 	domaptrigger LUSTER_SEWERS_B1F, $0
 	domaptrigger LUSTER_SEWERS_B2F, $0
-	domaptrigger UNDERGROUND_PASSAGE, $0
+	domaptrigger CONNECTING_CAVERN, $0
 	clearevent EVENT_ON_DODRIO_RANCH
 	clearevent EVENT_AT_AIRPORT
 	clearflag ENGINE_NEAR_CAMPFIRE

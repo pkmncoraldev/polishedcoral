@@ -108,7 +108,7 @@ MapTriggers::
 	scene_var ROUTE_22_TUNNEL,						  wRoute22TunnelTrigger
 	scene_var STARGLOW_CAVERN_DEPTHS,				  wStarglowCavernDepthsTrigger
 	scene_var LUSTER_GYM,							  wLusterGymTrigger
-	scene_var UNDERGROUND_PASSAGE,					  wUndergroundPassageTrigger
+	scene_var CONNECTING_CAVERN,					  wConnectingCavernTrigger
 	scene_var DESERT_TEMPLE_1,					 	  wDesertTemple1Trigger
 	scene_var DESERT_TEMPLE_TOP_LEFT,				  wDesertTemple2Trigger
 	scene_var DESERT_TEMPLE_TOP_RIGHT,				  wDesertTemple2Trigger

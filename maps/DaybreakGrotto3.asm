@@ -10,7 +10,7 @@ DaybreakGrotto3_MapScriptHeader:
 	warp_event 13, 37, SUNSET_CAPE, 3
 	warp_event  3,  4, DAYBREAK_GROTTO_3, 6
 	warp_event  5, 55, DAYBREAK_GROTTO_3, 5
-	warp_event  5,  1, UNDERGROUND_PASSAGE, 1
+	warp_event  5,  1, CONNECTING_CAVERN, 1
 	warp_event  3, 49, SUNSET_LIGHTHOUSE_BASEMENT, 1
 
 	db 0 ; coord events

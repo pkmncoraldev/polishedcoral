@@ -1052,7 +1052,7 @@ wDuskTurnpikeTrigger:: ds 1
 wRoute22TunnelTrigger:: ds 1
 wStarglowCavernDepthsTrigger:: ds 1
 wLusterGymTrigger:: ds 1
-wUndergroundPassageTrigger:: ds 1
+wConnectingCavernTrigger:: ds 1
 wDesertTemple1Trigger:: ds 1
 wDesertTemple2Trigger:: ds 1
 wRadiantTownshipTrigger:: ds 1

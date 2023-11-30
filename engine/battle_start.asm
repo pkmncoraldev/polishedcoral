@@ -170,7 +170,6 @@ StartTrainerBattle_DetermineWhichAnimation: ; 8c365 (23:4365)
 	and a
 	jr z, .wild
 	farcall SetTrainerBattleLevel
-.wild
 
 ; Get the first Pokemon in your party that isn't fainted.
 	ld hl, wPartyMon1HP
@@ -209,7 +208,10 @@ endr
 	ld a, [hl]
 	ld [wJumptableIndex], a
 	ret
-; 8c38f (23:438f)
+.wild
+	ld a, 1
+	ld [wJumptableIndex], a
+	ret
 
 .StartingPoints: ; 8c38f
 	db 1,  9

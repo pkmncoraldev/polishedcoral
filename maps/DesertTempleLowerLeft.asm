@@ -15,7 +15,7 @@ DesertTempleLowerLeft_MapScriptHeader:
 	signpost  1,  5, SIGNPOST_READ, DesertTempleLowerLeftSwitch
 
 	db 1 ; object events
-	person_event SPRITE_CORY, -6, -6, SPRITEMOVEDATA_SCREENSHAKE, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	person_event SPRITE_CORY_NPC, -6, -6, SPRITEMOVEDATA_SCREENSHAKE, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 
 	const_def 1 ; object constants
 	const DESERT_TEMPLE_SHAKE_OBJECT

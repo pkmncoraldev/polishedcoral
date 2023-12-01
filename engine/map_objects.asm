@@ -2903,6 +2903,7 @@ HandleNPCStep::
 	ret
 
 RefreshPlayerSprite: ; 579d
+	call ReplaceKrisSprite
 	ld a, movement_step_sleep_1
 	ld [wPlayerNextMovement], a
 	ld [wPlayerMovement], a

@@ -596,6 +596,8 @@ _ExitMenu:: ; 243e8
 	ld [rSVBK], a
 	ld hl, wWindowStackSize
 	dec [hl]
+	call ReplaceKrisSprite
+	farcall _LoadStandardFont
 	ret
 ; 24423
 

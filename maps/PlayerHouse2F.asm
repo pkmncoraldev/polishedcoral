@@ -592,7 +592,7 @@ PlayerHouse2FInitializeRoom:
 	clearevent EVENT_PLAYER_IS_LEAF
 	clearevent EVENT_PLAYER_IS_GOLD
 	clearevent EVENT_PLAYER_IS_KRIS
-	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORY
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORY_NPC
 	jump .done
 .cora
 	clearevent EVENT_PLAYER_IS_MALE
@@ -604,7 +604,7 @@ PlayerHouse2FInitializeRoom:
 	clearevent EVENT_PLAYER_IS_LEAF
 	clearevent EVENT_PLAYER_IS_GOLD
 	clearevent EVENT_PLAYER_IS_KRIS
-	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORA
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORA_NPC
 	jump .done
 .pippi
 	clearevent EVENT_PLAYER_IS_MALE
@@ -616,7 +616,7 @@ PlayerHouse2FInitializeRoom:
 	clearevent EVENT_PLAYER_IS_LEAF
 	clearevent EVENT_PLAYER_IS_GOLD
 	clearevent EVENT_PLAYER_IS_KRIS
-	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_PIPPI
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_PIPPI_NPC
 	jump .done
 .red
 	setevent EVENT_PLAYER_IS_MALE
@@ -628,7 +628,7 @@ PlayerHouse2FInitializeRoom:
 	clearevent EVENT_PLAYER_IS_LEAF
 	clearevent EVENT_PLAYER_IS_GOLD
 	clearevent EVENT_PLAYER_IS_KRIS
-	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORY
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_RED_NPC
 	jump .done
 .leaf
 	clearevent EVENT_PLAYER_IS_MALE
@@ -640,7 +640,7 @@ PlayerHouse2FInitializeRoom:
 	setevent EVENT_PLAYER_IS_LEAF
 	clearevent EVENT_PLAYER_IS_GOLD
 	clearevent EVENT_PLAYER_IS_KRIS
-	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORY
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_LEAF_NPC
 	jump .done
 .gold
 	setevent EVENT_PLAYER_IS_MALE
@@ -652,7 +652,7 @@ PlayerHouse2FInitializeRoom:
 	clearevent EVENT_PLAYER_IS_LEAF
 	setevent EVENT_PLAYER_IS_GOLD
 	clearevent EVENT_PLAYER_IS_KRIS
-	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORY
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_GOLD_NPC
 	jump .done
 .kris
 	clearevent EVENT_PLAYER_IS_MALE
@@ -664,7 +664,7 @@ PlayerHouse2FInitializeRoom:
 	clearevent EVENT_PLAYER_IS_LEAF
 	clearevent EVENT_PLAYER_IS_GOLD
 	setevent EVENT_PLAYER_IS_KRIS
-	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_CORY
+	variablesprite SPRITE_PLAYER_CUTSCENE, SPRITE_KRIS_NPC
 .done
 	jumpstd initializeevents
 	return

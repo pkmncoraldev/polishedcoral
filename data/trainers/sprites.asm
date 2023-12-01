@@ -1,24 +1,24 @@
 BTTrainerClassSprites:
-	db SPRITE_CORY          ; PLAYER_CORY
-	db SPRITE_CORA          ; PLAYER_CORA
-	db SPRITE_PIPPI         ; PLAYER_PIPPI
-	db SPRITE_RED           ; PLAYER_RED
-	db SPRITE_LEAF          ; PLAYER_LEAF
-	db SPRITE_GOLD          ; PLAYER_GOLD
-	db SPRITE_KRIS          ; PLAYER_KRIS
+	db SPRITE_CORY_NPC          ; PLAYER_CORY
+	db SPRITE_CORA_NPC          ; PLAYER_CORA
+	db SPRITE_PIPPI_NPC         ; PLAYER_PIPPI
+	db SPRITE_RED_NPC           ; PLAYER_RED
+	db SPRITE_LEAF_NPC          ; PLAYER_LEAF
+	db SPRITE_GOLD_NPC          ; PLAYER_GOLD
+	db SPRITE_KRIS_NPC          ; PLAYER_KRIS
 	db SPRITE_STANLEY       ; STANLEY
 	db SPRITE_RODNEY        ; RODNEY
 	db SPRITE_WENDY      	; WENDY
 	db SPRITE_CHARLIE       ; CHARLIE
 	db SPRITE_POLLY         ; POLLY
 	db SPRITE_LEILANI      	; LEILANI
-	db SPRITE_GOLD          ; PRYCE
-	db SPRITE_GOLD          ; CLAIR
-	db SPRITE_GOLD          ; WILL
-	db SPRITE_GOLD          ; KOGA
-	db SPRITE_GOLD          ; BRUNO
-	db SPRITE_GOLD          ; KAREN
-	db SPRITE_GOLD          ; CHAMPION
+	db SPRITE_GOLD_NPC          ; PRYCE
+	db SPRITE_GOLD_NPC          ; CLAIR
+	db SPRITE_GOLD_NPC          ; WILL
+	db SPRITE_GOLD_NPC          ; KOGA
+	db SPRITE_GOLD_NPC          ; BRUNO
+	db SPRITE_GOLD_NPC          ; KAREN
+	db SPRITE_GOLD_NPC          ; CHAMPION
 	db SPRITE_COLBY         ; RIVAL
 	db SPRITE_COLBY         ; RIVAL_S
 	db SPRITE_YOUNGSTER     ; YOUNGSTER
@@ -62,23 +62,23 @@ BTTrainerClassSprites:
 	db SPRITE_COOLTRAINER_M ; COOLTRAINERM
 	db SPRITE_COOLTRAINER_F ; COOLTRAINERF
 	db SPRITE_SPRUCE        ; PROF_SPRUCE
-	db SPRITE_GOLD         ; TeacherFast
-	db SPRITE_GOLD         ; TrioBroR
-	db SPRITE_GOLD         ; TrioBroB
-	db SPRITE_GOLD         ; TioBroY
-	db SPRITE_GOLD         ; Disguiseman
-	db SPRITE_GOLD         ; BikiniP
-	db SPRITE_GOLD         ; BikiniR
-	db SPRITE_GOLD         ; BikiniY
-	db SPRITE_GOLD         ; Delinquentm
-	db SPRITE_GOLD         ; Delinquentf
-	db SPRITE_GOLD         ; Bunearym
-	db SPRITE_GOLD         ; Bunearyf
-	db SPRITE_GOLD         ; Frankie
-	db SPRITE_GOLD         ; MallCop
-	db SPRITE_GOLD         ; Skater
-	db SPRITE_GOLD         ; SpaTrainer
-	db SPRITE_GOLD         ; SpaTrainerF
+	db SPRITE_GOLD_NPC         ; TeacherFast
+	db SPRITE_GOLD_NPC         ; TrioBroR
+	db SPRITE_GOLD_NPC         ; TrioBroB
+	db SPRITE_GOLD_NPC         ; TioBroY
+	db SPRITE_GOLD_NPC         ; Disguiseman
+	db SPRITE_GOLD_NPC         ; BikiniP
+	db SPRITE_GOLD_NPC         ; BikiniR
+	db SPRITE_GOLD_NPC         ; BikiniY
+	db SPRITE_GOLD_NPC         ; Delinquentm
+	db SPRITE_GOLD_NPC         ; Delinquentf
+	db SPRITE_GOLD_NPC         ; Bunearym
+	db SPRITE_GOLD_NPC         ; Bunearyf
+	db SPRITE_GOLD_NPC         ; Frankie
+	db SPRITE_GOLD_NPC         ; MallCop
+	db SPRITE_GOLD_NPC         ; Skater
+	db SPRITE_GOLD_NPC         ; SpaTrainer
+	db SPRITE_GOLD_NPC         ; SpaTrainerF
 	db SPRITE_AROMA_LADY   ; AromaLady
 	db SPRITE_PIGTAILS	   ; Rose
 	db SPRITE_PIGTAILS	   ; Lily
@@ -87,4 +87,4 @@ BTTrainerClassSprites:
 	db SPRITE_PIGTAILS	   ; Felicia
 	db SPRITE_PIGTAILS	   ; Violet
 	db SPRITE_PIGTAILS	   ; Clover
-	db SPRITE_GOLD         ; TOWERTYCOON
+	db SPRITE_GOLD_NPC         ; TOWERTYCOON

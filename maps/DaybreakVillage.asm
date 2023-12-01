@@ -27,7 +27,13 @@ DaybreakVillageFlypointCallback:
 	setflag ENGINE_FLYPOINT_DAYBREAK
 	return
 	
+TestAsm:
+	ld a, 1
+	ld [wCenteredObject], a
+	ret
+	
 DaybreakNPC1:
+	callasm TestAsm
 	checkevent EVENT_BEAT_TEACHER
 	iftrue .DaybreakNPCBeatTeacher
 	jumptextfaceplayer DaybreakNPC1Text1

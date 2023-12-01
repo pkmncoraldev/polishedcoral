@@ -46,7 +46,7 @@ CloseText:: ; 2dcf
 	farcall ReloadVisibleSprites
 	ld a, $90
 	ld [hWY], a
-	call ReplaceKrisSprite
+;	call ReplaceKrisSprite
 	xor a
 	ld [hBGMapMode], a
 

@@ -21,7 +21,7 @@ GetSpriteVTile:: ; 180e
 	push bc
 	ld [hUsedSpriteIndex], a
 	push bc
-	farcall GetSpritePlayer
+	farcall GetSprite
 	pop bc
 	ld hl, wSpriteFlags
 	res 5, [hl]

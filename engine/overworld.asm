@@ -242,6 +242,7 @@ ReloadSpriteIndex::
 	ld a, [hUsedSpriteIndex]
 	ld b, a
 	xor a
+	ld [wMoogoo], a
 .loop
 	ld [hObjectStructIndexBuffer], a
 	ld a, [hl]
@@ -260,7 +261,17 @@ ReloadSpriteIndex::
 	add hl, bc
 	ld b, h
 	ld c, l
+	push af
+	ld a, [wMoogoo]
+	and a
+	jr nz, .not_player
+	pop af
+	call GetSpriteVTilePlayer
+	jr .cont
+.not_player
+	pop af
 	call GetSpriteVTile
+.cont
 	pop bc
 	pop hl
 	push hl
@@ -270,10 +281,65 @@ ReloadSpriteIndex::
 	pop hl
 .done
 	add hl, de
+	ld a, [wMoogoo]
+	inc a
+	ld [wMoogoo], a
 	ld a, [hObjectStructIndexBuffer]
 	inc a
 	cp NUM_OBJECT_STRUCTS
 	jr nz, .loop
+	ret
+
+GetSpriteVTilePlayer:: ; 180e
+	push hl
+	push de
+	push bc
+	ld [hUsedSpriteIndex], a
+	push bc
+	farcall GetSpritePlayer
+	pop bc
+	ld hl, wSpriteFlags
+	res 5, [hl]
+	; SPRITE_BIG_GYARADOS and SPRITE_SAILBOAT use the last object_struct
+	; (SPRITE_BIG_GYARADOS has more than 12 tiles, and SPRITE_SAILBOAT
+	; needs to be in VRAM1)
+	ld a, [hUsedSpriteIndex]
+	cp SPRITE_BIG_GYARADOS
+	jr z, .use_last_struct
+	cp SPRITE_BIG_MUK
+	jr z, .use_last_struct
+	cp SPRITE_SAILBOAT
+	jr z, .use_last_struct
+	ld a, [hObjectStructIndexBuffer]
+	jr .got_sprite_tile
+.use_last_struct
+	ld a, NUM_OBJECT_STRUCTS - 1
+.got_sprite_tile
+	cp FIRST_VRAM1_OBJECT_STRUCT
+	jr c, .continue
+	set 5, [hl]
+	sub FIRST_VRAM1_OBJECT_STRUCT
+.continue
+	add a, a
+	add a, a
+	ld d, a
+	add a, d
+	add a, d
+	ld [hUsedSpriteTile], a
+	push af
+	farcall GetUsedSpritePlayer
+	pop af
+	ld d, a
+	xor a
+	ld a, d
+	ld hl, wSpriteFlags
+	bit 5, [hl]
+	jr nz, .using_vbk1
+	or $80
+.using_vbk1
+	pop bc
+	pop de
+	pop hl
 	ret
 
 LoadEmoteGFX::

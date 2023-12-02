@@ -264,3 +264,5 @@ SpriteHeadersPlayers:
 	overworld_sprite CoraBathingSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite DodrioRunSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ClownSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite ScientistSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite ColbySpriteGFX, WALKING_SPRITE, PAL_OW_RED

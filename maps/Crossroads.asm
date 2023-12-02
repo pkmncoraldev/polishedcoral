@@ -228,7 +228,8 @@ CrossroadsCutscene2:
 	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 11, 14
 	spriteface PLAYER, DOWN
 	writecode VAR_MOVEMENT, $fe
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_COLBY
+;	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_COLBY
+	callasm MakePlayerColbyAsm
 	writebyte (1 << 7) | (PAL_OW_GREEN << 4)
 	special Special_SetPlayerPalette
 	special MapCallbackSprites_LoadUsedSpritesGFX
@@ -345,6 +346,11 @@ CrossroadsCutscene2:
 	setevent EVENT_CROSSROADS_CUTSCENE_DONE
 	dotrigger $1
 	end
+	
+MakePlayerColbyAsm:
+	ld a, PLAYER_COLBY
+	ld [wPlayerState], a
+	ret
 	
 CrossroadsSign:
 	jumptext CrossroadsSignText

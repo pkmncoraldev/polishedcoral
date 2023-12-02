@@ -306,6 +306,8 @@ PlayerHouseDebugPoster:
 	giveitem BLOSSOM_TEA, 3
 	giveitem SUNSHINE_TEA, 99
 	giveitem PAINTBRUSH, 99
+	giveitem COVER_FOSSIL
+	giveitem PLUME_FOSSIL
 	
 	giveitem MASTER_BALL, 99
 	giveitem POKE_BALL, 99

@@ -351,7 +351,8 @@ ShimmerLabFossilCutsceneCont:
 	spriteface PLAYER, DOWN
 	pause 20
 	writecode VAR_MOVEMENT, $fe
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_SCIENTIST
+;	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_SCIENTIST
+	callasm MakePlayerScientistAsm
 	writebyte (1 << 7) | (PAL_OW_BROWN << 4)
 	special Special_SetPlayerPalette
 	special MapCallbackSprites_LoadUsedSpritesGFX
@@ -498,6 +499,11 @@ endr
 	disappear SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_PINK
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
 	end
+	
+MakePlayerScientistAsm:
+	ld a, PLAYER_SCIENTIST
+	ld [wPlayerState], a
+	ret
 
 ShimmerLabBooksText:
 	text "It's stuffed full"

@@ -125,18 +125,18 @@ Route14_15UnderwaterTrigger2:
 Route14_15UnderwaterCallback:
 	callasm UnderwaterSetUpBubbles
 	readvar VAR_PLAYER_COLOR
-	if_equal 5, .teal
-	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
-	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
-	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
-	setevent EVENT_HIDE_OW_OBJECTS_PURPLE
-	moveperson FLICKER_STATION_SNARE, $12, $23
-	jump .cont
-.teal
+	if_equal 4, .purple
 	setevent EVENT_HIDE_OW_OBJECTS_TEAL
 	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
 	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	jump .cont
+.purple
+	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
+	setevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	
 .cont
 	callasm CheckUnderwaterEasterEggAsm
 	if_equal 1, .easter_egg

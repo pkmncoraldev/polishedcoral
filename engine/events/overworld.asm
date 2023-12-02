@@ -476,7 +476,7 @@ SurfFunction: ; c909
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
 	jr z, .alreadyfail
-	cp PLAYER_SURF_PIKA
+	cp PLAYER_DIVE
 	jr z, .alreadyfail
 	call GetFacingTileCoord
 	call GetTileCollision
@@ -587,16 +587,16 @@ GetSurfType: ; c9b8
 ; Surfing on Pikachu uses an alternate sprite.
 ; This is done by using a separate movement type.
 
-	ld a, [wCurPartyMon]
-	ld e, a
-	ld d, 0
-	ld hl, wPartySpecies
-	add hl, de
+;	ld a, [wCurPartyMon]
+;	ld e, a
+;	ld d, 0
+;	ld hl, wPartySpecies
+;	add hl, de
 
-	ld a, [hl]
-	cp PIKACHU
-	ld a, PLAYER_SURF_PIKA
-	ret z
+;	ld a, [hl]
+;	cp PIKACHU
+;	ld a, PLAYER_SURF_PIKA
+;	ret z
 	ld a, PLAYER_SURF
 	ret
 
@@ -637,7 +637,7 @@ TrySurfOW:: ; c9e7
 
 ; Don't ask to surf if already fail.
 	ld a, [wPlayerState]
-	cp PLAYER_SURF_PIKA
+	cp PLAYER_DIVE
 	jp z, .quit
 	cp PLAYER_SURF
 	jp z, .quit
@@ -1699,6 +1699,18 @@ CheckMapCanDive:
 	scf
 	ret
 	
+CheckIfUnderwaterAsm:
+	ld a, [wTileset]
+	cp TILESET_DIVE
+	jr z, .underwater
+	ld a, 0
+	ld [wScriptVar], a
+	ret
+.underwater
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+	
 Script_DiveFromMenu: ; 0xcb1c
 	reloadmappart
 	special UpdateTimePals
@@ -1709,6 +1721,8 @@ Script_UsedDive: ; 0xcb20
 	waitbutton
 	closetext
 	scall FieldMovePokepicScript
+	callasm CheckIfUnderwaterAsm
+	iftrue Script_AutoEmerge
 	jump Script_AutoDive
 
 .Text_UsedDive:
@@ -1719,7 +1733,15 @@ Script_AutoDive:
 	special FadeOutPalettesBlack
 	playsound SFX_WATER_GUN
 	pause 10
-	callasm DiveWarpAsm
+	callasm DiveWarpAsm1
+	warpcheck
+	end
+	
+Script_AutoEmerge:
+	special FadeOutPalettesBlack
+	playsound SFX_WATER_GUN
+	pause 10
+	callasm DiveWarpAsm2
 	warpcheck
 	end
 
@@ -1730,8 +1752,18 @@ TryDiveOW:: ; cb56
 
 	call HasDive
 	jr z, .no
+	ld a, [wTileset]
+	cp TILESET_DIVE
+	jr z, .underwater
 	ld a, BANK(Script_AskDive)
 	ld hl, Script_AskDive
+	call CallScript
+	scf
+	ret
+
+.underwater
+	ld a, BANK(Script_AskEmerge)
+	ld hl, Script_AskEmerge
 	call CallScript
 	scf
 	ret
@@ -1750,7 +1782,16 @@ TryDiveOW:: ; cb56
 	scf
 	ret
 
-DiveWarpAsm:
+DiveWarpAsm1:
+	ld a, PLAYER_DIVE
+	ld [wPlayerState], a
+	ld a, COLL_DIVE_WARP
+	ld [wPlayerStandingTile], a
+	ret
+	
+DiveWarpAsm2:
+	ld a, PLAYER_SURF
+	ld [wPlayerState], a
 	ld a, COLL_DIVE_WARP
 	ld [wPlayerStandingTile], a
 	ret
@@ -1785,10 +1826,25 @@ Script_AskDive: ; 0xcb86
 	text_jump AskUseDiveText
 	db "@"
 	
+Script_AskEmerge:
+	opentext
+	writetext .AskUseDive
+	yesorno
+	iftrue Script_UsedDive
+	endtext
+.no
+	end
+
+.AskUseDive: ; 0xcb90
+	text_jump AskUseDiveText2
+	db "@"
+	
 DebugDive:
 	opentext
 	writetext DebugFieldMoveText
 	closetext
+	callasm CheckIfUnderwaterAsm
+	iftrue Script_AutoEmerge
 	jump Script_AutoDive
 	
 HasDive: ; cf7c
@@ -2262,7 +2318,7 @@ FishFunction: ; cf8e
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
 	jr z, .fail
-	cp PLAYER_SURF_PIKA
+	cp PLAYER_DIVE
 	jr z, .fail
 	ld a, [wMapMusic]
 	cp MUSIC_LAVA

@@ -1337,7 +1337,7 @@ DiveBallMultiplier:
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
 	jr z, .water
-	cp PLAYER_SURF_PIKA
+	cp PLAYER_DIVE
 	jr z, .water
 
 	ld a, [wBattleType]

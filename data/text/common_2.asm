@@ -292,6 +292,14 @@ AskUseDiveText::
 	line "DIVE?"
 	done
 	
+AskUseDiveText2::
+	text "Light is filtering"
+	line "down from above."
+	
+	para "Do you want to use"
+	line "DIVE?"
+	done
+	
 UsedDiveText::
 	text_from_ram wStringBuffer2
 	text " used"

@@ -62,7 +62,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jp z, .Skating
 	cp PLAYER_SURF
 	jp z, .Surf
-	cp PLAYER_SURF_PIKA
+	cp PLAYER_DIVE
 	jp z, .Surf
 	cp PLAYER_SURF_LAVA
 	jp z, .Surf
@@ -544,7 +544,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
 	jp z, .TrySurf
-	cp PLAYER_SURF_PIKA
+	cp PLAYER_DIVE
 	jp z, .TrySurf
 ;	cp PLAYER_SKATEBOARD_GRINDING
 ;	jp z, .grindcont

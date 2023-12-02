@@ -255,7 +255,7 @@ CheckReplaceKrisSprite: ; 154f7
 	jr z, .nope
 	cp PLAYER_SURF
 	jr z, .surfing
-	cp PLAYER_SURF_PIKA
+	cp PLAYER_DIVE
 	jr z, .surfing
 	cp PLAYER_SURF_LAVA
 	jr z, .surfing
@@ -298,8 +298,15 @@ CheckReplaceKrisSprite: ; 154f7
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
 	jr z, ._surfing
-	cp PLAYER_SURF_PIKA
+	cp PLAYER_DIVE
 	jr z, ._surfing
+	ld a, [wTileset]
+	cp TILESET_DIVE
+	jr nz, .not_underwater
+	ld a, -PLAYER_DIVE
+	ld [wPlayerState], a
+	jr ._surfing
+.not_underwater
 	ld a, PLAYER_SURF
 	ld [wPlayerState], a
 ._surfing

@@ -1432,6 +1432,7 @@ Pack_QuitNoScript: ; 10874 (4:4874)
 	set 7, [hl]
 	xor a
 	ld [wcf66], a
+	call ClearSprites
 	ret
 
 Pack_QuitRunScript: ; 1087e (4:487e)
@@ -1439,6 +1440,7 @@ Pack_QuitRunScript: ; 1087e (4:487e)
 	set 7, [hl]
 	ld a, TRUE
 	ld [wcf66], a
+	call ClearSprites
 	ret
 
 Pack_PrintTextNoScroll: ; 10889 (4:4889)

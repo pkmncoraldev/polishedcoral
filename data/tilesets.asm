@@ -693,7 +693,6 @@ INCBIN "data/tilesets/highway_attributes.bin.lz"
 TilesetHighwayColl::
 INCLUDE "data/tilesets/highway_collision.asm"
 
-
 SECTION "Tileset Data - dive", ROMX
 
 TilesetDiveGFX0::
@@ -713,6 +712,24 @@ INCBIN "data/tilesets/dive_attributes.bin.lz"
 
 TilesetDiveColl::
 INCLUDE "data/tilesets/dive_collision.asm"
+
+SECTION "Tileset Data - bar", ROMX
+
+TilesetBarGFX0::
+INCBIN "gfx/tilesets/bar.2bpp.lz"
+
+TilesetBarGFX1 EQU 0
+
+TilesetBarGFX2 EQU 0
+
+TilesetBarMeta::
+INCBIN "data/tilesets/bar_metatiles.bin.lz"
+
+TilesetBarAttr::
+INCBIN "data/tilesets/bar_attributes.bin.lz"
+
+TilesetBarColl::
+INCLUDE "data/tilesets/bar_collision.asm"
 
 
 SECTION "Tileset Headers", ROMX
@@ -761,4 +778,5 @@ Tilesets::
 	tileset TilesetOrphanage
 	tileset TilesetHighway
 	tileset TilesetDive
+	tileset TilesetBar
 	tileset TilesetLavaCave

@@ -35,6 +35,7 @@
 	const TILESET_ORPHANAGE			;34
 	const TILESET_HIGHWAY			;35
 	const TILESET_DIVE				;36
+	const TILESET_BAR				;37
 	const TILESET_LAVA_CAVE
 	
 

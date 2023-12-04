@@ -405,6 +405,8 @@ ENDM
 	
 	map_attributes BarBackAlley, BAR_BACK_ALLEY, $d4, 0
 	
+	map_attributes BarInside, BAR_INSIDE, $00, 0
+	
 	map_attributes Crossroads, CROSSROADS, 0, WEST
 	connection west, DuskTurnpike, DUSK_TURNPIKE, 0
 	

@@ -190,6 +190,7 @@ SpriteHeaders:
 	overworld_sprite LeilaniChair2SpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ScaryPaintingSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite MiscConeSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite JukeboxSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

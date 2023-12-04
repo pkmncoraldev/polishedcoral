@@ -394,6 +394,7 @@ INCLUDE "maps/DuskAutoGarage.asm"
 INCLUDE "maps/Route19DuskGate.asm"
 INCLUDE "maps/Route22Tunnel.asm"
 INCLUDE "maps/BarBackAlley.asm"
+INCLUDE "maps/BarInside.asm"
 INCLUDE "maps/Crossroads.asm"
 
 SECTION "Underwater Scripts", ROMX

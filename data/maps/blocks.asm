@@ -730,6 +730,9 @@ DuskAutoLobby_BlockData:
 DuskAutoGarage_BlockData:
 	INCBIN "maps/DuskAutoGarage.ablk.lz"
 	
+BarInside_BlockData:
+	INCBIN "maps/BarInside.ablk.lz"
+	
 Route22Tunnel_BlockData:
 	INCBIN "maps/Route22Tunnel.ablk.lz"
 	

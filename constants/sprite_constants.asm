@@ -186,6 +186,7 @@
 	const SPRITE_LEILANI_CHAIR_2
 	const SPRITE_SCARY_PAINTING
 	const SPRITE_MISC_CONE
+	const SPRITE_JUKEBOX
 
 	
 	const_def $ee

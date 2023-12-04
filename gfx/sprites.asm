@@ -71,6 +71,7 @@ BugCatcherSpriteGFX::          INCBIN "gfx/sprites/bug_catcher.2bpp"
 BugManiacSpriteGFX::           INCBIN "gfx/sprites/bug_maniac.2bpp"
 ScaryPaintingSpriteGFX::       INCBIN "gfx/sprites/scary_painting.2bpp"
 MiscConeSpriteGFX::   		   INCBIN "gfx/sprites/misc_cone.2bpp"
+JukeboxSpriteGFX::             INCBIN "gfx/sprites/jukebox.2bpp"
 
 
 SECTION "Overworld Sprites 3", ROMX

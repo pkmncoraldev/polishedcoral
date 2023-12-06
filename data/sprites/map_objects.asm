@@ -108,4 +108,5 @@ SpriteMovementData::
 	sprite_movement_data SPRITEMOVEFN_BAGGAGE,  		     LEFT,   PERSON_ACTION_STAND,           	$8e,    $00,    %0000 ; SPRITEMOVEDATA_BAGGAGE
 	sprite_movement_data SPRITEMOVEFN_CASINO_1,         	 DOWN,   PERSON_ACTION_CASINO_1,   			$7c,    $00,    %0000 ; SPRITEMOVEDATA_CASINO_1
 	sprite_movement_data SPRITEMOVEFN_CASINO_2,         	 UP,	 PERSON_ACTION_CASINO_2,   			$7c,    $00,    %0000 ; SPRITEMOVEDATA_CASINO_2
-	sprite_movement_data SPRITEMOVEFN_FLOWER,                 DOWN,   PERSON_ACTION_FLOWER_SHAKE,     	$8e,    $02,    %0000 ; SPRITEMOVEDATA_FLOWER
+	sprite_movement_data SPRITEMOVEFN_FLOWER,                DOWN,   PERSON_ACTION_FLOWER_SHAKE,     	$8e,    $02,    %0000 ; SPRITEMOVEDATA_FLOWER
+	sprite_movement_data SPRITEMOVEFN_TILE_UP_DOWN,          DOWN,   PERSON_ACTION_TILE_UP_DOWN,        $7c,    $00,    %0000 ; SPRITEMOVEDATA_TILE_UP_DOWN

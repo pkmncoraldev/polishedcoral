@@ -958,7 +958,59 @@ LoadMapPals::
 	jp z, .haunted
 	cp TILESET_DIVE
 	jr z, .underwater
+	cp TILESET_BAR
+	jr z, .bar
 	jp .normal
+.bar
+	ld a, [wPlayerPalette]
+	cp 4
+	jr z, .bar_purple
+	ld de, wUnknOBPals + 5 palettes
+	jr .bar_cont
+.bar_purple
+	ld de, wUnknOBPals + 4 palettes
+.bar_cont
+	ld hl, MapObjectPalsBar
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ld a, [wTimeOfDayPalFlags]
+	and $3F
+	cp 1
+	jr z, .bar_one
+	cp 2
+	jr z, .bar_two
+	cp 3
+	jr z, .bar_three
+	cp 4
+	jr z, .bar_four
+	cp 5
+	jr z, .bar_five
+.bar_zero
+	ld hl, MapObjectPalsJukebox
+	call LoadSingleOBPalLinePal7
+	jp FarCopyWRAM
+.bar_one
+	ld hl, MapObjectPalsJukebox + 1 palettes
+	call LoadSingleOBPalLinePal7
+	jp FarCopyWRAM
+.bar_two
+	ld hl, MapObjectPalsJukebox + 2 palettes
+	call LoadSingleOBPalLinePal7
+	jp FarCopyWRAM
+.bar_three
+	ld hl, MapObjectPalsJukebox + 3 palettes
+	call LoadSingleOBPalLinePal7
+	jp FarCopyWRAM
+.bar_four
+	ld hl, MapObjectPalsJukebox + 4 palettes
+	call LoadSingleOBPalLinePal7
+	jp FarCopyWRAM
+.bar_five
+	ld hl, MapObjectPalsJukebox + 5 palettes
+	call LoadSingleOBPalLinePal7
+	jp FarCopyWRAM
+	
 .underwater
 	ld a, [wPlayerPalette]
 	cp 4
@@ -2092,6 +2144,12 @@ INCLUDE "maps/palettes/obpals/underwater.pal"
 
 MapObjectPalsUnderwaterPurple::
 INCLUDE "maps/palettes/obpals/underwaterpurple.pal"
+
+MapObjectPalsBar::
+INCLUDE "maps/palettes/obpals/bar.pal"
+
+MapObjectPalsJukebox::
+INCLUDE "maps/palettes/obpals/jukebox.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

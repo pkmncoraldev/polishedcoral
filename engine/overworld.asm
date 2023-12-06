@@ -318,17 +318,7 @@ GetSpriteVTilePlayer:: ; 180e
 	; (SPRITE_BIG_GYARADOS has more than 12 tiles, and SPRITE_SAILBOAT
 	; needs to be in VRAM1)
 	ld a, [hUsedSpriteIndex]
-	cp SPRITE_BIG_GYARADOS
-	jr z, .use_last_struct
-	cp SPRITE_BIG_MUK
-	jr z, .use_last_struct
-	cp SPRITE_SAILBOAT
-	jr z, .use_last_struct
 	ld a, [hObjectStructIndexBuffer]
-	jr .got_sprite_tile
-.use_last_struct
-	ld a, NUM_OBJECT_STRUCTS - 1
-.got_sprite_tile
 	cp FIRST_VRAM1_OBJECT_STRUCT
 	jr c, .continue
 	set 5, [hl]

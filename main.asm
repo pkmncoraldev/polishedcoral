@@ -137,7 +137,7 @@ INCLUDE "engine/npc_movement.asm"
 
 SECTION "Code 2", ROMX
 
-INCLUDE "engine/player_object.asm"
+
 INCLUDE "data/predef_pointers.asm"
 INCLUDE "engine/color.asm"
 
@@ -4417,12 +4417,12 @@ Special_MagikarpHouseSign:
 ;INCLUDE "engine/events/magikarp.asm"
 INCLUDE "engine/events/name_rater.asm"
 INCLUDE "audio/distorted_cries.asm"
+INCLUDE "engine/events/npc_trade.asm"
 
 
 SECTION "Code 24", ROMX
 
 INCLUDE "engine/tileset_anims.asm"
-INCLUDE "engine/events/npc_trade.asm"
 ;INCLUDE "engine/events/wonder_trade.asm"
 WonderTrade::
 ret
@@ -5111,3 +5111,4 @@ GetTMHMName:: ; 3487
 
 SECTION "Coral Data 5", ROMX
 INCLUDE "engine/battle/porygon_encounter.asm"
+INCLUDE "engine/player_object.asm"

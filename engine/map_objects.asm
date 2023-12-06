@@ -639,6 +639,7 @@ MapObjectMovementPattern:
 	dw .MovementCasino1
 	dw .MovementCasino2
 	dw .MovementShakingFlower
+	dw .MovementTileUpDown            ; SPRITEMOVEFN_TILE_UP_DOWN
 
 .RandomWalkY:
 	call Random
@@ -1050,6 +1051,10 @@ MapObjectMovementPattern:
 	
 .MovementCandle:
 	ld a, PERSON_ACTION_CANDLE
+	jp ._ActionA_StepType04
+	
+.MovementTileUpDown:
+	ld a, PERSON_ACTION_TILE_UP_DOWN
 	jp ._ActionA_StepType04
 	
 .MovementWalkInPlace:

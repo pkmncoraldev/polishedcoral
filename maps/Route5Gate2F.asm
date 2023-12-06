@@ -266,6 +266,6 @@ Route5Gate2FBinocularsText2:
 	done
 	
 Route5Gate2FBinocularsNoMoneyText:
-	text "Too rich fo your"
+	text "Too rich for your"
 	line "blood!"
 	done

@@ -1,9 +1,9 @@
-Music_WildBattle: ; f5dc5
-	musicheader 3, 1, Music_WildBattle_Ch1
-	musicheader 1, 2, Music_WildBattle_Ch2
-	musicheader 1, 3, Music_WildBattle_Ch3
+Music_WildBattleOld: ; f5dc5
+	musicheader 3, 1, Music_WildBattleOld_Ch1
+	musicheader 1, 2, Music_WildBattleOld_Ch2
+	musicheader 1, 3, Music_WildBattleOld_Ch3
 ; f5dce
-Music_WildBattle_Ch1: ; f5ea2
+Music_WildBattleOld_Ch1: ; f5ea2
 	tempo 107
 	volume $77
 	dutycycle $3
@@ -113,7 +113,7 @@ Music_WildBattle_Ch1: ; f5ea2
 	note E_, 8
 	
 
-Music_WildBattle_loop1:
+Music_WildBattleOld_loop1:
 	intensity $b8
 	octave 3
 	note __, 2
@@ -395,11 +395,11 @@ Music_WildBattle_loop1:
 	note F#, 16
 	note __, 16
 
-	loopchannel 0, Music_WildBattle_loop1
+	loopchannel 0, Music_WildBattleOld_loop1
 ; f5f91
 
 
-Music_WildBattle_Ch2: ; f5dce
+Music_WildBattleOld_Ch2: ; f5dce
 	dutycycle $3
 	tone $0002
 	vibrato $12, $15
@@ -517,7 +517,7 @@ Music_WildBattle_Ch2: ; f5dce
 	octave 5
 	note C_, 8
 	
-Music_WildBattle_loop2:
+Music_WildBattleOld_loop2:
 	intensity $b7
 	octave 4
 	note D_, 6
@@ -842,10 +842,10 @@ Music_WildBattle_loop2:
 	note D_, 16
 	note __, 16
 
-	loopchannel 0, Music_WildBattle_loop2
+	loopchannel 0, Music_WildBattleOld_loop2
 ; f5ea2
 
-Music_WildBattle_Ch3: ; f5f91
+Music_WildBattleOld_Ch3: ; f5f91
 	notetype $c, $14
 
 	octave 3
@@ -926,7 +926,7 @@ Music_WildBattle_Ch3: ; f5f91
 	note C_, 4
 	note E_, 4
 	
-Music_WildBattle_loop3:
+Music_WildBattleOld_loop3:
 	note D_, 2
 	note A_, 2
 	note D_, 2
@@ -1359,7 +1359,7 @@ Music_WildBattle_loop3:
 	note F_, 2
 	note A_, 2
 
-	loopchannel 0, Music_WildBattle_loop3
+	loopchannel 0, Music_WildBattleOld_loop3
 
 	
 ; f605c

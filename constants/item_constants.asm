@@ -196,10 +196,10 @@
 	const QUICK_POWDER ; aa
 	const POLLEN_POUCH ; ab
 
-	const AIR_BALLOON  ; ac
+	const AIR_BALLOON  ; ac - replace
 	const ASSAULT_VEST ; ad
 	const BIG_ROOT     ; ae
-	const BINDING_BAND ; af
+	const BINDING_BAND ; af - replace
 	const DESTINY_KNOT ; b0
 	const EVIOLITE     ; b1
 	const EXPERT_BELT  ; b2
@@ -209,13 +209,13 @@
 	const LIGHT_CLAY   ; b6
 	const METRONOME_I  ; b7
 	const MUSCLE_BAND  ; b8
-	const PROTECT_PADS ; b9
+	const PROTECT_PADS ; b9 - replace
 	const ROCKY_HELMET ; ba
 	const SAFE_GOGGLES ; bb
 	const SHED_SHELL   ; bc
 	const SHELL_BELL   ; bd
 	const SOOTHE_BELL  ; be
-	const WEAK_POLICY  ; bf
+	const WEAK_POLICY  ; bf - replace
 	const WIDE_LENS    ; c0
 	const WISE_GLASSES ; c1
 	const ZOOM_LENS    ; c2

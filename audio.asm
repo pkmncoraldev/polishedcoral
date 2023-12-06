@@ -99,6 +99,9 @@ INCLUDE "audio/music/brillosongbad.asm"
 INCLUDE "audio/music/oasis.asm"
 INCLUDE "audio/music/bar.asm"
 INCLUDE "audio/music/darkness.asm"
+INCLUDE "audio/music/starglowold.asm"
+INCLUDE "audio/music/wildbattleold.asm"
+INCLUDE "audio/music/gymbattleold.asm"
 
 
 SECTION "Music 6", ROMX

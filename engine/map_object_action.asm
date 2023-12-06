@@ -74,7 +74,8 @@ Pointers445f: ; 445f
 	dw SetFacingSailboatTopRight,      SetFacingSailboatTopRight  ; PERSON_ACTION_SAILBOAT_TOP_RIGHT
 	dw SetFacingCasino1,      		   SetFacingCasino1  		  ; PERSON_ACTION_CASINO_1
 	dw SetFacingCasino2,      		   SetFacingCasino2  		  ; PERSON_ACTION_CASINO_2
-	dw SetFacingFlowerShake,            SetFacingStanding          ; PERSON_ACTION_FLOWER_SHAKE
+	dw SetFacingFlowerShake,           SetFacingStanding          ; PERSON_ACTION_FLOWER_SHAKE
+	dw SetFacingTileUpDown,            SetFacingFreezeTileUpDown  ; PERSON_ACTION_TILE_UP_DOWN
 	
 ; 44a3
 
@@ -345,6 +346,20 @@ SetFacingCandle: ; 4590
 	jp nz, SetFixedFacing
 SetFacingFreezeCandle: ; 45a4
 	ld a, FACING_CANDLE_2
+	jp SetFixedFacing
+	
+SetFacingTileUpDown:
+	ld hl, OBJECT_STEP_FRAME
+	add hl, bc
+	ld a, [hl]
+	inc a
+	and %00111111
+	ld [hl], a
+	and %00100000
+	ld a, FACING_TILE_DOWN
+	jp nz, SetFixedFacing
+SetFacingFreezeTileUpDown: ; 45a4
+	ld a, FACING_TILE_UP
 	jp SetFixedFacing
 
 SetFacingBather: ; 4590

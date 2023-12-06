@@ -168,6 +168,11 @@ DuskTurnpikeFlyPoint:
 	return
 
 DuskTurnpikeCallback:
+	callasm CheckJukeboxSong
+	iffalse .skip_music
+	loadvar wJukeboxSong, 0
+	callasm RestoreDuskTurnpikeMusic
+.skip_music
 	checktime 1<<DUSK
 	iftrue .dusk
 	checktime 1<<NITE
@@ -199,6 +204,12 @@ DuskTurnpikeCallback:
 .end
 	domaptrigger ROUTE_22_TUNNEL, $1
 	return
+	
+RestoreDuskTurnpikeMusic:
+	ld a, MUSIC_NONE
+	ld [wMapMusic], a
+	call FadeToMapMusic
+	ret
 
 DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
 	farcall CheckCurrentMapXYTriggers

@@ -1,0 +1,35 @@
+; White/Red
+	RGB 31, 00, 31
+	RGB 30, 10, 06
+	RGB 30, 28, 26
+	RGB 30, 28, 26
+
+; Yellow/Blue
+	RGB 31, 00, 31
+	RGB 14, 16, 31
+	RGB 31, 31, 07
+	RGB 30, 28, 26
+
+; Pink/Blue
+	RGB 31, 00, 31
+	RGB 14, 16, 31
+	RGB 31, 17, 21
+	RGB 30, 28, 26
+
+; Green/Purple
+	RGB 31, 00, 31
+	RGB 21, 09, 25
+	RGB 08, 26, 07
+	RGB 30, 28, 26
+
+; Cream/Red
+	RGB 31, 00, 31
+	RGB 30, 10, 06
+	RGB 31, 26, 15
+	RGB 30, 28, 26
+
+; Blue/Yellow
+	RGB 31, 00, 31
+	RGB 31, 31, 07
+	RGB 14, 16, 31
+	RGB 30, 28, 26

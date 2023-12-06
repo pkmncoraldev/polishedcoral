@@ -810,7 +810,7 @@ else
 	ds 5
 endc
 
-	ds 1
+wJukeboxSong::	ds 1
 
 wObjectFollow_Leader:: ds 1
 wObjectFollow_Follower:: ds 1

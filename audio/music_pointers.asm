@@ -60,6 +60,9 @@ Music:
 	dba Music_Bar
 	dba Music_Darkness
 	
+	dba Music_StarglowOld
+	dba Music_WildBattleOld
+	dba Music_GymBattleOld
 	dba Music_Mountaintop
 	dba Music_HealPokemon
 	dba Music_SuccessfulCapture

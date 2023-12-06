@@ -406,6 +406,8 @@ Continue: ; 5d65
 	call DelayFrames
 	farcall JumpRoamMons
 	farcall Function140ae ; time-related
+	xor a
+	ld [wJukeboxSong], a
 	ld a, [wSpawnAfterChampion]
 	cp SPAWN_LANCE
 	jr z, .SpawnAfterE4

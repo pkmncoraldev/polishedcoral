@@ -42,7 +42,28 @@ TilesetLibraryAnim::
 TilesetSnowAnim::
 TilesetMall2Anim::
 TilesetIceCaveAnim::
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
 TilesetBarAnim::
+	dw NULL,  JukeboxColors
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -493,6 +514,66 @@ WaitTileAnimation: ; fc2fe
 ; Do nothing this frame.
 	ret
 ; fc2ff
+
+JukeboxColors:
+	ld a, [wTileAnimationTimer]
+	inc a
+	and 7
+	ld [wTileAnimationTimer], a
+	cp 7
+	ret nz
+.try_again
+	ld a, [wPlaceBallsY]
+	ld b, a
+	ld a, 6
+	call RandomRange
+	cp b
+	jr z, .try_again
+	ld [wPlaceBallsY], a
+	cp 1
+	jr z, .one
+	cp 2
+	jr z, .two
+	cp 3
+	jr z, .three
+	cp 4
+	jr z, .four
+	cp 5
+	jr z, .five
+	jr .zero
+.one
+	ld a, $40 | 1
+	ld [wTimeOfDayPalFlags], a
+;	farcall Special_UpdatePalsInstant
+	ret
+.two
+	ld a, $40 | 2
+	ld [wTimeOfDayPalFlags], a
+;	farcall Special_UpdatePalsInstant
+	ret
+.three
+	ld a, $40 | 3
+	ld [wTimeOfDayPalFlags], a
+;	farcall Special_UpdatePalsInstant
+	ret
+.four
+	ld a, $40 | 4
+	ld [wTimeOfDayPalFlags], a
+;	farcall Special_UpdatePalsInstant
+	ret
+.five
+	ld a, $40 | 5
+	ld [wTimeOfDayPalFlags], a
+;	farcall Special_UpdatePalsInstant
+	ret
+.reset
+	xor a
+	ld [wPlaceBallsY], a
+.zero
+	ld a, $40 | 0
+	ld [wTimeOfDayPalFlags], a
+;	farcall Special_UpdatePalsInstant
+	ret
 
 StandingTileFrame8: ; fc2ff
 	ld a, [wMapNumber]

@@ -6,6 +6,7 @@ Rangi - Physical/Special Split
 Chamber_ - Extension 255 icons/minis
 Nuuk - Graphics
 StarGaazar - Additional Graphics
+lmda - Additional Graphics
 Rool - Additional Graphics
 AhabsArtwork - Additional Graphics
 Luna Maddalena - Additional Graphics

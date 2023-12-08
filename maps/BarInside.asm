@@ -1,7 +1,8 @@
 BarInside_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, BarInsideCallback
 
 	db 2 ; warp events
 	warp_event  5,  7, DUSK_TURNPIKE, 18
@@ -11,9 +12,11 @@ BarInside_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 6 ; object events
 	person_event SPRITE_JUKEBOX,  1,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BarInsideJukebox, -1
 	person_event SPRITE_PORYGON_SCREEN,  2,  4, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BarInsideJukebox, -1
+	person_event SPRITE_PORYGON_SCREEN,  2,  4, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, BarInsideJukebox, EVENT_HIDE_OW_OBJECTS_TEAL
+	person_event SPRITE_PORYGON_SCREEN,  2,  4, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BarInsideJukebox, EVENT_HIDE_OW_OBJECTS_PURPLE
 	person_event SPRITE_JUKEBOX,  0,  6, SPRITEMOVEDATA_TILE_UP_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, BarInsideJukebox, EVENT_HIDE_OW_OBJECTS_TEAL
 	person_event SPRITE_JUKEBOX,  0,  6, SPRITEMOVEDATA_TILE_UP_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BarInsideJukebox, EVENT_HIDE_OW_OBJECTS_PURPLE
 	

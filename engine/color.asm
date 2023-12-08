@@ -965,10 +965,10 @@ LoadMapPals::
 	ld a, [wPlayerPalette]
 	cp 4
 	jr z, .bar_purple
-	ld de, wUnknOBPals + 5 palettes
+	ld de, wUnknOBPals + 4 palettes
 	jr .bar_cont
 .bar_purple
-	ld de, wUnknOBPals + 4 palettes
+	ld de, wUnknOBPals + 5 palettes
 .bar_cont
 	ld hl, MapObjectPalsBar
 	ld bc, 1 palettes

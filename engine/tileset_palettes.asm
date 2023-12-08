@@ -151,9 +151,13 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .highway
 	cp TILESET_DIVE
 	jr z, .underwater
+	cp TILESET_BAR
+	jr z, .bar
 	call DiveSpotMapPals
 	jp .do_nothing
-	
+.bar
+	ld hl, BarPalette
+	jp LoadSevenBGPalettes
 .underwater
 	ld hl, UnderwaterPalette
 	call LoadSevenBGPalettes
@@ -1075,6 +1079,9 @@ INCLUDE "maps/palettes/bgpals/underwater.pal"
 
 UnderwaterEyesPalette:
 INCLUDE "maps/palettes/bgpals/underwatereyes.pal"
+
+BarPalette::
+INCLUDE "maps/palettes/bgpals/bar.pal"
 
 DiveSpotsPalette:
 INCLUDE "maps/palettes/bgpals/divespots.pal"

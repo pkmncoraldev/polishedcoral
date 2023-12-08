@@ -51,7 +51,7 @@ TilesetIceCaveAnim::
 TilesetBarAnim::
 	dw NULL,  JukeboxColors
 	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+	dw NULL,  FlickeringSignPalette
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -1953,6 +1953,60 @@ FlickeringLightbulbPalette:
 
 .on
 	ld hl, wUnknBGPals + $22 ; pal 4 color 2
+
+.okay
+	ld a, [hli]
+	ld [rBGPD], a
+	ld a, [hli]
+	ld [rBGPD], a
+
+	pop af
+	ld [rSVBK], a
+	ret
+	
+FlickeringSignPalette:
+; No palette changes on DMG.
+	ld a, [hCGB]
+	and a
+	ret z
+; We don't want to mess with non-standard palettes.
+	ld a, [rBGP]
+	cp %11100100
+	ret nz
+
+	ld a, [hVBlankCounter]
+	and %00000100
+	ret nz
+	
+	ld a, [rSVBK]
+	push af
+	ld a, 5 ; wra5: gfx
+	ld [rSVBK], a
+; Ready for BGPD input...
+	ld a, %10100000 ; auto-increment, index $20 (pal 4 color 0)
+	ld [rBGPI], a
+	call Random
+	cp 75 percent
+	jr nc, .on
+	ld hl, wUnknBGPals + $20 ; pal 4 color 0
+	ld a, [hli]
+	ld [rBGPD], a
+	ld a, [hli]
+	ld [rBGPD], a
+	ld a, %10100010 ; auto-increment, index $20 (pal 4 color 1)
+	ld [rBGPI], a
+	ld hl, wUnknBGPals + $22 ; pal 4 color 0
+	jr .okay
+
+.on
+	ld hl, wUnknBGPals + $24 ; pal 4 color 2
+	ld a, [hli]
+	ld [rBGPD], a
+	ld a, [hli]
+	ld [rBGPD], a
+	ld a, %10100010 ; auto-increment, index $20 (pal 4 color 1)
+	ld [rBGPI], a
+	ld hl, wUnknBGPals + $26 ; pal 4 color 2
 
 .okay
 	ld a, [hli]

@@ -126,7 +126,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; SHINY_CHARM
 	dw NoEffect         ; OVAL_CHARM
 	dw NoEffect         ; FLOWER_PETAL
-	dw RestoreHPEffect  ; BLOSSOM_TEA
+	dw RestoreHPTeaEffect  ; BLOSSOM_TEA
 	dw NoEffect         ; PAINTBRUSH
 	dw HealStatusEffect ; CHERI_BERRY
 	dw HealStatusEffect ; CHESTO_BERRY
@@ -256,7 +256,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; COVER_FOSSIL
 	dw NoEffect         ; PLUME_FOSSIL
 	dw NoEffect         ; OLD_AMBER
-	dw RestoreHPEffect         ; SUNSHINE_TEA
+	dw RestoreHPTeaEffect         ; SUNSHINE_TEA
 	dw NoEffect         ; SWEET_HONEY
 	dw NoEffect         ; FLOWER_MAIL
 	dw NoEffect         ; SURF_MAIL
@@ -1982,6 +1982,10 @@ RestoreHPEffect: ; f186
 	jp StatusHealer_Jumptable
 ; f18c
 
+RestoreHPTeaEffect:
+	call TeaRestoreHP
+	jp StatusHealer_Jumptable
+
 
 EnergyPowder: ; f18c
 	ld c, HAPPINESS_BITTERPOWDER
@@ -2007,6 +2011,52 @@ EnergyPowderEnergyRootCommon: ; f192
 	jp StatusHealer_Jumptable
 ; f1a9
 
+TeaRestoreHP:
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+	ld a, 2
+	ret c
+
+	call IsMonFainted
+	ld a, 1
+	ret z
+
+	call IsMonAtFullHealth
+	ld a, 1
+	ret nc
+	
+	ld a, [wCurItem]
+	push af
+	ld a, SWEET_HONEY
+	ld [wCurItem], a
+	ld hl, wNumMedicine
+	call CheckItem
+	jr nc, .no_honey
+	ld a, SWEET_HONEY
+	ld [wCurItem], a
+	ld a, 1
+	ld [wItemQuantityChangeBuffer], a
+	ld hl, wNumItems
+	call TossItem
+	call MixSweetHoneyMessage
+	ld a, SWEET_HONEY
+	ld [wCurItem], a
+	ld hl, wNumMedicine
+	call CheckItem
+	jr c, .still_have_honey
+	call OutOfSweetHoneyMessage
+.still_have_honey
+	pop af
+	ld [wCurItem], a
+	xor a
+	ld [wLowHealthAlarm], a
+	call GetTeaHoneyHealingItemAmount
+	jr ItemRestoreHP.jump2
+	
+.no_honey
+	pop af
+	ld [wCurItem], a
+	jr ItemRestoreHP.jump1
 
 ItemRestoreHP:
 	ld b, PARTYMENUACTION_HEALING_ITEM
@@ -2021,10 +2071,11 @@ ItemRestoreHP:
 	call IsMonAtFullHealth
 	ld a, 1
 	ret nc
-
+.jump1
 	xor a
 	ld [wLowHealthAlarm], a
 	call GetHealingItemAmount
+.jump2
 	call RestoreHealth
 	call BattlemonRestoreHealth
 	call HealHP_SFX_GFX
@@ -2322,6 +2373,16 @@ GetOneFifthMaxHP: ; f378 (3:7378)
 	ld a, [hQuotient + 2]
 	ld e, a
 	pop bc
+	ret
+
+GetTeaHoneyHealingItemAmount:
+	farcall CheckItemParam
+	add a
+	ld e, a
+	ld d, 0
+	cp -1
+	ret nz
+	ld de, 999
 	ret
 
 GetHealingItemAmount: ; f395 (3:7395)
@@ -3005,6 +3066,14 @@ LooksBitterMessage: ; f7d6
 SaveBottleCapMessage:
 	ld hl, SaveBottleCapText
 	jp PrintText
+	
+MixSweetHoneyMessage:
+	ld hl, MixSweetHoneyText
+	jp PrintText
+	
+OutOfSweetHoneyMessage:
+	ld hl, OutOfSweetHoneyText
+	jp PrintText
 
 WontHaveAnyEffect_NotUsedMessage: ; f7ca
 	ld hl, WontHaveAnyEffectText
@@ -3077,6 +3146,16 @@ LooksBitterText: ; 0xf80b
 SaveBottleCapText:
 	; Better save the…
 	text_jump UnknownText_SaveBottleCap
+	db "@"
+
+MixSweetHoneyText:
+	; <PLAYER> mixed in some…
+	text_jump UnknownText_MixSweetHoney
+	db "@"
+	
+OutOfSweetHoneyText:
+	; <PLAYER> mixed in some…
+	text_jump UnknownText_OutOfSweetHoney
 	db "@"
 
 CantUseOnEggText: ; 0xf810

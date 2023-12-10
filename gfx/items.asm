@@ -276,6 +276,7 @@ ShinyCharmIcon:   				INCBIN "gfx/items/1.2bpp"
 FlowerPetalIcon:  				INCBIN "gfx/items/flower_petal.2bpp"
 SunshineTeaIcon:
 BlossomTeaIcon:   				INCBIN "gfx/items/blossom_tea.2bpp"
+SweetHoneyItemIcon:   			INCBIN "gfx/items/sweet_honey.2bpp"
 PaintbrushIcon:   				INCBIN "gfx/items/paintbrush.2bpp"
 CheriBerryIcon:   				INCBIN "gfx/items/1.2bpp"
 ChestoBerryIcon:  				INCBIN "gfx/items/1.2bpp"

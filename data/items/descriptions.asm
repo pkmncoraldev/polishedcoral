@@ -1034,8 +1034,8 @@ PowerAnkletDesc:
 	next "but lowers SPEED.@"
 
 SweetHoneyDesc:
-	db   "The aroma attracts"
-	next "wild #MON.@"
+	db   "Mix in TEA to"
+	next "boost healing.@"
 
 EvioliteDesc:
 	db   "Ups Def and SPCL."

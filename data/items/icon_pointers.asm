@@ -243,7 +243,7 @@ ItemIconPointers:
 	dba PlumeFossilIcon
 	dba UnusedItemIcon
 	dba SunshineTeaIcon
-	dba UnusedItemIcon
+	dba SweetHoneyItemIcon
 	dba UnusedItemIcon
 	dba UnusedItemIcon
 	dba UnusedItemIcon

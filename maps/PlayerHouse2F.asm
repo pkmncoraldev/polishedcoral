@@ -236,6 +236,9 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
+	giveitem SWEET_HONEY, 1
+	giveitem BLOSSOM_TEA, 3
+	giveitem SUNSHINE_TEA, 99
 	giveitem PEARL, 99
 	giveitem BIG_PEARL, 99
 	giveitem LEAF_STONE, 99

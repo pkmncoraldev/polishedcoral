@@ -9,6 +9,7 @@ PollenShopData:
 	dbw NUGGET,				1000
 	dbw SUNSHINE_TEA,		 500
 	dbw BLOSSOM_TEA,		 100
+	dbw SWEET_HONEY,		 250
 	dbw BERRY_JUICE,		  50
 	dbw BOTTLE_CAP,			  75
 	db -1

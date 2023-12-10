@@ -1087,6 +1087,18 @@ UnknownText_SaveBottleCap::
 	line "BOTTLE CAP."
 	prompt
 	
+UnknownText_MixSweetHoney::
+	text "<PLAYER> mixed in"
+	line "some SWEET HONEY."
+	
+	para "Yum!"
+	prompt
+	
+UnknownText_OutOfSweetHoney::
+	text "That was your last"
+	line "SWEET HONEY!"
+	prompt
+	
 UnknownText_0x1c5d50::
 	text "That can't be used"
 	line "on an EGG."

@@ -48,12 +48,13 @@ Pack: ; 10000
 	dw Pack_QuitRunScript  ; 14
 
 .InitGFX: ; 10046 (4:4046)
+	call Pack_InitColors
 	xor a
 	ld [hBGMapMode], a
 	call Pack_InitGFX
 	ld a, [wcf64]
 	ld [wJumptableIndex], a
-	jp Pack_InitColors
+	ret
 
 .InitItemsPocket: ; 10056 (4:4056)
 	ld a, ITEM - 1
@@ -207,11 +208,12 @@ Pack: ; 10000
 	pop af
 	ld [wOptions1], a
 .declined
+	call Pack_InitColors
 	xor a
 	ld [hBGMapMode], a
 	call Pack_InitGFX
 	call WaitBGMap_DrawPackGFX
-	jp Pack_InitColors
+	ret
 
 .InitBerriesPocket:
 	ld a, BERRIES - 1
@@ -576,11 +578,12 @@ UseItem: ; 10311
 	jr z, .NoPokemon
 .NewMenu:
 	call DoItemEffect
+	call Pack_InitColors
 	xor a
 	ld [hBGMapMode], a
 	call Pack_InitGFX
 	call WaitBGMap_DrawPackGFX
-	jp Pack_InitColors
+	ret
 
 .NoPokemon:
 	ld hl, TextJump_YouDontHaveAPkmn
@@ -719,11 +722,12 @@ GiveItem: ; 103fd
 .finish
 	pop af
 	ld [wOptions1], a
+	call Pack_InitColors
 	xor a
 	ld [hBGMapMode], a
 	call Pack_InitGFX
 	call WaitBGMap_DrawPackGFX
-	jp Pack_InitColors
+	ret
 
 .NoPokemon: ; 10486 (4:4486)
 	ld hl, TextJump_YouDontHaveAPkmn
@@ -740,6 +744,8 @@ QuitItemSubmenu: ; 10492
 ; 10493
 
 BattlePack: ; 10493
+	xor a
+	ld [wPlaceBallsX], a
 	ld hl, wOptions1
 	set NO_TEXT_SCROLL, [hl]
 	call InitPackBuffers
@@ -749,10 +755,11 @@ BattlePack: ; 10493
 	bit 7, a
 	jr nz, .end
 	call .RunJumptable
-	call DelayFrame
+;	call DelayFrame
 	jr .loop
 
 .end
+	call SFXDelay2
 	ld a, [wCurrPocket]
 	ld [wLastPocket], a
 	ld hl, wOptions1
@@ -787,12 +794,13 @@ BattlePack: ; 10493
 	dw Pack_QuitRunScript  ; 14
 
 .InitGFX: ; 104d9 (4:44d9)
+	call Pack_InitColors
 	xor a
 	ld [hBGMapMode], a
 	call Pack_InitGFX
 	ld a, [wcf64]
 	ld [wJumptableIndex], a
-	jp Pack_InitColors
+	ret
 
 .InitItemsPocket: ; 104e9 (4:44e9)
 	ld a, ITEM - 1
@@ -1047,11 +1055,12 @@ TMHMSubmenu: ; 105dc (4:45dc)
 	ld a, [wItemEffectSucceeded]
 	and a
 	jr nz, .quit_run_script
+	call Pack_InitColors
 	xor a
 	ld [hBGMapMode], a
 	call Pack_InitGFX
 	call WaitBGMap_DrawPackGFX
-	jp Pack_InitColors
+	ret
 
 .ReturnToBattle: ; 1066c (4:466c)
 	call ClearBGPalettes
@@ -1101,8 +1110,8 @@ DepositSellInitPackBuffers: ; 106a5
 	ld [wCurrPocket], a
 	ld [wcf66], a
 	ld [wSwitchItem], a
-	call Pack_InitGFX
-	jp Pack_InitColors
+	call Pack_InitColors
+	jp Pack_InitGFX
 ; 106be
 
 DepositSellPack: ; 106be

@@ -5269,6 +5269,7 @@ BattleMenu_SafariBall:
 	bit 6, [hl] ; ENGINE_PATCHES_MODE
 	jr nz, .safari
 
+	call ClearBGPalettes
 	farcall BattlePack
 	ld a, [wBattlePlayerAction]
 	and a

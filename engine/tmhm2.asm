@@ -235,6 +235,7 @@ TMHM_DisplayPocketItems: ; 2c9e2 (b:49e2)
 	ret
 
 .NotTMHM:
+	push de
 	call TMHMPocket_GetCurrentLineCoord
 	inc hl
 	inc hl
@@ -250,6 +251,7 @@ TMHM_DisplayPocketItems: ; 2c9e2 (b:49e2)
 	call GetTMIconLeft
 	call GetTMIconRight
 	farcall Pack_Draw_Sprites
+	pop de
 	ret
 
 TMHMPocket_GetCurrentLineCoord: ; 2ca86 (b:4a86)

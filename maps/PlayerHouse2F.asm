@@ -236,6 +236,8 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
+	giveitem PEARL, 99
+	giveitem BIG_PEARL, 99
 	giveitem LEAF_STONE, 99
 	giveitem FIRE_STONE, 99
 	giveitem WATER_STONE, 99
@@ -354,6 +356,7 @@ PlayerHouseDebugPoster:
 	giveitem TAPE_PLAYER
 	giveitem SKATEBOARD
 	giveitem BICYCLE
+	giveitem BLACK_PEARL
 	giveitem B_ROOM_KEY
 	giveitem R_ROOM_KEY
 	giveitem Y_ROOM_KEY

@@ -261,7 +261,7 @@ ItemNameOrder:
 	db NAM_BALMMUSHROOM ; 0b
 	db NAM_PEARL        ; 9c
 	db NAM_BIG_PEARL    ; 11
-	db NAM_PEARL_STRING ; 9d
+	db NAM_BLACK_PEARL ; 9d
 	db NAM_STARDUST     ; e1
 	db NAM_STAR_PIECE   ; e0
 	db NAM_BRICK_PIECE  ; 1a

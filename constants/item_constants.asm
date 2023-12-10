@@ -262,7 +262,7 @@
 	const BALMMUSHROOM ; e4 - replace
 	const PEARL        ; e5
 	const BIG_PEARL    ; e6
-	const PEARL_STRING ; e7 - replace
+	const BLACK_PEARL  ; e7
 	const STARDUST     ; e8
 	const STAR_PIECE   ; e9
 	const BRICK_PIECE  ; ea - replace
@@ -277,7 +277,7 @@
 	const OLD_AMBER    ; f2 - replace
 
 	const SUNSHINE_TEA ; f3
-	const SWEET_HONEY  ; f4 - replace
+	const SWEET_HONEY  ; f4
 
 	const FLOWER_MAIL  ; f5 - replace
 	const SURF_MAIL    ; f6 - replace
@@ -451,7 +451,7 @@
 	const NAM_PARK_BALL    ; 9a
 	const NAM_Y_ROOM_KEY   ; 9b
 	const NAM_PEARL        ; 9c
-	const NAM_PEARL_STRING ; 9d
+	const NAM_BLACK_PEARL  ; 9d
 	const NAM_PECHA_BERRY  ; 9e
 	const NAM_PERSIM_BERRY ; 9f
 	const NAM_UNUSED4      ; a0

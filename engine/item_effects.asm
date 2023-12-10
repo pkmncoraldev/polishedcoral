@@ -244,7 +244,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; BALMMUSHROOM
 	dw NoEffect         ; PEARL
 	dw NoEffect         ; BIG_PEARL
-	dw NoEffect         ; PEARL_STRING
+	dw NoEffect         ; BLACK_PEARL
 	dw NoEffect         ; STARDUST
 	dw NoEffect         ; STAR_PIECE
 	dw NoEffect         ; BRICK_PIECE

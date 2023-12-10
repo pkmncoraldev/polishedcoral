@@ -230,7 +230,7 @@ ItemIconPointers:
 	dba UnusedItemIcon
 	dba PearlIcon
 	dba BigPearlIcon
-	dba UnusedItemIcon
+	dba BlackPearlIcon
 	dba StardustIcon
 	dba StarPieceIcon
 	dba UnusedItemIcon

@@ -229,7 +229,7 @@ ItemNames::
 	db "BALMMUSHROOM@"
 	db "PEARL@"
 	db "BIG PEARL@"
-	db "PEARL STRING@"
+	db "BLACK PEARL@"
 	db "STARDUST@"
 	db "STAR PIECE@"
 	db "BRICK PIECE@"

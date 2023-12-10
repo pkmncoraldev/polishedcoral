@@ -158,7 +158,7 @@ DesertTemple2ForceDayPal:
 	ret
 	
 DesertTemple2SetItemAsm:
-	ld a, ANCIENT_BALL
+	ld a, BLACK_PEARL
 	ld [wCurItemBallContents], a
 	ld a, 1
 	ld [wCurItemBallQuantity], a

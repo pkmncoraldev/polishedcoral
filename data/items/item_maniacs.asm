@@ -30,29 +30,6 @@ GourmetManiacItemRewards:
 	db -1
 
 OreManiacItemRewards:
-	dbw LEAF_STONE,    3000
-	dbw FIRE_STONE,    3000
-	dbw WATER_STONE,   3000
-	dbw THUNDERSTONE,  3000
-	dbw MOON_STONE,    3000
-	dbw SUN_STONE,     3000
-	dbw DUSK_STONE,    3000
-	dbw SHINY_STONE,   3000
-	dbw DAWN_STONE,    3000
-	dbw EVERSTONE,     3000
-	dbw HARD_STONE,    1000
-	dbw DAMP_ROCK,     4000
-	dbw HEAT_ROCK,     4000
-	dbw SMOOTH_ROCK,   4000
-	dbw ICY_ROCK,      4000
-	dbw NUGGET,       10000
-	dbw BIG_NUGGET,   20000
-	dbw PEARL,         2000
-	dbw BIG_PEARL,     8000
-	dbw PEARL_STRING, 16000
-	dbw STARDUST,      3000
-	dbw STAR_PIECE,   12000
-	dbw BRICK_PIECE,    100
 	db -1
 
 FossilManiacItemRewards:

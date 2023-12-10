@@ -229,7 +229,7 @@ ItemDescriptions:
 	dw BalmMushroomDesc
 	dw PearlDesc
 	dw BigPearlDesc
-	dw PearlStringDesc
+	dw BlackPearlDesc
 	dw StardustDesc
 	dw StarPieceDesc
 	dw BrickPieceDesc
@@ -1105,9 +1105,9 @@ BigPearlDesc:
 	db   "A big, beautiful"
 	next "pearl. Sell high.@"
 
-PearlStringDesc:
-	db   "Big, shiny pearls."
-	next "Sell very high.@"
+BlackPearlDesc:
+	db   "A beautiful black"
+	next "pearl. Very rare.@"
 
 StardustDesc:
 	db   "Pretty, red sand."

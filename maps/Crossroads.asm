@@ -385,20 +385,67 @@ CrossroadsCutsceneGruntText3:
 	done
 	
 CrossroadsCutsceneColbyText1:
-	text "OPPA GANGNAM"
-	line "STYLE."
+	text "<RIVAL>: What's up,"
+	line "<PLAYER>?"
+	
+	para "Surprised to see"
+	line "me?"
+	
+	para "Yeah, that's right,"
+	line "I'm with TEAM SNARE"
+	cont "now."
+	
+	para "Our leader sees my"
+	line "true potential."
+	
+	para "He says I'm a"
+	line "prodigy."
+	
+	para "He says that my"
+	line "losing to you must"
+	cont "be foul play."
+	
+	para "And he's right!"
+	
+	para "So, I'm done"
+	line "playing fair!"
+	
+	para "Get ready,"
+	line "<PLAYER>!"
 	done
 	
 CrossroadsCutsceneColbyText2:
-	text "TEXT 2"
+	text "Whatever!"
+	
+	para "I expected as"
+	line "much!"
+	
+	para "We're only just"
+	line "getting started"
+	cont "here!"
+	
+	para "Our plans are in"
+	line "motion, and you"
+	cont "aren't going to"
+	cont "stop them."
+	
+	para "I hope you enjoyed"
+	line "that victory,"
+	cont "<PLAYER>."
+	
+	para "Soon you're going"
+	line "to get what's"
+	cont "coming to you…"
 	done
 	
 CrossroadsCutsceneColbyWinText:
-	text "YOU WIN"
+	text "…"
 	done
 	
 CrossroadsCutsceneColbyLoseText:
-	text "YOU LOSE"
+	text "Yes!"
+	
+	para "Finally!"
 	done
 	
 Movement_CrossroadsCutsceneStart1:

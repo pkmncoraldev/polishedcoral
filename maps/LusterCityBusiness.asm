@@ -251,7 +251,7 @@ LusterCityBusinessRivalText2:
 	text "This… This isn't"
 	line "right!"
 	
-	para "How can a whimp"
+	para "How can someone"
 	line "like you keep"
 	cont "beating me?"
 	

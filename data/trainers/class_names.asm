@@ -20,7 +20,7 @@ TrainerClassNames::
 	db "ELITE FOUR@"       ; KAREN
 	db "CHAMPION@"         ; CHAMPION
 	db "RIVAL@"            ; RIVAL
-	db "SNARE ADMIN@"	   ; RIVAL_S
+	db "SNARE EXEC@"	   ; RIVAL_S
 	db "YOUNGSTER@"        ; YOUNGSTER
 	db "BUG CATCHER@"      ; BUG_CATCHER
 	db "CAMPER@"           ; CAMPER
@@ -31,8 +31,8 @@ TrainerClassNames::
 	db "HIKER@"            ; HIKER
 	db "TEAM SNARE@"       ; GRUNTM
 	db "TEAM SNARE@"       ; GRUNTF
-	db "SNARE ADMIN@"	   ; KAGE
-	db "SNARE ADMIN@"	   ; LOCKE
+	db "SNARE EXEC@"	   ; KAGE
+	db "SNARE EXEC@"	   ; LOCKE
 	db "#FAN@"             ; POKEFANM
 	db "#FAN@"             ; POKEFANF
 	db "OFFICER@"          ; OFFICER

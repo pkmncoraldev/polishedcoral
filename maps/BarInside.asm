@@ -109,7 +109,7 @@ BarInsideJukeboxNoMoneyText:
 	done
 	
 BarInsideJukeboxTextDefault:
-	text "MOO MOO BLUES"
+	text "MOOMOO BLUES"
 	line "is playing."
 	done
 	

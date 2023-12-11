@@ -381,6 +381,7 @@ PlayerHouseDebugPoster:
 	setevent EVENT_KNOW_OLLIE
 	setevent EVENT_KNOW_GRIND
 	callasm FillPokedex
+	callasm UnlockSongs
 .badges
 	writetext PlayerHouseDebugText3
 	yesorno
@@ -476,6 +477,14 @@ FillPokedex:
 	call .Fill
 	ld hl, wPokedexCaught
 .Fill:
+	ld a, %11111111
+	ld bc, 31 ; 001-248
+	call ByteFill
+	ld [hl], %00111111 ; 249-254
+	ret
+	
+UnlockSongs:
+	ld hl, wUnlockedSongs
 	ld a, %11111111
 	ld bc, 31 ; 001-248
 	call ByteFill

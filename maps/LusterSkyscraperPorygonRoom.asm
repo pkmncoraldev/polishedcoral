@@ -33,7 +33,7 @@ LusterSkyscraperPorygonRoom_MapScriptHeader:
 	signpost  2,  2, SIGNPOST_READ, LusterSkyscraperPorygonRoomComputer
 
 	db 1 ; object events
-	person_event SPRITE_PORYGON_SCREEN,  2,  2, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LusterSkyscraperPorygonRoomComputer, EVENT_DONE_PORYGON_ENCOUNTER
+	person_event SPRITE_PORYGON_SCREEN,  2,  2, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LusterSkyscraperPorygonRoomComputer, EVENT_DONE_PORYGON_ENCOUNTER
 
 	
 	const_def 1 ; object constants

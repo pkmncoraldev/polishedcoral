@@ -1038,8 +1038,8 @@ SweetHoneyDesc:
 	next "boost healing.@"
 
 EvioliteDesc:
-	db   "Ups Def and SPCL."
-	next "Def of evolvers.@"
+	db   "Ups DEF and SPCL."
+	next "DEF of evolvers.@"
 
 MuscleBandDesc:
 	db   "Powers up physical"
@@ -1050,7 +1050,7 @@ WiseGlassesDesc:
 	next "moves. (Hold)@"
 
 DragonScaleDesc:
-	db   "A rare Dragon-type"
+	db   "A rare DRAGON-type"
 	next "item.@"
 
 UpGradeDesc:
@@ -1074,8 +1074,8 @@ MagmarizerDesc:
 	next "magma energy.@"
 
 LiquidSunDesc:
-	db	 "Ups SPEED in sun"
-	next "of SUNFLORA.(Hold)@"
+	db	 "Up SUNFLORA's SPEED"
+	next "& cast sun. (Hold)@"
 
 NuggetDesc:
 	db   "Made of pure gold."

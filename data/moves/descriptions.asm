@@ -471,7 +471,7 @@ MudSlapDescription:
 	next "lowers accuracy.@"
 
 ShellSmashDescription:
-	db   "DEFs down. ATKs +"
+	db   "DEFs down. ATKs &"
 	next "SPEED up by 2.@"
 
 SonicboomDescription:
@@ -510,7 +510,7 @@ SporeDescription:
 	next "the foe to sleep.@"
 
 ToxicDescription:
-	db   "A Poison move with"
+	db   "A poison move with"
 	next "increasing damage.@"
 	
 PoisonFangDescription:
@@ -572,7 +572,7 @@ BulkUpDescription:
 
 CalmMindDescription:
 	db   "Raises the user's"
-	next "SPECIAL STATS.@"
+	next "SP.ATK & SP.DEF.@"
 
 DragonDanceDescription:
 	db   "Raises the user's"
@@ -587,8 +587,8 @@ LeerDescription:
 	next "the foe's DEFENSE.@"
 
 TauntDescription:
-	db   "Disables STATUS"
-	next "MOVES for 3 turns.@"
+	db   "Disables status"
+	next "moves for 3 turns.@"
 
 SandAttackDescription:
 FlashDescription:
@@ -696,11 +696,11 @@ VenoshockDescription:
 	next "foe is poisoned.@"
 
 RainDanceDescription:
-	db   "Boosts Water-type"
+	db   "Boosts WATER-type"
 	next "moves for 5 turns.@"
 
 SunnyDayDescription:
-	db   "Boosts Fire-type"
+	db   "Boosts FIRE-type"
 	next "moves for 5 turns.@"
 
 SandstormDescription:
@@ -944,7 +944,7 @@ HyperVoiceDescription:
 
 CurseDescription:
 	db   "Works differently"
-	next "for Ghost-types.@"
+	next "for GHOST-types.@"
 
 ReversalDescription:
 FlailDescription:

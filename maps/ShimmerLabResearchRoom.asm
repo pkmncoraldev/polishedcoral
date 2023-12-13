@@ -51,8 +51,6 @@ ShimmerLabResearchRoomProf:
 	takeitem CLAY_POT
 	playsound SFX_LEVEL_UP
 	setevent EVENT_CAN_GO_TO_DESERT
-	clearevent EVENT_ROUTE_10_EAST_POKE_BALL_BLIZZARD
-	domaptrigger ROUTE_10_EAST, $2
 	waitsfx
 	waitbutton
 	closetext

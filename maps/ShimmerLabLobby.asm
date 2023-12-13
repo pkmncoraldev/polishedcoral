@@ -1,7 +1,8 @@
 ShimmerLabLobby_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, ShimmerLabLobbyCallback
 
 	db 4 ; warp events
 	warp_event  3,  5, SHIMMER_CITY, 1
@@ -15,12 +16,41 @@ ShimmerLabLobby_MapScriptHeader:
 	signpost  3,  6, SIGNPOST_UP, ShimmerLabResearchSign
 	signpost  3, 10, SIGNPOST_UP, ShimmerLabExperimentSign
 
-	db 1 ; object events
+	db 3 ; object events
 	person_event SPRITE_SCIENTIST_F,  2,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabLobbyNPC, -1
+	person_event SPRITE_ROCKER,  -5,  -5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerLabLobbyNPC2, -1
+	object_event -5, -5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, WIGGLYTUFF, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, ShimmerLabLobbyWigglytuff, -1
 
+	const_def 1 ; object constants
+	const SHIMMER_LAB_LOBBY_NPC1
+	const SHIMMER_LAB_LOBBY_NPC2
+	const SHIMMER_LAB_LOBBY_WIGGLYTUFF
+
+ShimmerLabLobbyCallback:
+	checkevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
+	iffalse .end
+	moveperson SHIMMER_LAB_LOBBY_NPC2, 4, 3
+	moveperson SHIMMER_LAB_LOBBY_WIGGLYTUFF, 5, 3
+	domaptrigger ROUTE_10_EAST, $2
+	checktmhm TM_BLIZZARD
+	iftrue .end
+	clearevent EVENT_ROUTE_10_EAST_POKE_BALL_BLIZZARD
+.end
+	return
 
 ShimmerLabLobbyNPC:
 	jumptextfaceplayer ShimmerLabLobbyNPCText
+
+ShimmerLabLobbyNPC2:
+	jumptextfaceplayer ShimmerLabLobbyNPC2Text
+
+ShimmerLabLobbyWigglytuff:
+	opentext
+	writetext ShimmerLabLobbyWigglytuffText
+	cry WIGGLYTUFF
+	waitbutton
+	closetext
+	end
 
 ShimmerLabResearchSign:
 	jumptext ShimmerLabResearchSignText
@@ -35,6 +65,29 @@ ShimmerLabLobbyNPCText:
 	para "All sorts of"
 	line "research is con-"
 	cont "ducted here."
+	done
+	
+ShimmerLabLobbyNPC2Text:
+	text "Hey!"
+	line "It's me!"
+	
+	para "The researcher you"
+	line "met on ROUTE 10!"
+	
+	para "How've you been?"
+	
+	para "I think I left"
+	line "an important TM"
+	cont "behind…"
+	
+	para "I haven't seen it"
+	line "since I was pack-"
+	cont "ing up my tent…"
+	done
+	
+ShimmerLabLobbyWigglytuffText:
+	text "WIGGLYTUFF: Tuff!"
+	line "Tuff!"
 	done
 	
 ShimmerLabResearchSignText:

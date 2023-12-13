@@ -62,8 +62,9 @@ Route10EastTrigger1:
 	end
 	
 Route10EastCallback:
-	checkevent EVENT_CAN_GO_TO_DESERT
-	iffalse .tent_done
+	copybytetovar wRoute10EastTrigger
+	if_equal 0, .tent_done
+	if_equal 1, .tent_done
 	changeblock $0a, $12, $02
 	changeblock $0c, $12, $02
 	changeblock $08, $14, $c1

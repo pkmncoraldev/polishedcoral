@@ -32,6 +32,8 @@ ShimmerLabResearchRoom_MapScriptHeader:
 ShimmerLabResearchRoomProf:
 	faceplayer
 	opentext
+	checkevent EVENT_DESERT_TEMPLE_2_POKE_BALL
+	iftrue .done_desert
 	checkevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
 	iftrue .checkpot
 	writetext ShimmerLabResearchRoomProfText1
@@ -72,6 +74,40 @@ ShimmerLabResearchRoomProf:
 	waitbutton
 	closetext
 	end
+.done_desert
+	checkitem BLACK_PEARL
+	iffalse .gave_pearl
+	writetext ShimmerLabResearchRoomProfText6
+	waitbutton
+	writetext ShimmerLabResearchRoomPearlText
+	takeitem BLACK_PEARL
+	playsound SFX_LEVEL_UP
+	waitsfx
+	waitbutton
+	closetext
+	spriteface SHIMMER_LAB_RESEARCH_ROOM_PROF, UP
+	pause 15
+	opentext
+	writetext ShimmerLabResearchRoomProfText7
+	waitbutton
+	closetext
+	pause 10
+	faceplayer
+	opentext
+	writetext ShimmerLabResearchRoomProfText8
+	buttonsound
+	verbosegivetmhm HM_DIVE
+	setevent EVENT_GOT_HM05_DIVE
+	setflag ENGINE_GOT_DIVE
+	writetext ShimmerLabResearchRoomProfText9
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+.gave_pearl
+	writetext ShimmerLabResearchRoomProfText10
+	waitbutton
+	closetext
+	end
 	
 ShimmerLabResearchNPC1:
 	faceplayer
@@ -94,6 +130,12 @@ ShimmerLabResearchNPC2:
 ShimmerLabResearchRoomPotText:
 	text "<PLAYER> handed"
 	line "over the CLAY POT!"
+	done
+	
+ShimmerLabResearchRoomPearlText:
+	text "<PLAYER> handed"
+	line "over the"
+	cont "BLACK PEARL!"
 	done
 
 ShimmerLabResearchRoomProfText1:
@@ -190,6 +232,102 @@ ShimmerLabResearchRoomProfText5:
 	para "See if you can"
 	line "help them track"
 	cont "down any leads."
+	done
+	
+ShimmerLabResearchRoomProfText6:
+	text "Ah, you've"
+	line "returned."
+	
+	para "Did you find any"
+	line "information?"
+	
+	para "…"
+	
+	para "What!?"
+	
+	para "You found a temple"
+	line "in the desert?"
+	
+	para "I knew it!"
+	
+	para "What was inside?"
+	done
+	
+ShimmerLabResearchRoomProfText7:
+	text "Unbelievable!"
+	
+	para "Such color!"
+	line "Such luster!"
+	
+	para "It's beautiful…"
+	done
+	
+ShimmerLabResearchRoomProfText8:
+	text "Ahem!"
+	
+	para "There's no doubt"
+	line "about it."
+	
+	para "It's a genuine"
+	line "BLACK PEARL!"
+	
+	para "Similar pearls"
+	line "have been found in"
+	cont "the waters NORTH"
+	cont "of here."
+	
+	para "However, they are"
+	line "very rare."
+	
+	para "To find such a"
+	line "pearl so deep in"
+	cont "the desert…"
+	
+	para "Could there be a"
+	line "connection between"
+	cont "the two locations?"
+	
+	para "…"
+	
+	para "Well, regardless,"
+	line "I should reward"
+	cont "you for your"
+	cont "assistance."
+	done
+	
+ShimmerLabResearchRoomProfText9:
+	text "That HM contains"
+	line "the move DIVE."
+	
+	para "It allows you to"
+	line "dive underwater"
+	cont "at certain spots."
+	
+	para "To use it outside"
+	line "of battle, you'll"
+	cont "need a BADGE from"
+	cont "RADIANT MEADOWS."
+	
+	para "It's a little town"
+	line "to the SOUTHEAST"
+	cont "of here."
+	done
+	
+ShimmerLabResearchRoomProfText10:
+	text "If you use DIVE to"
+	line "explore the water"
+	cont "to the NORTH,"
+	cont "keep a look out."
+	
+	para "There could be a"
+	line "connection between"
+	cont "the desert temple"
+	cont "and the PEARLs"
+	cont "found there."
+	
+	para "If you find any"
+	line "information,"
+	cont "let me know!"
 	done
 	
 ShimmerLabResearchRoomNPC1Text:

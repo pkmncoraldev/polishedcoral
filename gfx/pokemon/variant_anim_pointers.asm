@@ -15,14 +15,6 @@ RaichuAnimationPointers:
 	dw Raichu_AAnimation
 	dw Pidgey_RGAnimation
 
-SandshrewAnimationPointers:
-	dw SandshrewAnimation
-	dw Sandshrew_AAnimation
-	
-SandslashAnimationPointers:
-	dw SandslashAnimation
-	dw Sandslash_AAnimation
-
 MeowthAnimationPointers:
 	dw MeowthAnimation
 	dw Meowth_AAnimation

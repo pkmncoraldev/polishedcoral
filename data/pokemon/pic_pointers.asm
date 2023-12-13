@@ -31,10 +31,10 @@ PicPointers::
 	dba PikachuBackpic
 	dbw -1, -1 ; see RaichuPicPointers
 	dbw -1, -1 ; see RaichuPicPointers
-	dbw -1, -1 ; see SandshrewPicPointers
-	dbw -1, -1 ; see SandshrewPicPointers
-	dbw -1, -1 ; see SandslashPicPointers
-	dbw -1, -1 ; see SandslashPicPointers
+	dba SandshrewFrontpic
+	dba SandshrewBackpic
+	dba SandslashFrontpic
+	dba SandslashBackpic
 	dba NidoranFFrontpic
 	dba NidoranFBackpic
 	dba NidorinaFrontpic

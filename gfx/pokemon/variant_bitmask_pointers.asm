@@ -14,14 +14,6 @@ RaichuBitmasksPointers:
 	dw RaichuBitmasks
 	dw Raichu_ABitmasks
 	dw Pidgey_RGBitmasks
-	
-SandshrewBitmasksPointers:
-	dw SandshrewBitmasks
-	dw Sandshrew_ABitmasks
-	
-SandslashBitmasksPointers:
-	dw SandslashBitmasks
-	dw Sandslash_ABitmasks
 
 MeowthBitmasksPointers:
 	dw MeowthBitmasks

@@ -24,18 +24,6 @@ RaichuPicPointers::
 	dba Raichu_RGFrontpic
 	dba RaichuBackpic
 
-SandshrewPicPointers::
-	dba SandshrewFrontpic
-	dba SandshrewBackpic
-	dba Sandshrew_AFrontpic
-	dba Sandshrew_ABackpic
-	
-SandslashPicPointers::
-	dba SandslashFrontpic
-	dba SandslashBackpic
-	dba Sandslash_AFrontpic
-	dba Sandslash_ABackpic
-
 MeowthPicPointers::
 	dba MeowthFrontpic
 	dba MeowthBackpic

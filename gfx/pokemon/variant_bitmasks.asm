@@ -8,12 +8,6 @@ RaticateBitmasks:  INCLUDE "gfx/pokemon/raticate/bitmask.asm"
 RaichuBitmasks:  INCLUDE "gfx/pokemon/raichu/bitmask.asm"
 Raichu_ABitmasks: INCLUDE "gfx/pokemon/raichu_a/bitmask.asm"
 
-SandshrewBitmasks:  INCLUDE "gfx/pokemon/sandshrew/bitmask.asm"
-Sandshrew_ABitmasks: INCLUDE "gfx/pokemon/sandshrew_a/bitmask.asm"
-
-SandslashBitmasks:  INCLUDE "gfx/pokemon/sandslash/bitmask.asm"
-Sandslash_ABitmasks: INCLUDE "gfx/pokemon/sandslash_a/bitmask.asm"
-
 MeowthBitmasks:  INCLUDE "gfx/pokemon/meowth/bitmask.asm"
 Meowth_ABitmasks: INCLUDE "gfx/pokemon/meowth_a/bitmask.asm"
 

@@ -15,8 +15,8 @@ AnimationExtraPointers:
 	dw -1 ; see  RaticateAnimationExtraPointers
 	dw PikachuAnimationExtra
 	dw -1 ; see RaichuAnimationExtraPointers
-	dw -1 ; see SandshrewAnimationExtraPointers
-	dw -1 ; see SandslashAnimationExtraPointers
+	dw SandshrewAnimationExtra
+	dw SandslashAnimationExtra
 	dw NidoranFAnimationExtra
 	dw NidorinaAnimationExtra
 	dw NidoqueenAnimationExtra

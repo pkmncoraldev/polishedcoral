@@ -12,14 +12,6 @@ RaichusFrames:
 RaichuFrames:  INCLUDE "gfx/pokemon/raichu/frames.asm"
 Raichu_AFrames: INCLUDE "gfx/pokemon/raichu_a/frames.asm"
 
-SandshrewsFrames:
-SandshrewFrames:  INCLUDE "gfx/pokemon/sandshrew/frames.asm"
-Sandshrew_AFrames: INCLUDE "gfx/pokemon/sandshrew_a/frames.asm"
-
-SandslashsFrames:
-SandslashFrames:  INCLUDE "gfx/pokemon/sandslash/frames.asm"
-Sandslash_AFrames: INCLUDE "gfx/pokemon/sandslash_a/frames.asm"
-
 MeowthsFrames:
 MeowthFrames:  INCLUDE "gfx/pokemon/meowth/frames.asm"
 Meowth_AFrames: INCLUDE "gfx/pokemon/meowth_a/frames.asm"

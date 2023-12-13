@@ -15,14 +15,6 @@ RaichuFramesPointers:
 	dw Raichu_AFrames
 	dw Pidgey_RGFrames
 	
-SandshrewFramesPointers:
-	dw SandshrewFrames
-	dw Sandshrew_AFrames
-	
-SandslashFramesPointers:
-	dw SandslashFrames
-	dw Sandslash_AFrames
-	
 MeowthFramesPointers:
 	dw MeowthFrames
 	dw Meowth_AFrames

@@ -4327,17 +4327,6 @@ Raichu_AEvosAttacks:
 	db 1, THUNDER
 	db 0 ; no more level-up moves
 	
-Sandshrew_AEvosAttacks:
-	db EVOLVE_LEVEL, 22, SANDSLASH
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
-
-Sandslash_AEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
-	
 Meowth_AEvosAttacks:
 	db EVOLVE_LEVEL, 28, PERSIAN
 	db 0 ; no more evolutions

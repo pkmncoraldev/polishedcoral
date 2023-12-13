@@ -12,14 +12,6 @@ RaichuAnimations:
 RaichuAnimation:  INCLUDE "gfx/pokemon/raichu/anim0.asm"
 Raichu_AAnimation: INCLUDE "gfx/pokemon/raichu_a/anim0.asm"
 
-SandshrewAnimations:
-SandshrewAnimation:  INCLUDE "gfx/pokemon/sandshrew/anim0.asm"
-Sandshrew_AAnimation: INCLUDE "gfx/pokemon/sandshrew_a/anim0.asm"
-
-SandslashAnimations:
-SandslashAnimation:  INCLUDE "gfx/pokemon/sandslash/anim0.asm"
-Sandslash_AAnimation: INCLUDE "gfx/pokemon/sandslash_a/anim0.asm"
-
 MeowthAnimations:
 MeowthAnimation:  INCLUDE "gfx/pokemon/meowth/anim0.asm"
 Meowth_AAnimation: INCLUDE "gfx/pokemon/meowth_a/anim0.asm"

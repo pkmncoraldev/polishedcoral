@@ -15,8 +15,8 @@ BitmasksPointers:
 	dw -1 ; see  RaticateBitmasksPointers
 	dw PikachuBitmasks
 	dw -1 ; see RaichuBitmasksPointers
-	dw -1 ; see SandshrewBitmasksPointers
-	dw -1 ; see SandslashBitmasksPointers
+	dw SandshrewBitmasks
+	dw SandslashBitmasks
 	dw NidoranFBitmasks
 	dw NidorinaBitmasks
 	dw NidoqueenBitmasks

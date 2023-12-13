@@ -8,12 +8,6 @@ RaticateAnimationExtra:  INCLUDE "gfx/pokemon/raticate/anim1.asm"
 RaichuAnimationExtra:  INCLUDE "gfx/pokemon/raichu/anim1.asm"
 Raichu_AAnimationExtra: INCLUDE "gfx/pokemon/raichu_a/anim1.asm"
 
-SandshrewAnimationExtra:  INCLUDE "gfx/pokemon/sandshrew/anim1.asm"
-Sandshrew_AAnimationExtra: INCLUDE "gfx/pokemon/sandshrew_a/anim1.asm"
-
-SandslashAnimationExtra:  INCLUDE "gfx/pokemon/sandslash/anim1.asm"
-Sandslash_AAnimationExtra: INCLUDE "gfx/pokemon/sandslash_a/anim1.asm"
-
 MeowthAnimationExtra:  INCLUDE "gfx/pokemon/meowth/anim1.asm"
 Meowth_AAnimationExtra: INCLUDE "gfx/pokemon/meowth_a/anim1.asm"
 

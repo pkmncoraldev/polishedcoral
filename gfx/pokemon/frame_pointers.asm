@@ -15,8 +15,8 @@ FramesPointers:
 	dw -1 ; see  RaticateFramesPointers
 	dw PikachuFrames
 	dw -1 ; see RaichuFramesPointers
-	dw -1 ; see SandshrewFramesPointers
-	dw -1 ; see SandslashFramesPointers
+	dw SandshrewFrames
+	dw SandslashFrames
 	dw NidoranFFrames
 	dw NidorinaFrames
 	dw NidoqueenFrames

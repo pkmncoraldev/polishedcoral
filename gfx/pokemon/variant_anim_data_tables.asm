@@ -3,8 +3,6 @@ VariantSpeciesTable:
 	db RATTATA
 	db RATICATE
 	db RAICHU
-	db SANDSHREW
-	db SANDSLASH
 	db MEOWTH
 	db PERSIAN
 	db GRIMER
@@ -24,8 +22,6 @@ VariantAnimPointerTable:
 	dbbww RATTATA, BANK(RattataAnimations), RattataAnimationPointers, RattataAnimationExtraPointers
 	dbbww RATICATE, BANK(RaticateAnimations), RaticateAnimationPointers, RaticateAnimationExtraPointers
 	dbbww RAICHU, BANK(RaichuAnimations), RaichuAnimationPointers, RaichuAnimationExtraPointers
-	dbbww SANDSHREW, BANK(SandshrewAnimations), SandshrewAnimationPointers, SandshrewAnimationExtraPointers
-	dbbww SANDSLASH, BANK(SandslashAnimations), SandslashAnimationPointers, SandslashAnimationExtraPointers
 	dbbww MEOWTH, BANK(MeowthAnimations), MeowthAnimationPointers, MeowthAnimationExtraPointers
 	dbbww PERSIAN, BANK(PersianAnimations), PersianAnimationPointers, PersianAnimationExtraPointers
 	dbbww GRIMER, BANK(GrimerAnimations), GrimerAnimationPointers, GrimerAnimationExtraPointers
@@ -45,8 +41,6 @@ VariantFramesPointerTable:
 	dbbba RATTATA, BANK(RattatasFrames), RattataFramesPointers
 	dbbba RATICATE, BANK(RaticatesFrames), RaticateFramesPointers
 	dbbba RAICHU, BANK(RaichusFrames), RaichuFramesPointers
-	dbbba SANDSHREW, BANK(SandshrewsFrames), SandshrewFramesPointers
-	dbbba SANDSLASH, BANK(SandslashsFrames), SandslashFramesPointers
 	dbbba MEOWTH, BANK(MeowthsFrames), MeowthFramesPointers
 	dbbba PERSIAN, BANK(PersiansFrames), PersianFramesPointers
 	dbbba GRIMER, BANK(GrimersFrames), GrimerFramesPointers
@@ -66,8 +60,6 @@ VariantBitmasksPointerTable:
 	dbba RATTATA, RattataBitmasksPointers
 	dbba RATICATE, RaticateBitmasksPointers
 	dbba RAICHU, RaichuBitmasksPointers
-	dbba SANDSHREW, SandshrewBitmasksPointers
-	dbba SANDSLASH, SandslashBitmasksPointers
 	dbba MEOWTH, MeowthBitmasksPointers
 	dbba PERSIAN, PersianBitmasksPointers
 	dbba GRIMER, GrimerBitmasksPointers

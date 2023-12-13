@@ -3,8 +3,6 @@ VariantPicPointerTable:
 	dbba RATTATA, RattataPicPointers
 	dbba RATICATE, RaticatePicPointers
 	dbba RAICHU, RaichuPicPointers
-	dbba SANDSHREW, SandshrewPicPointers
-	dbba SANDSLASH, SandslashPicPointers
 	dbba MEOWTH, MeowthPicPointers
 	dbba PERSIAN, PersianPicPointers
 	dbba GRIMER, GrimerPicPointers

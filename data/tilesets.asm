@@ -731,6 +731,25 @@ INCBIN "data/tilesets/bar_attributes.bin.lz"
 TilesetBarColl::
 INCLUDE "data/tilesets/bar_collision.asm"
 
+SECTION "Tileset Data - autumn", ROMX
+
+TilesetAutumnGFX0::
+INCBIN "gfx/tilesets/autumn.2bpp.vram0.lz"
+
+TilesetAutumnGFX1::
+INCBIN "gfx/tilesets/autumn.2bpp.vram1.lz"
+
+TilesetAutumnGFX2::
+INCBIN "gfx/tilesets/autumn.2bpp.vram2.lz"
+
+TilesetAutumnMeta::
+INCBIN "data/tilesets/autumn_metatiles.bin.lz"
+
+TilesetAutumnAttr::
+INCBIN "data/tilesets/autumn_attributes.bin.lz"
+
+TilesetAutumnColl::
+INCLUDE "data/tilesets/autumn_collision.asm"
 
 SECTION "Tileset Headers", ROMX
 
@@ -779,4 +798,5 @@ Tilesets::
 	tileset TilesetHighway
 	tileset TilesetDive
 	tileset TilesetBar
+	tileset TilesetAutumn
 	tileset TilesetLavaCave

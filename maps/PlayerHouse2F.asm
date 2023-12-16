@@ -23,7 +23,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event 17, 14, DESERT_TEMPLE_1, 1
 	warp_event 19, 14, RADIANT_TOWNSHIP, 1
 	warp_event  5, 18, DUSK_TURNPIKE, 1
-	warp_event  7, 18, CROSSROADS, 1
+	warp_event  7, 18, ROUTE_23, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0

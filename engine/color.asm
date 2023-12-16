@@ -960,6 +960,8 @@ LoadMapPals::
 	jr z, .underwater
 	cp TILESET_BAR
 	jr z, .bar
+	cp TILESET_AUTUMN
+	jp z, .autumn
 	jp .normal
 .bar
 	ld a, [wPlayerPalette]
@@ -1419,8 +1421,27 @@ LoadMapPals::
 	ld hl, MapObjectPalsStarglow
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
-
+.autumn
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	ld hl, MapObjectPalsAutumn
+	call AddNTimes
+	ld a, [wPlayerPalette]
+	cp 4
+	jr z, .autumn_purple
+	ld de, wUnknOBPals + 4 palettes
+	jr .autumn_got_color
+.autumn_purple
+	ld de, wUnknOBPals + 5 palettes
+.autumn_got_color
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
 .ranch
+	ld a, [wMapGroup]
+	cp GROUP_EVENTIDE_VILLAGE
+	jr nz, .ranchcont
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_9
 	jr z, .ranchcont
@@ -2150,6 +2171,9 @@ INCLUDE "maps/palettes/obpals/bar.pal"
 
 MapObjectPalsJukebox::
 INCLUDE "maps/palettes/obpals/jukebox.pal"
+
+MapObjectPalsAutumn::
+INCLUDE "maps/palettes/obpals/autumn.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

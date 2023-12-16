@@ -153,6 +153,8 @@ LoadSpecialMapPalette: ; 494ac
 	jr z, .underwater
 	cp TILESET_BAR
 	jr z, .bar
+	cp TILESET_AUTUMN
+	jp z, .autumn
 	call DiveSpotMapPals
 	jp .do_nothing
 .bar
@@ -575,9 +577,26 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, OutsideSnowStormTentPalette
 	jp LoadSevenTimeOfDayBGPalettes
 	
+.autumn
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_23
+	jr z, .ranch
+	ld hl, AutumnPalette
+	jr .ranch_finish
 .ranch
 	ld hl, OutsideRanchPalette
-	jp LoadSevenTimeOfDayBGPalettes
+	
+.ranch_finish
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld de, wUnknBGPals + 2 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 
 .spookhouse
 	ld hl, SpookhousePalette
@@ -1083,5 +1102,8 @@ INCLUDE "maps/palettes/bgpals/underwatereyes.pal"
 BarPalette::
 INCLUDE "maps/palettes/bgpals/bar.pal"
 
-DiveSpotsPalette:
+DiveSpotsPalette::
 INCLUDE "maps/palettes/bgpals/divespots.pal"
+
+AutumnPalette::
+INCLUDE "maps/palettes/bgpals/autumn.pal"

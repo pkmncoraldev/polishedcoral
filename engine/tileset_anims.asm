@@ -290,7 +290,6 @@ TilesetHighwayAnim::
 	
 TilesetGlintAnim::
 TilesetStarglowAnim::
-TilesetAutumnAnim::
 	dw VTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft
@@ -303,6 +302,28 @@ TilesetAutumnAnim::
     dw Waterfall3Frames, AnimateWaterfallTiles
 	dw VTiles2 tile $36, AnimateTopofWaterfall
 	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
+TilesetAutumnAnim::
+	dw VTiles2 tile $14, WriteTileToBuffer
+	dw NULL,  WaitTileAnimation
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $14, WriteTileFromBuffer
+	dw NULL,  AnimateFlowerTile
+	dw NULL,  WaitTileAnimation
+	dw WaterfallFrames, AnimateWaterfallTiles
+    dw Waterfall2Frames, AnimateWaterfallTiles
+    dw Waterfall3Frames, AnimateWaterfallTiles
+	dw VTiles2 tile $36, AnimateTopofWaterfall
+	dw TreeWindFrames, AnimateWaterfallTiles2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -814,177 +835,6 @@ AnimateTopofWaterfall:
 .frame2 INCBIN "gfx/tilesets/waterfall/7.2bpp"
 
 
-ForestTreeLeftAnimation: ; fc45c
-	ld hl, sp+0
-	ld b, h
-	ld c, l
-
-; Only during the Celebi event.
-	ld a, [wCelebiEvent]
-	bit 2, a
-	jr nz, .asm_fc46c
-	ld hl, ForestTreeLeftFrames
-	jr .asm_fc47d
-
-.asm_fc46c
-	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
-	add a
-	add a
-	add a
-	add ForestTreeLeftFrames % $100
-	ld l, a
-	ld a, 0
-	adc ForestTreeLeftFrames / $100
-	ld h, a
-
-.asm_fc47d
-	ld sp, hl
-	ld hl, VTiles2 tile $0c
-	jp WriteTile
-; fc484
-
-
-ForestTreeLeftFrames: ; fc484
-	INCBIN "gfx/tilesets/forest-tree/1.2bpp"
-	INCBIN "gfx/tilesets/forest-tree/2.2bpp"
-; fc4a4
-
-ForestTreeRightFrames: ; fc4a4
-	INCBIN "gfx/tilesets/forest-tree/3.2bpp"
-	INCBIN "gfx/tilesets/forest-tree/4.2bpp"
-; fc4c4
-
-
-ForestTreeRightAnimation: ; fc4c4
-	ld hl, sp+0
-	ld b, h
-	ld c, l
-
-; Only during the Celebi event.
-	ld a, [wCelebiEvent]
-	bit 2, a
-	jr nz, .asm_fc4d4
-	ld hl, ForestTreeRightFrames
-	jr .asm_fc4eb
-
-.asm_fc4d4
-	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
-	add a
-	add a
-	add a
-	add ForestTreeLeftFrames % $100
-	ld l, a
-	ld a, 0
-	adc ForestTreeLeftFrames / $100
-	ld h, a
-	push bc
-	ld bc, ForestTreeRightFrames - ForestTreeLeftFrames
-	add hl, bc
-	pop bc
-
-.asm_fc4eb
-	ld sp, hl
-	ld hl, VTiles2 tile $0f
-	jp WriteTile
-; fc4f2
-
-
-ForestTreeLeftAnimation2: ; fc4f2
-	ld hl, sp+0
-	ld b, h
-	ld c, l
-
-; Only during the Celebi event.
-	ld a, [wCelebiEvent]
-	bit 2, a
-	jr nz, .asm_fc502
-	ld hl, ForestTreeLeftFrames
-	jr .asm_fc515
-
-.asm_fc502
-	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
-	xor 2
-	add a
-	add a
-	add a
-	add ForestTreeLeftFrames % $100
-	ld l, a
-	ld a, 0
-	adc ForestTreeLeftFrames / $100
-	ld h, a
-
-.asm_fc515
-	ld sp, hl
-	ld hl, VTiles2 tile $0c
-	jp WriteTile
-; fc51c
-
-
-ForestTreeRightAnimation2: ; fc51c
-	ld hl, sp+0
-	ld b, h
-	ld c, l
-
-; Only during the Celebi event.
-	ld a, [wCelebiEvent]
-	bit 2, a
-	jr nz, .asm_fc52c
-	ld hl, ForestTreeRightFrames
-	jr .asm_fc545
-
-.asm_fc52c
-	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
-	xor 2
-	add a
-	add a
-	add a
-	add ForestTreeLeftFrames % $100
-	ld l, a
-	ld a, 0
-	adc ForestTreeLeftFrames / $100
-	ld h, a
-	push bc
-	ld bc, ForestTreeRightFrames - ForestTreeLeftFrames
-	add hl, bc
-	pop bc
-
-.asm_fc545
-	ld sp, hl
-	ld hl, VTiles2 tile $0f
-	jp WriteTile
-; fc54c
-
-
-GetForestTreeFrame: ; fc54c
-; Return 0 if a is even, or 2 if odd.
-	and a
-	jr z, .even
-	cp 1
-	jr z, .odd
-	cp 2
-	jr z, .even
-	cp 3
-	jr z, .odd
-	cp 4
-	jr z, .even
-	cp 5
-	jr z, .odd
-	cp 6
-	jr z, .even
-.odd
-	ld a, 2
-	scf
-	ret
-.even
-	xor a
-	ret
-; fc56d
-
-
 AnimateFlowerTile: ; fc56d
 	eventflagcheck EVENT_DODRIO_RANCH_TIMER
 	jr z, .skip
@@ -1394,6 +1244,10 @@ WaterTiles: INCBIN "gfx/tilesets/water/water.2bpp"
 SeaweedFrames: dw VTiles2 tile $12, SeaweedTiles
 
 SeaweedTiles: INCBIN "gfx/tilesets/water/seaweed.2bpp"
+
+TreeWindFrames: dw VTiles2 tile $7b, TreeWindTiles
+
+TreeWindTiles: INCBIN "gfx/tilesets/forest-tree/1.2bpp"
 
 	
 WriteTwoTiles:

@@ -796,6 +796,9 @@ Route13_BlockData:
 Crossroads_BlockData:
 	INCBIN "maps/Crossroads.ablk.lz"
 	
+Route23_BlockData:
+	INCBIN "maps/Route23.ablk.lz"
+	
 Route14_15Underwater_BlockData:
 	INCBIN "maps/Route14_15Underwater.ablk.lz"
 	

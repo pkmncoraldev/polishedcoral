@@ -407,8 +407,13 @@ ENDM
 	
 	map_attributes BarInside, BAR_INSIDE, $00, 0
 	
-	map_attributes Crossroads, CROSSROADS, 0, WEST
+	map_attributes Crossroads, CROSSROADS, 0, WEST | SOUTH
 	connection west, DuskTurnpike, DUSK_TURNPIKE, 0
+	connection south, Route23, ROUTE_23, -5
+	
+	map_attributes Route23, ROUTE_23, $00, NORTH; | SOUTH
+	connection north, Crossroads, CROSSROADS, 5
+;	connection south, Route1, ROUTE_1, -5
 	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0

@@ -103,6 +103,16 @@
 	RGB 27, 31, 27
 	RGB 18, 19, 31
 	RGB 27, 31, 27
+;21 - Underwater
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+;22 - Autumn
+	RGB 30, 24, 14
+	RGB 25, 13, 06
+	RGB 13, 10, 10
+	RGB 09, 06, 04
 ;last - Fake Route 1
 	RGB 00, 00, 00
 	RGB 00, 00, 00

@@ -69,6 +69,7 @@ SOUTH_ONWA_LANDMARK EQU const_value
 	const DUSK_TURNPIKE		 ; 39
 	const ROUTE_22			 ; 3b
 	const CROSSROADS
+	const ROUTE_23
 	
 	const BRILLO_TOWN		 ; 31
 	const ROUTE_17			 ; 32

@@ -480,10 +480,14 @@ CheckTimeEvents: ; 9693a
 	and a
 	jr nz, .nothing
 
+	ld a, [wTileset]
+	cp TILESET_RANCH
+	jr nz, .skip_ranch
 	ld a, [wRanchRaceSeconds]
 	cp 45 ; time limit
 	jr nc, .ranch_times_up
 	
+.skip_ranch
 	ld hl, wStatusFlags2
 	bit 2, [hl] ; ENGINE_BUG_CONTEST_TIMER
 	jr z, .do_daily

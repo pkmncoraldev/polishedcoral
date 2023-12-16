@@ -187,6 +187,7 @@
 	const SPRITE_SCARY_PAINTING
 	const SPRITE_MISC_CONE
 	const SPRITE_JUKEBOX
+	const SPRITE_LEAVES
 
 	
 	const_def $ee

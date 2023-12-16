@@ -384,11 +384,15 @@ MAP_NONE   EQU 0
 	map_const SEASIDE_CAVE_B2F,							   8, 10 ; 14
 	map_const BAR_BACK_ALLEY,							  10,  6 ; 15
 	map_const BAR_INSIDE,								   7,  4 ; 16
-	map_const CROSSROADS,								  17, 14 ; 17
+	map_const CROSSROADS,								  17, 13 ; 17
 	
 	newgroup
 	
 	map_const ROUTE_14_15_UNDERWATER,					  36, 18 ; 1
+	
+	newgroup
+	
+	map_const ROUTE_23,									  21, 19 ; 1
 	
 	newgroup													 ; last
 	

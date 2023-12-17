@@ -59,6 +59,7 @@ Music:
 	dba Music_GentlemanEncounter
 	dba Music_Bar
 	dba Music_Darkness
+	dba Music_Autumn
 	
 	dba Music_StarglowOld
 	dba Music_WildBattleOld

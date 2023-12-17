@@ -54,6 +54,7 @@ INCLUDE "audio/music/clown.asm"
 INCLUDE "audio/music/minibossbattle.asm"
 INCLUDE "audio/music/shimmercity.asm"
 INCLUDE "audio/music/fakeroute1.asm"
+INCLUDE "audio/music/autumn.asm"
 
 
 SECTION "Music 3", ROMX

@@ -1427,17 +1427,9 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld hl, MapObjectPalsAutumn
 	call AddNTimes
-	ld a, [wPlayerPalette]
-	cp 4
-	jr z, .autumn_purple
-	ld de, wUnknOBPals + 4 palettes
-	jr .autumn_got_color
-.autumn_purple
-	ld de, wUnknOBPals + 5 palettes
-.autumn_got_color
-	ld bc, 1 palettes
-	ld a, $5 ; BANK(UnknOBPals)
+	call LoadSingleOBPalLinePal7
 	call FarCopyWRAM
+	jp .outside_cont
 .ranch
 	ld a, [wMapGroup]
 	cp GROUP_EVENTIDE_VILLAGE

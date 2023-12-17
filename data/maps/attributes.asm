@@ -411,7 +411,7 @@ ENDM
 	connection west, DuskTurnpike, DUSK_TURNPIKE, 0
 	connection south, Route23, ROUTE_23, -5
 	
-	map_attributes Route23, ROUTE_23, $00, NORTH; | SOUTH
+	map_attributes Route23, ROUTE_23, $c6, NORTH; | SOUTH
 	connection north, Crossroads, CROSSROADS, 5
 ;	connection south, Route1, ROUTE_1, -5
 	

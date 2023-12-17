@@ -392,7 +392,7 @@ MAP_NONE   EQU 0
 	
 	newgroup
 	
-	map_const ROUTE_23,									  21, 19 ; 1
+	map_const ROUTE_23,									  21, 27 ; 1
 	
 	newgroup													 ; last
 	

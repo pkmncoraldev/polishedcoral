@@ -5,7 +5,7 @@ Route23_MapScriptHeader:
 	callback MAPCALLBACK_TILES, Route23Callback
 
 	db 1 ; warp events
-	warp_event 21,  1, ROUTE_21_GATE, 1
+	warp_event 21,  1, CROSSROADS, 1
 
 	db 0 ; coord events
 
@@ -13,22 +13,39 @@ Route23_MapScriptHeader:
 	signpost  2, 24, SIGNPOST_JUMPTEXT, Route23SignText
 	signpost 10,  5, SIGNPOST_JUMPTEXT, Route23FightingDojoSignText
 
-	db 7 ; object events
-	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	object_event  5, 31, SPRITE_LEAVES, SPRITEMOVEDATA_TILE_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	object_event 16, 32, SPRITE_LEAVES, SPRITEMOVEDATA_TILE_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	object_event  5, 45, SPRITE_LEAVES, SPRITEMOVEDATA_TILE_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	object_event  7, 44, SPRITE_LEAVES, SPRITEMOVEDATA_TILE_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	object_event 26, 16, SPRITE_LEAVES, SPRITEMOVEDATA_TILE_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	object_event 23, 23, SPRITE_LEAVES, SPRITEMOVEDATA_TILE_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	db 3 ; object events
+	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
+	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PURPLE
+	person_event SPRITE_OFFICER, 21, 17, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route23TestTrainer, -1
 
 
 Route23Callback:
 	callasm Route23SetUpLeaves
+	readvar VAR_PLAYER_COLOR
+	if_equal 4, .purple
+	setevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
+	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	return
+.purple
+	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
+	setevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	return
 
 Route23SetUpLeaves:
 	ld a, 1
+	ld b, a
+	ld a, [wXCoord]
+	ld d, a
+	ld a, [wYCoord]
+	add 10
+	ld e, a
+	farcall CopyDECoordsToMapObject
+	
+	ld a, 2
 	ld b, a
 	ld a, [wXCoord]
 	ld d, a
@@ -42,6 +59,18 @@ Route23SetUpLeaves:
 	xor a
 	ld [wRanchRaceFrames], a
 	ret
+	
+Route23TestTrainer:
+	generictrainer PLAYER_CORY, -1, -1, .SeenText, -1
+
+.SeenText
+	text "Hold it!"
+	
+	para "Are you crazy?"
+	
+	para "You can't be out"
+	line "here!"
+	done
 
 Route23SignText:
 	text "TODO"

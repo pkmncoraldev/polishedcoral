@@ -2524,7 +2524,7 @@ SpawnShadow: ; 5529
 
 .ShadowObject:
 	; vtile, palette, movement
-	db $80, PAL_OW_RED, SPRITEMOVEDATA_SHADOW
+	db $80, PAL_OW_SILVER, SPRITEMOVEDATA_SHADOW
 ; 5538
 SpawnStrengthBoulderDust: ; 5538
 	push bc

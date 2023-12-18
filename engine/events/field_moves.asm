@@ -11,75 +11,7 @@ BlindingFlash:: ; 8c7e1
 ; 8c80a
 
 ShakeHeadbuttTree: ; 8c80a
-	farcall ClearSpriteAnims
-	ld de, CutGrassGFX
-	ld hl, VTiles1
-	lb bc, BANK(CutGrassGFX), 4
-	call Request2bpp
-	ld a, [wTileset]
-	cp TILESET_SNOW
-	jp z, .snow
-	cp TILESET_RANCH
-	jp z, .ranch
-	ld de, HeadbuttTreeGFX
-	ld hl, VTiles1 tile $04
-	lb bc, BANK(HeadbuttTreeGFX), 8
-	call Request2bpp
-	farcall MakePalGreen
-	jr .cont
-.snow
-	ld de, HeadbuttTreeSnowGFX
-	ld hl, VTiles1 tile $04
-	lb bc, BANK(HeadbuttTreeSnowGFX), 8
-	call Request2bpp
-	farcall MakePalSnowTree
-	jr .cont
-.ranch
-	ld de, HeadbuttTreeGFX
-	ld hl, VTiles1 tile $04
-	lb bc, BANK(HeadbuttTreeGFX), 8
-	call Request2bpp
-	farcall MakePalRanchGreen
-.cont
-	call Cut_Headbutt_GetPixelFacing
-	ld a, SPRITE_ANIM_INDEX_HEADBUTT
-	farcall _InitSpriteAnimStruct
-	ld hl, SPRITEANIMSTRUCT_TILE_ID
-	add hl, bc
-	ld [hl], $84
-	ld a, 36 * 4
-	ld [wCurrSpriteOAMAddr], a
-	farcall DoNextFrameForAllSprites
-	call HideHeadbuttTree
-	ld a, $20
-	ld [wcf64], a
-	call WaitSFX
-	ld de, SFX_SANDSTORM
-	call PlaySFX
-.loop
-	ld hl, wcf64
-	ld a, [hl]
-	and a
-	jr z, .done
-	dec [hl]
-	ld a, 36 * 4
-	ld [wCurrSpriteOAMAddr], a
-	farcall DoNextFrameForAllSprites
-	call DelayFrame
-	jr .loop
-
-.done
-	call LoadMapPart
-	call ApplyTilemapInVBlank
-	xor a
-	ld [hBGMapMode], a
-	farcall ClearSpriteAnims
-	ld hl, wSprites + 36 * 4
-	ld bc, wSpritesEnd - (wSprites + 36 * 4)
-	xor a
-	call ByteFill	
-	call DelayFrame
-	jp ReplaceKrisSprite
+	ret
 ; 8c893
 
 HeadbuttTreeGFX: ; 8c893

@@ -1425,9 +1425,25 @@ LoadMapPals::
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
-	ld hl, MapObjectPalsAutumn
+	ld hl, MapObjectPalsAutumn + 2
 	call AddNTimes
 	call LoadSingleOBPalLinePal7
+	call FarCopyWRAM
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	ld hl, MapObjectPalsAutumn
+	call AddNTimes
+	ld a, [wPlayerPalette]
+	cp 4
+	jr z, .autumn_purple
+	ld de, wUnknOBPals + 4 palettes
+	jr .autumn_got_color
+.autumn_purple
+	ld de, wUnknOBPals + 5 palettes
+.autumn_got_color
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	jp .outside_cont
 .ranch

@@ -28,12 +28,14 @@ BarInsideCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
 	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	clearevent EVENT_HIDE_OW_OBJECTS_PINK
 	return
 .purple
 	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
 	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
 	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	setevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	clearevent EVENT_HIDE_OW_OBJECTS_PINK
 	return
 	
 BarInsideJukebox:

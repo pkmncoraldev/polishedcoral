@@ -116,6 +116,7 @@ PLAYER_F EQU __enum__
 	const SHAUNA
 	const BETH
 	const TINA
+	const LES
 
 	trainerclass TWINS
 	const JENJAN
@@ -279,6 +280,7 @@ PLAYER_F EQU __enum__
 	trainerclass SUPER_NERD
 	const CHESTER
 	const PEDRO
+	const REMY
 
 
 	trainerclass LASS
@@ -366,11 +368,13 @@ PLAYER_F EQU __enum__
 	const DURWOOD
 	const HOWARD
 	const ELWARD
+	const VICTOR
 
 
 	trainerclass LADY
 	const RUTH
 	const GRETCHEN
+	const LYDIA
 
 
 	trainerclass SAILOR
@@ -399,6 +403,7 @@ PLAYER_F EQU __enum__
 
 	trainerclass BURGLAR
 	const ZEDAKI
+	const CHASE
 
 
 	trainerclass SCIENTIST
@@ -426,6 +431,7 @@ PLAYER_F EQU __enum__
 	const NAKA
 	const TOSHI
 	const ZERO
+	const SHINZO
 
 
 	trainerclass TEACHER

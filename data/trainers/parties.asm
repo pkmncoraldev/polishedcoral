@@ -1139,6 +1139,15 @@ PicnickerGroup:
 	db -1 ; end
 
 ; ================
+
+	; PICNICKER
+	db "LES@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2456,6 +2465,15 @@ SuperNerdGroup:
 	db -1 ; end
 
 ; ================
+
+	; SUPER_NERD
+	db "REMY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3107,6 +3125,15 @@ GentlemanGroup:
 	db -1 ; end
 
 ; ================
+
+	; GENTLEMAN
+	db "VICTOR@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3130,6 +3157,15 @@ LadyGroup:
 	; party
 	db 29, CORSOLA
 	db 28, HAUNTER
+	db -1 ; end
+
+; ================
+
+	; LADY
+	db "LYDIA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -3295,6 +3331,15 @@ BurglarGroup:
 
 	; BURGLAR
 	db "ZEDAKI@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BURGLAR
+	db "CHASE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3473,6 +3518,15 @@ BlackbeltGroup:
 
 	; BLACKBELT_T
 	db "ZERO@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BLACKBELT_T
+	db "SHINZO@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

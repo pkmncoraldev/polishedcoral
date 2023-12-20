@@ -1435,11 +1435,11 @@ LoadMapPals::
 	ld hl, MapObjectPalsAutumn
 	call AddNTimes
 	ld a, [wPlayerPalette]
-	cp 4
-	jr z, .autumn_purple
-	ld de, wUnknOBPals + 4 palettes
+	cp 6
+	jr z, .autumn_pink
+	ld de, wUnknOBPals + 6 palettes
 	jr .autumn_got_color
-.autumn_purple
+.autumn_pink
 	ld de, wUnknOBPals + 5 palettes
 .autumn_got_color
 	ld bc, 1 palettes

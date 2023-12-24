@@ -393,6 +393,7 @@ MAP_NONE   EQU 0
 	newgroup
 	
 	map_const ROUTE_23,									  21, 27 ; 1
+	map_const KOMORE_VILLAGE,							  20, 13 ; 2
 	
 	newgroup													 ; last
 	

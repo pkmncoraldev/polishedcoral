@@ -411,9 +411,12 @@ ENDM
 	connection west, DuskTurnpike, DUSK_TURNPIKE, 0
 	connection south, Route23, ROUTE_23, -5
 	
-	map_attributes Route23, ROUTE_23, $c6, NORTH; | SOUTH
+	map_attributes Route23, ROUTE_23, $c6, NORTH | SOUTH
 	connection north, Crossroads, CROSSROADS, 5
-;	connection south, Route1, ROUTE_1, -5
+	connection south, KomoreVillage, KOMORE_VILLAGE, -1
+	
+	map_attributes KomoreVillage, KOMORE_VILLAGE, $c6, NORTH
+	connection north, Route23, ROUTE_23, 1
 	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0

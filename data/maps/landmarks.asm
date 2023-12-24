@@ -66,6 +66,7 @@ Landmarks: ; 0x1ca8c3
 	landmark  80,  52, Route22Name
 	landmark 100,  52, CrossroadsName
 	landmark   0,   0, Route23Name
+	landmark   0,   0, KomoreVillageName
 	
 	landmark  20, 124, BrilloTownName
 	landmark  28, 124, Route17Name
@@ -132,6 +133,7 @@ SeasideCaveName:	   db "SEASIDE¯CAVE@"
 Route22Name:		   db "ROUTE 22@"
 CrossroadsName: 	   db "CROSSROADS@"
 Route23Name:		   db "ROUTE 23@"
+KomoreVillageName:	   db "KOMORE¯VILLAGE@"
 
 LusterStationName:	   db "LUSTER¯CITY@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"

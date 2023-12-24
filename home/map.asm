@@ -1079,6 +1079,8 @@ _LoadTileset0:
 	cp TILESET_SHIMMER
 	jr z, .load_roof
 	cp TILESET_HIGHWAY
+	jr z, .load_roof
+	cp TILESET_AUTUMN
 	jr nz, .skip_roof
 
 .load_roof

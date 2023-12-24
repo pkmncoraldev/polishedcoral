@@ -799,6 +799,9 @@ Crossroads_BlockData:
 Route23_BlockData:
 	INCBIN "maps/Route23.ablk.lz"
 	
+KomoreVillage_BlockData:
+	INCBIN "maps/KomoreVillage.ablk.lz"
+	
 Route14_15Underwater_BlockData:
 	INCBIN "maps/Route14_15Underwater.ablk.lz"
 	

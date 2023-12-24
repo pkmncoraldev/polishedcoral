@@ -398,5 +398,8 @@ INCLUDE "maps/BarBackAlley.asm"
 INCLUDE "maps/BarInside.asm"
 INCLUDE "maps/Crossroads.asm"
 
+SECTION "Komore Village Scripts", ROMX
+INCLUDE "maps/KomoreVillage.asm"
+
 SECTION "Underwater Scripts", ROMX
 INCLUDE "maps/Route14_15Underwater.asm"

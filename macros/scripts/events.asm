@@ -1283,6 +1283,12 @@ checkdebugmode: macro
 	db checkdebugmode_command
 	endm
 	
+	enum movetoplayer_command
+movetoplayer: macro
+	db movetoplayer_command
+	db \1 ; person
+	endm
+	
 thisasm: macro
 	callasm .asm\@
 	end

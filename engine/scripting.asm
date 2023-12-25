@@ -266,6 +266,7 @@ ScriptCommandTable:
 	dw Script_warp2
 	dw Script_giveitemnotification
 	dw Script_checkdebug
+	dw Script_movetoplayer
 
 StartScript:
 	ld hl, wScriptFlags
@@ -3191,3 +3192,17 @@ Script_checkdebug:
 	ld [wScriptVar], a
 	ret
 	
+Script_movetoplayer:
+; parameters:
+;     person (SingleByteParam)
+;     x (SingleByteParam)
+;     y (SingleByteParam)
+	call GetScriptByte
+	ld b, a
+	ld a, [wXCoord]
+	add 4
+	ld d, a
+	ld a, [wYCoord]
+	add 4
+	ld e, a
+	farjp CopyDECoordsToMapObject

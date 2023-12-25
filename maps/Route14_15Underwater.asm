@@ -138,6 +138,12 @@ Route14_15UnderwaterCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
+	disappear ROUTE14_15_UNDERWATER_BUBBLE1
+	disappear ROUTE14_15_UNDERWATER_BUBBLE2
+	movetoplayer ROUTE14_15_UNDERWATER_BUBBLE1
+	movetoplayer ROUTE14_15_UNDERWATER_BUBBLE2
+	disappear ROUTE14_15_UNDERWATER_BUBBLE1
+	appear ROUTE14_15_UNDERWATER_BUBBLE2
 	jump .cont
 .purple
 	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
@@ -145,7 +151,12 @@ Route14_15UnderwaterCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	setevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
-	
+	disappear ROUTE14_15_UNDERWATER_BUBBLE1
+	disappear ROUTE14_15_UNDERWATER_BUBBLE2
+	movetoplayer ROUTE14_15_UNDERWATER_BUBBLE1
+	movetoplayer ROUTE14_15_UNDERWATER_BUBBLE2
+	appear ROUTE14_15_UNDERWATER_BUBBLE1
+	disappear ROUTE14_15_UNDERWATER_BUBBLE2
 .cont
 	callasm CheckUnderwaterEasterEggAsm
 	if_equal 1, .easter_egg
@@ -181,26 +192,6 @@ Route14_15UnderwaterEasterEggOff:
 	end
 	
 UnderwaterSetUpBubbles:
-	ld a, 1
-	ld b, a
-	ld a, [wXCoord]
-	add 4
-	ld d, a
-	ld a, [wYCoord]
-	add 4
-	ld e, a
-	farcall CopyDECoordsToMapObject
-	
-	ld a, 2
-	ld b, a
-	ld a, [wXCoord]
-	add 4
-	ld d, a
-	ld a, [wYCoord]
-	add 4
-	ld e, a
-	farcall CopyDECoordsToMapObject
-	
 	ld a, 5
 	ld [wRanchRaceSeconds], a
 	xor a

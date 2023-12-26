@@ -407,16 +407,26 @@ ENDM
 	
 	map_attributes BarInside, BAR_INSIDE, $00, 0
 	
-	map_attributes Crossroads, CROSSROADS, 0, WEST | SOUTH
-	connection west, DuskTurnpike, DUSK_TURNPIKE, 0
+	map_attributes Crossroads, CROSSROADS, 0, SOUTH | WEST
 	connection south, Route23, ROUTE_23, -5
+	connection west, DuskTurnpike, DUSK_TURNPIKE, 0
 	
-	map_attributes Route23, ROUTE_23, $c6, NORTH | SOUTH
+	map_attributes Route23, ROUTE_23, $c6, NORTH | SOUTH | WEST
 	connection north, Crossroads, CROSSROADS, 5
 	connection south, KomoreVillage, KOMORE_VILLAGE, -1
+	connection west, Route24North, ROUTE_24_NORTH, 14
 	
-	map_attributes KomoreVillage, KOMORE_VILLAGE, $c6, NORTH
+	map_attributes Route24North, ROUTE_24_NORTH, $c6, SOUTH | EAST
+	connection south, Route24South, ROUTE_24_SOUTH, 0
+	connection east, Route23, ROUTE_23, -14
+	
+	map_attributes Route24South, ROUTE_24_SOUTH, $c6, NORTH | EAST
+	connection north, Route24North, ROUTE_24_NORTH, 0
+	connection east, KomoreVillage, KOMORE_VILLAGE, 4
+	
+	map_attributes KomoreVillage, KOMORE_VILLAGE, $c6, NORTH | WEST
 	connection north, Route23, ROUTE_23, 1
+	connection west, Route24South, ROUTE_24_SOUTH, -4
 	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0

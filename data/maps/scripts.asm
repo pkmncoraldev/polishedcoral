@@ -113,7 +113,6 @@ INCLUDE "maps/Route3StarglowCavernTop.asm"
 INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route20.asm"
 INCLUDE "maps/Route13.asm"
-INCLUDE "maps/Route23.asm"
 
 
 SECTION "Sunset Bay Scripts", ROMX
@@ -400,6 +399,9 @@ INCLUDE "maps/Crossroads.asm"
 
 SECTION "Komore Village Scripts", ROMX
 INCLUDE "maps/KomoreVillage.asm"
+INCLUDE "maps/Route23.asm"
+INCLUDE "maps/Route24North.asm"
+INCLUDE "maps/Route24South.asm"
 
 SECTION "Underwater Scripts", ROMX
 INCLUDE "maps/Route14_15Underwater.asm"

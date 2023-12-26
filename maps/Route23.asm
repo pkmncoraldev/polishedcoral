@@ -13,7 +13,7 @@ Route23_MapScriptHeader:
 	signpost  2, 24, SIGNPOST_JUMPTEXT, Route23SignText
 	signpost 10,  5, SIGNPOST_JUMPTEXT, Route23FightingDojoSignText
 
-	db 12 ; object events
+	db 13 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PINK
 	person_event SPRITE_PICNICKER, 16, 30, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 0, Route23Trainer1, -1
@@ -50,11 +50,8 @@ Route23Callback:
 	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
-;	disappear ROUTE_23_LEAF_1
 	disappear ROUTE_23_LEAF_2
-;	movetoplayer ROUTE_23_LEAF_1
 	movetoplayer ROUTE_23_LEAF_2
-;	disappear ROUTE_23_LEAF_1
 	appear ROUTE_23_LEAF_2
 	return
 .pink
@@ -64,11 +61,8 @@ Route23Callback:
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	setevent EVENT_HIDE_OW_OBJECTS_PINK
 	disappear ROUTE_23_LEAF_1
-;	disappear ROUTE_23_LEAF_2
 	movetoplayer ROUTE_23_LEAF_1
-;	movetoplayer ROUTE_23_LEAF_2
 	appear ROUTE_23_LEAF_1
-;	disappear ROUTE_23_LEAF_2
 	return
 
 Route23SetUpLeaves:

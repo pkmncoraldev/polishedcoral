@@ -802,6 +802,12 @@ Route23_BlockData:
 KomoreVillage_BlockData:
 	INCBIN "maps/KomoreVillage.ablk.lz"
 	
+Route24North_BlockData:
+	INCBIN "maps/Route24North.ablk.lz"
+	
+Route24South_BlockData:
+	INCBIN "maps/Route24South.ablk.lz"
+	
 Route14_15Underwater_BlockData:
 	INCBIN "maps/Route14_15Underwater.ablk.lz"
 	

@@ -71,6 +71,7 @@ SOUTH_ONWA_LANDMARK EQU const_value
 	const CROSSROADS
 	const ROUTE_23
 	const KOMORE_VILLAGE
+	const ROUTE_24
 	
 	const BRILLO_TOWN		 ; 31
 	const ROUTE_17			 ; 32

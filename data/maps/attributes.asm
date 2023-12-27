@@ -414,11 +414,11 @@ ENDM
 	map_attributes Route23, ROUTE_23, $c6, NORTH | SOUTH | WEST
 	connection north, Crossroads, CROSSROADS, 5
 	connection south, KomoreVillage, KOMORE_VILLAGE, -1
-	connection west, Route24North, ROUTE_24_NORTH, 14
+	connection west, Route24North, ROUTE_24_NORTH, 6
 	
 	map_attributes Route24North, ROUTE_24_NORTH, $c6, SOUTH | EAST
 	connection south, Route24South, ROUTE_24_SOUTH, 0
-	connection east, Route23, ROUTE_23, -14
+	connection east, Route23, ROUTE_23, -6
 	
 	map_attributes Route24South, ROUTE_24_SOUTH, $c6, NORTH | EAST
 	connection north, Route24North, ROUTE_24_NORTH, 0

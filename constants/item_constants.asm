@@ -257,9 +257,9 @@
 
 	const NUGGET       ; e0
 	const BIG_NUGGET   ; e1
-	const TINYMUSHROOM ; e2 - replace
-	const BIG_MUSHROOM ; e3 - replace
-	const BALMMUSHROOM ; e4 - replace
+	const TINYMUSHROOM ; e2
+	const BIG_MUSHROOM ; e3
+	const BALMMUSHROOM ; e4
 	const PEARL        ; e5
 	const BIG_PEARL    ; e6
 	const BLACK_PEARL  ; e7

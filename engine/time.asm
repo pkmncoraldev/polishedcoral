@@ -109,6 +109,7 @@ CheckDailyResetTimer:: ; 11452
 	ld hl, wDailyResetTimer
 	call CheckDayDependentEventHL
 	ret nc
+	call ResetDailyEventFlags
 	xor a
 	ld hl, wDailyFlags
 	ld [hli], a ; wDailyFlags
@@ -140,6 +141,24 @@ endr
 .DontRestartKenjiBreakCountdown:
 	jr RestartDailyResetTimer
 ; 11485
+
+ResetDailyEventFlags:
+	eventflagreset EVENT_ROUTE_24_MUSHROOM_1
+	eventflagreset EVENT_ROUTE_24_MUSHROOM_2
+	eventflagreset EVENT_ROUTE_24_MUSHROOM_3
+	eventflagreset EVENT_ROUTE_24_MUSHROOM_4
+	eventflagreset EVENT_ROUTE_22_TRASHCAN
+	eventflagreset EVENT_BACK_ALLEY_TRASHCAN_1
+	eventflagreset EVENT_BACK_ALLEY_TRASHCAN_2
+	eventflagreset EVENT_BACK_ALLEY_TRASHCAN_3
+	eventflagreset EVENT_LUSTER_TRASHCAN_1
+	eventflagreset EVENT_LUSTER_TRASHCAN_2
+	eventflagreset EVENT_LUSTER_TRASHCAN_3
+	eventflagreset EVENT_LUSTER_TRASHCAN_4
+	eventflagreset EVENT_LUSTER_TRASHCAN_5
+	eventflagreset EVENT_LUSTER_TRASHCAN_6
+	eventflagreset EVENT_LUSTER_TRASHCAN_7
+	ret
 
 Special_SampleKenjiBreakCountdown: ; 11485
 ; Generate a random number between 3 and 6

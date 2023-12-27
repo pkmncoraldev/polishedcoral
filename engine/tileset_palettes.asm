@@ -579,8 +579,8 @@ LoadSpecialMapPalette: ; 494ac
 	
 .autumn
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_23
-	jr z, .ranch
+	cp MAP_KOMORE_VILLAGE
+	jr nz, .ranch
 	ld hl, AutumnPalette
 	jr .ranch_finish
 .ranch

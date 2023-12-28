@@ -5,7 +5,9 @@ KomoreVillage_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, KomoreVillageFlyPoint
 	callback MAPCALLBACK_TILES, Route23Callback
 
-	db 0 ; warp events
+	db 2 ; warp events
+	warp_def 19, 32, 1, KOMORE_COMMUNITY_CENTER
+	warp_def 19, 33, 2, KOMORE_COMMUNITY_CENTER
 
 	db 0 ; coord events
 

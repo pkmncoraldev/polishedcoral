@@ -811,3 +811,6 @@ Route24South_BlockData:
 Route14_15Underwater_BlockData:
 	INCBIN "maps/Route14_15Underwater.ablk.lz"
 	
+KomoreCommunityCenter_BlockData:
+	INCBIN "maps/KomoreCommunityCenter.ablk.lz"
+	

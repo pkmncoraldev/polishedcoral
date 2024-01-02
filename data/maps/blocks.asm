@@ -814,3 +814,12 @@ Route14_15Underwater_BlockData:
 KomoreCommunityCenter_BlockData:
 	INCBIN "maps/KomoreCommunityCenter.ablk.lz"
 	
+KomoreCommunityCenterLeft_BlockData:
+	INCBIN "maps/KomoreCommunityCenterLeft.ablk.lz"
+	
+KomoreCommunityCenterMiddle_BlockData:
+	INCBIN "maps/KomoreCommunityCenterMiddle.ablk.lz"
+	
+KomoreCommunityCenterRight_BlockData:
+	INCBIN "maps/KomoreCommunityCenterRight.ablk.lz"
+	

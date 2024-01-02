@@ -1058,8 +1058,9 @@ wDesertTemple2Trigger:: ds 1
 wRadiantTownshipTrigger:: ds 1
 wCrossroadsTrigger:: ds 1
 wRoute14_15UnderwaterTrigger:: ds 1
+wKomoreCommunityCenterTrigger:: ds 1
 
-ds 32
+ds 31
 
 wAmpharosFood:: ds 1
 

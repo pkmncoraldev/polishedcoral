@@ -1638,6 +1638,9 @@ LoadMapPals::
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 .haunted
+	ld a, [wMapGroup]
+	cp GROUP_KOMORE_VILLAGE
+	jp z, .community_center
 	ld hl, MapObjectPalsSpookhouse
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
@@ -1721,7 +1724,41 @@ LoadMapPals::
 .lab_end
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
+.community_center
+	ld a, 2
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPals
+	call AddNTimes
+	ld de, wUnknOBPals
+	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
 	
+	ld a, [wPlayerPalette]
+	cp 0
+	jr z, .community_center_pink
+	ld de, wUnknOBPals + 4 palettes
+	jr .community_center_cont
+.community_center_pink
+	ld de, wUnknOBPals + 6 palettes
+.community_center_cont
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPals
+	call AddNTimes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	call LightUpPlayerPalTimeOfDay
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	ld hl, MapObjectPalsAutumn + 2
+	call AddNTimes
+	call LoadSingleOBPalLinePal7
+	jp FarCopyWRAM
 .shimmer
 	ld a, [wMapNumber]
 	cp MAP_SHIMMER_CITY
@@ -1873,63 +1910,37 @@ LightUpPlayerPal:
 	ld a, [wIsNearCampfire]
 	bit 0, a
 	ret z
-	call LoadPlayerPaletteBc
+	ld a, [wPlayerPalette]
+	and 3
+	ld bc, 1 palettes
 	ld hl, MapObjectPals
+	call AddNTimes
+	ld a, 1
+	and 3
+	ld bc, 8 palettes
 	call AddNTimes
 	call LoadPlayerPalettewUnknOBPalsDe
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	jp FarCopyWRAM
-
-LoadPlayerPaletteBc:
+	
+LightUpPlayerPalTimeOfDay:
+	ld a, [wIsNearCampfire]
+	bit 0, a
+	ret z
 	ld a, [wPlayerPalette]
-	cp 1
-	jr z, .blue
-	cp 2
-	jr z, .green
-	cp 3
-	jr z, .brown
-	cp 4
-	jr z, .purple
-	cp 5
-	jr z, .teal
-	cp 6
-	jr z, .pink
-;.red
-	ld a, 1
+	and 3
+	ld bc, 1 palettes
+	ld hl, MapObjectPals
+	call AddNTimes
+	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes
-	ret
-.blue
-	ld a, 1
-	and 3
-	ld bc, 9 palettes
-	ret
-.green
-	ld a, 1
-	and 3
-	ld bc, 10 palettes
-	ret
-.brown
-	ld a, 1
-	and 3
-	ld bc, 11 palettes
-	ret
-.purple
-	ld a, 1
-	and 3
-	ld bc, 12 palettes
-	ret
-.teal
-	ld a, 1
-	and 3
-	ld bc, 13 palettes
-	ret
-.pink
-	ld a, 1
-	and 3
-	ld bc, 14 palettes
-	ret
+	call AddNTimes
+	call LoadPlayerPalettewUnknOBPalsDe
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
 
 LoadPlayerPalettewUnknOBPalsDe:
 	ld a, [wPlayerPalette]

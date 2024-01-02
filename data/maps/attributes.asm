@@ -646,6 +646,9 @@ ENDM
 	map_attributes RadiantGym, RADIANT_GYM, $0, 0
 	map_attributes Route14_15Underwater, ROUTE_14_15_UNDERWATER, $09, 0
 	map_attributes KomoreCommunityCenter, KOMORE_COMMUNITY_CENTER, $00, 0
+	map_attributes KomoreCommunityCenterLeft, KOMORE_COMMUNITY_CENTER_LEFT, $00, 0
+	map_attributes KomoreCommunityCenterMiddle, KOMORE_COMMUNITY_CENTER_MIDDLE, $00, 0
+	map_attributes KomoreCommunityCenterRight, KOMORE_COMMUNITY_CENTER_RIGHT, $00, 0
 	
 	map_attributes RadiantPokeCenter, RADIANT_POKECENTER, $0, 0
 	map_attributes RadiantMart, RADIANT_MART, $0, 0

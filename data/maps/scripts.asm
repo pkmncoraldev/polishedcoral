@@ -403,6 +403,9 @@ INCLUDE "maps/Route23.asm"
 INCLUDE "maps/Route24North.asm"
 INCLUDE "maps/Route24South.asm"
 INCLUDE "maps/KomoreCommunityCenter.asm"
+INCLUDE "maps/KomoreCommunityCenterLeft.asm"
+INCLUDE "maps/KomoreCommunityCenterMiddle.asm"
+INCLUDE "maps/KomoreCommunityCenterRight.asm"
 
 SECTION "Underwater Scripts", ROMX
 INCLUDE "maps/Route14_15Underwater.asm"

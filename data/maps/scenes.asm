@@ -117,4 +117,5 @@ MapTriggers::
 	scene_var RADIANT_TOWNSHIP,						  wRadiantTownshipTrigger
 	scene_var CROSSROADS,							  wCrossroadsTrigger
 	scene_var ROUTE_14_15_UNDERWATER,				  wRoute14_15UnderwaterTrigger
+	scene_var KOMORE_COMMUNITY_CENTER,				  wKomoreCommunityCenterTrigger
 	db -1

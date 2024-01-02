@@ -599,6 +599,15 @@ LoadSpecialMapPalette: ; 494ac
 	ret
 
 .spookhouse
+	ld a, [wMapGroup]
+	cp GROUP_KOMORE_VILLAGE
+	jr nz, .spookhouse_cont
+	ld a, [wMapNumber]
+	cp MAP_KOMORE_COMMUNITY_CENTER_RIGHT
+	jr z, .spookhouse_cont
+	ld hl, KomoreCommunityCenterPalette
+	jp LoadSevenTimeOfDayBGPalettes
+.spookhouse_cont
 	ld hl, SpookhousePalette
 	jp LoadSevenBGPalettes
 	
@@ -1083,6 +1092,9 @@ INCLUDE "maps/palettes/bgpals/crossroads.pal"
 
 HighwayTunnelPalette:
 INCLUDE "maps/palettes/bgpals/highwaytunnel.pal"
+
+KomoreCommunityCenterPalette:
+INCLUDE "maps/palettes/bgpals/communitycenter.pal"
 
 DarkCavePalette:
 INCLUDE "maps/palettes/bgpals/darkcave.pal"

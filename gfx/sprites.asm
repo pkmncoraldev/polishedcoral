@@ -73,6 +73,7 @@ ScaryPaintingSpriteGFX::       INCBIN "gfx/sprites/scary_painting.2bpp"
 MiscConeSpriteGFX::   		   INCBIN "gfx/sprites/misc_cone.2bpp"
 JukeboxSpriteGFX::             INCBIN "gfx/sprites/jukebox.2bpp"
 LeavesSpriteGFX::              INCBIN "gfx/sprites/leaves.2bpp"
+MimikyuDollSpriteGFX::         INCBIN "gfx/sprites/mimikyu_doll.2bpp"
 
 
 SECTION "Overworld Sprites 3", ROMX

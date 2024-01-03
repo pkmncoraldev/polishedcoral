@@ -1639,8 +1639,12 @@ LoadMapPals::
 	jp FarCopyWRAM
 .haunted
 	ld a, [wMapGroup]
-	cp GROUP_KOMORE_VILLAGE
+	cp GROUP_KOMORE_COMMUNITY_CENTER
+	jr nz, .haunted_cont
+	ld a, [wMapNumber]
+	cp MAP_KOMORE_COMMUNITY_CENTER
 	jp z, .community_center
+.haunted_cont
 	ld hl, MapObjectPalsSpookhouse
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM

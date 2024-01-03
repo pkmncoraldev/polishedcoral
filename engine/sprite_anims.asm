@@ -128,7 +128,8 @@ DoAnimFrame: ; 8d24b
 	farjp ComposeMail_AnimateCursor
 
 .GameFreakLogo: ; 8d37a (23:537a)
-	farjp GameFreakLogoJumper
+	ret
+;	farjp GameFreakLogoJumper
 
 .SlotsGolem: ; 8d422 (23:5422)
 	farjp SlotMachine_AnimateGolem

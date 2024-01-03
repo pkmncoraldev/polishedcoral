@@ -82,6 +82,9 @@ PippiScreenTilemap: ; 1ddc4b
 INCBIN "gfx/diploma/pippiscreen.tilemap"
 
 _WarnScreen:
+	xor a
+	ld [wPlaceBallsX], a
+	ld [wPlaceBallsY], a
 	call ClearBGPalettes
 	call ClearTileMap
 	call ClearSprites
@@ -103,6 +106,9 @@ WarnScreenTilemap: ; 1ddc4b
 INCBIN "gfx/diploma/warn.tilemap"
 
 _VBAScreen:
+	xor a
+	ld [wPlaceBallsX], a
+	ld [wPlaceBallsY], a
 	call ClearBGPalettes
 	call ClearTileMap
 	call ClearSprites

@@ -708,6 +708,9 @@ MapObjectMovementPattern:
 	ret
 	
 .leaf
+	ld hl, wDailyFlags2
+	bit 7, [hl] ; ENGINE_WINDY_DAY
+	jr z, .leaf_reset
 	ld a, [wPlayerSpriteX]
 	add 100
 	ld e, a

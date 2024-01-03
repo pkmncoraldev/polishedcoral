@@ -110,6 +110,8 @@ CheckDailyResetTimer:: ; 11452
 	call CheckDayDependentEventHL
 	ret nc
 	call ResetDailyEventFlags
+	ld a, [wDailyFlags2]
+	ld [wSlots], a
 	xor a
 	ld hl, wDailyFlags
 	ld [hli], a ; wDailyFlags
@@ -130,15 +132,16 @@ endr
 rept 4
 	ld [hli], a
 endr
-	ld hl, wKenjiBreakTimer
-	ld a, [hl]
-	and a
-	jr z, .RestartKenjiBreakCountdown
-	dec [hl]
-	jr nz, .DontRestartKenjiBreakCountdown
-.RestartKenjiBreakCountdown:
-	call Special_SampleKenjiBreakCountdown
-.DontRestartKenjiBreakCountdown:
+	ld hl, wSlots
+	bit 7, [hl] ; ENGINE_WINDY_DAY
+	jr z, .notset
+	ld hl, wDailyFlags2
+	res 7, [hl] ; ENGINE_WINDY_DAY
+	jr .finish
+.notset
+	ld hl, wDailyFlags2
+	set 7, [hl] ; ENGINE_WINDY_DAY
+.finish
 	jr RestartDailyResetTimer
 ; 11485
 

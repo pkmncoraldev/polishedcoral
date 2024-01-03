@@ -125,7 +125,7 @@ EngineFlags: ; 80462
 	engine_flag wDailyFlags2, 4 ; daily shrine visit
 	engine_flag wDailyFlags2, 5 ; daily mystery gift
 	engine_flag wDailyFlags2, 6 ; red in mt. silver
-	engine_flag wDailyFlags2, 7 ; leaf in navel rock
+	engine_flag wDailyFlags2, 7 ; windy day
 
 	engine_flag wDailyFlags3, 0 ; bought leftovers
 	engine_flag wDailyFlags3, 1 ; took hyper test

@@ -323,7 +323,7 @@ TilesetAutumnAnim::
     dw Waterfall2Frames, AnimateWaterfallTiles
     dw Waterfall3Frames, AnimateWaterfallTiles
 	dw VTiles2 tile $36, AnimateTopofWaterfall
-	dw TreeWindFrames, AnimateWaterfallTiles2
+	dw TreeWindFrames, AnimateTreeTiles
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -1032,6 +1032,11 @@ AnimateWaterfallTiles: ; fc56d
     ld h, d
 	
     jp WriteTwoTiles
+	
+AnimateTreeTiles:
+	ld hl, wDailyFlags2
+	bit 7, [hl] ; ENGINE_WINDY_DAY
+	ret z
 	
 AnimateWaterfallTiles2: ; fc56d
 ; Draw two waterfall tiles for the current frame in VRAM tile at de.

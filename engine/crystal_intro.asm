@@ -13,6 +13,18 @@ Copyright_GFPresents: ; e4579
 	ld a, $90
 	ld [hWY], a
 	
+	call CheckVBA
+	jp z, .skip_vba
+	farcall _VBAScreen
+	ld de, MUSIC_YOUNGSTER_ENCOUNTER
+	call PlayMusic
+	ld c, 15
+	call FadePalettes
+.vba_loop
+	xor a
+	jr .vba_loop
+	
+.skip_vba
 	call CheckExtendedSpace
 	
 	ld a, BANK(wExtendedSpace)
@@ -172,6 +184,14 @@ StartIntroSequence::
 	ld c, 16
 	jp DelayFrames
 ; e4670
+
+CheckVBA:
+	xor a
+	ldh [rSC], a ; no-optimize redundant loads (VBA loads this wrong)
+	ldh a, [rSC]
+	and %01111100
+	cp %01111100
+	ret
 
 SplashScreenPalette:
 	RGB 00, 00, 00

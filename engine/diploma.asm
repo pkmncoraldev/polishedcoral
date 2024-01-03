@@ -102,6 +102,101 @@ INCBIN "gfx/diploma/warn.2bpp.lz"
 WarnScreenTilemap: ; 1ddc4b
 INCBIN "gfx/diploma/warn.tilemap"
 
+_VBAScreen:
+	call ClearBGPalettes
+	call ClearTileMap
+	call ClearSprites
+	call DisableLCD
+	ld hl, VBAScreenGFX
+	ld de, VTiles1
+	call Decompress
+	ld hl, VBAScreenTilemap
+	decoord 0, 0
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	rst CopyBytes
+	
+	ld a, 1
+	ld [rVBK], a
+	; Apply logo gradient:
+; line 0
+	hlbgcoord 0, 0
+	ld bc, BG_MAP_WIDTH
+	ld a, 5
+	call ByteFill
+; line 1
+	hlbgcoord 0, 1
+	ld bc, BG_MAP_WIDTH
+	ld a, 1
+	call ByteFill
+; line 2
+	hlbgcoord 0, 2
+	ld bc, BG_MAP_WIDTH
+	ld a, 2
+	call ByteFill
+; line 3
+	hlbgcoord 0, 3
+	ld bc, BG_MAP_WIDTH
+	ld a, 3
+	call ByteFill
+; line 4
+	hlbgcoord 0, 4
+	ld bc, BG_MAP_WIDTH
+	ld a, 4
+	call ByteFill
+; lines 5-7
+	hlbgcoord 0, 5
+	ld bc, 3 * BG_MAP_WIDTH
+	ld a, 5
+	call ByteFill
+	xor a
+	ld [rVBK], a
+	
+	call EnableLCD
+	ld hl, VBAScreenPalettes
+	ld de, wUnknBGPals
+	ld bc, 6 palettes
+	ld a, $5
+	call FarCopyWRAM
+	
+	jp ApplyTilemapInVBlank
+	
+VBAScreenGFX: ; 1dd805
+INCBIN "gfx/diploma/VBAScreen.2bpp.lz"
+
+VBAScreenTilemap: ; 1ddc4b
+INCBIN "gfx/diploma/VBAScreen.tilemap"
+
+VBAScreenPalettes:
+	RGB 15, 24, 31
+	RGB 21, 27, 31
+	RGB 11, 20, 29
+	RGB 31, 31, 31
+	
+	RGB 15, 24, 31
+	RGB 31, 31, 31
+	RGB 31, 22, 26
+	RGB 23, 03, 06
+	
+	RGB 15, 24, 31
+	RGB 31, 31, 31
+	RGB 31, 13, 21
+	RGB 23, 03, 06
+	
+	RGB 15, 24, 31
+	RGB 31, 31, 31
+	RGB 31, 17, 24
+	RGB 23, 03, 06
+	
+	RGB 15, 24, 31
+	RGB 31, 31, 31
+	RGB 31, 20, 25
+	RGB 23, 03, 06
+	
+	RGB 15, 24, 31
+	RGB 31, 31, 31
+	RGB 31, 22, 26
+	RGB 23, 03, 06
+
 _DeveloperMessage:
 	call ClearBGPalettes
 	call ClearTileMap

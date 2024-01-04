@@ -341,6 +341,14 @@ InitializeNPCNames: ; 5ce9
 ; 5d23
 
 InitializeWorld: ; 5d23
+	call Random
+	cp 50 percent
+	jr c, .set_windy
+	jr .skip
+.set_windy
+	ld hl, wDailyFlags2
+	set 7, [hl] ; ENGINE_WINDY_DAY
+.skip
 	call ShrinkPlayer
 	farcall SpawnPlayer
 	farjp _InitializeStartDay

@@ -631,6 +631,27 @@ _GrassWildmonLookup: ; 2a205
 	ld a, [wStuckInSandCounter]
 	cp 0
 	jr nz, .in_sand
+	ld de, ENGINE_WINDY_DAY
+	farcall CheckEngineFlag
+	ld a, c
+	and a
+	jr z, .normal
+	
+	ld a, [wMapGroup]
+	cp GROUP_ROUTE_23
+	jr nz, .normal
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_23
+	jr z, .windy
+	cp MAP_ROUTE_24_NORTH
+	jr z, .windy
+	cp MAP_ROUTE_24_SOUTH
+	jr nz, .normal
+.windy
+	call _GetGrassWildmonPointer
+	ld bc, GRASS_WILDDATA_LENGTH
+	jp _WindyWildmonOK
+.normal
 	call _GetGrassWildmonPointer
 	ld bc, GRASS_WILDDATA_LENGTH
 	jr _NormalWildmonOK
@@ -720,6 +741,10 @@ _RanchWildmonOK:
 _SandWildmonOK:
 	call CopySandMapDE
 	jr LookUpWildmonsForMapDE
+	
+_WindyWildmonOK:
+	call CopyWindyMapDE
+	jr LookUpWildmonsForMapDE
 
 CopyCurrMapDE: ; 2a27f
 	ld a, [wMapGroup]
@@ -740,6 +765,14 @@ CopySandMapDE:
 	ld a, GROUP_BRILLO_BOAT_HOUSE
 	ld d, a
 	ld a, MAP_BRILLO_BOAT_HOUSE
+	ld e, a
+	ret
+
+CopyWindyMapDE:
+	ld a, [wMapGroup]
+	ld d, a
+	ld a, [wMapNumber]
+	inc a
 	ld e, a
 	ret
 

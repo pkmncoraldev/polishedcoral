@@ -654,20 +654,17 @@ ENDM
 	map_attributes KomoreHouse3, KOMORE_HOUSE_3, $00, 0
 	map_attributes KomorePokeCenter, KOMORE_POKECENTER, $0, 0
 	map_attributes KomoreMart, KOMORE_MART, $0, 0
-	
 	map_attributes RadiantPokeCenter, RADIANT_POKECENTER, $0, 0
 	map_attributes RadiantMart, RADIANT_MART, $0, 0
 	map_attributes Route21Gate, ROUTE_21_GATE, $0, 0
 	map_attributes RadiantHouse, RADIANT_HOUSE, $0, 0
 	map_attributes RadiantField, RADIANT_FIELD, $59, 0
-	
 	map_attributes DuskPokeCenter, DUSK_POKECENTER, $0, 0
 	map_attributes DuskMart, DUSK_MART, $0, 0
 	map_attributes DuskHouse1, DUSK_HOUSE_1, $0, 0
 	map_attributes DuskHouse2, DUSK_HOUSE_2, $0, 0
 	map_attributes DuskHouse3, DUSK_HOUSE_3, $0, 0
 	map_attributes Route19DuskGate, ROUTE_19_DUSK_GATE, $0, 0
-	
 	map_attributes Route5Deep, ROUTE_5_DEEP, $fb, 0
 	map_attributes Route1Gate, ROUTE_1_GATE, $0, 0
 	map_attributes Route5Gate1F, ROUTE_5_GATE_1F, $0, 0
@@ -677,3 +674,6 @@ ENDM
 	map_attributes EventideVillageGate, EVENTIDE_VILLAGE_GATE, $0, 0
 	map_attributes Route11Gate, ROUTE_11_GATE, $0, 0
 	map_attributes Route12Gate, ROUTE_12_GATE, $0, 0
+	map_attributes Route23Windy, ROUTE_23_WINDY, $0, 0
+	map_attributes Route24NorthWindy, ROUTE_24_NORTH_WINDY, $0, 0
+	map_attributes Route24SouthWindy, ROUTE_24_SOUTH_WINDY, $0, 0

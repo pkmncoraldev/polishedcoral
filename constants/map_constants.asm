@@ -393,18 +393,21 @@ MAP_NONE   EQU 0
 	newgroup
 	
 	map_const ROUTE_23,									  21, 27 ; 1
-	map_const KOMORE_VILLAGE,							  20, 13 ; 2
+	map_const ROUTE_23_WINDY,							   1,  1 ; 2
 	map_const ROUTE_24_NORTH,							  20, 17 ; 3
-	map_const ROUTE_24_SOUTH,							  20, 12 ; 4
-	map_const KOMORE_COMMUNITY_CENTER,					   5,  4 ; 5
-	map_const KOMORE_COMMUNITY_CENTER_LEFT,				   3,  4 ; 6
-	map_const KOMORE_COMMUNITY_CENTER_MIDDLE,			   3,  4 ; 7
-	map_const KOMORE_COMMUNITY_CENTER_RIGHT,			   3,  4 ; 8
-	map_const KOMORE_HOUSE_1,							   4,  4 ; 9
-	map_const KOMORE_HOUSE_2,							   4,  4 ; 10
-	map_const KOMORE_HOUSE_3,							   4,  4 ; 11
-	map_const KOMORE_POKECENTER,                      	   6,  4 ; 12
-	map_const KOMORE_MART,                             	   6,  4 ; 13
+	map_const ROUTE_24_NORTH_WINDY,						   1,  1 ; 4
+	map_const ROUTE_24_SOUTH,							  20, 12 ; 5
+	map_const ROUTE_24_SOUTH_WINDY,						   1,  1 ; 6
+	map_const KOMORE_VILLAGE,							  20, 13 ; 7
+	map_const KOMORE_COMMUNITY_CENTER,					   5,  4 ; 8
+	map_const KOMORE_COMMUNITY_CENTER_LEFT,				   3,  4 ; 9
+	map_const KOMORE_COMMUNITY_CENTER_MIDDLE,			   3,  4 ; 10
+	map_const KOMORE_COMMUNITY_CENTER_RIGHT,			   3,  4 ; 11
+	map_const KOMORE_HOUSE_1,							   4,  4 ; 12
+	map_const KOMORE_HOUSE_2,							   4,  4 ; 13
+	map_const KOMORE_HOUSE_3,							   4,  4 ; 14
+	map_const KOMORE_POKECENTER,                      	   6,  4 ; 15
+	map_const KOMORE_MART,                             	   6,  4 ; 16
 	
 	newgroup													 ; last
 	

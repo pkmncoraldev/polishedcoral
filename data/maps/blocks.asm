@@ -802,15 +802,18 @@ Crossroads_BlockData:
 	INCBIN "maps/Crossroads.ablk.lz"
 	
 Route23_BlockData:
+Route23Windy_BlockData:
 	INCBIN "maps/Route23.ablk.lz"
 	
 KomoreVillage_BlockData:
 	INCBIN "maps/KomoreVillage.ablk.lz"
 	
 Route24North_BlockData:
+Route24NorthWindy_BlockData:
 	INCBIN "maps/Route24North.ablk.lz"
 	
 Route24South_BlockData:
+Route24SouthWindy_BlockData:
 	INCBIN "maps/Route24South.ablk.lz"
 	
 Route14_15Underwater_BlockData:

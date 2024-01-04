@@ -14,6 +14,7 @@ LusterMallPokeCenter_BlockData:
 ShimmerPokeCenter_BlockData:
 BrilloPokeCenter_BlockData:
 DuskPokeCenter_BlockData:
+KomorePokeCenter_BlockData:
 	INCBIN "maps/PokeCenter.ablk.lz"
 
 GlintMart_BlockData:
@@ -26,6 +27,7 @@ TwinkleMart_BlockData:
 LusterMart_BlockData:
 ShimmerMart_BlockData:
 DuskMart_BlockData:
+KomoreMart_BlockData:
 GenericMart_BlockData:: ; used by tilesets/palettes.asm:LoadSpecialMapPalette
 	INCBIN "maps/Mart.ablk.lz"
 	
@@ -74,6 +76,7 @@ SunbeamDodrioHouse_BlockData:
 ShimmerHouse1_BlockData:
 Route3FriendshipHouse_BlockData:
 DuskHouse1_BlockData:
+KomoreHouse1_BlockData:
 	INCBIN "maps/NormalHouse1.ablk.lz"
 	
 SunsetGengarHouse_BlockData:
@@ -84,6 +87,7 @@ SunbeamOldCouplesHouse_BlockData:
 SunbeamTradeHouse_BlockData:
 FlickerNameSpeechHouse_BlockData:
 DuskHouse2_BlockData:
+KomoreHouse2_BlockData:
 	INCBIN "maps/NormalHouse2.ablk.lz"
 	
 SunsetLegendsHouse_BlockData:
@@ -93,6 +97,7 @@ SunbeamSoftSandHouse_BlockData:
 FlickerSoundSpeechHouse_BlockData:
 ShimmerHouse2_BlockData:
 DuskHouse3_BlockData:
+KomoreHouse3_BlockData:
 	INCBIN "maps/NormalHouse3.ablk.lz"
 	
 LakeOnwaItemHouse_BlockData:

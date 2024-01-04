@@ -22,6 +22,7 @@ Marts: ; 160a9
 	dw BrilloMart
 	dw RadiantMart
 	dw DuskMart
+	dw KomoreMart
 MartsEnd:
 
 
@@ -273,6 +274,11 @@ RadiantMart:
 	db -1
 	
 DuskMart:
+	db 1 ; # items
+	db POTION
+	db -1
+	
+KomoreMart:
 	db 1 ; # items
 	db POTION
 	db -1

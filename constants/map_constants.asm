@@ -400,6 +400,11 @@ MAP_NONE   EQU 0
 	map_const KOMORE_COMMUNITY_CENTER_LEFT,				   3,  4 ; 6
 	map_const KOMORE_COMMUNITY_CENTER_MIDDLE,			   3,  4 ; 7
 	map_const KOMORE_COMMUNITY_CENTER_RIGHT,			   3,  4 ; 8
+	map_const KOMORE_HOUSE_1,							   4,  4 ; 9
+	map_const KOMORE_HOUSE_2,							   4,  4 ; 10
+	map_const KOMORE_HOUSE_3,							   4,  4 ; 11
+	map_const KOMORE_POKECENTER,                      	   6,  4 ; 12
+	map_const KOMORE_MART,                             	   6,  4 ; 13
 	
 	newgroup													 ; last
 	

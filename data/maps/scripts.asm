@@ -14,6 +14,7 @@ INCLUDE "maps/LusterMallPokeCenter.asm"
 INCLUDE "maps/ShimmerPokeCenter.asm"
 INCLUDE "maps/BrilloPokeCenter.asm"
 INCLUDE "maps/DuskPokeCenter.asm"
+INCLUDE "maps/KomorePokeCenter.asm"
 
 SECTION "Pokemon Mart Scripts 1", ROMX
 INCLUDE "maps/GlintMart.asm"
@@ -27,6 +28,7 @@ INCLUDE "maps/LusterMart.asm"
 INCLUDE "maps/ShimmerMart.asm"
 INCLUDE "maps/BrilloMart.asm"
 INCLUDE "maps/DuskMart.asm"
+INCLUDE "maps/KomoreMart.asm"
 
 
 SECTION "Dungeon Scripts", ROMX
@@ -406,6 +408,9 @@ INCLUDE "maps/KomoreCommunityCenter.asm"
 INCLUDE "maps/KomoreCommunityCenterLeft.asm"
 INCLUDE "maps/KomoreCommunityCenterMiddle.asm"
 INCLUDE "maps/KomoreCommunityCenterRight.asm"
+INCLUDE "maps/KomoreHouse1.asm"
+INCLUDE "maps/KomoreHouse2.asm"
+INCLUDE "maps/KomoreHouse3.asm"
 
 SECTION "Underwater Scripts", ROMX
 INCLUDE "maps/Route14_15Underwater.asm"

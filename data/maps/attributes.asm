@@ -649,6 +649,11 @@ ENDM
 	map_attributes KomoreCommunityCenterLeft, KOMORE_COMMUNITY_CENTER_LEFT, $00, 0
 	map_attributes KomoreCommunityCenterMiddle, KOMORE_COMMUNITY_CENTER_MIDDLE, $00, 0
 	map_attributes KomoreCommunityCenterRight, KOMORE_COMMUNITY_CENTER_RIGHT, $00, 0
+	map_attributes KomoreHouse1, KOMORE_HOUSE_1, $00, 0
+	map_attributes KomoreHouse2, KOMORE_HOUSE_2, $00, 0
+	map_attributes KomoreHouse3, KOMORE_HOUSE_3, $00, 0
+	map_attributes KomorePokeCenter, KOMORE_POKECENTER, $0, 0
+	map_attributes KomoreMart, KOMORE_MART, $0, 0
 	
 	map_attributes RadiantPokeCenter, RADIANT_POKECENTER, $0, 0
 	map_attributes RadiantMart, RADIANT_MART, $0, 0

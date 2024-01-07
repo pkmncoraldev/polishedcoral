@@ -129,7 +129,6 @@ ReanchorBGMap_NoOAMUpdate_NoDelay::
 INCLUDE "engine/map_objects.asm"
 INCLUDE "engine/intro_menu.asm"
 INCLUDE "engine/init_options.asm"
-INCLUDE "engine/learn.asm"
 INCLUDE "engine/math.asm"
 INCLUDE "engine/npc_movement.asm"
 
@@ -4887,6 +4886,8 @@ INCLUDE "engine/events/daycare.asm"
 INCLUDE "engine/breeding.asm"
 INCLUDE "data/items/attributes.asm"
 INCLUDE "engine/events/happiness_egg.asm"
+
+INCLUDE "engine/learn.asm"
 
 DrawBattleHPBar:: ; 3750
 ; Draw an HP bar d tiles long at hl

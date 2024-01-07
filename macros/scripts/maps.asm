@@ -151,9 +151,9 @@ ENDM
 
 fruittreeinvis_event: MACRO
 if _NARG == 4
-	object_event \1, \2, SPRITE_INVISIBLE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, fruittree, \3, \4, -1
+	object_event \1, \2, -1, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, fruittree, \3, \4, -1
 else
-	object_event \1, \2, SPRITE_INVISIBLE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, fruittree, \3, \4, \5
+	object_event \1, \2, -1, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, fruittree, \3, \4, \5
 endc
 ENDM
 

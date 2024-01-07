@@ -640,6 +640,7 @@ MapObjectMovementPattern:
 	dw .MovementCasino2
 	dw .MovementShakingFlower
 	dw .MovementTileUpDown            ; SPRITEMOVEFN_TILE_UP_DOWN
+	dw .NoRender
 
 .RandomWalkY:
 	call Random
@@ -895,6 +896,17 @@ MapObjectMovementPattern:
 	add hl, bc
 	ld [hl], STEP_TYPE_05
 .Null_00:
+	ret
+	
+.NoRender:
+	call CopyCurCoordsToNextCoords
+	call EndSpriteMovement
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], PERSON_ACTION_NO_RENDER
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_05
 	ret
 
 .ObeyDPad:

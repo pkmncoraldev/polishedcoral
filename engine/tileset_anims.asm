@@ -244,12 +244,13 @@ TilesetTrainAnim::
 	dw NULL,  DoneTileAnimation
 	
 TilesetSunsetAnim::
-	dw VTiles2 tile $0, WriteTileToBuffer
+	dw VTiles2 tile $00, WriteTileToBuffer
+	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw VTiles2 tile $0, WriteTileFromBuffer
+	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $00, WriteTileFromBuffer
 	dw NULL,  WaitTileAnimation
 	dw WaterFrames, AnimateWaterfallTiles2
-	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
@@ -263,18 +264,18 @@ TilesetSunsetAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 	
 TilesetHighwayAnim::
-	dw VTiles2 tile $14, WriteTileToBuffer
+TilesetGroveAnim::
+	dw VTiles2 tile $00, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw NULL,  WaitTileAnimation
-	dw VTiles2 tile $14, WriteTileFromBuffer
+	dw VTiles2 tile $00, WriteTileFromBuffer
 	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+	dw WaterFrames, AnimateWaterfallTiles2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -290,11 +291,11 @@ TilesetHighwayAnim::
 	
 TilesetGlintAnim::
 TilesetStarglowAnim::
-	dw VTiles2 tile $14, WriteTileToBuffer
+	dw VTiles2 tile $00, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw NULL,  WaitTileAnimation
-	dw VTiles2 tile $14, WriteTileFromBuffer
+	dw VTiles2 tile $00, WriteTileFromBuffer
 	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw WaterfallFrames, AnimateWaterfallTiles
@@ -302,7 +303,7 @@ TilesetStarglowAnim::
 	dw Waterfall3Frames, AnimateWaterfallTiles
 	dw VTiles2 tile $36, AnimateTopofWaterfall
 	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+	dw WaterFrames, AnimateWaterfallTiles2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -325,7 +326,7 @@ TilesetAutumnAnim::
 	dw VTiles2 tile $36, AnimateTopofWaterfall
 	dw TreeWindFrames, AnimateTreeTiles
 	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+	dw WaterFrames, AnimateWaterfallTiles2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -334,11 +335,11 @@ TilesetAutumnAnim::
 	dw NULL,  DoneTileAnimation
 	
 TilesetDesertAnim::
-	dw VTiles2 tile $14, WriteTileToBuffer
+	dw VTiles2 tile $00, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw NULL,  WaitTileAnimation
-	dw VTiles2 tile $14, WriteTileFromBuffer
+	dw VTiles2 tile $00, WriteTileFromBuffer
 	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw FlagFrames, AnimateWaterfallTiles
@@ -346,7 +347,7 @@ TilesetDesertAnim::
 	dw NULL,  WaitTileAnimation
 	dw DesertLightFrames, AnimateWaterfallTiles
 	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+	dw WaterFrames, AnimateWaterfallTiles2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -356,11 +357,11 @@ TilesetDesertAnim::
 	dw NULL,  DoneTileAnimation
 	
 TilesetShimmerAnim::
-	dw VTiles2 tile $14, WriteTileToBuffer
+	dw VTiles2 tile $00, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw NULL,  WaitTileAnimation
-	dw VTiles2 tile $14, WriteTileFromBuffer
+	dw VTiles2 tile $00, WriteTileFromBuffer
 	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw WaterfallFrames, AnimateWaterfallTiles
@@ -370,7 +371,7 @@ TilesetShimmerAnim::
 	dw NULL,  WaitTileAnimation
 	dw ShorelineFrames,  AnimateWaterfallTiles2
 	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+	dw WaterFrames, AnimateWaterfallTiles2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -399,7 +400,6 @@ TilesetPlayerHouseAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 	
-TilesetGroveAnim::
 TilesetMountainAnim::
 TilesetSpookyAnim::
 TilesetRanchAnim::
@@ -1241,6 +1241,22 @@ rept 8
 endr
 	jp _FinishWritingSecondTile
 	
+	
+WriteThreeTiles:
+
+	pop de
+	ld [hl], e
+	inc hl
+	ld [hl], d
+
+rept 16
+	pop de
+	inc hl
+	ld [hl], e
+	inc hl
+	ld [hl], d
+endr
+	jp _FinishWritingSecondTile
 	
 WriteFourTiles:
 

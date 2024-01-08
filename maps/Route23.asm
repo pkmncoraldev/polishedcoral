@@ -74,7 +74,7 @@ Route23SetUpLeaves:
 	ret
 	
 Route23WindyMan:
-	callasm Route23WindyManAsm
+	checkflag ENGINE_WINDY_DAY
 	iftrue .windy
 	jumptextfaceplayer Route23WindyManText1
 .windy

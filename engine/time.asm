@@ -150,6 +150,7 @@ ResetDailyEventFlags:
 	eventflagreset EVENT_ROUTE_24_MUSHROOM_2
 	eventflagreset EVENT_ROUTE_24_MUSHROOM_3
 	eventflagreset EVENT_ROUTE_24_MUSHROOM_4
+	eventflagreset EVENT_ROUTE_24_BRELOOM
 	eventflagreset EVENT_ROUTE_22_TRASHCAN
 	eventflagreset EVENT_BACK_ALLEY_TRASHCAN_1
 	eventflagreset EVENT_BACK_ALLEY_TRASHCAN_2

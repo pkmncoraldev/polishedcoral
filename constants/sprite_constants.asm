@@ -189,6 +189,8 @@
 	const SPRITE_JUKEBOX
 	const SPRITE_LEAVES
 	const SPRITE_MIMIKYU_DOLL
+	const SPRITE_SHROOMISH_OW
+	const SPRITE_BRELOOM_OW
 
 	
 	const_def $ee

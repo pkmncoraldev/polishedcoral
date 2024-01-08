@@ -74,6 +74,8 @@ MiscConeSpriteGFX::   		   INCBIN "gfx/sprites/misc_cone.2bpp"
 JukeboxSpriteGFX::             INCBIN "gfx/sprites/jukebox.2bpp"
 LeavesSpriteGFX::              INCBIN "gfx/sprites/leaves.2bpp"
 MimikyuDollSpriteGFX::         INCBIN "gfx/sprites/mimikyu_doll.2bpp"
+ShroomishOwSpriteGFX::         INCBIN "gfx/icons/shroomish.2bpp"
+BreloomOwSpriteGFX::		   INCBIN "gfx/icons/breloom.2bpp"
 
 
 SECTION "Overworld Sprites 3", ROMX

@@ -118,4 +118,5 @@ MapTriggers::
 	scene_var CROSSROADS,							  wCrossroadsTrigger
 	scene_var ROUTE_14_15_UNDERWATER,				  wRoute14_15UnderwaterTrigger
 	scene_var KOMORE_COMMUNITY_CENTER,				  wKomoreCommunityCenterTrigger
+	scene_var ROUTE_24_SOUTH,						  wRoute24Trigger
 	db -1

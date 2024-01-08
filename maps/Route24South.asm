@@ -50,6 +50,8 @@ Route24SouthCallback:
 	iftrue .breloom_done_today
 	checkflag ENGINE_WINDY_DAY
 	iftrue .breloom_done_today
+	callasm BreloomRandomAsm
+	if_equal 0, .breloom_done_today
 	clearevent EVENT_ROUTE_24_BRELOOM
 	clearevent EVENT_ROUTE_24_MUSHROOM_5
 	dotrigger $0
@@ -60,8 +62,22 @@ Route24SouthCallback:
 	dotrigger $1
 	jump Route23Callback
 	
+BreloomRandomAsm:
+	call Random
+	cp 25 percent
+	jr c, .breloom
+	xor a
+	ld [wScriptVar], a
+	ret
+.breloom
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+	
 Route24SouthBreloom:
 	applyonemovement PLAYER, step_right
+	special Special_FadeOutMusic
+	pause 10
 rept 2
 	spriteface ROUTE_24_SHROOMISH_1, UP
 	pause 1
@@ -107,6 +123,7 @@ endr
 	spriteface ROUTE_24_SHROOMISH_2, DOWN
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, ROUTE_24_BRELOOM, 15
+	pause 10
 	applyonemovement ROUTE_24_SHROOMISH_1, set_sliding
 	applyonemovement ROUTE_24_SHROOMISH_1, fix_facing
 rept 2
@@ -151,6 +168,8 @@ endr
 	applyonemovement ROUTE_24_BRELOOM, remove_fixed_facing
 	disappear ROUTE_24_BRELOOM
 	dotrigger $1
+	pause 10
+	playmusic MUSIC_AUTUMN
 	end
 	
 Route24SouthMushroom1:

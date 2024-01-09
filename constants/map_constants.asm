@@ -71,7 +71,6 @@ MAP_NONE   EQU 0
 	map_const SUNSET_LIGHTHOUSE_BASEMENT,				   4,  4 ; 12
 	map_const SUNSET_LIGHTHOUSE_ELEVATOR,				   2,  2 ; 13
 	map_const SUNSET_LIGHTHOUSE_TOP,					   9,  5 ; 14
-	map_const ROUTE_13,                            30, 10 ; 15
 
 	newgroup                                                     ;  3
 
@@ -153,6 +152,7 @@ MAP_NONE   EQU 0
 	map_const SUNBEAM_JUNGLE,  			             	  16, 16 ; 14
 	map_const SUNBEAM_JUNGLE_CAVE,  			           9,  6 ; 15
 	map_const SUNBEAM_JUNGLE_DEEP,  			          20, 17 ; 16
+	map_const ROUTE_13,                            		  31, 10 ; 17
 	
 	newgroup                                                     ;  8
 	

@@ -144,7 +144,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 8f
 	tilecoll WALL, WALL, WALL, WALL ; 90
 	tilecoll WALL, WALL, WALL, WALL ; 91
-	tilecoll WATER, WATER, WATER, WATER ; 92
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 92
 	tilecoll WALL, SKATE, WATER, WATER ; 93
 	tilecoll SKATE, SKATE, WATER, WATER ; 94
 	tilecoll WALL, SKATE, WATER, WATER ; 95

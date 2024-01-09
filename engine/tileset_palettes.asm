@@ -798,21 +798,31 @@ LoadSpecialMapPalette: ; 494ac
 	
 DiveSpotMapPals:
 	ld a, [wMapGroup]
-	cp GROUP_ROUTE_5
-	jr z, .yes1
+	cp GROUP_ROUTE_6
+	jr z, .route6
+	cp GROUP_ROUTE_13
+	jr z, .route13
 	cp GROUP_ROUTE_14
-	jr z, .yes1
+	jr z, .route14
 	ret
-.yes1
+.route6
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_5
-	jr z, .yes2
-	cp MAP_ROUTE_14
-	jr z, .yes2
-	cp MAP_ROUTE_15
-	jr z, .yes2
+	cp MAP_ROUTE_6
+	jr z, .yes
 	ret
-.yes2
+.route13
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_13
+	jr z, .yes
+	ret
+.route14
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_14
+	jr z, .yes
+	cp MAP_ROUTE_15
+	jr z, .yes
+	ret
+.yes
 	ld hl, DiveSpotsPalette
 	ld a, [wTimeOfDayPal]
 	and 3

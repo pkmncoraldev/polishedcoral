@@ -1347,6 +1347,8 @@ LoadMapPals::
 	jp z, .sailboat
 	cp MAP_SUNBEAM_BEACH
 	jp z, .umbrella
+	cp MAP_ROUTE_13
+	jp z, .umbrella
 	jp .got_pals_cont
 .umbrella
 	ld a, [wTimeOfDayPal]

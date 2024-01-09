@@ -34,10 +34,10 @@
 	RGB 07, 03, 02
 	RGB 11, 06, 02
 ;7 - Sunbeam Island
-	RGB 20, 17, 08
 	RGB 29, 29, 00
-	RGB 10, 09, 05
+	RGB 20, 17, 08
 	RGB 14, 14, 00
+	RGB 10, 09, 05
 ;8 - Eventide Forest
 	RGB 11, 10, 16
 	RGB 05, 06, 07

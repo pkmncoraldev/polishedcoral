@@ -309,6 +309,7 @@ DeferredLoadGraphics:
 	ld a, 3
 	ld [wPendingOverworldGraphics], a
 .done
+	farcall LoadMapGroupRoof
 	xor a
 	ld [hMapAnims], a
 	ld [hTileAnimFrame], a

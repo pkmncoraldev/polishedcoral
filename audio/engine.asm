@@ -2952,3 +2952,68 @@ PlayTrainerEncounterMusic:: ; e900a
 ; e9027
 
 INCLUDE "audio/nite_music.asm"
+
+CheckChangeMusic::
+	ld a, [wSlotBias]
+	cp MUSIC_STARGLOW
+	jr z, .starglow
+	cp MUSIC_JUNGLE
+	jr z, .jungle
+	cp MUSIC_TRAIN_RIDE
+	jr z, .train
+	cp MUSIC_TV_ROOM
+	jr z, .tvroom
+	cp MUSIC_COMMUNITY_CENTER
+	jr z, .community
+	ld a, $ff
+.done
+	ld [wSlotBias], a
+	ret
+	
+.starglow
+	ld a, [wSnareFlags]
+	bit 0, a ; ENGINE_PUNKS_IN_STARGLOW
+	jr z, .clearedstarglow
+	ld a, MUSIC_SNARE_INVASION
+	jr .done
+
+.clearedstarglow
+	ld a, MUSIC_STARGLOW_VALLEY
+	jr .done
+
+.jungle
+	ld a, [wSnareFlags]
+	bit 1, a ; ENGINE_PUNKS_ON_SUNBEAM
+	jr z, .clearedsunbeam
+	ld a, MUSIC_SNARE_INVASION
+	jr .done
+
+.clearedsunbeam
+	ld a, MUSIC_LAVA
+	jr .done
+
+.train
+	ld a, [wSnareFlags]
+	bit 2, a ; ENGINE_PUNKS_ON_TRAIN
+	jr z, .clearedtrain
+	ld a, MUSIC_SNARE_THEME
+	jr .done
+
+.clearedtrain
+	ld a, MUSIC_TRAIN
+	jr .done
+	
+.tvroom
+	ld de, MUSIC_TV_STATIC
+	ld a, [wSpookhouseTVRoomTrigger]
+	cp 0
+	jr z, .done
+.none
+	ld a, MUSIC_NONE
+	jr .done
+	
+.community
+	eventflagcheck EVENT_MIMIKYU_GONE
+	jr z, .none
+	ld a, MUSIC_FLICKER_STATION
+	jr .done

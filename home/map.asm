@@ -2033,59 +2033,18 @@ GetMapHeaderMusic:: ; 2cbd
 	ld de, 6 ; music
 	call GetMapHeaderMember
 	ld a, c
-	cp MUSIC_STARGLOW
-	jr z, .starglow
-	cp MUSIC_JUNGLE
-	jr z, .jungle
-	cp MUSIC_TRAIN_RIDE
-	jr z, .train
-	cp MUSIC_TV_ROOM
-	jr z, .tvroom
+	ld [wSlotBias], a
+	farcall CheckChangeMusic
+	ld a, [wSlotBias]
+	cp $ff
+	jr nz, .change
 	call Function8b342
+.done
 	ld e, c
 	ld d, 0
-.done
 	jp PopBCHL
-
-.starglow
-	ld a, [wSnareFlags]
-	bit 0, a ; ENGINE_PUNKS_IN_STARGLOW
-	jr z, .clearedstarglow
-	ld de, MUSIC_SNARE_INVASION
-	jr .done
-
-.clearedstarglow
-	ld de, MUSIC_STARGLOW_VALLEY
-	jr .done
-
-.jungle
-	ld a, [wSnareFlags]
-	bit 1, a ; ENGINE_PUNKS_ON_SUNBEAM
-	jr z, .clearedsunbeam
-	ld de, MUSIC_SNARE_INVASION
-	jr .done
-
-.clearedsunbeam
-	ld de, MUSIC_LAVA
-	jr .done
-
-.train
-	ld a, [wSnareFlags]
-	bit 2, a ; ENGINE_PUNKS_ON_TRAIN
-	jr z, .clearedtrain
-	ld de, MUSIC_SNARE_THEME
-	jr .done
-
-.clearedtrain
-	ld de, MUSIC_TRAIN
-	jr .done
-	
-.tvroom
-	ld de, MUSIC_TV_STATIC
-	ld a, [wSpookhouseTVRoomTrigger]
-	cp 0
-	jr z, .done
-	ld de, MUSIC_NONE
+.change
+	ld c, a
 	jr .done
 
 Function8b342: ; 8b342

@@ -1,21 +1,21 @@
-	db  70, 110,  70,  90, 115,  70
+	db  65, 125,  60, 104,  95,  60
 	;   hp  atk  def  spd  sat  sdf
 
-	db FIGHTING, STEEL
+	db FIGHTING, FIGHTING
 	db 45 ; catch rate
-	db 204 ; base exp
+	db 179 ; base exp
 	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2
-	dn FEMALE_12_5, 3 ; gender, step cycles to hatch
+	dn FEMALE_50, 3 ; gender, step cycles to hatch
 	dn 5, 5 ; frontpic dimensions
-	db STEADFAST ; ability 1
-	db INNER_FOCUS ; ability 2
-	db JUSTIFIED ; hidden ability
+	db INNER_FOCUS ; ability 1
+	db REGENERATOR ; ability 2
+	db RECKLESS ; hidden ability
 	db MEDIUM_SLOW ; growth rate
 	dn FIELD, HUMANSHAPE ; egg groups
 
 	; ev_yield
-	ev_yield   0,   1,   0,   0,   1,   0
+	ev_yield   0,   2,   0,   0,   0,   0
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm

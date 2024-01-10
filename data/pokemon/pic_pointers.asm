@@ -379,10 +379,6 @@ PicPointers::
 	dba SpiritombBackpic
 	dba MunchlaxFrontpic
 	dba MunchlaxBackpic
-	dba RioluFrontpic
-	dba RioluBackpic
-	dba LucarioFrontpic
-	dba LucarioBackpic
 	dba CroagunkFrontpic
 	dba CroagunkBackpic
 	dba ToxicroakFrontpic
@@ -467,6 +463,10 @@ PicPointers::
 	dba LampentBackpic
 	dba ChandelureFrontpic
 	dba ChandelureBackpic
+	dba MienfooFrontpic
+	dba MienfooBackpic
+	dba MienshaoFrontpic
+	dba MienshaoBackpic
 	dba LarvestaFrontpic
 	dba LarvestaBackpic
 	dba VolcaronaFrontpic

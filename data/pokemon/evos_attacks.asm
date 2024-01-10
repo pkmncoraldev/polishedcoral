@@ -3405,17 +3405,6 @@ MunchlaxEvosAttacks:
 	db 49, CRUNCH
 	db 0 ; no more level-up moves
 	
-RioluEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_MORNDAY, LUCARIO
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
-	
-LucarioEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
-	
 CroagunkEvosAttacks:
 	db EVOLVE_LEVEL, 37, TOXICROAK
 	db 0 ; no more evolutions
@@ -4029,6 +4018,17 @@ ChandelureEvosAttacks:
 	db 1, CONFUSE_RAY
 	db 1, FLAME_BURST
 	db 1, HEX
+	db 0 ; no more level-up moves
+	
+MienfooEvosAttacks:
+	db EVOLVE_LEVEL, 37, MIENSHAO
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+MienshaoEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
 LarvestaEvosAttacks:

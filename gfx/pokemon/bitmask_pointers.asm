@@ -189,8 +189,6 @@ BitmasksPointers:
 	dw HonchkrowBitmasks
 	dw SpiritombBitmasks
 	dw MunchlaxBitmasks
-	dw RioluBitmasks
-	dw LucarioBitmasks
 	dw CroagunkBitmasks
 	dw ToxicroakBitmasks
 	dw SnoverBitmasks
@@ -233,6 +231,8 @@ BitmasksPointers:
 	dw LitwickBitmasks
 	dw LampentBitmasks
 	dw ChandelureBitmasks
+	dw MienfooBitmasks
+	dw MienshaoBitmasks
 	dw LarvestaBitmasks
 	dw VolcaronaBitmasks
 	dw SylveonBitmasks

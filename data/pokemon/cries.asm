@@ -206,8 +206,6 @@ CryHeaders::
 	mon_cry HONCHKROW,  HonchkrowDEDData 	; Honchkrow
 	mon_cry SPIRITOMB,  SpiritombDEDData 	; Spiritomb
 	mon_cry MUNCHLAX,   MunchlaxDEDData	 	; Munchlax
-	mon_cry RIOLU,		RioluDEDData		; Riolu
-	mon_cry LUCARIO,	LucarioDEDData		; Lucario
 	mon_cry CROAGUNK,	CroagunkDEDData		; Croagunk
 	mon_cry TOXICROAK,	ToxicroakDEDData	; Toxicroak
 	mon_cry SNOVER,   	SnoverDEDData	 	; Snover
@@ -250,6 +248,8 @@ CryHeaders::
 	mon_cry LITWICK,   	LitwickDEDData	 	; Litwick
 	mon_cry LAMPENT,   	LampentDEDData	 	; Lampent
 	mon_cry CHANDELURE, ChandelureDEDData 	; Chandelure
+	mon_cry MIENFOO,	MienfooDEDData		; Mienfoo
+	mon_cry MIENSHAO,	MienshaoDEDData		; Mienshao
 	mon_cry LARVESTA,   LarvestaDEDData	 	; Larvesta
 	mon_cry VOLCARONA,  VolcaronaDEDData 	; Volcarona
 	mon_cry SYLVEON,   	SylveonDEDData	 	; Sylveon
@@ -465,8 +465,6 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Honchkrow - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Spiritomb - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Munchlax - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Riolu - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Lucario - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Croagunk - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Toxicroak - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Snover - PLACEHOLDER
@@ -509,6 +507,8 @@ CryHeaders2::
 	mon_cry CRY_WOOPER,     -$010,  $210 	; Litwick
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Lampent - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Chandelure - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Mienfoo - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081	; Mienshao - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Larvesta - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Volcarona - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Sylveon - PLACEHOLDER

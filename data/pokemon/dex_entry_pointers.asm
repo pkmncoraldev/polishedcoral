@@ -190,8 +190,6 @@
 	dw HonchkrowPokedexEntry
 	dw SpiritombPokedexEntry
 	dw MunchlaxPokedexEntry
-	dw RioluPokedexEntry
-	dw LucarioPokedexEntry
 	dw CroagunkPokedexEntry
 	dw ToxicroakPokedexEntry
 	dw SnoverPokedexEntry
@@ -234,6 +232,8 @@
 	dw LitwickPokedexEntry
 	dw LampentPokedexEntry
 	dw ChandelurePokedexEntry
+	dw MienfooPokedexEntry
+	dw MienshaoPokedexEntry
 	dw LarvestaPokedexEntry
 	dw VolcaronaPokedexEntry
 	dw SylveonPokedexEntry

@@ -189,8 +189,6 @@ FramesPointers:
 	dw HonchkrowFrames
 	dw SpiritombFrames
 	dw MunchlaxFrames
-	dw RioluFrames
-	dw LucarioFrames
 	dw CroagunkFrames
 	dw ToxicroakFrames
 	dw SnoverFrames
@@ -233,6 +231,8 @@ FramesPointers:
 	dw LitwickFrames
 	dw LampentFrames
 	dw ChandelureFrames
+	dw MienfooFrames
+	dw MienshaoFrames
 	dw LarvestaFrames
 	dw VolcaronaFrames
 	dw SylveonFrames

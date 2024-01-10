@@ -189,8 +189,6 @@ EvolutionMoves::
 	db NO_MOVE                              ; HONCHKROW
 	db NO_MOVE                              ; SPIRITOMB
 	db NO_MOVE                              ; MUNCHLAX
-	db NO_MOVE                              ; RIOLU
-	db NO_MOVE                              ; LUCARIO
 	db NO_MOVE                              ; CROAGUNK
 	db NO_MOVE                              ; TOXICROAK
 	db NO_MOVE                              ; SNOVER
@@ -233,6 +231,8 @@ EvolutionMoves::
 	db NO_MOVE                              ; LITWICK
 	db NO_MOVE                              ; LAMPENT
 	db NO_MOVE                              ; CHANDELURE
+	db NO_MOVE                              ; MIENFOO
+	db NO_MOVE                              ; MIENSHAO
 	db NO_MOVE                              ; LARVESTA
 	db QUIVER_DANCE                         ; VOLCARONA
 	db FAIRY_WIND                           ; SYLVEON

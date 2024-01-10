@@ -193,8 +193,6 @@ MenuMonIconColors::
 	iconpal BLUE, PINK ; HONCHKROW
 	iconpal PURPLE, BLUE ; SPIRITOMB
 	iconpal GREEN, BLUE ; MUNCHLAX
-	iconpal BLUE, BROWN ; RIOLU
-	iconpal BLUE, BROWN ; LUCARIO
 	iconpal BLUE, TEAL ; CROAGUNK
 	iconpal BLUE, TEAL ; TOXICROAK
 	iconpal GREEN, BLUE ; SNOVER
@@ -237,6 +235,8 @@ MenuMonIconColors::
 	iconpal PURPLE, RED ; LITWICK
 	iconpal PURPLE, RED ; LAMPENT
 	iconpal PURPLE, RED ; CHANDELURE
+	iconpal RED, BLUE ; MIENFOO
+	iconpal PURPLE, PINK ; MIENSHAO
 	iconpal RED, BROWN ; LARVESTA
 	iconpal RED, BROWN ; VOLCARONA
 	iconpal PINK, BLUE ; SYLVEON

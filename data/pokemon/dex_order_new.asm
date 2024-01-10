@@ -225,8 +225,8 @@ NewPokedexOrder:
 	db CACTURNE
 	db DRIFLOON
 	db DRIFBLIM
-	db RIOLU
-	db LUCARIO
+	db MIENFOO
+	db MIENSHAO
 	db MAGNEZONE
 	db PORYGON_Z
 	db DRILBUR

@@ -193,8 +193,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw HonchkrowEvosAttacks
 	dw SpiritombEvosAttacks
 	dw MunchlaxEvosAttacks
-	dw RioluEvosAttacks
-	dw LucarioEvosAttacks
 	dw CroagunkEvosAttacks
 	dw ToxicroakEvosAttacks
 	dw SnoverEvosAttacks
@@ -237,6 +235,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw LitwickEvosAttacks
 	dw LampentEvosAttacks
 	dw ChandelureEvosAttacks
+	dw MienfooEvosAttacks
+	dw MienshaoEvosAttacks
 	dw LarvestaEvosAttacks
 	dw VolcaronaEvosAttacks
 	dw SylveonEvosAttacks

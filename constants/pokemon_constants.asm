@@ -190,8 +190,6 @@
 	const HONCHKROW ;430
 	const SPIRITOMB ;442
 	const MUNCHLAX ;446
-	const RIOLU ;447
-	const LUCARIO ;448
 	const CROAGUNK ;453
 	const TOXICROAK ;454
 	const SNOVER ;459
@@ -234,6 +232,8 @@
 	const LITWICK ;607
 	const LAMPENT ;608
 	const CHANDELURE ;609
+	const MIENFOO ;619
+	const MIENSHAO ;620
 	const LARVESTA ;636
 	const VOLCARONA ;637
 	const SYLVEON ;700

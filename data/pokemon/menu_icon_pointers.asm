@@ -190,8 +190,6 @@ IconPointers:
 	dw HonchkrowIcon
 	dw SpiritombIcon
 	dw MunchlaxIcon
-	dw RioluIcon
-	dw LucarioIcon
 	dw CroagunkIcon
 	dw ToxicroakIcon
 	dw SnoverIcon
@@ -234,6 +232,8 @@ IconPointers:
 	dw LitwickIcon
 	dw LampentIcon
 	dw ChandelureIcon
+	dw MienfooIcon
+	dw MienshaoIcon
 	dw LarvestaIcon
 	dw VolcaronaIcon
 	dw SylveonIcon

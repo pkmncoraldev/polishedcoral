@@ -106,7 +106,7 @@ GlalieDEDData:: INCBIN "audio/ded/glalie.ded"
 SECTION "DED 22", ROMX
 FroslassDEDData:: INCBIN "audio/ded/froslass.ded"
 SnoverDEDData:: INCBIN "audio/ded/snover.ded"
-RioluDEDData::  INCBIN "audio/ded/riolu.ded"
+MienfooDEDData::  INCBIN "audio/ded/mienfoo.ded"
 
 SECTION "DED 23", ROMX
 AbomasnowDEDData:: INCBIN "audio/ded/abomasnow.ded"
@@ -123,7 +123,7 @@ WhirlipedeDEDData::  INCBIN "audio/ded/whirlipede.ded"
 ScolipedeDEDData::  INCBIN "audio/ded/scolipede.ded"
 
 SECTION "DED 26", ROMX
-LucarioDEDData::  INCBIN "audio/ded/lucario.ded"
+MienshaoDEDData::  INCBIN "audio/ded/mienshao.ded"
 DrifloonDEDData::  INCBIN "audio/ded/drifloon.ded"
 DrifblimDEDData::  INCBIN "audio/ded/drifblim.ded"
 

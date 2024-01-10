@@ -189,8 +189,6 @@ AnimationPointers:
 	dw HonchkrowAnimation
 	dw SpiritombAnimation
 	dw MunchlaxAnimation
-	dw RioluAnimation
-	dw LucarioAnimation
 	dw CroagunkAnimation
 	dw ToxicroakAnimation
 	dw SnoverAnimation
@@ -233,6 +231,8 @@ AnimationPointers:
 	dw LitwickAnimation
 	dw LampentAnimation
 	dw ChandelureAnimation
+	dw MienfooAnimation
+	dw MienshaoAnimation
 	dw LarvestaAnimation
 	dw VolcaronaAnimation
 	dw SylveonAnimation

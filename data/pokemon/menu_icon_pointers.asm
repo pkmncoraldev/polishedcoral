@@ -60,6 +60,8 @@ IconPointers:
 	dw HaunterIcon
 	dw GengarIcon
 	dw OnixIcon
+	dw DrowzeeIcon
+	dw HypnoIcon
 	dw VoltorbIcon
 	dw ElectrodeIcon
 	dw ExeggcuteIcon
@@ -175,8 +177,6 @@ IconPointers:
 	dw CacturneIcon
 	dw SwabluIcon
 	dw AltariaIcon
-	dw BarboachIcon
-	dw WhiscashIcon
 	dw SnoruntIcon
 	dw GlalieIcon
 	dw BuizelIcon

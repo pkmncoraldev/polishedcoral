@@ -59,6 +59,8 @@ AnimationPointers:
 	dw HaunterAnimation
 	dw GengarAnimation
 	dw OnixAnimation
+	dw DrowzeeAnimation
+	dw HypnoAnimation
 	dw VoltorbAnimation
 	dw ElectrodeAnimation
 	dw -1 ; see ExeggcuteAnimationPointers
@@ -174,8 +176,6 @@ AnimationPointers:
 	dw CacturneAnimation
 	dw SwabluAnimation
 	dw AltariaAnimation
-	dw BarboachAnimation
-	dw WhiscashAnimation
 	dw SnoruntAnimation
 	dw GlalieAnimation
 	dw BuizelAnimation

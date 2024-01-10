@@ -74,6 +74,8 @@ BuyMonDescriptions::
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
+	dw NoBuyMonDesc
+	dw NoBuyMonDesc
 	dw MagikarpBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
@@ -167,8 +169,6 @@ BuyMonDescriptions::
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw CarvanhaBuyMonDesc
-	dw NoBuyMonDesc
-	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc

@@ -1495,7 +1495,7 @@ FisherGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 14, CHINCHOU
-	db 14, BARBOACH
+	db 14, WOOPER
 	db -1 ; end
 
 ; ================
@@ -2070,8 +2070,8 @@ GruntMGroup:
 	db "GRUNT@";"SUNBEAMM2@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 20, NOIBAT
-	db 19, BARBOACH
+	db 20, ZUBAT
+	db 19, WOOPER
 	db 18, ODDISH
 	db -1 ; end
 
@@ -2093,7 +2093,7 @@ GruntMGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 18, ELEKID
-	db 21, NOIBAT
+	db 21, GOLBAT
 	db -1 ; end
 
 ; ================
@@ -2413,7 +2413,7 @@ PokemaniacGroup:
 	db "TRISTEN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 26, NOIBAT
+	db 26, GOLBAT
 	db 24, FLAAFFY
 	db 25, MEOWTH
 	db -1 ; end

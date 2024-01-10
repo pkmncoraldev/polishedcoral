@@ -63,6 +63,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw HaunterEvosAttacks
 	dw GengarEvosAttacks
 	dw OnixEvosAttacks
+	dw DrowzeeEvosAttacks
+	dw HypnoEvosAttacks
 	dw VoltorbEvosAttacks
 	dw ElectrodeEvosAttacks
 	dw ExeggcuteEvosAttacks
@@ -178,8 +180,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw CacturneEvosAttacks
 	dw SwabluEvosAttacks
 	dw AltariaEvosAttacks
-	dw BarboachEvosAttacks
-	dw WhiscashEvosAttacks
 	dw SnoruntEvosAttacks
 	dw GlalieEvosAttacks
 	dw BuizelEvosAttacks

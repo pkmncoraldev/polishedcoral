@@ -76,6 +76,8 @@ CryHeaders::
 	mon_cry CRY_ABRA,     	 $030,  $0c0 	; Haunter
 	mon_cry CRY_MUK,         $000,  $17f 	; Gengar
 	mon_cry CRY_EKANS,       $0ff,  $140 	; Onix
+	mon_cry CRY_EXEGGUTOR,   $088,  $0a0 	; Drowzee
+	mon_cry CRY_EXEGGUTOR,   $0ee,  $0c0 	; Hypno
 	mon_cry CRY_VOLTORB,     $0ed,  $100 	; Voltorb
 	mon_cry CRY_VOLTORB,     $0a8,  $110 	; Electrode
 	mon_cry CRY_DODUO,   	 $000,  $100 	; Exeggcute
@@ -191,8 +193,6 @@ CryHeaders::
 	mon_cry CACTURNE,  	CacturneDEDData	 	; Cacturne
 	mon_cry SWABLU,   	SwabluDEDData	 	; Swablu
 	mon_cry ALTARIA,   	AltariaDEDData	 	; Altaria
-	mon_cry BARBOACH,   BarboachDEDData 	; Barboach
-	mon_cry WHISCASH,   WhiscashDEDData 	; Whiscash
 	mon_cry SNORUNT,   	SnoruntDEDData	 	; Snorunt
 	mon_cry GLALIE,   	GlalieDEDData	 	; Glalie
 	mon_cry BUIZEL,   	BuizelDEDData	 	; Buizel
@@ -335,6 +335,8 @@ CryHeaders2::
 	mon_cry CRY_ABRA,     	 $030,  $0c0 	; Haunter
 	mon_cry CRY_MUK,         $000,  $17f 	; Gengar
 	mon_cry CRY_EKANS,       $0ff,  $140 	; Onix
+	mon_cry CRY_EXEGGUTOR,   $088,  $0a0 	; Drowzee
+	mon_cry CRY_EXEGGUTOR,   $0ee,  $0c0 	; Hypno
 	mon_cry CRY_VOLTORB,     $0ed,  $100 	; Voltorb
 	mon_cry CRY_VOLTORB,     $0a8,  $110 	; Electrode
 	mon_cry CRY_DODUO,   	 $000,  $100 	; Exeggcute
@@ -450,8 +452,6 @@ CryHeaders2::
 	mon_cry CRY_TOTODILE,   -$1c0,  $170 	; Cacturne
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Swablu - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Altaria - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Barboach - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Whiscash - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Snorunt - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Glalie - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Buizel - PLACEHOLDER

@@ -63,6 +63,8 @@ MenuMonIconColors::
 	iconpal PURPLE, BLUE ; HAUNTER
 	iconpal PURPLE, BLUE ; GENGAR
 	iconpal GRAY, BLUE ; ONIX
+	iconpal BROWN, PINK ; DROWZEE
+	iconpal BROWN, PINK ; HYPNO
 	iconpal RED, BLUE ; VOLTORB
 	iconpal RED, BLUE ; ELECTRODE
 	iconpal PINK, TEAL ; EXEGGCUTE
@@ -178,8 +180,6 @@ MenuMonIconColors::
 	iconpal GREEN, RED ; CACTURNE
 	iconpal BLUE, BROWN ; SWABLU
 	iconpal BLUE, BROWN ; ALTARIA
-	iconpal BLUE, BROWN ; BARBOACH
-	iconpal BLUE, PURPLE ; WHISCASH
 	iconpal RED, BLUE ; SNORUNT
 	iconpal BLUE, RED ; GLALIE
 	iconpal RED, BROWN ; BUIZEL

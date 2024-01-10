@@ -203,10 +203,10 @@ NewPokedexOrder:
 	db TOGEKISS
 	
 ;need placement
+	db DROWZEE
+	db HYPNO
 	db SUNKERN
 	db SUNFLORA
-	db BARBOACH
-	db WHISCASH
 	db CHERUBI
 	db CHERRIM
 	db CHANSEY

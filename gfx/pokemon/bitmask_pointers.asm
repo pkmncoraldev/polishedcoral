@@ -59,6 +59,8 @@ BitmasksPointers:
 	dw HaunterBitmasks
 	dw GengarBitmasks
 	dw OnixBitmasks
+	dw DrowzeeBitmasks
+	dw HypnoBitmasks
 	dw VoltorbBitmasks
 	dw ElectrodeBitmasks
 	dw -1 ; see ExeggcuteBitmasksPointers
@@ -174,8 +176,6 @@ BitmasksPointers:
 	dw CacturneBitmasks
 	dw SwabluBitmasks
 	dw AltariaBitmasks
-	dw BarboachBitmasks
-	dw WhiscashBitmasks
 	dw SnoruntBitmasks
 	dw GlalieBitmasks
 	dw BuizelBitmasks

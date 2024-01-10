@@ -59,6 +59,8 @@ FramesPointers:
 	dw HaunterFrames
 	dw GengarFrames
 	dw OnixFrames
+	dw DrowzeeFrames
+	dw HypnoFrames
 	dw VoltorbFrames
 	dw ElectrodeFrames
 	dw -1 ; see ExeggcuteFramesPointers
@@ -174,8 +176,6 @@ FramesPointers:
 	dw CacturneFrames
 	dw SwabluFrames
 	dw AltariaFrames
-	dw BarboachFrames
-	dw WhiscashFrames
 	dw SnoruntFrames
 	dw GlalieFrames
 	dw BuizelFrames

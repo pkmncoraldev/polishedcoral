@@ -60,6 +60,8 @@
 	dw HaunterPokedexEntry
 	dw GengarPokedexEntry
 	dw OnixPokedexEntry
+	dw DrowzeePokedexEntry
+	dw HypnoPokedexEntry
 	dw VoltorbPokedexEntry
 	dw ElectrodePokedexEntry
 	dw ExeggcutePokedexEntry
@@ -175,8 +177,6 @@
 	dw CacturnePokedexEntry
 	dw SwabluPokedexEntry
 	dw AltariaPokedexEntry
-	dw BarboachPokedexEntry
-	dw WhiscashPokedexEntry
 	dw SnoruntPokedexEntry
 	dw GlaliePokedexEntry
 	dw BuizelPokedexEntry

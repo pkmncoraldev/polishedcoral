@@ -60,6 +60,8 @@
 	const HAUNTER
 	const GENGAR
 	const ONIX
+	const DROWZEE
+	const HYPNO
 	const VOLTORB
 	const ELECTRODE
 	const EXEGGCUTE
@@ -175,8 +177,6 @@
 	const CACTURNE ;332
 	const SWABLU ;333
 	const ALTARIA ;334
-	const BARBOACH
-	const WHISCASH
 	const SNORUNT ;361
 	const GLALIE ;362
 	const BUIZEL ;418

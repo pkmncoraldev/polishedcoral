@@ -59,6 +59,8 @@ EvolutionMoves::
 	db SHADOW_CLAW                          ; HAUNTER
 	db SHADOW_CLAW                          ; GENGAR
 	db NO_MOVE                              ; ONIX
+	db NO_MOVE                              ; DROWZEE
+	db NO_MOVE                              ; HYPNO
 	db NO_MOVE                              ; VOLTORB
 	db NO_MOVE                              ; ELECTRODE
 	db NO_MOVE                              ; EXEGGCUTE
@@ -174,8 +176,6 @@ EvolutionMoves::
 	db NO_MOVE                              ; CACTURNE
 	db NO_MOVE                              ; SWABLU
 	db DRAGONBREATH                         ; ALTARIA
-	db NO_MOVE                              ; BARBOACH
-	db THRASH	                            ; WHISCASH
 	db NO_MOVE                              ; SNORUNT
 	db ICE_BEAM                             ; GLALIE
 	db NO_MOVE                              ; BUIZEL

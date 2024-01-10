@@ -137,10 +137,10 @@ SunkernFrontpic:          INCBIN "gfx/pokemon/sunkern/front.2bpp.lz"
 SunkernBackpic:           INCBIN "gfx/pokemon/sunkern/back.2bpp.lz"
 SunfloraFrontpic:         INCBIN "gfx/pokemon/sunflora/front.2bpp.lz"
 SunfloraBackpic:          INCBIN "gfx/pokemon/sunflora/back.2bpp.lz"
-BarboachFrontpic:         INCBIN "gfx/pokemon/barboach/front.2bpp.lz"
-BarboachBackpic:          INCBIN "gfx/pokemon/barboach/back.2bpp.lz"
-WhiscashFrontpic:         INCBIN "gfx/pokemon/whiscash/front.2bpp.lz"
-WhiscashBackpic:          INCBIN "gfx/pokemon/whiscash/back.2bpp.lz"
+DrowzeeFrontpic:         INCBIN "gfx/pokemon/drowzee/front.2bpp.lz"
+DrowzeeBackpic:          INCBIN "gfx/pokemon/drowzee/back.2bpp.lz"
+HypnoFrontpic:         INCBIN "gfx/pokemon/hypno/front.2bpp.lz"
+HypnoBackpic:          INCBIN "gfx/pokemon/hypno/back.2bpp.lz"
 
 
 SECTION "Pokemon Pics 7", ROMX

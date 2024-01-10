@@ -119,6 +119,10 @@ PicPointers::
 	dba GengarBackpic
 	dba OnixFrontpic
 	dba OnixBackpic
+	dba DrowzeeFrontpic
+	dba DrowzeeBackpic
+	dba HypnoFrontpic
+	dba HypnoBackpic
 	dba VoltorbFrontpic
 	dba VoltorbBackpic
 	dba ElectrodeFrontpic
@@ -349,10 +353,6 @@ PicPointers::
 	dba SwabluBackpic
 	dba AltariaFrontpic
 	dba AltariaBackpic
-	dba BarboachFrontpic
-	dba BarboachBackpic
-	dba WhiscashFrontpic
-	dba WhiscashBackpic
 	dba SnoruntFrontpic
 	dba SnoruntBackpic
 	dba GlalieFrontpic

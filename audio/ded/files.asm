@@ -155,10 +155,10 @@ ToucannonDEDData:: INCBIN "audio/ded/toucannon.ded"
 SECTION "DED 33", ROMX
 CursolaDEDData:: INCBIN "audio/ded/cursola.ded"
 WyrdeerDEDData:: INCBIN "audio/ded/wyrdeer.ded"
-BarboachDEDData:: INCBIN "audio/ded/barboach.ded"
+
 
 SECTION "DED 34", ROMX
-WhiscashDEDData:: INCBIN "audio/ded/whiscash.ded"
+
 CherubiDEDData:: INCBIN "audio/ded/cherubi.ded"
 CherrimDEDData:: INCBIN "audio/ded/cherrim.ded"
 

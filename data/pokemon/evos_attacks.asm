@@ -1100,6 +1100,17 @@ OnixEvosAttacks:
 	db 54, SANDSTORM
 	db 0 ; no more level-up moves
 
+DrowzeeEvosAttacks:
+	db EVOLVE_LEVEL, 26, HYPNO ;WHISCASH
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+HypnoEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+
 VoltorbEvosAttacks:
 	db EVOLVE_LEVEL, 30, ELECTRODE
 	db 0 ; no more evolutions
@@ -3213,17 +3224,6 @@ AltariaEvosAttacks:
 	db 40, DRAGON_PULSE
 	db 46, PERISH_SONG
 	db 52, MOONBLAST
-	db 0 ; no more level-up moves
-	
-BarboachEvosAttacks:
-	db EVOLVE_LEVEL, 30, BULBASAUR ;WHISCASH
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
-	
-WhiscashEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
 SnoruntEvosAttacks:

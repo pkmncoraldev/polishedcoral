@@ -560,6 +560,18 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jp z, .conveyorright
 	cp COLL_GRIND
 	jp z, .grind
+	
+	ld a, [wOptions1]
+	bit DEBUG_MODE, a
+	jr z, .no_debug
+	ld a, [hJoypadDown]
+	and B_BUTTON
+	cp B_BUTTON
+	jr z, .debug_skip
+	jr .contreturn
+	
+.no_debug
+	ld a, [wPlayerStandingTile]
 	call .CheckWalkable
 	jr c, .wall
 	jr .contreturn
@@ -592,6 +604,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp 2
 	jp z, .bump
 
+.debug_skip
 	ld a, [wPlayerState]
 	cp PLAYER_DODRIO
 	jp z, .fast

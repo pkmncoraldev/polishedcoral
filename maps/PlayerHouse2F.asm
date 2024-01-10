@@ -5,7 +5,7 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 18 ; warp events
+	db 19 ; warp events
 	warp_event  9,  0, PLAYER_HOUSE_1F, 3
 	warp_event  5, 10, SUNSET_BAY, 1
 	warp_event  7, 10, DAYBREAK_VILLAGE, 1
@@ -23,12 +23,13 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event 17, 14, DESERT_TEMPLE_1, 1
 	warp_event 19, 14, RADIANT_TOWNSHIP, 1
 	warp_event  5, 18, DUSK_TURNPIKE, 1
-	warp_event  7, 18, KOMORE_VILLAGE, 1
+	warp_event  7, 18, CROSSROADS, 1
+	warp_event  9, 18, KOMORE_VILLAGE, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
 
-	db 23 ; bg events
+	db 24 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
 	bg_event  5,  1, SIGNPOST_READ, PlayerHouseRadio
 	bg_event -1, -1, SIGNPOST_READ, PlayerHouseBookshelf
@@ -53,6 +54,7 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event 18, 14, SIGNPOST_JUMPTEXT, PlayerHouseRadiant
 	bg_event  4, 18, SIGNPOST_JUMPTEXT, PlayerHouseDusk
 	bg_event  6, 18, SIGNPOST_JUMPTEXT, PlayerHouseCrossroads
+	bg_event  8, 18, SIGNPOST_JUMPTEXT, PlayerHouseKomore
 
 	db 5 ; object events
 	object_event -5, -5, SPRITE_SNES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GameConsole, -1
@@ -466,6 +468,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_FLYPOINT_RADIANT
 	setflag ENGINE_FLYPOINT_DUSK
 	setflag ENGINE_FLYPOINT_CROSSROADS
+	setflag ENGINE_FLYPOINT_KOMORE
 .done
 	writetext PlayerHouseDebugText5
 	waitbutton
@@ -585,6 +588,10 @@ PlayerHouseDusk:
 	
 PlayerHouseCrossroads:
 	text "CROSSROADS"
+	done
+	
+PlayerHouseKomore:
+	text "KOMORE VILLAGE"
 	done
 	
 PlayerHouse2FInitializeRoom:

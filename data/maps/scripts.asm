@@ -411,6 +411,7 @@ INCLUDE "maps/KomoreCommunityCenterRight.asm"
 INCLUDE "maps/KomoreHouse1.asm"
 INCLUDE "maps/KomoreHouse2.asm"
 INCLUDE "maps/KomoreHouse3.asm"
+INCLUDE "maps/FightingDojo.asm"
 
 SECTION "Underwater Scripts", ROMX
 INCLUDE "maps/Route14_15Underwater.asm"

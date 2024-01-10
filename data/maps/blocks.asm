@@ -805,6 +805,9 @@ Route23_BlockData:
 Route23Windy_BlockData:
 	INCBIN "maps/Route23.ablk.lz"
 	
+FightingDojo_BlockData:
+	INCBIN "maps/FightingDojo.ablk.lz"
+	
 KomoreVillage_BlockData:
 	INCBIN "maps/KomoreVillage.ablk.lz"
 	

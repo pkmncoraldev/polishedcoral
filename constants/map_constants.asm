@@ -408,6 +408,7 @@ MAP_NONE   EQU 0
 	map_const KOMORE_HOUSE_3,							   4,  4 ; 14
 	map_const KOMORE_POKECENTER,                      	   6,  4 ; 15
 	map_const KOMORE_MART,                             	   6,  4 ; 16
+	map_const FIGHTING_DOJO,                           	   4,  5 ; 17
 	
 	newgroup													 ; last
 	

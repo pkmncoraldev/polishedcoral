@@ -4,8 +4,9 @@ Route23_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route23Callback
 
-	db 1 ; warp events
+	db 2 ; warp events
 	warp_event 21,  1, CROSSROADS, 1
+	warp_event  6,  9, FIGHTING_DOJO, 1
 
 	db 0 ; coord events
 

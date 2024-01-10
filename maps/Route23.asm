@@ -13,7 +13,7 @@ Route23_MapScriptHeader:
 	signpost  2, 24, SIGNPOST_JUMPTEXT, Route23SignText
 	signpost 10,  5, SIGNPOST_JUMPTEXT, Route23FightingDojoSignText
 
-	db 14 ; object events
+	db 13 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PINK
 	person_event SPRITE_PICNICKER, 16, 30, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 0, Route23Trainer1, -1
@@ -24,7 +24,6 @@ Route23_MapScriptHeader:
 	person_event SPRITE_BURGLAR, 42, 20, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, Route23Trainer6, -1
 	person_event SPRITE_FISHER, 44,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route23Fisher, -1
 	person_event SPRITE_BLACK_BELT, 29, 31, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route23BlackBelt, -1
-	person_event SPRITE_GRAMPS,  2, 27, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route23WindyMan, -1
 	itemball_event 21, 14, POTION, 1, EVENT_ROUTE_23_POKE_BALL_1
 	itemball_event  2, 46, POTION, 1, EVENT_ROUTE_23_POKE_BALL_2
 	itemball_event 13, 38, POTION, 1, EVENT_ROUTE_23_POKE_BALL_3
@@ -72,52 +71,6 @@ Route23SetUpLeaves:
 	xor a
 	ld [wRanchRaceFrames], a
 	ret
-	
-Route23WindyMan:
-	checkflag ENGINE_WINDY_DAY
-	iftrue .windy
-	jumptextfaceplayer Route23WindyManText1
-.windy
-	jumptextfaceplayer Route23WindyManText2
-	
-Route23WindyManAsm:
-	ld hl, wDailyFlags2
-	bit 7, [hl] ; ENGINE_WINDY_DAY
-	jr z, .notset
-	ld a, 1
-	ld [wScriptVar], a
-	ret
-.notset
-	xor a
-	ld [wScriptVar], a
-	ret
-	
-Route23WindyManText1:
-	text "Strong gusts of"
-	line "wind often blow"
-	cont "the leaves around."
-	
-	para "Different #MON"
-	line "show themselves"
-	cont "on windy days."
-	
-	para "Today doesn't"
-	line "seem too windy…"
-	done
-	
-Route23WindyManText2:
-	text "See the trees"
-	line "swaying and the"
-	cont "leaves blowing in"
-	cont "the wind?"
-	
-	para "Today's a windy"
-	line "day!"
-	
-	para "Different #MON"
-	line "show themselves"
-	cont "on windy days."
-	done
 	
 Route23Trainer1:
 	generictrainer PICNICKER, LES, EVENT_BEAT_ROUTE_23_TRAINER_1, .SeenText, .BeatenText

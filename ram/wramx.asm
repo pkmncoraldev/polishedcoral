@@ -769,7 +769,7 @@ wTradeSneaselName:: ds NAME_LENGTH
 wTradeCroagunkName:: ds NAME_LENGTH
 wTradeMeowthName:: ds NAME_LENGTH
 wTradeCacneaName:: ds NAME_LENGTH
-wTradeMon7Name:: ds NAME_LENGTH
+wTradeGirafarigName:: ds NAME_LENGTH
 wTradeMon8Name:: ds NAME_LENGTH
 wTradeMon9Name:: ds NAME_LENGTH
 wTradeMon10Name:: ds NAME_LENGTH

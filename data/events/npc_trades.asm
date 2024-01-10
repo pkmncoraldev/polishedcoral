@@ -26,15 +26,15 @@ NPCTrades:
 	dw 12817
 	db "TABBY@@@", $00
 ; TRADE_WITH_CARRIE_FOR_MARACTUS in Brillo Town
-	db 5, CACNEA,  MARACTUS,    "SAMBA@S@@@@"
+	db 5, CACNEA,  MARACTUS,    "SAMBA@@@@@@"
 	db $DD, $DD, $DD, HIDDEN_ABILITY | MODEST,    FEMALE, POKE_BALL,    LUM_BERRY
 	dw 43876
 	db "CARRIE@@", $00
-; TRADE_WITH_JACQUES_FOR_GRIMER in Goldenrod Harbor
-	db 1, BULBASAUR,  BULBASAUR,     "G","a","i","l","@","@","@","@","@","@","@"
-	db $EE, $EE, $EE, HIDDEN_ABILITY | CAREFUL, FEMALE, LURE_BALL,    EVIOLITE
+; TRADE_WITH_MARTY_FOR_MIENFOO in Komore Village
+	db 6, GIRAFARIG,  RIOLU,     "KURIRI@@@@@"
+	db $DD, $DD, $DD, ABILITY_2 | LONELY, MALE, POKE_BALL,    BLACK_BELT
 	dw 50082
-	db "J","a","c","q","u","e","s","@", $00
+	db "MARTY@@@", $00
 ; TRADE_WITH_HARI_FOR_DODUO in Ecruteak City
 	db 0, BULBASAUR, BULBASAUR,      "C","l","a","r","e","n","c","e","@","@","@"
 	db $EE, $EE, $EE, HIDDEN_ABILITY | HASTY,   MALE,   FAST_BALL,    GOLD_LEAF

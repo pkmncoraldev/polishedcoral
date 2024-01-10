@@ -1393,7 +1393,7 @@ UnknownText_TradeAfterText6::
 	
 	para "How is SAMBA?"
 	
-	para "Still dancing into"
+	para "Still dancing late"
 	line "into the night?"
 	
 	para "@"
@@ -1404,6 +1404,34 @@ UnknownText_TradeAfterText6::
 	para "I've been sleeping"
 	line "like never before!"
 	done
+	
+	
+UnknownText_TradeIntroText7::
+	text "GIRAFARIG for"
+	line "MIENFOO?"
+	done
+	
+UnknownText_TradeCancelText7::
+	text "NO"
+	done
+	
+UnknownText_TradeWrongText7::
+	text "WRONG"
+	done
+	
+UnknownText_TradeCompleteText7::
+	text "DONE"
+	done
+	
+UnknownText_TradeAfterText7::
+	text "PLACEHOLDER"
+	
+	para "@"
+	text_from_ram wTradeGirafarigName
+	text "'s so"
+	line "quiet!"
+	done
+	
 	
 UnknownText_0x1bd88e::
 	text "Transaction"

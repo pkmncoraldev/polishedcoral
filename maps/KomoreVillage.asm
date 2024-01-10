@@ -9,8 +9,8 @@ KomoreVillage_MapScriptHeader:
 	warp_def 19, 32, 1, KOMORE_COMMUNITY_CENTER
 	warp_def 19, 33, 2, KOMORE_COMMUNITY_CENTER
 	warp_def  7, 11, 1, KOMORE_HOUSE_1
-	warp_def 13, 13, 1, KOMORE_HOUSE_2
-	warp_def 13, 23, 1, KOMORE_HOUSE_3
+	warp_def 13, 23, 1, KOMORE_HOUSE_2
+	warp_def 13, 13, 1, KOMORE_HOUSE_3
 	warp_def  5, 31, 1, KOMORE_POKECENTER
 	warp_def  7, 19, 1, KOMORE_MART
 

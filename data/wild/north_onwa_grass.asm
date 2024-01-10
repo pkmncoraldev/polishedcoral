@@ -652,7 +652,7 @@
 	map_id SUNBEAM_JUNGLE_CAVE
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 18, NOIBAT		;30%
+	db 18, ZUBAT		;30%
 	db 18, ONIX			;30%
 	db 18, ELEKID		;20%
 	db 18, ZUBAT		;10%
@@ -660,7 +660,7 @@
 	db 18, ZUBAT		;4%
 	db 18, ZUBAT		;1%
 	; day
-	db 18, NOIBAT		;30%
+	db 18, ZUBAT		;30%
 	db 18, ONIX			;30%
 	db 18, ELEKID		;20%
 	db 18, ZUBAT		;10%
@@ -668,7 +668,7 @@
 	db 18, ZUBAT		;4%
 	db 18, ZUBAT		;1%
 	; nite
-	db 18, NOIBAT		;30%
+	db 18, ZUBAT		;30%
 	db 18, ONIX			;30%
 	db 18, ELEKID		;20%
 	db 18, ZUBAT		;10%
@@ -1062,24 +1062,24 @@
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
 	db 21, RATTATA		;5%
-	db 21, RATTATA		;4%
-	db 21, RATTATA		;1%
+	db 21, LITWICK		;4%
+	db 21, LITWICK		;1%
 	; day
 	db 21, GASTLY		;30%
 	db 21, GASTLY		;30%
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
 	db 21, RATTATA		;5%
-	db 21, RATTATA		;4%
-	db 21, RATTATA		;1%
+	db 21, LITWICK		;4%
+	db 21, LITWICK		;1%
 	; nite
 	db 21, GASTLY		;30%
 	db 21, GASTLY		;30%
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
 	db 21, RATTATA		;5%
-	db 21, RATTATA		;4%
-	db 21, RATTATA		;1%
+	db 21, LITWICK		;4%
+	db 21, LITWICK		;1%
 	
 	map_id SPOOKHOUSE_DINING_ROOM
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
@@ -1089,24 +1089,24 @@
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
 	db 21, RATTATA		;5%
-	db 21, RATTATA		;4%
-	db 21, RATTATA		;1%
+	db 21, LITWICK		;4%
+	db 21, LITWICK		;1%
 	; day
 	db 21, GASTLY		;30%
 	db 21, GASTLY		;30%
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
 	db 21, RATTATA		;5%
-	db 21, RATTATA		;4%
-	db 21, RATTATA		;1%
+	db 21, LITWICK		;4%
+	db 21, LITWICK		;1%
 	; nite
 	db 21, GASTLY		;30%
 	db 21, GASTLY		;30%
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
 	db 21, RATTATA		;5%
-	db 21, RATTATA		;4%
-	db 21, RATTATA		;1%
+	db 21, LITWICK		;4%
+	db 21, LITWICK		;1%
 	
 	map_id SPOOKHOUSE_BEDROOM
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
@@ -1116,24 +1116,24 @@
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
 	db 21, RATTATA		;5%
-	db 21, RATTATA		;4%
-	db 21, RATTATA		;1%
+	db 21, LITWICK		;4%
+	db 21, LITWICK		;1%
 	; day
 	db 21, GASTLY		;30%
 	db 21, GASTLY		;30%
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
 	db 21, RATTATA		;5%
-	db 21, RATTATA		;4%
-	db 21, RATTATA		;1%
+	db 21, LITWICK		;4%
+	db 21, LITWICK		;1%
 	; nite
 	db 21, GASTLY		;30%
 	db 21, GASTLY		;30%
 	db 21, RATTATA		;20%
 	db 21, RATTATA		;10%
 	db 21, RATTATA		;5%
-	db 21, RATTATA		;4%
-	db 21, RATTATA		;1%
+	db 21, LITWICK		;4%
+	db 21, LITWICK		;1%
 	
 	map_id EVENTIDE_VILLAGE
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
@@ -1279,24 +1279,24 @@
 	db 22, SWINUB		;20%
 	db 22, MACHOP		;10%
 	db 22, MACHOP		;5%
-	db 22, NOIBAT		;4%
-	db 22, NOIBAT		;1%
+	db 22, GOLBAT		;4%
+	db 22, GOLBAT		;1%
 	; day
 	db 22, ZUBAT		;30%
 	db 22, GEODUDE		;30%
 	db 22, SWINUB		;20%
 	db 22, MACHOP		;10%
 	db 22, MACHOP		;5%
-	db 22, NOIBAT		;4%
-	db 22, NOIBAT		;1%
+	db 22, GOLBAT		;4%
+	db 22, GOLBAT		;1%
 	; nite
 	db 22, ZUBAT		;30%
 	db 22, GEODUDE		;30%
 	db 22, SWINUB		;20%
 	db 22, MACHOP		;10%
 	db 22, MACHOP		;5%
-	db 22, NOIBAT		;4%
-	db 22, NOIBAT		;1%
+	db 22, GOLBAT		;4%
+	db 22, GOLBAT		;1%
 	
 	map_id ROUTE_10 ; used on Route 9 during clear weather
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite

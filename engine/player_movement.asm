@@ -564,6 +564,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, [wOptions1]
 	bit DEBUG_MODE, a
 	jr z, .no_debug
+	ld a, [wWalkingTile]
+	cp $ff
+	jp z, .bump
 	ld a, [hJoypadDown]
 	and B_BUTTON
 	cp B_BUTTON

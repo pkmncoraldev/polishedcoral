@@ -195,6 +195,8 @@ SpriteHeaders:
 	overworld_sprite MimikyuDollSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ShroomishOwSpriteGFX, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite BreloomOwSpriteGFX, STANDING_SPRITE, PAL_OW_GREEN
+	overworld_sprite TuberSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite ShaolinSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

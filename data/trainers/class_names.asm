@@ -80,6 +80,8 @@ TrainerClassNames::
 	db "STEAMER@"	       ; SPA_TRAINER
 	db "BATHER@"	       ; SPA_TRAINER_F
 	db "AROMA LADY@"	   ; AROMA_LADY
+	db "TUBER@"			   ; TUBER
+	db "SHAOLIN@"		   ; SHAOLIN
 	db "PIGTAILS@"		   ; ROSE
 	db "PIGTAILS@"		   ; LILY
 	db "PIGTAILS@"		   ; IRIS

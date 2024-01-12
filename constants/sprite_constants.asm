@@ -191,6 +191,8 @@
 	const SPRITE_MIMIKYU_DOLL
 	const SPRITE_SHROOMISH_OW
 	const SPRITE_BRELOOM_OW
+	const SPRITE_TUBER
+	const SPRITE_SHAOLIN
 
 	
 	const_def $ee

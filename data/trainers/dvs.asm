@@ -85,13 +85,13 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; scientist
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; boarder
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; skier
-	db  48, $FF, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; blackbelt
+	db  48, $BB, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; blackbelt
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; teacher
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; guitarist
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; biker
 	db  48, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; cueball
-	db  48, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; cooltrainerm
-	db  48, $EE, $EE, $EE, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; cooltrainerf
+	db  48, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; cooltrainerm
+	db  48, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; cooltrainerf
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; prof spruce
 	db   0, $DD, $DF, $DD, ABILITY_1 | TIMID, FEMALE | PLAIN_FORM  ; teacherfast
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; triobror
@@ -111,6 +111,8 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; spatrainer
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; spatrainerf
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; aromalady
+	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; tuber
+	db  48, $BB, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; shaolin
 	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; rose
 	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; lily
 	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; iris

@@ -593,6 +593,10 @@ PLAYER_F EQU __enum__
 	const LINDA
 	const MARTHA
 	
+	trainerclass TUBER
+	
+	trainerclass SHAOLIN
+	
 	trainerclass ROSE
 	
 	trainerclass LILY

@@ -80,6 +80,8 @@ TrainerPicPointers::
 	dba SpaTrainerPic
 	dba SpaTrainerFPic
 	dba AromaLadyPic
+	dba TuberPic
+	dba ShaolinPic
 	dba RosePic
 	dba LilyPic
 	dba IrisPic

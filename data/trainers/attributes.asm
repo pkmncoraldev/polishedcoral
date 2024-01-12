@@ -331,7 +331,7 @@ TrainerClassAttributes: ; 3959c
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Blackbelt T
-	db FRESH_WATER, 0 ; items
+	db 0, 0 ; items
 	db 6 ; base reward
 	dw AI_BASIC + AI_OFFENSIVE + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
@@ -470,13 +470,13 @@ TrainerClassAttributes: ; 3959c
 	
 ; SpaTrainer
 	db 0, 0 ; items
-	db 7 ; base reward
+	db 5 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_TYPES + AI_STATUS
 	dw CONTEXT_USE + SWITCH_RARELY
 	
 ; SpaTrainerf
 	db 0, 0 ; items
-	db 7 ; base reward
+	db 5 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_TYPES + AI_STATUS
 	dw CONTEXT_USE + SWITCH_RARELY
 	
@@ -485,6 +485,18 @@ TrainerClassAttributes: ; 3959c
 	db 10 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_TYPES + AI_STATUS
 	dw CONTEXT_USE + SWITCH_RARELY
+	
+; Tuber
+	db 0, 0 ; items
+	db 7 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OFFENSIVE + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
+; Shaolin
+	db 0, 0 ; items
+	db 6 ; base reward
+	dw AI_BASIC + AI_OFFENSIVE + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
 	
 ; Rose
 	db 0, 0 ; items

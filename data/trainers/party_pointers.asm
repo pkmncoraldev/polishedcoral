@@ -82,6 +82,8 @@ TrainerGroups: ; 0x39999
 	dba SpaTrainerGroup
 	dba SpaTrainerFGroup
 	dba AromaLadyGroup
+	dba TuberGroup
+	dba ShaolinGroup
 	dba RoseGroup
 	dba LilyGroup
 	dba IrisGroup

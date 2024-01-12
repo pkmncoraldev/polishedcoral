@@ -81,6 +81,8 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_HIKER_ENCOUNTER		; spatrainer
 	db MUSIC_LASS_ENCOUNTER			; spatrainerf
 	db MUSIC_GENTLEMAN_ENCOUNTER	; aromalady
+	db MUSIC_YOUNGSTER_ENCOUNTER	; tuber
+	db MUSIC_HARDCORE_ENCOUNTER		; shaolin
 	db MUSIC_NONE					; rose
 	db MUSIC_NONE					; lily
 	db MUSIC_NONE					; iris

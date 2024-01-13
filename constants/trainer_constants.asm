@@ -432,6 +432,8 @@ PLAYER_F EQU __enum__
 	const TOSHI
 	const ZERO
 	const SHINZO
+	const KIYO
+	const YUJI
 
 
 	trainerclass TEACHER
@@ -596,6 +598,8 @@ PLAYER_F EQU __enum__
 	trainerclass TUBER
 	
 	trainerclass SHAOLIN
+	const KIMIKO
+	const SAYORI
 	
 	trainerclass ROSE
 	

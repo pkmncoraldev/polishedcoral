@@ -654,7 +654,7 @@ ENDM
 	map_attributes KomoreHouse3, KOMORE_HOUSE_3, $00, 0
 	map_attributes KomorePokeCenter, KOMORE_POKECENTER, $0, 0
 	map_attributes KomoreMart, KOMORE_MART, $0, 0
-	map_attributes FightingDojo, FIGHTING_DOJO, $00, 0
+	map_attributes FightingDojo, FIGHTING_DOJO, $d2, 0
 	map_attributes RadiantPokeCenter, RADIANT_POKECENTER, $0, 0
 	map_attributes RadiantMart, RADIANT_MART, $0, 0
 	map_attributes Route21Gate, ROUTE_21_GATE, $0, 0

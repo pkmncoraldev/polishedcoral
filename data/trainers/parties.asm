@@ -3533,6 +3533,24 @@ BlackbeltGroup:
 	db -1 ; end
 
 ; ================
+
+	; BLACKBELT_T
+	db "KIYO@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BLACKBELT_T
+	db "YUJI@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -4658,7 +4676,16 @@ ShaolinGroup:
 ; ================
 
 	; SHAOLIN
-	db "UNUSED@"
+	db "KIMIKO@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SHAOLIN
+	db "SAYORI@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

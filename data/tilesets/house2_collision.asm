@@ -206,3 +206,6 @@
 	tilecoll WALL, CONVEYOR_UP, FLOOR, CONVEYOR_UP ; cd
 	tilecoll FLOOR, CONVEYOR_UP, DOWN_WALL, CONVEYOR_UP ; ce
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cf
+	tilecoll WALL, WALL, WALL, WALL ; d0
+	tilecoll WALL, WALL, WALL, WALL ; d1
+	tilecoll WALL, WALL, WALL, WALL ; d2

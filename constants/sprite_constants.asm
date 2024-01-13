@@ -193,6 +193,7 @@
 	const SPRITE_BRELOOM_OW
 	const SPRITE_TUBER
 	const SPRITE_SHAOLIN
+	const SPRITE_MASTER
 
 	
 	const_def $ee

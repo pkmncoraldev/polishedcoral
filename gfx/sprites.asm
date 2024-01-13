@@ -78,6 +78,7 @@ ShroomishOwSpriteGFX::         INCBIN "gfx/icons/shroomish.2bpp"
 BreloomOwSpriteGFX::		   INCBIN "gfx/icons/breloom.2bpp"
 TuberSpriteGFX::       		   INCBIN "gfx/sprites/tuber.2bpp"
 ShaolinSpriteGFX::     		   INCBIN "gfx/sprites/shaolin.2bpp"
+MasterSpriteGFX::     		   INCBIN "gfx/sprites/master.2bpp"
 
 
 SECTION "Overworld Sprites 3", ROMX

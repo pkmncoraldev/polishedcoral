@@ -82,6 +82,7 @@ TrainerPicPointers::
 	dba AromaLadyPic
 	dba TuberPic
 	dba ShaolinPic
+	dba DojoMasterPic
 	dba RosePic
 	dba LilyPic
 	dba IrisPic

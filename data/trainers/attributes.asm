@@ -498,6 +498,12 @@ TrainerClassAttributes: ; 3959c
 	dw AI_BASIC + AI_OFFENSIVE + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 	
+; Dojo Master
+	db 0, 0 ; items
+	db 25 ; base reward
+	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
 ; Rose
 	db 0, 0 ; items
 	db 10 ; base reward

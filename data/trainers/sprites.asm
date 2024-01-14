@@ -82,6 +82,7 @@ BTTrainerClassSprites:
 	db SPRITE_AROMA_LADY   	; AromaLady
 	db SPRITE_TUBER			; Tuber
 	db SPRITE_SHAOLIN		; Shaolin
+	db SPRITE_MASTER		; Dojo Master
 	db SPRITE_PIGTAILS	    ; Rose
 	db SPRITE_PIGTAILS	    ; Lily
 	db SPRITE_PIGTAILS	    ; Iris

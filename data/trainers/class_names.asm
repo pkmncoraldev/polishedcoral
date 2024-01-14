@@ -82,6 +82,7 @@ TrainerClassNames::
 	db "AROMA LADY@"	   ; AROMA_LADY
 	db "TUBER@"			   ; TUBER
 	db "SHAOLIN@"		   ; SHAOLIN
+	db "THE@"		   	   ; DOJO_MASTER
 	db "PIGTAILS@"		   ; ROSE
 	db "PIGTAILS@"		   ; LILY
 	db "PIGTAILS@"		   ; IRIS

@@ -84,6 +84,7 @@ TrainerGroups: ; 0x39999
 	dba AromaLadyGroup
 	dba TuberGroup
 	dba ShaolinGroup
+	dba DojoMasterGroup
 	dba RoseGroup
 	dba LilyGroup
 	dba IrisGroup

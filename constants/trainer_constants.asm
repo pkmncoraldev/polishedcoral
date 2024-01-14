@@ -601,6 +601,8 @@ PLAYER_F EQU __enum__
 	const KIMIKO
 	const SAYORI
 	
+	trainerclass DOJO_MASTER
+	
 	trainerclass ROSE
 	
 	trainerclass LILY

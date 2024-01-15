@@ -143,7 +143,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 8e
 	tilecoll WALL, WALL, WALL, WALL ; 8f
 	tilecoll WALL, WALL, WALL, WALL ; 90
-	tilecoll WALL, WALL, WALL, WALL ; 91
+	tilecoll WATER, WATER, WATER, WATER ; 91
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 92
 	tilecoll WALL, SKATE, WATER, WATER ; 93
 	tilecoll SKATE, SKATE, WATER, WATER ; 94
@@ -174,7 +174,7 @@
 	tilecoll WALL, NO_OLLIE, FLOOR, NO_OLLIE ; ad
 	tilecoll WALL, WALL, WALL, WALL ; ae
 	tilecoll WALL, HEADBUTT_TREE, WALL, HEADBUTT_TREE ; af
-	tilecoll WALL, WALL, WALL, WALL ; b0
+	tilecoll WATER, WATER, WATER, WATER ; b0
 	tilecoll DOWN_WALL, FLOOR, DOOR, NO_OLLIE ; b1
 	tilecoll WALL, WALL, WALL, WALL ; b2
 	tilecoll WALL, UP_WALL, WALL, WALL ; b3

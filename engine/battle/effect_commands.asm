@@ -3191,8 +3191,8 @@ BattleCommand_posthiteffects:
 	ld a, b
 	cp HELD_LIFE_ORB
 	jr z, .life_orb
-;	cp HELD_SHELL_BELL
-;	jr z, .shell_bell
+	cp HELD_SHELL_BELL
+	jr z, .shell_bell
 	cp HELD_FLINCH_UP
 	call z, .flinch_up
 	jp .checkfaint
@@ -3223,29 +3223,29 @@ BattleCommand_posthiteffects:
 	cp c
 	call c, FlinchTarget
 	ret
-;.shell_bell
-;	call .checkfaint
-;	ret z
-;	call CheckSheerForceNegation
-;	ret nz
-;	farcall CheckFullHP
-;	ret z
-;
-;	ld a, [wCurDamage]
-;	ld b, a
-;	ld a, [wCurDamage + 1]
-;	ld c, a
-;	or b
-;	ret z ; No damage was done
-;	srl b
-;	rr c
-;	srl b
-;	rr c
-;	call HalveBC
-;	farcall ItemRecoveryAnim
-;	farcall RestoreHP
-;	ld hl, BattleText_UserRecoveredWithItem
-;	jp StdBattleTextBox
+.shell_bell
+	call .checkfaint
+	ret z
+	call CheckSheerForceNegation
+	ret nz
+	farcall CheckFullHP
+	ret z
+
+	ld a, [wCurDamage]
+	ld b, a
+	ld a, [wCurDamage + 1]
+	ld c, a
+	or b
+	ret z ; No damage was done
+	srl b
+	rr c
+	srl b
+	rr c
+	call HalveBC
+	farcall ItemRecoveryAnim
+	farcall RestoreHP
+	ld hl, BattleText_UserRecoveredWithItem
+	jp StdBattleTextBox
 
 .life_orb
 	call .checkfaint

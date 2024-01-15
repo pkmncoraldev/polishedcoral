@@ -162,6 +162,7 @@ PLAYER_F EQU __enum__
 	const DICK
 	const ROBBY
 	const ERIC
+	const HARRELSON
 
 
 	trainerclass BIRD_KEEPER
@@ -295,10 +296,10 @@ PLAYER_F EQU __enum__
 	const KATHY_6
 	const KATHY_7
 	const KATHY_8
-	const BEBE_5
-	const BEBE_6
-	const BEBE_7
-	const BEBE_8
+	const HARLEY_5
+	const HARLEY_6
+	const HARLEY_7
+	const HARLEY_8
 	const LENA
 
 
@@ -399,6 +400,8 @@ PLAYER_F EQU __enum__
 	const RACHEL
 	const ROSA
 	const CONNIE
+	const MARIA
+	const GISELE
 
 
 	trainerclass BURGLAR
@@ -596,6 +599,8 @@ PLAYER_F EQU __enum__
 	const MARTHA
 	
 	trainerclass TUBER
+	const SAMANTHA
+	const BEBE
 	
 	trainerclass SHAOLIN
 	const KIMIKO

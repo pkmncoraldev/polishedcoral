@@ -1548,6 +1548,15 @@ FisherGroup:
 	db -1 ; end
 
 ; ================
+
+	; FISHER
+	db "HARRELSON@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2590,7 +2599,7 @@ LassGroup:
 ; ================
 
 	; LASS
-	db "BEBE@"		;5 BADGES
+	db "HARLEY@"		;5 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -2599,7 +2608,7 @@ LassGroup:
 ; ================
 
 	; LASS
-	db "BEBE@"		;6 BADGES
+	db "HARLEY@"		;6 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -2608,7 +2617,7 @@ LassGroup:
 ; ================
 
 	; LASS
-	db "BEBE@"		;7 BADGES
+	db "HARLEY@"		;7 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -2617,7 +2626,7 @@ LassGroup:
 ; ================
 
 	; LASS
-	db "BEBE@"		;8 BADGES
+	db "HARLEY@"		;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3316,6 +3325,24 @@ SwimmerFGroup:
 
 	; SWIMMERM
 	db "CONNIE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SWIMMERF
+	db "MARIA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SWIMMERF
+	db "GISELE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -4662,7 +4689,16 @@ TuberGroup:
 ; ================
 
 	; TUBER
-	db "UNUSED@"
+	db "SAMANTHA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; TUBER
+	db "BEBE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

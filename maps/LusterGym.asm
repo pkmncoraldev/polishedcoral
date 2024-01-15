@@ -374,7 +374,7 @@ LusterGymTrainer2:
 	done
 	
 LusterGymTrainer3:
-	generictrainer LASS, BEBE_5, EVENT_BEAT_LUSTER_GYM_TRAINER_3, .SeenText, .BeatenText
+	generictrainer LASS, HARLEY_5, EVENT_BEAT_LUSTER_GYM_TRAINER_3, .SeenText, .BeatenText
 
 	text "How is POLLY so"
 	line "good at something"
@@ -601,16 +601,16 @@ LusterGymTrainer3Rematch:
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
 	ifequal 6, .sixbadges
-	loadtrainer LASS, BEBE_5
+	loadtrainer LASS, HARLEY_5
 	jump .cont
 .sixbadges
-	loadtrainer LASS, BEBE_6
+	loadtrainer LASS, HARLEY_6
 	jump .cont
 .sevenbadges
-	loadtrainer LASS, BEBE_7
+	loadtrainer LASS, HARLEY_7
 	jump .cont
 .eightbadges
-	loadtrainer LASS, BEBE_8
+	loadtrainer LASS, HARLEY_8
 .cont
 	startbattle
 	dontrestartmapmusic

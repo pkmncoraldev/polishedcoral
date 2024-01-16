@@ -156,6 +156,18 @@ LoadSpecialMapPalette: ; 494ac
 	cp TILESET_AUTUMN
 	jp z, .autumn
 	call DiveSpotMapPals
+	jp nc, .do_nothing
+	ld hl, DiveSpotsPalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals + 6 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
 	jp .do_nothing
 .bar
 	ld hl, BarPalette
@@ -804,16 +816,19 @@ DiveSpotMapPals:
 	jr z, .route13
 	cp GROUP_ROUTE_14
 	jr z, .route14
+	xor a
 	ret
 .route6
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_6
 	jr z, .yes
+	xor a
 	ret
 .route13
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_13
 	jr z, .yes
+	xor a
 	ret
 .route14
 	ld a, [wMapNumber]
@@ -821,18 +836,9 @@ DiveSpotMapPals:
 	jr z, .yes
 	cp MAP_ROUTE_15
 	jr z, .yes
+	xor a
 	ret
 .yes
-	ld hl, DiveSpotsPalette
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 1 palettes
-	rst AddNTimes
-	ld a, $5
-	ld de, wUnknBGPals + 3 palettes
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
 	scf
 	ret
 	

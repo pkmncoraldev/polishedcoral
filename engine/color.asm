@@ -1821,6 +1821,8 @@ LoadMapPals::
 	cp MAP_LUSTER_TRAIN_STATION
 	ret nz
 .outside
+	farcall DiveSpotMapPals
+	ret c
 	ld a, [wTileset]
 	cp TILESET_GROVE
 	ret z

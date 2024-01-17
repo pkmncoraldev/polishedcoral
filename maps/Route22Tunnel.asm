@@ -12,8 +12,8 @@ Route22Tunnel_MapScriptHeader:
 	warp_event 38, 15, DUSK_TURNPIKE, 5
 	warp_event 38, 16, DUSK_TURNPIKE, 6
 	warp_event 38, 17, DUSK_TURNPIKE, 7
-	warp_event 19,  3, SEASIDE_CAVE_1F, 4
-	warp_event  5, 21, ROUTE_19, 4
+	warp_event 19,  5, SEASIDE_CAVE_1F, 4
+	warp_event  5, 19, ROUTE_19, 4
 
 	db 82 ; coord events
 	xy_trigger 0, 13, 38, 0, Route22TunnelLightEntrance, 0, 0

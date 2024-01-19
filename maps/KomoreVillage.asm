@@ -16,7 +16,11 @@ KomoreVillage_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 4 ; bg events
+	signpost  4, 27, SIGNPOST_JUMPTEXT, KomoreVillageSign
+	signpost 20, 31, SIGNPOST_JUMPTEXT, KomoreCommunityCenterSign
+	signpost  5, 32, SIGNPOST_READ, KomoreVillagePokeCenterSign
+	signpost  7, 20, SIGNPOST_READ, KomoreVillageMartSign
 
 	db 2 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
@@ -25,3 +29,25 @@ KomoreVillage_MapScriptHeader:
 KomoreVillageFlyPoint:
 	setflag ENGINE_FLYPOINT_KOMORE
 	return
+	
+KomoreVillageSign:
+	text "KOMORE VILLAGE"
+	
+	para "Shining like the"
+	line "light through the"
+	cont "trees."
+	done
+	
+KomoreCommunityCenterSign:
+	text "K-MORE COM-UN-TY"
+	line "CEN-ER"
+	
+	para "The letters are"
+	line "worn away…"
+	done
+	
+KomoreVillagePokeCenterSign:
+	jumpstd pokecentersign
+	
+KomoreVillageMartSign:
+	jumpstd martsign

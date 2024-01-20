@@ -231,6 +231,7 @@ endr
 	special Special_FadeOutMusic
 	pause 40
 	playmusic MUSIC_AUTUMN
+	clearevent EVENT_FIGHTING_DOJO_MASTER_GONE
 	dotrigger $1
 	end
 	
@@ -584,10 +585,10 @@ Route23MasterText2:
 	
 	para "Your STRENGTH does"
 	line "not come only from"
-	cont "your body,"
+	cont "within your body,"
 	
-	para "but from your"
-	line "mind…"
+	para "but from within"
+	line "your mind…"
 	
 	para "Clear your mind"
 	line "and your body will"

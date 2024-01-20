@@ -14,7 +14,7 @@ FightingDojo_MapScriptHeader:
 	signpost  2,  4, SIGNPOST_UP, FightingDojoSign2
 
 	db 3 ; object events
-	person_event SPRITE_MASTER,  2,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, FightingDojoMaster, -1
+	person_event SPRITE_MASTER,  2,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, FightingDojoMaster, EVENT_FIGHTING_DOJO_MASTER_GONE
 	person_event SPRITE_BLACK_BELT,  0,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_SHAOLIN,  0,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	
@@ -58,103 +58,103 @@ FightingDojoMaster:
 .YouAreFacingUp
 	applymovement PLAYER, Movement_FightingDojoPlayerUp
 .cont
-	; setlasttalked FIGHTING_DOJO_BLACKBELT
-	; scall FightingDojoOpponentAppear
-	; opentext
-	; writetext FightingDojoBlackbelt1Text1
-	; waitbutton
-	; closetext
-	; waitsfx
-	; winlosstext FightingDojoBlackbelt1WinText, 0
-	; loadtrainer BLACKBELT_T, KIYO
-	; writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	; startbattle
-	; reloadmapafterbattle
-	; opentext
-	; writetext FightingDojoBlackbelt1Text2
-	; waitbutton
-	; closetext
-	; scall FightingDojoOpponentLeave
-	; pause 15
-	; spriteface PLAYER, UP
-	; opentext
-	; writetext FightingDojoMasterText4
-	; waitbutton
-	; closetext
-	; spriteface PLAYER, RIGHT
+	setlasttalked FIGHTING_DOJO_BLACKBELT
+	scall FightingDojoOpponentAppear
+	opentext
+	writetext FightingDojoBlackbelt1Text1
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext FightingDojoBlackbelt1WinText, 0
+	loadtrainer BLACKBELT_T, KIYO
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext FightingDojoBlackbelt1Text2
+	waitbutton
+	closetext
+	scall FightingDojoOpponentLeave
+	pause 15
+	spriteface PLAYER, UP
+	opentext
+	writetext FightingDojoMasterText4
+	waitbutton
+	closetext
+	spriteface PLAYER, RIGHT
 	
-	; pause 30
-	; setlasttalked FIGHTING_DOJO_SHAOLIN
-	; scall FightingDojoOpponentAppear
-	; opentext
-	; writetext FightingDojoShaolin1Text1
-	; waitbutton
-	; closetext
-	; waitsfx
-	; winlosstext FightingDojoShaolin1WinText, 0
-	; loadtrainer SHAOLIN, KIMIKO
-	; writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	; startbattle
-	; reloadmapafterbattle
-	; opentext
-	; writetext FightingDojoShaolin1Text2
-	; waitbutton
-	; closetext
-	; scall FightingDojoOpponentLeave
-	; pause 15
-	; spriteface PLAYER, UP
-	; opentext
-	; writetext FightingDojoMasterText4
-	; waitbutton
-	; closetext
-	; spriteface PLAYER, RIGHT
+	pause 30
+	setlasttalked FIGHTING_DOJO_SHAOLIN
+	scall FightingDojoOpponentAppear
+	opentext
+	writetext FightingDojoShaolin1Text1
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext FightingDojoShaolin1WinText, 0
+	loadtrainer SHAOLIN, KIMIKO
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext FightingDojoShaolin1Text2
+	waitbutton
+	closetext
+	scall FightingDojoOpponentLeave
+	pause 15
+	spriteface PLAYER, UP
+	opentext
+	writetext FightingDojoMasterText4
+	waitbutton
+	closetext
+	spriteface PLAYER, RIGHT
 	
-	; pause 30
-	; setlasttalked FIGHTING_DOJO_SHAOLIN
-	; scall FightingDojoOpponentAppear
-	; opentext
-	; writetext FightingDojoShaolin2Text1
-	; waitbutton
-	; closetext
-	; waitsfx
-	; winlosstext FightingDojoShaolin2WinText, 0
-	; loadtrainer SHAOLIN, SAYORI
-	; writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	; startbattle
-	; reloadmapafterbattle
-	; opentext
-	; writetext FightingDojoShaolin2Text2
-	; waitbutton
-	; closetext
-	; scall FightingDojoOpponentLeave
-	; pause 15
-	; spriteface PLAYER, UP
-	; opentext
-	; writetext FightingDojoMasterText4
-	; waitbutton
-	; closetext
-	; spriteface PLAYER, RIGHT
+	pause 30
+	setlasttalked FIGHTING_DOJO_SHAOLIN
+	scall FightingDojoOpponentAppear
+	opentext
+	writetext FightingDojoShaolin2Text1
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext FightingDojoShaolin2WinText, 0
+	loadtrainer SHAOLIN, SAYORI
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext FightingDojoShaolin2Text2
+	waitbutton
+	closetext
+	scall FightingDojoOpponentLeave
+	pause 15
+	spriteface PLAYER, UP
+	opentext
+	writetext FightingDojoMasterText4
+	waitbutton
+	closetext
+	spriteface PLAYER, RIGHT
 	
-	; pause 30
-	; setlasttalked FIGHTING_DOJO_BLACKBELT
-	; scall FightingDojoOpponentAppear
-	; opentext
-	; writetext FightingDojoBlackbelt2Text1
-	; waitbutton
-	; closetext
-	; waitsfx
-	; winlosstext FightingDojoBlackbelt2WinText, 0
-	; loadtrainer BLACKBELT_T, YUJI
-	; writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	; startbattle
-	; reloadmapafterbattle
-	; opentext
-	; writetext FightingDojoBlackbelt2Text2
-	; waitbutton
-	; closetext
-	; scall FightingDojoOpponentLeave
+	pause 30
+	setlasttalked FIGHTING_DOJO_BLACKBELT
+	scall FightingDojoOpponentAppear
+	opentext
+	writetext FightingDojoBlackbelt2Text1
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext FightingDojoBlackbelt2WinText, 0
+	loadtrainer BLACKBELT_T, YUJI
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext FightingDojoBlackbelt2Text2
+	waitbutton
+	closetext
+	scall FightingDojoOpponentLeave
 	
-	; pause 15
+	pause 15
 	spriteface PLAYER, UP
 	opentext
 	writetext FightingDojoMasterText5
@@ -200,6 +200,17 @@ FightingDojoMaster:
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
+	playmusic MUSIC_EVOLUTION
+	opentext
+	writetext FightingDojoMasterText7
+	waitbutton
+	closetext
+	pause 30
+	playsound SFX_WATER_GUN
+	spriteface FIGHTING_DOJO_MASTER, UP
+	pause 2
+	disappear FIGHTING_DOJO_MASTER
+	pause 10
 	domaptrigger ROUTE_23, $2
 	end
 .no
@@ -455,6 +466,25 @@ FightingDojoMasterText5:
 	
 FightingDojoMasterText6:
 	text "…shall be myself!"
+	done
+	
+FightingDojoMasterText7:
+	text "…"
+	
+	para "You have proven"
+	line "yourself…"
+	
+	para "There is no need"
+	line "for words…"
+	
+	para "A tree is blocking"
+	line "the path and my"
+	cont "disciple thinks he"
+	cont "cannot move it…"
+	
+	para "…"
+	
+	para "He will…"
 	done
 	
 FightingDojoMasterWinText:

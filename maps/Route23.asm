@@ -127,7 +127,7 @@ Route23Master1:
 	pause 10
 	special Special_FadeOutMusic
 	pause 40
-	playmusic MUSIC_EVOLUTION
+	playmusic MUSIC_DOJO
 	opentext
 	writetext Route23MasterText1
 	waitbutton
@@ -198,7 +198,7 @@ endr
 	pause 60
 	closetext
 	pause 20
-	playmusic MUSIC_EVOLUTION
+	playmusic MUSIC_DOJO
 	opentext
 	writetext Route23MasterText3
 	waitbutton

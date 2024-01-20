@@ -59,6 +59,7 @@
 	const MUSIC_BAR
 	const MUSIC_DARKNESS
 	const MUSIC_AUTUMN
+	const MUSIC_DOJO
 	
 NUM_TAPE_PLAYER_SONGS EQU const_value
 	

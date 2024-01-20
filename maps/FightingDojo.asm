@@ -200,7 +200,7 @@ FightingDojoMaster:
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
-	playmusic MUSIC_EVOLUTION
+	playmusic MUSIC_DOJO
 	opentext
 	writetext FightingDojoMasterText7
 	waitbutton

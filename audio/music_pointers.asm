@@ -60,6 +60,7 @@ Music:
 	dba Music_Bar
 	dba Music_Darkness
 	dba Music_Autumn
+	dba Music_Dojo
 	
 	dba Music_StarglowOld
 	dba Music_WildBattleOld

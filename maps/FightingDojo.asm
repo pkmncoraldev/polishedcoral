@@ -200,6 +200,7 @@ FightingDojoMaster:
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
+	domaptrigger ROUTE_23, $2
 	end
 .no
 	writetext FightingDojoMasterTextNo

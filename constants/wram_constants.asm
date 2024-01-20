@@ -200,6 +200,8 @@ NUM_BADGES EQU NUM_ONWA_BADGES
 	const GOT_FLY
 	const GOT_ROCK_CLIMB
 	const GOT_SURF
+	const GOT_DIVE
+	const GOT_STRENGTH
 NUM_GOT_HM_FLAGS EQU const_value
 
 	const_def

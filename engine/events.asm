@@ -1534,8 +1534,8 @@ CheckFacingTileEvent: ; 97c5f
 	jr .noevent
 	
 .whirlpool
-	farcall TryWhirlpoolOW
-	jr c, .done
+;	farcall TryWhirlpoolOW
+;	jr c, .done
 	jr .noevent
 
 .waterfall

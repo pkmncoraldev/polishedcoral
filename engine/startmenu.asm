@@ -1228,7 +1228,7 @@ MonMenu_Strength: ; 12e6a
 ; 12e7f
 
 MonMenu_Whirlpool: ; 12e7f
-	farcall WhirlpoolFunction
+;	farcall WhirlpoolFunction
 	jr _MonMenu_StandardCheck
 ; 12e94
 

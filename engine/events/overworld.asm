@@ -1285,7 +1285,7 @@ StrengthFunction: ; cce5
 
 .TryStrength: ; ccee
 ; Strength
-	ld de, ENGINE_THIRDBADGE
+	ld de, ENGINE_SIXTHBADGE
 	call CheckBadge
 	jr c, .Failed
 	jr .UseStrength
@@ -1303,7 +1303,7 @@ StrengthFunction: ; cce5
 SetStrengthFlag: ; cd12
 	ld hl, wOWState
 	set OWSTATE_STRENGTH, [hl]
-PrepareOverworldMove: ; cd1d
+PrepareOverworldMove:: ; cd1d
 	ld a, [wCurPartyMon]
 	ld e, a
 	ld d, 0
@@ -1369,14 +1369,14 @@ UnknownText_0xcd73: ; 0xcd73
 	text_jump UnknownText_0x1c07f4
 	db "@"
 
-TryStrengthOW: ; cd78
+TryStrengthOW:: ; cd78
 	ld d, STRENGTH
 	call CheckPartyCanLearnMove
 	jr c, .nope
 
-;	ld de, ENGINE_THIRDBADGE
-;	call CheckEngineFlag
-;	jr c, .nope
+	ld de, ENGINE_SIXTHBADGE
+	call CheckEngineFlag
+	jr c, .nope
 
 	ld hl, wOWState
 	bit OWSTATE_STRENGTH, [hl]
@@ -1397,174 +1397,174 @@ TryStrengthOW: ; cd78
 	ld [wScriptVar], a
 	ret
 
-WhirlpoolFunction: ; cd9d
-	call FieldMoveJumptableReset
-.loop
-	ld hl, Jumptable_cdae
-	call FieldMoveJumptable
-	jr nc, .loop
-	and $7f
-	ld [wFieldMoveSucceeded], a
-	ret
+; WhirlpoolFunction: ; cd9d
+	; call FieldMoveJumptableReset
+; .loop
+	; ld hl, Jumptable_cdae
+	; call FieldMoveJumptable
+	; jr nc, .loop
+	; and $7f
+	; ld [wFieldMoveSucceeded], a
+	; ret
 
-Jumptable_cdae: ; cdae
-	dw .TryWhirlpool
-	dw .DoWhirlpool
-	dw .FailWhirlpool
+; Jumptable_cdae: ; cdae
+	; dw .TryWhirlpool
+	; dw .DoWhirlpool
+	; dw .FailWhirlpool
 
-.TryWhirlpool: ; cdb4
-	ld de, ENGINE_SEVENTHBADGE
-	call CheckBadge
-	jr c, .noglacierbadge
-	call TryWhirlpoolMenu
-	jr c, .failed
-	ld a, $1
-	ret
+; .TryWhirlpool: ; cdb4
+	; ld de, ENGINE_SEVENTHBADGE
+	; call CheckBadge
+	; jr c, .noglacierbadge
+	; call TryWhirlpoolMenu
+	; jr c, .failed
+	; ld a, $1
+	; ret
 
-.failed
-	ld a, $2
-	ret
+; .failed
+	; ld a, $2
+	; ret
 
-.noglacierbadge
-	ld a, $80
-	ret
+; .noglacierbadge
+	; ld a, $80
+	; ret
 
-.DoWhirlpool: ; cdca
-	ld hl, Script_WhirlpoolFromMenu
-	call QueueScript
-	ld a, $81
-	ret
+; .DoWhirlpool: ; cdca
+	; ld hl, Script_WhirlpoolFromMenu
+	; call QueueScript
+	; ld a, $81
+	; ret
 
-.FailWhirlpool: ; cdd3
-	call FieldMoveFailed
-	ld a, $80
-	ret
+; .FailWhirlpool: ; cdd3
+	; call FieldMoveFailed
+	; ld a, $80
+	; ret
 
-Text_UsedWhirlpool: ; 0xcdd9
-	; used WHIRLPOOL!
-	text_jump UnknownText_0x1c0816
-	db "@"
+; Text_UsedWhirlpool: ; 0xcdd9
+	; ; used WHIRLPOOL!
+	; text_jump UnknownText_0x1c0816
+	; db "@"
 
-TryWhirlpoolMenu: ; cdde
-	call GetFacingTileCoord
-	ld c, a
-	cp COLL_WHIRLPOOL
-	jr nz, .failed
-	call GetBlockLocation
-	ld c, [hl]
-	push hl
-	ld hl, WhirlpoolBlockPointers
-	call CheckOverworldTileArrays
-	pop hl
-	jr nc, .failed
-	ld a, l
-	ld [wBuffer3], a
-	ld a, h
-	ld [wBuffer4], a
-	ld a, b
-	ld [wBuffer5], a
-	xor a
-	ld [wBuffer6], a
-	ret
+; TryWhirlpoolMenu: ; cdde
+	; call GetFacingTileCoord
+	; ld c, a
+	; cp COLL_WHIRLPOOL
+	; jr nz, .failed
+	; call GetBlockLocation
+	; ld c, [hl]
+	; push hl
+	; ld hl, WhirlpoolBlockPointers
+	; call CheckOverworldTileArrays
+	; pop hl
+	; jr nc, .failed
+	; ld a, l
+	; ld [wBuffer3], a
+	; ld a, h
+	; ld [wBuffer4], a
+	; ld a, b
+	; ld [wBuffer5], a
+	; xor a
+	; ld [wBuffer6], a
+	; ret
 
-.failed
-	scf
-	ret
+; .failed
+	; scf
+	; ret
 
-Script_WhirlpoolFromMenu: ; 0xce0b
-	reloadmappart
-	special UpdateTimePals
+; Script_WhirlpoolFromMenu: ; 0xce0b
+	; reloadmappart
+	; special UpdateTimePals
 
-Script_UsedWhirlpool: ; 0xce0f
-	callasm PrepareOverworldMove
-	writetext Text_UsedWhirlpool
-	closetext
-	scall FieldMovePokepicScript
-	setflag ENGINE_AUTOWHIRLPOOL_ACTIVE
-	waitsfx
+; Script_UsedWhirlpool: ; 0xce0f
+	; callasm PrepareOverworldMove
+	; writetext Text_UsedWhirlpool
+	; closetext
+	; scall FieldMovePokepicScript
+	; setflag ENGINE_AUTOWHIRLPOOL_ACTIVE
+	; waitsfx
 
-Script_AutoWhirlpool:
-	playsound SFX_SURF
-	checkcode VAR_FACING
-	ifequal UP, .Up
-	ifequal DOWN, .Down
-	ifequal RIGHT, .Right
-	applymovement PLAYER, .LeftMovementData
-	end
+; Script_AutoWhirlpool:
+	; playsound SFX_SURF
+	; checkcode VAR_FACING
+	; ifequal UP, .Up
+	; ifequal DOWN, .Down
+	; ifequal RIGHT, .Right
+	; applymovement PLAYER, .LeftMovementData
+	; end
 
-.Up:
-	applymovement PLAYER, .UpMovementData
-	end
+; .Up:
+	; applymovement PLAYER, .UpMovementData
+	; end
 
-.Right:
-	applymovement PLAYER, .RightMovementData
-	end
+; .Right:
+	; applymovement PLAYER, .RightMovementData
+	; end
 
-.Down:
-	applymovement PLAYER, .DownMovementData
-	end
+; .Down:
+	; applymovement PLAYER, .DownMovementData
+	; end
 
-.UpMovementData:
-	slow_step_up
-	slow_step_up
-	step_end
+; .UpMovementData:
+	; slow_step_up
+	; slow_step_up
+	; step_end
 
-.RightMovementData:
-	slow_step_right
-	slow_step_right
-	step_end
+; .RightMovementData:
+	; slow_step_right
+	; slow_step_right
+	; step_end
 
-.DownMovementData:
-	slow_step_down
-	slow_step_down
-	step_end
+; .DownMovementData:
+	; slow_step_down
+	; slow_step_down
+	; step_end
 
-.LeftMovementData:
-	slow_step_left
-	slow_step_left
-	step_end
+; .LeftMovementData:
+	; slow_step_left
+	; slow_step_left
+	; step_end
 
-TryWhirlpoolOW:: ; ce3e
-;	ld d, WHIRLPOOL
-;	call CheckPartyCanLearnMove
-;	jr c, .failed
-;	ld de, ENGINE_SEVENTHBADGE
-;	call CheckEngineFlag
-;	jr c, .failed
-;	call TryWhirlpoolMenu
-;	jr c, .failed
-;	ld a, BANK(Script_AskWhirlpoolOW)
-;	ld hl, Script_AskWhirlpoolOW
-;	call CallScript
-;	scf
-	ret
+; TryWhirlpoolOW:: ; ce3e
+	; ld d, WHIRLPOOL
+	; call CheckPartyCanLearnMove
+	; jr c, .failed
+	; ld de, ENGINE_SEVENTHBADGE
+	; call CheckEngineFlag
+	; jr c, .failed
+	; call TryWhirlpoolMenu
+	; jr c, .failed
+	; ld a, BANK(Script_AskWhirlpoolOW)
+	; ld hl, Script_AskWhirlpoolOW
+	; call CallScript
+	; scf
+	; ret
 
-.failed
-	ld a, BANK(Script_MightyWhirlpool)
-	ld hl, Script_MightyWhirlpool
-	call CallScript
-	scf
-	ret
+; .failed
+	; ld a, BANK(Script_MightyWhirlpool)
+	; ld hl, Script_MightyWhirlpool
+	; call CallScript
+	; scf
+	; ret
 
-Script_MightyWhirlpool: ; 0xce66
-	jumptext .MightyWhirlpoolText
+; Script_MightyWhirlpool: ; 0xce66
+	; jumptext .MightyWhirlpoolText
 
-.MightyWhirlpoolText: ; 0xce69
-	text_jump UnknownText_0x1c082b
-	db "@"
+; .MightyWhirlpoolText: ; 0xce69
+	; text_jump UnknownText_0x1c082b
+	; db "@"
 
-Script_AskWhirlpoolOW: ; 0xce6e
-	checkflag ENGINE_AUTOWHIRLPOOL_ACTIVE
-	iftrue Script_AutoWhirlpool
-	opentext
-	writetext UnknownText_0xce78
-	yesorno
-	iftrue Script_UsedWhirlpool
-	endtext
+; Script_AskWhirlpoolOW: ; 0xce6e
+	; checkflag ENGINE_AUTOWHIRLPOOL_ACTIVE
+	; iftrue Script_AutoWhirlpool
+	; opentext
+	; writetext UnknownText_0xce78
+	; yesorno
+	; iftrue Script_UsedWhirlpool
+	; endtext
 
-UnknownText_0xce78: ; 0xce78
-	text_jump UnknownText_0x1c0864
-	db "@"
+; UnknownText_0xce78: ; 0xce78
+	; text_jump UnknownText_0x1c0864
+	; db "@"
 
 HeadbuttFunction: ; ce7d
 	call TryHeadbuttFromMenu
@@ -1669,7 +1669,7 @@ DiveFunction: ; cade
 	ret
 
 .TryDive: ; cae7
-	ld de, ENGINE_SIXTHBADGE
+	ld de, ENGINE_SEVENTHBADGE
 	farcall CheckBadge
 	ld a, $80
 	ret c
@@ -1856,7 +1856,7 @@ HasDive: ; cf7c
 	call CheckEngineFlag
 	jr c, .no
 	
-	ld de, ENGINE_SIXTHBADGE
+	ld de, ENGINE_SEVENTHBADGE
 	call CheckEngineFlag
 	jr c, .no
 	

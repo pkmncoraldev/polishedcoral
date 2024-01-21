@@ -1337,6 +1337,7 @@ Script_UsedStrength: ; 0xcd2d
 
 AskStrengthScript:
 	callasm TryStrengthOW
+	ifequal $3, .DebugStrength
 	iffalse .AskStrength
 	ifequal $1, .DontMeetRequirements
 	jump .AlreadyUsedStrength
@@ -1353,6 +1354,18 @@ AskStrengthScript:
 	yesorno
 	iftrue Script_UsedStrength
 	endtext
+	
+.DebugStrength:
+	opentext
+	writetext DebugFieldMoveText
+	closetext
+	callasm SetStrengthFlagDebug
+	end
+	
+SetStrengthFlagDebug:
+	ld hl, wOWState
+	set OWSTATE_STRENGTH, [hl]
+	ret
 
 UnknownText_0xcd69: ; 0xcd69
 	; A #MON may be able to move this. Want to use STRENGTH?
@@ -1370,8 +1383,16 @@ UnknownText_0xcd73: ; 0xcd73
 	db "@"
 
 TryStrengthOW:: ; cd78
+	ld a, [wOptions1]
+	bit DEBUG_MODE, a
+	jr nz, .debugstrength
+	
 	ld d, STRENGTH
 	call CheckPartyCanLearnMove
+	jr c, .nope
+
+	ld de, ENGINE_GOT_STRENGTH
+	call CheckEngineFlag
 	jr c, .nope
 
 	ld de, ENGINE_SIXTHBADGE
@@ -1383,6 +1404,10 @@ TryStrengthOW:: ; cd78
 	jr z, .already_using
 
 	ld a, 2
+	jr .done
+
+.debugstrength
+	ld a, 3
 	jr .done
 
 .nope

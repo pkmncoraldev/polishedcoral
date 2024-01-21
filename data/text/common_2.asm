@@ -372,7 +372,7 @@ UnknownText_0x1c07a0::
 	line "able to move this."
 
 	para "Want to use"
-	line "STRENTGH?"
+	line "STRENGTH?"
 	done
 
 UnknownText_0x1c07d8::

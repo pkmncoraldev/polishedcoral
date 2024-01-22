@@ -108,6 +108,7 @@ PLAYER_F EQU __enum__
 	const TREVOR
 	const VINCENT
 	const DANTE
+	const TERRY
 
 	trainerclass PICNICKER
 	const MOLLY
@@ -201,6 +202,7 @@ PLAYER_F EQU __enum__
 	const CALEB_6
 	const CALEB_7
 	const CALEB_8
+	const SIDNEY
 
 
 	trainerclass HIKER
@@ -314,6 +316,7 @@ PLAYER_F EQU __enum__
 	const SAM_6
 	const SAM_7
 	const SAM_8
+	const MANDY
 
 
 	trainerclass FIREBREATHER
@@ -333,6 +336,7 @@ PLAYER_F EQU __enum__
 	const WILLY
 	const QUINN
 	const RYAN
+	const RONNIE
 
 
 	trainerclass SCHOOLBOY
@@ -464,6 +468,7 @@ PLAYER_F EQU __enum__
 	const CODY
 	const SAMMY
 	const ANDY
+	const TRIPP
 
 
 	trainerclass COOLTRAINERF
@@ -605,6 +610,7 @@ PLAYER_F EQU __enum__
 	trainerclass SHAOLIN
 	const KIMIKO
 	const SAYORI
+	const MAI
 	
 	trainerclass DOJO_MASTER
 	

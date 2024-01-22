@@ -27,6 +27,9 @@ Route24South_MapScriptHeader:
 	person_event SPRITE_SHROOMISH_OW,  6, 29, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_24_BRELOOM
 	person_event SPRITE_BRELOOM_OW,  4, 29, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent,  EVENT_ROUTE_24_BRELOOM
 	itemball_event 29,  4, BALMMUSHROOM, 1, EVENT_ROUTE_24_MUSHROOM_5
+	person_event SPRITE_JUGGLER, 18, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route24SouthTrainer1, -1
+	person_event SPRITE_CAMPER, 13, 15, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, Route24SouthTrainer2, -1
+	person_event SPRITE_BATTLE_GIRL,  9,  6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route24SouthNPC, -1
 	fruittreeinvis_event 31,  0, FRUITTREE_ROUTE_24_1, RAWST_BERRY
 	fruittreeinvis_event 33,  4, FRUITTREE_ROUTE_24_2, PERSIM_BERRY
 	tmhmball_event 34, 13, TM_FIRE_BLAST, EVENT_ROUTE_24_FIRE_BLAST
@@ -61,6 +64,66 @@ Route24SouthCallback:
 	setevent EVENT_ROUTE_24_MUSHROOM_5
 	dotrigger $1
 	jump Route23Callback
+	
+Route24SouthNPC:
+	jumptextfaceplayer Route24SouthNPCText
+	
+Route24SouthNPCText:
+	text "I hear sometimes,"
+	line "on days when the"
+	cont "wind is still,"
+	
+	para "something special"
+	line "can happen in the"
+	cont "clearing nearby."
+	
+	para "How exciting!"
+	done
+	
+Route24SouthTrainer1:
+	generictrainer JUGGLER, RONNIE, EVENT_BEAT_ROUTE_24_SOUTH_TRAINER_1, .SeenText, .BeatenText
+
+	text "Alright, show's"
+	line "over!"
+	
+	para "Move along!"
+	done
+
+.SeenText:
+	text "Step right up!"
+	line "Step right up!"
+	
+	para "To the most"
+	line "wonderful #MON"
+	cont "show in the world!"
+	done
+
+.BeatenText:
+	text "My #MON!"
+	done
+	
+Route24SouthTrainer2:
+	generictrainer CAMPER, TERRY, EVENT_BEAT_ROUTE_24_SOUTH_TRAINER_2, .SeenText, .BeatenText
+
+	text "I know I'm supposed"
+	line "to be roughin' it,"
+	
+	para "but maybe I should"
+	line "have packed a tent"
+	cont "or something…"
+	done
+
+.SeenText:
+	text "I'm out roughin' it"
+	line "with my #MON!"
+	
+	para "We're about to set"
+	line "up camp!"
+	done
+
+.BeatenText:
+	text "How rough!"
+	done
 	
 BreloomRandomAsm:
 	call Random

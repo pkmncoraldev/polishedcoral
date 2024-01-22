@@ -1086,6 +1086,15 @@ CamperGroup:
 	db -1 ; end
 
 ; ================
+
+	; CAMPER
+	db "TERRY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -1892,6 +1901,15 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER
 	db "CALEB@"	;8 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "SIDNEY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -2741,6 +2759,15 @@ BeautyGroup:
 	db -1 ; end
 
 ; ================
+
+	; BEAUTY
+	db "MANDY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2879,6 +2906,15 @@ JugglerGroup:
 
 	; JUGGLER
 	db "RYAN@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; JUGGLER
+	db "RONNIE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3729,6 +3765,15 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM
 	db "ANDY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; COOLTRAINERM
+	db "TRIPP@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -4722,6 +4767,15 @@ ShaolinGroup:
 
 	; SHAOLIN
 	db "SAYORI@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SHAOLIN
+	db "MAI@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

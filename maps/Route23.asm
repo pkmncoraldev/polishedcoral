@@ -20,7 +20,7 @@ Route23_MapScriptHeader:
 	signpost  2, 24, SIGNPOST_JUMPTEXT, Route23SignText
 	signpost 10,  5, SIGNPOST_JUMPTEXT, Route23FightingDojoSignText
 
-	db 14 ; object events
+	db 17 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PINK
 	person_event SPRITE_PICNICKER, 16, 30, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 0, Route23Trainer1, -1
@@ -29,12 +29,15 @@ Route23_MapScriptHeader:
 	person_event SPRITE_GRANNY, 26, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route23Trainer4, -1
 	person_event SPRITE_SUPER_NERD, 45, 21, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer5, -1
 	person_event SPRITE_BURGLAR, 40, 20, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, Route23Trainer6, -1
+	person_event SPRITE_SHAOLIN, 27,  7, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer7, -1
+	person_event SPRITE_COOLTRAINER_M, 16, 13, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, Route23Trainer8, -1
 	person_event SPRITE_FISHER, 44,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route23Fisher, -1
 	person_event SPRITE_BLACK_BELT, 29, 31, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route23BlackBelt, EVENT_GOT_HM04_STRENGTH
 	person_event SPRITE_MASTER, 28, 31, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	itemball_event 21, 14, POTION, 1, EVENT_ROUTE_23_POKE_BALL_1
 	itemball_event  2, 46, POTION, 1, EVENT_ROUTE_23_POKE_BALL_2
 	itemball_event 13, 38, POTION, 1, EVENT_ROUTE_23_POKE_BALL_3
+	itemball_event 19, 34, POTION, 1, EVENT_ROUTE_23_POKE_BALL_4
 
 
 	const_def 1 ; object constants
@@ -46,6 +49,8 @@ Route23_MapScriptHeader:
 	const ROUTE_23_TRAINER_4
 	const ROUTE_23_TRAINER_5
 	const ROUTE_23_TRAINER_6
+	const ROUTE_23_TRAINER_7
+	const ROUTE_23_TRAINER_8
 	const ROUTE_23_FISHER
 	const ROUTE_23_BLACKBELT
 	const ROUTE_23_MASTER
@@ -234,7 +239,7 @@ endr
 	clearevent EVENT_FIGHTING_DOJO_MASTER_GONE
 	dotrigger $1
 	end
-	
+
 Route23Trainer1:
 	generictrainer PICNICKER, LES, EVENT_BEAT_ROUTE_23_TRAINER_1, .SeenText, .BeatenText
 
@@ -371,6 +376,62 @@ Route23Trainer6:
 
 .BeatenText:
 	text "Gah!"
+	done
+	
+Route23Trainer7:
+	generictrainer SHAOLIN, MAI, EVENT_BEAT_ROUTE_23_TRAINER_7, .SeenText, .BeatenText
+
+	text "Thank you for"
+	line "indulging me."
+	
+	para "We are told by our"
+	line "MASTER to always"
+	cont "keep up our train-"
+	cont "ing."
+	done
+
+.SeenText:
+	text "Excuse me."
+	
+	para "Are you going to"
+	line "see THE MASTER?"
+	
+	para "…"
+	
+	para "Battle with us!"
+	done
+
+.BeatenText:
+	text "Thank you."
+	done
+
+Route23Trainer8:
+	generictrainer COOLTRAINERM, TRIPP, EVENT_BEAT_ROUTE_23_TRAINER_8, .SeenText, .BeatenText
+
+	text "Hmm…"
+	
+	para "Maybe I'm not ready"
+	line "to fight that"
+	cont "“MASTER” dude"
+	cont "after all…"
+	done
+
+.SeenText:
+	text "Man!"
+	
+	para "I heard that this"
+	line "“MASTER” guy was"
+	cont "supposed to be"
+	cont "tough."
+	
+	para "The dude won't even"
+	line "battle me!"
+	done
+
+.BeatenText:
+	text "Gahh!"
+	
+	para "You're tough too!"
 	done
 	
 Route23SignText:

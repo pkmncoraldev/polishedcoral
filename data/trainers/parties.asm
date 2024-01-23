@@ -1052,9 +1052,9 @@ CamperGroup:
 
 	; CAMPER
 	db "BART@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_EVS | TRAINERTYPE_DVS
 	; party
-	db 9, CLEFAIRY
+	db 9, CLEFAIRY, 0, $22, $22, $22
 	db -1 ; end
 
 ; ================
@@ -1104,9 +1104,9 @@ PicnickerGroup:
 
 	; PICNICKER
 	db "MOLLY@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_EVS | TRAINERTYPE_DVS
 	; party
-	db 9, JIGGLYPUFF
+	db 9, JIGGLYPUFF, 0, $22, $22, $22
 	db -1 ; end
 
 ; ================
@@ -2519,10 +2519,10 @@ LassGroup:
 
 	; LASS
 	db "VERONICA@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_EVS | TRAINERTYPE_DVS
 	; party
-	db 7, CLEFAIRY
-	db 7, CLEFAIRY
+	db 7, CLEFAIRY, 0, $22, $22, $22
+	db 7, CLEFAIRY, 0, $22, $22, $22
 	db -1 ; end
 
 ; ================

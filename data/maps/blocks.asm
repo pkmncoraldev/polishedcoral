@@ -536,6 +536,9 @@ MtOnwaLowerCliff_BlockData:
 GlintGrove_BlockData:
 	INCBIN "maps/GlintGrove.ablk.lz"
 	
+GlintGroveEast_BlockData:
+	INCBIN "maps/GlintGroveEast.ablk.lz"
+	
 GlintGroveDeep_BlockData:
 	INCBIN "maps/GlintGroveDeep.ablk.lz"
 	

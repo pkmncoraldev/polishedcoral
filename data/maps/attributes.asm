@@ -118,6 +118,12 @@ ENDM
 	map_attributes GlintGroveEntrance, GLINT_GROVE_ENTRANCE, $d4, SOUTH
 	connection south, GlintCity, GLINT_CITY, -1
 	
+	map_attributes GlintGrove, GLINT_GROVE, $11, EAST
+	connection east, GlintGroveEast, GLINT_GROVE_EAST, 12
+	
+	map_attributes GlintGroveEast, GLINT_GROVE_EAST, $11, WEST
+	connection west, GlintGrove, GLINT_GROVE, -12
+	
 	map_attributes Route3, ROUTE_3, $d4, NORTH | SOUTH | WEST | EAST
 	connection north, Route3StarglowCavernTop, ROUTE_3_STARGLOW_CAVERN_TOP, 10
 	connection south, Route8, ROUTE_8, 7
@@ -439,7 +445,6 @@ ENDM
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0
 	map_attributes DaybreakGrotto3, DAYBREAK_GROTTO_3, $9, 0
-	map_attributes GlintGrove, GLINT_GROVE, $11, 0
 	map_attributes GlintGroveDeep, GLINT_GROVE_DEEP, $11, 0
 	map_attributes StarglowCavern1F, STARGLOW_CAVERN_1F, $9, 0
 	map_attributes StarglowCavern2F, STARGLOW_CAVERN_2F, $9, 0

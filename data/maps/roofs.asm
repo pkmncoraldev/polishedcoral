@@ -2,7 +2,7 @@ MapGroupRoofs:
 ; entries correspond to map groups
 ; values are indexes for Roofs (see below)
 	db -1 ; group 0
-	db  2 ; group 1  (Dungeons)
+	db -1 ; group 1  (Dungeons)
 	db  3 ; group 2  (Sunset)
 	db  2 ; group 3  (Daybreak)
 	db  2 ; group 4  (Glint)

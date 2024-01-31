@@ -957,12 +957,19 @@ LoadMapPals::
 	cp TILESET_HAUNTED
 	jp z, .haunted
 	cp TILESET_DIVE
-	jr z, .underwater
+	jp z, .underwater
 	cp TILESET_BAR
 	jr z, .bar
 	cp TILESET_AUTUMN
 	jp z, .autumn
+	cp TILESET_GROVE
+	jr z, .grove
 	jp .normal
+.grove
+	ld a, [wMapNumber]
+	cp MAP_GLINT_GROVE_EAST
+	jp nz, .normal
+	jp .rocks
 .bar
 	ld a, [wPlayerPalette]
 	cp 4

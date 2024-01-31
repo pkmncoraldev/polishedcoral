@@ -103,6 +103,7 @@ HexManiacSpriteGFX::           INCBIN "gfx/sprites/hex_maniac.2bpp"
 HikerSpriteGFX::               INCBIN "gfx/sprites/hiker.2bpp"
 JugglerSpriteGFX::             INCBIN "gfx/sprites/juggler.2bpp"
 KimonoGirlSpriteGFX::          INCBIN "gfx/sprites/kimono_girl.2bpp"
+MinaSpriteGFX::  		       INCBIN "gfx/sprites/mina.2bpp"
 
 
 SECTION "Overworld Sprites 4", ROMX

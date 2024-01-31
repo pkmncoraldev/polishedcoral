@@ -2233,7 +2233,135 @@ AutoRockSmashScript:
 	earthquake 84
 	applymovement2 MovementData_0xcf55
 	disappear -2
+	callasm MinaRockSmash
+	iffalse .end
+	playsound SFX_PAY_DAY
+	spriteface 1, UP
+	showemote EMOTE_SHOCK, 1, 15
+	opentext
+	writetext MinaRockSmashText1
+	waitbutton
+	closetext
+	applyonemovement 1, step_up
+	spriteface 1, LEFT
+	callasm MinaRockSmashGetMonName
+	opentext
+	writetext MinaRockSmashText2
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	checkevent EVENT_TALKED_TO_MINA_ONCE
+	iftrue .talked
+	writetext MinaRockSmashText4
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+.talked
+	writetext MinaRockSmashText3
+	waitbutton
+	closetext
+	applymovement 1, Movement_Mina_Walk_Away
+	disappear 1
+	setevent EVENT_GLINT_GROVE_MINA_GONE
+.end
 	end
+	
+MinaRockSmashText1:
+	text "Oh wow!"
+	done
+
+MinaRockSmashText2:
+	text "Way to go!"
+	
+	para "Your @"
+	text_from_ram wStringBuffer1
+	text ""
+	line "smashed right on"
+	cont "through!"
+	done
+	
+MinaRockSmashText3:
+	text "I'm going to see"
+	line "what's ahead."
+	
+	para "Something cool,"
+	line "I hope!"
+	done
+	
+MinaRockSmashText4:
+	text "ALOLA!"
+	
+	para "Oh… I guess you"
+	line "don't say that"
+	cont "around here, huh?"
+	
+	para "Well anyway,"
+	line "my name is MINA."
+	
+	para "I'm a painter."
+	
+	para "I'm always on the"
+	line "lookout for my"
+	cont "next source of"
+	cont "inspiration!"
+	
+	para "I came here to"
+	line "paint this grove"
+	cont "and it's #MON."
+	
+	para "It's been fine"
+	line "and all, but I'm"
+	cont "missing my spark!"
+	
+	para "There's a rumor of"
+	line "a #MON with a"
+	cont "long, gooey tail"
+	cont "somewhere around"
+	cont "here."
+	
+	para "Now THAT gets me"
+	line "all inspired!"
+	
+	para "I saw something"
+	line "just up there,"
+	cont "but this rock was"
+	cont "in the way."
+	done
+
+Movement_Mina_Walk_Away:
+	step_up
+	step_up
+	step_up
+	step_up
+	step_up
+	step_end
+
+MinaRockSmash:
+	ld a, [wMapGroup]
+	cp GROUP_GLINT_GROVE_EAST
+	jr nz, .nope
+	ld a, [wMapNumber]
+	cp MAP_GLINT_GROVE_EAST
+	jr nz, .nope
+	ld a, [wYCoord]
+	cp $0c
+	jr nz, .nope
+	ld a, [wXCoord]
+	cp $08
+	jr nz, .nope
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+.nope
+	xor a
+	ld [wScriptVar], a
+	ret
+	
+MinaRockSmashGetMonName:
+	ld a, [wCurSpecies]
+	ld [wd265], a
+	call GetPokemonName
+	ret
 
 ;possibly undummy later
 ;	callasm RockMonEncounter

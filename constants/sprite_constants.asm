@@ -194,6 +194,7 @@
 	const SPRITE_TUBER
 	const SPRITE_SHAOLIN
 	const SPRITE_MASTER
+	const SPRITE_MINA
 
 	
 	const_def $ee

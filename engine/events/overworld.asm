@@ -2302,7 +2302,7 @@ MinaRockSmashText4:
 	
 	para "I'm always on the"
 	line "lookout for my"
-	cont "next source of"
+	cont "next spark of"
 	cont "inspiration!"
 	
 	para "I came here to"
@@ -2319,8 +2319,8 @@ MinaRockSmashText4:
 	cont "somewhere around"
 	cont "here."
 	
-	para "Now THAT gets me"
-	line "all inspired!"
+	para "THAT'S what gets"
+	line "me all inspired!"
 	
 	para "I saw something"
 	line "just up there,"

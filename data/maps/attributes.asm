@@ -119,10 +119,10 @@ ENDM
 	connection south, GlintCity, GLINT_CITY, -1
 	
 	map_attributes GlintGrove, GLINT_GROVE, $11, EAST
-	connection east, GlintGroveEast, GLINT_GROVE_EAST, 12
+	connection east, GlintGroveEast, GLINT_GROVE_EAST, 3
 	
 	map_attributes GlintGroveEast, GLINT_GROVE_EAST, $11, WEST
-	connection west, GlintGrove, GLINT_GROVE, -12
+	connection west, GlintGrove, GLINT_GROVE, -3
 	
 	map_attributes Route3, ROUTE_3, $d4, NORTH | SOUTH | WEST | EAST
 	connection north, Route3StarglowCavernTop, ROUTE_3_STARGLOW_CAVERN_TOP, 10

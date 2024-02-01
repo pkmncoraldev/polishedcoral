@@ -2332,6 +2332,9 @@ Movement_Mina_Walk_Away:
 	step_up
 	step_up
 	step_up
+	step_right
+	step_right
+	step_right
 	step_up
 	step_up
 	step_end
@@ -2344,7 +2347,7 @@ MinaRockSmash:
 	cp MAP_GLINT_GROVE_EAST
 	jr nz, .nope
 	ld a, [wYCoord]
-	cp $0c
+	cp $1d
 	jr nz, .nope
 	ld a, [wXCoord]
 	cp $08

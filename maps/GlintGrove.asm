@@ -244,12 +244,12 @@ GlintGrovePile3:
 	iftrue .end
 	special Special_StopRunning
 	disappear GLINTGROVE_PETALS
-	moveperson GLINTGROVE_PETALS, $20, $26
+	moveperson GLINTGROVE_PETALS, $1e, $26
 	appear GLINTGROVE_PETALS
 	refreshscreen
 	callasm MakePalPink
 	playsound SFX_POWDER
-	changeblock $20, $26, $2b
+	changeblock $1e, $26, $2b
 	reloadmappart
 	pause 3
 	disappear GLINTGROVE_PETALS
@@ -415,7 +415,7 @@ GlintGrovePiles:
 	jump .cont2
 	
 .GlintGrovePile3:
-	changeblock $20, $26, $2b
+	changeblock $1e, $26, $2b
 	jump .cont3
 	
 .GlintGrovePile4:

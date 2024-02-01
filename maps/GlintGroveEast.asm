@@ -4,16 +4,17 @@ GlintGroveEast_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 1 ; warp events
-	warp_def  5, 11, 1, GLINT_GROVE_DEEP
+	warp_def 11,  5, 1, GLINT_GROVE_DEEP
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 3 ; object events
-	person_event SPRITE_MINA, 13,  9, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveEastMina, EVENT_GLINT_GROVE_MINA_GONE
-	smashrock_event  9, 12
-	smashrock_event  9, 18
+	db 4 ; object events
+	person_event SPRITE_MINA, 30,  9, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveEastMina, EVENT_GLINT_GROVE_MINA_GONE
+	smashrock_event  9, 29
+	smashrock_event  8, 35
+	smashrock_event  9, 36
 	
 	const_def 1 ; object constants
 	const GLINT_GROVE_EAST_MINA

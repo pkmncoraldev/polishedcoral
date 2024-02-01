@@ -103,7 +103,7 @@ RockMons:
 	db -1
 	
 PetalMons:
-	db 50, VENIPEDE,	5
-	db 25, PIKACHU,		5
-	db 25, PIKACHU,		5
+	db 50, CHERUBI,		5
+	db 25, VENIPEDE,	5
+	db 25, CHERUBI,		5
 	db -1

@@ -136,8 +136,35 @@
 	db 5, PIKACHU		;4%
 	db 5, PIKACHU		;1%
 	
-	map_id GLINT_GROVE_DEEP
+	map_id GLINT_GROVE_EAST
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 8, CLEFAIRY		;30%
+	db 8, JIGGLYPUFF	;30%
+	db 8, SNUBBULL		;20%
+	db 8, CHERUBI		;10%
+	db 8, TOGEPI		;5%
+	db 8, TOGEPI		;4%
+	db 8, TOGETIC		;1%
+	; day
+	db 8, CLEFAIRY		;30%
+	db 8, JIGGLYPUFF	;30%
+	db 8, SNUBBULL		;20%
+	db 8, CHERUBI		;10%
+	db 8, TOGEPI		;5%
+	db 8, TOGEPI		;4%
+	db 8, TOGETIC		;1%
+	; nite
+	db 8, CLEFAIRY		;30%
+	db 8, JIGGLYPUFF	;30%
+	db 8, SNUBBULL		;20%
+	db 8, CHERUBI		;10%
+	db 8, TOGEPI		;5%
+	db 8, TOGEPI		;4%
+	db 8, TOGETIC		;1%
+	
+	map_id GLINT_GROVE_DEEP
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
 	db 10, SMEARGLE		;30%
 	db 10, SMEARGLE		;30%

@@ -57,6 +57,17 @@ CorsolaAnimationPointers:
 	dw CorsolaAnimation
 	dw Corsola_GAnimation
 	
+SmeargleAnimationPointers:
+	dw SmeargleAnimation
+	dw SmeargleAnimation
+	dw SmeargleAnimation
+	dw SmeargleAnimation
+	dw SmeargleAnimation
+	dw SmeargleAnimation
+	dw SmeargleAnimation
+	dw SmeargleAnimation
+	dw SmeargleAnimation
+	
 CherrimAnimationPointers:
 	dw CherrimAnimation
 	dw Cherrim_SAnimation

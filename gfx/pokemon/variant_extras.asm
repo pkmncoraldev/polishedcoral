@@ -37,6 +37,8 @@ Wooper_PAnimationExtra: INCLUDE "gfx/pokemon/wooper_p/anim1.asm"
 CorsolaAnimationExtra:  INCLUDE "gfx/pokemon/corsola/anim1.asm"
 Corsola_GAnimationExtra: INCLUDE "gfx/pokemon/corsola_g/anim1.asm"
 
+SmeargleAnimationExtra:  INCLUDE "gfx/pokemon/smeargle/anim1.asm"
+
 CherrimAnimationExtra:  INCLUDE "gfx/pokemon/cherrim/anim1.asm"
 Cherrim_SAnimationExtra: INCLUDE "gfx/pokemon/cherrim_s/anim1.asm"
 

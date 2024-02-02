@@ -148,7 +148,7 @@ BitmasksPointers:
 	dw DonphanBitmasks
 	dw Porygon2Bitmasks
 	dw StantlerBitmasks
-	dw SmeargleBitmasks
+	dw -1 ; see SmeargleBitmasksPointers
 	dw ElekidBitmasks
 	dw MagbyBitmasks
 	dw MiltankBitmasks

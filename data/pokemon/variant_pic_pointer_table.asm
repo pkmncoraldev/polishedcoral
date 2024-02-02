@@ -13,6 +13,7 @@ VariantPicPointerTable:
 	dbba GYARADOS, GyaradosPicPointers
 	dbba WOOPER, WooperPicPointers
 	dbba CORSOLA, CorsolaPicPointers
+	dbba SMEARGLE, SmearglePicPointers
 	dbba CHERRIM, CherrimPicPointers
 	dbba MIMIKYU, MimikyuPicPointers
 	dbba -1,       PicPointers

@@ -56,6 +56,17 @@ CorsolaFramesPointers:
 	dw CorsolaFrames
 	dw Corsola_GFrames
 	
+SmeargleFramesPointers:
+	dw SmeargleFrames
+	dw SmeargleFrames
+	dw SmeargleFrames
+	dw SmeargleFrames
+	dw SmeargleFrames
+	dw SmeargleFrames
+	dw SmeargleFrames
+	dw SmeargleFrames
+	dw SmeargleFrames
+	
 CherrimFramesPointers:
 	dw CherrimFrames
 	dw Cherrim_SFrames

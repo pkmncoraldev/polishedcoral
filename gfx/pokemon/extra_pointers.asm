@@ -148,7 +148,7 @@ AnimationExtraPointers:
 	dw DonphanAnimationExtra
 	dw Porygon2AnimationExtra
 	dw StantlerAnimationExtra
-	dw SmeargleAnimationExtra
+	dw -1 ; see SmeargleAnimationExtraPointers
 	dw ElekidAnimationExtra
 	dw MagbyAnimationExtra
 	dw MiltankAnimationExtra

@@ -297,8 +297,8 @@ PicPointers::
 	dba Porygon2Backpic
 	dba StantlerFrontpic
 	dba StantlerBackpic
-	dba SmeargleFrontpic
-	dba SmeargleBackpic
+	dbw -1, -1 ; see Smearglepic
+	dbw -1, -1 ; see Smearglepic
 	dba ElekidFrontpic
 	dba ElekidBackpic
 	dba MagbyFrontpic

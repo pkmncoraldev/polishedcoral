@@ -272,6 +272,18 @@ BUSTED_FORM EQU 2
 GEN_1_FORM_1 EQU 2
 GEN_1_FORM_2 EQU 3
 
+; smeargle
+	const_def 1
+	const RED_FORM
+	const ORANGE_FORM
+	const YELLOW_FORM
+	const GREEN_FORM
+	const BLUE_FORM
+	const INDIGO_FORM
+	const VIOLET_FORM
+	const PINK_FORM
+	const BLACK_FORM
+	
 ; unown
 	const_def 1
 	const UNOWN_A_FORM

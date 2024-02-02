@@ -86,6 +86,26 @@ CorsolaPicPointers::
 	dba Corsola_GFrontpic
 	dba Corsola_GBackpic
 	
+SmearglePicPointers::
+	dba SmeargleFrontpic
+	dba SmeargleBackpic
+	dba SmeargleFrontpic
+	dba SmeargleBackpic
+	dba SmeargleFrontpic
+	dba SmeargleBackpic
+	dba SmeargleFrontpic
+	dba SmeargleBackpic
+	dba SmeargleFrontpic
+	dba SmeargleBackpic
+	dba SmeargleFrontpic
+	dba SmeargleBackpic
+	dba SmeargleFrontpic
+	dba SmeargleBackpic
+	dba SmeargleFrontpic
+	dba SmeargleBackpic
+	dba SmeargleFrontpic
+	dba SmeargleBackpic
+	
 CherrimPicPointers::
 	dba CherrimFrontpic
 	dba CherrimBackpic

@@ -13,6 +13,7 @@ VariantSpeciesTable:
 	db GYARADOS
 	db WOOPER
 	db CORSOLA
+	db SMEARGLE
 	db CHERRIM
 	db MIMIKYU
 	db -1
@@ -32,6 +33,7 @@ VariantAnimPointerTable:
 	dbbww GYARADOS, BANK(GyaradosAnimations), GyaradosAnimationPointers, GyaradosAnimationExtraPointers
 	dbbww WOOPER, BANK(WooperAnimations), WooperAnimationPointers, WooperAnimationExtraPointers
 	dbbww CORSOLA, BANK(CorsolaAnimations), CorsolaAnimationPointers, CorsolaAnimationExtraPointers
+	dbbww SMEARGLE, BANK(SmeargleAnimations), SmeargleAnimationPointers, SmeargleAnimationExtraPointers
 	dbbww CHERRIM, BANK(CherrimAnimations), CherrimAnimationPointers, CherrimAnimationExtraPointers
 	dbbww MIMIKYU, BANK(MimikyuAnimations), MimikyuAnimationPointers, MimikyuAnimationExtraPointers
 	dbbww -1, BANK(PicAnimations), AnimationPointers, AnimationExtraPointers
@@ -51,6 +53,7 @@ VariantFramesPointerTable:
 	dbbba GYARADOS, BANK(GyaradossFrames), GyaradosFramesPointers
 	dbbba WOOPER, BANK(WoopersFrames), WooperFramesPointers
 	dbbba CORSOLA, BANK(CorsolasFrames), CorsolaFramesPointers
+	dbbba SMEARGLE, BANK(SmearglesFrames), SmeargleFramesPointers
 	dbbba CHERRIM, BANK(CherrimsFrames), CherrimFramesPointers
 	dbbba MIMIKYU, BANK(MimikyusFrames), MimikyuFramesPointers
 	dbbba -1, BANK(PokemonFrames), FramesPointers
@@ -70,6 +73,7 @@ VariantBitmasksPointerTable:
 	dbba GYARADOS, GyaradosBitmasksPointers
 	dbba WOOPER, WooperBitmasksPointers
 	dbba CORSOLA, CorsolaBitmasksPointers
+	dbba SMEARGLE, SmeargleBitmasksPointers
 	dbba CHERRIM, CherrimBitmasksPointers
 	dbba MIMIKYU, MimikyuBitmasksPointers
 	dbba -1, BitmasksPointers

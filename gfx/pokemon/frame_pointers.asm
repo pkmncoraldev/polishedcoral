@@ -148,7 +148,7 @@ FramesPointers:
 	dw DonphanFrames
 	dw Porygon2Frames
 	dw StantlerFrames
-	dw SmeargleFrames
+	dw -1 ; see SmeargleFramesPointers
 	dw ElekidFrames
 	dw MagbyFrames
 	dw MiltankFrames

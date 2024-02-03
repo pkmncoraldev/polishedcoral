@@ -92,4 +92,5 @@ TrainerGroups: ; 0x39999
 	dba FeliciaGroup
 	dba VioletGroup
 	dba CloverGroup
+	dba MinaGroup
 	dba TowerTycoonGroup

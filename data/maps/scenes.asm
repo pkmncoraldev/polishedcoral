@@ -18,6 +18,7 @@ MapTriggers::
 	scene_var GLINT_GROVE_ENTRANCE,					  wGlintGroveEntranceTrigger
 	scene_var GLINT_GROVE,							  wGlintGroveTrigger
 	scene_var GLINT_GROVE_EAST,						  wGlintGroveTrigger
+	scene_var GLINT_GROVE_DEEP,						  wGlintGroveEntranceTrigger
 	scene_var GLINT_APARTMENT_LEFT_2F,				  wGlintApartmentLeft2FTrigger
 	scene_var GLINT_GYM,							  wGlintGymTrigger
 	scene_var STARGLOW_CAVERN_1F,					  wStarglowCavern1FTrigger

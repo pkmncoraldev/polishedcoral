@@ -1383,6 +1383,11 @@ LoadMapPals::
 	ld a, [wMapGroup]
 	cp GROUP_CONNECTING_CAVERN
 	jp z, .starglow
+	cp GROUP_DAYBREAK_GROTTO_1
+	jr nz, .rocks
+	ld a, [wMapNumber]
+	cp MAP_GLINT_GROVE_DEEP
+	jp z, .coffee
 .rocks
 	ld hl, MapObjectPalsRocks
 .rockscont

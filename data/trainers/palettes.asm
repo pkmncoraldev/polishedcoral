@@ -93,6 +93,7 @@ PoppyPalette:			 INCLUDE "gfx/trainers/poppy.pal"
 FeliciaPalette:			 INCLUDE "gfx/trainers/felicia.pal"
 VioletPalette:			 INCLUDE "gfx/trainers/violet.pal"
 CloverPalette:			 INCLUDE "gfx/trainers/clover.pal"
+MinaPalette:			 INCLUDE "gfx/trainers/mina.pal"
 TowerTycoonPalette:
 
 

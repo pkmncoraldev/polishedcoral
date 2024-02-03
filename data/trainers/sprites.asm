@@ -90,4 +90,5 @@ BTTrainerClassSprites:
 	db SPRITE_PIGTAILS	    ; Felicia
 	db SPRITE_PIGTAILS	    ; Violet
 	db SPRITE_PIGTAILS	    ; Clover
+	db SPRITE_MINA			; Mina
 	db SPRITE_GOLD_NPC      ; TOWERTYCOON

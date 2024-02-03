@@ -164,7 +164,7 @@
 	db 8, TOGETIC		;1%
 	
 	map_id GLINT_GROVE_DEEP
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 8 percent, 8 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
 	db 10, SMEARGLE		;30%
 	db 10, SMEARGLE		;30%

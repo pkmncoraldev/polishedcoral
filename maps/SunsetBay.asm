@@ -321,7 +321,7 @@ SunsetSailboatText:
 	done
 	
 SunsetSailboat2Text:
-	text "CAP'N STRAND'S"
+	text "CAP'N STRAND's"
 	line "sailboat."
 	
 	para "It's seen a lot of"
@@ -334,7 +334,7 @@ SunsetNPC1Text:
 	done
 	
 PlayersHouseSignText:
-	text "<PLAYER>'S HOUSE"
+	text "<PLAYER>'s HOUSE"
 	done
 
 SunsetCafeSignText:

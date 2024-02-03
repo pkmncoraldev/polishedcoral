@@ -1328,7 +1328,9 @@ ShowEmoteScript:
 	applymovement2 .Show
 	pause 0
 	applymovement2 .Hide
-	callasm CheckMakePal
+	refreshscreen
+	closetext
+;	callasm CheckMakePal
 	end
 
 .Show:
@@ -1389,45 +1391,13 @@ MakePalGray::
 	RGB 22, 10, 22
 	RGB 07, 07, 07
 
-CheckMakePal::
-	ld a, [wTileset]
-	cp TILESET_SNOW
-	jp z, MakePalSnow
-	cp TILESET_RANCH
-	jp z, MakePalRanchGreen
-	cp TILESET_DESERT
-	jp z, MakePalDesert
-	cp TILESET_AUTUMN
-	jp z, MakePalAutumn
-;fallthrough
 MakePalGreen::
 	ld hl, StandardGrassPalette
-	jp MakePalFinished
-	
-MakePalRanchGreen::
-	ld hl, RanchGrassPalette
 	jp MakePalFinished
 	
 MakePalPink::
 	ld hl, PinkGrassPalette
 	jp MakePalFinished
-	
-MakePalSnow::
-	eventflagcheck EVENT_SNOWSTORM_HAPPENING
-	jr nz, MakePalSnowstorm
-	ld hl, SnowGrassPalette
-	jp MakePalFinished
-	
-MakePalSnowstorm:
-	ld hl, SnowstormGrassPalette
-	jr MakePalFinished	
-
-MakePalDesert:
-	ld hl, DesertGrassPalette
-	jr MakePalFinished
-	
-MakePalAutumn:
-	ld hl, AutumnGrassPalette
 ;fallthru
 MakePalFinished:
 	ld a, [wTimeOfDayPal]

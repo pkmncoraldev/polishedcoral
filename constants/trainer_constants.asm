@@ -627,6 +627,8 @@ PLAYER_F EQU __enum__
 	trainerclass VIOLET
 	
 	trainerclass CLOVER
+	
+	trainerclass MINA
 
 	trainerclass TOWERTYCOON ; 1
 

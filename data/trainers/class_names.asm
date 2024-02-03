@@ -90,5 +90,6 @@ TrainerClassNames::
 	db "PIGTAILS@"		   ; FELICIA
 	db "PIGTAILS@"		   ; VIOLET
 	db "PIGTAILS@"		   ; CLOVER
+	db "PAINTER@"		   ; MINA
 	db "TYCOON@"		   ; TOWERTYCOON
 	

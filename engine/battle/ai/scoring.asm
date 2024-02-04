@@ -402,7 +402,7 @@ AI_Smart: ; 386be
 	dbw EFFECT_ROOST,             AI_Smart_Roost
 	dbw EFFECT_FALSE_SWIPE,		  AI_Smart_FalseSwipe
 	dbw EFFECT_FOCUS_ENERGY,	  AI_Smart_FocusEnergy
-	dbw EFFECT_STUN_SPORE,        AI_Smart_Paralyze
+	dbw EFFECT_STUN_SPORE,        AI_Smart_StunSpore
 	dbw EFFECT_SLEEP_POWDER,      AI_Smart_Sleep
 	dbw EFFECT_SURF,			  AI_Smart_Surf
 	db $ff
@@ -1099,7 +1099,13 @@ AI_Smart_SuperFang: ; 38b20
 ; 38b26
 
 
-AI_Smart_Paralyze: ; 38b26
+AI_Smart_Paralyze:
+	call CheckIfTargetIsGroundType
+	jr z, AI_Smart_StunSpore.dont
+
+AI_Smart_StunSpore: ; 38b26
+	call CheckIfTargetIsElectricType
+	jr z, .dont
 
 ; 50% chance to discourage this move if player's HP is below 25%.
 	call AICheckPlayerQuarterHP
@@ -1122,7 +1128,12 @@ AI_Smart_Paralyze: ; 38b26
 	ret c
 	inc [hl]
 	ret
-; 38b40
+
+.dont
+	ld a, [hl]
+	add $20
+	ld [hl], a
+	ret
 
 
 AI_Smart_SpeedDownHit: ; 38b40

@@ -2263,6 +2263,8 @@ AutoRockSmashScript:
 	applymovement 1, Movement_Mina_Walk_Away
 	disappear 1
 	setevent EVENT_GLINT_GROVE_MINA_GONE
+	setevent EVENT_TALKED_TO_MINA_ONCE
+	domaptrigger GLINT_GROVE_ENTRANCE, $2
 .end
 	end
 	

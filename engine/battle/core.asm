@@ -7443,6 +7443,8 @@ WildSpeciesForms:
 	dbw EXEGGCUTE,	.ExeggcuteForm
 	dbw EXEGGUTOR,	.ExeggcuteForm
 	dbw GYARADOS,	.PidgeyForm
+	dbw WOOPER,		.WooperForm
+	dbw GRIMER,		.GrimerForm
 	dbw 0,			.Default
 
 .CheckGen1: ; used for mons that have an alt for in addition to a gen 1 form
@@ -7466,7 +7468,25 @@ WildSpeciesForms:
 	ret nz
 	ld a, 3 ; raichu gen 1 form
 	ret
+.GrimerForm
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_SEWERS_MUK_ROOM
+	jr z, .a_muk_room
+	jr .normal_sewer
+.a_muk_room
+	call Random
+	cp 80 percent + 1
+	jr nc, .Default
+	jr .AlolanForm
+.normal_sewer
+	call Random
+	cp 20 percent + 1
+	jr nc, .Default
+	jr .AlolanForm
 
+.WooperForm
+	ld hl, WooperLandmarks
+	jr .LandmarkForm
 .PidgeyForm
 	ld hl, FakeRoute1Landmarks
 	jr .LandmarkForm
@@ -7481,8 +7501,14 @@ WildSpeciesForms:
 	ld de, 1
 	call IsInArray
 	jr nc, .CheckGen1
+.AlolanForm:
 	ld a, ALOLAN_FORM ; most alt forms
 	ret
+
+WooperLandmarks:
+	db ROUTE_11
+	db ROUTE_12
+	db -1
 
 MeowthLandmarks:
 	db RESIDENTIAL_DISTRICT

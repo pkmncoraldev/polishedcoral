@@ -56,7 +56,7 @@
 	db 3, LEDYBA		;1%
 	
 	map_id DAYBREAK_GROTTO_1
-	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
 	db 4, CUBONE		;30%
 	db 4, GEODUDE		;30%
@@ -137,7 +137,7 @@
 	db 5, PIKACHU		;1%
 	
 	map_id GLINT_GROVE_EAST
-	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
 	db 8, CLEFAIRY		;30%
 	db 8, JIGGLYPUFF	;30%
@@ -164,7 +164,7 @@
 	db 8, TOGETIC		;1%
 	
 	map_id GLINT_GROVE_DEEP
-	db 8 percent, 8 percent, 8 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 10, SMEARGLE		;30%
 	db 10, SMEARGLE		;30%
@@ -1170,24 +1170,24 @@
 	db 27, MURKROW		;20%
 	db 27, PIDGEOTTO	;10%
 	db 27, PIDGEOTTO	;5%
-	db 27, HOUNDOUR		;4%
-	db 28, HOUNDOUR		;1%
+	db 27, GROWLITHE	;4%
+	db 28, GROWLITHE	;1%
 	; day
 	db 27, MILTANK		;30%
 	db 27, TAUROS		;30%
 	db 27, MURKROW		;20%
 	db 27, PIDGEOTTO	;10%
 	db 27, PIDGEOTTO	;5%
-	db 27, HOUNDOUR		;4%
-	db 28, HOUNDOUR		;1%
+	db 27, GROWLITHE	;4%
+	db 28, GROWLITHE	;1%
 	; nite
 	db 27, MILTANK		;30%
 	db 27, TAUROS		;30%
 	db 27, MURKROW		;20%
 	db 27, PIDGEOTTO	;10%
 	db 27, PIDGEOTTO	;5%
-	db 27, HOUNDOUR		;4%
-	db 28, HOUNDOUR		;1%
+	db 27, GROWLITHE	;4%
+	db 28, GROWLITHE	;1%
 	
 	map_id ROUTE_9 ; used on Route 9 when EVENT_ON_DODRIO_RANCH is not set
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
@@ -1196,7 +1196,7 @@
 	db 20, MURKROW		;30%
 	db 20, FLAAFFY		;20%
 	db 20, FLAAFFY		;10%
-	db 20, HOUNDOUR		;5%
+	db 20, GROWLITHE	;5%
 	db 20, DODUO		;4%
 	db 20, DODUO		;1%
 	; day
@@ -1204,7 +1204,7 @@
 	db 20, MURKROW		;30%
 	db 20, FLAAFFY		;20%
 	db 20, FLAAFFY		;10%
-	db 20, HOUNDOUR		;5%
+	db 20, GROWLITHE	;5%
 	db 20, DODUO		;4%
 	db 20, DODUO		;1%
 	; nite
@@ -1212,7 +1212,7 @@
 	db 20, MURKROW		;30%
 	db 20, FLAAFFY		;20%
 	db 20, FLAAFFY		;10%
-	db 20, HOUNDOUR		;5%
+	db 20, GROWLITHE	;5%
 	db 20, DODUO		;4%
 	db 20, DODUO		;1%
 	
@@ -1224,24 +1224,24 @@
 	db 20, MURKROW		;30%
 	db 20, PIDGEOTTO	;20%
 	db 20, PIDGEOTTO	;10%
-	db 20, HOUNDOUR		;5%
-	db 20, HOUNDOUR		;4%
+	db 20, GROWLITHE	;5%
+	db 20, GROWLITHE	;4%
 	db 28, DODRIO		;1%
 	; day
 	db 20, DODUO		;30%
 	db 20, MURKROW		;30%
 	db 20, PIDGEOTTO	;20%
 	db 20, PIDGEOTTO	;10%
-	db 20, HOUNDOUR		;5%
-	db 20, HOUNDOUR		;4%
+	db 20, GROWLITHE	;5%
+	db 20, GROWLITHE	;4%
 	db 28, DODRIO		;1%
 	; nite
 	db 20, DODUO		;30%
 	db 20, MURKROW		;30%
 	db 20, PIDGEOTTO	;20%
 	db 20, PIDGEOTTO	;10%
-	db 20, HOUNDOUR		;5%
-	db 20, HOUNDOUR		;4%
+	db 20, GROWLITHE	;5%
+	db 20, GROWLITHE	;4%
 	db 28, DODRIO		;1%
 	
 	map_id FLICKER_PASS_OUTSIDE
@@ -1249,24 +1249,24 @@
 	; morn
 	db 23, FLAAFFY		;30%
 	db 23, MURKROW		;30%
-	db 23, HOUNDOUR		;20%
-	db 24, SKARMORY		;10%
+	db 23, GROWLITHE	;20%
+	db 24, PIDGEOTTO	;10%
 	db 23, MURKROW		;5%
 	db 24, SKARMORY		;4%
 	db 24, SKARMORY		;1%
 	; day
 	db 23, FLAAFFY		;30%
 	db 23, MURKROW		;30%
-	db 23, HOUNDOUR		;20%
-	db 24, SKARMORY		;10%
+	db 23, GROWLITHE	;20%
+	db 24, PIDGEOTTO	;10%
 	db 23, MURKROW		;5%
 	db 24, SKARMORY		;4%
 	db 24, SKARMORY		;1%
 	; nite
 	db 23, FLAAFFY		;30%
 	db 23, MURKROW		;30%
-	db 23, HOUNDOUR		;20%
-	db 24, SKARMORY		;10%
+	db 23, GROWLITHE	;20%
+	db 24, PIDGEOTTO	;10%
 	db 23, MURKROW		;5%
 	db 24, SKARMORY		;4%
 	db 24, SKARMORY		;1%
@@ -1545,26 +1545,26 @@
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 28, MINCCINO		;30%
-	db 28, GLOOM		;30%
+	db 28, WOOPER		;30%
 	db 28, PIDGEOTTO	;20%
 	db 28, BUNEARY		;10%
-	db 28, ODDISH		;5%
+	db 28, BUNEARY		;5%
 	db 28, CHANSEY		;4%
 	db 28, CHANSEY		;1%
 	; day
 	db 28, MINCCINO		;30%
-	db 28, GLOOM		;30%
+	db 28, WOOPER		;30%
 	db 28, PIDGEOTTO	;20%
 	db 28, BUNEARY		;10%
-	db 28, ODDISH		;5%
+	db 28, BUNEARY		;5%
 	db 28, CHANSEY		;4%
 	db 28, CHANSEY		;1%
 	; nite
 	db 28, MINCCINO		;30%
-	db 28, GLOOM		;30%
+	db 28, WOOPER		;30%
 	db 28, PIDGEOTTO	;20%
 	db 28, BUNEARY		;10%
-	db 28, ODDISH		;5%
+	db 28, BUNEARY		;5%
 	db 28, CHANSEY		;4%
 	db 28, CHANSEY		;1%
 	

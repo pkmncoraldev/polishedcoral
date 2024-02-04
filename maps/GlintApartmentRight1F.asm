@@ -15,7 +15,7 @@ GlintApartmentRight1F_MapScriptHeader:
 	db 3 ; object events
 	person_event SPRITE_POKEFAN_M, 3, 4, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintApt21FNpc1, -1
 	person_event SPRITE_MATRON, 3, 1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintApt21FNpc2, -1
-	person_event SPRITE_CHILD, 4, 6, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GlintApt21FNpc3, -1
+	person_event SPRITE_SUPER_NERD, 4, 6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GlintApt21FNpc3, -1
 
 	const_def 1 ; object constants
 	const GLINT_APT21F_NPC1
@@ -29,7 +29,11 @@ GlintApt21FNpc2:
 	jumptextfaceplayer GlintApt21FNpc2Text
 	
 GlintApt21FNpc3:
-	jumptextfaceplayer GlintApt21FNpc3Text
+	checkevent EVENT_GLINT_DEEP_MINA_GONE
+	iftrue .mina_gone
+	jumptextfaceplayer GlintApt21FNpc3Text1
+.mina_gone
+	jumptextfaceplayer GlintApt21FNpc3Text2
 	
 GlintApt21FNpc1Text:
 	text "#MON can hold"
@@ -52,9 +56,29 @@ GlintApt21FNpc2Text:
 	cont "them."
 	done
 	
-GlintApt21FNpc3Text:
-	text "Blue and pink "
-	line "makes purple!"
+GlintApt21FNpc3Text1:
+	text "There's a painter"
+	line "girl from overseas"
+	cont "staying upstairs."
 	
-	para "Is that right?"
+	para "She's never around,"
+	line "though."
+	
+	para "She always goes"
+	line "off to the grove"
+	cont "to paint."
 	done
+	
+GlintApt21FNpc3Text2:
+	text "That painter chick"
+	line "that was staying"
+	cont "upstairs is gone…"
+	
+	para "“MINA” I think it"
+	line "was."
+	
+	para "She said something"
+	line "about heading to"
+	cont "the big city."
+	done
+	

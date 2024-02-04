@@ -12,7 +12,7 @@ GlintApartmentLeft2F_MapScriptHeader:
 	db 0 ; bg events
 
 	db 2 ; object events
-	person_event SPRITE_ROCKER, 5, 2, SPRITEMOVEDATA_STANDING_UP, 0, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintApt12FNpc1, -1
+	person_event SPRITE_COOL_DUDE, 5, 2, SPRITEMOVEDATA_STANDING_UP, 0, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintApt12FNpc1, -1
 	person_event SPRITE_POKEFAN_F, 6, 5, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintApt12FNpc2, -1
 
 	const_def 1 ; object constants

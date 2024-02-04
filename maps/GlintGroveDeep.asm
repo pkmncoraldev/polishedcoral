@@ -248,6 +248,9 @@ GlintGroveDeepMinaText6:
 	para "I'm all fired up!"
 	line "I got that spark!"
 	
+	para "Do you feel it,"
+	line "<PLAYER>?"
+	
 	para "Let's battle!"
 	
 	para "Right here,"

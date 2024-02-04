@@ -194,15 +194,16 @@ GlintGrovePile1:
 	iftrue .end
 	special Special_StopRunning
 	disappear GLINTGROVE_PETALS
-	moveperson GLINTGROVE_PETALS, $18, $2c
-	appear GLINTGROVE_PETALS
 	refreshscreen
 	callasm MakePalPink
+	moveperson GLINTGROVE_PETALS, $18, $2c
+	appear GLINTGROVE_PETALS
 	playsound SFX_POWDER
 	changeblock $18, $2c, $2b
 	reloadmappart
 	pause 3
 	disappear GLINTGROVE_PETALS
+	opentext
 	setflag ENGINE_GLINT_GROVE_PILE_1
 	checkevent EVENT_GOT_PETAL_PILE_1
 	iffalse GlintGroveFirstPile
@@ -219,15 +220,16 @@ GlintGrovePile2:
 	iftrue .end
 	special Special_StopRunning
 	disappear GLINTGROVE_PETALS
-	moveperson GLINTGROVE_PETALS, $9, $26
-	appear GLINTGROVE_PETALS
 	refreshscreen
 	callasm MakePalPink
+	moveperson GLINTGROVE_PETALS, $9, $26
+	appear GLINTGROVE_PETALS
 	playsound SFX_POWDER
 	changeblock $8, $26, $2b
 	reloadmappart
 	pause 3
 	disappear GLINTGROVE_PETALS
+	opentext
 	setflag ENGINE_GLINT_GROVE_PILE_2
 	checkevent EVENT_GOT_PETAL_PILE_1
 	iffalse GlintGroveFirstPile
@@ -244,15 +246,16 @@ GlintGrovePile3:
 	iftrue .end
 	special Special_StopRunning
 	disappear GLINTGROVE_PETALS
-	moveperson GLINTGROVE_PETALS, $1e, $26
-	appear GLINTGROVE_PETALS
 	refreshscreen
 	callasm MakePalPink
+	moveperson GLINTGROVE_PETALS, $1e, $26
+	appear GLINTGROVE_PETALS
 	playsound SFX_POWDER
 	changeblock $1e, $26, $2b
 	reloadmappart
 	pause 3
 	disappear GLINTGROVE_PETALS
+	opentext
 	verbosegiveitem FLOWER_PETAL
 	closetext
 	setflag ENGINE_GLINT_GROVE_PILE_3
@@ -269,15 +272,16 @@ GlintGrovePile4:
 	iftrue .end
 	special Special_StopRunning
 	disappear GLINTGROVE_PETALS
-	moveperson GLINTGROVE_PETALS, $11, $1a
-	appear GLINTGROVE_PETALS
 	refreshscreen
 	callasm MakePalPink
+	moveperson GLINTGROVE_PETALS, $11, $1a
+	appear GLINTGROVE_PETALS
 	playsound SFX_POWDER
 	changeblock $10, $1a, $2b
 	reloadmappart
 	pause 3
 	disappear GLINTGROVE_PETALS
+	opentext
 	setflag ENGINE_GLINT_GROVE_PILE_4
 	checkevent EVENT_GOT_PETAL_PILE_1
 	iffalse GlintGroveFirstPile
@@ -294,15 +298,16 @@ GlintGrovePile5:
 	iftrue .end
 	special Special_StopRunning
 	disappear GLINTGROVE_PETALS
-	moveperson GLINTGROVE_PETALS, $1a, $16
-	appear GLINTGROVE_PETALS
 	refreshscreen
 	callasm MakePalPink
+	moveperson GLINTGROVE_PETALS, $1a, $16
+	appear GLINTGROVE_PETALS
 	playsound SFX_POWDER
 	changeblock $1a, $16, $2b
 	reloadmappart
 	pause 3
 	disappear GLINTGROVE_PETALS
+	opentext
 	verbosegiveitem FLOWER_PETAL
 	closetext
 	setflag ENGINE_GLINT_GROVE_PILE_5
@@ -319,15 +324,16 @@ GlintGrovePile6:
 	iftrue .end
 	special Special_StopRunning
 	disappear GLINTGROVE_PETALS
-	moveperson GLINTGROVE_PETALS, $c, $2e
-	appear GLINTGROVE_PETALS
 	refreshscreen
 	callasm MakePalPink
+	moveperson GLINTGROVE_PETALS, $c, $2e
+	appear GLINTGROVE_PETALS
 	playsound SFX_POWDER
 	changeblock $c, $2e, $2b
 	reloadmappart
 	pause 3
 	disappear GLINTGROVE_PETALS
+	opentext
 	setflag ENGINE_GLINT_GROVE_PILE_6
 	checkevent EVENT_GOT_PETAL_PILE_1
 	iffalse GlintGroveFirstPile
@@ -344,15 +350,16 @@ GlintGrovePile7:
 	iftrue .end
 	special Special_StopRunning
 	disappear GLINTGROVE_PETALS
-	moveperson GLINTGROVE_PETALS, $1d, $8
-	appear GLINTGROVE_PETALS
 	refreshscreen
 	callasm MakePalPink
+	moveperson GLINTGROVE_PETALS, $1d, $8
+	appear GLINTGROVE_PETALS
 	playsound SFX_POWDER
 	changeblock $1c, $8, $2b
 	reloadmappart
 	pause 3
 	disappear GLINTGROVE_PETALS
+	opentext
 	setflag ENGINE_GLINT_GROVE_PILE_7
 	checkevent EVENT_GOT_PETAL_PILE_1
 	iffalse GlintGroveFirstPile

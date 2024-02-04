@@ -392,6 +392,7 @@ GlintGroveSecondPile2:
 	end
 	
 GlintGrovePiles:
+	setevent EVENT_GLINT_GROVE_EAST_ROCKS_BROWN
 	checkflag ENGINE_GLINT_GROVE_PILE_1
 	iftrue .GlintGrovePile1
 .cont1

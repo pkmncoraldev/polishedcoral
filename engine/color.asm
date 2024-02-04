@@ -969,6 +969,8 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_GLINT_GROVE_EAST
 	jp nz, .normal
+	eventflagcheck EVENT_GLINT_GROVE_EAST_ROCKS_BROWN
+	jp z, .normal
 	jp .rocks
 .bar
 	ld a, [wPlayerPalette]

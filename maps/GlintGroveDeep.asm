@@ -1,7 +1,8 @@
 GlintGroveDeep_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, GlintGroveDeepCallback
 
 	db 7 ; warp events
 	warp_def 33,  7, 1, GLINT_GROVE_EAST
@@ -35,6 +36,10 @@ GlintGroveDeep_MapScriptHeader:
 	const GLINTSECRET_MINA
 	const GLINTSECRET_PAINTING
 	const GLINTSECRET_EASEL
+	
+GlintGroveDeepCallback:
+	clearevent EVENT_GLINT_GROVE_EAST_ROCKS_BROWN
+	return
 	
 Movement_GlintSmeargleLeave1:
 	fast_jump_step_left

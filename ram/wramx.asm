@@ -986,6 +986,7 @@ wRoute1GateTrigger:: ds 1
 wDaybreakVillageTrigger:: ds 1
 wGlintGroveEntranceTrigger:: ds 1
 wGlintGroveTrigger:: ds 1
+wGlintGroveEastTrigger:: ds 1
 wGlintApartmentLeft2FTrigger:: ds 1
 wGlintGymTrigger:: ds 1
 wStarglowCavern1FTrigger:: ds 1
@@ -1061,7 +1062,7 @@ wRoute14_15UnderwaterTrigger:: ds 1
 wRoute23Trigger:: ds 1
 wKomoreCommunityCenterTrigger:: ds 1
 wRoute24Trigger:: ds 1
-ds 29
+ds 28
 
 wAmpharosFood:: ds 1
 

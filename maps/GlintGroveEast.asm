@@ -6,7 +6,17 @@ GlintGroveEast_MapScriptHeader:
 	db 1 ; warp events
 	warp_def 13,  6, 1, GLINT_GROVE_DEEP
 
-	db 0 ; coord events
+	db 10 ; coord events
+	coord_event 12, 22, 0, GlintGroveEastMakeSilverBrown
+	coord_event 13, 22, 0, GlintGroveEastMakeSilverBrown
+	coord_event  8, 22, 0, GlintGroveEastMakeSilverBrown
+	coord_event  9, 22, 0, GlintGroveEastMakeSilverBrown
+	coord_event  8, 23, 0, GlintGroveEastMakeSilverBrown
+	coord_event  9, 23, 0, GlintGroveEastMakeSilverBrown
+	coord_event 14, 17, 1, GlintGroveEastMakeSilverGreen
+	coord_event 15, 17, 1, GlintGroveEastMakeSilverGreen
+	coord_event  8, 19, 1, GlintGroveEastMakeSilverGreen
+	coord_event  9, 19, 1, GlintGroveEastMakeSilverGreen
 
 	db 0 ; bg events
 
@@ -20,6 +30,18 @@ GlintGroveEast_MapScriptHeader:
 	
 	const_def 1 ; object constants
 	const GLINT_GROVE_EAST_MINA
+	
+GlintGroveEastMakeSilverBrown:
+	setevent EVENT_GLINT_GROVE_EAST_ROCKS_BROWN
+	special Special_UpdatePalsInstant
+	dotrigger $1
+	end
+	
+GlintGroveEastMakeSilverGreen:
+	clearevent EVENT_GLINT_GROVE_EAST_ROCKS_BROWN
+	special Special_UpdatePalsInstant
+	dotrigger $0
+	end
 	
 GlintGroveEastMina:
 	faceplayer

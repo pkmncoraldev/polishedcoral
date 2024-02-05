@@ -237,23 +237,43 @@ UnknownText_0x1bc546::
 	line "up."
 	prompt
 
+UnknownText_PokeballPoster::
+	text "It's a poster of a"
+	line "#BALL."
+	done
+
 UnknownText_0x1bc55d::
-	text "It's the Town Map."
+	text "It's the TOWN MAP."
 	done
 
 UnknownText_0x1bc570::
 	text "It's a poster of a"
-	line "cute Pikachu."
+	line "cute PIKACHU."
 	done
 
 UnknownText_0x1bc591::
 	text "It's a poster of a"
-	line "cute Clefairy."
+	line "cute CLEFAIRY."
+	done
+
+UnknownText_Jigglypuff::
+	text "It's a poster of a"
+	line "cute JIGGLYPUFF."
+	done
+	
+UnknownText_Eevee::
+	text "It's a poster of a"
+	line "cute EEVEE."
 	done
 
 UnknownText_0x1bc5b3::
 	text "It's a poster of a"
-	line "cute Spearow."
+	line "cute MARILL."
+	done
+	
+UnknownText_MinaPainting::
+	text "It's a picture"
+	line "painted by MINA."
 	done
 
 UnknownText_0x1bc5d7::

@@ -33,6 +33,9 @@ const_value = 1
 	const YELLOW_CARPET
 	const GREEN_CARPET
 	const CHECKER_CARPET
+	const POKEBALL_POSTER
+	const TOWN_MAP
+	const MINAS_PAINTING
 
 const_value = 1
 	const SET_UP_BED
@@ -81,9 +84,14 @@ __enum__ = 0
 	deco  SPIKEYPLANT
 
 	const POSTERS
+	deco  POKEBALL_POSTER
 	deco  PIKACHU_POSTER
 	deco  CLEFAIRY_POSTER
 	deco  JIGGLYPUFF_POSTER
+	deco  EEVEE_POSTER
+	deco  MARILL_POSTER
+	deco  TOWN_MAP
+	deco  MINAS_PAINTING
 
 	const CONSOLES
 	deco  SNES

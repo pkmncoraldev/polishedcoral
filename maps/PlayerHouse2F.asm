@@ -29,11 +29,12 @@ PlayerHouse2F_MapScriptHeader:
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
 
-	db 24 ; bg events
+	db 25 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
 	bg_event  5,  1, SIGNPOST_READ, PlayerHouseRadio
 	bg_event -1, -1, SIGNPOST_READ, PlayerHouseBookshelf
 	bg_event  7,  1, SIGNPOST_READ, PlayerHouseCloset
+	bg_event  8,  0, SIGNPOST_IFSET, PlayersHousePoster
 ;	powergap
 	bg_event  2, 10, SIGNPOST_READ, PlayerHouseDebugPoster2
 	bg_event  4, 10, SIGNPOST_JUMPTEXT, PlayerHouseSunset
@@ -56,22 +57,35 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event  6, 18, SIGNPOST_JUMPTEXT, PlayerHouseCrossroads
 	bg_event  8, 18, SIGNPOST_JUMPTEXT, PlayerHouseKomore
 
-	db 5 ; object events
-	object_event -5, -5, SPRITE_SNES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GameConsole, -1
+	db 6 ; object events
+	object_event -5, -5, SPRITE_SNES, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event -5, -5, SPRITE_VALVE_1, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  6,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_KRISS_HOUSE_2F_CONSOLE
-	object_event  6,  4, SPRITE_DOLL_1, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_KRISS_HOUSE_2F_DOLL_1
-	object_event  7,  4, SPRITE_DOLL_2, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_KRISS_HOUSE_2F_DOLL_2
-	object_event  2,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_KRISS_HOUSE_2F_BIG_DOLL
-;	object_event  3,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_KRISS_HOUSE_2F_BIG_DOLL
-;	object_event  2,  2, SPRITE_BIG_DOLL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_KRISS_HOUSE_2F_BIG_DOLL
-;	object_event  3,  2, SPRITE_BIG_DOLL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_KRISS_HOUSE_2F_BIG_DOLL
+	object_event  6,  4, SPRITE_DOLL_1, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, Doll1, EVENT_KRISS_HOUSE_2F_DOLL_1
+	object_event  8,  0, SPRITE_DOLL_2, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, Doll2, EVENT_KRISS_HOUSE_2F_DOLL_2
+	object_event  2,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, BigDoll, EVENT_KRISS_HOUSE_2F_BIG_DOLL
+	
 
 	const_def 1 ; object constants
-	const PLAYERHOUSE2F_SNES_BUTTONS
+	const PLAYERHOUSE2F_FRAME_1
+	const PLAYERHOUSE2F_FRAME_2
 	const PLAYERHOUSE2F_CONSOLE
 	const PLAYERHOUSE2F_DOLL_1
 	const PLAYERHOUSE2F_DOLL_2
 	const PLAYERHOUSE2F_BIG_DOLL
+	
+PlayersHousePoster:
+	dw EVENT_KRISS_ROOM_POSTER
+	describedecoration 0
+	
+Doll1:
+	describedecoration 1
+
+Doll2:
+	describedecoration 2
+
+BigDoll:
+	describedecoration 3
 	
 PlayerHouseDebugPoster2:
 	opentext
@@ -700,33 +714,42 @@ PlayerHouse2FInitializeRoom:
 
 PlayerHouse2FSetSpawn:
 	special ToggleMaptileDecorations
+	callasm PlayerHouseCheckPosterAsm
+	ifnotequal 1, .done_poster
+	moveperson PLAYERHOUSE2F_FRAME_1, 8, 0
+	moveperson PLAYERHOUSE2F_FRAME_2, 8, 0
+.done_poster
 	callasm PlayerHouseCheckConsoleAsm
 	ifequal 1, .snes
 	ifequal 2, .n64
 	clearevent EVENT_N64
 	clearevent EVENT_SNES
-	jump .finished_console
+	jump .done_console
 .snes
 	clearevent EVENT_N64
 	setevent EVENT_SNES
-	moveperson PLAYERHOUSE2F_SNES_BUTTONS, 6, 2
-	jump .finished_console
+	jump .done_console
 .n64
 	setevent EVENT_N64
 	clearevent EVENT_SNES
-	changeblock $6, $0, $22
-.finished_console
+.done_console
 	checkdebugmode
 	iffalse .skip_debug
 	changeblock $2, $6, $23
 .skip_debug
-;	checkevent EVENT_N64
-;	iftrue .n64
-;	return
-;.n64
-;	changeblock $6, $0, $2b
-;	changeblock $6, $2, $2a
 	return
+
+PlayerHouseCheckPosterAsm:
+	ld a, [wPoster]
+	cp DECO_MINAS_PAINTING
+	jr z, .yes
+	xor a
+	ld [wScriptVar], a
+	ret
+.yes
+	ld a, 1
+	ld [wScriptVar], a
+	ret
 
 PlayerHouseCheckConsoleAsm:
 	ld a, [wConsole]
@@ -814,6 +837,8 @@ PlayerHouseRadio:
 	setevent EVENT_DECO_POSTER_1
 	setevent EVENT_DECO_POSTER_2
 	setevent EVENT_DECO_POSTER_3
+	setevent EVENT_DECO_POSTER_4
+	setevent EVENT_DECO_POSTER_5
 	setevent EVENT_DECO_SNES
 	setevent EVENT_DECO_N64
 	setevent EVENT_DECO_BIG_SNORLAX_DOLL

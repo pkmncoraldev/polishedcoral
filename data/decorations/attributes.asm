@@ -26,9 +26,14 @@ DecorationAttributes:
 	decoration DECO_PLANT,    JUMBOPLANT,        SET_UP_PLANT,       EVENT_DECO_PLANT_3,                $26
 	decoration DECO_PLANT,    SPIKEYPLANT,       SET_UP_PLANT,       EVENT_DECO_PLANT_4,                $27
 	decoration DECO_PLANT,    PUT_IT_AWAY,       PUT_AWAY_POSTER,    EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1,         $00
-	decoration DECO_POSTER,   PIKACHU,           SET_UP_POSTER,      EVENT_DECO_POSTER_1,               $2d
-	decoration DECO_POSTER,   CLEFAIRY,          SET_UP_POSTER,      EVENT_DECO_POSTER_2,               $29
-	decoration DECO_POSTER,   JIGGLYPUFF,        SET_UP_POSTER,      EVENT_DECO_POSTER_3,               $2c
+	decoration DECO_PLANT,    POKEBALL_POSTER,   SET_UP_POSTER,      EVENT_DECO_POSTER_1,               $29
+	decoration DECO_POSTER,   PIKACHU,           SET_UP_POSTER,      EVENT_DECO_POSTER_2,               $2a
+	decoration DECO_POSTER,   CLEFAIRY,          SET_UP_POSTER,      EVENT_DECO_POSTER_3,               $2c
+	decoration DECO_POSTER,   JIGGLYPUFF,        SET_UP_POSTER,      EVENT_DECO_POSTER_4,               $2c
+	decoration DECO_POSTER,   EEVEE,      		 SET_UP_POSTER,      EVENT_DECO_POSTER_5,               $2d
+	decoration DECO_POSTER,   MARILL,     		 SET_UP_POSTER,      EVENT_DECO_POSTER_6,               $2e
+	decoration DECO_PLANT,    TOWN_MAP,        	 SET_UP_POSTER,      EVENT_DECO_POSTER_7,               $2f
+	decoration DECO_PLANT,    MINAS_PAINTING,    SET_UP_POSTER,      EVENT_DECO_POSTER_8,               $30
 	decoration DECO_PLANT,    PUT_IT_AWAY,       PUT_AWAY_CONSOLE,   EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1,         $00
 	decoration DECO_PLANT,    SUPER_NES,         SET_UP_CONSOLE,     EVENT_DECO_SNES,                   SPRITE_SNES
 	decoration DECO_PLANT,    NINTENDO_64,       SET_UP_CONSOLE,     EVENT_DECO_N64,                    SPRITE_N64

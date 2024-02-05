@@ -1176,7 +1176,7 @@ LoadMapPals::
 	ld a, [wMapGroup]
 	cp GROUP_NETT_BUILDING_1F
 	ld a, [wMapNumber]
-	jr nz, .snes
+	jr nz, .computer
 	cp MAP_NETT_BUILDING_1F
 	jr nz, .nett2
 	call .normal
@@ -1201,16 +1201,13 @@ LoadMapPals::
 	jp FarCopyWRAM
 	
 .playerroom
-	eventflagcheck EVENT_N64
-	jr nz, .n64
-.snes
-	call .normal
-	ld hl, MapObjectPalsSnes
+	ld hl, MapObjectPalsPlayerRoom
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
-.n64
+	
+.computer
 	call .normal
-	ld hl, MapObjectPalsN64
+	ld hl, MapObjectPalsComputer
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 	
@@ -1221,7 +1218,7 @@ LoadMapPals::
 	ld a, [wTimeOfDayPalFlags]
 	and $3F
 	cp 1
-	jp nz, .snes
+	jp nz, .computer
 	ld a, [wTimeOfDay]
 	and 3
 	ld bc, 3 palettes
@@ -1594,7 +1591,7 @@ LoadMapPals::
 	call .normal
 	ld a, [wMapNumber]
 	cp MAP_LUSTER_MALL_ELECTRONICS_SHOP
-	jp z, .snes
+	jp z, .computer
 	cp MAP_LUSTER_MALL_COFFEE_SHOP
 	jr z, .coffee
 	ret
@@ -1809,7 +1806,7 @@ LoadMapPals::
 .house1
 	ld a, [wMapGroup]
 	cp GROUP_BRILLO_TOWN
-	jp z, .snes
+	jp z, .computer
 	cp GROUP_LUSTER_CITY_RESIDENTIAL
 	jp nz, .normal
 	ld hl, MapObjectPalsCandle
@@ -2138,11 +2135,11 @@ INCLUDE "maps/palettes/obpals/nett2.pal"
 MapObjectPalsNettDark::
 INCLUDE "maps/palettes/obpals/nettdark.pal"
 
-MapObjectPalsSnes::
-INCLUDE "maps/palettes/obpals/snes.pal"
+MapObjectPalsPlayerRoom::
+INCLUDE "maps/palettes/obpals/playerroom.pal"
 
-MapObjectPalsN64::
-INCLUDE "maps/palettes/obpals/n64.pal"
+MapObjectPalsComputer::
+INCLUDE "maps/palettes/obpals/computer.pal"
 
 MapObjectPalsCoffee::
 INCLUDE "maps/palettes/obpals/coffee.pal"

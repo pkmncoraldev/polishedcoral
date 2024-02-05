@@ -127,8 +127,6 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .ice_cave
 	cp TILESET_PLAYER_HOUSE
 	jp z, .playerhouse
-	cp TILESET_PLAYER_ROOM
-	jp z, .playerroom
 	cp TILESET_GATE
 	jp z, .gate
 	cp TILESET_HOUSE_1
@@ -737,10 +735,6 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, IceCaveTorchPalette
 	jp LoadSevenBGPalettes
 	
-.playerroom
-	ld hl, PlayerRoomFloorPalette
-	jp LoadSevenBGPalettes
-	
 .gate
 	ld a, [wMapGroup]
 	cp GROUP_FAKE_ROUTE_1
@@ -1030,9 +1024,6 @@ INCLUDE "maps/palettes/bgpals/twinklegym3.pal"
 
 TwinkleGym4Palette:
 INCLUDE "maps/palettes/bgpals/twinklegym4.pal"
-
-PlayerRoomFloorPalette:
-INCLUDE "maps/palettes/bgpals/playerroom.pal"
 
 FakeRoute1Palette:
 INCLUDE "maps/palettes/bgpals/fakeroute1.pal"

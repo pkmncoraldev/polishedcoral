@@ -273,10 +273,14 @@ FindOwnedPosters: ; 268fb
 ; 26903
 
 .posters ; 26903
-;	db DECO_TOWN_MAP
+	db DECO_POKEBALL_POSTER
 	db DECO_PIKACHU_POSTER
 	db DECO_CLEFAIRY_POSTER
 	db DECO_JIGGLYPUFF_POSTER
+	db DECO_EEVEE_POSTER
+	db DECO_MARILL_POSTER
+	db DECO_TOWN_MAP
+	db DECO_MINAS_PAINTING
 	db -1
 ; 26908
 
@@ -1079,10 +1083,14 @@ DecorationDesc_Poster: ; 26f69
 ; 26f84
 
 DecorationDesc_PosterPointers: ; 26f84
-;	dbw DECO_TOWN_MAP, DecorationDesc_TownMapPoster
+	dbw DECO_POKEBALL_POSTER, DecorationDesc_PokeballPoster
 	dbw DECO_PIKACHU_POSTER, DecorationDesc_PikachuPoster
 	dbw DECO_CLEFAIRY_POSTER, DecorationDesc_ClefairyPoster
-	dbw DECO_JIGGLYPUFF_POSTER, DecorationDesc_MarillPoster
+	dbw DECO_JIGGLYPUFF_POSTER, DecorationDesc_JigglypuffPoster
+	dbw DECO_EEVEE_POSTER, DecorationDesc_EeveePoster
+	dbw DECO_MARILL_POSTER, DecorationDesc_MarillPoster
+	dbw DECO_TOWN_MAP, DecorationDesc_TownMapPoster
+	dbw DECO_MINAS_PAINTING, DecorationDesc_MinasPainting
 	db -1
 ; 26f91
 
@@ -1100,6 +1108,21 @@ DecorationDesc_TownMapPoster: ; 0x26f91
 	text_jump UnknownText_0x1bc55d
 	db "@"
 ; 0x26fa0
+
+DecorationDesc_PokeballPoster:
+	jumptext .PokeballPosterText
+
+.PokeballPosterText:
+	text_jump UnknownText_PokeballPoster
+	db "@"
+
+DecorationDesc_MinasPainting:
+	jumptext .MinasPaintingText
+	
+.MinasPaintingText: ; 0x26fa3
+	; It's a picture painted by MINA.
+	text_jump UnknownText_MinaPainting
+	db "@"
 
 DecorationDesc_PikachuPoster: ; 0x26fa0
 	jumptext .PikaPosterText
@@ -1120,6 +1143,22 @@ DecorationDesc_ClefairyPoster: ; 0x26fa8
 	text_jump UnknownText_0x1bc591
 	db "@"
 ; 0x26fb0
+
+DecorationDesc_JigglypuffPoster:
+	jumptext .JigglypuffPosterText
+
+.JigglypuffPosterText:
+	; It's a poster of a cute JIGGLYPUFF.
+	text_jump UnknownText_Jigglypuff
+	db "@"
+
+DecorationDesc_EeveePoster:
+	jumptext .EeveePosterText
+
+.EeveePosterText:
+	; It's a poster of a cute EEVEE.
+	text_jump UnknownText_Eevee
+	db "@"
 
 DecorationDesc_MarillPoster: ; 0x26fb0
 	jumptext .MarillPosterText
@@ -1205,10 +1244,10 @@ ToggleMaptileDecorations: ; 26feb
 	lb de, 8, 4
 	ld a, [wPlant]
 	call SetDecorationTile
-	lb de, 4, 0
+	lb de, 8, 0
 	ld a, [wPoster]
 	call SetDecorationTile
-;	call SetPosterVisibility
+	call SetPosterVisibility
 	lb de, 2, 0
 	call PadCoords_de
 	ld a, [wCarpet]

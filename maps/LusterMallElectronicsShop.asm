@@ -9,7 +9,7 @@ LusterMallElectronicsShop_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 11 ; bg events
+	db 13 ; bg events
 	bg_event  5,  1, SIGNPOST_READ, LusterMallElectronicsShop_Poster
 	bg_event  7,  1, SIGNPOST_READ, LusterMallElectronicsShop_Shelf
 	bg_event  2,  3, SIGNPOST_READ, LusterMallElectronicsShop_TV
@@ -21,10 +21,10 @@ LusterMallElectronicsShop_MapScriptHeader:
 	bg_event  4,  5, SIGNPOST_READ, LusterMallElectronicsShop_N64
 	bg_event  1,  7, SIGNPOST_READ, LusterMallElectronicsShop_N64
 	bg_event  2,  7, SIGNPOST_READ, LusterMallElectronicsShop_N64
+	bg_event  1,  5, SIGNPOST_READ, LusterMallElectronicsShop_Snes
+	bg_event  2,  5, SIGNPOST_READ, LusterMallElectronicsShop_Snes
 
-	db 8 ; object events
-	object_event  2,  5, SPRITE_SNES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_Snes, -1
-	object_event  1,  5, SPRITE_SNES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_Snes, -1
+	db 6 ; object events
 	person_event SPRITE_CHILD,  6,  1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC1, -1
 	person_event SPRITE_SUPER_NERD,  5,  0, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC2, -1
 	person_event SPRITE_CUTE_GIRL,  2,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC3, -1
@@ -33,8 +33,6 @@ LusterMallElectronicsShop_MapScriptHeader:
 	person_event SPRITE_POLLY,  6,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShopPolly, EVENT_POLLY_NOT_IN_ELECTRONICS
 
 	const_def 1 ; object constants
-	const LUSTER_MALL_ELECTRONICS_SNES1
-	const LUSTER_MALL_ELECTRONICS_SNES2
 	const LUSTER_MALL_ELECTRONICS_NPC1
 	const LUSTER_MALL_ELECTRONICS_NPC2
 	const LUSTER_MALL_ELECTRONICS_NPC3

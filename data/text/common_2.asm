@@ -936,7 +936,7 @@ UnknownText_0x1c12fc::
 	line "the @"
 	text_from_ram wStringBuffer1
 	text " you"
-	cont "received?"
+	cont "caught?"
 	done
 
 UnknownText_0x1c1328::

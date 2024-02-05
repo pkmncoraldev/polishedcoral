@@ -2268,7 +2268,7 @@ Special_PrintTodaysLuckyNumber: ; 4d9d3
 	ld [wStringBuffer3 + 5], a
 	ret
 
-CheckPartyFullAfterContest: ; 4d9e5
+CheckPartyFullAfterContest:: ; 4d9e5
 	ld a, [wContestMon]
 	and a
 	jp z, .DidntCatchAnything
@@ -2339,14 +2339,14 @@ CheckPartyFullAfterContest: ; 4d9e5
 	call GetPartyLocation
 	ld a, [hl]
 	ld [wCurPartyLevel], a
-	ld a, PARK_BALL
+	ld a, POKE_BALL
 	ld [wCurItem], a
 	call SetCaughtData
 	ld a, [wPartyCount]
 	dec a
 	ld hl, wPartyMon1CaughtLocation
 	call GetPartyLocation
-	ld a, FARAWAY_ISLAND
+	ld a, STARGLOW_DEPTHS
 	ld [hl], a
 	xor a
 	ld [wContestMon], a
@@ -2403,7 +2403,7 @@ CheckPartyFullAfterContest: ; 4d9e5
 	ld a, BANK(sBoxMon1CaughtLocation)
 	call GetSRAMBank
 	ld hl, sBoxMon1CaughtLocation
-	ld a, FARAWAY_ISLAND
+	ld a, STARGLOW_DEPTHS
 	ld [hl], a
 	call CloseSRAM
 	xor a

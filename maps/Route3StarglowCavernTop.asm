@@ -113,7 +113,14 @@ Route3StarglowCavernTopPatches:
 	waitsfx
 	specialsound
 	waitbutton
+	callasm PatchesPutMonInContest
 	callasm PatchesSwapPokemonAsm
+	callasm PatchesPutContestInParty
+	ifequal $0, .turn_off_patches_mode
+	ifequal $2, .turn_off_patches_mode
+	farwritetext ContestResults_PartyFullText
+	
+.turn_off_patches_mode
 	callasm PatchesTurnOffPatchesModeAsm
 	clearevent EVENT_PATCHES_MODE
 	writetext Route3StarglowCavernTopPatchesDoneCaveText2
@@ -150,6 +157,29 @@ Route3StarglowCavernTopPatches:
 	closetext
 	clearevent EVENT_BOTTOM_PATCHES_GONE
 	end
+	
+PatchesPutMonInContest:
+	ld a, [wPartyMon1Species]
+	ld [wCurSpecies], a
+	ld [wCurPartySpecies], a
+	ld a, [wPartyMon1Form]
+	ld [wCurForm], a
+	call GetBaseData
+	xor a
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld hl, wContestMon
+	call ByteFill
+	xor a
+	ld [wMonType], a
+	ld hl, wPartyMon1
+	ld de, wContestMon
+	ld bc, PARTYMON_STRUCT_LENGTH
+	rst CopyBytes
+	ret
+	
+PatchesPutContestInParty:
+	farcall CheckPartyFullAfterContest
+	ret
 	
 PatchesFallAsm:
 	ld a, PLAYER_FALLING

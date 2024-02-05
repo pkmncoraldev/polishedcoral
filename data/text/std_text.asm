@@ -260,13 +260,13 @@ ContestResults_ReturnPartyText:
 	line "Here you go!"
 	done
 
-ContestResults_PartyFullText:
+ContestResults_PartyFullText::
 	text "Your party's full,"
 	line "so the #MON was"
 
 	para "sent to your BOX"
 	line "in BILL's PC."
-	done
+	prompt
 
 GymStatue_CityGymText:
 	text_from_ram wStringBuffer3

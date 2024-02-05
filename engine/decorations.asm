@@ -62,14 +62,14 @@ _KrisDecorationMenu: ; 0x2675c
 	dw DecoBigDollMenu, .big_doll
 	dw DecoExitMenu, .exit
 
-.bed      db "Bed@"
-.carpet   db "Carpet@"
-.plant    db "Plant@"
-.poster   db "Poster@"
-.game     db "Game Console@"
-.ornament db "Ornament@"
-.big_doll db "Big Doll@"
-.exit     db "Exit@"
+.bed      db "BED@"
+.carpet   db "CARPET@"
+.plant    db "PLANT@"
+.poster   db "POSTER@"
+.game     db "GAME CONSOLE@"
+.ornament db "ORNAMENT@"
+.big_doll db "BIG DOLL@"
+.exit     db "EXIT@"
 ; 26806
 
 .FindCategoriesWithOwnedDecos: ; 26806
@@ -976,9 +976,9 @@ MenuDataHeader_0x26eab: ; 0x26eab
 MenuData2_0x26eb3: ; 0x26eb3
 	db $80 ; flags
 	db 3 ; items
-	db "Right side@"
-	db "Left side@"
-	db "Cancel@"
+	db "RIGHT SIDE@"
+	db "LEFT SIDE@"
+	db "CANCEL@"
 ; 0x26ed1
 
 DecoText_PutAwayTheDeco: ; 0x26ed1

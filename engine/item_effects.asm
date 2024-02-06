@@ -661,6 +661,9 @@ PokeBallEffect: ; e8a2
 	ld [wCurPartyMon], a
 	farcall HealPartyMonEvenForNuzlocke
 .SkipPartyMonHealBall:
+	ld a, [wBattleType]
+	cp BATTLETYPE_SAFARI
+	jp z, .return_from_capture
 
 	ld a, [wInitialOptions]
 	bit NUZLOCKE_MODE, a

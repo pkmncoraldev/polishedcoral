@@ -388,11 +388,13 @@ Route3StarglowCavernTopPatchesDoneCaveText1::
 	para "Give you all of"
 	line "your stuff back!"
 	
-	para "See?"
+	para "Here!"
 	done
 	
 Route3StarglowCavernTopPatchesDoneCaveText2:
-	text "No harm no foul!"
+	text "See?"
+	
+	para "No harm no foul!"
 	
 	para "And just to show"
 	line "that there's no"

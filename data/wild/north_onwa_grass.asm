@@ -1596,31 +1596,31 @@
 	db 29, DWEBBLE		;1%
 	
 	map_id STARGLOW_CAVERN_DEPTHS
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 24, VOLTORB		;30%
 	db 24, MAGNEMITE	;30%
-	db 24, CLEFAIRY		;20%
-	db 24, KIRLIA		;10%
+	db 24, KIRLIA		;20%
+	db 24, VOLTORB		;10%
 	db 24, KIRLIA		;5%
-	db 24, KIRLIA		;4%
-	db 24, KIRLIA		;1%
+	db 24, MAGNETON		;4%
+	db 24, MAGNETON		;1%
 	; day
 	db 24, VOLTORB		;30%
 	db 24, MAGNEMITE	;30%
-	db 24, CLEFAIRY		;20%
-	db 24, KIRLIA		;10%
+	db 24, KIRLIA		;20%
+	db 24, VOLTORB		;10%
 	db 24, KIRLIA		;5%
-	db 24, KIRLIA		;4%
-	db 24, KIRLIA		;1%
+	db 24, MAGNETON		;4%
+	db 24, MAGNETON		;1%
 	; nite
 	db 24, VOLTORB		;30%
 	db 24, MAGNEMITE	;30%
-	db 24, CLEFAIRY		;20%
-	db 24, KIRLIA		;10%
+	db 24, KIRLIA		;20%
+	db 24, VOLTORB		;10%
 	db 24, KIRLIA		;5%
-	db 24, KIRLIA		;4%
-	db 24, KIRLIA		;1%
+	db 24, MAGNETON		;4%
+	db 24, MAGNETON		;1%
 	
 	map_id ROUTE_15
 	db 25 percent, 25 percent, 25 percent ; encounter rates: morn/day/nite

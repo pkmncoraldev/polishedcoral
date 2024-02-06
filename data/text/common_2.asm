@@ -504,10 +504,8 @@ WhiteoutToWildText::
 	line "useable #MON!"
 
 	para "<PLAYER> panicked"
-	line "and dropped"
-	cont "¥@"
-	deciram hMoneyTemp, 3, 7
-	text "…"
+	line "and dropped half"
+	cont "of their money…"
 
 	para "………………"
 	line "………………"
@@ -520,11 +518,9 @@ WhiteoutToTrainerText::
 	text "<PLAYER> is out of"
 	line "useable #MON!"
 
-	para "<PLAYER> paid"
-	line "¥@"
-	deciram hMoneyTemp, 3, 7
-	text " to the"
-	cont "winner…"
+	para "<PLAYER> paid out"
+	line "half their money"
+	cont "to the winner…"
 
 	para "………………"
 	line "………………"

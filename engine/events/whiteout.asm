@@ -9,8 +9,6 @@ Script_OverworldWhiteout:: ; 0x124c8
 
 Script_Whiteout: ; 0x124ce
 	scall WhiteoutHandleEvents
-	callasm LoseMoney
-	iffalse .whiteout_text
 	callasm DetermineWildBattlePanic
 	iffalse .whiteout_wild_text
 	writetext .WhitedOutToTrainerText
@@ -27,6 +25,7 @@ Script_Whiteout: ; 0x124ce
 	special HealPartyEvenForNuzlocke
 	checkflag ENGINE_BUG_CONTEST_TIMER
 	iftrue .bug_contest
+	callasm HalveMoney
 	callasm GetWhiteoutSpawn
 	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
@@ -113,93 +112,22 @@ BattleBGMap: ; 1250a
 	jp SetPalettes
 ; 12513
 
-; Gen VI money loss code by TPP Anniversary Crystal 251
-; https://github.com/TwitchPlaysPokemon/tppcrystal251pub/blob/public/main.asm
-LoseMoney: ; 12513
+HalveMoney:
 	xor a
 	ld [wSpinning], a
-	ld hl, wMoney
-	ld a, [hli]
-	or [hl]
-	inc hl
-	or [hl]
-	ld a, 0 ; not xor a; preserve carry flag
-	jr z, .load
-	; 806e1
-	ld hl, wBadges
-	ld b, 2
-	call CountSetBits
-	cp 9
-	jr c, .okay
-	ld c, 8
-.okay
-	ld b, 0
-	ld hl, .BasePayouts
-	add hl, bc
-	ld a, [hl]
-	ld [hMultiplier], a
-	ld a, [wPartyCount]
-	ld c, a
-	ld b, 0
-	ld hl, wPartyMon1Level
-	ld de, PARTYMON_STRUCT_LENGTH
-.loop
-	ld a, [hl]
-	cp b
-	jr c, .next
-	ld b, a
-.next
-	add hl, de
-	dec c
-	jr nz, .loop
-	xor a
-	ld [hMultiplicand], a
-	ld [hMultiplicand + 1], a
-	ld a, b
-	ld [hMultiplicand + 2], a
-	call Multiply
-	ld de, hMoneyTemp
-	ld hl, hProduct + 1
-	call .copy
-	ld de, wMoney
-	ld bc, hMoneyTemp
-	push bc
-	push de
-	farcall CompareMoney
-	jr nc, .nonzero
-	ld hl, wMoney
-	ld de, hMoneyTemp
-	call .copy
-.nonzero
-	pop de
-	pop bc
-	farcall TakeMoney
-	ld a, 1
-.load
-	ld [wScriptVar], a
-	ret
 
-.copy
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hli]
-	ld [de], a
-	inc de
+; Halve the player's money.
+	ld hl, wMoney
 	ld a, [hl]
-	ld [de], a
+	srl a
+	ld [hli], a
+	ld a, [hl]
+	rra
+	ld [hli], a
+	ld a, [hl]
+	rra
+	ld [hl], a
 	ret
-
-.BasePayouts
-	db 8
-	db 16
-	db 24
-	db 36
-	db 48
-	db 64
-	db 80
-	db 100
-	db 120
 
 
 DetermineWildBattlePanic:

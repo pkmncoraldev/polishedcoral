@@ -936,6 +936,7 @@ MagnemiteEvosAttacks:
 	db 0 ; no more level-up moves
 
 MagnetonEvosAttacks:
+	db EVOLVE_LOCATION, STARGLOW_CAVERN, MAGNEZONE
 	db EVOLVE_LOCATION, STARGLOW_DEPTHS, MAGNEZONE
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND

@@ -117,9 +117,11 @@ Route3StarglowCavernTopPatches:
 	callasm PatchesSwapPokemonAsm
 	callasm PatchesPutContestInParty
 	ifequal $0, .turn_off_patches_mode
-	ifequal $2, .turn_off_patches_mode
+	ifequal $2, .no_room_in_box
 	farwritetext ContestResults_PartyFullText
-	
+	jump .turn_off_patches_mode
+.no_room_in_box
+	farwritetext ContestResults_BoxFullText
 .turn_off_patches_mode
 	callasm PatchesTurnOffPatchesModeAsm
 	clearevent EVENT_PATCHES_MODE

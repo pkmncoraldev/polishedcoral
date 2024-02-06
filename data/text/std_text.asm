@@ -268,6 +268,17 @@ ContestResults_PartyFullText::
 	line "in BILL's PC."
 	prompt
 
+ContestResults_BoxFullText::
+	text "Your PC BOX is"
+	line "full."
+	
+	para "Unfortunately,"
+	line "@"
+	text_from_ram wStringBuffer3
+	text " had to"
+	cont "be released."
+	prompt
+
 GymStatue_CityGymText:
 	text_from_ram wStringBuffer3
 	text ""

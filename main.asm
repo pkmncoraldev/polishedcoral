@@ -2271,7 +2271,7 @@ Special_PrintTodaysLuckyNumber: ; 4d9d3
 CheckPartyFullAfterContest:: ; 4d9e5
 	ld a, [wContestMon]
 	and a
-	jp z, .DidntCatchAnything
+;	jp z, .DidntCatchAnything
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
 	call GetBaseData
@@ -2392,8 +2392,13 @@ CheckPartyFullAfterContest:: ; 4d9e5
 	ld bc, PKMN_NAME_LENGTH
 	rst CopyBytes
 	call CloseSRAM
-
+	ld a, $1
+	ld [wScriptVar], a
+	jr .BoxFinish
 .BoxFull:
+	ld a, $2
+	ld [wScriptVar], a
+.BoxFinish:
 	ld a, BANK(sBoxMon1Level)
 	call GetSRAMBank
 	ld a, [sBoxMon1Level]
@@ -2408,14 +2413,12 @@ CheckPartyFullAfterContest:: ; 4d9e5
 	call CloseSRAM
 	xor a
 	ld [wContestMon], a
-	ld a, $1
-	ld [wScriptVar], a
 	ret
 
-.DidntCatchAnything: ; 4db35
-	ld a, $2
-	ld [wScriptVar], a
-	ret
+;.DidntCatchAnything: ; 4db35
+;	ld a, $2
+;	ld [wScriptVar], a
+;	ret
 
 GiveANickname_YesNo: ; 4db3b
 	ld a, [wInitialOptions]

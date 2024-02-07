@@ -24,13 +24,14 @@ BrilloTown_MapScriptHeader:
 	coord_event 16, 19, 2, BrilloMakeSilverBlue
 	coord_event 17, 19, 2, BrilloMakeSilverBlue
 
-	db 4 ; bg events
+	db 5 ; bg events
+	signpost 11, 23, SIGNPOST_READ, BrilloTownPokeCenterSign
 	signpost 11, 30, SIGNPOST_READ, BrilloTownMartSign
 	signpost 17, 15, SIGNPOST_READ, BrilloTownSign
 	signpost 11, 37, SIGNPOST_READ, BrilloTownPoliceSign
 	signpost  9, 34, SIGNPOST_READ, BrilloTownGoP
 
-	db 15 ; object events
+	db 14 ; object events
 	object_event 17, 24, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NULL, EVENT_BRILLO_BOATMAN
 	object_event 38, 11, SPRITE_ICESKATER_VARIABLE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloGraffitiCop, -1
 	object_event 39, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloCommanderCop, -1
@@ -41,7 +42,7 @@ BrilloTown_MapScriptHeader:
 	object_event 17, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
 	object_event 16, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
 	object_event 16, 25, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
-	person_event SPRITE_MALL_SIGN, 11, 23, SPRITEMOVEDATA_PC_SIGN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrilloTownPokeCenterSign, -1
+;	person_event SPRITE_MALL_SIGN, 11, 23, SPRITEMOVEDATA_PC_SIGN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrilloTownPokeCenterSign, -1
 	object_event 38,  9, SPRITE_MARACTUS_GRAFFITI, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
 	object_event 38, 10, SPRITE_MARACTUS_GRAFFITI, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
 	object_event 39,  9, SPRITE_MARACTUS_GRAFFITI, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1

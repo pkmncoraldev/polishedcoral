@@ -114,7 +114,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 71
 	tilecoll FLOOR, FLOOR, NO_OLLIE, NO_OLLIE ; 72
 	tilecoll FLOOR, FLOOR, CAVE, NO_OLLIE ; 73
-	tilecoll FLOOR, FLOOR, STAIRS, STAIRS ; 74
+	tilecoll FLOOR, FLOOR, SKATE, SKATE ; 74
 	tilecoll FLOOR, FLOOR, NO_OLLIE, NO_OLLIE ; 75
 	tilecoll WATER, WATER, WATER, WATER ; 76
 	tilecoll WALL, WALL, DOOR, WALL ; 77
@@ -142,10 +142,10 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8d
 	tilecoll WALL, WALL, WALL, WALL ; 8e
 	tilecoll WALL, WALL, WALL, WALL ; 8f
-	tilecoll WALL, WALL, WALL, WALL ; 90
-	tilecoll WALL, WALL, WALL, WALL ; 91
-	tilecoll WALL, WALL, WALL, WALL ; 92
-	tilecoll WALL, WALL, WALL, WALL ; 93
+	tilecoll WATER, WALL, WATER, WALL ; 90
+	tilecoll WALL, WATER, WALL, WATER ; 91
+	tilecoll WATER, WATER, WALL, WALL ; 92
+	tilecoll WALL, WALL, WATER, WATER ; 93
 	tilecoll SKATE, SKATE, WATER, WATER ; 94
 	tilecoll SKATE, SKATE, WATER, WATER ; 95
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 96
@@ -185,7 +185,7 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; b8
 	tilecoll SAND, WALL, SAND, WALL ; b9
 	tilecoll WALL, SAND, WALL, SAND ; ba
-	tilecoll WALL, WALL, WATER, WALL ; bb
+	tilecoll WALL, WALL, WALL, WALL ; bb
 	tilecoll SKATE, WALL, SKATE, SKATE ; bc
 	tilecoll WALL, SKATE, SKATE, SKATE ; bd
 	tilecoll STAIRS, STAIRS, FLOOR, FLOOR ; be

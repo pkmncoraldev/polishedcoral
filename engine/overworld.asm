@@ -596,6 +596,8 @@ GetMonSprite: ; 14259
 	jr z, .BreedMon2
 	cp SPRITE_GROTTO_MON
 	jr z, .GrottoMon
+	cp SPRITE_MINA_PAINTING
+	jr z, .MinaPainting
 
 	cp SPRITE_VARS
 	jr c, .Normal
@@ -626,7 +628,10 @@ GetMonSprite: ; 14259
 	add hl, bc
 	ld a, [hl]
 	jr .Mon
-
+.MinaPainting
+	ld a, [wMinaPaintingMonSpecies]
+	jr .Mon
+	
 .BreedMon1:
 	ld a, [wBreedMon1Species]
 	jr .Mon
@@ -678,6 +683,15 @@ _DoesSpriteHaveFacings:: ; 142a7
 
 _GetSpritePalette:: ; 142c4
 	ld a, c
+	cp SPRITE_MINA_PAINTING
+	jr nz, .not_mina_mon
+	farcall LoadOverworldMonIcon
+	lb hl, 0, MON_SPRITE
+	farcall GetMinaMonIconPalette
+	ld c, a
+	ret
+	
+.not_mina_mon
 	call GetMonSprite
 	jr c, .is_pokemon
 

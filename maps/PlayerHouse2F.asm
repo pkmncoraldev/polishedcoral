@@ -58,21 +58,21 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event  8, 18, SIGNPOST_JUMPTEXT, PlayerHouseKomore
 
 	db 6 ; object events
-	object_event -5, -5, SPRITE_SNES, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event -5, -5, SPRITE_VALVE_1, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  6,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_KRISS_HOUSE_2F_CONSOLE
 	object_event  6,  4, SPRITE_DOLL_1, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, Doll1, EVENT_KRISS_HOUSE_2F_DOLL_1
 	object_event  8,  0, SPRITE_DOLL_2, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, Doll2, EVENT_KRISS_HOUSE_2F_DOLL_2
 	object_event  2,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, BigDoll, EVENT_KRISS_HOUSE_2F_BIG_DOLL
+	object_event -5, -5, SPRITE_SNES, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event -5, -5, SPRITE_MINA_PAINTING, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	
 
 	const_def 1 ; object constants
-	const PLAYERHOUSE2F_FRAME_1
-	const PLAYERHOUSE2F_FRAME_2
 	const PLAYERHOUSE2F_CONSOLE
 	const PLAYERHOUSE2F_DOLL_1
 	const PLAYERHOUSE2F_DOLL_2
 	const PLAYERHOUSE2F_BIG_DOLL
+	const PLAYERHOUSE2F_FRAME
+	const PLAYERHOUSE2F_MINA_MON
 	
 PlayersHousePoster:
 	dw EVENT_KRISS_ROOM_POSTER
@@ -716,8 +716,8 @@ PlayerHouse2FSetSpawn:
 	special ToggleMaptileDecorations
 	callasm PlayerHouseCheckPosterAsm
 	ifnotequal 1, .done_poster
-	moveperson PLAYERHOUSE2F_FRAME_1, 8, 0
-	moveperson PLAYERHOUSE2F_FRAME_2, 8, 0
+	moveperson PLAYERHOUSE2F_FRAME, 8, 0
+	moveperson PLAYERHOUSE2F_MINA_MON, 8, 0
 .done_poster
 	callasm PlayerHouseCheckConsoleAsm
 	ifequal 1, .snes
@@ -839,6 +839,9 @@ PlayerHouseRadio:
 	setevent EVENT_DECO_POSTER_3
 	setevent EVENT_DECO_POSTER_4
 	setevent EVENT_DECO_POSTER_5
+	setevent EVENT_DECO_POSTER_6
+	setevent EVENT_DECO_POSTER_7
+	setevent EVENT_DECO_POSTER_8
 	setevent EVENT_DECO_SNES
 	setevent EVENT_DECO_N64
 	setevent EVENT_DECO_BIG_SNORLAX_DOLL

@@ -164,6 +164,11 @@ GetMonIconPalette::
 	and a
 	jr GetMenuMonIconPalette.got_species
 
+GetMinaMonIconPalette::
+	ld hl, wMinaPaintingMonShiny
+	ld a, [wMinaPaintingMonSpecies]
+	ld [wCurPartySpecies], a
+
 GetMenuMonIconPalette::
 	ld a, [hl]
 	and SHINY_MASK

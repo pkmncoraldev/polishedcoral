@@ -1307,56 +1307,56 @@ Pokedex_PlaceSearchResultsTypeStrings: ; 409cf (10:49cf)
 	ret
 
 Pokedex_DrawUnownModeBG: ; 409f1 (10:49f1)
-	call Pokedex_FillBackgroundColor2
-	hlcoord 2, 1
-	lb bc, 11, 13
-	call Pokedex_PlaceBorder
-	hlcoord 2, 14
-	lb bc, 1, 13
-	call Pokedex_PlaceBorder
-	hlcoord 2, 15
-	ld [hl], $5c
-	hlcoord 16, 15
-	ld [hl], $3e
-	hlcoord 6, 5
-	call Pokedex_PlaceFrontpicAtHL
-	ld de, 0
-	lb bc, 0, NUM_UNOWN
-.loop
-	ld hl, wUnownDex
-	add hl, de
-	ld a, [hl]
-	and a
-	jr z, .done
-	push af
-	ld hl, UnownModeLetterAndCursorCoords
-rept 4
-	add hl, de
-endr
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	pop af
-	cp 27
-	jr z, .exclamation
-	cp 28
-	jr z, .question
-	add "A" - 1
-	jr .got_letter
-.exclamation
-	ld a, "!"
-	jr .got_letter
-.question
-	ld a, "?"
-.got_letter
-	ld [hl], a
-	inc de
-	inc b
-	dec c
-	jr nz, .loop
-.done
-	ld a, b
-	ld [wDexUnownCount], a
+	; call Pokedex_FillBackgroundColor2
+	; hlcoord 2, 1
+	; lb bc, 11, 13
+	; call Pokedex_PlaceBorder
+	; hlcoord 2, 14
+	; lb bc, 1, 13
+	; call Pokedex_PlaceBorder
+	; hlcoord 2, 15
+	; ld [hl], $5c
+	; hlcoord 16, 15
+	; ld [hl], $3e
+	; hlcoord 6, 5
+	; call Pokedex_PlaceFrontpicAtHL
+	; ld de, 0
+	; lb bc, 0, NUM_UNOWN
+; .loop
+	; ld hl, wUnownDex
+	; add hl, de
+	; ld a, [hl]
+	; and a
+	; jr z, .done
+	; push af
+	; ld hl, UnownModeLetterAndCursorCoords
+; rept 4
+	; add hl, de
+; endr
+	; ld a, [hli]
+	; ld h, [hl]
+	; ld l, a
+	; pop af
+	; cp 27
+	; jr z, .exclamation
+	; cp 28
+	; jr z, .question
+	; add "A" - 1
+	; jr .got_letter
+; .exclamation
+	; ld a, "!"
+	; jr .got_letter
+; .question
+	; ld a, "?"
+; .got_letter
+	; ld [hl], a
+	; inc de
+	; inc b
+	; dec c
+	; jr nz, .loop
+; .done
+	; ld a, b
+	; ld [wDexUnownCount], a
 	ret
 
 UnownModeLetterAndCursorCoords: ; 40a3e

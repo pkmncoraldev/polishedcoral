@@ -1250,7 +1250,10 @@ wEndPokedexCaught::
 wPokedexSeen:: flag_array NUM_POKEMON
 wEndPokedexSeen::
 
-wUnownDex:: ds NUM_UNOWN
+wMinaPaintingMonSpecies:: ds 1
+wMinaPaintingMonShiny:: ds 1
+wMinaPaintingMonNick:: ds PKMN_NAME_LENGTH
+	ds 15 ; unused
 wUnlockedUnowns:: ds 1
 
 wFirstUnownSeen:: ds 1

@@ -272,8 +272,13 @@ UnknownText_0x1bc5b3::
 	done
 	
 UnknownText_MinaPainting::
-	text "It's a picture"
-	line "painted by MINA."
+	text "It's a painting by"
+	line "MINA."
+	
+	para "It depicts"
+	line "@"
+	text_from_ram wMinaPaintingMonNick
+	text "."
 	done
 
 UnknownText_0x1bc5d7::

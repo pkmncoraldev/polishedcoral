@@ -4368,6 +4368,7 @@ INCLUDE "engine/mon_icons.asm"
 INCLUDE "engine/events/field_moves.asm"
 INCLUDE "engine/events/magnet_train.asm"
 INCLUDE "data/pokemon/menu_icon_pointers.asm"
+INCLUDE "data/pokemon/variant_menu_icon_pointers.asm"
 INCLUDE "data/pokemon/menu_icons.asm"
 
 

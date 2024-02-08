@@ -1,0 +1,17 @@
+variconpal: MACRO
+	db \1, \2
+	dn PAL_OW_\3, PAL_OW_\4
+ENDM
+
+VariantMenuMonIconColorsTable:
+	variconpal RAICHU, ALOLAN_FORM, RED, BROWN
+	variconpal MEOWTH, ALOLAN_FORM, GRAY, BLUE
+	variconpal PERSIAN, ALOLAN_FORM, GRAY, BLUE
+	variconpal GRIMER, ALOLAN_FORM, GREEN, PURPLE
+	variconpal MUK, ALOLAN_FORM, GREEN, PURPLE
+	variconpal MAROWAK, ALOLAN_FORM, GRAY, BLUE
+	variconpal EXEGGUTOR, ALOLAN_FORM, GREEN, RED
+	variconpal WOOPER, PALDEAN_FORM, BROWN, BLUE
+	variconpal CORSOLA, GALARIAN_FORM, GRAY, PURPLE
+	variconpal CHERRIM, SUNNY_FORM, RED, PURPLE
+	db -1

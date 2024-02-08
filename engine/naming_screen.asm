@@ -135,7 +135,7 @@ SetUpNamingScreen: ; 116f8
 	ld a, $5
 	call FarCopyWRAM
 	
-	farcall GetPlayerIcon
+	farcall _GetPlayerIcon
 	
 	ld a, [wPlayerInitialPalette]
 	cp 0
@@ -196,7 +196,7 @@ SetUpNamingScreen: ; 116f8
 ; 117ae
 
 .Rival: ; 117ae (4:57ae)
-	ld de, ColbySpriteGFX
+	ld hl, ColbySpriteGFX
 	lb bc, BANK(ColbySpriteGFX), SPRITE_ANIM_INDEX_BLUE_WALK
 	call .LoadSprite
 	hlcoord 5, 2
@@ -224,10 +224,10 @@ SetUpNamingScreen: ; 116f8
 	db "Favorite phrase?@"
 
 .Box: ; 117f5 (4:57f5)
-	ld de, BallCutFruitSpriteGFX
-	ld hl, VTiles0 tile $00
-	lb bc, BANK(BallCutFruitSpriteGFX), $4
-	call Request2bpp
+	ld de, VTiles0 tile $00
+	ld hl, BallCutFruitSpriteGFX
+	lb bc, BANK(BallCutFruitSpriteGFX), 4
+	call DecompressRequest2bpp
 	xor a
 	ld hl, wSpriteAnimDict
 	ld [hli], a
@@ -260,26 +260,18 @@ SetUpNamingScreen: ; 116f8
 
 .LoadSprite: ; 11847 (4:5847)
 	push bc
-	push de
-	ld hl, VTiles0 tile $00
-	ld c, $4
-	push bc
-	push de
-	call Request2bpp
-	pop de
-	pop bc
-	ld hl, 12 tiles
-	add hl, de
-	ld e, l
-	ld d, h
+	ld de, VTiles0 tile $00
+	ld c, 4
+	call DecompressRequest2bpp
+	ld de, wDecompressScratch + 12 tiles
 	ld hl, VTiles0 tile $04
-	call Request2bpp
+	lb bc, BANK(wDecompressScratch), 4
+	call Request2bppInWRA6
+	pop bc
 	xor a
 	ld hl, wSpriteAnimDict
 	ld [hli], a
 	ld [hl], a
-	pop de
-	pop bc
 	ld a, c
 	depixel 4, 4, 4, 0
 	farjp _InitSpriteAnimStruct

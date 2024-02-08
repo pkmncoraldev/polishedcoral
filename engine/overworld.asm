@@ -451,6 +451,18 @@ GetUsedSpritePlayer:: ; 143c8
 	call SafeGetSpritePlayer
 	ld a, [hUsedSpriteTile]
 	call .GetTileAddr
+	push bc
+	push hl
+	push de
+	push hl
+	ld h, d
+	ld l, e
+	pop de
+	call FarDecompressWRA6InB
+	pop de
+	pop hl
+	pop bc
+	ld de, wDecompressScratch
 	push hl
 	push de
 	push bc
@@ -529,7 +541,7 @@ endr
 	cp 76
 	jr c, .lyWaitLoop
 .noLYCheck	
-	call Get2bpp
+	call Request2bppInWRA6
 	pop af
 	ld [rVBK], a
 	ret
@@ -633,17 +645,27 @@ GetMonSprite: ; 14259
 	jr .Mon
 	
 .BreedMon1:
+	ld a, [wBreedMon1Shiny]
+	ld d, a
+	ld a, [wBreedMon1Form]
+	and FORM_MASK
+	ld e, a
 	ld a, [wBreedMon1Species]
 	jr .Mon
 
 .BreedMon2:
+	ld a, [wBreedMon2Shiny]
+	ld d, a
+	ld a, [wBreedMon2Form]
+	and FORM_MASK
+	ld e, a
 	ld a, [wBreedMon2Species]
 	jr .Mon
 
 .GrottoMon:
 	farcall GetHiddenGrottoContents
 	ld a, [hl]
-	jr .Mon
+	jr .NoFormMon
 
 .MonDoll1:
 	ld a, [wLeftOrnament]
@@ -655,9 +677,16 @@ GetMonSprite: ; 14259
 	farcall GetDecorationSpecies
 	; fallthrough
 
+.NoFormMon:
+	lb de, 0, 0
 .Mon:
 	and a
 	jr z, .NoSprite
+	ld [wCurIcon], a
+	ld hl, wCurIconPersonality
+	ld a, d
+	ld [hli], a
+	ld [hl], e
 	farcall LoadOverworldMonIcon
 	lb hl, 0, MON_SPRITE
 	scf
@@ -711,9 +740,7 @@ _GetSpritePalette:: ; 142c4
 	ld a, [wMapNumber]
 	cp MAP_PLAYER_HOUSE_2F
 	jr nz, .not_doll
-	farcall GetMonIconPalette
-	ld c, a
-	ret
+	farjp GetOverworldMonIconPalette
 
 .not_doll
 ;	cp GROUP_ROUTE_34
@@ -721,7 +748,7 @@ _GetSpritePalette:: ; 142c4
 ;	ld a, [wMapNumber]
 ;	cp MAP_ROUTE_34
 ;	jr nz, .not_daycare
-;	farcall GetMonIconPalette
+;	farcall GetOverworldMonIconPalette
 ;	cp PAL_OW_PINK
 ;	ld c, PAL_OW_BROWN
 ;	ret z
@@ -745,6 +772,18 @@ GetUsedSprite:: ; 143c8
 	call SafeGetSprite
 	ld a, [hUsedSpriteTile]
 	call .GetTileAddr
+	push bc
+	push hl
+	push de
+	push hl
+	ld h, d
+	ld l, e
+	pop de
+	call FarDecompressWRA6InB
+	pop de
+	pop hl
+	pop bc
+	ld de, wDecompressScratch
 	push hl
 	push de
 	push bc
@@ -823,7 +862,7 @@ endr
 	cp 76
 	jr c, .lyWaitLoop
 .noLYCheck	
-	call Get2bpp
+	call Request2bppInWRA6
 	pop af
 	ld [rVBK], a
 	ret

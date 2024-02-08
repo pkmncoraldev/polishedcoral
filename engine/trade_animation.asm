@@ -7,9 +7,14 @@ TradeAnimation: ; 28f24
 	ld hl, wPlayerTrademonSenderName
 	ld de, wOTTrademonSenderName
 	call LinkTradeAnim_LoadTradePlayerNames
-	ld hl, wPlayerTrademonSpecies
-	ld de, wOTTrademonSpecies
-	call LinkTradeAnim_LoadTradeMonSpecies
+	ld hl, wLinkTradeSendmonData
+	ld bc, wPlayerTrademonSpecies
+	ld de, wPlayerTrademonPersonality
+	call LinkTradeAnim_LoadTradeMonData
+	ld hl, wLinkTradeGetmonData
+	ld bc, wOTTrademonSpecies
+	ld de, wOTTrademonPersonality
+	call LinkTradeAnim_LoadTradeMonData
 	ld de, .script
 	jr RunTradeAnimSequence
 
@@ -58,9 +63,14 @@ TradeAnimationPlayer2: ; 28f63
 	ld hl, wOTTrademonSenderName
 	ld de, wPlayerTrademonSenderName
 	call LinkTradeAnim_LoadTradePlayerNames
-	ld hl, wOTTrademonSpecies
-	ld de, wPlayerTrademonSpecies
-	call LinkTradeAnim_LoadTradeMonSpecies
+	ld hl, wLinkTradeGetmonData
+	ld bc, wPlayerTrademonSpecies
+	ld de, wPlayerTrademonPersonality
+	call LinkTradeAnim_LoadTradeMonData
+	ld hl, wLinkTradeSendmonData
+	ld bc, wOTTrademonSpecies
+	ld de, wOTTrademonPersonality
+	call LinkTradeAnim_LoadTradeMonData
 	ld de, .script
 	jr RunTradeAnimSequence
 
@@ -311,6 +321,7 @@ TradeAnim_TubeToOT1: ; 29129
 	call TradeAnim_PlaceTrademonStatsOnTubeAnim
 	ld a, [wLinkTradeSendmonSpecies]
 	ld [wd265], a
+	ld hl, wLinkTradeSendmonPersonality
 	xor a
 	depixel 5, 11, 4, 0
 	ld b, $0
@@ -321,6 +332,7 @@ TradeAnim_TubeToPlayer1: ; 2913c
 	call TradeAnim_PlaceTrademonStatsOnTubeAnim
 	ld a, [wLinkTradeGetmonSpecies]
 	ld [wd265], a
+	ld hl, wLinkTradeGetmonPersonality
 	ld a, $2
 	depixel 9, 18, 4, 4
 	ld b, $4
@@ -329,6 +341,8 @@ TradeAnim_InitTubeAnim: ; 2914e
 	push de
 	push bc
 	push de
+
+	push hl ; wLinkTradeSendmonPersonality or wLinkTradeGetmonPersonality
 
 	push af
 	call DisableLCD
@@ -348,6 +362,14 @@ TradeAnim_InitTubeAnim: ; 2914e
 	ld a, $70
 	ld [hWY], a
 	call EnableLCD
+	call DelayFrame
+
+	pop hl ; wLinkTradeSendmonPersonality or wLinkTradeGetmonPersonality
+	inc hl
+	ld a, [hld]
+	ld [wCurIconForm], a
+	farcall LoadTradeAnimationMonIcon
+	
 	call LoadTradeBubbleGFX
 
 	pop de
@@ -1333,11 +1355,16 @@ LinkTradeAnim_LoadTradePlayerNames: ; 297ff
 	ret
 ; 29814
 
-LinkTradeAnim_LoadTradeMonSpecies: ; 29814
-	ld a, [hl]
-	ld [wLinkTradeSendmonSpecies], a
+LinkTradeAnim_LoadTradeMonData:
+	; bc = species, de = shiny, de+1 = form
+	ld a, [bc]
+	ld [hli], a
 	ld a, [de]
-	ld [wLinkTradeGetmonSpecies], a
+	ld [hli], a
+	inc de
+	ld a, [de]
+	and FORM_MASK
+	ld [hl], a
 	ret
 ; 2981d
 
@@ -1372,8 +1399,6 @@ LoadTradeBallAndCableGFX: ; 2982b
 ; 2985a
 
 LoadTradeBubbleGFX: ; 2985a
-	call DelayFrame
-	farcall LoadTradeAnimationMonIcon
 	ld de, TradeBubbleGFX
 	ld hl, VTiles0 tile $72
 	lb bc, BANK(TradeBubbleGFX), $4

@@ -209,6 +209,10 @@ Pokegear_LoadGFX: ; 90c4e
 ;	cp MYSTRI_STAGE
 ;	jr z, .sinjoh
 	farcall GetPlayerIcon
+	ld a, [rSVBK]
+	push af
+	ld a, 6
+	ld [rSVBK], a
 	push de
 	ld h, d
 	ld l, e
@@ -225,7 +229,10 @@ Pokegear_LoadGFX: ; 90c4e
 	add hl, de
 	ld de, VTiles0 tile $14
 	ld bc, 4 tiles
-	jp FarCopyBytes
+	call FarCopyBytes
+	pop af
+	ld [rSVBK], a
+	ret
 
 TapePlayer_LoadGFX: ; 90c4e
 	call ClearVBank1
@@ -2682,7 +2689,7 @@ _Area: ; 91d11
 	call .GetPlayerOrFastShipIcon
 	ld hl, VTiles0 tile $78
 	ld c, 4
-	call Request2bpp
+	call Request2bppInWRA6
 	call LoadTownMapGFX
 
 	ld a, [wTownMapPlayerIconLandmark]
@@ -3263,15 +3270,6 @@ TownMapMon: ; 91f7b
 ; Draw the FlyMon icon at town map location in
 
 	farcall LoadFlyMonColor
-; Get FlyMon species
-	ld a, [wMoogooCard1Value]
-	ld [wCurPartyMon], a
-	ld hl, wPartySpecies
-	ld e, a
-	ld d, $0
-	add hl, de
-	ld a, [hl]
-	ld [wd265], a
 ; Get FlyMon icon
 	ld e, 8 ; starting tile in VRAM
 	farcall PokegearFlyMap_GetMonIcon
@@ -3300,7 +3298,7 @@ TownMapPlayerIcon: ; 91fa6
 	ld c, 4 ; # tiles
 	push bc
 	push de
-	call Request2bpp
+	call Request2bppInWRA6
 	pop de
 	pop bc
 ; Walking icon
@@ -3309,7 +3307,7 @@ TownMapPlayerIcon: ; 91fa6
 	ld d, h
 	ld e, l
 	ld hl, VTiles0 tile $14
-	call Request2bpp
+	call Request2bppInWRA6
 ; Animation/palette
 	depixel 0, 0
 

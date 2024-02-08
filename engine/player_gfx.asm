@@ -1,6 +1,13 @@
 GetPlayerIcon: ; 8832c
 ; Get the player icon corresponding to gender
+	push hl
+	call _GetPlayerIcon
+	call FarDecompressWRA6InB
+	pop hl
+	ld de, wDecompressScratch
+	ret
 
+_GetPlayerIcon:
 	ld a, [wPlayerGender]
 	cp CORY
 	jr z, .cory
@@ -18,31 +25,31 @@ GetPlayerIcon: ; 8832c
 	jr z, .kris
 	
 .cory
-	ld de, CorySpriteGFX
+	ld hl, CorySpriteGFX
 	ld b, BANK(CorySpriteGFX)
 	ret
 .cora
-	ld de, CoraSpriteGFX
+	ld hl, CoraSpriteGFX
 	ld b, BANK(CoraSpriteGFX)
 	ret
 .pippi
-	ld de, PippiSpriteGFX
+	ld hl, PippiSpriteGFX
 	ld b, BANK(PippiSpriteGFX)
 	ret
 .red
-	ld de, RedSpriteGFX
+	ld hl, RedSpriteGFX
 	ld b, BANK(RedSpriteGFX)
 	ret
 .leaf
-	ld de, LeafSpriteGFX
+	ld hl, LeafSpriteGFX
 	ld b, BANK(LeafSpriteGFX)
 	ret
 .gold
-	ld de, GoldSpriteGFX
+	ld hl, GoldSpriteGFX
 	ld b, BANK(GoldSpriteGFX)
 	ret
 .kris
-	ld de, KrisSpriteGFX
+	ld hl, KrisSpriteGFX
 	ld b, BANK(KrisSpriteGFX)
 	ret
 

@@ -159,6 +159,11 @@ ProcessMenuMonIconColor:
 	pop hl
 	ret
 
+GetMinaMonIconPalette::
+	ld a, [wMinaPaintingMonSpecies]
+	ld hl, wMinaPaintingMonShiny
+	jr _GetMonIconPalette
+
 GetOverworldMonIconPalette::
 	ld a, [wCurIcon]
 	ld hl, wCurIconShiny
@@ -552,8 +557,5 @@ HoldSwitchmonIcon:
 	add hl, bc
 	dec e
 	jr nz, .loop
-	ret
-	
-GetMinaMonIconPalette:
 	ret
 	

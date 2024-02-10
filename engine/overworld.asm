@@ -641,6 +641,11 @@ GetMonSprite: ; 14259
 	ld a, [hl]
 	jr .Mon
 .MinaPainting
+	ld a, [wMinaPaintingMonShiny]
+	ld d, a
+	ld a, [wMinaPaintingMonForm]
+	and FORM_MASK
+	ld e, a
 	ld a, [wMinaPaintingMonSpecies]
 	jr .Mon
 	

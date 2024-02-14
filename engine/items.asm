@@ -4,6 +4,19 @@ _ReceiveItem:: ; d1d5
 	push hl
 	call CheckItemPocket
 	pop de
+	
+	push bc
+	ld a, [wItemQuantityChangeBuffer]
+	ld b, a
+	ld a, [wCurItem]
+	cp RARE_CANDY
+	jr nz, .skip
+	ld a, [wUnknownRC]
+	add b
+	ld [wUnknownRC], a
+.skip
+	pop bc
+	
 	ld a, [wItemAttributeParamBuffer]
 	dec a
 	ld hl, .Pockets
@@ -288,6 +301,17 @@ RemoveItemFromPocket: ; d2ff
 	ld a, [hl]
 	sub b
 	jr c, .nope
+	
+	push af
+	ld a, [wCurItem]
+	cp RARE_CANDY
+	jr nz, .skip2
+	ld a, [wUnknownRC]
+	sub b
+	ld [wUnknownRC], a
+.skip2
+	pop af
+	
 	ld [hl], a
 	ld [wItemQuantityBuffer], a
 	and a

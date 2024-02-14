@@ -725,6 +725,27 @@ PlaceMenuItemQuantity: ; 0x24ac3
 	push de
 	ld a, [wMenuSelection]
 	ld [wCurItem], a
+	
+	cp RARE_CANDY
+	jr nz, .skip
+	push af
+	ld a, [wUnknownRC]
+	ld b, a
+	ld a, [wMenuSelectionQuantity]
+	cp b
+	jr z, .done_check
+	ld de, MUSIC_CLOWN
+	call PlayMusic
+	eventflagset EVENT_YOU_CHEATED
+	ld a, PLAYER_CLOWN
+	ld [wPlayerState], a
+	xor a
+	ld [wOnBike], a
+	ld [wOnSkateboard], a
+.done_check
+	pop af
+.skip
+	
 	farcall _CheckTossableItem
 	ld a, [wItemAttributeParamBuffer]
 	pop hl

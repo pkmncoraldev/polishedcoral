@@ -1254,7 +1254,10 @@ wMinaPaintingMonSpecies:: ds 1
 wMinaPaintingMonShiny:: ds 1
 wMinaPaintingMonForm:: ds 1
 wMinaPaintingMonNick:: ds PKMN_NAME_LENGTH
-	ds 14 ; unused
+
+wUnknownRC:: ds 1
+
+	ds 13 ; unused
 wUnlockedUnowns:: ds 1
 
 wFirstUnownSeen:: ds 1

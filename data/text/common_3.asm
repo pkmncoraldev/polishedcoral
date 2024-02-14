@@ -164,7 +164,8 @@ UnknownText_0x1c460d::
 	prompt
 	
 UnknownText_ClownSaveText::
-	text "Clowns can't save!"
+	text "Clowns can't do"
+	line "that!"
 	prompt
 
 UnknownText_0x1c462a::

@@ -1635,6 +1635,11 @@ RareCandy_StatBooster_GetParameters: ; eef5
 
 
 RareCandy: ; ef14
+	eventflagcheck EVENT_YOU_CHEATED
+	jr z, .no_clown
+	jp ClownsCantUseMessage
+
+.no_clown
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
 
@@ -3077,6 +3082,10 @@ MixSweetHoneyMessage:
 OutOfSweetHoneyMessage:
 	ld hl, OutOfSweetHoneyText
 	jp PrintText
+	
+ClownsCantUseMessage:
+	ld hl, ClownsCantUseText
+	jp PrintText
 
 WontHaveAnyEffect_NotUsedMessage: ; f7ca
 	ld hl, WontHaveAnyEffectText
@@ -3159,6 +3168,11 @@ MixSweetHoneyText:
 OutOfSweetHoneyText:
 	; <PLAYER> mixed in some…
 	text_jump UnknownText_OutOfSweetHoney
+	db "@"
+
+ClownsCantUseText:
+	; Clowns cant do that…
+	text_jump UnknownText_ClownSave
 	db "@"
 
 CantUseOnEggText: ; 0xf810

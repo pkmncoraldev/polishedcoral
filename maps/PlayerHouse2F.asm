@@ -252,6 +252,7 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
+	giveitem RARE_CANDY, 99
 	giveitem SWEET_HONEY, 1
 	giveitem BLOSSOM_TEA, 3
 	giveitem SUNSHINE_TEA, 99
@@ -322,7 +323,6 @@ PlayerHouseDebugPoster:
 	giveitem AMULET_COIN, 1
 	giveitem BIG_MALASADA, 1
 	giveitem BERRY_JUICE, 1
-	giveitem RARE_CANDY, 99
 	giveitem FLOWER_PETAL, 6
 	giveitem BLOSSOM_TEA, 3
 	giveitem SUNSHINE_TEA, 99

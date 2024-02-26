@@ -13,7 +13,7 @@ Route22Tunnel_MapScriptHeader:
 	warp_event 38, 16, DUSK_TURNPIKE, 6
 	warp_event 38, 17, DUSK_TURNPIKE, 7
 	warp_event 19,  5, SEASIDE_CAVE_1F, 4
-	warp_event  5, 19, ROUTE_19, 4
+	warp_event  5, 21, ROUTE_19, 4
 
 	db 82 ; coord events
 	xy_trigger 0, 13, 38, 0, Route22TunnelLightEntrance, 0, 0
@@ -120,6 +120,12 @@ Route22TunnelTrigger1:
 	end
 
 Route22TunnelCallback:
+	checkevent EVENT_ROUTE_22_TUNNEL_GATE_IS_UP
+	iffalse .done_gate
+	changeblock $12, $0c, $1c
+	changeblock $14, $0c, $a6
+	changeblock $14, $0a, $a2
+.done_gate
 	readvar VAR_PLAYER_COLOR
 	if_equal 1, .blue
 	setevent EVENT_HIDE_OW_OBJECTS_TEAL

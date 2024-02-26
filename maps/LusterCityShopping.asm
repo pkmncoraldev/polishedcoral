@@ -413,7 +413,7 @@ Luster2NPC6Text:
 	
 Luster2NPC7Text:
 	text "I locked my keys"
-	line "in my car!"
+	line "in my truck!"
 	
 	para "Today is not my"
 	line "day…"

@@ -416,3 +416,6 @@ INCLUDE "maps/FightingDojo.asm"
 
 SECTION "Underwater Scripts", ROMX
 INCLUDE "maps/Route14_15Underwater.asm"
+
+SECTION "Umbra Town Scripts", ROMX
+INCLUDE "maps/UmbraTown.asm"

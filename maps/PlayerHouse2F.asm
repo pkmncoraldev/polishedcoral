@@ -5,7 +5,7 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 19 ; warp events
+	db 20 ; warp events
 	warp_event  9,  0, PLAYER_HOUSE_1F, 3
 	warp_event  5, 10, SUNSET_BAY, 1
 	warp_event  7, 10, DAYBREAK_VILLAGE, 1
@@ -25,11 +25,12 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event  5, 18, DUSK_TURNPIKE, 1
 	warp_event  7, 18, CROSSROADS, 1
 	warp_event  9, 18, KOMORE_VILLAGE, 1
+	warp_event 11, 18, UMBRA_TOWN, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
 
-	db 25 ; bg events
+	db 26 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
 	bg_event  5,  1, SIGNPOST_READ, PlayerHouseRadio
 	bg_event -1, -1, SIGNPOST_READ, PlayerHouseBookshelf
@@ -56,6 +57,7 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event  4, 18, SIGNPOST_JUMPTEXT, PlayerHouseDusk
 	bg_event  6, 18, SIGNPOST_JUMPTEXT, PlayerHouseCrossroads
 	bg_event  8, 18, SIGNPOST_JUMPTEXT, PlayerHouseKomore
+	bg_event 10, 18, SIGNPOST_JUMPTEXT, PlayerHouseUmbra
 
 	db 6 ; object events
 	object_event  6,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_KRISS_HOUSE_2F_CONSOLE
@@ -485,6 +487,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_FLYPOINT_DUSK
 	setflag ENGINE_FLYPOINT_CROSSROADS
 	setflag ENGINE_FLYPOINT_KOMORE
+	setflag ENGINE_FLYPOINT_UMBRA
 .done
 	writetext PlayerHouseDebugText5
 	waitbutton
@@ -608,6 +611,10 @@ PlayerHouseCrossroads:
 	
 PlayerHouseKomore:
 	text "KOMORE VILLAGE"
+	done
+	
+PlayerHouseUmbra:
+	text "UMBRA TOWN"
 	done
 	
 PlayerHouse2FInitializeRoom:

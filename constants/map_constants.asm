@@ -181,7 +181,7 @@ MAP_NONE   EQU 0
 
 	newgroup													 ;  9
 	
-	map_const EVENTIDE_VILLAGE,							  20, 24 ; 1
+	map_const EVENTIDE_VILLAGE,							  19, 24 ; 1
 	map_const EVENTIDE_GYM_SPEECH_HOUSE,       		       4,  4 ; 2
 	map_const EVENTIDE_SOOTHE_BELL_HOUSE,  		       	   4,  4 ; 3
 	map_const EVENTIDE_BIKE_SHOP,       		           4,  4 ; 4
@@ -342,7 +342,7 @@ MAP_NONE   EQU 0
 	map_const DESERT_WASTELAND_OASIS,          			  11, 10 ; 22
 	map_const DESERT_TEMPLE_OUTSIDE,           			  17, 13 ; 23
 	
-	newgroup
+	newgroup													 ; 18
 	
 	map_const DESERT_TEMPLE_1,							   9, 19 ; 1
 	map_const DESERT_TEMPLE_TOP_LEFT,					   6, 11 ; 2
@@ -351,7 +351,7 @@ MAP_NONE   EQU 0
 	map_const DESERT_TEMPLE_LOWER_RIGHT,				  12, 11 ; 5
 	map_const DESERT_TEMPLE_2,							   5,  9 ; 6
 	
-	newgroup													 ; 18
+	newgroup													 ; 19
 	
 	map_const ROUTE_19,									  24, 26 ; 1
 	map_const ROUTE_20,									  10, 16 ; 2
@@ -367,7 +367,7 @@ MAP_NONE   EQU 0
 	map_const RADIANT_HOUSE,     	             		   4,  4 ; 12
 	map_const RADIANT_FIELD,							  19, 15 ; 13
 	
-	newgroup
+	newgroup													 ; 20
 	
 	map_const ROUTE_21,									  20, 17 ; 1
 	map_const DUSK_TURNPIKE,							  18, 19 ; 2
@@ -387,11 +387,11 @@ MAP_NONE   EQU 0
 	map_const BAR_INSIDE,								   7,  4 ; 16
 	map_const CROSSROADS,								  17, 13 ; 17
 	
-	newgroup
+	newgroup													 ; 21
 	
 	map_const ROUTE_14_15_UNDERWATER,					  36, 18 ; 1
 	
-	newgroup
+	newgroup													 ; 22
 	
 	map_const ROUTE_23,									  21, 27 ; 1
 	map_const ROUTE_23_WINDY,							   1,  1 ; 2
@@ -410,6 +410,10 @@ MAP_NONE   EQU 0
 	map_const KOMORE_POKECENTER,                      	   6,  4 ; 15
 	map_const KOMORE_MART,                             	   6,  4 ; 16
 	map_const FIGHTING_DOJO,                           	   4,  5 ; 17
+	
+	newgroup													 ; 23
+	
+	map_const UMBRA_TOWN,								  15, 13 ; 1
 	
 	newgroup													 ; last
 	

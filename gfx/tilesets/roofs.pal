@@ -74,26 +74,26 @@
 	RGB 21, 21, 21
 	RGB 11, 11, 11
 ;15 - Airport
-	RGB 21, 21, 21
-	RGB 11, 11, 11
-	RGB 21, 21, 21
-	RGB 11, 11, 11
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 ;16 - Shimmer City
 	RGB 21, 21, 21
 	RGB 11, 09, 25
 	RGB 11, 11, 19
 	RGB 05, 03, 15
-;17 - Brillo
-	RGB 21, 21, 21
-	RGB 11, 11, 11
-	RGB 21, 21, 21
-	RGB 11, 11, 11
+;17 - Brillo Town
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 ;18 - Desert Temple
-	RGB 21, 21, 21
-	RGB 11, 11, 11
-	RGB 21, 21, 21
-	RGB 11, 11, 11
-;19 - Radiant
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+;19 - Radiant Township
 	RGB 26, 20, 31
 	RGB 21, 12, 31
 	RGB 12, 07, 20
@@ -113,6 +113,11 @@
 	RGB 25, 13, 06
 	RGB 13, 10, 10
 	RGB 09, 06, 04
+;23 - Umbra
+	RGB 16, 16, 16
+	RGB 11, 11, 11
+	RGB 09, 09, 17
+	RGB 05, 05, 10
 ;last - Fake Route 1
 	RGB 00, 00, 00
 	RGB 00, 00, 00

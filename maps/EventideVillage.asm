@@ -12,7 +12,7 @@ EventideVillage_MapScriptHeader:
 	warp_event 23, 25, EVENTIDE_MART, 1
 	warp_event 23, 13, EVENTIDE_BIKE_SHOP, 1
 	warp_event 13, 25, EVENTIDE_GYM_SPEECH_HOUSE, 1
-	warp_event 35, 13, EVENTIDE_SOOTHE_BELL_HOUSE, 1
+	warp_event 33, 13, EVENTIDE_SOOTHE_BELL_HOUSE, 1
 	warp_event 31, 37, EVENTIDE_GYM, 1
 	warp_event 32, 37, EVENTIDE_GYM, 2
 

@@ -72,6 +72,7 @@ SOUTH_ONWA_LANDMARK EQU const_value
 	const ROUTE_23
 	const KOMORE_VILLAGE
 	const ROUTE_24
+	const UMBRA_TOWN
 	
 	const BRILLO_TOWN		 ; 31
 	const ROUTE_17			 ; 32

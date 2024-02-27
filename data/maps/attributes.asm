@@ -434,6 +434,8 @@ ENDM
 	connection north, Route23, ROUTE_23, 1
 	connection west, Route24South, ROUTE_24_SOUTH, -4
 	
+	map_attributes UmbraTown, UMBRA_TOWN, $fb, 0
+	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0
 	connection south, FakeRoute2, FAKE_ROUTE_2, 0

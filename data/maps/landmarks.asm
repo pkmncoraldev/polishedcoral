@@ -68,6 +68,7 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, Route23Name
 	landmark   0,   0, KomoreVillageName
 	landmark   0,   0, Route24Name
+	landmark   0,   0, UmbraTownName
 	
 	landmark  20, 124, BrilloTownName
 	landmark  28, 124, Route17Name
@@ -136,6 +137,7 @@ CrossroadsName: 	   db "CROSSROADS@"
 Route23Name:		   db "ROUTE 23@"
 KomoreVillageName:	   db "KOMORE¯VILLAGE@"
 Route24Name:		   db "ROUTE 24@"
+UmbraTownName: 	   	   db "UMBRA TOWN@"
 
 LusterStationName:	   db "LUSTER¯CITY@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"

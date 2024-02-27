@@ -24,7 +24,7 @@ MapGroupRoofs:
 	db  4 ; group 20 (Highway)
 	db -1 ; group 21 (Underwater)
 	db  2 ; group 22 (Komore)
-	db  0 ; group 22 (Umbra)
+	db  0 ; group 22 (Bright)
 	db -1 ; group last (Fake Route 1)
 
 Roofs:

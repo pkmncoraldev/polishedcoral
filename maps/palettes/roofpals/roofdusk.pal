@@ -113,11 +113,11 @@
 	RGB 22, 11, 00
 	RGB 28, 27, 31
 	RGB 13, 11, 23
-;23 - Umbra
-	RGB 17, 12, 05
-	RGB 10, 07, 03
-	RGB 24, 24, 24
-	RGB 11, 11, 11
+;23 - Brightburg
+	RGB 26, 20, 03
+	RGB 22, 14, 00
+	RGB 30, 31, 28
+	RGB 29, 31, 13
 ;last - Fake Route 1
 	RGB 00, 00, 00
 	RGB 00, 00, 00

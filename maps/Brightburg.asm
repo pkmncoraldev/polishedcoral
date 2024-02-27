@@ -1,8 +1,8 @@
-UmbraTown_MapScriptHeader:
+Brightburg_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_NEWMAP, UmbraTownFlyPoint
+	callback MAPCALLBACK_NEWMAP, BrightburgFlyPoint
 
 	db 1 ; warp events
 	warp_event 17,  9, PLAYER_HOUSE_2F, 20
@@ -14,6 +14,6 @@ UmbraTown_MapScriptHeader:
 	db 0 ; object events
 
 
-UmbraTownFlyPoint:
-	setflag ENGINE_FLYPOINT_UMBRA
+BrightburgFlyPoint:
+	setflag ENGINE_FLYPOINT_BRIGHT
 	return

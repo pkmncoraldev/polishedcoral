@@ -25,7 +25,7 @@ SOUTH_ONWA_FLYPOINT EQU const_value
 	flypoint DUSK,				DUSK_TURNPIKE
 	flypoint CROSSROADS,		CROSSROADS
 	flypoint KOMORE,			KOMORE_VILLAGE
-	flypoint UMBRA,				UMBRA_TOWN
+	flypoint BRIGHT,			BRIGHTBURG
 	
 	flypoint LASTFLYPOINT,		SHIMMER_CITY
 	db -1

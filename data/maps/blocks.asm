@@ -814,8 +814,8 @@ FightingDojo_BlockData:
 KomoreVillage_BlockData:
 	INCBIN "maps/KomoreVillage.ablk.lz"
 	
-UmbraTown_BlockData:
-	INCBIN "maps/UmbraTown.ablk.lz"
+Brightburg_BlockData:
+	INCBIN "maps/Brightburg.ablk.lz"
 	
 Route24North_BlockData:
 Route24NorthWindy_BlockData:

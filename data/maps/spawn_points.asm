@@ -22,7 +22,7 @@ SpawnPoints: ; 0x152ab
 	spawn DUSK_TURNPIKE,			   23, 32
 	spawn CROSSROADS,      		       17, 12
 	spawn KOMORE_VILLAGE, 			   31,  6
-	spawn UMBRA_TOWN,	 			   17, 10
+	spawn BRIGHTBURG,	 			   17, 10
 	
 	spawn STARGLOW_CAVERN_DEPTHS,	   16, 15
 	spawn FAKE_ROUTE_1,   		       20, 29

@@ -116,7 +116,7 @@ MAP_NONE   EQU 0
 	map_const STARGLOW_POKECENTER,                         6,  4 ;  7
 	map_const STARGLOW_MART,							   6,  4 ;  8
 	map_const STARGLOW_GYM,                                6, 11 ;  9
-	map_const ROUTE_4,                                    22, 12 ; 10
+	
 	map_const HUNTERS_THICKET,                            15, 16 ; 11
 	map_const ROUTE_5,                                    18, 28 ; 12
 	map_const ROUTE_5_DEEP,                                9,  8 ; 13
@@ -314,6 +314,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_14,									  15, 24 ; 13
 	map_const ROUTE_15,									  44, 14 ; 14
 	map_const ROUTE_16,									   7,  4 ; 15
+	map_const ROUTE_4,                                    22, 12 ; 10
 	
 	
 	newgroup													 ; 17
@@ -413,7 +414,7 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 23
 	
-	map_const UMBRA_TOWN,								  15, 13 ; 1
+	map_const BRIGHTBURG,								  15, 13 ; 1
 	
 	newgroup													 ; last
 	

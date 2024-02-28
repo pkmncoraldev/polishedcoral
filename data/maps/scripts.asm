@@ -15,6 +15,8 @@ INCLUDE "maps/ShimmerPokeCenter.asm"
 INCLUDE "maps/BrilloPokeCenter.asm"
 INCLUDE "maps/DuskPokeCenter.asm"
 INCLUDE "maps/KomorePokeCenter.asm"
+INCLUDE "maps/BrightPokeCenter.asm"
+
 
 SECTION "Pokemon Mart Scripts 1", ROMX
 INCLUDE "maps/GlintMart.asm"
@@ -29,6 +31,7 @@ INCLUDE "maps/ShimmerMart.asm"
 INCLUDE "maps/BrilloMart.asm"
 INCLUDE "maps/DuskMart.asm"
 INCLUDE "maps/KomoreMart.asm"
+INCLUDE "maps/BrightMart.asm"
 
 
 SECTION "Dungeon Scripts", ROMX
@@ -419,3 +422,6 @@ INCLUDE "maps/Route14_15Underwater.asm"
 
 SECTION "Brightburg Scripts", ROMX
 INCLUDE "maps/Brightburg.asm"
+INCLUDE "maps/BrightHouse1.asm"
+INCLUDE "maps/BrightHouse2.asm"
+INCLUDE "maps/BrightHouse3.asm"

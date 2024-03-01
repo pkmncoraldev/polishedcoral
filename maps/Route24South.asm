@@ -127,7 +127,7 @@ Route24SouthTrainer2:
 	
 BreloomRandomAsm:
 	call Random
-	cp 25 percent
+	cp 50 percent
 	jr c, .breloom
 	xor a
 	ld [wScriptVar], a

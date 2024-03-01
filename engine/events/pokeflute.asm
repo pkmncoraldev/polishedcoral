@@ -258,6 +258,8 @@ _NettSpecs:
 	pause 30
 	writetext NettSpecsNormalText2
 	pause 30
+	writetext NettSpecsNormalText3
+	pause 30
 	writetext NettSpecsDittoText
 	playmusic MUSIC_NONE
 	pause 60
@@ -535,7 +537,7 @@ NettSpecsChanseyText2:
 	done
 	
 NettSpecsDittoText:
-	text "… … !"
+	text "… … …!"
 	done
 	
 NettSpecsDittoText2:

@@ -544,9 +544,9 @@ NettSpecsDittoText2:
 	done
 	
 NettSpecsDittoTextGone:
-	text "DITTO fled with"
-	line "the rest of the"
-	cont "disguised DITTO."
+	text "DITTO and its"
+	line "disguised cohorts"
+	cont "fled."
 	done
 	
 NettSpecsDittoTextGone2:

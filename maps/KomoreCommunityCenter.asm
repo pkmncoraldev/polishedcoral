@@ -91,13 +91,15 @@ KomoreCommunityCenterDark:
 	end	
 
 KomoreCommunityCenterItemBall:
+	callasm KomoreCommunityCenterSetItemAsm
+	farscall FindItemInBallScript
+	iffalse .end
 	clearevent EVENT_MIMIKYU_MIDDLE
 	clearevent EVENT_MIMIKYU_RIGHT
 	setevent EVENT_MIMIKYU_LEFT
 	disappear KOMORE_COMMUNITY_CENTER_ITEM_1
 	disappear KOMORE_COMMUNITY_CENTER_ITEM_2
-	callasm KomoreCommunityCenterSetItemAsm
-	farjump FindItemInBallScript
+.end
 	end
 
 KomoreCommunityCenterSetItemAsm:

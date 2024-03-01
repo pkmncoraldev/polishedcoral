@@ -236,23 +236,35 @@ endr
 	end
 	
 Route24SouthMushroom1:
+	callasm Route24SouthMushroomSetItemAsm
+	farscall FindItemInBallScript
+	iffalse .end
 	disappear ROUTE_24_MUSHROOM_1
-	jump Route24SouthMushroom
+.end
+	end
 	
 Route24SouthMushroom2:
+	callasm Route24SouthMushroomSetItemAsm
+	farscall FindItemInBallScript
+	iffalse .end
 	disappear ROUTE_24_MUSHROOM_2
-	jump Route24SouthMushroom
+.end
+	end
 	
 Route24SouthMushroom3:
+	callasm Route24SouthMushroomSetItemAsm
+	farscall FindItemInBallScript
+	iffalse .end
 	disappear ROUTE_24_MUSHROOM_3
-	jump Route24SouthMushroom
+.end
+	end
 	
 Route24SouthMushroom4:
-	disappear ROUTE_24_MUSHROOM_4
-	
-Route24SouthMushroom:
 	callasm Route24SouthMushroomSetItemAsm
-	farjump FindItemInBallScript
+	farscall FindItemInBallScript
+	iffalse .end
+	disappear ROUTE_24_MUSHROOM_4
+.end
 	end
 	
 Route24SouthMushroomSetItemAsm:

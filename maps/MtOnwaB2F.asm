@@ -27,11 +27,12 @@ MtOnwaB2F_MapScriptHeader:
 MtOnwaB2FDisguiseman1:
 	checkevent EVENT_MT_ONWA_B2F_POKE_BALL2
 	iftrue .disguiseman
+	callasm MtOnwaB2FSetItemAsm
+	farscall FindItemInBallScript
+	iffalse .end
 	dotrigger $1
 	setevent EVENT_MT_ONWA_B2F_POKE_BALL1
-	callasm MtOnwaB2FSetItemAsm
-	farjump FindItemInBallScript
-
+	
 .disguiseman
 	dotrigger $0
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_FAT_GUY
@@ -63,15 +64,17 @@ MtOnwaB2FDisguiseman1:
 	waitbutton
 	closetext
 	setevent EVENT_MT_ONWA_B2F_POKE_BALL1
+.end
 	end
 	
 MtOnwaB2FDisguiseman2:
 	checkevent EVENT_MT_ONWA_B2F_POKE_BALL1
 	iftrue .disguiseman
+	callasm MtOnwaB2FSetItemAsm
+	farscall FindItemInBallScript
+	iffalse .end
 	dotrigger $1
 	setevent EVENT_MT_ONWA_B2F_POKE_BALL2
-	callasm MtOnwaB2FSetItemAsm
-	farjump FindItemInBallScript
 
 .disguiseman
 	dotrigger $0
@@ -104,6 +107,7 @@ MtOnwaB2FDisguiseman2:
 	waitbutton
 	closetext
 	setevent EVENT_MT_ONWA_B2F_POKE_BALL2
+.end
 	end
 	
 MtOnwaB2FDisguiseManStopsYou:

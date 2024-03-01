@@ -147,9 +147,11 @@ endr
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	end
 .NormalBall
-	setevent EVENT_DESERT_TEMPLE_2_POKE_BALL
 	callasm DesertTemple2SetItemAsm
-	farjump FindItemInBallScript
+	farscall FindItemInBallScript
+	iffalse .end
+	setevent EVENT_DESERT_TEMPLE_2_POKE_BALL
+.end
 	end
 	
 DesertTemple2ForceDayPal:

@@ -7054,6 +7054,9 @@ endc
 	ld a, [wBattleType]
 	cp BATTLETYPE_GROTTO
 	jr z, .hidden_ability
+	cp BATTLETYPE_LEGENDARY
+	jr .check_ditto
+.return_ability
 	call BattleRandom
 	cp 1 + 5 percent
 	jr c, .hidden_ability
@@ -7065,6 +7068,10 @@ endc
 .ability_2
 	ld a, ABILITY_2
 	jr .got_ability
+.check_ditto
+	ld a, [wTempEnemyMonSpecies]
+	cp DITTO
+	jr nz, .return_ability
 .hidden_ability
 	ld a, HIDDEN_ABILITY
 .got_ability

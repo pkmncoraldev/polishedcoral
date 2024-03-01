@@ -420,7 +420,8 @@ MAP_NONE   EQU 0
 	map_const BRIGHT_HOUSE_1,     	             		   4,  4 ; 4
 	map_const BRIGHT_HOUSE_2,     	             		   4,  4 ; 5
 	map_const BRIGHT_HOUSE_3,     	             		   4,  4 ; 6
-	map_const BRIGHTBURG_GATE,							   5,  4 ; 7
+	map_const ROUTE_25_GATE,                          	   4,  4 ; 7
+	map_const BRIGHTBURG_GATE,							   5,  4 ; 8
 	
 	newgroup													 ; last
 	

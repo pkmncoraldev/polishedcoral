@@ -267,6 +267,7 @@ ScriptCommandTable:
 	dw Script_giveitemnotification
 	dw Script_checkdebug
 	dw Script_movetoplayer
+	dw Script_variablesprite2
 
 StartScript:
 	ld hl, wScriptFlags
@@ -1177,7 +1178,7 @@ ApplyPersonFacing:
 	or c
 	jr nz, .loop
 	ret
-
+	
 Script_variablesprite:
 ; parameters:
 ;     byte (SingleByteParam)
@@ -1189,6 +1190,23 @@ Script_variablesprite:
 	ld hl, wVariableSprites
 	add hl, de
 	call GetScriptByte
+	ld [hl], a
+	farjp ReloadSpriteIndex
+
+Script_variablesprite2:
+; parameters:
+;     byte (SingleByteParam)
+	call GetScriptByte
+	ld e, a
+	ld d, $0
+	ld [hUsedSpriteIndex], a
+	ld hl, wVariableSprites
+	add hl, de
+	push de
+	push hl
+	ld a, [wPlaceBallsY]
+	pop hl
+	pop de
 	ld [hl], a
 	farjp ReloadSpriteIndex
 

@@ -79,7 +79,7 @@ BreloomOwSpriteGFX::		   INCBIN "gfx/icons/breloom.2bpp.lz"
 TuberSpriteGFX::       		   INCBIN "gfx/sprites/tuber.2bpp.lz"
 ShaolinSpriteGFX::     		   INCBIN "gfx/sprites/shaolin.2bpp.lz"
 MasterSpriteGFX::     		   INCBIN "gfx/sprites/master.2bpp.lz"
-
+DittoOwSpriteGFX::       	   INCBIN "gfx/icons/ditto.2bpp.lz"
 
 SECTION "Overworld Sprites 3", ROMX
 

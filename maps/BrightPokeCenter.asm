@@ -1,5 +1,7 @@
 BrightPokeCenter_MapScriptHeader:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script BrightPokeCenterTrigger0
+	scene_script BrightPokeCenterTrigger1
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, BrightPokeCenterCallback
@@ -12,22 +14,42 @@ BrightPokeCenter_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 8 ; object events
-	pc_nurse_event  4, 1
-	pc_chansey_event  5, 1
+	db 9 ; object events
+	person_event SPRITE_GENERAL_VARIABLE_1, -5, -5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_BRIGHTBURG_REVEALED
 	person_event SPRITE_BOWING_NURSE,  1, 4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, BrightPokeCenterNurse, EVENT_BRIGHTBURG_REVEALED
 	object_event 5, 1, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, CHANSEY, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, BrightPokeCenterChansey, EVENT_BRIGHTBURG_REVEALED
 	person_event SPRITE_GENTLEMAN,  6,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, BrightPokeCenterNPC1, EVENT_BRIGHTBURG_REVEALED
 	person_event SPRITE_POKEFAN_M,  4,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, BrightPokeCenterNPC1, EVENT_BRIGHTBURG_REVEALED
 	person_event SPRITE_BATTLE_GIRL,  2, 11, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, BrightPokeCenterNurse, EVENT_BRIGHTBURG_REVEALED
+	pc_nurse_event  4, 1
+	pc_chansey_event  5, 1
 	person_event SPRITE_POKEMANIAC,  3, 7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, BrightPokeCenterNPC1, EVENT_BRIGHTBURG_REVEALED
 
 
+BrightPokeCenterTrigger0:
+	end
+	
+BrightPokeCenterTrigger1:
+	disappear 1
+	disappear 2
+	disappear 3
+	disappear 4
+	disappear 5
+	disappear 6
+	disappear 7
+	disappear 8
+	disappear 9
+	dotrigger $0
+	end
+
 BrightPokeCenterCallback:
+	checkevent EVENT_BRIGHT_CENTER_MART_EMPTY
+	iftrue .empty
 	checkevent EVENT_BRIGHTBURG_REVEALED
 	iftrue .done
-	moveperson 1, -5, -5
-	moveperson 2, -5, -5
+.empty
+	moveperson 7, -5, -5
+	moveperson 8, -5, -5
 .done
 	return
 

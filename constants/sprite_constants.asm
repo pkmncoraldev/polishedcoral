@@ -195,6 +195,7 @@
 	const SPRITE_SHAOLIN
 	const SPRITE_MASTER
 	const SPRITE_MINA
+	const SPRITE_DITTO_OW
 
 	
 	const_def $ed

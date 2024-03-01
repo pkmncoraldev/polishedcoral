@@ -1,3 +1,5 @@
+;top 2 RGB values for dusk
+;bottom 2 for landmark sign
 ;0
 	RGB 21, 21, 21
 	RGB 11, 11, 11
@@ -116,7 +118,7 @@
 ;23 - Brightburg
 	RGB 26, 20, 03
 	RGB 22, 14, 00
-	RGB 30, 31, 28
+	RGB 31, 29, 31
 	RGB 29, 31, 13
 ;last - Fake Route 1
 	RGB 00, 00, 00

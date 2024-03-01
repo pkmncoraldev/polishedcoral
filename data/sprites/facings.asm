@@ -612,10 +612,10 @@ FacingSunbeamView3:
 	
 FacingSunbeamView4:
 	db 9 ; #
-	db  4,  8, 0, $00
-	db  4, 16, 0, $01
-	db  4, 24, 0, $02
-	db  4, 32, 0, $03
+	db  4,  8, 0, $84
+	db  4, 16, 0, $85
+	db  4, 24, 0, $86
+	db  4, 32, 0, $87
 	db 12,  0, 0, $04
 	db 12,  8, 0, $05
 	db 12, 16, 0, $06
@@ -628,7 +628,7 @@ FacingSunbeamView5:
 	db -4,  8, 0, $82
 	db -4, 16, 0 | X_FLIP, $81
 	db  4,  0, 0, $83
-	db  4,  8, 0, $84
+	db  4,  8, 0, $88
 	db  4, 16, 0 | X_FLIP, $83
 	db 12,  0, Y_FLIP | 0, $81
 	db 12,  8, Y_FLIP | 0, $82
@@ -636,10 +636,10 @@ FacingSunbeamView5:
 	
 FacingSunbeamView6:
 	db 13 ; #
-	db  4,  8, 0, $00
-	db  4, 16, 0, $01
-	db  4, 24, 0, $02
-	db  4, 32, 0, $03
+	db  4,  8, 0, $84
+	db  4, 16, 0, $85
+	db  4, 24, 0, $86
+	db  4, 32, 0, $87
 	db 12,  0, 0, $04
 	db 12,  8, 0, $05
 	db 12, 16, 0, $06

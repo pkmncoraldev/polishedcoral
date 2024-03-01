@@ -1062,7 +1062,8 @@ wRoute14_15UnderwaterTrigger:: ds 1
 wRoute23Trigger:: ds 1
 wKomoreCommunityCenterTrigger:: ds 1
 wRoute24Trigger:: ds 1
-ds 28
+wBrightburgTrigger:: ds 1
+ds 27
 
 wAmpharosFood:: ds 1
 

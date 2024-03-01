@@ -122,4 +122,11 @@ MapTriggers::
 	scene_var ROUTE_23,								  wRoute23Trigger
 	scene_var KOMORE_COMMUNITY_CENTER,				  wKomoreCommunityCenterTrigger
 	scene_var ROUTE_24_SOUTH,						  wRoute24Trigger
+	scene_var BRIGHTBURG,							  wBrightburgTrigger
+	scene_var BRIGHT_POKECENTER,					  wBrightburgTrigger
+	scene_var BRIGHT_MART,							  wBrightburgTrigger
+	scene_var BRIGHT_HOUSE_1,						  wBrightburgTrigger
+	scene_var BRIGHT_HOUSE_2,						  wBrightburgTrigger
+	scene_var BRIGHT_HOUSE_3,						  wBrightburgTrigger
+	scene_var BRIGHTBURG_GATE,						  wBrightburgTrigger
 	db -1

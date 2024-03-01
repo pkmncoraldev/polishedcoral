@@ -2965,6 +2965,10 @@ CheckChangeMusic::
 	jr z, .tvroom
 	cp MUSIC_COMMUNITY_CENTER
 	jr z, .community
+	cp MUSIC_BRIGHTBURG
+	jr z, .bright
+	cp MUSIC_BRIGHT_CENTER
+	jr z, .bright_center
 	ld a, $ff
 .done
 	ld [wSlotBias], a
@@ -3016,4 +3020,16 @@ CheckChangeMusic::
 	eventflagcheck EVENT_MIMIKYU_GONE
 	jr z, .none
 	ld a, MUSIC_FLICKER_STATION
+	jr .done
+	
+.bright
+	eventflagcheck EVENT_BRIGHTBURG_REVEALED
+	jr nz, .none
+	ld a, MUSIC_FLICKER_STATION
+	jr .done
+	
+.bright_center
+	eventflagcheck EVENT_BRIGHT_CENTER_MART_EMPTY
+	jr nz, .none
+	ld a, MUSIC_POKEMON_CENTER
 	jr .done

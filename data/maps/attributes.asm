@@ -690,4 +690,5 @@ ENDM
 	map_attributes BrightHouse1, BRIGHT_HOUSE_1, $0, 0
 	map_attributes BrightHouse2, BRIGHT_HOUSE_2, $0, 0
 	map_attributes BrightHouse3, BRIGHT_HOUSE_3, $0, 0
+	map_attributes Route25Gate, ROUTE_25_GATE, $0, 0
 	map_attributes BrightburgGate, BRIGHTBURG_GATE, $0, 0

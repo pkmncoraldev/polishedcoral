@@ -1,3 +1,5 @@
+;top 2 RGB values for daytime
+;bottom 2 for nite
 ;0
 	RGB 21, 21, 21
 	RGB 11, 11, 11

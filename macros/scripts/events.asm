@@ -1289,6 +1289,12 @@ movetoplayer: macro
 	db \1 ; person
 	endm
 	
+	enum variablesprite2_command
+variablesprite2: macro
+	db variablesprite2_command
+	db \1 - SPRITE_VARS ; byte
+	endm
+	
 thisasm: macro
 	callasm .asm\@
 	end

@@ -1,10 +1,12 @@
 Brightburg_MapScriptHeader:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script BrightburgTrigger0
+	scene_script BrightburgTrigger1
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, BrightburgFlyPoint
 
-	db 7 ; warp events
+	db 8 ; warp events
 	warp_event 17,  9, BRIGHT_POKECENTER, 1
 	warp_event  3,  9, BRIGHT_MART, 1
 	warp_event  3, 18, BRIGHT_HOUSE_1, 1
@@ -12,6 +14,7 @@ Brightburg_MapScriptHeader:
 	warp_event 19, 16, BRIGHT_HOUSE_3, 1
 	warp_event 23, 10, BRIGHTBURG_GATE, 1
 	warp_event 23, 11, BRIGHTBURG_GATE, 2
+	warp_event  9,  5, ROUTE_25_GATE, 3
 
 	db 0 ; coord events
 
@@ -22,18 +25,32 @@ Brightburg_MapScriptHeader:
 	signpost  9,  4, SIGNPOST_READ, BrightburgMartSign
 	signpost 12,  9, SIGNPOST_READ, BrightburgSign
 
-	db 6 ; object events
+	db 7 ; object events
+	person_event SPRITE_GENERAL_VARIABLE_1, -5, -5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_BRIGHTBURG_REVEALED
 	person_event SPRITE_GRANNY,  8, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, BrightburgNPC1, EVENT_BRIGHTBURG_REVEALED
 	person_event SPRITE_BIRD_KEEPER, 11,  8, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, BrightburgNPC3, EVENT_BRIGHTBURG_REVEALED
-	person_event SPRITE_CHILD, 17, 16, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, BrightburgNPC3, EVENT_BRIGHTBURG_REVEALED
+	person_event SPRITE_BUG_MANIAC, 17, 16, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, BrightburgNPC3, EVENT_BRIGHTBURG_REVEALED
 	person_event SPRITE_POKEFAN_F, 12, 18, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, BrightburgNPC2, EVENT_BRIGHTBURG_REVEALED
-	person_event SPRITE_TWIN, 12, 19, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, BrightburgNPC2, EVENT_BRIGHTBURG_REVEALED
+	person_event SPRITE_CHILD, 12, 19, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, BrightburgNPC3, EVENT_BRIGHTBURG_REVEALED
 	person_event SPRITE_YOUNGSTER, 17,  9, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BrightburgNPC4, -1
+	
 
 	const_def 1 ; object constants
+	const BRIGHTBURG_DITTO
 	const BRIGHTBURG_NPC_1
-	const BRIGHTBURG_NPC_2
-	const BRIGHTBURG_NPC_3
+
+BrightburgTrigger0:
+	end
+	
+BrightburgTrigger1:
+	disappear 1
+	disappear 2
+	disappear 3
+	disappear 4
+	disappear 5
+	disappear 6
+	dotrigger $0
+	end
 
 BrightburgFlyPoint:
 	setflag ENGINE_FLYPOINT_BRIGHT
@@ -101,7 +118,7 @@ BrightburgNPC4Text2:
 	line "everyone go?"
 	
 	para "This place is a"
-	line "ghost town!"
+	line "total ghost town!"
 	done
 	
 BrightburgSignText:

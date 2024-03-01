@@ -199,6 +199,7 @@ SpriteHeaders:
 	overworld_sprite ShaolinSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite MasterSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite MinaSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite DittoOwSpriteGFX, STANDING_SPRITE, PAL_OW_PINK
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

@@ -224,7 +224,6 @@ _NettSpecs:
 	ret
 	
 .NettSpecsScript
-	reloadmappart
 	special UpdateTimePals
 	opentext
 	writetext NettSpecsPutOnText
@@ -238,13 +237,90 @@ _NettSpecs:
 	if_equal 3, .nurse_script
 	if_equal 4, .chansey_script
 .NothingHappenedScript
-	jumptext NettSpecsNormalText
+	callasm BrightburgTextScrollAsm1
+	opentext
+	writetext NettSpecsNormalText1
+	pause 30
+	writetext NettSpecsNormalText2
+	pause 30
+	writetext NettSpecsNormalText3
+	pause 30
+	callasm BrightburgTextScrollAsm2
+	writetext NettSpecsNormalText4
+	waitbutton
+	closetext
+	end
 	
 .ditto_script
-	jumptext NettSpecsDittoText
+	callasm BrightburgTextScrollAsm1
+	opentext
+	writetext NettSpecsNormalText1
+	pause 30
+	writetext NettSpecsNormalText2
+	pause 30
+	writetext NettSpecsDittoText
+	playmusic MUSIC_NONE
+	pause 60
+	callasm BrightburgTextScrollAsm2
+	closetext
+	callasm BrightburgDittoDisguiseSpriteAsm
+	spriteface LAST_TALKED, DOWN
+	variablesprite2 SPRITE_GENERAL_VARIABLE_1
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	disappear 1 ;brightburg ditto
+	callasm BrightburgMoveDittoAsm
+	appear 1 ;brightburg ditto
+	closetext
+	disappear LAST_TALKED
+	pause 45
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_DITTO_OW
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	variablesprite2 SPRITE_GENERAL_VARIABLE_1
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_DITTO_OW
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	variablesprite2 SPRITE_GENERAL_VARIABLE_1
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_DITTO_OW
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	pause 40
+	spriteface 1, UP
+	opentext
+	writetext NettSpecsDittoText2
+	cry DITTO
+	waitbutton
+	closetext
+	waitsfx
+	setlasttalked 1
+	loadwildmon DITTO, 1
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+	startbattle
+	callasm ForceGhostTownAsm
+	reloadmapafterbattle
+	setevent EVENT_BRIGHTBURG_REVEALED
+	setevent EVENT_BRIGHT_CENTER_MART_EMPTY
+	checkcode VAR_MONJUSTCAUGHT
+	if_equal DITTO, .CaughtDitto
+	opentext
+	writetext NettSpecsDittoTextGone
+	waitbutton
+	closetext
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	dotrigger $1
+	callasm BrightburgClearwPlaceBallsYAsm
+	end
+.CaughtDitto
+	opentext
+	writetext NettSpecsDittoTextGone2
+	waitbutton
+	closetext
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	dotrigger $1
+	callasm BrightburgClearwPlaceBallsYAsm
+	end
 	
 .youngster_script
-	setlasttalked 6 ;brightburg youngster
+	setlasttalked 7 ;brightburg youngster
 	jumptextfaceplayer NettSpecsYoungsterText
 	
 .nurse_script
@@ -308,12 +384,123 @@ _NettSpecs:
 	ld [wScriptVar], a
 	ret
 	
+ForceGhostTownAsm:
+	farjp LoadMapAttributes
+	
+BrightburgDittoDisguiseSpriteAsm:
+	farcall GetFacingObjectSprite
+	ld a, d
+	ld [wPlaceBallsY], a
+	ret
+	
+BrightburgClearwPlaceBallsYAsm:
+	xor a
+	ld [wPlaceBallsY], a
+	ret
+	
+BrightburgTextScrollAsm1:
+	ld hl, wOptions1
+	ld a, [hl]
+	ld [wPlaceBallsX], a
+	set NO_TEXT_SCROLL, [hl]
+	ret
+	
+BrightburgTextScrollAsm2:
+	ld a, [wPlaceBallsX]
+	ld [wOptions1], a
+	xor a
+	ld [wPlaceBallsX], a
+	ret
+	
+BrightburgMoveDittoAsm:
+	call GetFacingTileCoord
+	ld c, a
+	ld a, 1 ;brightburg ditto
+	ld b, a
+	ld a, [wPlayerFacing]
+	cp $08
+	jr z, .left
+	cp $0c
+	jr z, .right
+	ld a, [wXCoord]
+	jr .done_x
+.right
+	ld a, [wXCoord]
+	add 1
+	push af
+	ld a, c
+	cp COLL_COUNTER
+	jr nz, .pop_done_x
+	pop af
+	add 1
+	jr .done_x
+.left
+	ld a, [wXCoord]
+	sub 1
+	push af
+	ld a, c
+	cp COLL_COUNTER
+	jr nz, .pop_done_x
+	pop af
+	sub 1
+	jr .done_x
+.pop_done_x
+	pop af
+.done_x
+	add 4
+	ld d, a
+	ld a, [wPlayerFacing]
+	cp $04
+	jr z, .up
+	cp $00
+	jr z, .down
+	ld a, [wYCoord]
+	jr .done_y
+.down
+	ld a, [wYCoord]
+	add 1
+	push af
+	ld a, c
+	cp COLL_COUNTER
+	jr nz, .pop_done_y
+	pop af
+	add 1
+	jr .done_y
+.up
+	ld a, [wYCoord]
+	sub 1
+	push af
+	ld a, c
+	cp COLL_COUNTER
+	jr nz, .pop_done_y
+	pop af
+	sub 1
+	jr .done_y
+.pop_done_y
+	pop af
+.done_y
+	add 4
+	ld e, a
+	farjp CopyDECoordsToMapObject
+	
 NettSpecsPutOnText:
 	text "<PLAYER> put on"
 	line "the NETT SPECS."
 	done
 	
-NettSpecsNormalText:
+NettSpecsNormalText1:
+	text "…"
+	done
+	
+NettSpecsNormalText2:
+	text "… …"
+	done
+	
+NettSpecsNormalText3:
+	text "… … …"
+	done
+	
+NettSpecsNormalText4:
 	text "Everything looks"
 	line "the same…"
 	done
@@ -348,6 +535,23 @@ NettSpecsChanseyText2:
 	done
 	
 NettSpecsDittoText:
-	text "DITTO spotted."
+	text "… … !"
+	done
+	
+NettSpecsDittoText2:
+	text "DITTO revealed"
+	line "itself!"
+	done
+	
+NettSpecsDittoTextGone:
+	text "DITTO fled with"
+	line "the rest of the"
+	cont "disguised DITTO."
+	done
+	
+NettSpecsDittoTextGone2:
+	text "The rest of the"
+	line "disguised DITTO"
+	cont "fled."
 	done
 	

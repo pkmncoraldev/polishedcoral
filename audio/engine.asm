@@ -3019,7 +3019,7 @@ CheckChangeMusic::
 .community
 	eventflagcheck EVENT_MIMIKYU_GONE
 	jr z, .none
-	ld a, MUSIC_FLICKER_STATION
+	ld a, MUSIC_STARGLOW_VALLEY
 	jr .done
 	
 .bright

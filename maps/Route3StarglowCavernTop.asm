@@ -13,7 +13,7 @@ Route3StarglowCavernTop_MapScriptHeader:
 	db 0 ; bg events
 
 	db 1 ; object events
-	person_event SPRITE_GENERAL_VARIABLE_1, 14,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route3StarglowCavernTopPatches, -1
+	person_event SPRITE_GENERAL_VARIABLE_1, 14,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route3StarglowCavernTopPatches, EVENT_HAVE_FLASH
 	
 	const_def 1 ; object constants
 	const ROUTE_3_TOP_PATCHES

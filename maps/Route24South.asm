@@ -15,7 +15,7 @@ Route24South_MapScriptHeader:
 	bg_event 27,  6, SIGNPOST_ITEM + BALMMUSHROOM, EVENT_ROUTE_24_HIDDEN_BALMMUSHROOM_2
 	bg_event 33,  7, SIGNPOST_ITEM + BIG_MUSHROOM, EVENT_ROUTE_24_HIDDEN_BIG_MUSHROOM
 
-	db 14 ; object events
+	db 17 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PINK
 	person_event SPRITE_BALL_CUT_FRUIT,  0, 26, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route24SouthMushroom1, EVENT_ROUTE_24_MUSHROOM_1
@@ -103,7 +103,7 @@ Route24SouthTrainer1:
 	done
 	
 Route24SouthTrainer2:
-	generictrainer CAMPER, TERRY, EVENT_BEAT_ROUTE_24_SOUTH_TRAINER_2, .SeenText, .BeatenText
+	generictrainer CAMPER, DANTE, EVENT_BEAT_ROUTE_24_SOUTH_TRAINER_2, .SeenText, .BeatenText
 
 	text "I know I'm supposed"
 	line "to be roughin' it,"

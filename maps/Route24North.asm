@@ -72,7 +72,7 @@ Route24NorthTrainer2:
 
 .BeatenText:
 	text "Oh no!"
-	line "SkARMORY!"
+	line "SKARMORY!"
 	done
 
 Route24NorthNPC:

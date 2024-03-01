@@ -108,7 +108,6 @@ PLAYER_F EQU __enum__
 	const TREVOR
 	const VINCENT
 	const DANTE
-	const TERRY
 
 	trainerclass PICNICKER
 	const MOLLY

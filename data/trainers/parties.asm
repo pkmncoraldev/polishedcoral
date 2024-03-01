@@ -1088,7 +1088,7 @@ CamperGroup:
 ; ================
 
 	; CAMPER
-	db "TERRY@"
+	db "DANTE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

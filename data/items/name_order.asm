@@ -122,7 +122,7 @@ ItemNameOrder:
 	db NAM_SKATEBOARD  ; d5
 	db NAM_TRAIN_TICKET   ; 28
 	db NAM_TRAIN_PASS      ; 4f
-	db NAM_BLUE_CARD    ; 17
+	db NAM_NETT_SPECS    ; 17
 	db NAM_ORANGETICKET ; 97
 	db NAM_MYSTICTICKET ; 8d
 	db NAM_OLD_SEA_MAP  ; 95

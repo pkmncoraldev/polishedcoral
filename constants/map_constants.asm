@@ -414,12 +414,13 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 23
 	
-	map_const BRIGHTBURG,								  15, 13 ; 1
+	map_const BRIGHTBURG,								  15, 12 ; 1
 	map_const BRIGHT_POKECENTER,                      	   6,  4 ; 2
 	map_const BRIGHT_MART,                             	   6,  4 ; 3
 	map_const BRIGHT_HOUSE_1,     	             		   4,  4 ; 4
 	map_const BRIGHT_HOUSE_2,     	             		   4,  4 ; 5
 	map_const BRIGHT_HOUSE_3,     	             		   4,  4 ; 6
+	map_const BRIGHTBURG_GATE,							   5,  4 ; 7
 	
 	newgroup													 ; last
 	

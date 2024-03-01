@@ -143,7 +143,7 @@ _PokeFlute: ; 50730
 .sudowoodo
 	ld a, 2
 	ld [wScriptVar], a
-	ret	
+	ret
 
 .sunbeamgroup
 	callba GetFacingObject
@@ -215,3 +215,139 @@ PokefluteText3:
 	text "All sleeping"
 	line "#MON woke up."
 	prompt
+
+_NettSpecs:
+	ld hl, .NettSpecsScript
+	call QueueScript
+	ld a, $1
+	ld [wItemEffectSucceeded], a
+	ret
+	
+.NettSpecsScript
+	reloadmappart
+	special UpdateTimePals
+	opentext
+	writetext NettSpecsPutOnText
+	waitbutton
+	closetext
+	wait 10
+	callasm .CheckCanUseNettSpecs
+	iffalse .NothingHappenedScript
+	if_equal 1, .ditto_script
+	if_equal 2, .youngster_script
+	if_equal 3, .nurse_script
+	if_equal 4, .chansey_script
+.NothingHappenedScript
+	jumptext NettSpecsNormalText
+	
+.ditto_script
+	jumptext NettSpecsDittoText
+	
+.youngster_script
+	setlasttalked 6 ;brightburg youngster
+	jumptextfaceplayer NettSpecsYoungsterText
+	
+.nurse_script
+	checkevent EVENT_BRIGHTBURG_REVEALED
+	iffalse .ditto_script
+	jumptextfaceplayer NettSpecsNurseText
+	
+.chansey_script
+	checkevent EVENT_BRIGHTBURG_REVEALED
+	iffalse .ditto_script
+	opentext
+	writetext NettSpecsChanseyText1
+	cry CHANSEY
+	waitsfx
+	buttonsound
+	writetext NettSpecsChanseyText2
+	waitbutton
+	closetext
+	end
+	
+.CheckCanUseNettSpecs
+	ld a, [wMapGroup]
+	cp GROUP_BRIGHTBURG
+	jr nz, .not_in_brightburg
+
+	callba GetFacingObject
+	jr c, .nope
+	
+	callba GetFacingObjectSprite
+	ld a, d
+	cp SPRITE_YOUNGSTER
+	jr z, .youngster
+	cp SPRITE_BOWING_NURSE
+	jr z, .nurse
+	cp SPRITE_MON_ICON
+	jr z, .chansey
+	
+.ditto
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.youngster
+	ld a, 2
+	ld [wScriptVar], a
+	ret
+	
+.nurse
+	ld a, 3
+	ld [wScriptVar], a
+	ret
+	
+.chansey
+	ld a, 4
+	ld [wScriptVar], a
+	ret
+
+.not_in_brightburg
+.nope
+	xor a
+	ld [wScriptVar], a
+	ret
+	
+NettSpecsPutOnText:
+	text "<PLAYER> put on"
+	line "the NETT SPECS."
+	done
+	
+NettSpecsNormalText:
+	text "Everything looks"
+	line "the same…"
+	done
+	
+NettSpecsYoungsterText:
+	text "Woah!"
+	
+	para "Funky looking"
+	line "shades, dude!"
+	done
+	
+NettSpecsNurseText:
+	text "Um…"
+	
+	para "Can I help you?"
+	
+	para "You're staring…"
+	
+	para "What?"
+	
+	para "Of course I'm"
+	line "real!"
+	done
+	
+NettSpecsChanseyText1:
+	text "CHANSEY: …Sii?"
+	done
+	
+NettSpecsChanseyText2:
+	text "It looks curious"
+	line "about the SPECS."
+	done
+	
+NettSpecsDittoText:
+	text "DITTO spotted."
+	done
+	

@@ -272,6 +272,7 @@ RivalPokedexIcon: 				INCBIN "gfx/items/pokedex.2bpp"
 SkateboardIcon:   				INCBIN "gfx/items/skateboard.2bpp"
 TrainTicketIcon:
 TrainPassIcon:    				INCBIN "gfx/items/train_ticket.2bpp"
+NettSpecsIcon:    				INCBIN "gfx/items/nett_specs.2bpp"
 ShinyCharmIcon:   				INCBIN "gfx/items/1.2bpp"
 FlowerPetalIcon:  				INCBIN "gfx/items/flower_petal.2bpp"
 SunshineTeaIcon:

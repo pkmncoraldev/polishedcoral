@@ -119,7 +119,7 @@ ItemEffects: ; e73c
 	dw Skateboard       ; SKATEBOARD
 	dw NoEffect         ; TRAIN_TICKET
 	dw NoEffect         ; TRAIN_PASS
-	dw BlueCard         ; BLUE_CARD
+	dw NettSpecs        ; NETT_SPECS
 	dw NoEffect         ; ORANGETICKET
 	dw NoEffect         ; MYSTICTICKET
 	dw NoEffect         ; OLD_SEA_MAP
@@ -2602,14 +2602,14 @@ XItemEffect: ; f4c5
 ; f504
 
 
-BlueCard: ; f58f
-	ld hl, .bluecardtext
-	jp MenuTextBoxWaitButton
+;BlueCard: ; f58f
+;	ld hl, .bluecardtext
+;	jp MenuTextBoxWaitButton
 
-.bluecardtext
-	text_jump UnknownText_0x1c5c5e
-	db "@"
-; f59a
+;.bluecardtext
+;	text_jump UnknownText_0x1c5c5e
+;	db "@"
+
 TapePlayer:
 	farjp TapePlayerFunction
 
@@ -2994,8 +2994,9 @@ UnknownText_0xf739: ; 0xf739
 
 PokeFlute: ; f73e
 	farjp _PokeFlute
-; f745
 
+NettSpecs: ; f73e
+	farjp _NettSpecs
 
 SacredAsh: ; f753
 	ld a, [wInitialOptions]

@@ -104,7 +104,7 @@ ItemNames::
 	db "SKATEBOARD@"
 	db "TRAIN TICKET@"
 	db "TRAIN PASS@"
-	db "BLUE CARD@"
+	db "NETT SPECS@"
 	db "ORANGETICKET@"
 	db "MYSTICTICKET@"
 	db "OLD SEA MAP@"

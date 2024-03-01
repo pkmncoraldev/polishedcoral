@@ -395,6 +395,7 @@ PlayerHouseDebugPoster:
 	giveitem TRAIN_PASS
 	giveitem TORCH
 	giveitem CLAY_POT
+	giveitem NETT_SPECS
 	givecoins 20
 	setevent EVENT_KNOW_OLLIE
 	setevent EVENT_KNOW_GRIND

@@ -70,6 +70,7 @@ SunbeamViewNite_BlockData:
 Route4EventideGate_BlockData:
 EventideVillageGate_BlockData:
 Route19DuskGate_BlockData:
+BrightburgGate_BlockData:
 	INCBIN "maps/EastWestGate.ablk.lz"
 
 SunsetWaterGrassHouse_BlockData:

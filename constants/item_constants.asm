@@ -122,7 +122,7 @@
 	const SKATEBOARD   ; 67
 	const TRAIN_TICKET ; 68
 	const TRAIN_PASS   ; 69
-	const BLUE_CARD    ; 6a - replace
+	const NETT_SPECS   ; 6a
 	const ORANGETICKET ; 6b - replace
 	const MYSTICTICKET ; 6c - replace
 	const OLD_SEA_MAP  ; 6d - replace
@@ -317,7 +317,7 @@
 	const NAM_BLACK_BELT   ; 14
 	const NAM_BLACK_SLUDGE ; 15
 	const NAM_BLACKGLASSES ; 16
-	const NAM_BLUE_CARD    ; 17
+	const NAM_NETT_SPECS   ; 17
 	const NAM_BLUESKY_MAIL ; 18
 	const NAM_BOTTLE_CAP   ; 19
 	const NAM_BRICK_PIECE  ; 1a

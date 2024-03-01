@@ -104,7 +104,7 @@ ItemDescriptions:
 	dw SkateboardDesc
 	dw TrainTicketDesc
 	dw TrainPassDesc
-	dw BlueCardDesc
+	dw NettSpecsDesc
 	dw OrangeTicketDesc
 	dw MysticTicketDesc
 	dw OldSeaMapDesc
@@ -643,9 +643,9 @@ TrainPassDesc:
 	db   "Lets you ride the"
 	next "train. (Unlimited)@"
 
-BlueCardDesc:
-	db   "Card to save"
-	next "points.@"
+NettSpecsDesc:
+	db   "Reveal the unseen."
+	next "Made by NETT CO.@"
 
 OrangeTicketDesc:
 MysticTicketDesc:

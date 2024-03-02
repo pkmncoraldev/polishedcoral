@@ -2342,12 +2342,23 @@ _TownMap: ; 9191c
 PokegearMap: ; 91ae1
 	call LoadTownMapGFX
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp SHAMOUTI_LANDMARK
-	jp nc, FillOrangeMap
+;	cp SHAMOUTI_LANDMARK
+;	jp nc, FillOrangeMap
 	cp SOUTH_ONWA_LANDMARK
-	jp nc, FillSouthOnwaMap
+	jp nc, .south
+	xor a
+	ld [wWarpNumber], a
+	ld b, CGB_POKEGEAR_PALS
+	call GetCGBLayout
+	call SetPalettes
 	jp FillNorthOnwaMap
-; 91af3
+.south
+	ld a, 1
+	ld [wWarpNumber], a
+	ld b, CGB_POKEGEAR_PALS
+	call GetCGBLayout
+	call SetPalettes
+	jp FillSouthOnwaMap
 
 _FlyMap: ; 91af3
 	call GetCurrentLandmark
@@ -2698,12 +2709,16 @@ _Area: ; 91d11
 	cp SOUTH_ONWA_LANDMARK
 	jr nc, .south_onwa
 .north_onwa
+	xor a
+	ld [wWarpNumber], a
 	ld a, NORTH_ONWA_REGION
 	jr .set_region
 ;.shamouti
 ;	ld a, ORANGE_REGION
 ;	jr .set_region
 .south_onwa
+	ld a, 1
+	ld [wWarpNumber], a
 	ld a, SOUTH_ONWA_REGION
 .set_region
 	ld [wTownMapCursorLandmark], a
@@ -3190,8 +3205,8 @@ rept _NARG / 2
 endr
 endm
 	townmappals 2, 2, 2, 3, 3, 7, 0, 0, 2, 2, 4, 2, 5, 6, 6, 5
-	townmappals 2, 2, 7, 3, 4, 5, 0, 0, 2, 2, 0, 7, 3, 3, 3, 6
-	townmappals 2, 2, 2, 7, 7, 7, 0, 0, 3, 7, 4, 0, 0, 0, 0, 0
+	townmappals 2, 2, 7, 3, 4, 5, 0, 0, 2, 2, 0, 4, 3, 3, 3, 6
+	townmappals 2, 2, 2, 7, 7, 4, 0, 0, 3, 7, 4, 0, 0, 0, 0, 0
 	townmappals 2, 2, 2, 7, 2, 2, 4, 6, 4, 6, 4, 0, 0, 0, 0, 0
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1

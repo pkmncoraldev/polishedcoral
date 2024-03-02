@@ -247,7 +247,7 @@ PlayerHouseDebugPoster:
 	yesorno
 	iffalse .items
 	givepoke SUNFLORA, 30
-	givepoke DRAKLOAK, 99
+	givepoke CHARIZARD, 99
 	givepoke DRAGAPULT, 99
 
 .items

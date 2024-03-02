@@ -601,6 +601,10 @@ PLAYER_F EQU __enum__
 	trainerclass AROMA_LADY
 	const LINDA
 	const MARTHA
+	const TAYLOR
+	const CAROL
+	const AMBER
+	const JODI
 	
 	trainerclass TUBER
 	const SAMANTHA

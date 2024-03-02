@@ -11,7 +11,7 @@ RadiantField_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 9 ; object events
+	db 13 ; object events
 	person_event SPRITE_PIGTAILS, 11, 32, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantFieldRose, EVENT_SAVED_ROSE
 	person_event SPRITE_PIGTAILS, 22, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantFieldIris, EVENT_SAVED_IRIS
 	person_event SPRITE_PIGTAILS, 18,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantFieldViolet, EVENT_SAVED_VIOLET
@@ -21,12 +21,106 @@ RadiantField_MapScriptHeader:
 	person_event SPRITE_CASINO,  7, 19, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 26, 28, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 26, 29, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_AROMA_LADY, 12, 19, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 2, RadiantFieldTrainer1, -1
+	person_event SPRITE_AROMA_LADY, 22, 13, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 2, RadiantFieldTrainer2, -1
+	person_event SPRITE_AROMA_LADY, 18, 21, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 3, RadiantFieldTrainer3, -1
+	person_event SPRITE_AROMA_LADY, 20, 29, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 3, RadiantFieldTrainer4, -1
 	
 	
 	const_def 1 ; object constants
 	const RADIANT_FIELD_ROSE
 	const RADIANT_FIELD_IRIS
 	const RADIANT_FIELD_VIOLET
+	
+RadiantFieldTrainer1:
+	generictrainer AROMA_LADY, TAYLOR, EVENT_BEAT_RADIANT_FIELD_TRAINER_1, .SeenText, .BeatenText
+
+	text "Ahhh!"
+	
+	para "Our battle kicked"
+	line "up so much pollen!"
+	done
+
+.SeenText:
+	text "A beautiful field"
+	line "of flowers."
+	
+	para "Is there anywhere"
+	line "better for a #-"
+	cont "MON battle?"
+	done
+
+.BeatenText:
+	text "Whoops."
+	done
+	
+RadiantFieldTrainer2:
+	generictrainer AROMA_LADY, CAROL, EVENT_BEAT_RADIANT_FIELD_TRAINER_2, .SeenText, .BeatenText
+
+	text "Your fierce"
+	line "#MON beat mine"
+	cont "fair and square."
+	done
+
+.SeenText:
+	text "My GRASS-type"
+	line "#MON thrive in"
+	cont "this environment."
+	
+	para "There's no way"
+	line "we'll lose!"
+	done
+
+.BeatenText:
+	text "My GRASS-type"
+	line "#MON!"
+	done
+	
+RadiantFieldTrainer3:
+	generictrainer AROMA_LADY, AMBER, EVENT_BEAT_RADIANT_FIELD_TRAINER_3, .SeenText, .BeatenText
+
+	text "Join me!"
+	
+	para "Let's dance among"
+	line "the flowers toget-"
+	cont "her!"
+	done
+
+.SeenText:
+	text "Hehehe!"
+	
+	para "I love dancing"
+	line "among the flowers!"
+	done
+
+.BeatenText:
+	text "Woo!"
+	done
+	
+RadiantFieldTrainer4:
+	generictrainer AROMA_LADY, JODI, EVENT_BEAT_RADIANT_FIELD_TRAINER_4, .SeenText, .BeatenText
+
+	text "Did you know the"
+	line "brown part of a"
+	cont "sunflower is made"
+	cont "up of many tiny"
+	cont "flowers called"
+	cont "florets?"
+	
+	para "Aren't sunflowers"
+	line "fascinating?"
+	done
+
+.SeenText:
+	text "If you can beat me"
+	line "I'll tell you an"
+	cont "intersting fact"
+	cont "about sunflowers!"
+	done
+
+.BeatenText:
+	text "Ok! You won!"
+	done
 	
 RadiantFieldRose:
 	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
@@ -127,7 +221,7 @@ VioletSetNameAsm:
 	db "VIOLET@@@@@"
 	
 RadiantFieldRoseText1:
-	text "Ah!"
+	text "Oh!"
 	
 	para "I love the"
 	line "sunflowers!"
@@ -136,7 +230,7 @@ RadiantFieldRoseText1:
 	done
 	
 RadiantFieldRoseText2:
-	text "ROSE: Ah!"
+	text "ROSE: Oh!"
 	
 	para "I love the"
 	line "sunflowers!"

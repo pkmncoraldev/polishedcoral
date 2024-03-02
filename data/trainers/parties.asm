@@ -4727,6 +4727,42 @@ AromaLadyGroup:
 	db -1 ; end
 
 ; ================
+
+	; AROMA_LADY
+	db "TAYLOR@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; AROMA_LADY
+	db "CAROL@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; AROMA_LADY
+	db "AMBER@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; AROMA_LADY
+	db "JODI@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 TuberGroup:

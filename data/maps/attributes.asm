@@ -143,12 +143,12 @@ ENDM
 	connection east, Route4, ROUTE_4, 6
 	
 	map_attributes Route4, ROUTE_4, $d4, NORTH | SOUTH | WEST
-	connection north, HuntersThicket, HUNTERS_THICKET, 2
+	connection north, HuntersThicket, HUNTERS_THICKET, 1
 	connection south, Route5, ROUTE_5, -3
 	connection west, StarglowValley, STARGLOW_VALLEY, -6
 	
-	map_attributes HuntersThicket, HUNTERS_THICKET, $d4, SOUTH
-	connection south, Route4, ROUTE_4, -2
+	map_attributes HuntersThicket, HUNTERS_THICKET, $fb, SOUTH
+	connection south, Route4, ROUTE_4, -1
 	
 	map_attributes Route5, ROUTE_5, $fb, NORTH
 	connection north, Route4, ROUTE_4, 3

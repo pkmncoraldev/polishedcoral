@@ -301,25 +301,25 @@
 	map_id HUNTERS_THICKET
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
-	db 10, SHROOMISH	;30%
+	db 10, LEDYBA		;30%
 	db 10, PIKIPEK		;30%
-	db 10, MARILL		;20%
+	db 10, SHROOMISH	;20%
 	db 10, PIKACHU		;10%
 	db 10, JOLTIK		;5%
 	db 10, JOLTIK		;4%
 	db 10, JOLTIK		;1%
 	; day
-	db 10, SHROOMISH	;30%
+	db 10, LEDYBA		;30%
 	db 10, PIKIPEK		;30%
-	db 10, MARILL		;20%
+	db 10, SHROOMISH	;20%
 	db 10, PIKACHU		;10%
 	db 10, JOLTIK		;5%
 	db 10, JOLTIK		;4%
 	db 10, JOLTIK		;1%
 	; nite
-	db 10, SHROOMISH	;30%
+	db 10, LEDYBA		;30%
 	db 10, PIKIPEK		;30%
-	db 10, MARILL		;20%
+	db 10, SHROOMISH	;20%
 	db 10, PIKACHU		;10%
 	db 10, JOLTIK		;5%
 	db 10, JOLTIK		;4%

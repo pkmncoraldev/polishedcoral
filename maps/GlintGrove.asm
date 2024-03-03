@@ -8,8 +8,8 @@ GlintGrove_MapScriptHeader:
 	callback MAPCALLBACK_TILES, GlintGrovePiles
 
 	db 4 ; warp events
-	warp_def 57, 27, 1, GLINT_GROVE_ENTRANCE
-	warp_def 57, 26, 2, GLINT_GROVE_ENTRANCE
+	warp_def 56, 27, 1, GLINT_GROVE_ENTRANCE
+	warp_def 56, 26, 2, GLINT_GROVE_ENTRANCE
 	warp_def 29, 49, 1, GLINT_GROVE_DEEP
 	warp_def 45, 49, 2, GLINT_GROVE_DEEP
 

@@ -6,8 +6,8 @@ Route5_MapScriptHeader:
 	db 4 ; warp events
 	warp_def 51, 19, 1, ROUTE_5_GATE_1F
 	warp_def 51, 20, 2, ROUTE_5_GATE_1F
-	warp_def 27, 6, 1, ROUTE_5_DEEP
-	warp_def 26, 6, 2, ROUTE_5_DEEP
+	warp_def 27,  7, 1, ROUTE_5_DEEP
+	warp_def 26,  7, 2, ROUTE_5_DEEP
 
 	db 0 ; coord events
 

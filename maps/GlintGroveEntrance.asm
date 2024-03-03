@@ -10,14 +10,14 @@ GlintGroveEntrance_MapScriptHeader:
 	callback MAPCALLBACK_TILES, GlintGroveEntrancePiles
 
 	db 2 ; warp events
-	warp_def 4, 9, 1, GLINT_GROVE
-	warp_def 4, 8, 2, GLINT_GROVE
+	warp_def  5,  9, 1, GLINT_GROVE
+	warp_def  5,  8, 2, GLINT_GROVE
 
 	db 8 ; coord events
 	xy_trigger 0, 12, 8, 0, GlintContactsScriptL, 0, 0
 	xy_trigger 0, 12,  9, 0, GlintContactsScriptR, 0, 0
-	xy_trigger 1, 5, 8, 0, GlintRival_L, 0, 0
-	xy_trigger 1,  5,  9, 0, GlintRival_R, 0, 0
+	xy_trigger 1,  6,  8, 0, GlintRival_L, 0, 0
+	xy_trigger 1,  6,  9, 0, GlintRival_R, 0, 0
 	xy_trigger 3, 17,  9, 0, GlintContactsScriptSquish, 0, 0
 	xy_trigger 3, 17,  8, 0, GlintContactsScriptSquish, 0, 0
 	xy_trigger 3, 12,  8, 0, GlintContactsScriptL, 0, 0
@@ -143,7 +143,7 @@ GlintGroveSign:
 	
 GlintRival_L:
 	special Special_StopRunning
-	moveperson GLINT_RIVAL, 8, 4
+	moveperson GLINT_RIVAL, 8, 5
 	appear GLINT_RIVAL
 	clearevent EVENT_GLINT_RIVAL_WILL_BUMP
 	playsound SFX_EXIT_BUILDING
@@ -247,7 +247,7 @@ GlintRival_L:
 	
 GlintRival_R:
 	special Special_StopRunning
-	moveperson GLINT_RIVAL, 9, 4
+	moveperson GLINT_RIVAL, 9, 5
 	appear GLINT_RIVAL
 	clearevent EVENT_GLINT_RIVAL_WILL_BUMP
 	playsound SFX_EXIT_BUILDING

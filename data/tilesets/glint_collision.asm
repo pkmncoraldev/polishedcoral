@@ -237,7 +237,7 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; ec
 	tilecoll WALL, SKATE, SKATE, SKATE ; ed
 	tilecoll WALL, WALL, FLOOR, FLOOR ; ee
-	tilecoll DOOR, DOOR, SKATE, SKATE ; ef
+	tilecoll WALL, WALL, WARP_CARPET_UP, WARP_CARPET_UP ; ef
 	tilecoll WALL, WALL, FLOOR, FLOOR ; f0
 	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; f1
 	tilecoll WATER, WATER, WATER, WATER ; f2

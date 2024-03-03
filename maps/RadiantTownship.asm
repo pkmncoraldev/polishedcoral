@@ -7,8 +7,8 @@ RadiantTownship_MapScriptHeader:
 
 	db 8 ; warp events
 	warp_def 13, 35, 1, RADIANT_FLOWER_SHOP
-	warp_def 25, 18, 1, RADIANT_FIELD
-	warp_def 25, 19, 2, RADIANT_FIELD
+	warp_def 24, 18, 1, RADIANT_FIELD
+	warp_def 24, 19, 2, RADIANT_FIELD
 	warp_def 13, 22, 1, RADIANT_ORPHANAGE_1F
 	warp_def  7,  5, 1, RADIANT_POKECENTER
 	warp_def 15,  5, 1, RADIANT_MART

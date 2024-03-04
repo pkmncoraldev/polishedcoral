@@ -2552,7 +2552,9 @@ PokeDoll: ; f48f
 	and 3 << 6
 	or $2
 	ld [wBattleResult], a
-	jp UseItemText
+	call UseItemText
+	call ClearBGPalettes
+	jp ClearTileMap
 
 .asm_f4a6
 	xor a

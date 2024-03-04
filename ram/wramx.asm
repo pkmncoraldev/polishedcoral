@@ -1258,7 +1258,9 @@ wMinaPaintingMonNick:: ds PKMN_NAME_LENGTH
 
 wUnknownRC:: ds 1
 
-	ds 13 ; unused
+wHuntersDisguise:: ds 1
+
+	ds 12 ; unused
 wUnlockedUnowns:: ds 1
 
 wFirstUnownSeen:: ds 1

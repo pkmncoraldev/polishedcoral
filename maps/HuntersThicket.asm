@@ -1,7 +1,8 @@
 HuntersThicket_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, HuntersThicketCallback
 
 	db 0 ; warp events
 
@@ -10,15 +11,20 @@ HuntersThicket_MapScriptHeader:
 	db 1 ; bg events
 	bg_event 29, 20, SIGNPOST_ITEM + SUN_STONE, EVENT_HUNTERS_THICKET_HIDDEN_SUN_STONE
 
-	db 8 ; object events
+	db 13 ; object events
 	itemball_event  5, 20, CALCIUM, 1, EVENT_HUNTERS_THICKET_BALL_1
 	itemball_event 18, 29, REPEL, 1, EVENT_HUNTERS_THICKET_BALL_2
 	itemball_event 14, 21, X_SPEED, 1, EVENT_HUNTERS_THICKET_BALL_3
-	person_event SPRITE_COOLTRAINER_F, 29, 19, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_1, -1
+	person_event SPRITE_COOLTRAINER_F, 29, 19, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerHunters_1, -1
 	person_event SPRITE_BUG_CATCHER, 16, 23, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_2, -1
 	person_event SPRITE_PICNICKER, 19, 15, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_3, -1
 	object_event 10,  5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, LEDIAN, -1, -1, (1 << 3) | PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, HuntersThicketLedian, EVENT_HUNTERS_THICKET_LEDIAN_GONE
 	fruittree_event  8, 14, FRUITTREE_HUNTERS_THICKET, CHESTO_BERRY
+	itemball_event 48, 13, POTION, 1, EVENT_HUNTERS_THICKET_BALL_4
+	itemball_event 45, 16, POTION, 1, EVENT_HUNTERS_THICKET_BALL_5
+	itemball_event 30, 10, POTION, 1, EVENT_HUNTERS_THICKET_BALL_6
+	itemball_event 39,  5, POTION, 1, EVENT_HUNTERS_THICKET_BALL_7
+	object_event 50,  4, SPRITE_DISGUISEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, HuntersThicketDisguiseman, EVENT_HUNTERS_THICKET_DISGUISEMAN
 
 	const_def 1 ; object constants
 	const HUNTERS_THICKET_POKE_BALL_1
@@ -28,6 +34,90 @@ HuntersThicket_MapScriptHeader:
 	const HUNTERS_THICKET_TRAINER_2
 	const HUNTERS_THICKET_TRAINER_3
 	const HUNTERS_THICKET_LEDIAN
+	const HUNTERS_THICKET_BERRY_TREE
+	const HUNTERS_THICKET_POKE_BALL_4
+	const HUNTERS_THICKET_POKE_BALL_5
+	const HUNTERS_THICKET_POKE_BALL_6
+	const HUNTERS_THICKET_POKE_BALL_7
+	const HUNTERS_THICKET_DISGUISEMAN
+
+HuntersThicketCallback:
+	callasm HuntersThicketLoadDisguise
+	if_equal 1, .one
+	if_equal 2, .two
+	if_equal 3, .three
+	if_equal 4, .four
+;.five
+	return
+.four
+	moveperson HUNTERS_THICKET_POKE_BALL_7, 50, 4
+	moveperson HUNTERS_THICKET_DISGUISEMAN, 39, 5
+	return
+.three
+	moveperson HUNTERS_THICKET_POKE_BALL_6, 50, 4
+	moveperson HUNTERS_THICKET_DISGUISEMAN, 30, 10
+	return
+.two
+	moveperson HUNTERS_THICKET_POKE_BALL_5, 50, 4
+	moveperson HUNTERS_THICKET_DISGUISEMAN, 45, 16
+	return
+.one
+	moveperson HUNTERS_THICKET_POKE_BALL_4, 50, 4
+	moveperson HUNTERS_THICKET_DISGUISEMAN, 48, 13
+	return
+	
+HuntersThicketLoadDisguise:
+	ld a, [wHuntersDisguise]
+	ld [wScriptVar], a
+	ret
+
+HuntersThicketDisguiseman:
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_FAT_GUY
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	applymovement HUNTERS_THICKET_DISGUISEMAN, Movement_StarglowCavern_DisguiseMan1
+	opentext
+	writetext StarglowCavern_DisguiseMan1Text1
+	waitbutton
+	closetext
+	faceplayer
+	opentext
+	writetext HuntersThicket_DisguiseMan1Text2
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext HuntersThicketDisguisemanBeatenText, 0
+	setlasttalked HUNTERS_THICKET_DISGUISEMAN
+	loadtrainer DISGUISE, MASTER_5
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext HuntersThicket_DisguiseMan1Text3
+	waitbutton
+	closetext
+	applymovement HUNTERS_THICKET_DISGUISEMAN, Movement_StarglowCavern_DisguiseMan2
+	disappear HUNTERS_THICKET_DISGUISEMAN
+	opentext
+	writetext StarglowCavern_DisguiseMan1Text4
+	waitbutton
+	closetext
+	setevent EVENT_HUNTERS_THICKET_DISGUISEMAN
+	end
+
+HuntersThicket_DisguiseMan1Text1:
+	text "TEXT 1"
+	done
+
+HuntersThicket_DisguiseMan1Text2:
+	text "TEXT 2"
+	done
+
+HuntersThicket_DisguiseMan1Text3:
+	text "TEXT 3"
+	done
+
+HuntersThicketDisguisemanBeatenText:
+	text "YOU WIN!"
+	done
 
 HuntersThicketLedian:
 	opentext

@@ -624,6 +624,7 @@ PlayerHouse2FInitializeRoom:
 	checkevent EVENT_INITIALIZED_EVENTS
 	iftrue .SkipInizialization
 	callasm FixPlayerPalKrisHouse
+	callasm SetHuntersThicketBalls
 	callasm UnlockTitleScreenMusic
 	addcellnum PHONE_MOM
 	readvar VAR_PLAYER_GENDER
@@ -1089,6 +1090,13 @@ FixPlayerPalKrisHouse:
 	ld a, [wPlayerPalette]
 	inc a
 	call ReceiveStartingClothes
+	ret
+	
+SetHuntersThicketBalls:
+	ld a, 5
+	call RandomRange
+	inc a
+	ld [wHuntersDisguise], a
 	ret
 	
 SetPlayerPalKrisHouse:

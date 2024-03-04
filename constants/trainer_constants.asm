@@ -502,6 +502,7 @@ PLAYER_F EQU __enum__
 	const MASTER_2
 	const MASTER_3
 	const MASTER_4
+	const MASTER_5
 
 	
 	trainerclass BIKINIBR

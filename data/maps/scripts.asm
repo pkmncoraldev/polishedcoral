@@ -54,6 +54,7 @@ INCLUDE "maps/LusterSewersB1F.asm"
 INCLUDE "maps/LusterSewersB2F.asm"
 INCLUDE "maps/LusterSewersValveRoom.asm"
 INCLUDE "maps/Route18.asm"
+INCLUDE "maps/HuntersThicket.asm"
 
 
 SECTION "Dungeon Scripts2", ROMX
@@ -90,7 +91,6 @@ INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route3East.asm"
 INCLUDE "maps/Route3FriendshipHouse.asm"
 INCLUDE "maps/Route4.asm"
-INCLUDE "maps/HuntersThicket.asm"
 INCLUDE "maps/Route5.asm"
 INCLUDE "maps/Route5Deep.asm"
 INCLUDE "maps/Route5Gate1F.asm"

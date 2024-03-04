@@ -3968,6 +3968,16 @@ DisguiseGroup:
 	db -1 ; end
 
 ; ================
+
+	; DISGUISE
+	db "MASTER@" ;HUNTERS THICKET
+	db TRAINERTYPE_MOVES
+	; party
+	db 1, BULBASAUR
+		db TACKLE_SCRATCH_POUND, 0, 0, 0
+	db -1 ; end
+
+; ================
 ; ================================
 
 

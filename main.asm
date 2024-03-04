@@ -968,6 +968,7 @@ LevelUpHappinessMod: ; 2709e
 _ReturnToBattle_UseBall: ; 2715c
 	call ClearBGPalettes
 	call ClearTileMap
+	call ClearSprites
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
 	jr z, .gettutorialbackpic

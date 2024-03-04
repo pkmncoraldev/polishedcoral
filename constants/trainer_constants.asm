@@ -101,6 +101,7 @@ PLAYER_F EQU __enum__
 	const ARNOLD
 	const DANNY
 	const TURK
+	const JOEL
 
 	trainerclass CAMPER
 	const BART
@@ -108,6 +109,7 @@ PLAYER_F EQU __enum__
 	const TREVOR
 	const VINCENT
 	const DANTE
+	const JERRY
 
 	trainerclass PICNICKER
 	const MOLLY
@@ -283,6 +285,7 @@ PLAYER_F EQU __enum__
 	const CHESTER
 	const PEDRO
 	const REMY
+	const GREG
 
 
 	trainerclass LASS
@@ -476,6 +479,7 @@ PLAYER_F EQU __enum__
 	const JULES
 	const MARY
 	const JANE
+	const LOIS
 
 
 	trainerclass PROF_SPRUCE

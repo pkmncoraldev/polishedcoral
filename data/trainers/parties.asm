@@ -1043,6 +1043,15 @@ BugCatcherGroup:
 	db -1 ; end
 
 ; ================
+
+	; BUG_CATCHER
+	db "JOEL@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -1089,6 +1098,15 @@ CamperGroup:
 
 	; CAMPER
 	db "DANTE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; CAMPER
+	db "JERRY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -2501,6 +2519,15 @@ SuperNerdGroup:
 	db -1 ; end
 
 ; ================
+
+	; SUPER_NERD
+	db "GREG@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3830,6 +3857,15 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF
 	db "JANE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; COOLTRAINERF
+	db "LOIS@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

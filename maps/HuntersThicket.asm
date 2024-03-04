@@ -11,7 +11,7 @@ HuntersThicket_MapScriptHeader:
 	db 1 ; bg events
 	bg_event 29, 20, SIGNPOST_ITEM + SUN_STONE, EVENT_HUNTERS_THICKET_HIDDEN_SUN_STONE
 
-	db 13 ; object events
+	db 17 ; object events
 	itemball_event  5, 20, CALCIUM, 1, EVENT_HUNTERS_THICKET_BALL_1
 	itemball_event 18, 29, REPEL, 1, EVENT_HUNTERS_THICKET_BALL_2
 	itemball_event 14, 21, X_SPEED, 1, EVENT_HUNTERS_THICKET_BALL_3
@@ -25,6 +25,11 @@ HuntersThicket_MapScriptHeader:
 	itemball_event 30, 10, POTION, 1, EVENT_HUNTERS_THICKET_BALL_6
 	itemball_event 39,  5, POTION, 1, EVENT_HUNTERS_THICKET_BALL_7
 	object_event 50,  4, SPRITE_DISGUISEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, HuntersThicketDisguiseman, EVENT_HUNTERS_THICKET_DISGUISEMAN
+	person_event SPRITE_CAMPER, 21, 40, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_4, -1
+	person_event SPRITE_SUPER_NERD,  8, 32, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_5, -1
+	person_event SPRITE_COOLTRAINER_F, 12, 51, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 3, TrainerHunters_6, -1
+	person_event SPRITE_BUG_CATCHER, 12, 61, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerHunters_7, -1
+
 
 	const_def 1 ; object constants
 	const HUNTERS_THICKET_POKE_BALL_1
@@ -40,6 +45,10 @@ HuntersThicket_MapScriptHeader:
 	const HUNTERS_THICKET_POKE_BALL_6
 	const HUNTERS_THICKET_POKE_BALL_7
 	const HUNTERS_THICKET_DISGUISEMAN
+	const HUNTERS_THICKET_TRAINER_4
+	const HUNTERS_THICKET_TRAINER_5
+	const HUNTERS_THICKET_TRAINER_6
+	const HUNTERS_THICKET_TRAINER_7
 
 HuntersThicketCallback:
 	callasm HuntersThicketLoadDisguise
@@ -213,4 +222,99 @@ TrainerHunters_3:
 
 .BeatenText:
 	text "Who invited you?"
+	done
+	
+TrainerHunters_4:
+	generictrainer CAMPER, JERRY, EVENT_BEAT_HUNTERS_TRAINER_4, .SeenText, .BeatenText
+
+	text "I saw some guy"
+	line "dressed up like a"
+	cont "#BALL and this"
+	cont "other dude in a"
+	cont "LEDIAN costume."
+	
+	para "What a bunch of"
+	line "FREAKS!"
+	done
+
+.SeenText:
+	text "A bunch of weirdos"
+	line "seem to hang out"
+	cont "around here…"
+	
+	para "What?"
+	
+	para "No, not me!"
+	done
+
+.BeatenText:
+	text "Argh!"
+	done
+	
+TrainerHunters_5:
+	generictrainer SUPER_NERD, GREG, EVENT_BEAT_HUNTERS_TRAINER_5, .SeenText, .BeatenText
+
+	text "Go! Go!"
+	line "LEDIAN RANGER!"
+	
+	para "COMET PUNCH to"
+	line "victory!"
+	done
+
+.SeenText:
+	text "Have you heard of"
+	line "the LEDIAN RANGER?"
+	
+	para "He's the coolest!"
+	done
+
+.BeatenText:
+	text "It's over for me!"
+	done
+	
+TrainerHunters_6:
+	generictrainer COOLTRAINERF, LOIS, EVENT_BEAT_HUNTERS_TRAINER_6, .SeenText, .BeatenText
+
+	text "Whew!"
+	
+	para "You're tough."
+	
+	para "I'm having trouble"
+	line "keeping up!"
+	done
+
+.SeenText:
+	text "The woods makes"
+	line "for excellent"
+	cont "training!"
+	
+	para "Come on, let's go"
+	line "a round!"
+	done
+
+.BeatenText:
+	text "Another round?"
+	done
+	
+TrainerHunters_7:
+	generictrainer BUG_CATCHER, JOEL, EVENT_BEAT_HUNTERS_TRAINER_7, .SeenText, .BeatenText
+
+	text "I'm more into hunt-"
+	line "ing for #MON"
+	cont "than battling."
+	done
+
+.SeenText:
+	text "Some kids catch"
+	line "bugs because they"
+	cont "think they're cool"
+	cont "or gross."
+	
+	para "I do it for the"
+	line "thrill of the"
+	cont "hunt!"
+	done
+
+.BeatenText:
+	text "What a thrill!"
 	done

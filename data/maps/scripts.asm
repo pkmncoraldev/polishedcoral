@@ -39,9 +39,6 @@ SECTION "Dungeon Scripts", ROMX
 INCLUDE "maps/DaybreakGrotto1.asm"
 INCLUDE "maps/DaybreakGrotto2.asm"
 INCLUDE "maps/DaybreakGrotto3.asm"
-INCLUDE "maps/GlintGrove.asm"
-INCLUDE "maps/GlintGroveEast.asm"
-INCLUDE "maps/GlintGroveDeep.asm"
 INCLUDE "maps/StarglowCavern1F.asm"
 INCLUDE "maps/StarglowCavern2F.asm"
 INCLUDE "maps/StarglowCavern3F.asm"
@@ -59,6 +56,9 @@ INCLUDE "maps/HuntersThicket.asm"
 
 SECTION "Dungeon Scripts2", ROMX
 
+INCLUDE "maps/GlintGrove.asm"
+INCLUDE "maps/GlintGroveEast.asm"
+INCLUDE "maps/GlintGroveDeep.asm"
 INCLUDE "maps/StarglowCavernFossilRoom.asm"
 INCLUDE "maps/MtOnwa1F.asm"
 INCLUDE "maps/MtOnwa2F.asm"

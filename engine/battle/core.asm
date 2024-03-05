@@ -432,8 +432,6 @@ GetSpeed::
 	ld a, b
 	cp HELD_QUICK_POWDER
 	jr z, .quick_powder
-	cp HELD_PAINTBRUSH
-	jr z, .paintbrush
 	CP HELD_LIQUID_SUN
 	jr z, .liquid_sun
 	cp HELD_CHOICE
@@ -456,19 +454,6 @@ GetSpeed::
 	jr nz, .done
 	ld a, $21
 	jr .apply_item_mod
-.paintbrush
-	; Double speed, but only for Smeargle
-	ld a, [hBattleTurn]
-	and a
-	ld hl, wBattleMonSpecies
-	jr z, .got_species2
-	ld hl, wEnemyMonSpecies
-.got_species2
-	ld a, [hl]
-	cp SMEARGLE
-	jr nz, .done
-	ld a, $21
-	jr .apply_item_mod
 .liquid_sun
 	; Double speed, but only for Sunkern/Sunflora in the sun
 	ld a, [wWeather]
@@ -477,9 +462,9 @@ GetSpeed::
 	ld a, [hBattleTurn]
 	and a
 	ld hl, wBattleMonSpecies
-	jr z, .got_species3
+	jr z, .got_species2
 	ld hl, wEnemyMonSpecies
-.got_species3
+.got_species2
 	ld a, [hl]
 	cp SUNKERN
 	jr z, .sunkern
@@ -1312,13 +1297,13 @@ HandleWrap: ; 3c874
 	call SwitchTurn
 
 .skip_anim
-	farcall GetOpponentItemAfterUnnerve
-	ld a, b
-	cp HELD_BINDING_BAND
-	jr nz, .no_binding_band
-	call GetSixthMaxHP
-	jr .subtract_hp
-.no_binding_band
+;	farcall GetOpponentItemAfterUnnerve
+;	ld a, b
+;	cp HELD_BINDING_BAND
+;	jr nz, .no_binding_band
+;	call GetSixthMaxHP
+;	jr .subtract_hp
+;.no_binding_band
 	call GetEighthMaxHP
 .subtract_hp
 	call SubtractHPFromUser

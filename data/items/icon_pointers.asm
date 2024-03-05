@@ -174,7 +174,7 @@ ItemIconPointers:
 	dba AirBalloonIcon
 	dba AssaultVestIcon
 	dba BigRootIcon
-	dba BindingBandIcon
+	dba FiveStarHelmIcon
 	dba DestinyKnotIcon
 	dba EvioliteIcon
 	dba ExpertBeltIcon

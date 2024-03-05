@@ -188,7 +188,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; AIR_BALLOON
 	dw NoEffect         ; ASSAULT_VEST
 	dw NoEffect         ; BIG_ROOT
-	dw NoEffect         ; BINDING_BAND
+	dw NoEffect         ; FIVESTARHELM
 	dw NoEffect         ; DESTINY_KNOT
 	dw NoEffect         ; EVIOLITE
 	dw NoEffect         ; EXPERT_BELT

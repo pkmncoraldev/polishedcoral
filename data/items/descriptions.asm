@@ -173,7 +173,7 @@ ItemDescriptions:
 	dw AirBalloonDesc
 	dw AssaultVestDesc
 	dw BigRootDesc
-	dw BindingBandDesc
+	dw FiveStarHelmDesc
 	dw DestinyKnotDesc
 	dw EvioliteDesc
 	dw ExpertBeltDesc
@@ -885,9 +885,9 @@ BigRootDesc:
 	db   "Powers up draining"
 	next "moves. (Hold)@"
 
-BindingBandDesc:
-	db   "Powers up trapping"
-	next "moves. (Hold)@"
+FiveStarHelmDesc:
+	db   "The LEDIAN RANGER's"
+	next "iconic helmet.@"
 
 DestinyKnotDesc:
 	db   "Infatuates the foe"

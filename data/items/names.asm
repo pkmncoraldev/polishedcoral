@@ -173,7 +173,7 @@ ItemNames::
 	db "AIR BALLOON@"
 	db "ASSAULT VEST@"
 	db "BIG ROOT@"
-	db "BINDING BAND@"
+	db "FIVESTARHELM@"
 	db "DESTINY KNOT@"
 	db "EVIOLITE@"
 	db "EXPERT BELT@"

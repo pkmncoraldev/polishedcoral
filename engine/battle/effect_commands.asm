@@ -3311,6 +3311,9 @@ BattleCommand_ragedamage:
 ; unused (Rage is now Attack boosts again)
 	ret
 
+BothDefenseHoldItems:
+	call DittoMetalPowder
+	jp SmearglePaintbrushDefense
 
 DittoMetalPowder: ; 352b1
 	ld a, MON_SPECIES
@@ -3337,16 +3340,61 @@ DittoMetalPowder: ; 352b1
 	add c
 	ld c, a
 	ret nc
-
-	srl b
-	ld a, b
+	jp EvioliteFinish
+	
+SmearglePaintbrushDefense:
+	ld a, MON_SPECIES
+	call UserPartyAttr
+	ld a, [hBattleTurn]
 	and a
-	jr nz, .done
-	inc b
-.done
-	scf
-	rr c
-	ret
+	ld a, [hl]
+	jr nz, .continue
+	ld a, [wTempEnemyMonSpecies]
+
+.continue:
+	cp SMEARGLE
+	ret nz
+
+	push bc
+	call GetOpponentItem
+	ld a, [hl]
+	cp PAINTBRUSH
+	pop bc
+	ret nz
+
+	ld a, c
+	srl a
+	add c
+	ld c, a
+	ret nc
+	jp EvioliteFinish
+	
+LedianFiveStarHelmDefense:
+	ld a, MON_SPECIES
+	call UserPartyAttr
+	ld a, [hBattleTurn]
+	and a
+	ld a, [hl]
+	jr nz, .continue
+	ld a, [wTempEnemyMonSpecies]
+
+.continue:
+	cp LEDIAN
+	ret nz
+
+	push bc
+	call GetOpponentItem
+	ld a, [hl]
+	cp FIVESTARHELM
+	pop bc
+	ret nz
+
+	ld a, c
+	srl a
+	add c
+	ld c, a
+	ret nc
+	jp EvioliteFinish
 
 UnevolvedEviolite:
 	push hl
@@ -3385,6 +3433,9 @@ UnevolvedEviolite:
 	add c
 	ld c, a
 	ret nc
+;fallthrou
+
+EvioliteFinish:
 	srl b
 	ld a, b
 	and a
@@ -3484,6 +3535,8 @@ PlayerAttackDamage: ; 352e2
 	ld c, [hl]
 
 	call SandstormSpDefBoost
+	
+	call LedianFiveStarHelmDefense
 
 	jr .lightscreen
 
@@ -3509,19 +3562,19 @@ PlayerAttackDamage: ; 352e2
 
 .lightball
 ; Note: Returns player special attack at hl in hl.
-	call PaintbrushOrLightBallBoost
+	call PaintbrushOrLightBallOrFiveStarHelmBoost
 	jr .done
 
 .thickcluborlightball
 ; Note: Returns player attack at hl in hl.
-	call ThickClubPaintbrushOrLightBallBoost
+	call ThickClubPaintbrushOrLightBallOrFiveStarHelmBoost
 
 .done
 	call TruncateHL_BC
 
 	ld a, [wBattleMonLevel]
 	ld e, a
-	call DittoMetalPowder
+	call BothDefenseHoldItems
 	call UnevolvedEviolite
 
 	ld a, 1
@@ -3605,19 +3658,19 @@ EnemyAttackDamage: ; 353f6
 
 .lightball
 ; Note: Returns enemy special attack at hl in hl.
-	call PaintbrushOrLightBallBoost
+	call PaintbrushOrLightBallOrFiveStarHelmBoost
 	jr .done
 
 .thickcluborlightball
 ; Note: Returns enemy attack at hl in hl.
-	call ThickClubPaintbrushOrLightBallBoost
+	call ThickClubPaintbrushOrLightBallOrFiveStarHelmBoost
 
 .done
 	call TruncateHL_BC
 
 	ld a, [wEnemyMonLevel]
 	ld e, a
-	call DittoMetalPowder
+	call BothDefenseHoldItems
 	call UnevolvedEviolite
 
 	ld a, 1
@@ -3655,7 +3708,7 @@ TruncateHL_BC: ; 3534d
 	ld b, l
 	ret
 
-ThickClubPaintbrushOrLightBallBoost: ; 353b5
+ThickClubPaintbrushOrLightBallOrFiveStarHelmBoost: ; 353b5
 ; Return in hl the stat value at hl.
 
 ; If the attacking monster is Cubone or Marowak and
@@ -3685,8 +3738,12 @@ ThickClubPaintbrushOrLightBallBoost: ; 353b5
 	lb bc, CUBONE, CUBONE
 	ld d, THICK_CLUB
 	jr z, .ok
+	cp MAROWAK
 	lb bc, MAROWAK, MAROWAK
 	ld d, THICK_CLUB
+	jr z, .ok
+	lb bc, LEDIAN, LEDIAN
+	ld d, FIVESTARHELM
 .ok
 	call SpeciesItemBoost
 	pop de
@@ -3696,7 +3753,7 @@ ThickClubPaintbrushOrLightBallBoost: ; 353b5
 ; 353c3
 
 
-PaintbrushOrLightBallBoost: ; 353c3
+PaintbrushOrLightBallOrFiveStarHelmBoost: ; 353c3
 ; Return in hl the stat value at hl.
 
 ; If the attacking monster is Pikachu and it's
@@ -3717,8 +3774,12 @@ PaintbrushOrLightBallBoost: ; 353c3
 	lb bc, PIKACHU, PIKACHU
 	ld d, LIGHT_BALL
 	jr z, .ok
+	cp SMEARGLE
 	lb bc, SMEARGLE, SMEARGLE
 	ld d, PAINTBRUSH
+	jr z, .ok
+	lb bc, LEDIAN, LEDIAN
+	ld d, FIVESTARHELM
 .ok
 	call SpeciesItemBoost
 	pop de

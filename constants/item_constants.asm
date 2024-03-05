@@ -199,7 +199,7 @@
 	const AIR_BALLOON  ; ac - replace
 	const ASSAULT_VEST ; ad
 	const BIG_ROOT     ; ae
-	const BINDING_BAND ; af - replace
+	const FIVESTARHELM ; af
 	const DESTINY_KNOT ; b0
 	const EVIOLITE     ; b1
 	const EXPERT_BELT  ; b2
@@ -313,7 +313,7 @@
 	const NAM_BIG_NUGGET   ; 10
 	const NAM_BIG_PEARL    ; 11
 	const NAM_BIG_ROOT     ; 12
-	const NAM_BINDING_BAND ; 13
+	const NAM_FIVESTARHELM ; 13
 	const NAM_BLACK_BELT   ; 14
 	const NAM_BLACK_SLUDGE ; 15
 	const NAM_BLACKGLASSES ; 16

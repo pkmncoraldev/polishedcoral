@@ -499,6 +499,8 @@ Route10Snowman1:
 	yesorno
 	iffalse .no
 	closetext
+	giveitem BOTTLE_CAP
+	iffalse Route10SnowmanNoRoom
 	changeblock $8, $24, $bd
 	opentext
 	verbosegiveitem BOTTLE_CAP
@@ -515,6 +517,8 @@ Route10Snowman1:
 	yesorno
 	iffalse .no
 	closetext
+	giveitem BOTTLE_CAP
+	iffalse Route10SnowmanNoRoom
 	changeblock $8, $24, $be
 	opentext
 	verbosegiveitem BOTTLE_CAP
@@ -547,6 +551,8 @@ Route10Snowman2:
 	yesorno
 	iffalse .no
 	closetext
+	giveitem BOTTLE_CAP
+	iffalse Route10SnowmanNoRoom
 	changeblock $28, $8, $bf
 	opentext
 	verbosegiveitem BOTTLE_CAP
@@ -563,6 +569,8 @@ Route10Snowman2:
 	yesorno
 	iffalse .no
 	closetext
+	giveitem BOTTLE_CAP
+	iffalse Route10SnowmanNoRoom
 	changeblock $28, $8, $c0
 	opentext
 	verbosegiveitem BOTTLE_CAP
@@ -581,6 +589,17 @@ Route10Snowman2:
 	waitbutton
 	closetext
 	end
+	
+Route10SnowmanNoRoom:
+	takeitem BOTTLE_CAP
+	writetext Route10SnowmanTextNoRoom
+	waitbutton
+	closetext
+	end
+	
+Route10SnowmanTextNoRoom:
+	text "PACK is full!"
+	done
 	
 Route10Random:
 	checkevent EVENT_HAD_FIRST_SNOWSTORM

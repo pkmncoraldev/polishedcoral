@@ -30,7 +30,14 @@ GlintApt22FNpc2:
 	writetext GlintApt22FNpc2Text2
 	waitbutton
 	verbosegiveitem EXP_SHARE
+	iffalse .NoRoom
 	setevent EVENT_GOT_GLINT_CITY_EXP_SHARE
+	closetext
+	end
+	
+.NoRoom
+	writetext GlintApt22FNpc2TextNoRoom
+	waitbutton
 	closetext
 	end
 	
@@ -92,6 +99,13 @@ GlintApt22FNpc2Text2:
 	para "This should be"
 	line "useful to a"
 	cont "TRAINER like you!"
+	done
+	
+GlintApt22FNpc2TextNoRoom:
+	text "Oh!"
+	
+	para "You seem to be"
+	line "carrying too much!"
 	done
 	
 GlintApt22FNpc2Text3:

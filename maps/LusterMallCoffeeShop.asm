@@ -432,6 +432,8 @@ LusterMallCoffeeShop_CookTextPickAgain2:
 LusterMallCoffeeShop_NPC1:
 	faceplayer
 	opentext
+	checkevent EVENT_COFFEE_SHOP_CAN_GET_TEA
+	iftrue .get_tea
 	checkevent EVENT_GAVE_COFFE_SHOP_MAN_TEA
 	iftrue .already_done
 	checkitem BLOSSOM_TEA
@@ -456,15 +458,22 @@ LusterMallCoffeeShop_NPC1:
 	faceplayer
 	pause 10
 	opentext
+.get_tea
 	writetext LusterMallCoffeeShop_NPC1Text4
 	waitbutton
 	verbosegiveitem MAX_REVIVE
+	iffalse .NoRoom
+	clearevent EVENT_COFFEE_SHOP_CAN_GET_TEA
 	setevent EVENT_GAVE_COFFE_SHOP_MAN_TEA
 .already_done
 	writetext LusterMallCoffeeShop_NPC1Text5
 	jump .end
 .no
 	writetext LusterMallCoffeeShop_NPC1TextNo
+	jump .end
+.NoRoom
+	writetext LusterMallCoffeeShop_NPC1NoRoomText
+	setevent EVENT_COFFEE_SHOP_CAN_GET_TEA
 .end
 	waitbutton
 	closetext
@@ -615,6 +624,15 @@ LusterMallCoffeeShop_NPC1TextGiveTea:
 	text "<PLAYER> handed"
 	line "over the"
 	cont "BLOSSOM TEA."
+	done
+	
+LusterMallCoffeeShop_NPC1NoRoomText:
+	text "Oh!"
+	
+	para "You seem to be"
+	line "carrying too much!"
+	
+	para "Come back later."
 	done
 	
 LusterMallCoffeeShop_NPC2Text1:

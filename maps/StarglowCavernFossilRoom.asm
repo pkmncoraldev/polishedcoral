@@ -83,6 +83,9 @@ StarglowCavernFossilRoomCoverFossil:
 	writetext StarglowCavernFossilRoomCoverFossilText
 	yesorno
 	iffalse StarglowCavernFossilRoomNo
+	giveitem COVER_FOSSIL
+	iffalse StarglowCavernFossilRoomNoRoom
+	takeitem COVER_FOSSIL
 	disappear STARGLOWCAVERNCOVERFOSSIL
 	setevent EVENT_GOT_FOSSIL
 	verbosegiveitem COVER_FOSSIL
@@ -110,6 +113,9 @@ StarglowCavernFossilRoomPlumeFossil:
 	writetext StarglowCavernFossilRoomPlumeFossilText
 	yesorno
 	iffalse StarglowCavernFossilRoomNo
+	giveitem PLUME_FOSSIL
+	iffalse StarglowCavernFossilRoomNoRoom
+	takeitem PLUME_FOSSIL
 	disappear STARGLOWCAVERNPLUMEFOSSIL
 	setevent EVENT_GOT_FOSSIL
 	verbosegiveitem PLUME_FOSSIL
@@ -134,6 +140,12 @@ StarglowCavernFossilRoomPlumeFossil:
 	
 StarglowCavernFossilRoomNo:
 	writetext StarglowCavernFossilTextNo
+	waitbutton
+	closetext
+	end
+	
+StarglowCavernFossilRoomNoRoom:
+	writetext StarglowCavernFossilTextNoRoom
 	waitbutton
 	closetext
 	end
@@ -169,6 +181,10 @@ FossilGuyPickedPlumeFossilText:
 StarglowCavernFossilTextNo:
 	text "Better think it"
 	line "over carefully…"
+	done
+	
+StarglowCavernFossilTextNoRoom:
+	text "PACK is full!"
 	done
 	
 StarglowCavernFossilRoomAlreadyGotFossilText:

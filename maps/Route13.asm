@@ -40,14 +40,16 @@ Route13NPC1:
 	iffalse .no
 	checkmoney $0, 500
 	if_equal $2, .nomoney
+	giveitem SHELL_BELL
+	iffalse .NoRoom
 	playsound SFX_TRANSACTION
 	takemoney $0, 500
+	takeitem SHELL_BELL
 	special PlaceMoneyTopRight
 	pause 15
 	refreshscreen $0
 	pause 5
 	verbosegiveitem SHELL_BELL
-	iffalse .NoRoom
 .gotbell
 	writetext Route13NPC1Text2
 	waitbutton
@@ -56,9 +58,6 @@ Route13NPC1:
 	end
 .NoRoom
 	writetext Route13NPC1Text3
-	playsound SFX_TRANSACTION
-	givemoney $0, 500
-	special PlaceMoneyTopRight
 	waitbutton
 	closetext
 	end
@@ -98,9 +97,6 @@ Route13NPC1Text3:
 	
 	para "You seem to be"
 	line "carrying too much!"
-	
-	para "I'll give you your"
-	line "money back then."
 	done
 
 Route13NPC1Text4:

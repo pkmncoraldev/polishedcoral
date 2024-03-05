@@ -247,6 +247,8 @@ TwinkleTownSnowman1:
 	yesorno
 	iffalse .no
 	closetext
+	giveitem BOTTLE_CAP
+	iffalse TwinkleSnowmanNoRoom
 	changeblock $e, $28, $b0
 	opentext
 	verbosegiveitem BOTTLE_CAP
@@ -263,6 +265,8 @@ TwinkleTownSnowman1:
 	yesorno
 	iffalse .no
 	closetext
+	giveitem BOTTLE_CAP
+	iffalse TwinkleSnowmanNoRoom
 	changeblock $e, $28, $b3
 	opentext
 	verbosegiveitem BOTTLE_CAP
@@ -295,6 +299,8 @@ TwinkleTownSnowman2:
 	yesorno
 	iffalse .no
 	closetext
+	giveitem BOTTLE_CAP
+	iffalse TwinkleSnowmanNoRoom
 	changeblock $8, $16, $b2
 	opentext
 	verbosegiveitem BOTTLE_CAP
@@ -312,6 +318,8 @@ TwinkleTownSnowman2:
 	iffalse .no
 	closetext
 	changeblock $8, $16, $b5
+	giveitem BOTTLE_CAP
+	iffalse TwinkleSnowmanNoRoom
 	opentext
 	verbosegiveitem BOTTLE_CAP
 	writetext TwinkleTownSnowman1Text4
@@ -344,6 +352,8 @@ TwinkleTownSnowman3:
 	iffalse .no
 	closetext
 	changeblock $e, $1e, $b1
+	giveitem BOTTLE_CAP
+	iffalse TwinkleSnowmanNoRoom
 	opentext
 	verbosegiveitem BOTTLE_CAP
 	closetext
@@ -370,6 +380,8 @@ TwinkleTownSnowman3:
 	iffalse .no
 	closetext
 	changeblock $e, $1e, $b4
+	giveitem BOTTLE_CAP
+	iffalse TwinkleSnowmanNoRoom
 	opentext
 	verbosegiveitem BOTTLE_CAP
 	writetext TwinkleTownSnowman1Text4
@@ -384,6 +396,13 @@ TwinkleTownSnowman3:
 	end
 .no
 	writetext TwinkleTownSnowman1TextNo
+	waitbutton
+	closetext
+	end
+	
+TwinkleSnowmanNoRoom:
+	takeitem BOTTLE_CAP
+	writetext TwinkleTownSnowman1TextNoRoom
 	waitbutton
 	closetext
 	end
@@ -405,6 +424,7 @@ TwinkleTownNPC2:
 	writetext TwinkleTownNPC2Text1
 	waitbutton
 	verbosegiveitem BOTTLE_CAP
+	iffalse .NoRoom
 	closetext
 	setevent EVENT_TWINKLE_TOWN_GOT_BOTTLE_CAP
 	spriteface TWINKLE_TOWN_NPC_2, RIGHT
@@ -415,6 +435,13 @@ TwinkleTownNPC2:
 	closetext
 	spriteface TWINKLE_TOWN_NPC_2, RIGHT
 	end
+.NoRoom
+	writetext TwinkleTownNPC2TextNoRoom
+	waitbutton
+	closetext
+	spriteface TWINKLE_TOWN_NPC_2, RIGHT
+	end
+	
 	
 TwinkleTownNPC3:
 	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_SNOWGIRL
@@ -526,6 +553,10 @@ TwinkleTownSnowman1TextNo:
 	text "Better not…"
 	done
 	
+TwinkleTownSnowman1TextNoRoom:
+	text "PACK is full!"
+	done
+	
 TwinkleTownSnowman1TextScaredKids:
 	text "AHHHHHHH!"
 	done
@@ -551,6 +582,15 @@ TwinkleTownNPC2Text2:
 	text "Don't throw that"
 	line "BOTTLE CAP away,"
 	cont "ok?"
+	done
+	
+TwinkleTownNPC2TextNoRoom:
+	text "Oh!"
+	
+	para "You seem to be"
+	line "carrying too much!"
+	
+	para "Come back later."
 	done
 	
 TwinkleTownNPC3Text:

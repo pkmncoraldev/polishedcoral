@@ -309,8 +309,14 @@ DuskTurnpikeTrashcan:
 	
 .get_item
 	verbosegiveitem LEFTOVERS
+	iffalse .NoRoom
 	closetext
 	setevent EVENT_ROUTE_22_TRASHCAN_ITEM
+	end
+.NoRoom
+	changeblock $0e, $06, $e6
+	callasm GenericFinishBridge
+	closetext
 	end
 	
 .OnlyTrash

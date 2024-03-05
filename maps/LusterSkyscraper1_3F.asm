@@ -45,8 +45,9 @@ LusterSkyscraper1_3F_NPC1:
 	writetext LusterSkyscraper1_3F_Gave_Up_Grade
 	playsound SFX_LEVEL_UP 
 	waitsfx
-	verbosegiveitem DUBIOUS_DISC
 	takeitem UP_GRADE
+	verbosegiveitem DUBIOUS_DISC
+	iffalse .NoRoom
 	writetext LusterSkyscraper1_3F_NPC1Text3
 	setevent EVENT_GOT_DUBIOUS_DISC
 	jump .end
@@ -58,6 +59,10 @@ LusterSkyscraper1_3F_NPC1:
 	jump .end
 .No_Up_Grade2
 	writetext LusterSkyscraper1_3F_NPC1Text5
+	jump .end
+.NoRoom
+	giveitem UP_GRADE
+	writetext LusterSkyscraper1_3F_NPC1NoRoomText
 .end
 	waitbutton
 	closetext
@@ -134,6 +139,15 @@ LusterSkyscraper1_3F_NPC1Text5:
 	para "Bring me another"
 	line "UP GRADE if you"
 	cont "want to trade."
+	done
+	
+LusterSkyscraper1_3F_NPC1NoRoomText:
+	text "Oh!"
+	
+	para "You seem to be"
+	line "carrying too much!"
+	
+	para "Come back later."
 	done
 	
 LusterSkyscraper1_3F_NPC1TextNo:

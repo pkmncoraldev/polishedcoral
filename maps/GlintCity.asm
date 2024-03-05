@@ -188,6 +188,7 @@ GlintNPC6:
 	writetext GlintNPC6Text
 	buttonsound
 	verbosegiveitem POTION
+	iffalse .NoRoom
 	writetext GlintNPC6Text2
 	waitbutton
 	setevent EVENT_GLINT_GUY_GAVE_POTION
@@ -203,9 +204,16 @@ GlintNPC6:
 	writetext GlintNPC6Text3
 	buttonsound
 	verbosegiveitem POTION
+	iffalse .NoRoom
 	writetext GlintNPC6Text2
 	waitbutton
 	setevent EVENT_GLINT_GUY_GAVE_POTION
+	closetext
+	end
+	
+.NoRoom
+	writetext GlintNPC6TextNoRoom
+	waitbutton
 	closetext
 	end
 	
@@ -329,6 +337,13 @@ GlintNPC6Text3:
 	para "Here."
 	
 	para "Try a sample."
+	done
+	
+GlintNPC6TextNoRoom:
+	text "Oh!"
+	
+	para "You seem to be"
+	line "carrying too much!"
 	done
 	
 GlintNPC7Text:

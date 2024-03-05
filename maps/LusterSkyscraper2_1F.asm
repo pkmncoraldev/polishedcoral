@@ -35,6 +35,7 @@ LusterSkyscraper2_1F_NPC2:
 	writetext LusterSkyscraper2_1F_NPC2Text1
 	waitbutton
 	verbosegiveitem PINK_BOW
+	iffalse .NoRoom
 	writetext LusterSkyscraper2_1F_NPC2Text2
 	waitbutton
 	closetext
@@ -43,6 +44,10 @@ LusterSkyscraper2_1F_NPC2:
 	end
 .got_item
 	writetext LusterSkyscraper2_1F_NPC2Text2
+	jump .end
+.NoRoom
+	writetext LusterSkyscraper2_1F_NPC2NoRoomText
+.end
 	waitbutton
 	closetext
 	spriteface LUSTER_SKYSCRAPER_2_1F_NPC_2, DOWN
@@ -73,6 +78,13 @@ LusterSkyscraper2_1F_NPC2Text2:
 	
 	para "It's not part of"
 	line "the dress code…"
+	done
+	
+LusterSkyscraper2_1F_NPC2NoRoomText:
+	text "Oh!"
+	
+	para "You seem to be"
+	line "carrying too much!"
 	done
 	
 LusterSkyscraper2_1F_NPC3Text:

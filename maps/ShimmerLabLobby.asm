@@ -42,7 +42,25 @@ ShimmerLabLobbyNPC:
 	jumptextfaceplayer ShimmerLabLobbyNPCText
 
 ShimmerLabLobbyNPC2:
+	faceplayer
+	opentext
+	checkevent EVENT_CAN_GET_AMULET_COIN
+	iftrue .give_amulet_coin
 	jumptextfaceplayer ShimmerLabLobbyNPC2Text
+.give_amulet_coin
+	writetext ShimmerLabLobbyNPC2Text2
+	waitbutton
+	verbosegiveitem AMULET_COIN
+	iffalse .NoRoom
+	clearevent EVENT_CAN_GET_AMULET_COIN
+	writetext ShimmerLabLobbyNPC2Text3
+	waitbutton
+	closetext
+	end
+.NoRoom
+	writetext ShimmerLabLobbyNPC2NoRoomText
+	closetext
+	end
 
 ShimmerLabLobbyWigglytuff:
 	opentext
@@ -83,6 +101,43 @@ ShimmerLabLobbyNPC2Text:
 	para "I haven't seen it"
 	line "since I was pack-"
 	cont "ing up my tent…"
+	done
+	
+ShimmerLabLobbyNPC2Text2:
+	text "Hey!"
+	line "It's me!"
+	
+	para "The researcher you"
+	line "met on ROUTE 10!"
+	
+	para "How've you been?"
+	
+	para "I wanted to give"
+	line "this to you as"
+	cont "thanks for your"
+	cont "help."
+	
+	para "It's said to bring"
+	line "great fortune!"
+	done
+	
+ShimmerLabLobbyNPC2Text3:
+	text "I think I left"
+	line "an important TM"
+	cont "behind…"
+	
+	para "I haven't seen it"
+	line "since I was pack-"
+	cont "ing up my tent…"
+	done
+	
+ShimmerLabLobbyNPC2NoRoomText:
+	text "Oh!"
+	
+	para "You seem to be"
+	line "carrying too much!"
+	
+	para "Come back later."
 	done
 	
 ShimmerLabLobbyWigglytuffText:

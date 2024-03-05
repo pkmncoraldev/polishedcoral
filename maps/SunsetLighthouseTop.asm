@@ -81,7 +81,6 @@ SunsetLighthouseTopAmpharos:
 .full
 	writetext SunsetLighthouseTopAmpharosTextFull
 	waitbutton
-	verbosegiveitem POKE_DOLL
 	closetext
 	setevent EVENT_SUNSET_LIGHTHOUSE_FED_AMPHAROS
 	end

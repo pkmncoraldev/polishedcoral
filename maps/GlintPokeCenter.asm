@@ -65,6 +65,7 @@ GlintPokeCenterTeaLady:
 	writetext GlintPokeCenterTeaLadyText6
 	waitbutton
 	verbosegiveitem BLOSSOM_TEA
+	iffalse .NoRoom
 	setevent EVENT_GLINT_CENTER_TALKED_TO_OLD_LADY
 .no
 	writetext GlintPokeCenterTeaLadyText7
@@ -86,6 +87,12 @@ GlintPokeCenterTeaLady:
 	waitbutton
 	closetext
 	end
+.NoRoom
+	writetext GlintPokeCenterTeaLadyNoRoomText
+	waitbutton
+	closetext
+	giveitem FLOWER_PETAL, 4
+	done
 	
 GlintPokeCenterNpc1:
 	jumptextfaceplayer GlintPokeCenterNpc1Text
@@ -167,6 +174,16 @@ GlintPokeCenterTeaLadyText7:
 	text "I'll be here if you"
 	line "ever want some"
 	cont "tea."
+	done
+	
+GlintPokeCenterTeaLadyNoRoomText:
+	text "Oh!"
+	
+	para "You seem to be"
+	line "carrying too much!"
+	
+	para "I'll give you back"
+	line "the FLOWER PETALS."
 	done
 	
 GlintPokeCenterNpc1Text:

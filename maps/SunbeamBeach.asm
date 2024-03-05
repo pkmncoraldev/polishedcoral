@@ -130,6 +130,7 @@ SunbeamPlayedFluteForSleepingBeauty::
 	writetext SunbeamIslandSunbatherText4
 	waitbutton
 	verbosegiveitem BLACKGLASSES
+	iffalse .NoRoom
 	writetext SunbeamIslandSunbatherText3
 	waitbutton
 	closetext
@@ -140,3 +141,17 @@ SunbeamPlayedFluteForSleepingBeauty::
 	waitbutton
 	closetext
 	end
+.NoRoom
+	writetext SunbeamBeachFluteNoRoomText
+	waitbutton
+	closetext
+	end
+	
+SunbeamBeachFluteNoRoomText:
+	text "Oh!"
+	
+	para "You seem to be"
+	line "carrying too much!"
+	
+	para "Come back later."
+	done

@@ -24,6 +24,8 @@ Route10Tent_MapScriptHeader:
 Route10TentNPC:
 	faceplayer
 	opentext
+	checkevent EVENT_CAN_GET_AMULET_COIN
+	iftrue .give_amulet_coin
 	checkevent EVENT_ICE_TEMPLE_GOT_TREASURE
 	iftrue .got_treasure
 	writetext Route10TentNPCText1
@@ -53,15 +55,22 @@ Route10TentNPC:
 	waitbutton
 	closetext
 	pause 10
-	spriteface ROUTE_10_TENT_NPC, DOWN
+	faceplayer
 	opentext
+.give_amulet_coin
 	writetext Route10TentNPCText9
 	waitbutton
 	verbosegiveitem AMULET_COIN
+	iffalse .NoRoom
+	clearevent EVENT_CAN_GET_AMULET_COIN
 	jump .end
 .have_talked
 	writetext Route10TentNPCText2
 	waitbutton
+	jump .end
+.NoRoom
+	writetext Route10TentNPCNoRoomText
+	setevent EVENT_CAN_GET_AMULET_COIN
 .end
 	closetext
 	spriteface ROUTE_10_TENT_NPC, RIGHT
@@ -210,6 +219,15 @@ Route10TentNPCText9:
 	
 	para "It's said to bring"
 	line "great fortune!"
+	done
+	
+Route10TentNPCNoRoomText:
+	text "Oh!"
+	
+	para "You seem to be"
+	line "carrying too much!"
+	
+	para "Come back later."
 	done
 	
 Route10TentWigglytuffText:

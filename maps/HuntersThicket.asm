@@ -30,7 +30,7 @@ HuntersThicket_MapScriptHeader:
 	person_event SPRITE_COOLTRAINER_F, 12, 51, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 3, TrainerHunters_6, -1
 	person_event SPRITE_BUG_CATCHER, 12, 61, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerHunters_7, -1
 	person_event SPRITE_ICESKATER_VARIABLE, 15, 51, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, HuntersThicketRanger, EVENT_LEDIAN_RANGER_GONE
-	itemball_event  15, 51, CALCIUM, 1, EVENT_GOT_FIVESTARHELM
+	itemball_event  51, 15, FIVESTARHELM, 1, EVENT_GOT_FIVESTARHELM
 
 
 	const_def 1 ; object constants
@@ -169,6 +169,7 @@ HuntersThicketRanger:
 	writetext HuntersThicketRangerText8
 	waitbutton
 	closetext
+	pause 10
 	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_LEDIAN_RANGER_FACE
 	playsound SFX_WALL_OPEN
 	special MapCallbackSprites_LoadUsedSpritesGFX
@@ -395,7 +396,7 @@ HuntersThicketRangerText9:
 	line "your symbol of"
 	cont "justice!"
 	
-	para "It's fine."
+	para "Don't worry."
 	
 	para "I have plenty of"
 	line "those things back"

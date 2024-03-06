@@ -94,6 +94,7 @@ FeliciaPalette:			 INCLUDE "gfx/trainers/felicia.pal"
 VioletPalette:			 INCLUDE "gfx/trainers/violet.pal"
 CloverPalette:			 INCLUDE "gfx/trainers/clover.pal"
 MinaPalette:			 INCLUDE "gfx/trainers/mina.pal"
+LedianRangerPalette:	 INCLUDE "gfx/trainers/ledian_ranger.pal"
 TowerTycoonPalette:
 
 

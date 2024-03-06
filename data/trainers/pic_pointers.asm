@@ -91,5 +91,6 @@ TrainerPicPointers::
 	dba VioletPic
 	dba CloverPic
 	dba MinaPic
+	dba LedianRangerPic
 	dba TowerTycoonPic
 	

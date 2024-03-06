@@ -93,4 +93,5 @@ TrainerGroups: ; 0x39999
 	dba VioletGroup
 	dba CloverGroup
 	dba MinaGroup
+	dba LedianRangerGroup
 	dba TowerTycoonGroup

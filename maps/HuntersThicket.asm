@@ -11,7 +11,7 @@ HuntersThicket_MapScriptHeader:
 	db 1 ; bg events
 	bg_event 29, 20, SIGNPOST_ITEM + SUN_STONE, EVENT_HUNTERS_THICKET_HIDDEN_SUN_STONE
 
-	db 17 ; object events
+	db 19 ; object events
 	itemball_event  5, 20, CALCIUM, 1, EVENT_HUNTERS_THICKET_BALL_1
 	itemball_event 18, 29, REPEL, 1, EVENT_HUNTERS_THICKET_BALL_2
 	itemball_event 14, 21, X_SPEED, 1, EVENT_HUNTERS_THICKET_BALL_3
@@ -26,9 +26,11 @@ HuntersThicket_MapScriptHeader:
 	itemball_event 39,  5, POTION, 1, EVENT_HUNTERS_THICKET_BALL_7
 	object_event 50,  4, SPRITE_DISGUISEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, HuntersThicketDisguiseman, EVENT_HUNTERS_THICKET_DISGUISEMAN
 	person_event SPRITE_CAMPER, 21, 40, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_4, -1
-	person_event SPRITE_SUPER_NERD,  8, 32, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_5, -1
+	person_event SPRITE_SUPER_NERD,  8, 32, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerHunters_5, -1
 	person_event SPRITE_COOLTRAINER_F, 12, 51, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 3, TrainerHunters_6, -1
 	person_event SPRITE_BUG_CATCHER, 12, 61, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerHunters_7, -1
+	person_event SPRITE_ICESKATER_VARIABLE, 15, 51, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, HuntersThicketRanger, EVENT_LEDIAN_RANGER_GONE
+	itemball_event  15, 51, CALCIUM, 1, EVENT_GOT_FIVESTARHELM
 
 
 	const_def 1 ; object constants
@@ -49,8 +51,11 @@ HuntersThicket_MapScriptHeader:
 	const HUNTERS_THICKET_TRAINER_5
 	const HUNTERS_THICKET_TRAINER_6
 	const HUNTERS_THICKET_TRAINER_7
+	const HUNTERS_THICKET_LEDIAN_RANGER
+	const HUNTERS_THICKET_HELM_ITEMBALL
 
 HuntersThicketCallback:
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_LEDIAN_RANGER_MASK
 	callasm HuntersThicketLoadDisguise
 	if_equal 1, .one
 	if_equal 2, .two
@@ -79,6 +84,370 @@ HuntersThicketLoadDisguise:
 	ld a, [wHuntersDisguise]
 	ld [wScriptVar], a
 	ret
+
+HuntersThicketRanger:
+;	waitsfx
+	playmusic MUSIC_ENCOUNTER_GYM_LEADER
+	scall LedianRangerPoseStart
+	opentext
+	writetext HuntersThicketRangerText1
+	waitbutton
+	closetext
+	scall LedianRangerPoseEnd
+	spriteface HUNTERS_THICKET_LEDIAN_RANGER, UP
+	pause 10
+	opentext
+	writetext HuntersThicketRangerText2
+	waitbutton
+	closetext
+	pause 10
+	faceplayer
+	opentext
+	writetext HuntersThicketRangerText3
+	waitbutton
+	closetext
+	spriteface HUNTERS_THICKET_LEDIAN_RANGER, UP
+	pause 10
+	opentext
+	writetext HuntersThicketRangerText4
+	waitbutton
+	closetext
+	pause 10
+	faceplayer
+	opentext
+	writetext HuntersThicketRangerText5
+	waitbutton
+	closetext
+	pause 10
+	scall LedianRangerPoseStart
+	opentext
+	writetext HuntersThicketRangerText1
+	waitbutton
+	closetext	
+	winlosstext HuntersThicketRangerWinText, 0
+	setlasttalked HUNTERS_THICKET_LEDIAN_RANGER
+	loadtrainer LEDIAN_RANGER, 1
+	startbattle
+	spriteface HUNTERS_THICKET_LEDIAN_RANGER, DOWN
+	dontrestartmapmusic
+	reloadmap
+	playmusic MUSIC_ENCOUNTER_GYM_LEADER
+	scall LedianRangerPoseStart
+	opentext
+	writetext HuntersThicketRangerText6
+	waitbutton
+	closetext
+	scall LedianRangerPoseEnd
+	pause 10
+	clearevent EVENT_GOT_FIVESTARHELM
+	faceplayer
+	opentext
+	writetext HuntersThicketRangerText12
+	waitbutton
+	closetext
+	spriteface HUNTERS_THICKET_LEDIAN_RANGER, UP
+	pause 10
+	opentext
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl
+	writetext HuntersThicketRangerText7
+	jump .cont
+.girl
+	writetext HuntersThicketRangerText7_girl
+.cont
+	waitbutton
+	closetext
+	pause 10
+	faceplayer
+	opentext
+	writetext HuntersThicketRangerText8
+	waitbutton
+	closetext
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_LEDIAN_RANGER_FACE
+	playsound SFX_WALL_OPEN
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	waitsfx
+	pause 20
+	opentext
+	verbosegiveitem FIVESTARHELM
+	iffalse .NoRoom
+	setevent EVENT_GOT_FIVESTARHELM
+	writetext HuntersThicketRangerText9
+	waitbutton
+	closetext
+	spriteface HUNTERS_THICKET_LEDIAN_RANGER, UP
+	pause 10
+	opentext
+	writetext HuntersThicketRangerText10
+	waitbutton
+	closetext
+	pause 10
+	faceplayer
+	opentext
+	writetext HuntersThicketRangerText11
+	waitbutton
+	closetext
+	pause 10
+	scall LedianRangerPoseStart2
+	opentext
+	writetext HuntersThicketRangerText1
+	waitbutton
+	closetext
+	scall LedianRangerPoseEnd2
+	playsound SFX_WARP_TO
+	applyonemovement HUNTERS_THICKET_LEDIAN_RANGER, teleport_from
+	disappear HUNTERS_THICKET_LEDIAN_RANGER
+	special Special_FadeOutMusic
+	pause 20
+	playmusic MUSIC_ROUTE_4
+	end
+.NoRoom
+	writetext HuntersThicketRangerNoRoomText
+	buttonsound
+	writetext HuntersThicketRangerText9
+	waitbutton
+	closetext
+	spriteface HUNTERS_THICKET_LEDIAN_RANGER, UP
+	pause 10
+	opentext
+	writetext HuntersThicketRangerText10
+	waitbutton
+	closetext
+	pause 10
+	faceplayer
+	opentext
+	writetext HuntersThicketRangerText11
+	waitbutton
+	closetext
+	pause 10
+	scall LedianRangerPoseStart2
+	opentext
+	writetext HuntersThicketRangerText1
+	waitbutton
+	closetext
+	scall LedianRangerPoseEnd2
+	playsound SFX_WARP_TO
+	appear HUNTERS_THICKET_HELM_ITEMBALL
+	applyonemovement HUNTERS_THICKET_LEDIAN_RANGER, teleport_from
+	disappear HUNTERS_THICKET_LEDIAN_RANGER
+	special Special_FadeOutMusic
+	pause 20
+	playmusic MUSIC_ROUTE_4
+	end
+
+LedianRangerPoseStart:
+	spriteface HUNTERS_THICKET_LEDIAN_RANGER, DOWN
+	pause 20
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_LEDIAN_RANGER_MASK_POSE
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	pause 6
+	spriteface HUNTERS_THICKET_LEDIAN_RANGER, UP
+	pause 12
+	spriteface HUNTERS_THICKET_LEDIAN_RANGER, LEFT
+	pause 20
+	end
+	
+LedianRangerPoseStart2:
+	spriteface HUNTERS_THICKET_LEDIAN_RANGER, DOWN
+	pause 20
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_LEDIAN_RANGER_FACE_POSE
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	pause 6
+	spriteface HUNTERS_THICKET_LEDIAN_RANGER, UP
+	pause 12
+	spriteface HUNTERS_THICKET_LEDIAN_RANGER, LEFT
+	pause 20
+	end
+	
+LedianRangerPoseEnd:
+	spriteface HUNTERS_THICKET_LEDIAN_RANGER, DOWN
+	pause 3
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_LEDIAN_RANGER_MASK
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	end
+
+LedianRangerPoseEnd2:
+	spriteface HUNTERS_THICKET_LEDIAN_RANGER, DOWN
+	pause 3
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_LEDIAN_RANGER_FACE
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	end
+
+HuntersThicketRangerText1:
+	text "Go! Go!"
+	line "LEDIAN RANGER!"
+	
+	para "COMET PUNCH to"
+	line "victory!"
+	done
+	
+HuntersThicketRangerText2:
+	text "I hope that"
+	line "sounded cool…"
+	
+	para "…"
+	
+	para "Oh, right!"
+	done
+	
+HuntersThicketRangerText3:
+	text "What's a shady"
+	line "looking character"
+	cont "such as yourself"
+	cont "doing here?"
+	
+	para "Up to no good I'm"
+	line "sure!"
+	
+	para "Don't try and deny"
+	line "it!"
+	
+	para "I can see right"
+	line "through your lies!"
+	done
+	
+HuntersThicketRangerText4:
+	text "Hehe… Nice…"
+	
+	para "That sounds"
+	line "tough!"
+	
+	para "…"
+	
+	para "Oh, right!"
+	done
+	
+HuntersThicketRangerText5:
+	text "This is a job for"
+	line "the LEDIAN RANGER!"
+	
+	para "Champion of peace"
+	line "and justice!"
+	
+	para "I'll take you down"
+	line "lickity-split!"
+	done
+	
+HuntersThicketRangerText6:
+	text "Of course!"
+
+	para "Exactly as I"
+	line "thought!"
+	done
+	
+HuntersThicketRangerText12:
+	text "I knew you were"
+	line "a fellow warrior"
+	cont "of justice!"
+	
+	para "What?"
+	
+	para "A shady character?"
+	
+	para "I don't remember"
+	line "calling you that!"
+	
+	para "I simply had to"
+	line "test you before"
+	cont "making you my new"
+	cont "sidekick."
+	done
+	
+HuntersThicketRangerText7:
+	text "I think he bought"
+	line "it."
+	
+	para "…"
+	
+	para "Oh, right!"
+	done
+	
+HuntersThicketRangerText7_girl:
+	text "I think she bought"
+	line "it."
+	
+	para "…"
+	
+	para "Oh, right!"
+	done
+	
+HuntersThicketRangerText8:
+	text "Of course!"
+	
+	para "From the moment I"
+	line "saw you, I knew"
+	cont "you were the one!"
+	
+	para "I shall dub you"
+	line "“KID LEDYBA”!"
+	
+	para "Take this."
+	done
+	
+HuntersThicketRangerText9:
+	text "That helmet is"
+	line "your symbol of"
+	cont "justice!"
+	
+	para "It's fine."
+	
+	para "I have plenty of"
+	line "those things back"
+	cont "at my apartme-"
+	
+	para "I mean…"
+	
+	para "…back at the"
+	line "HQ BASE!"
+	done
+	
+HuntersThicketRangerText10:
+	text "Phew. That was a"
+	line "close one…"
+	
+	para "…"
+	
+	para "Oh, right!"
+	done
+	
+HuntersThicketRangerText11:
+	text "Go out and be a"
+	line "champion of peace"
+	cont "and justice!"
+	
+	para "Just like your"
+	line "idol."
+	
+	para "Me!"
+	
+	para "Until we meet"
+	line "again, KID LEDYBA!"
+	done
+
+HuntersThicketRangerWinText:
+	text "Go! Go!"
+	line "LEDIAN RANGER!"
+	
+	para "COMET PUNCH to…"
+	
+	para "…defeat?"
+	done
+
+HuntersThicketRangerNoRoomText:
+	text "Oh!"
+	
+	para "You seem to be"
+	line "carrying too much!"
+	
+	para "I'll just leave"
+	line "it here."
+	done
 
 HuntersThicketDisguiseman:
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_FAT_GUY

@@ -80,6 +80,10 @@ TuberSpriteGFX::       		   INCBIN "gfx/sprites/tuber.2bpp.lz"
 ShaolinSpriteGFX::     		   INCBIN "gfx/sprites/shaolin.2bpp.lz"
 MasterSpriteGFX::     		   INCBIN "gfx/sprites/master.2bpp.lz"
 DittoOwSpriteGFX::       	   INCBIN "gfx/icons/ditto.2bpp.lz"
+LedianRangerSpriteGFX::        INCBIN "gfx/sprites/ledian_ranger.2bpp.lz"
+LedianRangerFaceSpriteGFX::    INCBIN "gfx/sprites/ledian_ranger_face.2bpp.lz"
+LedianRangerPoseSpriteGFX::    INCBIN "gfx/sprites/ledian_ranger_pose.2bpp.lz"
+LedianRangerFacePoseSpriteGFX:: INCBIN "gfx/sprites/ledian_ranger_face_pose.2bpp.lz"
 
 SECTION "Overworld Sprites 3", ROMX
 

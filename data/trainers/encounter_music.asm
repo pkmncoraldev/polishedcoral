@@ -92,4 +92,5 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_NONE					; violet
 	db MUSIC_NONE					; clover
 	db MUSIC_NONE					; mina
+	db MUSIC_HARDCORE_ENCOUNTER		; ledianranger
 	db MUSIC_NONE			 		; towertycoon

@@ -91,4 +91,5 @@ BTTrainerClassSprites:
 	db SPRITE_PIGTAILS	    ; Violet
 	db SPRITE_PIGTAILS	    ; Clover
 	db SPRITE_MINA			; Mina
+	db SPRITE_LEDIAN_RANGER_MASK	; LEDIAN_RANGER
 	db SPRITE_GOLD_NPC      ; TOWERTYCOON

@@ -2382,15 +2382,15 @@ _PlayMusic:: ; e8b30
 	ld [wNoiseSampleAddressHi], a
 	ld [wNoiseSampleDelay], a
 	ld [wMusicNoiseSampleSet], a
-	ld a, [wMusicID]
-	cp NUM_TAPE_PLAYER_SONGS
-	jr nc, .skip_unlock
-	ld c, a
-	ld hl, wUnlockedSongs
-	ld b, SET_FLAG
-	ld d, 0
-	predef FlagPredef
-.skip_unlock
+;	ld a, [wMusicID]
+;	cp NUM_TAPE_PLAYER_SONGS
+;	jr nc, .skip_unlock
+;	ld c, a
+;	ld hl, wUnlockedSongs
+;	ld b, SET_FLAG
+;	ld d, 0
+;	predef FlagPredef
+;.skip_unlock
 	jp MusicOn
 
 ; e8b79

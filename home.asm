@@ -389,6 +389,7 @@ NamesPointers:: ; 33ab
 	dba MoveNames
 	dba ClothesNames
 	dba ItemNames
+	dba TapeNames
 	dbw 0, wPartyMonOT
 	dbw 0, wOTPartyMonOT
 	dba TrainerClassNames
@@ -580,19 +581,30 @@ ItemIsMail:: ; b9e76
 
 GetMoveName:: ; 34f8
 	push hl
-
 	ld a, MOVE_NAME
 	ld [wNamedObjectTypeBuffer], a
-
 	ld a, [wNamedObjectIndexBuffer] ; move id
 	ld [wCurSpecies], a
-
 	call GetName
 	ld de, wStringBuffer1
-
 	pop hl
 	ret
 ; 350c
+
+GetTapeName:: ; 3468
+; Get item name wNamedObjectIndexBuffer.
+
+	push hl
+	push bc
+	ld a, [wNamedObjectIndexBuffer]
+	ld [wCurSpecies], a
+	ld a, TAPE_NAME
+	ld [wNamedObjectTypeBuffer], a
+	call GetName
+	ld de, wStringBuffer1
+	pop bc
+	pop hl
+	ret
 
 ScrollingMenu:: ; 350c
 	call CopyMenuData2

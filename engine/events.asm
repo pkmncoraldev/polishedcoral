@@ -1376,6 +1376,7 @@ PlayerEventScriptPointers: ; 96c0c
 	dba ChangeDirectionScript    ; PLAYEREVENT_JOYCHANGEFACING
 	dba FindTMHMInBallScript     ; PLAYEREVENT_TMHMBALL
 	dba DiveWarpScript			 ; PLAYEREVENT_DIVE_WARP
+	dba FindTapeInBallScript	 ; PLAYEREVENT_TAPEBALL
 	dba Invalid_0x96c2d          ; NUM_PLAYER_EVENTS
 ; 96c2d
 

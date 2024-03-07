@@ -1,4 +1,4 @@
-SongInfo:
+SongInfo::
 	; title, origin, composer, additional credits
 	db "OPENING/<LNBRK>TITLE SCREEN@", ORIGIN_NONE, COMPOSER_JUNICHI_MASUDA, COMPOSER_CCCP
 	db "SUNSET BAY@", ORIGIN_NONE, COMPOSER_CORALDEV, COMPOSER_NONE

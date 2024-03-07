@@ -626,7 +626,6 @@ PlayerHouse2FInitializeRoom:
 	iftrue .SkipInizialization
 	callasm FixPlayerPalKrisHouse
 	callasm SetHuntersThicketBalls
-	callasm UnlockTitleScreenMusic
 	addcellnum PHONE_MOM
 	readvar VAR_PLAYER_GENDER
 	if_equal CORY, .cory
@@ -1077,15 +1076,6 @@ PlayerHousePCText:
 	cont "you picked out"
 	cont "yourself!"
 	done
-
-UnlockTitleScreenMusic:
-	ld a, MUSIC_TITLE
-	ld c, a
-	ld hl, wUnlockedSongs
-	ld b, SET_FLAG
-	ld d, 0
-	predef FlagPredef
-	ret
 
 FixPlayerPalKrisHouse:
 	ld a, [wPlayerPalette]

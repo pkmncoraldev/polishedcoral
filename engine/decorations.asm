@@ -959,8 +959,8 @@ DecoAction_AskWhichSide: ; 26e70
 ; 26e9a
 
 QueryWhichSide: ; 26e9a
-	ld hl, wRightOrnament
-	ld de, wLeftOrnament
+	ld hl, wLeftOrnament
+	ld de, wRightOrnament
 	ld a, [wBuffer2]
 	cp 1
 	ret z
@@ -982,8 +982,8 @@ MenuDataHeader_0x26eab: ; 0x26eab
 MenuData2_0x26eb3: ; 0x26eb3
 	db $80 ; flags
 	db 3 ; items
-	db "RIGHT SIDE@"
 	db "LEFT SIDE@"
+	db "RIGHT SIDE@"
 	db "CANCEL@"
 ; 0x26ed1
 

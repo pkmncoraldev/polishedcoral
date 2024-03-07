@@ -304,11 +304,17 @@ FindOwnedConsoles: ; 26910
 ; 2691d
 
 DecoOrnamentMenu: ; 2691d
+	eventflagcheck EVENT_GOT_TAPE_PLAYER
+	jr z, .tape_player
 	call FindOwnedOrnaments
 	call PopulateDecoCategoryMenu
 	xor a
 	ret
-; 26925
+.tape_player
+	ld hl, DecoText_GrabTapePlayer
+	call MenuTextBoxBackup
+	xor a
+	ret
 
 FindOwnedOrnaments: ; 26925
 	ld hl, .ornaments
@@ -980,6 +986,10 @@ MenuData2_0x26eb3: ; 0x26eb3
 	db "LEFT SIDE@"
 	db "CANCEL@"
 ; 0x26ed1
+
+DecoText_GrabTapePlayer:
+	text_jump UnknownText_GrabTapePlayer
+	db "@"
 
 DecoText_PutAwayTheDeco: ; 0x26ed1
 	; Put away the @ .

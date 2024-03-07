@@ -201,6 +201,11 @@ UnknownText_0x1bc4b2::
 	line "want to put away?"
 	done
 
+UnknownText_GrabTapePlayer::
+	text "You must clear off"
+	line "the table first!"
+	prompt
+
 UnknownText_0x1bc4d7::
 	text "Put away the"
 	line "@"

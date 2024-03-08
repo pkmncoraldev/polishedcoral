@@ -347,6 +347,31 @@ IsNPCAtCoord: ; 7041
 	ret
 ; 70a4
 
+CheckHiddenTape:
+	ld bc, wObjectStructs
+	xor a
+.loop
+	ld [hObjectStructIndexBuffer], a
+	ld hl, OBJECT_MOVEMENTTYPE
+	add hl, de
+	ld a, [hl]
+	cp SPRITEMOVEDATA_NO_RENDER
+	jr nz, .next
+	scf
+	ret
+	
+.next
+	ld hl, OBJECT_STRUCT_LENGTH
+	add hl, bc
+	ld b, h
+	ld c, l
+	ld a, [hObjectStructIndexBuffer]
+	inc a
+	cp NUM_OBJECT_STRUCTS
+	jr nz, .loop
+	and a
+	ret
+
 HasPersonReachedMovementLimit: ; 70a4
 	ld hl, OBJECT_RADIUS
 	add hl, bc

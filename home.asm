@@ -437,7 +437,16 @@ GetName:: ; 33c3
 	call GetNthString
 
 	ld de, wStringBuffer1
+	push af
+	ld a, [wNamedObjectTypeBuffer]
+	cp TAPE_NAME
+	jr z, .tape
 	ld bc, ITEM_NAME_LENGTH
+	jr .finish
+.tape
+	ld bc, TAPE_NAME_LENGTH ;length of wStringBuffer1 + wStringBuffer2
+.finish
+	pop af
 	rst CopyBytes
 
 .done

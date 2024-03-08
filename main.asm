@@ -5073,13 +5073,28 @@ GetTMHMName:: ; 3487
 	jr .asm_34a1
 
 .TM:
+	ld a, [wNamedObjectTypeBuffer]
+	cp TAPE_NAME
+	jr z, .tape
+	
 	ld hl, .TMText
 	ld bc, .TMTextEnd - .TMText
+	jr .asm_34a1
+	
+.tape:
+	ld hl, .TapeText
+	ld bc, .TapeTextEnd - .TapeText
 
 .asm_34a1
 	ld de, wStringBuffer1
 	rst CopyBytes
+	ld a, [wNamedObjectTypeBuffer]
+	cp TAPE_NAME
+	jr nz, .not_tape
+	pop af
+	jr .tape2
 
+.not_tape
 ; TM/HM number
 	ld a, [wNamedObjectIndexBuffer]
 	ld c, a
@@ -5091,7 +5106,7 @@ GetTMHMName:: ; 3487
 	sub NUM_TMS
 .asm_34b9
 	inc a
-
+.tape2
 ; Divide and mod by 10 to get the top and bottom digits respectively
 	ld b, "0"
 .mod10
@@ -5133,6 +5148,11 @@ GetTMHMName:: ; 3487
 .HMText:
 	db "HM"
 .HMTextEnd:
+	db "@"
+	
+.TapeText:
+	db "AUDIO CASSETTE "
+.TapeTextEnd:
 	db "@"
 ; 34df
 

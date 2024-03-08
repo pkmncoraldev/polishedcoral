@@ -100,6 +100,17 @@ FindTapeInBallScript::
 	writetext .text_found
 	playsound SFX_ITEM
 	pause 60
+	callasm GetTapeNameLines
+	ifequal 2, .two_line_name
+	writetext TapeNameText
+	buttonsound
+	writetext PutAwayTapeText
+	waitbutton
+	closetext
+	end
+.two_line_name
+	writetext TapeNameText2
+	buttonsound
 	writetext PutAwayTapeText
 	waitbutton
 	closetext
@@ -115,26 +126,20 @@ FindTapeInBallScript::
 	ld [wScriptVar], a
 	ld a, [wCurItemBallContents]
 	ld [wNamedObjectIndexBuffer], a
-	
-	call GetTapeName
+
+	ld a, TAPE_NAME
+	ld [wNamedObjectTypeBuffer], a
+
+	farcall GetTMHMName
 	ld hl, wStringBuffer3
 	call CopyName2
 	
+	call GetTapeName
 
 	; off by one error?
 	ld a, [wd265]
 	inc a
 	ld [wd265], a
-
-;	predef GetTMHMMove
-;	ld a, [wd265]
-;	ld [wPutativeTMHMMove], a
-;	call GetMoveName
-
-;	ld hl, wStringBuffer3 + 4 ; assume all TM names are 4 characters, "TM##"
-;	ld a, " "
-;	ld [hli], a
-;	call CopyName2
 
 	ld a, [wCurItemBallContents]
 	ld c, a
@@ -145,6 +150,29 @@ FindTapeInBallScript::
 	ld a, $1
 	ld [wScriptVar], a
 	ret
+
+GetTapeNameLines:
+	ld a, [wCurItemBallQuantity]
+	ld [wScriptVar], a
+	ret
+
+TapeNameText:
+	text "@"
+	text_from_ram wStringBuffer1
+	text ""
+	
+	line "is written on the"
+	cont "label."
+	done
+	
+TapeNameText2:
+	text "@"
+	text_from_ram wStringBuffer1
+	text ""
+	
+	cont "is written on the"
+	cont "label."
+	done
 
 PutAwayTapeText:
 	text "<PLAYER> put the"

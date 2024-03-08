@@ -9,15 +9,17 @@ Route1_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
 	bg_event 21, 26, SIGNPOST_JUMPTEXT, Route1SignText
+	bg_event 24, 12, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_ROUTE_1
 ;	bg_event 31, 15, SIGNPOST_READ, Route1Clue
 
-	db 4 ; object events
+	db 5 ; object events
 	object_event 10,  9, SPRITE_POKEMANIAC, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, Route1NPCScript, -1
 	fruittree_event  2,  6, FRUITTREE_ROUTE_1, PECHA_BERRY
 	cuttree_event 15, 17, EVENT_ROUTE_1_CUT_TREE_1
 	cuttree_event 22, 11, EVENT_ROUTE_1_CUT_TREE_2
+	hiddentape_event 24, 12, MUSIC_ROUTE_1, 1, EVENT_MUSIC_ROUTE_1
 	
 	const_def 1 ; object constants
 	const ROUTE1_NPC

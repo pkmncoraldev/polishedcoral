@@ -11,9 +11,9 @@ GlintRivalHouse_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	person_event SPRITE_POKEFAN_F, 4, 2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintRivalHouseMom, -1
-
+	tapeball_event  4,  3, MUSIC_RIVAL_ENCOUNTER, 2, EVENT_MUSIC_RIVAL_ENCOUNTER
 
 	const_def 1 ; object constants
 	const GLINT_RIVALHOUSE_MOM

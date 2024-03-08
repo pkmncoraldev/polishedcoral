@@ -4,16 +4,17 @@ DaybreakGrotto2_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 3 ; warp events
-	warp_event  9, 17, DAYBREAK_GROTTO_1, 2
-	warp_event  9,  3, MT_ONWA_LOWER_CLIFF, 2
-	warp_event  1, 1, DAYBREAK_GROTTO_3, 1
+	warp_event 11, 17, DAYBREAK_GROTTO_1, 2
+	warp_event 11,  3, MT_ONWA_LOWER_CLIFF, 2
+	warp_event  3,  1, DAYBREAK_GROTTO_3, 1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	person_event SPRITE_FISHER, 15,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DaybreakGrotto2NPC, EVENT_DAYBREAK_GROTTO_HIKER
+	db 2 ; object events
+	person_event SPRITE_FISHER, 15, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DaybreakGrotto2NPC, EVENT_DAYBREAK_GROTTO_HIKER
+	tapeball_event  4, 11, MUSIC_DAYBREAK_GROTTO, 1, EVENT_MUSIC_DAYBREAK_GROTTO
 
 DaybreakGrotto2NPC:
 	jumptextfaceplayer DaybreakGrotto2NPCText

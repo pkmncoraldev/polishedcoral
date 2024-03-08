@@ -2133,11 +2133,15 @@ DrawRadioScreen:
 .skip_play
 ;	call Pokegear_FinishTilemap
 	
+	ld de, .Sharp
+	hlcoord 1, 3
+	call PlaceString
+	
 	ld a, [wRadioTuningKnob]
 	inc a
 	ld [wRadioTuningKnob], a
 	ld de, wRadioTuningKnob
-	hlcoord 1, 3
+	hlcoord 2, 3
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
 	call PrintNum
 	ld a, [wRadioTuningKnob]
@@ -2173,6 +2177,9 @@ DrawRadioScreen:
 	
 .Unknown
 	db "???@"
+	
+.Sharp
+	db "<SHARP>@"
 	
 _TownMap: ; 9191c
 	ld hl, wOptions1

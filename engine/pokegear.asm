@@ -1082,11 +1082,13 @@ TownMap_GetOrangeLandmarkLimits:
 ; 910f9
 
 PlaceTapes:
-	ld a, 56
+	ld a, 128
 	ld d, a
-	ld a, 88
+	ld a, 80
 	ld e, a
 	call TapeAnimate
+	ld a, 128
+	ld d, a
 	ld a, 144
 	ld e, a
 	call TapeAnimate
@@ -2156,16 +2158,16 @@ DrawRadioScreen:
 	ret
 .song_not_unlocked
 	ld de, .Unknown
-	hlcoord 1, 13
-	call PlaceString
-	ld de, .Composer
-	hlcoord 1, 12
-	call PlaceString
-	ld de, .Unknown
 	hlcoord 1, 9
 	call PlaceString
-	ld de, .Title
+	ld de, .Composer
 	hlcoord 1, 8
+	call PlaceString
+	ld de, .Unknown
+	hlcoord 1, 5
+	call PlaceString
+	ld de, .Title
+	hlcoord 1, 4
 	call PlaceString
 	ret
 
@@ -3404,7 +3406,7 @@ TapeAnimate: ; 91fa6
 	ld b, BANK(RadioGFX2)
 ; Standing icon
 	ld hl, VTiles0 tile $20
-	ld c, 12 ; # tiles
+	ld c, 16 ; # tiles
 	push bc
 	push de
 	call Request2bpp

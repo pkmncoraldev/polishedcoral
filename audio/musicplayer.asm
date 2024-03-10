@@ -1560,7 +1560,7 @@ DrawSongInfo::
 .info:
 
 	call GetSongTitle
-	hlcoord 1, 9
+	hlcoord 1, 5
 	call PlaceString
 	inc de
 
@@ -1577,14 +1577,14 @@ DrawSongInfo::
 
 	push de
 	call GetSongArtist
-	hlcoord 1, 13
+	hlcoord 1, 9
 	call PlaceString
 	pop de
 	inc de
 
 	push de
 	call GetSongArtist2
-	hlcoord 1, 16
+	hlcoord 1, 10
 	call PlaceString
 	pop de
 	ret
@@ -1623,10 +1623,10 @@ GetSongArtist:
 	call GetNthString
 	push hl
 	ld de, .Composer
-	hlcoord 1, 12
+	hlcoord 1, 8
 	call PlaceString
 	ld de, .Title
-	hlcoord 1, 8
+	hlcoord 1, 4
 	call PlaceString
 	pop de
 	ret
@@ -1646,14 +1646,14 @@ GetSongArtist2:
 	cp "@"
 	jr z, .finish
 	ld de, .Arranger
-	hlcoord 1, 15
+	hlcoord 1, 8
 	call PlaceString
 .finish
 	pop de
 	ret
 
 .Arranger:
-	db "ARRANGER:@"
+	db "COMPOSER/ARRANGER:@"
 
 SongSelector:
 	hlcoord 0, 0

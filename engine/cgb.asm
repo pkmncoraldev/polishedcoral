@@ -255,7 +255,17 @@ _CGB_Radio:
 	ld bc, 8 palettes
 	ld a, $5
 	call FarCopyWRAM
+	
+	ld a, [wTapePlayerBacklite]
+	cp 0
+	jr z, .skip
+	ld hl, RadioDarkScreenPal
+	ld de, wUnknBGPals + 2 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
 
+.skip
 	call ApplyAttrMap
 	call ApplyPals
 	ld a, $1

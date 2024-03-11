@@ -1260,7 +1260,9 @@ wUnknownRC:: ds 1
 
 wHuntersDisguise:: ds 1
 
-	ds 12 ; unused
+wTapePlayerBacklite:: ds 1
+
+	ds 11 ; unused
 wUnlockedUnowns:: ds 1
 
 wFirstUnownSeen:: ds 1

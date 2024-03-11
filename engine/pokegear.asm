@@ -1146,6 +1146,10 @@ PokegearRadio_Reset:
 	ret
 
 PokegearRadio_Joypad: ; 91112 (24:5112)
+	ld hl, hJoyLast
+	ld a, [hl]
+	and SELECT
+	jr nz, .select
 	ld a, [wPlaceBallsX]
 	cp 68
 	jr z, .skip
@@ -1167,6 +1171,22 @@ PokegearRadio_Joypad: ; 91112 (24:5112)
 	ld [wInputFlags], a
 	
 	jp UpdateRadioStation
+.select
+	ld a, [wTapePlayerBacklite]
+	cp 0
+	jr z, .set
+	xor a
+	jr .finish_select
+.set
+	ld a, 1
+.finish_select
+	ld [wTapePlayerBacklite], a
+	ld de, SFX_PECK
+	call PlaySFX
+	ld b, CGB_RADIO_PALS
+	call GetCGBLayout
+	call SetPalettes
+	
 .skip
 	ld hl, hJoyLast
 	ld a, [hl]

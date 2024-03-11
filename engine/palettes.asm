@@ -1217,9 +1217,9 @@ RadioPals:
 	RGB 28, 31, 20
 ; map 2
 	RGB 00, 00, 00
+	RGB 00, 30, 22
 	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 00, 31, 00
+	RGB 00, 10, 07
 ; map 3
 	RGB 28, 31, 20
 	RGB 00, 31, 00
@@ -1370,6 +1370,12 @@ PokegearObjectPals:
 	RGB 28, 31, 20
 	RGB 13, 13, 13
 	RGB 00, 00, 00
+
+RadioDarkScreenPal:
+	RGB 00, 00, 00
+	RGB 16, 21, 16
+	RGB 00, 00, 00
+	RGB 14, 18, 14
 
 RedPokegearInterfacePalette:
 	RGB 28, 31, 20

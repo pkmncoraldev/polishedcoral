@@ -90,12 +90,7 @@ TapePlayerFunction: ; 90b8d (24:4b8d)
 	ld [wPokegearRadioChannelAddr], a
 	ld [wPokegearRadioChannelAddr + 1], a
 	call Pokegear_InitJumptableIndices
-	call InitTapePlayerTilemap
-	ld b, CGB_POKEGEAR_PALS
-	call GetCGBLayout
-	call SetPalettes
-	ld a, %11100100
-	jp DmgToCgbObjPal0
+	jp InitTapePlayerTilemap
 
 PokeGear: ; 90b8d (24:4b8d)
 	call Load1bppFont
@@ -1094,8 +1089,7 @@ PlaceTapes:
 	call TapeAnimate
 	ret	
 
-PokegearRadio_Init: ; 910f9 (24:50f9)
-	
+PokegearRadio_Init: ; 910f9 (24:50f9)	
 	ld b, CGB_RADIO_PALS
 	call GetCGBLayout
 	call SetPalettes
@@ -1866,6 +1860,7 @@ Pokegear_LoadTilemapRLE: ; 914bb (24:54bb)
 	; Format: repeat count, tile ID
 	; Terminated with $FF
 	hlcoord 0, 0
+Pokegear_LoadTilemapRLE2:
 .loop
 	ld a, [de]
 	cp $ff
@@ -1925,6 +1920,10 @@ RadioButtonsBackTilemapRLE:
 INCBIN "gfx/pokegear/back.tilemap.rle"
 RadioButtonsForwardTilemapRLE:
 INCBIN "gfx/pokegear/forward.tilemap.rle"
+RadioTitleTilemapRLE:
+INCBIN "gfx/pokegear/radio_title.tilemap.rle"
+RadioComposerTilemapRLE:
+INCBIN "gfx/pokegear/radio_composer.tilemap.rle"
 
 _UpdateRadioStation: ; 9163e (24:563e)
 	jp UpdateRadioStation
@@ -2160,22 +2159,16 @@ DrawRadioScreen:
 	ld de, .Unknown
 	hlcoord 1, 9
 	call PlaceString
-	ld de, .Composer
+	ld de, RadioComposerTilemapRLE
 	hlcoord 1, 8
-	call PlaceString
+	call Pokegear_LoadTilemapRLE2
 	ld de, .Unknown
 	hlcoord 1, 5
 	call PlaceString
-	ld de, .Title
+	ld de, RadioTitleTilemapRLE
 	hlcoord 1, 4
-	call PlaceString
+	call Pokegear_LoadTilemapRLE2
 	ret
-
-.Composer:
-	db "COMPOSER:@"
-	
-.Title:
-	db "TITLE:@"
 	
 .Unknown
 	db "???@"

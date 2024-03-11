@@ -1205,6 +1205,46 @@ BankCardPals:
 	RGB 21, 21, 21
 	RGB 00, 00, 00
 RadioPals:
+; map 0
+	RGB 28, 31, 20
+	RGB 21, 21, 21
+	RGB 13, 13, 13
+	RGB 00, 00, 00
+; map 1
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 28, 31, 20
+; map 2
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 31, 00
+; map 3
+	RGB 28, 31, 20
+	RGB 00, 31, 00
+	RGB 15, 07, 00
+	RGB 00, 00, 31
+; map 4
+	RGB 28, 31, 20
+	RGB 31, 15, 00
+	RGB 15, 07, 00
+	RGB 00, 00, 00
+; map 5
+	RGB 28, 31, 20
+	RGB 00, 31, 00
+	RGB 31, 15, 00
+	RGB 31, 00, 00
+; map 6
+	RGB 28, 31, 20
+	RGB 00, 00, 31
+	RGB 15, 07, 00
+	RGB 31, 00, 00
+; map 7
+	RGB 00, 31, 00
+	RGB 31, 15, 00
+	RGB 15, 07, 00
+	RGB 00, 00, 00
 PokegearPals:
 ; map 0
 	RGB 28, 31, 20
@@ -1248,10 +1288,46 @@ PokegearPals:
 	RGB 00, 00, 00
 
 RadioObjectPals:
+; Red
+	RGB 27, 31, 27
+	RGB 31, 19, 10
+	RGB 31, 05, 00
+	RGB 00, 00, 00
+; Blue
+	RGB 27, 31, 27
+	RGB 31, 19, 10
+	RGB 10, 09, 31
+	RGB 00, 00, 00
+; Green
+	RGB 27, 31, 27
+	RGB 31, 19, 10
+	RGB 07, 21, 02
+	RGB 00, 00, 00
+; Brown
+	RGB 27, 31, 27
+	RGB 31, 19, 10
+	RGB 15, 10, 03
+	RGB 00, 00, 00
+; Purple
+	RGB 27, 31, 27
+	RGB 31, 21, 09
+	RGB 21, 06, 21
+	RGB 00, 00, 00
+; Teal
+	RGB 27, 31, 27
+	RGB 31, 19, 10
+	RGB 03, 21, 19
+	RGB 00, 00, 00
+; Pink
 	RGB 00, 00, 00
 	RGB 28, 31, 20
 	RGB 21, 21, 21
 	RGB 13, 13, 13
+; Silver
+	RGB 31, 31, 31
+	RGB 28, 31, 20
+	RGB 13, 13, 13
+	RGB 00, 00, 00
 
 PokegearObjectPals:
 ; Red

@@ -1622,20 +1622,14 @@ GetSongArtist:
 	ld hl, SongArtists
 	call GetNthString
 	push hl
-	ld de, .Composer
+	ld de, RadioComposerTilemapRLE2
 	hlcoord 1, 8
-	call PlaceString
-	ld de, .Title
+	call MusicPlayer_LoadTilemapRLE
+	ld de, RadioTitleTilemapRLE2
 	hlcoord 1, 4
-	call PlaceString
+	call MusicPlayer_LoadTilemapRLE
 	pop de
 	ret
-
-.Composer:
-	db "COMPOSER:@"
-	
-.Title:
-	db "TITLE:@"
 
 GetSongArtist2:
 	ld a, [de]
@@ -1645,15 +1639,29 @@ GetSongArtist2:
 	ld a, [hl]
 	cp "@"
 	jr z, .finish
-	ld de, .Arranger
+	ld de, RadioArrangerTilemapRLE2
 	hlcoord 1, 8
-	call PlaceString
+	call MusicPlayer_LoadTilemapRLE
 .finish
 	pop de
 	ret
 
-.Arranger:
-	db "COMPOSER/ARRANGER:@"
+MusicPlayer_LoadTilemapRLE:
+.loop
+	ld a, [de]
+	cp $ff
+	ret z
+	ld b, a
+	inc de
+	ld a, [de]
+	ld c, a
+	inc de
+	ld a, b
+.load
+	ld [hli], a
+	dec c
+	jr nz, .load
+	jr .loop
 
 SongSelector:
 	hlcoord 0, 0
@@ -1905,3 +1913,10 @@ INCLUDE "data/music_player/song_info.asm"
 INCLUDE "data/music_player/song_origins.asm"
 INCLUDE "data/music_player/song_artists.asm"
 INCLUDE "data/music_player/tape_names.asm"
+
+RadioTitleTilemapRLE2:
+INCBIN "gfx/pokegear/radio_title.tilemap.rle"
+RadioComposerTilemapRLE2:
+INCBIN "gfx/pokegear/radio_composer.tilemap.rle"
+RadioArrangerTilemapRLE2:
+INCBIN "gfx/pokegear/radio_arranger.tilemap.rle"

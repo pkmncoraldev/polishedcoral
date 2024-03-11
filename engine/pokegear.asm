@@ -1105,16 +1105,7 @@ PokegearRadio_Init: ; 910f9 (24:50f9)
 	add hl, bc
 	ld [hl], $8
 	
-	ld a, [wTapePlayerBacklite]
-	cp 0
-	jr z, .on
-	ld de, RadioLiteOffTilemapRLE
-	jr .cont2
-.on
-	ld de, RadioLiteOnTilemapRLE
-.cont2
-	hlcoord 15, 1
-	call Pokegear_LoadTilemapRLE2
+	call DrawBackliteSwitch
 	
 	ld a, [wRadioTuningKnob]
 	inc a
@@ -2030,6 +2021,7 @@ AnimateTuningKnob: ; 91640 (24:5640)
 	
 	ld de, RadioButtonsPlayTilemapRLE
 	call Pokegear_LoadTilemapRLE
+	call DrawBackliteSwitch
 ;	call Pokegear_FinishTilemap
 	ret
 .left
@@ -2044,6 +2036,7 @@ AnimateTuningKnob: ; 91640 (24:5640)
 	
 	ld de, RadioButtonsBackTilemapRLE
 	call Pokegear_LoadTilemapRLE
+	call DrawBackliteSwitch
 ;	call Pokegear_FinishTilemap
 	ld a, [wPlaceBallsX]
 	cp 68
@@ -2067,6 +2060,7 @@ AnimateTuningKnob: ; 91640 (24:5640)
 	
 	ld de, RadioButtonsForwardTilemapRLE
 	call Pokegear_LoadTilemapRLE
+	call DrawBackliteSwitch
 ;	call Pokegear_FinishTilemap
 	ld a, [wPlaceBallsX]
 	cp 69
@@ -2137,17 +2131,7 @@ CheckUnlockedSong:
 	and a
 	ret
 
-DrawRadioScreen:
-;	ld a, MUSIC_POKEMON_CENTER
-;	ld c, a
-;	ld hl, wUnlockedSongs
-;	ld b, SET_FLAG
-;	ld d, 0
-;	predef FlagPredef
-
-	ld de, RadioTilemapRLE
-	call Pokegear_LoadTilemapRLE
-	
+DrawBackliteSwitch:
 	ld a, [wTapePlayerBacklite]
 	cp 0
 	jr z, .on
@@ -2157,8 +2141,12 @@ DrawRadioScreen:
 	ld de, RadioLiteOnTilemapRLE
 .cont2
 	hlcoord 15, 1
-	call Pokegear_LoadTilemapRLE2
-	
+	jp Pokegear_LoadTilemapRLE2
+
+DrawRadioScreen:
+	ld de, RadioTilemapRLE
+	call Pokegear_LoadTilemapRLE	
+	call DrawBackliteSwitch
 	ld a, [wPlaceBallsX]
 	cp 68
 	jr z, .left
@@ -2168,12 +2156,10 @@ DrawRadioScreen:
 .left
 	ld de, RadioButtonsBackTilemapRLE
 	call Pokegear_LoadTilemapRLE
-;	call Pokegear_FinishTilemap
 	jr .skip_play
 .right
 	ld de, RadioButtonsForwardTilemapRLE
 	call Pokegear_LoadTilemapRLE
-;	call Pokegear_FinishTilemap
 	jr .skip_play
 .try_play
 	ld a, [wTapePlayerActive]
@@ -2182,8 +2168,7 @@ DrawRadioScreen:
 	ld de, RadioButtonsPlayTilemapRLE
 	call Pokegear_LoadTilemapRLE
 .skip_play
-;	call Pokegear_FinishTilemap
-	
+	call DrawBackliteSwitch
 	ld de, .Sharp
 	hlcoord 1, 3
 	call PlaceString

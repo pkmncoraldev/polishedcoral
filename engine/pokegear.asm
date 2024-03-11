@@ -1105,6 +1105,17 @@ PokegearRadio_Init: ; 910f9 (24:50f9)
 	add hl, bc
 	ld [hl], $8
 	
+	ld a, [wTapePlayerBacklite]
+	cp 0
+	jr z, .on
+	ld de, RadioLiteOffTilemapRLE
+	jr .cont2
+.on
+	ld de, RadioLiteOnTilemapRLE
+.cont2
+	hlcoord 15, 1
+	call Pokegear_LoadTilemapRLE2
+	
 	ld a, [wRadioTuningKnob]
 	inc a
 	ld c, a
@@ -1175,12 +1186,16 @@ PokegearRadio_Joypad: ; 91112 (24:5112)
 	ld a, [wTapePlayerBacklite]
 	cp 0
 	jr z, .set
+	ld de, RadioLiteOnTilemapRLE
 	xor a
 	jr .finish_select
 .set
+	ld de, RadioLiteOffTilemapRLE
 	ld a, 1
 .finish_select
 	ld [wTapePlayerBacklite], a
+	hlcoord 15, 1
+	call Pokegear_LoadTilemapRLE2
 	ld de, SFX_PECK
 	call PlaySFX
 	ld b, CGB_RADIO_PALS
@@ -1944,6 +1959,10 @@ RadioTitleTilemapRLE:
 INCBIN "gfx/pokegear/radio_title.tilemap.rle"
 RadioComposerTilemapRLE:
 INCBIN "gfx/pokegear/radio_composer.tilemap.rle"
+RadioLiteOffTilemapRLE:
+INCBIN "gfx/pokegear/radio_lite_off.tilemap.rle"
+RadioLiteOnTilemapRLE:
+INCBIN "gfx/pokegear/radio_lite_on.tilemap.rle"
 
 _UpdateRadioStation: ; 9163e (24:563e)
 	jp UpdateRadioStation
@@ -2128,6 +2147,17 @@ DrawRadioScreen:
 
 	ld de, RadioTilemapRLE
 	call Pokegear_LoadTilemapRLE
+	
+	ld a, [wTapePlayerBacklite]
+	cp 0
+	jr z, .on
+	ld de, RadioLiteOffTilemapRLE
+	jr .cont2
+.on
+	ld de, RadioLiteOnTilemapRLE
+.cont2
+	hlcoord 15, 1
+	call Pokegear_LoadTilemapRLE2
 	
 	ld a, [wPlaceBallsX]
 	cp 68

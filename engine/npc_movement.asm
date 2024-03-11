@@ -353,7 +353,7 @@ CheckHiddenTape:
 .loop
 	ld [hObjectStructIndexBuffer], a
 	ld hl, OBJECT_MOVEMENTTYPE
-	add hl, de
+	add hl, bc
 	ld a, [hl]
 	cp SPRITEMOVEDATA_NO_RENDER
 	jr nz, .next

@@ -1608,7 +1608,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	farcall IsNPCAtCoord
 	jr nc, .is_npc
 	farcall CheckHiddenTape
-	jr nc, .is_npc
+	jr c, .is_npc
 	call .CheckStrengthBoulder
 	jr c, .no_bump
 

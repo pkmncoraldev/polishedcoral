@@ -843,7 +843,7 @@ SmokeBallDesc:
 
 TapePlayerDesc:
 	db   "Allows playback of"
-	next "audio tapes.@"
+	next "AUDIO CASSETTES.@"
 
 LightBallDesc:
 	db   "Ups PIKACHU's ATK +"

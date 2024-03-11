@@ -95,6 +95,7 @@ FindTMHMInBallScript::
 	
 FindTapeInBallScript::
 	callasm .ReceiveTape
+	iffalse .No_Player
 	disappear LAST_TALKED
 	opentext
 	writetext .text_found
@@ -112,6 +113,15 @@ FindTapeInBallScript::
 	writetext TapeNameText2
 	buttonsound
 	writetext PutAwayTapeText
+	waitbutton
+	closetext
+	end
+	
+.No_Player
+	opentext
+	writetext .text_found
+	waitbutton
+	writetext NoTapePlayerText
 	waitbutton
 	closetext
 	end
@@ -140,6 +150,10 @@ FindTapeInBallScript::
 	ld a, [wd265]
 	inc a
 	ld [wd265], a
+
+	ld de, EVENT_GOT_TAPE_PLAYER
+	farcall CheckEventFlag
+	ret z
 
 	ld a, [wCurItemBallContents]
 	ld c, a
@@ -178,4 +192,9 @@ PutAwayTapeText:
 	text "<PLAYER> put the"
 	line "CASSETTE in"
 	cont "the TAPE PLAYER."
+	done
+	
+NoTapePlayerText:
+	text "…but has no"
+	line "TAPE PLAYER!"
 	done

@@ -25,7 +25,7 @@ SunsetBay_MapScriptHeader:
 	coord_event 37, 16, 0, SunsetGrampsStopsYou3
 	coord_event 37, 17, 0, SunsetGrampsStopsYou4
 
-	db 19 ; bg events
+	db 20 ; bg events
 	bg_event 11, 13, SIGNPOST_READ, PlayersHouseSign
 	bg_event 27, 15, SIGNPOST_READ, SunsetCafeSign
 	bg_event 26,  9, SIGNPOST_READ, SunsetBayPokeCenterSign
@@ -45,8 +45,9 @@ SunsetBay_MapScriptHeader:
 	bg_event 32, 12, SIGNPOST_READ, SunsetGuyOnDate
 	bg_event 35, 21, SIGNPOST_ITEM + POKE_BALL, EVENT_SUNSET_BAY_HIDDEN_POKE_BALL
 	bg_event 12, 18, SIGNPOST_ITEM + POTION, EVENT_SUNSET_BAY_HIDDEN_POTION
+	bg_event 33,  6, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_SUNSET_BAY
 
-	db 18 ; object events
+	db 19 ; object events
 	person_event SPRITE_CUTE_GIRL, 15, 32, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetNPC1, -1
 	object_event 32, 13, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_GRAMPS, 14, 37, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetNPC3, -1
@@ -65,6 +66,7 @@ SunsetBay_MapScriptHeader:
 	object_event 13, 29, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
 	object_event 12, 29, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
 	object_event 12, 28, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
+	hiddentape_event 33, 6, MUSIC_SUNSET_BAY, 1, EVENT_MUSIC_SUNSET_BAY
 
 	const_def 1 ; object constants
 	const SUNSET_NPC1

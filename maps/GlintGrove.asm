@@ -43,7 +43,7 @@ GlintGrove_MapScriptHeader:
 	tmhmball_event 37, 22, TM_METAL_CLAW, EVENT_GLINT_GROVE_POKE_BALL2
 	fruittreeinvis_event 15, 41, FRUITTREE_GLINT_GROVE_1, CHESTO_BERRY
 	fruittreeinvis_event 17, 19, FRUITTREE_GLINT_GROVE_2, PECHA_BERRY
-	itemball_event 16, 13, POTION, 1, EVENT_GLINT_GROVE_POKE_BALL3
+	tapeball_event 16, 14, MUSIC_LASS_ENCOUNTER, 2, EVENT_MUSIC_LASS_ENCOUNTER
 	
 	const_def 1 ; object constants
 	const GLINTGROVE_TRAINER1

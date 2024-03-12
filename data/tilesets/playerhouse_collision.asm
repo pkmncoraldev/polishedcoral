@@ -26,8 +26,8 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 19
 	tilecoll WALL, WALL, RADIO, FLOOR ; 1a
 	tilecoll WALL, WALL, BOOKSHELF, BOOKSHELF ; 1b
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 1c
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1d
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1c
+	tilecoll WALL, WALL, WALL, WALL ; 1d
 	tilecoll WALL, WALL, WALL, FLOOR ; 1e
 	tilecoll WALL, WALL, PC, RADIO ; 1f
 	tilecoll WALL, WALL, WALL, WALL ; 20
@@ -125,4 +125,4 @@
 	tilecoll FLOOR, FLOOR, DOWN_WALL, DOWN_WALL ; 7c
 	tilecoll WALL, WALL, WALL, FLOOR ; 7d
 	tilecoll WALL, WALL, WALL, WALL ; 7e
-	tilecoll WALL, WALL, WALL, WALL ; 7f
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 7f

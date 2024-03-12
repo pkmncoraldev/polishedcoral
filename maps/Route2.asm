@@ -10,9 +10,9 @@ Route2_MapScriptHeader:
 
 	db 2 ; bg events
 	signpost 40, 20, SIGNPOST_READ, Route2Sign
-	bg_event 33,  4, SIGNPOST_ITEM + MAX_REVIVE, EVENT_ROUTE_2_HIDDEN_ITEM
+	bg_event 33,  6, SIGNPOST_ITEM + MAX_REVIVE, EVENT_ROUTE_2_HIDDEN_ITEM
 
-	db 12 ; object events
+	db 14 ; object events
 	person_event SPRITE_YOUNGSTER, 23, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute2_1, -1
 	person_event SPRITE_LASS, 18, 16, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 5, TrainerRoute2_2, -1
 	person_event SPRITE_YOUNGSTER, 12, 11, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute2_3, -1
@@ -24,7 +24,9 @@ Route2_MapScriptHeader:
 	fruittree_event 31,  4, FRUITTREE_ROUTE_2_3, LEPPA_BERRY
 	fruittree_event 34,  4, FRUITTREE_ROUTE_2_4, SITRUS_BERRY
 	fruittree_event 35,  4, FRUITTREE_ROUTE_2_5, FIGY_BERRY
-	tmhmball_event 32,  4, TM_GIGA_DRAIN, EVENT_ROUTE_2_POKE_BALL_GIGA_DRAIN
+	tmhmball_event 32,  6, TM_GIGA_DRAIN, EVENT_ROUTE_2_POKE_BALL_GIGA_DRAIN
+	tapeball_event 35,  9, MUSIC_ROUTE_2, 1, EVENT_MUSIC_ROUTE_2
+	tapeball_event 26, 22, MUSIC_YOUNGSTER_ENCOUNTER, 2, EVENT_MUSIC_YOUNGSTER_ENCOUNTER
 
 	const_def 1 ; object constants
 	const ROUTE2_NPC1

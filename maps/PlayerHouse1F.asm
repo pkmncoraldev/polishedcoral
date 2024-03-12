@@ -21,9 +21,10 @@ PlayerHouse1F_MapScriptHeader:
 	bg_event  2,  1, SIGNPOST_JUMPTEXT, FridgeText
 	bg_event  4,  1, SIGNPOST_UP, TVScript
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunsetMomScript, EVENT_PLAYER_HOUSE_MOM_1
 	object_event  2,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunsetMomScript, EVENT_PLAYER_HOUSE_MOM_2
+	tapeball_event  0,  6, MUSIC_MOM, 1, EVENT_MUSIC_MOM
 	
 	const_def 1 ; object constants
 	const PLAYERHOUSE1F_MOM1

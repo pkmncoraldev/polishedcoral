@@ -18,7 +18,7 @@ GlintCity_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 9 ; bg events
+	db 10 ; bg events
 	signpost 18, 20, SIGNPOST_READ, GlintCitySign
 	signpost 16, 5, SIGNPOST_READ, GlintGymSign
 	signpost 5, 19, SIGNPOST_READ, GlintApartmentsSign
@@ -28,8 +28,9 @@ GlintCity_MapScriptHeader:
 	signpost 9, 28, SIGNPOST_READ, GlintCityMartSign
 	signpost 17,  2, SIGNPOST_ITEM + REVIVE, EVENT_GLINT_CITY_HIDDEN_REVIVE
 	signpost 9, 38, SIGNPOST_READ, GlintCityRoute3sign
+	bg_event 19,  4, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_GLINT_CITY
 
-	db 11 ; object events
+	db 12 ; object events
 	person_event SPRITE_COOLTRAINER_F,  8, 15, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintNPC1, -1
 	person_event SPRITE_FAT_GUY, 16, 13, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintNPC2, -1
 	person_event SPRITE_SCHOOLGIRL, 12, 15, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, GlintNPC3, -1
@@ -40,6 +41,7 @@ GlintCity_MapScriptHeader:
 	object_event 14, 8, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GROWLITHE, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, GlintDoggo, -1
 	object_event 21, 10, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, PIKIPEK, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, GlintBirb, -1
 	object_event 20, 9, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, PIKIPEK, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, GlintBirb, -1
+	hiddentape_event 19, 4, MUSIC_GLINT_CITY, 1, EVENT_MUSIC_GLINT_CITY
 
 	
 	const_def 1 ; object constants

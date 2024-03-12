@@ -129,10 +129,8 @@ TrainerRoute3WestNpcText:
 	cont "over there."
 	
 	para "I wanted to follow"
-	line "and see what he's"
-	cont "up to, but my"
-	cont "#MON can't"
-	cont "climb rocks…"
+	line "him but my #MON"
+	cont "can't climb rocks…"
 	done
 	
 TrainerRoute3WestPatches:

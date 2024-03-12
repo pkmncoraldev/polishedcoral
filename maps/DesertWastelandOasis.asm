@@ -13,7 +13,8 @@ DesertWastelandOasis_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	tapeball_event  4, 13, MUSIC_OASIS, 2, EVENT_MUSIC_OASIS
 
 	
 DesertWastelandOasisCallback:

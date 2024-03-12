@@ -12,20 +12,22 @@ SprucesLab_MapScriptHeader:
 	db 1 ; coord events
 	xy_trigger 2, 1, 5, 0, SpruceLabComeBackInside, 0, 0
 
-	db 5 ; bg events
+	db 6 ; bg events
 	signpost 0, 5, SIGNPOST_READ, SpruceLabDoor
 	signpost 0, 4, SIGNPOST_READ, SpruceLabOpenWindow
 	signpost  5,  1, SIGNPOST_DOWN, SpruceLabPC
 	signpost 3, 9, SIGNPOST_READ, SpruceLabTrashcan
 	signpost  1,  2, SIGNPOST_READ, SpruceLabHealMachine
+	bg_event  9,  3, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_SPRUCE
 
-	db 6 ; object events
+	db 7 ; object events
 	person_event SPRITE_SPRUCE, 3, 3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE1_GONE
 	person_event SPRITE_SPRUCE, 0, 5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE2_GONE
 	person_event SPRITE_SPRUCE,  5,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE3_GONE
 	person_event SPRITE_SNES, 5, 9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlaxSleep, EVENT_SPRUCELAB_MUNCH1_GONE
 	object_event 9, 5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MUNCHLAX, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlax, EVENT_SPRUCELAB_MUNCH2_GONE
 	object_event 0, 4, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MUNCHLAX, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlax, EVENT_SPRUCELAB_MUNCH3_GONE
+	hiddentape_event 9, 3, MUSIC_SPRUCE, 1, EVENT_MUSIC_SPRUCE
 
 	const_def 1 ; object constants
 	const SPRUCELAB_SPRUCE1

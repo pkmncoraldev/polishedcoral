@@ -9,18 +9,20 @@ DaybreakPokemonTrainerSchool_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 5 ; bg events
 	bg_event 0, 1, SIGNPOST_READ, AcademyBookshelf
 	bg_event 1, 1, SIGNPOST_READ, AcademyBookshelf
 	bg_event 3, 0, SIGNPOST_READ, AcademyBlackboard
 	bg_event 4, 0, SIGNPOST_READ, AcademyBlackboard
+	bg_event 0, 1, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_DAYBREAK_VILLAGE
 
-	db 5 ; object events
+	db 6 ; object events
 	person_event SPRITE_TEACHER, 2, 4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, DaybreakPokemonTrainerSchoolTeacher, -1
 	person_event SPRITE_YOUNGSTER, 5, 4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DaybreakPokemonTrainerSchoolNPC1, -1
 	person_event SPRITE_GAMEBOY_KID, 11, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, DaybreakPokemonTrainerSchoolNPC2, -1
 	person_event SPRITE_CUTE_GIRL, 7, 2, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, DaybreakPokemonTrainerSchoolNPC3, -1
 	person_event SPRITE_BOOK_PAPER_POKEDEX, 4, 4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, AcademyNotebook, -1
+	hiddentape_event 0, 1, MUSIC_DAYBREAK_VILLAGE, 1, EVENT_MUSIC_DAYBREAK_VILLAGE
 
 	const_def 1 ; object constants
 	const DAYBREAK_POKEMON_TRAINER_SCHOOL_TEACHER

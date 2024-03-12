@@ -234,14 +234,29 @@ _CGB_FinishBattleScreenLayout: ; 8e23
 ; 8e85
 
 _CGB_Radio:
+	hlcoord 0, 4, wAttrMap
+	lb bc, 3, 19
+	ld a, $3
+	call FillBoxCGB
+	
 	hlcoord 1, 5, wAttrMap
 	lb bc, 2, 18
 	ld a, $2
 	call FillBoxCGB
 
+	hlcoord 0, 8, wAttrMap
+	lb bc, 3, 19
+	ld a, $3
+	call FillBoxCGB
+
 	hlcoord 1, 9, wAttrMap
 	lb bc, 2, 18
 	ld a, $2
+	call FillBoxCGB
+	
+	hlcoord 1, 12, wAttrMap
+	lb bc, 3, 4
+	ld a, $4
 	call FillBoxCGB
 
 	ld hl, RadioPals
@@ -261,7 +276,7 @@ _CGB_Radio:
 	jr z, .skip
 	ld hl, RadioDarkScreenPal
 	ld de, wUnknBGPals + 2 palettes
-	ld bc, 1 palettes
+	ld bc, 2 palettes
 	ld a, $5
 	call FarCopyWRAM
 

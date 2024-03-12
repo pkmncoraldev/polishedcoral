@@ -1206,7 +1206,7 @@ BankCardPals:
 	RGB 00, 00, 00
 RadioPals:
 ; map 0
-	RGB 28, 31, 20
+	RGB 27, 31, 27
 	RGB 21, 21, 21
 	RGB 13, 13, 13
 	RGB 00, 00, 00
@@ -1214,21 +1214,21 @@ RadioPals:
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-	RGB 28, 31, 20
+	RGB 31, 31, 31
 ; map 2
 	RGB 00, 00, 00
 	RGB 00, 30, 22
 	RGB 00, 00, 00
 	RGB 00, 10, 07
 ; map 3
-	RGB 28, 31, 20
-	RGB 00, 31, 00
-	RGB 15, 07, 00
-	RGB 00, 00, 31
+	RGB 27, 31, 27
+	RGB 21, 21, 21
+	RGB 00, 30, 22
+	RGB 00, 00, 00
 ; map 4
-	RGB 28, 31, 20
-	RGB 31, 15, 00
-	RGB 15, 07, 00
+	RGB 27, 31, 27
+	RGB 21, 21, 21
+	RGB 11, 17, 04
 	RGB 00, 00, 00
 ; map 5
 	RGB 28, 31, 20
@@ -1320,12 +1320,12 @@ RadioObjectPals:
 	RGB 00, 00, 00
 ; Pink
 	RGB 00, 00, 00
-	RGB 28, 31, 20
+	RGB 27, 31, 27
 	RGB 21, 21, 21
 	RGB 13, 13, 13
 ; Silver
 	RGB 31, 31, 31
-	RGB 28, 31, 20
+	RGB 27, 31, 27
 	RGB 13, 13, 13
 	RGB 00, 00, 00
 
@@ -1376,6 +1376,11 @@ RadioDarkScreenPal:
 	RGB 16, 21, 16
 	RGB 00, 00, 00
 	RGB 14, 18, 14
+	
+	RGB 28, 31, 20
+	RGB 21, 21, 21
+	RGB 16, 21, 16
+	RGB 00, 00, 00
 
 RedPokegearInterfacePalette:
 	RGB 28, 31, 20

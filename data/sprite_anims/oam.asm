@@ -693,11 +693,19 @@ SpriteAnimOAMData: ; 8d94d
 
 .OAMData_91
 ;animate tape in pokegear
-	db 7
-	dsprite -2,  3, -2,  4, $04, $7
+	db 13
 	dsprite -1,  4, -1,  4, $06, $7
 	dsprite -1,  0, -1,  0, $00, $6
 	dsprite -1,  0,  0,  0, $01, $6
 	dsprite  0,  0, -1,  0, $02, $6
 	dsprite  0,  0,  0,  0, $03, $6
-	dsprite  1, -3,  1, -4, $05, $7
+	dsprite -1,  0,  2,  0, $04, $7
+	dsprite -1,  0,  3,  0, $05, $7
+	dsprite -1,  0,  4,  0, $07, $7
+	
+	dsprite -1,  4,  6,  4, $06, $7
+	dsprite -1,  0,  6,  0, $00, $6
+	dsprite -1,  0,  7,  0, $01, $6
+	dsprite  0,  0,  6,  0, $02, $6
+	dsprite  0,  0,  7,  0, $03, $6
+	

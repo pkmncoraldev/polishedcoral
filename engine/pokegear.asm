@@ -235,10 +235,10 @@ TapePlayer_LoadGFX: ; 90c4e
 	ld de, VTiles2
 	ld a, BANK(RadioGFX)
 	call FarDecompress
-	ld hl, PokegearGFX
-	ld de, VTiles2 tile $40
-	ld a, BANK(PokegearGFX)
-	call Decompress
+;	ld hl, PokegearGFX
+;	ld de, VTiles2 tile $40
+;	ld a, BANK(PokegearGFX)
+;	call Decompress
 	ld hl, PokegearSpritesGFX
 	ld de, VTiles0
 	ld a, BANK(PokegearSpritesGFX)
@@ -1079,12 +1079,7 @@ TownMap_GetOrangeLandmarkLimits:
 PlaceTapes:
 	ld a, 128
 	ld d, a
-	ld a, 80
-	ld e, a
-	call TapeAnimate
-	ld a, 128
-	ld d, a
-	ld a, 144
+	ld a, 72
 	ld e, a
 	call TapeAnimate
 	ret	

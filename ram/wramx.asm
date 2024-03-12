@@ -1456,11 +1456,9 @@ wColorVaryShiny:: ds 1
 wPalFadeDelayFrames:: ds 1
 wPalFadeDelay:: ds 1
 
-	ds 98 ; unused
+	ds 99 ; unused
 	
 wMusicID2:: ds 1
-	
-wMusicPlayerMusic:: ds 1
 
 wLYOverridesBackup:: ds SCREEN_HEIGHT_PX
 wLYOverridesBackupEnd::

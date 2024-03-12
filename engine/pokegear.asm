@@ -58,6 +58,11 @@ TapePlayerFunction: ; 90b8d (24:4b8d)
 	ld [hBGMapAddress + 1], a
 	ld a, $90
 	ld [hWY], a
+	ld a, [wTapePlayerActive]
+	cp 0
+	ret nz
+	call GetMapMusic
+	call PlayMusic
 	ret
 
 .InitTilemap: ; 90bea (24:4bea)

@@ -88,6 +88,7 @@ KomoreCommunityCenterPikachu2:
 	startbattle
 	disappear 1
 	reloadmapafterbattle
+	playnewmapmusic
 	setevent EVENT_MIMIKYU_GONE
 	checkcode VAR_MONJUSTCAUGHT
 	if_equal MIMIKYU, .CaughtMimikyu

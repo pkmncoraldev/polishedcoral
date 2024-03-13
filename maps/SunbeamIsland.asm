@@ -336,7 +336,7 @@ SunbeamFirstContest:
 	pause 7
 	special FadeOutPalettesBlack
 	pause 20
-	playmusic MUSIC_SUNBEAM_ISLAND
+	playmapmusic
 	disappear SUNBEAM_CROWD1
 	disappear SUNBEAM_CROWD2
 	disappear SUNBEAM_CROWD3

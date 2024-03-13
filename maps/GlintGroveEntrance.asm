@@ -239,7 +239,7 @@ GlintRival_L:
 	disappear GLINT_RIVAL
 	special Special_FadeOutMusic
 	pause 15
-	playmusic MUSIC_GLINT_GROVE
+	playmapmusic
 	setevent EVENT_GLINT_RIVAL_WILL_BUMP
 	dotrigger $2
 	end
@@ -342,7 +342,7 @@ GlintRival_R:
 	disappear GLINT_RIVAL
 	special Special_FadeOutMusic
 	pause 15
-	playmusic MUSIC_GLINT_GROVE
+	playmapmusic
 	setevent EVENT_GLINT_RIVAL_WILL_BUMP
 	dotrigger $2
 	end

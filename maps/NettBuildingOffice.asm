@@ -141,7 +141,7 @@ NettBuildingOfficeNettCutscene:
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
-	playmusic MUSIC_LUSTER_CITY
+	playmapmusic
 	writetext NettBuildingOfficeNettText7
 	buttonsound
 	verbosegivetmhm HM_SURF

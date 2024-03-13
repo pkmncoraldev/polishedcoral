@@ -70,7 +70,7 @@ SunsetMomStopsYou:
 	waitbutton
 	closetext
 	applymovement PLAYERHOUSE1F_MOM1, SunsetMomStopsYouReturn
-	special RestartMapMusic
+	playmapmusic
 	setevent EVENT_TALKED_TO_MOM
 	dotrigger $1
 	domaptrigger SUNSET_BAY, $4

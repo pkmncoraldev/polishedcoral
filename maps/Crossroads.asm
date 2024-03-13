@@ -342,7 +342,7 @@ CrossroadsCutscene2:
 	disappear CROSSROADS_COLBY2
 	special Special_FadeOutMusic
 	pause 15
-	special RestartMapMusic
+	playmapmusic
 	setevent EVENT_CROSSROADS_CUTSCENE_DONE
 	dotrigger $1
 	end

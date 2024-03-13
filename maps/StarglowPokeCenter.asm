@@ -79,7 +79,7 @@ StarglowCenterRocketStopsYou:
 	pause 8
 	special Special_FadeOutMusic
 	pause 10
-	playmusic MUSIC_POKEMON_CENTER
+	playmapmusic
 	setevent EVENT_BEAT_STARGLOW_SNARE_3
 	dotrigger $0
 	end

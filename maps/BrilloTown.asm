@@ -445,7 +445,7 @@ BrilloSinger:
 	closetext
 	callasm BrilloSingerTextScrollAsm2
 	wait 10
-	playmusic MUSIC_BRILLO_TOWN
+	playmapmusic
 	opentext
 	checkevent EVENT_PLAYER_IS_CORA
 	iftrue .girl2

@@ -199,7 +199,7 @@ LusterSewersThroneRoomFrankieCutscene:
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
-	playmusic MUSIC_LUSTER_SEWER
+	playmapmusic
 	opentext
 	writetext LusterSewersThroneRoomFrankieCutsceneText18
 	waitbutton

@@ -6,6 +6,13 @@
 	const TAPE_PLAYER_CARD
 
 TapePlayerFunction: ; 90b8d (24:4b8d)
+	ld a, [wMapGroup]
+	cp GROUP_SPOOKHOUSE_TV_ROOM
+	jr nz, .good
+	ld a, [wMapNumber]
+	cp MAP_SPOOKHOUSE_TV_ROOM
+	jp z, .CannotUseTapePlayer
+.good
 	call Load1bppFont
 	call Load1bppFrame
 	ld hl, wOptions1
@@ -21,8 +28,10 @@ TapePlayerFunction: ; 90b8d (24:4b8d)
 	push af
 	ld a, [wCurrPocket]
 	push af
+	eventflagreset EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	xor a
 	ld [wVramState], a
+	ld [wJukeboxSong], a
 	call .InitTilemap
 	call DelayFrame
 .loop
@@ -62,6 +71,8 @@ TapePlayerFunction: ; 90b8d (24:4b8d)
 	cp 0
 	ret nz
 	call GetMapMusic
+	ld a, e
+	ld [wMapMusic], a
 	call PlayMusic
 	ret
 
@@ -96,6 +107,21 @@ TapePlayerFunction: ; 90b8d (24:4b8d)
 	ld [wPokegearRadioChannelAddr + 1], a
 	call Pokegear_InitJumptableIndices
 	jp InitTapePlayerTilemap
+	
+.CannotUseTapePlayer
+	ld hl, TapeText_ThisIsntTheTime
+	ld a, [wOptions1]
+	push af
+	set NO_TEXT_SCROLL, a
+	ld [wOptions1], a
+	call PrintText
+	pop af
+	ld [wOptions1], a
+	ret
+	
+TapeText_ThisIsntTheTime:
+	text_jump UnknownText_0x1c0bee
+	db "@"
 
 PokeGear: ; 90b8d (24:4b8d)
 	call Load1bppFont

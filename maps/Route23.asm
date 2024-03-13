@@ -235,7 +235,7 @@ endr
 	pause 20
 	special Special_FadeOutMusic
 	pause 40
-	playmusic MUSIC_AUTUMN
+	playmapmusic
 	clearevent EVENT_FIGHTING_DOJO_MASTER_GONE
 	dotrigger $1
 	end

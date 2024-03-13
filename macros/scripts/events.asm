@@ -1295,6 +1295,11 @@ variablesprite2: macro
 	db \1 - SPRITE_VARS ; byte
 	endm
 	
+	enum playnewmapmusic_command
+playnewmapmusic: macro
+	db playnewmapmusic_command
+	endm
+	
 thisasm: macro
 	callasm .asm\@
 	end

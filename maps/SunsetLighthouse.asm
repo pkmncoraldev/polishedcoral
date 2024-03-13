@@ -645,7 +645,7 @@ LighthouseGetStarterScene_part2:
 	closetext
 	special Special_FadeOutMusic
 	pause 5
-	playmusic MUSIC_SUNSET_BAY
+	playmapmusic
 	domaptrigger ROUTE_1_GATE, $1
 	end	
 	

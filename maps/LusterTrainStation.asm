@@ -165,8 +165,7 @@ LusterTrainStationCallback:
 	waitsfx
 	special Special_FadeOutMusic
 	pause 10
-	playmusic MUSIC_NONE
-	callasm LusterStationMusicAsm
+	playmapmusic
 	setevent EVENT_MET_MR_NETT
 	clearevent EVENT_TRAIN_GOING_EAST
 	clearevent EVENT_TRAIN_GOING_WEST
@@ -177,15 +176,10 @@ LusterTrainStationCallback:
 	applymovement LUSTER_TRAIN_STATION_OFFICER, Movement_LusterStationOfficer2
 	clearevent EVENT_TRAIN_GOING_EAST
 	clearevent EVENT_TRAIN_GOING_WEST
-	callasm LusterStationMusicAsm
+	playmapmusic
 	dotrigger $0
 .end
 	return
-	
-LusterStationMusicAsm:
-	xor a
-	ld [wMapMusic], a
-	ret
 
 LusterTrainStationConductor:
 	faceplayer

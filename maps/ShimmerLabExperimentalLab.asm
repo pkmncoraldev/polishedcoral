@@ -452,7 +452,7 @@ endr
 	playsound SFX_WALL_OPEN
 	callasm GenericFinishBridge
 	pause 10
-	playmusic MUSIC_SHIMMER_CITY
+	playmapmusic
 	pause 15
 	applymovement PLAYER, Movement_ShimmerLabFossilCutscenePlayer3
 	appear SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST2

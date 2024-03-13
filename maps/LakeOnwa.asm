@@ -407,7 +407,7 @@ LakeRivalT:
 	disappear LAKERIVAL
 	special Special_FadeOutMusic
 	pause 15
-	playmusic MUSIC_ROUTE_4
+	playmapmusic
 	setevent EVENT_BEAT_LAKE_RIVAL
 .end
 	end
@@ -511,7 +511,7 @@ LakeRivalB:
 	disappear LAKERIVAL
 	special Special_FadeOutMusic
 	pause 15
-	playmusic MUSIC_ROUTE_4
+	playmapmusic
 	setevent EVENT_BEAT_LAKE_RIVAL
 .end
 	end

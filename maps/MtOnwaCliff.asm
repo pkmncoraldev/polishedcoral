@@ -51,7 +51,7 @@ MtOnwaCliffCallback:
 MtOnwaPanNPC:
 	faceplayer
 	opentext
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
 	iftrue .ask_heal
 	writetext MtOnwaPanNPCTextYesorNo1
 	buttonsound
@@ -110,12 +110,12 @@ MtOnwaPanNPC:
 	applyonemovement PLAYER, show_person
 	disappear MT_ONWA_CUTSCENE
 	pause 20
-	special RestartMapMusic
+	playmapmusic
 	spriteface MT_ONWA_NPC1, LEFT
 	spriteface MT_ONWA_NPC2, LEFT
 	spriteface PLAYER, RIGHT
 	opentext
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
 	iftrue .no_heal2
 .ask_heal
 	writetext MtOnwaPanNPCText7
@@ -132,7 +132,7 @@ MtOnwaPanNPC:
 	special FadeInPalettes
 	opentext
 .no_heal
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
 	iftrue .ask_cutscene
 .no_heal2
 	writetext MtOnwaPanNPCText3
@@ -140,7 +140,7 @@ MtOnwaPanNPC:
 	closetext
 	spriteface MT_ONWA_NPC1, UP
 	spriteface MT_ONWA_NPC2, UP
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
 	end
 .end
 	writetext MtOnwaPanNPCText4
@@ -148,7 +148,7 @@ MtOnwaPanNPC:
 	closetext
 	spriteface MT_ONWA_NPC1, UP
 	spriteface MT_ONWA_NPC2, UP
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
 	end
 	
 TrainerMtOnwaOutside_1:

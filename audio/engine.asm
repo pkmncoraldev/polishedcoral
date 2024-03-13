@@ -2963,6 +2963,8 @@ CheckChangeMusic::
 	jr z, .train
 	cp MUSIC_TV_ROOM
 	jr z, .tvroom
+	cp MUSIC_LUSTER_STATION
+	jr z, .luster_station
 	cp MUSIC_COMMUNITY_CENTER
 	jr z, .community
 	cp MUSIC_BRIGHTBURG
@@ -3008,10 +3010,17 @@ CheckChangeMusic::
 	jr .done
 	
 .tvroom
-	ld de, MUSIC_TV_STATIC
 	ld a, [wSpookhouseTVRoomTrigger]
 	cp 0
-	jr z, .done
+	jr nz, .none
+	ld a, MUSIC_TV_STATIC
+	jr .done
+	
+.luster_station
+	eventflagcheck EVENT_REACHED_LUSTER_CITY
+	jr z, .none
+	ld a, MUSIC_LUSTER_CITY
+	jr .done
 .none
 	ld a, MUSIC_NONE
 	jr .done

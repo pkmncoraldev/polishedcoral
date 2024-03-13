@@ -299,6 +299,7 @@ _NettSpecs:
 	startbattle
 	callasm ForceGhostTownAsm
 	reloadmapafterbattle
+	playnewmapmusic
 	setevent EVENT_BRIGHTBURG_REVEALED
 	setevent EVENT_BRIGHT_CENTER_MART_EMPTY
 	checkcode VAR_MONJUSTCAUGHT

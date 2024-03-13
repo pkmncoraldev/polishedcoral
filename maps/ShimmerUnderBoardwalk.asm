@@ -404,7 +404,7 @@ ShimmerUnderBoardwalkBattle2:
 	waitsfx
 	special Special_FadeInQuickly
 	pause 15
-	special RestartMapMusic
+	playmapmusic
 	end
 	
 ShimmerUnderBoardwalkPunk3:

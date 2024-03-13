@@ -122,6 +122,7 @@ LusterCityFlypointCallback:
 	return
 	
 ShoppingCallback:
+	setevent EVENT_REACHED_LUSTER_CITY
 	checkevent EVENT_PART_TIME_JOB_SAVED_DELIVERY
 	iffalse .skip1
 	changeblock $16, $10, $64
@@ -225,7 +226,7 @@ Luster2Snare:
 	disappear LUSTER2SNARE
 	callasm LoadMapPals
 	special FadeInPalettes
-	playmusic MUSIC_LUSTER_CITY
+	playmapmusic
 	pause 7
 	setevent EVENT_PART_TIME_JOB_BEAT_SNARE
 	end

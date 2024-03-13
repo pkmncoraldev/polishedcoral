@@ -278,7 +278,7 @@ StarglowHouse1Rocket:
 	playsound SFX_EXIT_BUILDING
 	special Special_FadeOutMusic
 	pause 10
-	playmusic MUSIC_SNARE_INVASION
+	playmapmusic
 	applymovement STARGLOWHOUSE1_MOMMY, Movement_StarglowHouse1Mommy2
 	opentext
 	writetext StarglowHouse1MommyText3

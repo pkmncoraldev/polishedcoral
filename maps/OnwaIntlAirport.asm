@@ -240,7 +240,7 @@ OnwaIntlAirportWendy:
 	disappear ONWA_INTL_AIRPORT_WENDY
 	special Special_FadeOutMusic
 	pause 15
-	playmusic MUSIC_ROUTE_12
+	playmapmusic
 	end
 	
 OnwaIntlAirportNPC1Text:

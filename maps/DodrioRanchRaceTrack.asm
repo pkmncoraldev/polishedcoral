@@ -202,7 +202,7 @@ RanchRideRaceFinishLine:
 	pause 10
 	spriteface RANCHRACENPC1, RIGHT
 	spriteface PLAYER, LEFT
-	playmusic MUSIC_ROUTE_4
+	playmapmusic
 	callasm CheckFacingObjectCutscene
 	iffalse .endwalking
 	applyonemovement PLAYER, step_left

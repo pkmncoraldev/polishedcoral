@@ -131,6 +131,8 @@ BarInsideJukeboxTextLeader:
 	done
 	
 CheckJukeboxSong:
+	xor a
+	ld [wTapePlayerActive], a
 	ld a, [wJukeboxSong]
 	ld [wScriptVar], a
 	ret

@@ -214,7 +214,7 @@ LusterCityBusinessRival:
 	disappear LUSTERBUSINESS_RIVAL
 	special Special_FadeOutMusic
 	pause 15
-	special RestartMapMusic
+	playmapmusic
 	setevent EVENT_LUSTER_RIVAL
 	dotrigger $1
 	end

@@ -188,7 +188,7 @@ FlickerTrainStationClerk:
 	waitsfx
 	special Special_FadeOutMusic
 	pause 10
-	playmusic MUSIC_FLICKER_STATION
+	playmapmusic
 	applymovement FLICKER_TRAIN_STATION_CLERK, Movement_FlickerTrainStationClerk2
 	pause 10
 	setevent EVENT_FLICKER_STATION_RIVAL

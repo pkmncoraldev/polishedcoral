@@ -268,6 +268,7 @@ ScriptCommandTable:
 	dw Script_checkdebug
 	dw Script_movetoplayer
 	dw Script_variablesprite2
+	dw Script_playnewmapmusic
 
 StartScript:
 	ld hl, wScriptFlags
@@ -933,6 +934,14 @@ Script_encountermusic:
 	farjp PlayTrainerEncounterMusic
 
 Script_playmapmusic:
+	jp RestartMapMusic
+
+Script_playnewmapmusic:
+	ld a, [wTapePlayerActive]
+	cp 0
+	jr z, .no_tape_player
+	jp RestartMapMusic
+.no_tape_player
 	jp PlayMapMusic
 
 Script_playmusic:

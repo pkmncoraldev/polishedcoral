@@ -206,7 +206,7 @@ HuntersThicketRanger:
 	disappear HUNTERS_THICKET_LEDIAN_RANGER
 	special Special_FadeOutMusic
 	pause 20
-	playmusic MUSIC_ROUTE_4
+	playmapmusic
 	end
 .NoRoom
 	writetext HuntersThicketRangerNoRoomText
@@ -239,7 +239,7 @@ HuntersThicketRanger:
 	disappear HUNTERS_THICKET_LEDIAN_RANGER
 	special Special_FadeOutMusic
 	pause 20
-	playmusic MUSIC_ROUTE_4
+	playmapmusic
 	end
 
 LedianRangerPoseStart:

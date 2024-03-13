@@ -2,7 +2,7 @@
 
 ; These first eight flags are reset upon reloading the map.
 	const EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	const EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	const EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2	;only use for player's room game console. cleared by tape player
 	const EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
 	const EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	const EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
@@ -949,6 +949,7 @@
 	const EVENT_COFFEE_SHOP_CAN_GET_TEA
 	const EVENT_CAN_GET_AMULET_COIN
 	const EVENT_GOT_TAPE_PLAYER
+	const EVENT_REACHED_LUSTER_CITY
 	const EVENT_UNUSED_1
 	const EVENT_UNUSED_2
 	const EVENT_UNUSED_3
@@ -979,7 +980,6 @@
 	const EVENT_UNUSED_28
 	const EVENT_UNUSED_29
 	const EVENT_UNUSED_30
-	const EVENT_UNUSED_31
 
 
 ;cassette tape flags

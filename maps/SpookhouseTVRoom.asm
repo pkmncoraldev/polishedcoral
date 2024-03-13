@@ -6,7 +6,8 @@ SpookhouseTVRoom_MapScriptHeader:
 	scene_script SpookhouseTVRoomTrigger3
 	scene_script SpookhouseTVRoomTrigger4
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, SpookhouseTVRoomCallback
 
 	db 2 ; warp events
 	warp_def  8,  2, 1, SPOOKHOUSE_HALLWAY_2
@@ -33,8 +34,12 @@ SpookhouseTVRoom_MapScriptHeader:
 	const SPOOKHOUSE_TVROOM_NPC4
 	const SPOOKHOUSE_TVROOM_NPC5
 	
+SpookhouseTVRoomCallback:
+	callasm SpookhouseTVRoomTurnOffTapePlayerAsm
+	return
+	
 SpookhouseTVRoomTrigger0:
-	end
+	callasm SpookhouseTVRoomTurnOffTapePlayerAsm
 	
 SpookhouseTVRoomTrigger1:
 	checkevent EVENT_SPOOKHOUSE_GHOSTBEGONE
@@ -56,6 +61,11 @@ SpookhouseTVRoomTrigger3:
 	
 SpookhouseTVRoomTrigger4:
 	end
+	
+SpookhouseTVRoomTurnOffTapePlayerAsm:
+	xor a
+	ld [wTapePlayerActive], a
+	ret
 	
 SpookHouseTVRoomAsmThing:
 	ld a, 5

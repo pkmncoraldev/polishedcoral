@@ -147,7 +147,7 @@ IceTempleMamoswineCutscene:
 	clearevent EVENT_ICE_TEMPLE_CAMPFIRE_6_UNLIT
 .cont
 	reloadmapafterbattle
-	playmusic MUSIC_LUSTER_SEWER
+	playmapmusic
 	clearevent EVENT_MAMOSWINE_CUTSCENE
 .end
 	end

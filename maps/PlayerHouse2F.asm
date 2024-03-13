@@ -783,7 +783,7 @@ PlayerHouseBookshelf:
 	
 GameConsole:
 	opentext
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	iftrue .turnoff
 	writetext GameConsoleText_AskTurnOnSnes
 	yesorno
@@ -798,7 +798,8 @@ GameConsole:
 	writetext GameConsoleText_Kirby
 	waitbutton
 	closetext
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	callasm GameConsoleForceTapePlayerOffAsm
 	end
 .turnoff
 	writetext GameConsoleText_AskTurnOffKirby
@@ -809,14 +810,19 @@ GameConsole:
 	closetext
 	pause 4
 	callasm GameConsoleRestoreMapMusic
-	special RestartMapMusic
-	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	playmapmusic
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	end
 .no
 	farwritetext BetterNotText
 	waitbutton
 	closetext
 	end
+	
+GameConsoleForceTapePlayerOffAsm:
+	xor a
+	ld [wTapePlayerActive], a
+	ret
 	
 GameConsoleSetMapMusic:
 	xor a

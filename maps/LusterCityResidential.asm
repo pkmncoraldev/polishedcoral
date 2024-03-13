@@ -638,7 +638,7 @@ LusterPunkLeader:
 	disappear LUSTERPUNK2
 	pause 10
 	special FadeInTextboxPalettes
-	playmusic MUSIC_LUSTER_CITY
+	playmapmusic
 	setevent EVENT_HELPED_NIDOKINGS
 	clearevent EVENT_LUSTER_PUNKS_NOT_IN_APARTMENT
 	end

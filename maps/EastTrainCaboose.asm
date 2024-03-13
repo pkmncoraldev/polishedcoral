@@ -108,7 +108,7 @@ EastTrainCabooseTrigger0:
 	writetext EastTrainCaboosePAText4
 	waitsfx
 	setflag ENGINE_PUNKS_ON_TRAIN
-	playmapmusic
+	playmusic MUSIC_SNARE_THEME
 	writetext EastTrainCaboosePAText2
 	pause 80
 	buttonsound
@@ -121,7 +121,18 @@ EastTrainCabooseTrigger0:
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_SNARE_GIRL
 	clearevent EVENT_BEAT_TRAIN_CABIN_1_SNARE_1
 	dotrigger $1
+	callasm EastTrainCabooseCheckTapePlayerAsm
+	iffalse .end
+	special Special_FadeOutMusic
+	pause 10
+	playnewmapmusic
+.end
 	end
+	
+EastTrainCabooseCheckTapePlayerAsm:
+	ld a, [wTapePlayerActive]
+	ld [wScriptVar], a
+	ret
 	
 EastTrainCabooseTrigger1:
 	end

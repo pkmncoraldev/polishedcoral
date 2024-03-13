@@ -232,7 +232,7 @@ endr
 	disappear ROUTE_24_BRELOOM
 	dotrigger $1
 	pause 10
-	playmusic MUSIC_AUTUMN
+	playmapmusic
 	end
 	
 Route24SouthMushroom1:

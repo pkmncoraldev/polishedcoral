@@ -64,7 +64,7 @@ RanchHouseDodrioGirlText1:
 	cont "ride 'em."
 	
 	para "So, how 'bout it,"
-	line "kid?"
+	line "youngin?"
 	
 	para "Wanna ride one of"
 	line "our DODRIO?"

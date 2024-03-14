@@ -61,7 +61,7 @@ DodrioRanchRaceTrack_MapScriptHeader:
 	signpost 10, 18, SIGNPOST_READ, RanchRideRaceLogs
 	signpost 6, 17, SIGNPOST_READ, RanchRideRaceLogs
 
-	db 11 ; object events
+	db 12 ; object events
 	person_event SPRITE_SNES,  7,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideScarecrow, -1
 	person_event SPRITE_POKEMANIAC, 17, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RanchRideRaceGuy, -1
 	person_event SPRITE_COWGIRL, 14,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RanchRideReturnGirl, -1
@@ -73,6 +73,7 @@ DodrioRanchRaceTrack_MapScriptHeader:
 	person_event SPRITE_BEAUTY, 12,  5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
 	person_event SPRITE_BIRD_KEEPER, 3, 9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RanchRideDoduo, -1
 	fruittreeinvis_event  28, 30, FRUITTREE_DODRIO_RANCH, LEPPA_BERRY
+	tapeball_event 26, 31, MUSIC_DODRIO_RACE, 1, EVENT_MUSIC_DODRIO_RACE
 
 
 	const_def 1 ; object constants

@@ -20,7 +20,7 @@ FlickerPass2F_MapScriptHeader:
 	bg_event 24, 35, SIGNPOST_ITEM + ELIXIR, EVENT_FLICKER_PASS_2F_HIDDEN_ITEM_2
 	bg_event 18, 18, SIGNPOST_ITEM + FULL_RESTORE, EVENT_FLICKER_PASS_2F_HIDDEN_ITEM_3
 
-	db 11 ; object events
+	db 12 ; object events
 	itemball_event  9, 30, SAFE_GOGGLES, 1, EVENT_FLICKER_PASS_2F_POKEBALL_1
 	itemball_event 27, 36, HYPER_POTION, 1, EVENT_FLICKER_PASS_2F_POKEBALL_2
 	person_event SPRITE_POKEMANIAC, 10, 35, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerFlickerPass2F_1, -1
@@ -32,6 +32,7 @@ FlickerPass2F_MapScriptHeader:
 	person_event SPRITE_FIREBREATHER, 22, 28, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerFlickerPass2F_7, -1
 	smashrock_event 37, 28
 	smashrock_event 42, 17
+	tapeball_event 47, 14, MUSIC_POKEMANIAC_ENCOUNTER, 2, EVENT_MUSIC_POKEMANIAC_ENCOUNTER
 
 	
 FlickerPass2FStopSnowstorm:

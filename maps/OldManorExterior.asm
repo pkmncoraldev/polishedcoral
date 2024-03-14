@@ -11,4 +11,5 @@ OldManorExterior_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	tapeball_event  5,  2, MUSIC_EVENTIDE, 1, EVENT_MUSIC_EVENTIDE

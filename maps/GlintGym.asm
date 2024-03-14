@@ -15,7 +15,7 @@ GlintGym_MapScriptHeader:
 	xy_trigger 0, 15, 5, 0, GlintGymLibrarianStopsYou3, 0, 0
 	xy_trigger 0, 15, 6, 0, GlintGymLibrarianStopsYou4, 0, 0
 
-	db 20 ; bg events
+	db 21 ; bg events
 	signpost -1, -1, SIGNPOST_READ, GlintGymStatue
 	signpost -1, -1, SIGNPOST_READ, GlintGymStatue
 	signpost 13, 9, SIGNPOST_READ, GlintGymBook1
@@ -36,8 +36,9 @@ GlintGym_MapScriptHeader:
 	signpost 1, 8, SIGNPOST_READ, GlintGymBook16
 	signpost 1, 1, SIGNPOST_READ, GlintGymBook17
 	signpost 1, 0, SIGNPOST_READ, GlintGymBook18
+	bg_event  8,  5, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_GYM
 
-	db 7 ; object events
+	db 8 ; object events
 	person_event SPRITE_STANLEY, 1, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintGymStanley, -1
 	person_event SPRITE_SCIENTIST_F, 16, 1, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, GlintGymLibrarian, -1
 	person_event SPRITE_GYM_GUY, 15, 7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGymGuyScript, -1
@@ -45,6 +46,7 @@ GlintGym_MapScriptHeader:
 	person_event SPRITE_SCHOOLBOY,  7,  3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, GlintGymTrainer2, EVENT_BEAT_STANLEY
 	person_event SPRITE_SCHOOLBOY, 10,  6, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintGymTrainer1Rematch, EVENT_HAVENT_BEAT_STANLEY
 	person_event SPRITE_SCHOOLBOY,  7,  3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintGymTrainer2Rematch, EVENT_HAVENT_BEAT_STANLEY
+	hiddentape_event 8, 5, MUSIC_GYM, 1, EVENT_MUSIC_GYM
 
 	
 	const_def 1 ; object constants

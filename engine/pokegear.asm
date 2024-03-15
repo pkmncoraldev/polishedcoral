@@ -2196,14 +2196,14 @@ DrawRadioScreen:
 .skip_play
 	call DrawBackliteSwitch
 	ld de, .Sharp
-	hlcoord 1, 3
+	hlcoord 16, 4
 	call PlaceString
 	
 	ld a, [wRadioTuningKnob]
 	inc a
 	ld [wRadioTuningKnob], a
 	ld de, wRadioTuningKnob
-	hlcoord 2, 3
+	hlcoord 17, 4
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
 	call PrintNum
 	ld a, [wRadioTuningKnob]

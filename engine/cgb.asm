@@ -258,6 +258,11 @@ _CGB_Radio:
 	lb bc, 3, 4
 	ld a, $4
 	call FillBoxCGB
+	
+	hlcoord 16, 4, wAttrMap
+	lb bc, 1, 3
+	ld a, $2
+	call FillBoxCGB
 
 	ld hl, RadioPals
 	ld de, wUnknBGPals

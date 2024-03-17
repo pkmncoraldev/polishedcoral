@@ -6,81 +6,82 @@ LusterMall_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, LusterMallCallback
 
-	db 26 ; warp events
-	warp_def 29, 14, 3, LUSTER_CITY_SHOPPING
-	warp_def 29, 15, 4, LUSTER_CITY_SHOPPING
-	warp_def 29, 18, 5, LUSTER_CITY_SHOPPING
-	warp_def 29, 19, 6, LUSTER_CITY_SHOPPING
-	warp_def 15, 16, 1, LUSTER_MALL_POKECENTER
-	warp_def 15, 17, 2, LUSTER_MALL_POKECENTER
-	warp_def  7,  2, 1, LUSTER_MALL_ELECTRONICS_SHOP
-	warp_def  7,  3, 2, LUSTER_MALL_ELECTRONICS_SHOP
-	warp_def  7,  8, 1, LUSTER_MALL_COFFEE_SHOP
-	warp_def  7,  9, 2, LUSTER_MALL_COFFEE_SHOP
-	warp_def 15,  8, 1, LUSTER_MALL_SKATE_SHOP
-	warp_def 15,  9, 2, LUSTER_MALL_SKATE_SHOP
-	warp_def  7, 30, 1, LUSTER_MALL_ANTIQUE_SHOP
-	warp_def  7, 31, 2, LUSTER_MALL_ANTIQUE_SHOP
-	warp_def 15,  2, 1, LUSTER_MALL_HERB_SHOP
-	warp_def 15,  3, 2, LUSTER_MALL_HERB_SHOP
-	warp_def  7, 24, 1, LUSTER_MALL_STONE_SHOP
-	warp_def  7, 25, 2, LUSTER_MALL_STONE_SHOP
-	warp_def 15, 24, 1, LUSTER_MALL_BALL_SHOP
-	warp_def 15, 25, 2, LUSTER_MALL_BALL_SHOP
-	warp_def 15, 30, 1, LUSTER_MALL_CLOTHES_SHOP
-	warp_def 15, 31, 2, LUSTER_MALL_CLOTHES_SHOP
-	warp_def 17, 35, 1, LUSTER_MALL_BACK_ROOM
-	warp_def 18, 35, 2, LUSTER_MALL_BACK_ROOM
-	warp_def  3, 16, 1, LUSTER_GYM
-	warp_def  3, 17, 2, LUSTER_GYM
+	db 27 ; warp events
+	warp_def 29, 18, 3, LUSTER_CITY_SHOPPING
+	warp_def 29, 19, 4, LUSTER_CITY_SHOPPING
+	warp_def 29, 22, 5, LUSTER_CITY_SHOPPING
+	warp_def 29, 23, 6, LUSTER_CITY_SHOPPING
+	warp_def 15, 20, 1, LUSTER_MALL_POKECENTER
+	warp_def 15, 21, 2, LUSTER_MALL_POKECENTER
+	warp_def  7,  6, 1, LUSTER_MALL_ELECTRONICS_SHOP
+	warp_def  7,  7, 2, LUSTER_MALL_ELECTRONICS_SHOP
+	warp_def  7, 12, 1, LUSTER_MALL_COFFEE_SHOP
+	warp_def  7, 13, 2, LUSTER_MALL_COFFEE_SHOP
+	warp_def 15, 12, 1, LUSTER_MALL_SKATE_SHOP
+	warp_def 15, 13, 2, LUSTER_MALL_SKATE_SHOP
+	warp_def  7, 34, 1, LUSTER_MALL_ANTIQUE_SHOP
+	warp_def  7, 35, 2, LUSTER_MALL_ANTIQUE_SHOP
+	warp_def 15,  6, 1, LUSTER_MALL_HERB_SHOP
+	warp_def 15,  7, 2, LUSTER_MALL_HERB_SHOP
+	warp_def  7, 28, 1, LUSTER_MALL_STONE_SHOP
+	warp_def  7, 29, 2, LUSTER_MALL_STONE_SHOP
+	warp_def 15, 28, 1, LUSTER_MALL_BALL_SHOP
+	warp_def 15, 29, 2, LUSTER_MALL_BALL_SHOP
+	warp_def 15, 34, 1, LUSTER_MALL_CLOTHES_SHOP
+	warp_def 15, 35, 2, LUSTER_MALL_CLOTHES_SHOP
+	warp_def 15, 40, 2, LUSTER_MALL_BACK_ROOM
+	warp_def  3, 20, 1, LUSTER_GYM
+	warp_def  3, 21, 2, LUSTER_GYM
+	warp_def 15,  2, 1, LUSTER_MALL_FURNITURE
+	warp_def 15,  3, 2, LUSTER_MALL_FURNITURE
 
-	db 9 ; coord events
-	coord_event 11, 17, -1, LusterMallEscalator1
-	coord_event 12, 17, -1, LusterMallEscalator2
-	coord_event 11, 11, -1, LusterMallEscalatorClear
-	coord_event 12, 11, -1, LusterMallEscalatorClear
-	coord_event 21, 11, -1, LusterMallEscalator3
-	coord_event 22, 11, -1, LusterMallEscalator4
-	coord_event 22, 17, -1, LusterMallEscalatorClear
-	coord_event 21, 17, -1, LusterMallEscalatorClear
-	coord_event 35, 18, 0, LusterMallEmployeesOnly
+	db 8 ; coord events
+	coord_event 15, 17, -1, LusterMallEscalator1
+	coord_event 16, 17, -1, LusterMallEscalator2
+	coord_event 15, 11, -1, LusterMallEscalatorClear
+	coord_event 16, 11, -1, LusterMallEscalatorClear
+	coord_event 25, 11, -1, LusterMallEscalator3
+	coord_event 26, 11, -1, LusterMallEscalator4
+	coord_event 26, 17, -1, LusterMallEscalatorClear
+	coord_event 25, 17, -1, LusterMallEscalatorClear
 
-	db 13 ; bg events
-	signpost 26, 16, SIGNPOST_JUMPTEXT, LusterMallEscalatorSignText
-	signpost  8, 16, SIGNPOST_JUMPTEXT, LusterMallEscalatorSignText
-	signpost 16, 15, SIGNPOST_READ, LusterMallPokeCenterSign
-	signpost  8,  1, SIGNPOST_JUMPTEXT, LusterMallElectronicsSignText
-	signpost  8, 10, SIGNPOST_JUMPTEXT, LusterMallCoffeeSignText
-	signpost 16,  7, SIGNPOST_JUMPTEXT, LusterMallSkateSignText
-	signpost  8, 32, SIGNPOST_JUMPTEXT, LusterMallAntiqueSignText
-	signpost 16,  1, SIGNPOST_JUMPTEXT, LusterMallHerbSignText
-	signpost  8, 23, SIGNPOST_JUMPTEXT, LusterMallStoneSignText
-	signpost 16, 26, SIGNPOST_JUMPTEXT, LusterMallBallSignText
-	signpost 16, 32, SIGNPOST_JUMPTEXT, LusterMallClothesSignText
-	signpost 11, 15, SIGNPOST_JUMPTEXT, LusterMall_PaperText
-	signpost  5, 15, SIGNPOST_JUMPTEXT, LusterMall_GymSignText
+	db 14 ; bg events
+	signpost 26, 20, SIGNPOST_JUMPTEXT, LusterMallEscalatorSignText
+	signpost  8, 20, SIGNPOST_JUMPTEXT, LusterMallEscalatorSignText
+	signpost 16, 19, SIGNPOST_READ, LusterMallPokeCenterSign
+	signpost  8,  5, SIGNPOST_JUMPTEXT, LusterMallElectronicsSignText
+	signpost  8, 14, SIGNPOST_JUMPTEXT, LusterMallCoffeeSignText
+	signpost 16, 11, SIGNPOST_JUMPTEXT, LusterMallSkateSignText
+	signpost  8, 36, SIGNPOST_JUMPTEXT, LusterMallAntiqueSignText
+	signpost 16,  5, SIGNPOST_JUMPTEXT, LusterMallHerbSignText
+	signpost  8, 27, SIGNPOST_JUMPTEXT, LusterMallStoneSignText
+	signpost 16, 30, SIGNPOST_JUMPTEXT, LusterMallBallSignText
+	signpost 16, 36, SIGNPOST_JUMPTEXT, LusterMallClothesSignText
+	signpost 11, 19, SIGNPOST_JUMPTEXT, LusterMall_PaperText
+	signpost  5, 19, SIGNPOST_JUMPTEXT, LusterMall_GymSignText
+	signpost 16,  1, SIGNPOST_JUMPTEXT, LusterMall_FurnitureSignText
 	
 
 	db 19 ; object events
-	person_event SPRITE_OFFICER,  5, 13, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_Cop, EVENT_BEAT_MALL_COP
-	person_event SPRITE_KOFFING_BEAN,  5,  8, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_KOFFING_BEAN,  5,  9, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_GRANNY,  8, 28, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC1, -1
-	person_event SPRITE_SCHOOLBOY, 16,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC2, -1
-	person_event SPRITE_ROCKER, 11, 29, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC3, -1
-	person_event SPRITE_YOUNGSTER, 11, 19, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMall_NPC4, -1
-	person_event SPRITE_CUTE_GIRL, 11, 17, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMall_NPC5, -1
-	person_event SPRITE_GENTLEMAN, 11, 16, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC6, -1
-	person_event SPRITE_CLERK, 11,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC7, -1
-	person_event SPRITE_BEAUTY, 17, 29, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMall_NPC8, -1
-	person_event SPRITE_SCHOOLGIRL,  8, 22, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC9, -1
-	person_event SPRITE_POKEFAN_F, 26, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMall_NPC10, -1
-	person_event SPRITE_SKATER, 22, 20, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC11, -1
-	person_event SPRITE_SKATER, 23, 20, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC12, -1
-	person_event SPRITE_CUTE_GIRL, 19,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMall_NPC13, -1
-	person_event SPRITE_POKEFAN_M, 25, 12, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterMall_NPC14, -1
-	person_event SPRITE_YOUNGSTER, 17, 18, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC15, -1
-	person_event SPRITE_OFFICER, 17, 35, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC16, -1
+	person_event SPRITE_OFFICER,  5, 17, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_Cop, EVENT_BEAT_MALL_COP
+	person_event SPRITE_KOFFING_BEAN,  5, 12, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_KOFFING_BEAN,  5, 13, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_GRANNY,  8, 32, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC1, -1
+	person_event SPRITE_SCHOOLBOY, 16, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC2, -1
+	person_event SPRITE_ROCKER, 11, 33, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC3, -1
+	person_event SPRITE_YOUNGSTER, 11, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMall_NPC4, -1
+	person_event SPRITE_CUTE_GIRL, 11, 21, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMall_NPC5, -1
+	person_event SPRITE_GENTLEMAN, 11, 20, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC6, -1
+	person_event SPRITE_CLERK, 11,  9, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC7, -1
+	person_event SPRITE_BEAUTY, 17, 33, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMall_NPC8, -1
+	person_event SPRITE_SCHOOLGIRL,  8, 26, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC9, -1
+	person_event SPRITE_POKEFAN_F, 26, 21, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMall_NPC10, -1
+	person_event SPRITE_SKATER, 22, 24, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC11, -1
+	person_event SPRITE_SKATER, 23, 24, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC12, -1
+	person_event SPRITE_CUTE_GIRL, 19,  6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMall_NPC13, -1
+	person_event SPRITE_POKEFAN_M, 25, 16, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterMall_NPC14, -1
+	person_event SPRITE_YOUNGSTER, 17, 22, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMall_NPC15, -1
+	person_event SPRITE_OFFICER, 16, 40, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC16, -1
 
 
 	const_def 1 ; object constants
@@ -124,7 +125,7 @@ LusterMallCallback:
 	domaptrigger LUSTER_CITY_SHOPPING, $1
 	checkevent EVENT_STARTED_PART_TIME_JOB
 	iffalse .skip
-	moveperson LUSTERMALLNPC16, $23, $10
+	moveperson LUSTERMALLNPC16, $29, $10
 .skip
 	return
 	
@@ -357,26 +358,15 @@ LusterMallEscalatorClear:
 	clearevent EVENT_ON_ESCALATOR
 	end
 	
-LusterMallEmployeesOnly:
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	spriteface LUSTERMALLNPC16, DOWN
-	showemote EMOTE_SHOCK, LUSTERMALLNPC16, 15
-	pause 7
-	spriteface PLAYER, UP
-	opentext
-	writetext LusterMall_NPC16Text1
-	waitbutton
-	closetext
-	follow PLAYER, LUSTERMALLNPC16
-	applyonemovement PLAYER, step_left
-	stopfollow
-	applyonemovement LUSTERMALLNPC16, step_up
-	spriteface LUSTERMALLNPC16, LEFT
-	end
-	
 LusterMallPokeCenterSign:
 	jumpstd pokecentersign
+	
+LusterMall_FurnitureSignText:
+	text "DéCOR de DITTO"
+	
+	para "“Let us TRANSFORM"
+	line "your home.”"
+	done
 	
 LusterMallEscalatorSignText:
 	text "LUSTER MALL"
@@ -407,7 +397,7 @@ LusterMallCoffeeSignText:
 	done
 
 LusterMallSkateSignText:
-	text "MEGA KICKFLIP"
+	text "HI JUMP KICKFLIP"
 	
 	para "“Best boards in"
 	line "town.”"
@@ -651,13 +641,13 @@ LusterMall_NPC16:
 	writetext LusterMall_NPC16Text1
 	waitbutton
 	closetext
-	spriteface LUSTERMALLNPC16, LEFT
+	spriteface LUSTERMALLNPC16, DOWN
 	end
 .have_job
 	writetext LusterMall_NPC16Text2
 	waitbutton
 	closetext
-	spriteface LUSTERMALLNPC16, LEFT
+	spriteface LUSTERMALLNPC16, DOWN
 	end
 	
 LusterMall_Paper:

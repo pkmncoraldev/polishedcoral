@@ -10,7 +10,7 @@
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 09
 	tilecoll SKATE, SKATE, SKATE, FLOOR ; 0a
 	tilecoll WALL, WALL, WALL, WALL ; 0b
-	tilecoll WALL, SKATE, SKATE, SKATE ; 0c
+	tilecoll SKATE, SKATE, SKATE, SKATE ; 0c
 	tilecoll WALL, WALL, WALL, WALL ; 0d
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 0e
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 0f

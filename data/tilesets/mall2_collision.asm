@@ -11,7 +11,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0a
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 0b
 	tilecoll WALL, WALL, WALL, WALL ; 0c
-	tilecoll WALL, WALL, WALL, WALL ; 0d
+	tilecoll WALL, WALL, BOOKSHELF, WALL ; 0d
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 0e
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 0f
 	tilecoll COUNTER, FLOOR, WALL, FLOOR ; 10
@@ -161,4 +161,36 @@
 	tilecoll SKATE, SKATE, SKATE, SKATE ; a0
 	tilecoll SKATE, WALL, SKATE, WALL ; a1
 	tilecoll WALL, SKATE, WALL, SKATE ; a2
-	tilecoll WARP_CARPET_LEFT, SKATE, WARP_CARPET_LEFT, SKATE ; a3
+	tilecoll SKATE, SKATE, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; a3
+	tilecoll WALL, WALL, WALL, WALL ; a4
+	tilecoll WALL, SKATE, WALL, SKATE ; a5
+	tilecoll WALL, WALL, FLOOR, FLOOR ; a6
+	tilecoll WALL, WALL, WALL, BOOKSHELF ; a7
+	tilecoll WALL, WALL, LEFT_WALL, RIGHT_WALL ; a8
+	tilecoll DOWN_WALL, DOWN_WALL, LEFT_WALL, RIGHT_WALL ; a9
+	tilecoll DOWN_WALL, DOWN_WALL, LEFT_WALL, RIGHT_WALL ; aa
+	tilecoll DOWN_WALL, DOWN_WALL, LEFT_WALL, RIGHT_WALL ; ab
+	tilecoll WALL, WALL, FLOOR, FLOOR ; ac
+	tilecoll WALL, WALL, WALL, WALL ; ad
+	tilecoll FLOOR, WALL, FLOOR, WALL ; ae
+	tilecoll FLOOR, WALL, FLOOR, WALL ; af
+	tilecoll DOWN_WALL, DOWN_WALL, LEFT_WALL, RIGHT_WALL ; b0
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; b1
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; b2
+	tilecoll WALL, WALL, FLOOR, FLOOR ; b3
+	tilecoll FLOOR, FLOOR, LEFT_WALL, WALL ; b4
+	tilecoll FLOOR, FLOOR, RIGHT_WALL, FLOOR ; b5
+	tilecoll FLOOR, FLOOR, FLOOR, LEFT_WALL ; b6
+	tilecoll FLOOR, FLOOR, WALL, RIGHT_WALL ; b7
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; b8
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; b9
+	tilecoll WALL, WALL, FLOOR, FLOOR ; ba
+	tilecoll WALL, WALL, FLOOR, WALL ; bb
+	tilecoll FLOOR, FLOOR, WALL, WALL ; bc
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; bd
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; be
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; bf
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; c0
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c1
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c2
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c3

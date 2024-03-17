@@ -5,9 +5,9 @@ LusterMallBackRoom_MapScriptHeader:
 	callback MAPCALLBACK_TILES, LusterMallBackRoomCallback
 
 	db 3 ; warp events
-	warp_def 12,  2, 23, LUSTER_MALL
-	warp_def 13,  2, 24, LUSTER_MALL
-	warp_def 1, 1, 7, LUSTER_CITY_SHOPPING
+	warp_def 13,  2, 23, LUSTER_MALL
+	warp_def 13,  3, 23, LUSTER_MALL
+	warp_def  1,  7, 7, LUSTER_CITY_SHOPPING
 
 	db 0 ; coord events
 

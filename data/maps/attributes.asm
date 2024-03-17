@@ -608,6 +608,7 @@ ENDM
 	map_attributes LusterMallStoneShop, LUSTER_MALL_STONE_SHOP, 0, 0
 	map_attributes LusterMallBallShop, LUSTER_MALL_BALL_SHOP, 0, 0
 	map_attributes LusterMallClothesShop, LUSTER_MALL_CLOTHES_SHOP, 0, 0
+	map_attributes LusterMallFurniture, LUSTER_MALL_FURNITURE, 0, 0
 	map_attributes LusterMallBackRoom, LUSTER_MALL_BACK_ROOM, 0, 0
 	map_attributes LusterSkyscraper1_1F, LUSTER_SKYSCRAPER_1_1F, 0, 0
 	map_attributes LusterSkyscraper1_2F, LUSTER_SKYSCRAPER_1_2F, 0, 0

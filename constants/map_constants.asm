@@ -252,7 +252,7 @@ MAP_NONE   EQU 0
 	map_const LUSTER_APARTMENT_6_2F,             	       4,  4 ; 14
 	map_const LUSTER_POKECENTER,                           6,  4 ; 15
 	map_const LUSTER_MART,								   6,  4 ; 16
-	map_const LUSTER_MALL,								  18, 15 ; 17
+	map_const LUSTER_MALL,								  21, 15 ; 17
 	map_const LUSTER_MALL_POKECENTER,                      6,  4 ; 18
 	map_const LUSTER_MALL_ELECTRONICS_SHOP,				   5,  4 ; 19
 	map_const LUSTER_MALL_COFFEE_SHOP,					   5,  4 ; 20
@@ -263,18 +263,19 @@ MAP_NONE   EQU 0
 	map_const LUSTER_MALL_STONE_SHOP,					   4,  4 ; 25
 	map_const LUSTER_MALL_BALL_SHOP,					   4,  4 ; 26
 	map_const LUSTER_MALL_CLOTHES_SHOP,					   6,  4 ; 27
-	map_const LUSTER_MALL_BACK_ROOM,					   3,  7 ; 28
-	map_const LUSTER_SKYSCRAPER_1_1F,					   5,  4 ; 29
-	map_const LUSTER_SKYSCRAPER_1_2F,					   4,  4 ; 30
-	map_const LUSTER_SKYSCRAPER_1_3F,					   4,  4 ; 31 
-	map_const LUSTER_SKYSCRAPER_1_ELEVATOR,				   2,  2 ; 32
-	map_const LUSTER_SKYSCRAPER_2_1F,					   5,  4 ; 33
-	map_const LUSTER_SKYSCRAPER_2_2F,					   4,  4 ; 34
-	map_const LUSTER_SKYSCRAPER_2_3F,					   4,  4 ; 35
-	map_const LUSTER_SKYSCRAPER_2_ELEVATOR,				   2,  2 ; 36
-	map_const LUSTER_SKYSCRAPER_B1F,					   8,  2 ; 37
-	map_const LUSTER_SKYSCRAPER_PORYGON_ROOM,			   3,  6 ; 38
-	map_const LUSTER_GYM,								   9, 11 ; 39
+	map_const LUSTER_MALL_FURNITURE,					   6,  6 ; 28
+	map_const LUSTER_MALL_BACK_ROOM,					   6,  7 ; 29
+	map_const LUSTER_SKYSCRAPER_1_1F,					   5,  4 ; 30
+	map_const LUSTER_SKYSCRAPER_1_2F,					   4,  4 ; 31
+	map_const LUSTER_SKYSCRAPER_1_3F,					   4,  4 ; 32 
+	map_const LUSTER_SKYSCRAPER_1_ELEVATOR,				   2,  2 ; 33
+	map_const LUSTER_SKYSCRAPER_2_1F,					   5,  4 ; 34
+	map_const LUSTER_SKYSCRAPER_2_2F,					   4,  4 ; 35
+	map_const LUSTER_SKYSCRAPER_2_3F,					   4,  4 ; 36
+	map_const LUSTER_SKYSCRAPER_2_ELEVATOR,				   2,  2 ; 37
+	map_const LUSTER_SKYSCRAPER_B1F,					   8,  2 ; 38
+	map_const LUSTER_SKYSCRAPER_PORYGON_ROOM,			   3,  6 ; 39
+	map_const LUSTER_GYM,								   9, 11 ; 40
 	
 	newgroup													 ; 14
 	

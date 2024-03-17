@@ -534,6 +534,9 @@ MtOnwaB3F_BlockData:
 	
 SECTION "Map Blockdata 2", ROMX
 	
+LusterMallFurniture_BlockData:
+	INCBIN "maps/LusterMallFurniture.ablk.lz"
+	
 MtOnwaCliff_BlockData:
 	INCBIN "maps/MtOnwaCliff.ablk.lz"
 	

@@ -352,14 +352,60 @@ CheckHiddenTape:
 	xor a
 .loop
 	ld [hObjectStructIndexBuffer], a
+	call DoesObjectHaveASprite
+	jr z, .next
+
 	ld hl, OBJECT_MOVEMENTTYPE
 	add hl, bc
 	ld a, [hl]
 	cp SPRITEMOVEDATA_NO_RENDER
 	jr nz, .next
-	scf
-	ret
-	
+
+	ld hl, OBJECT_PALETTE
+	add hl, bc
+	bit 7, [hl]
+	jr z, .got
+
+	call Function7171
+	jr nc, .ok
+	jr .ok2
+
+.got
+	ld hl, OBJECT_NEXT_MAP_X
+	add hl, bc
+	ld a, [hl]
+	cp d
+	jr nz, .ok
+	ld hl, OBJECT_NEXT_MAP_Y
+	add hl, bc
+	ld a, [hl]
+	cp e
+	jr nz, .ok
+
+.ok2
+	ld a, [hMapObjectIndexBuffer]
+	ld l, a
+	ld a, [hObjectStructIndexBuffer]
+	cp l
+	jr nz, .setcarry
+
+.ok
+	ld hl, OBJECT_MAP_X
+	add hl, bc
+	ld a, [hl]
+	cp d
+	jr nz, .next
+	ld hl, OBJECT_MAP_Y
+	add hl, bc
+	ld a, [hl]
+	cp e
+	jr nz, .next
+	ld a, [hMapObjectIndexBuffer]
+	ld l, a
+	ld a, [hObjectStructIndexBuffer]
+	cp l
+	jr nz, .setcarry
+
 .next
 	ld hl, OBJECT_STRUCT_LENGTH
 	add hl, bc
@@ -370,6 +416,10 @@ CheckHiddenTape:
 	cp NUM_OBJECT_STRUCTS
 	jr nz, .loop
 	and a
+	ret
+
+.setcarry
+	scf
 	ret
 
 HasPersonReachedMovementLimit: ; 70a4

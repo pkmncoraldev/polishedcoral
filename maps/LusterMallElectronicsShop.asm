@@ -4,35 +4,36 @@ LusterMallElectronicsShop_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def  7,  6, 7, LUSTER_MALL
-	warp_def  7,  7, 8, LUSTER_MALL
+	warp_def  7,  8, 7, LUSTER_MALL
+	warp_def  7,  9, 8, LUSTER_MALL
 
 	db 0 ; coord events
 
 	db 14 ; bg events
-	bg_event  5,  1, SIGNPOST_READ, LusterMallElectronicsShop_Poster
-	bg_event  7,  2, SIGNPOST_READ, LusterMallElectronicsShop_Shelf
-	bg_event  2,  3, SIGNPOST_READ, LusterMallElectronicsShop_TV
-	bg_event  3,  3, SIGNPOST_READ, LusterMallElectronicsShop_TV
-	bg_event  4,  7, SIGNPOST_READ, LusterMallElectronicsShop_TV
-	bg_event  4,  3, SIGNPOST_READ, LusterMallElectronicsShop_TV2
-	bg_event  3,  7, SIGNPOST_READ, LusterMallElectronicsShop_TV2
-	bg_event  3,  5, SIGNPOST_READ, LusterMallElectronicsShop_N64
-	bg_event  4,  5, SIGNPOST_READ, LusterMallElectronicsShop_N64
-	bg_event  1,  7, SIGNPOST_READ, LusterMallElectronicsShop_N64
-	bg_event  2,  7, SIGNPOST_READ, LusterMallElectronicsShop_N64
-	bg_event  1,  5, SIGNPOST_READ, LusterMallElectronicsShop_Snes
-	bg_event  2,  5, SIGNPOST_READ, LusterMallElectronicsShop_Snes
-	bg_event  5,  2, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_LUSTER_CITY
+	bg_event  7,  1, SIGNPOST_READ, LusterMallElectronicsShop_Poster
+	bg_event  9,  2, SIGNPOST_READ, LusterMallElectronicsShop_Shelf
+	bg_event  4,  3, SIGNPOST_READ, LusterMallElectronicsShop_TV
+	bg_event  5,  3, SIGNPOST_READ, LusterMallElectronicsShop_TV
+	bg_event  6,  7, SIGNPOST_READ, LusterMallElectronicsShop_TV
+	bg_event  6,  3, SIGNPOST_READ, LusterMallElectronicsShop_TV2
+	bg_event  5,  7, SIGNPOST_READ, LusterMallElectronicsShop_TV2
+	bg_event  5,  5, SIGNPOST_READ, LusterMallElectronicsShop_N64
+	bg_event  6,  5, SIGNPOST_READ, LusterMallElectronicsShop_N64
+	bg_event  3,  7, SIGNPOST_READ, LusterMallElectronicsShop_N64
+	bg_event  4,  7, SIGNPOST_READ, LusterMallElectronicsShop_N64
+	bg_event  3,  5, SIGNPOST_READ, LusterMallElectronicsShop_Snes
+	bg_event  4,  5, SIGNPOST_READ, LusterMallElectronicsShop_Snes
+	bg_event  7,  2, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_LUSTER_CITY
 
-	db 7 ; object events
-	person_event SPRITE_CHILD,  6,  1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC1, -1
-	person_event SPRITE_SUPER_NERD,  5,  0, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC2, -1
-	person_event SPRITE_CUTE_GIRL,  3,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC3, -1
-	object_event  9,  4, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_ELECTRONICS, MART_LUSTER_MALL_ELECTRONICS_TM, -1
-	object_event  9,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_TM, MART_LUSTER_MALL_ELECTRONICS, -1
-	person_event SPRITE_POLLY,  6,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShopPolly, EVENT_POLLY_NOT_IN_ELECTRONICS
+	db 8 ; object events
+	person_event SPRITE_CHILD,  7,  0, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC1, -1
+	person_event SPRITE_SUPER_NERD,  5,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC2, -1
+	person_event SPRITE_CUTE_GIRL,  3,  8, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC3, -1
+	object_event 11,  4, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_ELECTRONICS, MART_LUSTER_MALL_ELECTRONICS_TM, -1
+	object_event 11,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_TM, MART_LUSTER_MALL_ELECTRONICS, -1
+	person_event SPRITE_POLLY,  6, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShopPolly, EVENT_POLLY_NOT_IN_ELECTRONICS
 	hiddentape_event 5, 2, MUSIC_LUSTER_CITY, 1, EVENT_MUSIC_LUSTER_CITY
+	object_event  0,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_DECO, MART_LUSTER_MALL_ELECTRONICS_DECO, -1
 
 	const_def 1 ; object constants
 	const LUSTER_MALL_ELECTRONICS_NPC1

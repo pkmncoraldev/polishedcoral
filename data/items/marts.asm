@@ -23,6 +23,7 @@ Marts: ; 160a9
 	dw RadiantMart
 	dw DuskMart
 	dw KomoreMart
+	dw LusterMallElectronicsDeco
 	dw LusterMallFurniture
 MartsEnd:
 
@@ -184,6 +185,12 @@ LusterMallElectronicsTM:
 	dbw TM_SOLAR_BEAM, 		12000
 	dbw TM_HYPER_BEAM, 		14000
 	dbw TM_GIGA_IMPACT,		14000
+	db -1
+	
+LusterMallElectronicsDeco:
+	db 2 ; # items
+	dbw POTION, 		5
+	dbw POKE_BALL, 		10
 	db -1
 	
 LusterMallFurniture:

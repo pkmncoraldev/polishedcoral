@@ -4,7 +4,7 @@ UpdateItemIconAndDescription::
 
 UpdateTMHMIconAndDescriptionAndOwnership::
 	farcall UpdateTMHMDescriptionAndOwnership
-	call LoadTMHMIcon
+;	call LoadTMHMIcon
 	farcall LoadTMHMIconPalette
 	jp SetPalettes
 	

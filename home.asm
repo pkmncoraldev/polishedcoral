@@ -393,6 +393,7 @@ NamesPointers:: ; 33ab
 	dbw 0, wPartyMonOT
 	dbw 0, wOTPartyMonOT
 	dba TrainerClassNames
+	dba DecoNames
 ; 33c0
 
 GetName:: ; 33c3
@@ -564,6 +565,20 @@ GetClothesName::
 	ld a, [wNamedObjectIndexBuffer]
 	ld [wCurSpecies], a
 	ld a, CLOTHES_NAME
+	ld [wNamedObjectTypeBuffer], a
+	call GetName
+	ld de, wStringBuffer1
+	pop bc
+	pop hl
+	ret
+	
+GetDecoName2::
+; Get apricorn name wNamedObjectIndexBuffer.
+	push hl
+	push bc
+	ld a, [wNamedObjectIndexBuffer]
+	ld [wCurSpecies], a
+	ld a, DECO_NAME
 	ld [wNamedObjectTypeBuffer], a
 	call GetName
 	ld de, wStringBuffer1

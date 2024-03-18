@@ -13,6 +13,12 @@ UpdateClothesIconAndDescriptionAndOwnership::
 	call LoadClothesIcons
 ;	farcall LoadClothesIconPalette
 	jp SetPalettes
+	
+UpdateDecoIconAndDescriptionAndOwnership::
+	farcall UpdateDecoDescriptionAndOwnership
+	call LoadClothesIcons
+;	farcall LoadClothesIconPalette
+	jp SetPalettes
 
 UpdateMonIconAndDescriptionAndOwnership::
 	farcall UpdateMonDescription

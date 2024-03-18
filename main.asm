@@ -523,6 +523,66 @@ UpdateClothesDescription:
 	decoord 1, 14
 	farjp PrintClothesDescription
 	
+UpdateDecoDescriptionAndOwnership:
+	hlcoord 0, 0
+	lb bc, 1, 8
+	call ClearBox
+	ld a, [wMenuSelection]
+	cp -1
+	jr z, UpdateDecoDescription
+	ld a, [wCurTMHM]
+	call CheckDeco
+	ld de, OwnedTMString
+	ld a, [wScriptVar]
+	cp TRUE
+	jr z, .GotString
+	ld de, UnownedTMString
+.GotString
+	hlcoord 0, 0
+	call PlaceString
+UpdateDecoDescription:
+	ld a, [wMenuSelection]
+	ld [wCurSpecies], a
+	hlcoord 0, 12
+	lb bc, 4, SCREEN_WIDTH - 2
+	call TextBox
+	ld a, [wMenuSelection]
+	cp -1
+	ret z
+	decoord 1, 14
+	farjp PrintDecoDescription
+	
+CheckDeco:: ; d3fb
+	ld a, [wCurTMHM]
+	ld c, a
+	xor a
+	ld b, a
+	ld hl, DECO_FLAGS_START
+	add hl, bc
+	ld e, l
+	ld d, h
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	jr z, .false
+	ld a, TRUE
+.false
+	ld [wScriptVar], a
+	ret
+	
+ReceiveDeco:: ; d3c4
+	ld a, [wCurTMHM]
+	ld c, a
+	xor a
+	ld b, a
+	ld hl, DECO_FLAGS_START
+	add hl, bc
+	ld e, l
+	ld d, h
+	ld b, SET_FLAG
+	jp EventFlagAction
+	
 OwnedTMString:
 	db "OWNED@"
 UnownedTMString:
@@ -707,6 +767,16 @@ PlaceMartClothesName:
 	ld de, ScrollingMenu_CancelString ; found in scrolling_menu.asm
 	ld [wNamedObjectIndexBuffer], a
 	call nz, GetClothesName
+	pop hl
+	jp PlaceString
+	
+PlaceMartDecoName:
+	push de
+	ld a, [wMenuSelection]
+	cp a, -1 ; special case for Cancel in Key Items pocket
+	ld de, ScrollingMenu_CancelString ; found in scrolling_menu.asm
+	ld [wNamedObjectIndexBuffer], a
+	call nz, GetDecoName2
 	pop hl
 	jp PlaceString
 	
@@ -4827,6 +4897,23 @@ PrintMonDescription: ; 0x1c8955
 	ld d, [hl]
 	pop hl
 	jp PlaceString
+	
+PrintDecoDescription: ; 0x1c8955
+; Print the description for item [wCurSpecies] at de.
+
+	ld hl, DecoDescriptions
+	ld a, [wCurSpecies]
+	dec a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	push de
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	pop hl
+	jp PlaceString
 
 MoveReminderNoMovesText:
 	text "Sorry… There isn't"
@@ -4839,6 +4926,7 @@ MoveReminderNoMovesText:
 INCLUDE "data/items/descriptions.asm"
 INCLUDE "data/items/clothes_names.asm"
 INCLUDE "data/pokemon/buy_mon_descriptions.asm"
+INCLUDE "data/decorations/buydeconames.asm"
 
 
 SECTION "Move and Landmark Text", ROMX

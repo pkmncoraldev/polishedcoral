@@ -1233,3 +1233,147 @@ PinkClothesDesc:
 	db   "A set of PINK"
 	next "clothes.@"
 	
+	
+DecoDescriptions:
+	dw FeatheryBedDesc
+	dw PinkBedDesc
+	dw BlueBedDesc
+	dw YellowBedDesc
+	dw GreenBedDesc
+	dw CheckerBedDesc
+	dw RedCarpetDesc
+	dw BlueCarpetDesc
+	dw YellowCarpetDesc
+	dw GreenCarpetDesc
+	dw CheckerCarpetDesc
+	dw MagnaplantDesc
+	dw TropicplantDesc
+	dw JumboplantDesc
+	dw SpikeyplantDesc
+	dw PokeballPosterDesc
+	dw PikachuPosterDesc
+	dw ClefairyPosterDesc
+	dw JigglypuffPosterDesc
+	dw EeveePosterDesc
+	dw MarillPosterDesc
+	dw TownMapDesc
+	dw MinasPaintingDesc
+	dw SnesDesc
+	dw N64Desc
+	dw PikachuDollDesc
+	dw RaichuDollDesc
+	dw SurfPikachuDollDesc
+	dw ClefairyDollDesc
+	dw JigglypuffDollDesc
+	dw BulbasaurDollDesc
+	dw CharmanderDollDesc
+	dw SquirtleDollDesc
+	dw ChikoritaDollDesc
+	dw CyndaquilDollDesc
+	dw TotodileDollDesc
+	dw PoliwagDollDesc
+	dw MareepDollDesc
+	dw TogepiDollDesc
+	dw MagikarpDollDesc
+	dw OddishDollDesc
+	dw GengarDollDesc
+	dw MaractusDollDesc
+	dw DittoDollDesc
+	dw VoltorbDollDesc
+	dw StantlerDollDesc
+	dw CottoneeDollDesc
+	dw GeodudeDollDesc
+	dw PinecoDollDesc
+	dw ExeggcuteDollDesc
+	dw TeddiursaDollDesc
+	dw MeowthDollDesc
+	dw BuizelDollDesc
+	dw GrowlitheDollDesc
+	dw EeveeDollDesc
+	dw BigSnorlaxDollDesc
+	dw BigOnixDollDesc
+	dw BigLaprasDollDesc
+	dw BigGyaradosDollDesc
+	dw BigMamoswineDollDesc
+	dw BigMukDollDesc
+	dw GoldTrophyDollDesc
+	dw SilverTrophyDollDesc
+	
+FeatheryBedDesc:
+	db   "Bed with white"
+	next "sheets.@"
+	
+PinkBedDesc:
+	db   "Bed with pink"
+	next "sheets.@"
+	
+BlueBedDesc:
+	db   "Bed with blue"
+	next "sheets.@"
+	
+YellowBedDesc:
+	db   "Bed with yellow"
+	next "sheets.@"
+	
+GreenBedDesc:
+CheckerBedDesc:
+RedCarpetDesc:
+BlueCarpetDesc:
+YellowCarpetDesc:
+GreenCarpetDesc:
+CheckerCarpetDesc:
+MagnaplantDesc:
+TropicplantDesc:
+JumboplantDesc:
+SpikeyplantDesc:
+PokeballPosterDesc:
+PikachuPosterDesc:
+ClefairyPosterDesc:
+JigglypuffPosterDesc:
+EeveePosterDesc:
+MarillPosterDesc:
+TownMapDesc:
+MinasPaintingDesc:
+SnesDesc:
+N64Desc:
+PikachuDollDesc:
+RaichuDollDesc:
+SurfPikachuDollDesc:
+ClefairyDollDesc:
+JigglypuffDollDesc:
+BulbasaurDollDesc:
+CharmanderDollDesc:
+SquirtleDollDesc:
+ChikoritaDollDesc:
+CyndaquilDollDesc:
+TotodileDollDesc:
+PoliwagDollDesc:
+MareepDollDesc:
+TogepiDollDesc:
+MagikarpDollDesc:
+OddishDollDesc:
+GengarDollDesc:
+MaractusDollDesc:
+DittoDollDesc:
+VoltorbDollDesc:
+StantlerDollDesc:
+CottoneeDollDesc:
+GeodudeDollDesc:
+PinecoDollDesc:
+ExeggcuteDollDesc:
+TeddiursaDollDesc:
+MeowthDollDesc:
+BuizelDollDesc:
+GrowlitheDollDesc:
+EeveeDollDesc:
+BigSnorlaxDollDesc:
+BigOnixDollDesc:
+BigLaprasDollDesc:
+BigGyaradosDollDesc:
+BigMamoswineDollDesc:
+BigMukDollDesc:
+GoldTrophyDollDesc:
+SilverTrophyDollDesc:
+	db   "Generic"
+	next "description.@"
+	

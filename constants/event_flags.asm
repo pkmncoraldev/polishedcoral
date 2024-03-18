@@ -1044,6 +1044,8 @@
 	const EVENT_MUSIC_AUTUMN
 	const EVENT_MUSIC_DOJO
 
+
+DECO_FLAGS_START EQU const_value - 1
 ;decor flags
 	const EVENT_DECO_BED_1
 	const EVENT_DECO_BED_2

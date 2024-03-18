@@ -615,6 +615,8 @@ InitializeEventsScript:
 	setevent EVENT_MIMIKYU_RIGHT
 	setevent EVENT_ROUTE_24_MUSHROOM_5
 	setevent EVENT_GOT_FIVESTARHELM
+	setevent EVENT_DECO_BED_1
+	setevent EVENT_DECO_POSTER_7
 	setevent EVENT_ALWAYS_SET
 	setflag ENGINE_PHONE_CARD
 	setflag ENGINE_PUNKS_IN_STARGLOW

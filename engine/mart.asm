@@ -43,6 +43,7 @@ OpenMartDialog:: ; 15a45
 	dw PasswordShop
 	dw BuyOnly
 	dw PollenShop
+	dw DecoShop
 ; 15a61
 
 MartDialog: ; 15a61
@@ -154,6 +155,15 @@ ClothesShop: ; 15a6e
 	ld hl, Text_Mart_Clothes_Intro
 	call MartTextBox
 	call BuyClothesMenu
+	ld hl, Text_Mart_Clothes_ComeAgain
+	jp MartTextBox
+
+DecoShop: ; 15a6e
+	call FarReadTMMart
+	call LoadStandardMenuDataHeader
+	ld hl, Text_Mart_Clothes_Intro
+	call MartTextBox
+	call BuyDecoMenu
 	ld hl, Text_Mart_Clothes_ComeAgain
 	jp MartTextBox
 
@@ -711,6 +721,13 @@ BuyClothesMenu:
 	jr nc, .loop
 	jr BuyMenu_Finish
 
+BuyDecoMenu:
+	call BuyMenu_InitGFX
+.loop
+	call BuyDecoMenuLoop ; menu loop
+	jr nc, .loop
+	jr BuyMenu_Finish
+
 BuyTMMenu:
 	call BuyMenu_InitGFX
 .loop
@@ -906,6 +923,7 @@ GetMartDialogGroup: ; 15ca3
 	dwb .CoinsMartPointers, 1
 	dwb .StandardMartPointers, 0
 	dwb .PollenMartPointers, 1
+	dwb .DecoMartPointers, 0
 ; 15cbf
 
 .StandardMartPointers: ; 15cbf
@@ -1020,6 +1038,14 @@ GetMartDialogGroup: ; 15ca3
 	dw Text_Mart_BagFull
 	dw Text_Mart_HereYouGo
 	dw BuyClothesMenuLoop
+	
+.DecoMartPointers:
+	dw Text_Mart_HowMany
+	dw Text_ClothesMart_CostsThisMuch
+	dw Text_Mart_InsufficientFunds
+	dw Text_Mart_BagFull
+	dw Text_Mart_HereYouGo
+	dw BuyDecoMenuLoop
 	
 .BallMartDiscountPointers: ; 15cbf
 	dw Text_InformalMart_HowMany
@@ -1380,7 +1406,7 @@ BuyClothesMenuLoop:
 	lb bc, PRINTNUM_MONEY | 3, 7
 	call PrintNum
 	call UpdateSprites
-	farcall Pack_Draw_Sprites
+;	farcall Pack_Draw_Sprites
 	ld hl, ClothesMenuDataHeader_Buy
 	call CopyMenuDataHeader
 	call DoMartScrollingMenu
@@ -1397,6 +1423,45 @@ BuyClothesMenuLoop:
 	call CompareMoney
 	jp c, MartMenuLoop_InsufficientFunds
 	call ReceiveClothes
+	ld de, wMoney
+	ld bc, hMoneyTemp
+	call TakeMoney
+	ld a, MARTTEXT_HERE_YOU_GO
+	call LoadBuyMenuText
+	call PlayTransactionSound
+	hlcoord 12, 0
+	ld de, wMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
+	call JoyWaitAorB
+.cancel
+	call SpeechTextBox
+	and a
+	ret
+	
+BuyDecoMenuLoop:
+	hlcoord 12, 0
+	ld de, wMoney
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
+	call UpdateSprites
+;	farcall Pack_Draw_Sprites
+	ld hl, DecoMenuDataHeader_Buy
+	call CopyMenuDataHeader
+	call DoMartScrollingMenu
+	call SpeechTextBox
+	ld a, [wMenuJoypad]
+	cp B_BUTTON
+	jp z, MartMenuLoop_SetCarry
+	call DecoMartAskPurchaseQuantity
+	jr c, .cancel
+	call ClothesMartConfirmPurchase
+	jr c, .cancel
+	ld de, wMoney
+	ld bc, hMoneyTemp
+	call CompareMoney
+	jp c, MartMenuLoop_InsufficientFunds
+	farcall ReceiveDeco
 	ld de, wMoney
 	ld bc, hMoneyTemp
 	call TakeMoney
@@ -1693,6 +1758,47 @@ ClothesMartAskPurchaseQuantity:
 .AlreadyHaveClothesText
 	text_jump AlreadyHaveClothesText
 	db "@"
+	
+DecoMartAskPurchaseQuantity:
+	ld a, [wCurTMHM]
+	farcall CheckDeco
+	ld a, [wScriptVar]
+	cp TRUE
+	jr z, .AlreadyHaveClothes
+
+	ld a, 1
+	ld [wItemQuantityChangeBuffer], a
+	ld a, [wMartItemID]
+	ld e, a
+	ld d, $0
+	ld hl, wMartPointer
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	inc hl
+	add hl, de
+	add hl, de
+	add hl, de
+	inc hl
+	ld a, [hli]
+	ld [hMoneyTemp + 2], a
+	ld a, [hl]
+	ld [hMoneyTemp + 1], a
+	xor a
+	ld [hMoneyTemp], a
+	and a
+	ret
+
+.AlreadyHaveClothes
+	ld hl, .AlreadyHaveClothesText
+	call PrintText
+	call JoyWaitAorB
+	scf
+	ret
+
+.AlreadyHaveClothesText
+	text_jump AlreadyHaveClothesText
+	db "@"
 
 BTMartAskPurchaseQuantity:
 	ld a, MARTTEXT_HOW_MANY
@@ -1876,6 +1982,23 @@ ClothesMenuDataHeader_Buy:
 	dba PlaceMartClothesName
 	dba MartMenu_PrintBCDPrices
 	dba UpdateClothesIconAndDescriptionAndOwnership
+	
+DecoMenuDataHeader_Buy:
+	db $40 ; flags
+	db 01, 07 ; start coords
+	db 11, 19 ; end coords
+	dw .menudata2
+	db 1 ; default option
+; 0x15e20
+
+.menudata2 ; 0x15e20
+	db $e1 ; pointers
+	db 5, 8 ; rows, columns
+	db 1 ; horizontal spacing
+	dbw 0, wCurMart
+	dba PlaceMartDecoName
+	dba MartMenu_PrintBCDPrices
+	dba UpdateDecoIconAndDescriptionAndOwnership
 	
 PokemonMenuDataHeader_Buy:
 	db $40 ; flags

@@ -23,6 +23,7 @@ Marts: ; 160a9
 	dw RadiantMart
 	dw DuskMart
 	dw KomoreMart
+	dw LusterMallFurniture
 MartsEnd:
 
 
@@ -183,6 +184,13 @@ LusterMallElectronicsTM:
 	dbw TM_SOLAR_BEAM, 		12000
 	dbw TM_HYPER_BEAM, 		14000
 	dbw TM_GIGA_IMPACT,		14000
+	db -1
+	
+LusterMallFurniture:
+	db 3 ; # items
+	dbw FEATHERY_BED_BUY, 	5000
+	dbw YELLOW_CARPET_BUY, 	5000
+	dbw MAGNAPLANT_BUY, 	5000
 	db -1
 	
 LusterMallCoffee:

@@ -417,10 +417,11 @@ ENDM
 	connection south, Route23, ROUTE_23, -5
 	connection west, DuskTurnpike, DUSK_TURNPIKE, 0
 	
-	map_attributes Route23, ROUTE_23, $c6, NORTH | SOUTH | WEST
+	map_attributes Route23, ROUTE_23, $c6, NORTH | SOUTH | WEST | EAST
 	connection north, Crossroads, CROSSROADS, 5
 	connection south, KomoreVillage, KOMORE_VILLAGE, -1
 	connection west, Route24North, ROUTE_24_NORTH, 6
+	connection east, Route25, ROUTE_25, 10
 	
 	map_attributes Route24North, ROUTE_24_NORTH, $c6, SOUTH | EAST
 	connection south, Route24South, ROUTE_24_SOUTH, 0
@@ -433,6 +434,13 @@ ENDM
 	map_attributes KomoreVillage, KOMORE_VILLAGE, $c6, NORTH | WEST
 	connection north, Route23, ROUTE_23, 1
 	connection west, Route24South, ROUTE_24_SOUTH, -4
+	
+	map_attributes Route25, ROUTE_25, $c6, SOUTH | WEST
+	connection south, Route26, ROUTE_26, 18
+	connection west, Route23, ROUTE_23, -10
+	
+	map_attributes Route26, ROUTE_26, $30, NORTH
+	connection north, Route25, ROUTE_25, -18
 	
 	map_attributes Brightburg, BRIGHTBURG, $fb, 0
 	

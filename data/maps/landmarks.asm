@@ -68,6 +68,8 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, Route23Name
 	landmark   0,   0, KomoreVillageName
 	landmark   0,   0, Route24Name
+	landmark   0,   0, Route25Name
+	landmark   0,   0, Route26Name
 	landmark   0,   0, BrightburgName
 	
 	landmark  20, 124, BrilloTownName
@@ -137,6 +139,8 @@ CrossroadsName: 	   db "CROSSROADS@"
 Route23Name:		   db "ROUTE 23@"
 KomoreVillageName:	   db "KOMORE¯VILLAGE@"
 Route24Name:		   db "ROUTE 24@"
+Route25Name:		   db "ROUTE 25@"
+Route26Name:		   db "ROUTE 26@"
 BrightburgName: 	   db "BRIGHTBURG@"
 
 LusterStationName:	   db "LUSTER¯CITY@"

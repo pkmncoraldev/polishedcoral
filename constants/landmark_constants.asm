@@ -72,6 +72,8 @@ SOUTH_ONWA_LANDMARK EQU const_value
 	const ROUTE_23
 	const KOMORE_VILLAGE
 	const ROUTE_24
+	const ROUTE_25
+	const ROUTE_26
 	const BRIGHTBURG
 	
 	const BRILLO_TOWN		 ; 31

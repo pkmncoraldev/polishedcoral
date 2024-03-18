@@ -397,7 +397,7 @@ MAP_NONE   EQU 0
 	
 	map_const ROUTE_23,									  21, 27 ; 1
 	map_const ROUTE_23_WINDY,							   1,  1 ; 2
-	map_const ROUTE_24_NORTH,							  20, 17 ; 3
+	map_const ROUTE_24_NORTH,							  21, 17 ; 3
 	map_const ROUTE_24_NORTH_WINDY,						   1,  1 ; 4
 	map_const ROUTE_24_SOUTH,							  20, 12 ; 5
 	map_const ROUTE_24_SOUTH_WINDY,						   1,  1 ; 6
@@ -412,6 +412,8 @@ MAP_NONE   EQU 0
 	map_const KOMORE_POKECENTER,                      	   6,  4 ; 15
 	map_const KOMORE_MART,                             	   6,  4 ; 16
 	map_const FIGHTING_DOJO,                           	   4,  5 ; 17
+	map_const ROUTE_25,									  23, 10 ; 18
+	map_const ROUTE_26,									  24, 19 ; 19
 	
 	newgroup													 ; 23
 	

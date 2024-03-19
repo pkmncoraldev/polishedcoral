@@ -647,7 +647,14 @@ LoadSpecialMapPalette: ; 494ac
 	
 .park
 	ld hl, OutsideRanchPalette
-	call LoadSevenTimeOfDayBGPalettes
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld de, wUnknBGPals + 2 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
 	ld hl, OutsideSkateparkPalette
 	ld a, [wTimeOfDayPal]
 	and 3

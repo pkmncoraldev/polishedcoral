@@ -150,10 +150,10 @@
 	tilecoll SKATE, WALL, SKATE, WALL ; 95
 	tilecoll UP_WALL, UP_WALL, SKATE, SKATE ; 96
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 97
-	tilecoll WALL, GRIND, WALL, GRIND ; 98
-	tilecoll WALL, GRIND, WALL, GRIND ; 99
-	tilecoll GRIND, WALL, GRIND, WALL ; 9a
-	tilecoll GRIND, WALL, GRIND, WALL ; 9b
+	tilecoll NO_OLLIE, GRIND, NO_OLLIE, GRIND ; 98
+	tilecoll NO_OLLIE, GRIND, NO_OLLIE, GRIND ; 99
+	tilecoll GRIND, NO_OLLIE, GRIND, NO_OLLIE ; 9a
+	tilecoll GRIND, NO_OLLIE, GRIND, NO_OLLIE ; 9b
 	tilecoll SKATE, GRIND, SKATE, GRIND ; 9c
 	tilecoll SKATE, GRIND, SKATE, GRIND ; 9d
 	tilecoll GRIND, SKATE, GRIND, SKATE ; 9e

@@ -59,7 +59,7 @@ MAP_NONE   EQU 0
 	newgroup                                                     ;  2
 
 	map_const SUNSET_BAY,                                 22, 25 ;  1
-	map_const SUNSET_CAPE,                                13, 23 ;  2
+	map_const SUNSET_CAPE,                                12, 23 ;  2
 	map_const SUNSET_POKECENTER,                    	   6,  4 ;  3
 	map_const SUNSET_LIGHTHOUSE,                           5,  5 ;  4
 	map_const SUNSET_WATER_GRASS_HOUSE,                    4,  4 ;  5

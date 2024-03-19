@@ -102,7 +102,13 @@ OnwaIntlAirportMapSignThing::
 OnwaIntlAirportNPC1:
 	faceplayer
 	opentext
+	checkevent EVENT_AIRPORT_POKE_BALL_1
+	iftrue .text2
 	writetext OnwaIntlAirportNPC1Text
+	jump .finish
+.text2
+	writetext OnwaIntlAirportNPC1Text2
+.finish
 	waitbutton
 	closetext
 	spriteface ONWA_INTL_AIRPORT_NPC1, UP
@@ -120,7 +126,16 @@ OnwaIntlAirportNPC2:
 OnwaIntlAirportNPC3:
 	faceplayer
 	opentext
+	checktime 1<<DUSK
+	iftrue .dusk
+	checktime 1<<NITE
+	iffalse .notnite
+.dusk
+	writetext OnwaIntlAirportNPC3TextNite
+	jump .finish
+.notnite
 	writetext OnwaIntlAirportNPC3Text
+.finish
 	waitbutton
 	closetext
 	spriteface ONWA_INTL_AIRPORT_NPC3, UP
@@ -256,6 +271,16 @@ OnwaIntlAirportNPC1Text:
 	cont "kicked me out!"
 	done
 	
+OnwaIntlAirportNPC1Text2:
+	text "Wow!"
+	
+	para "You actually snuck"
+	line "back there and"
+	cont "got that TM."
+	
+	para "Awesome…"
+	done
+	
 OnwaIntlAirportNPC2Text:
 	text "What is the hold"
 	line "up?"
@@ -266,6 +291,11 @@ OnwaIntlAirportNPC2Text:
 OnwaIntlAirportNPC3Text:
 	text "I'm going to be"
 	line "here all day…"
+	done
+	
+OnwaIntlAirportNPC3TextNite:
+	text "I'm going to be"
+	line "here all night…"
 	done
 	
 OnwaIntlAirportNPC4Text:

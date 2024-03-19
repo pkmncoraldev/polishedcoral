@@ -573,12 +573,13 @@ LakeBoat:
 TrainerLake:
 	generictrainer HIKER, DARRYL, EVENT_BEAT_LAKE_TRAINER, .SeenText, .BeatenText
 
-	text "Guess it needs"
-	line "more training…"
+	text "You should make"
+	line "like a tree and"
+	cont "get out of here!"
 	done
 
 .SeenText:
-	text "I found a weird"
+	text "I saw this weird"
 	line "tree earlier."
 	
 	para "Turns out it was"
@@ -586,7 +587,7 @@ TrainerLake:
 	done
 
 .BeatenText:
-	text "My new #MON!"
+	text "Ahh! My #MON!"
 	done
 
 LakeSudowoodo:

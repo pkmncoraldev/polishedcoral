@@ -306,7 +306,7 @@ TrainerRoute6_8:
 	para "Not me, though!"
 	
 	para "I want to battle,"
-	line "and I chose to"
+	line "and I choose to"
 	cont "make that everyone"
 	cont "else's problem!"
 	done

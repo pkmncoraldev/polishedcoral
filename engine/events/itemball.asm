@@ -190,8 +190,8 @@ TapeNameText2:
 
 PutAwayTapeText:
 	text "<PLAYER> put the"
-	line "CASSETTE in"
-	cont "the TAPE PLAYER."
+	line "CASSETTE in the"
+	cont "TAPE PLAYER."
 	done
 	
 NoTapePlayerText:

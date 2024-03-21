@@ -9,9 +9,11 @@ StarglowGym_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 2 ; bg events
+	signpost 14,  3, SIGNPOST_READ, StarglowGymShip
+	bg_event  4, 11, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_GYM_VICTORY
 
-	db 10 ; object events
+	db 11 ; object events
 	person_event SPRITE_RODNEY, 1, 4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowGymRodneyScript, -1
 	person_event SPRITE_GYM_GUY, 20, 6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, StarglowGymGuyScript, -1
 	person_event SPRITE_FISHER, 13, 4, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerStarglowGym_1, EVENT_BEAT_RODNEY
@@ -22,6 +24,7 @@ StarglowGym_MapScriptHeader:
 	person_event SPRITE_FISHER, 7, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowGymTrainer2Rematch, EVENT_HAVENT_BEAT_RODNEY
 	person_event SPRITE_FISHER, 11, 7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowGymTrainer3Rematch, EVENT_HAVENT_BEAT_RODNEY
 	person_event SPRITE_FISHER, 6, 5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowGymTrainer4Rematch, EVENT_HAVENT_BEAT_RODNEY
+	hiddentape_event 4, 11, MUSIC_GYM_VICTORY, 2, EVENT_MUSIC_GYM_VICTORY
 
 StarglowGymRodneyScript:
 	faceplayer
@@ -146,6 +149,19 @@ StarglowGymGuyScript:
 	waitbutton
 	closetext
 	end
+	
+StarglowGymShip:
+	jumptext StarglowGymShipText
+	
+StarglowGymShipText:
+	text "A model cruise"
+	line "liner."
+	
+	para "A name is written"
+	line "on the side:"
+	
+	para "“S.S. ANNE”"
+	done
 	
 TrainerStarglowGym_1:
 	generictrainer FISHER, GERALD_2, EVENT_BEAT_STARGLOW_GYM_TRAINER_1, .SeenText, .BeatenText

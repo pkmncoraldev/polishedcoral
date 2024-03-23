@@ -97,7 +97,7 @@ TrainerFlickerPass2F_2:
 	done
 
 .BeatenText:
-	text "Message recieved."
+	text "Message received."
 	done
 	
 TrainerFlickerPass2F_3:

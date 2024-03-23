@@ -141,7 +141,7 @@ TrainerConnectingCavern_3:
 	done
 
 .BeatenText:
-	text "Message recieved…"
+	text "Message received…"
 	done
 	
 TrainerConnectingCavern_4:

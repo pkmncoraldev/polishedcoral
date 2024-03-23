@@ -1437,29 +1437,58 @@ UnknownText_TradeAfterText6::
 	
 	
 UnknownText_TradeIntroText7::
-	text "GIRAFARIG for"
-	line "MIENFOO?"
+	text "I found this cute"
+	line "GIRAFARIG doll on "
+	cont "the ground over"
+	cont "by the abandoned"
+	cont "community center."
+	
+	para "I had never really"
+	line "thought much about"
+	cont "GIRAFARIG before,"
+	
+	para "but now I'm"
+	line "obssessed!"
+	
+	para "I wish I had a"
+	line "real GIRAFARIG!"
+	
+	para "Would you trade"
+	line "for my MEINFOO?"
 	done
 	
 UnknownText_TradeCancelText7::
-	text "NO"
+	text "I guess I'll just"
+	line "have to live with"
+	cont "my doll…"
 	done
 	
 UnknownText_TradeWrongText7::
-	text "WRONG"
+	text "That's not"
+	line "GIRAFARIG!"
+	
+	para "I guess I'll just"
+	line "have to live with"
+	cont "my doll…"
 	done
 	
 UnknownText_TradeCompleteText7::
-	text "DONE"
+	text "Finally!"
+	line "A GIRAFARIG!"
+	
+	para "I hope little"
+	line "KURIRIN helps"
+	cont "you on your way!"
 	done
 	
 UnknownText_TradeAfterText7::
-	text "PLACEHOLDER"
+	text "How is little"
+	line "KURIRIN doing?"
 	
-	para "@"
+	para "I just love my"
+	line "@"
 	text_from_ram wTradeGirafarigName
-	text "'s so"
-	line "quiet!"
+	text "!"
 	done
 	
 	

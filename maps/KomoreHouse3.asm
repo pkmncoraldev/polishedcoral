@@ -16,21 +16,24 @@ KomoreHouse3_MapScriptHeader:
 	person_event SPRITE_MATRON,  4, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, KomoreHouse3NPC2, -1
 	person_event SPRITE_TWIN,  6, 5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, KomoreHouse3NPC3, -1
 	object_event  3,  1, SPRITE_MON_ICON, SPRITEMOVEDATA_STANDING_DOWN, 0, JIGGLYPUFF, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, KomoreHouse3Jiggly, -1
-	object_event  6,  1, SPRITE_MON_ICON, SPRITEMOVEDATA_STANDING_DOWN, 0, GIRAFARIG, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, KomoreHouse3Giraf, -1
+	object_event  6,  1, SPRITE_MON_ICON, SPRITEMOVEDATA_STANDING_DOWN, 0, SWABLU, -1, -1, PAL_NPC_TEAL, PERSONTYPE_SCRIPT, 0, KomoreHouse3Swablu, -1
 	object_event  0,  3, SPRITE_MON_ICON, SPRITEMOVEDATA_STANDING_DOWN, 0, MARILL, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, KomoreHouse3Marill, -1
 	object_event  7,  5, SPRITE_MON_ICON, SPRITEMOVEDATA_STANDING_DOWN, 0, MAREEP, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, KomoreHouse3Mareep, -1
 	
 KomoreHouse3Jiggly:
 	jumptext KomoreHouse3JigglyText
 	
-KomoreHouse3Giraf:
-	jumptext KomoreHouse3GirafText
+KomoreHouse3Swablu:
+	jumptext KomoreHouse3SwabluText
 	
 KomoreHouse3Marill:
 	jumptext KomoreHouse3MarillText
 	
 KomoreHouse3Mareep:
 	jumptext KomoreHouse3MareepText
+	
+KomoreHouse3Giraf:
+	jumptext KomoreHouse3GirafText
 	
 KomoreHouse3NPC1:
 	jumptextfaceplayer KomoreHouse3NPC1Text
@@ -85,9 +88,9 @@ KomoreHouse3JigglyText:
 	line "JIGGLYPUFF doll."
 	done
 	
-KomoreHouse3GirafText:
+KomoreHouse3SwabluText:
 	text "A fluffy"
-	line "GIRAFARIG doll."
+	line "SWABLU doll."
 	done
 	
 KomoreHouse3MarillText:
@@ -98,4 +101,9 @@ KomoreHouse3MarillText:
 KomoreHouse3MareepText:
 	text "A fluffy"
 	line "MAREEP doll."
+	done
+	
+KomoreHouse3GirafText:
+	text "A fluffy"
+	line "GIRAFARIG doll."
 	done

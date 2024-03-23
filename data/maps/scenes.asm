@@ -129,4 +129,5 @@ MapTriggers::
 	scene_var BRIGHT_HOUSE_2,						  wBrightburgTrigger
 	scene_var BRIGHT_HOUSE_3,						  wBrightburgTrigger
 	scene_var BRIGHTBURG_GATE,						  wBrightburgTrigger
+	scene_var KOMORE_HOUSE_1,						  wAlways0Trigger
 	db -1

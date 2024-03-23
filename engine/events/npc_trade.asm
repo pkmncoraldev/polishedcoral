@@ -124,6 +124,16 @@ NPCTrade:: ; fcba8
 .cont
 	call RestartMapMusic
 
+	ld a, [wMapGroup]
+	cp GROUP_KOMORE_VILLAGE
+	jr nz, .cont2
+	ld a, [wMapNumber]
+	cp MAP_KOMORE_HOUSE_1
+	jr nz, .cont2
+	ld a, 1
+	ld [wAlways0Trigger], a
+	ret
+.cont2
 	ld a, TRADE_COMPLETE
 
 .done

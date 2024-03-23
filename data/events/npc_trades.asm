@@ -31,7 +31,7 @@ NPCTrades:
 	dw 43876
 	db "CARRIE@@", $00
 ; TRADE_WITH_MARTY_FOR_MIENFOO in Komore Village
-	db 6, GIRAFARIG,  MIENFOO,     "KURIRI@@@@@"
+	db 6, GIRAFARIG,  MIENFOO,     "KURIRIN@@@@"
 	db $DD, $DD, $DD, ABILITY_2 | LONELY, MALE, POKE_BALL,    BLACK_BELT
 	dw 50082
 	db "MARTY@@@", $00

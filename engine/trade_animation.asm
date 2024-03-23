@@ -154,6 +154,7 @@ RunTradeAnimSequence: ; 28fa1
 	call ClearSprites
 	call ClearTileMap
 	call DisableLCD
+	call Load1bppFont
 	call LoadFontsBattleExtra
 	farcall ClearSpriteAnims
 	ld a, $1

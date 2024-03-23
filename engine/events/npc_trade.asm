@@ -132,7 +132,6 @@ NPCTrade:: ; fcba8
 	jr nz, .cont2
 	ld a, 1
 	ld [wAlways0Trigger], a
-	ret
 .cont2
 	ld a, TRADE_COMPLETE
 

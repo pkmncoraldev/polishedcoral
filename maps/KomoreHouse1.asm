@@ -14,7 +14,7 @@ KomoreHouse1_MapScriptHeader:
 	db 0 ; bg events
 
 	db 2 ; object events
-	object_event  5,  3, -1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_COMMAND, trade, TRADE_WITH_MARTY_FOR_MIENFOO, -1
+	object_event  5,  3, SPRITE_POKEMANIAC, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_COMMAND, trade, TRADE_WITH_MARTY_FOR_MIENFOO, -1
 	object_event  6,  3, SPRITE_MON_ICON, SPRITEMOVEDATA_STANDING_DOWN, 0, GIRAFARIG, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, KomoreHouse3Giraf, -1
 	
 	const_def 1 ; object constants
@@ -26,8 +26,9 @@ KomoreHouse1Trigger0:
 	
 KomoreHouse1Trigger1:
 	dotrigger $0
+	pause 15
 	opentext
-	writetext TradeCompleteText7
+	writetext KomoreTradeCompleteText
 	waitbutton
 	disappear KOMORE_HOUSE_1_GIRA_DOLL
 	writetext GiveGirafarigDollText
@@ -38,13 +39,8 @@ KomoreHouse1Trigger1:
 	closetext
 	end
 	
-TradeCompleteText7::
-	text "Finally!"
-	line "A GIRAFARIG!"
-	
-	para "I hope little"
-	line "KURIRIN helps"
-	cont "you on your way!"
+KomoreTradeCompleteText:
+	text "Oh!"
 	
 	para "Why don't you take"
 	line "this, too."

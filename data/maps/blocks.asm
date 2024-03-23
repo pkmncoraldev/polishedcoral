@@ -431,9 +431,6 @@ LusterSewersValveRoom_BlockData:
 LusterSewersThroneRoom_BlockData:
 	INCBIN "maps/LusterSewersThroneRoom.ablk.lz"
 	
-LusterSewersMukRoom_BlockData:
-	INCBIN "maps/LusterSewersMukRoom.ablk.lz"
-	
 SprucesLab_BlockData:
 	INCBIN "maps/SprucesLab.ablk.lz"
 	
@@ -533,6 +530,9 @@ MtOnwaB3F_BlockData:
 	
 	
 SECTION "Map Blockdata 2", ROMX
+	
+LusterSewersMukRoom_BlockData:
+	INCBIN "maps/LusterSewersMukRoom.ablk.lz"
 	
 LusterMallFurniture_BlockData:
 	INCBIN "maps/LusterMallFurniture.ablk.lz"

@@ -22,11 +22,12 @@ FlickerTrainGraveyard_MapScriptHeader:
 	signpost 15, 20, SIGNPOST_UP, FlickerTrainDoor
 	signpost 15, 17, SIGNPOST_UP, FlickerTrainDoor
 
-	db 4 ; object events
+	db 5 ; object events
 	person_event SPRITE_DELINQUENT_F, 26,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerTrainGraveyardGirl1, -1
 	person_event SPRITE_DELINQUENT_F, 28,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerTrainGraveyardGirl2, -1
 	person_event SPRITE_DELINQUENT_F, 31,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerTrainGraveyardGirl3, -1
 	tmhmball_event  7, 30, TM_WILL_O_WISP, EVENT_FLICKER_STATION_WILL_O_WISP
+	tapeball_event 16, 14, MUSIC_FLICKER_STATION, 1, EVENT_MUSIC_FLICKER_STATION
 
 
 	const_def 1 ; object constants

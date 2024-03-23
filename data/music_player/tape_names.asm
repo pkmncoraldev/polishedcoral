@@ -42,7 +42,7 @@ TapeNames::
 	db "“SPOTTED!<LNBRK><LNBRK>WEIRDO”@"
 	db "“ROUTE 10”@"
 	db "“TWINKLE TOWN”@"
-	db "“ICE TEMPLE”@"
+	db "“LUSTER SEWERS”@"
 	db "“SLOW TRAIN”@"
 	db "“LUSTER CITY”@"
 	db "“SPOTTED!<LNBRK><LNBRK>HARDCORE”@"

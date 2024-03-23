@@ -60,7 +60,7 @@ ShimmerUnderBoardwalk_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 8 ; object events
+	db 9 ; object events
 	object_event  7, 17, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkLily, EVENT_SAVED_LILY
 	object_event  6, 17, SPRITE_DELINQUENT_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk1, EVENT_UNDER_BOARDWALK_BATTLE_2
 	object_event  8, 17, SPRITE_DELINQUENT_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk2, EVENT_UNDER_BOARDWALK_BATTLE_2
@@ -69,6 +69,7 @@ ShimmerUnderBoardwalk_MapScriptHeader:
 	object_event  5, 21, SPRITE_DELINQUENT_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk1, EVENT_LOST_GIRLS_QUEST_ACTIVE
 	object_event  6, 21, SPRITE_DELINQUENT_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk2, EVENT_LOST_GIRLS_QUEST_ACTIVE
 	object_event  7, 21, SPRITE_DELINQUENT_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerUnderBoardwalkPunk3, EVENT_LOST_GIRLS_QUEST_ACTIVE
+	tapeball_event  6,  6, MUSIC_SHIMMER_CITY, 1, EVENT_MUSIC_SHIMMER_CITY
 	
 	
 	const_def 1 ; object constants

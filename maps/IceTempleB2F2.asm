@@ -15,8 +15,9 @@ IceTempleB2F2_MapScriptHeader:
 	db 1 ; bg events
 	signpost  6, 13, SIGNPOST_READ, IceTempleCampfire7
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event 13,  6, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, IceTempleCampfire7, EVENT_ICE_TEMPLE_CAMPFIRE_7_UNLIT
+	itemball_event  8,  2, MUSIC_TWINKLE_TOWN, 1, EVENT_MUSIC_TWINKLE_TOWN
 
 	
 	const_def 1 ; object constants

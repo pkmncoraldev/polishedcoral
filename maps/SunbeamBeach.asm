@@ -7,10 +7,11 @@ SunbeamBeach_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
 	bg_event  6, 20, SIGNPOST_ITEM + WATER_STONE, EVENT_SUNBEAM_BEACH_HIDDEN_WATER_STONE
+	bg_event 10, 29, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_SUNBEAM_ISLAND
 
-	db 10 ; object events
+	db 11 ; object events
 	person_event SPRITE_CANDLE, 31, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, 19, 4, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbatherNite, -1
 	person_event SPRITE_SUNBATHER, 31, 10, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbather, -1
 	person_event SPRITE_TRUNKS, 18, 12, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, 4, 19, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamBeachTrunks1, -1
@@ -21,6 +22,7 @@ SunbeamBeach_MapScriptHeader:
 	person_event SPRITE_UMBRELLA, 30, 11, SPRITEMOVEDATA_UMBRELLA_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_UMBRELLA, 30, 12, SPRITEMOVEDATA_UMBRELLA_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_SUPER_NERD, 47, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, 0, -1
+	hiddentape_event 10, 29, MUSIC_SUNBEAM_ISLAND, 1, EVENT_MUSIC_SUNBEAM_ISLAND
 
 SunbeamIslandSunbather:
 	jumptext SunbeamIslandSunbatherText

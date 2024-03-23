@@ -9,10 +9,11 @@ BrilloPoliceStation_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
 	signpost  3, 11, SIGNPOST_READ, BrilloPoliceStationPrisoner1
+	bg_event  1,  8, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_BRILLO_TOWN
 
-	db 11 ; object events
+	db 12 ; object events
 	person_event SPRITE_SITTING_POKEFANF,  7,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationLady, -1
 	object_event  1,  4, SPRITE_SPA_WORKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCaptain, -1
 	object_event  2,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCop1, -1
@@ -24,6 +25,7 @@ BrilloPoliceStation_MapScriptHeader:
 	object_event  8,  7, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner3, -1
 	object_event 14,  7, SPRITE_BATTLE_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner4, -1
 	person_event SPRITE_SLOWPOKETAIL,  5,  0, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
+	hiddentape_event 1, 8, MUSIC_BRILLO_TOWN, 1, EVENT_MUSIC_BRILLO_TOWN
 
 	const_def 1 ; object constants
 	const BRILLO_POLICE_STATION_LADY

@@ -31,7 +31,7 @@ EventideVillage_MapScriptHeader:
 	signpost 17, 14, SIGNPOST_READ, EventideVillagePokeCenterSign
 	signpost 25, 24, SIGNPOST_READ, EventideVillageMartSign
 
-	db 16 ; object events
+	db 17 ; object events
 	person_event SPRITE_COWGIRL, 34, 20, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EventideVillageMilkGirl, -1
 	person_event SPRITE_ROCKER, 20, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageNPC1, -1
 	person_event SPRITE_CUTE_GIRL, 15, 30, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideVillageNPC2, -1
@@ -48,6 +48,7 @@ EventideVillage_MapScriptHeader:
 	object_event 13, 31, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TAUROS, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageTauros, -1
 	object_event 13, 41, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TAUROS, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageTauros, -1
 	itemball_event  8, 18, PROTEIN, 1, EVENT_EVENTIDE_VILLAGE_POKEBALL
+	tapeball_event 10, 34, MUSIC_EVENTIDE_VILLAGE, 1, EVENT_MUSIC_EVENTIDE_VILLAGE
 
 	
 	const_def 1 ; object constants

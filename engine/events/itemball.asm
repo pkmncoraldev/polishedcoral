@@ -93,7 +93,29 @@ FindTMHMInBallScript::
 	ld [wScriptVar], a
 	ret
 	
+CheckBarFacingJukebox:
+	ld a, [wMapGroup]
+	cp GROUP_BAR_INSIDE
+	jr nz, .nope
+	ld a, [wMapNumber]
+	cp MAP_BAR_INSIDE
+	jr nz, .nope
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+.nope
+	xor a
+	ld [wScriptVar], a
+	ret
+	
 FindTapeInBallScript::
+	callasm CheckBarFacingJukebox
+	iffalse .cont
+	checkcode VAR_FACING
+	ifnotequal UP, .cont
+	farscall BarInsideJukeboxScript
+	end
+.cont
 	callasm .ReceiveTape
 	iffalse .No_Player
 	disappear LAST_TALKED

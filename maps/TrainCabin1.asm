@@ -8,7 +8,7 @@ TrainCabin1_MapScriptHeader:
 	callback MAPCALLBACK_TILES, TrainCabin1Callback
 
 	db 4 ; warp events
-	warp_event 1,  4, EAST_TRAIN_CABOOSE, 255
+	warp_event 1,  4, EAST_TRAIN_CABOOSE, 1
 	warp_event 14,  4, TRAIN_CABIN_2, 1
 	warp_event  7,  2, FLICKER_TRAIN_CUTSCENE, 2
 	warp_event  6,  2, LUSTER_TRAIN_CUTSCENE, 1
@@ -28,7 +28,7 @@ TrainCabin1_MapScriptHeader:
 	signpost  6, 11, SIGNPOST_LEFT, TrainCabin1OtherSeat
 	signpost  6, 13, SIGNPOST_RIGHT, TrainCabin1OtherSeat
 
-	db 12 ; object events
+	db 11 ; object events
 	person_event SPRITE_SITTING_LADY,  2,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TrainCabin1Healer, -1
 	person_event SPRITE_SITTING_PONYTAIL,  6,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, TrainCabin1NPC1, -1
 	person_event SPRITE_SITTING_GENTLEMAN,  2,  2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TrainCabin1NPC2, -1
@@ -39,9 +39,8 @@ TrainCabin1_MapScriptHeader:
 	person_event SPRITE_DISGUISEMAN,  2,  3, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TrainCabin1Snare1, EVENT_BEAT_TRAIN_CABIN_1_SNARE_1
 	person_event SPRITE_SNARE,  2,  9, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainCabin1Snare2, EVENT_ALWAYS_SET
 	person_event SPRITE_SNARE,  6, 12, SPRITEMOVEDATA_STANDING_UP, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainCabin1Snare3, EVENT_ALWAYS_SET
-	person_event SPRITE_OFFICER,  4, 2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TrainCabin1OfficerCaboose, EVENT_TRAIN_GOING_WEST
-	person_event SPRITE_OFFICER,  4, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TrainCabin1OfficerCaboose, EVENT_TRAIN_GOING_EAST
-
+	person_event SPRITE_OFFICER,  4, 2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TrainCabin2Officer, EVENT_TRAIN_GOING_EAST
+	
 
 	const_def 1 ; object constants
 	const TRAIN_CABIN_1_HEALER
@@ -55,7 +54,6 @@ TrainCabin1_MapScriptHeader:
 	const TRAIN_CABIN_1_SNARE2
 	const TRAIN_CABIN_1_SNARE3
 	const TRAIN_CABIN_1_OFFICER_2
-	const TRAIN_CABIN_1_OFFICER_3
 	
 TrainCabin1Callback:
 	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
@@ -65,7 +63,6 @@ TrainCabin1Callback:
 	checkevent EVENT_SAVED_TRAIN
 	iftrue .skip
 	moveperson TRAIN_CABIN_1_OFFICER_2, -2,-2
-	moveperson TRAIN_CABIN_1_OFFICER_3, -2,-2
 .skip
 	checkevent EVENT_TRAIN_GOING_WEST
 	iffalse .end
@@ -75,10 +72,8 @@ TrainCabin1Callback:
 	changeblock $8, $0, $21
 	changeblock $a, $0, $22
 	changeblock $c, $0, $23
-	warpmod 2, TRAIN_CABIN_2
 	return
 .end
-	warpmod 1, EAST_TRAIN_CABOOSE
 	return
 	
 TrainCabin1Trigger0:

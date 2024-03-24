@@ -341,6 +341,7 @@ INCLUDE "maps/TrainCabin1.asm"
 INCLUDE "maps/TrainCabin2.asm"
 INCLUDE "maps/EastTrainCab.asm"
 INCLUDE "maps/EastTrainCaboose.asm"
+INCLUDE "maps/WestTrainCaboose.asm"
 
 SECTION "Eventide Forest Scripts", ROMX
 

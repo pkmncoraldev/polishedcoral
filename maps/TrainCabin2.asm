@@ -23,7 +23,6 @@ TrainCabin2_MapScriptHeader:
 	person_event SPRITE_OFFICER,  4, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TrainCabin2Officer, EVENT_TRAIN_DOWN_OFFICER_GONE
 	person_event SPRITE_SNARE,  2,  3, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainCabin2Snare1, EVENT_ALWAYS_SET
 	person_event SPRITE_SNARE_GIRL,  6,  9, SPRITEMOVEDATA_STANDING_UP, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainCabin2Snare2, EVENT_ALWAYS_SET
-	person_event SPRITE_OFFICER,  4, 2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TrainCabin2Officer, EVENT_TRAIN_GOING_EAST
 	person_event SPRITE_OFFICER,  4, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TrainCabin2Officer, EVENT_TRAIN_GOING_WEST
 
 	const_def 1 ; object constants
@@ -38,13 +37,11 @@ TrainCabin2_MapScriptHeader:
 	const TRAIN_CABIN_2_SNARE_1
 	const TRAIN_CABIN_2_SNARE_2
 	const TRAIN_CABIN_2_OFFICER_2
-	const TRAIN_CABIN_2_OFFICER_3
 	
 TrainCabin2Callback:
 	checkevent EVENT_SAVED_TRAIN
 	iftrue .skip
 	moveperson TRAIN_CABIN_2_OFFICER_2, -2,-2
-	moveperson TRAIN_CABIN_2_OFFICER_3, -2,-2
 .skip
 	checkevent EVENT_TRAIN_GOING_WEST
 	iffalse .end
@@ -54,7 +51,7 @@ TrainCabin2Callback:
 	changeblock $8, $0, $21
 	changeblock $a, $0, $22
 	changeblock $c, $0, $23
-	warpmod 1, TRAIN_CABIN_1
+	warpmod 1, WEST_TRAIN_CABOOSE
 	return
 .end
 	warpmod 1, EAST_TRAIN_CAB

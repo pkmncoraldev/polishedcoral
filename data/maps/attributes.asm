@@ -590,6 +590,7 @@ ENDM
 	map_attributes TrainCabin2, TRAIN_CABIN_2, 0, 0
 	map_attributes EastTrainCab, EAST_TRAIN_CAB, 0, 0
 	map_attributes EastTrainCaboose, EAST_TRAIN_CABOOSE, 0, 0
+	map_attributes WestTrainCaboose, WEST_TRAIN_CABOOSE, 0, 0
 	map_attributes LusterApartment1_1F, LUSTER_APARTMENT_1_1F, $0, 0
 	map_attributes LusterApartment1_2F, LUSTER_APARTMENT_1_2F, $0, 0
 	map_attributes LusterApartment2_1F, LUSTER_APARTMENT_2_1F, $0, 0

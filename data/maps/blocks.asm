@@ -329,6 +329,9 @@ EastTrainCab_BlockData:
 EastTrainCaboose_BlockData:
 	INCBIN "maps/EastTrainCaboose.ablk.lz"
 	
+WestTrainCaboose_BlockData:
+	INCBIN "maps/WestTrainCaboose.ablk.lz"
+	
 LusterCityResidential_BlockData:
 	INCBIN "maps/LusterCityResidential.ablk.lz"
 	

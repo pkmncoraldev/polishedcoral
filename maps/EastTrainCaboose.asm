@@ -3,7 +3,8 @@ EastTrainCaboose_MapScriptHeader:
 	scene_script EastTrainCabooseTrigger0
 	scene_script EastTrainCabooseTrigger1
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, EastTrainCabooseCallback
 
 	db 1 ; warp events
 	warp_event 3,  2, TRAIN_CABIN_1, 1
@@ -12,13 +13,22 @@ EastTrainCaboose_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 3 ; object events
 	person_event SPRITE_DISGUISEMAN,  2,  3, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_TRAIN_CABIN_1_SNARE_OFFICER
 	person_event SPRITE_SNARE,  2,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_EAST_TRAIN_CABOOSE_SNARE_GRUNT
+	tapeball_event  1,  2, MUSIC_TRAIN, 1, EVENT_MUSIC_TRAIN
 
 	const_def 1 ; object constants
 	const EAST_TRAIN_CABOOSE_SNARE_OFFICER
 	const EAST_TRAIN_CABOOSE_SNARE_GRUNT
+	const EAST_TRAIN_CABOOSE_TAPE
+
+EastTrainCabooseCallback:
+	checkevent EVENT_SAVED_TRAIN
+	iftrue .end
+	moveperson EAST_TRAIN_CABOOSE_TAPE, -5,-5
+.end
+	return
 
 EastTrainCabooseTrigger0:
 	setevent EVENT_BEAT_TRAIN_CABIN_1_SNARE_1

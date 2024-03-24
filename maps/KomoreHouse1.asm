@@ -31,6 +31,7 @@ KomoreHouse1Trigger1:
 	writetext KomoreTradeCompleteText
 	waitbutton
 	disappear KOMORE_HOUSE_1_GIRA_DOLL
+	setevent EVENT_DECO_GIRAFARIG_DOLL
 	writetext GiveGirafarigDollText
 	playsound SFX_ITEM
 	pause 60

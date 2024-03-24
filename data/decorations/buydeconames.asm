@@ -44,7 +44,7 @@ DecoNames::
 	db "MARACTUS DOLL@"
 	db "DITTO DOLL@"
 	db "VOLTORB DOLL@"
-	db "STANTLER DOLL@"
+	db "GIRAFARIG DOLL@"
 	db "COTTONEE DOLL@"
 	db "GEODUDE DOLL@"
 	db "PINECO DOLL@"

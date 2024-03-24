@@ -173,6 +173,9 @@ FindTapeInBallScript::
 	inc a
 	ld [wd265], a
 
+	xor a
+	ld [wNamedObjectTypeBuffer], a
+
 	ld de, EVENT_GOT_TAPE_PLAYER
 	farcall CheckEventFlag
 	ret z

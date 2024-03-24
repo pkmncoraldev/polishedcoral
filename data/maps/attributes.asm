@@ -153,10 +153,14 @@ ENDM
 	map_attributes Route5, ROUTE_5, $fb, NORTH
 	connection north, Route4, ROUTE_4, 3
 	
-	map_attributes Route6, ROUTE_6, $30, NORTH | SOUTH | WEST
+	map_attributes Route6, ROUTE_6, 53, NORTH | SOUTH | WEST
 	connection north, Route7, ROUTE_7, 0
-	connection south, SunbeamBeach, SUNBEAM_BEACH, 0
+	connection south, Route6South, ROUTE_6_SOUTH, 0
 	connection west, Route13, ROUTE_13, 3
+	
+	map_attributes Route6South, ROUTE_6_SOUTH, 53, NORTH | SOUTH
+	connection north, Route6, ROUTE_6, 0
+	connection south, SunbeamBeach, SUNBEAM_BEACH, 0
 	
 	map_attributes Route7, ROUTE_7, $30, SOUTH | WEST
 	connection south, Route6, ROUTE_6, 0
@@ -201,7 +205,7 @@ ENDM
 	connection west, SunbeamBeach, SUNBEAM_BEACH, 0
 	
 	map_attributes SunbeamBeach, SUNBEAM_BEACH, $35, NORTH | WEST | EAST
-	connection north, Route6, ROUTE_6, 0
+	connection north, Route6South, ROUTE_6_SOUTH, 0
 	connection west, Route15, ROUTE_15, 14
 	connection east, SunbeamIsland, SUNBEAM_ISLAND, 0
 	

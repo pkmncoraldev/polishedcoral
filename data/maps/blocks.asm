@@ -537,6 +537,9 @@ SECTION "Map Blockdata 2", ROMX
 LusterSewersMukRoom_BlockData:
 	INCBIN "maps/LusterSewersMukRoom.ablk.lz"
 	
+Route6South_BlockData:
+	INCBIN "maps/Route6South.ablk.lz"
+	
 LusterMallFurniture_BlockData:
 	INCBIN "maps/LusterMallFurniture.ablk.lz"
 	

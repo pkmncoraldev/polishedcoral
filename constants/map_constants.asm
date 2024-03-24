@@ -125,8 +125,8 @@ MAP_NONE   EQU 0
 
 	newgroup                                                     ;  6
 
-	map_const ROUTE_6,                                    37, 23 ;  1
-	map_const ROUTE_7,                                    19, 12 ;  2
+	map_const ROUTE_6,                                    37, 11 ;  1
+	map_const ROUTE_7,                                    20, 12 ;  2
 	map_const LAKE_ONWA,                                  33, 26 ;  3
 	map_const LAKE_ONWA_BOAT_HOUSE_RIGHT,                  4,  3 ;  4
 	map_const LAKE_ONWA_BOAT_HOUSE_LEFT,                   4,  3 ;  5
@@ -134,6 +134,7 @@ MAP_NONE   EQU 0
 	map_const LAKE_ONWA_ITEM_HOUSE,                 	   4,  4 ;  7
 	map_const LAKE_ONWA_POKECENTER,						   6,  4 ;  8
 	map_const LAKE_ONWA_MART,                              6,  4 ;  9
+	map_const ROUTE_6_SOUTH,                              37, 12 ;  10
 	
 	newgroup                                                     ;  7
 

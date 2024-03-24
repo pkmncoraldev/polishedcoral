@@ -124,6 +124,7 @@ INCLUDE "maps/Route3StarglowCavernTop.asm"
 INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route20.asm"
 INCLUDE "maps/Route13.asm"
+INCLUDE "maps/Route6South.asm"
 
 
 SECTION "Sunset Bay Scripts", ROMX

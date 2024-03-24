@@ -823,6 +823,8 @@ DiveSpotMapPals:
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_6
 	jr z, .yes
+	cp MAP_ROUTE_6_SOUTH
+	jr z, .yes
 	xor a
 	ret
 .route13

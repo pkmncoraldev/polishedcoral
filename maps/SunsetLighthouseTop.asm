@@ -81,6 +81,12 @@ SunsetLighthouseTopAmpharos:
 .full
 	writetext SunsetLighthouseTopAmpharosTextFull
 	waitbutton
+	setevent EVENT_DECO_MAREEP_DOLL
+	writetext GiveMareepDollText
+	playsound SFX_ITEM
+	pause 60
+	writetext PutAwayMareepDollText
+	waitbutton
 	closetext
 	setevent EVENT_SUNSET_LIGHTHOUSE_FED_AMPHAROS
 	end
@@ -167,6 +173,16 @@ SunsetLighthouseTopTVAsm:
 .end
 	ld [wScriptVar], a
 	ret
+	
+GiveMareepDollText:
+	text "<PLAYER> received"
+	line "MAREEP DOLL!"
+	done
+	
+PutAwayMareepDollText:
+	text "The DOLL was sent"
+	line "to <PLAYER>'s PC."
+	done
 	
 SunsetLighthouseTopStoveText:
 	text "It's a stove."

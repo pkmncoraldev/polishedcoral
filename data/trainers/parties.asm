@@ -1584,6 +1584,15 @@ FisherGroup:
 	db -1 ; end
 
 ; ================
+
+	; FISHER
+	db "MIKE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3334,6 +3343,24 @@ SwimmerMGroup:
 	db -1 ; end
 
 ; ================
+
+	; SWIMMERM
+	db "RICH@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SWIMMERM
+	db "DAVY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3406,6 +3433,15 @@ SwimmerFGroup:
 
 	; SWIMMERF
 	db "GISELE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SWIMMERF
+	db "SHANNON@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -4826,6 +4862,15 @@ TuberGroup:
 
 	; TUBER
 	db "BEBE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; TUBER
+	db "KERRI@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

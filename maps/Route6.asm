@@ -26,7 +26,7 @@ Route6_MapScriptHeader:
 	signpost  8,  6, SIGNPOST_ITEM + SUPER_REPEL, EVENT_ROUTE_6_HIDDEN_SUPER_REPEL
 	
 
-	db 15 ; object events
+	db 17 ; object events
 	person_event SPRITE_CUTE_GIRL, 13, 52, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route6Lass2, -1
 	object_event 51, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, RATICATE, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, Route6Raticate, -1
 	person_event SPRITE_CAMPER, 8, 43, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_2, -1
@@ -36,7 +36,9 @@ Route6_MapScriptHeader:
 	person_event SPRITE_GRANNY, 4, 31, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute6_5, -1
 	person_event SPRITE_LASS, 4, 9, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_6, -1
 	person_event SPRITE_GENTLEMAN, 6, 15, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_7, -1
-	person_event SPRITE_BIKINI_2, 12,  6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_8, -1
+	person_event SPRITE_BIKINI_2, 13,  6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_8, -1
+	person_event SPRITE_SWIMMER_GUY, 16, 21, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_9, -1
+	person_event SPRITE_FISHER, 17, 37, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRoute6_10, -1
 	person_event SPRITE_BATTLE_GIRL,  8, 62, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route6Lass3, -1
 	person_event SPRITE_FAT_GUY, 6, 23, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route6Fisher, -1
 	tmhmball_event  19, 2, TM_CHARM, EVENT_ROUTE_6_POKE_BALL_CHARM
@@ -54,6 +56,8 @@ Route6_MapScriptHeader:
 	const ROUTE6TRAINER6
 	const ROUTE6TRAINER7
 	const ROUTE6TRAINER8
+	const ROUTE6TRAINER9
+	const ROUTE6TRAINER10
 	const ROUTE6LASS3
 	const ROUTE6FISHER
 	const ROUTE6POKEBALL_ICEPUNCH
@@ -322,6 +326,57 @@ TrainerRoute6_8:
 
 .BeatenText:
 	text "Relax! Relax!"
+	done
+	
+TrainerRoute6_9:
+	generictrainer SWIMMERM, RICH, EVENT_BEAT_ROUTE_6_TRAINER_9, .SeenText, .BeatenText
+
+	text "You have it easy."
+	
+	para "Your #MON is"
+	line "doing all the hard"
+	cont "work to keep you"
+	cont "afloat."
+	done
+
+.SeenText:
+	text "Battling while"
+	line "remaining afloat"
+	cont "takes lots of core"
+	cont "strength."
+	
+	para "Here, I'll show"
+	line "you."
+	done
+
+.BeatenText:
+	text "I don't have the"
+	line "strength to go on!"
+	done
+	
+TrainerRoute6_10:
+	generictrainer FISHER, MIKE, EVENT_BEAT_ROUTE_6_TRAINER_10, .SeenText, .BeatenText
+
+	text "Please just leave"
+	line "me to my fishing…"
+	done
+
+.SeenText:
+	text "What now?"
+	
+	para "Can't I get some"
+	line "peace?"
+	
+	para "A battle?"
+	
+	para "Fine!"
+	done
+
+.BeatenText:
+	text "Ok there!"
+	
+	para "Now leave me"
+	line "alone!"
 	done
 	
 Route6Lass2:

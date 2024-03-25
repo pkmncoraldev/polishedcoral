@@ -12,11 +12,13 @@ Route19_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 6 ; bg events
 	signpost 27,  6, SIGNPOST_JUMPTEXT, Route19Sign1Text
 	signpost 34, 25, SIGNPOST_JUMPTEXT, Route19Sign2Text
 	signpost 12, 14, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_ROUTE_19_HIDDEN_BOTTLE_CAP_1
 	signpost 10, 25, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_ROUTE_19_HIDDEN_BOTTLE_CAP_2
+	signpost 44, 38, SIGNPOST_ITEM + MAX_POTION, EVENT_ROUTE_19_HIDDEN_MAX_POTION
+	signpost 26,  6, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_19_HIDDEN_REVIVE
 
 
 	db 10 ; object events

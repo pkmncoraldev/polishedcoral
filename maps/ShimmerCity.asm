@@ -35,7 +35,7 @@ ShimmerCity_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 8 ; bg events
+	db 10 ; bg events
 	bg_event 14, 15, SIGNPOST_ITEM + BIG_NUGGET, EVENT_SHIMMER_CITY_HIDDEN_ITEM
 	signpost 14, 15, SIGNPOST_LEFT, ShimmerCityFishMarket
 	signpost 17, 15, SIGNPOST_LEFT, ShimmerCityBerryMarket
@@ -44,6 +44,8 @@ ShimmerCity_MapScriptHeader:
 	signpost 26,  3, SIGNPOST_READ, ShimmerLabSign
 	signpost 14, 36, SIGNPOST_READ, ShimmerFlowers
 	signpost 15, 36, SIGNPOST_READ, ShimmerFlowers
+	signpost 10, 23, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SHIMMER_CITY_HIDDEN_BOTTLE_CAP_1
+	signpost 13, 10, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SHIMMER_CITY_HIDDEN_BOTTLE_CAP_2
 
 	db 11 ; object events
 	person_event SPRITE_FISHING_GURU, 14, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc1, -1

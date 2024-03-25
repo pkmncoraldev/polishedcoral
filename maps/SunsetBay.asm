@@ -25,7 +25,7 @@ SunsetBay_MapScriptHeader:
 	coord_event 37, 16, 0, SunsetGrampsStopsYou3
 	coord_event 37, 17, 0, SunsetGrampsStopsYou4
 
-	db 20 ; bg events
+	db 23 ; bg events
 	bg_event 11, 13, SIGNPOST_READ, PlayersHouseSign
 	bg_event 27, 15, SIGNPOST_READ, SunsetCafeSign
 	bg_event 26,  9, SIGNPOST_READ, SunsetBayPokeCenterSign
@@ -46,6 +46,9 @@ SunsetBay_MapScriptHeader:
 	bg_event 35, 21, SIGNPOST_ITEM + POKE_BALL, EVENT_SUNSET_BAY_HIDDEN_POKE_BALL
 	bg_event 12, 18, SIGNPOST_ITEM + POTION, EVENT_SUNSET_BAY_HIDDEN_POTION
 	bg_event 33,  6, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_SUNSET_BAY
+	signpost 21, 16, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SUNSET_BAY_HIDDEN_BOTTLE_CAP_1
+	signpost 21,  8, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SUNSET_BAY_HIDDEN_BOTTLE_CAP_2
+	signpost 23, 31, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SUNSET_BAY_HIDDEN_BOTTLE_CAP_3
 
 	db 19 ; object events
 	person_event SPRITE_CUTE_GIRL, 15, 32, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetNPC1, -1

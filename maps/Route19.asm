@@ -12,9 +12,12 @@ Route19_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 4 ; bg events
 	signpost 27,  6, SIGNPOST_JUMPTEXT, Route19Sign1Text
 	signpost 34, 25, SIGNPOST_JUMPTEXT, Route19Sign2Text
+	signpost 12, 14, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_ROUTE_19_HIDDEN_BOTTLE_CAP_1
+	signpost 10, 25, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_ROUTE_19_HIDDEN_BOTTLE_CAP_2
+
 
 	db 10 ; object events
 	person_event SPRITE_PIGTAILS, 40, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route19Clover, EVENT_SAVED_CLOVER

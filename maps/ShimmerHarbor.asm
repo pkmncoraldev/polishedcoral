@@ -10,7 +10,9 @@ ShimmerHarbor_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 2 ; bg events
+	signpost 15,  7, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SHIMMER_HARBOR_HIDDEN_BOTTLE_CAP_1
+	signpost 15, 17, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SHIMMER_HARBOR_HIDDEN_BOTTLE_CAP_2
 
 	db 7 ; object events
 	object_event 14,  8, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NULL, EVENT_SHIMMER_BOATMAN

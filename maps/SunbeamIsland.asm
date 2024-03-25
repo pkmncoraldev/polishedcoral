@@ -34,7 +34,7 @@ SunbeamIsland_MapScriptHeader:
 	xy_trigger 6, 46, 20, 0, SunbeamFirstContest3, 0, 0
 	xy_trigger 6, 47, 20, 0, SunbeamFirstContest4, 0, 0
 
-	db 10 ; bg events
+	db 14 ; bg events
 	signpost 31, 21, SIGNPOST_READ, SunBeamSign
 	signpost 18, 18, SIGNPOST_READ, SunBeamLabSign
 	signpost 21, 25, SIGNPOST_READ, SunBeamJungleSign
@@ -45,6 +45,10 @@ SunbeamIsland_MapScriptHeader:
 	signpost 31, 28, SIGNPOST_READ, SunBeamMartSign
 	signpost 47,  9, SIGNPOST_READ, SunBeamBoatSign
 	signpost 17, 16, SIGNPOST_IFNOTSET, SunBeamLabLocked
+	signpost 47, 30, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SUNBEAM_ISLAND_HIDDEN_BOTTLE_CAP_1
+	signpost 45,  2, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SUNBEAM_ISLAND_HIDDEN_BOTTLE_CAP_2
+	signpost 43, 15, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SUNBEAM_ISLAND_HIDDEN_BOTTLE_CAP_3
+	signpost 44, 35, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SUNBEAM_ISLAND_HIDDEN_BOTTLE_CAP_4
 
 	db 20 ; object events
 	person_event SPRITE_MATRON, 24, 24, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC1, -1

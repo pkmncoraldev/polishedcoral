@@ -3042,3 +3042,67 @@ CheckChangeMusic::
 	jr nz, .none
 	ld a, MUSIC_POKEMON_CENTER
 	jr .done
+	
+GetMapMusic::
+	eventflagcheck EVENT_YOU_CHEATED
+	ret nz
+	ld a, [wTapePlayerActive]
+	cp 1
+	jr z, .tape_player
+	ld hl, SpecialMusicMaps
+	ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+.loop:
+	ld a, [hli]
+	and a
+	jp z, GetMapHeaderMusic
+	cp b
+	jr nz, .wrong_group
+	ld a, [hli]
+	cp c
+	jr nz, .wrong_map
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp hl
+
+.wrong_group:
+	inc hl
+.wrong_map:
+	inc hl
+	inc hl
+	jr .loop
+.tape_player
+	ld a, [wRadioTuningKnob]
+	inc a
+	ld e, a
+	ret
+	
+SpecialMusicMaps::
+music_map: MACRO
+	map_id \1
+	dw \2
+ENDM
+	music_map SUNSET_BAY, DoSurfMusic
+	music_map SUNSET_CAPE, DoSurfMusic
+	music_map SUNBEAM_ISLAND, DoSurfMusic
+	music_map SUNBEAM_BEACH, DoSurfMusic
+	music_map ROUTE_13, DoSurfMusic
+	music_map ROUTE_6, DoSurfMusic
+	music_map ROUTE_6_SOUTH, DoSurfMusic
+	music_map SHIMMER_CITY, DoSurfMusic
+	music_map SHIMMER_HARBOR, DoSurfMusic
+	music_map SHIMMER_UNDER_BOARDWALK, DoSurfMusic
+	db 0 ; end
+
+DoSurfMusic:
+	ld a, [wPlayerState]
+	cp PLAYER_SURF
+	jr z, .surf
+	jp GetMapHeaderMusic
+	
+.surf
+	ld de, MUSIC_WATER_ROUTE
+	ret

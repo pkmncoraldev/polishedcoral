@@ -61,6 +61,7 @@ Music:
 	dba Music_Darkness
 	dba Music_Autumn
 	dba Music_Dojo
+	dba Music_Underwater
 	
 	dba Music_StarglowOld
 	dba Music_WildBattleOld

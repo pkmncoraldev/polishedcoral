@@ -60,6 +60,7 @@
 	const MUSIC_DARKNESS
 	const MUSIC_AUTUMN
 	const MUSIC_DOJO
+	const MUSIC_UNDERWATER
 	
 NUM_TAPE_PLAYER_SONGS EQU const_value
 	

@@ -56,6 +56,7 @@ INCLUDE "audio/music/shimmercity.asm"
 INCLUDE "audio/music/fakeroute1.asm"
 INCLUDE "audio/music/autumn.asm"
 INCLUDE "audio/music/dojo.asm"
+INCLUDE "audio/music/underwater.asm"
 
 
 SECTION "Music 3", ROMX

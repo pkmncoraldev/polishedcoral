@@ -70,7 +70,7 @@ TapePlayerFunction: ; 90b8d (24:4b8d)
 	ld a, [wTapePlayerActive]
 	cp 0
 	ret nz
-	call GetMapMusic
+	farcall GetMapMusic
 	ld a, e
 	ld [wMapMusic], a
 	call PlayMusic
@@ -355,6 +355,8 @@ AnimatePokegearModeIndicatorArrow: ; 90d41 (24:4d41)
 TownMap_InitCursorAndPlayerIconPositions: ; 90d70 (24:4d70)
 	call GetCurrentLandmark
 	cp GATE_LANDMARK
+	jr z, .gate
+	cp DIVE_LANDMARK
 	jr z, .gate
 	cp RESIDENTIAL_DISTRICT
 	jr z, .luster

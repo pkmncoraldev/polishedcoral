@@ -54,13 +54,8 @@ LusterApartment4_1F_NPC2Text:
 	text "What are you"
 	line "lookin' at?"
 	
-	para "You got somethin'"
-	line "to say, say it!"
+	para "Take a picture,"
+	line "sweetie."
 	
-	para "…"
-	
-	para "My clothes?"
-	
-	para "I think I look"
-	line "good!"
+	para "It'll last longer."
 	done

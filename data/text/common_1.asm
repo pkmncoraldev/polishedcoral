@@ -1307,10 +1307,11 @@ UnknownText_TradeCompleteText4::
 	cont "sewer?"
 	
 	para "Well, @"
-	text_from_ram wTradeSneaselName
+	text_from_ram wTradeCroagunkName
+	text ""
 	line "won't be going"
-	cont "down to the sewer"
-	cont "again any time soon…"
+	cont "down there again"
+	cont "any time soon…"
 	done
 
 UnknownText_TradeAfterText4::
@@ -1318,9 +1319,14 @@ UnknownText_TradeAfterText4::
 	line "doing, sewer kid?"
 	
 	para "@"
-	text_from_ram wTradeSneaselName
-	text "'s"
+	text_from_ram wTradeCroagunkName
+	text " has"
 	line "been great!"
+	
+	para "I had to give it a"
+	line "good bath."
+	
+	para "…"
 	
 	para "Thanks again for"
 	line "the trade!"

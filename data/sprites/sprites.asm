@@ -204,6 +204,7 @@ SpriteHeaders:
 	overworld_sprite LedianRangerFaceSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite LedianRangerPoseSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite LedianRangerFacePoseSpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite SwimmerGirlLandSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

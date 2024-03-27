@@ -34,6 +34,7 @@ Music:
 	dba Music_Lava
 	dba Music_WildBossBattle
 	dba Music_SunbeamIsland
+	dba Music_GscGameCorner
 	dba Music_SpruceLab
 	dba Music_SnareTheme
 	dba Music_SnareAdminBattle
@@ -52,7 +53,6 @@ Music:
 	dba Music_Route12
 	dba Music_WaterRoute
 	dba Music_ShimmerCity
-	dba Music_GscGameCorner
 	dba Music_BrilloTown
 	dba Music_Oasis
 	dba Music_SnareLeaderBattle

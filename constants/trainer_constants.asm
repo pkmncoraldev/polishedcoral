@@ -619,6 +619,7 @@ PLAYER_F EQU __enum__
 	const SAMANTHA
 	const BEBE
 	const KERRI
+	const SOFIE
 	
 	trainerclass SHAOLIN
 	const KIMIKO

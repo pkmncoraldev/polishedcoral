@@ -4877,6 +4877,15 @@ TuberGroup:
 	db -1 ; end
 
 ; ================
+
+	; TUBER
+	db "SOFIE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 ShaolinGroup:

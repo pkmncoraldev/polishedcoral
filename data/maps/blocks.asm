@@ -850,6 +850,15 @@ Route26_BlockData:
 Route14_15Underwater_BlockData:
 	INCBIN "maps/Route14_15Underwater.ablk.lz"
 	
+Route13Underwater_BlockData:
+	INCBIN "maps/Route13Underwater.ablk.lz"
+	
+Route6Underwater_BlockData:
+	INCBIN "maps/Route6Underwater.ablk.lz"
+	
+Route6UnderwaterCave_BlockData:
+	INCBIN "maps/Route6UnderwaterCave.ablk.lz"
+	
 KomoreCommunityCenter_BlockData:
 	INCBIN "maps/KomoreCommunityCenter.ablk.lz"
 	

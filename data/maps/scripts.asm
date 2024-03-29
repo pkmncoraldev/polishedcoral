@@ -81,10 +81,10 @@ INCLUDE "maps/ConnectingCavernEntrance.asm"
 INCLUDE "maps/StarglowCavernDepths.asm"
 
 
-
 SECTION "Dungeon Scripts3", ROMX
 
 INCLUDE "maps/LusterSewersMukRoom.asm"
+INCLUDE "maps/Route6UnderwaterCave.asm"
 
 
 SECTION "Routes Scripts", ROMX
@@ -429,6 +429,8 @@ INCLUDE "maps/Route26.asm"
 
 SECTION "Underwater Scripts", ROMX
 INCLUDE "maps/Route14_15Underwater.asm"
+INCLUDE "maps/Route13Underwater.asm"
+INCLUDE "maps/Route6Underwater.asm"
 
 SECTION "Brightburg Scripts", ROMX
 INCLUDE "maps/Brightburg.asm"

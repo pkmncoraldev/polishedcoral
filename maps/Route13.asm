@@ -3,7 +3,23 @@ Route13_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 0 ; warp events
+	db 16 ; warp events
+	warp_event 20,  9, ROUTE_13_UNDERWATER, 1
+	warp_event 21,  9, ROUTE_13_UNDERWATER, 2
+	warp_event 19, 10, ROUTE_13_UNDERWATER, 3
+	warp_event 20, 10, ROUTE_13_UNDERWATER, 4
+	warp_event 21, 10, ROUTE_13_UNDERWATER, 5
+	warp_event 22, 10, ROUTE_13_UNDERWATER, 6
+	warp_event 19, 11, ROUTE_13_UNDERWATER, 7
+	warp_event 20, 11, ROUTE_13_UNDERWATER, 8
+	warp_event 21, 11, ROUTE_13_UNDERWATER, 9
+	warp_event 22, 11, ROUTE_13_UNDERWATER, 10
+	warp_event 20, 12, ROUTE_13_UNDERWATER, 11
+	warp_event 21, 12, ROUTE_13_UNDERWATER, 12
+	warp_event 28,  6, ROUTE_13_UNDERWATER, 13
+	warp_event 29,  6, ROUTE_13_UNDERWATER, 14
+	warp_event 28,  7, ROUTE_13_UNDERWATER, 15
+	warp_event 29,  7, ROUTE_13_UNDERWATER, 16
 
 	db 0 ; coord events
 

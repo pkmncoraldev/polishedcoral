@@ -55,6 +55,7 @@ MAP_NONE   EQU 0
 	map_const ICE_TEMPLE_B2F_1,							   8,  6 ; 33
 	map_const ICE_TEMPLE_B2F_2,							  13,  7 ; 34
 	map_const CONNECTING_CAVERN_ENTRANCE,				  10,  6 ; 35
+	map_const ROUTE_6_UNDERWATER_CAVE,					   6,  8 ; 36
 
 	newgroup                                                     ;  2
 
@@ -394,6 +395,8 @@ MAP_NONE   EQU 0
 	newgroup													 ; 21
 	
 	map_const ROUTE_14_15_UNDERWATER,					  36, 18 ; 1
+	map_const ROUTE_13_UNDERWATER,						  12, 11 ; 2
+	map_const ROUTE_6_UNDERWATER,						  34, 18 ; 3
 	
 	newgroup													 ; 22
 	

@@ -427,6 +427,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr z, .down
 	cp COLL_STAIRCASE
 	jr z, .down
+	cp COLL_WATER_CAVE
+	jr z, .down
 	cp COLL_CAVE
 	jr nz, .no_walk
 

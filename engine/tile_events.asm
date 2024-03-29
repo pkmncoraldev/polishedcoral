@@ -47,6 +47,7 @@ CheckWarpFacingDown: ; 149c6
 	db COLL_DOOR
 	db COLL_STAIRCASE
 	db COLL_CAVE
+	db COLL_WATER_CAVE
 	db COLL_WARP_PANEL
 	db -1
 ; 149dd

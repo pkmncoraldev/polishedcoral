@@ -30,7 +30,7 @@ SeasideCaveB2FDrakloak:
 	reloadmapafterbattle
 	setevent EVENT_SEASIDE_CAVE_B2F_DRAKLOAK_GONE
 	checkcode VAR_MONJUSTCAUGHT
-	if_equal LEDIAN, .CaughtDrakloak
+	if_equal DRAKLOAK, .CaughtDrakloak
 	opentext
 	writetext SeasideCaveB2FDrakloakTextGone
 	waitbutton

@@ -484,7 +484,7 @@ TilesetLavaCaveAnim::
 	dw VTiles2 tile $5f, ScrollTileRight
 	dw NULL,  WaitTileAnimation
 	dw ShorelineFrames,  AnimateWaterfallTiles2
-	dw NULL,  WaitTileAnimation
+	dw CaveWaterFrames, AnimateWaterfallTiles2
 	dw NULL,  DoneTileAnimation
 
 TilesetStarglowCavernAnim::
@@ -494,7 +494,7 @@ TilesetStarglowCavernAnim::
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw VTiles2 tile $14, WriteTileFromBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw NULL,  TileAnimationPalette
+	dw CaveWaterFrames, AnimateWaterfallTiles2
 	dw NULL,  TileAnimationPaletteStarglow
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw VTiles2 tile $40, WriteTileToBuffer
@@ -1207,6 +1207,8 @@ FanTiles: INCBIN "gfx/tilesets/fan/1.2bpp"
 DesertLightFrames: dw VTiles2 tile $34, DesertLightTiles
 
 DesertLightTiles: INCBIN "gfx/tilesets/desertlight/1.2bpp"
+
+CaveWaterFrames: dw VTiles2 tile $01, WaterTiles
 
 WaterFrames: dw VTiles2 tile $13, WaterTiles
 

@@ -666,6 +666,9 @@ ENDM
 	map_attributes RadiantOrphanageLeilanisRoom, RADIANT_ORPHANAGE_LEILANIS_ROOM, $0, 0
 	map_attributes RadiantGym, RADIANT_GYM, $0, 0
 	map_attributes Route14_15Underwater, ROUTE_14_15_UNDERWATER, $09, 0
+	map_attributes Route13Underwater, ROUTE_13_UNDERWATER, $09, 0
+	map_attributes Route6Underwater, ROUTE_6_UNDERWATER, $09, 0
+	map_attributes Route6UnderwaterCave, ROUTE_6_UNDERWATER_CAVE, $09, 0
 	map_attributes KomoreCommunityCenter, KOMORE_COMMUNITY_CENTER, $00, 0
 	map_attributes KomoreCommunityCenterLeft, KOMORE_COMMUNITY_CENTER_LEFT, $00, 0
 	map_attributes KomoreCommunityCenterMiddle, KOMORE_COMMUNITY_CENTER_MIDDLE, $00, 0

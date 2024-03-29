@@ -7,9 +7,27 @@ Route6_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 2 ; warp events
+	db 20 ; warp events
 	warp_def 5, 59, 3, ROUTE_5_GATE_1F
 	warp_def 5, 60, 4, ROUTE_5_GATE_1F
+	warp_event 16, 16, ROUTE_6_UNDERWATER, 1
+	warp_event 17, 16, ROUTE_6_UNDERWATER, 2
+	warp_event 16, 17, ROUTE_6_UNDERWATER, 3
+	warp_event 17, 17, ROUTE_6_UNDERWATER, 4
+	warp_event 18, 19, ROUTE_6_UNDERWATER, 5
+	warp_event 19, 19, ROUTE_6_UNDERWATER, 6
+	warp_event 17, 20, ROUTE_6_UNDERWATER, 7
+	warp_event 18, 20, ROUTE_6_UNDERWATER, 8
+	warp_event 19, 20, ROUTE_6_UNDERWATER, 9
+	warp_event 20, 20, ROUTE_6_UNDERWATER, 10
+	warp_event 21, 20, ROUTE_6_UNDERWATER, 11
+	warp_event 22, 20, ROUTE_6_UNDERWATER, 12
+	warp_event 17, 21, ROUTE_6_UNDERWATER, 13
+	warp_event 18, 21, ROUTE_6_UNDERWATER, 14
+	warp_event 19, 21, ROUTE_6_UNDERWATER, 15
+	warp_event 20, 21, ROUTE_6_UNDERWATER, 16
+	warp_event 21, 21, ROUTE_6_UNDERWATER, 17
+	warp_event 22, 21, ROUTE_6_UNDERWATER, 18
 
 	db 4 ; coord events
 	xy_trigger 0, 6, 43, 0, Route6PokeFanM, 0, 0

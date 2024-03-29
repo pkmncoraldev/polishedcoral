@@ -146,6 +146,8 @@ GetTileCollision:: ; 185d
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
 	jp z, .water
+	cp PLAYER_DIVE
+	jp z, .water
 	ld a, LANDTILE
 	jr .return
 .water

@@ -1,3 +1,35 @@
+WendyPhoneText1:
+	text "Hey <PLAYER>."
+	
+	para "Did you find a way"
+	line "forward?"
+	
+	para "If you can't travel"
+	line "by land or sky,"
+	cont "maybe you could"
+	cont "travel by sea?"
+	
+	para "Well hey, listen."
+	
+	para "I've gotta jet."
+	
+	para "Talk to you"
+	line "later!"
+	done
+
+WendyVoicemailText:
+	text "This is WENDY's"
+	line "voicemail."
+	
+	para "I'm probably a"
+	line "mile in the sky"
+	cont "and can't get to"
+	line "the phone right"
+	cont "now!"
+	
+	para "Leave a message!"
+	done
+
 AutoPhoneComeGetBikeText:
 	text "<PLAYER>!"
 	

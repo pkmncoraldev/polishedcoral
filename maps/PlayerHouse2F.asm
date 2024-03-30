@@ -374,6 +374,8 @@ PlayerHouseDebugPoster:
 	setevent EVENT_BIKE_UPGRADED
 	addcellnum PHONE_MOM
 	addcellnum PHONE_SPRUCE
+	addcellnum PHONE_WENDY
+	addcellnum PHONE_AUTO
 	setevent EVENT_MOM_GOT_POKEGEAR
 	giveitem TAPE_PLAYER
 	giveitem SKATEBOARD

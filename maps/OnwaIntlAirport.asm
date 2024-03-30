@@ -256,6 +256,7 @@ OnwaIntlAirportWendy:
 	special Special_FadeOutMusic
 	pause 15
 	playmapmusic
+	addcellnum PHONE_WENDY
 	end
 	
 OnwaIntlAirportNPC1Text:

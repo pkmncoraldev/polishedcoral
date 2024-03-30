@@ -9,7 +9,7 @@ SprucePhoneNormalText:
 	
 	para "have your #DEX"
 	line "progress evaluated?"
-	done
+	prompt
 	
 SprucePhoneNormalText2:
 	text "Feel free to"

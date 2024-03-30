@@ -2,6 +2,15 @@ UnusedPhoneScript: ; 0xbcea5
 	farwritetext UnusedPhoneText
 	end
 
+WendyPhoneScript:
+	checkevent EVENT_MADE_IT_TO_SOUTH_ONWA
+	iftrue .south
+	farwritetext WendyPhoneText1
+	end
+.south
+	farwritetext WendyVoicemailText
+	end
+
 AutoPhoneScript:
 	checkitem BICYCLE
 	iftrue .normal

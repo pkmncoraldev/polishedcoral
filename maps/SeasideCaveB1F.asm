@@ -1,7 +1,8 @@
 SeasideCaveB1F_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, SeasideCaveB1FCallback
 
 	db 4 ; warp events
 	warp_event 15,  5, SEASIDE_CAVE_1F, 2
@@ -14,3 +15,7 @@ SeasideCaveB1F_MapScriptHeader:
 	db 0 ; bg events
 
 	db 0 ; object events
+
+SeasideCaveB1FCallback:
+	setevent EVENT_MADE_IT_TO_SOUTH_ONWA
+	return

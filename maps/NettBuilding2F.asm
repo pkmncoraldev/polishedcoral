@@ -32,10 +32,10 @@ NettBuilding2F_MapScriptHeader:
 
 
 NettBuilding2F_NPC_2:
-	checkevent EVENT_GOT_HM03_SURF
-	iftrue .got_surf
+	checkitem TRAIN_PASS
+	iftrue .got_pass
 	jumptextfaceplayer NettBuilding2F_NPC_2_Text1
-.got_surf
+.got_pass
 	jumptextfaceplayer NettBuilding2F_NPC_2_Text2
 	
 NettBuilding2F_Sign1:

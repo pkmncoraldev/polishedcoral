@@ -133,10 +133,16 @@ FlickerTrainStationClerk:
 	jump .return
 	
 .no
+	checkevent EVENT_SAVED_TRAIN
+	iftrue .no2
 	writetext FlickerTrainStationClerkText1
 	yesorno
 	iffalse .saidno
 	writetext FlickerTrainStationClerkText4
+	waitbutton
+	jump .end
+.no2
+	writetext FlickerTrainStationClerkText11
 	waitbutton
 	jump .end
 .saidno
@@ -397,6 +403,24 @@ FlickerTrainStationClerkText8:
 FlickerTrainStationClerkText9:
 	text "Right this way,"
 	line "sir!"
+	done
+	
+FlickerTrainStationClerkText11:
+	text "Gah!"
+	
+	para "You again?"
+	
+	para "Well tough luck,"
+	line "twerp."
+	
+	para "Your last ticket"
+	line "was only good for"
+	cont "one trip!"
+	
+	para "Ahaha!"
+	
+	para "Better luck next"
+	line "time!"
 	done
 	
 FlickerTrainStationRivalText1:

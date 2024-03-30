@@ -144,9 +144,9 @@ NettBuildingOfficeNettCutscene:
 	playmapmusic
 	writetext NettBuildingOfficeNettText7
 	buttonsound
-	verbosegivetmhm HM_SURF
-	setevent EVENT_GOT_HM03_SURF
-	setflag ENGINE_GOT_SURF
+	verbosegiveitem TRAIN_PASS
+;	setevent EVENT_GOT_HM03_SURF
+;	setflag ENGINE_GOT_SURF
 	writetext NettBuildingOfficeNettText8
 	waitbutton
 	closetext
@@ -358,26 +358,24 @@ NettBuildingOfficeNettText7:
 	done
 	
 NettBuildingOfficeNettText8:
-	text "That HM contains"
-	line "the move SURF."
+	text "That TRAIN PASS"
+	line "will let you ride"
+	cont "the train as much"
+	cont "as you please."
 	
-	para "In addition to"
-	line "being an excellent"
-	cont "move in battle,"
+	para "Just show it to"
+	line "the man at the"
+	cont "turnstile and he'll"
+	cont "let you on, no"
+	cont "questions asked."
 	
-	para "it can also be"
-	line "used to traverse"
-	cont "bodies of water"
-	cont "with ease."
+	para "Now if you'll"
+	line "excuse me, I have"
+	cont "some business to"
+	cont "attend to."
 	
-	para "I'm sure it will"
-	line "help you in the"
-	cont "future."
-	
-	para "You need the BADGE"
-	line "from LUSTER CITY"
-	cont "to use it outside"
-	cont "of battle."
+	para "Perhaps we'll meet"
+	line "again someday."
 	done
 	
 NettBuildingOfficeNettText9:
@@ -388,6 +386,9 @@ NettBuildingOfficeNettText9:
 	para "And for that, you"
 	line "have my sincere"
 	cont "thanks."
+	
+	para "Perhaps we'll meet"
+	line "again someday."
 	done
 	
 NettBuildingOfficeNettText10:

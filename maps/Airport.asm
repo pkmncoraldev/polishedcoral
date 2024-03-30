@@ -16,21 +16,23 @@ Airport_MapScriptHeader:
 	coord_event  7,  8, 1, AirportXRay
 	coord_event  3,  8, 1, AirportXRay
 
-	db 1 ; bg events
+	db 2 ; bg events
 	signpost 17,  4, SIGNPOST_READ, AirportNpcSign
+	signpost 13, 13, SIGNPOST_IFNOTSET, AirportPokeballSurf
 
-	db 11 ; object events
+	db 12 ; object events
 	person_event SPRITE_RECEPTIONIST, 14,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportReceptionist, -1
 	person_event SPRITE_RECEPTIONIST,  1,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportGateGirl, -1
 	person_event SPRITE_RECEPTIONIST,  9,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportXRayGirl, -1
 	person_event SPRITE_GRANNY, 16,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, AirportNpc1, -1
-	person_event SPRITE_POKEFAN_F, 15, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, AirportNpc2, -1
+	person_event SPRITE_BATTLE_GIRL, 15, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, AirportNpc2, -1
 	person_event SPRITE_GENTLEMAN, 18,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, AirportNpc3, -1
 	person_event SPRITE_CUTE_GIRL, 19,  4, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, AirportNpc4, -1
 	person_event SPRITE_BEAUTY, 11, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, AirportNpc5, -1
 	person_event SPRITE_CHILD, 16,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, AirportNpc6, -1
 	person_event SPRITE_FAT_GUY, 11,  6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, AirportNpc7, -1
 	object_event 11,  8, SPRITE_BAGGAGE, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_BALL_CUT_FRUIT, 13, 13, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportPokeballSurf, EVENT_GOT_HM03_SURF
 
 
 	const_def 1 ; object constants
@@ -45,9 +47,14 @@ Airport_MapScriptHeader:
 	const AIRPORT_NPC_6
 	const AIRPORT_NPC_7
 	const AIRPORT_BAGGAGE
+	const AIRPORT_HMBALL
 	
 	
 AirportCallback:
+	checkevent EVENT_GOT_HM03_SURF
+	iftrue .done_surf
+	changeblock $0c, $0c, $ca
+.done_surf
 	setevent EVENT_AIRPORT_LUGGAGE_1
 	clearevent EVENT_AIRPORT_LUGGAGE_2
 	clearevent EVENT_AIRPORT_LUGGAGE_3
@@ -189,6 +196,33 @@ AiportSwapBaggage2_5:
 	ld [wCurrentAirportBaggage], a
 	ret
 	
+AirportPokeballSurf:
+	dw EVENT_GOT_HM03_SURF
+	disappear AIRPORT_HMBALL
+	opentext
+	writetext ReceivedSurfText1
+	waitsfx
+	specialsound
+	waitbutton
+	writetext ReceivedSurfText2
+	waitbutton
+	closetext
+	givetmhm HM_SURF
+	changeblock $0c, $0c, $b5
+	setevent EVENT_GOT_HM03_SURF
+	setflag ENGINE_GOT_SURF
+	end
+	
+ReceivedSurfText1:
+	text "<PLAYER> found"
+	line "HM03 SURF!"
+	done
+	
+ReceivedSurfText2:
+	text "<PLAYER> put HM03"
+	line "in the TM POCKET."
+	done
+	
 AirportStopYou:
 	setlasttalked AIRPORT_X_RAY_GIRL
 	faceplayer
@@ -210,7 +244,19 @@ AirportNpc1:
 AirportNpc2:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_HM03_SURF
+	iftrue .got_surf
+	writetext AirportNpc2Text2
+	jump .end
+.got_surf
+	checkevent EVENT_AIRPORT_SURF_EXPLAINED
+	iftrue .normal
+	setevent EVENT_AIRPORT_SURF_EXPLAINED
+	writetext AirportNpc2Text3
+	jump .end
+.normal
 	writetext AirportNpc2Text
+.end
 	waitbutton
 	closetext
 	spriteface AIRPORT_NPC_2, UP
@@ -317,13 +363,54 @@ AirportNpc2Text:
 	text "Huh?"
 	
 	para "Oh, I've already"
-	line "got my bag."
+	line "got my bags."
 	
-	para "I just can't stop"
-	line "looking at the"
-	cont "baggage claim."
+	para "I just like to"
+	line "watch the baggage"
+	cont "claim."
 	
 	para "It's hypnotizing…"
+	done
+	
+AirportNpc2Text2:
+	text "I think someone"
+	line "lost that HM over"
+	cont "there."
+	
+	para "It fell off the"
+	line "baggage claim and"
+	cont "no one came back"
+	cont "for it…"
+	done
+	
+AirportNpc2Text3:
+	text "You took that HM"
+	line "even though it"
+	cont "didn't belong to"
+	cont "you, didn'tcha?"
+	
+	para "Hey, it's not my"
+	line "problem."
+	
+	para "I won't tell…"
+	
+	para "Anyway, that's"
+	line "HM03 SURF, isn't"
+	cont "it?"
+	
+	para "They say that's"
+	line "not just a good"
+	cont "move in battle."
+	
+	para "It can also be"
+	line "used to traverse"
+	cont "bodies of water"
+	cont "with ease."
+	
+	para "I think you need"
+	line "the BADGE from"
+	cont "LUSTER CITY for"
+	cont "that, though…"
 	done
 	
 AirportNpc3Text:

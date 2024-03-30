@@ -184,6 +184,8 @@ LusterTrainStationCallback:
 LusterTrainStationConductor:
 	faceplayer
 	opentext
+	checkitem TRAIN_PASS
+	iffalse .no_ticket
 	writetext LusterTrainStationClerkText1
 	yesorno
 	iffalse .end
@@ -223,6 +225,11 @@ LusterTrainStationConductor:
 	callasm FlickerStationPlayerSeatAsm
 	warpfacing LEFT, TRAIN_CABIN_1, $7, $2
 	end
+.no_ticket
+	writetext LusterTrainStationClerkText3
+	waitbutton
+	closetext
+	end
 .end
 	writetext LusterTrainStationClerkText2
 	waitbutton
@@ -242,6 +249,18 @@ LusterTrainStationClerkText1:
 	
 LusterTrainStationClerkText2:
 	text "Have a nice day."
+	done
+	
+LusterTrainStationClerkText3:
+	text "You can't ride the"
+	line "train without a"
+	cont "ticket."
+	
+	para "Your last ticket"
+	line "was only good for"
+	cont "one trip."
+	
+	para "Have a nice day."
 	done
 	
 LusterStationAllAboardText:

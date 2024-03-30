@@ -164,9 +164,9 @@ EastTrainCabLocke:
 	pause 5
 	opentext
 	writetext EastTrainCabEngineerText6
-	waitbutton
-	verbosegiveitem TRAIN_PASS
-	writetext EastTrainCabEngineerText7
+;	waitbutton
+;	verbosegiveitem TRAIN_PASS
+;	writetext EastTrainCabEngineerText7
 	waitbutton
 	closetext
 	spriteface EAST_TRAIN_CAB_ENGINEER, RIGHT
@@ -259,8 +259,11 @@ EastTrainCabEngineerText6:
 	line "this between you"
 	cont "and me."
 	
-	para "I'll make it worth"
-	line "your while!"
+	para "You will, won't"
+	line "you?"
+	
+	para "Of course you"
+	line "will!"
 	done
 	
 EastTrainCabEngineerText7:

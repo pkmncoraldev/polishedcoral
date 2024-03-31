@@ -1138,8 +1138,8 @@ SlowpokeTailDesc:
 	next "high.@"
 
 BottleCapDesc:
-	db   "A shiny, rare"
-	next "bottle cap.@"
+	db   "A common bottle"
+	next "cap.@"
 
 JawFossilDesc:
 SailFossilDesc:

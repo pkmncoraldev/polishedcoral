@@ -1143,13 +1143,24 @@ UnknownText_TradeAfterText1::
 	done
 	
 UnknownText_TradeIntroText2::
-	text "People say the"
-	line "EXEGGCUTE around"
-	cont "here are special."
+	text "I moved here for"
+	line "a change of pace."
 	
-	para "Would you like to"
-	line "trade one for your"
-	cont "GLOOM?"
+	para "I was always going"
+	line "a mile a minute!"
+	
+	para "Now I can slow"
+	line "down and take it"
+	cont "easy."
+	
+	para "I need a #MON"
+	line "fit for my new"
+	cont "lifestyle, too…"
+	
+	para "Maybe a SLOWPOKE."
+	
+	para "Would you trade"
+	line "for my PONYTA?"
 	done
 	
 UnknownText_TradeCancelText2::
@@ -1164,40 +1175,34 @@ UnknownText_TradeWrongText2::
 	done
 
 UnknownText_TradeCompleteText2::
-	text "I caught"
-	line "SUNNY SIDE on a"
-	cont "little island off"
-	cont "the coast."
-
-	para "EXEGGCUTE caught"
-	line "around here are"
-	cont "known to evolve"
-	cont "into a taller form"
-	cont "than usual."
+	text "SLOW RIDE seemed"
+	line "to miss my old"
+	cont "fast-paced way of"
+	cont "life."
 	
-	para "Some say it's their"
-	line "natural form!"
+	para "I'm sure he'll be"
+	line "much happier with"
+	cont "you."
 	
-	para "…"
-	
-	para "Thanks again!"
-
-	para "I'll take great"
-	line "care of @"
-	text_from_ram wTradeGloomName
-	text "!"
+	para "Me and @"
+	text_from_ram wTradeSlowpokeName
+	text ""
+	line "are gonna chill"
+	cont "out for a bit."
 	done
 
 UnknownText_TradeAfterText2::
 	text "Hey!"
 	
 	para "@"
-	text_from_ram wTradeGloomName
+	text_from_ram wTradeSlowpokeName
 	text "'s"
-	line "doing awesome!"
+	line "been great!"
 	
-	para "How is SUNNY SIDE"
+	para "How is SLOW RIDE"
 	line "doing?"
+	
+	para "Thanks again!"
 	done
 	
 	

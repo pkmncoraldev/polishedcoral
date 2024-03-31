@@ -12,7 +12,7 @@ SunbeamTradeHouse_MapScriptHeader:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  5,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, trade, TRADE_WITH_PAUL_FOR_EXEGGCUTE, -1
+	object_event  5,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, trade, TRADE_WITH_PAUL_FOR_PONYTA, -1
 	person_event SPRITE_REDS_MOM, 4, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamTradeHouseNpc2, -1
 
 	const_def 1 ; object constants

@@ -84,7 +84,7 @@ NPCTrade:: ; fcba8
 	jr .cont
 .trade2
 	ld hl, wBackupName
-	ld de, wTradeGloomName
+	ld de, wTradeSlowpokeName
 	ld bc, NAME_LENGTH
 	rst CopyBytes
 	jr .cont

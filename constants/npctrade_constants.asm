@@ -1,7 +1,7 @@
 ; see data/events/npc_trades.asm:NPCTrades
 	const_def
 	const TRADE_WITH_JAKE_FOR_HERACROSS  ; 0
-	const TRADE_WITH_PAUL_FOR_EXEGGCUTE  ; 1
+	const TRADE_WITH_PAUL_FOR_PONYTA	 ; 1
 	const TRADE_WITH_ALICE_FOR_GLIGAR 	 ; 2
 	const TRADE_WITH_EMY_FOR_SCRAGGY     ; 3
 	const TRADE_WITH_TABBY_FOR_HOUNDOUR  ; 4

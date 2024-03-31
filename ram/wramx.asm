@@ -764,7 +764,7 @@ wPlayerName:: ds NAME_LENGTH
 wRivalName:: ds NAME_LENGTH
 wBackupName:: ds NAME_LENGTH
 wTradeScytherName:: ds NAME_LENGTH
-wTradeGloomName:: ds NAME_LENGTH
+wTradeSlowpokeName:: ds NAME_LENGTH
 wTradeSneaselName:: ds NAME_LENGTH
 wTradeCroagunkName:: ds NAME_LENGTH
 wTradeMeowthName:: ds NAME_LENGTH

@@ -8,6 +8,7 @@ FishGroups: ; 92488
 	dbwww 75 percent + 1, .Jungle_Old,           .Jungle_Good,           .Jungle_Super
 	dbwww 75 percent + 1, .Grove_Old,        	 .Grove_Good,        	 .Grove_Super
 	dbwww 75 percent + 1, .Route_3_Pond_Old,     .Route_3_Pond_Good,     .Route_3_Pond_Super
+	dbwww 75 percent + 1, .Sunbeam_Reserve_Old,  .Sunbeam_Reserve_Good,  .Sunbeam_Reserve_Super
 	
 .Glint_Old:
 	db  70 percent, MAGIKARP,   10	;70%
@@ -90,6 +91,11 @@ FishGroups: ; 92488
 .Route_3_Pond_Good:
 .Route_3_Pond_Super:
 	db 100 percent, DRATINI,   	20	;100%
+	
+.Sunbeam_Reserve_Old:
+.Sunbeam_Reserve_Good:
+.Sunbeam_Reserve_Super:
+	db 100 percent, SLOWPOKE,   15	;100%
 
 FishItems:
 	db PEARL

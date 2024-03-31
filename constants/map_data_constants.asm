@@ -27,6 +27,7 @@
 	const FISHGROUP_JUNGLE
 	const FISHGROUP_GROVE
 	const FISHGROUP_ROUTE_3_POND
+	const FISHGROUP_RESERVE
 
 	const_def
 	const EAST_F

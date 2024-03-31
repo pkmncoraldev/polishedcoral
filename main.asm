@@ -417,7 +417,7 @@ UpdateItemDescriptionAndBagQuantity:
 	call PlaceString
 	ld a, [wMenuSelection]
 	call GetQuantityInBag
-	hlcoord 4, 0
+	hlcoord 3, 0
 	ld de, wBuffer1
 	lb bc, 2, 3
 	call PrintNum
@@ -911,15 +911,15 @@ Special_DisplayCoinCaseBalance: ; 24b25
 
 Special_DisplayPollenPouchBalance: ; 24b25
 	; Place a text box of size 1x7 at 11, 0.
-	hlcoord 11, 0
-	lb bc, 1, 7
-	call TextBox
-	hlcoord 12, 0
+;	hlcoord 11, 0
+;	lb bc, 1, 7
+;	call TextBox
+	hlcoord 9, 0
 	ld de, PuffString
 	call PlaceString
 	ld de, wPollenSteps
-	lb bc, 2, 4
-	hlcoord 13, 1
+	lb bc, PRINTNUM_LEFTALIGN | 2, 4
+	hlcoord 16, 0
 	jp PrintNum
 
 Special_DisplayMoneyAndCoinBalance: ; 24b4e
@@ -946,7 +946,7 @@ MoneyString: ; 24b83
 CoinString: ; 24b89
 	db "COINs@"
 PuffString:
-	db "PUFFs@"
+	db "PUFFs ×@"
 
 StartMenu_DrawBugContestStatusBox: ; 24bdc
 	hlcoord 0, 0

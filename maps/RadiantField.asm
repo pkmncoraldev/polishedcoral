@@ -221,19 +221,15 @@ VioletSetNameAsm:
 	db "VIOLET@@@@@"
 	
 RadiantFieldRoseText1:
-	text "Oh!"
-	
-	para "I love the"
+	text "I just love the"
 	line "sunflowers!"
 	
 	para "They're so pretty!"
 	done
 	
 RadiantFieldRoseText2:
-	text "ROSE: Oh!"
-	
-	para "I love the"
-	line "sunflowers!"
+	text "ROSE: I just love"
+	line "the sunflowers!"
 	
 	para "They're so pretty!"
 	

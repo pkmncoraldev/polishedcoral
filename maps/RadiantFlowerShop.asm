@@ -132,9 +132,7 @@ RadiantFlowerShopClerkGivePouchText2:
 	done
 	
 RadiantFlowerShopClerkPouchFullText1:
-	text "Oh!"
-	
-	para "Have you collected"
+	text "Have you collected"
 	line "some POLLEN PUFFs?"
 	
 	para "Do you wanna"

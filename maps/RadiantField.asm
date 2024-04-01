@@ -272,9 +272,11 @@ RadiantFieldVioletText1:
 	para "I wish I could"
 	line "smell them forev-"
 	
-	para "Ah… Ah. AH!"
+	para "Ah…"
 	
-	para "ACHOO!"
+	para "AH!"
+	
+	para "…CHOO!"
 	done
 	
 RadiantFieldVioletText2:	
@@ -284,8 +286,6 @@ RadiantFieldVioletText2:
 	
 	para "I wish I could"
 	line "smell them forev-"
-	
-	para "Ah…"
 	
 	para "Ah…"
 	

@@ -370,6 +370,8 @@ LoadEmoteGFX::
 	jp z, .boulder
 	cp TILESET_SHIMMER
 	jp z, .flowers
+	cp TILESET_GROVE
+	jp z, .check_flowers
 	cp TILESET_DESERT
 	jp z, .desert
 	cp TILESET_PLAYER_HOUSE
@@ -385,6 +387,10 @@ LoadEmoteGFX::
 	ld c, EMOTE_PUDDLE_SPLASH_2
 	jp LoadEmote
 	
+.check_flowers
+	ld a, [wMapGroup]
+	cp GROUP_RADIANT_FIELD
+	jr nz, .outdoor
 .flowers
 	ld c, EMOTE_POLLEN_PUFF
 	call LoadEmote

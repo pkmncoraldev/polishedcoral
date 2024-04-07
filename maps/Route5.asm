@@ -17,7 +17,7 @@ Route5_MapScriptHeader:
 	bg_event 8, 32, SIGNPOST_ITEM + RARE_CANDY, EVENT_ROUTE_5_HIDDEN_RARE_CANDY
 	bg_event 27,  5, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_5_HIDDEN_REVIVE
 
-	db 12 ; object events
+	db 13 ; object events
 	person_event SPRITE_PICNICKER, 9, 22, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute5_1, -1
 	person_event SPRITE_CAMPER, 13, 18, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, TrainerRoute5_2, -1
 	person_event SPRITE_BUG_CATCHER, 18, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute5_3, -1
@@ -26,6 +26,7 @@ Route5_MapScriptHeader:
 	person_event SPRITE_SCHOOLBOY, 13, 26, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 1, Route5NPC6, -1
 	person_event SPRITE_YOUNGSTER, 32, 32, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 1, Route5NPC7, -1
 	person_event SPRITE_CUTE_GIRL, 47, 20, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 1, Route5NPC8, -1
+	person_event SPRITE_POKEFAN_M, 22, 20, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 1, Route5NPC9, -1
 	itemball_event 26, 26, GREAT_BALL, 1, EVENT_ROUTE_5_POKE_BALL
 	fruittree_event  6, 36, FRUITTREE_ROUTE_5_1, CHERI_BERRY
 	fruittree_event 31, 25, FRUITTREE_ROUTE_5_2, LEPPA_BERRY
@@ -159,6 +160,9 @@ Route5NPC7:
 Route5NPC8:
 	jumptextfaceplayer Route5NPC8Text
 	
+Route5NPC9:
+	jumptextfaceplayer Route5NPC9Text
+	
 Route5Sign:
 	jumptext Route5SignText
 	
@@ -218,4 +222,22 @@ Route5NPC8Text:
 	cont "#MON!"
 	
 	para "Pretty cool, huh?"
+	done
+	
+Route5NPC9Text:
+	text "When the going"
+	line "gets tough, it's"
+	cont "tempting to run"
+	cont "back to safety."
+	
+	para "Try and resist"
+	line "that urge!"
+	
+	para "Have some faith"
+	line "in your #MON"
+	cont "and press on!"
+	
+	para "You might just be"
+	line "surprised at what"
+	cont "you find."
 	done

@@ -1276,9 +1276,12 @@ BuyRefreshmentsMenuLoop: ; 15cef
 	lb bc, PRINTNUM_MONEY | 3, 7
 	call PrintNum
 	call JoyWaitAorB
+	eventflagcheck EVENT_BOUGHT_REFRESHMENTS_ONCE
+	jr z, .extra
 	call Random
 	cp $3f ; 25 percent
 	jr nc, .cancel
+.extra
 	ld a, 1
 	ld [wItemQuantityChangeBuffer], a
 	ld hl, wNumItems
@@ -1290,6 +1293,7 @@ BuyRefreshmentsMenuLoop: ; 15cef
 	call PlaySFX
 	call JoyWaitAorB
 .cancel
+	eventflagset EVENT_BOUGHT_REFRESHMENTS_ONCE
 	call SpeechTextBox
 	and a
 	ret

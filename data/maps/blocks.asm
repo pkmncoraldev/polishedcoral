@@ -859,6 +859,9 @@ Route6Underwater_BlockData:
 Route6UnderwaterCave_BlockData:
 	INCBIN "maps/Route6UnderwaterCave.ablk.lz"
 	
+CoralReef_BlockData:
+	INCBIN "maps/CoralReef.ablk.lz"
+	
 KomoreCommunityCenter_BlockData:
 	INCBIN "maps/KomoreCommunityCenter.ablk.lz"
 	

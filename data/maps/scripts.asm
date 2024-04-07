@@ -431,6 +431,7 @@ SECTION "Underwater Scripts", ROMX
 INCLUDE "maps/Route14_15Underwater.asm"
 INCLUDE "maps/Route13Underwater.asm"
 INCLUDE "maps/Route6Underwater.asm"
+INCLUDE "maps/CoralReef.asm"
 
 SECTION "Brightburg Scripts", ROMX
 INCLUDE "maps/Brightburg.asm"

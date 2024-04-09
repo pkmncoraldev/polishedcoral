@@ -396,12 +396,14 @@ LoadSpecialMapPalette: ; 494ac
 	cp GROUP_BRILLO_TOWN
 	jr z, .desert_house
 	cp GROUP_LUSTER_APARTMENT_5_2F
-	jp nz, .house1_nope
+	jp z, .house_1_cont
+	cp GROUP_DUSK_TURNPIKE
+	jp nz, .do_nothing
+.house_1_cont
 	ld a, [wMapNumber]
-	cp MAP_LUSTER_APARTMENT_5_2F
-	jp nz, .house1_nope
+	cp MAP_LUSTER_APARTMENT_5_2F ;same map number as DUSK_HOUSE_2
+	jp nz, .do_nothing
 	jp .spookhouse
-.house1_nope
 	jp .do_nothing
 	
 .orphanage

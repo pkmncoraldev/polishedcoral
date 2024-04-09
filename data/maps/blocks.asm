@@ -91,7 +91,6 @@ StarglowFishingGuruHouse_BlockData:
 SunbeamOldCouplesHouse_BlockData:
 SunbeamTradeHouse_BlockData:
 FlickerNameSpeechHouse_BlockData:
-DuskHouse2_BlockData:
 KomoreHouse2_BlockData:
 BrightHouse1_BlockData:
 	INCBIN "maps/NormalHouse2.ablk.lz"
@@ -106,6 +105,9 @@ DuskHouse3_BlockData:
 KomoreHouse3_BlockData:
 BrightHouse2_BlockData:
 	INCBIN "maps/NormalHouse3.ablk.lz"
+	
+DuskHouse2_BlockData:
+	INCBIN "maps/DuskHouse2.ablk.lz"
 	
 LakeOnwaItemHouse_BlockData:
 DodrioRanchHouse_BlockData:

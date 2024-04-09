@@ -20,8 +20,8 @@ DuskTurnpike_MapScriptHeader:
 	warp_event 28, 23, DUSK_AUTO_GARAGE, 6
 	warp_event 21, 31, DUSK_POKECENTER, 1
 	warp_event 29, 31, DUSK_MART, 1
-	warp_event 13, 27, DUSK_HOUSE_1, 1
-	warp_event 13, 33, DUSK_HOUSE_2, 1
+	warp_event 13, 33, DUSK_HOUSE_1, 1
+	warp_event 13, 25, DUSK_HOUSE_2, 1
 	warp_event 25, 31, DUSK_HOUSE_3, 1
 	warp_event 15,  5, BAR_BACK_ALLEY, 2
 	warp_event 22,  5, BAR_BACK_ALLEY, 5
@@ -78,7 +78,7 @@ DuskTurnpike_MapScriptHeader:
 	xy_trigger 0, 16, 31, 0, DuskTurnpikeTollBoothStopsYou3, 0, 0
 	xy_trigger 0, 17, 31, 0, DuskTurnpikeTollBoothStopsYou4, 0, 0
 
-	db 12 ; bg events
+	db 13 ; bg events
 	signpost 22, 30, SIGNPOST_JUMPTEXT, DuskTurnpikeBrokenCar
 	signpost 22, 31, SIGNPOST_JUMPTEXT, DuskTurnpikeBrokenCar
 	signpost 20, 23, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
@@ -91,11 +91,16 @@ DuskTurnpike_MapScriptHeader:
 	signpost  6, 15, SIGNPOST_READ, DuskTurnpikeTrashcan
 	signpost 31, 22, SIGNPOST_READ, DuskTurnpikePokeCenterSign
 	signpost 31, 30, SIGNPOST_READ, DuskTurnpikeMartSign
+	signpost 26, 15, SIGNPOST_JUMPTEXT, DuskTurnpikeDestiny
 	
 
-	db 2 ; object events
+	db 6 ; object events
 	person_event SPRITE_INVISIBLE, 13, 31, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, DuskTurnpikeTollbooth, -1
 	person_event SPRITE_PLANK_BRIDGE,  5, 20, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_SPA_WORKER, 26, 25, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC1, -1
+	person_event SPRITE_COOLTRAINER_F, 30, 13, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC2, -1
+	person_event SPRITE_COOL_DUDE, 33, 27, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC3, -1
+	person_event SPRITE_SKATER, 23, 18, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC4, -1
 
 
 	const_def 1 ; object constants
@@ -337,6 +342,65 @@ DuskTurnpikeTrashcanWildBattleScript:
 	reloadmapafterbattle
 	end
 	
+DuskTurnpikeNPC1:
+	jumptextfaceplayer DuskTurnpikeNPC1Text
+	
+DuskTurnpikeNPC2:
+	jumptextfaceplayer DuskTurnpikeNPC2Text
+	
+DuskTurnpikeNPC3:
+	jumptextfaceplayer DuskTurnpikeNPC3Text
+	
+DuskTurnpikeNPC4:
+	jumptextfaceplayer DuskTurnpikeNPC4Text
+	
+DuskTurnpikeNPC1Text:
+	text "Cough! Hack!"
+	line "Cough!"
+	
+	para "…"
+	
+	para "All the exhaust"
+	line "fumes are gettin'"
+	cont "to me."
+	
+	para "Step back, kid!"
+	
+	para "I think I'm gonna"
+	line "hurl!"
+	done
+	
+DuskTurnpikeNPC2Text:
+	text "I heard that the"
+	line "tunnel here con-"
+	cont "nects to a big"
+	cont "underground cave."
+	
+	para "Pretty neat!"
+	done
+	
+DuskTurnpikeNPC3Text:
+	text "The HIGHWAY goes"
+	line "on for miles and"
+	cont "miles with no rest"
+	cont "stops."
+	
+	para "Better make sure"
+	line "you're ready before"
+	cont "you hit the road!"
+	done
+	
+DuskTurnpikeNPC4Text:
+	text "The dude at the"
+	line "toll booth won't"
+	cont "let my SKATEBOARD"
+	cont "on the HIGHWAY!"
+	
+	para "It's got wheels!"
+	
+	para "It should count!"
+	done
+	
 DuskTurnpikePokeCenterSign:
 	jumpstd pokecentersign
 	
@@ -379,6 +443,10 @@ DuskTurnpikeTire:
 	line "around randomly."
 	done
 	
+DuskTurnpikeDestiny:
+	text "DESTINY HOUSE"
+	done
+	
 DuskTurnpikeTollboothText1:
 	text "Hey!"
 	done
@@ -389,7 +457,7 @@ DuskTurnpikeTollboothText2:
 	cont "point."
 	
 	para "Sorry, that's the"
-	line "rule."
+	line "rules."
 	done
 	
 Movement_DuskTollbooth1:

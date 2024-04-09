@@ -83,6 +83,9 @@ DuskAutoGarageGuyText1:
 	para "It's not safe,"
 	line "but she just won't"
 	cont "leave!"
+	
+	para "She's holding"
+	line "everything up!"
 	done
 	
 DuskAutoGarageGuyText2:

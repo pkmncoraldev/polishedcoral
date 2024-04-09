@@ -1807,8 +1807,11 @@ LoadMapPals::
 	ld a, [wMapGroup]
 	cp GROUP_BRILLO_TOWN
 	jp z, .computer
+	cp GROUP_DUSK_TURNPIKE
+	jp z, .candle
 	cp GROUP_LUSTER_CITY_RESIDENTIAL
 	jp nz, .normal
+.candle
 	ld hl, MapObjectPalsCandle
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM

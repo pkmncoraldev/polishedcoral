@@ -31,7 +31,7 @@ ENDM
 	add_tm TOXIC			; $05
 	add_tm HAIL				; $06
 	add_tm CHARM			; $07
-	add_tm VENOSHOCK		; $08
+	add_tm DESTINY_BOND		; $08
 	add_tm SUPERPOWER		; $09
 	add_tm SUNNY_DAY		; $0a
 	add_tm SIGNAL_BEAM		; $0b

@@ -12,8 +12,12 @@ DuskAutoLobby_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 5 ; object events
 	person_event SPRITE_POKEMANIAC,  4,  6, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, DuskAutoLobbyGuy, -1
+	person_event SPRITE_GENTLEMAN,  1,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, DuskAutoLobbyNPC1, -1
+	person_event SPRITE_POKEFAN_F,  1,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DuskAutoLobbyNPC2, -1
+	person_event SPRITE_SUPER_NERD,  3,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DuskAutoLobbyNPC3, -1
+	person_event SPRITE_CUTE_GIRL,  3,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, DuskAutoLobbyNPC4, -1
 	
 	
 	const_def 1 ; object constants
@@ -25,6 +29,133 @@ DuskAutoLobbyCallback:
 	moveperson DUSK_AUTO_LOBBY_GUY, -5, -5
 .end
 	return
+	
+DuskAutoLobbyNPC1:
+	faceplayer
+	opentext
+	writetext DuskAutoLobbyNPC1Text
+	waitbutton
+	closetext
+	spriteface 2, DOWN
+	end
+	
+DuskAutoLobbyNPC2:
+	faceplayer
+	opentext
+	checkevent EVENT_SAVED_POPPY
+	iftrue .saved_poppy
+	writetext DuskAutoLobbyNPC2Text1
+	jump .end
+.saved_poppy
+	writetext DuskAutoLobbyNPC2Text2
+.end
+	waitbutton
+	closetext
+	spriteface 3, DOWN
+	end
+	
+DuskAutoLobbyNPC3:
+	checkevent EVENT_TALKED_TO_SLEEPING_GUY_DUSK_AUTO_2
+	iftrue .talked2
+	checkevent EVENT_TALKED_TO_SLEEPING_GUY_DUSK_AUTO_1
+	iftrue .talked1
+	setevent EVENT_TALKED_TO_SLEEPING_GUY_DUSK_AUTO_1
+	jumptext DuskAutoLobbyNPC3Text1
+.talked1
+	setevent EVENT_TALKED_TO_SLEEPING_GUY_DUSK_AUTO_2
+	jumptext DuskAutoLobbyNPC3Text2
+.talked2
+	jumptext DuskAutoLobbyNPC3Text3
+	
+DuskAutoLobbyNPC4:
+	faceplayer
+	opentext
+	writetext DuskAutoLobbyNPC4Text
+	waitbutton
+	closetext
+	spriteface 5, DOWN
+	end
+	
+DuskAutoLobbyNPC2Text1:
+	text "I keep hearing a"
+	line "little kid's voice"
+	cont "giggling from back"
+	cont "in the garage."
+	
+	para "What's going on"
+	line "back there?"
+	
+	para "What's the hold-up?"
+	done
+	
+DuskAutoLobbyNPC2Text2:
+	text "I guess there was"
+	line "a kid causing"
+	cont "problems in the"
+	cont "garage."
+	
+	para "She's gone now"
+	line "apparently."
+	
+	para "Does that mean"
+	line "they can work on"
+	cont "my car now?"
+	done
+	
+DuskAutoLobbyNPC1Text:
+	text "My car broke down"
+	line "on the HIGHWAY."
+	
+	para "They had to order"
+	line "a new part."
+	
+	para "I've been waiting"
+	line "for days!"
+	done
+	
+DuskAutoLobbyNPC3Text1:
+	text "…"
+	
+	para "…"
+	
+	para "He's sleeping"
+	line "soundly…"
+	done
+	
+DuskAutoLobbyNPC3Text2:
+	text "…"
+	
+	para "…"
+	
+	para "Actually, he seems"
+	line "to be faking it…"
+	done
+	
+DuskAutoLobbyNPC3Text3:
+	text "…"
+	
+	para "…Go away!"
+	
+	para "I'm pretending to"
+	line "sleep so I don't"
+	cont "have to talk to"
+	cont "that girl!"
+	
+	para "She's so annoying!"
+	done
+	
+DuskAutoLobbyNPC4Text:
+	text "My friend fell"
+	line "asleep in the"
+	cont "middle of me talk-"
+	cont "ing to him!"
+	
+	para "How rude!"
+	
+	para "I wonder if I"
+	line "should try waking"
+	cont "him…"
+	done
 	
 SetUpBikeUpgradeStepsAsm:
 	ld a, 5

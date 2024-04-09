@@ -11,5 +11,24 @@ DuskHouse1_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	person_event SPRITE_REDS_MOM,  4,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DuskHouse1NPC, -1
+
+
+DuskHouse1NPC:
+	jumptextfaceplayer DuskHouse1NPCText
+	
+DuskHouse1NPCText:
+	text "If you like wheels"
+	line "we've got you set!"
+	
+	para "Between the bikes"
+	line "over at MOOMOO's,"
+	cont "the AUTO SHOP,"
+	cont "and the HIGHWAY,"
+	
+	para "DUSK TURNPIKE is"
+	line "the place to be!"
+	done
+	
 	

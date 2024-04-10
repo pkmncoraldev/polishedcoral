@@ -140,14 +140,20 @@ ShimmerLabResearchRoomProfText1:
 	text "My name is"
 	line "PROF. HILL."
 	
-	para "We have found"
-	line "evidence of an"
-	cont "ancient temple in"
-	cont "the desert on a"
-	cont "nearby island."
+	para "We are looking"
+	line "into rumors of"
+	cont "ancient ruins seen"
+	cont "across the ONWA"
+	cont "REGION."
 	
-	para "More reasearch is"
-	line "required…"
+	para "We have sent a"
+	line "researcher off to"
+	cont "ROUTE 10 near"
+	cont "TWINKLE TOWN."
+	
+	para "You should pay him"
+	line "a visit if you're"
+	cont "interested."
 	done
 	
 ShimmerLabResearchRoomProfText2:
@@ -304,7 +310,7 @@ ShimmerLabResearchRoomProfText9:
 	para "To use it outside"
 	line "of battle, you'll"
 	cont "need a BADGE from"
-	cont "RADIANT MEADOWS."
+	cont "RADIANT TOWN."
 	
 	para "It's a little town"
 	line "to the SOUTHEAST"

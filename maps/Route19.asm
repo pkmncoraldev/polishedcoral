@@ -277,7 +277,7 @@ Route19Sign1Text:
 	line "PORT SHIMMER"
 	
 	para "SOUTHEAST:"
-	line "RADIANT MEADOWS &"
+	line "RADIANT TOWN &"
 	cont "DUSK TURNPIKE"
 	done
 	
@@ -288,7 +288,7 @@ Route19Sign2Text:
 	line "PORT SHIMMER"
 	
 	para "SOUTHEAST:"
-	line "RADIANT MEADOWS &"
+	line "RADIANT TOWN &"
 	cont "DUSK TURNPIKE"
 	done
 	

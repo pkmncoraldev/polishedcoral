@@ -50,9 +50,13 @@ RadiantTownship_MapScriptHeader:
 	signpost 19, 27, SIGNPOST_READ, RadiantTownshipSunflower
 	signpost 14, 37, SIGNPOST_READ, RadiantTownshipSunflower
 
-	db 12 ; object events
+	db 16 ; object events
 	person_event SPRITE_ERIKA, 15, 22, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantTownshipErika, -1
-	person_event SPRITE_CUTE_GIRL, 10,  8, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC1, -1
+	person_event SPRITE_CUTE_GIRL, 10,  8, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC1, -1
+	person_event SPRITE_BATTLE_GIRL, 17, 29, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC2, -1
+	person_event SPRITE_SUPER_NERD,  9, 32, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC3, -1
+	person_event SPRITE_MATRON, 14, 15, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC4, -1
+	person_event SPRITE_FAT_GUY, 18,  8, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC5, -1
 	person_event SPRITE_CASINO, 10,  2, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 10,  3, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 17, 14, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
@@ -110,18 +114,39 @@ RadiantTownshipSunflowerText:
 	done
 
 RadiantTownshipNPC1:
-	clearevent EVENT_RADIANT_GYM_ACTIVE
-	setevent EVENT_RADIANT_GYM_INACTIVE
-	setevent EVENT_SAVED_ALL_LOST_GIRLS
-	setevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
-	setevent EVENT_CAN_GO_TO_DESERT
-	end
-
 	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .lostgirls
 	jumptextfaceplayer RadiantTownshipNPC1Text1
 .lostgirls
 	jumptextfaceplayer RadiantTownshipNPC1Text2
+
+RadiantTownshipNPC2:
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
+	iftrue .lostgirls
+	jumptextfaceplayer RadiantTownshipNPC2Text1
+.lostgirls
+	jumptextfaceplayer RadiantTownshipNPC2Text2
+	
+RadiantTownshipNPC3:
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
+	iftrue .lostgirls
+	jumptextfaceplayer RadiantTownshipNPC3Text1
+.lostgirls
+	jumptextfaceplayer RadiantTownshipNPC3Text2
+
+RadiantTownshipNPC4:
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
+	iftrue .lostgirls
+	jumptextfaceplayer RadiantTownshipNPC4Text1
+.lostgirls
+	jumptextfaceplayer RadiantTownshipNPC4Text2
+	
+RadiantTownshipNPC5:
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
+	iftrue .lostgirls
+	jumptextfaceplayer RadiantTownshipNPC5Text1
+.lostgirls
+	jumptextfaceplayer RadiantTownshipNPC5Text2
 
 RadiantTownshipSign:
 	jumptext RadiantTownshipSignText
@@ -148,9 +173,9 @@ RadiantTownshipFlowerShopSign:
 	jumptext RadiantTownshipFlowerShopSignText
 	
 RadiantTownshipSignText:
-	text "RADIANT MEADOWS"
+	text "RADIANT TOWN"
 	
-	para "A little community"
+	para "A little place"
 	line "among the flowers."
 	done
 	
@@ -159,7 +184,7 @@ RadiantMeadowSignText:
 	done
 	
 RadiantTownshipGymSignText:
-	text "RADIANT MEADOWS"
+	text "RADIANT TOWN"
 	line "ORPHANAGE &"
 	cont "#MON GYM"
 	done
@@ -182,7 +207,10 @@ RadiantTownshipSolarPanelText:
 	done
 	
 RadiantTownshipNPC1Text1:
-	text "TEXT 1"
+	text "Hello!"
+	
+	para "Beautiful day"
+	line "isn't it?"
 	done
 	
 RadiantTownshipNPC1Text2:
@@ -199,4 +227,101 @@ RadiantTownshipNPC1Text2:
 	para "It looked like"
 	line "they were heading"
 	cont "to PORT SHIMMER."
+	done
+	
+RadiantTownshipNPC2Text1:
+	text "My MOM travels to"
+	line "PORT SHIMMER every"
+	cont "day."
+	
+	para "She sells the"
+	line "BERRIES she grows"
+	cont "at the market."
+	done
+	
+RadiantTownshipNPC2Text2:
+	text "Missing girls?"
+	
+	para "Sorry, I can't"
+	line "help you."
+	
+	para "I wouldn't doubt if"
+	line "they headed out of"
+	cont "town, though."
+	done
+	
+RadiantTownshipNPC3Text1:
+	text "Sigh…"
+	
+	para "The girl at the"
+	line "FLOWER SHOP is my"
+	cont "dream girl!"
+	
+	para "I want to ask her"
+	line "out, but what do"
+	cont "you even get a"
+	cont "girl like that?"
+	
+	para "…"
+	
+	para "…Flowers?"
+	done
+	
+RadiantTownshipNPC3Text2:
+	text "The kids from the"
+	line "orphanage?"
+	
+	para "No clue, dude."
+	
+	para "Girls like"
+	line "flowers, right?"
+	
+	para "Maybe check the"
+	line "meadow."
+	done
+	
+RadiantTownshipNPC4Text1:
+	text "The orphanage here"
+	line "is run by our GYM"
+	cont "LEADER, LEILANI."
+	
+	para "The orphans help"
+	line "her test the GYM"
+	cont "challengers."
+	
+	para "How cute!"
+	done
+	
+RadiantTownshipNPC4Text2:
+	text "The girls ran off?"
+	
+	para "That's not very"
+	line "surprising."
+	
+	para "It may be hard to"
+	line "believe, but ERIKA"
+	cont "used to be a"
+	cont "troublemaker too!"
+	done
+	
+RadiantTownshipNPC5Text1:
+	text "RADIANT TOWN is"
+	line "powered totally"
+	cont "by solar energy."
+	
+	para "This place is both"
+	line "figuratively and"
+	cont "literally green!"
+	done
+
+RadiantTownshipNPC5Text2:
+	text "The orphans?"
+	
+	para "I guess they might"
+	line "have run off to"
+	cont "DUSK TURNPIKE."
+	
+	para "Though why anyone"
+	line "would go there is"
+	cont "beyond me…"
 	done

@@ -24,5 +24,19 @@ Route21GateOfficer:
 	jumptextfaceplayer Route21GateOfficerText
 
 Route21GateOfficerText:
-	text "TEXT"
+	text "Doo doo doo."
+	
+	para "I'm so bored!"
+	
+	para "Why does a place"
+	line "like this need a"
+	cont "guard anyway?"
+	
+	para "I wish I could"
+	line "trade spots with"
+	cont "my friend at"
+	cont "DUSK TURNPIKE."
+	
+	para "It seems more"
+	line "exciting there!"
 	done

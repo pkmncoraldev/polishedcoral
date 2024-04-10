@@ -11,9 +11,22 @@ RadiantFlowerShop_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	person_event SPRITE_DAISY,  3,  0, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantFlowerShopClerk, -1
+	person_event SPRITE_POKEFAN_F,  5,  6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantFlowerShopNPC, -1
 
+
+RadiantFlowerShopNPC:
+	jumptextfaceplayer RadiantFlowerShopNPCText
+	
+RadiantFlowerShopNPCText:
+	text "This little shop"
+	line "doesn't take money."
+	
+	para "They take pollen!"
+	
+	para "How fun!"
+	done
 
 RadiantFlowerShopClerk:
 	faceplayer

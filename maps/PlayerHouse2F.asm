@@ -602,7 +602,7 @@ PlayerHouseDesertTemple:
 	done
 	
 PlayerHouseRadiant:
-	text "RADIANT MEADOWS"
+	text "RADIANT TOWN"
 	done
 	
 PlayerHouseDusk:

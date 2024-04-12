@@ -7,7 +7,84 @@ callba EQUS "farcall"
 callab EQUS "callfar"
 
 ; macros/scripts/audio.asm
-unknownmusic0xde EQUS "sound_duty"
+MACRO musicheader
+	channel_count \1
+	channel \2, \3
+ENDM
+
+MACRO sound
+	note \1, \2
+	db \3
+	dw \4
+ENDM
+
+MACRO noise
+	note \1, \2
+	db \3
+	db \4
+ENDM
+
+MACRO notetype
+	if _NARG >= 2
+		note_type \1, \2 >> 4, \2 & $0f
+	else
+		note_type \1
+	endc
+ENDM
+
+MACRO pitchoffset
+	transpose \1, \2 - 1
+ENDM
+
+DEF dutycycle EQUS "duty_cycle"
+
+MACRO intensity
+	volume_envelope \1 >> 4, \1 & $0f
+ENDM
+
+MACRO soundinput
+	pitch_sweep \1 >> 4, \1 & $0f
+ENDM
+
+DEF unknownmusic0xde EQUS "sound_duty"
+MACRO sound_duty
+	db duty_cycle_pattern_cmd
+	if _NARG == 4
+		db \1 | (\2 << 2) | (\3 << 4) | (\4 << 6)
+	else
+		db \1
+	endc
+ENDM
+
+DEF togglesfx EQUS "toggle_sfx"
+
+MACRO slidepitchto
+	pitch_slide \1, (8 - \2), \3
+ENDM
+
+DEF togglenoise EQUS "toggle_noise"
+
+MACRO panning
+	force_stereo_panning ((\1 >> 4) & 1), (\1 & 1)
+ENDM
+
+DEF tone           EQUS "pitch_offset"
+DEF restartchannel EQUS "restart_channel"
+DEF newsong        EQUS "new_song"
+DEF sfxpriorityon  EQUS "sfx_priority_on"
+DEF sfxpriorityoff EQUS "sfx_priority_off"
+
+MACRO stereopanning
+	stereo_panning ((\1 >> 4) & 1), (\1 & 1)
+ENDM
+
+DEF sfxtogglenoise EQUS "sfx_toggle_noise"
+DEF setcondition   EQUS "set_condition"
+DEF jumpif         EQUS "sound_jump_if"
+DEF jumpchannel    EQUS "sound_jump"
+DEF loopchannel    EQUS "sound_loop"
+DEF callchannel    EQUS "sound_call"
+DEF endchannel     EQUS "sound_ret"
 
 ; macros/scripts/events.asm
 

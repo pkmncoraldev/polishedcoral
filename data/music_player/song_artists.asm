@@ -6,4 +6,5 @@ SongArtists:
 	db "JUNICHI MASUDA@"
 	db "CCCP<LNBRK>coraldev@"
 	db "EIKO@"
+	db "ALPHA REMASTER@"
 	

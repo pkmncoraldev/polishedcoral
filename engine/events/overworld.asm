@@ -1590,6 +1590,20 @@ TryStrengthOW:: ; cd78
 ; UnknownText_0xce78: ; 0xce78
 	; text_jump UnknownText_0x1c0864
 	; db "@"
+	
+CheckPartyForCertainMove::
+; Check if a monster in your party has move in wScriptVar
+	ld a, [wScriptVar]
+	ld d, a
+	call CheckPartyMove
+	jr c, .no
+	ld a, 1
+	ld [wScriptVar], a
+	jp GetPartyNick
+.no
+	xor a
+	ld [wScriptVar], a
+	ret
 
 HeadbuttFunction: ; ce7d
 	call TryHeadbuttFromMenu

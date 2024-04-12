@@ -35,8 +35,8 @@ NPCTrades:
 	db $DD, $DD, $DD, ABILITY_2 | LONELY, MALE, POKE_BALL,    BLACK_BELT
 	dw 50082
 	db "MARTY@@@", $00
-; TRADE_WITH_HARI_FOR_DODUO in Ecruteak City
-	db 0, BULBASAUR, BULBASAUR,      "C","l","a","r","e","n","c","e","@","@","@"
-	db $EE, $EE, $EE, HIDDEN_ABILITY | HASTY,   MALE,   FAST_BALL,    GOLD_LEAF
-	dw 43972
-	db "H","a","r","i","@","@","@","@", $00
+; TRADE_WITH_BEV_FOR_PINECO in Radiant Town
+	db 7, SUNKERN, PINECO,      "BOOMER@@@@@"
+	db $DD, $DD, $DD, HIDDEN_ABILITY | LAX,   MALE,   POKE_BALL,    MACHO_BRACE
+	dw 63426
+	db "BEV@@@@@", $00

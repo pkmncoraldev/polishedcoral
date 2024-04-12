@@ -104,6 +104,7 @@ ShimmerHouse2_BlockData:
 DuskHouse3_BlockData:
 KomoreHouse3_BlockData:
 BrightHouse2_BlockData:
+RadiantHouse_BlockData:
 	INCBIN "maps/NormalHouse3.ablk.lz"
 	
 DuskHouse2_BlockData:
@@ -737,9 +738,6 @@ RadiantMart_BlockData:
 	
 Route21Gate_BlockData:
 	INCBIN "maps/NorthSouthGate.ablk.lz"
-	
-RadiantHouse_BlockData:
-	INCBIN "maps/NormalHouse2.ablk.lz"
 	
 RadiantField_BlockData:
 	INCBIN "maps/RadiantField.ablk.lz"

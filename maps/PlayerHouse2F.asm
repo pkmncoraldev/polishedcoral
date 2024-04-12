@@ -436,6 +436,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_GOT_SURF
 	setflag ENGINE_GOT_DIVE
 	setflag ENGINE_GOT_STRENGTH
+	givetmhm TM_GIGA_DRAIN
 	givetmhm TM_CURSE
 	givetmhm TM_HAIL
 	givetmhm TM_ZAP_CANNON

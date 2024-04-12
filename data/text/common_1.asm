@@ -1502,6 +1502,74 @@ UnknownText_TradeAfterText7::
 	text "!"
 	done
 	
+UnknownText_TradeIntroText8::
+	text "There's a seed"
+	line "#MON called"
+	cont "SUNRKERN."
+	
+	para "It has such a"
+	line "funny face!"
+	
+	para "I want to catch"
+	line "one, but the pollen"
+	cont "outside just kills"
+	cont "me!"
+	
+	para "Do you have a"
+	line "@"
+	text_from_ram wStringBuffer1
+	text "?"
+
+	para "Would you trade"
+	line "for my @"
+	text_from_ram wStringBuffer2
+	text "?"
+	done
+
+UnknownText_TradeCancelText8::
+	text "Aww…"
+	
+	para "I guess I'll just"
+	line "make funny faces"
+	cont "in the mirror…"
+	done
+
+UnknownText_TradeWrongText8::
+	text "That's not@"
+	text_from_ram wStringBuffer1
+	text "!"
+	
+	para "It's face isn't"
+	line "nearly as funny!"
+	done
+
+UnknownText_TradeCompleteText8::
+	text "Wahoo!"
+	
+	para "Look at how silly"
+	line "@"
+	text_from_ram wStringBuffer1
+	text " looks!"
+	
+	para "We're gonna be"
+	line "great friends!"
+	done
+
+UnknownText_TradeAfterText8::
+	text "Oh hey!"
+	
+	para "Is BOOMER doing"
+	line "ok?"
+	
+	para "@"
+	text_from_ram wTradeSunkernName
+	text " and I"
+	line "are getting along"
+	cont "great!"
+	
+	para "We're practicing"
+	line "doing funny faces."
+	done
 	
 UnknownText_0x1bd88e::
 	text "Transaction"

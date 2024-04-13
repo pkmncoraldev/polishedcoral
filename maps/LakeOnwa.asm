@@ -18,7 +18,7 @@ LakeOnwa_MapScriptHeader:
 	warp_def 22,  7, 1, LAKE_ONWA_NAME_RATER_HOUSE
 	warp_def 16, 13, 1, LAKE_ONWA_ITEM_HOUSE
 	warp_def 17, 19, 1, LAKE_ONWA_POKECENTER
-	warp_def  3, 57, 3, ROUTE_8_GATE
+	warp_def  1, 57, 3, ROUTE_8_GATE
 	warp_def 13, 23, 1, LAKE_ONWA_MART
 
 	db 64 ; coord events
@@ -87,7 +87,7 @@ LakeOnwa_MapScriptHeader:
 	coord_event 37,  8, 5, LakeRivalT
 	coord_event 37,  9, 5, LakeRivalB
 
-	db 8 ; bg events
+	db 9 ; bg events
 	signpost 25, 61, SIGNPOST_READ, LakeSign
 	signpost 29, 48, SIGNPOST_READ, LakeBoatHouseSignR
 	signpost 23, 19, SIGNPOST_READ, LakeBoatHouseSignL
@@ -96,6 +96,7 @@ LakeOnwa_MapScriptHeader:
 	signpost  8, 32, SIGNPOST_READ, MtOnwaSign
 	bg_event  4, 25, SIGNPOST_ITEM + MAX_REVIVE, EVENT_LAKE_ONWA_HIDDEN_ITEM
 	signpost 13, 24, SIGNPOST_READ, LakeMartSign
+	signpost  2, 59, SIGNPOST_READ, LakeRoute8Sign
 
 	db 18 ; object events
 	person_event SPRITE_GENERAL_VARIABLE_1,  0,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -549,6 +550,9 @@ LakeNpc4:
 	closetext
 	end
 
+LakeRoute8Sign:
+	jumptext LakeRoute8SignText
+
 LakeSign:
 	jumptext LakeSignText
 
@@ -667,6 +671,14 @@ LakeSnareWalkText:
 	
 	para "Heading to the"
 	line "island now."
+	done
+
+LakeRoute8SignText:
+	para "NORTH:"
+	line "ROUTE 8"
+	
+	para "SOUTH:"
+	line "LAKE ONWA"
 	done
 
 LakeSignText:

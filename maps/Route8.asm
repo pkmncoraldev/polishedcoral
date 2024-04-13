@@ -5,8 +5,8 @@ Route8_MapScriptHeader:
 	callback MAPCALLBACK_TILES, Route8Callback
 
 	db 3 ; warp events
-	warp_def 39, 45, 1, ROUTE_8_GATE
-	warp_def 39, 46, 2, ROUTE_8_GATE
+	warp_def 37, 45, 1, ROUTE_8_GATE
+	warp_def 37, 46, 2, ROUTE_8_GATE
 	warp_def 11, 17, 1, ROUTE_8_ENCOUNTER_HOUSE
 
 	db 0 ; coord events

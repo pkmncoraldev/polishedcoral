@@ -124,7 +124,7 @@ LusterSkyscraper1_3F_NPC1Text4:
 	line "cool?"
 	
 	para "Bring me an"
-	line "UP GRADE."
+	line "UP-GRADE."
 	
 	para "You can probably"
 	line "find one at the"
@@ -137,7 +137,7 @@ LusterSkyscraper1_3F_NPC1Text5:
 	line "those weird discs."
 	
 	para "Bring me another"
-	line "UP GRADE if you"
+	line "UP-GRADE if you"
 	cont "want to trade."
 	done
 	
@@ -156,7 +156,7 @@ LusterSkyscraper1_3F_NPC1TextNo:
 	
 LusterSkyscraper1_3F_Gave_Up_Grade:
 	text "<PLAYER> handed"
-	line "over UP GRADE."
+	line "over UP-GRADE."
 	done
 	
 LusterSkyscraper1_3F_NPC3Text:

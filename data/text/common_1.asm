@@ -1511,9 +1511,9 @@ UnknownText_TradeIntroText8::
 	line "funny face!"
 	
 	para "I want to catch"
-	line "one, but the pollen"
-	cont "outside just kills"
-	cont "me!"
+	line "one, but I can't"
+	cont "handle the pollen"
+	cont "outside!"
 	
 	para "Do you have a"
 	line "@"

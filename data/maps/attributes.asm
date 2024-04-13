@@ -440,11 +440,11 @@ ENDM
 	connection west, Route24South, ROUTE_24_SOUTH, -4
 	
 	map_attributes Route25, ROUTE_25, $c6, SOUTH | WEST
-	connection south, Route26, ROUTE_26, 18
+	connection south, Route25South, ROUTE_25_SOUTH, 16
 	connection west, Route23, ROUTE_23, -10
 	
-	map_attributes Route26, ROUTE_26, $30, NORTH
-	connection north, Route25, ROUTE_25, -18
+	map_attributes Route25South, ROUTE_25_SOUTH, $30, NORTH
+	connection north, Route25, ROUTE_25, -16
 	
 	map_attributes Brightburg, BRIGHTBURG, $fb, 0
 	

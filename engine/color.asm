@@ -1435,6 +1435,9 @@ LoadMapPals::
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 .autumn
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_25_SOUTH
+	jr z, .park
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes

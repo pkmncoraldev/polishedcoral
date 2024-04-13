@@ -367,7 +367,7 @@ LoadEmoteGFX::
 	cp TILESET_SNOW
 	jp z, .snow
 	cp TILESET_AUTUMN
-	jp z, .boulder
+	jp z, .autumn
 	cp TILESET_SHIMMER
 	jp z, .flowers
 	cp TILESET_GROVE
@@ -378,6 +378,10 @@ LoadEmoteGFX::
 	jp z, .playerhouse
 	call GetMapPermission
 	call CheckOutdoorMapOrPerm5
+	jr z, .outdoor
+.autumn
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_25_SOUTH
 	jr z, .outdoor
 .boulder
 	ld c, EMOTE_BOULDER_DUST

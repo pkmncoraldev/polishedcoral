@@ -114,6 +114,13 @@ RadiantTownshipSunflowerText:
 	done
 
 RadiantTownshipNPC1:
+;	clearevent EVENT_RADIANT_GYM_ACTIVE
+;	setevent EVENT_RADIANT_GYM_INACTIVE
+;	setevent EVENT_SAVED_ALL_LOST_GIRLS
+;	setevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
+;	setevent EVENT_CAN_GO_TO_DESERT
+;	end
+
 	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .lostgirls
 	jumptextfaceplayer RadiantTownshipNPC1Text1

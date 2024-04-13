@@ -844,8 +844,8 @@ Route24SouthWindy_BlockData:
 Route25_BlockData:
 	INCBIN "maps/Route25.ablk.lz"
 	
-Route26_BlockData:
-	INCBIN "maps/Route26.ablk.lz"
+Route25South_BlockData:
+	INCBIN "maps/Route25South.ablk.lz"
 	
 Route14_15Underwater_BlockData:
 	INCBIN "maps/Route14_15Underwater.ablk.lz"

@@ -6,8 +6,8 @@ Route25Gate_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 4 ; warp events
-	warp_event  3,  0, ROUTE_1, 1
-	warp_event  4,  0, ROUTE_1, 2
+	warp_event  3,  0, ROUTE_25_SOUTH, 1
+	warp_event  4,  0, ROUTE_25_SOUTH, 2
 	warp_event  3,  7, BRIGHTBURG, 8
 	warp_event  4,  7, BRIGHTBURG, 8
 

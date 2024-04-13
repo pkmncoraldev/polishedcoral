@@ -79,7 +79,7 @@
 	tilecoll WALL, WALL, WATER, WALL ; 4e
 	tilecoll WALL, WALL, WALL, WALL ; 4f
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE ; 50
-	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; 51
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 51
 	tilecoll WALL, WALL, WALL, WALL ; 52
 	tilecoll WALL, WALL, WALL, WALL ; 53
 	tilecoll WATER, WATER, WATER, WATER ; 54
@@ -185,7 +185,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; b8
 	tilecoll FLOOR, FLOOR, WALL, WALL ; b9
 	tilecoll SKATE, WALL, FLOOR, WALL ; ba
-	tilecoll WALL, WALL, WALL, WALL ; bb
+	tilecoll FLOOR, WALL, FLOOR, WALL ; bb
 	tilecoll WALL, WALL, WALL, WALL ; bc
 	tilecoll WALL, WALL, WALL, WALL ; bd
 	tilecoll NO_OLLIE, WARP_CARPET_LEFT, RIGHT_WALL, WARP_CARPET_LEFT ; be

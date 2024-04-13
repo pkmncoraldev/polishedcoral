@@ -6,67 +6,67 @@ RadiantTownship_MapScriptHeader:
 	callback MAPCALLBACK_TILES, RadiantTownshipCallback
 
 	db 8 ; warp events
-	warp_def 13, 35, 1, RADIANT_FLOWER_SHOP
-	warp_def 24, 18, 1, RADIANT_FIELD
-	warp_def 24, 19, 2, RADIANT_FIELD
-	warp_def 13, 22, 1, RADIANT_ORPHANAGE_1F
-	warp_def  7,  5, 1, RADIANT_POKECENTER
-	warp_def 15,  5, 1, RADIANT_MART
-	warp_def  9, 15, 1, RADIANT_HOUSE
-	warp_def  5, 31, 3, ROUTE_21_GATE
+	warp_def 13, 37, 1, RADIANT_FLOWER_SHOP
+	warp_def 24, 20, 1, RADIANT_FIELD
+	warp_def 24, 21, 2, RADIANT_FIELD
+	warp_def 13, 24, 1, RADIANT_ORPHANAGE_1F
+	warp_def  7,  7, 1, RADIANT_POKECENTER
+	warp_def 15,  7, 1, RADIANT_MART
+	warp_def  9, 17, 1, RADIANT_HOUSE
+	warp_def  5, 33, 3, ROUTE_21_GATE
 
 	db 0 ; coord events
 
 	db 31 ; bg events
-	signpost 14, 12, SIGNPOST_READ, RadiantTownshipSign
-	signpost 18, 20, SIGNPOST_READ, RadiantMeadowSign
-	signpost 14, 21, SIGNPOST_READ, RadiantTownshipGymSign
-	signpost  6, 32, SIGNPOST_READ, RadiantTownshipRoute21Sign
-	signpost  6,  2, SIGNPOST_READ, RadiantTownshipSolarPanel
-	signpost  6,  3, SIGNPOST_READ, RadiantTownshipSolarPanel
-	signpost 14,  2, SIGNPOST_READ, RadiantTownshipSolarPanel
-	signpost 14,  3, SIGNPOST_READ, RadiantTownshipSolarPanel
-	signpost 18, 12, SIGNPOST_READ, RadiantTownshipSolarPanel
-	signpost 18, 13, SIGNPOST_READ, RadiantTownshipSolarPanel
-	signpost  8, 18, SIGNPOST_READ, RadiantTownshipSolarPanel
-	signpost  8, 19, SIGNPOST_READ, RadiantTownshipSolarPanel
-	signpost 18, 24, SIGNPOST_READ, RadiantTownshipSolarPanel
-	signpost 18, 25, SIGNPOST_READ, RadiantTownshipSolarPanel
-	signpost 12, 26, SIGNPOST_READ, RadiantTownshipSolarPanel
-	signpost 12, 27, SIGNPOST_READ, RadiantTownshipSolarPanel
-	signpost 12, 32, SIGNPOST_READ, RadiantTownshipSolarPanel
-	signpost 12, 33, SIGNPOST_READ, RadiantTownshipSolarPanel
-	signpost  7,  6, SIGNPOST_READ, RadiantTownshipPokeCenterSign
-	signpost 15,  6, SIGNPOST_READ, RadiantTownshipMartSign
-	signpost 14, 36, SIGNPOST_READ, RadiantTownshipFlowerShopSign
-	signpost 11,  2, SIGNPOST_READ, RadiantTownshipSunflower
-	signpost 11,  3, SIGNPOST_READ, RadiantTownshipSunflower
-	signpost 18, 14, SIGNPOST_READ, RadiantTownshipSunflower
-	signpost 18, 15, SIGNPOST_READ, RadiantTownshipSunflower
-	signpost 14, 23, SIGNPOST_READ, RadiantTownshipSunflower
-	signpost 14, 24, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 14, 14, SIGNPOST_READ, RadiantTownshipSign
+	signpost 18, 22, SIGNPOST_READ, RadiantMeadowSign
+	signpost 14, 23, SIGNPOST_READ, RadiantTownshipGymSign
+	signpost  6, 34, SIGNPOST_READ, RadiantTownshipRoute21Sign
+	signpost  6,  4, SIGNPOST_READ, RadiantTownshipSolarPanel
+	signpost  6,  5, SIGNPOST_READ, RadiantTownshipSolarPanel
+	signpost 14,  4, SIGNPOST_READ, RadiantTownshipSolarPanel
+	signpost 14,  5, SIGNPOST_READ, RadiantTownshipSolarPanel
+	signpost 18, 14, SIGNPOST_READ, RadiantTownshipSolarPanel
+	signpost 18, 15, SIGNPOST_READ, RadiantTownshipSolarPanel
+	signpost  8, 20, SIGNPOST_READ, RadiantTownshipSolarPanel
+	signpost  8, 21, SIGNPOST_READ, RadiantTownshipSolarPanel
+	signpost 18, 26, SIGNPOST_READ, RadiantTownshipSolarPanel
+	signpost 18, 27, SIGNPOST_READ, RadiantTownshipSolarPanel
+	signpost 12, 28, SIGNPOST_READ, RadiantTownshipSolarPanel
+	signpost 12, 29, SIGNPOST_READ, RadiantTownshipSolarPanel
+	signpost 12, 34, SIGNPOST_READ, RadiantTownshipSolarPanel
+	signpost 12, 35, SIGNPOST_READ, RadiantTownshipSolarPanel
+	signpost  7,  8, SIGNPOST_READ, RadiantTownshipPokeCenterSign
+	signpost 15,  8, SIGNPOST_READ, RadiantTownshipMartSign
+	signpost 14, 38, SIGNPOST_READ, RadiantTownshipFlowerShopSign
+	signpost 11,  4, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 11,  5, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 18, 16, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 18, 17, SIGNPOST_READ, RadiantTownshipSunflower
 	signpost 14, 25, SIGNPOST_READ, RadiantTownshipSunflower
-	signpost 19, 26, SIGNPOST_READ, RadiantTownshipSunflower
-	signpost 19, 27, SIGNPOST_READ, RadiantTownshipSunflower
-	signpost 14, 37, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 14, 26, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 14, 27, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 19, 28, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 19, 29, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 14, 39, SIGNPOST_READ, RadiantTownshipSunflower
 
 	db 16 ; object events
-	person_event SPRITE_ERIKA, 15, 22, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantTownshipErika, -1
-	person_event SPRITE_CUTE_GIRL, 10,  8, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC1, -1
-	person_event SPRITE_BATTLE_GIRL, 17, 29, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC2, -1
-	person_event SPRITE_SUPER_NERD,  9, 32, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC3, -1
-	person_event SPRITE_POKEFAN_F, 14, 15, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC4, -1
-	person_event SPRITE_FAT_GUY, 18,  8, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC5, -1
-	person_event SPRITE_CASINO, 10,  2, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 10,  3, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 17, 14, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 17, 15, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 13, 23, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 13, 24, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_ERIKA, 15, 24, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantTownshipErika, -1
+	person_event SPRITE_CUTE_GIRL, 10, 10, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC1, -1
+	person_event SPRITE_BATTLE_GIRL, 17, 31, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC2, -1
+	person_event SPRITE_SUPER_NERD,  9, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC3, -1
+	person_event SPRITE_POKEFAN_F, 14, 17, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC4, -1
+	person_event SPRITE_FAT_GUY, 18, 10, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC5, -1
+	person_event SPRITE_CASINO, 10,  4, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 10,  5, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 17, 16, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 17, 17, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 13, 25, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 18, 26, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 18, 27, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 13, 37, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 13, 26, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 13, 27, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 18, 28, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 18, 29, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO, 13, 39, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 
 	const_def 1 ; object constants
 	const RADIANT_TOWNSHIP_ERIKA

@@ -337,10 +337,10 @@ ENDM
 	
 	map_attributes Route20, ROUTE_20, $30, NORTH | SOUTH
 	connection north, Route19, ROUTE_19, -11
-	connection south, RadiantTownship, RADIANT_TOWNSHIP, 1
+	connection south, RadiantTownship, RADIANT_TOWNSHIP, 0
 	
 	map_attributes RadiantTownship, RADIANT_TOWNSHIP, $30, NORTH
-	connection north, Route20, ROUTE_20, -1
+	connection north, Route20, ROUTE_20, 0
 	
 	map_attributes BrilloTown, BRILLO_TOWN, $35, EAST
 	connection east, Route17, ROUTE_17, -7

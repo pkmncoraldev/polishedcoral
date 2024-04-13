@@ -360,7 +360,7 @@ MAP_NONE   EQU 0
 	
 	map_const ROUTE_19,									  24, 26 ; 1
 	map_const ROUTE_20,									  10, 16 ; 2
-	map_const RADIANT_TOWNSHIP,							  20, 14 ; 3
+	map_const RADIANT_TOWNSHIP,							  23, 14 ; 3
 	map_const RADIANT_FLOWER_SHOP,						   5,  4 ; 4
 	map_const RADIANT_ORPHANAGE_1F,						   6,  5 ; 5
 	map_const RADIANT_ORPHANAGE_2F,						   8,  4 ; 6

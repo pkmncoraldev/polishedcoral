@@ -109,8 +109,9 @@ BrightburgNPC4Text1:
 	text "No one here will"
 	line "talk to me…"
 	
-	para "Do I smell bad"
-	line "or something?"
+	para "What? Does my"
+	line "breath stink or"
+	cont "something?"
 	done
 	
 BrightburgNPC4Text2:

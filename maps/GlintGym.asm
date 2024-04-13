@@ -942,19 +942,7 @@ GlintGymBook14:
 	jumptext GlintGymBookText14
 	
 GlintGymBook15:
-	opentext
-	writetext GlintGymBookText15_1
-	yesorno
-	iffalse .no
-	writetext GlintGymBookText15_2
-	waitbutton
-	closetext
-	end
-.no
-	writetext GlintGymBookText15_3
-	waitbutton
-	closetext
-	end
+	jumptext GlintGymBookText15
 	
 GlintGymBook16:
 	jumptext GlintGymBookText16
@@ -1037,13 +1025,11 @@ GlintGymBookText5:
 	done
 	
 GlintGymBookText6:
-	text "An article on the"
-	line "RUINS OF ALPH in"
-	cont "the JOHTO region!"
+	text "“ONWA ANCIENT"
+	line "CIVILIZATIONS”"
 	
-	para "There is a strange"
-	line "language written"
-	cont "on the walls."	
+	para "BY: PROFESSOR"
+	line "HILL"
 	done
 	
 GlintGymBookText7:
@@ -1098,6 +1084,8 @@ GlintGymBookText12_1:
 	text "A book titled"
 	line "“VEILSTONE'S"
 	cont "MYTH”."
+	
+	para "It looks long."
 	
 	para "Read it?"
 	done
@@ -1224,87 +1212,14 @@ GlintGymBookText14:
 	para "Sounds boring…"
 	done
 	
-GlintGymBookText15_1:
-	text "You've found an"
-	line "old magazine."
+GlintGymBookText15:
+	text "An article on the"
+	line "RUINS OF ALPH in"
+	cont "the JOHTO region!"
 	
-	para "Read it?"
-	done
-	
-GlintGymBookText15_2:
-	text "“My secret life,"
-	line "chapter three.”"
-	
-	para "(Story from the"
-	line "previous chapter.)"
-	
-	para "I was neither a"
-	line "murder suspect,"
-	
-	para "nor a target for"
-	line "an international"
-	cont "spy organization."
-	
-	para "But I drove a car"
-	line "down the Jersey"
-	cont "Turnpike at 80mph."
-	
-	para "…A police officer"
-	line "pulled me over and"
-	
-	para "asked for my"
-	line "driver's license."
-	
-	para "He said I was"
-	line "going 20mph over"
-	cont "the speed limit."
-	
-	para "I instantly point-"
-	line "ed to my wife and"
-	cont "said,"
-	
-	para "“I'm in a hurry,"
-	line "my wife is in"
-	cont "labor.”"
-	
-	para "Fortunatly, my"
-	line "wife actually had"
-	cont "a big stomach."
-	
-	para "I hoped he'd let me"
-	line "go with this"
-	cont "excuse."
-	
-	para "“Oh, since it's an"
-	line "emergency."
-	
-	para "I'll lead you to"
-	line "the hospital with"
-	cont "my police car,”"
-	cont "he said."
-	
-	para "“No, it's not"
-	line "necessary.”"
-	
-	para "“Why not?” asked "
-	line "the officer."
-	
-	para "“Uh… well…”"
-	
-	para "“Let's get going,”"
-	line "said the officer…"
-	
-	para "“No, no! We can't!"
-	
-	para "This baby is a"
-	line "demon child!”"
-	done
-	
-GlintGymBookText15_3:
-	text "Good."
-	
-	para "That may be the"
-	line "best choice."
+	para "There is a strange"
+	line "language written"
+	cont "on the walls."	
 	done
 	
 	

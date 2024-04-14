@@ -14,7 +14,8 @@ Route27_MapScriptHeader:
 	xy_trigger 1, 11,  6, 0, Route25MapSignThing, 0, 0
 	xy_trigger 1, 11,  7, 0, Route25MapSignThing, 0, 0
 
-	db 12 ; bg events
+	db 13 ; bg events
+	signpost 12,  9, SIGNPOST_READ, Route27Sign
 	signpost 17, 18, SIGNPOST_READ, Route27Logs
 	signpost 17, 19, SIGNPOST_READ, Route27Logs
 	signpost 22, 19, SIGNPOST_READ, Route27Logs
@@ -28,8 +29,8 @@ Route27_MapScriptHeader:
 	signpost 24, 47, SIGNPOST_READ, Route27Logs
 	signpost 30, 41, SIGNPOST_READ, Route27BrightburgSign
 
-	db 4 ; object events
-	person_event SPRITE_LEILANI_CHAIR_2, 12,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
+	db 3 ; object events
+;	person_event SPRITE_LEILANI_CHAIR_2, 12,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
 	person_event SPRITE_LEILANI_CHAIR_2, 23, 17, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
 	person_event SPRITE_LEILANI_CHAIR_2, 22, 29, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
 	person_event SPRITE_LEILANI_CHAIR_2, 25, 43, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
@@ -48,6 +49,7 @@ Route25MapSignThing::
 	clearevent EVENT_ON_ROUTE_27
 	loadvar wEnteredMapFromContinue, 0
 	callasm ReturnFromMapSetupScript
+	callasm Route27FadeToMusicAsm
 	dotrigger $0
 	end
 
@@ -55,8 +57,13 @@ Route27MapSignThing::
 	setevent EVENT_ON_ROUTE_27
 	loadvar wEnteredMapFromContinue, 0
 	callasm ReturnFromMapSetupScript
+	callasm Route27FadeToMusicAsm
 	dotrigger $1
 	end
+
+Route27FadeToMusicAsm:
+	call FadeToMapMusic
+	ret
 
 Route27Logs:
 	jumptext Route27LogsText
@@ -64,6 +71,22 @@ Route27Logs:
 Route27LogsText:
 	text "Some lumber is"
 	line "stacked neatly."
+	done
+
+Route27Sign:
+	jumptext Route27SignText
+	
+Route27SignText:
+	text "ROUTE 27"
+	
+	para "NORTH:"
+	line "ROUTE 25"
+	
+	para "WEST:"
+	line "ROUTE 26"
+	
+	para "SOUTHEAST:"
+	line "BRIGHTBURG"
 	done
 
 Route27BrightburgSign:

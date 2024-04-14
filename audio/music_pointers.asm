@@ -62,7 +62,7 @@ Music:
 	dba Music_Autumn
 	dba Music_Dojo
 	dba Music_Underwater
-	dba Music_Route26
+	dba Music_Route27
 	
 	dba Music_StarglowOld
 	dba Music_WildBattleOld

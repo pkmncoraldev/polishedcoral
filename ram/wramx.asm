@@ -393,7 +393,8 @@ wBGMapAnchor:: ds 2
 
 wOldTileset:: ds 1
 
-	ds 63 ; unused
+wTreeAnimationFrame:: ds 1
+	ds 62 ; unused
 
 wOverworldMapAnchor:: ds 2
 wMetatileStandingY:: ds 1

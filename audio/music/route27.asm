@@ -1,11 +1,11 @@
-Music_Route26:
+Music_Route27:
 	channel_count 4
-	channel 1, Music_Route26_Ch1
-	channel 2, Music_Route26_Ch2
-	channel 3, Music_Route26_Ch3
-	channel 4, Music_Route26_Ch4
+	channel 1, Music_Route27_Ch1
+	channel 2, Music_Route27_Ch2
+	channel 3, Music_Route27_Ch3
+	channel 4, Music_Route27_Ch4
 
-Music_Route26_Ch1:
+Music_Route27_Ch1:
 	volume 7, 7
 	note_type 12, 11, 2
 	tempo 145
@@ -187,7 +187,7 @@ Music_Route26_Ch1:
 	note C_, 8
 	sound_loop 0, .mainloop
 
-Music_Route26_Ch2:
+Music_Route27_Ch2:
 	duty_cycle 1
 	note_type 12, 12, 2
 	octave 3
@@ -325,7 +325,7 @@ Music_Route26_Ch2:
 	note F_, 8
 	sound_loop 0, .mainloop
 
-Music_Route26_Ch3:
+Music_Route27_Ch3:
 	note_type 12, 2, 5
 	octave 2
 	note A#, 2
@@ -536,7 +536,7 @@ Music_Route26_Ch3:
 	note A_, 2
 	sound_loop 0, .mainloop
 
-Music_Route26_Ch4:
+Music_Route27_Ch4:
 	toggle_noise 1
 	drum_speed 12
 	drum_note 10, 6

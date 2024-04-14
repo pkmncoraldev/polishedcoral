@@ -1008,6 +1008,29 @@ AnimateTreeTiles:
 	bit 7, [hl] ; ENGINE_WINDY_DAY
 	ret z
 	
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_27
+	jr z, .stop
+	
+	ld a, [wTreeAnimationFrame]
+	cp 0
+	jr nz, .dec
+	ld a, 1
+	ld [wTreeAnimationFrame], a
+	jr AnimateWaterfallTiles2
+.stop
+	ld a, [wTreeAnimationFrame]
+	cp 2
+	ret z
+	ld a, 2
+	ld [wTreeAnimationFrame], a
+	xor a
+	ld [wTileAnimationTimer], a
+	jr AnimateWaterfallTiles2
+.dec
+	xor a
+	ld [wTreeAnimationFrame], a
+	
 AnimateWaterfallTiles2: ; fc56d
 ; Draw two waterfall tiles for the current frame in VRAM tile at de.
 ; based on AnimateWhirlpoolTiles, but with 8 frames

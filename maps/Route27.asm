@@ -47,6 +47,7 @@ Route27Callback:
 
 Route25MapSignThing::
 	clearevent EVENT_ON_ROUTE_27
+	clearevent EVENT_SET_ROUTE_27
 	loadvar wEnteredMapFromContinue, 0
 	callasm ReturnFromMapSetupScript
 	callasm Route27FadeToMusicAsm
@@ -55,6 +56,7 @@ Route25MapSignThing::
 
 Route27MapSignThing::
 	setevent EVENT_ON_ROUTE_27
+	setevent EVENT_SET_ROUTE_27
 	loadvar wEnteredMapFromContinue, 0
 	callasm ReturnFromMapSetupScript
 	callasm Route27FadeToMusicAsm

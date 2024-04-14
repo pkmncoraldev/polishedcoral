@@ -62,7 +62,6 @@ Route23Callback:
 	iffalse .skip_tree
 	changeblock $20, $1c, $cc
 .skip_tree
-	callasm Route23SetUpLeaves
 	readvar VAR_PLAYER_COLOR
 	if_equal 6, .pink
 	setevent EVENT_HIDE_OW_OBJECTS_TEAL
@@ -73,6 +72,7 @@ Route23Callback:
 	disappear ROUTE_23_LEAF_2
 	movetoplayer ROUTE_23_LEAF_2
 	appear ROUTE_23_LEAF_2
+	callasm Route23SetUpLeaves
 	return
 .pink
 	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
@@ -83,6 +83,7 @@ Route23Callback:
 	disappear ROUTE_23_LEAF_1
 	movetoplayer ROUTE_23_LEAF_1
 	appear ROUTE_23_LEAF_1
+	callasm Route23SetUpLeaves
 	return
 
 Route23SetUpLeaves:
@@ -90,6 +91,9 @@ Route23SetUpLeaves:
 	ld [wRanchRaceSeconds], a
 	xor a
 	ld [wRanchRaceFrames], a
+	ld a, [wPlayerSpriteX]
+	add 100
+	ld [wObject1SpriteX], a
 	ret
 	
 Route23Master5:

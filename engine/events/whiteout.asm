@@ -84,6 +84,8 @@ WhiteoutHandleEvents:
 	domaptrigger KOMORE_COMMUNITY_CENTER, $0
 	clearevent EVENT_ON_DODRIO_RANCH
 	clearevent EVENT_AT_AIRPORT
+	clearevent EVENT_SET_ROUTE_27
+	clearevent EVENT_ON_ROUTE_27
 	clearflag ENGINE_NEAR_CAMPFIRE
 	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
 	clearevent EVENT_IN_SHOPPING_DISTRICT

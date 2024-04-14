@@ -1436,7 +1436,7 @@ LoadMapPals::
 	jp FarCopyWRAM
 .autumn
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_25_SOUTH
+	cp MAP_ROUTE_27
 	jr z, .park
 	ld a, [wTimeOfDayPal]
 	and 3

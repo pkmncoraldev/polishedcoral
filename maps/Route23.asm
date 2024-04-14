@@ -56,6 +56,8 @@ Route23_MapScriptHeader:
 	const ROUTE_23_MASTER
 
 Route23Callback:
+	clearevent EVENT_SET_ROUTE_27
+	clearevent EVENT_ON_ROUTE_27
 	checkevent EVENT_GOT_HM04_STRENGTH
 	iffalse .skip_tree
 	changeblock $20, $1c, $cc

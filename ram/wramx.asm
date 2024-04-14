@@ -1063,7 +1063,8 @@ wRoute23Trigger:: ds 1
 wKomoreCommunityCenterTrigger:: ds 1
 wRoute24Trigger:: ds 1
 wBrightburgTrigger:: ds 1
-ds 27
+wRoute27Trigger:: ds 1
+ds 26
 
 wAmpharosFood:: ds 1
 

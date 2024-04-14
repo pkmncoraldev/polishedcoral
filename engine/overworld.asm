@@ -381,7 +381,7 @@ LoadEmoteGFX::
 	jr z, .outdoor
 .autumn
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_25_SOUTH
+	cp MAP_ROUTE_27
 	jr z, .outdoor
 .boulder
 	ld c, EMOTE_BOULDER_DUST

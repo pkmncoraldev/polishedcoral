@@ -595,4 +595,60 @@
 	db 20, BULBASAUR	;4%
 	db 20, BULBASAUR	;1%
 	
+	
+	
+	map_id ROUTE_25
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, CYNDAQUIL	;30%
+	db 20, CYNDAQUIL	;30%
+	db 20, CYNDAQUIL	;20%
+	db 20, CYNDAQUIL	;10%
+	db 20, CYNDAQUIL	;5%
+	db 20, CYNDAQUIL	;4%
+	db 20, CYNDAQUIL	;1%
+	; day
+	db 20, CYNDAQUIL	;30%
+	db 20, CYNDAQUIL	;30%
+	db 20, CYNDAQUIL	;20%
+	db 20, CYNDAQUIL	;10%
+	db 20, CYNDAQUIL	;5%
+	db 20, CYNDAQUIL	;4%
+	db 20, CYNDAQUIL	;1%
+	; nite
+	db 20, CYNDAQUIL	;30%
+	db 20, CYNDAQUIL	;30%
+	db 20, CYNDAQUIL	;20%
+	db 20, CYNDAQUIL	;10%
+	db 20, CYNDAQUIL	;5%
+	db 20, CYNDAQUIL	;4%
+	db 20, CYNDAQUIL	;1%
+	
+	map_id ROUTE_27
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, TOTODILE	;30%
+	db 20, TOTODILE	;30%
+	db 20, TOTODILE	;20%
+	db 20, TOTODILE	;10%
+	db 20, TOTODILE	;5%
+	db 20, TOTODILE	;4%
+	db 20, TOTODILE	;1%
+	; day
+	db 20, TOTODILE	;30%
+	db 20, TOTODILE	;30%
+	db 20, TOTODILE	;20%
+	db 20, TOTODILE	;10%
+	db 20, TOTODILE	;5%
+	db 20, TOTODILE	;4%
+	db 20, TOTODILE	;1%
+	; nite
+	db 20, TOTODILE	;30%
+	db 20, TOTODILE	;30%
+	db 20, TOTODILE	;20%
+	db 20, TOTODILE	;10%
+	db 20, TOTODILE	;5%
+	db 20, TOTODILE	;4%
+	db 20, TOTODILE	;1%
+	
 	db -1 ; end

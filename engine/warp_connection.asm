@@ -238,12 +238,20 @@ LoadWarpData: ; 1046c6
 	ld a, c
 	cp TILESET_POKECENTER
 	ret nz
+	ld a, [wMapGroup]
+	cp GROUP_BRIGHTBURG
+	jr z, .check_bright
+.bright_done
 	ld a, [wPrevMapGroup]
 	ld [wLastSpawnMapGroup], a
 	ld a, [wPrevMapNumber]
 	ld [wLastSpawnMapNumber], a
 	eventflagset EVENT_VISITED_POKEMON_CENTER_ONCE
 	ret
+.check_bright
+	eventflagcheck EVENT_BRIGHT_CENTER_MART_EMPTY
+	ret nz
+	jr .bright_done
 
 LoadMapTimeOfDay: ; 104750
 	ld hl, wVramState

@@ -435,15 +435,17 @@ ENDM
 	connection north, Route24North, ROUTE_24_NORTH, 0
 	connection east, KomoreVillage, KOMORE_VILLAGE, 4
 	
-	map_attributes KomoreVillage, KOMORE_VILLAGE, $c6, NORTH | WEST
+	map_attributes KomoreVillage, KOMORE_VILLAGE, $c6, NORTH | WEST | EAST
 	connection north, Route23, ROUTE_23, 1
 	connection west, Route24South, ROUTE_24_SOUTH, -4
+	connection east, Route26, ROUTE_26, -5
 	
 	map_attributes Route25, ROUTE_25, $c6, SOUTH | WEST
 	connection south, Route27, ROUTE_27, 16
 	connection west, Route23, ROUTE_23, -10
 	
-	map_attributes Route26, ROUTE_26, $30, EAST
+	map_attributes Route26, ROUTE_26, $30, WEST | EAST
+	connection west, KomoreVillage, KOMORE_VILLAGE, 5
 	connection east, Route27, ROUTE_27, -2
 	
 	map_attributes Route27, ROUTE_27, $30, NORTH | WEST

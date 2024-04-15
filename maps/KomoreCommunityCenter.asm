@@ -5,8 +5,8 @@ KomoreCommunityCenter_MapScriptHeader:
 	callback MAPCALLBACK_TILES, KomoreCommunityCenterCallback
 
 	db 4 ; warp events
-	warp_def  7,  4, 1, KOMORE_VILLAGE
-	warp_def  7,  5, 2, KOMORE_VILLAGE
+	warp_def  7,  4, 1, ROUTE_26
+	warp_def  7,  5, 2, ROUTE_26
 	warp_def  1,  8, 1, KOMORE_COMMUNITY_CENTER_RIGHT
 	warp_def  1,  0, 3, KOMORE_COMMUNITY_CENTER_LEFT
 

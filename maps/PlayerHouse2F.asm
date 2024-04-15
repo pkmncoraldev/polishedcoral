@@ -24,7 +24,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event 19, 14, RADIANT_TOWNSHIP, 1
 	warp_event  5, 18, DUSK_TURNPIKE, 1
 	warp_event  7, 18, CROSSROADS, 1
-	warp_event  9, 18, KOMORE_VILLAGE, 1
+	warp_event  9, 18, KOMORE_VILLAGE, 6
 	warp_event 11, 18, BRIGHTBURG, 1
 
 	db 1 ; coord events

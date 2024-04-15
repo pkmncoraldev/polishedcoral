@@ -292,7 +292,6 @@ MAP_NONE   EQU 0
 	map_const CONNECTING_CAVERN,						  20, 24 ; 8
 	
 	newgroup													 ; 15
-	map_const ROUTE_11,									  21, 31 ; 1
 	map_const SKATEPARK,								  15, 32 ; 2
 	map_const ROUTE_11_GATE,							   4,  4 ; 3
 	map_const ROUTE_12_GATE,							   4,  4 ; 4
@@ -319,6 +318,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_15,									  44, 14 ; 14
 	map_const ROUTE_16,									   7,  4 ; 15
 	map_const ROUTE_4,                                    22, 12 ; 10
+	map_const ROUTE_11,									  21, 31 ; 1
 	
 	
 	newgroup													 ; 17

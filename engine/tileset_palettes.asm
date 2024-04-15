@@ -156,16 +156,7 @@ LoadSpecialMapPalette: ; 494ac
 	call DiveSpotMapPals
 	jp nc, .do_nothing
 	ld hl, DiveSpotsPalette
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 1 palettes
-	rst AddNTimes
-	ld a, $5
-	ld de, wUnknBGPals + 6 palettes
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
-	scf
+	call LoadTimeofDayBGPal6
 	jp .do_nothing
 .bar
 	ld hl, BarPalette
@@ -345,33 +336,13 @@ LoadSpecialMapPalette: ; 494ac
 .oasis2
 	ld hl, OasisPalette2
 .oasis_cont
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 1 palettes
-	rst AddNTimes
-	ld a, $5
-	ld de, wUnknBGPals + 6 palettes
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
-	scf
-	ret
+	jp LoadTimeofDayBGPal6
 	
 .desert_tent
 	ld hl, OutsideDesertPalette
 	call LoadSevenTimeOfDayBGPalettes
 	ld hl, DesertTentPalette
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 1 palettes
-	rst AddNTimes
-	ld a, $5
-	ld de, wUnknBGPals + 6 palettes
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
-	scf
-	ret
+	jp LoadTimeofDayBGPal6
 	
 .brillo
 	ld hl, BrilloWindowPalette
@@ -448,12 +419,7 @@ LoadSpecialMapPalette: ; 494ac
 	ret
 .fossil_lab
 	ld hl, FossilLabPalette
-	ld de, wUnknBGPals + 6 palettes
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
-	scf
-	ret
+	jp LoadBGPal6
 	
 .luster_train
 	ld a, [wMapNumber]
@@ -632,12 +598,7 @@ LoadSpecialMapPalette: ; 494ac
 	
 .train
 	ld hl, TrainPalette
-	ld de, wUnknBGPals + 6 palettes
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
-	scf
-	ret
+	jp LoadBGPal6
 	
 .luster
 	ld a, [wMapNumber]
@@ -660,18 +621,14 @@ LoadSpecialMapPalette: ; 494ac
 	ld bc, 1 palettes
 	ld a, $5
 	call FarCopyWRAM
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_11
+	jp z, .route11
 	ld hl, OutsideSkateparkPalette
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 1 palettes
-	rst AddNTimes
-	ld a, $5
-	ld de, wUnknBGPals + 6 palettes
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
-	scf
-	ret
+	jp LoadTimeofDayBGPal6
+.route11
+	ld hl, DiveSpotsPalette
+	jp LoadTimeofDayBGPal6
 	
 .airport
 	ld a, [wMapNumber]
@@ -683,33 +640,13 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, OutsideLusterPalette
 	call LoadSevenTimeOfDayBGPalettes
 	ld hl, AirportFencePalette
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 1 palettes
-	rst AddNTimes
-	ld a, $5
-	ld de, wUnknBGPals + 6 palettes
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
-	scf
-	ret
+	jp LoadTimeofDayBGPal6
 	
 .construction
 	ld hl, OutsideLusterPalette
 	call LoadSevenTimeOfDayBGPalettes
 	ld hl, ConstructionPalette
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 1 palettes
-	rst AddNTimes
-	ld a, $5
-	ld de, wUnknBGPals + 6 palettes
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
-	scf
-	ret
+	jp LoadTimeofDayBGPal6
 	
 .mall
 	ld hl, MallPalette
@@ -850,6 +787,19 @@ DiveSpotMapPals:
 	scf
 	ret
 	
+LoadTimeofDayBGPal6:
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld a, $5
+LoadBGPal6:
+	ld de, wUnknBGPals + 6 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 	
 LoadSevenBGPalettes: ; 494f2
 	ld a, $5

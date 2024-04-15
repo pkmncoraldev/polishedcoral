@@ -3028,13 +3028,13 @@ CheckChangeMusic::
 .community
 	eventflagcheck EVENT_MIMIKYU_GONE
 	jr z, .none
-	ld a, MUSIC_STARGLOW_VALLEY
+	ld a, MUSIC_AUTUMN
 	jr .done
 	
 .bright
 	eventflagcheck EVENT_BRIGHTBURG_REVEALED
 	jr nz, .none
-	ld a, MUSIC_FLICKER_STATION
+	ld a, MUSIC_DAYBREAK_VILLAGE
 	jr .done
 	
 .bright_center

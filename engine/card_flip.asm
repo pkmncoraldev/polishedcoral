@@ -2360,7 +2360,7 @@ endr
 	ld e, a
 	call GetRandomSuit
 	ld [hli], a
-	ld a, 8
+	ld a, 6
 	call RandomRange
 	inc a
 	ld [hli], a
@@ -2468,6 +2468,7 @@ endr
 	call PlaySFX
 .playcard_cpu
 	call CheckWhichCard
+	call GiveNewCardHL
 	call PlaceCard
 	call DebugDrawCPUCards
 	call ApplyTilemapInVBlank
@@ -3267,13 +3268,16 @@ CheckWhichCard:
 	ld a, [hl]
 	ld [wMoogooCurrentCardValue], a
 	dec hl
+	ret
+	
+GiveNewCardHL:
 	push hl
 	call GetRandomSuit
 	pop hl
 	ld [hli], a
 	push hl
-	call Random
-	and $7
+	ld a, 6
+	call RandomRange
 	inc a
 	pop hl
 	ld [hl], a

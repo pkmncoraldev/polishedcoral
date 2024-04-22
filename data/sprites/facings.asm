@@ -736,19 +736,19 @@ FacingPCSign:
 	
 FacingCardTable1:
 	db 1 ; #
-	db 4, 0, 0, $00
+	db 0, 0, 0, $00
 	
 FacingCardTable2:
 	db 1 ; #
-	db 4, 8, 0 | X_FLIP, $00
+	db 0, 8, 0 | X_FLIP, $00
 	
 FacingCardTable3:
 	db 1 ; #
-	db 12, 0, 0, $01
+	db 4, 0, 0, $01
 	
 FacingCardTable4:
 	db 1 ; #
-	db 12, 8, 0 | X_FLIP, $01
+	db 4, 8, 0 | X_FLIP, $01
 	
 FacingDealerDown:
 	db 4 ; #

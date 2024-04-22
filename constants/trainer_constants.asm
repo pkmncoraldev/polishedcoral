@@ -462,12 +462,12 @@ PLAYER_F EQU __enum__
 	const REX
 	const JAMES
 	const HERB
-	const TIM
+	const SHINTO
 
 
 	trainerclass CUEBALL
 	const CURLY
-	const PUDGE
+	const BONGO
 
 
 	trainerclass COOLTRAINERM
@@ -525,7 +525,7 @@ PLAYER_F EQU __enum__
 	trainerclass DELINQUENT_M
 	const SPIKE
 	const IGGY
-	const YANCY
+	const MAO
 
 
 	trainerclass DELINQUENT_F

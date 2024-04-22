@@ -3769,7 +3769,7 @@ BikerGroup:
 ; ================
 
 	; BIKER
-	db "TIM@"
+	db "SHINTO@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3793,7 +3793,7 @@ CueballGroup:
 ; ================
 
 	; CUEBALL
-	db "PUDGE@"
+	db "BONGO@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -4122,7 +4122,7 @@ DelinquentmGroup:
 ; ================
 
 	; DELINQUENT_M
-	db "YANCY@"
+	db "MAO@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

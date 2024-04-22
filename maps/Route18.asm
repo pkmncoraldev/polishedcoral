@@ -26,14 +26,13 @@ Route18_MapScriptHeader:
 	
 
 Route18Trigger0:
-	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	end
 	
 Route18Trigger1:
-	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	end
 
 Route18ChangeDisguiseman1:
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	disappear ROUTE_18_DISGUISEMAN1
 	appear ROUTE_18_DISGUISEMAN2
 	dotrigger $1
@@ -66,7 +65,7 @@ TrainerRoute18_1:
 	done
 	
 TrainerRoute18_2:
-	generictrainer DELINQUENT_M, YANCY, EVENT_BEAT_ROUTE_18_TRAINER_2, .SeenText, .BeatenText
+	generictrainer DELINQUENT_M, MAO, EVENT_BEAT_ROUTE_18_TRAINER_2, .SeenText, .BeatenText
 
 	text "Maybe I'm not cut"
 	line "out for the desert"
@@ -86,7 +85,7 @@ TrainerRoute18_2:
 	done
 	
 TrainerRoute18_3:
-	generictrainer BIKER, TIM, EVENT_BEAT_ROUTE_18_TRAINER_3, .SeenText, .BeatenText
+	generictrainer BIKER, SHINTO, EVENT_BEAT_ROUTE_18_TRAINER_3, .SeenText, .BeatenText
 
 	text "I knew I shouldn't"
 	line "have taken this"
@@ -113,7 +112,7 @@ TrainerRoute18_3:
 	done
 	
 TrainerRoute18_4:
-	generictrainer CUEBALL, PUDGE, EVENT_BEAT_ROUTE_18_TRAINER_4, .SeenText, .BeatenText
+	generictrainer CUEBALL, BONGO, EVENT_BEAT_ROUTE_18_TRAINER_4, .SeenText, .BeatenText
 
 	text "You think yur"
 	line "better than me!?"

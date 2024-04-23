@@ -420,11 +420,11 @@ MAP_NONE   EQU 0
 	map_const FIGHTING_DOJO,                           	   4,  5 ; 17
 	map_const ROUTE_25,									  23, 10 ; 18
 	map_const ROUTE_26,									  20, 17 ; 19
-	map_const ROUTE_27,									  26, 19 ; 20
+	map_const ROUTE_27,									  27, 19 ; 20
 	
 	newgroup													 ; 23
 	
-	map_const BRIGHTBURG,								  15, 12 ; 1
+	map_const BRIGHTBURG,								  17, 13 ; 1
 	map_const BRIGHT_POKECENTER,                      	   6,  4 ; 2
 	map_const BRIGHT_MART,                             	   6,  4 ; 3
 	map_const BRIGHT_HOUSE_1,     	             		   4,  4 ; 4

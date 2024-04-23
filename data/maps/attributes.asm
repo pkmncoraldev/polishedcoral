@@ -444,11 +444,11 @@ ENDM
 	connection south, Route27, ROUTE_27, 16
 	connection west, Route23, ROUTE_23, -10
 	
-	map_attributes Route26, ROUTE_26, $30, WEST | EAST
+	map_attributes Route26, ROUTE_26, $34, WEST | EAST
 	connection west, KomoreVillage, KOMORE_VILLAGE, 5
 	connection east, Route27, ROUTE_27, -2
 	
-	map_attributes Route27, ROUTE_27, $30, NORTH | WEST
+	map_attributes Route27, ROUTE_27, $34, NORTH | WEST
 	connection north, Route25, ROUTE_25, -16
 	connection west, Route26, ROUTE_26, 2
 	

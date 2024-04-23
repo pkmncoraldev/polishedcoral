@@ -4127,13 +4127,17 @@ ResetAIBuffer:
 	ret
 	
 PlaceBetAI:
+;CPU Players place chips using a scoring system that takes into account
+;amount of chips they have on a suit, the value of the current card played
+;on that suit, and the value of any cards in their hand that match the suit.
+;A random value between 0 and 6 is applied to the base score of 50 as well.
 	call MoogooAIApplyRandomness
 	call ConsiderCurCPUChips
 	call DebugDrawCPUCards
 	call ConsiderCardValuesInPlay
-;	call ConsiderCardValuesInHand
 	call DebugDrawCPUCards
-	
+	call ConsiderCardValuesInHand
+	call DebugDrawCPUCards
 	ret
 	
 ConsiderCurCPUChips:
@@ -4246,7 +4250,7 @@ ConsiderCardValuesInPlay:
 	call MoogooFindAddorSubAIAmount
 	ld b, a
 	ld a, [hl]
-	cp 0
+	cp 0		;cant get lower without underflow
 	jr z, .skip_sub
 	sub b
 .skip_sub
@@ -4256,7 +4260,6 @@ ConsiderCardValuesInPlay:
 	pop hl
 	dec c
 	ld a, c
-	ld [wBuffer6], a
 	cp 0
 	jr nz, .loop
 	ret
@@ -4264,7 +4267,7 @@ ConsiderCardValuesInPlay:
 	call MoogooFindAddorSubAIAmount
 	ld b, a
 	ld a, [hl]
-	cp $ff
+	cp $ff		;cant get higher without overflow
 	jr z, .skip_add
 	add b
 .skip_add
@@ -4274,12 +4277,82 @@ ConsiderCardValuesInPlay:
 	pop hl
 	dec c
 	ld a, c
-	ld [wBuffer6], a
 	cp 0
 	jr nz, .loop
 	ret
 	
 ConsiderCardValuesInHand:
+	ld b, 1		;first suit
+	ld de, wBuffer1
+.loop1
+	ld c, 1		;current card
+	xor a
+	ld [wBuffer6], a
+	ld a, [wMoogooTurn]
+	cp 2
+	jr z, .cpu2
+;.cpu1
+	ld hl, wMoogooCPU1Card1Suit
+	jr .loop2
+.cpu2
+	ld hl, wMoogooCPU2Card1Suit
+.loop2
+	ld a, [hl]
+	cp b
+	jr nz, .no
+	inc hl
+	push bc
+	ld a, [hl]
+	ld b, a
+	ld a, [wBuffer6]
+	cp b
+	jr nc, .no_pop_bc
+	ld a, b
+	ld [wBuffer6], a
+	ld a, c
+	ld [wCurHPAnimPal], a		;card number with highest value of current suit
+	dec hl
+.no_pop_bc
+	pop bc
+.no
+	inc hl
+	inc hl
+	inc c
+	ld a, c
+	cp 6		;hand size + 1
+	jr nz, .loop2
+	
+	ld a, [wBuffer6]
+	cp 4
+	jr nc, .add
+;.sub
+	call MoogooFindAddorSubAIAmount
+	push bc
+	ld b, a
+	ld a, [de]
+	cp 0		;cant get lower without underflow
+	jr z, .skip_sub
+	sub b
+.skip_sub
+	pop bc
+	ld [de], a
+	jr .finish
+.add
+	call MoogooFindAddorSubAIAmount
+	push bc
+	ld b, a
+	ld a, [de]
+	cp $ff		;cant get higher without overflow
+	jr z, .skip_add
+	add b
+.skip_add
+	pop bc
+	ld [de], a
+.finish
+	inc b
+	ld a, b
+	cp 6
+	jr nz, .loop1
 	ret
 	
 MoogooFindAddorSubAIAmount:

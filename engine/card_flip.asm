@@ -2145,36 +2145,10 @@ _MoogooMankey:
 	ret
 	
 .PlaceBet:
-	ld a, [wPlaceBallsX]
-	cp 1
-	jr z, .PlaceBet_round1
-	cp 2
-	jr z, .PlaceBet_round2
-.PlaceBet_round1
-	ld a, [wMoogooPlayerScore]
-	ld b, a
-	ld a, [wMoogooCPU1Score]
-	add b
-	ld b, a
-	ld a, [wMoogooCPU2Score]
-	add b
-	cp 20
-	jr z, .PlaceBet_skipbet
-	jr .PlaceBet_normal
+	call MoogooCheckIfCanStillPlaceBets
+	jr nz, .PlaceBet_normal
 
-.PlaceBet_round2
-	ld a, [wMoogooPlayerScore]
-	ld b, a
-	ld a, [wMoogooCPU1Score]
-	add b
-	ld b, a
-	ld a, [wMoogooCPU2Score]
-	add b
-	cp 16
-	jr z, .PlaceBet_skipbet
-	jr .PlaceBet_normal
-
-.PlaceBet_skipbet
+;.skip_bet
 	hlcoord 0, 0
 	
 	ld a, [wMoogooTurn]
@@ -2187,17 +2161,27 @@ _MoogooMankey:
 	jr .betskiploop
 .LoadCPU2TurnText2
 	ld de, .CPU2TurnText
-	jr .betskiploop
+	jr .betskip_cpu
 .LoadCPU1TurnText2
 	ld de, .CPU1TurnText
+	jr .betskip_cpu
 .betskiploop
 	call PlaceString
 	call JoyTextDelay
 	ld a, [hJoyLast]
 	and A_BUTTON
-	jp nz, .Increment
-	jr .betskiploop
+	jr z, .betskiploop
+	ld de, SFX_READ_TEXT
+	call PlaySFX
+	ld c, 20
+	call DelayFrames
+	jp .Increment
 	
+.betskip_cpu
+	call PlaceString
+	ld c, 60
+	call DelayFrames
+	jp .Increment
 .PlaceBet_normal
 	ld a, 1
 	ld [wPlaceBallsY], a
@@ -2228,7 +2212,7 @@ _MoogooMankey:
 	call DelayFrames
 	ld a, [wMoogooCPU1Score]
 	cp 0
-	jr z, .CPUInitialBet
+	jp z, .CPUInitialBet
 	jp .CPUNormalBet
 .betloop2
 	call PlaceString
@@ -2269,17 +2253,16 @@ _MoogooMankey:
 	jr .dobet_cont
 	
 .CPUNormalBet:
-;	call PlaceBetAI
-;temp to get them to play a random game. remove when making AI
-	ld a, 5
-	call RandomRange
-;temp to get them to play a random game. remove when making AI
-	inc a
+	call ResetAIBuffer
+	call MoogooCheckIfCanStillPlaceBets
+	jp z, .cpu_betdone
+	call PlaceBetAI
+	call MoogooCompareAIBuffers
+
 	ld [wPlaceBallsY], a
 	call CheckTotalPointofSuitA
 	cp 4
 	jr z, .CPUNormalBet
-;temp to get them to play a random game. remove when making AI
 	ld a, [wMoogooRetiredSuit1]
 	ld b, a
 	ld a, [wMoogooRetiredSuit2]
@@ -2290,7 +2273,6 @@ _MoogooMankey:
 	cp c
 	jr z, .CPUNormalBet
 	jr .dobet_cont
-;temp to get them to play a random game. remove when making AI
 	
 .CPUInitialBet
 	ld a, 5
@@ -2332,6 +2314,7 @@ _MoogooMankey:
 	ld de, SFX_READ_TEXT
 	call PlaySFX
 	call WaitSFX
+.cpu_betdone
 	jp .Increment
 	
 .Shuffling
@@ -2466,7 +2449,16 @@ endr
 .playcard_done
 	ld de, SFX_READ_TEXT
 	call PlaySFX
+	ld c, 20
+	jr .skip_cpu_random_time
 .playcard_cpu
+	ld c, 20
+	ld a, 41
+	call RandomRange
+	add c
+	ld c, a
+.skip_cpu_random_time
+	call DelayFrames
 	call CheckWhichCard
 	call GiveNewCardHL
 	call PlaceCard
@@ -3240,22 +3232,18 @@ CheckWhichCard:
 	ld a, [wPlaceBallsY]
 	jr .loop
 .CPU2Turn
+	call ResetAIBuffer
 ;	call PlaceCardAI
+;	call MoogooAIApplyRandomness
+	call MoogooCompareAIBuffers
 	ld hl, wMoogooCPU2Card1Suit - 2
-;temp to get them to play a random game. remove when making AI
-	ld a, 5
-	call RandomRange
-;temp to get them to play a random game. remove when making AI
-	inc a
 	jr .loop
 .CPU1Turn
+	call ResetAIBuffer
 ;	call PlaceCardAI
+;	call MoogooAIApplyRandomness
+	call MoogooCompareAIBuffers
 	ld hl, wMoogooCPU1Card1Suit - 2
-;temp to get them to play a random game. remove when making AI
-	ld a, 5
-	call RandomRange
-;temp to get them to play a random game. remove when making AI
-	inc a
 .loop
 	inc hl
 	inc hl
@@ -3420,7 +3408,29 @@ PlaceCard:
 	ld a, [wMoogooCurrentCardValue]
 	ld [wMoogooCard2Value], a
 	ret
-	
+
+CheckCanBetOnSuit:
+	push hl
+	call CheckTotalPointofSuitA
+	cp 4
+	jr z, .suit_unavailable
+	ld a, [wMoogooRetiredSuit1]
+	ld b, a
+	ld a, [wMoogooRetiredSuit2]
+	ld c, a
+	ld a, [wPlaceBallsY]
+	cp b
+	jr z, .suit_unavailable
+	cp c
+	jr z, .suit_unavailable
+;.suit_available
+	pop hl
+	xor a
+	ret
+.suit_unavailable
+	pop hl
+	scf
+	ret
 
 CheckTotalPointofSuitA:
 	ld hl, wMoogooCard1ChipsA - 3
@@ -3974,42 +3984,42 @@ DebugDrawCPUCards:
 	hlcoord 0, 1
 	ld [hl], "1"
 	hlcoord 2, 1
-	ld de, wMoogooCPU1Card1Suit
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	call PrintNum
+	ld a, [wMoogooCPU1Card1Suit]
+	call DebugGetSuitLetter
+	ld [hl], a
 	hlcoord 3, 1
 	ld de, wMoogooCPU1Card1Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum
-	hlcoord 5, 1
-	ld de, wMoogooCPU1Card2Suit
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	call PrintNum
 	hlcoord 6, 1
+	ld a, [wMoogooCPU1Card2Suit]
+	call DebugGetSuitLetter
+	ld [hl], a
+	hlcoord 7, 1
 	ld de, wMoogooCPU1Card2Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum
-	hlcoord 8, 1
-	ld de, wMoogooCPU1Card3Suit
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	call PrintNum
-	hlcoord 9, 1
+	hlcoord 10, 1
+	ld a, [wMoogooCPU1Card3Suit]
+	call DebugGetSuitLetter
+	ld [hl], a
+	hlcoord 11, 1
 	ld de, wMoogooCPU1Card3Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum
-	hlcoord 11, 1
-	ld de, wMoogooCPU1Card4Suit
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	call PrintNum
-	hlcoord 12, 1
+	hlcoord 14, 1
+	ld a, [wMoogooCPU1Card4Suit]
+	call DebugGetSuitLetter
+	ld [hl], a
+	hlcoord 15, 1
 	ld de, wMoogooCPU1Card4Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum
-	hlcoord 14, 1
-	ld de, wMoogooCPU1Card5Suit
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	call PrintNum
-	hlcoord 15, 1
+	hlcoord 18, 1
+	ld a, [wMoogooCPU1Card5Suit]
+	call DebugGetSuitLetter
+	ld [hl], a
+	hlcoord 19, 1
 	ld de, wMoogooCPU1Card5Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum
@@ -4017,45 +4027,388 @@ DebugDrawCPUCards:
 	hlcoord 0, 2
 	ld [hl], "2"
 	hlcoord 2, 2
-	ld de, wMoogooCPU2Card1Suit
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	call PrintNum
+	ld a, [wMoogooCPU2Card1Suit]
+	call DebugGetSuitLetter
+	ld [hl], a
 	hlcoord 3, 2
 	ld de, wMoogooCPU2Card1Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum
-	hlcoord 5, 2
-	ld de, wMoogooCPU2Card2Suit
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	call PrintNum
 	hlcoord 6, 2
+	ld a, [wMoogooCPU2Card2Suit]
+	call DebugGetSuitLetter
+	ld [hl], a
+	hlcoord 7, 2
 	ld de, wMoogooCPU2Card2Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum
-	hlcoord 8, 2
-	ld de, wMoogooCPU2Card3Suit
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	call PrintNum
-	hlcoord 9, 2
+	hlcoord 10, 2
+	ld a, [wMoogooCPU2Card3Suit]
+	call DebugGetSuitLetter
+	ld [hl], a
+	hlcoord 11, 2
 	ld de, wMoogooCPU2Card3Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum
-	hlcoord 11, 2
-	ld de, wMoogooCPU2Card4Suit
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	call PrintNum
-	hlcoord 12, 2
+	hlcoord 14, 2
+	ld a, [wMoogooCPU2Card4Suit]
+	call DebugGetSuitLetter
+	ld [hl], a
+	hlcoord 15, 2
 	ld de, wMoogooCPU2Card4Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum
-	hlcoord 14, 2
-	ld de, wMoogooCPU2Card5Suit
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	call PrintNum
-	hlcoord 15, 2
+	hlcoord 18, 2
+	ld a, [wMoogooCPU2Card5Suit]
+	call DebugGetSuitLetter
+	ld [hl], a
+	hlcoord 19, 2
 	ld de, wMoogooCPU2Card5Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum
+	
+	hlcoord 1, 4
+	ld de, wBuffer1
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	call PrintNum
+	
+	hlcoord 5, 4
+	ld de, wBuffer2
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	call PrintNum
+	
+	hlcoord 9, 4
+	ld de, wBuffer3
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	call PrintNum
+	
+	hlcoord 13, 4
+	ld de, wBuffer4
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	call PrintNum
+	
+	hlcoord 17, 4
+	ld de, wBuffer5
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	call PrintNum
+	ret
+	
+MoogooCheckIfCanStillPlaceBets:
+	ld a, [wPlaceBallsX]
+	cp 1
+	jr z, .round1
+	cp 2
+	jr z, .round2
+.round1
+	call MoogooCheckTotalOfAllScores
+	cp 20
+	ret
+.round2
+	call MoogooCheckTotalOfAllScores
+	cp 16
+	ret
+	
+MoogooCheckTotalOfAllScores:
+	ld a, [wMoogooPlayerScore]
+	ld b, a
+	ld a, [wMoogooCPU1Score]
+	add b
+	ld b, a
+	ld a, [wMoogooCPU2Score]
+	add b
+	ret
+	
+ResetAIBuffer:
+	ld hl, wBuffer1
+	ld bc, 5
+	ld a, 50
+	call ByteFill
+	call DebugDrawCPUCards
+	ret
+	
+PlaceBetAI:
+	call MoogooAIApplyRandomness
+	call ConsiderCurCPUChips
+	call DebugDrawCPUCards
+	call ConsiderCardValuesInPlay
+;	call ConsiderCardValuesInHand
+	call DebugDrawCPUCards
+	
+	ret
+	
+ConsiderCurCPUChips:
+	ld a, [wMoogooTurn]
+	cp 2
+	jr z, .cpu2
+;.cpu1
+	ld hl, wMoogooCard1ChipsB
+	jr .suit1
+.cpu2
+	ld hl, wMoogooCard1ChipsC
+.suit1
+	ld a, 1
+	ld [wPlaceBallsY], a
+	call CheckCanBetOnSuit
+	ld a, 0
+	jr c, .suit2
+	ld a, [hl]
+	inc a
+	sla a
+	sla a
+	ld b, a
+	ld a, [wBuffer1]
+	add b
+.suit2
+	ld [wBuffer1], a
+	ld a, 2
+	ld [wPlaceBallsY], a
+	call CheckCanBetOnSuit
+	ld a, 0
+	jr c, .suit3
+	inc hl
+	inc hl
+	inc hl
+	ld a, [hl]
+	inc a
+	sla a
+	sla a
+	ld b, a
+	ld a, [wBuffer2]
+	add b
+.suit3
+	ld [wBuffer2], a
+	ld a, 3
+	ld [wPlaceBallsY], a
+	call CheckCanBetOnSuit
+	ld a, 0
+	jr c, .suit4
+	inc hl
+	inc hl
+	inc hl
+	ld a, [hl]
+	inc a
+	sla a
+	sla a
+	ld b, a
+	ld a, [wBuffer3]
+	add b
+.suit4
+	ld [wBuffer3], a
+	ld a, 4
+	ld [wPlaceBallsY], a
+	call CheckCanBetOnSuit
+	ld a, 0
+	jr c, .suit5
+	inc hl
+	inc hl
+	inc hl
+	ld a, [hl]
+	inc a
+	sla a
+	sla a
+	ld b, a
+	ld a, [wBuffer4]
+	add b
+.suit5
+	ld [wBuffer4], a
+	ld a, 5
+	ld [wPlaceBallsY], a
+	call CheckCanBetOnSuit
+	ld a, 0
+	jr c, .no_suit5
+	inc hl
+	inc hl
+	inc hl
+	ld a, [hl]
+	inc a
+	sla a
+	sla a
+	ld b, a
+	ld a, [wBuffer5]
+	add b
+.no_suit5
+	ld [wBuffer5], a
+	ret
+	
+ConsiderCardValuesInPlay:
+	ld a, 5			;loop counter
+	ld c, a
+	ld de, wBuffer1
+	ld hl, wMoogooCard1Value
+.loop
+	ld a, [hli]
+	push hl
+	ld h, d
+	ld l, e
+	cp 4
+	jr nc, .add
+;.sub
+	call MoogooFindAddorSubAIAmount
+	ld b, a
+	ld a, [hl]
+	cp 0
+	jr z, .skip_sub
+	sub b
+.skip_sub
+	ld [hli], a
+	ld d, h
+	ld e, l
+	pop hl
+	dec c
+	ld a, c
+	ld [wBuffer6], a
+	cp 0
+	jr nz, .loop
+	ret
+.add
+	call MoogooFindAddorSubAIAmount
+	ld b, a
+	ld a, [hl]
+	cp $ff
+	jr z, .skip_add
+	add b
+.skip_add
+	ld [hli], a
+	ld d, h
+	ld e, l
+	pop hl
+	dec c
+	ld a, c
+	ld [wBuffer6], a
+	cp 0
+	jr nz, .loop
+	ret
+	
+ConsiderCardValuesInHand:
+	ret
+	
+MoogooFindAddorSubAIAmount:
+	cp 6
+	jr z, .max
+	cp 1
+	jr z, .max
+	cp 5
+	jr z, .mid
+	cp 2
+	jr z, .mid
+	cp 4
+	jr z, .min
+	cp 3
+	jr z, .min
+;.zero
+	ld a, 0
+	ret
+.max
+	ld a, 9
+	ret
+.mid
+	ld a, 6
+	ret
+.min
+	ld a, 3
+	ret
+	
+MoogooAIApplyRandomness:
+	ld hl, wBuffer1 - 1
+	ld a, 5
+	ld e, a
+.loop
+	inc hl
+	ld a, [hl]
+	ld b, a
+	push bc
+	dec e
+	ld a, 6
+	call RandomRange
+	pop bc
+	add b
+	ld [hl], a
+	ld a, e
+	cp 0
+	ret z
+	jr .loop
+	
+MoogooCompareAIBuffers:
+	ld a, [wBuffer1]
+	ld b, a
+	ld a, [wBuffer2]
+	cp b
+	jr nc, .buffer2
+	ld a, [wBuffer3]
+	cp b
+	jr nc, .buffer3
+	ld a, [wBuffer4]
+	cp b
+	jr nc, .buffer4
+	ld a, [wBuffer5]
+	cp b
+	jr nc, .buffer5
+	ld a, 1
+	ret
+.buffer2
+	ld a, [wBuffer2]
+	ld b, a
+	ld a, [wBuffer3]
+	cp b
+	jr nc, .buffer3
+	ld a, [wBuffer4]
+	cp b
+	jr nc, .buffer4
+	ld a, [wBuffer5]
+	cp b
+	jr nc, .buffer5
+	ld a, 2
+	ret
+.buffer3
+	ld a, [wBuffer3]
+	ld b, a
+	ld a, [wBuffer4]
+	cp b
+	jr nc, .buffer4
+	ld a, [wBuffer5]
+	cp b
+	jr nc, .buffer5
+	ld a, 3
+	ret
+.buffer4
+	ld a, [wBuffer4]
+	ld b, a
+	ld a, [wBuffer5]
+	cp b
+	jr nc, .buffer5
+	ld a, 4
+	ret
+.buffer5
+	ld a, 5
+	ret
+	
+DebugGetSuitLetter:
+	cp 1
+	jr z, .y
+	cp 2
+	jr z, .p
+	cp 3
+	jr z, .b
+	cp 4
+	jr z, .g
+	cp 5
+	jr z, .v
+	ld a, "-"
+	ret
+.y
+	ld a, "Y"
+	ret
+.p
+	ld a, "P"
+	ret
+.b
+	ld a, "B"
+	ret
+.g
+	ld a, "G"
+	ret
+.v
+	ld a, "V"
 	ret
 	
 MoogooDrawEmptyCard:

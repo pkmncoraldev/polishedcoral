@@ -531,11 +531,11 @@ MtOnwaB1F_BlockData:
 MtOnwaB2F_BlockData:
 	INCBIN "maps/MtOnwaB2F.ablk.lz"
 	
-MtOnwaB3F_BlockData:
-	INCBIN "maps/MtOnwaB3F.ablk.lz"
-	
 	
 SECTION "Map Blockdata 2", ROMX
+	
+MtOnwaB3F_BlockData:
+	INCBIN "maps/MtOnwaB3F.ablk.lz"
 	
 LusterSewersMukRoom_BlockData:
 	INCBIN "maps/LusterSewersMukRoom.ablk.lz"

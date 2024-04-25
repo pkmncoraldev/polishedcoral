@@ -171,8 +171,9 @@ ENDM
 	connection south, LakeOnwa, LAKE_ONWA, -6
 	connection east, StarglowValley, STARGLOW_VALLEY, 0
 	
-	map_attributes Route9, ROUTE_9, $d1, NORTH | WEST
+	map_attributes Route9, ROUTE_9, $d1, NORTH | SOUTH | WEST
 	connection north, FlickerStation, FLICKER_STATION, 5
+	connection south, Route12, ROUTE_12, -5
 	connection west, EventideVillage, EVENTIDE_VILLAGE, 16
 	
 	map_attributes Route10, ROUTE_10, 5, NORTH | EAST
@@ -298,11 +299,10 @@ ENDM
 	connection east, Skatepark, SKATEPARK, 1
 	
 	map_attributes Route12, ROUTE_12, $02, NORTH
-	connection north, OnwaIntlAirport, ONWA_INTL_AIRPORT, -12
+	connection north, Route9, ROUTE_9, 5
 	
-	map_attributes OnwaIntlAirport, ONWA_INTL_AIRPORT, $c4, NORTH | SOUTH
+	map_attributes OnwaIntlAirport, ONWA_INTL_AIRPORT, $c4, NORTH
 	connection north, AirportRunway, AIRPORT_RUNWAY, 0
-	connection south, Route12, ROUTE_12, 12
 	
 	map_attributes AirportRunway, AIRPORT_RUNWAY, $c4, SOUTH
 	connection south, OnwaIntlAirport, ONWA_INTL_AIRPORT, 0

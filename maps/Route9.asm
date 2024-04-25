@@ -46,11 +46,11 @@ Route9_MapScriptHeader:
 	signpost 17, 31, SIGNPOST_READ, RanchLogs
 	signpost 16, 30, SIGNPOST_READ, RanchLogs
 	signpost 26, 20, SIGNPOST_READ, RanchSign
-	signpost 47,  2, SIGNPOST_READ, Route9Sign
+	signpost 48, 12, SIGNPOST_READ, Route9Sign
 	signpost 35,  8, SIGNPOST_READ, Route9Sign2
 	bg_event 17, 31, SIGNPOST_ITEM + FIRE_STONE, EVENT_ROUTE_9_HIDDEN_FIRE_STONE
 
-	db 15 ; object events
+	db 17 ; object events
 	person_event SPRITE_N64, 13, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchScarecrow, -1
 	object_event 19, 20, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODRIO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio1, -1
 	object_event 26, 12, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODRIO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio2, -1
@@ -65,6 +65,8 @@ Route9_MapScriptHeader:
 	person_event SPRITE_BEAUTY, 18, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_3, -1
 	person_event SPRITE_BUG_CATCHER, 12, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_4, -1
 	person_event SPRITE_BIRD_KEEPER,  9, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRanch_5, -1
+	object_event 19, 54, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 17, 52, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	fruittreeinvis_event  12, 10, FRUITTREE_ROUTE_9, ASPEAR_BERRY
 
 
@@ -236,6 +238,8 @@ Route9SignText:
 	
 	para "NORTH: FLICKER"
 	line "STATION"
+	
+	para "SOUTH: ROUTE 12"
 	
 	para "WEST: EVENTIDE"
 	line "VILLAGE"

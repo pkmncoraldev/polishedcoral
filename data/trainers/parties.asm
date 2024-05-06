@@ -1175,6 +1175,15 @@ PicnickerGroup:
 	db -1 ; end
 
 ; ================
+
+	; PICNICKER
+	db "BAILEY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2400,6 +2409,15 @@ PokefanFGroup:
 	db 27, VAPOREON
 	db 29, EXEGGCUTE
 	db 23, STARYU
+	db -1 ; end
+
+; ================
+
+	; POKEFANF
+	db "YVONNE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -4912,6 +4930,15 @@ ShaolinGroup:
 
 	; SHAOLIN
 	db "MAI@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SHAOLIN
+	db "SHOO@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

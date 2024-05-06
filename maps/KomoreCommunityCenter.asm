@@ -103,7 +103,7 @@ KomoreCommunityCenterItemBall:
 	end
 
 KomoreCommunityCenterSetItemAsm:
-	ld a, POTION
+	ld a, ULTRA_BALL
 	ld [wCurItemBallContents], a
 	ld a, 1
 	ld [wCurItemBallQuantity], a

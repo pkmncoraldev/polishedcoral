@@ -15,7 +15,7 @@ KomoreCommunityCenterMiddle_MapScriptHeader:
 	db 0 ; bg events
 
 	db 4 ; object events
-	person_event SPRITE_MIMIKYU_DOLL,  4,  2, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, KomoreCommunityCenterPikachu2, EVENT_MIMIKYU_GONE
+	person_event SPRITE_MIMIKYU_DOLL,  4,  2, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, KomoreCommunityCenterPikachu, EVENT_MIMIKYU_GONE
 	object_event  1,  3, SPRITE_MON_ICON, SPRITEMOVEDATA_STANDING_DOWN, 0, WOOPER, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, KomoreCommunityCenterWooper, -1
 	object_event  4,  2, SPRITE_MON_ICON, SPRITEMOVEDATA_STANDING_DOWN, 0, CLEFAIRY, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, KomoreCommunityCenterClefairy, -1
 	object_event  2,  6, SPRITE_MON_ICON, SPRITEMOVEDATA_STANDING_DOWN, 0, EEVEE, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, KomoreCommunityCenterEevee, -1
@@ -40,6 +40,9 @@ KomoreCommunityCenterEevee:
 	jumptext KomoreCommunityCenterEeveeText
 
 KomoreCommunityCenterPikachu:
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
+	iftrue KomoreCommunityCenterPikachu2
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
 	jumptext KomoreCommunityCenterPikachuText
 	
 KomoreCommunityCenterPikachu2:

@@ -48,7 +48,7 @@ KomoreVillageSign:
 	done
 	
 KomoreCommunityCenterSign:
-	text "K-MORE COM-UN-TY"
+	text "K-MORE COM---ITY"
 	line "CEN-ER"
 	
 	para "The letters are"

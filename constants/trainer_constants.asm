@@ -119,6 +119,7 @@ PLAYER_F EQU __enum__
 	const BETH
 	const TINA
 	const LES
+	const BAILEY
 
 	trainerclass TWINS
 	const JENJAN
@@ -266,6 +267,7 @@ PLAYER_F EQU __enum__
 	const JILL
 	const NICHOLE
 	const URSALA
+	const YVONNE
 
 
 	trainerclass OFFICER
@@ -625,6 +627,7 @@ PLAYER_F EQU __enum__
 	const KIMIKO
 	const SAYORI
 	const MAI
+	const SHOO
 	
 	trainerclass DOJO_MASTER
 	

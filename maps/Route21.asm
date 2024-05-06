@@ -12,7 +12,7 @@ Route21_MapScriptHeader:
 	db 0 ; bg events
 	
 	db 5 ; object events
-	itemball_event 18,  9, POTION, 1, EVENT_ROUTE_21_POKE_BALL
+	tapeball_event 18, 9, MUSIC_WILD_BATTLE, 1, EVENT_MUSIC_WILD_BATTLE
 	cuttree_event 12, 23, EVENT_ROUTE_21_CUT_TREE
 	fruittree_event 13, 22, FRUITTREE_ROUTE_21_1, ORAN_BERRY
 	fruittree_event  8, 24, FRUITTREE_ROUTE_21_2, PERSIM_BERRY

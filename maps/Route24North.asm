@@ -10,13 +10,14 @@ Route24North_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PINK
 	person_event SPRITE_BLACK_BELT, 20, 31, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route24NorthNPC, -1
 	person_event SPRITE_BEAUTY, 27, 29, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route24NorthTrainer1, -1
 	person_event SPRITE_BIRD_KEEPER, 25, 12, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route24NorthTrainer2, -1
-	itemball_event 30, 25, POTION, 1, EVENT_ROUTE_24_POKE_BALL
+	itemball_event 30, 25, BLACK_BELT, 1, EVENT_ROUTE_24_POKE_BALL
+	tapeball_event 28,  5, MUSIC_AUTUMN, 1, EVENT_MUSIC_AUTUMN
 
 
 	const_def 1 ; object constants

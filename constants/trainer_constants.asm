@@ -645,6 +645,8 @@ PLAYER_F EQU __enum__
 	
 	trainerclass CLOVER
 	
+	trainerclass ERIKA
+	
 	trainerclass MINA
 	
 	trainerclass LEDIAN_RANGER

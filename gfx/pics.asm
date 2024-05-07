@@ -793,6 +793,7 @@ PoppyPic:
 FeliciaPic:
 VioletPic:
 CloverPic:				  INCBIN "gfx/trainers/pigtails.2bpp.lz"
+ErikaPic:				  INCBIN "gfx/trainers/erika.2bpp.lz"
 MinaPic:				  INCBIN "gfx/trainers/mina.2bpp.lz"
 LedianRangerPic:		  INCBIN "gfx/trainers/ledian_ranger.2bpp.lz"
 TowerTycoonPic:

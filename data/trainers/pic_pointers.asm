@@ -90,6 +90,7 @@ TrainerPicPointers::
 	dba FeliciaPic
 	dba VioletPic
 	dba CloverPic
+	dba ErikaPic
 	dba MinaPic
 	dba LedianRangerPic
 	dba TowerTycoonPic

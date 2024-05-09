@@ -10,7 +10,7 @@ MapGroupRoofs:
 	db  0 ; group 6  (Lake Onwa)
 	db  0 ; group 7  (Sunbeam Island)
 	db  2 ; group 8  (Eventide Forest)
-	db  0 ; group 9  (Eventide Village)
+	db  2 ; group 9  (Eventide Village)
 	db  2 ; group 10 (Flicker Station)
 	db -1 ; group 11 (Twinkle Town)
 	db -1 ; group 12 (Train)

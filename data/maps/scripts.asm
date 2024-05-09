@@ -340,7 +340,7 @@ SECTION "Train Scripts", ROMX
 
 INCLUDE "maps/TrainCabin1.asm"
 INCLUDE "maps/TrainCabin2.asm"
-INCLUDE "maps/EastTrainCab.asm"
+INCLUDE "maps/WestTrainCab.asm"
 INCLUDE "maps/EastTrainCaboose.asm"
 INCLUDE "maps/WestTrainCaboose.asm"
 

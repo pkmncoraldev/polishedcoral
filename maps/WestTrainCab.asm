@@ -1,134 +1,134 @@
-EastTrainCab_MapScriptHeader:
+WestTrainCab_MapScriptHeader:
 	db 2 ; scene scripts
-	scene_script EastTrainCabTrigger0
-	scene_script EastTrainCabTrigger1
+	scene_script WestTrainCabTrigger0
+	scene_script WestTrainCabTrigger1
 
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  0,  2, TRAIN_CABIN_2, 2
-	warp_event  3,  2, LUSTER_TRAIN_CUTSCENE, 1
+	warp_event  5,  2, TRAIN_CABIN_2, 1
+	warp_event  2,  2, LUSTER_TRAIN_CUTSCENE, 1
 
 	db 1 ; coord events
-	coord_event  1,  2, 0, EastTrainCabEngineerStopsYou
+	coord_event  4,  2, 0, WestTrainCabEngineerStopsYou
 
 	db 0 ; bg events
 
 	db 5 ; object events
-	person_event SPRITE_OFFICER,  1,  1, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EastTrainCabEngineer, -1
-	person_event SPRITE_SNARE,  1,  3, SPRITEMOVEDATA_STANDING_RIGHT, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, EastTrainCabSnare1, -1
-	person_event SPRITE_SNARE,  3,  3, SPRITEMOVEDATA_STANDING_RIGHT, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, EastTrainCabSnare2, -1
-	person_event SPRITE_SNARE_GIRL,  2,  4, SPRITEMOVEDATA_STANDING_RIGHT, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_LOCKE,  2,  3, SPRITEMOVEDATA_STANDING_RIGHT, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, EastTrainCabLocke, -1
+	person_event SPRITE_OFFICER,  1,  4, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, WestTrainCabEngineer, -1
+	person_event SPRITE_SNARE,  1,  2, SPRITEMOVEDATA_STANDING_LEFT, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, WestTrainCabSnare1, -1
+	person_event SPRITE_SNARE,  3,  2, SPRITEMOVEDATA_STANDING_LEFT, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, WestTrainCabSnare2, -1
+	person_event SPRITE_SNARE_GIRL,  2,  1, SPRITEMOVEDATA_STANDING_LEFT, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_LOCKE,  2,  2, SPRITEMOVEDATA_STANDING_LEFT, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, WestTrainCabLocke, -1
 	
 
 	const_def 1 ; object constants
-	const EAST_TRAIN_CAB_ENGINEER
-	const EAST_TRAIN_CAB_SNARE_1
-	const EAST_TRAIN_CAB_SNARE_2
-	const EAST_TRAIN_CAB_SNARE_DRIVER
-	const EAST_TRAIN_CAB_LOCKE
+	const WEST_TRAIN_CAB_ENGINEER
+	const WEST_TRAIN_CAB_SNARE_1
+	const WEST_TRAIN_CAB_SNARE_2
+	const WEST_TRAIN_CAB_SNARE_DRIVER
+	const WEST_TRAIN_CAB_LOCKE
 	
-EastTrainCabTrigger0:
+WestTrainCabTrigger0:
 	end
 	
-EastTrainCabTrigger1:
+WestTrainCabTrigger1:
 	end
 	
-EastTrainCabEngineerStopsYou:
+WestTrainCabEngineerStopsYou:
 	dotrigger $1
 	special Special_StopRunning
 	playsound SFX_PAY_DAY
-	spriteface EAST_TRAIN_CAB_ENGINEER, DOWN
-	showemote EMOTE_SHOCK, EAST_TRAIN_CAB_ENGINEER, 15
+	spriteface WEST_TRAIN_CAB_ENGINEER, DOWN
+	showemote EMOTE_SHOCK, WEST_TRAIN_CAB_ENGINEER, 15
 	spriteface PLAYER, UP
 	opentext
-	writetext EastTrainCabEngineerText1
+	writetext WestTrainCabEngineerText1
 	waitbutton
 	closetext
 	pause 5
 	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, EAST_TRAIN_CAB_LOCKE, 15
-	spriteface EAST_TRAIN_CAB_ENGINEER, RIGHT
-	spriteface PLAYER, RIGHT
+	showemote EMOTE_SHOCK, WEST_TRAIN_CAB_LOCKE, 15
+	spriteface WEST_TRAIN_CAB_ENGINEER, LEFT
+	spriteface PLAYER, LEFT
 	opentext
-	writetext EastTrainCabLockeText1
+	writetext WestTrainCabLockeText1
 	waitbutton
 	closetext
 	pause 5
-	spriteface EAST_TRAIN_CAB_ENGINEER, DOWN
+	spriteface WEST_TRAIN_CAB_ENGINEER, DOWN
 	spriteface PLAYER, UP
-	jumptext EastTrainCabEngineerText2
+	jumptext WestTrainCabEngineerText2
 	
-EastTrainCabEngineer:
-	jumptextfaceplayer EastTrainCabEngineerText2
+WestTrainCabEngineer:
+	jumptextfaceplayer WestTrainCabEngineerText2
 	
-EastTrainCabSnare1:
-	jumptext EastTrainCabSnare1Text
+WestTrainCabSnare1:
+	jumptext WestTrainCabSnare1Text
 	
-EastTrainCabSnare2:
-	jumptext EastTrainCabSnare2Text
+WestTrainCabSnare2:
+	jumptext WestTrainCabSnare2Text
 	
-EastTrainCabLocke:
+WestTrainCabLocke:
 	opentext
-	writetext EastTrainCabLockeText2
+	writetext WestTrainCabLockeText2
 	waitbutton
 	closetext
 	faceplayer
 	pause 5
 	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, EAST_TRAIN_CAB_LOCKE, 15
+	showemote EMOTE_SHOCK, WEST_TRAIN_CAB_LOCKE, 15
 	opentext
-	writetext EastTrainCabLockeText3
+	writetext WestTrainCabLockeText3
 	waitbutton
 	closetext
 	waitsfx
 	special SaveMusic
-	winlosstext EastTrainCabLockeWinText, EastTrainCabLockeLoseText
-	setlasttalked EAST_TRAIN_CAB_LOCKE
+	winlosstext WestTrainCabLockeWinText, WestTrainCabLockeLoseText
+	setlasttalked WEST_TRAIN_CAB_LOCKE
 	loadtrainer LOCKE, TRAIN_LOCKE
 	startbattle
 	reloadmapafterbattle
 	special RestoreMusic
 	opentext
-	writetext EastTrainCabLockeText4
+	writetext WestTrainCabLockeText4
 	waitbutton
 	closetext
-	spriteface EAST_TRAIN_CAB_LOCKE, RIGHT
+	spriteface WEST_TRAIN_CAB_LOCKE, LEFT
 	pause 5
 	opentext
-	writetext EastTrainCabLockeTextMove
+	writetext WestTrainCabLockeTextMove
 	waitbutton
 	closetext
 	waitsfx
-	applyonemovement EAST_TRAIN_CAB_LOCKE, turn_step_right
+	applyonemovement WEST_TRAIN_CAB_LOCKE, turn_step_left
 	playsound SFX_BUMP
-	spriteface EAST_TRAIN_CAB_SNARE_DRIVER, DOWN
-	applyonemovement EAST_TRAIN_CAB_SNARE_DRIVER, fix_facing
-	follow EAST_TRAIN_CAB_SNARE_DRIVER, EAST_TRAIN_CAB_LOCKE
-	applyonemovement EAST_TRAIN_CAB_SNARE_DRIVER, step_up
+	spriteface WEST_TRAIN_CAB_SNARE_DRIVER, DOWN
+	applyonemovement WEST_TRAIN_CAB_SNARE_DRIVER, fix_facing
+	follow WEST_TRAIN_CAB_SNARE_DRIVER, WEST_TRAIN_CAB_LOCKE
+	applyonemovement WEST_TRAIN_CAB_SNARE_DRIVER, step_up
 	stopfollow
-	applyonemovement EAST_TRAIN_CAB_SNARE_DRIVER, remove_fixed_facing
+	applyonemovement WEST_TRAIN_CAB_SNARE_DRIVER, remove_fixed_facing
 	pause 5
 	playsound SFX_ELEVATOR_END
 	opentext
-	writetext EastTrainCabLockeText5
+	writetext WestTrainCabLockeText5
 	waitbutton
 	closetext
-	spriteface EAST_TRAIN_CAB_LOCKE, LEFT
+	spriteface WEST_TRAIN_CAB_LOCKE, RIGHT
 	pause 5
 	opentext
-	writetext EastTrainCabLockeText6
+	writetext WestTrainCabLockeText6
 	waitbutton
 	closetext
 	pause 5
 	playsound SFX_EXIT_BUILDING
 	special Special_FadeBlackQuickly
 	special Special_ReloadSpritesNoPalettes
-	disappear EAST_TRAIN_CAB_SNARE_1
-	disappear EAST_TRAIN_CAB_SNARE_2
-	disappear EAST_TRAIN_CAB_SNARE_DRIVER
-	disappear EAST_TRAIN_CAB_LOCKE
+	disappear WEST_TRAIN_CAB_SNARE_1
+	disappear WEST_TRAIN_CAB_SNARE_2
+	disappear WEST_TRAIN_CAB_SNARE_DRIVER
+	disappear WEST_TRAIN_CAB_LOCKE
 	clearflag ENGINE_PUNKS_ON_TRAIN
 	clearevent EVENT_SNARE_ON_TRAIN
 	setevent EVENT_DONE_SNARE_TRAIN
@@ -140,39 +140,39 @@ EastTrainCabLocke:
 	special Special_FadeOutMusic
 	waitsfx
 	special Special_FadeInQuickly
-	applyonemovement EAST_TRAIN_CAB_ENGINEER, step_right
-	spriteface EAST_TRAIN_CAB_ENGINEER, DOWN
+	applyonemovement WEST_TRAIN_CAB_ENGINEER, step_left
+	spriteface WEST_TRAIN_CAB_ENGINEER, DOWN
 	spriteface PLAYER, UP
 	opentext
-	writetext EastTrainCabEngineerText3
+	writetext WestTrainCabEngineerText3
 	waitbutton
 	closetext
-	applymovement EAST_TRAIN_CAB_ENGINEER, Movement_East_Train_Cab
-	applyonemovement PLAYER, step_right
+	applymovement WEST_TRAIN_CAB_ENGINEER, Movement_West_Train_Cab
+	applyonemovement PLAYER, step_left
 	changeblock $2, $2, $1a
 	opentext
-	writetext EastTrainCabEngineerText4
+	writetext WestTrainCabEngineerText4
 	waitbutton
 	closetext
 	pause 5
 	playsound SFX_ELEVATOR_END
 	opentext
-	writetext EastTrainCabEngineerText5
+	writetext WestTrainCabEngineerText5
 	waitbutton
 	closetext
-	spriteface EAST_TRAIN_CAB_ENGINEER, LEFT
+	spriteface WEST_TRAIN_CAB_ENGINEER, RIGHT
 	pause 5
 	opentext
-	writetext EastTrainCabEngineerText6
+	writetext WestTrainCabEngineerText6
 ;	waitbutton
 ;	verbosegiveitem TRAIN_PASS
-;	writetext EastTrainCabEngineerText7
+;	writetext WestTrainCabEngineerText7
 	waitbutton
 	closetext
-	spriteface EAST_TRAIN_CAB_ENGINEER, RIGHT
+	spriteface WEST_TRAIN_CAB_ENGINEER, LEFT
 	pause 5
 	opentext
-	writetext EastTrainCabEngineerText8
+	writetext WestTrainCabEngineerText8
 	waitbutton
 	closetext
 	special FadeOutPalettes
@@ -181,7 +181,7 @@ EastTrainCabLocke:
 	warpcheck
 	end
 	
-EastTrainCabEngineerText1:
+WestTrainCabEngineerText1:
 	text "Pssst…"
 	
 	para "Hey kid!"
@@ -196,19 +196,19 @@ EastTrainCabEngineerText1:
 	cont "the train!"
 	
 	para "You're a TRAINER,"
-	line "right?"
+	line "left?"
 	
 	para "You gotta help me!"
 	done
 	
-EastTrainCabEngineerText2:
+WestTrainCabEngineerText2:
 	text "You got this, kid!"
 	
 	para "Show them what"
 	line "for!"
 	done
 	
-EastTrainCabEngineerText3:
+WestTrainCabEngineerText3:
 	text "Oh wow!"
 	
 	para "Great job, kid!"
@@ -223,7 +223,7 @@ EastTrainCabEngineerText3:
 	line "to the controls!"
 	done
 	
-EastTrainCabEngineerText4:
+WestTrainCabEngineerText4:
 	text "Just in time!"
 	
 	para "We're almost to"
@@ -233,7 +233,7 @@ EastTrainCabEngineerText4:
 	line "announcement."
 	done
 	
-EastTrainCabEngineerText5:
+WestTrainCabEngineerText5:
 	text "PA: Ding-dong!"
 	
 	para "This is your"
@@ -252,7 +252,7 @@ EastTrainCabEngineerText5:
 	cont "momentarily."
 	done
 	
-EastTrainCabEngineerText6:
+WestTrainCabEngineerText6:
 	text "Hey kid."
 	
 	para "Why don't we keep"
@@ -266,7 +266,7 @@ EastTrainCabEngineerText6:
 	line "will!"
 	done
 	
-EastTrainCabEngineerText7:
+WestTrainCabEngineerText7:
 	text "That RAIL PASS"
 	line "will let you ride"
 	cont "the TRAIN for free"
@@ -277,7 +277,7 @@ EastTrainCabEngineerText7:
 	para "Of course we do!"
 	done
 	
-EastTrainCabEngineerText8:
+WestTrainCabEngineerText8:
 	text "Alright!"
 	
 	para "Here we are!"
@@ -285,14 +285,14 @@ EastTrainCabEngineerText8:
 	para "LUSTER CITY!"
 	done
 	
-EastTrainCabSnare1Text:
+WestTrainCabSnare1Text:
 	text "Knock it off!"
 	
 	para "Don't make me"
 	line "turn around!"
 	done
 	
-EastTrainCabSnare2Text:
+WestTrainCabSnare2Text:
 	text "Keep driving!"
 	
 	para "The others should"
@@ -300,11 +300,11 @@ EastTrainCabSnare2Text:
 	cont "the passengers."
 	done
 	
-EastTrainCabLockeText1:
+WestTrainCabLockeText1:
 	text "Quiet back there!"
 	done
 	
-EastTrainCabLockeText2:
+WestTrainCabLockeText2:
 	text "I thought I told"
 	line "you to be quiet"
 	cont "back there!"
@@ -312,7 +312,7 @@ EastTrainCabLockeText2:
 	para "I'll shut you up!"
 	done
 	
-EastTrainCabLockeText3:
+WestTrainCabLockeText3:
 	text "Who?"
 	
 	para "A kid?"
@@ -333,7 +333,7 @@ EastTrainCabLockeText3:
 	cont "of hand!"
 	done
 	
-EastTrainCabLockeText4:
+WestTrainCabLockeText4:
 	text "I can't believe it!"
 	
 	para "How did you take"
@@ -353,7 +353,7 @@ EastTrainCabLockeText4:
 	para "Forget this!"
 	done
 	
-EastTrainCabLockeText5:
+WestTrainCabLockeText5:
 	text "PA: Ding-dong!"
 	
 	para "Attention TEAM"
@@ -370,7 +370,7 @@ EastTrainCabLockeText5:
 	line "boys!"
 	done
 	
-EastTrainCabLockeText6:
+WestTrainCabLockeText6:
 	text "This isn't over"
 	line "runt!"
 	
@@ -378,22 +378,22 @@ EastTrainCabLockeText6:
 	line "revenge!"
 	done
 	
-EastTrainCabLockeTextMove:
+WestTrainCabLockeTextMove:
 	text "Move over!"
 	done
 	
-EastTrainCabLockeWinText:
+WestTrainCabLockeWinText:
 	text "This can't be"
 	line "happening!"
 	done
 	
-EastTrainCabLockeLoseText:
+WestTrainCabLockeLoseText:
 	text "Just like that!"
 	done
 
-Movement_East_Train_Cab:
-	step_right
+Movement_West_Train_Cab:
+	step_left
 	step_down
-	step_right
+	step_left
 	step_end
 	

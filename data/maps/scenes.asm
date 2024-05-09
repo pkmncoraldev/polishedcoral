@@ -48,8 +48,8 @@ MapTriggers::
 	scene_var ROUTE_10_EAST,						  wRoute10EastTrigger
 	scene_var TWINKLE_TOWN,							  wTwinkleTownTrigger
 	scene_var TRAIN_CABIN_1,						  wTrainCabin1Trigger
-	scene_var EAST_TRAIN_CABOOSE,					  wEastTrainCabooseTrigger
-	scene_var EAST_TRAIN_CAB,						  wEastTrainCabTrigger
+	scene_var WEST_TRAIN_CABOOSE,					  wWestTrainCabooseTrigger
+	scene_var WEST_TRAIN_CAB,						  wWestTrainCabTrigger
 	scene_var LUSTER_TRAIN_CUTSCENE,				  wLusterTrainCutsceneTrigger
 	scene_var LUSTER_TRAIN_STATION,				  	  wLusterTrainStationTrigger
 	scene_var LUSTER_CITY_RESIDENTIAL,				  wLusterCityResidentialTrigger
@@ -105,7 +105,7 @@ MapTriggers::
 	scene_var AIRPORT,								  wAirportTrigger
 	scene_var ROUTE_20,								  wRoute20Trigger
 	scene_var LUSTER_SKYSCRAPER_PORYGON_ROOM,		  wLusterSkyscraperPorygonRoomTrigger
-	scene_var FAKE_ROUTE_1,							  wEastTrainCabooseTrigger
+	scene_var FAKE_ROUTE_1,							  wWestTrainCabooseTrigger
 	scene_var DUSK_TURNPIKE,					 	  wDuskTurnpikeTrigger
 	scene_var ROUTE_22_TUNNEL,						  wRoute22TunnelTrigger
 	scene_var STARGLOW_CAVERN_DEPTHS,				  wStarglowCavernDepthsTrigger

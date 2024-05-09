@@ -232,7 +232,7 @@ MAP_NONE   EQU 0
 	
 	map_const TRAIN_CABIN_1,						 	   8,  4 ; 1
 	map_const TRAIN_CABIN_2,						  	   8,  4 ; 2
-	map_const EAST_TRAIN_CAB,							   3,  2 ; 3
+	map_const WEST_TRAIN_CAB,							   3,  2 ; 3
 	map_const EAST_TRAIN_CABOOSE,						   2,  2 ; 4
 	map_const LUSTER_CITY_BUSINESS,					      24, 24 ; 5
 	map_const WEST_TRAIN_CABOOSE,						   2,  2 ; 6

@@ -40,7 +40,7 @@ FlickerTrainStation_MapScriptHeader:
 	const FLICKER_TRAIN_STATION_RIVAL
 	
 FlickerTrainStationCallback:
-	checkevent EVENT_TRAIN_GOING_WEST
+	checkevent EVENT_TRAIN_GOING_EAST
 	iffalse .end
 	moveperson FLICKER_TRAIN_STATION_CLERK, 9, 3
 	earthquake 5
@@ -61,8 +61,8 @@ FlickerTrainStationClerk:
 	iffalse .end_debug
 	closetext
 	domaptrigger TRAIN_CABIN_1, $0
-	setevent EVENT_TRAIN_GOING_EAST
-	clearevent EVENT_TRAIN_GOING_WEST
+	clearevent EVENT_TRAIN_GOING_EAST
+	setevent EVENT_TRAIN_GOING_WEST
 	follow FLICKER_TRAIN_STATION_CLERK, PLAYER
 	applymovement FLICKER_TRAIN_STATION_CLERK, Movement_FlickerTrainStationClerk
 	stopfollow
@@ -101,8 +101,8 @@ FlickerTrainStationClerk:
 .return
 	closetext
 	domaptrigger TRAIN_CABIN_1, $0
-	setevent EVENT_TRAIN_GOING_EAST
-	clearevent EVENT_TRAIN_GOING_WEST
+	clearevent EVENT_TRAIN_GOING_EAST
+	setevent EVENT_TRAIN_GOING_WEST
 	follow FLICKER_TRAIN_STATION_CLERK, PLAYER
 	applymovement FLICKER_TRAIN_STATION_CLERK, Movement_FlickerTrainStationClerk
 	stopfollow

@@ -1017,8 +1017,8 @@ wRoute10Trigger:: ds 1
 wRoute10EastTrigger:: ds 1
 wTwinkleTownTrigger:: ds 1
 wTrainCabin1Trigger:: ds 1
-wEastTrainCabooseTrigger:: ds 1
-wEastTrainCabTrigger:: ds 1
+wWestTrainCabooseTrigger:: ds 1
+wWestTrainCabTrigger:: ds 1
 wLusterTrainCutsceneTrigger:: ds 1
 wLusterTrainStationTrigger:: ds 1
 wLusterCityResidentialTrigger:: ds 1

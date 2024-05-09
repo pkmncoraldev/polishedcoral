@@ -191,8 +191,8 @@ LusterTrainStationConductor:
 	iffalse .end
 	closetext
 	domaptrigger TRAIN_CABIN_1, $0
-	clearevent EVENT_TRAIN_GOING_EAST
-	setevent EVENT_TRAIN_GOING_WEST
+	setevent EVENT_TRAIN_GOING_EAST
+	clearevent EVENT_TRAIN_GOING_WEST
 	
 	follow LUSTER_TRAIN_STATION_OFFICER, PLAYER
 	applymovement LUSTER_TRAIN_STATION_OFFICER, Movement_LusterStationOfficer1

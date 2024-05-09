@@ -8,8 +8,8 @@ TrainCabin1_MapScriptHeader:
 	callback MAPCALLBACK_TILES, TrainCabin1Callback
 
 	db 4 ; warp events
-	warp_event 1,  4, EAST_TRAIN_CABOOSE, 1
-	warp_event 14,  4, TRAIN_CABIN_2, 1
+	warp_event 1,  4, TRAIN_CABIN_2, 2
+	warp_event 14,  4, WEST_TRAIN_CABOOSE, 1
 	warp_event  7,  2, FLICKER_TRAIN_CUTSCENE, 2
 	warp_event  6,  2, LUSTER_TRAIN_CUTSCENE, 1
 
@@ -34,12 +34,12 @@ TrainCabin1_MapScriptHeader:
 	person_event SPRITE_SITTING_GENTLEMAN,  2,  2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TrainCabin1NPC2, -1
 	person_event SPRITE_SITTING_YOUNGSTER,  6, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TrainCabin1NPC3, -1
 	person_event SPRITE_SITTING_GUY,  2, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, TrainCabin1NPC4, -1
-	person_event SPRITE_OFFICER,  3, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TrainCabin1Officer, EVENT_TRAIN_DOWN_OFFICER_GONE
-	person_event SPRITE_OFFICER,  4,  2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TrainCabin1SnareOfficer, EVENT_TRAIN_CABIN_1_SNARE_OFFICER
-	person_event SPRITE_DISGUISEMAN,  2,  3, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TrainCabin1Snare1, EVENT_BEAT_TRAIN_CABIN_1_SNARE_1
+	person_event SPRITE_OFFICER,  3, 2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TrainCabin1Officer, EVENT_TRAIN_DOWN_OFFICER_GONE
+	person_event SPRITE_OFFICER,  4,  13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TrainCabin1SnareOfficer, EVENT_TRAIN_CABIN_1_SNARE_OFFICER
+	person_event SPRITE_DISGUISEMAN,  2,  3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TrainCabin1Snare1, EVENT_BEAT_TRAIN_CABIN_1_SNARE_1
 	person_event SPRITE_SNARE,  2,  9, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainCabin1Snare2, EVENT_ALWAYS_SET
 	person_event SPRITE_SNARE,  6, 12, SPRITEMOVEDATA_STANDING_UP, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainCabin1Snare3, EVENT_ALWAYS_SET
-	person_event SPRITE_OFFICER,  4, 2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TrainCabin2Officer, EVENT_TRAIN_GOING_EAST
+	person_event SPRITE_OFFICER,  4, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TrainCabin2Officer, EVENT_TRAIN_GOING_WEST
 	
 
 	const_def 1 ; object constants
@@ -81,7 +81,7 @@ TrainCabin1Trigger0:
 	pause 20
 	playsound SFX_ELEVATOR_END
 	opentext
-	checkevent EVENT_TRAIN_GOING_WEST
+	checkevent EVENT_TRAIN_GOING_EAST
 	iffalse .luster
 	writetext TrainCabin1ArrivingSoonText2
 	waitbutton
@@ -108,9 +108,9 @@ TrainCabin1Trigger1:
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_OFFICER
 	disappear TRAIN_CABIN_1_SNARE_OFFICER_STAND
 	disappear TRAIN_CABIN_1_SNARE_OFFICER
-	moveperson TRAIN_CABIN_1_SNARE_OFFICER, 2, 4
+	moveperson TRAIN_CABIN_1_SNARE_OFFICER, 7, 3
 	appear TRAIN_CABIN_1_SNARE_OFFICER
-	applymovement TRAIN_CABIN_1_SNARE_OFFICER, Movement_TrainCabin1SnareOfficer
+;	applymovement TRAIN_CABIN_1_SNARE_OFFICER, Movement_TrainCabin1SnareOfficer
 	spriteface TRAIN_CABIN_1_SNARE_OFFICER, UP
 	opentext
 	writetext TrainCabin1SnareOfficerText1
@@ -120,7 +120,7 @@ TrainCabin1Trigger1:
 	special FadeInTextboxPalettes
 	pause 20
 	opentext
-	writetext EastTrainCaboosePAText4
+	writetext WestTrainCaboosePAText4
 	writetext TrainCabin1SnareOfficerText2
 	waitbutton
 	closetext
@@ -128,7 +128,7 @@ TrainCabin1Trigger1:
 	callasm TrainCabin1PlayersSeatGetUpAsm
 	applyonemovement PLAYER, slow_step_left
 	spriteface PLAYER, DOWN
-	applyonemovement TRAIN_CABIN_1_SNARE_OFFICER, step_left
+	applyonemovement PLAYER, step_down
 	follow TRAIN_CABIN_1_SNARE_OFFICER, PLAYER
 	applymovement TRAIN_CABIN_1_SNARE_OFFICER, Movement_TrainCabin1SnareOfficer2
 	stopfollow
@@ -138,13 +138,13 @@ TrainCabin1Trigger1:
 	opentext
 	writetext TrainCabin1SnareOfficerText3
 	waitbutton
-	changeblock $0, $4, $14
+	changeblock $e, $4, $14
 	closetext
 	pause 5
 	follow PLAYER, TRAIN_CABIN_1_SNARE_OFFICER
-	applyonemovement PLAYER, step_left
+	applyonemovement PLAYER, step_right
 	stopfollow
-	spriteface TRAIN_CABIN_1_SNARE_OFFICER, LEFT
+	spriteface TRAIN_CABIN_1_SNARE_OFFICER, RIGHT
 	setevent EVENT_TRAIN_CABIN_1_SNARE_OFFICER
 	warpcheck
 	end
@@ -446,7 +446,7 @@ TrainCabin1PlayersSeat:
 	applyonemovement PLAYER, hide_person
 	playsound SFX_ELEVATOR_END
 	opentext
-	checkevent EVENT_TRAIN_GOING_WEST
+	checkevent EVENT_TRAIN_GOING_EAST
 	iffalse .luster
 	writetext TrainCabin1PlayersSeatArriveTextFlicker
 	waitbutton
@@ -889,10 +889,12 @@ Movement_TrainCabin1SnareOfficer:
 	
 Movement_TrainCabin1SnareOfficer2:
 	step_down
-	step_left
-	step_left
-	step_left
-	step_left
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
 	step_up
 	step_end
 	

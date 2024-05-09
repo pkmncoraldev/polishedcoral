@@ -598,7 +598,7 @@ ENDM
 	map_attributes Route10MoveReminderHouse, ROUTE_10_MOVE_REMINDER_HOUSE, 0, 0
 	map_attributes TrainCabin1, TRAIN_CABIN_1, 0, 0
 	map_attributes TrainCabin2, TRAIN_CABIN_2, 0, 0
-	map_attributes EastTrainCab, EAST_TRAIN_CAB, 0, 0
+	map_attributes WestTrainCab, WEST_TRAIN_CAB, 0, 0
 	map_attributes EastTrainCaboose, EAST_TRAIN_CABOOSE, 0, 0
 	map_attributes WestTrainCaboose, WEST_TRAIN_CABOOSE, 0, 0
 	map_attributes LusterApartment1_1F, LUSTER_APARTMENT_1_1F, $0, 0

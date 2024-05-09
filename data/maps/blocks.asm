@@ -326,8 +326,8 @@ TrainCabin1_BlockData:
 TrainCabin2_BlockData:
 	INCBIN "maps/TrainCabin.ablk.lz"
 	
-EastTrainCab_BlockData:
-	INCBIN "maps/EastTrainCab.ablk.lz"
+WestTrainCab_BlockData:
+	INCBIN "maps/WestTrainCab.ablk.lz"
 	
 EastTrainCaboose_BlockData:
 	INCBIN "maps/EastTrainCaboose.ablk.lz"

@@ -5,8 +5,8 @@ TrainCabin2_MapScriptHeader:
 	callback MAPCALLBACK_TILES, TrainCabin2Callback
 
 	db 2 ; warp events
-	warp_event 1,  4, TRAIN_CABIN_1, 2
-	warp_event 14,  4, EAST_TRAIN_CAB, 255
+	warp_event 1,  4, WEST_TRAIN_CAB, 255
+	warp_event 14,  4, TRAIN_CABIN_1, 1
 
 	db 0 ; coord events
 
@@ -20,10 +20,10 @@ TrainCabin2_MapScriptHeader:
 	person_event SPRITE_SITTING_GENTLEMAN,  6, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, TrainCabin2NPC5, -1
 	person_event SPRITE_SITTING_TWIN,  6,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TrainCabin2NPC6, -1
 	person_event SPRITE_SITTING_TWIN,  6,  7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TrainCabin2NPC7, -1
-	person_event SPRITE_OFFICER,  4, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TrainCabin2Officer, EVENT_TRAIN_DOWN_OFFICER_GONE
+	person_event SPRITE_OFFICER,  4, 2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TrainCabin2Officer, EVENT_TRAIN_DOWN_OFFICER_GONE
 	person_event SPRITE_SNARE,  2,  3, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainCabin2Snare1, EVENT_ALWAYS_SET
 	person_event SPRITE_SNARE_GIRL,  6,  9, SPRITEMOVEDATA_STANDING_UP, 3, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainCabin2Snare2, EVENT_ALWAYS_SET
-	person_event SPRITE_OFFICER,  4, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TrainCabin2Officer, EVENT_TRAIN_GOING_WEST
+	person_event SPRITE_OFFICER,  4, 2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TrainCabin2Officer, EVENT_TRAIN_GOING_EAST
 
 	const_def 1 ; object constants
 	const TRAIN_CABIN_2_NPC1
@@ -51,10 +51,10 @@ TrainCabin2Callback:
 	changeblock $8, $0, $21
 	changeblock $a, $0, $22
 	changeblock $c, $0, $23
-	warpmod 1, WEST_TRAIN_CABOOSE
+	warpmod 1, WEST_TRAIN_CAB
 	return
 .end
-	warpmod 1, EAST_TRAIN_CAB
+	warpmod 1, EAST_TRAIN_CABOOSE
 	return
 	
 TrainCabin2NPC1:

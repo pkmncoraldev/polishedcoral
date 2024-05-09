@@ -6,17 +6,17 @@ FlickerTrainCutscene_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  4,  8, FLICKER_TRAIN_STATION, 3
-	warp_event 47,  5, ROUTE_1, 1
+	warp_event 46,  8, FLICKER_TRAIN_STATION, 3
+	warp_event 89,  5, ROUTE_1, 1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 3 ; object events
-	person_event SPRITE_CHILD,  2,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC3, -1
-	person_event SPRITE_SCHOOLGIRL,  2,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC4, -1
-	person_event SPRITE_OFFICER,  8,  5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_CHILD,  2, 43, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC3, -1
+	person_event SPRITE_SCHOOLGIRL,  2, 44, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC4, -1
+	person_event SPRITE_OFFICER,  8, 47, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	
 	const_def 1 ; object constants
 	const FLICKER_TRAIN_CUTSCENE_NPC1
@@ -117,98 +117,98 @@ FlickerTrainCutsceneArriveText:
 	done
 	
 Movement_FlickerStationTrainLeaves:
-	slow_step_right
-	slow_step_right
-	step_right
-	step_right
-	step_right
-	step_right
-	fast_step_right
-	fast_step_right
-	fast_step_right
-	fast_step_right
-	fast_step_right
-	fast_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
+	slow_step_left
+	slow_step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	fast_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
 	step_end
 	
 Movement_FlickerStationTrainArrives:
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	fast_step_left
-	fast_step_left
-	fast_step_left
-	fast_step_left
-	fast_step_left
-	fast_step_left
-	fast_step_left
-	fast_step_left
-	fast_step_left
-	fast_step_left
-	fast_step_left
-	fast_step_left
-	fast_step_left
-	step_left
-	step_left
-	step_left
-	step_left
-	step_left
-	step_left
-	step_left
-	step_left
-	step_left
-	step_left
-	step_left
-	slow_step_left
-	slow_step_left
-	slow_step_left
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	slow_step_right
+	slow_step_right
+	slow_step_right
 	step_end
 	
 Movement_FlickerStationTrainArrives2:
-	slow_step_left
+	slow_step_right
 	slow_step_down
 	step_end
 	

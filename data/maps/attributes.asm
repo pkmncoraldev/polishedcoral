@@ -186,13 +186,13 @@ ENDM
 	map_attributes EventideVillage, EVENTIDE_VILLAGE, $0d, EAST
 	connection east, Route9, ROUTE_9, -16
 
-	map_attributes FlickerStation, FLICKER_STATION, $d1, NORTH | SOUTH | WEST
+	map_attributes FlickerStation, FLICKER_STATION, $d1, NORTH | SOUTH | EAST
 	connection north, FlickerPassOutside, FLICKER_PASS_OUTSIDE, 7
 	connection south, Route9, ROUTE_9, -5
-	connection west, FlickerTrainGraveyard, FLICKER_TRAIN_GRAVEYARD, 0
+	connection east, FlickerTrainGraveyard, FLICKER_TRAIN_GRAVEYARD, 0
 	
-	map_attributes FlickerTrainGraveyard, FLICKER_TRAIN_GRAVEYARD, $d1, EAST
-	connection east, FlickerStation, FLICKER_STATION, 0
+	map_attributes FlickerTrainGraveyard, FLICKER_TRAIN_GRAVEYARD, $d1, WEST
+	connection west, FlickerStation, FLICKER_STATION, 0
 	
 	map_attributes FlickerPassOutside, FLICKER_PASS_OUTSIDE, 113, SOUTH
 	connection south, FlickerStation, FLICKER_STATION, -7

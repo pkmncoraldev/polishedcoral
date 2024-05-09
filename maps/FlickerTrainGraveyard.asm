@@ -10,24 +10,24 @@ FlickerTrainGraveyard_MapScriptHeader:
 	db 0 ; warp events
 
 	db 3 ; coord events
-	xy_trigger 0, 28,  9, 0, FlickerTrainGraveyard3Girls, 0, 0
+	xy_trigger 0, 28, 18, 0, FlickerTrainGraveyard3Girls, 0, 0
 	xy_trigger 1, 28, 14, 0, FlickerTrainGraveyard3GirlsExtra, 0, 0
 	xy_trigger 1, 29, 14, 0, FlickerTrainGraveyard3GirlsExtra, 0, 0
 
 	db 6 ; bg events
-	signpost 21, 20, SIGNPOST_UP, FlickerTrainDoor
-	signpost 21, 17, SIGNPOST_UP, FlickerTrainDoor
-	signpost 18, 21, SIGNPOST_UP, FlickerTrainDoor
-	signpost 18, 18, SIGNPOST_UP, FlickerTrainDoor
-	signpost 15, 20, SIGNPOST_UP, FlickerTrainDoor
-	signpost 15, 17, SIGNPOST_UP, FlickerTrainDoor
+	signpost 21, 10, SIGNPOST_UP, FlickerTrainDoor
+	signpost 21,  7, SIGNPOST_UP, FlickerTrainDoor
+	signpost 18,  8, SIGNPOST_UP, FlickerTrainDoor
+	signpost 18,  5, SIGNPOST_UP, FlickerTrainDoor
+	signpost 15, 10, SIGNPOST_UP, FlickerTrainDoor
+	signpost 15,  7, SIGNPOST_UP, FlickerTrainDoor
 
 	db 5 ; object events
-	person_event SPRITE_DELINQUENT_F, 26,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerTrainGraveyardGirl1, -1
-	person_event SPRITE_DELINQUENT_F, 28,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerTrainGraveyardGirl2, -1
-	person_event SPRITE_DELINQUENT_F, 31,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerTrainGraveyardGirl3, -1
-	tmhmball_event  7, 30, TM_WILL_O_WISP, EVENT_FLICKER_STATION_WILL_O_WISP
-	tapeball_event 16, 14, MUSIC_FLICKER_STATION, 1, EVENT_MUSIC_FLICKER_STATION
+	person_event SPRITE_DELINQUENT_F, 26, 18, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerTrainGraveyardGirl1, -1
+	person_event SPRITE_DELINQUENT_F, 28, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerTrainGraveyardGirl2, -1
+	person_event SPRITE_DELINQUENT_F, 31, 18, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerTrainGraveyardGirl3, -1
+	tmhmball_event 21, 29, TM_WILL_O_WISP, EVENT_FLICKER_STATION_WILL_O_WISP
+	tapeball_event  6, 14, MUSIC_FLICKER_STATION, 1, EVENT_MUSIC_FLICKER_STATION
 
 
 	const_def 1 ; object constants
@@ -93,7 +93,7 @@ FlickerTrainGraveyard3Girls:
 	playmusic MUSIC_POKEMANIAC_ENCOUNTER
 	showemote EMOTE_SHOCK, FLICKER_STATION_TRAINER2,  30
 	applymovement FLICKER_STATION_TRAINER2, Movement_FlickerTrainGraveyard3Girls3
-	spriteface PLAYER, LEFT
+	spriteface PLAYER, RIGHT
 	opentext
 	writetext TrainerFlickerTrainGraveyard_2SeenText
 	waitbutton
@@ -132,7 +132,7 @@ FlickerTrainGraveyardGirl2:
 	writetext TrainerFlickerTrainGraveyard_2NormalText2
 	waitbutton
 	closetext
-	applyonemovement FLICKER_STATION_TRAINER2, step_left
+	applyonemovement FLICKER_STATION_TRAINER2, step_right
 	setevent EVENT_FLICKER_STATION_GIRL_STEP_ASIDE
 	end
 .skip2
@@ -219,8 +219,9 @@ Movement_FlickerTrainGraveyard3Girls2:
 	step_end
 	
 Movement_FlickerTrainGraveyard3Girls3:
-	step_right
-	step_right
-	step_right
+	step_left
+	step_left
+	step_left
+	step_left
 	step_end
 	

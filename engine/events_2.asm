@@ -8,6 +8,9 @@ ReturnFromMapSetupScript:: ; b8000
 
 	call GetWorldMapLocation
 	ld [wCurrentLandmark], a
+	cp GATE_LANDMARK
+	jr z, .dont_do_map_sign
+	
 
 	ld hl, wEnteredMapFromContinue
 	bit 1, [hl]

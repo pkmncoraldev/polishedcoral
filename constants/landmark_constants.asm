@@ -10,11 +10,10 @@
 
 	const SUNSET_BAY		 ; 01
 	const SUNSET_CAPE		 ; 02
-	const LIGHTHOUSE		 ; 03
 	const ROUTE_1			 ; 04
 	const DAYBREAK_VILLAGE	 ; 05
 	const ROUTE_2			 ; 06
-	const DAYBREAK_GROTTO    ; 07
+	const MT_ONWA   		 ; 07
 	const GLINT_CITY		 ; 08
 	const GLINT_GROVE		 ; 09
 	const ROUTE_3			 ; 0a
@@ -26,7 +25,6 @@
 	const ROUTE_6			 ; 10
 	const ROUTE_7			 ; 11
 	const LAKE_ONWA			 ; 12
-	const MT_ONWA			 ; 13
 	const SUNBEAM_ISLAND	 ; 14
 	const SUNBEAM_JUNGLE	 ; 15
 	const ROUTE_8			 ; 16

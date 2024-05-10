@@ -13,7 +13,7 @@ TapeNames::
 	db "“SPOTTED!<LNBRK><LNBRK>YOUNGSTER”@"
 	db "“BATTLE!<LNBRK><LNBRK>#MON TRAINER”@"
 	db "“VICTORY!<LNBRK><LNBRK>#MON TRAINER”@"
-	db "“DAYBREAK GROTTO”@"
+	db "“MT. ONWA”@"
 	db "“GLINT CITY”@"
 	db "“GLINT GROVE”@"
 	db "“#MON GYM”@"

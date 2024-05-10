@@ -7,11 +7,10 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, SpecialMapName
 	landmark  20, 100, SunsetBayName
 	landmark  28, 100, SunsetCapeName
-	landmark  28, 108, LighthouseName
 	landmark  28,  92, Route1Name
 	landmark  28,  84, DaybreakVillageName
 	landmark  28,  72, Route2Name
-	landmark  36,  76, DaybreakGrottoName
+	landmark  44,  84, MtOnwaName
 	landmark  28,  60, GlintCityName
 	landmark  28,  52, GlintGroveName
 	landmark  52,  60, Route3Name
@@ -23,7 +22,6 @@ Landmarks: ; 0x1ca8c3
 	landmark  62, 100, Route6Name
 	landmark  52,  92, Route7Name
 	landmark  40,  92, LakeOnwaName
-	landmark  44,  84, MtOnwaName
 	landmark  60, 116, SunbeamIslandName
 	landmark  68, 116, SunbeamJungleName
 	landmark  52,  76, Route8Name
@@ -84,11 +82,10 @@ Landmarks: ; 0x1ca8c3
 
 SunsetBayName:         db "SUNSET BAY@"
 SunsetCapeName:        db "SUNSET¯CAPE@"
-LighthouseName:		   db "SUNSET¯LIGHTHOUSE@"
 DaybreakVillageName:   db "DAYBREAK¯VILLAGE@"
 Route1Name:            db "ROUTE 1@"
 Route2Name:            db "ROUTE 2@"
-DaybreakGrottoName:    db "DAYBREAK¯GROTTO@"
+MtOnwaName:			   db "MT. ONWA@"
 GlintCityName:   	   db "GLINT CITY@"
 GlintGroveName:   	   db "GLINT¯GROVE@"
 Route3Name:            db "ROUTE 3@"
@@ -100,7 +97,6 @@ Route5Name:            db "ROUTE 5@"
 Route6Name:            db "ROUTE 6@"
 Route7Name:            db "ROUTE 7@"
 LakeOnwaName:          db "LAKE ONWA@"
-MtOnwaName:			   db "MT. ONWA@"
 SunbeamIslandName:	   db "SUNBEAM¯ISLAND@"
 SunbeamJungleName:	   db "SUNBEAM¯JUNGLE@"
 Route8Name:  		   db "ROUTE 8@"

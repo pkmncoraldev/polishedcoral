@@ -183,6 +183,7 @@ SpecialsPointers::
 	add_special Special_StopLandmarkTimer
 	add_special Special_StartLandmarkTimer
 	add_special Special_ForcePlayerStateNormal
+	add_special Special_MakePlayerInvisible
 	add_special Special_UpdatePalsInstant
 	add_special FadeOutPalettesBlack
 	add_special FadeInTextboxPalettes

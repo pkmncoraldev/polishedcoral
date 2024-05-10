@@ -288,3 +288,4 @@ SpriteHeadersPlayers:
 	overworld_sprite ClownSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite ScientistSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ColbySpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite InvisibleSpriteGFX, WALKING_SPRITE, PAL_OW_RED

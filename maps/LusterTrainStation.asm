@@ -24,7 +24,7 @@ LusterTrainStation_MapScriptHeader:
 	person_event SPRITE_SUPER_NERD, 14, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
 	person_event SPRITE_ROCKER, 13, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
 	person_event SPRITE_FAT_GUY, 10, 21, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
-	person_event SPRITE_OFFICER,  7, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterTrainStationConductor, -1
+	person_event SPRITE_OFFICER,  6, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterTrainStationConductor, -1
 
 	
 	const_def 1 ; object constants
@@ -75,7 +75,7 @@ LusterTrainStationCallback:
 	spriteface LUSTER_TRAIN_STATION_OFFICER, UP
 	pause 15
 	playsound SFX_EXIT_BUILDING
-	applyonemovement PLAYER, show_person
+	special Special_ForcePlayerStateNormal
 	applyonemovement PLAYER, step_down
 	pause 10
 	checkevent EVENT_MET_MR_NETT

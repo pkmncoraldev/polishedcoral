@@ -443,7 +443,7 @@ TrainCabin1PlayersSeat:
 	changeblock $6, $2, $1b
 	callasm TrainCabin1PlayersSeatGetUpAsm
 	clearflag ENGINE_PUNKS_IN_STARGLOW
-	applyonemovement PLAYER, hide_person
+	special Special_MakePlayerInvisible
 	playsound SFX_ELEVATOR_END
 	opentext
 	checkevent EVENT_TRAIN_GOING_EAST

@@ -176,7 +176,7 @@ WestTrainCabLocke:
 	waitbutton
 	closetext
 	special FadeOutPalettes
-	applyonemovement PLAYER, hide_person
+	special Special_MakePlayerInvisible
 	domaptrigger LUSTER_TRAIN_STATION, $1
 	warpcheck
 	end

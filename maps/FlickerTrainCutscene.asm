@@ -7,15 +7,15 @@ FlickerTrainCutscene_MapScriptHeader:
 
 	db 2 ; warp events
 	warp_event 46,  8, FLICKER_TRAIN_STATION, 3
-	warp_event 89,  5, ROUTE_1, 1
+	warp_event 5,  5, ROUTE_1, 1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 3 ; object events
-	person_event SPRITE_CHILD,  2, 43, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC3, -1
-	person_event SPRITE_SCHOOLGIRL,  2, 44, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC4, -1
+	person_event SPRITE_CHILD,  2, 44, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC3, -1
+	person_event SPRITE_SCHOOLGIRL,  2, 45, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC4, -1
 	person_event SPRITE_OFFICER,  8, 47, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	
 	const_def 1 ; object constants
@@ -79,7 +79,7 @@ FlickerTrainCutsceneTrigger1:
 	applymovement PLAYER, Movement_FlickerStationTrainArrives2
 	pause 15
 	playsound SFX_EXIT_BUILDING
-	applyonemovement PLAYER, show_person
+	special Special_ForcePlayerStateNormal
 	applyonemovement PLAYER, step_down
 	pause 10
 	applyonemovement PLAYER, step_down
@@ -208,7 +208,7 @@ Movement_FlickerStationTrainArrives:
 	step_end
 	
 Movement_FlickerStationTrainArrives2:
-	slow_step_right
+	slow_step_left
 	slow_step_down
 	step_end
 	

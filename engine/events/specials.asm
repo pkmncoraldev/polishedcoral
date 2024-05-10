@@ -487,6 +487,16 @@ Special_ForcePlayerStateNormal:
 	call ReplaceKrisSprite
 	ret
 	
+Special_MakePlayerInvisible:
+	xor a
+	ld [wOnBike], a
+	ld [wOnSkateboard], a
+	ld [wStuckInSandCounter], a
+	ld a, PLAYER_INVISIBLE
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret
+	
 Special_UpdatePalsInstant:
 	ld hl, wUnknBGPals palette 7
 

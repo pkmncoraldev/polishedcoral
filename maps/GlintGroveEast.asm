@@ -21,7 +21,7 @@ GlintGroveEast_MapScriptHeader:
 	db 0 ; bg events
 
 	db 6 ; object events
-	person_event SPRITE_MINA, 30,  9, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveEastMina, EVENT_GLINT_GROVE_MINA_GONE
+	person_event SPRITE_MINA, 30,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveEastMina, EVENT_GLINT_GROVE_MINA_GONE
 	itemball_event  8, 37, SUPER_POTION, 1, EVENT_GLINT_GROVE_EAST_POKE_BALL_1
 	itemball_event  4, 12, REPEL, 1, EVENT_GLINT_GROVE_EAST_POKE_BALL_2
 	smashrock_event  9, 29
@@ -78,7 +78,7 @@ GlintGroveEastMinaText1:
 	
 	para "I came here to"
 	line "paint this grove"
-	cont "and it's #MON."
+	cont "and its #MON."
 	
 	para "It's been fine"
 	line "and all, but I'm"

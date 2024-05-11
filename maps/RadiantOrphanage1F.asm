@@ -60,11 +60,37 @@ RadiantOrphanage1FCallback:
 	return
 
 RadiantOrphanage1FErika:
+	checkevent EVENT_BEAT_LEILANI
+	iftrue .beat_leilani
 	checkevent EVENT_RADIANT_GYM_ACTIVE
 	iftrue .gym_active
 	jumptextfaceplayer RadiantOrphanage1FErikaText1
 .gym_active
 	jumptextfaceplayer RadiantOrphanage1FErikaText2
+.beat_leilani
+	checkevent EVENT_BEAT_ERIKA
+	iffalse .battle
+	jumptextfaceplayer RadiantOrphanage1FErikaText4
+.battle
+	faceplayer
+	opentext
+	writetext RadiantOrphanage1FErikaText3
+	yesorno
+	iffalse .no
+	closetext
+	waitsfx
+	winlosstext RadiantOrphanage1FErikaWinText, 0
+	setlasttalked RADIANT_ORPHANAGE_LEILANIS_ROOM_ERIKA2
+	loadtrainer ERIKA, 1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ERIKA
+	jumptextfaceplayer RadiantOrphanage1FErikaText4
+.no
+	writetext RadiantOrphanage1FErikaNoText
+	waitbutton
+	closetext
+	end
 
 RadiantOrphanage1FErikaText1:
 	text "Everything's back"
@@ -92,6 +118,48 @@ RadiantOrphanage1FErikaText2:
 	cont "longer before I"
 	cont "head back home to"
 	cont "KANTO."
+	done
+	
+RadiantOrphanage1FErikaText3:
+	text "Oh, hello"
+	line "<PLAYER>."
+	
+	para "I heard that you"
+	line "beat GRAMMA."
+	
+	para "You know, back in"
+	line "KANTO, I'm actually"
+	cont "a GYM LEADER too."
+	
+	para "You've piqued my"
+	line "interest…"
+	
+	para "Would you please"
+	line "battle me?"
+	done
+	
+RadiantOrphanage1FErikaText4:
+	text "You really are"
+	line "amazing, <PLAYER>!"
+	
+	para "I'm going to stick"
+	line "around a while"
+	cont "longer before I"
+	cont "head back home to"
+	cont "KANTO."
+	
+	para "I hope to see you"
+	line "again someday."
+	done
+	
+RadiantOrphanage1FErikaNoText:
+	text "I see…"
+	
+	para "Next time, then!"
+	done
+	
+RadiantOrphanage1FErikaWinText:
+	text "Incredible!"
 	done
 
 RadiantOrphanage1FChair:

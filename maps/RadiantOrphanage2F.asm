@@ -66,15 +66,12 @@ RadiantOrphanage2FLily:
 	end
 	
 RadiantOrphanage2FLilyText:
-	text "Hehe!"
+	text "GRAMMA is feeling"
+	line "better, but now"
+	cont "MS. ERIKA is going"
+	cont "to leave!"
 	
-	para "Watching cartoons"
-	line "is fun!"
-	
-	para "The kitties on TV"
-	line "can't scratch me"
-	cont "like that mean"
-	cont "MEOWTH did!"
+	para "WAHHHH!"
 	done
 	
 RadiantOrphanage2FIris:
@@ -138,12 +135,15 @@ RadiantOrphanage2FFelicia:
 	jumptextfaceplayer RadiantOrphanage2FFeliciaText
 	
 RadiantOrphanage2FFeliciaText:
-	text "GRAMMA is feeling"
-	line "better, but now"
-	cont "MS. ERIKA is going"
-	cont "to leave!"
+	text "Hehe!"
 	
-	para "WAHHHH!"
+	para "Watching cartoons"
+	line "is fun!"
+	
+	para "The kitties on TV"
+	line "can't scratch me"
+	cont "like that mean"
+	cont "MEOWTH did!"
 	done
 
 RadiantOrphanage2FPhoto:

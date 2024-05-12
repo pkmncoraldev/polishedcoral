@@ -162,6 +162,7 @@ ResetDailyEventFlags:
 	eventflagreset EVENT_LUSTER_TRASHCAN_5
 	eventflagreset EVENT_LUSTER_TRASHCAN_6
 	eventflagreset EVENT_LUSTER_TRASHCAN_7
+	eventflagreset EVENT_LEILANI_CANDY
 	ret
 
 Special_SampleKenjiBreakCountdown: ; 11485

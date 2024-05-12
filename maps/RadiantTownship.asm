@@ -51,7 +51,7 @@ RadiantTownship_MapScriptHeader:
 	signpost 14, 39, SIGNPOST_READ, RadiantTownshipSunflower
 
 	db 16 ; object events
-	person_event SPRITE_ERIKA, 15, 24, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantTownshipErika, -1
+	person_event SPRITE_ERIKA, 14, 24, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantTownshipErika, -1
 	person_event SPRITE_CUTE_GIRL, 10, 10, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC1, -1
 	person_event SPRITE_BATTLE_GIRL, 17, 31, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC2, -1
 	person_event SPRITE_SUPER_NERD,  9, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC3, -1
@@ -77,6 +77,26 @@ RadiantTownshipFlyPoint:
 	return
 
 RadiantTownshipCallback:
+	checkevent EVENT_BEAT_LEILANI_REMATCH
+	iffalse .skip1
+	clearevent EVENT_BEAT_LEILANI_REMATCH
+	clearevent EVENT_BEAT_RADIANT_GYM_ROSE_REMATCH
+	clearevent EVENT_BEAT_RADIANT_GYM_LILY_REMATCH
+	clearevent EVENT_BEAT_RADIANT_GYM_IRIS_REMATCH
+	clearevent EVENT_BEAT_RADIANT_GYM_POPPY_REMATCH
+	clearevent EVENT_BEAT_RADIANT_GYM_VIOLET_REMATCH
+	clearevent EVENT_BEAT_RADIANT_GYM_CLOVER_REMATCH
+	clearevent EVENT_BEAT_RADIANT_GYM_FELICIA_REMATCH
+	clearevent EVENT_RADIANT_GYM_ACTIVE
+	setevent EVENT_RADIANT_GYM_INACTIVE
+.skip1
+	checkevent EVENT_BEAT_LEILANI_FIRST_TIME
+	iffalse .skip2
+	clearevent EVENT_RADIANT_GYM_ACTIVE
+	setevent EVENT_RADIANT_GYM_INACTIVE
+	setevent EVENT_CAN_FIGHT_ERIKA
+	clearevent EVENT_BEAT_LEILANI_FIRST_TIME
+.skip2
 	checkevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
 	iftrue .end
 	moveperson RADIANT_TOWNSHIP_ERIKA, -5, -5
@@ -89,22 +109,26 @@ RadiantTownshipErika:
 	writetext RadiantTownshipErikaText
 	waitbutton
 	closetext
-	applymovement RADIANT_TOWNSHIP_ERIKA, Movement_RadiantTownshipErika
+	applyonemovement RADIANT_TOWNSHIP_ERIKA, step_up
 	disappear RADIANT_TOWNSHIP_ERIKA
 	playsound SFX_ENTER_DOOR
 	clearevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
 	end
 
 RadiantTownshipErikaText:
-	text "YIPPEE!"
+	text "Oh, <PLAYER>!"
 	
-	para "You did it!"
+	para "It's wonderful!"
+	
+	para "All the girls have"
+	line "returned!"
+	
+	para "GRAMMA LEILANI is"
+	line "doing better too!"
+	
+	para "Please, come"
+	line "inside!"
 	done
-
-Movement_RadiantTownshipErika:
-	step_up
-	step_up
-	step_end
 
 RadiantTownshipSunflower:
 	jumptext RadiantTownshipSunflowerText
@@ -114,12 +138,12 @@ RadiantTownshipSunflowerText:
 	done
 
 RadiantTownshipNPC1:
-;	clearevent EVENT_RADIANT_GYM_ACTIVE
-;	setevent EVENT_RADIANT_GYM_INACTIVE
-;	setevent EVENT_SAVED_ALL_LOST_GIRLS
-;	setevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
-;	setevent EVENT_CAN_GO_TO_DESERT
-;	end
+	clearevent EVENT_RADIANT_GYM_ACTIVE
+	setevent EVENT_RADIANT_GYM_INACTIVE
+	setevent EVENT_SAVED_ALL_LOST_GIRLS
+	setevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
+	setevent EVENT_CAN_GO_TO_DESERT
+	end
 
 	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .lostgirls

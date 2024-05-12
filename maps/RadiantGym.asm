@@ -11,8 +11,11 @@ RadiantGym_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 16 ; object events
-	object_event  4,  2, SPRITE_LEILANI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantGymLeilani, -1
+	db 19 ; object events
+	object_event  4,  2, SPRITE_LEILANI_VARIABLE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantGymLeilani2, EVENT_ALWAYS_SET
+	object_event  4,  2, SPRITE_LEILANI_CHAIR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantGymLeilani, -1
+	object_event  4,  2, SPRITE_LEILANI_CHAIR_2, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  4,  2, SPRITE_LEILANI_CHAIR_2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, RadiantGymChair, EVENT_ALWAYS_SET
 	object_event  3, 14, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantGymGuy, -1
 	object_event  5, 12, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, RadiantGymRose, EVENT_BEAT_LEILANI
 	object_event  4,  8, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, RadiantGymLily, EVENT_BEAT_LEILANI
@@ -32,19 +35,56 @@ RadiantGym_MapScriptHeader:
 	
 	const_def 1 ; object constants
 	const RADIANT_GYM_LEILANI
-
+	const RADIANT_GYM_LEILANI_2
+	const RADIANT_GYM_LEILANI_CHAIR
+	const RADIANT_GYM_LEILANI_CHAIR_2
 
 
 RadiantGymLeilani:
-	faceplayer
+	variablesprite SPRITE_LEILANI_VARIABLE, SPRITE_LEILANI_CHAIR
+RadiantGymLeilani2:
+	spriteface RADIANT_GYM_LEILANI_2, DOWN
+	setevent EVENT_ALWAYS_SET
 	opentext
 	checkevent EVENT_BEAT_LEILANI
 	iftrue .FightDone
-	writetext LusterGymLeilaniTextBeforeBattle
+	writetext RadiantGymLeilaniTextBeforeBattle1
+	waitbutton
+	closetext
+	appear RADIANT_GYM_LEILANI
+	appear RADIANT_GYM_LEILANI_CHAIR_2
+	checkcode VAR_FACING
+	if_equal UP, .YouAreFacingUp
+	applyonemovement PLAYER, step_down
+	spriteface PLAYER, UP
+	disappear RADIANT_GYM_LEILANI_2
+	disappear RADIANT_GYM_LEILANI_CHAIR
+	spriteface RADIANT_GYM_LEILANI, RIGHT
+	variablesprite SPRITE_LEILANI_VARIABLE, SPRITE_LEILANI
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	playsound SFX_JUMP_OVER_LEDGE
+	applyonemovement RADIANT_GYM_LEILANI, slow_step_right
+	spriteface RADIANT_GYM_LEILANI, DOWN
+	jump .cont
+.YouAreFacingUp
+	disappear RADIANT_GYM_LEILANI_2
+	disappear RADIANT_GYM_LEILANI_CHAIR
+	spriteface RADIANT_GYM_LEILANI, RIGHT
+	variablesprite SPRITE_LEILANI_VARIABLE, SPRITE_LEILANI
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	playsound SFX_JUMP_OVER_LEDGE
+	applyonemovement RADIANT_GYM_LEILANI, slow_step_right
+	spriteface RADIANT_GYM_LEILANI, DOWN
+	applyonemovement PLAYER, step_right
+	spriteface PLAYER, UP
+	
+.cont
+	opentext
+	writetext RadiantGymLeilaniTextBeforeBattle2
 	waitbutton
 	closetext
 	waitsfx
-	winlosstext LusterGymLeilaniTextWin, LusterGymLeilaniTextLoss
+	winlosstext RadiantGymLeilaniTextWin, RadiantGymLeilaniTextLoss
 	loadtrainer LEILANI, 1
 	startbattle
 	reloadmapafterbattle
@@ -54,6 +94,7 @@ RadiantGymLeilani:
 	writetext Text_ReceivedSixthBadge
 	playsound SFX_GET_BADGE
 	waitsfx
+	setevent EVENT_BEAT_LEILANI_FIRST_TIME
 	setflag ENGINE_SIXTHBADGE
 	checkcode VAR_BADGES
 	
@@ -68,16 +109,14 @@ RadiantGymLeilani:
 	setevent EVENT_BEAT_RADIANT_GYM_VIOLET
 	setevent EVENT_BEAT_RADIANT_GYM_CLOVER
 	setevent EVENT_BEAT_RADIANT_GYM_FELICIA
-	writetext LusterGymLeilaniTextAfterBattle
+	writetext RadiantGymLeilaniTextAfterBattle
 	buttonsound
 ;	verbosegivetmhm TM_FAKE_OUT
 	setevent EVENT_GOT_TM_FROM_LEILANI
-	clearevent EVENT_RADIANT_GYM_ACTIVE
-	setevent EVENT_RADIANT_GYM_INACTIVE
-	writetext LusterGymLeilaniTextTMSpeech
+	writetext RadiantGymLeilaniTextTMSpeech
 	waitbutton
 	closetext
-	spriteface RADIANT_GYM_LEILANI, DOWN
+	setevent EVENT_ALWAYS_SET
 	end
 
 .GotTMFromLeilani:
@@ -94,87 +133,204 @@ RadiantGymLeilani:
 	checkevent EVENT_BEAT_RADIANT_GYM_CLOVER_REMATCH
 	iffalse LeilaniTextLoop
 	checkevent EVENT_BEAT_RADIANT_GYM_FELICIA_REMATCH
-	iftrue LusterGymLeilaniRematch
+	iftrue RadiantGymLeilaniRematch
 LeilaniTextLoop:
-	writetext LusterGymLeilaniTextLoop
+	writetext RadiantGymLeilaniTextLoop
 	waitbutton
 	closetext
+.end
 	end
 	
-LusterGymLeilaniRematch:
+RadiantGymLeilaniRematch:
 	checkevent EVENT_BEAT_LEILANI_REMATCH
 	iftrue LeilaniTextLoop
-	writetext LusterGymLeilaniTextBeforeBattleRematch
+	writetext RadiantGymLeilaniTextBeforeBattleRematch
 	yesorno
 	iffalse .end
-	writetext LusterGymLeilaniTextBeforeBattle
+	closetext
+	appear RADIANT_GYM_LEILANI
+	appear RADIANT_GYM_LEILANI_CHAIR_2
+	checkcode VAR_FACING
+	if_equal UP, .YouAreFacingUp
+	applyonemovement PLAYER, step_down
+	spriteface PLAYER, UP
+	disappear RADIANT_GYM_LEILANI_2
+	disappear RADIANT_GYM_LEILANI_CHAIR
+	spriteface RADIANT_GYM_LEILANI, RIGHT
+	variablesprite SPRITE_LEILANI_VARIABLE, SPRITE_LEILANI
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	playsound SFX_JUMP_OVER_LEDGE
+	applyonemovement RADIANT_GYM_LEILANI, slow_step_right
+	spriteface RADIANT_GYM_LEILANI, DOWN
+	jump .cont
+.YouAreFacingUp
+	disappear RADIANT_GYM_LEILANI_2
+	disappear RADIANT_GYM_LEILANI_CHAIR
+	spriteface RADIANT_GYM_LEILANI, RIGHT
+	variablesprite SPRITE_LEILANI_VARIABLE, SPRITE_LEILANI
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	playsound SFX_JUMP_OVER_LEDGE
+	applyonemovement RADIANT_GYM_LEILANI, slow_step_right
+	spriteface RADIANT_GYM_LEILANI, DOWN
+	applyonemovement PLAYER, step_right
+	spriteface PLAYER, UP
+	
+.cont
+	opentext
+	writetext RadiantGymLeilaniTextBeforeBattle2
 	waitbutton
 	closetext
 	waitsfx
-	winlosstext LusterGymLeilaniTextWinRematch, LusterGymLeilaniTextLoss
+	winlosstext RadiantGymLeilaniTextWinRematch, RadiantGymLeilaniTextLoss
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
 	loadtrainer LEILANI, 1
-	jump .cont
+	jump .cont2
 .sevenbadges
 	loadtrainer LEILANI, 2
-	jump .cont
+	jump .cont2
 .eightbadges
 	loadtrainer LEILANI, 3
-.cont
+.cont2
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext LusterGymLeilaniTextLoop
+	writetext RadiantGymLeilaniTextLoop
 	waitbutton
 	closetext
 	setevent EVENT_BEAT_LEILANI_REMATCH
-	clearevent EVENT_RADIANT_GYM_ACTIVE
-	setevent EVENT_RADIANT_GYM_INACTIVE
-	spriteface RADIANT_GYM_LEILANI, DOWN
+	setevent EVENT_ALWAYS_SET
 	end
 .end
-	writetext LusterGymLeilaniTextNoRematch
+	disappear RADIANT_GYM_LEILANI
+	disappear RADIANT_GYM_LEILANI_CHAIR_2
+	writetext RadiantGymLeilaniTextNoRematch
 	waitbutton
 	closetext
+	setevent EVENT_ALWAYS_SET
 	end
 	
-LusterGymLeilaniTextBeforeBattle:
-	text "BEFORE BATTLE"
+RadiantGymLeilaniTextBeforeBattle1:
+	text "Aren't the girls"
+	line "just precious?"
+	
+	para "And they're so"
+	line "talented for their"
+	cont "age!"
+	
+	para "Can't have a GYM"
+	line "without TRAINERS,"
+	cont "and the girls are"
+	cont "always eager to"
+	cont "help out."
+	
+	para "They've been"
+	line "training with me"
+	cont "since before they"
+	cont "could even speak."
+	
+	para "They're shooting"
+	line "up like flowers"
+	cont "before my eyes!"
+	
+	para "Oh, but I'm going"
+	line "on and on again."
+	
+	para "Why don't we get"
+	line "started?"
 	done
 	
-LusterGymLeilaniTextBeforeBattleRematch:
-	text "BEFORE BATTLE"
-	line "REMATCH"
+RadiantGymLeilaniTextBeforeBattle2:
+	text "I hope you're"
+	line "prepared, dear."
+	
+	para "I don't plan on"
+	line "losing."
 	done
 	
-LusterGymLeilaniTextAfterBattle:
-	text "AFTER BATTLE"
+RadiantGymLeilaniTextBeforeBattleRematch:
+	text "You beat all the"
+	line "girls!"
+	
+	para "Well, are you ready"
+	line "for our rematch?"
 	done
 	
-LusterGymLeilaniTextTMSpeech:
+RadiantGymLeilaniTextAfterBattle:
+	text "That badge will"
+	line "let you use DIVE"
+	cont "outside of battle."
+	
+	para "Take this as well."
+	done
+	
+RadiantGymLeilaniTextTMSpeech:
 	text "TM SPEECH"
+	
+	para "…"
+	
+	para "We've only just"
+	line "met, but I'm so"
+	cont "proud of you!"
+	
+	para "Between my girls"
+	line "and talented kids"
+	cont "like yourself,"
+	
+	para "I'm so hopeful for"
+	line "the next genera-"
+	cont "tion!"
+	
+	para "Come back and"
+	line "visit GRAMMA again"
+	cont "sometime."
+	
+	para "If you'll battle"
+	line "all the girls,"
+	cont "I'd love to give"
+	cont "you a rematch!"
 	done
 	
-LusterGymLeilaniTextWin:
-	text "YOU WIN"
+RadiantGymLeilaniTextWin:
+	text "Well done, sugar!"
+	
+	para "Very well done!"
+	
+	para "You've earned this."
+	
+	para "It's the #MON"
+	line "LEAGUE PETALBADGE."
 	done
 	
-LusterGymLeilaniTextWinRematch:
-	text "YOU WIN REMATCH"
+RadiantGymLeilaniTextWinRematch:
+	text "Well done, sugar!"
+	
+	para "Very well done!"
+	
+RadiantGymLeilaniTextLoss:
+	text "Oh, sweetie."
+	
+	para "Nice try!"
 	done
 	
-LusterGymLeilaniTextLoss:
-	text "YOU LOSE"
+RadiantGymLeilaniTextLoop:
+	text "We've only just"
+	line "met, but I'm so"
+	cont "proud of you!"
+	
+	para "Between my girls"
+	line "and talented kids"
+	cont "like yourself,"
+	
+	para "I'm so hopeful for"
+	line "the next genera-"
+	cont "tion!"
 	done
 	
-LusterGymLeilaniTextLoop:
-	text "TEXT LOOP"
-	done
-	
-LusterGymLeilaniTextNoRematch:
-	text "NO REMATCH"
+RadiantGymLeilaniTextNoRematch:
+	text "Don't keep GRAMMA"
+	line "waiting!"
 	done
 	
 Text_ReceivedSixthBadge:
@@ -637,4 +793,13 @@ RadiantGymGuyText1:
 RadiantGymGuyText2:
 	text "TEXT 2"
 	done
+	
+RadiantGymChair:
+	jumptext RadiantGymChairText
+	
+RadiantGymChairText:
+	text "She has a second"
+	line "rocking chair!"
+	done
+	
 	

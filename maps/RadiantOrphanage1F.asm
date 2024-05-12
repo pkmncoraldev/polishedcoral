@@ -60,14 +60,14 @@ RadiantOrphanage1FCallback:
 	return
 
 RadiantOrphanage1FErika:
-	checkevent EVENT_BEAT_LEILANI
-	iftrue .beat_leilani
+	checkevent EVENT_CAN_FIGHT_ERIKA
+	iftrue .can_fight
 	checkevent EVENT_RADIANT_GYM_ACTIVE
 	iftrue .gym_active
 	jumptextfaceplayer RadiantOrphanage1FErikaText1
 .gym_active
 	jumptextfaceplayer RadiantOrphanage1FErikaText2
-.beat_leilani
+.can_fight
 	checkevent EVENT_BEAT_ERIKA
 	iffalse .battle
 	jumptextfaceplayer RadiantOrphanage1FErikaText4
@@ -186,8 +186,16 @@ RadiantOrphanage1FLeilani:
 	setevent EVENT_RADIANT_GYM_ACTIVE
 	clearevent EVENT_RADIANT_GYM_INACTIVE
 	opentext
+	checkevent EVENT_BEAT_LEILANI
+	iftrue .rematch
 	writetext RadiantOrphanage1FLeilaniText1
 	waitbutton
+	jump .cont
+.rematch
+	writetext RadiantOrphanage1FLeilaniText4
+	yesorno
+	iffalse .no
+.cont
 	closetext
 	applyonemovement PLAYER, step_up
 	spriteface PLAYER, DOWN
@@ -277,6 +285,23 @@ RadiantOrphanage1FLeilani:
 	changeblock $8, $2, $39
 	callasm GenericFinishBridge
 	end
+.no
+	disappear RADIANT_ORPHANAGE_1F_LEILANI_2
+	disappear RADIANT_ORPHANAGE_1F_LEILANI_CHAIR_2
+	setevent EVENT_ALWAYS_SET
+	checkevent EVENT_LEILANI_CANDY
+	iffalse .candy
+	writetext RadiantOrphanage1FLeilaniText5
+	waitbutton
+	closetext
+	end
+.candy
+	writetext RadiantOrphanage1FLeilaniText6
+	waitbutton
+	verbosegiveitem RARE_CANDY
+	closetext
+	setevent EVENT_LEILANI_CANDY
+	end
 	
 RadiantOrphanage1FLeilanisRoomSign:
 	jumptext RadiantOrphanage1FLeilanisRoomSignText
@@ -348,7 +373,7 @@ RadiantOrphanage1FChairDustyText:
 	done
 	
 RadiantOrphanage1FLeilaniTextWrongSide:
-	text "What's that, honey?"
+	text "What's that, deary?"
 	
 	para "Come around and"
 	line "speak into my good"
@@ -356,7 +381,25 @@ RadiantOrphanage1FLeilaniTextWrongSide:
 	done
 	
 RadiantOrphanage1FLeilaniText1:
-	text "I'm getting up now."
+	text "You're <PLAYER>,"
+	line "aren't you?"
+	
+	para "ERIKA told me that"
+	line "you're the one who"
+	cont "found the girls."
+	
+	para "Oh bless you,"
+	line "child."
+	
+	para "Those girls will"
+	line "be the death of"
+	cont "me, surely!"
+	
+	para "Oh, listen to me"
+	line "going on and on!"
+	
+	para "You came for a GYM"
+	line "battle didn't you?"
 	done
 	
 RadiantOrphanage1FLeilaniText2:
@@ -370,6 +413,30 @@ RadiantOrphanage1FLeilaniText3:
 	text "Ok girls!"
 	
 	para "Battle time!"
+	done
+	
+RadiantOrphanage1FLeilaniText4:
+	text "Hello, deary."
+	
+	para "Did you come for"
+	line "another battle?"
+	done
+	
+RadiantOrphanage1FLeilaniText5:
+	text "Oh, you just came"
+	line "for a visit?"
+	
+	para "How thoughtful!"
+	done
+	
+RadiantOrphanage1FLeilaniText6:
+	text "Oh, you just came"
+	line "for a visit?"
+	
+	para "How thoughtful!"
+	
+	para "Have a piece of"
+	line "candy!"
 	done
 	
 RadiantOrphanage1FGirlsText:

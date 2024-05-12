@@ -365,7 +365,7 @@ MAP_NONE   EQU 0
 	map_const RADIANT_ORPHANAGE_1F,						   6,  5 ; 5
 	map_const RADIANT_ORPHANAGE_2F,						   8,  4 ; 6
 	map_const RADIANT_ORPHANAGE_LEILANIS_ROOM,			   3,  3 ; 7
-	map_const RADIANT_GYM,								   5,  9 ; 8
+	map_const RADIANT_GYM,								   5, 10 ; 8
 	map_const RADIANT_POKECENTER,                      	   6,  4 ; 9
 	map_const RADIANT_MART,                                6,  4 ; 10
 	map_const ROUTE_21_GATE,                          	   4,  4 ; 11

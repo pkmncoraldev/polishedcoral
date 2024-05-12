@@ -4,8 +4,8 @@ RadiantGym_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 17,  4, 5, RADIANT_ORPHANAGE_1F
-	warp_def 17,  5, 5, RADIANT_ORPHANAGE_1F
+	warp_def 19,  4, 5, RADIANT_ORPHANAGE_1F
+	warp_def 19,  5, 5, RADIANT_ORPHANAGE_1F
 
 	db 0 ; coord events
 
@@ -16,21 +16,21 @@ RadiantGym_MapScriptHeader:
 	object_event  4,  2, SPRITE_LEILANI_CHAIR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantGymLeilani, -1
 	object_event  4,  2, SPRITE_LEILANI_CHAIR_2, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  4,  2, SPRITE_LEILANI_CHAIR_2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, RadiantGymChair, EVENT_ALWAYS_SET
-	object_event  3, 14, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantGymGuy, -1
-	object_event  5, 12, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, RadiantGymRose, EVENT_BEAT_LEILANI
-	object_event  4,  8, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, RadiantGymLily, EVENT_BEAT_LEILANI
-	object_event  5,  8, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, RadiantGymIris, EVENT_BEAT_LEILANI
-	object_event  6,  4, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, RadiantGymPoppy, EVENT_BEAT_LEILANI
-	object_event  3,  4, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, RadiantGymViolet, EVENT_BEAT_LEILANI
-	object_event  2,  7, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, RadiantGymClover, EVENT_BEAT_LEILANI
-	object_event  7,  7, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 1, RadiantGymFelicia, EVENT_BEAT_LEILANI
-	object_event  5, 12, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantGymRoseRematch, EVENT_HAVENT_BEAT_LEILANI
-	object_event  4,  8, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantGymLilyRematch, EVENT_HAVENT_BEAT_LEILANI
-	object_event  5,  8, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantGymIrisRematch, EVENT_HAVENT_BEAT_LEILANI
-	object_event  6,  4, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantGymPoppyRematch, EVENT_HAVENT_BEAT_LEILANI
-	object_event  3,  4, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantGymVioletRematch, EVENT_HAVENT_BEAT_LEILANI
-	object_event  2,  7, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantGymCloverRematch, EVENT_HAVENT_BEAT_LEILANI
-	object_event  7,  7, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, RadiantGymFeliciaRematch, EVENT_HAVENT_BEAT_LEILANI
+	object_event  3, 16, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantGymGuy, -1
+	object_event  5, 14, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, RadiantGymRose, EVENT_BEAT_LEILANI
+	object_event  4, 10, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, RadiantGymLily, EVENT_BEAT_LEILANI
+	object_event  5, 10, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, RadiantGymIris, EVENT_BEAT_LEILANI
+	object_event  6,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, RadiantGymPoppy, EVENT_BEAT_LEILANI
+	object_event  3,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, RadiantGymViolet, EVENT_BEAT_LEILANI
+	object_event  2,  9, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, RadiantGymClover, EVENT_BEAT_LEILANI
+	object_event  7,  9, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 1, RadiantGymFelicia, EVENT_BEAT_LEILANI
+	object_event  5, 14, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantGymRoseRematch, EVENT_HAVENT_BEAT_LEILANI
+	object_event  4, 10, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantGymLilyRematch, EVENT_HAVENT_BEAT_LEILANI
+	object_event  5, 10, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantGymIrisRematch, EVENT_HAVENT_BEAT_LEILANI
+	object_event  6,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantGymPoppyRematch, EVENT_HAVENT_BEAT_LEILANI
+	object_event  3,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantGymVioletRematch, EVENT_HAVENT_BEAT_LEILANI
+	object_event  2,  9, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantGymCloverRematch, EVENT_HAVENT_BEAT_LEILANI
+	object_event  7,  9, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, RadiantGymFeliciaRematch, EVENT_HAVENT_BEAT_LEILANI
 	
 	
 	const_def 1 ; object constants
@@ -40,10 +40,15 @@ RadiantGym_MapScriptHeader:
 	const RADIANT_GYM_LEILANI_CHAIR_2
 
 
-RadiantGymLeilani:
-	variablesprite SPRITE_LEILANI_VARIABLE, SPRITE_LEILANI_CHAIR
 RadiantGymLeilani2:
+	faceplayer
+	jump RadiantGymLeilanicont
+RadiantGymLeilani:
+	checkcode VAR_FACING
+	if_equal RIGHT, RadiantGymLeilaniFacingRight
+	variablesprite SPRITE_LEILANI_VARIABLE, SPRITE_LEILANI_CHAIR
 	spriteface RADIANT_GYM_LEILANI_2, DOWN
+RadiantGymLeilanicont:
 	setevent EVENT_ALWAYS_SET
 	opentext
 	checkevent EVENT_BEAT_LEILANI
@@ -139,6 +144,12 @@ LeilaniTextLoop:
 	waitbutton
 	closetext
 .end
+	end
+RadiantGymLeilaniFacingRight:
+	opentext
+	writetext RadiantOrphanage1FLeilaniTextWrongSide
+	waitbutton
+	closetext
 	end
 	
 RadiantGymLeilaniRematch:
@@ -348,15 +359,20 @@ RadiantGymGuy:
 RadiantGymRose:
 	generictrainer ROSE, 1, EVENT_BEAT_RADIANT_GYM_ROSE, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "You're good at"
+	line "battles!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "The challenger is"
+	line "you?"
+	
+	para "Ok, I won't go"
+	line "easy on you!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "You beat me?"
 	done
 	
 RadiantGymRoseRematch:
@@ -394,32 +410,40 @@ RadiantGymRoseRematch:
 	end
 
 RadiantGymRoseRematchRegularText:
-	text "NOMRAL TEXT"
-	line "REMATCH"
+	text "You're good at"
+	line "battles!"
 	done
 
 RadiantGymRoseRematchSeenText:
-	text "SEEN TEXT"
-	line "REMATCH"
+	text "You came back"
+	line "again?"
+	
+	para "Ok, I won't go"
+	line "easy on you!"
 	done
 
 RadiantGymRoseRematchBeatenText:
-	text "YOU WIN"
-	line "REMATCH"
+	text "You beat me?"
 	done
 	
 RadiantGymLily:
 	generictrainer LILY, 1, EVENT_BEAT_RADIANT_GYM_LILY, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "WAHHHH!"
+	
+	para "Why did I lose?"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "…Hello."
+	
+	para "I'm supposed to"
+	line "battle you."
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "You beat me?"
+	line "Sniffle…"
 	done
 	
 RadiantGymLilyRematch:
@@ -457,32 +481,43 @@ RadiantGymLilyRematch:
 	end
 
 RadiantGymLilyRematchRegularText:
-	text "NOMRAL TEXT"
-	line "REMATCH"
+	text "WAHHHH!"
+	
+	para "Why did I lose?"
 	done
 
 RadiantGymLilyRematchSeenText:
-	text "SEEN TEXT"
-	line "REMATCH"
+	text "…Hello."
+	
+	para "I'm supposed to"
+	line "battle you."
 	done
 
 RadiantGymLilyRematchBeatenText:
-	text "YOU WIN"
-	line "REMATCH"
+	text "You beat me?"
+	line "Sniffle…"
 	done
 	
 RadiantGymIris:
 	generictrainer IRIS, 1, EVENT_BEAT_RADIANT_GYM_IRIS, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "I wasn't paying"
+	line "attention."
+	
+	para "I was too busy"
+	line "singing!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "La la la!"
+	
+	para "Let's battle!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "La la la!"
+	
+	para "Oh, I lost?"
 	done
 	
 RadiantGymIrisRematch:
@@ -520,32 +555,43 @@ RadiantGymIrisRematch:
 	end
 
 RadiantGymIrisRematchRegularText:
-	text "NOMRAL TEXT"
-	line "REMATCH"
+	text "I wasn't paying"
+	line "attention."
+	
+	para "I was too busy"
+	line "singing!"
 	done
 
 RadiantGymIrisRematchSeenText:
-	text "SEEN TEXT"
-	line "REMATCH"
+	text "La la la!"
+	
+	para "Let's battle!"
 	done
 
 RadiantGymIrisRematchBeatenText:
-	text "YOU WIN"
-	line "REMATCH"
+	text "La la la!"
+	
+	para "Oh, I lost?"
 	done
 	
 RadiantGymPoppy:
 	generictrainer POPPY, 1, EVENT_BEAT_RADIANT_GYM_POPPY, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Grr…"
+	
+	para "I'll get you next"
+	line "time!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Battle! Battle!"
+	
+	para "Let's battle!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Graah!"
+	line "You beat me!"
 	done
 	
 RadiantGymPoppyRematch:
@@ -583,32 +629,43 @@ RadiantGymPoppyRematch:
 	end
 
 RadiantGymPoppyRematchRegularText:
-	text "NOMRAL TEXT"
-	line "REMATCH"
+	text "Grr…"
+	
+	para "I'll get you next"
+	line "time!"
 	done
 
 RadiantGymPoppyRematchSeenText:
-	text "SEEN TEXT"
-	line "REMATCH"
+	text "Battle! Battle!"
+	
+	para "Let's battle!"
 	done
 
 RadiantGymPoppyRematchBeatenText:
-	text "YOU WIN"
-	line "REMATCH"
+	text "Graah!"
+	line "You beat me!"
 	done
 	
 RadiantGymViolet:
 	generictrainer VIOLET, 1, EVENT_BEAT_RADIANT_GYM_VIOLET, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "You passed the"
+	line "test!"
+	
+	para "Are you gonna beat"
+	line "GRAMMA?"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "We have to test"
+	line "people that wanna"
+	cont "battle GRAMMA."
+	
+	para "It's our job!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "You win!"
 	done
 	
 RadiantGymVioletRematch:
@@ -646,32 +703,45 @@ RadiantGymVioletRematch:
 	end
 
 RadiantGymVioletRematchRegularText:
-	text "NOMRAL TEXT"
-	line "REMATCH"
+	text "You passed the"
+	line "test!"
+	
+	para "Are you gonna beat"
+	line "GRAMMA again?"
 	done
 
 RadiantGymVioletRematchSeenText:
-	text "SEEN TEXT"
-	line "REMATCH"
+	text "We have to test"
+	line "people that wanna"
+	cont "battle GRAMMA."
+	
+	para "It's our job!"
 	done
 
 RadiantGymVioletRematchBeatenText:
-	text "YOU WIN"
-	line "REMATCH"
+	text "You win!"
 	done
 	
 RadiantGymClover:
 	generictrainer CLOVER, 1, EVENT_BEAT_RADIANT_GYM_CLOVER, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "There's no way"
+	line "GRAMMA will lose!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "You think you're"
+	line "gonna beat GRAMMA?"
+	
+	para "You aren't gonna"
+	line "get past me!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Huh?"
+	
+	para "How did you beat"
+	line "me?"
 	done
 	
 RadiantGymCloverRematch:
@@ -709,32 +779,47 @@ RadiantGymCloverRematch:
 	end
 
 RadiantGymCloverRematchRegularText:
-	text "NOMRAL TEXT"
-	line "REMATCH"
+	text "There's no way"
+	line "GRAMMA will lose"
+	cont "again!"
 	done
 
 RadiantGymCloverRematchSeenText:
-	text "SEEN TEXT"
-	line "REMATCH"
+	text "You think you're"
+	line "gonna beat GRAMMA"
+	cont "again?"
+	
+	para "You aren't gonna"
+	line "get past me!"
 	done
 
 RadiantGymCloverRematchBeatenText:
-	text "YOU WIN"
-	line "REMATCH"
+	text "Huh?"
+	
+	para "How did you beat"
+	line "me?"
 	done
 	
 RadiantGymFelicia:
 	generictrainer FELICIA, 1, EVENT_BEAT_RADIANT_GYM_FELICIA, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Oh well!"
+	
+	para "Even though I"
+	line "lost, I still had"
+	cont "fun!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "It's time for a"
+	line "#MON battle!"
+	
+	para "This'll be fun!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Aw…"
+	line "You won!"
 	done
 	
 RadiantGymFeliciaRematch:
@@ -772,26 +857,58 @@ RadiantGymFeliciaRematch:
 	end
 
 RadiantGymFeliciaRematchRegularText:
-	text "NOMRAL TEXT"
-	line "REMATCH"
+	text "Oh well!"
+	
+	para "Even though I"
+	line "lost, I still had"
+	cont "fun!"
 	done
 
 RadiantGymFeliciaRematchSeenText:
-	text "SEEN TEXT"
-	line "REMATCH"
+	text "It's time for a"
+	line "#MON battle!"
+	
+	para "This'll be fun!"
 	done
 
 RadiantGymFeliciaRematchBeatenText:
-	text "YOU WIN"
-	line "REMATCH"
+	text "Aw…"
+	line "You won!"
 	done
 	
 RadiantGymGuyText1:
-	text "TEXT 1"
+	text "Yo!"
+	
+	para "Champ in making!"
+	
+	para "GRAMMA LEILANI"
+	line "is well enough"
+	cont "to battle again!"
+	
+	para "Way to go!"
+	
+	para "Her and the girls"
+	line "use GRASS-type"
+	cont "#MON."
+	
+	para "FIRE-types are"
+	line "obviously a good"
+	cont "choice."
+	
+	para "Go for it, kid!"
 	done
 	
 RadiantGymGuyText2:
-	text "TEXT 2"
+	text "Great job!"
+	
+	para "You showed that"
+	line "sweet, little old"
+	cont "lady what's what."
+	
+	para "Six badges down!"
+	
+	para "You're getting"
+	line "there!"
 	done
 	
 RadiantGymChair:

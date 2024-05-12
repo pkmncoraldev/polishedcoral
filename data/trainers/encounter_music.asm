@@ -84,13 +84,13 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_YOUNGSTER_ENCOUNTER	; tuber
 	db MUSIC_HARDCORE_ENCOUNTER		; shaolin
 	db MUSIC_NONE					; dojomaster
-	db MUSIC_GENTLEMAN_ENCOUNTER	; rose
-	db MUSIC_GENTLEMAN_ENCOUNTER	; lily
-	db MUSIC_GENTLEMAN_ENCOUNTER	; iris
-	db MUSIC_GENTLEMAN_ENCOUNTER	; poppy
-	db MUSIC_GENTLEMAN_ENCOUNTER	; felicia
-	db MUSIC_GENTLEMAN_ENCOUNTER	; violet
-	db MUSIC_GENTLEMAN_ENCOUNTER	; clover
+	db MUSIC_LASS_ENCOUNTER			; rose
+	db MUSIC_LASS_ENCOUNTER			; lily
+	db MUSIC_LASS_ENCOUNTER			; iris
+	db MUSIC_LASS_ENCOUNTER			; poppy
+	db MUSIC_LASS_ENCOUNTER			; felicia
+	db MUSIC_LASS_ENCOUNTER			; violet
+	db MUSIC_LASS_ENCOUNTER			; clover
 	db MUSIC_NONE					; erika
 	db MUSIC_NONE					; mina
 	db MUSIC_HARDCORE_ENCOUNTER		; ledianranger

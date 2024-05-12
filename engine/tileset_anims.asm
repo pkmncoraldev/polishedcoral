@@ -110,11 +110,30 @@ TilesetLighthouseAnim::
 	dw NULL,  DoneTileAnimation
 
 TilesetOrphanageAnim::
-	dw VTiles2 tile $10, WriteTileToBuffer
-	dw wTileAnimBuffer, ScrollTileDown2
-	dw VTiles2 tile $10, WriteTileFromBuffer
+	dw NULL,  StandingTileFrame
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw TwinkleFireplaceFrames, AnimateWaterfallTiles
+	dw NULL,  WaitTileAnimationOrphanage
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateFlowerTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 	
 TilesetHouse1Anim::
@@ -535,7 +554,14 @@ DoneTileAnimation: ; fc2fb
 WaitTileAnimation: ; fc2fe
 ; Do nothing this frame.
 	ret
-; fc2ff
+
+WaitTileAnimationOrphanage:
+	ld a, [wMapNumber]
+	cp MAP_RADIANT_GYM
+	ret z
+	xor a
+	ld [hTileAnimFrame], a
+	ret
 
 JukeboxColors:
 	ld a, [wTileAnimationTimer]

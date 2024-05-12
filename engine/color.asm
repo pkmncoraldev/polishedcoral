@@ -1644,6 +1644,8 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_RADIANT_ORPHANAGE_1F
 	jp z, .rocking_chair
+	cp MAP_RADIANT_GYM
+	jp z, .rocking_chair
 	cp MAP_RADIANT_ORPHANAGE_LEILANIS_ROOM
 	jp nz, .normal
 	ld hl, MapObjectPalsLeilaniBed

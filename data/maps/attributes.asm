@@ -403,7 +403,7 @@ ENDM
 	map_attributes Route21, ROUTE_21, 0, NORTH
 	connection north, DuskTurnpike, DUSK_TURNPIKE, 0
 	
-	map_attributes DuskTurnpike, DUSK_TURNPIKE, 0, SOUTH | EAST
+	map_attributes DuskTurnpike, DUSK_TURNPIKE, $30, SOUTH | EAST
 	connection south, Route21, ROUTE_21, 0
 	connection east, Crossroads, CROSSROADS, 0
 	

@@ -29,7 +29,7 @@ SunsetBay_MapScriptHeader:
 	bg_event 11, 13, SIGNPOST_READ, PlayersHouseSign
 	bg_event 27, 15, SIGNPOST_READ, SunsetCafeSign
 	bg_event 26,  9, SIGNPOST_READ, SunsetBayPokeCenterSign
-	bg_event 36, 13, SIGNPOST_READ, SunsetBaySign
+	bg_event 37, 13, SIGNPOST_READ, SunsetBaySign
 	bg_event 16, 12, SIGNPOST_READ, SunsetMomsFlowers
 	bg_event 16, 13, SIGNPOST_READ, SunsetMomsFlowers
 	bg_event 34, 17, SIGNPOST_READ, SunsetOtherFlowers

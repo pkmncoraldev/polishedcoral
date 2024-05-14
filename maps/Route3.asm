@@ -39,7 +39,7 @@ Route3_MapScriptHeader:
 	smashrock_event 47,  8
 	smashrock_event 47, 15
 	smashrock_event 47, 12
-	fruittree_event 22, 10, FRUITTREE_ROUTE_3_1, CHERI_BERRY
+	fruittree_event 17, 12, FRUITTREE_ROUTE_3_1, CHERI_BERRY
 
 	const_def 1 ; object constants
 	const ROUTE3WEST_TRAINER1

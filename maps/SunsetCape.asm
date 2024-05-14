@@ -13,7 +13,7 @@ SunsetCape_MapScriptHeader:
 	db 0 ; coord events
 
 	db 2 ; bg events
-	signpost 11,  6, SIGNPOST_READ, SunsetCapeSign
+	signpost  8,  6, SIGNPOST_READ, SunsetCapeSign
 	signpost 29,  5, SIGNPOST_READ, SunsetLighthouseSign
 
 	db 16 ; object events

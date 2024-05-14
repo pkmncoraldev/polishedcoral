@@ -37,7 +37,7 @@ Route6_MapScriptHeader:
 
 	db 8 ; bg events
 	signpost  7, 57, SIGNPOST_READ, Route6Sign
-	signpost 3, 26, SIGNPOST_READ, Route6LakeSign
+	signpost  3, 27, SIGNPOST_READ, Route6LakeSign
 	signpost  4,  8, SIGNPOST_ITEM + ULTRA_BALL, EVENT_ROUTE_6_HIDDEN_ULTRA_BALL
 	signpost  8, 19, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_ROUTE_6_HIDDEN_BOTTLE_CAP_1
 	signpost 12,  6, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_ROUTE_6_HIDDEN_BOTTLE_CAP_2

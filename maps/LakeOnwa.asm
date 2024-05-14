@@ -93,7 +93,7 @@ LakeOnwa_MapScriptHeader:
 	signpost 23, 19, SIGNPOST_READ, LakeBoatHouseSignL
 	signpost 23,  8, SIGNPOST_READ, LakeNameRaterSign
 	signpost 17, 20, SIGNPOST_READ, LakeCenterSign
-	signpost  8, 32, SIGNPOST_READ, MtOnwaSign
+	signpost  9, 31, SIGNPOST_READ, MtOnwaSign
 	bg_event  4, 25, SIGNPOST_ITEM + MAX_REVIVE, EVENT_LAKE_ONWA_HIDDEN_ITEM
 	signpost 13, 24, SIGNPOST_READ, LakeMartSign
 	signpost  2, 59, SIGNPOST_READ, LakeRoute8Sign

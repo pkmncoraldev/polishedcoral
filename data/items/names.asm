@@ -54,7 +54,7 @@ ItemNames::
 	db "LEMONADE@"
 	db "MOOMOO MILK@"
 	db "RAGECANDYBAR@"
-	db "SACRED ASH@"
+	db "MOOMOO BREW@"
 	db "ENERGYPOWDER@"
 	db "ENERGY ROOT@"
 	db "HEAL POWDER@"

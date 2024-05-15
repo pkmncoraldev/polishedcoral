@@ -54,7 +54,7 @@ ItemDescriptions:
 	dw LemonadeDesc
 	dw MoomooMilkDesc
 	dw RageCandyBarDesc
-	dw SacredAshDesc
+	dw MooMooBrewDesc
 	dw EnergyPowderDesc
 	dw EnergyRootDesc
 	dw HealPowderDesc
@@ -473,9 +473,9 @@ MoomooMilkDesc:
 	db   "Restores #MON"
 	next "HP by 100.@"
 
-SacredAshDesc:
-	db   "Fully revives all"
-	next "fainted #MON.@"
+MooMooBrewDesc:
+	db   "Boosts ATTACK."
+	next "Confuses. (Hold)@"
 
 EnergyPowderDesc:
 	db   "Restores #MON"

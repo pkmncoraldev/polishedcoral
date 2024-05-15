@@ -255,6 +255,7 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
+	giveitem MOOMOO_BREW, 99
 	giveitem FIVESTARHELM, 1
 	giveitem SWEET_HONEY, 1
 	giveitem BLOSSOM_TEA, 3

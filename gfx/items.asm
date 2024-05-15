@@ -223,6 +223,7 @@ SodaPopIcon:      				INCBIN "gfx/items/soda_pop.2bpp"
 LemonadeIcon:     				INCBIN "gfx/items/lemonade.2bpp"
 MoomooMilkIcon:   				INCBIN "gfx/items/moomoo_milk.2bpp"
 RageCandyBarIcon: 				INCBIN "gfx/items/ragecandybar.2bpp"
+MooMooBrewIcon:   				INCBIN "gfx/items/1.2bpp"
 SoftSandIcon:
 BrightPowderIcon:
 MetalPowderIcon:

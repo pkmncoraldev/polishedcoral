@@ -364,6 +364,9 @@ BattleCommand_checkturn:
 .enemy5
 	ld hl, wEnemyConfuseCount
 .ok5
+	ld a, [hl]
+	cp $69
+	jr z, .confused	;moomoo brew lasts forever
 	dec [hl]
 	jr nz, .confused
 
@@ -382,9 +385,8 @@ BattleCommand_checkturn:
 	ld de, ANIM_CONFUSED
 	call FarPlayBattleAnimation
 
-	; 33% chance of hitting itself (updated from 50% in Gen VII)
 	call BattleRandom
-	cp 1 + (33 percent)
+	cp 1 + (50 percent)
 	jr nc, .not_confused
 
 	; clear confusion-dependent substatus
@@ -7098,6 +7100,46 @@ BattleCommand_recoil: ; 36cb2
 
 ; 36d1d
 
+
+BattleCommand_moomoobrew:
+	call BattleCommand_attackup
+	call BattleCommand_attackup
+	call BattleCommand_attackup
+	farcall RefreshBattleHuds
+	farcall ItemRecoveryAnim
+	ld hl, BattleText_ItemMooMooBrew
+	call StdBattleTextBox
+
+	ld de, wPlayerConfuseCount
+	ld a, [hBattleTurn]
+	and a
+	jr z, .player
+	ld de, wEnemyConfuseCount
+.player
+
+	ld a, BATTLE_VARS_ABILITY
+	call GetBattleVar
+	cp OWN_TEMPO
+	jr z, .end
+	call SwitchTurn
+	call SafeCheckSafeguard
+	jr nz, .switchturn_end
+
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVarAddr
+	set SUBSTATUS_CONFUSED, [hl]
+	ld a, $69
+	ld [de], a
+	ld de, ANIM_CONFUSED
+	call PlayOpponentBattleAnim
+
+	ld hl, BecameConfusedText
+	call StdBattleTextBox
+.switchturn_end
+	call SwitchTurn
+.end
+	ld b, rampage_command
+	jp SkipToBattleCommandAfter
 
 BattleCommand_confusetarget: ; 36d1d
 ; confusetarget

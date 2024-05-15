@@ -293,11 +293,14 @@ BarInsideBartenderText1:
 	para "Ol' BUBBA gets"
 	line "rowdy when he's"
 	cont "drinkin' the"
-	cont "HOUSE SPECIAL."
+	cont "house special."
 	
 	para "You're curious"
-	line "about the HOUSE"
-	cont "SPECIAL?"
+	line "about the house"
+	cont "special?"
+	
+	para "It's called"
+	line "MOOMOO BREW."
 	
 	para "It's MOOMOO MILK"
 	line "with a little"
@@ -314,7 +317,7 @@ BarInsideBartenderText1:
 BarInsideBartenderText2:
 	text "What's that?"
 	
-	para "The HOUSE SPECIAL?"
+	para "MOOMOO BREW?"
 	
 	para "I can't sell"
 	line "em' to a kid!"
@@ -329,7 +332,7 @@ BarInsideBartenderText2:
 	cont "tough enough,"
 	
 	para "I'll sell you a"
-	line "HOUSE SPECIAL."
+	line "MOOMOO BREW."
 	
 	para "Beat all the"
 	line "regulars here,"
@@ -347,7 +350,7 @@ BarInsideBartenderText4:
 	cont "tough enough,"
 	
 	para "I'll sell you a"
-	line "HOUSE SPECIAL."
+	line "MOOMOO BREW."
 	
 	para "Beat all the"
 	line "regulars here,"
@@ -358,15 +361,15 @@ BarInsideBartenderText5:
 	text "Alright, a deal's"
 	line "a deal."
 	
-	para "I'll sell ya the"
-	line "HOUSE SPECIAL."
+	para "I'll sell ya a"
+	line "MOOMOO BREW."
 	done
 	
 BarInsideBartenderText6:
 	text "What'll ya have,"
 	line "kid?"
 	
-	para "The HOUSE SPECIAL?"
+	para "A MOOMOO BREW?"
 	done
 	
 BarInsideBartenderText7:

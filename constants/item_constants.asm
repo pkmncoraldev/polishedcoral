@@ -67,7 +67,7 @@
 	const MOOMOO_MILK  ; 36
 	const RAGECANDYBAR ; 37
 
-	const SACRED_ASH   ; 38 - replace
+	const MOOMOO_BREW  ; 38
 	const ENERGYPOWDER ; 39
 	const ENERGY_ROOT  ; 3a
 	const HEAL_POWDER  ; 3b

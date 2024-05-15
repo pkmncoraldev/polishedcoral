@@ -69,7 +69,7 @@ ItemEffects: ; e73c
 	dw RestoreHPEffect  ; LEMONADE
 	dw RestoreHPEffect  ; MOOMOO_MILK
 	dw HealStatusEffect ; RAGECANDYBAR
-	dw SacredAsh        ; SACRED_ASH
+	dw NoEffect    	    ; MOOMOO_BREW
 	dw EnergyPowder     ; ENERGYPOWDER
 	dw EnergyRoot       ; ENERGY_ROOT
 	dw HealPowder       ; HEAL_POWDER

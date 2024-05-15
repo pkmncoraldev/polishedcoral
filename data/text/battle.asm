@@ -239,6 +239,15 @@ BattleText_ItemSharplyRaised:
 	text_from_ram wStringBuffer2
 	text "!"
 	prompt
+	
+BattleText_ItemMooMooBrew:
+	text "<USER> drank"
+	line "its MOOMOO BREW."
+	
+	para "<USER>'s"
+	line "ATTACK rose"
+	cont "drastically!"
+	prompt
 
 BattleText_UserChargedWithItem:
 	text "<USER>"

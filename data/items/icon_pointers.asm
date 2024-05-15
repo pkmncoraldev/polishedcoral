@@ -55,7 +55,7 @@ ItemIconPointers:
 	dba LemonadeIcon
 	dba MoomooMilkIcon
 	dba RageCandyBarIcon
-	dba UnusedItemIcon
+	dba MooMooBrewIcon
 	dba EnergyPowderIcon
 	dba EnergyRootIcon
 	dba HealPowderIcon

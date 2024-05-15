@@ -116,11 +116,13 @@ DoBattle: ; 3c000
 	call BreakAttraction
 	call EnemySwitch
 	call SetEnemyTurn
+	call HandleMooMooBrew
 ;	call HandleFirstAirBalloon
 	call RunBothActivationAbilities
 	jp BattleTurn
 
 .not_linked_2
+	call HandleMooMooBrew
 ;	call HandleFirstAirBalloon
 	call AutomaticHailWhenSnowstorm
 	call AutomaticSandstormInDesert
@@ -4514,6 +4516,14 @@ StealBattleItem:
 	ld hl, RecoveredUsingText
 	call StdBattleTextBox
 	farjp ConsumeOpponentItem
+
+HandleMooMooBrew:
+	farcall GetUserItemAfterUnnerve
+	ld a, [hl]
+	cp MOOMOO_BREW
+	ret nz
+	farcall BattleCommand_moomoobrew
+	farjp ConsumeUserItem
 
 HandleHPHealingItem:
 	; only restore HP if HP<=1/2

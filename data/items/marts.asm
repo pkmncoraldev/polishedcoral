@@ -310,7 +310,7 @@ MooMoos1:
 	
 MooMoos2:
 	db 6 ; # items
-	db POTION
+	db MOOMOO_BREW
 	db MOOMOO_MILK
 	db FRESH_WATER
 	db BERRY_JUICE

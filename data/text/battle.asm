@@ -1642,7 +1642,7 @@ NotifyMoldBreaker:
 NotifyUnnerve:
 	text "<TARGET> is"
 	line "too afraid to eat"
-	cont "BERRIES!"
+	cont "held items!"
 	prompt
 
 FriskedItemText:

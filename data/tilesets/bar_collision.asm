@@ -1,11 +1,11 @@
 	tilecoll WALL, WALL, WALL, WALL ; 00
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 01
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 02
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 03
+	tilecoll WALL, WALL, WALL, WALL ; 03
 	tilecoll DOOR, WALL, FLOOR, RADIO ; 04
-	tilecoll FLOOR, WALL, WALL, WALL ; 05
+	tilecoll FLOOR, COUNTER, WALL, WALL ; 05
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 06
-	tilecoll WALL, WALL, WALL, WALL ; 07
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 07
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 08
 	tilecoll WALL, WALL, WALL, WALL ; 09
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0a
@@ -20,9 +20,13 @@
 	tilecoll FLOOR, FLOOR, WALL, RIGHT_WALL ; 13
 	tilecoll WALL, WALL, FLOOR, LEFT_WALL ; 14
 	tilecoll WALL, WALL, WALL, RIGHT_WALL ; 15
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 16
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 17
+	tilecoll FLOOR, FLOOR, FLOOR, LEFT_WALL ; 16
+	tilecoll FLOOR, FLOOR, WALL, RIGHT_WALL ; 17
 	tilecoll FLOOR, FLOOR, FLOOR, WARP_CARPET_DOWN ; 18
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, FLOOR ; 19
-	tilecoll WALL, WALL, WALL, WALL ; 1a
-	tilecoll WALL, WALL, WALL, WALL ; 1b
+	tilecoll WALL, WALL, FLOOR, WALL ; 1a
+	tilecoll FLOOR, FLOOR, FLOOR, LEFT_WALL ; 1b
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1c
+	tilecoll FLOOR, WALL, WALL, WALL ; 1d
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 1e
+	tilecoll WALL, WALL, WALL, WALL ; 1f

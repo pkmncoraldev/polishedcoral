@@ -2822,6 +2822,15 @@ BeautyGroup:
 	db -1 ; end
 
 ; ================
+
+	; BEAUTY
+	db "TRIXIE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3301,6 +3310,15 @@ SailorGroup:
 	db -1 ; end
 
 ; ================
+
+	; SAILOR
+	db "PETEY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3484,6 +3502,15 @@ BurglarGroup:
 
 	; BURGLAR
 	db "CHASE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BURGLAR
+	db "JULIAN@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3718,7 +3745,7 @@ GuitaristGroup:
 ; ================
 
 	; GUITARIST
-	db "UNUSED@"
+	db "LARRY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3812,6 +3839,24 @@ CueballGroup:
 
 	; CUEBALL
 	db "BONGO@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; CUEBALL
+	db "BUBBA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; CUEBALL
+	db "DESMOND@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

@@ -322,6 +322,7 @@ PLAYER_F EQU __enum__
 	const SAM_7
 	const SAM_8
 	const MANDY
+	const TRIXIE
 
 
 	trainerclass FIREBREATHER
@@ -391,6 +392,7 @@ PLAYER_F EQU __enum__
 	const RANDALL
 	const SHAWN
 	const SCOTT
+	const PETEY
 
 
 	trainerclass SWIMMERM
@@ -419,6 +421,7 @@ PLAYER_F EQU __enum__
 	trainerclass BURGLAR
 	const ZEDAKI
 	const CHASE
+	const JULIAN
 
 
 	trainerclass SCIENTIST
@@ -455,6 +458,7 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass GUITARIST
+	const LARRY
 
 
 	trainerclass BIKER
@@ -470,6 +474,8 @@ PLAYER_F EQU __enum__
 	trainerclass CUEBALL
 	const CURLY
 	const BONGO
+	const BUBBA
+	const DESMOND
 
 
 	trainerclass COOLTRAINERM

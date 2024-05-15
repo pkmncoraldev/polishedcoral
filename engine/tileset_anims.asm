@@ -564,6 +564,8 @@ WaitTileAnimationOrphanage:
 	ret
 
 JukeboxColors:
+	eventflagcheck EVENT_BAR_FIGHT_DONE
+	ret z
 	ld a, [wTileAnimationTimer]
 	inc a
 	and 7

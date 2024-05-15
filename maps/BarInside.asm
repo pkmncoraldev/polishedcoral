@@ -1,25 +1,35 @@
 BarInside_MapScriptHeader:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script BarInsideTrigger0
+	scene_script BarInsideTrigger1
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, BarInsideCallback
 
 	db 2 ; warp events
-	warp_event  5,  7, DUSK_TURNPIKE, 18
-	warp_event  6,  7, DUSK_TURNPIKE, 19
+	warp_event  5,  9, DUSK_TURNPIKE, 18
+	warp_event  6,  9, DUSK_TURNPIKE, 18
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 7 ; object events
+	db 15 ; object events
+	person_event SPRITE_SPA_WORKER,  6,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_BAR_FIGHT_DONE
+	person_event SPRITE_SAILOR,  7,  5, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_BAR_FIGHT_DONE
 	hiddentape_event 9, 1, MUSIC_BAR, 1, EVENT_MUSIC_BAR
 	person_event SPRITE_JUKEBOX,  1,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BarInsideJukebox, -1
-	person_event SPRITE_PORYGON_SCREEN,  2,  4, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BarInsideJukebox, -1
-	person_event SPRITE_PORYGON_SCREEN,  2,  4, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, BarInsideJukebox, EVENT_HIDE_OW_OBJECTS_TEAL
-	person_event SPRITE_PORYGON_SCREEN,  2,  4, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BarInsideJukebox, EVENT_HIDE_OW_OBJECTS_PURPLE
-	person_event SPRITE_JUKEBOX,  0,  6, SPRITEMOVEDATA_TILE_UP_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, BarInsideJukebox, EVENT_HIDE_OW_OBJECTS_TEAL
-	person_event SPRITE_JUKEBOX,  0,  6, SPRITEMOVEDATA_TILE_UP_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BarInsideJukebox, EVENT_HIDE_OW_OBJECTS_PURPLE
+	person_event SPRITE_JUKEBOX,  0,  4, SPRITEMOVEDATA_TILE_UP_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, BarInsideJukebox, EVENT_HIDE_OW_OBJECTS_TEAL
+	person_event SPRITE_JUKEBOX,  0,  4, SPRITEMOVEDATA_TILE_UP_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BarInsideJukebox, EVENT_HIDE_OW_OBJECTS_PURPLE
+	person_event SPRITE_PORYGON_SCREEN,  6,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BarInsideBartender, -1
+	person_event SPRITE_SPA_WORKER,  5,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BarInsideRegular1, -1
+	person_event SPRITE_RICH_BOY,  3,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BarInsideRegular2, -1
+	person_event SPRITE_BEAUTY,  1,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BarInsideRegular3, -1
+	person_event SPRITE_BURGLAR,  8,  2, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BarInsideRegular4, -1
+	person_event SPRITE_CHILD,  5, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BarInsideChild, -1
+	person_event SPRITE_POKEFAN_M,  6, 14, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BarInsideDad, -1
+	person_event SPRITE_POKEFAN_F,  4, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BarInsideMom, -1
+	person_event SPRITE_BATTLE_GIRL,  5, 11, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BarInsideWaitress, -1
 	
 	
 	
@@ -38,7 +48,667 @@ BarInsideCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	setevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
-	return
+	return	
+	
+BarInsideTrigger0:
+	opentext
+	writetext BarInsideFightText1
+	waitbutton
+	closetext
+	callasm MakePalGreen
+	applymovement 1, Movement_BarInsideBubba
+	playsound SFX_BUMP
+	applymovement 2, Movement_BarInsideSailor
+	playsound SFX_PLACE_PUZZLE_PIECE_DOWN
+	earthquake 5
+	pause 5
+	spriteface 2, DOWN
+	applymovement 2, Movement_BarInsideSailor2
+	opentext
+	writetext BarInsideFightText2
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement 1, step_down
+	opentext
+	writetext BarInsideFightText3
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement 2, turn_step_up
+	opentext
+	writetext BarInsideFightText8
+	waitbutton
+	closetext
+	pause 10
+	applyonemovement 2, turn_step_down
+	opentext
+	writetext BarInsideFightText4
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext BarInsideFightWinText, 0
+	setlasttalked 2
+	loadtrainer SAILOR, PETEY
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext BarInsideFightText5
+	waitbutton
+	closetext
+	pause 5
+	applymovement 2, Movement_BarInsideSailor3
+	disappear 2
+	playsound SFX_EXIT_BUILDING
+	pause 5
+	applyonemovement 1, step_down
+	opentext
+	writetext BarInsideFightText6
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext BarInsideFightWinText2, 0
+	setlasttalked 1
+	loadtrainer CUEBALL, BUBBA
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext BarInsideFightText7
+	waitbutton
+	closetext
+	pause 5
+	applymovement 1, Movement_BarInsideSailor3
+	disappear 1
+	playsound SFX_EXIT_BUILDING
+	setevent EVENT_BAR_FIGHT_DONE
+	dotrigger $1
+	end
+	
+BarInsideTrigger1:
+	end
+	
+BarInsideFightText1:
+	text "I said, you got a"
+	line "problem, pal?"
+	done
+	
+BarInsideFightText2:
+	text "Hey!"
+	
+	para "Watch where you're"
+	line "standin'!"
+	
+	para "Can't you see we're"
+	line "fightin' here?"
+	
+	para "…"
+	
+	para "What are you"
+	line "lookin' at?"
+	
+	para "I don't much like"
+	line "the cutta yur jib!"
+	done
+	
+BarInsideFightText3:
+	text "Yeah, me either!"
+	done
+	
+BarInsideFightText4:
+	text "Like I was sayin'…"
+	
+	para "You got a starin'"
+	line "problem, and I got"
+	cont "the solution!"
+	done
+	
+BarInsideFightText5:
+	text "Grr!"
+	
+	para "Forget this!"
+	done
+	
+BarInsideFightText6:
+	text "Hey what gives?"
+	
+	para "You beat up the"
+	line "guy I was beatin'"
+	cont "up!"
+	
+	para "I had dibs!"
+	done
+	
+BarInsideFightText7:
+	text "I ain't got time"
+	line "for this!"
+	
+	para "I gotta go pummle"
+	line "that other guy!"
+	done
+	
+BarInsideFightText8:
+	text "You stay outta"
+	line "this!"
+	done
+	
+BarInsideFightWinText:
+	text "Graah!"
+	done
+	
+BarInsideFightWinText2:
+	text "Guh wha?"
+	done
+	
+Movement_BarInsideBubba:
+	fix_facing
+	step_up
+	remove_fixed_facing
+	run_step_down
+	step_end
+	
+Movement_BarInsideSailor:
+	fix_facing
+	jump_step_down
+	remove_fixed_facing
+	step_end
+	
+Movement_BarInsideSailor2:
+	fix_facing
+	fast_step_up
+	remove_fixed_facing
+	step_end
+	
+Movement_BarInsideSailor3:
+	step_right
+	step_down
+	step_end
+	
+BarInsideBartender:
+	opentext
+	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	iftrue .house_special
+	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
+	iftrue .talked
+	setevent EVENT_TALKED_TO_BARTENDER_ONCE
+	writetext BarInsideBartenderText1
+	waitbutton
+	callasm BartenderAsm1
+	writetext BarInsideBartenderText2
+	waitbutton
+	closetext
+	end
+.talked
+	writetext BarInsideBartenderText3
+	waitbutton
+	callasm BartenderAsm1
+	writetext BarInsideBartenderText4
+	waitbutton
+	closetext
+	end
+.house_special
+	checkevent EVENT_TALKED_HOUSE_SPECIAL
+	iftrue .talked2
+	setevent EVENT_TALKED_HOUSE_SPECIAL
+	writetext BarInsideBartenderText5
+	jump .house_special_buy
+.talked2
+	writetext BarInsideBartenderText6
+.house_special_buy
+	waitbutton
+	callasm BartenderAsm2
+	writetext BarInsideBartenderText7
+	waitbutton
+	closetext
+	end
+	
+BartenderAsm1:
+	ld a, MARTTYPE_BARTENDER
+	ld c, a
+	ld a, MART_MOOMOOS_1
+	ld e, a
+	ld d, 0
+	ld a, [wScriptBank]
+	ld b, a
+	farcall OpenMartDialog
+	ret
+	
+BartenderAsm2:
+	ld a, MARTTYPE_BARTENDER
+	ld c, a
+	ld a, MART_MOOMOOS_2
+	ld e, a
+	ld d, 0
+	ld a, [wScriptBank]
+	ld b, a
+	farcall OpenMartDialog
+	ret
+	
+BarInsideBartenderText1:
+	text "You handled those"
+	line "guys pretty well,"
+	cont "kid."
+	
+	para "Ol' BUBBA gets"
+	line "rowdy when he's"
+	cont "drinkin' the"
+	cont "HOUSE SPECIAL."
+	
+	para "You're curious"
+	line "about the HOUSE"
+	cont "SPECIAL?"
+	
+	para "It's MOOMOO MILK"
+	line "with a little"
+	cont "somethin' extra"
+	cont "mixed in."
+	
+	para "Anyway, enough of"
+	line "all that."
+	
+	para "What'll ya have,"
+	line "kid?"
+	done
+	
+BarInsideBartenderText2:
+	text "What's that?"
+	
+	para "The HOUSE SPECIAL?"
+	
+	para "I can't sell"
+	line "em' to a kid!"
+	
+	para "…"
+	
+	para "Alright, tell ya"
+	line "what."
+	
+	para "If you can prove"
+	line "to me that you're"
+	cont "tough enough,"
+	
+	para "I'll sell you a"
+	line "HOUSE SPECIAL."
+	
+	para "Beat all the"
+	line "regulars here,"
+	cont "and we'll talk."
+	done
+	
+BarInsideBartenderText3:
+	text "What'll ya have,"
+	line "kid?"
+	done
+	
+BarInsideBartenderText4:
+	text "If you can prove"
+	line "to me that you're"
+	cont "tough enough,"
+	
+	para "I'll sell you a"
+	line "HOUSE SPECIAL."
+	
+	para "Beat all the"
+	line "regulars here,"
+	cont "and we'll talk."
+	done
+	
+BarInsideBartenderText5:
+	text "Alright, a deal's"
+	line "a deal."
+	
+	para "I'll sell ya the"
+	line "HOUSE SPECIAL."
+	done
+	
+BarInsideBartenderText6:
+	text "What'll ya have,"
+	line "kid?"
+	
+	para "The HOUSE SPECIAL?"
+	done
+	
+BarInsideBartenderText7:
+	text "Keep this between"
+	line "us, alright?"
+	done
+	
+BarInsideRegular1:
+	faceplayer
+	opentext
+	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	iftrue .normal
+	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
+	iffalse .normal
+	checkevent EVENT_BEAT_REGULAR_1
+	iftrue .beat
+	writetext BarInsideRegular1Text2
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext BarInsideRegular1WinText, 0
+	setlasttalked 8
+	loadtrainer CUEBALL, DESMOND
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_REGULAR_1
+	checkevent EVENT_BEAT_REGULAR_2
+	iffalse .cont
+	checkevent EVENT_BEAT_REGULAR_3
+	iffalse .cont
+	checkevent EVENT_BEAT_REGULAR_4
+	iffalse .cont
+	setevent EVENT_CAN_BUY_HOUSE_SPECIAL
+.cont
+	opentext
+.beat
+	writetext BarInsideRegular1Text3
+	waitbutton
+	closetext
+	spriteface 8, LEFT
+	end
+.normal
+	writetext BarInsideRegular1Text1
+	waitbutton
+	closetext
+	spriteface 8, LEFT
+	end
+	
+BarInsideRegular1Text1:
+	text "TEXT 1"
+	done
+	
+BarInsideRegular1Text2:
+	text "TEXT 2"
+	done
+	
+BarInsideRegular1Text3:
+	text "TEXT 3"
+	done
+	
+BarInsideRegular1WinText:
+	text "YOU WIN"
+	done
+	
+BarInsideRegular2:
+	faceplayer
+	opentext
+	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	iftrue .normal
+	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
+	iffalse .normal
+	checkevent EVENT_BEAT_REGULAR_2
+	iftrue .beat
+	writetext BarInsideRegular2Text2
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext BarInsideRegular2WinText, 0
+	setlasttalked 9
+	loadtrainer GUITARIST, LARRY
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_REGULAR_2
+	checkevent EVENT_BEAT_REGULAR_1
+	iffalse .cont
+	checkevent EVENT_BEAT_REGULAR_3
+	iffalse .cont
+	checkevent EVENT_BEAT_REGULAR_4
+	iffalse .cont
+	setevent EVENT_CAN_BUY_HOUSE_SPECIAL
+.cont
+	opentext
+.beat
+	writetext BarInsideRegular2Text3
+	waitbutton
+	closetext
+	spriteface 9, DOWN
+	end
+.normal
+	writetext BarInsideRegular2Text1
+	waitbutton
+	closetext
+	spriteface 9, DOWN
+	end
+	
+BarInsideRegular2Text1:
+	text "TEXT 1"
+	done
+	
+BarInsideRegular2Text2:
+	text "TEXT 2"
+	done
+	
+BarInsideRegular2Text3:
+	text "TEXT 3"
+	done
+	
+BarInsideRegular2WinText:
+	text "YOU WIN"
+	done
+	
+BarInsideRegular3:
+	faceplayer
+	opentext
+	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	iftrue .normal
+	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
+	iffalse .normal
+	checkevent EVENT_BEAT_REGULAR_3
+	iftrue .beat
+	writetext BarInsideRegular3Text2
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext BarInsideRegular3WinText, 0
+	setlasttalked 10
+	loadtrainer BEAUTY, TRIXIE
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_REGULAR_3
+	checkevent EVENT_BEAT_REGULAR_1
+	iffalse .cont
+	checkevent EVENT_BEAT_REGULAR_2
+	iffalse .cont
+	checkevent EVENT_BEAT_REGULAR_4
+	iffalse .cont
+	setevent EVENT_CAN_BUY_HOUSE_SPECIAL
+.cont
+	opentext
+.beat
+	writetext BarInsideRegular3Text3
+	waitbutton
+	closetext
+	end
+.normal
+	writetext BarInsideRegular3Text1
+	waitbutton
+	closetext
+	end
+	
+BarInsideRegular3Text1:
+	text "TEXT 1"
+	done
+	
+BarInsideRegular3Text2:
+	text "TEXT 2"
+	done
+	
+BarInsideRegular3Text3:
+	text "TEXT 3"
+	done
+	
+BarInsideRegular3WinText:
+	text "YOU WIN"
+	done
+	
+BarInsideRegular4:
+	faceplayer
+	opentext
+	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	iftrue .normal
+	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
+	iffalse .normal
+	checkevent EVENT_BEAT_REGULAR_4
+	iftrue .beat
+	writetext BarInsideRegular4Text2
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext BarInsideRegular4WinText, 0
+	setlasttalked 11
+	loadtrainer BURGLAR, JULIAN
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_REGULAR_4
+	checkevent EVENT_BEAT_REGULAR_1
+	iffalse .cont
+	checkevent EVENT_BEAT_REGULAR_2
+	iffalse .cont
+	checkevent EVENT_BEAT_REGULAR_3
+	iffalse .cont
+	setevent EVENT_CAN_BUY_HOUSE_SPECIAL
+.cont
+	opentext
+.beat
+	writetext BarInsideRegular4Text3
+	waitbutton
+	closetext
+	spriteface 11, UP
+	end
+.normal
+	writetext BarInsideRegular4Text1
+	waitbutton
+	closetext
+	spriteface 11, UP
+	end
+	
+BarInsideRegular4Text1:
+	text "TEXT 1"
+	done
+	
+BarInsideRegular4Text2:
+	text "TEXT 2"
+	done
+	
+BarInsideRegular4Text3:
+	text "TEXT 3"
+	done
+	
+BarInsideRegular4WinText:
+	text "YOU WIN"
+	done
+	
+BarInsideChild:
+	faceplayer
+	opentext
+	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	iftrue .normal
+	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
+	iffalse .normal
+	writetext BarInsideChildText2
+	waitbutton
+	closetext
+	spriteface 12, RIGHT
+	end
+.normal
+	writetext BarInsideChildText1
+	waitbutton
+	closetext
+	spriteface 12, RIGHT
+	end
+	
+BarInsideChildText1:
+	text "TEXT 1"
+	done
+	
+BarInsideChildText2:
+	text "TEXT 2"
+	done
+	
+BarInsideDad:
+	faceplayer
+	opentext
+	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	iftrue .normal
+	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
+	iffalse .normal
+	writetext BarInsideDadText2
+	waitbutton
+	closetext
+	spriteface 13, UP
+	end
+.normal
+	writetext BarInsideDadText1
+	waitbutton
+	closetext
+	spriteface 13, UP
+	end
+
+BarInsideDadText1:
+	text "TEXT 1"
+	done
+	
+BarInsideDadText2:
+	text "TEXT 2"
+	done
+
+BarInsideMom:
+	faceplayer
+	opentext
+	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	iftrue .normal
+	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
+	iffalse .normal
+	writetext BarInsideMomText2
+	waitbutton
+	closetext
+	spriteface 14, DOWN
+	end
+.normal
+	writetext BarInsideMomText1
+	waitbutton
+	closetext
+	spriteface 14, DOWN
+	end
+	
+BarInsideMomText1:
+	text "TEXT 1"
+	done
+	
+BarInsideMomText2:
+	text "TEXT 2"
+	done
+	
+BarInsideWaitress:
+	faceplayer
+	opentext
+	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	iftrue .normal
+	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
+	iffalse .normal
+	writetext BarInsideWaitressText2
+	waitbutton
+	closetext
+	end
+.normal
+	writetext BarInsideWaitressText1
+	waitbutton
+	closetext
+	end
+	
+BarInsideWaitressText1:
+	text "TEXT 1"
+	done
+	
+BarInsideWaitressText2:
+	text "TEXT 2"
+	done
 	
 BarInsideJukebox:
 	checkcode VAR_FACING

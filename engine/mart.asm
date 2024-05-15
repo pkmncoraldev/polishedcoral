@@ -44,6 +44,7 @@ OpenMartDialog:: ; 15a45
 	dw BuyOnly
 	dw PollenShop
 	dw DecoShop
+	dw BartenderMart
 ; 15a61
 
 MartDialog: ; 15a61
@@ -223,6 +224,16 @@ InformalMart:
 	call BuyMenu
 	ld hl, Text_InformalMart_ComeAgain
 	jp MartTextBox
+
+BartenderMart:
+	call FarReadMart
+	call LoadStandardMenuDataHeader
+;	ld hl, Text_BartenderMart_Intro
+;	call MartTextBox
+	call BuyMenu
+	ret
+;	ld hl, Text_BartenderMart_ComeAgain
+;	jp MartTextBox
 
 BazaarMart:
 	call FarReadMart
@@ -924,6 +935,7 @@ GetMartDialogGroup: ; 15ca3
 	dwb .StandardMartPointers, 0
 	dwb .PollenMartPointers, 1
 	dwb .DecoMartPointers, 0
+	dwb .CoffeeShopPointers, 0
 ; 15cbf
 
 .StandardMartPointers: ; 15cbf
@@ -2341,6 +2353,10 @@ Text_BallMart_ComeAgain:
 Text_InformalMart_Intro:
 	; What's up? Need some supplies?
 	text_jump InformalMartIntroText
+	db "@"
+	
+Text_BartenderMart_Intro:
+	text_jump BartenderMartIntroText
 	db "@"
 
 Text_BazaarMart_Intro:

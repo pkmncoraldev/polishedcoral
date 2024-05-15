@@ -1395,6 +1395,10 @@ InformalMartIntroText::
 	para "What can I get you"
 	line "today?"
 	done
+	
+BartenderMartIntroText::
+	text "So, what'll it be?"
+	done
 
 BazaarMartIntroText::
 	text "Come take a look"

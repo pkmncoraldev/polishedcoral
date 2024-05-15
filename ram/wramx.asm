@@ -1065,7 +1065,8 @@ wKomoreCommunityCenterTrigger:: ds 1
 wRoute24Trigger:: ds 1
 wBrightburgTrigger:: ds 1
 wRoute27Trigger:: ds 1
-ds 26
+wBarInsideTrigger:: ds 1
+ds 25
 
 wAmpharosFood:: ds 1
 

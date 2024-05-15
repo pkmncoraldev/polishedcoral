@@ -25,6 +25,8 @@ Marts: ; 160a9
 	dw KomoreMart
 	dw LusterMallElectronicsDeco
 	dw LusterMallFurniture
+	dw MooMoos1
+	dw MooMoos2
 MartsEnd:
 
 
@@ -201,12 +203,11 @@ LusterMallFurniture:
 	db -1
 	
 LusterMallCoffee:
-	db 7 ; # items
+	db 6 ; # items
 	db FRESH_WATER
 	db BERRY_JUICE
 	db SODA_POP
 	db LEMONADE
-	db MOOMOO_MILK
 	db RAGECANDYBAR
 	db BIG_MALASADA
 	db SWEET_HONEY
@@ -296,4 +297,23 @@ DuskMart:
 KomoreMart:
 	db 1 ; # items
 	db POTION
+	db -1
+	
+MooMoos1:
+	db 5 ; # items
+	db MOOMOO_MILK
+	db FRESH_WATER
+	db BERRY_JUICE
+	db SODA_POP
+	db LEMONADE
+	db -1
+	
+MooMoos2:
+	db 6 ; # items
+	db POTION
+	db MOOMOO_MILK
+	db FRESH_WATER
+	db BERRY_JUICE
+	db SODA_POP
+	db LEMONADE
 	db -1

@@ -380,7 +380,7 @@ BarInsideBartenderText7:
 BarInsideRegular1:
 	faceplayer
 	opentext
-	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	checkevent EVENT_TALKED_HOUSE_SPECIAL
 	iftrue .normal
 	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
 	iffalse .normal
@@ -420,25 +420,33 @@ BarInsideRegular1:
 	end
 	
 BarInsideRegular1Text1:
-	text "TEXT 1"
+	text "This guy is really"
+	line "not good at pool!"
 	done
 	
 BarInsideRegular1Text2:
-	text "TEXT 2"
+	text "I lost the cue"
+	line "ball, so we're"
+	cont "usin' a #BALL."
 	done
 	
 BarInsideRegular1Text3:
-	text "TEXT 3"
+	text "You say it's ironic"
+	line "that I lost the"
+	cont "cue ball?"
+	
+	para "I don't get it…"
 	done
 	
 BarInsideRegular1WinText:
-	text "YOU WIN"
+	text "The cue ball isn't"
+	line "all I lost…"
 	done
 	
 BarInsideRegular2:
 	faceplayer
 	opentext
-	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	checkevent EVENT_TALKED_HOUSE_SPECIAL
 	iftrue .normal
 	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
 	iffalse .normal
@@ -478,25 +486,39 @@ BarInsideRegular2:
 	end
 	
 BarInsideRegular2Text1:
-	text "TEXT 1"
+	text "Between you and"
+	line "me, I'm pretty"
+	cont "good at this!"
+	
+	para "Maybe I should go"
+	line "pro!"
 	done
 	
 BarInsideRegular2Text2:
-	text "TEXT 2"
+	text "This guy is better"
+	line "at pool than he"
+	cont "was lettin' on."
+	
+	para "Am I gettin'"
+	line "hussled?"
 	done
 	
 BarInsideRegular2Text3:
-	text "TEXT 3"
+	text "First this guy,"
+	line "and now you."
+	
+	para "I'm gettin' hussled"
+	line "left and right!"
 	done
 	
 BarInsideRegular2WinText:
-	text "YOU WIN"
+	text "You too?"
 	done
 	
 BarInsideRegular3:
 	faceplayer
 	opentext
-	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	checkevent EVENT_TALKED_HOUSE_SPECIAL
 	iftrue .normal
 	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
 	iffalse .normal
@@ -534,25 +556,32 @@ BarInsideRegular3:
 	end
 	
 BarInsideRegular3Text1:
-	text "TEXT 1"
+	text "Not interested."
 	done
 	
 BarInsideRegular3Text2:
-	text "TEXT 2"
+	text "What do you want?"
+	
+	para "Can't I enjoy my"
+	line "drink in peace?"
 	done
 	
 BarInsideRegular3Text3:
-	text "TEXT 3"
+	text "Would you quit"
+	line "starin' at me?"
 	done
 	
 BarInsideRegular3WinText:
-	text "YOU WIN"
+	text "Alright you win."
+	
+	para "Now leave me"
+	line "alone."
 	done
 	
 BarInsideRegular4:
 	faceplayer
 	opentext
-	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	checkevent EVENT_TALKED_HOUSE_SPECIAL
 	iftrue .normal
 	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
 	iffalse .normal
@@ -592,25 +621,32 @@ BarInsideRegular4:
 	end
 	
 BarInsideRegular4Text1:
-	text "TEXT 1"
+	text "Ain't you a little"
+	line "young to be here"
+	cont "without MOMMY?"
 	done
 	
 BarInsideRegular4Text2:
-	text "TEXT 2"
+	text "If I battle you"
+	line "will you buzz off?"
 	done
 	
 BarInsideRegular4Text3:
-	text "TEXT 3"
+	text "Kids, I swear…"
+	
+	para "Always poking"
+	line "their noses in"
+	cont "other's business…"
 	done
 	
 BarInsideRegular4WinText:
-	text "YOU WIN"
+	text "Darn it!"
 	done
 	
 BarInsideChild:
 	faceplayer
 	opentext
-	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	checkevent EVENT_TALKED_HOUSE_SPECIAL
 	iftrue .normal
 	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
 	iffalse .normal
@@ -627,17 +663,22 @@ BarInsideChild:
 	end
 	
 BarInsideChildText1:
-	text "TEXT 1"
+	text "It's stinky and"
+	line "loud here!"
 	done
 	
 BarInsideChildText2:
-	text "TEXT 2"
+	text "Sorry, I can't"
+	line "battle."
+	
+	para "I don't have a"
+	line "#MON."
 	done
 	
 BarInsideDad:
 	faceplayer
 	opentext
-	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	checkevent EVENT_TALKED_HOUSE_SPECIAL
 	iftrue .normal
 	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
 	iffalse .normal
@@ -654,17 +695,31 @@ BarInsideDad:
 	end
 
 BarInsideDadText1:
-	text "TEXT 1"
+	text "This place isn't"
+	line "what I expected"
+	cont "at all!"
+	
+	para "I thought this"
+	line "was a family"
+	cont "establishment!"
 	done
 	
 BarInsideDadText2:
-	text "TEXT 2"
+	text "Please leave us"
+	line "alone."
+	
+	para "We're just here"
+	line "for a bite to"
+	cont "eat."
+	
+	para "We don't want"
+	line "any trouble."
 	done
 
 BarInsideMom:
 	faceplayer
 	opentext
-	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	checkevent EVENT_TALKED_HOUSE_SPECIAL
 	iftrue .normal
 	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
 	iffalse .normal
@@ -681,17 +736,22 @@ BarInsideMom:
 	end
 	
 BarInsideMomText1:
-	text "TEXT 1"
+	text "I don't know, I"
+	line "think it's kinda"
+	cont "charming!"
 	done
 	
 BarInsideMomText2:
-	text "TEXT 2"
+	text "A battle?"
+	
+	para "Oh, no."
+	line "I shouldn't."
 	done
 	
 BarInsideWaitress:
 	faceplayer
 	opentext
-	checkevent EVENT_CAN_BUY_HOUSE_SPECIAL
+	checkevent EVENT_TALKED_HOUSE_SPECIAL
 	iftrue .normal
 	checkevent EVENT_TALKED_TO_BARTENDER_ONCE
 	iffalse .normal
@@ -706,11 +766,17 @@ BarInsideWaitress:
 	end
 	
 BarInsideWaitressText1:
-	text "TEXT 1"
+	text "The goody-goodies"
+	line "over there better"
+	cont "tip well!"
 	done
 	
 BarInsideWaitressText2:
-	text "TEXT 2"
+	text "I'm not a customer,"
+	line "I'm a waitress."
+	
+	para "And no, I don't"
+	line "want to battle!"
 	done
 	
 BarInsideJukebox:

@@ -709,8 +709,7 @@ BarInsideDadText2:
 	line "alone."
 	
 	para "We're just here"
-	line "for a bite to"
-	cont "eat."
+	line "for a bite to eat."
 	
 	para "We don't want"
 	line "any trouble."

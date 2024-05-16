@@ -84,6 +84,7 @@ Route10EastCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
+	clearevent EVENT_HIDE_OW_OBJECTS_RED
 	return
 .brown
 	setevent EVENT_HIDE_OW_OBJECTS_BROWN
@@ -91,6 +92,7 @@ Route10EastCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
+	clearevent EVENT_HIDE_OW_OBJECTS_RED
 	return
 	
 Route10EastWood:

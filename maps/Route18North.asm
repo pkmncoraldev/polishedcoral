@@ -65,6 +65,7 @@ Route18NorthCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
+	clearevent EVENT_HIDE_OW_OBJECTS_RED
 	jump .cont
 .brown
 	setevent EVENT_HIDE_OW_OBJECTS_BROWN
@@ -72,6 +73,7 @@ Route18NorthCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
+	clearevent EVENT_HIDE_OW_OBJECTS_RED
 .cont
 	checktime 1<<NITE
 	iftrue .changecampfire

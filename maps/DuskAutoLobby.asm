@@ -78,19 +78,17 @@ DuskAutoLobbyNPC4:
 	
 DuskAutoLobbyNPC2Text1:
 	text "I keep hearing a"
-	line "little kid's voice"
-	cont "giggling from back"
-	cont "in the garage."
+	line "child's laugh"
+	cont "from back in the"
+	cont "garage."
 	
 	para "What's going on"
 	line "back there?"
-	
-	para "What's the hold-up?"
 	done
 	
 DuskAutoLobbyNPC2Text2:
 	text "I guess there was"
-	line "a kid causing"
+	line "a girl causing"
 	cont "problems in the"
 	cont "garage."
 	
@@ -106,11 +104,10 @@ DuskAutoLobbyNPC1Text:
 	text "My car broke down"
 	line "on the HIGHWAY."
 	
-	para "They had to order"
-	line "a new part."
-	
 	para "I've been waiting"
-	line "for days!"
+	line "here for days!"
+	
+	para "What's the hold-up?"
 	done
 	
 DuskAutoLobbyNPC3Text1:

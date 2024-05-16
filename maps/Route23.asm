@@ -69,6 +69,7 @@ Route23Callback:
 	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
+	clearevent EVENT_HIDE_OW_OBJECTS_RED
 	disappear ROUTE_23_LEAF_2
 	movetoplayer ROUTE_23_LEAF_2
 	appear ROUTE_23_LEAF_2
@@ -80,6 +81,7 @@ Route23Callback:
 	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	setevent EVENT_HIDE_OW_OBJECTS_PINK
+	clearevent EVENT_HIDE_OW_OBJECTS_RED
 	disappear ROUTE_23_LEAF_1
 	movetoplayer ROUTE_23_LEAF_1
 	appear ROUTE_23_LEAF_1

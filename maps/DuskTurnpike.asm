@@ -94,13 +94,18 @@ DuskTurnpike_MapScriptHeader:
 	signpost 26, 15, SIGNPOST_JUMPTEXT, DuskTurnpikeDestiny
 	
 
-	db 6 ; object events
+	db 11 ; object events
 	person_event SPRITE_INVISIBLE, 13, 31, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, DuskTurnpikeTollbooth, -1
 	person_event SPRITE_PLANK_BRIDGE,  5, 20, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_SPA_WORKER, 26, 25, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 30, 13, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC2, -1
 	person_event SPRITE_COOL_DUDE, 33, 27, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC3, -1
 	person_event SPRITE_SKATER, 23, 18, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC4, -1
+	person_event SPRITE_BIKER,  8, 13, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC5, -1
+	person_event SPRITE_BIKER,  8, 14, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC6, -1
+	person_event SPRITE_BIKER,  8, 15, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC7, -1
+	person_event SPRITE_BEAUTY,  9, 21, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC8, EVENT_HIDE_OW_OBJECTS_RED
+	person_event SPRITE_BEAUTY,  9, 21, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC8, EVENT_HIDE_OW_OBJECTS_TEAL
 
 
 	const_def 1 ; object constants
@@ -178,6 +183,24 @@ DuskTurnpikeCallback:
 	loadvar wJukeboxSong, 0
 	callasm RestoreDuskTurnpikeMusic
 .skip_music
+
+	readvar VAR_PLAYER_COLOR
+	if_equal 0, .red
+	setevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
+	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
+	clearevent EVENT_HIDE_OW_OBJECTS_PINK
+	clearevent EVENT_HIDE_OW_OBJECTS_RED
+	jump .cont
+.red
+	setevent EVENT_HIDE_OW_OBJECTS_RED
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
+	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
+	clearevent EVENT_HIDE_OW_OBJECTS_PINK
+.cont
 	checktime 1<<DUSK
 	iftrue .dusk
 	checktime 1<<NITE
@@ -354,15 +377,42 @@ DuskTurnpikeNPC3:
 DuskTurnpikeNPC4:
 	jumptextfaceplayer DuskTurnpikeNPC4Text
 	
+DuskTurnpikeNPC5:
+	jumptextfaceplayer DuskTurnpikeNPC5Text
+	
+DuskTurnpikeNPC6:
+	jumptextfaceplayer DuskTurnpikeNPC6Text
+	
+DuskTurnpikeNPC7:
+	checkcode VAR_MOVEMENT
+	ifequal PLAYER_BIKE, .bike
+	ifequal PLAYER_SKATEBOARD, .skateboard
+	jumptextfaceplayer DuskTurnpikeNPC7TextNone
+.skateboard
+	jumptextfaceplayer DuskTurnpikeNPC7TextSkateboard
+.bike
+	checkevent EVENT_BIKE_UPGRADED
+	iffalse .no_upgrade
+	jumptextfaceplayer DuskTurnpikeNPC7TextBike1
+.no_upgrade
+	jumptextfaceplayer DuskTurnpikeNPC7TextBike2
+	
+DuskTurnpikeNPC8:
+	jumptextfaceplayer DuskTurnpikeNPC8Text
+	
 DuskTurnpikeNPC1Text:
 	text "Cough! Hack!"
 	line "Cough!"
 	
-	para "…"
+	para "I had to step out"
+	line "of the garage for"
+	cont "a second."
 	
 	para "All the exhaust"
 	line "fumes are gettin'"
 	cont "to me."
+	
+	para "…"
 	
 	para "Step back, kid!"
 	
@@ -401,6 +451,74 @@ DuskTurnpikeNPC4Text:
 	para "It should count!"
 	done
 	
+DuskTurnpikeNPC5Text:
+	text "The rest of our"
+	line "gang- err…"
+	
+	para "motorcycle club…"
+	
+	para "is hanging out"
+	line "in the tunnel to"
+	cont "the WEST."
+	done
+	
+DuskTurnpikeNPC6Text:
+	text "Sup, squirt?"
+	
+	para "You friends with"
+	line "that girl behind"
+	cont "the bar?"
+	
+	para "She really should"
+	line "not be back there."
+	done
+	
+DuskTurnpikeNPC7TextNone:
+	text "A kid like you"
+	line "probably doesn't"
+	cont "have a set of"
+	cont "wheels, huh?"
+	done
+	
+DuskTurnpikeNPC7TextSkateboard:
+	text "A SKATEBOARD, huh?"
+	
+	para "Pretty far cry"
+	line "from a bike, kid…"
+	done
+	
+DuskTurnpikeNPC7TextBike1:
+	text "Pffft!"
+	
+	para "Get a load of this"
+	line "kid's bike, guys!"
+	
+	para "What a poser!"
+	
+	para "Hahaha!"
+	done
+	
+DuskTurnpikeNPC7TextBike2:
+	text "Woah."
+	
+	para "Nice wheels, kid."
+	
+	para "Lookin' good!"
+	done
+	
+DuskTurnpikeNPC8Text:
+	text "Heya, kiddo."
+	
+	para "Lotta shady"
+	line "characters hang"
+	cont "around here."
+	
+	para "I'd be prepared"
+	line "heading in there."
+	
+	para "Just in case."
+	done
+	
 DuskTurnpikePokeCenterSign:
 	jumpstd pokecentersign
 	
@@ -415,7 +533,7 @@ DuskTurnpikeSign:
 	done
 	
 DuskTurnpikeHighwaySign:
-	text "ROUTE 21 HIGHWAY"
+	text "ROUTE 22 HIGHWAY"
 	line "ahead."
 	
 	para "Motor vehicles"

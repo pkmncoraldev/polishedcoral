@@ -41,6 +41,7 @@ BarInsideCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
+	clearevent EVENT_HIDE_OW_OBJECTS_RED
 	return
 .purple
 	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
@@ -48,6 +49,7 @@ BarInsideCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
 	setevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
+	clearevent EVENT_HIDE_OW_OBJECTS_RED
 	return	
 	
 BarInsideTrigger0:

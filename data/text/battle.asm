@@ -245,8 +245,8 @@ BattleText_ItemMooMooBrew:
 	line "its MOOMOO BREW."
 	
 	para "<USER>'s"
-	line "ATTACK rose"
-	cont "drastically!"
+	line "ATTACK sharply"
+	cont "rose!"
 	prompt
 
 BattleText_UserChargedWithItem:

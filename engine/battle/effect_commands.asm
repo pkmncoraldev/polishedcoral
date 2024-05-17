@@ -7102,9 +7102,7 @@ BattleCommand_recoil: ; 36cb2
 
 
 BattleCommand_moomoobrew:
-	call BattleCommand_attackup
-	call BattleCommand_attackup
-	call BattleCommand_attackup
+	call BattleCommand_attackup2
 	farcall RefreshBattleHuds
 	farcall ItemRecoveryAnim
 	ld hl, BattleText_ItemMooMooBrew

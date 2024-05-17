@@ -73,10 +73,10 @@ DuskTurnpike_MapScriptHeader:
 	xy_trigger 1, 16, 25, 0, DuskTurnpikeDark, 0, 0
 	xy_trigger 1, 17, 26, 0, DuskTurnpikeDark, 0, 0
 	xy_trigger 1, 17, 27, 0, DuskTurnpikeDark, 0, 0
-	xy_trigger 0, 14, 31, 0, DuskTurnpikeTollBoothStopsYou1, 0, 0
-	xy_trigger 0, 15, 31, 0, DuskTurnpikeTollBoothStopsYou2, 0, 0
-	xy_trigger 0, 16, 31, 0, DuskTurnpikeTollBoothStopsYou3, 0, 0
-	xy_trigger 0, 17, 31, 0, DuskTurnpikeTollBoothStopsYou4, 0, 0
+	xy_trigger 0, 14, 33, 0, DuskTurnpikeTollBoothStopsYou1, 0, 0
+	xy_trigger 0, 15, 33, 0, DuskTurnpikeTollBoothStopsYou2, 0, 0
+	xy_trigger 0, 16, 33, 0, DuskTurnpikeTollBoothStopsYou3, 0, 0
+	xy_trigger 0, 17, 33, 0, DuskTurnpikeTollBoothStopsYou4, 0, 0
 
 	db 13 ; bg events
 	signpost 22, 30, SIGNPOST_JUMPTEXT, DuskTurnpikeBrokenCar
@@ -95,7 +95,7 @@ DuskTurnpike_MapScriptHeader:
 	
 
 	db 11 ; object events
-	person_event SPRITE_INVISIBLE, 13, 31, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, DuskTurnpikeTollbooth, -1
+	person_event SPRITE_INVISIBLE, 13, 33, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, DuskTurnpikeTollbooth, -1
 	person_event SPRITE_PLANK_BRIDGE,  5, 20, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_SPA_WORKER, 26, 25, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 30, 13, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC2, -1
@@ -104,8 +104,8 @@ DuskTurnpike_MapScriptHeader:
 	person_event SPRITE_BIKER,  8, 13, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC5, -1
 	person_event SPRITE_BIKER,  8, 14, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC6, -1
 	person_event SPRITE_BIKER,  8, 15, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC7, -1
-	person_event SPRITE_BEAUTY,  9, 21, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC8, EVENT_HIDE_OW_OBJECTS_RED
-	person_event SPRITE_BEAUTY,  9, 21, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC8, EVENT_HIDE_OW_OBJECTS_TEAL
+	person_event SPRITE_BEAUTY,  8, 21, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC8, EVENT_HIDE_OW_OBJECTS_RED
+	person_event SPRITE_BEAUTY,  8, 21, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC8, EVENT_HIDE_OW_OBJECTS_TEAL
 
 
 	const_def 1 ; object constants
@@ -141,7 +141,7 @@ DuskTurnpikeTrigger1:
 	changeblock $18, $10, $a4
 ;	changeblock $22, $10, $a4
 ;	changeblock $2c, $10, $a4
-	changeblock $1e, $0c, $f2
+	changeblock $20, $0c, $f2
 	setflag ENGINE_STREETLIGHTS
 	callasm GenericFinishBridge
 	callasm DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
@@ -163,7 +163,7 @@ DuskTurnpikeTrigger1:
 	changeblock $18, $10, $aa
 ;	changeblock $22, $10, $aa
 ;	changeblock $2c, $10, $aa
-	changeblock $1e, $0c, $f3
+	changeblock $20, $0c, $f3
 	changeblock $16, $14, $85
 	changeblock $16, $16, $89
 	clearflag ENGINE_STREETLIGHTS
@@ -183,7 +183,6 @@ DuskTurnpikeCallback:
 	loadvar wJukeboxSong, 0
 	callasm RestoreDuskTurnpikeMusic
 .skip_music
-
 	readvar VAR_PLAYER_COLOR
 	if_equal 0, .red
 	setevent EVENT_HIDE_OW_OBJECTS_TEAL
@@ -192,7 +191,7 @@ DuskTurnpikeCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
 	clearevent EVENT_HIDE_OW_OBJECTS_RED
-	jump .cont
+	jump .done_npc
 .red
 	setevent EVENT_HIDE_OW_OBJECTS_RED
 	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
@@ -200,7 +199,14 @@ DuskTurnpikeCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
-.cont
+.done_npc
+	checkevent EVENT_TOLL_BOOTH_OPEN
+	iftrue .done_tollbooth
+	changeblock $22, $0c, $e9
+	changeblock $24, $0c, $0b
+	changeblock $22, $0e, $eb
+	changeblock $22, $10, $ea
+.done_tollbooth
 	checktime 1<<DUSK
 	iftrue .dusk
 	checktime 1<<NITE
@@ -223,7 +229,7 @@ DuskTurnpikeCallback:
 	changeblock $18, $10, $a4
 ;	changeblock $22, $10, $a4
 ;	changeblock $2c, $10, $a4
-	changeblock $1e, $0c, $f2
+	changeblock $20, $0c, $f2
 	setflag ENGINE_STREETLIGHTS
 .notnite
 	checkevent EVENT_ROUTE_22_TRASHCAN
@@ -268,6 +274,8 @@ DuskTurnpikeDark:
 	end
 
 DuskTurnpikeTollBoothStopsYou1:
+	checkevent EVENT_TOLL_BOOTH_OPEN
+	iftrue DuskTurnpikeTollbooth.end
 	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, DUSK_TOLLBOOTH_GUY, 15
@@ -279,6 +287,8 @@ DuskTurnpikeTollBoothStopsYou1:
 	jump DuskTurnpikeTollbooth
 	
 DuskTurnpikeTollBoothStopsYou2:
+	checkevent EVENT_TOLL_BOOTH_OPEN
+	iftrue DuskTurnpikeTollbooth.end
 	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, DUSK_TOLLBOOTH_GUY, 15
@@ -290,6 +300,8 @@ DuskTurnpikeTollBoothStopsYou2:
 	jump DuskTurnpikeTollbooth
 	
 DuskTurnpikeTollBoothStopsYou3:
+	checkevent EVENT_TOLL_BOOTH_OPEN
+	iftrue DuskTurnpikeTollbooth.end
 	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, DUSK_TOLLBOOTH_GUY, 15
@@ -301,6 +313,8 @@ DuskTurnpikeTollBoothStopsYou3:
 	jump DuskTurnpikeTollbooth
 	
 DuskTurnpikeTollBoothStopsYou4:
+	checkevent EVENT_TOLL_BOOTH_OPEN
+	iftrue DuskTurnpikeTollbooth.end
 	special Special_StopRunning
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, DUSK_TOLLBOOTH_GUY, 15
@@ -311,12 +325,41 @@ DuskTurnpikeTollBoothStopsYou4:
 	applymovement PLAYER, Movement_DuskTollbooth2
 
 DuskTurnpikeTollbooth:
+	checkevent EVENT_TOLL_BOOTH_OPEN
+	iftrue .open
+	checkcode VAR_MOVEMENT
+	ifequal PLAYER_BIKE, .bike
+.no
 	opentext
 	writetext DuskTurnpikeTollboothText2
 	waitbutton
 	closetext
 	applyonemovement PLAYER, step_left
 	setevent EVENT_TALKED_TO_TOLL_BOOTH
+.end
+	end
+.bike
+	checkevent EVENT_BIKE_UPGRADED
+	iffalse .no
+	opentext
+	writetext DuskTurnpikeTollboothText3
+	waitbutton
+	closetext
+	changeblock $22, $0c, $42
+	changeblock $24, $0c, $46
+	changeblock $22, $0e, $20
+	changeblock $22, $10, $43
+	pause 20
+	playsound SFX_POKEBALLS_PLACED_ON_TABLE
+	callasm GenericFinishBridge
+	setevent EVENT_TALKED_TO_TOLL_BOOTH
+	setevent EVENT_TOLL_BOOTH_OPEN
+	end
+.open
+	opentext
+	writetext DuskTurnpikeTollboothText4
+	waitbutton
+	closetext
 	end
 
 DuskTurnpikeTrashcan:
@@ -457,7 +500,7 @@ DuskTurnpikeNPC5Text:
 	
 	para "motorcycle club…"
 	
-	para "is hanging out"
+	para "…is hanging out"
 	line "in the tunnel to"
 	cont "the WEST."
 	done
@@ -576,6 +619,21 @@ DuskTurnpikeTollboothText2:
 	
 	para "Sorry, that's the"
 	line "rules."
+	done
+	
+DuskTurnpikeTollboothText3:
+	text "Motor vehicles"
+	line "only past this"
+	cont "point."
+	
+	para "I'll go ahead and"
+	line "open the gate."
+	done
+	
+DuskTurnpikeTollboothText4:
+	text "Motor vehicles"
+	line "only past this"
+	cont "point."
 	done
 	
 Movement_DuskTollbooth1:

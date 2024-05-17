@@ -405,7 +405,11 @@ ENDM
 	
 	map_attributes DuskTurnpike, DUSK_TURNPIKE, $30, SOUTH | EAST
 	connection south, Route21, ROUTE_21, 0
-	connection east, Crossroads, CROSSROADS, 0
+	connection east, Route22, ROUTE_22, 4
+	
+	map_attributes Route22, ROUTE_22, $30, WEST | EAST
+	connection west, DuskTurnpike, DUSK_TURNPIKE, -4
+	connection east, Crossroads, CROSSROADS, 1
 	
 	map_attributes DuskAutoLobby, DUSK_AUTO_LOBBY, $00, 0
 	
@@ -419,7 +423,7 @@ ENDM
 	
 	map_attributes Crossroads, CROSSROADS, 0, SOUTH | WEST
 	connection south, Route23, ROUTE_23, -5
-	connection west, DuskTurnpike, DUSK_TURNPIKE, 0
+	connection west, Route22, ROUTE_22, -1
 	
 	map_attributes Route23, ROUTE_23, $c6, NORTH | SOUTH | WEST | EAST
 	connection north, Crossroads, CROSSROADS, 5

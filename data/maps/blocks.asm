@@ -760,6 +760,9 @@ BarInside_BlockData:
 Route22Tunnel_BlockData:
 	INCBIN "maps/Route22Tunnel.ablk.lz"
 	
+Route22_BlockData:
+	INCBIN "maps/Route22.ablk.lz"
+	
 FakeRoute1_BlockData:
 	INCBIN "maps/FakeRoute1.ablk.lz"
 	

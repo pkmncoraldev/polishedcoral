@@ -375,7 +375,7 @@ MAP_NONE   EQU 0
 	newgroup													 ; 20
 	
 	map_const ROUTE_21,									  20, 17 ; 1
-	map_const DUSK_TURNPIKE,							  18, 19 ; 2
+	map_const DUSK_TURNPIKE,							  17, 19 ; 2
 	map_const DUSK_POKECENTER,                      	   6,  4 ; 3
 	map_const DUSK_MART,                             	   6,  4 ; 4
 	map_const ROUTE_19_DUSK_GATE,						   5,  4 ; 5
@@ -390,7 +390,8 @@ MAP_NONE   EQU 0
 	map_const SEASIDE_CAVE_B2F,							   8, 10 ; 14
 	map_const BAR_BACK_ALLEY,							  10,  6 ; 15
 	map_const BAR_INSIDE,								   8,  5 ; 16
-	map_const CROSSROADS,								  17, 13 ; 17
+	map_const CROSSROADS,								  22, 12 ; 17
+	map_const ROUTE_22,									   7,  9 ; 18
 	
 	newgroup													 ; 21
 	

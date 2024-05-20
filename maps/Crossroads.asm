@@ -11,25 +11,25 @@ Crossroads_MapScriptHeader:
 	warp_event 30,  7, CROSSROADS, 1
 
 	db 4 ; coord events
-	coord_event 20,  8, 0, CrossroadsCutsceneStart1
-	coord_event 20,  9, 0, CrossroadsCutsceneStart2
-	coord_event 20, 10, 0, CrossroadsCutsceneStart3
-	coord_event 20, 11, 0, CrossroadsCutsceneStart4
+	coord_event 20,  9, 0, CrossroadsCutsceneStart1
+	coord_event 20, 10, 0, CrossroadsCutsceneStart2
+	coord_event 20, 11, 0, CrossroadsCutsceneStart3
+	coord_event 20, 12, 0, CrossroadsCutsceneStart4
 
 	db 0 ; bg events
 
 	db 12 ; object events
-	person_event SPRITE_PLAYER_CUTSCENE, 10, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
-	person_event SPRITE_PLAYER_CUTSCENE, 10, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
-	person_event SPRITE_PLAYER_CUTSCENE, 10, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
-	person_event SPRITE_PLAYER_CUTSCENE, 10, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
-	person_event SPRITE_PLAYER_CUTSCENE, 10, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
-	person_event SPRITE_PLAYER_CUTSCENE, 10, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
-	person_event SPRITE_PLAYER_CUTSCENE, 10, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
-	person_event SPRITE_SNARE,  9, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_CROSSROADS_CUTSCENE_DONE
-	person_event SPRITE_SNARE, 10, 25, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_CROSSROADS_CUTSCENE_DONE
+	person_event SPRITE_PLAYER_CUTSCENE, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
+	person_event SPRITE_PLAYER_CUTSCENE, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
+	person_event SPRITE_PLAYER_CUTSCENE, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
+	person_event SPRITE_PLAYER_CUTSCENE, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
+	person_event SPRITE_PLAYER_CUTSCENE, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
+	person_event SPRITE_PLAYER_CUTSCENE, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
+	person_event SPRITE_PLAYER_CUTSCENE, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
+	person_event SPRITE_SNARE, 10, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_CROSSROADS_CUTSCENE_DONE
+	person_event SPRITE_SNARE, 11, 25, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_CROSSROADS_CUTSCENE_DONE
 	person_event SPRITE_COLBY,  7, 30, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
-	person_event SPRITE_COLBY, 10, 24, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
+	person_event SPRITE_COLBY, 11, 24, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
 	person_event SPRITE_MALL_SIGN,  8, 22, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, CrossroadsSign, -1
 	
 	
@@ -70,7 +70,7 @@ CrossroadsTrigger1:
 	iffalse .end
 	changeblock $14, $06, $ec
 	changeblock $16, $06, $01
-	changeblock $14, $08, $01
+	changeblock $14, $08, $80
 	changeblock $16, $08, $01
 	changeblock -$2, $2, $f3
 	clearflag ENGINE_STREETLIGHTS
@@ -109,13 +109,13 @@ CrossroadsStreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
 CrossroadsCutsceneStart1:
 	playmusic MUSIC_SNARE_THEME
 	applymovement PLAYER, Movement_CrossroadsCutsceneStart1
-	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 9
-	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 23, 9
-	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 23, 9
-	moveperson CROSSROADS_PLAYER_CUTSCENE_BROWN, 23, 9
-	moveperson CROSSROADS_PLAYER_CUTSCENE_PURPLE, 23, 9
-	moveperson CROSSROADS_PLAYER_CUTSCENE_TEAL, 23, 9
-	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 23, 9
+	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 10
+	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 23, 10
+	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 23, 10
+	moveperson CROSSROADS_PLAYER_CUTSCENE_BROWN, 23, 10
+	moveperson CROSSROADS_PLAYER_CUTSCENE_PURPLE, 23, 10
+	moveperson CROSSROADS_PLAYER_CUTSCENE_TEAL, 23, 10
+	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 23, 10
 	scall CrossroadsCutscene1
 	applymovement PLAYER, Movement_CrossroadsCutsceneCameraPan1
 	jump CrossroadsCutscene2
@@ -123,13 +123,13 @@ CrossroadsCutsceneStart1:
 CrossroadsCutsceneStart2:
 	playmusic MUSIC_SNARE_THEME
 	applymovement PLAYER, Movement_CrossroadsCutsceneStart2
-	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 9
-	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 23, 9
-	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 23, 9
-	moveperson CROSSROADS_PLAYER_CUTSCENE_BROWN, 23, 9
-	moveperson CROSSROADS_PLAYER_CUTSCENE_PURPLE, 23, 9
-	moveperson CROSSROADS_PLAYER_CUTSCENE_TEAL, 23, 9
-	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 23, 9
+	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 10
+	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 23, 10
+	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 23, 10
+	moveperson CROSSROADS_PLAYER_CUTSCENE_BROWN, 23, 10
+	moveperson CROSSROADS_PLAYER_CUTSCENE_PURPLE, 23, 10
+	moveperson CROSSROADS_PLAYER_CUTSCENE_TEAL, 23, 10
+	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 23, 10
 	scall CrossroadsCutscene1
 	applymovement PLAYER, Movement_CrossroadsCutsceneCameraPan1
 	jump CrossroadsCutscene2
@@ -137,13 +137,13 @@ CrossroadsCutsceneStart2:
 CrossroadsCutsceneStart3:
 	playmusic MUSIC_SNARE_THEME
 	applymovement PLAYER, Movement_CrossroadsCutsceneStart2
-	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_BROWN, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_PURPLE, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_TEAL, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 23, 10
+	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_BROWN, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_PURPLE, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_TEAL, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 23, 11
 	scall CrossroadsCutscene1
 	applymovement PLAYER, Movement_CrossroadsCutsceneCameraPan2
 	jump CrossroadsCutscene2
@@ -151,13 +151,13 @@ CrossroadsCutsceneStart3:
 CrossroadsCutsceneStart4:
 	playmusic MUSIC_SNARE_THEME
 	applymovement PLAYER, Movement_CrossroadsCutsceneStart3
-	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_BROWN, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_PURPLE, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_TEAL, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 23, 10
+	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_BROWN, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_PURPLE, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_TEAL, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 23, 1
 	scall CrossroadsCutscene1
 	applymovement PLAYER, Movement_CrossroadsCutsceneCameraPan2
 	jump CrossroadsCutscene2
@@ -222,13 +222,13 @@ CrossroadsCutscene2:
 	pause 30
 	special Special_FadeOutMusic
 	pause 50
-	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_BROWN, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_PURPLE, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_TEAL, 23, 10
-	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 23, 10
+	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_BROWN, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_PURPLE, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_TEAL, 23, 11
+	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 23, 11
 	spriteface PLAYER, DOWN
 	writecode VAR_MOVEMENT, $fe
 ;	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_COLBY
@@ -345,8 +345,8 @@ CrossroadsCutscene2:
 	disappear CROSSROADS_COLBY2
 	special Special_FadeOutMusic
 	pause 15
-	playmapmusic
 	setevent EVENT_CROSSROADS_CUTSCENE_DONE
+	playnewmapmusic
 	dotrigger $1
 	end
 	
@@ -490,6 +490,7 @@ Movement_CrossroadsCutsceneCameraPan1:
 	step_right
 	slow_step_right
 	slow_step_up
+	slow_step_up
 	step_end
 	
 Movement_CrossroadsCutsceneCameraPan2:
@@ -502,9 +503,11 @@ Movement_CrossroadsCutsceneCameraPan2:
 	slow_step_right
 	slow_step_up
 	slow_step_up
+	slow_step_up
 	step_end
 	
 Movement_CrossroadsColbyWalk1:
+	step_down
 	step_down
 	step_down
 	step_left

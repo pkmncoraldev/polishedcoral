@@ -2971,6 +2971,8 @@ CheckChangeMusic::
 	jr z, .bright
 	cp MUSIC_BRIGHT_CENTER
 	jr z, .bright_center
+	cp MUSIC_CROSSROADS
+	jr z, .crossroads
 	ld a, $ff
 .done
 	ld [wSlotBias], a
@@ -3041,6 +3043,12 @@ CheckChangeMusic::
 	eventflagcheck EVENT_BRIGHT_CENTER_MART_EMPTY
 	jr nz, .none
 	ld a, MUSIC_POKEMON_CENTER
+	jr .done
+	
+.crossroads
+	eventflagcheck EVENT_CROSSROADS_CUTSCENE_DONE
+	jr z, .none
+	ld a, MUSIC_ROUTE_12
 	jr .done
 	
 GetMapMusic::

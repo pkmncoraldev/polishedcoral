@@ -369,6 +369,8 @@ PLAYER_F EQU __enum__
 	trainerclass PSYCHIC_T
 	const RALPH
 	const NELSON
+	const DAVID
+	const LINUS
 
 
 	trainerclass COUPLE
@@ -459,6 +461,7 @@ PLAYER_F EQU __enum__
 
 	trainerclass GUITARIST
 	const LARRY
+	const TITO
 
 
 	trainerclass BIKER
@@ -568,6 +571,7 @@ PLAYER_F EQU __enum__
 	
 	trainerclass SKATER
 	const TONY
+	const CHAD
 	
 	trainerclass SPA_TRAINER
 	const DENNIS_3

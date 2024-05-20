@@ -18,7 +18,7 @@ Route26_MapScriptHeader:
 	object_event -2, 28, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PINK
 	person_event SPRITE_CAMPER, 18, 12, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route26NPC, -1
 	person_event SPRITE_SHAOLIN, 25, 15, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, Route26Trainer1, -1
-	person_event SPRITE_PICNICKER, 21, 28, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, Route26Trainer2, -1
+	person_event SPRITE_PSYCHIC, 21, 28, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, Route26Trainer2, -1
 	person_event SPRITE_POKEFAN_F, 10, 27, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, Route26Trainer3, -1
 
 
@@ -58,24 +58,26 @@ Route26Trainer1:
 	done
 	
 Route26Trainer2:
-	generictrainer PICNICKER, BAILEY, EVENT_BEAT_ROUTE_26_TRAINER_2, .SeenText, .BeatenText
+	generictrainer PSYCHIC_T, DAVID, EVENT_BEAT_ROUTE_26_TRAINER_2, .SeenText, .BeatenText
 
-	text "Hmph!"
-	
-	para "My now stroll is"
-	line "all ruined!"
+	text "It was probably"
+	line "a coincidence…"
 	done
 
 .SeenText:
-	text "Isn't this such a"
-	line "plesant path?"
+	text "I knew someone"
+	line "would come along"
+	cont "if I stood here."
 	
-	para "Just perfect for"
-	line "a nice stroll!"
+	para "I had a feeling."
+	
+	para "…Or was it a"
+	line "vision!?"
 	done
 
 .BeatenText:
-	text "Hmph!"
+	text "It's all clear"
+	line "now!"
 	done
 	
 Route26Trainer3:

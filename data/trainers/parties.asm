@@ -3184,6 +3184,24 @@ PsychicGroup:
 	db -1 ; end
 
 ; ================
+
+	; PSYCHIC_T
+	db "DAVID@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; PSYCHIC_T
+	db "LINUS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3746,6 +3764,15 @@ GuitaristGroup:
 
 	; GUITARIST
 	db "LARRY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; GUITARIST
+	db "TITO@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -4429,8 +4456,17 @@ SkaterGroup:
 ; ================================
 ; ================
 
-	; TONY
+	; SKATER
 	db "TONY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SKATER
+	db "CHAD@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

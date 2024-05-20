@@ -444,6 +444,9 @@ Route23Trainer8:
 	
 Route23SignText:
 	text "ROUTE 23"
+	
+	para "SOUTH:"
+	line "KOMORE VILLAGE"
 	done
 	
 Route23FightingDojoSignText:

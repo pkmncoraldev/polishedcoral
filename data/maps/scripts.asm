@@ -106,7 +106,6 @@ INCLUDE "maps/Route8.asm"
 INCLUDE "maps/Route14.asm"
 INCLUDE "maps/Route15.asm"
 INCLUDE "maps/Route16.asm"
-INCLUDE "maps/Route21.asm"
 INCLUDE "maps/FakeRoute1.asm"
 
 
@@ -125,6 +124,7 @@ INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route20.asm"
 INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route6South.asm"
+INCLUDE "maps/Route21.asm"
 INCLUDE "maps/Route22.asm"
 
 

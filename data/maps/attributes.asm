@@ -421,7 +421,7 @@ ENDM
 	
 	map_attributes BarInside, BAR_INSIDE, $00, 0
 	
-	map_attributes Crossroads, CROSSROADS, 0, SOUTH | WEST
+	map_attributes Crossroads, CROSSROADS, $30, SOUTH | WEST
 	connection south, Route23, ROUTE_23, -5
 	connection west, Route22, ROUTE_22, -1
 	

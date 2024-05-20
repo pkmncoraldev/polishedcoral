@@ -60,6 +60,7 @@ CrossroadsTrigger1:
 	changeblock $16, $06, $b6
 	changeblock $14, $08, $c3
 	changeblock $16, $08, $b5
+	changeblock -$2, $2, $f2
 	setflag ENGINE_STREETLIGHTS
 	callasm GenericFinishBridge
 	callasm CrossroadsStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
@@ -71,6 +72,7 @@ CrossroadsTrigger1:
 	changeblock $16, $06, $01
 	changeblock $14, $08, $01
 	changeblock $16, $08, $01
+	changeblock -$2, $2, $f3
 	clearflag ENGINE_STREETLIGHTS
 	clearflag ENGINE_STREETLIGHTS2
 	callasm GenericFinishBridge
@@ -88,6 +90,7 @@ CrossroadsCallback:
 	changeblock $16, $06, $b6
 	changeblock $14, $08, $c3
 	changeblock $16, $08, $b5
+	changeblock -$2, $2, $f2
 	setflag ENGINE_STREETLIGHTS
 .notnite
 	domaptrigger ROUTE_22_TUNNEL, $1

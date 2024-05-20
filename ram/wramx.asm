@@ -1066,7 +1066,8 @@ wRoute24Trigger:: ds 1
 wBrightburgTrigger:: ds 1
 wRoute27Trigger:: ds 1
 wBarInsideTrigger:: ds 1
-ds 25
+wRoute22Trigger:: ds 1
+ds 24
 
 wAmpharosFood:: ds 1
 

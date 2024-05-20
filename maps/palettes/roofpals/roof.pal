@@ -103,7 +103,7 @@
 ;20 - Highway
 	RGB 18, 19, 31
 	RGB 27, 31, 27
-	RGB 18, 19, 31
+	RGB 16, 15, 25
 	RGB 27, 31, 27
 ;21 - Underwater
 	RGB 00, 00, 00

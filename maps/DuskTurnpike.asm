@@ -142,6 +142,8 @@ DuskTurnpikeTrigger1:
 ;	changeblock $22, $10, $a4
 ;	changeblock $2c, $10, $a4
 	changeblock $20, $0c, $f2
+	changeblock $1a, $16, $10
+	changeblock $1c, $16, $11
 	setflag ENGINE_STREETLIGHTS
 	callasm GenericFinishBridge
 	callasm DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
@@ -164,6 +166,8 @@ DuskTurnpikeTrigger1:
 ;	changeblock $22, $10, $aa
 ;	changeblock $2c, $10, $aa
 	changeblock $20, $0c, $f3
+	changeblock $1a, $16, $4a
+	changeblock $1c, $16, $4b
 	changeblock $16, $14, $85
 	changeblock $16, $16, $89
 	clearflag ENGINE_STREETLIGHTS
@@ -230,6 +234,8 @@ DuskTurnpikeCallback:
 ;	changeblock $22, $10, $a4
 ;	changeblock $2c, $10, $a4
 	changeblock $20, $0c, $f2
+	changeblock $1a, $16, $10
+	changeblock $1c, $16, $11
 	setflag ENGINE_STREETLIGHTS
 .notnite
 	checkevent EVENT_ROUTE_22_TRASHCAN
@@ -490,8 +496,7 @@ DuskTurnpikeNPC4Text:
 	cont "on the HIGHWAY!"
 	
 	para "It's got wheels!"
-	
-	para "It should count!"
+	line "It should count!"
 	done
 	
 DuskTurnpikeNPC5Text:

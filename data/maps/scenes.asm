@@ -132,4 +132,5 @@ MapTriggers::
 	scene_var KOMORE_HOUSE_1,						  wAlways0Trigger
 	scene_var ROUTE_27,								  wRoute27Trigger
 	scene_var BAR_INSIDE,							  wBarInsideTrigger
+	scene_var ROUTE_22,								  wRoute22Trigger
 	db -1

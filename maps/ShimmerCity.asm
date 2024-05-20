@@ -30,7 +30,7 @@ ShimmerCity_MapScriptHeader:
 	warp_event 37, 23, SHIMMER_MART, 1
 	warp_event 15, 23, SHIMMER_HOUSE_1, 1
 	warp_event 21, 23, SHIMMER_HOUSE_2, 1
-	warp_event 22, 14, SHIMMER_CAFE, 1
+	warp_event -1, -1, SHIMMER_CAFE, 1
 	warp_event  5,  3, SHIMMER_UNDER_BOARDWALK, 19
 
 	db 0 ; coord events
@@ -39,8 +39,8 @@ ShimmerCity_MapScriptHeader:
 	bg_event 14, 15, SIGNPOST_ITEM + BIG_NUGGET, EVENT_SHIMMER_CITY_HIDDEN_ITEM
 	signpost 14, 15, SIGNPOST_LEFT, ShimmerCityFishMarket
 	signpost 17, 15, SIGNPOST_LEFT, ShimmerCityBerryMarket
-	signpost 13, 19, SIGNPOST_READ, ShimmerCitySign
-	signpost 15, 23, SIGNPOST_READ, ShimmerCafeSign
+	signpost 18, 22, SIGNPOST_READ, ShimmerCitySign
+	signpost 13, 17, SIGNPOST_READ, ShimmerCafeSign
 	signpost 26,  3, SIGNPOST_READ, ShimmerLabSign
 	signpost 14, 36, SIGNPOST_READ, ShimmerFlowers
 	signpost 15, 36, SIGNPOST_READ, ShimmerFlowers
@@ -50,9 +50,9 @@ ShimmerCity_MapScriptHeader:
 	db 11 ; object events
 	person_event SPRITE_FISHING_GURU, 14, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc1, -1
 	person_event SPRITE_POKEFAN_F, 17, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc2, -1
-	person_event SPRITE_REDS_MOM, 18, 18, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc3, -1
+	person_event SPRITE_REDS_MOM, 16, 19, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc3, -1
 	person_event SPRITE_CHILD, 19, 23, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc4, -1
-	person_event SPRITE_FAT_GUY, 14, 20, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc5, -1
+	person_event SPRITE_FAT_GUY, 13, 22, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc5, -1
 	person_event SPRITE_BATTLE_GIRL, 10, 14, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc6, -1
 	person_event SPRITE_BALLOONS, 15, 16, SPRITEMOVEDATA_BALLOONS_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_BALLOONS, 12, 16, SPRITEMOVEDATA_BALLOONS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, 0, -1
@@ -207,7 +207,7 @@ ShimmerCityHorseaKidAsm:
 	farcall SelectTradeOrDaycareMon
 	jr c, .cancel
 	ld a, [wCurPartySpecies]
-	cp BULBASAUR
+	cp BULBASAUR ;TODO
 	jr z, .yes
 	ld a, FALSE
 	ld [wScriptVar], a
@@ -229,7 +229,7 @@ ShimmerCitySignText:
 	done
 	
 ShimmerCafeSignText:
-	text "SHIMMER CAFE"
+	text "SHIMMER MARKET"
 	done
 	
 ShimmerLabSignText:

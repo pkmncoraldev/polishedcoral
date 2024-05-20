@@ -16,12 +16,12 @@ Route27_MapScriptHeader:
 
 	db 13 ; bg events
 	signpost 12, 10, SIGNPOST_READ, Route27Sign
-	signpost 17, 18, SIGNPOST_READ, Route27Logs
-	signpost 17, 19, SIGNPOST_READ, Route27Logs
+	signpost 17, 20, SIGNPOST_READ, Route27Logs
+	signpost 17, 21, SIGNPOST_READ, Route27Logs
 	signpost 22, 19, SIGNPOST_READ, Route27Logs
 	signpost 22, 21, SIGNPOST_READ, Route27Logs
-	signpost 23, 32, SIGNPOST_READ, Route27Logs
-	signpost 23, 33, SIGNPOST_READ, Route27Logs
+	signpost 23, 30, SIGNPOST_READ, Route27Logs
+	signpost 23, 31, SIGNPOST_READ, Route27Logs
 	signpost 28, 31, SIGNPOST_READ, Route27Logs
 	signpost 19, 46, SIGNPOST_READ, Route27Logs
 	signpost 19, 47, SIGNPOST_READ, Route27Logs

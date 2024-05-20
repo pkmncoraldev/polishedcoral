@@ -15,7 +15,7 @@ Route27_MapScriptHeader:
 	xy_trigger 1, 11,  7, 0, Route25MapSignThing, 0, 0
 
 	db 13 ; bg events
-	signpost 12,  9, SIGNPOST_READ, Route27Sign
+	signpost 12, 10, SIGNPOST_READ, Route27Sign
 	signpost 17, 18, SIGNPOST_READ, Route27Logs
 	signpost 17, 19, SIGNPOST_READ, Route27Logs
 	signpost 22, 19, SIGNPOST_READ, Route27Logs
@@ -95,7 +95,7 @@ Route27BrightburgSign:
 	jumptext Route27BrightburgSignText
 
 Route27BrightburgSignText:
-	text "ROUTE 25"
+	text "ROUTE 27"
 	
 	para "SOUTH:"
 	line "BRIGHTBURG"

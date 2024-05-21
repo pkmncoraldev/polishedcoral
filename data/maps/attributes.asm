@@ -174,7 +174,7 @@ ENDM
 	map_attributes Route9, ROUTE_9, $d1, NORTH | SOUTH | WEST
 	connection north, FlickerStation, FLICKER_STATION, 5
 	connection south, Route12, ROUTE_12, -5
-	connection west, EventideVillage, EVENTIDE_VILLAGE, 16
+	connection west, EventideVillage, EVENTIDE_VILLAGE, 15
 	
 	map_attributes Route10, ROUTE_10, 5, NORTH | EAST
 	connection north, TwinkleTown, TWINKLE_TOWN, 5
@@ -184,7 +184,7 @@ ENDM
 	connection west, Route10, ROUTE_10, 1
 
 	map_attributes EventideVillage, EVENTIDE_VILLAGE, $0d, EAST
-	connection east, Route9, ROUTE_9, -16
+	connection east, Route9, ROUTE_9, -15
 
 	map_attributes FlickerStation, FLICKER_STATION, $d1, NORTH | SOUTH | EAST
 	connection north, FlickerPassOutside, FLICKER_PASS_OUTSIDE, 7

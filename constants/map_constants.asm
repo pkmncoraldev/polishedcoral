@@ -190,14 +190,14 @@ MAP_NONE   EQU 0
 	map_const EVENTIDE_POKECENTER,                         6,  4 ; 5
 	map_const EVENTIDE_MART,							   6,  4 ; 6
 	map_const EVENTIDE_GYM,								  23, 11 ; 7
-	map_const ROUTE_9,		 							  21, 41 ; 8
+	map_const ROUTE_9,		 							  21, 40 ; 8
 	map_const DODRIO_RANCH_HOUSE,						   4,  4 ; 9
 	map_const DODRIO_RANCH_BARN,						   5,  4 ; 10
 	map_const DODRIO_RANCH_RACETRACK,					  25, 17 ; 11
 
 	newgroup													 ; 10
 	
-	map_const FLICKER_STATION,							  20, 19 ; 1
+	map_const FLICKER_STATION,							  19, 20 ; 1
 	map_const FLICKER_SOUND_SPEECH_HOUSE,				   4,  4 ; 2
 	map_const FLICKER_NAME_SPEECH_HOUSE,				   4,  4 ; 3
 	map_const FLICKER_POKECENTER,                          6,  4 ; 4

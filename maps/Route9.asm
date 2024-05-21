@@ -4,70 +4,70 @@ Route9_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 3 ; warp events
-	warp_def 25, 21, 1, DODRIO_RANCH_HOUSE
-	warp_def 13, 30, 1, DODRIO_RANCH_BARN
-	warp_def 13, 31, 2, DODRIO_RANCH_BARN
+	warp_def 23, 21, 1, DODRIO_RANCH_HOUSE
+	warp_def 11, 30, 1, DODRIO_RANCH_BARN
+	warp_def 11, 31, 2, DODRIO_RANCH_BARN
 
 	db 27 ; coord events
+	xy_trigger 0, 24, 18, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 25, 18, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 26, 18, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 27, 18, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 28, 18, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 29, 18, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 24, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 25, 19, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 26, 19, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 27, 19, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 28, 19, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 29, 19, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 11, 19, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 11, 24, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 11, 25, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 18, 19, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 11, 23, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 11, 22, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 11, 20, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0,  9, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0,  9, 24, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0,  9, 25, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 16, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0,  9, 23, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0,  9, 22, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0,  9, 20, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 19, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 20, 19, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 21, 19, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 22, 19, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 23, 19, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 24, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 1, 24, 17, 0, Route9MapSignThing, 0, 0
+	xy_trigger 1, 25, 17, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 26, 17, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 27, 17, 0, Route9MapSignThing, 0, 0
-	xy_trigger 1, 28, 17, 0, Route9MapSignThing, 0, 0
-	xy_trigger 1, 29, 17, 0, Route9MapSignThing, 0, 0
+	xy_trigger 1, 24, 16, 0, Route9MapSignThing, 0, 0
+	xy_trigger 1, 25, 16, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 26, 16, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 27, 16, 0, Route9MapSignThing, 0, 0
-	xy_trigger 1, 28, 16, 0, Route9MapSignThing, 0, 0
-	xy_trigger 1, 29, 16, 0, Route9MapSignThing, 0, 0
 
 	db 11 ; bg events
-	signpost 24, 28, SIGNPOST_READ, RanchLogs
-	signpost 24, 25, SIGNPOST_READ, RanchLogs
-	signpost 23, 24, SIGNPOST_READ, RanchLogs
-	signpost 18, 29, SIGNPOST_READ, RanchLogs
-	signpost 17, 30, SIGNPOST_READ, RanchLogs
-	signpost 17, 31, SIGNPOST_READ, RanchLogs
-	signpost 16, 30, SIGNPOST_READ, RanchLogs
-	signpost 26, 20, SIGNPOST_READ, RanchSign
-	signpost 48, 12, SIGNPOST_READ, Route9Sign
-	signpost 35,  8, SIGNPOST_READ, Route9Sign2
-	bg_event 17, 31, SIGNPOST_ITEM + FIRE_STONE, EVENT_ROUTE_9_HIDDEN_FIRE_STONE
+	signpost 22, 28, SIGNPOST_READ, RanchLogs
+	signpost 22, 25, SIGNPOST_READ, RanchLogs
+	signpost 21, 24, SIGNPOST_READ, RanchLogs
+	signpost 16, 29, SIGNPOST_READ, RanchLogs
+	signpost 15, 30, SIGNPOST_READ, RanchLogs
+	signpost 15, 31, SIGNPOST_READ, RanchLogs
+	signpost 14, 30, SIGNPOST_READ, RanchLogs
+	signpost 24, 20, SIGNPOST_READ, RanchSign
+	signpost 46, 12, SIGNPOST_READ, Route9Sign
+	signpost 33,  8, SIGNPOST_READ, Route9Sign2
+	bg_event 17, 29, SIGNPOST_ITEM + FIRE_STONE, EVENT_ROUTE_9_HIDDEN_FIRE_STONE
 
 	db 17 ; object events
-	person_event SPRITE_N64, 13, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchScarecrow, -1
-	object_event 19, 20, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODRIO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio1, -1
-	object_event 26, 12, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODRIO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio2, -1
-	object_event 20, 17, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODUO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
-	object_event 23, 15, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODUO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
-	object_event 27, 18, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODUO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
-	object_event 27, 22, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODUO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
-	itemball_event 32,  4, CARBOS, 1, EVENT_ROUTE_9_POKE_BALL_1
-	itemball_event 30, 18, FULL_RESTORE, 1, EVENT_ROUTE_9_POKE_BALL_2
-	person_event SPRITE_BIRD_KEEPER, 41, 15, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_1, -1
-	person_event SPRITE_BIRD_KEEPER, 34,  3, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerRanch_2, -1
-	person_event SPRITE_BEAUTY, 18, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_3, -1
-	person_event SPRITE_BUG_CATCHER, 12, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_4, -1
-	person_event SPRITE_BIRD_KEEPER,  9, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRanch_5, -1
-	object_event 19, 54, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 17, 52, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	fruittreeinvis_event  12, 10, FRUITTREE_ROUTE_9, ASPEAR_BERRY
+	person_event SPRITE_N64, 11, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchScarecrow, -1
+	object_event 19, 18, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODRIO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio1, -1
+	object_event 26, 10, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODRIO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio2, -1
+	object_event 20, 15, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODUO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
+	object_event 23, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODUO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
+	object_event 27, 16, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODUO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
+	object_event 27, 20, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODUO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
+	itemball_event 32,  2, CARBOS, 1, EVENT_ROUTE_9_POKE_BALL_1
+	itemball_event 30, 16, FULL_RESTORE, 1, EVENT_ROUTE_9_POKE_BALL_2
+	person_event SPRITE_BIRD_KEEPER, 39, 15, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_1, -1
+	person_event SPRITE_BIRD_KEEPER, 32,  3, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerRanch_2, -1
+	person_event SPRITE_BEAUTY, 16, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_3, -1
+	person_event SPRITE_BUG_CATCHER, 10, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_4, -1
+	person_event SPRITE_BIRD_KEEPER,  7, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRanch_5, -1
+	object_event 19, 52, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 17, 50, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	fruittree_event 12,  8, FRUITTREE_ROUTE_9, ASPEAR_BERRY
 
 
 Route9MapSignThing::

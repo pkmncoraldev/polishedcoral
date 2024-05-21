@@ -4,7 +4,7 @@ SunsetLighthouseTop_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 3 ; warp events
-	warp_event 17,  0, SUNSET_LIGHTHOUSE_ELEVATOR, 1
+	warp_event 18,  0, SUNSET_LIGHTHOUSE_ELEVATOR, 1
 	warp_event 15,  3, SUNSET_LIGHTHOUSE_TOP, 3
 	warp_event  6,  7, SUNSET_LIGHTHOUSE_TOP, 2
 

@@ -734,7 +734,7 @@
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, MEDITITE		;30%
-	db 16, RALTS		;30%
+	db 16, DROWZEE		;30%
 	db 18, PIDGEOTTO	;20%
 	db 18, SWABLU		;10%
 	db 18, RATTATA		;5%
@@ -742,7 +742,7 @@
 	db 18, RATTATA		;1%
 	; day
 	db 18, MEDITITE		;30%
-	db 16, RALTS		;30%
+	db 16, DROWZEE		;30%
 	db 18, PIDGEOTTO	;20%
 	db 18, SWABLU		;10%
 	db 18, RATTATA		;5%
@@ -750,7 +750,7 @@
 	db 18, RATTATA		;1%
 	; nite
 	db 18, MEDITITE		;30%
-	db 16, RALTS		;30%
+	db 16, DROWZEE		;30%
 	db 18, PIDGEOTTO	;20%
 	db 18, SWABLU		;10%
 	db 18, RATTATA		;5%
@@ -1600,25 +1600,25 @@
 	; morn
 	db 24, VOLTORB		;30%
 	db 24, MAGNEMITE	;30%
-	db 24, KIRLIA		;20%
+	db 24, DROWZEE		;20%
 	db 24, VOLTORB		;10%
-	db 24, KIRLIA		;5%
+	db 24, DROWZEE		;5%
 	db 24, MAGNETON		;4%
 	db 24, MAGNETON		;1%
 	; day
 	db 24, VOLTORB		;30%
 	db 24, MAGNEMITE	;30%
-	db 24, KIRLIA		;20%
+	db 24, DROWZEE		;20%
 	db 24, VOLTORB		;10%
-	db 24, KIRLIA		;5%
+	db 24, DROWZEE		;5%
 	db 24, MAGNETON		;4%
 	db 24, MAGNETON		;1%
 	; nite
 	db 24, VOLTORB		;30%
 	db 24, MAGNEMITE	;30%
-	db 24, KIRLIA		;20%
+	db 24, DROWZEE		;20%
 	db 24, VOLTORB		;10%
-	db 24, KIRLIA		;5%
+	db 24, DROWZEE		;5%
 	db 24, MAGNETON		;4%
 	db 24, MAGNETON		;1%
 	

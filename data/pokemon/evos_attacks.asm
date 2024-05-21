@@ -1105,11 +1105,38 @@ DrowzeeEvosAttacks:
 	db EVOLVE_LEVEL, 26, HYPNO ;WHISCASH
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, SING_HYPNOSIS
+	db 5, DISABLE
+	db 9, CONFUSION
+	db 20, HEADBUTT
+	db 26, SHARPEN_HOWL_MEDITATE
+	db 30, PSYBEAM
+	db 35, ZEN_HEADBUTT
+	db 41, SWAGGER
+	db 50, PSYCHIC_M
+	db 53, NASTY_PLOT
+	db 57, PSYSHOCK
+	db 61, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 	
 HypnoEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, NASTY_PLOT
+	db 1, DREAM_EATER
+	db 1, FUTURE_SIGHT
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, SING_HYPNOSIS
+	db 5, DISABLE
+	db 9, CONFUSION
+	db 20, HEADBUTT
+	db 26, SHARPEN_HOWL_MEDITATE
+	db 30, PSYBEAM
+	db 35, ZEN_HEADBUTT
+	db 41, SWAGGER
+	db 50, PSYCHIC_M
+	db 53, NASTY_PLOT
+	db 57, PSYSHOCK
+	db 61, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
 VoltorbEvosAttacks:

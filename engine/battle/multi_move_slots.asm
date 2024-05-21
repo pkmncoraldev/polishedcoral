@@ -2303,6 +2303,8 @@ PoundUsers:
 	db SNORUNT
 	db GLALIE
 	db FROSLASS
+	db DROWZEE
+	db HYPNO
 	db -1
 	
 ScratchUsers:
@@ -2404,6 +2406,8 @@ AcidArmorUsers:
 MeditateUsers:
 	db MEDITITE
 	db MEDICHAM
+	db DROWZEE
+	db HYPNO
 	db -1
 	
 HowlUsers:
@@ -2638,11 +2642,9 @@ HypnosisUsers:
 	db EXEGGUTOR
 	db STANTLER
 	db WYRDEER
-	db RALTS
-	db KIRLIA
-	db GARDEVOIR
-	db GALLADE
 	db SPIRITOMB
+	db DROWZEE
+	db HYPNO
 	db -1
 	
 TackleNames:

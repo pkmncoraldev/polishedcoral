@@ -2263,12 +2263,12 @@ GruntFGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 31, KIRLIA
-		db PSYCHIC_M, CALM_MIND, WISH, SAFEGUARD
-	db 32, DODUO
-		db FLAIL, MIRROR_MOVE, AGILITY_ROCK_POLISH, DOUBLE_HIT
-	db 33, LEDIAN
+	db 34, LEDIAN
 		db LIGHT_SCREEN, REFLECT, SIGNAL_BEAM, 0
+	db 31, HYPNO
+		db PSYBEAM, SHARPEN_HOWL_MEDITATE, HEADBUTT, SING_HYPNOSIS
+	db 34, DODUO
+		db FLAIL, MIRROR_MOVE, AGILITY_ROCK_POLISH, DOUBLE_HIT
 	db -1 ; end
 
 ; ================
@@ -2506,9 +2506,8 @@ PokemaniacGroup:
 	db "THOMAS@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 25, MEDITITE
-	db 26, RALTS
-	db 25, KIRLIA
+	db 27, MEDITITE
+	db 26, DROWZEE
 	db -1 ; end
 
 ; ================
@@ -2725,8 +2724,8 @@ BeautyGroup:
 	db "BRITNEY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 23, RALTS
-	db 21, KIRLIA
+	db 21, RATICATE
+	db 21, DROWZEE
 	db -1 ; end
 
 ; ================
@@ -2940,9 +2939,8 @@ JugglerGroup:
 	db "ERNIE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 17, SWABLU
-	db 20, RALTS
-	db 16, MEDITITE
+	db 18, SWABLU
+	db 16, DROWZEE
 	db -1 ; end
 
 ; ================

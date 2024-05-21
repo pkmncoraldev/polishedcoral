@@ -3070,6 +3070,7 @@ HandleEventsEscapeRope:
 	clearevent EVENT_SNOWSTORM_HAPPENING
 	clearevent EVENT_SANDSTORM_HAPPENING
 	clearevent EVENT_AIRPORT_FENCE
+	clearevent EVENT_CAPE_LIGHTHOUSE_COLORS
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	domaptrigger SUNSET_CAPE, $0
 	domaptrigger ROUTE_10, $0
@@ -3080,6 +3081,7 @@ HandleEventsEscapeRope:
 	domaptrigger LUSTER_SEWERS_B2F, $0
 	domaptrigger CONNECTING_CAVERN, $0
 	domaptrigger KOMORE_COMMUNITY_CENTER, $0
+	domaptrigger SUNSET_CAPE, $0
 	clearevent EVENT_ON_DODRIO_RANCH
 	clearevent EVENT_AT_AIRPORT
 	clearevent EVENT_SET_ROUTE_27

@@ -5,7 +5,8 @@ Route1Gate_MapScriptHeader:
 	scene_script Route1GateTrigger1
 	scene_script Route1GateTrigger2
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, Route1GateCallback
 
 	db 4 ; warp events
 	warp_event  3,  0, ROUTE_1, 1
@@ -35,6 +36,11 @@ Route1GateTrigger1:
 	
 Route1GateTrigger2:
 	end
+
+Route1GateCallback:
+	clearevent EVENT_CAPE_LIGHTHOUSE_COLORS
+	domaptrigger SUNSET_CAPE, $0
+	return
 
 Route1OfficerScript1:
 	faceplayer

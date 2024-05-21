@@ -1634,6 +1634,8 @@ LoadMapPals::
 	call .copy_single_pal_to_pal_7
 	jp .outside
 .lighthouse
+	eventflagcheck EVENT_CAPE_LIGHTHOUSE_COLORS
+	jp z, .got_pals_cont
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes

@@ -10,7 +10,19 @@ SunsetCape_MapScriptHeader:
 	warp_event  5,  5, ROUTE_1_GATE, 4
 	warp_event 15, 15, DAYBREAK_GROTTO_3, 4
 
-	db 0 ; coord events
+	db 12 ; coord events
+	coord_event  6, 17, 0, SunsetCapeMakeSilverLighthouse
+	coord_event  7, 17, 0, SunsetCapeMakeSilverLighthouse
+	coord_event  8, 17, 0, SunsetCapeMakeSilverLighthouse
+	coord_event  9, 17, 0, SunsetCapeMakeSilverLighthouse
+	coord_event  6, 18, 0, SunsetCapeMakeSilverLighthouse
+	coord_event  7, 18, 0, SunsetCapeMakeSilverLighthouse
+	coord_event  6, 15, 1, SunsetCapeMakeSilverGreen
+	coord_event  7, 15, 1, SunsetCapeMakeSilverGreen
+	coord_event  6, 16, 1, SunsetCapeMakeSilverGreen
+	coord_event  7, 16, 1, SunsetCapeMakeSilverGreen
+	coord_event  8, 16, 1, SunsetCapeMakeSilverGreen
+	coord_event  9, 16, 1, SunsetCapeMakeSilverGreen
 
 	db 2 ; bg events
 	signpost  8,  6, SIGNPOST_READ, SunsetCapeSign
@@ -24,7 +36,7 @@ SunsetCape_MapScriptHeader:
 	person_event SPRITE_CUTE_GIRL, 33,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, 1<<NITE, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunsetCapeNpc4, -1
 	person_event SPRITE_SWIMMER_GIRL, 32, 16, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerSunsetCape, -1
 	itemball_event  1, 25, POKE_BALL, 1, EVENT_SUNSET_CAPE_POKE_BALL
-	fruittreeinvis_event 16, 12, FRUITTREE_SUNSET_CAPE, ORAN_BERRY
+	fruittree_event 16, 12, FRUITTREE_SUNSET_CAPE, ORAN_BERRY
 	person_event SPRITE_LIGHTHOUSE, 22,  2, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_LIGHTHOUSE, 22,  4, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_LIGHTHOUSE, 25,  4, SPRITEMOVEDATA_LIGHTHOUSE_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
@@ -58,6 +70,18 @@ SunsetCapeTrigger0:
 	end
 	
 SunsetCapeTrigger1:
+	end
+	
+SunsetCapeMakeSilverLighthouse:
+	setevent EVENT_CAPE_LIGHTHOUSE_COLORS
+	special Special_UpdatePalsInstant
+	dotrigger $1
+	end
+	
+SunsetCapeMakeSilverGreen:
+	clearevent EVENT_CAPE_LIGHTHOUSE_COLORS
+	special Special_UpdatePalsInstant
+	dotrigger $0
 	end
 	
 SunsetCapeNpc1:

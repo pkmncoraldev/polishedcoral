@@ -1,7 +1,8 @@
 DaybreakGrotto3_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, DaybreakGrotto3Callback
 
 	db 8 ; warp events
 	warp_event 13,  5, DAYBREAK_GROTTO_1, 3
@@ -23,6 +24,10 @@ DaybreakGrotto3_MapScriptHeader:
 
 	db 0 ; object events
 
+DaybreakGrotto3Callback:
+	clearevent EVENT_CAPE_LIGHTHOUSE_COLORS
+	domaptrigger SUNSET_CAPE, $0
+	return
 
 DaybreakGrotto3CurrentText:
 	text "The current here"

@@ -155,7 +155,7 @@ DuskAutoLobbyNPC4Text:
 	done
 	
 SetUpBikeUpgradeStepsAsm:
-	ld a, 5
+	ld a, 250
 	ld [wBikeUpgradeSteps], a
 	ret
 	
@@ -364,6 +364,11 @@ DuskAutoLobbyGuyText4:
 	line "brother,"
 	cont "didn't you?"
 	
+	para "He was lost in"
+	line "EVENTIDE FOREST"
+	cont "and you guided"
+	cont "him home."
+	
 	para "My MOM explained"
 	line "everything."
 	
@@ -393,6 +398,11 @@ DuskAutoLobbyGuyText5:
 	para "You helped my kid"
 	line "brother,"
 	cont "didn't you?"
+	
+	para "He was lost in"
+	line "EVENTIDE FOREST"
+	cont "and you guided"
+	cont "him home."
 	
 	para "My MOM explained"
 	line "everything."
@@ -429,7 +439,8 @@ DuskAutoLobbyGuyText7:
 	line "awhile, so feel"
 	cont "free to take care"
 	cont "of anything you"
-	cont "need to."
+	cont "need to do in the"
+	cont "meantime."
 	done
 	
 DuskAutoLobbyGuyText8:
@@ -457,7 +468,8 @@ DuskAutoLobbyGuyTextSaidYesText:
 	line "awhile, so feel"
 	cont "free to take care"
 	cont "of anything you"
-	cont "need to."
+	cont "need to do in the"
+	cont "meantime."
 	done
 	
 DuskAutoLobbyGuyTextSaidNoText:

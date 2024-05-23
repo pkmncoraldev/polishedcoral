@@ -1246,9 +1246,9 @@ DoPollenStep:
 	ret
 	
 DoBikeUpgradeStep:
-	ld de, EVENT_BEAT_LEILANI
-	call CheckEventFlag
-	ret z
+;	ld de, EVENT_BEAT_LEILANI
+;	call CheckEventFlag
+;	ret z
 	
 	ld a, [wBikeUpgradeSteps]
 	and a

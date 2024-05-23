@@ -284,7 +284,13 @@ LusterTrainStationText1:
 LusterTrainStationReporterText1:
 	text "This is JACKIE"
 	line "VALENTINE with"
-	cont "LUSTER NEWS!"
+	cont "ONWA NEWS!"
+	
+	para "A train hijacked"
+	line "by the notorious"
+	cont "TEAM SNARE has"
+	cont "arrived safely at"
+	cont "the station."
 	
 	para "I'm here with the"
 	line "conductor of the"
@@ -306,7 +312,7 @@ LusterTrainStationReporterText3:
 	line "all thanks to this"
 	cont "brave hero!"
 	
-	para "For LUSTER NEWS,"
+	para "For ONWA NEWS,"
 	line "this is JACKIE"
 	cont "VALENTINE."
 	
@@ -405,8 +411,8 @@ LusterStationNettText1:
 	
 	para "…"
 	
-	para "You stopped those"
-	line "thugs, didn't you?"
+	para "You stopped TEAM"
+	line "SNARE, didn't you?"
 	
 	para "I know you did."
 	

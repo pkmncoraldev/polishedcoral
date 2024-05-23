@@ -21,15 +21,17 @@ DaybreakAlexDad:
 	jumptextfaceplayer DaybreakAlexDadText
 
 DaybreakAlexDadText:
-	text "You're one of ALEX's"
-	line "friends, right?"
-
-	para "She's already left"
-	line "for GLINT CITY to"
-	cont "get her first GYM"
-	cont "BADGE."
+	text "I heard a story"
+	line "on the news about"
+	cont "a group causing"
+	cont "trouble and making"
+	cont "violent threats."
 	
-	para "If you see her,"
-	line "tell her I said"
-	cont "hi!"
+	para "They're called"
+	line "“TEAM” something-"
+	cont "or-other."
+	
+	para "Things like this"
+	line "didn't used to"
+	cont "happen here…"
 	done

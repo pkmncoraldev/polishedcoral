@@ -253,7 +253,6 @@ INCLUDE "maps/LusterApartment5_2F.asm"
 INCLUDE "maps/LusterApartment6_1F.asm"
 INCLUDE "maps/LusterApartment6_2F.asm"
 INCLUDE "maps/Route11.asm"
-INCLUDE "maps/Skatepark.asm"
 
 SECTION "Luster City Scripts2", ROMX
 
@@ -280,6 +279,7 @@ INCLUDE "maps/LusterSkyscraper2_Elevator.asm"
 INCLUDE "maps/LusterSkyscraperB1F.asm"
 INCLUDE "maps/Route11Gate.asm"
 INCLUDE "maps/Route12Gate.asm"
+INCLUDE "maps/Skatepark.asm"
 
 SECTION "Nett Building Scripts", ROMX
 

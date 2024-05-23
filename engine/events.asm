@@ -1265,7 +1265,12 @@ DoBikeUpgradeStep:
 	ret
 	
 AutoShopSpecialCallScript:
+	checkevent EVENT_MOM_CALLED_ABOUT_TEAM_SNARE
+	iffalse .mom
 	specialphonecall SPECIALCALL_COMEGETUPGRADEDBIKE
+	end
+.mom
+	specialphonecall SPECIALCALL_MOMCALLABOUTTEAMSNARE
 	end
 	
 DoTorchStep: ; 96bd7

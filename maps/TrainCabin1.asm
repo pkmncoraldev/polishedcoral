@@ -757,6 +757,9 @@ TrainCabin1NPC3Text2:
 	para "I've heard of these"
 	line "guys."
 	
+	para "They've been all"
+	line "over the news!"
+	
 	para "What a bunch of"
 	line "lowlifes…"
 	done

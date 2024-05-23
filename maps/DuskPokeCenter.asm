@@ -43,9 +43,13 @@ DuskPokeCenterNPC1Text:
 	cont "vice versa, do so"
 	cont "via the ocean."
 	
+	para "There's also"
+	line "ROUTE 23 down the"
+	cont "highway."
+	
 	para "But apparently"
-	line "there's another"
-	cont "way."
+	line "there's a third"
+	cont "way…"
 	done
 	
 DuskPokeCenterNPC2Text:

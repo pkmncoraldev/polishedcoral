@@ -33,13 +33,27 @@ AutoPhoneScript:
 	end
 ; Mom
 
+CallingMomCheckPlayerRoomAsm:
+	xor a
+	ld [wScriptVar], a
+	ld a, [wMapGroup]
+	cp GROUP_PLAYER_HOUSE_2F
+	ret nz
+	ld a, [wMapNumber]
+	cp MAP_PLAYER_HOUSE_2F
+	ret nz
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
 MomPhoneScript: ; 0xbceaa
-	checkevent EVENT_TALKED_TO_MOM
-	iffalse .beginning
-	checkevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
-	iffalse .gogetmon
 	checkcode VAR_SPECIALPHONECALL
 	if_equal SPECIALCALL_MOMCOMEGETTRAINERCARD, .comegettrainercard1
+	if_equal SPECIALCALL_MOMCALLABOUTTEAMSNARE, .teamsnare
+	callasm CallingMomCheckPlayerRoomAsm
+	iftrue .upstairs
+	checkevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
+	iffalse .gogetmon
 	checkevent EVENT_CAN_CALL_TRAINER_CARD
 	iftrue .comegettrainercard2
 	checkevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
@@ -52,12 +66,18 @@ MomPhoneScript: ; 0xbceaa
 	farwritetext MomPhoneNormalText
 	end
 
-.beginning
+.upstairs
 	farwritetext MomPhoneBeginningText
 	end
 
 .gogetmon
 	farwritetext SunsetMomText2
+	end
+	
+.teamsnare
+	farwritetext MomTeamSnareText
+	setevent EVENT_MOM_CALLED_ABOUT_TEAM_SNARE
+	specialphonecall SPECIALCALL_NONE
 	end
 
 .callaboutisland1

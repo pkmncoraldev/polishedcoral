@@ -48,13 +48,7 @@ GlintApt22FNpc2:
 	jumptext GlintApt22FNpc2Text3
 	
 GlintApt22FNpc1Text:
-	text "GLINT CITY is nice"
-	line "and all,"
-	
-	para "but I want to go"
-	line "somewhere bigger!"
-	
-	para "I've always dreamed"
+	text "I've always dreamed"
 	line "of living in"
 	cont "LUSTER CITY."
 	
@@ -63,6 +57,11 @@ GlintApt22FNpc1Text:
 	cont "with a GYM and a"
 	cont "#MON CENTER in"
 	cont "it!"
+	
+	para "Maybe I can move"
+	line "there and get a"
+	cont "job at the NETT"
+	cont "BUILDING."
 	done
 	
 GlintApt22FNpc2Text1:

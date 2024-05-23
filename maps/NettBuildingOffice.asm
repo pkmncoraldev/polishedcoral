@@ -291,6 +291,41 @@ NettBuildingOfficeNettText2:
 	
 	para "…"
 	
+	para "The people of the"
+	line "ONWA REGION have"
+	cont "always lived in"
+	cont "relative peace"
+	cont "and security."
+	
+	para "Of course there"
+	line "has always been"
+	cont "petty crime,"
+	
+	para "but generally"
+	line "speaking, people"
+	cont "have felt safe."
+	
+	para "Recently, however,"
+	line "things feel like"
+	cont "they've begun to"
+	cont "shift."
+	
+	para "Reports of thugs"
+	line "stealing #MON,"
+	cont "hijacking trains."
+	
+	para "People have begun"
+	line "to fear for their"
+	cont "safety."
+	
+	para "TEAM SNARE…"
+	
+	para "They aren't just"
+	line "an ordinary band"
+	cont "of thugs…"
+	
+	para "…"
+	
 	para "My father founded"
 	line "NETT CORP. with a"
 	cont "noble goal."
@@ -314,7 +349,6 @@ NettBuildingOfficeNettText2:
 	para "I've tried my best"
 	line "to carry on that"
 	cont "philosophy."
-	
 	done
 	
 NettBuildingOfficeNettText3:

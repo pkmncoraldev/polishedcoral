@@ -157,3 +157,28 @@ MomPhoneComeGetTrainerCard2Text:
 	line "honey!"
 	done
 	
+MomTeamSnareText:
+	text "Hi, sweetie!"
+	line "It's MOM!"
+	
+	para "I saw on the news"
+	line "a story of a group"
+	cont "called TEAM SNARE."
+	
+	para "They've been making"
+	line "lots of trouble"
+	cont "and terrorizing"
+	cont "#MON TRAINERS."
+	
+	para "Oh, what's going on"
+	line "in the world these"
+	cont "days?"
+	
+	para "This kind of thing"
+	line "never used to"
+	cont "happen…"
+	
+	para "Stay safe out"
+	line "there, OK honey?"
+	done
+	

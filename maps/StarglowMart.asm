@@ -34,12 +34,17 @@ StarglowMartNPC1Text:
 	done
 	
 StarglowMartNPC2Text:
-	text "This town's MART"
-	line "doesn't sell"
-	cont "GREAT BALLS?"
+	text "Have you heard of"
+	line "NETT CORPORATION?"
 	
-	para "I guess I'll have"
-	line "to take the trek"
-	cont "over to the next"
-	cont "town."
+	para "They're a big tech"
+	line "company that makes"
+	cont "items that every"
+	cont "TRAINER uses."
+	
+	para "#BALLS, REPEL,"
+	line "that sorta thing."
+	
+	para "Their headquarters"
+	line "is in LUSTER CITY."
 	done

@@ -30,20 +30,21 @@ DaybreakMarcusHouseBreloom:
 	end
 
 DaybreakMarcusMomText:
-	text "Hi <PLAYER>!"
+	text "My son just got"
+	line "his first #MON!"
 	
-	para "MARCUS already"
-	line "left for the first"
-	cont "GYM to the north."
+	para "He's already left"
+	line "for his first GYM"
+	cont "in GLINT CITY to"
+	cont "the NORTH."
 	
 	para "I know the GYM's"
 	line "type is NORMAL."
 	
 	para "If only I could"
 	line "remember what"
-	
-	para "NORMAL was weak"
-	line "to…"
+	cont "NORMAL was weak"
+	cont "to…"
 	done
 
 DaybreakMarcusHouseBreloomText:

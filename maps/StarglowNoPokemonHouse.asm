@@ -37,8 +37,8 @@ StarglowHouse2NPC:
 
 StarglowHouse2NPCText:
 	text "Those guys were"
-	line "trying to take my"
-	cont "#MON?"
+	line "TEAM SNARE, weren't"
+	cont "they?"
 	
 	para "Joke's on them!"
 	

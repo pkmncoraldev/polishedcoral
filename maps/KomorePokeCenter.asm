@@ -95,7 +95,7 @@ KomorePokeCenterMushroomGuy:
 	yesorno
 	iffalse .no
 	playsound SFX_TRANSACTION
-	givemoney $0, 25000
+	givemoney $0, 10000
 	takeitem BALMMUSHROOM
 	special PlaceMoneyTopRight
 	pause 15
@@ -108,7 +108,7 @@ KomorePokeCenterMushroomGuy:
 	yesorno
 	iffalse .no
 	playsound SFX_TRANSACTION
-	givemoney $0, 5000
+	givemoney $0, 2500
 	takeitem BIG_MUSHROOM
 	special PlaceMoneyTopRight
 	pause 15
@@ -121,7 +121,7 @@ KomorePokeCenterMushroomGuy:
 	yesorno
 	iffalse .no
 	playsound SFX_TRANSACTION
-	givemoney $0, 1000
+	givemoney $0, 500
 	takeitem TINYMUSHROOM
 	special PlaceMoneyTopRight
 	pause 15
@@ -185,7 +185,7 @@ KomorePokeCenterMushroomGuyText5:
 	line "TINYMUSHROOM."
 	
 	para "I'll buy it for"
-	line "¥1000!"
+	line "¥500!"
 	done
 	
 KomorePokeCenterMushroomGuyText6:
@@ -195,7 +195,7 @@ KomorePokeCenterMushroomGuyText6:
 	line "BIG MUSHROOM!"
 	
 	para "I'll buy it for"
-	line "¥5000!"
+	line "¥2500!"
 	done
 	
 KomorePokeCenterMushroomGuyText7:
@@ -205,7 +205,7 @@ KomorePokeCenterMushroomGuyText7:
 	line "BALMMUSHROOM!"
 	
 	para "I'll buy it for"
-	line "¥25,000!"
+	line "¥10,000!"
 	done
 	
 KomorePokeCenterMushroomGuyText8:

@@ -102,26 +102,16 @@ GetMonMenuString: ; 24db0
 	ld a, [hli]
 	cp MONMENU_MENUOPTION
 	jr z, .NotMove
-	cp MONMENU_FIELD_MOVE2
-	jr z, .MultiMove
-	inc hl
-	ld a, [hl]
-	ld [wd265], a
-	jp GetMoveName
-
-.MultiMove:
+;	cp MONMENU_FIELD_MOVE2
+;	jr z, .MultiMove
 	inc hl
 	ld a, [hl]
 	cp SOFTBOILED_MILK_DRINK_RECOVER
 	jr z, .softboiled_milkdrink
 	cp SAND_ATTACK_SMOKESCREEN_FLASH
 	jr z, .flash
-	dec a
-	ld hl, MonMenuOptionStrings
-	call GetNthString
-	ld d, h
-	ld e, l
-	ret
+	ld [wd265], a
+	jp GetMoveName
 .NotMove:
 	inc hl
 	ld a, [hl]
@@ -228,26 +218,17 @@ IsFieldMove: ; 24e52
 	ret z
 	cp MONMENU_MENUOPTION
 	ret z
-	cp MONMENU_FIELD_MOVE2
-	jr z, .multimove
 	ld d, [hl]
 	inc hl
 	ld a, [hli]
-	cp b
-	jr nz, .next
-	ld a, d
-	scf
-	ret
-.multimove
-	ld d, [hl]
-	inc hl
-	ld a, [hl]
 	cp b
 	jr nz, .next
 	cp SOFTBOILED_MILK_DRINK_RECOVER
 	jr z, .softboiled_milkdrink
 	cp SAND_ATTACK_SMOKESCREEN_FLASH
 	jr z, .flash
+	ld a, d
+	scf
 	ret
 .softboiled_milkdrink
 	push de
@@ -256,13 +237,13 @@ IsFieldMove: ; 24e52
 	farcall CheckSoftboiledUsers
 	jr c, .yes
 	pop de
-	ret
+	jr .next
 .flash
 	push de
 	farcall CheckFlashUsers
 	jr c, .yes
 	pop de
-	ret
+	jr .next
 .yes
 	pop de
 	ld a, d

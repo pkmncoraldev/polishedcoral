@@ -32,7 +32,7 @@ TMHMMoves:
 	db METAL_CLAW                          ; TM31
 	db DOUBLE_TEAM                         ; TM32
 	db REFLECT                             ; TM33
-	db FLASH_CANNON                        ; TM34
+	db DIVE                        ; TM34
 	db FLAMETHROWER                        ; TM35
 	db SLUDGE_BOMB                         ; TM36
 	db SANDSTORM                           ; TM37
@@ -82,7 +82,7 @@ TMHMMoves:
 	db FLY                                 ; HM02
 	db SURF                                ; HM03
 	db STRENGTH                            ; HM04
-	db DIVE		                           ; HM05
+	db FLASH_CANNON		                           ; HM05
 	db WATERFALL                           ; HM06
 	db ROCK_SMASH                          ; HM07 (Glint Apartments)
 	db ROCK_CLIMB                          ; HM08

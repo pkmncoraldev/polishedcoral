@@ -56,7 +56,7 @@ ENDM
 	add_tm METAL_CLAW		; $1e
 	add_tm DOUBLE_TEAM		; $1f
 	add_tm REFLECT			; $20
-	add_tm FLASH_CANNON		; $21
+	add_tm DIVE		; $21
 	add_tm FLAMETHROWER		; $22
 	add_tm SLUDGE_BOMB		; $23
 	add_tm SANDSTORM		; $24
@@ -107,7 +107,7 @@ NUM_TMS = const_value - TM01
 	add_hm FLY			; $4f
 	add_hm SURF			; $50
 	add_hm STRENGTH		; $51
-	add_hm DIVE			; $52
+	add_hm FLASH_CANNON			; $52
 	add_hm WATERFALL	; $53
 	add_hm ROCK_SMASH	; $54
 	add_hm ROCK_CLIMB	;55

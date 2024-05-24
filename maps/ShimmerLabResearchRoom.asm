@@ -94,9 +94,9 @@ ShimmerLabResearchRoomProf:
 	opentext
 	writetext ShimmerLabResearchRoomProfText8
 	buttonsound
-	verbosegivetmhm HM_DIVE
-	setevent EVENT_GOT_HM05_DIVE
-	setflag ENGINE_GOT_DIVE
+	verbosegivetmhm TM_DIVE
+;	setevent EVENT_GOT_HM05_DIVE
+;	setflag ENGINE_GOT_DIVE
 	writetext ShimmerLabResearchRoomProfText9
 	buttonsound
 	farwritetext StdBlankText
@@ -300,21 +300,21 @@ ShimmerLabResearchRoomProfText8:
 	done
 	
 ShimmerLabResearchRoomProfText9:
-	text "That HM contains"
+	text "That TM contains"
 	line "the move DIVE."
 	
 	para "It allows you to"
 	line "dive underwater"
 	cont "at certain spots."
 	
-	para "To use it outside"
-	line "of battle, you'll"
-	cont "need a BADGE from"
-	cont "RADIANT TOWN."
+	para "Since it isn't an"
+	line "HM, you do need to"
+	cont "teach it to your"
+	cont "#MON to use it"
+	cont "outside of battle."
 	
-	para "It's a little town"
-	line "to the SOUTHEAST"
-	cont "of here."
+	para "However, you don't"
+	line "a badge."
 	done
 	
 ShimmerLabResearchRoomProfText10:

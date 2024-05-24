@@ -1708,12 +1708,6 @@ DiveFunction: ; cade
 	ret
 
 .TryDive: ; cae7
-	ld de, ENGINE_SEVENTHBADGE
-	farcall CheckBadge
-	ld a, $80
-	ret c
-	call CheckMapCanDive
-	jr c, .failed
 	ld hl, Script_DiveFromMenu
 	call QueueScript
 	ld a, $81
@@ -1722,20 +1716,6 @@ DiveFunction: ; cade
 .failed
 	call FieldMoveFailed
 	ld a, $80
-	ret
-
-CheckMapCanDive:
-; I have literally 0 idea why this needs to be here.
-; It just won't work without it. Even if I xor a or scf by itself it doesnt work. It HAS to have the [wTileUp] check...
-; I gave it a tile that will never be nearby.
-	ld a, [wTileUp]
-	cp COLL_DODRIO_JUMP
-	jr nz, .failed
-	xor a
-	ret
-
-.failed
-	scf
 	ret
 	
 CheckIfUnderwaterAsm:
@@ -1790,6 +1770,7 @@ TryDiveOW:: ; cb56
 	jr nz, .debugdive
 
 	call HasDive
+	cp 0
 	jr z, .no
 	ld a, [wTileset]
 	cp TILESET_DIVE
@@ -1888,28 +1869,15 @@ DebugDive:
 	
 HasDive: ; cf7c
 	ld d, DIVE
-	call CheckPartyCanLearnMove
-	jr c, .no
-	
-	ld de, ENGINE_GOT_DIVE
-	call CheckEngineFlag
-	jr c, .no
-	
-	ld de, ENGINE_SEVENTHBADGE
-	call CheckEngineFlag
-	jr c, .no
-	
-	call CheckMapCanDive
+	call CheckPartyMove
 	jr c, .no
 	
 .yes
-	xor a
-	jr .done
+	ld a, 1
+	ret
 
 .no
-	ld a, 1
-.done
-	ld [wScriptVar], a
+	xor a
 	ret
 	
 RockClimbFunction: ; cade

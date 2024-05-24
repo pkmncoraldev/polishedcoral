@@ -456,6 +456,7 @@ PlayerHouseDebugPoster:
 	givetmhm TM_DIG
 	givetmhm TM_METAL_CLAW
 	givetmhm TM_REFLECT
+	givetmhm TM_DIVE
 	givetmhm TM_FIRE_BLAST
 	givetmhm TM_FAKE_OUT
 	givetmhm TM_SUBSTITUTE
@@ -474,7 +475,7 @@ PlayerHouseDebugPoster:
 	givetmhm HM_SURF
 	givetmhm HM_ROCK_SMASH
 	givetmhm HM_ROCK_CLIMB
-	givetmhm HM_DIVE
+;	givetmhm HM_DIVE
 	givetmhm HM_STRENGTH
 	setflag ENGINE_FLYPOINT_HOME
 	setflag ENGINE_FLYPOINT_SUNSET

@@ -3843,7 +3843,7 @@ ListMoves: ; 50d6f
 	farcall GetRoarName
 	jr .cont
 .not_roar
-	cp SAND_ATTACK_SMOKESCREEN
+	cp SAND_ATTACK_SMOKESCREEN_FLASH
 	jr nz, .not_sand_attack
 	farcall GetSandAttackName
 	jr .cont

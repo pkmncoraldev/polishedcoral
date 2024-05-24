@@ -106,7 +106,7 @@ MoveNames::
 	db "BULLDOZE@"
 	db "ROCK BLAST@"
 	db "MINIMIZE@"
-	db "ERROR!@" ; SAND_ATTACK_SMOKESCREEN
+	db "FLASH@" ; SAND_ATTACK_SMOKESCREEN_FLASH - name defined for TM
 	db "CONFUSE RAY@"
 	db "AQUA TAIL@"
 	db "ERROR!@" ; DEFENSE_CURL_HARDEN_WITHDRAW
@@ -130,7 +130,7 @@ MoveNames::
 	db "SWIFT@"
 	db "MIRROR MOVE@"
 	db "ROCK WRECKER@"
-	db "WORK UP@" ; WORK_UP_GROWTH
+	db "WORK UP@" ; WORK_UP_GROWTH - name defined for TM
 	db "AMNESIA@"
 	db "ROOST@"
 	db "ERROR!@" ; SOFTBOILED_MILK_DRINK_RECOVER

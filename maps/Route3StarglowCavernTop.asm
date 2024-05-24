@@ -127,7 +127,7 @@ Route3StarglowCavernTopPatches:
 	clearevent EVENT_PATCHES_MODE
 	writetext Route3StarglowCavernTopPatchesDoneCaveText2
 	waitbutton
-	verbosegivetmhm TM_FLASH
+	verbosegivetmhm TM_SAND_ATTACK_SMOKESCREEN_FLASH
 	setevent EVENT_HAVE_FLASH
 	writetext Route3StarglowCavernTopPatchesDoneCaveText3
 	yesorno

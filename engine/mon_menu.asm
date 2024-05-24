@@ -114,6 +114,8 @@ GetMonMenuString: ; 24db0
 	ld a, [hl]
 	cp SOFTBOILED_MILK_DRINK_RECOVER
 	jr z, .softboiled_milkdrink
+	cp SAND_ATTACK_SMOKESCREEN_FLASH
+	jr z, .flash
 	dec a
 	ld hl, MonMenuOptionStrings
 	call GetNthString
@@ -131,6 +133,10 @@ GetMonMenuString: ; 24db0
 	ret
 .softboiled_milkdrink
 	farcall GetSoftboiledName
+	ld de, wStringBuffer1
+	ret
+.flash
+	farcall GetSandAttackName
 	ld de, wStringBuffer1
 	ret
 
@@ -240,12 +246,20 @@ IsFieldMove: ; 24e52
 	jr nz, .next
 	cp SOFTBOILED_MILK_DRINK_RECOVER
 	jr z, .softboiled_milkdrink
+	cp SAND_ATTACK_SMOKESCREEN_FLASH
+	jr z, .flash
 	ret
 .softboiled_milkdrink
 	push de
 	farcall CheckMilkDrinkUsers
 	jr c, .yes
 	farcall CheckSoftboiledUsers
+	jr c, .yes
+	pop de
+	ret
+.flash
+	push de
+	farcall CheckFlashUsers
 	jr c, .yes
 	pop de
 	ret

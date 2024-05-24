@@ -117,7 +117,7 @@ Moves:: ; 41afb
 	move BULLDOZE,                 EFFECT_SPEED_DOWN_HIT,     60, GROUND,    100, 20, 100, PHYSICAL
 	move ROCK_BLAST,               EFFECT_MULTI_HIT,          25, ROCK,       90, 25,   0, PHYSICAL
 	move MINIMIZE,                 EFFECT_EVASION_UP_2,        0, NORMAL,    100, 10,   0, STATUS
-	move SAND_ATTACK_SMOKESCREEN,  EFFECT_ACCURACY_DOWN,       0, NORMAL,    100, 20,   0, STATUS ;FLASH
+	move SAND_ATTACK_SMOKESCREEN_FLASH,  EFFECT_ACCURACY_DOWN,       0, NORMAL,    100, 20,   0, STATUS
 	move CONFUSE_RAY,              EFFECT_CONFUSE,             0, GHOST,     100, 10,   0, STATUS
 	move AQUA_TAIL,                EFFECT_NORMAL_HIT,         90, WATER,      90, 10,   0, PHYSICAL
 	move DEFENSE_CURL_HARDEN_WITHDRAW, EFFECT_DEFENSE_CURL,    0, NORMAL,    100, 40,   0, STATUS
@@ -157,7 +157,7 @@ Moves:: ; 41afb
 	move TOXIC_SPIKES,             EFFECT_TOXIC_SPIKES,        0, POISON,    100, 20,   0, STATUS
 	move POISON_FANG,              EFFECT_POISON_FANG,        50, POISON,    100, 15,  50, PHYSICAL
 	move SPORE,                    EFFECT_SLEEP,               0, GRASS,     100, 15,   0, STATUS
-	move FLASH,                    EFFECT_ACCURACY_DOWN,       0, NORMAL,    100, 20,   0, STATUS
+	move UNUSED,                    EFFECT_ACCURACY_DOWN,       0, NORMAL,    100, 20,   0, STATUS
 	move LOCK_ON_MIND_READER,      EFFECT_LOCK_ON,             0, NORMAL,    100,  5,   0, STATUS
 	move CLEAR_SMOG,               EFFECT_CLEAR_SMOG,         50, POISON,    100, 15,   0, SPECIAL
 	move DRAGON_DANCE,             EFFECT_DRAGON_DANCE,        0, DRAGON,    100, 20,   0, STATUS

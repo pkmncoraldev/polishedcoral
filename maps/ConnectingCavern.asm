@@ -45,7 +45,7 @@ ConnectingCavern_MapScriptHeader:
 
 
 ConnectingCavernChangeBlocks:
-	checktmhm TM_FLASH
+	checktmhm TM_SAND_ATTACK_SMOKESCREEN_FLASH
 	iftrue .skip
 	checkevent EVENT_SNARKY_GIRL_1
 	iffalse .skip

@@ -10092,7 +10092,7 @@ CheckUniqueWildMove:
 	ld b, a
 	cp FLY
 	jr z, .TeachMove
-	cp FLASH
+	cp SAND_ATTACK_SMOKESCREEN_FLASH
 	jr z, .TeachMove
 .ChanceToTeach
 	call Random

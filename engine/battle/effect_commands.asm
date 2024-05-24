@@ -2465,7 +2465,7 @@ StatUpDownAnim: ; 34feb
 	farcall CheckScaryFaceThing
 	jr .got_kick_counter
 .not_scary_face
-	cp SAND_ATTACK_SMOKESCREEN
+	cp SAND_ATTACK_SMOKESCREEN_FLASH
 	jr nz, .not_sand_attack
 	farcall CheckSandAttackThing
 	jr .got_kick_counter

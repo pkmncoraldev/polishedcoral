@@ -706,8 +706,8 @@ GetSandAttackName::
 	push bc
 	push de
 
-	call CheckSmokescreenUsers
-	jr nc, .not_smokescreen
+	call CheckFlashUsers
+	jr nc, .not_flash
 	ld hl, SandAttackNames
 	ld a, 0
 	call GetNthString
@@ -715,9 +715,19 @@ GetSandAttackName::
 	ld bc, ITEM_NAME_LENGTH
 	rst CopyBytes
 	jp GetMoveNameDone
-.not_smokescreen
+.not_flash
+	call CheckSmokescreenUsers
+	jr nc, .not_smokescreen
 	ld hl, SandAttackNames
 	ld a, 1
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	jp GetMoveNameDone
+.not_smokescreen
+	ld hl, SandAttackNames
+	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
 	ld bc, ITEM_NAME_LENGTH
@@ -730,16 +740,22 @@ GetMoveNameSandAttack:: ; 34f8
 	push hl
 	push bc
 
-	
-	call CheckSmokescreenUsers
-	jr nc, .not_smokescreen
+	call CheckFlashUsers
+	jr nc, .not_flash
 	ld hl, SandAttackNames
 	ld a, 0
 	jp GetMoveNameDone2
 	
-.not_smokescreen
+.not_flash
+	call CheckSmokescreenUsers
+	jr nc, .not_smokescreen
 	ld hl, SandAttackNames
 	ld a, 1
+	jp GetMoveNameDone2
+	
+.not_smokescreen
+	ld hl, SandAttackNames
+	ld a, 2
 	jp GetMoveNameDone2
 	
 GetSoftboiledName::
@@ -1328,6 +1344,15 @@ CheckWhirlwindUsers2::
 	call IsInArray
 	ret
 	
+CheckFlashUsers::
+	ld a, [wCurPartySpecies]
+	call CheckDitto
+CheckFlashUsers2::
+	ld hl, FlashUsers
+	ld de, 1
+	call IsInArray
+	ret
+	
 CheckSmokescreenUsers::
 	ld a, [wCurPartySpecies]
 	call CheckDitto
@@ -1470,7 +1495,7 @@ GetMultiMoveSlotName2::
 	jr z, .scary_face
 	cp ROAR_WHIRLWIND
 	jr z, .roar
-	cp SAND_ATTACK_SMOKESCREEN
+	cp SAND_ATTACK_SMOKESCREEN_FLASH
 	jr z, .sand_attack
 	cp SOFTBOILED_MILK_DRINK_RECOVER
 	jr z, .softboiled
@@ -1998,24 +2023,46 @@ CheckRoarThing::
 CheckSandAttackThing::
 	ld a, [wMirrorMoveUsed]
 	and a
-	jr z, .skip
+	jr z, .skip1
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
-	jr z, .got_user_species
+	jr z, .got_user_species1
 	ld a, [wBattleMonSpecies]
-	jr .got_user_species
+	jr .got_user_species1
 	
-.skip
+.skip1
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
-	jr z, .got_user_species
+	jr z, .got_user_species1
 	ld a, [wEnemyMonSpecies]
-.got_user_species
+.got_user_species1
+	farcall CheckFlashUsers2
+	jr nc, .not_flash
+	ld a, $1
+	ret
+.not_flash
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species2
+	
+.skip2
+	ld a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wEnemyMonSpecies]
+.got_user_species2
 	farcall CheckSmokescreenUsers2
 	jr nc, .not_smokescreen
-	ld a, $1
+	ld a, $2
 	ret
 .not_smokescreen
 	ret
@@ -2366,6 +2413,7 @@ TailWhipUsers:
 	db NIDOQUEEN
 	db WOOPER
 	db QUAGSIRE
+	db CLODSIRE
 	db MARILL
 	db AZUMARILL
 	db EEVEE
@@ -2516,18 +2564,106 @@ WhirlwindUsers:
 	db NOIVERN
 	db -1
 	
+FlashUsers:
+	db BULBASAUR
+	db IVYSAUR
+	db VENUSAUR
+	db PIKACHU
+	db RAICHU
+	db CLEFAIRY
+	db CLEFABLE
+	db JIGGLYPUFF
+	db WIGGLYTUFF
+	db ODDISH
+	db GLOOM
+	db VILEPLUME
+	db BELLOSSOM
+	db MEOWTH
+	db PERSIAN
+	db SLOWPOKE
+	db SLOWBRO
+	db SLOWKING
+	db MAGNEMITE
+	db MAGNETON
+	db MAGNEZONE
+	db DROWZEE
+	db HYPNO
+	db VOLTORB
+	db ELECTRODE
+	db EXEGGCUTE
+	db EXEGGUTOR
+	db CHANSEY
+	db BLISSEY
+	db STARYU
+	db STARMIE
+	db ELEKID
+	db ELECTABUZZ
+	db ELECTIVIRE
+	db PORYGON
+	db PORYGON2
+	db PORYGON_Z
+	db CHIKORITA
+	db BAYLEEF
+	db MEGANIUM
+	db LEDYBA
+	db LEDIAN
+	db CHINCHOU
+	db LANTURN
+	db TOGEPI
+	db TOGETIC
+	db TOGEKISS
+	db NATU
+	db XATU
+	db MAREEP
+	db FLAAFFY
+	db AMPHAROS
+	db SUNKERN
+	db SUNFLORA
+	db WOOPER
+	db QUAGSIRE
+	db CLODSIRE
+	db GIRAFARIG
+	db FARIGIRAF
+	db SKARMORY
+	db STANTLER
+	db WYRDEER
+	db SHROOMISH
+	db BRELOOM
+	db CACNEA
+	db CACTURNE
+	db SNORUNT
+	db GLALIE
+	db FROSLASS
+	db CHERUBI
+	db CHERRIM
+	db DRIFLOON
+	db DRIFBLIM
+	db SPIRITOMB
+	db SNOVER
+	db ABOMASNOW
+	db COTTONEE
+	db WHIMSICOTT
+	db JOLTIK
+	db GALVANTULA
+	db LITWICK
+	db LAMPENT
+	db CHANDELURE
+	db -1
+	
 SmokescreenUsers:
 	db CHARMANDER
 	db CHARMELEON
 	db CHARIZARD
 	db KOFFING
 	db WEEZING
-	db MAGMAR
 	db MAGBY
+	db MAGMAR
 	db MAGMORTAR
 	db CYNDAQUIL
 	db QUILAVA
 	db TYPHLOSION
+	db SLUGMA
+	db MAGCARGO
 	db -1
 	
 MilkDrinkUsers:
@@ -2719,6 +2855,7 @@ RoarNames:
 	db -1
 	
 SandAttackNames:
+	db "FLASH@"
 	db "SMOKESCREEN@"
 	db "SAND ATTACK@"
 	db -1
@@ -2771,7 +2908,7 @@ MultiSlotMoves:
 	db CHARM_FEATHER_DANCE
 	db SCARY_FACE_COTTON_SPORE_STRING_SHOT
 	db ROAR_WHIRLWIND
-	db SAND_ATTACK_SMOKESCREEN
+	db SAND_ATTACK_SMOKESCREEN_FLASH
 	db SOFTBOILED_MILK_DRINK_RECOVER
 	db FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db AGILITY_ROCK_POLISH
@@ -2796,7 +2933,7 @@ MultiSlotMoveTypes::
 	jr z, .synthesis
 	cp MEAN_LOOK_BLOCK_SPIDER_WEB
 	jp z, .mean_look
-	cp SAND_ATTACK_SMOKESCREEN
+	cp SAND_ATTACK_SMOKESCREEN_FLASH
 	jp z, .sand_attack
 	cp SCARY_FACE_COTTON_SPORE_STRING_SHOT
 	jp z, .scary_face
@@ -2872,6 +3009,11 @@ MultiSlotMoveTypes::
 	
 .sand_attack
 	pop af
+	call CheckFlashUsers
+	jr nc, .not_flash
+	ld a, NORMAL
+	jp MultiSlotMoveTypesFinish
+.not_flash
 	call CheckSmokescreenUsers
 	jr nc, .not_smokescreen
 	ld a, NORMAL

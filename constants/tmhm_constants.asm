@@ -92,7 +92,7 @@ ENDM
 	add_tm FAIRY_WIND		; $42
 	add_tm GIGA_IMPACT		; $43
 	add_tm FIRE_FANG		; $44
-	add_tm FLASH			; $45
+	add_tm SAND_ATTACK_SMOKESCREEN_FLASH			; $45
 	add_tm STONE_EDGE		; $46
 	add_tm ANCIENTPOWER		; $47
 	add_tm THUNDER_WAVE		; $48

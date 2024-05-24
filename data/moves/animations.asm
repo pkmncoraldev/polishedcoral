@@ -5078,7 +5078,8 @@ BattleAnim_SludgeBomb:
 	anim_ret
 
 BattleAnim_SandAttack:
-	anim_jumpif $1, BattleAnim_Smokescreen
+	anim_jumpif $1, BattleAnim_Flash
+	anim_jumpif $2, BattleAnim_Smokescreen
 	anim_1gfx ANIM_GFX_SAND
 	anim_call BattleAnim_MudSlap_branch_cbc5b
 	anim_ret

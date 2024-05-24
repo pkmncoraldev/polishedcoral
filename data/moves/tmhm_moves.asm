@@ -68,7 +68,7 @@ TMHMMoves:
 	db FAIRY_WIND                          ; TM67
 	db GIGA_IMPACT                         ; TM68
 	db THUNDER_FANG                        ; TM69
-	db FLASH                               ; TM70
+	db SAND_ATTACK_SMOKESCREEN_FLASH                               ; TM70
 	db STONE_EDGE                          ; TM71
 	db ANCIENTPOWER                        ; TM72
 	db THUNDER_WAVE                        ; TM73

@@ -107,7 +107,7 @@
 	const BULLDOZE      ; $69
 	const ROCK_BLAST   ; $6a
 	const MINIMIZE     ; $6b
-	const SAND_ATTACK_SMOKESCREEN  				; $6c
+	const SAND_ATTACK_SMOKESCREEN_FLASH  				; $6c
 	const CONFUSE_RAY  ; $6d
 	const AQUA_TAIL    ; $6e
 	const DEFENSE_CURL_HARDEN_WITHDRAW 			; $6f
@@ -147,7 +147,7 @@
 	const TOXIC_SPIKES ; $91
 	const POISON_FANG  ; $92
 	const SPORE        ; $93
-	const FLASH        ; $94 - COMBINE
+	const UNUSED        ; $94 - COMBINE
 	const LOCK_ON_MIND_READER	   				; $95
 	const CLEAR_SMOG   ; $96
 	const DRAGON_DANCE ; $97

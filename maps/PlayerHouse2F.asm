@@ -464,7 +464,7 @@ PlayerHouseDebugPoster:
 	givetmhm TM_WILL_O_WISP
 	givetmhm TM_WORK_UP_GROWTH
 	givetmhm TM_GIGA_IMPACT
-	givetmhm TM_FLASH
+	givetmhm TM_SAND_ATTACK_SMOKESCREEN_FLASH
 	givetmhm TM_ANCIENTPOWER
 	givetmhm TM_THUNDERPUNCH
 	givetmhm TM_FIRE_PUNCH

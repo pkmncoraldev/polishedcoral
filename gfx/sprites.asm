@@ -167,6 +167,7 @@ SwimmerGirlLandSpriteGFX::     INCBIN "gfx/sprites/swimmer_f_land.2bpp.lz"
 SECTION "Overworld Sprites 6", ROMX
 
 GymGuySpriteGFX::              INCBIN "gfx/sprites/gym_guy.2bpp.lz"
+MallCopSpriteGFX::             INCBIN "gfx/sprites/mall_cop.2bpp.lz"
 FishingGuruSpriteGFX::         INCBIN "gfx/sprites/fishing_guru.2bpp.lz"
 GameboyKidSpriteGFX::          INCBIN "gfx/sprites/gameboy_kid.2bpp.lz"
 GamerGirlSpriteGFX::           INCBIN "gfx/sprites/gamer_girl.2bpp.lz"

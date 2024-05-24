@@ -63,7 +63,7 @@ LusterMall_MapScriptHeader:
 	
 
 	db 19 ; object events
-	person_event SPRITE_OFFICER,  5, 17, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_Cop, EVENT_BEAT_MALL_COP
+	person_event SPRITE_MALL_COP,  5, 17, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_Cop, EVENT_BEAT_MALL_COP
 	person_event SPRITE_KOFFING_BEAN,  5, 12, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_KOFFING_BEAN,  5, 13, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_GRANNY,  8, 32, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMall_NPC1, -1
@@ -141,7 +141,7 @@ LusterMallEscalator1:
 	closetext
 	pause 5
 	disappear LUSTERMALLCOP
-	moveperson LUSTERMALLCOP, $0d, $17
+	moveperson LUSTERMALLCOP, $11, $17
 	appear LUSTERMALLCOP
 	applymovement LUSTERMALLCOP, Movement_LusterMallCop1
 	pause 5
@@ -186,7 +186,7 @@ LusterMallEscalator2:
 	closetext
 	pause 5
 	disappear LUSTERMALLCOP
-	moveperson LUSTERMALLCOP, $0d, $17
+	moveperson LUSTERMALLCOP, $11, $17
 	appear LUSTERMALLCOP
 	applymovement LUSTERMALLCOP, Movement_LusterMallCop2
 	pause 5
@@ -231,7 +231,7 @@ LusterMallEscalator3:
 	closetext
 	pause 5
 	disappear LUSTERMALLCOP
-	moveperson LUSTERMALLCOP, $14, $5
+	moveperson LUSTERMALLCOP, $18, $5
 	appear LUSTERMALLCOP
 	applymovement LUSTERMALLCOP, Movement_LusterMallCop3
 	spriteface LUSTERMALLCOP, DOWN
@@ -278,7 +278,7 @@ LusterMallEscalator4:
 	closetext
 	pause 5
 	disappear LUSTERMALLCOP
-	moveperson LUSTERMALLCOP, $14, $5
+	moveperson LUSTERMALLCOP, $18, $5
 	appear LUSTERMALLCOP
 	applymovement LUSTERMALLCOP, Movement_LusterMallCop3
 	applyonemovement LUSTERMALLCOP, step_right

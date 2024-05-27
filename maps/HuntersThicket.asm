@@ -451,7 +451,7 @@ HuntersThicketRangerNoRoomText:
 	done
 
 HuntersThicketDisguiseman:
-	variablesprite SPRITE_DISGUISEMAN, SPRITE_FAT_GUY
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_DISGUISE_MASTER
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	applymovement HUNTERS_THICKET_DISGUISEMAN, Movement_StarglowCavern_DisguiseMan1
 	opentext

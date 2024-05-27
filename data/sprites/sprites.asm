@@ -206,6 +206,8 @@ SpriteHeaders:
 	overworld_sprite LedianRangerFacePoseSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite SwimmerGirlLandSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite MallCopSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite DisguiseMasterGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite TuberWaterSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

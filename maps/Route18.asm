@@ -13,7 +13,7 @@ Route18_MapScriptHeader:
 	db 0 ; bg events
 
 	db 6 ; object events
-	object_event  8, 22, SPRITE_FAT_GUY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route18Disguiseman, EVENT_ROUTE_18_DISGUISEMAN1
+	object_event  8, 22, SPRITE_DISGUISE_MASTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route18Disguiseman, EVENT_ROUTE_18_DISGUISEMAN1
 	object_event  8, 22, SPRITE_DISGUISEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route18Disguiseman, EVENT_ROUTE_18_DISGUISEMAN2
 	person_event SPRITE_BURGLAR, 18, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute18_1, -1
 	person_event SPRITE_DELINQUENT_M, 27, 19, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute18_2, -1
@@ -142,7 +142,7 @@ TrainerRoute18_4:
 	done
 
 Route18Disguiseman:
-	variablesprite SPRITE_DISGUISEMAN, SPRITE_FAT_GUY
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_DISGUISE_MASTER
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	applymovement ROUTE_18_DISGUISEMAN2, Movement_StarglowCavern_DisguiseMan1
 	opentext

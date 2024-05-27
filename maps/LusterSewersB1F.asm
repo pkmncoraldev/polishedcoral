@@ -44,7 +44,7 @@ LusterSewersB1F_MapScriptHeader:
 	
 	
 LusterSewersDisguiseman:
-	variablesprite SPRITE_DISGUISEMAN, SPRITE_FAT_GUY
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_DISGUISE_MASTER
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	applymovement LUSTER_SEWERS_DISGUISEMAN, Movement_StarglowCavern_DisguiseMan1
 	opentext

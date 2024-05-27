@@ -35,7 +35,7 @@ MtOnwaB2FDisguiseman1:
 	
 .disguiseman
 	dotrigger $0
-	variablesprite SPRITE_DISGUISEMAN, SPRITE_FAT_GUY
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_DISGUISE_MASTER
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	applymovement MT_ONWA_B2F_DISGUISEMAN1, Movement_StarglowCavern_DisguiseMan1
 	opentext
@@ -78,7 +78,7 @@ MtOnwaB2FDisguiseman2:
 
 .disguiseman
 	dotrigger $0
-	variablesprite SPRITE_DISGUISEMAN, SPRITE_FAT_GUY
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_DISGUISE_MASTER
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	applymovement MT_ONWA_B2F_DISGUISEMAN2, Movement_StarglowCavern_DisguiseMan1
 	opentext
@@ -112,7 +112,7 @@ MtOnwaB2FDisguiseman2:
 	
 MtOnwaB2FDisguiseManStopsYou:
 	special Special_StopRunning
-	variablesprite SPRITE_DISGUISEMAN, SPRITE_FAT_GUY
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_DISGUISE_MASTER
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	checkevent EVENT_MT_ONWA_B2F_POKE_BALL1
 	iftrue .alt

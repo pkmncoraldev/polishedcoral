@@ -318,8 +318,7 @@ SunbeamBoatHouseNPCText6:
 SunbeamBoatHouseNPCText7:
 	text "Alright."
 	
-	para "We'll head out"
-	line "soon."
+	para "We'll head out."
 	done
 	
 SunbeamBoatHouseNPCTextEnd:
@@ -338,8 +337,7 @@ SunbeamBoatHouseNPCTextNoMoney:
 	cont "free just this"
 	cont "once."
 	
-	para "We'll head out"
-	line "soon."
+	para "We'll head out."
 	done
 	
 SunbeamBoatHouseNPCTextNoMoney2:

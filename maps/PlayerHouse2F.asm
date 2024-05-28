@@ -405,6 +405,7 @@ PlayerHouseDebugPoster:
 	setevent EVENT_KNOW_GRIND
 	callasm FillPokedex
 	callasm UnlockSongs
+	setevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
 .badges
 	writetext PlayerHouseDebugText3
 	yesorno

@@ -27,6 +27,7 @@ Marts: ; 160a9
 	dw LusterMallFurniture
 	dw MooMoos1
 	dw MooMoos2
+	dw ShimmerCafe
 MartsEnd:
 
 
@@ -314,6 +315,14 @@ MooMoos2:
 	db MOOMOO_MILK
 	db FRESH_WATER
 	db BERRY_JUICE
+	db SODA_POP
+	db LEMONADE
+	db -1
+	
+ShimmerCafe:
+	db 4 ; # items
+	db BERRY_JUICE
+	db FRESH_WATER 
 	db SODA_POP
 	db LEMONADE
 	db -1

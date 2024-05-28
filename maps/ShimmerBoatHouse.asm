@@ -1,7 +1,8 @@
 ShimmerBoatHouse_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, ShimmerBoatHouseCallback
 
 	db 3 ; warp events
 	warp_def  5,  5, 1, SHIMMER_HARBOR
@@ -16,9 +17,18 @@ ShimmerBoatHouse_MapScriptHeader:
 	person_event SPRITE_FAT_GUY,  1,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerBoatHouseNPC, -1
 	
 	
+ShimmerBoatHouseCallback:
+	checkevent EVENT_SHIMMER_BOAT_GUY_AT_WORK
+	iftrue .end
+	moveperson 1, -5, -5
+.end
+	return
+	
 ShimmerBoatHouseNPC:
 	clearevent EVENT_LAKE_ROCKS_BROWN
 	clearevent EVENT_BRILLO_MARACTUS_GREEN
+	checkevent EVENT_CAN_GO_TO_DESERT
+	iffalse .desert_first_time
 	opentext
 	writetext ShimmerBoatHouseNPCText2
 	special PlaceMoneyTopRight
@@ -31,19 +41,6 @@ ShimmerBoatHouseNPC:
 	refreshscreen $0
 	special PlaceMoneyTopRight
 	
-	checkevent EVENT_CAN_GO_TO_DESERT
-	iftrue .brillomenu
-	
-	loadmenudata ShimmerBoatHouseMenuData
-	verticalmenu
-	closewindow
-	if_equal $1, .Sunset
-	if_equal $2, .LakeL
-	if_equal $3, .LakeR
-	if_equal $4, .Sunbeam
-	jump .end
-	
-.brillomenu
 	loadmenudata ShimmerBoatHouseBrilloMenuData
 	verticalmenu
 	closewindow
@@ -203,6 +200,20 @@ ShimmerBoatHouseNPC:
 	waitbutton
 	closetext
 	end
+.desert_first_time
+	opentext
+	writetext ShimmerBoatHouseNPCTextDesertFirstTime
+	yesorno
+	iffalse .desert_no
+	writetext ShimmerBoatHouseNPCText7
+	setevent EVENT_CAN_GO_TO_DESERT
+	jump .BrilloCont
+	
+.desert_no
+	writetext ShimmerBoatHouseNPCTextDesertFirstTimeno
+	waitbutton
+	closetext
+	end
 	
 ShimmerBoatHouseMenuData:
 	db $40 ; flags
@@ -236,6 +247,16 @@ ShimmerBoatHouseBrilloMenuData:
 	db "SUNBEAM ISLAND@"
 	db "PUEBLO BRILLO@"
 	end
+	
+ShimmerBoatHouseNPCTextDesertFirstTime:
+	text "Ah, you made it."
+	line "You ready to go?"
+	done
+	
+ShimmerBoatHouseNPCTextDesertFirstTimeno:
+	text "Just let me know"
+	line "when you're ready."
+	done
 	
 ShimmerBoatHouseNPCText1:
 	text "Sorry, kid."
@@ -281,8 +302,7 @@ ShimmerBoatHouseNPCText6:
 ShimmerBoatHouseNPCText7:
 	text "Alright."
 	
-	para "We'll head out"
-	line "soon."
+	para "We'll head out."
 	done
 	
 ShimmerBoatHouseNPCText8:
@@ -311,8 +331,7 @@ ShimmerBoatHouseNPCTextNoMoney:
 	cont "free just this"
 	cont "once."
 	
-	para "We'll head out"
-	line "soon."
+	para "We'll head out."
 	done
 	
 ShimmerBoatHouseNPCTextNoMoney2:

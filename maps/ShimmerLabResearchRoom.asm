@@ -50,7 +50,7 @@ ShimmerLabResearchRoomProf:
 	writetext ShimmerLabResearchRoomPotText
 	takeitem CLAY_POT
 	playsound SFX_LEVEL_UP
-	setevent EVENT_CAN_GO_TO_DESERT
+	setevent EVENT_CAN_TALK_TO_SHIMMER_BOAT_MAN
 	waitsfx
 	waitbutton
 	closetext

@@ -17,7 +17,7 @@ ShimmerLabLobby_MapScriptHeader:
 	signpost  3, 10, SIGNPOST_UP, ShimmerLabExperimentSign
 
 	db 3 ; object events
-	person_event SPRITE_SCIENTIST_F,  2,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabLobbyNPC, -1
+	person_event SPRITE_DAISY,  2,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabLobbyNPC, -1
 	person_event SPRITE_ROCKER,  -5,  -5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerLabLobbyNPC2, -1
 	object_event -5, -5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, WIGGLYTUFF, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, ShimmerLabLobbyWigglytuff, -1
 

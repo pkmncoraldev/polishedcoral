@@ -322,8 +322,7 @@ LakeBoatManText2:
 LakeBoatManText3:
 	text "Alright."
 	
-	para "We'll head out"
-	line "soon."
+	para "We'll head out."
 	done
 	
 LakeBoatManText4:

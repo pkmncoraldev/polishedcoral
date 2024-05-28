@@ -284,8 +284,7 @@ BrilloBoatHouseClerkText6:
 BrilloBoatHouseClerkText7:
 	text "Alright."
 	
-	para "We'll head out"
-	line "soon."
+	para "We'll head out."
 	done
 	
 BrilloBoatHouseClerkText8:
@@ -314,8 +313,7 @@ BrilloBoatHouseClerkTextNoMoney:
 	cont "free just this"
 	cont "once."
 	
-	para "We'll head out"
-	line "soon."
+	para "We'll head out."
 	done
 	
 BrilloBoatHouseClerkTextNoMoney2:

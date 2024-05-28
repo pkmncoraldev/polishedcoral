@@ -146,7 +146,7 @@
 	tilecoll WALL, WATER, WALL, WATER ; 91
 	tilecoll WALL, WALL, WATER, WATER ; 92
 	tilecoll NO_OLLIE, WATER, NO_OLLIE, PUDDLE ; 93
-	tilecoll WALL, WALL, WALL, WALL ; 94
+	tilecoll WALL, WALL, WALL, FLOOR ; 94
 	tilecoll WALL, WALL, WALL, WALL ; 95
 	tilecoll WALL, WALL, WALL, WALL ; 96
 	tilecoll WALL, WALL, SKATE_UP_WALL, SKATE_UP_WALL ; 97

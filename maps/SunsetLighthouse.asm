@@ -298,10 +298,11 @@ LighthouseGetStarterScene_part2:
 	clearevent EVENT_LIGHTHOUSE_KIDS_DIE
 	applymovement LIGHTHOUSE_ABNER, Movement_AbnerLighthouseWalk2
 	spriteface LIGHTHOUSE_ABNER, DOWN
-	opentext
-	writetext LighthouseAbnerTextToRival
-	waitbutton
-	closetext
+;	opentext
+;	writetext LighthouseAbnerTextToRival
+;	waitbutton
+;	closetext
+	applyonemovement LIGHTHOUSE_RIVAL, turn_step_up
 	checkevent EVENT_GOT_SQUIRTLE_FROM_SPRUCE
 	iftrue .RivalSquirtleText
 	checkevent EVENT_GOT_BULBASAUR_FROM_SPRUCE
@@ -361,10 +362,11 @@ LighthouseGetStarterScene_part2:
 .continueLighthouseGetStarterScene_part2
 	applymovement LIGHTHOUSE_ABNER, Movement_AbnerLighthouseWalk3
 	spriteface LIGHTHOUSE_ABNER, DOWN
-	opentext
-	writetext LighthouseAbnerTextToKid1
-	waitbutton
-	closetext
+;	opentext
+;	writetext LighthouseAbnerTextToKid1
+;	waitbutton
+;	closetext
+	applyonemovement LIGHTHOUSE_KID1, turn_step_up
 	checkevent EVENT_GOT_SQUIRTLE_FROM_SPRUCE
 	iftrue .Kid1SquirtleText
 	checkevent EVENT_GOT_BULBASAUR_FROM_SPRUCE
@@ -426,10 +428,11 @@ LighthouseGetStarterScene_part2:
 .continue2LighthouseGetStarterScene_part2
 	applymovement LIGHTHOUSE_ABNER, Movement_AbnerLighthouseWalk4
 	spriteface LIGHTHOUSE_ABNER, DOWN
-	opentext
-	writetext LighthouseAbnerTextToKid2
-	waitbutton
-	closetext
+;	opentext
+;	writetext LighthouseAbnerTextToKid2
+;	waitbutton
+;	closetext
+	applyonemovement LIGHTHOUSE_KID2, turn_step_up
 	checkevent EVENT_GOT_SQUIRTLE_FROM_SPRUCE
 	iftrue .Kid2SquirtleText
 	checkevent EVENT_GOT_BULBASAUR_FROM_SPRUCE
@@ -508,12 +511,16 @@ LighthouseGetStarterScene_part2:
 	closetext
 	spriteface LIGHTHOUSE_KID1, RIGHT
 	spriteface LIGHTHOUSE_KID2, LEFT
+	appear LIGHTHOUSE_KID1_2
+	appear LIGHTHOUSE_KID2_2
 	spriteface PLAYER, LEFT
 	opentext
 	writetext LighthouseRivalText2
 	waitbutton
 	closetext
 	waitsfx
+	disappear LIGHTHOUSE_KID1
+	disappear LIGHTHOUSE_KID2
 	checkevent EVENT_GOT_TOTODILE_FROM_SPRUCE
 	iftrue .totodile
 	checkevent EVENT_GOT_CYNDAQUIL_FROM_SPRUCE
@@ -795,9 +802,6 @@ LighthouseAbnerText3:
 	text "ABNER: That's a"
 	line "great idea,"
 	cont "<RIVAL>."
-	
-	para "ALEX and MARCUS"
-	line "could battle too."
 	done
 	
 LighthouseAbnerText4:
@@ -937,21 +941,6 @@ LighthouseAbnerTextPostPokeGear:
 	
 	para "Good luck on"
 	line "your journey!"
-	done
-	
-LighthouseAbnerTextToRival:
-	text "ABNER: Now you"
-	line "pick, <RIVAL>."
-	done
-	
-LighthouseAbnerTextToKid1:
-	text "ABNER: Next up,"
-	line "ALEX."
-	done
-	
-LighthouseAbnerTextToKid2:
-	text "ABNER: And,"
-	line "finally, MARCUS."
 	done	
 
 LighthouseRivalText1:
@@ -1070,49 +1059,49 @@ RivalPicksChikoritaText:
 	done
 	
 Kid1PicksCharmanderText:
-	text "ALEX: Oh!"
+	text "GIRL: Oh!"
 	
 	para "I want CHARMANDER!"
 	line "It's so cute!"
 	done
 	
 Kid1PicksSquirtleText:
-	text "ALEX: Oh!"
+	text "GIRL: Oh!"
 	
 	para "I want SQUIRTLE!"
 	line "It's so cute!"
 	done
 	
 Kid1PicksBulbasaurText:
-	text "ALEX: Oh!"
+	text "GIRL: Oh!"
 	
 	para "I want BULBASAUR!"
 	line "It's so cute!"
 	done
 	
 Kid1PicksCyndaquilText:
-	text "ALEX: Oh!"
+	text "GIRL: Oh!"
 	
 	para "I want CYNDAQUIL!"
 	line "It's so cute!"
 	done
 	
 Kid1PicksTotodileText:
-	text "ALEX: Oh!"
+	text "GIRL: Oh!"
 	
 	para "I want TOTODILE!"
 	line "It's so cute!"
 	done
 	
 Kid1PicksChikoritaText:
-	text "ALEX: Oh!"
+	text "GIRL: Oh!"
 	
 	para "I want CHIKORITA!"
 	line "It's so cute!"
 	done
 	
 Kid2PicksCharmanderText:
-	text "MARCUS: Yes!"
+	text "BOY: Yes!"
 	
 	para "No one took"
 	line "CHARMANDER!"
@@ -1121,7 +1110,7 @@ Kid2PicksCharmanderText:
 	done
 	
 Kid2PicksSquirtleText:
-	text "MARCUS: Yes!"
+	text "BOY: Yes!"
 	
 	para "No one took"
 	line "SQUIRTLE!"
@@ -1130,7 +1119,7 @@ Kid2PicksSquirtleText:
 	done
 	
 Kid2PicksBulbasaurText:
-	text "MARCUS: Yes!"
+	text "BOY: Yes!"
 	
 	para "No one took"
 	line "BULBASAUR!"
@@ -1139,7 +1128,7 @@ Kid2PicksBulbasaurText:
 	done
 	
 Kid2PicksCyndaquilText:
-	text "MARCUS: Yes!"
+	text "BOY: Yes!"
 	
 	para "No one took"
 	line "CYNDAQUIL!"
@@ -1148,7 +1137,7 @@ Kid2PicksCyndaquilText:
 	done
 	
 Kid2PicksTotodileText:
-	text "MARCUS: Yes!"
+	text "BOY: Yes!"
 	
 	para "No one took"
 	line "TOTODILE!"
@@ -1157,7 +1146,7 @@ Kid2PicksTotodileText:
 	done
 	
 Kid2PicksChikoritaText:
-	text "MARCUS: Yes!"
+	text "BOY: Yes!"
 	
 	para "No one took"
 	line "CHIKORITA!"

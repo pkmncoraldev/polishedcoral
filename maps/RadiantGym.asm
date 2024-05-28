@@ -270,7 +270,8 @@ RadiantGymLeilaniTextBeforeBattleRematch:
 	
 RadiantGymLeilaniTextAfterBattle:
 	text "That badge will"
-	line "let you use DIVE"
+	line "let you use the"
+	cont "move STRENGTH"
 	cont "outside of battle."
 	
 	para "Take this as well."

@@ -18,4 +18,5 @@ SeasideCaveB1F_MapScriptHeader:
 
 SeasideCaveB1FCallback:
 	setevent EVENT_MADE_IT_TO_SOUTH_ONWA
+	clearevent EVENT_HAVENT_MADE_IT_TO_SOUTH_ONWA
 	return

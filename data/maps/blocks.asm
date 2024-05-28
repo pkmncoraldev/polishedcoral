@@ -880,3 +880,6 @@ KomoreCommunityCenterMiddle_BlockData:
 KomoreCommunityCenterRight_BlockData:
 	INCBIN "maps/KomoreCommunityCenterRight.ablk.lz"
 	
+Route12Bridge_BlockData:
+	INCBIN "maps/Route12Bridge.ablk.lz"
+	

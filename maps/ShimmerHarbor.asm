@@ -85,7 +85,7 @@ ShimmerHarbor_MapScriptHeader:
 	person_event SPRITE_SAILOR, 20,  6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerHarborNPC3, -1
 	person_event SPRITE_FAT_GUY, 20, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc5, -1
 	itemball_event  9, 18, LURE_BALL, 1, EVENT_SHIMMER_HARBOR_POKE_BALL
-	tapeball_event  6, 16, MUSIC_EVOLUTION, 1, EVENT_MUSIC_EVOLUTION
+	itemball_event  6, 16, DIRE_HIT, 1, EVENT_SHIMMER_HARBOR_POKE_BALL_2
 
 	const_def 1 ; object constants
 	const SHIMMER_BOAT_MAN

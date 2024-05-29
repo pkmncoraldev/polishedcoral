@@ -360,6 +360,15 @@ LoadEmoteGFX::
 
 	ld c, EMOTE_SHADOW
 	call LoadEmote
+	ld a, [wMapGroup]
+	cp GROUP_SEASIDE_CAVE_1F
+	jr nz, .cont
+	ld a, [wMapNumber]
+	cp MAP_SEASIDE_CAVE_1F
+	jr z, .outdoor
+	cp MAP_SEASIDE_CAVE_B1F
+	jr z, .outdoor
+.cont
 	ld a, [wTileset]
 	cp TILESET_SUNSET
 	jp z, .outdoor
@@ -386,6 +395,7 @@ LoadEmoteGFX::
 	call GetMapPermission
 	call CheckOutdoorMapOrPerm5
 	jr z, .outdoor
+	jr .boulder
 .autumn
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_27

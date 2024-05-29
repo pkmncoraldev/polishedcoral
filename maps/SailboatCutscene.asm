@@ -30,6 +30,8 @@ SailboatCutscene_MapScriptHeader:
 	
 	
 SailboatCutsceneTrigger0:
+	clearevent EVENT_HARBOR_BINOCULAR_COLORS
+	domaptrigger SHIMMER_HARBOR, $2
 	playmapmusic
 	checkevent EVENT_SAILBOAT_LEFT
 	iftrue .left

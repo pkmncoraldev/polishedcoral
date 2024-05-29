@@ -1,8 +1,9 @@
 ShimmerCity_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, ShimmerCityFlyPoint
+	callback MAPCALLBACK_TILES, ShimmerCityCallback
 
 	db 27 ; warp events
 	warp_event  4, 25, SHIMMER_LAB_LOBBY, 1
@@ -52,7 +53,7 @@ ShimmerCity_MapScriptHeader:
 	person_event SPRITE_POKEFAN_F, 17, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc2, -1
 	person_event SPRITE_REDS_MOM, 16, 19, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc3, -1
 	person_event SPRITE_CHILD, 19, 23, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc4, -1
-	person_event SPRITE_FAT_GUY, 18, 10, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc5, -1
+	person_event SPRITE_FAT_GUY, 18, -1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc5, -1
 	person_event SPRITE_BATTLE_GIRL, 10, 14, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc6, -1
 	person_event SPRITE_BALLOONS, 15, 16, SPRITEMOVEDATA_BALLOONS_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_BALLOONS, 12, 16, SPRITEMOVEDATA_BALLOONS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, 0, -1
@@ -75,6 +76,11 @@ ShimmerCityFlyPoint:
 	setevent EVENT_CAN_GO_TO_SHIMMER
 	setevent EVENT_MADE_IT_TO_SOUTH_ONWA
 	clearevent EVENT_HAVENT_MADE_IT_TO_SOUTH_ONWA
+	return
+	
+ShimmerCityCallback:
+	setevent EVENT_HARBOR_BINOCULAR_COLORS
+	domaptrigger SHIMMER_HARBOR, $0
 	return
 	
 ShimmerCitySign:
@@ -153,7 +159,7 @@ ShimmerCityNpc4:
 	opentext
 	writetext ShimmerCityNpc4Text1
 	yesorno
-	iffalse .no
+	iffalse .cancel
 	callasm ShimmerCityHorseaKidAsm
 	ifequal 3, .cancel
 	iffalse .no

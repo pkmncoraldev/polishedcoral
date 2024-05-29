@@ -1788,10 +1788,15 @@ LoadMapPals::
 	cp MAP_SHIMMER_CITY
 	jp z, .binoculars
 	cp MAP_SHIMMER_HARBOR
-	jp z, .sailboat
+	jp z, .harbor
 	cp MAP_SHIMMER_LAB_EXPERIMENTAL_LAB
 	jp z, .fossil_lab
 	jr .normal
+	
+.harbor
+	eventflagcheck EVENT_HARBOR_BINOCULAR_COLORS
+	jp z, .sailboat
+	jr .binoculars
 	
 .fossil_lab
 	call .normal

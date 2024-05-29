@@ -86,7 +86,7 @@
 	const JOLTEON
 	const FLAREON
 	const PORYGON
-	const AERODACTYL
+	const AERODACTYL ; - REPLACE
 	const SNORLAX
 	const DRATINI
 	const DRAGONAIR
@@ -159,9 +159,9 @@
 	const TYRANITAR
 	const WINGULL ;278
 	const PELIPPER ;279
-	const RALTS ;280
-	const KIRLIA ;281
-	const GARDEVOIR ;282
+	const RALTS ;280 - REPLACE
+	const KIRLIA ;281 - REPLACE
+	const GARDEVOIR ;282 - REPLACE
 	const SHROOMISH ;285
 	const BRELOOM ;286
 	const ARON ;304
@@ -204,7 +204,7 @@
 	const GLISCOR ;472
 	const MAMOSWINE ;473
 	const PORYGON_Z ;474
-	const GALLADE ;475
+	const GALLADE ;475 - REPLACE
 	const FROSLASS ;478
 	const DRILBUR ;529
 	const EXCADRILL ;530

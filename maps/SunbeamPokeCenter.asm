@@ -94,7 +94,7 @@ SunbeamPokecenterNPC3Text:
 	done
 	
 SunbeamPokecenterSpruceText1:
-	text "Yes ma'am."
+	text "Of course."
 	
 	para "Same time next"
 	line "week."

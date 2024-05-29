@@ -21,7 +21,7 @@ SeasideCave1F_MapScriptHeader:
 	object_event 14, 14, SPRITE_TRUNKS_WATER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SEASIDE_CAVE_GUY_NOT_SPINNING
 	tapeball_event 20,  8, MUSIC_EVOLUTION, 1, EVENT_MUSIC_EVOLUTION
 	itemball_event 13,  5, DUSK_BALL, 1, EVENT_SEASIDE_CAVE_1F_POKE_BALL
-	person_event SPRITE_SUPER_NERD, 30, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, SeasideCave1FTrainer1, -1
+	person_event SPRITE_SUPER_NERD, 29, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, SeasideCave1FTrainer1, -1
 	person_event SPRITE_ROCKER, 32, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 3, SeasideCave1FTrainer2, -1
 	
 	
@@ -75,7 +75,7 @@ SeasideCave1FTrainer2:
 
 .BeatenText:
 	text "Dun da nuh"
-	line "nuh nuh."
+	line "nuh huh?"
 	done
 	
 SeasideCave1FNPC1:

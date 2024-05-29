@@ -1054,8 +1054,8 @@ DragonScaleDesc:
 	next "item.@"
 
 UpGradeDesc:
-	db   "A mysterious box"
-	next "made by Silph Co.@"
+	db   "A weird box made"
+	next "by NETT CORP.@"
 
 DubiousDiscDesc:
 	db   "A transparent disc"

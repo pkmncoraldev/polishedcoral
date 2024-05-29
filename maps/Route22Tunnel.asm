@@ -49,8 +49,8 @@ Route22Tunnel_MapScriptHeader:
 	xy_trigger 1, 15,  6, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 16,  7, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 16,  6, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 17,  4, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 17,  5, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, 17,  4, 0, Route22TunnelDark2, 0, 0
+	xy_trigger 1, 17,  5, 0, Route22TunnelDark3, 0, 0
 	xy_trigger 1, 18,  4, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 18,  5, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 16, 12, 0, Route22TunnelDark, 0, 0
@@ -106,11 +106,11 @@ Route22Tunnel_MapScriptHeader:
 	person_event SPRITE_BIKER, 13, 12, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer1, EVENT_HIDE_OW_OBJECTS_BLUE
 	person_event SPRITE_BIKER, 17, 10, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer2, EVENT_HIDE_OW_OBJECTS_BLUE
 	person_event SPRITE_BIKER, 13,  8, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer3, EVENT_HIDE_OW_OBJECTS_BLUE
-	person_event SPRITE_CUEBALL, 17,  2, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route22TunnelTrainer4, EVENT_HIDE_OW_OBJECTS_BLUE
+	person_event SPRITE_CUEBALL, 17,  2, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, Route22TunnelTrainer4, EVENT_HIDE_OW_OBJECTS_BLUE
 	person_event SPRITE_BIKER, 13, 12, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer1, EVENT_HIDE_OW_OBJECTS_TEAL
 	person_event SPRITE_BIKER, 17, 10, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer2, EVENT_HIDE_OW_OBJECTS_TEAL
 	person_event SPRITE_BIKER, 13,  8, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer3, EVENT_HIDE_OW_OBJECTS_TEAL
-	person_event SPRITE_CUEBALL, 17,  2, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route22TunnelTrainer4, EVENT_HIDE_OW_OBJECTS_TEAL
+	person_event SPRITE_CUEBALL, 17,  2, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 0, Route22TunnelTrainer4, EVENT_HIDE_OW_OBJECTS_TEAL
 
 
 Route22TunnelTrigger0:
@@ -222,7 +222,7 @@ Route22TunnelTrainer3:
 	done
 	
 Route22TunnelTrainer4:
-	generictrainer CUEBALL, CURLY, EVENT_BEAT_ROUTE_22_TUNNEL_TRAINER_4, .SeenText, .BeatenText
+	generictrainer CUEBALL, CURLY, EVENT_BEAT_ROUTE_22_TUNNEL_TRAINER_4, Route22TunnelTrainer4SeenText, Route22TunnelTrainer4BeatenText
 
 	text "Alright! alright!"
 	
@@ -230,7 +230,7 @@ Route22TunnelTrainer4:
 	line "leave me alone!"
 	done
 
-.SeenText:
+Route22TunnelTrainer4SeenText:
 	text "Guh! Huh! Huh!"
 	
 	para "What's a little"
@@ -239,7 +239,7 @@ Route22TunnelTrainer4:
 	cont "like this?"
 	done
 
-.BeatenText:
+Route22TunnelTrainer4BeatenText:
 	text "Guh! Huh! Wuh!"
 	done
 	
@@ -306,6 +306,54 @@ Route22TunnelDark:
 	clearflag ENGINE_NEAR_CAMPFIRE
 	special Special_UpdatePalsInstant
 	dotrigger $0
+	end
+	
+Route22TunnelDark2:
+	dotrigger $6
+Route22TunnelDark3:
+	clearflag ENGINE_NEAR_CAMPFIRE
+	special Special_UpdatePalsInstant
+	checkevent EVENT_BEAT_ROUTE_22_TUNNEL_TRAINER_4
+	iftrue .end
+	special Special_StopRunning
+	special SaveMusic
+	playmusic MUSIC_HIKER_ENCOUNTER
+	checkevent EVENT_HIDE_OW_OBJECTS_BLUE
+	iftrue .teal1
+	showemote EMOTE_SHOCK, 4,  30
+	applyonemovement 4, step_right
+	checkscene
+	ifequal $6, .cont1
+	applyonemovement 4, step_right
+	jump .cont1
+.teal1
+	showemote EMOTE_SHOCK, 8,  30
+	applyonemovement 8, step_right
+	checkscene
+	ifequal $6, .cont1
+	applyonemovement 8, step_right
+.cont1
+	dotrigger $0
+	spriteface PLAYER, LEFT
+	opentext
+	writetext Route22TunnelTrainer4SeenText
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext Route22TunnelTrainer4BeatenText, 0
+	checkevent EVENT_HIDE_OW_OBJECTS_BLUE
+	iftrue .teal2
+	setlasttalked 4
+	jump .cont2
+.teal2
+	setlasttalked 8
+.cont2
+	loadtrainer CUEBALL, CURLY
+	startbattle
+	reloadmapafterbattle
+	special RestoreMusic
+	setevent EVENT_BEAT_ROUTE_22_TUNNEL_TRAINER_4
+.end
 	end
 	
 Route22TunnelGateText1:

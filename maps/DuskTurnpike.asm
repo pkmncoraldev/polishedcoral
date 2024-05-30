@@ -146,7 +146,7 @@ DuskTurnpikeTrigger1:
 	changeblock $1c, $16, $11
 	setflag ENGINE_STREETLIGHTS
 	callasm GenericFinishBridge
-	callasm DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
+	callasm CrossroadsStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
 	end
 .checkmorn
 	checktime 1<<MORN
@@ -173,7 +173,7 @@ DuskTurnpikeTrigger1:
 	clearflag ENGINE_STREETLIGHTS
 	clearflag ENGINE_STREETLIGHTS2
 	callasm GenericFinishBridge
-	callasm DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
+	callasm CrossroadsStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
 .end
 	end
 	
@@ -250,16 +250,6 @@ RestoreDuskTurnpikeMusic:
 	ld [wMapMusic], a
 	call FadeToMapMusic
 	ret
-
-DuskTurnpikeStreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
-	farcall CheckCurrentMapXYTriggers
-	ret nc
-	ld hl, wCurCoordEventScriptAddr
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, [wMapScriptHeaderBank]
-	farjp CallScript
 
 DuskTurnpikeLight:
 	checktime 1<<DUSK

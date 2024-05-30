@@ -1,7 +1,8 @@
 Route9_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, Route9Callback
 
 	db 3 ; warp events
 	warp_def 23, 21, 1, DODRIO_RANCH_HOUSE
@@ -69,6 +70,48 @@ Route9_MapScriptHeader:
 	object_event 17, 50, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	fruittree_event 12,  8, FRUITTREE_ROUTE_9, ASPEAR_BERRY
 
+
+Route9Trigger0:
+	checkflag ENGINE_STREETLIGHTS
+	iftrue .checkmorn
+	checktime 1<<DUSK
+	iffalse .end
+	changeblock $1e, $a, $24
+	setflag ENGINE_STREETLIGHTS
+	callasm GenericFinishBridge
+	callasm Route9StreetlightPaletteUpdateThingMoreWordsExtraLongStyle
+	end
+.checkmorn
+	checktime 1<<MORN
+	iffalse .end
+	changeblock $1e, $a, $15
+	clearflag ENGINE_STREETLIGHTS
+	clearflag ENGINE_STREETLIGHTS2
+	callasm GenericFinishBridge
+	callasm Route9StreetlightPaletteUpdateThingMoreWordsExtraLongStyle
+.end
+	end
+
+Route9Callback:
+	checktime 1<<DUSK
+	iftrue .nite
+	checktime 1<<NITE
+	iffalse .notnite
+.nite
+	changeblock $1e, $a, $24
+	setflag ENGINE_STREETLIGHTS
+.notnite
+	return
+
+Route9StreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
+	farcall CheckCurrentMapXYTriggers
+	ret nc
+	ld hl, wCurCoordEventScriptAddr
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wMapScriptHeaderBank]
+	farjp CallScript
 
 Route9MapSignThing::
 	loadvar wTimeOfDayPalFlags, $40 | 0

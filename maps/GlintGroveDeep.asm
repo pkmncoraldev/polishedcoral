@@ -196,6 +196,7 @@ GlintGroveDeepSmeargleScene:
 	playsound SFX_EXIT_BUILDING
 	disappear GLINTSECRET_MINA
 	dotrigger $4
+	clearevent EVENT_ROUTE_6_MINA_GONE
 	end
 	
 GlintGroveDeepMinaText:
@@ -217,7 +218,10 @@ GlintGroveDeepMinaText2:
 	done
 	
 GlintGroveDeepMinaText3:
-	text "We were kinda"
+	text "Oh, now you've"
+	line "done it!"
+	
+	para "We were kinda"
 	line "having a moment"
 	cont "until you showed"
 	cont "up and ruined it!"
@@ -298,7 +302,7 @@ GlintGroveDeepMinaText9:
 	done
 
 GlintGroveDeepMinaText10:
-	text "Alola,"
+	text "ALOLA,"
 	line "<PLAYER>."
 	
 	para "Err… I mean…"
@@ -314,7 +318,7 @@ GlintGroveDeepMinaWinText:
 	done
 	
 GlintGroveDeepEaselText:
-	text "“MINA's easel."
+	text "MINA's easel."
 	done
 	
 GlintSecretSmeargleText:

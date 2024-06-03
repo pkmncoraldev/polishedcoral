@@ -61,15 +61,525 @@ Route6South_MapScriptHeader:
 	warp_event 58, 10, ROUTE_6_UNDERWATER, 73
 	warp_event 59, 10, ROUTE_6_UNDERWATER, 74
 
-	db 0 ; coord events
+	db 1 ; coord events
+	coord_event 43,  4, 0, Route6SouthMinaScene
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 7 ; object events
 	person_event SPRITE_SWIMMER_GIRL,  6, 17, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute6South_1, -1
-	person_event SPRITE_SWIMMER_GUY,  7, 30, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute6South_2, -1
+	person_event SPRITE_SWIMMER_GUY,  7, 31, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute6South_2, -1
 	person_event SPRITE_TUBER_WATER, 17, 13, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, TrainerRoute6South_3, -1
+	person_event SPRITE_MINA,  6, 43, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route6SouthMina, EVENT_ROUTE_6_MINA_GONE
+	person_event SPRITE_LEAVES,  5, 43, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route6SouthEasel, EVENT_ROUTE_6_MINA_GONE
+	person_event SPRITE_LEAVES,  5, 43, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route6SouthEasel, EVENT_ROUTE_6_MINA_GONE
+	person_event SPRITE_INVISIBLE,  5, 43, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route6SouthEasel, EVENT_ROUTE_6_MINA_GONE
 	
+	
+Route6SouthMina:
+	jumptext Route6SouthMinaText
+	
+Route6SouthMinaText:
+	text "She's totally"
+	line "engrossed in"
+	cont "painting."
+	done
+	
+Route6SouthMinaScene:
+	special Special_StopRunning
+	applyonemovement PLAYER, turn_step_down
+	spriteface PLAYER, DOWN
+	pause 20
+	opentext
+	writetext Route6SouthMinaSceneQuestionText1
+;	refreshscreen $0
+	loadmenudata Route6SouthMinaSceneMenuData
+	verticalmenu
+	closewindow
+	closetext
+	if_equal $1, .Nothing
+	if_equal $2, .Smile
+	if_equal $3, .PeaceSign
+	if_equal $4, .FunnyFace
+	if_equal $5, .RudeGesture
+.Nothing
+	writecode VAR_MONJUSTCAUGHT, $1
+	pause 50
+	opentext
+	writetext Route6SouthMinaSceneQuestionText2
+	waitbutton
+	closetext
+	jump .cont
+.Smile
+	pause 10
+	callasm Route6SouthPlayerPhoto1Asm
+	pause 5
+	spriteface PLAYER, UP
+	writecode VAR_MONJUSTCAUGHT, $2
+	pause 35
+	opentext
+	writetext Route6SouthMinaSceneQuestionText3
+	waitbutton
+	closetext
+	jump .cont
+.PeaceSign
+	pause 10
+	callasm Route6SouthPlayerPhoto2Asm
+	pause 5
+	spriteface PLAYER, UP
+	writecode VAR_MONJUSTCAUGHT, $3
+	pause 35
+	opentext
+	writetext Route6SouthMinaSceneQuestionText4
+	waitbutton
+	closetext
+	jump .cont
+.FunnyFace
+	pause 10
+	callasm Route6SouthPlayerPhoto3Asm
+	writecode VAR_MONJUSTCAUGHT, $4
+	pause 5
+	spriteface PLAYER, UP
+	pause 5
+	spriteface PLAYER, DOWN
+	pause 5
+	spriteface PLAYER, UP
+	pause 5
+	spriteface PLAYER, DOWN
+	pause 5
+	spriteface PLAYER, UP
+	pause 5
+	spriteface PLAYER, DOWN
+	pause 5
+	spriteface PLAYER, UP
+	pause 5
+	spriteface PLAYER, DOWN
+	opentext
+	writetext Route6SouthMinaSceneQuestionText5
+	waitbutton
+	closetext
+	jump .cont
+.RudeGesture
+	pause 10
+	callasm Route6SouthPlayerPhoto4Asm
+	pause 5
+	spriteface PLAYER, UP
+	writecode VAR_MONJUSTCAUGHT, $5
+	pause 35
+	opentext
+	writetext Route6SouthMinaSceneQuestionText6
+	waitbutton
+	closetext
+.cont
+	pause 40
+	callasm Route6SouthTextScrollAsm1
+	opentext
+	writetext Route6SouthMinaSceneText1
+	pause 30
+	writetext Route6SouthMinaSceneText2
+	pause 30
+	writetext Route6SouthMinaSceneText3
+	pause 30
+	callasm Route6SouthTextScrollAsm2
+	closetext
+	pause 40
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, 4, 15
+	opentext
+	writetext Route6SouthMinaSceneText4
+	waitbutton
+	closetext
+	pause 10
+	spriteface PLAYER, DOWN
+	pause 2
+	special Special_ForcePlayerStateNormal
+	opentext
+	writetext Route6SouthMinaSceneText5
+	waitbutton
+	closetext
+	applymovement PLAYER, Movement_Route6SouthPlayer
+	follow 4, PLAYER
+	applyonemovement 4, step_right
+	stopfollow
+	spriteface 4, LEFT
+	spriteface PLAYER, UP
+	pause 40
+	opentext
+	writetext Route6SouthMinaSceneText6
+	buttonsound
+	spriteface 4, DOWN
+	farwritetext StdBlankText
+	pause 6
+	writetext Route6SouthMinaSceneText7
+	waitbutton
+	closetext
+	pause 50
+	spriteface 4, LEFT
+	pause 20
+	opentext
+	checkcode VAR_MONJUSTCAUGHT
+	if_equal $1, .Nothing2
+	if_equal $2, .Smile2
+	if_equal $3, .PeaceSign2
+	if_equal $4, .FunnyFace2
+	if_equal $5, .RudeGesture2
+.Nothing2
+	writetext Route6SouthMinaSceneText8_1
+	jump .cont2
+.Smile2
+	writetext Route6SouthMinaSceneText8_2
+	jump .cont2
+.PeaceSign2
+	writetext Route6SouthMinaSceneText8_3
+	jump .cont2
+.FunnyFace2
+	writetext Route6SouthMinaSceneText8_4
+	jump .cont2
+.RudeGesture2
+	writetext Route6SouthMinaSceneText8_5
+.cont2
+	writecode VAR_MONJUSTCAUGHT, $0
+	waitbutton
+	closetext
+	pause 10
+	spriteface PLAYER, RIGHT
+	opentext
+	writetext Route6SouthMinaSceneText9
+	yesorno
+	iffalse .no
+	writetext Route6SouthMinaSceneText10
+	jump .cont3
+.no
+	writetext Route6SouthMinaSceneText11
+.cont3
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext Route6SouthMinaMinaWinText, 0
+	setlasttalked 4
+	loadtrainer MINA, 2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext Route6SouthMinaSceneText12
+	waitbutton
+	closetext
+	follow PLAYER, 4
+	applyonemovement PLAYER, step_left
+	stopfollow
+	spriteface PLAYER, RIGHT
+	spriteface 4, UP
+	playsound SFX_UNKNOWN_61
+	disappear 5
+	pause 25
+	playsound SFX_SWITCH_POCKETS
+	disappear 6
+	pause 25
+	spriteface 4, LEFT
+	pause 10
+	opentext
+	writetext Route6SouthMinaSceneText13
+	waitbutton
+	closetext
+	applymovement 4, Movement_Route6SouthMinaLeave
+	disappear 4
+	dotrigger $0
+	setevent EVENT_ROUTE_6_MINA_GONE
+	end
+	
+Movement_Route6SouthPlayer:
+	step_left
+	step_down
+	step_down
+	step_end
+	
+Movement_Route6SouthMinaLeave:
+	step_right
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_end
+	
+Route6SouthMinaSceneMenuData:
+	db $40 ; flags
+	db 00, 00 ; start coords
+	db 12, 14 ; end coords
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db $81 ; flags
+	db 5 ; items
+	db "DO NOTHING@"
+	db "BIG SMILE@"
+	db "PEACE SIGN@"
+	db "FUNNY FACE@"
+	db "RUDE GESTURE@"
+	end
+	
+Route6SouthMinaSceneQuestionText1:
+	text "She hasn't noticed"
+	line "you and is still"
+	cont "painting."
+	
+	para "What will you do?"
+	done
+	
+Route6SouthMinaSceneQuestionText2:
+	text "<PLAYER> stood"
+	line "still."
+	done
+	
+Route6SouthMinaSceneQuestionText3:
+	text "<PLAYER> flashed"
+	line "a big smile!"
+	done
+	
+Route6SouthMinaSceneQuestionText4:
+	text "<PLAYER> threw"
+	line "up a peace sign."
+	done
+	
+Route6SouthMinaSceneQuestionText5:
+	text "<PLAYER> made a"
+	line "funny face!"
+	done
+	
+Route6SouthMinaSceneQuestionText6:
+	text "<PLAYER> stuck"
+	line "up a finger…"
+	done
+	
+Route6SouthMinaSceneText1:
+	text "…"
+	done
+	
+Route6SouthMinaSceneText2:
+	text "… …"
+	done
+	
+Route6SouthMinaSceneText3:
+	text "… … …"
+	done
+	
+Route6SouthMinaSceneText4:
+	text "MINA: Wait, who"
+	line "the heck?"
+	
+	para "<PLAYER>!?"
+	
+	para "How long have"
+	line "you been standing"
+	cont "there?"
+	done
+	
+Route6SouthMinaSceneText5:
+	text "Oh, now you've"
+	line "done it!"
+	
+	para "I wasn't paying"
+	line "attention and I"
+	cont "painted you into"
+	cont "my scene!"
+	
+	para "Oh well…"
+	
+	para "It was kinda"
+	line "empty, anyway…"
+	
+	para "Here, take a look!"
+	done
+	
+Route6SouthMinaSceneText6:
+	text "Well?"
+	
+	para "What do you think?"
+	
+	para "I guess I'll"
+	line "call it:"
+	done
+	
+Route6SouthMinaSceneText7:
+	text "“Island Stillness…"
+	line "…and <PLAYER>”."
+	done
+	
+Route6SouthMinaSceneText8_1:
+	text "You're kinda just"
+	line "standing there,"
+	cont "huh?"
+	
+	para "I mean you could"
+	line "at least cracked"
+	cont "a smile…"
+	done
+	
+Route6SouthMinaSceneText8_2:
+	text "Look at your big"
+	line "smile!"
+	
+	para "You usually seem"
+	line "so stoic."
+	done
+	
+Route6SouthMinaSceneText8_3:
+	text "A peace sign,"
+	line "though?"
+	
+	para "I gotta say, that's"
+	line "pretty cliché…"
+	done
+	
+Route6SouthMinaSceneText8_4:
+	text "What's with the"
+	line "funny face, huh?"
+	
+	para "Kinda ruins the"
+	line "picture, don't you"
+	cont "think?"
+	done
+	
+Route6SouthMinaSceneText8_5:
+	text "…I could have done"
+	line "without the"
+	cont "finger, though…"
+	
+	para "I mean, really,"
+	line "<PLAYER>!"
+	done
+	
+Route6SouthMinaSceneText9:
+	text "Anyway…"
+	
+	para "I came to this"
+	line "little island for"
+	cont "inspiration."
+	
+	para "I heard that the"
+	line "EXEGGUTOR here get"
+	cont "as tall as the"
+	cont "ones back home!"
+	
+	para "Maybe I was just"
+	line "feeling a bit"
+	cont "homesick…"
+	
+	para "…"
+	
+	para "Hey, while you're"
+	line "here, how about"
+	cont "another battle?"
+	
+	para "It'll be fun!."
+	done
+	
+Route6SouthMinaSceneText10:
+	text "Great, let's go!"
+	done
+	
+Route6SouthMinaSceneText11:
+	text "Sorry, not taking"
+	line "no for an answer!"
+	done
+	
+Route6SouthMinaSceneText12:
+	text "Ha ha!"
+	
+	para "You did it again,"
+	line "<PLAYER>."
+	
+	para "Well, I should be"
+	line "going."
+	
+	para "There's plenty more"
+	line "places in ONWA to"
+	cont "draw inspiration"
+	cont "from."
+	
+	para "I'm off to paint"
+	line "something without"
+	cont "you ruining it!"
+	
+	para "Just kidding!"
+	done
+	
+Route6SouthMinaSceneText13:
+	text "ALOLA,"
+	line "<PLAYER>."
+	
+	para "Oh, I did it"
+	line "again!"
+
+	para "Goodbye!"
+	done
+	
+Route6SouthMinaMinaWinText:
+	text "Another great"
+	line "battle!"
+	done
+	
+Route6SouthPlayerPhoto1Asm:
+	xor a
+	ld [wOnBike], a
+	ld [wOnSkateboard], a
+	ld [wStuckInSandCounter], a
+	ld a, PLAYER_PHOTO_1
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret
+	
+Route6SouthPlayerPhoto2Asm:
+	xor a
+	ld [wOnBike], a
+	ld [wOnSkateboard], a
+	ld [wStuckInSandCounter], a
+	ld a, PLAYER_PHOTO_2
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret
+	
+Route6SouthPlayerPhoto3Asm:
+	xor a
+	ld [wOnBike], a
+	ld [wOnSkateboard], a
+	ld [wStuckInSandCounter], a
+	ld a, PLAYER_PHOTO_3
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret
+	
+Route6SouthPlayerPhoto4Asm:
+	xor a
+	ld [wOnBike], a
+	ld [wOnSkateboard], a
+	ld [wStuckInSandCounter], a
+	ld a, PLAYER_PHOTO_4
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret
+	
+Route6SouthTextScrollAsm1:
+	ld hl, wOptions1
+	ld a, [hl]
+	ld [wPlaceBallsX], a
+	set NO_TEXT_SCROLL, [hl]
+	ret
+	
+Route6SouthTextScrollAsm2:
+	ld a, [wPlaceBallsX]
+	ld [wOptions1], a
+	xor a
+	ld [wPlaceBallsX], a
+	ret
+	
+Route6SouthEasel:
+	jumptext Route6SouthEaselText
+	
+Route6SouthEaselText:
+	text "MINA's easel."
+	done
 	
 TrainerRoute6South_1:
 	generictrainer SWIMMERF, SHANNON, EVENT_BEAT_ROUTE_6_SOUTH_TRAINER_1, .SeenText, .BeatenText

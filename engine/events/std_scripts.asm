@@ -618,6 +618,7 @@ InitializeEventsScript:
 	setevent EVENT_DECO_BED_1
 	setevent EVENT_DECO_POSTER_7
 	setevent EVENT_HAVENT_MADE_IT_TO_SOUTH_ONWA
+	setevent EVENT_ROUTE_6_MINA_GONE
 	setevent EVENT_ALWAYS_SET
 	setflag ENGINE_PHONE_CARD
 	setflag ENGINE_PUNKS_IN_STARGLOW

@@ -164,12 +164,12 @@ Route18NorthNPC1Text2:
 	done
 	
 Route18NorthNPC1Text3:
-	text "But he was hungry"
+	text "But he was hungry…"
 	line "mumble mumble…"
 	done
 	
 Route18NorthNPC1Text4:
-	text "so he baked an"
+	text "…so he baked an"
 	line "apple pie!"
 	done
 	

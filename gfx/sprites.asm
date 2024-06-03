@@ -110,6 +110,14 @@ JugglerSpriteGFX::             INCBIN "gfx/sprites/juggler.2bpp.lz"
 KimonoGirlSpriteGFX::          INCBIN "gfx/sprites/kimono_girl.2bpp.lz"
 MinaSpriteGFX::  		       INCBIN "gfx/sprites/mina.2bpp.lz"
 DisguiseMasterGFX::			   INCBIN "gfx/sprites/disguise_master.2bpp.lz"
+CoryPhoto1SpriteGFX::          INCBIN "gfx/sprites/cory_photo_1.2bpp.lz"
+CoryPhoto2SpriteGFX::          INCBIN "gfx/sprites/cory_photo_2.2bpp.lz"
+CoryPhoto3SpriteGFX::          INCBIN "gfx/sprites/cory_photo_3.2bpp.lz"
+CoryPhoto4SpriteGFX::          INCBIN "gfx/sprites/cory_photo_4.2bpp.lz"
+CoraPhoto1SpriteGFX::          INCBIN "gfx/sprites/cora_photo_1.2bpp.lz"
+CoraPhoto2SpriteGFX::          INCBIN "gfx/sprites/cora_photo_2.2bpp.lz"
+CoraPhoto3SpriteGFX::          INCBIN "gfx/sprites/cora_photo_3.2bpp.lz"
+CoraPhoto4SpriteGFX::          INCBIN "gfx/sprites/cora_photo_4.2bpp.lz"
 
 
 SECTION "Overworld Sprites 4", ROMX

@@ -5174,7 +5174,16 @@ MinaGroup:
 ; ================================
 ; ================
 
-	; MINA
+	; GLINT GROVE
+	db "MINA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; Route 6
 	db "MINA@"
 	db TRAINERTYPE_NORMAL
 	; party

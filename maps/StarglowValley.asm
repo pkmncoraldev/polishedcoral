@@ -742,7 +742,7 @@ StarglowPoliwhirlText1:
 	
 StarglowPoliwhirlText2:
 	text "POLIWHIRL looks"
-	line "very bored."
+	line "really bored."
 	done
 	
 ;StarglowGetSuperPotionsText:

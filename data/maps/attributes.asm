@@ -173,7 +173,7 @@ ENDM
 	
 	map_attributes Route9, ROUTE_9, $d1, NORTH | SOUTH | WEST
 	connection north, FlickerStation, FLICKER_STATION, 5
-	connection south, Route12, ROUTE_12, -5
+	connection south, Route11, ROUTE_11, -5
 	connection west, EventideVillage, EVENTIDE_VILLAGE, 15
 	
 	map_attributes Route10, ROUTE_10, 5, NORTH | EAST
@@ -295,10 +295,10 @@ ENDM
 	map_attributes LusterCityBusiness, LUSTER_CITY_BUSINESS, 0, WEST
 	connection west, LusterCityShopping, LUSTER_CITY_SHOPPING, -6
 	
-	map_attributes Route11, ROUTE_11, $02, EAST
+	map_attributes Route12, ROUTE_12, $02, EAST
 	connection east, Skatepark, SKATEPARK, 1
 	
-	map_attributes Route12, ROUTE_12, $02, NORTH
+	map_attributes Route11, ROUTE_11, $02, NORTH
 	connection north, Route9, ROUTE_9, 5
 	
 	map_attributes OnwaIntlAirport, ONWA_INTL_AIRPORT, $c4, NORTH
@@ -308,7 +308,7 @@ ENDM
 	connection south, OnwaIntlAirport, ONWA_INTL_AIRPORT, 0
 	
 	map_attributes Skatepark, SKATEPARK, $02, WEST
-	connection west, Route11, ROUTE_11, -1
+	connection west, Route12, ROUTE_12, -1
 	
 	map_attributes Route14, ROUTE_14, $35, NORTH | EAST
 	connection north, SunsetBay, SUNSET_BAY, -6
@@ -708,8 +708,8 @@ ENDM
 	map_attributes Route8Gate, ROUTE_8_GATE, $0, 0
 	map_attributes Route4EventideGate, ROUTE_4_EVENTIDE_GATE, $0, 0
 	map_attributes EventideVillageGate, EVENTIDE_VILLAGE_GATE, $0, 0
-	map_attributes Route11Gate, ROUTE_11_GATE, $0, 0
 	map_attributes Route12Gate, ROUTE_12_GATE, $0, 0
+	map_attributes AirportGate, AIRPORT_GATE, $0, 0
 	map_attributes Route23Windy, ROUTE_23_WINDY, $0, 0
 	map_attributes Route24NorthWindy, ROUTE_24_NORTH_WINDY, $0, 0
 	map_attributes Route24SouthWindy, ROUTE_24_SOUTH_WINDY, $0, 0

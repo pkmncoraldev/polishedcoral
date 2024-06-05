@@ -293,9 +293,9 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 15
 	map_const SKATEPARK,								  15, 32 ; 2
-	map_const ROUTE_11_GATE,							   4,  4 ; 3
-	map_const ROUTE_12_GATE,							   4,  4 ; 4
-	map_const ROUTE_12,									  16, 16 ; 5
+	map_const ROUTE_12_GATE,							   4,  4 ; 3
+	map_const AIRPORT_GATE,								   4,  4 ; 4
+	map_const ROUTE_11,									  16, 16 ; 5
 	map_const ONWA_INTL_AIRPORT,						  28, 10 ; 6
 	map_const AIRPORT_RUNWAY,							  28,  8 ; 7
 	map_const AIRPORT,									   7, 10 ; 8
@@ -318,7 +318,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_15,									  44, 14 ; 14
 	map_const ROUTE_16,									   7,  4 ; 15
 	map_const ROUTE_4,                                    22, 12 ; 10
-	map_const ROUTE_11,									  21, 31 ; 1
+	map_const ROUTE_12,									  21, 31 ; 1
 	
 	
 	newgroup													 ; 17

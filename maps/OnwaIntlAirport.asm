@@ -5,8 +5,8 @@ OnwaIntlAirport_MapScriptHeader:
 	callback MAPCALLBACK_TILES, OnwaIntlAirportCallback
 
 	db 4 ; warp events
-	warp_def  9, 46, 3, ROUTE_12_GATE
-	warp_def  9, 47, 4, ROUTE_12_GATE
+	warp_def  9, 46, 3, AIRPORT_GATE
+	warp_def  9, 47, 4, AIRPORT_GATE
 	warp_def  2, 26, 1, AIRPORT
 	warp_def  2, 27, 2, AIRPORT
 

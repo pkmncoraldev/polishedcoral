@@ -48,8 +48,8 @@ SunbeamSurfShop_BlockData:
 	
 Route1Gate_BlockData:
 Route8Gate_BlockData:
-Route11Gate_BlockData:
 Route12Gate_BlockData:
+AirportGate_BlockData:
 Route25Gate_BlockData:
 	INCBIN "maps/NorthSouthGate.ablk.lz"
 	
@@ -880,6 +880,6 @@ KomoreCommunityCenterMiddle_BlockData:
 KomoreCommunityCenterRight_BlockData:
 	INCBIN "maps/KomoreCommunityCenterRight.ablk.lz"
 	
-Route12Bridge_BlockData:
-	INCBIN "maps/Route12Bridge.ablk.lz"
+Route11Bridge_BlockData:
+	INCBIN "maps/Route11Bridge.ablk.lz"
 	

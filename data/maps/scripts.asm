@@ -252,7 +252,7 @@ INCLUDE "maps/LusterApartment5_1F.asm"
 INCLUDE "maps/LusterApartment5_2F.asm"
 INCLUDE "maps/LusterApartment6_1F.asm"
 INCLUDE "maps/LusterApartment6_2F.asm"
-INCLUDE "maps/Route11.asm"
+INCLUDE "maps/Route12.asm"
 
 SECTION "Luster City Scripts2", ROMX
 
@@ -277,8 +277,8 @@ INCLUDE "maps/LusterSkyscraper2_2F.asm"
 INCLUDE "maps/LusterSkyscraper2_3F.asm"
 INCLUDE "maps/LusterSkyscraper2_Elevator.asm"
 INCLUDE "maps/LusterSkyscraperB1F.asm"
-INCLUDE "maps/Route11Gate.asm"
 INCLUDE "maps/Route12Gate.asm"
+INCLUDE "maps/AirportGate.asm"
 INCLUDE "maps/Skatepark.asm"
 
 SECTION "Nett Building Scripts", ROMX
@@ -295,7 +295,7 @@ INCLUDE "maps/LusterGym.asm"
 INCLUDE "maps/SunsetLighthouseTop.asm"
 
 SECTION "Route 12 Scripts", ROMX
-INCLUDE "maps/Route12.asm"
+INCLUDE "maps/Route11.asm"
 INCLUDE "maps/OnwaIntlAirport.asm"
 INCLUDE "maps/AirportRunway.asm"
 INCLUDE "maps/Airport.asm"

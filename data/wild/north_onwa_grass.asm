@@ -1542,33 +1542,6 @@
 	db 30, RATTATA		;1%
 	
 	map_id ROUTE_11
-	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
-	; morn
-	db 28, MINCCINO		;30%
-	db 28, WOOPER		;30%
-	db 28, PIDGEOTTO	;20%
-	db 28, BUNEARY		;10%
-	db 28, BUNEARY		;5%
-	db 28, CHANSEY		;4%
-	db 28, CHANSEY		;1%
-	; day
-	db 28, MINCCINO		;30%
-	db 28, WOOPER		;30%
-	db 28, PIDGEOTTO	;20%
-	db 28, BUNEARY		;10%
-	db 28, BUNEARY		;5%
-	db 28, CHANSEY		;4%
-	db 28, CHANSEY		;1%
-	; nite
-	db 28, MINCCINO		;30%
-	db 28, WOOPER		;30%
-	db 28, PIDGEOTTO	;20%
-	db 28, BUNEARY		;10%
-	db 28, BUNEARY		;5%
-	db 28, CHANSEY		;4%
-	db 28, CHANSEY		;1%
-	
-	map_id ROUTE_12
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
 	db 29, MACHOKE		;30%
@@ -1594,6 +1567,33 @@
 	db 29, MINCCINO		;5%
 	db 29, DWEBBLE		;4%
 	db 29, DWEBBLE		;1%
+	
+	map_id ROUTE_12
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 28, MINCCINO		;30%
+	db 28, WOOPER		;30%
+	db 28, PIDGEOTTO	;20%
+	db 28, BUNEARY		;10%
+	db 28, BUNEARY		;5%
+	db 28, CHANSEY		;4%
+	db 28, CHANSEY		;1%
+	; day
+	db 28, MINCCINO		;30%
+	db 28, WOOPER		;30%
+	db 28, PIDGEOTTO	;20%
+	db 28, BUNEARY		;10%
+	db 28, BUNEARY		;5%
+	db 28, CHANSEY		;4%
+	db 28, CHANSEY		;1%
+	; nite
+	db 28, MINCCINO		;30%
+	db 28, WOOPER		;30%
+	db 28, PIDGEOTTO	;20%
+	db 28, BUNEARY		;10%
+	db 28, BUNEARY		;5%
+	db 28, CHANSEY		;4%
+	db 28, CHANSEY		;1%
 	
 	map_id STARGLOW_CAVERN_DEPTHS
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite

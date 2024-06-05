@@ -31,6 +31,7 @@
 	const EVENTIDE_FOREST	 ; 17
 	const EVENTIDE_VILLAGE	 ; 18
 	const ROUTE_9			 ; 19
+	const ROUTE_11			 ; 23
 	const DODRIO_RANCH		 ; 1a
 	const FLICKER_STATION	 ; 1b
 	const FLICKER_PASS		 ; 1c
@@ -39,8 +40,8 @@
 	const FROZEN_RUINS		 ; 1f
 	const LUSTER_CITY		 ; 20
 	const LUSTER_SEWERS		 ; 21
-	const ROUTE_11			 ; 22
-	const ROUTE_12			 ; 23
+	const ROUTE_12			 ; 22
+	const SKATEPARK
 	const AIRPORT			 ; 24
 	const ROUTE_13	 ; 25
 	const ROUTE_14			 ; 26

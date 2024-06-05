@@ -5,53 +5,54 @@ ENDM
 
 Landmarks: ; 0x1ca8c3
 	landmark   0,   0, SpecialMapName
-	landmark  20, 100, SunsetBayName
-	landmark  28, 100, SunsetCapeName
-	landmark  28,  92, Route1Name
-	landmark  28,  84, DaybreakVillageName
-	landmark  28,  72, Route2Name
-	landmark  44,  84, MtOnwaName
-	landmark  28,  60, GlintCityName
-	landmark  28,  52, GlintGroveName
-	landmark  52,  60, Route3Name
-	landmark  52,  52, StarglowCavernName
-	landmark  64,  76, StarglowValleyName
-	landmark  76,  76, Route4Name
-	landmark  76,  68, HuntersThicketName
-	landmark  72,  88, Route5Name
-	landmark  62, 100, Route6Name
-	landmark  52,  92, Route7Name
-	landmark  40,  92, LakeOnwaName
-	landmark  60, 116, SunbeamIslandName
-	landmark  68, 116, SunbeamJungleName
-	landmark  52,  76, Route8Name
-	landmark  84,  76, EventideForestName
-	landmark  92,  76, EventideVillageName
-	landmark 100,  72, Route9Name
-	landmark 108,  68, DodrioRanchName
-	landmark 100,  60, FlickerStationName
-	landmark 100,  52, FlickerPassName
-	landmark 104,  44, Route10Name
-	landmark 100,  36, TwinkleTownName
-	landmark 108,  36, FrozenRuinsName
-	landmark 136,  64, LusterCityName
-	landmark 132,  64, LusterSewersName
-	landmark 128,  84, Route11Name
-	landmark 124, 100, Route12Name
-	landmark 116, 100, AirportName
-	landmark  44, 108, Route13Name
-	landmark  20, 116, Route14Name
-	landmark  36, 124, Route15Name
+	landmark  44, 100, SunsetBayName
+	landmark  52, 108, SunsetCapeName
+	landmark  52,  92, Route1Name
+	landmark  52,  84, DaybreakVillageName
+	landmark  52,  72, Route2Name
+	landmark  60,  76, MtOnwaName
+	landmark  52,  60, GlintCityName
+	landmark  52,  52, GlintGroveName
+	landmark  76,  60, Route3Name
+	landmark  76,  52, StarglowCavernName
+	landmark  92,  76, StarglowValleyName
+	landmark 104,  76, Route4Name
+	landmark 108,  68, HuntersThicketName
+	landmark 100,  88, Route5Name
+	landmark  88, 100, Route6Name
+	landmark  76,  92, Route7Name
+	landmark  60,  92, LakeOnwaName
+	landmark  84, 116, SunbeamIslandName
+	landmark  92, 116, SunbeamJungleName
+	landmark  76,  76, Route8Name
+	landmark 116,  76, EventideForestName
+	landmark 124,  84, EventideVillageName
+	landmark 132,  84, Route9Name
+	landmark 132, 100, Route11Name
+	landmark 140,  76, DodrioRanchName
+	landmark 132,  60, FlickerStationName
+	landmark 132,  52, FlickerPassName
+	landmark 136,  44, Route10Name
+	landmark 132,  36, TwinkleTownName
+	landmark 140,  36, FrozenRuinsName
+	landmark  24,  56, LusterCityName
+	landmark  20,  56, LusterSewersName
+	landmark  20,  72, Route12Name
+	landmark  28,  76, SkateparkName
+	landmark  20,  84, AirportName
+	landmark  68, 108, Route13Name
+	landmark  44, 116, Route14Name
+	landmark  64, 124, Route15Name
 	
-	landmark  84,  60, OldManorName
-	landmark 136,  56, LusterStationName
-	landmark 136,  56, ResidentialName
-	landmark 136,  56, ShoppingName
-	landmark 136,  56, BusinessName
-	landmark  28,  88, Route1Name
-	landmark  60,  40, StarglowDepthsName
+	landmark 116,  68, OldManorName
+	landmark  24,  56, LusterStationName
+	landmark  24,  56, ResidentialName
+	landmark  24,  56, ShoppingName
+	landmark  24,  56, BusinessName
+	landmark  52,  92, Route1Name
+	landmark  92,  76, StarglowDepthsName
 	landmark   0,   0, UnkownPassageName
-	landmark  36, 116, ConnectingCavernName
+	landmark   7,  14, ConnectingCavernName
 	
 	landmark  36,  40, Route16Name
 	landmark  36,  52, ShimmerName
@@ -113,6 +114,7 @@ FrozenRuinsName: 	   db "FROZEN¯RUINS@"
 LusterCityName:		   db "LUSTER¯CITY@"
 LusterSewersName:	   db "LUSTER¯SEWERS@"
 Route11Name:		   db "ROUTE 11@"
+SkateparkName:		   db "SKATEPARK@"
 Route12Name:		   db "ROUTE 12@"
 AirportName:		   db "ONWA INTL.¯AIRPORT@"
 Route13Name:		   db "ROUTE 13@"

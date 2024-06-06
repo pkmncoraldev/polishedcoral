@@ -247,9 +247,9 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke SUNFLORA, 30
-	givepoke CHARIZARD, 99
-	givepoke DRAGAPULT, 99
+	givepoke DROWZEE, 30
+	givepoke HYPNO, 99
+	givepoke JOLTEON, 99
 
 .items
 	writetext PlayerHouseDebugText6

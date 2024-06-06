@@ -184,6 +184,9 @@ MedititeIcon:     INCBIN "gfx/icons/meditite.2bpp.lz"
 MedichamIcon:     INCBIN "gfx/icons/medicham.2bpp.lz"
 CarvanhaIcon:     INCBIN "gfx/icons/carvanha.2bpp.lz"
 SharpedoIcon:	  INCBIN "gfx/icons/sharpedo.2bpp.lz"
+
+SECTION "Mon Icons 2", ROMX
+
 NumelIcon:        INCBIN "gfx/icons/numel.2bpp.lz"
 CameruptIcon:     INCBIN "gfx/icons/camerupt.2bpp.lz"
 CacneaIcon:       INCBIN "gfx/icons/cacnea.2bpp.lz"
@@ -194,9 +197,6 @@ SnoruntIcon:      INCBIN "gfx/icons/snorunt.2bpp.lz"
 GlalieIcon:       INCBIN "gfx/icons/glalie.2bpp.lz"
 BuizelIcon:       INCBIN "gfx/icons/buizel.2bpp.lz"
 FloatzelIcon:     INCBIN "gfx/icons/floatzel.2bpp.lz"
-
-SECTION "Mon Icons 2", ROMX
-
 CherubiIcon:      INCBIN "gfx/icons/cherubi.2bpp.lz"
 CherrimIcon:      INCBIN "gfx/icons/cherrim.2bpp.lz"
 Cherrim_SIcon:      INCBIN "gfx/icons/cherrim_s.2bpp.lz"

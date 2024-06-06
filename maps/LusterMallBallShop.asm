@@ -165,7 +165,7 @@ LusterMallBallShop_Slowking:
 	end
 	
 LusterMallBallShop_SlowkingText1:
-	text "SLOWPOKE: Sloooow…"
+	text "SLOWKING: Sloooow…"
 	done
 	
 LusterMallBallShop_SlowkingText2:

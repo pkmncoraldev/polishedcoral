@@ -204,6 +204,7 @@
 	const SPRITE_MALL_COP
 	const SPRITE_DISGUISE_MASTER
 	const SPRITE_TUBER_WATER
+	const SPRITE_PAINTINGS
 
 	
 	const_def $ed

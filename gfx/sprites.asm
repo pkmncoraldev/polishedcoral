@@ -147,6 +147,7 @@ CueballSpriteGFX::             INCBIN "gfx/sprites/cue_ball.2bpp.lz"
 SageSpriteGFX::                INCBIN "gfx/sprites/sage.2bpp.lz"
 SailorSpriteGFX::              INCBIN "gfx/sprites/sailor.2bpp.lz"
 TrunksWaterSpriteGFX::		   INCBIN "gfx/sprites/trunks_water.2bpp.lz"
+PaintingsSpriteGFX::		   INCBIN "gfx/sprites/paintings.2bpp.lz"
 
 
 SECTION "Overworld Sprites 5", ROMX

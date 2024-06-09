@@ -75,6 +75,7 @@ SOUTH_ONWA_LANDMARK EQU const_value
 	const ROUTE_26
 	const ROUTE_27
 	const BRIGHTBURG
+	const ROUTE_28
 	
 	const BRILLO_TOWN		 ; 31
 	const ROUTE_17			 ; 32

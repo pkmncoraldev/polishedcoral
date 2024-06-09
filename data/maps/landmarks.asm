@@ -71,6 +71,7 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, Route26Name
 	landmark   0,   0, Route27Name
 	landmark   0,   0, BrightburgName
+	landmark   0,   0, Route28Name
 	
 	landmark  20, 124, BrilloTownName
 	landmark  28, 124, Route17Name
@@ -142,6 +143,7 @@ Route25Name:		   db "ROUTE 25@"
 Route26Name:		   db "ROUTE 26@"
 Route27Name:		   db "ROUTE 27@"
 BrightburgName: 	   db "BRIGHTBURG@"
+Route28Name:		   db "ROUTE 28@"
 
 LusterStationName:	   db "LUSTER¯CITY@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"

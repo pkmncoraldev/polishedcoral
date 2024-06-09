@@ -422,11 +422,11 @@ ENDM
 	map_attributes BarInside, BAR_INSIDE, $00, 0
 	
 	map_attributes Crossroads, CROSSROADS, $30, SOUTH | WEST
-	connection south, Route23, ROUTE_23, -5
+	connection south, Route23, ROUTE_23, 1
 	connection west, Route22, ROUTE_22, -1
 	
 	map_attributes Route23, ROUTE_23, $c6, NORTH | SOUTH | WEST | EAST
-	connection north, Crossroads, CROSSROADS, 5
+	connection north, Crossroads, CROSSROADS, -1
 	connection south, KomoreVillage, KOMORE_VILLAGE, -1
 	connection west, Route24North, ROUTE_24_NORTH, 6
 	connection east, Route25, ROUTE_25, 10

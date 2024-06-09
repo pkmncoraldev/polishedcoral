@@ -94,6 +94,7 @@ PLAYER_F EQU __enum__
 	const CHRIS
 	const TOMMY
 	const JIMMY
+	const KYLE
 
 	trainerclass BUG_CATCHER
 	const BARNEY

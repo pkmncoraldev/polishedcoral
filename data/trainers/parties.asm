@@ -984,6 +984,15 @@ YoungsterGroup:
 	db -1 ; end
 
 ; ================
+
+	; YOUNGSTER
+	db "KYLE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 

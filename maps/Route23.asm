@@ -23,7 +23,7 @@ Route23_MapScriptHeader:
 	db 17 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PINK
-	person_event SPRITE_PICNICKER, 16, 30, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 0, Route23Trainer1, -1
+	person_event SPRITE_YOUNGSTER, 17, 31, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer1, -1
 	person_event SPRITE_BLACK_BELT, 43, 30, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer2, -1
 	person_event SPRITE_GENTLEMAN, 20, 17, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer3, -1
 	person_event SPRITE_GRANNY, 26, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route23Trainer4, -1
@@ -249,28 +249,24 @@ endr
 	end
 
 Route23Trainer1:
-	generictrainer PICNICKER, LES, EVENT_BEAT_ROUTE_23_TRAINER_1, .SeenText, .BeatenText
+	generictrainer YOUNGSTER, KYLE, EVENT_BEAT_ROUTE_23_TRAINER_1, .SeenText, .BeatenText
 
-	text "I'm talking to my"
-	line "friend in VIOLET"
-	cont "CITY in the JOHTO"
-	cont "REGION."
+	text "Maybe we should do"
+	line "some more training"
+	cont "before picking a"
+	cont "fight…"
 	done
 
 .SeenText:
-	text "Uh-huh. Yeah, and"
-	line "you know…"
-
-	para "Pardon? Battle?"
-	line "I'm on the phone."
-
-	para "Oh, all right. But"
-	line "make it fast."
+	text "Hey, how about a"
+	line "battle real quick?"
+	
+	para "I wanna test my"
+	line "new #MON."
 	done
 
 .BeatenText:
-	text "Oh! I've got to"
-	line "relieve my anger!"
+	text "Ah, dang!"
 	done
 	
 Route23Trainer2:

@@ -388,77 +388,41 @@ LoadEmoteGFX::
 
 	ld c, EMOTE_SHADOW
 	call LoadEmote
-	ld a, [wMapGroup]
-	cp GROUP_SEASIDE_CAVE_1F
-	jr nz, .cont
-	ld a, [wMapNumber]
-	cp MAP_SEASIDE_CAVE_1F
-	jr z, .outdoor
-	cp MAP_SEASIDE_CAVE_B1F
-	jr z, .outdoor
-.cont
 	ld a, [wTileset]
-	cp TILESET_SUNSET
-	jp z, .outdoor
-	cp TILESET_GLINT
-	jp z, .outdoor
-	cp TILESET_STARGLOW
-	jp z, .outdoor
-	cp TILESET_JUNGLE
-	jp z, .outdoor
-	cp TILESET_SPOOKY
-	jp z, .outdoor
 	cp TILESET_SNOW
-	jp z, .snow
-	cp TILESET_AUTUMN
-	jp z, .autumn
+	jp z, .snow_sand
+	cp TILESET_DESERT
+	jp z, .snow_sand
 	cp TILESET_SHIMMER
 	jp z, .flowers
 	cp TILESET_GROVE
-	jp z, .check_flowers
-	cp TILESET_DESERT
-	jp z, .desert
+	jp z, .flowers
 	cp TILESET_PLAYER_HOUSE
 	jp z, .playerhouse
-	call GetMapPermission
-	call CheckOutdoorMapOrPerm5
-	jr z, .outdoor
-	jr .boulder
-.autumn
-	ld a, [wMapNumber]
-	cp MAP_ROUTE_27
-	jr z, .outdoor
-.boulder
+.normal
 	ld c, EMOTE_BOULDER_DUST
-	jp LoadEmote
-
-.playerhouse
-	ld c, EMOTE_PUDDLE_SPLASH_2
-	jp LoadEmote
-	
-.check_flowers
-	ld a, [wMapGroup]
-	cp GROUP_RADIANT_FIELD
-	jr nz, .outdoor
-.flowers
-	ld c, EMOTE_POLLEN_PUFF
 	call LoadEmote
-.outdoor
 	ld c, EMOTE_SHAKING_GRASS
 	call LoadEmote
 	ld c, EMOTE_PUDDLE_SPLASH
 	jp LoadEmote
-; 14236
-.desert
-	ld a, [wMapNumber]
-	cp MAP_DESERT_WASTELAND_OASIS
-	jr z, .outdoor
-.snow
+.flowers
+	ld c, EMOTE_POLLEN_PUFF
+	call LoadEmote
+	ld c, EMOTE_SHAKING_GRASS
+	call LoadEmote
+	ld c, EMOTE_PUDDLE_SPLASH
+	jp LoadEmote
+.snow_sand
+	ld c, EMOTE_BOULDER_DUST
+	call LoadEmote
 	ld c, EMOTE_SHAKING_SNOW
 	call LoadEmote
 	ld c, EMOTE_PUDDLE_SPLASH
 	jp LoadEmote
-
+.playerhouse
+	ld c, EMOTE_PUDDLE_SPLASH_2
+	jp LoadEmote
 
 SafeGetSprite: ; 14236
 	push hl

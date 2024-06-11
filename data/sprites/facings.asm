@@ -232,15 +232,15 @@ FacingFishRight:
 FacingEmote:
 	db 4 ; #
 	db  0,  0, 4, $78
-	db  0,  8, 4, $79
-	db  8,  0, 4, $7a
-	db  8,  8, 4, $7b
+	db  0,  8, 4 | X_FLIP, $78
+	db  8,  0, 4, $79
+	db  8,  8, 4, $7a
 ; 419a
 
 FacingShadow:
 	db 2 ; #
-	db  0,  0, 4, $7c
-	db  0,  8, 4 | X_FLIP, $7c
+	db  0,  0, 4, $7b
+	db  0,  8, 4 | X_FLIP, $7b
 ; 41a3
 
 FacingBigDollSym: ; big snorlax or lapras doll
@@ -299,18 +299,18 @@ FacingBigDollAsym: ; big doll other than snorlax or lapras
 
 FacingBoulderDust1:
 	db 4 ; #
-	db  0,  0, 4, $7e
-	db  0,  8, 4, $7e
-	db  8,  0, 4, $7e
-	db  8,  8, 4, $7e
+	db  0,  0, 4, $7c
+	db  0,  8, 4, $7c
+	db  8,  0, 4, $7c
+	db  8,  8, 4, $7c
 ; 4250
 
 FacingBoulderDust2:
 	db 4 ; #
-	db  0,  0, 4, $7f
-	db  0,  8, 4, $7f
-	db  8,  0, 4, $7f
-	db  8,  8, 4, $7f
+	db  0,  0, 4, $7d
+	db  0,  8, 4, $7d
+	db  8,  0, 4, $7d
+	db  8,  8, 4, $7d
 ; 4261
 
 FacingGrass1:

@@ -2550,7 +2550,7 @@ SpawnStrengthBoulderDust: ; 5538
 	ret
 
 .BoulderDustObject:
-	db $80, PAL_OW_SILVER, SPRITEMOVEDATA_BOULDERDUST
+	db $80, PAL_OW_BROWN, SPRITEMOVEDATA_BOULDERDUST
 ; 5547
 
 SpawnEmote: ; 5547

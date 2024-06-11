@@ -1609,7 +1609,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 ; Find an object struct with coordinates equal to d,e
 	farcall IsNPCAtCoord
 	jr nc, .is_npc
+	push bc
 	farcall CheckHiddenTape
+	pop bc
 	jr c, .is_npc
 	call .CheckStrengthBoulder
 	jr c, .no_bump

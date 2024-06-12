@@ -647,3 +647,28 @@ SavedAllGirlsText2:
 	line "ERIKA."
 	done
 	
+Special_DotDotDot:
+	call MenuBoxCoord2Tile
+	ld de, $0e * SCREEN_WIDTH + 1
+	add hl, de
+	ld [hl], "…"
+	call ApplyTilemapInVBlank
+	ld c, 60
+	call DelayFrames
+	inc hl
+	inc hl
+	ld [hl], "…"
+	call ApplyTilemapInVBlank
+	ld c, 60
+	call DelayFrames
+	inc hl
+	inc hl
+	ld [hl], "…"
+	call ApplyTilemapInVBlank
+	ld c, 60
+	call DelayFrames
+	ret
+	
+.DotsString:
+	db "1@"
+	

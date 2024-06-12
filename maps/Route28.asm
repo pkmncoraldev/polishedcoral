@@ -133,22 +133,12 @@ Route28StrengthMan:
 	playsound SFX_ITEM_FAKE
 	pause 45
 	writetext Route28StrengthManText4
-	waitbutton
-	closetext
-	pause 5
-	callasm Route28TextScrollAsm1
-	opentext
-	writetext Route28StrengthManText5_1
-	pause 30
-	writetext Route28StrengthManText5_2
-	pause 30
-	writetext Route28StrengthManText5_3
-	pause 30
-	callasm Route28TextScrollAsm2
-	closetext
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	special Special_DotDotDot
 	pause 40
 .loop
-	opentext
 	writetext Route28StrengthManText6
 	waitbutton
 	closetext
@@ -156,6 +146,7 @@ Route28StrengthMan:
 	if_equal 1, .down
 	if_equal 2, .left
 	playsound SFX_READ_TEXT
+	opentext
 	jump .loop
 .down
 	applyonemovement PLAYER, turn_step_down

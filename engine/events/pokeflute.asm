@@ -237,33 +237,20 @@ _NettSpecs:
 	if_equal 3, .nurse_script
 	if_equal 4, .chansey_script
 .NothingHappenedScript
-	callasm BrightburgTextScrollAsm1
 	opentext
-	writetext NettSpecsNormalText1
-	pause 30
-	writetext NettSpecsNormalText2
-	pause 30
-	writetext NettSpecsNormalText3
-	pause 30
-	callasm BrightburgTextScrollAsm2
+	special Special_DotDotDot
 	writetext NettSpecsNormalText4
 	waitbutton
 	closetext
 	end
 	
 .ditto_script
-	callasm BrightburgTextScrollAsm1
 	opentext
-	writetext NettSpecsNormalText1
-	pause 30
-	writetext NettSpecsNormalText2
-	pause 30
-	writetext NettSpecsNormalText3
-	pause 30
-	writetext NettSpecsDittoText
+	special Special_DotDotDot
+	callasm DittoExclamationAsm
+;	writetext NettSpecsDittoText
 	playmusic MUSIC_NONE
 	pause 60
-	callasm BrightburgTextScrollAsm2
 	closetext
 	callasm BrightburgDittoDisguiseSpriteAsm
 	spriteface LAST_TALKED, DOWN
@@ -288,7 +275,7 @@ _NettSpecs:
 	pause 40
 	spriteface 1, UP
 	opentext
-	writetext NettSpecsDittoText2
+	writetext NettSpecsDittoText
 	cry DITTO
 	waitbutton
 	closetext
@@ -401,19 +388,12 @@ BrightburgClearwPlaceBallsYAsm:
 	ld [wPlaceBallsY], a
 	ret
 	
-BrightburgTextScrollAsm1:
-	ld hl, wOptions1
-	ld a, [hl]
-	ld [wPlaceBallsX], a
-	set NO_TEXT_SCROLL, [hl]
-	ret
-	
-BrightburgTextScrollAsm2:
-	ld a, [wPlaceBallsX]
-	ld [wOptions1], a
-	xor a
-	ld [wPlaceBallsX], a
-	ret
+DittoExclamationAsm:
+	call MenuBoxCoord2Tile
+	ld de, $0e * SCREEN_WIDTH + 7
+	add hl, de
+	ld [hl], "!"
+	jp ApplyTilemapInVBlank
 	
 BrightburgMoveDittoAsm:
 	call GetFacingTileCoord
@@ -491,18 +471,6 @@ NettSpecsPutOnText:
 	line "the NETT SPECS."
 	done
 	
-NettSpecsNormalText1:
-	text "…"
-	done
-	
-NettSpecsNormalText2:
-	text "… …"
-	done
-	
-NettSpecsNormalText3:
-	text "… … …"
-	done
-	
 NettSpecsNormalText4:
 	text "Everything looks"
 	line "the same…"
@@ -538,10 +506,6 @@ NettSpecsChanseyText2:
 	done
 	
 NettSpecsDittoText:
-	text "… … …!"
-	done
-	
-NettSpecsDittoText2:
 	text "DITTO revealed"
 	line "itself!"
 	done

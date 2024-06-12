@@ -172,15 +172,8 @@ Route6SouthMinaScene:
 	closetext
 .cont
 	pause 40
-	callasm Route6SouthTextScrollAsm1
 	opentext
-	writetext Route6SouthMinaSceneText1
-	pause 30
-	writetext Route6SouthMinaSceneText2
-	pause 30
-	writetext Route6SouthMinaSceneText3
-	pause 30
-	callasm Route6SouthTextScrollAsm2
+	special Special_DotDotDot
 	closetext
 	pause 40
 	playsound SFX_PAY_DAY
@@ -558,20 +551,6 @@ Route6SouthPlayerPhoto4Asm:
 	ld a, PLAYER_PHOTO_4
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
-	ret
-	
-Route6SouthTextScrollAsm1:
-	ld hl, wOptions1
-	ld a, [hl]
-	ld [wPlaceBallsX], a
-	set NO_TEXT_SCROLL, [hl]
-	ret
-	
-Route6SouthTextScrollAsm2:
-	ld a, [wPlaceBallsX]
-	ld [wOptions1], a
-	xor a
-	ld [wPlaceBallsX], a
 	ret
 	
 Route6SouthEasel:

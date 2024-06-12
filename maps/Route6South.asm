@@ -62,7 +62,7 @@ Route6South_MapScriptHeader:
 	warp_event 59, 10, ROUTE_6_UNDERWATER, 74
 
 	db 1 ; coord events
-	coord_event 43,  4, 0, Route6SouthMinaScene
+	coord_event 43,  4, 1, Route6SouthMinaScene
 
 	db 0 ; bg events
 

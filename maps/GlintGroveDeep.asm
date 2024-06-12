@@ -197,6 +197,7 @@ GlintGroveDeepSmeargleScene:
 	disappear GLINTSECRET_MINA
 	dotrigger $4
 	clearevent EVENT_ROUTE_6_MINA_GONE
+	domaptrigger ROUTE_6_SOUTH, $1
 	end
 	
 GlintGroveDeepMinaText:

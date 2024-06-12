@@ -324,7 +324,7 @@ Route28StrengthManText9:
 	text "That TM contains"
 	line "BULK UP."
 	
-	para "You #MON will"
+	para "Your #MON will"
 	line "beef up and boost"
 	cont "their ATTACK and"
 	cont "DEFENSE stats."

@@ -1853,9 +1853,12 @@ HandleQueuedCommand: ; 97f42
 	ld hl, OBJECT_NEXT_TILE
 	add hl, de
 	ld a, [hl]
+	cp COLL_ROCK_CMD
+	jr z, .go
 	cp COLL_HOLE
 	jr nz, .next
 
+.go
 	ld hl, OBJECT_DIRECTION_WALKING
 	add hl, de
 	ld a, [hl]

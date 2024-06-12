@@ -1095,13 +1095,13 @@ TMHMTypes:
 ; This merges data from battle/moves/moves.asm:Moves and engine/tmhm.asm:TMHMMoves
 ; for efficiency.
 	db FIGHTING ; DYNAMICPUNCH
-	db DRAGON   ; DRAGON_CLAW
+	db FAIRY	; CHARM
 	db GHOST    ; CURSE
 	db PSYCHIC  ; CALM_MIND
 	db NORMAL   ; ROAR
 	db POISON   ; TOXIC
 	db ICE      ; HAIL
-	db FAIRY	; CHARM
+	db FIGHTING	; BULK UP
 	db POISON   ; VENOSHOCK
 	db NORMAL   ; HIDDEN_POWER
 	db FIRE     ; SUNNY_DAY

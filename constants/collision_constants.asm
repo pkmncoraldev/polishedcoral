@@ -11,6 +11,7 @@ COLL_GRIND	           EQU $03
 COLL_WALL              EQU $07
 COLL_SAND              EQU $08
 COLL_CUT_TREE          EQU $12
+COLL_ROCK_CMD          EQU $13
 COLL_LONG_GRASS        EQU $14
 COLL_HEADBUTT_TREE     EQU $15
 COLL_TALL_GRASS        EQU $18

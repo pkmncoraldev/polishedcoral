@@ -24,13 +24,13 @@ ENDM
 	const_def
 
 	add_tm DYNAMICPUNCH		; $00
-	add_tm DRAGON_CLAW		; $01
+	add_tm CHARM			; $01
 	add_tm CURSE			; $02
 	add_tm CALM_MIND		; $03
 	add_tm ROAR_WHIRLWIND	; $04
 	add_tm TOXIC			; $05
 	add_tm HAIL				; $06
-	add_tm CHARM			; $07
+	add_tm BULK_UP			; $07
 	add_tm DESTINY_BOND		; $08
 	add_tm SUPERPOWER		; $09
 	add_tm SUNNY_DAY		; $0a

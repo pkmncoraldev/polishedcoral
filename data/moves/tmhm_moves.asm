@@ -1,12 +1,12 @@
 TMHMMoves:
 	db DYNAMICPUNCH                        ; TM01
-	db DRAGON_CLAW                         ; TM02
+	db CHARM_FEATHER_DANCE                 ; TM02
 	db CURSE                               ; TM03
 	db CALM_MIND                           ; TM04
 	db ROAR_WHIRLWIND                      ; TM05
 	db TOXIC                               ; TM06
 	db HAIL                                ; TM07
-	db CHARM_FEATHER_DANCE                 ; TM08
+	db BULK_UP			                   ; TM08
 	db VENOSHOCK                           ; TM09
 	db SUPERPOWER                          ; TM10
 	db SUNNY_DAY                           ; TM11

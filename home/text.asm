@@ -207,6 +207,9 @@ endm
 	dict "<TARGET>", PlaceMoveTargetsName
 	dict "<USER>",   PlaceMoveUsersName
 	dict "<ENEMY>",  PlaceEnemysName
+	dict "<WAIT_S>", PauseTextShort
+	dict "<WAIT_M>", PauseTextMedium
+	dict "<WAIT_L>", PauseTextLong
 	dict "#",        PlacePoke
 	dict "le",       PlaceLe
 	dict "ng",       PlaceNg
@@ -505,6 +508,21 @@ ContText::
 	jp NextChar
 
 .cont	db "<_CONT>@"
+
+PauseTextShort::
+	ld c, 10
+	call DelayFrames
+	jp NextChar
+	
+PauseTextMedium::
+	ld c, 25
+	call DelayFrames
+	jp NextChar
+	
+PauseTextLong::
+	ld c, 40
+	call DelayFrames
+	jp NextChar
 
 PromptText::
 	ld a, [wLinkMode]

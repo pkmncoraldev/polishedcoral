@@ -23,6 +23,9 @@
 	charmap "<BUFFER>", $14
 	charmap "<DAY>",    $15
 	charmap "<FAR>",    $16
+	charmap "<WAIT_S>", $17
+	charmap "<WAIT_M>", $18
+	charmap "<WAIT_L>", $19
 
 	; unused: $17 - $1e
 

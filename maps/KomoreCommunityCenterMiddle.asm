@@ -58,6 +58,12 @@ KomoreCommunityCenterPikachu2:
 	iffalse .no
 	closetext
 	pause 60
+	opentext
+	writetext KomoreCommunityCenterPikachuText3
+	yesorno
+	iffalse .no
+	closetext
+	pause 60
 	applymovement 1, Movement_KomoroMimikyu1
 	spriteface 1, LEFT
 	pause 20

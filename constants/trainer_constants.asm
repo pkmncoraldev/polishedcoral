@@ -222,6 +222,7 @@ PLAYER_F EQU __enum__
 	const LEROY
 	const DARRYL
 	const HENRY
+	const KEITH
 	
 
 	trainerclass GRUNTM
@@ -283,6 +284,7 @@ PLAYER_F EQU __enum__
 	const TRISTEN
 	const SIMION
 	const THOMAS
+	const NOAH
 
 
 	trainerclass SUPER_NERD

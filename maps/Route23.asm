@@ -20,7 +20,7 @@ Route23_MapScriptHeader:
 	signpost  2, 24, SIGNPOST_JUMPTEXT, Route23SignText
 	signpost 10,  5, SIGNPOST_JUMPTEXT, Route23FightingDojoSignText
 
-	db 17 ; object events
+	db 18 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PINK
 	person_event SPRITE_YOUNGSTER, 17, 31, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer1, -1
@@ -38,6 +38,7 @@ Route23_MapScriptHeader:
 	itemball_event  2, 46, EVERSTONE, 1, EVENT_ROUTE_23_POKE_BALL_2
 	itemball_event 13, 38, ULTRA_BALL, 1, EVENT_ROUTE_23_POKE_BALL_3
 	itemball_event 19, 34, PP_UP, 1, EVENT_ROUTE_23_POKE_BALL_4
+	person_event SPRITE_CUTE_GIRL, 28, 35, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route23NPC, -1
 
 
 	const_def 1 ; object constants
@@ -97,6 +98,17 @@ Route23SetUpLeaves:
 	add 100
 	ld [wObject1SpriteX], a
 	ret
+	
+Route23NPC:
+	jumptextfaceplayer Route23NPCText
+	
+Route23NPCText:
+	text "The fallen tree"
+	line "has finally been"
+	cont "cleared!"
+	
+	para "Thank goodness!"
+	done
 	
 Route23Master5:
 	applyonemovement PLAYER, step_left
@@ -528,9 +540,10 @@ Route23BlackBeltText2:
 	done
 	
 Route23BlackBeltText3:
-	text "MASTER!"
-	line "I- <WAIT_M>Oh, you aren't"
-	cont "the MASTER."
+	text "MASTER! <WAIT_M>I-"
+	
+	para "Oh, <WAIT_S>you aren't"
+	line "the MASTER."
 	done
 	
 Route23BlackBeltText4:
@@ -575,9 +588,10 @@ Route23BlackBeltText6:
 	done
 	
 Route23BlackBeltText7:
-	text "MASTER!"
-	line "I- <WAIT_M>Oh, it's you"
-	cont "again."
+	text "MASTER! <WAIT_M>I-"
+	
+	para "Oh, <WAIT_S>it's you"
+	line "again."
 	done
 	
 Route23BlackBeltText8:

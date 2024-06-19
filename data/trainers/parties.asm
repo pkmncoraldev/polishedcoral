@@ -2089,6 +2089,15 @@ HikerGroup:
 	db -1 ; end
 
 ; ================
+
+	; HIKER
+	db "KEITH@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2517,6 +2526,15 @@ PokemaniacGroup:
 	; party
 	db 27, MEDITITE
 	db 26, DROWZEE
+	db -1 ; end
+
+; ================
+
+	; POKEMANIAC
+	db "NOAH@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -5210,7 +5228,7 @@ LedianRangerGroup:
 	db "RANGER@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, LEDIAN
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================

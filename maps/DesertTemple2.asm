@@ -148,7 +148,7 @@ endr
 	end
 .NormalBall
 	callasm DesertTemple2SetItemAsm
-	farscall FindItemInBallScript
+	farscall FindKeyItemInBallScript
 	iffalse .end
 	setevent EVENT_DESERT_TEMPLE_2_POKE_BALL
 .end

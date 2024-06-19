@@ -682,8 +682,8 @@ Script_pocketisfull:
 Script_specialsound:
 	farcall CheckItemPocket
 	ld a, [wItemAttributeParamBuffer]
-	cp TM_HM
-	ld de, SFX_GET_TM
+	cp KEY_ITEM
+	ld de, SFX_KEY_ITEM
 	jr z, .play
 	ld de, SFX_ITEM
 .play
@@ -2956,14 +2956,8 @@ Script_givetmhm:
 ;     tmhm (TMHMLabelByte)
 	call GetScriptByte
 	ld [wCurTMHM], a
-	ld [wItemQuantityChangeBuffer], a
 	call ReceiveTMHM
-	jr nc, .full
 	ld a, TRUE
-	ld [wScriptVar], a
-	ret
-.full
-	xor a
 	ld [wScriptVar], a
 	ret
 
@@ -2995,7 +2989,8 @@ Script_verbosegivetmhm:
 GiveTMHMScript:
 	writetext ReceivedItemText
 	waitsfx
-	specialsound
+	playsound SFX_GET_TM
+	waitsfx
 	waitbutton
 	tmhmnotify
 	end

@@ -547,7 +547,7 @@ StarglowHouse1RocketText4:
 	para "You're tougher than"
 	line "you look."
 	
-	para "Well, whatever."
+	para "Well, <WAIT_S>whatever."
 	
 	para "This #MON"
 	line "doesn't seem too"

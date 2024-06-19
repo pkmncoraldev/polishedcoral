@@ -243,7 +243,7 @@ JustRodeBoatShimmer:
 	end
 	
 ShimmerJustRodeBoatText:
-	text "Here we are,"
+	text "Here we are,<WAIT_S>"
 	line "PORT SHIMMER."
 	
 	para "Thanks for riding."

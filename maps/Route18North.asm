@@ -174,7 +174,7 @@ Route18NorthNPC1Text4:
 	done
 	
 Route18NorthNPC1Text5:
-	text "Oh, sorry about"
+	text "Oh, <WAIT_S>sorry about"
 	line "that."
 	
 	para "I just have this"

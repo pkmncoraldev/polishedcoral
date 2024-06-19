@@ -172,9 +172,7 @@ Route10TentNPCText8:
 	text "It looks like a"
 	line "useless CLAY POT…"
 	
-	para "…"
-	
-	para "But wait!"
+	para "…<WAIT_L>But wait!"
 	
 	para "I've seen a pot"
 	line "like this before!"

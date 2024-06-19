@@ -50,20 +50,20 @@ TrainerFlickerPass1F_1:
 TrainerFlickerPass1F_2:
 	generictrainer HIKER, HENRY, EVENT_BEAT_FLICKER_PASS_1F_TRAINER_2, .SeenText, .BeatenText
 
-	text "Cry! Cry! Cry!"
+	text "Cry! <WAIT_S>Cry! <WAIT_S>Cry!"
 	
 	para "Time to cry…"
 	done
 
 .SeenText:
-	text "Battle! Battle!"
+	text "Battle! <WAIT_S>Battle!<WAIT_S>"
 	line "Battle!"
 	
 	para "Time to battle!"
 	done
 
 .BeatenText:
-	text "Battle! Battle!"
+	text "Battle! <WAIT_S>Battle!<WAIT_S>"
 	line "Battle!"
 	
 	para "Lost the battle!"

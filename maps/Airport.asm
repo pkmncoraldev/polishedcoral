@@ -369,7 +369,7 @@ AirportNpc2Text:
 	line "watch the baggage"
 	cont "claim."
 	
-	para "It's hypnotizing…"
+	para "It's <WAIT_M>hypnotizing…"
 	done
 	
 AirportNpc2Text2:
@@ -387,9 +387,9 @@ AirportNpc2Text3:
 	text "You took that HM"
 	line "even though it"
 	cont "didn't belong to"
-	cont "you, didn'tcha?"
+	cont "you, <WAIT_S>didn'tcha?"
 	
-	para "Hey, it's not my"
+	para "Hey, <WAIT_S>it's not my"
 	line "problem."
 	
 	para "I won't tell…"
@@ -440,9 +440,8 @@ AirportNpc6Text:
 	done
 	
 AirportNpc7Text:
-	text "So busy and loud!"
-	
-	para "I hate airports!"
+	text "So busy and loud!<WAIT_M>"
+	line "I hate airports!"
 	done
 	
 AirportNpcSignText:

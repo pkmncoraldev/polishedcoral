@@ -337,7 +337,7 @@ SunsetSailboat2Text:
 	
 SunsetNPC1Text:
 	text "Do you mind?"
-	line "I'm on a date."
+	line "<WAIT_M>I'm on a date."
 	done
 	
 PlayersHouseSignText:
@@ -408,7 +408,7 @@ SunsetNPC4Text:
 	
 	para "You can run if"
 	line "you hold the"
-	cont "B BUTTON, right?"
+	cont "B BUTTON, <WAIT_S>right?"
 	done
 	
 SunsetNPC5Text:
@@ -430,11 +430,9 @@ SunsetNPC5Text2:
 	
 	para "They were right!"
 	
-	para "…"
+	para "…<WAIT_L>Who's they?"
 	
-	para "Who's they?"
-	
-	para "You know,"
+	para "You know,<WAIT_S>"
 	line "I never thought"
 	cont "about it."
 	done
@@ -450,7 +448,7 @@ SunsetNPC6Text:
 	done
 	
 SunsetJustRodeBoatText:
-	text "Here we are,"
+	text "Here we are,<WAIT_S>"
 	line "SUNSET BAY."
 	
 	para "Thanks for riding."

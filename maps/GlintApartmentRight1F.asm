@@ -74,7 +74,7 @@ GlintApt21FNpc3Text2:
 	line "that was staying"
 	cont "upstairs is gone…"
 	
-	para "“MINA” I think it"
+	para "“MINA” <WAIT_M>I think it"
 	line "was."
 	
 	para "She said something"

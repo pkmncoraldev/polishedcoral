@@ -97,7 +97,7 @@ TrainerConnectingCavern_1:
 	done
 
 .BeatenText:
-	text "Gah, you got me!"
+	text "Gah, <WAIT_S>you got me!"
 	done
 	
 TrainerConnectingCavern_2:
@@ -125,7 +125,7 @@ TrainerConnectingCavern_2:
 TrainerConnectingCavern_3:
 	generictrainer SUPER_NERD, PEDRO, EVENT_BEAT_CONNECTING_CAVERN_TRAINER_3, .SeenText, .BeatenText
 
-	text "Alright alright…"
+	text "Alright, alright…"
 	
 	para "It's all yours…"
 	done	
@@ -160,7 +160,7 @@ TrainerConnectingCavern_4:
 	done
 
 .BeatenText:
-	text "I see!"
+	text "I see!<WAIT_S>"
 	line "I see!"
 	done
 	
@@ -209,7 +209,7 @@ TrainerConnectingCavern_7:
 	generictrainer SWIMMERM, MARK, EVENT_BEAT_CONNECTING_CAVERN_TRAINER_7, .SeenText, .BeatenText
 
 	text "Swimming in the"
-	line "dark isn't weird,"
+	line "dark isn't weird,<WAIT_S>"
 	cont "right?"
 	done	
 

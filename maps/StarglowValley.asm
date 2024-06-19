@@ -594,8 +594,8 @@ StarglowLittleGirl:
 	end
 	
 StarglowFisher1Text1:
-	text "Sometimes, when"
-	line "fishing, my line"
+	text "Sometimes, <WAIT_S>when"
+	line "fishing, <WAIT_S>my line"
 	cont "will get caught"
 	cont "on something in"
 	cont "the water."
@@ -655,7 +655,7 @@ StarglowGrampsText1:
 	text "This town is so"
 	line "quiet and quaint."
 	
-	para "Quiet is nice, but"
+	para "Quiet is nice, <WAIT_S>but"
 	line "sometimes it can"
 	cont "get boring."
 	
@@ -826,7 +826,7 @@ StarglowSnare2Text2:
 	done
 	
 StarglowSnare2Text3:
-	text "Yeah, that's"
+	text "Yeah, <WAIT_S>that's"
 	line "what I thought."
 	done
 	
@@ -838,7 +838,7 @@ StarglowSnare2Text4:
 	done
 	
 StarglowSnare2WinText:
-	text "Woah! Hey!"
+	text "Woah! <WAIT_S>Hey!"
 	
 	para "Chill!"
 	done
@@ -974,7 +974,7 @@ StarglowSnare4Text2:
 	done
 	
 StarglowLittleGirlText1:
-	text "Help! Help!"
+	text "Help! <WAIT_S>Help!"
 	
 	para "Someone please"
 	line "help me!"

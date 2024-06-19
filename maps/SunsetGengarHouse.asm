@@ -88,7 +88,7 @@ SunsetGengarHouseNPC1Text:
 	done
 
 SunsetGengarHouseNPC2Text:
-	text "So, you're"
+	text "So, <WAIT_S>you're"
 	line "starting your"
 	cont "#MON journey,"
 	cont "eh?"

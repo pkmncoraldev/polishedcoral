@@ -224,14 +224,14 @@ Route22TunnelTrainer3:
 Route22TunnelTrainer4:
 	generictrainer CUEBALL, CURLY, EVENT_BEAT_ROUTE_22_TUNNEL_TRAINER_4, Route22TunnelTrainer4SeenText, Route22TunnelTrainer4BeatenText
 
-	text "Alright! alright!"
+	text "Alright! <WAIT_S>alright!"
 	
 	para "You win, just"
 	line "leave me alone!"
 	done
 
 Route22TunnelTrainer4SeenText:
-	text "Guh! Huh! Huh!"
+	text "Guh! <WAIT_S>Huh! <WAIT_S>Huh!"
 	
 	para "What's a little"
 	line "runt like you"
@@ -240,7 +240,7 @@ Route22TunnelTrainer4SeenText:
 	done
 
 Route22TunnelTrainer4BeatenText:
-	text "Guh! Huh! Wuh!"
+	text "Guh! <WAIT_S>Huh! <WAIT_S>Wuh!"
 	done
 	
 Route22TunnelGate:

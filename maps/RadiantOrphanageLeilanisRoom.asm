@@ -354,9 +354,9 @@ RadiantOrphanageLeilanisRoomErikaText5:
 	text " girls"
 	line "that ran off."
 	
-	para "ROSE, LILY, IRIS,"
-	line "POPPY, FELICIA,"
-	cont "VIOLET and CLOVER."
+	para "ROSE, <WAIT_S>LILY, <WAIT_S>IRIS,<WAIT_S>"
+	line "POPPY, <WAIT_S>FELICIA,"
+	cont "VIOLET<WAIT_S> and CLOVER."
 	
 	para "Could I ask you"
 	line "to keep an eye out"

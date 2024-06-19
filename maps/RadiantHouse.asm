@@ -58,7 +58,7 @@ RadiantHouseNPC2Text:
 	para "She's a bit of a"
 	line "tuber-head."
 	
-	para "Why, she's a real"
+	para "Why, <WAIT_S>she's a real"
 	line "rhizome lover…"
 	done
 	
@@ -82,9 +82,7 @@ RadiantHouseNPCText1:
 	line "my totally tubular"
 	cont "roots with you."
 	
-	para "…"
-	
-	para "Hmm…"
+	para "…<WAIT_L>Hmm…"
 	
 	para "None of your #-" 
 	line "MON know the move"
@@ -114,9 +112,7 @@ RadiantHouseNPCText2:
 	line "my totally tubular"
 	cont "roots with you."
 	
-	para "…"
-	
-	para "Hmm…"
+	para "…<WAIT_L>Hmm…"
 	
 	para "Yes!"
 	

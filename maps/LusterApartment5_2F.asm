@@ -38,9 +38,8 @@ LusterApartment5_2F_NPC3:
 	jumptextfaceplayer LusterApartment5_2F_NPC3Text
 	
 LusterApartment5_2F_NPC1Text1:
-	text "Ahh!"
-	
-	para "An outsider!"
+	text "Ahh!<WAIT_M>"
+	line "An outsider!"
 	
 	para "Who allowed you to"
 	line "enter my room?"

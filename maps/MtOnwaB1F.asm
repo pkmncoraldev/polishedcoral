@@ -87,9 +87,8 @@ LavaCaveBF1Trainer3:
 	done
 
 .BeatenText:
-	text "Huh."
-	
-	para "I see."
+	text "Huh.<WAIT_M>"
+	line "I see."
 	done
 	
 LavaCaveBF1NPC1:

@@ -549,7 +549,7 @@ StarglowGymRodneyTextBeforeBattle:
 	cont "fisherman you see"
 	cont "before you."
 	
-	para "I, in turn, use"
+	para "I, <WAIT_S>in turn, <WAIT_S>use"
 	line "those skills to"
 	cont "train my own"
 	cont "#MON!"

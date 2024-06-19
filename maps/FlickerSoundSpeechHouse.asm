@@ -31,5 +31,5 @@ FlickerHouse1NPCText:
 	para "Even in the middle"
 	line "of the night…"
 	
-	para "It's just… great…"
+	para "It's just… <WAIT_M>great…"
 	done

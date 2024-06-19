@@ -191,9 +191,8 @@ TrainerMtOnwaOutside_2:
 	done
 
 .BeatenText:
-	text "Yep!"
-	
-	para "I was right!"
+	text "Yep!<WAIT_M>"
+	line "I was right!"
 	done
 	
 TrainerMtOnwaOutside_3:
@@ -250,7 +249,7 @@ MtOnwaPanNPCText5:
 	done
 	
 MtOnwaPanNPCText6:	
-	text "It's a bit"
+	text "It's a bit<WAIT_S>"
 	line "romantic…"
 	done
 	

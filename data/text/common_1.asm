@@ -4,7 +4,7 @@ _FruitBearingTreeText::
 	done
 
 _HeyItsFruitText::
-	text "Hey! It's a"
+	text "Hey! <WAIT_S>It's a"
 	line "@"
 	text_from_ram wStringBuffer3
 	text "!"
@@ -301,7 +301,7 @@ DecoConsoleText::
 	done
 
 UnknownText_0x1bc5ef::
-	text "A giant doll! It's"
+	text "A giant doll! <WAIT_S>It's"
 	line "fluffy and cuddly."
 	done
 
@@ -1106,13 +1106,12 @@ UnknownText_TradeIntroText1::
 	done
 
 UnknownText_TradeCancelText1::
-	text "Sigh…"
-	
+	text "Sigh…<WAIT_M>"
 	line "Maybe someday…"
 	done
 
 UnknownText_TradeWrongText1::
-	text "Huh? That's not"
+	text "Huh? <WAIT_S>That's not"
 	line "@"
 	text_from_ram wStringBuffer1
 	text "."
@@ -1168,7 +1167,7 @@ UnknownText_TradeCancelText2::
 	done
 
 UnknownText_TradeWrongText2::
-	text "Huh? That's not"
+	text "Huh? <WAIT_S>That's not"
 	line "@"
 	text_from_ram wStringBuffer1
 	text "."
@@ -1227,7 +1226,7 @@ UnknownText_TradeCancelText3::
 	done
 
 UnknownText_TradeWrongText3::
-	text "What? That's not"
+	text "What? <WAIT_S>That's not"
 	line "@"
 	text_from_ram wStringBuffer1
 	text "!"
@@ -1287,7 +1286,7 @@ UnknownText_TradeCancelText4::
 	done
 
 UnknownText_TradeWrongText4::
-	text "What? That's not"
+	text "What? <WAIT_S>That's not"
 	line "@"
 	text_from_ram wStringBuffer1
 	text "!"
@@ -1305,13 +1304,13 @@ UnknownText_TradeCompleteText4::
 	
 	para "…"
 	
-	para "The sewer?"
+	para "The… <WAIT_M>sewer?"
 	
 	para "What were you"
 	line "doing in the"
 	cont "sewer?"
 	
-	para "Well, @"
+	para "Well, <WAIT_S>@"
 	text_from_ram wTradeCroagunkName
 	text ""
 	line "won't be going"
@@ -1321,7 +1320,7 @@ UnknownText_TradeCompleteText4::
 
 UnknownText_TradeAfterText4::
 	text "How is SHAGGY"
-	line "doing, sewer kid?"
+	line "doing, <WAIT_S>sewer kid?"
 	
 	para "@"
 	text_from_ram wTradeCroagunkName
@@ -1449,9 +1448,9 @@ UnknownText_TradeAfterText6::
 	
 UnknownText_TradeIntroText7::
 	text "I found this cute"
-	line "GIRAFARIG doll on "
-	cont "the ground over"
-	cont "by the abandoned"
+	line "GIRAFARIG doll on"
+	cont "the ground near"
+	cont "the abandoned"
 	cont "community center."
 	
 	para "I had never really"
@@ -1484,7 +1483,7 @@ UnknownText_TradeWrongText7::
 	done
 	
 UnknownText_TradeCompleteText7::
-	text "Finally!"
+	text "Finally!<WAIT_M>"
 	line "A GIRAFARIG!"
 	
 	para "I hope little"
@@ -1708,7 +1707,7 @@ UnknownText_0x1bdc79::
 	prompt
 
 UnknownText_0x1bdc97::
-	text "Oh? But you have"
+	text "Oh? <WAIT_S>But you have"
 	line "just one #MON."
 	prompt
 
@@ -1729,7 +1728,7 @@ UnknownText_0x1bdcff::
 	prompt
 
 UnknownText_0x1bdd30::
-	text "OK. I'll raise"
+	text "OK. <WAIT_S>I'll raise"
 	line "your @"
 	text_from_ram wStringBuffer1
 	text "."
@@ -1742,7 +1741,7 @@ UnknownText_0x1bdd4b::
 
 UnknownText_0x1bdd64::
 	text "Are we geniuses or"
-	line "what? Want to see"
+	line "what? <WAIT_S>Want to see"
 	cont "your @"
 	text_from_ram wStringBuffer1
 	text "?"
@@ -1767,7 +1766,7 @@ UnknownText_0x1bdd96::
 	done
 
 UnknownText_0x1bde04::
-	text "Perfect! Here's"
+	text "Perfect! <WAIT_S>Here's"
 	line "your #MON."
 	prompt
 
@@ -1779,7 +1778,7 @@ UnknownText_0x1bde1f::
 	prompt
 
 UnknownText_0x1bde32::
-	text "Huh? Back already?"
+	text "Huh? <WAIT_S>Back already?"
 	line "Your @"
 	text_from_ram wStringBuffer1
 	text ""
@@ -1814,7 +1813,7 @@ UnknownText_0x1bdef6::
 	done
 
 UnknownText_0x1bdf00::
-	text "Ah, it's you!"
+	text "Ah, <WAIT_S>it's you!"
 
 	para "We were raising"
 	line "your #MON, and"

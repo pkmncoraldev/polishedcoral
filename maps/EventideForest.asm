@@ -64,7 +64,7 @@ EventideForestSign2:
 TrainerEventide_1:
 	generictrainer YOUNGSTER, TOMMY, EVENT_BEAT_EVENTIDE_TRAINER_1, .SeenText, .BeatenText
 
-	text "I-I'm not afraid of"
+	text "I-<WAIT_S>I'm not afraid of"
 	line "the dark or any-"
 	cont "thing."
 	
@@ -94,9 +94,8 @@ TrainerEventide_2:
 	done
 
 .SeenText:
-	text "Oh no!"
-	
-	para "I think I'm lost!"
+	text "Oh no!<WAIT_M>"
+	line "I think I'm lost!"
 	
 	para "What'll I do if I"
 	line "can't find my way"
@@ -104,7 +103,7 @@ TrainerEventide_2:
 	done
 
 .BeatenText:
-	text "Lost. Lost."
+	text "Lost. <WAIT_S>Lost.<WAIT_S>"
 	line "Lost."
 	done
 	
@@ -160,9 +159,8 @@ TrainerEventide_5:
 
 	text "Did I spook you?"
 	
-	para "Haha!"
-	
-	para "It's just a story!"
+	para "Haha!<WAIT_M>"
+	line "It's just a story!"
 	done
 
 .SeenText:
@@ -174,9 +172,7 @@ TrainerEventide_5:
 	line "unsuspecting young"
 	cont "TRAINERS, and…"
 	
-	para "…"
-	
-	para "BOO!"
+	para "… <WAIT_L>BOO!"
 	done
 
 .BeatenText:

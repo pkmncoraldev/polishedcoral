@@ -79,7 +79,7 @@ Route19Skater1Text:
 	cont "get to places you"
 	cont "shouldn't be."
 	
-	para "It's cool, I guess."
+	para "It's cool, <WAIT_S>I guess."
 	done
 	
 Route19Skater2:
@@ -167,11 +167,11 @@ Route19Trainer4:
 	para "Now it just smells"
 	line "like gasoline!"
 	
-	para "Cough! Cough!"
+	para "Cough! <WAIT_S>Cough!"
 	done
 
 .SeenText:
-	text "Sniff… Sniff…"
+	text "Sniff… <WAIT_S>Sniff…"
 	
 	para "Do you smell that?"
 	done
@@ -251,9 +251,7 @@ Route19CloverText2:
 	para "It's fun to act"
 	line "out!"
 	
-	para "…"
-	
-	para "Huh? GRAMMA is"
+	para "…<WAIT_L>Huh? GRAMMA is"
 	line "sick?"
 	
 	para "I didn't want to"

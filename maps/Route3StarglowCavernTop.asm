@@ -272,7 +272,7 @@ SwapBytes::
 ;	ret
 	
 Route3StarglowCavernTopPatchesText1:
-	text "Well, hi there."
+	text "Well, <WAIT_S>hi there."
 	
 	para "What's someone like"
 	line "you doing up here?"
@@ -289,7 +289,7 @@ Route3StarglowCavernTopPatchesText2Yes:
 	line "really great one,"
 	cont "too!"
 	
-	para "Well listen, I saw"
+	para "Well listen, <WAIT_S>I saw"
 	line "a real strong"
 	cont "#MON down this"
 	cont "hole."
@@ -303,7 +303,7 @@ Route3StarglowCavernTopPatchesText2Yes:
 	line "left for a tough"
 	cont "TRAINER like you!"
 	
-	para "Go on, take a"
+	para "Go on, <WAIT_S>take a"
 	line "look!"
 	done
 	
@@ -315,7 +315,7 @@ Route3StarglowCavernTopPatchesText2No:
 	cont "training to the"
 	cont "adults!"
 	
-	para "Well listen, I saw"
+	para "Well listen, <WAIT_S>I saw"
 	line "a real valuable"
 	cont "treasure down this"
 	cont "hole."
@@ -329,7 +329,7 @@ Route3StarglowCavernTopPatchesText2No:
 	line "good kid, maybe"
 	cont "you could have it."
 	
-	para "Go on, take a"
+	para "Go on, <WAIT_S>take a"
 	line "look!"
 	done
 	
@@ -372,7 +372,7 @@ Route3StarglowCavernTopPatchesDoneCaveText1::
 	
 	para "Um…"
 	
-	para "L-let's just talk"
+	para "L-<WAIT_S>let's just talk"
 	line "about this for a"
 	cont "second…"
 	
@@ -425,9 +425,7 @@ Route3StarglowCavernTopPatchesDoneCaveText3:
 	
 	para "Anyway…"
 	
-	para "…"
-	
-	para "You'll forgive me,"
+	para "…<WAIT_L>You'll forgive me,"
 	line "right?"
 	done
 	

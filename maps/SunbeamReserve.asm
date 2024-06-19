@@ -201,28 +201,21 @@ SunbeamReserveNidoranMText:
 	done
 	
 SunbeamReserveNidoranFText:
-	text "NIDORAN♀: Ran…"
+	text "NIDORAN♀: Ran…<WAIT_S>"
 	line "Ran…"
 	done
 	
 SunbeamReserveSlowpokeText:
-	text "SLOWPOKE: Sloooow…"
-	
-	para "…"
-	
-	para "…"
-	
-	para "…"
-	
-	para "…poke?"
+	text "SLOWPOKE: <WAIT_S>S<WAIT_S>l<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>w<WAIT_S>…<WAIT_L>"
+	line "…poke?"
 	done
 	
 SunbeamReserveLopunnyText:
-	text "LOPUNNY: Lop! Lop!"
+	text "LOPUNNY: Lop! <WAIT_S>Lop!"
 	done
 	
 SunbeamReserveAltariaText:
-	text "ALTARIA: …Taria?"
+	text "ALTARIA: …<WAIT_M>Taria?"
 	done
 	
 SunbeamReserveDonphanText:
@@ -230,12 +223,12 @@ SunbeamReserveDonphanText:
 	done
 	
 SunbeamReserveMagmarText:
-	text "MAGMAR: MAG!"
+	text "MAGMAR: MAG!<WAIT_S>"
 	line "MAR!"
 	done
 	
 SunbeamReserveElectabuzzText:
-	text "ELECTABUZZ: BUZZ!"
+	text "ELECTABUZZ: BUZZ!<WAIT_S>"
 	line "LECTA!"
 	done
 	

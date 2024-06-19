@@ -119,7 +119,7 @@ RadiantFieldTrainer4:
 	done
 
 .BeatenText:
-	text "Ok! You won!"
+	text "Ok! <WAIT_S>You won!"
 	done
 	
 RadiantFieldRose:
@@ -238,11 +238,11 @@ RadiantFieldRoseText2:
 	para "MS. ERIKA wants us"
 	line "to come home?"
 	
-	para "Ok! Bye bye!"
+	para "Ok! <WAIT_S>Bye bye!"
 	done
 	
 RadiantFieldIrisText1:
-	text "La la la!"
+	text "La <WAIT_S>la <WAIT_S>la!"
 	
 	para "I'm collecting"
 	line "flowers for GRAMMA"
@@ -250,7 +250,7 @@ RadiantFieldIrisText1:
 	done
 	
 RadiantFieldIrisText2:
-	text "IRIS: La la la!"
+	text "IRIS: La <WAIT_S>la <WAIT_S>la!"
 	
 	para "I'm collecting"
 	line "flowers for GRAMMA"

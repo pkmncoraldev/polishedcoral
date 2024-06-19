@@ -58,12 +58,12 @@ LusterMallClothesShopPollyText:
 	
 	para "GYM LEADER?"
 	
-	para "Maybe I am, what"
+	para "Maybe I am, <WAIT_S>what"
 	line "about it?"
 	
 	para "A battle?"
 	
-	para "Like, no way!"
+	para "Like, <WAIT_S>no way!"
 	
 	para "Can't you see"
 	line "I'm busy?"
@@ -122,7 +122,7 @@ LusterMallClothesShopNpc2Text:
 	
 	para "…"
 	
-	para "Actually,"
+	para "Actually,<WAIT_S>"
 	line "nevermind."
 	
 	para "You clearly have"
@@ -130,7 +130,7 @@ LusterMallClothesShopNpc2Text:
 	done
 	
 LusterMallClothesShopShoesText:
-	text "Shoes, hats, and"
+	text "Shoes, <WAIT_S>hats,<WAIT_S> and"
 	line "bags."
 	done
 	

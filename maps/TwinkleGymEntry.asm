@@ -377,7 +377,7 @@ TwinkleGymEntryClerkText4:
 	
 	
 TwinkleGymEntryClerkText5:
-	text "Oh my!"
+	text "Oh <WAIT_S>my!"
 	
 	para "You're right!"
 	
@@ -436,7 +436,7 @@ TwinkleGymEntryClerkText8:
 TwinkleGymEntryClerkText9:
 	text "The RED ROOM is…"
 	
-	para "Well, I'm sure you"
+	para "Well, <WAIT_S>I'm sure you"
 	line "know where the RED"
 	cont "ROOM is by now…"
 	

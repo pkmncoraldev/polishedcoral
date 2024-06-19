@@ -24,7 +24,7 @@ Route21GateOfficer:
 	jumptextfaceplayer Route21GateOfficerText
 
 Route21GateOfficerText:
-	text "Doo doo doo."
+	text "Doo <WAIT_S>doo <WAIT_S>doo."
 	
 	para "I'm so bored!"
 	

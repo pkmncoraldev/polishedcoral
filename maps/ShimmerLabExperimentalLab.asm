@@ -570,7 +570,7 @@ ShimmerLabFossilCutsceneText3:
 ShimmerLabFossilCutsceneText4:
 	text "Alright!"
 	
-	para "First, the machine"
+	para "First, <WAIT_S>the machine"
 	line "will separate the"
 	cont "organic material"
 	cont "from the rock,"
@@ -581,7 +581,7 @@ ShimmerLabFossilCutsceneText4:
 	done
 	
 ShimmerLabFossilCutsceneText5:
-	text "Next, we process"
+	text "Next, <WAIT_S>we process"
 	line "that DNA into data"
 	cont "the machine can"
 	cont "understand."
@@ -597,7 +597,7 @@ ShimmerLabFossilCutsceneText6:
 	done
 	
 ShimmerLabFossilCutsceneText7:
-	text "Lastly, we use the"
+	text "Lastly, <WAIT_S>we use the"
 	line "data from the last"
 	cont "step to create a"
 	cont "clone of the"

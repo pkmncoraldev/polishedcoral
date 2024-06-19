@@ -518,9 +518,7 @@ TwinkleTownSnowman1Text1:
 	line "BOTTLE CAPs for"
 	cont "eyes."
 	
-	para "…"
-	
-	para "Take one?"
+	para "…<WAIT_L>Take one?"
 	done
 	
 TwinkleTownSnowman1Text2:
@@ -533,9 +531,7 @@ TwinkleTownSnowman1Text3:
 	line "BOTTLE CAP for an"
 	cont "eye."
 	
-	para "…"
-	
-	para "Take the other"
+	para "…<WAIT_L>Take the other"
 	line "one?"
 	done
 	
@@ -565,9 +561,8 @@ TwinkleTownSnowman1TextScaredKids:
 	done
 	
 TwinkleTownNPC1Text:
-	text "Snowman! Snowman!"
-	
-	para "Hehehe!"
+	text "Snowman! <WAIT_S>Snowman!<WAIT_S>"
+	line "Hehehe!"
 	done
 	
 TwinkleTownNPC2Text1:

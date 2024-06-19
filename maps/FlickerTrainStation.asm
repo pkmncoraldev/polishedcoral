@@ -176,7 +176,20 @@ FlickerTrainStationClerk:
 	closetext
 	pause 5
 	opentext
-	writetext FlickerTrainStationClerkText9
+	special PlaceMoneyTopRight
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl
+	writetext FlickerTrainStationClerkText9Boy
+	jump .cont
+.girl
+	writetext FlickerTrainStationClerkText9Girl
+.cont
 	waitbutton
 	closetext
 	pause 5
@@ -400,9 +413,14 @@ FlickerTrainStationClerkText8:
 	cont "CITY?"
 	done
 	
-FlickerTrainStationClerkText9:
+FlickerTrainStationClerkText9Boy:
 	text "Right this way,"
 	line "sir!"
+	done
+	
+FlickerTrainStationClerkText9Girl:
+	text "Right this way,"
+	line "ma'am!"
 	done
 	
 FlickerTrainStationClerkText11:

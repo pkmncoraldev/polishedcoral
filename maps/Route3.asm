@@ -124,7 +124,7 @@ TrainerRoute3WestNpc:
 	jumptextfaceplayer TrainerRoute3WestNpcText
 
 TrainerRoute3WestNpcText:
-	text "I saw a weird man"
+	text "I saw an odd man"
 	line "climb up that wall"
 	cont "over there."
 	

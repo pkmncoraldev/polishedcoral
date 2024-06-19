@@ -305,7 +305,7 @@ LusterTrainStationReporterText2:
 	done
 	
 LusterTrainStationReporterText3:
-	text "Well, there you"
+	text "Well, <WAIT_S>there you"
 	line "have it, folks!"
 	
 	para "A crisis averted,"
@@ -373,7 +373,7 @@ LusterTrainStationConductorText3:
 	para "YOU'LL HAVE TO GO"
 	line "THROUGH ME!”"
 	
-	para "Well, needless to"
+	para "Well, <WAIT_S>needless to"
 	line "say, that did it!"
 	
 	para "Those crooks"
@@ -384,7 +384,7 @@ LusterTrainStationConductorText3:
 	para "I can't say I blame"
 	line "them."
 	
-	para "I mean, look at"
+	para "I mean, <WAIT_S>look at"
 	line "me!"
 	
 	para "AHAHAHA!"
@@ -428,7 +428,7 @@ LusterStationNettText1:
 	
 	para "…"
 	
-	para "Well, I should be"
+	para "Well, <WAIT_S>I should be"
 	line "going now."
 	done
 	

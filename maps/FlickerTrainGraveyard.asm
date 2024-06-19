@@ -164,16 +164,15 @@ TrainerFlickerTrainGraveyard_2SeenText:
 	text "You think you're"
 	line "tough, huh?"
 	
-	para "Well, too bad!"
+	para "Well, <WAIT_S>too bad!"
 	
 	para "This is OUR secret"
 	line "spot!"
 	done
 	
 TrainerFlickerTrainGraveyard_2BeatenText:
-	text "Gah!"
-	
-	para "You ARE tough!"
+	text "Gah!<WAIT_M>"
+	line "You ARE tough!"
 	done
 	
 TrainerFlickerTrainGraveyard_2NormalText1:
@@ -186,9 +185,8 @@ TrainerFlickerTrainGraveyard_2NormalText1:
 	done
 	
 TrainerFlickerTrainGraveyard_2NormalText2:
-	text "Huh?"
-	
-	para "Oh."
+	text "Huh?<WAIT_M>"
+	line "Oh."
 	
 	para "You want to get"
 	line "by?"
@@ -208,9 +206,8 @@ TrainerFlickerTrainGraveyard_3BeatenText:
 	done
 	
 TrainerFlickerTrainGraveyard_3NormalText:
-	text "Later, cutie!"
-	
-	para "Hehe!"
+	text "Later, cutie!<WAIT_M>"
+	line "Hehe!"
 	done
 	
 Movement_FlickerTrainGraveyard3Girls2:

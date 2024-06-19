@@ -63,13 +63,13 @@ DuskHouse2NPC1Text1:
 	text "Do you believe in"
 	line "destiny?"
 	
-	para "Friends, enemies…"
-	line "Lovers, strangers…"
+	para "Friends, <WAIT_M>enemies…<WAIT_M>"
+	line "Lovers, <WAIT_M>strangers…<WAIT_S>"
 	
 	para "Destiny binds us"
 	line "all together."
 	
-	para "Try as you might,"
+	para "Try as you might,<WAIT_S>"
 	line "that bond cannot"
 	cont "be broken."
 	
@@ -98,8 +98,8 @@ DuskHouse2NPC1Text2:
 	done
 	
 DuskHouse2NPC1TextLoop:
-	text "Friends, enemies…"
-	line "Lovers, strangers…"
+	text "Friends, <WAIT_M>enemies…<WAIT_M>"
+	line "Lovers, <WAIT_M>strangers…<WAIT_S>"
 	
 	para "Destiny binds us"
 	line "all together."
@@ -124,7 +124,7 @@ DuskHouse2NPC2Text1:
 	cont "along to our"
 	cont "eventual fates."
 	
-	para "Try as you might,"
+	para "Try as you might,<WAIT_S>"
 	line "it cannot be"
 	cont "stopped."
 	
@@ -171,7 +171,7 @@ DuskHouse2NPC2TextLoop:
 	cont "along to our"
 	cont "eventual fates."
 	
-	para "Try as you might,"
+	para "Try as you might,<WAIT_S>"
 	line "it cannot be"
 	cont "stopped."
 	done

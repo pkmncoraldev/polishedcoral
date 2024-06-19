@@ -61,14 +61,14 @@ LusterMallCoffeeShopPolly:
 	end
 	
 LusterMallCoffeeShopPollyText:
-	text "Yeah, I figured"
+	text "Yeah, <WAIT_S>I figured"
 	line "you'd follow me"
 	cont "again."
 	
 	para "You won't even let"
 	line "me eat in peace."
 	
-	para "Fine!"
+	para "Fine!<WAIT_M>"
 	line "You win."
 	
 	para "I'll battle you…"
@@ -575,9 +575,7 @@ LusterMallCoffeeShop_NPC1Text2:
 	
 	para "It's my favorite!"
 	
-	para "…"
-	
-	para "Oh!"
+	para "…<WAIT_L>Oh!"
 	
 	para "That lovely smell!"
 	
@@ -589,11 +587,9 @@ LusterMallCoffeeShop_NPC1Text2:
 	done
 	
 LusterMallCoffeeShop_NPC1Text3:
-	text "Gulp… gulp…"
+	text "Gulp… <WAIT_S>gulp…"
 	
-	para "…"
-	
-	para "Ah!"
+	para "…<WAIT_L>Ah!"
 	done
 	
 LusterMallCoffeeShop_NPC1Text4:

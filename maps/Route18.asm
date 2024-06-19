@@ -117,17 +117,15 @@ TrainerRoute18_4:
 	text "You think yur"
 	line "better than me!?"
 	
-	para "…"
-	
-	para "Oh…"
+	para "…<WAIT_M>Oh…"
 	
 	para "I guess you are…"
 	
-	para "HAW! HAW! HAW!"
+	para "HAW! <WAIT_S>HAW! <WAIT_S>HAW!"
 	done
 
 .SeenText:
-	text "HAW! HAW! HAW!"
+	text "HAW! <WAIT_S>HAW! <WAIT_S>HAW!"
 	
 	para "Little kiddy all"
 	line "alone out in the"

@@ -453,7 +453,7 @@ SunbeamContestText1:
 	cont "stuff on the run-"
 	cont "way and in battle!"
 	
-	para "But first, give it"
+	para "But first, <WAIT_S>give it"
 	line "up for our judge"
 	cont "for today,"
 	cont "<PLAYER>!"
@@ -584,7 +584,7 @@ SunbeamContestText18:
 	done
 	
 SunbeamContestCrowdText:
-	text "Crowd: WOOO!!"
+	text "Crowd: WOOO!!<WAIT_S>"
 	line "YEAH!!"
 	done
 	

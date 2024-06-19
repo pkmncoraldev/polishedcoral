@@ -24,7 +24,7 @@ TwinkleTradeHouseNpc2Text:
 	cont "certain #MON"
 	cont "to evolve."
 	
-	para "For example, I've"
+	para "For example, <WAIT_S>I've"
 	line "heard that a RAZOR"
 	cont "FANG might cause"
 	cont "GLIGAR to evolve"

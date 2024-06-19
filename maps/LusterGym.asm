@@ -68,7 +68,7 @@ LusterGymCallbackText:
 	text "Hey, TRAINER."
 	
 	para "The GYM LEADER"
-	line "isn't here, sorry…"
+	line "isn't here, <WAIT_S>sorry…"
 	
 	para "You just missed"
 	line "her."
@@ -186,9 +186,9 @@ LusterGymPollyRematch:
 	end
 	
 LusterGymPollyTextBeforeBattle:
-	text "Oh it's you…"
+	text "Oh, it's you…"
 	
-	para "Yeah, yeah, I'm"
+	para "Yeah, <WAIT_S>yeah, <WAIT_S>I'm"
 	line "here."
 	
 	para "Not that I have"
@@ -196,7 +196,7 @@ LusterGymPollyTextBeforeBattle:
 	
 	para "My parents say"
 	line "I'm some kind of"
-	cont "“progidy” or some-"
+	cont "<WAIT_S>“progidy”<WAIT_S> or some-"
 	cont "thing."
 	
 	para "So they make me do"
@@ -209,7 +209,7 @@ LusterGymPollyTextBeforeBattle:
 	done
 	
 LusterGymPollyTextBeforeBattleRematch:
-	text "Oh it's you!"
+	text "Oh, it's you!"
 	
 	para "I haven't been"
 	line "hanging out at the"
@@ -233,7 +233,7 @@ LusterGymPollyTextAfterBattle:
 	line "SURF outside of"
 	cont "battle."
 	
-	para "You should, uh…"
+	para "You should, <WAIT_S>uh…<WAIT_S>"
 	line "also take this."
 	done
 	
@@ -242,9 +242,8 @@ LusterGymPollyTextTMSpeech:
 	
 	para "…"
 	
-	para "That battle was…"
-	
-	para "Actually fun?"
+	para "That battle was…<WAIT_L>"
+	line "actually fun?"
 	
 	para "I can't remember"
 	line "the last time I"
@@ -275,7 +274,7 @@ LusterGymPollyTextWin:
 	line "lost?"
 	
 	para "I guess you should"
-	line "uh… take this."
+	line "uh… <WAIT_M>take this."
 	
 	para "It's the #MON"
 	line "LEAGUE BANEBADGE."
@@ -312,7 +311,7 @@ LusterGymPollyTextLoop:
 	done
 	
 LusterGymPollyTextNoRematch:
-	text "Aw, come on!"
+	text "Aw, <WAIT_S>come on!"
 	done
 	
 Text_ReceivedFifthBadge:
@@ -345,7 +344,7 @@ LusterGymTrainer1:
 	done
 
 .BeatenText:
-	text "Yep, you're not"
+	text "Yep, <WAIT_S>you're not"
 	line "bad!"
 	done
 	
@@ -402,8 +401,9 @@ LusterGymTrainer3:
 LusterGymTrainer4:
 	generictrainer BEAUTY, CLAIRE_5, EVENT_BEAT_LUSTER_GYM_TRAINER_4, .SeenText, .BeatenText
 
-	text "Apparently they're"
-	line "in the shape of"
+	text "Apparently the"
+	line "planters are in"
+	cont "the shape of"
 	cont "POLLY's favorite!"
 	done
 
@@ -460,7 +460,7 @@ LusterGymTrainer6:
 .SeenText:
 	text "A battle?"
 	
-	para "Yeah, sure…"
+	para "Yeah, <WAIT_M>sure…"
 	
 	para "Whatever…"
 	done
@@ -518,14 +518,14 @@ LusterGymTrainer1RematchRegularText:
 	done
 
 LusterGymTrainer1RematchSeenText:
-	text "Oh it's you."
+	text "Oh, <WAIT_S>it's you."
 	
 	para "You here to battle"
 	line "POLLY again?"
 	done
 
 LusterGymTrainer1RematchBeatenText:
-	text "Yep, you're not"
+	text "Yep, <WAIT_S>you're not"
 	line "bad!"
 	done
 	
@@ -686,8 +686,9 @@ LusterGymTrainer4Rematch:
 	end
 
 LusterGymTrainer4RematchRegularText:
-	text "Apparently they're"
-	line "in the shape of"
+	text "Apparently the"
+	line "planters are in"
+	cont "the shape of"
 	cont "POLLY's favorite!"
 	done
 
@@ -812,7 +813,7 @@ LusterGymTrainer6RematchRegularText:
 LusterGymTrainer6RematchSeenText:
 	text "Another battle?"
 	
-	para "Yeah, sure…"
+	para "Yeah, <WAIT_M>sure…"
 	
 	para "Whatever…"
 	done

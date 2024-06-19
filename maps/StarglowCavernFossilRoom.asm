@@ -260,7 +260,7 @@ StarglowCavernFossilRoomNpcText7:
 	done
 	
 StarglowCavernFossilRoomNpcWinText:
-	text "YOU WIN"
+	text "No! <WAIT_S>No! <WAIT_S>No!"
 	done
 	
 Movement_StarglowCavernFossilGuy:

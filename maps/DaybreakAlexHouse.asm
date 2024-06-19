@@ -28,8 +28,7 @@ DaybreakAlexDadText:
 	cont "violent threats."
 	
 	para "They're called"
-	line "“TEAM” something-"
-	cont "or-other."
+	line "“TEAM”… <WAIT_L>something…"
 	
 	para "Things like this"
 	line "didn't used to"

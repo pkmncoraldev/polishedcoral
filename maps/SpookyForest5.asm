@@ -62,9 +62,8 @@ SpookyForest5LostKidText1:
 	done
 	
 SpookyForest5LostKidText2:
-	text "Oh!"
-	
-	para "A big kid!"
+	text "Oh!<WAIT_M>"
+	line "A big kid!"
 	
 	para "I was playing by"
 	line "myself in the"

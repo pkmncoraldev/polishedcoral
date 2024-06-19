@@ -93,7 +93,7 @@ TrainerRoute15_1:
 TrainerRoute15_2:
 	generictrainer SWIMMERF, RACHEL, EVENT_BEAT_ROUTE_15_TRAINER_2, .SeenText, .BeatenText
 
-	text "Huff… Puff…"
+	text "Huff… <WAIT_S>Puff…"
 	
 	para "No time for"
 	line "another break!"
@@ -103,7 +103,7 @@ TrainerRoute15_2:
 	done
 
 .SeenText:
-	text "Huff… Puff…"
+	text "Huff… <WAIT_S>Puff…"
 	
 	para "How about a break"
 	line "from swimming for"
@@ -111,7 +111,7 @@ TrainerRoute15_2:
 	done
 
 .BeatenText:
-	text "Huff… Puff…"
+	text "Huff… <WAIT_S>Puff…"
 	
 	para "Break time is"
 	line "over!"
@@ -120,7 +120,7 @@ TrainerRoute15_2:
 TrainerRoute15_3:
 	generictrainer SWIMMERF, ROSA, EVENT_BEAT_ROUTE_15_TRAINER_3, .SeenText, .BeatenText
 
-	text "So tiny…"
+	text "So tiny…<WAIT_M>"
 	line "So insignificant…"
 	
 	para "Am I having an"
@@ -210,7 +210,7 @@ TrainerRoute15_6:
 	done
 
 .BeatenText:
-	text "Alright, I'll"
+	text "Alright, <WAIT_S>I'll"
 	line "tell you!"
 	done
 	
@@ -232,5 +232,5 @@ TrainerRoute15_7:
 	done
 
 .BeatenText:
-	text "Glub… glub…"
+	text "Glub… <WAIT_S>glub…"
 	done

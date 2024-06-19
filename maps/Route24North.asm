@@ -34,7 +34,7 @@ Route24NorthTrainer1:
 	para "Some people are a"
 	line "spring."
 	
-	para "Me? I'm definitely"
+	para "Me? <WAIT_S>I'm definitely"
 	line "a fall!"
 	done
 
@@ -51,7 +51,7 @@ Route24NorthTrainer1:
 	done
 
 .BeatenText:
-	text "Pop! Pop! Pop!"
+	text "Pop! <WAIT_S>Pop! <WAIT_S>Pop!"
 	done
 
 Route24NorthTrainer2:
@@ -72,7 +72,7 @@ Route24NorthTrainer2:
 	done
 
 .BeatenText:
-	text "Oh no!"
+	text "Oh no!<WAIT_M>"
 	line "SKARMORY!"
 	done
 

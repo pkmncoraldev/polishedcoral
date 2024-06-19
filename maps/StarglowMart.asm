@@ -42,7 +42,7 @@ StarglowMartNPC2Text:
 	cont "items that every"
 	cont "TRAINER uses."
 	
-	para "#BALLS, REPEL,"
+	para "#BALLS, <WAIT_S>REPEL,<WAIT_S>"
 	line "that sorta thing."
 	
 	para "Their headquarters"

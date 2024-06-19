@@ -116,7 +116,7 @@ RadiantTownshipErika:
 	end
 
 RadiantTownshipErikaText:
-	text "Oh, <PLAYER>!"
+	text "Oh, <WAIT_S><PLAYER>!"
 	
 	para "It's wonderful!"
 	
@@ -126,7 +126,7 @@ RadiantTownshipErikaText:
 	para "GRAMMA LEILANI is"
 	line "doing better too!"
 	
-	para "Please, come"
+	para "Please, <WAIT_M>come"
 	line "inside!"
 	done
 
@@ -293,9 +293,7 @@ RadiantTownshipNPC3Text1:
 	cont "you even get a"
 	cont "girl like that?"
 	
-	para "…"
-	
-	para "…Flowers?"
+	para "…<WAIT_L>Flowers?"
 	done
 	
 RadiantTownshipNPC3Text2:

@@ -553,7 +553,7 @@ RanchRideRaceText3:
 	cont "jump over the"
 	cont "hurdles."
 	
-	para "Oh, and stay on"
+	para "Oh, <WAIT_S>and stay on"
 	line "the track."
 	
 	para "If you step on the"
@@ -581,15 +581,13 @@ RanchRideRaceTimeTextFirstTime:
 	para "You were really"
 	line "flying out there!"
 	
-	para "Alright!"
-	
-	para "Here's your prize!"
+	para "Alright!<WAIT_M>"
+	line "Here's your prize!"
 	done
 	
 RanchRideRaceTimeTextSecondTime:
-	text "Alright!"
-	
-	para "Here's your prize!"
+	text "Alright!<WAIT_M>"
+	line "Here's your prize!"
 	
 	para "A bonafide DODRIO"
 	line "RANCH racing"
@@ -597,9 +595,8 @@ RanchRideRaceTimeTextSecondTime:
 	done
 	
 RanchRideRaceTimeTextThirdTime:
-	text "Alright!"
-	
-	para "Here's your prize!"
+	text "Alright!<WAIT_M>"
+	line "Here's your prize!"
 	done
 	
 RanchRideRaceText5:

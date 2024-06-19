@@ -47,7 +47,7 @@ TrainerRoute4_1:
 	text "You weren't looking"
 	line "at me?"
 
-	para "Yeah, right!"	
+	para "Yeah, <WAIT_S>right!"	
 	done
 
 .SeenText:
@@ -68,10 +68,10 @@ TrainerRoute4_2:
 	done
 
 .SeenText:
-	text "I love fishin',"
+	text "I love fishin',<WAIT_S>"
 	line "yes I do!"
 	
-	para "I love fishin',"
+	para "I love fishin',<WAIT_S>"
 	line "how 'bout you?"
 	done
 
@@ -119,7 +119,7 @@ TrainerRoute4_4:
 	done
 
 .BeatenText:
-	text "I'm fin-ished!"
+	text "I'm fin-<WAIT_S>ished!"
 	done
 	
 Route4NPC5:

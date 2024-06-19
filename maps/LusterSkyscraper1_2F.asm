@@ -46,7 +46,7 @@ LusterSkyscraper1_2F_NPC2:
 ;	end
 	
 LusterSkyscraper_NPCText:
-	text "CLICK CLACK CLICK"
+	text "CLICK <WAIT_S>CLACK <WAIT_S>CLICK"
 	
 	para "He's ignoring you…"
 	done

@@ -382,14 +382,14 @@ UnknownText_0x7a850:
 	done
 	
 SunsetMomText1:
-	text "<PLAYER>?"
-	para "You're still here?"
+	text "<PLAYER>?<WAIT_M>"
+	line "You're still here?"
 
 	
 	para "Get down to the"
 	line "docks!"
 	
-	para "Hurry! You're late!"
+	para "Hurry! <WAIT_S>You're late!"
 	
 	para "CAP'N STRAND is"
 	line "supposed to give"
@@ -417,9 +417,8 @@ SunsetMomText3:
 	done
 	
 SunsetMomText4:
-	text "Oh, hey!"
-	
-	para "You're back!"
+	text "Oh, hey!<WAIT_S>"
+	line "You're back!"
 	
 	para "You got your"
 	line "#MON?"
@@ -433,7 +432,7 @@ SunsetMomText4:
 	
 	para "…"
 	
-	para "Well, that's okay."
+	para "Well, <WAIT_S>that's okay."
 	
 	para "Anyway, since"
 	line "you're going to"

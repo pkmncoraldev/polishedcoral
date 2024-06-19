@@ -89,8 +89,8 @@ SunbeamPokecenterNPC2Text:
 	done
 	
 SunbeamPokecenterNPC3Text:
-	text "MEOWTH: OWTH!"
-	line "ME-OWTH!"
+	text "MEOWTH: OWTH!<WAIT_S>"
+	line "ME<WAIT_S>-OWTH!"
 	done
 	
 SunbeamPokecenterSpruceText1:
@@ -107,16 +107,16 @@ SunbeamPokecenterSpruceText2:
 	
 	para "…"
 	
-	para "Ah, hold on a"
+	para "Ah, <WAIT_S>hold on a"
 	line "moment…"
 	
 	para "You are"
-	line "<PLAYER>, are you"
+	line "<PLAYER>, <WAIT_S>are you"
 	cont "not?"
 	
 	para "…"
 	
-	para "Ah ha!"
+	para "Ah <WAIT_S>ha!"
 	
 	para "I was sure of it!"
 	

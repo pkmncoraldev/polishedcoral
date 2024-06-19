@@ -37,8 +37,8 @@ SunsetWaterGrassHouseNPC2Text:
 	text "Do you like GRASS"
 	line "#MON?"
 	
-	para "I love them, but"
+	para "I love them, <WAIT_S>but"
 	line "I just wish they"
 	cont "didn't have so many"
-	cont "weaknesses."
+	cont "weaknesses!"
 	done

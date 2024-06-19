@@ -96,7 +96,7 @@ MtOnwaB3FTrainer:
 	end
 	
 LavaCaveBF3MagmarText:
-	text "MAAAAAR! MAG!"
+	text "MAAAAAR! <WAIT_S>MAG!<WAIT_S>"
 	line "MAR!"
 	done
 	
@@ -108,8 +108,8 @@ LavaCaveBF3MagmarTextGone:
 	done
 	
 LavaCaveBF3TrainerHealText:
-	text "Alright, a deal"
-	line "is a deal."
+	text "Alright, <WAIT_S>a deal's"
+	line "a deal."
 	
 	para "You want me to"
 	line "heal your #MON?"

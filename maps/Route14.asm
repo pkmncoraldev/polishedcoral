@@ -145,7 +145,7 @@ TrainerRoute14_5:
 TrainerRoute14_6:
 	generictrainer SWIMMERF, PEGGY, EVENT_BEAT_ROUTE_14_TRAINER_6, .SeenText, .BeatenText
 
-	text "You can uh… stop"
+	text "You can uh… <WAIT_M>stop"
 	line "looking at my"
 	cont "swimsuit now…"
 	done
@@ -159,7 +159,7 @@ TrainerRoute14_6:
 	done
 
 .BeatenText:
-	text "Okay…"
+	text "Okay…<WAIT_M>"
 	line "That's enough…"
 	done
 	
@@ -182,6 +182,6 @@ TrainerRoute14_7:
 	done
 
 .BeatenText:
-	text "Ouch!"
+	text "Ouch!<WAIT_M>"
 	line "Cramp!"
 	done

@@ -161,7 +161,7 @@ NettBuildingMBathroomDoor2Close:
 	end
 	
 NettBuildingMBathroomDoor2Text:
-	text "Guy: Buzz off!"
+	text "GUY: Buzz off!"
 	
 	line "Someone's in here!"
 	done

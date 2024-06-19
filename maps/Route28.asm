@@ -254,13 +254,13 @@ Route28StrengthManText2:
 	para "It's huge!"
 	
 	para "That takes real"
-	line "devotion!"
+	line "dedication!"
 	
 	para "I officially"
 	line "recognize you as"
 	cont "a true pusher!"
 	
-	para "Here, take this"
+	para "Here, <WAIT_S>take this"
 	line "as a reward."
 	
 	para "It'll let your"
@@ -307,7 +307,7 @@ Route28StrengthManText8:
 	line "seen the look on"
 	cont "your face!"
 	
-	para "Here, take this"
+	para "Here, <WAIT_S>take this"
 	line "instead."
 	done
 	
@@ -320,9 +320,7 @@ Route28StrengthManText9:
 	cont "their ATTACK and"
 	cont "DEFENSE stats."
 	
-	para "…"
-	
-	para "Sorry about that"
+	para "…<WAIT_L>Sorry about that"
 	line "earlier."
 	
 	para "It was a little"

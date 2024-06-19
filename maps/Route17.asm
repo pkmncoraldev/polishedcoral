@@ -36,7 +36,7 @@ TrainerRoute17_1:
 	done
 
 .BeatenText:
-	text "Oh, you're"
+	text "Oh, <WAIT_S>you're"
 	line "cooperating?"
 	done
 	

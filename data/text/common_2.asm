@@ -1,5 +1,5 @@
 UnknownText_0x1c0043::
-	text "Hello, hello! I'm"
+	text "Hello, hello! <WAIT_S>I'm"
 	line "the NAME RATER."
 
 	para "I rate the names"
@@ -31,7 +31,7 @@ UnknownText_0x1c00cd::
 	done
 
 UnknownText_0x1c0142::
-	text "All right. What"
+	text "All right. <WAIT_S>What"
 	line "name should we"
 	cont "give it, then?"
 	prompt
@@ -44,7 +44,7 @@ UnknownText_0x1c0171::
 	done
 
 UnknownText_0x1c019e::
-	text "OK, then. Come"
+	text "OK, then. <WAIT_S>Come"
 	line "again sometime."
 	done
 
@@ -52,7 +52,7 @@ UnknownText_0x1c01be::
 	text "Hm… @"
 	text_from_ram wStringBuffer1
 	text "?"
-	line "What a great name!"
+	line "What a great name!<WAIT_S>"
 	cont "It's perfect."
 
 	para "Treat @"
@@ -62,7 +62,7 @@ UnknownText_0x1c01be::
 	done
 
 UnknownText_0x1c0208::
-	text "Whoa… That's just"
+	text "Whoa… <WAIT_S>That's just"
 	line "an EGG."
 	done
 
@@ -77,7 +77,7 @@ UnknownText_0x1c0222::
 	done
 
 UnknownText_0x1c0272::
-	text "All right. This"
+	text "All right. <WAIT_S>This"
 	line "#MON is now"
 	cont "named @"
 	text_from_ram wStringBuffer1
@@ -104,17 +104,17 @@ Text_StringBuffer2ExpPoints::
 	prompt
 
 Text_GoPkmn::
-	text "Go! @@"
+	text "Go! <WAIT_S>@@"
 
 Text_DoItPkmn::
-	text "Do it! @@"
+	text "Do it! <WAIT_S>@@"
 
 Text_GoForItPkmn::
 	text "Go for it,"
 	line "@@"
 
 Text_YourFoesWeakGetmPkmn::
-	text "Your foe's weak!"
+	text "Your foe's weak!<WAIT_S>"
 	line "Get'm, @@"
 
 Text_BattleMonNick01::
@@ -128,14 +128,14 @@ Text_BattleMonNickComma::
 
 Text_ThatsEnoughComeBack::
 	text " that's"
-	line "enough! Come back!@@"
+	line "enough! <WAIT_S>Come back!@@"
 
 Text_OKComeBack::
-	text " OK!"
+	text " OK!<WAIT_S>"
 	line "Come back!@@"
 
 Text_GoodComeBack::
-	text " good!"
+	text " good!<WAIT_S>"
 	line "Come back!@@"
 
 Text_ComeBack::
@@ -178,7 +178,7 @@ UnknownText_0x1c03c2::
 	prompt
 
 _BadgeRequiredText::
-	text "Sorry! A new BADGE"
+	text "Sorry! <WAIT_S>A new BADGE"
 	line "is required."
 	prompt
 
@@ -275,7 +275,7 @@ UnknownText_0x1c068e::
 	done
 
 UnknownText_0x1c06a3::
-	text "Wow, it's a huge"
+	text "Wow, <WAIT_S>it's a huge"
 	line "waterfall."
 	done
 
@@ -414,7 +414,7 @@ UnknownText_0x1c0897::
 	prompt
 
 UnknownText_0x1c08ac::
-	text "Nope. Nothing…"
+	text "Nope. <WAIT_S>Nothing…"
 	done
 
 UnknownText_0x1c08bc::
@@ -445,7 +445,7 @@ UnknownText_0x1c0924::
 	done
 
 UnknownText_0x1c0958::
-	text "Oh!"
+	text "Oh!<WAIT_S>"
 	line "A bite!"
 	prompt
 
@@ -530,13 +530,13 @@ WhiteoutToTrainerText::
 	done
 
 UnknownText_0x1c0a77::
-	text "Yes! ITEMFINDER"
+	text "Yes! <WAIT_S>ITEMFINDER"
 	line "indicates there's"
 	cont "an item nearby."
 	prompt
 
 UnknownText_0x1c0aa9::
-	text "Nope! ITEMFINDER"
+	text "Nope! <WAIT_S>ITEMFINDER"
 	line "isn't responding."
 	prompt
 
@@ -587,7 +587,7 @@ UnknownText_0x1c0bd8::
 	prompt
 
 UnknownText_0x1c0bee::
-	text "SPRUCE: <PLAYER>!"
+	text "SPRUCE: <WAIT_S><PLAYER>!<WAIT_S>"
 	line "This isn't the"
 	cont "time to use that!"
 	prompt
@@ -619,7 +619,7 @@ UnknownText_0x1c0c83::
 	done
 
 Text_AreYouABoyOrAreYouAGirl::
-	text "Are you a BOY?"
+	text "Are you a BOY?<WAIT_M>"
 	line "Or are you a GIRL?"
 	done
 
@@ -1038,7 +1038,7 @@ UnknownText_0x1c14d2::
 	prompt
 
 UnknownText_0x1c1505::
-	text "…"
+	text "…<WAIT_S>"
 	line "Link closed…"
 	done
 
@@ -1122,7 +1122,7 @@ _OakRating07::
 	done
 
 _OakRating08::
-	text "Excellent! You"
+	text "Excellent! <WAIT_S>You"
 	line "seem to like col-"
 	cont "lecting things!"
 	done
@@ -1158,7 +1158,7 @@ _OakRating12::
 	done
 
 _OakRating13::
-	text "Wow. You've found"
+	text "Wow. <WAIT_S>You've found"
 	line "over 150?"
 
 	para "Keep up the good"
@@ -1174,9 +1174,11 @@ _OakRating14::
 	done
 
 _OakRating15::
-	text "Wow! You've hit"
-	line "200! Your #DEX"
-	cont "is looking great!"
+	text "Wow! <WAIT_S>"
+	line "You've hit 200!"
+	
+	para "Your #DEX is"
+	cont "looking great!"
 	done
 
 _OakRating16::
@@ -1188,7 +1190,7 @@ _OakRating16::
 	done
 
 _OakRating17::
-	text "Magnificent! You"
+	text "Magnificent! <WAIT_S>You"
 	line "could become a"
 
 	para "#MON PROF."
@@ -1197,14 +1199,14 @@ _OakRating17::
 
 _OakRating18::
 	text "Your #DEX is"
-	line "amazing! You're"
+	line "amazing! <WAIT_S>You're"
 
 	para "ready to turn"
 	line "professional!"
 	done
 
 _OakRating19::
-	text "Whoa! A perfect"
+	text "Whoa! <WAIT_S>A perfect"
 	line "#DEX!"
 
 	para "I've dreamt about"
@@ -1319,7 +1321,7 @@ UnknownText_0x1c1bdc::
 
 	para "@"
 	text_from_ram wStringBuffer1
-	text "."
+	text ".<WAIT_S>"
 	line "Switch items?"
 	done
 

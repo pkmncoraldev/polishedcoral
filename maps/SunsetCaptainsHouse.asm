@@ -232,7 +232,7 @@ SunsetCaptainMovementReturn:
 
 
 SunsetCaptainFirstRidetoIslandText1:
-	text "CAP'N STRAND: Ah,"
+	text "CAP'N STRAND: <WAIT_S>Ah,"
 	line "hello,"
 	cont "<PLAYER>."
 	
@@ -247,12 +247,12 @@ SunsetCaptainFirstRidetoIslandText1:
 	para "It's no trouble at"
 	line "all!"
 	
-	para "Well, are you"
+	para "Well, <WAIT_S>are you"
 	line "ready to ship out?"
 	done
 	
 SunsetCaptainFirstRidetoIslandText2:
-	text "Ah, <PLAYER>!"
+	text "Ah, <WAIT_S><PLAYER>!"
 	
 	para "What are you doing"
 	line "here?"
@@ -273,12 +273,12 @@ SunsetCaptainFirstRidetoIslandText2:
 	para "It's no trouble at"
 	line "all!"
 	
-	para "Well, are you"
+	para "Well, <WAIT_S>are you"
 	line "ready to ship out?"
 	done
 	
 SunsetCaptainRidetoIslandText:
-	text "Ah, hello,"
+	text "Ah, <WAIT_S>hello,"
 	line "<PLAYER>."
 	
 	para "Would you like a"
@@ -301,7 +301,7 @@ SunsetCaptainRidetoIslandTextNo:
 	done
 	
 SunsetCaptainText1_Morn:
-	text "CAP'N STRAND: Oh!"
+	text "CAP'N STRAND: <WAIT_S>Oh!"
 	
 	para "You're late!"
 	
@@ -321,11 +321,11 @@ SunsetCaptainText1_Morn:
 	
 	para "To get there just"
 	line "leave town and"
-	cont "head south."
+	cont "head SOUTH."
 	done
 	
 SunsetCaptainText1_Day:
-	text "CAP'N STRAND: Oh!"
+	text "CAP'N STRAND: <WAIT_S>Oh!"
 	
 	para "You're late!"
 	
@@ -345,7 +345,7 @@ SunsetCaptainText1_Day:
 	
 	para "To get there just"
 	line "leave town and"
-	cont "head south."
+	cont "head SOUTH."
 	done
 	
 SunsetCaptainText1_Night:
@@ -368,7 +368,7 @@ SunsetCaptainText1_Night:
 	
 	para "To get there just"
 	line "leave town and"
-	cont "head south."
+	cont "head SOUTH."
 	done
 	
 SunsetCaptainText2:
@@ -376,7 +376,7 @@ SunsetCaptainText2:
 	line "doing?"
 	
 	para "The lighthouse"
-	line "is east of town"
+	line "is EAST of town"
 	
 	para "Go get your"
 	line "#MON!"
@@ -403,7 +403,7 @@ SunsetCaptainText3:
 	done
 	
 SunsetCaptainBoatHouseText1:
-	text "Ah,"
+	text "Ah,<WAIT_S>"
 	line "<PLAYER>."
 	
 	para "What brings you"

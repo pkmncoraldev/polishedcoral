@@ -66,7 +66,7 @@ TwinkleIcyRockHouseNPCText1:
 	para "No matter what,"
 	line "they stay cold!"
 	
-	para "Here, take one!"
+	para "Here, <WAIT_S>take one!"
 	done
 	
 TwinkleIcyRockHouseNPCText2:

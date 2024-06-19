@@ -133,10 +133,10 @@ GlintGroveDeepSmeargleScene:
 	pause 40
 	opentext
 	writetext GlintGroveDeepMinaText4
-	buttonsound
+;	buttonsound
 	spriteface GLINTSECRET_MINA, DOWN
-	farwritetext StdBlankText
-	pause 6
+;	farwritetext StdBlankText
+;	pause 6
 	writetext GlintGroveDeepMinaText5
 	waitbutton
 	closetext
@@ -207,7 +207,7 @@ GlintGroveDeepMinaText:
 	done
 	
 GlintGroveDeepMinaText1:
-	text "Ah, <PLAYER>!"
+	text "Ah! <WAIT_M><PLAYER>!"
 	
 	para "Be careful!"
 	
@@ -219,7 +219,7 @@ GlintGroveDeepMinaText2:
 	done
 	
 GlintGroveDeepMinaText3:
-	text "Oh, now you've"
+	text "Oh, <WAIT_S>now you've"
 	line "done it!"
 	
 	para "We were kinda"
@@ -234,20 +234,19 @@ GlintGroveDeepMinaText3:
 	para "I was almost done"
 	line "painting, anyway."
 	
-	para "Here, take a look!"
+	para "Here, <WAIT_S>take a look!"
 	done
 	
 GlintGroveDeepMinaText4:
 	text "Well?"
 	
 	para "What do you think?"
-	
-	para "I call it:"
 	done
 	
 GlintGroveDeepMinaText5:
-	text "“SMEARGLE"
-	line "in Love”."
+	text "I call it:<WAIT_L>"
+	line "“SMEARGLE"
+	cont "in Love”."
 	done
 	
 GlintGroveDeepMinaText6:
@@ -259,7 +258,7 @@ GlintGroveDeepMinaText6:
 	para "What an awesome"
 	line "feeling!"
 	
-	para "I'm all fired up!"
+	para "I'm all fired up!<WAIT_S>"
 	line "I got that spark!"
 	
 	para "Do you feel it,"
@@ -267,12 +266,12 @@ GlintGroveDeepMinaText6:
 	
 	para "Let's battle!"
 	
-	para "Right here,"
+	para "Right here,<WAIT_S>"
 	line "right now!"
 	done
 	
 GlintGroveDeepMinaText7:
-	text "Wow what an"
+	text "Wow! <WAIT_M>What an"
 	line "awesome battle!"
 	
 	para "I wouldn't have"
@@ -284,18 +283,18 @@ GlintGroveDeepMinaText7:
 	done
 	
 GlintGroveDeepMinaText8:
-	text "Oh, you can't"
+	text "Oh, <WAIT_S>you can't"
 	line "carry anymore"
 	cont "stuff."
 	
-	para "Oh well, I'll"
+	para "Oh well, <WAIT_S>I'll"
 	line "give it to you"
 	cont "next time I see"
 	cont "you."
 	done
 	
 GlintGroveDeepMinaText9:
-	text "Anyway, I better"
+	text "Anyway, <WAIT_S>I better"
 	line "be going."
 	
 	para "I'm sure we'll"
@@ -306,7 +305,7 @@ GlintGroveDeepMinaText10:
 	text "ALOLA,"
 	line "<PLAYER>."
 	
-	para "Err… I mean…"
+	para "Err… <WAIT_M>I mean…"
 
 	para "Goodbye!"
 	done
@@ -323,7 +322,7 @@ GlintGroveDeepEaselText:
 	done
 	
 GlintSecretSmeargleText:
-	text "SMEARGLE: Gooahh!"
+	text "SMEARGLE: <WAIT_S>Gooahh!"
 	done
 
 GlintSecretSmeargleTextGone:

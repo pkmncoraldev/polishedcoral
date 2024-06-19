@@ -96,7 +96,7 @@ SunbeamJungleDeepNPC2Text:
 	done
 	
 SunbeamJungleDeepElectabuzzText:
-	text "BUZZ! BUZZ!"
+	text "BUZZ! <WAIT_S>BUZZ!<WAIT_S>"
 	line "LECTA!"
 	done
 	

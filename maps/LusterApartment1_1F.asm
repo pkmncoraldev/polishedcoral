@@ -58,7 +58,7 @@ LusterApartment1_1F_NPC2Text:
 	done
 	
 LusterApartment1_1F_NPC3Text1:
-	text "SNUBBULL: Snub…"
+	text "SNUBBULL: <WAIT_S>Snub…"
 	done
 	
 LusterApartment1_1F_NPC3Text2:

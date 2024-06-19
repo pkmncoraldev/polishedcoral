@@ -123,9 +123,8 @@ TrainerFlickerPass2F_3:
 TrainerFlickerPass2F_4:
 	generictrainer SKIER, DEBBIE, EVENT_BEAT_FLICKER_PASS_2F_TRAINER_4, .SeenText, .BeatenText
 
-	text "Alright, fine!"
-	
-	para "I'll admit it!"
+	text "Alright, fine!<WAIT_M>"
+	line "I'll admit it!"
 	
 	para "I can't get my"
 	line "skis off!"
@@ -171,9 +170,8 @@ TrainerFlickerPass2F_5:
 TrainerFlickerPass2F_6:
 	generictrainer SKIER, RHONDA, EVENT_BEAT_FLICKER_PASS_2F_TRAINER_6, .SeenText, .BeatenText
 
-	text "Oh no!"
-
-	para "I broke a pole!"
+	text "Oh no!<WAIT_M>"
+	line "I broke a pole!"
 	done
 
 .SeenText:

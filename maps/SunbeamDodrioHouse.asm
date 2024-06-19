@@ -56,6 +56,6 @@ SunbeamIslandHouse4NPC2Text:
 	done
 	
 SunbeamIslandHouse4NPC3Text:
-	text "DODUO: DEWO! DEWO!"
+	text "DODUO: DEWO! <WAIT_S>DEWO!<WAIT_S>"
 	line "DEWO!"
 	done

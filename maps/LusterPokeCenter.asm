@@ -59,7 +59,7 @@ LusterPokeCenterNPC2Text:
 	done
 	
 LusterPokeCenterChanseyText1:
-	text "CHANSEY: Sii…"
+	text "CHANSEY: <WAIT_M>Sii…"
 	done
 	
 LusterPokeCenterChanseyText2:

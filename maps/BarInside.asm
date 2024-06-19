@@ -132,7 +132,7 @@ BarInsideTrigger1:
 	end
 	
 BarInsideFightText1:
-	text "I said, you got a"
+	text "I said, <WAIT_M>you got a"
 	line "problem, pal?"
 	done
 	
@@ -155,21 +155,20 @@ BarInsideFightText2:
 	done
 	
 BarInsideFightText3:
-	text "Yeah, me either!"
+	text "Yeah, <WAIT_S>me either!"
 	done
 	
 BarInsideFightText4:
 	text "Like I was sayin'…"
 	
 	para "You got a starin'"
-	line "problem, and I got"
+	line "problem, <WAIT_S>and I got"
 	cont "the solution!"
 	done
 	
 BarInsideFightText5:
-	text "Grr!"
-	
-	para "Forget this!"
+	text "Grr!<WAIT_M>"
+	line "Forget this!"
 	done
 	
 BarInsideFightText6:
@@ -306,10 +305,10 @@ BarInsideBartenderText1:
 	
 	para "It's MOOMOO MILK"
 	line "with a little"
-	cont "somethin' extra"
+	cont "somethin' <WAIT_M>extra"
 	cont "mixed in."
 	
-	para "Anyway, enough of"
+	para "Anyway, <WAIT_S>enough of"
 	line "all that."
 	
 	para "What'll ya have,"
@@ -326,7 +325,7 @@ BarInsideBartenderText2:
 	
 	para "…"
 	
-	para "Alright, tell ya"
+	para "Alright, <WAIT_S>tell ya"
 	line "what."
 	
 	para "If you can prove"
@@ -360,7 +359,7 @@ BarInsideBartenderText4:
 	done
 	
 BarInsideBartenderText5:
-	text "Alright, a deal's"
+	text "Alright, <WAIT_S>a deal's"
 	line "a deal."
 	
 	para "I'll sell ya a"
@@ -376,7 +375,7 @@ BarInsideBartenderText6:
 	
 BarInsideBartenderText7:
 	text "Keep this between"
-	line "us, alright?"
+	line "us, <WAIT_S>alright?"
 	done
 	
 BarInsideRegular1:
@@ -422,7 +421,7 @@ BarInsideRegular1:
 	end
 	
 BarInsideRegular1Text1:
-	text "This guy is really"
+	text "This guy <WAIT_M>is really"
 	line "not good at pool!"
 	done
 	
@@ -489,8 +488,8 @@ BarInsideRegular2:
 	
 BarInsideRegular2Text1:
 	text "Between you and"
-	line "me, I'm pretty"
-	cont "good at this!"
+	line "me, <WAIT_S>I'm pretty good"
+	cont "at this!"
 	
 	para "Maybe I should go"
 	line "pro!"
@@ -670,7 +669,7 @@ BarInsideChildText1:
 	done
 	
 BarInsideChildText2:
-	text "Sorry, I can't"
+	text "Sorry, <WAIT_S>I can't"
 	line "battle."
 	
 	para "I don't have a"
@@ -737,7 +736,7 @@ BarInsideMom:
 	end
 	
 BarInsideMomText1:
-	text "I don't know, I"
+	text "I don't know, <WAIT_S>I"
 	line "think it's kinda"
 	cont "charming!"
 	done
@@ -745,7 +744,7 @@ BarInsideMomText1:
 BarInsideMomText2:
 	text "A battle?"
 	
-	para "Oh, no."
+	para "Oh, no.<WAIT_M>"
 	line "I shouldn't."
 	done
 	
@@ -776,7 +775,7 @@ BarInsideWaitressText2:
 	text "I'm not a customer,"
 	line "I'm a waitress."
 	
-	para "And no, I don't"
+	para "And no, <WAIT_M>I don't"
 	line "want to battle!"
 	done
 	
@@ -848,7 +847,7 @@ BarInsideJukeboxScript::
 	end
 
 BarInsideJukeboxTextWrongSide:
-	text "Oops, wrong side."
+	text "Oops, <WAIT_S>wrong side."
 	done
 
 BarInsideJukeboxText:

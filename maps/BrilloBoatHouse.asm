@@ -282,9 +282,8 @@ BrilloBoatHouseClerkText6:
 	done
 
 BrilloBoatHouseClerkText7:
-	text "Alright."
-	
-	para "We'll head out."
+	text "Alright.<WAIT_M>"
+	line "We'll head out."
 	done
 	
 BrilloBoatHouseClerkText8:

@@ -284,7 +284,7 @@ FlickerStationNPC4Text:
 	text "All he talks about"
 	line "is trains…"
 	
-	para "Trains, trains,"
+	para "Trains, <WAIT_S>trains,<WAIT_S>"
 	line "trains!"
 	
 	para "I hate trains!"

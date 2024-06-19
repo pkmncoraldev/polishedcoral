@@ -44,7 +44,7 @@ SunbeamIslandSoftSandHouseNPCText1:
 	para "Want something"
 	line "cool?"
 	
-	para "Ok, hold out your"
+	para "Ok, <WAIT_S>hold out your"
 	line "hands."
 	done
 	

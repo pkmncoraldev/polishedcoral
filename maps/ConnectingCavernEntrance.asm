@@ -28,7 +28,7 @@ ConnectingCavernEntranceNPC:
 	jumptextfaceplayer ConnectingCavernEntranceNPCText2
 
 ConnectingCavernEntranceNPCText1:
-	text "Golly, It sure is"
+	text "Golly, <WAIT_S>it sure is"
 	line "dark up ahead."
 	
 	para "You aren't gonna"

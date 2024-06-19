@@ -154,12 +154,12 @@ TwinkleGymCharlieTextBeforeBattle:
 	
 	para "So you came to"
 	line "test your skills"
-	cont "in battle, huh?"
+	cont "in battle, <WAIT_S>huh?"
 	
 	para "Good for you!"
 	
 	para "Crazy hot GYM for"
-	line "such a cold town,"
+	line "such a cold town,<WAIT_S>"
 	cont "huh?"
 	
 	para "I bet it's not"

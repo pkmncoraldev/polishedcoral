@@ -2275,11 +2275,11 @@ MinaRockSmashText3:
 MinaRockSmashText4:
 	text "ALOLA!"
 	
-	para "Oh… I guess you"
+	para "Oh… <WAIT_S>I guess you"
 	line "don't say that"
 	cont "around here, huh?"
 	
-	para "Well anyway,"
+	para "Well anyway,<WAIT_S>"
 	line "my name is MINA."
 	
 	para "I'm a painter."
@@ -2303,7 +2303,7 @@ MinaRockSmashText4:
 	cont "somewhere around"
 	cont "here."
 	
-	para "THAT'S what gets"
+	para "THAT'S <WAIT_S>what gets"
 	line "me all inspired!"
 	
 	para "I saw something"

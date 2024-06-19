@@ -359,19 +359,18 @@ EventideGymWendyTextBeforeBattle:
 	
 	para "…"
 	
-	para "Now then,"
-	
-	para "are you ready to"
-	line "earn your wings?"
+	para "Now then, <WAIT_S>are you"
+	line "ready to earn"
+	cont "your wings?"
 	done
 	
 EventideGymWendyTextWin:
-	text "So fierce!"
+	text "So fierce!<WAIT_M>"
 	line "So graceful!"
 	done
 	
 EventideGymWendyTextWinRematch:
-	text "So fierce!"
+	text "So fierce!<WAIT_M>"
 	line "So graceful!"
 	done
 	
@@ -551,9 +550,8 @@ EventideGymTrainer4:
 	done
 
 .SeenText:
-	text "Oops!"
-	
-	para "Wrong turn!"
+	text "Oops!<WAIT_M>"
+	line "Wrong turn!"
 	
 	para "Nothing for you"
 	line "this way!"

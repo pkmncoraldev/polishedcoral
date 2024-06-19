@@ -80,9 +80,8 @@ GlintApt22FNpc2Text1:
 	done
 	
 GlintApt22FNpc2Text2:
-	text "WOAH!"
-	
-	para "You beat STANLEY?"
+	text "WOAH!<WAIT_M>"
+	line "You beat STANLEY?"
 	
 	para "Tell me all about"
 	line "it!"
@@ -101,9 +100,8 @@ GlintApt22FNpc2Text2:
 	done
 	
 GlintApt22FNpc2TextNoRoom:
-	text "Oh!"
-	
-	para "You seem to be"
+	text "Oh!<WAIT_M>"
+	line "You seem to be"
 	line "carrying too much!"
 	done
 	

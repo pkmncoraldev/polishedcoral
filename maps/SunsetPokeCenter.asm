@@ -63,6 +63,6 @@ SunsetPokeCenterFairyGirlText:
 	text "Have you heard of"
 	line "FAIRY #MON?"
 	
-	para "They're great and"
+	para "They're great <WAIT_S>and"
 	line "all so adorable!"
 	done

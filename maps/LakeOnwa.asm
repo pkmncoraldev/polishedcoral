@@ -591,7 +591,7 @@ TrainerLake:
 	done
 
 .BeatenText:
-	text "Ahh! My #MON!"
+	text "Ahh! <WAIT_M>My #MON!"
 	done
 
 LakeSudowoodo:
@@ -726,9 +726,8 @@ LakeBoatText:
 	done
 
 JustRodeBoatText:
-	text "Thanks for riding."
-	
-	para "Come again."
+	text "Thanks for riding.<WAIT_M>"
+	line "Come again."
 	done
 
 LakeNpc1Text:
@@ -810,9 +809,8 @@ LakeSudowoodoTextHaveFlute:
 	text "A weird tree"
 	line "blocks the path."
 	
-	para "Is it…"
-	
-	para "Snoring?"
+	para "Is it…<WAIT_L>"
+	line "snoring?"
 	
 	para "Play the"
 	line "# FLUTE?"
@@ -822,9 +820,8 @@ LakeSudowoodoTextNoFlute:
 	text "A weird tree"
 	line "blocks the path."
 	
-	para "Is it…"
-	
-	para "Sleeping?"
+	para "Is it…<WAIT_L>"
+	line "snoring?"
 	done
 
 LakeSudowoodoTextWakeUp:
@@ -888,10 +885,8 @@ LakeRivalText2:
 	
 	para "…"
 	
-	para "It's…"
-
-	para "It's these stupid"
-	line "#MON!"
+	para "It's…<WAIT_M> It's these"
+	line "stupid #MON!"
 	
 	para "It has to be!"
 	
@@ -913,9 +908,8 @@ LakeRivalWinText:
 	done
 	
 LakeRivalLoseText:
-	text "Hmph!"
-	
-	para "Too easy."
+	text "Hmph!<WAIT_M>"
+	line "Too easy."
 	done
 	
 Movement_JustRodeBoatR:

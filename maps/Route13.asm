@@ -206,12 +206,12 @@ TrainerRoute13_1:
 TrainerRoute13_2:
 	generictrainer FISHER, HARRELSON, EVENT_BEAT_ROUTE_13_TRAINER_2, .SeenText, .BeatenText
 
-	text "Yo ho ho and a"
+	text "Yo <WAIT_S>ho <WAIT_S>ho<WAIT_S> and a"
 	line "battle for fun!"
 	done
 
 .SeenText:
-	text "Yo ho ho and a"
+	text "Yo <WAIT_S>ho <WAIT_S>ho<WAIT_S> and a"
 	line "bottle of rum!"
 	
 	para "I sing shanties"
@@ -220,7 +220,7 @@ TrainerRoute13_2:
 	done
 
 .BeatenText:
-	text "Yo ho ho?"
+	text "Yo <WAIT_S>ho <WAIT_S>ho?"
 	done
 	
 TrainerRoute13_3:

@@ -440,7 +440,7 @@ DuskTurnpikeNPC8:
 	jumptextfaceplayer DuskTurnpikeNPC8Text
 	
 DuskTurnpikeNPC1Text:
-	text "Cough! Hack!"
+	text "Cough! <WAIT_S>Hack!<WAIT_S>"
 	line "Cough!"
 	
 	para "I had to step out"
@@ -455,7 +455,7 @@ DuskTurnpikeNPC1Text:
 	
 	para "Step back, kid!"
 	
-	para "I think I'm gonna"
+	para "I think <WAIT_M>I'm gonna"
 	line "hurl!"
 	done
 	
@@ -485,15 +485,13 @@ DuskTurnpikeNPC4Text:
 	cont "let my SKATEBOARD"
 	cont "on the HIGHWAY!"
 	
-	para "It's got wheels!"
+	para "It's got wheels!<WAIT_M>"
 	line "It should count!"
 	done
 	
 DuskTurnpikeNPC5Text:
 	text "The rest of our"
-	line "gang- err…"
-	
-	para "motorcycle club…"
+	line "gang- <WAIT_M>err… <WAIT_L>bike<SCRL2>enthusiast club…"
 	
 	para "…is hanging out"
 	line "in the tunnel to"
@@ -586,7 +584,7 @@ DuskTurnpikeTrashcanText1:
 	done
 
 DuskTurnpikeTrashcanTextOnlyTrash:
-	text "Nope, there's"
+	text "Nope, <WAIT_S>there's"
 	line "only trash here."
 	done
 
@@ -612,7 +610,7 @@ DuskTurnpikeTollboothText2:
 	line "only past this"
 	cont "point."
 	
-	para "Sorry, that's the"
+	para "Sorry, <WAIT_S>that's the"
 	line "rules."
 	done
 	

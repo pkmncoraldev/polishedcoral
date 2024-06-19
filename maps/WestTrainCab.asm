@@ -195,8 +195,8 @@ WestTrainCabEngineerText1:
 	line "in and took over"
 	cont "the train!"
 	
-	para "You're a TRAINER,"
-	line "left?"
+	para "You're a TRAINER,<WAIT_S>"
+	line "right?"
 	
 	para "You gotta help me!"
 	done
@@ -234,7 +234,7 @@ WestTrainCabEngineerText4:
 	done
 	
 WestTrainCabEngineerText5:
-	text "PA: Ding-dong!"
+	text "PA: Ding<WAIT_S>-dong!"
 	
 	para "This is your"
 	line "CONDUCTOR."
@@ -245,7 +245,7 @@ WestTrainCabEngineerText5:
 	para "I've handled it!"
 	
 	para "You're all safe"
-	line "now, thanks to me!"
+	line "now, <WAIT_S>thanks to me!"
 	
 	para "We'll be arriving"
 	line "in LUSTER CITY"
@@ -259,7 +259,7 @@ WestTrainCabEngineerText6:
 	line "this between you"
 	cont "and me."
 	
-	para "You will, won't"
+	para "You will, <WAIT_S>won't"
 	line "you?"
 	
 	para "Of course you"
@@ -313,9 +313,8 @@ WestTrainCabLockeText2:
 	done
 	
 WestTrainCabLockeText3:
-	text "Who?"
-	
-	para "A kid?"
+	text "Who?<WAIT_M>"
+	line "A kid?"
 	
 	para "How did you get"
 	line "in here?"
@@ -325,7 +324,7 @@ WestTrainCabLockeText3:
 	cont "our way on SUNBEAM"
 	cont "ISLAND!"
 	
-	para "Well, not this"
+	para "Well, <WAIT_S>not this"
 	line "time!"
 	
 	para "I'm ending this"
@@ -348,13 +347,11 @@ WestTrainCabLockeText4:
 	para "This is a"
 	line "nightmare!"
 	
-	para "…"
-	
-	para "Forget this!"
+	para "…<WAIT_L>Forget this!"
 	done
 	
 WestTrainCabLockeText5:
-	text "PA: Ding-dong!"
+	text "PA: Ding<WAIT_S>-dong!"
 	
 	para "Attention TEAM"
 	line "SNARE!"
@@ -366,13 +363,12 @@ WestTrainCabLockeText5:
 	
 	para "Get ready to bail!"
 	
-	para "We're outta here,"
+	para "We're outta here,<WAIT_S>"
 	line "boys!"
 	done
 	
 WestTrainCabLockeText6:
-	text "This isn't over"
-	line "runt!"
+	text "This isn't over!"
 	
 	para "We'll get our"
 	line "revenge!"

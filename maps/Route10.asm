@@ -261,7 +261,7 @@ Route10NPCText3:
 Route10NPCText4:
 	text "Yay!"
 	
-	para "Thank you!"
+	para "Thank you!<WAIT_S>"
 	line "Thank you!"
 	done
 	
@@ -285,7 +285,7 @@ Route10NPCText8:
 	
 	para "That's not enough?"
 	
-	para "Ugh… Fine…"
+	para "Ugh… <WAIT_S>Fine…"
 	
 	para "You can have my"
 	line "old pair…"
@@ -335,9 +335,7 @@ TrainerRoute10_2:
 	
 	para "Haha…"
 	
-	para "…"
-	
-	para "I'm still no good"
+	para "…<WAIT_L>I'm still no good"
 	line "at small talk…"
 	done
 
@@ -347,9 +345,7 @@ TrainerRoute10_2:
 	
 	para "Haha…"
 	
-	para "…"
-	
-	para "I'm no good at"
+	para "…<WAIT_L>I'm no good at"
 	line "small talk."
 	done
 
@@ -413,12 +409,12 @@ TrainerRoute10_5:
 	text "Snow slowing you"
 	line "down?"
 	
-	para "See, I don't have"
+	para "See, <WAIT_S>I don't have"
 	line "that problem!"
 	done
 
 .BeatenText:
-	text "Woah!"
+	text "Woah!<WAIT_M>"
 	line "Slow down!"
 	done
 	
@@ -431,7 +427,7 @@ TrainerRoute10_6:
 	done
 
 .SeenText:
-	text "Cold?"
+	text "Cold?<WAIT_M>"
 	line "I'm not cold!"
 	
 	para "MY BLOOD BURNS AS"

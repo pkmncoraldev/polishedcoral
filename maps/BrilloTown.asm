@@ -749,7 +749,7 @@ BrilloGraffitiCopText:
 	done
 	
 BrilloCommanderCopText1:
-	text "Hey, new guy!"
+	text "Hey! <WAIT_M>New guy!"
 	
 	para "Less complaining,"
 	line "more scrubbing!"
@@ -777,7 +777,7 @@ BrilloSailboatText:
 	done
 	
 BrilloJustRodeBoatText:
-	text "Here we are,"
+	text "Here we are,<WAIT_S>"
 	line "PUEBLO BRILLO."
 	
 	para "Thanks for riding."

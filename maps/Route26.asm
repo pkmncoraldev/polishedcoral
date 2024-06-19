@@ -71,7 +71,7 @@ Route26Trainer2:
 	
 	para "I had a feeling."
 	
-	para "…Or was it a"
+	para "…<WAIT_M>Or was it a"
 	line "vision!?"
 	done
 
@@ -103,7 +103,7 @@ Route26Trainer3:
 	done
 
 .BeatenText:
-	text "You won?"
+	text "You won?<WAIT_M>"
 	line "How odd!"
 	done
 	

@@ -69,7 +69,7 @@ GotMapCardText:
 	done
 	
 GlintRivalMomText1:
-	text "<RIVAL>'s MOM: You"
+	text "<RIVAL>'s MOM:You"
 	line "must be <PLAYER>!"
 	
 	para "<RIVAL> has told"
@@ -87,15 +87,12 @@ GlintRivalMomText1:
 	cont "will help him"
 	cont "mature a bit."
 	
-	para "Oh?"
-	
-	para "A #DEX?"
+	para "Oh?<WAIT_M>"
+	line "A #DEX?"
 	
 	para "<RIVAL> ran off"
 	line "before they were"
-	cont "handed out?"
-	
-	para "Sigh…"
+	cont "handed out? <WAIT_M>Sigh…"
 	
 	para "Well, thanks for"
 	line "bringing it by."

@@ -40,7 +40,7 @@ StarglowHouse3NPC2Text:
 	cont "TRAINER around."
 	
 	para "Between you and"
-	line "me, he's nothing"
+	line "me, <WAIT_S>he's nothing"
 	cont "special."
 	
 	para "I just don't have"

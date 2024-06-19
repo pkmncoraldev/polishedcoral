@@ -264,7 +264,7 @@ RadiantGymLeilaniTextBeforeBattleRematch:
 	text "You beat all the"
 	line "girls!"
 	
-	para "Well, are you ready"
+	para "Well, <WAIT_S>are you ready"
 	line "for our rematch?"
 	done
 	
@@ -321,7 +321,7 @@ RadiantGymLeilaniTextWinRematch:
 	para "Very well done!"
 	
 RadiantGymLeilaniTextLoss:
-	text "Oh, sweetie."
+	text "Oh, <WAIT_S>sweetie."
 	
 	para "Nice try!"
 	done
@@ -368,7 +368,7 @@ RadiantGymRose:
 	text "The challenger is"
 	line "you?"
 	
-	para "Ok, I won't go"
+	para "Ok, <WAIT_S>I won't go"
 	line "easy on you!"
 	done
 
@@ -419,7 +419,7 @@ RadiantGymRoseRematchSeenText:
 	text "You came back"
 	line "again?"
 	
-	para "Ok, I won't go"
+	para "Ok, <WAIT_S>I won't go"
 	line "easy on you!"
 	done
 
@@ -436,7 +436,7 @@ RadiantGymLily:
 	done
 
 .SeenText:
-	text "…Hello."
+	text "…<WAIT_M>Hello."
 	
 	para "I'm supposed to"
 	line "battle you."
@@ -488,7 +488,7 @@ RadiantGymLilyRematchRegularText:
 	done
 
 RadiantGymLilyRematchSeenText:
-	text "…Hello."
+	text "…<WAIT_M>Hello."
 	
 	para "I'm supposed to"
 	line "battle you."
@@ -510,13 +510,13 @@ RadiantGymIris:
 	done
 
 .SeenText:
-	text "La la la!"
+	text "La <WAIT_S>la <WAIT_S>la!"
 	
 	para "Let's battle!"
 	done
 
 .BeatenText:
-	text "La la la!"
+	text "La <WAIT_S>la <WAIT_S>la!"
 	
 	para "Oh, I lost?"
 	done
@@ -564,13 +564,13 @@ RadiantGymIrisRematchRegularText:
 	done
 
 RadiantGymIrisRematchSeenText:
-	text "La la la!"
+	text "La <WAIT_S>la <WAIT_S>la!"
 	
 	para "Let's battle!"
 	done
 
 RadiantGymIrisRematchBeatenText:
-	text "La la la!"
+	text "La <WAIT_S>la <WAIT_S>la!"
 	
 	para "Oh, I lost?"
 	done
@@ -585,7 +585,7 @@ RadiantGymPoppy:
 	done
 
 .SeenText:
-	text "Battle! Battle!"
+	text "Battle! <WAIT_S>Battle!"
 	
 	para "Let's battle!"
 	done
@@ -637,7 +637,7 @@ RadiantGymPoppyRematchRegularText:
 	done
 
 RadiantGymPoppyRematchSeenText:
-	text "Battle! Battle!"
+	text "Battle! <WAIT_S>Battle!"
 	
 	para "Let's battle!"
 	done
@@ -819,7 +819,7 @@ RadiantGymFelicia:
 	done
 
 .BeatenText:
-	text "Aw…"
+	text "Aw…<WAIT_M>"
 	line "You won!"
 	done
 	
@@ -873,7 +873,7 @@ RadiantGymFeliciaRematchSeenText:
 	done
 
 RadiantGymFeliciaRematchBeatenText:
-	text "Aw…"
+	text "Aw…<WAIT_M>"
 	line "You won!"
 	done
 	

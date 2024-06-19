@@ -25,14 +25,14 @@ Route7Dummy:
 TrainerRoute7_1:
 	generictrainer HIKER, STEVEN, EVENT_BEAT_ROUTE_7_TRAINER, .SeenText, .BeatenText
 
-	text "So young, but so"
+	text "So young, <WAIT_S>but so"
 	line "strong!"
 	
 	para "Keep that spirit!"
 	done
 
 .SeenText:
-	text "A fresh, young"
+	text "A fresh, <WAIT_S>young"
 	line "TRAINER!"
 	
 	para "How about a"

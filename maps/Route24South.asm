@@ -83,14 +83,14 @@ Route24SouthNPCText:
 Route24SouthTrainer1:
 	generictrainer JUGGLER, RONNIE, EVENT_BEAT_ROUTE_24_SOUTH_TRAINER_1, .SeenText, .BeatenText
 
-	text "Alright, show's"
+	text "Alright, <WAIT_S>show's"
 	line "over!"
 	
 	para "Move along!"
 	done
 
 .SeenText:
-	text "Step right up!"
+	text "Step right up!<WAIT_S>"
 	line "Step right up!"
 	
 	para "To the most"

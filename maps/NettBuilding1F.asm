@@ -114,22 +114,22 @@ NettBuilding1F_LadiesRoomText:
 	done
 	
 NettBuilding1F_NPC_1_Text:
-	text "Mumble… mumble…"
+	text "Mumble… <WAIT_S>mumble…"
 	
 	para "This presentation"
 	line "needs to go well…"
 	
-	para "Mumble… mumble…"
+	para "Mumble… <WAIT_S>mumble…"
 	done
 	
 NettBuilding1F_NPC_2_Text:
-	text "Mumble… mumble…"
+	text "Mumble… <WAIT_S>mumble…"
 	
 	para "This contract will"
 	line "make or break our"
 	cont "careers…"
 	
-	para "Mumble… mumble…"
+	para "Mumble… <WAIT_S>mumble…"
 	done
 	
 NettBuilding1F_NPC_3_Text:

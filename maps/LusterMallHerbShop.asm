@@ -50,7 +50,7 @@ LusterMallHerbShop_NPC1Text:
 	done
 	
 LusterMallHerbShop_NPC2Text:
-	text "Pee-yew!"
+	text "Pee<WAIT_S>-yew!"
 	
 	para "This place stinks!"
 	done

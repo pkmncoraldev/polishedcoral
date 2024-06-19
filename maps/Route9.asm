@@ -303,7 +303,7 @@ RanchDodrioText2:
 	done
 	
 RanchDoduoText:
-	text "DODUO: DEWO! DEWO!"
+	text "DODUO: DEWO! <WAIT_S>DEWO!"
 	done
 	
 RanchScarecrowText:

@@ -395,7 +395,7 @@ RadiantOrphanage1FLeilaniText1:
 	line "be the death of"
 	cont "me, surely!"
 	
-	para "Oh, listen to me"
+	para "Oh, <WAIT_S>listen to me"
 	line "going on and on!"
 	
 	para "You came for a GYM"
@@ -423,14 +423,14 @@ RadiantOrphanage1FLeilaniText4:
 	done
 	
 RadiantOrphanage1FLeilaniText5:
-	text "Oh, you just came"
+	text "Oh, <WAIT_S>you just came"
 	line "for a visit?"
 	
 	para "How thoughtful!"
 	done
 	
 RadiantOrphanage1FLeilaniText6:
-	text "Oh, you just came"
+	text "Oh, <WAIT_S>you just came"
 	line "for a visit?"
 	
 	para "How thoughtful!"

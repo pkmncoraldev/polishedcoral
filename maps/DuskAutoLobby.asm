@@ -255,9 +255,8 @@ DuskAutoLobbyGuyText1:
 	done
 
 DuskAutoLobbyGuyText2:
-	text "Oh hey!"
-	
-	para "It's you again."
+	text "Oh hey!<WAIT_M>"
+	line "It's you again."
 	
 	para "Thanks for your"
 	line "help with that"
@@ -279,7 +278,7 @@ DuskAutoLobbyGuyText2:
 	para "That would likely"
 	line "do the trick."
 	
-	para "Oh, you don't have"
+	para "Oh, <WAIT_S>you don't have"
 	line "a bike?"
 	
 	para "Well, my MOM runs"
@@ -308,7 +307,7 @@ DuskAutoLobbyGuyText3:
 	para "That would likely"
 	line "do the trick."
 	
-	para "Oh, you don't have"
+	para "Oh, <WAIT_S>you don't have"
 	line "a bike?"
 	
 	para "Well, my MOM runs"
@@ -323,9 +322,8 @@ DuskAutoLobbyGuyText3:
 	done
 	
 DuskAutoLobbyGuyText4:
-	text "Oh hey!"
-	
-	para "It's you again."
+	text "Oh hey!<WAIT_M>"
+	line "It's you again."
 	
 	para "Thanks for your"
 	line "help with that"
@@ -383,7 +381,7 @@ DuskAutoLobbyGuyText5:
 	para "Did you get a"
 	line "bike?"
 	
-	para "Nice! Let me see!"
+	para "Nice! <WAIT_S>Let me see!"
 	
 	para "Wait a minute…"
 	

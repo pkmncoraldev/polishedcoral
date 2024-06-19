@@ -148,14 +148,12 @@ WestTrainCabooseTrigger1:
 	end
 	
 WestTrainCaboosePAText1:
-	text "PA: Ding-dong!"
+	text "PA: Ding<WAIT_S>-dong!"
 	
 	para "This is your"
 	line "CONDUCTOR."
 	
-	para "HAH!"
-	
-	para "As if!"
+	para "HAH! <WAIT_M>As if!"
 	done
 	
 WestTrainCaboosePAText2:
@@ -202,9 +200,7 @@ WestTrainCabooseSnareGruntText1:
 	done
 	
 WestTrainCabooseSnareGruntText2:
-	text "Hey!"
-	
-	para "Come back!"
+	text "Hey! <WAIT_M>Come back!"
 	
 	para "Don't leave me here"
 	line "alone!"

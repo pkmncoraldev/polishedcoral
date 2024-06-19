@@ -86,7 +86,7 @@ HuntersThicketLoadDisguise:
 	ret
 
 HuntersThicketRanger:
-;	waitsfx
+	waitsfx
 	playmusic MUSIC_ENCOUNTER_GYM_LEADER
 	scall LedianRangerPoseStart
 	opentext
@@ -281,7 +281,7 @@ LedianRangerPoseEnd2:
 	end
 
 HuntersThicketRangerText1:
-	text "Go! Go!"
+	text "Go! <WAIT_S>Go!<WAIT_S>"
 	line "LEDIAN RANGER!"
 	
 	para "COMET PUNCH to"
@@ -292,9 +292,7 @@ HuntersThicketRangerText2:
 	text "I hope that"
 	line "sounded cool…"
 	
-	para "…"
-	
-	para "Oh, right!"
+	para "…<WAIT_L>Oh, right!"
 	done
 	
 HuntersThicketRangerText3:
@@ -303,7 +301,7 @@ HuntersThicketRangerText3:
 	cont "such as yourself"
 	cont "doing here?"
 	
-	para "Up to no good I'm"
+	para "Up to no good, I'm"
 	line "sure!"
 	
 	para "Don't try and deny"
@@ -314,14 +312,12 @@ HuntersThicketRangerText3:
 	done
 	
 HuntersThicketRangerText4:
-	text "Hehe… Nice…"
+	text "Hehe… <WAIT_S>Nice…"
 	
 	para "That sounds"
 	line "tough!"
 	
-	para "…"
-	
-	para "Oh, right!"
+	para "…<WAIT_L>Oh, right!"
 	done
 	
 HuntersThicketRangerText5:
@@ -347,9 +343,8 @@ HuntersThicketRangerText12:
 	line "a fellow warrior"
 	cont "of justice!"
 	
-	para "What?"
-	
-	para "A shady character?"
+	para "What?<WAIT_M>"
+	line "A shady character?"
 	
 	para "I don't remember"
 	line "calling you that!"
@@ -364,18 +359,14 @@ HuntersThicketRangerText7:
 	text "I think he bought"
 	line "it."
 	
-	para "…"
-	
-	para "Oh, right!"
+	para "…<WAIT_L>Oh, right!"
 	done
 	
 HuntersThicketRangerText7_girl:
 	text "I think she bought"
 	line "it."
 	
-	para "…"
-	
-	para "Oh, right!"
+	para "…<WAIT_L>Oh, right!"
 	done
 	
 HuntersThicketRangerText8:
@@ -386,9 +377,10 @@ HuntersThicketRangerText8:
 	cont "you were the one!"
 	
 	para "I shall dub you"
-	line "“KID LEDYBA”!"
+	line "<WAIT_S>“KID LEDYBA”!"
 	
-	para "Take this."
+	para "Take this,"
+	line "KID LEDYBA!"
 	done
 	
 HuntersThicketRangerText9:
@@ -399,22 +391,15 @@ HuntersThicketRangerText9:
 	para "Don't worry."
 	
 	para "I have plenty of"
-	line "those things back"
-	cont "at my apartme-"
-	
-	para "I mean…"
-	
-	para "…back at the"
-	line "HQ BASE!"
+	line "those back at my"
+	cont "apartme- <WAIT_M>err…<WAIT_L><SCRL2>back at HQ!"
 	done
 	
 HuntersThicketRangerText10:
-	text "Phew. That was a"
+	text "Phew. <WAIT_S>That was a"
 	line "close one…"
 	
-	para "…"
-	
-	para "Oh, right!"
+	para "…<WAIT_L>Oh, right!"
 	done
 	
 HuntersThicketRangerText11:
@@ -432,12 +417,11 @@ HuntersThicketRangerText11:
 	done
 
 HuntersThicketRangerWinText:
-	text "Go! Go!"
+	text "Go! <WAIT_S>Go!<WAIT_S>"
 	line "LEDIAN RANGER!"
 	
-	para "COMET PUNCH to…"
-	
-	para "…defeat?"
+	para "COMET PUNCH to…<WAIT_M>"
+	line "…defeat?"
 	done
 
 HuntersThicketRangerNoRoomText:

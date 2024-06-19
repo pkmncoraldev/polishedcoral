@@ -83,7 +83,7 @@ LusterSkyscraper2_3F_NPC2Text1:
 	cont "didn't have my"
 	cont "secret weapon."
 	
-	para "Here, take some!"
+	para "Here, <WAIT_S>take some!"
 	done
 	
 LusterSkyscraper2_3F_NPC2Text2:

@@ -54,16 +54,16 @@ SeasideCave1FTrainer1:
 SeasideCave1FTrainer2:
 	generictrainer GUITARIST, VINNY, EVENT_BEAT_SEASIDE_CAVE_1F_TRAINER_2, .SeenText, .BeatenText
 
-	text "Dun da nuh"
-	line "nuh nuh."
+	text "Dun <WAIT_S>da <WAIT_S>nuh<WAIT_S>"
+	line "nuh <WAIT_S>nuh."
 	
 	para "I'm bluer than"
 	line "the big blue sea…"
 	done
 
 .SeenText:
-	text "Dun da nuh"
-	line "nuh nuh."
+	text "Dun <WAIT_S>da <WAIT_S>nuh<WAIT_S>"
+	line "nuh <WAIT_S>nuh."
 	
 	para "I got the blues"
 	line "like you wouldn't"
@@ -74,8 +74,8 @@ SeasideCave1FTrainer2:
 	done
 
 .BeatenText:
-	text "Dun da nuh"
-	line "nuh huh?"
+	text "Dun <WAIT_S>da <WAIT_S>nuh<WAIT_S>"
+	line "nuh <WAIT_S>huh?"
 	done
 	
 SeasideCave1FNPC1:
@@ -120,8 +120,6 @@ SeasideCave1FNPC1Text2:
 	done
 	
 SeasideCave1FNPC1Text3:
-	text "…"
-	
-	para "I might join her…"
+	text "…<WAIT_L>I might join her…"
 	done
 	

@@ -43,9 +43,9 @@ RadiantPokeCenterNPC2Text:
 	para "She's always been"
 	line "a sweetheart."
 	
-	para "…and back then"
+	para "…<WAIT_M>and back then"
 	line "she was quite a"
 	cont "looker, too!"
 	
-	para "Oh ho ho!"
+	para "Oh <WAIT_S>ho <WAIT_S>ho!"
 	done

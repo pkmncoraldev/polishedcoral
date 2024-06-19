@@ -259,7 +259,7 @@ MenuDataHeader_Secret:
 	db "QUIT@"
 	
 BrilloMartClerkText1:
-	text "Welcome! How may I"
+	text "Welcome! <WAIT_S>How may I"
 	line "help you?"
 	done
 	
@@ -338,7 +338,7 @@ BrilloMartDoorText1:
 	
 BrilloMartDoorText2:
 	text "<PLAYER> said"
-	line "“<BACKUP>”."
+	line "<WAIT_S>“<BACKUP>”."
 	done
 	
 BrilloMartDoorText3:

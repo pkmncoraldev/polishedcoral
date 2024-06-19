@@ -139,9 +139,8 @@ LusterApartment4_2F_NPC4Text:
 	done
 	
 LusterApartment4_2F_NPC5Text:
-	text "BUNEARYS…"
-	
-	para "Ooooooh!"
+	text "BUNEARYS…<WAIT_M>"
+	line "Ooooooh!"
 	
 	para "I hate them!"
 	done

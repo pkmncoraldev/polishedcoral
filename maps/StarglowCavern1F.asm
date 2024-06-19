@@ -329,7 +329,7 @@ StarglowCavern_DisguiseMan1Text5:
 	done
 	
 StarglowCavern_DisguiseMan1Text6:
-	text "Correct! Correct!"
+	text "Correct! <WAIT_S>Correct!"
 	line "How did you know"
 	
 	para "this was the way"

@@ -112,7 +112,7 @@ RadiantFlowerShopClerkNotCoveredInPollenText:
 	done
 	
 RadiantFlowerShopClerkGivePouchText1:
-	text "Wow! Your clothes"
+	text "Wow! <WAIT_S>Your clothes"
 	line "are covered in"
 	cont "pollen!"
 	
@@ -124,7 +124,7 @@ RadiantFlowerShopClerkGivePouchText1:
 	line "all that pollen"
 	cont "go to waste!"
 	
-	para "Here, take this."
+	para "Here, <WAIT_S>take this."
 	done
 	
 RadiantFlowerShopClerkGivePouchText2:

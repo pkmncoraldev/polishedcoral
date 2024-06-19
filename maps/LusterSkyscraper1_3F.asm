@@ -151,7 +151,7 @@ LusterSkyscraper1_3F_NPC1NoRoomText:
 	done
 	
 LusterSkyscraper1_3F_NPC1TextNo:
-	text "Hey, your loss."
+	text "Hey, <WAIT_S>your loss."
 	done
 	
 LusterSkyscraper1_3F_Gave_Up_Grade:

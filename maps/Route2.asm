@@ -101,9 +101,8 @@ TrainerRoute2_3:
 	done
 
 .BeatenText:
-	text "Woo!"
-	
-	para "That was awesome!"
+	text "Woo!<WAIT_M>"
+	line "That was awesome!"
 	done
 
 Route2NPC1:
@@ -127,9 +126,8 @@ Route2PokeballDummy:
 Route2NPC1Text:
 	text "I've heard that"
 	line "there is a cave"
-	cont "around here where"
-	cont "you can see some"
-	cont "rare #MON!"
+	cont "around here with"
+	cont "some cool #MON!"
 	
 	para "I can't find it,"
 	line "though."

@@ -47,7 +47,7 @@ EventideSootheBellHouseTogetic:
 	end
 	
 EventideSootheBellHouseNPCText1:
-	text "Ring… ring…"
+	text "Ring… <WAIT_S>ring…"
 	
 	para "Ah…"
 	

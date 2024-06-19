@@ -101,18 +101,16 @@ DuskAutoGarageGuyText2:
 	done
 	
 DuskAutoGaragePoppyText1:
-	text "Yaaay!"
-	
-	para "Look at the cars!"
+	text "Yaaay!<WAIT_M>"
+	line "Look at the cars!"
 	
 	para "I wanna fix cars"
 	line "when I grow up!"
 	done
 	
 DuskAutoGaragePoppyText2:
-	text "POPPY: Yaaay!"
-	
-	para "Look at the cars!"
+	text "POPPY: Yaaay!<WAIT_M>"
+	line "Look at the cars!"
 	
 	para "I wanna fix cars"
 	line "when I grow up!"

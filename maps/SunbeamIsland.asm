@@ -632,18 +632,18 @@ SunbeamIslandNPC2Text:
 SunbeamIslandNPC3Text1:
 	text "That goofy looking"
 	line "#MON keeps"
-	cont "going 'Slowwwww…'"
+	cont "going '<WAIT_S>S<WAIT_S>l<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>w<WAIT_S>…'"
 
 	para "Hehe!"
 
 	para "That's actually"
 	line "kinda fun!"
 
-	para "Slowwwww…"
+	para "<WAIT_S>S<WAIT_S>l<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>w<WAIT_S>…"
 	done
 
 SunbeamIslandNPC3Text2:
-	text "Slowwwww…"
+	text "<WAIT_S>S<WAIT_S>l<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>w<WAIT_S>…"
 	done
 
 SunbeamIslandNPC4Text:
@@ -678,7 +678,7 @@ SunbeamIslandNPC6Text:
 	done
 
 SunbeamJustRodeBoatText:
-	text "Here we are,"
+	text "Here we are,<WAIT_S>"
 	line "SUNBEAM ISLAND."
 
 	para "Take care."
@@ -696,8 +696,8 @@ SunbeamSnareFallAsleepText:
 	para "That song is so"
 	line "soothing…"
 
-	para "I think I'll just"
-	line "close my eyes for"
+	para "I think I'll <WAIT_S>just<WAIT_S>"
+	line "close my <WAIT_M>eyes for"
 	cont "a sec…"
 
 	para "…"
@@ -770,7 +770,7 @@ SunbeamTextUseFlute:
 SunbeamFirstContestCharlieText1:
 	text "Looks like you"
 	line "just missed the"
-	cont "show, huh?"
+	cont "show, <WAIT_S>huh?"
 	done
 	
 SunbeamFirstContestCharlieText2:
@@ -792,7 +792,7 @@ SunbeamFirstContestCharlieText2:
 	line "from around here,"
 	cont "are you?"
 	
-	para "That's ok, I'm not"
+	para "That's ok, <WAIT_S>I'm not"
 	line "either."
 	
 	para "I'm CHARLIE!"
@@ -816,7 +816,7 @@ SunbeamFirstContestCharlieText3:
 	para "But I'm rambling,"
 	line "aren't I?"
 	
-	para "Well, if you ever"
+	para "Well, <WAIT_S>if you ever"
 	line "find yourself in"
 	cont "TWINKLE TOWN,"
 
@@ -824,7 +824,7 @@ SunbeamFirstContestCharlieText3:
 	line "and challenge the"
 	cont "GYM!"
 	
-	para "But I'll warn you,"
+	para "But I'll warn you,<WAIT_S>"
 	line "I'm no slouch!"
 	
 	para "See you around,"

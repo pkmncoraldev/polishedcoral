@@ -119,7 +119,8 @@ TrainerRouteEast3_4:
 	done
 
 .BeatenText:
-	text "Itchy…"
+	text "Itchy… <WAIT_M>Itchy…"
+	line "Itchy…"
 	done
 
 Route3Rodman:
@@ -164,9 +165,7 @@ Route3RodmanText1:
 	line "scaring the WATER"
 	cont "#MON away."
 	
-	para "..."
-	
-	para "Look."
+	para "…<WAIT_L>Look."
 	
 	para "If I give you"
 	line "something will you"
@@ -203,7 +202,7 @@ Route3RodmanText4:
 	done
 
 Route3RodmanText5:
-	text "Fine. Here."
+	text "Fine. <WAIT_M>Here."
 	done
 	
 Route3East_sign:

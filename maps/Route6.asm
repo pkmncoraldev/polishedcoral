@@ -197,7 +197,7 @@ TrainerRoute6_3:
 .SeenText:
 	text "Huh?"
 	
-	para "Oh, wow."
+	para "Oh, <WAIT_S>wow."
 	
 	para "You actually want"
 	line "to battle me?"
@@ -207,7 +207,7 @@ TrainerRoute6_3:
 	done
 
 .BeatenText:
-	text "HAHA- Wait…"
+	text "HAHA- <WAIT_S>Wait…"
 	
 	para "What?"
 	done
@@ -272,7 +272,7 @@ TrainerRoute6_5:
 TrainerRoute6_6:
 	generictrainer LASS, SARAH, EVENT_BEAT_ROUTE_6_TRAINER_6, .SeenText, .BeatenText
 
-	text "Fine! I'll admit"
+	text "Fine! <WAIT_M>I'll admit"
 	line "it!"
 	
 	para "I haven't ever been"
@@ -345,7 +345,7 @@ TrainerRoute6_8:
 	done
 
 .BeatenText:
-	text "Relax! Relax!"
+	text "Relax! <WAIT_S>Relax!"
 	done
 	
 TrainerRoute6_9:
@@ -429,7 +429,7 @@ Route6LakeSign:
 	jumptext Route6LakeSignText
 	
 TrainerRoute6_3BeatenText:
-	text "HAHA- Wait…"
+	text "HAHA- <WAIT_S>Wait…"
 	
 	para "What?"
 	done

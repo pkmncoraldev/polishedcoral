@@ -282,7 +282,7 @@ SunbeamJungleSnare2:
 	text "Where was he going"
 	line "in such a rush?"
 	
-	para "Where are YOU"
+	para "Where are YOU<WAIT_S>"
 	line "going in such a"
 	cont "rush?"
 	done
@@ -300,9 +300,7 @@ SunbeamJungleSnare3:
 	
 	para "I WAS JOKING!"
 	
-	para "…"
-	
-	para "DID YOU LAUGH?"
+	para "…<WAIT_L>DID YOU LAUGH?"
 	
 	para "I CAN'T HEAR YOU!"
 	done
@@ -367,9 +365,8 @@ SunbeamJungleSnare5:
 	done
 
 .BeatenText:
-	text "Yep!"
-	
-	para "Sure do!"
+	text "Yep!<WAIT_M>"
+	line "Sure do!"
 	done
 	end
 	
@@ -399,7 +396,7 @@ SunbeamJungleSnare6:
 	end
 	
 SunbeamJungleBigWaterfallText:
-	text "Wow, it's a huge"
+	text "Wow, <WAIT_S>it's a huge"
 	line "waterfall."
 	done
 
@@ -438,7 +435,7 @@ SunbeamJungleKageText3:
 	para "None of the others"
 	line "could handle it?"
 
-	para "Useless!"
+	para "Useless!<WAIT_M>"
 	line "All of you!"
 
 	para "I'll take care of"
@@ -495,9 +492,8 @@ SunbeamJungleKageText7:
 	done
 
 SunbeamJungleKageText8:
-	text "Woah…"
-
-	para "WOAH!"
+	text "Woah…<WAIT_L>"
+	line "WOAH!"
 	done
 
 SunbeamJungleKageText9:

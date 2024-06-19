@@ -42,7 +42,7 @@ DaybreakPokeCenterLedyba:
 
 DaybreakPokeCenterNPC1Text:
 	text "You're a #MON"
-	line "TRAINER, right?"
+	line "TRAINER, <WAIT_S>right?"
 	
 	para "We have quite the"
 	line "variety of #MON"
@@ -64,9 +64,9 @@ DaybreakPokeCenterNPC2Text:
 	cont "strong #MON."
 	
 	para "That's why I named"
-	line "my LEDYBA CRUSHER!"
+	line "my LEDYBA <WAIT_S>CRUSHER!"
 	done
 	
 DaybreakPokeCenterLedybaText:
-	text "CRUSHER: …LEDY?"
+	text "CRUSHER: <WAIT_M>…LEDY?"
 	done

@@ -386,7 +386,7 @@ TrainCabin2Snare2:
 	done
 
 .BeatenText:
-	text "Not today,"
+	text "Not today,<WAIT_S>"
 	line "I guess…"
 	done
 	end
@@ -410,9 +410,8 @@ TrainCabin2NPC1StartBattleText:
 	done
 
 TrainCabin2NPC1WinText:
-	text "Ah!"
-	
-	para "Ya got me!"
+	text "Ah!<WAIT_M>"
+	line "Ya got me!"
 	done
 
 TrainCabin2NPC1AfterBattleText:
@@ -573,7 +572,7 @@ TrainCabin2NPC6WinText:
 	done
 
 TrainCabin2NPC6AfterBattleText:
-	text "Sniff… sniff…"
+	text "Sniff… <WAIT_S>sniff…"
 	
 	para "We lost…"
 	done

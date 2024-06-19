@@ -438,7 +438,7 @@ Luster2NPC8Text2:
 	
 	para "…"
 	
-	para "Oh, just an old"
+	para "Oh, <WAIT_S>just an old"
 	line "ITEMFINDER?"
 	
 	para "What a piece of"
@@ -454,9 +454,8 @@ LusterShoppingFenceKidText:
 	para "What's it like"
 	line "back there?"
 	
-	para "Sigh…"
-	
-	para "Someday…"
+	para "Sigh…<WAIT_M>"
+	line "Someday…"
 	done
 	
 LusterShoppingSnareText1:
@@ -473,9 +472,8 @@ LusterShoppingSnareText1:
 	done
 	
 LusterShoppingSnareText2:
-	text "Smart move."
-	
-	para "Hehe…"
+	text "Smart move.<WAIT_M>"
+	line"Hehe…"
 	done
 	
 LusterShoppingSnareText3:
@@ -510,7 +508,7 @@ LusterShoppingSnareWinText:
 	done
 	
 LusterShoppingDeliveryText1:
-	text "Ok ok…"
+	text "Ok… <WAIT_S>ok…"
 	
 	para "Just take them!"
 	
@@ -539,9 +537,8 @@ LusterShoppingDeliveryText2:
 	done
 	
 LusterShoppingDeliveryText3:
-	text "Wow!"
-	
-	para "Thanks a lot!"
+	text "Wow!<WAIT_M>"
+	line"Thanks a lot!"
 	
 	para "Now I can finish"
 	line "this delivery."

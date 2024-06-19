@@ -73,14 +73,14 @@ TrainerLusterSewersB2F_1:
 	done
 
 .BeatenText:
-	text "It IS you, isn't"
+	text "It IS you, <WAIT_S>isn't"
 	line "it?"
 	done
 	
 TrainerLusterSewersB2F_2:
 	generictrainer BUNEARY_F, GAL_2, EVENT_BEAT_LUSTER_SEWERS_B2F_TRAINER_2, .SeenText, .BeatenText
 
-	text "Yeah, yeah…"
+	text "Yeah,<WAIT_S> yeah…"
 	
 	para "You win."
 	

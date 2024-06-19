@@ -122,7 +122,7 @@ SunsetLighthouseSign:
 TrainerSunsetCape:
 	generictrainer SWIMMERF, BECKY, EVENT_BEAT_SUNSET_CAPE_TRAINER, .SeenText, .BeatenText
 	
-	text "Well, It WAS nice"
+	text "Well, It WAS <WAIT_S>nice"
 	line "and secluded…"
 	done
 
@@ -151,8 +151,8 @@ SunsetCapeNpc1Text:
 	done
 	
 SunsetCapeNpc2Text:
-	text "RAICHU: CHU! CHU!"
-	line "RAI!"
+	text "RAICHU: CHU! <WAIT_S>CHU!"
+	line "<WAIT_S>RAI!"
 	done
 	
 SunsetCapeNpc3Text:

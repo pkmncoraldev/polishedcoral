@@ -197,9 +197,7 @@ SunsetLighthouseTopFridgeText:
 	text "Let's see what's"
 	line "in the fridge…"
 	
-	para "…"
-	
-	para "Wow it's fully"
+	para "…<WAIT_L>Wow it's fully"
 	line "stocked!"
 	done
 	
@@ -209,7 +207,7 @@ SunsetLighthouseTopFlowerText:
 	done
 	
 SunsetLighthouseTopAmpharosText1:
-	text "AMPHAROS: Far!"
+	text "AMPHAROS: Far!<WAIT_S>"
 	line "Faro!"
 	done
 	
@@ -252,9 +250,7 @@ SunsetLighthouseTopAmpharosTextFull:
 	text "It's finally"
 	line "satisfied!"
 	
-	para "…"
-	
-	para "Oh!"
+	para "…<WAIT_L>Oh!"
 	
 	para "It's clutching"
 	line "something in its"

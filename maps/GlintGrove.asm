@@ -573,9 +573,8 @@ TrainerGlintGrove_6:
 	done
 
 .BeatenText:
-	text "GAHH!"
-	
-	para "VENIPEDE!"
+	text "GAHH!<WAIT_M>"
+	line "VENIPEDE!"
 	done
 
 GlintGroveStanley:
@@ -666,9 +665,8 @@ Movement_GlintGroveStanley2:
 	step_end
 	
 GlintGroveStanleyText1:
-	text "I see…"
-	
-	para "Interesting…"
+	text "I see…<WAIT_L>"
+	line "Interesting…"
 	done
 	
 GlintGroveStanleyText2:
@@ -702,7 +700,7 @@ GlintGroveStanleyText3:
 	
 GlintGroveStanleyText4:
 	text "Good luck at the"
-	line "GYM, TRAINER."
+	line "GYM, <WAIT_S>TRAINER."
 	
 	para "I've heard the"
 	line "LEADER is an"

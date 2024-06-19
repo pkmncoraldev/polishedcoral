@@ -320,9 +320,8 @@ LakeBoatManText2:
 	done
 	
 LakeBoatManText3:
-	text "Alright."
-	
-	para "We'll head out."
+	text "Alright.<WAIT_M>"
+	line "We'll head out."
 	done
 	
 LakeBoatManText4:
@@ -343,9 +342,8 @@ LakeBoatManText6:
 	text "You don't have"
 	line "enough money?"
 	
-	para "Really?"
-	
-	para "Well…"
+	para "Really?<WAIT_M>"
+	line "Well…"
 	
 	para "I guess I can let"
 	line "you ride for free"

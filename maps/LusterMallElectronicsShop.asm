@@ -80,7 +80,7 @@ Movement_LusterMallElectronicsShopPolly2:
 LusterMallElectronicsShopPollyText:
 	text "Ugh…"
 	
-	para "Like, not now!"
+	para "Like, <WAIT_S>not now!"
 	
 	para "They don't have"
 	line "the phone I want!"

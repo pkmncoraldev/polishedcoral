@@ -243,7 +243,7 @@ BarBackAlleyTrashcanText:
 	done
 	
 BarBackAlleyTrashcanTextOnlyTrash:
-	text "Nope, there's"
+	text "Nope, <WAIT_S>there's"
 	line "only trash here."
 	done
 	
@@ -293,16 +293,15 @@ BarBackAlleyFeliciaText3:
 	done
 	
 BarBackAlleyFeliciaText4:
-	text "EEEEEKKKK!"
-	
-	para "Bad kitty!"
+	text "EEEEEKKKK!<WAIT_M>"
+	line "Bad kitty!"
 	done
 	
 BarBackAlleyFeliciaText5:
 	text "Thank you."
 	
 	para "The kitty gave me"
-	line "a scratch, but I'm"
+	line "a scratch, <WAIT_S>but I'm"
 	cont "ok."
 	
 	para "I guess it didn't"
@@ -321,7 +320,7 @@ BarBackAlleyMeowthText1:
 	done
 	
 BarBackAlleyMeowthText2:
-	text "MEOWTH: Mee!"
+	text "MEOWTH: Mee!<WAIT_S>"
 	line "Owth!"
 	done
 	

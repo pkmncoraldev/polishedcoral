@@ -56,7 +56,7 @@ MoveReminderScript:
 	jumpopenedtext MoveReminderNoBottleCapText
 
 MoveReminderIntroText::
-	text "Yo! I'm the"
+	text "Yo! <WAIT_S>I'm the"
 	line "MOVE REMINDER."
 
 	para "I can make your"
@@ -70,7 +70,7 @@ MoveReminderIntroText::
 	
 	para "Money?"
 	
-	para "Nah! I collect"
+	para "Nah! <WAIT_S>I collect"
 	line "BOTTLE CAPs!"
 	done
 
@@ -89,7 +89,7 @@ MoveReminderWhichMonText::
 	done
 
 MoveReminderNoBottleCapText::
-	text "Huh? You don't"
+	text "Huh? <WAIT_S>You don't"
 	line "have the BOTTLE"
 	cont "CAPs?"
 

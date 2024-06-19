@@ -120,7 +120,7 @@ GlintPokeCenterTeaLadyText1:
 	done
 	
 GlintPokeCenterTeaLadyText2:
-	text "Oh! You don't have"
+	text "Oh! <WAIT_S>You don't have"
 	line "any FLOWER PETALS!"
 	
 	para "Off to the grove"
@@ -128,7 +128,7 @@ GlintPokeCenterTeaLadyText2:
 	done
 	
 GlintPokeCenterTeaLadyText3:
-	text "Alright, sweetie!"
+	text "Alright sweetie!"
 	
 	para "Coming right up!"
 	done

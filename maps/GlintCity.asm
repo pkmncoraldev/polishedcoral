@@ -22,7 +22,7 @@ GlintCity_MapScriptHeader:
 	signpost 18, 20, SIGNPOST_READ, GlintCitySign
 	signpost 16, 5, SIGNPOST_READ, GlintGymSign
 	signpost 5, 19, SIGNPOST_READ, GlintApartmentsSign
-	signpost 14, 15, SIGNPOST_READ, GlintCityParkSign
+	signpost -1, -1, SIGNPOST_READ, GlintCityParkSign
 	signpost 3, 8, SIGNPOST_READ, GlintCityRivalHouseSign
 	signpost 15, 28, SIGNPOST_READ, GlintCityPokeCenterSign
 	signpost 9, 28, SIGNPOST_READ, GlintCityMartSign
@@ -264,10 +264,8 @@ GlintNPC2Text:
 	cont "in DAYBREAK"
 	cont "VILLAGE."
 	
-	para "Still,"
-	
-	para "he's just a"
-	line "kid."
+	para "Still, <WAIT_M>he's just"
+	line "a kid."
 	
 	para "Is he ready to be"
 	line "a GYM LEADER?"
@@ -311,9 +309,8 @@ GlintNPC6Text:
 	cont "challenge the GYM"
 	cont "LEADER!"
 	
-	para "Here."
-	
-	para "Try a sample."
+	para "Here.<WAIT_M>"
+	line "Try a sample."
 	done
 	
 GlintNPC6Text2:
@@ -336,9 +333,8 @@ GlintNPC6Text3:
 	line "up before you"
 	cont "head out of town!"
 	
-	para "Here."
-	
-	para "Try a sample."
+	para "Here.<WAIT_M>"
+	line "Try a sample."
 	done
 	
 GlintNPC6TextNoRoom:

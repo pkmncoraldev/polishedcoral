@@ -472,7 +472,7 @@ BattleText_CantEscape: ; 0x80ba0
 ; 0x80bae
 
 BattleText_TheresNoEscapeFromTrainerBattle: ; 0x80b49
-	text "No! There's no"
+	text "No! <WAIT_S>There's no"
 	line "running from a"
 	cont "trainer battle!"
 	prompt

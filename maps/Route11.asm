@@ -196,9 +196,8 @@ TrainerRoute11_1:
 	done
 
 .BeatenText:
-	text "Alright."
-	
-	para "That's that."
+	text "Alright.<WAIT_M>"
+	line "That's that."
 	done
 
 TrainerRoute11_2:
@@ -220,9 +219,8 @@ TrainerRoute11_2:
 	done
 
 .BeatenText:
-	text "Great battle!"
-	
-	para "How fun!"
+	text "Great battle!<WAIT_M>"
+	line "How fun!"
 	done
 
 TrainerRoute11_3:
@@ -275,9 +273,8 @@ TrainerRoute11_1_2:
 	done
 
 .BeatenText:
-	text "Alright."
-	
-	para "That's that."
+	text "Alright.<WAIT_M>"
+	line "That's that."
 	done
 
 TrainerRoute11_2_2:
@@ -299,9 +296,8 @@ TrainerRoute11_2_2:
 	done
 
 .BeatenText:
-	text "Great battle!"
-	
-	para "How fun!"
+	text "Great battle!<WAIT_M>"
+	line "How fun!"
 	done
 
 TrainerRoute11_3_2:

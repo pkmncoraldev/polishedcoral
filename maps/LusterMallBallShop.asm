@@ -80,7 +80,7 @@ Movement_LusterMallBallShopPolly2:
 LusterMallBallShopPollyText:
 	text "You again?"
 	
-	para "Can't you, like,"
+	para "Can't you, <WAIT_S>like,<WAIT_S>"
 	line "take a hint?"
 	
 	para "I'm not going to"
@@ -165,7 +165,7 @@ LusterMallBallShop_Slowking:
 	end
 	
 LusterMallBallShop_SlowkingText1:
-	text "SLOWKING: Sloooow…"
+	text "SLOWKING: <WAIT_S>S<WAIT_S>l<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>w<WAIT_S>…"
 	done
 	
 LusterMallBallShop_SlowkingText2:

@@ -101,7 +101,7 @@ SunbeamIslandSunbatherText4:
 	para "Why's it so dark"
 	line "out?"
 	
-	para "Ow ow!"
+	para "Ow! <WAIT_S>Ow!"
 	
 	para "Sunburn!"
 	

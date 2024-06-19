@@ -321,13 +321,7 @@ OnwaIntlAirportNPC5Text:
 	done
 	
 OnwaIntlAirportNPC6Text:
-	text "ROUTE 12 is closed"
-	line "for construction!"
-	
-	para "What am I"
-	line "supposed to do,"
-	cont "fly a plane to"
-	cont "SHINE CITY?"
+	text "UNFINISHED"
 	done
 	
 OnwaIntlAirportNPC7Text1:
@@ -358,7 +352,7 @@ OnwaIntlAirportNPC8Text:
 	done
 	
 OnwaIntlAirportXatuText1:
-	text "XATU: Tu… Tu…"
+	text "XATU: <WAIT_S>Tu… <WAIT_S>Tu…"
 	done
 	
 OnwaIntlAirportXatuText2:
@@ -403,17 +397,9 @@ OnwaIntlAirportWendyText4:
 	line "long, you may as"
 	cont "well just walk!"
 	
-	para "Well, that is if"
-	line "ROUTE 12 weren't"
-	cont "closed."
-	
-	para "The whole ROUTE is"
-	line "under construction"
-	cont "I think."
-	
 	para "Hmm…"
 	
-	para "Well, it seems"
+	para "Well, <WAIT_S>it seems"
 	line "like you're not"
 	cont "going much further"
 	cont "this way…"
@@ -429,7 +415,7 @@ OnwaIntlAirportWendyText4:
 	
 	para "Who knows?"
 	
-	para "Anyway, I have to"
+	para "Anyway, <WAIT_S>I have to"
 	line "go."
 	
 	para "Here's my #GEAR"
@@ -449,7 +435,7 @@ OnwaIntlAirportWendyText5:
 	para "What are you doing"
 	line "here?"
 	
-	para "It's me, WENDY!"
+	para "It's me, <WAIT_S>WENDY!"
 	
 	para "GYM LEADER from"
 	line "EVENTIDE VILLAGE!"

@@ -110,7 +110,7 @@ BrightburgNPC4Text1:
 	line "give me the time"
 	cont "of day…"
 	
-	para "What? Does my"
+	para "What? <WAIT_M>Does my"
 	line "breath stink or"
 	cont "something?"
 	done

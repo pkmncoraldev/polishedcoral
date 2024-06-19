@@ -287,9 +287,8 @@ SpruceLabHealingMachineText2:
 	done
 	
 SpruceLabSpruceText1:
-	text "Ah!"
-	
-	para "<PLAYER>!"
+	text "Ah!<WAIT_M>"
+	line "<PLAYER>!"
 	
 	para "You came!"
 	
@@ -299,7 +298,7 @@ SpruceLabSpruceText1:
 	para "Doing well, I"
 	line "hope."
 	
-	para "Anyway, let me"
+	para "Anyway, <WAIT_S>let me"
 	line "show you around."
 	
 	para "Follow me!"
@@ -317,9 +316,7 @@ SpruceLabSpruceText3:
 	text "Well, that's about"
 	line "it."
 	
-	para "…"
-	
-	para "Oh!"
+	para "…<WAIT_L>Oh!"
 	
 	para "I almost forgot to"
 	line "introduce you to"
@@ -330,9 +327,7 @@ SpruceLabSpruceText3:
 	done
 	
 SpruceLabSpruceText4:
-	text "Ah!"
-	
-	para "There he is!"
+	text "Ah! <WAIT_M>There he is!"
 	done
 	
 SpruceLabSpruceText5:
@@ -369,15 +364,14 @@ SpruceLabSpruceText6:
 	done
 	
 SpruceLabSpruceText7:
-	text "Well then!"
-	
-	para "It's decided!"
+	text "Well then!<WAIT_M>"
+	line "It's decided!"
 	
 	para "I'll entrust the"
 	line "#FLUTE to you,"
 	cont "<PLAYER>!"
 	
-	para "After all, it was"
+	para "After all, <WAIT_S>it was"
 	line "I who set your"
 	cont "journey across"
 	cont "ONWA into motion,"
@@ -445,7 +439,7 @@ SpruceLabSpruceText12:
 	done
 	
 SpruceLabSpruceText13:
-	text "Next up, this"
+	text "Next up, <WAIT_S>this"
 	line "machine will heal"
 	cont "your #MON."
 	
@@ -461,7 +455,7 @@ SpruceLabSpruceText13:
 	done
 	
 SpruceLabDexCheckText:
-	text "Ah, <PLAYER>!"
+	text "Ah, <WAIT_S><PLAYER>!"
 	
 	para "How is your #-"
 	line "DEX coming?"

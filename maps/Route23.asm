@@ -336,7 +336,7 @@ Route23Trainer4:
 Route23Trainer5:
 	generictrainer SUPER_NERD, REMY, EVENT_BEAT_ROUTE_23_TRAINER_5, .SeenText, .BeatenText
 
-	text "Itchy! Itchy!"
+	text "Itchy! <WAIT_S>Itchy!"
 	
 	para "My eczema!"
 	
@@ -529,10 +529,8 @@ Route23BlackBeltText2:
 	
 Route23BlackBeltText3:
 	text "MASTER!"
-	line "I-"
-	
-	para "Oh, you aren't"
-	line "the MASTER."
+	line "I- <WAIT_M>Oh, you aren't"
+	cont "the MASTER."
 	done
 	
 Route23BlackBeltText4:
@@ -556,7 +554,7 @@ Route23BlackBeltText4:
 	
 Route23BlackBeltText5:
 	text "I train under a"
-	line "great MARTIAL ARTS"
+	line "great martial arts"
 	cont "MASTER in a DOJO"
 	cont "nearby."
 	
@@ -578,10 +576,8 @@ Route23BlackBeltText6:
 	
 Route23BlackBeltText7:
 	text "MASTER!"
-	line "I-"
-	
-	para "Oh, it's you"
-	line "again."
+	line "I- <WAIT_M>Oh, it's you"
+	cont "again."
 	done
 	
 Route23BlackBeltText8:
@@ -702,7 +698,7 @@ Route23MasterText5:
 	
 	
 Route23FisherText1:
-	text "Well, hi."
+	text "Well, <WAIT_S>hi."
 	
 	para "It's not everyday I"
 	line "see someone else"
@@ -716,7 +712,7 @@ Route23FisherText1:
 	para "I could use the"
 	line "company."
 	
-	para "Here, you can use"
+	para "Here, <WAIT_S>you can use"
 	line "this."
 	done
 	

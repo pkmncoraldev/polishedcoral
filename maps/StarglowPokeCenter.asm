@@ -146,7 +146,7 @@ StarglowCenterGirlText:
 	
 	para "I think he lives"
 	line "on SUNBEAM ISLAND,"
-	cont "south of here."
+	cont "SOUTH of here."
 	done
 	
 StarglowCenterRocketText1:

@@ -78,7 +78,7 @@ RadiantOrphanage2FIris:
 	jumptextfaceplayer RadiantOrphanage2FIrisText
 	
 RadiantOrphanage2FIrisText:
-	text "La la la!"
+	text "La <WAIT_S>la <WAIT_S>la!"
 	
 	para "Oh, hi!"
 	

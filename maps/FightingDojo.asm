@@ -438,9 +438,8 @@ FightingDojoMasterText3:
 	done
 	
 FightingDojoMasterText4:
-	text "MASTER: Excellent…"
-	
-	para "Let us continue…"
+	text "MASTER: Excellent…<WAIT_M>"
+	line "Let us continue…"
 	done
 	
 FightingDojoMasterText5:

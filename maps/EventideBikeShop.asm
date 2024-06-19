@@ -52,7 +52,7 @@ EventideBikeShopOwnerGiveBikeText1:
 	line "I can open the"
 	cont "shop again!"
 	
-	para "Here, I want you"
+	para "Here, <WAIT_S>I want you"
 	line "to take this as" 
 	cont "thanks!"
 	done
@@ -81,9 +81,8 @@ EventideBikeShopKidText:
 	done
 	
 EventideBikeShopOwnerNpcText:
-	text "Huh?"
-	
-	para "Sorry we're closed."
+	text "Huh?<WAIT_M>"
+	line "Sorry we're closed…"
 	
 	para "My son has gone"
 	line "missing!"

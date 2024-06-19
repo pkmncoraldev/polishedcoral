@@ -304,9 +304,8 @@ ShimmerCityNpc4Text2:
 	done
 	
 ShimmerCityNpc4Text3:
-	text "Oh thank you!"
+	text "Oh thank you!<WAIT_M>"
 	line "Thank you!"
-	cont "Thank you!"
 	done
 	
 ShimmerCityNpc4Text4:
@@ -331,7 +330,7 @@ ShimmerCityNpc4Text7:
 	done
 	
 ShimmerCityNpc4Text8:
-	text "Thank you!"
+	text "Thank you!<WAIT_M>"
 	line "Thank you!"
 	
 	para "I love my HORSEA!"

@@ -55,7 +55,7 @@ KomorePokeCenterNPC2Text1:
 	done
 	
 KomorePokeCenterNPC2Text2:
-	text "Nah, we better"
+	text "Nah, <WAIT_S>we better"
 	line "not."
 	
 	para "The nurse might"
@@ -146,7 +146,7 @@ CheckItemMushroom:
 	ld [wScriptVar], a
 	
 KomorePokeCenterMushroomGuyText1:
-	text "Munch! Scarf!"
+	text "Munch! <WAIT_M>Scarf!"
 	done
 	
 KomorePokeCenterMushroomGuyText2:

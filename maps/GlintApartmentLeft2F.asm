@@ -130,10 +130,9 @@ GlintApt12FNpc2Text2:
 	para "you can view it"
 	line "from anywhere."
 	
-	para "Oh!"
-	
-	para "You already have"
-	line "one."
+	para "Oh!<WAIT_M>"
+	line "You already have"
+	cont "one."
 	
 	para "How convenient."
 	done
@@ -143,9 +142,8 @@ GlintApt12FTVText1:
 	done
 	
 GlintApt12FTVText2:
-	text "Do you mind?"
-	
-	para "I'm watching that!"
+	text "Do you mind?<WAIT_M>"
+	line "I'm watching that!"
 	done
 	
 Movement_GlintApt12FTV1:

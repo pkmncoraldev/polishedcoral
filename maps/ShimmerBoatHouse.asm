@@ -249,7 +249,7 @@ ShimmerBoatHouseBrilloMenuData:
 	end
 	
 ShimmerBoatHouseNPCTextDesertFirstTime:
-	text "Ah, you made it."
+	text "Ah, <WAIT_S>you made it."
 	line "You ready to go?"
 	done
 	

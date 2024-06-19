@@ -41,11 +41,11 @@ LusterMallPokeCenterCroagunk:
 	end
 	
 LusterMallPokeCenterNPC1Text:
-	text "I think the GYM"
-	line "here is closed!"
+	text "I'm here to"
+	line "challenge the GYM."
 	
-	para "Maybe I should"
-	line "come back later…"
+	para "I'm working up the"
+	line "courage."
 	done
 	
 LusterMallPokeCenterNPC2Text:

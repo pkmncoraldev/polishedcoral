@@ -312,7 +312,7 @@ Route5Gate1FNPC4Text3:
 	done
 	
 Route5Gate1FNPC4Text4:
-	text "So, didja bring"
+	text "So, <WAIT_S>didja bring"
 	line "me a SODA POP like"
 	cont "you promised?"
 	done
@@ -333,7 +333,7 @@ Route5Gate1FNPC4Text5:
 	line "blocking the ATM,"
 	
 	para "I'll give you"
-	line "A… TM!"
+	line "A… <WAIT_M>TM!"
 	
 	done
 	
@@ -370,7 +370,7 @@ Route5Gate1FNPC4TextNo1:
 Route5Gate1FNPC4TextNo2:
 	text "Well then…"
 	
-	para "TOOOOOOO BAD!"
+	para "TO<WAIT_S>O<WAIT_S>O<WAIT_S>O<WAIT_S>O BAD!"
 	done
 	
 Route5Gate1FNPC4TextNo3:

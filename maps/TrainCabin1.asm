@@ -192,7 +192,7 @@ TrainCabin1Snare1:
 TrainCabin1Snare2:
 	generictrainer GRUNTM, TRAIN_GRUNTM_3, EVENT_BEAT_TRAIN_CABIN_1_SNARE_2, .SeenText, .BeatenText
 
-	text "Ok. Ok."
+	text "Ok. <WAIT_S>Ok."
 	
 	para "I really wish you"
 	line "just sat down like"
@@ -229,7 +229,7 @@ TrainCabin1Snare3:
 	done
 
 .BeatenText:
-	text "Gah Lee!"
+	text "Gah <WAIT_M>Lee!"
 	done
 	end
 	
@@ -519,7 +519,7 @@ TrainCabin1OfficerCabooseText:
 	done
 	
 TrainCabin1ArrivingSoonText:
-	text "PA: Ding-dong!"
+	text "PA: Ding<WAIT_S>-dong!"
 	
 	para "This is your"
 	line "CONDUCTOR."
@@ -533,7 +533,7 @@ TrainCabin1ArrivingSoonText:
 	done
 	
 TrainCabin1ArrivingSoonText2:
-	text "PA: Ding-dong!"
+	text "PA: Ding<WAIT_S>-dong!"
 	
 	para "This is your"
 	line "CONDUCTOR."
@@ -621,14 +621,14 @@ TrainCabin1SnareOfficerTextBoy:
 	text "Go back to your"
 	line "seat, twerp."
 	
-	para "I mean, sir!"
+	para "I mean, <WAIT_S>sir!"
 	done
 	
 TrainCabin1SnareOfficerTextGirl:
 	text "Go back to your"
 	line "seat, twerp."
 	
-	para "I mean, ma'am!"
+	para "I mean, <WAIT_S>ma'am!"
 	done
 	
 TrainCabin1SnareOfficerText1:
@@ -705,7 +705,7 @@ TrainCabin1NPC2AfterBattleText:
 	done
 	
 TrainCabin1NPC2Text2:
-	text "Young lady, I"
+	text "Young lady, <WAIT_S>I"
 	line "will not be giving"
 	cont "you my #MON."
 	
@@ -714,7 +714,7 @@ TrainCabin1NPC2Text2:
 	done
 	
 TrainCabin1NPC2Text3Boy:
-	text "Thank you, young"
+	text "Thank you, <WAIT_S>young"
 	line "man."
 	
 	para "There was no way"
@@ -722,12 +722,12 @@ TrainCabin1NPC2Text3Boy:
 	cont "ruffian my prized"
 	cont "#MON."
 	
-	para "Please, take this"
+	para "Please, <WAIT_S>take this"
 	line "as thanks."
 	done
 	
 TrainCabin1NPC2Text3Girl:
-	text "Thank you, young"
+	text "Thank you, <WAIT_S>young"
 	line "lady."
 	
 	para "There was no way"
@@ -735,7 +735,7 @@ TrainCabin1NPC2Text3Girl:
 	cont "ruffian my prized"
 	cont "#MON."
 	
-	para "Please, take this"
+	para "Please, <WAIT_S>take this"
 	line "as thanks."
 	done
 	
@@ -822,7 +822,7 @@ TrainCabin1OfficerText2:
 	
 TrainCabin1Snare1Text1:
 	text "I'm getting tired"
-	line "of this, old man."
+	line "of this, <WAIT_S>old man."
 	
 	para "Hand it over!"
 	done
@@ -838,7 +838,7 @@ TrainCabin1Snare1Text2:
 	done
 	
 TrainCabin1Snare1Text3:
-	text "Well, this could "
+	text "Well, <WAIT_S>this could "
 	line "be going better…"
 	
 	para "Forget this!"
@@ -849,14 +849,14 @@ TrainCabin1Snare1WinText:
 	done
 	
 TrainCabin1PlayersSeatArriveTextLuster:
-	text "PA: Ding-dong!"
+	text "PA: Ding<WAIT_S>-dong!"
 	
 	para "Now arriving in"
 	line "LUSTER CITY."
 	done
 	
 TrainCabin1PlayersSeatArriveTextFlicker:
-	text "PA: Ding-dong!"
+	text "PA: Ding<WAIT_S>-dong!"
 	
 	para "Now arriving at"
 	line "FLICKER STATION."

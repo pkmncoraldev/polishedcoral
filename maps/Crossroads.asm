@@ -377,7 +377,7 @@ CrossroadsCutsceneGruntText2:
 	cont "something."
 	
 	para "They say he's never"
-	line "lost a single"
+	line "lost even a single"
 	cont "time!"
 	done
 	
@@ -394,7 +394,7 @@ CrossroadsCutsceneColbyText1:
 	para "Surprised to see"
 	line "me?"
 	
-	para "Yeah, that's right,"
+	para "Yeah, that's right,<WAIT_S>"
 	line "I'm with TEAM SNARE"
 	cont "now."
 	

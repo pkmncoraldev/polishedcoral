@@ -227,7 +227,7 @@ NettBuildingFBathroom_NPC_1_Text1:
 	done
 	
 NettBuildingFBathroom_NPC_1_Text2:
-	text "Puff… puff…"
+	text "Puff… <WAIT_S>puff…"
 	done
 	
 NettBuildingFBathroom_NPC_1_Text3:

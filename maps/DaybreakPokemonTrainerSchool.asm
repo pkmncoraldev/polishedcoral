@@ -220,7 +220,7 @@ DaybreakPokemonTrainerSchoolPutAwayPokeballsText:
 	done
 	
 DaybreakPokemonTrainerSchoolTeacherText1:
-	text "Oh! <PLAYER>!"
+	text "Oh! <WAIT_S><PLAYER>!"
 
 	para "It's so good to"
 	line "see you!"

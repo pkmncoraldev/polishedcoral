@@ -1,18 +1,18 @@
 _SpruceText6::
 	text "Excellent!"
 
-	para "Now, what did you"
+	para "Now, <WAIT_S>what did you"
 	line "say your name was?"
 	prompt
 
 _SpruceText7::
-	text "That's right!"
+	text "That's right!<WAIT_M>"
 	line "<RIVAL>."
 	prompt
 	done
 
 _SpruceText8::
-	text "Ah, <PLAYER>?"
+	text "Ah, <WAIT_S><PLAYER>?"
 	
 	para "I'll try to"
 	line "remember that."
@@ -20,7 +20,7 @@ _SpruceText8::
 	done
 
 _SpruceText9::
-	text "This boy here, you"
+	text "This boy here, <WAIT_S>you"
 	line "know him from"
 	cont "school."
 	
@@ -71,7 +71,7 @@ _SpruceTextD::
 	done
 
 _SpruceTextE::
-	text "This world "
+	text "This world"
 	done
 	
 _SpruceTextF::
@@ -223,7 +223,7 @@ UnknownText_0x1c474b::
 	prompt
 
 UnknownText_0x1c4b92::
-	text "Congratulations!"
+	text "Congratulations!<WAIT_S>"
 	line "Your @"
 	text_from_ram wStringBuffer2
 	db "@@"
@@ -237,14 +237,14 @@ UnknownText_0x1c4baf::
 	done
 
 UnknownText_0x1c4bc5::
-	text "Huh? @"
+	text "Huh? <WAIT_S>@"
 	text_from_ram wStringBuffer2
 	text ""
 	line "stopped evolving!"
 	prompt
 
 UnknownText_0x1c4be3::
-	text "What? @"
+	text "What? <WAIT_S>@"
 	text_from_ram wStringBuffer2
 	text ""
 	line "is evolving!"
@@ -271,7 +271,7 @@ UnknownText_Pollen_CostsThisMuch::
 	done
 	
 UnknownText_Pollen_InsufficientFunds::
-	text "Oops!"
+	text "Oops!<WAIT_S>"
 	line "Not enough PUFFs!"
 	done
 	
@@ -301,7 +301,7 @@ UnknownText_0x1c4ca3::
 	done
 	
 UnknownText_0x1c4d2a::
-	text "Come back anytime,"
+	text "Come back anytime,<WAIT_S>"
 	line "sweetie!"
 	done
 
@@ -403,10 +403,8 @@ UnknownText_CoffeeShop_Intro::
 UnknownText_0x1c4d47::
 	text "Hiya!"
 	
-	para "Like…"
-		
-	para "You want some"
-	line "refreshments?"
+	para "Like… <WAIT_M>you want"
+	line "some refreshments?"
 	done
 
 UnknownText_0x1c4db0::
@@ -422,9 +420,7 @@ UnknownText_0x1c4dcd::
 	done
 
 UnknownText_0x1c4dcd2::
-	text "Like…"
-	
-	para "Here ya go!"
+	text "Like… <WAIT_M>here ya go!"
 	done
 	
 UnknownText_0x1c4dd6::
@@ -447,9 +443,7 @@ UnknownText_0x1c4e28::
 	done
 
 UnknownText_0x1c4e46::
-	text "Like…"
-	
-	para "Come again!"
+	text "Like… <WAIT_M>come again!"
 	done
 
 UnknownText_0x1c4e5f::
@@ -490,7 +484,7 @@ UnknownText_0x1c4ed8::
 	done
 
 UnknownText_0x1c4ef6::
-	text "All right."
+	text "All right.<WAIT_M>"
 	line "See you around."
 	done
 	
@@ -528,12 +522,12 @@ UnknownText_Mart_Clothes_ComeAgain::
 	done
 	
 UnknownText_0x1c4f62::
-	text "Welcome! How may I"
+	text "Welcome! <WAIT_S>How may I"
 	line "help you?"
 	done
 
 UnknownText_0x1c4f80::
-	text "Here you are."
+	text "Here you are.<WAIT_M>"
 	line "Thank you!"
 	done
 	
@@ -564,7 +558,7 @@ UnknownText_0x1c4fb7::
 	done
 
 UnknownText_0x1c4fd7::
-	text "Sorry, I can't buy"
+	text "Sorry, <WAIT_S>I can't buy"
 	line "that from you."
 	prompt
 
@@ -646,7 +640,7 @@ BTMartComeAgainText::
 
 UnknownText_BrilloMartSecret1::
 	text "<PLAYER> said"
-	line "“STORM DRAIN”."
+	line "<WAIT_S>“STORM DRAIN”."
 	done
 	
 UnknownText_BrilloMartSecret2::
@@ -669,7 +663,7 @@ UnknownText_0x1c5066::
 	prompt
 
 UnknownText_0x1c5079::
-	text "Darn… Ran out of"
+	text "Darn… <WAIT_S>Ran out of"
 	line "COINs…"
 	done
 
@@ -689,7 +683,7 @@ UnknownText_0x1c50bb::
 	done
 
 UnknownText_0x1c5565::
-	text "Huh? Sorry, wrong"
+	text "Huh? <WAIT_S>Sorry, wrong"
 	line "number!"
 	done
 
@@ -888,7 +882,7 @@ UnknownText_0x1c589f::
 
 UnknownText_0x1c58bc::
 	text_from_ram wStringBuffer1
-	text "?"
+	text "?<WAIT_M>"
 	line "Is that right?"
 	done
 
@@ -907,7 +901,7 @@ UnknownText_0x1c58ff::
 	done
 
 UnknownText_0x1c591a::
-	text "Oh. Please come"
+	text "Oh. <WAIT_S>Please come"
 	line "back again!"
 	done
 
@@ -966,17 +960,17 @@ UnknownText_0x1c5ac3::
 	prompt
 
 UnknownText_0x1c5ae3::
-	text "Aargh!"
+	text "Aargh!<WAIT_S>"
 	line "Almost had it!"
 	prompt
 
 UnknownText_0x1c5afa::
-	text "Shoot! It was so"
+	text "Shoot! <WAIT_S>It was so"
 	line "close too!"
 	prompt
 
 UnknownText_0x1c5b17::
-	text "Gotcha! @"
+	text "Gotcha! <WAIT_S>@"
 	text_from_ram wEnemyMonNick
 	text ""
 	line "was caught!@"
@@ -1116,7 +1110,7 @@ UnknownText_0x1c5dd0::
 	prompt
 	
 UnknownText_BallPhasedThru::
-	text "It phased through"
+	text "It <WAIT_M>phased through"
 	line "the #MON!?"
 	
 	para "Is it an illusion?"
@@ -1175,14 +1169,14 @@ UnknownText_0x1c5eba::
 	done
 
 UnknownText_0x1c5eda::
-	text "Oh, make it forget"
+	text "Oh, <WAIT_S>make it forget"
 	line "@"
 	text_from_ram wStringBuffer1
 	text "?"
 	done
 
 UnknownText_0x1c5ef5::
-	text "Done! Your #MON"
+	text "Done! <WAIT_S>Your #MON"
 	line "forgot the move."
 	done
 
@@ -1192,7 +1186,7 @@ UnknownText_0x1c5f17::
 	done
 
 UnknownText_0x1c5f36::
-	text "No? Come visit me"
+	text "No? <WAIT_S>Come visit me"
 	line "again."
 	done
 
@@ -1202,7 +1196,7 @@ UnknownText_0x1c5f50::
 	prompt
 
 UnknownText_0x1c5f74::
-	text "Um… Oh, yes, I'm"
+	text "Um… <WAIT_M>Oh, <WAIT_S>yes, I'm"
 	line "the MOVE DELETER."
 
 	para "I can make #MON"
@@ -1289,7 +1283,7 @@ WonderTradePromptText::
 ;	prompt
 
 WonderTradeCantTradeGSBallText::
-	text "Sorry, but your"
+	text "Sorry, <WAIT_S>but your"
 	line "#MON is holding"
 
 	para "a strange item. We"

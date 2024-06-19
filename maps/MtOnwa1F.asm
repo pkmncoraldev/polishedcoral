@@ -169,9 +169,8 @@ TrainerMtOnwa_6:
 	done
 
 .BeatenText:
-	text "Ooooh…"
-	
-	para "I'm so hungry…"
+	text "Ooooh…<WAIT_M>"
+	line "I'm so hungry…"
 	done
 	
 TrainerMtOnwa_7:

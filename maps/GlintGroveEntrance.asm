@@ -352,7 +352,7 @@ GlintGroveSignText:
 	done
 	
 GlintRivalText1:
-	text "Hey!"
+	text "Hey!<WAIT_M>"
 	line "Watch it!"
 	
 	para "You?"
@@ -360,8 +360,8 @@ GlintRivalText1:
 	para "What are you doing"
 	line "here?"
 	
-	para "I left my #DEX"
-	line "at the LIGHTHOUSE?"
+	para "I left before I"
+	line "got my #DEX?"
 	
 	para "And what makes you"
 	line "think you could"
@@ -373,22 +373,18 @@ GlintRivalText1:
 	
 	para "I bet you aren't"
 	line "even any stronger"
-	cont "than you were when"
-	cont "you first got your"
-	cont "#MON!"
+	cont "than at the"
+	cont "LIGHTHOUSE!"
 	
 	para "I was heading"
-	line "home,"
-	
-	para "but I could take"
-	line "you down real"
-	cont "quick."
+	line "home, <WAIT_S>but I"
+	cont "could take you"
+	cont "down real quick."
 	done
 
 GlintRivalText2:
-	text "Tch!"
-	
-	para "Whatever…"
+	text "Tch!<WAIT_M>"
+	line "Whatever…"
 	
 	para "My #MON weren't"
 	line "even trying!"
@@ -401,14 +397,12 @@ GlintRivalText2:
 	
 GlintRivalWinText:
 	text "What?"
-	
-	para "How?"
+	line "<WAIT_M>How?"
 	done
 	
 GlintRivalLoseText:
 	text "Hmph!"
-	
-	para "Too easy."
+	line "<WAIT_M>Too easy."
 	done
 	
 GlintGroveEntranceContactsGuy1Text1:
@@ -421,9 +415,8 @@ GlintGroveEntranceContactsGuy1Text1:
 	para "I can't see a"
 	line "thing!"
 	
-	para "…"
-	
-	para "What?"
+	para "…<WAIT_M>"
+	line "What?"
 	
 	para "Why are you look-"
 	line "ing at me like"
@@ -434,7 +427,7 @@ GlintGroveEntranceContactsGuy1Text1:
 	
 	para "…"
 	
-	para "Look, can you just"
+	para "Look, <WAIT_S>can you just"
 	line "come back after"
 	cont "I've found my"
 	cont "contact lens?"
@@ -451,10 +444,8 @@ GlintGroveEntranceContactsGuy1Text2:
 	
 GlintGroveEntranceContactsGuyText:
 	text "I found my contact"
-	line "lens,"
-	
-	para "but it's all"
-	line "squished!"
+	line "lens, <WAIT_S>but it's all"
+	cont "squished!"
 	
 	para "I still can't see"
 	line "anything!"
@@ -478,8 +469,7 @@ GlintGroveEntranceContactsSquishText:
 	text "Squitch!"
 	
 	para "You stepped on a…"
-	
-	para "CONTACT LENS!"
+	line "<WAIT_L>CONTACT LENS!"
 	
 	para "Better just keep"
 	line "moving…"

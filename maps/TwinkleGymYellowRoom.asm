@@ -481,29 +481,27 @@ TwinkleGymYellowRoomTrainer1RegularText:
 	done
 
 TwinkleGymYellowRoomTrainer1SeenText:
-	text "Battle! Battle!"
+	text "Battle! <WAIT_S>Battle!"
 	
 	para "I'll burn you down,"
 	line "kid!"
 	done
 	
 TwinkleGymYellowRoomTrainer1RematchSeenText:
-	text "Battle! Battle!"
+	text "Battle! <WAIT_S>Battle!"
 	
 	para "I'll burn you down,"
 	line "kid!"
 	done
 
 TwinkleGymYellowRoomTrainer1BeatenText:
-	text "Ah!"
-	
-	para "It burns!"
+	text "Ah!<WAIT_M>"
+	line "It burns!"
 	done
 	
 TwinkleGymYellowRoomTrainer1RematchBeatenText:
-	text "Ah!"
-	
-	para "It burns!"
+	text "Ah!<WAIT_M>"
+	line "It burns!"
 	done
 	
 TwinkleGymYellowRoomTrainer2:
@@ -589,11 +587,11 @@ TwinkleGymYellowRoomTrainer2RematchSeenText:
 	done
 
 TwinkleGymYellowRoomTrainer2BeatenText:
-	text "Well that's that!"
+	text "Well that's <WAIT_S>that!"
 	done
 	
 TwinkleGymYellowRoomTrainer2RematchBeatenText:
-	text "Well that's that!"
+	text "Well that's <WAIT_S>that!"
 	done
 	
 TwinkleGymYellowRoomWorker1:
@@ -699,7 +697,7 @@ TwinkleGymYellowRoomBather2SeenText:
 	text "Isn't this bath"
 	line "so nice?"
 	
-	para "Splish splash!"
+	para "Splish <WAIT_S>splash!"
 	done
 	
 TwinkleGymYellowRoomBather2RematchSeenText:
@@ -711,13 +709,13 @@ TwinkleGymYellowRoomBather2RematchSeenText:
 	done
 	
 TwinkleGymYellowRoomBather2BeatenText:
-	text "Ah, who cares?"
+	text "Ah, <WAIT_S>who cares?"
 	
 	para "This is too nice!"
 	done
 	
 TwinkleGymYellowRoomBather2RematchBeatenText:
-	text "Ah, who cares?"
+	text "Ah, <WAIT_S>who cares?"
 	
 	para "This is too nice!"
 	done

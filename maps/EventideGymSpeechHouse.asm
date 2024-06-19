@@ -35,7 +35,7 @@ EventideGymSpeechHouseNPC1Text:
 	
 EventideGymSpeechHouseNPC2Text:
 	text "The GYM LEADER"
-	line "here, WENDY, is a"
+	line "here, <WAIT_S>WENDY, <WAIT_S>is a"
 	cont "well-known pilot!"
 	
 	para "I wonder why she"

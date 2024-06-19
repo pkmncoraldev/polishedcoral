@@ -369,7 +369,7 @@ Route6SouthMinaSceneText4:
 	done
 	
 Route6SouthMinaSceneText5:
-	text "Oh, now you've"
+	text "Oh, <WAIT_S>now you've"
 	line "done it!"
 	
 	para "I wasn't paying"
@@ -382,7 +382,7 @@ Route6SouthMinaSceneText5:
 	para "It was kinda"
 	line "empty, anyway…"
 	
-	para "Here, take a look!"
+	para "Here, <WAIT_S>take a look!"
 	done
 	
 Route6SouthMinaSceneText6:
@@ -421,7 +421,7 @@ Route6SouthMinaSceneText8_3:
 	text "A peace sign,"
 	line "though?"
 	
-	para "I gotta say, that's"
+	para "I gotta say, <WAIT_S>that's"
 	line "pretty cliché…"
 	done
 	
@@ -439,7 +439,7 @@ Route6SouthMinaSceneText8_5:
 	line "without the"
 	cont "finger, though…"
 	
-	para "I mean, really,"
+	para "I mean, <WAIT_S>really,"
 	line "<PLAYER>!"
 	done
 	
@@ -473,12 +473,12 @@ Route6SouthMinaSceneText10:
 	done
 	
 Route6SouthMinaSceneText11:
-	text "Sorry, not taking"
+	text "Sorry, <WAIT_S>not taking"
 	line "no for an answer!"
 	done
 	
 Route6SouthMinaSceneText12:
-	text "Ha ha!"
+	text "Ha <WAIT_S>ha!"
 	
 	para "You did it again,"
 	line "<PLAYER>."
@@ -502,7 +502,7 @@ Route6SouthMinaSceneText13:
 	text "ALOLA,"
 	line "<PLAYER>."
 	
-	para "Oh, I did it"
+	para "Oh, <WAIT_S>I did it"
 	line "again!"
 
 	para "Goodbye!"

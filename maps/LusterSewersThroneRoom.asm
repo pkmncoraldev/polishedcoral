@@ -281,9 +281,8 @@ LusterSewersThroneRoomFrankieCutsceneText1:
 	para "You wanna see"
 	line "FRANKIE?"
 	
-	para "Ha!"
-	
-	para "Hahahaha!"
+	para "Ha!<WAIT_M>"
+	line "Hahahaha!"
 	
 	para "That's rich, kid!"
 	
@@ -305,9 +304,7 @@ LusterSewersThroneRoomFrankieCutsceneText2:
 LusterSewersThroneRoomFrankieCutsceneText3:
 	text "Step aside."
 	
-	para "…"
-	
-	para "NOW!"
+	para "…<WAIT_L>NOW!"
 	done
 	
 LusterSewersThroneRoomFrankieCutsceneText4:
@@ -334,9 +331,7 @@ LusterSewersThroneRoomFrankieCutsceneText5:
 	line "to do their dirty"
 	cont "work for them?"
 	
-	para "Huh?"
-	
-	para "HUH!?"
+	para "Huh? <WAIT_L>HUH!?"
 	done
 	
 LusterSewersThroneRoomFrankieCutsceneText6:
@@ -352,9 +347,8 @@ LusterSewersThroneRoomFrankieCutsceneText8:
 	line "CAN DISRESPECT US"
 	cont "LIKE THIS!?"
 	
-	para "HUH!?"
-	
-	para "ANSWER ME!"
+	para "HUH!?<WAIT_L>"
+	line "ANSWER ME!"
 	
 	para "…"
 	
@@ -369,7 +363,7 @@ LusterSewersThroneRoomFrankieCutsceneText8:
 	para "I'm gonna have to"
 	line "end you, kid."
 	
-	para "Right here, right"
+	para "Right here, <WAIT_S>right"
 	line "now!"
 	done
 	
@@ -381,15 +375,13 @@ LusterSewersThroneRoomFrankieCutsceneText9:
 LusterSewersThroneRoomFrankieCutsceneText10:
 	text "Right!"
 	
-	para "Of course, MISS"
+	para "Of course, <WAIT_S>MISS"
 	line "FRANKIE!"
 	done
 	
 	
 LusterSewersThroneRoomFrankieCutsceneText11:
-	text "…"
-	
-	para "Ahem…"
+	text "…<WAIT_L>Ahem…"
 	done
 	
 LusterSewersThroneRoomFrankieCutsceneText12:
@@ -450,10 +442,10 @@ LusterSewersThroneRoomFrankieCutsceneText18:
 	
 	para "…"
 	
-	para "Nah, of course"
+	para "Nah, <WAIT_S>of course"
 	line "not!"
 	
-	para "Yeah, yeah…"
+	para "Yeah, <WAIT_S>yeah…"
 	
 	para "We'll leave for"
 	line "now."
@@ -476,7 +468,7 @@ LusterSewersThroneRoomFrankieCutsceneText20:
 	done
 	
 LusterSewersThroneRoomFrankieCutsceneText21:
-	text "No ifs, no buts,"
+	text "No ifs, <WAIT_S>no buts,<WAIT_S>"
 	line "no coconuts!"
 	
 	para "Move it!"

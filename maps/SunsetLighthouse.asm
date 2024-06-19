@@ -805,18 +805,17 @@ LighthouseAbnerText3:
 	done
 	
 LighthouseAbnerText4:
-	text "ABNER: Oh,"
+	text "ABNER: Oh,<WAIT_S>"
 	line "don't worry about"
-	cont "<RIVAL>, <PLAYER>."
+	cont "<RIVAL>, <WAIT_S><PLAYER>."
 	
 	para "Some people are"
 	line "overcompetitive."
 	done
 	
 LighthouseAbnerTextGiveDex:
-	text "Oh!"
-	
-	para "I almost forgot!"
+	text "Oh!<WAIT_M>"
+	line "I almost forgot!"
 	
 	para "I am supposed to"
 	line "give you kids each"
@@ -844,7 +843,7 @@ LighthouseAbnerText5:
 	done
 	
 LighthouseAbnerText6:
-	text "Anyway, you should"
+	text "Anyway, <WAIT_S>you should"
 	line "be on your way."
 	
 	para "I'm sure you'll"
@@ -863,9 +862,8 @@ LighthouseAbnerText7:
 	done
 	
 LighthouseAbnerText8:
-	text "ABNER: Ahem…"
-	
-	para "As I was saying…"
+	text "ABNER: Ahem…<WAIT_M>"
+	line "As I was saying…"
 	done
 	
 LighthouseAbnerText9:
@@ -874,25 +872,25 @@ LighthouseAbnerText9:
 	cont "SPRUCE's #MON"
 	cont "RESEARCH LAB."
 	
-	para "Because of this,"
+	para "Because of this,<WAIT_S>"
 	line "my brother and I"
 	cont "are filling in"
 	cont "for him."
 	
 	para "I have in this"
-	line "bag, six rare"
+	line "bag six rare"
 	cont "#MON."
 
 	para "They were sent"
 	line "from the PROF.'s"
-	cont "lab especially"
+	cont "lab <WAIT_S>especially"
 	cont "for all of you."
 	
-	para "You only get one,"
+	para "You only get one,<WAIT_S>"
 	line "so choose wisely."
 	
 	para "But no matter"
-	line "which you choose,"
+	line "which you choose,<WAIT_S>"
 	cont "you must train"
 	cont "it well."
 	
@@ -901,9 +899,8 @@ LighthouseAbnerText9:
 	cont "next #MON"
 	cont "LEAGUE CHAMPION!"
 	
-	para "Ohohohoho!"
-	
-	para "Ahem."
+	para "Ohohohoho!<WAIT_M>"
+	line "Ahem."
 	
 	para "<PLAYER>!"
 	
@@ -929,10 +926,9 @@ LighthouseAbnerText:
 	text "Did you visit"
 	line "your MOM yet?"
 	
-	para "No?"
-	
-	para "Then go talk"
-	line "to her!"
+	para "No?<WAIT_M>"
+	line "Then go talk"
+	cont "to her!"
 	done
 	
 LighthouseAbnerTextPostPokeGear:
@@ -1168,37 +1164,37 @@ LighthouseRivalLoseText:
 	
 LighthouseTakeCharmanderText:
 	text "You'll take"
-	line "CHARMANDER, the"
+	line "CHARMANDER,<WAIT_S> the"
 	cont "FIRE #MON?"
 	done
 
 LighthouseTakeSquirtleText:
 	text "Do you want"
-	line "SQUIRTLE, the"
+	line "SQUIRTLE,<WAIT_S> the"
 	cont "WATER #MON?"
 	done
 
 LighthouseTakeBulbasaurText:
 	text "So, you like"
-	line "BULBASAUR, the"
+	line "BULBASAUR,<WAIT_S> the"
 	cont "GRASS #MON?"
 	done
 	
 LighthouseTakeCyndaquilText:
 	text "You'll take"
-	line "CYNDAQUIL, the"
+	line "CYNDAQUIL,<WAIT_S> the"
 	cont "FIRE #MON?"
 	done
 
 LighthouseTakeTotodileText:
 	text "Do you want"
-	line "TOTODILE, the"
+	line "TOTODILE,<WAIT_S> the"
 	cont "WATER #MON?"
 	done
 
 LighthouseTakeChikoritaText:
 	text "So, you like"
-	line "CHIKORITA, the"
+	line "CHIKORITA,<WAIT_S> the"
 	cont "GRASS #MON?"
 	done
 	
@@ -1244,9 +1240,8 @@ ReceivedStarterText:
 	done	
 
 LighthouseKid1Text:
-	text "Yippee!"
-	
-	para "We won!"
+	text "Yippee!<WAIT_M>"
+	line "We won!"
 	done
 	
 LighthouseKid2Text:
@@ -1286,12 +1281,12 @@ LighthouseAbnerBeenToHouseText:
 	para "I seem to have"
 	line "locked the door to"
 	cont "elevator from the"
-	cont "other side."
+	cont "other side…"
 	
 	para "I haven't seen the"
 	line "keys in years so I"
 	cont "can't get to the"
-	cont "top anymore."
+	cont "top anymore!"
 	
 	para "The only way in"
 	line "is through the"

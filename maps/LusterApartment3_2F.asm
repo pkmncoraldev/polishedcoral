@@ -23,7 +23,7 @@ LusterApartment3_2F_NPC_Text:
 	cont "throw out some of"
 	cont "the best stuff!"
 	
-	para "Hey, don't look at"
+	para "Hey, <WAIT_S>don't look at"
 	line "me like that!"
 	
 	para "See for yourself!"

@@ -59,7 +59,7 @@ StarglowHouse4FishingGuruText1:
 	para "You've never heard"
 	line "of me?"
 	
-	para "Well, you must be"
+	para "Well, <WAIT_S>you must be"
 	line "new in town."
 	
 	para "That's the only"
@@ -82,7 +82,7 @@ StarglowHouse4FishingGuruText1:
 	para "I like the look in"
 	line "your eyes, kid."
 	
-	para "So fierce!"
+	para "So fierce!<WAIT_M>"
 	line "So determined!"
 	
 	para "Reminds me of my-"

@@ -275,7 +275,7 @@ NettBuildingOfficeNett:
 	end
 	
 NettBuildingOfficeNettText1:
-	text "Ah, <PLAYER>!"
+	text "Ah, <WAIT_S><PLAYER>!"
 	
 	para "I'm so glad you"
 	line "decided to come."
@@ -319,10 +319,6 @@ NettBuildingOfficeNettText2:
 	cont "safety."
 	
 	para "TEAM SNARE…"
-	
-	para "They aren't just"
-	line "an ordinary band"
-	cont "of thugs…"
 	
 	para "…"
 	
@@ -456,9 +452,7 @@ NettBuildingOfficeNewtonText2:
 	done
 	
 NettBuildingOfficeNewtonText3:
-	text "Ah!"
-	
-	para "Don't touch that."
+	text "Don't touch that!"
 	done
 	
 NettBuildingOfficeNewtonText4:

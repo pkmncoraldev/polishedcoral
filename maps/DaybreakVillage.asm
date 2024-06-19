@@ -38,7 +38,7 @@ DaybreakNPC1:
 DaybreakNPC1Text1:
 	text "Is that a #MON?"
 	
-	para "Oh, it's so cute!"
+	para "Oh, <WAIT_S>it's so cute!"
 	
 	para "You should show"
 	line "your old teacher."

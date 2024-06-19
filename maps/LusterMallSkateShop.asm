@@ -119,9 +119,8 @@ LusterMallSkateShop_ClerkText1:
 	
 	para "A SKATEBOARD?"
 	
-	para "Hahaha!"
-	
-	para "You're no skater!"
+	para "Hahaha!<WAIT_M>"
+	line "You're no skater!"
 	
 	para "Tell ya what,"
 	
@@ -144,7 +143,7 @@ LusterMallSkateShop_ClerkText2:
 	line "kid who rolls with"
 	cont "“THE NIDOKINGS”!"
 	
-	para "Hey, nice board!"
+	para "Hey, <WAIT_S>nice board!"
 	
 	para "You wanna see how"
 	line "to do some tricks"

@@ -175,9 +175,8 @@ ShimmerLabResearchRoomProfText2:
 	done
 	
 ShimmerLabResearchRoomProfText3:
-	text "Hmm…"
-	
-	para "I see…"
+	text "Hmm…<WAIT_L>"
+	line "I see…"
 	done
 	
 ShimmerLabResearchRoomProfText4:
@@ -239,7 +238,7 @@ ShimmerLabResearchRoomProfText5:
 	done
 	
 ShimmerLabResearchRoomProfText6:
-	text "Ah, you've"
+	text "Ah, <WAIT_S>you've"
 	line "returned."
 	
 	para "Did you find any"
@@ -260,7 +259,7 @@ ShimmerLabResearchRoomProfText6:
 ShimmerLabResearchRoomProfText7:
 	text "Unbelievable!"
 	
-	para "Such color!"
+	para "Such color!<WAIT_M>"
 	line "Such luster!"
 	
 	para "It's beautiful…"
@@ -291,9 +290,7 @@ ShimmerLabResearchRoomProfText8:
 	line "connection between"
 	cont "the two locations?"
 	
-	para "…"
-	
-	para "Well, regardless,"
+	para "…<WAIT_L>Well, regardless,"
 	line "I should reward"
 	cont "you for your"
 	cont "assistance."

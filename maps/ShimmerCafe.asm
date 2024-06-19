@@ -75,8 +75,8 @@ ShimmerCafeNPC2Text:
 	text "This place is"
 	line "great!"
 	
-	para "Good drinks, good"
-	line "grub, and a cutie"
+	para "Good drinks, <WAIT_S>good"
+	line "grub, <WAIT_S>and a cutie"
 	cont "at the counter!"
 	done
 	
@@ -104,7 +104,7 @@ ShimmerCafeNPC4Text1:
 	done
 	
 ShimmerCafeNPC4Text2:
-	text "Ah, PROF. HILL"
+	text "Ah, <WAIT_S>PROF. HILL"
 	line "sent you?"
 	
 	para "You must be with"

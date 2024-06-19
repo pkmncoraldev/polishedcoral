@@ -225,7 +225,7 @@ LusterCityBusinessRivalText1:
 	para "What are you doing"
 	line "here?"
 	
-	para "Look, I have more"
+	para "Look, <WAIT_S>I have more"
 	line "important things"
 	cont "to deal with!"
 	
@@ -239,7 +239,7 @@ LusterCityBusinessRivalText1:
 	
 	para "…"
 	
-	para "You know what?"
+	para "You know what?<WAIT_M>"
 	line "I'm actually glad"
 	cont "you're here."
 	
@@ -248,7 +248,7 @@ LusterCityBusinessRivalText1:
 	done
 	
 LusterCityBusinessRivalText2:
-	text "This… This isn't"
+	text "This… <WAIT_M>This isn't"
 	line "right!"
 	
 	para "How can someone"
@@ -329,8 +329,8 @@ Luster3NPC2:
 	jumptextfaceplayer Luster3NPC2Text
 	
 Luster3NPC2Text:
-	text "Meetings, due"
-	line "dates, proposals…"
+	text "Meetings, <WAIT_S>due"
+	line "dates, <WAIT_S>proposals…"
 	
 	para "Sometimes I wish I"
 	line "was just a #MON"
@@ -371,7 +371,7 @@ Luster3NPC4:
 	end
 	
 Luster3NPC4Text1:
-	text "Work! Work! Work!"
+	text "Work! <WAIT_S>Work! <WAIT_S>Work!"
 	
 	para "In the morning,"
 	line "I'm late for work!"
@@ -411,7 +411,7 @@ Luster3NPC4Text2:
 	done
 	
 Luster3NPC4Text3:
-	text "Work! Work! Work!"
+	text "Work! <WAIT_S>Work! <WAIT_S>Work!"
 	done
 	
 Luster3NPC5:
@@ -424,9 +424,8 @@ Luster3NPC5:
 	end
 	
 Luster3NPC5Text:
-	text "There it is!"
-	
-	para "The NETT BUILDING!"
+	text "There it is!<WAIT_M>"
+	line "The NETT BUILDING!"
 	
 	para "The tallest"
 	line "building in the"
@@ -483,7 +482,7 @@ Luster3NPC8Text:
 	line "CORP. is MR. NETT."
 	
 	para "He's a super rich"
-	line "tech genious and"
+	line "tech genius and"
 	cont "philanthropist."
 	done
 	

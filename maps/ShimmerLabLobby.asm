@@ -86,7 +86,7 @@ ShimmerLabLobbyNPCText:
 	done
 	
 ShimmerLabLobbyNPC2Text:
-	text "Hey!"
+	text "Hey!<WAIT_M>"
 	line "It's me!"
 	
 	para "The researcher you"
@@ -104,7 +104,7 @@ ShimmerLabLobbyNPC2Text:
 	done
 	
 ShimmerLabLobbyNPC2Text2:
-	text "Hey!"
+	text "Hey!<WAIT_M>"
 	line "It's me!"
 	
 	para "The researcher you"

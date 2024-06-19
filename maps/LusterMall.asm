@@ -441,7 +441,7 @@ LusterMallClothesSignText:
 	done
 
 LusterMallCopText1:
-	text "Hold it,"
+	text "Hold it,<WAIT_S>"
 	line "troublemaker!"
 	done
 	
@@ -490,7 +490,7 @@ LusterMallCopText4:
 	done
 	
 LusterMallCopText5:
-	text "Alright, that's it!"
+	text "Alright, <WAIT_S>that's it!"
 	
 	para "If you just won't"
 	line "stop walking the"
@@ -600,13 +600,7 @@ LusterMall_NPC9:
 	end
 	
 LusterMall_NPC10:
-	faceplayer
-	opentext
-	writetext LusterMall_NPC10Text
-	waitbutton
-	closetext
-	spriteface LUSTERMALLNPC10, LEFT
-	end
+	jumptext LusterMall_NPC10Text
 	
 LusterMall_NPC11:
 	jumptextfaceplayer LusterMall_NPC11Text
@@ -709,7 +703,7 @@ LusterMall_NPC5Text:
 	para "Can you believe"
 	line "that?"
 	
-	para "Blah blah blah!"
+	para "Blah <WAIT_S>blah <WAIT_S>blah!"
 	
 	para "…"
 	
@@ -755,7 +749,7 @@ LusterMall_NPC9Text:
 	done
 	
 LusterMall_NPC10Text:
-	text "Ok, so I am here,"
+	text "Ok, <WAIT_S>so I am here,"
 	
 	para "and the ANTIQUE"
 	line "SHOP is…"
@@ -864,7 +858,7 @@ LusterMall_GymSignText:
 	
 LusterMall_CopText:
 	text "You aren't up to"
-	line "no good, are you?"
+	line "no good, <WAIT_S>are you?"
 	done
 	
 Movement_LusterMallCop1:

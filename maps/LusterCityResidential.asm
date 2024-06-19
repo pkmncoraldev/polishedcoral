@@ -898,7 +898,7 @@ LusterTrashcanText1:
 	done
 	
 LusterTrashcanTextOnlyTrash:
-	text "Nope, there's"
+	text "Nope, <WAIT_S>there's"
 	line "only trash here."
 	done
 	
@@ -937,8 +937,7 @@ LusterPunkLeaderText1:
 	
 LusterPunkLeaderText2:
 	text "Did you get that"
-	line "uh…"
-	cont "“THING”?"
+	line "uh… <WAIT_M>“THING”?"
 	
 	para "Hand it over!"
 	done
@@ -986,16 +985,15 @@ LusterPunkLeaderText6:
 	
 	para "I have an"
 	line "associate who"
-	cont "has a uh…" 
-	cont "“THING” I need."
+	cont "has a uh… <WAIT_M>“THING”"
+	cont "I need."
 	
 	para "He's somewhere in"
 	line "the neighborhood."
 	
 	para "If you can find"
 	line "him and bring the"
-	cont "uh…"
-	cont "“THING” to me,"
+	cont "uh… <WAIT_M>“THING” to me,"
 	
 	para "I'll let you help"
 	line "me out."
@@ -1007,8 +1005,7 @@ LusterPunkLeaderText6:
 	
 LusterPunkLeaderText7:
 	text "Did you get that"
-	line "uh…"
-	cont "“THING”?"
+	line "uh… <WAIT_M>“THING”?"
 	
 	para "What are you"
 	line "waiting for?"
@@ -1059,9 +1056,7 @@ LusterPunkLeaderText9_4:
 	cont "and little old"
 	cont "ladies everywhere!"
 	
-	para "…"
-	
-	para "At least we DID…"
+	para "…<WAIT_L>At least we DID…"
 	
 	para "Ya see, the sewers"
 	line "here used to be"
@@ -1165,9 +1160,8 @@ LusterPunkLeaderTextOpen2:
 	done
 	
 LusterPunkLeaderText11:
-	text "Kid!"
-	
-	para "You're alive!"
+	text "Kid! <WAIT_M>"
+	line "You're alive!"
 	
 	para "Tell me some good"
 	line "news!"
@@ -1178,11 +1172,8 @@ LusterPunkLeaderText11:
 	done
 	
 LusterPunkLeaderText12:
-	text "YES!"
-	
-	para "KID!"
-	
-	para "YOU ROCK!"
+	text "YES! <WAIT_M>KID!<WAIT_M>"
+	line "YOU ROCK!"
 	
 	para "You beat 'em up,"
 	
@@ -1438,9 +1429,9 @@ Luster1NPC3Text:
 	cont "my usual one…"
 	
 	para "It makes me look"
-	line "tough, right?"
+	line "tough, <WAIT_S>right?"
 	
-	para "Right…?"
+	para "…<WAIT_L>Right…?"
 	done
 
 Luster1NPC4Text:
@@ -1516,12 +1507,12 @@ Luster1NPC9Text:
 	done
 
 Luster1NPC10Text:
-	text "MEOWTH: Mee!"
+	text "MEOWTH: Mee!<WAIT_S>"
 	line "Owth!"
 	done
 
 Luster1NPC11Text:
-	text "PIKACHU: Chu!"
+	text "PIKACHU: Chu!<WAIT_S>"
 	line "Pika-chu!"
 	done
 

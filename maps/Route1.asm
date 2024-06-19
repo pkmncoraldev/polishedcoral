@@ -61,7 +61,7 @@ Route1NPCText:
 	cont "wild #MON might"
 	cont "attack you."
 	
-	para "Yeah, you already"
+	para "Yeah, <WAIT_M>you already"
 	line "knew that."
 	done
 

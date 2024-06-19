@@ -232,7 +232,7 @@ EventideVillageNPC2Text:
 	text "Just passing"
 	line "through?"
 	
-	para "Yeah, if you aren't"
+	para "Yeah, <WAIT_S>if you aren't"
 	line "a farmer,"
 	
 	para "there isn't much to"
@@ -282,14 +282,13 @@ EventideVillageMilkGirlText2:
 	done
 	
 EventideVillageMilkGirlTextOne:
-	text "One bottle?"
+	text "One bottle?<WAIT_M>"
 	line "Here ya go!"
 	done
 	
 EventideVillageMilkGirlTextDozen:
-	text "A dozen?"
-	
-	para "Coming right up!"
+	text "A dozen?<WAIT_M>"
+	line "Coming right up!"
 	done
 	
 EventideVillageMilkGirlTextNoMoney:
@@ -313,9 +312,8 @@ EventideVillageMilkGirlTextNoRoom:
 	done
 	
 EventideVillageMilkGirlTextNo:
-	text "Oh well…"
-	
-	para "I'll be here."
+	text "Oh well…<WAIT_M>"
+	line "I'll be here."
 	done
 	
 EventideVillageBiplaneText:

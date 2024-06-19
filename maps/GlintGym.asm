@@ -369,7 +369,7 @@ GlintGymTrainer2RematchSeenText:
 	text "Quiet in the"
 	line "library!"
 	
-	para "Oh, it's you"
+	para "Oh, <WAIT_S>it's you"
 	line "again…"
 	done
 
@@ -621,7 +621,7 @@ Movement_GlintGymLibrarianStopsYou4:
 	step_end
 	
 GlintGymStanleyTextBeforeBattle1:
-	text "Ah. You came."
+	text "Ah. <WAIT_S>You came."
 	
 	para "I knew you were"
 	line "something special"
@@ -641,7 +641,7 @@ GlintGymStanleyTextBeforeBattle1:
 	para "NORMAL-types are"
 	line "vastly underrated."
 	
-	para "Sure, they don't"
+	para "Sure, <WAIT_S>they don't"
 	line "have many"
 	cont "strengths,"
 	
@@ -777,7 +777,7 @@ GlintGymStanleyTextBeforeBattle1Rematch:
 	done
 	
 GlintGymStanleyTextNoRematch:
-	text "Oh, I see."
+	text "Oh, <WAIT_S>I see."
 	done
 	
 GlintGymGuyText:
@@ -807,9 +807,8 @@ GlintGymGuyText:
 	done
 
 GlintGymGuyWinText:
-	text "You won?"
-
-	para "Nice!"
+	text "You won?<WAIT_M>"
+	line "Nice!"
 	
 	para "That's your first"
 	line "step to becoming"

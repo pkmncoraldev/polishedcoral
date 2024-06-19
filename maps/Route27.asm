@@ -14,7 +14,7 @@ Route27_MapScriptHeader:
 	xy_trigger 1, 11,  6, 0, Route25MapSignThing, 0, 0
 	xy_trigger 1, 11,  7, 0, Route25MapSignThing, 0, 0
 
-	db 13 ; bg events
+	db 15 ; bg events
 	signpost 12, 10, SIGNPOST_READ, Route27Sign
 	signpost 17, 20, SIGNPOST_READ, Route27Logs
 	signpost 17, 21, SIGNPOST_READ, Route27Logs
@@ -28,6 +28,8 @@ Route27_MapScriptHeader:
 	signpost 24, 45, SIGNPOST_READ, Route27Logs
 	signpost 24, 47, SIGNPOST_READ, Route27Logs
 	signpost 30, 41, SIGNPOST_READ, Route27BrightburgSign
+	signpost  8, -1, SIGNPOST_IFNOTSET, Route27Tree
+	signpost  9, -1, SIGNPOST_IFNOTSET, Route27Tree
 
 	db 3 ; object events
 ;	person_event SPRITE_LEILANI_CHAIR_2, 12,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
@@ -37,6 +39,10 @@ Route27_MapScriptHeader:
 
 
 Route27Callback:
+	checkevent EVENT_ROUTE_26_TREE
+	iffalse .skip
+	changeblock -$02, $08, $bb
+.skip
 	checkevent EVENT_SET_ROUTE_27
 	iftrue .set
 	clearevent EVENT_ON_ROUTE_27
@@ -59,6 +65,20 @@ Route27MapSignThing::
 	loadvar wEnteredMapFromContinue, 0
 	callasm ReturnFromMapSetupScript
 	dotrigger $1
+	end
+
+Route27Tree:
+	dw EVENT_ROUTE_26_TREE
+	strengthtree
+	iffalse .end
+	changeblock -$02, $08, $bb
+	callasm GenericFinishBridge
+	pause 40
+	callasm LoadMapPals
+	special FadeInPalettes
+	pause 10
+	setevent EVENT_ROUTE_26_TREE
+.end
 	end
 
 Route27Logs:

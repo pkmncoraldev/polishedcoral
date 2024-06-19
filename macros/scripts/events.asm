@@ -1300,6 +1300,11 @@ playnewmapmusic: macro
 	db playnewmapmusic_command
 	endm
 	
+	enum strengthtree_command
+strengthtree: macro
+	db strengthtree_command
+	endm
+	
 thisasm: macro
 	callasm .asm\@
 	end

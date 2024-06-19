@@ -2,7 +2,7 @@ Route26_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, Route23Callback
+	callback MAPCALLBACK_TILES, Route26Callback
 
 	db 2 ; warp events
 	warp_def 15, 10, 1, KOMORE_COMMUNITY_CENTER
@@ -10,8 +10,10 @@ Route26_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 3 ; bg events
 	signpost 16,  9, SIGNPOST_JUMPTEXT, KomoreCommunityCenterSign
+	signpost  4, 38, SIGNPOST_IFNOTSET, Route26Tree
+	signpost  5, 38, SIGNPOST_IFNOTSET, Route26Tree
 
 	db 5 ; object events
 	object_event -2, 28, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
@@ -20,6 +22,27 @@ Route26_MapScriptHeader:
 	person_event SPRITE_SHAOLIN, 25, 15, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, Route26Trainer1, -1
 	person_event SPRITE_POKEFAN_F, 10, 27, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, Route26Trainer2, -1
 
+
+Route26Callback:
+	checkevent EVENT_ROUTE_26_TREE
+	iffalse .skip
+	changeblock $26, $04, $bb
+.skip
+	jump Route23Callback
+
+Route26Tree:
+	dw EVENT_ROUTE_26_TREE
+	strengthtree
+	iffalse .end
+	changeblock $26, $04, $bb
+	callasm GenericFinishBridge
+	pause 40
+	callasm LoadMapPals
+	special FadeInPalettes
+	pause 10
+	setevent EVENT_ROUTE_26_TREE
+.end
+	end
 
 Route26NPC:
 	jumptextfaceplayer Route26NPCText

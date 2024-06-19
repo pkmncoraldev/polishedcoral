@@ -269,6 +269,7 @@ ScriptCommandTable:
 	dw Script_movetoplayer
 	dw Script_variablesprite2
 	dw Script_playnewmapmusic
+	dw Script_strengthtree
 
 StartScript:
 	ld hl, wScriptFlags
@@ -3198,3 +3199,80 @@ Script_movetoplayer:
 	add 4
 	ld e, a
 	farjp CopyDECoordsToMapObject
+	
+Script_strengthtree:
+	farcall TryStrengthOW
+	ifequal $1, .DontMeetRequirements
+	ld b, BANK(StrengthTreeScript)
+	ld de, StrengthTreeScript
+	jp ScriptCall
+	
+.DontMeetRequirements
+	xor a
+	ld [wScriptVar], a
+	ld hl, StrengthTreeText1
+	jp MapTextbox
+
+StrengthTreeScript:
+	opentext
+	writetext StrengthTreeText2
+	yesorno
+	iffalse .said_no
+	callasm StrengthTreeAsm
+	writetext StrengthTreeText3
+	waitbutton
+	closetext
+	copybytetovar wBuffer6
+	refreshscreen
+	pokepic 0, 0
+	cry 0
+	waitsfx
+	closepokepic
+	reloadmappart
+	special FadeOutPalettesBlack
+	pause 10
+	playsound SFX_THUNDER
+	waitsfx
+	playsound SFX_PLACE_PUZZLE_PIECE_DOWN
+	waitsfx
+	callasm StrengthTreeSetScriptVarAsm
+	end
+.said_no
+	closetext
+	callasm StrengthTreeClearScriptVarAsm
+	end
+	
+StrengthTreeClearScriptVarAsm:
+	xor a
+	ld [wScriptVar], a
+	ret
+	
+StrengthTreeSetScriptVarAsm:
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+	
+StrengthTreeAsm:
+	farcall PrepareOverworldMove
+	ret
+	
+StrengthTreeText1:
+	text "A huge fallen"
+	line "tree blocks the"
+	cont "way…"
+	done
+	
+StrengthTreeText2:
+	text "A huge fallen"
+	line "tree blocks the"
+	cont "way…"
+	
+	para "Move it with"
+	line "STRENGTH?"
+	done
+	
+StrengthTreeText3:
+	text_from_ram wStringBuffer2
+	text " used"
+	line "STRENGTH!"
+	done

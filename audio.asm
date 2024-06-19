@@ -57,7 +57,7 @@ INCLUDE "audio/music/fakeroute1.asm"
 INCLUDE "audio/music/autumn.asm"
 INCLUDE "audio/music/dojo.asm"
 INCLUDE "audio/music/underwater.asm"
-INCLUDE "audio/music/route27.asm"
+INCLUDE "audio/music/route28.asm"
 
 
 SECTION "Music 3", ROMX

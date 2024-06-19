@@ -60,4 +60,4 @@ TapeNames::
 	db "“ROUTE 23”@"
 	db "“FIGHTING DOJO”@"
 	db "“UNDERWATER”@"
-	db "“ROUTE 27”@"
+	db "“ROUTE 28”@"

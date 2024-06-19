@@ -50,7 +50,6 @@ Route25MapSignThing::
 	clearevent EVENT_SET_ROUTE_27
 	loadvar wEnteredMapFromContinue, 0
 	callasm ReturnFromMapSetupScript
-	callasm Route27FadeToMusicAsm
 	dotrigger $0
 	end
 
@@ -59,13 +58,8 @@ Route27MapSignThing::
 	setevent EVENT_SET_ROUTE_27
 	loadvar wEnteredMapFromContinue, 0
 	callasm ReturnFromMapSetupScript
-	callasm Route27FadeToMusicAsm
 	dotrigger $1
 	end
-
-Route27FadeToMusicAsm:
-	call FadeToMapMusic
-	ret
 
 Route27Logs:
 	jumptext Route27LogsText

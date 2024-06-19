@@ -3103,8 +3103,6 @@ ENDM
 	music_map SHIMMER_CITY, DoSurfMusic
 	music_map SHIMMER_HARBOR, DoSurfMusic
 	music_map SHIMMER_UNDER_BOARDWALK, DoSurfMusic
-	
-	music_map ROUTE_27, DoRoute27Music
 	db 0 ; end
 
 DoSurfMusic:
@@ -3115,12 +3113,4 @@ DoSurfMusic:
 	
 .surf
 	ld de, MUSIC_WATER_ROUTE
-	ret
-	
-DoRoute27Music:
-	eventflagcheck EVENT_ON_ROUTE_27
-	jr nz, .route27
-	jp GetMapHeaderMusic
-.route27
-	ld de, MUSIC_ROUTE_27
 	ret

@@ -154,7 +154,7 @@ Route28StrengthMan:
 .left
 	applyonemovement PLAYER, turn_step_left
 .cont
-	playmusic MUSIC_ROUTE_27
+	playmusic MUSIC_ROUTE_28
 	opentext
 	writetext Route28StrengthManText7
 	waitbutton

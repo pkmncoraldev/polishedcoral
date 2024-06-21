@@ -1833,6 +1833,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jr z, .NotWalkable
 	cp COLL_CAVE
 	jr z, .NotWalkable
+	cp COLL_UP_WALL
+	jr z, .NotWalkable
 .RunTileChecksReturn
 	call .CheckWalkable
 	jr c, .NotWalkable
@@ -2008,6 +2010,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 
 	ld a, [wWalkingTile]
 ;	call GetTileCollision
+	cp COLL_UP_WALL
+	jr z, .CheckNoJumpTileNope
 	cp COLL_NO_OLLIE
 	jr z, .CheckNoJumpTileNope
 	cp COLL_CAVE

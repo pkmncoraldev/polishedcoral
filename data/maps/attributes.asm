@@ -459,8 +459,12 @@ ENDM
 	map_attributes Brightburg, BRIGHTBURG, $fb, SOUTH
 	connection south, Route28, ROUTE_28, -7
 	
-	map_attributes Route28, ROUTE_28, $34, NORTH
+	map_attributes Route28, ROUTE_28, $a1, NORTH | EAST
 	connection north, Brightburg, BRIGHTBURG, 7
+	connection east, Route29, ROUTE_29, 21
+	
+	map_attributes Route29, ROUTE_29, $d4, WEST
+	connection west, Route28, ROUTE_28, -21
 	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0

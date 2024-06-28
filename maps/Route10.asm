@@ -16,7 +16,7 @@ Route10_MapScriptHeader:
 	warp_def 31, 11, 1, ROUTE_10_REST_HOUSE
 	warp_def  3, 33, 1, ROUTE_10_MOVE_REMINDER_HOUSE
 
-	db 44 ; coord events
+	db 48 ; coord events
 	xy_trigger 1, 30, 19, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 1, 31, 20, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 1, 32, 19, 0, Route10StartSnowstorm, 0, 0
@@ -61,9 +61,13 @@ Route10_MapScriptHeader:
 	xy_trigger 1, 23, 55, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 2, 22, 55, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 2, 23, 55, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 0, 47, 34, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 1, 47, 34, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 47, 34, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 3, 47, 34, 0, Route10StartSnowstorm, 0, 0
 
 	db 10 ; bg events
-	bg_event 35, 47, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_10_HIDDEN_ITEM_1
+	bg_event 30, 44, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_10_HIDDEN_ITEM_1
 	bg_event  8, 30, SIGNPOST_ITEM + PP_UP, EVENT_ROUTE_10_HIDDEN_ITEM_2
 	signpost 36,  9, SIGNPOST_READ, Route10Snowman1
 	signpost  9, 41, SIGNPOST_READ, Route10Snowman2
@@ -74,9 +78,12 @@ Route10_MapScriptHeader:
 	signpost 31,  9, SIGNPOST_READ, TwinkleTownWood
 	signpost 30,  9, SIGNPOST_READ, TwinkleTownWood
 
-	db 11 ; object events
+	db 14 ; object events
 	person_event SPRITE_SNOWGIRL, 32, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route10NPC, -1
-	person_event SPRITE_MISC_CONE, 1, 1, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route10NPC, -1
+	person_event SPRITE_MISC_CONE,  1,  1, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route10NPC, -1
+	person_event SPRITE_MINA, 37, 46, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route10Mina, -1
+	person_event SPRITE_PAINTINGS, 36, 46, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Route10Easel, -1
+	person_event SPRITE_LEAVES, 36, 46, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route10Easel, -1
 	person_event SPRITE_BOARDER, 34, 19, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_1, -1
 	person_event SPRITE_SKIER, 33, 27, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_2, -1
 	person_event SPRITE_BOARDER, 30, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_3, -1
@@ -84,7 +91,7 @@ Route10_MapScriptHeader:
 	person_event SPRITE_BOARDER, 22, 42, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_5, -1
 	person_event SPRITE_FIREBREATHER, 24, 50, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_6, -1
 	person_event SPRITE_BOARDER, 12, 33, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute10_7, -1
-	itemball_event 30, 47, MAX_ETHER, 1, EVENT_ROUTE_10_POKE_BALL_1
+	itemball_event 36, 44, MAX_ETHER, 1, EVENT_ROUTE_10_POKE_BALL_1
 	itemball_event 40, 26, BURN_HEAL, 1, EVENT_ROUTE_10_POKE_BALL_2
 
 	const_def 1 ; object constants
@@ -106,6 +113,254 @@ Route10Trigger3:
 Route10Trigger4:
 	callasm Route10SfxAsm
 	end
+	
+Route10Easel:
+	jumptext Route10EaselText
+	
+Route10EaselText:
+	text "MINA's easel."
+	done
+	
+Route10Mina:
+	opentext
+	writetext Route10MinaText1
+	yesorno
+	iffalse .no
+	callasm Route10MinaIndoorPermsAsm1
+	farwritetext StdBlankText
+	pause 6
+	writetext Route10MinaText2
+	pause 30
+	closetext
+	pause 40
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, 3, 15
+	callasm Route10MinaIndoorPermsAsm2
+	faceplayer
+	opentext
+	writetext Route10MinaText3
+	waitbutton
+	closetext
+	pause 25
+	spriteface 3, DOWN
+	pause 25
+	spriteface 3, RIGHT
+	pause 30
+	faceplayer
+	pause 30
+	opentext
+	writetext Route10MinaText4
+	waitbutton
+	closetext
+	follow 3, PLAYER
+	applyonemovement 3, step_right
+	stopfollow
+	spriteface 3, LEFT
+	spriteface PLAYER, UP
+	pause 40
+	opentext
+	writetext Route10MinaText5
+	buttonsound
+	spriteface 3, DOWN
+	farwritetext StdBlankText
+	pause 6
+	writetext Route10MinaText6
+	waitbutton
+	closetext
+	pause 50
+	spriteface 3, LEFT
+	pause 20
+	opentext
+	writetext Route10MinaText7
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext Route10MinaMinaWinText, 0
+	setlasttalked 3
+	loadtrainer MINA, 6
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext Route10MinaText8
+	waitbutton
+	closetext
+	follow PLAYER, 3
+	applyonemovement PLAYER, step_left
+	stopfollow
+	spriteface PLAYER, RIGHT
+	spriteface 3, UP
+	playsound SFX_UNKNOWN_61
+	disappear 4
+	pause 25
+	playsound SFX_SWITCH_POCKETS
+	disappear 5
+	pause 25
+	spriteface 3, LEFT
+	pause 10
+	opentext
+	writetext Route10MinaText9
+	waitbutton
+	closetext
+	follow PLAYER, 3
+	applyonemovement PLAYER, step_up
+	stopfollow
+	spriteface PLAYER, DOWN
+	applymovement 3, Movement_Route10MinaLeave
+	disappear 3
+	dotrigger $0
+	setevent EVENT_ROUTE_10_MINA_GONE
+	setevent EVENT_DONE_ROUTE_10_MINA
+	end
+.no
+	writetext Route10MinaNo
+	waitbutton
+	closetext
+	end
+	
+Route10MinaIndoorPermsAsm1:
+	ld a, 69
+	ld [wPermission], a
+	ret
+	
+Route10MinaIndoorPermsAsm2:
+	ld a, 2
+	ld [wPermission], a
+	ret
+	
+Route10MinaText1:
+	text "She's shivering but"
+	line "keeps painting."
+	
+	para "Tap her shoulder?"
+	done
+	
+Route10MinaText2:
+	text "Tap…<WAIT_M> tap…<WAIT_M> tap…"
+	done
+	
+Route10MinaText3:
+	text "Wh-<WAIT_S>wh-<WAIT_S>who's that?"
+	
+	para "<P-P-PLAYER>?"
+	
+	para "What are you"
+	line "d-<WAIT_S>d-<WAIT_S>doing here?"
+	
+	para "Me?"
+	
+	para "I'm just out here"
+	line "p-<WAIT_S>p-<WAIT_S>p-<WAIT_S>p-<WAIT_S>painting!"
+	
+	para "In a snowstorm?"
+	done
+	
+Route10MinaText4:
+	text "Oh, yeah…"
+	
+	para "I didn't even"
+	line "n-<WAIT_S>n-<WAIT_S>n-<WAIT_S>notice!"
+	
+	para "Anyway, now I'm"
+	line "t-<WAIT_S>t-<WAIT_S>totally out"
+	cont "of the z-<WAIT_S>zone!"
+	
+	para "Oh well…"
+	
+	para "I was basically"
+	line "done anyway…"
+	
+	para "Here, <WAIT_S>take a look!"
+	done
+	
+Route10MinaText5:
+	text "Well?"
+	
+	para "W-<WAIT_S>w-<WAIT_S>what do you"
+	line "think?"
+	
+	para "I guess I'll"
+	line "c-<WAIT_S>call it:"
+	done
+	
+Route10MinaText6:
+	text "“Light Snowfall”."
+	done
+	
+Route10MinaText7:
+	text "A-<WAIT_S>a-<WAIT_S>anyway…"
+	
+	para "I c-<WAIT_S>came to this"
+	line "snowy hill f-<WAIT_S>for"
+	cont "some inspiration."
+	
+	para "It's so hot back"
+	line "home in A-<WAIT_S>A-<WAIT_S>ALOLA."
+	
+	para "I figured the cold"
+	line "would be a n-<WAIT_S>nice"
+	cont "change of p-<WAIT_S>pace."
+	
+	para "Maybe a bit TOO"
+	line "c-<WAIT_S>c-<WAIT_S>cold, though!"
+	
+	para "…"
+	
+	para "I know!"
+	
+	para "Let's have a battle"
+	line "to w-<WAIT_S>warm up!"
+	
+	para "That might help!"
+	
+	para "L-<WAIT_S>l-<WAIT_S>l-<WAIT_S>l-<WAIT_S>l-<WAIT_S>l-<WAIT_S>l-<WAIT_S>let's"
+	line "go!"
+	done
+	
+Route10MinaText8:
+	text "Whew!<WAIT_M>"
+	line "What a hot battle!"
+	
+	para "I'm sweating like"
+	line "a pig, now!"
+	
+	para "That was just what"
+	line "I needed!"
+	
+	para "Thanks, <PLAYER>."
+	
+	para "Alright, I'll head"
+	line "out for now."
+	
+	para "There's more spots"
+	line "in ONWA that I"
+	cont "wanna paint!"
+	done
+	
+Route10MinaText9:
+	text "ALOLA,"
+	line "<PLAYER>."
+	
+	para "Oh, <WAIT_S>I did it"
+	line "again!"
+
+	para "Goodbye!"
+	done
+	
+Route10MinaNo:
+	text "Better not…"
+	done
+	
+Route10MinaMinaWinText:
+	text "I'm burning up!"
+	done
+	
+Movement_Route10MinaLeave:
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_end
 	
 Route10NPC:
 	faceplayer

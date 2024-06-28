@@ -1537,6 +1537,9 @@ LoadMapPals::
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 .fire
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_10_EAST
+	ret nz
 	ld a, [wPlayerPalette]
 	cp 3
 	jr z, .snowbrown
@@ -1569,6 +1572,9 @@ LoadMapPals::
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_10_EAST
+	ret nz
 	ld a, [wPlayerPalette]
 	cp 3
 	jr z, .snowstormbrown

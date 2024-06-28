@@ -155,6 +155,7 @@ GlintGroveDeepSmeargleScene:
 	reloadmapafterbattle
 	setevent EVENT_GLINT_DEEP_MINA_GONE
 	setevent EVENT_GLINT_SMEARGLES_GONE
+	setevent EVENT_DONE_GLINT_DEEP_MINA
 	opentext
 	writetext GlintGroveDeepMinaText7
 	waitbutton
@@ -197,7 +198,6 @@ GlintGroveDeepSmeargleScene:
 	disappear GLINTSECRET_MINA
 	dotrigger $4
 	clearevent EVENT_MINA_APARTMENT_EMPTY
-	clearevent EVENT_ROUTE_6_MINA_GONE
 	domaptrigger ROUTE_6_SOUTH, $1
 	end
 	

@@ -1337,6 +1337,8 @@ Script_showemote:
 	ld a, [wPermission]
 	cp INDOOR
 	jp z, .indoor
+	cp 69
+	jp z, .no_color_change
 	call GetScriptByte
 	ld [wScriptDelay], a
 	ld b, BANK(ShowEmoteScript)
@@ -1348,6 +1350,13 @@ Script_showemote:
 	ld [wScriptDelay], a
 	ld b, BANK(ShowEmoteIndoorScript)
 	ld de, ShowEmoteIndoorScript
+	jp ScriptCall
+	
+.no_color_change
+	call GetScriptByte
+	ld [wScriptDelay], a
+	ld b, BANK(ShowEmoteNoColorChangeScript)
+	ld de, ShowEmoteNoColorChangeScript
 	jp ScriptCall
 
 ShowEmoteScript:
@@ -1373,6 +1382,7 @@ ShowEmoteScript:
 	
 ShowEmoteIndoorScript:
 	callasm MakePalGray
+ShowEmoteNoColorChangeScript:
 	loademote EMOTE_MEM
 	applymovement2 ShowEmoteScript.Show
 	pause 0
@@ -1439,6 +1449,19 @@ MakePalFinished:
 	ld a, $1
 	ld [hCGBPalUpdate], a
 	ret
+	
+MakeCheckMarkGreen::
+	ld hl, CheckMarkPalette
+	ld de, wBGPals + 7 palettes
+	ld bc, 8
+	ld a, $5
+	call FarCopyWRAM
+	ld a, $1
+	ld [hCGBPalUpdate], a
+	ret
+	
+CheckMarkPalette:
+INCLUDE "maps/palettes/bgpals/checkmark.pal"
 	
 StandardGrassPalette:
 INCLUDE "maps/palettes/bgpals/grass/standard.pal"

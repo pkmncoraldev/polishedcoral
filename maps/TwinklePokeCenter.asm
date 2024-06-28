@@ -69,20 +69,20 @@ TwinklePokeCenterFisherText:
 	done
 	
 TwinklePokeCenterGirlText:
-	text "I kn<WAIT_S>-kn<WAIT_S>-knew it"
+	text "I kn-<WAIT_S>kn-<WAIT_S>knew it"
 	line "was cold up here,"
 	
-	para "b<WAIT_S>-b<WAIT_S>-but this is"
+	para "b-<WAIT_S>b-<WAIT_S>but this is"
 	line "ridiculous…"
 	
-	para "I can b<WAIT_S>-b<WAIT_S>-barely"
+	para "I can b-<WAIT_S>b-<WAIT_S>barely"
 	line "even step out of "
-	cont "the P<WAIT_S>-P<WAIT_S>-#MON"
+	cont "the P-<WAIT_S>P-<WAIT_S>#MON"
 	cont "CENTER!"
 	done
 	
 TwinklePokeCenterGloomText1:
-	text "GLOOM: L<WAIT_S>-l<WAIT_S>-loom…"
+	text "GLOOM: L-<WAIT_S>l-<WAIT_S>loom…"
 	done
 	
 TwinklePokeCenterGloomText2:

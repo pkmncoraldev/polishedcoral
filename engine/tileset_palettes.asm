@@ -491,6 +491,8 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_10_EAST
 	jp z, .snowtent
+	cp MAP_ROUTE_10
+	jp z, .snowwater
 	jp .snow
 	
 .starglow_cavern
@@ -553,6 +555,16 @@ LoadSpecialMapPalette: ; 494ac
 	
 .snowstormtent
 	ld hl, OutsideSnowStormTentPalette
+	jp LoadSevenTimeOfDayBGPalettes
+	
+.snowwater
+	eventflagcheck EVENT_SNOWSTORM_HAPPENING
+	jr nz, .snowstormwater
+	ld hl, OutsideSnowWaterPalette
+	jp LoadSevenTimeOfDayBGPalettes
+	
+.snowstormwater
+	ld hl, OutsideSnowStormWaterPalette
 	jp LoadSevenTimeOfDayBGPalettes
 	
 .autumn
@@ -1003,6 +1015,12 @@ INCLUDE "maps/palettes/bgpals/bgjungle.pal"
 
 OutsideSnowPalette:
 INCLUDE "maps/palettes/bgpals/bgsnow.pal"
+
+OutsideSnowWaterPalette:
+INCLUDE "maps/palettes/bgpals/bgsnowwater.pal"
+
+OutsideSnowStormWaterPalette:
+INCLUDE "maps/palettes/bgpals/bgsnowstormwater.pal"
 
 OutsideSnowTentPalette:
 INCLUDE "maps/palettes/bgpals/bgsnowtent.pal"

@@ -176,7 +176,7 @@ ENDM
 	connection south, Route11, ROUTE_11, -5
 	connection west, EventideVillage, EVENTIDE_VILLAGE, 15
 	
-	map_attributes Route10, ROUTE_10, 5, NORTH | EAST
+	map_attributes Route10, ROUTE_10, $71, NORTH | EAST
 	connection north, TwinkleTown, TWINKLE_TOWN, 5
 	connection east, Route10East, ROUTE_10_EAST, -1
 	

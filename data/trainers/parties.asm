@@ -5201,7 +5201,7 @@ MinaGroup:
 ; ================================
 ; ================
 
-	; GLINT GROVE
+	; Glint Grove
 	db "MINA@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -5211,6 +5211,42 @@ MinaGroup:
 ; ================
 
 	; Route 6
+	db "MINA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; Route 11
+	db "MINA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; Radiant Field
+	db "MINA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; Route 29
+	db "MINA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; Route 10
 	db "MINA@"
 	db TRAINERTYPE_NORMAL
 	; party

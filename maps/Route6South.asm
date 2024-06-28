@@ -278,6 +278,7 @@ Route6SouthMinaScene:
 	disappear 4
 	dotrigger $0
 	setevent EVENT_ROUTE_6_MINA_GONE
+	setevent EVENT_DONE_ROUTE_6_MINA
 	end
 	
 Movement_Route6SouthPlayer:
@@ -448,7 +449,7 @@ Route6SouthMinaSceneText9:
 	
 	para "I came to this"
 	line "little island for"
-	cont "inspiration."
+	cont "some inspiration."
 	
 	para "I heard that the"
 	line "EXEGGUTOR here get"
@@ -478,7 +479,7 @@ Route6SouthMinaSceneText11:
 	done
 	
 Route6SouthMinaSceneText12:
-	text "Ha <WAIT_S>ha!"
+	text "Ha ha!"
 	
 	para "You did it again,"
 	line "<PLAYER>."

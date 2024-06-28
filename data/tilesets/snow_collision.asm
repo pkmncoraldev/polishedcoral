@@ -193,3 +193,8 @@
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; c0
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c1
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; c2
+	tilecoll WATER, WATER, WATER, WATER ; c3
+	tilecoll WATER, WATER, WATER, WATER ; c4
+	tilecoll WATER, WATER, WATER, WATER ; c5
+	tilecoll WATER, WATER, WATER, WATER ; c6
+	tilecoll WATER, WATER, WATER, WATER ; c7

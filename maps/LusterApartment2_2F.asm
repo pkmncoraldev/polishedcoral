@@ -54,6 +54,56 @@ LusterApartment2_2FJournal:
 	callasm LoadCheckMarkAsm
 	writetext LusterApartment2_2FJournalText2
 	waitbutton
+	farwritetext StdBlankText
+	pause 6
+	checkevent EVENT_DONE_ROUTE_6_MINA
+	iftrue .route_6
+	writetext LusterApartment2_2FJournalTextIsland
+	jump .cont1
+.route_6
+	writetext LusterApartment2_2FJournalTextIslandDone
+.cont1
+	waitbutton
+	farwritetext StdBlankText
+	pause 6
+	checkevent EVENT_DONE_ROUTE_11_MINA
+	iftrue .route_11
+	writetext LusterApartment2_2FJournalTextBridge
+	jump .cont2
+.route_11
+	writetext LusterApartment2_2FJournalTextBridgeDone
+.cont2
+	waitbutton
+	farwritetext StdBlankText
+	pause 6
+	checkevent EVENT_DONE_RADIANT_FIELD_MINA
+	iftrue .radiant
+	writetext LusterApartment2_2FJournalTextSunflowers
+	jump .cont3
+.radiant
+	writetext LusterApartment2_2FJournalTextSunflowersDone
+.cont3
+	waitbutton
+	farwritetext StdBlankText
+	pause 6
+	checkevent EVENT_DONE_ROUTE_29_MINA
+	iftrue .route_29
+	writetext LusterApartment2_2FJournalTextField
+	jump .cont4
+.route_29
+	writetext LusterApartment2_2FJournalTextFieldDone
+.cont4
+	waitbutton
+	farwritetext StdBlankText
+	pause 6
+	checkevent EVENT_DONE_ROUTE_10_MINA
+	iftrue .route_10
+	writetext LusterApartment2_2FJournalTextSnow
+	jump .cont5
+.route_10
+	writetext LusterApartment2_2FJournalTextSnowDone
+.cont5
+	waitbutton
 	closetext
 	setevent EVENT_READ_MINAS_JOURNAL
 	end
@@ -86,21 +136,57 @@ LusterApartment2_2FJournalText2:
 	
 	para "✓A pretty pink"
 	line "grove."
+	done
 	
-	para "-A little island"
+LusterApartment2_2FJournalTextIsland:
+	text "-A little island"
 	line "in the bright"
 	cont "sunshine."
+	done
 	
-	para "-A newly built"
+LusterApartment2_2FJournalTextIslandDone:
+	text "✓A little island"
+	line "in the bright"
+	cont "sunshine."
+	done
+	
+LusterApartment2_2FJournalTextBridge:
+	text "-A newly built"
 	line "bridge."
+	done
 	
-	para "-A place where"
+LusterApartment2_2FJournalTextBridgeDone:
+	text "✓A newly built"
+	line "bridge."
+	done
+	
+LusterApartment2_2FJournalTextSunflowers:
+	text "-A place where"
 	line "sunflowers grow."
+	done
 	
-	para "-A quiet field far"
+LusterApartment2_2FJournalTextSunflowersDone:
+	text "✓A place where"
+	line "sunflowers grow."
+	done
+	
+LusterApartment2_2FJournalTextField:
+	text "-A quiet field far"
 	line "to the SOUTHEAST."
+	done
 	
-	para "-A hill in a"
+LusterApartment2_2FJournalTextFieldDone:
+	text "✓A quiet field far"
+	line "to the SOUTHEAST."
+	done
+	
+LusterApartment2_2FJournalTextSnow:
+	text "-A hill in a"
+	line "snowy tundra."
+	done
+	
+LusterApartment2_2FJournalTextSnowDone:
+	text "✓A hill in a"
 	line "snowy tundra."
 	done
 	

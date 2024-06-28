@@ -208,6 +208,7 @@ Route6SouthMinaScene:
 	closetext
 	pause 50
 	spriteface 4, LEFT
+	spriteface PLAYER, RIGHT
 	pause 20
 	opentext
 	checkcode VAR_MONJUSTCAUGHT
@@ -271,7 +272,7 @@ Route6SouthMinaScene:
 	spriteface 4, LEFT
 	pause 10
 	opentext
-	writetext Route6SouthMinaSceneText13
+	special Special_MinaGoodbye
 	waitbutton
 	closetext
 	applymovement 4, Movement_Route6SouthMinaLeave
@@ -497,16 +498,6 @@ Route6SouthMinaSceneText12:
 	cont "you ruining it!"
 	
 	para "Just kidding!"
-	done
-	
-Route6SouthMinaSceneText13:
-	text "ALOLA,"
-	line "<PLAYER>."
-	
-	para "Oh, <WAIT_S>I did it"
-	line "again!"
-
-	para "Goodbye!"
 	done
 	
 Route6SouthMinaMinaWinText:

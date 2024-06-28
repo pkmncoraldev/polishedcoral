@@ -143,6 +143,7 @@ GlintGroveDeepSmeargleScene:
 	pause 50
 	spriteface GLINTSECRET_MINA, LEFT
 	spriteface PLAYER, RIGHT
+	pause 20
 	opentext
 	writetext GlintGroveDeepMinaText6
 	waitbutton
@@ -189,7 +190,7 @@ GlintGroveDeepSmeargleScene:
 	spriteface GLINTSECRET_MINA, LEFT
 	pause 10
 	opentext
-	writetext GlintGroveDeepMinaText10
+	special Special_MinaGoodbye
 	waitbutton
 	closetext
 	spriteface PLAYER, DOWN
@@ -198,7 +199,6 @@ GlintGroveDeepSmeargleScene:
 	disappear GLINTSECRET_MINA
 	dotrigger $4
 	clearevent EVENT_MINA_APARTMENT_EMPTY
-	domaptrigger ROUTE_6_SOUTH, $1
 	end
 	
 GlintGroveDeepMinaText:
@@ -300,15 +300,6 @@ GlintGroveDeepMinaText9:
 	
 	para "I'm sure we'll"
 	line "meet again."
-	done
-
-GlintGroveDeepMinaText10:
-	text "ALOLA,"
-	line "<PLAYER>."
-	
-	para "Err… <WAIT_M>I mean…"
-
-	para "Goodbye!"
 	done
 
 GlintGroveDeepMinaWinText:

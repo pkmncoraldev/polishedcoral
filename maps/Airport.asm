@@ -211,6 +211,16 @@ AirportPokeballSurf:
 	changeblock $0c, $0c, $b5
 	setevent EVENT_GOT_HM03_SURF
 	setflag ENGINE_GOT_SURF
+	checkevent EVENT_MINA_QUEST_ACTIVATED
+	iftrue .end
+	domaptrigger ROUTE_6_SOUTH, $1
+	clearevent EVENT_ROUTE_6_MINA_GONE
+	clearevent EVENT_ROUTE_11_MINA_GONE
+	clearevent EVENT_RADIANT_FIELD_MINA_GONE
+	clearevent EVENT_ROUTE_29_MINA_GONE
+	clearevent EVENT_ROUTE_10_MINA_GONE
+	setevent EVENT_MINA_QUEST_ACTIVATED
+.end
 	end
 	
 ReceivedSurfText1:
@@ -369,7 +379,7 @@ AirportNpc2Text:
 	line "watch the baggage"
 	cont "claim."
 	
-	para "It's <WAIT_M>hypnotizing…"
+	para "It's <WAIT_M>hypnotic…"
 	done
 	
 AirportNpc2Text2:
@@ -387,7 +397,7 @@ AirportNpc2Text3:
 	text "You took that HM"
 	line "even though it"
 	cont "didn't belong to"
-	cont "you, <WAIT_S>didn'tcha?"
+	cont "you, didn'tcha?"
 	
 	para "Hey, <WAIT_S>it's not my"
 	line "problem."

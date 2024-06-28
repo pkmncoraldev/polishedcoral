@@ -192,5 +192,6 @@ SpecialsPointers::
 	add_special Special_SaveLostGirl
 	add_special Special_DisplayPollenPouchBalance
 	add_special Special_DotDotDot
+	add_special Special_MinaGoodbye
 
 	add_special SpecialNone

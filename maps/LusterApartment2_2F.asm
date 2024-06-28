@@ -106,6 +106,16 @@ LusterApartment2_2FJournal:
 	waitbutton
 	closetext
 	setevent EVENT_READ_MINAS_JOURNAL
+	checkevent EVENT_MINA_QUEST_ACTIVATED
+	iftrue .end
+	domaptrigger ROUTE_6_SOUTH, $1
+	clearevent EVENT_ROUTE_6_MINA_GONE
+	clearevent EVENT_ROUTE_11_MINA_GONE
+	clearevent EVENT_RADIANT_FIELD_MINA_GONE
+	clearevent EVENT_ROUTE_29_MINA_GONE
+	clearevent EVENT_ROUTE_10_MINA_GONE
+	setevent EVENT_MINA_QUEST_ACTIVATED
+.end
 	end
 .no
 	writetext LusterApartment2_2FJournalNo

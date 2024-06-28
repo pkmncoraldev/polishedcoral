@@ -669,6 +669,94 @@ Special_DotDotDot:
 	call DelayFrames
 	ret
 	
-.DotsString:
-	db "1@"
+Special_MinaGoodbye:
+	ld a, [wMinaEncounters]
+	cp 1
+	jr z, .one
+	cp 2
+	jr z, .two
+	cp 3
+	jr z, .three
+	cp 4
+	jr z, .four
+	cp 5
+	jr z, .five
+.zero
+	ld hl, MinaGoodbyeText0
+	jr .end
+.one
+	ld hl, MinaGoodbyeText1
+	jr .end
+.two
+	ld hl, MinaGoodbyeText2
+	jr .end
+.three
+	ld hl, MinaGoodbyeText3
+	jr .end
+.four
+	ld hl, MinaGoodbyeText4
+	jr .end
+.five
+	ld hl, MinaGoodbyeText5
+	jr .end
+.end
+	call PrintText
+	ld a, [wMinaEncounters]
+	inc a
+	ld [wMinaEncounters], a
+	scf
+	ret
+	
+MinaGoodbyeText0:
+	text "ALOLA,"
+	line "<PLAYER>."
+	
+	para "Err… <WAIT_M>I mean…"
+
+	para "Goodbye!"
+	done
+	
+MinaGoodbyeText1:
+	text "ALOLA,"
+	line "<PLAYER>."
+	
+	para "Oh, <WAIT_S>I did it"
+	line "again!"
+
+	para "Goodbye!"
+	done
+	
+MinaGoodbyeText2:
+	text "ALOLA,"
+	line "<PLAYER>."
+	
+	para "Gah! <WAIT_M> I did it"
+	line "again!"
+	
+	para "Goodbye!"
+	done
+	
+MinaGoodbyeText3:
+	text "ALO- <WAIT_S>Ah!<WAIT_M> I caught"
+	line "myself that time!"
+	
+	para "Goodbye,"
+	line "<PLAYER>."
+	done
+	
+MinaGoodbyeText4:
+	text "Goodbye,"
+	line "<PLAYER>."
+	
+	para "Heh. <WAIT_M>I didn't say"
+	line "ALOLA this time!"
+	done
+	
+MinaGoodbyeText5:
+	text "ALOLA,"
+	line "<PLAYER>."
+	
+	para "I mean- <WAIT_M>"
+	line "Ah, forget it!"
+	done
 	

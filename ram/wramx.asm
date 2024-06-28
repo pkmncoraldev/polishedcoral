@@ -1264,10 +1264,11 @@ wMinaPaintingMonNick:: ds PKMN_NAME_LENGTH
 wUnknownRC:: ds 1
 
 wHuntersDisguise:: ds 1
+wMinaEncounters:: ds 1
 
 wTapePlayerBacklite:: ds 1
 
-	ds 11 ; unused
+	ds 10 ; unused
 wUnlockedUnowns:: ds 1
 
 wFirstUnownSeen:: ds 1

@@ -12,4 +12,10 @@ LusterApartment2_1F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	person_event SPRITE_SUPER_NERD,  3,  4, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterApartment2_1F_NPC, -1
+	
+	
+LusterApartment2_1F_NPC:
+	clearevent EVENT_MINA_APARTMENT_EMPTY
+	end

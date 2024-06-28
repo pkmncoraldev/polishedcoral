@@ -210,7 +210,6 @@ LusterApartment3_1F_BlockData:
 	INCBIN "maps/Apartment1FBlue.ablk.lz"
 	
 GlintApartmentRight2F_BlockData:
-LusterApartment2_2F_BlockData:
 LusterApartment3_2F_BlockData:
 	INCBIN "maps/Apartment2FBlue.ablk.lz"
 	
@@ -229,6 +228,12 @@ LusterApartment4_2F_BlockData:
 	
 LusterApartment5_2F_BlockData:
 	INCBIN "maps/LusterApartment5_2F.ablk.lz"
+	
+LusterApartment2_2F_BlockData:
+	INCBIN "maps/LusterApartment2_2F.ablk.lz"
+	
+LusterApartmentMina_BlockData:
+	INCBIN "maps/LusterApartmentMina.ablk.lz"
 	
 StarglowValley_BlockData:
 	INCBIN "maps/StarglowValley.ablk.lz"

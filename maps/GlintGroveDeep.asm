@@ -196,6 +196,7 @@ GlintGroveDeepSmeargleScene:
 	playsound SFX_EXIT_BUILDING
 	disappear GLINTSECRET_MINA
 	dotrigger $4
+	clearevent EVENT_MINA_APARTMENT_EMPTY
 	clearevent EVENT_ROUTE_6_MINA_GONE
 	domaptrigger ROUTE_6_SOUTH, $1
 	end

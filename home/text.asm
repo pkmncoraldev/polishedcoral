@@ -210,6 +210,7 @@ endm
 	dict "<WAIT_S>", PauseTextShort
 	dict "<WAIT_M>", PauseTextMedium
 	dict "<WAIT_L>", PauseTextLong
+	dict "<P-P-PLAYER>", PrintPlayerLetter
 	dict "#",        PlacePoke
 	dict "le",       PlaceLe
 	dict "ng",       PlaceNg
@@ -246,6 +247,8 @@ print_name: macro
 	jp PlaceCommandCharacter
 endm
 
+PrintPlayerLetter:
+	farcall PlayerNameStutter
 PrintPlayerName:   print_name wPlayerName
 PrintRivalName:    print_name wRivalName
 PrintTrendyPhrase: print_name wTrendyPhrase

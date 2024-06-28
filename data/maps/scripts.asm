@@ -243,7 +243,7 @@ INCLUDE "maps/LusterCityBusiness.asm"
 INCLUDE "maps/LusterApartment1_1F.asm"
 INCLUDE "maps/LusterApartment1_2F.asm"
 INCLUDE "maps/LusterApartment2_1F.asm"
-INCLUDE "maps/LusterApartment2_2F.asm"
+
 INCLUDE "maps/LusterApartment3_1F.asm"
 INCLUDE "maps/LusterApartment3_2F.asm"
 INCLUDE "maps/LusterApartment4_1F.asm"
@@ -299,6 +299,7 @@ INCLUDE "maps/Route11.asm"
 INCLUDE "maps/OnwaIntlAirport.asm"
 INCLUDE "maps/AirportRunway.asm"
 INCLUDE "maps/Airport.asm"
+INCLUDE "maps/LusterApartment2_2F.asm"
 
 SECTION "Shimmer City Scripts", ROMX
 

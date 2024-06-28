@@ -1824,6 +1824,9 @@ LoadMapPals::
 	cp GROUP_LUSTER_CITY_RESIDENTIAL
 	jp nz, .normal
 .candle
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_APARTMENT_2_2F
+	jp z, .coffee
 	ld hl, MapObjectPalsCandle
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM

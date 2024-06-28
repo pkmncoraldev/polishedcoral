@@ -26,6 +26,7 @@
 	charmap "<WAIT_S>", $17
 	charmap "<WAIT_M>", $18
 	charmap "<WAIT_L>", $19
+	charmap "<P-P-PLAYER>", $1a
 
 	; unused: $17 - $1e
 
@@ -257,6 +258,7 @@ BATTLEEXTRA_GFX_START EQU $5f
 	charmap "<NONO>",   $f3
 	charmap "′",        $f4
 	charmap "″",        $f5
+	charmap "✓",        $f5
 	charmap "★",        $f6
 	charmap "↑",        $f7
 	charmap "↓",        $f8

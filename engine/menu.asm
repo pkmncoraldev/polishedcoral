@@ -1,3 +1,16 @@
+PlayerNameStutter::
+rept 2
+	ld a, [wPlayerName]
+	ld [hli], a
+	call PrintLetterDelay
+	ld a, "-"
+	ld [hli], a
+	call PrintLetterDelay
+	ld c, 10
+	call DelayFrames
+endr
+	ret
+
 _2DMenu_:: ; 2400e
 	ld hl, CopyMenuData2
 	ld a, [wMenuData2_2DMenuItemStringsBank]

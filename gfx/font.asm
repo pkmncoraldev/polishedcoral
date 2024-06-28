@@ -17,6 +17,8 @@ FontNormal1bpp:
 INCBIN "gfx/font/normal.1bpp"
 FontCommon1bpp:
 INCBIN "gfx/font/common.1bpp"
+FontCheckMark:
+INCBIN "gfx/font/check.2bpp"
 
 Frames:
 INCBIN "gfx/frames/1.2bpp"
@@ -93,6 +95,12 @@ _LoadStandardOpaqueFont::
 	ld hl, VTiles2 tile " "
 	ld de, TextBoxSpaceGFX
 	lb bc, BANK(TextBoxSpaceGFX), 1
+	jp Get2bpp
+
+_LoadCheckMark::
+	ld de, FontCheckMark
+	ld hl, VTiles0 tile "″"
+	lb bc, BANK(FontCheckMark), 1
 	jp Get2bpp
 
 _LoadStandardFont::

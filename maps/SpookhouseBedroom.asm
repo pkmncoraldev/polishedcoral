@@ -139,6 +139,8 @@ SpookHouseJournalText1:
 SpookHouseJournalText3:
 	text "Who wouldn't?"
 	
+	para "…"
+	
 	para "DAY:O/O    MONTH:X"
 	
 	para "It's our first day"

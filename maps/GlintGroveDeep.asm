@@ -133,10 +133,9 @@ GlintGroveDeepSmeargleScene:
 	pause 40
 	opentext
 	writetext GlintGroveDeepMinaText4
-;	buttonsound
 	spriteface GLINTSECRET_MINA, DOWN
-;	farwritetext StdBlankText
-;	pause 6
+	farwritetext StdBlankText
+	pause 6
 	writetext GlintGroveDeepMinaText5
 	waitbutton
 	closetext
@@ -242,12 +241,13 @@ GlintGroveDeepMinaText4:
 	text "Well?"
 	
 	para "What do you think?"
+
+	para "I call it:<WAIT_L>"
 	done
 	
 GlintGroveDeepMinaText5:
-	text "I call it:<WAIT_L>"
-	line "“SMEARGLE"
-	cont "in Love”."
+	text "“SMEARGLE"
+	line "in Love”."
 	done
 	
 GlintGroveDeepMinaText6:
@@ -259,8 +259,7 @@ GlintGroveDeepMinaText6:
 	para "What an awesome"
 	line "feeling!"
 	
-	para "I'm all fired up!<WAIT_S>"
-	line "I got that spark!"
+	para "I'm all fired up!"
 	
 	para "Do you feel it,"
 	line "<PLAYER>?"

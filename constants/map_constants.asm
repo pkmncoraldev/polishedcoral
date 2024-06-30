@@ -434,7 +434,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_25_GATE,                          	   4,  4 ; 7
 	map_const BRIGHTBURG_GATE,							   5,  4 ; 8
 	map_const ROUTE_28,									  19, 36 ; 9
-	map_const ROUTE_29,									  39, 21 ; 10
+	map_const ROUTE_29,									  39, 22 ; 10
 	
 	newgroup													 ; last
 	

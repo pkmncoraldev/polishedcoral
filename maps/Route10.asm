@@ -81,9 +81,9 @@ Route10_MapScriptHeader:
 	db 14 ; object events
 	person_event SPRITE_SNOWGIRL, 32, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route10NPC, -1
 	person_event SPRITE_MISC_CONE,  1,  1, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route10NPC, -1
-	person_event SPRITE_MINA, 37, 46, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route10Mina, EVENT_ROUTE_10_MINA_GONE
-	person_event SPRITE_PAINTINGS, 36, 46, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Route10Easel, EVENT_ROUTE_10_MINA_GONE
-	person_event SPRITE_LEAVES, 36, 46, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route10Easel, EVENT_ROUTE_10_MINA_GONE
+	person_event SPRITE_MINA, 37, 46, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route10Mina, -1
+	person_event SPRITE_PAINTINGS, 36, 46, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Route10Easel, -1
+	person_event SPRITE_LEAVES, 36, 46, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route10Easel, -1
 	person_event SPRITE_BOARDER, 34, 19, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_1, -1
 	person_event SPRITE_SKIER, 33, 27, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_2, -1
 	person_event SPRITE_BOARDER, 30, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_3, -1
@@ -160,7 +160,6 @@ Route10Mina:
 	pause 40
 	opentext
 	writetext Route10MinaText5
-	buttonsound
 	spriteface 3, DOWN
 	farwritetext StdBlankText
 	pause 6
@@ -280,7 +279,7 @@ Route10MinaText5:
 	line "think?"
 	
 	para "I guess I'll"
-	line "c-<WAIT_S>call it:"
+	line "c-<WAIT_S>call it:<WAIT_L>"
 	done
 	
 Route10MinaText6:

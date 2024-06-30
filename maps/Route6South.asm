@@ -199,7 +199,6 @@ Route6SouthMinaScene:
 	pause 40
 	opentext
 	writetext Route6SouthMinaSceneText6
-	buttonsound
 	spriteface 4, DOWN
 	farwritetext StdBlankText
 	pause 6
@@ -393,7 +392,7 @@ Route6SouthMinaSceneText6:
 	para "What do you think?"
 	
 	para "I guess I'll"
-	line "call it:"
+	line "call it:<WAIT_L>"
 	done
 	
 Route6SouthMinaSceneText7:

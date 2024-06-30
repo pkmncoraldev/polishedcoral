@@ -209,6 +209,7 @@ SpriteHeaders:
 	overworld_sprite DisguiseMasterGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite TuberWaterSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite PaintingsSpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite MinaGroundSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

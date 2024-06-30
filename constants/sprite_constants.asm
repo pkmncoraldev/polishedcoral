@@ -205,7 +205,7 @@
 	const SPRITE_DISGUISE_MASTER
 	const SPRITE_TUBER_WATER
 	const SPRITE_PAINTINGS
-
+	const SPRITE_MINA_GROUND
 	
 	const_def $ed
 SPRITE_POKEMON EQU const_value

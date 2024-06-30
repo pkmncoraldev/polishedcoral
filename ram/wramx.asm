@@ -1068,7 +1068,8 @@ wRoute27Trigger:: ds 1
 wBarInsideTrigger:: ds 1
 wRoute22Trigger:: ds 1
 wRoute6SouthTrigger:: ds 1
-ds 23
+wRoute29Trigger:: ds 1
+ds 22
 
 wAmpharosFood:: ds 1
 

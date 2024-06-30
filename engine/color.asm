@@ -964,7 +964,12 @@ LoadMapPals::
 	jp z, .autumn
 	cp TILESET_GROVE
 	jr z, .grove
+	eventflagcheck EVENT_ROUTE_29_PAINTING_COLORS
+	jp nz, .route_29_painting
 	jp .normal
+.route_29_painting
+	eventflagcheck EVENT_ROUTE_29_PAINTING_COLORS_2
+	jp z, .sailboat
 .grove
 	ld a, [wMapNumber]
 	cp MAP_GLINT_GROVE_EAST

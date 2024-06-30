@@ -134,4 +134,5 @@ MapTriggers::
 	scene_var BAR_INSIDE,							  wBarInsideTrigger
 	scene_var ROUTE_22,								  wRoute22Trigger
 	scene_var ROUTE_6_SOUTH,						  wRoute6SouthTrigger
+	scene_var ROUTE_29,								  wRoute29Trigger
 	db -1

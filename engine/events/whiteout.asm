@@ -73,6 +73,7 @@ WhiteoutHandleEvents:
 	clearevent EVENT_SANDSTORM_HAPPENING
 	clearevent EVENT_AIRPORT_FENCE
 	clearevent EVENT_CAPE_LIGHTHOUSE_COLORS
+	clearevent EVENT_ROUTE_29_PAINTING_COLORS
 	setevent EVENT_HARBOR_BINOCULAR_COLORS
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	domaptrigger SUNSET_CAPE, $0
@@ -86,6 +87,7 @@ WhiteoutHandleEvents:
 	domaptrigger KOMORE_COMMUNITY_CENTER, $0
 	domaptrigger SUNSET_CAPE, $0
 	domaptrigger SHIMMER_HARBOR, $0
+	domaptrigger ROUTE_29, $0
 	clearevent EVENT_ON_DODRIO_RANCH
 	clearevent EVENT_AT_AIRPORT
 	clearevent EVENT_SET_ROUTE_27

@@ -1377,7 +1377,7 @@ RadioDarkScreenPal:
 	RGB 00, 00, 00
 	RGB 14, 18, 14
 	
-	RGB 28, 31, 20
+	RGB 27, 31, 27
 	RGB 21, 21, 21
 	RGB 16, 21, 16
 	RGB 00, 00, 00

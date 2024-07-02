@@ -48,10 +48,19 @@ GlintGroveEastMina:
 	opentext
 	checkevent EVENT_TALKED_TO_MINA_ONCE
 	iftrue .talked
+	playmusic MUSIC_MINA
 	writetext GlintGroveEastMinaText1
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
+	writetext GlintGroveEastMinaText2
+	waitbutton
+	closetext
+	setevent EVENT_TALKED_TO_MINA_ONCE
+	special Special_FadeOutMusic
+	pause 5
+	playmapmusic
+	end
 .talked
 	writetext GlintGroveEastMinaText2
 	waitbutton

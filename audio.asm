@@ -58,6 +58,7 @@ INCLUDE "audio/music/autumn.asm"
 INCLUDE "audio/music/dojo.asm"
 INCLUDE "audio/music/underwater.asm"
 INCLUDE "audio/music/route28.asm"
+INCLUDE "audio/music/minastheme.asm"
 
 
 SECTION "Music 3", ROMX

@@ -2226,19 +2226,42 @@ AutoRockSmashScript:
 	closetext
 	applyonemovement 1, step_up
 	spriteface 1, LEFT
+	checkevent EVENT_TALKED_TO_MINA_ONCE
+	iftrue .talked
+	playmusic MUSIC_MINA
 	callasm MinaRockSmashGetMonName
 	opentext
 	writetext MinaRockSmashText2
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
-	checkevent EVENT_TALKED_TO_MINA_ONCE
-	iftrue .talked
 	writetext MinaRockSmashText4
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
+	writetext MinaRockSmashText3
+	waitbutton
+	closetext
+	applymovement 1, Movement_Mina_Walk_Away
+	disappear 1
+	setevent EVENT_GLINT_GROVE_MINA_GONE
+	setevent EVENT_TALKED_TO_MINA_ONCE
+	domaptrigger GLINT_GROVE_ENTRANCE, $2
+	special Special_FadeOutMusic
+	pause 5
+	playmapmusic
+	end
 .talked
+	callasm MinaRockSmashGetMonName
+	opentext
+	writetext MinaRockSmashText2
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext MinaRockSmashText4
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
 	writetext MinaRockSmashText3
 	waitbutton
 	closetext

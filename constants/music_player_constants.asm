@@ -34,3 +34,4 @@ NUM_MP_EDIT_FIELDS EQU const_value
 	const COMPOSER_CCCP_CORALDEV		         ; 05
 	const COMPOSER_EIKO							 ; 06
 	const COMPOSER_ALPHA_REMASTER				 ; 07
+	const COMPOSER_MINAKO_ADACHI				 ; 08

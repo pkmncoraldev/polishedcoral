@@ -7,4 +7,5 @@ SongArtists:
 	db "CCCP<LNBRK>coraldev@"
 	db "EIKO@"
 	db "ALPHA REMASTER@"
+	db "MINAKO ADACHI@"
 	

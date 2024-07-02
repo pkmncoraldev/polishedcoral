@@ -63,6 +63,7 @@ Music:
 	dba Music_Dojo
 	dba Music_Underwater
 	dba Music_Route28
+	dba Music_MinasTheme
 	
 	dba Music_StarglowOld
 	dba Music_WildBattleOld

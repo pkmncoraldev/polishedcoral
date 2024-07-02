@@ -101,6 +101,7 @@ GlintGroveDeepSmeargleScene:
 	writetext GlintGroveDeepMinaText1
 	pause 8
 	closetext
+	playmusic MUSIC_NONE
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, GLINTSECRET_SMEARGLE_1, 15
 	playsound SFX_PAY_DAY
@@ -121,6 +122,7 @@ GlintGroveDeepSmeargleScene:
 	pause 40
 	spriteface GLINTSECRET_MINA, LEFT
 	spriteface PLAYER, RIGHT
+	playmusic MUSIC_MINA
 	opentext
 	writetext GlintGroveDeepMinaText3
 	waitbutton
@@ -133,11 +135,12 @@ GlintGroveDeepSmeargleScene:
 	pause 40
 	opentext
 	writetext GlintGroveDeepMinaText4
+	pause 10
 	spriteface GLINTSECRET_MINA, DOWN
 	farwritetext StdBlankText
 	pause 6
 	writetext GlintGroveDeepMinaText5
-	waitbutton
+	pause 40
 	closetext
 	pause 50
 	spriteface GLINTSECRET_MINA, LEFT
@@ -152,7 +155,9 @@ GlintGroveDeepSmeargleScene:
 	setlasttalked GLINTSECRET_MINA
 	loadtrainer MINA, 1
 	startbattle
-	reloadmapafterbattle
+	dontrestartmapmusic
+	reloadmap
+	playmusic MUSIC_MINA
 	setevent EVENT_GLINT_DEEP_MINA_GONE
 	setevent EVENT_GLINT_SMEARGLES_GONE
 	setevent EVENT_DONE_GLINT_DEEP_MINA
@@ -198,6 +203,9 @@ GlintGroveDeepSmeargleScene:
 	disappear GLINTSECRET_MINA
 	dotrigger $4
 	clearevent EVENT_MINA_APARTMENT_EMPTY
+	special Special_FadeOutMusic
+	pause 5
+	playmapmusic
 	end
 	
 GlintGroveDeepMinaText:

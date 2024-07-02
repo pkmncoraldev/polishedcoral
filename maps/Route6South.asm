@@ -171,6 +171,7 @@ Route6SouthMinaScene:
 	waitbutton
 	closetext
 .cont
+	special Special_FadeOutMusic
 	pause 40
 	opentext
 	special Special_DotDotDot
@@ -178,6 +179,7 @@ Route6SouthMinaScene:
 	pause 40
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, 4, 15
+	playmusic MUSIC_MINA
 	opentext
 	writetext Route6SouthMinaSceneText4
 	waitbutton
@@ -203,7 +205,7 @@ Route6SouthMinaScene:
 	farwritetext StdBlankText
 	pause 6
 	writetext Route6SouthMinaSceneText7
-	waitbutton
+	pause 40
 	closetext
 	pause 50
 	spriteface 4, LEFT
@@ -252,7 +254,9 @@ Route6SouthMinaScene:
 	setlasttalked 4
 	loadtrainer MINA, 2
 	startbattle
-	reloadmapafterbattle
+	dontrestartmapmusic
+	reloadmap
+	playmusic MUSIC_MINA
 	opentext
 	writetext Route6SouthMinaSceneText12
 	waitbutton
@@ -279,6 +283,9 @@ Route6SouthMinaScene:
 	dotrigger $0
 	setevent EVENT_ROUTE_6_MINA_GONE
 	setevent EVENT_DONE_ROUTE_6_MINA
+	special Special_FadeOutMusic
+	pause 5
+	playmapmusic
 	end
 	
 Movement_Route6SouthPlayer:
@@ -288,7 +295,6 @@ Movement_Route6SouthPlayer:
 	step_end
 	
 Movement_Route6SouthMinaLeave:
-	step_right
 	step_down
 	step_down
 	step_down
@@ -396,7 +402,7 @@ Route6SouthMinaSceneText6:
 	done
 	
 Route6SouthMinaSceneText7:
-	text "“Island Stillness…"
+	text "“Island Stillness…<WAIT_M>"
 	line "…and <PLAYER>”."
 	done
 	

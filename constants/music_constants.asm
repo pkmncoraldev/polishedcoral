@@ -62,6 +62,7 @@
 	const MUSIC_DOJO
 	const MUSIC_UNDERWATER
 	const MUSIC_ROUTE_28
+	const MUSIC_MINA
 	
 NUM_TAPE_PLAYER_SONGS EQU const_value
 	

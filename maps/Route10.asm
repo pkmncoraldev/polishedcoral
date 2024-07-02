@@ -137,6 +137,7 @@ Route10Mina:
 	showemote EMOTE_SHOCK, 3, 15
 	callasm Route10MinaIndoorPermsAsm2
 	faceplayer
+	playmusic MUSIC_MINA
 	opentext
 	writetext Route10MinaText3
 	waitbutton
@@ -164,7 +165,7 @@ Route10Mina:
 	farwritetext StdBlankText
 	pause 6
 	writetext Route10MinaText6
-	waitbutton
+	pause 40
 	closetext
 	pause 50
 	spriteface 3, LEFT
@@ -179,7 +180,9 @@ Route10Mina:
 	setlasttalked 3
 	loadtrainer MINA, 6
 	startbattle
-	reloadmapafterbattle
+	dontrestartmapmusic
+	reloadmap
+	playmusic MUSIC_MINA
 	opentext
 	writetext Route10MinaText8
 	waitbutton
@@ -207,9 +210,12 @@ Route10Mina:
 	spriteface PLAYER, DOWN
 	applymovement 3, Movement_Route10MinaLeave
 	disappear 3
-	dotrigger $0
+	dotrigger $4
 	setevent EVENT_ROUTE_10_MINA_GONE
 	setevent EVENT_DONE_ROUTE_10_MINA
+	special Special_FadeOutMusic
+	pause 5
+	playmapmusic
 	end
 .no
 	writetext Route10MinaNo

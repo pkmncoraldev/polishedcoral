@@ -61,3 +61,4 @@ TapeNames::
 	db "“FIGHTING DOJO”@"
 	db "“UNDERWATER”@"
 	db "“ROUTE 28”@"
+	db "“MINA'S THEME”@"

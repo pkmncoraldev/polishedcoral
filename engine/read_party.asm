@@ -28,7 +28,9 @@ ReadTrainerParty: ; 39771
 	call GetNextTrainerDataByte
 	cp $ff
 	ret z
-
+	call CheckMinaMons
+	jr z, .loop2
+.mina_done
 	ld [wCurPartyLevel], a
 
 ; species
@@ -421,3 +423,61 @@ GetNextTrainerDataByte:
 	call GetFarByte
 	inc hl
 	ret
+	
+CheckMinaMons:
+	cp MINA_MON_ROUTE_6
+	jp z, .mina_mon_1
+	cp MINA_MON_ROUTE_11
+	jp z, .mina_mon_2
+	cp MINA_MON_RADIANT_FIELD
+	jp z, .mina_mon_3
+	cp MINA_MON_ROUTE_29
+	jp z, .mina_mon_4
+	cp MINA_MON_ROUTE_10
+	jp z, .mina_mon_5
+	ret
+.mina_mon_1
+	push hl
+	ld hl, wMinaFlags
+	bit 1, [hl] ; ENGINE_MINA_ROUTE_6
+	jr nz, .do_mina_mon
+	jr .next_mina_mon
+.mina_mon_2
+	push hl
+	ld hl, wMinaFlags
+	bit 2, [hl] ; ENGINE_MINA_ROUTE_11
+	jr nz, .do_mina_mon
+	jr .next_mina_mon
+.mina_mon_3
+	push hl
+	ld hl, wMinaFlags
+	bit 3, [hl] ; ENGINE_MINA_RADIANT_FIELD
+	jr nz, .do_mina_mon
+	jr .next_mina_mon
+.mina_mon_4
+	push hl
+	ld hl, wMinaFlags
+	bit 4, [hl] ; ENGINE_MINA_ROUTE_29
+	jr nz, .do_mina_mon
+	jr .next_mina_mon
+.mina_mon_5
+	push hl
+	ld hl, wMinaFlags
+	bit 5, [hl] ; ENGINE_MINA_ROUTE_10
+	jr nz, .do_mina_mon
+	
+.next_mina_mon
+	pop hl
+	ld a, 11
+	ld e, a
+.mina_mon_loop
+	inc hl
+	dec e
+	ld a, e
+	cp 0
+	jr nz, .mina_mon_loop
+	ld a, 0
+	ret
+.do_mina_mon
+	pop hl
+	jp GetNextTrainerDataByte

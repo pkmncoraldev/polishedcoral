@@ -2601,7 +2601,7 @@ LassGroup:
 	db "LIBBY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 6, SNUBBULL
+	db 7, LEDYBA
 	db -1 ; end
 
 ; ================
@@ -5210,47 +5210,22 @@ MinaGroup:
 
 ; ================
 
-	; Route 6
+	; Various
 	db "MINA@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; Route 11
-	db "MINA@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; Radiant Field
-	db "MINA@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; Route 29
-	db "MINA@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; Route 10
-	db "MINA@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
+	db 1, BULBASAUR, $00, $00, $00, ABILITY_1 | HARDY, MALE
+		db TACKLE_SCRATCH_POUND, 0, 0, 0
+	db MINA_MON_ROUTE_6, 1, CHARMANDER, $00, $00, $00, ABILITY_1 | HARDY, MALE
+		db TACKLE_SCRATCH_POUND, 0, 0, 0
+	db MINA_MON_ROUTE_11, 1, SQUIRTLE, $00, $00, $00, ABILITY_1 | HARDY, MALE
+		db TACKLE_SCRATCH_POUND, 0, 0, 0
+	db MINA_MON_RADIANT_FIELD, 1, CHIKORITA, $00, $00, $00, ABILITY_1 | HARDY, MALE
+		db TACKLE_SCRATCH_POUND, 0, 0, 0
+	db MINA_MON_ROUTE_29, 1, CYNDAQUIL, $00, $00, $00, ABILITY_1 | HARDY, MALE
+		db TACKLE_SCRATCH_POUND, 0, 0, 0
+	db MINA_MON_ROUTE_10, 0, TOTODILE, $00, $00, $00, ABILITY_1 | HARDY, MALE
+		db TACKLE_SCRATCH_POUND, 0, 0, 0
 	db -1 ; end
 
 ; ================

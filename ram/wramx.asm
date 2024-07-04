@@ -948,7 +948,16 @@ wPCItemsEnd::
 wClothesOwned:: flag_array NUM_CLOTHES
 wClothesOwnedEnd::
 
-ds 7
+wMinaFlags::
+	; 0 - glint grove deep
+	; 1 - route 6
+	; 2 - route 11
+	; 3 - radiant field
+	; 4 - route 29
+	; 5 - route 10
+	ds 1
+
+ds 6
 
 wPokegearFlags::
 ; bit 0: map

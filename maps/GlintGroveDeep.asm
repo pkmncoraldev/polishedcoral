@@ -161,6 +161,7 @@ GlintGroveDeepSmeargleScene:
 	setevent EVENT_GLINT_DEEP_MINA_GONE
 	setevent EVENT_GLINT_SMEARGLES_GONE
 	setevent EVENT_DONE_GLINT_DEEP_MINA
+	setflag ENGINE_MINA_GLINT_GROVE_DEEP
 	opentext
 	writetext GlintGroveDeepMinaText7
 	waitbutton

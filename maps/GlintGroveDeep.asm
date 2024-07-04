@@ -158,6 +158,9 @@ GlintGroveDeepSmeargleScene:
 	dontrestartmapmusic
 	reloadmap
 	playmusic MUSIC_MINA
+	checkevent EVENT_GOT_HM03_SURF
+	iftrue .start_mina_quest
+.return
 	setevent EVENT_GLINT_DEEP_MINA_GONE
 	setevent EVENT_GLINT_SMEARGLES_GONE
 	setevent EVENT_DONE_GLINT_DEEP_MINA
@@ -208,6 +211,15 @@ GlintGroveDeepSmeargleScene:
 	pause 5
 	playmapmusic
 	end
+.start_mina_quest
+	domaptrigger ROUTE_6_SOUTH, $1
+	clearevent EVENT_ROUTE_6_MINA_GONE
+	clearevent EVENT_ROUTE_11_MINA_GONE
+	clearevent EVENT_RADIANT_FIELD_MINA_GONE
+	clearevent EVENT_ROUTE_29_MINA_GONE
+	clearevent EVENT_ROUTE_10_MINA_GONE
+	setevent EVENT_MINA_QUEST_ACTIVATED
+	jump .return
 	
 GlintGroveDeepMinaText:
 	text "She's totally"

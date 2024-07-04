@@ -211,6 +211,8 @@ AirportPokeballSurf:
 	changeblock $0c, $0c, $b5
 	setevent EVENT_GOT_HM03_SURF
 	setflag ENGINE_GOT_SURF
+	checkevent EVENT_MINA_APARTMENT_EMPTY
+	iftrue .end
 	checkevent EVENT_MINA_QUEST_ACTIVATED
 	iftrue .end
 	domaptrigger ROUTE_6_SOUTH, $1

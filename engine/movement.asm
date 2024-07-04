@@ -127,6 +127,11 @@ MovementPointers:
 	dw Movement_dealer_down
 	dw Movement_dealer_left
 	dw Movement_dealer_right
+	dw Movement_jump_in_place
+	
+Movement_jump_in_place:
+    ld a, STEP_TYPE_NONE << 2
+    jp JumpStep2
 
 Movement_teleport_from: ; 5129
 	ld hl, OBJECT_STEP_TYPE
@@ -1205,13 +1210,14 @@ JumpStep: ; 548a
 	add hl, bc
 	ld [hl], $0
 
-	ld hl, OBJECT_FLAGS2
-	add hl, bc
-	res OVERHEAD, [hl]
-
 	ld hl, OBJECT_ACTION
 	add hl, bc
 	ld [hl], PERSON_ACTION_STEP
+
+.cont
+	ld hl, OBJECT_FLAGS2
+	add hl, bc
+	res OVERHEAD, [hl]
 
 	call SpawnShadow
 
@@ -1230,4 +1236,24 @@ JumpStep: ; 548a
 	add hl, bc
 	ld [hl], STEP_TYPE_PLAYER_JUMP
 	ret
-; 54b8
+
+JumpStep2: ; 548a
+	call InitStep
+	ld hl, OBJECT_31
+	add hl, bc
+	ld [hl], $0
+
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], PERSON_ACTION_STAND
+
+	ld hl, OBJECT_FLAGS2
+	add hl, bc
+	res OVERHEAD, [hl]
+
+	call SpawnShadow
+
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_NPC_JUMP
+	ret

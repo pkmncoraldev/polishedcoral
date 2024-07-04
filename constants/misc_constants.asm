@@ -73,6 +73,7 @@ NUM_LOST_GIRLS EQU 7
 	const STEP_TYPE_SUPER_FAST
 	const STEP_TYPE_FAST
 	const STEP_TYPE_MEDIUM
+	const STEP_TYPE_NONE
 
 const_value = 1
 	const HAPPINESS_GAINLEVEL         ; 01

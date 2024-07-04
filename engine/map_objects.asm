@@ -443,6 +443,11 @@ StepVectors_FastStepType:
 	db  0, -1, 10, 2
 	db -1,  0, 10, 2
 	db  1,  0, 10, 2
+	;no movement
+    db  0,  0,  4, 4
+    db  0,  0,  4, 4
+    db  0,  0,  4, 4
+    db  0,  0,  4, 4
 
 
 GetStepVectorSign:

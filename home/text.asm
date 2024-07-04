@@ -668,9 +668,11 @@ TextCommands::
 	dw Text_PlaySound      ; $11 <DEX3>
 	dw Text_PlaySound      ; $12 <BEEP>
 	dw Text_PlaySound      ; $13 <SLOTS>
-	dw Text_StringBuffer   ; $14 <BUFFER>
-	dw Text_WeekDay        ; $15 <DAY>
-	dw Text_Jump           ; $16 <FAR>
+	dw Text_PlaySound      ; $14 <SOUND>
+	dw Text_StringBuffer   ; $15 <BUFFER>
+	dw Text_WeekDay        ; $16 <DAY>
+	dw Text_Jump           ; $17 <FAR>
+	
 
 Text_Start::
 ; write text until "@"
@@ -895,7 +897,11 @@ Text_PlaySound::
 	inc hl
 	ld d, [hl]
 	call PlaySFX
+	ld a, [de]
+	cp SFX_READ_TEXT
+	jr nz, .skip
 	call WaitSFX
+.skip
 	pop de
 
 .done
@@ -911,6 +917,7 @@ TextSFX::
 	dbw "<CAUGHT>", SFX_CAUGHT_MON
 	dbw "<DEX3>",   SFX_DEX_FANFARE_80_109
 	dbw "<SLOTS>",  SFX_SLOT_MACHINE_START
+	dbw "<SOUND>",  SFX_READ_TEXT
 	db -1
 
 Text_Dots::

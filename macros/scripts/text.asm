@@ -93,6 +93,10 @@ sound_slot_machine_start: macro
 	db "<SLOTS>"
 endm
 
+sound_read: macro
+	db "<SOUND>"
+endm
+
 text_buffer: macro
 	db "<BUFFER>"
 	db \1

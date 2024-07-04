@@ -647,3 +647,8 @@ step_dealer_left: macro
 step_dealer_right: macro
 	db movement_dealer_right ; $6b
 	endm
+	
+	enum movement_jump_in_place
+jump_in_place: macro
+	db movement_jump_in_place ; $11
+	endm

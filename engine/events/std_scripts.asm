@@ -187,9 +187,20 @@ IceBlockScript:
 AtmScript:
 	checkcode VAR_FACING
 	ifnotequal UP, WrongSideScript
+	checkflag ENGINE_TRAINER_CARD
+	iffalse .no_card
 	opentext
 	special Special_BankOfMom
 	endtext
+.no_card
+	jumptext AtmNoCardText
+	
+AtmNoCardText:
+	text "Welcome!"
+	
+	para "Please insert"
+	line "ATM CARD."
+	done
 	
 PokeCenterChanseyScript:
 	opentext

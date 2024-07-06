@@ -1,6 +1,4 @@
 Special_BankOfMom: ; 16218
-	call ATM_CheckCard
-	ret c
 	ld a, [hInMenu]
 	push af
 	ld a, $1
@@ -370,22 +368,6 @@ BankCard_TakeMoney:
 	ld hl, UnknownText_0x1668f
 	call PrintText
 	jp WaitSFX
-
-ATM_CheckCard:
-	ld hl, wPokegearFlags
-	bit 7, [hl]
-	ret nz
-	ld de, SFX_CHOOSE_PC_OPTION
-	call PlaySFX
-	ld hl, .MustHavePokemonToUse
-	call PC_DisplayText
-	scf
-	ret
-
-.MustHavePokemonToUse:
-	; Bzzzzt! You must have a #MON to use this!
-	text_jump UnknownText_0x1c13282
-	db "@"
 
 ATM_WaitPlaySFX:
 	push de

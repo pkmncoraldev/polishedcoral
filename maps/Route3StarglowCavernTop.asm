@@ -49,6 +49,8 @@ Route3StarglowCavernTopPatches:
 	callasm PatchesSwapPokemonAsm
 	callasm PatchesTurnOnPatchesModeAsm
 	setevent EVENT_PATCHES_MODE
+	clearflag ENGINE_TRAINER_CARD
+	clearflag ENGINE_POKEDEX
 	wait 10
 	opentext
 	writetext Route3StarglowCavernTopPatchesText3
@@ -125,6 +127,8 @@ Route3StarglowCavernTopPatches:
 .turn_off_patches_mode
 	callasm PatchesTurnOffPatchesModeAsm
 	clearevent EVENT_PATCHES_MODE
+	setflag ENGINE_TRAINER_CARD
+	setflag ENGINE_POKEDEX
 	writetext Route3StarglowCavernTopPatchesDoneCaveText2
 	waitbutton
 	verbosegivetmhm TM_SAND_ATTACK_SMOKESCREEN_FLASH

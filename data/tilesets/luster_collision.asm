@@ -136,7 +136,7 @@
 	tilecoll WALL, SKATE, WALL, SKATE ; 87
 	tilecoll NO_OLLIE, SKATE, NO_OLLIE, SKATE ; 88
 	tilecoll WALL, WALL, WALL, WALL ; 89
-	tilecoll WALL, WALL, WALL, WALL ; 8a
+	tilecoll WALL, WALL, DOOR, DOOR ; 8a
 	tilecoll WALL, WALL, SKATE, SKATE ; 8b
 	tilecoll WALL, WALL, SKATE, NO_OLLIE ; 8c
 	tilecoll WALL, SKATE, WALL, SKATE ; 8d
@@ -244,7 +244,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; f3
 	tilecoll WALL, WALL, WALL, WALL ; f4
 	tilecoll WALL, WALL, WALL, WALL ; f5
-	tilecoll WALL, WALL, WALL, WALL ; f6
+	tilecoll WALL, WALL, DOOR, DOOR ; f6
 	tilecoll WALL, SKATE, WALL, SKATE ; f7
 	tilecoll SKATE, SKATE, SKATE, WALL ; f8
 	tilecoll SKATE, SKATE, WALL, SKATE ; f9

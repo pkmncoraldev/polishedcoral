@@ -3,7 +3,9 @@ Route29_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 0 ; warp events
+	db 2 ; warp events
+	warp_def 30, 73, 1, OBSCURA_GATE
+	warp_def 31, 73, 2, OBSCURA_GATE
 
 	db 2 ; coord events
 	coord_event 23, 16, 0, Route29MinaSetup

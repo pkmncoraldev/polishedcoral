@@ -751,6 +751,26 @@ INCBIN "data/tilesets/autumn_attributes.bin.lz"
 TilesetAutumnColl::
 INCLUDE "data/tilesets/autumn_collision.asm"
 
+SECTION "Tileset Data - south towns", ROMX
+
+TilesetSouthTownsGFX0::
+INCBIN "gfx/tilesets/south_towns.2bpp.vram0.lz"
+
+TilesetSouthTownsGFX1::
+INCBIN "gfx/tilesets/south_towns.2bpp.vram1.lz"
+
+TilesetSouthTownsGFX2::
+INCBIN "gfx/tilesets/south_towns.2bpp.vram2.lz"
+
+TilesetSouthTownsMeta::
+INCBIN "data/tilesets/south_towns_metatiles.bin.lz"
+
+TilesetSouthTownsAttr::
+INCBIN "data/tilesets/south_towns_attributes.bin.lz"
+
+TilesetSouthTownsColl::
+INCLUDE "data/tilesets/south_towns_collision.asm"
+
 SECTION "Tileset Headers", ROMX
 
 tileset: macro
@@ -799,4 +819,5 @@ Tilesets::
 	tileset TilesetDive
 	tileset TilesetBar
 	tileset TilesetAutumn
+	tileset TilesetSouthTowns
 	tileset TilesetLavaCave

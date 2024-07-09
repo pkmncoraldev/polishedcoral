@@ -37,6 +37,7 @@
 	const TILESET_DIVE				;36
 	const TILESET_BAR				;37
 	const TILESET_AUTUMN			;38
+	const TILESET_SOUTH_TOWNS		;39
 	const TILESET_LAVA_CAVE
 	
 

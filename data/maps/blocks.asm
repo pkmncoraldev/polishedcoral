@@ -72,6 +72,7 @@ Route4EventideGate_BlockData:
 EventideVillageGate_BlockData:
 Route19DuskGate_BlockData:
 BrightburgGate_BlockData:
+ObscuraGate_BlockData:
 	INCBIN "maps/EastWestGate.ablk.lz"
 
 SunsetWaterGrassHouse_BlockData:
@@ -893,4 +894,7 @@ KomoreCommunityCenterRight_BlockData:
 	
 Route11Bridge_BlockData:
 	INCBIN "maps/Route11Bridge.ablk.lz"
+	
+ObscuraCity_BlockData:
+	INCBIN "maps/ObscuraCity.ablk.lz"
 	

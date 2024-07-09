@@ -466,6 +466,8 @@ ENDM
 	map_attributes Route29, ROUTE_29, $d4, WEST
 	connection west, Route28, ROUTE_28, -12
 	
+	map_attributes ObscuraCity, OBSCURA_CITY, $d4, 0
+	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0
 	connection south, FakeRoute2, FAKE_ROUTE_2, 0
@@ -728,3 +730,4 @@ ENDM
 	map_attributes BrightHouse3, BRIGHT_HOUSE_3, $0, 0
 	map_attributes Route25Gate, ROUTE_25_GATE, $0, 0
 	map_attributes BrightburgGate, BRIGHTBURG_GATE, $0, 0
+	map_attributes ObscuraGate, OBSCURA_GATE, $0, 0

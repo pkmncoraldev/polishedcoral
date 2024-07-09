@@ -135,4 +135,5 @@ MapTriggers::
 	scene_var ROUTE_22,								  wRoute22Trigger
 	scene_var ROUTE_6_SOUTH,						  wRoute6SouthTrigger
 	scene_var ROUTE_29,								  wRoute29Trigger
+	scene_var OBSCURA_CITY,							  wObscuraCityTrigger
 	db -1

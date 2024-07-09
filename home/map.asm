@@ -1082,6 +1082,8 @@ _LoadTileset0:
 	jr z, .load_roof
 	cp TILESET_HIGHWAY
 	jr z, .load_roof
+	cp TILESET_SOUTH_TOWNS
+	jr z, .load_roof
 	cp TILESET_AUTUMN
 	jr nz, .skip_roof
 

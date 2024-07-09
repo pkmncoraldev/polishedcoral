@@ -331,6 +331,7 @@ TilesetGroveAnim::
 	
 TilesetGlintAnim::
 TilesetStarglowAnim::
+TilesetSouthTownsAnim::
 	dw VTiles2 tile $00, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft

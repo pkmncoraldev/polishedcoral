@@ -118,6 +118,11 @@
 	RGB 26, 21, 05
 	RGB 15, 14, 13
 	RGB 14, 10, 11
+;24 - Obscura
+	RGB 10, 10, 10
+	RGB 08, 08, 08
+	RGB 04, 04, 08
+	RGB 00, 00, 00
 ;last - Fake Route 1
 	RGB 00, 00, 00
 	RGB 00, 00, 00

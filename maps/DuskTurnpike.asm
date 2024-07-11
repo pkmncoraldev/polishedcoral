@@ -86,7 +86,7 @@ DuskTurnpike_MapScriptHeader:
 	signpost 24, 29, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
 	signpost 21, 22, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
 	signpost 22, 22, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
-	signpost 32, 17, SIGNPOST_JUMPTEXT, DuskTurnpikeSign
+	signpost 30, 17, SIGNPOST_JUMPTEXT, DuskTurnpikeSign
 	signpost 20, 19, SIGNPOST_JUMPTEXT, DuskTurnpikeHighwaySign
 	signpost  6, 15, SIGNPOST_READ, DuskTurnpikeTrashcan
 	signpost 31, 22, SIGNPOST_READ, DuskTurnpikePokeCenterSign

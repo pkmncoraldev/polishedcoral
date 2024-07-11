@@ -247,8 +247,8 @@
 	tilecoll WALL, WALL, SKATE, SKATE ; f6
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f7
 	tilecoll WALL, WALL, FLOOR, WALL ; f8
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f9
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; fa
+	tilecoll WALL, WALL, WALL, WALL ; f9
+	tilecoll WALL, WALL, WALL, WALL ; fa
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE ; fb
 	tilecoll HEADBUTT_TREE, WALL, WALL, WALL ; fc
 	tilecoll WALL, WALL, DOOR, WALL ; fd

@@ -26,6 +26,7 @@ MapGroupRoofs:
 	db  2 ; group 22 (Komore)
 	db  0 ; group 23 (Bright)
 	db  4 ; group 24 (Obscura)
+	db  4 ; group 24 (Aureole)
 	db -1 ; group last (Fake Route 1)
 
 Roofs:

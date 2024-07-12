@@ -95,7 +95,7 @@
 	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; 5e
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 5f
 	tilecoll HEADBUTT_TREE, FLOOR, HEADBUTT_TREE, FLOOR ; 60
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 61
+	tilecoll LEDGE_RIGHT, WALL, LEDGE_RIGHT, WALL ; 61
 	tilecoll FLOOR, HEADBUTT_TREE, FLOOR, HEADBUTT_TREE ; 62
 	tilecoll HEADBUTT_TREE, FLOOR, HEADBUTT_TREE, FLOOR ; 63
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 64
@@ -127,7 +127,7 @@
 	tilecoll FLOOR, FLOOR, STAIRS, STAIRS ; 7e
 	tilecoll STAIRS, STAIRS, FLOOR, FLOOR ; 7f
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 80
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 81
+	tilecoll WALL, WALL, WALL, DOOR ; 81
 	tilecoll WALL, WALL, WALL, DOOR ; 82
 	tilecoll WALL, WALL, WALL, WALL ; 83
 	tilecoll WALL, WALL, WALL, WALL ; 84
@@ -136,17 +136,17 @@
 	tilecoll WALL, WALL, WALL, WALL ; 87
 	tilecoll FLOOR, UP_WALL, FLOOR, FLOOR ; 88
 	tilecoll UP_WALL, FLOOR, FLOOR, FLOOR ; 89
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8a
+	tilecoll GRIND, GRIND, GRIND, WALL ; 8a
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 8b
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE ; 8c
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8d
+	tilecoll GRIND, WALL, GRIND, GRIND ; 8d
 	tilecoll WALL, WALL, WALL, WALL ; 8e
 	tilecoll WALL, WALL, WALL, WALL ; 8f
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 90
+	tilecoll GRIND, GRIND, WALL, GRIND ; 90
 	tilecoll WALL, WALL, WALL, WALL ; 91
 	tilecoll WALL, WALL, WALL, WALL ; 92
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 93
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 94
+	tilecoll WALL, GRIND, GRIND, GRIND ; 94
 	tilecoll WALL, WALL, SKATE, SKATE ; 95
 	tilecoll WALL, WALL, SKATE, SKATE ; 96
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; 97
@@ -154,11 +154,11 @@
 	tilecoll WALL, WALL, DOOR, DOOR ; 99
 	tilecoll WALL, WALL, NO_OLLIE, SKATE ; 9a
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE ; 9b
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9c
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9d
+	tilecoll SKATE, SKATE, SKATE, SKATE ; 9c
+	tilecoll SKATE, SKATE, SKATE, SKATE ; 9d
 	tilecoll FLOOR, FLOOR, HEADBUTT_TREE, HEADBUTT_TREE ; 9e
 	tilecoll FLOOR, FLOOR, HEADBUTT_TREE, FLOOR ; 9f
-	tilecoll FLOOR, FLOOR, HEADBUTT_TREE, HEADBUTT_TREE ; a0
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a0
 	tilecoll SKATE_LEDGE_DOWN, SKATE, WALL, FLOOR ; a1
 	tilecoll LEDGE_DOWN, FLOOR, WALL, FLOOR ; a2
 	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; a3
@@ -184,7 +184,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; b7
 	tilecoll WALL, WALL, WALL, WALL ; b8
 	tilecoll WALL, WALL, WALL, WALL ; b9
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ba
+	tilecoll SKATE, SKATE, SKATE, SKATE ; ba
 	tilecoll SKATE, WALL, SKATE, SKATE ; bb
 	tilecoll WALL, WALL, WALL, WALL ; bc
 	tilecoll WALL, WALL, WALL, WALL ; bd
@@ -199,8 +199,8 @@
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; c6
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; c7
 	tilecoll FLOOR, FLOOR, HEADBUTT_TREE, HEADBUTT_TREE ; c8
-	tilecoll FLOOR, FLOOR, HEADBUTT_TREE, HEADBUTT_TREE ; c9
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ca
+	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; c9
+	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; ca
 	tilecoll SKATE, SKATE, SKATE, SKATE ; cb
 	tilecoll LONG_GRASS, LONG_GRASS, LONG_GRASS, LONG_GRASS ; cc
 	tilecoll WARP_CARPET_UP, WARP_CARPET_UP, FLOOR, FLOOR ; cd
@@ -228,17 +228,17 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL ; e3
 	tilecoll WALL, WALL, FLOOR, WALL ; e4
 	tilecoll FLOOR, WALL, WALL, WALL ; e5
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e6
+	tilecoll SKATE, SKATE, SKATE, SKATE ; e6
 	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; e7
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e8
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e9
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ea
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; eb
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ec
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ed
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ee
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ef
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f0
+	tilecoll WALL, WALL, WALL, WALL ; e8
+	tilecoll WALL, WALL, WALL, WALL ; e9
+	tilecoll WALL, WALL, WALL, WALL ; ea
+	tilecoll WALL, SKATE, SKATE, SKATE ; eb
+	tilecoll FLOOR, WALL, FLOOR, WALL ; ec
+	tilecoll WALL, WALL, DOOR, DOOR ; ed
+	tilecoll WALL, FLOOR, WALL, FLOOR ; ee
+	tilecoll SKATE, SKATE, SKATE, SKATE ; ef
+	tilecoll WALL, WALL, WALL, WALL ; f0
 	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; f1
 	tilecoll SKATE, SKATE, SKATE, SKATE ; f2
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; f3
@@ -246,11 +246,11 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f5
 	tilecoll WALL, WALL, WALL, WALL ; f6
 	tilecoll SKATE, SKATE, SKATE, SKATE ; f7
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f8
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f9
+	tilecoll WALL, WALL, WALL, WALL ; f8
+	tilecoll WALL, WALL, WALL, WALL ; f9
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; fa
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; fb
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; fc
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; fd
+	tilecoll WALL, WALL, WALL, WALL ; fb
+	tilecoll WALL, WALL, WALL, WALL ; fc
+	tilecoll WALL, WALL, WALL, WALL ; fd
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE ; fe
 	tilecoll SKATE, SKATE, SKATE, SKATE ; ff

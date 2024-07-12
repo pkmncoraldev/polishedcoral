@@ -468,6 +468,8 @@ ENDM
 	
 	map_attributes ObscuraCity, OBSCURA_CITY, $d4, 0
 	
+	map_attributes AureoleTown, AUREOLE_TOWN, $d4, 0
+	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0
 	connection south, FakeRoute2, FAKE_ROUTE_2, 0

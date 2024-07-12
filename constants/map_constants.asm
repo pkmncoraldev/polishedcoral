@@ -440,6 +440,9 @@ MAP_NONE   EQU 0
 	map_const OBSCURA_CITY,								  19, 14 ; 1
 	map_const OBSCURA_GATE,								   5,  4 ; 2
 	
+	newgroup													 ; 25
+	map_const AUREOLE_TOWN,								  17, 23 ; 1
+	
 	newgroup													 ; last
 	
 	map_const FAKE_ROUTE_1,                               14, 17 ;  1

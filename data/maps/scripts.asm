@@ -449,3 +449,6 @@ INCLUDE "maps/Route29.asm"
 SECTION "Obscura Scripts", ROMX
 INCLUDE "maps/ObscuraCity.asm"
 INCLUDE "maps/ObscuraGate.asm"
+
+SECTION "Aureole Scripts", ROMX
+INCLUDE "maps/AureoleTown.asm"

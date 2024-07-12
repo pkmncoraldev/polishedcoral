@@ -898,3 +898,6 @@ Route11Bridge_BlockData:
 ObscuraCity_BlockData:
 	INCBIN "maps/ObscuraCity.ablk.lz"
 	
+AureoleTown_BlockData:
+	INCBIN "maps/AureoleTown.ablk.lz"
+	

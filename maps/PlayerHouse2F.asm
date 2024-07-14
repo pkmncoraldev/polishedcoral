@@ -253,12 +253,13 @@ PlayerHouseDebugPoster:
 	iffalse .items
 	givepoke DROWZEE, 30
 	givepoke HYPNO, 99
-	givepoke JOLTEON, 99
+	givepoke EEVEE, 99
 
 .items
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
+	giveitem RARE_CANDY, 99
 	giveitem MOOMOO_BREW, 99
 	giveitem FIVESTARHELM, 1
 	giveitem SWEET_HONEY, 1

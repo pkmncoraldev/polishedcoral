@@ -88,6 +88,8 @@ EvolveAfterBattle_MasterLoop:
 	jp z, .holding_nite
 	cp EVOLVE_LOCATION
 	jp z, .location
+	cp EVOLVE_LOCATION_SPECIFIC
+	jp z, .location_specific
 	cp EVOLVE_MOVE
 	jp z, .move
 	cp EVOLVE_EVS
@@ -241,7 +243,11 @@ EvolveAfterBattle_MasterLoop:
 	xor a
 	ld [wTempMonItem], a
 	jp .proceed
-
+.location_specific
+	ld a, [wMapGroup]
+	cp GROUP_ICE_CAVE_ICE_ROCK_ROOM		;first map in location evo specific map group
+	jp nz, .dont_evolve_3
+;fallthru
 .location
 	ld a, [wMapGroup]
 	ld b, a

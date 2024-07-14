@@ -152,6 +152,7 @@ BATTLEMON_STRUCT_LENGTH EQUS "(wBattleMonStructEnd - wBattleMonSpecies)"
 	const EVOLVE_CUBONE
 	const EVOLVE_HOLDING_DAY
 	const EVOLVE_HOLDING_NITE
+	const EVOLVE_LOCATION_SPECIFIC
 
 ; happiness evolution triggers
 HAPPINESS_TO_EVOLVE EQU 220

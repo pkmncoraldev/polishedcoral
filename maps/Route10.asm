@@ -10,11 +10,12 @@ Route10_MapScriptHeader:
 	callback MAPCALLBACK_OBJECTS, Route10Random
 	callback MAPCALLBACK_TILES, Route10Callback
 
-	db 4 ; warp events
+	db 5 ; warp events
 	warp_def 35, 13, 3, FLICKER_PASS_2F
 	warp_def 47,  7, 4, FLICKER_PASS_2F
 	warp_def 31, 11, 1, ROUTE_10_REST_HOUSE
 	warp_def  3, 33, 1, ROUTE_10_MOVE_REMINDER_HOUSE
+	warp_def 47, 27, 1, ICE_CAVE_ICE_ROCK_ROOM
 
 	db 48 ; coord events
 	xy_trigger 1, 30, 19, 0, Route10StartSnowstorm, 0, 0

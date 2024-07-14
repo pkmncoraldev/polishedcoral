@@ -118,7 +118,7 @@ MAP_NONE   EQU 0
 	map_const STARGLOW_MART,							   6,  4 ;  8
 	map_const STARGLOW_GYM,                                6, 11 ;  9
 	
-	map_const HUNTERS_THICKET,                            34, 17 ; 11
+	map_const HUNTERS_THICKET,                            33, 17 ; 11
 	map_const ROUTE_5,                                    18, 28 ; 12
 	map_const ROUTE_5_DEEP,                                9,  8 ; 13
 	map_const ROUTE_5_GATE_1F,                     		   8,  4 ; 14
@@ -443,7 +443,10 @@ MAP_NONE   EQU 0
 	newgroup													 ; 25
 	map_const AUREOLE_TOWN,								  17, 23 ; 1
 	
-	newgroup													 ; last
+	newgroup													 ; EVO LOCATIONS GROUP
+	map_const ICE_CAVE_ICE_ROCK_ROOM,					   5,  5 ; 1
+	map_const HUNTERS_THICKET_MOSS_ROCK_ROOM,              7,  6 ; 2
 	
+	newgroup													 ; last
 	map_const FAKE_ROUTE_1,                               14, 17 ;  1
 	map_const FAKE_ROUTE_2,                               14, 17 ;  2

@@ -147,8 +147,12 @@ ENDM
 	connection south, Route5, ROUTE_5, -3
 	connection west, StarglowValley, STARGLOW_VALLEY, -6
 	
-	map_attributes HuntersThicket, HUNTERS_THICKET, $fb, SOUTH
+	map_attributes HuntersThicket, HUNTERS_THICKET, $fb, SOUTH | EAST
 	connection south, Route4, ROUTE_4, -1
+	connection east, HuntersThicketMossRockRoom, HUNTERS_THICKET_MOSS_ROCK_ROOM, 9
+	
+	map_attributes HuntersThicketMossRockRoom, HUNTERS_THICKET_MOSS_ROCK_ROOM, $fb, WEST
+	connection west, HuntersThicket, HUNTERS_THICKET, -9
 	
 	map_attributes Route5, ROUTE_5, $fb, NORTH
 	connection north, Route4, ROUTE_4, 3
@@ -508,6 +512,7 @@ ENDM
 	map_attributes IceTempleB1F3, ICE_TEMPLE_B1F_3, 0, 0
 	map_attributes IceTempleB2F1, ICE_TEMPLE_B2F_1, 0, 0
 	map_attributes IceTempleB2F2, ICE_TEMPLE_B2F_2, 0, 0
+	map_attributes IceCaveIceRockRoom, ICE_CAVE_ICE_ROCK_ROOM, $54, 0
 	map_attributes StarglowCavernDepths, STARGLOW_CAVERN_DEPTHS, $9, 0
 	map_attributes ConnectingCavern, CONNECTING_CAVERN, $09, 0
 	map_attributes ConnectingCavernEntrance, CONNECTING_CAVERN_ENTRANCE, $09, 0

@@ -738,3 +738,5 @@ ENDM
 	map_attributes Route25Gate, ROUTE_25_GATE, $0, 0
 	map_attributes BrightburgGate, BRIGHTBURG_GATE, $0, 0
 	map_attributes ObscuraGate, OBSCURA_GATE, $0, 0
+	map_attributes GreenGrotto1F, GREEN_GROTTO_1F, $9, 0
+	map_attributes GreenGrottoB1F, GREEN_GROTTO_B1F, $9, 0

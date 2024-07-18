@@ -5,9 +5,11 @@ Route28_MapScriptHeader:
 	callback MAPCALLBACK_CMDQUEUE, Route28RocksCallback
 	callback MAPCALLBACK_TILES, Route28Callback
 
-	db 2 ; warp events
+	db 4 ; warp events
 	warp_event 20, 16, ROUTE_1, 1
 	warp_event 21, 17, ROUTE_1, 1
+	warp_event 35, 55, ROUTE_1, 1
+	warp_event 18, 61, GREEN_GROTTO_1F, 1
 
 	db 0 ; coord events
 

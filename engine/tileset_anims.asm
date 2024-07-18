@@ -506,6 +506,7 @@ TilesetJungleAnim::
 	
 TilesetCaveAnim::
 TilesetLavaCaveAnim::
+TilesetGreenCaveAnim::
 	dw VTiles2 tile $5e, ScrollTileDown
 	dw VTiles2 tile $5f, ScrollTileRight
 	dw NULL,  LavaAnim2

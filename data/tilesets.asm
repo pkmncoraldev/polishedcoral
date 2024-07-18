@@ -771,6 +771,26 @@ INCBIN "data/tilesets/south_towns_attributes.bin.lz"
 TilesetSouthTownsColl::
 INCLUDE "data/tilesets/south_towns_collision.asm"
 
+SECTION "Tileset Data - green cave", ROMX
+
+TilesetGreenCaveGFX0::
+INCBIN "gfx/tilesets/green_cave.2bpp.vram0.lz"
+
+TilesetGreenCaveGFX1::
+INCBIN "gfx/tilesets/green_cave.2bpp.vram1.lz"
+
+TilesetGreenCaveGFX2::
+INCBIN "gfx/tilesets/green_cave.2bpp.vram2.lz"
+
+TilesetGreenCaveMeta::
+INCBIN "data/tilesets/green_cave_metatiles.bin.lz"
+
+TilesetGreenCaveAttr::
+INCBIN "data/tilesets/green_cave_attributes.bin.lz"
+
+TilesetGreenCaveColl::
+INCLUDE "data/tilesets/green_cave_collision.asm"
+
 SECTION "Tileset Headers", ROMX
 
 tileset: macro
@@ -820,4 +840,5 @@ Tilesets::
 	tileset TilesetBar
 	tileset TilesetAutumn
 	tileset TilesetSouthTowns
+	tileset TilesetGreenCave
 	tileset TilesetLavaCave

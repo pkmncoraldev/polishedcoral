@@ -87,6 +87,8 @@ SECTION "Dungeon Scripts3", ROMX
 INCLUDE "maps/LusterSewersMukRoom.asm"
 INCLUDE "maps/Route6UnderwaterCave.asm"
 INCLUDE "maps/IceCaveIceRockRoom.asm"
+INCLUDE "maps/GreenGrotto1F.asm"
+INCLUDE "maps/GreenGrottoB1F.asm"
 
 
 SECTION "Routes Scripts", ROMX

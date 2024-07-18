@@ -907,3 +907,9 @@ ObscuraCity_BlockData:
 AureoleTown_BlockData:
 	INCBIN "maps/AureoleTown.ablk.lz"
 	
+GreenGrotto1F_BlockData:
+	INCBIN "maps/GreenGrotto1F.ablk.lz"
+	
+GreenGrottoB1F_BlockData:
+	INCBIN "maps/GreenGrottoB1F.ablk.lz"
+	

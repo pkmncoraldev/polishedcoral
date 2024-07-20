@@ -88,3 +88,8 @@
 	tilecoll WATER, WATER, WATER, WATER ; 57
 	tilecoll LEDGE_RIGHT, WALL, LEDGE_RIGHT, WALL ; 58
 	tilecoll WALL, LADDER, WALL, FLOOR ; 59
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 5a
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 5b
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 5c
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 5d
+	tilecoll FLOOR, WALL, WALL, WALL ; 5e

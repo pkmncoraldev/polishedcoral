@@ -227,7 +227,7 @@ RadiantTownshipRoute21SignText:
 	
 RadiantTownshipFlowerShopSignText:
 	text "POLLEN PUFF"
-	line "FLOWER SHOP."
+	line "FLOWER SHOP"
 	done
 	
 RadiantTownshipSolarPanelText:

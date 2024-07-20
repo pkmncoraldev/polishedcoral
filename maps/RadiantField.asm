@@ -194,11 +194,22 @@ IrisSetNameAsm:
 RadiantFieldViolet:
 	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .time_to_save
-	jumptextfaceplayer RadiantFieldVioletText1
+	faceplayer 
+	opentext
+	writetext RadiantFieldVioletText1
+	farwritetext StdBlankText
+	pause 6
+	writetext RadiantFieldVioletText3
+	waitbutton
+	closetext
+	end
 .time_to_save
 	faceplayer
 	opentext
 	writetext RadiantFieldVioletText2
+	farwritetext StdBlankText
+	pause 6
+	writetext RadiantFieldVioletText3
 	waitbutton
 	closetext
 	playsound SFX_JUMP_OVER_LEDGE
@@ -270,13 +281,7 @@ RadiantFieldVioletText1:
 	line "of these flowers!"
 	
 	para "I wish I could"
-	line "smell them forev-"
-	
-	para "Ah…"
-	
-	para "AH!"
-	
-	para "…CHOO!"
+	line "smell them forev-<WAIT_S>"
 	done
 	
 RadiantFieldVioletText2:	
@@ -285,13 +290,11 @@ RadiantFieldVioletText2:
 	cont "flowers!"
 	
 	para "I wish I could"
-	line "smell them forev-"
+	line "smell them forev-<WAIT_S>"
+	done
 	
-	para "Ah…"
-	
-	para "AH!"
-	
-	para "…CHOO!"
+RadiantFieldVioletText3:
+	text "Ah…<WAIT_M> AH!<WAIT_L> …CHOO!"
 	
 	para "I better go home"
 	line "before GRAMMA"

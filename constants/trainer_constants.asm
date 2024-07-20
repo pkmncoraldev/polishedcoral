@@ -275,6 +275,7 @@ PLAYER_F EQU __enum__
 	trainerclass OFFICER
 	const SANCHEZ
 	const HARTWELL
+	const JOHNSON
 
 
 	trainerclass POKEMANIAC
@@ -491,6 +492,7 @@ PLAYER_F EQU __enum__
 	const SAMMY
 	const ANDY
 	const TRIPP
+	const TREY
 
 
 	trainerclass COOLTRAINERF
@@ -577,6 +579,7 @@ PLAYER_F EQU __enum__
 	trainerclass SKATER
 	const TONY
 	const CHAD
+	const BOB
 	
 	trainerclass SPA_TRAINER
 	const DENNIS_3

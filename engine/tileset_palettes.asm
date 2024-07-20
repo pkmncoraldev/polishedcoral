@@ -590,6 +590,8 @@ LoadSpecialMapPalette: ; 494ac
 	
 .autumn
 	ld a, [wMapNumber]
+	cp MAP_ROUTE_27
+	jr z, .construction2
 	cp MAP_ROUTE_26
 	jr z, .komore
 	cp MAP_KOMORE_VILLAGE
@@ -597,6 +599,16 @@ LoadSpecialMapPalette: ; 494ac
 .komore
 	ld hl, AutumnPalette
 	jr .ranch_finish
+.construction2
+	ld hl, ConstructionPalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld de, wUnknBGPals + 3 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
 .ranch
 	ld hl, OutsideRanchPalette
 	

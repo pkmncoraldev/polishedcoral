@@ -17,7 +17,6 @@ Route24North_MapScriptHeader:
 	person_event SPRITE_BEAUTY, 27, 29, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route24NorthTrainer1, -1
 	person_event SPRITE_BIRD_KEEPER, 25, 12, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route24NorthTrainer2, -1
 	itemball_event 30, 25, BLACK_BELT, 1, EVENT_ROUTE_24_POKE_BALL
-	tapeball_event 28,  5, MUSIC_AUTUMN, 1, EVENT_MUSIC_AUTUMN
 
 
 	const_def 1 ; object constants

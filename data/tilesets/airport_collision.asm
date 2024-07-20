@@ -10,15 +10,15 @@
 	tilecoll SKATE, SKATE, WALL, SKATE ; 09
 	tilecoll WALL, WALL, WALL, WALL ; 0a
 	tilecoll WATER, WATER, WATER, WATER ; 0b
-	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 0c
-	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 0d
+	tilecoll FLOOR, FLOOR, FLOOR, GRIND ; 0c
+	tilecoll FLOOR, FLOOR, GRIND, FLOOR ; 0d
 	tilecoll UP_WALL, UP_WALL, SKATE, SKATE ; 0e
-	tilecoll SKATE, SKATE, WALL, WALL ; 0f
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 10
+	tilecoll SKATE, SKATE, GRIND, GRIND ; 0f
+	tilecoll GRIND, GRIND, FLOOR, FLOOR ; 10
 	tilecoll SKATE, WALL, SKATE, SKATE ; 11
 	tilecoll FLOOR, NO_OLLIE, FLOOR, NO_OLLIE ; 12
 	tilecoll WATER, WATER, WATER, WATER ; 13
-	tilecoll WALL, WALL, SKATE, SKATE ; 14
+	tilecoll GRIND, GRIND, SKATE, SKATE ; 14
 	tilecoll WALL, SKATE, SKATE, SKATE ; 15
 	tilecoll HEADBUTT_TREE, WALL, HEADBUTT_TREE, WALL ; 16
 	tilecoll SKATE, SKATE, SKATE, WALL ; 17

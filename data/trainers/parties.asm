@@ -2463,6 +2463,15 @@ OfficerGroup:
 	db -1 ; end
 
 ; ================
+
+	; OFFICER
+	db "JOHNSON@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3976,6 +3985,15 @@ CooltrainerMGroup:
 	db -1 ; end
 
 ; ================
+
+	; COOLTRAINERM
+	db "TREY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -4510,6 +4528,15 @@ SkaterGroup:
 
 	; SKATER
 	db "CHAD@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SKATER
+	db "BOB@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

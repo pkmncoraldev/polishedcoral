@@ -14,28 +14,41 @@ Route27_MapScriptHeader:
 	xy_trigger 1, 11,  6, 0, Route25MapSignThing, 0, 0
 	xy_trigger 1, 11,  7, 0, Route25MapSignThing, 0, 0
 
-	db 15 ; bg events
+	db 19 ; bg events
 	signpost 12, 10, SIGNPOST_READ, Route27Sign
-	signpost 17, 20, SIGNPOST_READ, Route27Logs
-	signpost 17, 21, SIGNPOST_READ, Route27Logs
-	signpost 22, 19, SIGNPOST_READ, Route27Logs
-	signpost 22, 21, SIGNPOST_READ, Route27Logs
-	signpost 23, 30, SIGNPOST_READ, Route27Logs
-	signpost 23, 31, SIGNPOST_READ, Route27Logs
-	signpost 28, 31, SIGNPOST_READ, Route27Logs
-	signpost 19, 46, SIGNPOST_READ, Route27Logs
-	signpost 19, 47, SIGNPOST_READ, Route27Logs
-	signpost 24, 45, SIGNPOST_READ, Route27Logs
-	signpost 24, 47, SIGNPOST_READ, Route27Logs
+	signpost 17, 20, SIGNPOST_READ, Route27Beams
+	signpost 17, 21, SIGNPOST_READ, Route27Beams
+	signpost 22, 19, SIGNPOST_READ, Route27Beams
+	signpost 23, 30, SIGNPOST_READ, Route27Beams
+	signpost 23, 31, SIGNPOST_READ, Route27Beams
+	signpost 28, 31, SIGNPOST_READ, Route27Beams
+	signpost 28, 33, SIGNPOST_READ, Route27Beams
+	signpost 19, 46, SIGNPOST_READ, Route27Beams
+	signpost 19, 47, SIGNPOST_READ, Route27Beams
+	signpost 24, 45, SIGNPOST_READ, Route27Beams
+	signpost 24, 47, SIGNPOST_READ, Route27Beams
+	signpost 18, 17, SIGNPOST_READ, Route27Pipes
+	signpost 19, 17, SIGNPOST_READ, Route27Pipes
+	signpost 22, 43, SIGNPOST_READ, Route27Pipes
+	signpost 23, 43, SIGNPOST_READ, Route27Pipes
 	signpost 30, 41, SIGNPOST_READ, Route27BrightburgSign
 	signpost  8, -1, SIGNPOST_IFNOTSET, Route27Tree
 	signpost  9, -1, SIGNPOST_IFNOTSET, Route27Tree
 
-	db 3 ; object events
-;	person_event SPRITE_LEILANI_CHAIR_2, 12,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
+	db 13 ; object events
+	person_event SPRITE_COOLTRAINER_M,  9, 11, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 5, TrainerRoute27_1, -1
+	person_event SPRITE_SKATER, 22, 26, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute27_2, -1
+	person_event SPRITE_OFFICER, 23, 39, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute27_3, -1
+	person_event SPRITE_POKEMANIAC, 26, 19, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route27NPC1, -1
+	itemball_event 20, 22, FULL_RESTORE, 1, EVENT_ROUTE_27_POKE_BALL_1
+	tapeball_event 48, 19, MUSIC_AUTUMN, 1, EVENT_MUSIC_AUTUMN
 	person_event SPRITE_LEILANI_CHAIR_2, 23, 17, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
 	person_event SPRITE_LEILANI_CHAIR_2, 22, 29, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
 	person_event SPRITE_LEILANI_CHAIR_2, 25, 43, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
+	person_event SPRITE_MISC_CONE, 18, 13, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MISC_CONE, 26, 27, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MISC_CONE, 24, 37, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MISC_CONE, 26, 45, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 
 
 Route27Callback:
@@ -81,12 +94,96 @@ Route27Tree:
 .end
 	end
 
-Route27Logs:
-	jumptext Route27LogsText
+Route27NPC1:
+	jumptextfaceplayer Route27NPC1Text
 	
-Route27LogsText:
-	text "Some lumber is"
-	line "stacked neatly."
+Route27NPC1Text:
+	text "There's a little"
+	line "town ahead called"
+	cont "BRIGHTBURG."
+	
+	para "They were planning"
+	line "an urban expansion"
+	cont "project, but it"
+	cont "was cancelled."
+	
+	para "No one in town"
+	line "will tell me why…"
+	done
+
+TrainerRoute27_1:
+	generictrainer COOLTRAINERM, TREY, EVENT_BEAT_ROUTE_27_TRAINER_1, .SeenText, .BeatenText
+
+	text "I guess you got"
+	line "me beat, huh?"
+	done
+
+.SeenText:
+	text "You look tough."
+	
+	para "Not as much as me,"
+	line "though."
+	
+	para "Let me show you!"
+	done
+
+.BeatenText:
+	text "Wait, what?"
+	done
+	
+TrainerRoute27_2:
+	generictrainer SKATER, BOB, EVENT_BEAT_ROUTE_27_TRAINER_2, .SeenText, .BeatenText
+
+	text "I wonder why they"
+	line "abandoned this"
+	cont "place anyway…"
+	done
+
+.SeenText:
+	text "An abandoned"
+	line "construction site"
+	cont "is a great place"
+	cont "to skate!"
+	done
+
+.BeatenText:
+	text "You got me."
+	done
+	
+TrainerRoute27_3:
+	generictrainer OFFICER, JOHNSON, EVENT_BEAT_ROUTE_27_TRAINER_3, .SeenText, .BeatenText
+
+	text "My job is to keep"
+	line "hooligans like you"
+	cont "from loitering,"
+	cont "so move along!"
+	done
+
+.SeenText:
+	text "Are you"
+	line "trespassing?"
+	
+	para "Are you causing"
+	line "trouble?"
+	done
+
+.BeatenText:
+	text "Carry on then."
+	done
+
+Route27Beams:
+	jumptext Route27BeamsText
+	
+Route27BeamsText:
+	text "A stack of steel"
+	line "support beams."
+	done
+	
+Route27Pipes:
+	jumptext Route27PipesText
+	
+Route27PipesText:
+	text "Copper pipes."
 	done
 
 Route27Sign:
@@ -121,8 +218,6 @@ BrightCondosSign:
 BrightCondosSignText:
 	text "Coming soon:"
 	line "BRIGHTBURG CONDOS"
-	
-	para "…"
 	
 	para "A big red “X”"
 	line "covers the sign."

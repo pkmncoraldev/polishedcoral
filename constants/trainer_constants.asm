@@ -223,6 +223,8 @@ PLAYER_F EQU __enum__
 	const DARRYL
 	const HENRY
 	const KEITH
+	const PHILLIP
+	const BRAD
 	
 
 	trainerclass GRUNTM
@@ -262,6 +264,7 @@ PLAYER_F EQU __enum__
 	const SID
 	const REG
 	const RICK
+	const JASON
 	
 
 	trainerclass POKEFANF
@@ -286,6 +289,7 @@ PLAYER_F EQU __enum__
 	const SIMION
 	const THOMAS
 	const NOAH
+	const TRENT
 
 
 	trainerclass SUPER_NERD
@@ -462,12 +466,14 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass TEACHER
+	const KINSEY
 
 
 	trainerclass GUITARIST
 	const LARRY
 	const TITO
 	const VINNY
+	const MILLER
 
 
 	trainerclass BIKER
@@ -544,6 +550,7 @@ PLAYER_F EQU __enum__
 	const SPIKE
 	const IGGY
 	const MAO
+	const BEAU
 
 
 	trainerclass DELINQUENT_F
@@ -626,6 +633,7 @@ PLAYER_F EQU __enum__
 	const BETTY_6
 	const BETTY_7
 	const BETTY_8
+	const ANDREA
 	
 	trainerclass AROMA_LADY
 	const LINDA
@@ -634,6 +642,7 @@ PLAYER_F EQU __enum__
 	const CAROL
 	const AMBER
 	const JODI
+	const DIANE
 	
 	trainerclass TUBER
 	const SAMANTHA

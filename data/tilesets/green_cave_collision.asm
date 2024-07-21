@@ -93,3 +93,6 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 5c
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 5d
 	tilecoll FLOOR, WALL, WALL, WALL ; 5e
+	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; 5f
+	tilecoll WALL, FLOOR, WALL, WALL ; 60
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 61

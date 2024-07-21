@@ -2098,6 +2098,24 @@ HikerGroup:
 	db -1 ; end
 
 ; ================
+
+	; HIKER
+	db "PHILLIP@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; HIKER
+	db "BRAD@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2382,6 +2400,15 @@ PokefanMGroup:
 	db -1 ; end
 
 ; ================
+
+	; POKEFANM
+	db "JASON@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2541,6 +2568,15 @@ PokemaniacGroup:
 
 	; POKEMANIAC
 	db "NOAH@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; POKEMANIAC
+	db "TRENT@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3791,7 +3827,7 @@ TeacherGroup:
 ; ================
 
 	; TEACHER
-	db "UNUSED@"
+	db "KINSEY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -3825,6 +3861,15 @@ GuitaristGroup:
 
 	; GUITARIST
 	db "VINNY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; GUITARIST
+	db "MILLER@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -4274,6 +4319,15 @@ DelinquentmGroup:
 
 	; DELINQUENT_M
 	db "MAO@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; DELINQUENT_M
+	db "BEAU@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -4955,6 +5009,15 @@ SpaTrainerFGroup:
 	db -1 ; end
 
 ; ================
+
+	; SPA_TRAINER_F
+	db "ANDREA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 AromaLadyGroup:
@@ -5008,6 +5071,15 @@ AromaLadyGroup:
 
 	; AROMA_LADY
 	db "JODI@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; AROMA_LADY
+	db "DIANE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

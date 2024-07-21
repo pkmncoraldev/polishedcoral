@@ -5,7 +5,7 @@ GreenGrotto1F_MapScriptHeader:
 	callback MAPCALLBACK_CMDQUEUE, GreenGrotto1FRocksCallback
 
 	db 8 ; warp events
-	warp_event 35, 25, ROUTE_28, 4
+	warp_event 29, 27, ROUTE_28, 4
 	warp_event  3, 19, ROUTE_1, 1
 	warp_event 11, 13, GREEN_GROTTO_B1F, 1
 	warp_event 19, 21, GREEN_GROTTO_B1F, 2

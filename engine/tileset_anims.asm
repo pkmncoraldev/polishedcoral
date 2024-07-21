@@ -41,6 +41,7 @@ TilesetPokeCenterAnim::
 TilesetLibraryAnim::
 TilesetMall2Anim::
 TilesetIceCaveAnim::
+TilesetSouthBuildingsAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

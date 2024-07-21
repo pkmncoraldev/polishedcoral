@@ -913,3 +913,6 @@ GreenGrotto1F_BlockData:
 GreenGrottoB1F_BlockData:
 	INCBIN "maps/GreenGrottoB1F.ablk.lz"
 	
+Inn1F_BlockData:
+	INCBIN "maps/Inn1F.ablk.lz"
+	

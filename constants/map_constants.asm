@@ -445,6 +445,9 @@ MAP_NONE   EQU 0
 	newgroup													 ; 25
 	map_const AUREOLE_TOWN,								  17, 23 ; 1
 	
+	newgroup													 ; 26
+	map_const INN_1F,									  11,  7 ; 1
+	
 	newgroup													 ; EVO LOCATIONS GROUP
 	map_const ICE_CAVE_ICE_ROCK_ROOM,					   5,  5 ; 1
 	map_const HUNTERS_THICKET_MOSS_ROCK_ROOM,              7,  6 ; 2

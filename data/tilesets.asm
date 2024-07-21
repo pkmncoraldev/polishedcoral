@@ -791,6 +791,26 @@ INCBIN "data/tilesets/green_cave_attributes.bin.lz"
 TilesetGreenCaveColl::
 INCLUDE "data/tilesets/green_cave_collision.asm"
 
+SECTION "Tileset Data - south buildings", ROMX
+
+TilesetSouthBuildingsGFX0::
+INCBIN "gfx/tilesets/south_buildings.2bpp.vram0.lz"
+
+TilesetSouthBuildingsGFX1::
+INCBIN "gfx/tilesets/south_buildings.2bpp.vram1.lz"
+
+TilesetSouthBuildingsGFX2::
+INCBIN "gfx/tilesets/south_buildings.2bpp.vram2.lz"
+
+TilesetSouthBuildingsMeta::
+INCBIN "data/tilesets/south_buildings_metatiles.bin.lz"
+
+TilesetSouthBuildingsAttr::
+INCBIN "data/tilesets/south_buildings_attributes.bin.lz"
+
+TilesetSouthBuildingsColl::
+INCLUDE "data/tilesets/south_buildings_collision.asm"
+
 SECTION "Tileset Headers", ROMX
 
 tileset: macro
@@ -841,4 +861,5 @@ Tilesets::
 	tileset TilesetAutumn
 	tileset TilesetSouthTowns
 	tileset TilesetGreenCave
+	tileset TilesetSouthBuildings
 	tileset TilesetLavaCave

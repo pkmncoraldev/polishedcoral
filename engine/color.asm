@@ -964,6 +964,8 @@ LoadMapPals::
 	jp z, .autumn
 	cp TILESET_GROVE
 	jr z, .grove
+	cp TILESET_SOUTH_BUILDINGS
+	jp z, .computer
 	eventflagcheck EVENT_ROUTE_29_PAINTING_COLORS
 	jp nz, .route_29_painting
 	jp .normal

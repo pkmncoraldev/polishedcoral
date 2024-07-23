@@ -6,7 +6,7 @@ Music_Underwater: ; f06e1
 ; f06ed
 
 Music_Underwater_Ch1: ; f06ed
-	tempo 164
+	tempo 148
 	volume $77
 	vibrato $6, $34
 	tone $0001

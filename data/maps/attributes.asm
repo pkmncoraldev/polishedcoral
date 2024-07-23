@@ -741,3 +741,6 @@ ENDM
 	map_attributes GreenGrotto1F, GREEN_GROTTO_1F, $9, 0
 	map_attributes GreenGrottoB1F, GREEN_GROTTO_B1F, $9, 0
 	map_attributes Inn1F, INN_1F, $0, 0
+	map_attributes Inn2F, INN_2F, $0, 0
+	map_attributes Inn3F, INN_3F, $0, 0
+	map_attributes InnElevator, INN_ELEVATOR, $0, 0

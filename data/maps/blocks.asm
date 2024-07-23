@@ -404,6 +404,7 @@ LusterSkyscraper2_3F_BlockData:
 	
 LusterSkyscraper1_Elevator_BlockData:
 LusterSkyscraper2_Elevator_BlockData:
+InnElevator_BlockData:
 NettBuildingElevator_BlockData:
 	INCBIN "maps/LusterSkyscraperElevator.ablk.lz"
 	
@@ -915,4 +916,10 @@ GreenGrottoB1F_BlockData:
 	
 Inn1F_BlockData:
 	INCBIN "maps/Inn1F.ablk.lz"
+	
+Inn2F_BlockData:
+	INCBIN "maps/Inn2F.ablk.lz"
+	
+Inn3F_BlockData:
+	INCBIN "maps/Inn3F.ablk.lz"
 	

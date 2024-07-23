@@ -182,7 +182,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; b5
 	tilecoll WALL, WALL, WALL, WALL ; b6
 	tilecoll WALL, WALL, WALL, WALL ; b7
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; b8
+	tilecoll FLOOR, TRASH_CAN, FLOOR, FLOOR ; b8
 	tilecoll WALL, WALL, WALL, WALL ; b9
 	tilecoll WALL, WALL, COUNTER, WALL ; ba
 	tilecoll WALL, WALL, WALL, WALL ; bb

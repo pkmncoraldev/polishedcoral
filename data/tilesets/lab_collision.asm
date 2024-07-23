@@ -5,7 +5,7 @@
 	tilecoll WALL, WALL, BOOKSHELF, BOOKSHELF ; 04
 	tilecoll WALL, TOWN_MAP, WALL, FLOOR ; 05
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 06
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 07
+	tilecoll FLOOR, FLOOR, WALL, TRASH_CAN ; 07
 	tilecoll WALL, WALL, WALL, WALL ; 08
 	tilecoll WINDOW, WALL, FLOOR, FLOOR ; 09
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0a
@@ -47,7 +47,7 @@
 	tilecoll COUNTER, WALL, FLOOR, FLOOR ; 2e
 	tilecoll WALL, WALL, RIGHT_WALL, FLOOR ; 2f
 	tilecoll COUNTER, COUNTER, FLOOR, FLOOR ; 30
-	tilecoll WALL, WALL, WALL, WALL ; 31
+	tilecoll WALL, WALL, WALL, TRASH_CAN ; 31
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 32
 	tilecoll WALL, WALL, LEFT_WALL, LEFT_WALL ; 33
 	tilecoll WALL, WALL, WALL, WALL ; 34

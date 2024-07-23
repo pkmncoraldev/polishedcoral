@@ -97,7 +97,7 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 60
 	tilecoll WALL, WALL, WALL, WALL ; 61
 	tilecoll WALL, WALL, WALL, WALL ; 62
-	tilecoll WALL, WALL, FLOOR, WALL ; 63
+	tilecoll TRASH_CAN, WALL, FLOOR, WALL ; 63
 	tilecoll WALL, FLOOR, WALL, WALL ; 64
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 65
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 66

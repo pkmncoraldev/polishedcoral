@@ -13,7 +13,7 @@
 	tilecoll SKATE, GRIND, SKATE, GRIND ; 0c
 	tilecoll GRIND, SKATE, GRIND, SKATE ; 0d
 	tilecoll UP_WALL, UP_WALL, SKATE, SKATE ; 0e
-	tilecoll WALL, SKATE, SKATE, SKATE ; 0f
+	tilecoll TRASH_CAN, SKATE, SKATE, SKATE ; 0f
 	tilecoll WALL, WALL, WALL, HEADBUTT_TREE ; 10
 	tilecoll WALL, WALL, HEADBUTT_TREE, HEADBUTT_TREE ; 11
 	tilecoll WALL, WALL, HEADBUTT_TREE, WALL ; 12
@@ -73,7 +73,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 48
 	tilecoll WALL, WALL, WALL, WALL ; 49
 	tilecoll WALL, WALL, WALL, WALL ; 4a
-	tilecoll SKATE, WALL, SKATE, SKATE ; 4b
+	tilecoll SKATE, TRASH_CAN, SKATE, SKATE ; 4b
 	tilecoll GRIND, GRIND, GRIND, GRIND ; 4c
 	tilecoll SKATE, SKATE, SKATE, WALL ; 4d
 	tilecoll GRIND, GRIND, GRIND, GRIND ; 4e
@@ -147,7 +147,7 @@
 	tilecoll SKATE, SKATE, WALL, WALL ; 92
 	tilecoll WALL, WALL, SKATE, SKATE ; 93
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 94
-	tilecoll SKATE, WALL, SKATE, WALL ; 95
+	tilecoll SKATE, WALL, SKATE, TRASH_CAN ; 95
 	tilecoll UP_WALL, UP_WALL, SKATE, SKATE ; 96
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 97
 	tilecoll NO_OLLIE, GRIND, NO_OLLIE, GRIND ; 98
@@ -230,7 +230,7 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; e5
 	tilecoll FLOOR, FLOOR, NO_OLLIE, NO_OLLIE ; e6
 	tilecoll SKATE, GRIND, STAIRS, GRIND ; e7
-	tilecoll WALL, UP_WALL, SKATE, SKATE ; e8
+	tilecoll TRASH_CAN, UP_WALL, SKATE, SKATE ; e8
 	tilecoll UP_WALL, SKATE, SKATE, SKATE ; e9
 	tilecoll FLOOR, FLOOR, WALL, WALL ; ea
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; eb

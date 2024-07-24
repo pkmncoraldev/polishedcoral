@@ -923,3 +923,6 @@ Inn2F_BlockData:
 Inn3F_BlockData:
 	INCBIN "maps/Inn3F.ablk.lz"
 	
+InnVent_BlockData:
+	INCBIN "maps/InnVent.ablk.lz"
+	

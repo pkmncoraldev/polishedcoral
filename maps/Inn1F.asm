@@ -63,6 +63,9 @@ Inn1FLockedElevator:
 Inn1FLockedElevatorText:
 	text "It isn't running"
 	line "at the moment."
+	
+	para "Better take the"
+	line "stairs."
 	done
 	
 Inn1FLemonWater:

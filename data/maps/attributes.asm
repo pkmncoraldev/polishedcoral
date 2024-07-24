@@ -744,3 +744,4 @@ ENDM
 	map_attributes Inn2F, INN_2F, $0, 0
 	map_attributes Inn3F, INN_3F, $0, 0
 	map_attributes InnElevator, INN_ELEVATOR, $0, 0
+	map_attributes InnVent, INN_VENT, $0, 0

@@ -3,7 +3,7 @@ Inn3F_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 18 ; warp events
+	db 23 ; warp events
 	warp_event  0, 11, INN_2F, 3
 	warp_event 21, 11, INN_2F, 4
 	warp_event 30, 13, INN_3F, 17
@@ -22,6 +22,11 @@ Inn3F_MapScriptHeader:
 	warp_event 25,  5, INN_3F, 8
 	warp_event 23, 11, INN_3F, 3
 	warp_event 11, 11, INN_ELEVATOR, 1
+	warp_event  0,  2, ROUTE_1, 1
+	warp_event  6,  2, ROUTE_1, 1
+	warp_event 16,  2, ROUTE_1, 1
+	warp_event 22,  2, ROUTE_1, 1
+	warp_event 33, 11, INN_VENT, 5
 
 	db 0 ; coord events
 

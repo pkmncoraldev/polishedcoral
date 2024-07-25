@@ -1186,7 +1186,7 @@ PicnickerGroup:
 ; ================
 
 	; PICNICKER
-	db "BAILEY@"
+	db "BAILEY@"	;UNUSED
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

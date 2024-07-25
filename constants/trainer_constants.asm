@@ -120,7 +120,7 @@ PLAYER_F EQU __enum__
 	const BETH
 	const TINA
 	const LES
-	const BAILEY
+	const BAILEY ;UNUSED
 
 	trainerclass TWINS
 	const JENJAN

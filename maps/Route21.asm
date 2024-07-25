@@ -13,7 +13,7 @@ Route21_MapScriptHeader:
 	signpost  5, 20, SIGNPOST_JUMPTEXT, Route21Sign
 	signpost 26, 19, SIGNPOST_JUMPTEXT, Route21Sign
 	
-	db 12 ; object events
+	db 11 ; object events
 	tapeball_event 18, 9, MUSIC_WILD_BATTLE, 1, EVENT_MUSIC_WILD_BATTLE
 	cuttree_event 12, 23, EVENT_ROUTE_21_CUT_TREE_1
 	cuttree_event 20, 18, EVENT_ROUTE_21_CUT_TREE_2
@@ -21,10 +21,10 @@ Route21_MapScriptHeader:
 	fruittree_event 13, 22, FRUITTREE_ROUTE_21_1, ORAN_BERRY
 	fruittree_event  8, 24, FRUITTREE_ROUTE_21_2, PERSIM_BERRY
 	fruittree_event  7, 22, FRUITTREE_ROUTE_21_3, SITRUS_BERRY
-	person_event SPRITE_PICNICKER, 11,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, Route21Trainer1, -1
-	person_event SPRITE_PSYCHIC, 21, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route21Trainer2, -1
-	person_event SPRITE_ROCKER,  6, 23, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 3, Route21Trainer3, -1
-	person_event SPRITE_SKATER, 15, 31, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, Route21Trainer4, -1
+;	person_event SPRITE_PICNICKER, 11,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, Route21Trainer1, -1
+	person_event SPRITE_PSYCHIC, 21, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route21Trainer1, -1
+	person_event SPRITE_ROCKER,  6, 23, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 3, Route21Trainer2, -1
+	person_event SPRITE_SKATER, 15, 31, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, Route21Trainer3, -1
 	person_event SPRITE_BIRD_KEEPER, 24, 17, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route21Npc, -1
 	
 	const_def 1 ; object constants
@@ -60,29 +60,29 @@ Route21NpcText:
 	line "fellas at MOOMOO's…"
 	done
 	
+;Route21Trainer1:
+;	generictrainer PICNICKER, BAILEY, EVENT_BEAT_ROUTE_21_TRAINER_1, .SeenText, .BeatenText
+;
+;	text "Hmph!"
+;	
+;	para "My now stroll is"
+;	line "all ruined!"
+;	done
+
+;.SeenText:
+;	text "Isn't this such a"
+;	line "plesant path?"
+	
+;	para "Just perfect for"
+;	line "a nice stroll!"
+;	done
+
+;.BeatenText:
+;	text "Hmph!"
+;	done
+	
 Route21Trainer1:
-	generictrainer PICNICKER, BAILEY, EVENT_BEAT_ROUTE_21_TRAINER_1, .SeenText, .BeatenText
-
-	text "Hmph!"
-	
-	para "My now stroll is"
-	line "all ruined!"
-	done
-
-.SeenText:
-	text "Isn't this such a"
-	line "plesant path?"
-	
-	para "Just perfect for"
-	line "a nice stroll!"
-	done
-
-.BeatenText:
-	text "Hmph!"
-	done
-	
-Route21Trainer2:
-	generictrainer PSYCHIC_T, LINUS, EVENT_BEAT_ROUTE_21_TRAINER_2, .SeenText, .BeatenText
+	generictrainer PSYCHIC_T, LINUS, EVENT_BEAT_ROUTE_21_TRAINER_1, .SeenText, .BeatenText
 
 	text "Hmmm…"
 	
@@ -107,8 +107,8 @@ Route21Trainer2:
 	text "Hmmm…"
 	done
 	
-Route21Trainer3:
-	generictrainer GUITARIST, TITO, EVENT_BEAT_ROUTE_21_TRAINER_3, .SeenText, .BeatenText
+Route21Trainer2:
+	generictrainer GUITARIST, TITO, EVENT_BEAT_ROUTE_21_TRAINER_2, .SeenText, .BeatenText
 
 	text "You and your"
 	line "#MON may rock"
@@ -129,8 +129,8 @@ Route21Trainer3:
 	text "Heavy…"
 	done
 	
-Route21Trainer4:
-	generictrainer SKATER, CHAD, EVENT_BEAT_ROUTE_21_TRAINER_4, .SeenText, .BeatenText
+Route21Trainer3:
+	generictrainer SKATER, CHAD, EVENT_BEAT_ROUTE_21_TRAINER_3, .SeenText, .BeatenText
 
 	text "Oh yeah."
 	

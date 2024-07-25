@@ -448,7 +448,7 @@ MAP_NONE   EQU 0
 	newgroup													 ; 26
 	map_const INN_1F,									  13, 12 ; 1
 	map_const INN_2F,									  13,  7 ; 2
-	map_const INN_3F,									  17,  7 ; 3
+	map_const INN_3F,									  16,  7 ; 3
 	map_const INN_ELEVATOR,								   2,  2 ; 4
 	map_const INN_VENT,									  18, 10 ; 5
 	

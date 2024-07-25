@@ -30,17 +30,17 @@
 	tilecoll WALL, WALL, WALL, WALL ; 1d
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 1e
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1f
-	tilecoll WALL, WALL, DOOR, DOOR ; 20
+	tilecoll WALL, WALL, DOOR, WALL ; 20
 	tilecoll WALL, WALL, DOOR, WALL ; 21
-	tilecoll WALL, WALL, DOOR, WALL ; 22
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 23
+	tilecoll WALL, WALL, WALL, WALL ; 22
+	tilecoll WALL, WALL, WALL, WALL ; 23
 	tilecoll WALL, WALL, WALL, WALL ; 24
 	tilecoll WALL, WALL, WALL, DOOR ; 25
 	tilecoll WALL, WALL, ELEVATOR_BUTTON, WALL ; 26
-	tilecoll WALL, WALL, DOOR, WALL ; 27
+	tilecoll WALL, WALL, WALL, WALL ; 27
 	tilecoll WALL, WALL, WALL, DOOR ; 28
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 29
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 2a
+	tilecoll WALL, WALL, WALL, WALL ; 29
+	tilecoll WALL, WALL, WALL, WALL ; 2a
 	tilecoll WALL, WALL, WALL, DOOR ; 2b
 	tilecoll WALL, WALL, WALL, DOOR ; 2c
 	tilecoll WALL, WALL, FLOOR, TRASH_CAN ; 2d

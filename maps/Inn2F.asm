@@ -5,10 +5,10 @@ Inn2F_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 17 ; warp events
-	warp_event  1, 11, INN_1F, 3
-	warp_event 22, 11, INN_1F, 4
+	warp_event -1, -1, INN_1F, 3
+	warp_event 21, 11, INN_1F, 4
 	warp_event  0, 11, INN_3F, 1
-	warp_event 21, 11, INN_3F, 2
+	warp_event -1, -1, INN_3F, 2
 	warp_event  3, 11, INN_2F, 9
 	warp_event  7, 11, INN_2F, 11
 	warp_event 15, 11, INN_2F, 13

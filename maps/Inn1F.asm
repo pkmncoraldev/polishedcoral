@@ -7,8 +7,8 @@ Inn1F_MapScriptHeader:
 	db 17 ; warp events
 	warp_event 13, 23, CROSSROADS, 1
 	warp_event 14, 23, CROSSROADS, 2
-	warp_event  3, 11, INN_2F, 1
-	warp_event 24, 11, INN_2F, 2
+	warp_event -1, -1, INN_2F, 1
+	warp_event 23, 11, INN_2F, 2
 	warp_event  5, 11, INN_1F, 9
 	warp_event  9, 11, INN_1F, 11
 	warp_event 17, 11, INN_1F, 13

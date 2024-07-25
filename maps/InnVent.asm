@@ -139,6 +139,7 @@ InnVentGrateEnd:
 	closetext
 	playsound SFX_SLUDGE_BOMB
 	reloadmappart
+	callasm Inn1FResertScriptVar
 	end
 	
 InnVentGrateNo:

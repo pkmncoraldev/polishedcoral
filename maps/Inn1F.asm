@@ -1,5 +1,6 @@
 Inn1F_MapScriptHeader:
-	db 0 ; scene scripts
+	db 1 ; scene scripts
+	scene_script Inn1FTrigger0
 
 	db 0 ; callbacks
 
@@ -49,6 +50,132 @@ Inn1F_MapScriptHeader:
 	person_event SPRITE_INVISIBLE, 11, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
 	person_event SPRITE_INVISIBLE, 11, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
 
+	const_def 1 ; object constants
+	const INN_1F_WALL_1
+	const INN_1F_WALL_2
+	const INN_1F_WALL_3
+	const INN_1F_WALL_4
+	const INN_1F_CLERK
+	const INN_1F_DOOR_LOCK_1
+	const INN_1F_DOOR_LOCK_2
+	const INN_1F_DOOR_LOCK_3
+	const INN_1F_DOOR_LOCK_4
+	const INN_1F_DOOR_LOCK_5
+	
+Inn1FTrigger0:
+	callasm Inn1FRunningInTheHallsASM
+	ifequal 1, .hall
+	ifequal 2, .lobby
+	end
+.hall
+	disappear INN_1F_CLERK
+	callasm Inn1FMoveClerkAsm
+	ifequal 2, .right
+	appear INN_1F_CLERK
+	special Special_StopRunning
+	applyonemovement INN_1F_CLERK, step_left
+	opentext
+	writetext Inn1FNoRunningHallsText
+	waitbutton
+	closetext
+	applyonemovement INN_1F_CLERK, step_right
+	disappear INN_1F_CLERK
+	callasm Inn1FResertScriptVar
+	moveperson INN_1F_CLERK, $0a, $13
+	appear INN_1F_CLERK
+	end
+.right
+	appear INN_1F_CLERK
+	special Special_StopRunning
+	applyonemovement INN_1F_CLERK, step_right
+	opentext
+	writetext Inn1FNoRunningHallsText
+	waitbutton
+	closetext
+	applyonemovement INN_1F_CLERK, step_left
+	disappear INN_1F_CLERK
+	callasm Inn1FResertScriptVar
+	moveperson INN_1F_CLERK, $0a, $13
+	appear INN_1F_CLERK
+	end
+.lobby
+	setlasttalked INN_1F_CLERK
+	faceplayer
+	opentext
+	writetext Inn1FNoRunningLobbyText
+	waitbutton
+	closetext
+	spriteface INN_1F_CLERK, RIGHT
+	callasm Inn1FResertScriptVar
+	end
+	
+Inn1FNoRunningHallsText:
+	text "Hey!"
+	
+	para "No running in"
+	line "the halls!"
+	done
+	
+Inn1FNoRunningLobbyText:
+	text "Hey!"
+	
+	para "No running in"
+	line "the lobby!"
+	done
+	
+Inn1FMoveClerkAsm:
+	ld a, [wXCoord]
+	cp $0b
+	jr nc, .right
+	ld a, 1
+	ld [wScriptVar], a
+	ld a, INN_1F_CLERK
+	ld b, a
+	ld a, [wXCoord]
+	add 6
+	add 4
+	ld d, a
+	ld a, [wYCoord]
+	add 4
+	ld e, a
+	farjp CopyDECoordsToMapObject
+.right
+	ld a, 2
+	ld [wScriptVar], a
+	ld a, INN_1F_CLERK
+	ld b, a
+	ld a, [wXCoord]
+	sub 5
+	add 4
+	ld d, a
+	ld a, [wYCoord]
+	add 4
+	ld e, a
+	farjp CopyDECoordsToMapObject
+	
+Inn1FResertScriptVar:
+	xor a
+	ld [wScriptVar], a
+	ret
+	
+Inn1FRunningInTheHallsASM:
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	ret nz
+	ld a, [wYCoord]
+	cp $0e
+	jr nc, .bottom
+	cp $6
+	jr nc, .middle
+	ret
+.middle
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+.bottom
+	ld a, 2
+	ld [wScriptVar], a
+	ret
 	
 Inn1FLockedDoor:
 	jumptext Inn1FLockedDoorText

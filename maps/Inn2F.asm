@@ -1,5 +1,6 @@
 Inn2F_MapScriptHeader:
-	db 0 ; scene scripts
+	db 1 ; scene scripts
+	scene_script Inn2FTrigger0
 
 	db 0 ; callbacks
 
@@ -36,13 +37,84 @@ Inn2F_MapScriptHeader:
 	signpost 11,  8, SIGNPOST_JUMPTEXT, Inn2F203Text
 	signpost 11,  4, SIGNPOST_JUMPTEXT, Inn2F204Text
 
-	db 5 ; object events
+	db 6 ; object events
+	person_event SPRITE_FAT_GUY, 0, 0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Inn1FClerk, EVENT_ALWAYS_SET
 	person_event SPRITE_INVISIBLE, 11,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
 	person_event SPRITE_INVISIBLE, 11,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
 	person_event SPRITE_INVISIBLE, 11, 11, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedElevator, -1
 	person_event SPRITE_INVISIBLE, 11, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
 	person_event SPRITE_INVISIBLE, 11, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
 	
+	const_def 1 ; object constants
+	const INN_2F_CLERK
+	const INN_2F_DOOR_LOCK_1
+	const INN_2F_DOOR_LOCK_2
+	const INN_2F_DOOR_LOCK_3
+	const INN_2F_DOOR_LOCK_4
+	const INN_2F_DOOR_LOCK_5
+	
+	
+Inn2FTrigger0:
+	callasm Inn1FRunningInTheHallsASM
+	ifnotequal 0, .running
+	end
+.running
+	disappear INN_2F_CLERK
+	callasm Inn2FMoveClerkAsm
+	ifequal 2, .right
+	appear INN_2F_CLERK
+	special Special_StopRunning
+	applyonemovement INN_2F_CLERK, step_left
+	opentext
+	writetext Inn1FNoRunningHallsText
+	waitbutton
+	closetext
+	applyonemovement INN_2F_CLERK, step_right
+	disappear INN_2F_CLERK
+	callasm Inn1FResertScriptVar
+	end
+.right
+	appear INN_2F_CLERK
+	special Special_StopRunning
+	applyonemovement INN_2F_CLERK, step_right
+	opentext
+	writetext Inn1FNoRunningHallsText
+	waitbutton
+	closetext
+	applyonemovement INN_2F_CLERK, step_left
+	disappear INN_2F_CLERK
+	callasm Inn1FResertScriptVar
+	end
+	
+Inn2FMoveClerkAsm:
+	ld a, [wXCoord]
+	cp $0b
+	jr nc, .right
+	ld a, 1
+	ld [wScriptVar], a
+	ld a, INN_2F_CLERK
+	ld b, a
+	ld a, [wXCoord]
+	add 6
+	add 4
+	ld d, a
+	ld a, [wYCoord]
+	add 4
+	ld e, a
+	farjp CopyDECoordsToMapObject
+.right
+	ld a, 2
+	ld [wScriptVar], a
+	ld a, INN_2F_CLERK
+	ld b, a
+	ld a, [wXCoord]
+	sub 5
+	add 4
+	ld d, a
+	ld a, [wYCoord]
+	add 4
+	ld e, a
+	farjp CopyDECoordsToMapObject
 	
 Inn2F201Text:
 	text "ROOM 201"

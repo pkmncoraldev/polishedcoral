@@ -200,6 +200,7 @@ Inn1FLemonWater:
 	writetext Inn1FLemonWaterText1
 	yesorno
 	iffalse .no
+	callasm Inn1FResertScriptVar
 	writetext Inn1FLemonWaterTextYes
 	waitbutton
 	closetext

@@ -423,7 +423,7 @@ MAP_NONE   EQU 0
 	map_const FIGHTING_DOJO,                           	   4,  5 ; 17
 	map_const ROUTE_25,									  23, 10 ; 18
 	map_const ROUTE_26,									  20, 17 ; 19
-	map_const ROUTE_27,									  27, 19 ; 20
+	map_const ROUTE_27,									  28, 19 ; 20
 	
 	newgroup													 ; 23
 	

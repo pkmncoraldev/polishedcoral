@@ -5,8 +5,8 @@ Route27_MapScriptHeader:
 	callback MAPCALLBACK_TILES, Route27Callback
 
 	db 2 ; warp events
-	warp_event 39, 33, ROUTE_25_GATE, 1
-	warp_event 40, 33, ROUTE_25_GATE, 2
+	warp_event 41, 33, ROUTE_25_GATE, 1
+	warp_event 42, 33, ROUTE_25_GATE, 2
 
 	db 4 ; coord events
 	xy_trigger 0, 12,  6, 0, Route27MapSignThing, 0, 0
@@ -19,36 +19,36 @@ Route27_MapScriptHeader:
 	signpost 17, 20, SIGNPOST_READ, Route27Beams
 	signpost 17, 21, SIGNPOST_READ, Route27Beams
 	signpost 22, 19, SIGNPOST_READ, Route27Beams
-	signpost 23, 30, SIGNPOST_READ, Route27Beams
-	signpost 23, 31, SIGNPOST_READ, Route27Beams
-	signpost 28, 31, SIGNPOST_READ, Route27Beams
+	signpost 23, 32, SIGNPOST_READ, Route27Beams
+	signpost 23, 33, SIGNPOST_READ, Route27Beams
 	signpost 28, 33, SIGNPOST_READ, Route27Beams
-	signpost 19, 46, SIGNPOST_READ, Route27Beams
-	signpost 19, 47, SIGNPOST_READ, Route27Beams
-	signpost 24, 45, SIGNPOST_READ, Route27Beams
+	signpost 28, 35, SIGNPOST_READ, Route27Beams
+	signpost 19, 48, SIGNPOST_READ, Route27Beams
+	signpost 19, 49, SIGNPOST_READ, Route27Beams
 	signpost 24, 47, SIGNPOST_READ, Route27Beams
+	signpost 24, 49, SIGNPOST_READ, Route27Beams
 	signpost 18, 17, SIGNPOST_READ, Route27Pipes
 	signpost 19, 17, SIGNPOST_READ, Route27Pipes
-	signpost 22, 43, SIGNPOST_READ, Route27Pipes
-	signpost 23, 43, SIGNPOST_READ, Route27Pipes
-	signpost 30, 41, SIGNPOST_READ, Route27BrightburgSign
+	signpost 22, 45, SIGNPOST_READ, Route27Pipes
+	signpost 23, 45, SIGNPOST_READ, Route27Pipes
+	signpost 30, 43, SIGNPOST_READ, Route27BrightburgSign
 	signpost  8, -1, SIGNPOST_IFNOTSET, Route27Tree
 	signpost  9, -1, SIGNPOST_IFNOTSET, Route27Tree
 
 	db 13 ; object events
 	person_event SPRITE_COOLTRAINER_M,  9, 11, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 5, TrainerRoute27_1, -1
 	person_event SPRITE_SKATER, 22, 26, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute27_2, -1
-	person_event SPRITE_OFFICER, 23, 39, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute27_3, -1
-	person_event SPRITE_POKEMANIAC, 26, 19, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route27NPC1, -1
+	person_event SPRITE_OFFICER, 23, 41, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute27_3, -1
+	person_event SPRITE_POKEMANIAC, 26, 21, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route27NPC1, -1
 	itemball_event 20, 22, FULL_RESTORE, 1, EVENT_ROUTE_27_POKE_BALL_1
 	tapeball_event 48, 19, MUSIC_AUTUMN, 1, EVENT_MUSIC_AUTUMN
 	person_event SPRITE_LEILANI_CHAIR_2, 23, 17, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
-	person_event SPRITE_LEILANI_CHAIR_2, 22, 29, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
-	person_event SPRITE_LEILANI_CHAIR_2, 25, 43, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
+	person_event SPRITE_LEILANI_CHAIR_2, 22, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
+	person_event SPRITE_LEILANI_CHAIR_2, 25, 45, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
 	person_event SPRITE_MISC_CONE, 18, 13, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_MISC_CONE, 26, 27, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_MISC_CONE, 24, 37, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_MISC_CONE, 26, 45, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MISC_CONE, 24, 39, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MISC_CONE, 26, 47, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 
 
 Route27Callback:

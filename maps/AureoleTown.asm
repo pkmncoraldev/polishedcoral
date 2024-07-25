@@ -4,7 +4,7 @@ AureoleTown_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 1 ; warp events
-	warp_event 23,  5, ROUTE_1, 1
+	warp_event 27,  5, ROUTE_1, 1
 
 	db 0 ; coord events
 

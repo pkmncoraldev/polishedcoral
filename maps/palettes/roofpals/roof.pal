@@ -125,6 +125,21 @@
 	RGB 08, 08, 08
 	RGB 04, 04, 08
 	RGB 00, 00, 00
+;25 - Aureole
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+;26 - Inn
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+;last - Evo Locations
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 ;last - Fake Route 1
 	RGB 00, 00, 00
 	RGB 00, 00, 00

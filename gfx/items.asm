@@ -271,6 +271,7 @@ TheThingIcon: 	  				INCBIN "gfx/items/1.2bpp"
 TorchIcon:        				INCBIN "gfx/items/torch.2bpp"
 OldKeyIcon:       				INCBIN "gfx/items/1.2bpp"
 ClayPotIcon:  	  				INCBIN "gfx/items/1.2bpp"
+Room104KeyIcon:
 BRoomKeyIcon:
 YRoomKeyIcon:
 RRoomKeyIcon:     				INCBIN "gfx/items/twinkle_key.2bpp"

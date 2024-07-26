@@ -2,7 +2,8 @@ Inn1F_MapScriptHeader:
 	db 1 ; scene scripts
 	scene_script Inn1FTrigger0
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, Inn1FCallback
 
 	db 17 ; warp events
 	warp_event 13, 23, CROSSROADS, 1
@@ -25,7 +26,7 @@ Inn1F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 11 ; bg events
+	db 18 ; bg events
 	signpost 20,  7, SIGNPOST_JUMPTEXT, Inn1FLaptopText
 	signpost 15, 12, SIGNPOST_JUMPTEXT, Inn1FWetFloorText
 	signpost 11,  7, SIGNPOST_JUMPTEXT, Inn1FPainting1Text
@@ -37,18 +38,29 @@ Inn1F_MapScriptHeader:
 	signpost 11, 16, SIGNPOST_JUMPTEXT, Inn1F102Text
 	signpost 11, 10, SIGNPOST_JUMPTEXT, Inn1F103Text
 	signpost 11,  6, SIGNPOST_JUMPTEXT, Inn1F104Text
+	signpost 19, 11, SIGNPOST_READ, Inn1FClerkDesk
+	signpost  0,  0, SIGNPOST_JUMPTEXT, Inn1FPainting2Text
+	signpost  0,  6, SIGNPOST_JUMPTEXT, Inn1FPainting2Text
+	signpost  0, 16, SIGNPOST_JUMPTEXT, Inn1FPainting2Text
+	signpost  0, 22, SIGNPOST_JUMPTEXT, Inn1FPainting2Text
+	signpost  2,  3, SIGNPOST_READ, Inn1FPlayersBed
+	signpost  1,  7, SIGNPOST_READ, Inn1FTrashCanPassword
 
-	db 10 ; object events
+	db 14 ; object events
 	person_event SPRITE_MINA_GROUND, 17,  8, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_MINA_GROUND, 17,  9, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_MINA_GROUND, 17, 10, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_MINA_GROUND, 17, 11, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_FAT_GUY, 19, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Inn1FClerk, -1
-	person_event SPRITE_INVISIBLE, 11,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
-	person_event SPRITE_INVISIBLE, 11,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
-	person_event SPRITE_INVISIBLE, 11, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedElevator, -1
-	person_event SPRITE_INVISIBLE, 11, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
-	person_event SPRITE_INVISIBLE, 11, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
+	person_event SPRITE_COLBY, 11,  5, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1F104LockedDoor, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
+	person_event SPRITE_COLBY, 11,  9, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, EVENT_INN_1F_103_OPEN
+	person_event SPRITE_COLBY, 11, 13, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedElevator, -1
+	person_event SPRITE_COLBY, 11, 17, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
+	person_event SPRITE_COLBY, 11, 21, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
+	person_event SPRITE_POKEFAN_F, 19, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FCustomer1, -1
+	person_event SPRITE_CUTE_GIRL, 20, 16, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Inn1FCustomer2, -1
+	person_event SPRITE_GENERAL_VARIABLE_1, 19, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn1FUnfortunateCustomer, EVENT_INN_1F_UNFORTUNATE_CUSTOMER
+	person_event SPRITE_SNARE_GIRL,  2,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareGirl, EVENT_INN_1F_ROCKET_GIRL
 
 	const_def 1 ; object constants
 	const INN_1F_WALL_1
@@ -61,6 +73,10 @@ Inn1F_MapScriptHeader:
 	const INN_1F_DOOR_LOCK_3
 	const INN_1F_DOOR_LOCK_4
 	const INN_1F_DOOR_LOCK_5
+	const INN_1F_CUSTOMER_1
+	const INN_1F_CUSTOMER_2
+	const INN_1F_UNFORTUNATE_CUSTOMER
+	const INN_1F_SNARE_GIRL
 	
 Inn1FTrigger0:
 	callasm Inn1FRunningInTheHallsASM
@@ -108,6 +124,23 @@ Inn1FTrigger0:
 	spriteface INN_1F_CLERK, RIGHT
 	callasm Inn1FResertScriptVar
 	end
+	
+Inn1FCallback:
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .playerfemale
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .playerfemale
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .playerfemale
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .playerfemale
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_POKEMANIAC
+	callasm Inn1FResertScriptVar
+	return
+.playerfemale
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_BATTLE_GIRL
+	callasm Inn1FResertScriptVar
+	return
 	
 Inn1FNoRunningHallsText:
 	text "Hey!"
@@ -165,7 +198,7 @@ Inn1FRunningInTheHallsASM:
 	ld a, [wYCoord]
 	cp $0e
 	jr nc, .bottom
-	cp $6
+	cp $0c
 	jr nc, .middle
 	ret
 .middle
@@ -176,6 +209,189 @@ Inn1FRunningInTheHallsASM:
 	ld a, 2
 	ld [wScriptVar], a
 	ret
+	
+Inn1FTrashCanPassword:
+	setevent EVENT_INN_1F_READ_103_NOTE
+	jumptext Inn1FTrashCanPasswordText
+	
+Inn1FTrashCanPasswordText:
+	text "Here is the code"
+	line "for ROOM 201:"
+	
+	para "TODO"
+	
+	para "Do NOT forget it"
+	line "this time!"
+	done
+	
+Inn1FSnareGirl:
+	jumptextfaceplayer Inn1FSnareGirlText
+	
+Inn1FSnareGirlText:
+	text "Oh boy."
+	
+	para "I hope this"
+	line "doesn't come back"
+	cont "to bite me…"
+	done
+	
+Inn1FPlayersBed:
+	opentext
+	writetext Inn1FPlayersBedText1
+	yesorno
+	iffalse .end
+	closetext
+	special FadeOutPalettes
+	special HealParty
+	special SaveMusic
+	playmusic MUSIC_HEAL
+	checkevent EVENT_INN_1F_SLEPT
+	iftrue .skip
+	setevent EVENT_INN_1F_SLEPT
+	setevent EVENT_INN_1F_103_OPEN
+	appear INN_1F_SNARE_GIRL
+.skip
+	pause 60
+	special RestoreMusic
+	spriteface PLAYER, DOWN
+	callasm LoadMapPals
+	special FadeInPalettes
+	callasm Inn1FResertScriptVar
+	jumptext Inn1FPlayersBedText2
+.end
+	closetext
+	callasm Inn1FResertScriptVar
+	end
+	
+Inn1FPlayersBedText1:
+	text "It's your bed.<WAIT_S>"
+	line "Take a rest?"
+	done
+	
+Inn1FPlayersBedText2:
+	text "Better get going!"
+	done
+	
+Inn1FCustomer1:
+	faceplayer
+	opentext
+	writetext Inn1FCustomer1Text
+	waitbutton
+	closetext
+	spriteface INN_1F_CUSTOMER_1, DOWN
+	end
+	
+Inn1FCustomer1Text:
+	text "I just want a"
+	line "place to lie down"
+	cont "for a while."
+	
+	para "I'm so tired!"
+	done
+	
+Inn1FCustomer2:
+	faceplayer
+	opentext
+	writetext Inn1FCustomer2Text
+	waitbutton
+	closetext
+	spriteface INN_1F_CUSTOMER_2, UP
+	end
+	
+Inn1FCustomer2Text:
+	text "Apparently a big"
+	line "group came along"
+	cont "and rented the"
+	cont "rest of the rooms."
+	done
+	
+Inn1FUnfortunateCustomer:
+	setevent EVENT_INN_1F_UNFORTUNATE_CUSTOMER
+	setevent EVENT_INN_1F_UNFORTUNATE_CUSTOMER_2
+	applyonemovement INN_1F_UNFORTUNATE_CUSTOMER, turn_step_left
+	opentext
+	writetext Inn1FUnfortunateCustomerText1
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement INN_1F_CLERK, turn_step_right
+	opentext
+	writetext Inn1FUnfortunateCustomerText2
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement INN_1F_UNFORTUNATE_CUSTOMER, turn_step_left
+	opentext
+	writetext Inn1FUnfortunateCustomerText3
+	waitbutton
+	closetext
+	pause 5
+	spriteface PLAYER, DOWN
+	pause 10
+	callasm Inn1FResertScriptVar
+	jumptext Inn1FUnfortunateCustomerText4
+	
+Inn1FUnfortunateCustomerText1:
+	text "???: I told you,"
+	line "I paid before I"
+	cont "got here."
+	
+	para "My name is"
+	line "<PLAYER>!"
+	done
+	
+Inn1FUnfortunateCustomerText2:
+	text "I understand, but"
+	line "I don't have any"
+	cont "more rooms under"
+	cont "that name."
+	
+	para "I'm sorry."
+	done
+	
+Inn1FUnfortunateCustomerText3:
+	text "Other <PLAYER>:"
+	line "Well, what am I"
+	cont "meant to do now?"
+	
+	para "I don't have any"
+	line "place to stay!"
+	done
+	
+Inn1FUnfortunateCustomerText4:
+	text "Better stay out"
+	line "it…"
+	done
+	
+Inn1F104LockedDoor:
+	checkitem ROOM_104_KEY
+	iftrue .unlock_door
+	callasm Inn1FResertScriptVar
+	jumptext Inn1FLockedDoorText
+.unlock_door
+	opentext
+	writetext Inn1F104LockedDoorText1
+	waitbutton
+	closetext
+	disappear INN_1F_DOOR_LOCK_1
+	pause 7
+	playsound SFX_WALL_OPEN
+	pause 14
+	opentext
+	writetext Inn1F104LockedDoorText2
+	waitbutton
+	closetext
+	callasm Inn1FResertScriptVar
+	end
+	
+Inn1F104LockedDoorText1:
+	text "<PLAYER> used"
+	line "ROOM 104 KEY."
+	done
+	
+Inn1F104LockedDoorText2:
+	text "The door unlocked."
+	done
 	
 Inn1FLockedDoor:
 	jumptext Inn1FLockedDoorText
@@ -321,6 +537,100 @@ Inn1FWetFloorText:
 	line "even wet…"
 	done
 	
+Inn1FClerkDesk:
+	opentext
+	checkitem ROOM_104_KEY
+	iftrue .have_key
+	writetext Inn1FClerkDeskText1
+	waitbutton
+	closetext
+	spriteface INN_1F_CLERK, UP
+	pause 10
+	opentext
+	writetext Inn1FClerkDeskText2
+	farwritetext StdBlankText
+	pause 6
+	special Special_DotDotDot
+	closetext
+	pause 60
+	spriteface INN_1F_CLERK, RIGHT
+	opentext
+	writetext Inn1FClerkDeskText3
+	waitbutton
+	verbosegiveitem ROOM_104_KEY
+	writetext Inn1FClerkDeskText4
+	waitbutton
+	closetext
+	clearevent EVENT_INN_1F_UNFORTUNATE_CUSTOMER
+	callasm Inn1FResertScriptVar
+	end
+.have_key
+	writetext Inn1FClerkDeskText5
+	waitbutton
+	closetext
+	callasm Inn1FResertScriptVar
+	end
+	
+Inn1FClerkDeskText1:
+	text "Welcome to the"
+	line "CROSSROADS INN."
+	
+	para "What's the name on"
+	line "your reservation?"
+	
+	para "<PLAYER>?<WAIT_M>"
+	line "Let's see here."
+	done
+	
+Inn1FClerkDeskText2:
+	text "CLICK <WAIT_S>CLACK <WAIT_S>CLICK<WAIT_L>"
+	done
+	
+Inn1FClerkDeskText3:
+	text "Ok, we have you"
+	line "right here."
+	
+	para "Your room has"
+	line "already been paid"
+	cont "for in full."
+	
+	para "Here is your key."
+	done
+	
+Inn1FClerkDeskText4:
+	text "Your room is down"
+	line "the hall to the"
+	cont "left."
+	
+	para "Have a great stay!"
+	done
+	
+Inn1FClerkDeskText5:
+	text "Most of our rooms"
+	line "have been rented"
+	cont "by a shady group."
+	
+	para "They're called"
+	line "TEAM SNARE."
+	
+	para "As long as they"
+	line "don't cause issues"
+	cont "in the rooms, it's"
+	cont "not my problem."
+	done
 	
 Inn1FClerk:
+	faceplayer
+	opentext
+	writetext Inn1FClerkBackText
+	waitbutton
+	closetext
+	spriteface INN_1F_CLERK, RIGHT
 	end
+	
+Inn1FClerkBackText:
+	text "How'd you get back"
+	line "here?"
+	
+	para "Come back later."
+	done

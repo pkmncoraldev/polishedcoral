@@ -31,7 +31,7 @@ Inn3F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 14 ; bg events
+	db 18 ; bg events
 	signpost 11,  5, SIGNPOST_JUMPTEXT, Inn1FPainting1Text
 	signpost 11, 17, SIGNPOST_JUMPTEXT, Inn1FPainting2Text
 	signpost  0,  0, SIGNPOST_JUMPTEXT, Inn1FPainting2Text
@@ -46,9 +46,13 @@ Inn3F_MapScriptHeader:
 	signpost 11, 29, SIGNPOST_JUMPTEXT, Inn3FShelfText
 	signpost 11, 28, SIGNPOST_JUMPTEXT, Inn3FShelfText
 	signpost 11, 20, SIGNPOST_JUMPTEXT, Inn3FMaintenanceText
+	signpost  0,  0, SIGNPOST_JUMPTEXT, Inn1FPainting2Text
+	signpost  0,  6, SIGNPOST_JUMPTEXT, Inn1FPainting2Text
+	signpost  0, 16, SIGNPOST_JUMPTEXT, Inn1FPainting2Text
+	signpost  0, 22, SIGNPOST_JUMPTEXT, Inn1FPainting2Text
 
 	db 7 ; object events
-	person_event SPRITE_FAT_GUY, 0, 0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Inn1FClerk, EVENT_ALWAYS_SET
+	person_event SPRITE_FAT_GUY, -1, -1, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Inn1FClerk, EVENT_ALWAYS_SET
 	person_event SPRITE_INVISIBLE, 11,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
 	person_event SPRITE_INVISIBLE, 11,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
 	person_event SPRITE_INVISIBLE, 11, 11, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedElevator, -1

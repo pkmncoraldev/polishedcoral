@@ -105,7 +105,7 @@ ItemDescriptions:
 	dw TrainTicketDesc
 	dw TrainPassDesc
 	dw NettSpecsDesc
-	dw OrangeTicketDesc
+	dw Room104KeyDesc
 	dw MysticTicketDesc
 	dw OldSeaMapDesc
 	dw ShinyCharmDesc
@@ -647,7 +647,10 @@ NettSpecsDesc:
 	db   "Reveal the unseen."
 	next "Made by NETT CO.@"
 
-OrangeTicketDesc:
+Room104KeyDesc:
+	db   "Key to room at the"
+	next "CROSSROADS INN.@"
+	
 MysticTicketDesc:
 	db   "A ticket for the"
 	next "Seagallop Ferry.@"

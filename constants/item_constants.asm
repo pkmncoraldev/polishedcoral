@@ -123,7 +123,7 @@
 	const TRAIN_TICKET ; 68
 	const TRAIN_PASS   ; 69
 	const NETT_SPECS   ; 6a
-	const ORANGETICKET ; 6b - replace
+	const ROOM_104_KEY ; 6b
 	const MYSTICTICKET ; 6c - replace
 	const OLD_SEA_MAP  ; 6d - replace
 	const SHINY_CHARM  ; 6e
@@ -445,7 +445,7 @@
 	const NAM_OLD_ROD      ; 94
 	const NAM_OLD_SEA_MAP  ; 95
 	const NAM_ORAN_BERRY   ; 96
-	const NAM_ORANGETICKET ; 97
+	const NAM_ROOM_104_KEY ; 97
 	const NAM_OVAL_CHARM   ; 98
 	const NAM_PARALYZEHEAL ; 99
 	const NAM_PARK_BALL    ; 9a

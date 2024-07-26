@@ -106,7 +106,7 @@ ItemIconPointers:
 	dba TrainTicketIcon
 	dba TrainPassIcon
 	dba NettSpecsIcon
-	dba UnusedItemIcon
+	dba Room104KeyIcon
 	dba UnusedItemIcon
 	dba UnusedItemIcon
 	dba ShinyCharmIcon

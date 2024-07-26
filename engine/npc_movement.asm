@@ -358,7 +358,7 @@ CheckHiddenTape:
 	ld hl, OBJECT_MOVEMENTTYPE
 	add hl, bc
 	ld a, [hl]
-	cp SPRITEMOVEDATA_NO_RENDER
+	cp SPRITEMOVEDATA_NO_RENDER_NO_BUMP
 	jr nz, .next
 
 	ld hl, OBJECT_PALETTE

@@ -19,7 +19,7 @@ Crossroads_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 12 ; object events
+	db 13 ; object events
 	person_event SPRITE_PLAYER_CUTSCENE, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
 	person_event SPRITE_PLAYER_CUTSCENE, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
 	person_event SPRITE_PLAYER_CUTSCENE, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
@@ -32,6 +32,7 @@ Crossroads_MapScriptHeader:
 	person_event SPRITE_COLBY,  7, 30, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
 	person_event SPRITE_COLBY, 11, 24, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
 	person_event SPRITE_MALL_SIGN,  8, 22, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, CrossroadsSign, -1
+	person_event SPRITE_GENERAL_VARIABLE_1,  8, 32, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, CrossroadsUnfortunateCustomer, EVENT_CROSSROADS_UNFORTUNATE_CUSTOMER
 	
 	
 	const_def 1 ; object constants
@@ -53,6 +54,12 @@ CrossroadsFlyPoint:
 	
 CrossroadsTrigger0:
 CrossroadsTrigger1:
+	checkevent EVENT_CROSSROADS_UNFORTUNATE_CUSTOMER
+	iffalse .skip
+	checkevent EVENT_INN_1F_UNFORTUNATE_CUSTOMER_2
+	iffalse .skip
+	clearevent EVENT_CROSSROADS_UNFORTUNATE_CUSTOMER
+.skip
 	checkflag ENGINE_STREETLIGHTS
 	iftrue .checkmorn
 	checktime 1<<DUSK
@@ -355,6 +362,20 @@ MakePlayerColbyAsm:
 	ld a, PLAYER_COLBY
 	ld [wPlayerState], a
 	ret
+	
+CrossroadsUnfortunateCustomer:
+	jumptextfaceplayer CrossroadsUnfortunateCustomerText
+	
+CrossroadsUnfortunateCustomerText:
+	text "Someone took my"
+	line "spot at the INN."
+	
+	para "I had already paid"
+	line "and everything!"
+	
+	para "Can you believe"
+	line "that?"
+	done
 	
 CrossroadsSign:
 	jumptext CrossroadsSignText

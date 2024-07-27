@@ -1,6 +1,7 @@
 Inn1F_MapScriptHeader:
-	db 1 ; scene scripts
+	db 2 ; scene scripts
 	scene_script Inn1FTrigger0
+	scene_script Inn1FTrigger1
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Inn1FCallback
@@ -14,10 +15,10 @@ Inn1F_MapScriptHeader:
 	warp_event  9, 11, INN_1F, 11
 	warp_event 17, 11, INN_1F, 13
 	warp_event 21, 11, INN_1F, 15
-	warp_event  0,  5, INN_1F, 5
 	warp_event  1,  5, INN_1F, 5
-	warp_event  6,  5, INN_1F, 6
+	warp_event  0,  5, INN_1F, 5
 	warp_event  7,  5, INN_1F, 6
+	warp_event  6,  5, INN_1F, 6
 	warp_event 18,  5, INN_1F, 7
 	warp_event 19,  5, INN_1F, 7
 	warp_event 24,  5, INN_1F, 8
@@ -79,6 +80,7 @@ Inn1F_MapScriptHeader:
 	const INN_1F_SNARE_GIRL
 	
 Inn1FTrigger0:
+Inn1FTrigger1:
 	callasm Inn1FRunningInTheHallsASM
 	ifequal 1, .hall
 	ifequal 2, .lobby
@@ -210,21 +212,120 @@ Inn1FRunningInTheHallsASM:
 	ld [wScriptVar], a
 	ret
 	
+Inn1FSnareGirlScriptText1:
+	text "It's gotta be"
+	line "here somewhere."
+	
+	para "Did I drop it in"
+	line "the trash?"
+	
+	para "…<WAIT_L>Aha!<WAIT_S>"
+	line "There it is!"
+	done
+	
+Inn1FSnareGirlScriptText2:
+	text "Wuzzat?"
+	
+	para "I forgot to lock"
+	line "the door and some"
+	cont "kid wandered in!"
+	
+	para "Man, I can't do"
+	line "anything right"
+	cont "today…"
+	
+	para "Well, let's do"
+	line "this, then."
+	done
+	
+Inn1FSnareGirlScriptText3:
+	text "Ah geez."
+	
+	para "Listen, I wasn't"
+	line "doin' nothing in"
+	cont "here, so go away."
+	
+	para "And definitely"
+	line "don't look in the"
+	cont "trashcan."
+	
+	para "That would be a"
+	line "waste of time!"
+	done
+	
+Inn1FSnareGirlWinText:
+	text "Yikes!"
+	done
+	
 Inn1FTrashCanPassword:
+	checkevent EVENT_DID_SNARE_GIRL
+	iffalse .nope
+	callasm Inn1FResertScriptVar
 	setevent EVENT_INN_1F_READ_103_NOTE
 	jumptext Inn1FTrashCanPasswordText
+.nope
+	callasm Inn1FResertScriptVar
+	jumptext Inn1FTrashCanPasswordText2
 	
 Inn1FTrashCanPasswordText:
-	text "Here is the code"
+	text "A slip of paper."
+	line "It reads:"
+	
+	para "“Here is the code"
 	line "for ROOM 201:"
 	
 	para "TODO"
 	
 	para "Do NOT forget it"
-	line "this time!"
+	line "this time!”"
+	done
+	
+Inn1FTrashCanPasswordText2:
+	text "It's full of trash."
+	
+	para "She's digging"
+	line "through, looking"
+	cont "for something."
 	done
 	
 Inn1FSnareGirl:
+	checkevent EVENT_INN_1F_READ_103_NOTE
+	iftrue .found
+	checkevent EVENT_DID_SNARE_GIRL
+	iftrue .did
+	applyonemovement INN_1F_SNARE_GIRL, turn_step_up
+	opentext
+	writetext Inn1FSnareGirlScriptText1
+	waitbutton
+	closetext
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, INN_1F_SNARE_GIRL, 15
+	special SaveMusic
+	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
+	faceplayer
+	opentext
+	writetext Inn1FSnareGirlScriptText2
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext Inn1FSnareGirlWinText, 0
+	setlasttalked INN_1F_SNARE_GIRL
+	loadtrainer GRUNTF, INN_GRUNTF_1
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	special RestoreMusic
+	opentext
+	writetext Inn1FSnareGirlScriptText3
+	waitbutton
+	closetext
+	setevent EVENT_DID_SNARE_GIRL
+	end
+.did
+	callasm Inn1FResertScriptVar
+	jumptextfaceplayer Inn1FSnareGirlScriptText3
+.found
+	callasm Inn1FResertScriptVar
 	jumptextfaceplayer Inn1FSnareGirlText
 	
 Inn1FSnareGirlText:
@@ -360,7 +461,7 @@ Inn1FUnfortunateCustomerText3:
 	
 Inn1FUnfortunateCustomerText4:
 	text "Better stay out"
-	line "it…"
+	line "of it…"
 	done
 	
 Inn1F104LockedDoor:

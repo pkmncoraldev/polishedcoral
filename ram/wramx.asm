@@ -1079,7 +1079,8 @@ wRoute22Trigger:: ds 1
 wRoute6SouthTrigger:: ds 1
 wRoute29Trigger:: ds 1
 wObscuraCityTrigger:: ds 1
-ds 21
+wInn1FTrigger:: ds 1
+ds 20
 
 wAmpharosFood:: ds 1
 

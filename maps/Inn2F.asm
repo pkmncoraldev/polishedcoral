@@ -13,10 +13,10 @@ Inn2F_MapScriptHeader:
 	warp_event  7, 11, INN_2F, 11
 	warp_event 15, 11, INN_2F, 13
 	warp_event 19, 11, INN_2F, 15
-	warp_event  0,  5, INN_2F, 5
 	warp_event  1,  5, INN_2F, 5
-	warp_event  6,  5, INN_2F, 6
+	warp_event  0,  5, INN_2F, 5
 	warp_event  7,  5, INN_2F, 6
+	warp_event  6,  5, INN_2F, 6
 	warp_event 18,  5, INN_2F, 7
 	warp_event 19,  5, INN_2F, 7
 	warp_event 24,  5, INN_2F, 8

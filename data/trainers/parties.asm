@@ -2318,6 +2318,15 @@ GruntFGroup:
 	db -1 ; end
 
 ; ================
+
+	; INN_GRUNTF_1
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 

@@ -136,7 +136,7 @@ MapTriggers::
 	scene_var ROUTE_6_SOUTH,						  wRoute6SouthTrigger
 	scene_var ROUTE_29,								  wRoute29Trigger
 	scene_var OBSCURA_CITY,							  wObscuraCityTrigger
-	scene_var INN_1F,								  wAlways0Trigger
+	scene_var INN_1F,								  wInn1FTrigger
 	scene_var INN_2F,								  wAlways0Trigger
 	scene_var INN_3F,								  wAlways0Trigger
 	db -1

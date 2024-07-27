@@ -249,6 +249,7 @@ PLAYER_F EQU __enum__
 	const SUNBEAM_GRUNTF_2
 	const TRAIN_GRUNTF_1
 	const TRAIN_GRUNTF_2
+	const INN_GRUNTF_1
 
 
 	trainerclass KAGE

@@ -241,6 +241,7 @@ PLAYER_F EQU __enum__
 	const TRAIN_GRUNTM_4
 	const TRAIN_GRUNTM_5
 	const LUSTER_GRUNTM
+	const INN_GRUNTM_1
 
 
 	trainerclass GRUNTF
@@ -250,6 +251,7 @@ PLAYER_F EQU __enum__
 	const TRAIN_GRUNTF_1
 	const TRAIN_GRUNTF_2
 	const INN_GRUNTF_1
+	const INN_GRUNTF_2
 
 
 	trainerclass KAGE

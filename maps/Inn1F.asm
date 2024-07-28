@@ -258,7 +258,7 @@ Inn1FSnareGirlWinText:
 	done
 	
 Inn1FTrashCanPassword:
-	checkevent EVENT_DID_SNARE_GIRL
+	checkevent EVENT_BEAT_INN_1F_TRAINER
 	iffalse .nope
 	callasm Inn1FResertScriptVar
 	setevent EVENT_INN_1F_READ_103_NOTE
@@ -276,7 +276,7 @@ Inn1FTrashCanPasswordText:
 	
 	para "TODO"
 	
-	para "Do NOT forget it"
+	para "Do NOT lose it"
 	line "this time!”"
 	done
 	
@@ -291,7 +291,7 @@ Inn1FTrashCanPasswordText2:
 Inn1FSnareGirl:
 	checkevent EVENT_INN_1F_READ_103_NOTE
 	iftrue .found
-	checkevent EVENT_DID_SNARE_GIRL
+	checkevent EVENT_BEAT_INN_1F_TRAINER
 	iftrue .did
 	applyonemovement INN_1F_SNARE_GIRL, turn_step_up
 	opentext
@@ -319,7 +319,7 @@ Inn1FSnareGirl:
 	writetext Inn1FSnareGirlScriptText3
 	waitbutton
 	closetext
-	setevent EVENT_DID_SNARE_GIRL
+	setevent EVENT_BEAT_INN_1F_TRAINER
 	end
 .did
 	callasm Inn1FResertScriptVar
@@ -350,6 +350,7 @@ Inn1FPlayersBed:
 	iftrue .skip
 	setevent EVENT_INN_1F_SLEPT
 	setevent EVENT_INN_1F_103_OPEN
+	clearevent EVENT_INN_1F_UNFORTUNATE_CUSTOMER
 	appear INN_1F_SNARE_GIRL
 .skip
 	pause 60
@@ -662,7 +663,6 @@ Inn1FClerkDesk:
 	writetext Inn1FClerkDeskText4
 	waitbutton
 	closetext
-	clearevent EVENT_INN_1F_UNFORTUNATE_CUSTOMER
 	callasm Inn1FResertScriptVar
 	end
 .have_key

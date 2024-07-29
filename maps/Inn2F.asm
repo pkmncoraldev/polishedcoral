@@ -70,24 +70,24 @@ Inn2FTrigger0:
 	ifequal 2, .right
 	appear INN_2F_CLERK
 	special Special_StopRunning
-	applyonemovement INN_2F_CLERK, step_left
+	applyonemovement INN_2F_CLERK, big_step_left
 	opentext
 	writetext Inn1FNoRunningHallsText
 	waitbutton
 	closetext
-	applyonemovement INN_2F_CLERK, step_right
+	applyonemovement INN_2F_CLERK, slow_step_right
 	disappear INN_2F_CLERK
 	callasm Inn1FResertScriptVar
 	end
 .right
 	appear INN_2F_CLERK
 	special Special_StopRunning
-	applyonemovement INN_2F_CLERK, step_right
+	applyonemovement INN_2F_CLERK, big_step_right
 	opentext
 	writetext Inn1FNoRunningHallsText
 	waitbutton
 	closetext
-	applyonemovement INN_2F_CLERK, step_left
+	applyonemovement INN_2F_CLERK, slow_step_left
 	disappear INN_2F_CLERK
 	callasm Inn1FResertScriptVar
 	end
@@ -153,6 +153,7 @@ TrainerInn2F_2:
 	trainer GRUNTM, INN_GRUNTM_1, EVENT_BEAT_INN_2F_TRAINER_2, .SeenText, .BeatenText, 0, .Script
 	
 .Script:
+	clearevent EVENT_INN_1F_LOBBY_SNARE
 	callasm Inn1FResertScriptVar
 	jumptextfaceplayer .NormalText
 

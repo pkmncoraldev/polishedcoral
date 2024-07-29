@@ -80,24 +80,24 @@ Inn3FTrigger0:
 	ifequal 2, .right
 	appear INN_3F_CLERK
 	special Special_StopRunning
-	applyonemovement INN_3F_CLERK, step_left
+	applyonemovement INN_3F_CLERK, big_step_left
 	opentext
 	writetext Inn1FNoRunningHallsText
 	waitbutton
 	closetext
-	applyonemovement INN_3F_CLERK, step_right
+	applyonemovement INN_3F_CLERK, slow_step_right
 	disappear INN_3F_CLERK
 	callasm Inn1FResertScriptVar
 	end
 .right
 	appear INN_3F_CLERK
 	special Special_StopRunning
-	applyonemovement INN_3F_CLERK, step_right
+	applyonemovement INN_3F_CLERK, big_step_right
 	opentext
 	writetext Inn1FNoRunningHallsText
 	waitbutton
 	closetext
-	applyonemovement INN_3F_CLERK, step_left
+	applyonemovement INN_3F_CLERK, slow_step_left
 	disappear INN_3F_CLERK
 	callasm Inn1FResertScriptVar
 	end

@@ -252,6 +252,7 @@ PLAYER_F EQU __enum__
 	const TRAIN_GRUNTF_2
 	const INN_GRUNTF_1
 	const INN_GRUNTF_2
+	const INN_GRUNTF_3
 
 
 	trainerclass KAGE

@@ -33,6 +33,8 @@ Predef_StartBattle: ; 8c20f
 	jr z, .loop
 
 .done
+	eventflagcheck EVENT_FAKE_BATTLE_INTO
+	jr nz, .skip2
 	ld a, [rSVBK]
 	push af
 	ld a, BANK(wUnknBGPals)
@@ -50,6 +52,7 @@ Predef_StartBattle: ; 8c20f
 	ld [wBGP], a
 	call DmgToCgbBGPals
 	call DelayFrame
+.skip2
 	xor a
 	ld [hLCDCPointer], a
 	ld [hLYOverrideStart], a
@@ -94,13 +97,13 @@ Predef_StartBattle: ; 8c20f
 	ld a, $1
 	ld [rVBK], a
 	ld de, .TrainerBattlePokeballTiles
-	ld hl, VTiles3 tile $fe
+	ld hl, VTiles3 tile $f8
 	lb bc, BANK(.TrainerBattlePokeballTiles), 2
 	call Request2bpp
 	xor a
 	ld [rVBK], a
 	ld de, .TrainerBattlePokeballTiles
-	ld hl, VTiles0 tile $fe
+	ld hl, VTiles0 tile $f8
 	lb bc, BANK(.TrainerBattlePokeballTiles), 2
 	jp Request2bpp
 ; 8c2f4
@@ -158,6 +161,13 @@ FlashyTransitionToBattle: ; 8c314
 
 	; All animations jump to here.
 	dw StartTrainerBattle_Finish ; 20
+	
+	; fake animation
+	dw StartTrainerBattle_LoadPokeBallGraphics ; 21
+	dw StartTrainerBattle_SetUpBGMap ; 22
+	dw StartTrainerBattle_Flash ; 23
+	dw StartTrainerBattle_Flash ; 24
+	dw StartTrainerBattle_Flash2 ; 25
 
 
 StartTrainerBattle_DetermineWhichAnimation: ; 8c365 (23:4365)
@@ -167,6 +177,8 @@ StartTrainerBattle_DetermineWhichAnimation: ; 8c365 (23:4365)
 	ld de, 0
 
 	ld a, [wOtherTrainerClass]
+	cp $69
+	jr z, .fake
 	and a
 	jr z, .wild
 	farcall SetTrainerBattleLevel
@@ -212,6 +224,11 @@ endr
 	ld a, 1
 	ld [wJumptableIndex], a
 	ret
+.fake
+	eventflagset EVENT_FAKE_BATTLE_INTO
+	ld a, $21
+	ld [wJumptableIndex], a
+	ret
 
 .StartingPoints: ; 8c38f
 	db 1,  9
@@ -239,6 +256,16 @@ StartTrainerBattle_SetUpBGMap: ; 8c3a1 (23:43a1)
 StartTrainerBattle_Flash: ; 8c3ab (23:43ab)
 	call StartBattleFlash
 	jp StartTrainerBattle_NextScene
+	
+StartTrainerBattle_Flash2:
+	call StartBattleFlash
+	ld c, 15
+	call DelayFrames
+	ld de, MUSIC_NONE
+	call PlayMusic
+	ld a, $80
+	ld [wJumptableIndex], a
+	ret
 
 StartTrainerBattle_SetUpForWavyOutro: ; 8c3e8 (23:43e8)
 	farcall BattleStart_HideAllSpritesExceptBattleParticipants
@@ -568,7 +595,7 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	jr z, .done
 	sla a
 	jr nc, .no_load
-	ld [hl], $fe
+	ld [hl], $f8
 
 	push af
 	push hl
@@ -688,7 +715,7 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	db KAGE
 	db LOCKE
 	db RIVAL_S
-
+	db $69
 	db -1
 
 .timepals

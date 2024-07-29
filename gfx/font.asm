@@ -113,6 +113,8 @@ _LoadStandardMaybeOpaqueFont:
 	ld de, FontNormal
 	lb bc, BANK(FontNormal), 111
 	call Get2bpp
+	eventflagcheck EVENT_FAKE_BATTLE_INTO
+	ret nz
 	ld de, FontCommon
 	ld hl, VTiles0 tile "▷"
 	lb bc, BANK(FontCommon), 11

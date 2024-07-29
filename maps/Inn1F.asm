@@ -47,7 +47,7 @@ Inn1F_MapScriptHeader:
 	signpost  2,  3, SIGNPOST_READ, Inn1FPlayersBed
 	signpost  1,  7, SIGNPOST_READ, Inn1FTrashCanPassword
 
-	db 14 ; object events
+	db 16 ; object events
 	person_event SPRITE_MINA_GROUND, 17,  8, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_MINA_GROUND, 17,  9, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_MINA_GROUND, 17, 10, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -61,7 +61,9 @@ Inn1F_MapScriptHeader:
 	person_event SPRITE_POKEFAN_F, 19, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FCustomer1, -1
 	person_event SPRITE_CUTE_GIRL, 20, 16, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Inn1FCustomer2, -1
 	person_event SPRITE_GENERAL_VARIABLE_1, 19, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn1FUnfortunateCustomer, EVENT_INN_1F_UNFORTUNATE_CUSTOMER
-	person_event SPRITE_SNARE_GIRL,  2,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareGirl, EVENT_INN_1F_ROCKET_GIRL
+	person_event SPRITE_SNARE_GIRL,  2,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareGirl, EVENT_INN_1F_SNARE_GIRL
+	person_event SPRITE_SNARE_GIRL, 18, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareSupervisor, -1
+	person_event SPRITE_SNARE_GIRL,  3, 24, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareSupervisor3, EVENT_INN_1F_ROOM_SNARE
 
 	const_def 1 ; object constants
 	const INN_1F_WALL_1
@@ -78,9 +80,197 @@ Inn1F_MapScriptHeader:
 	const INN_1F_CUSTOMER_2
 	const INN_1F_UNFORTUNATE_CUSTOMER
 	const INN_1F_SNARE_GIRL
+	const INN_1F_LOBBY_SNARE
+	const INN_1F_ROOM_SNARE
+	
+Inn1FSnareSupervisor:
+	faceplayer
+	opentext
+	writetext Inn1FSnareSupervisorText1
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
+	writetext Inn1FSnareSupervisorText2
+	waitbutton
+	closetext
+	waitsfx
+	playmusic MUSIC_SNARE_BATTLE
+	callasm Inn1FFakeBattleStart
+	callasm Inn1FMoveClerkAsm
+	appear INN_1F_CLERK
+	special Special_UpdatePalsInstant
+	refreshscreen
+	applyonemovement INN_1F_CLERK, big_step_right
+	spriteface PLAYER, LEFT
+	spriteface INN_1F_LOBBY_SNARE, LEFT
+	opentext
+	writetext Inn1FClerkBattleinterrupt
+	waitbutton
+	closetext
+	pause 10
+	applyonemovement INN_1F_CLERK, slow_step_left
+	disappear INN_1F_CLERK
+	moveperson INN_1F_CLERK, $0a, $13
+	appear INN_1F_CLERK
+	pause 60
+	callasm Inn1FPlayerYCoord
+	iffalse .bottom
+	spriteface PLAYER, DOWN
+	jump .cont
+.bottom
+	spriteface PLAYER, UP
+.cont
+	faceplayer
+	opentext
+	writetext Inn1FSnareSupervisorText3
+	waitbutton
+	closetext
+	waitsfx
+	dotrigger $1
+	clearevent EVENT_FAKE_BATTLE_INTO
+	clearevent EVENT_INN_1F_ROOM_SNARE
+	playmusic MUSIC_DEV_MESSAGE
+	setflag ENGINE_HAVE_FOLLOWER
+	follow INN_1F_LOBBY_SNARE, PLAYER
+	applymovement INN_1F_LOBBY_SNARE, Movement_Inn1FSnareSupervisor
+	playsound SFX_ENTER_DOOR
+	disappear INN_1F_LOBBY_SNARE
+	applyonemovement PLAYER, step_up
+	clearflag ENGINE_HAVE_FOLLOWER
+	callasm Inn1FResertScriptVar
+	warpcheck
+	end
+	
+Inn1FSnareSupervisorText1:
+	text "What?<WAIT_S>"
+	line "Supervisor?"
+	
+	para "Is that what that"
+	line "bonehead told you?"
+	
+	para "He knows I didn't"
+	line "get the promotion,"
+	cont "and he's mocking"
+	cont "me!"
+	done
+	
+Inn1FSnareSupervisorText2:
+	text "Gah! <WAIT_S>I don't have"
+	line "to sit here and"
+	cont "take this!"
+	
+	para "I'll prove to the"
+	line "boss I'm worthy of"
+	cont "supervisor right"
+	cont "here and now!"
+	done
+	
+Inn1FSnareSupervisorText3:
+	text "Right. <WAIT_S>Sorry."
+	
+	para "That was"
+	line "inconsiderate."
+	
+	para "Follow me."
+	done
+	
+Inn1FClerkBattleinterrupt:
+	text "Hey!"
+	
+	para "No battles in"
+	line "the lobby!"
+	done
+	
+Inn1FFakeBattleStart:
+	ld a, $69
+	ld [wOtherTrainerClass], a
+	predef Predef_StartBattle
+
+	ret
+	
+Movement_Inn1FSnareSupervisor:
+	step_up
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_up
+	step_up
+	step_up
+	step_up
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_up
+	step_up
+	step_end
+	
+Inn1FSnareSupervisor2:
+	applyonemovement PLAYER, step_up
+	opentext
+	writetext Inn1FSnareSupervisor2Text1
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
+	writetext Inn1FSnareSupervisor2Text2
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext Inn1FSnareSupervisorWinText, 0
+	setlasttalked INN_1F_ROOM_SNARE
+	loadtrainer GRUNTF, INN_GRUNTF_3
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	special RestoreMusic
+	opentext
+	writetext Inn1FSnareSupervisor3Text
+	waitbutton
+	closetext
+	setevent EVENT_BEAT_INN_1F_TRAINER_2
+	end
+	
+Inn1FSnareSupervisor2Text1:
+	text "Ahem! <WAIT_S> Like I was"
+	line "saying…"
+	done
+	
+Inn1FSnareSupervisor2Text2:
+	text "I'll prove to the"
+	line "boss I'm worthy of"
+	cont "supervisor right"
+	cont "here and now!"
+	done
+	
+Inn1FSnareSupervisorWinText:
+	text "Not cut out for"
+	line "it after all!"
+	done
+	
+Inn1FSnareSupervisor3:
+	jumptextfaceplayer Inn1FSnareSupervisor3Text
+	
+Inn1FSnareSupervisor3Text:
+	text "TEXT 1"
+	done
+	
+Inn1FTrigger1:
+	priorityjump Inn1FSnareSupervisor2
+	dotrigger $0
+	end
 	
 Inn1FTrigger0:
-Inn1FTrigger1:
 	callasm Inn1FRunningInTheHallsASM
 	ifequal 1, .hall
 	ifequal 2, .lobby
@@ -91,12 +281,12 @@ Inn1FTrigger1:
 	ifequal 2, .right
 	appear INN_1F_CLERK
 	special Special_StopRunning
-	applyonemovement INN_1F_CLERK, step_left
+	applyonemovement INN_1F_CLERK, big_step_left
 	opentext
 	writetext Inn1FNoRunningHallsText
 	waitbutton
 	closetext
-	applyonemovement INN_1F_CLERK, step_right
+	applyonemovement INN_1F_CLERK, slow_step_right
 	disappear INN_1F_CLERK
 	callasm Inn1FResertScriptVar
 	moveperson INN_1F_CLERK, $0a, $13
@@ -105,12 +295,12 @@ Inn1FTrigger1:
 .right
 	appear INN_1F_CLERK
 	special Special_StopRunning
-	applyonemovement INN_1F_CLERK, step_right
+	applyonemovement INN_1F_CLERK, big_step_right
 	opentext
 	writetext Inn1FNoRunningHallsText
 	waitbutton
 	closetext
-	applyonemovement INN_1F_CLERK, step_left
+	applyonemovement INN_1F_CLERK, slow_step_left
 	disappear INN_1F_CLERK
 	callasm Inn1FResertScriptVar
 	moveperson INN_1F_CLERK, $0a, $13
@@ -157,6 +347,18 @@ Inn1FNoRunningLobbyText:
 	para "No running in"
 	line "the lobby!"
 	done
+	
+Inn1FPlayerYCoord:
+	ld a, [wYCoord]
+	cp $11
+	jr z, .top
+	xor a
+	ld [wScriptVar], a
+	ret
+.top
+	ld a, 1
+	ld [wScriptVar], a
+	ret
 	
 Inn1FMoveClerkAsm:
 	ld a, [wXCoord]

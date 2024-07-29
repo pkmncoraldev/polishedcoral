@@ -193,5 +193,7 @@ SpecialsPointers::
 	add_special Special_DisplayPollenPouchBalance
 	add_special Special_DotDotDot
 	add_special Special_MinaGoodbye
+	add_special Special_DisableInput
+	add_special Special_EnableInput
 
 	add_special SpecialNone

@@ -760,3 +760,13 @@ MinaGoodbyeText5:
 	line "Ah, forget it!"
 	done
 	
+Special_DisableInput:
+	set 6, a
+	ld [wInputFlags], a
+	ret
+	
+Special_EnableInput:
+	xor a
+	ld [wInputFlags], a
+	ret
+	

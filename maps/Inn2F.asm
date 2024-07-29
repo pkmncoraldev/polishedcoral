@@ -163,8 +163,7 @@ TrainerInn2F_2:
 	para "I'm just a GRUNT,"
 	line "how should I know?"
 	
-	para "My supervisor"
-	line "might know…"
+	para "Ask my supervisor…"
 	
 	para "She was hanging"
 	line "out in the lobby"

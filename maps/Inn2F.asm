@@ -43,8 +43,8 @@ Inn2F_MapScriptHeader:
 
 	db 8 ; object events
 	person_event SPRITE_FAT_GUY, -1, -1, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Inn1FClerk, EVENT_ALWAYS_SET
-	person_event SPRITE_INVISIBLE, 11,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
-	person_event SPRITE_INVISIBLE, 11,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
+	person_event SPRITE_INVISIBLE, 11,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn2F204Door, EVENT_INN_2F_204_OPEN
+	person_event SPRITE_INVISIBLE, 11,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn2F203Door, -1
 	person_event SPRITE_INVISIBLE, 11, 11, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedElevator, -1
 	person_event SPRITE_INVISIBLE, 11, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
 	person_event SPRITE_INVISIBLE, 11, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn2F201LockedDoor, EVENT_INN_2F_201_OPEN
@@ -122,6 +122,48 @@ Inn2FMoveClerkAsm:
 	ld e, a
 	farjp CopyDECoordsToMapObject
 	
+Inn2F204Door:
+	checkevent EVENT_BEAT_INN_1F_TRAINER_2
+	iffalse Inn1FLockedDoor
+	opentext
+	writetext Inn2F204DoorText1
+	waitbutton
+	closetext
+	pause 30
+	playsound SFX_WALL_OPEN
+	disappear INN_2F_DOOR_LOCK_1
+	pause 14
+	opentext
+	writetext Inn2F204DoorText2
+	waitbutton
+	closetext
+	callasm Inn1FResertScriptVar
+	end
+	
+Inn2F204DoorText1:
+	text "???: Is that the"
+	line "mantenance person?"
+	
+	para "Finally! <WAIT_S>It's been"
+	line "like an hour!"
+	
+	para "One second.<WAIT_S> I'll"
+	line "unlock the door."
+	done
+	
+Inn2F204DoorText2:
+	text "Ok, come on in!"
+	done
+	
+Inn2F203Door:
+	jumptext Inn2F203DoorText
+	
+Inn2F203DoorText:
+	text "It's not locked,"
+	line "but the door won't"
+	cont "budge."
+	done
+	
 TrainerInn2F_1:
 	trainer GRUNTF, INN_GRUNTF_2, EVENT_BEAT_INN_2F_TRAINER_1, .SeenText, .BeatenText, 0, .Script
 	
@@ -153,7 +195,6 @@ TrainerInn2F_2:
 	trainer GRUNTM, INN_GRUNTM_1, EVENT_BEAT_INN_2F_TRAINER_2, .SeenText, .BeatenText, 0, .Script
 	
 .Script:
-	clearevent EVENT_INN_1F_LOBBY_SNARE
 	callasm Inn1FResertScriptVar
 	jumptextfaceplayer .NormalText
 

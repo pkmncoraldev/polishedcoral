@@ -66,3 +66,9 @@
 	tilecoll WALL, WALL, FLOOR, WALL ; 41
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 42
 	tilecoll WALL, WALL, HOLE, FLOOR ; 43
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 44
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 45
+	tilecoll WALL, WALL, FLOOR, TRASH_CAN ; 46
+	tilecoll WALL, WALL, FLOOR, WALL ; 47
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 48
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 49

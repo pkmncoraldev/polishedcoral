@@ -56,14 +56,14 @@ Inn1F_MapScriptHeader:
 	person_event SPRITE_COLBY, 11,  5, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1F104LockedDoor, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	person_event SPRITE_COLBY, 11,  9, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, EVENT_INN_1F_103_OPEN
 	person_event SPRITE_COLBY, 11, 13, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedElevator, -1
-	person_event SPRITE_COLBY, 11, 17, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
+	person_event SPRITE_COLBY, 11, 17, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, EVENT_INN_1F_102_OPEN
 	person_event SPRITE_COLBY, 11, 21, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
 	person_event SPRITE_POKEFAN_F, 19, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FCustomer1, -1
 	person_event SPRITE_CUTE_GIRL, 20, 16, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Inn1FCustomer2, -1
 	person_event SPRITE_GENERAL_VARIABLE_1, 19, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn1FUnfortunateCustomer, EVENT_INN_1F_UNFORTUNATE_CUSTOMER
 	person_event SPRITE_SNARE_GIRL,  2,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareGirl, EVENT_INN_1F_SNARE_GIRL
-	person_event SPRITE_SNARE_GIRL, 18, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareSupervisor, -1
-	person_event SPRITE_SNARE_GIRL,  3, 24, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareSupervisor3, EVENT_INN_1F_ROOM_SNARE
+	person_event SPRITE_SNARE_GIRL, 18, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareSupervisor, EVENT_INN_1F_LOBBY_SNARE
+	person_event SPRITE_SNARE_GIRL,  3, 18, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareSupervisor3, EVENT_INN_1F_ROOM_SNARE
 
 	const_def 1 ; object constants
 	const INN_1F_WALL_1
@@ -84,6 +84,23 @@ Inn1F_MapScriptHeader:
 	const INN_1F_ROOM_SNARE
 	
 Inn1FSnareSupervisor:
+	checkevent EVENT_BEAT_INN_2F_TRAINER_2
+	iftrue .start
+	opentext
+	writetext Inn1FSnareSupervisorTextNormal1
+	waitbutton
+	closetext
+	playsound SFX_PAY_DAY
+	faceplayer
+	showemote EMOTE_SHOCK, INN_1F_LOBBY_SNARE, 15
+	opentext
+	writetext Inn1FSnareSupervisorTextNormal2
+	waitbutton
+	closetext
+	spriteface INN_1F_LOBBY_SNARE, LEFT
+	callasm Inn1FResertScriptVar
+	end
+.start
 	faceplayer
 	opentext
 	writetext Inn1FSnareSupervisorText1
@@ -134,13 +151,47 @@ Inn1FSnareSupervisor:
 	setflag ENGINE_HAVE_FOLLOWER
 	follow INN_1F_LOBBY_SNARE, PLAYER
 	applymovement INN_1F_LOBBY_SNARE, Movement_Inn1FSnareSupervisor
+	stopfollow
+	spriteface PLAYER, UP
+	pause 10
+	applyonemovement INN_1F_LOBBY_SNARE, turn_step_up
+	pause 5
+	applyonemovement INN_1F_LOBBY_SNARE, step_end
+	playsound SFX_WALL_OPEN
+	disappear INN_1F_DOOR_LOCK_4
+	pause 14
+	spriteface INN_1F_LOBBY_SNARE, DOWN
+	pause 5
+	opentext
+	writetext Inn1FSnareSupervisorText4
+	waitbutton
+	closetext
+	applyonemovement INN_1F_LOBBY_SNARE, step_up
 	playsound SFX_ENTER_DOOR
 	disappear INN_1F_LOBBY_SNARE
+	pause 5
+	applyonemovement PLAYER, step_up
 	applyonemovement PLAYER, step_up
 	clearflag ENGINE_HAVE_FOLLOWER
 	callasm Inn1FResertScriptVar
 	warpcheck
 	end
+	
+Inn1FSnareSupervisorTextNormal1:
+	text "Grumble… Grumble…<WAIT_S>"
+	line "It ain't fair."
+	
+	para "That promotion"
+	line "should have been"
+	cont "mine!"
+	done
+	
+Inn1FSnareSupervisorTextNormal2:
+	text "Leave me alone."
+	
+	para "I ain't in the"
+	line "mood!"
+	done
 	
 Inn1FSnareSupervisorText1:
 	text "What?<WAIT_S>"
@@ -175,6 +226,13 @@ Inn1FSnareSupervisorText3:
 	para "Follow me."
 	done
 	
+Inn1FSnareSupervisorText4:
+	text "Sorry about all"
+	line "this…"
+	
+	para "Come on in."
+	done
+	
 Inn1FClerkBattleinterrupt:
 	text "Hey!"
 	
@@ -207,23 +265,19 @@ Movement_Inn1FSnareSupervisor:
 	step_right
 	step_right
 	step_right
-	step_right
-	step_right
-	step_right
-	step_right
-	step_up
 	step_up
 	step_end
 	
 Inn1FSnareSupervisor2:
+	special Special_FadeOutMusic
 	applyonemovement PLAYER, step_up
 	opentext
-	writetext Inn1FSnareSupervisor2Text1
+	writetext Inn1FSnareSupervisor2Text
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
 	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
-	writetext Inn1FSnareSupervisor2Text2
+	writetext Inn1FSnareSupervisorText2
 	waitbutton
 	closetext
 	waitsfx
@@ -233,24 +287,18 @@ Inn1FSnareSupervisor2:
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
-	special RestoreMusic
+	playmapmusic
 	opentext
 	writetext Inn1FSnareSupervisor3Text
 	waitbutton
 	closetext
 	setevent EVENT_BEAT_INN_1F_TRAINER_2
+	setevent EVENT_INN_1F_LOBBY_SNARE
 	end
 	
-Inn1FSnareSupervisor2Text1:
+Inn1FSnareSupervisor2Text:
 	text "Ahem! <WAIT_S> Like I was"
 	line "saying…"
-	done
-	
-Inn1FSnareSupervisor2Text2:
-	text "I'll prove to the"
-	line "boss I'm worthy of"
-	cont "supervisor right"
-	cont "here and now!"
 	done
 	
 Inn1FSnareSupervisorWinText:
@@ -262,7 +310,28 @@ Inn1FSnareSupervisor3:
 	jumptextfaceplayer Inn1FSnareSupervisor3Text
 	
 Inn1FSnareSupervisor3Text:
-	text "TEXT 1"
+	text "Wow, you clobbered"
+	line "me good!"
+	
+	para "Now I see why I"
+	line "didn't get the"
+	cont "supervisor job…"
+	
+	para "At least we didn't"
+	line "tear the room up"
+	cont "too bad this time."
+	
+	para "Those other guys"
+	line "totally ruined"
+	cont "ROOM 203."
+	
+	para "They even knocked"
+	line "a hole in the wall"
+	cont "to the next room!"
+	
+	para "Maintenance had"
+	line "to lock it up for"
+	cont "repairs."
 	done
 	
 Inn1FTrigger1:

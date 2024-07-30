@@ -442,7 +442,7 @@ endr
 	ld c, a
 	inc de
 .loop1
-	ld [hl], $ff
+	ld [hl], $f9
 	ld a, [wcf65]
 	bit 0, a
 	jr z, .leftside
@@ -559,9 +559,9 @@ StartTrainerBattle_SpeckleToBlack: ; 8c58f (23:458f)
 ; If the tile has already been blacked out,
 ; sample a new tile
 	ld a, [hl]
-	cp $ff
+	cp $f9
 	jr z, .y_loop
-	ld [hl], $ff
+	ld [hl], $f9
 	ret
 
 StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
@@ -603,7 +603,7 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	ld bc, wAttrMap - wTileMap
 	add hl, bc
 	ld a, [hl]
-	and $ff ^ (X_FLIP | Y_FLIP | BEHIND_BG)
+	and $f9 ^ (X_FLIP | Y_FLIP | BEHIND_BG)
 	or PAL_BG_TEXT
 	ld [hl], a
 	pop bc
@@ -898,7 +898,7 @@ StartTrainerBattle_ZoomToBlack: ; 8c768 (23:4768)
 ; 8c7b7
 
 .Copy: ; 8c7b7 (23:47b7)
-	ld a, $ff
+	ld a, $f9
 .row
 	push bc
 	push hl

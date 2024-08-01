@@ -1093,6 +1093,8 @@ dig_incave:
 	ld a, [wTileset]
 	cp TILESET_SPOOKY
 	jr z, .fail
+	cp TILESET_SOUTH_BUILDINGS
+	jr z, .fail
 	call GetMapPermission
 	cp CAVE
 	jr z, .incave

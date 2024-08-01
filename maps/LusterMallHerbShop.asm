@@ -25,7 +25,7 @@ LusterMallHerbShop_MapScriptHeader:
 	db 3 ; object events
 	object_event  6,  4, SPRITE_CUTE_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_COMMAND, pokemart, MARTTYPE_HERB, MART_LUSTER_MALL_HERB, -1
 	person_event SPRITE_AROMA_LADY,  2,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMallHerbShop_NPC1, -1
-	person_event SPRITE_BATTLE_GIRL,  3,  1, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMallHerbShop_NPC2, -1
+	person_event SPRITE_PONYTAIL,  3,  1, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMallHerbShop_NPC2, -1
 
 LusterMallHerbShop_NPC1:
 	jumptextfaceplayer LusterMallHerbShop_NPC1Text

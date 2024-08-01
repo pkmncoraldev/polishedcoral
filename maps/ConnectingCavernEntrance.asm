@@ -14,7 +14,7 @@ ConnectingCavernEntrance_MapScriptHeader:
 	db 0 ; bg events
 
 	db 1 ; object events
-	person_event SPRITE_BATTLE_GIRL,  5, 17, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ConnectingCavernEntranceNPC, -1
+	person_event SPRITE_PONYTAIL,  5, 17, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ConnectingCavernEntranceNPC, -1
 
 ConnectingCavernEntranceNPC:
 	checkevent EVENT_HAVE_FLASH

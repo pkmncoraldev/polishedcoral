@@ -492,7 +492,7 @@ TrainerClassAttributes: ; 3959c
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OFFENSIVE + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 	
-; Shaolin
+; BattleGirl
 	db 0, 0 ; items
 	db 6 ; base reward
 	dw AI_BASIC + AI_OFFENSIVE + AI_STATUS + AI_RISKY

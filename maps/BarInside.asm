@@ -29,7 +29,7 @@ BarInside_MapScriptHeader:
 	person_event SPRITE_CHILD,  5, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BarInsideChild, -1
 	person_event SPRITE_POKEFAN_M,  6, 14, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BarInsideDad, -1
 	person_event SPRITE_POKEFAN_F,  4, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BarInsideMom, -1
-	person_event SPRITE_BATTLE_GIRL,  5, 11, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BarInsideWaitress, -1
+	person_event SPRITE_PONYTAIL,  5, 11, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BarInsideWaitress, -1
 	
 	
 	

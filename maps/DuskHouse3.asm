@@ -13,7 +13,7 @@ DuskHouse3_MapScriptHeader:
 
 	db 2 ; object events
 	person_event SPRITE_POKEFAN_M,  4,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, DuskHouse3NPC1, -1
-	person_event SPRITE_BATTLE_GIRL,  3,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DuskHouse3NPC2, -1
+	person_event SPRITE_PONYTAIL,  3,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DuskHouse3NPC2, -1
 
 DuskHouse3NPC1:
 	jumptextfaceplayer DuskHouse3NPC1Text

@@ -112,7 +112,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; spatrainerf
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; aromalady
 	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; tuber
-	db  48, $BB, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; shaolin
+	db  48, $BB, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; battlegirl
 	db 100, $99, $99, $99, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; dojomaster
 	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; rose
 	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; lily

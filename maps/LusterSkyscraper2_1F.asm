@@ -15,7 +15,7 @@ LusterSkyscraper2_1F_MapScriptHeader:
 
 	db 3 ; object events
 	person_event SPRITE_RECEPTIONIST, 3, 2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterSkyscraper2_1F_NPC1, -1
-	person_event SPRITE_BATTLE_GIRL, 5, 9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterSkyscraper2_1F_NPC2, -1
+	person_event SPRITE_PONYTAIL, 5, 9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterSkyscraper2_1F_NPC2, -1
 	person_event SPRITE_POKEMANIAC, 7, 5, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterSkyscraper2_1F_NPC3, -1
 	
 	const_def 1 ; object constants

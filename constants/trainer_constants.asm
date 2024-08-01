@@ -654,7 +654,7 @@ PLAYER_F EQU __enum__
 	const KERRI
 	const SOFIE
 	
-	trainerclass SHAOLIN
+	trainerclass BATTLE_GIRL
 	const KIMIKO
 	const SAYORI
 	const MAI

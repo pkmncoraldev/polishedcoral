@@ -16,13 +16,13 @@ FightingDojo_MapScriptHeader:
 	db 3 ; object events
 	person_event SPRITE_MASTER,  2,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, FightingDojoMaster, EVENT_FIGHTING_DOJO_MASTER_GONE
 	person_event SPRITE_BLACK_BELT,  0,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_SHAOLIN,  0,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_BATTLE_GIRL,  0,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	
 	
 	const_def 1 ; object constants
 	const FIGHTING_DOJO_MASTER
 	const FIGHTING_DOJO_BLACKBELT
-	const FIGHTING_DOJO_SHAOLIN
+	const FIGHTING_DOJO_BATTLE_GIRL
 	
 FightingDojoMaster:
 	opentext
@@ -84,20 +84,20 @@ FightingDojoMaster:
 	spriteface PLAYER, RIGHT
 	
 	pause 30
-	setlasttalked FIGHTING_DOJO_SHAOLIN
+	setlasttalked FIGHTING_DOJO_BATTLE_GIRL
 	scall FightingDojoOpponentAppear
 	opentext
-	writetext FightingDojoShaolin1Text1
+	writetext FightingDojoBattleGirl1Text1
 	waitbutton
 	closetext
 	waitsfx
-	winlosstext FightingDojoShaolin1WinText, 0
-	loadtrainer SHAOLIN, KIMIKO
+	winlosstext FightingDojoBattleGirl1WinText, 0
+	loadtrainer BATTLE_GIRL, KIMIKO
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext FightingDojoShaolin1Text2
+	writetext FightingDojoBattleGirl1Text2
 	waitbutton
 	closetext
 	scall FightingDojoOpponentLeave
@@ -110,20 +110,20 @@ FightingDojoMaster:
 	spriteface PLAYER, RIGHT
 	
 	pause 30
-	setlasttalked FIGHTING_DOJO_SHAOLIN
+	setlasttalked FIGHTING_DOJO_BATTLE_GIRL
 	scall FightingDojoOpponentAppear
 	opentext
-	writetext FightingDojoShaolin2Text1
+	writetext FightingDojoBattleGirl2Text1
 	waitbutton
 	closetext
 	waitsfx
-	winlosstext FightingDojoShaolin2WinText, 0
-	loadtrainer SHAOLIN, SAYORI
+	winlosstext FightingDojoBattleGirl2WinText, 0
+	loadtrainer BATTLE_GIRL, SAYORI
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext FightingDojoShaolin2Text2
+	writetext FightingDojoBattleGirl2Text2
 	waitbutton
 	closetext
 	scall FightingDojoOpponentLeave
@@ -362,7 +362,7 @@ FightingDojoBlackbelt2Text2:
 	line "path!"
 	done
 	
-FightingDojoShaolin1Text1:
+FightingDojoBattleGirl1Text1:
 	text "I will be your"
 	line "next opponent!"
 	
@@ -371,11 +371,11 @@ FightingDojoShaolin1Text1:
 	cont "this battle!"
 	done
 	
-FightingDojoShaolin1WinText:
+FightingDojoBattleGirl1WinText:
 	text "I understand…"
 	done
 
-FightingDojoShaolin1Text2:
+FightingDojoBattleGirl1Text2:
 	text "I've learned much"
 	line "from you and your"
 	cont "#MON!"
@@ -383,7 +383,7 @@ FightingDojoShaolin1Text2:
 	para "Thank you!"
 	done
 	
-FightingDojoShaolin2Text1:
+FightingDojoBattleGirl2Text1:
 	text "Your trial ends"
 	line "here!"
 	
@@ -391,11 +391,11 @@ FightingDojoShaolin2Text1:
 	line "you!"
 	done
 	
-FightingDojoShaolin2WinText:
+FightingDojoBattleGirl2WinText:
 	text "RAAAAGH!"
 	done
 
-FightingDojoShaolin2Text2:
+FightingDojoBattleGirl2Text2:
 	text "You've humiliated"
 	line "me…"
 	

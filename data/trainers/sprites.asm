@@ -81,7 +81,7 @@ BTTrainerClassSprites:
 	db SPRITE_GOLD_NPC      ; SpaTrainerF
 	db SPRITE_AROMA_LADY   	; AromaLady
 	db SPRITE_TUBER			; Tuber
-	db SPRITE_SHAOLIN		; Shaolin
+	db SPRITE_BATTLE_GIRL	; BattleGirl
 	db SPRITE_MASTER		; Dojo Master
 	db SPRITE_PIGTAILS	    ; Rose
 	db SPRITE_PIGTAILS	    ; Lily

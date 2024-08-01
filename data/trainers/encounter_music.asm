@@ -82,7 +82,7 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_LASS_ENCOUNTER			; spatrainerf
 	db MUSIC_GENTLEMAN_ENCOUNTER	; aromalady
 	db MUSIC_YOUNGSTER_ENCOUNTER	; tuber
-	db MUSIC_HARDCORE_ENCOUNTER		; shaolin
+	db MUSIC_HARDCORE_ENCOUNTER		; battlegirl
 	db MUSIC_NONE					; dojomaster
 	db MUSIC_LASS_ENCOUNTER			; rose
 	db MUSIC_LASS_ENCOUNTER			; lily

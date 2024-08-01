@@ -81,7 +81,7 @@ TrainerClassNames::
 	db "BATHER@"	       ; SPA_TRAINER_F
 	db "AROMA LADY@"	   ; AROMA_LADY
 	db "TUBER@"			   ; TUBER
-	db "SHAOLIN@"		   ; SHAOLIN
+	db "BATTLE GIRL@"	   ; BATTLE_GIRL
 	db "THE@"		   	   ; DOJO_MASTER
 	db "PIGTAILS@"		   ; ROSE
 	db "PIGTAILS@"		   ; LILY

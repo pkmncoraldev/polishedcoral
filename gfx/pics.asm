@@ -784,7 +784,7 @@ SpaTrainerPic:			  INCBIN "gfx/trainers/spa_trainer.2bpp.lz"
 SpaTrainerFPic:			  INCBIN "gfx/trainers/spa_trainer_f.2bpp.lz"
 AromaLadyPic:			  INCBIN "gfx/trainers/aroma_lady.2bpp.lz"
 TuberPic:				  INCBIN "gfx/trainers/tuber.2bpp.lz"
-ShaolinPic:				  INCBIN "gfx/trainers/shaolin.2bpp.lz"
+BattleGirlPic:			  INCBIN "gfx/trainers/battle_girl.2bpp.lz"
 DojoMasterPic:			  INCBIN "gfx/trainers/dojo_master.2bpp.lz"
 RosePic:
 LilyPic:

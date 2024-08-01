@@ -25,7 +25,7 @@ TwinkleGymEntry_MapScriptHeader:
 	signpost  0,  7, SIGNPOST_IFNOTSET, TwinkleGymEntryRedDoor
 
 	db 2 ; object events
-	object_event  6,  7, SPRITE_BATTLE_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleGymEntryClerk, -1
+	object_event  6,  7, SPRITE_PONYTAIL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleGymEntryClerk, -1
 	object_event  9, 11, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleGymGuyScript, -1
 
 	

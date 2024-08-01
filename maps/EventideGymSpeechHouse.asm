@@ -13,7 +13,7 @@ EventideGymSpeechHouse_MapScriptHeader:
 
 	db 2 ; object events
 	person_event SPRITE_COOL_DUDE,  3,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, EventideGymSpeechHouseNPC1, -1
-	person_event SPRITE_BATTLE_GIRL,  4,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, EventideGymSpeechHouseNPC2, -1
+	person_event SPRITE_PONYTAIL,  4,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, EventideGymSpeechHouseNPC2, -1
 
 	
 EventideGymSpeechHouseNPC1:

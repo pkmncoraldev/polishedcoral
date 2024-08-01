@@ -1,7 +1,8 @@
 Inn1F_MapScriptHeader:
-	db 2 ; scene scripts
+	db 3 ; scene scripts
 	scene_script Inn1FTrigger0
 	scene_script Inn1FTrigger1
+	scene_script Inn1FTrigger2
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Inn1FCallback
@@ -25,7 +26,9 @@ Inn1F_MapScriptHeader:
 	warp_event 25,  5, INN_1F, 8
 	warp_event 13, 11, INN_ELEVATOR, 1
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event 13, 23, 2, Inn1FBlockDoor
+	coord_event 14, 23, 2, Inn1FBlockDoor
 
 	db 18 ; bg events
 	signpost 20,  7, SIGNPOST_JUMPTEXT, Inn1FLaptopText
@@ -84,6 +87,19 @@ Inn1F_MapScriptHeader:
 	const INN_1F_LOBBY_SNARE
 	const INN_1F_ROOM_SNARE
 	const INN_1F_FRONT_DESK_DOOR
+	
+Inn1FBlockDoor:
+	opentext
+	writetext Inn1FBlockDoorText
+	waitbutton
+	closetext
+	applyonemovement PLAYER, step_up
+	end
+	
+Inn1FBlockDoorText:
+	text "Better not go out"
+	line "dressed like this!"
+	done
 	
 Inn1FFrontDeskDoor:
 	jumptext Inn1FFrontDeskDoorText
@@ -356,6 +372,7 @@ Inn1FTrigger1:
 	end
 	
 Inn1FTrigger0:
+Inn1FTrigger2:
 	callasm Inn1FRunningInTheHallsASM
 	ifequal 1, .hall
 	ifequal 2, .lobby

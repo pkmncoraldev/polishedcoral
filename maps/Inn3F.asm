@@ -401,6 +401,7 @@ Inn3FClothes:
 	waitbutton
 	closetext
 	setevent EVENT_SNARE_DISGUISE
+	domaptrigger INN_1F, $2
 	end
 	
 Inn3FChangeClothesASM:

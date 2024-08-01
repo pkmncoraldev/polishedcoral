@@ -106,7 +106,7 @@ ItemNames::
 	db "TRAIN PASS@"
 	db "NETT SPECS@"
 	db "ROOM 104 KEY@"
-	db "MYSTICTICKET@"
+	db "SERVICE KEY@"
 	db "OLD SEA MAP@"
 	db "SHINY CHARM@"
 	db "OVAL CHARM@"

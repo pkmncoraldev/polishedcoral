@@ -21,15 +21,17 @@
 	charmap "<BEEP>",   $12
 	charmap "<SLOTS>",  $13
 	charmap "<SOUND>",  $14
-	charmap "<BUFFER>", $15
-	charmap "<DAY>",    $16
-	charmap "<FAR>",    $17
-	charmap "<WAIT_S>", $18
-	charmap "<WAIT_M>", $19
-	charmap "<WAIT_L>", $1a
-	charmap "<P-P-PLAYER>", $1b
+	charmap "<KNOCK>",  $15
+	charmap "<BUFFER>", $16
+	charmap "<DAY>",    $17
+	charmap "<FAR>",    $18
+	charmap "<WAIT_T>", $19
+	charmap "<WAIT_S>", $1a
+	charmap "<WAIT_M>", $1b
+	charmap "<WAIT_L>", $1c
+	charmap "<P-P-PLAYER>", $1d
 
-	; unused: $17 - $1e
+	; unused: $1e
 
 	charmap "¯",        $1f
 	; unused: $20

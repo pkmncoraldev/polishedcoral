@@ -7,24 +7,38 @@ InnVent_MapScriptHeader:
 	db 5 ; warp events
 	warp_event 0, 1, INN_3F, 19
 	warp_event  6,  1, INN_3F, 20
-	warp_event 22,  1, INN_3F, 21
+	warp_event -2, -1, INN_3F, 21
 	warp_event 28,  1, INN_3F, 22
 	warp_event 35,  1, INN_3F, 23
 
 	db 0 ; coord events
 
-	db 8 ; bg events
+	db 9 ; bg events
 	signpost  1,  0, SIGNPOST_READ, InnVentGrate1
 	signpost  1,  6, SIGNPOST_READ, InnVentGrate2
-	signpost  1, 22, SIGNPOST_READ, InnVentGrate3
+	signpost -1, -2, SIGNPOST_READ, InnVentGrate3
 	signpost  1, 28, SIGNPOST_READ, InnVentGrate4
 	signpost  0,  1, SIGNPOST_IFSET, InnVentGrate5
 	signpost  0,  7, SIGNPOST_IFSET, InnVentGrate6
-	signpost  0, 21, SIGNPOST_IFSET, InnVentGrate7
+	signpost -1, -2, SIGNPOST_IFSET, InnVentGrate7
 	signpost  0, 29, SIGNPOST_IFSET, InnVentGrate8
+	signpost  1, 22, SIGNPOST_READ, InnVentGrate
 
 	db 0 ; object events
 
+
+InnVentGrate:
+	jumptext InnVentGrateText
+	
+InnVentGrateText:
+	text "The air vent to"
+	line "ROOM 302."
+	
+	para "It's bolted shut."
+	
+	para "Better find a"
+	line "different way in…"
+	done
 
 InnVentCallback:
 	checkevent EVENT_INN_VENT_GRATE_1
@@ -61,7 +75,7 @@ InnVentGrate2:
 	checkevent EVENT_INN_VENT_GRATE_2
 	iftrue InnVentGrate6_2
 	opentext
-	writetext InnVentGrateText1
+	writetext InnVentGrateText3
 	yesorno
 	iffalse InnVentGrateNo
 	setevent EVENT_INN_VENT_GRATE_2
@@ -84,7 +98,7 @@ InnVentGrate4:
 	checkevent EVENT_INN_VENT_GRATE_4
 	iftrue InnVentGrate8_2
 	opentext
-	writetext InnVentGrateText1
+	writetext InnVentGrateText4
 	yesorno
 	iffalse InnVentGrateNo
 	setevent EVENT_INN_VENT_GRATE_4
@@ -147,14 +161,31 @@ InnVentGrateNo:
 	end
 	
 InnVentGrateText1:
-	text "The grate is"
-	line "loose."
+	text "The air vent to"
+	line "ROOM 304."
 	
-	para "Pull it aside?"
+	para "It's loose.<WAIT_S>"
+	line "Pull it aside?"
 	done
 	
 InnVentGrateText2:
 	text "Replace the"
 	line "grate?"
+	done
+	
+InnVentGrateText3:
+	text "The air vent to"
+	line "ROOM 303."
+	
+	para "It's loose.<WAIT_S>"
+	line "Pull it aside?"
+	done
+	
+InnVentGrateText4:
+	text "The air vent to"
+	line "ROOM 301."
+	
+	para "It's loose.<WAIT_S>"
+	line "Pull it aside?"
 	done
 	

@@ -218,11 +218,11 @@ PrintLetterDelay:: ; 313d
 	and A_BUTTON | B_BUTTON
 	jr z, .textDelayLoop
 .done
+PopBCDEHL::
 	pop bc
 	pop de
 	pop hl
 	ret
-; 318c
 
 PrintNum:: ; 3198
 	farjp _PrintNum
@@ -1231,12 +1231,6 @@ HomePopHlDeBc:
 	pop hl
 	pop de
 	pop bc
-	ret
-	
-PopBCDEHL::
-	pop bc
-	pop de
-	pop hl
 	ret
 
 GetSpeciesAndFormIndex::

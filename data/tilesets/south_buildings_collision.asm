@@ -28,7 +28,7 @@
 	tilecoll LEFT_WALL, WALL, FLOOR, FLOOR ; 1b
 	tilecoll WALL, WALL, WALL, WALL ; 1c
 	tilecoll WALL, WALL, WALL, WALL ; 1d
-	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 1e
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1e
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1f
 	tilecoll WALL, WALL, DOOR, WALL ; 20
 	tilecoll WALL, WALL, DOOR, WALL ; 21
@@ -39,7 +39,7 @@
 	tilecoll WALL, WALL, ELEVATOR_BUTTON, WALL ; 26
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 27
 	tilecoll WALL, WALL, WALL, DOOR ; 28
-	tilecoll WALL, WALL, WALL, WALL ; 29
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 29
 	tilecoll WALL, WALL, WALL, WALL ; 2a
 	tilecoll WALL, WALL, WALL, DOOR ; 2b
 	tilecoll WALL, WALL, WALL, DOOR ; 2c

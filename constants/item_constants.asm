@@ -124,7 +124,7 @@
 	const TRAIN_PASS   ; 69
 	const NETT_SPECS   ; 6a
 	const ROOM_104_KEY ; 6b
-	const MYSTICTICKET ; 6c - replace
+	const SERVICE_KEY  ; 6c
 	const OLD_SEA_MAP  ; 6d - replace
 	const SHINY_CHARM  ; 6e
 	const OVAL_CHARM   ; 6f - replace

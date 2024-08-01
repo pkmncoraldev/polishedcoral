@@ -106,7 +106,7 @@ ItemDescriptions:
 	dw TrainPassDesc
 	dw NettSpecsDesc
 	dw Room104KeyDesc
-	dw MysticTicketDesc
+	dw ServiceKeyDesc
 	dw OldSeaMapDesc
 	dw ShinyCharmDesc
 	dw OvalCharmDesc
@@ -651,9 +651,9 @@ Room104KeyDesc:
 	db   "Key to room at the"
 	next "CROSSROADS INN.@"
 	
-MysticTicketDesc:
-	db   "A ticket for the"
-	next "Seagallop Ferry.@"
+ServiceKeyDesc:
+	db   "Opens the service"
+	next "room in the INN.@"
 
 OldSeaMapDesc:
 	db   "A faded sea chart"

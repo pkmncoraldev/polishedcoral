@@ -97,6 +97,10 @@ sound_read: macro
 	db "<SOUND>"
 endm
 
+sound_knock: macro
+	db "<KNOCK>"
+endm
+
 text_buffer: macro
 	db "<BUFFER>"
 	db \1

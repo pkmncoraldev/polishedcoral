@@ -207,6 +207,7 @@ endm
 	dict "<TARGET>", PlaceMoveTargetsName
 	dict "<USER>",   PlaceMoveUsersName
 	dict "<ENEMY>",  PlaceEnemysName
+	dict "<WAIT_T>", PauseTextTiny
 	dict "<WAIT_S>", PauseTextShort
 	dict "<WAIT_M>", PauseTextMedium
 	dict "<WAIT_L>", PauseTextLong
@@ -512,6 +513,11 @@ ContText::
 
 .cont	db "<_CONT>@"
 
+PauseTextTiny::
+	ld c, 5
+	call DelayFrames
+	jp NextChar
+
 PauseTextShort::
 	ld c, 10
 	call DelayFrames
@@ -669,9 +675,10 @@ TextCommands::
 	dw Text_PlaySound      ; $12 <BEEP>
 	dw Text_PlaySound      ; $13 <SLOTS>
 	dw Text_PlaySound      ; $14 <SOUND>
-	dw Text_StringBuffer   ; $15 <BUFFER>
-	dw Text_WeekDay        ; $16 <DAY>
-	dw Text_Jump           ; $17 <FAR>
+	dw Text_PlaySound      ; $15 <KNOCK>
+	dw Text_StringBuffer   ; $16 <BUFFER>
+	dw Text_WeekDay        ; $17 <DAY>
+	dw Text_Jump           ; $18 <FAR>
 	
 
 Text_Start::
@@ -918,6 +925,7 @@ TextSFX::
 	dbw "<DEX3>",   SFX_DEX_FANFARE_80_109
 	dbw "<SLOTS>",  SFX_SLOT_MACHINE_START
 	dbw "<SOUND>",  SFX_READ_TEXT
+	dbw "<KNOCK>",  SFX_BUMP
 	db -1
 
 Text_Dots::

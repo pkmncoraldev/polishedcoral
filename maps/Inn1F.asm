@@ -29,7 +29,7 @@ Inn1F_MapScriptHeader:
 
 	db 18 ; bg events
 	signpost 20,  7, SIGNPOST_JUMPTEXT, Inn1FLaptopText
-	signpost 15, 12, SIGNPOST_JUMPTEXT, Inn1FWetFloorText
+	signpost 16, 12, SIGNPOST_JUMPTEXT, Inn1FWetFloorText
 	signpost 11,  7, SIGNPOST_JUMPTEXT, Inn1FPainting1Text
 	signpost 11, 19, SIGNPOST_JUMPTEXT, Inn1FPainting2Text
 	signpost 20, 11, SIGNPOST_JUMPTEXT, Inn1FStatueText
@@ -47,23 +47,24 @@ Inn1F_MapScriptHeader:
 	signpost  2,  3, SIGNPOST_READ, Inn1FPlayersBed
 	signpost  1,  7, SIGNPOST_READ, Inn1FTrashCanPassword
 
-	db 16 ; object events
+	db 17 ; object events
 	person_event SPRITE_MINA_GROUND, 17,  8, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_MINA_GROUND, 17,  9, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_MINA_GROUND, 17, 10, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_MINA_GROUND, 17, 11, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_FAT_GUY, 19, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Inn1FClerk, -1
-	person_event SPRITE_COLBY, 11,  5, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1F104LockedDoor, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
-	person_event SPRITE_COLBY, 11,  9, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, EVENT_INN_1F_103_OPEN
-	person_event SPRITE_COLBY, 11, 13, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedElevator, -1
-	person_event SPRITE_COLBY, 11, 17, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, EVENT_INN_1F_102_OPEN
-	person_event SPRITE_COLBY, 11, 21, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
-	person_event SPRITE_POKEFAN_F, 19, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FCustomer1, -1
+	person_event SPRITE_INVISIBLE, 11,  5, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1F104LockedDoor, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
+	person_event SPRITE_INVISIBLE, 11,  9, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, EVENT_INN_1F_103_OPEN
+	person_event SPRITE_INVISIBLE, 11, 13, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedElevator, -1
+	person_event SPRITE_INVISIBLE, 11, 17, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, EVENT_INN_1F_102_OPEN
+	person_event SPRITE_INVISIBLE, 11, 21, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, -1
+	person_event SPRITE_GENTLEMAN, 19, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FCustomer1, -1
 	person_event SPRITE_CUTE_GIRL, 20, 16, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Inn1FCustomer2, -1
 	person_event SPRITE_GENERAL_VARIABLE_1, 19, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn1FUnfortunateCustomer, EVENT_INN_1F_UNFORTUNATE_CUSTOMER
 	person_event SPRITE_SNARE_GIRL,  2,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareGirl, EVENT_INN_1F_SNARE_GIRL
 	person_event SPRITE_SNARE_GIRL, 18, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareSupervisor, EVENT_INN_1F_LOBBY_SNARE
 	person_event SPRITE_SNARE_GIRL,  3, 18, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareSupervisor3, EVENT_INN_1F_ROOM_SNARE
+	person_event SPRITE_INVISIBLE, 17, 11, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FFrontDeskDoor, EVENT_INN_1F_FRONT_DESK_DOOR
 
 	const_def 1 ; object constants
 	const INN_1F_WALL_1
@@ -82,6 +83,15 @@ Inn1F_MapScriptHeader:
 	const INN_1F_SNARE_GIRL
 	const INN_1F_LOBBY_SNARE
 	const INN_1F_ROOM_SNARE
+	const INN_1F_FRONT_DESK_DOOR
+	
+Inn1FFrontDeskDoor:
+	jumptext Inn1FFrontDeskDoorText
+	
+Inn1FFrontDeskDoorText:
+	text "There's a locked"
+	line "door here."
+	done
 	
 Inn1FSnareSupervisor:
 	checkevent EVENT_BEAT_INN_2F_TRAINER_2
@@ -272,7 +282,7 @@ Inn1FSnareSupervisor2:
 	special Special_FadeOutMusic
 	applyonemovement PLAYER, step_up
 	opentext
-	writetext Inn1FSnareSupervisor2Text
+	writetext Inn1FSnareSupervisor2Text1
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
@@ -289,6 +299,10 @@ Inn1FSnareSupervisor2:
 	reloadmapafterbattle
 	playmapmusic
 	opentext
+	writetext Inn1FSnareSupervisor2Text2
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
 	writetext Inn1FSnareSupervisor3Text
 	waitbutton
 	closetext
@@ -296,9 +310,18 @@ Inn1FSnareSupervisor2:
 	setevent EVENT_INN_1F_LOBBY_SNARE
 	end
 	
-Inn1FSnareSupervisor2Text:
+Inn1FSnareSupervisor2Text1:
 	text "Ahem! <WAIT_S> Like I was"
 	line "saying…"
+	done
+	
+Inn1FSnareSupervisor2Text2:
+	text "Wow, you clobbered"
+	line "me good!"
+	
+	para "Now I see why I"
+	line "didn't get the"
+	cont "supervisor job…"
 	done
 	
 Inn1FSnareSupervisorWinText:
@@ -310,14 +333,7 @@ Inn1FSnareSupervisor3:
 	jumptextfaceplayer Inn1FSnareSupervisor3Text
 	
 Inn1FSnareSupervisor3Text:
-	text "Wow, you clobbered"
-	line "me good!"
-	
-	para "Now I see why I"
-	line "didn't get the"
-	cont "supervisor job…"
-	
-	para "At least we didn't"
+	text "At least we didn't"
 	line "tear the room up"
 	cont "too bad this time."
 	
@@ -399,7 +415,7 @@ Inn1FCallback:
 	callasm Inn1FResertScriptVar
 	return
 .playerfemale
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_BATTLE_GIRL
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_PONYTAIL
 	callasm Inn1FResertScriptVar
 	return
 	
@@ -468,6 +484,9 @@ Inn1FRunningInTheHallsASM:
 	ld a, [wPlayerState]
 	cp PLAYER_RUN
 	ret nz
+	ld a, [wXCoord]
+	cp $1c
+	ret nc
 	ld a, [wYCoord]
 	cp $0e
 	jr nc, .bottom

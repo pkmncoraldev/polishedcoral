@@ -441,7 +441,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_GOT_FLY
 	setflag ENGINE_GOT_ROCK_CLIMB
 	setflag ENGINE_GOT_SURF
-	setflag ENGINE_GOT_DIVE
+	setflag ENGINE_GOT_WATERFALL
 	setflag ENGINE_GOT_STRENGTH
 	givetmhm TM_GIGA_DRAIN
 	givetmhm TM_CURSE

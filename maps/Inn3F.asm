@@ -30,13 +30,14 @@ Inn3F_MapScriptHeader:
 	warp_event 22,  2, ROUTE_1, 1
 	warp_event 31, 11, INN_VENT, 5
 
-	db 6 ; coord events
+	db 7 ; coord events
 	coord_event 24,  5, 0, Inn3F301Unlock
 	coord_event 25,  5, 0, Inn3F301Unlock
 	coord_event  6,  5, 0, Inn3F303Unlock
 	coord_event  7,  5, 0, Inn3F303Unlock
 	coord_event  0,  5, 0, Inn3F304Unlock
 	coord_event  1,  5, 0, Inn3F304Unlock
+	coord_event 18,  4, 1, Inn3FKageStop
 
 	db 18 ; bg events
 	signpost 11,  5, SIGNPOST_JUMPTEXT, Inn1FPainting1Text
@@ -58,21 +59,25 @@ Inn3F_MapScriptHeader:
 	signpost  0, 16, SIGNPOST_JUMPTEXT, Inn1FPainting2Text
 	signpost  0, 22, SIGNPOST_JUMPTEXT, Inn1FPainting2Text
 
-	db 14 ; object events
+	db 18 ; object events
 	person_event SPRITE_FAT_GUY, -1, -1, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Inn1FClerk, EVENT_ALWAYS_SET
 	person_event SPRITE_INVISIBLE, 11,  3, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, EVENT_INN_3F_304_OPEN
 	person_event SPRITE_INVISIBLE, 11,  7, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, EVENT_INN_3F_303_OPEN
-	person_event SPRITE_INVISIBLE, 11, 11, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedElevator, -1
+	person_event SPRITE_INVISIBLE, 11, 11, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedElevator, EVENT_ELEVATOR_OPEN
 	person_event SPRITE_INVISIBLE, 11, 15, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn3F302Door, EVENT_INN_3F_302_OPEN
 	person_event SPRITE_INVISIBLE, 11, 19, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, EVENT_INN_3F_301_OPEN
 	person_event SPRITE_INVISIBLE, 11, 21, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn3FServiceDoor, EVENT_INN_3F_SERVICE_DOOR_OPEN
-	person_event SPRITE_SNARE, 12,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TrainerInn3FSnareNPC, EVENT_INN_3F_CLOTHES
+	person_event SPRITE_SNARE, 12,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn3FSnareNPC, EVENT_INN_3F_CLOTHES
 	person_event SPRITE_BALL_CUT_FRUIT,  3,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn3FClothes, EVENT_INN_3F_CLOTHES
 	person_event SPRITE_PONYTAIL,  2, 24, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 3, Inn3FCustomer1, -1
 	person_event SPRITE_BALL_CUT_FRUIT,  4,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn3FBall1, EVENT_INN_3F_POKEBALL_1
 	person_event SPRITE_BALL_CUT_FRUIT,  3,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn3FBall2, EVENT_INN_3F_POKEBALL_2
 	person_event SPRITE_BALL_CUT_FRUIT,  5,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn3FBall3, EVENT_INN_3F_POKEBALL_3
 	person_event SPRITE_BALL_CUT_FRUIT,  2,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn3FBall4, EVENT_INN_3F_POKEBALL_4
+	person_event SPRITE_BALL_CUT_FRUIT,  3, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Inn3FWaterfall, EVENT_GOT_HM05_WATERFALL
+	person_event SPRITE_SNARE,  4, 19, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn3FSnareNPC2, -1
+	person_event SPRITE_SNARE,  4, 17, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn3FSnareNPC3, -1
+	person_event SPRITE_KAGE,  2, 18, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn3FKage, -1
 	
 	const_def 1 ; object constants
 	const INN_3F_CLERK
@@ -89,6 +94,106 @@ Inn3F_MapScriptHeader:
 	const INN_3F_POKEBALL_2
 	const INN_3F_POKEBALL_3
 	const INN_3F_POKEBALL_4
+	const INN_3F_WATERFALL
+	const INN_3F_SNARE_NPC2
+	const INN_3F_SNARE_NPC3
+	const INN_3F_KAGE
+	
+Inn3FKage:
+	checkevent EVENT_GOT_HM05_WATERFALL
+	iftrue .done
+	dotrigger $1
+	opentext
+	writetext Inn3FKageText1
+	waitbutton
+	closetext
+	setevent EVENT_INN_3F_TALKED_TO_KAGE
+	callasm Inn1FResertScriptVar
+	end
+.done
+	callasm Inn1FResertScriptVar
+	jumptextfaceplayer Inn3FKageText3
+	
+Inn3FKageStop:
+	checkevent EVENT_GOT_HM05_WATERFALL
+	iffalse .forgot
+	dotrigger $2
+	applyonemovement INN_3F_KAGE, turn_step_down
+	opentext
+	writetext Inn3FWaterfallTextKage
+	waitbutton
+	closetext
+	spriteface INN_3F_SNARE_NPC2, UP
+	spriteface INN_3F_SNARE_NPC3, UP
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 25
+	opentext
+	writetext Inn3FKageText2
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement PLAYER, slow_step_up
+	pause 5
+	special SaveMusic
+	special Special_FadeOutMusic
+	pause 25
+	opentext
+	writetext Inn3FKageText3
+	buttonsound
+	special RestoreMusic
+	farwritetext StdBlankText
+	pause 6
+	writetext Inn3FKageText5
+	waitbutton
+	closetext
+	domaptrigger INN_1F, $3
+	end
+.forgot
+	applyonemovement INN_3F_KAGE, turn_step_down
+	opentext
+	writetext Inn3FKageText4
+	waitbutton
+	closetext
+	applyonemovement PLAYER, step_up
+	end
+	
+Inn3FKageText1:
+	text "KAGE: Who are you?<WAIT_S>"
+	line "The new recruit?"
+	
+	para "You say you got"
+	line "orders to fetch"
+	cont "this HM?"
+	
+	para "…<WAIT_L>Well?<WAIT_S>"
+	line "Get a move on!"
+	done
+	
+Inn3FKageText2:
+	text "KAGE: Come here"
+	line "for a sec, newbie."
+	done
+	
+Inn3FKageText3:
+	text "Hmm…"
+	
+	para "You look kinda"
+	line "familiar…"
+	
+	para "You sure you're"
+	line "new?"
+	done
+	
+Inn3FKageText5:
+	text "…<WAIT_L>Whatever…<WAIT_S>"
+	line "Get going."
+	done
+	
+Inn3FKageText4:
+	text "Didn't you forget"
+	line "something?"
+	done
 	
 Inn3F302Door:
 	opentext
@@ -134,11 +239,8 @@ Inn3F302Door:
 	writetext Inn3F302DoorText9
 	special RestoreMusic
 	special DeleteSavedMusic
-	farwritetext StdBlankText
-	pause 6
-	writetext Inn3F302DoorText6
 	closetext
-	pause 30
+	pause 40
 	playsound SFX_WALL_OPEN
 	disappear INN_3F_DOOR_LOCK_4
 	pause 14
@@ -323,6 +425,48 @@ Inn3FSetItem4Asm:
 	ld [wCurItemBallContents], a
 	ret
 	
+Inn3FWaterfall:
+	checkevent EVENT_INN_3F_TALKED_TO_KAGE
+	iftrue .collect
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, INN_3F_KAGE, 15
+	opentext
+	writetext Inn3FWaterfallTextKage
+	waitbutton
+	closetext
+	pause 5
+	spriteface PLAYER, UP
+	setlasttalked INN_3F_KAGE
+	jump Inn3FKage
+.collect
+	disappear INN_3F_WATERFALL
+	opentext
+	writetext ReceivedWaterfallText1
+	waitsfx
+	specialsound
+	waitbutton
+	writetext ReceivedWaterfallText2
+	waitbutton
+	closetext
+	givetmhm HM_WATERFALL
+	setflag ENGINE_GOT_WATERFALL
+	callasm Inn1FResertScriptVar
+	end
+	
+Inn3FWaterfallTextKage:
+	text "KAGE: Hold it!"
+	done
+	
+ReceivedWaterfallText1:
+	text "<PLAYER> found"
+	line "HM05 WATERFALL!"
+	done
+	
+ReceivedWaterfallText2:
+	text "<PLAYER> put HM05"
+	line "in the TM POCKET."
+	done
+	
 Inn3FCustomer1:
 	jumptextfaceplayer Inn3FCustomer1Text
 	
@@ -394,6 +538,9 @@ Inn3FClothes:
 	applymovement PLAYER, Movement_Inn3FChangeClothes
 	playsound SFX_TWINKLE
 	callasm Inn3FChangeClothesASM
+	writebyte (1 << 7) | (PAL_OW_GREEN << 4)
+	special Special_SetPlayerPalette
+	refreshscreen
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	pause 10
 	opentext
@@ -402,6 +549,7 @@ Inn3FClothes:
 	closetext
 	setevent EVENT_SNARE_DISGUISE
 	domaptrigger INN_1F, $2
+	callasm Inn1FResertScriptVar
 	end
 	
 Inn3FChangeClothesASM:
@@ -454,20 +602,35 @@ Inn3FClothesText3:
 	text "Lookin' good!"
 	done
 	
-TrainerInn3FSnareNPC:
+Inn3FSnareNPC:
 	checkevent EVENT_SNARE_DISGUISE
 	iffalse .normal
 	callasm Inn1FResertScriptVar
-	jumptextfaceplayer TrainerInn3FSnareNPCText1
+	jumptextfaceplayer Inn3FSnareNPCText1
 .normal
 	callasm Inn1FResertScriptVar
-	jumptextfaceplayer TrainerInn3FSnareNPCText2
+	jumptextfaceplayer Inn3FSnareNPCText2
 	
-TrainerInn3FSnareNPCText1:
+Inn3FSnareNPC2:
+	jumptextfaceplayer Inn3FSnareNPC2Text
+	
+Inn3FSnareNPC2Text:
+	text "Well? <WAIT_S>What do you"
+	line "want?"
+	done
+	
+Inn3FSnareNPC3:
+	jumptextfaceplayer Inn3FSnareNPC3Text
+	
+Inn3FSnareNPC3Text:
+	text "You new?"
+	done
+	
+Inn3FSnareNPCText1:
 	text "Looking good!"
 	done
 	
-TrainerInn3FSnareNPCText2:
+Inn3FSnareNPCText2:
 	text "You say you're with"
 	line "us, but you lost"
 	cont "your uniform?"

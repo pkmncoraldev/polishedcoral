@@ -1,8 +1,9 @@
 Inn1F_MapScriptHeader:
-	db 3 ; scene scripts
+	db 4 ; scene scripts
 	scene_script Inn1FTrigger0
 	scene_script Inn1FTrigger1
 	scene_script Inn1FTrigger2
+	scene_script Inn1FTrigger3
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Inn1FCallback
@@ -26,9 +27,11 @@ Inn1F_MapScriptHeader:
 	warp_event 25,  5, INN_1F, 8
 	warp_event 13, 11, INN_ELEVATOR, 1
 
-	db 2 ; coord events
+	db 4 ; coord events
 	coord_event 13, 23, 2, Inn1FBlockDoor
 	coord_event 14, 23, 2, Inn1FBlockDoor
+	coord_event 13, 15, 3, Inn1FKageScene
+	coord_event 14, 15, 3, Inn1FKageScene2
 
 	db 18 ; bg events
 	signpost 20,  7, SIGNPOST_JUMPTEXT, Inn1FLaptopText
@@ -50,7 +53,7 @@ Inn1F_MapScriptHeader:
 	signpost  2,  3, SIGNPOST_READ, Inn1FPlayersBed
 	signpost  1,  7, SIGNPOST_READ, Inn1FTrashCanPassword
 
-	db 17 ; object events
+	db 20 ; object events
 	person_event SPRITE_MINA_GROUND, 17,  8, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_MINA_GROUND, 17,  9, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_MINA_GROUND, 17, 10, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -68,6 +71,9 @@ Inn1F_MapScriptHeader:
 	person_event SPRITE_SNARE_GIRL, 18, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareSupervisor, EVENT_INN_1F_LOBBY_SNARE
 	person_event SPRITE_SNARE_GIRL,  3, 18, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareSupervisor3, EVENT_INN_1F_ROOM_SNARE
 	person_event SPRITE_INVISIBLE, 17, 11, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FFrontDeskDoor, EVENT_INN_1F_FRONT_DESK_DOOR
+	person_event SPRITE_SNARE, -5, -5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	person_event SPRITE_SNARE, -5, -5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	person_event SPRITE_KAGE, -5, -5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 
 	const_def 1 ; object constants
 	const INN_1F_WALL_1
@@ -87,6 +93,314 @@ Inn1F_MapScriptHeader:
 	const INN_1F_LOBBY_SNARE
 	const INN_1F_ROOM_SNARE
 	const INN_1F_FRONT_DESK_DOOR
+	const INN_1F_SNARE_1
+	const INN_1F_SNARE_2
+	const INN_1F_SNARE_KAGE
+	
+Inn1FKageScene2:
+	applyonemovement PLAYER, step_left
+Inn1FKageScene:
+	disappear INN_1F_WALL_1
+	disappear INN_1F_WALL_2
+	disappear INN_1F_WALL_3
+	disappear INN_1F_WALL_4
+	disappear INN_1F_SNARE_1
+	disappear INN_1F_SNARE_2
+	disappear INN_1F_SNARE_KAGE
+	opentext
+	writetext Inn3FWaterfallTextKage
+	waitbutton
+	closetext
+	spriteface INN_1F_CLERK, UP
+	spriteface INN_1F_CUSTOMER_1, UP
+	spriteface INN_1F_UNFORTUNATE_CUSTOMER, UP
+	spriteface PLAYER, UP
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, PLAYER, 15
+	special Special_FadeOutMusic
+	pause 25
+	playsound SFX_ELEVATOR_END
+	waitsfx
+	playmusic MUSIC_SNARE_THEME
+	moveperson INN_1F_SNARE_1, $d, $b
+	moveperson INN_1F_SNARE_2, $d, $b
+	moveperson INN_1F_SNARE_KAGE, $d, $b
+	appear INN_1F_SNARE_KAGE
+	playsound SFX_EXIT_BUILDING
+	applymovement INN_1F_SNARE_KAGE, Movement_Inn1FKageStepDown
+	appear INN_1F_SNARE_1
+	playsound SFX_EXIT_BUILDING
+	applymovement INN_1F_SNARE_1, Movement_Inn1FSnare1
+	appear INN_1F_SNARE_2
+	playsound SFX_EXIT_BUILDING
+	applymovement INN_1F_SNARE_2, Movement_Inn1FSnare2
+	opentext
+	playsound SFX_THUNDER
+	earthquake 5
+	writetext Inn1FKageText1
+	waitsfx
+	closetext
+	applyonemovement INN_1F_SNARE_KAGE, step_down
+	opentext
+	writetext Inn1FKageText2
+	waitbutton
+	closetext
+	pause 5
+	applymovement INN_1F_SNARE_KAGE, Movement_Inn1FKage1
+	callasm Inn1FFallOverASM
+	spriteface INN_1F_CLERK, RIGHT
+	spriteface INN_1F_CUSTOMER_1, LEFT
+	spriteface INN_1F_CUSTOMER_2, LEFT
+	special Special_RestorePlayerPalette
+	playsound SFX_BEAT_UP
+	applyonemovement PLAYER, jump_step_down
+	playsound SFX_SUBMISSION
+	applyonemovement PLAYER, slow_step_down
+	pause 10
+	special Special_ForcePlayerStateNormal
+	pause 10
+	spriteface PLAYER, UP
+	applymovement INN_1F_SNARE_KAGE, Movement_Inn1FKageStepDown2
+	opentext
+	writetext Inn1FKageText3
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement PLAYER, fix_facing
+	follow PLAYER, INN_1F_SNARE_KAGE
+	applyonemovement PLAYER, slow_step_down
+	opentext
+	writetext Inn1FKageText4
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement PLAYER, slow_step_down
+	stopfollow
+	opentext
+	writetext Inn1FKageText5
+	applyonemovement PLAYER, remove_fixed_facing
+	waitbutton
+	closetext
+	applyonemovement INN_1F_CLERK, turn_step_right
+	opentext
+	writetext Inn1FClerkBattleinterrupt2
+	closetext
+	spriteface INN_1F_SNARE_KAGE, LEFT
+	opentext
+	playsound SFX_THUNDER
+	earthquake 5
+	writetext Inn1FKageText6
+	waitsfx
+	closetext
+	spriteface INN_1F_SNARE_KAGE, DOWN
+	pause 5
+	opentext
+	writetext Inn1FKageText7
+	waitbutton
+	closetext
+	disappear INN_1F_SNARE_1
+	disappear INN_1F_SNARE_2
+	moveperson INN_1F_SNARE_1, $c, $13
+	moveperson INN_1F_SNARE_2, $e, $13
+	waitsfx
+	special SaveMusic
+	winlosstext Inn1FKageWinText, Inn1FKageLoseText
+	setlasttalked INN_1F_SNARE_KAGE
+	loadtrainer KAGE, INN_1F_KAGE
+	startbattle
+	appear INN_1F_SNARE_1
+	appear INN_1F_SNARE_2
+	reloadmapafterbattle
+	special RestoreMusic
+	
+	opentext
+	writetext Inn1FKageText8
+	waitbutton
+	closetext	
+	spriteface INN_1F_SNARE_2, LEFT
+	applymovement INN_1F_SNARE_2, Movement_Inn1FSnare2_2
+	applyonemovement INN_1F_SNARE_KAGE, step_right
+	applymovement INN_1F_SNARE_KAGE, Movement_Inn1FKageStepDown3
+	playsound SFX_EXIT_BUILDING
+	disappear INN_1F_SNARE_KAGE
+	pause 20
+	opentext
+	playsound SFX_THUNDER
+	earthquake 5
+	writetext Inn1FKageText9
+	waitsfx
+	closetext
+	
+	applymovement INN_1F_SNARE_2, Movement_Inn1FSnareLeave
+	opentext
+	writetext Inn1FKageText10
+	waitbutton
+	closetext
+	applymovement INN_1F_SNARE_1, Movement_Inn1FSnareLeave
+	opentext
+	writetext Inn1FKageText11
+	waitbutton
+	closetext
+	follow INN_1F_SNARE_2, INN_1F_SNARE_1
+	applymovement INN_1F_SNARE_2, Movement_Inn1FSnareLeave2
+	playsound SFX_EXIT_BUILDING
+	disappear INN_1F_SNARE_2
+	applymovement INN_1F_SNARE_1, Movement_Inn1FSnareLeave3
+	playsound SFX_EXIT_BUILDING
+	disappear INN_1F_SNARE_1
+	waitsfx
+	special Special_FadeOutMusic
+	pause 25
+	playmapmusic
+	appear INN_1F_WALL_1
+	appear INN_1F_WALL_2
+	appear INN_1F_WALL_3
+	appear INN_1F_WALL_4
+	setevent EVENT_ELEVATOR_OPEN
+	dotrigger $0
+	end
+	
+Inn1FFallOverASM:
+	ld a, PLAYER_FALLING
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret
+	
+Inn1FKageWinText:
+	text "GRAAAAHH!<WAIT_S>"
+	line "Not again!"
+	done
+	
+	
+Inn1FKageLoseText:
+	text "Yeah, that's"
+	line "right!"
+	
+	para "Stay down!"
+	done
+	
+Inn1FKageText1:
+	text "KAGE: YOU!"
+	done
+	
+Inn1FKageText2:
+	text "I knew I recog-"
+	line "nized you from"
+	cont "somewhere!"
+	
+	para "You're that kid"
+	line "from SUNBEAM!"
+	
+	para "You ain't leavin'"
+	line "with that HM!"
+	done
+	
+Inn1FKageText3:
+	text "First, you embar-"
+	line "rass me on SUNBEAM"
+	cont "ISLAND…"
+	done
+	
+Inn1FKageText4:
+	text "…then, the BOSS"
+	line "puts the “whizkid”"
+	cont "in charge…"
+	done
+	
+Inn1FKageText5:
+	text "…and now you think"
+	line "you can pull one"
+	cont "over on me?"
+	
+	para "How much"
+	line "humiliation must"
+	cont "I put up with?"
+	
+	para "No more!"
+	done
+	
+Inn1FKageText6:
+	text "KAGE: Shut it!"
+	done
+	
+Inn1FKageText7:
+	text "You really"
+	line "shouldn't have"
+	cont "messed with me!"
+	done
+	
+Inn1FKageText8:
+	text "Come on, boys."
+	done
+	
+Inn1FKageText9:
+	text "KAGE: MOVE IT,"
+	line "YOU CLOWNS!"
+	done
+	
+Inn1FKageText10:
+	text "Yes, BOSS!"
+	done
+	
+Inn1FKageText11:
+	text "Coming, BOSS!"
+	done
+	
+Movement_Inn1FSnare1:
+	step_down
+	step_right
+	step_down
+	step_end
+	
+Movement_Inn1FSnare2:
+	step_down
+	step_left
+	step_down
+	step_end
+	
+Movement_Inn1FSnare2_2:
+	fix_facing
+	step_right
+	remove_fixed_facing
+	step_end
+	
+Movement_Inn1FKage1:
+	fix_facing
+	slow_step_up
+	remove_fixed_facing
+	run_step_down
+	step_end
+	
+Movement_Inn1FSnareLeave:
+	turn_step_down
+	turn_step_down
+	turn_step_down
+	step_end
+	
+Movement_Inn1FSnareLeave2:
+	run_step_left
+	run_step_down
+	run_step_down
+	run_step_down
+	run_step_down
+	step_end
+	
+Movement_Inn1FSnareLeave3:
+	run_step_right
+	run_step_down
+	run_step_down
+	step_end
+
+Movement_Inn1FKageStepDown3:
+	step_down
+;fallthru
+Movement_Inn1FKageStepDown2:
+	step_down
+;fallthru
+Movement_Inn1FKageStepDown:
+	step_down
+	step_down
+	step_end
 	
 Inn1FBlockDoor:
 	opentext
@@ -266,11 +580,17 @@ Inn1FClerkBattleinterrupt:
 	line "the lobby!"
 	done
 	
+Inn1FClerkBattleinterrupt2:
+	text "CLERK: Hey!"
+	
+	para "No battles in"
+	line "the-<WAIT_S>"
+	done
+	
 Inn1FFakeBattleStart:
 	ld a, $69
 	ld [wOtherTrainerClass], a
 	predef Predef_StartBattle
-
 	ret
 	
 Movement_Inn1FSnareSupervisor:
@@ -373,6 +693,7 @@ Inn1FTrigger1:
 	
 Inn1FTrigger0:
 Inn1FTrigger2:
+Inn1FTrigger3:
 	callasm Inn1FRunningInTheHallsASM
 	ifequal 1, .hall
 	ifequal 2, .lobby
@@ -420,6 +741,10 @@ Inn1FTrigger2:
 	end
 	
 Inn1FCallback:
+	checkscene
+	ifnotequal $3, .skip
+	moveperson INN_1F_UNFORTUNATE_CUSTOMER, -5, -5
+.skip
 	checkevent EVENT_PLAYER_IS_CORA
 	iftrue .playerfemale
 	checkevent EVENT_PLAYER_IS_PIPPI

@@ -2371,6 +2371,15 @@ KageGroup:
 	db -1 ; end
 
 ; ================
+
+	; INN_1F
+	db "KAGE@";"KAGE2@"
+	db TRAINERTYPE_DVS
+	; party
+	db  1, BULBASAUR,$00, $00, $00
+	db -1 ; end
+
+; ================
 ; ================================
 
 

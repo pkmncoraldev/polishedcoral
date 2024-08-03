@@ -257,6 +257,7 @@ PLAYER_F EQU __enum__
 
 	trainerclass KAGE
 	const SUNBEAM_KAGE
+	const INN_1F_KAGE
 	
 	
 	trainerclass LOCKE

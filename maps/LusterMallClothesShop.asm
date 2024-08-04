@@ -61,9 +61,8 @@ LusterMallClothesShopPollyText:
 	para "Maybe I am, <WAIT_S>what"
 	line "about it?"
 	
-	para "A battle?"
-	
-	para "Like, <WAIT_S>no way!"
+	para "A battle?<WAIT_S>"
+	line "Like, <WAIT_S>no way!"
 	
 	para "Can't you see"
 	line "I'm busy?"

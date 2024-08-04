@@ -78,17 +78,16 @@ Movement_LusterMallElectronicsShopPolly2:
 	step_end
 	
 LusterMallElectronicsShopPollyText:
-	text "Ugh…"
-	
-	para "Like, <WAIT_S>not now!"
+	text "Ugh…<WAIT_S>"
+	line "Not now!"
 	
 	para "They don't have"
 	line "the phone I want!"
 	
 	para "What?"
 	
-	para "No I won't battle"
-	line "you right now!"
+	para "No, I won't battle"
+	line "you!"
 	
 	para "Leave me alone you"
 	line "little creep!"

@@ -67,7 +67,7 @@ LusterMallStoneShopPollyText:
 	line "beautiful all this"
 	cont "jewlery is!"
 	
-	para "It's, <WAIT_S>like, <WAIT_S>totally"
+	para "It's totally"
 	line "making my mouth"
 	cont "water…"
 	

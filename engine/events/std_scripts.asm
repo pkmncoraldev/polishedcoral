@@ -92,31 +92,33 @@ PokeCenterNurseScript:
 .nite
 	farwritetext NurseNiteText
 .ok
-;	checkcode VAR_TRAINER_STARS
-;	ifnotequal 4, .ask_heal
-;	farwritetext NurseFourTrainerStarsText
-;	setevent EVENT_NURSE_SAW_FOUR_TRAINER_STARS
-;	jump .answer_heal
-
-;.ask_heal
+	checkevent EVENT_USED_POKE_CENTER
+	iffalse .first_time
+	checkcode VAR_PARTYCOUNT
+	if_equal 0, .nopokemon
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	farwritetext NurseTakePokemonText
+	jump .return
+.first_time
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	farwritetext NurseWelcomeText
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
 	farwritetext NurseAskHealText
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
 .answer_heal
-	yesorno
-	iffalse .done
-;	jump .heal_pokemon
-
-;.four_star_center
-;	farwritetext NurseTheUsualText
-;	yesorno
-;	iffalse .done
-;.heal_pokemon
 	checkcode VAR_PARTYCOUNT
 	if_equal 0, .nopokemon
 	farwritetext NurseTakePokemonText
-	pause 20
+.return
+	pause 10
 	turnobject LAST_TALKED, LEFT
 	pause 10
 	special HealParty
@@ -128,6 +130,7 @@ PokeCenterNurseScript:
 	special RestoreMusic
 	turnobject LAST_TALKED, DOWN
 	pause 10
+	
 
 	checkphonecall ; elm already called about pokerus
 	iftrue .no
@@ -136,6 +139,8 @@ PokeCenterNurseScript:
 	special SpecialCheckPokerus
 	iftrue .pokerus
 .no
+	checkevent EVENT_USED_POKE_CENTER
+	iftrue .done
 	farwritetext NurseReturnPokemonText
 	pause 20
 .done
@@ -147,8 +152,9 @@ PokeCenterNurseScript:
 	turnobject LAST_TALKED, DOWN
 	pause 10
 	spriteface PLAYER, DOWN
+	setevent EVENT_USED_POKE_CENTER
 	callasm ResetPalsAfterNurse
-	waitendtext
+	endtext
 	
 .nopokemon
 	closetext

@@ -5,28 +5,24 @@ SunflowerText:
 
 NurseMornText:
 	text "Good morning!"
-	line "Welcome to our"
-	cont "#MON CENTER."
 	done
 
 NurseDayText:
 	text "Hello!"
-	line "Welcome to our"
-	cont "#MON CENTER."
 	done
 
 NurseNiteText:
 	text "Good evening!"
 	line "You're out late."
-
-	para "Welcome to our"
-	line "#MON CENTER."
 	done
 	
 NurseDuskText:
 	text "Good evening!"
-	line "Welcome to our"
-	cont "#MON CENTER."
+	done
+	
+NurseWelcomeText:
+	text "Welcome to our"
+	line "#MON CENTER."
 	done
 
 PokeComNurseMornText:
@@ -46,13 +42,10 @@ NurseAskHealText:
 	text "We can heal your"
 	line "#MON to perfect"
 	cont "health."
-
-	para "Shall we heal your"
-	line "#MON?"
 	done
 
 NurseTakePokemonText:
-	text "OK, may I see your"
+	text "May I see your"
 	line "#MON?"
 	done
 

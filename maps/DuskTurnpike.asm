@@ -20,7 +20,7 @@ DuskTurnpike_MapScriptHeader:
 	warp_event 28, 23, DUSK_AUTO_GARAGE, 6
 	warp_event 21, 31, DUSK_POKECENTER, 1
 	warp_event 29, 31, DUSK_MART, 1
-	warp_event 13, 33, DUSK_HOUSE_1, 1
+	warp_event 11, 33, DUSK_HOUSE_1, 1
 	warp_event 13, 25, DUSK_HOUSE_2, 1
 	warp_event 25, 31, DUSK_HOUSE_3, 1
 	warp_event 15,  5, BAR_BACK_ALLEY, 2

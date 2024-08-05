@@ -153,7 +153,8 @@ ShimmerLabResearchRoomProfText1:
 	
 	para "You should pay him"
 	line "a visit if you're"
-	cont "interested."
+	cont "interested in our"
+	cont "work."
 	done
 	
 ShimmerLabResearchRoomProfText2:
@@ -335,6 +336,9 @@ ShimmerLabResearchRoomNPC1Text:
 	text "We are researching"
 	line "ancient civiliza-"
 	cont "tions."
+	
+	para "We have several"
+	line "fascinating leads."
 	done
 	
 ShimmerLabResearchRoomNPC2Text:

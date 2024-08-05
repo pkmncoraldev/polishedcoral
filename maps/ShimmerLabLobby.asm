@@ -78,7 +78,7 @@ ShimmerLabExperimentSign:
 	
 ShimmerLabLobbyNPCText:
 	text "Welcome to the"
-	line "PORT SHIMMER LAB!"
+	line "PORT SHIMMER LAB."
 	
 	para "All sorts of"
 	line "research is con-"

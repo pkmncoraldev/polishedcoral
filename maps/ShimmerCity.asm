@@ -29,7 +29,7 @@ ShimmerCity_MapScriptHeader:
 	warp_event  2, 15, SHIMMER_UNDER_BOARDWALK, 25
 	warp_event 33, 15, SHIMMER_POKECENTER, 1
 	warp_event 37, 23, SHIMMER_MART, 1
-	warp_event 15, 23, SHIMMER_HOUSE_1, 1
+	warp_event 13, 23, SHIMMER_HOUSE_1, 1
 	warp_event 21, 23, SHIMMER_HOUSE_2, 1
 	warp_event 23, 13, SHIMMER_CAFE, 1
 	warp_event  5,  3, SHIMMER_UNDER_BOARDWALK, 19
@@ -53,7 +53,7 @@ ShimmerCity_MapScriptHeader:
 	person_event SPRITE_POKEFAN_F, 17, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc2, -1
 	person_event SPRITE_REDS_MOM, 16, 19, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc3, -1
 	person_event SPRITE_CHILD, 19, 23, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc4, -1
-	person_event SPRITE_FAT_GUY, 18, -1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc5, -1
+	person_event SPRITE_FAT_GUY, 18, 10, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc5, -1
 	person_event SPRITE_PONYTAIL, 10, 14, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc6, -1
 	person_event SPRITE_BALLOONS, 15, 16, SPRITEMOVEDATA_BALLOONS_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_BALLOONS, 12, 16, SPRITEMOVEDATA_BALLOONS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, 0, -1
@@ -344,17 +344,13 @@ ShimmerCityNpc4Text9:
 	
 ShimmerCityNpc5Text:
 	text "The guy at the"
-	line "blue stall sells"
-	cont "#MON."
+	line "blue stall buys"
+	cont "and sells #MON."
 	
-	para "Don't worry,"
-	line "though."
-	
-	para "He seems to take"
+	para "I'm sure he takes"
 	line "good care of them."
 	
-	para "Everything's above"
-	line "the board!"
+	para "…<WAIT_M>Right?"
 	done
 	
 ShimmerCityNpc6Text1:

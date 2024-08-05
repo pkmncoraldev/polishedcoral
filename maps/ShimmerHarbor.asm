@@ -43,7 +43,7 @@ ShimmerHarbor_MapScriptHeader:
 	coord_event 21, 21, 0, ShimmerHarborMakeSilverBinocular
 	coord_event 21, 20, 0, ShimmerHarborMakeSilverBinocular
 
-	db 25 ; bg events
+	db 26 ; bg events
 	signpost 17, 11, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SHIMMER_HARBOR_HIDDEN_BOTTLE_CAP_1
 	signpost 15, 17, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SHIMMER_HARBOR_HIDDEN_BOTTLE_CAP_2
 	signpost 17,  7, SIGNPOST_ITEM + IRON, EVENT_SHIMMER_HARBOR_HIDDEN_ITEM
@@ -69,8 +69,9 @@ ShimmerHarbor_MapScriptHeader:
 	signpost 20, 11, SIGNPOST_READ, ShimmerContainers
 	signpost 20,  5, SIGNPOST_READ, ShimmerContainers
 	signpost 16,  7, SIGNPOST_READ, ShimmerContainers3
+	signpost 22,  7, SIGNPOST_READ, ShimmerContainers
 
-	db 15 ; object events
+	db 14 ; object events
 	person_event SPRITE_BOOK_PAPER_POKEDEX,  5, 27, SPRITEMOVEDATA_BINOCULARS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	object_event 14,  6, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NULL, EVENT_SHIMMER_BOATMAN
 	object_event 12, 10, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
@@ -83,7 +84,6 @@ ShimmerHarbor_MapScriptHeader:
 	person_event SPRITE_INVISIBLE, 19, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerHarborLockedDoor, EVENT_SHIMMER_BOAT_GUY_AT_WORK
 	person_event SPRITE_SAILOR,  8, 12, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerHarborNPC2, -1
 	person_event SPRITE_SAILOR, 20,  6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerHarborNPC3, -1
-	person_event SPRITE_FAT_GUY, 20, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc5, -1
 	itemball_event  9, 18, LURE_BALL, 1, EVENT_SHIMMER_HARBOR_POKE_BALL
 	itemball_event  6, 16, DIRE_HIT, 1, EVENT_SHIMMER_HARBOR_POKE_BALL_2
 

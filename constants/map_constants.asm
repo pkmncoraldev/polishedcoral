@@ -30,7 +30,7 @@ MAP_NONE   EQU 0
 	map_const GLINT_GROVE_DEEP,							  12, 18 ;  8
 	map_const STARGLOW_CAVERN_1F,                         19, 16 ;  9
 	map_const STARGLOW_CAVERN_2F,                         14, 13 ; 10
-	map_const STARGLOW_CAVERN_3F,                          4,  8 ; 11
+	map_const STARGLOW_CAVERN_3F,                          6,  8 ; 11
 	map_const STARGLOW_CAVERN_FOSSIL_ROOM,                 4,  6 ; 12
 	map_const MT_ONWA_1F,                       		  29, 14 ; 13
 	map_const MT_ONWA_2F,                                 14, 10 ; 14

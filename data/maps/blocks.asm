@@ -185,9 +185,6 @@ StarglowCavern1F_BlockData:
 StarglowCavern2F_BlockData:
 	INCBIN "maps/StarglowCavern2F.ablk.lz"
 	
-StarglowCavern3F_BlockData:
-	INCBIN "maps/StarglowCavern3F.ablk.lz"
-	
 StarglowCavernFossilRoom_BlockData:
 	INCBIN "maps/StarglowCavernFossilRoom.ablk.lz"
 	
@@ -925,4 +922,7 @@ Inn3F_BlockData:
 	
 InnVent_BlockData:
 	INCBIN "maps/InnVent.ablk.lz"
+	
+StarglowCavern3F_BlockData:
+	INCBIN "maps/StarglowCavern3F.ablk.lz"
 	

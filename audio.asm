@@ -107,6 +107,7 @@ INCLUDE "audio/music/darkness.asm"
 INCLUDE "audio/music/starglowold.asm"
 INCLUDE "audio/music/wildbattleold.asm"
 INCLUDE "audio/music/gymbattleold.asm"
+INCLUDE "audio/music/rbywildbattle.asm"
 
 
 SECTION "Music 6", ROMX

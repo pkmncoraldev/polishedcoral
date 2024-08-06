@@ -65,6 +65,7 @@ Music:
 	dba Music_Route28
 	dba Music_MinasTheme
 	
+	dba Music_RBYWildBattle
 	dba Music_StarglowOld
 	dba Music_WildBattleOld
 	dba Music_GymBattleOld

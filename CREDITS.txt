@@ -19,6 +19,7 @@ Quidomee - Additional Graphics
 James - Movesets and balance
 Sourapple - Movesets and balance
 Sourapple - Move Animations
+Sanqui and dannye/pokered-crysaudio - RBY Music Conversion
 
 Snak - Wingull Menu Sprite
 Gargoyle - Pelipper Menu Sprite

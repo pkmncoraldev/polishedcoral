@@ -59,7 +59,7 @@ ENDM
 DEF togglesfx EQUS "toggle_sfx"
 
 MACRO slidepitchto
-	pitch_slide \1, (8 - \2), \3
+	pitch_slide \1, \2, \3
 ENDM
 
 DEF togglenoise EQUS "toggle_noise"

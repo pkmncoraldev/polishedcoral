@@ -134,7 +134,7 @@ ENDM
 MACRO pitch_slide
 	db pitch_slide_cmd
 	db \1 - 1 ; duration
-	dn 8 - \2, \3 % 12 ; octave, pitch
+	dn \2, \3 ; octave, pitch
 ENDM
 
 	const vibrato_cmd ; $e1

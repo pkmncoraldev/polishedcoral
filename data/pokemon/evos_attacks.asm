@@ -1579,6 +1579,21 @@ SnorlaxEvosAttacks:
 	db 53, GIGA_IMPACT
 	db 0 ; no more level-up moves
 
+ArticunoEvosAttacks:
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+ZapdosEvosAttacks:
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+MoltresEvosAttacks:
+	db  0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+
 DratiniEvosAttacks:
 	db EVOLVE_LEVEL, 30, DRAGONAIR
 	db 0 ; no more evolutions
@@ -2917,64 +2932,6 @@ PelipperEvosAttacks:
 	db 55, HURRICANE
 	db 0 ; no more level-up moves
 	
-RaltsEvosAttacks:
-	db EVOLVE_LEVEL, 20, KIRLIA
-	db 0 ; no more evolutions
-	db 1, GROWL
-	db 4, CONFUSION
-	db 8, DOUBLE_TEAM
-	db 11, TELEPORT
-	db 15, FAIRY_WIND
-	db 17, SAFEGUARD
-	db 21, WISH
-	db 24, CALM_MIND
-	db 28, PSYCHIC_M
-	db 31, FUTURE_SIGHT
-	db 35, CHARM_FEATHER_DANCE
-	db 38, SING_HYPNOSIS
-	db 42, DREAM_EATER
-	db 45, MOONBLAST
-	db 0 ; no more level-up moves
-	
-KirliaEvosAttacks:
-	db EVOLVE_LEVEL, 30, GARDEVOIR
-	db EVOLVE_ITEM_MALE, DAWN_STONE, GALLADE
-	db 0 ; no more evolutions
-	db 1, GROWL
-	db 1, CONFUSION
-	db 1, DOUBLE_TEAM
-	db 1, TELEPORT
-	db 1, FAIRY_WIND
-	db 1, SAFEGUARD
-	db 22, WISH
-	db 26, CALM_MIND
-	db 30, PSYCHIC_M
-	db 35, FUTURE_SIGHT
-	db 39, CHARM_FEATHER_DANCE
-	db 43, SING_HYPNOSIS
-	db 48, DREAM_EATER
-	db 52, MOONBLAST
-	db 0 ; no more level-up moves
-	
-GardevoirEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, DAZZLINGLEAM
-	db 1, GROWL
-	db 1, CONFUSION
-	db 1, DOUBLE_TEAM
-	db 1, TELEPORT
-	db 1, FAIRY_WIND
-	db 1, SAFEGUARD
-	db 1, WISH
-	db 1, CALM_MIND
-	db 1, PSYCHIC_M
-	db 36, FUTURE_SIGHT
-	db 42, CHARM_FEATHER_DANCE
-	db 48, SING_HYPNOSIS
-	db 54, DREAM_EATER
-	db 60, MOONBLAST
-	db 0 ; no more level-up moves
-	
 ShroomishEvosAttacks:
 	db EVOLVE_LEVEL, 23, BRELOOM
 	db 0 ; no more evolutions
@@ -3694,26 +3651,6 @@ PorygonZEvosAttacks:
 	db 52, LOCK_ON_MIND_READER
 	db 57, ZAP_CANNON
 	db 62, HYPER_BEAM
-	db 0 ; no more level-up moves
-	
-GalladeEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, SLASH
-	db 1, GROWL
-	db 1, CONFUSION
-	db 1, DOUBLE_TEAM
-	db 1, TELEPORT
-	db 1, FAIRY_WIND
-	db 1, FURY_CUTTER
-	db 1, WISH
-	db 1, CALM_MIND
-	db 1, PSYCHIC_M
-	db 1, FALSE_SWIPE
-	db 36, SWORDS_DANCE
-	db 42, ZEN_HEADBUTT
-	db 48, PROTECT
-	db 54, NIGHT_SLASH
-	db 60, SUPERPOWER
 	db 0 ; no more level-up moves
 	
 FroslassEvosAttacks:

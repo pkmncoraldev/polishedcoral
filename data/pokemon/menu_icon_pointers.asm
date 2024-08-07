@@ -88,6 +88,9 @@ IconPointers:
 	dw PorygonIcon
 	dw AerodactylIcon
 	dw SnorlaxIcon
+	dw ArticunoIcon
+	dw ZapdosIcon
+	dw MoltresIcon
 	dw DratiniIcon
 	dw DragonairIcon
 	dw DragoniteIcon
@@ -159,9 +162,6 @@ IconPointers:
 	dw TyranitarIcon
 	dw WingullIcon
 	dw PelipperIcon
-	dw RaltsIcon
-	dw KirliaIcon
-	dw GardevoirIcon
 	dw ShroomishIcon
 	dw BreloomIcon
 	dw AronIcon
@@ -204,7 +204,6 @@ IconPointers:
 	dw GliscorIcon
 	dw MamoswineIcon
 	dw PorygonZIcon
-	dw GalladeIcon
 	dw FroslassIcon
 	dw DrilburIcon
 	dw ExcadrillIcon

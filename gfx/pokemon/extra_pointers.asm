@@ -87,6 +87,9 @@ AnimationExtraPointers:
 	dw PorygonAnimationExtra
 	dw AerodactylAnimationExtra
 	dw SnorlaxAnimationExtra
+	dw ArticunoAnimationExtra
+	dw ZapdosAnimationExtra
+	dw MoltresAnimationExtra
 	dw DratiniAnimationExtra
 	dw DragonairAnimationExtra
 	dw DragoniteAnimationExtra
@@ -158,9 +161,6 @@ AnimationExtraPointers:
 	dw TyranitarAnimationExtra
 	dw WingullAnimationExtra
 	dw PelipperAnimationExtra
-	dw RaltsAnimationExtra
-	dw KirliaAnimationExtra
-	dw GardevoirAnimationExtra
 	dw ShroomishAnimationExtra
 	dw BreloomAnimationExtra
 	dw AronAnimationExtra
@@ -203,7 +203,6 @@ AnimationExtraPointers:
 	dw GliscorAnimationExtra
 	dw MamoswineAnimationExtra
 	dw PorygonZAnimationExtra
-	dw GalladeAnimationExtra
 	dw FroslassAnimationExtra
 	dw DrilburAnimationExtra
 	dw ExcadrillAnimationExtra

@@ -91,6 +91,9 @@ MenuMonIconColors::
 	iconpal BLUE, PURPLE ; PORYGON
 	iconpal GRAY, PURPLE ; AERODACTYL
 	iconpal RED, BLUE ; SNORLAX
+	iconpal BLUE, GRAY ; ARTICUNO
+	iconpal BROWN, RED ; ZAPDOS
+	iconpal RED, PINK ; MOLTRES
 	iconpal BLUE, PINK ; DRATINI
 	iconpal BLUE, RED ; DRAGONAIR
 	iconpal RED, BLUE ; DRAGONITE
@@ -162,9 +165,6 @@ MenuMonIconColors::
 	iconpal GREEN, GRAY ; TYRANITAR
 	iconpal BLUE, GREEN ; WINGULL
 	iconpal BLUE, GREEN ; PELIPPER
-	iconpal GREEN, BLUE ; RALTS
-	iconpal GREEN, BLUE ; KIRLIA
-	iconpal GREEN, BLUE ; GARDEVOIR
 	iconpal GREEN, RED ; SHROOMISH
 	iconpal GREEN, RED ; BRELOOM
 	iconpal GRAY, RED ; ARON
@@ -207,7 +207,6 @@ MenuMonIconColors::
 	iconpal PURPLE, GRAY ; GLISCOR
 	iconpal BROWN, GREEN ; MAMOSWINE
 	iconpal BLUE, PURPLE ; PORYGON_Z
-	iconpal GREEN, BLUE ; GALLADE
 	iconpal BLUE, PINK ; FROSLASS
 	iconpal BLUE, RED ; DRILBUR
 	iconpal RED, BLUE ; EXCADRILL

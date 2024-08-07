@@ -91,6 +91,9 @@ EvosAttacksPointers:: ; 0x425b1
 	dw PorygonEvosAttacks
 	dw AerodactylEvosAttacks
 	dw SnorlaxEvosAttacks
+	dw ArticunoEvosAttacks
+	dw ZapdosEvosAttacks
+	dw MoltresEvosAttacks
 	dw DratiniEvosAttacks
 	dw DragonairEvosAttacks
 	dw DragoniteEvosAttacks
@@ -162,9 +165,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw TyranitarEvosAttacks
 	dw WingullEvosAttacks
 	dw PelipperEvosAttacks
-	dw RaltsEvosAttacks
-	dw KirliaEvosAttacks
-	dw GardevoirEvosAttacks
 	dw ShroomishEvosAttacks
 	dw BreloomEvosAttacks
 	dw AronEvosAttacks
@@ -207,7 +207,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw GliscorEvosAttacks
 	dw MamoswineEvosAttacks
 	dw PorygonZEvosAttacks
-	dw GalladeEvosAttacks
 	dw FroslassEvosAttacks
 	dw DrilburEvosAttacks
 	dw ExcadrillEvosAttacks

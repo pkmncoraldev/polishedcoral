@@ -104,6 +104,9 @@ CryHeaders::
 	mon_cry CRY_PONYTA,  	 $0aa,  $17f 	; Porygon
 	mon_cry CRY_VILEPLUME,   $020,  $170 	; Aerodactyl
 	mon_cry CRY_GRIMER,      $055,  $081 	; Snorlax
+	mon_cry CRY_RAICHU,      $080,  $0c0 	; Articuno
+	mon_cry CRY_ZAPDOS,  	 $0ff,  $100 	; Zapdos
+	mon_cry CRY_RAICHU,      $0f8,  $0c0 	; Moltres
 	mon_cry CRY_BULBASAUR,   $060,  $0c0 	; Dratini
 	mon_cry CRY_BULBASAUR,   $040,  $100 	; Dragonair
 	mon_cry CRY_BULBASAUR,   $03c,  $140 	; Dragonite
@@ -175,9 +178,6 @@ CryHeaders::
 	mon_cry CRY_LARVITAR,   -$100,  $180 	; Tyranitar
 	mon_cry WINGULL,	WingullDEDData		; Wingull
 	mon_cry PELIPPER,	PelipperDEDData		; Pelipper
-	mon_cry RALTS,   	RaltsDEDData	 	; Ralts
-	mon_cry KIRLIA,		KirliaDEDData	 	; Kirlia
-	mon_cry GARDEVOIR,  GardevoirDEDData 	; Gardevoir
 	mon_cry SHROOMISH,  ShroomishDEDData 	; Shroomish
 	mon_cry BRELOOM,   	BreloomDEDData	 	; Breloom
 	mon_cry ARON,   	AronDEDData		 	; Aron
@@ -220,7 +220,6 @@ CryHeaders::
 	mon_cry GLISCOR,   	GliscorDEDData	 	; Gliscor
 	mon_cry MAMOSWINE,  MamoswineDEDData 	; Mamoswine
 	mon_cry PORYGON_Z,  PorygonZDEDData	 	; PorygonZ
-	mon_cry GALLADE,   	GalladeDEDData	 	; Gallade
 	mon_cry FROSLASS,  	FroslassDEDData	 	; Froslass
 	mon_cry DRILBUR,	DrilburDEDData		; Drilbur
 	mon_cry EXCADRILL,	ExcadrillDEDData	; Excadrill
@@ -434,9 +433,6 @@ CryHeaders2::
 	mon_cry CRY_LARVITAR,   -$100,  $180 	; Tyranitar
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Wingull - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Pelipper - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Ralts - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Kirlia - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Gardevoir - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Shroomish - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Breloom - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Aron - PLACEHOLDER
@@ -479,7 +475,6 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Gliscor - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Mamoswine - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; PorygonZ - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Gallade - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Froslass - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Drilbur - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Excadrill - PLACEHOLDER

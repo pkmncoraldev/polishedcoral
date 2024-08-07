@@ -157,10 +157,6 @@ NewPokedexOrder:
 	db NOIVERN
 	db MEDITITE
 	db MEDICHAM
-	db RALTS
-	db KIRLIA
-	db GARDEVOIR
-	db GALLADE
 	db DRATINI
 	db DRAGONAIR
 	db DRAGONITE
@@ -255,3 +251,6 @@ NewPokedexOrder:
 	db CLODSIRE
 	db GIRAFARIG
 	db FARIGIRAF
+	db ARTICUNO
+	db ZAPDOS
+	db MOLTRES

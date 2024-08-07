@@ -88,6 +88,9 @@
 	dw PorygonPokedexEntry
 	dw AerodactylPokedexEntry
 	dw SnorlaxPokedexEntry
+	dw ArticunoPokedexEntry
+	dw ZapdosPokedexEntry
+	dw MoltresPokedexEntry
 	dw DratiniPokedexEntry
 	dw DragonairPokedexEntry
 	dw DragonitePokedexEntry
@@ -159,9 +162,6 @@
 	dw TyranitarPokedexEntry
 	dw WingullPokedexEntry
 	dw PelipperPokedexEntry
-	dw RaltsPokedexEntry
-	dw KirliaPokedexEntry
-	dw GardevoirPokedexEntry
 	dw ShroomishPokedexEntry
 	dw BreloomPokedexEntry
 	dw AronPokedexEntry
@@ -204,7 +204,6 @@
 	dw GliscorPokedexEntry
 	dw MamoswinePokedexEntry
 	dw PorygonZPokedexEntry
-	dw GalladePokedexEntry
 	dw FroslassPokedexEntry
 	dw DrilburPokedexEntry
 	dw ExcadrillPokedexEntry

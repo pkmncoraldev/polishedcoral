@@ -87,6 +87,9 @@ BitmasksPointers:
 	dw PorygonBitmasks
 	dw AerodactylBitmasks
 	dw SnorlaxBitmasks
+	dw ArticunoBitmasks
+	dw ZapdosBitmasks
+	dw MoltresBitmasks
 	dw DratiniBitmasks
 	dw DragonairBitmasks
 	dw DragoniteBitmasks
@@ -158,9 +161,6 @@ BitmasksPointers:
 	dw TyranitarBitmasks
 	dw WingullBitmasks
 	dw PelipperBitmasks
-	dw RaltsBitmasks
-	dw KirliaBitmasks
-	dw GardevoirBitmasks
 	dw ShroomishBitmasks
 	dw BreloomBitmasks
 	dw AronBitmasks
@@ -203,7 +203,6 @@ BitmasksPointers:
 	dw GliscorBitmasks
 	dw MamoswineBitmasks
 	dw PorygonZBitmasks
-	dw GalladeBitmasks
 	dw FroslassBitmasks
 	dw DrilburBitmasks
 	dw ExcadrillBitmasks

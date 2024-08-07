@@ -175,6 +175,12 @@ PicPointers::
 	dba AerodactylBackpic
 	dba SnorlaxFrontpic
 	dba SnorlaxBackpic
+	dba ArticunoFrontpic
+	dba ArticunoBackpic
+	dba ZapdosFrontpic
+	dba ZapdosBackpic
+	dba MoltresFrontpic
+	dba MoltresBackpic
 	dba DratiniFrontpic
 	dba DratiniBackpic
 	dba DragonairFrontpic
@@ -317,12 +323,6 @@ PicPointers::
 	dba WingullBackpic
 	dba PelipperFrontpic
 	dba PelipperBackpic
-	dba RaltsFrontpic
-	dba RaltsBackpic
-	dba KirliaFrontpic
-	dba KirliaBackpic
-	dba GardevoirFrontpic
-	dba GardevoirBackpic
 	dba ShroomishFrontpic
 	dba ShroomishBackpic
 	dba BreloomFrontpic
@@ -407,8 +407,6 @@ PicPointers::
 	dba MamoswineBackpic
 	dba PorygonZFrontpic
 	dba PorygonZBackpic
-	dba GalladeFrontpic
-	dba GalladeBackpic
 	dba FroslassFrontpic
 	dba FroslassBackpic
 	dba DrilburFrontpic

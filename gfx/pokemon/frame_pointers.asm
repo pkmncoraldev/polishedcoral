@@ -87,6 +87,9 @@ FramesPointers:
 	dw PorygonFrames
 	dw AerodactylFrames
 	dw SnorlaxFrames
+	dw ArticunoFrames
+	dw ZapdosFrames
+	dw MoltresFrames
 	dw DratiniFrames
 	dw DragonairFrames
 	dw DragoniteFrames
@@ -158,9 +161,6 @@ FramesPointers:
 	dw TyranitarFrames
 	dw WingullFrames
 	dw PelipperFrames
-	dw RaltsFrames
-	dw KirliaFrames
-	dw GardevoirFrames
 	dw ShroomishFrames
 	dw BreloomFrames
 	dw AronFrames
@@ -203,7 +203,6 @@ FramesPointers:
 	dw GliscorFrames
 	dw MamoswineFrames
 	dw PorygonZFrames
-	dw GalladeFrames
 	dw FroslassFrames
 	dw DrilburFrames
 	dw ExcadrillFrames

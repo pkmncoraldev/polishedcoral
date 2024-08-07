@@ -25,7 +25,7 @@
 	const CRY_WEEDLE
 	const CRY_SCYTHER
 	const CRY_EKANS
-	const CRY_UNUSED3
+	const CRY_ZAPDOS
 	const CRY_CLEFAIRY
 	const CRY_EEVEE
 	const CRY_LAPRAS
@@ -33,7 +33,7 @@
 	const CRY_SQUIRTLE
 	const CRY_STARYU
 	const CRY_GROWLITHE
-	const CRY_UNUSED4
+	const CRY_UNUSED3
 	const CRY_PSYDUCK
 	const CRY_RATTATA
 	const CRY_VILEPLUME

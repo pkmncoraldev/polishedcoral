@@ -87,6 +87,9 @@ AnimationPointers:
 	dw PorygonAnimation
 	dw AerodactylAnimation
 	dw SnorlaxAnimation
+	dw ArticunoAnimation
+	dw ZapdosAnimation
+	dw MoltresAnimation
 	dw DratiniAnimation
 	dw DragonairAnimation
 	dw DragoniteAnimation
@@ -158,9 +161,6 @@ AnimationPointers:
 	dw TyranitarAnimation
 	dw WingullAnimation
 	dw PelipperAnimation
-	dw RaltsAnimation
-	dw KirliaAnimation
-	dw GardevoirAnimation
 	dw ShroomishAnimation
 	dw BreloomAnimation
 	dw AronAnimation
@@ -203,7 +203,6 @@ AnimationPointers:
 	dw GliscorAnimation
 	dw MamoswineAnimation
 	dw PorygonZAnimation
-	dw GalladeAnimation
 	dw FroslassAnimation
 	dw DrilburAnimation
 	dw ExcadrillAnimation

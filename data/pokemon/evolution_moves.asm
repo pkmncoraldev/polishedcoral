@@ -87,6 +87,9 @@ EvolutionMoves::
 	db NO_MOVE                              ; PORYGON
 	db NO_MOVE                              ; AERODACTYL
 	db NO_MOVE                              ; SNORLAX
+	db NO_MOVE                              ; ARTICUNO
+	db NO_MOVE                              ; ZAPDOS
+	db NO_MOVE                              ; MOLTRES
 	db NO_MOVE                              ; DRATINI
 	db NO_MOVE                              ; DRAGONAIR
 	db WING_ATTACK                          ; DRAGONITE
@@ -158,9 +161,6 @@ EvolutionMoves::
 	db NO_MOVE                              ; TYRANITAR
 	db NO_MOVE                              ; WINGULL
 	db PROTECT                              ; PELIPPER
-	db NO_MOVE                              ; RALTS
-	db NO_MOVE                              ; KIRLIA
-	db DAZZLINGLEAM                         ; GARDEVOIR
 	db NO_MOVE                              ; SHROOMISH
 	db MACH_PUNCH                           ; BRELOOM
 	db NO_MOVE                              ; ARON
@@ -203,7 +203,6 @@ EvolutionMoves::
 	db NO_MOVE                              ; GLISCOR
 	db DOUBLE_HIT                           ; MAMOSWINE
 	db NO_MOVE                              ; PORYGON_Z
-	db SLASH                                ; GALLADE
 	db HEX                                  ; FROSLASS
 	db NO_MOVE                              ; DRILBUR
 	db NO_MOVE                              ; EXCADRILL

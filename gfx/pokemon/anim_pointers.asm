@@ -244,6 +244,7 @@ AnimationPointers:
 	dw ToucannonAnimation
 	dw MareanieAnimation
 	dw ToxapexAnimation
+	dw ComfeyAnimation
 	dw -1 ; see MimikyuAnimationPointers
 	dw CursolaAnimation
 	dw DreepyAnimation

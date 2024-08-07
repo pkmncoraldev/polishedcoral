@@ -244,6 +244,7 @@ EvolutionMoves::
 	db ACROBATICS                           ; TOUCANNON ;BEAK_BLAST
 	db NO_MOVE                              ; MAREANIE
 	db NO_MOVE                              ; TOXAPEX
+	db NO_MOVE                              ; COMFEY
 	db NO_MOVE                              ; MIMIKYU
 	db NO_MOVE                              ; CURSOLA
 	db NO_MOVE                              ; DREEPY

@@ -248,6 +248,7 @@ MenuMonIconColors::
 	iconpal RED, PURPLE ; TOUCANNON
 	iconpal BLUE, RED ; MAREANIE
 	iconpal BLUE, RED ; TOXAPEX
+	iconpal GREEN, BLUE ; COMFEY
 	iconpal BROWN, GRAY ; MIMIKYU
 	iconpal PURPLE, GRAY ; CURSOLA
 	iconpal GREEN, BLUE ; DREEPY

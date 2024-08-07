@@ -261,6 +261,7 @@ CryHeaders::
 	mon_cry	TOUCANNON, 	ToucannonDEDData 	; Toucannon
 	mon_cry MAREANIE,	MareanieDEDData		; Mareanie
 	mon_cry TOXAPEX,	ToxapexDEDData		; Toxapex
+	mon_cry COMFEY,		ComfeyDEDData		; Comfey
 	mon_cry MIMIKYU,    MimikyuDEDData		; Mimikyu
 	mon_cry CURSOLA,	CursolaDEDData		; Cursola
 	mon_cry DREEPY,     DreepyDEDData		; Dreepy
@@ -516,6 +517,7 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Toucannon - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Mareanie - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Toxapex - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Comfey - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Mimikyu - PLACEHOLDER
 	mon_cry CRY_MAGCARGO,    $081,  $0ff 	; Cursola
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Dreepy - PLACEHOLDER

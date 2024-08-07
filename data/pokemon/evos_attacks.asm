@@ -4191,6 +4191,11 @@ ToxapexEvosAttacks:
 	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
+ComfeyEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
 MimikyuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND

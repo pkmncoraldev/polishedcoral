@@ -244,6 +244,7 @@ FramesPointers:
 	dw ToucannonFrames
 	dw MareanieFrames
 	dw ToxapexFrames
+	dw ComfeyFrames
 	dw -1 ; see MimikyuFramesPointers
 	dw CursolaFrames
 	dw DreepyFrames

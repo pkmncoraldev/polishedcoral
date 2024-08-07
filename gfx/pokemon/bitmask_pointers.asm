@@ -244,6 +244,7 @@ BitmasksPointers:
 	dw ToucannonBitmasks
 	dw MareanieBitmasks
 	dw ToxapexBitmasks
+	dw ComfeyBitmasks
 	dw -1 ; see MimikyuBitmasksPointers
 	dw CursolaBitmasks
 	dw DreepyBitmasks

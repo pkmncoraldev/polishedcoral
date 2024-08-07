@@ -673,6 +673,8 @@ Persian_ABackpic:         INCBIN "gfx/pokemon/persian_a/back.2bpp.lz"
 
 SECTION "Pokemon Pics 28", ROMX
 
+ComfeyFrontpic:           INCBIN "gfx/pokemon/comfey/front.2bpp.lz"
+ComfeyBackpic:            INCBIN "gfx/pokemon/comfey/back.2bpp.lz"
 MimikyuFrontpic:          INCBIN "gfx/pokemon/mimikyu/front.2bpp.lz"
 MimikyuBackpic:           INCBIN "gfx/pokemon/mimikyu/back.2bpp.lz"
 Mimikyu_BFrontpic:        INCBIN "gfx/pokemon/mimikyu_b/front.2bpp.lz"

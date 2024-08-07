@@ -489,6 +489,8 @@ PicPointers::
 	dba MareanieBackpic
 	dba ToxapexFrontpic
 	dba ToxapexBackpic
+	dba ComfeyFrontpic
+	dba ComfeyBackpic
 	dbw -1, -1 ; see MimikyuPicPointers
 	dbw -1, -1 ; see MimikyuPicPointers
 	dba CursolaFrontpic

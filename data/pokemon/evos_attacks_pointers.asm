@@ -248,6 +248,7 @@ EvosAttacksPointers:: ; 0x425b1
 	dw ToucannonEvosAttacks
 	dw MareanieEvosAttacks
 	dw ToxapexEvosAttacks
+	dw ComfeyEvosAttacks
 	dw MimikyuEvosAttacks
 	dw CursolaEvosAttacks
 	dw DreepyEvosAttacks

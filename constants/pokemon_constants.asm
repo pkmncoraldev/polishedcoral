@@ -245,6 +245,7 @@
 	const TOUCANNON ;733
 	const MAREANIE ;747
 	const TOXAPEX ;748
+	const COMFEY
 	const MIMIKYU
 	const CURSOLA
 	const DREEPY

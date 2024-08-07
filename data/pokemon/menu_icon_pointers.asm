@@ -245,6 +245,7 @@ IconPointers:
 	dw ToucannonIcon
 	dw MareanieIcon
 	dw ToxapexIcon
+	dw ComfeyIcon
 	dw MimikyuIcon
 	dw CursolaIcon
 	dw DreepyIcon

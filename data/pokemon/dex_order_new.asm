@@ -243,6 +243,7 @@ NewPokedexOrder:
 	db VOLCARONA
 	db MAREANIE
 	db TOXAPEX
+	db COMFEY
 	db MIMIKYU
 	db CURSOLA
 	db DREEPY

@@ -245,6 +245,7 @@
 	dw ToucannonPokedexEntry
 	dw MareaniePokedexEntry
 	dw ToxapexPokedexEntry
+	dw ComfeyPokedexEntry
 	dw MimikyuPokedexEntry
 	dw CursolaPokedexEntry
 	dw DreepyPokedexEntry

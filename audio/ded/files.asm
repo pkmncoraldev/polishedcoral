@@ -22,12 +22,10 @@ LampentDEDData:: INCBIN "audio/ded/lampent.ded"
 
 SECTION "DED 5", ROMX
 ChandelureDEDData:: INCBIN "audio/ded/chandelure.ded"
-RaltsDEDData:: INCBIN "audio/ded/ralts.ded"
-KirliaDEDData:: INCBIN "audio/ded/kirlia.ded"
+ComfeyDEDData:: INCBIN "audio/ded/comfey.ded"
 
 SECTION "DED 6", ROMX
-GardevoirDEDData:: INCBIN "audio/ded/gardevoir.ded"
-GalladeDEDData:: INCBIN "audio/ded/gallade.ded"
+;
 MedititeDEDData:: INCBIN "audio/ded/meditite.ded"
 MedichamDEDData:: INCBIN "audio/ded/medicham.ded"
 

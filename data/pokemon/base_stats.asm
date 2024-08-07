@@ -307,6 +307,7 @@ INCLUDE "data/pokemon/base_stats/trumbeak.asm"
 INCLUDE "data/pokemon/base_stats/toucannon.asm"
 INCLUDE "data/pokemon/base_stats/mareanie.asm"
 INCLUDE "data/pokemon/base_stats/toxapex.asm"
+INCLUDE "data/pokemon/base_stats/comfey.asm"
 INCLUDE "data/pokemon/base_stats/mimikyu.asm"
 
 INCLUDE "data/pokemon/base_stats/cursola.asm"

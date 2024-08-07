@@ -230,14 +230,14 @@ SunsetGrampsStopsYou1:
 	spriteface SUNSET_NPC3, UP
 	showemote EMOTE_SHOCK, SUNSET_NPC3, 15
 	spriteface PLAYER, DOWN
-	applymovement SUNSET_NPC3, Movement_GrampsStart1
+;	applymovement SUNSET_NPC3, Movement_GrampsStart1
 	opentext
 	writetext SunsetGrampsText
 	waitbutton
 	closetext
 	applymovement PLAYER, Movement_BackToSunset
-	stopfollow
-	applymovement SUNSET_NPC3, Movement_GrampsReset1
+;	stopfollow
+;	applymovement SUNSET_NPC3, Movement_GrampsReset1
 	end
 	
 SunsetGrampsStopsYou2:

@@ -2405,20 +2405,18 @@ NiteTempo:
 	cp NITE
 	jp nz, .not_nite_music
 	
-	ld a, [wMusicID2]
 	ld hl, NiteMusic
-	ld de, 3
-	call IsInArray
-	jr nc, .not_nite_music
 	inc hl
 	ld a, [hli]
-	ld h, [hl]
-	ld l, a
 	ld [wTempoAdjustment], a
+	inc hl
+	ld a, [hl]
+	ld [wPitchTransposition], a
 	ret
 .not_nite_music
 	xor a
 	ld [wTempoAdjustment], a
+	ld [wPitchTransposition], a
 	ret
 
 _PlayCryHeader:: ; e8b79

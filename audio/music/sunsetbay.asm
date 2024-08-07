@@ -438,14 +438,13 @@ Music_SunsetBay_branch_f0199: ; f0199
 	note A_, 2
 	note __, 2
 	note __, 4
-	note A_, 2
-	note __, 2
+	
 	octave 4
-	note D_, 2
-	note __,2
+	note D_, 4
+	note C#, 4
+	note C_, 4
+	
 	octave 3
-	note A_, 2
-	note __, 2
 	note __, 4
 	note B_, 2
 	note __, 2
@@ -577,14 +576,13 @@ Music_SunsetBay_branch_f0199: ; f0199
 	note A_, 2
 	note __, 2
 	note __, 4
-	note A_, 2
-	note __, 2
+	
 	octave 4
-	note D_, 2
-	note __,2
+	note D_, 4
+	note C#, 4
+	note C_, 4
+	
 	octave 3
-	note A_, 2
-	note __, 2
 	note __, 4
 	note G_, 2
 	note __, 2

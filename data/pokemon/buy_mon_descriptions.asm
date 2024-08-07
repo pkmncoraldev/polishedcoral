@@ -102,10 +102,10 @@ BuyMonDescriptions::
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
+	dw NoBuyMonDesc
+	dw NoBuyMonDesc
+	dw NoBuyMonDesc
 	dw ChinchouBuyMonDesc
-	dw NoBuyMonDesc
-	dw NoBuyMonDesc
-	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc

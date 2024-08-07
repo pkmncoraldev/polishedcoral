@@ -45,7 +45,7 @@ LoadOverworldMonIcon:
 ; Extended icon bank routine by com3tiin
 ; http://www.pokecommunity.com/showthread.php?t=338470
 	ld a, [wCurIcon]
-	cp NUMEL ; first mon in "Mon Icons 2"
+	cp SHARPEDO ; first mon in "Mon Icons 2"
 	lb bc, BANK("Mon Icons 1"), 8
 	ret c
 	lb bc, BANK("Mon Icons 2"), 8

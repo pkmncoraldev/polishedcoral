@@ -23,12 +23,18 @@ PlayBattleMusic: ; 2ee6c
 	jr z, .legendary
 	cp BATTLETYPE_SHINY
 	jr z, .legendary
+	cp BATTLETYPE_ROAMING
+	jr z, .roaming
 
 	ld de, MUSIC_WILD_BATTLE
 	jr .done
 
 .legendary
 	ld de, MUSIC_WILD_BOSS_BATTLE
+	jr .done
+	
+.roaming
+	ld de, MUSIC_RBY_WILD_BATTLE
 	jr .done
 	
 .trainermusic

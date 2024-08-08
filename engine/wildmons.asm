@@ -48,10 +48,10 @@ FindNest: ; 2a01f
 	ld hl, NorthOnwaWaterWildMons
 	call .FindWater
 	ld hl, SpecialCaseWildMons
-	jp .FindWater
-;	call .RoamMon1
-;	call .RoamMon2
-;	jp .RoamMon3
+	call .FindWater
+	call .RoamMon1
+	call .RoamMon2
+	jp .RoamMon3
 
 .south
 	decoord 0, 0
@@ -811,42 +811,42 @@ InitRoamMons: ; 2a2a0
 ; initialize wRoamMon structs
 
 ; species
-;	ld a, RAIKOU
-;	ld [wRoamMon1Species], a
-;	ld a, ENTEI
-;	ld [wRoamMon2Species], a
-;	ld a, SUICUNE
-;	ld [wRoamMon3Species], a
+	ld a, ARTICUNO
+	ld [wRoamMon1Species], a
+	ld a, ZAPDOS
+	ld [wRoamMon2Species], a
+	ld a, MOLTRES
+	ld [wRoamMon3Species], a
 
 ; level
-;	ld a, 40
-;	ld [wRoamMon1Level], a
-;	ld [wRoamMon2Level], a
-;	ld [wRoamMon3Level], a
+	ld a, 40
+	ld [wRoamMon1Level], a
+	ld [wRoamMon2Level], a
+	ld [wRoamMon3Level], a
 
 ; raikou starting map
-;	ld a, GROUP_ROUTE_42
-;	ld [wRoamMon1MapGroup], a
-;	ld a, MAP_ROUTE_42
-;	ld [wRoamMon1MapNumber], a
+	ld a, GROUP_ROUTE_1
+	ld [wRoamMon1MapGroup], a
+	ld a, MAP_ROUTE_1
+	ld [wRoamMon1MapNumber], a
 
 ; entei starting map
-;	ld a, GROUP_ROUTE_37
-;	ld [wRoamMon2MapGroup], a
-;	ld a, MAP_ROUTE_37
-;	ld [wRoamMon2MapNumber], a
+	ld a, GROUP_ROUTE_2
+	ld [wRoamMon2MapGroup], a
+	ld a, MAP_ROUTE_2
+	ld [wRoamMon2MapNumber], a
 
 ; suicune starting map
-;	ld a, GROUP_ROUTE_38
-;	ld [wRoamMon3MapGroup], a
-;	ld a, MAP_ROUTE_38
-;	ld [wRoamMon3MapNumber], a
+	ld a, GROUP_ROUTE_3
+	ld [wRoamMon3MapGroup], a
+	ld a, MAP_ROUTE_3
+	ld [wRoamMon3MapNumber], a
 
 ; hp
-;	xor a ; generate new stats
-;	ld [wRoamMon1HP], a
-;	ld [wRoamMon2HP], a
-;	ld [wRoamMon3HP], a
+	xor a ; generate new stats
+	ld [wRoamMon1HP], a
+	ld [wRoamMon2HP], a
+	ld [wRoamMon3HP], a
 
 	ret
 ; 2a2ce
@@ -854,9 +854,6 @@ InitRoamMons: ; 2a2a0
 
 CheckEncounterRoamMon: ; 2a2ce
 	push hl
-; Don't trigger an encounter if we're on water.
-	call CheckOnWater
-	jr z, .DontEncounterRoamMon
 ; Load the current map group and number to de
 	call CopyCurrMapDE
 ; Randomly select a beast.

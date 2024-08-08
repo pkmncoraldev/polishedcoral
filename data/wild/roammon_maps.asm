@@ -1,5 +1,4 @@
-; Maps that roaming monsters can be on, and possible maps they can jump to.
-; Notably missing are Route 40 and Route 41, which are water routes.
+; Maps that roaming monsters can be on, and possible maps they can jump to..
 
 roam_map: MACRO
 	map_id \1
@@ -12,5 +11,7 @@ endr
 ENDM
 
 RoamMaps:
-
+	roam_map ROUTE_1, ROUTE_2
+	roam_map ROUTE_2, ROUTE_1, ROUTE_3
+	roam_map ROUTE_3, ROUTE_2
 	db -1

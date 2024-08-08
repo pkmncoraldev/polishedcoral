@@ -409,6 +409,7 @@ PlayerHouseDebugPoster:
 	setevent EVENT_KNOW_OLLIE
 	setevent EVENT_KNOW_GRIND
 	callasm FillPokedex
+	special InitRoamMons
 	callasm UnlockSongs
 	setevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
 .badges

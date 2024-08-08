@@ -481,9 +481,7 @@ FightingDojoMasterText7:
 	cont "disciple thinks he"
 	cont "cannot move it…"
 	
-	para "…"
-	
-	para "He will…"
+	para "…<WAIT_L>He will…"
 	done
 	
 FightingDojoMasterWinText:

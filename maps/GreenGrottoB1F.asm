@@ -58,7 +58,7 @@ GreenGrottoB1FCallback:
 TrainerGreenGrottoB1F_1:
 	generictrainer POKEMANIAC, TRENT, EVENT_BEAT_GREEN_GROTTO_B1F_TRAINER_1, .SeenText, .BeatenText
 
-	text "Whatever, man"
+	text "Whatever, man."
 	done
 
 .SeenText:

@@ -223,7 +223,7 @@ Inn1FKageScene:
 	applymovement INN_1F_SNARE_KAGE, Movement_Inn1FKageStepDown3
 	playsound SFX_EXIT_BUILDING
 	disappear INN_1F_SNARE_KAGE
-	pause 20
+	pause 40
 	opentext
 	playsound SFX_THUNDER
 	earthquake 5
@@ -257,6 +257,8 @@ Inn1FKageScene:
 	appear INN_1F_WALL_3
 	appear INN_1F_WALL_4
 	disappear INN_1F_DOOR_LOCK_3
+	setevent EVENT_INN_SNARE_GONE
+	spriteface INN_1F_CUSTOMER_1, DOWN
 	dotrigger $0
 	end
 	
@@ -330,7 +332,34 @@ Inn1FKageText7:
 	done
 	
 Inn1FKageText8:
-	text "Come on, boys."
+	text "Fine. <WAIT_M>Keep that"
+	line "WATERFALL HM."
+	
+	para "You can't use it"
+	line "without a BADGE"
+	cont "from OBSCURA CITY,"
+	cont "anyway."
+	
+	para "…"
+	
+	para "You're a serious"
+	line "thorn in our side,"
+	cont "you know that?"
+	
+	para "Our leader is"
+	line "getting tired of"
+	cont "our screw ups."
+	
+	para "That whizkid's"
+	line "DRAGON STONE thing"
+	cont "better work out."
+	
+	para "Otherwise, we may"
+	line "have a big problem"
+	cont "on our hands."
+	
+	para "Come on, boys.<WAIT_M>"
+	line "We're leaving."
 	done
 	
 Inn1FKageText9:
@@ -1007,13 +1036,19 @@ Inn1FPlayersBedText2:
 	done
 	
 Inn1FCustomer1:
+	checkevent EVENT_INN_SNARE_GONE
+	iftrue .snare_gone
 	faceplayer
 	opentext
 	writetext Inn1FCustomer1Text
 	waitbutton
 	closetext
 	spriteface INN_1F_CUSTOMER_1, DOWN
+	callasm Inn1FResertScriptVar
 	end
+.snare_gone
+	callasm Inn1FResertScriptVar
+	jumptext Inn1FCustomer1Text2
 	
 Inn1FCustomer1Text:
 	text "I just want a"
@@ -1023,13 +1058,28 @@ Inn1FCustomer1Text:
 	para "I'm so tired!"
 	done
 	
+Inn1FCustomer1Text2:
+	text "He's nodding off"
+	line "standing up."
+	done
+	
 Inn1FCustomer2:
 	faceplayer
 	opentext
+	checkevent EVENT_INN_SNARE_GONE
+	iftrue .snare_gone
 	writetext Inn1FCustomer2Text
 	waitbutton
 	closetext
 	spriteface INN_1F_CUSTOMER_2, UP
+	callasm Inn1FResertScriptVar
+	end
+.snare_gone
+	writetext Inn1FCustomer2Text2
+	waitbutton
+	closetext
+	spriteface INN_1F_CUSTOMER_2, UP
+	callasm Inn1FResertScriptVar
 	end
 	
 Inn1FCustomer2Text:
@@ -1038,6 +1088,14 @@ Inn1FCustomer2Text:
 	cont "and rented the"
 	cont "rest of the rooms."
 	done
+	
+Inn1FCustomer2Text2:
+	text "Now that the big"
+	line "group is gone,"
+	cont "can we finally"
+	cont "rent a room?"
+	done
+
 	
 Inn1FUnfortunateCustomer:
 	setevent EVENT_INN_1F_UNFORTUNATE_CUSTOMER
@@ -1273,6 +1331,8 @@ Inn1FWetFloorText:
 	
 Inn1FClerkDesk:
 	opentext
+	checkevent EVENT_INN_SNARE_GONE
+	iftrue .snare_gone
 	checkitem ROOM_104_KEY
 	iftrue .have_key
 	writetext Inn1FClerkDeskText1
@@ -1299,6 +1359,12 @@ Inn1FClerkDesk:
 	end
 .have_key
 	writetext Inn1FClerkDeskText5
+	waitbutton
+	closetext
+	callasm Inn1FResertScriptVar
+	end
+.snare_gone
+	writetext Inn1FClerkDeskText6
 	waitbutton
 	closetext
 	callasm Inn1FResertScriptVar
@@ -1350,6 +1416,18 @@ Inn1FClerkDeskText5:
 	line "don't cause issues"
 	cont "in the rooms, it's"
 	cont "not my problem."
+	done
+	
+Inn1FClerkDeskText6:
+	text "Those TEAM SNARE"
+	line "guys have no sense"
+	cont "of respect!"
+	
+	para "I mean a battle"
+	line "in the lobby?"
+	
+	para "Seriously!?<WAIT_S>"
+	line "That's not allowed!"
 	done
 	
 Inn1FClerk:

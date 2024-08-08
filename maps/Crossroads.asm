@@ -395,7 +395,7 @@ CrossroadsCutsceneGruntText1:
 	
 CrossroadsCutsceneGruntText2:
 	text "Our boss is some"
-	line "kinda wiz-kid or"
+	line "kinda whizkid or"
 	cont "something."
 	
 	para "They say he's never"

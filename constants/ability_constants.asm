@@ -145,6 +145,7 @@
 	const DISGUISE_A
 	const SURGE_SURFER
 	const FLOWER_GIFT
+	const TRIAGE
 NUM_ABILITIES EQU const_value
 
 ABILITY_1      EQU %00100000

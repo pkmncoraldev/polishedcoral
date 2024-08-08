@@ -13,3 +13,16 @@ MovePriorities:
 	db ROAR_WHIRLWIND,         -6
 	db TELEPORT,     -6
 	db -1
+	
+TriageMoves:
+; used by Triage
+	db ABSORB
+	db MEGA_DRAIN
+	db GIGA_DRAIN
+	db REST
+	db DREAM_EATER
+	db SYNTHESIS_MOONLIGHT_MORNING_SUN
+	db WISH
+	db SOFTBOILED_MILK_DRINK_RECOVER
+	db ROOST
+	db -1

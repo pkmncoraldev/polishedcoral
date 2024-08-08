@@ -144,6 +144,7 @@ AbilityNames:
 	dw Disguise
 	dw SurgeSurfer
 	dw FlowerGift
+	dw Triage
 
 NoAbility:     db "-","-","-","@"
 Stench:        db "STENCH@"
@@ -290,6 +291,7 @@ ArmorTail:	   db "ARMOR TAIL@"
 Disguise:	   db "DISGUISE@"
 SurgeSurfer:   db "SURGE SURFER@"
 FlowerGift:	   db "FLOWER GIFT@"
+Triage:        db "TRIAGE@"
 
 
 AbilityDescriptions:
@@ -438,6 +440,7 @@ AbilityDescriptions:
 	dw DisguiseDescription
 	dw MotorDriveDescription
 	dw FlowerGiftDescription
+	dw TriageDescription
 
 NoAbilityDescription:
 	db    "Abilities are"
@@ -1001,4 +1004,8 @@ DisguiseDescription:
 	
 FlowerGiftDescription:
 	db    "Boosts ATK and"
-	next1 "SP.ATK in sun.@" 
+	next1 "SP.ATK in sun.@"
+	
+TriageDescription:
+	db    "Healing moves"
+	next1 "have priority.@"

@@ -862,7 +862,7 @@ GetMovePriority: ; 3c5c5
 	ld a, BATTLE_VARS_ABILITY
 	call GetBattleVar
 	cp PRANKSTER
-	jr nz, .no_priority
+	jr nz, .check_triage
 	ld a, BATTLE_VARS_MOVE_CATEGORY
 	call GetBattleVar
 	cp STATUS
@@ -870,6 +870,24 @@ GetMovePriority: ; 3c5c5
 	inc b
 	ld hl, PranksterText
 	call StdBattleTextBox
+	jr .no_priority
+.check_triage
+	xor $80 ; treat it as a signed byte
+	ld b, a
+	ld a, BATTLE_VARS_ABILITY
+	call GetBattleVar
+	cp TRIAGE
+	jr nz, .no_priority
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld de, 1
+	ld hl, TriageMoves
+	call IsInArray
+	jr nc, .no_priority
+	inc b
+	ld hl, TriageText
+	call StdBattleTextBox
+	
 .no_priority
 	ld a, b
 	pop bc
@@ -3673,7 +3691,7 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 	ld a, [wBattleType]
 	cp BATTLETYPE_PORYGON
 	jr nz, .skipgenwildform
-	call GenerateWildForm ; for porygon encounter
+	farcall GenerateWildForm ; for porygon encounter
 .skipgenwildform
 	predef AnimateFrontpic
 	jr .skip_cry
@@ -6893,7 +6911,7 @@ LoadEnemyMon: ; 3e8eb
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 	
-	call GenerateWildForm
+	farcall GenerateWildForm
 
 	; Mark as seen
 	dec a
@@ -7410,125 +7428,6 @@ CheckSleepingTreeMon: ; 3eb38
 	ret
 
 INCLUDE "data/wild/treemons_asleep.asm"
-
-GenerateWildForm:
-	push hl
-	push de
-	push bc
-	ld a, [wWildMonForm]
-	and a
-	jr nz, .done
-	ld a, [wTempEnemyMonSpecies]
-	ld b, a
-	ld hl, WildSpeciesForms
-.loop
-	ld a, [hli]
-	and a
-	jr z, .ok
-	cp b
-	jr z, .ok
-	inc hl
-	inc hl
-	jr .loop
-.ok
-	call IndirectHL
-.done
-	ld [wCurForm], a
-	jp PopBCDEHL
-
-WildSpeciesForms:
-	dbw PIDGEY,		.PidgeyForm
-	dbw RATTATA,	.PidgeyForm
-	dbw RATICATE,	.PidgeyForm
-	dbw RAICHU,		.ExeggcuteForm
-	dbw MEOWTH,		.MeowthForm
-	dbw EXEGGCUTE,	.ExeggcuteForm
-	dbw EXEGGUTOR,	.ExeggcuteForm
-	dbw GYARADOS,	.PidgeyForm
-	dbw WOOPER,		.WooperForm
-	dbw GRIMER,		.GrimerForm
-	dbw 0,			.Default
-
-.CheckGen1: ; used for mons that have an alt for in addition to a gen 1 form
-	ld a, [wTempEnemyMonSpecies]
-	ld hl, Gen1Form3Mons
-	ld de, 1
-	call IsInArray
-	jr nc, .Default
-	ld a, [wCurrentLandmark]
-	cp FAKE_ROUTE_1
-	jr nz, .Default
-	ld a, GEN_1_FORM_2
-	ret
-.Default:
-	ld a, PLAIN_FORM
-	ret
-	
-.Gen1Form
-	ld a, [wCurrentLandmark]
-	cp FAKE_ROUTE_1
-	ret nz
-	ld a, 3 ; raichu gen 1 form
-	ret
-.GrimerForm
-	ld a, [wMapNumber]
-	cp MAP_LUSTER_SEWERS_MUK_ROOM
-	jr z, .a_muk_room
-	jr .normal_sewer
-.a_muk_room
-	call Random
-	cp 80 percent + 1
-	jr nc, .Default
-	jr .AlolanForm
-.normal_sewer
-	call Random
-	cp 20 percent + 1
-	jr nc, .Default
-	jr .AlolanForm
-
-.WooperForm
-	ld hl, WooperLandmarks
-	jr .LandmarkForm
-.PidgeyForm
-	ld hl, FakeRoute1Landmarks
-	jr .LandmarkForm
-.MeowthForm
-	ld hl, MeowthLandmarks
-	jr .LandmarkForm
-.ExeggcuteForm:
-	ld hl, ExeggcuteLandmarks
-	;fallthrough
-.LandmarkForm:
-	ld a, [wCurrentLandmark]
-	ld de, 1
-	call IsInArray
-	jr nc, .CheckGen1
-.AlolanForm:
-	ld a, ALOLAN_FORM ; most alt forms
-	ret
-
-WooperLandmarks:
-	db ROUTE_11
-	db ROUTE_12
-	db -1
-
-MeowthLandmarks:
-	db RESIDENTIAL_DISTRICT
-	db DUSK_TURNPIKE
-	db -1
-
-ExeggcuteLandmarks:
-	db ROUTE_1
-	db -1
-	
-FakeRoute1Landmarks:
-	db FAKE_ROUTE_1
-	db -1
-	
-Gen1Form3Mons:
-	db RAICHU
-	db EXEGGUTOR
-	db -1
 
 ;CheckUnownLetter: ; 3eb75
 ; Return carry if the Unown letter hasn't been unlocked yet

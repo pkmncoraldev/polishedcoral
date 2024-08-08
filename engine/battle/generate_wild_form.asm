@@ -1,0 +1,118 @@
+GenerateWildForm::
+	push hl
+	push de
+	push bc
+	ld a, [wWildMonForm]
+	and a
+	jr nz, .done
+	ld a, [wTempEnemyMonSpecies]
+	ld b, a
+	ld hl, WildSpeciesForms
+.loop
+	ld a, [hli]
+	and a
+	jr z, .ok
+	cp b
+	jr z, .ok
+	inc hl
+	inc hl
+	jr .loop
+.ok
+	call IndirectHL
+.done
+	ld [wCurForm], a
+	jp PopBCDEHL
+
+WildSpeciesForms:
+	dbw PIDGEY,		.PidgeyForm
+	dbw RATTATA,	.PidgeyForm
+	dbw RATICATE,	.PidgeyForm
+	dbw RAICHU,		.ExeggcuteForm
+	dbw MEOWTH,		.MeowthForm
+	dbw EXEGGCUTE,	.ExeggcuteForm
+	dbw EXEGGUTOR,	.ExeggcuteForm
+	dbw GYARADOS,	.PidgeyForm
+	dbw WOOPER,		.WooperForm
+	dbw GRIMER,		.GrimerForm
+	dbw 0,			.Default
+
+.CheckGen1: ; used for mons that have an alt for in addition to a gen 1 form
+	ld a, [wTempEnemyMonSpecies]
+	ld hl, Gen1Form3Mons
+	ld de, 1
+	call IsInArray
+	jr nc, .Default
+	ld a, [wCurrentLandmark]
+	cp FAKE_ROUTE_1
+	jr nz, .Default
+	ld a, GEN_1_FORM_2
+	ret
+.Default:
+	ld a, PLAIN_FORM
+	ret
+	
+.Gen1Form
+	ld a, [wCurrentLandmark]
+	cp FAKE_ROUTE_1
+	ret nz
+	ld a, 3 ; raichu gen 1 form
+	ret
+.GrimerForm
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_SEWERS_MUK_ROOM
+	jr z, .a_muk_room
+	jr .normal_sewer
+.a_muk_room
+	call Random
+	cp 80 percent + 1
+	jr nc, .Default
+	jr .AlolanForm
+.normal_sewer
+	call Random
+	cp 20 percent + 1
+	jr nc, .Default
+	jr .AlolanForm
+
+.WooperForm
+	ld hl, WooperLandmarks
+	jr .LandmarkForm
+.PidgeyForm
+	ld hl, FakeRoute1Landmarks
+	jr .LandmarkForm
+.MeowthForm
+	ld hl, MeowthLandmarks
+	jr .LandmarkForm
+.ExeggcuteForm:
+	ld hl, ExeggcuteLandmarks
+	;fallthrough
+.LandmarkForm:
+	ld a, [wCurrentLandmark]
+	ld de, 1
+	call IsInArray
+	jr nc, .CheckGen1
+.AlolanForm:
+	ld a, ALOLAN_FORM ; most alt forms
+	ret
+
+WooperLandmarks:
+	db ROUTE_11
+	db ROUTE_12
+	db -1
+
+MeowthLandmarks:
+	db RESIDENTIAL_DISTRICT
+	db DUSK_TURNPIKE
+	db -1
+
+ExeggcuteLandmarks:
+	db ROUTE_1
+	db -1
+	
+FakeRoute1Landmarks:
+	db FAKE_ROUTE_1
+	db -1
+	
+Gen1Form3Mons:
+	db RAICHU
+	db EXEGGUTOR
+	db -1

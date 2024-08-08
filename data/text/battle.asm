@@ -1770,3 +1770,9 @@ NoBagText:
 	line "have a BAG!"
 	prompt
 	done
+	
+TriageText:
+	text "<USER>'s"
+	line "TRIAGE let it"
+	cont "move first!"
+	prompt

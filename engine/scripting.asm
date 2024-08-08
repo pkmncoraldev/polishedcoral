@@ -3224,6 +3224,9 @@ Script_movetoplayer:
 	farjp CopyDECoordsToMapObject
 	
 Script_strengthtree:
+	ld a, [wOptions1]
+	bit DEBUG_MODE, a
+	jp nz, .debug
 	farcall TryStrengthOW
 	ifequal $1, .DontMeetRequirements
 	ld b, BANK(StrengthTreeScript)
@@ -3235,6 +3238,11 @@ Script_strengthtree:
 	ld [wScriptVar], a
 	ld hl, StrengthTreeText1
 	jp MapTextbox
+	
+.debug
+	ld b, BANK(DebugStrengthTreeScript)
+	ld de, DebugStrengthTreeScript
+	jp ScriptCall
 
 StrengthTreeScript:
 	opentext
@@ -3263,6 +3271,21 @@ StrengthTreeScript:
 .said_no
 	closetext
 	callasm StrengthTreeClearScriptVarAsm
+	end
+	
+DebugStrengthTreeScript:
+	opentext
+	writetext DebugStrengthTreeText
+	waitbutton
+	closetext
+	callasm StrengthTreeAsm
+	special FadeOutPalettesBlack
+	pause 10
+	playsound SFX_THUNDER
+	waitsfx
+	playsound SFX_PLACE_PUZZLE_PIECE_DOWN
+	waitsfx
+	callasm StrengthTreeSetScriptVarAsm
 	end
 	
 StrengthTreeClearScriptVarAsm:
@@ -3298,4 +3321,9 @@ StrengthTreeText3:
 	text_from_ram wStringBuffer2
 	text " used"
 	line "STRENGTH!"
+	done
+	
+DebugStrengthTreeText:
+	text "SUPER DEBUG POWER"
+	line "ACTIVATE!"
 	done

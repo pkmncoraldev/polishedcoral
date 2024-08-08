@@ -451,11 +451,9 @@ DuskTurnpikeNPC1Text:
 	line "fumes are gettin'"
 	cont "to me."
 	
-	para "…"
+	para "…<WAIT_S>Step back, kid!"
 	
-	para "Step back, kid!"
-	
-	para "I think <WAIT_M>I'm gonna"
+	para "I think <WAIT_S>I'm gonna"
 	line "hurl!"
 	done
 	

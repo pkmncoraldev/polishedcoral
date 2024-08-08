@@ -13,7 +13,7 @@ DuskMart_MapScriptHeader:
 
 	db 3 ; object events
 	mart_clerk_event  1,  3, MARTTYPE_STANDARD, MART_DUSK
-	person_event SPRITE_ROCKER,  6,  6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DuskMartNPC1, -1
+	person_event SPRITE_ROCKER,  6,  6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DuskMartNPC1, -1
 	person_event SPRITE_MATRON,  2,  8, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, DuskMartNPC2, -1
 	
 DuskMartNPC1:

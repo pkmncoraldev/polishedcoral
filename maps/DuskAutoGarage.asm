@@ -15,7 +15,16 @@ DuskAutoGarage_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 9 ; bg events
+	signpost  3,  0, SIGNPOST_JUMPTEXT, DuskAutoGarageTools
+	signpost  2,  1, SIGNPOST_JUMPTEXT, DuskAutoGarageTools
+	signpost  4,  3, SIGNPOST_JUMPTEXT, DuskAutoGarageTools
+	signpost  2,  3, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
+	signpost  3,  3, SIGNPOST_JUMPTEXT, DuskTurnpikeTire
+	signpost  3,  4, SIGNPOST_JUMPTEXT, DuskAutoGarageCar
+	signpost  3,  5, SIGNPOST_JUMPTEXT, DuskAutoGarageCar
+	signpost  3,  6, SIGNPOST_JUMPTEXT, DuskAutoGarageCar
+	signpost  3,  7, SIGNPOST_JUMPTEXT, DuskAutoGarageCar
 
 	db 3 ; object events
 	person_event SPRITE_POKEMANIAC,  3,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, DuskAutoGarageGuy, EVENT_SAVED_POPPY
@@ -152,6 +161,22 @@ DuskAutoGarageMechanicText2:
 	cont "work!"
 	
 	para "Gahaha!"
+	done
+	
+DuskAutoGarageTools:
+	text "Wrenches,"
+	line "screwdrivers,"
+	cont "the works."
+	done
+	
+DuskAutoGarageCar:
+	text "A car is on the"
+	line "lift."
+	
+	para "You can see the"
+	line "undercarriage."
+	
+	para "Cool!"
 	done
 	
 Movement_DuskAutoGaragePoppy2:

@@ -62,3 +62,4 @@ TapeNames::
 	db "“UNDERWATER”@"
 	db "“ROUTE 28”@"
 	db "“MINA'S THEME”@"
+	db "“BATTLE!<LNBRK><LNBRK>ROAMING #MON”@"

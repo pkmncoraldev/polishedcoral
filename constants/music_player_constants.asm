@@ -31,7 +31,8 @@ NUM_MP_EDIT_FIELDS EQU const_value
 	const COMPOSER_CCCP			                 ; 02
 	const COMPOSER_SAXOPHONE_OF_TIME		     ; 03
 	const COMPOSER_JUNICHI_MASUDA                ; 04
-	const COMPOSER_CCCP_CORALDEV		         ; 05
-	const COMPOSER_EIKO							 ; 06
-	const COMPOSER_ALPHA_REMASTER				 ; 07
-	const COMPOSER_MINAKO_ADACHI				 ; 08
+	const COMPOSER_GO_ICHINOSE	                 ; 05
+	const COMPOSER_CCCP_CORALDEV		         ; 06
+	const COMPOSER_EIKO							 ; 07
+	const COMPOSER_ALPHA_REMASTER				 ; 08
+	const COMPOSER_MINAKO_ADACHI				 ; 09

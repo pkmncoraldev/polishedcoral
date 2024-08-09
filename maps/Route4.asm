@@ -163,6 +163,7 @@ Route4PlayedFluteForSnorlax::
 	disappear ROUTE4SNORLAX4
 	setevent EVENT_FOUGHT_SNORLAX_ROUTE_4
 	reloadmapafterbattle
+	callasm Route4SetupMomSnarePhoneCallASM
 	checkcode VAR_MONJUSTCAUGHT
 	if_equal SNORLAX, .CaughtSnorlax
 	opentext
@@ -185,6 +186,11 @@ Route4NoFlute:
 	waitbutton
 	closetext
 	end
+	
+Route4SetupMomSnarePhoneCallASM:
+	ld a, 150
+	ld [wBikeUpgradeSteps], a
+	ret
 	
 BeatSnorlaxRoute4:
 	

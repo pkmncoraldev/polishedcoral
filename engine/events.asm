@@ -1246,10 +1246,15 @@ DoPollenStep:
 	ret
 	
 DoBikeUpgradeStep:
-;	ld de, EVENT_BEAT_LEILANI
-;	call CheckEventFlag
-;	ret z
+	ld de, EVENT_MOM_CALLED_ABOUT_TEAM_SNARE
+	call CheckEventFlag
+	jr z, .skip
+
+	ld de, EVENT_BEAT_LEILANI
+	call CheckEventFlag
+	ret z
 	
+.skip
 	ld a, [wBikeUpgradeSteps]
 	and a
 	ret z

@@ -215,6 +215,7 @@ DuskAutoLobbyGuy:
 	closetext
 	addcellnum PHONE_AUTO
 	setevent EVENT_GAVE_BIKE_TO_AUTO_GUY
+	setevent EVENT_MOM_CALLED_ABOUT_TEAM_SNARE
 	callasm SetUpBikeUpgradeStepsAsm
 	end
 .said_no

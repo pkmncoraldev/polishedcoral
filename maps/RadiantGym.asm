@@ -102,7 +102,7 @@ RadiantGymLeilanicont:
 	setevent EVENT_BEAT_LEILANI_FIRST_TIME
 	setflag ENGINE_SIXTHBADGE
 	checkcode VAR_BADGES
-	
+	callasm RadiantGymAutoShopStepsAsm
 	
 .FightDone:	
 	checkevent EVENT_GOT_TM_FROM_LEILANI
@@ -221,6 +221,14 @@ RadiantGymLeilaniRematch:
 	closetext
 	setevent EVENT_ALWAYS_SET
 	end
+	
+RadiantGymAutoShopStepsAsm:
+	ld a, [wBikeUpgradeSteps]
+	cp 0
+	ret z
+	ld a, 100
+	ld [wBikeUpgradeSteps], a
+	ret
 	
 RadiantGymLeilaniTextBeforeBattle1:
 	text "Aren't the girls"

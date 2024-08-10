@@ -62,6 +62,7 @@ SunsetLighthouseTopAmpharos:
 .cont
 	yesorno
 	iffalse .no
+	special FadeOutPalettes
 	special Special_ChooseItem
 	iffalse .no
 	callasm CheckItemFood

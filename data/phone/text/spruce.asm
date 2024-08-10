@@ -8,7 +8,7 @@ SprucePhoneNormalText:
 	line "would you like to"
 	
 	para "have your #DEX"
-	line "progress evaluated?"
+	line "progress reviewed?"
 	prompt
 	
 SprucePhoneNormalText2:

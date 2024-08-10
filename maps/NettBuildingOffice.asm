@@ -150,8 +150,15 @@ NettBuildingOfficeNettCutscene:
 	writetext NettBuildingOfficeNettText8
 	waitbutton
 	closetext
+	setevent EVENT_MOM_CALLED_ABOUT_TEAM_SNARE
+	callasm NettBuildingOfficeSetUpSpruceBirdCall
 	dotrigger $1
 	end
+	
+NettBuildingOfficeSetUpSpruceBirdCall:
+	ld a, 250
+	ld [wBikeUpgradeSteps], a
+	ret
 	
 NettBuildingOfficeClock:
 	jumptext NettBuildingOfficeClockText

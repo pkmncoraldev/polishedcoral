@@ -806,41 +806,44 @@ LookUpWildmonsForMapDE: ; 2a288
 	ret
 ; 2a2a0
 
-
-InitRoamMons: ; 2a2a0
-; initialize wRoamMon structs
-
-; species
+InitRoamArticuno:
 	ld a, ARTICUNO
 	ld [wRoamMon1Species], a
 	ld a, ZAPDOS
 	ld [wRoamMon2Species], a
 	ld a, MOLTRES
 	ld [wRoamMon3Species], a
+	jr InitRoamMons
 
+InitRoamZapdos:
+	ld a, ZAPDOS
+	ld [wRoamMon1Species], a
+	ld a, ARTICUNO
+	ld [wRoamMon2Species], a
+	ld a, MOLTRES
+	ld [wRoamMon3Species], a
+	jr InitRoamMons
+
+InitRoamMoltres:
+	ld a, MOLTRES
+	ld [wRoamMon1Species], a
+	ld a, ARTICUNO
+	ld [wRoamMon2Species], a
+	ld a, ZAPDOS
+	ld [wRoamMon3Species], a
+
+InitRoamMons:
 ; level
 	ld a, 40
 	ld [wRoamMon1Level], a
 	ld [wRoamMon2Level], a
 	ld [wRoamMon3Level], a
 
-; raikou starting map
+; mon1 starting map
 	ld a, GROUP_ROUTE_1
 	ld [wRoamMon1MapGroup], a
 	ld a, MAP_ROUTE_1
 	ld [wRoamMon1MapNumber], a
-
-; entei starting map
-	ld a, GROUP_ROUTE_2
-	ld [wRoamMon2MapGroup], a
-	ld a, MAP_ROUTE_2
-	ld [wRoamMon2MapNumber], a
-
-; suicune starting map
-	ld a, GROUP_ROUTE_3
-	ld [wRoamMon3MapGroup], a
-	ld a, MAP_ROUTE_3
-	ld [wRoamMon3MapNumber], a
 
 ; hp
 	xor a ; generate new stats

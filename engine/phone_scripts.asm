@@ -176,6 +176,7 @@ BillPhoneWholePCFull:
 
 SprucePhoneScript: ; 0xbd081
 	checkcode VAR_SPECIALPHONECALL
+	if_equal SPECIALCALL_SPRUCECALLABOUTBIRD, .bird
 	if_equal SPECIALCALL_COMETOISLAND, .cometoisland
 	if_equal SPECIALCALL_POKERUS, .pokerus
 	
@@ -218,7 +219,33 @@ SprucePhoneScript: ; 0xbd081
 .onisland
 	farwritetext SprucePhoneOnIslandText
 	end
-	
+.bird
+	setevent EVENT_FIRST_BIRD_ACTIVE
+	setevent EVENT_SPRUCE_CALLED_ABOUT_BIRD
+	specialphonecall SPECIALCALL_NONE
+	checkevent EVENT_GOT_BULBASAUR_FROM_SPRUCE
+	iftrue .articuno
+	checkevent EVENT_GOT_CHIKORITA_FROM_SPRUCE
+	iftrue .articuno
+	checkevent EVENT_GOT_CHARMANDER_FROM_SPRUCE
+	iftrue .zapdos
+	checkevent EVENT_GOT_CHARMANDER_FROM_SPRUCE
+	iftrue .zapdos
+;.moltres
+	farwritetext SprucePhoneMoltresText
+	setevent EVENT_MOLTRES_ACTIVE
+	special InitRoamMoltres
+	end
+.zapdos
+	farwritetext SprucePhoneZapdosText
+	setevent EVENT_ZAPDOS_ACTIVE
+	special InitRoamZapdos
+	end
+.articuno
+	farwritetext SprucePhoneArticunoText
+	setevent EVENT_ARTICUNO_ACTIVE
+	special InitRoamArticuno
+	end
 .pokerus
 	end
 

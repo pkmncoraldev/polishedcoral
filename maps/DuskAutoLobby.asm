@@ -216,6 +216,7 @@ DuskAutoLobbyGuy:
 	addcellnum PHONE_AUTO
 	setevent EVENT_GAVE_BIKE_TO_AUTO_GUY
 	setevent EVENT_MOM_CALLED_ABOUT_TEAM_SNARE
+	setevent EVENT_SPRUCE_CALLED_ABOUT_BIRD
 	callasm SetUpBikeUpgradeStepsAsm
 	end
 .said_no

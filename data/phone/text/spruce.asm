@@ -191,3 +191,90 @@ SprucePhoneOnIslandText:
 	
 	para "See you soon!"
 	done
+	
+SprucePhoneArticunoText:
+	text "Hello, <PLAYER>."
+	
+	para "I'm calling with"
+	line "some information"
+	cont "that you may find"
+	cont "interesting."
+	
+	para "Rumor has it a"
+	line "great bird #MON"
+	cont "has been seen in"
+	cont "the sky above the"
+	cont "ONWA region."
+	
+	para "They say this bird"
+	line "chills the very"
+	cont "air itself!"
+	
+	para "Do keep an eye out"
+	line "for it."
+	
+	para "I would love to"
+	line "document such a"
+	cont "creature in the"
+	cont "#DEX."
+	
+	para "Take care."
+	done
+	
+SprucePhoneZapdosText:
+	text "Hello, <PLAYER>."
+	
+	para "I'm calling with"
+	line "some information"
+	cont "that you may find"
+	cont "interesting."
+	
+	para "Rumor has it a"
+	line "great bird #MON"
+	cont "has been seen in"
+	cont "the sky above the"
+	cont "ONWA region."
+	
+	para "They say its wings"
+	line "crackle with bolts"
+	cont "of lightning!"
+	
+	para "Do keep an eye out"
+	line "for it."
+	
+	para "I would love to"
+	line "document such a"
+	cont "creature in the"
+	cont "#DEX."
+	
+	para "Take care."
+	done
+	
+SprucePhoneMoltresText:
+	text "Hello, <PLAYER>."
+	
+	para "I'm calling with"
+	line "some information"
+	cont "that you may find"
+	cont "interesting."
+	
+	para "Rumor has it a"
+	line "great bird #MON"
+	cont "has been seen in"
+	cont "the sky above the"
+	cont "ONWA region."
+	
+	para "They say its wings"
+	line "themselves are"
+	cont "made of pure fire!"
+	
+	para "Do keep an eye out"
+	line "for it."
+	
+	para "I would love to"
+	line "document such a"
+	cont "creature in the"
+	cont "#DEX."
+	
+	para "Take care."
+	done

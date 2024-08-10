@@ -12,3 +12,4 @@ SpecialPhoneCallList:
 	specialcall SpecialCallWhereverYouAre, PHONE_MOM,	   MomPhoneScript       ; SPECIALCALL_MOMCOMEGETTRAINERCARD
 	specialcall SpecialCallWhereverYouAre, PHONE_AUTO,	   AutoPhoneScript      ; SPECIALCALL_COMEGETUPGRADEDBIKE
 	specialcall SpecialCallWhereverYouAre, PHONE_MOM,	   MomPhoneScript       ; SPECIALCALL_MOMCALLABOUTTEAMSNARE
+	specialcall SpecialCallWhereverYouAre, PHONE_SPRUCE,   SprucePhoneScript    ; SPECIALCALL_SPRUCECALLABOUTBIRD

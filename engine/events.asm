@@ -1246,7 +1246,7 @@ DoPollenStep:
 	ret
 	
 DoBikeUpgradeStep:
-	ld de, EVENT_MOM_CALLED_ABOUT_TEAM_SNARE
+	ld de, EVENT_SPRUCE_CALLED_ABOUT_BIRD
 	call CheckEventFlag
 	jr z, .skip
 
@@ -1272,10 +1272,15 @@ DoBikeUpgradeStep:
 AutoShopSpecialCallScript:
 	checkevent EVENT_MOM_CALLED_ABOUT_TEAM_SNARE
 	iffalse .mom
+	checkevent EVENT_SPRUCE_CALLED_ABOUT_BIRD
+	iffalse .bird
 	specialphonecall SPECIALCALL_COMEGETUPGRADEDBIKE
 	end
 .mom
 	specialphonecall SPECIALCALL_MOMCALLABOUTTEAMSNARE
+	end
+.bird
+	specialphonecall SPECIALCALL_SPRUCECALLABOUTBIRD
 	end
 	
 DoTorchStep: ; 96bd7

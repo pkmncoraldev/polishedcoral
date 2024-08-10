@@ -857,6 +857,17 @@ InitRoamMons:
 
 CheckEncounterRoamMon: ; 2a2ce
 	push hl
+	
+	eventflagcheck EVENT_ENCOUNTERED_FIRST_BIRD_ONCE
+	jr nz, .skip
+	ld a, [wBirdEncounterCounter]
+	cp 50
+	jr nz, .skip
+	
+	ld hl, wRoamMon1MapGroup
+	jr .do_it
+	
+.skip
 ; Load the current map group and number to de
 	call CopyCurrMapDE
 ; Randomly select a beast.
@@ -881,6 +892,7 @@ CheckEncounterRoamMon: ; 2a2ce
 	jr nz, .DontEncounterRoamMon
 ; We've decided to take on a beast, so stage its information for battle.
 	dec hl
+.do_it
 	dec hl
 	dec hl
 	ld a, [hli]

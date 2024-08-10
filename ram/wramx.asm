@@ -1280,7 +1280,9 @@ wMinaEncounters:: ds 1
 
 wTapePlayerBacklite:: ds 1
 
-	ds 10 ; unused
+wBirdEncounterCounter:: ds 1
+
+	ds 9 ; unused
 wUnlockedUnowns:: ds 1
 
 wFirstUnownSeen:: ds 1

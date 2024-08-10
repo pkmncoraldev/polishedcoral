@@ -26,6 +26,7 @@ PlayBattleMusic: ; 2ee6c
 	cp BATTLETYPE_ROAMING
 	jr z, .roaming
 
+	call IncrementBirdEcounterCounter
 	ld de, MUSIC_WILD_BATTLE
 	jr .done
 
@@ -34,6 +35,8 @@ PlayBattleMusic: ; 2ee6c
 	jr .done
 	
 .roaming
+	eventflagset EVENT_ENCOUNTERED_FIRST_BIRD_ONCE
+	call ResetBirdEncounterCounter
 	ld de, MUSIC_RBY_WILD_BATTLE
 	jr .done
 	
@@ -105,3 +108,19 @@ PlayBattleMusic: ; 2ee6c
 	dbw POLLY,			  MUSIC_GYM_BATTLE
 	dbw LEILANI,		  MUSIC_GYM_BATTLE
 	db -1
+
+
+IncrementBirdEcounterCounter:
+	eventflagcheck EVENT_FIRST_BIRD_ACTIVE
+	ret z
+	eventflagcheck EVENT_ENCOUNTERED_FIRST_BIRD_ONCE
+	ret nz
+	ld a, [wBirdEncounterCounter]
+	inc a
+	ld [wBirdEncounterCounter], a
+	ret
+	
+ResetBirdEncounterCounter:
+	xor a
+	ld [wBirdEncounterCounter], a
+	ret

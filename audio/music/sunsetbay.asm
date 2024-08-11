@@ -443,9 +443,9 @@ Music_SunsetBay_branch_f0199: ; f0199
 	note D_, 4
 	note C#, 4
 	note C_, 4
-	
 	octave 3
-	note __, 4
+	note B_, 4
+	
 	note B_, 2
 	note __, 2
 	octave 4
@@ -581,9 +581,9 @@ Music_SunsetBay_branch_f0199: ; f0199
 	note D_, 4
 	note C#, 4
 	note C_, 4
-	
 	octave 3
-	note __, 4
+	note B_, 4
+	
 	note G_, 2
 	note __, 2
 	octave 4

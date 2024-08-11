@@ -989,8 +989,8 @@ UpdateRoamMons: ; 2a30d
 	ld l, e
 ; Choose which map to warp to.
 	call Random
-	and $1f ; 1/8n chance it moves to a completely random map, where n is the number of roaming connections from the current map.
-	jr z, JumpRoamMon
+	cp 2 percent ; 2% chance it moves to a completely random map. runs as many times as the number of roaming connections from the current map.
+	jr c, JumpRoamMon
 	and 3
 	cp [hl]
 	jr nc, .update_loop ; invalid index, try again

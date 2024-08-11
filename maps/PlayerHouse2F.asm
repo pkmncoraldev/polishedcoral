@@ -251,7 +251,7 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText1
 	yesorno
 	iffalse .items
-	givepoke DROWZEE, 30
+	givepoke CHARIZARD, 30
 	givepoke HYPNO, 99
 	givepoke EEVEE, 99
 
@@ -409,7 +409,7 @@ PlayerHouseDebugPoster:
 	setevent EVENT_KNOW_OLLIE
 	setevent EVENT_KNOW_GRIND
 	callasm FillPokedex
-	special InitRoamMons
+	special InitRoamMoltres
 	callasm UnlockSongs
 	setevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
 .badges

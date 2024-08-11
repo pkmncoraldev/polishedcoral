@@ -63,7 +63,7 @@
 	const map_prolong_sprites     ; 24
 	const map_delay_sprites       ; 25
 	const map_update_roam         ; 26
-	const map_keep_roam           ; 27
+	const map_jump_roam           ; 27
 	const map_fade_out_music      ; 28
 	const map_animations_on       ; 29
 	const map_animations_off      ; 2a

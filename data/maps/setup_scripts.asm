@@ -18,7 +18,7 @@ MapSetupScript_Teleport: ; 1538f
 	db map_prolong_sprites
 MapSetupScript_Fly: ; 15390
 	db map_fade_out_palettes
-	db map_keep_roam
+	db map_update_roam
 MapSetupScript_Warp: ; 15392
 	db map_lcd_off
 	db map_sound_off

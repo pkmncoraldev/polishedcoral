@@ -14,22 +14,6 @@ RoamMaps:
 	roam_map ROUTE_1, ROUTE_2
 	roam_map ROUTE_2, ROUTE_1, ROUTE_3
 	roam_map ROUTE_3, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
-	roam_map ROUTE_1, ROUTE_2
 	db -1
+
+NUM_ROAMMON_MAPS EQU 3

@@ -989,7 +989,7 @@ UpdateRoamMons: ; 2a30d
 	ld l, e
 ; Choose which map to warp to.
 	call Random
-	cp 2 percent ; 2% chance it moves to a completely random map. runs as many times as the number of roaming connections from the current map.
+	cp 5 percent ; 5% chance it moves to a completely random map.
 	jr c, JumpRoamMon
 	and 3
 	cp [hl]
@@ -1051,7 +1051,8 @@ JumpRoamMon: ; 2a3cd
 .loop
 	ld hl, RoamMaps
 	call Random ; Choose a random number
-	and $f ; Take the lower nybble only.  This gives a number between 0 and 15.
+	cp NUM_ROAMMON_MAPS
+	jr nc, .loop
 	inc a
 	ld b, a
 .innerloop ; Loop to get hl to the address of the chosen roam map.

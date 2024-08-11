@@ -12,9 +12,9 @@ MenuMonIconColors::
 	iconpal BLUE, TEAL ; SQUIRTLE
 	iconpal BLUE, TEAL ; WARTORTLE
 	iconpal BLUE, TEAL ; BLASTOISE
-	iconpal RED, BROWN ; PIDGEY
-	iconpal RED, BROWN ; PIDGEOTTO
-	iconpal RED, BROWN ; PIDGEOT
+	iconpal BROWN, GRAY ; PIDGEY
+	iconpal BROWN, GRAY ; PIDGEOTTO
+	iconpal BROWN, GRAY ; PIDGEOT
 	iconpal PURPLE, GRAY ; RATTATA
 	iconpal BROWN, RED ; RATICATE
 	iconpal BROWN, RED ; PIKACHU

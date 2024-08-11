@@ -459,9 +459,8 @@ Inn1FSnareSupervisor:
 	writetext Inn1FSnareSupervisorTextNormal1
 	waitbutton
 	closetext
-	playsound SFX_PAY_DAY
+	pause 5
 	faceplayer
-	showemote EMOTE_SHOCK, INN_1F_LOBBY_SNARE, 15
 	opentext
 	writetext Inn1FSnareSupervisorTextNormal2
 	waitbutton

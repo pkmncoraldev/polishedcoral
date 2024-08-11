@@ -651,4 +651,31 @@
 	db 20, TOTODILE	;4%
 	db 20, TOTODILE	;1%
 	
+	map_id INN_VENT
+	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
+	; morn
+	db 35, RATTATA		;30%
+	db 35, JOLTIK		;30%
+	db 34, RATICATE		;20%
+	db 37, RATTATA		;10%
+	db 35, NOIBAT		;5%
+	db 33, GALVANTULA	;4%
+	db 37, GALVANTULA	;1%
+	; day
+	db 35, RATTATA		;30%
+	db 35, JOLTIK		;30%
+	db 34, RATICATE		;20%
+	db 37, RATTATA		;10%
+	db 35, NOIBAT		;5%
+	db 33, GALVANTULA	;4%
+	db 37, GALVANTULA	;1%
+	; nite
+	db 35, RATTATA		;30%
+	db 35, JOLTIK		;30%
+	db 34, RATICATE		;20%
+	db 37, RATTATA		;10%
+	db 35, NOIBAT		;5%
+	db 33, GALVANTULA	;4%
+	db 37, GALVANTULA	;1%
+	
 	db -1 ; end

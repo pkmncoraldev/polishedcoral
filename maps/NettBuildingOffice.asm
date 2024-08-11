@@ -156,8 +156,10 @@ NettBuildingOfficeNettCutscene:
 	end
 	
 NettBuildingOfficeSetUpSpruceBirdCall:
-	ld a, 250
+	xor a
 	ld [wBikeUpgradeSteps], a
+	ld a, 250
+	ld [wBikeUpgradeSteps + 1], a
 	ret
 	
 NettBuildingOfficeClock:

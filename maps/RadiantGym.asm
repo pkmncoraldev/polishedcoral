@@ -224,10 +224,12 @@ RadiantGymLeilaniRematch:
 	
 RadiantGymAutoShopStepsAsm:
 	ld a, [wBikeUpgradeSteps]
-	cp 0
+	cp $ff
 	ret z
-	ld a, 100
+	xor a
 	ld [wBikeUpgradeSteps], a
+	ld a, 150
+	ld [wBikeUpgradeSteps + 1], a
 	ret
 	
 RadiantGymLeilaniTextBeforeBattle1:

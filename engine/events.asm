@@ -1246,23 +1246,30 @@ DoPollenStep:
 	ret
 	
 DoBikeUpgradeStep:
-	ld de, EVENT_SPRUCE_CALLED_ABOUT_BIRD
-	call CheckEventFlag
-	jr z, .skip
-
-	ld de, EVENT_BEAT_LEILANI
-	call CheckEventFlag
-	ret z
-	
-.skip
 	ld a, [wBikeUpgradeSteps]
-	and a
+	cp $ff
 	ret z
-
-	dec a
+	ld hl, wBikeUpgradeSteps
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+	cp 0
+	jr nz, .dec
+	ld a, e
+	cp 0
+	jr z, .script
+.dec
+	dec de
+	ld [hl], e
+	dec hl
+	ld [hl], d
+	ld a, d
+	cp 0
+	ret nc
+.script
+	ld a, $ff
 	ld [wBikeUpgradeSteps], a
-	ret nz
-
+	ld [wBikeUpgradeSteps + 1], a
 	ld a, BANK(AutoShopSpecialCallScript)
 	ld hl, AutoShopSpecialCallScript
 	call CallScript

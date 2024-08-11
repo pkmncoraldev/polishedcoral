@@ -188,8 +188,10 @@ Route4NoFlute:
 	end
 	
 Route4SetupMomSnarePhoneCallASM:
-	ld a, 150
+	xor a
 	ld [wBikeUpgradeSteps], a
+	ld a, 150
+	ld [wBikeUpgradeSteps + 1], a
 	ret
 	
 BeatSnorlaxRoute4:

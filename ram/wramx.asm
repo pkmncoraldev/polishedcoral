@@ -1197,7 +1197,7 @@ wRepelType:: ds 1
 
 wTorchSteps:: ds 1
 
-wBikeUpgradeSteps:: ds 1
+	ds 1 ; unused
 
 wOnBike::	ds 1
 
@@ -1282,7 +1282,9 @@ wTapePlayerBacklite:: ds 1
 
 wBirdEncounterCounter:: ds 1
 
-	ds 9 ; unused
+wBikeUpgradeSteps:: ds 2
+
+	ds 7 ; unused
 wUnlockedUnowns:: ds 1
 
 wFirstUnownSeen:: ds 1

@@ -155,8 +155,10 @@ DuskAutoLobbyNPC4Text:
 	done
 	
 SetUpBikeUpgradeStepsAsm:
-	ld a, 250
+	ld a, 4
 	ld [wBikeUpgradeSteps], a
+	ld a, 0
+	ld [wBikeUpgradeSteps + 1], a
 	ret
 	
 DuskAutoLobbyGuy:

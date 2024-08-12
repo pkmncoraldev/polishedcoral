@@ -35,19 +35,19 @@ BrilloLegendSpeechHouseNPC1Text:
 	done
 	
 BrilloLegendSpeechHouseNPC2Text:
-	text "There is a legend"
-	line "of an explorer who"
-	cont "somehow made it"
-	cont "through the desert"
-	cont "wastes."
+	text "We have plenty of"
+	line "myths and legends"
+	cont "around here."
 	
-	para "“The steaks in the"
-	line "sand shall guide"
-	cont "you…”"
+	para "The mainland has"
+	line "its fair share,"
+	cont "too."
 	
-	para "“Let the flags be"
-	line "your compass…”"
+	para "Have you heard of"
+	line "the DRAGON STONE?"
 	
-	para "…or so the legend"
-	line "goes."
+	para "They say it can"
+	line "summon a great"
+	cont "#MON the size"
+	cont "of a mountain!"
 	done

@@ -14,7 +14,7 @@ SunsetWaterGrassHouse_MapScriptHeader:
 	bg_event  1,  1, SIGNPOST_JUMPSTD, magazinebookshelf
 
 	db 2 ; object events
-	object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SunsetWaterGrassHouseNPC1, -1
+	object_event  2,  3, SPRITE_COOL_DUDE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SunsetWaterGrassHouseNPC1, -1
 	object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetWaterGrassHouseNPC2, -1
 	
 SunsetWaterGrassHouseNPC1:

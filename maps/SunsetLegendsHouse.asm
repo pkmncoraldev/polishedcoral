@@ -13,30 +13,35 @@ SunsetLegendsHouse_MapScriptHeader:
 	bg_event  0,  1, SIGNPOST_JUMPSTD, magazinebookshelf
 	bg_event  1,  1, SIGNPOST_JUMPSTD, magazinebookshelf
 
-	db 1 ; object events
-	object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SunsetLegendsHouseNPC, -1
+	db 2 ; object events
+	object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SunsetLegendsHouseNPC, -1
+	object_event  5,  4, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetLegendsHouseNPC2, -1
 
 SunsetLegendsHouseNPC:
-	faceplayer
-	opentext
-	writetext SunsetLegendsHouseNPCText	
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer SunsetLegendsHouseNPCText
+	
+SunsetLegendsHouseNPC2:
+	jumptextfaceplayer SunsetLegendsHouseNPC2Text
 
 SunsetLegendsHouseNPCText:
-	text "I just moved here"
+	text "We just moved here"
 	line "from the HOENN"
 	cont "region."
-	
 
 	para "It's a lot calmer"
 	line "around here than"
 	cont "back home."
+	done
 
-	para "The ONWA region"
-	line "doesn't seem to"
-	cont "have LEGENDARY"
-	cont "#MON like most"
-	cont "other regions do."
+SunsetLegendsHouseNPC2Text:
+	text "Places like HOENN"
+	line "have tons of myths"
+	cont "and legends."
+	
+	para "Many even turn out"
+	line "to be true!"
+	
+	para "I wonder if ONWA"
+	line "has anything like"
+	cont "that."
 	done

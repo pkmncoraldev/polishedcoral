@@ -2,6 +2,13 @@ GenerateWildForm::
 	push hl
 	push de
 	push bc
+	ld a, [wMapGroup]
+	cp GROUP_ROUTE_8_GARDEN
+	jr nz, .not_encounter_house
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_8_GARDEN
+	jr z, .encounter_house
+.not_encounter_house
 	ld a, [wWildMonForm]
 	and a
 	jr nz, .done
@@ -22,6 +29,15 @@ GenerateWildForm::
 .done
 	ld [wCurForm], a
 	jp PopBCDEHL
+	
+.encounter_house
+	ld a, [wTempEnemyMonSpecies]
+	ld b, a
+	ld a, [wEncounterHouseMon]
+	cp b
+	jr nz, .not_encounter_house
+	ld a, [wEncounterHouseMonForm]
+	jr .done
 
 WildSpeciesForms:
 	dbw PIDGEY,		.PidgeyForm

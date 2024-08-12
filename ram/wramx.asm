@@ -1284,7 +1284,9 @@ wBirdEncounterCounter:: ds 1
 
 wBikeUpgradeSteps:: ds 2
 
-	ds 7 ; unused
+wEncounterHouseMonForm:: ds 1
+
+	ds 6 ; unused
 wUnlockedUnowns:: ds 1
 
 wFirstUnownSeen:: ds 1

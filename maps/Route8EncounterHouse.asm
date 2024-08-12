@@ -70,6 +70,8 @@ Route8EncounterHouseLadyAsm:
 	jr c, .cancel
 	ld a, [wCurPartySpecies]
 	ld [wEncounterHouseMon], a
+	ld a, [wCurForm]
+	ld [wEncounterHouseMonForm], a
 	farcall GetPreEvolution
 	farcall GetPreEvolution
 	ld a, [wEncounterHouseMon]

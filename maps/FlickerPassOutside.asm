@@ -10,4 +10,24 @@ FlickerPassOutside_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	person_event SPRITE_COOLTRAINER_F,  7,  8, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerPassOutsideNPC, -1
+	
+	
+FlickerPassOutsideNPC:
+	jumptextfaceplayer FlickerPassOutsideNPCText
+	
+FlickerPassOutsideNPCText:
+	text "I used to have a"
+	line "TM that could"
+	cont "light up the dark."
+	
+	para "That is until some"
+	line "jerk on ROUTE 3"
+	cont "stole it from me!"
+	
+	para "Watch out if you're"
+	line "on the GLINT CITY"
+	cont "side of ROUTE 3."
+	done
+

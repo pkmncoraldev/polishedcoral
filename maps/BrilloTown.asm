@@ -137,10 +137,10 @@ BrilloSinger:
 	writetext BrilloSingerText2
 	yesorno
 	iffalse .end
-	checkmoney $0, 1
+	checkmoney $0, 25
 	if_equal $2, .no_money
 	playsound SFX_TRANSACTION
-	takemoney $0, 1
+	takemoney $0, 25
 	special PlaceMoneyTopRight
 	checkevent EVENT_PLAYER_IS_CORA
 	iftrue .girl1
@@ -401,7 +401,7 @@ BrilloSinger:
 	spriteface BRILLO_SINGER_R, DOWN
 	spriteface BRILLO_SINGER_M, DOWN
 	wait 7
-	writetext SongText23
+	writetext SongText19
 	wait 7
 	spriteface BRILLO_SINGER_L, RIGHT
 	spriteface BRILLO_SINGER_R, LEFT
@@ -422,7 +422,7 @@ BrilloSinger:
 	spriteface BRILLO_SINGER_M, DOWN
 	wait 7
 	
-	writetext SongText19
+	writetext SongText23
 	wait 7
 	spriteface BRILLO_SINGER_L, RIGHT
 	spriteface BRILLO_SINGER_R, LEFT
@@ -508,7 +508,7 @@ BrilloSingerText1:
 	
 BrilloSingerText2:
 	text "We'll sing for"
-	line "¥1."
+	line "¥25."
 	done
 	
 BrilloSingerText3:
@@ -615,8 +615,8 @@ SongText9:
 	done
 	
 SongText10:
-	text "blinded by harsh"
-	line "sand,"
+	text "blinded by"
+	line "harsh sand,"
 	done
 	
 SongText11:
@@ -635,8 +635,8 @@ SongText13:
 	done
 	
 SongText14:
-	text "guided our brave"
-	line "friend,"
+	text "guided our"
+	line "brave friend,"
 	done
 	
 SongText15:

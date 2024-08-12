@@ -82,7 +82,7 @@
 	db 28, SQUIRTLE		;1%
 	
 	map_id DESERT_WASTELAND_1
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, BULBASAUR	;30%
 	db 20, BULBASAUR	;30%
@@ -109,7 +109,7 @@
 	db 20, BULBASAUR	;1%
 	
 	map_id DESERT_WASTELAND_2
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, BULBASAUR	;30%
 	db 20, BULBASAUR	;30%
@@ -136,7 +136,7 @@
 	db 20, BULBASAUR	;1%
 
 	map_id DESERT_WASTELAND_3
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, BULBASAUR	;30%
 	db 20, BULBASAUR	;30%
@@ -163,7 +163,7 @@
 	db 20, BULBASAUR	;1%
 
 	map_id DESERT_WASTELAND_4
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, BULBASAUR	;30%
 	db 20, BULBASAUR	;30%
@@ -190,7 +190,7 @@
 	db 20, BULBASAUR	;1%
 
 	map_id DESERT_WASTELAND_5
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, BULBASAUR	;30%
 	db 20, BULBASAUR	;30%
@@ -217,7 +217,7 @@
 	db 20, BULBASAUR	;1%
 
 	map_id DESERT_WASTELAND_6
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, BULBASAUR	;30%
 	db 20, BULBASAUR	;30%
@@ -244,7 +244,7 @@
 	db 20, BULBASAUR	;1%
 
 	map_id DESERT_WASTELAND_7
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, BULBASAUR	;30%
 	db 20, BULBASAUR	;30%
@@ -271,7 +271,7 @@
 	db 20, BULBASAUR	;1%
 
 	map_id DESERT_WASTELAND_8
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, BULBASAUR	;30%
 	db 20, BULBASAUR	;30%
@@ -298,7 +298,7 @@
 	db 20, BULBASAUR	;1%
 
 	map_id DESERT_WASTELAND_9
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, BULBASAUR	;30%
 	db 20, BULBASAUR	;30%

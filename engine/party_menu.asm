@@ -763,6 +763,12 @@ PartyMenuSelect: ; 0x50457
 	add hl, bc
 	ld a, [hl]
 	ld [wCurPartySpecies], a
+	ld a, MON_FORM ; aka MON_IS_EGG
+	call GetPartyParamLocation
+	ld a, [hl]
+	and FORM_MASK
+	ld [wCurForm], a
+	
 
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX

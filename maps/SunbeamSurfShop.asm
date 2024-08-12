@@ -126,7 +126,65 @@ SunbeamIslandSurfShopNPC1:
 	end
 	
 SunbeamIslandSurfShopNPC2:
-	jumptextfaceplayer SunbeamIslandSurfShopNPC2Text
+	checktmhm TM_THUNDER
+	iftrue .got_thunder
+	faceplayer
+	opentext
+	writetext SunbeamIslandSurfShopNPC2Text1
+	waitbutton
+	callasm SunbeamIslandSurfShopRaichuAsm
+	ifequal 4, .wrong_raichu
+	ifequal 3, .cancel
+	iffalse .no
+	writetext SunbeamIslandSurfShopNPC2Text2
+	waitbutton
+	verbosegivetmhm TM_THUNDER
+	writetext SunbeamIslandSurfShopNPC2Text3
+	waitbutton
+	closetext
+	end
+.cancel
+	writetext SunbeamIslandSurfShopNPC2Text4
+	waitbutton
+	closetext
+	end
+.no
+	writetext SunbeamIslandSurfShopNPC2Text5
+	waitbutton
+	closetext
+	end
+.wrong_raichu
+	writetext SunbeamIslandSurfShopNPC2Text6
+	waitbutton
+	closetext
+	end
+.got_thunder
+	jumptextfaceplayer SunbeamIslandSurfShopNPC2Text7
+	
+SunbeamIslandSurfShopRaichuAsm:
+	farcall SelectEncounterHouseMon
+	jr c, .cancel
+	ld a, [wCurPartySpecies]
+	cp RAICHU
+	jr nz, .no
+	ld a, [wCurForm]
+	cp ALOLAN_FORM
+	jr nz, .wrong_raichu
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+.no
+	ld a, FALSE
+	ld [wScriptVar], a
+	ret
+.cancel
+	ld a, 3
+	ld [wScriptVar], a
+	ret
+.wrong_raichu
+	ld a, 4
+	ld [wScriptVar], a
+	ret
 	
 SunbeamIslandSurfShopNPC1Text1:
 	text "Hey dude!"
@@ -218,11 +276,62 @@ SunbeamIslandSurfShopNPC1Text8_girl:
 	cont "leave."
 	done
 	
-SunbeamIslandSurfShopNPC2Text:
-	text "Leave me alone,"
-	line "kid."
+SunbeamIslandSurfShopNPC2Text1:
+	text "I've heard stories"
+	line "of a RAICHU that"
+	cont "rides its tail"
+	cont "like a surfboard."
 	
-	para "Come talk to me"
-	line "in the next"
-	cont "release."
+	para "I'd sure love to"
+	line "see that myself."
+	done
+	
+SunbeamIslandSurfShopNPC2Text2:
+	text "Woah!<WAIT_M>"
+	line "Look at that!"
+	
+	para "Hang ten little"
+	line "RAICHU!"
+	
+	para "Thanks for showing"
+	line "me such a gnarly"
+	cont "#MON!"
+	
+	para "Here, take this."
+	done
+	
+SunbeamIslandSurfShopNPC2Text3:
+	text "THUNDER is a real"
+	line "rightous move!"
+	
+	para "It does serious"
+	line "damage, but can"
+	cont "miss, so watch it."
+	
+	para "You and your"
+	line "RAICHU stay cool!"
+	done
+	
+SunbeamIslandSurfShopNPC2Text4:
+	text "Maybe it's just a"
+	line "myth…"
+	done
+	
+SunbeamIslandSurfShopNPC2Text5:
+	text "Maybe it's just a"
+	line "myth…"
+	done
+	
+SunbeamIslandSurfShopNPC2Text6:
+	text "That's a RAICHU,"
+	line "but it's tail is"
+	cont "too small to ride!"
+	
+	para "Maybe it's just a"
+	line "myth…"
+	done
+	
+SunbeamIslandSurfShopNPC2Text7:
+	text "You and your"
+	line "RAICHU stay cool!"
 	done

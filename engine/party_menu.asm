@@ -850,7 +850,7 @@ MoveToWhereString: ; 0x5051e
 ToWhichPKMNString: ; 0x50549
 	db "To which <PK><MN>?@"
 ShowHerAPKMNString:
-	db "Show her a <PK><MN>!@"
+	db "Show which <PK><MN>?@"
 SellWhichPKMNString:
 	db "Sell which <PK><MN>?@"
 YouHaveNoPKMNString: ; 0x50556

@@ -121,7 +121,9 @@ MeowthLandmarks:
 	db -1
 
 ExeggcuteLandmarks:
-	db ROUTE_1
+	db ROUTE_6
+	db SUNBEAM_ISLAND
+	db SUNBEAM_JUNGLE
 	db -1
 	
 FakeRoute1Landmarks:

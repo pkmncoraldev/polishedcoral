@@ -459,11 +459,11 @@ Inn3FWaterfallTextKage:
 	
 ReceivedWaterfallText1:
 	text "<PLAYER> found"
-	line "HM05 WATERFALL!"
+	line "HM07 WATERFALL!"
 	done
 	
 ReceivedWaterfallText2:
-	text "<PLAYER> put HM05"
+	text "<PLAYER> put HM07"
 	line "in the TM POCKET."
 	done
 	

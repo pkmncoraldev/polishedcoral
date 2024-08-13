@@ -83,8 +83,8 @@ TMHMMoves:
 	db SURF                                ; HM03
 	db STRENGTH                            ; HM04
 	db FLASH_CANNON		                           ; HM05
-	db WATERFALL                           ; HM06
-	db ROCK_SMASH                          ; HM07 (Glint Apartments)
+	db ROCK_SMASH                          ; HM06
+	db WATERFALL                           ; HM07
 	db ROCK_CLIMB                          ; HM08
 	
 	db AQUA_TAIL                           ; MT01

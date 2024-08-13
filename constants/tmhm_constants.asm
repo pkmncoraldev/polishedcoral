@@ -107,10 +107,11 @@ NUM_TMS = const_value - TM01
 	add_hm FLY			; $4f
 	add_hm SURF			; $50
 	add_hm STRENGTH		; $51
-	add_hm WATERFALL	; $52
+	add_hm FLASH_CANNON			; $52
 	add_hm ROCK_SMASH	; $53
-	add_hm ROCK_CLIMB	;54
-	add_hm FLASH_CANNON			; $55
+	add_hm WATERFALL	; $54
+	add_hm ROCK_CLIMB	; $55
+	
 NUM_HMS = const_value - HM01
 
 	add_mt SLOT_1	; $56

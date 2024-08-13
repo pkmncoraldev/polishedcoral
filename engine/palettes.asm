@@ -1188,8 +1188,9 @@ TMHMTypes:
 	db FLYING   ; FLY
 	db WATER    ; SURF
 	db NORMAL   ; STRENGTH
-	db WATER    ; WATERFALL
+	db NORMAL   ; FLASH CANNON
 	db FIGHTING ; ROCK_SMASH
+	db WATER	; WATERFALL
 	db NORMAL 	; ROCK_CLIMB
 
 PokegearDesertIslandPal:

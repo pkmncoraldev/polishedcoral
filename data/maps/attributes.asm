@@ -474,6 +474,12 @@ ENDM
 	
 	map_attributes AureoleTown, AUREOLE_TOWN, $d4, 0
 	
+	map_attributes Route6Underwater, ROUTE_6_UNDERWATER, $09, SOUTH
+	connection south, CoralReef, CORAL_REEF, -23
+	
+	map_attributes CoralReef, CORAL_REEF, $7d, NORTH
+	connection north, Route6Underwater, ROUTE_6_UNDERWATER, 23
+	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0
 	connection south, FakeRoute2, FAKE_ROUTE_2, 0
@@ -694,9 +700,7 @@ ENDM
 	map_attributes RadiantGym, RADIANT_GYM, $0, 0
 	map_attributes Route14_15Underwater, ROUTE_14_15_UNDERWATER, $09, 0
 	map_attributes Route13Underwater, ROUTE_13_UNDERWATER, $09, 0
-	map_attributes Route6Underwater, ROUTE_6_UNDERWATER, $09, 0
 	map_attributes Route6UnderwaterCave, ROUTE_6_UNDERWATER_CAVE, $09, 0
-	map_attributes CoralReef, CORAL_REEF, $09, 0
 	map_attributes KomoreCommunityCenter, KOMORE_COMMUNITY_CENTER, $00, 0
 	map_attributes KomoreCommunityCenterLeft, KOMORE_COMMUNITY_CENTER_LEFT, $00, 0
 	map_attributes KomoreCommunityCenterMiddle, KOMORE_COMMUNITY_CENTER_MIDDLE, $00, 0

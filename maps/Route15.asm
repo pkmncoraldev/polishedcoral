@@ -3,7 +3,7 @@ Route15_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 43 ; warp events
+	db 47 ; warp events
 	warp_event 36,  7, CONNECTING_CAVERN_ENTRANCE, 1
 	warp_event  6, 22, ROUTE_14_15_UNDERWATER, 17
 	warp_event  7, 22, ROUTE_14_15_UNDERWATER, 18
@@ -47,6 +47,10 @@ Route15_MapScriptHeader:
 	warp_event 68, 23, ROUTE_14_15_UNDERWATER, 56
 	warp_event 69, 23, ROUTE_14_15_UNDERWATER, 57
 	warp_event 70, 23, ROUTE_14_15_UNDERWATER, 58
+	warp_event 26,  2, CORAL_REEF, 1
+	warp_event 27,  2, CORAL_REEF, 2
+	warp_event 26,  3, CORAL_REEF, 3
+	warp_event 27,  3, CORAL_REEF, 4
 
 	db 0 ; coord events
 

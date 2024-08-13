@@ -400,7 +400,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_14_15_UNDERWATER,					  36, 18 ; 1
 	map_const ROUTE_13_UNDERWATER,						  12, 11 ; 2
 	map_const ROUTE_6_UNDERWATER,						  43, 19 ; 3
-	map_const CORAL_REEF,								  23, 23 ; 4
+	map_const CORAL_REEF,								  34, 23 ; 4
 	
 	newgroup													 ; 22
 	

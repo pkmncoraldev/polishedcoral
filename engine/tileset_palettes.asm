@@ -155,11 +155,16 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .autumn
 	cp TILESET_SOUTH_TOWNS
 	jp z, .south_towns
+	cp TILESET_GREEN_CAVE
+	jp z, .green_cave
 	call DiveSpotMapPals
 	jp nc, .do_nothing
 	ld hl, DiveSpotsPalette
 	call LoadTimeofDayBGPal6
 	jp .do_nothing
+.green_cave
+	ld hl, GreenCavePalette
+	jp LoadSevenBGPalettes
 .bar
 	ld hl, BarPalette
 	jp LoadSevenBGPalettes
@@ -1135,6 +1140,9 @@ INCLUDE "maps/palettes/bgpals/underwatereyes.pal"
 
 BarPalette::
 INCLUDE "maps/palettes/bgpals/bar.pal"
+
+GreenCavePalette::
+INCLUDE "maps/palettes/bgpals/greencave.pal"
 
 DiveSpotsPalette::
 INCLUDE "maps/palettes/bgpals/divespots.pal"

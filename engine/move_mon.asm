@@ -403,7 +403,7 @@ endr
 	ld [de], a
 	inc de
 	xor a
-rept 4 ; PokerusStatus + CaughtData
+rept 4 ; MultiMoves + CaughtData
 	ld [de], a
 	inc de
 endr
@@ -454,7 +454,7 @@ endr
 	ld [de], a
 	inc de
 	xor a
-rept 4 ; PokerusStatus + CaughtData
+rept 4 ; MultiMoves + CaughtData
 	ld [de], a
 	inc de
 endr

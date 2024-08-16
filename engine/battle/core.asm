@@ -3830,10 +3830,10 @@ InitBattleMon: ; 3da0d
 	ld bc, MON_DVS - MON_ID
 	add hl, bc ; skip ID, Exp, EVs
 	ld de, wBattleMonDVs
-	ld bc, MON_PKRUS - MON_DVS
+	ld bc, MON_MULTIMOVES - MON_DVS
 	rst CopyBytes ; copy DVs, Personality, PP, Happiness
-	ld bc, MON_LEVEL - MON_PKRUS
-	add hl, bc ; skip PokerusStatus, CaughtData
+	ld bc, MON_LEVEL - MON_MULTIMOVES
+	add hl, bc ; skip MultiMoves, CaughtData
 	ld de, wBattleMonLevel
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_LEVEL
 	rst CopyBytes ; copy Level, Status, Unused, HP, MaxHP, Stats
@@ -3926,10 +3926,10 @@ InitEnemyMon: ; 3dabd
 	ld bc, MON_DVS - MON_ID
 	add hl, bc ; skip ID, Exp, EVs
 	ld de, wEnemyMonDVs
-	ld bc, MON_PKRUS - MON_DVS
+	ld bc, MON_MULTIMOVES - MON_DVS
 	rst CopyBytes ; copy DVs, Personality, PP, Happiness
-	ld bc, MON_LEVEL - MON_PKRUS
-	add hl, bc ; skip PokerusStatus, CaughtData
+	ld bc, MON_LEVEL - MON_MULTIMOVES
+	add hl, bc ; skip MultiMoves, CaughtData
 	ld de, wEnemyMonLevel
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_LEVEL
 	rst CopyBytes ; copy Level, Status, Unused, HP, MaxHP, Stats
@@ -8064,13 +8064,6 @@ GiveBattleEVs:
 ; power items
 	push de
 	lb de, 0, 0
-	; check pokérus
-	ld hl, MON_PKRUS
-	add hl, bc
-	ld a, [hl]
-	and a
-	jr z, .check_item
-	set 0, d
 .check_item
 	; check held item
 	push bc

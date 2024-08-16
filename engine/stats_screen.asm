@@ -517,16 +517,6 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 	ld de, .Status_Type
 	hlcoord 0, 9
 	call PlaceString
-	ld a, [wTempMonPokerusStatus]
-	ld b, a
-	and $f
-	jr nz, .HasPokerus
-	ld a, b
-	and $f0
-	jr z, .NotImmuneToPkrs
-	hlcoord 8, 8
-	ld [hl], "."
-.NotImmuneToPkrs:
 	ld a, [wMonType]
 	cp BOXMON
 	jr z, .StatusOK
@@ -536,12 +526,6 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 	predef PlaceStatusString
 	pop hl
 	jr nz, .done_status
-	jr .StatusOK
-.HasPokerus:
-	ld de, .PkrsStr
-	hlcoord 1, 10
-	call PlaceString
-	jr .done_status
 .StatusOK:
 	ld de, .OK_str
 	call PlaceString

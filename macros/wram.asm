@@ -29,7 +29,7 @@ box_struct: MACRO
 \1Form::           db
 \1PP::             ds NUM_MOVES
 \1Happiness::      db
-\1PokerusStatus::  db
+\1MultiMoves::  db
 \1CaughtData::
 \1CaughtGender::
 \1CaughtTime::

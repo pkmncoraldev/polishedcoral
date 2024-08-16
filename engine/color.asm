@@ -1419,14 +1419,20 @@ LoadMapPals::
 	cp INDOOR
 	ret z
 	ld a, [wMapNumber]
+	cp MAP_RADIANT_FIELD
+	jr z, .radiant_field
 	cp MAP_ROUTE_19
 	jp z, .outside_cont
 	cp MAP_ROUTE_20
 	jp nz, .not_route_19
 	eventflagcheck EVENT_ROUTE_20_GRASS_YELLOW
 	jp z, .outside_cont
+.radiant_field
+	ld hl, MapObjectPalsSunflowers2
+	jr .sunflowers_cont
 .not_route_19
 	ld hl, MapObjectPalsSunflowers
+.sunflowers_cont
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
@@ -2075,6 +2081,9 @@ INCLUDE "maps/palettes/obpals/obrocks.pal"
 
 MapObjectPalsSunflowers::
 INCLUDE "maps/palettes/obpals/obsunflowers.pal"
+
+MapObjectPalsSunflowers2::
+INCLUDE "maps/palettes/obpals/obsunflowers2.pal"
 
 MapObjectPalsUmbrella::
 INCLUDE "maps/palettes/obpals/obumbrella.pal"

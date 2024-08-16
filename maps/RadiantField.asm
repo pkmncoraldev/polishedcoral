@@ -9,22 +9,21 @@ RadiantField_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 5 ; bg events
+	signpost 13, 32, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 13, 33, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 13, 34, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 28, 17, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 27, 15, SIGNPOST_READ, RadiantFieldPicnic
 
-	db 17 ; object events
+	db 11 ; object events
 	person_event SPRITE_PIGTAILS, 11, 32, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantFieldRose, EVENT_SAVED_ROSE
 	person_event SPRITE_PIGTAILS, 22, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantFieldIris, EVENT_SAVED_IRIS
 	person_event SPRITE_PIGTAILS, 18,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantFieldViolet, EVENT_SAVED_VIOLET
 	person_event SPRITE_MINA, 28, 16, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantFieldMina, -1 ;EVENT_RADIANT_FIELD_MINA_GONE
 	person_event SPRITE_PAINTINGS, 27, 16, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, RadiantFieldEasel, -1 ;EVENT_RADIANT_FIELD_MINA_GONE
 	person_event SPRITE_LEAVES, 27, 16, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantFieldEasel, -1 ;EVENT_RADIANT_FIELD_MINA_GONE
-	person_event SPRITE_CASINO,  7, 22, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO,  7, 23, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO,  7, 18, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO,  7, 19, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 26, 28, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 26, 29, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_CASINO, 28, 29, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_PORYGON_SCREEN, 27, 15, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantFieldPicnic, -1 ;EVENT_RADIANT_FIELD_MINA_GONE
 	person_event SPRITE_AROMA_LADY, 12, 19, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 2, RadiantFieldTrainer1, -1
 	person_event SPRITE_AROMA_LADY, 22, 13, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 2, RadiantFieldTrainer2, -1
 	person_event SPRITE_AROMA_LADY, 18, 21, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 3, RadiantFieldTrainer3, -1
@@ -45,6 +44,13 @@ RadiantFieldEasel:
 	
 RadiantFieldEaselText:
 	text "MINA's easel."
+	done
+	
+RadiantFieldPicnic:
+	jumptext RadiantFieldPicnicText
+	
+RadiantFieldPicnicText:
+	text "A picnic basket."
 	done
 	
 RadiantFieldTrainer1:

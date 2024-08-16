@@ -119,6 +119,7 @@ CoraPhoto1SpriteGFX::          INCBIN "gfx/sprites/cora_photo_1.2bpp.lz"
 CoraPhoto2SpriteGFX::          INCBIN "gfx/sprites/cora_photo_2.2bpp.lz"
 CoraPhoto3SpriteGFX::          INCBIN "gfx/sprites/cora_photo_3.2bpp.lz"
 CoraPhoto4SpriteGFX::          INCBIN "gfx/sprites/cora_photo_4.2bpp.lz"
+PicnicSpriteGFX::         	   INCBIN "gfx/sprites/picnic.2bpp.lz"
 
 
 SECTION "Overworld Sprites 4", ROMX

@@ -206,6 +206,7 @@
 	const SPRITE_TUBER_WATER
 	const SPRITE_PAINTINGS
 	const SPRITE_MINA_GROUND
+	const SPRITE_PICNIC
 	
 	const_def $ed
 SPRITE_POKEMON EQU const_value

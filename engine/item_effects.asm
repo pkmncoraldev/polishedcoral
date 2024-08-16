@@ -2782,20 +2782,32 @@ RestorePPEffect: ; f5bf
 	jp .loop2
 
 .do_ppup
+	ld c, 3 << 6
 	ld a, [wd002]
 	cp PP_MAX
-	jr nz, .not_pp_max
-	ld a, [hl]
-	or 3 << 6 ; maximize PP Up count
-	jr .raised_pp
-.not_pp_max
+	ld b, 3
+	jr z, .pp_restore_loop
+	ld b, 1
+.pp_restore_loop
+	push hl
+	push bc
 	ld a, [hl]
 	add 1 << 6 ; increase PP Up count by 1
-.raised_pp
 	ld [hl], a
-	ld a, $1
+	ld a, TRUE
 	ld [wd265], a
 	call ApplyPPUp
+	pop bc
+	pop hl
+
+	; Unless PP is maxed, we might want to continue increasing PP further.
+	ld a, [hl]
+	and c
+	cp c
+	jr z, .maxed_pp
+	dec b
+	jr nz, .pp_restore_loop
+.maxed_pp
 	call Play_SFX_FULL_HEAL
 
 	ld hl, TextJump_PPsIncreased

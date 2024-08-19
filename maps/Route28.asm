@@ -8,7 +8,7 @@ Route28_MapScriptHeader:
 	db 4 ; warp events
 	warp_event 20, 16, ROUTE_1, 1
 	warp_event 21, 17, ROUTE_1, 1
-	warp_event 35, 55, ROUTE_1, 1
+	warp_event 31, 57, ROUTE_1, 1
 	warp_event 18, 65, GREEN_GROTTO_1F, 1
 
 	db 0 ; coord events
@@ -20,7 +20,7 @@ Route28_MapScriptHeader:
 	person_event SPRITE_POKEFAN_M, 16, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route28StrengthMan, -1
 	strengthboulder_event 22, 70, EVENT_ROUTE_28_BOULDER_1
 	strengthboulder_event 23, 70, EVENT_ROUTE_28_BOULDER_2
-	person_event SPRITE_BOULDER_ROCK_FOSSIL, -5, -5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route28StrengthMansBoulder, -1
+	person_event SPRITE_BOULDER_ROCK_FOSSIL, -5, -4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route28StrengthMansBoulder, -1
 
 	
 	

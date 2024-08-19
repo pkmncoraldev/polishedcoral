@@ -435,11 +435,12 @@ MAP_NONE   EQU 0
 	map_const BRIGHT_HOUSE_3,     	             		   4,  4 ; 6
 	map_const ROUTE_25_GATE,                          	   4,  4 ; 7
 	map_const BRIGHTBURG_GATE,							   5,  4 ; 8
-	map_const ROUTE_28,									  19, 38 ; 9
-	map_const ROUTE_29,									  40, 22 ; 10
+	map_const ROUTE_28,									  20, 38 ; 9
+	map_const ROUTE_29,									  38, 12 ; 10
+	map_const ROUTE_29_MEADOW,							  18, 10 ; 11
 	
 	newgroup													 ; 24
-	map_const OBSCURA_CITY,								  19, 14 ; 1
+	map_const OBSCURA_CITY,								  16, 23 ; 1
 	map_const OBSCURA_GATE,								   5,  4 ; 2
 	
 	newgroup													 ; 25

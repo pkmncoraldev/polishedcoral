@@ -869,6 +869,9 @@ Route28_BlockData:
 Route29_BlockData:
 	INCBIN "maps/Route29.ablk.lz"
 	
+Route29Meadow_BlockData:
+	INCBIN "maps/Route29Meadow.ablk.lz"
+	
 Route14_15Underwater_BlockData:
 	INCBIN "maps/Route14_15Underwater.ablk.lz"
 	

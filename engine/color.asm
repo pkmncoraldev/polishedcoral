@@ -910,6 +910,8 @@ LoadMapPals::
 	jp z, .shimmer
 	cp GROUP_RADIANT_TOWNSHIP
 	jp z, .sunflowers
+	cp GROUP_ROUTE_29
+	jp z, .route_29
 .got_pals_cont
 	ld a, [wTileset]
 	cp TILESET_CAVE
@@ -966,12 +968,12 @@ LoadMapPals::
 	jr z, .grove
 	cp TILESET_SOUTH_BUILDINGS
 	jp z, .computer
-	eventflagcheck EVENT_ROUTE_29_PAINTING_COLORS
-	jp nz, .route_29_painting
 	jp .normal
-.route_29_painting
-	eventflagcheck EVENT_ROUTE_29_PAINTING_COLORS_2
+.route_29
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_29_MEADOW
 	jp z, .sailboat
+	jp .normal
 .grove
 	ld a, [wMapNumber]
 	cp MAP_GLINT_GROVE_EAST

@@ -449,6 +449,7 @@ INCLUDE "maps/Route25Gate.asm"
 INCLUDE "maps/BrightburgGate.asm"
 INCLUDE "maps/Route28.asm"
 INCLUDE "maps/Route29.asm"
+INCLUDE "maps/Route29Meadow.asm"
 
 SECTION "Obscura Scripts", ROMX
 INCLUDE "maps/ObscuraCity.asm"

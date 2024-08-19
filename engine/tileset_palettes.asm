@@ -153,8 +153,6 @@ LoadSpecialMapPalette: ; 494ac
 	jr z, .bar
 	cp TILESET_AUTUMN
 	jp z, .autumn
-	cp TILESET_SOUTH_TOWNS
-	jp z, .south_towns
 	cp TILESET_GREEN_CAVE
 	jp z, .green_cave
 	call DiveSpotMapPals
@@ -573,25 +571,6 @@ LoadSpecialMapPalette: ; 494ac
 .snowstormwater
 	ld hl, OutsideSnowStormWaterPalette
 	jp LoadSevenTimeOfDayBGPalettes
-	
-.south_towns
-	ld a, [wMapGroup]
-	cp GROUP_OBSCURA_CITY
-	jp nz, .do_nothing
-	eventflagcheck EVENT_OBSCURA_WINDOWS_YELLOW
-	jp z, .do_nothing
-	ld hl, ObscuraYellowPalette
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 1 palettes
-	rst AddNTimes
-	ld a, $5
-	ld de, wUnknBGPals + 3 palettes
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
-	scf
-	ret
 	
 .autumn
 	ld a, [wMapNumber]

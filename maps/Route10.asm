@@ -166,9 +166,9 @@ Route10Mina:
 	farwritetext StdBlankText
 	pause 6
 	writetext Route10MinaText6
-	pause 40
+	waitbutton
 	closetext
-	pause 50
+	pause 40
 	spriteface 3, LEFT
 	spriteface PLAYER, RIGHT
 	pause 20

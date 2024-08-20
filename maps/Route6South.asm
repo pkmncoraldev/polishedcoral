@@ -205,9 +205,9 @@ Route6SouthMinaScene:
 	farwritetext StdBlankText
 	pause 6
 	writetext Route6SouthMinaSceneText7
-	pause 40
+	waitbutton
 	closetext
-	pause 50
+	pause 40
 	spriteface 4, LEFT
 	spriteface PLAYER, RIGHT
 	pause 20

@@ -140,9 +140,9 @@ GlintGroveDeepSmeargleScene:
 	farwritetext StdBlankText
 	pause 6
 	writetext GlintGroveDeepMinaText5
-	pause 40
+	waitbutton
 	closetext
-	pause 50
+	pause 40
 	spriteface GLINTSECRET_MINA, LEFT
 	spriteface PLAYER, RIGHT
 	pause 20

@@ -167,9 +167,9 @@ Route29Mina:
 	farwritetext StdBlankText
 	pause 6
 	writetext Route29MinaText23
-	pause 40
+	waitbutton
 	closetext
-	pause 50
+	pause 40
 	spriteface ROUTE_29_MINA, RIGHT
 	spriteface PLAYER, LEFT
 	pause 20

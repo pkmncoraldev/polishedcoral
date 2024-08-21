@@ -28,8 +28,17 @@ ReadTrainerParty: ; 39771
 	call GetNextTrainerDataByte
 	cp $ff
 	ret z
+	push af
+	ld a, [wOtherTrainerClass]
+	cp MINA
+	jr nz, .not_mina
+	pop af
 	call CheckMinaMons
 	jr z, .loop2
+	call MinaLevels
+	jr .mina_done
+.not_mina
+	pop af
 .mina_done
 	ld [wCurPartyLevel], a
 
@@ -481,3 +490,21 @@ CheckMinaMons:
 .do_mina_mon
 	pop hl
 	jp GetNextTrainerDataByte
+	
+MinaLevels:
+	push af
+	ld a, [wMinaEncounters]
+	ld e, a
+.mina_mon_level_loop
+	ld a, e
+	cp 0
+	jr z, .end
+	ld e, a
+	pop af
+	add 5
+	push af
+	dec e
+	jr .mina_mon_level_loop
+.end
+	pop af
+	ret

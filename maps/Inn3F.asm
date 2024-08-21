@@ -499,7 +499,7 @@ Inn3FTrigger1:
 	end
 .running
 	disappear INN_3F_CLERK
-	callasm Inn3FMoveClerkAsm
+	callasm Inn1FMoveClerkAsm
 	ifequal 2, .right
 	appear INN_3F_CLERK
 	special Special_StopRunning
@@ -685,7 +685,7 @@ Inn3FMoveClerkAsm:
 	add 6
 	add 4
 	ld d, a
-	ld a, [wYCoord]
+	ld a, $0d
 	add 4
 	ld e, a
 	farjp CopyDECoordsToMapObject
@@ -698,7 +698,7 @@ Inn3FMoveClerkAsm:
 	sub 5
 	add 4
 	ld d, a
-	ld a, [wYCoord]
+	ld a, $0d
 	add 4
 	ld e, a
 	farjp CopyDECoordsToMapObject

@@ -218,6 +218,7 @@ Inn2FPoster:
 	waitbutton
 	closetext
 	disappear INN_2F_POSTER
+	pause 10
 	jumptext Inn2FPosterText2
 	end
 	
@@ -278,7 +279,7 @@ Inn2FMoveClerkAsm:
 	add 6
 	add 4
 	ld d, a
-	ld a, [wYCoord]
+	ld a, $0d
 	add 4
 	ld e, a
 	farjp CopyDECoordsToMapObject
@@ -291,7 +292,7 @@ Inn2FMoveClerkAsm:
 	sub 5
 	add 4
 	ld d, a
-	ld a, [wYCoord]
+	ld a, $0d
 	add 4
 	ld e, a
 	farjp CopyDECoordsToMapObject
@@ -316,7 +317,7 @@ Inn2F204Door:
 	
 Inn2F204DoorText1:
 	text "Door: Is that the"
-	line "maintenance person?"
+	line "maintenance guy?"
 	
 	para "Finally! <WAIT_S>It's been"
 	line "like an hour!"

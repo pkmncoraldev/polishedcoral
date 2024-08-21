@@ -708,10 +708,6 @@ Inn1FSnareSupervisor3Text:
 	para "They even knocked"
 	line "a hole in the wall"
 	cont "to the next room!"
-	
-	para "Maintenance had"
-	line "to lock it up for"
-	cont "repairs."
 	done
 	
 Inn1FTrigger1:
@@ -827,7 +823,7 @@ Inn1FMoveClerkAsm:
 	add 6
 	add 4
 	ld d, a
-	ld a, [wYCoord]
+	ld a, $0d
 	add 4
 	ld e, a
 	farjp CopyDECoordsToMapObject
@@ -840,7 +836,7 @@ Inn1FMoveClerkAsm:
 	sub 5
 	add 4
 	ld d, a
-	ld a, [wYCoord]
+	ld a, $0d
 	add 4
 	ld e, a
 	farjp CopyDECoordsToMapObject

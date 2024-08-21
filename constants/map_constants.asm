@@ -404,7 +404,7 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 22
 	
-	map_const ROUTE_23,									  21, 27 ; 1
+	map_const ROUTE_23,									  21, 30 ; 1
 	map_const ROUTE_23_WINDY,							   1,  1 ; 2
 	map_const ROUTE_24_NORTH,							  21, 17 ; 3
 	map_const ROUTE_24_NORTH_WINDY,						   1,  1 ; 4

@@ -5,40 +5,40 @@ Route23_MapScriptHeader:
 	callback MAPCALLBACK_TILES, Route23Callback
 
 	db 2 ; warp events
-	warp_event 21,  1, CROSSROADS, 1
-	warp_event  6,  9, FIGHTING_DOJO, 1
+	warp_event  9,  1, CROSSROADS, 1
+	warp_event  6, 15, FIGHTING_DOJO, 1
 
 	db 6 ; coord events
-	coord_event 30, 29, 0, Route23BlackBeltStart
-	coord_event 30, 29, 2, Route23Master1
-	coord_event 30, 28, 2, Route23Master2
-	coord_event 31, 28, 2, Route23Master3
-	coord_event 30, 30, 2, Route23Master4
-	coord_event 31, 30, 2, Route23Master5
+	coord_event 30, 35, 0, Route23BlackBeltStart
+	coord_event 30, 35, 2, Route23Master1
+	coord_event 30, 34, 2, Route23Master2
+	coord_event 31, 34, 2, Route23Master3
+	coord_event 30, 36, 2, Route23Master4
+	coord_event 31, 36, 2, Route23Master5
 
 	db 2 ; bg events
-	signpost  2, 24, SIGNPOST_JUMPTEXT, Route23SignText
-	signpost 10,  5, SIGNPOST_JUMPTEXT, Route23FightingDojoSignText
+	signpost  8, 24, SIGNPOST_JUMPTEXT, Route23SignText
+	signpost 16,  5, SIGNPOST_JUMPTEXT, Route23FightingDojoSignText
 
 	db 18 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PINK
-	person_event SPRITE_YOUNGSTER, 17, 31, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer1, -1
-	person_event SPRITE_BLACK_BELT, 43, 30, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer2, -1
-	person_event SPRITE_GENTLEMAN, 20, 17, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer3, -1
-	person_event SPRITE_GRANNY, 26, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route23Trainer4, -1
-	person_event SPRITE_SUPER_NERD, 45, 21, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer5, -1
-	person_event SPRITE_BURGLAR, 40, 20, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, Route23Trainer6, -1
-	person_event SPRITE_BATTLE_GIRL, 27,  7, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer7, -1
-	person_event SPRITE_COOLTRAINER_M, 16, 13, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, Route23Trainer8, -1
-	person_event SPRITE_FISHER, 44,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route23Fisher, -1
-	person_event SPRITE_BLACK_BELT, 29, 31, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route23BlackBelt, EVENT_GOT_HM04_STRENGTH
-	person_event SPRITE_MASTER, 28, 31, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
-	itemball_event 21, 14, HYPER_POTION, 1, EVENT_ROUTE_23_POKE_BALL_1
-	itemball_event  2, 46, EVERSTONE, 1, EVENT_ROUTE_23_POKE_BALL_2
-	itemball_event 13, 38, ULTRA_BALL, 1, EVENT_ROUTE_23_POKE_BALL_3
-	itemball_event 19, 34, PP_UP, 1, EVENT_ROUTE_23_POKE_BALL_4
-	person_event SPRITE_CUTE_GIRL, 28, 35, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route23NPC, -1
+	person_event SPRITE_YOUNGSTER, 23, 31, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer1, -1
+	person_event SPRITE_BLACK_BELT, 49, 30, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer2, -1
+	person_event SPRITE_GENTLEMAN, 26, 17, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer3, -1
+	person_event SPRITE_GRANNY, 32, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route23Trainer4, -1
+	person_event SPRITE_SUPER_NERD, 51, 21, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer5, -1
+	person_event SPRITE_BURGLAR, 46, 20, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, Route23Trainer6, -1
+	person_event SPRITE_BATTLE_GIRL, 33,  7, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer7, -1
+	person_event SPRITE_COOLTRAINER_M, 22, 13, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, Route23Trainer8, -1
+	person_event SPRITE_FISHER, 50,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route23Fisher, -1
+	person_event SPRITE_BLACK_BELT, 35, 31, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route23BlackBelt, EVENT_GOT_HM04_STRENGTH
+	person_event SPRITE_MASTER, 34, 31, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	itemball_event 21, 20, HYPER_POTION, 1, EVENT_ROUTE_23_POKE_BALL_1
+	itemball_event  2, 52, EVERSTONE, 1, EVENT_ROUTE_23_POKE_BALL_2
+	itemball_event 13, 44, ULTRA_BALL, 1, EVENT_ROUTE_23_POKE_BALL_3
+	itemball_event 19, 40, PP_UP, 1, EVENT_ROUTE_23_POKE_BALL_4
+	person_event SPRITE_CUTE_GIRL, 34, 35, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route23NPC, -1
 
 
 	const_def 1 ; object constants
@@ -59,7 +59,7 @@ Route23_MapScriptHeader:
 Route23Callback:
 	checkevent EVENT_GOT_HM04_STRENGTH
 	iffalse .skip_tree
-	changeblock $20, $1c, $cc
+	changeblock $20, $22, $cc
 .skip_tree
 Route23Callback2:
 	clearevent EVENT_SET_ROUTE_27
@@ -212,7 +212,7 @@ endr
 	waitsfx
 	playsound SFX_PLACE_PUZZLE_PIECE_DOWN
 	waitsfx
-	changeblock $20, $1c, $cc
+	changeblock $20, $22, $cc
 	pause 40
 	closetext
 	callasm LoadMapPals

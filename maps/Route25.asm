@@ -2,7 +2,7 @@ Route25_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, Route23Callback
+	callback MAPCALLBACK_TILES, Route23Callback2
 
 	db 1 ; warp events
 	warp_event  0,  8, BRIGHTBURG, 1

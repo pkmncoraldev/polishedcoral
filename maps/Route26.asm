@@ -28,7 +28,7 @@ Route26Callback:
 	iffalse .skip
 	changeblock $26, $04, $bb
 .skip
-	jump Route23Callback
+	jump Route23Callback2
 
 Route26Tree:
 	dw EVENT_ROUTE_26_TREE

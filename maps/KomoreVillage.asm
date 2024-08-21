@@ -38,7 +38,7 @@ KomoreVillageCallback:
 	iffalse .skip
 	changeblock $1c, $14, $bb
 .skip
-	jump Route23Callback
+	jump Route23Callback2
 	
 KomoreVillageSign:
 	text "KOMORE VILLAGE"

@@ -58,12 +58,12 @@ Route24SouthCallback:
 	clearevent EVENT_ROUTE_24_BRELOOM
 	clearevent EVENT_ROUTE_24_MUSHROOM_5
 	dotrigger $0
-	jump Route23Callback
+	jump Route23Callback2
 .breloom_done_today
 	setevent EVENT_ROUTE_24_BRELOOM
 	setevent EVENT_ROUTE_24_MUSHROOM_5
 	dotrigger $1
-	jump Route23Callback
+	jump Route23Callback2
 	
 Route24SouthNPC:
 	jumptextfaceplayer Route24SouthNPCText

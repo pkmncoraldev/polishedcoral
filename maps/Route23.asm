@@ -57,12 +57,13 @@ Route23_MapScriptHeader:
 	const ROUTE_23_MASTER
 
 Route23Callback:
-	clearevent EVENT_SET_ROUTE_27
-	clearevent EVENT_ON_ROUTE_27
 	checkevent EVENT_GOT_HM04_STRENGTH
 	iffalse .skip_tree
 	changeblock $20, $1c, $cc
 .skip_tree
+Route23Callback2:
+	clearevent EVENT_SET_ROUTE_27
+	clearevent EVENT_ON_ROUTE_27
 	readvar VAR_PLAYER_COLOR
 	if_equal 6, .pink
 	setevent EVENT_HIDE_OW_OBJECTS_TEAL

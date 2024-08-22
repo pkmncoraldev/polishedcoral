@@ -64,8 +64,9 @@ Music:
 	dba Music_Underwater
 	dba Music_Route28
 	dba Music_MinasTheme
-	
 	dba Music_RBYWildBattle
+	
+	dba Music_Crossroads
 	dba Music_StarglowOld
 	dba Music_WildBattleOld
 	dba Music_GymBattleOld

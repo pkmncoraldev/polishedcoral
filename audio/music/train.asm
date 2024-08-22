@@ -1,3 +1,12 @@
+Music_Crossroads:
+	musicheader 3, 1, Music_Crossroads_Ch1
+	musicheader 1, 2, Music_Train_Ch2
+	musicheader 1, 3, Music_Train_Ch3
+
+Music_Crossroads_Ch1:
+	tempo $ac
+	loopchannel 0, Music_Crossroads_Ch1_2
+
 Music_Train:
 	musicheader 4, 1, Music_Train_Ch1
 	musicheader 1, 2, Music_Train_Ch2
@@ -6,6 +15,7 @@ Music_Train:
 
 Music_Train_Ch1:
 	tempo $96
+Music_Crossroads_Ch1_2:
 	volume $77
 	stereopanning $77
 	octave 1

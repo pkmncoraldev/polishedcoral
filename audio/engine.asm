@@ -2969,8 +2969,10 @@ CheckChangeMusic::
 	jr z, .bright
 	cp MUSIC_BRIGHT_CENTER
 	jr z, .bright_center
-	cp MUSIC_CROSSROADS
-	jr z, .crossroads
+	cp MUSIC_CROSSROADS_OUTSIDE
+	jr z, .crossroads_outside
+	cp MUSIC_CROSSROADS_INSIDE
+	jr z, .crossroads_inside
 	ld a, $ff
 .done
 	ld [wSlotBias], a
@@ -3043,11 +3045,18 @@ CheckChangeMusic::
 	ld a, MUSIC_POKEMON_CENTER
 	jr .done
 	
-.crossroads
+.crossroads_outside
 	eventflagcheck EVENT_CROSSROADS_CUTSCENE_DONE
 	jr z, .none
-	ld a, MUSIC_ROUTE_12
+.crossroads
+	ld a, MUSIC_CROSSROADS
 	jr .done
+	
+.crossroads_inside
+	eventflagcheck EVENT_INN_SNARE_MUSIC
+	jr z, .crossroads
+	ld a, MUSIC_SNARE_INVASION
+	jp .done
 	
 GetMapMusic::
 	eventflagcheck EVENT_YOU_CHEATED

@@ -248,16 +248,22 @@ Inn1FKageScene:
 	applymovement INN_1F_SNARE_1, Movement_Inn1FSnareLeave3
 	playsound SFX_EXIT_BUILDING
 	disappear INN_1F_SNARE_1
+	clearevent EVENT_INN_SNARE_MUSIC
 	waitsfx
 	special Special_FadeOutMusic
 	pause 25
-	playmapmusic
+	playnewmapmusic
 	appear INN_1F_WALL_1
 	appear INN_1F_WALL_2
 	appear INN_1F_WALL_3
 	appear INN_1F_WALL_4
 	disappear INN_1F_DOOR_LOCK_3
 	setevent EVENT_INN_SNARE_GONE
+	setevent EVENT_INN_2F_SNARE_HALLWAY
+	setevent EVENT_INN_3F_SNARE_HALLWAY
+	setevent EVENT_INN_1F_LOBBY_SNARE
+	setevent EVENT_INN_1F_ROOM_SNARE
+	setevent EVENT_INN_1F_SNARE_GIRL
 	spriteface INN_1F_CUSTOMER_1, DOWN
 	dotrigger $0
 	end
@@ -304,7 +310,7 @@ Inn1FKageText3:
 	done
 	
 Inn1FKageText4:
-	text "…then, the BOSS"
+	text "…then, our leader"
 	line "puts the “whizkid”"
 	cont "in charge…"
 	done
@@ -339,6 +345,10 @@ Inn1FKageText8:
 	line "without a BADGE"
 	cont "from OBSCURA CITY,"
 	cont "anyway."
+	
+	para "And with the stuff"
+	line "going down over"
+	cont "there…"
 	
 	para "…"
 	
@@ -482,7 +492,7 @@ Inn1FSnareSupervisor:
 	waitsfx
 	playmusic MUSIC_SNARE_BATTLE
 	callasm Inn1FFakeBattleStart
-	callasm Inn1FMoveClerkAsm
+	callasm Inn1FMoveClerkAsm2
 	appear INN_1F_CLERK
 	special Special_UpdatePalsInstant
 	refreshscreen
@@ -684,7 +694,7 @@ Inn1FSnareSupervisor2Text2:
 	line "me good!"
 	
 	para "Now I see why I"
-	line "didn't get the"
+	line "didn't get that"
 	cont "supervisor job…"
 	done
 	
@@ -837,6 +847,36 @@ Inn1FMoveClerkAsm:
 	add 4
 	ld d, a
 	ld a, $0d
+	add 4
+	ld e, a
+	farjp CopyDECoordsToMapObject
+	
+Inn1FMoveClerkAsm2:
+	ld a, [wXCoord]
+	cp $0b
+	jr nc, .right
+	ld a, 1
+	ld [wScriptVar], a
+	ld a, INN_1F_CLERK
+	ld b, a
+	ld a, [wXCoord]
+	add 6
+	add 4
+	ld d, a
+	ld a, [wYCoord]
+	add 4
+	ld e, a
+	farjp CopyDECoordsToMapObject
+.right
+	ld a, 2
+	ld [wScriptVar], a
+	ld a, INN_1F_CLERK
+	ld b, a
+	ld a, [wXCoord]
+	sub 5
+	add 4
+	ld d, a
+	ld a, [wYCoord]
 	add 4
 	ld e, a
 	farjp CopyDECoordsToMapObject
@@ -1004,10 +1044,22 @@ Inn1FPlayersBed:
 	playmusic MUSIC_HEAL
 	checkevent EVENT_INN_1F_SLEPT
 	iftrue .skip
+	setevent EVENT_INN_SNARE_MUSIC
 	setevent EVENT_INN_1F_SLEPT
 	setevent EVENT_INN_1F_103_OPEN
 	clearevent EVENT_INN_1F_UNFORTUNATE_CUSTOMER
 	appear INN_1F_SNARE_GIRL
+	appear INN_1F_LOBBY_SNARE
+	clearevent EVENT_INN_2F_SNARE_HALLWAY
+	clearevent EVENT_INN_3F_SNARE_HALLWAY
+	special DeleteSavedMusic
+	pause 60
+	spriteface PLAYER, DOWN
+	callasm LoadMapPals
+	special FadeInPalettes
+	callasm Inn1FResertScriptVar
+	playnewmapmusic
+	jumptext Inn1FPlayersBedText2
 .skip
 	pause 60
 	special RestoreMusic
@@ -1079,7 +1131,7 @@ Inn1FCustomer2:
 	
 Inn1FCustomer2Text:
 	text "Apparently a big"
-	line "group came along"
+	line "group called ahead"
 	cont "and rented the"
 	cont "rest of the rooms."
 	done
@@ -1403,9 +1455,6 @@ Inn1FClerkDeskText5:
 	text "Most of our rooms"
 	line "have been rented"
 	cont "by a shady group."
-	
-	para "They're called"
-	line "TEAM SNARE."
 	
 	para "As long as they"
 	line "don't cause issues"

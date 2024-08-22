@@ -53,7 +53,7 @@ Inn2F_MapScriptHeader:
 	person_event SPRITE_INVISIBLE,  3,  4, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn2FPoster, EVENT_INN_2F_POSTER_GONE
 	person_event SPRITE_BALL_CUT_FRUIT,  2,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn2FBall, EVENT_INN_2F_POKEBALL
 	person_event SPRITE_BIRD_KEEPER,  3,  1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 3, Inn2FCustomer1, -1
-	person_event SPRITE_SNARE, 12, 13, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TrainerInn2FSnareNPC, EVENT_INN_SNARE_GONE
+	person_event SPRITE_SNARE, 12, 13, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TrainerInn2FSnareNPC, EVENT_INN_2F_SNARE_HALLWAY
 	
 	const_def 1 ; object constants
 	const INN_2F_CLERK
@@ -67,6 +67,7 @@ Inn2F_MapScriptHeader:
 	const INN_2F_POSTER
 	const INN_2F_POKEBALL
 	const INN_2F_CUSTOMER_1
+	const INN_2F_SNARE_HALLWAY
 	
 TrainerInn2FSnareNPC:
 	checkevent EVENT_SNARE_DISGUISE
@@ -397,6 +398,8 @@ TrainerInn2F_2:
 	done
 	
 Inn2F201LockedDoor:
+	checkevent EVENT_INN_SNARE_MUSIC
+	iffalse Inn1FLockedDoor
 	opentext
 	writetext Inn2F201LockedDoorText1
 	waitbutton
@@ -446,6 +449,8 @@ Inn2F201LockedDoor:
 	closetext
 	callasm Inn1FResertScriptVar
 	end
+	
+.normal
 	
 Inn2F201LockedDoorAsm:
 	ld b, $5 ; password

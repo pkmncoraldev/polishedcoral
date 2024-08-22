@@ -67,7 +67,7 @@ Inn3F_MapScriptHeader:
 	person_event SPRITE_INVISIBLE, 11, 15, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn3F302Door, EVENT_INN_3F_302_OPEN
 	person_event SPRITE_INVISIBLE, 11, 19, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, EVENT_INN_3F_301_OPEN
 	person_event SPRITE_INVISIBLE, 11, 21, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn3FServiceDoor, EVENT_INN_3F_SERVICE_DOOR_OPEN
-	person_event SPRITE_SNARE, 12,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn3FSnareNPC, EVENT_INN_3F_CLOTHES
+	person_event SPRITE_SNARE, 12,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn3FSnareNPC, EVENT_INN_3F_SNARE_HALLWAY
 	person_event SPRITE_BALL_CUT_FRUIT,  3,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn3FClothes, EVENT_INN_3F_CLOTHES
 	person_event SPRITE_PONYTAIL,  2, 24, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 3, Inn3FCustomer1, -1
 	person_event SPRITE_BALL_CUT_FRUIT,  4,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn3FBall1, EVENT_INN_3F_POKEBALL_1
@@ -100,7 +100,7 @@ Inn3F_MapScriptHeader:
 	const INN_3F_KAGE
 	
 Inn3FKage:
-	checkevent EVENT_GOT_HM05_WATERFALL
+	checkevent EVENT_INN_3F_TALKED_TO_KAGE_2
 	iftrue .done
 	dotrigger $1
 	opentext
@@ -147,6 +147,7 @@ Inn3FKageStop:
 	writetext Inn3FKageText5
 	waitbutton
 	closetext
+	setevent EVENT_INN_3F_TALKED_TO_KAGE_2
 	domaptrigger INN_1F, $3
 	end
 .forgot
@@ -196,6 +197,8 @@ Inn3FKageText4:
 	done
 	
 Inn3F302Door:
+	checkevent EVENT_INN_SNARE_MUSIC
+	iffalse Inn1FLockedDoor
 	opentext
 	writetext Inn3F302DoorText1
 	buttonsound
@@ -499,7 +502,7 @@ Inn3FTrigger1:
 	end
 .running
 	disappear INN_3F_CLERK
-	callasm Inn1FMoveClerkAsm
+	callasm Inn3FMoveClerkAsm
 	ifequal 2, .right
 	appear INN_3F_CLERK
 	special Special_StopRunning
@@ -548,6 +551,7 @@ Inn3FClothes:
 	waitbutton
 	closetext
 	setevent EVENT_SNARE_DISGUISE
+	setevent EVENT_INN_3F_SNARE_HALLWAY
 	domaptrigger INN_1F, $2
 	callasm Inn1FResertScriptVar
 	end

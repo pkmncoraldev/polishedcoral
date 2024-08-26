@@ -7,9 +7,10 @@ Crossroads_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, CrossroadsFlyPoint
 	callback MAPCALLBACK_TILES, CrossroadsCallback
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event 30,  7, INN_1F, 1
 	warp_event 31,  7, INN_1F, 2
+	warp_event 28,  6, INN_1F, 18
 
 	db 4 ; coord events
 	coord_event 20,  9, 0, CrossroadsCutsceneStart1
@@ -19,7 +20,7 @@ Crossroads_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 13 ; object events
+	db 15 ; object events
 	person_event SPRITE_PLAYER_CUTSCENE, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
 	person_event SPRITE_PLAYER_CUTSCENE, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
 	person_event SPRITE_PLAYER_CUTSCENE, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
@@ -33,7 +34,8 @@ Crossroads_MapScriptHeader:
 	person_event SPRITE_COLBY, 11, 24, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, EVENT_ALWAYS_SET
 	person_event SPRITE_MALL_SIGN,  8, 22, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, CrossroadsSign, -1
 	person_event SPRITE_GENERAL_VARIABLE_1,  8, 32, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, CrossroadsUnfortunateCustomer, EVENT_CROSSROADS_UNFORTUNATE_CUSTOMER
-	
+	person_event SPRITE_SNARE, 21, 23, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, CrossroadsSnare1, EVENT_INN_SNARE_GONE
+	person_event SPRITE_SNARE, 21, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, CrossroadsSnare2, EVENT_INN_SNARE_GONE
 	
 	const_def 1 ; object constants
 	const CROSSROADS_PLAYER_CUTSCENE_RED
@@ -362,6 +364,18 @@ MakePlayerColbyAsm:
 	ld a, PLAYER_COLBY
 	ld [wPlayerState], a
 	ret
+	
+CrossroadsSnare1:
+	jumptext CrossroadsSnare1Text
+	
+CrossroadsSnare2:
+	jumptext CrossroadsSnare2Text
+	
+CrossroadsSnare1Text:
+CrossroadsSnare2Text:
+	text "Nope. <WAIT_S>"
+	line "Not this way!"
+	done
 	
 CrossroadsUnfortunateCustomer:
 	jumptextfaceplayer CrossroadsUnfortunateCustomerText

@@ -142,7 +142,7 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 8d
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 8e
 	tilecoll NO_OLLIE, NO_OLLIE, SKATE, NO_OLLIE ; 8f
-	tilecoll FLOOR, WALL, NO_OLLIE, WALL ; 90
+	tilecoll WARP_CARPET_RIGHT, WALL, NO_OLLIE, WALL ; 90
 	tilecoll WALL, WALL, DOOR, DOOR ; 91
 	tilecoll WALL, FLOOR, WALL, WALL ; 92
 	tilecoll WALL, WALL, WALL, WALL ; 93

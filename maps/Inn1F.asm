@@ -8,7 +8,7 @@ Inn1F_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Inn1FCallback
 
-	db 17 ; warp events
+	db 18 ; warp events
 	warp_event 13, 23, CROSSROADS, 1
 	warp_event 14, 23, CROSSROADS, 2
 	warp_event -1, -1, INN_2F, 1
@@ -26,6 +26,7 @@ Inn1F_MapScriptHeader:
 	warp_event 24,  5, INN_1F, 8
 	warp_event 25,  5, INN_1F, 8
 	warp_event 13, 11, INN_ELEVATOR, 1
+	warp_event  6, 18, CROSSROADS, 3
 
 	db 4 ; coord events
 	coord_event 13, 23, 2, Inn1FBlockDoor
@@ -53,11 +54,7 @@ Inn1F_MapScriptHeader:
 	signpost  2,  3, SIGNPOST_READ, Inn1FPlayersBed
 	signpost  1,  7, SIGNPOST_READ, Inn1FTrashCanPassword
 
-	db 20 ; object events
-	person_event SPRITE_PORYGON_SCREEN, 17,  8, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_PORYGON_SCREEN, 17,  9, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_PORYGON_SCREEN, 17, 10, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_PORYGON_SCREEN, 17, 11, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	db 15 ; object events
 	person_event SPRITE_FAT_GUY, 19, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Inn1FClerk, -1
 	person_event SPRITE_INVISIBLE, 11,  5, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1F104LockedDoor, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	person_event SPRITE_INVISIBLE, 11,  9, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, EVENT_INN_1F_103_OPEN
@@ -70,16 +67,11 @@ Inn1F_MapScriptHeader:
 	person_event SPRITE_SNARE_GIRL,  2,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareGirl, EVENT_INN_1F_SNARE_GIRL
 	person_event SPRITE_SNARE_GIRL, 18, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareSupervisor, EVENT_INN_1F_LOBBY_SNARE
 	person_event SPRITE_SNARE_GIRL,  3, 18, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn1FSnareSupervisor3, EVENT_INN_1F_ROOM_SNARE
-	person_event SPRITE_INVISIBLE, 17, 11, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FFrontDeskDoor, EVENT_INN_1F_FRONT_DESK_DOOR
 	person_event SPRITE_SNARE, -5, -5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	person_event SPRITE_SNARE, -5, -5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	person_event SPRITE_KAGE, -5, -5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 
 	const_def 1 ; object constants
-	const INN_1F_WALL_1
-	const INN_1F_WALL_2
-	const INN_1F_WALL_3
-	const INN_1F_WALL_4
 	const INN_1F_CLERK
 	const INN_1F_DOOR_LOCK_1
 	const INN_1F_DOOR_LOCK_2
@@ -92,7 +84,6 @@ Inn1F_MapScriptHeader:
 	const INN_1F_SNARE_GIRL
 	const INN_1F_LOBBY_SNARE
 	const INN_1F_ROOM_SNARE
-	const INN_1F_FRONT_DESK_DOOR
 	const INN_1F_SNARE_1
 	const INN_1F_SNARE_2
 	const INN_1F_SNARE_KAGE
@@ -100,10 +91,6 @@ Inn1F_MapScriptHeader:
 Inn1FKageScene2:
 	applyonemovement PLAYER, step_left
 Inn1FKageScene:
-	disappear INN_1F_WALL_1
-	disappear INN_1F_WALL_2
-	disappear INN_1F_WALL_3
-	disappear INN_1F_WALL_4
 	disappear INN_1F_SNARE_1
 	disappear INN_1F_SNARE_2
 	disappear INN_1F_SNARE_KAGE
@@ -253,10 +240,6 @@ Inn1FKageScene:
 	special Special_FadeOutMusic
 	pause 25
 	playnewmapmusic
-	appear INN_1F_WALL_1
-	appear INN_1F_WALL_2
-	appear INN_1F_WALL_3
-	appear INN_1F_WALL_4
 	disappear INN_1F_DOOR_LOCK_3
 	setevent EVENT_INN_SNARE_GONE
 	setevent EVENT_INN_2F_SNARE_HALLWAY

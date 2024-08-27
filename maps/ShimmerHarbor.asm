@@ -9,39 +9,7 @@ ShimmerHarbor_MapScriptHeader:
 	db 1 ; warp events
 	warp_event 17, 19, SHIMMER_BOAT_HOUSE, 1
 
-	db 32 ; coord events
-	coord_event 20,  4, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 20,  5, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 20,  6, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 20,  7, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 20,  8, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 20,  9, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 20, 12, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 20, 13, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 20, 14, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 20, 15, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 20, 16, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 20, 17, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 20, 18, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 20, 22, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 20, 21, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 20, 20, 0, ShimmerHarborMakeSilverSailboat
-	coord_event 21,  4, 2, ShimmerHarborMakeSilverBinocular
-	coord_event 21,  5, 2, ShimmerHarborMakeSilverBinocular
-	coord_event 21,  6, 2, ShimmerHarborMakeSilverBinocular
-	coord_event 21,  7, 2, ShimmerHarborMakeSilverBinocular
-	coord_event 21,  8, 2, ShimmerHarborMakeSilverBinocular
-	coord_event 21,  9, 1, ShimmerHarborMakeSilverBinocular
-	coord_event 21, 12, 2, ShimmerHarborMakeSilverBinocular
-	coord_event 21, 13, 2, ShimmerHarborMakeSilverBinocular
-	coord_event 21, 14, 2, ShimmerHarborMakeSilverBinocular
-	coord_event 21, 15, 2, ShimmerHarborMakeSilverBinocular
-	coord_event 21, 16, 2, ShimmerHarborMakeSilverBinocular
-	coord_event 21, 17, 2, ShimmerHarborMakeSilverBinocular
-	coord_event 21, 18, 2, ShimmerHarborMakeSilverBinocular
-	coord_event 21, 22, 0, ShimmerHarborMakeSilverBinocular
-	coord_event 21, 21, 0, ShimmerHarborMakeSilverBinocular
-	coord_event 21, 20, 0, ShimmerHarborMakeSilverBinocular
+	db 0 ; coord events
 
 	db 26 ; bg events
 	signpost 17, 11, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SHIMMER_HARBOR_HIDDEN_BOTTLE_CAP_1
@@ -71,8 +39,7 @@ ShimmerHarbor_MapScriptHeader:
 	signpost 16,  7, SIGNPOST_READ, ShimmerContainers3
 	signpost 22,  7, SIGNPOST_READ, ShimmerContainers
 
-	db 14 ; object events
-	person_event SPRITE_BOOK_PAPER_POKEDEX,  5, 27, SPRITEMOVEDATA_BINOCULARS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
+	db 13 ; object events
 	object_event 14,  6, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NULL, EVENT_SHIMMER_BOATMAN
 	object_event 12, 10, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	object_event 11, 10, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
@@ -98,18 +65,6 @@ ShimmerHarborTrigger1:
 	end
 	
 ShimmerHarborTrigger2:
-	end
-	
-ShimmerHarborMakeSilverSailboat:
-	clearevent EVENT_HARBOR_BINOCULAR_COLORS
-	special Special_UpdatePalsInstant
-	dotrigger $2
-	end
-	
-ShimmerHarborMakeSilverBinocular:
-	setevent EVENT_HARBOR_BINOCULAR_COLORS
-	special Special_UpdatePalsInstant
-	dotrigger $0
 	end
 	
 ShimmerBoatHouseSign:

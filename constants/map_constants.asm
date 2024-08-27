@@ -452,6 +452,7 @@ MAP_NONE   EQU 0
 	map_const INN_3F,									  16,  7 ; 3
 	map_const INN_ELEVATOR,								   2,  2 ; 4
 	map_const INN_VENT,									  18, 10 ; 5
+	map_const ROUTE_23_GATE,                          	   4,  4 ; 6
 	
 	newgroup													 ; EVO LOCATIONS GROUP
 	map_const ICE_CAVE_ICE_ROCK_ROOM,					   5,  5 ; 1

@@ -7,10 +7,12 @@ Crossroads_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, CrossroadsFlyPoint
 	callback MAPCALLBACK_TILES, CrossroadsCallback
 
-	db 3 ; warp events
+	db 5 ; warp events
 	warp_event 30,  7, INN_1F, 1
 	warp_event 31,  7, INN_1F, 2
 	warp_event 28,  6, INN_1F, 18
+	warp_event 23, 21, ROUTE_23_GATE, 1
+	warp_event 24, 21, ROUTE_23_GATE, 2
 
 	db 4 ; coord events
 	coord_event 20,  9, 0, CrossroadsCutsceneStart1

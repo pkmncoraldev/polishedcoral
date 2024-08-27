@@ -416,6 +416,7 @@ INCLUDE "maps/Route22Tunnel.asm"
 INCLUDE "maps/BarBackAlley.asm"
 INCLUDE "maps/BarInside.asm"
 INCLUDE "maps/Crossroads.asm"
+INCLUDE "maps/Route23Gate.asm"
 
 SECTION "Komore Village Scripts", ROMX
 INCLUDE "maps/KomoreVillage.asm"

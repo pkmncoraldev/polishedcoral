@@ -50,6 +50,7 @@ Route1Gate_BlockData:
 Route8Gate_BlockData:
 Route12Gate_BlockData:
 AirportGate_BlockData:
+Route23Gate_BlockData:
 Route25Gate_BlockData:
 	INCBIN "maps/NorthSouthGate.ablk.lz"
 	

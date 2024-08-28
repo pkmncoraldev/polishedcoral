@@ -48,7 +48,7 @@ ShimmerCity_MapScriptHeader:
 	signpost  9, 27, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SHIMMER_CITY_HIDDEN_BOTTLE_CAP_1
 	signpost 13, 14, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SHIMMER_CITY_HIDDEN_BOTTLE_CAP_2
 
-	db 19 ; object events
+	db 20 ; object events
 	person_event SPRITE_FISHING_GURU, 14, 18, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc1, -1
 	person_event SPRITE_POKEFAN_F, 17, 18, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc2, -1
 	person_event SPRITE_REDS_MOM, 16, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc3, -1
@@ -61,10 +61,10 @@ ShimmerCity_MapScriptHeader:
 	person_event SPRITE_HIKER,  7,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc10, -1
 	person_event SPRITE_MATRON, 24, 21, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc11, -1
 	person_event SPRITE_POKEFAN_F, 24, 22, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc12, -1
-	person_event SPRITE_POKEMANIAC, 14,  9, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc13, -1
+	person_event SPRITE_POKEMANIAC, 15,  9, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc13, -1
 	person_event SPRITE_COOLTRAINER_M, 20, 37, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc14, -1
 	person_event SPRITE_POKEFAN_M, 27, 11, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc15, -1
-	
+	person_event SPRITE_BURGLAR, 13, 25, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc16, -1
 	person_event SPRITE_CHEF,  6,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCityHotDogGuy, -1
 	person_event SPRITE_PICNIC,  5,  9, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_BALLOONS, 15, 20, SPRITEMOVEDATA_BALLOONS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
@@ -84,7 +84,10 @@ ShimmerCity_MapScriptHeader:
 	const SHIIMER_CITY_NPC_10
 	const SHIIMER_CITY_NPC_11
 	const SHIIMER_CITY_NPC_12
-	
+	const SHIIMER_CITY_NPC_13
+	const SHIIMER_CITY_NPC_14
+	const SHIIMER_CITY_NPC_15
+	const SHIIMER_CITY_NPC_16
 	const SHIIMER_CITY_HOT_DOG_GUY
 	
 	
@@ -439,6 +442,22 @@ ShimmerCityNpc15Text:
 	para "I'm sure it totally"
 	line "IS all it's cracked"
 	cont "up to be!"
+	done
+	
+ShimmerCityNpc16:
+	jumptextfaceplayer ShimmerCityNpc16Text
+	
+ShimmerCityNpc16Text:
+	text "Those hot dogs"
+	line "they sell on the"
+	cont "BOARDWALK taste"
+	cont "real strange."
+	
+	para "I won't lie,"
+	line "though…"
+	
+	para "They're kinda"
+	line "growing on me!"
 	done
 	
 ShimmerCityHorseaKidAsm:

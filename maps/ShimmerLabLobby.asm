@@ -43,11 +43,11 @@ ShimmerLabLobbyNPC:
 
 ShimmerLabLobbyNPC2:
 	faceplayer
-	opentext
 	checkevent EVENT_CAN_GET_AMULET_COIN
 	iftrue .give_amulet_coin
 	jumptextfaceplayer ShimmerLabLobbyNPC2Text
 .give_amulet_coin
+	opentext
 	writetext ShimmerLabLobbyNPC2Text2
 	waitbutton
 	verbosegiveitem AMULET_COIN
@@ -86,7 +86,7 @@ ShimmerLabLobbyNPCText:
 	done
 	
 ShimmerLabLobbyNPC2Text:
-	text "Hey!<WAIT_M>"
+	text "Hey!<WAIT_S>"
 	line "It's me!"
 	
 	para "The researcher you"
@@ -104,7 +104,7 @@ ShimmerLabLobbyNPC2Text:
 	done
 	
 ShimmerLabLobbyNPC2Text2:
-	text "Hey!<WAIT_M>"
+	text "Hey!<WAIT_S>"
 	line "It's me!"
 	
 	para "The researcher you"

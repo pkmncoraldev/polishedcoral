@@ -304,8 +304,8 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 16
 	
-	map_const SHIMMER_CITY,					  			  21, 17 ; 1
-	map_const SHIMMER_HARBOR,					  		  12, 18 ; 2
+	map_const SHIMMER_CITY,					  			  23, 17 ; 1
+	map_const SHIMMER_HARBOR,					  		  11, 18 ; 2
 	map_const SHIMMER_LAB_LOBBY,			  			   7,  3 ; 3
 	map_const SHIMMER_LAB_RESEARCH_ROOM,				   5,  5 ; 4
 	map_const SHIMMER_LAB_EXPERIMENTAL_LAB,  			   6,  5 ; 5

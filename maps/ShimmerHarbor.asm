@@ -47,7 +47,7 @@ ShimmerHarbor_MapScriptHeader:
 	object_event 10,  6, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	object_event 15,  4, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	object_event 14,  4, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
-	person_event SPRITE_POKEMANIAC, 22, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerHarborNPC1, -1
+	person_event SPRITE_POKEMANIAC, 22, 14, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerHarborNPC1, -1
 	person_event SPRITE_INVISIBLE, 19, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerHarborLockedDoor, EVENT_SHIMMER_BOAT_GUY_AT_WORK
 	person_event SPRITE_SAILOR,  8, 12, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerHarborNPC2, -1
 	person_event SPRITE_SAILOR, 20,  6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerHarborNPC3, -1
@@ -133,10 +133,6 @@ ShimmerHarborNPC1Text2:
 	para "I've been here for"
 	line "way longer than"
 	cont "five minutes…"
-	
-	para "I bet that bum is"
-	line "off stuffing his"
-	cont "face somewhere!"
 	done
 	
 ShimmerHarborNPC2Text:

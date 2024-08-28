@@ -80,7 +80,8 @@ Facings:
 	dw FacingStall
 	dw FacingBinoculars1
 	dw FacingBinoculars2
-	dw FacingBalloons
+	dw FacingBalloons1
+	dw FacingBalloons2
 	dw FacingFossilMachine
 	dw FacingPCSign
 	dw FacingCardTable1
@@ -719,12 +720,21 @@ FacingBinoculars2:
 	db 12,  0, 0, $07
 	db 12,  8, 0, $07
 
-FacingBalloons:
-	db 4 ; #
+FacingBalloons1:
+	db 5 ; #
+	db  4, -16, 0, $0a
 	db  4,  0, 0, $80
 	db  4,  8, 0, $81
-	db 12,  0, 0, $82
-	db 12,  8, 0, $83
+	db 12,  0, 0, $02
+	db 12,  8, 0, $03
+	
+FacingBalloons2:
+	db 5 ; #
+	db  4, -16, 0, $0a
+	db  4,  0, 0, $08
+	db  4,  8, 0, $09
+	db 12,  0, 0, $06
+	db 12,  8, 0, $07
 	
 FacingFossilMachine:
 	db 1 ; #

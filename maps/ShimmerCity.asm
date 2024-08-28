@@ -5,58 +5,70 @@ ShimmerCity_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, ShimmerCityFlyPoint
 
 	db 27 ; warp events
-	warp_event  4, 25, SHIMMER_LAB_LOBBY, 1
-	warp_event  5, 25, SHIMMER_LAB_LOBBY, 2
-	warp_event  7, 15, SHIMMER_UNDER_BOARDWALK, 4
-	warp_event  7, 14, SHIMMER_UNDER_BOARDWALK, 2
-	warp_event  7, 11, SHIMMER_UNDER_BOARDWALK, 9
-	warp_event  7, 10, SHIMMER_UNDER_BOARDWALK, 7
-	warp_event  8,  8, SHIMMER_UNDER_BOARDWALK, 14
-	warp_event  8,  7, SHIMMER_UNDER_BOARDWALK, 13
-	warp_event  8,  6, SHIMMER_UNDER_BOARDWALK, 12
-	warp_event  7,  3, SHIMMER_UNDER_BOARDWALK, 37
-	warp_event  6,  3, SHIMMER_UNDER_BOARDWALK, 20
-	warp_event  4,  3, SHIMMER_UNDER_BOARDWALK, 18
-	warp_event  3,  3, SHIMMER_UNDER_BOARDWALK, 17
-	warp_event  2,  3, SHIMMER_UNDER_BOARDWALK, 10
-	warp_event  1,  6, SHIMMER_UNDER_BOARDWALK, 33
-	warp_event  1,  7, SHIMMER_UNDER_BOARDWALK, 34
-	warp_event  1,  8, SHIMMER_UNDER_BOARDWALK, 35
-	warp_event  2, 10, SHIMMER_UNDER_BOARDWALK, 28
-	warp_event  2, 11, SHIMMER_UNDER_BOARDWALK, 30
-	warp_event  2, 14, SHIMMER_UNDER_BOARDWALK, 23
-	warp_event  2, 15, SHIMMER_UNDER_BOARDWALK, 25
-	warp_event 33, 15, SHIMMER_POKECENTER, 1
-	warp_event 37, 23, SHIMMER_MART, 1
-	warp_event 13, 23, SHIMMER_HOUSE_1, 1
-	warp_event 21, 23, SHIMMER_HOUSE_2, 1
-	warp_event 23, 13, SHIMMER_CAFE, 1
-	warp_event  5,  3, SHIMMER_UNDER_BOARDWALK, 19
+	warp_event  8, 25, SHIMMER_LAB_LOBBY, 1
+	warp_event  9, 25, SHIMMER_LAB_LOBBY, 2
+	warp_event 11, 15, SHIMMER_UNDER_BOARDWALK, 4
+	warp_event 11, 14, SHIMMER_UNDER_BOARDWALK, 2
+	warp_event 11, 11, SHIMMER_UNDER_BOARDWALK, 9
+	warp_event 11, 10, SHIMMER_UNDER_BOARDWALK, 7
+	warp_event 12,  8, SHIMMER_UNDER_BOARDWALK, 14
+	warp_event 12,  7, SHIMMER_UNDER_BOARDWALK, 13
+	warp_event 12,  6, SHIMMER_UNDER_BOARDWALK, 12
+	warp_event 11,  3, SHIMMER_UNDER_BOARDWALK, 37
+	warp_event 10,  3, SHIMMER_UNDER_BOARDWALK, 20
+	warp_event  8,  3, SHIMMER_UNDER_BOARDWALK, 18
+	warp_event  7,  3, SHIMMER_UNDER_BOARDWALK, 17
+	warp_event  6,  3, SHIMMER_UNDER_BOARDWALK, 10
+	warp_event  5,  6, SHIMMER_UNDER_BOARDWALK, 33
+	warp_event  5,  7, SHIMMER_UNDER_BOARDWALK, 34
+	warp_event  5,  8, SHIMMER_UNDER_BOARDWALK, 35
+	warp_event  6, 10, SHIMMER_UNDER_BOARDWALK, 28
+	warp_event  6, 11, SHIMMER_UNDER_BOARDWALK, 30
+	warp_event  6, 14, SHIMMER_UNDER_BOARDWALK, 23
+	warp_event  6, 15, SHIMMER_UNDER_BOARDWALK, 25
+	warp_event 37, 15, SHIMMER_POKECENTER, 1
+	warp_event 41, 23, SHIMMER_MART, 1
+	warp_event 17, 23, SHIMMER_HOUSE_1, 1
+	warp_event 25, 23, SHIMMER_HOUSE_2, 1
+	warp_event 27, 13, SHIMMER_CAFE, 1
+	warp_event  9,  3, SHIMMER_UNDER_BOARDWALK, 19
 
 	db 0 ; coord events
 
-	db 10 ; bg events
-	bg_event 14, 15, SIGNPOST_ITEM + BIG_NUGGET, EVENT_SHIMMER_CITY_HIDDEN_ITEM
-	signpost 14, 15, SIGNPOST_LEFT, ShimmerCityFishMarket
-	signpost 17, 15, SIGNPOST_LEFT, ShimmerCityBerryMarket
-	signpost 18, 20, SIGNPOST_READ, ShimmerCitySign
-	signpost 14, 22, SIGNPOST_READ, ShimmerCafeSign
-	signpost 26,  3, SIGNPOST_READ, ShimmerLabSign
-	signpost 14, 36, SIGNPOST_READ, ShimmerFlowers
-	signpost 15, 36, SIGNPOST_READ, ShimmerFlowers
-	signpost  9, 23, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SHIMMER_CITY_HIDDEN_BOTTLE_CAP_1
-	signpost 13, 10, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SHIMMER_CITY_HIDDEN_BOTTLE_CAP_2
+	db 11 ; bg events
+	bg_event 18, 15, SIGNPOST_ITEM + BIG_NUGGET, EVENT_SHIMMER_CITY_HIDDEN_ITEM
+	signpost 14, 19, SIGNPOST_LEFT, ShimmerCityFishMarket
+	signpost 17, 19, SIGNPOST_LEFT, ShimmerCityBerryMarket
+	signpost 18, 24, SIGNPOST_READ, ShimmerCitySign
+	signpost 14, 26, SIGNPOST_READ, ShimmerCafeSign
+	signpost 26,  7, SIGNPOST_READ, ShimmerLabSign
+	signpost 14, 40, SIGNPOST_READ, ShimmerFlowers
+	signpost 15, 40, SIGNPOST_READ, ShimmerFlowers
+	signpost  6,  9, SIGNPOST_READ, ShimmerCityHotDogStand
+	signpost  9, 27, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SHIMMER_CITY_HIDDEN_BOTTLE_CAP_1
+	signpost 13, 14, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SHIMMER_CITY_HIDDEN_BOTTLE_CAP_2
 
-	db 9 ; object events
-	person_event SPRITE_FISHING_GURU, 14, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc1, -1
-	person_event SPRITE_POKEFAN_F, 17, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc2, -1
-	person_event SPRITE_REDS_MOM, 16, 19, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc3, -1
-	person_event SPRITE_CHILD, 19, 23, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc4, -1
-	person_event SPRITE_FAT_GUY, 18, 10, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc5, -1
-	person_event SPRITE_PONYTAIL, 10, 14, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc6, -1
-	person_event SPRITE_BALLOONS, 15, 16, SPRITEMOVEDATA_BALLOONS_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, 0, -1
-	person_event SPRITE_BALLOONS, 12, 16, SPRITEMOVEDATA_BALLOONS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, 0, -1
-	person_event SPRITE_BOOK_PAPER_POKEDEX, 15, 15, SPRITEMOVEDATA_STALL, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
+	db 19 ; object events
+	person_event SPRITE_FISHING_GURU, 14, 18, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc1, -1
+	person_event SPRITE_POKEFAN_F, 17, 18, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc2, -1
+	person_event SPRITE_REDS_MOM, 16, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc3, -1
+	person_event SPRITE_CHILD, 19, 27, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc4, -1
+	person_event SPRITE_FAT_GUY, 18, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc5, -1
+	person_event SPRITE_PONYTAIL, 10, 18, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc6, -1
+	person_event SPRITE_YOUNGSTER,  5, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc7, -1
+	person_event SPRITE_CUTE_GIRL, 11, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc8, -1
+	person_event SPRITE_SUPER_NERD,  9,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc9, -1
+	person_event SPRITE_HIKER,  7,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc10, -1
+	person_event SPRITE_MATRON, 24, 21, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc11, -1
+	person_event SPRITE_POKEFAN_F, 24, 22, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc12, -1
+	person_event SPRITE_POKEMANIAC, 14,  9, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc13, -1
+	person_event SPRITE_COOLTRAINER_M, 20, 37, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc14, -1
+	person_event SPRITE_POKEFAN_M, 27, 11, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc15, -1
+	
+	person_event SPRITE_CHEF,  6,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCityHotDogGuy, -1
+	person_event SPRITE_PICNIC,  5,  9, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_BALLOONS, 15, 20, SPRITEMOVEDATA_BALLOONS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
+	person_event SPRITE_BALLOONS, 12, 20, SPRITEMOVEDATA_BALLOONS_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, 0, -1
 
 	
 	const_def 1 ; object constants
@@ -66,6 +78,14 @@ ShimmerCity_MapScriptHeader:
 	const SHIIMER_CITY_NPC_4
 	const SHIIMER_CITY_NPC_5
 	const SHIIMER_CITY_NPC_6
+	const SHIIMER_CITY_NPC_7
+	const SHIIMER_CITY_NPC_8
+	const SHIIMER_CITY_NPC_9
+	const SHIIMER_CITY_NPC_10
+	const SHIIMER_CITY_NPC_11
+	const SHIIMER_CITY_NPC_12
+	
+	const SHIIMER_CITY_HOT_DOG_GUY
 	
 	
 ShimmerCityFlyPoint:
@@ -74,6 +94,29 @@ ShimmerCityFlyPoint:
 	setevent EVENT_MADE_IT_TO_SOUTH_ONWA
 	clearevent EVENT_HAVENT_MADE_IT_TO_SOUTH_ONWA
 	return
+	
+ShimmerCityHotDogGuy:
+	faceplayer
+	opentext
+	writetext ShimmerCityHotDogGuyTempText
+	waitbutton
+	closetext
+	spriteface SHIIMER_CITY_HOT_DOG_GUY, DOWN
+	end
+	
+ShimmerCityHotDogGuyTempText:
+	text "Buy my weiner."
+	done
+	
+ShimmerCityHotDogStand:
+	jumptext ShimmerCityHotDogStandText
+	
+ShimmerCityHotDogStandText:
+	text "A hot dog stand."
+	
+	para "A fishy smell"
+	line "wafts from it."
+	done
 	
 ShimmerCitySign:
 	jumptext ShimmerCitySignText
@@ -205,6 +248,199 @@ ShimmerCityNpc6:
 .lost_girl
 	jumptextfaceplayer ShimmerCityNpc6Text2
 	
+ShimmerCityNpc7:
+	jumptext ShimmerCityNpc7Text
+	
+ShimmerCityNpc7Text:
+	text "I can totally see"
+	line "the LIGHTHOUSE"
+	cont "from here!"
+	done
+	
+ShimmerCityNpc8:
+	faceplayer
+	opentext
+	writetext ShimmerCityNpc8Text
+	waitbutton
+	closetext
+	spriteface SHIIMER_CITY_NPC_8, UP
+	end
+	
+ShimmerCityNpc8Text:
+	text "I'm a lonely loner.<WAIT_S>"
+	line "I have no one."
+	
+	para "My friends call"
+	line "me a loner,"
+	
+	para "my family calls"
+	line "me a loner,"
+	
+	para "my boyfriend calls"
+	line "me a loner,"
+	
+	para "even my #MON"
+	line "call me a loner!"
+	
+	para "I have no one,<WAIT_S>"
+	line "so here I sit:"
+	
+	para "Loner<WAIT_S>-ly…"
+	done
+	
+ShimmerCityNpc9:
+	faceplayer
+	opentext
+	writetext ShimmerCityNpc9Text
+	waitbutton
+	closetext
+	spriteface SHIIMER_CITY_NPC_9, DOWN
+	end
+	
+ShimmerCityNpc9Text:
+	text "That girl over"
+	line "there claims she's"
+	cont "a loner."
+	
+	para "She has tons of"
+	line "friends, and just"
+	cont "wants to seem cool"
+	cont "and mysterious."
+	
+	para "She has a long way"
+	line "to go if she wants"
+	cont "to be a REAL loner"
+	cont "like me!"
+	done
+	
+ShimmerCityNpc10:
+	faceplayer
+	opentext
+	writetext ShimmerCityNpc10Text
+	waitbutton
+	closetext
+	spriteface SHIIMER_CITY_NPC_10, UP
+	end
+	
+ShimmerCityNpc10Text:
+	text "They say the guy"
+	line "who runs the BOAT"
+	cont "HOUSE love to eat."
+	
+	para "But hey, <WAIT_S>"
+	line "who doesn't, right?"
+	
+	para "Gahaha!"
+	done
+	
+ShimmerCityNpc11:
+	applyonemovement SHIIMER_CITY_NPC_11, turn_step_right
+	opentext
+	writetext ShimmerCityNpc11Text
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement SHIIMER_CITY_NPC_12, turn_step_left
+	opentext
+	writetext ShimmerCityNpc11Text2
+	waitbutton
+	closetext
+	end
+	
+ShimmerCityNpc11Text:
+	text "You know the"
+	line "hot dog vendor on"
+	cont "the BOARDWALK?"
+	
+	para "I heard he sources"
+	line "his ingredients"
+	cont "locally."
+	
+	para "V<WAIT_S>E<WAIT_S>E<WAIT_S>E<WAIT_S>RY locally,"
+	line "if you catch my"
+	cont "drift…"
+	done
+	
+ShimmerCityNpc11Text2:
+	text "How scandalous!"
+	done
+	
+ShimmerCityNpc12:
+	applyonemovement SHIIMER_CITY_NPC_12, turn_step_left
+	opentext
+	writetext ShimmerCityNpc12Text
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement SHIIMER_CITY_NPC_11, turn_step_right
+	opentext
+	writetext ShimmerCityNpc11Text2
+	waitbutton
+	closetext
+	end
+	
+ShimmerCityNpc12Text:
+	text "You know the"
+	line "BERRY STALL lady?"
+	
+	para "I heard she has a"
+	line "thing going on"
+	cont "with the man at"
+	cont "the FISH STALL."
+	
+	para "Can you believe"
+	line "that?"
+	done
+	
+ShimmerCityNpc13:
+	jumptextfaceplayer ShimmerCityNpc13Text
+	
+ShimmerCityNpc13Text:
+	text "Have you been"
+	line "down below the"
+	cont "BOARDWALK?"
+	
+	para "It's cool and"
+	line "quiet down there,"
+	
+	para "but it's also a bit"
+	line "dangerous!"
+	done
+	
+ShimmerCityNpc14:
+	jumptextfaceplayer ShimmerCityNpc14Text
+	
+ShimmerCityNpc14Text:
+	text "I prefer to spend"
+	line "time on this side"
+	cont "of town."
+	
+	para "Far away from the"
+	line "hustle and bustle"
+	cont "of the MARKET and"
+	cont "the BOARDWALK."
+	
+	para "It smells less"
+	line "fishy over here,"
+	cont "too!"
+	done
+
+ShimmerCityNpc15:
+	jumptextfaceplayer ShimmerCityNpc15Text
+	
+ShimmerCityNpc15Text:
+	text "Ancient temples!<WAIT_S>"
+	line "Buried treasure!"
+	
+	para "Being an archeol-"
+	line "ogist sounds so"
+	cont "exciting!"
+	
+	para "I'm sure it totally"
+	line "IS all it's cracked"
+	cont "up to be!"
+	done
+	
 ShimmerCityHorseaKidAsm:
 	farcall SelectTradeOrDaycareMon
 	jr c, .cancel
@@ -261,17 +497,18 @@ ShimmerCityNpc2Text:
 	text "Oh dear…"
 	
 	para "If you want to buy"
-	line "some berries,"
+	line "some BERRIES,"
 	
 	para "go to the front of"
 	line "the stall."
 	done
 	
 ShimmerCityNpc3Text:
-	text "Smell that?"
-	
-	para "I just love the"
+	text "I just love the"
 	line "salty sea air!"
+	
+	para "Smell that?<WAIT_M>"
+	line "Smells… <WAIT_L> fishy?"
 	done
 	
 ShimmerCityNpc4Text1:
@@ -339,10 +576,15 @@ ShimmerCityNpc5Text:
 	line "blue stall buys"
 	cont "and sells #MON."
 	
-	para "I'm sure he takes"
-	line "good care of them."
+	para "I wonder what he"
+	line "does with all the"
+	cont "ones he doesn't"
+	cont "sell to TRAINERS."
 	
-	para "…<WAIT_M>Right?"
+	para "I'm sure he takes"
+	line "good care of them…"
+	
+	para "…<WAIT_L>right?"
 	done
 	
 ShimmerCityNpc6Text1:
@@ -359,7 +601,7 @@ ShimmerCityNpc6Text1:
 ShimmerCityNpc6Text2:
 	text "I saw a little"
 	line "girl playing under"
-	cont "the boardwalk."
+	cont "the BOARDWALK."
 	
 	para "Shouldn't she have"
 	line "adult supervision?"

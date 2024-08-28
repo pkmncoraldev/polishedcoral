@@ -1807,7 +1807,7 @@ LoadMapPals::
 .shimmer
 	ld a, [wMapNumber]
 	cp MAP_SHIMMER_CITY
-	jp z, .sailboat
+	jp z, .balloon
 	cp MAP_SHIMMER_HARBOR
 	jp z, .sailboat
 	cp MAP_SHIMMER_LAB_EXPERIMENTAL_LAB
@@ -1821,11 +1821,11 @@ LoadMapPals::
 	jp FarCopyWRAM
 
 	
-.binoculars
+.balloon
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
-	ld hl, MapObjectPalsBinoculars
+	ld hl, MapObjectPalsBalloon
 	call AddNTimes
 	call LoadSingleOBPalLinePal7
 	call FarCopyWRAM
@@ -2145,9 +2145,6 @@ INCLUDE "maps/palettes/obpals/obsailboat.pal"
 MapObjectPalsLighthouse::
 INCLUDE "maps/palettes/obpals/oblighthouse.pal"
 
-MapObjectPalsBinoculars::
-INCLUDE "maps/palettes/obpals/obbinoculars.pal"
-
 MapObjectPalsSkatepark::
 INCLUDE "maps/palettes/obpals/obskatepark.pal"
 
@@ -2249,6 +2246,9 @@ INCLUDE "maps/palettes/obpals/jukebox.pal"
 
 MapObjectPalsAutumn::
 INCLUDE "maps/palettes/obpals/autumn.pal"
+
+MapObjectPalsBalloon:
+INCLUDE "maps/palettes/obpals/obballoon.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

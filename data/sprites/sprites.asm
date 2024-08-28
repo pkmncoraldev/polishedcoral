@@ -211,6 +211,7 @@ SpriteHeaders:
 	overworld_sprite PaintingsSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite MinaGroundSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite PicnicSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite ChefSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

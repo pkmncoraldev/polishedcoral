@@ -319,10 +319,10 @@ SetFacingBalloons2: ; 4590
 	and %01111111
 	ld [hl], a
 	and %01000000
-	ld a, FACING_BALLOONS
+	ld a, FACING_BALLOONS_1
 	jp nz, SetFixedFacing
 SetFacingFreezeBalloons2: ; 45a4
-	ld a, FACING_TILE_LEFT
+	ld a, FACING_BALLOONS_2
 	jp SetFixedFacing
 
 SetFacingWalkInPlace1:

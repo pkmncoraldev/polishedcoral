@@ -204,6 +204,7 @@ SnesSpriteGFX::                INCBIN "gfx/sprites/snes.2bpp.lz"
 N64SpriteGFX::                 INCBIN "gfx/sprites/n64.2bpp.lz"
 SunbeamViewSpriteGFX::         INCBIN "gfx/sprites/sunbeam_view.2bpp.lz"
 SunbeamViewSpriteCloudsGFX::   INCBIN "gfx/sprites/sunbeam_view_clouds.2bpp.lz"
+ChefSpriteGFX::  			   INCBIN "gfx/sprites/chef.2bpp.lz"
 
 
 SECTION "Overworld Sprites 7", ROMX

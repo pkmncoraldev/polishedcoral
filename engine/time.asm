@@ -163,6 +163,7 @@ ResetDailyEventFlags:
 	eventflagreset EVENT_LUSTER_TRASHCAN_6
 	eventflagreset EVENT_LUSTER_TRASHCAN_7
 	eventflagreset EVENT_LEILANI_CANDY
+	eventflagreset EVENT_BOUGHT_MOO_MOO_MILK_TODAY
 	ret
 
 Special_SampleKenjiBreakCountdown: ; 11485

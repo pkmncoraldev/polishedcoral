@@ -139,19 +139,12 @@ EventideVillageScarecrow:
 EventideVillageMilkGirl:
 	faceplayer
 	opentext
+	checkevent EVENT_BOUGHT_MOO_MOO_MILK_TODAY
+	iftrue .done_today
 	writetext EventideVillageMilkGirlText1
+	special PlaceMoneyTopRight
 	yesorno
 	iffalse .no
-	writetext EventideVillageMilkGirlText2
-;	refreshscreen $0
-	special PlaceMoneyTopRight
-	loadmenudata EventideVillageMilkMenuData
-	verticalmenu
-	closewindow
-	if_equal $1, .one
-	if_equal $2, .dozen
-	jump .no
-.one
 	checkmoney $0, 500
 	ifequal $2, .nomoney
 	giveitem MOOMOO_MILK
@@ -166,20 +159,11 @@ EventideVillageMilkGirl:
 	verbosegiveitem MOOMOO_MILK
 	closetext
 	spriteface EVENTIDE_VILLAGE_MILK_GIRL, LEFT
+	setevent EVENT_BOUGHT_MOO_MOO_MILK_TODAY
 	end
-.dozen
-	checkmoney $0, 6000
-	ifequal $2, .nomoney
-	giveitem MOOMOO_MILK, 12
-	iffalse .noroom
-	takemoney $0, 6000
-	takeitem MOOMOO_MILK, 12
-	special PlaceMoneyTopRight
-	waitsfx
-	playsound SFX_TRANSACTION
-	writetext EventideVillageMilkGirlTextDozen
-	buttonsound
-	verbosegiveitem MOOMOO_MILK, 12
+.done_today
+	writetext EventideVillageMilkGirlText2
+	waitbutton
 	closetext
 	spriteface EVENTIDE_VILLAGE_MILK_GIRL, LEFT
 	end
@@ -201,20 +185,6 @@ EventideVillageMilkGirl:
 	closetext
 	spriteface EVENTIDE_VILLAGE_MILK_GIRL, LEFT
 	end
-	
-EventideVillageMilkMenuData:
-	db $40 ; flags
-	db 04, 00 ; start coords
-	db 11, 14 ; end coords
-	dw .MenuData2
-	db 1 ; default option
-
-.MenuData2:
-	db $80 ; flags
-	db 3 ; items
-	db "× 1    ¥500@"
-	db "×12   ¥6000@"
-	db "CANCEL@"
 	
 EventideVillageNPC1Text:
 	text "I wish I could"
@@ -268,27 +238,23 @@ EventideVillageMilkGirlText1:
 	
 	para "#MON love it!"
 	
-	para "Do you want to"
-	line "buy some?"
+	para "Do you want a"
+	line "bottle?"
+	
+	para "Only ¥500."
 	done
 	
 EventideVillageMilkGirlText2:
-	text "I can sell single"
-	line "bottles, or by the"
-	cont "dozen."
+	text "I can only sell ya"
+	line "a single bottle a"
+	cont "day, sorry."
 	
-	para "How much do you"
-	line "want?"
+	para "Come back tomorrow"
+	line "for some more!"
 	done
 	
 EventideVillageMilkGirlTextOne:
-	text "One bottle?<WAIT_M>"
-	line "Here ya go!"
-	done
-	
-EventideVillageMilkGirlTextDozen:
-	text "A dozen?<WAIT_M>"
-	line "Coming right up!"
+	text "Here ya go!"
 	done
 	
 EventideVillageMilkGirlTextNoMoney:

@@ -170,7 +170,7 @@ ItemNames::
 	db "METAL POWDER@"
 	db "QUICK POWDER@"
 	db "POLLEN POUCH@"
-	db "AIR BALLOON@"
+	db "DUBIOUS DOG@"
 	db "ASSAULT VEST@"
 	db "BIG ROOT@"
 	db "FIVESTARHELM@"

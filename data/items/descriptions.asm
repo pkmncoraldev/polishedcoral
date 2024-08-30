@@ -170,7 +170,7 @@ ItemDescriptions:
 	dw MetalPowderDesc
 	dw QuickPowderDesc
 	dw PollenPouchDesc
-	dw AirBalloonDesc
+	dw DubiousDogDesc
 	dw AssaultVestDesc
 	dw BigRootDesc
 	dw FiveStarHelmDesc
@@ -876,9 +876,9 @@ PollenPouchDesc:
 	db   "Holds up to 1000"
 	next "POLLEN PUFFs.@"
 
-AirBalloonDesc:
-	db   "Avoids one GROUND"
-	next "attack. (HOLD)@"
+DubiousDogDesc:
+	db   "Fully restores"
+	next "#MON HP. …Or?@"
 
 AssaultVestDesc:
 	db   "Ups SPCL.DEF, but"

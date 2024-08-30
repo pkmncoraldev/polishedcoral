@@ -196,7 +196,7 @@
 	const QUICK_POWDER ; aa
 	const POLLEN_POUCH ; ab
 
-	const AIR_BALLOON  ; ac - replace
+	const DUBIOUS_DOG  ; ac
 	const ASSAULT_VEST ; ad
 	const BIG_ROOT     ; ae
 	const FIVESTARHELM ; af
@@ -296,7 +296,7 @@
 	const_def
 	const NAM_NO_ITEM      ; 00
 	const NAM_ABILITY_CAP  ; 01
-	const NAM_AIR_BALLOON  ; 02
+	const NAM_DUBIOUS_DOG  ; 02
 	const NAM_AMULET_COIN  ; 03
 	const NAM_ANTIDOTE     ; 04
 	const NAM_UNUSED5      ; 05

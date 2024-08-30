@@ -9452,6 +9452,7 @@ EdibleBerries:
 	db BLOSSOM_TEA
 	db SUNSHINE_TEA
 	db MOOMOO_BREW
+	db DUBIOUS_DOG
 	; not eaten, so unaffected: jaboca, rowap
 	db -1
 NoItem:

@@ -171,7 +171,7 @@ ItemIconPointers:
 	dba MetalPowderIcon
 	dba QuickPowderIcon
 	dba PollenPouchIcon
-	dba AirBalloonIcon
+	dba DubiousDogIcon
 	dba AssaultVestIcon
 	dba BigRootIcon
 	dba FiveStarHelmIcon

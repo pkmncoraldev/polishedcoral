@@ -133,6 +133,12 @@ UnknownText_0x1bc16e::
 	text " came"
 	line "to its senses."
 	done
+	
+UnknownText_BarelyHoldOn::
+	text_from_ram wStringBuffer1
+	text " is"
+	line "barely holding on!"
+	done
 
 UnknownText_0x1bc29c::
 	text "Please set the"

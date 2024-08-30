@@ -185,7 +185,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; METAL_POWDER
 	dw NoEffect         ; QUICK_POWDER
 	dw PollenPouch       ; POLLEN_POUCH
-	dw NoEffect         ; AIR_BALLOON
+	dw DubiousDogEffect         ; DUBIOUS_DOG
 	dw NoEffect         ; ASSAULT_VEST
 	dw NoEffect         ; BIG_ROOT
 	dw NoEffect         ; FIVESTARHELM
@@ -1985,6 +1985,13 @@ PersimBerry: ; f16a
 	jp StatusHealer_Jumptable
 ; f186
 
+DubiousDogEffect:
+	call Random
+	cp $7f ; 50 percent
+	jr c, RestoreHPEffect
+	call ItemTakeHP
+	jp StatusHealer_Jumptable
+
 RestoreHPEffect: ; f186
 	call ItemRestoreHP
 	jp StatusHealer_Jumptable
@@ -2103,12 +2110,53 @@ ItemRestoreHP:
 	call ReceiveItem
 	call SaveBottleCapMessage
 .not_soda_pop
+	ld c, HAPPINESS_USEDITEM
+	farcall ChangeHappiness
+	xor a
+	ret
+
+ItemTakeHP:
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+	ld a, 2
+	ret c
+
+	call IsMonFainted
+	ld a, 1
+	ret z
+
+	call IsMonAtFullHealth
+	ld a, 1
+	ret nc
+	call GetCurHPMinus1
+	call RemoveHP
+	call BattlemonRestoreHealth
+	call TakeHP_SFX_GFX
+	ld a, PARTYMENUTEXT_DAMAGE
+	ld [wPartyMenuActionText], a
+	call ItemActionTextWaitButton
+	call UseDisposableItem
+	ld c, HAPPINESS_REVIVALHERB
+	farcall ChangeHappiness
 	xor a
 	ret
 
 HealHP_SFX_GFX: ; f1db (3:71db)
 	push de
 	ld de, SFX_POTION
+	call WaitPlaySFX
+	pop de
+	ld a, [wCurPartyMon]
+	hlcoord 11, 0
+	ld bc, SCREEN_WIDTH * 2
+	rst AddNTimes
+	ld a, $2
+	ld [wWhichHPBar], a
+	predef_jump AnimateHPBar
+
+TakeHP_SFX_GFX:
+	push de
+	ld de, SFX_SUPER_EFFECTIVE
 	call WaitPlaySFX
 	pop de
 	ld a, [wCurPartyMon]
@@ -2361,6 +2409,15 @@ LoadHPFromBuffer1: ; f36f (3:736f)
 	ld a, [wBuffer2]
 	ld d, a
 	ld a, [wBuffer1]
+	ld e, a
+	ret
+
+GetCurHPMinus1:
+	call LoadCurHPToBuffer3
+	ld a, [wBuffer4]
+	ld d, a
+	ld a, [wBuffer3]
+	dec a
 	ld e, a
 	ret
 

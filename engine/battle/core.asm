@@ -2001,6 +2001,9 @@ _SubtractHP:
 	call UpdateHPBarBattleHuds
 	pop af
 	ret z
+	ld a, [wKickCounter]
+	cp 69
+	ret z
 	jp HandleHealingItems
 
 .do_subtract
@@ -2085,6 +2088,22 @@ GetMaxHP: ; 3ccac
 
 	ld a, [hl]
 	ld [wBuffer1], a
+	ld c, a
+	ret
+; 3ccc2
+
+GetCurHPMinusOne:
+	ld hl, wBattleMonHP
+	ld a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyMonHP
+.ok
+	ld a, [hli]
+	ld b, a
+
+	ld a, [hl]
+	dec a
 	ld c, a
 	ret
 ; 3ccc2
@@ -4572,7 +4591,15 @@ UseBattleItem:
 	call RefreshBattleHuds
 	farcall GetUserItem
 	call GetCurItemName
+	ld a, [wKickCounter]
+	cp 69
+	jr z, .hurt
 	ld hl, RecoveredUsingText
+	call StdBattleTextBox
+	farjp ConsumeUserItem
+	
+.hurt
+	ld hl, BattleText_UserHurtByItem
 	call StdBattleTextBox
 	farjp ConsumeUserItem
 
@@ -4582,6 +4609,8 @@ _HeldHPHealingItem:
 	ret nz
 	ld b, 0 ; bc contains HP to restore unless Figy or Sitrus
 	ld a, [hl]
+	cp DUBIOUS_DOG
+	jr z, .dog
 	cp FIGY_BERRY
 	jr nz, .not_figy
 	call GetHalfMaxHP
@@ -4594,6 +4623,17 @@ _HeldHPHealingItem:
 .got_hp_to_restore
 	call ItemRecoveryAnim
 	call RestoreHP
+	xor a
+	ret
+.dog
+	call BattleRandom
+	cp 50 percent
+	jr c, .got_hp_to_restore
+	call ItemRecoveryAnim
+	call GetCurHPMinusOne
+	ld a, 69
+	ld [wKickCounter], a
+	call SubtractHPFromUser
 	xor a
 	ret
 

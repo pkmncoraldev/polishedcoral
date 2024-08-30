@@ -878,6 +878,7 @@ PrintPartyMenuActionText: ; 50566
 	dw .Text_Revitalized
 	dw .Text_GrewToLevel
 	dw .Text_CameToItsSenses
+	dw .Text_BarelyHoldOn
 ; 5058f
 
 .Text_RecoveredSomeHP: ; 0x5058f
@@ -939,6 +940,11 @@ PrintPartyMenuActionText: ; 50566
 	text_jump UnknownText_0x1bc16e
 	db "@"
 ; 0x505c1
+
+.Text_BarelyHoldOn: ; 0x505bc
+	; is barely holding on!
+	text_jump UnknownText_BarelyHoldOn
+	db "@"
 
 
 .PrintText: ; 505c1

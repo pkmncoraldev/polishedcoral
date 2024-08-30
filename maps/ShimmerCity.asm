@@ -101,14 +101,102 @@ ShimmerCityFlyPoint:
 ShimmerCityHotDogGuy:
 	faceplayer
 	opentext
-	writetext ShimmerCityHotDogGuyTempText
+	writetext ShimmerCityHotDogGuyText1
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .no
+	checkmoney $0, 1000
+	ifequal $2, .nomoney
+	giveitem DUBIOUS_DOG
+	iffalse .noroom
+	takemoney $0, 1000
+	takeitem DUBIOUS_DOG
+	special PlaceMoneyTopRight
+	waitsfx
+	playsound SFX_TRANSACTION
+	writetext ShimmerCityHotDogGuy2
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, turn_step_right
+	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, step_end
+	pause 10
+	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, turn_step_right
+	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, step_end
+	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, turn_step_right
+	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, step_end
+	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, turn_step_right
+	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, step_end
+	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, turn_step_right
+	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, step_end
+	pause 10
+	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, turn_step_down
+	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, step_end
+	opentext
+	writetext ShimmerCityHotDogGuy3
+	buttonsound
+	verbosegiveitem DUBIOUS_DOG
+	closetext
+	spriteface SHIIMER_CITY_HOT_DOG_GUY, DOWN
+	end
+.nomoney
+	writetext ShimmerCityHotDogGuyNoMoney
 	waitbutton
 	closetext
 	spriteface SHIIMER_CITY_HOT_DOG_GUY, DOWN
 	end
+.noroom
+	writetext ShimmerCityHotDogGuyNoRoom
+	waitbutton
+	closetext
+	spriteface SHIIMER_CITY_HOT_DOG_GUY, DOWN
+	end
+.no
+	writetext ShimmerCityHotDogGuyTextNo
+	waitbutton
+	closetext
+	spriteface SHIIMER_CITY_HOT_DOG_GUY, DOWN
+	end
+
+ShimmerCityHotDogGuyText1:
+	text "Try one of the"
+	line "BOARDWALK'S world"
+	cont "famous hot dogs."
 	
-ShimmerCityHotDogGuyTempText:
-	text "Buy my weiner."
+	para "Made of only the"
+	line "best ingredients!"
+	
+	para "How about it?"
+	line "Only ¥1000."
+	done
+	
+ShimmerCityHotDogGuy2:
+	text "One delicious"
+	line "hot dog, coming"
+	cont "right up!"
+	done
+	
+ShimmerCityHotDogGuy3:
+	text "Here ya go!"
+	done
+	
+ShimmerCityHotDogGuyNoMoney:
+	text "You don't have"
+	line "the funds!"
+	
+	para "I can't just"
+	line "give 'em away!"
+	done
+	
+ShimmerCityHotDogGuyNoRoom:
+	text "You've already got"
+	line "too much junk!"
+	
+	para "Come back later."
+	done
+	
+ShimmerCityHotDogGuyTextNo:
+	text "Your loss!"
 	done
 	
 ShimmerCityHotDogStand:

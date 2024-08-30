@@ -35,7 +35,35 @@ ShimmerCafeNPC4:
 .do_it
 	faceplayer
 	opentext
+	checkevent EVENT_SHIMMER_BOAT_MAN_TALKED_ONCE
+	iftrue .skip
+	setevent EVENT_SHIMMER_BOAT_MAN_TALKED_ONCE
 	writetext ShimmerCafeNPC4Text2
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+.skip
+	writetext ShimmerCafeNPC4Text3
+	waitbutton
+	special FadeOutPalettes
+	special Special_ChooseItem
+	iffalse .no
+	callasm CheckItemHotDog
+	iffalse .not_interested
+	writetext ShimmerCafeNPC4Text4
+	waitbutton
+	closetext
+	pause 5
+	spriteface 4, LEFT
+	pause 5
+	opentext
+	writetext ShimmerCafeNPC4Text5
+	waitbutton
+	closetext
+	pause 30
+	faceplayer
+	opentext
+	writetext ShimmerCafeNPC4Text6
 	waitbutton
 	closetext
 	applymovement PLAYER, Movement_ShimmerCafe1
@@ -44,6 +72,28 @@ ShimmerCafeNPC4:
 	playsound SFX_EXIT_BUILDING
 	setevent EVENT_SHIMMER_BOAT_GUY_AT_WORK
 	end
+.not_interested
+	writetext ShimmerCafeNPC4TextWrong
+	waitbutton
+	closetext
+	end
+.no
+	writetext ShimmerCafeNPC4TextNo
+	waitbutton
+	closetext
+	end
+	
+CheckItemHotDog:
+	ld a, [wCurItem]
+	cp DUBIOUS_DOG
+	jr nz, .no
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+.no
+	ld a, FALSE
+	ld [wScriptVar], a
+	ret
 	
 Movement_ShimmerCafe1:
 	fix_facing
@@ -113,9 +163,50 @@ ShimmerCafeNPC4Text2:
 	para "A little young,"
 	line "aren't you?"
 	
-	para "Oh well."
+	para "Oh well.<WAIT_S>"
+	line "PUEBLO BRILLO?"
 	
-	para "PUEBLO BRILLO?"
+	para "Sure, I can take"
+	line "you there."
+	
+	para "I just need you to"
+	line "do one tiny thing"
+	cont "for me first."
+	done
+	
+ShimmerCafeNPC4Text3:
+	text "I come here every"
+	line "day, and I'm sick"
+	cont "of the food!"
+	
+	para "I want something"
+	line "new and exotic…"
+	
+	para "Maybe something"
+	line "a bit weird!"
+	
+	para "Bring me something"
+	line "like that, and I'll"
+	cont "take you to PUEBLO"
+	cont "BRILLO."
+	done
+	
+ShimmerCafeNPC4Text4:
+	text "What's this?<WAIT_S>"
+	line "I'll give it a try."
+	done
+	
+ShimmerCafeNPC4Text5:
+	text "Munch… Chew…"
+	line "Munch…"
+	done
+	
+ShimmerCafeNPC4Text6:
+	text "Ah man!<WAIT_S>"
+	line "That's foul!"
+	
+	para "…<WAIT_L>But it IS"
+	line "different…"
 	
 	para "Alright, sure."
 	line "I'll take you."
@@ -123,6 +214,16 @@ ShimmerCafeNPC4Text2:
 	para "Meet me at the"
 	line "BOAT HOUSE at the"
 	cont "EAST end of town."
+	done
+	
+ShimmerCafeNPC4TextWrong:
+	text "Nah…<WAIT_S> Try"
+	line "something else."
+	done
+	
+ShimmerCafeNPC4TextNo:
+	text "No ride then.<WAIT_S>"
+	line "Sorry!"
 	done
 	
 ShimmerCafeClerk:

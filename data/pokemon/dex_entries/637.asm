@@ -4,7 +4,7 @@
 
 	db   "They use their six"
 	next "wings to scatter"
-	next "their ember scales."
-	page "Ancient people knew"
-	next "them as “the rage"
-	next "of the sun.”@"
+	next "ember scales."
+	page "Ancient people"
+	next "knew them as the"
+	next "“rage of the sun.”@"

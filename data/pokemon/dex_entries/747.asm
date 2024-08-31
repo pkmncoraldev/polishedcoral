@@ -4,7 +4,7 @@
 
 	db   "This #MON is"
 	next "known to hunt"
-	next "CORSOLA. It's"
-	page "found crawling on"
-	next "beaches and"
+	next "CORSOLA."
+	page "It's found crawling"
+	next "on beaches and"
 	next "seafloors.@"

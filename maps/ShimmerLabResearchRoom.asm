@@ -18,16 +18,20 @@ ShimmerLabResearchRoom_MapScriptHeader:
 	signpost  5,  8, SIGNPOST_UP, ShimmerLabBooks
 	signpost  5,  9, SIGNPOST_UP, ShimmerLabBooks
 
-	db 3 ; object events
-	person_event SPRITE_SCIENTIST_F,  2,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchRoomProf, -1
+	db 5 ; object events
+	person_event SPRITE_SCIENTIST_F,  2,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchRoomProf, -1
 	person_event SPRITE_SCIENTIST,  4,  2, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchNPC1, -1
 	person_event SPRITE_SCIENTIST,  7,  0, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchNPC2, -1
+	person_event SPRITE_SCIENTIST,  6,  7, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchNPC3, -1
+	person_event SPRITE_SCIENTIST_F,  4,  0, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchNPC4, -1
 	
 	
 	const_def 1 ; object constants
 	const SHIMMER_LAB_RESEARCH_ROOM_PROF
 	const SHIMMER_LAB_RESEARCH_ROOM_NPC1
 	const SHIMMER_LAB_RESEARCH_ROOM_NPC2
+	const SHIMMER_LAB_RESEARCH_ROOM_NPC3
+	const SHIMMER_LAB_RESEARCH_ROOM_NPC4
 	
 ShimmerLabResearchRoomProf:
 	faceplayer
@@ -123,6 +127,18 @@ ShimmerLabResearchNPC2:
 	waitbutton
 	closetext
 	spriteface SHIMMER_LAB_RESEARCH_ROOM_NPC2, UP
+	end
+	
+ShimmerLabResearchNPC3:
+	jumptextfaceplayer ShimmerLabResearchRoomNPC3Text
+	
+ShimmerLabResearchNPC4:
+	faceplayer
+	opentext
+	writetext ShimmerLabResearchRoomNPC4Text
+	waitbutton
+	closetext
+	spriteface SHIMMER_LAB_RESEARCH_ROOM_NPC4, UP
 	end
 
 ShimmerLabResearchRoomPotText:
@@ -348,4 +364,32 @@ ShimmerLabResearchRoomNPC2Text:
 	cont "when it comes to"
 	cont "archaeology."
 	done
+	
+ShimmerLabResearchRoomNPC3Text:
+	text "There is a museum"
+	line "in OBSCURA CITY."
+	
+	para "We often work with"
+	line "them to display"
+	cont "our findings for"
+	cont "the public to see."
+	done
+	
+ShimmerLabResearchRoomNPC4Text:
+	text "Oftentimes ancient"
+	line "artifacts are"
+	cont "surrounded by"
+	cont "myths and legends."
+	
+	para "Usually, though,"
+	line "they are just"
+	cont "that: legends."
+	
+	para "They simply aren't"
+	line "true."
+	
+	para "It's important to"
+	line "remember that."
+	done
+	
 	

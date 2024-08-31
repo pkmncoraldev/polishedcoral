@@ -649,7 +649,9 @@ AskPlumeFossilText:
 	done
 	
 NoFossilsText:
-	text "You don't seem to"
+	text "…"
+	
+	para "You don't seem to"
 	line "have any fossils."
 	done
 	

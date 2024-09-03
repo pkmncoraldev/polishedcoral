@@ -673,11 +673,11 @@ FlowerPetalDesc:
 
 BlossomTeaDesc:
 	db   "A self-restore"
-	next "item. (30HP, Hold)@"
+	next "item. (30HP, HOLD)@"
 
 SunshineTeaDesc:
 	db   "A self-restore"
-	next "item. (80HP, Hold)@"
+	next "item. (80HP, HOLD)@"
 
 CheriBerryDesc:
 	db   "A self-cure for"
@@ -701,11 +701,11 @@ AspearBerryDesc:
 
 LeppaBerryDesc:
 	db   "A self-restore"
-	next "item. (10<BOLDP><BOLDP>, Hold)@"
+	next "item. (10<BOLDP><BOLDP>, HOLD)@"
 
 OranBerryDesc:
 	db   "A self-restore"
-	next "item. (10HP, Hold)@"
+	next "item. (10HP, HOLD)@"
 
 PersimBerryDesc:
 	db   "A self-cure for"
@@ -717,18 +717,18 @@ LumBerryDesc:
 
 SitrusBerryDesc:
 	db   "Self-restore item."
-	next "(1/4 max HP, Hold)@"
+	next "(1/4 max HP, HOLD)@"
 
 FigyBerryDesc:
 	db   "Self-restore item."
-	next "(1/2 max HP, Hold)@"
+	next "(1/2 max HP, HOLD)@"
 	
 TeruSamaDesc:
 	db   "?@"
 
 BerryJuiceDesc:
 	db   "A self-restore"
-	next "item. (20HP, Hold)@"
+	next "item. (20HP, HOLD)@"
 
 SilkScarfDesc:
 	db   "Powers up NORMAL-"
@@ -877,8 +877,8 @@ PollenPouchDesc:
 	next "POLLEN PUFFs.@"
 
 DubiousDogDesc:
-	db   "Fully restores"
-	next "#MON HP. …Or?@"
+	db   "Fully restores HP."
+	next "…Or? (HOLD)@"
 
 AssaultVestDesc:
 	db   "Ups SPCL.DEF, but"
@@ -938,7 +938,7 @@ ShedShellDesc:
 
 ShellBellDesc:
 	db   "Self-restore item."
-	next "(1/8 damage, Hold)@"
+	next "(1/8 damage, HOLD)@"
 
 SootheBellDesc:
 	db   "Calms and fosters"

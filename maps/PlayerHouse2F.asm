@@ -259,8 +259,12 @@ PlayerHouseDebugPoster:
 	writetext PlayerHouseDebugText6
 	yesorno
 	iffalse .keyitems
-	giveitem RARE_CANDY, 99
+	giveitem MAGMARIZER, 99
+	giveitem ELECTIRIZER, 99
+	giveitem NUGGET, 99
+	giveitem BIG_NUGGET, 99
 	giveitem MOOMOO_BREW, 99
+	giveitem RARE_CANDY, 99
 	giveitem FIVESTARHELM, 1
 	giveitem SWEET_HONEY, 1
 	giveitem BLOSSOM_TEA, 3
@@ -273,26 +277,6 @@ PlayerHouseDebugPoster:
 	giveitem THUNDERSTONE, 99
 	giveitem MOON_STONE, 99
 	giveitem POKE_DOLL, 99
-	giveitem X_ATTACK, 99
-	giveitem X_DEFEND, 99
-	giveitem X_SPEED, 99
-	giveitem X_SPCL_ATK, 99
-	giveitem X_SPCL_DEF, 99
-	giveitem X_ACCURACY, 99
-	giveitem DIRE_HIT, 99
-	giveitem GUARD_SPEC, 99
-	giveitem ENERGY_ROOT, 99
-	giveitem REVIVAL_HERB, 99
-	giveitem WHITE_HERB, 99
-	giveitem MENTAL_HERB, 99
-	giveitem POWER_HERB, 99
-	giveitem SILVERPOWDER, 99
-	giveitem HEAL_POWDER, 99
-	giveitem ENERGYPOWDER, 99
-	giveitem SOFT_SAND, 99
-	giveitem BRIGHTPOWDER, 99
-	giveitem QUICK_POWDER, 99
-	giveitem METAL_POWDER, 99
 	giveitem STARDUST, 99
 	giveitem FRESH_WATER, 99
 	giveitem SODA_POP, 99

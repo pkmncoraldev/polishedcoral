@@ -442,6 +442,7 @@ MAP_NONE   EQU 0
 	newgroup													 ; 24
 	map_const OBSCURA_CITY,								  16, 23 ; 1
 	map_const OBSCURA_GATE,								   5,  4 ; 2
+	map_const OBSCURA_MUSEUM_1F,						  13,  7 ; 3
 	
 	newgroup													 ; 25
 	map_const AUREOLE_TOWN,								  20, 23 ; 1

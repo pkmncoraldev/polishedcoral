@@ -930,3 +930,6 @@ InnVent_BlockData:
 StarglowCavern3F_BlockData:
 	INCBIN "maps/StarglowCavern3F.ablk.lz"
 	
+ObscuraMuseum1F_BlockData:
+	INCBIN "maps/ObscuraMuseum1F.ablk.lz"
+	

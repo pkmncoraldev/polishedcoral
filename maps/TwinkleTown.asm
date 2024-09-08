@@ -36,7 +36,7 @@ TwinkleTown_MapScriptHeader:
 	bg_event 22, 55, SIGNPOST_ITEM + REVIVE, EVENT_TWINKLE_HIDDEN_REVIVE
 	bg_event 27, 25, SIGNPOST_ITEM + PP_UP, EVENT_TWINKLE_HIDDEN_PP_UP
 	
-	db 17 ; object events
+	db 15 ; object events
 	person_event SPRITE_SNOWGIRL_SMALL, 31, 15, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC1, EVENT_TWINKLE_SNOWMAN_3_1
 	person_event SPRITE_SNOWGIRL_SMALL, 30, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC2, EVENT_TWINKLE_SNOWMAN_3_1
 	person_event SPRITE_ICESKATER_VARIABLE, 29, 35, SPRITEMOVEDATA_ICESKATER, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC3, -1
@@ -51,8 +51,6 @@ TwinkleTown_MapScriptHeader:
 	person_event SPRITE_SKIER, 19, 36, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 3, TrainerTwinkle_2, -1
 	itemball_event 27, 26, HP_UP, 1, EVENT_TWINKLE_POKE_BALL_HP_UP
 	tmhmball_event 41, 18, TM_DIG, EVENT_TWINKLE_POKE_BALL_DIG
-	person_event SPRITE_GOLD_TROPHY, 40, 20, SPRITEMOVEDATA_TILE_LEFT, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_BROWN
-	person_event SPRITE_GOLD_TROPHY, 40, 20, SPRITEMOVEDATA_TILE_LEFT, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_OW_OBJECTS_TEAL
 	hiddentape_event 20, 29, MUSIC_ROUTE_10, 1, EVENT_MUSIC_ROUTE_10
 	
 	
@@ -71,8 +69,6 @@ TwinkleTown_MapScriptHeader:
 	const TWINKLE_TOWN_TRAINER_2
 	const TWINKLE_TOWN_POKE_BALL_1
 	const TWINKLE_TOWN_POKE_BALL_2
-	const TWINKLE_TOWN_VENDING_1
-	const TWINKLE_TOWN_VENDING_2
 	
 TwinkleTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_TWINKLE
@@ -98,11 +94,9 @@ TwinkleTownCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_RED
 .cont
 	checktime 1<<NITE
-	iftrue .changevending
+	iftrue .snowman1
 	checktime 1<<DUSK
 	iffalse .snowman1
-.changevending
-	changeblock $14, $28, $26
 .snowman1
 	checkevent EVENT_TWINKLE_SNOWMAN_1_2
 	iffalse .no1
@@ -158,7 +152,6 @@ TwinkleTownTrigger0:
 	checktime 1<<DUSK
 	iffalse .end
 .changevending
-	changeblock $14, $28, $26
 	callasm CheckLandmarkSignTimer
 	iffalse .end
 	setflag ENGINE_STREETLIGHTS

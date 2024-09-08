@@ -101,3 +101,7 @@
 	tilecoll WALL, WALL, VENDING_MACHINE, WALL ; 64
 	tilecoll WALL, WALL, TRASH_CAN, FLOOR ; 65
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 66
+	tilecoll WALL, WALL, FLOOR, WALL ; 67
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 68
+	tilecoll WALL, WALL, WALL, WALL ; 69
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 6a

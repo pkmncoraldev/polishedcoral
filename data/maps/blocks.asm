@@ -933,3 +933,6 @@ StarglowCavern3F_BlockData:
 ObscuraMuseum1F_BlockData:
 	INCBIN "maps/ObscuraMuseum1F.ablk.lz"
 	
+ObscuraMuseum2F_BlockData:
+	INCBIN "maps/ObscuraMuseum2F.ablk.lz"
+	

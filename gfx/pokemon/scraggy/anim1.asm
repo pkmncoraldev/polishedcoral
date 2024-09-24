@@ -1,2 +1,3 @@
+	frame 1, 14
+	frame 3, 16
 	endanim
-; 0xd1b38

@@ -605,16 +605,12 @@ MinccinoFrontpic:         INCBIN "gfx/pokemon/minccino/front.2bpp.lz"
 MinccinoBackpic:          INCBIN "gfx/pokemon/minccino/back.2bpp.lz"
 CinccinoFrontpic:         INCBIN "gfx/pokemon/cinccino/front.2bpp.lz"
 CinccinoBackpic:          INCBIN "gfx/pokemon/cinccino/back.2bpp.lz"
-JoltikFrontpic:           INCBIN "gfx/pokemon/joltik/front.2bpp.lz"
-JoltikBackpic:            INCBIN "gfx/pokemon/joltik/back.2bpp.lz"
-GalvantulaFrontpic:       INCBIN "gfx/pokemon/galvantula/front.2bpp.lz"
-GalvantulaBackpic:        INCBIN "gfx/pokemon/galvantula/back.2bpp.lz"
-LitwickFrontpic:          INCBIN "gfx/pokemon/litwick/front.2bpp.lz"
-LitwickBackpic:           INCBIN "gfx/pokemon/litwick/back.2bpp.lz"
 
 
 SECTION "Pokemon Pics 26", ROMX
 
+LitwickFrontpic:          INCBIN "gfx/pokemon/litwick/front.2bpp.lz"
+LitwickBackpic:           INCBIN "gfx/pokemon/litwick/back.2bpp.lz"
 LampentFrontpic:          INCBIN "gfx/pokemon/lampent/front.2bpp.lz"
 LampentBackpic:           INCBIN "gfx/pokemon/lampent/back.2bpp.lz"
 ChandelureFrontpic:       INCBIN "gfx/pokemon/chandelure/front.2bpp.lz"
@@ -641,11 +637,11 @@ ToucannonFrontpic:        INCBIN "gfx/pokemon/toucannon/front.2bpp.lz"
 ToucannonBackpic:         INCBIN "gfx/pokemon/toucannon/back.2bpp.lz"
 MareanieFrontpic:         INCBIN "gfx/pokemon/mareanie/front.2bpp.lz"
 MareanieBackpic:          INCBIN "gfx/pokemon/mareanie/back.2bpp.lz"
-ToxapexFrontpic:          INCBIN "gfx/pokemon/toxapex/front.2bpp.lz"
-ToxapexBackpic:           INCBIN "gfx/pokemon/toxapex/back.2bpp.lz"
 
 SECTION "Pokemon Pics 27", ROMX
 
+ToxapexFrontpic:          INCBIN "gfx/pokemon/toxapex/front.2bpp.lz"
+ToxapexBackpic:           INCBIN "gfx/pokemon/toxapex/back.2bpp.lz"
 WyrdeerFrontpic:     	  INCBIN "gfx/pokemon/wyrdeer/front.2bpp.lz"
 WyrdeerBackpic:           INCBIN "gfx/pokemon/wyrdeer/back.2bpp.lz"
 MarillFrontpic:      	  INCBIN "gfx/pokemon/marill/front.2bpp.lz"
@@ -673,6 +669,10 @@ Persian_ABackpic:         INCBIN "gfx/pokemon/persian_a/back.2bpp.lz"
 
 SECTION "Pokemon Pics 28", ROMX
 
+JoltikFrontpic:           INCBIN "gfx/pokemon/joltik/front.2bpp.lz"
+JoltikBackpic:            INCBIN "gfx/pokemon/joltik/back.2bpp.lz"
+GalvantulaFrontpic:       INCBIN "gfx/pokemon/galvantula/front.2bpp.lz"
+GalvantulaBackpic:        INCBIN "gfx/pokemon/galvantula/back.2bpp.lz"
 ComfeyFrontpic:           INCBIN "gfx/pokemon/comfey/front.2bpp.lz"
 ComfeyBackpic:            INCBIN "gfx/pokemon/comfey/back.2bpp.lz"
 MimikyuFrontpic:          INCBIN "gfx/pokemon/mimikyu/front.2bpp.lz"

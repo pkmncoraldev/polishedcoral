@@ -1,2 +1,2 @@
+	frame 4, 10
 	endanim
-; 0xd1b38

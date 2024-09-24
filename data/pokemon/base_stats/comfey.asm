@@ -7,7 +7,7 @@
 	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2
 	dn FEMALE_75, 20 ; gender, step cycles to hatch
-	dn 5, 5 ; frontpic dimensions
+	dn 6, 6 ; frontpic dimensions
 	db TRIAGE ; ability 1
 	db TRIAGE ; ability 2
 	db NATURAL_CURE ; hidden ability

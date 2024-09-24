@@ -94,11 +94,11 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 5d
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 5e
 	tilecoll WALL, WALL, WARP_CARPET_RIGHT, WALL ; 5f
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 60
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 60
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 61
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 62
 	tilecoll WALL, WALL, WALL, WALL ; 63
-	tilecoll WALL, WALL, VENDING_MACHINE, WALL ; 64
+	tilecoll WALL, WALL, FLOOR, VENDING_MACHINE ; 64
 	tilecoll WALL, WALL, TRASH_CAN, FLOOR ; 65
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 66
 	tilecoll WALL, WALL, FLOOR, WALL ; 67
@@ -110,17 +110,19 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 6d
 	tilecoll WALL, WALL, WALL, WALL ; 6e
 	tilecoll WALL, WALL, WALL, WALL ; 6f
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 70
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 70
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 71
 	tilecoll WALL, WALL, WALL, WALL ; 72
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 73
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 73
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 74
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 75
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 76
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 77
+	tilecoll WALL, FLOOR, WALL, WALL ; 76
+	tilecoll FLOOR, WALL, WALL, WALL ; 77
 	tilecoll WALL, WALL, WALL, WALL ; 78
 	tilecoll WALL, WALL, WALL, WALL ; 79
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 7a
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 7b
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 7c
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 7d
+	tilecoll WALL, FLOOR, WALL, WALL ; 7a
+	tilecoll FLOOR, WALL, WALL, WALL ; 7b
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 7c
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 7d
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 7e
+	tilecoll WALL, WALL, WALL, WALL ; 7f

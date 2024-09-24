@@ -2973,6 +2973,8 @@ CheckChangeMusic::
 	jr z, .crossroads_outside
 	cp MUSIC_CROSSROADS_INSIDE
 	jr z, .crossroads_inside
+	cp MUSIC_MUSEUM
+	jp z, .museum
 	ld a, $ff
 .done
 	ld [wSlotBias], a
@@ -3056,6 +3058,16 @@ CheckChangeMusic::
 	eventflagcheck EVENT_INN_SNARE_MUSIC
 	jr z, .crossroads
 	ld a, MUSIC_SNARE_INVASION
+	jp .done
+	
+.museum
+	eventflagcheck EVENT_SNARE_AT_MUSEUM
+	jr z, .museum_done
+	ld a, MUSIC_SNARE_INVASION
+	jp .done
+	
+.museum_done
+	ld a, MUSIC_EVENTIDE_VILLAGE
 	jp .done
 	
 GetMapMusic::

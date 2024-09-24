@@ -1080,7 +1080,8 @@ wRoute6SouthTrigger:: ds 1
 wRoute29Trigger:: ds 1
 wObscuraCityTrigger:: ds 1
 wInn1FTrigger:: ds 1
-ds 20
+wObscuraMuseum1FTrigger:: ds 1
+ds 19
 
 wAmpharosFood:: ds 1
 

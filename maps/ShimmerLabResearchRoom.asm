@@ -55,6 +55,7 @@ ShimmerLabResearchRoomProf:
 	takeitem CLAY_POT
 	playsound SFX_LEVEL_UP
 	setevent EVENT_CAN_TALK_TO_SHIMMER_BOAT_MAN
+	clearevent EVENT_MUSEUM_NO_CLAY_POT
 	waitsfx
 	waitbutton
 	closetext
@@ -98,9 +99,8 @@ ShimmerLabResearchRoomProf:
 	opentext
 	writetext ShimmerLabResearchRoomProfText8
 	buttonsound
+	clearevent EVENT_MUSEUM_NO_BLACK_PEARL
 	verbosegivetmhm TM_DIVE
-;	setevent EVENT_GOT_HM05_DIVE
-;	setflag ENGINE_GOT_DIVE
 	writetext ShimmerLabResearchRoomProfText9
 	buttonsound
 	farwritetext StdBlankText

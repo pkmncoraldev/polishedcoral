@@ -208,6 +208,8 @@
 	const SPRITE_MINA_GROUND
 	const SPRITE_PICNIC
 	const SPRITE_CHEF
+	const SPRITE_RAINBOW_SILVER_WING
+	const SPRITE_ARTIFACTS
 	
 	const_def $ed
 SPRITE_POKEMON EQU const_value

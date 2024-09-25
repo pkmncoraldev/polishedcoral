@@ -85,6 +85,8 @@ LedianRangerSpriteGFX::        INCBIN "gfx/sprites/ledian_ranger.2bpp.lz"
 LedianRangerFaceSpriteGFX::    INCBIN "gfx/sprites/ledian_ranger_face.2bpp.lz"
 LedianRangerPoseSpriteGFX::    INCBIN "gfx/sprites/ledian_ranger_pose.2bpp.lz"
 LedianRangerFacePoseSpriteGFX:: INCBIN "gfx/sprites/ledian_ranger_face_pose.2bpp.lz"
+RainbowSilverWingSpriteGFX:: 	INCBIN "gfx/sprites/rainbow_silver_wing.2bpp.lz"
+ArtifactsSpriteGFX:: 			INCBIN "gfx/sprites/artifacts.2bpp.lz"
 
 SECTION "Overworld Sprites 3", ROMX
 

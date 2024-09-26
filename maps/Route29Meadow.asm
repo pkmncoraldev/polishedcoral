@@ -10,9 +10,9 @@ Route29Meadow_MapScriptHeader:
 	db 0 ; bg events
 
 	db 3 ; object events
-	person_event SPRITE_GENERAL_VARIABLE_1, 10, 23, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route29Mina, -1
-	person_event SPRITE_DISGUISEMAN,  8, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Route29Easel, -1
-	person_event SPRITE_LEAVES,  8, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route29Easel, -1
+	person_event SPRITE_GENERAL_VARIABLE_1, 10, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route29Mina, -1
+	person_event SPRITE_DISGUISEMAN,  8, 22, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Route29Easel, -1
+	person_event SPRITE_LEAVES,  8, 22, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route29Easel, -1
 
 
 	const_def 1 ; object constants
@@ -131,7 +131,7 @@ Route29Mina:
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_MINA
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_PAINTINGS
 	disappear ROUTE_29_MINA
-	moveperson ROUTE_29_MINA, $18, $09
+	moveperson ROUTE_29_MINA, $16, $09
 	appear ROUTE_29_MINA
 	spriteface ROUTE_29_MINA, UP
 	opentext

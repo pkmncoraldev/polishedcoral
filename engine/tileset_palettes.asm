@@ -155,6 +155,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .autumn
 	cp TILESET_GREEN_CAVE
 	jp z, .green_cave
+	cp TILESET_SOUTH_BUILDINGS
+	jp z, .south_buildings
 	call DiveSpotMapPals
 	jp nc, .do_nothing
 	ld hl, DiveSpotsPalette
@@ -727,6 +729,14 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, SunbeamViewPalette
 	jp LoadForceSevenTimeOfDayBGPalettes
 	
+.south_buildings
+	ld a, [wMapGroup]
+	cp GROUP_OBSCURA_MUSEUM_2F
+	jp nz, .do_nothing
+	ld hl, MuseumPalette
+	jp LoadBGPal6
+	jr .do_nothing
+	
 .playerhouse
 	ld a, [wMapGroup]
 	cp GROUP_TWINKLE_GYM_ENTRY
@@ -972,6 +982,9 @@ INCLUDE "maps/palettes/bgpals/train.pal"
 
 FossilLabPalette:
 INCLUDE "maps/palettes/bgpals/fossillab.pal"
+
+MuseumPalette::
+INCLUDE "maps/palettes/bgpals/museum.pal"
 
 AirportPalette:
 INCLUDE "maps/palettes/bgpals/airport.pal"

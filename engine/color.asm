@@ -967,6 +967,7 @@ LoadMapPals::
 	cp TILESET_GROVE
 	jr z, .grove
 	cp TILESET_SOUTH_BUILDINGS
+	jp z, .south_buildings
 	jp z, .computer
 	jp .normal
 .route_29
@@ -1211,6 +1212,14 @@ LoadMapPals::
 	
 .playerroom
 	ld hl, MapObjectPalsPlayerRoom
+	call LoadSingleOBPalLinePal7
+	jp FarCopyWRAM
+	
+.south_buildings
+	ld a, [wMapGroup]
+	cp GROUP_OBSCURA_MUSEUM_2F
+	jr nz, .computer
+	ld hl, MapObjectPalsMuseum
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 	
@@ -2174,6 +2183,9 @@ INCLUDE "maps/palettes/obpals/playerroom.pal"
 
 MapObjectPalsComputer::
 INCLUDE "maps/palettes/obpals/computer.pal"
+
+MapObjectPalsMuseum::
+INCLUDE "maps/palettes/obpals/museum.pal"
 
 MapObjectPalsCoffee::
 INCLUDE "maps/palettes/obpals/coffee.pal"

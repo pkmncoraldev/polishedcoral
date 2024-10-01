@@ -473,7 +473,7 @@ ENDM
 	map_attributes Route29Meadow, ROUTE_29_MEADOW, $fb, SOUTH
 	connection south, Route29, ROUTE_29, -4
 	
-	map_attributes ObscuraCity, OBSCURA_CITY, $d4, EAST
+	map_attributes ObscuraCity, OBSCURA_CITY, $02, EAST
 	connection east, Route29, ROUTE_29, 10
 	
 	map_attributes AureoleTown, AUREOLE_TOWN, $d4, 0

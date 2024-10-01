@@ -9,7 +9,7 @@ ShimmerLabResearchRoom_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 7 ; bg events
+	db 17 ; bg events
 	signpost  1,  2, SIGNPOST_UP, ShimmerLabBooks
 	signpost  1,  3, SIGNPOST_UP, ShimmerLabBooks
 	signpost  1,  4, SIGNPOST_UP, ShimmerLabBooks
@@ -17,6 +17,16 @@ ShimmerLabResearchRoom_MapScriptHeader:
 	signpost  5,  7, SIGNPOST_UP, ShimmerLabBooks
 	signpost  5,  8, SIGNPOST_UP, ShimmerLabBooks
 	signpost  5,  9, SIGNPOST_UP, ShimmerLabBooks
+	signpost  1,  0, SIGNPOST_JUMPTEXT, ShimmerLabArtifactText
+	signpost  1,  1, SIGNPOST_JUMPTEXT, ShimmerLabArtifactText
+	signpost  1,  6, SIGNPOST_JUMPTEXT, ShimmerLabArtifactText
+	signpost  1,  7, SIGNPOST_JUMPTEXT, ShimmerLabArtifactText
+	signpost  1,  8, SIGNPOST_JUMPTEXT, ShimmerLabArtifactText
+	signpost  1,  9, SIGNPOST_JUMPTEXT, ShimmerLabArtifactText
+	signpost  9,  0, SIGNPOST_JUMPTEXT, ShimmerLabArtifactText
+	signpost  9,  1, SIGNPOST_JUMPTEXT, ShimmerLabArtifactText
+	signpost  9,  2, SIGNPOST_JUMPTEXT, ShimmerLabArtifactText
+	signpost  9,  3, SIGNPOST_JUMPTEXT, ShimmerLabArtifactText
 
 	db 5 ; object events
 	person_event SPRITE_SCIENTIST_F,  2,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchRoomProf, -1
@@ -32,6 +42,13 @@ ShimmerLabResearchRoom_MapScriptHeader:
 	const SHIMMER_LAB_RESEARCH_ROOM_NPC2
 	const SHIMMER_LAB_RESEARCH_ROOM_NPC3
 	const SHIMMER_LAB_RESEARCH_ROOM_NPC4
+	
+	
+ShimmerLabArtifactText:
+	text "Various artifacts"
+	line "of ancient civili-"
+	cont "zations."
+	done
 	
 ShimmerLabResearchRoomProf:
 	faceplayer

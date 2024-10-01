@@ -18,7 +18,21 @@ ObscuraMuseum1F_MapScriptHeader:
 	coord_event  9, 12, 0, ObscuraMuseum1FStopYou
 	coord_event 11, 10, 0, ObscuraMuseum1FStopYou2
 
-	db 0 ; bg events
+	db 14 ; bg events
+	signpost  1, 10, SIGNPOST_UP, ObscuraMuseumBooks
+	signpost  1, 11, SIGNPOST_UP, ObscuraMuseumBooks
+	signpost  1, 12, SIGNPOST_UP, ObscuraMuseumBooks
+	signpost  1, 13, SIGNPOST_UP, ObscuraMuseumBooks
+	signpost  5,  2, SIGNPOST_JUMPTEXT, ObscuraMuseumArtifactText
+	signpost  5,  3, SIGNPOST_JUMPTEXT, ObscuraMuseumArtifactText
+	signpost  5,  4, SIGNPOST_JUMPTEXT, ObscuraMuseumArtifactText
+	signpost  5,  5, SIGNPOST_JUMPTEXT, ObscuraMuseumArtifactText
+	signpost  7,  2, SIGNPOST_JUMPTEXT, ObscuraMuseumArtifactText
+	signpost  7,  3, SIGNPOST_JUMPTEXT, ObscuraMuseumArtifactText
+	signpost  7,  4, SIGNPOST_JUMPTEXT, ObscuraMuseumArtifactText
+	signpost  7,  5, SIGNPOST_JUMPTEXT, ObscuraMuseumArtifactText
+	signpost  0,  5, SIGNPOST_JUMPTEXT, ObscuraMuseum1FSign
+	signpost  8, 23, SIGNPOST_JUMPTEXT, ObscuraMuseumEmployeeSign
 
 	db 1 ; object events
 	person_event SPRITE_RECEPTIONIST, 12, 11, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FReceptionist1, -1
@@ -31,6 +45,43 @@ ObscuraMuseum1FTrigger0:
 ObscuraMuseum1FTrigger1:
 ObscuraMuseum1FTrigger2:
 	end
+	
+ObscuraMuseum1FSign:
+	text "FLOOR 1"
+	done
+	
+ObscuraMuseum2FSign:
+	text "FLOOR 2"
+	done
+	
+ObscuraMuseumEmployeeSign:
+	text "EMPLOYEE EXIT"
+	done
+	
+ObscuraMuseumFossilText:
+	text "Small #MON"
+	line "fossils."
+	done
+	
+ObscuraMuseumWoodText:
+	text "Pieces of ancient"
+	line "petrified wood."
+	done
+	
+ObscuraMuseumArtifactText:
+	text "Various artifacts"
+	line "of ancient civili-"
+	cont "zations."
+	done
+	
+ObscuraMuseumBooks:
+	jumptext ObscuraMuseumBooksText
+	
+ObscuraMuseumBooksText:
+	text "It's stuffed full"
+	line "of dense journals"
+	cont "and textbooks."
+	done
 	
 ObscuraMuseum1FStopYouL:
 	special Special_StopRunning

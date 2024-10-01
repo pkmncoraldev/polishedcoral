@@ -160,7 +160,7 @@ ShimmerCityHotDogGuy:
 
 ShimmerCityHotDogGuyText1:
 	text "Try one of the"
-	line "BOARDWALK'S world"
+	line "boardwalk's world"
 	cont "famous hot dogs."
 	
 	para "Made of only the"
@@ -344,7 +344,7 @@ ShimmerCityNpc7:
 	
 ShimmerCityNpc7Text:
 	text "I can totally see"
-	line "the LIGHTHOUSE"
+	line "the lighthouse"
 	cont "from here!"
 	done
 	
@@ -415,8 +415,8 @@ ShimmerCityNpc10:
 	
 ShimmerCityNpc10Text:
 	text "They say the guy"
-	line "who runs the BOAT"
-	cont "HOUSE love to eat."
+	line "who runs the boat"
+	cont "house love to eat."
 	
 	para "But hey, <WAIT_S>"
 	line "who doesn't, right?"
@@ -441,7 +441,7 @@ ShimmerCityNpc11:
 ShimmerCityNpc11Text:
 	text "You know the"
 	line "hot dog vendor on"
-	cont "the BOARDWALK?"
+	cont "the boardwalk?"
 	
 	para "I heard he sources"
 	line "his ingredients"
@@ -472,12 +472,12 @@ ShimmerCityNpc12:
 	
 ShimmerCityNpc12Text:
 	text "You know the"
-	line "BERRY STALL lady?"
+	line "berry stall lady?"
 	
 	para "I heard she has a"
 	line "thing going on"
 	cont "with the man at"
-	cont "the FISH STALL."
+	cont "the fish stall."
 	
 	para "Can you believe"
 	line "that?"
@@ -489,7 +489,7 @@ ShimmerCityNpc13:
 ShimmerCityNpc13Text:
 	text "Have you been"
 	line "down below the"
-	cont "BOARDWALK?"
+	cont "boardwalk?"
 	
 	para "It's cool and"
 	line "quiet down there,"
@@ -508,8 +508,8 @@ ShimmerCityNpc14Text:
 	
 	para "Far away from the"
 	line "hustle and bustle"
-	cont "of the MARKET and"
-	cont "the BOARDWALK."
+	cont "of the market and"
+	cont "the boardwalk."
 	
 	para "It smells less"
 	line "fishy over here,"
@@ -538,7 +538,7 @@ ShimmerCityNpc16:
 ShimmerCityNpc16Text:
 	text "Those hot dogs"
 	line "they sell on the"
-	cont "BOARDWALK taste"
+	cont "boardwalk taste"
 	cont "real strange."
 	
 	para "I won't lie,"

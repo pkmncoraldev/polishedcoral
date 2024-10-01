@@ -41,7 +41,7 @@ SunsetLegendsHouseNPC2Text:
 	para "Many even turn out"
 	line "to be true!"
 	
-	para "I wonder if ONWA"
-	line "has anything like"
-	cont "that."
+	para "I wonder if the"
+	line "ONWA region has"
+	cont "anything like that."
 	done

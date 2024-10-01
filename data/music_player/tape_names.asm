@@ -63,3 +63,4 @@ TapeNames::
 	db "“ROUTE 28”@"
 	db "“MINA'S THEME”@"
 	db "“BATTLE!<LNBRK><LNBRK>ROAMING #MON”@"
+	db "“BATTLE!<LNBRK><LNBRK>RIVAL 2”@"

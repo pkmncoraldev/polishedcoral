@@ -19,5 +19,6 @@ SnareTrainers:
 	db GRUNTM
 	db GRUNTF
 	db KAGE
+	db LOCKE
 	db RIVAL_S
 	db -1

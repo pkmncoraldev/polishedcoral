@@ -468,12 +468,12 @@ LeilaniGroup:
 ; ================================
 
 
-PryceGroup:
+RockyGroup:
 ; ================================
 ; ================
 
-	; PRYCE
-	db "UNUSED@"
+	; ROCKY
+	db "ROCKY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

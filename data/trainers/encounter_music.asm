@@ -13,7 +13,7 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_NONE					; charlie
 	db MUSIC_NONE					; polly
 	db MUSIC_NONE					; leilani
-	db MUSIC_NONE					; pryce
+	db MUSIC_NONE					; rocky
 	db MUSIC_NONE					; clair
 	db MUSIC_NONE					; will
 	db MUSIC_NONE					; koga

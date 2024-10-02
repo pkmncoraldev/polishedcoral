@@ -40,7 +40,7 @@ PLAYER_F EQU __enum__
 
 	trainerclass LEILANI
 
-	trainerclass PRYCE
+	trainerclass ROCKY
 
 	trainerclass CLAIR
 

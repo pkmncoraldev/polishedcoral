@@ -12,7 +12,7 @@ TrainerPicPointers::
 	dba CharliePic
 	dba PollyPic
 	dba LeilaniPic
-	dba PrycePic
+	dba RockyPic
 	dba ClairPic
 	dba WillPic
 	dba KogaPic

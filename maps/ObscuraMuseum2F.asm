@@ -3,46 +3,48 @@ ObscuraMuseum2F_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 1 ; warp events
-	warp_def  4,  5, 5, OBSCURA_MUSEUM_1F
+	db 3 ; warp events
+	warp_def  4,  7, 5, OBSCURA_MUSEUM_1F
+	warp_def  6,  2, 1, OBSCURA_GYM
+	warp_def  6,  3, 2, OBSCURA_GYM
 
 	db 0 ; coord events
 
 	db 27 ; bg events
-	signpost  5,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost  5,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost  5, 10, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 	signpost  5, 11, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost 12,  4, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost 12,  5, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost 12, 10, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost 12, 11, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost 13, 11, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost  8,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
-	signpost  8,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
+	signpost  5, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost 12,  6, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost 12,  7, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost 12, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost 12, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost 13, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 	signpost  8, 10, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
 	signpost  8, 11, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
-	signpost  9,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
-	signpost  9,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
+	signpost  8, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
+	signpost  8, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
+	signpost  9, 10, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
 	signpost  9, 11, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
-	signpost 12,  6, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
-	signpost 12,  7, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
+	signpost  9, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
 	signpost 12,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
 	signpost 12,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
-	signpost  5, 10, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilFactText
-	signpost  9, 10, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodFactText
-	signpost  6, 16, SIGNPOST_JUMPTEXT, ObscuraMuseumClayPotSignText
-	signpost  6, 21, SIGNPOST_JUMPTEXT, ObscuraMuseumBlackPearlText
-	signpost 10, 16, SIGNPOST_JUMPTEXT, ObscuraMuseumRainbowWingSignText
-	signpost 10, 21, SIGNPOST_JUMPTEXT, ObscuraMuseumSilverWingSignText
-	signpost  2, 17, SIGNPOST_JUMPTEXT, ObscuraMuseumDragonStoneSignText
-	signpost  4,  4, SIGNPOST_JUMPTEXT, ObscuraMuseum2FSign
+	signpost 12, 10, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
+	signpost 12, 11, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
+	signpost  5, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilFactText
+	signpost  9, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodFactText
+	signpost  6, 18, SIGNPOST_JUMPTEXT, ObscuraMuseumClayPotSignText
+	signpost  6, 23, SIGNPOST_JUMPTEXT, ObscuraMuseumBlackPearlText
+	signpost 10, 18, SIGNPOST_JUMPTEXT, ObscuraMuseumRainbowWingSignText
+	signpost 10, 23, SIGNPOST_JUMPTEXT, ObscuraMuseumSilverWingSignText
+	signpost  2, 19, SIGNPOST_JUMPTEXT, ObscuraMuseumDragonStoneSignText
+	signpost  4,  6, SIGNPOST_JUMPTEXT, ObscuraMuseum2FSign
 
 	db 5 ; object events
-	person_event SPRITE_RAINBOW_SILVER_WING,  9, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FRainbowWing, -1
-	person_event SPRITE_RAINBOW_SILVER_WING,  9, 20, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FSilverWing, -1
-	person_event SPRITE_ARTIFACTS,  5, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FPot, EVENT_MUSEUM_NO_CLAY_POT
-	person_event SPRITE_ARTIFACTS,  5, 20, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FPearl,  EVENT_MUSEUM_NO_BLACK_PEARL
-	person_event SPRITE_ARTIFACTS,  1, 19, SPRITEMOVEDATA_DEALER_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FPearl,  EVENT_MUSEUM_NO_DRAGON_STONE
+	person_event SPRITE_RAINBOW_SILVER_WING,  9, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FRainbowWing, -1
+	person_event SPRITE_RAINBOW_SILVER_WING,  9, 22, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FSilverWing, -1
+	person_event SPRITE_ARTIFACTS,  5, 19, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FPot, EVENT_MUSEUM_NO_CLAY_POT
+	person_event SPRITE_ARTIFACTS,  5, 22, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FPearl,  EVENT_MUSEUM_NO_BLACK_PEARL
+	person_event SPRITE_ARTIFACTS,  1, 21, SPRITEMOVEDATA_DEALER_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FPearl,  EVENT_MUSEUM_NO_DRAGON_STONE
 	
 ObscuraMuseumDragonStoneSignText:
 	text "DRAGON STONE"

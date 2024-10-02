@@ -216,8 +216,8 @@ NUM_GOT_HM_FLAGS EQU const_value
 	const MET_WENDY
 	const MET_CHARLIE
 	const MET_POLLY
-	const JASMINE_JOURNAL ; Olivine Pokémon Center
-	const PRYCE_JOURNAL ; Mahogany Pokémon Center
+	const MET_LEILANI
+	const MET_ROCKY
 	const CLAIR_JOURNAL ; Blackthorn Pokémon Center
 NUM_GYM_LEADERS_MET EQU const_value
 

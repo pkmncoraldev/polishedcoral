@@ -12,7 +12,7 @@ TrainerClassNames::
 	db "LEADER@"           ; CHARLIE
 	db "LEADER@"           ; POLLY
 	db "LEADER@"           ; LEILANI
-	db "LEADER@"           ; PRYCE
+	db "LEADER@"           ; ROCKY
 	db "LEADER@"           ; CLAIR
 	db "ELITE FOUR@"       ; WILL
 	db "ELITE FOUR@"       ; KOGA

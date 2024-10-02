@@ -756,3 +756,4 @@ ENDM
 	map_attributes Route23Gate, ROUTE_23_GATE, $0, 0
 	map_attributes ObscuraMuseum1F, OBSCURA_MUSEUM_1F, $0, 0
 	map_attributes ObscuraMuseum2F, OBSCURA_MUSEUM_2F, $0, 0
+	map_attributes ObscuraGym, OBSCURA_GYM, $0, 0

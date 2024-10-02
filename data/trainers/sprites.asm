@@ -12,7 +12,7 @@ BTTrainerClassSprites:
 	db SPRITE_CHARLIE       ; CHARLIE
 	db SPRITE_POLLY         ; POLLY
 	db SPRITE_LEILANI      	; LEILANI
-	db SPRITE_GOLD_NPC          ; PRYCE
+	db SPRITE_ROCKY         ; ROCKY
 	db SPRITE_GOLD_NPC          ; CLAIR
 	db SPRITE_GOLD_NPC          ; WILL
 	db SPRITE_GOLD_NPC          ; KOGA

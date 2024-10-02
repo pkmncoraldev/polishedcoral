@@ -700,7 +700,7 @@ WendyPic:         	      INCBIN "gfx/trainers/wendy.2bpp.lz"
 CharliePic:               INCBIN "gfx/trainers/charlie.2bpp.lz"
 PollyPic:                 INCBIN "gfx/trainers/polly.2bpp.lz"
 LeilaniPic:               INCBIN "gfx/trainers/leilani.2bpp.lz"
-PrycePic:
+RockyPic:                 INCBIN "gfx/trainers/rocky.2bpp.lz"
 ClairPic:
 WillPic:
 KogaPic:

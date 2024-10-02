@@ -20,7 +20,7 @@ SpriteHeaders:
 	overworld_sprite CharlieSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite PollySpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite LeilaniSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite PryceSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite RockySpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ClairSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite Bikini1SpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite Bikini2SpriteGFX, WALKING_SPRITE, PAL_OW_BLUE

@@ -5,7 +5,7 @@ BossTrainers:
 	db CHARLIE
 	db POLLY
 	db LEILANI
-	db PRYCE
+	db ROCKY
 	db CLAIR
 	db WILL
 	db KOGA

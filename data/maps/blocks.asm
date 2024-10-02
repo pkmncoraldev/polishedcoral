@@ -539,11 +539,11 @@ MtOnwa2F_BlockData:
 MtOnwaB1F_BlockData:
 	INCBIN "maps/MtOnwaB1F.ablk.lz"
 	
-MtOnwaB2F_BlockData:
-	INCBIN "maps/MtOnwaB2F.ablk.lz"
-	
 	
 SECTION "Map Blockdata 2", ROMX
+	
+MtOnwaB2F_BlockData:
+	INCBIN "maps/MtOnwaB2F.ablk.lz"
 	
 MtOnwaB3F_BlockData:
 	INCBIN "maps/MtOnwaB3F.ablk.lz"
@@ -929,6 +929,8 @@ InnVent_BlockData:
 	
 StarglowCavern3F_BlockData:
 	INCBIN "maps/StarglowCavern3F.ablk.lz"
+	
+SECTION "Map Blockdata 3", ROMX
 	
 ObscuraMuseum1F_BlockData:
 	INCBIN "maps/ObscuraMuseum1F.ablk.lz"

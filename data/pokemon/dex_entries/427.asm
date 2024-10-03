@@ -5,6 +5,6 @@
 	db   "When it senses"
 	next "danger, it perks"
 	next "up its ears."
-	page "On cold nights,"
-	next "it sleeps with its"
+	page "On cold nights, it"
+	next "sleeps with them"
 	next "tucked in its fur.@"

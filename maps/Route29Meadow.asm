@@ -211,7 +211,6 @@ Route29Mina:
 	applymovement ROUTE_29_MINA, Movement_Route29MinaLeave
 	disappear ROUTE_29_MINA
 	special Special_UpdatePalsInstant
-	dotrigger $2
 	setevent EVENT_ROUTE_29_MINA_GONE
 	setevent EVENT_DONE_ROUTE_29_MINA
 	setflag ENGINE_MINA_ROUTE_29

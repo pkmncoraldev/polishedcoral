@@ -119,6 +119,7 @@ CrossroadsStreetlightPaletteUpdateThingMoreWordsExtraLongStyle:
 	farjp CallScript
 	
 CrossroadsCutsceneStart1:
+	special Special_StopRunning
 	playmusic MUSIC_SNARE_THEME
 	applymovement PLAYER, Movement_CrossroadsCutsceneStart1
 	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 10
@@ -133,6 +134,7 @@ CrossroadsCutsceneStart1:
 	jump CrossroadsCutscene2
 	
 CrossroadsCutsceneStart2:
+	special Special_StopRunning
 	playmusic MUSIC_SNARE_THEME
 	applymovement PLAYER, Movement_CrossroadsCutsceneStart2
 	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 10
@@ -147,6 +149,7 @@ CrossroadsCutsceneStart2:
 	jump CrossroadsCutscene2
 	
 CrossroadsCutsceneStart3:
+	special Special_StopRunning
 	playmusic MUSIC_SNARE_THEME
 	applymovement PLAYER, Movement_CrossroadsCutsceneStart2
 	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 11
@@ -161,6 +164,7 @@ CrossroadsCutsceneStart3:
 	jump CrossroadsCutscene2
 	
 CrossroadsCutsceneStart4:
+	special Special_StopRunning
 	playmusic MUSIC_SNARE_THEME
 	applymovement PLAYER, Movement_CrossroadsCutsceneStart3
 	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 11

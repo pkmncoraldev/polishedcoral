@@ -11,16 +11,21 @@ Route28_MapScriptHeader:
 	warp_event 31, 57, ROUTE_1, 1
 	warp_event 18, 65, GREEN_GROTTO_1F, 1
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event 28, 55, 0, Route28ColbyStopsYouL
+	coord_event 29, 55, 0, Route28ColbyStopsYou
 
 	db 0 ; bg events
 
-	db 5 ; object events
+	db 8 ; object events
 	person_event SPRITE_PICNICKER, 20, 26, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route28Trainer1, -1
 	person_event SPRITE_POKEFAN_M, 16, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route28StrengthMan, -1
 	strengthboulder_event 22, 70, EVENT_ROUTE_28_BOULDER_1
 	strengthboulder_event 23, 70, EVENT_ROUTE_28_BOULDER_2
 	person_event SPRITE_BOULDER_ROCK_FOSSIL, -5, -4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route28StrengthMansBoulder, -1
+	person_event SPRITE_COLBY, -5, -4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_SNARE, -5, -4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_SNARE, -5, -4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 
 	
 	
@@ -30,6 +35,314 @@ Route28_MapScriptHeader:
 	const ROUTE_28_BOULDER_1
 	const ROUTE_28_BOULDER_2
 	const ROUTE_28_BOULDER_DUMMY
+	const ROUTE_28_COLBY
+	const ROUTE_28_SNARE_1
+	const ROUTE_28_SNARE_2
+	
+Route28ColbyStopsYouL:
+	setevent EVENT_ROUTE_28_COLBY_EVENT_LEFT
+; fallthrough
+Route28ColbyStopsYou:
+	special Special_StopRunning
+	applyonemovement PLAYER, remove_fixed_facing
+	special Special_FadeOutMusic
+	pause 30
+	disappear ROUTE_28_COLBY
+	disappear ROUTE_28_SNARE_1
+	disappear ROUTE_28_SNARE_2
+	moveperson ROUTE_28_COLBY, 31, 57
+	moveperson ROUTE_28_SNARE_1, 31, 57
+	moveperson ROUTE_28_SNARE_2, 31, 57
+	spriteface PLAYER, DOWN
+	playsound SFX_EXIT_BUILDING
+	appear ROUTE_28_SNARE_1
+	applymovement ROUTE_28_SNARE_1, Movement_Route28_Snare_1
+	spriteface ROUTE_28_SNARE_1, RIGHT
+	playsound SFX_EXIT_BUILDING
+	appear ROUTE_28_SNARE_2
+	applymovement ROUTE_28_SNARE_2, Movement_Route28_Snare_2
+	spriteface ROUTE_28_SNARE_2, LEFT
+	pause 15
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	playsound SFX_EXIT_BUILDING
+	appear ROUTE_28_COLBY
+	applymovement ROUTE_28_COLBY, Movement_Route28_Colby_1
+	applymovement ROUTE_28_SNARE_2, Movement_Route28_Snare_3
+	follow ROUTE_28_SNARE_2, ROUTE_28_SNARE_1
+	applymovement ROUTE_28_SNARE_2, Movement_Route28_Snare_4
+	stopfollow
+	disappear ROUTE_28_SNARE_1
+	disappear ROUTE_28_SNARE_2
+	checkevent EVENT_ROUTE_28_COLBY_EVENT_LEFT
+	iftrue .player_left
+	applymovement ROUTE_28_COLBY, Movement_Route28_Colby_2
+	jump .cont
+.player_left
+	applymovement ROUTE_28_COLBY, Movement_Route28_Colby_2_Left
+.cont
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, ROUTE_28_COLBY, 15
+	applymovement ROUTE_28_COLBY, Movement_Route28_Colby_3
+	opentext
+	writetext Route28ColbyText1
+	waitbutton
+	closetext
+	waitsfx
+	checkevent EVENT_GOT_TOTODILE_FROM_SPRUCE
+	iftrue .totodile
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_SPRUCE
+	iftrue .cyndaquil
+	checkevent EVENT_GOT_CHIKORITA_FROM_SPRUCE
+	iftrue .chikorita
+	checkevent EVENT_GOT_SQUIRTLE_FROM_SPRUCE
+	iftrue .squirtle
+	checkevent EVENT_GOT_CHARMANDER_FROM_SPRUCE
+	iftrue .charmander
+	checkevent EVENT_GOT_BULBASAUR_FROM_SPRUCE
+	iftrue .bulbasaur
+.totodile
+	winlosstext Route28ColbyWinText, Route28ColbyLoseText
+	setlasttalked ROUTE_28_COLBY
+	loadtrainer RIVAL_S, RIVAL_S_2_6
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+.chikorita
+	winlosstext Route28ColbyWinText, Route28ColbyLoseText
+	setlasttalked ROUTE_28_COLBY
+	loadtrainer RIVAL_S, RIVAL_S_2_5
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+.cyndaquil
+	winlosstext Route28ColbyWinText, Route28ColbyLoseText
+	setlasttalked ROUTE_28_COLBY
+	loadtrainer RIVAL_S, RIVAL_S_2_4
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+.squirtle
+	winlosstext Route28ColbyWinText, Route28ColbyLoseText
+	setlasttalked ROUTE_28_COLBY
+	loadtrainer RIVAL_S, RIVAL_S_2_3
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+.bulbasaur
+	winlosstext Route28ColbyWinText, Route28ColbyLoseText
+	setlasttalked ROUTE_28_COLBY
+	loadtrainer RIVAL_S, RIVAL_S_2_2
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .afterbattle
+.charmander
+	winlosstext Route28ColbyWinText, Route28ColbyLoseText
+	setlasttalked ROUTE_28_COLBY
+	loadtrainer RIVAL_S, RIVAL_S_2_1
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+.afterbattle
+	playmusic MUSIC_RIVAL_AFTER
+	opentext
+	writetext Route28ColbyText2
+	waitbutton
+	closetext
+	pause 5
+	playsound SFX_CALL
+	waitsfx
+	pause 20
+	playsound SFX_CALL
+	waitsfx
+	pause 20
+	playsound SFX_CALL
+	pause 2
+	applyonemovement ROUTE_28_COLBY, turn_step_down
+	applyonemovement ROUTE_28_COLBY, remove_fixed_facing
+	playsound SFX_TALLY
+	opentext
+	writetext Route28ColbyText3
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement ROUTE_28_COLBY, turn_step_up
+	opentext
+	writetext Route28ColbyText4
+	waitbutton
+	closetext
+	applymovement ROUTE_28_COLBY, Movement_Route28_Colby_4
+	disappear ROUTE_28_COLBY
+	special Special_FadeOutMusic
+	pause 15
+	setevent EVENT_ROUTE_28_CUTSCENE_DONE
+	playmapmusic
+	dotrigger $1
+	end
+;	disappear ROUTE_28_SNARE_1
+;	disappear ROUTE_28_SNARE_2
+	end
+	
+Route28ColbyText1:
+	text "I should've known"
+	line "you'd show up at"
+	cont "some point."
+	
+	para "I'm kinda busy"
+	line "right now."
+	
+	para "But you don't care,"
+	line "do you?"
+	
+	para "You so-called"
+	line "goody-goody!"
+	
+	para "You might have"
+	line "everyone else"
+	cont "fooled, but not"
+	cont "me!"
+	
+	para "I can see right"
+	line "through your"
+	cont "charade."
+	
+	para "…"
+	
+	para "I'm already behind"
+	line "schedule, but I"
+	cont "don't even care."
+	
+	para "Let's do this!"
+	done
+	
+Route28ColbyText2:
+	text "Argh!"
+	
+	para "You make me so"
+	line "mad!"
+	
+	para "Someone like you"
+	line "beating someone"
+	cont "like me…"
+	
+	para "I can't wait to"
+	line "bring you down a"
+	cont "peg or two!"
+	
+	para "And I'll do it"
+	line "by any means"
+	cont "necessary."
+	done
+	
+Route28ColbyText3:
+	text "What?"
+	
+	para "Yeah, I know."
+	
+	para "No, we're still"
+	line "good to go."
+	
+	para "I'm coming right"
+	line "now, so get ready"
+	cont "to get started."
+	done
+	
+Route28ColbyText4:
+	text "I'm gonna give you"
+	line "a taste of your"
+	cont "own medicine soon"
+	cont "enough."
+	
+	para "Just try and stop"
+	line "me, <PLAYER>."
+	done
+	
+Route28ColbyWinText:
+	text "Tch!"
+	
+	para "Typical…"
+	done
+	
+Route28ColbyLoseText:
+	text "Yes!"
+	
+	para "Finally!"
+	done
+	
+Movement_Route28_Snare_1:
+	step_down
+	step_left
+	step_end
+	
+Movement_Route28_Snare_2:
+	step_down
+	step_right
+	step_end
+	
+Movement_Route28_Snare_3:
+	step_down
+	step_left
+	step_left
+	step_end
+	
+Movement_Route28_Snare_4:
+	step_left
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_end
+	
+Movement_Route28_Colby_1:
+	step_down
+	step_sleep 60
+	turn_step_left
+	step_sleep 20
+	turn_step_right
+	step_sleep 20
+	turn_step_down
+	step_sleep 20
+	step_end
+	
+Movement_Route28_Colby_2_Left:
+	step_left
+; fallthrough
+Movement_Route28_Colby_2:
+	step_left
+	step_left
+	step_sleep 10
+	turn_step_down
+	step_sleep 30
+	turn_step_up
+	step_sleep 30
+	turn_step_down
+	step_sleep 10
+	turn_step_up
+	step_end
+	
+Movement_Route28_Colby_3:
+	step_up
+	step_up
+	step_end
+	
+Movement_Route28_Colby_4:
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_end
 	
 Route28Callback:
 	checkevent EVENT_ROUTE_28_BOULDER_TOP

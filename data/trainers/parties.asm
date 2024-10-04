@@ -929,6 +929,60 @@ RivalSGroup:
 	db -1 ; end
 
 ; ================
+
+	; RIVAL_S (2-1)
+	db "<RIVAL>@"
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
+	; party
+	db 5, TOTODILE, $66, $66, $66, ABILITY_1 | HARDY, MALE
+	db -1 ; end
+
+; ================
+
+	; RIVAL_S (2-2)
+	db "<RIVAL>@"
+	db TRAINERTYPE_PERSONALITY
+	; party
+	db 5, CYNDAQUIL, ABILITY_1 | HARDY, MALE
+	db -1 ; end
+
+; ================
+
+	; RIVAL_S (2-3)
+	db "<RIVAL>@"
+	db TRAINERTYPE_PERSONALITY
+	; party
+	db 5, CHIKORITA, ABILITY_1 | HARDY, MALE
+	db -1 ; end
+
+; ================
+
+	; RIVAL_S (2-4)
+	db "<RIVAL>@"
+	db TRAINERTYPE_PERSONALITY
+	; party
+	db 5, SQUIRTLE, ABILITY_1 | HARDY, MALE
+	db -1 ; end
+
+; ================
+
+	; RIVAL_S (2-5)
+	db "<RIVAL>@"
+	db TRAINERTYPE_PERSONALITY
+	; party
+	db 5, CHARMANDER, ABILITY_1 | HARDY, MALE
+	db -1 ; end
+
+; ================
+
+	; RIVAL_S (2-6)
+	db "<RIVAL>@"
+	db TRAINERTYPE_PERSONALITY
+	; party
+	db 5, BULBASAUR, ABILITY_1 | HARDY, MALE
+	db -1 ; end
+
+; ================
 ; ================================
 
 YoungsterGroup:

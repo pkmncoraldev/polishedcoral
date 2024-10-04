@@ -431,27 +431,27 @@ endr
 	cp 6
 	jr z, .six_mons
 ;one_mon (shouldn't be possible)
-	ld a, 140
+	ld a, 190
 	ld [wPartyMon1Happiness], a
 	jr .end
 .two_mons
-	ld a, 140
+	ld a, 190
 	ld [wPartyMon2Happiness], a
 	jr .end
 .three_mons
-	ld a, 140
+	ld a, 190
 	ld [wPartyMon3Happiness], a
 	jr .end
 .four_mons
-	ld a, 140
+	ld a, 190
 	ld [wPartyMon4Happiness], a
 	jr .end
 .five_mons
-	ld a, 140
+	ld a, 190
 	ld [wPartyMon5Happiness], a
 	jr .end
 .six_mons
-	ld a, 140
+	ld a, 190
 	ld [wPartyMon6Happiness], a
 .end
 	ret

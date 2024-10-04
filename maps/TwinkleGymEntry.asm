@@ -224,6 +224,7 @@ TwinkleGymEntryClerk:
 	waitbutton
 	closetext
 	setevent EVENT_GOT_YELLOW_KEY
+	moveperson TWINKLE_GYM_ENTRY_CLERK, 6, 7
 	end
 .gotyellowkey
 	checkevent EVENT_CAN_GET_RED_KEY
@@ -260,6 +261,7 @@ TwinkleGymEntryClerk:
 	waitbutton
 	closetext
 	setevent EVENT_GOT_RED_KEY
+	moveperson TWINKLE_GYM_ENTRY_CLERK, 6, 7
 	end
 .gotredkey
 	writetext TwinkleGymEntryClerkText9

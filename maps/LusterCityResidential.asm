@@ -1435,7 +1435,7 @@ Luster1NPC3Text:
 	done
 
 Luster1NPC4Text:
-	text "Why do we have"
+	text "Why do we have a"
 	line "#MART here,"
 	cont "anyway?"
 

@@ -273,7 +273,7 @@ MasterBallDesc:
 	next "never misses.@"
 
 SafariBallDesc:
-	db   "The Safari Game"
+	db   "The SAFARI GAME"
 	next "BALL.@"
 
 LevelBallDesc:
@@ -285,8 +285,8 @@ LureBallDesc:
 	next "hooked by a ROD.@"
 
 MoonBallDesc:
-	db   "A BALL for Moon"
-	next "Stone evolvers.@"
+	db   "A BALL for MOON"
+	next "STONE evolvers.@"
 
 FriendBallDesc:
 	db   "A BALL that makes"
@@ -321,8 +321,8 @@ NestBallDesc:
 	next "#MON.@"
 
 NetBallDesc:
-	db   "A BALL for Water"
-	next "or Bug #MON.@"
+	db   "A BALL for WATER"
+	next "or BUG #MON.@"
 
 DiveBallDesc:
 	db   "A BALL for under-"

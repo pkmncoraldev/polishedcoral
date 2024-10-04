@@ -204,7 +204,7 @@ LusterMallBallShop_NPC2Text3:
 	cont "from the JOHTO"
 	cont "region."
 	
-	para "We are wating for"
+	para "We are waiting for"
 	line "a shipment and it's"
 	cont "running late."
 	

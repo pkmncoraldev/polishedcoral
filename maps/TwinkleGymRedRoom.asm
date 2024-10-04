@@ -208,7 +208,7 @@ TwinkleGymCharlieTextAfterBattle:
 	line "just how tough"
 	cont "you are!"
 	
-	para "It let's you use"
+	para "It lets you use"
 	line "the HM ROCK CLIMB"
 	cont "outside of battle."
 	

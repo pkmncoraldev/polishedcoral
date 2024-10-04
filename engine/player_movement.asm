@@ -1717,6 +1717,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret
 
 .CheckStrengthBoulder: ; 8036f
+	ld a, [wTileUpFar]
+	cp COLL_DOOR
+	jr z, .not_boulder
 
 	ld hl, wOWState
 	bit OWSTATE_STRENGTH, [hl]

@@ -463,12 +463,14 @@ ENDM
 	map_attributes Brightburg, BRIGHTBURG, $fb, SOUTH
 	connection south, Route28, ROUTE_28, -7
 	
-	map_attributes Route28, ROUTE_28, $a1, NORTH
+	map_attributes Route28, ROUTE_28, $a1, NORTH | WEST
 	connection north, Brightburg, BRIGHTBURG, 7
+	connection west, Route29, ROUTE_29, 30
 	
-	map_attributes Route29, ROUTE_29, $d4, NORTH | WEST
+	map_attributes Route29, ROUTE_29, $d4, NORTH | WEST | EAST
 	connection north, Route29Meadow, ROUTE_29_MEADOW, 4
 	connection west, ObscuraCity, OBSCURA_CITY, -10
+	connection east, Route28, ROUTE_28, -30
 	
 	map_attributes Route29Meadow, ROUTE_29_MEADOW, $fb, SOUTH
 	connection south, Route29, ROUTE_29, -4

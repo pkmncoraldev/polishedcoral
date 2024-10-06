@@ -320,7 +320,8 @@ MAP_NONE   EQU 0
 	map_const ROUTE_15,									  44, 14 ; 14
 	map_const ROUTE_16,									   7,  4 ; 15
 	map_const ROUTE_4,                                    22, 12 ; 10
-	map_const ROUTE_12,									  21, 31 ; 1
+	map_const ROUTE_12,									  21, 31 ; 11
+	map_const ROUTE_19,									  24, 26 ; 12
 	
 	
 	newgroup													 ; 17
@@ -360,24 +361,23 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 19
 	
-	map_const ROUTE_19,									  24, 26 ; 1
-	map_const ROUTE_20,									  10, 16 ; 2
-	map_const RADIANT_TOWNSHIP,							  23, 14 ; 3
-	map_const RADIANT_FLOWER_SHOP,						   5,  4 ; 4
-	map_const RADIANT_ORPHANAGE_1F,						   6,  5 ; 5
-	map_const RADIANT_ORPHANAGE_2F,						   8,  4 ; 6
-	map_const RADIANT_ORPHANAGE_LEILANIS_ROOM,			   3,  3 ; 7
-	map_const RADIANT_GYM,								   5, 10 ; 8
-	map_const RADIANT_POKECENTER,                      	   6,  4 ; 9
-	map_const RADIANT_MART,                                6,  4 ; 10
-	map_const ROUTE_21_GATE,                          	   4,  4 ; 11
-	map_const RADIANT_HOUSE,     	             		   4,  4 ; 12
-	map_const RADIANT_FIELD,							  19, 15 ; 13
+	map_const ROUTE_20,									  10, 16 ; 1
+	map_const RADIANT_TOWNSHIP,							  23, 14 ; 2
+	map_const RADIANT_FLOWER_SHOP,						   5,  4 ; 3
+	map_const RADIANT_ORPHANAGE_1F,						   6,  5 ; 4
+	map_const RADIANT_ORPHANAGE_2F,						   8,  4 ; 5
+	map_const RADIANT_ORPHANAGE_LEILANIS_ROOM,			   3,  3 ; 6
+	map_const RADIANT_GYM,								   5, 10 ; 7
+	map_const RADIANT_POKECENTER,                      	   6,  4 ; 8
+	map_const RADIANT_MART,                                6,  4 ; 9
+	map_const ROUTE_21_GATE,                          	   4,  4 ; 10
+	map_const RADIANT_HOUSE,     	             		   4,  4 ; 11
+	map_const RADIANT_FIELD,							  19, 15 ; 12
 	
 	newgroup													 ; 20
 	
 	map_const ROUTE_21,									  20, 17 ; 1
-	map_const DUSK_TURNPIKE,							  17, 19 ; 2
+	map_const DUSK_TURNPIKE,							  18, 19 ; 2
 	map_const DUSK_POKECENTER,                      	   6,  4 ; 3
 	map_const DUSK_MART,                             	   6,  4 ; 4
 	map_const ROUTE_19_DUSK_GATE,						   5,  4 ; 5
@@ -436,8 +436,6 @@ MAP_NONE   EQU 0
 	map_const ROUTE_25_GATE,                          	   4,  4 ; 7
 	map_const BRIGHTBURG_GATE,							   5,  4 ; 8
 	map_const ROUTE_28,									  20, 38 ; 9
-	map_const ROUTE_29,									  38, 12 ; 10
-	map_const ROUTE_29_MEADOW,							  18, 10 ; 11
 	
 	newgroup													 ; 24
 	map_const OBSCURA_CITY,								  16, 23 ; 1
@@ -445,6 +443,8 @@ MAP_NONE   EQU 0
 	map_const OBSCURA_MUSEUM_1F,						  13,  7 ; 3
 	map_const OBSCURA_MUSEUM_2F,						  12,  7 ; 4
 	map_const OBSCURA_GYM,								   3,  3 ; 5
+	map_const ROUTE_29,									  38, 12 ; 6
+	map_const ROUTE_29_MEADOW,							  18, 10 ; 7
 	
 	newgroup													 ; 25
 	map_const AUREOLE_TOWN,								  20, 23 ; 1

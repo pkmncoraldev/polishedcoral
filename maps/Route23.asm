@@ -705,6 +705,22 @@ Route23MasterText5:
 	cont "as boulders or"
 	cont "fallen trees…"
 	
+	para "…"
+	
+	para "Your quest next"
+	line "takes you to the"
+	cont "GYM in OBSUCRA"
+	cont "CITY."
+	
+	para "I must warn you."
+	
+	para "I sense much hard-"
+	line "ship on the way."
+	
+	para "You should prepare"
+	line "for anything and"
+	cont "remain vigilant."
+	
 	para "Until we meet"
 	line "again, child…"
 	

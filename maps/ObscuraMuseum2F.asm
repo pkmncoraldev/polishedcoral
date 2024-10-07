@@ -1,7 +1,8 @@
 ObscuraMuseum2F_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, ObscuraMuseum2FCallback
 
 	db 3 ; warp events
 	warp_def  4,  7, 5, OBSCURA_MUSEUM_1F
@@ -10,7 +11,7 @@ ObscuraMuseum2F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 27 ; bg events
+	db 30 ; bg events
 	signpost  5, 10, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 	signpost  5, 11, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 	signpost  5, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
@@ -38,7 +39,9 @@ ObscuraMuseum2F_MapScriptHeader:
 	signpost 10, 23, SIGNPOST_JUMPTEXT, ObscuraMuseumSilverWingSignText
 	signpost  2, 19, SIGNPOST_JUMPTEXT, ObscuraMuseumDragonStoneSignText
 	signpost  4,  6, SIGNPOST_JUMPTEXT, ObscuraMuseum2FSign
-	signpost  9, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumGymSign
+	signpost  7,  4, SIGNPOST_JUMPTEXT, ObscuraMuseumGymSign
+	signpost  6,  2, SIGNPOST_IFSET, ObscuraMuseumGymDoor
+	signpost  6,  3, SIGNPOST_IFSET, ObscuraMuseumGymDoor
 
 	db 5 ; object events
 	person_event SPRITE_RAINBOW_SILVER_WING,  9, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FRainbowWing, -1
@@ -47,6 +50,21 @@ ObscuraMuseum2F_MapScriptHeader:
 	person_event SPRITE_ARTIFACTS,  5, 22, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FPearl,  EVENT_MUSEUM_NO_BLACK_PEARL
 	person_event SPRITE_ARTIFACTS,  1, 21, SPRITEMOVEDATA_DEALER_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FPearl,  EVENT_MUSEUM_NO_DRAGON_STONE
 	
+	
+ObscuraMuseum2FCallback:
+	checkevent EVENT_SNARE_AT_MUSEUM
+	iffalse .end
+	changeblock $2, $6, $80
+.end
+	return
+	
+ObscuraMuseumGymDoor:
+	dw EVENT_SNARE_AT_MUSEUM
+	jumptext ObscuraMuseumGymDoorText
+	
+ObscuraMuseumGymDoorText:
+	text "It's locked."
+	done
 	
 ObscuraMuseumClayPotSign:
 	checkevent EVENT_MUSEUM_NO_CLAY_POT

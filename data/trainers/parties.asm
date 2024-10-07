@@ -2320,6 +2320,33 @@ GruntMGroup:
 	db -1 ; end
 
 ; ================
+
+	; MUSEUM_GRUNTM_1
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_GRUNTM_2
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_GRUNTM_3
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2401,6 +2428,24 @@ GruntFGroup:
 ; ================
 
 	; INN_GRUNTF_3
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_GRUNTF_1
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_GRUNTF_2
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party

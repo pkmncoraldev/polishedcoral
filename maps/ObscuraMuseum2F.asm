@@ -32,8 +32,8 @@ ObscuraMuseum2F_MapScriptHeader:
 	signpost 12, 11, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
 	signpost  5, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilFactText
 	signpost  9, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodFactText
-	signpost  6, 18, SIGNPOST_JUMPTEXT, ObscuraMuseumClayPotSignText
-	signpost  6, 23, SIGNPOST_JUMPTEXT, ObscuraMuseumBlackPearlText
+	signpost  6, 18, SIGNPOST_READ, ObscuraMuseumClayPotSign
+	signpost  6, 23, SIGNPOST_READ, ObscuraMuseumBlackPearlSign
 	signpost 10, 18, SIGNPOST_JUMPTEXT, ObscuraMuseumRainbowWingSignText
 	signpost 10, 23, SIGNPOST_JUMPTEXT, ObscuraMuseumSilverWingSignText
 	signpost  2, 19, SIGNPOST_JUMPTEXT, ObscuraMuseumDragonStoneSignText
@@ -46,6 +46,26 @@ ObscuraMuseum2F_MapScriptHeader:
 	person_event SPRITE_ARTIFACTS,  5, 19, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FPot, EVENT_MUSEUM_NO_CLAY_POT
 	person_event SPRITE_ARTIFACTS,  5, 22, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FPearl,  EVENT_MUSEUM_NO_BLACK_PEARL
 	person_event SPRITE_ARTIFACTS,  1, 21, SPRITEMOVEDATA_DEALER_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FPearl,  EVENT_MUSEUM_NO_DRAGON_STONE
+	
+	
+ObscuraMuseumClayPotSign:
+	checkevent EVENT_MUSEUM_NO_CLAY_POT
+	iftrue .no_clay_pot
+	jumptext ObscuraMuseumClayPotSignText
+.no_clay_pot
+	jumptext ObscuraMuseumEmptyExhibitText
+	
+ObscuraMuseumBlackPearlSign:
+	checkevent EVENT_MUSEUM_NO_BLACK_PEARL
+	iftrue .no_black_pearl
+	jumptext ObscuraMuseumBlackPearlSignText
+.no_black_pearl
+	jumptext ObscuraMuseumEmptyExhibitText
+	
+ObscuraMuseumEmptyExhibitText:
+	text "New exhibit:"
+	line "coming soon!"
+	done
 	
 ObscuraMuseumGymSign:
 	text "OBSCURA CITY"
@@ -73,7 +93,7 @@ ObscuraMuseumClayPotSignText:
 	cont "TWINKLE TOWN."
 	done
 	
-ObscuraMuseumBlackPearlText:
+ObscuraMuseumBlackPearlSignText:
 	text "An artifact that"
 	line "was recently found"
 	cont "by researchers at"

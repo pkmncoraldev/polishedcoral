@@ -28,7 +28,7 @@ DuskTurnpike_MapScriptHeader:
 	warp_event 19,  7, BAR_INSIDE, 1
 	warp_event 20,  7, BAR_INSIDE, 2
 
-	db 48 ; coord events
+	db 52 ; coord events
 	xy_trigger 0, 14, 14, 0, DuskTurnpikeLight, 0, 0
 	xy_trigger 0, 14, 15, 0, DuskTurnpikeLight, 0, 0
 	xy_trigger 0, 13, 14, 0, DuskTurnpikeLight, 0, 0
@@ -77,6 +77,10 @@ DuskTurnpike_MapScriptHeader:
 	xy_trigger 0, 15, 35, 0, DuskTurnpikeTollBoothStopsYou2, 0, 0
 	xy_trigger 0, 16, 35, 0, DuskTurnpikeTollBoothStopsYou3, 0, 0
 	xy_trigger 0, 17, 35, 0, DuskTurnpikeTollBoothStopsYou4, 0, 0
+	xy_trigger 0, 19, 34, 0, DuskTurnpikeUnderPassGoLeft, 0, 0
+	xy_trigger 0, 19, 35, 0, DuskTurnpikeUnderPassGoLeft, 0, 0
+	xy_trigger 0, 19, 10, 0, DuskTurnpikeUnderPassGoRight, 0, 0
+	xy_trigger 0, 19, 11, 0, DuskTurnpikeUnderPassGoRight, 0, 0
 
 	db 13 ; bg events
 	signpost 22, 32, SIGNPOST_JUMPTEXT, DuskTurnpikeBrokenCar
@@ -94,7 +98,7 @@ DuskTurnpike_MapScriptHeader:
 	signpost 26, 17, SIGNPOST_JUMPTEXT, DuskTurnpikeDestiny
 	
 
-	db 11 ; object events
+	db 12 ; object events
 	person_event SPRITE_INVISIBLE, 13, 35, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, DuskTurnpikeTollbooth, -1
 	person_event SPRITE_PLANK_BRIDGE,  5, 22, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_SPA_WORKER, 26, 27, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC1, -1
@@ -106,6 +110,7 @@ DuskTurnpike_MapScriptHeader:
 	person_event SPRITE_BIKER,  8, 17, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC7, -1
 	person_event SPRITE_BEAUTY,  8, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC8, EVENT_HIDE_OW_OBJECTS_RED
 	person_event SPRITE_BEAUTY,  8, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC8, EVENT_HIDE_OW_OBJECTS_TEAL
+	tmhmball_event 11, 23, TM_TAUNT, EVENT_DUSK_TURNPIKE_TAUNT_TM
 
 
 	const_def 1 ; object constants
@@ -268,6 +273,90 @@ DuskTurnpikeDark:
 	special Special_UpdatePalsInstant
 	dotrigger $0
 	end
+	
+DuskTurnpikeUnderPassGoRight:
+	playsound SFX_ENTER_DOOR
+	applymovement PLAYER, Movement_Dusk_UnderPassGoRight
+	spriteface PLAYER, DOWN
+	pause 10
+	playsound SFX_EXIT_BUILDING
+	applymovement PLAYER, Movement_Dusk_UnderPassGoDown
+	end
+	
+DuskTurnpikeUnderPassGoLeft:
+	playsound SFX_ENTER_DOOR
+	applymovement PLAYER, Movement_Dusk_UnderPassGoLeft
+	spriteface PLAYER, DOWN
+	pause 10
+	playsound SFX_EXIT_BUILDING
+	applymovement PLAYER, Movement_Dusk_UnderPassGoDown
+	end
+	
+Movement_Dusk_UnderPassGoLeft:
+	hide_person
+	step_up
+	step_sleep 10
+	step_left
+	run_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	run_step_left
+	step_left
+	step_end
+	
+Movement_Dusk_UnderPassGoRight:
+	hide_person
+	step_up
+	step_sleep 10
+	step_right
+	run_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	big_step_right
+	run_step_right
+	step_right
+	step_end
+	
+Movement_Dusk_UnderPassGoDown:
+	step_down
+	show_person
+	step_down
+	step_end
 
 DuskTurnpikeTollBoothStopsYou1:
 	checkevent EVENT_TOLL_BOOTH_OPEN

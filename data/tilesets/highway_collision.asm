@@ -170,8 +170,8 @@
 	tilecoll NO_OLLIE, NO_OLLIE, SKATE, SKATE ; a9
 	tilecoll SKATE, SKATE, SKATE, SKATE ; aa
 	tilecoll WALL, WALL, SKATE, WARP_CARPET_RIGHT ; ab
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ac
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ad
+	tilecoll NO_OLLIE, NO_OLLIE, WARP_CARPET_UP, WARP_CARPET_UP ; ac
+	tilecoll NO_OLLIE, NO_OLLIE, WARP_CARPET_UP, WARP_CARPET_UP ; ad
 	tilecoll WALL, WALL, WALL, WALL ; ae
 	tilecoll WALL, WALL, WALL, WALL ; af
 	tilecoll WALL, WALL, WALL, WALL ; b0
@@ -196,7 +196,7 @@
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; c3
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c4
 	tilecoll SKATE, SKATE, SKATE, SKATE ; c5
-	tilecoll STAIRS, STAIRS, SKATE, SKATE ; c6
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c6
 	tilecoll FLOOR, FLOOR, WALL, WALL ; c7
 	tilecoll NO_OLLIE, NO_OLLIE, WARP_CARPET_RIGHT, NO_OLLIE ; c8
 	tilecoll SKATE, SKATE, SKATE, SKATE ; c9

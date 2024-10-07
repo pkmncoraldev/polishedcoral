@@ -34,7 +34,7 @@ ENDM
 	add_tm DESTINY_BOND		; $08
 	add_tm SUPERPOWER		; $09
 	add_tm SUNNY_DAY		; $0a
-	add_tm SIGNAL_BEAM		; $0b
+	add_tm TAUNT			; $0b
 	add_tm ICE_BEAM			; $0c
 	add_tm BLIZZARD			; $0d
 	add_tm HYPER_BEAM		; $0e

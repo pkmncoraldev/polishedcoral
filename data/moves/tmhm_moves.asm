@@ -10,7 +10,7 @@ TMHMMoves:
 	db VENOSHOCK                           ; TM09
 	db SUPERPOWER                          ; TM10
 	db SUNNY_DAY                           ; TM11
-	db SIGNAL_BEAM                         ; TM12
+	db TAUNT	                           ; TM12
 	db ICE_BEAM                            ; TM13
 	db BLIZZARD                            ; TM14
 	db HYPER_BEAM                          ; TM15

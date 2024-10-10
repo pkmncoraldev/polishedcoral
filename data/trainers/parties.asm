@@ -2347,6 +2347,24 @@ GruntMGroup:
 	db -1 ; end
 
 ; ================
+
+	; MUSEUM_GRUNTM_4
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_GRUNTM_5
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2461,7 +2479,7 @@ KageGroup:
 ; ================
 
 	; SUNBEAM_KAGE
-	db "KAGE@";"KAGE1@"
+	db "KAGE@"
 	db TRAINERTYPE_DVS
 	; party
 	db 24, AZUMARILL, $DD, $8D, $D8
@@ -2472,7 +2490,7 @@ KageGroup:
 ; ================
 
 	; INN_1F
-	db "KAGE@";"KAGE2@"
+	db "KAGE@"
 	db TRAINERTYPE_DVS
 	; party
 	db  1, BULBASAUR,$00, $00, $00
@@ -2487,12 +2505,21 @@ LockeGroup:
 ; ================
 
 	; TRAIN_LOCKE
-	db "LOCKE@";"LOCKE1@"
+	db "LOCKE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 34, BRELOOM
 	db 35, NIDORINA
 	db 36, MACHOKE
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_LOCKE
+	db "LOCKE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================

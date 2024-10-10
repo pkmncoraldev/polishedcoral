@@ -101,6 +101,11 @@ WhiteoutHandleEvents:
 	clearevent EVENT_ROUTE_3_ROCKS_BROWN
 	clearflag ENGINE_ENCOUNTER_HOUSE
 	loadvar wJukeboxSong, 0
+	checkevent EVENT_SNARE_GONE_FROM_MUSEUM
+	iftrue .skip2
+	clearevent EVENT_MUSEUM_COLBY_GONE
+	domaptrigger OBSCURA_MUSEUM_3F, $0
+.skip2
 	end
 	
 OverworldWhiteoutFade:

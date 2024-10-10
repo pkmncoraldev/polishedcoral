@@ -1217,10 +1217,20 @@ LoadMapPals::
 	
 .south_buildings
 	ld a, [wMapGroup]
-	cp GROUP_OBSCURA_MUSEUM_2F
+	cp GROUP_OBSCURA_MUSEUM_3F
 	jr nz, .computer
 	ld hl, MapObjectPalsMuseum
-	call LoadSingleOBPalLinePal7
+	ld a, [wPlayerPalette]
+	cp 4
+	jr z, .museum_purple
+	ld de, wUnknOBPals + 4 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+.museum_purple
+	ld de, wUnknOBPals + 5 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
 	jp FarCopyWRAM
 	
 .computer

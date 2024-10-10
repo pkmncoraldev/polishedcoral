@@ -251,6 +251,8 @@ PLAYER_F EQU __enum__
 	const MUSEUM_GRUNTM_1
 	const MUSEUM_GRUNTM_2
 	const MUSEUM_GRUNTM_3
+	const MUSEUM_GRUNTM_4
+	const MUSEUM_GRUNTM_5
 
 
 	trainerclass GRUNTF
@@ -273,6 +275,7 @@ PLAYER_F EQU __enum__
 	
 	trainerclass LOCKE
 	const TRAIN_LOCKE
+	const MUSEUM_LOCKE
 
 	
 	trainerclass POKEFANM

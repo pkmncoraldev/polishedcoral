@@ -1081,7 +1081,8 @@ wRoute28Trigger:: ds 1
 wObscuraCityTrigger:: ds 1
 wInn1FTrigger:: ds 1
 wObscuraMuseum1FTrigger:: ds 1
-ds 18
+wObscuraMuseum3FTrigger:: ds 1
+ds 17
 
 wAmpharosFood:: ds 1
 

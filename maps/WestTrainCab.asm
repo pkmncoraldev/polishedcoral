@@ -363,7 +363,7 @@ WestTrainCabLockeText5:
 	
 	para "Get ready to bail!"
 	
-	para "We're outta here,<WAIT_S>"
+	para "We're outta here,"
 	line "boys!"
 	done
 	

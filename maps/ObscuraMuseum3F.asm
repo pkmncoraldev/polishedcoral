@@ -179,7 +179,7 @@ ObscuraMuseum3FDragonStoneScene:
 	special Special_FadeOutMusic
 	waitsfx
 	special Special_FadeInQuickly
-	playnewmapmusic
+	playmusic MUSIC_SNARE_INVASION
 	setlasttalked OBSCURA_MUSEUM_3F_ROCKY
 	applymovement OBSCURA_MUSEUM_3F_ROCKY, Movement_ObscuraMuseum3FRocky
 	faceplayer
@@ -197,7 +197,8 @@ ObscuraMuseum3FDragonStoneScene:
 	special Special_StopRunning
 	waitsfx
 	dotrigger $2
-	setevent EVENT_DO_OUTSIDE_MUSEUM_CUTSCENE
+	domaptrigger OBSCURA_CITY, $1
+	clearevent EVENT_OBSCURA_CITY_ROCKY_GONE
 	warpfacing LEFT, OBSCURA_CITY, $11, $0e
 	end
 	
@@ -250,7 +251,7 @@ ObscuraMuseum3FLockeLoseText:
 	done
 	
 ObscuraMuseum3FColbyText1:
-	text "<RIVAL>: Good work.<WAIT_S>"
+	text "<RIVAL>: Good job.<WAIT_S>"
 	line "We got it!"
 	
 	para "Not even that"
@@ -425,8 +426,9 @@ ObscuraMuseum3FRockyText3:
 	line "they were just one"
 	cont "step ahead."
 	
-	para "I'm never going to"
-	line "hear the end of"
+	para "Oh, she's never"
+	line "going to let me"
+	cont "hear the end of"
 	cont "this…"
 	
 	para "Anyway, let's head"

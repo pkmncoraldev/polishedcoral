@@ -76,7 +76,7 @@
 	tilecoll LEDGE_DOWN, FLOOR, WALL, FLOOR ; 4b
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4c
 	tilecoll WALL, WALL, WALL, WALL ; 4d
-	tilecoll WALL, WALL, WALL, WARP_CARPET_LEFT ; 4e
+	tilecoll WALL, SKATE, WALL, WARP_CARPET_LEFT ; 4e
 	tilecoll FLOOR, NO_OLLIE, ROCK_CLIMB, NO_OLLIE ; 4f
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 50
 	tilecoll WALL, WALL, WALL, WALL ; 51

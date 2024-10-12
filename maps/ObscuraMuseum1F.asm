@@ -42,7 +42,7 @@ ObscuraMuseum1F_MapScriptHeader:
 	person_event SPRITE_ROCKY,  3,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FRockyScript, EVENT_MUSEUM_1F_ROCKY_SCENE
 	person_event SPRITE_SNARE_GIRL,  3,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MUSEUM_1F_ROCKY_SCENE
 	person_event SPRITE_MATRON,  4, 16, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC1, -1
-	person_event SPRITE_CUTE_GIRL, 13,  1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC2, -1
+	person_event SPRITE_CUTE_GIRL, 13,  1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC2, -1
 	object_event  2, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, BAYLEEF, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FBayleef, -1
 	person_event SPRITE_SNARE,  7, 13, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE,  6, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, ObscuraMuseum1FSnare2, EVENT_SNARE_GONE_FROM_MUSEUM
@@ -55,6 +55,8 @@ ObscuraMuseum1F_MapScriptHeader:
 	const OBSCURA_MUSEUM_1F_RECEPTIONIST_1
 	const OBSCURA_MUSEUM_1F_ROCKY
 	const OBSCURA_MUSEUM_1F_SNARE_NPC
+	const OBSCURA_MUSEUM_1F_NPC1
+	const OBSCURA_MUSEUM_1F_NPC2
 	
 ObscuraMuseum1FTrigger0:
 ObscuraMuseum1FTrigger1:
@@ -75,7 +77,11 @@ ObscuraMuseum1FNPC2:
 .snare
 	checkevent EVENT_BEAT_MUSEUM_GRUNT_5
 	iftrue .beat
-	jumptextfaceplayer ObscuraMuseum1FNPC2Text2
+	opentext
+	writetext ObscuraMuseum1FNPC2Text2
+	waitbutton
+	closetext
+	spriteface OBSCURA_MUSEUM_1F_NPC2, UP
 .beat
 	jumptextfaceplayer ObscuraMuseum1FNPC2Text3
 
@@ -102,7 +108,7 @@ ObscuraMuseum1FNPC2Text2:
 	done
 	
 ObscuraMuseum1FNPC2Text3:
-	text "That jerk was"
+	text "This jerk was"
 	line "trying to take my"
 	cont "#MON!"
 	
@@ -172,8 +178,8 @@ ObscuraMuseum1FSnareNPCText:
 	done
 	
 ObscuraMuseum1FRockyText1:
-	text "You guys are all"
-	line "talk."
+	text "???: You guys are"
+	line "all talk."
 	
 	para "You think you can"
 	line "just come in here"
@@ -186,9 +192,7 @@ ObscuraMuseum1FRockyText1:
 ObscuraMuseum1FRockyText2:
 	text "And who are you?"
 	
-	para "…"
-	
-	para "<PLAYER>, huh?"
+	para "…<WAIT_L><PLAYER>, huh?"
 	
 	para "You're here to"
 	line "challenge the"
@@ -210,9 +214,10 @@ ObscuraMuseum1FRockyText2:
 	para "It's ROCKFORD,"
 	line "got it!?"
 	
-	para "ROCKFORD!"
+	para "Not ROCKY,<WAIT_S>"
+	line "ROCKFORD!"
 	
-	para "…"
+	para "…<WAIT_S>sigh…"
 	
 	para "Well anyway, you"
 	line "seem like you can"
@@ -280,8 +285,8 @@ ObscuraMuseum1FSnare2:
 	line "some kinda stone"
 	cont "or something."
 	
-	para "Not sure what that's"
-	line "all about."
+	para "Not sure what"
+	line "that's all about."
 	done
 
 .BeatenText:
@@ -292,15 +297,16 @@ ObscuraMuseum1FSnare2:
 ObscuraMuseum1FSnare3:
 	generictrainer GRUNTM, MUSEUM_GRUNTM_3, EVENT_BEAT_MUSEUM_GRUNT_3, .SeenText, .BeatenText
 
-	text "Well?<WAIT_S>"
-	line "Go on."
+	text "Well?<WAIT_S> Go on,"
+	line "then."
 	done
 
 .SeenText:
 	text "You aren't getting"
-	line "to the second floor."
+	line "up to the second"
+	cont "floor."
 	
-	para "Sorry about that."
+	para "Sorry about that!"
 	done
 
 .BeatenText:
@@ -310,8 +316,8 @@ ObscuraMuseum1FSnare3:
 ObscuraMuseum1FSnare4:
 	generictrainer GRUNTF, MUSEUM_GRUNTF_1, EVENT_BEAT_MUSEUM_GRUNT_4, .SeenText, .BeatenText
 
-	text "Ok, so you weren't"
-	line "sneaking by."
+	text "Ok, ok. So you"
+	line "weren't sneaking."
 	
 	para "Got it."
 	done

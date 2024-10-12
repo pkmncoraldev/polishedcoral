@@ -40,14 +40,16 @@ ObscuraMuseum2F_MapScriptHeader:
 	signpost  6,  2, SIGNPOST_IFSET, ObscuraMuseumGymDoor
 	signpost  6,  3, SIGNPOST_IFSET, ObscuraMuseumGymDoor
 
-	db 2 ; object events
+	db 3 ; object events
 	person_event SPRITE_SNARE,  8,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum2FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM
-	person_event SPRITE_SNARE,  7, 15, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum2FSnare2, EVENT_SNARE_GONE_FROM_MUSEUM
+	person_event SPRITE_SNARE,  7, 14, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, ObscuraMuseum2FSnare2, EVENT_SNARE_GONE_FROM_MUSEUM
+	person_event SPRITE_SNARE_GIRL, 12, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FSnareNPC, EVENT_SNARE_GONE_FROM_MUSEUM
 	
 	
 	const_def 1 ; object constants
 	const OBSCURA_MUSEUM_2F_SNARE_1
 	const OBSCURA_MUSEUM_2F_SNARE_2
+	const OBSCURA_MUSEUM_2F_SNARE_NPC
 	
 ObscuraMuseum2FCallback:
 	checkevent EVENT_SNARE_AT_MUSEUM
@@ -56,32 +58,73 @@ ObscuraMuseum2FCallback:
 .end
 	return
 	
+ObscuraMuseum2FSnareNPC:
+	faceplayer
+	opentext
+	writetext ObscuraMuseum2FSnareNPCText
+	waitbutton
+	closetext
+	spriteface OBSCURA_MUSEUM_2F_SNARE_NPC, UP
+	end
+	
+ObscuraMuseum2FSnareNPCText:
+	text "Fight you?"
+	
+	para "No way.<WAIT_S> I'm just"
+	line "enjoying a drink"
+	cont "from the vending"
+	cont "machine."
+	done
+	
 ObscuraMuseum2FSnare1:
 	generictrainer GRUNTM, MUSEUM_GRUNTM_4, EVENT_BEAT_MUSEUM_GRUNT_6, .SeenText, .BeatenText
 
-	text "TEXT 1"
+	text "You won't get"
+	line "much further."
+	
+	para "I'm sure of it."
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Well, you made"
+	line "it this far."
+	
+	para "But that's it!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Oh well."
 	done
 	
 ObscuraMuseum2FSnare2:
 	generictrainer GRUNTM, MUSEUM_GRUNTM_5, EVENT_BEAT_MUSEUM_GRUNT_7, .SeenText, .BeatenText
 
-	text "TEXT 1"
+	text "I've been reading"
+	line "these fossil"
+	cont "facts."
+	
+	para "Interesting stuff."
+	
+	para "…<WAIT_M>I mean…"
+	
+	para "You'll never stop"
+	line "TEAM SNARE!"
+	
+	para "MUAH HA HA!"
+	
+	para "Yeah."
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "There's tons of"
+	line "cool stuff here."
+	
+	para "Why aren't we"
+	line "taking more of it?"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Not cool!"
 	done
 	
 ObscuraMuseumGymDoor:

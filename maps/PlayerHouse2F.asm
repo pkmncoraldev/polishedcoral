@@ -415,7 +415,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_MET_POLLY
 	setflag ENGINE_MET_LEILANI
 	setflag ENGINE_MET_ROCKY
-	setflag ENGINE_READ_CLAIR_JOURNAL
+	setflag ENGINE_MET_DARCY
 	domaptrigger FLICKER_STATION, 1
 .hms
 	writetext PlayerHouseDebugText4

@@ -13,7 +13,7 @@ TrainerPicPointers::
 	dba PollyPic
 	dba LeilaniPic
 	dba RockyPic
-	dba ClairPic
+	dba DarcyPic
 	dba WillPic
 	dba KogaPic
 	dba BrunoPic

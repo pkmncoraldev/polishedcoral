@@ -245,7 +245,7 @@ EngineFlags: ; 80462
 	engine_flag wMetGymLeaderFlags, 4  ; polly
 	engine_flag wMetGymLeaderFlags, 5  ; leilani
 	engine_flag wMetGymLeaderFlags, 6  ; rocky
-	engine_flag wMetGymLeaderFlags, 7  ; clair
+	engine_flag wMetGymLeaderFlags, 7  ; darcy
 	
 	engine_flag wSnareFlags, 0	; starglow
 	engine_flag wSnareFlags, 1	; sunbeam

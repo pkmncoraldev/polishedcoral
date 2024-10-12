@@ -68,12 +68,12 @@ ObscuraMuseum2FSnareNPC:
 	end
 	
 ObscuraMuseum2FSnareNPCText:
-	text "Fight you?"
+	text "Fight you?<WAIT_S>"
+	line "No way."
 	
-	para "No way.<WAIT_S> I'm just"
-	line "enjoying a drink"
-	cont "from the vending"
-	cont "machine."
+	para "I'm just enjoying"
+	line "a drink from the"
+	cont "vending machine."
 	done
 	
 ObscuraMuseum2FSnare1:

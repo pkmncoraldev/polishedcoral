@@ -42,7 +42,7 @@ PLAYER_F EQU __enum__
 
 	trainerclass ROCKY
 
-	trainerclass CLAIR
+	trainerclass DARCY
 
 	trainerclass WILL_OLD
 

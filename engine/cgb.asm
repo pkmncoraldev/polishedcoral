@@ -1004,7 +1004,7 @@ _CGB_TrainerCard2: ; 9289
 	jr .skip
 	
 .all_uncovered
-	ld a, CLAIR
+	ld a, DARCY
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 .skip

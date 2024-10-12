@@ -13,7 +13,7 @@ TrainerClassNames::
 	db "LEADER@"           ; POLLY
 	db "LEADER@"           ; LEILANI
 	db "LEADER@"           ; ROCKY
-	db "LEADER@"           ; CLAIR
+	db "LEADER@"           ; DARCY
 	db "ELITE FOUR@"       ; WILL
 	db "ELITE FOUR@"       ; KOGA
 	db "ELITE FOUR@"       ; BRUNO

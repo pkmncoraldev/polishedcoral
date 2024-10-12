@@ -218,7 +218,7 @@ NUM_GOT_HM_FLAGS EQU const_value
 	const MET_POLLY
 	const MET_LEILANI
 	const MET_ROCKY
-	const CLAIR_JOURNAL ; Blackthorn Pokémon Center
+	const MET_DARCY
 NUM_GYM_LEADERS_MET EQU const_value
 
 	const_def

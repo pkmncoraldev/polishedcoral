@@ -15,7 +15,7 @@ TrainerGroups: ; 0x39999
 	dba PollyGroup
 	dba LeilaniGroup
 	dba RockyGroup
-	dba ClairGroup
+	dba DarcyGroup
 	dba WillGroup
 	dba KogaGroup
 	dba BrunoGroup

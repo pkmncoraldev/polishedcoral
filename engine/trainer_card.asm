@@ -707,10 +707,10 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	ld de, .Faces2Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	
-	eventflagcheck EVENT_MET_LEADER8
+	eventflagcheck EVENT_MET_DARCY
 	jp nz, .leader8
 .return_1
-	eventflagcheck EVENT_MET_LEADER7
+	eventflagcheck EVENT_MET_ROCKY
 	jp nz, .leader7
 .return_2
 	eventflagcheck EVENT_MET_LEILANI

@@ -6,13 +6,7 @@ BossTrainers:
 	db POLLY
 	db LEILANI
 	db ROCKY
-	db CLAIR
-	db WILL
-	db KOGA
-	db BRUNO
-	db KAREN
-	db CHAMPION
-	db TOWERTYCOON
+	db DARCY
 	db -1
 	
 SnareTrainers:

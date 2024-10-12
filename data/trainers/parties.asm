@@ -483,12 +483,12 @@ RockyGroup:
 ; ================================
 
 
-ClairGroup:
+DarcyGroup:
 ; ================================
 ; ================
 
-	; CLAIR
-	db "UNUSED@"
+	; DARCY
+	db "DARCY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

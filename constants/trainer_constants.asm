@@ -253,6 +253,7 @@ PLAYER_F EQU __enum__
 	const MUSEUM_GRUNTM_3
 	const MUSEUM_GRUNTM_4
 	const MUSEUM_GRUNTM_5
+	const MUSEUM_GRUNTM_6
 
 
 	trainerclass GRUNTF

@@ -9,8 +9,8 @@ ObscuraCity_MapScriptHeader:
 	db 4 ; warp events
 	warp_def 13, 16, 1, OBSCURA_MUSEUM_1F
 	warp_def 13, 17, 2, OBSCURA_MUSEUM_1F
-	warp_def  9, 23, 3, OBSCURA_MUSEUM_1F
-	warp_def 10, 23, 4, OBSCURA_MUSEUM_1F
+	warp_def  9, 23, 1, OBSCURA_MUSEUM_EMPLOYEE_ROOM
+	warp_def 10, 23, 2, OBSCURA_MUSEUM_EMPLOYEE_ROOM
 
 	db 0 ; coord events
 

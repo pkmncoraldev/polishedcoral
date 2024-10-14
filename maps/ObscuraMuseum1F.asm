@@ -9,8 +9,8 @@ ObscuraMuseum1F_MapScriptHeader:
 	db 5 ; warp events
 	warp_def 15,  8, 1, OBSCURA_CITY
 	warp_def 15,  9, 2, OBSCURA_CITY
-	warp_def  9, 24, 3, OBSCURA_CITY
-	warp_def 10, 24, 4, OBSCURA_CITY
+	warp_def  8, 23, 4, OBSCURA_MUSEUM_EMPLOYEE_ROOM
+	warp_def -1, -1, 4, OBSCURA_CITY
 	warp_def  0,  3, 1, OBSCURA_MUSEUM_2F
 
 	db 6 ; coord events
@@ -35,7 +35,7 @@ ObscuraMuseum1F_MapScriptHeader:
 	signpost  7,  4, SIGNPOST_JUMPTEXT, ObscuraMuseumArtifactText
 	signpost  7,  5, SIGNPOST_JUMPTEXT, ObscuraMuseumArtifactText
 	signpost  0,  2, SIGNPOST_JUMPTEXT, ObscuraMuseum1FSign
-	signpost  8, 23, SIGNPOST_JUMPTEXT, ObscuraMuseumEmployeeSign
+	signpost  8, 24, SIGNPOST_JUMPTEXT, ObscuraMuseumEmployeeSign
 
 	db 11 ; object events
 	person_event SPRITE_RECEPTIONIST, 12, 11, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FReceptionist1, -1
@@ -306,7 +306,8 @@ ObscuraMuseum1FSnare3:
 	line "up to the second"
 	cont "floor."
 	
-	para "Sorry about that!"
+	para "Not if I have a"
+	line "say in it!"
 	done
 
 .BeatenText:

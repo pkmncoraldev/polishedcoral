@@ -2365,6 +2365,15 @@ GruntMGroup:
 	db -1 ; end
 
 ; ================
+
+	; MUSEUM_GRUNTM_6
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 

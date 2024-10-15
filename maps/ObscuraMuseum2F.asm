@@ -101,7 +101,7 @@ ObscuraMuseum2FRockyText2:
 	cont "third floor!"
 	
 	para "You're gonna have"
-	line "to go back do to"
+	line "to go back down to"
 	cont "the employees only"
 	cont "room where you"
 	cont "came in."

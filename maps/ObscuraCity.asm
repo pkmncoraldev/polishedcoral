@@ -347,6 +347,8 @@ ObscuraCityDarcyText5_girl:
 	
 	
 ObscuraCityCallback:
+	callasm MusuemKeyboardAsm3
+	clearevent EVENT_MUSEUM_FAILED_TERMINAL
 	checkevent EVENT_SNARE_AT_MUSEUM
 	iftrue .skip
 	domaptrigger OBSCURA_MUSEUM_1F, $0

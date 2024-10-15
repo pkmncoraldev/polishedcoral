@@ -4,7 +4,8 @@ ObscuraMuseum1F_MapScriptHeader:
 	scene_script ObscuraMuseum1FTrigger1
 	scene_script ObscuraMuseum1FTrigger2
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, ObscuraMuseum1FCallback
 
 	db 5 ; warp events
 	warp_def 15,  8, 1, OBSCURA_CITY
@@ -62,6 +63,11 @@ ObscuraMuseum1FTrigger0:
 ObscuraMuseum1FTrigger1:
 ObscuraMuseum1FTrigger2:
 	end
+	
+ObscuraMuseum1FCallback:
+	clearevent EVENT_MUSEUM_FAILED_TERMINAL
+	callasm MusuemKeyboardAsm3
+	return
 	
 ObscuraMuseum1FNPC1:
 	checkevent EVENT_SNARE_AT_MUSEUM

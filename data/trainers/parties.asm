@@ -2374,6 +2374,24 @@ GruntMGroup:
 	db -1 ; end
 
 ; ================
+
+	; MUSEUM_GRUNTM_7		LOOPING GRUNT 1
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_GRUNTM_8		LOOPING GRUNT 3
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2473,6 +2491,15 @@ GruntFGroup:
 ; ================
 
 	; MUSEUM_GRUNTF_2
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_GRUNTF_3		LOOPING GRUNT 2
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party

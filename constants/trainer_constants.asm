@@ -254,6 +254,8 @@ PLAYER_F EQU __enum__
 	const MUSEUM_GRUNTM_4
 	const MUSEUM_GRUNTM_5
 	const MUSEUM_GRUNTM_6
+	const MUSEUM_GRUNTM_7
+	const MUSEUM_GRUNTM_8
 
 
 	trainerclass GRUNTF
@@ -267,6 +269,7 @@ PLAYER_F EQU __enum__
 	const INN_GRUNTF_3
 	const MUSEUM_GRUNTF_1
 	const MUSEUM_GRUNTF_2
+	const MUSEUM_GRUNTF_3
 
 
 	trainerclass KAGE

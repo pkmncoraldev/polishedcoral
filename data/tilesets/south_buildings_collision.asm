@@ -130,7 +130,7 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 81
 	tilecoll WALL, WALL, WALL, WALL ; 82
 	tilecoll WALL, VENDING_MACHINE, FLOOR, FLOOR ; 83
-	tilecoll TRASH_CAN, WALL, FLOOR, FLOOR ; 84
+	tilecoll TRASH_CAN, FLOOR, FLOOR, FLOOR ; 84
 	tilecoll WALL, WALL, WALL, WALL ; 85
 	tilecoll WALL, WALL, WALL, WALL ; 86
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 87

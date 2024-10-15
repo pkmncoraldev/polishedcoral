@@ -113,7 +113,13 @@ RadiantTownshipErika:
 	disappear RADIANT_TOWNSHIP_ERIKA
 	playsound SFX_ENTER_DOOR
 	clearevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
+	callasm RadiantErikaClearLostGirlsAsm
 	end
+	
+RadiantErikaClearLostGirlsAsm:
+	xor a
+	ld [wLostGirls], a
+	ret
 
 RadiantTownshipErikaText:
 	text "Oh, <WAIT_S><PLAYER>!"

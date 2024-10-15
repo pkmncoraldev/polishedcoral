@@ -27,12 +27,210 @@ ObscuraMuseumEmployeeRoom_MapScriptHeader:
 	signpost  8,  2, SIGNPOST_UP, ObscuraMuseumKeyboard3
 	signpost  8,  8, SIGNPOST_UP, ObscuraMuseumKeyboard4
 
-	db 1 ; object events
+	db 7 ; object events
 	person_event SPRITE_GENERAL_VARIABLE_1, -5, -5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	person_event SPRITE_RECEPTIONIST,  1,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC1, EVENT_SNARE_GONE_FROM_MUSEUM
+	person_event SPRITE_SCIENTIST,  9, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC2, -1
+	person_event SPRITE_SCIENTIST_F,  3,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC3, -1
+	person_event SPRITE_SCIENTIST,  3, 11, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC4, -1
+	person_event SPRITE_SCIENTIST_F, 11,  0, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC5, -1
+	person_event SPRITE_SCIENTIST,  5,  6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC6, -1
 
 
 	const_def 1 ; object constants
 	const OBSCURA_MUSEUM_EMPLOYEE_ROOM_SNARE
+
+ObscuraMuseumEmployeeRoomNPC1:
+	checkevent EVENT_MUSEUM_CAN_LOWER_BARRIER
+	iftrue .barrier
+	checkevent EVENT_SNARE_AT_MUSEUM
+	iftrue .snare
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC1Text1
+.barrier
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC1Text3
+.snare
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC1Text2
+	
+ObscuraMuseumEmployeeRoomNPC1Text1:
+	text "TEXT 1"
+	done
+	
+ObscuraMuseumEmployeeRoomNPC1Text2:
+	text "Those people just"
+	line "barged in and"
+	cont "started giving"
+	cont "orders!"
+	
+	para "What do they want?"
+	done
+	
+ObscuraMuseumEmployeeRoomNPC1Text3:
+	text "Secret code?"
+	
+	para "It's six digits."
+	
+	para "I don't know"
+	line "anything else!"
+	
+	para "P-<WAIT_S>please leave"
+	line "me alone!"
+	done
+	
+ObscuraMuseumEmployeeRoomNPC2:
+	checkevent EVENT_MUSEUM_CAN_LOWER_BARRIER
+	iftrue .barrier
+	checkevent EVENT_SNARE_AT_MUSEUM
+	iftrue .snare
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC2Text1
+.barrier
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC2Text3
+.snare
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC2Text2
+	
+ObscuraMuseumEmployeeRoomNPC2Text1:
+	text "TEXT 1"
+	done
+	
+ObscuraMuseumEmployeeRoomNPC2Text2:
+	text "What a pain."
+	
+	para "We're in the middle"
+	line "of important"
+	cont "research."
+	done
+	
+ObscuraMuseumEmployeeRoomNPC2Text3:
+	text "Code for the"
+	line "barrier?"
+	
+	para "All I know is the"
+	line "first and last"
+	cont "digits are the"
+	cont "same."
+	done
+	
+ObscuraMuseumEmployeeRoomNPC3:
+	checkevent EVENT_MUSEUM_CAN_LOWER_BARRIER
+	iftrue .barrier
+	checkevent EVENT_SNARE_AT_MUSEUM
+	iftrue .snare
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC3Text1
+.barrier
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC3Text3
+.snare
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC3Text2
+	
+ObscuraMuseumEmployeeRoomNPC3Text1:
+	text "TEXT 1"
+	done
+	
+ObscuraMuseumEmployeeRoomNPC3Text2:
+	text "TEAM SNARE?"
+	
+	para "Who do they think"
+	line "they are?"
+	done
+	
+ObscuraMuseumEmployeeRoomNPC3Text3:
+	text "The secret code.<WAIT_S>"
+	line "Right!"
+	
+	para "All I can tell you"
+	line "is 1 comes between"
+	cont "3 and 4."
+	done
+	
+ObscuraMuseumEmployeeRoomNPC4:
+	checkevent EVENT_MUSEUM_CAN_LOWER_BARRIER
+	iftrue .barrier
+	checkevent EVENT_SNARE_AT_MUSEUM
+	iftrue .snare
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC4Text1
+.barrier
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC4Text3
+.snare
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC4Text2
+	
+	
+ObscuraMuseumEmployeeRoomNPC4Text1:
+	text "TEXT 1"
+	done
+	
+ObscuraMuseumEmployeeRoomNPC4Text2:
+	text "Please!<WAIT_S>"
+	line "Help us!"
+	done
+	
+ObscuraMuseumEmployeeRoomNPC4Text3:
+	text "Code?"
+	
+	para "3 comes fourth in"
+	line "the sequence."
+	
+	para "That's all I know!"
+	done
+	
+ObscuraMuseumEmployeeRoomNPC5:
+	checkevent EVENT_MUSEUM_CAN_LOWER_BARRIER
+	iftrue .barrier
+	checkevent EVENT_SNARE_AT_MUSEUM
+	iftrue .snare
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC5Text1
+.barrier
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC5Text3
+.snare
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC5Text2
+	
+ObscuraMuseumEmployeeRoomNPC5Text1:
+	text "TEXT 1"
+	done
+	
+ObscuraMuseumEmployeeRoomNPC5Text2:
+	text "There's a lot here"
+	line "worth tons of"
+	cont "money!"
+	
+	para "They can't get"
+	line "away with this!"
+	done
+	
+ObscuraMuseumEmployeeRoomNPC5Text3:
+	text "I don't know"
+	line "the code."
+	
+	para "All I know is that"
+	line "2 and 4 show up"
+	cont "twice each."
+	done
+
+ObscuraMuseumEmployeeRoomNPC6:
+	checkevent EVENT_MUSEUM_CAN_LOWER_BARRIER
+	iftrue .barrier
+	checkevent EVENT_SNARE_AT_MUSEUM
+	iftrue .snare
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC6Text1
+.barrier
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC6Text3
+.snare
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomNPC6Text2
+
+ObscuraMuseumEmployeeRoomNPC6Text1:
+	text "TEXT 1"
+	done
+	
+ObscuraMuseumEmployeeRoomNPC6Text2:
+	text "You aren't with"
+	line "them, are you?"
+	done
+	
+ObscuraMuseumEmployeeRoomNPC6Text3:
+	text "You need the"
+	line "barrier code?"
+	
+	para "All I know is 2"
+	line "isn't last in the"
+	cont "sequence."
+	done
 
 ObscuraMuseumComputer1:
 	checkevent EVENT_MUSEUM_CAN_LOWER_BARRIER

@@ -376,7 +376,8 @@ ObscuraMuseum3FSign:
 	done
 	
 ObscuraMuseumEmployeeSign:
-	text "EMPLOYEE EXIT"
+	text "Employees"
+	line "only."
 	done
 	
 ObscuraMuseumFossilText:

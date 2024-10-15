@@ -95,7 +95,6 @@ ObscuraMuseum2FRocky:
 	jumptextfaceplayer ObscuraMuseum2FRockyText2
 	
 ObscuraMuseum2FRockyText1:
-ObscuraMuseum2FRockyText2:
 	text "Darn!<WAIT_S> They put up"
 	line "the barrier to the"
 	cont "third floor!"
@@ -109,6 +108,27 @@ ObscuraMuseum2FRockyText2:
 	para "You can drop the"
 	line "barrier from in"
 	cont "there."
+	
+	para "You'll need the"
+	line "six digit code to"
+	cont "drop the barrier."
+	
+	para "Ask the people in"
+	line "the employees only"
+	cont "room for the code."
+	
+	para "Hurry!<WAIT_S> Time is"
+	line "running out!"
+	done
+	
+ObscuraMuseum2FRockyText2:
+	text "You'll need the"
+	line "six digit code to"
+	cont "drop the barrier."
+	
+	para "Ask the people in"
+	line "the employees only"
+	cont "room for the code."
 	
 	para "Hurry!<WAIT_S> Time is"
 	line "running out!"

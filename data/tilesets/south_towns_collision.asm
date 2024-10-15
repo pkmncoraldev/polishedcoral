@@ -126,8 +126,8 @@
 	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; 7d
 	tilecoll FLOOR, FLOOR, STAIRS, STAIRS ; 7e
 	tilecoll STAIRS, STAIRS, FLOOR, FLOOR ; 7f
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 80
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 81
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 80
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 81
 	tilecoll WALL, WALL, WALL, DOOR ; 82
 	tilecoll WALL, WALL, WALL, WALL ; 83
 	tilecoll FLOOR, UP_WALL, FLOOR, FLOOR ; 84

@@ -12,7 +12,7 @@ ObscuraMuseum2F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 32 ; bg events
+	db 33 ; bg events
 	signpost  5, 10, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 	signpost  5, 11, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 	signpost  5, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
@@ -45,6 +45,7 @@ ObscuraMuseum2F_MapScriptHeader:
 	signpost  6,  3, SIGNPOST_IFSET, ObscuraMuseumGymDoor
 	signpost  8, 18, SIGNPOST_IFSET, ObscuraMuseumBarrier
 	signpost  8, 19, SIGNPOST_IFSET, ObscuraMuseumBarrier
+	bg_event 22,  8, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_MUSEUM_2F_HIDDEN_BOTTLE_CAP
 
 	db 5 ; object events
 	person_event SPRITE_SNARE,  5,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, ObscuraMuseum2FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM

@@ -22,7 +22,7 @@ ObscuraMuseum1F_MapScriptHeader:
 	coord_event  9,  4, 2, ObscuraMuseum1FRockyScript2
 	coord_event  9,  5, 2, ObscuraMuseum1FRockyScript3
 
-	db 14 ; bg events
+	db 15 ; bg events
 	signpost  1, 10, SIGNPOST_UP, ObscuraMuseumBooks
 	signpost  1, 11, SIGNPOST_UP, ObscuraMuseumBooks
 	signpost  1, 12, SIGNPOST_UP, ObscuraMuseumBooks
@@ -36,7 +36,8 @@ ObscuraMuseum1F_MapScriptHeader:
 	signpost  7,  4, SIGNPOST_JUMPTEXT, ObscuraMuseumArtifactText
 	signpost  7,  5, SIGNPOST_JUMPTEXT, ObscuraMuseumArtifactText
 	signpost  0,  2, SIGNPOST_JUMPTEXT, ObscuraMuseum1FSign
-	signpost  8, 24, SIGNPOST_JUMPTEXT, ObscuraMuseumEmployeeSign
+	signpost  8, 22, SIGNPOST_JUMPTEXT, ObscuraMuseumEmployeeSign
+	bg_event 20,  9, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_MUSEUM_1F_HIDDEN_BOTTLE_CAP
 
 	db 11 ; object events
 	person_event SPRITE_RECEPTIONIST, 12, 11, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FReceptionist1, -1

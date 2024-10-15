@@ -12,6 +12,7 @@ Marts: ; 160a9
 	dw LusterMallElectronicsTM
 	dw LusterMallElectronics
 	dw LusterMallCoffee
+	dw LusterMallCoffee2
 	dw LusterMallAntique
 	dw LusterMallHerb
 	dw LusterMallStone
@@ -205,6 +206,18 @@ LusterMallFurniture:
 	
 LusterMallCoffee:
 	db 6 ; # items
+	db FRESH_WATER
+	db BERRY_JUICE
+	db SODA_POP
+	db LEMONADE
+	db RAGECANDYBAR
+	db BIG_MALASADA
+	db SWEET_HONEY
+	db -1
+	
+LusterMallCoffee2:
+	db 7 ; # items
+	db BLOSSOM_TEA
 	db FRESH_WATER
 	db BERRY_JUICE
 	db SODA_POP

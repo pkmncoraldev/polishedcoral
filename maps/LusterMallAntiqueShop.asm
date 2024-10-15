@@ -21,8 +21,8 @@ LusterMallAntiqueShop_MapScriptHeader:
 	signpost  0,  4, SIGNPOST_JUMPTEXT, LusterMallAntiqueShopMapText
 	signpost  1,  6, SIGNPOST_UP, LusterMallAntiqueShopBookShelf
 	signpost  1,  3, SIGNPOST_UP, LusterMallAntiqueShopIncense
-	signpost  4,  7, SIGNPOST_JUMPTEXT, LusterMallAntiqueShopRadioText
-	signpost  5,  7, SIGNPOST_JUMPTEXT, LusterMallAntiqueShopPlaqueText
+	signpost  5,  7, SIGNPOST_JUMPTEXT, LusterMallAntiqueShopRadioText
+	signpost -1, -1, SIGNPOST_JUMPTEXT, LusterMallAntiqueShopPlaqueText
 
 	db 2 ; object events
 	object_event  1,  6, SPRITE_SCIENTIST_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_COMMAND, pokemart, MARTTYPE_ANTIQUE, MART_LUSTER_MALL_ANTIQUE, -1

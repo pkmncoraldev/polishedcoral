@@ -5,7 +5,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 04
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 05
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 06
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 07
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 07
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 08
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 09
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0a

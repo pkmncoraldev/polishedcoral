@@ -128,8 +128,8 @@ DuskTurnpikeTrigger1:
 	iftrue .dusk
 	jump .end
 .nite
-	changeblock $16, $14, $f4
-	changeblock $16, $16, $f8
+	changeblock $18, $14, $f4
+	changeblock $18, $16, $f8
 	setflag ENGINE_STREETLIGHTS2
 .dusk
 ;	changeblock $22, $0a, $5b
@@ -220,8 +220,8 @@ DuskTurnpikeCallback:
 	iftrue .dusk
 	checktime 1<<NITE
 	iffalse .notnite
-	changeblock $16, $14, $f4
-	changeblock $16, $16, $f8
+	changeblock $18, $14, $f4
+	changeblock $18, $16, $f8
 	setflag ENGINE_STREETLIGHTS2
 .dusk
 ;	changeblock $22, $0a, $5b

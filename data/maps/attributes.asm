@@ -405,10 +405,10 @@ ENDM
 	connection south, DesertWasteland9, DESERT_WASTELAND_9, 4
 	
 	map_attributes Route21, ROUTE_21, 0, NORTH
-	connection north, DuskTurnpike, DUSK_TURNPIKE, 0
+	connection north, DuskTurnpike, DUSK_TURNPIKE, -1
 	
 	map_attributes DuskTurnpike, DUSK_TURNPIKE, $30, SOUTH | EAST
-	connection south, Route21, ROUTE_21, 0
+	connection south, Route21, ROUTE_21, 1
 	connection east, Route22, ROUTE_22, 4
 	
 	map_attributes Route22, ROUTE_22, $30, WEST | EAST

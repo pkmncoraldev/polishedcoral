@@ -278,16 +278,16 @@ ObscuraMuseumKeyboardDoneFailedText:
 	done
 	
 MusuemKeyboardAsm:
-	ld a, [wLostGirls]
+	ld a, [wMuseumTerminalInputs]
 	inc a
-	ld [wLostGirls], a
+	ld [wMuseumTerminalInputs], a
 MusuemKeyboardAsm2:
 	ld [wScriptVar], a
 	ret
 	
 MusuemKeyboardAsm3:
 	xor a
-	ld [wLostGirls], a
+	ld [wMuseumTerminalInputs], a
 	ret
 	
 MuseumSnareAppearAsm:

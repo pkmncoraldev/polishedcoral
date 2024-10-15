@@ -906,6 +906,7 @@ wMomSavingMoney:: ds 1
 
 wPollenSteps::	ds 2
 
+wMuseumTerminalInputs::
 wLostGirls:: ds 1
 
 wCoins:: ds 2

@@ -22,7 +22,7 @@ ObscuraMuseum1F_MapScriptHeader:
 	coord_event  9,  4, 2, ObscuraMuseum1FRockyScript2
 	coord_event  9,  5, 2, ObscuraMuseum1FRockyScript3
 
-	db 15 ; bg events
+	db 17 ; bg events
 	signpost  1, 10, SIGNPOST_UP, ObscuraMuseumBooks
 	signpost  1, 11, SIGNPOST_UP, ObscuraMuseumBooks
 	signpost  1, 12, SIGNPOST_UP, ObscuraMuseumBooks
@@ -38,8 +38,10 @@ ObscuraMuseum1F_MapScriptHeader:
 	signpost  0,  2, SIGNPOST_JUMPTEXT, ObscuraMuseum1FSign
 	signpost  8, 22, SIGNPOST_JUMPTEXT, ObscuraMuseumEmployeeSign
 	bg_event 20,  9, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_MUSEUM_1F_HIDDEN_BOTTLE_CAP
+	signpost 16,  8, SIGNPOST_IFSET, ObscuraMuseumLockedDoor
+	signpost 16,  9, SIGNPOST_IFSET, ObscuraMuseumLockedDoor
 
-	db 11 ; object events
+	db 12 ; object events
 	person_event SPRITE_RECEPTIONIST, 12, 11, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FReceptionist1, -1
 	person_event SPRITE_ROCKY,  3,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FRockyScript, EVENT_MUSEUM_1F_ROCKY_SCENE
 	person_event SPRITE_SNARE_GIRL,  3,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MUSEUM_1F_ROCKY_SCENE
@@ -48,9 +50,10 @@ ObscuraMuseum1F_MapScriptHeader:
 	object_event  2, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, BAYLEEF, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FBayleef, -1
 	person_event SPRITE_SNARE,  7, 13, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE,  6, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, ObscuraMuseum1FSnare2, EVENT_SNARE_GONE_FROM_MUSEUM
-	person_event SPRITE_SNARE,  1,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare3, EVENT_SNARE_GONE_FROM_MUSEUM
+	person_event SPRITE_SNARE,  1,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare3, EVENT_MUSEUM_1F_SNARE_SWAP_2
 	person_event SPRITE_SNARE_GIRL,  6,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, ObscuraMuseum1FSnare4, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE_GIRL, 12,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 0, ObscuraMuseum1FSnare5, EVENT_SNARE_GONE_FROM_MUSEUM
+	person_event SPRITE_SNARE,  1,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare3_2, EVENT_MUSEUM_1F_SNARE_SWAP
 	
 	
 	const_def 1 ; object constants
@@ -66,9 +69,22 @@ ObscuraMuseum1FTrigger2:
 	end
 	
 ObscuraMuseum1FCallback:
+	checkevent EVENT_SNARE_AT_MUSEUM
+	iffalse .skip
+	changeblock $8, $e, $93
+.skip
 	clearevent EVENT_MUSEUM_FAILED_TERMINAL
 	callasm MusuemKeyboardAsm3
 	return
+	
+ObscuraMuseumLockedDoor:
+	dw EVENT_SNARE_AT_MUSEUM
+	jumptext ObscuraMuseumLockedDoorText
+	
+ObscuraMuseumLockedDoorText:
+	text "It's blocked from"
+	line "the other side."
+	done
 	
 ObscuraMuseum1FNPC1:
 	checkevent EVENT_SNARE_AT_MUSEUM
@@ -315,6 +331,27 @@ ObscuraMuseum1FSnare3:
 	
 	para "Not if I have a"
 	line "say in it!"
+	done
+
+.BeatenText:
+	text "I guess you are!"
+	done
+	
+ObscuraMuseum1FSnare3_2:
+	generictrainer GRUNTM, MUSEUM_GRUNTM_3, EVENT_BEAT_MUSEUM_GRUNT_3, .SeenText, .BeatenText
+
+	text "Well?<WAIT_S> Go on,"
+	line "then."
+	done
+
+.SeenText:
+	text "How did you get"
+	line "past me to the"
+	cont "second floor."
+	
+	para "Well you're not"
+	line "getting back down"
+	cont "here then!"
 	done
 
 .BeatenText:

@@ -1219,6 +1219,12 @@ LoadMapPals::
 	ld a, [wMapGroup]
 	cp GROUP_OBSCURA_MUSEUM_3F
 	jr nz, .computer
+	ld a, [wMapNumber]
+	cp MAP_OBSCURA_MUSEUM_2F
+	jr z, .standee
+	cp MAP_OBSCURA_MUSEUM_3F
+	jr nz, .computer
+.museum
 	ld hl, MapObjectPalsMuseum
 	ld a, [wPlayerPalette]
 	cp 4
@@ -1231,6 +1237,13 @@ LoadMapPals::
 	ld de, wUnknOBPals + 5 palettes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+.standee
+	ld a, 1
+	ld bc, 1 palettes
+	ld hl, MapObjectPalsMuseum
+	call AddNTimes
+	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 	
 .computer

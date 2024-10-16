@@ -214,6 +214,7 @@ SpriteHeaders:
 	overworld_sprite ChefSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite RainbowSilverWingSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite ArtifactsSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite MuseumStandeeSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

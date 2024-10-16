@@ -177,6 +177,7 @@ ClerkSpriteGFX::               INCBIN "gfx/sprites/clerk.2bpp.lz"
 ReceptionistSpriteGFX::        INCBIN "gfx/sprites/receptionist.2bpp.lz"
 LinkReceptionistSpriteGFX::    INCBIN "gfx/sprites/link_receptionist.2bpp.lz"
 SwimmerGirlLandSpriteGFX::     INCBIN "gfx/sprites/swimmer_f_land.2bpp.lz"
+MuseumStandeeSpriteGFX::       INCBIN "gfx/sprites/museum_standee.2bpp.lz"
 
 
 SECTION "Overworld Sprites 6", ROMX

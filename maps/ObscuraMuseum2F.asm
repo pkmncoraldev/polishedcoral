@@ -5,54 +5,62 @@ ObscuraMuseum2F_MapScriptHeader:
 	callback MAPCALLBACK_TILES, ObscuraMuseum2FCallback
 
 	db 4 ; warp events
-	warp_def  4,  7, 5, OBSCURA_MUSEUM_1F
-	warp_def  6,  2, 1, OBSCURA_GYM
-	warp_def  6,  3, 2, OBSCURA_GYM
-	warp_def  6, 19, 1, OBSCURA_MUSEUM_3F
+	warp_def  4,  9, 5, OBSCURA_MUSEUM_1F
+	warp_def  6,  4, 1, OBSCURA_GYM
+	warp_def  6,  5, 2, OBSCURA_GYM
+	warp_def  6, 21, 1, OBSCURA_MUSEUM_3F
 
 	db 0 ; coord events
 
-	db 33 ; bg events
-	signpost  5, 10, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost  5, 11, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	db 37 ; bg events
+	signpost  5, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 	signpost  5, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost 12,  6, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost 12,  7, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost 12, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost 12, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost 13, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost  8, 14, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost  8, 15, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost  9, 14, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost  9, 15, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost  8,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
-	signpost  8,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
+	signpost  5, 15, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost 12,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost 12,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost 12, 14, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost 12, 15, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost 13, 15, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost  8, 16, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost  8, 17, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost  9, 16, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost  9, 17, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 	signpost  8, 10, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
 	signpost  8, 11, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
-	signpost  9,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
-	signpost  9,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
+	signpost  8, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
+	signpost  8, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
+	signpost  9, 10, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
 	signpost  9, 11, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
-	signpost 12,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
-	signpost 12,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
+	signpost  9, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
 	signpost 12, 10, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
 	signpost 12, 11, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
-	signpost  5, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilFactText
-	signpost  9, 10, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodFactText
-	signpost  4,  6, SIGNPOST_JUMPTEXT, ObscuraMuseum2FSign
-	signpost  6, 18, SIGNPOST_JUMPTEXT, ObscuraMuseum2FSign
-	signpost  7,  4, SIGNPOST_JUMPTEXT, ObscuraMuseumGymSign
-	signpost  6,  2, SIGNPOST_IFSET, ObscuraMuseumGymDoor
-	signpost  6,  3, SIGNPOST_IFSET, ObscuraMuseumGymDoor
-	signpost  8, 18, SIGNPOST_IFSET, ObscuraMuseumBarrier
-	signpost  8, 19, SIGNPOST_IFSET, ObscuraMuseumBarrier
-	bg_event 22,  8, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_MUSEUM_2F_HIDDEN_BOTTLE_CAP
+	signpost 12, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
+	signpost 12, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
+	signpost  5, 14, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilFactText
+	signpost  9, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodFactText
+	signpost  4,  8, SIGNPOST_JUMPTEXT, ObscuraMuseum2FSign
+	signpost  6, 20, SIGNPOST_JUMPTEXT, ObscuraMuseum2FSign
+	signpost  7,  6, SIGNPOST_JUMPTEXT, ObscuraMuseumGymSign
+	signpost  6,  4, SIGNPOST_IFSET, ObscuraMuseumGymDoor
+	signpost  6,  5, SIGNPOST_IFSET, ObscuraMuseumGymDoor
+	signpost  8, 20, SIGNPOST_IFSET, ObscuraMuseumBarrier
+	signpost  8, 21, SIGNPOST_IFSET, ObscuraMuseumBarrier
+	bg_event 24,  8, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_MUSEUM_2F_HIDDEN_BOTTLE_CAP
+	signpost  7,  1, SIGNPOST_UP, ObscuraMuseumSudowoodo1
+	signpost  7,  2, SIGNPOST_UP, ObscuraMuseumSudowoodo1
+	signpost  7,  3, SIGNPOST_UP, ObscuraMuseumSudowoodo1
+	signpost  8,  2, SIGNPOST_DOWN, ObscuraMuseumSudowoodo2
 
-	db 5 ; object events
-	person_event SPRITE_SNARE,  5,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, ObscuraMuseum2FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM
-	person_event SPRITE_SNARE,  7, 14, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, ObscuraMuseum2FSnare2, EVENT_SNARE_GONE_FROM_MUSEUM
-	person_event SPRITE_SNARE,  9,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, ObscuraMuseum2FSnare3, EVENT_MUSEUM_SNARE_GUY_GONE
-	person_event SPRITE_ROCKY,  9, 19, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FRocky, EVENT_MUSEUM_2F_ROCKY_GONE
-	person_event SPRITE_SNARE_GIRL, 12, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FSnareNPC, EVENT_SNARE_GONE_FROM_MUSEUM
+	db 9 ; object events
+	person_event SPRITE_SNARE,  5, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, ObscuraMuseum2FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM
+	person_event SPRITE_SNARE,  7, 16, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, ObscuraMuseum2FSnare2, EVENT_SNARE_GONE_FROM_MUSEUM
+	person_event SPRITE_SNARE,  9,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, ObscuraMuseum2FSnare3, EVENT_MUSEUM_SNARE_GUY_GONE
+	person_event SPRITE_ROCKY,  9, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FRocky, EVENT_MUSEUM_2F_ROCKY_GONE
+	person_event SPRITE_SNARE_GIRL, 12, 23, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FSnareNPC, EVENT_SNARE_GONE_FROM_MUSEUM
+	person_event SPRITE_RAINBOW_SILVER_WING,  7,  3, SPRITEMOVEDATA_DEALER_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MUSEUM_STANDEE,  7,  2, SPRITEMOVEDATA_DEALER_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_GOLD_TROPHY,  7,  3, SPRITEMOVEDATA_DEALER_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_PICNIC,  7,  2, SPRITEMOVEDATA_DEALER_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	
 	
 	const_def 1 ; object constants
@@ -64,22 +72,42 @@ ObscuraMuseum2F_MapScriptHeader:
 ObscuraMuseum2FCallback:
 	checkevent EVENT_MUSEUM_ROPE_LEFT
 	iffalse .skip1
-	changeblock $6, $8, $75
+	changeblock $8, $8, $75
 .skip1
 	checkevent EVENT_MUSEUM_ROPE_RIGHT
 	iffalse .skip2
-	changeblock $c, $8, $75
+	changeblock $e, $8, $75
 .skip2
 	checkevent EVENT_MUSEUM_BARRIER_DOWN
 	iffalse .skip3
-	changeblock $12, $6, $8a
-	changeblock $12, $8, $8b
+	changeblock $14, $6, $8a
+	changeblock $14, $8, $8b
 .skip3
 	checkevent EVENT_SNARE_AT_MUSEUM
 	iffalse .end
-	changeblock $2, $6, $80
+	changeblock $4, $6, $80
+	clearevent EVENT_MUSEUM_1F_SNARE_SWAP
+	setevent EVENT_MUSEUM_1F_SNARE_SWAP_2 
 .end
 	return
+	
+ObscuraMuseumSudowoodo1:
+	jumptext ObscuraMuseumSudowoodo1Text
+	
+ObscuraMuseumSudowoodo1Text:
+	text "A cutout of the"
+	line "museum's mascot."
+	done
+	
+ObscuraMuseumSudowoodo2:
+	jumptext ObscuraMuseumSudowoodo2Text
+	
+ObscuraMuseumSudowoodo2Text:
+	text "You inexplicably"
+	line "feel like blocking"
+	cont "the path for no"
+	cont "good reason."
+	done	
 	
 ObscuraMuseum2FRocky:
 	checkevent EVENT_MUSEUM_2F_TALKED_TO_ROCKY
@@ -89,8 +117,8 @@ ObscuraMuseum2FRocky:
 	setevent EVENT_MUSEUM_CAN_LOWER_BARRIER
 	setevent EVENT_MUSEUM_2F_TALKED_TO_ROCKY
 	appear OBSCURA_MUSEUM_2F_SNARE_3
-	changeblock $6, $8, $4b
-	changeblock $c, $8, $75
+	changeblock $8, $8, $4b
+	changeblock $e, $8, $75
 	jumptextfaceplayer ObscuraMuseum2FRockyText1
 .talked
 	jumptextfaceplayer ObscuraMuseum2FRockyText2

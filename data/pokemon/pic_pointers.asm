@@ -467,8 +467,8 @@ PicPointers::
 	dba MienshaoBackpic
 	dba LarvestaFrontpic
 	dba LarvestaBackpic
-	dba VolcaronaFrontpic
-	dba VolcaronaBackpic
+	dbw -1, -1 ; see  VolcaronaPicPointers
+	dbw -1, -1 ; see  VolcaronaPicPointers
 	dba SylveonFrontpic
 	dba SylveonBackpic
 	dba PhantumpFrontpic

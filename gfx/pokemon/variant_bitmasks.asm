@@ -42,5 +42,8 @@ SmeargleBitmasks:  INCLUDE "gfx/pokemon/smeargle/bitmask.asm"
 CherrimBitmasks:  INCLUDE "gfx/pokemon/cherrim/bitmask.asm"
 Cherrim_SBitmasks: INCLUDE "gfx/pokemon/cherrim_s/bitmask.asm"
 
+VolcaronaBitmasks:  INCLUDE "gfx/pokemon/volcarona/bitmask.asm"
+SlitherWingBitmasks: INCLUDE "gfx/pokemon/slither_wing/bitmask.asm"
+
 MimikyuBitmasks:  INCLUDE "gfx/pokemon/mimikyu/bitmask.asm"
 Mimikyu_BBitmasks: INCLUDE "gfx/pokemon/mimikyu_b/bitmask.asm"

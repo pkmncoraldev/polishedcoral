@@ -271,3 +271,4 @@ EvolutionMoves::
 	db NO_MOVE                              ; GYARADOS_RG
 	db NO_MOVE                              ; WOOPER_P
 	db NO_MOVE                              ; CORSOLA_G
+	db NO_MOVE                              ; SLITHER_WING

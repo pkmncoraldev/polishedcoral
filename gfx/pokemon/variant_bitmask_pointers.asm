@@ -71,6 +71,10 @@ CherrimBitmasksPointers:
 	dw CherrimBitmasks
 	dw Cherrim_SBitmasks
 	
+VolcaronaBitmasksPointers:
+	dw VolcaronaBitmasks
+	dw SlitherWingBitmasks
+	
 MimikyuBitmasksPointers:
 	dw MimikyuBitmasks
 	dw Mimikyu_BBitmasks

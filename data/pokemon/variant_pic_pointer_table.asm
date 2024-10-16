@@ -15,5 +15,6 @@ VariantPicPointerTable:
 	dbba CORSOLA, CorsolaPicPointers
 	dbba SMEARGLE, SmearglePicPointers
 	dbba CHERRIM, CherrimPicPointers
+	dbba VOLCARONA, VolcaronaPicPointers
 	dbba MIMIKYU, MimikyuPicPointers
 	dbba -1,       PicPointers

@@ -42,5 +42,8 @@ SmeargleAnimationExtra:  INCLUDE "gfx/pokemon/smeargle/anim1.asm"
 CherrimAnimationExtra:  INCLUDE "gfx/pokemon/cherrim/anim1.asm"
 Cherrim_SAnimationExtra: INCLUDE "gfx/pokemon/cherrim_s/anim1.asm"
 
+VolcaronaAnimationExtra:  INCLUDE "gfx/pokemon/volcarona/anim1.asm"
+SlitherWingAnimationExtra: INCLUDE "gfx/pokemon/slither_wing/anim1.asm"
+
 MimikyuAnimationExtra:  INCLUDE "gfx/pokemon/mimikyu/anim1.asm"
 Mimikyu_BAnimationExtra: INCLUDE "gfx/pokemon/mimikyu_b/anim1.asm"

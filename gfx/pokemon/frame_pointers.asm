@@ -233,7 +233,7 @@ FramesPointers:
 	dw MienfooFrames
 	dw MienshaoFrames
 	dw LarvestaFrames
-	dw VolcaronaFrames
+	dw -1 ; see VolcaronaFramesPointers
 	dw SylveonFrames
 	dw PhantumpFrames
 	dw TrevenantFrames

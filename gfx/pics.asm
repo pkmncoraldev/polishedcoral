@@ -689,6 +689,8 @@ Wooper_PFrontpic:         INCBIN "gfx/pokemon/wooper_p/front.2bpp.lz"
 Wooper_PBackpic:          INCBIN "gfx/pokemon/wooper_p/back.2bpp.lz"
 ClodsireFrontpic:         INCBIN "gfx/pokemon/clodsire/front.2bpp.lz"
 ClodsireBackpic:          INCBIN "gfx/pokemon/clodsire/back.2bpp.lz"
+SlitherWingFrontpic:      INCBIN "gfx/pokemon/slither_wing/front.2bpp.lz"
+SlitherWingBackpic:       INCBIN "gfx/pokemon/slither_wing/back.2bpp.lz"
 EggPic:                   INCBIN "gfx/pokemon/egg/front.2bpp.lz"
 
 

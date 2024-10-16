@@ -58,6 +58,10 @@ CherrimsFrames:
 CherrimFrames:  INCLUDE "gfx/pokemon/cherrim/frames.asm"
 Cherrim_SFrames: INCLUDE "gfx/pokemon/cherrim_s/frames.asm"
 
+VolcaronasFrames:
+VolcaronaFrames:  INCLUDE "gfx/pokemon/volcarona/frames.asm"
+SlitherWingFrames: INCLUDE "gfx/pokemon/slither_wing/frames.asm"
+
 MimikyusFrames:
 MimikyuFrames:  INCLUDE "gfx/pokemon/mimikyu/frames.asm"
 Mimikyu_BFrames: INCLUDE "gfx/pokemon/mimikyu_b/frames.asm"

@@ -233,7 +233,7 @@ AnimationExtraPointers:
 	dw MienfooAnimationExtra
 	dw MienshaoAnimationExtra
 	dw LarvestaAnimationExtra
-	dw VolcaronaAnimationExtra
+	dw -1 ; see VolcaronaAnimationExtraPointers
 	dw SylveonAnimationExtra
 	dw PhantumpAnimationExtra
 	dw TrevenantAnimationExtra

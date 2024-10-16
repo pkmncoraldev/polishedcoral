@@ -233,7 +233,7 @@ BitmasksPointers:
 	dw MienfooBitmasks
 	dw MienshaoBitmasks
 	dw LarvestaBitmasks
-	dw VolcaronaBitmasks
+	dw -1 ; see VolcaronaBitmasksPointers
 	dw SylveonBitmasks
 	dw PhantumpBitmasks
 	dw TrevenantBitmasks

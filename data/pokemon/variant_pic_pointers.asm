@@ -112,6 +112,12 @@ CherrimPicPointers::
 	dba Cherrim_SFrontpic
 	dba Cherrim_SBackpic
 	
+VolcaronaPicPointers::
+	dba VolcaronaFrontpic
+	dba VolcaronaBackpic
+	dba SlitherWingFrontpic
+	dba SlitherWingBackpic
+	
 MimikyuPicPointers::
 	dba MimikyuFrontpic
 	dba MimikyuBackpic

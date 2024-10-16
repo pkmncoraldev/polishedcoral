@@ -71,6 +71,10 @@ CherrimAnimationExtraPointers:
 	dw CherrimAnimationExtra
 	dw Cherrim_SAnimationExtra
 	
+VolcaronaAnimationExtraPointers:
+	dw VolcaronaAnimationExtra
+	dw SlitherWingAnimationExtra
+	
 MimikyuAnimationExtraPointers:
 	dw MimikyuAnimationExtra
 	dw Mimikyu_BAnimationExtra

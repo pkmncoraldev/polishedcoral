@@ -58,6 +58,10 @@ CherrimAnimations:
 CherrimAnimation:  INCLUDE "gfx/pokemon/cherrim/anim0.asm"
 Cherrim_SAnimation: INCLUDE "gfx/pokemon/cherrim_s/anim0.asm"
 
+VolcaronaAnimations:
+VolcaronaAnimation:  INCLUDE "gfx/pokemon/volcarona/anim0.asm"
+SlitherWingAnimation: INCLUDE "gfx/pokemon/slither_wing/anim0.asm"
+
 MimikyuAnimations:
 MimikyuAnimation:  INCLUDE "gfx/pokemon/mimikyu/anim0.asm"
 Mimikyu_BAnimation: INCLUDE "gfx/pokemon/mimikyu_b/anim0.asm"

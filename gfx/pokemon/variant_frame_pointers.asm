@@ -71,6 +71,10 @@ CherrimFramesPointers:
 	dw CherrimFrames
 	dw Cherrim_SFrames
 	
+VolcaronaFramesPointers:
+	dw VolcaronaFrames
+	dw SlitherWingFrames
+	
 MimikyuFramesPointers:
 	dw MimikyuFrames
 	dw Mimikyu_BFrames

@@ -2521,6 +2521,7 @@ MoonlightUsers:
 	
 MorningSunUsers:
 	db ESPEON
+	db VOLCARONA
 	db -1
 	
 BlockUsers:
@@ -2562,6 +2563,7 @@ WhirlwindUsers:
 	db PIDGEOT
 	db NOIBAT
 	db NOIVERN
+	db VOLCARONA
 	db -1
 	
 FlashUsers:

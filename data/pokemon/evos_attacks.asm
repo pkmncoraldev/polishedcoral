@@ -4441,3 +4441,26 @@ Corsola_GEvosAttacks:
 	db 45, EARTH_POWER
 	db 48, FLAIL
 	db 0 ; no more level-up moves
+	
+SlitherWingEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, EMBER
+	db 1, SCARY_FACE_COTTON_SPORE_STRING_SHOT
+	db 1, ABSORB
+	db 1, GUST
+	db 1, SCREECH
+	db 1, LEECH_LIFE
+	db 1, BUG_BUZZ
+	db 1, AMNESIA
+	db 1, DOUBLE_EDGE
+	db 7, STUN_SPORE
+	db 21, STOMP
+	db 28, LOW_KICK
+	db 35, SYNTHESIS_MOONLIGHT_MORNING_SUN
+	db 49, SUPERPOWER
+	db 56, BULK_UP
+	db 63, HURRICANE
+	db 77, ROAR_WHIRLWIND
+	db 84, LEECH_LIFE
+	db 91, THRASH
+	db 0 ; no more level-up moves

@@ -275,6 +275,14 @@ EvosAttacksPointers:: ; 0x425b1
 	dw GyaradosEvosAttacks
 	dw Wooper_PEvosAttacks
 	dw Corsola_GEvosAttacks
+	dw SlitherWingEvosAttacks
+	dw SmeargleEvosAttacks
+	dw SmeargleEvosAttacks
+	dw SmeargleEvosAttacks
+	dw SmeargleEvosAttacks
+	dw SmeargleEvosAttacks
+	dw SmeargleEvosAttacks
+	dw SmeargleEvosAttacks
 	dw SmeargleEvosAttacks
 	dw CherrimEvosAttacks
 	dw MimikyuEvosAttacks

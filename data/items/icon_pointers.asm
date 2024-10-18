@@ -190,7 +190,7 @@ ItemIconPointers:
 	dba ShedShellIcon
 	dba ShellBellIcon
 	dba SootheBellIcon
-	dba WeakPolicyIcon
+	dba CoralShardIcon
 	dba WideLensIcon
 	dba WiseGlassesIcon
 	dba ZoomLensIcon

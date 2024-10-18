@@ -215,7 +215,7 @@
 	const SHED_SHELL   ; bc
 	const SHELL_BELL   ; bd
 	const SOOTHE_BELL  ; be
-	const WEAK_POLICY  ; bf - replace
+	const CORAL_SHARD  ; bf - replace
 	const WIDE_LENS    ; c0
 	const WISE_GLASSES ; c1
 	const ZOOM_LENS    ; c2
@@ -537,7 +537,7 @@
 	const NAM_ULTRA_BALL   ; f0
 	const NAM_UP_GRADE     ; f1
 	const NAM_WATER_STONE  ; f2
-	const NAM_WEAK_POLICY  ; f3
+	const NAM_CORAL_SHARD  ; f3
 	const NAM_WIDE_LENS    ; f4
 	const NAM_WISE_GLASSES ; f5
 	const NAM_WHITE_HERB   ; f6

@@ -3767,7 +3767,7 @@ PaintbrushOrLightBallOrFiveStarHelmBoost: ; 353c3
 	call UserPartyAttr
 	ld a, [hBattleTurn]
 	and a
-	ld a, [hl]
+	
 	jr z, .checkspecies
 	ld a, [wTempEnemyMonSpecies]
 .checkspecies:
@@ -3780,16 +3780,25 @@ PaintbrushOrLightBallOrFiveStarHelmBoost: ; 353c3
 	lb bc, SMEARGLE, SMEARGLE
 	ld d, PAINTBRUSH
 	jr z, .ok
+	cp LEDIAN
 	lb bc, LEDIAN, LEDIAN
 	ld d, FIVESTARHELM
+	jr z, .ok
+	push hl
+	ld a, MON_FORM
+	call UserPartyAttr
+	ld a, [hl]
+	pop hl
+	cp GALARIAN_FORM	; only works on regular corsola
+	lb bc, CORSOLA, CORSOLA
+	ld d, CORAL_SHARD
+	jr nz, .ok
+	ld d, TAPE_PLAYER	; can never hold the tape player
 .ok
 	call SpeciesItemBoost
 	pop de
 	pop bc
 	ret
-
-; 353d1
-
 
 SpeciesItemBoost: ; 353d1
 ; Return in hl the stat value at hl.

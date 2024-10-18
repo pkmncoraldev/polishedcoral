@@ -189,7 +189,7 @@ ItemDescriptions:
 	dw ShedShellDesc
 	dw ShellBellDesc
 	dw SootheBellDesc
-	dw WeakPolicyDesc
+	dw CoralShardDesc
 	dw WideLensDesc
 	dw WiseGlassesDesc
 	dw ZoomLensDesc
@@ -944,9 +944,9 @@ SootheBellDesc:
 	db   "Calms and fosters"
 	next "friendship. (HOLD)@"
 
-WeakPolicyDesc:
-	db   "Super-effective"
-	next "hit ups offenses.@"
+CoralShardDesc:
+	db   "A shard of coral."
+	next "Could be useful.@"
 
 WideLensDesc:
 	db   "Slightly boosts"

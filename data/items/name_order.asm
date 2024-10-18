@@ -214,7 +214,7 @@ ItemNameOrder:
 	db NAM_SHED_SHELL   ; ce
 	db NAM_SHELL_BELL   ; cf
 	db NAM_SOOTHE_BELL  ; dd
-	db NAM_WEAK_POLICY  ; f3
+	db NAM_CORAL_SHARD  ; f3
 	db NAM_WIDE_LENS    ; f4
 	db NAM_WISE_GLASSES ; f5
 	db NAM_ZOOM_LENS    ; fe

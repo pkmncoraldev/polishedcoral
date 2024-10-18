@@ -189,7 +189,7 @@ ItemNames::
 	db "SHED SHELL@"
 	db "SHELL BELL@"
 	db "SOOTHE BELL@"
-	db "WEAK POLICY@"
+	db "CORAL SHARD@"
 	db "WIDE LENS@"
 	db "WISE GLASSES@"
 	db "ZOOM LENS@"

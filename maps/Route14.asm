@@ -159,7 +159,7 @@ TrainerRoute14_6:
 	done
 
 .BeatenText:
-	text "Okay…<WAIT_M>"
+	text "Ok…<WAIT_M>"
 	line "That's enough…"
 	done
 	

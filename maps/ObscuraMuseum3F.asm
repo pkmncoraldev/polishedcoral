@@ -46,6 +46,7 @@ ObscuraMuseum3F_MapScriptHeader:
 	const OBSCURA_MUSEUM_3F_BLACK_PEARL_TEAL
 	
 ObscuraMuseum3FCallback:
+	domaptrigger OBSCURA_MUSEUM_2F, $0
 	readvar VAR_PLAYER_COLOR
 	if_equal 4, .purple
 	setevent EVENT_HIDE_OW_OBJECTS_TEAL

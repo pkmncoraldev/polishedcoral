@@ -1,5 +1,6 @@
 ObscuraGym_MapScriptHeader:
-	db 0 ; scene scripts
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, ObscuraGymCallback
 
 	db 0 ; callbacks
 
@@ -13,6 +14,10 @@ ObscuraGym_MapScriptHeader:
 
 	db 1 ; object events
 	person_event SPRITE_ROCKY,  1,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraGymRocky, -1
+	
+ObscuraGymCallback:
+	domaptrigger OBSCURA_MUSEUM_2F, $0
+	return
 	
 ObscuraGymRocky:
 	end

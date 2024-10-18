@@ -29,3 +29,4 @@ DecorationNames:
 	db "#BALL POSTER@"
 	db "TOWN MAP@"
 	db "MINA's PAINTING@"
+	db "MUSUEM PHOTO@"

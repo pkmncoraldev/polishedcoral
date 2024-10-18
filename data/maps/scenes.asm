@@ -140,5 +140,6 @@ MapTriggers::
 	scene_var INN_2F,								  wAlways0Trigger
 	scene_var INN_3F,								  wAlways0Trigger
 	scene_var OBSCURA_MUSEUM_1F,					  wObscuraMuseum1FTrigger
+	scene_var OBSCURA_MUSEUM_2F,					  wAlways0Trigger
 	scene_var OBSCURA_MUSEUM_3F,					  wObscuraMuseum3FTrigger
 	db -1

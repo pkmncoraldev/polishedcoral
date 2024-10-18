@@ -36,6 +36,7 @@ const_value = 1
 	const POKEBALL_POSTER
 	const TOWN_MAP
 	const MINAS_PAINTING
+	const MUSEUM_PHOTO
 
 const_value = 1
 	const SET_UP_BED
@@ -92,6 +93,7 @@ __enum__ = 0
 	deco  MARILL_POSTER
 	deco  TOWN_MAP
 	deco  MINAS_PAINTING
+	deco  MUSEUM_PHOTO
 
 	const CONSOLES
 	deco  SNES
@@ -163,6 +165,7 @@ __enum__ = 0
 	const MARILL_POSTER_BUY
 	const TOWN_MAP_BUY
 	const MINAS_PAINTING_BUY
+	const MUSEUM_PHOTO_BUY
 	const SNES_BUY
 	const N64_BUY
 	const BIG_SNORLAX_DOLL_BUY

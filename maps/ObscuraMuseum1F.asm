@@ -69,6 +69,7 @@ ObscuraMuseum1FTrigger2:
 	end
 	
 ObscuraMuseum1FCallback:
+	domaptrigger OBSCURA_MUSEUM_2F, $0
 	checkevent EVENT_SNARE_AT_MUSEUM
 	iffalse .skip
 	changeblock $8, $e, $93

@@ -34,6 +34,7 @@ DecorationAttributes:
 	decoration DECO_POSTER,   MARILL,     		 SET_UP_POSTER,      EVENT_DECO_POSTER_6,               $2e
 	decoration DECO_PLANT,    TOWN_MAP,        	 SET_UP_POSTER,      EVENT_DECO_POSTER_7,               $2f
 	decoration DECO_PLANT,    MINAS_PAINTING,    SET_UP_POSTER,      EVENT_DECO_POSTER_8,               $30
+	decoration DECO_PLANT,    MUSEUM_PHOTO,   	 SET_UP_POSTER,      EVENT_DECO_POSTER_9,               $31
 	decoration DECO_PLANT,    PUT_IT_AWAY,       PUT_AWAY_CONSOLE,   EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1,         $00
 	decoration DECO_PLANT,    SUPER_NES,         SET_UP_CONSOLE,     EVENT_DECO_SNES,                   SPRITE_SNES
 	decoration DECO_PLANT,    NINTENDO_64,       SET_UP_CONSOLE,     EVENT_DECO_N64,                    SPRITE_N64

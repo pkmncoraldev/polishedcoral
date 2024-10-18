@@ -281,6 +281,7 @@ FindOwnedPosters: ; 268fb
 	db DECO_MARILL_POSTER
 	db DECO_TOWN_MAP
 	db DECO_MINAS_PAINTING
+	db DECO_MUSEUM_PHOTO
 	db -1
 ; 26908
 
@@ -1101,6 +1102,7 @@ DecorationDesc_PosterPointers: ; 26f84
 	dbw DECO_MARILL_POSTER, DecorationDesc_MarillPoster
 	dbw DECO_TOWN_MAP, DecorationDesc_TownMapPoster
 	dbw DECO_MINAS_PAINTING, DecorationDesc_MinasPainting
+	dbw DECO_MUSEUM_PHOTO, DecorationDesc_MuseumPhoto
 	db -1
 ; 26f91
 
@@ -1133,6 +1135,9 @@ DecorationDesc_MinasPainting:
 	; It's a picture painted by MINA.
 	text_jump UnknownText_MinaPainting
 	db "@"
+
+DecorationDesc_MuseumPhoto:
+	end
 
 DecorationDesc_PikachuPoster: ; 0x26fa0
 	jumptext .PikaPosterText

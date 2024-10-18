@@ -22,6 +22,7 @@ DecoNames::
 	db "MARILL POSTER@"
 	db "TOWN MAP@"
 	db "MINAS PAINTING@"
+	db "MUSEUM PHOTO@"
 	db "SNES@"
 	db "N64@"
 	db "PIKACHU DOLL@"

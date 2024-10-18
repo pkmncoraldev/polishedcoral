@@ -861,6 +861,7 @@ PlayerHouseRadio:
 	setevent EVENT_DECO_POSTER_6
 	setevent EVENT_DECO_POSTER_7
 	setevent EVENT_DECO_POSTER_8
+	setevent EVENT_DECO_POSTER_9
 	setevent EVENT_DECO_SNES
 	setevent EVENT_DECO_N64
 	setevent EVENT_DECO_BIG_SNORLAX_DOLL

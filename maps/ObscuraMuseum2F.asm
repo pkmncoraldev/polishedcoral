@@ -10,9 +10,10 @@ ObscuraMuseum2F_MapScriptHeader:
 	warp_def  6,  5, 2, OBSCURA_GYM
 	warp_def  6, 21, 1, OBSCURA_MUSEUM_3F
 
-	db 0 ; coord events
+	db 1 ; coord events
+	coord_event  2,  7, 1, ObscuraMuseum2FPhoto
 
-	db 37 ; bg events
+	db 35 ; bg events
 	signpost  5, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 	signpost  5, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 	signpost  5, 15, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
@@ -46,17 +47,16 @@ ObscuraMuseum2F_MapScriptHeader:
 	signpost  8, 20, SIGNPOST_IFSET, ObscuraMuseumBarrier
 	signpost  8, 21, SIGNPOST_IFSET, ObscuraMuseumBarrier
 	bg_event 24,  8, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_MUSEUM_2F_HIDDEN_BOTTLE_CAP
-	signpost  7,  1, SIGNPOST_UP, ObscuraMuseumSudowoodo1
 	signpost  7,  2, SIGNPOST_UP, ObscuraMuseumSudowoodo1
-	signpost  7,  3, SIGNPOST_UP, ObscuraMuseumSudowoodo1
 	signpost  8,  2, SIGNPOST_DOWN, ObscuraMuseumSudowoodo2
 
-	db 9 ; object events
+	db 10 ; object events
 	person_event SPRITE_SNARE,  5, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, ObscuraMuseum2FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE,  7, 16, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, ObscuraMuseum2FSnare2, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE,  9,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, ObscuraMuseum2FSnare3, EVENT_MUSEUM_SNARE_GUY_GONE
 	person_event SPRITE_ROCKY,  9, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FRocky, EVENT_MUSEUM_2F_ROCKY_GONE
 	person_event SPRITE_SNARE_GIRL, 12, 23, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FSnareNPC, EVENT_SNARE_GONE_FROM_MUSEUM
+	person_event SPRITE_RECEPTIONIST,  8,  1, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FPhotoLady, EVENT_SNARE_AT_MUSEUM
 	person_event SPRITE_RAINBOW_SILVER_WING,  7,  3, SPRITEMOVEDATA_DEALER_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_MUSEUM_STANDEE,  7,  2, SPRITEMOVEDATA_DEALER_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_GOLD_TROPHY,  7,  3, SPRITEMOVEDATA_DEALER_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -67,7 +67,9 @@ ObscuraMuseum2F_MapScriptHeader:
 	const OBSCURA_MUSEUM_2F_SNARE_1
 	const OBSCURA_MUSEUM_2F_SNARE_2
 	const OBSCURA_MUSEUM_2F_SNARE_3
+	const OBSCURA_MUSEUM_2F_ROCKY
 	const OBSCURA_MUSEUM_2F_SNARE_NPC
+	const OBSCURA_MUSEUM_2F_PHOTO_LADY
 	
 ObscuraMuseum2FCallback:
 	checkevent EVENT_MUSEUM_ROPE_LEFT
@@ -91,6 +93,193 @@ ObscuraMuseum2FCallback:
 .end
 	return
 	
+ObscuraMuseum2FPhoto:
+	applyonemovement PLAYER, turn_step_down
+	applyonemovement PLAYER, remove_fixed_facing
+	pause 5
+	applymovement OBSCURA_MUSEUM_2F_PHOTO_LADY, Movement_Museum2FPhotoLady
+	applyonemovement OBSCURA_MUSEUM_2F_PHOTO_LADY, remove_fixed_facing
+	pause 15
+	opentext
+	writetext ObscuraMuseum2FPhotoLadyText3
+	waitbutton
+	closetext
+	pause 15
+	playsound SFX_GRASS_RUSTLE
+	callasm MuseumFlash
+	callasm LoadMapPals
+	callasm MuseumFadeInPalettes
+	pause 20
+	applyonemovement OBSCURA_MUSEUM_2F_PHOTO_LADY, step_up
+	opentext
+	writetext ObscuraMuseum2FPhotoLadyText4
+	waitbutton
+	setevent EVENT_DECO_POSTER_9
+	writetext GiveMuseumPhotoText
+	playsound SFX_ITEM
+	pause 60
+	writetext PutAwayMuseumPhotoText
+	waitbutton
+	closetext
+	applymovement OBSCURA_MUSEUM_2F_PHOTO_LADY, Movement_Museum2FPhotoLady2
+	clearevent EVENT_PAID_FOR_MUSEUM_PHOTO
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	dotrigger $0
+	end
+	
+Movement_Museum2FPhotoLady:
+	step_right
+	step_down
+	turn_step_up
+	step_end
+	
+Movement_Museum2FPhotoLady2:
+	step_left
+	turn_step_right
+	step_end
+	
+MuseumFlash:
+	ld c, 2
+	jp FadeToWhite
+	
+MuseumFadeInPalettes:
+	ld c, 35
+	jp FadePalettes
+	
+ObscuraMuseum2FPhotoLady:
+	faceplayer
+	opentext
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	iftrue .ready
+	checkevent EVENT_PAID_FOR_MUSEUM_PHOTO
+	iftrue .no_refunds
+	writetext ObscuraMuseum2FPhotoLadyText1
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .no
+	checkmoney $0, 500
+	if_equal $2, .nomoney
+	playsound SFX_TRANSACTION
+	takemoney $0, 500
+	special PlaceMoneyTopRight
+	pause 15
+	refreshscreen $0
+	pause 5
+	opentext
+	writetext ObscuraMuseum2FPhotoLadyText2
+	waitbutton
+	closetext
+	spriteface OBSCURA_MUSEUM_2F_PHOTO_LADY, RIGHT
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	setevent EVENT_PAID_FOR_MUSEUM_PHOTO
+	dotrigger $1
+	end
+.nomoney
+	writetext ObscuraMuseum2FPhotoLadyTextNoMoney
+	waitbutton
+	closetext
+	spriteface OBSCURA_MUSEUM_2F_PHOTO_LADY, RIGHT
+	end
+.no
+	writetext ObscuraMuseum2FPhotoLadyTextNo
+	waitbutton
+	closetext
+	spriteface OBSCURA_MUSEUM_2F_PHOTO_LADY, RIGHT
+	end
+.ready
+	writetext ObscuraMuseum2FPhotoLadyTextReady
+	waitbutton
+	closetext
+	spriteface OBSCURA_MUSEUM_2F_PHOTO_LADY, RIGHT
+	end
+.no_refunds
+	writetext ObscuraMuseum2FPhotoLadyTextNoRefunds
+	waitbutton
+	closetext
+	spriteface OBSCURA_MUSEUM_2F_PHOTO_LADY, RIGHT
+	clearevent EVENT_PAID_FOR_MUSEUM_PHOTO
+	end
+	
+ObscuraMuseum2FPhotoLadyText1:
+	text "Having fun at the"
+	line "museum?"
+	
+	para "How about taking"
+	line "a commemorative"
+	cont "photo?"
+	
+	para "Only ¥500!"
+	done
+	
+ObscuraMuseum2FPhotoLadyText2:
+	text "Great!"
+	
+	para "Stand behind the"
+	line "cutout, and I'll"
+	cont "take your photo."
+	done
+	
+ObscuraMuseum2FPhotoLadyText3:
+	text "Perfect!"
+	line "You look great!"
+	
+	para "Ok, say…<WAIT_L>"
+	line "SQUIRTBOTTLE!"
+	done
+	
+ObscuraMuseum2FPhotoLadyText4:
+	text "It turned out"
+	line "wonderfully!"
+	
+	para "Here you go."
+	
+	para "I'm sure it will"
+	line "look great on your"
+	cont "wall at home."
+	done
+	
+GiveMuseumPhotoText:
+	text "<PLAYER> received"
+	line "MUSEUM PHOTO!"
+	done
+	
+PutAwayMuseumPhotoText:
+	text "The PHOTO was sent"
+	line "to <PLAYER>'s PC."
+	done
+	
+	
+ObscuraMuseum2FPhotoLadyTextReady:
+	text "Don't be shy, now."
+	
+	para "Stand behind the"
+	line "cutout, and I'll"
+	cont "take your photo."
+	done
+	
+ObscuraMuseum2FPhotoLadyTextNoRefunds:
+	text "You left without"
+	line "taking a photo!"
+	
+	para "Did you change"
+	line "your mind?"
+	
+	para "Sorry, no refunds!"
+	done
+	
+ObscuraMuseum2FPhotoLadyTextNo:
+	text "That's too bad!"
+	done
+	
+ObscuraMuseum2FPhotoLadyTextNoMoney:
+	text "Oops!"
+	
+	para "You don't have"
+	line "enough money!"
+	
+	para "Maybe next time!"
+	done
+	
 ObscuraMuseumSudowoodo1:
 	jumptext ObscuraMuseumSudowoodo1Text
 	
@@ -103,7 +292,10 @@ ObscuraMuseumSudowoodo2:
 	jumptext ObscuraMuseumSudowoodo2Text
 	
 ObscuraMuseumSudowoodo2Text:
-	text "You inexplicably"
+	text "You look just like"
+	line "a SUDOWOODO!"
+	
+	para "You inexplicably"
 	line "feel like blocking"
 	cont "the path for no"
 	cont "good reason."

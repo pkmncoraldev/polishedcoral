@@ -113,12 +113,15 @@ Movement_ShimmerCafe2:
 	step_end
 	
 ShimmerCafeNPC1Text:
-	text "Most of the guys"
-	line "who hang out in"
-	cont "here are SAILORS."
+	text "When fishing in"
+	line "the ocean, you can"
+	cont "sometimes find"
+	cont "CORAL SHARDS."
 	
-	para "This is a port"
-	line "town after all!"
+	para "In rivers and"
+	line "ponds, you'll just"
+	cont "find junk like"
+	cont "BOTTLE CAPS."
 	done
 
 ShimmerCafeNPC2Text:

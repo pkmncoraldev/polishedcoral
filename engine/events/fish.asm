@@ -47,7 +47,14 @@ endr
 	call Random
 	cp $7f ; 50 percent
 	jr c, .not_bottle_cap
+	
+	call GetFishingGroup
+	cp FISHGROUP_SUNBEAM
+	jr z, .ocean
 	ld a, BOTTLE_CAP
+	jr .got_items
+.ocean
+	ld a, CORAL_SHARD
 	jr .got_items
 .not_bottle_cap
 	ld hl, FishItems

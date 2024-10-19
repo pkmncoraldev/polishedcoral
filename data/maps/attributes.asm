@@ -761,3 +761,4 @@ ENDM
 	map_attributes ObscuraMuseum3F, OBSCURA_MUSEUM_3F, $0, 0
 	map_attributes ObscuraMuseumEmployeeRoom, OBSCURA_MUSEUM_EMPLOYEE_ROOM, $0, 0
 	map_attributes ObscuraGym, OBSCURA_GYM, $0, 0
+	map_attributes ObscuraMuseumPhoto, OBSCURA_MUSEUM_PHOTO, $0, 0

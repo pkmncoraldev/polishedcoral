@@ -1186,7 +1186,7 @@ LoadMapPals::
 	ld a, [wMapGroup]
 	cp GROUP_NETT_BUILDING_1F
 	ld a, [wMapNumber]
-	jr nz, .computer
+	jp nz, .computer
 	cp MAP_NETT_BUILDING_1F
 	jr nz, .nett2
 	call .normal
@@ -1221,6 +1221,8 @@ LoadMapPals::
 	jr nz, .computer
 	ld a, [wMapNumber]
 	cp MAP_OBSCURA_MUSEUM_2F
+	jr z, .standee
+	cp MAP_OBSCURA_MUSEUM_PHOTO
 	jr z, .standee
 	cp MAP_OBSCURA_MUSEUM_3F
 	jr nz, .computer

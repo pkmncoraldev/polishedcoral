@@ -1137,7 +1137,25 @@ DecorationDesc_MinasPainting:
 	db "@"
 
 DecorationDesc_MuseumPhoto:
+	opentext
+	writetext MuseumPhotoText
+	yesorno
+	closetext
+	iffalse .end
+	pause 2
+	special FadeOutPalettes
+	warp2 DOWN, OBSCURA_MUSEUM_PHOTO, 2, 1
+.end
 	end
+	
+MuseumPhotoText:
+	text "A photo of you"
+	line "taken at the"
+	cont "museum."
+	
+	para "Take a closer"
+	line "look?"
+	done
 
 DecorationDesc_PikachuPoster: ; 0x26fa0
 	jumptext .PikaPosterText

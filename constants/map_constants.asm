@@ -445,6 +445,7 @@ MAP_NONE   EQU 0
 	map_const OBSCURA_MUSEUM_3F,						   6,  7 ; 5
 	map_const OBSCURA_MUSEUM_EMPLOYEE_ROOM,				   7,  7 ; 6
 	map_const OBSCURA_GYM,								   3,  3 ; 7
+	map_const OBSCURA_MUSEUM_PHOTO,						   4,  2 ; 7
 	
 	newgroup													 ; 25
 	map_const AUREOLE_TOWN,								  20, 23 ; 1

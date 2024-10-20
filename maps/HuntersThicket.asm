@@ -4,7 +4,11 @@ HuntersThicket_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, HuntersThicketCallback
 
-	db 0 ; warp events
+	db 4 ; warp events
+	warp_def 32, 10, 3, ROUTE_4
+	warp_def 32, 11, 4, ROUTE_4
+	warp_def 28, 48, 5, ROUTE_4
+	warp_def 28, 49, 6, ROUTE_4
 
 	db 0 ; coord events
 

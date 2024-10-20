@@ -39,7 +39,7 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event  7,  1, SIGNPOST_READ, PlayerHouseCloset
 	bg_event  8,  0, SIGNPOST_IFSET, PlayersHousePoster
 ;	powergap
-	bg_event  2, 10, SIGNPOST_READ, PlayerHouseDebugPoster2
+	bg_event  2, 10, SIGNPOST_READ, PlayerHouseDebugPoster
 	bg_event  4, 10, SIGNPOST_JUMPTEXT, PlayerHouseSunset
 	bg_event  6, 10, SIGNPOST_JUMPTEXT, PlayerHouseDaybreak
 	bg_event  8, 10, SIGNPOST_JUMPTEXT, PlayerHouseGlint
@@ -94,25 +94,304 @@ Doll2:
 BigDoll:
 	describedecoration 3
 	
-PlayerHouseDebugPoster2:
+PlayerHouseDebugPoster:
 	opentext
+.return
 	writetext PlayerHouseDebug2Text1
-;	refreshscreen $0
-	loadmenu .PlayerHouseDebug2MenuData
+.page1
+	loadmenu .PlayerHouseDebugMenuData
 	verticalmenu
-	closewindow
-	if_equal $1, PlayerHouseDebugPoster
-	if_equal $2, .Sfx
 	iffalse .end
+	if_equal $1, .Mons
+	if_equal $2, .Items
+	if_equal $3, .Key
+	if_equal $4, .badges
+	closewindow
+.page2
+	loadmenu .PlayerHouseDebugMenu2Data
+	verticalmenu
+	iffalse .end
+	if_equal $1, .tms
+	if_equal $2, .Sfx
+	if_equal $3, .mina
+	closewindow
+	jump .page1
+.Mons
+	closewindow
+	waitsfx
+	givepoke CHARIZARD, 30
+	givepoke HYPNO, 99
+	givepoke EEVEE, 99
+	jump .return
+.Items
+	closewindow
+	writetext PlayerHouseDebug2ItemsText
+	waitbutton
+	giveitem MAGMARIZER, 99
+	giveitem ELECTIRIZER, 99
+	giveitem NUGGET, 99
+	giveitem BIG_NUGGET, 99
+	giveitem MOOMOO_BREW, 99
+	giveitem RARE_CANDY, 99
+	giveitem FIVESTARHELM, 1
+	giveitem SWEET_HONEY, 1
+	giveitem BLOSSOM_TEA, 3
+	giveitem SUNSHINE_TEA, 99
+	giveitem PEARL, 99
+	giveitem BIG_PEARL, 99
+	giveitem LEAF_STONE, 99
+	giveitem FIRE_STONE, 99
+	giveitem WATER_STONE, 99
+	giveitem THUNDERSTONE, 99
+	giveitem MOON_STONE, 99
+	giveitem POKE_DOLL, 99
+	giveitem STARDUST, 99
+	giveitem FRESH_WATER, 99
+	giveitem SODA_POP, 99
+	giveitem LEMONADE, 99
+	giveitem MOOMOO_MILK, 99
+	giveitem BOTTLE_CAP, 99
+	giveitem RAGECANDYBAR, 99
+	giveitem LUCKY_EGG, 99
+	giveitem HP_UP, 99
+	giveitem PROTEIN, 99
+	giveitem IRON, 99
+	giveitem CARBOS, 99
+	giveitem CALCIUM, 99
+	giveitem ZINC, 99
+	giveitem PP_UP, 99
+	giveitem PP_MAX, 99
+	giveitem ETHER, 99
+	giveitem MAX_ETHER, 99
+	giveitem ELIXIR, 99
+	giveitem MAX_ELIXIR, 99
+	giveitem REVIVE, 99
+	giveitem MAX_REVIVE, 99
+	giveitem FULL_HEAL, 99
+	giveitem ANTIDOTE, 99
+	giveitem BURN_HEAL, 99
+	giveitem PARALYZEHEAL, 99
+	giveitem AWAKENING, 99
+	giveitem ICE_HEAL, 99
+	giveitem FULL_RESTORE, 99
+	giveitem MAX_POTION, 99
+	giveitem POTION, 99
+	giveitem SUPER_POTION, 99
+	giveitem HYPER_POTION, 99
+	giveitem REPEL, 99
+	giveitem SUPER_REPEL, 99
+	giveitem MAX_REPEL, 99
+	giveitem AMULET_COIN, 1
+	giveitem BIG_MALASADA, 1
+	giveitem BERRY_JUICE, 1
+	giveitem FLOWER_PETAL, 6
+	giveitem BLOSSOM_TEA, 3
+	giveitem SUNSHINE_TEA, 99
+	giveitem PAINTBRUSH, 99
+	giveitem COVER_FOSSIL
+	giveitem PLUME_FOSSIL
+	
+	giveitem MASTER_BALL, 99
+	giveitem POKE_BALL, 99
+	giveitem GREAT_BALL, 99
+	giveitem ULTRA_BALL, 99
+;	giveitem SAFARI_BALL, 99
+	giveitem LEVEL_BALL, 99
+	giveitem LURE_BALL, 99
+	giveitem MOON_BALL, 99
+	giveitem FRIEND_BALL, 99
+	giveitem FAST_BALL, 99
+	giveitem HEAVY_BALL, 99
+	giveitem LOVE_BALL, 99
+;	giveitem PARK_BALL, 99
+	giveitem REPEAT_BALL, 99
+	giveitem TIMER_BALL, 99
+	giveitem NEST_BALL, 99
+	giveitem NET_BALL, 99
+	giveitem DIVE_BALL, 99
+	giveitem LUXURY_BALL, 99
+	giveitem HEAL_BALL, 99
+	giveitem QUICK_BALL, 99
+	giveitem DUSK_BALL, 99
+	giveitem PREMIER_BALL, 99
+	giveitem CHERISH_BALL, 99
+	jump .return
+.Key
+	closewindow
+	writetext PlayerHouseDebug2KeyText
+	waitbutton
+	setflag ENGINE_TRAINER_CARD
+	setflag ENGINE_POKEDEX
+	setflag ENGINE_PHONE_CARD
+	setflag ENGINE_MAP_CARD
+	setflag ENGINE_RADIO_CARD
+	setevent EVENT_RUNNING_SHOES
+	setevent EVENT_BIKE_UPGRADED
+	addcellnum PHONE_MOM
+	addcellnum PHONE_SPRUCE
+	addcellnum PHONE_WENDY
+	addcellnum PHONE_AUTO
+	setevent EVENT_MOM_GOT_POKEGEAR
+	giveitem TAPE_PLAYER
+	giveitem SKATEBOARD
+	giveitem BICYCLE
+	giveitem BLACK_PEARL
+	giveitem B_ROOM_KEY
+	giveitem R_ROOM_KEY
+	giveitem Y_ROOM_KEY
+	giveitem ANCIENT_BALL
+	giveitem ITEMFINDER
+	giveitem POLLEN_POUCH
+	giveitem LIBRARY_CARD
+	giveitem POKE_FLUTE
+	giveitem OLD_ROD
+	giveitem GOOD_ROD
+	giveitem RIVAL_POKEDEX
+	giveitem OVAL_CHARM
+	giveitem COIN_CASE
+	giveitem TRAIN_TICKET
+	giveitem TRAIN_PASS
+	giveitem TORCH
+	giveitem CLAY_POT
+	giveitem NETT_SPECS
+	givecoins 20
+	setevent EVENT_KNOW_OLLIE
+	setevent EVENT_KNOW_GRIND
+	callasm FillPokedex
+	special InitRoamMoltres
+	callasm UnlockSongs
+	setevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
+	jump .return
+.badges
+	closewindow
+	writetext PlayerHouseDebug2BadgeText
+	waitbutton
+	setflag ENGINE_FIRSTBADGE
+	setflag ENGINE_SECONDBADGE
+	setflag ENGINE_THIRDBADGE
+	setflag ENGINE_FOURTHBADGE
+	setflag ENGINE_SIXTHBADGE
+	setflag ENGINE_FIFTHBADGE
+	setflag ENGINE_SEVENTHBADGE
+	setflag ENGINE_EIGHTHBADGE
+	setflag ENGINE_MET_STANLEY
+	setflag ENGINE_MET_RODNEY
+	setflag ENGINE_MET_WENDY
+	setflag ENGINE_MET_CHARLIE
+	setflag ENGINE_MET_POLLY
+	setflag ENGINE_MET_LEILANI
+	setflag ENGINE_MET_ROCKY
+	setflag ENGINE_MET_DARCY
+	domaptrigger FLICKER_STATION, 1
+	jump .return
+.tms
+	closewindow
+	writetext PlayerHouseDebug2TMText
+	waitbutton
+	setflag ENGINE_GOT_ROCK_SMASH
+	setflag ENGINE_GOT_CUT
+	setflag ENGINE_GOT_FLY
+	setflag ENGINE_GOT_ROCK_CLIMB
+	setflag ENGINE_GOT_SURF
+	setflag ENGINE_GOT_WATERFALL
+	setflag ENGINE_GOT_STRENGTH
+	givetmhm TM_GIGA_DRAIN
+	givetmhm TM_CURSE
+	givetmhm TM_HAIL
+	givetmhm TM_ZAP_CANNON
+	givetmhm TM_BRICK_BREAK
+	givetmhm TM_CHARM
+	givetmhm TM_SUNNY_DAY
+	givetmhm TM_BLIZZARD
+	givetmhm TM_HYPER_BEAM
+	givetmhm TM_LIGHT_SCREEN
+	givetmhm TM_PROTECT
+	givetmhm TM_RAIN_DANCE
+	givetmhm TM_SAFEGUARD
+	givetmhm TM_BULLDOZE
+	givetmhm TM_SOLAR_BEAM
+	givetmhm TM_THUNDER
+	givetmhm TM_DIG
+	givetmhm TM_METAL_CLAW
+	givetmhm TM_REFLECT
+	givetmhm TM_DIVE
+	givetmhm TM_FIRE_BLAST
+	givetmhm TM_FAKE_OUT
+	givetmhm TM_SUBSTITUTE
+	givetmhm TM_STEEL_WING
+	givetmhm TM_ROOST
+	givetmhm TM_WILL_O_WISP
+	givetmhm TM_WORK_UP_GROWTH
+	givetmhm TM_GIGA_IMPACT
+	givetmhm TM_SAND_ATTACK_SMOKESCREEN_FLASH
+	givetmhm TM_ANCIENTPOWER
+	givetmhm TM_THUNDERPUNCH
+	givetmhm TM_FIRE_PUNCH
+	givetmhm TM_ICE_PUNCH
+	givetmhm HM_CUT
+	givetmhm HM_FLY
+	givetmhm HM_SURF
+	givetmhm HM_ROCK_SMASH
+	givetmhm HM_ROCK_CLIMB
+;	givetmhm HM_DIVE
+	givetmhm HM_STRENGTH
+	setflag ENGINE_FLYPOINT_HOME
+	setflag ENGINE_FLYPOINT_SUNSET
+	setflag ENGINE_FLYPOINT_DAYBREAK
+	setflag ENGINE_FLYPOINT_GLINT
+	setflag ENGINE_FLYPOINT_STARGLOW
+	setflag ENGINE_FLYPOINT_LAKE_ONWA
+	setflag ENGINE_FLYPOINT_SUNBEAM
+	setflag ENGINE_FLYPOINT_EVENTIDE
+	setflag ENGINE_FLYPOINT_FLICKER
+	setflag ENGINE_FLYPOINT_TWINKLE
+	setflag ENGINE_FLYPOINT_LUSTER
+	setflag ENGINE_FLYPOINT_SHIMMER
+	setflag ENGINE_FLYPOINT_BRILLO
+	setflag ENGINE_FLYPOINT_RADIANT
+	setflag ENGINE_FLYPOINT_DUSK
+	setflag ENGINE_FLYPOINT_CROSSROADS
+	setflag ENGINE_FLYPOINT_KOMORE
+	setflag ENGINE_FLYPOINT_BRIGHT
+	jump .return
 .Sfx
+	closewindow
 	callasm PlayerRoomSfxTest
-	closetext
-	end
+	jump .return
+.mina
+	closewindow
+	writetext PlayerHouseDebug2MinaText
+	waitbutton
+	domaptrigger ROUTE_6_SOUTH, $1
+	clearevent EVENT_ROUTE_6_MINA_GONE
+	clearevent EVENT_ROUTE_11_MINA_GONE
+	clearevent EVENT_RADIANT_FIELD_MINA_GONE
+	clearevent EVENT_ROUTE_29_MINA_GONE
+	clearevent EVENT_ROUTE_10_MINA_GONE
+	setevent EVENT_MINA_QUEST_ACTIVATED
+	jump .return
 .end
 	closetext
 	end
 	
-.PlayerHouseDebug2MenuData: ; 0x48dfc
+.PlayerHouseDebugMenuData: ; 0x48dfc
+	db $40 ; flags
+	db 00, 00 ; start coords
+	db 11, 19 ; end coords
+	dw .MenuData2PlayerHouseDebug
+	db 1 ; default option
+; 0x48e04
+
+.MenuData2PlayerHouseDebug: ; 0x48e04
+	db $80 ; flags
+	db 5 ; items
+	db "#MON@"
+	db "ITEMS@"
+	db "KEY ITEMS@"
+	db "BADGES@"
+	db "PAGE 2@"
+	
+.PlayerHouseDebugMenu2Data: ; 0x48dfc
 	db $40 ; flags
 	db 00, 00 ; start coords
 	db 11, 19 ; end coords
@@ -122,9 +401,34 @@ PlayerHouseDebugPoster2:
 
 .MenuData2PlayerHouseDebug2: ; 0x48e04
 	db $80 ; flags
-	db 2 ; items
-	db "MONS, ITEMS, ETC@"
+	db 4 ; items
+	db "TMs/HMs@"
 	db "SFX TEST@"
+	db "ACTIVATE MINA@"
+	db "PAGE 1@"
+	
+PlayerHouseDebug2ItemsText:
+	text "Obtained ITEMS."
+	done
+	
+PlayerHouseDebug2KeyText:
+	text "Obtained KEY ITEMS."
+	done
+	
+PlayerHouseDebug2BadgeText:
+	text "Obtained all"
+	line "BADGES."
+	done
+	
+PlayerHouseDebug2TMText:
+	text "Obtained all"
+	line "TMs and HMs."
+	done
+	
+PlayerHouseDebug2MinaText:
+	text "MINA quest"
+	line "started."
+	done
 	
 PlayerRoomSfxTest:
 	call WaitSFX
@@ -244,254 +548,7 @@ PlayerRoomSfxTestString2:
 PlayerHouseDebug2Text1:
 	text "DEBUG POSTER"
 	done
-	
-PlayerHouseDebugPoster:
-;	opentext
-	waitsfx
-	writetext PlayerHouseDebugText1
-	yesorno
-	iffalse .items
-	givepoke CHARIZARD, 30
-	givepoke HYPNO, 99
-	givepoke EEVEE, 99
 
-.items
-	writetext PlayerHouseDebugText6
-	yesorno
-	iffalse .keyitems
-	giveitem MAGMARIZER, 99
-	giveitem ELECTIRIZER, 99
-	giveitem NUGGET, 99
-	giveitem BIG_NUGGET, 99
-	giveitem MOOMOO_BREW, 99
-	giveitem RARE_CANDY, 99
-	giveitem FIVESTARHELM, 1
-	giveitem SWEET_HONEY, 1
-	giveitem BLOSSOM_TEA, 3
-	giveitem SUNSHINE_TEA, 99
-	giveitem PEARL, 99
-	giveitem BIG_PEARL, 99
-	giveitem LEAF_STONE, 99
-	giveitem FIRE_STONE, 99
-	giveitem WATER_STONE, 99
-	giveitem THUNDERSTONE, 99
-	giveitem MOON_STONE, 99
-	giveitem POKE_DOLL, 99
-	giveitem STARDUST, 99
-	giveitem FRESH_WATER, 99
-	giveitem SODA_POP, 99
-	giveitem LEMONADE, 99
-	giveitem MOOMOO_MILK, 99
-	giveitem BOTTLE_CAP, 99
-	giveitem RAGECANDYBAR, 99
-	giveitem LUCKY_EGG, 99
-	giveitem HP_UP, 99
-	giveitem PROTEIN, 99
-	giveitem IRON, 99
-	giveitem CARBOS, 99
-	giveitem CALCIUM, 99
-	giveitem ZINC, 99
-	giveitem PP_UP, 99
-	giveitem PP_MAX, 99
-	giveitem ETHER, 99
-	giveitem MAX_ETHER, 99
-	giveitem ELIXIR, 99
-	giveitem MAX_ELIXIR, 99
-	giveitem REVIVE, 99
-	giveitem MAX_REVIVE, 99
-	giveitem FULL_HEAL, 99
-	giveitem ANTIDOTE, 99
-	giveitem BURN_HEAL, 99
-	giveitem PARALYZEHEAL, 99
-	giveitem AWAKENING, 99
-	giveitem ICE_HEAL, 99
-	giveitem FULL_RESTORE, 99
-	giveitem MAX_POTION, 99
-	giveitem POTION, 99
-	giveitem SUPER_POTION, 99
-	giveitem HYPER_POTION, 99
-	giveitem REPEL, 99
-	giveitem SUPER_REPEL, 99
-	giveitem MAX_REPEL, 99
-	giveitem AMULET_COIN, 1
-	giveitem BIG_MALASADA, 1
-	giveitem BERRY_JUICE, 1
-	giveitem FLOWER_PETAL, 6
-	giveitem BLOSSOM_TEA, 3
-	giveitem SUNSHINE_TEA, 99
-	giveitem PAINTBRUSH, 99
-	giveitem COVER_FOSSIL
-	giveitem PLUME_FOSSIL
-	
-	giveitem MASTER_BALL, 99
-	giveitem POKE_BALL, 99
-	giveitem GREAT_BALL, 99
-	giveitem ULTRA_BALL, 99
-;	giveitem SAFARI_BALL, 99
-	giveitem LEVEL_BALL, 99
-	giveitem LURE_BALL, 99
-	giveitem MOON_BALL, 99
-	giveitem FRIEND_BALL, 99
-	giveitem FAST_BALL, 99
-	giveitem HEAVY_BALL, 99
-	giveitem LOVE_BALL, 99
-;	giveitem PARK_BALL, 99
-	giveitem REPEAT_BALL, 99
-	giveitem TIMER_BALL, 99
-	giveitem NEST_BALL, 99
-	giveitem NET_BALL, 99
-	giveitem DIVE_BALL, 99
-	giveitem LUXURY_BALL, 99
-	giveitem HEAL_BALL, 99
-	giveitem QUICK_BALL, 99
-	giveitem DUSK_BALL, 99
-	giveitem PREMIER_BALL, 99
-	giveitem CHERISH_BALL, 99
-	
-.keyitems
-	writetext PlayerHouseDebugText2
-	yesorno
-	iffalse .badges
-;	loadwildmon BLISSEY, 100
-;	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-;	startbattle
-	setflag ENGINE_TRAINER_CARD
-	setflag ENGINE_POKEDEX
-	setflag ENGINE_PHONE_CARD
-	setflag ENGINE_MAP_CARD
-	setflag ENGINE_RADIO_CARD
-	setevent EVENT_RUNNING_SHOES
-	setevent EVENT_BIKE_UPGRADED
-	addcellnum PHONE_MOM
-	addcellnum PHONE_SPRUCE
-	addcellnum PHONE_WENDY
-	addcellnum PHONE_AUTO
-	setevent EVENT_MOM_GOT_POKEGEAR
-	giveitem TAPE_PLAYER
-	giveitem SKATEBOARD
-	giveitem BICYCLE
-	giveitem BLACK_PEARL
-	giveitem B_ROOM_KEY
-	giveitem R_ROOM_KEY
-	giveitem Y_ROOM_KEY
-	giveitem ANCIENT_BALL
-	giveitem ITEMFINDER
-	giveitem POLLEN_POUCH
-	giveitem LIBRARY_CARD
-	giveitem POKE_FLUTE
-	giveitem OLD_ROD
-	giveitem GOOD_ROD
-	giveitem RIVAL_POKEDEX
-	giveitem OVAL_CHARM
-	giveitem COIN_CASE
-	giveitem TRAIN_TICKET
-	giveitem TRAIN_PASS
-	giveitem TORCH
-	giveitem CLAY_POT
-	giveitem NETT_SPECS
-	givecoins 20
-	setevent EVENT_KNOW_OLLIE
-	setevent EVENT_KNOW_GRIND
-	callasm FillPokedex
-	special InitRoamMoltres
-	callasm UnlockSongs
-	setevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
-.badges
-	writetext PlayerHouseDebugText3
-	yesorno
-	iffalse .hms
-	setflag ENGINE_FIRSTBADGE
-	setflag ENGINE_SECONDBADGE
-	setflag ENGINE_THIRDBADGE
-	setflag ENGINE_FOURTHBADGE
-	setflag ENGINE_SIXTHBADGE
-	setflag ENGINE_FIFTHBADGE
-	setflag ENGINE_SEVENTHBADGE
-	setflag ENGINE_EIGHTHBADGE
-	setflag ENGINE_MET_STANLEY
-	setflag ENGINE_MET_RODNEY
-	setflag ENGINE_MET_WENDY
-	setflag ENGINE_MET_CHARLIE
-	setflag ENGINE_MET_POLLY
-	setflag ENGINE_MET_LEILANI
-	setflag ENGINE_MET_ROCKY
-	setflag ENGINE_MET_DARCY
-	domaptrigger FLICKER_STATION, 1
-.hms
-	writetext PlayerHouseDebugText4
-	yesorno
-	iffalse .done
-	setflag ENGINE_GOT_ROCK_SMASH
-	setflag ENGINE_GOT_CUT
-	setflag ENGINE_GOT_FLY
-	setflag ENGINE_GOT_ROCK_CLIMB
-	setflag ENGINE_GOT_SURF
-	setflag ENGINE_GOT_WATERFALL
-	setflag ENGINE_GOT_STRENGTH
-	givetmhm TM_GIGA_DRAIN
-	givetmhm TM_CURSE
-	givetmhm TM_HAIL
-	givetmhm TM_ZAP_CANNON
-	givetmhm TM_BRICK_BREAK
-	givetmhm TM_CHARM
-	givetmhm TM_SUNNY_DAY
-	givetmhm TM_BLIZZARD
-	givetmhm TM_HYPER_BEAM
-	givetmhm TM_LIGHT_SCREEN
-	givetmhm TM_PROTECT
-	givetmhm TM_RAIN_DANCE
-	givetmhm TM_SAFEGUARD
-	givetmhm TM_BULLDOZE
-	givetmhm TM_SOLAR_BEAM
-	givetmhm TM_THUNDER
-	givetmhm TM_DIG
-	givetmhm TM_METAL_CLAW
-	givetmhm TM_REFLECT
-	givetmhm TM_DIVE
-	givetmhm TM_FIRE_BLAST
-	givetmhm TM_FAKE_OUT
-	givetmhm TM_SUBSTITUTE
-	givetmhm TM_STEEL_WING
-	givetmhm TM_ROOST
-	givetmhm TM_WILL_O_WISP
-	givetmhm TM_WORK_UP_GROWTH
-	givetmhm TM_GIGA_IMPACT
-	givetmhm TM_SAND_ATTACK_SMOKESCREEN_FLASH
-	givetmhm TM_ANCIENTPOWER
-	givetmhm TM_THUNDERPUNCH
-	givetmhm TM_FIRE_PUNCH
-	givetmhm TM_ICE_PUNCH
-	givetmhm HM_CUT
-	givetmhm HM_FLY
-	givetmhm HM_SURF
-	givetmhm HM_ROCK_SMASH
-	givetmhm HM_ROCK_CLIMB
-;	givetmhm HM_DIVE
-	givetmhm HM_STRENGTH
-	setflag ENGINE_FLYPOINT_HOME
-	setflag ENGINE_FLYPOINT_SUNSET
-	setflag ENGINE_FLYPOINT_DAYBREAK
-	setflag ENGINE_FLYPOINT_GLINT
-	setflag ENGINE_FLYPOINT_STARGLOW
-	setflag ENGINE_FLYPOINT_LAKE_ONWA
-	setflag ENGINE_FLYPOINT_SUNBEAM
-	setflag ENGINE_FLYPOINT_EVENTIDE
-	setflag ENGINE_FLYPOINT_FLICKER
-	setflag ENGINE_FLYPOINT_TWINKLE
-	setflag ENGINE_FLYPOINT_LUSTER
-	setflag ENGINE_FLYPOINT_SHIMMER
-	setflag ENGINE_FLYPOINT_BRILLO
-	setflag ENGINE_FLYPOINT_RADIANT
-	setflag ENGINE_FLYPOINT_DUSK
-	setflag ENGINE_FLYPOINT_CROSSROADS
-	setflag ENGINE_FLYPOINT_KOMORE
-	setflag ENGINE_FLYPOINT_BRIGHT
-.done
-	writetext PlayerHouseDebugText5
-	waitbutton
-	closetext
-	end
-	
 FillPokedex:
 	ld hl, wPokedexSeen
 	call .Fill

@@ -14,7 +14,7 @@ SunbeamIsland_MapScriptHeader:
 	db 13 ; warp events
 	warp_def 31, 27, 2, SUNBEAM_MART
 	warp_def 35, 17, 1, SUNBEAM_POKECENTER
-	warp_def 20, 34, 1, SUNBEAM_JUNGLE
+	warp_def 21, 34, 1, SUNBEAM_JUNGLE
 	warp_def 11, 25, 1, SUNBEAM_TRADE_HOUSE
 	warp_def 11, 31, 1, SUNBEAM_DODRIO_HOUSE
 	warp_def 17, 16, 1, SPRUCES_LAB
@@ -23,7 +23,7 @@ SunbeamIsland_MapScriptHeader:
 	warp_def 43, 17, 1, SUNBEAM_SURF_SHOP
 	warp_def 13, 16, 3, SPRUCES_LAB
 	warp_def 13, 17, 3, SPRUCES_LAB
-	warp_def 20, 35, 2, SUNBEAM_JUNGLE
+	warp_def 21, 35, 2, SUNBEAM_JUNGLE
 	warp_def 49,  9, 1, SUNBEAM_BOAT_HOUSE
 
 	db 6 ; coord events
@@ -53,14 +53,14 @@ SunbeamIsland_MapScriptHeader:
 	db 20 ; object events
 	person_event SPRITE_MATRON, 24, 24, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC1, -1
 	person_event SPRITE_FAT_GUY, 12, 28, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC2, -1
-	person_event SPRITE_CUTE_GIRL, 18,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC3, -1
+	person_event SPRITE_CUTE_GIRL, 17,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC3, -1
 	person_event SPRITE_GENERAL_VARIABLE_1, 17, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC4, -1
 	person_event SPRITE_CUTE_GIRL, 45, 19, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC5, -1
 	person_event SPRITE_SUPER_NERD, 47,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC6, -1
 	object_event 19,  8, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DONPHAN, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveDonphan, -1
-	person_event SPRITE_SLOWPOKETAIL, 16,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamReserveSlowpoke, -1
-	object_event 13, 15, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MAGMAR, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveMagmar, -1
-	object_event 20, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, ELECTABUZZ, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamReserveElectabuzz, -1
+	person_event SPRITE_SLOWPOKETAIL, 15,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamReserveSlowpoke, -1
+	object_event 13, 14, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MAGMAR, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveMagmar, -1
+	object_event 19, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, ELECTABUZZ, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamReserveElectabuzz, -1
 	person_event SPRITE_TRUNKS, 43, 29, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamCrowd, EVENT_SUNBEAM_CROWD_GONE
 	person_event SPRITE_COOL_DUDE, 43, 25, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamCrowd, EVENT_SUNBEAM_CROWD_GONE
 	person_event SPRITE_BIKINI_3, 43, 28, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamCrowd, EVENT_SUNBEAM_CROWD_GONE
@@ -520,12 +520,17 @@ SunBeamLabLocked:
 	jumptext SunBeamLabLockedText
 
 SunBeamLabLockedText:
-	text "I've stepped out"
+	text "There's a note"
+	line "on the door:"
+	
+	para "“I've stepped out"
 	line "for a moment."
 	
 	para "I'll be at the"
-	line "#MON CENTER."
-	cont "-PROF. SPRUCE"
+	line "#MON CENTER if"
+	cont "I'm needed.”"
+	
+	para "-PROF. SPRUCE"
 	done
 
 SunbeamCrowdText:

@@ -12,20 +12,21 @@ SunbeamReserve_MapScriptHeader:
 	db 0 ; coord events
 
 	db 1 ; bg events
-	signpost 17,  6, SIGNPOST_READ, SunbeamSlowpokeGirlSign
+	signpost 16,  7, SIGNPOST_READ, SunbeamSlowpokeGirlSign
 
-	db 11 ; object events
+	db 12 ; object events
 	person_event SPRITE_SPRUCE, 48,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ISLAND_BOATMAN
-	object_event 19, 8, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DONPHAN, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveDonphan, -1
-	person_event SPRITE_SLOWPOKETAIL, 16,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveSlowpoke, -1
-	person_event SPRITE_CUTE_GIRL, 18,  6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC3, -1
-	object_event 13, 8, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, NIDOQUEEN, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveNidoqueen, -1
-	object_event 15, 9, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, NIDORAN_M, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunbeamReserveNidoranM, -1
-	object_event 14, 7, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, NIDORAN_F, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveNidoranF, -1
-	object_event 8,  14, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, LOPUNNY, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamReserveLopunny, -1
-	object_event 12, 12, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, ALTARIA, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SunbeamReserveAltaria, -1
-	object_event 13, 15, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MAGMAR, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveMagmar, -1
-	object_event 20, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, ELECTABUZZ, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamReserveElectabuzz, -1
+	object_event 19,  8, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DONPHAN, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveDonphan, -1
+	person_event SPRITE_SLOWPOKETAIL, 15,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamReserveSlowpoke, -1
+	person_event SPRITE_CUTE_GIRL, 17,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC3, -1
+	object_event 13,  8, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, NIDOQUEEN, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveNidoqueen, -1
+	object_event 15,  9, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, NIDORAN_M, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunbeamReserveNidoranM, -1
+	object_event 14,  7, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, NIDORAN_F, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveNidoranF, -1
+	object_event  8, 12, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, LOPUNNY, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamReserveLopunny, -1
+	object_event  5, 10, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, ALTARIA, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SunbeamReserveAltaria, -1
+	object_event 13, 14, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MAGMAR, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveMagmar, -1
+	object_event 19, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, ELECTABUZZ, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamReserveElectabuzz, -1
+	itemball_event  6,  4, RARE_CANDY, 1, EVENT_SUNBEAM_RESERVE_ITEM_BALL
 
 	
 	const_def 1 ; object constants
@@ -330,8 +331,6 @@ Movement_SunbeamSpruce7:
 Movement_SunbeamSpruce8:
 	step_down
 	step_down
-	step_down
-	step_down
 	step_left
 	step_left
 	step_left
@@ -341,9 +340,7 @@ Movement_SunbeamSpruce8:
 Movement_SunbeamSpruce9:
 	step_right
 	step_right
-	step_up
 	step_right
-	step_up
 	step_right
 	step_right
 	step_right

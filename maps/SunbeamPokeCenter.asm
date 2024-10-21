@@ -94,7 +94,7 @@ SunbeamPokecenterNPC3Text:
 	done
 	
 SunbeamPokecenterSpruceText1:
-	text "Of course."
+	text "???: Of course."
 	
 	para "Same time next"
 	line "week."
@@ -110,9 +110,8 @@ SunbeamPokecenterSpruceText2:
 	para "Ah, <WAIT_S>hold on a"
 	line "moment…"
 	
-	para "You are"
-	line "<PLAYER>, <WAIT_S>are you"
-	cont "not?"
+	para "You are <PLAYER>,"
+	line "are you not?"
 	
 	para "…"
 	

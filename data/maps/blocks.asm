@@ -950,3 +950,6 @@ ObscuraGym_BlockData:
 ObscuraMuseumPhoto_BlockData:
 	INCBIN "maps/ObscuraMuseumPhoto.ablk.lz"
 	
+UnderwaterTempleOutside_BlockData:
+	INCBIN "maps/UnderwaterTempleOutside.ablk.lz"
+	

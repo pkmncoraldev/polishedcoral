@@ -481,8 +481,12 @@ ENDM
 	map_attributes Route6Underwater, ROUTE_6_UNDERWATER, $09, SOUTH
 	connection south, CoralReef, CORAL_REEF, -23
 	
-	map_attributes CoralReef, CORAL_REEF, $7d, NORTH
+	map_attributes CoralReef, CORAL_REEF, $7d, NORTH | EAST
 	connection north, Route6Underwater, ROUTE_6_UNDERWATER, 23
+	connection east, UnderwaterTempleOutside, UNDERWATER_TEMPLE_OUTSIDE, -4
+	
+	map_attributes UnderwaterTempleOutside, UNDERWATER_TEMPLE_OUTSIDE, $7d, WEST
+	connection west, CoralReef, CORAL_REEF, 4
 	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0

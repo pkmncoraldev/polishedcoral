@@ -76,7 +76,9 @@ Pointers445f: ; 445f
 	dw SetFacingCasino2,      		   SetFacingCasino2  		  ; PERSON_ACTION_CASINO_2
 	dw SetFacingFlowerShake,           SetFacingStanding          ; PERSON_ACTION_FLOWER_SHAKE
 	dw SetFacingTileUpDown,            SetFacingFreezeTileUpDown  ; PERSON_ACTION_TILE_UP_DOWN
-	dw SetFacingNoRender,            SetFacingNoRender  ; PERSON_ACTION_NO_RENDER
+	dw SetFacingNoRender,              SetFacingNoRender 		  ; PERSON_ACTION_NO_RENDER
+	dw SetFacingTileHalfwayLeft, 	   SetFacingTileHalfwayLeft	  ; PERSON_ACTION_TILE_HALFWAY_LEFT
+	dw SetFacingTileHalfwayRight,      SetFacingTileHalfwayRight  ; PERSON_ACTION_TILE_HALFWAY_RIGHT
 	
 ; 44a3
 
@@ -678,6 +680,14 @@ SetFacingDealerLeft:
 	
 SetFacingDealerRight:
 	ld a, FACING_DEALER_RIGHT
+	jp SetFixedFacing
+	
+SetFacingTileHalfwayLeft:
+	ld a, FACING_TILE_HALFWAY_LEFT
+	jp SetFixedFacing
+	
+SetFacingTileHalfwayRight:
+	ld a, FACING_TILE_HALFWAY_RIGHT
 	jp SetFixedFacing
 	
 SetFacingCasino1:

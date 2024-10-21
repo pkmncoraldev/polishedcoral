@@ -646,6 +646,8 @@ MapObjectMovementPattern:
 	dw .MovementShakingFlower
 	dw .MovementTileUpDown            ; SPRITEMOVEFN_TILE_UP_DOWN
 	dw .NoRender
+	dw .MovementTileHalfwayLeft
+	dw .MovementTileHalfwayRight
 
 .RandomWalkY:
 	call Random
@@ -1243,6 +1245,14 @@ MapObjectMovementPattern:
 	
 .MovementDealerRight
 	ld a, PERSON_ACTION_DEALER_RIGHT
+	jr ._ActionA_StepType04
+	
+.MovementTileHalfwayLeft
+	ld a, PERSON_ACTION_TILE_HALFWAY_LEFT
+	jr ._ActionA_StepType04
+	
+.MovementTileHalfwayRight
+	ld a, PERSON_ACTION_TILE_HALFWAY_RIGHT
 	jr ._ActionA_StepType04
 	
 .MovementCasino1:

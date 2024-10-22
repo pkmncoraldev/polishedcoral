@@ -124,7 +124,7 @@ TrainerRoute14_5:
 	generictrainer SWIMMERF, SHAE, EVENT_BEAT_ROUTE_14_TRAINER_5, .SeenText, .BeatenText
 
 	text "Maybe I should try"
-	line "riding my ERROR!!" ;TODO replace with a mon from her team
+	line "riding my SLOWBRO"
 	cont "instead of"
 	cont "swimming."
 	done

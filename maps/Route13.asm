@@ -37,8 +37,8 @@ Route13_MapScriptHeader:
 	person_event SPRITE_UMBRELLA,  4, 36, SPRITEMOVEDATA_UMBRELLA_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_TUBER,  5, 51, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute13_1, -1
 	person_event SPRITE_FISHER, 11, 40, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRoute13_2, -1
-	person_event SPRITE_TUBER,  9, 44, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute13_3, -1
-	person_event SPRITE_SWIMMER_GIRL_LAND,  6, 47, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute13_4, -1
+	person_event SPRITE_TUBER,  8, 44, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute13_3, -1
+	person_event SPRITE_SWIMMER_GIRL, 14, 50, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute13_4, -1
 	person_event SPRITE_TUBER_WATER, 15, 14, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, TrainerRoute13_5, -1
 	person_event SPRITE_BIKINI_2,  4, 32, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route13NPC1, -1
 	person_event SPRITE_TRUNKS,  2, 35, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route13NPC2, -1
@@ -250,11 +250,8 @@ TrainerRoute13_3:
 TrainerRoute13_4:
 	generictrainer SWIMMERF, GISELE, EVENT_BEAT_ROUTE_13_TRAINER_4, .SeenText, .BeatenText
 
-	text "I love the beach!"
-	
-	para "There's plenty to"
-	line "do even without"
-	cont "swimming."
+	text "I think I'll head"
+	line "back to shore now…"
 	done
 
 .SeenText:

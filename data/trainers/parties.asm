@@ -1582,7 +1582,7 @@ FisherGroup:
 	db "HOMER@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 14, CHINCHOU
+	db 14, STARYU
 	db 13, WOOPER
 	db 13, BUIZEL
 	db -1 ; end
@@ -1593,7 +1593,7 @@ FisherGroup:
 	db "HUE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 14, CHINCHOU
+	db 14, STARYU
 	db 14, WOOPER
 	db -1 ; end
 
@@ -1625,7 +1625,9 @@ FisherGroup:
 	db "DICK@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 32, CHINCHOU
+	db 32, STARYU
+	db 32, SANDILE
 	db -1 ; end
 
 ; ================
@@ -1634,7 +1636,7 @@ FisherGroup:
 	db "ROBBY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 36, LANTURN
 	db -1 ; end
 
 ; ================
@@ -1643,7 +1645,8 @@ FisherGroup:
 	db "ERIC@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 34, KROKOROK
+	db 33, STARMIE
 	db -1 ; end
 
 ; ================
@@ -1652,7 +1655,9 @@ FisherGroup:
 	db "HARRELSON@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 17, SLOWPOKE
+	db 16, SLOWPOKE
+	db 15, CARVANHA
 	db -1 ; end
 
 ; ================
@@ -1661,7 +1666,8 @@ FisherGroup:
 	db "MIKE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 5, MAGIKARP
+	db 37, GYARADOS
 	db -1 ; end
 
 ; ================
@@ -2415,7 +2421,7 @@ GruntFGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 18, GLOOM
-	db 18, STARYU
+	db 18, SANDILE
 	db -1 ; end
 
 ; ================
@@ -2660,7 +2666,7 @@ PokefanFGroup:
 	; party
 	db 27, VAPOREON
 	db 29, EXEGGCUTE
-	db 23, STARYU
+	db 23, SANDILE
 	db -1 ; end
 
 ; ================
@@ -3592,7 +3598,9 @@ SailorGroup:
 	db "RANDALL@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 33, MACHOKE
+	db 35, MACHOP
+	db 32, POLIWRATH
 	db -1 ; end
 
 ; ================
@@ -3643,7 +3651,8 @@ SwimmerMGroup:
 	db "PABLO@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 34, FLOATZEL
+	db 34, FLOATZEL
 	db -1 ; end
 
 ; ================
@@ -3652,7 +3661,7 @@ SwimmerMGroup:
 	db "GARY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 38, MUNCHLAX
 	db -1 ; end
 
 ; ================
@@ -3661,7 +3670,7 @@ SwimmerMGroup:
 	db "DEVIN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 36, SHARPEDO
 	db -1 ; end
 
 ; ================
@@ -3670,7 +3679,8 @@ SwimmerMGroup:
 	db "IAN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 34, STARMIE
+	db 35, LANTURN
 	db -1 ; end
 
 ; ================
@@ -3679,7 +3689,9 @@ SwimmerMGroup:
 	db "DEON@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 35, CHINCHOU
+	db 33, LANTURN
+	db 33, KROKOROK
 	db -1 ; end
 
 ; ================
@@ -3688,7 +3700,8 @@ SwimmerMGroup:
 	db "RICH@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 34, CARVANHA
+	db 33, SHARPEDO
 	db -1 ; end
 
 ; ================
@@ -3697,7 +3710,8 @@ SwimmerMGroup:
 	db "DAVY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 33, MACHOKE
+	db 33, SLOWKING
 	db -1 ; end
 
 ; ================
@@ -3721,7 +3735,9 @@ SwimmerFGroup:
 	db "SHAE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 36, SLOWPOKE
+	db 36, SLOWPOKE
+	db 33, SLOWBRO
 	db -1 ; end
 
 ; ================
@@ -3730,7 +3746,8 @@ SwimmerFGroup:
 	db "PEGGY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 34, MAREANIE
+	db 37, DREEPY
 	db -1 ; end
 
 ; ================
@@ -3739,7 +3756,9 @@ SwimmerFGroup:
 	db "RACHEL@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 35, STARYU
+	db 34, STARMIE
+	db 34, STARMIE
 	db -1 ; end
 
 ; ================
@@ -3748,12 +3767,14 @@ SwimmerFGroup:
 	db "ROSA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 33, AZUMARILL
+	db 34, STARYU
+	db 35, CHINCHOU
 	db -1 ; end
 
 ; ================
 
-	; SWIMMERM
+	; SWIMMERF
 	db "CONNIE@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -3766,7 +3787,9 @@ SwimmerFGroup:
 	db "MARIA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 17, WINGULL
+	db 16, SQUIRTLE
+	db 17, WINGULL
 	db -1 ; end
 
 ; ================
@@ -3775,7 +3798,8 @@ SwimmerFGroup:
 	db "GISELE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 33, KROKOROK
+	db 32, PELIPPER
 	db -1 ; end
 
 ; ================
@@ -3784,7 +3808,8 @@ SwimmerFGroup:
 	db "SHANNON@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 34, CORSOLA
+	db 35, MAREANIE
 	db -1 ; end
 
 ; ================
@@ -5303,7 +5328,7 @@ TuberGroup:
 	db "SAMANTHA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 17, MARILL
 	db -1 ; end
 
 ; ================
@@ -5312,7 +5337,9 @@ TuberGroup:
 	db "BEBE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 15, MARILL
+	db 16, MARILL
+	db 16, SANDILE
 	db -1 ; end
 
 ; ================
@@ -5321,7 +5348,8 @@ TuberGroup:
 	db "KERRI@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 35, POLIWHIRL
+	db 34, POLITOED
 	db -1 ; end
 
 ; ================
@@ -5330,7 +5358,9 @@ TuberGroup:
 	db "SOFIE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 34, AZUMARILL
+	db 33, LANTURN
+	db 34, DREEPY
 	db -1 ; end
 
 ; ================

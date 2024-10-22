@@ -2,7 +2,7 @@
 
 	map_id SUNSET_BAY
 	db 6 percent ; encounter rate
-	db 29, CHINCHOU		;30%
+	db 29, STARYU		;30%
 	db 29, CARVANHA		;30%
 	db 29, WINGULL		;20%
 	db 29, MAREANIE		;10%
@@ -12,7 +12,7 @@
 
 	map_id SUNSET_CAPE
 	db 6 percent ; encounter rate
-	db 29, CHINCHOU		;30%
+	db 29, STARYU		;30%
 	db 29, CARVANHA		;30%
 	db 29, WINGULL		;20%
 	db 29, MAREANIE		;10%
@@ -143,7 +143,7 @@
 	map_id ROUTE_6
 	db 6 percent ; encounter rate
 	db 29, WINGULL		;30%
-	db 29, CHINCHOU		;30%
+	db 29, STARYU		;30%
 	db 29, CARVANHA		;20%
 	db 29, MAREANIE		;10%
 	db 29, MAREANIE		;5%
@@ -193,7 +193,7 @@
 	map_id SUNBEAM_ISLAND
 	db 6 percent ; encounter rate
 	db 29, WINGULL		;30%
-	db 29, CHINCHOU		;30%
+	db 29, STARYU		;30%
 	db 29, MAREANIE		;20%
 	db 29, CORSOLA		;10%
 	db 29, WINGULL		;5%
@@ -203,7 +203,7 @@
 	map_id SUNBEAM_BEACH
 	db 6 percent ; encounter rate
 	db 29, WINGULL		;30%
-	db 29, CHINCHOU		;30%
+	db 29, STARYU		;30%
 	db 29, MAREANIE		;20%
 	db 29, CORSOLA		;10%
 	db 29, WINGULL		;5%
@@ -292,7 +292,7 @@
 
 	map_id ROUTE_14
 	db 6 percent ; encounter rate
-	db 29, CHINCHOU		;30%
+	db 29, STARYU		;30%
 	db 29, CARVANHA		;30%
 	db 29, WINGULL		;20%
 	db 29, MAREANIE		;10%
@@ -302,7 +302,7 @@
 
 	map_id ROUTE_15
 	db 6 percent ; encounter rate
-	db 29, CHINCHOU		;30%
+	db 29, STARYU		;30%
 	db 29, CARVANHA		;30%
 	db 29, WINGULL		;20%
 	db 29, MAREANIE		;10%

@@ -934,8 +934,22 @@ EventideGymGuyText:
 	
 	para "Champ in making!"
 	
-	para "This place is"
-	line "HUGE!"
+	para "Just a word of"
+	line "warning,"
+	
+	para "this place is"
+	line "super tough, even"
+	cont "for a GYM!"
+	
+	para "If you feel like"
+	line "you aren't ready,"
+	
+	para "there's no shame"
+	line "in moving on and"
+	cont "coming back later."
+	
+	para "Anyway,<WAIT_S> this place"
+	line "is HUGE!"
 	
 	para "And look at all"
 	line "these airplanes!"
@@ -954,17 +968,6 @@ EventideGymGuyText:
 	line "FIGHTING and GRASS"
 	cont "types away easily,"
 	cont "though."
-	
-	para "Just a word of"
-	line "warning,"
-	
-	para "this place is"
-	line "super tough, even"
-	cont "for a GYM!"
-	
-	para "You might need to"
-	line "come back after"
-	cont "some training!"
 	
 	para "Give it your best"
 	line "shot!"

@@ -2121,7 +2121,7 @@ HikerGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 16, ARON
-	db 18, NOIBAT
+	db 18, ZUBAT
 	db 18, ZUBAT
 	db -1 ; end
 
@@ -2729,7 +2729,8 @@ PokemaniacGroup:
 	db "PAUL@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 19, ELEKID
+	db 19, MAGBY
 	db -1 ; end
 
 ; ================
@@ -2738,7 +2739,10 @@ PokemaniacGroup:
 	db "DEREK@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 16, PIKACHU
+	db 16, EEVEE
+	db 16, JIGGLYPUFF
+	db 16, CLEFAIRY
 	db -1 ; end
 
 ; ================
@@ -4016,7 +4020,8 @@ BlackbeltGroup:
 	db "HIRO@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 16, MACHOP
+	db 16, MEDITITE
 	db -1 ; end
 
 ; ================
@@ -4025,7 +4030,9 @@ BlackbeltGroup:
 	db "NAKA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 16, MACHOP
+	db 17, GEODUDE
+	db 16, MACHOP
 	db -1 ; end
 
 ; ================

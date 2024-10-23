@@ -1649,6 +1649,33 @@
 	db 29, SCYTHER		;4%
 	db 29, SCYTHER		;1%
 	
+	map_id CONNECTING_CAVERN
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	; morn
+	db 27, NOIBAT		;30%
+	db 27, GOLBAT		;30%
+	db 27, DRILBUR		;20%
+	db 27, DRILBUR		;10%
+	db 27, ZUBAT		;5%
+	db 27, ZUBAT		;4%
+	db 27, ZUBAT		;1%
+	; day
+	db 27, NOIBAT		;30%
+	db 27, GOLBAT		;30%
+	db 27, DRILBUR		;20%
+	db 27, DRILBUR		;10%
+	db 27, ZUBAT		;5%
+	db 27, ZUBAT		;4%
+	db 27, ZUBAT		;1%
+	; nite
+	db 27, NOIBAT		;30%
+	db 27, GOLBAT		;30%
+	db 27, DRILBUR		;20%
+	db 27, DRILBUR		;10%
+	db 27, ZUBAT		;5%
+	db 27, ZUBAT		;4%
+	db 27, ZUBAT		;1%
+	
 	map_id FAKE_ROUTE_1
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn

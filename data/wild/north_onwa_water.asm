@@ -3,22 +3,22 @@
 	map_id SUNSET_BAY
 	db 6 percent ; encounter rate
 	db 29, STARYU		;30%
-	db 29, CARVANHA		;30%
-	db 29, WINGULL		;20%
+	db 29, WINGULL		;30%
+	db 29, SANDILE		;20%
 	db 29, MAREANIE		;10%
 	db 29, CORSOLA		;5%
-	db 29, DREEPY		;4%
-	db 29, DREEPY		;1%
+	db 29, CHINCHOU		;4%
+	db 29, CHINCHOU		;1%
 
 	map_id SUNSET_CAPE
 	db 6 percent ; encounter rate
 	db 29, STARYU		;30%
-	db 29, CARVANHA		;30%
-	db 29, WINGULL		;20%
+	db 29, WINGULL		;30%
+	db 29, SANDILE		;20%
 	db 29, MAREANIE		;10%
 	db 29, CORSOLA		;5%
-	db 29, DREEPY		;4%
-	db 29, DREEPY		;1%
+	db 29, CHINCHOU		;4%
+	db 29, CHINCHOU		;1%
 	
 	map_id DAYBREAK_VILLAGE
 	db 15 percent ; encounter rate
@@ -142,13 +142,23 @@
 	
 	map_id ROUTE_6
 	db 6 percent ; encounter rate
-	db 29, WINGULL		;30%
 	db 29, STARYU		;30%
-	db 29, CARVANHA		;20%
+	db 29, WINGULL		;30%
+	db 29, SANDILE		;20%
 	db 29, MAREANIE		;10%
-	db 29, MAREANIE		;5%
-	db 29, CORSOLA		;4%
-	db 29, CORSOLA		;1%
+	db 29, CORSOLA		;5%
+	db 29, CHINCHOU		;4%
+	db 29, CHINCHOU		;1%
+	
+	map_id ROUTE_6_SOUTH
+	db 6 percent ; encounter rate
+	db 29, STARYU		;30%
+	db 29, WINGULL		;30%
+	db 29, SANDILE		;20%
+	db 29, MAREANIE		;10%
+	db 29, CORSOLA		;5%
+	db 29, CHINCHOU		;4%
+	db 29, CHINCHOU		;1%
 	
 	map_id LAKE_ONWA
 	db 8 percent ; encounter rate
@@ -290,24 +300,44 @@
 	db 29, AZUMARILL	;4%
 	db 29, AZUMARILL	;1%
 
+	map_id ROUTE_13
+	db 6 percent ; encounter rate
+	db 29, STARYU		;30%
+	db 29, WINGULL		;30%
+	db 29, SANDILE		;20%
+	db 29, MAREANIE		;10%
+	db 29, CORSOLA		;5%
+	db 29, CHINCHOU		;4%
+	db 29, CHINCHOU		;1%
+
 	map_id ROUTE_14
 	db 6 percent ; encounter rate
 	db 29, STARYU		;30%
-	db 29, CARVANHA		;30%
-	db 29, WINGULL		;20%
+	db 29, WINGULL		;30%
+	db 29, SANDILE		;20%
 	db 29, MAREANIE		;10%
 	db 29, CORSOLA		;5%
-	db 29, DREEPY		;4%
-	db 29, DREEPY		;1%
+	db 29, CHINCHOU		;4%
+	db 29, CHINCHOU		;1%
 
 	map_id ROUTE_15
 	db 6 percent ; encounter rate
 	db 29, STARYU		;30%
-	db 29, CARVANHA		;30%
-	db 29, WINGULL		;20%
+	db 29, WINGULL		;30%
+	db 29, SANDILE		;20%
 	db 29, MAREANIE		;10%
 	db 29, CORSOLA		;5%
-	db 29, DREEPY		;4%
-	db 29, DREEPY		;1%
+	db 29, CHINCHOU		;4%
+	db 29, CHINCHOU		;1%
+
+	map_id CONNECTING_CAVERN
+	db 6 percent ; encounter rate
+	db 29, SLOWPOKE		;30%
+	db 29, MAREANIE		;30%
+	db 29, SANDILE		;20%
+	db 29, CORSOLA		;10%
+	db 29, SANDILE		;5%
+	db 29, CHINCHOU		;4%
+	db 29, CHINCHOU		;1%
 
 	db -1 ; end

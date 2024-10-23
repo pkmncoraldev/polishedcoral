@@ -872,10 +872,6 @@ GetMovePriority: ; 3c5c5
 	call StdBattleTextBox
 	jr .no_priority
 .check_triage
-	xor $80 ; treat it as a signed byte
-	ld b, a
-	ld a, BATTLE_VARS_ABILITY
-	call GetBattleVar
 	cp TRIAGE
 	jr nz, .no_priority
 	ld a, BATTLE_VARS_MOVE

@@ -2937,9 +2937,9 @@ LassGroup:
 	db "KATHY@"		;5 BADGES
 	db TRAINERTYPE_PERSONALITY
 	; party
-	db 31, WOOPER, $55, $55, $55, ABILITY_2 | QUIRKY, FEMALE | PALDEAN_FORM
-	db 31, MEOWTH, $55, $55, $55, ABILITY_2 | QUIRKY, FEMALE | ALOLAN_FORM
-	db 30, NIDORINA, $55, $55, $55, ABILITY_2 | QUIRKY, FEMALE
+	db 34, WOOPER, $55, $55, $55, ABILITY_2 | QUIRKY, FEMALE | PALDEAN_FORM
+	db 34, MEOWTH, $55, $55, $55, ABILITY_2 | QUIRKY, FEMALE | ALOLAN_FORM
+	db 33, NIDORINA, $55, $55, $55, ABILITY_2 | QUIRKY, FEMALE
 	db -1 ; end
 
 ; ================
@@ -2975,7 +2975,7 @@ LassGroup:
 	db "HARLEY@"		;5 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 30, NIDOQUEEN
+	db 31, NIDOQUEEN
 	db -1 ; end
 
 ; ================
@@ -3047,9 +3047,9 @@ BeautyGroup:
 	db "CLAIRE@"		;5 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 32, IVYSAUR
-	db 32, GLOOM
-	db 31, VILEPLUME
+	db 33, IVYSAUR
+	db 33, GLOOM
+	db 32, VILEPLUME
 	db -1 ; end
 
 ; ================
@@ -3094,9 +3094,9 @@ BeautyGroup:
 	db "SAM@"		;6 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 31, KOFFING
 	db 32, KOFFING
-	db 32, WHIRLIPEDE
+	db 33, KOFFING
+	db 33, WHIRLIPEDE
 	db -1 ; end
 
 ; ================
@@ -4619,8 +4619,8 @@ DelinquentfGroup:
 	db "LIZ@"		;5 BADGES
 	db TRAINERTYPE_PERSONALITY
 	; party
-	db 32, GRIMER, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE
-	db 32, GRIMER, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | ALOLAN_FORM
+	db 33, GRIMER, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE
+	db 33, GRIMER, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | ALOLAN_FORM
 	db -1 ; end
 
 ; ================
@@ -4656,9 +4656,9 @@ DelinquentfGroup:
 	db "MEGAN@"		;5 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 31, GOLBAT
-	db 31, KOFFING
-	db 32, CROAGUNK
+	db 32, GOLBAT
+	db 32, KOFFING
+	db 33, CROAGUNK
 	db -1 ; end
 
 ; ================

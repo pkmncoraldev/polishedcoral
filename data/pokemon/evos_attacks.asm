@@ -4263,7 +4263,18 @@ WyrdeerEvosAttacks:
 	
 ClodsireEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, POISON_STING
+	db 1, LEER_TAIL_WHIP
+	db 1, MUD_SLAP
+	db 1, TOXIC_SPIKES
+	db 1, BODY_SLAM
+	db 24, EARTH_POWER
+	db 28, SLUDGE_BOMB
+	db 33, ENCORE
+	db 38, AMNESIA
+	db 42, POISON_JAB
+	db 47, MEGAHORN
+	db 51, EARTHQUAKE
 	db 0 ; no more level-up moves
 	
 FarigirafEvosAttacks:
@@ -4417,7 +4428,18 @@ Marowak_AEvosAttacks:
 Wooper_PEvosAttacks:
 	db EVOLVE_LEVEL, 20, CLODSIRE
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, POISON_STING
+	db 1, LEER_TAIL_WHIP
+	db 8, MUD_SLAP
+	db 12, TOXIC_SPIKES
+	db 15, BODY_SLAM
+	db 21, EARTH_POWER
+	db 26, SLUDGE_BOMB
+	db 30, ENCORE
+	db 34, AMNESIA
+	db 37, POISON_JAB
+	db 41, MEGAHORN
+	db 45, EARTHQUAKE
 	db 0 ; no more level-up moves
 	
 Corsola_GEvosAttacks:

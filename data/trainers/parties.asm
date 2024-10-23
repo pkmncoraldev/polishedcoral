@@ -2823,7 +2823,9 @@ SuperNerdGroup:
 	db "PEDRO@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 35, MAGNEMITE
+	db 35, MAGNEMITE
+	db 33, ELECTABUZZ
 	db -1 ; end
 
 ; ================
@@ -3275,7 +3277,11 @@ JugglerGroup:
 	db "RYAN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 30, DRILBUR
+	db 31, DRILBUR
+	db 32, DRILBUR
+	db 33, DRILBUR
+	db 34, EXCADRILL
 	db -1 ; end
 
 ; ================
@@ -3475,7 +3481,8 @@ PsychicGroup:
 	db "RALPH@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 36, XATU
+	db 35, MEDICHAM
 	db -1 ; end
 
 ; ================
@@ -3484,7 +3491,8 @@ PsychicGroup:
 	db "NELSON@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 34, HYPNO
+	db 34, MEDICHAM
 	db -1 ; end
 
 ; ================
@@ -3621,7 +3629,7 @@ SailorGroup:
 	db "SHAWN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 32, MACHAMP
 	db -1 ; end
 
 ; ================
@@ -3654,7 +3662,8 @@ SwimmerMGroup:
 	db "MARK@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 35, LANTURN
+	db 34, SHARPEDO
 	db -1 ; end
 
 ; ================
@@ -3739,7 +3748,8 @@ SwimmerFGroup:
 	db "BECKY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 35, CHINCHOU
+	db 34, MAREANIE
 	db -1 ; end
 
 ; ================
@@ -4024,7 +4034,8 @@ BlackbeltGroup:
 	db "TOSHI@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 35, MEDICHAM
+	db 34, EXCADRILL
 	db -1 ; end
 
 ; ================
@@ -4336,7 +4347,9 @@ CooltrainerFGroup:
 	db "JANE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 35, NOIBAT
+	db 35, PERSIAN
+	db 33, MAGMAR
 	db -1 ; end
 
 ; ================

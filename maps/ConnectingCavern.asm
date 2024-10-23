@@ -229,11 +229,12 @@ TrainerConnectingCavern_8:
 	generictrainer JUGGLER, RYAN, EVENT_BEAT_CONNECTING_CAVERN_TRAINER_8, .SeenText, .BeatenText
 
 	text "Do you use"
-	line "different types of"
-	cont "#BALLs?"
+	line "different types"
+	cont "of #BALLs?"
 	
 	para "I use BALLs that"
-	line "match my #MON!"
+	line "match my #MON's"
+	cont "personalities!"
 	done	
 
 .SeenText:

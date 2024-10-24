@@ -1265,8 +1265,7 @@ wPartyMonNicknamesEnd::
 	
 wEncounterHouseMon:: ds 1
 
-wPlayerSplitHandleMonFaint:: ds 1
-wEnemySplitHandleMonFaint:: ds 1
+	ds 2 ; unused
 
 ;	ds 22 ; unused
 

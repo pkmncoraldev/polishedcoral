@@ -8794,59 +8794,19 @@ PursuitSwitchDuringMove:
 	ld a, [hBattleTurn]
 	push af
 	call SwitchTurn
-; Performed from Pursuit user's POV
-	call CheckOpponentWentFirst
-	jr z, .pursuit_done
-	call HasUserFainted
-	jr z, .pursuit_done
-    
-	ld hl, wBattleScriptBufferLoc
-	ld c, [hl]
-	inc hl
-	ld b, [hl]
-	push bc
-	push hl
-	farcall PursuitSwitch
-	pop hl
-	pop bc
-	ld [hl], b
-	dec hl
-	ld [hl], c
+	ld a, [wCurBattleMon]
+	ld [wLastPlayerMon], a
+	farcall PursuitSwitchIfFirstAndAlive
 .pursuit_done
 	pop af
 	ld [hBattleTurn], a
 
 	; if Pursuit fainted opponent, abort the switch-out
 	call HasUserFainted
-	ret z
-	; If Pursuit user fainted (i.e. by Life Orb recoil) after
-	; hitting target, battle handler should be split
-	; Returns 0 if battle ends as a result
-	call HasOpponentFainted
-	ret nz
-	;fallthrough
-SwitchOutHandleMonFaint:
-	ld a, [hBattleTurn]
-	and a
-	jr z, .enemy_mon_fainted
-;.player_mon_fainted
-	ld [wPlayerSplitHandleMonFaint], a
-	farcall ContinueHandlePlayerMonFaint
-	jr .finish_mon_fainted
-.enemy_mon_fainted
-	inc a
-	ld [wEnemySplitHandleMonFaint], a
-	farcall ContinueHandleEnemyMonFaint
-.finish_mon_fainted
-	ld a, [wBattleEnded]
-	dec a ; WARNING: won't work if wBattleEnded is > 1 or < 0
-	ret ; no switch (returns 0) if the battle is over
+	ret
 
 BattleCommand_switchout:
 	call CheckAnyOtherAliveMons
-	ret z
-	call HasOpponentFainted
-	call z, SwitchOutHandleMonFaint
 	ret z
 	
 ContinueToSwitchOut:
@@ -8858,11 +8818,8 @@ ContinueToSwitchOut:
 	ld hl, BattleText_WentBackToEnemy
 .got_text
 	call StdBattleTextBox
-	call HasOpponentFainted
-	jr z, .no_pursuit
 	call PursuitSwitchDuringMove
 	ret z
-.no_pursuit
 	farcall SlideUserPicOut
 	ld c, 20
 	call DelayFrames
@@ -8904,8 +8861,8 @@ BattleCommand_batonpass:
 	call CheckAnyOtherAliveMons
 	jp z, FailedBatonPass
 
-;	call PursuitSwitchDuringMove
-;	ret z
+	call PursuitSwitchDuringMove
+	ret z
 
 	ld a, [hBattleTurn]
 	and a

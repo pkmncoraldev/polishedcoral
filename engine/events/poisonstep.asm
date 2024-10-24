@@ -4,8 +4,8 @@ DoPoisonStep:: ; 505da
 	jr z, .no_recovery
 
 	xor a
-	ld c, 5
-	ld hl, wEngineBuffer1
+	ld c, wPoisonStepDataEnd - wPoisonStepData
+	ld hl, wPoisonStepFlagSum
 .loop_clearEngineBuffer1
 	ld [hli], a
 	dec c
@@ -17,16 +17,16 @@ DoPoisonStep:: ; 505da
 	call .DamageMonIfPoisoned
 	jr nc, .not_poisoned
 ; the output flag is stored in c, copy it to the ([wCurPartyMon] + 2)nd EngineBuffer
-; and set the corresponding flag in wEngineBuffer1
+; and set the corresponding flag in wPoisonStepFlagSum
 	ld a, [wCurPartyMon]
 	ld e, a
 	ld d, 0
-	ld hl, wEngineBuffer2
+	ld hl, wPoisonStepPartyFlags
 	add hl, de
 	ld [hl], c
-	ld a, [wEngineBuffer1]
+	ld a, [wPoisonStepFlagSum]
 	or c
-	ld [wEngineBuffer1], a
+	ld [wPoisonStepFlagSum], a
 
 .not_poisoned
 	ld a, [wPartyCount]
@@ -35,10 +35,10 @@ DoPoisonStep:: ; 505da
 	cp [hl]
 	jr nz, .loop_check_poison
 
-	ld a, [wEngineBuffer1]
+	ld a, [wPoisonStepFlagSum]
 	and %10
 	jr nz, .someone_has_recovered
-	ld a, [wEngineBuffer1]
+	ld a, [wPoisonStepFlagSum]
 	and %01
 	jr z, .no_recovery
 	call .PlayPoisonSFX
@@ -147,7 +147,7 @@ DoPoisonStep:: ; 505da
 .CheckWhitedOut: ; 5067b
 	xor a
 	ld [wCurPartyMon], a
-	ld de, wEngineBuffer2
+	ld de, wPoisonStepPartyFlags
 .party_loop
 	push de
 	ld a, [de]

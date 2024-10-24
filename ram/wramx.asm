@@ -112,7 +112,12 @@ wUnusedApricorns:: ds 1
 wStartFlypoint:: ds 1
 wEndFlypoint:: ds 1
 
-	ds 55
+wPoisonStepData::
+wPoisonStepFlagSum:: ds 1
+wPoisonStepPartyFlags:: ds PARTY_LENGTH
+wPoisonStepDataEnd::
+
+	ds 48
 
 UNION
 ; engine buffers

@@ -50,7 +50,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; bruno
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; karen
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; champion
-	db   0, $99, $99, $99, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; rival
+	db   0, $99, $93, $99, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; rival
 	db   0, $99, $99, $99, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; rival_s
 	db   0, $33, $33, $33, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; youngster
 	db   0, $33, $33, $33, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; bug catcher
@@ -59,7 +59,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db   0, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; twins
 	db   8, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; fisher
 	db   8, $77, $77, $77, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; bird keeper
-	db  16, $77, $77, $77, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; hiker
+	db  16, $77, $73, $77, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; hiker
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; gruntm
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; gruntf
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; kage

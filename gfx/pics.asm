@@ -577,12 +577,12 @@ WhimsicottBackpic:        INCBIN "gfx/pokemon/whimsicott/back.2bpp.lz"
 
 SECTION "Pokemon Pics 25", ROMX
 
-SandileFrontpic:          INCBIN "gfx/pokemon/sandile/front.2bpp.lz"
-SandileBackpic:           INCBIN "gfx/pokemon/sandile/back.2bpp.lz"
-KrokorokFrontpic:         INCBIN "gfx/pokemon/krokorok/front.2bpp.lz"
-KrokorokBackpic:          INCBIN "gfx/pokemon/krokorok/back.2bpp.lz"
-KrookodileFrontpic:       INCBIN "gfx/pokemon/krookodile/front.2bpp.lz"
-KrookodileBackpic:        INCBIN "gfx/pokemon/krookodile/back.2bpp.lz"
+HorseaFrontpic:           INCBIN "gfx/pokemon/horsea/front.2bpp.lz"
+HorseaBackpic:            INCBIN "gfx/pokemon/horsea/back.2bpp.lz"
+SeadraFrontpic:           INCBIN "gfx/pokemon/seadra/front.2bpp.lz"
+SeadraBackpic:            INCBIN "gfx/pokemon/seadra/back.2bpp.lz"
+KingdraFrontpic:          INCBIN "gfx/pokemon/kingdra/front.2bpp.lz"
+KingdraBackpic:           INCBIN "gfx/pokemon/kingdra/back.2bpp.lz"
 MaractusFrontpic:         INCBIN "gfx/pokemon/maractus/front.2bpp.lz"
 MaractusBackpic:          INCBIN "gfx/pokemon/maractus/back.2bpp.lz"
 DwebbleFrontpic:          INCBIN "gfx/pokemon/dwebble/front.2bpp.lz"

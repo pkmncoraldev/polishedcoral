@@ -215,7 +215,7 @@
 	const SHED_SHELL   ; bc
 	const SHELL_BELL   ; bd
 	const SOOTHE_BELL  ; be
-	const CORAL_SHARD  ; bf - replace
+	const CORAL_SHARD  ; bf
 	const WIDE_LENS    ; c0
 	const WISE_GLASSES ; c1
 	const ZOOM_LENS    ; c2
@@ -245,7 +245,7 @@
 	const POWER_BAND   ; d5 - replace
 	const POWER_ANKLET ; d6 - replace
 
-	const DRAGON_SCALE ; d7 - replace
+	const DRAGON_SCALE ; d7
 	const UP_GRADE     ; d8
 	const DUBIOUS_DISC ; d9
 	const BIG_MALASADA ; da

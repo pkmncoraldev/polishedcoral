@@ -4,7 +4,7 @@
 	db 6 percent ; encounter rate
 	db 29, STARYU		;30%
 	db 29, WINGULL		;30%
-	db 29, SANDILE		;20%
+	db 29, HORSEA		;20%
 	db 29, MAREANIE		;10%
 	db 29, CORSOLA		;5%
 	db 29, CHINCHOU		;4%
@@ -14,7 +14,7 @@
 	db 6 percent ; encounter rate
 	db 29, STARYU		;30%
 	db 29, WINGULL		;30%
-	db 29, SANDILE		;20%
+	db 29, HORSEA		;20%
 	db 29, MAREANIE		;10%
 	db 29, CORSOLA		;5%
 	db 29, CHINCHOU		;4%
@@ -144,7 +144,7 @@
 	db 6 percent ; encounter rate
 	db 29, STARYU		;30%
 	db 29, WINGULL		;30%
-	db 29, SANDILE		;20%
+	db 29, HORSEA		;20%
 	db 29, MAREANIE		;10%
 	db 29, CORSOLA		;5%
 	db 29, CHINCHOU		;4%
@@ -154,7 +154,7 @@
 	db 6 percent ; encounter rate
 	db 29, STARYU		;30%
 	db 29, WINGULL		;30%
-	db 29, SANDILE		;20%
+	db 29, HORSEA		;20%
 	db 29, MAREANIE		;10%
 	db 29, CORSOLA		;5%
 	db 29, CHINCHOU		;4%
@@ -304,7 +304,7 @@
 	db 6 percent ; encounter rate
 	db 29, STARYU		;30%
 	db 29, WINGULL		;30%
-	db 29, SANDILE		;20%
+	db 29, HORSEA		;20%
 	db 29, MAREANIE		;10%
 	db 29, CORSOLA		;5%
 	db 29, CHINCHOU		;4%
@@ -314,7 +314,7 @@
 	db 6 percent ; encounter rate
 	db 29, STARYU		;30%
 	db 29, WINGULL		;30%
-	db 29, SANDILE		;20%
+	db 29, HORSEA		;20%
 	db 29, MAREANIE		;10%
 	db 29, CORSOLA		;5%
 	db 29, CHINCHOU		;4%
@@ -324,7 +324,7 @@
 	db 6 percent ; encounter rate
 	db 29, STARYU		;30%
 	db 29, WINGULL		;30%
-	db 29, SANDILE		;20%
+	db 29, HORSEA		;20%
 	db 29, MAREANIE		;10%
 	db 29, CORSOLA		;5%
 	db 29, CHINCHOU		;4%
@@ -334,9 +334,9 @@
 	db 6 percent ; encounter rate
 	db 29, SLOWPOKE		;30%
 	db 29, MAREANIE		;30%
-	db 29, SANDILE		;20%
+	db 29, HORSEA		;20%
 	db 29, CORSOLA		;10%
-	db 29, SANDILE		;5%
+	db 29, HORSEA		;5%
 	db 29, CHINCHOU		;4%
 	db 29, CHINCHOU		;1%
 

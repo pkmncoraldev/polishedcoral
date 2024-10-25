@@ -70,6 +70,8 @@ BitmasksPointers:
 	dw KoffingBitmasks
 	dw WeezingBitmasks
 	dw ChanseyBitmasks
+	dw HorseaBitmasks
+	dw SeadraBitmasks
 	dw StaryuBitmasks
 	dw StarmieBitmasks
 	dw ScytherBitmasks
@@ -147,6 +149,7 @@ BitmasksPointers:
 	dw SkarmoryBitmasks
 	dw HoundourBitmasks
 	dw HoundoomBitmasks
+	dw KingdraBitmasks
 	dw PhanpyBitmasks
 	dw DonphanBitmasks
 	dw Porygon2Bitmasks
@@ -211,9 +214,6 @@ BitmasksPointers:
 	dw ScolipedeBitmasks
 	dw CottoneeBitmasks
 	dw WhimsicottBitmasks
-	dw SandileBitmasks
-	dw KrokorokBitmasks
-	dw KrookodileBitmasks
 	dw MaractusBitmasks
 	dw DwebbleBitmasks
 	dw CrustleBitmasks

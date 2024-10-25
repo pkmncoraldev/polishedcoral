@@ -70,6 +70,8 @@ FramesPointers:
 	dw KoffingFrames
 	dw WeezingFrames
 	dw ChanseyFrames
+	dw HorseaFrames
+	dw SeadraFrames
 	dw StaryuFrames
 	dw StarmieFrames
 	dw ScytherFrames
@@ -147,6 +149,7 @@ FramesPointers:
 	dw SkarmoryFrames
 	dw HoundourFrames
 	dw HoundoomFrames
+	dw KingdraFrames
 	dw PhanpyFrames
 	dw DonphanFrames
 	dw Porygon2Frames
@@ -211,9 +214,6 @@ FramesPointers:
 	dw ScolipedeFrames
 	dw CottoneeFrames
 	dw WhimsicottFrames
-	dw SandileFrames
-	dw KrokorokFrames
-	dw KrookodileFrames
 	dw MaractusFrames
 	dw DwebbleFrames
 	dw CrustleFrames

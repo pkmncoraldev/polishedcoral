@@ -70,6 +70,8 @@ AnimationPointers:
 	dw KoffingAnimation
 	dw WeezingAnimation
 	dw ChanseyAnimation
+	dw HorseaAnimation
+	dw SeadraAnimation
 	dw StaryuAnimation
 	dw StarmieAnimation
 	dw ScytherAnimation
@@ -147,6 +149,7 @@ AnimationPointers:
 	dw SkarmoryAnimation
 	dw HoundourAnimation
 	dw HoundoomAnimation
+	dw KingdraAnimation
 	dw PhanpyAnimation
 	dw DonphanAnimation
 	dw Porygon2Animation
@@ -211,9 +214,6 @@ AnimationPointers:
 	dw ScolipedeAnimation
 	dw CottoneeAnimation
 	dw WhimsicottAnimation
-	dw SandileAnimation
-	dw KrokorokAnimation
-	dw KrookodileAnimation
 	dw MaractusAnimation
 	dw DwebbleAnimation
 	dw CrustleAnimation

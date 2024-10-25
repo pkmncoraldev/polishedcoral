@@ -26,7 +26,7 @@ Gargoyle - Pelipper Menu Sprite
 Molk - Carvanha Menu Sprite
 Kedöshim - Meditite and Medicham Menu Sprites
 Internet_Goblin - Sharpedo, Trevenant, and Abomasnow Menu Sprites
-Sadfish - Cacturne, Sandile, and A-Raichu Menu Sprites
+Sadfish - Cacturne, and A-Raichu Menu Sprites
 Turner - Snover Menu Sprite
 EeVeeEe - Drilbur, Excadrill, and Maractus Menu Sprites
 peach-n-key - Venipede Menu Sprites

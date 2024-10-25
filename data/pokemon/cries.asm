@@ -87,6 +87,8 @@ CryHeaders::
 	mon_cry CRY_GOLEM,       $0e6,  $15d 	; Koffing
 	mon_cry CRY_GOLEM,       $0ff,  $17f 	; Weezing
 	mon_cry CRY_PIDGEOTTO,   $00a,  $140 	; Chansey
+	mon_cry CRY_CLEFAIRY,    $099,  $090 	; Horsea
+	mon_cry CRY_CLEFAIRY,    $03c,  $081 	; Seadra
 	mon_cry CRY_STARYU,      $002,  $0a0 	; Staryu
 	mon_cry CRY_STARYU,      $000,  $100 	; Starmie
 	mon_cry CRY_SCYTHER,     $000,  $100 	; Scyther
@@ -164,6 +166,7 @@ CryHeaders::
 	mon_cry CRY_AMPHAROS,    $8a9,  $180 	; Skarmory
 	mon_cry CRY_CYNDAQUIL,   $039,  $140 	; Houndour
 	mon_cry CRY_TOTODILE,   -$10a,  $100 	; Houndoom
+	mon_cry CRY_SLUGMA,      $2fb,  $100 	; Kingdra
 	mon_cry CRY_PHANPY,    	 $048,  $230 	; Phanpy
 	mon_cry CRY_DONPHAN,     $000,  $1a0 	; Donphan
 	mon_cry CRY_PORYGON2,  	 $073,  $240 	; Porygon2
@@ -228,9 +231,6 @@ CryHeaders::
 	mon_cry SCOLIPEDE,	ScolipedeDEDData	; Scolipede
 	mon_cry COTTONEE,   CottoneeDEDData	 	; Cottonee
 	mon_cry WHIMSICOTT, WhimsicottDEDData 	; Whimsicott
-	mon_cry SANDILE,	SandileDEDData 		; Sandile
-	mon_cry KROKOROK,	KrokorokDEDData 	; Krokorok
-	mon_cry KROOKODILE, KrookodileDEDData 	; Krookodile
 	mon_cry MARACTUS,	MaractusDEDData		; Maractus
 	mon_cry DWEBBLE,   	DwebbleDEDData	 	; Dwebble
 	mon_cry CRUSTLE,   	CrustleDEDData	 	; Crustle
@@ -346,6 +346,8 @@ CryHeaders2::
 	mon_cry CRY_GOLEM,       $0e6,  $15d 	; Koffing
 	mon_cry CRY_GOLEM,       $0ff,  $17f 	; Weezing
 	mon_cry CRY_PIDGEOTTO,   $00a,  $140 	; Chansey
+	mon_cry CRY_CLEFAIRY,    $099,  $090 	; Horsea
+	mon_cry CRY_CLEFAIRY,    $03c,  $081 	; Seadra
 	mon_cry CRY_STARYU,      $002,  $0a0 	; Staryu
 	mon_cry CRY_STARYU,      $000,  $100 	; Starmie
 	mon_cry CRY_SCYTHER,     $000,  $100 	; Scyther
@@ -420,6 +422,7 @@ CryHeaders2::
 	mon_cry CRY_AMPHAROS,    $8a9,  $180 	; Skarmory
 	mon_cry CRY_CYNDAQUIL,   $039,  $140 	; Houndour
 	mon_cry CRY_TOTODILE,   -$10a,  $100 	; Houndoom
+	mon_cry CRY_SLUGMA,      $2fb,  $100 	; Kingdra
 	mon_cry CRY_PHANPY,    	 $048,  $230 	; Phanpy
 	mon_cry CRY_DONPHAN,     $000,  $1a0 	; Donphan
 	mon_cry CRY_PORYGON2,  	 $073,  $240 	; Porygon2
@@ -484,9 +487,6 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Scolipede - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cottonee - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Whimsicott - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Sandile - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Krokorok - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Krookodile - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Maractus - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Dwebble - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Crustle - PLACEHOLDER

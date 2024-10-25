@@ -1300,6 +1300,42 @@ ChanseyEvosAttacks:
 	db  1, SOFTBOILED_MILK_DRINK_RECOVER
 	db  0 ; no more level-up moves
 
+HorseaEvosAttacks:
+	db EVOLVE_LEVEL, 32, SEADRA
+	db 0 ; no more evolutions
+	db 1, WATER_GUN
+	db 1, LEER_TAIL_WHIP
+	db 7, SAND_ATTACK_SMOKESCREEN_FLASH
+	db 10, TWISTER
+	db 16, FOCUS_ENERGY
+	db 19, DRAGONBREATH
+	db 25, BUBBLE_BEAM
+	db 28, FLAIL
+	db 34, AGILITY_ROCK_POLISH
+	db 37, DRAGON_PULSE
+	db 43, HYDRO_PUMP
+	db 46, DRAGON_DANCE
+	db 52, RAIN_DANCE
+	db 0 ; no more level-up moves
+
+SeadraEvosAttacks:
+	db EVOLVE_TRADE, DRAGON_SCALE, KINGDRA
+	db 0 ; no more evolutions
+	db 1, WATER_GUN
+	db 1, LEER_TAIL_WHIP
+	db 7, SAND_ATTACK_SMOKESCREEN_FLASH
+	db 10, TWISTER
+	db 16, FOCUS_ENERGY
+	db 19, DRAGONBREATH
+	db 25, BUBBLE_BEAM
+	db 28, FLAIL
+	db 34, AGILITY_ROCK_POLISH
+	db 37, DRAGON_PULSE
+	db 43, HYDRO_PUMP
+	db 46, DRAGON_DANCE
+	db 52, RAIN_DANCE
+	db 0 ; no more level-up moves
+
 StaryuEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, STARMIE
 	db 0 ; no more evolutions
@@ -2673,6 +2709,23 @@ HoundoomEvosAttacks:
 	db 56, FIRE_BLAST
 	db 0 ; no more level-up moves
 
+KingdraEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, WATER_GUN
+	db 1, LEER_TAIL_WHIP
+	db 7, SAND_ATTACK_SMOKESCREEN_FLASH
+	db 10, TWISTER
+	db 16, FOCUS_ENERGY
+	db 19, DRAGONBREATH
+	db 25, BUBBLE_BEAM
+	db 28, FLAIL
+	db 34, AGILITY_ROCK_POLISH
+	db 37, DRAGON_PULSE
+	db 43, HYDRO_PUMP
+	db 46, DRAGON_DANCE
+	db 52, RAIN_DANCE
+	db 0 ; no more level-up moves
+
 PhanpyEvosAttacks:
 	db EVOLVE_LEVEL, 25, DONPHAN
 	db 0 ; no more evolutions
@@ -3786,23 +3839,6 @@ WhimsicottEvosAttacks:
 	db 28, AIR_SLASH
 	db 44, HURRICANE
 	db 50, MOONBLAST
-	db 0 ; no more level-up moves
-	
-SandileEvosAttacks:
-	db EVOLVE_LEVEL, 29, KROKOROK
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
-	
-KrokorokEvosAttacks:
-	db EVOLVE_LEVEL, 40, KROOKODILE
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
-	
-KrookodileEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
 MaractusEvosAttacks:

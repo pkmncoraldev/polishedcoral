@@ -71,6 +71,8 @@
 	dw KoffingPokedexEntry
 	dw WeezingPokedexEntry
 	dw ChanseyPokedexEntry
+	dw HorseaPokedexEntry
+	dw SeadraPokedexEntry
 	dw StaryuPokedexEntry
 	dw StarmiePokedexEntry
 	dw ScytherPokedexEntry
@@ -148,6 +150,7 @@
 	dw SkarmoryPokedexEntry
 	dw HoundourPokedexEntry
 	dw HoundoomPokedexEntry
+	dw KingdraPokedexEntry
 	dw PhanpyPokedexEntry
 	dw DonphanPokedexEntry
 	dw Porygon2PokedexEntry
@@ -212,9 +215,6 @@
 	dw ScolipedePokedexEntry
 	dw CottoneePokedexEntry
 	dw WhimsicottPokedexEntry
-	dw SandilePokedexEntry
-	dw KrokorokPokedexEntry
-	dw KrookodilePokedexEntry
 	dw MaractusPokedexEntry
 	dw DwebblePokedexEntry
 	dw CrustlePokedexEntry

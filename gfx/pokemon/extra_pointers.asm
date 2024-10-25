@@ -70,6 +70,8 @@ AnimationExtraPointers:
 	dw KoffingAnimationExtra
 	dw WeezingAnimationExtra
 	dw ChanseyAnimationExtra
+	dw HorseaAnimationExtra
+	dw SeadraAnimationExtra
 	dw StaryuAnimationExtra
 	dw StarmieAnimationExtra
 	dw ScytherAnimationExtra
@@ -147,6 +149,7 @@ AnimationExtraPointers:
 	dw SkarmoryAnimationExtra
 	dw HoundourAnimationExtra
 	dw HoundoomAnimationExtra
+	dw KingdraAnimationExtra
 	dw PhanpyAnimationExtra
 	dw DonphanAnimationExtra
 	dw Porygon2AnimationExtra
@@ -211,9 +214,6 @@ AnimationExtraPointers:
 	dw ScolipedeAnimationExtra
 	dw CottoneeAnimationExtra
 	dw WhimsicottAnimationExtra
-	dw SandileAnimationExtra
-	dw KrokorokAnimationExtra
-	dw KrookodileAnimationExtra
 	dw MaractusAnimationExtra
 	dw DwebbleAnimationExtra
 	dw CrustleAnimationExtra

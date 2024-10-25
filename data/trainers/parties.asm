@@ -1633,7 +1633,7 @@ FisherGroup:
 	; party
 	db 32, CHINCHOU
 	db 32, STARYU
-	db 32, SANDILE
+	db 32, HORSEA
 	db -1 ; end
 
 ; ================
@@ -1651,7 +1651,7 @@ FisherGroup:
 	db "ERIC@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 34, KROKOROK
+	db 34, SEADRA
 	db 33, STARMIE
 	db -1 ; end
 
@@ -2427,7 +2427,7 @@ GruntFGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 18, GLOOM
-	db 18, SANDILE
+	db 18, HORSEA
 	db -1 ; end
 
 ; ================
@@ -2672,7 +2672,7 @@ PokefanFGroup:
 	; party
 	db 27, VAPOREON
 	db 29, EXEGGCUTE
-	db 23, SANDILE
+	db 23, HORSEA
 	db -1 ; end
 
 ; ================
@@ -3717,7 +3717,7 @@ SwimmerMGroup:
 	; party
 	db 35, CHINCHOU
 	db 33, LANTURN
-	db 33, KROKOROK
+	db 33, SEADRA
 	db -1 ; end
 
 ; ================
@@ -3825,7 +3825,7 @@ SwimmerFGroup:
 	db "GISELE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 33, KROKOROK
+	db 33, SEADRA
 	db 32, PELIPPER
 	db -1 ; end
 
@@ -5372,7 +5372,7 @@ TuberGroup:
 	; party
 	db 15, MARILL
 	db 16, MARILL
-	db 16, SANDILE
+	db 16, HORSEA
 	db -1 ; end
 
 ; ================

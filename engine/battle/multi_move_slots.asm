@@ -2666,6 +2666,9 @@ SmokescreenUsers:
 	db TYPHLOSION
 	db SLUGMA
 	db MAGCARGO
+	db HORSEA
+	db SEADRA
+	db KINGDRA
 	db -1
 	
 MilkDrinkUsers:

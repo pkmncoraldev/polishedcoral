@@ -199,6 +199,9 @@ NewPokedexOrder:
 	db TOGEKISS
 	
 ;need placement
+	db HORSEA
+	db SEADRA
+	db KINGDRA
 	db DROWZEE
 	db HYPNO
 	db SUNKERN
@@ -227,9 +230,6 @@ NewPokedexOrder:
 	db PORYGON_Z
 	db DRILBUR
 	db EXCADRILL
-	db SANDILE
-	db KROKOROK
-	db KROOKODILE
 	db MARACTUS
 	db SCRAGGY
 	db SCRAFTY

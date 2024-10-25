@@ -70,6 +70,8 @@ EvolutionMoves::
 	db NO_MOVE                              ; KOFFING
 	db DOUBLE_HIT                           ; WEEZING
 	db NO_MOVE                              ; CHANSEY
+	db NO_MOVE                              ; HORSEA
+	db NO_MOVE                              ; SEADRA
 	db NO_MOVE                              ; STARYU
 	db NO_MOVE                              ; STARMIE
 	db NO_MOVE                              ; SCYTHER
@@ -147,6 +149,7 @@ EvolutionMoves::
 	db NO_MOVE                              ; SKARMORY
 	db NO_MOVE                              ; HOUNDOUR
 	db NO_MOVE                              ; HOUNDOOM
+	db NO_MOVE                              ; KINGDRA
 	db NO_MOVE                              ; PHANPY
 	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON  ; DONPHAN
 	db NO_MOVE                              ; PORYGON2
@@ -211,9 +214,6 @@ EvolutionMoves::
 	db BATON_PASS                           ; SCOLIPEDE
 	db NO_MOVE                              ; COTTONEE
 	db NO_MOVE                              ; WHIMSICOTT
-	db NO_MOVE                              ; SANDILE
-	db NO_MOVE                              ; KROKOROK
-	db NO_MOVE                              ; KROOKODILE
 	db NO_MOVE                              ; MARACTUS
 	db NO_MOVE                              ; DWEBBLE
 	db NO_MOVE                              ; CRUSTLE

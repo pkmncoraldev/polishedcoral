@@ -408,11 +408,13 @@ PlayerHouseDebugPoster:
 	db "PAGE 1@"
 	
 PlayerHouseDebug2ItemsText:
-	text "Obtained ITEMS."
+	text "Obtained"
+	line "ITEMS."
 	done
 	
 PlayerHouseDebug2KeyText:
-	text "Obtained KEY ITEMS."
+	text "Obtained"
+	line "KEY ITEMS."
 	done
 	
 PlayerHouseDebug2BadgeText:

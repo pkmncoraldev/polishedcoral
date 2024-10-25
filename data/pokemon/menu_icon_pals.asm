@@ -74,6 +74,8 @@ MenuMonIconColors::
 	iconpal PURPLE, BLUE ; KOFFING
 	iconpal PURPLE, BLUE ; WEEZING
 	iconpal PINK, GREEN ; CHANSEY
+	iconpal BLUE, PURPLE ; HORSEA
+	iconpal BLUE, PURPLE ; SEADRA
 	iconpal BROWN, BLUE ; STARYU
 	iconpal PURPLE, BLUE ; STARMIE
 	iconpal GREEN, RED ; SCYTHER
@@ -151,6 +153,7 @@ MenuMonIconColors::
 	iconpal GRAY, GREEN ; SKARMORY
 	iconpal RED, GRAY ; HOUNDOUR
 	iconpal RED, GRAY ; HOUNDOOM
+	iconpal BLUE, PURPLE ; KINGDRA
 	iconpal BLUE, GRAY ; PHANPY
 	iconpal GRAY, RED ; DONPHAN
 	iconpal BLUE, PURPLE ; PORYGON2
@@ -215,9 +218,6 @@ MenuMonIconColors::
 	iconpal PURPLE, RED ; SCOLIPEDE
 	iconpal GREEN, RED ; COTTONEE
 	iconpal GREEN, BLUE ; WHIMSICOTT
-	iconpal RED, BLUE ; SANDILE
-	iconpal RED, BROWN ; KROKOROK
-	iconpal RED, BROWN ; KROOKODILE
 	iconpal GREEN, PURPLE ; MARACTUS
 	iconpal BROWN, RED ; DWEBBLE
 	iconpal BROWN, GREEN ; CRUSTLE

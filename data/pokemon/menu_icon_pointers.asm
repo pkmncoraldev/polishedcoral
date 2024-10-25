@@ -71,6 +71,8 @@ IconPointers:
 	dw KoffingIcon
 	dw WeezingIcon
 	dw ChanseyIcon
+	dw HorseaIcon
+	dw SeadraIcon
 	dw StaryuIcon
 	dw StarmieIcon
 	dw ScytherIcon
@@ -148,6 +150,7 @@ IconPointers:
 	dw SkarmoryIcon
 	dw HoundourIcon
 	dw HoundoomIcon
+	dw KingdraIcon
 	dw PhanpyIcon
 	dw DonphanIcon
 	dw Porygon2Icon
@@ -212,9 +215,6 @@ IconPointers:
 	dw ScolipedeIcon
 	dw CottoneeIcon
 	dw WhimsicottIcon
-	dw SandileIcon
-	dw KrokorokIcon
-	dw KrookodileIcon
 	dw MaractusIcon
 	dw DwebbleIcon
 	dw CrustleIcon

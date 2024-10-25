@@ -71,6 +71,8 @@
 	const KOFFING
 	const WEEZING
 	const CHANSEY
+	const HORSEA
+	const SEADRA
 	const STARYU
 	const STARMIE
 	const SCYTHER
@@ -148,6 +150,7 @@
 	const SKARMORY
 	const HOUNDOUR
 	const HOUNDOOM
+	const KINGDRA
 	const PHANPY
 	const DONPHAN
 	const PORYGON2
@@ -212,9 +215,6 @@
 	const SCOLIPEDE ;545
 	const COTTONEE ;546
 	const WHIMSICOTT ;547
-	const SANDILE ;551
-	const KROKOROK ;552
-	const KROOKODILE ;553
 	const MARACTUS ;556
 	const DWEBBLE ;557
 	const CRUSTLE ;558

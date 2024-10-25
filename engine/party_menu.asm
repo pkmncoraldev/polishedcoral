@@ -554,6 +554,9 @@ PlacePartyMonGender: ; 502b1
 	dec c
 	jr nz, .loop
 
+	ld a, [wPartyMenuCursor]
+	dec a
+	ld [wCurPartyMon], a
 	ld b, CGB_PARTY_MENU
 	jp GetCGBLayout
 ; 502ee

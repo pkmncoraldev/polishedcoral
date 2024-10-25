@@ -73,8 +73,8 @@ Route5GateMart: ; 160fa
 LakeOnwaMart:
 	db 9 ; # items
 	db POKE_BALL
-	db REPEAT_BALL
 	db POTION
+	db SUPER_POTION
 	db ESCAPE_ROPE
 	db REPEL
 	db ANTIDOTE
@@ -151,19 +151,17 @@ TwinkleMart:
 	db -1
 	
 LusterMart:
-	db 17 ; # items
+	db 15 ; # items
 	db POKE_BALL
 	db GREAT_BALL
+	db ULTRA_BALL
 	db POTION
 	db SUPER_POTION
 	db ESCAPE_ROPE
 	db REPEL
 	db SUPER_REPEL
 	db ANTIDOTE
-	db PARALYZEHEAL
-	db AWAKENING
-	db BURN_HEAL
-	db ICE_HEAL
+	db FULL_HEAL
 	db X_ATTACK
 	db X_DEFEND
 	db X_SPEED
@@ -289,28 +287,88 @@ ShimmerBerryMarket:
 	db -1
 	
 ShimmerMart:
-	db 1 ; # items
-	db POTION
+	db 13 ; # items
+	db POKE_BALL
+	db GREAT_BALL
+	db ULTRA_BALL
+	db SUPER_POTION
+	db HYPER_POTION
+	db ESCAPE_ROPE
+	db SUPER_REPEL
+	db FULL_HEAL
+	db X_ATTACK
+	db X_DEFEND
+	db X_SPEED
+	db X_SPCL_ATK
+	db X_SPCL_DEF
 	db -1
 	
 BrilloMart:
-	db 1 ; # items
-	db POTION
+	db 13 ; # items
+	db POKE_BALL
+	db GREAT_BALL
+	db ULTRA_BALL
+	db SUPER_POTION
+	db HYPER_POTION
+	db ESCAPE_ROPE
+	db SUPER_REPEL
+	db FULL_HEAL
+	db X_ATTACK
+	db X_DEFEND
+	db X_SPEED
+	db X_SPCL_ATK
+	db X_SPCL_DEF
 	db -1
 	
 RadiantMart:
-	db 1 ; # items
-	db POTION
+	db 13 ; # items
+	db POKE_BALL
+	db GREAT_BALL
+	db ULTRA_BALL
+	db SUPER_POTION
+	db HYPER_POTION
+	db ESCAPE_ROPE
+	db SUPER_REPEL
+	db FULL_HEAL
+	db X_ATTACK
+	db X_DEFEND
+	db X_SPEED
+	db X_SPCL_ATK
+	db X_SPCL_DEF
 	db -1
 	
 DuskMart:
-	db 1 ; # items
-	db POTION
+	db 13 ; # items
+	db POKE_BALL
+	db GREAT_BALL
+	db ULTRA_BALL
+	db SUPER_POTION
+	db HYPER_POTION
+	db ESCAPE_ROPE
+	db SUPER_REPEL
+	db FULL_HEAL
+	db X_ATTACK
+	db X_DEFEND
+	db X_SPEED
+	db X_SPCL_ATK
+	db X_SPCL_DEF
 	db -1
 	
 KomoreMart:
-	db 1 ; # items
-	db POTION
+	db 13 ; # items
+	db POKE_BALL
+	db GREAT_BALL
+	db ULTRA_BALL
+	db SUPER_POTION
+	db HYPER_POTION
+	db ESCAPE_ROPE
+	db SUPER_REPEL
+	db FULL_HEAL
+	db X_ATTACK
+	db X_DEFEND
+	db X_SPEED
+	db X_SPCL_ATK
+	db X_SPCL_DEF
 	db -1
 	
 MooMoos1:

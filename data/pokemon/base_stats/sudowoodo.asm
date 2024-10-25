@@ -2,7 +2,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, ROCK
-	db 65 ; catch rate
+	db 30 ; catch rate
 	db 135 ; base exp
 	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2

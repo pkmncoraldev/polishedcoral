@@ -11,8 +11,7 @@ SunbeamReserve_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	signpost 16,  7, SIGNPOST_READ, SunbeamSlowpokeGirlSign
+	db 0 ; bg events
 
 	db 12 ; object events
 	person_event SPRITE_SPRUCE, 48,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ISLAND_BOATMAN
@@ -106,21 +105,6 @@ SunbeamReserveTrigger0:
 SunbeamReserveTrigger1:
 	end
 	
-SunbeamSlowpokeGirlSign:
-	opentext
-	checkevent EVENT_TALKED_TO_SLOWPOKE_GIRL
-	iftrue .talked
-	writetext SunbeamIslandNPC3Text1
-	waitbutton
-	closetext
-	setevent EVENT_TALKED_TO_SLOWPOKE_GIRL
-	end
-.talked
-	writetext SunbeamIslandNPC3Text2
-	waitbutton
-	closetext
-	end
-	
 SunbeamReserveNidoqueen:
 	opentext
 	writetext SunbeamReserveNidoqueenText
@@ -207,7 +191,7 @@ SunbeamReserveNidoranFText:
 	done
 	
 SunbeamReserveSlowpokeText:
-	text "SLOWPOKE: <WAIT_S>S<WAIT_S>l<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>w<WAIT_S>…<WAIT_L>"
+	text "SLOWPOKE: <WAIT_S>S<WAIT_S>l<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>w<WAIT_S>…<WAIT_L><WAIT_L><WAIT_M>"
 	line "…poke?"
 	done
 	

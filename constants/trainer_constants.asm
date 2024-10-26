@@ -355,6 +355,7 @@ PLAYER_F EQU __enum__
 	const SAM_8
 	const MANDY
 	const TRIXIE
+	const HARMONY
 
 
 	trainerclass FIREBREATHER
@@ -456,6 +457,7 @@ PLAYER_F EQU __enum__
 	const ZEDAKI
 	const CHASE
 	const JULIAN
+	const SHEM
 
 
 	trainerclass SCIENTIST
@@ -500,7 +502,6 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass BIKER
-	const HANK
 	const GARRET
 	const DALE
 	const REX

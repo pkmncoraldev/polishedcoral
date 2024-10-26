@@ -10,13 +10,11 @@ Route11_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 17 ; object events
+	db 15 ; object events
 	person_event SPRITE_COOLTRAINER_M,  7, 24, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute11_1, EVENT_ROUTE_11_BRIDGE_BUILT
-	person_event SPRITE_COOLTRAINER_F, 16, 11, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute11_2, EVENT_ROUTE_11_BRIDGE_BUILT
-	person_event SPRITE_BIKER, 18, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute11_3, EVENT_ROUTE_11_BRIDGE_BUILT
+	person_event SPRITE_COOLTRAINER_F, 18, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute11_2, EVENT_ROUTE_11_BRIDGE_BUILT
 	person_event SPRITE_COOLTRAINER_M,  7, 24, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute11_1_2, EVENT_ROUTE_11_BRIDGE_NOT_BUILT
-	person_event SPRITE_COOLTRAINER_F, 16, 11, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute11_2_2, EVENT_ROUTE_11_BRIDGE_NOT_BUILT
-	person_event SPRITE_BIKER, 18, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute11_3_2, EVENT_ROUTE_11_BRIDGE_NOT_BUILT
+	person_event SPRITE_COOLTRAINER_F, 18, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute11_2_2, EVENT_ROUTE_11_BRIDGE_NOT_BUILT
 	person_event SPRITE_ENGINEER, 22, 13, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route11NPC1, EVENT_ROUTE_11_BRIDGE_BUILT
 	person_event SPRITE_ENGINEER, 27, 12, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_11_BRIDGE_BUILT
 	person_event SPRITE_ENGINEER, 27, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_11_BRIDGE_BUILT
@@ -234,30 +232,6 @@ TrainerRoute11_2:
 	text "Great battle!<WAIT_M>"
 	line "How fun!"
 	done
-
-TrainerRoute11_3:
-	generictrainer BIKER, HANK, EVENT_BEAT_ROUTE_11_TRAINER_3, .SeenText, .BeatenText
-
-	text "They better finish"
-	line "this thing soon."
-	
-	para "I'm tired of"
-	line "waitin'!"
-	done
-
-.SeenText:
-	text "I hear they're"
-	line "building a bridge"
-	cont "or somethin'."
-	
-	para "I'm gonna rip it up"
-	line "on my bike when"
-	cont "it's done."
-	done
-
-.BeatenText:
-	text "Rev it up!"
-	done
 	
 TrainerRoute11_1_2:
 	generictrainer COOLTRAINERM, ANDY, EVENT_BEAT_ROUTE_11_TRAINER_1, .SeenText, .BeatenText
@@ -310,27 +284,4 @@ TrainerRoute11_2_2:
 .BeatenText:
 	text "Great battle!<WAIT_M>"
 	line "How fun!"
-	done
-
-TrainerRoute11_3_2:
-	generictrainer BIKER, HANK, EVENT_BEAT_ROUTE_11_TRAINER_3, .SeenText, .BeatenText
-
-	text "Alright, I'm"
-	line "gonna go do it."
-	
-	para "I'm tired of"
-	line "waitin'!"
-	done
-
-.SeenText:
-	text "I heard they just"
-	line "built a bridge"
-	cont "or somethin'."
-	
-	para "I'm gonna rip it up"
-	line "on my bike."
-	done
-
-.BeatenText:
-	text "Rev it up!"
 	done

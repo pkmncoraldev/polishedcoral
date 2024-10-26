@@ -3142,6 +3142,17 @@ BeautyGroup:
 	db -1 ; end
 
 ; ================
+
+	; BEAUTY
+	db "HARMONY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 22, DRIFLOON
+	db 23, DRIFLOON
+	db 24, DRIFLOON
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3873,6 +3884,16 @@ BurglarGroup:
 	db -1 ; end
 
 ; ================
+
+	; BURGLAR
+	db "SHEM@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 24, DODUO
+	db 22, PHANTUMP
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -4144,15 +4165,6 @@ GuitaristGroup:
 
 BikerGroup:
 ; ================================
-; ================
-
-	; BIKER
-	db "HANK@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
 ; ================
 
 	; BIKER

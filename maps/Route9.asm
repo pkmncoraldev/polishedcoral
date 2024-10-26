@@ -51,24 +51,27 @@ Route9_MapScriptHeader:
 	signpost 33,  8, SIGNPOST_READ, Route9Sign2
 	bg_event 17, 29, SIGNPOST_ITEM + FIRE_STONE, EVENT_ROUTE_9_HIDDEN_FIRE_STONE
 
-	db 17 ; object events
+	db 20 ; object events
 	person_event SPRITE_N64, 11, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchScarecrow, -1
-	object_event 19, 18, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODRIO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio1, -1
+	object_event 26, 19, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODRIO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio1, -1
 	object_event 26, 10, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODRIO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio2, -1
 	object_event 20, 15, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODUO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
-	object_event 23, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODUO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
 	object_event 27, 16, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODUO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
-	object_event 27, 20, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODUO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
 	itemball_event 32,  2, CARBOS, 1, EVENT_ROUTE_9_POKE_BALL_1
 	itemball_event 30, 16, FULL_RESTORE, 1, EVENT_ROUTE_9_POKE_BALL_2
 	person_event SPRITE_BIRD_KEEPER, 39, 15, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_1, -1
 	person_event SPRITE_BIRD_KEEPER, 32,  3, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerRanch_2, -1
 	person_event SPRITE_BEAUTY, 16, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_3, -1
 	person_event SPRITE_BUG_CATCHER, 10, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_4, -1
-	person_event SPRITE_BIRD_KEEPER,  7, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRanch_5, -1
+	person_event SPRITE_BIRD_KEEPER,  7, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRanch_5, -1
+	person_event SPRITE_BEAUTY, 68, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRanch_6, -1
+	person_event SPRITE_BURGLAR, 69, 18, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, TrainerRanch_7, -1
 	object_event 19, 52, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 17, 50, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	fruittree_event 12,  8, FRUITTREE_ROUTE_9, ASPEAR_BERRY
+	fruittree_event 11, 55, FRUITTREE_ROUTE_9, ASPEAR_BERRY
+	tapeball_event  7, 67, MUSIC_HARDCORE_ENCOUNTER, 1, EVENT_MUSIC_HARDCORE_ENCOUNTER
+	person_event SPRITE_FAT_GUY, 59, 14, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route9NPC1, -1
+	person_event SPRITE_PONYTAIL, 47, 10, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route9NPC2, -1
 
 
 Route9Trigger0:
@@ -128,6 +131,36 @@ DodrioRanchMapSignThing::
 	loadvar wEnteredMapFromContinue, 0
 	callasm ReturnFromMapSetupScript
     end
+	
+Route9NPC1:
+	jumptextfaceplayer Route9NPC1Text
+	
+Route9NPC1Text:
+	text "If your #MON"
+	line "knows HEABUTT,"
+	cont "try having them"
+	cont "use it on a tree."
+	
+	para "A #MON might"
+	line "fall from out!"
+	
+	para "Any old tree will"
+	line "do, even really"
+	cont "big ones."
+	done
+	
+Route9NPC2:
+	jumptextfaceplayer Route9NPC2Text
+	
+Route9NPC2Text:
+	text "I guess I can't"
+	line "head to the SOUTH."
+	
+	para "There's some kind"
+	line "of roadblock."
+	
+	para "NORTH it is, then!"
+	done
 	
 Route9Sign:
 	jumptext Route9SignText
@@ -239,6 +272,49 @@ TrainerRanch_5:
 
 .BeatenText:
 	text "FATHER!"
+	done
+	
+TrainerRanch_6:
+	generictrainer BEAUTY, HARMONY, EVENT_BEAT_ROUTE_9_TRAINER_6, .SeenText, .BeatenText
+
+	text "We all float into"
+	line "and out of others'"
+	cont "lives like a bal-"
+	cont "loon in the wind."
+	done
+
+.SeenText:
+	text "You floated right"
+	line "into my sight."
+	
+	para "Now it's time to"
+	line "fight!"
+	done
+
+.BeatenText:
+	text "POP!"
+	done
+	
+TrainerRanch_7:
+	generictrainer BURGLAR, SHEM, EVENT_BEAT_ROUTE_9_TRAINER_7, .SeenText, .BeatenText
+
+	text "I ripped this"
+	line "DODUO off for"
+	cont "nothing!"
+	done
+
+.SeenText:
+	text "I nabbed this lil"
+	line "guy from that farm"
+	cont "up there."
+	
+	para "Made a clean"
+	line "getaway!"
+	done
+
+.BeatenText:
+	text "What a waste of"
+	line "time!"
 	done
 	
 RanchScarecrow:	

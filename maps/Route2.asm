@@ -8,9 +8,10 @@ Route2_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	signpost 40, 20, SIGNPOST_READ, Route2Sign
 	bg_event 33,  6, SIGNPOST_ITEM + MAX_REVIVE, EVENT_ROUTE_2_HIDDEN_ITEM
+	bg_event 26, 22, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_YOUNGSTER_ENCOUNTER
 
 	db 14 ; object events
 	person_event SPRITE_YOUNGSTER, 23, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute2_1, -1
@@ -26,7 +27,7 @@ Route2_MapScriptHeader:
 	fruittree_event 35,  4, FRUITTREE_ROUTE_2_5, FIGY_BERRY
 	tmhmball_event 32,  6, TM_GIGA_DRAIN, EVENT_ROUTE_2_POKE_BALL_GIGA_DRAIN
 	tapeball_event 35,  9, MUSIC_ROUTE_2, 1, EVENT_MUSIC_ROUTE_2
-	tapeball_event 26, 22, MUSIC_YOUNGSTER_ENCOUNTER, 2, EVENT_MUSIC_YOUNGSTER_ENCOUNTER
+	hiddentape_event 26, 22, MUSIC_YOUNGSTER_ENCOUNTER, 2, EVENT_MUSIC_YOUNGSTER_ENCOUNTER
 
 	const_def 1 ; object constants
 	const ROUTE2_NPC1

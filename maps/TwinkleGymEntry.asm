@@ -175,6 +175,8 @@ TwinkleGymEntryClerkStopsYouR:
 TwinkleGymEntryClerk:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_CHARLIE
+	iftrue .beatcharlie
 	checkevent EVENT_GOT_BLUE_KEY
 	iftrue .gotbluekey
 	writetext TwinkleGymEntryClerkText1
@@ -270,6 +272,11 @@ TwinkleGymEntryClerk:
 	end
 .saidno
 	writetext TwinkleGymEntryClerkSaidNo
+	waitbutton
+	closetext
+	end
+.beatcharlie
+	writetext TwinkleGymEntryClerkText10
 	waitbutton
 	closetext
 	end
@@ -443,6 +450,14 @@ TwinkleGymEntryClerkText9:
 	cont "ROOM is by now…"
 	
 	para "Good luck!"
+	done
+	
+TwinkleGymEntryClerkText10:
+	text "Thanks for your"
+	line "visit."
+	
+	para "Have a wonderful"
+	line "day!"
 	done
 	
 TwinkleGymEntryClerkTextExcuseMe:

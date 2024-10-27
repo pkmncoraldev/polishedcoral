@@ -3354,11 +3354,33 @@ DrifloonEvosAttacks:
 	db EVOLVE_LEVEL, 28, DRIFBLIM
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, MINIMIZE
+	db 8, GUST
+	db 13, FOCUS_ENERGY
+	db 16, KNOCK_OFF
+	db 20, OMINOUS_WIND
+	db 27, HEX
+	db 32, SELFDESTRUCT
+	db 36, SHADOW_BALL
+	db 40, AMNESIA
+	db 44, BATON_PASS
+	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 	
 DrifblimEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, FLAMETHROWER
+	db 1, TACKLE_SCRATCH_POUND
+	db 1, MINIMIZE
+	db 8, GUST
+	db 13, FOCUS_ENERGY
+	db 16, KNOCK_OFF
+	db 20, OMINOUS_WIND
+	db 27, HEX
+	db 34, SELFDESTRUCT
+	db 40, SHADOW_BALL
+	db 46, AMNESIA
+	db 52, BATON_PASS
+	db 60, EXPLOSION
 	db 0 ; no more level-up moves
 	
 BunearyEvosAttacks:

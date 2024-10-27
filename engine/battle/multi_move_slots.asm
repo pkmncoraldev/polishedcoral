@@ -2352,6 +2352,8 @@ PoundUsers:
 	db FROSLASS
 	db DROWZEE
 	db HYPNO
+	db DRIFLOON
+	db DRIFBLIM
 	db -1
 	
 ScratchUsers:

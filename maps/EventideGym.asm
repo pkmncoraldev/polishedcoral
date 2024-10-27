@@ -15,7 +15,7 @@ EventideGym_MapScriptHeader:
 	bg_event 27,  8, SIGNPOST_UP, EventideGymBlueSwitchScript
 	bg_event  0,  4, SIGNPOST_UP, EventideGymRedSwitchScript
 	bg_event 11, 12, SIGNPOST_UP, EventideGymYellowSwitchScript
-	bg_event 37, 16, SIGNPOST_UP, EventideGymRedSwitchScript
+	bg_event 37, 16, SIGNPOST_UP, EventideGymRedSwitchScript2
 	bg_event  8,  4, SIGNPOST_UP, EventideGymRedSwitchScript
 	bg_event 45,  8, SIGNPOST_UP, EventideGymBlueSwitchScript
 	bg_event 25,  4, SIGNPOST_UP, EventideGymYellowSwitchScript
@@ -81,6 +81,20 @@ EventideGymCallback:
 	changeblock $8, $8, $ac
 	changeblock $8, $a, $b0
 	return
+
+EventideGymRedSwitchScript2:
+	scall EventideGymRedSwitchScript
+	checkevent EVENT_EVENTIDE_GYM_YELLOW_SWITCH
+	iftrue .oops
+	end
+.oops
+	opentext
+	writetext EventideGymRedSwitchTextOops
+	waitbutton
+	closetext
+	special FadeOutPalettes
+	warpfacing UP, EVENTIDE_GYM, 24, 21
+	end
 
 EventideGymRedSwitchScript:
 	opentext
@@ -323,6 +337,16 @@ EventideGymWendyRematch:
 	closetext
 	end
 	
+EventideGymRedSwitchTextOops:
+	text "Oops."
+	
+	para "You managed to get"
+	line "yourself stuck."
+	
+	para "Let's try that"
+	line "again!"
+	done
+	
 Text_ReceivedThirdBadge:
 	text "<PLAYER> received"
 	line "the GALEBADGE."
@@ -482,8 +506,8 @@ EventideGymTrainer1:
 
 	text "Oh yeah!"
 	
-	para "You're ready and"
-	line "willing, huh?"
+	para "You're willing to"
+	line "put in the work!"
 	done
 
 .SeenText:
@@ -633,8 +657,8 @@ EventideGymTrainer1Rematch:
 EventideGymTrainer1RematchRegularText:
 	text "Oh yeah!"
 	
-	para "You're ready and"
-	line "willing, huh?"
+	para "You're willing to"
+	line "put in the work!"
 	done
 
 EventideGymTrainer1RematchSeenText:

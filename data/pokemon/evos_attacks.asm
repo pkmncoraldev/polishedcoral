@@ -3361,9 +3361,9 @@ DrifloonEvosAttacks:
 	db 20, OMINOUS_WIND
 	db 27, HEX
 	db 32, SELFDESTRUCT
-	db 36, SHADOW_BALL
+	db 36, AIR_SLASH
 	db 40, AMNESIA
-	db 44, BATON_PASS
+	db 44, SHADOW_BALL
 	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 	
@@ -3377,9 +3377,9 @@ DrifblimEvosAttacks:
 	db 20, OMINOUS_WIND
 	db 27, HEX
 	db 34, SELFDESTRUCT
-	db 40, SHADOW_BALL
+	db 40, AIR_SLASH
 	db 46, AMNESIA
-	db 52, BATON_PASS
+	db 52, SHADOW_BALL
 	db 60, EXPLOSION
 	db 0 ; no more level-up moves
 	

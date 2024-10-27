@@ -6,5 +6,5 @@
 	next "hands of children"
 	next "to steal them"
 	page "away. However, it"
-	next "gets pulled"
+	next "often gets pulled"
 	next "around instead.@"

@@ -1325,8 +1325,8 @@
 	db 22, GOLBAT		;4%
 	db 22, GOLBAT		;1%
 	
-	map_id ROUTE_10 ; used on Route 9 during clear weather
-	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
+	map_id ROUTE_10 ; used on Route 10 during clear weather
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 23, SNOVER		;30%
 	db 23, SWINUB		;30%
@@ -1352,8 +1352,8 @@
 	db 23, SNEASEL		;4%
 	db 23, SNEASEL		;1%
 	
-	map_id ROUTE_10_EAST ; used on Route 9 during snowstorm
-	db 18 percent, 18 percent, 18 percent ; encounter rates: morn/day/nite
+	map_id ROUTE_10_EAST ; used on Route 10 during snowstorm
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 23, SNORUNT		;30%
 	db 23, SNOVER		;30%

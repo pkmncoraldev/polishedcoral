@@ -2672,7 +2672,7 @@ PokefanFGroup:
 	; party
 	db 27, VAPOREON
 	db 29, EXEGGCUTE
-	db 23, HORSEA
+	db 30, HORSEA
 	db -1 ; end
 
 ; ================

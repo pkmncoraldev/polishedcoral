@@ -84,12 +84,16 @@ SpookHouseJournal:
 	writetext SpookHouseJournalText6
 	yesorno
 	iffalse SpookHouseJournalNo
-	spriteface SPOOKHOUSE_BEDROOM_PAINTING, RIGHT
 	writetext SpookHouseJournalText7
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	spriteface SPOOKHOUSE_BEDROOM_PAINTING, RIGHT
+	writetext SpookHouseJournalText8
 	waitbutton
 	closetext
 	spriteface SPOOKHOUSE_BEDROOM_PAINTING, UP
-	pause 1
+	pause 2
 	disappear SPOOKHOUSE_BEDROOM_GIRL
 	end
 	
@@ -297,8 +301,10 @@ SpookHouseJournalText7:
 	para "…"
 	
 	para "…"
+	done
 	
-	para "NEVERALONENEVER"
+SpookHouseJournalText8:
+	text "NEVERALONENEVER"
 	line "ALONENEVERALONE"
 	
 	para "NEVERALONENEVER"

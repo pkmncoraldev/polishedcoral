@@ -103,8 +103,8 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bikiniy
 	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; delinquentm
 	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; delinquentf
-	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; bunearym
-	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bunearyf
+	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; bunearym
+	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bunearyf
 	db  32, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; frankie
 	db   0, $66, $66, $66, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; mall cop
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; skater

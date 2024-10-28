@@ -103,8 +103,9 @@ LusterSewers_DisguiseMan1Text2:
 	line "wrongs do not make"
 	cont "a right."
 	
-	para "So now it's time for"
-	line "us two to fight!"
+	para "So now it's time"
+	line "for us two to"
+	cont "fight!"
 	done
 	
 LusterSewers_DisguiseMan1Text3:

@@ -1142,6 +1142,7 @@ HypnoEvosAttacks:
 VoltorbEvosAttacks:
 	db EVOLVE_LEVEL, 30, ELECTRODE
 	db 0 ; no more evolutions
+	db 1, SELFDESTRUCT
 	db 1, TACKLE_SCRATCH_POUND
 	db 1, SONIC_BOOM
 	db 9, THUNDERSHOCK
@@ -1161,6 +1162,7 @@ VoltorbEvosAttacks:
 
 ElectrodeEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, SELFDESTRUCT
 	db 1, TACKLE_SCRATCH_POUND
 	db 1, SONIC_BOOM
 	db 1, THUNDERSHOCK

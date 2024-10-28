@@ -149,6 +149,13 @@ LusterApartment4_2F_NPC6Text:
 	text "You sure you're"
 	line "in the right"
 	cont "place, kid?"
+	
+	para "Go talk to our"
+	line "boss if you want."
+	
+	para "He hangs out in"
+	line "the alley by the"
+	cont "TRAIN STATION."
 	done
 	
 LusterApartment4_2F_FrankieText:

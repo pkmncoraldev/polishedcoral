@@ -17,7 +17,7 @@ TrainCabin1_MapScriptHeader:
 
 	db 11 ; bg events
 	signpost  2,  7, SIGNPOST_RIGHT, TrainCabin1PlayersSeat
-	signpost  2,  4, SIGNPOST_RIGHT, TrainCabin1OtherSeat
+	signpost  2,  2, SIGNPOST_RIGHT, TrainCabin1OtherSeat
 	signpost  2,  8, SIGNPOST_LEFT, TrainCabin1OtherSeat
 	signpost  2, 10, SIGNPOST_RIGHT, TrainCabin1OtherSeat
 	signpost  2, 11, SIGNPOST_LEFT, TrainCabin1OtherSeat
@@ -31,7 +31,7 @@ TrainCabin1_MapScriptHeader:
 	db 11 ; object events
 	person_event SPRITE_SITTING_LADY,  2,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TrainCabin1Healer, -1
 	person_event SPRITE_SITTING_PONYTAIL,  6,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, TrainCabin1NPC1, -1
-	person_event SPRITE_SITTING_GENTLEMAN,  2,  2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TrainCabin1NPC2, -1
+	person_event SPRITE_SITTING_GENTLEMAN,  2,  4, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TrainCabin1NPC2, -1
 	person_event SPRITE_SITTING_YOUNGSTER,  6, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TrainCabin1NPC3, -1
 	person_event SPRITE_SITTING_GUY,  2, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, TrainCabin1NPC4, -1
 	person_event SPRITE_OFFICER,  3, 2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TrainCabin1Officer, EVENT_TRAIN_DOWN_OFFICER_GONE
@@ -211,7 +211,10 @@ TrainCabin1NPC1:
 TrainCabin1NPC2:
 	checkflag ENGINE_PUNKS_ON_TRAIN
 	iftrue .snare
-	faceplayer
+	checkcode VAR_FACING
+	if_equal RIGHT, .yourefacingright
+	spriteface TRAIN_CABIN_1_NPC2, UP
+.yourefacingright
 	opentext
 	checkevent EVENT_BEAT_TRAIN_CABIN_1_TRAINER_1
 	iftrue .afterbattle
@@ -238,7 +241,7 @@ TrainCabin1NPC2:
 	waitbutton
 	closetext
 .endnormal
-	spriteface TRAIN_CABIN_1_NPC2, RIGHT
+	spriteface TRAIN_CABIN_1_NPC2, LEFT
 	end
 .saidno
 	writetext TrainCabin1NPC2SaidNoText
@@ -248,7 +251,10 @@ TrainCabin1NPC2:
 .snare
 	checkevent EVENT_BEAT_TRAIN_CABIN_1_SNARE_1
 	iffalse .snarethere
-	faceplayer
+	checkcode VAR_FACING
+	if_equal RIGHT, .yourefacingright2
+	spriteface TRAIN_CABIN_1_NPC2, UP
+.yourefacingright2
 	opentext
 	checkevent EVENT_GOT_TRAIN_CABIN_1_NUGGET
 	iftrue .gotnugget
@@ -276,7 +282,7 @@ TrainCabin1NPC2:
 	writetext TrainCabin1NPC2Text2
 .end
 	waitbutton
-	spriteface TRAIN_CABIN_1_NPC2, RIGHT
+	spriteface TRAIN_CABIN_1_NPC2, LEFT
 	closetext
 	end
 	
@@ -713,7 +719,7 @@ TrainCabin1NPC2Text2:
 	done
 	
 TrainCabin1NPC2Text3Boy:
-	text "Thank you, <WAIT_S>young"
+	text "Thank you, young"
 	line "man."
 	
 	para "There was no way"
@@ -721,12 +727,12 @@ TrainCabin1NPC2Text3Boy:
 	cont "ruffian my prized"
 	cont "#MON."
 	
-	para "Please, <WAIT_S>take this"
+	para "Please, take this"
 	line "as thanks."
 	done
 	
 TrainCabin1NPC2Text3Girl:
-	text "Thank you, <WAIT_S>young"
+	text "Thank you, young"
 	line "lady."
 	
 	para "There was no way"
@@ -734,7 +740,7 @@ TrainCabin1NPC2Text3Girl:
 	cont "ruffian my prized"
 	cont "#MON."
 	
-	para "Please, <WAIT_S>take this"
+	para "Please, take this"
 	line "as thanks."
 	done
 	

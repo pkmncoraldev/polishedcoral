@@ -16,12 +16,11 @@ LusterMallCoffeeShop_MapScriptHeader:
 	bg_event  7,  1, SIGNPOST_READ, LusterMallCoffeeShop_Picture
 	bg_event  8,  5, SIGNPOST_LEFT, LusterMallCoffeeShop_NPC2
 
-	db 11 ; object events
+	db 12 ; object events
 	object_event  4,  1, SPRITE_N64, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	object_event  3,  1, SPRITE_KOFFING_BEAN, SPRITEMOVEDATA_TOP_HALF, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	object_event  5,  1, SPRITE_KOFFING_BEAN, SPRITEMOVEDATA_BOTTOM_HALF, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	object_event 1, 3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_COFFEE, MART_LUSTER_MALL_COFFEE, EVENT_GAVE_COFFE_SHOP_MAN_TEA
-	object_event 1, 3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_COFFEE, MART_LUSTER_MALL_COFFEE2, -1
+	person_event SPRITE_CLERK,  3,  1, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallCoffeeShop_Clerk, -1
 	person_event SPRITE_CLERK,  4,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallCoffeeShop_Cook, -1
 	person_event SPRITE_GENTLEMAN,  4,  3, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LusterMallCoffeeShop_NPC1, -1
 	person_event SPRITE_ARTIST,  5,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterMallCoffeeShop_NPC2, -1
@@ -34,7 +33,6 @@ LusterMallCoffeeShop_MapScriptHeader:
 	const LUSTER_MALL_COFFEE_SHOP_SIGN_2
 	const LUSTER_MALL_COFFEE_SHOP_SIGN_3
 	const LUSTER_MALL_COFFEE_SHOP_CLERK
-	const LUSTER_MALL_COFFEE_SHOP_CLERK2
 	const LUSTER_MALL_COFFEE_SHOP_COOK
 	const LUSTER_MALL_COFFEE_SHOP_NPC1
 	const LUSTER_MALL_COFFEE_SHOP_NPC2
@@ -107,6 +105,39 @@ Movement_LusterMallCoffeeShopPolly2:
 	step_down
 	step_end
 	
+LusterMallCoffeeShop_Clerk:
+	opentext
+	checkevent EVENT_GAVE_COFFEE_SHOP_MAN_TEA
+	iftrue .blossom_tea
+	callasm CoffeeShopAsm
+	closetext
+	end
+.blossom_tea
+	callasm CoffeeShopAsm2
+	closetext
+	end
+	
+CoffeeShopAsm:
+	ld a, MARTTYPE_COFFEE
+	ld c, a
+	ld a, MART_LUSTER_MALL_COFFEE
+	ld e, a
+	ld d, 0
+	ld a, [wScriptBank]
+	ld b, a
+	farcall OpenMartDialog
+	ret
+	
+CoffeeShopAsm2:
+	ld a, MARTTYPE_COFFEE
+	ld c, a
+	ld a, MART_LUSTER_MALL_COFFEE2
+	ld e, a
+	ld d, 0
+	ld a, [wScriptBank]
+	ld b, a
+	farcall OpenMartDialog
+	ret
 	
 LusterMallCoffeeShop_Cook:
 	jumptextfaceplayer LusterMallCoffeeShop_CookText
@@ -434,9 +465,9 @@ LusterMallCoffeeShop_CookTextPickAgain2:
 LusterMallCoffeeShop_NPC1:
 	faceplayer
 	opentext
-	checkevent EVENT_COFFEE_SHOP_CAN_GET_TEA
+	checkevent EVENT_COFFEE_SHOP_CAN_GET_REVIVE
 	iftrue .get_tea
-	checkevent EVENT_GAVE_COFFE_SHOP_MAN_TEA
+	checkevent EVENT_GAVE_COFFEE_SHOP_MAN_TEA
 	iftrue .already_done
 	checkitem BLOSSOM_TEA
 	iftrue .have_tea
@@ -463,10 +494,10 @@ LusterMallCoffeeShop_NPC1:
 .get_tea
 	writetext LusterMallCoffeeShop_NPC1Text4
 	waitbutton
+	setevent EVENT_GAVE_COFFEE_SHOP_MAN_TEA
 	verbosegiveitem MAX_REVIVE
 	iffalse .NoRoom
-	clearevent EVENT_COFFEE_SHOP_CAN_GET_TEA
-	disappear LUSTER_MALL_COFFEE_SHOP_CLERK
+	clearevent EVENT_COFFEE_SHOP_CAN_GET_REVIVE
 	writetext LusterMallCoffeeShop_NPC1Text6
 	jump .end
 .already_done
@@ -477,7 +508,7 @@ LusterMallCoffeeShop_NPC1:
 	jump .end
 .NoRoom
 	writetext LusterMallCoffeeShop_NPC1NoRoomText
-	setevent EVENT_COFFEE_SHOP_CAN_GET_TEA
+	setevent EVENT_COFFEE_SHOP_CAN_GET_REVIVE
 .end
 	waitbutton
 	closetext

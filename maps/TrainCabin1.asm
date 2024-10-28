@@ -104,49 +104,6 @@ TrainCabin1Trigger0:
 	end
 	
 TrainCabin1Trigger1:
-	dotrigger $2
-	variablesprite SPRITE_DISGUISEMAN, SPRITE_OFFICER
-	disappear TRAIN_CABIN_1_SNARE_OFFICER_STAND
-	disappear TRAIN_CABIN_1_SNARE_OFFICER
-	moveperson TRAIN_CABIN_1_SNARE_OFFICER, 7, 3
-	appear TRAIN_CABIN_1_SNARE_OFFICER
-;	applymovement TRAIN_CABIN_1_SNARE_OFFICER, Movement_TrainCabin1SnareOfficer
-	spriteface TRAIN_CABIN_1_SNARE_OFFICER, UP
-	opentext
-	writetext TrainCabin1SnareOfficerText1
-	waitbutton
-	closetext
-	pause 20
-	special FadeInTextboxPalettes
-	pause 20
-	opentext
-	writetext WestTrainCaboosePAText4
-	writetext TrainCabin1SnareOfficerText2
-	waitbutton
-	closetext
-	playsound SFX_JUMP_OVER_LEDGE
-	callasm TrainCabin1PlayersSeatGetUpAsm
-	applyonemovement PLAYER, slow_step_left
-	spriteface PLAYER, DOWN
-	applyonemovement PLAYER, step_down
-	follow TRAIN_CABIN_1_SNARE_OFFICER, PLAYER
-	applymovement TRAIN_CABIN_1_SNARE_OFFICER, Movement_TrainCabin1SnareOfficer2
-	stopfollow
-	spriteface TRAIN_CABIN_1_SNARE_OFFICER, DOWN
-	spriteface PLAYER, UP
-	pause 5
-	opentext
-	writetext TrainCabin1SnareOfficerText3
-	waitbutton
-	changeblock $e, $4, $14
-	closetext
-	pause 5
-	follow PLAYER, TRAIN_CABIN_1_SNARE_OFFICER
-	applyonemovement PLAYER, step_right
-	stopfollow
-	spriteface TRAIN_CABIN_1_SNARE_OFFICER, RIGHT
-	setevent EVENT_TRAIN_CABIN_1_SNARE_OFFICER
-	warpcheck
 	end
 	
 TrainCabin1Trigger2:
@@ -478,7 +435,49 @@ TrainCabin1PlayersSeat:
 	end
 .startsnaretrain
 	pause 30
-	dotrigger $1
+	dotrigger $2
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_OFFICER
+	disappear TRAIN_CABIN_1_SNARE_OFFICER_STAND
+	disappear TRAIN_CABIN_1_SNARE_OFFICER
+	moveperson TRAIN_CABIN_1_SNARE_OFFICER, 7, 3
+	appear TRAIN_CABIN_1_SNARE_OFFICER
+;	applymovement TRAIN_CABIN_1_SNARE_OFFICER, Movement_TrainCabin1SnareOfficer
+	spriteface TRAIN_CABIN_1_SNARE_OFFICER, UP
+	opentext
+	writetext TrainCabin1SnareOfficerText1
+	waitbutton
+	closetext
+	pause 20
+	special FadeInTextboxPalettes
+	pause 20
+	opentext
+	writetext WestTrainCaboosePAText4
+	writetext TrainCabin1SnareOfficerText2
+	waitbutton
+	closetext
+	playsound SFX_JUMP_OVER_LEDGE
+	callasm TrainCabin1PlayersSeatGetUpAsm
+	applyonemovement PLAYER, slow_step_left
+	spriteface PLAYER, DOWN
+	applyonemovement PLAYER, step_down
+	follow TRAIN_CABIN_1_SNARE_OFFICER, PLAYER
+	applymovement TRAIN_CABIN_1_SNARE_OFFICER, Movement_TrainCabin1SnareOfficer2
+	stopfollow
+	spriteface TRAIN_CABIN_1_SNARE_OFFICER, DOWN
+	spriteface PLAYER, UP
+	pause 5
+	opentext
+	writetext TrainCabin1SnareOfficerText3
+	waitbutton
+	changeblock $e, $4, $14
+	closetext
+	pause 5
+	follow PLAYER, TRAIN_CABIN_1_SNARE_OFFICER
+	applyonemovement PLAYER, step_right
+	stopfollow
+	spriteface TRAIN_CABIN_1_SNARE_OFFICER, RIGHT
+	setevent EVENT_TRAIN_CABIN_1_SNARE_OFFICER
+	warpcheck
 	end
 .notnow
 	writetext TrainCabin1PlayersSeatText2

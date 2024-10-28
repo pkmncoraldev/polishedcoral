@@ -405,8 +405,22 @@ AI_Smart: ; 386be
 	dbw EFFECT_STUN_SPORE,        AI_Smart_StunSpore
 	dbw EFFECT_SLEEP_POWDER,      AI_Smart_Sleep
 	dbw EFFECT_SURF,			  AI_Smart_Surf
+	dbw EFFECT_TOXIC_SPIKES,	  AI_Smart_Toxic_Spikes
 	db $ff
 ; 387e3
+
+AI_Smart_Toxic_Spikes:
+	ld a, [wPlayerScreens]
+	and SCREENS_TOXIC_SPIKES
+	cp (SCREENS_TOXIC_SPIKES / 3) * 2
+	ret z
+
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	ret
 
 AI_Smart_FocusEnergy:
 	call AICheckEnemyQuarterHP
@@ -2979,6 +2993,8 @@ AI_Status: ; 39453
 	push de
 	push hl
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	cp EFFECT_TOXIC_SPIKES
+	jr z, .poison
 	cp EFFECT_TOXIC
 	jr z, .poison
 	cp EFFECT_POISON

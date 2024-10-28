@@ -30,10 +30,10 @@ LusterMall_MapScriptHeader:
 	warp_def 15, 34, 1, LUSTER_MALL_CLOTHES_SHOP
 	warp_def 15, 35, 2, LUSTER_MALL_CLOTHES_SHOP
 	warp_def 15, 40, 2, LUSTER_MALL_BACK_ROOM
-	warp_def  3, 20, 1, LUSTER_GYM
-	warp_def  3, 21, 2, LUSTER_GYM
 	warp_def 15,  2, 1, LUSTER_MALL_FURNITURE
 	warp_def 15,  3, 2, LUSTER_MALL_FURNITURE
+	warp_def  3, 20, 1, LUSTER_GYM
+	warp_def  3, 21, 2, LUSTER_GYM
 
 	db 8 ; coord events
 	coord_event 15, 17, -1, LusterMallEscalator1

@@ -7,8 +7,8 @@ LusterGym_MapScriptHeader:
 	callback MAPCALLBACK_TILES, LusterGymCallback
 
 	db 2 ; warp events
-	warp_def 21, 14, 25, LUSTER_MALL
-	warp_def 21, 15, 26, LUSTER_MALL
+	warp_def 21, 14, 26, LUSTER_MALL
+	warp_def 21, 15, 27, LUSTER_MALL
 
 	db 0 ; coord events
 
@@ -35,6 +35,7 @@ LusterGym_MapScriptHeader:
 	const LUSTER_GYM_POLLY
 
 LusterGymTrigger0:
+	pause 5
 	clearevent EVENT_POLLY_NOT_IN_BOUTIQUE
 	applyonemovement LUSTER_GYM_GUY, step_down
 	opentext
@@ -47,10 +48,10 @@ LusterGymTrigger0:
 	pause 5
 	callasm LusterGymCheckPlayerXCoord
 	ifequal $0f, .right
-	warp2 DOWN, LUSTER_MALL, $10, $03
+	warp2 DOWN, LUSTER_MALL, $14, $03
 	end
 .right
-	warp2 DOWN, LUSTER_MALL, $11, $03
+	warp2 DOWN, LUSTER_MALL, $15, $03
 	end
 	
 LusterGymTrigger1:

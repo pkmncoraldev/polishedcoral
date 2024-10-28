@@ -4236,12 +4236,16 @@ SpikesDamage_GotAbility:
 	ret
 
 .no_poison_type
+	ld a, 1
+	ld [wTypeModifier], a	;CanStatusTarget checks this to see if we're immune. just manually overwrite
 	pop af
 	push bc
 	push hl
 	call SwitchTurn
 	ld b, c
 	farcall CanPoisonTarget
+	ld a, 0
+	ld [wTypeModifier], a
 	push af
 	call SwitchTurn
 	pop af

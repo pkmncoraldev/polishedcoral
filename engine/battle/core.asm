@@ -6936,7 +6936,9 @@ LoadEnemyMon: ; 3e8eb
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 	
+	push af
 	farcall GenerateWildForm
+	pop af
 
 	; Mark as seen
 	dec a

@@ -21,7 +21,7 @@ TMHMMoves:
 	db SAFEGUARD                           ; TM20
 	db BULLDOZE                            ; TM21
 	db SOLAR_BEAM                          ; TM22
-	db IRON_TAIL                           ; TM23
+	db DESTINY_BOND                        ; TM23
 	db THUNDERBOLT                         ; TM24
 	db THUNDER                             ; TM25
 	db EARTHQUAKE                          ; TM26
@@ -65,7 +65,7 @@ TMHMMoves:
 	db EXPLOSION                           ; TM64
 	db SHADOW_CLAW                         ; TM65
 	db POISON_JAB                          ; TM66
-	db FAIRY_WIND                          ; TM67
+	db RAPID_SPIN                          ; TM67
 	db GIGA_IMPACT                         ; TM68
 	db THUNDER_FANG                        ; TM69
 	db SAND_ATTACK_SMOKESCREEN_FLASH                               ; TM70

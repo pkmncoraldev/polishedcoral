@@ -31,7 +31,7 @@ ENDM
 	add_tm TOXIC			; $05
 	add_tm HAIL				; $06
 	add_tm BULK_UP			; $07
-	add_tm DESTINY_BOND		; $08
+	add_tm VENOSHOCK		; $08
 	add_tm SUPERPOWER		; $09
 	add_tm SUNNY_DAY		; $0a
 	add_tm TAUNT			; $0b
@@ -45,7 +45,7 @@ ENDM
 	add_tm SAFEGUARD		; $13
 	add_tm BULLDOZE			; $14
 	add_tm SOLAR_BEAM		; $15
-	add_tm IRON_TAIL		; $16
+	add_tm DESTINY_BOND		; $16
 	add_tm THUNDERBOLT		; $17
 	add_tm THUNDER			; $18
 	add_tm EARTHQUAKE		; $19
@@ -89,7 +89,7 @@ ENDM
 	add_tm EXPLOSION		; $3f
 	add_tm SHADOW_CLAW		; $40
 	add_tm POISON_JAB		; $41
-	add_tm FAIRY_WIND		; $42
+	add_tm RAPID_SPIN		; $42
 	add_tm GIGA_IMPACT		; $43
 	add_tm FIRE_FANG		; $44
 	add_tm SAND_ATTACK_SMOKESCREEN_FLASH			; $45

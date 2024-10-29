@@ -118,7 +118,7 @@ LusterGymPolly:
 	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_6
 	writetext LusterGymPollyTextAfterBattle
 	buttonsound
-;	verbosegivetmhm TM_FAKE_OUT
+	verbosegivetmhm TM_VENOSHOCK
 	setevent EVENT_GOT_TM_FROM_POLLY
 	writetext LusterGymPollyTextTMSpeech
 	waitbutton
@@ -239,7 +239,12 @@ LusterGymPollyTextAfterBattle:
 	done
 	
 LusterGymPollyTextTMSpeech:
-	text "TM SPEECH"
+	text "That TM contains"
+	line "VENOSHOCK."
+	
+	para "It… <WAIT_S>uh…<WAIT_S> deals more"
+	line "damage if your foe"
+	cont "is POISONED."
 	
 	para "…"
 	

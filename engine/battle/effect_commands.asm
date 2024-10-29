@@ -3229,7 +3229,7 @@ BattleCommand_posthiteffects:
 	call .checkfaint
 	ret z
 	call CheckSheerForceNegation
-	ret nz
+	ret z
 	farcall CheckFullHP
 	ret z
 
@@ -3258,7 +3258,7 @@ BattleCommand_posthiteffects:
 	ret z
 
 	call CheckSheerForceNegation
-	ret nz
+	ret z
 
 .no_sheer_force
 	xor a
@@ -3290,7 +3290,7 @@ BattleCommand_posthiteffects:
 BattleCommand_pickpocket:
 ; If the opponent has Pickpocket, proc the item steal now
 	call CheckSheerForceNegation
-	ret nz
+	ret z
 
 	; At this point, we can safely reset wEffectFailed (This runs after everything else)
 	xor a

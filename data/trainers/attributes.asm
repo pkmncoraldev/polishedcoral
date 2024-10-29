@@ -70,7 +70,7 @@ TrainerClassAttributes: ; 3959c
 	db FULL_HEAL, 0 ; items
 	db 25 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_STATUS + AI_RISKY + AI_SMART
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE
 
 ; Leilani
 	db MAX_POTION, 0 ; items

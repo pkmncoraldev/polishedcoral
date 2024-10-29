@@ -4023,6 +4023,16 @@ BattleCommand_damagecalc: ; 35612
 ; player attack b. Return 1 if successful, else 0.
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
+	
+; Selfdestruct and Explosion halve defense.
+	cp EFFECT_EXPLOSION
+	jr nz, .dont_selfdestruct
+
+	srl c
+	jr nz, .dont_selfdestruct
+	inc c
+
+.dont_selfdestruct
 
 	; Variable-hit moves and Conversion can have a power of 0.
 	cp EFFECT_MULTI_HIT

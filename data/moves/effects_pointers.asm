@@ -166,3 +166,5 @@ MoveEffectsPointers:
 	dw Wish
 	dw Taunt
 	dw Surf
+	dw ConditionalBoostHit
+	dw ConditionalBoostHit

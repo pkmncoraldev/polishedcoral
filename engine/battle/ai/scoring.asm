@@ -406,8 +406,50 @@ AI_Smart: ; 386be
 	dbw EFFECT_SLEEP_POWDER,      AI_Smart_Sleep
 	dbw EFFECT_SURF,			  AI_Smart_Surf
 	dbw EFFECT_TOXIC_SPIKES,	  AI_Smart_Toxic_Spikes
+	dbw EFFECT_HEX,				  AI_Smart_Hex
+	dbw EFFECT_VENOSHOCK,		  AI_Smart_Venoshock
+	dbw EFFECT_ACROBATICS,		  AI_Smart_Acrobatics
 	db $ff
 ; 387e3
+
+AI_Smart_Acrobatics:
+	ld hl, wEnemyMonItem
+	ld a, [hl]
+	cp 0
+	jr z, .encourage
+	cp $ff
+	jr z, .encourage
+	ret
+.encourage
+	call AI_50_50
+	ret c
+	dec [hl]
+	ret
+
+AI_Smart_Hex:
+	ld a, [wBattleMonStatus]
+	cp 0
+	jr nz, .encourage
+	ret
+.encourage
+	call AI_50_50
+	ret c
+	dec [hl]
+	ret
+
+AI_Smart_Venoshock:
+	ld a, [wBattleMonStatus]
+	bit TOX, a
+	jr nz, .encourage
+	ld a, [wBattleMonStatus]
+	bit PSN, a
+	jr nz, .encourage
+	ret
+.encourage
+	call AI_50_50
+	ret c
+	dec [hl]
+	ret
 
 AI_Smart_Toxic_Spikes:
 	ld a, [wPlayerScreens]
@@ -2900,8 +2942,14 @@ AIDamageCalc: ; 393e7
 
 	; Maybe run conditional boost if applicable
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
-	cp EFFECT_CONDITIONAL_BOOST
-	ret nz
+	cp EFFECT_HEX
+	jr z, .yes
+	cp EFFECT_VENOSHOCK
+	jr z, .yes
+	cp EFFECT_ACROBATICS
+	jr z, .yes
+	ret
+.yes
 	farjp BattleCommand_conditionalboost
 
 .ConstantDamageEffects:

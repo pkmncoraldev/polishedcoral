@@ -33,7 +33,7 @@ Moves:: ; 41afb
 	move FLAIL,                    EFFECT_REVERSAL,            1, NORMAL,    100, 15,   0, PHYSICAL
 	move VINE_WHIP,                EFFECT_NORMAL_HIT,         45, GRASS,     100, 25,   0, PHYSICAL
 	move STOMP,                    EFFECT_STOMP,              65, NORMAL,    100, 20,  30, PHYSICAL
-	move HEX,                      EFFECT_CONDITIONAL_BOOST,  65, GHOST,     100, 10,   0, SPECIAL
+	move HEX,                      EFFECT_HEX, 				  65, GHOST,     100, 10,   0, SPECIAL
 	move FLARE_BLITZ,              EFFECT_FLARE_BLITZ,       120, FIRE,      100, 15,  10, PHYSICAL
 	move STONE_EDGE,               EFFECT_NORMAL_HIT,        100, ROCK,       80,  5,   0, PHYSICAL
 	move FOCUS_BLAST,              EFFECT_SP_DEF_DOWN_HIT,   120, FIGHTING,   70,  5,  10, SPECIAL
@@ -133,7 +133,7 @@ Moves:: ; 41afb
 	move COTTON_GUARD,             EFFECT_COTTON_GUARD,        0, GRASS,     100, 10, 100, STATUS
 	move JUMP_KICK,                EFFECT_JUMP_KICK,         100, FIGHTING,   95, 10,   0, PHYSICAL
 	move PSYSHOCK,                 EFFECT_PSYSTRIKE,          80, PSYCHIC,   100, 10,   0, SPECIAL
-	move VENOSHOCK,                EFFECT_CONDITIONAL_BOOST,  65, POISON,    100, 10,   0, SPECIAL
+	move VENOSHOCK,                EFFECT_VENOSHOCK, 		  65, POISON,    100, 10,   0, SPECIAL
 	move EARTH_POWER,              EFFECT_SP_DEF_DOWN_HIT,    90, GROUND,    100, 10,  10, SPECIAL
 	move FIRE_BLAST,               EFFECT_BURN_HIT,          110, FIRE,       85,  5,  10, SPECIAL
 	move WATERFALL,                EFFECT_FLINCH_HIT,         80, WATER,     100, 15,  20, PHYSICAL
@@ -177,7 +177,7 @@ Moves:: ; 41afb
 	move GIGA_IMPACT,              EFFECT_HYPER_BEAM,        150, NORMAL,     90,  5,   0, PHYSICAL
 	move TWIN_BEAM,                EFFECT_DOUBLE_HIT,         40, PSYCHIC,   100, 10,   0, SPECIAL
 	move DRAIN_PUNCH,              EFFECT_LEECH_HIT,          75, FIGHTING,  100, 10,   0, PHYSICAL
-	move ACROBATICS,               EFFECT_CONDITIONAL_BOOST,  55, FLYING,    100, 15,   0, PHYSICAL
+	move ACROBATICS,               EFFECT_ACROBATICS,		  55, FLYING,    100, 15,   0, PHYSICAL
 	move WILL_O_WISP,              EFFECT_BURN,                0, FIRE,       85, 15,   0, STATUS
 	move ZEN_HEADBUTT,             EFFECT_FLINCH_HIT,         80, PSYCHIC,    90, 15,  20, PHYSICAL
 	move BRICK_BREAK,              EFFECT_BRICK_BREAK,        75, FIGHTING,  100, 15,   0, PHYSICAL

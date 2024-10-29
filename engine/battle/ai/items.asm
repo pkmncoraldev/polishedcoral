@@ -309,6 +309,7 @@ AI_Items: ; 39196
 	dbw X_SPCL_ATK,   .XSpclAtk
 	dbw X_SPCL_DEF,   .XSpclDef
 	dbw X_ACCURACY,   .XAccuracy
+	dbw SODA_POP,	  .SodaPop
 	db $ff
 ; 381be
 
@@ -416,7 +417,13 @@ AI_Items: ; 39196
 	call EnemyUsedHyperPotion
 	jp .Use
 ; 38292 (e:4292)
-
+.SodaPop:
+	call .HealItem
+	jp c, .DontUse
+	ld b, 50
+	call EnemyUsedSodaPop
+	jp .Use
+	
 .SuperPotion: ; 38292
 	call .HealItem
 	jp c, .DontUse
@@ -592,6 +599,11 @@ EnemyUsedPotion: ; 383e8
 
 EnemyUsedSuperPotion: ; 383ee
 	ld a, SUPER_POTION
+	ld b, 50
+	jr EnemyPotionContinue
+	
+EnemyUsedSodaPop:
+	ld a, SODA_POP
 	ld b, 50
 	jr EnemyPotionContinue
 

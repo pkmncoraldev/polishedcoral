@@ -452,7 +452,7 @@ TrainerClassAttributes: ; 3959c
 	
 ;Frankie
 	db FULL_HEAL, SODA_POP ; items
-	db 15 ; base reward
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 	

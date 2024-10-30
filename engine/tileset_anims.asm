@@ -888,9 +888,21 @@ AnimateTopofWaterfall:
 
 
 AnimateFlowerTile: ; fc56d
+	ld a, [wSkateparkComboTimer]
+	cp 0
+	jr z, .skip_score
+	dec a
+	cp 0
+	jr nz, .skip_score
+	farcall AddSkateparkScore
+.skip_score
+	ld [wSkateparkComboTimer], a
+	eventflagcheck EVENT_SKATEPARK_CONTEST_TIMER
+	jr nz, .timer
 	eventflagcheck EVENT_DODRIO_RANCH_TIMER
 	jr z, .skip
 	
+.timer
 	ld hl, wRanchRaceFrames
 	ld a, [hl]
 	inc a

@@ -9048,7 +9048,6 @@ ExitBattle: ; 3f69e
 	call .HandleEndOfBattle
 	farcall HandleDisguiseAfterBattle
 	farcall HandleFlowerGiftAfterBattle
-	call HandleNuzlockeFlags
 	jp CleanUpBattleRAM
 ; 3f6a5
 
@@ -9071,34 +9070,6 @@ ExitBattle: ; 3f69e
 	predef EvolveAfterBattle
 	farjp GivePokerus
 ; 3f6d0
-
-HandleNuzlockeFlags:
-	ld a, [wBattleMode]
-	cp WILD_BATTLE
-	ret nz
-
-	; Dupes clause: don't count duplicate encounters
-	ld a, [wTempEnemyMonSpecies]
-	dec a
-	call CheckCaughtMon
-	ret nz
-
-	; Only flag landmarks for Nuzlocke runs after getting Poké Balls
-;	eventflagcheck EVENT_LEARNED_TO_CATCH_POKEMON
-;	ret z
-
-	; Get current landmark
-	ld a, [wMapGroup]
-	ld b, a
-	ld a, [wMapNumber]
-	ld c, a
-	call GetWorldMapLocation
-	; Use landmark as index into flag array
-	ld c, a
-	ld hl, wNuzlockeLandmarkFlags
-	ld b, SET_FLAG
-	predef FlagPredef
-	ret
 
 CleanUpBattleRAM: ; 3f6d0
 	call BattleEnd_HandleRoamMons

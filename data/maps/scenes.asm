@@ -143,4 +143,5 @@ MapTriggers::
 	scene_var OBSCURA_MUSEUM_2F,					  wAlways0Trigger
 	scene_var OBSCURA_MUSEUM_3F,					  wObscuraMuseum3FTrigger
 	scene_var OBSCURA_MUSEUM_PHOTO,					  wAlways0Trigger
+	scene_var SKATEPARK,					  wAlways0Trigger
 	db -1

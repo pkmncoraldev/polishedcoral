@@ -1971,22 +1971,3 @@ CaveGrottoScript:
 ;	callasm _HiddenGrottoBackupMap
 ;	warpfacing UP, HIDDEN_CAVE_GROTTO, 35, 85
 	end
-
-_HiddenGrottoInitScript:
-	callasm .StoreCurHiddenGrotto
-	opentext
-	farwritetext HiddenGrottoText
-	yesorno
-	end
-
-.StoreCurHiddenGrotto:
-	ld a, [wScriptVar]
-	ld [wCurHiddenGrotto], a
-	ret
-
-_HiddenGrottoBackupMap:
-	ld a, [wMapGroup]
-	ld [wBackupMapGroup], a
-	ld a, [wMapNumber]
-	ld [wBackupMapNumber], a
-	ret

@@ -272,10 +272,6 @@ ItemEffects: ; e73c
 
 
 PokeBallEffect: ; e8a2
-	farcall DoesNuzlockeModePreventCapture
-	jp c, Ball_NuzlockeFailureMessage
-
-.NoNuzlockeCheck
 	ld a, [wBattleMode]
 	dec a
 	jp nz, UseBallInTrainerBattle
@@ -546,19 +542,6 @@ PokeBallEffect: ; e8a2
 	call PrintText
 
 	call ClearSprites
-
-	; Get current landmark
-	ld a, [wMapGroup]
-	ld b, a
-	ld a, [wMapNumber]
-	ld c, a
-	call GetWorldMapLocation
-	; Use landmark as index into flag array
-	ld c, a
-	ld hl, wNuzlockeLandmarkFlags
-	ld b, SET_FLAG
-	predef FlagPredef
-
 
 	ld a, [wPartyCount]
 	cp 0

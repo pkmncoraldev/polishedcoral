@@ -153,8 +153,6 @@ DrawEnemyHUDBorder: ; 2c0c5
 	ld a, [wBattleMode]
 	dec a
 	ret nz
-	call DoesNuzlockeModePreventCapture
-	jr c, .nuzlocke
 	ld a, [wTempEnemyMonSpecies]
 	dec a
 	call CheckCaughtMon
@@ -268,38 +266,4 @@ _ShowLinkBattleParticipants: ; 2c1b2
 	call SetPalettes
 	ld a, $e4
 	ld [rOBP0], a
-	ret
-; 2c1ef
-
-DoesNuzlockeModePreventCapture:
-	; Is nuzlocke mode on?
-	ld a, [wInitialOptions]
-	bit NUZLOCKE_MODE, a
-	jr z, .no
-
-	; Is enemy shiny?
-	farcall BattleCheckEnemyShininess
-	jr c, .no
-
-	; Is location already done?
-	ld a, [wMapGroup]
-	ld b, a
-	ld a, [wMapNumber]
-	ld c, a
-	call GetWorldMapLocation
-	ld c, a
-	ld hl, wNuzlockeLandmarkFlags
-	; Use landmark as index into flag array
-	ld b, CHECK_FLAG
-	ld d, $0
-	predef FlagPredef
-	ld a, c
-	and a
-	jr z, .no
-
-	scf
-	ret
-
-.no
-	xor a
 	ret

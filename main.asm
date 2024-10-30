@@ -5226,3 +5226,4 @@ SECTION "Coral Data 5", ROMX
 INCLUDE "engine/battle/porygon_encounter.asm"
 INCLUDE "engine/player_object.asm"
 INCLUDE "engine/battle/generate_wild_form.asm"
+INCLUDE "engine/events/skatepark_score.asm"

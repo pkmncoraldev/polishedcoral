@@ -304,6 +304,12 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	scf
 	ret
 .start_fall
+	farcall HalveSkateparkScore
+	xor a
+	ld [wSkateparkCurTrick], a
+	ld [wSkateparkCombo], a
+	ld [wSkateparkComboTimer], a
+	
 	ld de, SFX_SUBMISSION
 	call PlaySFX
 	ld a, 1
@@ -548,8 +554,6 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jp z, .TrySurf
 	cp PLAYER_DIVE
 	jp z, .TrySurf
-;	cp PLAYER_SKATEBOARD_GRINDING
-;	jp z, .grindcont
 
 	ld a, [wPlayerStandingTile]
 	cp COLL_CONVEYOR_UP
@@ -765,6 +769,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld [wSkateboardGrinding], a
 	jp .stop_grinding_fall
 .grind
+	xor a
+	ld [wSkateparkComboTimer], a
 	ld a, [wSkateboardGrinding]
 	cp 1
 	jr z, .input
@@ -815,6 +821,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld [wSpinning], a
 	ld de, SFX_GRIND
 	call PlaySFX
+	farcall IncreaseSkateboardCombo
 	ld a, PLAYER_SKATEBOARD_GRINDING
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
@@ -832,7 +839,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 .input
 	xor a
 	ld [wInputFlags], a
-	jr .grind_return
+	jp .grind_return
 	
 .end_of_rail
 	ld a, [wPlaceBallsY]
@@ -855,6 +862,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld [wWalkingX], a
 	ld a, LEFT
 	ld [wLastWalkingDirection], a
+	farcall IncreaseSkateboardCombo
 	jr .grindcont
 .skip_left
 	ld a, [hJoyDown]
@@ -871,6 +879,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld [wWalkingX], a
 	ld a, RIGHT
 	ld [wLastWalkingDirection], a
+	farcall IncreaseSkateboardCombo
 	jr .grindcont
 	
 	
@@ -889,6 +898,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld [wWalkingX], a
 	ld a, UP
 	ld [wLastWalkingDirection], a
+	farcall IncreaseSkateboardCombo
 	jp .grindcont
 .skip_up
 	ld a, [hJoyDown]
@@ -905,6 +915,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld [wWalkingX], a
 	ld a, DOWN
 	ld [wLastWalkingDirection], a
+	farcall IncreaseSkateboardCombo
 	jp .grindcont
 	
 .check_stop_grinding
@@ -1243,7 +1254,18 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld [wWalkingDirection], a
 	xor a
 	ld [wPlayerStandingTile], a
-	
+	ld a, [wSkateparkScore]
+	add 1
+	jr nc, .increase_skate_score
+	ld a, $ff
+.increase_skate_score
+	ld [wSkateparkScore], a
+	ld a, [wSkateparkCurTrick]
+	cp 0
+	jr z, .skip_skatepark
+	ld a, 3
+	ld [wSkateparkComboTimer], a
+.skip_skatepark
 	ld a, PLAYER_SKATEBOARD_MOVING
 	ld [wPlayerState], a
 	jp .DoJump

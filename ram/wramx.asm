@@ -1147,13 +1147,16 @@ wFruitTreeFlags:: flag_array NUM_FRUIT_TREES
 
 wFlowerPileFlags:: ds 1
 
-wNuzlockeLandmarkFlags:: flag_array NUM_LANDMARKS
-
-wHiddenGrottoContents::
-; content type, content id
-	ds NUM_HIDDEN_GROTTOES * 2
-
-wCurHiddenGrotto:: ds 1
+	ds 49 ;unused
+	
+wSkateparkCurTrick:: ds 1
+wSkateparkComboTimer:: ds 1
+wSkateparkScore:: ds 1
+wSkateparkCombo:: ds 1
+wSkateparkStaleTrick1:: ds 1
+wSkateparkStaleTrick2:: ds 1
+wSkateparkStaleTrick3:: ds 1
+wSkateparkStaleTrick4:: ds 1
 
 wLuckyNumberDayBuffer:: ds 2
 wSpecialPhoneCallID:: ds 1
@@ -1205,13 +1208,11 @@ wRepelType:: ds 1
 
 wTorchSteps:: ds 1
 
-	ds 1 ; unused
-
 wOnBike::	ds 1
 
 wOnSkateboard:: ds 1
 
-wKurtApricornQuantity:: ds 1
+	ds 2 ; unused
 
 wPlayerDataEnd::
 

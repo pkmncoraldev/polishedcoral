@@ -40,6 +40,9 @@ Sfx_Bump_Snowstorm_Ch8:
 	note E_, 2
 	endchannel
 	
+Sfx_Grind2: ; f0ab5
+	musicheader 1, 8, Sfx_Grind_Ch8
+	
 Sfx_Grind: ; f0ab5
 	musicheader 2, 5, Sfx_Grind_Ch5
 	musicheader 1, 8, Sfx_Grind_Ch8

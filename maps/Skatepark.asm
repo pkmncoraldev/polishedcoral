@@ -168,8 +168,18 @@ SkateparkTrickAsm:
 	
 SkateparkTMNpc:
 	setevent EVENT_SKATEPARK_CONTEST_TIMER
+	playmusic MUSIC_GSC_GAME_CORNER
 	end
-
+	
+SkateparkTimesUp::
+	clearevent EVENT_SKATEPARK_CONTEST_TIMER
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	opentext
+	writetext SkateparkTMNPCText2
+	pause 80
+	closetext
+	playmapmusic
+	end
 
 SkateparkTMNPCText1:
 	text "So you got past"

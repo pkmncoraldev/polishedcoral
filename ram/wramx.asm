@@ -1147,8 +1147,9 @@ wFruitTreeFlags:: flag_array NUM_FRUIT_TREES
 
 wFlowerPileFlags:: ds 1
 
-	ds 49 ;unused
+	ds 48 ;unused
 	
+wEndSkateparkContest:: ds 1
 wSkateparkCurTrick:: ds 1
 wSkateparkComboTimer:: ds 1
 wSkateparkScore:: ds 1

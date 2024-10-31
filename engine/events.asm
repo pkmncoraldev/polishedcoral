@@ -479,8 +479,17 @@ CheckTimeEvents: ; 9693a
 	ld a, [wLinkMode]
 	and a
 	jr nz, .nothing
+	
+	call SkateparkCheckEndContest
+	jp c, SkateparkEndContestScript
 
 	ld a, [wTileset]
+	cp TILESET_PARK
+	jr nz, .skip_park
+	ld a, [wRanchRaceSeconds]
+	cp 60 ; time limit
+	jr z, .skatepark_times_up
+.skip_park
 	cp TILESET_RANCH
 	jr nz, .skip_ranch
 	ld a, [wRanchRaceSeconds]
@@ -513,6 +522,18 @@ CheckTimeEvents: ; 9693a
 	call CallScript
 	scf
 	ret
+	
+.skatepark_times_up
+	ld de, MUSIC_NONE
+	call PlayMusic
+	ld de, SFX_BOAT
+	call PlaySFX
+	ld a, 1
+	ld [wEndSkateparkContest], a
+	xor a
+	ld [wRanchRaceFrames], a
+	ld [wRanchRaceSeconds], a
+	ret
 
 .end_timer_event
 	ld a, [wMapGroup]
@@ -531,6 +552,32 @@ CheckTimeEvents: ; 9693a
 	scf
 	ret
 ; 96970
+
+SkateparkCheckEndContest:
+	ld a, [wEndSkateparkContest]
+	cp 0
+	ret z
+	ld a, [wPlayerState]
+	cp PLAYER_SKATEBOARD_GRINDING
+	jr nz, .cont
+	call IsSFXPlaying
+	ret nc
+	ld de, SFX_GRIND_2
+	call PlaySFX
+	xor a
+	ret
+.cont
+	xor a
+	ld [wEndSkateparkContest], a
+	scf
+	ret
+	
+SkateparkEndContestScript:
+	ld a, BANK(SkateparkTimesUp)
+	ld hl, SkateparkTimesUp
+	call CallScript
+	scf
+	ret
 
 OWPlayerInput: ; 96974
 

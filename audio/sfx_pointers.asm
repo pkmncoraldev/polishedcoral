@@ -226,3 +226,4 @@ SFX:
 	dba Sfx_ItemFake
 	dba Sfx_GrassWhistle
 	dba Sfx_TempleRumble
+	dba Sfx_Grind2

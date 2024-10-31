@@ -221,5 +221,6 @@
 	const SFX_ITEM_FAKE					  ; d7
 	const SFX_GRASS_WHISTLE				  ; d8
 	const SFX_TEMPLE_RUMBLE	     		  ; d9
+	const SFX_GRIND_2					  ; da
 	
 NUM_SFX EQU const_value - 1

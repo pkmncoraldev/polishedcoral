@@ -48,10 +48,22 @@ Skatepark_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 15 ; object events
 	person_event SPRITE_VALVE_2, 42,  9, SPRITEMOVEDATA_HALFPIPE_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_VALVE_2, 42, 15, SPRITEMOVEDATA_HALFPIPE_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_SKATER, 33, 17, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SkateparkTMNpc, -1
+	person_event SPRITE_SKATER, 24, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SkateparkTMNpc, EVENT_SKATEPARK_NPCS_GONE
+	person_event SPRITE_SKATER, 42, 18, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SkateparkGuard, EVENT_SKATEPARK_GUARDS_GONE
+	person_event SPRITE_SKATER, 42, 20, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SkateparkGuard, EVENT_SKATEPARK_GUARDS_GONE
+	person_event SPRITE_SKATER, 48, 11, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SkateparkNPC1, EVENT_SKATEPARK_NPCS_GONE
+	person_event SPRITE_SKATER, 53, 22, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SkateparkNPC2, EVENT_SKATEPARK_NPCS_GONE
+	person_event SPRITE_SKATER, 59, 18, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SkateparkNPC3, EVENT_SKATEPARK_NPCS_GONE
+	person_event SPRITE_SKATER, 51,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SkateparkNPC4, EVENT_SKATEPARK_NPCS_GONE
+	person_event SPRITE_SKATER, 50, 19, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SKATEPARK_NPCS_GONE
+	person_event SPRITE_CUTE_GIRL, 58,  6, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SkateparkNPC5, EVENT_SKATEPARK_NPCS_GONE
+	person_event SPRITE_PONYTAIL, 58,  7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SkateparkNPC6, EVENT_SKATEPARK_NPCS_GONE
+	person_event SPRITE_SKATER, 35, 13, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SkateparkNPC7, EVENT_SKATEPARK_NPCS_GONE
+	person_event SPRITE_SKATER, 29, 19, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SkateparkNPC8, EVENT_SKATEPARK_NPCS_GONE
+	person_event SPRITE_SKATER, 34, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SkateparkNPC9, EVENT_SKATEPARK_NPCS_GONE
 	
 	
 SkateparkTrigger0:
@@ -121,6 +133,143 @@ SkateparkCountdown1:
 	
 SkateparkCountdownGo:
 	text "GO!"
+	done
+	
+SkateparkGuard:
+	checkcode VAR_FACING
+	if_equal DOWN, .yourefacingdown
+	jumptextfaceplayer SkateparkGuardText1
+.yourefacingdown
+	jumptextfaceplayer SkateparkGuardText2
+	
+SkateparkGuardText1:
+	text "RAPID SPIN only"
+	line "past here."
+	
+	para "You aren't with"
+	line "us, so scram!"
+	done
+	
+SkateparkGuardText2:
+	text "What!?"
+	
+	para "How'd you get past"
+	line "us?"
+	done
+	
+SkateparkNPC1:
+	jumptextfaceplayer SkateparkNPC1Text
+	
+SkateparkNPC1Text:
+	text "All the coolest"
+	line "skaters here are"
+	cont "part of a group"
+	cont "called RAPID SPIN."
+	
+	para "They treat others"
+	line "like second-class"
+	cont "citizens!"
+	done
+	
+SkateparkNPC2:
+	jumptextfaceplayer SkateparkNPC2Text
+	
+SkateparkNPC2Text:
+	text "Remember to OLLIE"
+	line "at the end of a"
+	cont "rail, or you'll"
+	cont "fall!"
+	done
+	
+SkateparkNPC3:
+	jumptextfaceplayer SkateparkNPC3Text
+	
+SkateparkNPC3Text:
+	text "I like grinding"
+	line "the flowerbeds."
+	
+	para "You can't do a"
+	line "GRIND TURN on a"
+	cont "rail like you can"
+	cont "a flowerbed."
+	done
+	
+SkateparkNPC4:
+	jumptextfaceplayer SkateparkNPC4Text
+	
+SkateparkNPC4Text:
+	text "I keep bailing!"
+	
+	para "It feels like I'll"
+	line "never get the hang"
+	cont "of this!"
+	done
+	
+SkateparkNPC5:
+	jumptextfaceplayer SkateparkNPC5Text
+	
+SkateparkNPC5Text:
+	text "RAPID SPIN are"
+	line "so cool!"
+	done
+	
+SkateparkNPC6:
+	jumptextfaceplayer SkateparkNPC6Text
+	
+SkateparkNPC6Text:
+	text "You're a skater,"
+	line "huh?"
+	
+	para "Are you part of"
+	line "RAPID SPIN?"
+	done
+	
+SkateparkNPC7:
+	jumptextfaceplayer SkateparkNPC7Text
+	
+SkateparkNPC7Text:
+	text "Your board…"
+	
+	para "Doesn't that"
+	line "belong to the"
+	cont "leader of"
+	cont "“THE NIDOKINGS”?"
+	done
+	
+SkateparkNPC8:
+	jumptextfaceplayer SkateparkNPC8Text
+	
+SkateparkNPC8Text:
+	text "If you GRIND TURN"
+	line "on the fountain,"
+	cont "you can grind"
+	cont "forever!"
+	done
+	
+SkateparkNPC9:
+	checktmhm TM_RAPID_SPIN
+	iftrue .yes
+	jumptextfaceplayer SkateparkNPC9Text1
+.yes
+	jumptextfaceplayer SkateparkNPC9Text2
+	
+SkateparkNPC9Text1:
+	text "…"
+	
+	para "You ain't"
+	line "RAPID SPIN!"
+	
+	para "You didn't say our"
+	line "iconic greeting!"
+	done
+	
+SkateparkNPC9Text2:
+	text "What up,"
+	line "RAPID SPIN?"
+	
+	para "As you know,"
+	line "that'sour iconic"
+	cont "greeting!"
 	done
 	
 SkateparkRail1:
@@ -268,8 +417,10 @@ SkateparkTMNpc:
 	special Special_FadeOutMusic
 	special FadeOutPalettes
 	special Special_ForceSkateboard
-	dotrigger $1	
-	warp2 DOWN, SKATEPARK, $13, $23
+	setevent EVENT_SKATEPARK_NPCS_GONE
+	setevent EVENT_SKATEPARK_GUARDS_GONE
+	dotrigger $1
+	warp2 DOWN, SKATEPARK, $13, $22
 	end
 .no
 	writetext SkateparkTMNpcTextNo
@@ -299,8 +450,9 @@ SkateparkTimesUp::
 	special Special_FadeOutMusic
 	special FadeOutPalettes
 	special Special_ForceSkateboard
+	clearevent EVENT_SKATEPARK_NPCS_GONE
 	dotrigger $3	
-	warp2 UP, SKATEPARK, $11, $22
+	warp2 UP, SKATEPARK, $10, $19
 	end
 
 SkateparkTMNPCText1:
@@ -315,12 +467,11 @@ SkateparkTMNPCText1:
 	cont "with RAPID SPIN?"
 	
 	para "How about a little"
-	line "competition?"
+	line "competition, then?"
 	
 	para "If you beat my"
-	line "best score,"
-	cont "I'll let you hang"
-	cont "with us."
+	line "score, I'll let"
+	cont "you hang with us."
 	
 	para "You may even get"
 	line "something good."
@@ -376,10 +527,10 @@ SkateparkTMNPCText5:
 	cont "or by going for"
 	cont "GRIND TURNs."
 	
-	para "If you keeping"
-	line "hitting the same"
-	cont "line, you'll earn"
-	cont "less points."
+	para "You'll earn less"
+	line "points if you hit"
+	cont "the same lines"
+	cont "over and over."
 	
 	para "Oh, and if you eat"
 	line "dirt, you'll lose"

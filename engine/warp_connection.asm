@@ -317,7 +317,10 @@ DeferredLoadGraphics:
 	ld a, 3
 	ld [wPendingOverworldGraphics], a
 .done
+	farcall CheckIfTilesetHasRoof
+	jr nc, .skip_roof
 	farcall LoadMapGroupRoof
+.skip_roof
 	farcall LoadEmoteGFX
 	xor a
 	ld [hMapAnims], a

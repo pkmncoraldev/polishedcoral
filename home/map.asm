@@ -1067,27 +1067,8 @@ _LoadTileset0:
 	inc a
 	ld [rSVBK], a
 
-	ld a, [wTileset]
-	cp TILESET_SUNSET
-	jr z, .load_roof
-	cp TILESET_GLINT
-	jr z, .load_roof
-	cp TILESET_STARGLOW
-	jr z, .load_roof
-	cp TILESET_SPOOKY
-	jr z, .load_roof
-	cp TILESET_RANCH
-	jr z, .load_roof
-	cp TILESET_SHIMMER
-	jr z, .load_roof
-	cp TILESET_HIGHWAY
-	jr z, .load_roof
-	cp TILESET_SOUTH_TOWNS
-	jr z, .load_roof
-	cp TILESET_AUTUMN
-	jr nz, .skip_roof
-
-.load_roof
+	farcall CheckIfTilesetHasRoof
+	jr nc, .skip_roof
 	farcall LoadMapGroupRoof
 	ld c, $ff
 	jr .done

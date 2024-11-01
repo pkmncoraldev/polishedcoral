@@ -528,8 +528,7 @@ CheckTimeEvents: ; 9693a
 	call PlayMusic
 	ld de, SFX_BOAT
 	call PlaySFX
-	ld a, 1
-	ld [wEndSkateparkContest], a
+	eventflagset EVENT_END_SKATEPARK_CONTEST
 	xor a
 	ld [wRanchRaceFrames], a
 	ld [wRanchRaceSeconds], a
@@ -554,8 +553,7 @@ CheckTimeEvents: ; 9693a
 ; 96970
 
 SkateparkCheckEndContest:
-	ld a, [wEndSkateparkContest]
-	cp 0
+	eventflagcheck EVENT_END_SKATEPARK_CONTEST
 	ret z
 	ld a, [wPlayerState]
 	cp PLAYER_SKATEBOARD_GRINDING
@@ -567,8 +565,7 @@ SkateparkCheckEndContest:
 	xor a
 	ret
 .cont
-	xor a
-	ld [wEndSkateparkContest], a
+	eventflagreset EVENT_END_SKATEPARK_CONTEST
 	scf
 	ret
 	
@@ -1043,22 +1040,22 @@ PlayerMovement: ; 96af0
 CheckMenuOW: ; 96b30
 	ld a, [wPlayerStandingTile]
 	cp COLL_CONVEYOR_UP
-	jp z, .NoMenu
+	jr z, .NoMenu
 	cp COLL_CONVEYOR_DOWN
-	jp z, .NoMenu
+	jr z, .NoMenu
 	cp COLL_CONVEYOR_LEFT
-	jp z, .NoMenu
+	jr z, .NoMenu
 	cp COLL_CONVEYOR_RIGHT
-	jp z, .NoMenu
+	jr z, .NoMenu
 	ld a, [wPlayerState]
 	cp PLAYER_SITTING
-	jp z, .NoMenu
+	jr z, .NoMenu
 	cp PLAYER_SKATEBOARD_GRINDING
-	jp z, .NoMenu
+	jr z, .NoMenu
 	cp PLAYER_FALLING
-	jp z, .NoMenu
+	jr z, .NoMenu
 	cp PLAYER_SAND
-	jp z, .NoMenu
+	jr z, .NoMenu
 
 	xor a
 	ld [hMenuReturn], a
@@ -1072,6 +1069,10 @@ CheckMenuOW: ; 96b30
 	jr z, .NoMenu
 	
 	ld de, EVENT_TEMPLE_RUMBLING
+	call CheckEventFlag
+	jr nz, .NoMenu
+	
+	ld de, EVENT_SKATEPARK_CONTEST_TIMER
 	call CheckEventFlag
 	jr nz, .NoMenu
 
@@ -1179,6 +1180,9 @@ CountStep: ; 96b79
 	jr c, .skip_poison
 	ld [hl], 0
 
+	ld de, EVENT_SKATEPARK_CONTEST_TIMER
+	call CheckEventFlag
+	jr nz, .skip_poison
 	farcall DoPoisonStep
 	jr c, .doscript
 

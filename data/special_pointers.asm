@@ -198,5 +198,6 @@ SpecialsPointers::
 	add_special InitRoamArticuno
 	add_special InitRoamZapdos
 	add_special InitRoamMoltres
+	add_special Special_ForceSkateboard
 
 	add_special SpecialNone

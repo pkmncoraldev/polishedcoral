@@ -283,7 +283,6 @@ INCLUDE "maps/LusterSkyscraper2_Elevator.asm"
 INCLUDE "maps/LusterSkyscraperB1F.asm"
 INCLUDE "maps/Route12Gate.asm"
 INCLUDE "maps/AirportGate.asm"
-INCLUDE "maps/Skatepark.asm"
 
 SECTION "Nett Building Scripts", ROMX
 
@@ -305,6 +304,7 @@ INCLUDE "maps/AirportRunway.asm"
 INCLUDE "maps/Airport.asm"
 INCLUDE "maps/LusterApartment2_2F.asm"
 INCLUDE "maps/LusterApartment2_1F.asm"
+INCLUDE "maps/Skatepark.asm"
 
 SECTION "Shimmer City Scripts", ROMX
 

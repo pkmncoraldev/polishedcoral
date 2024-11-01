@@ -477,6 +477,16 @@ Special_StopRunning:
 	call ReplaceKrisSprite
 	ret
 	
+Special_ForceSkateboard:
+	xor a
+	ld [hJoyDown], a
+	ld a, 1
+	ld [wOnSkateboard], a
+	ld a, PLAYER_SKATEBOARD
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret
+	
 Special_ForcePlayerStateNormal:
 	xor a
 	ld [wOnBike], a

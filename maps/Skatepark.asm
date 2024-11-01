@@ -1,5 +1,9 @@
 Skatepark_MapScriptHeader:
-	db 0 ; scene scripts
+	db 4 ; scene scripts
+	scene_script SkateparkTrigger0
+	scene_script SkateparkTrigger1
+	scene_script SkateparkTrigger2
+	scene_script SkateparkTrigger3
 
 	db 0 ; callbacks
 
@@ -7,40 +11,40 @@ Skatepark_MapScriptHeader:
 	warp_def 41,  1, 7, FLICKER_STATION
 
 	db 34 ; coord events
-	coord_event 15, 28, 0, SkateparkFountain
-	coord_event 18, 28, 0, SkateparkFountain
-	coord_event 15, 31, 0, SkateparkFountain
-	coord_event 18, 31, 0, SkateparkFountain
-	coord_event  5, 48, 0, SkateparkRail1
-	coord_event  5, 54, 0, SkateparkRail1
-	coord_event  8, 51, 0, SkateparkRail2
-	coord_event 13, 53, 0, SkateparkRail3
-	coord_event 16, 50, 0, SkateparkRail4
-	coord_event 22, 50, 0, SkateparkRail4
-	coord_event 19, 53, 0, SkateparkRail5
-	coord_event 19, 40, 0, SkateparkRail5
-	coord_event  7, 60, 0, SkateparkFlowerBed1
-	coord_event 10, 60, 0, SkateparkFlowerBed1
-	coord_event 12, 60, 0, SkateparkFlowerBed1
-	coord_event 15, 60, 0, SkateparkFlowerBed1
-	coord_event 17, 60, 0, SkateparkFlowerBed1
-	coord_event 20, 60, 0, SkateparkFlowerBed1
-	coord_event 12, 38, 0, SkateparkFlowerBed2
-	coord_event 15, 38, 0, SkateparkFlowerBed2
-	coord_event 10, 32, 0, SkateparkFlowerBed3
-	coord_event 10, 35, 0, SkateparkFlowerBed3
-	coord_event 10, 26, 0, SkateparkFlowerBed4
-	coord_event 10, 29, 0, SkateparkFlowerBed4
-	coord_event 23, 32, 0, SkateparkFlowerBed5
-	coord_event 23, 35, 0, SkateparkFlowerBed5
-	coord_event 23, 26, 0, SkateparkFlowerBed6
-	coord_event 23, 29, 0, SkateparkFlowerBed6
-	coord_event 10, 23, 0, SkateparkFlowerBed7
-	coord_event 13, 23, 0, SkateparkFlowerBed7
-	coord_event 15, 23, 0, SkateparkFlowerBed7
-	coord_event 18, 23, 0, SkateparkFlowerBed7
-	coord_event 20, 23, 0, SkateparkFlowerBed7
-	coord_event 23, 23, 0, SkateparkFlowerBed7
+	coord_event 15, 28, 2, SkateparkFountain
+	coord_event 18, 28, 2, SkateparkFountain
+	coord_event 15, 31, 2, SkateparkFountain
+	coord_event 18, 31, 2, SkateparkFountain
+	coord_event  5, 48, 2, SkateparkRail1
+	coord_event  5, 54, 2, SkateparkRail1
+	coord_event  8, 51, 2, SkateparkRail2
+	coord_event 13, 53, 2, SkateparkRail3
+	coord_event 16, 50, 2, SkateparkRail4
+	coord_event 22, 50, 2, SkateparkRail4
+	coord_event 19, 53, 2, SkateparkRail5
+	coord_event 19, 40, 2, SkateparkRail5
+	coord_event  7, 60, 2, SkateparkFlowerBed1
+	coord_event 10, 60, 2, SkateparkFlowerBed1
+	coord_event 12, 60, 2, SkateparkFlowerBed1
+	coord_event 15, 60, 2, SkateparkFlowerBed1
+	coord_event 17, 60, 2, SkateparkFlowerBed1
+	coord_event 20, 60, 2, SkateparkFlowerBed1
+	coord_event 12, 38, 2, SkateparkFlowerBed2
+	coord_event 15, 38, 2, SkateparkFlowerBed2
+	coord_event 10, 32, 2, SkateparkFlowerBed3
+	coord_event 10, 35, 2, SkateparkFlowerBed3
+	coord_event 10, 26, 2, SkateparkFlowerBed4
+	coord_event 10, 29, 2, SkateparkFlowerBed4
+	coord_event 23, 32, 2, SkateparkFlowerBed5
+	coord_event 23, 35, 2, SkateparkFlowerBed5
+	coord_event 23, 26, 2, SkateparkFlowerBed6
+	coord_event 23, 29, 2, SkateparkFlowerBed6
+	coord_event 10, 23, 2, SkateparkFlowerBed7
+	coord_event 13, 23, 2, SkateparkFlowerBed7
+	coord_event 15, 23, 2, SkateparkFlowerBed7
+	coord_event 18, 23, 2, SkateparkFlowerBed7
+	coord_event 20, 23, 2, SkateparkFlowerBed7
+	coord_event 23, 23, 2, SkateparkFlowerBed7
 
 	db 0 ; bg events
 
@@ -50,6 +54,74 @@ Skatepark_MapScriptHeader:
 	person_event SPRITE_SKATER, 33, 17, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SkateparkTMNpc, -1
 	
 	
+SkateparkTrigger0:
+SkateparkTrigger2:
+	end
+	
+SkateparkTrigger1:
+	callasm SkateparkClearContestStuffAsm
+	pause 20
+	opentext
+	writetext SkateparkCountdown3
+	playsound SFX_TALLY
+	pause 25
+	writetext SkateparkCountdown2
+	playsound SFX_TALLY
+	pause 25
+	writetext SkateparkCountdown1
+	playsound SFX_TALLY
+	pause 25
+	writetext SkateparkCountdownGo
+	playsound SFX_THROW_BALL
+	pause 25
+	closetext
+	dotrigger $2
+	playmusic MUSIC_GSC_GAME_CORNER
+	setevent EVENT_SKATEPARK_CONTEST_TIMER
+	end
+	
+SkateparkTrigger3:
+	playmapmusic
+	pause 20
+	opentext
+	writetext SkateparkTMNPCText2
+	waitbutton
+	verbosegivetmhm TM_RAPID_SPIN
+	writetext SkateparkTMNPCText8
+	waitbutton
+	closetext
+	setevent EVENT_DONE_SKATEBOARD_CONTEST_ONCE
+	setevent EVENT_DONE_SKATEBOARD_CONTEST_TODAY
+	dotrigger $0
+	end
+	
+SkateparkClearContestStuffAsm:
+	xor a
+	ld [wSkateparkCurTrick], a
+	ld [wSkateparkComboTimer], a
+	ld [wSkateparkScore], a
+	ld [wSkateparkCombo], a
+	ld [wSkateparkStaleTrick1], a
+	ld [wSkateparkStaleTrick2], a
+	ld [wSkateparkStaleTrick3], a
+	ld [wSkateparkStaleTrick4], a
+	ret
+	
+SkateparkCountdown3:
+	text "3…"
+	done
+	
+SkateparkCountdown2:
+	text "2…"
+	done
+	
+SkateparkCountdown1:
+	text "1…"
+	done
+	
+SkateparkCountdownGo:
+	text "GO!"
+	done
 	
 SkateparkRail1:
 	callasm SkateparkRail1Asm
@@ -167,28 +239,237 @@ SkateparkTrickAsm:
 	ret
 	
 SkateparkTMNpc:
-	setevent EVENT_SKATEPARK_CONTEST_TIMER
-	playmusic MUSIC_GSC_GAME_CORNER
+	faceplayer
+	opentext
+	checkevent EVENT_DONE_SKATEBOARD_CONTEST_TODAY
+	iftrue .done_today
+	checkevent EVENT_SKATEPARK_CONTEST_TIMER
+	iftrue .contest_happening
+	checkevent EVENT_SKATEPARK_SAID_NO
+	iftrue .talked
+	writetext SkateparkTMNPCText1
+	jump .yesorno
+.talked
+	writetext SkateparkTMNPCText4
+.yesorno
+	yesorno
+	iffalse .no
+	writetext SkateparkTMNPCText5
+.ask_understand
+	yesorno
+	iftrue .rules_done
+	writetext SkateparkTMNPCText6
+	jump .ask_understand
+.rules_done
+	writetext SkateparkTMNPCText7
+	waitbutton
+	closetext
+	pause 5
+	special Special_FadeOutMusic
+	special FadeOutPalettes
+	special Special_ForceSkateboard
+	dotrigger $1	
+	warp2 DOWN, SKATEPARK, $13, $23
+	end
+.no
+	writetext SkateparkTMNpcTextNo
+	waitbutton
+	closetext
+	setevent EVENT_SKATEPARK_SAID_NO
+	end
+.contest_happening
+	writetext SkateparkTMNpcText3
+	waitbutton
+	closetext
+	end
+.done_today
+	writetext SkateparkTMNPCText9
+	waitbutton
+	closetext
 	end
 	
 SkateparkTimesUp::
 	clearevent EVENT_SKATEPARK_CONTEST_TIMER
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	opentext
-	writetext SkateparkTMNPCText2
+	writetext SkateparkDoneText
 	pause 80
 	closetext
-	playmapmusic
+	pause 5
+	special Special_FadeOutMusic
+	special FadeOutPalettes
+	special Special_ForceSkateboard
+	dotrigger $3	
+	warp2 UP, SKATEPARK, $11, $22
 	end
 
 SkateparkTMNPCText1:
 	text "So you got past"
-	line "my boys, huh?"
+	line "my boys."
 	
 	para "You think you're"
-	line "a real skater?"
+	line "pretty big, huh?"
+	
+	para "Think you're bad"
+	line "enough to hang"
+	cont "with RAPID SPIN?"
+	
+	para "How about a little"
+	line "competition?"
+	
+	para "If you beat my"
+	line "best score,"
+	cont "I'll let you hang"
+	cont "with us."
+	
+	para "You may even get"
+	line "something good."
+	
+	para "How about it?"
 	done
 	
 SkateparkTMNPCText2:
-	text "True"
+	text "YOU WIN!"
+	line "PLACEHOLDER TEXT"
+	done
+	
+SkateparkTMNpcText3:
+	text "Go!"
+	
+	para "Time is running"
+	line "out!"
+	done
+	
+SkateparkTMNPCText4:
+	text "Changed your"
+	line "mind?"
+	
+	para "Think you're bad"
+	line "enough to hang"
+	cont "with RAPID SPIN?"
+	done
+	
+SkateparkTMNPCText5:
+	text "Alright!"
+	
+	para "It's on like"
+	line "KANGASKHAN!"
+	
+	para "Here are the"
+	line "rules:"
+	
+	para "You get 60 seconds"
+	line "to nail as many"
+	cont "tricks as you can."
+	
+	para "Hit the fountain,"
+	line "the flowerbeds,"
+	cont "and the rails."
+	
+	para "Each will give"
+	line "different point"
+	cont "amounts."
+	
+	para "You can earn more"
+	line "points by hopping"
+	cont "rail to rail,"
+	cont "or by going for"
+	cont "GRIND TURNs."
+	
+	para "If you keeping"
+	line "hitting the same"
+	cont "line, you'll earn"
+	cont "less points."
+	
+	para "Oh, and if you eat"
+	line "dirt, you'll lose"
+	cont "half of the points"
+	cont "you've earned."
+	
+	para "You got all that?"
+	done
+	
+SkateparkTMNPCText6:
+	text "I'll say it one"
+	line "more time."
+	
+	para "You get 60 seconds"
+	line "to nail as many"
+	cont "tricks as you can."
+	
+	para "Hit the fountain,"
+	line "the flowerbeds,"
+	cont "and the rails."
+	
+	para "Each will give"
+	line "different point"
+	cont "amounts."
+	
+	para "You can earn more"
+	line "points by hopping"
+	cont "rail to rail, or"
+	cont "by doing GRIND"
+	cont "TURNs."
+	
+	para "If you keeping"
+	line "hitting the same"
+	cont "line, you'll earn"
+	cont "less points."
+	
+	para "Oh, and if you eat"
+	line "dirt, you'll lose"
+	cont "half of the points"
+	cont "you've earned."
+	
+	para "You got all that?"
+	done
+	
+SkateparkTMNPCText7:
+	text "Good."
+	
+	para "I'll tell you"
+	line "your score when"
+	cont "you're done."
+	
+	para "Just focus on"
+	line "nailing tricks."
+	
+	para "Let's get this"
+	line "going!"
+	done
+	
+SkateparkTMNPCText8:
+	text "That TM contains"
+	line "RAPID SPIN."
+	
+	para "Itll do damage and"
+	line "clear the field of"
+	cont "any hazards.."
+	
+	para "Come back tomorrow"
+	line "if you want to do"
+	cont "another round."
+	
+	para "You might get"
+	line "something good if"
+	cont "you tear it up!"
+	done
+	
+SkateparkTMNPCText9:
+	text "Come back tomorrow"
+	line "if you want to do"
+	cont "another round."
+	
+	para "You might get"
+	line "something good if"
+	cont "you tear it up!"
+	done
+	
+SkateparkTMNpcTextNo:
+	text "Well, at least you"
+	line "know your place."
+	done
+	
+SkateparkDoneText:
+	text "TIME'S UP!"
 	done

@@ -2891,6 +2891,8 @@ SkateboardFunction: ; d0b3
 	ld hl, wOWState
 	bit OWSTATE_BIKING_FORCED, [hl]
 	jr nz, .CantGetOffSkateboard
+	eventflagcheck EVENT_SKATEPARK_CONTEST_TIMER
+	jr nz, .CantGetOffSkateboard
 	xor a
 	ld [wOnSkateboard], a
 	ld hl, Script_GetOffSkateboard

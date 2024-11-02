@@ -3186,7 +3186,7 @@ FirebreatherGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 18, SLUGMA
-	db 17, KOFFING
+	db 17, NUMEL
 	db 17, NUMEL
 	db -1 ; end
 
@@ -3196,7 +3196,7 @@ FirebreatherGroup:
 	db "DOM@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 18, PONYTA
+	db 18, ARON
 	db 20, MAGBY
 	db -1 ; end
 
@@ -3237,8 +3237,8 @@ FirebreatherGroup:
 	db "ART@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 25, HOUNDOUR
-	db 24, KOFFING
+	db 26, CYNDAQUIL
+	db 24, QUILAVA
 	db -1 ; end
 
 ; ================
@@ -3282,7 +3282,7 @@ JugglerGroup:
 	db "QUINN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 18, KOFFING
+	db 20, SWABLU
 	db 16, MEDITITE
 	db -1 ; end
 
@@ -3951,7 +3951,7 @@ BoarderGroup:
 	db "PETER@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 28, PONYTA
+	db 28, ARON
 	db 28, SNEASEL
 	db -1 ; end
 
@@ -4273,7 +4273,7 @@ CooltrainerMGroup:
 	db "CODY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 21, KOFFING
+	db 21, LARVITAR
 	db 20, ARON
 	db -1 ; end
 
@@ -5064,7 +5064,7 @@ SpaTrainerGroup:
 	; party
 	db 29, MAGBY
 	db 27, MEDITITE
-	db 28, PONYTA
+	db 26, QUILAVA
 	db -1 ; end
 
 ; ================
@@ -5075,7 +5075,7 @@ SpaTrainerGroup:
 	; party
 	db 29, MAGBY
 	db 27, MEDITITE
-	db 28, PONYTA
+	db 26, QUILAVA
 	db -1 ; end
 
 ; ================
@@ -5252,7 +5252,7 @@ SpaTrainerFGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 29, NUMEL
-	db 29, PONYTA
+	db 29, SLUGMA
 	db 30, BUIZEL
 	db -1 ; end
 

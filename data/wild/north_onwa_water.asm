@@ -290,15 +290,15 @@
 	db 29, GRIMER		;4%
 	db 29, GRIMER		;1%
 
-	map_id ROUTE_11
+	map_id ROUTE_12
 	db 6 percent ; encounter rate
-	db 29, POLIWHIRL	;30%
-	db 29, QUAGSIRE		;30%
-	db 29, WOOPER		;20%
-	db 29, MARILL		;10%
-	db 29, MARILL		;5%
-	db 29, AZUMARILL	;4%
-	db 29, AZUMARILL	;1%
+	db 28, POLIWHIRL	;30%
+	db 28, CARVANHA		;30%
+	db 28, MARILL		;20%
+	db 28, MARILL		;10%
+	db 28, AZUMARILL	;5%
+	db 28, AZUMARILL	;4%
+	db 28, AZUMARILL	;1%
 
 	map_id ROUTE_13
 	db 6 percent ; encounter rate

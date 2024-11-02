@@ -111,7 +111,6 @@ WildSpeciesForms:
 	ret
 
 WooperLandmarks:
-	db ROUTE_11
 	db ROUTE_12
 	db -1
 

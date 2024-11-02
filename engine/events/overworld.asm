@@ -2494,7 +2494,7 @@ FishFunction: ; cf8e
 .skip_lava
 	call GetFacingTileCoord
 	cp COLL_FISHING
-	jr z, .goodtofish
+	jr z, .coll_fishing
 	call GetTileCollision
 	cp $1
 	jr z, .facingwater
@@ -2508,7 +2508,8 @@ FishFunction: ; cf8e
 	jr nz, .goodtofish
 	ld a, $4
 	ret
-
+.coll_fishing
+	ld a, $1
 .goodtofish
 	ld d, a
 	ld a, [wBuffer2]
@@ -2615,9 +2616,8 @@ Script_NotEvenANibble: ; 0xd01e
 	scall Script_FishCastRod
 	opentext
 	writetext UnknownText_0xd0a9
-	loademote EMOTE_SHADOW
-	closetext
 	callasm PutTheRodAway
+	closetext
 	end
 
 Script_GotAnItem:

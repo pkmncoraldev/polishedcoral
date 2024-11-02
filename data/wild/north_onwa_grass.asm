@@ -1572,7 +1572,7 @@
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 26, LEDIAN		;30%
-	db 26, JOLTIK		;30%
+	db 26, BUNEARY		;30%
 	db 26, WHIRLIPEDE	;20%
 	db 26, WOOPER		;10%
 	db 26, WOOPER		;5%
@@ -1580,7 +1580,7 @@
 	db 26, CLODSIRE		;1%
 	; day
 	db 26, LEDIAN		;30%
-	db 26, JOLTIK		;30%
+	db 26, BUNEARY		;30%
 	db 26, WHIRLIPEDE	;20%
 	db 26, WOOPER		;10%
 	db 26, WOOPER		;5%
@@ -1588,7 +1588,7 @@
 	db 26, CLODSIRE		;1%
 	; nite
 	db 26, LEDIAN		;30%
-	db 26, JOLTIK		;30%
+	db 26, BUNEARY		;30%
 	db 26, WHIRLIPEDE	;20%
 	db 26, WOOPER		;10%
 	db 26, WOOPER		;5%

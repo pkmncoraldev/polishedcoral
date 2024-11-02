@@ -159,16 +159,13 @@ LusterSewersThroneRoomFrankieCutscene:
 	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, remove_fixed_facing
 	opentext
 	writetext LusterSewersThroneRoomFrankieCutsceneText12
-	waitbutton
 	yesorno
 	iftrue .saidyes
 .return
 	writetext LusterSewersThroneRoomFrankieCutsceneText13
-	waitbutton
 	yesorno
 	iftrue .saidyes
 	writetext LusterSewersThroneRoomFrankieCutsceneText14
-	waitbutton
 	yesorno
 	iftrue .saidyes
 	closetext
@@ -263,7 +260,6 @@ LusterSewersThroneRoomFrankieCutscene:
 	end
 .saidyes
 	writetext LusterSewersThroneRoomFrankieYesText
-	waitbutton
 	yesorno
 	iftrue .saidyes
 	jump .return
@@ -428,7 +424,7 @@ LusterSewersThroneRoomFrankieCutsceneText17:
 	text "YOU WANNA GO, YOU"
 	line "LITTLE PUNK?"
 	
-	para "<WAIT_S>LET'S DANCE!"
+	para "<WAIT_M>LET'S DANCE!"
 	done
 	
 LusterSewersThroneRoomFrankieCutsceneText18:

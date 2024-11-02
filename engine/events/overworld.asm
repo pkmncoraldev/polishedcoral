@@ -2493,6 +2493,8 @@ FishFunction: ; cf8e
 	jr z, .fail
 .skip_lava
 	call GetFacingTileCoord
+	cp COLL_FISHING
+	jr z, .goodtofish
 	call GetTileCollision
 	cp $1
 	jr z, .facingwater

@@ -147,14 +147,16 @@ LusterSewersThroneRoomFrankieCutscene:
 	applyonemovement PLAYER, show_person
 	disappear LUSTERSEWERSTHRONEROOM_CUTSCENE
 	pause 10
-	spriteface LUSTERSEWERSTHRONEROOM_FRANKIE, UP
+	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, turn_step_up
+	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, remove_fixed_facing
 	opentext
 	writetext LusterSewersThroneRoomFrankieCutsceneText11
 	waitbutton
 	closetext
 	pause 10
 	playmusic MUSIC_LASS_ENCOUNTER
-	spriteface LUSTERSEWERSTHRONEROOM_FRANKIE, DOWN
+	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, turn_step_down
+	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, remove_fixed_facing
 	opentext
 	writetext LusterSewersThroneRoomFrankieCutsceneText12
 	waitbutton
@@ -172,9 +174,11 @@ LusterSewersThroneRoomFrankieCutscene:
 	closetext
 	playmusic MUSIC_NONE
 	pause 24
-	spriteface LUSTERSEWERSTHRONEROOM_FRANKIE, UP
+	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, turn_step_up
+	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, remove_fixed_facing
 	pause 64
-	spriteface LUSTERSEWERSTHRONEROOM_FRANKIE, DOWN
+	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, turn_step_down
+	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, remove_fixed_facing
 	opentext
 	playsound SFX_THUNDER
 	earthquake 5
@@ -206,7 +210,8 @@ LusterSewersThroneRoomFrankieCutscene:
 	closetext
 	pause 5
 	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, step_up
-	spriteface LUSTERSEWERSTHRONEROOM_FRANKIE, DOWN
+	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, turn_step_down
+	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, remove_fixed_facing
 	pause 5
 	opentext
 	writetext LusterSewersThroneRoomFrankieCutsceneText19
@@ -220,7 +225,8 @@ LusterSewersThroneRoomFrankieCutscene:
 	waitbutton
 	closetext
 	pause 10
-	spriteface LUSTERSEWERSTHRONEROOM_FRANKIE, UP
+	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, turn_step_up
+	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, remove_fixed_facing
 	pause 10
 	opentext
 	writetext LusterSewersThroneRoomFrankieCutsceneText21
@@ -422,7 +428,7 @@ LusterSewersThroneRoomFrankieCutsceneText17:
 	text "YOU WANNA GO, YOU"
 	line "LITTLE PUNK?"
 	
-	para "LET'S DANCE!"
+	para "<WAIT_S>LET'S DANCE!"
 	done
 	
 LusterSewersThroneRoomFrankieCutsceneText18:

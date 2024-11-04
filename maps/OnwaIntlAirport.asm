@@ -37,12 +37,12 @@ OnwaIntlAirport_MapScriptHeader:
 	person_event SPRITE_POKEFAN_F,  2, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC5, -1
 	person_event SPRITE_POKEFAN_M, 16, 34, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC6, -1
 	person_event SPRITE_PONYTAIL,  4, 31, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC7, -1
-	person_event SPRITE_SUPER_NERD, 12, 42, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC8, -1
+	person_event SPRITE_SUPER_NERD, 12, 43, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC8, -1
 	object_event 32,  4, SPRITE_MON_ICON, SPRITEMOVEDATA_STANDING_DOWN, 0, XATU, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportXatu, -1
 	person_event SPRITE_WENDY, -1, -1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_PLAYER_CUTSCENE, -1, -1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_PLAYER_CUTSCENE_SILVER
 	cuttree_event 13,  0, EVENT_ONWA_INTL_AIRPORT_CUT_TREE
-	tmhmball_event 33, -1, TM_STEEL_WING, EVENT_AIRPORT_POKE_BALL_1
+	tmhmball_event 33, -2, TM_STEEL_WING, EVENT_AIRPORT_POKE_BALL_1
 	itemball_event  6, 10, QUICK_POWDER, 1, EVENT_AIRPORT_POKE_BALL_2
 	person_event SPRITE_OFFICER, 16,  3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
 	person_event SPRITE_OFFICER, 10,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, OnwaIntlAirportGuard, -1
@@ -61,23 +61,6 @@ OnwaIntlAirport_MapScriptHeader:
 	const ONWA_INTL_AIRPORT_PLAYER_CUTSCENE
 	
 OnwaIntlAirportCallback:
-	checkevent EVENT_AIRPORT_FENCE
-	iffalse .skip
-	changeblock $c, -$1, $ed
-	changeblock $e, -$1, $84
-	changeblock $10, -$1, $84
-	changeblock $12, -$1, $84
-	changeblock $14, -$1, $84
-	changeblock $20, -$1, $8c
-	changeblock $c, $0, $eb
-	changeblock $e, $0, $05
-	changeblock $10, $0, $4c
-	changeblock $12, $0, $4e
-	changeblock $14, $0, $05
-	changeblock $20, $0, $05
-	callasm GenericFinishBridge
-.skip
-	clearevent EVENT_AIRPORT_FENCE
 	checkevent EVENT_AIRPORT_WENDY
 	iftrue .wendy_done
 	return
@@ -304,7 +287,7 @@ OnwaIntlAirportNPC4Text:
 	
 	para "No way!"
 	
-	para "An ollie is the"
+	para "An OLLIE is the"
 	line "highest I want"
 	cont "to fly!"
 	done

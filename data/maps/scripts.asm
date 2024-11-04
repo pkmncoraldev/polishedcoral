@@ -256,7 +256,6 @@ INCLUDE "maps/LusterApartment5_1F.asm"
 INCLUDE "maps/LusterApartment5_2F.asm"
 INCLUDE "maps/LusterApartment6_1F.asm"
 INCLUDE "maps/LusterApartment6_2F.asm"
-INCLUDE "maps/Route12.asm"
 
 SECTION "Luster City Scripts2", ROMX
 
@@ -298,6 +297,7 @@ INCLUDE "maps/LusterGym.asm"
 INCLUDE "maps/SunsetLighthouseTop.asm"
 
 SECTION "Route 12 Scripts", ROMX
+INCLUDE "maps/Route12.asm"
 INCLUDE "maps/Route11.asm"
 INCLUDE "maps/OnwaIntlAirport.asm"
 INCLUDE "maps/AirportRunway.asm"

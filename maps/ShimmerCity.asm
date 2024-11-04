@@ -699,7 +699,7 @@ ShimmerCityNpc6Text1:
 	line "up NORTH?"
 	
 	para "Well, welcome to"
-	line "SOUTH ONWA!"
+	line "SOUTHERN ONWA!"
 	
 	para "Take a look at"
 	line "your map!"

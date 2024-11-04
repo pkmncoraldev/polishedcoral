@@ -320,7 +320,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_15,									  44, 14 ; 14
 	map_const ROUTE_16,									   7,  4 ; 15
 	map_const ROUTE_4,                                    30, 16 ; 10
-	map_const ROUTE_12,									  21, 31 ; 11
+	map_const ROUTE_12,									  20, 25 ; 11
 	map_const ROUTE_19,									  24, 26 ; 12
 	
 	

@@ -117,6 +117,7 @@ PLAYER_F EQU __enum__
 	const VINCENT
 	const DANTE
 	const JERRY
+	const EMILE
 
 	trainerclass PICNICKER
 	const MOLLY
@@ -321,6 +322,7 @@ PLAYER_F EQU __enum__
 	const REMY
 	const GREG
 	const MARIO
+	const TREV
 
 
 	trainerclass LASS
@@ -491,8 +493,9 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass TEACHER
+	const LYNN
 	const KINSEY
-
+	
 
 	trainerclass GUITARIST
 	const LARRY
@@ -611,6 +614,7 @@ PLAYER_F EQU __enum__
 	const TONY
 	const CHAD
 	const BOB
+	const ROD
 	
 	trainerclass SPA_TRAINER
 	const DENNIS_3

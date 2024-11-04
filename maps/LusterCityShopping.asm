@@ -389,11 +389,12 @@ Luster2NPC4Text:
 	cont "cribe as pretty."
 	
 	para "Well, there is the"
-	line "ROUTE 11 park,"
+	line "ROUTE 12 park,"
 	cont "I guess."
 	
-	para "But, that place is"
-	line "always so crowded."
+	para "But, those skater"
+	line "punks always give"
+	cont "me a hard time!"
 	done
 	
 Luster2NPC5Text:

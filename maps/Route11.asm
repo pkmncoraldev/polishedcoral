@@ -238,8 +238,8 @@ TrainerRoute11_1_2:
 
 	text "The new bridge"
 	line "makes getting to"
-	cont "SOUTH ONWA way"
-	cont "easier."
+	cont "SOUTHERN ONWA"
+	cont "way easier."
 	
 	para "You should have a"
 	line "look."

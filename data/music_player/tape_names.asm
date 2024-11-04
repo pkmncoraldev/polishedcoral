@@ -32,7 +32,7 @@ TapeNames::
 	db "“MT. ONWA DEPTHS”@"
 	db "“BATTLE!<LNBRK><LNBRK>RARE WILD #MON”@"
 	db "“SUNBEAM ISLAND”@"
-	db "“BIKINI CONTEST!”@"
+	db "“COMPETITION!”@"
 	db "“SPRUCE'S LAB”@"
 	db "“TEAM SNARE!”@"
 	db "“BATTLE!<LNBRK><LNBRK>TEAM SNARE ADMIN”@"

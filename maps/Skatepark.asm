@@ -5,7 +5,8 @@ Skatepark_MapScriptHeader:
 	scene_script SkateparkTrigger2
 	scene_script SkateparkTrigger3
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, SkateparkCallback
 
 	db 1 ; warp events
 	warp_def 41,  1, 7, FLICKER_STATION
@@ -65,6 +66,10 @@ Skatepark_MapScriptHeader:
 	person_event SPRITE_SKATER, 29, 19, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SkateparkNPC8, EVENT_SKATEPARK_NPCS_GONE
 	person_event SPRITE_SKATER, 34, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SkateparkNPC9, EVENT_SKATEPARK_NPCS_GONE
 	
+	
+SkateparkCallback:
+	setevent EVENT_ROUTE_12_SKATERS_GONE
+	return
 	
 SkateparkTrigger0:
 SkateparkTrigger2:

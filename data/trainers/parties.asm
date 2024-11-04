@@ -1182,6 +1182,15 @@ CamperGroup:
 	db -1 ; end
 
 ; ================
+
+	; CAMPER
+	db "EMILE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2860,6 +2869,15 @@ SuperNerdGroup:
 	db -1 ; end
 
 ; ================
+
+	; SUPER_NERD
+	db "TREV@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -4111,6 +4129,15 @@ TeacherGroup:
 ; ================
 
 	; TEACHER
+	db "LYNN@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; TEACHER
 	db "KINSEY@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -4875,6 +4902,15 @@ SkaterGroup:
 
 	; SKATER
 	db "BOB@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SKATER
+	db "ROD@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

@@ -56,7 +56,7 @@ PorygonEncounter::
 	call WaitSFX
 	ld c, 120
 	call DelayFrames
-	ld a, 50	;porygon level
+	ld a, 37	;porygon level
 	ld [wCurPartyLevel], a
 	ld a, PORYGON
 	ld [wTempEnemyMonSpecies], a

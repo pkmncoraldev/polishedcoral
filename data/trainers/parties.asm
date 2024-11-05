@@ -4137,7 +4137,7 @@ TeacherGroup:
 	db TRAINERTYPE_MOVES
 	; party
 	db 29, RAICHU
-		db THUNDERBOLT, PSYCHIC_M, QUICK_ATTACK, 0
+		db THUNDERBOLT, THUNDER_WAVE, QUICK_ATTACK, 0
 	db -1 ; end
 
 ; ================

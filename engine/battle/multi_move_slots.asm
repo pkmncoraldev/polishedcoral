@@ -2483,6 +2483,7 @@ FuryAttackUsers:
 	db PIKIPEK
 	db TRUMBEAK
 	db TOUCANNON
+	db SKARMORY
 	db -1
 
 BarrageUsers:

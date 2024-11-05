@@ -50,7 +50,7 @@ EvolutionMoves::
 	db NO_MOVE                              ; SLOWPOKE
 	db DEFENSE_CURL_HARDEN_WITHDRAW         ; SLOWBRO
 	db NO_MOVE                              ; MAGNEMITE
-	db NO_MOVE                              ; MAGNETON
+	db TRI_ATTACK                           ; MAGNETON
 	db NO_MOVE                              ; DODUO
 	db NO_MOVE                              ; DODRIO
 	db NO_MOVE                              ; GRIMER

@@ -933,13 +933,36 @@ MagnemiteEvosAttacks:
 	db EVOLVE_LEVEL, 30, MAGNETON
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 4, SUPERSONIC
+	db 7, THUNDERSHOCK
+	db 13, THUNDER_WAVE
+	db 19, SPARK
+	db 25, SCREECH
+	db 29, ELECTRO_BALL
+	db 31, FLASH_CANNON
+	db 38, HYPER_VOICE
+	db 41, LOCK_ON_MIND_READER
+	db 47, GYRO_BALL
+	db 49, ZAP_CANNON
 	db 0 ; no more level-up moves
 
 MagnetonEvosAttacks:
 	db EVOLVE_LOCATION, STARGLOW_CAVERN, MAGNEZONE
 	db EVOLVE_LOCATION, STARGLOW_DEPTHS, MAGNEZONE
 	db 0 ; no more evolutions
+	db 1, ZAP_CANNON
 	db 1, TACKLE_SCRATCH_POUND
+	db 4, SUPERSONIC
+	db 7, THUNDERSHOCK
+	db 13, THUNDER_WAVE
+	db 19, SPARK
+	db 25, SCREECH
+	db 29, ELECTRO_BALL
+	db 33, FLASH_CANNON
+	db 42, HYPER_VOICE
+	db 49, LOCK_ON_MIND_READER
+	db 52, GYRO_BALL
+	db 59, ZAP_CANNON
 	db 0 ; no more level-up moves
 
 DoduoEvosAttacks:
@@ -1299,8 +1322,8 @@ WeezingEvosAttacks:
 ChanseyEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, BLISSEY
 	db  0 ; no more evolutions
-	db  1, SOFTBOILED_MILK_DRINK_RECOVER
-	db  0 ; no more level-up moves
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
 
 HorseaEvosAttacks:
 	db EVOLVE_LEVEL, 32, SEADRA
@@ -2670,7 +2693,19 @@ CorsolaEvosAttacks:
 
 SkarmoryEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db  1, LEER_TAIL_WHIP
+	db  1, PECK
+	db  6, SAND_ATTACK_SMOKESCREEN_FLASH
+	db  9, METAL_CLAW
+	db 12, AIR_SLASH
+	db 17, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db 23, SWIFT
+	db 28, SPIKES
+	db 31, AGILITY_ROCK_POLISH
+	db 34, STEEL_WING
+	db 39, SLASH
+	db 44, SCREECH
+	db 50, NIGHT_SLASH
 	db 0 ; no more level-up moves
 
 HoundourEvosAttacks:
@@ -3561,7 +3596,20 @@ WeavileEvosAttacks:
 	
 MagnezoneEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db 1, ZAP_CANNON
 	db 1, TACKLE_SCRATCH_POUND
+	db 4, SUPERSONIC
+	db 7, THUNDERSHOCK
+	db 13, THUNDER_WAVE
+	db 19, SPARK
+	db 25, SCREECH
+	db 29, ELECTRO_BALL
+	db 33, FLASH_CANNON
+	db 42, HYPER_VOICE
+	db 49, LOCK_ON_MIND_READER
+	db 52, GYRO_BALL
+	db 59, ZAP_CANNON
 	db 0 ; no more level-up moves
 	
 ElectivireEvosAttacks:
@@ -3912,13 +3960,37 @@ CrustleEvosAttacks:
 ScraggyEvosAttacks:
 	db EVOLVE_LEVEL, 39, SCRAFTY
 	db  0 ; no more evolutions
-	db  1, TACKLE_SCRATCH_POUND
+	db  1, LEER_TAIL_WHIP
+	db  1, LOW_KICK
+	db  5, SAND_ATTACK_SMOKESCREEN_FLASH
+	db  9, FEINT_ATTACK
+	db 12, HEADBUTT
+	db 16, SWAGGER
+	db 20, BRICK_BREAK
+	db 23, PURSUIT
+	db 31, HI_JUMP_KICK
+	db 34, SCARY_FACE_COTTON_SPORE_STRING_SHOT
+	db 38, CRUNCH
+	db 45, DOUBLE_EDGE
+	db 50, SUPERPOWER
 	db  0 ; no more level-up moves
 	
 ScraftyEvosAttacks:
 	db  0 ; no more evolutions
 	db  1, TACKLE_SCRATCH_POUND
-	db  0 ; no more level-up moves
+	db  1, LEER_TAIL_WHIP
+	db  1, LOW_KICK
+	db  5, SAND_ATTACK_SMOKESCREEN_FLASH
+	db  9, FEINT_ATTACK
+	db 12, HEADBUTT
+	db 16, SWAGGER
+	db 20, BRICK_BREAK
+	db 23, PURSUIT
+	db 31, HI_JUMP_KICK
+	db 34, SCARY_FACE_COTTON_SPORE_STRING_SHOT
+	db 38, CRUNCH
+	db 48, DOUBLE_EDGE
+	db 52, SUPERPOWER
 	
 TirtougaEvosAttacks:
 	db EVOLVE_LEVEL, 37, CARRACOSTA
@@ -4286,7 +4358,7 @@ CursolaEvosAttacks:
 DreepyEvosAttacks:
 	db EVOLVE_LEVEL, 50, DRAKLOAK
 	db 0 ; no more evolutions
-	db 1, DRAGON_DARTS
+	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
 DrakloakEvosAttacks:
@@ -4297,8 +4369,7 @@ DrakloakEvosAttacks:
 	
 DragapultEvosAttacks:
 	db 0 ; no more evolutions
-;	db 1, TACKLE_SCRATCH_POUND
-	db 1, DRAGON_DARTS
+	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
 WyrdeerEvosAttacks:

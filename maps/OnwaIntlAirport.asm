@@ -367,7 +367,7 @@ OnwaIntlAirportWendyText3:
 	cont "board!"
 	
 	para "Bit of an upgrade"
-	line "from a two-seater"
+	line "from my two-seater"
 	cont "biplane!"
 	done
 	

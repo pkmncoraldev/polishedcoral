@@ -84,9 +84,9 @@ LusterSewers_DisguiseMan1Text2:
 	line "ignore him and"
 	cont "take it instead?"
 	
-	para "To steal from a"
+	para "“To steal from a"
 	line "theif is surely"
-	cont "fair play."
+	cont "fair play.”"
 	
 	para "Isn't that what I'm"
 	line "hearing you say?"

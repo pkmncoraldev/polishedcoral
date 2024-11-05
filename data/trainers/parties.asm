@@ -1185,9 +1185,11 @@ CamperGroup:
 
 	; CAMPER
 	db "EMILE@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 1, BULBASAUR
+	db 30, WOOPER, ABILITY_1 | QUIRKY, MALE
+	db 31, WOOPER, ABILITY_1 | QUIRKY, MALE
+	db 33, WOOPER, ABILITY_1 | QUIRKY, MALE | ALOLAN_FORM
 	db -1 ; end
 
 ; ================
@@ -1246,16 +1248,17 @@ PicnickerGroup:
 ; ================
 
 	; PICNICKER
-	db "LES@"
+	db "BAILEY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 31, QUAGSIRE
+	db 30, CLODSIRE
 	db -1 ; end
 
 ; ================
 
 	; PICNICKER
-	db "BAILEY@"	;UNUSED
+	db "LES@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -2874,7 +2877,8 @@ SuperNerdGroup:
 	db "TREV@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 31, CROAGUNK
+	db 30, PORYGON
 	db -1 ; end
 
 ; ================
@@ -4130,9 +4134,10 @@ TeacherGroup:
 
 	; TEACHER
 	db "LYNN@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 29, RAICHU
+		db THUNDERBOLT, PSYCHIC_M, QUICK_ATTACK, 0
 	db -1 ; end
 
 ; ================
@@ -4821,7 +4826,7 @@ BunearyfGroup:
 	db "GAL@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 30, CROAGUNK
+	db 30, SCRAGGY
 	db 31, BUNEARY
 	db -1 ; end
 
@@ -4833,7 +4838,7 @@ BunearyfGroup:
 	; party
 	db 30, GOLBAT
 	db 32, BUNEARY
-	db 32, CROAGUNK
+	db 32, SCRAGGY
 	db -1 ; end
 
 ; ================
@@ -4886,7 +4891,9 @@ SkaterGroup:
 	db "TONY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 32, WHIRLIPEDE
+	db 32, SCRAGGY
+	db 33, SCRAGGY
 	db -1 ; end
 
 ; ================
@@ -4911,9 +4918,11 @@ SkaterGroup:
 
 	; SKATER
 	db "ROD@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 1, BULBASAUR
+	db 31, DRIFLOON, ABILITY_1 | QUIRKY, MALE
+	db 31, GRIMER, ABILITY_1 | QUIRKY, MALE | ALOLAN_FORM
+	db 32, SCRAGGY, ABILITY_1 | QUIRKY, MALE
 	db -1 ; end
 
 ; ================

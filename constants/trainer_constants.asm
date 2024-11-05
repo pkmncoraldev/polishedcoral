@@ -125,9 +125,8 @@ PLAYER_F EQU __enum__
 	const TRISTA
 	const SHAUNA
 	const BETH
-	const TINA
+	const BAILEY
 	const LES
-	const BAILEY ;UNUSED
 
 	trainerclass TWINS
 	const JENJAN

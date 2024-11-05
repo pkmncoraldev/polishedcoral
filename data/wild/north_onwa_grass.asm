@@ -1546,25 +1546,25 @@
 	; morn
 	db 22, MACHOP		;30%
 	db 22, DWEBBLE		;30%
-	db 22, MINCCINO		;20%
+	db 22, BUNEARY		;20%
 	db 22, MACHOKE		;10%
-	db 22, MINCCINO		;5%
+	db 22, BUNEARY		;5%
 	db 22, DWEBBLE		;4%
 	db 22, DWEBBLE		;1%
 	; day
 	db 22, MACHOP		;30%
 	db 22, DWEBBLE		;30%
-	db 22, MINCCINO		;20%
+	db 22, BUNEARY		;20%
 	db 22, MACHOKE		;10%
-	db 22, MINCCINO		;5%
+	db 22, BUNEARY		;5%
 	db 22, DWEBBLE		;4%
 	db 22, DWEBBLE		;1%
 	; nite
 	db 22, MACHOP		;30%
 	db 22, DWEBBLE		;30%
-	db 22, MINCCINO		;20%
+	db 22, BUNEARY		;20%
 	db 22, MACHOKE		;10%
-	db 22, MINCCINO		;5%
+	db 22, BUNEARY		;5%
 	db 22, DWEBBLE		;4%
 	db 22, DWEBBLE		;1%
 	

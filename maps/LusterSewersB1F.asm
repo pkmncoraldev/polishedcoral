@@ -85,7 +85,7 @@ LusterSewers_DisguiseMan1Text2:
 	cont "take it instead?"
 	
 	para "“To steal from a"
-	line "theif is surely"
+	line "thief is surely"
 	cont "fair play.”"
 	
 	para "Isn't that what I'm"

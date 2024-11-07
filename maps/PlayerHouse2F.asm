@@ -353,6 +353,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_FLYPOINT_CROSSROADS
 	setflag ENGINE_FLYPOINT_KOMORE
 	setflag ENGINE_FLYPOINT_BRIGHT
+	setflag ENGINE_FLYPOINT_OBSCURA
 	jump .return
 .Sfx
 	closewindow

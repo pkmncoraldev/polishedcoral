@@ -3,7 +3,8 @@ ObscuraCity_MapScriptHeader:
 	scene_script ObscuraCityTrigger0
 	scene_script ObscuraCityTrigger1
 
-	db 1 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_NEWMAP, ObscuraCityFlyPoint
 	callback MAPCALLBACK_TILES, ObscuraCityCallback
 
 	db 4 ; warp events
@@ -345,6 +346,10 @@ ObscuraCityDarcyText5_girl:
 	cont "“ROCKFORD”!"
 	done
 	
+	
+ObscuraCityFlyPoint:
+	setflag ENGINE_FLYPOINT_OBSCURA
+	return
 	
 ObscuraCityCallback:
 	callasm MusuemKeyboardAsm3

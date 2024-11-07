@@ -1100,7 +1100,7 @@ TownMap_GetSouthOnwaLandmarkLimits: ; 910e8
 	lb de, DESERT_WASTELAND, ROUTE_16
 	eventflagcheck EVENT_CAN_GO_TO_DESERT
 	ret nz
-	ld d, CROSSROADS
+	ld d, OBSCURA_CITY
 	ret
 
 TownMap_GetOrangeLandmarkLimits:
@@ -2718,7 +2718,7 @@ FlyMap: ; 91c90
 ; Flypoints begin at Shimmer City...
 	ld [wStartFlypoint], a
 ; ..and end at TODO
-	ld a, FLY_CROSSROADS
+	ld a, FLY_OBSCURA
 	ld [wEndFlypoint], a
 ; Fill out the map
 	call FillSouthOnwaMap

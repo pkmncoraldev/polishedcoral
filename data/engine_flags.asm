@@ -97,7 +97,7 @@ EngineFlags: ; 80462
 	engine_flag wVisitedSpawns, 15 ; crossroads
 	engine_flag wVisitedSpawns, 16 ; komore
 	engine_flag wVisitedSpawns, 17 ; bright
-	engine_flag wVisitedSpawns, 18 ; unused
+	engine_flag wVisitedSpawns, 18 ; obscura
 	engine_flag wVisitedSpawns, 19 ; unused
 	engine_flag wVisitedSpawns, 20 ; unused
 	engine_flag wVisitedSpawns, 21 ; unused

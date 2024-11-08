@@ -3241,12 +3241,12 @@ MedititeEvosAttacks:
 	db 18, LOW_KICK
 	db 22, FAKE_OUT
 	db 25, LOCK_ON_MIND_READER
-	db 29, HI_JUMP_KICK
+	db 29, JUMP_KICK
 	db 32, CALM_MIND
 	db 36, FUTURE_SIGHT
 	db 39, SOFTBOILED_MILK_DRINK_RECOVER
-	db 43, REVERSAL
-	db 46, DRAIN_PUNCH
+	db 43, DRAIN_PUNCH
+	db 46, HI_JUMP_KICK
 	db 0 ; no more level-up moves
 	
 MedichamEvosAttacks:
@@ -3254,7 +3254,6 @@ MedichamEvosAttacks:
 	db 1, FIRE_PUNCH
 	db 1, ICE_PUNCH
 	db 1, THUNDERPUNCH
-	db 1, ZEN_HEADBUTT
 	db 1, TACKLE_SCRATCH_POUND
 	db 1, SHARPEN_HOWL_MEDITATE
 	db 1, CONFUSION
@@ -3263,12 +3262,13 @@ MedichamEvosAttacks:
 	db 1, LOW_KICK
 	db 1, FAKE_OUT
 	db 1, LOCK_ON_MIND_READER
-	db 1, HI_JUMP_KICK
+	db 1, JUMP_KICK
+	db 1, ZEN_HEADBUTT
 	db 1, CALM_MIND
 	db 1, FUTURE_SIGHT
 	db 42, SOFTBOILED_MILK_DRINK_RECOVER
-	db 49, REVERSAL
-	db 55, DRAIN_PUNCH
+	db 49, DRAIN_PUNCH
+	db 55, HI_JUMP_KICK
 	db 0 ; no more level-up moves
 	
 CarvanhaEvosAttacks:
@@ -4112,7 +4112,7 @@ ScraggyEvosAttacks:
 	db 16, SWAGGER
 	db 20, BRICK_BREAK
 	db 23, PURSUIT
-	db 31, HI_JUMP_KICK
+	db 31, JUMP_KICK
 	db 34, SCARY_FACE_COTTON_SPORE_STRING_SHOT
 	db 38, CRUNCH
 	db 45, DOUBLE_EDGE
@@ -4130,7 +4130,7 @@ ScraftyEvosAttacks:
 	db 16, SWAGGER
 	db 20, BRICK_BREAK
 	db 23, PURSUIT
-	db 31, HI_JUMP_KICK
+	db 31, JUMP_KICK
 	db 34, SCARY_FACE_COTTON_SPORE_STRING_SHOT
 	db 38, CRUNCH
 	db 48, DOUBLE_EDGE

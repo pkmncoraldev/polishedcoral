@@ -3067,7 +3067,7 @@ CheckChangeMusic::
 	jp .done
 	
 .museum_done
-	ld a, MUSIC_EVENTIDE_VILLAGE
+	ld a, MUSIC_OBSCURA_CITY
 	jp .done
 	
 GetMapMusic::

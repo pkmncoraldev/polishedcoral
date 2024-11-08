@@ -64,3 +64,4 @@ TapeNames::
 	db "“MINA'S THEME”@"
 	db "“BATTLE!<LNBRK><LNBRK>ROAMING #MON”@"
 	db "“BATTLE!<LNBRK><LNBRK>RIVAL 2”@"
+	db "“RADIANT TOWN”@"

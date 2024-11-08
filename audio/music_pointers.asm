@@ -66,6 +66,7 @@ Music:
 	dba Music_MinasTheme
 	dba Music_RBYWildBattle
 	dba Music_RivalBattle2
+	dba Music_Erika
 	
 	dba Music_Crossroads
 	dba Music_StarglowOld

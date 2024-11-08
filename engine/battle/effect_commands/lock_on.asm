@@ -46,4 +46,5 @@ MindReaderUsers:
 	db POLIWHIRL
 	db POLIWRATH
 	db POLITOED
+	db ARTICUNO
 	db -1

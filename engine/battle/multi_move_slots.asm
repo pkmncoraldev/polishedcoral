@@ -2340,6 +2340,7 @@ PoundUsers:
 	db GRIMER
 	db MUK
 	db CHANSEY
+	db BLISSEY
 	db DRATINI
 	db DRAGONAIR
 	db DRAGONITE
@@ -2354,6 +2355,10 @@ PoundUsers:
 	db HYPNO
 	db DRIFLOON
 	db DRIFBLIM
+	db SUNKERN
+	db SUNFLORA
+	db MIENFOO
+	db MIENSHAO
 	db -1
 	
 ScratchUsers:
@@ -2372,6 +2377,9 @@ ScratchUsers:
 	db URSARING
 	db SNEASEL
 	db WEAVILE
+	db MIMIKYU
+	db DRILBUR
+	db EXCADRILL
 	db -1
 
 WithdrawUsers:
@@ -2383,6 +2391,8 @@ WithdrawUsers:
 	db SLOWKING
 	db DWEBBLE
 	db CRUSTLE
+	db TIRTOUGA
+	db CARRACOSTA
 	db -1
 
 HardenUsers:
@@ -2413,6 +2423,8 @@ TailWhipUsers:
 	db NIDORAN_F
 	db NIDORINA
 	db NIDOQUEEN
+	db CHANSEY
+	db BLISSEY
 	db WOOPER
 	db QUAGSIRE
 	db CLODSIRE
@@ -2458,6 +2470,8 @@ MeditateUsers:
 	db MEDICHAM
 	db DROWZEE
 	db HYPNO
+	db MIENFOO
+	db MIENSHAO
 	db -1
 	
 HowlUsers:
@@ -2509,6 +2523,10 @@ DoubleSlapUsers:
 	db POLIWHIRL
 	db POLIWRATH
 	db POLITOED
+	db CHANSEY
+	db BLISSEY
+	db MIENFOO
+	db MIENSHAO
 	db -1
 	
 MoonlightUsers:
@@ -2525,6 +2543,8 @@ MoonlightUsers:
 MorningSunUsers:
 	db ESPEON
 	db VOLCARONA
+	db CHERUBI
+	db CHERRIM
 	db -1
 	
 BlockUsers:
@@ -2726,6 +2746,7 @@ GrowthUsers:
 	db BELLOSSOM
 	db COTTONEE
 	db WHIMSICOTT
+	db COMFEY
 	db -1
 	
 HealBellUsers:

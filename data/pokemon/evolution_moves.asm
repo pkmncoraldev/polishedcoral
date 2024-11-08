@@ -243,13 +243,13 @@ EvolutionMoves::
 	db NO_MOVE                              ; TRUMBEAK
 	db ACROBATICS                           ; TOUCANNON ;BEAK_BLAST
 	db NO_MOVE                              ; MAREANIE
-	db NO_MOVE                              ; TOXAPEX
+	db PROTECT ;TODO BANEFUL_BUNKER?                              ; TOXAPEX
 	db NO_MOVE                              ; COMFEY
 	db NO_MOVE                              ; MIMIKYU
 	db NO_MOVE                              ; CURSOLA
 	db NO_MOVE                              ; DREEPY
-	db NO_MOVE                              ; DRAKLOAK
-	db NO_MOVE                              ; DRAGAPULT ;DRAGON_DARTS
+	db DRAGON_PULSE                         ; DRAKLOAK
+	db DRAGON_DARTS                         ; DRAGAPULT
 	db PSYSHOCK                             ; WYRDEER
 	db AMNESIA                              ; CLODSIRE
 	db NO_MOVE                              ; FARIGIRAF

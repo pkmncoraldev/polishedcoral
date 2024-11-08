@@ -30,13 +30,28 @@ Music_Erika_Ch1_loop:
 	note D_, 4
 	note F_, 2
 	note D#, 2
-	note D_, 6
-	note F_, 6
-	note D#, 4
-	note D_, 4
+	
+	dutycycle 0
+	notetype $c, $93
+	note D_, 2
+	note D#, 2
+	note F_, 2
+	note G_, 2
+	note F_, 2
+	note D#, 2
+	note D_, 2
+	note D#, 2
+	note D_, 2
+	note D#, 2
 	note F_, 2
 	note A#, 2
-	note A_, 8
+	note A_, 2
+	note F_, 2
+	note D#, 2
+	note C_, 2
+	
+	dutycycle 1
+	notetype $c, $97
 	octave 2
 	note A_, 2
 	note A#, 2
@@ -228,9 +243,9 @@ Music_Erika_Ch2_part:
 Music_Erika_Ch3:
 	stereopanning $ff
 	dutycycle 5
+	vibrato 22, 2, 4
 Music_Erika_Ch3_loop:
-	vibrato 34, 1, 6
-	notetype $c, $1a
+	notetype $c, $25
 	octave 5
 	note D_, 4
 	octave 4
@@ -293,8 +308,7 @@ Music_Erika_Ch3_loop:
 	notetype $c, $21
 	note C_, 4
 	
-	vibrato 34, 1, 6
-	notetype $c, $1a
+	notetype $c, $25
 	note C_, 2
 	octave 4
 	note A#, 2
@@ -309,7 +323,6 @@ Music_Erika_Ch3_loop:
 	octave 5
 	note F_, 8
 	
-	vibrato 22, 2, 4
 	notetype $c, $11
 	octave 5
 	note F_, 8
@@ -332,8 +345,6 @@ Music_Erika_Ch3_loop:
 	note F_, 4
 	note D_, 8
 	
-	vibrato 34, 1, 6
-	notetype $c, $1a
 	note F_, 8
 	note D#, 2
 	note D_, 2
@@ -345,8 +356,6 @@ Music_Erika_Ch3_loop:
 	note A_, 2
 	note G_, 2
 	note F_, 8
-	vibrato 22, 2, 4
-	notetype $c, $11
 	note D#, 8
 	octave 6
 	note C_, 2
@@ -354,8 +363,13 @@ Music_Erika_Ch3_loop:
 	note A#, 2
 	note A_, 2
 	note G_, 2
-	note A_, 16
+	note A_, 14
+	notetype $8, $11
+	note F_, 1
+	note A_, 1
 	octave 6
+	note C_, 1
+	notetype $c, $11
 	note F_, 14
 	note __, 2
 	loopchannel 0, Music_Erika_Ch3_loop

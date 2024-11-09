@@ -218,8 +218,8 @@ CopyWarpData:: ; 22a7
 	ret
 ; 22ee
 
-CheckOutdoorMapOrPerm5::
-	cp PERM_5
+CheckBikeMap::
+	cp TUNNEL
 	ret z
 CheckOutdoorMap:: ; 22ee
 	cp ROUTE

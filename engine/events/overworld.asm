@@ -2781,7 +2781,7 @@ BikeFunction: ; d0b3
 	cp COLL_SAND
 	jr z, .nope
 	call GetMapPermission
-	call CheckOutdoorMap
+	call CheckBikeMap
 	jr z, .ok
 	cp CAVE
 	jr z, .ok

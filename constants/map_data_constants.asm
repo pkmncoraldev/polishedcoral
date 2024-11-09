@@ -8,6 +8,7 @@
 	const GATE
 	const DUNGEON
 	const FOREST
+	const TUNNEL
 
 	const_def
 	const PALETTE_AUTO

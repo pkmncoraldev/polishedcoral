@@ -240,6 +240,8 @@ LoadMapNameSignGFX:: ; b80c6
 	jp z, .town
 	cp INDOOR
 	jp z, .town
+	cp TUNNEL
+	jp z, .town
 	cp CAVE
 	jp z, .cave
 	cp FOREST

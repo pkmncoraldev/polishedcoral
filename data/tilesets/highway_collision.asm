@@ -196,7 +196,7 @@
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; c3
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c4
 	tilecoll SKATE, SKATE, SKATE, SKATE ; c5
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c6
+	tilecoll STAIRS, STAIRS, SKATE, SKATE ; c6
 	tilecoll FLOOR, FLOOR, WALL, WALL ; c7
 	tilecoll NO_OLLIE, NO_OLLIE, WARP_CARPET_RIGHT, NO_OLLIE ; c8
 	tilecoll SKATE, SKATE, SKATE, SKATE ; c9

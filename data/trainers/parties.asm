@@ -3314,11 +3314,11 @@ JugglerGroup:
 	db "RYAN@"
 	db TRAINERTYPE_NORMAL
 	; party
+	db 27, DRILBUR
+	db 28, DRILBUR
+	db 29, DRILBUR
 	db 30, DRILBUR
-	db 31, DRILBUR
-	db 32, DRILBUR
-	db 33, DRILBUR
-	db 34, EXCADRILL
+	db 31, EXCADRILL
 	db -1 ; end
 
 ; ================
@@ -3838,7 +3838,8 @@ SwimmerFGroup:
 	db "CONNIE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 34, MAREANIE
+	db 35, MAREANIE
 	db -1 ; end
 
 ; ================
@@ -3870,6 +3871,15 @@ SwimmerFGroup:
 	; party
 	db 34, CORSOLA
 	db 35, MAREANIE
+	db -1 ; end
+
+; ================
+
+	; SWIMMERF
+	db "JASMINE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 35, LANTURN
 	db -1 ; end
 
 ; ================
@@ -4084,8 +4094,8 @@ BlackbeltGroup:
 	db "TOSHI@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 35, MEDICHAM
-	db 34, EXCADRILL
+	db 34, MEDICHAM
+	db 32, EXCADRILL
 	db -1 ; end
 
 ; ================

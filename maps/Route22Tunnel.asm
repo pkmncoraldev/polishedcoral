@@ -7,20 +7,20 @@ Route22Tunnel_MapScriptHeader:
 	callback MAPCALLBACK_TILES, Route22TunnelCallback
 
 	db 7 ; warp events
-	warp_event 38, 13, DUSK_TURNPIKE, 3
-	warp_event 38, 14, DUSK_TURNPIKE, 4
-	warp_event 38, 15, DUSK_TURNPIKE, 5
-	warp_event 38, 16, DUSK_TURNPIKE, 6
-	warp_event 38, 17, DUSK_TURNPIKE, 7
-	warp_event 19,  5, SEASIDE_CAVE_1F, 4
+	warp_event 28, 13, DUSK_TURNPIKE, 3
+	warp_event 28, 14, DUSK_TURNPIKE, 4
+	warp_event 28, 15, DUSK_TURNPIKE, 5
+	warp_event 28, 16, DUSK_TURNPIKE, 6
+	warp_event 28, 17, DUSK_TURNPIKE, 7
+	warp_event -1, -1, SEASIDE_CAVE_1F, 4
 	warp_event  5, 21, ROUTE_19, 4
 
 	db 82 ; coord events
-	xy_trigger 0, 13, 38, 0, Route22TunnelLightEntrance, 0, 0
-	xy_trigger 0, 14, 38, 0, Route22TunnelLightEntrance, 0, 0
-	xy_trigger 0, 15, 38, 0, Route22TunnelLightEntrance, 0, 0
-	xy_trigger 0, 16, 38, 0, Route22TunnelLightEntrance, 0, 0
-	xy_trigger 0, 17, 38, 0, Route22TunnelLightEntrance, 0, 0
+	xy_trigger 0, 13, 28, 0, Route22TunnelLightEntrance, 0, 0
+	xy_trigger 0, 14, 28, 0, Route22TunnelLightEntrance, 0, 0
+	xy_trigger 0, 15, 28, 0, Route22TunnelLightEntrance, 0, 0
+	xy_trigger 0, 16, 28, 0, Route22TunnelLightEntrance, 0, 0
+	xy_trigger 0, 17, 28, 0, Route22TunnelLightEntrance, 0, 0
 	xy_trigger 0, 15,  4, 0, Route22TunnelLight, 0, 0
 	xy_trigger 0, 15,  5, 0, Route22TunnelLight, 0, 0
 	xy_trigger 0, 16,  4, 0, Route22TunnelLight, 0, 0
@@ -29,14 +29,14 @@ Route22Tunnel_MapScriptHeader:
 	xy_trigger 0, 15, 15, 0, Route22TunnelLight, 0, 0
 	xy_trigger 0, 16, 14, 0, Route22TunnelLight, 0, 0
 	xy_trigger 0, 16, 15, 0, Route22TunnelLight, 0, 0
+	xy_trigger 0, -1, -1, 0, Route22TunnelLight, 0, 0
+	xy_trigger 0, -1, -1, 0, Route22TunnelLight, 0, 0
+	xy_trigger 0, -1, -1, 0, Route22TunnelLight, 0, 0
+	xy_trigger 0, -1, -1, 0, Route22TunnelLight, 0, 0
 	xy_trigger 0, 15, 24, 0, Route22TunnelLight, 0, 0
 	xy_trigger 0, 15, 25, 0, Route22TunnelLight, 0, 0
 	xy_trigger 0, 16, 24, 0, Route22TunnelLight, 0, 0
 	xy_trigger 0, 16, 25, 0, Route22TunnelLight, 0, 0
-	xy_trigger 0, 15, 34, 0, Route22TunnelLight, 0, 0
-	xy_trigger 0, 15, 35, 0, Route22TunnelLight, 0, 0
-	xy_trigger 0, 16, 34, 0, Route22TunnelLight, 0, 0
-	xy_trigger 0, 16, 35, 0, Route22TunnelLight, 0, 0
 	xy_trigger 1, 13,  4, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 13,  5, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 14,  4, 0, Route22TunnelDark, 0, 0
@@ -59,21 +59,21 @@ Route22Tunnel_MapScriptHeader:
 	xy_trigger 1, 13, 15, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 15, 17, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 16, 17, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, -1, -1, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, -1, -1, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, -1, -1, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, -1, -1, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, -1, -1, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, -1, -1, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 15, 22, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 16, 22, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 13, 24, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 13, 25, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, 13, 27, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, 14, 27, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 15, 27, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 16, 27, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 15, 32, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 16, 32, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 13, 34, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 13, 35, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 13, 37, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 14, 37, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 15, 37, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 16, 37, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 17, 37, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, 17, 27, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 14, 14, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 14, 15, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 15, 13, 0, Route22TunnelDark, 0, 0
@@ -82,34 +82,34 @@ Route22Tunnel_MapScriptHeader:
 	xy_trigger 1, 17, 15, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 16, 16, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 15, 16, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 14, 24, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, -1, -1, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, -1, -1, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, -1, -1, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, -1, -1, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, -1, -1, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, -1, -1, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, -1, -1, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, -1, -1, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, 16, 26, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, 15, 26, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 14, 25, 0, Route22TunnelDark, 0, 0
+	xy_trigger 1, 14, 24, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 15, 23, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 16, 23, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 17, 24, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 17, 25, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 16, 26, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 15, 26, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 16, 36, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 15, 36, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 14, 35, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 14, 34, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 15, 33, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 16, 33, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 17, 34, 0, Route22TunnelDark, 0, 0
-	xy_trigger 1, 17, 35, 0, Route22TunnelDark, 0, 0
 
 	db 1 ; bg events
-	signpost 12, 21, SIGNPOST_READ, Route22TunnelGate
+	signpost -1, -1, SIGNPOST_READ, Route22TunnelGate
 
 	db 8 ; object events
-	person_event SPRITE_BIKER, 13, 12, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer1, EVENT_HIDE_OW_OBJECTS_BLUE
-	person_event SPRITE_BIKER, 17, 10, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer2, EVENT_HIDE_OW_OBJECTS_BLUE
-	person_event SPRITE_BIKER, 13,  8, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer3, EVENT_HIDE_OW_OBJECTS_BLUE
+	person_event SPRITE_BIKER, 13, 22, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer1, EVENT_HIDE_OW_OBJECTS_BLUE
+	person_event SPRITE_BIKER, 17, 17, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer2, EVENT_HIDE_OW_OBJECTS_BLUE
+	person_event SPRITE_BIKER, 13, 10, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer3, EVENT_HIDE_OW_OBJECTS_BLUE
 	person_event SPRITE_CUEBALL, 17,  2, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, Route22TunnelTrainer4, EVENT_HIDE_OW_OBJECTS_BLUE
-	person_event SPRITE_BIKER, 13, 12, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer1, EVENT_HIDE_OW_OBJECTS_TEAL
-	person_event SPRITE_BIKER, 17, 10, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer2, EVENT_HIDE_OW_OBJECTS_TEAL
-	person_event SPRITE_BIKER, 13,  8, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer3, EVENT_HIDE_OW_OBJECTS_TEAL
+	person_event SPRITE_BIKER, 13, 22, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer1, EVENT_HIDE_OW_OBJECTS_TEAL
+	person_event SPRITE_BIKER, 17, 17, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer2, EVENT_HIDE_OW_OBJECTS_TEAL
+	person_event SPRITE_BIKER, 13, 10, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 4, Route22TunnelTrainer3, EVENT_HIDE_OW_OBJECTS_TEAL
 	person_event SPRITE_CUEBALL, 17,  2, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 0, Route22TunnelTrainer4, EVENT_HIDE_OW_OBJECTS_TEAL
 
 

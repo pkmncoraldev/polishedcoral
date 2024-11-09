@@ -2865,7 +2865,7 @@ SuperNerdGroup:
 ; ================
 
 	; SUPER_NERD
-	db "MARIO@"
+	db "MARIO@"		;UNUSED
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -4186,7 +4186,7 @@ GuitaristGroup:
 ; ================
 
 	; GUITARIST
-	db "VINNY@"
+	db "VINNY@"		;UNUSED
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

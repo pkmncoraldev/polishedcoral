@@ -320,7 +320,7 @@ PLAYER_F EQU __enum__
 	const PEDRO
 	const REMY
 	const GREG
-	const MARIO
+	const MARIO		;UNUSED
 	const TREV
 
 
@@ -499,7 +499,7 @@ PLAYER_F EQU __enum__
 	trainerclass GUITARIST
 	const LARRY
 	const TITO
-	const VINNY
+	const VINNY		;UNUSED
 	const MILLER
 
 

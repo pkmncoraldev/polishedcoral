@@ -2359,6 +2359,8 @@ PoundUsers:
 	db SUNFLORA
 	db MIENFOO
 	db MIENSHAO
+	db MINCCINO
+	db CINCCINO
 	db -1
 	
 ScratchUsers:
@@ -2527,6 +2529,8 @@ DoubleSlapUsers:
 	db BLISSEY
 	db MIENFOO
 	db MIENSHAO
+	db MINCCINO
+	db CINCCINO
 	db -1
 	
 MoonlightUsers:
@@ -2571,6 +2575,9 @@ CottonSporeUsers:
 	db AMPHAROS
 	db COTTONEE
 	db WHIMSICOTT
+	db CACNEA
+	db CACTURNE
+	db MARACTUS
 	db -1
 	
 StringShotUsers:
@@ -2654,8 +2661,6 @@ FlashUsers:
 	db WYRDEER
 	db SHROOMISH
 	db BRELOOM
-	db CACNEA
-	db CACTURNE
 	db SNORUNT
 	db GLALIE
 	db FROSLASS
@@ -2747,6 +2752,9 @@ GrowthUsers:
 	db COTTONEE
 	db WHIMSICOTT
 	db COMFEY
+	db CACNEA
+	db CACTURNE
+	db MARACTUS
 	db -1
 	
 HealBellUsers:

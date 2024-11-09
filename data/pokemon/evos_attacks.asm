@@ -950,6 +950,7 @@ MagnetonEvosAttacks:
 	db EVOLVE_LOCATION, STARGLOW_CAVERN, MAGNEZONE
 	db EVOLVE_LOCATION, STARGLOW_DEPTHS, MAGNEZONE
 	db 0 ; no more evolutions
+	db 1, TRI_ATTACK
 	db 1, ZAP_CANNON
 	db 1, TACKLE_SCRATCH_POUND
 	db 4, SUPERSONIC
@@ -1639,8 +1640,8 @@ PorygonEvosAttacks:
 	db 0 ; no more level-up moves
 
 AerodactylEvosAttacks:
-	db  0 ; no more evolutions
-	db  1, TACKLE_SCRATCH_POUND
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
 SnorlaxEvosAttacks:
@@ -2452,45 +2453,30 @@ SlowkingEvosAttacks:
 GirafarigEvosAttacks:
 	db EVOLVE_MOVE, TWIN_BEAM, FARIGIRAF
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db  1, TACKLE_SCRATCH_POUND
+	db  1, GROWL
+	db  5, CONFUSION
+	db 10, PURSUIT
+	db 14, STOMP
+	db 19, PSYBEAM
+	db 23, AGILITY_ROCK_POLISH
+	db 28, DOUBLE_HIT
+	db 32, TWIN_BEAM
+	db 37, CRUNCH
+	db 41, BATON_PASS
+	db 46, NASTY_PLOT
+	db 50, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 PinecoEvosAttacks:
 	db EVOLVE_LEVEL, 31, FORRETRESS
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
-	db 1, PROTECT
-	db 6, SELFDESTRUCT
-	db 9, ROCK_SMASH
-	db 12, TAKE_DOWN
-	db 16, RAPID_SPIN
-	db 20, ROLLOUT
-	db 23, CURSE
-	db 28, SPIKES
-	db 31, PIN_MISSILE
-	db 34, EXPLOSION
-	db 39, BARRIER_IRON_DEFENSE_ACID_ARMOR
-	db 42, GYRO_BALL
-	db 45, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 ForretressEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, BODY_SLAM
 	db 1, TACKLE_SCRATCH_POUND
-	db 1, PROTECT
-	db 1, SELFDESTRUCT
-	db 1, ROCK_SMASH
-	db 1, TAKE_DOWN
-	db 1, RAPID_SPIN
-	db 1, ROLLOUT
-	db 1, CURSE
-	db 1, SPIKES
-	db 32, PIN_MISSILE
-	db 36, EXPLOSION
-	db 42, BARRIER_IRON_DEFENSE_ACID_ARMOR
-	db 46, GYRO_BALL
-	db 50, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
@@ -3352,12 +3338,40 @@ CameruptEvosAttacks:
 CacneaEvosAttacks:
 	db EVOLVE_LEVEL, 32, CACTURNE
 	db  0 ; no more evolutions
-	db  1, TACKLE_SCRATCH_POUND
+	db  1, POISON_STING
+	db  1, LEER_TAIL_WHIP
+	db  5, ABSORB
+	db  9, WORK_UP_GROWTH
+	db 13, LEECH_SEED
+	db 17, SAND_ATTACK_SMOKESCREEN_FLASH
+	db 21, PIN_MISSILE
+	db 29, FEINT_ATTACK
+	db 33, SPIKES
+	db 37, SUCKER_PUNCH
+	db 41, PURSUIT
+	db 45, HORN_LEECH
+	db 49, SCARY_FACE_COTTON_SPORE_STRING_SHOT
+	db 53, SANDSTORM
+	db 57, DESTINY_BOND
 	db  0 ; no more level-up moves
 	
 CacturneEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db  1, POISON_STING
+	db  1, LEER_TAIL_WHIP
+	db  5, ABSORB
+	db  9, WORK_UP_GROWTH
+	db 13, LEECH_SEED
+	db 17, SAND_ATTACK_SMOKESCREEN_FLASH
+	db 21, PIN_MISSILE
+	db 29, FEINT_ATTACK
+	db 35, SPIKES
+	db 41, SUCKER_PUNCH
+	db 47, PURSUIT
+	db 53, HORN_LEECH
+	db 59, SCARY_FACE_COTTON_SPORE_STRING_SHOT
+	db 65, SANDSTORM
+	db 71, DESTINY_BOND
 	db 0 ; no more level-up moves
 	
 SwabluEvosAttacks:
@@ -3716,6 +3730,7 @@ WeavileEvosAttacks:
 	
 MagnezoneEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, TRI_ATTACK
 	db 1, BARRIER_IRON_DEFENSE_ACID_ARMOR
 	db 1, ZAP_CANNON
 	db 1, TACKLE_SCRATCH_POUND
@@ -4059,7 +4074,21 @@ WhimsicottEvosAttacks:
 	
 MaractusEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db  1, PECK
+	db  1, ABSORB
+	db  6, WORK_UP_GROWTH
+	db 10, PIN_MISSILE
+	db 13, MEGA_DRAIN
+	db 15, SYNTHESIS_MOONLIGHT_MORNING_SUN
+	db 18, SCARY_FACE_COTTON_SPORE_STRING_SHOT
+	db 22, HORN_LEECH
+	db 26, GIGA_DRAIN
+	db 31, SHARPEN_HOWL_MEDITATE
+	db 38, PETAL_DANCE
+	db 42, SUCKER_PUNCH
+	db 45, SUNNY_DAY
+	db 50, SOLAR_BEAM
+	db 55, COTTON_GUARD
 	db 0 ; no more level-up moves
 	
 DwebbleEvosAttacks:
@@ -4222,11 +4251,25 @@ MinccinoEvosAttacks:
 	db EVOLVE_LEVEL, 22, CINCCINO
 	db  0 ; no more evolutions
 	db  1, TACKLE_SCRATCH_POUND
+	db  3, GROWL
+	db 13, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db 15, ENCORE
+	db 19, SWIFT
+	db 21, SING_HYPNOSIS
+	db 25, DOUBLE_HIT
+	db 27, CHARM_FEATHER_DANCE
+	db 33, DOUBLE_KICK
+	db 37, BODY_SLAM
+	db 43, HYPER_VOICE
+	db 49, DOUBLE_EDGE
 	db  0 ; no more level-up moves
 
 CinccinoEvosAttacks:
 	db  0 ; no more evolutions
 	db  1, TACKLE_SCRATCH_POUND
+	db  1, BULLET_SEED
+	db  1, ROCK_BLAST
+	db  1, DOUBLE_HIT
 	db  0 ; no more level-up moves
 	
 JoltikEvosAttacks:
@@ -4712,7 +4755,19 @@ ClodsireEvosAttacks:
 	
 FarigirafEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db  1, TACKLE_SCRATCH_POUND
+	db  1, GROWL
+	db  5, CONFUSION
+	db 10, PURSUIT
+	db 14, STOMP
+	db 19, PSYBEAM
+	db 23, AGILITY_ROCK_POLISH
+	db 28, DOUBLE_HIT
+	db 32, TWIN_BEAM
+	db 37, CRUNCH
+	db 41, BATON_PASS
+	db 46, NASTY_PLOT
+	db 50, PSYCHIC_M
 	db 0 ; no more level-up moves
 	
 EggEvosAttacks::

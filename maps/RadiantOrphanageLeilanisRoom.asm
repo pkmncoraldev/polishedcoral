@@ -331,8 +331,6 @@ RadiantOrphanageLeilanisRoomErikaText3:
 	line "care of her, but"
 	cont "she just isn't"
 	cont "getting better…"
-	
-	para "…"
 	done
 	
 RadiantOrphanageLeilanisRoomErikaText4:
@@ -344,8 +342,6 @@ RadiantOrphanageLeilanisRoomErikaText4:
 	
 	para "Oh, I hope they're"
 	line "ok…"
-	
-	para "…"
 	done
 	
 RadiantOrphanageLeilanisRoomErikaText5:

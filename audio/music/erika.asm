@@ -15,7 +15,8 @@ Music_Erika_Ch1_loop:
 	note D_, 6
 	note F_, 6
 	note D#, 4
-	note D_, 6
+	note D_, 4
+	note G_, 2
 	note F_, 2
 	note D#, 8
 	octave 2
@@ -24,8 +25,9 @@ Music_Erika_Ch1_loop:
 	note C_, 6
 	note D#, 4
 	octave 2
-	note A_, 6
+	note A_, 4
 	octave 3
+	note F_, 2
 	note D#, 2
 	note D_, 4
 	note F_, 2
@@ -74,7 +76,7 @@ Music_Erika_Ch1_loop:
 	note D#, 8
 	
 	dutycycle 2
-	notetype $c, $67
+	notetype $c, $46
 	callchannel Music_Erika_Ch1_part1
 	callchannel Music_Erika_Ch1_part1
 	callchannel Music_Erika_Ch1_part1
@@ -178,9 +180,9 @@ Music_Erika_Ch2_loop:
 	note F_, 2
 	note A#, 2
 	note A_, 4
+	octave 1
 	note F_, 4
 	
-	octave 1
 	note F_, 2
 	note A_, 2
 	octave 2
@@ -191,7 +193,9 @@ Music_Erika_Ch2_loop:
 	note F_, 2
 	note G_, 2
 	note F_, 8
-	note A_, 8
+	note A_, 4
+	octave 1
+	note F_, 4
 	
 	callchannel Music_Erika_Ch2_part
 	callchannel Music_Erika_Ch2_part

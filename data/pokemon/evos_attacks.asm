@@ -1167,7 +1167,7 @@ VoltorbEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SELFDESTRUCT
 	db 1, TACKLE_SCRATCH_POUND
-	db 1, SONIC_BOOM
+	db 1, HYPER_VOICE
 	db 9, THUNDERSHOCK
 	db 11, ROLLOUT
 	db 13, SCREECH
@@ -1187,7 +1187,7 @@ ElectrodeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SELFDESTRUCT
 	db 1, TACKLE_SCRATCH_POUND
-	db 1, SONIC_BOOM
+	db 1, HYPER_VOICE
 	db 1, THUNDERSHOCK
 	db 1, ROLLOUT
 	db 1, SCREECH
@@ -4456,7 +4456,7 @@ NoibatEvosAttacks:
 	db 11, GUST
 	db 15, BITE
 	db 20, WING_ATTACK
-	db 25, SONIC_BOOM
+	db 25, HYPER_VOICE
 	db 29, ROOST
 	db 34, ACROBATICS
 	db 39, ROAR_WHIRLWIND
@@ -4477,7 +4477,7 @@ NoivernEvosAttacks:
 	db 11, GUST
 	db 15, BITE
 	db 20, WING_ATTACK
-	db 25, SONIC_BOOM
+	db 25, HYPER_VOICE
 	db 29, ROOST
 	db 34, ACROBATICS
 	db 39, ROAR_WHIRLWIND

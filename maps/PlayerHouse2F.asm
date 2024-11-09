@@ -354,6 +354,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_FLYPOINT_KOMORE
 	setflag ENGINE_FLYPOINT_BRIGHT
 	setflag ENGINE_FLYPOINT_OBSCURA
+	setevent EVENT_UNLOCKED_SOUTH_FLY_MAP
 	jump .return
 .Sfx
 	closewindow

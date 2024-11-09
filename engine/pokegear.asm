@@ -2407,10 +2407,9 @@ _TownMap: ; 9191c
 PokegearMap: ; 91ae1
 	call LoadTownMapGFX
 	ld a, [wPokegearMapPlayerIconLandmark]
-;	cp SHAMOUTI_LANDMARK
-;	jp nc, FillOrangeMap
 	cp SOUTH_ONWA_LANDMARK
 	jp nc, .south
+.north
 	xor a
 	ld [wWarpNumber], a
 	ld b, CGB_POKEGEAR_PALS
@@ -2472,6 +2471,8 @@ _FlyMap: ; 91af3
 	jr .loop
 
 .pressedSelect
+	eventflagcheck EVENT_UNLOCKED_SOUTH_FLY_MAP
+	jr z, .loop
 	ld a, [wWarpNumber]
 	cp 1
 	jr z, .switch_to_north
@@ -2684,6 +2685,8 @@ HasVisitedSpawn: ; 91c50
 INCLUDE "data/maps/flypoints.asm"
 
 FlyMap: ; 91c90
+	eventflagcheck EVENT_UNLOCKED_SOUTH_FLY_MAP
+	jr z, .NorthOnwaFlyMap
 	ld a, [wWarpNumber]
 	cp 1
 	jr z, .SouthOnwaFlyMap
@@ -2712,8 +2715,19 @@ FlyMap: ; 91c90
 
 .SouthOnwaFlyMap:
 	push af
+	eventflagcheck EVENT_CAN_GO_TO_SHIMMER
+	jr nz, .shimmer
+	eventflagcheck EVENT_BEEN_TO_RADIANT_TOWN
+	jr nz, .radiant
+	ld a, FLY_DUSK
+	jr .load_first
+.radiant
+	ld a, FLY_RADIANT
+	jr .load_first
+.shimmer
 ; Start from Port Shimmer
 	ld a, FLY_SHIMMER
+.load_first
 	ld [wTownMapPlayerIconLandmark], a
 ; Flypoints begin at Shimmer City...
 	ld [wStartFlypoint], a

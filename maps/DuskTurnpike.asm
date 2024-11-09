@@ -184,6 +184,7 @@ DuskTurnpikeTrigger1:
 	
 DuskTurnpikeFlyPoint:
 	setflag ENGINE_FLYPOINT_DUSK
+	setevent EVENT_UNLOCKED_SOUTH_FLY_MAP
 	return
 
 DuskTurnpikeCallback:

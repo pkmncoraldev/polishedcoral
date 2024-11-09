@@ -94,6 +94,7 @@ ShimmerCity_MapScriptHeader:
 ShimmerCityFlyPoint:
 	setflag ENGINE_FLYPOINT_SHIMMER
 	setevent EVENT_CAN_GO_TO_SHIMMER
+	setevent EVENT_UNLOCKED_SOUTH_FLY_MAP
 	setevent EVENT_MADE_IT_TO_SOUTH_ONWA
 	clearevent EVENT_HAVENT_MADE_IT_TO_SOUTH_ONWA
 	return

@@ -74,6 +74,8 @@ RadiantTownship_MapScriptHeader:
 
 RadiantTownshipFlyPoint:
 	setflag ENGINE_FLYPOINT_RADIANT
+	setevent EVENT_BEEN_TO_RADIANT_TOWN
+	setevent EVENT_UNLOCKED_SOUTH_FLY_MAP
 	return
 
 RadiantTownshipCallback:

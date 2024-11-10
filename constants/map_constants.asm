@@ -327,17 +327,17 @@ MAP_NONE   EQU 0
 	newgroup													 ; 17
 	
 	map_const BRILLO_TOWN,								  23, 17 ; 1
-	map_const BRILLO_BOAT_HOUSE,                    	   4,  3 ; 2
-	map_const BRILLO_ROCK_HOUSE,						   4,  4 ; 3
-	map_const BRILLO_TRADE_HOUSE,						   4,  4 ; 4
-	map_const BRILLO_LEGEND_SPEECH_HOUSE,				   4,  4 ; 5
-	map_const BRILLO_POKECENTER,                    	   6,  4 ; 6
-	map_const BRILLO_MART,                    			   5,  4 ; 7
-	map_const BRILLO_GAME_CORNER,              			   7,  5 ; 8
-	map_const BRILLO_POLICE_STATION,           			   8,  5 ; 9
-	map_const ROUTE_17,  		       	           		  24, 17 ; 10
-	map_const ROUTE_18,   		      	           		  15, 18 ; 11
-	map_const ROUTE_18_NORTH,       	           	  13, 15 ; 12
+	map_const ROUTE_18_NORTH,       	           	  	  13, 15 ; 2 HAS TO BE HERE FOR FIRE PAL
+	map_const BRILLO_BOAT_HOUSE,                    	   4,  3 ; 3
+	map_const BRILLO_ROCK_HOUSE,						   4,  4 ; 4
+	map_const BRILLO_TRADE_HOUSE,						   4,  4 ; 5
+	map_const BRILLO_LEGEND_SPEECH_HOUSE,				   4,  4 ; 6
+	map_const BRILLO_POKECENTER,                    	   6,  4 ; 7
+	map_const BRILLO_MART,                    			   5,  4 ; 8
+	map_const BRILLO_GAME_CORNER,              			   7,  5 ; 9
+	map_const BRILLO_POLICE_STATION,           			   8,  5 ; 10
+	map_const ROUTE_17,  		       	           		  24, 17 ; 11
+	map_const ROUTE_18,   		      	           		  15, 18 ; 12
 	map_const DESERT_WASTELAND_1,              			   9,  9 ; 13
 	map_const DESERT_WASTELAND_2,              			   9,  9 ; 14
 	map_const DESERT_WASTELAND_3,              			   9,  9 ; 15

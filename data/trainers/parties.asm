@@ -2708,7 +2708,8 @@ OfficerGroup:
 	db "SANCHEZ@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 36, NUMEL
+	db 34, CAMERUPT
 	db -1 ; end
 
 ; ================
@@ -2717,7 +2718,7 @@ OfficerGroup:
 	db "HARTWELL@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 37, CHARIZARD
 	db -1 ; end
 
 ; ================
@@ -3034,15 +3035,6 @@ LassGroup:
 	db -1 ; end
 
 ; ================
-
-	; LASS
-	db "LENA@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
 ; ================================
 
 
@@ -3172,6 +3164,17 @@ BeautyGroup:
 	db 22, DRIFLOON
 	db 23, DRIFLOON
 	db 24, DRIFLOON
+	db -1 ; end
+
+; ================
+
+	; BEAUTY
+	db "LENA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 36, MINCCINO
+	db 37, MINCCINO
+	db 34, CINCCINO
 	db -1 ; end
 
 ; ================
@@ -3717,10 +3720,12 @@ SwimmerMGroup:
 
 	; SWIMMERM
 	db "GARY@"
-	db TRAINERTYPE_PERSONALITY
+	db TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
 	; party
 	db 38, MUNCHLAX, ABILITY_1 | HARDY, MALE
-	db 37, RAICHU, ABILITY_1 | HARDY, MALE | ALOLAN_FORM
+		db FLAIL, WORK_UP_GROWTH, SNORE, REST
+	db 32, RAICHU, ABILITY_1 | HARDY, MALE | ALOLAN_FORM
+		db ELECTRO_BALL, PSYCHIC_M, THUNDER_WAVE, QUICK_ATTACK
 	db -1 ; end
 
 ; ================
@@ -3892,9 +3897,11 @@ BurglarGroup:
 
 	; BURGLAR
 	db "ZEDAKI@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 1, BULBASAUR
+	db 37, MEOWTH, ABILITY_1 | HARDY, MALE | ALOLAN_FORM
+	db 36, CACNEA, ABILITY_1 | HARDY, MALE
+	db 34, CACTURNE, ABILITY_1 | HARDY, MALE
 	db -1 ; end
 
 ; ================
@@ -4104,7 +4111,9 @@ BlackbeltGroup:
 	db "ZERO@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 34, MEDICHAM
+	db 36, MACHOP
+	db 35, MACHOKE
 	db -1 ; end
 
 ; ================
@@ -4256,9 +4265,12 @@ BikerGroup:
 
 	; BIKER
 	db "SHINTO@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 32, MACHAMP
+		db MACH_PUNCH, STRENGTH, FOCUS_ENERGY, 0
+	db 33, MAGNETON
+		db TRI_ATTACK, 0, 0, 0
 	db -1 ; end
 
 ; ================
@@ -4282,7 +4294,7 @@ CueballGroup:
 	db "BONGO@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 35, GLISCOR
 	db -1 ; end
 
 ; ================
@@ -4554,8 +4566,14 @@ DisguiseGroup:
 	db "MASTER@" ;ROUTE 18
 	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
-		db TACKLE_SCRATCH_POUND, 0, 0, 0
+	db 34, VOLTORB
+		db THUNDER_WAVE, THUNDERSHOCK, SCREECH, SELFDESTRUCT
+	db 35, ELECTRODE
+		db THUNDER_WAVE, THUNDERSHOCK, SCREECH, SELFDESTRUCT
+	db 35, SUDOWOODO
+		db BODY_SLAM, ROLLOUT, MEAN_LOOK_BLOCK_SPIDER_WEB, ROCK_SLIDE
+	db 35, DITTO
+		db TRANSFORM_SKETCH_MIMIC_SPLASH_METRO, 0, 0, 0
 	db -1 ; end
 
 ; ================
@@ -4644,7 +4662,9 @@ DelinquentmGroup:
 	db "MAO@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 34, PILOSWINE
+	db 36, CACNEA
+	db 34, GLIGAR
 	db -1 ; end
 
 ; ================

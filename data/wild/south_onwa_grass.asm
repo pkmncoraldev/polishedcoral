@@ -3,326 +3,326 @@
 	map_id ROUTE_17
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, NUMEL		;30%
+	db 29, MINCCINO		;30%
+	db 29, CACNEA		;20%
+	db 29, GLIGAR		;10%
+	db 29, CACNEA		;5%
+	db 29, MARACTUS		;4%
+	db 29, MARACTUS		;1%
 	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, NUMEL		;30%
+	db 29, MINCCINO		;30%
+	db 29, CACNEA		;20%
+	db 29, GLIGAR		;10%
+	db 29, CACNEA		;5%
+	db 29, MARACTUS		;4%
+	db 29, MARACTUS		;1%
 	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, NUMEL		;30%
+	db 29, MINCCINO		;30%
+	db 29, CACNEA		;20%
+	db 29, GLIGAR		;10%
+	db 29, CACNEA		;5%
+	db 29, MARACTUS		;4%
+	db 29, MARACTUS		;1%
 	
 	map_id ROUTE_18
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, NUMEL		;30%
+	db 29, MINCCINO		;30%
+	db 29, CACNEA		;20%
+	db 29, GLIGAR		;10%
+	db 29, CACNEA		;5%
+	db 29, MARACTUS		;4%
+	db 29, MARACTUS		;1%
 	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, NUMEL		;30%
+	db 29, MINCCINO		;30%
+	db 29, CACNEA		;20%
+	db 29, GLIGAR		;10%
+	db 29, CACNEA		;5%
+	db 29, MARACTUS		;4%
+	db 29, MARACTUS		;1%
 	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, NUMEL		;30%
+	db 29, MINCCINO		;30%
+	db 29, CACNEA		;20%
+	db 29, GLIGAR		;10%
+	db 29, CACNEA		;5%
+	db 29, MARACTUS		;4%
+	db 29, MARACTUS		;1%
 	
 	map_id BRILLO_BOAT_HOUSE ; used in desert when stuck in sand
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, SQUIRTLE		;30%
-	db 20, SQUIRTLE		;30%
-	db 20, SQUIRTLE		;20%
-	db 20, SQUIRTLE		;10%
-	db 20, SQUIRTLE		;5%
-	db 20, SQUIRTLE		;4%
-	db 28, SQUIRTLE		;1%
+	db 30, GLIGAR		;30%
+	db 30, GLIGAR		;30%
+	db 30, DWEBBLE		;20%
+	db 30, DWEBBLE		;10%
+	db 30, DWEBBLE		;5%
+	db 30, DWEBBLE		;4%
+	db 30, DWEBBLE		;1%
 	; day
-	db 20, SQUIRTLE		;30%
-	db 20, SQUIRTLE		;30%
-	db 20, SQUIRTLE		;20%
-	db 20, SQUIRTLE		;10%
-	db 20, SQUIRTLE		;5%
-	db 20, SQUIRTLE		;4%
-	db 28, SQUIRTLE		;1%
+	db 30, GLIGAR		;30%
+	db 30, GLIGAR		;30%
+	db 30, DWEBBLE		;20%
+	db 30, DWEBBLE		;10%
+	db 30, DWEBBLE		;5%
+	db 30, DWEBBLE		;4%
+	db 30, DWEBBLE		;1%
 	; nite
-	db 20, SQUIRTLE		;30%
-	db 20, SQUIRTLE		;30%
-	db 20, SQUIRTLE		;20%
-	db 20, SQUIRTLE		;10%
-	db 20, SQUIRTLE		;5%
-	db 20, SQUIRTLE		;4%
-	db 28, SQUIRTLE		;1%
+	db 30, GLIGAR		;30%
+	db 30, GLIGAR		;30%
+	db 30, DWEBBLE		;20%
+	db 30, DWEBBLE		;10%
+	db 30, DWEBBLE		;5%
+	db 30, DWEBBLE		;4%
+	db 30, DWEBBLE		;1%
 	
 	map_id DESERT_WASTELAND_1
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	
 	map_id DESERT_WASTELAND_2
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 
 	map_id DESERT_WASTELAND_3
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 
 	map_id DESERT_WASTELAND_4
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 
 	map_id DESERT_WASTELAND_5
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 
 	map_id DESERT_WASTELAND_6
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 
 	map_id DESERT_WASTELAND_7
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 
 	map_id DESERT_WASTELAND_8
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 
 	map_id DESERT_WASTELAND_9
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 29, CACNEA		;30%
+	db 29, NUMEL		;30%
+	db 29, CACNEA		;20%
+	db 29, SKARMORY		;10%
+	db 31, CACTURNE		;5%
+	db 30, LARVESTA		;4%
+	db 29, LARVESTA		;1%
 	
 	map_id ROUTE_19
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

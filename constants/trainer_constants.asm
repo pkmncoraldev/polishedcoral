@@ -340,7 +340,6 @@ PLAYER_F EQU __enum__
 	const HARLEY_6
 	const HARLEY_7
 	const HARLEY_8
-	const LENA
 
 
 	trainerclass BEAUTY
@@ -357,6 +356,7 @@ PLAYER_F EQU __enum__
 	const MANDY
 	const TRIXIE
 	const HARMONY
+	const LENA
 
 
 	trainerclass FIREBREATHER

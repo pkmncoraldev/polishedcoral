@@ -92,7 +92,7 @@ TrainerRoute17_3:
 	done
 	
 TrainerRoute17_4:
-	generictrainer LASS, LENA, EVENT_BEAT_ROUTE_17_TRAINER_4, .SeenText, .BeatenText
+	generictrainer BEAUTY, LENA, EVENT_BEAT_ROUTE_17_TRAINER_4, .SeenText, .BeatenText
 
 	text "What's a beautiful"
 	line "girl like me have"

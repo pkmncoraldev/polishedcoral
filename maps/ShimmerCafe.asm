@@ -50,6 +50,7 @@ ShimmerCafeNPC4:
 	iffalse .no
 	callasm CheckItemHotDog
 	iffalse .not_interested
+	takeitem DUBIOUS_DOG
 	writetext ShimmerCafeNPC4Text4
 	waitbutton
 	closetext

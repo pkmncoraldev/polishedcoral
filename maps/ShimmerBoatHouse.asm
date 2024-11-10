@@ -250,7 +250,8 @@ ShimmerBoatHouseBrilloMenuData:
 	
 ShimmerBoatHouseNPCTextDesertFirstTime:
 	text "Ah, <WAIT_S>you made it."
-	line "You ready to go?"
+	
+	para "You ready to go?"
 	done
 	
 ShimmerBoatHouseNPCTextDesertFirstTimeno:

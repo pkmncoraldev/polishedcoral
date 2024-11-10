@@ -18,7 +18,7 @@ Route18_MapScriptHeader:
 	person_event SPRITE_BURGLAR, 18, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute18_1, -1
 	person_event SPRITE_DELINQUENT_M, 27, 19, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute18_2, -1
 	person_event SPRITE_BIKER, 10,  9, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRoute18_3, -1
-	person_event SPRITE_CUEBALL,  2, 18, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute18_4, -1
+	person_event SPRITE_CUEBALL,  2, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRoute18_4, -1
 
 	const_def 1 ; object constants
 	const ROUTE_18_DISGUISEMAN1
@@ -181,8 +181,8 @@ Route18_DisguiseMan1Text3:
 	done
 
 Route18DisguisemanBeatenText:
-	text "The battle's done."
-	line "You win, of course."
+	text "And that's it! You"
+	line "win, of course."
 	
 	para "What an awesome"
 	line "show of force!"

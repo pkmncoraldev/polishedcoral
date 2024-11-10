@@ -3078,6 +3078,7 @@ HandleEventsEscapeRope:
 	domaptrigger SUNSET_CAPE, $0
 	domaptrigger SHIMMER_HARBOR, $0
 	domaptrigger ROUTE_29, $0
+	domaptrigger BRILLO_TOWN, $0
 	clearevent EVENT_ON_DODRIO_RANCH
 	clearevent EVENT_AT_AIRPORT
 	clearevent EVENT_SET_ROUTE_27

@@ -326,7 +326,7 @@ BrilloBoatHouseNPC1Text:
 	line "#MON."
 	
 	para "It has the ABILITY"
-	line "to DRAIN certain"
+	line "to drain certain"
 	cont "moves and power"
 	cont "itself up!"
 	

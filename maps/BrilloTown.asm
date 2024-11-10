@@ -19,8 +19,8 @@ BrilloTown_MapScriptHeader:
 	warp_event 36, 10, BRILLO_POLICE_STATION, 2
 
 	db 4 ; coord events
-	coord_event 16, 18, 0, BrilloMakeSilverGreen
-	coord_event 17, 18, 0, BrilloMakeSilverGreen
+	coord_event 31, 12, 0, BrilloMakeSilverGreen
+	coord_event 31, 13, 0, BrilloMakeSilverGreen
 	coord_event 16, 19, 2, BrilloMakeSilverBlue
 	coord_event 17, 19, 2, BrilloMakeSilverBlue
 

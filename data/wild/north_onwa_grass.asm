@@ -406,6 +406,33 @@
 	db 13, WINGULL		;4%
 	db 13, WINGULL		;1%
 	
+	map_id ROUTE_6_SOUTH
+	db  4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 30, COMFEY		;30%
+	db 30, TOUCANNON	;30%
+	db 30, COMFEY		;20%
+	db 30, COMFEY		;10%
+	db 30, TOUCANNON	;5%
+	db 30, EXEGGCUTE	;4%
+	db 30, EXEGGCUTE	;1%
+	; day
+	db 30, COMFEY		;30%
+	db 30, TOUCANNON	;30%
+	db 30, COMFEY		;20%
+	db 30, COMFEY		;10%
+	db 30, TOUCANNON	;5%
+	db 30, EXEGGCUTE	;4%
+	db 30, EXEGGCUTE	;1%
+	; nite
+	db 30, COMFEY		;30%
+	db 30, TOUCANNON	;30%
+	db 30, COMFEY		;20%
+	db 30, COMFEY		;10%
+	db 30, TOUCANNON	;5%
+	db 30, EXEGGCUTE	;4%
+	db 30, EXEGGCUTE	;1%
+	
 	map_id ROUTE_7
 	db 9 percent, 9 percent, 9 percent ; encounter rates: morn/day/nite
 	; morn

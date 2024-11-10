@@ -43,7 +43,7 @@ WildSpeciesForms:
 	dbw PIDGEY,		.PidgeyForm
 	dbw RATTATA,	.PidgeyForm
 	dbw RATICATE,	.PidgeyForm
-	dbw RAICHU,		.ExeggcuteForm
+	dbw RAICHU,		.PidgeyForm
 	dbw MEOWTH,		.MeowthForm
 	dbw EXEGGCUTE,	.ExeggcuteForm
 	dbw EXEGGUTOR,	.ExeggcuteForm
@@ -100,7 +100,14 @@ WildSpeciesForms:
 	jr .LandmarkForm
 .ExeggcuteForm:
 	ld hl, ExeggcuteLandmarks
-	;fallthrough
+	ld a, [wCurrentLandmark]
+	ld de, 1
+	call IsInArray
+	jr nc, .CheckGen1
+	call Random
+	cp 50 percent + 1
+	jr nc, .Default
+	jr .AlolanForm
 .LandmarkForm:
 	ld a, [wCurrentLandmark]
 	ld de, 1

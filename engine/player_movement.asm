@@ -534,15 +534,14 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, [wWalkingTile]
 	cp COLL_SAND
 	jr nz, .not_sand
-	ld a, [wOnBike]
-	cp 0
+	ld a, [wPlayerState]
+	cp PLAYER_NORMAL
 	jr z, .not_sand
-	ld a, 69
-	ld [wSkateboardGrinding], a
 	ld a, [wWalkingDirection]
 	ld [wPlaceBallsY], a
 	xor a
 	ld [wOnBike], a
+	ld [wOnSkateboard], a
 	ld a, 9
 	ld [wStuckInSandCounter], a
 	ld [wWildEncounterCooldown], a

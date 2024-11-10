@@ -2718,6 +2718,8 @@ BikeFunction: ; d0b3
 	ld a, [wPlayerStandingTile]
 	cp COLL_NO_BIKE
 	jp z, .CannotUseBike
+	cp COLL_SAND
+	jp z, .CannotUseBike
 	
 	call .CheckEnvironment
 	jr c, .CannotUseBike
@@ -2777,9 +2779,6 @@ BikeFunction: ; d0b3
 	ret
 
 .CheckEnvironment: ; d121
-	ld a, [wPlayerStandingTile]
-	cp COLL_SAND
-	jr z, .nope
 	call GetMapPermission
 	call CheckBikeMap
 	jr z, .ok
@@ -2863,6 +2862,11 @@ SkateboardFunction: ; d0b3
 	ld hl, wHaveFollower
 	bit 0, [hl] ; ENGINE_BIKE_GEAR
 	jr nz, .CannotUseSkateboard ;set
+	ld a, [wPlayerStandingTile]
+	cp COLL_NO_BIKE
+	jp z, .CannotUseSkateboard
+	cp COLL_SAND
+	jp z, .CannotUseSkateboard
 	
 	call .CheckEnvironment
 	jr c, .CannotUseSkateboard

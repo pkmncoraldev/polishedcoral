@@ -1,15 +1,5 @@
 ; S. Onwa Pokémon in water
 
-	map_id ROUTE_16
-	db 6 percent ; encounter rate
-	db 29, STARYU		;30%
-	db 29, WINGULL		;30%
-	db 29, HORSEA		;20%
-	db 29, MAREANIE		;10%
-	db 29, CORSOLA		;5%
-	db 29, CHINCHOU		;4%
-	db 29, CHINCHOU		;1%
-
 	map_id SHIMMER_CITY
 	db 6 percent ; encounter rate
 	db 29, STARYU		;30%

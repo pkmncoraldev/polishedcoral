@@ -317,25 +317,21 @@ ENDM
 	connection east, Route15, ROUTE_15, 14
 	
 	map_attributes Route15, ROUTE_15, $35, SOUTH | WEST | EAST
-	connection south, Route16, ROUTE_16, 7
+	connection south, ShimmerCity, SHIMMER_CITY, 0
 	connection west, Route14, ROUTE_14, -14
 	connection east, SunbeamBeach, SUNBEAM_BEACH, -14
 	
-	map_attributes Route16, ROUTE_16, $35, NORTH | SOUTH
-	connection north, Route15, ROUTE_15, -7
-	connection south, ShimmerCity, SHIMMER_CITY, -3
-	
 	map_attributes ShimmerCity, SHIMMER_CITY, $35, NORTH | WEST | EAST
-	connection north, Route16, ROUTE_16, 3
-	connection west, ShimmerHarbor, SHIMMER_HARBOR, -1
-	connection east, Route19, ROUTE_19, -2
+	connection north, Route15, ROUTE_15, 0
+	connection west, ShimmerHarbor, SHIMMER_HARBOR, 0
+	connection east, Route19, ROUTE_19, -1
 	
 	map_attributes ShimmerHarbor, SHIMMER_HARBOR, $35, EAST
-	connection east, ShimmerCity, SHIMMER_CITY, 1
+	connection east, ShimmerCity, SHIMMER_CITY, 0
 	
 	map_attributes Route19, ROUTE_19, $30, SOUTH | WEST
 	connection south, Route20, ROUTE_20, 11
-	connection west, ShimmerCity, SHIMMER_CITY, 2
+	connection west, ShimmerCity, SHIMMER_CITY, 1
 	
 	map_attributes Route20, ROUTE_20, $30, NORTH | SOUTH
 	connection north, Route19, ROUTE_19, -11
@@ -353,7 +349,7 @@ ENDM
 	
 	map_attributes Route18, ROUTE_18, $71, NORTH | SOUTH
 	connection north, Route18North, ROUTE_18_NORTH, 5
-	connection south, Route16, ROUTE_17, -14
+	connection south, Route17, ROUTE_17, -14
 	
 	map_attributes Route18North, ROUTE_18_NORTH, $02, NORTH | SOUTH
 	connection north, DesertWasteland1, DESERT_WASTELAND_1, 2

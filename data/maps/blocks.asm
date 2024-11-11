@@ -552,7 +552,7 @@ LusterSewersMukRoom_BlockData:
 	INCBIN "maps/LusterSewersMukRoom.ablk.lz"
 	
 Route6South_BlockData:
-	INCBIN "maps/Route6South.ablk.lz"
+	INCBIN "maps/Route16.ablk.lz"
 	
 LusterMallFurniture_BlockData:
 	INCBIN "maps/LusterMallFurniture.ablk.lz"
@@ -713,9 +713,6 @@ Route14_BlockData:
 	
 Route15_BlockData:
 	INCBIN "maps/Route15.ablk.lz"
-	
-Route16_BlockData:
-	INCBIN "maps/Route16.ablk.lz"
 	
 Airport_BlockData:
 	INCBIN "maps/Airport.ablk.lz"

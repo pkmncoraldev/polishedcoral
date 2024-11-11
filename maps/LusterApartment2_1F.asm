@@ -17,5 +17,8 @@ LusterApartment2_1F_MapScriptHeader:
 	
 	
 LusterApartment2_1F_NPC:
-	clearevent EVENT_MINA_APARTMENT_EMPTY	;debug
-	end
+	jumptextfaceplayer LusterApartment2_1F_NPCText1
+	
+LusterApartment2_1F_NPCText1:
+	text "TODO"
+	done

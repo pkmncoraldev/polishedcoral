@@ -142,7 +142,7 @@ LusterApartment2_2FJournalText2:
 	line "!!NOT!! a diary!"
 	
 	para "★List of spots to"
-	line "visit in ONWA:★"
+	line "visit in ONWA★"
 	
 	para "✓A pretty pink"
 	line "grove."
@@ -150,14 +150,14 @@ LusterApartment2_2FJournalText2:
 	
 LusterApartment2_2FJournalTextIsland:
 	text "-A little island"
-	line "in the bright"
-	cont "sunshine."
+	line "in the sea NORTH"
+	cont "of SUNBEAM ISLAND."
 	done
 	
 LusterApartment2_2FJournalTextIslandDone:
 	text "✓A little island"
-	line "in the bright"
-	cont "sunshine."
+	line "in the sea NORTH"
+	cont "of SUNBEAM ISLAND."
 	done
 	
 LusterApartment2_2FJournalTextBridge:

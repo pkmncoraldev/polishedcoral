@@ -59,7 +59,7 @@ GlintApt21FNpc2Text:
 GlintApt21FNpc3Text1:
 	text "There's a painter"
 	line "girl from overseas"
-	cont "staying upstairs."
+	cont "staying here."
 	
 	para "She's never around,"
 	line "though."
@@ -72,7 +72,7 @@ GlintApt21FNpc3Text1:
 GlintApt21FNpc3Text2:
 	text "That painter chick"
 	line "that was staying"
-	cont "upstairs is gone…"
+	cont "here is gone…"
 	
 	para "“MINA” <WAIT_M>I think it"
 	line "was."

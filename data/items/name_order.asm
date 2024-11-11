@@ -273,7 +273,7 @@ ItemNameOrder:
 
 	db NAM_JAW_FOSSIL ; 56
 	db NAM_SAIL_FOSSIL  ; 2e
-	db NAM_OLD_AMBER    ; 93
+	db NAM_MIRACLETONIC    ; 93
 
 	db NAM_SUNSHINE_TEA ; 88
 	db NAM_SWEET_HONEY  ; e8

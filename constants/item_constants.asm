@@ -274,7 +274,7 @@
 
 	const COVER_FOSSIL ; f0
 	const PLUME_FOSSIL ; f1
-	const OLD_AMBER    ; f2 - replace
+	const MIRACLETONIC ; f2
 
 	const SUNSHINE_TEA ; f3
 	const SWEET_HONEY  ; f4
@@ -441,7 +441,7 @@
 	const NAM_NEVERMELTICE ; 90
 	const NAM_NUGGET       ; 91
 	const NAM_LIQUID_SUN ; 92
-	const NAM_OLD_AMBER    ; 93
+	const NAM_MIRACLETONIC ; 93
 	const NAM_OLD_ROD      ; 94
 	const NAM_OLD_SEA_MAP  ; 95
 	const NAM_ORAN_BERRY   ; 96

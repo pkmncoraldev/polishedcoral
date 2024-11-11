@@ -241,7 +241,7 @@ ItemIconPointers:
 	dba BottleCapIcon
 	dba CoverFossilIcon
 	dba PlumeFossilIcon
-	dba UnusedItemIcon
+	dba MiracleTonicIcon
 	dba SunshineTeaIcon
 	dba SweetHoneyItemIcon
 	dba UnusedItemIcon

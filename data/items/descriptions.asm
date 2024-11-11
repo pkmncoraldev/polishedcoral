@@ -240,7 +240,7 @@ ItemDescriptions:
 	dw BottleCapDesc
 	dw JawFossilDesc
 	dw SailFossilDesc
-	dw OldAmberDesc
+	dw MiracleTonicDesc
 	dw SunshineTeaDesc
 	dw SweetHoneyDesc
 	dw FlowerMailDesc
@@ -1149,9 +1149,9 @@ SailFossilDesc:
 	db   "A fossil of a"
 	next "#MON.@"
 
-OldAmberDesc:
-	db   "Fossilized resin"
-	next "containing DNA.@"
+MiracleTonicDesc:
+	db   "Fully heals entire"
+	next "party. Very rare!@"
 
 FlowerMailDesc:
 	db   "Flower-print Mail."

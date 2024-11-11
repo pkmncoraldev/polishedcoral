@@ -240,7 +240,7 @@ ItemNames::
 	db "BOTTLE CAP@"
 	db "COVER FOSSIL@"
 	db "PLUME FOSSIL@"
-	db "OLD AMBER@"
+	db "MIRACLETONIC@"
 	db "SUNSHINE TEA@"
 	db "SWEET HONEY@"
 	db "FLOWER MAIL@"

@@ -2,8 +2,6 @@
 _SacredAsh: ; 507e6
 	xor a
 	ld [wItemEffectSucceeded], a
-	call CheckAnyFaintedMon
-	ret nc
 
 	ld hl, SacredAshScript
 	call QueueScript
@@ -49,17 +47,32 @@ CheckAnyFaintedMon: ; 507fb
 ; 50821
 
 SacredAshScript: ; 0x50821
-	special HealParty
 	reloadmappart
-	playsound SFX_WARP_TO
-rept 3
+	opentext
+	writetext AskSacredAshText
+	yesorno
+	iftrue .yes
+	writetext AskSacredAshText2
+	waitbutton
+	closetext
+	giveitem MIRACLETONIC
+	end
+.yes
+	writetext UnknownText_0x508452
+	waitbutton
+	closetext
+	pause 5
 	special FadeOutPalettes
+	special HealParty
+	special SaveMusic
+	playmusic MUSIC_HEAL
+	pause 60
+	special RestoreMusic
+	callasm LoadMapPals
 	special FadeInPalettes
-endr
-	waitsfx
+	pause 5
+	opentext
 	writetext UnknownText_0x50845
-	playsound SFX_CAUGHT_MON
-	waitsfx
 	waitendtext
 ; 0x50845
 
@@ -67,4 +80,19 @@ UnknownText_0x50845: ; 0x50845
 	; 's #MON were all healed!
 	text_jump UnknownText_0x1c0b65
 	db "@"
-; 0x5084a
+
+UnknownText_0x508452: ; 0x50845
+	; 's #MON were all healed!
+	text_jump UnknownText_0x1c0b652
+	db "@"
+
+AskSacredAshText:
+	text "Are you sure you"
+	line "want to use the"
+	cont "MIRACLETONIC?"
+	done
+	
+AskSacredAshText2:
+	text "Better save it"
+	line "for later…"
+	done

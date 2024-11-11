@@ -255,7 +255,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; BOTTLE_CAP
 	dw NoEffect         ; COVER_FOSSIL
 	dw NoEffect         ; PLUME_FOSSIL
-	dw NoEffect         ; OLD_AMBER
+	dw SacredAsh         ; MIRACLETONIC
 	dw RestoreHPTeaEffect         ; SUNSHINE_TEA
 	dw NoEffect         ; SWEET_HONEY
 	dw NoEffect         ; FLOWER_MAIL

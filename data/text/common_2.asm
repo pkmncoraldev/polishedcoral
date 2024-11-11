@@ -450,7 +450,7 @@ UnknownText_0x1c0958::
 	prompt
 
 UnknownText_0x1c0965::
-	text "Not even a nibble!"
+	text "Not even a nibble…"
 	prompt
 
 UnknownText_0x1c099a::
@@ -559,6 +559,12 @@ UnknownText_0x1c0b65::
 	text "<PLAYER>'s #MON"
 	line "were all healed!"
 	done
+	
+UnknownText_0x1c0b652::
+	text "<PLAYER> used the"
+	line "MIRACLETONIC."
+	done
+	
 
 Text_AnEGGCantHoldAnItem::
 	text "An EGG can't hold"

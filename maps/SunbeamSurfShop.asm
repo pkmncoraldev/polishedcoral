@@ -132,6 +132,13 @@ SunbeamIslandSurfShopNPC2:
 	opentext
 	writetext SunbeamIslandSurfShopNPC2Text1
 	waitbutton
+	writebyte RAICHU
+	special Special_FindThatSpecies
+	iftrue .haverai
+	closetext
+	end
+.haverai
+	special FadeOutPalettes
 	callasm SunbeamIslandSurfShopRaichuAsm
 	ifequal 4, .wrong_raichu
 	ifequal 3, .cancel

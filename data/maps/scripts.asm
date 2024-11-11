@@ -186,6 +186,7 @@ INCLUDE "maps/LakeOnwaBoatHouseLeft.asm"
 INCLUDE "maps/LakeOnwaNameRaterHouse.asm"
 INCLUDE "maps/LakeOnwaItemHouse.asm"
 INCLUDE "maps/SunbeamDodrioHouse.asm"
+INCLUDE "maps/SunbeamSoftSandHouse.asm"
 
 
 SECTION "Sunbeam Island Scripts", ROMX
@@ -196,7 +197,6 @@ INCLUDE "maps/SunbeamBoatHouse.asm"
 INCLUDE "maps/SunbeamSurfShop.asm"
 INCLUDE "maps/SunbeamBikiniContest.asm"
 INCLUDE "maps/SunbeamOldCouplesHouse.asm"
-INCLUDE "maps/SunbeamSoftSandHouse.asm"
 INCLUDE "maps/SunbeamTradeHouse.asm"
 INCLUDE "maps/SprucesLab.asm"
 INCLUDE "maps/SunbeamReserve.asm"

@@ -3057,10 +3057,6 @@ NettSpecs: ; f73e
 	farjp _NettSpecs
 
 SacredAsh: ; f753
-	ld a, [wInitialOptions]
-	bit NUZLOCKE_MODE, a
-	jp nz, Revive_NuzlockeFailureMessage
-
 	farcall _SacredAsh
 	ld a, [wItemEffectSucceeded]
 	cp $1

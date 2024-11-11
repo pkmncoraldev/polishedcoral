@@ -27,7 +27,9 @@ Route18North_MapScriptHeader:
 	xy_trigger 1, 20,  8, 0, Route18NorthDark, 0, 0
 	xy_trigger 1, 23,  9, 0, Route18NorthDark, 0, 0
 
-	db 0 ; bg events
+	db 2 ; bg events
+	signpost  7, 13, SIGNPOST_JUMPTEXT, Route18NorthSign
+	signpost 22,  7, SIGNPOST_JUMPTEXT, Route18NorthUnlitFire
 
 	db 5 ; object events
 	object_event  0,  4, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route18NorthCampfire, EVENT_HIDE_OW_OBJECTS_BROWN
@@ -95,7 +97,25 @@ Route18NorthCallback:
 	return
 	
 Route18NorthCampfire:
-	end
+	jumptext Route18NorthCampfireText
+	
+Route18NorthCampfireText:
+	text "A fire is blazing!"
+	done
+	
+Route18NorthSign:
+	text "Beware the cursed"
+	line "sands."
+	
+	para "Those who don't"
+	line "know the way shall"
+	cont "surely wander for"
+	cont "eternity."
+	done
+	
+Route18NorthUnlitFire:
+	text "An unlit campfire."
+	done
 	
 Route18NorthLight:
 	setflag ENGINE_NEAR_CAMPFIRE
@@ -140,7 +160,18 @@ Route18NorthNPC1:
 	faceplayer
 	opentext
 	writetext Route18NorthNPC1Text5
-	waitbutton
+	yesorno
+	iffalse .no_heal
+	closetext	
+	special FadeOutPalettesBlack
+	special HealParty
+	special SaveMusic
+	playmusic MUSIC_HEAL
+	pause 60
+	special RestoreMusic
+	callasm LoadMapPals
+	special FadeInPalettes
+.no_heal
 	closetext
 	spriteface ROUTE_18_TRAILER_NPC, LEFT
 	end
@@ -181,6 +212,10 @@ Route18NorthNPC1Text5:
 	line "song I heard in"
 	cont "town stuck in"
 	cont "my head!"
+	
+	para "While you're here,"
+	line "would you like to"
+	cont "rest a while?"
 	done
 	
 Route18NorthNPC2Text1:

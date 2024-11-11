@@ -344,9 +344,9 @@ MAP_NONE   EQU 0
 	map_const DESERT_WASTELAND_5,              			   9,  9 ; 17
 	map_const DESERT_WASTELAND_6,              			   9,  9 ; 18
 	map_const DESERT_WASTELAND_7,              			   9,  9 ; 19
-	map_const DESERT_WASTELAND_8,              			   9,  9 ; 20
+	map_const DESERT_WASTELAND_8,              			   9, 14 ; 20
 	map_const DESERT_WASTELAND_9,              			   9,  9 ; 21
-	map_const DESERT_WASTELAND_OASIS,          			  11, 10 ; 22
+	map_const DESERT_WASTELAND_OASIS,          			  11, 11 ; 22
 	map_const DESERT_TEMPLE_OUTSIDE,           			  17, 13 ; 23
 	
 	newgroup													 ; 18

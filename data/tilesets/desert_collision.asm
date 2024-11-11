@@ -100,8 +100,8 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 63
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 64
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 65
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 66
-	tilecoll NO_OLLIE, NO_OLLIE, FLOOR, WALL ; 67
+	tilecoll WALL, WALL, WALL, WALL ; 66
+	tilecoll WALL, WALL, WALL, WALL ; 67
 	tilecoll NO_OLLIE, FLOOR, NO_OLLIE, FLOOR ; 68
 	tilecoll FLOOR, NO_OLLIE, FLOOR, NO_OLLIE ; 69
 	tilecoll NO_OLLIE, UP_WALL, NO_OLLIE, FLOOR ; 6a

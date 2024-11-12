@@ -25,7 +25,7 @@ ShimmerLabExperimentalLab_MapScriptHeader:
 	signpost  1,  4, SIGNPOST_READ, ShimmerLabMachine2
 	signpost  1,  8, SIGNPOST_READ, ShimmerLabMachine2
 	signpost  1,  9, SIGNPOST_READ, ShimmerLabMachine2
-	signpost  5,  1, SIGNPOST_READ, ShimmerLabMachine
+	signpost -1, -1, SIGNPOST_READ, ShimmerLabMachine
 	signpost  5,  8, SIGNPOST_READ, ShimmerLabMachine
 	signpost  5,  9, SIGNPOST_READ, ShimmerLabMachine
 

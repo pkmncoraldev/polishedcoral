@@ -256,6 +256,11 @@ AI_TryItem: ; 38105
 	inc a
 	ld [wEnemyGoesFirst], a
 	ld [wEnemyUsingItem], a
+	
+	
+	ld a, [wEnemyTurnsTaken]
+	inc a
+	ld [wEnemyTurnsTaken], a
 
 	scf
 	ret

@@ -37,6 +37,12 @@ DesertTempleTopLeftSwitch:
 	writetext DesertTemple1SwitchText2
 	waitbutton
 	closetext
+	pause 25
+	opentext
+	writetext DesertTemple1SwitchText4
+	playsound SFX_TEMPLE_RUMBLE
+	earthquake 60
+	closetext	
 	setevent EVENT_TEMPLE_RUMBLING
 	callasm DesertTempleTopLeftSetTimerAsm
 	dotrigger $1

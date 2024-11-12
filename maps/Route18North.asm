@@ -177,12 +177,16 @@ Route18NorthNPC1:
 	end
 	
 Route18NorthNPC2:
+	checkevent EVENT_DESERT_TEMPLE_2_POKE_BALL
+	iftrue .got_pearl
 	checkevent EVENT_TALKED_TO_ROUTE_18_NORTH_NPC
 	iftrue .already_talked
 	setevent EVENT_TALKED_TO_ROUTE_18_NORTH_NPC
 	jumptextfaceplayer Route18NorthNPC2Text1
 .already_talked
 	jumptextfaceplayer Route18NorthNPC2Text2
+.got_pearl
+	jumptextfaceplayer Route18NorthNPC2Text3
 	
 Route18NorthNPC1Text1:
 	text "They say that once"
@@ -273,4 +277,13 @@ Route18NorthNPC2Text2:
 	line "find some more"
 	cont "information back"
 	cont "in town…"
+	done
+	
+Route18NorthNPC2Text3:
+	text "A BLACK PEARL?"
+	
+	para "You should show"
+	line "it to PROF. HILL"
+	cont "in PORT SHIMMER"
+	cont "right away!"
 	done

@@ -1,5 +1,8 @@
 DesertTemple1_MapScriptHeader:
-	db 0 ; scene scripts
+	db 3 ; scene scripts
+	scene_script DesertTemple1Trigger0
+	scene_script DesertTemple1Trigger1
+	scene_script DesertTemple1Trigger2
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, DesertTemple1Callback
@@ -51,7 +54,6 @@ DesertTemple1_MapScriptHeader:
 
 DesertTemple1Callback:
 	setevent EVENT_ALWAYS_SET
-	clearevent EVENT_TEMPLE_RUMBLING
 	domaptrigger DESERT_TEMPLE_LOWER_LEFT, $0
 	callasm DesertTemple1ClearTimerAsm
 	clearevent EVENT_SANDSTORM_HAPPENING
@@ -95,6 +97,21 @@ DesertTemple1Callback:
 	changeblock $c, $4, $d9
 .end
 	return
+	
+DesertTemple1Trigger0:
+DesertTemple1Trigger1:
+DesertTemple1Trigger2:
+	checkevent EVENT_TEMPLE_RUMBLING
+	iffalse .skip
+	playsound SFX_THUNDER
+	earthquake 20
+	opentext
+	writetext DesertTemple1CollapseText2
+	waitbutton
+	closetext
+	clearevent EVENT_TEMPLE_RUMBLING
+.skip
+	end
 
 DesertTemple1ClearTimerAsm:
 	ld hl, wStatusFlags2
@@ -324,6 +341,11 @@ DesertTemple1SwitchText3:
 	text "A torch lit up…"
 	done
 	
+DesertTemple1SwitchText4:
+	text "The roof is"
+	line "collapsing!"
+	done
+	
 DesertTemple1TorchOff:
 	text "Some kind of"
 	line "torch."
@@ -356,3 +378,9 @@ DesertTemple1CollapseText:
 	text "The entire room"
 	line "is collapsed in!"
 	done
+	
+DesertTemple1CollapseText2:
+	text "Whew!<WAIT_S>"
+	line "Close call!"
+	done
+	

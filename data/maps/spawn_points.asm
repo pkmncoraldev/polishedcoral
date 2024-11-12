@@ -16,7 +16,7 @@ SpawnPoints: ; 0x152ab
 	spawn FLICKER_STATION,			   11, 30
 	spawn TWINKLE_TOWN,				   11, 48
 	spawn LUSTER_CITY_RESIDENTIAL,	   17, 26
-	spawn SHIMMER_CITY,                37, 16
+	spawn SHIMMER_CITY,                37, 18
 	spawn BRILLO_TOWN,				   22, 12
 	spawn RADIANT_TOWNSHIP,             7,  8
 	spawn DUSK_TURNPIKE,			   23, 32

@@ -10,7 +10,13 @@ DesertTemple2_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 6 ; bg events
+	signpost  4,  3, SIGNPOST_READ, DesertTemple2Torch
+	signpost  4,  6, SIGNPOST_READ, DesertTemple2Torch
+	signpost  6,  1, SIGNPOST_READ, DesertTemple2Torch
+	signpost  6,  8, SIGNPOST_READ, DesertTemple2Torch
+	signpost 14,  3, SIGNPOST_READ, DesertTemple2Torch
+	signpost 14,  6, SIGNPOST_READ, DesertTemple2Torch
 
 	db 4 ; object events
 	person_event SPRITE_DISGUISEMAN,  2,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DesertTemple2Pokeball, EVENT_DESERT_TEMPLE_2_POKE_BALL
@@ -25,6 +31,7 @@ DesertTemple2_MapScriptHeader:
 	const DESERT_TEMPLE_2_POKEBALL_DUMMY
 
 DesertTemple2Callback:
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	checkevent EVENT_DESERT_TEMPLE_VOLCARONA_GONE
 	iffalse .end
 	changeblock $2, $2, $ca
@@ -35,6 +42,13 @@ DesertTemple2Callback:
 	changeblock $8, $4, $cb
 .end
 	return
+
+DesertTemple2Torch:
+	checkevent EVENT_DESERT_TEMPLE_VOLCARONA_GONE
+	iffalse .off
+	jumptext DesertTemple1TorchOn
+.off
+	jumptext DesertTemple1TorchOff
 
 DesertTemple2Pokeball:
 	checkevent EVENT_DESERT_TEMPLE_VOLCARONA_GONE
@@ -54,12 +68,20 @@ DesertTemple2Pokeball:
 	pause 13
 	special SaveMusic
 	playmusic MUSIC_NONE
-	spriteface PLAYER, UP
 	writetext DesertTemple2PokeballText2
 	cry VOLCARONA
 	waitsfx
 	pause 5
 	closetext
+	pause 10
+	applyonemovement PLAYER, turn_step_left
+	spriteface PLAYER, LEFT
+	pause 10
+	applyonemovement PLAYER, turn_step_right
+	spriteface PLAYER, RIGHT
+	pause 10
+	applyonemovement PLAYER, turn_step_left
+	spriteface PLAYER, LEFT
 	pause 30
 	
 	playsound SFX_MORNING_SUN
@@ -79,6 +101,8 @@ DesertTemple2Pokeball:
 	callasm LoadMapPals
 	special FadeInPalettes
 	waitsfx
+	pause 5
+	spriteface PLAYER, DOWN
 	
 	pause 40
 ;	cry VOLCARONA
@@ -99,10 +123,14 @@ DesertTemple2Pokeball:
 	applymovement PLAYER, Movement_DesertTemple2ShadowPlayerFall2
 	disappear DESERT_TEMPLE_2_VOLCARONA
 	disappear DESERT_TEMPLE_2_POKEBALL_DUMMY
-	pause 20
+	pause 40
 	special Special_ForcePlayerStateNormal
+	pause 5
+	applyonemovement PLAYER, turn_step_up
+	applyonemovement PLAYER, remove_fixed_facing
 	pause 30
 	
+	applyonemovement DESERT_TEMPLE_2_VOLCARONA_2, turn_step_left
 	cry VOLCARONA
 	waitsfx
 	playsound SFX_METRONOME

@@ -164,9 +164,8 @@ ShimmerLabResearchRoomPotText:
 	done
 	
 ShimmerLabResearchRoomPearlText:
-	text "<PLAYER> handed"
-	line "over the"
-	cont "BLACK PEARL!"
+	text "<PLAYER> gave over"
+	line "the BLACK PEARL!"
 	done
 
 ShimmerLabResearchRoomProfText1:

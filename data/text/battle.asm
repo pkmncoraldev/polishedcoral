@@ -813,6 +813,16 @@ ObliviousPreventedDestinyKnot:
 	cont "infatuating it!"
 	prompt
 
+UnknownText_Ability_StatDown_Failed:
+	text "<TARGET>'s"
+	line "@"
+	text_from_ram wStringBuffer1
+	text ""
+	cont "prevents lowering"
+	cont "@"
+	text_from_ram wStringBuffer2
+	text "!"
+	prompt
 
 DestinyKnotInfatuatedUser:
 	text "<TARGET>'s"

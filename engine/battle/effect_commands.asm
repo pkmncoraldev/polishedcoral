@@ -5802,7 +5802,7 @@ BattleCommand_statdown: ; 362e3
 	ld c, a
 	call GetOpponentAbilityAfterMoldBreaker
 	cp CLEAR_BODY
-	jp z, .Failed
+	jp z, .ability_failed
 	cp HYPER_CUTTER
 	jr z, .atk
 	cp BIG_PECKS
@@ -5813,15 +5813,15 @@ BattleCommand_statdown: ; 362e3
 .atk
 	ld a, c
 	and a ; cp ATTACK
-	jr z, .Failed
+	jr z, .ability_failed
 .def
 	ld a, c
 	cp DEFENSE
-	jr z, .Failed
+	jr z, .ability_failed
 .acc
 	ld a, c
 	cp ACCURACY
-	jr z, .Failed
+	jr z, .ability_failed
 
 .no_relevant_ability
 	call CheckMist
@@ -5875,12 +5875,22 @@ BattleCommand_statdown: ; 362e3
 .CouldntLower:
 	inc [hl]
 .CantLower:
+	ld a, 4
+	ld [wFailedMessage], a
+	ld a, 1
+	ld [wAttackMissed], a
+	ret
+.ability_failed:
+	ld a, BATTLE_VARS_ABILITY_OPP
+	call GetBattleVar
+	ld b, a
+	farcall BufferAbility
 	ld a, 3
 	ld [wFailedMessage], a
 	ld a, 1
 	ld [wAttackMissed], a
 	ret
-
+	
 .Failed:
 	ld a, 1
 	ld [wFailedMessage], a
@@ -6024,11 +6034,16 @@ BattleCommand_statdownfailtext: ; 3646a
 	dec a
 	ld hl, ProtectedByMistText
 	jp z, StdBattleTextBox
+	push af
 	ld a, [wLoweredStat]
 	and $f
 	ld b, a
 	inc b
 	call GetStatName
+	pop af
+	dec a
+	ld hl, UnknownText_Ability_StatDown_Failed
+	jp z, StdBattleTextBox
 	ld hl, WontDropAnymoreText
 	jp StdBattleTextBox
 

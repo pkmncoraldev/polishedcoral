@@ -691,8 +691,7 @@ RanchRidePartyFullText:
 	text "Oh!"
 	
 	para "You already have"
-	line "6 #MON on"
-	cont "you…"
+	line "6 #MON on you…"
 	
 	para "You can pick it"
 	line "up from the lady"

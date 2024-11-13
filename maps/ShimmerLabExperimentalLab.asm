@@ -154,12 +154,18 @@ ShimmerLabFossilCutscene:
 	iftrue .own_cover_and_plume
 	writetext AskCoverFossilText
 	yesorno
+	iffalse .maybe_later
+	checkcode VAR_PARTYCOUNT
+	if_equal 6, .PartyFull
 	iftrue ResurrectCoverFossil
 	jump .maybe_later
 
 .own_plume
 	writetext AskPlumeFossilText
 	yesorno
+	iffalse .maybe_later
+	checkcode VAR_PARTYCOUNT
+	if_equal 6, .PartyFull
 	iftrue ResurrectPlumeFossil
 	jump .maybe_later
 
@@ -171,7 +177,18 @@ ShimmerLabFossilCutscene:
 	ifequal $2, ResurrectPlumeFossil
 
 .maybe_later:
-	jumpopenedtext MaybeLaterText
+	writetext MaybeLaterText
+	waitbutton
+	closetext
+	spriteface SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, UP
+	end
+	
+.PartyFull:
+	writetext ShimmerLabPartyFullText
+	waitbutton
+	closetext
+	spriteface SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, UP
+	end
 
 CoverDomeMenuDataHeader:
 	db $40 ; flags
@@ -476,13 +493,13 @@ endr
 	writetext ShimmerLabTirtougaText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke TIRTOUGA, 20
+	givepoke TIRTOUGA, 33
 	jump .end
 .archen
 	writetext ShimmerLabArchenText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke ARCHEN, 20
+	givepoke ARCHEN, 33
 .end
 	writetext ShimmerLabFossilCutsceneText10
 	waitbutton
@@ -498,6 +515,7 @@ endr
 	disappear SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_TEAL
 	disappear SHIMMER_LAB_EXPERIMENTAL_PLAYER_CUTSCENE_PINK
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
+	spriteface SHIMMER_LAB_EXPERIMENTAL_LAB_SCIENTIST, UP
 	end
 	
 MakePlayerScientistAsm:
@@ -658,6 +676,16 @@ NoFossilsText:
 MaybeLaterText:
 	text "Come back if you"
 	line "change your mind."
+	done
+	
+ShimmerLabPartyFullText:
+	text "You already have"
+	line "6 #MON on you…"
+	
+	para "You can use that"
+	line "PC over there."
+	
+	para "Quickly!"
 	done
 	
 Movement_ShimmerLabFossilCutscenePlayer1:

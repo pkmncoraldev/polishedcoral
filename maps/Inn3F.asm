@@ -74,7 +74,7 @@ Inn3F_MapScriptHeader:
 	person_event SPRITE_BALL_CUT_FRUIT,  3,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn3FBall2, EVENT_INN_3F_POKEBALL_2
 	person_event SPRITE_BALL_CUT_FRUIT,  5,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn3FBall3, EVENT_INN_3F_POKEBALL_3
 	person_event SPRITE_BALL_CUT_FRUIT,  2,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn3FBall4, EVENT_INN_3F_POKEBALL_4
-	person_event SPRITE_BALL_CUT_FRUIT,  3, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Inn3FWaterfall, EVENT_GOT_HM05_WATERFALL
+	person_event SPRITE_BALL_CUT_FRUIT,  3, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Inn3FBall5, EVENT_INN_3F_POKEBALL_5
 	person_event SPRITE_SNARE,  4, 19, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn3FSnareNPC2, EVENT_INN_SNARE_GONE
 	person_event SPRITE_SNARE,  4, 17, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn3FSnareNPC3, EVENT_INN_SNARE_GONE
 	person_event SPRITE_KAGE,  2, 18, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn3FKage, EVENT_INN_SNARE_GONE
@@ -94,17 +94,16 @@ Inn3F_MapScriptHeader:
 	const INN_3F_POKEBALL_2
 	const INN_3F_POKEBALL_3
 	const INN_3F_POKEBALL_4
-	const INN_3F_WATERFALL
+	const INN_3F_POKEBALL_5
 	const INN_3F_SNARE_NPC2
 	const INN_3F_SNARE_NPC3
 	const INN_3F_KAGE
 	
 Inn3FKage:
-	checkevent EVENT_INN_3F_TALKED_TO_KAGE_2
+	checkevent EVENT_INN_3F_TALKED_TO_KAGE
 	iftrue .done
-	dotrigger $1
 	opentext
-	writetext Inn3FKageText1
+	writetext Inn3FKageText1_2
 	waitbutton
 	closetext
 	setevent EVENT_INN_3F_TALKED_TO_KAGE
@@ -112,15 +111,13 @@ Inn3FKage:
 	end
 .done
 	callasm Inn1FResertScriptVar
-	jumptextfaceplayer Inn3FKageText3
+	jumptextfaceplayer Inn3FKageText7
 	
 Inn3FKageStop:
-	checkevent EVENT_GOT_HM05_WATERFALL
-	iffalse .forgot
-	dotrigger $2
+	dotrigger $0
 	applyonemovement INN_3F_KAGE, turn_step_down
 	opentext
-	writetext Inn3FWaterfallTextKage
+	writetext Inn3FNettSpecsTextKage
 	waitbutton
 	closetext
 	spriteface INN_3F_SNARE_NPC2, UP
@@ -150,14 +147,6 @@ Inn3FKageStop:
 	setevent EVENT_INN_3F_TALKED_TO_KAGE_2
 	domaptrigger INN_1F, $3
 	end
-.forgot
-	applyonemovement INN_3F_KAGE, turn_step_down
-	opentext
-	writetext Inn3FKageText4
-	waitbutton
-	closetext
-	applyonemovement PLAYER, step_up
-	end
 	
 Inn3FKageText1:
 	text "KAGE: Who are you?<WAIT_S>"
@@ -165,7 +154,7 @@ Inn3FKageText1:
 	
 	para "You say you got"
 	line "orders to fetch"
-	cont "this HM?"
+	cont "the NETT SPECS?"
 	
 	para "…<WAIT_L>Well?<WAIT_S>"
 	line "Get a move on!"
@@ -194,6 +183,24 @@ Inn3FKageText5:
 Inn3FKageText4:
 	text "Didn't you forget"
 	line "something?"
+	done
+	
+Inn3FKageText1_2:
+	text "KAGE: Who are you?<WAIT_S>"
+	line "The new recruit?"
+	done
+	
+Inn3FKageText6:
+	text "You say you got"
+	line "orders to fetch"
+	cont "the NETT SPECS?"
+	
+	para "…<WAIT_L>Well?<WAIT_S>"
+	line "Get a move on!"
+	done
+	
+Inn3FKageText7:
+	text "Hmm…"
 	done
 	
 Inn3F302Door:
@@ -428,46 +435,73 @@ Inn3FSetItem4Asm:
 	ld [wCurItemBallContents], a
 	ret
 	
-Inn3FWaterfall:
+Inn3FBall5:
 	checkevent EVENT_INN_3F_TALKED_TO_KAGE
-	iftrue .collect
+	iftrue .talked
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, INN_3F_KAGE, 15
 	opentext
-	writetext Inn3FWaterfallTextKage
+	writetext Inn3FNettSpecsTextKage
 	waitbutton
 	closetext
 	pause 5
 	spriteface PLAYER, UP
 	setlasttalked INN_3F_KAGE
-	jump Inn3FKage
-.collect
-	disappear INN_3F_WATERFALL
+	dotrigger $1
 	opentext
-	writetext ReceivedWaterfallText1
-	waitsfx
-	specialsound
-	waitbutton
-	writetext ReceivedWaterfallText2
+	writetext Inn3FKageText1
 	waitbutton
 	closetext
-	givetmhm HM_WATERFALL
-	setflag ENGINE_GOT_WATERFALL
+	setevent EVENT_INN_3F_TALKED_TO_KAGE
+	callasm Inn1FResertScriptVar
+.collect
+	spriteface PLAYER, RIGHT
+	pause 5
+	disappear INN_3F_POKEBALL_5
+	opentext
+	writetext ReceivedNettSpecsText1
+	waitsfx
+	giveitem NETT_SPECS
+	specialsound
+	waitbutton
+	writetext ReceivedNettSpecsText2
+	waitbutton
+	closetext
+	setevent EVENT_INN_3F_POKEBALL_5
 	callasm Inn1FResertScriptVar
 	end
+.talked
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, INN_3F_KAGE, 15
+	opentext
+	writetext Inn3FNettSpecsTextKage
+	waitbutton
+	closetext
+	pause 5
+	spriteface PLAYER, UP
+	setlasttalked INN_3F_KAGE
+	dotrigger $1
+	opentext
+	writetext Inn3FKageText6
+	waitbutton
+	closetext
+	setevent EVENT_INN_3F_TALKED_TO_KAGE
+	callasm Inn1FResertScriptVar
+	jump .collect
 	
-Inn3FWaterfallTextKage:
+Inn3FNettSpecsTextKage:
 	text "KAGE: Hold it!"
 	done
 	
-ReceivedWaterfallText1:
+ReceivedNettSpecsText1:
 	text "<PLAYER> found"
-	line "HM07 WATERFALL!"
+	line "NETT SPECS!"
 	done
 	
-ReceivedWaterfallText2:
-	text "<PLAYER> put HM07"
-	line "in the TM POCKET."
+ReceivedNettSpecsText2:
+	text "<PLAYER> put the"
+	line "NETT SPECS in"
+	cont "the KEY POCKET."
 	done
 	
 Inn3FCustomer1:

@@ -95,7 +95,7 @@ Inn1FKageScene:
 	disappear INN_1F_SNARE_2
 	disappear INN_1F_SNARE_KAGE
 	opentext
-	writetext Inn3FWaterfallTextKage
+	writetext Inn3FNettSpecsTextKage
 	waitbutton
 	closetext
 	spriteface INN_1F_CLERK, UP
@@ -283,7 +283,7 @@ Inn1FKageText2:
 	line "from SUNBEAM!"
 	
 	para "You ain't leavin'"
-	line "with that HM!"
+	line "with those SPECS!"
 	done
 	
 Inn1FKageText3:
@@ -321,19 +321,11 @@ Inn1FKageText7:
 	done
 	
 Inn1FKageText8:
-	text "Fine. <WAIT_M>Keep that"
-	line "WATERFALL HM."
+	text "Fine. <WAIT_M>Keep the"
+	line "NETT SPECS."
 	
-	para "You can't use it"
-	line "without a BADGE"
-	cont "from OBSCURA CITY,"
-	cont "anyway."
-	
-	para "And with the stuff"
-	line "going down over"
-	cont "there…"
-	
-	para "…"
+	para "We don't need 'em"
+	line "anymore anyway."
 	
 	para "You're a serious"
 	line "thorn in our side,"

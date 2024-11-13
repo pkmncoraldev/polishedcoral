@@ -184,6 +184,8 @@ PatchesPutMonInContest:
 	ret
 	
 PatchesPutContestInParty:
+	ld a, POKE_BALL
+	ld [wCurItem], a
 	farcall CheckPartyFullAfterContest
 	ret
 	

@@ -9,12 +9,45 @@ RadiantFlowerShop_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 14 ; bg events
+	signpost  2,  3, SIGNPOST_JUMPTEXT, RadiantFlowerShopFlowerText
+	signpost  2,  6, SIGNPOST_JUMPTEXT, RadiantFlowerShopFlowerText
+	signpost  3,  4, SIGNPOST_JUMPTEXT, RadiantFlowerShopFlowerText
+	signpost  3,  5, SIGNPOST_JUMPTEXT, RadiantFlowerShopFlowerText
+	signpost  6,  0, SIGNPOST_JUMPTEXT, RadiantFlowerShopFlowerText
+	signpost  5,  9, SIGNPOST_JUMPTEXT, RadiantFlowerShopSundriesText
+	signpost  6,  6, SIGNPOST_JUMPTEXT, RadiantFlowerShopSundriesText
+	signpost  6,  7, SIGNPOST_JUMPTEXT, RadiantFlowerShopSundriesText
+	signpost  6,  9, SIGNPOST_JUMPTEXT, RadiantFlowerShopSundriesText
+	signpost  7,  6, SIGNPOST_JUMPTEXT, RadiantFlowerShopSundriesText
+	signpost  7,  7, SIGNPOST_JUMPTEXT, RadiantFlowerShopSundriesText
+	signpost  7,  9, SIGNPOST_JUMPTEXT, RadiantFlowerShopSundriesText
+	signpost  2,  1, SIGNPOST_JUMPTEXT, RadiantFlowerShopRadioText
+	bg_event  1,  2, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_ERIKA
 
-	db 2 ; object events
+	db 3 ; object events
 	person_event SPRITE_DAISY,  3,  0, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantFlowerShopClerk, -1
 	person_event SPRITE_POKEFAN_F,  5,  6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantFlowerShopNPC, -1
+	hiddentape_event  1,  2, MUSIC_ERIKA, 1, EVENT_MUSIC_ERIKA
 
+
+RadiantFlowerShopRadioText:
+	text "Pop music is"
+	line "quietly playing."
+	done
+
+RadiantFlowerShopSundriesText:
+	text "Bottles of honey,"
+	line "teabags, various"
+	cont "other sundries."
+	done
+
+RadiantFlowerShopFlowerText:
+	text "Some flowers."
+	
+	para "They remind you"
+	line "of home…"
+	done
 
 RadiantFlowerShopNPC:
 	jumptextfaceplayer RadiantFlowerShopNPCText

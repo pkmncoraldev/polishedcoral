@@ -205,7 +205,7 @@
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; cc
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cd
 	tilecoll WALL, FLOOR, WALL, FLOOR ; ce
-	tilecoll FLOOR, COUNTER, FLOOR, COUNTER ; cf
+	tilecoll FLOOR, WALL, FLOOR, COUNTER ; cf
 	tilecoll WINDOW, WALL, WALL, WALL ; d0
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d1
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d2

@@ -179,7 +179,7 @@ Route10Mina:
 	waitsfx
 	winlosstext Route10MinaMinaWinText, 0
 	setlasttalked 3
-	loadtrainer MINA, 6
+	loadtrainer MINA, 2
 	startbattle
 	dontrestartmapmusic
 	reloadmap

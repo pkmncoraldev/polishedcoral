@@ -477,7 +477,7 @@ CheckMinaMons:
 	
 .next_mina_mon
 	pop hl
-	ld a, 11
+	ld a, 12
 	ld e, a
 .mina_mon_loop
 	inc hl
@@ -501,7 +501,7 @@ MinaLevels:
 	jr z, .end
 	ld e, a
 	pop af
-	add 5
+	add 4
 	push af
 	dec e
 	jr .mina_mon_level_loop

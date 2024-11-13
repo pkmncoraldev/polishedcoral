@@ -183,7 +183,10 @@ Inn2FCustomer1:
 	jumptextfaceplayer Inn2FCustomer1Text2
 	
 Inn2FCustomer1Text:
-	text "There's a strong"
+	text "Thank goodness"
+	line "you're here."
+	
+	para "There's a strong"
 	line "draft coming from"
 	cont "over by the bed."
 	done

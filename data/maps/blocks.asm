@@ -113,7 +113,6 @@ DuskHouse2_BlockData:
 	INCBIN "maps/DuskHouse2.ablk.lz"
 	
 LakeOnwaItemHouse_BlockData:
-DodrioRanchHouse_BlockData:
 	INCBIN "maps/RusticHouse.ablk.lz"
 	
 TwinkleRockHouse_BlockData:
@@ -703,6 +702,7 @@ DesertWastelandOasis_BlockData:
 	INCBIN "maps/DesertWastelandOasis.ablk.lz"
 	
 LakeOnwaNameRaterHouse_BlockData:
+DodrioRanchHouse_BlockData:
 	INCBIN "maps/LakeOnwaNameRaterHouse.ablk.lz"
 	
 Route8EncounterHouse_BlockData:

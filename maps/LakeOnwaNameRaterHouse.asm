@@ -9,10 +9,9 @@ LakeOnwaNameRaterHouse_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 2 ; bg events
 	signpost 1, 6, SIGNPOST_READ, LakeNameRaterBookshelf
 	signpost 1, 7, SIGNPOST_READ, LakeNameRaterBookshelf
-	signpost 0, 2, SIGNPOST_READ, LakeNameRaterRockTown
 
 	db 1 ; object events
 	person_event SPRITE_GENTLEMAN,  4,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, 0, PERSONTYPE_SCRIPT, 0, LakeNameRater, -1

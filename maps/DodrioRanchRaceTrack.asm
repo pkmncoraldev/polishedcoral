@@ -298,7 +298,8 @@ RanchRideRaceFinishLine:
 	writetext RanchRidePartyFullText
 	waitbutton
 	closetext
-	setevent EVENT_FINISHED_RANCH_RACE_ONCE
+	setevent EVENT_RANCH_CAN_GET_DODUO
+	setflag ENGINE_DONE_RANCH_RACE_TODAY
 	callasm DodrioRanchRaceTrackResetTimerAsm
 	end
 	
@@ -412,34 +413,6 @@ RanchRideRaceGuy:
 	closetext
 	end
 .trytostartrace
-	checkevent EVENT_FINISHED_RANCH_RACE_ONCE
-	iffalse .trytostartracecont
-	checkevent EVENT_FINISHED_RANCH_RACE_TWICE
-	iffalse .trytostartracecont
-	checkevent EVENT_RANCH_GOT_DODUO
-	iftrue .trytostartracecont
-	writetext RanchRideRaceText9
-	waitbutton
-	checkcode VAR_PARTYCOUNT
-	if_equal 6, .PartyFull2
-	writetext RanchRideGotDoduoText
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	givepoke DODUO, 10
-	special TeachDoduoExtremeSpeed
-	writetext RanchRideRaceText7
-	waitbutton
-	closetext
-	setevent EVENT_RANCH_GOT_DODUO
-	end
-	
-.PartyFull2:
-	writetext RanchRidePartyFullText
-	waitbutton
-	closetext
-	end
-	
-.trytostartracecont
 	checkflag ENGINE_DONE_RANCH_RACE_TODAY
 	iftrue .donefortoday
 	checkevent EVENT_JUST_FAILED_RANCH_RACE
@@ -721,8 +694,9 @@ RanchRidePartyFullText:
 	line "6 #MON on"
 	cont "you…"
 	
-	para "You need to make"
-	line "some room!"
+	para "You can pick it"
+	line "up from the lady"
+	cont "in the house."
 	done
 	
 RanchRideRaceLogsText:

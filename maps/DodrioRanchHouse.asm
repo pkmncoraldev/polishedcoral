@@ -17,6 +17,8 @@ DodrioRanchHouse_MapScriptHeader:
 RanchHouseDodrioGirl:
 	faceplayer
 	opentext
+	checkevent EVENT_RANCH_CAN_GET_DODUO
+	iftrue .get_doduo
 	writetext RanchHouseDodrioGirlText1
 	special PlaceMoneyTopRight
 	yesorno
@@ -43,6 +45,27 @@ RanchHouseDodrioGirl:
 	end
 .nomoney
 	writetext RanchHouseDodrioGirlText4
+	waitbutton
+	closetext
+	end
+.get_doduo
+	writetext RanchHouseDodrioGirlText5
+	waitbutton
+	checkcode VAR_PARTYCOUNT
+	if_equal 6, .PartyFull
+	writetext RanchRideGotDoduoText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke DODUO, 10
+	special TeachDoduoExtremeSpeed
+	writetext RanchHouseDodrioGirlText6
+	waitbutton
+	closetext
+	setevent EVENT_RANCH_GOT_DODUO
+	clearevent EVENT_RANCH_CAN_GET_DODUO
+	end
+.PartyFull
+	writetext RanchHouseDodrioGirlText7
 	waitbutton
 	closetext
 	end
@@ -100,5 +123,35 @@ RanchHouseDodrioGirlText4:
 	
 	para "Come back some"
 	line "other time!"
+	done
+	
+RanchHouseDodrioGirlText5:
+	text "Howdy, sugar."
+	
+	para "Did you come to"
+	line "pick up yer lil"
+	cont "prize DODUO?"
+	done
+	
+RanchHouseDodrioGirlText6:
+	text "That DODUO hatched"
+	line "just recently."
+	
+	para "It was born to"
+	line "run!"
+	
+	para "It's a natural,"
+	line "like you, sugar!"
+	
+	para "Come back tomorrow"
+	line "for a chance at"
+	cont "another prize!"
+	done
+	
+RanchHouseDodrioGirlText7:
+	text "Oh no!"
+	
+	para "You still gotta"
+	line "make some room!"
 	done
 	

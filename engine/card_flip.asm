@@ -2386,7 +2386,7 @@ endr
 	call DelayFrames
 	xor a
 	ld [wOnSkateboard], a
-	call DebugDrawCPUCards
+;	call DebugDrawCPUCards
 	jp .Increment
 .Clear
 	db "                    @"
@@ -2462,7 +2462,7 @@ endr
 	call CheckWhichCard
 	call GiveNewCardHL
 	call PlaceCard
-	call DebugDrawCPUCards
+;	call DebugDrawCPUCards
 	call ApplyTilemapInVBlank
 	call MoogooHideCursor
 	call WaitSFX
@@ -3111,7 +3111,7 @@ UpdatePlayerCard5:
 	jp ApplyTilemapInVBlank
 	
 MoogooMankey_UpdateScores:
-	call DebugDrawCPUCards
+;	call DebugDrawCPUCards
 
 	hlcoord $2, $e
 	ld de, wMoogooPlayerScore
@@ -4123,7 +4123,7 @@ ResetAIBuffer:
 	ld bc, 5
 	ld a, 50
 	call ByteFill
-	call DebugDrawCPUCards
+;	call DebugDrawCPUCards
 	ret
 	
 PlaceBetAI:
@@ -4133,11 +4133,11 @@ PlaceBetAI:
 ;A random value between 0 and 6 is applied to the base score of 50 as well.
 	call MoogooAIApplyRandomness
 	call ConsiderCurCPUChips
-	call DebugDrawCPUCards
+;	call DebugDrawCPUCards
 	call ConsiderCardValuesInPlay
-	call DebugDrawCPUCards
+;	call DebugDrawCPUCards
 	call ConsiderCardValuesInHand
-	call DebugDrawCPUCards
+;	call DebugDrawCPUCards
 	ret
 	
 ConsiderCurCPUChips:

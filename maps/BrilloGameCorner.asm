@@ -276,7 +276,53 @@ BrilloGameCornerMoogooMankeyText:
 	done
 	
 BrilloGameCornerMoogooMankeyTextRules:
-	text "RULES"
+	text "NOTE: THIS GAME IS"
+	line "STILL A WIP."
+	
+	para "IT SHOULD WORK,"
+	line "BUT IS UGLY AND "
+	cont "MIGHT BE BUGGY."
+	
+	para "SAVE BEFORE YOU"
+	line "PLAY!"
+	
+	para "…"
+	
+	para "Pick a suit and"
+	line "place a bet."
+	
+	para "Once everyone has"
+	line "placed a bet,"
+	cont "hands are dealt."
+	
+	para "Place another bet"
+	line "on a suit and then"
+	cont "play a card."
+	
+	para "Once every suit"
+	line "has a card played,"
+	
+	para "the one with the"
+	line "lowest value card"
+	cont "is eliminated, and"
+	cont "the round is over."
+	
+	para "If 2 or more suits"
+	line "are tied for the"
+	cont "lowest, keep play-"
+	cont "ing until the tie"
+	cont "is broken."
+	
+	para "Whoever has the"
+	line "most points after"
+	cont "2 rounds wins."
+	
+	para "…"
+	
+	para "MOOGOO MANKEY."
+	
+	para "Play with 50"
+	line "COINs?"
 	done
 	
 BrilloGameCornerMoogooMankeyTextNoCoins:

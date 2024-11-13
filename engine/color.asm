@@ -1460,14 +1460,14 @@ LoadMapPals::
 	cp MAP_ROUTE_19
 	jp z, .outside_cont
 	cp MAP_ROUTE_20
-	jp nz, .not_route_19
+	jp nz, .not_route_20
 	eventflagcheck EVENT_ROUTE_20_GRASS_YELLOW
 	jp z, .outside_cont
+.not_route_20
+	ld hl, MapObjectPalsSunflowers
+	jr .sunflowers_cont
 .radiant_field
 	ld hl, MapObjectPalsSunflowers2
-	jr .sunflowers_cont
-.not_route_19
-	ld hl, MapObjectPalsSunflowers
 .sunflowers_cont
 	ld a, [wTimeOfDayPal]
 	and 3

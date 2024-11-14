@@ -298,7 +298,7 @@ ENDM
 	connection west, LusterCityShopping, LUSTER_CITY_SHOPPING, -6
 	
 	map_attributes Route12, ROUTE_12, $02, EAST
-	connection east, Skatepark, SKATEPARK, 1
+	connection east, Skatepark, SKATEPARK, -4
 	
 	map_attributes Route11, ROUTE_11, $02, NORTH
 	connection north, Route9, ROUTE_9, 5
@@ -310,7 +310,7 @@ ENDM
 	connection south, OnwaIntlAirport, ONWA_INTL_AIRPORT, 0
 	
 	map_attributes Skatepark, SKATEPARK, $02, WEST
-	connection west, Route12, ROUTE_12, -1
+	connection west, Route12, ROUTE_12, 4
 	
 	map_attributes Route14, ROUTE_14, $35, NORTH | EAST
 	connection north, SunsetBay, SUNSET_BAY, -6

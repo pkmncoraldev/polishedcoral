@@ -332,7 +332,7 @@
 	db 12, JOLTIK		;30%
 	db 12, TEDDIURSA	;20%
 	db 12, STANTLER		;10%
-	db 12, EXEGGCUTE	;5%
+	db 12, LEDYBA		;5%
 	db 12, PIDGEY		;4%
 	db 12, SCYTHER		;1%
 	; day
@@ -340,7 +340,7 @@
 	db 12, JOLTIK		;30%
 	db 12, TEDDIURSA	;20%
 	db 12, STANTLER		;10%
-	db 12, EXEGGCUTE	;5%
+	db 12, LEDYBA		;5%
 	db 12, PIDGEY		;4%
 	db 12, SCYTHER		;1%
 	; nite
@@ -348,7 +348,7 @@
 	db 12, JOLTIK		;30%
 	db 12, TEDDIURSA	;20%
 	db 12, STANTLER		;10%
-	db 12, EXEGGCUTE	;5%
+	db 12, LEDYBA		;5%
 	db 12, PIDGEY		;4%
 	db 12, SCYTHER		;1%
 	
@@ -358,7 +358,7 @@
 	db 13, STANTLER		;30%
 	db 13, TEDDIURSA	;30%
 	db 10, EEVEE		;20%
-	db 13, EXEGGCUTE	;10%
+	db 13, LEDYBA		;10%
 	db 13, PIDGEY		;5%
 	db 13, SCYTHER		;4%
 	db 13, SCYTHER		;1%
@@ -366,7 +366,7 @@
 	db 13, STANTLER		;30%
 	db 13, TEDDIURSA	;30%
 	db 10, EEVEE		;20%
-	db 13, EXEGGCUTE	;10%
+	db 13, LEDYBA		;10%
 	db 13, PIDGEY		;5%
 	db 13, SCYTHER		;4%
 	db 13, SCYTHER		;1%
@@ -374,7 +374,7 @@
 	db 13, STANTLER		;30%
 	db 13, TEDDIURSA	;30%
 	db 10, EEVEE		;20%
-	db 13, EXEGGCUTE	;10%
+	db 13, LEDYBA		;10%
 	db 13, PIDGEY		;5%
 	db 13, SCYTHER		;4%
 	db 13, GASTLY		;1%
@@ -1654,24 +1654,24 @@
 	; morn
 	db 29, TRUMBEAK		;30%
 	db 29, WINGULL		;30%
-	db 29, EXEGGCUTE	;20%
-	db 29, EXEGGCUTE	;10%
+	db 29, TOUCANNON	;20%
+	db 29, TOUCANNON	;10%
 	db 29, SCYTHER		;5%
 	db 29, SCYTHER		;4%
 	db 29, SCYTHER		;1%
 	; day
 	db 29, TRUMBEAK		;30%
 	db 29, WINGULL		;30%
-	db 29, EXEGGCUTE	;20%
-	db 29, EXEGGCUTE	;10%
+	db 29, TOUCANNON	;20%
+	db 29, TOUCANNON	;10%
 	db 29, SCYTHER		;5%
 	db 29, SCYTHER		;4%
 	db 29, SCYTHER		;1%
 	; nite
 	db 29, TRUMBEAK		;30%
 	db 29, WINGULL		;30%
-	db 29, EXEGGCUTE	;20%
-	db 29, EXEGGCUTE	;10%
+	db 29, TOUCANNON	;20%
+	db 29, TOUCANNON	;10%
 	db 29, SCYTHER		;5%
 	db 29, SCYTHER		;4%
 	db 29, SCYTHER		;1%

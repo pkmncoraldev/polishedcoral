@@ -773,10 +773,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, [wSkateboardGrinding]
 	cp 1
 	jr z, .input
-.grind_return
-	eventflagcheck EVENT_KNOW_GRIND
-	jp z, .stop_grinding_fall
-	
+.grind_return	
 	call .TryOllie
 	ret c
 	
@@ -1224,8 +1221,6 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret
 	
 .TryOllie: ; 801f3
-	eventflagcheck EVENT_KNOW_OLLIE
-	jr z, .DontJump
 	ld a, [wSkateboardOllie]
 	cp 2
 	jr nz, .DontJump

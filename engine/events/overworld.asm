@@ -2834,6 +2834,7 @@ Script_GetOffBike_Register: ; 0xd16b
 	jump FinishGettingOffBike
 
 Script_CantGetOffBike: ; 0xd171
+	opentext
 	writetext .CantGetOffBikeText
 	waitendtext
 
@@ -2982,6 +2983,7 @@ Script_GetOffSkateboard_Register: ; 0xd16b
 	jump FinishGettingOffSkateboard
 
 Script_CantGetOffSkateboard: ; 0xd171
+	opentext
 	writetext .CantGetOffSkateboardText
 	waitendtext
 

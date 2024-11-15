@@ -46,10 +46,8 @@ LusterMallSkateShop_Clerk:
 	opentext
 	checkitem SKATEBOARD
 	iffalse .no_board
-	checkevent EVENT_KNOW_OLLIE
-	iffalse .no_ollie
-	checkevent EVENT_KNOW_GRIND
-	iffalse .no_grind
+	checkevent EVENT_KNOW_GRIND_TURN
+	iffalse .ask_learn
 	writetext LusterMallSkateShop_ClerkText4
 	waitbutton
 	closetext
@@ -59,29 +57,23 @@ LusterMallSkateShop_Clerk:
 	waitbutton
 	closetext
 	end
-.no_ollie
+.ask_learn
 	writetext LusterMallSkateShop_ClerkText2
 	yesorno
-	iffalse .no_ollie_no
+	iffalse .ask_learn_no
 	writetext LusterMallSkateShop_ClerkTextYes
 	waitbutton
 	closetext
 	pause 6
 	domaptrigger LUSTER_MALL_SKATE_TEST, $0
-	warpfacing UP, LUSTER_MALL_SKATE_TEST, $5, $9
+	special FadeOutPalettes
+	special Special_ForceSkateboard
+	setevent EVENT_SKATEPARK_CONTEST_TIMER
+	playsound SFX_EXIT_BUILDING
+	waitsfx
+	warp2 UP, LUSTER_MALL_SKATE_TEST, $5, $d
 	end
-.no_grind
-	writetext LusterMallSkateShop_ClerkText3
-	yesorno
-	iffalse .no_ollie_no
-	writetext LusterMallSkateShop_ClerkTextYes
-	waitbutton
-	closetext
-	pause 6
-	domaptrigger LUSTER_MALL_SKATE_TEST, $1
-	warpfacing UP, LUSTER_MALL_SKATE_TEST, $5, $9
-	end
-.no_ollie_no
+.ask_learn_no
 	writetext LusterMallSkateShop_ClerkTextNo
 	waitbutton
 	closetext

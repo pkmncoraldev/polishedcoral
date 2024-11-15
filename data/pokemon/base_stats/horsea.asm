@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm RAIN_DANCE, HAIL, CURSE, SURF, SUBSTITUTE, PROTECT, BLIZZARD, DIVE
+	tmhm RAIN_DANCE, HAIL, CURSE, SURF, SUBSTITUTE, PROTECT, BLIZZARD, DIVE, SCALD
 	; end

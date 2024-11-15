@@ -2656,7 +2656,6 @@ FlashUsers:
 	db CLODSIRE
 	db GIRAFARIG
 	db FARIGIRAF
-	db SKARMORY
 	db STANTLER
 	db WYRDEER
 	db SHROOMISH
@@ -2678,6 +2677,11 @@ FlashUsers:
 	db LITWICK
 	db LAMPENT
 	db CHANDELURE
+	db PHANTUMP
+	db TREVENANT
+	db COMFEY
+	db MAREANIE
+	db TOXAPEX
 	db -1
 	
 SmokescreenUsers:

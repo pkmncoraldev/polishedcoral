@@ -2412,16 +2412,10 @@ PokegearMap: ; 91ae1
 .north
 	xor a
 	ld [wWarpNumber], a
-	ld b, CGB_POKEGEAR_PALS
-	call GetCGBLayout
-	call SetPalettes
 	jp FillNorthOnwaMap
 .south
 	ld a, 1
 	ld [wWarpNumber], a
-	ld b, CGB_POKEGEAR_PALS
-	call GetCGBLayout
-	call SetPalettes
 	jp FillSouthOnwaMap
 
 _FlyMap: ; 91af3

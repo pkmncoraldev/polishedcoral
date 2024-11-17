@@ -15,8 +15,6 @@ BitmasksPointers:
 	dw -1 ; see  RaticateBitmasksPointers
 	dw PikachuBitmasks
 	dw -1 ; see RaichuBitmasksPointers
-	dw SandshrewBitmasks
-	dw SandslashBitmasks
 	dw NidoranFBitmasks
 	dw NidorinaBitmasks
 	dw NidoqueenBitmasks
@@ -32,6 +30,8 @@ BitmasksPointers:
 	dw OddishBitmasks
 	dw GloomBitmasks
 	dw VileplumeBitmasks
+	dw VenonatBitmasks
+	dw VenomothBitmasks
 	dw -1 ; see MeowthBitmasksPointers
 	dw -1 ; see PersianBitmasksPointers
 	dw GrowlitheBitmasks

@@ -15,8 +15,6 @@ FramesPointers:
 	dw -1 ; see  RaticateFramesPointers
 	dw PikachuFrames
 	dw -1 ; see RaichuFramesPointers
-	dw SandshrewFrames
-	dw SandslashFrames
 	dw NidoranFFrames
 	dw NidorinaFrames
 	dw NidoqueenFrames
@@ -32,6 +30,8 @@ FramesPointers:
 	dw OddishFrames
 	dw GloomFrames
 	dw VileplumeFrames
+	dw VenonatFrames
+	dw VenomothFrames
 	dw -1 ; see MeowthFramesPointers
 	dw -1 ; see PersianFramesPointers
 	dw GrowlitheFrames

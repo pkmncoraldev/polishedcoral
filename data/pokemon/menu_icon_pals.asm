@@ -19,8 +19,6 @@ MenuMonIconColors::
 	iconpal BROWN, RED ; RATICATE
 	iconpal BROWN, RED ; PIKACHU
 	iconpal BROWN, RED ; RAICHU
-	iconpal BROWN, TEAL ; SANDSHREW
-	iconpal BROWN, RED ; SANDSLASH
 	iconpal TEAL, PURPLE ; NIDORAN_F
 	iconpal TEAL, PURPLE ; NIDORINA
 	iconpal TEAL, PURPLE ; NIDOQUEEN
@@ -36,6 +34,8 @@ MenuMonIconColors::
 	iconpal GREEN, TEAL ; ODDISH
 	iconpal RED, PINK ; GLOOM
 	iconpal RED, GREEN ; VILEPLUME
+	iconpal RED, BLUE ; VENONAT
+	iconpal PURPLE, BLUE ; VENOMOTH
 	iconpal BROWN, RED ; MEOWTH
 	iconpal BROWN, RED ; PERSIAN
 	iconpal RED, BLUE ; GROWLITHE

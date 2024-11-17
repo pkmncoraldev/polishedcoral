@@ -15,8 +15,6 @@ AnimationPointers:
 	dw -1 ; see  RaticateAnimationPointers
 	dw PikachuAnimation
 	dw -1 ; see RaichuAnimationPointers
-	dw SandshrewAnimation
-	dw SandslashAnimation
 	dw NidoranFAnimation
 	dw NidorinaAnimation
 	dw NidoqueenAnimation
@@ -32,6 +30,8 @@ AnimationPointers:
 	dw OddishAnimation
 	dw GloomAnimation
 	dw VileplumeAnimation
+	dw VenonatAnimation
+	dw VenomothAnimation
 	dw -1 ; see MeowthAnimationPointers
 	dw -1 ; see PersianAnimationPointers
 	dw GrowlitheAnimation

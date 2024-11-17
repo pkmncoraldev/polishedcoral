@@ -32,8 +32,6 @@ CryHeaders::
 	mon_cry CRY_RATTATA,     $020,  $17f 	; Raticate
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 	; Pikachu
 	mon_cry CRY_RAICHU,      $0ee,  $088 	; Raichu
-	mon_cry CRY_NIDORAN_M,   $020,  $0c0 	; Sandshrew
-	mon_cry CRY_NIDORAN_M,   $0ff,  $17f 	; Sandslash
 	mon_cry CRY_NIDORAN_F,   $000,  $100 	; NidoranF
 	mon_cry CRY_NIDORAN_F,   $02c,  $160 	; Nidorina
 	mon_cry CRY_NIDOQUEEN,   $000,  $100 	; Nidoqueen
@@ -49,6 +47,8 @@ CryHeaders::
 	mon_cry CRY_ODDISH,      $0dd,  $081 	; Oddish
 	mon_cry CRY_ODDISH,      $0aa,  $0c0 	; Gloom
 	mon_cry CRY_VILEPLUME,   $022,  $17f 	; Vileplume
+	mon_cry CRY_EEVEE,       $044,  $0c0 	; Venonat
+	mon_cry CRY_EEVEE,       $029,  $100 	; Venomoth
 	mon_cry CRY_CLEFAIRY,    $077,  $090 	; Meowth
 	mon_cry CRY_CLEFAIRY,    $099,  $17f 	; Persian
 	mon_cry CRY_GROWLITHE,   $020,  $0c0 	; Growlithe
@@ -291,8 +291,6 @@ CryHeaders2::
 	mon_cry CRY_RATTATA,     $020,  $17f 	; Raticate
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 	; Pikachu
 	mon_cry CRY_RAICHU,      $0ee,  $088 	; Raichu
-	mon_cry CRY_NIDORAN_M,   $020,  $0c0 	; Sandshrew
-	mon_cry CRY_NIDORAN_M,   $0ff,  $17f 	; Sandslash
 	mon_cry CRY_NIDORAN_F,   $000,  $100 	; NidoranF
 	mon_cry CRY_NIDORAN_F,   $02c,  $160 	; Nidorina
 	mon_cry CRY_NIDOQUEEN,   $000,  $100 	; Nidoqueen
@@ -308,6 +306,8 @@ CryHeaders2::
 	mon_cry CRY_ODDISH,      $0dd,  $081 	; Oddish
 	mon_cry CRY_ODDISH,      $0aa,  $0c0 	; Gloom
 	mon_cry CRY_VILEPLUME,   $022,  $17f 	; Vileplume
+	mon_cry CRY_EEVEE,       $044,  $0c0 	; Venonat
+	mon_cry CRY_EEVEE,       $029,  $100 	; Venomoth
 	mon_cry CRY_CLEFAIRY,    $077,  $090 	; Meowth
 	mon_cry CRY_CLEFAIRY,    $099,  $17f 	; Persian
 	mon_cry CRY_GROWLITHE,   $020,  $0c0 	; Growlithe

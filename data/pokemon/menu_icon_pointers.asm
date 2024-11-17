@@ -16,8 +16,6 @@ IconPointers:
 	dw RaticateIcon
 	dw PikachuIcon
 	dw RaichuIcon
-	dw SandshrewIcon
-	dw SandslashIcon
 	dw NidoranFIcon
 	dw NidorinaIcon
 	dw NidoqueenIcon
@@ -33,6 +31,8 @@ IconPointers:
 	dw OddishIcon
 	dw GloomIcon
 	dw VileplumeIcon
+	dw VenonatIcon
+	dw VenomothIcon
 	dw MeowthIcon
 	dw PersianIcon
 	dw GrowlitheIcon

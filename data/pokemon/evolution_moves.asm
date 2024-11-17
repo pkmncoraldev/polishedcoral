@@ -15,8 +15,6 @@ EvolutionMoves::
 	db SCARY_FACE_COTTON_SPORE_STRING_SHOT  ; RATICATE
 	db NO_MOVE                              ; PIKACHU
 	db THUNDERPUNCH                         ; RAICHU
-	db NO_MOVE                              ; SANDSHREW
-	db NO_MOVE                              ; SANDSLASH
 	db NO_MOVE                              ; NIDORAN_F
 	db NO_MOVE                              ; NIDORINA
 	db NO_MOVE                              ; NIDOQUEEN
@@ -32,6 +30,8 @@ EvolutionMoves::
 	db NO_MOVE                              ; ODDISH
 	db NO_MOVE                              ; GLOOM
 	db NO_MOVE                              ; VILEPLUME
+	db NO_MOVE                              ; VENONAT
+	db GUST	                                ; VENOMOTH
 	db NO_MOVE                              ; MEOWTH
 	db POWER_GEM                            ; PERSIAN
 	db NO_MOVE                              ; GROWLITHE

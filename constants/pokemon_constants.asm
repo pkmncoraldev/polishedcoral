@@ -16,8 +16,6 @@
 	const RATICATE
 	const PIKACHU
 	const RAICHU
-	const SANDSHREW
-	const SANDSLASH
 	const NIDORAN_F
 	const NIDORINA
 	const NIDOQUEEN
@@ -33,6 +31,8 @@
 	const ODDISH
 	const GLOOM
 	const VILEPLUME
+	const VENONAT
+	const VENOMOTH
 	const MEOWTH
 	const PERSIAN
 	const GROWLITHE

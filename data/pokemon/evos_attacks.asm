@@ -308,17 +308,6 @@ RaichuEvosAttacks:
 	db 1, THUNDER
 	db 0 ; no more level-up moves
 
-SandshrewEvosAttacks:
-	db EVOLVE_LEVEL, 22, SANDSLASH
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
-
-SandslashEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
-
 NidoranFEvosAttacks:
 	db EVOLVE_LEVEL, 16, NIDORINA
 	db 0 ; no more evolutions
@@ -592,6 +581,48 @@ VileplumeEvosAttacks:
 	db 1, WORK_UP_GROWTH
 	db 54, PETAL_DANCE
 	db 59, SOLAR_BEAM
+	db 0 ; no more level-up moves
+
+VenonatEvosAttacks:
+	db EVOLVE_LEVEL, 31, VENOMOTH
+	db 0 ; no more evolutions
+	db  1, TACKLE_SCRATCH_POUND
+	db  1, DISABLE
+	db  1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
+	db  5, SUPERSONIC
+	db 11, CONFUSION
+	db 13, POISONPOWDER
+	db 17, PSYBEAM
+	db 23, STUN_SPORE
+	db 25, SIGNAL_BEAM
+	db 29, SLEEP_POWDER
+	db 35, LEECH_LIFE
+	db 37, ZEN_HEADBUTT
+	db 41, POISON_FANG
+	db 47, PSYCHIC_M
+	db 0 ; no more level-up moves
+
+VenomothEvosAttacks:
+	db 0 ; no more evolutions
+	db  1, GUST
+	db  1, QUIVER_DANCE
+	db  1, BUG_BUZZ
+	db  1, TACKLE_SCRATCH_POUND
+	db  1, DISABLE
+	db  1, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
+	db  5, SUPERSONIC
+	db 11, CONFUSION
+	db 13, POISONPOWDER
+	db 17, PSYBEAM
+	db 23, STUN_SPORE
+	db 25, SIGNAL_BEAM
+	db 29, SLEEP_POWDER
+	db 37, LEECH_LIFE
+	db 41, ZEN_HEADBUTT
+	db 47, POISON_FANG
+	db 55, PSYCHIC_M
+	db 59, BUG_BUZZ
+	db 63, QUIVER_DANCE
 	db 0 ; no more level-up moves
 
 MeowthEvosAttacks:
@@ -2388,7 +2419,7 @@ EspeonEvosAttacks:
 	db 25, FUTURE_SIGHT
 	db 29, REFLECT
 	db 33, SYNTHESIS_MOONLIGHT_MORNING_SUN
-	db 37, PSYCHIC
+	db 37, PSYCHIC_M
 	db 41, DOUBLE_EDGE
 	db 45, CALM_MIND
 	db 0 ; no more level-up moves

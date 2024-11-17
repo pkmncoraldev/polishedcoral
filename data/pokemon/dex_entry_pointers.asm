@@ -16,8 +16,6 @@
 	dw RaticatePokedexEntry
 	dw PikachuPokedexEntry
 	dw RaichuPokedexEntry
-	dw SandshrewPokedexEntry
-	dw SandslashPokedexEntry
 	dw NidoranFPokedexEntry
 	dw NidorinaPokedexEntry
 	dw NidoqueenPokedexEntry
@@ -33,6 +31,8 @@
 	dw OddishPokedexEntry
 	dw GloomPokedexEntry
 	dw VileplumePokedexEntry
+	dw VenonatPokedexEntry
+	dw VenomothPokedexEntry
 	dw MeowthPokedexEntry
 	dw PersianPokedexEntry
 	dw GrowlithePokedexEntry

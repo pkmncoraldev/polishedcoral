@@ -31,10 +31,6 @@ PicPointers::
 	dba PikachuBackpic
 	dbw -1, -1 ; see RaichuPicPointers
 	dbw -1, -1 ; see RaichuPicPointers
-	dba SandshrewFrontpic
-	dba SandshrewBackpic
-	dba SandslashFrontpic
-	dba SandslashBackpic
 	dba NidoranFFrontpic
 	dba NidoranFBackpic
 	dba NidorinaFrontpic
@@ -65,6 +61,10 @@ PicPointers::
 	dba GloomBackpic
 	dba VileplumeFrontpic
 	dba VileplumeBackpic
+	dba VenonatFrontpic
+	dba VenonatBackpic
+	dba VenomothFrontpic
+	dba VenomothBackpic
 	dbw -1, -1 ; see MeowthPicPointers
 	dbw -1, -1 ; see MeowthPicPointers
 	dbw -1, -1 ; see PersianPicPointers

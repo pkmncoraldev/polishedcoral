@@ -19,8 +19,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw RaticateEvosAttacks
 	dw PikachuEvosAttacks
 	dw RaichuEvosAttacks
-	dw SandshrewEvosAttacks
-	dw SandslashEvosAttacks
 	dw NidoranFEvosAttacks
 	dw NidorinaEvosAttacks
 	dw NidoqueenEvosAttacks
@@ -36,6 +34,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw OddishEvosAttacks
 	dw GloomEvosAttacks
 	dw VileplumeEvosAttacks
+	dw VenonatEvosAttacks
+	dw VenomothEvosAttacks
 	dw MeowthEvosAttacks
 	dw PersianEvosAttacks
 	dw GrowlitheEvosAttacks

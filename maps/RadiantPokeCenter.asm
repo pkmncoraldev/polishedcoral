@@ -47,5 +47,5 @@ RadiantPokeCenterNPC2Text:
 	line "she was quite a"
 	cont "looker, too!"
 	
-	para "Oh <WAIT_S>ho <WAIT_S>ho!"
+	para "Oh ho ho!"
 	done

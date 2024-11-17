@@ -1117,7 +1117,8 @@ BugCatcherGroup:
 	db "JOEL@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 35, SCYTHER
+	db 35, GALVANTULA
 	db -1 ; end
 
 ; ================
@@ -1178,7 +1179,7 @@ CamperGroup:
 	db "JERRY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 34, NIDOKING
 	db -1 ; end
 
 ; ================
@@ -2858,9 +2859,12 @@ SuperNerdGroup:
 
 	; SUPER_NERD
 	db "GREG@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 36, LEDYBA
+		db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON, 0, 0, 0
+	db 35, LEDIAN
+		db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON, 0, 0, 0
 	db -1 ; end
 
 ; ================
@@ -3497,7 +3501,9 @@ SchoolboyGroup:
 	db "FREDDY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 36, PIDGEOTTO
+	db 37, GIRAFARIG
+	db 35, RATICATE
 	db -1 ; end
 
 ; ================
@@ -3506,7 +3512,9 @@ SchoolboyGroup:
 	db "FLYNN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 37, CACNEA
+	db 38, CACNEA
+	db 36, MARACTUS
 	db -1 ; end
 
 ; ================
@@ -3550,7 +3558,10 @@ PsychicGroup:
 	db "LINUS@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 35, DROWZEE
+	db 36, DROWZEE
+	db 37, DROWZEE
+	db 36, HYPNO
 	db -1 ; end
 
 ; ================
@@ -3599,7 +3610,8 @@ GentlemanGroup:
 	db "ELWARD@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 36, ARCANINE
+	db 35, HOUNDOOM
 	db -1 ; end
 
 ; ================
@@ -3678,7 +3690,8 @@ SailorGroup:
 	db "SCOTT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 37, WARTORTLE
+	db 35, BLASTOISE
 	db -1 ; end
 
 ; ================
@@ -3687,7 +3700,8 @@ SailorGroup:
 	db "PETEY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 39, GRANBULL
+	db 39, POLIWRATH
 	db -1 ; end
 
 ; ================
@@ -4189,7 +4203,9 @@ GuitaristGroup:
 	db "TITO@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 41, NOIBAT
+	db 41, NOIBAT
+	db 37, ELECTABUZZ
 	db -1 ; end
 
 ; ================
@@ -4222,7 +4238,7 @@ BikerGroup:
 	db "GARRET@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 41, CHANSEY
 	db -1 ; end
 
 ; ================
@@ -4231,7 +4247,8 @@ BikerGroup:
 	db "DALE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 36, WEEZING
+	db 36, WEEZING
 	db -1 ; end
 
 ; ================
@@ -4240,7 +4257,8 @@ BikerGroup:
 	db "REX@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 36, WEEZING
+	db 36, MILTANK
 	db -1 ; end
 
 ; ================
@@ -4249,7 +4267,8 @@ BikerGroup:
 	db "JAMES@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 36, WEEZING
+	db 36, CROBAT
 	db -1 ; end
 
 ; ================
@@ -4258,7 +4277,8 @@ BikerGroup:
 	db "HERB@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 36, WEEZING
+	db 36, MUK
 	db -1 ; end
 
 ; ================
@@ -4283,9 +4303,11 @@ CueballGroup:
 
 	; CUEBALL
 	db "CURLY@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 1, BULBASAUR
+	db 36, WEEZING, ABILITY_1 | HARDY, FEMALE
+	db 36, WEEZING, ABILITY_1 | HARDY, FEMALE
+	db 36, MUK, ABILITY_1 | HARDY, FEMALE | ALOLAN_FORM
 	db -1 ; end
 
 ; ================
@@ -4301,9 +4323,10 @@ CueballGroup:
 
 	; CUEBALL
 	db "BUBBA@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 41, BLISSEY
+		db DEFENSE_CURL_HARDEN_WITHDRAW, SING_HYPNOSIS, HEAL_BELL, SEISMIC_TOSS
 	db -1 ; end
 
 ; ================
@@ -4431,7 +4454,8 @@ CooltrainerFGroup:
 	db "LOIS@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 33, BAYLEEF
+	db 34, MEGANIUM
 	db -1 ; end
 
 ; ================
@@ -4582,8 +4606,14 @@ DisguiseGroup:
 	db "MASTER@" ;HUNTERS THICKET
 	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
-		db TACKLE_SCRATCH_POUND, 0, 0, 0
+	db 32, VOLTORB
+		db ROLLOUT, THUNDERSHOCK, SCREECH, SELFDESTRUCT
+	db 33, ELECTRODE
+		db ROLLOUT, THUNDERSHOCK, SCREECH, SELFDESTRUCT
+	db 34, SUDOWOODO
+		db BODY_SLAM, ROLLOUT, MEAN_LOOK_BLOCK_SPIDER_WEB, ROCK_SLIDE
+	db 34, DITTO
+		db TRANSFORM_SKETCH_MIMIC_SPLASH_METRO, 0, 0, 0
 	db -1 ; end
 
 ; ================
@@ -4932,7 +4962,7 @@ SkaterGroup:
 	db "CHAD@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 39, SCRAFTY
 	db -1 ; end
 
 ; ================
@@ -5385,9 +5415,11 @@ AromaLadyGroup:
 
 	; AROMA_LADY
 	db "LINDA@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 1, BULBASAUR
+	db 38, CHERUBI, ABILITY_1 | HARDY, FEMALE
+	db 38, CHERUBI, ABILITY_1 | HARDY, FEMALE
+	db 36, CHERRIM, ABILITY_1 | HARDY, FEMALE | PLAIN_FORM
 	db -1 ; end
 
 ; ================
@@ -5396,7 +5428,9 @@ AromaLadyGroup:
 	db "MARTHA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 38, GLOOM
+	db 36, VILEPLUME
+	db 36, BELLOSSOM
 	db -1 ; end
 
 ; ================
@@ -5405,7 +5439,8 @@ AromaLadyGroup:
 	db "TAYLOR@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 38, VENONAT
+	db 38, VENOMOTH
 	db -1 ; end
 
 ; ================
@@ -5414,7 +5449,10 @@ AromaLadyGroup:
 	db "CAROL@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 41, SUNKERN
+	db 41, SUNKERN
+	db 41, SUNKERN
+	db 41, SUNKERN
 	db -1 ; end
 
 ; ================
@@ -5423,7 +5461,8 @@ AromaLadyGroup:
 	db "AMBER@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 37, IVYSAUR
+	db 35, VENUSAUR
 	db -1 ; end
 
 ; ================
@@ -5432,7 +5471,7 @@ AromaLadyGroup:
 	db "JODI@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 38, EXEGGUTOR
 	db -1 ; end
 
 ; ================

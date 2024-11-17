@@ -154,7 +154,7 @@ Route19Trainer3:
 .BeatenText:
 	text "Argh!"
 	
-	para "My ride!"
+	para "I'm scrambled!"
 	done
 	
 Route19Trainer4:

@@ -325,85 +325,112 @@
 	db 29, LARVESTA		;1%
 	
 	map_id ROUTE_19
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 25 percent, 25 percent, 25 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 30, FLOATZEL		;30%
+	db 30, PIDGEOTTO	;30%
+	db 30, MEOWTH		;20%
+	db 30, KOFFING		;10%
+	db 30, KOFFING		;5%
+	db 30, KOFFING		;4%
+	db 30, KOFFING		;1%
 	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 30, FLOATZEL		;30%
+	db 30, PIDGEOTTO	;30%
+	db 30, MEOWTH		;20%
+	db 30, KOFFING		;10%
+	db 30, KOFFING		;5%
+	db 30, KOFFING		;4%
+	db 30, KOFFING		;1%
 	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 30, FLOATZEL		;30%
+	db 30, PIDGEOTTO	;30%
+	db 30, MEOWTH		;20%
+	db 30, KOFFING		;10%
+	db 30, KOFFING		;5%
+	db 30, KOFFING		;4%
+	db 30, KOFFING		;1%
 	
 	map_id ROUTE_20
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 30, SUNKERN		;30%
+	db 30, LEDIAN		;30%
+	db 30, CHERUBI		;20%
+	db 30, CHERRIM		;10%
+	db 30, CHERUBI		;5%
+	db 30, VENONAT		;4%
+	db 30, VENONAT		;1%
 	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 30, SUNKERN		;30%
+	db 30, LEDIAN		;30%
+	db 30, CHERUBI		;20%
+	db 30, CHERRIM		;10%
+	db 30, CHERUBI		;5%
+	db 30, VENONAT		;4%
+	db 30, VENONAT		;1%
 	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 30, SUNKERN		;30%
+	db 30, LEDIAN		;30%
+	db 30, CHERUBI		;20%
+	db 30, CHERRIM		;10%
+	db 30, CHERUBI		;5%
+	db 30, VENONAT		;4%
+	db 30, VENONAT		;1%
+	
+	map_id RADIANT_FIELD
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	; morn
+	db 30, SUNKERN		;30%
+	db 30, LEDIAN		;30%
+	db 30, CHERUBI		;20%
+	db 30, CHERRIM		;10%
+	db 30, CHERUBI		;5%
+	db 30, VENONAT		;4%
+	db 30, VENONAT		;1%
+	; day
+	db 30, SUNKERN		;30%
+	db 30, LEDIAN		;30%
+	db 30, CHERUBI		;20%
+	db 30, CHERRIM		;10%
+	db 30, CHERUBI		;5%
+	db 30, VENONAT		;4%
+	db 30, VENONAT		;1%
+	; nite
+	db 30, SUNKERN		;30%
+	db 30, LEDIAN		;30%
+	db 30, CHERUBI		;20%
+	db 30, CHERRIM		;10%
+	db 30, CHERUBI		;5%
+	db 30, VENONAT		;4%
+	db 30, VENONAT		;1%
 	
 	map_id ROUTE_21
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 20, KOFFING		;30%
+	db 20, MEOWTH		;30%
+	db 20, RATICATE		;20%
+	db 20, RATICATE		;10%
+	db 20, MEOWTH		;5%
+	db 20, MUNCHLAX		;4%
+	db 20, MUNCHLAX		;1%
 	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 20, KOFFING		;30%
+	db 20, MEOWTH		;30%
+	db 20, RATICATE		;20%
+	db 20, RATICATE		;10%
+	db 20, MEOWTH		;5%
+	db 20, MUNCHLAX		;4%
+	db 20, MUNCHLAX		;1%
 	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 20, KOFFING		;30%
+	db 20, MEOWTH		;30%
+	db 20, RATICATE		;20%
+	db 20, RATICATE		;10%
+	db 20, MEOWTH		;5%
+	db 20, MUNCHLAX		;4%
+	db 20, MUNCHLAX		;1%
 	
 	map_id ROUTE_23
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

@@ -3154,9 +3154,10 @@ BeautyGroup:
 
 	; BEAUTY
 	db "TRIXIE@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 1, BULBASAUR
+	db 36, MEOWTH, ABILITY_1 | HARDY, FEMALE
+	db 36, PERSIAN, ABILITY_1 | HARDY, FEMALE
 	db -1 ; end
 
 ; ================
@@ -3933,7 +3934,9 @@ BurglarGroup:
 	db "JULIAN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 36, HOUNDOUR
+	db 36, HOUNDOUR
+	db 33, MAGMAR
 	db -1 ; end
 
 ; ================
@@ -4194,7 +4197,8 @@ GuitaristGroup:
 	db "LARRY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 41, NOIBAT
+	db 37, AMPHAROS
 	db -1 ; end
 
 ; ================
@@ -4238,7 +4242,7 @@ BikerGroup:
 	db "GARRET@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 41, CHANSEY
+	db 44, CHANSEY
 	db -1 ; end
 
 ; ================
@@ -4247,8 +4251,8 @@ BikerGroup:
 	db "DALE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 36, WEEZING
-	db 36, WEEZING
+	db 35, WEEZING
+	db 35, WEEZING
 	db -1 ; end
 
 ; ================
@@ -4325,7 +4329,7 @@ CueballGroup:
 	db "BUBBA@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 41, BLISSEY
+	db 44, BLISSEY
 		db DEFENSE_CURL_HARDEN_WITHDRAW, SING_HYPNOSIS, HEAL_BELL, SEISMIC_TOSS
 	db -1 ; end
 
@@ -4335,7 +4339,8 @@ CueballGroup:
 	db "DESMOND@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 41, MUNCHLAX
+	db 33, SNORLAX
 	db -1 ; end
 
 ; ================
@@ -4674,7 +4679,7 @@ DelinquentmGroup:
 	db "SPIKE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 37, SHARPEDO
 	db -1 ; end
 
 ; ================
@@ -4683,7 +4688,7 @@ DelinquentmGroup:
 	db "IGGY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 37, CAMERUPT
 	db -1 ; end
 
 ; ================

@@ -305,7 +305,7 @@ BarInsideBartenderText1:
 	
 	para "It's MOOMOO MILK"
 	line "with a little"
-	cont "somethin' <WAIT_M>extra"
+	cont "somethin' <WAIT_M>extra…"
 	cont "mixed in."
 	
 	para "Anyway, <WAIT_S>enough of"

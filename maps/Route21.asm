@@ -14,7 +14,7 @@ Route21_MapScriptHeader:
 	signpost 26, 19, SIGNPOST_JUMPTEXT, Route21Sign
 	
 	db 11 ; object events
-	tapeball_event 18, 9, MUSIC_WILD_BATTLE, 1, EVENT_MUSIC_WILD_BATTLE
+	tapeball_event 18, 9, MUSIC_WILD_BATTLE, 2, EVENT_MUSIC_WILD_BATTLE
 	cuttree_event 12, 23, EVENT_ROUTE_21_CUT_TREE_1
 	cuttree_event 20, 18, EVENT_ROUTE_21_CUT_TREE_2
 	cuttree_event 21, 19, EVENT_ROUTE_21_CUT_TREE_3

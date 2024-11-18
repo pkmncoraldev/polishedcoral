@@ -188,6 +188,7 @@ DuskTurnpikeFlyPoint:
 	return
 
 DuskTurnpikeCallback:
+	loadvar wTimeOfDayPalFlags, $40 | 0
 	callasm CheckJukeboxSong
 	iffalse .skip_music
 	loadvar wJukeboxSong, 0

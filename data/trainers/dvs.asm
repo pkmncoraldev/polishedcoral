@@ -74,22 +74,22 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; firebreather
 	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; juggler
 	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; schoolboy
-	db  24, $AA, $CC, $EE, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; psychic
+	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; psychic
 	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; couple
-	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; gentleman
-	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; lady
-	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; sailor
-	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; swimmerm
-	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; swimmerf
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; burglar
+	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; gentleman
+	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; lady
+	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; sailor
+	db  24, $77, $77, $77, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; swimmerm
+	db  24, $77, $77, $77, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; swimmerf
+	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; burglar
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; scientist
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; boarder
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; skier
 	db  48, $BB, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; blackbelt
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; teacher
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; guitarist
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; biker
-	db  48, $EE, $EE, $EE, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; cueball
+	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; guitarist
+	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; biker
+	db  48, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; cueball
 	db  48, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; cooltrainerm
 	db  48, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; cooltrainerf
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; prof spruce
@@ -111,7 +111,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; spatrainer
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; spatrainerf
 	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; aromalady
-	db  24, $CC, $CC, $CC, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; tuber
+	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; tuber
 	db  48, $BB, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; battlegirl
 	db 100, $99, $99, $99, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; dojomaster
 	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; rose

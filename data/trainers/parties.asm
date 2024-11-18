@@ -3156,8 +3156,8 @@ BeautyGroup:
 	db "TRIXIE@"
 	db TRAINERTYPE_PERSONALITY
 	; party
-	db 36, MEOWTH, ABILITY_1 | HARDY, FEMALE
-	db 36, PERSIAN, ABILITY_1 | HARDY, FEMALE
+	db 36, MEOWTH, ABILITY_1 | HARDY, FEMALE | ALOLAN_FORM
+	db 36, PERSIAN, ABILITY_1 | HARDY, FEMALE | ALOLAN_FORM
 	db -1 ; end
 
 ; ================
@@ -3934,9 +3934,9 @@ BurglarGroup:
 	db "JULIAN@"
 	db TRAINERTYPE_NORMAL
 	; party
+	db 35, HOUNDOUR
 	db 36, HOUNDOUR
-	db 36, HOUNDOUR
-	db 33, MAGMAR
+	db 37, MAGMAR
 	db -1 ; end
 
 ; ================
@@ -5600,7 +5600,7 @@ RoseGroup:
 	db "ROSE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 40, CHERUBI
 	db -1 ; end
 
 ; ================
@@ -5614,7 +5614,7 @@ LilyGroup:
 	db "LILY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 40, EXEGGCUTE
 	db -1 ; end
 
 ; ================
@@ -5628,7 +5628,7 @@ IrisGroup:
 	db "IRIS@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 40, ODDISH
 	db -1 ; end
 
 ; ================
@@ -5642,7 +5642,7 @@ PoppyGroup:
 	db "POPPY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 40, SUNKERN
 	db -1 ; end
 
 ; ================
@@ -5656,7 +5656,7 @@ FeliciaGroup:
 	db "FELICIA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 40, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -5670,7 +5670,7 @@ VioletGroup:
 	db "VIOLET@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 40, PHANTUMP
 	db -1 ; end
 
 ; ================
@@ -5684,7 +5684,7 @@ CloverGroup:
 	db "CLOVER@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 40, CHIKORITA
 	db -1 ; end
 
 ; ================

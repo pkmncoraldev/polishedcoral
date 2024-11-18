@@ -408,29 +408,29 @@
 	map_id ROUTE_21
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, KOFFING		;30%
-	db 20, MEOWTH		;30%
-	db 20, RATICATE		;20%
-	db 20, RATICATE		;10%
-	db 20, MEOWTH		;5%
-	db 20, MUNCHLAX		;4%
-	db 20, MUNCHLAX		;1%
+	db 30, KOFFING		;30%
+	db 30, MEOWTH		;30%
+	db 30, RATICATE		;20%
+	db 30, RATICATE		;10%
+	db 30, MEOWTH		;5%
+	db 30, MUNCHLAX		;4%
+	db 30, MUNCHLAX		;1%
 	; day
-	db 20, KOFFING		;30%
-	db 20, MEOWTH		;30%
-	db 20, RATICATE		;20%
-	db 20, RATICATE		;10%
-	db 20, MEOWTH		;5%
-	db 20, MUNCHLAX		;4%
-	db 20, MUNCHLAX		;1%
+	db 30, KOFFING		;30%
+	db 30, MEOWTH		;30%
+	db 30, RATICATE		;20%
+	db 30, RATICATE		;10%
+	db 30, MEOWTH		;5%
+	db 30, MUNCHLAX		;4%
+	db 30, MUNCHLAX		;1%
 	; nite
-	db 20, KOFFING		;30%
-	db 20, MEOWTH		;30%
-	db 20, RATICATE		;20%
-	db 20, RATICATE		;10%
-	db 20, MEOWTH		;5%
-	db 20, MUNCHLAX		;4%
-	db 20, MUNCHLAX		;1%
+	db 30, KOFFING		;30%
+	db 30, MEOWTH		;30%
+	db 30, RATICATE		;20%
+	db 30, RATICATE		;10%
+	db 30, MEOWTH		;5%
+	db 30, MUNCHLAX		;4%
+	db 30, MUNCHLAX		;1%
 	
 	map_id ROUTE_23
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

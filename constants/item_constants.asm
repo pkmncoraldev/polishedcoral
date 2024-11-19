@@ -253,7 +253,7 @@
 	const MAGMARIZER   ; dc
 	const RAZOR_FANG   ; dd
 	const RAZOR_CLAW   ; de
-	const LIQUID_SUN ; df
+	const CHLOROPHIAL ; df
 
 	const NUGGET       ; e0
 	const BIG_NUGGET   ; e1
@@ -440,7 +440,7 @@
 	const NAM_NET_BALL     ; 8f
 	const NAM_NEVERMELTICE ; 90
 	const NAM_NUGGET       ; 91
-	const NAM_LIQUID_SUN ; 92
+	const NAM_CHLOROPHIAL ; 92
 	const NAM_MIRACLETONIC ; 93
 	const NAM_OLD_ROD      ; 94
 	const NAM_OLD_SEA_MAP  ; 95

@@ -221,7 +221,7 @@ ItemDescriptions:
 	dw MagmarizerDesc
 	dw RazorFangDesc
 	dw RazorClawDesc
-	dw LiquidSunDesc
+	dw ChlorophialDesc
 	dw NuggetDesc
 	dw BigNuggetDesc
 	dw TinyMushroomDesc
@@ -1076,9 +1076,9 @@ MagmarizerDesc:
 	db   "A box packed with"
 	next "magma energy.@"
 
-LiquidSunDesc:
-	db	 "Up SUNFLORA's SPEED"
-	next "& cast sun. (HOLD)@"
+ChlorophialDesc:
+	db	 "FIRE-type SUNFLORA"
+	next "in the sun. (HOLD)@"
 
 NuggetDesc:
 	db   "Made of pure gold."

@@ -5,7 +5,7 @@ CoinsShopData:
 	
 PollenShopData:
 	db 7 ; # items
-	dbw LIQUID_SUN,			 500
+	dbw CHLOROPHIAL,		 500
 	dbw NUGGET,				 500
 	dbw SUNSHINE_TEA,		 250
 	dbw BLOSSOM_TEA,		 100

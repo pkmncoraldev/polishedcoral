@@ -2996,6 +2996,9 @@ ConsumeUserItem::
 	farcall CheckItemPocket
 	pop bc
 	pop de
+	ld a, [wCurItem]
+	cp CHLOROPHIAL
+	jr z, .meds
 	ld a, [wItemAttributeParamBuffer]
 	cp MEDICINE
 	jr z, .meds
@@ -9183,6 +9186,10 @@ StartWeather:
 	call GetWeatherAfterCloudNine
 	cp WEATHER_SUN
 	jr nz, .revert
+	farcall CheckChlorophialshine
+	call SwitchTurn
+	farcall CheckChlorophialshine
+	call SwitchTurn
 	farjp HandleUserAndOppFlowerGift
 .revert
 	farjp RevertFlowerGiftAfterWeather

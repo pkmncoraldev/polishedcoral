@@ -1,4 +1,4 @@
-CheckLiquidSunshine:
+CheckChlorophialshine:
 	ld a, [hBattleTurn]
 	and a
 	ld hl, wBattleMonSpecies
@@ -6,31 +6,28 @@ CheckLiquidSunshine:
 	ld hl, wEnemyMonSpecies
 .got_species3
 	ld a, [hl]
-	cp SUNKERN
-	jr z, .sunkern
 	cp SUNFLORA
 	ret nz
-.sunkern
 	farcall GetUserItemAfterUnnerve
 	ld a, b
-	cp HELD_LIQUID_SUN
+	cp HELD_CHLOROPHIAL
 	ret nz
 	ld a, WEATHER_SUN
 	ld b, a
 	ld a, [wWeather]
 	cp b
-	ret z ; don't re-activate it
+	ret nz
 	farcall ItemRecoveryAnim
-	ld hl, BattleText_LiquidSun
+	ld hl, BattleText_Chlorophial
 	call StdBattleTextBox
-	; Disable running animations as part of Start(wWeather) commands. This will not block
-	; Call_PlayBattleAnim that plays the animation manually.
-	call DisableAnimations
-	ld a, b
-	jp WeatherAbility.handlesun
+	farcall ConsumeUserItem
+	jp FlowerGiftAbility
 
 RunActivationAbilitiesInner:
-	call CheckLiquidSunshine
+	call CheckChlorophialshine
+	call SwitchTurn
+	call CheckChlorophialshine
+	call SwitchTurn
 	ld hl, BattleEntryAbilities
 	jr UserAbilityJumptable
 
@@ -189,6 +186,7 @@ FlowerGiftAbility:
 	call GetPartyLocation
 	ld a, [wBattleMonForm]
 	ld [hl], a
+	ld a, [wBattleMonSpecies]
 	jr .end
 	
 .enemy
@@ -205,8 +203,14 @@ FlowerGiftAbility:
 	or b
 	ld [wEnemyMonForm], a
 	call ChangeEnemyFormAnimation
+	ld a, [wEnemyMonSpecies]
 .end
+	cp SUNFLORA
+	jr z, .sunflora
 	ld hl, FlowerGiftTransformedText
+	jp StdBattleTextBox
+.sunflora
+	ld hl, SunfloraTransformedText
 	jp StdBattleTextBox
 
 TraceAbility:
@@ -1224,6 +1228,10 @@ WeatherAccAbility:
 	jp ApplyDamageMod
 
 RunWeatherAbilities:
+	call CheckChlorophialshine
+	call SwitchTurn
+	call CheckChlorophialshine
+	call SwitchTurn
 	ld hl, WeatherAbilities
 	jp UserAbilityJumptable
 
@@ -2228,6 +2236,75 @@ HandleFormRevertsAfterBattle:
 	cp e
 	ret nz
 	ld a, DISGUISED_FORM
+	ld b, a
+	ld a, [wPartyMon6Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wPartyMon6Form
+	ld [hl], a
+	ret
+	
+HandleSunfloraAfterBattle:
+	ld hl, wPartyMon1Personality
+	ld a, [wPartyMon1Species]
+	cp SUNFLORA
+	ret nz
+	ld a, PLAIN_FORM
+	ld b, a
+	ld a, [wPartyMon1Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wPartyMon1Form
+	ld [hl], a
+	ld hl, wPartyMon2Personality
+	ld a, [wPartyMon2Species]
+	cp SUNFLORA
+	ret nz
+	ld a, PLAIN_FORM
+	ld b, a
+	ld a, [wPartyMon2Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wPartyMon2Form
+	ld [hl], a
+	ld hl, wPartyMon3Personality
+	ld a, [wPartyMon3Species]
+	cp SUNFLORA
+	ret nz
+	ld a, PLAIN_FORM
+	ld b, a
+	ld a, [wPartyMon3Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wPartyMon3Form
+	ld [hl], a
+	ld hl, wPartyMon4Personality
+	ld a, [wPartyMon4Species]
+	cp SUNFLORA
+	ret nz
+	ld a, PLAIN_FORM
+	ld b, a
+	ld a, [wPartyMon4Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wPartyMon4Form
+	ld [hl], a
+	ld hl, wPartyMon5Personality
+	ld a, [wPartyMon5Species]
+	cp SUNFLORA
+	ret nz
+	ld a, PLAIN_FORM
+	ld b, a
+	ld a, [wPartyMon5Form]
+	and $ff - FORM_MASK
+	or b
+	ld hl, wPartyMon5Form
+	ld [hl], a
+	ld hl, wPartyMon6Personality
+	ld a, [wPartyMon6Species]
+	cp SUNFLORA
+	ret nz
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wPartyMon6Form]
 	and $ff - FORM_MASK

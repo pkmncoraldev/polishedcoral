@@ -434,8 +434,6 @@ GetSpeed::
 	ld a, b
 	cp HELD_QUICK_POWDER
 	jr z, .quick_powder
-	CP HELD_LIQUID_SUN
-	jr z, .liquid_sun
 	cp HELD_CHOICE
 	jr nz, .done
 	ld a, c
@@ -454,25 +452,6 @@ GetSpeed::
 	ld a, [hl]
 	cp DITTO
 	jr nz, .done
-	ld a, $21
-	jr .apply_item_mod
-.liquid_sun
-	; Double speed, but only for Sunkern/Sunflora in the sun
-	ld a, [wWeather]
-	cp WEATHER_SUN
-	jr nz, .done
-	ld a, [hBattleTurn]
-	and a
-	ld hl, wBattleMonSpecies
-	jr z, .got_species2
-	ld hl, wEnemyMonSpecies
-.got_species2
-	ld a, [hl]
-	cp SUNKERN
-	jr z, .sunkern
-	cp SUNFLORA
-	jr nz, .done
-.sunkern
 	ld a, $21
 .apply_item_mod
 	call ApplyDamageMod
@@ -9048,6 +9027,7 @@ ExitBattle: ; 3f69e
 	call .HandleEndOfBattle
 	farcall HandleDisguiseAfterBattle
 	farcall HandleFlowerGiftAfterBattle
+	farcall HandleSunfloraAfterBattle
 	jp CleanUpBattleRAM
 ; 3f6a5
 

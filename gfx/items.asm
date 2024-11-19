@@ -377,7 +377,7 @@ ElectirizerIcon:  				INCBIN "gfx/items/electirizer.2bpp"
 MagmarizerIcon:   				INCBIN "gfx/items/magmarizer.2bpp"
 RazorFangIcon:    				INCBIN "gfx/items/1.2bpp"
 RazorClawIcon:    				INCBIN "gfx/items/1.2bpp"
-LiquidSunIcon:	  				INCBIN "gfx/items/liquid_sun.2bpp"
+ChlorophialIcon:	  			INCBIN "gfx/items/chlorophial.2bpp"
 NuggetIcon:       				INCBIN "gfx/items/nugget.2bpp"
 BigNuggetIcon:    				INCBIN "gfx/items/big_nugget.2bpp"
 BlackPearlIcon:

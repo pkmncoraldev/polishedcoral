@@ -236,7 +236,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; MAGMARIZER
 	dw NoEffect         ; RAZOR_FANG
 	dw NoEffect         ; RAZOR_CLAW
-	dw NoEffect         ; LIQUID_SUN
+	dw NoEffect         ; CHLOROPHIAL
 	dw NoEffect         ; NUGGET
 	dw NoEffect         ; BIG_NUGGET
 	dw NoEffect         ; TINYMUSHROOM

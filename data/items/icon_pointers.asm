@@ -222,7 +222,7 @@ ItemIconPointers:
 	dba MagmarizerIcon
 	dba RazorFangIcon
 	dba RazorClawIcon
-	dba LiquidSunIcon
+	dba ChlorophialIcon
 	dba NuggetIcon
 	dba BigNuggetIcon
 	dba UnusedItemIcon

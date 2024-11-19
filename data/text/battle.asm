@@ -176,10 +176,10 @@ BattleText_UserItemLetItMoveFirst::
 	cont "move first."
 	prompt
 
-BattleText_LiquidSun::
+BattleText_Chlorophial::
 	text "<USER>'s"
-	line "LIQUID SUN"
-	cont "activated!"
+	line "CHLOROPHIAL"
+	cont "was consumed!"
 	done
 
 BattleText_UserRecoveredPPUsing:
@@ -1756,6 +1756,11 @@ CopiedStatsText:
 FlowerGiftTransformedText:
 	text "<USER>"
 	line "transformed!"
+	prompt
+	
+SunfloraTransformedText:
+	text "<USER> became"
+	line "part FIRE-type!"
 	prompt
 	
 NoUsablePokemonText:

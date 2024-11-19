@@ -990,6 +990,30 @@ AI_Smart_Roar: ; 38a2a
 AI_Smart_Heal:
 AI_Smart_HealingLight:
 AI_Smart_Roost:
+; 90% chance to greatly encourage this move if enemy's HP is below 25%.
+; Discourage this move if enemy's HP is higher than 50%.
+; Do nothing otherwise.
+
+	ld a, [wTrainerClass]
+	cp LEDIAN_RANGER
+	jr z, AI_Smart_LedianRangerRoost
+
+	call AICheckEnemyQuarterHP
+	jr nc, .asm_38a45
+	call AICheckEnemyHalfHP
+	ret nc
+	inc [hl]
+	ret
+
+.asm_38a45
+	call Random
+	cp $19
+	ret c
+	dec [hl]
+	dec [hl]
+	ret
+	
+AI_Smart_LedianRangerRoost:
 ; 50% chance to encourage this move if enemy's HP is below 50%.
 ; 90% chance to greatly encourage this move if enemy's HP is below 25%.
 ; Discourage this move if enemy's HP is higher than 50%.
@@ -2285,12 +2309,19 @@ AI_Smart_SunnyDay: ; 390f3
 ;	cp WATER
 ;	jr z, AIGoodWeatherType
 
+; Essentially force use of sunny day if cpu is holding CHLOROPHIAL
+	ld a, [wEnemyMonItem]
+	cp CHLOROPHIAL
+	jr z, .force
+
 	push hl
 	ld hl, SunnyDayMoves
+	jr AI_Smart_WeatherMove
 
-	; fallthrough
-; 3910d
-
+.force
+	ld a, 1
+	ld [hl], a
+	ret
 
 AI_Smart_WeatherMove: ; 3910d
 ; Rain Dance, Sunny Day
@@ -2302,8 +2333,8 @@ AI_Smart_WeatherMove: ; 3910d
 	jr nc, AIBadWeatherType
 
 ; Greatly discourage this move if player's HP is below 50%.
-	call AICheckPlayerHalfHP
-	jr nc, AIBadWeatherType
+;	call AICheckPlayerHalfHP
+;	jr nc, AIBadWeatherType
 
 ; 50% chance to encourage this move otherwise.
 ;	call AI_50_50
@@ -2313,7 +2344,6 @@ AI_Smart_WeatherMove: ; 3910d
 	sub $5
 	ld [hl], a
 	ret
-; 3911e
 
 AIBadWeatherType: ; 3911e
 	inc [hl]

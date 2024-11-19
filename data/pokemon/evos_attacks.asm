@@ -2004,6 +2004,7 @@ LedybaEvosAttacks:
 	db 12, LIGHT_SCREEN
 	db 12, REFLECT
 	db 15, MACH_PUNCH
+	db 17, CONFUSE_RAY
 	db 19, SAFEGUARD
 	db 22, SIGNAL_BEAM
 	db 25, ROOST
@@ -2025,6 +2026,7 @@ LedianEvosAttacks:
 	db 1, LIGHT_SCREEN
 	db 1, REFLECT
 	db 1, MACH_PUNCH
+	db 1, CONFUSE_RAY
 	db 20, SAFEGUARD
 	db 24, SIGNAL_BEAM
 	db 28, ROOST

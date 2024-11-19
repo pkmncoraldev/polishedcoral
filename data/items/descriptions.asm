@@ -890,7 +890,7 @@ BigRootDesc:
 
 FiveStarHelmDesc:
 	db   "The LEDIAN RANGER's"
-	next "iconic helmet.@"
+	next "helmet. (HOLD)@"
 
 DestinyKnotDesc:
 	db   "Infatuates the foe"

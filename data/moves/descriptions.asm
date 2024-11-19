@@ -47,7 +47,7 @@ MoveDescriptions::
 	dw RoarDescription
 	dw SingDescription
 	dw SupersonicDescription
-	dw SonicboomDescription
+	dw WeatherBallDescription
 	dw DisableDescription
 	dw AcidDescription
 	dw EmberDescription
@@ -474,9 +474,9 @@ ShellSmashDescription:
 	db   "DEFs down. ATKs &"
 	next "SPEED up by 2.@"
 
-SonicboomDescription:
-	db   "Always inflicts"
-	next "20HP damage.@"
+WeatherBallDescription:
+	db   "Weather changes"
+	next "type and power.@"
 
 DragonRageDescription:
 	db   "Always inflicts"

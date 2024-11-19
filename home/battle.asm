@@ -531,7 +531,6 @@ DynamicPowerMoves::
 	db RETURN
 	db REVERSAL
 	db SEISMIC_TOSS
-	db SONIC_BOOM
 	db ELECTRO_BALL
 	db -1
 	

@@ -126,7 +126,7 @@ LoadCategoryAndTypePals:
 	pop bc
 	ld a, c
 
-	farcall MultiSlotMoveTypes
+	farcall MultiSlotMoveTypesNoWeatherBall
 
 	add a
 	ld c, a

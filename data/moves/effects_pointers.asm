@@ -168,3 +168,4 @@ MoveEffectsPointers:
 	dw Surf
 	dw ConditionalBoostHit
 	dw ConditionalBoostHit
+	dw ConditionalBoostHit

@@ -6528,7 +6528,7 @@ MoveInfoBox: ; 3e6c8
 
 	ld a, [wPlayerMoveStruct + MOVE_TYPE]
 
-	farcall MultiSlotMoveTypes
+	farcall MultiSlotMoveTypesNoWeatherBall
 	
 	rst AddNTimes
 	ld d, h

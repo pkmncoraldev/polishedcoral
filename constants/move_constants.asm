@@ -48,7 +48,7 @@
 	const ROAR_WHIRLWIND        	 			; $2e
 	const SING_HYPNOSIS         ; $2f
 	const SUPERSONIC   ; $30
-	const SONIC_BOOM   ; $31 - REPLACE
+	const WEATHER_BALL ; $31
 	const DISABLE      ; $32
 	const ACID         ; $33
 	const EMBER        ; $34

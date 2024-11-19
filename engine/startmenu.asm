@@ -2116,7 +2116,7 @@ PlaceMoveData:
 	ld hl, TypeIconGFX
 	ld bc, 4 * LEN_1BPP_TILE
 
-	farcall MultiSlotMoveTypes
+	farcall MultiSlotMoveTypesNoWeatherBall
 
 	rst AddNTimes
 	ld d, h

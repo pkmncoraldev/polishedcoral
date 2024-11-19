@@ -2960,12 +2960,23 @@ MultiSlotMoves:
 	db SING_HYPNOSIS
 	db -1
 	
+MultiSlotMoveTypesNoWeatherBall::
+	push hl
+	push bc
+	push de
+	push af
+	ld a, [wCurMove]
+	jr MultiSlotMoveTypes.cont
+	
 MultiSlotMoveTypes::
 	push hl
 	push bc
 	push de
 	push af
 	ld a, [wCurMove]
+	cp WEATHER_BALL
+	jp z, .weather_ball
+.cont
 	cp DEFENSE_CURL_HARDEN_WITHDRAW
 	jr z, .defense_curl
 	cp BARRIER_IRON_DEFENSE_ACID_ARMOR
@@ -3118,6 +3129,32 @@ MultiSlotMoveTypes::
 .not_hypnosis
 	ld a, NORMAL
 	jp MultiSlotMoveTypesFinish
+	
+.weather_ball
+	pop af
+	call GetWeatherAfterCloudNine
+	cp WEATHER_RAIN
+	jr z, .rain
+	cp WEATHER_SUN
+	jr z, .sun
+	cp WEATHER_SANDSTORM
+	jr z, .sand
+	cp WEATHER_HAIL
+	jr z, .hail
+	ld a, NORMAL
+	jp MultiSlotMoveTypesFinish
+.rain
+	ld a, WATER
+	jp MultiSlotMoveTypesFinish
+.sun
+	ld a, FIRE
+	jp MultiSlotMoveTypesFinish
+.sand
+	ld a, ROCK
+	jp MultiSlotMoveTypesFinish
+.hail
+	ld a, ICE
+;fallthru
 
 MultiSlotMoveTypesFinish:
 	pop de

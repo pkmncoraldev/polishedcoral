@@ -2343,6 +2343,8 @@ BattleCommand_hittargetnosub: ; 34f60
 	jr z, .doublehit
 	cp EFFECT_TRANSFORM
 	jr z, .doublehit
+	cp EFFECT_WEATHER_BALL
+	jr z, .cont
 
 .normal_move
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -8358,6 +8360,7 @@ BoostJumptable:
 	dbw HEX, DoHex
 	dbw VENOSHOCK, DoVenoshock
 	dbw KNOCK_OFF, DoKnockOff
+	dbw WEATHER_BALL, DoWeatherBall
 	dbw -1, -1
 
 BattleCommand_conditionalboost:
@@ -8376,6 +8379,37 @@ DoAcrobatics:
 	ld a, [hl]
 	and a
 	ret nz
+	jr DoubleDamage
+
+DoWeatherBall:
+	
+	call GetWeatherAfterCloudNine
+	cp WEATHER_RAIN
+	jr z, .rain
+	cp WEATHER_SUN
+	jr z, .sun
+	cp WEATHER_SANDSTORM
+	jr z, .sand
+	cp WEATHER_HAIL
+	jr z, .ice
+	xor a
+	ld [wBattleAnimParam], a
+	ret
+.rain
+	ld a, 1
+	ld [wBattleAnimParam], a
+	jr DoubleDamage
+.sun
+	ld a, 2
+	ld [wBattleAnimParam], a
+	jr DoubleDamage
+.sand
+	ld a, 3
+	ld [wBattleAnimParam], a
+	jr DoubleDamage
+.ice
+	ld a, 4
+	ld [wBattleAnimParam], a
 	jr DoubleDamage
 
 ;DoFacade:

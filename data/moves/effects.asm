@@ -852,7 +852,6 @@ Superpower:
 	endmove
 	
 StaticDamage:
-Sonicboom:
 DragonRage:
 NightShade:
 SeismicToss:

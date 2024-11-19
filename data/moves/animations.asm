@@ -48,7 +48,7 @@ BattleAnimations::
 	dw BattleAnim_Roar
 	dw BattleAnim_Sing
 	dw BattleAnim_Supersonic
-	dw BattleAnim_Sonicboom
+	dw BattleAnim_WeatherBall
 	dw BattleAnim_Disable
 	dw BattleAnim_Acid
 	dw BattleAnim_Ember
@@ -2961,6 +2961,7 @@ BattleAnim_WaterGun:
 	anim_wait 8
 	anim_obj ANIM_OBJ_24,   8, 0,  10, 2, $0
 	anim_wait 24
+BattleAnim_WeatherBall_Rain_branch:
 	anim_bgeffect ANIM_BG_31, $1c, $0, $0
 	anim_wait 8
 	anim_bgeffect ANIM_BG_31, $8, $0, $0
@@ -3202,9 +3203,6 @@ BattleAnim_AirSlash:
 	anim_wait 32
 	anim_ret
 
-BattleAnim_Sonicboom:
-	anim_ret
-
 BattleAnim_Gust:
 	anim_2gfx ANIM_GFX_WIND, ANIM_GFX_HIT
 .loop
@@ -3401,6 +3399,38 @@ BattleAnim_Barrage:
 	anim_wait 36
 	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_obj ANIM_OBJ_18, -15, 0,   7, 0, $0
+	anim_wait 16
+	anim_ret
+
+BattleAnim_WeatherBall:
+	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_EXPLOSION
+	anim_sound 6, 2, SFX_THROW_BALL
+	anim_obj ANIM_OBJ_62,   8, 0,  11, 4, $10
+	anim_wait 36
+	anim_jumpif $1, .water
+	anim_jumpif $2, .fire
+	anim_jumpif $3, .rock
+	anim_jumpif $4, .ice
+	anim_1gfx ANIM_GFX_HIT
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, -15, 0,   6, 0, $0
+	anim_wait 16
+	anim_ret
+.water
+	anim_bgeffect ANIM_BG_30, $0, $0, $0
+	anim_call BattleAnim_WeatherBall_Rain_branch
+	anim_ret
+.fire
+	anim_2gfx ANIM_GFX_FIRE, ANIM_GFX_ICE
+	anim_call BattleAnim_TriAttack_branch_cbbcc
+	anim_wait 16
+	anim_ret
+.rock
+	anim_call BattleAnim_RockSmash
+	anim_ret
+.ice
+	anim_2gfx ANIM_GFX_FIRE, ANIM_GFX_ICE
+	anim_call BattleAnim_TriAttack_branch_cbbdf
 	anim_wait 16
 	anim_ret
 

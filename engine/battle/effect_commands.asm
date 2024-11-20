@@ -1529,6 +1529,9 @@ _CheckTypeMatchup: ; 347d3
 .skip_powder
 	pop hl
 	push hl
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld [wCurMove], a
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	

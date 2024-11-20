@@ -409,6 +409,7 @@ AI_Smart: ; 386be
 	dbw EFFECT_HEX,				  AI_Smart_Hex
 	dbw EFFECT_VENOSHOCK,		  AI_Smart_Venoshock
 	dbw EFFECT_ACROBATICS,		  AI_Smart_Acrobatics
+	dbw EFFECT_WEATHER_BALL,	  AI_Smart_WeatherBall
 	db $ff
 ; 387e3
 
@@ -2386,6 +2387,7 @@ SunnyDayMoves: ; 39134
 	db FLARE_BLITZ
 	db SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db SOLAR_BEAM
+	db WEATHER_BALL
 	db $ff
 ; 3913d
 
@@ -2479,10 +2481,39 @@ AI_Smart_Stomp: ; 39200
 	ret
 ; 3920b
 
+AI_Smart_WeatherBall:
+; 80% chance to encourage this move when weather is active.
+
+
+	ld a, [wWeather]
+	cp WEATHER_SUN
+	jr z, .asm_3921e
+
+	cp WEATHER_RAIN
+	jr z, .asm_3921e
+	
+	cp WEATHER_HAIL
+	jr z, .asm_3921e
+	
+	cp WEATHER_SANDSTORM
+	ret nz
+
+.asm_3921e
+	call AI_80_20
+	ret c
+
+	dec [hl]
+	ret
 
 AI_Smart_SolarBeam: ; 3920b
 ; 80% chance to encourage this move when it's sunny.
 ; 90% chance to discourage this move when it's raining.
+
+;yucky hardcoded nonsense to keep leilani from spamming solar beam at all times in the sun.
+;may adjust later. idk
+	ld a, [wTrainerClass]
+	cp LEILANI
+	ret z
 
 	ld a, [wWeather]
 	cp WEATHER_SUN
@@ -2982,6 +3013,8 @@ AIDamageCalc: ; 393e7
 	cp EFFECT_VENOSHOCK
 	jr z, .yes
 	cp EFFECT_ACROBATICS
+	jr z, .yes
+	cp EFFECT_WEATHER_BALL
 	jr z, .yes
 	ret
 .yes

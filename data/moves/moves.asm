@@ -58,7 +58,7 @@ Moves:: ; 41afb
 	move ROAR_WHIRLWIND,           EFFECT_ROAR,                0, NORMAL,    100, 20,   0, STATUS
 	move SING_HYPNOSIS,            EFFECT_SLEEP,               0, NORMAL,     55, 15,   0, STATUS
 	move SUPERSONIC,               EFFECT_CONFUSE,             0, NORMAL,     55, 20,   0, STATUS
-	move WEATHER_BALL,             EFFECT_WEATHER_BALL,       50, NORMAL,    100, 10,   0, SPECIAL
+	move WEATHER_BALL,             EFFECT_WEATHER_BALL,       50, FIRE,    100, 10,   0, SPECIAL
 	move DISABLE,                  EFFECT_DISABLE,             0, NORMAL,    100, 20,   0, STATUS
 	move ACID,                     EFFECT_SP_DEF_DOWN_HIT,    40, POISON,    100, 30,  10, SPECIAL
 	move EMBER,                    EFFECT_BURN_HIT,           40, FIRE,      100, 25,  10, SPECIAL

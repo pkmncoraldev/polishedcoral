@@ -869,7 +869,7 @@ GetTreeMons: ; b82d2
 ; Return the address of TreeMon table a in hl.
 ; Return nc if table a doesn't exist.
 
-	cp 8
+	cp NUM_TREEMON_MAPS
 	jr nc, .quit
 
 	and a
@@ -896,40 +896,10 @@ GetTreeMons: ; b82d2
 INCLUDE "data/wild/treemons.asm"
 
 GetTreeMon: ; b83e5
-	push hl
-	call GetTreeScore
-	pop hl
-	and a
-	jr z, .bad
-	cp 1
-	jr z, .good
-	cp 2
-	jr z, .rare
-	ret
-
-.bad
-	ld a, 10
-	call RandomRange
-	and a
-	jr nz, NoTreeMon
-	jr SelectTreeMon
-
-.good
 	ld a, 10
 	call RandomRange
 	cp 5
 	jr nc, NoTreeMon
-	jr SelectTreeMon
-
-.rare
-	ld a, 10
-	call RandomRange
-	cp 8
-	jr nc, NoTreeMon
-.skip
-	ld a, [hli]
-	cp -1
-	jr nz, .skip
 	; fallthrough
 
 SelectTreeMon: ; b841f

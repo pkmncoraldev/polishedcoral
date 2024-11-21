@@ -6,6 +6,7 @@ TreeMons:
 	dw TreeMonsMountainTop
 	dw TreeMonsSunbeam
 	dw TreeMonsEventide
+	dw TreeMonsTwinkle
 	dw TreeMonsLuster
 	dw TreeMonsShimmer
 	dw TreeMonsRadiant
@@ -116,6 +117,23 @@ TreeMonsEventide:
 	db 10, DRIFLOON,	25
 	db  5, DRIFLOON,	25
 	db  5, DRIFLOON,	25
+	db -1
+	
+TreeMonsTwinkle:
+	db 50, SWABLU,		20
+	db 15, SNORUNT,		20
+	db 15, SNOVER,		20
+	db 10, SNOVER,		20
+	db  5, SNORUNT,		20
+	db  5, SNORUNT,		20
+	db -1
+	; rare
+	db 50, SWABLU,		25
+	db 15, SNORUNT,		25
+	db 15, SNOVER,		25
+	db 10, SNOVER,		25
+	db  5, SNORUNT,		25
+	db  5, SNORUNT,		25
 	db -1
 
 TreeMonsLuster:

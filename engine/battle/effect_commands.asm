@@ -6582,6 +6582,7 @@ BattleCommand_forceswitch: ; 3680f
 	ld a, [hBattleTurn]
 	and a
 	jr nz, .enemy_trainer
+	eventflagset EVENT_USED_ROAR
 	hlcoord 1, 0
 	lb bc, 4, 10
 	call ClearBox

@@ -3465,6 +3465,8 @@ LoadEnemyPkmnToSwitchTo:
 	call IsBossTrainer
 	pop bc
 	jr nc, .done_gym_leader
+	eventflagcheck EVENT_USED_ROAR
+	jr nz, .done_gym_leader
 	ld a, [wCurOTMon]
 	inc a
 	ld b, a
@@ -9068,6 +9070,7 @@ ExitBattle: ; 3f69e
 
 CleanUpBattleRAM: ; 3f6d0
 	call BattleEnd_HandleRoamMons
+	eventflagreset EVENT_USED_ROAR
 	xor a
 	ld [wLowHealthAlarm], a
 	ld [wBattleMode], a

@@ -179,21 +179,11 @@ FlowerGiftAbility:
 	ld [wBattleMonForm], a
 	
 	call ChangePlayerFormAnimation
-	
-	ld hl, wPartyMon1Form
-	ld a, [wCurBattleMon]
-	ld [wCurPartyMon], a
-	call GetPartyLocation
-	ld a, [wBattleMonForm]
-	ld [hl], a
-	ld a, [wBattleMonSpecies]
 	jr .end
 	
 .enemy
 	ld a, [wEnemyMonForm]
 	and FORM_MASK
-	cp 1
-	ret nz
 	cp PLAIN_FORM
 	ret nz
 	ld a, SUNNY_FORM
@@ -202,8 +192,28 @@ FlowerGiftAbility:
 	and $ff - FORM_MASK
 	or b
 	ld [wEnemyMonForm], a
+	
+	push af
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	jr z, .wild
+	pop af
+	
+	push af
+	ld hl, wOTPartyMon1Form
+	ld a, [wCurOTMon]
+	call GetPartyLocation
+	pop af
+	ld [hl], a
+	
+	ld [wOTPartyMon1Form], a
+	
 	call ChangeEnemyFormAnimation
-	ld a, [wEnemyMonSpecies]
+	jr .end
+.wild
+	pop af
+	ld [wEnemyBackupForm], a
+	call ChangeEnemyFormAnimation
 .end
 	cp SUNFLORA
 	jr z, .sunflora
@@ -2348,16 +2358,6 @@ ChangeEnemyFormAnimation:
 	ld [wKickCounter], a
 	ld a, TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	farcall LoadAnim
-	
-	ld hl, wOTPartyMon1Form
-	ld a, [wOTPartyMonOT]
-	ld [wCurOTMon], a
-	call GetPartyLocation
-	ld a, [wEnemyMonForm]
-	ld [hl], a
-	
-	farcall FinishBattleAnim
-	
 	ld a, $13
 	ld [wKickCounter], a
 	ld a, TRANSFORM_SKETCH_MIMIC_SPLASH_METRO

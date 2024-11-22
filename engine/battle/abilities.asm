@@ -177,8 +177,7 @@ FlowerGiftAbility:
 	and $ff - FORM_MASK
 	or b
 	ld [wBattleMonForm], a
-	
-	call ChangePlayerFormAnimation
+	call ChangePlayerFormAnimation	
 	ld a, [wBattleMonSpecies]
 	jr .end
 	
@@ -208,8 +207,7 @@ FlowerGiftAbility:
 	ld [hl], a
 	
 	ld [wOTPartyMon1Form], a
-	
-	call ChangeEnemyFormAnimation
+	call ChangeEnemyFormAnimation	
 	ld a, [wEnemyMonSpecies]
 	jr .end
 .wild
@@ -2343,6 +2341,16 @@ ChangePlayerFormAnimation:
 	ld [wKickCounter], a
 	ld a, TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	farcall LoadAnim
+	
+	ld a, [wBattleMonSpecies]
+	ld [wCurSpecies], a
+	ld a, [wBattleMonForm]
+	ld [wCurForm], a
+	call GetBaseData
+	ld a, [wBaseType1]
+	ld [wBattleMonType1], a
+	ld a, [wBaseType2]
+	ld [wBattleMonType2], a
 	ret
 
 	
@@ -2364,6 +2372,16 @@ ChangeEnemyFormAnimation:
 	ld [wKickCounter], a
 	ld a, TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	farcall LoadAnim
+	
+	ld a, [wEnemyMonSpecies]
+	ld [wCurSpecies], a
+	ld a, [wEnemyMonForm]
+	ld [wCurForm], a
+	call GetBaseData
+	ld a, [wBaseType1]
+	ld [wEnemyMonType1], a
+	ld a, [wBaseType2]
+	ld [wEnemyMonType2], a
 	ret
 	
 ResetEnemyFlowerGift:

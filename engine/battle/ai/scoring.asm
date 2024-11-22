@@ -182,6 +182,8 @@ AI_Types: ; 38635
 
 	inc de
 	call AIGetEnemyMove
+	ld a, [wEnemyMoveStructAnimation]
+	ld [wCurMove], a
 
 	push hl
 	push bc
@@ -409,7 +411,6 @@ AI_Smart: ; 386be
 	dbw EFFECT_HEX,				  AI_Smart_Hex
 	dbw EFFECT_VENOSHOCK,		  AI_Smart_Venoshock
 	dbw EFFECT_ACROBATICS,		  AI_Smart_Acrobatics
-	dbw EFFECT_WEATHER_BALL,	  AI_Smart_WeatherBall
 	db $ff
 ; 387e3
 
@@ -2290,6 +2291,7 @@ RainDanceMoves: ; 390e7
 	db THUNDER
 	db WATER_GUN
 	db WATERFALL
+	db WEATHER_BALL
 	db $ff
 ; 390f3
 
@@ -2320,9 +2322,13 @@ AI_Smart_SunnyDay: ; 390f3
 	jr AI_Smart_WeatherMove
 
 .force
-	ld a, 1
-	ld [hl], a
-	ret
+	ld a, 12
+.loop
+	dec [hl]
+	dec a
+	cp 0
+	ret z
+	jr .loop
 
 AI_Smart_WeatherMove: ; 3910d
 ; Rain Dance, Sunny Day
@@ -2481,39 +2487,9 @@ AI_Smart_Stomp: ; 39200
 	ret
 ; 3920b
 
-AI_Smart_WeatherBall:
-; 80% chance to encourage this move when weather is active.
-
-
-	ld a, [wWeather]
-	cp WEATHER_SUN
-	jr z, .asm_3921e
-
-	cp WEATHER_RAIN
-	jr z, .asm_3921e
-	
-	cp WEATHER_HAIL
-	jr z, .asm_3921e
-	
-	cp WEATHER_SANDSTORM
-	ret nz
-
-.asm_3921e
-	call AI_80_20
-	ret c
-
-	dec [hl]
-	ret
-
 AI_Smart_SolarBeam: ; 3920b
 ; 80% chance to encourage this move when it's sunny.
 ; 90% chance to discourage this move when it's raining.
-
-;yucky hardcoded nonsense to keep leilani from spamming solar beam at all times in the sun.
-;may adjust later. idk
-	ld a, [wTrainerClass]
-	cp LEILANI
-	ret z
 
 	ld a, [wWeather]
 	cp WEATHER_SUN

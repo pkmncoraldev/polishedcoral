@@ -52,19 +52,19 @@ TrainerClassAttributes: ; 3959c
 	db FULL_HEAL, 0 ; items
 	db 25 ; base reward
 	dw AI_BASIC + AI_SMART + AI_STATUS + AI_SETUP + AI_TYPES
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE
 
 ; Wendy
 	db 0, 0 ; items
 	db 25 ; base reward
 	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE
 
 ; Charlie
 	db SUPER_POTION, 0 ; items
 	db 25 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE
 
 ; Polly
 	db FULL_HEAL, 0 ; items
@@ -76,7 +76,7 @@ TrainerClassAttributes: ; 3959c
 	db MAX_POTION, 0 ; items
 	db 25 ; base reward
 	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_RARELY
+	dw CONTEXT_USE
 
 ; Rocky
 	db MAX_POTION, 0 ; items

@@ -3461,6 +3461,21 @@ FindPkmnInOTPartyToSwitchIntoBattle:
 
 LoadEnemyPkmnToSwitchTo:
 	; 'b' contains the PartyNr of the Pkmn the AI will switch to
+	push bc
+	call IsBossTrainer
+	pop bc
+	jr nc, .done_gym_leader
+	ld a, [wCurOTMon]
+	inc a
+	ld b, a
+	ld a, [wOTPartyCount]
+	dec a
+	dec a
+	cp b
+	jr nc, .done_gym_leader
+	ld a, [wEnemySwitchMonParam]
+	ld b, a
+.done_gym_leader
 	ld a, b
 	ld [wCurPartyMon], a
 	ld hl, wOTPartyMon1Level

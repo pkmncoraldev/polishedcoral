@@ -73,7 +73,7 @@ TrainerClassAttributes: ; 3959c
 	dw CONTEXT_USE
 
 ; Leilani
-	db MAX_POTION, 0 ; items
+	db SUNSHINE_TEA, 0 ; items
 	db 25 ; base reward
 	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE

@@ -315,6 +315,7 @@ AI_Items: ; 39196
 	dbw X_SPCL_DEF,   .XSpclDef
 	dbw X_ACCURACY,   .XAccuracy
 	dbw SODA_POP,	  .SodaPop
+	dbw SUNSHINE_TEA, .SunshineTea
 	db $ff
 ; 381be
 
@@ -427,6 +428,13 @@ AI_Items: ; 39196
 	jp c, .DontUse
 	ld b, 50
 	call EnemyUsedSodaPop
+	jp .Use
+	
+.SunshineTea:
+	call .HealItem
+	jp c, .DontUse
+	ld b, 160
+	call EnemyUsedSunshineTea
 	jp .Use
 	
 .SuperPotion: ; 38292
@@ -611,6 +619,11 @@ EnemyUsedSodaPop:
 	ld a, SODA_POP
 	ld b, 50
 	jr EnemyPotionContinue
+	
+EnemyUsedSunshineTea:
+	ld a, SUNSHINE_TEA
+	ld b, 160
+	jr EnemyPotionContinue
 
 EnemyUsedHyperPotion: ; 383f4 (e:43f4)
 	ld a, HYPER_POTION
@@ -656,7 +669,19 @@ EnemyPotionContinue: ; 383f8
 	ld [wCurHPAnimNewHP + 1], a
 
 EnemyPotionFinish: ; 38436
+	ld a, [wCurEnemyItem]
+	cp SUNSHINE_TEA
+	jr z, .tea
 	call PrintText_UsedItemOn
+	hlcoord 1, 2
+	xor a
+	ld [wWhichHPBar], a
+	call AIUsedItemSound
+	farcall BattleAnimateHPBar
+	jp AIUpdateHUD
+	
+.tea
+	call PrintText_UsedTeaOn
 	hlcoord 1, 2
 	xor a
 	ld [wWhichHPBar], a
@@ -781,7 +806,7 @@ PrintText_UsedItemOn_AND_AIUpdateHUD: ; 38568
 	jp AIUpdateHUD
 ; 38571
 
-PrintText_UsedItemOn: ; 38571
+PrintText_UsedItemOn:
 	ld a, [wCurEnemyItem]
 	ld [wd265], a
 	call GetItemName
@@ -791,9 +816,24 @@ PrintText_UsedItemOn: ; 38571
 	rst CopyBytes
 	ld hl, TextJump_EnemyUsedOn
 	jp PrintText
-; 3858c
+
+PrintText_UsedTeaOn:
+	ld a, [wCurEnemyItem]
+	ld [wd265], a
+	call GetItemName
+	ld hl, wStringBuffer1
+	ld de, wMonOrItemNameBuffer
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	ld hl, TextJump_EnemyUsedOn
+	call PrintText
+	ld hl, TextJump_EnemyUsedHoney
+	jp PrintText
 
 TextJump_EnemyUsedOn: ; 3858c
 	text_jump Text_EnemyUsedOn
 	db "@"
-; 38591
+
+TextJump_EnemyUsedHoney:
+	text_jump Text_EnemyUsedHoney
+	db "@"

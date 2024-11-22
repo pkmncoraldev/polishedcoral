@@ -1083,8 +1083,9 @@ UnknownText_SaveBottleCap::
 	prompt
 	
 UnknownText_MixSweetHoney::
-	text "<PLAYER> mixed in"
-	line "some SWEET HONEY."
+	text "<PLAYER>"
+	line "mixed in some"
+	cont "SWEET HONEY."
 	
 	para "Yum!"
 	prompt

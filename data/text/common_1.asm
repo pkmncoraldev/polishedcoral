@@ -1017,6 +1017,14 @@ Text_EnemyUsedOn::
 	text_from_ram wEnemyMonNick
 	text "!"
 	prompt
+	
+Text_EnemyUsedHoney::
+	text "<ENEMY>"
+	line "mixed in some"
+	cont "SWEET HONEY."
+	
+	para "Yum!"
+	prompt
 
 UnknownText_0x1bd2bc::
 	text "Which floor?"

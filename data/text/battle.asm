@@ -1759,8 +1759,8 @@ FlowerGiftTransformedText:
 	prompt
 	
 SunfloraTransformedText:
-	text "<USER> became"
-	line "part FIRE-type!"
+	text "<USER>"
+	line "became FIRE-type!"
 	prompt
 	
 NoUsablePokemonText:

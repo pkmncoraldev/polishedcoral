@@ -179,6 +179,7 @@ FlowerGiftAbility:
 	ld [wBattleMonForm], a
 	
 	call ChangePlayerFormAnimation
+	ld a, [wBattleMonSpecies]
 	jr .end
 	
 .enemy
@@ -209,6 +210,7 @@ FlowerGiftAbility:
 	ld [wOTPartyMon1Form], a
 	
 	call ChangeEnemyFormAnimation
+	ld a, [wEnemyMonSpecies]
 	jr .end
 .wild
 	pop af

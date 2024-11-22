@@ -2105,6 +2105,12 @@ DisguiseAbility::
 	predef GetVariant
 	ld de, VTiles0 tile $00
 	predef GetBackpic
+	
+	ld a, [wOptions1]
+	push af
+	ld hl, wOptions1
+	set BATTLE_EFFECTS, [hl]
+	
 	xor a
 	ld [wNumHits], a
 	ld [wFXAnimIDHi], a
@@ -2113,6 +2119,8 @@ DisguiseAbility::
 	ld a, TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	farcall LoadAnim
 	call SwitchTurn
+	pop af
+	ld [wOptions1], a
 	
 	ld hl, wPartyMon1Form
 	ld a, [wCurBattleMon]
@@ -2143,6 +2151,12 @@ DisguiseAbility::
 	predef GetVariant
 	ld de, VTiles0 tile $00
 	predef GetFrontpic
+	
+	ld a, [wOptions1]
+	push af
+	ld hl, wOptions1
+	set BATTLE_EFFECTS, [hl]
+	
 	xor a
 	ld [wNumHits], a
 	ld [wFXAnimIDHi], a
@@ -2151,6 +2165,8 @@ DisguiseAbility::
 	ld a, TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	farcall LoadAnim
 	call SwitchTurn
+	pop af
+	ld [wOptions1], a
 	scf
 	ret
 	

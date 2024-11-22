@@ -2807,7 +2807,6 @@ IsBossTrainer:
 	call IsInArray
 	pop de
 	ret
-; 0x3d137
 
 IsSnareTrainer:
 	ld hl, SnareTrainers
@@ -2817,7 +2816,15 @@ IsSnareTrainer:
 	call IsInArray
 	pop de
 	ret
-; 0x3d137
+	
+IsSetOrderTrainerTrainer:
+	ld hl, SetOrderTrainers
+	push de
+	ld a, [wOtherTrainerClass]
+	ld de, $1
+	call IsInArray
+	pop de
+	ret
 
 INCLUDE "data/trainers/bosstrainers.asm"
 
@@ -3462,11 +3469,11 @@ FindPkmnInOTPartyToSwitchIntoBattle:
 LoadEnemyPkmnToSwitchTo:
 	; 'b' contains the PartyNr of the Pkmn the AI will switch to
 	push bc
-	call IsBossTrainer
+	call IsSetOrderTrainerTrainer
 	pop bc
-	jr nc, .done_gym_leader
+	jr nc, .done_set_order
 	eventflagcheck EVENT_USED_ROAR
-	jr nz, .done_gym_leader
+	jr nz, .done_set_order
 	ld a, [wCurOTMon]
 	inc a
 	ld b, a
@@ -3474,10 +3481,10 @@ LoadEnemyPkmnToSwitchTo:
 	dec a
 	dec a
 	cp b
-	jr nc, .done_gym_leader
+	jr nc, .done_set_order
 	ld a, [wEnemySwitchMonParam]
 	ld b, a
-.done_gym_leader
+.done_set_order
 	ld a, b
 	ld [wCurPartyMon], a
 	ld hl, wOTPartyMon1Level

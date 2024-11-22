@@ -146,6 +146,7 @@
 	const SURGE_SURFER
 	const FLOWER_GIFT
 	const TRIAGE
+	const DEFEATIST
 NUM_ABILITIES EQU const_value
 
 ABILITY_1      EQU %00100000

@@ -8,9 +8,9 @@
 	db NO_ITEM ; item 2
 	dn FEMALE_12_5, 3 ; gender, step cycles to hatch
 	dn 7, 7 ; frontpic dimensions
-	db NO_ABILITY ;DEFEATIST ; ability 1
-	db NO_ABILITY ;DEFEATIST ; ability 2
-	db NO_ABILITY ;DEFEATIST ; hidden ability
+	db DEFEATIST ;DEFEATIST ; ability 1
+	db DEFEATIST ;DEFEATIST ; ability 2
+	db DEFEATIST ;DEFEATIST ; hidden ability
 	db MEDIUM_FAST ; growth rate
 	dn AVIAN, INVERTEBRATE ; egg groups
 

@@ -145,6 +145,7 @@ AbilityNames:
 	dw SurgeSurfer
 	dw FlowerGift
 	dw Triage
+	dw Defeatist
 
 NoAbility:     db "-","-","-","@"
 Stench:        db "STENCH@"
@@ -292,6 +293,7 @@ Disguise:	   db "DISGUISE@"
 SurgeSurfer:   db "SURGE SURFER@"
 FlowerGift:	   db "FLOWER GIFT@"
 Triage:        db "TRIAGE@"
+Defeatist:	   db "DEFEATIST@"
 
 
 AbilityDescriptions:
@@ -441,6 +443,7 @@ AbilityDescriptions:
 	dw MotorDriveDescription
 	dw FlowerGiftDescription
 	dw TriageDescription
+	dw DefeatistDescription
 
 NoAbilityDescription:
 	db    "Abilities are"
@@ -1009,3 +1012,7 @@ FlowerGiftDescription:
 TriageDescription:
 	db    "Healing moves"
 	next1 "have priority.@"
+	
+DefeatistDescription:
+	db    "Half power at"
+	next1 "below half HP.@"

@@ -4515,9 +4515,9 @@ TeacherFastGroup:
 
 	; TEACHER_FAST
 	db "KATE@"
-	db TRAINERTYPE_PERSONALITY
+	db TRAINERTYPE_NORMAL
 	; party
-	db 6, MIMIKYU, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM
+	db 6, MEOWTH
 	db -1 ; end
 
 ; ================

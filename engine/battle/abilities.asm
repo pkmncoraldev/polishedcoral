@@ -1572,6 +1572,7 @@ OffensiveDamageAbilities:
 	dbw STRONG_JAW,	StrongJawAbility
 	dbw REFRIGERATE, RefrigerateAbility
 	dbw FLOWER_GIFT, SolarPowerAbility
+	dbw DEFEATIST, DefeatistAbility
 	dbw -1, -1
 
 DefensiveDamageAbilities:
@@ -1599,6 +1600,23 @@ HustleAbility:
 ; 150% physical attack, 80% accuracy (done elsewhere)
 	ld a, $32
 	jp ApplyPhysicalAttackDamageMod
+
+DefeatistAbility:
+	call CheckDefeatist
+	ret nz
+	ld a, $12
+	jp ApplyDamageMod
+
+CheckDefeatist:
+	push hl
+	farcall GetHalfMaxHP
+	call CompareHP
+	pop hl
+	jr c, .ok
+	ret
+.ok
+	xor a
+	ret
 
 OvergrowAbility:
 	ld b, GRASS

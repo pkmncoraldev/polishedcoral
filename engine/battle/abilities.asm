@@ -2324,6 +2324,11 @@ HandleSunfloraAfterBattle:
 	ret
 	
 ChangePlayerFormAnimation:
+	ld a, [wOptions1]
+	push af
+	ld hl, wOptions1
+	set BATTLE_EFFECTS, [hl]
+	
 	ld a, [wBattleMonSpecies] ; TempBattleMonSpecies
 	ld [wCurPartySpecies], a ; CurPartySpecies
 	ld hl, wBattleMonForm
@@ -2351,10 +2356,18 @@ ChangePlayerFormAnimation:
 	ld [wBattleMonType1], a
 	ld a, [wBaseType2]
 	ld [wBattleMonType2], a
+	
+	pop af
+	ld [wOptions1], a
 	ret
 
 	
 ChangeEnemyFormAnimation:
+	ld a, [wOptions1]
+	push af
+	ld hl, wOptions1
+	set BATTLE_EFFECTS, [hl]
+	
 	ld a, [wEnemyMonSpecies] ; TempBattleMonSpecies
 	ld [wCurPartySpecies], a ; CurPartySpecies
 	ld hl, wEnemyMonForm
@@ -2382,6 +2395,9 @@ ChangeEnemyFormAnimation:
 	ld [wEnemyMonType1], a
 	ld a, [wBaseType2]
 	ld [wEnemyMonType2], a
+	
+	pop af
+	ld [wOptions1], a
 	ret
 	
 ResetEnemyFlowerGift:

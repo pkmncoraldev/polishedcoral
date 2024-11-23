@@ -2146,6 +2146,11 @@ DisguiseAbility::
 	call GetPartyLocation
 	ld a, [wBattleMonForm]
 	ld [hl], a
+	
+	ld a, $f
+	ld [wCryTracks], a
+	ld a, [wBattleMonSpecies]
+	call PlayStereoCry
 	scf
 	ret
 .enemy
@@ -2185,6 +2190,7 @@ DisguiseAbility::
 	call SwitchTurn
 	pop af
 	ld [wOptions1], a
+	call PlayMonAnimAfterFormChange
 	scf
 	ret
 	
@@ -2393,7 +2399,10 @@ ChangePlayerFormAnimation:
 	
 	pop af
 	ld [wOptions1], a
-	ret
+	ld a, $f
+	ld [wCryTracks], a
+	ld a, [wBattleMonSpecies]
+	jp PlayStereoCry
 
 	
 ChangeEnemyFormAnimation:
@@ -2432,7 +2441,7 @@ ChangeEnemyFormAnimation:
 	
 	pop af
 	ld [wOptions1], a
-	ret
+	jp PlayMonAnimAfterFormChange
 	
 ResetEnemyFlowerGift:
 	ld hl, wOTPartyMon1Personality
@@ -2584,3 +2593,38 @@ RevertFlowerGift:
 .end
 	ld hl, FlowerGiftTransformedText
 	jp StdBattleTextBox
+	
+PlayMonAnimAfterFormChange:
+	farcall CheckBattleEffects
+	jr c, .cry_no_anim
+	
+	ld a, [wEnemyMonSpecies]
+	ld [wCurPartySpecies], a
+	ld [wCurSpecies], a
+	ld a, [wEnemyMonForm]
+	ld [wCurForm], a
+	farcall GetBaseData
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	jr z, .wild
+	ld a, OTPARTYMON
+	ld [wMonType], a
+	predef CopyPkmnToTempMon
+	jr .finish
+.wild
+	ld a, WILDMON
+	ld [wMonType], a
+	farcall CopyPkmnToTempMon2
+.finish
+	farcall GetMonFrontpic
+	ld bc, wTempEnemyMonSpecies
+	hlcoord 12, 0
+	lb de, $0, ANIM_MON_SLOW
+	predef AnimateFrontpic
+	ret
+.cry_no_anim
+	ld a, $f
+	ld [wCryTracks], a
+	ld a, [wEnemyMonSpecies]
+	jp PlayStereoCry
+	

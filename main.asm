@@ -2932,6 +2932,7 @@ CopyPkmnToTempMon: ; 5084a
 	ld a, [wCurPartyMon]
 	ld e, a
 	call GetPkmnSpecies
+CopyPkmnToTempMon2:
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
 	call GetBaseData

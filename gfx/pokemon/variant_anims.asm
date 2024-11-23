@@ -43,6 +43,10 @@ Marowak_AAnimation: INCLUDE "gfx/pokemon/marowak_a/anim0.asm"
 GyaradosAnimations:
 GyaradosAnimation:  INCLUDE "gfx/pokemon/gyarados/anim0.asm"
 
+SunfloraAnimations:
+SunfloraAnimation:  INCLUDE "gfx/pokemon/sunflora/anim0.asm"
+Sunflora_SAnimation: INCLUDE "gfx/pokemon/sunflora_s/anim0.asm"
+
 WooperAnimations:
 WooperAnimation:  INCLUDE "gfx/pokemon/wooper/anim0.asm"
 Wooper_PAnimation: INCLUDE "gfx/pokemon/wooper_p/anim0.asm"

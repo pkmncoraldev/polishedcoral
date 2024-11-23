@@ -49,6 +49,10 @@ GyaradosAnimationPointers:
 	dw GyaradosAnimation
 	dw Pidgey_RGAnimation
 	
+SunfloraAnimationPointers:
+	dw SunfloraAnimation
+	dw Sunflora_SAnimation
+	
 WooperAnimationPointers:
 	dw WooperAnimation
 	dw Wooper_PAnimation

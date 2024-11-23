@@ -122,7 +122,7 @@ FramesPointers:
 	dw SudowoodoFrames
 	dw PolitoedFrames
 	dw SunkernFrames
-	dw SunfloraFrames
+	dw -1 ; see SunfloraFramesPointers
 	dw -1 ; see WooperFramesPointers
 	dw QuagsireFrames
 	dw EspeonFrames

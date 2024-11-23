@@ -73,6 +73,12 @@ GyaradosPicPointers::
 	dba GyaradosBackpic
 	dba Gyarados_RGFrontpic
 	dba GyaradosBackpic
+	
+SunfloraPicPointers::
+	dba SunfloraFrontpic
+	dba SunfloraBackpic
+	dba Sunflora_SFrontpic
+	dba SunfloraBackpic
 
 WooperPicPointers::
 	dba WooperFrontpic

@@ -48,6 +48,10 @@ GyaradosBitmasksPointers:
 	dw GyaradosBitmasks
 	dw Pidgey_RGBitmasks
 	
+SunfloraBitmasksPointers:
+	dw SunfloraBitmasks
+	dw Sunflora_SBitmasks
+	
 WooperBitmasksPointers:
 	dw WooperBitmasks
 	dw Wooper_PBitmasks

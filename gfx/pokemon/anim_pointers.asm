@@ -122,7 +122,7 @@ AnimationPointers:
 	dw SudowoodoAnimation
 	dw PolitoedAnimation
 	dw SunkernAnimation
-	dw SunfloraAnimation
+	dw -1 ; see SunfloraAnimationPointers
 	dw -1 ; see WooperAnimationPointers
 	dw QuagsireAnimation
 	dw EspeonAnimation

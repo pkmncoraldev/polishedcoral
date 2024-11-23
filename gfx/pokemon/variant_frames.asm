@@ -43,6 +43,10 @@ Marowak_AFrames: INCLUDE "gfx/pokemon/marowak_a/frames.asm"
 GyaradossFrames:
 GyaradosFrames:  INCLUDE "gfx/pokemon/gyarados/frames.asm"
 
+SunflorasFrames:
+SunfloraFrames:  INCLUDE "gfx/pokemon/sunflora/frames.asm"
+Sunflora_SFrames: INCLUDE "gfx/pokemon/sunflora_s/frames.asm"
+
 WoopersFrames:
 WooperFrames:  INCLUDE "gfx/pokemon/wooper/frames.asm"
 Wooper_PFrames: INCLUDE "gfx/pokemon/wooper_p/frames.asm"

@@ -122,7 +122,7 @@ BitmasksPointers:
 	dw SudowoodoBitmasks
 	dw PolitoedBitmasks
 	dw SunkernBitmasks
-	dw SunfloraBitmasks
+	dw -1 ; see SunfloraBitmasksPointers
 	dw -1 ; see WooperBitmasksPointers
 	dw QuagsireBitmasks
 	dw EspeonBitmasks

@@ -48,6 +48,10 @@ GyaradosAnimationExtraPointers:
 	dw GyaradosAnimationExtra
 	dw Pidgey_RGAnimationExtra
 	
+SunfloraAnimationExtraPointers:
+	dw SunfloraAnimationExtra
+	dw Sunflora_SAnimationExtra
+	
 WooperAnimationExtraPointers:
 	dw WooperAnimationExtra
 	dw Wooper_PAnimationExtra

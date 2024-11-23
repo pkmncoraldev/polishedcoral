@@ -11,6 +11,7 @@ VariantSpeciesTable:
 	db EXEGGUTOR
 	db MAROWAK
 	db GYARADOS
+	db SUNFLORA
 	db WOOPER
 	db CORSOLA
 	db SMEARGLE
@@ -32,6 +33,7 @@ VariantAnimPointerTable:
 	dbbww EXEGGUTOR, BANK(ExeggutorAnimations), ExeggutorAnimationPointers, ExeggutorAnimationExtraPointers
 	dbbww MAROWAK, BANK(MarowakAnimations), MarowakAnimationPointers, MarowakAnimationExtraPointers
 	dbbww GYARADOS, BANK(GyaradosAnimations), GyaradosAnimationPointers, GyaradosAnimationExtraPointers
+	dbbww SUNFLORA, BANK(SunfloraAnimations), SunfloraAnimationPointers, SunfloraAnimationExtraPointers
 	dbbww WOOPER, BANK(WooperAnimations), WooperAnimationPointers, WooperAnimationExtraPointers
 	dbbww CORSOLA, BANK(CorsolaAnimations), CorsolaAnimationPointers, CorsolaAnimationExtraPointers
 	dbbww SMEARGLE, BANK(SmeargleAnimations), SmeargleAnimationPointers, SmeargleAnimationExtraPointers
@@ -53,6 +55,7 @@ VariantFramesPointerTable:
 	dbbba EXEGGUTOR, BANK(ExeggutorsFrames), ExeggutorFramesPointers
 	dbbba MAROWAK, BANK(MarowaksFrames), MarowakFramesPointers
 	dbbba GYARADOS, BANK(GyaradossFrames), GyaradosFramesPointers
+	dbbba SUNFLORA, BANK(SunflorasFrames), SunfloraFramesPointers
 	dbbba WOOPER, BANK(WoopersFrames), WooperFramesPointers
 	dbbba CORSOLA, BANK(CorsolasFrames), CorsolaFramesPointers
 	dbbba SMEARGLE, BANK(SmearglesFrames), SmeargleFramesPointers
@@ -74,6 +77,7 @@ VariantBitmasksPointerTable:
 	dbba EXEGGUTOR, ExeggutorBitmasksPointers
 	dbba MAROWAK, MarowakBitmasksPointers
 	dbba GYARADOS, GyaradosBitmasksPointers
+	dbba SUNFLORA, SunfloraBitmasksPointers
 	dbba WOOPER, WooperBitmasksPointers
 	dbba CORSOLA, CorsolaBitmasksPointers
 	dbba SMEARGLE, SmeargleBitmasksPointers

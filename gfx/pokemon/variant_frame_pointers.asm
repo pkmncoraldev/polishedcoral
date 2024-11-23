@@ -48,6 +48,10 @@ GyaradosFramesPointers:
 	dw GyaradosFrames
 	dw Pidgey_RGFrames
 	
+SunfloraFramesPointers:
+	dw SunfloraFrames
+	dw Sunflora_SFrames
+	
 WooperFramesPointers:
 	dw WooperFrames
 	dw Wooper_PFrames

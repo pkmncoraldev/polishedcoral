@@ -31,6 +31,9 @@ Marowak_ABitmasks: INCLUDE "gfx/pokemon/marowak_a/bitmask.asm"
 
 GyaradosBitmasks:  INCLUDE "gfx/pokemon/gyarados/bitmask.asm"
 
+SunfloraBitmasks:  INCLUDE "gfx/pokemon/sunflora/bitmask.asm"
+Sunflora_SBitmasks: INCLUDE "gfx/pokemon/sunflora_s/bitmask.asm"
+
 WooperBitmasks:  INCLUDE "gfx/pokemon/wooper/bitmask.asm"
 Wooper_PBitmasks: INCLUDE "gfx/pokemon/wooper_p/bitmask.asm"
 

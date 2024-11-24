@@ -4,7 +4,7 @@ DefaultOptions:
 	db $00       ; TextBoxFrame: frame 0
 	db $01       ; TextBoxFlags: ?
 	db $0        ; ???
-	db %00000000 ; Options2: default typeface, running shoes off, 12-hour clock,
+	db %00001000 ; Options2: default typeface, running shoes off, 12-hour clock,
 	             ;           imperial units, battle style set
 	db %00000111 ; InitialOptions: natures on, abilities on, color variation on,
 	             ;                 perfect IVs off, traded as OT off,

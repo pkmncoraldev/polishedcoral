@@ -121,7 +121,7 @@ Options_TextSpeed: ; e42f5
 	ld a, [wOptions1]
 	and %11
 	ld c, a
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	dec c
 	bit D_LEFT_F, a
 	jr nz, .ok
@@ -131,15 +131,19 @@ Options_TextSpeed: ; e42f5
 	inc c
 .ok
 	ld a, c
-	and $3
+	cp 0
+	jr nz, .cont_1
+	ld a, 3
+	jr .cont_2
+.cont_1
+	cp 4
+	jr nz, .cont_2
+	ld a, 1
+.cont_2
 	ld c, a
 	ld a, [wOptions1]
 	and $fc
 	or c
-	cp $c0
-	jr nz, .skip
-	ld a, $c1
-.skip
 	ld [wOptions1], a
 
 .NonePressed:
@@ -154,7 +158,6 @@ Options_TextSpeed: ; e42f5
 	call PlaceString
 	and a
 	ret
-; e4331
 
 .Strings:
 	dw .Instant
@@ -169,8 +172,7 @@ Options_TextSpeed: ; e42f5
 .Slow:
 	db "SLOW   @"
 .Instant:
-	db "FAST   @"
-; e4346
+	db "ERROR@"
 
 
 Options_BattleEffects: ; e4365

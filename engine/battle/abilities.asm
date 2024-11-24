@@ -2606,16 +2606,12 @@ PlayMonAnimAfterFormChange:
 	farcall GetBaseData
 	ld a, [wBattleMode]
 	cp WILD_BATTLE
-	jr z, .wild
-	ld a, OTPARTYMON
-	ld [wMonType], a
-	predef CopyPkmnToTempMon
-	jr .finish
-.wild
 	ld a, WILDMON
-	ld [wMonType], a
-	farcall CopyPkmnToTempMon2
+	jr z, .finish
+	ld a, OTPARTYMON
 .finish
+	ld [wMonType], a
+	call CopyPkmnToTempMon2
 	farcall GetMonFrontpic
 	ld bc, wTempEnemyMonSpecies
 	hlcoord 12, 0

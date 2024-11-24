@@ -575,6 +575,8 @@ AI_Smart_Sleep: ; 387e3
 
 AI_Smart_LeechHit: ; 387f7
 	push hl
+	ld a, [wEnemyMoveStructAnimation]
+	ld [wCurMove], a
 	ld a, 1
 	ld [hBattleTurn], a
 	farcall BattleCheckTypeMatchup

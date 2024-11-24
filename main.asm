@@ -2901,17 +2901,6 @@ ResetDisplayBetweenHallOfFameMons: ; 4e906
 
 INCLUDE "engine/battle/sliding_intro.asm"
 
-;CheckBattleEffects: ; 4ea44
-; Return carry if battle scene is turned off.
-;	ld a, [wOptions1]
-;	bit BATTLE_EFFECTS, a
-;	jr z, .off
-;	and a
-;	ret
-;.off
-;	scf
-;	ret
-
 INCLUDE "engine/bsod.asm"
 
 INCLUDE "engine/events/stats_judge.asm"

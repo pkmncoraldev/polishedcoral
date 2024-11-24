@@ -1005,4 +1005,16 @@ CheckBattleEffects:: ; 4ea44
 
 .off
 	scf
+	ret
+	
+CheckMonAnimations:: ; 4ea44
+; Return carry if battle scene is turned off.
+	ld a, [wOptions2]
+	bit MON_ANIMATIONS, a
+	jr z, .off
+	and a
+	ret
+
+.off
+	scf
 	ret 

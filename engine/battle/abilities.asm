@@ -2595,7 +2595,7 @@ RevertFlowerGift:
 	jp StdBattleTextBox
 	
 PlayMonAnimAfterFormChange:
-	farcall CheckBattleEffects
+	farcall CheckMonAnimations
 	jr c, .cry_no_anim
 	
 	ld a, [wEnemyMonSpecies]

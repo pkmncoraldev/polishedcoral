@@ -3684,7 +3684,7 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 	ld bc, wTempMonSpecies
 	farcall CheckFaintedFrzSlp
 	jr c, .skip_cry
-	farcall CheckBattleEffects
+	farcall CheckMonAnimations
 	jr c, .cry_no_anim
 	hlcoord 12, 0
 	lb de, $0, ANIM_MON_SLOW
@@ -9858,7 +9858,7 @@ BattleStartMessage: ; 3fc8b
 	farcall CheckSleepingTreeMon
 	jr c, .skip_cry
 
-	farcall CheckBattleEffects
+	farcall CheckMonAnimations
 	jr c, .cry_no_anim
 
 	hlcoord 12, 0
@@ -10083,7 +10083,7 @@ ForcePlayBattleAnim:
 	ld a, [wOptions1]
 	push af
 	ld hl, wOptions1
-	set BATTLE_EFFECTS, [hl]
+	set MON_ANIMATIONS, [hl]
 	call Call_PlayBattleAnim
 	pop af
 	ld [wOptions1], a

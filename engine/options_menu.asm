@@ -49,7 +49,7 @@ OptionsMenu_LoadOptions:
 	xor a
 	ld [wJumptableIndex], a
 	ld [hJoyPressed], a
-	ld c, $6 ; number of items on the menu minus 1 (for done)
+	ld c, $7 ; number of items on the menu minus 1 (for done)
 .print_text_loop ; this next will display the settings of each option when the menu is opened
 	push bc
 	xor a
@@ -71,6 +71,8 @@ StringOptions1: ; e4241
 	db "TEXT SPEED<LNBRK>"
 	db "        :<LNBRK>"
 	db "BATTLE SCENE<LNBRK>"
+	db "        :<LNBRK>"
+	db "<PK><MN> SCENE<LNBRK>"
 	db "        :<LNBRK>"
 	db "BATTLE STYLE<LNBRK>"
 	db "        :<LNBRK>"
@@ -106,6 +108,7 @@ GetOptionPointer: ; e42d6
 .Pointers:
 	dw Options_TextSpeed
 	dw Options_BattleEffects
+	dw Options_MonAnimations
 	dw Options_BattleStyle
 	dw Options_Frame
 	dw Options_DebugMode
@@ -193,14 +196,40 @@ Options_BattleEffects: ; e4365
 	call PlaceString
 	and a
 	ret
-; e4398
 
 .Off:
 	db "OFF@"
 .On:
 	db "ON @"
-; e43a0
 
+Options_MonAnimations: ; e4365
+	ld hl, wOptions2
+	ld a, [hJoyPressed]
+	and D_LEFT | D_RIGHT
+	jr nz, .Toggle
+	bit MON_ANIMATIONS, [hl]
+	jr z, .SetOff
+	jr .SetOn
+.Toggle
+	bit MON_ANIMATIONS, [hl]
+	jr z, .SetOn
+.SetOff:
+	res MON_ANIMATIONS, [hl]
+	ld de, .Off
+	jr .Display
+.SetOn:
+	set MON_ANIMATIONS, [hl]
+	ld de, .On
+.Display:
+	hlcoord 11, 7
+	call PlaceString
+	and a
+	ret
+
+.Off:
+	db "OFF@"
+.On:
+	db "ON @"
 
 Options_BattleStyle:
 	ld hl, wOptions2
@@ -232,7 +261,7 @@ Options_BattleStyle:
 	ld de, .Set
 
 .Display:
-	hlcoord 11, 7
+	hlcoord 11, 9
 	call PlaceString
 	and a
 	ret
@@ -270,7 +299,7 @@ Options_Frame: ; e44fa
 	ld [hl], a
 UpdateFrame: ; e4512
 	ld a, [wTextBoxFrame]
-	hlcoord 16, 9 ; where on the screen the number is drawn
+	hlcoord 16, 11 ; where on the screen the number is drawn
 	add "1"
 	ld [hl], a
 	call LoadFontsExtra
@@ -334,7 +363,7 @@ Options_DebugMode: ; e4365
 	set DEBUG_MODE, [hl]
 	ld de, .On
 .Display:
-	hlcoord 11, 11
+	hlcoord 11, 13
 	call PlaceString
 	and a
 	ret
@@ -357,7 +386,7 @@ OptionsControl: ; e452a
 .DownPressed:
 	ld a, [hl] ; load the cursor position to a
 
-	cp $5 ; maximum number of items in option menu
+	cp $6 ; maximum number of items in option menu
 	jr nz, .Increase
 	ld [hl], -1
 .Increase:
@@ -370,7 +399,7 @@ OptionsControl: ; e452a
 
 	and a
 	jr nz, .Decrease
-	ld [hl], $6 ; number of option items + 1
+	ld [hl], $7 ; number of option items + 1
 .Decrease:
 	dec [hl]
 	scf

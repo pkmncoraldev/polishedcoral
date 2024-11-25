@@ -318,6 +318,7 @@ PlayerHouseDebugPoster:
 	givetmhm TM_FIRE_BLAST
 	givetmhm TM_FAKE_OUT
 	givetmhm TM_SUBSTITUTE
+	givetmhm TM_WEATHER_BALL
 	givetmhm TM_STEEL_WING
 	givetmhm TM_ROOST
 	givetmhm TM_WILL_O_WISP

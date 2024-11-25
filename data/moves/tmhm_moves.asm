@@ -44,7 +44,7 @@ TMHMMoves:
 	db BRICK_BREAK                         ; TM43
 	db REST                                ; TM44
 	db ATTRACT                             ; TM45
-	db ACROBATICS                          ; TM46
+	db WEATHER_BALL                        ; TM46
 	db STEEL_WING                          ; TM47
 	db ROCK_SLIDE                          ; TM48
 	db DAZZLINGLEAM                        ; TM49

@@ -116,7 +116,7 @@ RadiantGymLeilanicont:
 	setevent EVENT_BEAT_RADIANT_GYM_FELICIA
 	writetext RadiantGymLeilaniTextAfterBattle
 	buttonsound
-;	verbosegivetmhm TM_FAKE_OUT
+	verbosegivetmhm TM_WEATHER_BALL
 	setevent EVENT_GOT_TM_FROM_LEILANI
 	writetext RadiantGymLeilaniTextTMSpeech
 	waitbutton
@@ -288,7 +288,14 @@ RadiantGymLeilaniTextAfterBattle:
 	done
 	
 RadiantGymLeilaniTextTMSpeech:
-	text "TM SPEECH"
+	text "That TM contains"
+	line "WEATHER BALL."
+	
+	para "It isn't much most"
+	line "of the time, but"
+	cont "in harsh weather,"
+	cont "its power goes up"
+	cont "its type changes!"
 	
 	para "…"
 	

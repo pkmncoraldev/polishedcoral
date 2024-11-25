@@ -68,7 +68,7 @@ ENDM
 	add_tm BRICK_BREAK		; $2a
 	add_tm REST				; $2b
 	add_tm ATTRACT			; $2c
-	add_tm ACROBATICS		; $2d
+	add_tm WEATHER_BALL		; $2d
 	add_tm STEEL_WING		; $2e
 	add_tm ROCK_SLIDE		; $2f
 	add_tm DAZZLINGLEAM		; $30

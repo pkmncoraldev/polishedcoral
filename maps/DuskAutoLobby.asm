@@ -234,12 +234,14 @@ DuskAutoLobbyGuy:
 .pick_up_bike
 	checkitem BICYCLE
 	iftrue .have_bike_upgrade
+	setevent EVENT_BIKE_UPGRADED
 	giveitem BICYCLE
 	writetext DuskAutoLobbyGuyText8
 	waitbutton
 	closetext
 	end
 .have_bike_upgrade
+	setevent EVENT_BIKE_UPGRADED
 	writetext DuskAutoLobbyGuyText9
 	waitbutton
 	closetext
@@ -446,11 +448,124 @@ DuskAutoLobbyGuyText7:
 	done
 	
 DuskAutoLobbyGuyText8:
-	text "EXPLAIN BIKE"
+	text "<PLAYER>!"
+	
+	para "Good to see you."
+	
+	para "I finished your"
+	line "BIKE upgrade."
+	
+	para "…"
+	
+	para "…"
+	
+	para "Hey it's me,"
+	line "coraldev."
+	
+	para "I'm talking to"
+	line "you directly thru"
+	cont "your mind."
+	
+	para "This part isn't"
+	line "really finished."
+	
+	para "There's going to"
+	line "be a whole highway"
+	cont "dungeon/route."
+	
+	para "The bike is going"
+	line "to get a motor and"
+	cont "go really fast,"
+	cont "but only on the"
+	cont "highway."
+	
+	para "And theres going"
+	line "to be a traffic"
+	cont "jam caused by"
+	cont "TEAM SNARE."
+	
+	para "It'll be neat,"
+	line "trust me."
+	
+	para "I went ahead and"
+	line "put a few RARE"
+	cont "CANDIES on the"
+	cont "unfinished highway"
+	cont "map to make up for"
+	cont "the EXP you'll get"
+	cont "there."
+	
+	para "There's still more"
+	line "of the game left,"
+	cont "and the next area"
+	cont "is cool I think."
+	
+	para "For now, the toll"
+	line "booth will open"
+	cont "if you're on the"
+	cont "BIKE now that it's"
+	cont "“upgraded”."
+	
+	para "Talk to this dude"
+	line "if you want to"
+	cont "read this again."
+	
+	para "Ok, bye bye."
 	done
 	
 DuskAutoLobbyGuyText9:
-	text "TEXT LOOP"
+	text "Hey it's me,"
+	line "coraldev."
+	
+	para "I'm talking to"
+	line "you directly thru"
+	cont "your mind."
+	
+	para "This part isn't"
+	line "really finished."
+	
+	para "There's going to"
+	line "be a whole highway"
+	cont "dungeon/route."
+	
+	para "The bike is going"
+	line "to get a motor and"
+	cont "go really fast,"
+	cont "but only on the"
+	cont "highway."
+	
+	para "And theres going"
+	line "to be a traffic"
+	cont "jam caused by"
+	cont "TEAM SNARE."
+	
+	para "It'll be neat,"
+	line "trust me."
+	
+	para "I went ahead and"
+	line "put a few RARE"
+	cont "CANDIES on the"
+	cont "unfinished highway"
+	cont "map to make up for"
+	cont "the EXP you'll get"
+	cont "there."
+	
+	para "There's still more"
+	line "of the game left,"
+	cont "and the next area"
+	cont "is cool I think."
+	
+	para "For now, the toll"
+	line "booth will open"
+	cont "if you're on the"
+	cont "BIKE now that it's"
+	cont "“upgraded”."
+	
+	para "Talk to this dude"
+	line "if you want to"
+	cont "read this again."
+	
+	para "Ok, bye bye."
 	done
 	
 DuskAutoLobbyGuyTextGiveBike:

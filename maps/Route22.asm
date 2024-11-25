@@ -11,7 +11,8 @@ Route22_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	itemball_event  7,  5, RARE_CANDY, 3, EVENT_ROUTE_22_RARE_CANDIES
 
 
 Route22Trigger0:

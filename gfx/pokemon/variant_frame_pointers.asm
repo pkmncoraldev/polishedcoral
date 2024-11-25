@@ -51,6 +51,7 @@ GyaradosFramesPointers:
 SunfloraFramesPointers:
 	dw SunfloraFrames
 	dw Sunflora_SFrames
+	dw Sunflora_IntroFrames
 	
 WooperFramesPointers:
 	dw WooperFrames

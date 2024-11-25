@@ -2375,17 +2375,7 @@ ChangePlayerFormAnimation:
 	predef GetVariant
 	ld de, VTiles0 tile $00
 	predef GetBackpic
-	xor a
-	ld [wNumHits], a
-	ld [wFXAnimIDHi], a
-	ld a, $12
-	ld [wKickCounter], a
-	ld a, TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
-	farcall LoadAnim
-	ld a, $13
-	ld [wKickCounter], a
-	ld a, TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
-	farcall LoadAnim
+	call ChangeEnemyFormFadeOutAndIn
 	
 	ld a, [wBattleMonSpecies]
 	ld [wCurSpecies], a
@@ -2412,11 +2402,50 @@ ChangeEnemyFormAnimation:
 	set BATTLE_EFFECTS, [hl]
 	
 	ld a, [wEnemyMonSpecies] ; TempBattleMonSpecies
+	cp SUNFLORA
 	ld [wCurPartySpecies], a ; CurPartySpecies
+	ld hl, wEnemyMonForm
+	jr nz, .not_sunflora
+	call CheckMonAnimations
+	jr c, .not_sunflora
+	call HandleSunfloraFormChange
+	jr .done_sunflora
+.not_sunflora
+	predef GetVariant
+	ld de, VTiles0 tile $00
+	predef GetFrontpic
+	call ChangeEnemyFormFadeOutAndIn
+.done_sunflora
+	ld a, [wEnemyMonSpecies]
+	ld [wCurSpecies], a
+	ld a, [wEnemyMonForm]
+	ld [wCurForm], a
+	call GetBaseData
+	ld a, [wBaseType1]
+	ld [wEnemyMonType1], a
+	ld a, [wBaseType2]
+	ld [wEnemyMonType2], a
+	pop af
+	ld [wOptions1], a
+	jp PlayMonAnimAfterFormChange
+	
+HandleSunfloraFormChange:
+	ld a, [wEnemyMonForm]
+	inc a
+	ld [wEnemyMonForm], a
 	ld hl, wEnemyMonForm
 	predef GetVariant
 	ld de, VTiles0 tile $00
 	predef GetFrontpic
+	call ChangeEnemyFormFadeOutAndIn
+	call PlayMonAnimAfterFormChange
+	eventflagset EVENT_SILENT_BATTLE_ANIMATION
+	ld a, [wEnemyMonForm]
+	dec a
+	ld [wEnemyMonForm], a
+	ret
+	
+ChangeEnemyFormFadeOutAndIn:
 	xor a
 	ld [wNumHits], a
 	ld [wFXAnimIDHi], a
@@ -2427,21 +2456,7 @@ ChangeEnemyFormAnimation:
 	ld a, $13
 	ld [wKickCounter], a
 	ld a, TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
-	farcall LoadAnim
-	
-	ld a, [wEnemyMonSpecies]
-	ld [wCurSpecies], a
-	ld a, [wEnemyMonForm]
-	ld [wCurForm], a
-	call GetBaseData
-	ld a, [wBaseType1]
-	ld [wEnemyMonType1], a
-	ld a, [wBaseType2]
-	ld [wEnemyMonType2], a
-	
-	pop af
-	ld [wOptions1], a
-	jp PlayMonAnimAfterFormChange
+	farjp LoadAnim
 	
 ResetEnemyFlowerGift:
 	ld hl, wOTPartyMon1Personality
@@ -2595,7 +2610,7 @@ RevertFlowerGift:
 	jp StdBattleTextBox
 	
 PlayMonAnimAfterFormChange:
-	farcall CheckMonAnimations
+	call CheckMonAnimations
 	jr c, .cry_no_anim
 	
 	ld a, [wEnemyMonSpecies]
@@ -2613,10 +2628,15 @@ PlayMonAnimAfterFormChange:
 	ld [wMonType], a
 	call CopyPkmnToTempMon2
 	farcall GetMonFrontpic
+	eventflagcheck EVENT_SILENT_BATTLE_ANIMATION
+	lb de, $0, ANIM_MON_EGG1
+	jr nz, .silent
+	lb de, $0, ANIM_MON_NORMAL
+.silent
 	ld bc, wTempEnemyMonSpecies
 	hlcoord 12, 0
-	lb de, $0, ANIM_MON_SLOW
 	predef AnimateFrontpic
+	eventflagreset EVENT_SILENT_BATTLE_ANIMATION
 	ret
 .cry_no_anim
 	ld a, $f

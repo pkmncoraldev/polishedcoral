@@ -79,6 +79,8 @@ SunfloraPicPointers::
 	dba SunfloraBackpic
 	dba Sunflora_SFrontpic
 	dba SunfloraBackpic
+	dba Sunflora_IntroFrontpic
+	dba SunfloraBackpic
 
 WooperPicPointers::
 	dba WooperFrontpic

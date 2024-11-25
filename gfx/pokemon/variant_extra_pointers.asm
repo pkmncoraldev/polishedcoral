@@ -51,6 +51,7 @@ GyaradosAnimationExtraPointers:
 SunfloraAnimationExtraPointers:
 	dw SunfloraAnimationExtra
 	dw Sunflora_SAnimationExtra
+	dw Sunflora_IntroAnimationExtra
 	
 WooperAnimationExtraPointers:
 	dw WooperAnimationExtra

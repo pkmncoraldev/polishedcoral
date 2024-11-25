@@ -51,6 +51,7 @@ GyaradosBitmasksPointers:
 SunfloraBitmasksPointers:
 	dw SunfloraBitmasks
 	dw Sunflora_SBitmasks
+	dw Sunflora_IntroBitmasks
 	
 WooperBitmasksPointers:
 	dw WooperBitmasks

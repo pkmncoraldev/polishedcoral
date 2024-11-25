@@ -46,6 +46,7 @@ GyaradosFrames:  INCLUDE "gfx/pokemon/gyarados/frames.asm"
 SunflorasFrames:
 SunfloraFrames:  INCLUDE "gfx/pokemon/sunflora/frames.asm"
 Sunflora_SFrames: INCLUDE "gfx/pokemon/sunflora_s/frames.asm"
+Sunflora_IntroFrames: INCLUDE "gfx/pokemon/sunflora_s/intro_frames.asm"
 
 WoopersFrames:
 WooperFrames:  INCLUDE "gfx/pokemon/wooper/frames.asm"

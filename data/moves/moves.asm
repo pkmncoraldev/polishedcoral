@@ -40,9 +40,9 @@ Moves:: ; 41afb
 	move BULLET_SEED,              EFFECT_MULTI_HIT,          25, GRASS,     100, 30,   0, PHYSICAL
 	move HEADBUTT,                 EFFECT_FLINCH_HIT,         70, NORMAL,    100, 15,  30, PHYSICAL
 	move HORN_ATTACK,              EFFECT_NORMAL_HIT,         65, NORMAL,    100, 25,   0, PHYSICAL
-	move FIRE_FANG,                EFFECT_FIRE_FANG,          65, FIRE,       95, 15,  20, PHYSICAL
-	move ICE_FANG,                 EFFECT_ICE_FANG,           65, ICE,        95, 15,  20, PHYSICAL
-	move THUNDER_FANG,             EFFECT_THUNDER_FANG,       65, ELECTRIC,   95, 15,  20, PHYSICAL
+	move FIRE_FANG,                EFFECT_FIRE_FANG,          65, FIRE,       95, 15,  10, PHYSICAL
+	move ICE_FANG,                 EFFECT_ICE_FANG,           65, ICE,        95, 15,  10, PHYSICAL
+	move THUNDER_FANG,             EFFECT_THUNDER_FANG,       65, ELECTRIC,   95, 15,  10, PHYSICAL
 	move TACKLE_SCRATCH_POUND,     EFFECT_NORMAL_HIT,         40, NORMAL,    100, 35,   0, PHYSICAL
 	move BODY_SLAM,                EFFECT_BODY_SLAM,          85, NORMAL,    100, 15,  30, PHYSICAL
 	move WOOD_HAMMER,              EFFECT_RECOIL_HIT,        120, GRASS,     100, 15,   0, PHYSICAL

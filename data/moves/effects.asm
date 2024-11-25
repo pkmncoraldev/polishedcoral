@@ -261,6 +261,7 @@ BurnFlinchHit:
 	postfainteffects
 	posthiteffects
 	flinchtarget
+	effectchance
 	burntarget
 	pickpocket
 	endmove
@@ -284,7 +285,9 @@ FreezeFlinchHit:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	freezeflinchtarget
+	flinchtarget
+	effectchance
+	freezetarget
 	pickpocket
 	endmove
 	
@@ -307,7 +310,9 @@ ParalyzeFlinchHit:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	paralyzeflinchtarget
+	flinchtarget
+	effectchance
+	paralyzetarget
 	pickpocket
 	endmove
 

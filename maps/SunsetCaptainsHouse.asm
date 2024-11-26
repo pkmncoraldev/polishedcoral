@@ -60,11 +60,8 @@ SunsetCaptainsHouseTrigger0Event:
 	jump .cont
 	
 SunsetCaptain:
-;	jump .captaingivesallrides ;UNCOMMENT FOR TESTING
 	clearevent EVENT_LAKE_ROCKS_BROWN
 	clearevent EVENT_BRILLO_MARACTUS_GREEN
-	checkevent EVENT_SAVED_SUNBEAM
-	iftrue .captaingivesallrides
 	checkevent EVENT_CAPTAIN_GIVES_RIDES_TO_ISLAND
 	iftrue SunsetCaptainRidetoIsland
 	checkevent EVENT_CAN_GET_FIRST_RIDE_TO_ISLAND
@@ -76,97 +73,6 @@ SunsetCaptain:
 	writetext SunsetCaptainText2
 	waitbutton
 	closetext
-	end
-	
-.captaingivesallrides
-	faceplayer
-	opentext
-	writetext SunsetCaptainBoatHouseText1
-	yesorno
-	iffalse .end
-.return
-	writetext SunsetCaptainBoatHouseText2
-	waitbutton
-	closetext
-	refreshscreen $0
-	loadmenudata SunsetCaptainBoatHouseMenuData
-	verticalmenu
-	closewindow
-	if_equal $1, .LakeL
-	if_equal $2, .LakeR
-	if_equal $3, .Sunbeam
-	if_equal $4, .end
-	
-.LakeL
-	writetext SunsetCaptainBoatHouseText3
-	yesorno
-	iffalse .return
-	writetext SunsetCaptainBoatHouseText4
-	waitbutton
-	closetext
-	special FadeOutPalettes
-	special Special_FadeOutMusic
-	setevent EVENT_TAKEN_LAKE_BOAT_ONCE
-	setevent EVENT_LAKE_BOAT_LEFT
-	setevent EVENT_JUST_TOOK_BOAT
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
-	domaptrigger LAKE_ONWA, $4
-	warpfacing LEFT, LAKE_ONWA, $18, $19
-	end
-	
-.LakeR
-	writetext SunsetCaptainBoatHouseText5
-	yesorno
-	iffalse .return
-	writetext SunsetCaptainBoatHouseText4
-	waitbutton
-	closetext
-	special FadeOutPalettes
-	special Special_FadeOutMusic
-	setevent EVENT_TAKEN_LAKE_BOAT_ONCE
-	clearevent EVENT_LAKE_BOAT_LEFT
-	setevent EVENT_JUST_TOOK_BOAT
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
-	domaptrigger LAKE_ONWA, $3
-	warpfacing RIGHT, LAKE_ONWA, $27, $1f
-	end
-	
-.Sunbeam
-	writetext SunsetCaptainBoatHouseText6
-	yesorno
-	iffalse .return
-	writetext SunsetCaptainRidetoIslandTextYes
-	waitbutton
-	closetext
-	special FadeOutPalettes
-	special Special_FadeOutMusic
-	clearevent EVENT_ISLAND_BOATMAN
-	setevent EVENT_ISLAND_STRAND
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_ELDER
-	domaptrigger SUNBEAM_ISLAND, $5
-	warpfacing DOWN, SUNBEAM_ISLAND, 13, 51
-	end
-	
-.end
-	writetext SunsetCaptainRidetoIslandTextNo
-	waitbutton
-	closetext
-	end
-	
-SunsetCaptainBoatHouseMenuData:
-	db $40 ; flags
-	db 03, 00 ; start coords
-	db 17, 19 ; end coords
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db $81 ; flags
-	db 4 ; items
-	db "LAKE ONWA WEST@"
-	db "LAKE ONWA EAST@"
-	db "SUNBEAM ISLAND@"
-	db "CANCEL@"
 	end
 	
 SunsetCaptain2:

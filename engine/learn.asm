@@ -170,6 +170,8 @@ ForgetMove: ; 65d3
 	dec a
 	ld c, a
 	ld b, 0
+	xor a
+	ld [wPlaceBallsX], a
 	ld a, [wMoveScreenSelectedMove]
 	pop hl
 	add hl, bc
@@ -177,6 +179,8 @@ ForgetMove: ; 65d3
 	ret
 
 .cancel
+	xor a
+	ld [wPlaceBallsX], a
 	pop hl
 	scf
 	ret

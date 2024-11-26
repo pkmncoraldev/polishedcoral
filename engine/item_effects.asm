@@ -3099,6 +3099,8 @@ UseDisposableItem: ; f795
 	ld hl, wNumItems
 	ld a, 1
 	ld [wItemQuantityChangeBuffer], a
+	xor a
+	ld [wPlaceBallsX], a
 	jp TossItem
 ; f7a0
 

@@ -77,6 +77,8 @@ RadiantOrphanage1FErika:
 	writetext RadiantOrphanage1FErikaText3
 	yesorno
 	iffalse .no
+	writetext RadiantOrphanage1FErikaText5
+	waitbutton
 	closetext
 	waitsfx
 	winlosstext RadiantOrphanage1FErikaWinText, 0
@@ -152,6 +154,12 @@ RadiantOrphanage1FErikaText4:
 	line "again someday."
 	done
 	
+RadiantOrphanage1FErikaText5:
+	text "Lovely!"
+	
+	para "Let's begin!"
+	done
+	
 RadiantOrphanage1FErikaNoText:
 	text "I see…"
 	
@@ -159,7 +167,7 @@ RadiantOrphanage1FErikaNoText:
 	done
 	
 RadiantOrphanage1FErikaWinText:
-	text "Incredible!"
+	text "Remarkable!"
 	done
 
 RadiantOrphanage1FChair:

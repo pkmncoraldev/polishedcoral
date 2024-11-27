@@ -55,7 +55,7 @@ RadiantOrphanage1FCallback:
 	checkevent EVENT_RADIANT_GYM_ACTIVE
 	iffalse .end
 	changeblock $8, $2, $39
-	callasm GenericFinishBridge
+;	callasm GenericFinishBridge
 .end
 	return
 

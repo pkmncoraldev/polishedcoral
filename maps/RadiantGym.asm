@@ -90,6 +90,7 @@ RadiantGymLeilanicont:
 	closetext
 	waitsfx
 	winlosstext RadiantGymLeilaniTextWin, RadiantGymLeilaniTextLoss
+	setlasttalked RADIANT_GYM_LEILANI
 	loadtrainer LEILANI, 1
 	startbattle
 	reloadmapafterbattle
@@ -295,7 +296,8 @@ RadiantGymLeilaniTextTMSpeech:
 	line "of the time, but"
 	cont "in harsh weather,"
 	cont "its power goes up"
-	cont "its type changes!"
+	cont "and its type"
+	cont "changes!"
 	
 	para "…"
 	

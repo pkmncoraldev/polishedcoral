@@ -109,12 +109,18 @@ AI_Setup: ; 385e0
 
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 
+	cp EFFECT_DRAGON_DANCE
+	jr z, .statup
+	cp EFFECT_COSMIC_POWER
+	jr z, .statup
+	cp EFFECT_CALM_MIND
+	jr z, .statup
 	cp EFFECT_ATTACK_UP
 	jr c, .checkmove
 	cp EFFECT_EVASION_UP + 1
 	jr c, .statup
 
-;	cp EFFECT_ATTACK_DOWN - 1
+	cp EFFECT_ATTACK_DOWN - 1
 	jr z, .checkmove
 	cp EFFECT_EVASION_DOWN + 1
 	jr c, .statdown
@@ -124,7 +130,7 @@ AI_Setup: ; 385e0
 	cp EFFECT_EVASION_UP_2 + 1
 	jr c, .statup
 
-;	cp EFFECT_ATTACK_DOWN_2 - 1
+	cp EFFECT_ATTACK_DOWN_2 - 1
 	jr z, .checkmove
 	cp EFFECT_EVASION_DOWN_2 + 1
 	jr c, .statdown

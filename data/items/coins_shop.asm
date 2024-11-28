@@ -5,11 +5,11 @@ CoinsShopData:
 	
 PollenShopData:
 	db 7 ; # items
-	dbw CHLOROPHIAL,		 500
 	dbw NUGGET,				 500
-	dbw SUNSHINE_TEA,		 250
-	dbw BLOSSOM_TEA,		 100
-	dbw SWEET_HONEY,		 100
-	dbw BERRY_JUICE,		  50
-	dbw BOTTLE_CAP,			  50
+	dbw CHLOROPHIAL,		 100
+	dbw SUNSHINE_TEA,		 100
+	dbw BLOSSOM_TEA,		  50
+	dbw SWEET_HONEY,		  50
+	dbw BERRY_JUICE,		  25
+	dbw BOTTLE_CAP,			  25
 	db -1

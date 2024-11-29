@@ -19,7 +19,7 @@ LakeOnwa_MapScriptHeader:
 	warp_def 16, 13, 1, LAKE_ONWA_ITEM_HOUSE
 	warp_def 17, 19, 1, LAKE_ONWA_POKECENTER
 	warp_def  1, 57, 3, ROUTE_8_GATE
-	warp_def 13, 23, 1, LAKE_ONWA_MART
+	warp_def 13, 23, 2, LAKE_ONWA_MART
 
 	db 64 ; coord events
 	coord_event 22, 18, 0, LakeMakeSilverBrown

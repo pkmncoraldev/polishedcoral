@@ -9,7 +9,7 @@ FlickerStation_MapScriptHeader:
 
 	db 7 ; warp events
 	warp_def 29, 11, 1, FLICKER_POKECENTER
-	warp_def 15,  7, 1, FLICKER_MART
+	warp_def 15,  7, 2, FLICKER_MART
 	warp_def 15, 15, 1, FLICKER_SOUND_SPEECH_HOUSE
 	warp_def 15, 23, 1, FLICKER_NAME_SPEECH_HOUSE
 	warp_def 29, 21, 1, FLICKER_TRAIN_STATION

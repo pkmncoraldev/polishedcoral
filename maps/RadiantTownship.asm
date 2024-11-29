@@ -11,7 +11,7 @@ RadiantTownship_MapScriptHeader:
 	warp_def 24, 21, 2, RADIANT_FIELD
 	warp_def 13, 24, 1, RADIANT_ORPHANAGE_1F
 	warp_def  7,  7, 1, RADIANT_POKECENTER
-	warp_def 15,  7, 1, RADIANT_MART
+	warp_def 15,  7, 2, RADIANT_MART
 	warp_def  9, 17, 1, RADIANT_HOUSE
 	warp_def  5, 33, 3, ROUTE_21_GATE
 

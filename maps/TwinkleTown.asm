@@ -9,7 +9,7 @@ TwinkleTown_MapScriptHeader:
 
 	db 7 ; warp events
 	warp_def 47, 11, 1, TWINKLE_POKECENTER
-	warp_def 41, 17, 1, TWINKLE_MART
+	warp_def 41, 17, 2, TWINKLE_MART
 	warp_def 31, 17, 1, TWINKLE_ROCK_HOUSE
 	warp_def 39,  7, 1, TWINKLE_TRADE_HOUSE
 	warp_def 49, 21, 1, TWINKLE_SNOW_HOUSE

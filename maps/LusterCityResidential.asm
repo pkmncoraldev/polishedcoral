@@ -8,7 +8,7 @@ LusterCityResidential_MapScriptHeader:
 
 	db 11 ; warp events
 	warp_def 20, 12, 1, LUSTER_SEWERS_B1F
-	warp_def 25,  9, 1, LUSTER_MART
+	warp_def 25,  9, 2, LUSTER_MART
 	warp_def 25, 17, 1, LUSTER_POKECENTER
 	warp_def 24,  5, 1, LUSTER_APARTMENT_1_1F
 	warp_def 34, 11, 1, LUSTER_APARTMENT_2_1F

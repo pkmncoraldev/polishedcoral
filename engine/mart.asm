@@ -9,7 +9,8 @@
 OpenMartDialog:: ; 15a45
 	ld a, c
 	ld [wEngineBuffer1], a
-	ld [wTileDown], a
+	ld a, e
+	ld [wPlaceBallsY], a
 	call GetMart
 	call LoadMartPointer
 	ld a, [wEngineBuffer1]
@@ -495,15 +496,10 @@ FishMarket: ; 15b47
 	call PrintText
 	ld a, $1 ; top menu
 	ret
-; 15bbb
-
-INCLUDE "data/items/coins_shop.asm"
 
 PasswordShop: ; 15b47
-	ld b, BANK(CoinsShopData)
-	ld de, CoinsShopData
-	call LoadMartPointer
-	call ReadMart
+	call FarReadTMMart
+	call LoadStandardMenuDataHeader
 	ld hl, Text_BrilloMartSecret1
 	call MartTextBox
 	ld hl, Text_BrilloMartSecret2
@@ -513,10 +509,8 @@ PasswordShop: ; 15b47
 	ret
 	
 PollenShop:
-	ld b, BANK(PollenShopData)
-	ld de, PollenShopData
-	call LoadMartPointer
-	call ReadMart
+	call FarReadTMMart
+	call LoadStandardMenuDataHeader
 	ld hl, Text_PollenShopText
 	call MartTextBox
 	call BuyMenuPollen
@@ -707,6 +701,8 @@ BuyMenu: ; 15c62
 BuyMenu_Finish:
 	call SFXDelay2
 	call ReturnToMapWithSpeechTextbox
+	xor a
+	ld [wPlaceBallsY], a
 	and a
 	ret
 ; 15c7d
@@ -791,25 +787,16 @@ BuyMenu_InitGFX::
 	ld a, BANK(MenuLeftColumnGFX)
 	call FarCopyBytes
 	
-	ld a, [wTileDown]
-	cp MARTTYPE_COIN_MART
-	jr z, .coin
-	cp MARTTYPE_POLLEN
-	jr z, .pollen
-	xor a
-	jr .cont
-.coin
-	ld a, 1
-	jr .cont
-.pollen
-	ld a, 2
-.cont
-	and $7
-	ld d, a
+	ld a, [wPlaceBallsY]
+	ld hl, MartClerkPics
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hl]
+	ld [wPlaceBallsY], a
 	ld bc, 20 tiles
 	ld hl, RegisterGFX
 	ld e, BANK(RegisterGFX)
-	ld a, d
 	rst AddNTimes
 	ld b, e
 	ld c, 20
@@ -864,6 +851,50 @@ BuyMenu_InitGFX::
 	db $03, $06, $06, $06, $04, 0
 	db $0c, $0c, $0c, $0c, $0c, 0
 	db $0c, $0c, $0c, $0c, $0c, -1
+
+MartClerkPics:
+	db POKEMART_CLERK	 ; MART_SUNSET
+	db POKEMART_CLERK	 ; MART_GLINT
+	db POKEMART_CLERK	 ; MART_STARGLOW
+	db POKEMART_CLERK	 ; MART_ROUTE_5_GATE
+	db POKEMART_CLERK	 ; MART_LAKE_ONWA
+	db POKEMART_CLERK	 ; MART_SUNBEAM
+	db POKEMART_CLERK	 ; MART_EVENTIDE
+	db POKEMART_CLERK	 ; MART_FLICKER
+	db POKEMART_CLERK	 ; MART_TWINKLE
+	db POKEMART_CLERK	 ; MART_LUSTER
+	db POKEMART_CLERK	 ; MART_LUSTER_MALL_ELECTRONICS
+	db POKEMART_CLERK	 ; MART_LUSTER_MALL_ELECTRONICS_TM
+	db POKEMART_CLERK	 ; MART_LUSTER_MALL_COFFEE
+	db POKEMART_CLERK	 ; MART_LUSTER_MALL_COFFEE2
+	db POKEMART_CLERK	 ; MART_LUSTER_MALL_ANTIQUE
+	db POKEMART_CLERK	 ; MART_LUSTER_MALL_HERB
+	db POKEMART_CLERK	 ; MART_LUSTER_MALL_STONE
+	db POKEMART_CLERK	 ; MART_LUSTER_MALL_CLOTHES
+	db POKEMART_CLERK	 ; MART_SHIMMER_FISH_MARKET
+	db POKEMART_CLERK	 ; MART_SHIMMER_BERRY_MARKET
+	db POKEMART_CLERK	 ; MART_SHIMMER
+	db BRILLO_MART_CLERK ; MART_BRILLO
+	db BRILLO_MART_CLERK ; MART_COINS
+	db POKEMART_CLERK	 ; MART_RADIANT
+	db POKEMART_CLERK	 ; MART_DUSK
+	db POKEMART_CLERK	 ; MART_KOMORE
+	db POKEMART_CLERK	 ; MART_LUSTER_MALL_ELECTRONICS_DECO
+	db POKEMART_CLERK	 ; MART_LUSTER_MALL_FURNITURE
+	db MOOMOOS_CLERK	 ; MART_MOOMOOS_1
+	db MOOMOOS_CLERK	 ; MART_MOOMOOS_2
+	db POKEMART_CLERK	 ; MART_SHIMMER_CAFE
+	db POLLEN_SHOP_CLERK ; MART_POLLEN
+	db POKEMART_CLERK	 ; MART_CELADON_5F_1
+	db POKEMART_CLERK	 ; MART_CELADON_5F_2
+	db POKEMART_CLERK	 ; MART_SAFFRON
+	db POKEMART_CLERK	 ; MART_SILPH_CO
+	db POKEMART_CLERK	 ; MART_FUCHSIA
+	db POKEMART_CLERK	 ; MART_SHAMOUTI_1
+	db POKEMART_CLERK	 ; MART_SHAMOUTI_2
+	db POKEMART_CLERK	 ; MART_BT_1
+	db POKEMART_CLERK	 ; MART_BT_2
+	db POKEMART_CLERK	 ; MART_BT_3
 
 LoadBuyMenuText: ; 15c7d
 ; load text from a nested table

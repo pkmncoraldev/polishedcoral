@@ -235,7 +235,7 @@ BrilloMartClerkSellAsm:
 BrilloMartClerkSecretAsm:
 	ld a, MARTTYPE_COIN_MART
 	ld c, a
-	xor a
+	ld a, MART_COINS
 	ld e, a
 	ld d, 0
 	ld a, [wScriptBank]

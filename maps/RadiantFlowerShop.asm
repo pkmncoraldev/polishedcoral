@@ -101,7 +101,7 @@ RadiantFlowerShopClerk:
 RadiantFlowerShopClerkAsm:
 	ld a, MARTTYPE_POLLEN
 	ld c, a
-	xor a
+	ld a, MART_POLLEN
 	ld e, a
 	ld d, 0
 	ld a, [wScriptBank]

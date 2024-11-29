@@ -854,6 +854,14 @@ _CGB_BuyMenu: ; 9499
 	ld bc, 3 palettes
 	ld a, $5
 	call FarCopyWRAM
+	
+	ld hl, MartClerkPals
+	ld a, [wPlaceBallsY]
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld de, wUnknBGPals + 3 palettes
+	ld a, $5
+	call FarCopyWRAM
 
 	call WipeAttrMap
 
@@ -862,9 +870,16 @@ _CGB_BuyMenu: ; 9499
 	ld a, $1
 	call FillBoxCGB
 
-	hlcoord 0, 3, wAttrMap
-	lb bc, 7, 5
+;shop sign
+	hlcoord 0, 7, wAttrMap
+	lb bc, 3, 5
 	ld a, $1
+	call FillBoxCGB
+	
+;clerk
+	hlcoord 0, 3, wAttrMap
+	lb bc, 4, 5
+	ld a, $3
 	call FillBoxCGB
 	
 	hlcoord 0, 0, wAttrMap
@@ -874,7 +889,27 @@ _CGB_BuyMenu: ; 9499
 
 	jp _CGB_FinishLayout
 ; 94d0
-
+MartClerkPals:
+;PokeMart
+	RGB 31, 31, 31
+	RGB 30, 22, 17
+	RGB 07, 07, 17
+	RGB 00, 00, 00
+;Brillo Mart
+	RGB 31, 31, 31
+	RGB 13, 13, 13
+	RGB 06, 06, 06
+	RGB 00, 00, 00
+;Pollen Shop
+	RGB 31, 31, 31
+	RGB 26, 18, 10
+	RGB 06, 14, 04
+	RGB 00, 00, 00
+;Moo Moos
+	RGB 31, 31, 31
+	RGB 30, 17, 14
+	RGB 21, 05, 04
+	RGB 00, 00, 00
 
 _CGB_PackPals: ; 93d3
 ; pack pals

@@ -21,6 +21,7 @@ Marts: ; 160a9
 	dw ShimmerBerryMarket
 	dw ShimmerMart
 	dw BrilloMart
+	dw CoinsMart
 	dw RadiantMart
 	dw DuskMart
 	dw KomoreMart
@@ -29,6 +30,7 @@ Marts: ; 160a9
 	dw MooMoos1
 	dw MooMoos2
 	dw ShimmerCafe
+	dw PollenMart
 MartsEnd:
 
 
@@ -320,6 +322,11 @@ BrilloMart:
 	db X_SPCL_DEF
 	db -1
 	
+CoinsMart:
+	db 1 ; # items
+	dbw ABILITY_CAP,  1
+	db -1
+	
 RadiantMart:
 	db 13 ; # items
 	db POKE_BALL
@@ -396,4 +403,15 @@ ShimmerCafe:
 	db FRESH_WATER 
 	db SODA_POP
 	db LEMONADE
+	db -1
+	
+PollenMart:
+	db 7 ; # items
+	dbw NUGGET,				 500
+	dbw CHLOROPHIAL,		 100
+	dbw SUNSHINE_TEA,		 100
+	dbw BLOSSOM_TEA,		  50
+	dbw SWEET_HONEY,		  50
+	dbw BERRY_JUICE,		  25
+	dbw BOTTLE_CAP,			  25
 	db -1

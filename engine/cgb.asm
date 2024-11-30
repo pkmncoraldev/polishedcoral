@@ -902,8 +902,8 @@ MartClerkPals:
 	RGB 00, 00, 00
 ;Brillo Mart
 	RGB 31, 31, 31
-	RGB 13, 13, 13
-	RGB 06, 06, 06
+	RGB 26, 18, 10
+	RGB 20, 08, 05
 	RGB 00, 00, 00
 ;Pollen Shop
 	RGB 31, 31, 31

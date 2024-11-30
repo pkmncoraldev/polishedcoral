@@ -895,6 +895,11 @@ MartClerkPals:
 	RGB 30, 22, 17
 	RGB 07, 07, 17
 	RGB 00, 00, 00
+;Refreshments
+	RGB 31, 31, 31
+	RGB 30, 22, 17
+	RGB 24, 06, 14
+	RGB 00, 00, 00
 ;Brillo Mart
 	RGB 31, 31, 31
 	RGB 13, 13, 13

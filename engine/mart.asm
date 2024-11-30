@@ -6,7 +6,7 @@
 	const MARTTEXT_HERE_YOU_GO
 	const MARTTEXT_SOLD_OUT
 
-OpenMartDialog:: ; 15a45
+OpenMartDialog::
 	ld a, c
 	ld [wEngineBuffer1], a
 	ld a, e
@@ -17,7 +17,6 @@ OpenMartDialog:: ; 15a45
 	ld hl, .dialogs
 	rst JumpTable
 	ret
-; 15a57
 
 .dialogs
 	dw MartDialog
@@ -46,14 +45,12 @@ OpenMartDialog:: ; 15a45
 	dw PollenShop
 	dw DecoShop
 	dw BartenderMart
-; 15a61
 
-MartDialog: ; 15a61
+MartDialog:
 	xor a
 	ld [wEngineBuffer1], a
 	ld [wEngineBuffer5], a
 	jp StandardMart
-; 15a6e
 
 BerryMarket:
 	call FarReadMart
@@ -64,7 +61,7 @@ BerryMarket:
 	ld hl, Text_HerbShop_ComeAgain
 	jp MartTextBox
 
-HerbShop: ; 15a6e
+HerbShop:
 	call FarReadMart
 	call LoadStandardMenuDataHeader
 	ld hl, Text_HerbShop_Intro
@@ -72,28 +69,18 @@ HerbShop: ; 15a6e
 	call BuyMenu
 	ld hl, Text_HerbShop_ComeAgain
 	jp MartTextBox
-; 15a84
 
-RefreshmentsShop: ; 15a84
-	ld b, BANK(RefreshmentsShopData)
-	ld de, RefreshmentsShopData
-	call LoadMartPointer
-	call ReadMart
+RefreshmentsShop:
+	call FarReadTMMart
 	call LoadStandardMenuDataHeader
 	ld hl, Text_RefreshmentsShop_Intro
 	call MartTextBox
 	call BuyRefreshmentsMenu
 	ld hl, Text_RefreshmentsShop_ComeAgain
 	jp MartTextBox
-; 15aae
-
-INCLUDE "data/items/refreshments_shop.asm"
 
 BallShop:
-	ld b, BANK(BallShopData)
-	ld de, BallShopData
-	call LoadMartPointer
-	call ReadMart
+	call FarReadTMMart
 	call LoadStandardMenuDataHeader
 	ld hl, Text_BallMart_Intro
 	call MartTextBox
@@ -102,18 +89,13 @@ BallShop:
 	jp MartTextBox
 	
 BallShopDiscount:
-	ld b, BANK(BallShopDataDiscount)
-	ld de, BallShopDataDiscount
-	call LoadMartPointer
-	call ReadMart
+	call FarReadTMMart
 	call LoadStandardMenuDataHeader
 	ld hl, Text_InformalMart_Intro
 	call MartTextBox
 	call BuyMenu
 	ld hl, Text_InformalMart_ComeAgain
 	jp MartTextBox
-
-INCLUDE "data/items/ball_shop.asm"
 
 ElectronicsShop: ; 15a6e
 	call FarReadMart
@@ -871,6 +853,8 @@ MartClerkPics:
 	db POKEMART_CLERK	 	; MART_LUSTER_MALL_HERB
 	db POKEMART_CLERK	 	; MART_LUSTER_MALL_STONE
 	db POKEMART_CLERK	 	; MART_LUSTER_MALL_CLOTHES
+	db POKEMART_CLERK	 	; MART_LUSTER_MALL_BALL_1
+	db POKEMART_CLERK	 	; MART_LUSTER_MALL_BALL_2
 	db POKEMART_CLERK	 	; MART_SHIMMER_FISH_MARKET
 	db POKEMART_CLERK	 	; MART_SHIMMER_BERRY_MARKET
 	db POKEMART_CLERK	 	; MART_SHIMMER

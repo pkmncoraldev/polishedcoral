@@ -17,6 +17,8 @@ Marts: ; 160a9
 	dw LusterMallHerb
 	dw LusterMallStone
 	dw LusterMallClothes
+	dw LusterMallBall1
+	dw LusterMallBall2
 	dw ShimmerFishMarket
 	dw ShimmerBerryMarket
 	dw ShimmerMart
@@ -65,11 +67,12 @@ StarglowMart: ; 160fa
 	db -1
 	
 Route5GateMart: ; 160fa
-	db 4 ; # items
-	db FRESH_WATER
-	db SODA_POP
-	db LEMONADE
-	db RAGECANDYBAR
+	db 5
+	dbw BERRY_JUICE,   800
+	dbw FRESH_WATER,   700
+	dbw SODA_POP,      800
+	dbw LEMONADE,      900
+	dbw RAGECANDYBAR,  800
 	db -1
 
 LakeOnwaMart:
@@ -274,6 +277,42 @@ LusterMallClothes:
 	dbw PURPLE_CLOTHES, 5000
 	dbw TEAL_CLOTHES, 	5000
 	dbw PINK_CLOTHES, 	5000
+	db -1
+	
+LusterMallBall1:
+	db 14
+	dbw POKE_BALL,     400
+	dbw GREAT_BALL,    800
+	dbw ULTRA_BALL,   1000
+	dbw LEVEL_BALL,    800
+	dbw LURE_BALL,     800
+	dbw MOON_BALL,     800
+	dbw FRIEND_BALL,   800
+	dbw FAST_BALL,     800
+	dbw HEAVY_BALL,    800
+	dbw LOVE_BALL,     800
+	dbw HEAL_BALL,     500
+	dbw REPEAT_BALL,  1000
+	dbw TIMER_BALL,   1000
+	dbw DUSK_BALL,    1000
+	db -1
+	
+LusterMallBall2:
+	db 14
+	dbw POKE_BALL,     150
+	dbw GREAT_BALL,    400
+	dbw ULTRA_BALL,    500
+	dbw LEVEL_BALL,    400
+	dbw LURE_BALL,     400
+	dbw MOON_BALL,     400
+	dbw FRIEND_BALL,   400
+	dbw FAST_BALL,     400
+	dbw HEAVY_BALL,    400
+	dbw LOVE_BALL,     400
+	dbw HEAL_BALL,     250
+	dbw REPEAT_BALL,   750
+	dbw TIMER_BALL,    750
+	dbw DUSK_BALL,     750
 	db -1
 	
 ShimmerFishMarket:

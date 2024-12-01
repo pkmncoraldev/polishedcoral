@@ -890,10 +890,25 @@ _CGB_BuyMenu: ; 9499
 	jp _CGB_FinishLayout
 ; 94d0
 MartClerkPals:
-;PokeMart
+;PokeMart Clerk Blue
 	RGB 31, 31, 31
 	RGB 30, 22, 17
 	RGB 07, 07, 17
+	RGB 00, 00, 00
+;PokeMart Clerk Purple
+	RGB 31, 31, 31
+	RGB 30, 22, 17
+	RGB 13, 00, 18
+	RGB 00, 00, 00
+;PokeMart Clerk Red
+	RGB 31, 31, 31
+	RGB 30, 22, 17
+	RGB 21, 08, 08
+	RGB 00, 00, 00
+;PokeMart Clerk Brown
+	RGB 31, 31, 31
+	RGB 30, 22, 17
+	RGB 14, 08, 06
 	RGB 00, 00, 00
 ;Refreshments
 	RGB 31, 31, 31

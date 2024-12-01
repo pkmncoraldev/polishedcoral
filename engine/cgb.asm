@@ -890,45 +890,50 @@ _CGB_BuyMenu: ; 9499
 	jp _CGB_FinishLayout
 ; 94d0
 MartClerkPals:
-;PokeMart Clerk Blue
+;Standard Clerk Blue
 	RGB 31, 31, 31
 	RGB 30, 22, 17
 	RGB 07, 07, 17
 	RGB 00, 00, 00
-;PokeMart Clerk Purple
+;Standard Clerk Purple
 	RGB 31, 31, 31
 	RGB 30, 22, 17
 	RGB 13, 00, 18
 	RGB 00, 00, 00
-;PokeMart Clerk Red
+;Standard Clerk Red
 	RGB 31, 31, 31
 	RGB 30, 22, 17
 	RGB 21, 08, 08
 	RGB 00, 00, 00
-;PokeMart Clerk Brown
+;Standard Clerk Brown
 	RGB 31, 31, 31
 	RGB 30, 22, 17
 	RGB 14, 08, 06
 	RGB 00, 00, 00
-;Refreshments
+;Sexy Clerk Pink
 	RGB 31, 31, 31
 	RGB 30, 22, 17
 	RGB 24, 06, 14
 	RGB 00, 00, 00
-;Brillo Mart
+;Sailor Clerk Red
 	RGB 31, 31, 31
 	RGB 26, 18, 10
 	RGB 20, 08, 05
 	RGB 00, 00, 00
-;Pollen Shop
+;Cutie Clerk Green
 	RGB 31, 31, 31
 	RGB 26, 18, 10
 	RGB 06, 14, 04
 	RGB 00, 00, 00
-;Moo Moos
+;Moo Moos Clerk
 	RGB 31, 31, 31
 	RGB 30, 17, 14
 	RGB 21, 05, 04
+	RGB 00, 00, 00
+;Fatty Clerk Brown
+	RGB 31, 31, 31
+	RGB 26, 18, 10
+	RGB 14, 08, 06
 	RGB 00, 00, 00
 
 _CGB_PackPals: ; 93d3

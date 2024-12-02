@@ -2,7 +2,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db GHOST, DARK
-	db 10 ; catch rate
+	db 30 ; catch rate
 	db 170 ; base exp
 	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2

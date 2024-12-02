@@ -6966,7 +6966,7 @@ LoadEnemyMon: ; 3e8eb
 
 	; Let's get the item:
 	; Force Item1
-	; Used for Snorlax, Ho-Oh, Lugia, and Kanto legendary encounters
+	; Used for wild boss encounters
 	ld a, [wBattleType]
 	cp BATTLETYPE_FORCEITEM
 	ld a, [wBaseItems]

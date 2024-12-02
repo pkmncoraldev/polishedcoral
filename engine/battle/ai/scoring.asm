@@ -1872,6 +1872,10 @@ AI_Smart_Foresight: ; 38f1d
 
 
 AI_Smart_PerishSong: ; 38f4a
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEGENDARY
+	jr z, .lapras
+
 	push hl
 	farcall CheckAnyOtherAliveEnemyMons
 	pop hl
@@ -1906,8 +1910,24 @@ AI_Smart_PerishSong: ; 38f4a
 	add 5
 	ld [hl], a
 	ret
-; 38f7a
 
+.lapras
+	push hl
+	ld hl, wEnemyPerishCount
+	ld a, [hl]
+	cp 0
+	pop hl
+	jr nz, .no
+
+	call AI_80_20
+	jr c, .no
+	call AI_50_50
+	jr c, .no
+
+	ld a, [hl]
+	sub 5
+	ld [hl], a
+	ret
 
 AI_Smart_Sandstorm: ; 38f7a
 

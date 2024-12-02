@@ -43,6 +43,7 @@ Landmarks: ; 0x1ca8c3
 	landmark  68, 108, Route13Name
 	landmark  44, 116, Route14Name
 	landmark  64, 124, Route15Name
+	landmark  36,  40, Route16Name
 	
 	landmark 116,  68, OldManorName
 	landmark  24,  56, LusterStationName
@@ -54,7 +55,6 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, UnkownPassageName
 	landmark   7,  14, ConnectingCavernName
 	
-	landmark  36,  40, Route16Name
 	landmark  36,  52, ShimmerName
 	landmark  48,  60, Route19Name
 	landmark  60,  52, SeasideCaveName

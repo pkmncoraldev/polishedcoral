@@ -46,6 +46,7 @@
 	const ROUTE_13	 ; 25
 	const ROUTE_14			 ; 26
 	const ROUTE_15			 ; 27
+	const ROUTE_16			 ; 2f
 	const OLD_MANOR			 ; 28
 	const LUSTER_STATION	 		; 29
 	const RESIDENTIAL_DISTRICT		; 2a
@@ -58,7 +59,6 @@
 
 SOUTH_ONWA_LANDMARK EQU const_value
 
-	const ROUTE_16			 ; 2f
 	const SHIMMER_CITY		 ; 30
 	const ROUTE_19			 ; 35
 	const SEASIDE_CAVE		 ; 3a

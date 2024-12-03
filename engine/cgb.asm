@@ -897,8 +897,8 @@ MartClerkPals:
 	RGB 00, 00, 00
 ;Standard Clerk Purple
 	RGB 31, 31, 31
-	RGB 30, 22, 17
-	RGB 13, 00, 18
+	RGB 26, 18, 10
+	RGB 10, 00, 13
 	RGB 00, 00, 00
 ;Standard Clerk Red
 	RGB 31, 31, 31
@@ -920,6 +920,11 @@ MartClerkPals:
 	RGB 26, 18, 10
 	RGB 20, 08, 05
 	RGB 00, 00, 00
+;Sailor Clerk Blue
+	RGB 31, 31, 31
+	RGB 26, 18, 10
+	RGB 07, 08, 22
+	RGB 00, 00, 00
 ;Cutie Clerk Green
 	RGB 31, 31, 31
 	RGB 26, 18, 10
@@ -929,6 +934,11 @@ MartClerkPals:
 	RGB 31, 31, 31
 	RGB 30, 17, 14
 	RGB 21, 05, 04
+	RGB 00, 00, 00
+;Lady Clerk Red
+	RGB 31, 31, 31
+	RGB 30, 22, 17
+	RGB 25, 07, 06
 	RGB 00, 00, 00
 ;Fatty Clerk Brown
 	RGB 31, 31, 31

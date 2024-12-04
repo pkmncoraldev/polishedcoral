@@ -561,10 +561,10 @@ Movement_CrossroadsColbyWalk1:
 	step_end
 
 Movement_CrossroadsColbyWalk2:
-	step_right
-	step_right
-	step_right
-	step_right
-	step_right
-	step_right
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
 	step_end

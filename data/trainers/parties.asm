@@ -2422,7 +2422,7 @@ GruntMGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 42, DONPHAN
 	db -1 ; end
 
 ; ================
@@ -2564,7 +2564,9 @@ GruntFGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 39, MAGNETON
+	db 40, DRATINI
+	db 42, PONYTA
 	db -1 ; end
 
 ; ================
@@ -2573,7 +2575,8 @@ GruntFGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 39, RAPIDASH
+	db 40, GIRAFARIG
 	db -1 ; end
 
 ; ================
@@ -2582,7 +2585,9 @@ GruntFGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 38, ALTARIA
+	db 38, CHERRIM
+	db 39, PUPITAR
 	db -1 ; end
 
 ; ================
@@ -2633,9 +2638,17 @@ KageGroup:
 
 	; INN_1F
 	db "KAGE@"
-	db TRAINERTYPE_DVS
+	db TRAINERTYPE_EVS | TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
+
 	; party
-	db  1, BULBASAUR,$00, $00, $00
+	db 42, AZUMARILL, 32, $DD, $8D, $D8, ABILITY_2 | QUIRKY, MALE
+		db AQUA_TAIL, PLAY_ROUGH, AQUA_JET, LEER_TAIL_WHIP
+	db 43, RATICATE, 100, $EE, $EE, $EE, ABILITY_2 | QUIRKY, MALE | PLAIN_FORM
+		db CRUNCH, REVERSAL, FOCUS_ENERGY, SUCKER_PUNCH
+	db 42, TOGEKISS, 32, $AA, $AA, $AA, HIDDEN_ABILITY | QUIRKY, FEMALE
+		db ANCIENTPOWER, HYPER_VOICE, WISH, AIR_SLASH
+	db 42, URSARING, 64, $D8, $AD, $DA, ABILITY_1 | QUIRKY, MALE
+		db REST, SLASH, SWAGGER, PLAY_ROUGH
 	db -1 ; end
 
 ; ================
@@ -2650,7 +2663,7 @@ LockeGroup:
 	db "LOCKE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 34, BRELOOM
+	db 34, GRAVELER
 	db 35, NIDORINA
 	db 36, MACHOKE
 	db -1 ; end

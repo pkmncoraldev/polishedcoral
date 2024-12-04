@@ -945,6 +945,11 @@ MartClerkPals:
 	RGB 26, 18, 10
 	RGB 14, 08, 06
 	RGB 00, 00, 00
+;Goth Clerk Purple
+	RGB 31, 31, 31
+	RGB 30, 22, 17
+	RGB 13, 08, 25
+	RGB 00, 00, 00
 
 _CGB_PackPals: ; 93d3
 ; pack pals

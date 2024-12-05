@@ -945,7 +945,7 @@ Inn1FTrashCanPasswordText:
 	para "“Here is the code"
 	line "for ROOM 201:"
 	
-	para "ERROR!!"	;TODO come up with password	
+	para "PASSWORD2"
 	
 	para "Do NOT lose it"
 	line "this time!”"

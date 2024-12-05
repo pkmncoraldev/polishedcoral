@@ -500,7 +500,7 @@ Room201DefaultPassword:
 	db "¯@@@@@@@@@@@"
 	
 Room201CorrectPassword:
-	db "TEST@@@@@@@@"
+	db "PASSWORD2@@@"
 	
 Room201BackupPassword:
 	db "???@"

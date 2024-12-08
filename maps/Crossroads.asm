@@ -401,7 +401,16 @@ CrossroadsSign:
 	jumptext CrossroadsSignText
 	
 CrossroadsSignText:
-	text "TEXT 1"
+	text "NORTH: ROUTE 11"
+	line "EVENTIDE VILLAGE"
+	
+	para "SOUTH: ROUTE 23"
+	line "KOMORE VILLAGE"
+	
+	para "EAST: UNFINISHED"
+	
+	para "WEST: ROUTE 22"
+	line "DUSK TURNPIKE"
 	done
 	
 CrossroadsCutsceneGruntText1:

@@ -118,7 +118,7 @@
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 75
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 76
 	tilecoll WALL, WALL, DOOR, WALL ; 77
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 78
+	tilecoll WALL, WALL, WALL, FLOOR ; 78
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 79
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 7a
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 7b

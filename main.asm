@@ -793,6 +793,8 @@ PlaceMartPokemonName:
 
 PlaceMenuItemQuantity: ; 0x24ac3
 	push de
+	eventflagcheck EVENT_IN_PLAYERS_PC
+	jr nz, .skip
 	ld a, [wMenuSelection]
 	ld [wCurItem], a
 	

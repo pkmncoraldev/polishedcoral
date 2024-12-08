@@ -307,6 +307,7 @@ UnknownText_0x157cc: ; 0x157cc
 KrisWithdrawItemMenu: ; 0x157d1
 	call LoadStandardMenuDataHeader
 	farcall ClearPCItemScreen
+	eventflagset EVENT_IN_PLAYERS_PC
 .loop
 	call PCItemsJoypad
 	jr c, .quit
@@ -314,6 +315,7 @@ KrisWithdrawItemMenu: ; 0x157d1
 	jr .loop
 
 .quit
+	eventflagreset EVENT_IN_PLAYERS_PC
 	call CloseSubmenu
 	xor a
 	ret
@@ -352,6 +354,13 @@ KrisWithdrawItemMenu: ; 0x157d1
 	ld [wCurItemQuantity], a
 	ld hl, wNumPCItems
 	call TossItem
+	ld a, [wCurItem]
+	cp RARE_CANDY
+	jr nz, .skip
+	ld a, [wUnknownRC]
+	inc a
+	ld [wUnknownRC], a
+.skip
 	predef PartyMonItemName
 	ld hl, .WithdrewText
 	call MenuTextBox

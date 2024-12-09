@@ -582,6 +582,17 @@ Route23BlackBeltText5:
 	cont "MASTER with my"
 	cont "tail between my"
 	cont "legs…"
+	
+	para "If you wish to"
+	line "know more about my"
+	cont "MASTER, seek him"
+	cont "out yourself."
+	
+	para "He resides in a"
+	line "DOJO with an"
+	cont "ornate black roof."
+	
+	para "You can't miss it."
 	done
 	
 Route23BlackBeltText6:

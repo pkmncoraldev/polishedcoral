@@ -4,8 +4,8 @@ EventideSootheBellHouse_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
+	warp_event 2, 7, EVENTIDE_VILLAGE, 7
 	warp_event 3, 7, EVENTIDE_VILLAGE, 7
-	warp_event 4, 7, EVENTIDE_VILLAGE, 7
 
 	db 0 ; coord events
 

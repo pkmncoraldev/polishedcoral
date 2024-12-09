@@ -418,12 +418,13 @@ MAP_NONE   EQU 0
 	map_const KOMORE_HOUSE_1,							   4,  4 ; 12
 	map_const KOMORE_HOUSE_2,							   4,  4 ; 13
 	map_const KOMORE_HOUSE_3,							   4,  4 ; 14
-	map_const KOMORE_POKECENTER,                      	   6,  4 ; 15
-	map_const KOMORE_MART,                             	   6,  4 ; 16
-	map_const FIGHTING_DOJO,                           	   4,  5 ; 17
-	map_const ROUTE_25,									  23, 10 ; 18
-	map_const ROUTE_26,									  20, 17 ; 19
-	map_const ROUTE_27,									  28, 19 ; 20
+	map_const KOMORE_TEA_HOUSE,							   4,  4 ; 15
+	map_const KOMORE_POKECENTER,                      	   6,  4 ; 16
+	map_const KOMORE_MART,                             	   6,  4 ; 17
+	map_const FIGHTING_DOJO,                           	   4,  5 ; 18
+	map_const ROUTE_25,									  23, 10 ; 19
+	map_const ROUTE_26,									  20, 17 ; 20
+	map_const ROUTE_27,									  28, 19 ; 21
 	
 	newgroup													 ; 23
 	

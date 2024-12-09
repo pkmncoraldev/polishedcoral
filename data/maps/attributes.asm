@@ -712,6 +712,7 @@ ENDM
 	map_attributes KomoreHouse1, KOMORE_HOUSE_1, $00, 0
 	map_attributes KomoreHouse2, KOMORE_HOUSE_2, $00, 0
 	map_attributes KomoreHouse3, KOMORE_HOUSE_3, $00, 0
+	map_attributes KomoreTeaHouse, KOMORE_TEA_HOUSE, $00, 0
 	map_attributes KomorePokeCenter, KOMORE_POKECENTER, $0, 0
 	map_attributes KomoreMart, KOMORE_MART, $0, 0
 	map_attributes FightingDojo, FIGHTING_DOJO, $d2, 0

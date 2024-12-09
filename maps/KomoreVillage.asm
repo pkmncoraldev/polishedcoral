@@ -5,7 +5,7 @@ KomoreVillage_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, KomoreVillageFlyPoint
 	callback MAPCALLBACK_TILES, KomoreVillageCallback
 
-	db 7 ; warp events
+	db 8 ; warp events
 	warp_def 19, 32, 1, KOMORE_COMMUNITY_CENTER
 	warp_def 19, 33, 2, KOMORE_COMMUNITY_CENTER
 	warp_def  7, 11, 1, KOMORE_HOUSE_1
@@ -13,10 +13,11 @@ KomoreVillage_MapScriptHeader:
 	warp_def 13, 13, 1, KOMORE_HOUSE_3
 	warp_def  5, 31, 1, KOMORE_POKECENTER
 	warp_def  7, 19, 1, KOMORE_MART
+	warp_def 18, 17, 1, KOMORE_TEA_HOUSE
 
 	db 0 ; coord events
 
-	db 7 ; bg events
+	db 8 ; bg events
 	signpost  4, 27, SIGNPOST_JUMPTEXT, KomoreVillageSign
 	signpost 20, 31, SIGNPOST_JUMPTEXT, KomoreCommunityCenterSign
 	signpost  5, 32, SIGNPOST_READ, KomoreVillagePokeCenterSign
@@ -24,6 +25,7 @@ KomoreVillage_MapScriptHeader:
 	signpost 20, 28, SIGNPOST_IFNOTSET, KomoreVillageTree
 	signpost 21, 28, SIGNPOST_IFNOTSET, KomoreVillageTree
 	signpost 20, 29, SIGNPOST_IFNOTSET, KomoreVillageTree
+	signpost 19, 18, SIGNPOST_READ, KomoreTeaMasterSign
 
 	db 2 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
@@ -40,6 +42,41 @@ KomoreVillageCallback:
 .skip
 	jump Route23Callback2
 	
+KomoreTeaMasterSign:
+	checkevent EVENT_SPOKEN_TO_TEA_MASTER
+	iftrue .alt
+	setevent EVENT_MASTER_BREWER_SIGN
+	jumptext KomoreTeaMasterSignText1
+.alt
+	checkevent EVENT_MASTER_BREWER_SIGN
+	iftrue .alt2
+	jumptext KomoreTeaMasterSignText2
+.alt2
+	jumptext KomoreTeaMasterSignText3
+	
+KomoreTeaMasterSignText1:
+	text "Home of the"
+	line "MASTER."
+	done
+	
+KomoreTeaMasterSignText2:
+	text "Home of the"
+	line "MASTER BREWER."
+	done
+	
+KomoreTeaMasterSignText3:
+	text "Home of the"
+	line "MASTER."
+	
+	para "…"
+	
+	para "Upon further"
+	line "inspection, the"
+	cont "word “BREWER ” is"
+	cont "at the end in"
+	cont "small letters."
+	done
+	
 KomoreVillageSign:
 	text "KOMORE VILLAGE"
 	
@@ -52,6 +89,8 @@ KomoreCommunityCenterSign:
 	text "K MORE COM   ITY"
 	line "CEN ER"
 	
+	para "…"
+	
 	para "The letters are"
 	line "worn away…"
 	done
@@ -60,6 +99,7 @@ KomoreVillagePokeCenterSign:
 	jumpstd pokecentersign
 	
 KomoreVillageMartSign:
+	setevent EVENT_SPOKEN_TO_TEA_MASTER
 	jumpstd martsign
 	
 KomoreVillageTree:

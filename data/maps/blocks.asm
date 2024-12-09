@@ -82,7 +82,6 @@ SunbeamDodrioHouse_BlockData:
 ShimmerHouse1_BlockData:
 Route3FriendshipHouse_BlockData:
 DuskHouse1_BlockData:
-KomoreHouse1_BlockData:
 BrightHouse3_BlockData:
 	INCBIN "maps/NormalHouse1.ablk.lz"
 	
@@ -93,7 +92,6 @@ StarglowFishingGuruHouse_BlockData:
 SunbeamOldCouplesHouse_BlockData:
 SunbeamTradeHouse_BlockData:
 FlickerNameSpeechHouse_BlockData:
-KomoreHouse2_BlockData:
 BrightHouse1_BlockData:
 	INCBIN "maps/NormalHouse2.ablk.lz"
 	
@@ -104,7 +102,6 @@ SunbeamSoftSandHouse_BlockData:
 FlickerSoundSpeechHouse_BlockData:
 ShimmerHouse2_BlockData:
 DuskHouse3_BlockData:
-KomoreHouse3_BlockData:
 BrightHouse2_BlockData:
 RadiantHouse_BlockData:
 	INCBIN "maps/NormalHouse3.ablk.lz"
@@ -113,6 +110,13 @@ DuskHouse2_BlockData:
 	INCBIN "maps/DuskHouse2.ablk.lz"
 	
 LakeOnwaItemHouse_BlockData:
+KomoreHouse1_BlockData:
+KomoreHouse2_BlockData:
+KomoreHouse3_BlockData:
+DaybreakAlexHouse_BlockData:
+DaybreakMarcusHouse_BlockData:
+EventideGymSpeechHouse_BlockData:
+EventideSootheBellHouse_BlockData:
 	INCBIN "maps/RusticHouse.ablk.lz"
 	
 TwinkleRockHouse_BlockData:
@@ -123,10 +127,7 @@ Route10MoveReminderHouse_BlockData:
 	INCBIN "maps/TwinkleHouse.ablk.lz"
 
 SunsetCaptainsHouse_BlockData:
-DaybreakAlexHouse_BlockData:
-DaybreakMarcusHouse_BlockData:
-EventideGymSpeechHouse_BlockData:
-EventideSootheBellHouse_BlockData:
+KomoreTeaHouse_BlockData:
 	INCBIN "maps/TraditionalHouse.ablk.lz"
 
 BrilloRockHouse_BlockData:

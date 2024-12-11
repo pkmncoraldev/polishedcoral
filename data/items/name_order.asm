@@ -113,16 +113,16 @@ ItemNameOrder:
 	db NAM_THE_THING    ; cc
 	db NAM_TORCH	    ; bf
 	db NAM_OLD_KEY      ; 1f
-	db NAM_CLAY_POT ; 0c
+	db NAM_CLAY_POT 	; 0c
 	db NAM_B_ROOM_KEY   ; c6
-	db NAM_Y_ROOM_KEY         ; 9b
-	db NAM_R_ROOM_KEY ; 73
-	db NAM_ANCIENT_BALL    ; 6b
+	db NAM_Y_ROOM_KEY   ; 9b
+	db NAM_R_ROOM_KEY 	; 73
+	db NAM_ANCIENT_BALL ; 6b
 	db NAM_RIVAL_POKEDEX ; b9
-	db NAM_SKATEBOARD  ; d5
-	db NAM_TRAIN_TICKET   ; 28
-	db NAM_TRAIN_PASS      ; 4f
-	db NAM_NETT_SPECS    ; 17
+	db NAM_SKATEBOARD   ; d5
+	db NAM_TRAIN_TICKET ; 28
+	db NAM_TRAIN_PASS   ; 4f
+	db NAM_NETT_SPECS   ; 17
 	db NAM_ROOM_104_KEY ; 97
 	db NAM_MYSTICTICKET ; 8d
 	db NAM_OLD_SEA_MAP  ; 95
@@ -185,15 +185,15 @@ ItemNameOrder:
 	db NAM_AMULET_COIN  ; 03
 	db NAM_CLEANSE_TAG  ; 27
 	db NAM_SMOKE_BALL   ; d9
-	db NAM_TAPE_PLAYER ; 0d
+	db NAM_TAPE_PLAYER  ; 0d
 
 	db NAM_LIGHT_BALL   ; 68
-	db NAM_LINK_CABLE        ; e2
+	db NAM_LINK_CABLE   ; e2
 	db NAM_THICK_CLUB   ; ea
 	db NAM_LUCKY_PUNCH  ; 6f
 	db NAM_METAL_POWDER ; 80
 	db NAM_QUICK_POWDER ; b7
-	db NAM_POLLEN_POUCH   ; 07
+	db NAM_POLLEN_POUCH ; 07
 
 	db NAM_DUBIOUS_DOG  ; 02
 	db NAM_ASSAULT_VEST ; 09
@@ -252,7 +252,7 @@ ItemNameOrder:
 	db NAM_MAGMARIZER   ; 75
 	db NAM_RAZOR_FANG   ; be
 	db NAM_RAZOR_CLAW   ; bd
-	db NAM_CHLOROPHIAL ; 92
+	db NAM_CHLOROPHIAL  ; 92
 
 	db NAM_NUGGET       ; 91
 	db NAM_BIG_NUGGET   ; 10
@@ -261,19 +261,19 @@ ItemNameOrder:
 	db NAM_BALMMUSHROOM ; 0b
 	db NAM_PEARL        ; 9c
 	db NAM_BIG_PEARL    ; 11
-	db NAM_BLACK_PEARL ; 9d
+	db NAM_BLACK_PEARL  ; 9d
 	db NAM_STARDUST     ; e1
 	db NAM_STAR_PIECE   ; e0
-	db NAM_BRICK_PIECE  ; 1a
+	db NAM_SILVER_TEA   ; 1a
 	db NAM_RARE_BONE    ; ba
 	db NAM_SILVER_LEAF  ; d4
 	db NAM_GOLD_LEAF    ; 4b
 	db NAM_SLOWPOKETAIL ; d8
 	db NAM_BOTTLE_CAP   ; 19
 
-	db NAM_JAW_FOSSIL ; 56
+	db NAM_JAW_FOSSIL   ; 56
 	db NAM_SAIL_FOSSIL  ; 2e
-	db NAM_MIRACLETONIC    ; 93
+	db NAM_MIRACLETONIC ; 93
 
 	db NAM_SUNSHINE_TEA ; 88
 	db NAM_SWEET_HONEY  ; e8

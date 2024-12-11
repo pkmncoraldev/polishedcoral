@@ -265,10 +265,10 @@
 	const BLACK_PEARL  ; e7
 	const STARDUST     ; e8
 	const STAR_PIECE   ; e9
-	const BRICK_PIECE  ; ea - replace
-	const RARE_BONE    ; eb - replace
-	const SILVER_LEAF  ; ec - replace
-	const GOLD_LEAF    ; ed - replace
+	const SILVER_TEA   ; ea
+	const GOLD_TEA	   ; eb
+	const SILVER_LEAF  ; ec
+	const GOLD_LEAF    ; ed
 	const SLOWPOKETAIL ; ee
 	const BOTTLE_CAP   ; ef
 
@@ -320,7 +320,7 @@
 	const NAM_NETT_SPECS   ; 17
 	const NAM_BLUESKY_MAIL ; 18
 	const NAM_BOTTLE_CAP   ; 19
-	const NAM_BRICK_PIECE  ; 1a
+	const NAM_SILVER_TEA  ; 1a
 	const NAM_BRIGHTPOWDER ; 1b
 	const NAM_BURN_HEAL    ; 1c
 	const NAM_CALCIUM      ; 1d

@@ -233,10 +233,10 @@ ItemIconPointers:
 	dba BlackPearlIcon
 	dba StardustIcon
 	dba StarPieceIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
+	dba SilverTeaIcon
+	dba GoldTeaIcon
+	dba SilverLeafIcon
+	dba GoldLeafIcon
 	dba SlowpokeTailIcon
 	dba BottleCapIcon
 	dba CoverFossilIcon

@@ -247,8 +247,8 @@ ItemEffects: ; e73c
 	dw NoEffect         ; BLACK_PEARL
 	dw NoEffect         ; STARDUST
 	dw NoEffect         ; STAR_PIECE
-	dw NoEffect         ; BRICK_PIECE
-	dw NoEffect         ; RARE_BONE
+	dw NoEffect         ; SILVER_TEA
+	dw NoEffect         ; GOLD_TEA
 	dw NoEffect         ; SILVER_LEAF
 	dw NoEffect         ; GOLD_LEAF
 	dw NoEffect         ; SLOWPOKETAIL

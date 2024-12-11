@@ -232,8 +232,8 @@ ItemDescriptions:
 	dw BlackPearlDesc
 	dw StardustDesc
 	dw StarPieceDesc
-	dw BrickPieceDesc
-	dw RareBoneDesc
+	dw SilverTeaDesc
+	dw GoldTeaDesc
 	dw SilverLeafDesc
 	dw GoldLeafDesc
 	dw SlowpokeTailDesc
@@ -1120,13 +1120,13 @@ StarPieceDesc:
 	db   "A hunk of red gem."
 	next "Sell very high.@"
 
-BrickPieceDesc:
-	db   "A rare chunk of"
-	next "tile.@"
+SilverTeaDesc:
+	db   "TODO"
+	next "@"
 
-RareBoneDesc:
-	db   "A rare bone for"
-	next "archaeologists.@"
+GoldTeaDesc:
+	db   "Restore half HP"
+	next "on faint. (HOLD)@"
 
 SilverLeafDesc:
 	db   "A strange, silver-"

@@ -249,7 +249,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f8
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f9
 	tilecoll WALL, WALL, WALL, WALL ; fa
-	tilecoll SKATE, SKATE, SKATE, SKATE ; fb
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; fb
 	tilecoll WALL, WALL, WALL, WALL ; fc
 	tilecoll WALL, WALL, WALL, WALL ; fd
 	tilecoll WALL, WALL, WALL, WALL ; fe

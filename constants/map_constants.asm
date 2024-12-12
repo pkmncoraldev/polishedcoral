@@ -351,7 +351,7 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 18
 	
-	map_const DESERT_TEMPLE_1,							   9, 19 ; 1
+	map_const DESERT_TEMPLE_1,							  11, 19 ; 1
 	map_const DESERT_TEMPLE_TOP_LEFT,					   6, 11 ; 2
 	map_const DESERT_TEMPLE_TOP_RIGHT,					  18, 14 ; 3
 	map_const DESERT_TEMPLE_LOWER_LEFT,					   5,  5 ; 4

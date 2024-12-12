@@ -51,7 +51,7 @@ DesertTemple1_MapScriptHeader:
 	signpost  5, 18, SIGNPOST_IFSET, DesertTemple1Collapse4
 
 	db 1 ; object events
-	itemball_event  1, 15, MIRACLETONIC, 1, EVENT_GOT_MIRACLETONIC_2
+	itemball_event  1,  7, MIRACLETONIC, 1, EVENT_GOT_MIRACLETONIC_2
 
 DesertTemple1Callback:
 	setevent EVENT_ALWAYS_SET

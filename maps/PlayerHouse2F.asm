@@ -127,6 +127,8 @@ PlayerHouseDebugPoster:
 	closewindow
 	writetext PlayerHouseDebug2ItemsText
 	waitbutton
+	giveitem GOLD_TEA, 99
+	giveitem SILVER_TEA, 99
 	giveitem GOLD_LEAF, 99
 	giveitem SILVER_LEAF, 99
 	giveitem MAGMARIZER, 99

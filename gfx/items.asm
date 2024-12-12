@@ -285,6 +285,8 @@ TrainPassIcon:    				INCBIN "gfx/items/train_ticket.2bpp"
 NettSpecsIcon:    				INCBIN "gfx/items/nett_specs.2bpp"
 ShinyCharmIcon:   				INCBIN "gfx/items/1.2bpp"
 FlowerPetalIcon:  				INCBIN "gfx/items/flower_petal.2bpp"
+SilverTeaIcon:
+GoldTeaIcon:
 SunshineTeaIcon:
 BlossomTeaIcon:   				INCBIN "gfx/items/blossom_tea.2bpp"
 SweetHoneyItemIcon:   			INCBIN "gfx/items/sweet_honey.2bpp"
@@ -388,8 +390,6 @@ BottleCapIcon:    				INCBIN "gfx/items/bottle_cap.2bpp"
 CoverFossilIcon: 	  			INCBIN "gfx/items/cover_fossil.2bpp"
 PlumeFossilIcon:   				INCBIN "gfx/items/plume_fossil.2bpp"
 MiracleTonicIcon:  				INCBIN "gfx/items/1.2bpp"
-SilverTeaIcon:  				INCBIN "gfx/items/1.2bpp"
-GoldTeaIcon:  					INCBIN "gfx/items/1.2bpp"
 SilverLeafIcon:  				INCBIN "gfx/items/1.2bpp"
 GoldLeafIcon:  					INCBIN "gfx/items/1.2bpp"
 

@@ -247,15 +247,15 @@ ItemEffects: ; e73c
 	dw NoEffect         ; BLACK_PEARL
 	dw NoEffect         ; STARDUST
 	dw NoEffect         ; STAR_PIECE
-	dw NoEffect         ; SILVER_TEA
-	dw NoEffect         ; GOLD_TEA
+	dw RestoreHPTeaEffect  ; SILVER_TEA
+	dw ReviveEffect     ; GOLD_TEA
 	dw NoEffect         ; SILVER_LEAF
-	dw NoEffect         ; GOLD_LEAF
+	dw NoEffect		    ; GOLD_LEAF
 	dw NoEffect         ; SLOWPOKETAIL
 	dw NoEffect         ; BOTTLE_CAP
 	dw NoEffect         ; COVER_FOSSIL
 	dw NoEffect         ; PLUME_FOSSIL
-	dw SacredAsh         ; MIRACLETONIC
+	dw SacredAsh        ; MIRACLETONIC
 	dw RestoreHPTeaEffect         ; SUNSHINE_TEA
 	dw NoEffect         ; SWEET_HONEY
 	dw NoEffect         ; FLOWER_MAIL
@@ -1835,10 +1835,6 @@ StatusHealer_Jumptable: ; f09e (3:709e)
 
 
 RevivalHerb: ; f0a9
-	ld a, [wInitialOptions]
-	bit NUZLOCKE_MODE, a
-	jp nz, Revive_NuzlockeFailureMessage
-
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
 	jp c, StatusHealer_ExitMenu
@@ -1858,10 +1854,6 @@ RevivalHerb: ; f0a9
 
 
 ReviveEffect: ; f0c8
-	ld a, [wInitialOptions]
-	bit NUZLOCKE_MODE, a
-	jp nz, Revive_NuzlockeFailureMessage
-
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
 	jp c, StatusHealer_ExitMenu
@@ -1901,7 +1893,10 @@ RevivePokemon: ; f0d6
 	ld a, [wCurItem]
 	cp REVIVE
 	jr z, .revive_half_hp
+	cp GOLD_TEA
+	jr z, .gold_tea
 
+.revive_full_hp
 	call ReviveFullHP
 	jr .finish_revive
 
@@ -1916,7 +1911,36 @@ RevivePokemon: ; f0d6
 	call UseDisposableItem
 	xor a
 	ret
-; f128
+.gold_tea
+	ld a, [wCurItem]
+	push af
+	ld a, SWEET_HONEY
+	ld [wCurItem], a
+	ld hl, wNumMedicine
+	call CheckItem
+	jr nc, .no_honey
+	ld a, SWEET_HONEY
+	ld [wCurItem], a
+	ld a, 1
+	ld [wItemQuantityChangeBuffer], a
+	ld hl, wNumItems
+	call TossItem
+	call MixSweetHoneyMessage
+	ld a, SWEET_HONEY
+	ld [wCurItem], a
+	ld hl, wNumMedicine
+	call CheckItem
+	jr c, .still_have_honey
+	call OutOfSweetHoneyMessage
+.still_have_honey
+	pop af
+	ld [wCurItem], a
+	jr .revive_full_hp
+	
+.no_honey
+	pop af
+	ld [wCurItem], a
+	jr .revive_half_hp
 
 
 FullRestore: ; f128
@@ -2426,7 +2450,9 @@ GetOneFifthMaxHP: ; f378 (3:7378)
 	ret
 
 GetTeaHoneyHealingItemAmount:
-	farcall CheckItemParam
+	ld a, [wCurItem]
+	cp SILVER_TEA
+	jr z, .silver_tea
 	add a
 	ld e, a
 	ld d, 0
@@ -2434,12 +2460,21 @@ GetTeaHoneyHealingItemAmount:
 	ret nz
 	ld de, 999
 	ret
+.silver_tea
+	ld a, MON_MAXHP
+	call GetPartyParamLocation
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+	ret
 
 GetHealingItemAmount: ; f395 (3:7395)
 	ld a, [wCurItem]
 	cp SITRUS_BERRY
 	jr z, .sitrus_berry
 	cp FIGY_BERRY
+	jr z, .figy_berry
+	cp SILVER_TEA
 	jr z, .figy_berry
 
 	farcall CheckItemParam

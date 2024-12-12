@@ -2644,3 +2644,70 @@ PlayMonAnimAfterFormChange:
 	ld a, [wEnemyMonSpecies]
 	jp PlayStereoCry
 	
+DoGoldTea::
+	call SwitchTurn
+	call GetHalfMaxHP
+	call ItemRecoveryAnim
+	call RestoreHP
+	ld hl, BattleText_Chlorophial
+	call StdBattleTextBox
+	farcall ConsumeUserItem
+	call SwitchTurn
+	ret
+
+CopyBackpic: ; 3fc30
+	ld a, [rSVBK]
+	push af
+	ld a, $6
+	ld [rSVBK], a
+	ld hl, VTiles0
+	ld de, VTiles2 tile $31
+	ld a, [hROMBank]
+	ld b, a
+	ld c, 7 * 7
+	call Get2bpp
+	pop af
+	ld [rSVBK], a
+	call .LoadTrainerBackpicAsOAM
+	ld a, $31
+	ld [hGraphicStartTile], a
+	hlcoord 2, 6
+	lb bc, 6, 6
+	predef PlaceGraphic
+	ret
+; 3fc5b
+
+.LoadTrainerBackpicAsOAM: ; 3fc5b
+	ld hl, wSprites
+	xor a
+	ld [hMapObjectIndexBuffer], a
+	ld b, $6
+	ld e, 21 * 8
+.outer_loop
+	ld c, $3
+	ld d, 8 * 8
+.inner_loop
+	ld [hl], d
+	inc hl
+	ld [hl], e
+	inc hl
+	ld a, [hMapObjectIndexBuffer]
+	ld [hli], a
+	inc a
+	ld [hMapObjectIndexBuffer], a
+	ld a, $1
+	ld [hli], a
+	ld a, d
+	add $8
+	ld d, a
+	dec c
+	jr nz, .inner_loop
+	ld a, [hMapObjectIndexBuffer]
+	add $3
+	ld [hMapObjectIndexBuffer], a
+	ld a, e
+	add $8
+	ld e, a
+	dec b
+	jr nz, .outer_loop
+	ret

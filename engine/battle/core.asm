@@ -316,6 +316,8 @@ CheckFaint:
 
 .check_player
 	call HasPlayerFainted
+	call z, CheckGoldTea
+	call HasPlayerFainted
 	jr nz, .ok
 	call HandlePlayerMonFaint
 	ld a, [wBattleEnded]
@@ -324,6 +326,8 @@ CheckFaint:
 	ret
 
 .check_enemy
+	call HasEnemyFainted
+	call z, CheckGoldTea
 	call HasEnemyFainted
 	jr nz, .ok
 	call HandleEnemyMonFaint
@@ -899,7 +903,11 @@ Battle_EnemyFirst: ; 3c5fe
 	and a
 	ret nz
 	call HasPlayerFainted
+	call z, CheckGoldTea
+	call HasPlayerFainted
 	jp z, HandlePlayerMonFaint
+	call HasEnemyFainted
+	call z, CheckGoldTea
 	call HasEnemyFainted
 	jp z, HandleEnemyMonFaint
 
@@ -913,7 +921,11 @@ Battle_EnemyFirst: ; 3c5fe
 	and a
 	ret nz
 	call HasEnemyFainted
+	call z, CheckGoldTea
+	call HasEnemyFainted
 	jp z, HandleEnemyMonFaint
+	call HasPlayerFainted
+	call z, CheckGoldTea
 	call HasPlayerFainted
 	jp z, HandlePlayerMonFaint
 	call SetPlayerTurn
@@ -941,7 +953,11 @@ Battle_PlayerFirst: ; 3c664
 	and a
 	ret nz
 	call HasEnemyFainted
+	call z, CheckGoldTea
+	call HasEnemyFainted
 	jp z, HandleEnemyMonFaint
+	call HasPlayerFainted
+	call z, CheckGoldTea
 	call HasPlayerFainted
 	jp z, HandlePlayerMonFaint
 	push bc
@@ -961,7 +977,11 @@ Battle_PlayerFirst: ; 3c664
 	and a
 	ret nz
 	call HasPlayerFainted
+	call z, CheckGoldTea
+	call HasPlayerFainted
 	jp z, HandlePlayerMonFaint
+	call HasEnemyFainted
+	call z, CheckGoldTea
 	call HasEnemyFainted
 	jp z, HandleEnemyMonFaint
 
@@ -2373,6 +2393,8 @@ GiveExperiencePointsAfterCatch:
 	jp _PorygonPreEncounterMon
 	
 .pory_encounter_cont
+	call HasPlayerFainted
+	call z, CheckGoldTea
 	call HasPlayerFainted
 	jr nz, .skipswitch
 	call ForcePlayerMonChoice
@@ -4345,6 +4367,8 @@ PursuitSwitch: ; 3dc5b
 	ld a, [wLastPlayerMon]
 	call UpdateBattleMon
 	call HasPlayerFainted
+	call z, CheckGoldTea
+	call HasPlayerFainted
 	jp nz, PursuitSwitch_done
 	ld a, $f0
 	ld [wCryTracks], a
@@ -4359,6 +4383,8 @@ PursuitSwitch: ; 3dc5b
 	ld hl, BattleText_PkmnFainted
 	jr .done_fainted
 .check_enemy_fainted
+	call HasEnemyFainted
+	call z, CheckGoldTea
 	call HasEnemyFainted
 	jp nz, PursuitSwitch_done
 	ld a, $f
@@ -4646,8 +4672,11 @@ _HeldHPHealingItem:
 	ld a, [hl]
 	cp DUBIOUS_DOG
 	jr z, .dog
+	cp SILVER_TEA
+	jr z, .figy
 	cp FIGY_BERRY
 	jr nz, .not_figy
+.figy
 	call GetHalfMaxHP
 	jr .got_hp_to_restore
 
@@ -8877,7 +8906,7 @@ StartBattle: ; 3f4c1
 .skip_0_mon_check
 	ld a, [wTimeOfDayPal]
 	push af
-	call BattleIntro
+	farcall BattleIntro
 	call DoBattle
 	call ExitBattle
 	pop af
@@ -9729,7 +9758,7 @@ InitBattleDisplay: ; 3fb6c
 
 .InitBackPic: ; 3fbf8
 	call GetTrainerBackpic
-	jp CopyBackpic
+	farjp CopyBackpic
 ; 3fbff
 
 
@@ -9762,63 +9791,7 @@ GetTrainerBackpic: ; 3fbff
 	ret
 ; 3fc30
 
-CopyBackpic: ; 3fc30
-	ld a, [rSVBK]
-	push af
-	ld a, $6
-	ld [rSVBK], a
-	ld hl, VTiles0
-	ld de, VTiles2 tile $31
-	ld a, [hROMBank]
-	ld b, a
-	ld c, 7 * 7
-	call Get2bpp
-	pop af
-	ld [rSVBK], a
-	call .LoadTrainerBackpicAsOAM
-	ld a, $31
-	ld [hGraphicStartTile], a
-	hlcoord 2, 6
-	lb bc, 6, 6
-	predef PlaceGraphic
-	ret
-; 3fc5b
 
-.LoadTrainerBackpicAsOAM: ; 3fc5b
-	ld hl, wSprites
-	xor a
-	ld [hMapObjectIndexBuffer], a
-	ld b, $6
-	ld e, 21 * 8
-.outer_loop
-	ld c, $3
-	ld d, 8 * 8
-.inner_loop
-	ld [hl], d
-	inc hl
-	ld [hl], e
-	inc hl
-	ld a, [hMapObjectIndexBuffer]
-	ld [hli], a
-	inc a
-	ld [hMapObjectIndexBuffer], a
-	ld a, $1
-	ld [hli], a
-	ld a, d
-	add $8
-	ld d, a
-	dec c
-	jr nz, .inner_loop
-	ld a, [hMapObjectIndexBuffer]
-	add $3
-	ld [hMapObjectIndexBuffer], a
-	ld a, e
-	add $8
-	ld e, a
-	dec b
-	jr nz, .outer_loop
-	ret
-; 3fc8b
 
 
 BattleStartMessage: ; 3fc8b
@@ -10087,4 +10060,20 @@ ForcePlayBattleAnim:
 	call Call_PlayBattleAnim
 	pop af
 	ld [wOptions1], a
+	ret
+
+CheckGoldTea:
+	farcall GetOpponentItemAfterUnnerve
+	call GetCurItemName
+	ld a, b
+	cp HELD_GOLD_TEA
+	ret nz
+	call SwitchTurn
+	call GetHalfMaxHP
+	call ItemRecoveryAnim
+	call RestoreHP
+	ld hl, BattleText_UserRecoveredWithItem
+	call StdBattleTextBox
+	farcall ConsumeUserItem
+	call SwitchTurn
 	ret

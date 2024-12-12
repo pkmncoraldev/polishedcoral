@@ -1121,8 +1121,8 @@ StarPieceDesc:
 	next "Sell very high.@"
 
 SilverTeaDesc:
-	db   "TODO"
-	next "@"
+	db   "Self-restore item."
+	next "(1/2 max HP, HOLD)@"
 
 GoldTeaDesc:
 	db   "Restore half HP"

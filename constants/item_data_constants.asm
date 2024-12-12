@@ -143,6 +143,8 @@ ITEMMENU_NEW_MENU    EQU 7
 	const HELD_RAISE_STAT
 	const HELD_OFFEND_HIT
 	const HELD_DEFEND_HIT
+	
+	const HELD_GOLD_TEA
 
 
 ; mart types

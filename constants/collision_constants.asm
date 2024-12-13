@@ -17,6 +17,7 @@ COLL_HEADBUTT_TREE     EQU $15
 COLL_TALL_GRASS        EQU $18
 COLL_FLOWERS           EQU $19
 COLL_SEAWEED	       EQU $1a
+COLL_LEAVES		       EQU $1b
 COLL_OVERHEAD          EQU $1c
 COLL_ATM               EQU $22
 COLL_ICE               EQU $23

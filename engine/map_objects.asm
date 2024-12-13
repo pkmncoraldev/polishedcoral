@@ -256,6 +256,8 @@ SetTallGrassFlags: ; 4661
 	jr z, .set
 	cp COLL_SEAWEED
 	jr z, .set
+	cp COLL_LEAVES
+	jr z, .set
 	res OVERHEAD, [hl]
 	ret
 

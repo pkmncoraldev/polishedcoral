@@ -1640,11 +1640,21 @@ RandomEncounter:: ; 97cc0
 ; Random encounter
 	ld de, EVENT_TEMPLE_RUMBLING
 	call CheckEventFlag
-	jr nz, .nope
+	jp nz, .nope
 	call CheckWildEncounterCooldown
-	jr c, .nope
+	jp c, .nope
 	call CanUseSweetScent
-	jr nc, .nope
+	jp nc, .nope
+	ld a, [wPlayerStandingTile]
+	cp COLL_LEAVES
+	jr nz, .not_leaves
+	call Random
+	cp 1 percent
+	jr nc, .not_leaves
+	call Random
+	cp 50 percent
+	jr c, .leaf_item
+.not_leaves
 	ld hl, wStatusFlags2
 	bit 1, [hl] ; ENGINE_SAFARI_GAME
 	jr nz, .safari_game
@@ -1675,6 +1685,21 @@ RandomEncounter:: ; 97cc0
 	call CallScript
 	scf
 	ret
+ .leaf_item
+	ld e, GOLD_LEAF
+	push de
+	call Random
+	cp 25 percent
+	pop de
+	jr c, .got_item
+	ld e, SILVER_LEAF
+.got_item
+	ld a, e
+	ld [wScriptVar], a
+	ld a, BANK(LeafItemScript)
+	ld hl, LeafItemScript
+	jr .done
+	
 
 
 .check_safari_game
@@ -1700,6 +1725,12 @@ RandomEncounter:: ; 97cc0
 	and a
 	ret
 ; 97cf9
+
+LeafItemScript:
+	opentext
+	verbosegiveitem ITEM_FROM_MEM
+	closetext
+	end
 
 WildBattleScript: ; 97cf9
 	randomwildmon

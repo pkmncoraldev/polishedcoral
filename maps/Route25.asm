@@ -9,7 +9,8 @@ Route25_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost 12, 29, SIGNPOST_ITEM + SILVER_LEAF, EVENT_ROUTE_25_HIDDEN_SILVER_LEAF
 
 	db 7 ; object events
 	object_event -6, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL

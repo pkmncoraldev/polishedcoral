@@ -49,5 +49,25 @@
 	db 30, CORSOLA		;5%
 	db 30, CHINCHOU		;4%
 	db 30, CHINCHOU		;1%
+	
+	map_id ROUTE_23
+	db 10 percent ; encounter rate
+	db 32, POLIWHIRL	;30%
+	db 32, QUAGSIRE		;30%
+	db 32, CARVANHA		;20%
+	db 32, MARILL		;10%
+	db 32, MARILL		;5%
+	db 32, MARILL		;4%
+	db 32, MARILL		;1%
+
+	map_id ROUTE_24_NORTH
+	db 8 percent ; encounter rate
+	db 32, POLIWHIRL	;30%
+	db 32, QUAGSIRE		;30%
+	db 32, CARVANHA		;20%
+	db 32, MARILL		;10%
+	db 32, MARILL		;5%
+	db 32, LAPRAS		;4%
+	db 32, LAPRAS		;1%
 
 	db -1 ; end

@@ -423,8 +423,10 @@ MAP_NONE   EQU 0
 	map_const KOMORE_MART,                             	   6,  4 ; 17
 	map_const FIGHTING_DOJO,                           	   4,  5 ; 18
 	map_const ROUTE_25,									  23, 10 ; 19
-	map_const ROUTE_26,									  20, 17 ; 20
-	map_const ROUTE_27,									  28, 19 ; 21
+	map_const ROUTE_25_WINDY,							   1,  1 ; 20
+	map_const ROUTE_26,									  20, 17 ; 21
+	map_const ROUTE_26_WINDY,							   1,  1 ; 22
+	map_const ROUTE_27,									  28, 19 ; 23
 	
 	newgroup													 ; 23
 	

@@ -87,7 +87,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -95,7 +95,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -103,7 +103,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -114,7 +114,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -122,7 +122,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -130,7 +130,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -141,7 +141,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -149,7 +149,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -157,7 +157,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -168,7 +168,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -176,7 +176,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -184,7 +184,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -195,7 +195,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -203,7 +203,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -211,7 +211,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -222,7 +222,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -230,7 +230,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -238,7 +238,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -249,7 +249,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -257,7 +257,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -265,7 +265,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -276,7 +276,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -284,7 +284,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -292,7 +292,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -303,7 +303,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -311,7 +311,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -319,7 +319,7 @@
 	db 29, CACNEA		;30%
 	db 29, NUMEL		;30%
 	db 29, CACNEA		;20%
-	db 29, SKARMORY		;10%
+	db 29, NUMEL		;10%
 	db 31, CACTURNE		;5%
 	db 30, LARVESTA		;4%
 	db 29, LARVESTA		;1%
@@ -435,165 +435,299 @@
 	map_id ROUTE_23
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 32, SHROOMISH	;30%
+	db 32, PONYTA		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, LITWICK		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	; day
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 32, SHROOMISH	;30%
+	db 32, PONYTA		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, LITWICK		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	; nite
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;30%
-	db 20, BULBASAUR	;20%
-	db 20, BULBASAUR	;10%
-	db 20, BULBASAUR	;5%
-	db 20, BULBASAUR	;4%
-	db 20, BULBASAUR	;1%
+	db 32, SHROOMISH	;30%
+	db 32, PONYTA		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, LITWICK		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	
 	map_id ROUTE_24_NORTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, CHARMANDER	;30%
-	db 20, CHARMANDER	;30%
-	db 20, CHARMANDER	;20%
-	db 20, CHARMANDER	;10%
-	db 20, CHARMANDER	;5%
-	db 20, CHARMANDER	;4%
-	db 20, CHARMANDER	;1%
+	db 32, SHROOMISH	;30%
+	db 32, LITWICK		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, PONYTA		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	; day
-	db 20, CHARMANDER	;30%
-	db 20, CHARMANDER	;30%
-	db 20, CHARMANDER	;20%
-	db 20, CHARMANDER	;10%
-	db 20, CHARMANDER	;5%
-	db 20, CHARMANDER	;4%
-	db 20, CHARMANDER	;1%
+	db 32, SHROOMISH	;30%
+	db 32, LITWICK		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, PONYTA		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	; nite
-	db 20, CHARMANDER	;30%
-	db 20, CHARMANDER	;30%
-	db 20, CHARMANDER	;20%
-	db 20, CHARMANDER	;10%
-	db 20, CHARMANDER	;5%
-	db 20, CHARMANDER	;4%
-	db 20, CHARMANDER	;1%
+	db 32, SHROOMISH	;30%
+	db 32, LITWICK		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, PONYTA		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	
 	map_id ROUTE_24_SOUTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, SQUIRTLE	;30%
-	db 20, SQUIRTLE	;30%
-	db 20, SQUIRTLE	;20%
-	db 20, SQUIRTLE	;10%
-	db 20, SQUIRTLE	;5%
-	db 20, SQUIRTLE	;4%
-	db 20, SQUIRTLE	;1%
+	db 32, SHROOMISH	;30%
+	db 32, LITWICK		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, PONYTA		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	; day
-	db 20, SQUIRTLE	;30%
-	db 20, SQUIRTLE	;30%
-	db 20, SQUIRTLE	;20%
-	db 20, SQUIRTLE	;10%
-	db 20, SQUIRTLE	;5%
-	db 20, SQUIRTLE	;4%
-	db 20, SQUIRTLE	;1%
+	db 32, SHROOMISH	;30%
+	db 32, LITWICK		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, PONYTA		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	; nite
-	db 20, SQUIRTLE	;30%
-	db 20, SQUIRTLE	;30%
-	db 20, SQUIRTLE	;20%
-	db 20, SQUIRTLE	;10%
-	db 20, SQUIRTLE	;5%
-	db 20, SQUIRTLE	;4%
-	db 20, SQUIRTLE	;1%
+	db 32, SHROOMISH	;30%
+	db 32, LITWICK		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, PONYTA		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
+	
+	map_id ROUTE_25
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 32, DRIFLOON		;30%
+	db 32, PONYTA		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, SKARMORY		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
+	; day
+	db 32, DRIFLOON		;30%
+	db 32, PONYTA		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, SKARMORY		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
+	; nite
+	db 32, DRIFLOON		;30%
+	db 32, PONYTA		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, SKARMORY		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
+	
+	map_id ROUTE_26
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 32, SHROOMISH	;30%
+	db 32, GIRAFARIG	;30%
+	db 32, HOUNDOUR		;20%
+	db 32, LITWICK		;10%
+	db 32, LITWICK		;5%
+	db 32, LITWICK		;4%
+	db 32, MIMIKYU		;1%
+	; day
+	db 32, SHROOMISH	;30%
+	db 32, GIRAFARIG	;30%
+	db 32, HOUNDOUR		;20%
+	db 32, LITWICK		;10%
+	db 32, LITWICK		;5%
+	db 32, LITWICK		;4%
+	db 32, MIMIKYU		;1%
+	; nite
+	db 32, SHROOMISH	;30%
+	db 32, GIRAFARIG	;30%
+	db 32, HOUNDOUR		;20%
+	db 32, LITWICK		;10%
+	db 32, LITWICK		;5%
+	db 32, LITWICK		;4%
+	db 32, MIMIKYU		;1%
 	
 	map_id ROUTE_23_WINDY ;Used on windy days
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, CHIKORITA	;30%
-	db 20, CHIKORITA	;30%
-	db 20, CHIKORITA	;20%
-	db 20, CHIKORITA	;10%
-	db 20, CHIKORITA	;5%
-	db 20, CHIKORITA	;4%
-	db 20, CHIKORITA	;1%
+	db 32, DRIFLOON		;30%
+	db 32, PONYTA		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, SKARMORY		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	; day
-	db 20, CHIKORITA	;30%
-	db 20, CHIKORITA	;30%
-	db 20, CHIKORITA	;20%
-	db 20, CHIKORITA	;10%
-	db 20, CHIKORITA	;5%
-	db 20, CHIKORITA	;4%
-	db 20, CHIKORITA	;1%
+	db 32, DRIFLOON		;30%
+	db 32, PONYTA		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, SKARMORY		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	; nite
-	db 20, CHIKORITA	;30%
-	db 20, CHIKORITA	;30%
-	db 20, CHIKORITA	;20%
-	db 20, CHIKORITA	;10%
-	db 20, CHIKORITA	;5%
-	db 20, CHIKORITA	;4%
-	db 20, CHIKORITA	;1%
+	db 32, DRIFLOON		;30%
+	db 32, PONYTA		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, SKARMORY		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	
 	map_id ROUTE_24_NORTH_WINDY ;Used on windy days
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, CYNDAQUIL	;30%
-	db 20, CYNDAQUIL	;30%
-	db 20, CYNDAQUIL	;20%
-	db 20, CYNDAQUIL	;10%
-	db 20, CYNDAQUIL	;5%
-	db 20, CYNDAQUIL	;4%
-	db 20, CYNDAQUIL	;1%
+	db 32, DRIFLOON		;30%
+	db 32, SHROOMISH	;30%
+	db 32, GIRAFARIG	;20%
+	db 32, SKARMORY		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	; day
-	db 20, CYNDAQUIL	;30%
-	db 20, CYNDAQUIL	;30%
-	db 20, CYNDAQUIL	;20%
-	db 20, CYNDAQUIL	;10%
-	db 20, CYNDAQUIL	;5%
-	db 20, CYNDAQUIL	;4%
-	db 20, CYNDAQUIL	;1%
+	db 32, DRIFLOON		;30%
+	db 32, SHROOMISH	;30%
+	db 32, GIRAFARIG	;20%
+	db 32, SKARMORY		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	; nite
-	db 20, CYNDAQUIL	;30%
-	db 20, CYNDAQUIL	;30%
-	db 20, CYNDAQUIL	;20%
-	db 20, CYNDAQUIL	;10%
-	db 20, CYNDAQUIL	;5%
-	db 20, CYNDAQUIL	;4%
-	db 20, CYNDAQUIL	;1%
+	db 32, DRIFLOON		;30%
+	db 32, SHROOMISH	;30%
+	db 32, GIRAFARIG	;20%
+	db 32, SKARMORY		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	
 	map_id ROUTE_24_SOUTH_WINDY ;Used on windy days
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, TOTODILE	;30%
-	db 20, TOTODILE	;30%
-	db 20, TOTODILE	;20%
-	db 20, TOTODILE	;10%
-	db 20, TOTODILE	;5%
-	db 20, TOTODILE	;4%
-	db 20, TOTODILE	;1%
+	db 32, DRIFLOON		;30%
+	db 32, SHROOMISH	;30%
+	db 32, GIRAFARIG	;20%
+	db 32, SKARMORY		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	; day
-	db 20, TOTODILE	;30%
-	db 20, TOTODILE	;30%
-	db 20, TOTODILE	;20%
-	db 20, TOTODILE	;10%
-	db 20, TOTODILE	;5%
-	db 20, TOTODILE	;4%
-	db 20, TOTODILE	;1%
+	db 32, DRIFLOON		;30%
+	db 32, SHROOMISH	;30%
+	db 32, GIRAFARIG	;20%
+	db 32, SKARMORY		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	; nite
-	db 20, TOTODILE	;30%
-	db 20, TOTODILE	;30%
-	db 20, TOTODILE	;20%
-	db 20, TOTODILE	;10%
-	db 20, TOTODILE	;5%
-	db 20, TOTODILE	;4%
-	db 20, TOTODILE	;1%
+	db 32, DRIFLOON		;30%
+	db 32, SHROOMISH	;30%
+	db 32, GIRAFARIG	;20%
+	db 32, SKARMORY		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
 	
+	map_id ROUTE_25_WINDY ;Used on windy days
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 32, DRIFLOON		;30%
+	db 32, PONYTA		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, SKARMORY		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
+	; day
+	db 32, DRIFLOON		;30%
+	db 32, PONYTA		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, SKARMORY		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
+	; nite
+	db 32, DRIFLOON		;30%
+	db 32, PONYTA		;30%
+	db 32, GIRAFARIG	;20%
+	db 32, SKARMORY		;10%
+	db 32, HOUNDOUR		;5%
+	db 32, HOUNDOUR		;4%
+	db 32, HOUNDOUR		;1%
+	
+	map_id ROUTE_26_WINDY ;Used on windy days
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 32, DRIFLOON		;30%
+	db 32, GIRAFARIG	;30%
+	db 32, HOUNDOUR		;20%
+	db 32, SKARMORY		;10%
+	db 32, SKARMORY		;5%
+	db 32, SKARMORY		;4%
+	db 32, MIMIKYU		;1%
+	; day
+	db 32, DRIFLOON		;30%
+	db 32, GIRAFARIG	;30%
+	db 32, HOUNDOUR		;20%
+	db 32, SKARMORY		;10%
+	db 32, SKARMORY		;5%
+	db 32, SKARMORY		;4%
+	db 32, MIMIKYU		;1%
+	; nite
+	db 32, DRIFLOON		;30%
+	db 32, GIRAFARIG	;30%
+	db 32, HOUNDOUR		;20%
+	db 32, SKARMORY		;10%
+	db 32, SKARMORY		;5%
+	db 32, SKARMORY		;4%
+	db 32, MIMIKYU		;1%
+	
+	map_id ROUTE_27
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 34, BUNEARY		;30%
+	db 34, DITTO		;30%
+	db 34, DITTO		;20%
+	db 33, PERSIAN		;10%
+	db 33, PERSIAN		;5%
+	db 33, PERSIAN		;4%
+	db 33, PERSIAN		;1%
+	; day
+	db 34, BUNEARY		;30%
+	db 34, DITTO		;30%
+	db 34, DITTO		;20%
+	db 33, PERSIAN		;10%
+	db 33, PERSIAN		;5%
+	db 33, PERSIAN		;4%
+	db 33, PERSIAN		;1%
+	; nite
+	db 34, BUNEARY		;30%
+	db 34, DITTO		;30%
+	db 34, DITTO		;20%
+	db 33, PERSIAN		;10%
+	db 33, PERSIAN		;5%
+	db 33, PERSIAN		;4%
+	db 33, PERSIAN		;1%
 	
 	map_id ROUTE_14_15_UNDERWATER
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
@@ -648,60 +782,6 @@
 	db 20, BULBASAUR	;5%
 	db 20, BULBASAUR	;4%
 	db 20, BULBASAUR	;1%
-	
-	map_id ROUTE_25
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	db 20, CYNDAQUIL	;30%
-	db 20, CYNDAQUIL	;30%
-	db 20, CYNDAQUIL	;20%
-	db 20, CYNDAQUIL	;10%
-	db 20, CYNDAQUIL	;5%
-	db 20, CYNDAQUIL	;4%
-	db 20, CYNDAQUIL	;1%
-	; day
-	db 20, CYNDAQUIL	;30%
-	db 20, CYNDAQUIL	;30%
-	db 20, CYNDAQUIL	;20%
-	db 20, CYNDAQUIL	;10%
-	db 20, CYNDAQUIL	;5%
-	db 20, CYNDAQUIL	;4%
-	db 20, CYNDAQUIL	;1%
-	; nite
-	db 20, CYNDAQUIL	;30%
-	db 20, CYNDAQUIL	;30%
-	db 20, CYNDAQUIL	;20%
-	db 20, CYNDAQUIL	;10%
-	db 20, CYNDAQUIL	;5%
-	db 20, CYNDAQUIL	;4%
-	db 20, CYNDAQUIL	;1%
-	
-	map_id ROUTE_27
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	db 20, TOTODILE	;30%
-	db 20, TOTODILE	;30%
-	db 20, TOTODILE	;20%
-	db 20, TOTODILE	;10%
-	db 20, TOTODILE	;5%
-	db 20, TOTODILE	;4%
-	db 20, TOTODILE	;1%
-	; day
-	db 20, TOTODILE	;30%
-	db 20, TOTODILE	;30%
-	db 20, TOTODILE	;20%
-	db 20, TOTODILE	;10%
-	db 20, TOTODILE	;5%
-	db 20, TOTODILE	;4%
-	db 20, TOTODILE	;1%
-	; nite
-	db 20, TOTODILE	;30%
-	db 20, TOTODILE	;30%
-	db 20, TOTODILE	;20%
-	db 20, TOTODILE	;10%
-	db 20, TOTODILE	;5%
-	db 20, TOTODILE	;4%
-	db 20, TOTODILE	;1%
 	
 	map_id INN_VENT
 	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite

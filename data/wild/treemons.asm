@@ -10,6 +10,8 @@ TreeMons:
 	dw TreeMonsLuster
 	dw TreeMonsShimmer
 	dw TreeMonsRadiant
+	dw TreeMonsKomore
+	dw TreeMonsBright
 	dw RockMons
 	dw PetalMons
 
@@ -154,37 +156,71 @@ TreeMonsLuster:
 	db -1
 	
 TreeMonsShimmer:
-	db 50, EXEGGCUTE,	26
-	db 15, MURKROW,		26
-	db 15, MURKROW,		26
-	db 10, MUNCHLAX,	26
-	db  5, MUNCHLAX,	26
-	db  5, MURKROW,		26
+	db 50, EXEGGCUTE,	30
+	db 15, MURKROW,		30
+	db 15, MURKROW,		30
+	db 10, MUNCHLAX,	30
+	db  5, MUNCHLAX,	30
+	db  5, MURKROW,		30
 	db -1
 	; rare
-	db 50, EXEGGCUTE,	31
-	db 15, MURKROW,		31
-	db 15, MURKROW,		31
-	db 10, MUNCHLAX,	31
-	db  5, MUNCHLAX,	31
-	db  5, MURKROW,		31
+	db 50, EXEGGCUTE,	33
+	db 15, MURKROW,		33
+	db 15, MURKROW,		33
+	db 10, MUNCHLAX,	33
+	db  5, MUNCHLAX,	33
+	db  5, MURKROW,		33
 	db -1
 	
 TreeMonsRadiant:
-	db 50, EXEGGCUTE,	26
-	db 15, CHERUBI,		26
-	db 15, CHERUBI,		26
-	db 10, VENONAT,		26
-	db  5, VENONAT,		26
-	db  5, CHERUBI,		26
+	db 50, EXEGGCUTE,	30
+	db 15, CHERUBI,		30
+	db 15, CHERUBI,		30
+	db 10, VENONAT,		30
+	db  5, VENONAT,		30
+	db  5, CHERUBI,		30
 	db -1
 	; rare
-	db 50, EXEGGCUTE,	31
-	db 15, CHERUBI,		31
-	db 15, CHERUBI,		31
-	db 10, VENONAT,		31
-	db  5, VENONAT,		31
-	db  5, CHERUBI,		31
+	db 50, EXEGGCUTE,	33
+	db 15, CHERUBI,		33
+	db 15, CHERUBI,		33
+	db 10, VENONAT,		33
+	db  5, VENONAT,		33
+	db  5, CHERUBI,		33
+	db -1
+	
+TreeMonsKomore:
+	db 50, MURKROW,		32
+	db 15, EXEGGCUTE,	32
+	db 15, EXEGGCUTE,	32
+	db 10, DRIFLOON,	32
+	db  5, DRIFLOON,	32
+	db  5, DRIFLOON,	32
+	db -1
+	; rare
+	db 50, MURKROW,		35
+	db 15, EXEGGCUTE,	35
+	db 15, EXEGGCUTE,	35
+	db 10, DRIFLOON,	35
+	db  5, DRIFLOON,	35
+	db  5, DRIFLOON,	35
+	db -1
+	
+TreeMonsBright:
+	db 50, DITTO,		32
+	db 15, PIDGEOTTO,	32
+	db 15, PIDGEOTTO,	32
+	db 10, PIDGEOTTO,	32
+	db  5, PIDGEOTTO,	32
+	db  5, PIDGEOTTO,	32
+	db -1
+	; rare
+	db 50, DITTO,		35
+	db 15, PIDGEOTTO,	35
+	db 15, PIDGEOTTO,	35
+	db 10, PIDGEOTTO,	35
+	db  5, PIDGEOTTO,	35
+	db  5, PIDGEOTTO,	35
 	db -1
 
 RockMons:

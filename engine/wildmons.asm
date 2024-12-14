@@ -646,6 +646,10 @@ _GrassWildmonLookup: ; 2a205
 	cp MAP_ROUTE_24_NORTH
 	jr z, .windy
 	cp MAP_ROUTE_24_SOUTH
+	jr z, .windy
+	cp MAP_ROUTE_25
+	jr z, .windy
+	cp MAP_ROUTE_26
 	jr nz, .normal
 .windy
 	call _GetGrassWildmonPointer

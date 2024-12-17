@@ -156,7 +156,7 @@ endr
 	closetext
 	setevent EVENT_ALWAYS_SET
 	waitsfx
-	loadwildmon VOLCARONA, 45
+	loadwildmon VOLCARONA, 40
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	disappear DESERT_TEMPLE_2_VOLCARONA_2

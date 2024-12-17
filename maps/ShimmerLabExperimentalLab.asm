@@ -493,13 +493,13 @@ endr
 	writetext ShimmerLabTirtougaText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke TIRTOUGA, 33
+	givepoke TIRTOUGA, 36
 	jump .end
 .archen
 	writetext ShimmerLabArchenText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke ARCHEN, 33
+	givepoke ARCHEN, 36
 .end
 	writetext ShimmerLabFossilCutsceneText10
 	waitbutton

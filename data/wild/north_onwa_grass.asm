@@ -1598,29 +1598,29 @@
 	map_id ROUTE_12
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 26, WHIRLIPEDE	;30%
-	db 26, BUNEARY		;30%
-	db 26, WOOPER		;20%
-	db 26, CLODSIRE		;10%
-	db 26, BUNEARY		;5%
-	db 26, SUDOWOODO	;4%
-	db 26, SUDOWOODO	;1%
+	db 28, WHIRLIPEDE	;30%
+	db 28, BUNEARY		;30%
+	db 28, WOOPER		;20%
+	db 28, CLODSIRE		;10%
+	db 28, BUNEARY		;5%
+	db 28, SUDOWOODO	;4%
+	db 28, SUDOWOODO	;1%
 	; day
-	db 26, WHIRLIPEDE	;30%
-	db 26, BUNEARY		;30%
-	db 26, WOOPER		;20%
-	db 26, CLODSIRE		;10%
-	db 26, BUNEARY		;5%
-	db 26, SUDOWOODO	;4%
-	db 26, SUDOWOODO	;1%
+	db 28, WHIRLIPEDE	;30%
+	db 28, BUNEARY		;30%
+	db 28, WOOPER		;20%
+	db 28, CLODSIRE		;10%
+	db 28, BUNEARY		;5%
+	db 28, SUDOWOODO	;4%
+	db 28, SUDOWOODO	;1%
 	; nite
-	db 26, WHIRLIPEDE	;30%
-	db 26, BUNEARY		;30%
-	db 26, WOOPER		;20%
-	db 26, CLODSIRE		;10%
-	db 26, BUNEARY		;5%
-	db 26, SUDOWOODO	;4%
-	db 26, SUDOWOODO	;1%
+	db 28, WHIRLIPEDE	;30%
+	db 28, BUNEARY		;30%
+	db 28, WOOPER		;20%
+	db 28, CLODSIRE		;10%
+	db 28, BUNEARY		;5%
+	db 28, SUDOWOODO	;4%
+	db 28, SUDOWOODO	;1%
 	
 	map_id STARGLOW_CAVERN_DEPTHS
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -1679,29 +1679,29 @@
 	map_id CONNECTING_CAVERN
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 27, NOIBAT		;30%
-	db 27, GOLBAT		;30%
-	db 27, DRILBUR		;20%
-	db 27, DRILBUR		;10%
-	db 27, ZUBAT		;5%
-	db 27, ZUBAT		;4%
-	db 27, ZUBAT		;1%
+	db 31, NOIBAT		;30%
+	db 31, GOLBAT		;30%
+	db 31, DRILBUR		;20%
+	db 31, DRILBUR		;10%
+	db 31, ZUBAT		;5%
+	db 31, ZUBAT		;4%
+	db 31, ZUBAT		;1%
 	; day
-	db 27, NOIBAT		;30%
-	db 27, GOLBAT		;30%
-	db 27, DRILBUR		;20%
-	db 27, DRILBUR		;10%
-	db 27, ZUBAT		;5%
-	db 27, ZUBAT		;4%
-	db 27, ZUBAT		;1%
+	db 31, NOIBAT		;30%
+	db 31, GOLBAT		;30%
+	db 31, DRILBUR		;20%
+	db 31, DRILBUR		;10%
+	db 31, ZUBAT		;5%
+	db 31, ZUBAT		;4%
+	db 31, ZUBAT		;1%
 	; nite
-	db 27, NOIBAT		;30%
-	db 27, GOLBAT		;30%
-	db 27, DRILBUR		;20%
-	db 27, DRILBUR		;10%
-	db 27, ZUBAT		;5%
-	db 27, ZUBAT		;4%
-	db 27, ZUBAT		;1%
+	db 31, NOIBAT		;30%
+	db 31, GOLBAT		;30%
+	db 31, DRILBUR		;20%
+	db 31, DRILBUR		;10%
+	db 31, ZUBAT		;5%
+	db 31, ZUBAT		;4%
+	db 31, ZUBAT		;1%
 	
 	map_id FAKE_ROUTE_1
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite

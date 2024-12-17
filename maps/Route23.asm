@@ -40,13 +40,12 @@ Route23_MapScriptHeader:
 	person_event SPRITE_FISHER, 50,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route23Fisher, -1
 	person_event SPRITE_BLACK_BELT, 35, 31, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route23BlackBelt, EVENT_GOT_HM04_STRENGTH
 	person_event SPRITE_MASTER, 34, 31, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	person_event SPRITE_CUTE_GIRL, 34, 35, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route23NPC1, -1
+	person_event SPRITE_FAT_GUY,  7, 20, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route23NPC2, -1
 	itemball_event 21, 20, HYPER_POTION, 1, EVENT_ROUTE_23_POKE_BALL_1
 	itemball_event  2, 52, EVERSTONE, 1, EVENT_ROUTE_23_POKE_BALL_2
 	itemball_event 13, 44, SILVER_LEAF, 1, EVENT_ROUTE_23_POKE_BALL_3
 	itemball_event 19, 40, PP_UP, 1, EVENT_ROUTE_23_POKE_BALL_4
-	person_event SPRITE_CUTE_GIRL, 34, 35, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route23NPC1, -1
-	person_event SPRITE_FAT_GUY,  7, 20, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route23NPC2, -1
-
 
 	const_def 1 ; object constants
 	const ROUTE_23_LEAF_1
@@ -62,6 +61,8 @@ Route23_MapScriptHeader:
 	const ROUTE_23_FISHER
 	const ROUTE_23_BLACKBELT
 	const ROUTE_23_MASTER
+	const ROUTE_23_NPC_1
+	const ROUTE_23_NPC_2
 
 Route23Callback:
 	checkevent EVENT_GOT_HM04_STRENGTH
@@ -225,6 +226,7 @@ endr
 	special FadeOutPalettesBlack
 	closetext
 	spriteface ROUTE_23_BLACKBELT, RIGHT
+	spriteface ROUTE_23_NPC_1, LEFT
 	opentext
 	playsound SFX_WHIRLWIND
 	writetext Route23BlackBeltText11
@@ -742,7 +744,7 @@ Route23MasterText5:
 	
 	para "Your quest next"
 	line "takes you to the"
-	cont "GYM in OBSUCRA"
+	cont "GYM in OBSCURA"
 	cont "CITY."
 	
 	para "I must warn you."

@@ -26,6 +26,8 @@ FightingDojo_MapScriptHeader:
 	
 FightingDojoMaster:
 	opentext
+	checkevent EVENT_GOT_HM04_STRENGTH
+	iftrue .done
 	writetext FightingDojoMasterText1
 	yesorno
 	iffalse .no
@@ -215,6 +217,11 @@ FightingDojoMaster:
 	end
 .no
 	writetext FightingDojoMasterTextNo
+	waitbutton
+	closetext
+	end
+.done
+	writetext FightingDojoMasterText8
 	waitbutton
 	closetext
 	end
@@ -476,12 +483,33 @@ FightingDojoMasterText7:
 	para "There is no need"
 	line "for words…"
 	
-	para "A tree is blocking"
-	line "the path and my"
-	cont "disciple thinks he"
-	cont "cannot move it…"
+	para "A tree has fallen"
+	line "and my disciple"
+	cont "thinks he cannot"
+	cont "move it…"
 	
-	para "…<WAIT_L>He will…"
+	para "…<WAIT_L><WAIT_M>He will…"
+	done
+	
+FightingDojoMasterText8:
+	text "Your quest next"
+	line "takes you to the"
+	cont "GYM in OBSCURA"
+	cont "CITY."
+	
+	para "I must warn you."
+	
+	para "I sense much hard-"
+	line "ship on the way."
+	
+	para "You should prepare"
+	line "for anything and"
+	cont "remain vigilant."
+	
+	para "Until we meet"
+	line "again, child…"
+	
+	para "Farewell…"
 	done
 	
 FightingDojoMasterWinText:

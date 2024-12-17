@@ -221,6 +221,20 @@ FightingDojoMaster:
 	closetext
 	end
 .done
+	writetext FightingDojoMasterText9
+	yesorno
+	iffalse .no_rest2
+	closetext
+	special FadeOutPalettesBlack
+	special HealParty
+	special SaveMusic
+	playmusic MUSIC_HEAL
+	pause 60
+	special RestoreMusic
+	callasm LoadMapPals
+	special FadeInPalettes
+	opentext
+.no_rest2
 	writetext FightingDojoMasterText8
 	waitbutton
 	closetext
@@ -510,6 +524,13 @@ FightingDojoMasterText8:
 	line "again, child…"
 	
 	para "Farewell…"
+	done
+	
+FightingDojoMasterText9:
+	text "You have returned."
+	
+	para "Will you rest and"
+	line "mediate?"
 	done
 	
 FightingDojoMasterWinText:

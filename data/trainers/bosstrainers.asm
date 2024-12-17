@@ -28,4 +28,5 @@ SetOrderTrainers:
 	db DARCY
 	db KAGE
 	db LOCKE
+	db DOJO_MASTER
 	db -1

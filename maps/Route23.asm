@@ -26,7 +26,7 @@ Route23_MapScriptHeader:
 	signpost 45, 18, SIGNPOST_ITEM + SILVER_LEAF, EVENT_ROUTE_23_HIDDEN_SILVER_LEAF_3
 	signpost 47,  6, SIGNPOST_ITEM + SILVER_LEAF, EVENT_ROUTE_23_HIDDEN_SILVER_LEAF_4
 
-	db 18 ; object events
+	db 19 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PINK
 	person_event SPRITE_YOUNGSTER, 23, 31, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer1, -1
@@ -44,7 +44,8 @@ Route23_MapScriptHeader:
 	itemball_event  2, 52, EVERSTONE, 1, EVENT_ROUTE_23_POKE_BALL_2
 	itemball_event 13, 44, SILVER_LEAF, 1, EVENT_ROUTE_23_POKE_BALL_3
 	itemball_event 19, 40, PP_UP, 1, EVENT_ROUTE_23_POKE_BALL_4
-	person_event SPRITE_CUTE_GIRL, 34, 35, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route23NPC, -1
+	person_event SPRITE_CUTE_GIRL, 34, 35, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route23NPC1, -1
+	person_event SPRITE_FAT_GUY,  7, 20, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route23NPC2, -1
 
 
 	const_def 1 ; object constants
@@ -106,15 +107,30 @@ Route23SetUpLeaves:
 	ld [wObject1SpriteX], a
 	ret
 	
-Route23NPC:
-	jumptextfaceplayer Route23NPCText
+Route23NPC1:
+	jumptextfaceplayer Route23NPC1Text
 	
-Route23NPCText:
+Route23NPC1Text:
 	text "The fallen tree"
 	line "has finally been"
 	cont "cleared!"
 	
 	para "Thank goodness!"
+	done
+	
+Route23NPC2:
+	jumptextfaceplayer Route23NPC2Text
+	
+Route23NPC2Text:
+	text "The leaves ahead"
+	line "are a beautiful"
+	cont "golden color."
+	
+	para "Occasionally you"
+	line "can find extra"
+	cont "beautiful ones."
+	
+	para "Keep an eye out!"
 	done
 	
 Route23Master5:

@@ -1130,7 +1130,9 @@ YoungsterGroup:
 	db "KYLE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 42, LITWICK
+	db 40, HOUNDOUR
+	db 42, SHROOMISH
 	db -1 ; end
 
 ; ================
@@ -1251,7 +1253,8 @@ CamperGroup:
 	db "DANTE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 41, NIDOQUEEN
+	db 40, NIDOKING
 	db -1 ; end
 
 ; ================
@@ -2117,7 +2120,8 @@ BirdKeeperGroup:
 	db "SIDNEY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 40, SKARMORY
+	db 41, DRIFBLIM
 	db -1 ; end
 
 ; ================
@@ -2946,7 +2950,9 @@ SuperNerdGroup:
 	db "REMY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 40, MAGCARGO
+	db 40, WEEZING
+	db 42, ELECTRODE
 	db -1 ; end
 
 ; ================
@@ -3241,7 +3247,9 @@ BeautyGroup:
 	db "MANDY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 41, WIGGLYTUFF
+	db 42, TOGETIC
+	db 40, CLEFABLE
 	db -1 ; end
 
 ; ================
@@ -3429,7 +3437,10 @@ JugglerGroup:
 	db "RONNIE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 40, GIRAFARIG
+	db 40, RAPIDASH
+	db 39, DONPHAN
+	db 39, FARIGIRAF
 	db -1 ; end
 
 ; ================
@@ -3705,17 +3716,19 @@ GentlemanGroup:
 	db "ELWARD@"
 	db TRAINERTYPE_NORMAL
 	; party
+	db 35, HOUNDOUR
+	db 35, HOUNDOUR
 	db 36, ARCANINE
-	db 35, HOUNDOOM
 	db -1 ; end
 
 ; ================
 
 	; GENTLEMAN
 	db "VICTOR@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 1, BULBASAUR
+	db 39, TREVENANT, ABILITY_1 | QUIRKY, MALE
+	db 40, PERSIAN, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM
 	db -1 ; end
 
 ; ================
@@ -3748,9 +3761,10 @@ LadyGroup:
 
 	; LADY
 	db "LYDIA@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 1, BULBASAUR
+	db 40, PERSIAN, ABILITY_1 | QUIRKY, FEMALE | ALOLAN_FORM
+	db 39, LOPUNNY, ABILITY_1 | QUIRKY, FEMALE
 	db -1 ; end
 
 ; ================
@@ -4019,7 +4033,9 @@ BurglarGroup:
 	db "CHASE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 41, RAPIDASH
+	db 40, LITWICK
+	db 41, LAMPENT
 	db -1 ; end
 
 ; ================
@@ -4233,7 +4249,8 @@ BlackbeltGroup:
 	db "SHINZO@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 40, MEDICHAM
+	db 42, MIENFOO
 	db -1 ; end
 
 ; ================
@@ -4242,7 +4259,7 @@ BlackbeltGroup:
 	db "KIYO@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 39, MEDICHAM
 	db -1 ; end
 
 ; ================
@@ -4251,7 +4268,7 @@ BlackbeltGroup:
 	db "YUJI@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 39, SLOWKING
 	db -1 ; end
 
 ; ================
@@ -5639,7 +5656,8 @@ BattleGirlGroup:
 	db "KIMIKO@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 39, MIENFOO
+	db 39, MIENFOO
 	db -1 ; end
 
 ; ================
@@ -5648,7 +5666,7 @@ BattleGirlGroup:
 	db "SAYORI@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 40, MACHOKE
 	db -1 ; end
 
 ; ================
@@ -5657,7 +5675,9 @@ BattleGirlGroup:
 	db "MAI@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 41, MEDITITE
+	db 42, MIENFOO
+	db 43, MIENFOO
 	db -1 ; end
 
 ; ================
@@ -5678,9 +5698,16 @@ DojoMasterGroup:
 
 	; MASTER
 	db "MASTER@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_ITEM | TRAINERTYPE_EVS | TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 42, MIENFOO, NO_ITEM, 50, $b6, $b6, $6b, ABILITY_1 | QUIRKY, MALE
+		db DRAIN_PUNCH, ACROBATICS, JUMP_KICK, SHARPEN_HOWL_MEDITATE
+	db 42, HYPNO, NO_ITEM, 50, $b6, $b6, $6b, ABILITY_1 | ADAMANT, MALE
+		db ZEN_HEADBUTT, SING_HYPNOSIS, BRICK_BREAK, FUTURE_SIGHT
+	db 45, MIENSHAO, MACHO_BRACE, 1, $60, $60, $06, ABILITY_2 | TIMID, FEMALE
+		db DRAIN_PUNCH, AURA_SPHERE, CALM_MIND, 0
+	db 45, MIENSHAO, MACHO_BRACE, 1, $60, $06, $00, ABILITY_1 | JOLLY, MALE
+		db DRAIN_PUNCH, ACROBATICS, JUMP_KICK, 0
 	db -1 ; end
 
 ; ================

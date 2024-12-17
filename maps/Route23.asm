@@ -16,17 +16,19 @@ Route23_MapScriptHeader:
 	coord_event 30, 36, 2, Route23Master4
 	coord_event 31, 36, 2, Route23Master5
 
-	db 8 ; bg events
+	db 10 ; bg events
 	signpost  8, 24, SIGNPOST_JUMPTEXT, Route23SignText
 	signpost 16,  5, SIGNPOST_JUMPTEXT, Route23FightingDojoSignText
-	signpost  5,  8, SIGNPOST_ITEM + GOLD_LEAF, EVENT_ROUTE_23_HIDDEN_GOLD_LEAF_1
+	signpost  2, 21, SIGNPOST_ITEM + GOLD_LEAF, EVENT_ROUTE_23_HIDDEN_GOLD_LEAF_1
 	signpost 22, 12, SIGNPOST_ITEM + GOLD_LEAF, EVENT_ROUTE_23_HIDDEN_GOLD_LEAF_2
 	signpost 26, 35, SIGNPOST_ITEM + SILVER_LEAF, EVENT_ROUTE_23_HIDDEN_SILVER_LEAF_1
 	signpost 44, 33, SIGNPOST_ITEM + SILVER_LEAF, EVENT_ROUTE_23_HIDDEN_SILVER_LEAF_2
 	signpost 45, 18, SIGNPOST_ITEM + SILVER_LEAF, EVENT_ROUTE_23_HIDDEN_SILVER_LEAF_3
 	signpost 47,  6, SIGNPOST_ITEM + SILVER_LEAF, EVENT_ROUTE_23_HIDDEN_SILVER_LEAF_4
+	signpost 34, 32, SIGNPOST_IFNOTSET, Route23FallenTree
+	signpost 35, 32, SIGNPOST_IFNOTSET, Route23FallenTree
 
-	db 19 ; object events
+	db 20 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PINK
 	person_event SPRITE_YOUNGSTER, 23, 31, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer1, -1
@@ -46,6 +48,7 @@ Route23_MapScriptHeader:
 	itemball_event  2, 52, EVERSTONE, 1, EVENT_ROUTE_23_POKE_BALL_2
 	itemball_event 13, 44, SILVER_LEAF, 1, EVENT_ROUTE_23_POKE_BALL_3
 	itemball_event 19, 40, PP_UP, 1, EVENT_ROUTE_23_POKE_BALL_4
+	itemball_event  8,  5, GOLD_LEAF, 1, EVENT_ROUTE_23_POKE_BALL_5
 
 	const_def 1 ; object constants
 	const ROUTE_23_LEAF_1
@@ -107,6 +110,16 @@ Route23SetUpLeaves:
 	add 100
 	ld [wObject1SpriteX], a
 	ret
+	
+Route23FallenTree:
+	dw EVENT_GOT_HM04_STRENGTH
+	jumptext Route23FallenTreeText
+	
+Route23FallenTreeText:
+	text "A huge fallen"
+	line "tree blocks the"
+	cont "way…"
+	done
 	
 Route23NPC1:
 	jumptextfaceplayer Route23NPC1Text

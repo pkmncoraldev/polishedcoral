@@ -92,7 +92,7 @@ KomoreCommunityCenterPikachu2:
 	waitbutton
 	closetext
 	waitsfx
-	loadwildmon MIMIKYU, 20
+	loadwildmon MIMIKYU, 47
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	disappear 1

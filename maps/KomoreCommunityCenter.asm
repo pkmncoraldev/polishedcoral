@@ -92,7 +92,7 @@ KomoreCommunityCenterDark:
 
 KomoreCommunityCenterItemBall:
 	callasm KomoreCommunityCenterSetItemAsm
-	farscall FindItemInBallScript
+	farscall FindTMHMInBallScript
 	iffalse .end
 	clearevent EVENT_MIMIKYU_MIDDLE
 	clearevent EVENT_MIMIKYU_RIGHT
@@ -103,10 +103,8 @@ KomoreCommunityCenterItemBall:
 	end
 
 KomoreCommunityCenterSetItemAsm:
-	ld a, ULTRA_BALL
+	ld a, TM_SHADOW_BALL
 	ld [wCurItemBallContents], a
-	ld a, 1
-	ld [wCurItemBallQuantity], a
 	ret
 
 KomoreCommunityCenterSign1Text:

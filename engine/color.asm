@@ -1825,7 +1825,7 @@ LoadMapPals::
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes
-	ld hl, MapObjectPals
+	ld hl, MapObjectPals + 1 palettes
 	call AddNTimes
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)

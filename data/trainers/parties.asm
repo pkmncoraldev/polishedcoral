@@ -2258,7 +2258,8 @@ HikerGroup:
 	db "KEITH@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 42, GRAVELER
+	db 43, GRAVELER
 	db -1 ; end
 
 ; ================
@@ -2792,7 +2793,7 @@ PokefanFGroup:
 	db "YVONNE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 45, FARIGIRAF
 	db -1 ; end
 
 ; ================
@@ -2824,9 +2825,14 @@ OfficerGroup:
 
 	; OFFICER
 	db "JOHNSON@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 42, WHIMSICOTT
+		db AIR_SLASH, COTTON_GUARD, ENERGY_BALL, CHARM_FEATHER_DANCE
+	db 42, ARCANINE
+		db FIRE_FANG, BITE, EXTREMESPEED, SHARPEN_HOWL_MEDITATE
+	db 42, FLOATZEL
+		db AQUA_JET, AQUA_TAIL, DOUBLE_HIT, SWIFT
 	db -1 ; end
 
 ; ================
@@ -2903,9 +2909,10 @@ PokemaniacGroup:
 
 	; POKEMANIAC
 	db "NOAH@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 41, CHANDELURE
+		db HEX, FLAME_BURST, WILL_O_WISP, 0
 	db -1 ; end
 
 ; ================
@@ -3440,7 +3447,7 @@ JugglerGroup:
 	db 40, GIRAFARIG
 	db 40, RAPIDASH
 	db 39, DONPHAN
-	db 39, FARIGIRAF
+	db 39, TAUROS
 	db -1 ; end
 
 ; ================
@@ -3655,7 +3662,8 @@ PsychicGroup:
 	db "DAVID@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 41, XATU
+	db 42, GIRAFARIG
 	db -1 ; end
 
 ; ================
@@ -4502,9 +4510,14 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM
 	db "TREY@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 40, VENUSAUR
+		db LEECH_SEED, RAZOR_LEAF, DOUBLE_EDGE, 0
+	db 40, CHARIZARD
+		db DRAGON_RAGE, FLAME_BURST, SLASH, 0
+	db 40, BLASTOISE
+		db SHELL_SMASH, BUBBLE_BEAM, BITE, 0
 	db -1 ; end
 
 ; ================
@@ -5088,7 +5101,9 @@ SkaterGroup:
 	db "BOB@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 41, DODRIO
+	db 41, SCRAFTY
+	db 40, SCOLIPEDE
 	db -1 ; end
 
 ; ================
@@ -5586,9 +5601,9 @@ AromaLadyGroup:
 
 	; AROMA_LADY
 	db "JODI@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 38, EXEGGUTOR
+	db 38, EXEGGUTOR, ABILITY_1 | QUIRKY, FEMALE
 	db -1 ; end
 
 ; ================
@@ -5688,7 +5703,9 @@ BattleGirlGroup:
 	db "SHOO@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 43, MIENFOO
+	db 43, MIENFOO
+	db 42, MACHOKE
 	db -1 ; end
 
 ; ================

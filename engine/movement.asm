@@ -1063,7 +1063,7 @@ NormalStep: ; 5412
 	cp COLL_SEAWEED
 	jr z, .shake_grass
 	cp COLL_LEAVES
-	jr z, .shake_flower
+	jr z, .shake_grass
 	cp COLL_FLOWERS
 	jr z, .shake_flower
 	cp COLL_FLOWERS_LEDGE_DOWN

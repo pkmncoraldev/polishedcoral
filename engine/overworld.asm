@@ -396,16 +396,23 @@ LoadEmoteGFX::
 	ld c, EMOTE_SHADOW
 	call LoadEmote
 	ld a, [wTileset]
+	cp TILESET_AUTUMN
+	jr nz, .skip_autumn
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_27
+	jr nz, .snow_sand
+.skip_autumn
+	ld a, [wTileset]
 	cp TILESET_SNOW
-	jp z, .snow_sand
+	jr z, .snow_sand
 	cp TILESET_DESERT
-	jp z, .snow_sand
+	jr z, .snow_sand
 	cp TILESET_SHIMMER
-	jp z, .flowers
+	jr z, .flowers
 	cp TILESET_GROVE
-	jp z, .flowers
+	jr z, .flowers
 	cp TILESET_PLAYER_HOUSE
-	jp z, .playerhouse
+	jr z, .playerhouse
 .normal
 	ld c, EMOTE_BOULDER_DUST
 	call LoadEmote

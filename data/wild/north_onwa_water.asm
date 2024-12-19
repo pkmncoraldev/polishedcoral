@@ -312,23 +312,33 @@
 
 	map_id ROUTE_14
 	db 6 percent ; encounter rate
-	db 31, STARYU		;30%
-	db 31, WINGULL		;30%
-	db 31, HORSEA		;20%
-	db 31, MAREANIE		;10%
-	db 31, CORSOLA		;5%
-	db 31, CHINCHOU		;4%
-	db 31, CHINCHOU		;1%
+	db 30, STARYU		;30%
+	db 30, WINGULL		;30%
+	db 30, HORSEA		;20%
+	db 30, MAREANIE		;10%
+	db 30, CORSOLA		;5%
+	db 30, CHINCHOU		;4%
+	db 30, CHINCHOU		;1%
 
 	map_id ROUTE_15
 	db 6 percent ; encounter rate
+	db 30, STARYU		;30%
+	db 30, WINGULL		;30%
+	db 30, HORSEA		;20%
+	db 30, MAREANIE		;10%
+	db 30, CORSOLA		;5%
+	db 30, CHINCHOU		;4%
+	db 30, CHINCHOU		;1%
+
+	map_id ROUTE_6_UNDERWATER_CAVE
+	db 5 percent ; encounter rate
 	db 31, STARYU		;30%
-	db 31, WINGULL		;30%
-	db 31, HORSEA		;20%
-	db 31, MAREANIE		;10%
-	db 31, CORSOLA		;5%
-	db 31, CHINCHOU		;4%
-	db 31, CHINCHOU		;1%
+	db 31, HORSEA		;30%
+	db 31, STARYU		;20%
+	db 31, HORSEA		;10%
+	db 31, LAPRAS		;5%
+	db 31, LAPRAS		;4%
+	db 31, LAPRAS		;1%
 
 	map_id CONNECTING_CAVERN
 	db 6 percent ; encounter rate

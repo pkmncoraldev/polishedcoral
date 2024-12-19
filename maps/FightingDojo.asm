@@ -207,6 +207,14 @@ FightingDojoMaster:
 	writetext FightingDojoMasterText7
 	waitbutton
 	closetext
+	playsound SFX_FULL_HEAL
+	waitsfx
+	pause 10
+	opentext
+	writetext FightingDojoMasterText10
+	special HealParty
+	waitbutton
+	closetext
 	pause 30
 	playsound SFX_WATER_GUN
 	spriteface FIGHTING_DOJO_MASTER, UP
@@ -494,15 +502,9 @@ FightingDojoMasterText7:
 	para "You have proven"
 	line "yourself…"
 	
-	para "There is no need"
-	line "for words…"
-	
-	para "A tree has fallen"
-	line "and my disciple"
-	cont "thinks he cannot"
-	cont "move it…"
-	
-	para "…<WAIT_L><WAIT_M>He will…"
+	para "I shall restore"
+	line "your #MON with"
+	cont "my power."
 	done
 	
 FightingDojoMasterText8:
@@ -531,6 +533,21 @@ FightingDojoMasterText9:
 	
 	para "Will you rest and"
 	line "mediate?"
+	done
+	
+FightingDojoMasterText10:
+	text "I see what is"
+	line "on your mind."
+	
+	para "There is no need"
+	line "for words…"
+	
+	para "A tree has fallen"
+	line "and my disciple"
+	cont "thinks he cannot"
+	cont "move it…"
+	
+	para "…<WAIT_L><WAIT_M>He will…"
 	done
 	
 FightingDojoMasterWinText:

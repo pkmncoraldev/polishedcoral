@@ -57,29 +57,29 @@
 	map_id BRILLO_BOAT_HOUSE ; used in desert when stuck in sand
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
-	db 37, GLIGAR		;30%
-	db 37, GLIGAR		;30%
-	db 37, DWEBBLE		;20%
-	db 37, DWEBBLE		;10%
-	db 37, DWEBBLE		;5%
-	db 37, DWEBBLE		;4%
-	db 37, DWEBBLE		;1%
+	db 32, GLIGAR		;30%
+	db 32, GLIGAR		;30%
+	db 32, DWEBBLE		;20%
+	db 32, DWEBBLE		;10%
+	db 32, DWEBBLE		;5%
+	db 32, DWEBBLE		;4%
+	db 32, DWEBBLE		;1%
 	; day
-	db 37, GLIGAR		;30%
-	db 37, GLIGAR		;30%
-	db 37, DWEBBLE		;20%
-	db 37, DWEBBLE		;10%
-	db 37, DWEBBLE		;5%
-	db 37, DWEBBLE		;4%
-	db 37, DWEBBLE		;1%
+	db 32, GLIGAR		;30%
+	db 32, GLIGAR		;30%
+	db 32, DWEBBLE		;20%
+	db 32, DWEBBLE		;10%
+	db 32, DWEBBLE		;5%
+	db 32, DWEBBLE		;4%
+	db 32, DWEBBLE		;1%
 	; nite
-	db 37, GLIGAR		;30%
-	db 37, GLIGAR		;30%
-	db 37, DWEBBLE		;20%
-	db 37, DWEBBLE		;10%
-	db 37, DWEBBLE		;5%
-	db 37, DWEBBLE		;4%
-	db 37, DWEBBLE		;1%
+	db 32, GLIGAR		;30%
+	db 32, GLIGAR		;30%
+	db 32, DWEBBLE		;20%
+	db 32, DWEBBLE		;10%
+	db 32, DWEBBLE		;5%
+	db 32, DWEBBLE		;4%
+	db 32, DWEBBLE		;1%
 	
 	map_id DESERT_WASTELAND_1
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
@@ -88,7 +88,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
@@ -96,7 +96,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
@@ -104,7 +104,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	
@@ -115,7 +115,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
@@ -123,7 +123,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
@@ -131,7 +131,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 
@@ -142,7 +142,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
@@ -150,7 +150,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
@@ -158,7 +158,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 
@@ -169,7 +169,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
@@ -177,7 +177,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
@@ -185,7 +185,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 
@@ -196,7 +196,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
@@ -204,7 +204,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
@@ -212,7 +212,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 
@@ -223,7 +223,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
@@ -231,7 +231,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
@@ -239,7 +239,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 
@@ -250,7 +250,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
@@ -258,7 +258,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
@@ -266,7 +266,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 
@@ -277,7 +277,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
@@ -285,7 +285,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
@@ -293,7 +293,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 
@@ -304,7 +304,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
@@ -312,7 +312,7 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
@@ -320,117 +320,117 @@
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
 	db 31, NUMEL		;10%
-	db 37, CACTURNE		;5%
+	db 32, CACTURNE		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	
 	map_id ROUTE_19
 	db 25 percent, 25 percent, 25 percent ; encounter rates: morn/day/nite
 	; morn
-	db 37, FLOATZEL		;30%
-	db 37, PIDGEOTTO	;30%
-	db 37, MEOWTH		;20%
-	db 37, KOFFING		;10%
-	db 37, KOFFING		;5%
-	db 37, KOFFING		;4%
-	db 37, KOFFING		;1%
+	db 32, FLOATZEL		;30%
+	db 32, PIDGEOTTO	;30%
+	db 32, MEOWTH		;20%
+	db 32, KOFFING		;10%
+	db 32, KOFFING		;5%
+	db 32, KOFFING		;4%
+	db 32, KOFFING		;1%
 	; day
-	db 37, FLOATZEL		;30%
-	db 37, PIDGEOTTO	;30%
-	db 37, MEOWTH		;20%
-	db 37, KOFFING		;10%
-	db 37, KOFFING		;5%
-	db 37, KOFFING		;4%
-	db 37, KOFFING		;1%
+	db 32, FLOATZEL		;30%
+	db 32, PIDGEOTTO	;30%
+	db 32, MEOWTH		;20%
+	db 32, KOFFING		;10%
+	db 32, KOFFING		;5%
+	db 32, KOFFING		;4%
+	db 32, KOFFING		;1%
 	; nite
-	db 37, FLOATZEL		;30%
-	db 37, PIDGEOTTO	;30%
-	db 37, MEOWTH		;20%
-	db 37, KOFFING		;10%
-	db 37, KOFFING		;5%
-	db 37, KOFFING		;4%
-	db 37, KOFFING		;1%
+	db 32, FLOATZEL		;30%
+	db 32, PIDGEOTTO	;30%
+	db 32, MEOWTH		;20%
+	db 32, KOFFING		;10%
+	db 32, KOFFING		;5%
+	db 32, KOFFING		;4%
+	db 32, KOFFING		;1%
 	
 	map_id ROUTE_20
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 37, SUNKERN		;30%
-	db 37, LEDIAN		;30%
-	db 37, CHERUBI		;20%
-	db 37, CHERRIM		;10%
-	db 37, CHERUBI		;5%
-	db 37, VENONAT		;4%
-	db 37, VENONAT		;1%
+	db 32, SUNKERN		;30%
+	db 32, LEDIAN		;30%
+	db 32, CHERUBI		;20%
+	db 32, CHERRIM		;10%
+	db 32, CHERUBI		;5%
+	db 32, VENONAT		;4%
+	db 32, VENONAT		;1%
 	; day
-	db 37, SUNKERN		;30%
-	db 37, LEDIAN		;30%
-	db 37, CHERUBI		;20%
-	db 37, CHERRIM		;10%
-	db 37, CHERUBI		;5%
-	db 37, VENONAT		;4%
-	db 37, VENONAT		;1%
+	db 32, SUNKERN		;30%
+	db 32, LEDIAN		;30%
+	db 32, CHERUBI		;20%
+	db 32, CHERRIM		;10%
+	db 32, CHERUBI		;5%
+	db 32, VENONAT		;4%
+	db 32, VENONAT		;1%
 	; nite
-	db 37, SUNKERN		;30%
-	db 37, LEDIAN		;30%
-	db 37, CHERUBI		;20%
-	db 37, CHERRIM		;10%
-	db 37, CHERUBI		;5%
-	db 37, VENONAT		;4%
-	db 37, VENONAT		;1%
+	db 32, SUNKERN		;30%
+	db 32, LEDIAN		;30%
+	db 32, CHERUBI		;20%
+	db 32, CHERRIM		;10%
+	db 32, CHERUBI		;5%
+	db 32, VENONAT		;4%
+	db 32, VENONAT		;1%
 	
 	map_id RADIANT_FIELD
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 37, SUNKERN		;30%
-	db 37, LEDIAN		;30%
-	db 37, CHERUBI		;20%
-	db 37, CHERRIM		;10%
-	db 37, CHERUBI		;5%
-	db 37, VENONAT		;4%
-	db 37, VENONAT		;1%
+	db 32, SUNKERN		;30%
+	db 32, LEDIAN		;30%
+	db 32, CHERUBI		;20%
+	db 32, CHERRIM		;10%
+	db 32, CHERUBI		;5%
+	db 32, VENONAT		;4%
+	db 32, VENONAT		;1%
 	; day
-	db 37, SUNKERN		;30%
-	db 37, LEDIAN		;30%
-	db 37, CHERUBI		;20%
-	db 37, CHERRIM		;10%
-	db 37, CHERUBI		;5%
-	db 37, VENONAT		;4%
-	db 37, VENONAT		;1%
+	db 32, SUNKERN		;30%
+	db 32, LEDIAN		;30%
+	db 32, CHERUBI		;20%
+	db 32, CHERRIM		;10%
+	db 32, CHERUBI		;5%
+	db 32, VENONAT		;4%
+	db 32, VENONAT		;1%
 	; nite
-	db 37, SUNKERN		;30%
-	db 37, LEDIAN		;30%
-	db 37, CHERUBI		;20%
-	db 37, CHERRIM		;10%
-	db 37, CHERUBI		;5%
-	db 37, VENONAT		;4%
-	db 37, VENONAT		;1%
+	db 32, SUNKERN		;30%
+	db 32, LEDIAN		;30%
+	db 32, CHERUBI		;20%
+	db 32, CHERRIM		;10%
+	db 32, CHERUBI		;5%
+	db 32, VENONAT		;4%
+	db 32, VENONAT		;1%
 	
 	map_id ROUTE_21
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 37, KOFFING		;30%
-	db 37, MEOWTH		;30%
-	db 37, RATICATE		;20%
-	db 37, RATICATE		;10%
-	db 37, MEOWTH		;5%
-	db 37, MUNCHLAX		;4%
-	db 37, MUNCHLAX		;1%
+	db 32, KOFFING		;30%
+	db 32, MEOWTH		;30%
+	db 32, RATICATE		;20%
+	db 32, RATICATE		;10%
+	db 32, MEOWTH		;5%
+	db 32, MUNCHLAX		;4%
+	db 32, MUNCHLAX		;1%
 	; day
-	db 37, KOFFING		;30%
-	db 37, MEOWTH		;30%
-	db 37, RATICATE		;20%
-	db 37, RATICATE		;10%
-	db 37, MEOWTH		;5%
-	db 37, MUNCHLAX		;4%
-	db 37, MUNCHLAX		;1%
+	db 32, KOFFING		;30%
+	db 32, MEOWTH		;30%
+	db 32, RATICATE		;20%
+	db 32, RATICATE		;10%
+	db 32, MEOWTH		;5%
+	db 32, MUNCHLAX		;4%
+	db 32, MUNCHLAX		;1%
 	; nite
-	db 37, KOFFING		;30%
-	db 37, MEOWTH		;30%
-	db 37, RATICATE		;20%
-	db 37, RATICATE		;10%
-	db 37, MEOWTH		;5%
-	db 37, MUNCHLAX		;4%
-	db 37, MUNCHLAX		;1%
+	db 32, KOFFING		;30%
+	db 32, MEOWTH		;30%
+	db 32, RATICATE		;20%
+	db 32, RATICATE		;10%
+	db 32, MEOWTH		;5%
+	db 32, MUNCHLAX		;4%
+	db 32, MUNCHLAX		;1%
 	
 	map_id ROUTE_23
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

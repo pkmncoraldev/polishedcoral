@@ -232,7 +232,7 @@ KomoreTeaHouseMasterText1_3:
 	done
 	
 KomoreTeaHouseMasterText2:
-	text "Let us being."
+	text "Let us begin."
 	done
 	
 KomoreTeaHouseMasterText3:

@@ -3224,11 +3224,12 @@ Script_movetoplayer:
 	farjp CopyDECoordsToMapObject
 	
 Script_strengthtree:
-	ld a, [wOptions1]
-	bit DEBUG_MODE, a
-	jp nz, .debug
 	farcall TryStrengthOW
-	ifequal $1, .DontMeetRequirements
+	ld a, [wScriptVar]
+	cp 3
+	jr z, .debug
+	cp 1
+	jr z, .DontMeetRequirements
 	ld b, BANK(StrengthTreeScript)
 	ld de, StrengthTreeScript
 	jp ScriptCall
@@ -3265,7 +3266,6 @@ StrengthTreeScript:
 	playsound SFX_THUNDER
 	waitsfx
 	playsound SFX_PLACE_PUZZLE_PIECE_DOWN
-	waitsfx
 	callasm StrengthTreeSetScriptVarAsm
 	end
 .said_no
@@ -3278,13 +3278,11 @@ DebugStrengthTreeScript:
 	writetext DebugStrengthTreeText
 	waitbutton
 	closetext
-	callasm StrengthTreeAsm
 	special FadeOutPalettesBlack
 	pause 10
 	playsound SFX_THUNDER
 	waitsfx
 	playsound SFX_PLACE_PUZZLE_PIECE_DOWN
-	waitsfx
 	callasm StrengthTreeSetScriptVarAsm
 	end
 	

@@ -2791,9 +2791,10 @@ PokefanFGroup:
 
 	; POKEFANF
 	db "YVONNE@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
 	db 45, FARIGIRAF
+		db CRUNCH, DOUBLE_HIT, AGILITY_ROCK_POLISH, TWIN_BEAM
 	db -1 ; end
 
 ; ================

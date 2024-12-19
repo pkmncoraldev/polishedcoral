@@ -2486,6 +2486,7 @@ SlowkingEvosAttacks:
 GirafarigEvosAttacks:
 	db EVOLVE_MOVE, TWIN_BEAM, FARIGIRAF
 	db 0 ; no more evolutions
+	db  1, TWIN_BEAM
 	db  1, TACKLE_SCRATCH_POUND
 	db  1, GROWL
 	db  5, CONFUSION
@@ -2494,7 +2495,6 @@ GirafarigEvosAttacks:
 	db 19, PSYBEAM
 	db 23, AGILITY_ROCK_POLISH
 	db 28, DOUBLE_HIT
-	db 32, TWIN_BEAM
 	db 37, CRUNCH
 	db 41, BATON_PASS
 	db 46, NASTY_PLOT
@@ -4788,6 +4788,7 @@ ClodsireEvosAttacks:
 	
 FarigirafEvosAttacks:
 	db 0 ; no more evolutions
+	db  1, TWIN_BEAM
 	db  1, TACKLE_SCRATCH_POUND
 	db  1, GROWL
 	db  5, CONFUSION
@@ -4796,7 +4797,6 @@ FarigirafEvosAttacks:
 	db 19, PSYBEAM
 	db 23, AGILITY_ROCK_POLISH
 	db 28, DOUBLE_HIT
-	db 32, TWIN_BEAM
 	db 37, CRUNCH
 	db 41, BATON_PASS
 	db 46, NASTY_PLOT

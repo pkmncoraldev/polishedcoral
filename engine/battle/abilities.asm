@@ -1638,7 +1638,17 @@ PinchAbility:
 	
 	cp b
 	ret nz
+	ld a, [wBuffer1]
+	ld e, a
+	ld a, [wBuffer2]
+	ld d, a
+	push de
 	call CheckPinch
+	pop de
+	ld a, e
+	ld [wBuffer1], a
+	ld a, d
+	ld [wBuffer2], a
 	ret nz
 	ld a, $32
 	jp ApplyDamageMod

@@ -1598,29 +1598,29 @@
 	map_id ROUTE_12
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 28, WHIRLIPEDE	;30%
-	db 28, BUNEARY		;30%
-	db 28, WOOPER		;20%
-	db 28, CLODSIRE		;10%
-	db 28, BUNEARY		;5%
-	db 28, SUDOWOODO	;4%
-	db 28, SUDOWOODO	;1%
+	db 30, WHIRLIPEDE	;30%
+	db 30, WOOPER		;30%
+	db 30, BUNEARY		;20%
+	db 30, CLODSIRE		;10%
+	db 30, WOOPER		;5%
+	db 30, SUDOWOODO	;4%
+	db 30, SUDOWOODO	;1%
 	; day
-	db 28, WHIRLIPEDE	;30%
-	db 28, BUNEARY		;30%
-	db 28, WOOPER		;20%
-	db 28, CLODSIRE		;10%
-	db 28, BUNEARY		;5%
-	db 28, SUDOWOODO	;4%
-	db 28, SUDOWOODO	;1%
+	db 30, WHIRLIPEDE	;30%
+	db 30, WOOPER		;30%
+	db 30, BUNEARY		;20%
+	db 30, CLODSIRE		;10%
+	db 30, WOOPER		;5%
+	db 30, SUDOWOODO	;4%
+	db 30, SUDOWOODO	;1%
 	; nite
-	db 28, WHIRLIPEDE	;30%
-	db 28, BUNEARY		;30%
-	db 28, WOOPER		;20%
-	db 28, CLODSIRE		;10%
-	db 28, BUNEARY		;5%
-	db 28, SUDOWOODO	;4%
-	db 28, SUDOWOODO	;1%
+	db 30, WHIRLIPEDE	;30%
+	db 30, WOOPER		;30%
+	db 30, BUNEARY		;20%
+	db 30, CLODSIRE		;10%
+	db 30, WOOPER		;5%
+	db 30, SUDOWOODO	;4%
+	db 30, SUDOWOODO	;1%
 	
 	map_id STARGLOW_CAVERN_DEPTHS
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite

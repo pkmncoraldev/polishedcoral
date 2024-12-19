@@ -516,26 +516,26 @@
 	map_id ROUTE_25
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 37, DRIFLOON		;30%
+	db 37, SHROOMISH	;30%
 	db 37, PONYTA		;30%
 	db 37, GIRAFARIG	;20%
-	db 37, SKARMORY		;10%
+	db 37, LITWICK		;10%
 	db 37, HOUNDOUR		;5%
 	db 37, HOUNDOUR		;4%
 	db 37, HOUNDOUR		;1%
 	; day
-	db 37, DRIFLOON		;30%
+	db 37, SHROOMISH	;30%
 	db 37, PONYTA		;30%
 	db 37, GIRAFARIG	;20%
-	db 37, SKARMORY		;10%
+	db 37, LITWICK		;10%
 	db 37, HOUNDOUR		;5%
 	db 37, HOUNDOUR		;4%
 	db 37, HOUNDOUR		;1%
 	; nite
-	db 37, DRIFLOON		;30%
+	db 37, SHROOMISH	;30%
 	db 37, PONYTA		;30%
 	db 37, GIRAFARIG	;20%
-	db 37, SKARMORY		;10%
+	db 37, LITWICK		;10%
 	db 37, HOUNDOUR		;5%
 	db 37, HOUNDOUR		;4%
 	db 37, HOUNDOUR		;1%
@@ -549,7 +549,7 @@
 	db 37, LITWICK		;10%
 	db 37, LITWICK		;5%
 	db 37, LITWICK		;4%
-	db 37, MIMIKYU		;1%
+	db 37, LITWICK		;1%
 	; day
 	db 37, SHROOMISH	;30%
 	db 37, GIRAFARIG	;30%
@@ -557,7 +557,7 @@
 	db 37, LITWICK		;10%
 	db 37, LITWICK		;5%
 	db 37, LITWICK		;4%
-	db 37, MIMIKYU		;1%
+	db 37, LITWICK		;1%
 	; nite
 	db 37, SHROOMISH	;30%
 	db 37, GIRAFARIG	;30%
@@ -565,7 +565,7 @@
 	db 37, LITWICK		;10%
 	db 37, LITWICK		;5%
 	db 37, LITWICK		;4%
-	db 37, MIMIKYU		;1%
+	db 37, LITWICK		;1%
 	
 	map_id ROUTE_23_WINDY ;Used on windy days
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -684,7 +684,7 @@
 	db 37, SKARMORY		;10%
 	db 37, SKARMORY		;5%
 	db 37, SKARMORY		;4%
-	db 37, MIMIKYU		;1%
+	db 37, SKARMORY		;1%
 	; day
 	db 37, DRIFLOON		;30%
 	db 37, GIRAFARIG	;30%
@@ -692,7 +692,7 @@
 	db 37, SKARMORY		;10%
 	db 37, SKARMORY		;5%
 	db 37, SKARMORY		;4%
-	db 37, MIMIKYU		;1%
+	db 37, SKARMORY		;1%
 	; nite
 	db 37, DRIFLOON		;30%
 	db 37, GIRAFARIG	;30%
@@ -700,7 +700,7 @@
 	db 37, SKARMORY		;10%
 	db 37, SKARMORY		;5%
 	db 37, SKARMORY		;4%
-	db 37, MIMIKYU		;1%
+	db 37, SKARMORY		;1%
 	
 	map_id ROUTE_27
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
@@ -782,6 +782,114 @@
 	db 20, BULBASAUR	;5%
 	db 20, BULBASAUR	;4%
 	db 20, BULBASAUR	;1%
+	
+	map_id KOMORE_COMMUNITY_CENTER
+	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
+	; morn
+	db 37, NOIBAT		;30%
+	db 37, RATICATE		;30%
+	db 37, LITWICK		;20%
+	db 37, LAMPENT		;10%
+	db 37, LAMPENT		;5%
+	db 37, LITWICK		;4%
+	db 37, MIMIKYU		;1%
+	; day
+	db 37, NOIBAT		;30%
+	db 37, RATICATE		;30%
+	db 37, LITWICK		;20%
+	db 37, LAMPENT		;10%
+	db 37, LAMPENT		;5%
+	db 37, LITWICK		;4%
+	db 37, MIMIKYU		;1%
+	; nite
+	db 37, NOIBAT		;30%
+	db 37, RATICATE		;30%
+	db 37, LITWICK		;20%
+	db 37, LAMPENT		;10%
+	db 37, LAMPENT		;5%
+	db 37, LITWICK		;4%
+	db 37, MIMIKYU		;1%
+	
+	map_id KOMORE_COMMUNITY_CENTER_LEFT
+	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
+	; morn
+	db 37, NOIBAT		;30%
+	db 37, RATICATE		;30%
+	db 37, LITWICK		;20%
+	db 37, LAMPENT		;10%
+	db 37, LAMPENT		;5%
+	db 37, LITWICK		;4%
+	db 37, MIMIKYU		;1%
+	; day
+	db 37, NOIBAT		;30%
+	db 37, RATICATE		;30%
+	db 37, LITWICK		;20%
+	db 37, LAMPENT		;10%
+	db 37, LAMPENT		;5%
+	db 37, LITWICK		;4%
+	db 37, MIMIKYU		;1%
+	; nite
+	db 37, NOIBAT		;30%
+	db 37, RATICATE		;30%
+	db 37, LITWICK		;20%
+	db 37, LAMPENT		;10%
+	db 37, LAMPENT		;5%
+	db 37, LITWICK		;4%
+	db 37, MIMIKYU		;1%
+	
+	map_id KOMORE_COMMUNITY_CENTER_MIDDLE
+	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
+	; morn
+	db 37, NOIBAT		;30%
+	db 37, RATICATE		;30%
+	db 37, LITWICK		;20%
+	db 37, LAMPENT		;10%
+	db 37, LAMPENT		;5%
+	db 37, LITWICK		;4%
+	db 37, MIMIKYU		;1%
+	; day
+	db 37, NOIBAT		;30%
+	db 37, RATICATE		;30%
+	db 37, LITWICK		;20%
+	db 37, LAMPENT		;10%
+	db 37, LAMPENT		;5%
+	db 37, LITWICK		;4%
+	db 37, MIMIKYU		;1%
+	; nite
+	db 37, NOIBAT		;30%
+	db 37, RATICATE		;30%
+	db 37, LITWICK		;20%
+	db 37, LAMPENT		;10%
+	db 37, LAMPENT		;5%
+	db 37, LITWICK		;4%
+	db 37, MIMIKYU		;1%
+	
+	map_id KOMORE_COMMUNITY_CENTER_RIGHT
+	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
+	; morn
+	db 37, NOIBAT		;30%
+	db 37, RATICATE		;30%
+	db 37, LITWICK		;20%
+	db 37, LAMPENT		;10%
+	db 37, LAMPENT		;5%
+	db 37, LITWICK		;4%
+	db 37, MIMIKYU		;1%
+	; day
+	db 37, NOIBAT		;30%
+	db 37, RATICATE		;30%
+	db 37, LITWICK		;20%
+	db 37, LAMPENT		;10%
+	db 37, LAMPENT		;5%
+	db 37, LITWICK		;4%
+	db 37, MIMIKYU		;1%
+	; nite
+	db 37, NOIBAT		;30%
+	db 37, RATICATE		;30%
+	db 37, LITWICK		;20%
+	db 37, LAMPENT		;10%
+	db 37, LAMPENT		;5%
+	db 37, LITWICK		;4%
+	db 37, MIMIKYU		;1%
 	
 	map_id INN_VENT
 	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite

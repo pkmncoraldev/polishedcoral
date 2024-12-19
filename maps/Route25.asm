@@ -18,13 +18,13 @@ Route25_MapScriptHeader:
 	person_event SPRITE_POKEMANIAC, 11, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, Route25Trainer1, -1
 	person_event SPRITE_PSYCHIC, 13, 24, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route25Trainer2, -1
 	person_event SPRITE_HIKER, 12, 38, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 2, Route25Trainer3, -1
-	person_event SPRITE_REDS_MOM,  7, 35, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route26NPC1, -1
+	person_event SPRITE_REDS_MOM,  7, 35, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route25NPC1, -1
 	
 	
-Route26NPC1:
-	jumptextfaceplayer Route26NPC1Text
+Route25NPC1:
+	jumptextfaceplayer Route25NPC1Text
 	
-Route26NPC1Text:
+Route25NPC1Text:
 	text "I think they're"
 	line "buidling something"
 	cont "up ahead."
@@ -33,10 +33,10 @@ Route26NPC1Text:
 	line "workers, though."
 	done
 	
-Route26NPC2:
-	jumptextfaceplayer Route26NPC2Text
+Route25NPC2:
+	jumptextfaceplayer Route25NPC2Text
 	
-Route26NPC2Text:
+Route25NPC2Text:
 	text "The fallen tree"
 	line "has finally been"
 	cont "cleared!"

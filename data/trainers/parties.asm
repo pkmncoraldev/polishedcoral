@@ -4068,6 +4068,14 @@ BurglarGroup:
 	db -1 ; end
 
 ; ================
+
+	; BURGLAR
+	db "JONESY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 43, SCRAFTY
+	db 44, CACTURNE
+	db -1 ; end
 ; ================================
 
 

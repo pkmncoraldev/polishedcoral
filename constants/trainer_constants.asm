@@ -459,6 +459,7 @@ PLAYER_F EQU __enum__
 	const CHASE
 	const JULIAN
 	const SHEM
+	const JONESY
 
 
 	trainerclass SCIENTIST

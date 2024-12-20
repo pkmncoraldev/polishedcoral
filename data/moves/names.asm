@@ -197,7 +197,7 @@ MoveNames::
 	db "ICY WIND@"
 	db "POWER GEM@"
 	db "WILD CHARGE@"
-	db "PETAL STORM@"
+	db "PETALBLIZARD@"
 	db "OUTRAGE@"
 	db "SANDSTORM@"
 	db "GIGA DRAIN@"

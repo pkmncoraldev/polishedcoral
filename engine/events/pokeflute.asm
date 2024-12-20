@@ -281,7 +281,7 @@ _NettSpecs:
 	closetext
 	waitsfx
 	setlasttalked 1
-	loadwildmon DITTO, 1
+	loadwildmon DITTO, 50
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	callasm ForceGhostTownAsm

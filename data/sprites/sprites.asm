@@ -216,6 +216,7 @@ SpriteHeaders:
 	overworld_sprite ArtifactsSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite MuseumStandeeSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite CoralStarSpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite ChanseyOwSpriteGFX, STANDING_SPRITE, PAL_OW_PINK
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

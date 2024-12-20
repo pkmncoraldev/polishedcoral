@@ -198,7 +198,7 @@
 	const ICY_WIND     ; $c4
 	const POWER_GEM    ; $c5
 	const WILD_CHARGE  ; $c6
-	const POWER_WHIP   ; $c7
+	const PETAL_BLIZZARD   ; $c7
 	const OUTRAGE      ; $c8
 	const SANDSTORM    ; $c9
 	const GIGA_DRAIN   ; $ca

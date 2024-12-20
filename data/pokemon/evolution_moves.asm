@@ -1,7 +1,7 @@
 EvolutionMoves::
 	db NO_MOVE                              ; BULBASAUR
 	db SLUDGE                               ; IVYSAUR
-	db PETAL_DANCE                          ; VENUSAUR
+	db PETAL_BLIZZARD                       ; VENUSAUR
 	db NO_MOVE                              ; CHARMANDER
 	db DRAGONBREATH                         ; CHARMELEON
 	db AIR_SLASH                            ; CHARIZARD

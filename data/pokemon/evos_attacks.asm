@@ -49,6 +49,7 @@ IvysaurEvosAttacks:
 
 VenusaurEvosAttacks:
 	db  0 ; no more evolutions
+	db 1, PETAL_BLIZZARD
 	db 1, PETAL_DANCE
 	db 1, SLUDGE
 	db 1, TACKLE_SCRATCH_POUND
@@ -2352,7 +2353,7 @@ SunkernEvosAttacks:
 	db 34, DOUBLE_EDGE
 	db 36, SUNNY_DAY
 	db 39, PETAL_DANCE
-	db 42, POWER_WHIP	;PETAL_BLIZZARD
+	db 42, PETAL_BLIZZARD
 	db 0 ; no more level-up moves
 	
 SunfloraEvosAttacks:
@@ -2370,7 +2371,7 @@ SunfloraEvosAttacks:
 	db 34, DOUBLE_EDGE
 	db 36, SUNNY_DAY
 	db 39, PETAL_DANCE
-	db 42, POWER_WHIP	;PETAL_BLIZZARD
+	db 42, PETAL_BLIZZARD
 	db 0 ; no more level-up moves
 
 WooperEvosAttacks:
@@ -3537,7 +3538,7 @@ CherubiEvosAttacks:
 	db 31, TAKE_DOWN
 	db 37, SOLAR_BEAM
 	db 40, SAFEGUARD
-	db 47, POWER_WHIP	;PETAL_BLIZZARD
+	db 47, PETAL_BLIZZARD
 	db 0 ; no more level-up moves
 	
 CherrimEvosAttacks:
@@ -3551,7 +3552,7 @@ CherrimEvosAttacks:
 	db 35, TAKE_DOWN
 	db 43, SOLAR_BEAM
 	db 48, SAFEGUARD
-	db 50, POWER_WHIP	;PETAL_BLIZZARD
+	db 50, PETAL_BLIZZARD
 	db 0 ; no more level-up moves
 	
 DrifloonEvosAttacks:
@@ -3855,7 +3856,7 @@ LeafeonEvosAttacks:
 	db 33, SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db 37, SUNNY_DAY
 	db 41, DOUBLE_EDGE
-	db 45, POWER_WHIP	;PETAL_BLIZZARD
+	db 45, PETAL_BLIZZARD
 	db 0 ; no more level-up moves
 	
 GlaceonEvosAttacks:
@@ -4656,7 +4657,7 @@ ComfeyEvosAttacks:
 	db  4, LEECH_SEED
 	db  7, MEGA_DRAIN
 	db 13, WORK_UP_GROWTH
-	db 19, POWER_WHIP	;PETAL_BLIZZARD
+	db 19, PETAL_BLIZZARD
 	db 28, SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db 31, SAFEGUARD
 	db 34, ENERGY_BALL

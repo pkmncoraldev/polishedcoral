@@ -197,7 +197,7 @@ MoveDescriptions::
 	dw IcyWindDescription
 	dw PowerGemDescription
 	dw WildChargeDescription
-	dw PowerWhipDescription
+	dw PetalBlizzardDescription
 	dw OutrageDescription
 	dw SandstormDescription
 	dw GigaDrainDescription
@@ -1032,9 +1032,9 @@ MegahornDescription:
 	db   "A powerful charge"
 	next "attack.@"
 
-PowerWhipDescription:
-	db   "A violent lash"
-	next "attack.@"
+PetalBlizzardDescription:
+	db   "A violent storm"
+	next "of flower petals.@"
 
 DragonbreathDescription:
 	db   "A strong breath"

@@ -23,7 +23,7 @@ Megahorn:
 MegaKick:
 Peck:
 PowerGem:
-PowerWhip:
+PetalBlizzard:
 Psyshock:
 QuickAttack:
 RazorLeaf:

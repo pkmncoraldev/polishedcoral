@@ -198,7 +198,7 @@ BattleAnimations::
 	dw BattleAnim_IcyWind
 	dw BattleAnim_PowerGem
 	dw BattleAnim_WildCharge
-	dw BattleAnim_PowerWhip
+	dw BattleAnim_PetalBlizzard
 	dw BattleAnim_Outrage
 	dw BattleAnim_Sandstorm
 	dw BattleAnim_GigaDrain
@@ -323,26 +323,6 @@ BattleAnim_Block:
 	anim_obj ANIM_OBJ_BLOCK,   16, 4,   7, 0, $40
 	anim_wait 1
 	anim_loop 3, .loop
-	anim_ret 
-
-BattleAnim_PowerWhip:
-	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_WHIP
-	anim_sound 0, 1, SFX_VINE_WHIP
-	anim_obj ANIM_OBJ_40,  14, 4,   6, 4, $80
-	anim_wait 4
-	anim_sound 0, 1, SFX_VINE_WHIP
-	anim_obj ANIM_OBJ_3F,  16, 0,   7, 4, $0
-	anim_wait 8
-	anim_bgeffect ANIM_BG_18, $0, $1, $40
-	anim_sound 0, 1, SFX_THUNDER
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $10
-	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $28, $4, $0
-	anim_obj ANIM_OBJ_POWER_WHIP, 154, 42, $0
-	anim_wait 2
-	anim_obj ANIM_OBJ_POWER_WHIP, 152, 40, $0
-	anim_wait 2
-	anim_obj ANIM_OBJ_POWER_WHIP, 150, 38, $0
-	anim_wait 32
 	anim_ret
 
 BattleAnim_FieryDance:
@@ -4259,6 +4239,7 @@ BattleAnim_Disguise:
 	anim_ret
 
 BattleAnim_PetalDance:
+BattleAnim_PetalBlizzard:
 	anim_sound 0, 0, SFX_MENU
 	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_HIT
 .loop

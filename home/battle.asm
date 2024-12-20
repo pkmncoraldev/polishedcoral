@@ -447,7 +447,6 @@ ContactMoves::
 	db PETAL_DANCE
 	db PLAY_ROUGH
 	db POISON_JAB
-	db POWER_WHIP
 	db PURSUIT
 	db QUICK_ATTACK
 	db RAGE

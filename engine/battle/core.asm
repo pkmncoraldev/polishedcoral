@@ -7014,19 +7014,8 @@ LoadEnemyMon: ; 3e8eb
 	; Failing that, it's all up to chance
 
 	call GetLeadAbility
-if DEF(FAITHFUL)
 	cp COMPOUND_EYES
-	jr nz, .no_compound_eyes_or_amulet_coin
-else
-	cp COMPOUND_EYES
-	jr z, .compound_eyes
-	; If the party lead holds an Amulet Coin, chances are increased
-	ld a, [wPartyMon1Item]
-	cp AMULET_COIN
-	jr nz, .no_compound_eyes_or_amulet_coin
-endc
-
-.compound_eyes:
+	jr nz, .no_compound_eyes
 	; 60% chance of getting Item1
 	call BattleRandom
 	cp 60 percent
@@ -7043,7 +7032,7 @@ endc
 	ld a, NO_ITEM
 	jr .UpdateItem
 
-.no_compound_eyes_or_amulet_coin:
+.no_compound_eyes:
 	; 50% chance of getting Item1
 	call BattleRandom
 	cp 50 percent
@@ -7124,11 +7113,14 @@ endc
 	; Random ability
 	; 5% hidden ability, otherwise 50% either main ability
 	ld a, [wBattleType]
-	cp BATTLETYPE_GROTTO
-	jr z, .hidden_ability
 	cp BATTLETYPE_LEGENDARY
-	jr .check_ditto
-.return_ability
+	jr nz, .skip_boss
+	push hl
+	farcall FindBossWildAbility
+	pop hl
+	ld a, [wBuffer1]
+	jr .got_ability
+.skip_boss
 	call BattleRandom
 	cp 1 + 5 percent
 	jr c, .hidden_ability
@@ -7140,10 +7132,6 @@ endc
 .ability_2
 	ld a, ABILITY_2
 	jr .got_ability
-.check_ditto
-	ld a, [wTempEnemyMonSpecies]
-	cp DITTO
-	jr nz, .return_ability
 .hidden_ability
 	ld a, HIDDEN_ABILITY
 .got_ability
@@ -7177,8 +7165,8 @@ endc
 	jr z, .shiny
 	cp BATTLETYPE_SHINY_LEGENDARY
 	jr z, .shiny
-	cp BATTLETYPE_GROTTO
-	jr z, .not_shiny
+;	cp BATTLETYPE_GROTTO
+;	jr z, .not_shiny
 	call BattleRandom
 	and a
 	jr nz, .not_shiny ; 255/256 not shiny

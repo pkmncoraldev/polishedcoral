@@ -2721,3 +2721,40 @@ CopyBackpic: ; 3fc30
 	dec b
 	jr nz, .outer_loop
 	ret
+
+BossWildAbilities:
+	db LEDIAN, HIDDEN_ABILITY
+	db MAGMAR, HIDDEN_ABILITY
+	db ELECTABUZZ, HIDDEN_ABILITY
+	db SNORLAX, HIDDEN_ABILITY
+	db SUDOWOODO, ABILITY_2
+	db SPIRITOMB, ABILITY_1
+	db MAMOSWINE, HIDDEN_ABILITY
+	db MUK, ABILITY_1
+	db PORYGON, HIDDEN_ABILITY
+	db CLEFABLE, ABILITY_2
+	db LAPRAS, HIDDEN_ABILITY
+	db DRAKLOAK, HIDDEN_ABILITY
+	db MIMIKYU, HIDDEN_ABILITY
+	db DITTO, HIDDEN_ABILITY
+	db -1
+	
+FindBossWildAbility::
+	ld a, [wTempEnemyMonSpecies]
+	ld hl, BossWildAbilities
+	ld de, 2
+    call IsInArray
+    jr nc, .default
+	ld a, b
+	ld bc, 2
+	ld hl, BossWildAbilities
+	inc hl
+	call AddNTimes
+	ld a, [hl]
+	jr .load
+	
+.default
+	ld a, ABILITY_1
+.load
+	ld [wBuffer1], a
+	ret

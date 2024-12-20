@@ -35,13 +35,15 @@ Route27_MapScriptHeader:
 	signpost  8, -1, SIGNPOST_IFNOTSET, Route27Tree
 	signpost  9, -1, SIGNPOST_IFNOTSET, Route27Tree
 
-	db 13 ; object events
+	db 15 ; object events
 	person_event SPRITE_COOLTRAINER_M,  9,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 5, TrainerRoute27_1, -1
 	person_event SPRITE_SKATER, 22, 26, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute27_2, -1
 	person_event SPRITE_OFFICER, 23, 41, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute27_3, -1
+	person_event SPRITE_TWIN, 20, 35, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, TrainerRoute27_4, -1
+	person_event SPRITE_TWIN, 20, 36, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, TrainerRoute27_5, -1
 	person_event SPRITE_POKEMANIAC, 26, 21, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route27NPC1, -1
 	itemball_event 20, 22, FULL_RESTORE, 1, EVENT_ROUTE_27_POKE_BALL_1
-	tapeball_event 48, 19, MUSIC_AUTUMN, 1, EVENT_MUSIC_AUTUMN
+	tapeball_event 50, 19, MUSIC_AUTUMN, 1, EVENT_MUSIC_AUTUMN
 	person_event SPRITE_LEILANI_CHAIR_2, 23, 17, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
 	person_event SPRITE_LEILANI_CHAIR_2, 22, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
 	person_event SPRITE_LEILANI_CHAIR_2, 25, 45, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
@@ -169,6 +171,50 @@ TrainerRoute27_3:
 
 .BeatenText:
 	text "Carry on then."
+	done
+	
+TrainerRoute27_4:
+	generictrainer TWINS, LIZLES, EVENT_BEAT_ROUTE_27_TRAINER_4, .SeenText, .BeatenText
+
+	text "I love playing"
+	line "#MON battle!"
+	
+	para "Too bad LES is"
+	line "such a spoilsport."
+	done
+
+.SeenText:
+	text "LIZ: Yippee!"
+	line "Battle time, LES!"
+	
+	para "LES: Whatever…"
+	done
+
+.BeatenText:
+	text "LIZ: That was"
+	line "fun!"
+	
+	para "LES: Whatever…"
+	done
+	
+TrainerRoute27_5:
+	generictrainer TWINS, LESLIZ, EVENT_BEAT_ROUTE_27_TRAINER_4, .SeenText, .BeatenText
+
+	text "Whatever…"
+	done
+
+.SeenText:
+	text "LES: Whatever…"
+	
+	para "LIZ: Yippee!"
+	line "Battle time, LES!"
+	done
+
+.BeatenText:
+	text "LES: Whatever…"
+	
+	para "LIZ: That was"
+	line "fun!"
 	done
 
 Route27Beams:

@@ -355,7 +355,7 @@ LusterGymTrainer1:
 	done
 	
 LusterGymTrainer2:
-	generictrainer DELINQUENT_F, LIZ_5, EVENT_BEAT_LUSTER_GYM_TRAINER_2, .SeenText, .BeatenText
+	generictrainer DELINQUENT_F, TERI_5, EVENT_BEAT_LUSTER_GYM_TRAINER_2, .SeenText, .BeatenText
 
 	text "To train POISON-"
 	line "types, you've gotta"
@@ -550,16 +550,16 @@ LusterGymTrainer2Rematch:
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
 	ifequal 6, .sixbadges
-	loadtrainer DELINQUENT_F, LIZ_5
+	loadtrainer DELINQUENT_F, TERI_5
 	jump .cont
 .sixbadges
-	loadtrainer DELINQUENT_F, LIZ_6
+	loadtrainer DELINQUENT_F, TERI_6
 	jump .cont
 .sevenbadges
-	loadtrainer DELINQUENT_F, LIZ_7
+	loadtrainer DELINQUENT_F, TERI_7
 	jump .cont
 .eightbadges
-	loadtrainer DELINQUENT_F, LIZ_8
+	loadtrainer DELINQUENT_F, TERI_8
 .cont
 	startbattle
 	dontrestartmapmusic

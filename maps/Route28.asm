@@ -668,7 +668,7 @@ Route28Trainer1:
 	closetext
 	waitsfx
 	winlosstext Route28Trainer1BeatenText, 0
-	loadtrainer PICNICKER, LES
+	loadtrainer PICNICKER, SANDY
 	startbattle
 	reloadmapafterbattle
 	special RestoreMusic

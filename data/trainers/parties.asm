@@ -1343,7 +1343,7 @@ PicnickerGroup:
 ; ================
 
 	; PICNICKER
-	db "LES@"
+	db "SANDY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -1397,6 +1397,30 @@ TwinsGroup:
 	; party
 	db 30, MAGBY
 	db 30, ELEKID
+	db -1 ; end
+
+; ================
+
+	; TWINS
+	db "LIZ & LES@"
+	db TRAINERTYPE_MOVES
+	; party
+	db 44, ELECTIVIRE
+		db THUNDERPUNCH, FIRE_PUNCH, LOW_KICK, THUNDER_WAVE
+	db 44, MAGMORTAR
+		db FIRE_PUNCH, THUNDERPUNCH, LOW_KICK, CONFUSE_RAY
+	db -1 ; end
+
+; ================
+
+	; TWINS
+	db "LES & LIZ@"
+	db TRAINERTYPE_MOVES
+	; party
+	db 44, MAGMORTAR
+		db FIRE_PUNCH, THUNDERPUNCH, LOW_KICK, CONFUSE_RAY
+	db 44, ELECTIVIRE
+		db THUNDERPUNCH, FIRE_PUNCH, LOW_KICK, THUNDER_WAVE
 	db -1 ; end
 
 ; ================
@@ -2828,12 +2852,12 @@ OfficerGroup:
 	db "JOHNSON@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 42, WHIMSICOTT
-		db AIR_SLASH, COTTON_GUARD, ENERGY_BALL, CHARM_FEATHER_DANCE
-	db 42, ARCANINE
-		db FIRE_FANG, BITE, EXTREMESPEED, SHARPEN_HOWL_MEDITATE
-	db 42, FLOATZEL
-		db AQUA_JET, AQUA_TAIL, DOUBLE_HIT, SWIFT
+	db 43, WHIMSICOTT
+		db AIR_SLASH, COTTON_GUARD, ENERGY_BALL, 0
+	db 43, ARCANINE
+		db FIRE_FANG, BITE, EXTREMESPEED, 0
+	db 43, FLOATZEL
+		db AQUA_JET, AQUA_TAIL, SWIFT, 0
 	db -1 ; end
 
 ; ================
@@ -4521,11 +4545,11 @@ CooltrainerMGroup:
 	db "TREY@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 40, VENUSAUR
+	db 41, VENUSAUR
 		db LEECH_SEED, PETAL_BLIZZARD, DOUBLE_EDGE, 0
-	db 40, CHARIZARD
+	db 41, CHARIZARD
 		db DRAGON_RAGE, FLAMETHROWER, SLASH, 0
-	db 40, BLASTOISE
+	db 41, BLASTOISE
 		db SHELL_SMASH, SURF, BITE, 0
 	db -1 ; end
 
@@ -4884,7 +4908,7 @@ DelinquentfGroup:
 ; ================
 
 	; DELINQUENT_F
-	db "LIZ@"		;5 BADGES
+	db "TERI@"		;5 BADGES
 	db TRAINERTYPE_PERSONALITY
 	; party
 	db 33, GRIMER, ABILITY_1 | QUIRKY, FEMALE
@@ -4894,7 +4918,7 @@ DelinquentfGroup:
 ; ================
 
 	; DELINQUENT_F
-	db "LIZ@"		;6 BADGES
+	db "TERI@"		;6 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -4903,7 +4927,7 @@ DelinquentfGroup:
 ; ================
 
 	; DELINQUENT_F
-	db "LIZ@"		;7 BADGES
+	db "TERI@"		;7 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -4912,7 +4936,7 @@ DelinquentfGroup:
 ; ================
 
 	; DELINQUENT_F
-	db "LIZ@"		;8 BADGES
+	db "TERI@"		;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

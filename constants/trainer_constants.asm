@@ -126,13 +126,15 @@ PLAYER_F EQU __enum__
 	const SHAUNA
 	const BETH
 	const BAILEY
-	const LES
+	const SANDY
 
 	trainerclass TWINS
 	const JENJAN
 	const JANJEN
 	const TIAMIA
 	const MIATIA
+	const LIZLES
+	const LESLIZ
 
 
 	trainerclass FISHER
@@ -584,10 +586,10 @@ PLAYER_F EQU __enum__
 	const HELGA
 	const MERTLE
 	const REGINA
-	const LIZ_5
-	const LIZ_6
-	const LIZ_7
-	const LIZ_8
+	const TERI_5
+	const TERI_6
+	const TERI_7
+	const TERI_8
 	const MEGAN_5
 	const MEGAN_6
 	const MEGAN_7

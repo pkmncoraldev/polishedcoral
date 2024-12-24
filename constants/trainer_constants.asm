@@ -322,7 +322,7 @@ PLAYER_F EQU __enum__
 	const PEDRO
 	const REMY
 	const GREG
-	const MARIO		;UNUSED
+	const MARIO
 	const TREV
 
 
@@ -424,6 +424,7 @@ PLAYER_F EQU __enum__
 	const RUTH
 	const GRETCHEN
 	const LYDIA
+	const JUDY
 
 
 	trainerclass SAILOR
@@ -465,6 +466,9 @@ PLAYER_F EQU __enum__
 
 
 	trainerclass SCIENTIST
+	const HAROLD
+	const BARNES
+	const SAL
 
 
 	trainerclass BOARDER
@@ -502,7 +506,7 @@ PLAYER_F EQU __enum__
 	trainerclass GUITARIST
 	const LARRY
 	const TITO
-	const VINNY		;UNUSED
+	const VINNY
 	const MILLER
 
 

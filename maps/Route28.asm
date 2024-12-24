@@ -17,8 +17,14 @@ Route28_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 8 ; object events
+	db 16 ; object events
 	person_event SPRITE_PICNICKER, 20, 26, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route28Trainer1, -1
+	person_event SPRITE_SUPER_NERD, 37, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, Route28Trainer2, -1
+	person_event SPRITE_ROCKER, 37, 22, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, Route28Trainer3, -1
+	person_event SPRITE_SCIENTIST, 26, 22, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, Route28Trainer4, -1
+	person_event SPRITE_POKEFAN_M, 45, 28, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, Route28Trainer5, -1
+	person_event SPRITE_SCIENTIST, 28,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route28Trainer6, -1
+	person_event SPRITE_GRANNY, 49, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, Route28Trainer7, -1
 	person_event SPRITE_POKEFAN_M, 16, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route28StrengthMan, -1
 	strengthboulder_event 22, 70, EVENT_ROUTE_28_BOULDER_1
 	strengthboulder_event 23, 70, EVENT_ROUTE_28_BOULDER_2
@@ -26,11 +32,18 @@ Route28_MapScriptHeader:
 	person_event SPRITE_COLBY, -5, -4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_SNARE, -5, -4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_SNARE, -5, -4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-
+	person_event SPRITE_BIRD_KEEPER,  6, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route28NPC1, -1
+	person_event SPRITE_REDS_MOM, 50, 26, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route28NPC2, -1
 	
 	
 	const_def 1 ; object constants
 	const ROUTE_28_TRAINER_1
+	const ROUTE_28_TRAINER_2
+	const ROUTE_28_TRAINER_3
+	const ROUTE_28_TRAINER_4
+	const ROUTE_28_TRAINER_5
+	const ROUTE_28_TRAINER_6
+	const ROUTE_28_TRAINER_7
 	const ROUTE_28_PUSHER
 	const ROUTE_28_BOULDER_1
 	const ROUTE_28_BOULDER_2
@@ -38,6 +51,75 @@ Route28_MapScriptHeader:
 	const ROUTE_28_COLBY
 	const ROUTE_28_SNARE_1
 	const ROUTE_28_SNARE_2
+	
+Route28NPC1:
+	jumptextfaceplayer Route28NPC1Text
+	
+Route28NPC1Text:
+	text "The nurse at the"
+	line "#MON CENTER"
+	cont "refused to heal"
+	cont "my #MON!"
+	
+	para "I've never heard"
+	line "of that!"
+	
+	para "I think there's"
+	line "another #MON"
+	cont "CENTER up ahead."
+	
+	para "Guess I gotta"
+	line "keep moving!"
+	done
+	
+Route28NPC2:
+	checkevent EVENT_ROUTE_28_CUTSCENE_DONE
+	iftrue .done_colby
+	setevent EVENT_ROUTE_28_TALKED_TO_LADY
+	jumptextfaceplayer Route28NPC2Text1
+.done_colby
+	checkevent EVENT_ROUTE_28_TALKED_TO_LADY
+	iftrue .talked_to_lady
+	jumptextfaceplayer Route28NPC2Text2
+.talked_to_lady
+	jumptextfaceplayer Route28NPC2Text3
+	
+Route28NPC2Text1:
+	text "I saw a kid with"
+	line "spikey hair go"
+	cont "into the #MON"
+	cont "CENTER ahead."
+	
+	para "He looked like"
+	line "he was with TEAM"
+	cont "SNARE!"
+	
+	para "I'd prepare for"
+	line "trouble right now"
+	cont "if you're going"
+	cont "any further…"
+	
+	para "Don't say I didn't"
+	line "warn you!"
+	done
+	
+Route28NPC2Text2:
+	text "That TEAM SNARE"
+	line "is nothing but"
+	cont "trouble."
+	done
+	
+Route28NPC2Text3:
+	text "I told you!"
+	
+	para "That TEAM SNARE"
+	line "is nothing but"
+	cont "trouble."
+	
+	para "Did you listen to"
+	line "my advice and"
+	cont "prepare?"
+	done
 	
 Route28ColbyStopsYouL:
 	setevent EVENT_ROUTE_28_COLBY_EVENT_LEFT
@@ -194,12 +276,14 @@ Route28ColbyStopsYou:
 	end
 	
 Route28ColbyText1:
-	text "I should've known"
+	text "Right."
+	
+	para "I should've known"
 	line "you'd show up at"
 	cont "some point."
 	
 	para "I'm kinda busy"
-	line "right now."
+	line "at the moment."
 	
 	para "But you don't care,"
 	line "do you?"
@@ -235,9 +319,11 @@ Route28ColbyText2:
 	line "beating someone"
 	cont "like me…"
 	
+	para "It's not fair!"
+	
 	para "I can't wait to"
 	line "bring you down a"
-	cont "peg or two!"
+	cont "peg or two."
 	
 	para "And I'll do it"
 	line "by any means"
@@ -700,5 +786,142 @@ Route28Trainer1SeenText2:
 Route28Trainer1BeatenText:
 	text "Oh! I've got to"
 	line "relieve my anger!"
+	done
+	
+Route28Trainer2:
+	generictrainer SUPER_NERD, MARIO, EVENT_BEAT_ROUTE_28_TRAINER_2, .SeenText, .BeatenText
+
+	text "Neh he he…"
+	
+	para "You'll get what's"
+	line "coming one day."
+	done
+
+.SeenText:
+	text "Neh he he…"
+	
+	para "Feeling tired?"
+	done
+
+.BeatenText:
+	text "Neh he he…"
+	done
+	
+Route28Trainer3:
+	generictrainer GUITARIST, VINNY, EVENT_BEAT_ROUTE_28_TRAINER_3, .SeenText, .BeatenText
+
+	text "I'm gonna start"
+	line "weeping too after"
+	cont "that…"
+	done
+
+.SeenText:
+	text "I broke a guitar"
+	line "guitar string!"
+	
+	para "We'll battle while"
+	line "my guitar gently"
+	cont "weeps."
+	done
+
+.BeatenText:
+	text "No good!"
+	done
+	
+Route28Trainer4:
+	generictrainer SCIENTIST, HAROLD, EVENT_BEAT_ROUTE_28_TRAINER_4, .SeenText, .BeatenText
+
+	text "BRIGHTBURG…"
+	
+	para "What a fascinating"
+	line "place…"
+	done
+
+.SeenText:
+	text "Recently strange"
+	line "things have been"
+	cont "happening in"
+	cont "BRIGHTBURG."
+	
+	para "Is it sickenss?"
+	line "Mass hysteria?"
+	
+	para "I came to"
+	line "investigate."
+	done
+
+.BeatenText:
+	text "I wonder…"
+	done
+	
+Route28Trainer5:
+	generictrainer POKEFANM, JASON, EVENT_BEAT_ROUTE_28_TRAINER_5, .SeenText, .BeatenText
+
+	text "What does it truly"
+	line "mean to be a real"
+	cont "#FAN?"
+	
+	para "Is it enough to"
+	line "just be a fan of"
+	cont "#MON?"
+	done
+
+.SeenText:
+	text "I call myself a"
+	line "#FAN, but what"
+	cont "does that mean?"
+	done
+
+.BeatenText:
+	text "Not a fan of"
+	line "that…"
+	done
+	
+Route28Trainer6:
+	generictrainer SCIENTIST, SAL, EVENT_BEAT_ROUTE_28_TRAINER_6, .SeenText, .BeatenText
+
+	text "Your #MON…"
+	
+	para"What perfect"
+	line "specimens!"
+	done
+
+.SeenText:
+	text "Hold it!"
+	
+	para "Your #MON…"
+	
+	para "Let me observe"
+	line "them!"
+	done
+
+.BeatenText:
+	text "Aha!"
+	para "Thank you!"
+	done
+	
+Route28Trainer7:
+	generictrainer LADY, JUDY, EVENT_BEAT_ROUTE_28_TRAINER_7, .SeenText, .BeatenText
+
+	text "MR. PUSHER…"
+	
+	para "What a strapping"
+	line "man he is!"
+	
+	para "Why, if I were"
+	line "thirty years"
+	cont "younger…"
+	done
+
+.SeenText:
+	text "Are you going to"
+	line "see MR. PUSHER?"
+	
+	para "You are,"
+	line "aren't you?"
+	done
+
+.BeatenText:
+	text "Ahh…"
 	done
 	

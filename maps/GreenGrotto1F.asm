@@ -26,7 +26,7 @@ GreenGrotto1F_MapScriptHeader:
 	strengthboulder_event 38, 21, EVENT_GREEN_GROTTO_BOULDER_5
 	person_event SPRITE_HIKER,  7, 16, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, TrainerGreenGrotto1F_1, -1
 	person_event SPRITE_TEACHER,  8, 26, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerGreenGrotto1F_2, -1
-	person_event SPRITE_POKEFAN_M,  7, 43, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, TrainerGreenGrotto1F_3, -1
+	person_event SPRITE_SCIENTIST,  7, 43, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, TrainerGreenGrotto1F_3, -1
 	person_event SPRITE_DELINQUENT_M, 16, 40, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerGreenGrotto1F_4, -1
 	itemball_event 27, 18, CALCIUM, 1, EVENT_GREEN_GROTTO_1F_POKEBALL
 	
@@ -138,26 +138,17 @@ TrainerGreenGrotto1F_2:
 	done
 	
 TrainerGreenGrotto1F_3:
-	generictrainer POKEFANM, JASON, EVENT_BEAT_GREEN_GROTTO_1F_TRAINER_3, .SeenText, .BeatenText
+	generictrainer SCIENTIST, BARNES, EVENT_BEAT_GREEN_GROTTO_1F_TRAINER_3, .SeenText, .BeatenText
 
-	text "What does it truly"
-	line "mean to be a real"
-	cont "#FAN?"
-	
-	para "Is it enough to"
-	line "just be a fan of"
-	cont "#MON?"
+	text "AFTER"
 	done
 
 .SeenText:
-	text "I call myself a"
-	line "#FAN, but what"
-	cont "does that mean?"
+	text "SEEN"
 	done
 
 .BeatenText:
-	text "Not a fan of"
-	line "that…"
+	text "YOU WIN"
 	done
 	
 TrainerGreenGrotto1F_4:

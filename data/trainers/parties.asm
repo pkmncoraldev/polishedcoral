@@ -1405,9 +1405,9 @@ TwinsGroup:
 	db "LIZ & LES@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 44, ELECTIVIRE
+	db 41, ELECTIVIRE
 		db THUNDERPUNCH, FIRE_PUNCH, LOW_KICK, THUNDER_WAVE
-	db 44, MAGMORTAR
+	db 41, MAGMORTAR
 		db FIRE_PUNCH, THUNDERPUNCH, LOW_KICK, CONFUSE_RAY
 	db -1 ; end
 
@@ -1417,9 +1417,9 @@ TwinsGroup:
 	db "LES & LIZ@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 44, MAGMORTAR
+	db 41, MAGMORTAR
 		db FIRE_PUNCH, THUNDERPUNCH, LOW_KICK, CONFUSE_RAY
-	db 44, ELECTIVIRE
+	db 41, ELECTIVIRE
 		db THUNDERPUNCH, FIRE_PUNCH, LOW_KICK, THUNDER_WAVE
 	db -1 ; end
 
@@ -2144,8 +2144,8 @@ BirdKeeperGroup:
 	db "SIDNEY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 40, SKARMORY
 	db 41, DRIFBLIM
+	db 40, SKARMORY
 	db -1 ; end
 
 ; ================
@@ -2852,11 +2852,11 @@ OfficerGroup:
 	db "JOHNSON@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 43, WHIMSICOTT
+	db 41, WHIMSICOTT
 		db AIR_SLASH, COTTON_GUARD, ENERGY_BALL, 0
-	db 43, ARCANINE
+	db 41, ARCANINE
 		db FIRE_FANG, BITE, EXTREMESPEED, 0
-	db 43, FLOATZEL
+	db 41, FLOATZEL
 		db AQUA_JET, AQUA_TAIL, SWIFT, 0
 	db -1 ; end
 
@@ -3801,6 +3801,15 @@ LadyGroup:
 	db -1 ; end
 
 ; ================
+
+	; LADY
+	db "JUDY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -4109,7 +4118,25 @@ ScientistGroup:
 ; ================
 
 	; SCIENTIST
-	db "UNUSED@"
+	db "HAROLD@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SCIENTIST
+	db "BARNES@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; SCIENTIST
+	db "SAL@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -4536,7 +4563,8 @@ CooltrainerMGroup:
 	db "TRIPP@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 41, CROBAT
+	db 40, PILOSWINE
 	db -1 ; end
 
 ; ================
@@ -5754,8 +5782,8 @@ DojoMasterGroup:
 	; party
 	db 42, MIENFOO, NO_ITEM, 200, $b6, $b6, $6b, ABILITY_1 | QUIRKY, MALE
 		db DRAIN_PUNCH, ACROBATICS, JUMP_KICK, SHARPEN_HOWL_MEDITATE
-	db 42, HYPNO, NO_ITEM, 100, $b6, $b6, $6b, ABILITY_1 | ADAMANT, MALE
-		db ZEN_HEADBUTT, SING_HYPNOSIS, BRICK_BREAK, DREAM_EATER
+	db 42, WYRDEER, NO_ITEM, 25, $66, $66, $66, ABILITY_1 | QUIRKY, MALE
+		db ZEN_HEADBUTT, SING_HYPNOSIS, STOMP, DREAM_EATER
 	db 45, MIENSHAO, NO_ITEM, 50, $b6, $b6, $6b, ABILITY_2 | TIMID, FEMALE
 		db DRAIN_PUNCH, AURA_SPHERE, CALM_MIND, THUNDERPUNCH
 	db 45, MIENSHAO, NO_ITEM, 50, $b6, $bb, $6b, ABILITY_1 | JOLLY, MALE

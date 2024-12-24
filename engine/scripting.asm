@@ -3237,13 +3237,17 @@ Script_strengthtree:
 .DontMeetRequirements
 	xor a
 	ld [wScriptVar], a
-	ld hl, StrengthTreeText1
-	jp MapTextbox
+	ld b, BANK(StrengthTreeCantMoveScript)
+	ld de, StrengthTreeCantMoveScript
+	jp ScriptCall
 	
 .debug
 	ld b, BANK(DebugStrengthTreeScript)
 	ld de, DebugStrengthTreeScript
 	jp ScriptCall
+
+StrengthTreeCantMoveScript:
+	jumptext StrengthTreeText1
 
 StrengthTreeScript:
 	opentext

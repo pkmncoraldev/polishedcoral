@@ -729,6 +729,33 @@
 	db 37, PERSIAN		;4%
 	db 37, PERSIAN		;1%
 	
+	map_id ROUTE_28
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 38, TOGETIC		;30%
+	db 38, PONYTA		;30%
+	db 38, PIDGEOTTO	;20%
+	db 38, RAPIDASH		;10%
+	db 38, DITTO		;5%
+	db 38, DITTO		;4%
+	db 38, DITTO		;1%
+	; day
+	db 38, TOGETIC		;30%
+	db 38, PONYTA		;30%
+	db 38, PIDGEOTTO	;20%
+	db 38, RAPIDASH		;10%
+	db 38, DITTO		;5%
+	db 38, DITTO		;4%
+	db 38, DITTO		;1%
+	; nite
+	db 38, TOGETIC		;30%
+	db 38, PONYTA		;30%
+	db 38, PIDGEOTTO	;20%
+	db 38, RAPIDASH		;10%
+	db 38, DITTO		;5%
+	db 38, DITTO		;4%
+	db 38, DITTO		;1%
+	
 	map_id ROUTE_14_15_UNDERWATER
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn

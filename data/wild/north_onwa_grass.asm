@@ -144,24 +144,24 @@
 	db 8, SNUBBULL		;20%
 	db 8, CHERUBI		;10%
 	db 8, TOGEPI		;5%
-	db 8, TOGEPI		;4%
-	db 8, TOGETIC		;1%
+	db 8, PIKACHU		;4%
+	db 8, PIKACHU		;1%
 	; day
 	db 8, CLEFAIRY		;30%
 	db 8, JIGGLYPUFF	;30%
 	db 8, SNUBBULL		;20%
 	db 8, CHERUBI		;10%
 	db 8, TOGEPI		;5%
-	db 8, TOGEPI		;4%
-	db 8, TOGETIC		;1%
+	db 8, PIKACHU		;4%
+	db 8, PIKACHU		;1%
 	; nite
 	db 8, CLEFAIRY		;30%
 	db 8, JIGGLYPUFF	;30%
 	db 8, SNUBBULL		;20%
 	db 8, CHERUBI		;10%
 	db 8, TOGEPI		;5%
-	db 8, TOGEPI		;4%
-	db 8, TOGETIC		;1%
+	db 8, PIKACHU		;4%
+	db 8, PIKACHU		;1%
 	
 	map_id GLINT_GROVE_DEEP
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

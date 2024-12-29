@@ -15,9 +15,14 @@ Route28_MapScriptHeader:
 	coord_event 28, 55, 0, Route28ColbyStopsYouL
 	coord_event 29, 55, 0, Route28ColbyStopsYou
 
-	db 0 ; bg events
+	db 5 ; bg events
+	signpost 43, 27, SIGNPOST_ITEM + MAX_REVIVE, EVENT_ROUTE_28_HIDDEN_ITEM_1
+	signpost 20, 33, SIGNPOST_ITEM + ELIXIR, EVENT_ROUTE_28_HIDDEN_ITEM_2
+	signpost 39, 33, SIGNPOST_ITEM + MAX_POTION, EVENT_ROUTE_28_HIDDEN_ITEM_3
+	signpost 14, 12, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_28_HIDDEN_ITEM_4
+	signpost 56, 35, SIGNPOST_ITEM + MAX_REPEL, EVENT_ROUTE_28_HIDDEN_ITEM_5
 
-	db 16 ; object events
+	db 18 ; object events
 	person_event SPRITE_PICNICKER, 20, 26, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route28Trainer1, -1
 	person_event SPRITE_SUPER_NERD, 37, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, Route28Trainer2, -1
 	person_event SPRITE_ROCKER, 37, 22, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, Route28Trainer3, -1
@@ -34,6 +39,10 @@ Route28_MapScriptHeader:
 	person_event SPRITE_SNARE, -5, -4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_BIRD_KEEPER,  6, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route28NPC1, -1
 	person_event SPRITE_REDS_MOM, 50, 26, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route28NPC2, -1
+	itemball_event 33, 38, REVIVE, 1, EVENT_ROUTE_28_POKEBALL_1
+	itemball_event 26, 43, MAX_REVIVE, 1, EVENT_ROUTE_28_POKEBALL_2
+;	fruittree_event 18, 55, FRUITTREE_ROUTE_28_1, PECHA_BERRY
+;	fruittree_event 20, 55, FRUITTREE_ROUTE_28_2, FIGY_BERRY
 	
 	
 	const_def 1 ; object constants

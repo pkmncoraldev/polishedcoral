@@ -117,7 +117,8 @@ Route26Trainer2:
 	text "I thought I saw"
 	line "a PIKACHU run off"
 	cont "into the woods"
-	cont "nearby."
+	cont "near the old"
+	cont "COMMUNITY CENTER."
 	
 	para "I wonder where"
 	line "it was going!"

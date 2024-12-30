@@ -16,6 +16,7 @@ BrilloPokeCenter_BlockData:
 DuskPokeCenter_BlockData:
 KomorePokeCenter_BlockData:
 BrightPokeCenter_BlockData:
+Route28PokeCenter_BlockData:
 	INCBIN "maps/PokeCenter.ablk.lz"
 
 GlintMart_BlockData:

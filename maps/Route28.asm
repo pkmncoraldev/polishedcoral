@@ -8,19 +8,22 @@ Route28_MapScriptHeader:
 	db 4 ; warp events
 	warp_event 20, 16, ROUTE_1, 1
 	warp_event 21, 17, ROUTE_1, 1
-	warp_event 31, 57, ROUTE_1, 1
+	warp_event 31, 57, ROUTE_28_POKECENTER, 1
 	warp_event 18, 65, GREEN_GROTTO_1F, 1
 
 	db 2 ; coord events
 	coord_event 28, 55, 0, Route28ColbyStopsYouL
 	coord_event 29, 55, 0, Route28ColbyStopsYou
 
-	db 5 ; bg events
+	db 8 ; bg events
 	signpost 43, 27, SIGNPOST_ITEM + MAX_REVIVE, EVENT_ROUTE_28_HIDDEN_ITEM_1
 	signpost 20, 33, SIGNPOST_ITEM + ELIXIR, EVENT_ROUTE_28_HIDDEN_ITEM_2
 	signpost 39, 33, SIGNPOST_ITEM + MAX_POTION, EVENT_ROUTE_28_HIDDEN_ITEM_3
 	signpost 14, 12, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_28_HIDDEN_ITEM_4
 	signpost 56, 35, SIGNPOST_ITEM + MAX_REPEL, EVENT_ROUTE_28_HIDDEN_ITEM_5
+	signpost 57, 32, SIGNPOST_READ, BrightburgPokeCenterSign
+	signpost 13, 31, SIGNPOST_READ, Route28Sign
+	signpost 62, 30, SIGNPOST_READ, GreenGrottoSign
 
 	db 18 ; object events
 	person_event SPRITE_PICNICKER, 20, 26, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route28Trainer1, -1
@@ -60,6 +63,30 @@ Route28_MapScriptHeader:
 	const ROUTE_28_COLBY
 	const ROUTE_28_SNARE_1
 	const ROUTE_28_SNARE_2
+	
+Route28Sign:
+	jumptext Route28SignText
+	
+Route28SignText:
+	text "ROUTE 28"
+	
+	para "NORTH:"
+	line "BRIGHTBURG"
+	
+	para "SOUTHWEST:"
+	line "OBSCURA CITY"
+	done
+	
+GreenGrottoSign:
+	jumptext GreenGrottoSignText
+	
+GreenGrottoSignText:
+	text "GREEN GROTTO"
+	line "ahead."
+	
+	para "Beware falling"
+	line "rocks!"
+	done
 	
 Route28NPC1:
 	jumptextfaceplayer Route28NPC1Text

@@ -439,6 +439,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_25_GATE,                          	   4,  4 ; 7
 	map_const BRIGHTBURG_GATE,							   5,  4 ; 8
 	map_const ROUTE_28,									  20, 38 ; 9
+	map_const ROUTE_28_POKECENTER,                     	   6,  4 ; 10
 	
 	newgroup													 ; 24
 	map_const OBSCURA_CITY,								  16, 23 ; 1

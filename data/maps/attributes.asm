@@ -147,10 +147,10 @@ ENDM
 	connection west, StarglowValley, STARGLOW_VALLEY, -2
 	
 	map_attributes HuntersThicket, HUNTERS_THICKET, $fb, EAST
-	connection east, HuntersThicketMossRockRoom, HUNTERS_THICKET_MOSS_ROCK_ROOM, 9
+	connection east, HuntersThicketMossRockRoom, HUNTERS_THICKET_MOSS_ROCK_ROOM, 8
 	
 	map_attributes HuntersThicketMossRockRoom, HUNTERS_THICKET_MOSS_ROCK_ROOM, $fb, WEST
-	connection west, HuntersThicket, HUNTERS_THICKET, -9
+	connection west, HuntersThicket, HUNTERS_THICKET, -8
 	
 	map_attributes Route5, ROUTE_5, $fb, NORTH
 	connection north, Route4, ROUTE_4, 3

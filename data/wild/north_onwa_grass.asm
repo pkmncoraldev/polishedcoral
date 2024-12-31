@@ -325,6 +325,33 @@
 	db 10, JOLTIK		;4%
 	db 10, JOLTIK		;1%
 	
+	map_id HUNTERS_THICKET_MOSS_ROCK_ROOM
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 30, LEDIAN		;30%
+	db 30, TRUNBEAK		;30%
+	db 30, SHROOMISH	;20%
+	db 30, PIKACHU		;10%
+	db 30, JOLTIK		;5%
+	db 30, JOLTIK		;4%
+	db 30, JOLTIK		;1%
+	; day
+	db 30, LEDIAN		;30%
+	db 30, TRUNBEAK		;30%
+	db 30, SHROOMISH	;20%
+	db 30, PIKACHU		;10%
+	db 30, JOLTIK		;5%
+	db 30, JOLTIK		;4%
+	db 30, JOLTIK		;1%
+	; nite
+	db 30, LEDIAN		;30%
+	db 30, TRUNBEAK		;30%
+	db 30, SHROOMISH	;20%
+	db 30, PIKACHU		;10%
+	db 30, JOLTIK		;5%
+	db 30, JOLTIK		;4%
+	db 30, JOLTIK		;1%
+	
 	map_id ROUTE_5
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
@@ -1486,6 +1513,33 @@
 	db 25, ZUBAT		;5%
 	db 25, ZUBAT		;4%
 	db 25, ZUBAT		;1%
+	
+	map_id ICE_CAVE_ICE_ROCK_ROOM
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 30, ZUBAT		;30%
+	db 30, SWINUB		;30%
+	db 30, SNEASEL		;20%
+	db 30, SNEASEL		;10%
+	db 30, MEDITITE		;5%
+	db 30, MEDITITE		;4%
+	db 30, MEDITITE		;1%
+	; day
+	db 30, ZUBAT		;30%
+	db 30, SWINUB		;30%
+	db 30, SNEASEL		;20%
+	db 30, SNEASEL		;10%
+	db 30, MEDITITE		;5%
+	db 30, MEDITITE		;4%
+	db 30, MEDITITE		;1%
+	; nite
+	db 30, ZUBAT		;30%
+	db 30, SWINUB		;30%
+	db 30, SNEASEL		;20%
+	db 30, SNEASEL		;10%
+	db 30, MEDITITE		;5%
+	db 30, MEDITITE		;4%
+	db 30, MEDITITE		;1%
 
 	map_id LUSTER_SEWERS_B1F
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite

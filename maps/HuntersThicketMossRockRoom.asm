@@ -8,10 +8,10 @@ HuntersThicketMossRockRoom_MapScriptHeader:
 	db 0 ; coord events
 
 	db 4 ; bg events
-	bg_event  4,  4, SIGNPOST_JUMPTEXT, HuntersThicketMossRockText
-	bg_event  5,  4, SIGNPOST_JUMPTEXT, HuntersThicketMossRockText
-	bg_event  4,  5, SIGNPOST_JUMPTEXT, HuntersThicketMossRockText
-	bg_event  5,  5, SIGNPOST_JUMPTEXT, HuntersThicketMossRockText
+	bg_event -3, -1, SIGNPOST_JUMPTEXT, HuntersThicketMossRockText
+	bg_event  5,  6, SIGNPOST_JUMPTEXT, HuntersThicketMossRockText
+	bg_event -3, -1, SIGNPOST_JUMPTEXT, HuntersThicketMossRockText
+	bg_event -3, -1, SIGNPOST_JUMPTEXT, HuntersThicketMossRockText
 
 	db 0 ; object events
 	

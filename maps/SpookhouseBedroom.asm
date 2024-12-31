@@ -147,15 +147,18 @@ SpookHouseJournalText3:
 	
 	para "DAY:O/O    MONTH:X"
 	
-	para "It's our first day"
-	line "in the new house!"
+	para "It's been a month"
+	line "since it happened."
 	
-	para "This place is so"
-	line "nice compared to"
-	cont "our old place."
+	para "I've decided to"
+	line "write my thoughts"
+	cont "in a new journal."
 	
-	para "I'm so glad to"
-	line "leave it behind."
+	para "I burned my old"
+	line "one…"
+	
+	para "A fresh start will"
+	line "help me move on."
 	
 	para "Perhaps the mem-"
 	line "ories of her will"
@@ -187,9 +190,9 @@ SpookHouseJournalText4:
 	line "ing about what"
 	cont "happened."
 	
-	para "I thought moving"
-	line "to a new house"
-	cont "would help," 
+	para "I've tried my best"
+	line "to put it out of"
+	cont "my mind,"
 	
 	para "but it only seems"
 	line "to have gotten"
@@ -228,7 +231,7 @@ SpookHouseJournalText5:
 	
 	para "I saw her…"
 	
-	para "My dear sweet"
+	para "My dear, sweet"
 	line "REBECCA…"
 	
 	para "She just stood"
@@ -253,12 +256,20 @@ SpookHouseJournalText5:
 SpookHouseJournalText6:
 	text "DAY:X/X    MONTH:X"
 	
-	para "I wasn't mad."
-	
-	para "I knew I wasn't."
-	
 	para "The incidents have"
 	line "gotten worse."
+	
+	para "My old journal"
+	line "turned up."
+	
+	para "The one that I"
+	line "burned…"
+	
+	para "Inside it were"
+	line "entries I'm sure"
+	cont "I never wrote."
+	
+	para "…"
 	
 	para "I've seen her many"
 	line "times these past"

@@ -2721,7 +2721,7 @@ KageGroup:
 ; ================
 
 	; SUNBEAM_KAGE
-	db "KAGE@"
+	db "CAGE@"
 	db TRAINERTYPE_DVS
 	; party
 	db 24, AZUMARILL, $DD, $8D, $D8
@@ -2732,7 +2732,7 @@ KageGroup:
 ; ================
 
 	; INN_1F
-	db "KAGE@"
+	db "CAGE@"
 	db TRAINERTYPE_EVS | TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
 
 	; party

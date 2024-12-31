@@ -271,7 +271,7 @@ Inn1FKageLoseText:
 	done
 	
 Inn1FKageText1:
-	text "KAGE: YOU!"
+	text "CAGE: YOU!"
 	done
 	
 Inn1FKageText2:
@@ -311,7 +311,7 @@ Inn1FKageText5:
 	done
 	
 Inn1FKageText6:
-	text "KAGE: Shut it!"
+	text "CAGE: Shut it!"
 	done
 	
 Inn1FKageText7:
@@ -348,7 +348,7 @@ Inn1FKageText8:
 	done
 	
 Inn1FKageText9:
-	text "KAGE: MOVE IT,"
+	text "CAGE: MOVE IT,"
 	line "YOU CLOWNS!"
 	done
 	

@@ -149,7 +149,7 @@ Inn3FKageStop:
 	end
 	
 Inn3FKageText1:
-	text "KAGE: Who are you?<WAIT_S>"
+	text "CAGE: Who are you?<WAIT_S>"
 	line "The new recruit?"
 	
 	para "You say you got"
@@ -161,7 +161,7 @@ Inn3FKageText1:
 	done
 	
 Inn3FKageText2:
-	text "KAGE: Come here"
+	text "CAGE: Come here"
 	line "for a sec, newbie."
 	done
 	
@@ -186,7 +186,7 @@ Inn3FKageText4:
 	done
 	
 Inn3FKageText1_2:
-	text "KAGE: Who are you?<WAIT_S>"
+	text "CAGE: Who are you?<WAIT_S>"
 	line "The new recruit?"
 	done
 	

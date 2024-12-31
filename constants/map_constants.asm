@@ -318,7 +318,7 @@ MAP_NONE   EQU 0
 	map_const SHIMMER_CAFE,								   4,  4 ; 12
 	map_const ROUTE_14,									  15, 24 ; 13
 	map_const ROUTE_15,									  44, 20 ; 14
-	map_const ROUTE_4,                                    30, 16 ; 10
+	map_const ROUTE_4,                                    31, 16 ; 10
 	map_const ROUTE_12,									  20, 25 ; 11
 	map_const ROUTE_19,									  24, 26 ; 12
 	

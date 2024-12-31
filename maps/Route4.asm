@@ -8,17 +8,18 @@ Route4_MapScriptHeader:
 	warp_def 25, 37, 2, ROUTE_4_EVENTIDE_GATE
 	warp_def  7, 12, 1, HUNTERS_THICKET
 	warp_def  7, 13, 2, HUNTERS_THICKET
-	warp_def  1, 50, 3, HUNTERS_THICKET
-	warp_def  1, 51, 4, HUNTERS_THICKET
+	warp_def  1, 44, 3, HUNTERS_THICKET
+	warp_def  1, 45, 4, HUNTERS_THICKET
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 4 ; bg events
 	signpost 15,  2, SIGNPOST_READ, Route4Sign
 	signpost 23, 36, SIGNPOST_READ, Route4ForestSign
+	signpost 14, 53, SIGNPOST_READ, Route4Grave
 	bg_event 15, 12, SIGNPOST_ITEM + MOON_STONE, EVENT_ROUTE_4_HIDDEN_MOON_STONE
 
-	db 12 ; object events
+	db 14 ; object events
 	person_event SPRITE_BIG_SNORLAX, 18, 20, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route4Snorlax, EVENT_FOUGHT_SNORLAX_ROUTE_4
 	person_event SPRITE_BIG_SNORLAX, 18, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route4Snorlax, EVENT_FOUGHT_SNORLAX_ROUTE_4
 	person_event SPRITE_BIG_SNORLAX, 19, 20, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route4Snorlax, EVENT_FOUGHT_SNORLAX_ROUTE_4
@@ -30,7 +31,10 @@ Route4_MapScriptHeader:
 	person_event SPRITE_LASS, 18, 18, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Route4NPC5, EVENT_FOUGHT_SNORLAX_ROUTE_4
 	person_event SPRITE_YOUNGSTER, 18, 24, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route4NPC7, EVENT_FOUGHT_SNORLAX_ROUTE_4
 	person_event SPRITE_POKEFAN_M, 19, 23, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route4NPC8, EVENT_FOUGHT_SNORLAX_ROUTE_4
+	itemball_event 33,  9, SPELL_TAG, 1, EVENT_ROUTE_4_SPELL_TAG
+	itemball_event 53, 13, POKE_DOLL, 1, EVENT_ROUTE_4_POKE_DOLL
 	fruittree_event 16, 15, FRUITTREE_ROUTE_4, CHERI_BERRY
+;	fruittree_event 35, 12, FRUITTREE_ROUTE_4, PECHA_BERRY
 
 	const_def 1 ; object constants
 	const ROUTE4SNORLAX1
@@ -44,6 +48,23 @@ Route4_MapScriptHeader:
 	const ROUTE4SNORLAXNPC1
 	const ROUTE4SNORLAXNPC2
 	const ROUTE4SNORLAXNPC3
+	
+Route4Grave:
+	jumptext Route4GraveText
+	
+Route4GraveText:
+	text "Our be oved"
+	line "dau hter."
+	
+	para "H re lies our"
+	line "de r, sw  t"
+	cont "RE  CCA."
+	
+	para "…"
+	
+	para "The letters are"
+	line "worn away…"
+	done
 	
 TrainerRoute4_1:	
 	generictrainer LASS, JUNE, EVENT_BEAT_ROUTE_4_TRAINER_1, .SeenText, .BeatenText

@@ -329,7 +329,7 @@
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, LEDIAN		;30%
-	db 30, TRUNBEAK		;30%
+	db 30, TRUMBEAK		;30%
 	db 30, SHROOMISH	;20%
 	db 30, PIKACHU		;10%
 	db 30, JOLTIK		;5%
@@ -337,7 +337,7 @@
 	db 30, JOLTIK		;1%
 	; day
 	db 30, LEDIAN		;30%
-	db 30, TRUNBEAK		;30%
+	db 30, TRUMBEAK		;30%
 	db 30, SHROOMISH	;20%
 	db 30, PIKACHU		;10%
 	db 30, JOLTIK		;5%
@@ -345,7 +345,7 @@
 	db 30, JOLTIK		;1%
 	; nite
 	db 30, LEDIAN		;30%
-	db 30, TRUNBEAK		;30%
+	db 30, TRUMBEAK		;30%
 	db 30, SHROOMISH	;20%
 	db 30, PIKACHU		;10%
 	db 30, JOLTIK		;5%

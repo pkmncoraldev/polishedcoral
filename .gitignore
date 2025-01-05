@@ -8,6 +8,8 @@
 
 # no binaries
 *.exe
+tools/lzcomp
+tools/scan_includes
 
 # roms
 *.gbc
@@ -38,6 +40,7 @@
 *.ss9
 
 # rgbds extras
+rgbds/
 *.map
 *.sym
 

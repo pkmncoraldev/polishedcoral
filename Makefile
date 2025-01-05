@@ -139,7 +139,6 @@ $(foreach obj, $(crystal_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 endif
 
 %.o: %.asm
-
 	$(RGBDS_DIR)rgbasm $(RGBASM_FLAGS) -o $@ $<
 
 .gbc:
@@ -155,7 +154,7 @@ endif
 
 %.2bpp.vram2: %.2bpp
 	tools/sub_2bpp.sh $< 256 128 > $@
-	
+
 %.2bpp: %.png ; $(GFX) 2bpp $<
 %.1bpp: %.png ; $(GFX) 1bpp $<
 
@@ -169,6 +168,3 @@ gfx/pokemon/%/bitmask.asm gfx/pokemon/%/frames.asm: gfx/pokemon/%/front.2bpp
 %.bin: ; $(error ERROR: Cannot find '$@')
 %.ablk: ; $(error ERROR: Cannot find '$@')
 %.tilemap: ; $(error ERROR: Cannot find '$@')
-
-#%.wav: ;
-#%.ded: %.wav dedenc.py ; $(PYTHON) dedenc.py $< $@

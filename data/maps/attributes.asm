@@ -538,6 +538,8 @@ ENDM
 	map_attributes DesertTempleLowerRight, DESERT_TEMPLE_LOWER_RIGHT, 0, 0
 	map_attributes DesertTemple2, DESERT_TEMPLE_2, 0, 0
 	
+	map_attributes UnderwaterTemple1, UNDERWATER_TEMPLE_1, 0, 0
+	
 	map_attributes SunsetPokeCenter, SUNSET_POKECENTER, $0, 0
 	map_attributes SunsetLighthouse, SUNSET_LIGHTHOUSE, $0, 0
 	map_attributes SunsetLighthouseBasement, SUNSET_LIGHTHOUSE_BASEMENT, $0, 0

@@ -401,6 +401,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_6_UNDERWATER,						  43, 19 ; 3
 	map_const CORAL_REEF,								  34, 23 ; 4
 	map_const UNDERWATER_TEMPLE_OUTSIDE,				  13, 24 ; 5
+	map_const UNDERWATER_TEMPLE_1,						  17, 22 ; 6
 	
 	newgroup													 ; 22
 	

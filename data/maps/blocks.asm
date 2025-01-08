@@ -954,3 +954,6 @@ ObscuraMuseumPhoto_BlockData:
 UnderwaterTempleOutside_BlockData:
 	INCBIN "maps/UnderwaterTempleOutside.ablk.lz"
 	
+UnderwaterTemple1_BlockData:
+	INCBIN "maps/UnderwaterTemple1.ablk.lz"
+	

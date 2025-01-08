@@ -1040,11 +1040,24 @@ LoadMapPals::
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
-	jp FarCopyWRAM
+	call FarCopyWRAM
+	jr .underwater_cont
 .underwater_purple
 	ld hl, MapObjectPalsUnderwaterPurple
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+.underwater_cont
+	ld a, [wMapNumber]
+	cp MAP_UNDERWATER_TEMPLE_OUTSIDE
+	jr z, .underwater_temple
+	cp MAP_UNDERWATER_TEMPLE_1
+	ret nz
+.underwater_temple
+	ld hl, MapObjectPalsCoralShards
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	jp FarCopyWRAM
 .cave
@@ -2286,6 +2299,9 @@ INCLUDE "maps/palettes/obpals/autumn.pal"
 
 MapObjectPalsBalloon:
 INCLUDE "maps/palettes/obpals/obballoon.pal"
+
+MapObjectPalsCoralShards:
+INCLUDE "maps/palettes/obpals/coralshards.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

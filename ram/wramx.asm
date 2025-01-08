@@ -1088,7 +1088,8 @@ wObscuraCityTrigger:: ds 1
 wInn1FTrigger:: ds 1
 wObscuraMuseum1FTrigger:: ds 1
 wObscuraMuseum3FTrigger:: ds 1
-ds 17
+wUnderwaterTemple1Trigger:: ds 1
+ds 16
 
 wAmpharosFood:: ds 1
 

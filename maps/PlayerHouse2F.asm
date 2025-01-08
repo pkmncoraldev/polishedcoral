@@ -27,7 +27,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event  9, 18, KOMORE_VILLAGE, 6
 	warp_event 11, 18, BRIGHTBURG, 1
 	warp_event 13, 18, OBSCURA_CITY, 1
-	warp_event 15, 18, AUREOLE_TOWN, 1
+	warp_event 15, 18, UNDERWATER_TEMPLE_1, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
@@ -61,7 +61,7 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event  8, 18, SIGNPOST_JUMPTEXT, PlayerHouseKomore
 	bg_event 10, 18, SIGNPOST_JUMPTEXT, PlayerHouseBright
 	bg_event 12, 18, SIGNPOST_JUMPTEXT, PlayerHouseObscura
-	bg_event 14, 18, SIGNPOST_JUMPTEXT, PlayerHouseAureole
+	bg_event 14, 18, SIGNPOST_JUMPTEXT, PlayerHouseUnderwaterTemple
 
 	db 7 ; object events
 	object_event  6,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_KRISS_HOUSE_2F_CONSOLE
@@ -127,6 +127,7 @@ PlayerHouseDebugPoster:
 	closewindow
 	writetext PlayerHouseDebug2ItemsText
 	waitbutton
+	giveitem CORAL_SHARD, 99
 	giveitem GOLD_TEA, 99
 	giveitem SILVER_TEA, 99
 	giveitem GOLD_LEAF, 99
@@ -688,8 +689,8 @@ PlayerHouseObscura:
 	text "OBSCURA CITY"
 	done
 	
-PlayerHouseAureole:
-	text "AUREOLE TOWN"
+PlayerHouseUnderwaterTemple:
+	text "UNDERWATER TEMPLE"
 	done
 	
 PlayerHouse2FInitializeRoom:

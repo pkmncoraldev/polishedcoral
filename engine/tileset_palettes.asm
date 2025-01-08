@@ -175,12 +175,25 @@ LoadSpecialMapPalette: ; 494ac
 	cp GROUP_ROUTE_14_15_UNDERWATER
 	ret nz
 	ld a, [wMapNumber]
+	cp MAP_UNDERWATER_TEMPLE_1
+	jr nz, .not_temple
+	eventflagcheck EVENT_UNDERWATER_TEMPLE_GREEN
+	jr z, .underwater_temple
+.not_temple
 	cp MAP_ROUTE_14_15_UNDERWATER
 	ret nz
 	eventflagcheck EVENT_ROUTE_14_15_UNDERWATER_EASTER_EGG
 	jr z, .underwater_eyes_dark
 	ld hl, UnderwaterEyesPalette + 1 palettes
 	jr .underwater_end
+.underwater_temple
+	ld hl, UnderwaterBrownPalette
+	ld de, wUnknBGPals + 2 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 .underwater_eyes_dark
 	ld hl, UnderwaterEyesPalette
 .underwater_end
@@ -1144,3 +1157,6 @@ INCLUDE "maps/palettes/bgpals/autumn.pal"
 
 ObscuraYellowPalette::
 INCLUDE "maps/palettes/bgpals/obscurayellow.pal"
+
+UnderwaterBrownPalette::
+INCLUDE "maps/palettes/bgpals/underwaterbrown.pal"

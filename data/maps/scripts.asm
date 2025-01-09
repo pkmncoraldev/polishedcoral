@@ -442,6 +442,7 @@ INCLUDE "maps/Route6Underwater.asm"
 INCLUDE "maps/CoralReef.asm"
 INCLUDE "maps/UnderwaterTempleOutside.asm"
 INCLUDE "maps/UnderwaterTemple1.asm"
+INCLUDE "maps/UnderwaterTemple2.asm"
 
 SECTION "Brightburg Scripts", ROMX
 INCLUDE "maps/Brightburg.asm"

@@ -957,3 +957,6 @@ UnderwaterTempleOutside_BlockData:
 UnderwaterTemple1_BlockData:
 	INCBIN "maps/UnderwaterTemple1.ablk.lz"
 	
+UnderwaterTemple2_BlockData:
+	INCBIN "maps/UnderwaterTemple2.ablk.lz"
+	

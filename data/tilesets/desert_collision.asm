@@ -1,7 +1,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 00
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 01
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 02
-	tilecoll WALL, WALL, WALL, WALL ; 03
+	tilecoll DIVE, DIVE, DIVE, DIVE ; 03
 	tilecoll WALL, WALL, WALL, WALL ; 04
 	tilecoll WALL, WALL, WALL, WALL ; 05
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 06
@@ -174,7 +174,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ad
 	tilecoll WALL, WALL, WALL, WALL ; ae
 	tilecoll WALL, WALL, WALL, WALL ; af
-	tilecoll WALL, WALL, WALL, WALL ; b0
+	tilecoll WATER, WATER, WATER, WATER ; b0
 	tilecoll WALL, WALL, WATER, WATER ; b1
 	tilecoll WALL, DOOR, FLOOR, FLOOR ; b2
 	tilecoll WALL, WALL, FLOOR, FLOOR ; b3
@@ -185,7 +185,7 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; b8
 	tilecoll SAND, WALL, SAND, WALL ; b9
 	tilecoll WALL, SAND, WALL, SAND ; ba
-	tilecoll WALL, WALL, WALL, WALL ; bb
+	tilecoll WATER, WATER, WATER, WATER ; bb
 	tilecoll SKATE, WALL, SKATE, SKATE ; bc
 	tilecoll WALL, SKATE, SKATE, SKATE ; bd
 	tilecoll STAIRS, STAIRS, FLOOR, FLOOR ; be

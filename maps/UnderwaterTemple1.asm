@@ -6,9 +6,21 @@ UnderwaterTemple1_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, UnderwaterTemple1Callback
 
-	db 2 ; warp events
+	db 14 ; warp events
 	warp_def 43, 20, 1, UNDERWATER_TEMPLE_OUTSIDE
 	warp_def 43, 21, 2, UNDERWATER_TEMPLE_OUTSIDE
+	warp_def 40,  0, 1, UNDERWATER_TEMPLE_2
+	warp_def 40,  1, 2, UNDERWATER_TEMPLE_2
+	warp_def 41,  0, 3, UNDERWATER_TEMPLE_2
+	warp_def 41,  1, 4, UNDERWATER_TEMPLE_2
+	warp_def 18,  1, 5, UNDERWATER_TEMPLE_2
+	warp_def 18,  2, 6, UNDERWATER_TEMPLE_2
+	warp_def 19,  1, 7, UNDERWATER_TEMPLE_2
+	warp_def 19,  2, 8, UNDERWATER_TEMPLE_2
+	warp_def  5, 28, 9, UNDERWATER_TEMPLE_2
+	warp_def  5, 29, 10, UNDERWATER_TEMPLE_2
+	warp_def  6, 28, 11, UNDERWATER_TEMPLE_2
+	warp_def  6, 29, 12, UNDERWATER_TEMPLE_2
 
 	db 2 ; coord events
 	coord_event 16, 25, 0, UnderwaterTemple1MakeSilverGreen

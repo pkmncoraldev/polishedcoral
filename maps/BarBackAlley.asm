@@ -176,7 +176,7 @@ BarBackAlleyFelicia:
 	waitsfx
 	setevent EVENT_ALWAYS_SET
 	loadwildmon MEOWTH, 35
-	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
 	disappear BAR_BACK_ALLEY_MEOWTH
 	reloadmapafterbattle

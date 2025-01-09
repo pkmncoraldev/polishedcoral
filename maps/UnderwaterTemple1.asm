@@ -3,7 +3,8 @@ UnderwaterTemple1_MapScriptHeader:
 	scene_script UnderwaterTemple1Trigger0
 	scene_script UnderwaterTemple1Trigger1
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, UnderwaterTemple1Callback
 
 	db 2 ; warp events
 	warp_def 43, 20, 1, UNDERWATER_TEMPLE_OUTSIDE
@@ -17,11 +18,18 @@ UnderwaterTemple1_MapScriptHeader:
 	signpost 33, 20, SIGNPOST_IFNOTSET, UnderwaterTemple1Door2
 	signpost 33, 21, SIGNPOST_IFNOTSET, UnderwaterTemple1Door2
 
-	db 4 ; object events
+	db 10 ; object events
 	object_event 13, -5, SPRITE_PLANK_BRIDGE_2, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event 13, -5, SPRITE_PLANK_BRIDGE_2, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PURPLE
 	person_event SPRITE_GENERAL_VARIABLE_1, 33, 21, SPRITEMOVEDATA_TILE_HALFWAY_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, UnderwaterTemple1Door, EVENT_HIDE_CORAL_STAR_3
 	person_event SPRITE_ICESKATER_VARIABLE, 33, 21, SPRITEMOVEDATA_TILE_HALFWAY_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, UnderwaterTemple1Door, EVENT_HIDE_CORAL_STAR_4
+	object_event 33, 29, SPRITE_MON_ICON, SPRITEMOVEDATA_STANDING_DOWN, 0, CORSOLA, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, UnderwaterTemple1Corsola1, EVENT_UNDERWATER_TEMPLE_1_CORSOLA_1
+	object_event  1, 27, SPRITE_MON_ICON, SPRITEMOVEDATA_STANDING_DOWN, 0, CORSOLA, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, UnderwaterTemple1Corsola2, EVENT_UNDERWATER_TEMPLE_1_CORSOLA_2
+	object_event  1, 11, SPRITE_MON_ICON, SPRITEMOVEDATA_STANDING_DOWN, 0, CORSOLA, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, UnderwaterTemple1Corsola3, EVENT_UNDERWATER_TEMPLE_1_CORSOLA_3
+	itemball_event 33, 28, CORAL_SHARD, 1, EVENT_UNDERWATER_TEMPLE_1_POKEBALL_1
+	itemball_event  1, 26, CORAL_SHARD, 1, EVENT_UNDERWATER_TEMPLE_1_POKEBALL_2
+	itemball_event  1, 10, CORAL_SHARD, 1, EVENT_UNDERWATER_TEMPLE_1_POKEBALL_3
+	
 
 	
 	const_def 1 ; object constants
@@ -29,12 +37,152 @@ UnderwaterTemple1_MapScriptHeader:
 	const UNDERWATER_TEMPLE_1_BUBBLES_2
 	const UNDERWATER_TEMPLE_1_CORAL_STAR_1
 	const UNDERWATER_TEMPLE_1_CORAL_STAR_2
+	const UNDERWATER_TEMPLE_1_CORSOLA_1
+	const UNDERWATER_TEMPLE_1_CORSOLA_2
+	const UNDERWATER_TEMPLE_1_CORSOLA_3
 	
 UnderwaterTemple1Trigger0:
 	end
 	
 UnderwaterTemple1Trigger1:
 	end
+	
+UnderwaterTemple1Callback:
+	callasm UnderwaterSetUpBubbles
+	readvar VAR_PLAYER_COLOR
+	if_equal 4, .purple
+	setevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
+	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	clearevent EVENT_HIDE_OW_OBJECTS_PINK
+	clearevent EVENT_HIDE_OW_OBJECTS_RED
+	disappear ROUTE14_15_UNDERWATER_BUBBLE1
+	disappear ROUTE14_15_UNDERWATER_BUBBLE2
+	movetoplayer ROUTE14_15_UNDERWATER_BUBBLE1
+	movetoplayer ROUTE14_15_UNDERWATER_BUBBLE2
+	disappear ROUTE14_15_UNDERWATER_BUBBLE1
+	appear ROUTE14_15_UNDERWATER_BUBBLE2
+	jump .cont
+.purple
+	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
+	setevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	clearevent EVENT_HIDE_OW_OBJECTS_PINK
+	clearevent EVENT_HIDE_OW_OBJECTS_RED
+	disappear ROUTE14_15_UNDERWATER_BUBBLE1
+	disappear ROUTE14_15_UNDERWATER_BUBBLE2
+	movetoplayer ROUTE14_15_UNDERWATER_BUBBLE1
+	movetoplayer ROUTE14_15_UNDERWATER_BUBBLE2
+	appear ROUTE14_15_UNDERWATER_BUBBLE1
+	disappear ROUTE14_15_UNDERWATER_BUBBLE2
+.cont
+	checkevent EVENT_UNDERWATER_TEMPLE_1_CORAL_SHARD_5
+	iftrue .done_door
+	checkevent EVENT_UNDERWATER_TEMPLE_1_CORAL_SHARD_1
+	iftrue .done_1
+	return
+.done_1
+	checkevent EVENT_UNDERWATER_TEMPLE_1_CORAL_SHARD_2
+	iftrue .done_2
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_MUSEUM_STANDEE
+	return
+.done_2
+	checkevent EVENT_UNDERWATER_TEMPLE_1_CORAL_SHARD_3
+	iftrue .done_3
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_SNES
+	return
+.done_3
+	checkevent EVENT_UNDERWATER_TEMPLE_1_CORAL_SHARD_4
+	iftrue .done_4
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CORAL_STAR
+	return
+.done_4
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_MUSEUM_STANDEE
+	return
+.done_door
+	changeblock $14, $20, $d7
+	changeblock $14, $1e, $ca
+	return
+	
+UnderwaterTemple1Corsola1:
+	opentext
+	writetext UnderwaterTemple1CorsolaText
+	cry CORSOLA
+	waitbutton
+	closetext
+	waitsfx
+	loadwildmon CORSOLA, 30
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	startbattle
+	disappear UNDERWATER_TEMPLE_1_CORSOLA_1
+	reloadmapafterbattle
+	setevent EVENT_UNDERWATER_TEMPLE_1_CORSOLA_1
+	checkcode VAR_MONJUSTCAUGHT
+	if_equal CORSOLA, .CaughtCorsola
+	opentext
+	writetext UnderwaterTemple1CorsolaTextGone
+	waitbutton
+	closetext
+.CaughtCorsola
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	end
+	
+UnderwaterTemple1Corsola2:
+	opentext
+	writetext UnderwaterTemple1CorsolaText
+	cry CORSOLA
+	waitbutton
+	closetext
+	waitsfx
+	loadwildmon CORSOLA, 30
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	startbattle
+	disappear UNDERWATER_TEMPLE_1_CORSOLA_2
+	reloadmapafterbattle
+	setevent EVENT_UNDERWATER_TEMPLE_1_CORSOLA_2
+	checkcode VAR_MONJUSTCAUGHT
+	if_equal CORSOLA, .CaughtCorsola
+	opentext
+	writetext UnderwaterTemple1CorsolaTextGone
+	waitbutton
+	closetext
+.CaughtCorsola
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	end
+	
+UnderwaterTemple1Corsola3:
+	opentext
+	writetext UnderwaterTemple1CorsolaText
+	cry CORSOLA
+	waitbutton
+	closetext
+	waitsfx
+	loadwildmon CORSOLA, 30
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	startbattle
+	disappear UNDERWATER_TEMPLE_1_CORSOLA_3
+	reloadmapafterbattle
+	setevent EVENT_UNDERWATER_TEMPLE_1_CORSOLA_3
+	checkcode VAR_MONJUSTCAUGHT
+	if_equal CORSOLA, .CaughtCorsola
+	opentext
+	writetext UnderwaterTemple1CorsolaTextGone
+	waitbutton
+	closetext
+.CaughtCorsola
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	end
+	
+UnderwaterTemple1CorsolaText:
+	text "TEXT 1"
+	done
+	
+UnderwaterTemple1CorsolaTextGone:
+	text "CORSOLA gently"
+	line "floated away."
+	done
 	
 UnderwaterTemple1MakeSilverBrown:
 	clearevent EVENT_UNDERWATER_TEMPLE_GREEN

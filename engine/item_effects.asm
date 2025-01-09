@@ -359,8 +359,11 @@ PokeBallEffect: ; e8a2
 	ld a, [wEnemyMonCatchRate]
 	ld b, a
 	ld a, [wBattleType]
+	cp BATTLETYPE_TRAP
+	jr z, .half
 	cp BATTLETYPE_LEGENDARY
 	jr nz, .skip_half
+.half
 	srl b
 .skip_half
 	ld a, [wCurItem]

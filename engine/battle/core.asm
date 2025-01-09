@@ -6994,7 +6994,7 @@ LoadEnemyMon: ; 3e8eb
 	ld [wEnemyMonCatchRate], a
 
 	; Let's get the item:
-	; Force Item1
+	; Force Item1(Item2 for BATTLETYPE_TRAP)
 	; Used for wild boss encounters
 	ld a, [wBattleType]
 	cp BATTLETYPE_FORCEITEM
@@ -7009,6 +7009,11 @@ LoadEnemyMon: ; 3e8eb
 	ld a, [wBattleType]
 	cp BATTLETYPE_LEGENDARY
 	ld a, [wBaseItems]
+	jr z, .UpdateItem
+	
+	ld a, [wBattleType]
+	cp BATTLETYPE_TRAP
+	ld a, [wBaseItems+1]
 	jr z, .UpdateItem
 
 	; Failing that, it's all up to chance

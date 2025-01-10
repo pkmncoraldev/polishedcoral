@@ -511,14 +511,16 @@ UnknownText_0x1c4f3e::
 
 UnknownText_Mart_Clothes_Intro::
 	text "Welcome to"
-	line "BOUTIQUE COUTOUR."
+	line "BOUTIQUE COUTOUR…"
 	
-	para "What are you"
-	line "looking for today?"
+	para "What do you want?"
 	done
 	
 UnknownText_Mart_Clothes_ComeAgain::
-	text "You look fabulous!"
+	text "You look sooooo"
+	line "good!"
+	
+	para "Snicker…"
 	done
 	
 UnknownText_0x1c4f62::

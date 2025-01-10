@@ -5,7 +5,7 @@
 	db 60 ; catch rate
 	db 128 ; base exp
 	db NO_ITEM ; item 1
-	db CORAL_SHARD ; item 2
+	db NO_ITEM ; item 2
 	dn FEMALE_75, 3 ; gender, step cycles to hatch
 	dn 6, 6 ; frontpic dimensions
 	db WEAK_ARMOR ; ability 1

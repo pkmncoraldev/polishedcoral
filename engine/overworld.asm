@@ -669,7 +669,11 @@ GetMonSprite: ; 14259
 ; that bc takes MAPOBJECT_* offsets.
 ; (That means the player, Battle Tower trainers, and variable sprites cannot
 ;  use Pokémon icons.)
-	ld hl, MAPOBJECT_RADIUS
+	ld hl, MAPOBJECT_RANGE	;form
+	add hl, bc
+	ld a, [hl]
+	ld e, a
+	ld hl, MAPOBJECT_RADIUS	;species
 	add hl, bc
 	ld a, [hl]
 	jr .Mon

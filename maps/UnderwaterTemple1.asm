@@ -30,7 +30,7 @@ UnderwaterTemple1_MapScriptHeader:
 	signpost 33, 20, SIGNPOST_IFNOTSET, UnderwaterTemple1Door2
 	signpost 33, 21, SIGNPOST_IFNOTSET, UnderwaterTemple1Door2
 
-	db 10 ; object events
+	db 13 ; object events
 	object_event 13, -5, SPRITE_PLANK_BRIDGE_2, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event 13, -5, SPRITE_PLANK_BRIDGE_2, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PURPLE
 	person_event SPRITE_GENERAL_VARIABLE_1, 33, 21, SPRITEMOVEDATA_TILE_HALFWAY_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, UnderwaterTemple1Door, EVENT_HIDE_CORAL_STAR_3
@@ -38,9 +38,12 @@ UnderwaterTemple1_MapScriptHeader:
 	object_event 33, 29, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, CORSOLA, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, UnderwaterTemple1Corsola1, EVENT_UNDERWATER_TEMPLE_1_CORSOLA_1
 	object_event  1, 27, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, CORSOLA, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, UnderwaterTemple1Corsola2, EVENT_UNDERWATER_TEMPLE_1_CORSOLA_2
 	object_event  1, 11, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, CORSOLA, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, UnderwaterTemple1Corsola3, EVENT_UNDERWATER_TEMPLE_1_CORSOLA_3
+	object_event 15, 23, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, CORSOLA, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, UnderwaterTemple1Corsola4, EVENT_UNDERWATER_TEMPLE_1_CORSOLA_4
+	object_event 24,  7, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, CORSOLA, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, UnderwaterTemple1Corsola5, EVENT_UNDERWATER_TEMPLE_1_CORSOLA_5
 	itemball_event 33, 28, CORAL_SHARD, 1, EVENT_UNDERWATER_TEMPLE_1_POKEBALL_1
 	itemball_event  1, 26, CORAL_SHARD, 1, EVENT_UNDERWATER_TEMPLE_1_POKEBALL_2
 	itemball_event  1, 10, CORAL_SHARD, 1, EVENT_UNDERWATER_TEMPLE_1_POKEBALL_3
+	itemball_event 15, 22, MAX_REVIVE, 1, EVENT_UNDERWATER_TEMPLE_1_POKEBALL_4
 	
 
 	
@@ -52,6 +55,8 @@ UnderwaterTemple1_MapScriptHeader:
 	const UNDERWATER_TEMPLE_1_CORSOLA_1
 	const UNDERWATER_TEMPLE_1_CORSOLA_2
 	const UNDERWATER_TEMPLE_1_CORSOLA_3
+	const UNDERWATER_TEMPLE_1_CORSOLA_4
+	const UNDERWATER_TEMPLE_1_CORSOLA_5
 	
 UnderwaterTemple1Trigger0:
 	end
@@ -187,8 +192,35 @@ UnderwaterTemple1Corsola3:
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	end
 	
+UnderwaterTemple1Corsola4:
+	opentext
+	writetext UnderwaterTemple1CorsolaText
+	cry CORSOLA
+	waitbutton
+	closetext
+	waitsfx
+	loadwildmon CORSOLA, 30
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	startbattle
+	disappear UNDERWATER_TEMPLE_1_CORSOLA_4
+	reloadmapafterbattle
+	setevent EVENT_UNDERWATER_TEMPLE_1_CORSOLA_4
+	checkcode VAR_MONJUSTCAUGHT
+	if_equal CORSOLA, .CaughtCorsola
+	opentext
+	writetext UnderwaterTemple1CorsolaTextGone
+	waitbutton
+	closetext
+.CaughtCorsola
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	end
+	
+UnderwaterTemple1Corsola5:
+	disappear UNDERWATER_TEMPLE_1_CORSOLA_5
+	end
+	
 UnderwaterTemple1CorsolaText:
-	text "TEXT 1"
+	text "CORSOLA: Sola!"
 	done
 	
 UnderwaterTemple1CorsolaTextGone:

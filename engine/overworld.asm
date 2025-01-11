@@ -318,6 +318,8 @@ ReloadSpriteIndex::
 	ld b, h
 	ld c, l
 	push af
+	ld a, $f
+	ld [wBuffer1], a	;used for SPRITE_MON_ICON forms 
 	ld a, [wMoogoo]
 	and a
 	jr nz, .not_player
@@ -669,7 +671,9 @@ GetMonSprite: ; 14259
 ; that bc takes MAPOBJECT_* offsets.
 ; (That means the player, Battle Tower trainers, and variable sprites cannot
 ;  use Pokémon icons.)
-	ld hl, MAPOBJECT_RANGE	;form
+	ld a, [wBuffer1]
+	ld h, 0
+	ld l, a	;form
 	add hl, bc
 	ld a, [hl]
 	ld e, a

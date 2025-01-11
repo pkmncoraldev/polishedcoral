@@ -164,6 +164,8 @@ CopyObjectStruct:: ; 80e7
 	call CheckObjectMask
 	and a
 	ret nz ; masked
+	ld a, MAPOBJECT_RANGE
+	ld [wBuffer1], a	;used for SPRITE_MON_ICON forms 
 	ld hl, wObjectStructs + OBJECT_STRUCT_LENGTH * 1
 	ld a, 1
 	ld de, OBJECT_STRUCT_LENGTH

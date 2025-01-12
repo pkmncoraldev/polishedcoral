@@ -49,8 +49,8 @@ CloseText:: ; 2dcf
 ;	call ReplaceKrisSprite
 	xor a
 	ld [hBGMapMode], a
-
-	farjp ReturnFromMapSetupScript
+	ret
+;	farjp ReturnFromMapSetupScript
 ; 2e08
 
 OpenText:: ; 2e08

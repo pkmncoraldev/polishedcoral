@@ -1,5 +1,7 @@
 ReturnFromMapSetupScript:: ; b8000
 	ld a, [wCurrentLandmark]
+	cp DIVE_LANDMARK
+	ret z
 	ld [wPreviousLandmark], a
 	ld a, [wMapGroup]
 	ld b, a
@@ -8,8 +10,6 @@ ReturnFromMapSetupScript:: ; b8000
 
 	call GetWorldMapLocation
 	ld [wCurrentLandmark], a
-	cp GATE_LANDMARK
-	jr z, .dont_do_map_sign
 	
 
 	ld hl, wEnteredMapFromContinue
@@ -23,6 +23,14 @@ ReturnFromMapSetupScript:: ; b8000
 	call .CheckSpecialMap
 	jr z, .dont_do_map_sign
 	
+	ld a, [wMapGroup]
+	cp GROUP_FLICKER_TRAIN_CUTSCENE
+	jr nz, .not_train
+	ld a, [wMapNumber]
+	cp MAP_FLICKER_TRAIN_CUTSCENE
+	jr z, .dont_do_map_sign
+	
+.not_train
 	ld a, [wMapGroup]
 	cp GROUP_FAKE_ROUTE_1
 	jp z, .dont_do_map_sign

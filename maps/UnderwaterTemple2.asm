@@ -5,33 +5,37 @@ UnderwaterTemple2_MapScriptHeader:
 	callback MAPCALLBACK_TILES, UnderwaterTemple2Callback
 
 	db 12 ; warp events
-	warp_def 42,  2, 3, UNDERWATER_TEMPLE_1
-	warp_def 42,  3, 4, UNDERWATER_TEMPLE_1
-	warp_def 43,  2, 5, UNDERWATER_TEMPLE_1
-	warp_def 43,  3, 6, UNDERWATER_TEMPLE_1
-	warp_def 16,  2, 7, UNDERWATER_TEMPLE_1
-	warp_def 16,  3, 8, UNDERWATER_TEMPLE_1
-	warp_def 17,  2, 9, UNDERWATER_TEMPLE_1
-	warp_def 17,  3, 10, UNDERWATER_TEMPLE_1
-	warp_def  4, 30, 11, UNDERWATER_TEMPLE_1
-	warp_def  4, 31, 12, UNDERWATER_TEMPLE_1
-	warp_def  5, 30, 13, UNDERWATER_TEMPLE_1
-	warp_def  5, 31, 14, UNDERWATER_TEMPLE_1
+	warp_def 32,  2, 3, UNDERWATER_TEMPLE_1
+	warp_def 32,  3, 4, UNDERWATER_TEMPLE_1
+	warp_def 33,  2, 5, UNDERWATER_TEMPLE_1
+	warp_def 33,  3, 6, UNDERWATER_TEMPLE_1
+	warp_def  6,  2, 7, UNDERWATER_TEMPLE_1
+	warp_def  6,  3, 8, UNDERWATER_TEMPLE_1
+	warp_def  7,  2, 9, UNDERWATER_TEMPLE_1
+	warp_def  7,  3, 10, UNDERWATER_TEMPLE_1
+	warp_def 16, 24, 11, UNDERWATER_TEMPLE_1
+	warp_def 16, 25, 12, UNDERWATER_TEMPLE_1
+	warp_def 17, 24, 13, UNDERWATER_TEMPLE_1
+	warp_def 17, 25, 14, UNDERWATER_TEMPLE_1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 2 ; object events
-	person_event SPRITE_GENERAL_VARIABLE_1, 25, 9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, UnderwaterTemple2Corsola, EVENT_UNDERWATER_TEMPLE_2_CORSOLA
-	itemball_event 27, 40, CORAL_SHARD, 1, EVENT_UNDERWATER_TEMPLE_2_POKEBALL
+	db 4 ; object events
+	person_event SPRITE_GENERAL_VARIABLE_1, 15,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, UnderwaterTemple2Corsola, EVENT_UNDERWATER_TEMPLE_2_CORSOLA
+	person_event SPRITE_GENERAL_VARIABLE_1,  8, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, UnderwaterTemple2CursolaTest, EVENT_UNDERWATER_TEMPLE_2_CURSOLA
+	itemball_event 27, 30, CORAL_SHARD, 1, EVENT_UNDERWATER_TEMPLE_2_POKEBALL
+	itemball_event 25,  5, ANCIENT_BALL, 1, EVENT_UNDERWATER_TEMPLE_2_ARTIFACT
 
 
 	const_def 1 ; object constants
 	const UNDERWATER_TEMPLE_CORSOLA
+	const UNDERWATER_TEMPLE_CURSOLA
 
 
 UnderwaterTemple2Callback:
+	loadvar wTimeOfDayPalFlags, $40 | 0
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CURSOLA_1
 	return
 
@@ -42,15 +46,12 @@ UnderwaterTemple2CursolaTest:
 	iffalse .no
 	closetext
 	waitsfx
-	pause 10
-	playsound SFX_WATER_GUN
-	waitsfx
-	pause 15
+	pause 40
 	playsound SFX_COMET_PUNCH
 	pause 5
-	spriteface UNDERWATER_TEMPLE_CORSOLA, UP
+	spriteface UNDERWATER_TEMPLE_CURSOLA, UP
 	pause 4
-	spriteface UNDERWATER_TEMPLE_CORSOLA, LEFT
+	spriteface UNDERWATER_TEMPLE_CURSOLA, LEFT
 	pause 20
 	opentext
 	writetext UnderwaterTemple2CursolaTestText
@@ -59,9 +60,24 @@ UnderwaterTemple2CursolaTest:
 	pause 10
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CURSOLA_2
 	pause 20
-	spriteface UNDERWATER_TEMPLE_CORSOLA, UP
+	spriteface UNDERWATER_TEMPLE_CURSOLA, UP
 	pause 2
-	spriteface UNDERWATER_TEMPLE_CORSOLA, DOWN
+	spriteface UNDERWATER_TEMPLE_CURSOLA, DOWN
+	pause 40
+	loadwildmon CURSOLA, 40
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+	startbattle
+	disappear UNDERWATER_TEMPLE_CURSOLA
+	reloadmapafterbattle
+	setevent EVENT_UNDERWATER_TEMPLE_2_CURSOLA
+	checkcode VAR_MONJUSTCAUGHT
+	if_equal CURSOLA, .CaughtCursola
+	opentext
+	writetext UnderwaterTemple2CursolaTestTextGone
+	waitbutton
+	closetext
+.CaughtCursola
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	end
 .no
 	writetext UnderwaterTempleOutsideDoorText6
@@ -81,6 +97,11 @@ UnderwaterTemple2CursolaTestText2:
 	
 	para "Reach out and"
 	line "touch it?"
+	done
+	
+UnderwaterTemple2CursolaTestTextGone:
+	text "CURSOLA"
+	line "disappeared."
 	done
 
 UnderwaterTemple2Corsola:
@@ -107,7 +128,7 @@ UnderwaterTemple2Corsola:
 	end
 	
 UnderwaterTemple2CorsolaText:
-	text "CORSOLA: Sol…"
+	text "CORSOLA: …<WAIT_S>S<WAIT_S>o<WAIT_S>l<WAIT_S>…"
 	done
 	
 UnderwaterTemple2CorsolaTextGone:

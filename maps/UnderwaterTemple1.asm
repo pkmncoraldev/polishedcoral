@@ -216,11 +216,34 @@ UnderwaterTemple1Corsola4:
 	end
 	
 UnderwaterTemple1Corsola5:
+	opentext
+	writetext UnderwaterTemple1CorsolaText
+	cry CORSOLA
+	waitbutton
+	closetext
+	waitsfx
+	playsound SFX_SWEET_KISS_2
+	applyonemovement UNDERWATER_TEMPLE_1_CORSOLA_5, slow_jump_step_up
+	playsound SFX_SWEET_KISS_2
+	applyonemovement UNDERWATER_TEMPLE_1_CORSOLA_5, slow_jump_step_up
+	playsound SFX_SWEET_KISS_2
+	applyonemovement UNDERWATER_TEMPLE_1_CORSOLA_5, slow_jump_step_up
 	disappear UNDERWATER_TEMPLE_1_CORSOLA_5
+	opentext
+	writetext UnderwaterTemple1CorsolaText2
+	waitbutton
+	closetext
 	end
 	
 UnderwaterTemple1CorsolaText:
 	text "CORSOLA: Sola!"
+	done
+	
+UnderwaterTemple1CorsolaText2:
+	text "CORSOLA left"
+	line "without a battle."
+	
+	para "Bye bye, CORSOLA!"
 	done
 	
 UnderwaterTemple1CorsolaTextGone:

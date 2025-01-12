@@ -22,10 +22,15 @@ BattleText_PorygonEncounterHuh:
 
 WildPokemonAppearedText: ; 0x80746
 	text "A wild @"
-LegendaryAppearedText: ; 0x80793
 	text_from_ram wEnemyMonNick
 	text ""
 	line "appeared!"
+	prompt
+	
+LegendaryAppearedText:
+	text_from_ram wEnemyMonNick
+	text ""
+	line "attacked!"
 	prompt
 
 QuestionAppearedText: ; 0x80793

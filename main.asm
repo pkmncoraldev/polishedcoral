@@ -5220,3 +5220,103 @@ INCLUDE "engine/player_object.asm"
 INCLUDE "engine/battle/generate_wild_form.asm"
 INCLUDE "engine/events/skatepark_score.asm"
 INCLUDE "engine/mart_clerks.asm"
+
+CheckUniqueWildMove:
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEGENDARY
+	jp z, .boss
+	cp BATTLETYPE_SHINY_LEGENDARY
+	jp z, .boss
+	cp BATTLETYPE_PORYGON
+	jp z, .boss
+	ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	call GetWorldMapLocation
+	ld c, a
+	ld hl, UniqueWildMoves
+.loop
+	ld a, [hli] ; landmark
+	cp -1
+	ret z
+	cp c
+	jr nz, .inc2andloop
+	ld a, [hli] ; species
+	ld b, a
+	ld a, [wCurPartySpecies]
+	cp b
+	jr nz, .inc1andloop
+	ld a, [hli] ; move
+	ld b, a
+	cp FLY
+	jr z, .TeachMove
+	cp SAND_ATTACK_SMOKESCREEN_FLASH
+	jr z, .TeachMove
+.ChanceToTeach
+	call Random
+	cp 50 percent + 1
+	ret nc
+.TeachMove
+	ld hl, wEnemyMonMoves + 1 ; second move
+	ld a, b
+	ld [hl], a
+	ret
+
+.inc2andloop
+	inc hl
+.inc1andloop
+	inc hl
+	jr .loop
+	
+.boss
+	ld a, [wTempEnemyMonSpecies]
+	ld c, a
+	ld hl, BossWildMoves
+.loop2
+	ld a, [hli] ; species
+	cp -1
+	ret z
+	cp c
+	jr nz, .inc4andloop2
+	ld a, [hli] ; move
+	ld b, a
+	push hl
+	ld hl, wEnemyMonMoves ; first move
+	ld a, b
+	ld [hl], a
+	
+	pop hl
+	ld a, [hli] ; move
+	ld b, a
+	push hl
+	ld hl, wEnemyMonMoves + 1; first move
+	ld a, b
+	ld [hl], a
+	
+	pop hl
+	ld a, [hli] ; move
+	ld b, a
+	push hl
+	ld hl, wEnemyMonMoves + 2; first move
+	ld a, b
+	ld [hl], a
+	
+	pop hl
+	ld a, [hli] ; move
+	ld b, a
+	ld hl, wEnemyMonMoves + 3; first move
+	ld a, b
+	ld [hl], a
+	ret
+
+.inc4andloop2
+	inc hl
+	inc hl
+	inc hl
+.inc1andloop2
+	inc hl
+	jr .loop2
+
+INCLUDE "data/pokemon/unique_wild_moves.asm"
+INCLUDE "data/pokemon/boss_wild_moves.asm"

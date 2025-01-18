@@ -90,6 +90,7 @@ RainbowSilverWingSpriteGFX:: 	INCBIN "gfx/sprites/rainbow_silver_wing.2bpp.lz"
 ArtifactsSpriteGFX:: 			INCBIN "gfx/sprites/artifacts.2bpp.lz"
 Cursola1SpriteGFX::         INCBIN "gfx/sprites/cursola_1.2bpp.lz"
 Cursola2SpriteGFX::         INCBIN "gfx/sprites/cursola_2.2bpp.lz"
+ClefairyWalkSpriteGFX::         INCBIN "gfx/sprites/clefairy_walk.2bpp.lz"
 
 SECTION "Overworld Sprites 3", ROMX
 

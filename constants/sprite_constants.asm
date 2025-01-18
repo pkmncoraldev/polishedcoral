@@ -215,6 +215,7 @@
 	const SPRITE_CHANSEY
 	const SPRITE_CURSOLA_1
 	const SPRITE_CURSOLA_2
+	const SPRITE_CLEFAIRY_WALK
 	
 	const_def $ed
 SPRITE_POKEMON EQU const_value

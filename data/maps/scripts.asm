@@ -90,6 +90,7 @@ INCLUDE "maps/Route6UnderwaterCave.asm"
 INCLUDE "maps/IceCaveIceRockRoom.asm"
 INCLUDE "maps/GreenGrotto1F.asm"
 INCLUDE "maps/GreenGrottoB1F.asm"
+INCLUDE "maps/GlintGroveUnderground.asm"
 
 
 SECTION "Routes Scripts", ROMX

@@ -960,3 +960,6 @@ UnderwaterTemple1_BlockData:
 UnderwaterTemple2_BlockData:
 	INCBIN "maps/UnderwaterTemple2.ablk.lz"
 	
+GlintGroveUnderground_BlockData:
+	INCBIN "maps/GlintGroveUnderground.ablk.lz"
+	

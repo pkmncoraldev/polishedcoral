@@ -3,8 +3,9 @@ GlintGroveEast_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 1 ; warp events
+	db 2 ; warp events
 	warp_def 13,  6, 1, GLINT_GROVE_DEEP
+	warp_def 37, 13, 1, GLINT_GROVE_UNDERGROUND
 
 	db 10 ; coord events
 	coord_event 12, 22, 0, GlintGroveEastMakeSilverBrown

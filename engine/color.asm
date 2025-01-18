@@ -968,7 +968,13 @@ LoadMapPals::
 	jr z, .grove
 	cp TILESET_SOUTH_BUILDINGS
 	jp z, .south_buildings
-	jp z, .computer
+	cp TILESET_GREEN_CAVE
+	jp z, .green_cave
+	jp .normal
+.green_cave
+	ld a, [wMapNumber]
+	cp MAP_GLINT_GROVE_DEEP
+	jp z, .coffee
 	jp .normal
 .route_29
 	ld a, [wMapNumber]
@@ -1440,9 +1446,6 @@ LoadMapPals::
 	jp z, .starglow
 	cp GROUP_DAYBREAK_GROTTO_1
 	jr nz, .rocks
-	ld a, [wMapNumber]
-	cp MAP_GLINT_GROVE_DEEP
-	jp z, .coffee
 .rocks
 	ld hl, MapObjectPalsRocks
 .rockscont

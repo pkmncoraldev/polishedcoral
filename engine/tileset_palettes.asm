@@ -310,6 +310,8 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, [wMapGroup]
 	cp GROUP_DESERT_TEMPLE_1
 	jr z, .deserttemple
+	cp GROUP_UNDERWATER_TEMPLE_2
+	jr z, .underwater_temple_dive
 	cp GROUP_DESERT_WASTELAND_OASIS
 	jp nz, .nett2_end
 	ld a, [wMapNumber]
@@ -323,6 +325,9 @@ LoadSpecialMapPalette: ; 494ac
 	jr z, .oasis1
 	jp .nett2_end
 	
+.underwater_temple_dive
+	ld hl, DiveSpotsPalette
+	jp LoadTimeofDayBGPal6
 .deserttemple
 	ld hl, DesertTemplePalette
 	ld a, [wTimeOfDayPal]

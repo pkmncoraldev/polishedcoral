@@ -5320,3 +5320,947 @@ CheckUniqueWildMove:
 
 INCLUDE "data/pokemon/unique_wild_moves.asm"
 INCLUDE "data/pokemon/boss_wild_moves.asm"
+
+MovementLeaf::
+	ld hl, wDailyFlags2
+	bit 7, [hl] ; ENGINE_WINDY_DAY
+	jr z, .leaf_reset
+	ld a, [wPlayerSpriteX]
+	add 100
+	ld e, a
+	ld a, [wObject1SpriteX]
+	cp e
+	jr z, .leaf_reset
+	ld a, [wPlayerStandingMapX]
+	ld [wObject1StandingMapX], a
+	xor a
+	ld [wObject1Flags + 1], a
+	
+	ld a, [wRanchRaceSeconds]
+	inc a
+	ld [wRanchRaceSeconds], a
+	
+	ld a, [wObject1SpriteX]
+	add 3
+	ld [wObject1SpriteX], a
+	
+	ld a, [wObject1SpriteY]
+	push af
+	ld a, [wRanchRaceFrames]
+	cp 0
+	jr z, .leaf_downward
+;.leaf_upward
+	call Random
+	cp 1 + (20 percent)
+	jr c, .leaf_sub
+	jr .leaf_stay
+.leaf_downward
+	call Random
+	cp 1 + (20 percent)
+	jr c, .leaf_add
+.leaf_stay
+	pop af
+	ld [wObject1SpriteY], a
+	ret
+.leaf_add
+	pop af
+	add 1
+	ld [wObject1SpriteY], a
+	ret
+.leaf_sub
+	pop af
+	sub 1
+	ld [wObject1SpriteY], a
+	ret
+	
+	
+.leaf_reset
+	call Random
+	cp 1 + (25 percent)
+	ret c
+	call Random
+	cp 1 + (50 percent)
+	jr c, .set_leaf_downward
+;.set_leaf_upward
+	ld a, 1
+	ld [wRanchRaceFrames], a
+	jr .leaf_reset_cont
+.set_leaf_downward
+	xor a
+	ld [wRanchRaceFrames], a
+.leaf_reset_cont
+	xor a
+	ld [wRanchRaceSeconds], a
+	ld a, [wPlayerSpriteX]
+	sub 100
+	ld [wObject1SpriteX], a
+	ld a, 70
+	call RandomRange
+	ld e, a
+	ld a, [wPlayerSpriteY]
+	push af
+	call Random
+	cp 1 + (50 percent)
+	jr c, .leaf_reset_add
+	pop af
+	sub e
+	jr .leaf_reset_cont2
+.leaf_reset_add
+	pop af
+	add e
+.leaf_reset_cont2
+	ld [wObject1SpriteY], a
+	ld a, [wPlayerStandingMapX]
+	ld [wObject1StandingMapX], a
+	ld [wObject1LastMapX], a
+	ld a, [wPlayerStandingMapY]
+	ld [wObject1StandingMapY], a
+	ld [wObject1LastMapY], a
+	ret
+
+ProfSpruceSpeech: ; 0x5f99
+	ld de, OriginalGameByGFX
+	ld hl, VTiles0
+	lb bc, BANK(OriginalGameByGFX), $0c
+	call Request2bpp
+
+	ld de, MUSIC_ROUTE_2
+	call PlayMusic
+
+	
+	call SetWhitePals
+	ld c, 31
+	call FadePalettes
+	
+	xor a
+	ld [wCurPartySpecies], a
+	ld a, PROF_SPRUCE
+	ld [wTrainerClass], a
+	call Intro_PrepTrainerPic
+	call ApplyTilemap
+
+	ld c, 60
+	call DelayFrames
+	
+	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
+
+	ld hl, SpruceText1
+	call PrintText
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap
+
+	ld a, MUNCHLAX
+	ld [wCurSpecies], a
+	ld [wCurPartySpecies], a
+	call GetBaseData
+
+	hlcoord 6, 4
+	call PrepMonFrontpic
+
+	xor a
+	ld [wTempMonDVs], a
+	ld [wTempMonDVs + 1], a
+	ld [wTempMonDVs + 2], a
+
+	call ApplyTilemap
+	
+	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
+
+	ld hl, SpruceText2
+	call PrintText
+	ld hl, SpruceText4
+	call PrintText
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap
+
+	xor a
+	ld [wCurPartySpecies], a
+	ld a, PROF_SPRUCE
+	ld [wTrainerClass], a
+	call Intro_PrepTrainerPic
+	call ApplyTilemap
+
+	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
+
+	ld hl, SpruceText5
+	call PrintText
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap
+	
+	call DelayFrame
+	hlbgcoord 0, 0
+	ld bc, BG_MAP_HEIGHT * BG_MAP_WIDTH
+	ld a, " "
+	call ByteFill
+	call RefreshScreen
+
+.ChooseGender:
+	ld b, CGB_INTRO_PLAYER_PALS
+	call GetCGBLayout
+	
+	ld hl, PlayerIntroPaletteWhite
+	ld de, wUnknBGPals palette 1
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	ld hl, PlayerIntroPaletteWhite
+	ld de, wUnknBGPals palette 2
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	
+	ld c, 30
+	call FadePalettes
+	ld hl, SpruceTextB
+	call PrintText
+	
+	xor a
+	ld [wCurPartySpecies], a
+	call FinishPrepIntroPicBoy
+	call FinishPrepIntroPicGirl
+	call DelayFrame
+	
+	ld hl, PlayerIntroPaletteGray
+	ld de, wUnknBGPals palette 1
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	ld hl, PlayerIntroPaletteGray
+	ld de, wUnknBGPals palette 2
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	ld c, 60
+	call FadePalettes
+	
+.genderloop
+	call JoyTextDelay
+	ld a, [hJoyLast]
+	and A_BUTTON
+	jr nz, .got_gender
+	call ChooseGender_HandleJoypad
+	call ChooseGender_UpdateCursorOAM
+	call DelayFrame
+	jr .genderloop
+	
+;	ld hl, .MenuDataHeader
+;	call LoadMenuDataHeader
+;	call ApplyAttrAndTilemapInVBlank
+;	call VerticalMenu
+;	call CloseWindow
+;	ld a, [wMenuCursorY]
+;	dec a
+.got_gender
+	call ClearSprites
+	ld de, SFX_READ_TEXT
+	call PlaySFX
+
+	ld a, [wPlaceBallsY]
+	ld [wPlayerGender], a
+	cp 0
+	jr nz, .girl
+	call Intro_PlayerFadeGirl
+	ld hl, SpruceTextF
+	call PrintText
+	call Intro_PlayerFadeBoy
+	jr .gender_done
+.girl
+	call Intro_PlayerFadeBoy
+	ld hl, SpruceTextF
+	call PrintText
+	call Intro_PlayerFadeGirl
+.gender_done
+	call ClearTileMap
+
+	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
+	call ApplyAttrAndTilemapInVBlank
+
+	ld hl, SpruceTextC
+	call PrintText
+	call ClearTileMap
+	ld hl, .MenuDataHeaderPal
+	call LoadMenuDataHeader
+	call ApplyAttrAndTilemapInVBlank
+	call VerticalMenu
+	call CloseWindow
+	ld a, [wMenuCursorY]
+	sub $1
+	ld [wPlayerPalette], a
+	ld [wPlayerInitialPalette], a
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap
+	
+	call Load1bppFont
+	call Load1bppFrame
+
+	ld c, 15
+	call DelayFrames
+	
+	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
+	call ApplyAttrAndTilemapInVBlank
+	
+	xor a
+	ld [wCurPartySpecies], a
+	farcall DrawIntroPlayerPic
+	
+	ld c, 60
+	call FadePalettes
+	
+	ld hl, SpruceTextD
+	call PrintText
+	call YesNoBox
+	jr c, .cancel
+	jp .ContinueOpening
+	
+.MenuDataHeader: ; 0x48dfc
+	db $40 ; flags
+	db 06, 06 ; start coords
+	db 11, 12 ; end coords
+	dw .MenuData2
+	db 1 ; default option
+; 0x48e04
+
+.MenuData2: ; 0x48e04
+	db $a1 ; flags
+	db 2 ; items
+	db "Boy@"
+	db "Girl@"
+		
+.MenuDataHeaderPal: ; 0x48dfc
+	db $40 ; flags
+	db 00, 05 ; start coords
+	db 16, 15 ; end coords
+	dw .MenuData2Pal
+	db 1 ; default option
+; 0x48e04
+
+.MenuData2Pal: ; 0x48e04
+	db $a1 ; flags
+	db 7 ; items
+	db "Red@"
+	db "Blue@"
+	db "Green@"
+	db "Brown@"
+	db "Purple@"
+	db "Teal@"
+	db "Pink@"
+	
+.cancel 
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap
+	farcall LoadNamingScreenGFX
+	jp .ChooseGender
+
+.ContinueOpening
+	ld hl, SpruceText6
+	call PrintText
+	call NamePlayer
+	ld a, [wPlayerGender]
+	cp PIPPI
+	jr nz, .notpippi2
+	
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap	
+	farcall _PippiScreen
+	
+	ld de, MUSIC_ROUTE_2 ; remove after demo
+	call PlayMusic ; remove after demo
+	jp .cancel ; remove after demo
+	
+;	jr .endpippiscreen ;uncomment after demo
+.notpippi2
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap
+
+	xor a
+	ld [wCurPartySpecies], a
+	farcall DrawIntroPlayerPic
+
+	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
+	
+	ld hl, SpruceText8
+	call PrintText
+.endpippiscreen
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap
+	farcall LoadNamingScreenGFX
+
+	xor a
+	ld [wCurPartySpecies], a
+	ld a, RIVAL
+	ld [wTrainerClass], a
+	call Intro_PrepTrainerPic
+	call ApplyTilemap
+	
+	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
+	
+	ld hl, SpruceText9
+	call PrintText
+	call NameRival
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap
+	
+	xor a
+	ld [wCurPartySpecies], a
+	ld a, RIVAL
+	ld [wTrainerClass], a
+	call Intro_PrepTrainerPic
+	call ApplyTilemap
+	
+	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
+	
+	ld hl, SpruceText7
+	call PrintText
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap
+	
+	xor a
+	ld [wCurPartySpecies], a
+	farcall DrawIntroPlayerPic
+
+	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
+	
+	ld hl, SpruceTextA
+	call PrintText
+	
+	ld a, [wPlayerGender]
+	cp PIPPI
+	ret nz
+	ld a, 7
+	ld [wPlayerPalette], a
+	ld [wPlayerInitialPalette], a
+	ret
+InitializeWorld:: ; 5d23
+	call Random
+	cp 50 percent
+	jr c, .set_windy
+	jr .skip
+.set_windy
+	ld hl, wDailyFlags2
+	set 7, [hl] ; ENGINE_WINDY_DAY
+.skip
+	call ShrinkPlayer
+	farcall SpawnPlayer
+	farjp _InitializeStartDay
+	
+Intro_PlayerFadeBoy:
+	ld hl, PlayerIntroPaletteWhite
+	ld de, wUnknBGPals palette 1
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	ld c, 30
+	jp FadePalettes
+	
+Intro_PlayerFadeGirl:
+	ld hl, PlayerIntroPaletteWhite
+	ld de, wUnknBGPals palette 2
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	ld c, 30
+	jp FadePalettes
+	
+ChooseGender_HandleJoypad: ; e089c
+	ld hl, hJoyLast
+	ld a, [hl]
+	and D_LEFT
+	jp nz, .d_left
+	ld a, [hl]
+	and D_RIGHT
+	jp nz, .d_right
+	ret
+.d_left
+	ld a, [wPlaceBallsY]
+	cp 0
+	ret z
+	dec a
+	ld [wPlaceBallsY], a
+	ld de, SFX_READ_TEXT
+	call PlaySFX
+	ret
+.d_right
+	ld a, [wPlaceBallsY]
+	cp 1
+	ret z
+	inc a
+	ld [wPlaceBallsY], a
+	ld de, SFX_READ_TEXT
+	call PlaySFX
+	ret
+	
+ChooseGender_UpdateCursorOAM:
+	ld a, [wPlaceBallsY]
+	cp 0
+	jr z, .one
+.two
+	ld hl, ChooseGender_OAM02
+	ld de, wSprites
+	ld bc, 9
+	jp CopyBytes
+.one
+	ld hl, ChooseGender_OAM01
+	ld de, wSprites
+	ld bc, 9
+	jp CopyBytes
+	
+ChooseGender_OAM01:
+;y pos, x pos, tile, palette
+	dsprite  4,  4, 6,  0, $09, $0 | BEHIND_BG
+	dsprite  4,  4, 7,  0, $0a, $0 | BEHIND_BG
+	
+ChooseGender_OAM02:
+;y pos, x pos, tile, palette
+	dsprite  4,  4, 15,  0, $09, $0 | BEHIND_BG
+	dsprite  4,  4, 16,  0, $0a, $0 | BEHIND_BG
+	
+FakeProfSpruceSpeech::
+	ld c, 31
+	call FadeToBlack
+	call ClearTileMap
+
+	ld de, MUSIC_ROUTE_2
+	call PlayMusic
+
+	
+	call SetWhitePals
+	ld c, 31
+	call FadePalettes
+	
+	xor a
+	ld [wCurPartySpecies], a
+	ld a, PROF_SPRUCE
+	ld [wTrainerClass], a
+	call Intro_PrepTrainerPic
+	call ApplyTilemap
+
+	ld c, 60
+	call DelayFrames
+	
+	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
+
+	ld hl, SpruceText1
+	call PrintText
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap
+
+	ld a, SPIRITOMB
+	ld [wCurSpecies], a
+	ld [wCurPartySpecies], a
+	call GetBaseData
+
+	hlcoord 6, 4
+	call PrepMonFrontpic
+
+	xor a
+	ld [wTempMonDVs], a
+	ld [wTempMonDVs + 1], a
+	ld [wTempMonDVs + 2], a
+
+	call ApplyTilemap
+	
+	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
+	call ApplyAttrAndTilemapInVBlank
+	ld c, 60
+	call FadePalettes
+	
+	ld a, [wOptions1]
+	push af
+	ld a, $3
+	ld c, a
+	ld a, [wOptions1]
+	and $fc
+	or c
+	ld [wOptions1], a
+	
+	set 6, a
+	ld [wInputFlags], a
+	
+	call SetUpTextBox
+	push hl
+	call ClearSpeechBox
+	pop hl
+	
+	call SaveMusic
+	
+	bccoord TEXTBOX_INNERX, TEXTBOX_INNERY
+	ld d, 9
+.loop
+	push de
+	ld hl, SpruceTextE
+	call PrintTextBoxText2
+	call RestoreMusic
+	inc bc
+	inc bc
+	inc bc
+	pop de
+	dec d
+	jr nz, .loop
+
+	
+	ld a, 60
+	ld [wPlaceBallsY], a
+.loop2
+	ld c, 2
+	call DelayFrames
+	call RestoreMusic
+	ld a, [wPlaceBallsY]
+	dec a
+	ld [wPlaceBallsY], a
+	cp 0
+	jr nz, .loop2
+	
+	ld de, MUSIC_NONE
+	call PlayMusic
+	
+	ld c, 150
+	call DelayFrames
+	
+	pop af
+	ld [wOptions1], a
+	
+	xor a
+	ld [wInputFlags], a
+	ret
+
+
+	ld hl, SpruceText2
+	call PrintText
+	ld hl, SpruceText4
+	call PrintText
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap
+	ret
+	
+SpruceText1: ; 0x6045
+	text_jump _SpruceText1
+	db "@"
+
+SpruceText2: ; 0x604a
+	text_jump _SpruceText2
+	start_asm
+	ld a, MUNCHLAX
+	call PlayCry
+	call WaitSFX
+	ld hl, SpruceText3
+	ret
+
+SpruceText3: ; 0x605b
+	text_jump _SpruceText3
+	db "@"
+
+SpruceText4: ; 0x6060
+	text_jump _SpruceText4
+	db "@"
+
+SpruceText5: ; 0x6065
+	text_jump _SpruceText5
+	db "@"
+
+SpruceText6: ; 0x606a
+	text_jump _SpruceText6
+	db "@"
+
+SpruceText7: ; 0x606f
+	text_jump _SpruceText7
+	db "@"
+	
+SpruceText8: ; 0x606f
+	text_jump _SpruceText8
+	db "@"
+	
+SpruceText9: ; 0x606f
+	text_jump _SpruceText9
+	db "@"
+	
+SpruceTextA: ; 0x606f
+	text_jump _SpruceTextA
+	db "@"
+	
+SpruceTextB: ; 0x606f
+	text_jump _SpruceTextB
+	db "@"
+
+SpruceTextC: ; 0x606f
+	text_jump _SpruceTextC
+	db "@"
+	
+SpruceTextD: ; 0x606f
+	text_jump _SpruceTextD
+	db "@"
+	
+SpruceTextE: ; 0x606f
+	text_jump _SpruceTextE
+	db "@"
+
+SpruceTextF: ; 0x606f
+	text_jump _SpruceTextF
+	db "@"
+
+
+
+TextJump_AreYouABoyOrAreYouAGirl: ; 0x48e0f
+	; Are you a boy? Or are you a girl?
+	text_jump Text_AreYouABoyOrAreYouAGirl
+	db "@"
+; 0x48e14
+
+NamePlayer: ; 0x6074
+	ld b, $1 ; player
+	ld de, wPlayerName
+	farcall NamingScreen
+	ld hl, wPlayerName
+	ld de, DefaultMalePlayerName
+	ld a, [wPlayerGender]
+	bit 0, a
+	jr z, .Male
+	ld de, DefaultFemalePlayerName
+.Male:
+	jp InitName
+
+NameRival: ; 0x6074
+	ld b, $2 ; rival
+	ld de, wRivalName
+	farcall NamingScreen
+	ld hl, wRivalName
+	ld de, DefaultRivalName
+	jp InitName
+
+INCLUDE "data/default_player_names.asm"
+
+ShrinkPlayer: ; 610f
+
+	ld a, [hROMBank]
+	push af
+
+	ld a, 0 << 7 | 32 ; fade out
+	ld [wMusicFade], a
+	ld de, MUSIC_NONE
+	ld a, e
+	ld [wMusicFadeIDLo], a
+	ld a, d
+	ld [wMusicFadeIDHi], a
+
+	ld de, SFX_ESCAPE_ROPE
+	call PlaySFX
+	pop af
+	rst Bankswitch
+
+	ld c, 8
+	call DelayFrames
+
+	ld hl, Shrink1Pic
+	ld b, BANK(Shrink1Pic)
+	call ShrinkFrame
+
+	ld c, 8
+	call DelayFrames
+
+	ld hl, Shrink2Pic
+	ld b, BANK(Shrink2Pic)
+	call ShrinkFrame
+
+	ld c, 8
+	call DelayFrames
+
+	hlcoord 6, 4
+	lb bc, 7, 7
+	call ClearBox
+
+	ld c, 3
+	call DelayFrames
+
+	call Intro_PlacePlayerSprite
+	call Load1bppFrame
+
+	ld c, 50
+	call DelayFrames
+
+	ld c, 15
+	call FadeToWhite
+	jp ClearTileMap
+; 616a
+
+Intro_PleaseJustFuckingWork:
+	ld hl, IntroFadeTestThing
+	ld a, [hli]
+	call DmgToCgbBGPals
+;	ld c, 10
+;	call DelayFrames
+	ret
+	
+IntroFadeTestThing:
+	db %11100100
+
+Intro_RotatePalettesLeftFrontpic: ; 616a
+	ld hl, IntroFadePalettes
+	ld b, IntroFadePalettesEnd - IntroFadePalettes
+.loop
+	ld a, [hli]
+	call DmgToCgbBGPals
+	ld c, 10
+	call DelayFrames
+	dec b
+	jr nz, .loop
+	ret
+; 617c
+
+IntroFadePalettes: ; 0x617c
+	db %01010100
+	db %10101000
+	db %11111100
+	db %11111000
+	db %11110100
+	db %11100100
+IntroFadePalettesEnd:
+; 6182
+DrawIntroPlayerPic:
+	xor a
+	ld [wCurPartySpecies], a
+	ld a, [wPlayerGender]
+	cp PIPPI
+	jr nz, .notpippi
+	ld a, PLAYER_PIPPI
+	jr .ok
+.notpippi
+	ld a, [wPlayerGender]
+	bit 0, a
+	jr z, .male
+	ld a, PLAYER_CORA
+	jr .ok
+.male
+	ld a, PLAYER_CORY
+.ok
+	ld [wTrainerClass], a
+Intro_PrepTrainerPic: ; 619c
+	ld de, VTiles2
+	farcall GetTrainerPic
+	jr FinishPrepIntroPic
+; 61b4
+
+ShrinkFrame: ; 61b4
+	ld de, VTiles2
+	ld c, $31
+	predef DecompressPredef
+FinishPrepIntroPic:
+	xor a
+	ld [hGraphicStartTile], a
+	hlcoord 6, 4
+	lb bc, 7, 7
+	predef PlaceGraphic
+	ret
+
+FinishPrepIntroPicBoy:
+	ld a, PLAYER_CORY
+	ld [wTrainerClass], a
+	ld de, VTiles2
+	farcall GetTrainerPic
+	xor a
+	ld [hGraphicStartTile], a
+	hlcoord 2, 4
+	lb bc, 7, 7
+	predef PlaceGraphic
+	ret
+	
+FinishPrepIntroPicGirl:
+	ld a, PLAYER_CORA
+	ld [wTrainerClass], a
+	ld de, VTiles2 tile 49
+	farcall GetTrainerPic
+	ld a, 49
+	ld [hGraphicStartTile], a
+	hlcoord 11, 4
+	lb bc, 7, 7
+	predef PlaceGraphic
+	ret
+
+Intro_PlacePlayerSprite: ; 61cd
+	farcall GetPlayerIcon
+	ld c, $c
+	ld hl, VTiles0
+	call Request2bppInWRA6
+
+	ld hl, wSprites
+	ld de, .sprites
+	ld a, [de]
+	inc de
+
+	ld c, a
+.loop
+	ld a, [de]
+	inc de
+	ld [hli], a
+	ld a, [de]
+	inc de
+	ld [hli], a
+	ld a, [de]
+	inc de
+	ld [hli], a
+
+	ld b, 0
+	ld a, [wPlayerGender]
+	bit 0, a
+	jr z, .male
+	ld b, 1
+.male
+	ld a, b
+
+	ld [hli], a
+	dec c
+	jr nz, .loop
+	ret
+; 61fe
+
+.sprites ; 61fe
+	db 4
+	db  9 * 8 + 4,  9 * 8, 0
+	db  9 * 8 + 4, 10 * 8, 1
+	db 10 * 8 + 4,  9 * 8, 2
+	db 10 * 8 + 4, 10 * 8, 3

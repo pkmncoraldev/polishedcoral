@@ -79,6 +79,7 @@ Pointers445f: ; 445f
 	dw SetFacingNoRender,              SetFacingNoRender 		  ; PERSON_ACTION_NO_RENDER
 	dw SetFacingTileHalfwayLeft, 	   SetFacingTileHalfwayLeft	  ; PERSON_ACTION_TILE_HALFWAY_LEFT
 	dw SetFacingTileHalfwayRight,      SetFacingTileHalfwayRight  ; PERSON_ACTION_TILE_HALFWAY_RIGHT
+	dw SetFacingCursola, 			   SetFacingCursola			  ; PERSON_ACTION_
 	
 ; 44a3
 
@@ -696,6 +697,10 @@ SetFacingCasino1:
 	
 SetFacingCasino2:
 	ld a, FACING_CASINO_2
+	jp SetFixedFacing
+	
+SetFacingCursola:
+	ld a, FACING_CURSOLA_1
 	jp SetFixedFacing
 	
 SetFacingFlowerShake:

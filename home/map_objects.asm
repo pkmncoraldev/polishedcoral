@@ -33,6 +33,10 @@ GetSpriteVTile:: ; 180e
 	jr z, .use_last_struct
 	cp SPRITE_BIG_MUK
 	jr z, .use_last_struct
+	cp SPRITE_BIG_CURSOLA_1
+	jr z, .use_last_struct
+	cp SPRITE_BIG_CURSOLA_2
+	jr z, .use_last_struct
 	cp SPRITE_SAILBOAT
 	jr z, .use_last_struct
 	ld a, [hObjectStructIndexBuffer]

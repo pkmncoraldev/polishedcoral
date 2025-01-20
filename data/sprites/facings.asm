@@ -98,6 +98,13 @@ Facings:
 	dw FacingFlower2         ; FACING_FLOWER_2
 	dw FacingTileHalfwayLeft
 	dw FacingTileHalfwayRight
+	dw FacingCursola1
+	dw FacingCursola2
+	dw FacingCursola3
+	dw FacingCursola4
+	dw FacingCursola5
+	dw FacingCursola6
+	dw FacingCursola7
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -107,6 +114,83 @@ NUM_FACINGS EQU (FacingsEnd - Facings) / 2
 
 ; Format:
 ;	db y, x, attributes, tile index
+
+FacingCursola1:
+	db 2 ; #
+	db  8,  0, 2, $91
+	db  8,  8, 2, $92
+FacingCursola2:
+	db 3 ; #
+	db  0,  0, 0, $83
+	db  8,  0, 2, $93
+	db  8,  8, 2, $92
+FacingCursola3:
+	db 2 ; #
+	db  8,  0, 2, $94
+	db  8,  8, 2, $92
+FacingCursola4:
+	db 4 ; #
+	db  0,  0, 0, $84
+	db  0,  8, 0, $85
+	db  8,  0, 2, $95
+	db  8,  8, 2, $92
+FacingCursola5:
+	db 8 ; #
+	db  -16,  0, 0, $00
+	db  -16,  8, 0, $01
+	db  -8,  -8, 0, $0e
+	db  -8,  0, 2, $0f
+	db  -8,  8, 2, $10
+	db  0,  0, 0, $86
+	db  8,  0, 2, $96
+	db  8,  8, 2, $92
+FacingCursola6:
+	db 12 ; #
+	db  -16,  -8, 0, $02
+	db  -16,  0, 0, $03
+	db  -16,  8, 0, $04
+	db  -16,  16, 0, $05
+	db  -8,  -8, 0, $11
+	db  -8,  0, 2, $12
+	db  -8,  8, 2, $13
+	db  -8,  16, 2, $14
+	db  0,  0, 0, $87
+	db  0,  8, 0, $88
+	db  8,  0, 2, $96
+	db  8,  8, 2, $92
+FacingCursola7:
+	db 14 ; #
+	db  -16,  -8, 0, $06
+	db  -16,  0, 0, $07
+	db  -16,  8, 0, $08
+	db  -16,  16, 0, $09
+	db  -8,  -8, 0, $15
+	db  -8,  0, 2, $16
+	db  -8,  8, 2, $17
+	db  -8,  16, 2, $18
+	db  0,  -8, 0, $89
+	db  0,  0, 0, $8a
+	db  0,  8, 0, $8b
+	db  0,  16, 0, $8c
+	db  8,  0, 2, $97
+	db  8,  8, 2, $98
+FacingCursola8:
+	db 14 ; #
+	db  -16,  -8, 0, $0a
+	db  -16,  0, 0, $0b
+	db  -16,  8, 0, $0c
+	db  -16,  16, 0, $0d
+	db  -8,  -8, 0, $19
+	db  -8,  0, 2, $80
+	db  -8,  8, 2, $81
+	db  -8,  16, 2, $82
+	db  0,  -8, 0, $8d
+	db  0,  0, 0, $8e
+	db  0,  8, 0, $8f
+	db  0,  16, 0, $90
+	db  8,  0, 2, $97
+	db  8,  8, 2, $98
+
 
 FacingStepDown0:
 FacingStepDown2:

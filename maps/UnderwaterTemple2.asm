@@ -24,7 +24,7 @@ UnderwaterTemple2_MapScriptHeader:
 
 	db 4 ; object events
 	person_event SPRITE_GENERAL_VARIABLE_1, 15,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, UnderwaterTemple2Corsola, EVENT_UNDERWATER_TEMPLE_2_CORSOLA
-	person_event SPRITE_GENERAL_VARIABLE_1,  8, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, UnderwaterTemple2CursolaTest, EVENT_UNDERWATER_TEMPLE_2_CURSOLA
+	person_event SPRITE_BIG_CURSOLA_1,  8, 25, SPRITEMOVEDATA_CURSOLA, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, UnderwaterTemple2CursolaTest, EVENT_UNDERWATER_TEMPLE_2_CURSOLA
 	itemball_event 27, 30, CORAL_SHARD, 1, EVENT_UNDERWATER_TEMPLE_2_POKEBALL
 	itemball_event 25,  5, ANCIENT_BALL, 1, EVENT_UNDERWATER_TEMPLE_2_ARTIFACT
 
@@ -36,53 +36,53 @@ UnderwaterTemple2_MapScriptHeader:
 
 UnderwaterTemple2Callback:
 	loadvar wTimeOfDayPalFlags, $40 | 0
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CURSOLA_1
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CURSOLA
 	return
 
 UnderwaterTemple2CursolaTest:
-	opentext
-	writetext UnderwaterTemple2CursolaTestText2
-	yesorno
-	iffalse .no
-	closetext
-	waitsfx
-	pause 40
-	playsound SFX_COMET_PUNCH
-	pause 5
-	spriteface UNDERWATER_TEMPLE_CURSOLA, UP
-	pause 4
-	spriteface UNDERWATER_TEMPLE_CURSOLA, LEFT
-	pause 20
-	opentext
-	writetext UnderwaterTemple2CursolaTestText
-	waitbutton
-	closetext
-	pause 10
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CURSOLA_2
-	pause 20
-	spriteface UNDERWATER_TEMPLE_CURSOLA, UP
-	pause 2
-	spriteface UNDERWATER_TEMPLE_CURSOLA, DOWN
-	pause 40
-	loadwildmon CURSOLA, 40
-	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
-	startbattle
-	disappear UNDERWATER_TEMPLE_CURSOLA
-	reloadmapafterbattle
-	setevent EVENT_UNDERWATER_TEMPLE_2_CURSOLA
-	checkcode VAR_MONJUSTCAUGHT
-	if_equal CURSOLA, .CaughtCursola
-	opentext
-	writetext UnderwaterTemple2CursolaTestTextGone
-	waitbutton
-	closetext
-.CaughtCursola
-	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	end
-.no
-	writetext UnderwaterTempleOutsideDoorText6
-	waitbutton
-	closetext
+	; opentext
+	; writetext UnderwaterTemple2CursolaTestText2
+	; yesorno
+	; iffalse .no
+	; closetext
+	; waitsfx
+	; pause 40
+	; playsound SFX_COMET_PUNCH
+	; pause 5
+	; spriteface UNDERWATER_TEMPLE_CURSOLA, UP
+	; pause 4
+	; spriteface UNDERWATER_TEMPLE_CURSOLA, LEFT
+	; pause 20
+	; opentext
+	; writetext UnderwaterTemple2CursolaTestText
+	; waitbutton
+	; closetext
+	; pause 10
+	; variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CURSOLA_2
+	; pause 20
+	; spriteface UNDERWATER_TEMPLE_CURSOLA, UP
+	; pause 2
+	; spriteface UNDERWATER_TEMPLE_CURSOLA, DOWN
+	; pause 40
+	; loadwildmon CURSOLA, 40
+	; writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+	; startbattle
+	; disappear UNDERWATER_TEMPLE_CURSOLA
+	; reloadmapafterbattle
+	; setevent EVENT_UNDERWATER_TEMPLE_2_CURSOLA
+	; checkcode VAR_MONJUSTCAUGHT
+	; if_equal CURSOLA, .CaughtCursola
+	; opentext
+	; writetext UnderwaterTemple2CursolaTestTextGone
+	; waitbutton
+	; closetext
+; .CaughtCursola
+	; writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	; end
+; .no
+	; writetext UnderwaterTempleOutsideDoorText6
+	; waitbutton
+	; closetext
 	end	
 	
 UnderwaterTemple2CursolaTestText:

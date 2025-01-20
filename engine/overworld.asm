@@ -473,12 +473,17 @@ GetSprite:: ; 1423c
 	ld a, l
 	cp BIG_MUK_SPRITE
 	jr z, .muk
+	cp BIG_CURSOLA_SPRITE
+	jr z, .cursola
 	cp BIG_GYARADOS_SPRITE
 	ret z
 	ld c, 12
 	ret
 .muk
 	ld c, 17
+	ret
+.cursola
+	ld c, 26
 	ret
 
 GetUsedSpritePlayer:: ; 143c8

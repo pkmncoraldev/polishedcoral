@@ -650,6 +650,7 @@ MapObjectMovementPattern:
 	dw .NoRender
 	dw .MovementTileHalfwayLeft
 	dw .MovementTileHalfwayRight
+	dw .MovementCursola
 
 .RandomWalkY:
 	call Random
@@ -718,101 +719,7 @@ MapObjectMovementPattern:
 	ret
 	
 .leaf
-	ld hl, wDailyFlags2
-	bit 7, [hl] ; ENGINE_WINDY_DAY
-	jr z, .leaf_reset
-	ld a, [wPlayerSpriteX]
-	add 100
-	ld e, a
-	ld a, [wObject1SpriteX]
-	cp e
-	jr z, .leaf_reset
-	ld a, [wPlayerStandingMapX]
-	ld [wObject1StandingMapX], a
-	xor a
-	ld [wObject1Flags + 1], a
-	
-	ld a, [wRanchRaceSeconds]
-	inc a
-	ld [wRanchRaceSeconds], a
-	
-	ld a, [wObject1SpriteX]
-	add 3
-	ld [wObject1SpriteX], a
-	
-	ld a, [wObject1SpriteY]
-	push af
-	ld a, [wRanchRaceFrames]
-	cp 0
-	jr z, .leaf_downward
-;.leaf_upward
-	call Random
-	cp 1 + (20 percent)
-	jr c, .leaf_sub
-	jr .leaf_stay
-.leaf_downward
-	call Random
-	cp 1 + (20 percent)
-	jr c, .leaf_add
-.leaf_stay
-	pop af
-	ld [wObject1SpriteY], a
-	ret
-.leaf_add
-	pop af
-	add 1
-	ld [wObject1SpriteY], a
-	ret
-.leaf_sub
-	pop af
-	sub 1
-	ld [wObject1SpriteY], a
-	ret
-	
-	
-.leaf_reset
-	call Random
-	cp 1 + (25 percent)
-	ret c
-	call Random
-	cp 1 + (50 percent)
-	jr c, .set_leaf_downward
-;.set_leaf_upward
-	ld a, 1
-	ld [wRanchRaceFrames], a
-	jr .leaf_reset_cont
-.set_leaf_downward
-	xor a
-	ld [wRanchRaceFrames], a
-.leaf_reset_cont
-	xor a
-	ld [wRanchRaceSeconds], a
-	ld a, [wPlayerSpriteX]
-	sub 100
-	ld [wObject1SpriteX], a
-	ld a, 70
-	call RandomRange
-	ld e, a
-	ld a, [wPlayerSpriteY]
-	push af
-	call Random
-	cp 1 + (50 percent)
-	jr c, .leaf_reset_add
-	pop af
-	sub e
-	jr .leaf_reset_cont2
-.leaf_reset_add
-	pop af
-	add e
-.leaf_reset_cont2
-	ld [wObject1SpriteY], a
-	ld a, [wPlayerStandingMapX]
-	ld [wObject1StandingMapX], a
-	ld [wObject1LastMapX], a
-	ld a, [wPlayerStandingMapY]
-	ld [wObject1StandingMapY], a
-	ld [wObject1LastMapY], a
-	ret
+	farjp MovementLeaf
 	
 .baggage:
 	ld a, [wRanchRaceSeconds]
@@ -1171,6 +1078,10 @@ MapObjectMovementPattern:
 	
 .MovementCandle:
 	ld a, PERSON_ACTION_CANDLE
+	jp ._ActionA_StepType04
+	
+.MovementCursola
+	ld a, PERSON_ACTION_CURSOLA
 	jp ._ActionA_StepType04
 	
 .MovementTileUpDown:

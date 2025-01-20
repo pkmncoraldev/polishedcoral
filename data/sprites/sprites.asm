@@ -217,8 +217,9 @@ SpriteHeaders:
 	overworld_sprite MuseumStandeeSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite CoralStarSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite ChanseyOwSpriteGFX, STANDING_SPRITE, PAL_OW_PINK
-	overworld_sprite Cursola1SpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
-	overworld_sprite Cursola2SpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite CursolaSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite BigCursola1SpriteGFX, BIG_CURSOLA_SPRITE, PAL_OW_BLUE
+	overworld_sprite BigCursola2SpriteGFX, BIG_MUK_SPRITE, PAL_OW_BLUE
 	overworld_sprite ClefairyWalkSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 
 SpriteHeadersPlayers:

@@ -105,6 +105,7 @@ Facings:
 	dw FacingCursola5
 	dw FacingCursola6
 	dw FacingCursola7
+	dw FacingCursola8
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2

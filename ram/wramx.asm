@@ -107,7 +107,8 @@ NEXTU
 ; miscellaneous
 wTempDayOfWeek::
 wUnusedApricorns:: ds 1
-	ds 2
+wOWSpriteAnimationTimer:: ds 1
+	ds 1
 
 wStartFlypoint:: ds 1
 wEndFlypoint:: ds 1

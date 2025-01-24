@@ -700,9 +700,51 @@ SetFacingCasino2:
 	jp SetFixedFacing
 	
 SetFacingCursola:
-	ld a, FACING_CURSOLA_1
-	jp SetFixedFacing
+	call IncrementOWSpriteAnimationTimer
+	ld hl, FacingCursolaData
+	jp AnimateOWSprite
 	
+FacingCursolaData:
+	;frame number, facing
+	;last entry determines whether or not to loop
+	dbw 5, 		FACING_CURSOLA_1
+	dbw 10, 	FACING_CURSOLA_2
+	dbw 105,	FACING_CURSOLA_3
+	dbw 110,	FACING_CURSOLA_4
+	dbw 118, 	FACING_CURSOLA_5
+	dbw 126, 	FACING_CURSOLA_6
+	dbw 134, 	FACING_CURSOLA_7
+	dbw 135, 	FACING_CURSOLA_8
+	dbw -1, 	TRUE
+
+IncrementOWSpriteAnimationTimer:
+	ld a, [wOWSpriteAnimationTimer]
+	inc a
+	ld [wOWSpriteAnimationTimer], a
+	ret
+
+AnimateOWSprite:
+	ld a, [hli]
+	cp -1
+	jr z, .end
+	ld e, a
+	ld a, [wOWSpriteAnimationTimer]
+	cp e
+	jr c, .yes
+	inc hl
+	inc hl
+	jr AnimateOWSprite
+.yes
+	ld a, [hl]
+	jp SetFixedFacing
+.end
+	ld a, [hl]
+	cp TRUE ;loop
+	ret z
+	ld a, $fe
+	ld [wOWSpriteAnimationTimer], a
+	ret
+
 SetFacingFlowerShake:
 	ld hl, OBJECT_STEP_FRAME
 	add hl, bc

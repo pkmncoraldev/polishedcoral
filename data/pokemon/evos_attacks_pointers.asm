@@ -270,9 +270,11 @@ EvosAttacksPointers:: ; 0x425b1
 	dw Muk_AEvosAttacks
 	dw ExeggcuteEvosAttacks
 	dw Exeggutor_AEvosAttacks
-	dw ExeggcuteEvosAttacks
+	dw ExeggutorEvosAttacks
 	dw Marowak_AEvosAttacks
 	dw GyaradosEvosAttacks
+	dw SunfloraEvosAttacks
+	dw SunfloraEvosAttacks
 	dw Wooper_PEvosAttacks
 	dw Corsola_GEvosAttacks
 	dw SlitherWingEvosAttacks

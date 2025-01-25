@@ -269,6 +269,18 @@ EvolutionMoves::
 	db NO_MOVE                              ; EXEGGUTOR_RG
 	db SHADOW_BONE                          ; MAROWAK_A
 	db NO_MOVE                              ; GYARADOS_RG
+	db NO_MOVE                              ; SUNFLORA_S
+	db NO_MOVE                              ; SUNFLORA_S
 	db NO_MOVE                              ; WOOPER_P
 	db NO_MOVE                              ; CORSOLA_G
 	db NO_MOVE                              ; SLITHER_WING
+	db NO_MOVE                              ; SMEARGLE
+	db NO_MOVE                              ; SMEARGLE
+	db NO_MOVE                              ; SMEARGLE
+	db NO_MOVE                              ; SMEARGLE
+	db NO_MOVE                              ; SMEARGLE
+	db NO_MOVE                              ; SMEARGLE
+	db NO_MOVE                              ; SMEARGLE
+	db NO_MOVE                              ; SMEARGLE
+	db SUNNY_DAY                            ; CHERRIM_S
+	db NO_MOVE                              ; MIMIKYU_B

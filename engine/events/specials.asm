@@ -773,10 +773,12 @@ MinaGoodbyeText5:
 Special_DisableInput:
 	set 6, a
 	ld [wInputFlags], a
+	ld [wForceStand], a
 	ret
 	
 Special_EnableInput:
 	xor a
 	ld [wInputFlags], a
+	ld [wForceStand], a
 	ret
 	

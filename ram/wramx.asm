@@ -1148,8 +1148,9 @@ wTimerStartDay:: ds 1
 wFruitTreeFlags:: flag_array NUM_FRUIT_TREES
 
 wFlowerPileFlags:: ds 1
+wForceStand:: ds 1
 
-	ds 49 ;unused
+	ds 48 ;unused
 	
 wSkateparkCurTrick:: ds 1
 wSkateparkComboTimer:: ds 1

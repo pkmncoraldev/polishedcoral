@@ -10,12 +10,12 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	
 .GetDPad:
 
-	ld a, [wOWSpriteAnimationTimer]
+	ld a, [wForceStand]
 	cp 0
 	ld a, 0
-	jr nz, .ow_animation
+	jr nz, .force_stand
 	ld a, [hJoyDown]
-.ow_animation
+.force_stand
 	ld [wCurInput], a
 
 ; Standing downhill instead moves down.

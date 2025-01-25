@@ -84,6 +84,7 @@ Landmarks: ; 0x1ca8c3
 	
 	
 	landmark -16, -16, GateName
+	landmark -16, -16, DiveName
 
 
 SunsetBayName:         db "SUNSET BAY@"
@@ -160,4 +161,5 @@ BusinessName:	 	   db "BUSINESS¯DISTRICT@"
 UnkownPassageName:	   db "UNKNOWN PASSAGE@"
 ConnectingCavernName:  db "CONNECTING¯CAVERN@"
 GateName:	 	 	   db "UNKNOWN@"
+DiveName:	 	 	   db "UNDERWATER@"
 SpecialMapName:        db "?","@"

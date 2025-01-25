@@ -1089,18 +1089,6 @@ GameInit:: ; 642e
 	call ApplyTilemapInVBlank
 	jp CrystalIntroSequence
 ; 6454
-
-PlayerIntroPaletteWhite:
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-
-PlayerIntroPaletteGray:
-	RGB 31, 31, 31
-	RGB 24, 24, 24
-	RGB 12, 12, 12
-	RGB 00, 00, 00
 	
 CoralDevScreenBusterPalette:
 	RGB 31, 00, 31

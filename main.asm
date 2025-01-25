@@ -5854,6 +5854,18 @@ ChooseGender_OAM02:
 	dsprite  4,  4, 15,  0, $09, $0 | BEHIND_BG
 	dsprite  4,  4, 16,  0, $0a, $0 | BEHIND_BG
 	
+PlayerIntroPaletteWhite:
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+
+PlayerIntroPaletteGray:
+	RGB 31, 31, 31
+	RGB 24, 24, 24
+	RGB 12, 12, 12
+	RGB 00, 00, 00
+	
 FakeProfSpruceSpeech::
 	ld c, 31
 	call FadeToBlack

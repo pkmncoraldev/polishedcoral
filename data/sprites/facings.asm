@@ -106,6 +106,7 @@ Facings:
 	dw FacingCursola6
 	dw FacingCursola7
 	dw FacingCursola8
+	dw FacingCursola9
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -191,6 +192,10 @@ FacingCursola8:
 	db  0,  16, 0, $90
 	db  8,  0, 2, $97
 	db  8,  8, 2, $98
+FacingCursola9:
+	db 2 ; #
+	db  8,  0, 2, $99
+	db  8,  8, 2, $92
 
 
 FacingStepDown0:

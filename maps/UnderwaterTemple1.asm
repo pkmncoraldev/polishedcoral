@@ -385,6 +385,7 @@ UnderwaterTemple1Door:
 	waitbutton
 	closetext
 	setevent EVENT_UNDERWATER_TEMPLE_1_DOOR_OPEN
+	playmapmusic
 	end
 .no_more_shards
 	writetext UnderwaterTempleOutsideDoorText9

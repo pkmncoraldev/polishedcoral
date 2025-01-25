@@ -50,12 +50,12 @@ UnderwaterTemple2Callback:
 	return
 
 UnderwaterTemple2Cursola:
+	loadvar wOWSpriteAnimationTimer, 0
 	opentext
 	writetext UnderwaterTemple2CursolaText2
 	yesorno
 	iffalse .no
 	closetext
-	waitsfx
 	pause 40
 	playmusic MUSIC_NONE
 	playsound SFX_COMET_PUNCH
@@ -94,6 +94,7 @@ UnderwaterTemple2Cursola2:
 	startbattle
 	disappear UNDERWATER_TEMPLE_CURSOLA
 	disappear UNDERWATER_TEMPLE_CORSOLA_2
+	clearevent EVENT_UNDERWATER_TEMPLE_2_CORSOLA_2
 	reloadmapafterbattle
 	setevent EVENT_UNDERWATER_TEMPLE_2_CURSOLA
 	setevent EVENT_UNDERWATER_TEMPLE_2_CORSOLA_2
@@ -106,6 +107,7 @@ UnderwaterTemple2Cursola2:
 .CaughtCursola
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	loadvar wOWSpriteAnimationTimer, 0
+	playmapmusic
 	end
 	
 UnderwaterTemple2CursolaText:
@@ -133,6 +135,12 @@ UnderwaterTemple2CursolaTextGone:
 
 UnderwaterTemple2Corsola:
 	opentext
+	writetext UnderwaterTemple2CursolaText2
+	yesorno
+	iffalse .no
+	closetext
+	pause 40
+	opentext
 	writetext UnderwaterTemple2CorsolaText
 	cry CORSOLA
 	waitbutton
@@ -152,6 +160,11 @@ UnderwaterTemple2Corsola:
 	closetext
 .CaughtCorsola
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	end
+.no
+	writetext UnderwaterTempleOutsideDoorText6
+	waitbutton
+	closetext
 	end
 	
 UnderwaterTemple2CorsolaText:

@@ -709,6 +709,8 @@ FacingCursolaData:
 	;last entry determines whether or not to loop
 	dbw 5, 		FACING_CURSOLA_1
 	dbw 10, 	FACING_CURSOLA_2
+	dbw 12, 	FACING_CURSOLA_9
+	dbw 14, 	FACING_CURSOLA_2
 	dbw 105,	FACING_CURSOLA_3
 	dbw 110,	FACING_CURSOLA_4
 	dbw 118, 	FACING_CURSOLA_5

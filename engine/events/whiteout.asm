@@ -73,6 +73,7 @@ WhiteoutHandleEvents:
 	clearevent EVENT_SANDSTORM_HAPPENING
 	clearevent EVENT_AIRPORT_FENCE
 	clearevent EVENT_CAPE_LIGHTHOUSE_COLORS
+	clearevent EVENT_UNDERWATER_TEMPLE_GREEN
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	domaptrigger SUNSET_CAPE, $0
 	domaptrigger ROUTE_10, $0

@@ -10,7 +10,7 @@ TwinkleTown_MapScriptHeader:
 	db 7 ; warp events
 	warp_def 47, 11, 1, TWINKLE_POKECENTER
 	warp_def 41, 17, 2, TWINKLE_MART
-	warp_def 31, 17, 1, TWINKLE_ROCK_HOUSE
+	warp_def 31, 17, 1, ROUTE_10_MOVE_REMINDER_HOUSE
 	warp_def 39,  7, 1, TWINKLE_TRADE_HOUSE
 	warp_def 49, 21, 1, TWINKLE_SNOW_HOUSE
 	warp_def  5, 34, 1, ICE_CAVE_B1F
@@ -18,7 +18,7 @@ TwinkleTown_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 16 ; bg events
+	db 17 ; bg events
 	signpost 44,  8, SIGNPOST_READ, TwinkleTownSign
 	signpost 22, 12, SIGNPOST_READ, TwinkleTownGymSign
 	signpost 47, 12, SIGNPOST_READ, TwinkleTownPokeCenterSign
@@ -32,6 +32,7 @@ TwinkleTown_MapScriptHeader:
 	signpost 38, 10, SIGNPOST_READ, TwinkleTownWood
 	signpost 31, 20, SIGNPOST_READ, TwinkleTownWood
 	signpost 30, 20, SIGNPOST_READ, TwinkleTownWood
+	signpost 32, 18, SIGNPOST_READ, Route10MoveRelearnerSign
 	bg_event 20, 29, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_TWINKLE_TOWN
 	bg_event 22, 55, SIGNPOST_ITEM + REVIVE, EVENT_TWINKLE_HIDDEN_REVIVE
 	bg_event 27, 25, SIGNPOST_ITEM + PP_UP, EVENT_TWINKLE_HIDDEN_PP_UP

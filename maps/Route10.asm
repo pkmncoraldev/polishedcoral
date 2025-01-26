@@ -14,7 +14,7 @@ Route10_MapScriptHeader:
 	warp_def 35, 13, 3, FLICKER_PASS_2F
 	warp_def 47,  7, 4, FLICKER_PASS_2F
 	warp_def 31, 11, 1, ROUTE_10_REST_HOUSE
-	warp_def  3, 33, 1, ROUTE_10_MOVE_REMINDER_HOUSE
+	warp_def  3, 33, 1, TWINKLE_ROCK_HOUSE
 	warp_def 47, 27, 1, ICE_CAVE_ICE_ROCK_ROOM
 
 	db 48 ; coord events
@@ -67,13 +67,12 @@ Route10_MapScriptHeader:
 	xy_trigger 2, 47, 34, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 3, 47, 34, 0, Route10StartSnowstorm, 0, 0
 
-	db 10 ; bg events
+	db 9 ; bg events
 	bg_event 30, 44, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_10_HIDDEN_ITEM_1
 	bg_event  8, 30, SIGNPOST_ITEM + PP_UP, EVENT_ROUTE_10_HIDDEN_ITEM_2
 	signpost 36,  9, SIGNPOST_READ, Route10Snowman1
 	signpost  9, 41, SIGNPOST_READ, Route10Snowman2
 	signpost 32, 16, SIGNPOST_READ, Route10Sign
-	signpost  4, 35, SIGNPOST_READ, Route10MoveRelearnerSign
 	signpost  3, 36, SIGNPOST_READ, TwinkleTownWood
 	signpost  2, 36, SIGNPOST_READ, TwinkleTownWood
 	signpost 31,  9, SIGNPOST_READ, TwinkleTownWood

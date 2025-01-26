@@ -4,8 +4,8 @@ TwinkleRockHouse_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def  9,  1, 3, TWINKLE_TOWN
-	warp_def  9,  2, 3, TWINKLE_TOWN
+	warp_def  9,  1, 4, ROUTE_10
+	warp_def  9,  2, 4, ROUTE_10
 
 	db 0 ; coord events
 

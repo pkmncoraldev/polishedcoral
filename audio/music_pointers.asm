@@ -69,6 +69,7 @@ Music:
 	dba Music_Erika
 	dba Music_Obscura
 	
+	dba Music_ClefairyDance
 	dba Music_Crossroads
 	dba Music_StarglowOld
 	dba Music_WildBattleOld

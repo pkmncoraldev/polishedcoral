@@ -4211,6 +4211,15 @@ ScientistGroup:
 	db -1 ; end
 
 ; ================
+
+	; SCIENTIST
+	db "HERBERT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -4428,6 +4437,15 @@ TeacherGroup:
 
 	; TEACHER
 	db "KINSEY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; TEACHER
+	db "MARIE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

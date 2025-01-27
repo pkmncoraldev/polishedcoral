@@ -37,6 +37,7 @@ INCLUDE "audio/music/halloffame.asm"
 INCLUDE "audio/music/credits.asm"
 INCLUDE "audio/music/postcredits.asm"
 INCLUDE "audio/music/sprucelab.asm"
+INCLUDE "audio/music/clefairydance.asm"
 
 
 SECTION "Music 2", ROMX

@@ -1090,7 +1090,8 @@ wInn1FTrigger:: ds 1
 wObscuraMuseum1FTrigger:: ds 1
 wObscuraMuseum3FTrigger:: ds 1
 wUnderwaterTemple1Trigger:: ds 1
-ds 16
+wGlintGroveUndergroundTrigger:: ds 1
+ds 15
 
 wAmpharosFood:: ds 1
 

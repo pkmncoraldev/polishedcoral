@@ -220,6 +220,7 @@ SpriteHeaders:
 	overworld_sprite CursolaSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BigCursolaSpriteGFX, BIG_CURSOLA_SPRITE, PAL_OW_BLUE
 	overworld_sprite ClefairyWalkSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite ClefableWalkSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

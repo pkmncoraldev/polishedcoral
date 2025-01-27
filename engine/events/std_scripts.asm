@@ -677,6 +677,7 @@ InitializeEventsScript:
 	variablesprite SPRITE_BAGGAGE, SPRITE_MISC_BAGGAGE
 	variablesprite SPRITE_LEILANI_VARIABLE, SPRITE_LEILANI_CHAIR
 	domaptrigger OBSCURA_MUSEUM_1F, $2
+	domaptrigger GLINT_GROVE_UNDERGROUND, $2
 	return
 
 AskNumber1MScript:

@@ -469,6 +469,7 @@ PLAYER_F EQU __enum__
 	const HAROLD
 	const BARNES
 	const SAL
+	const HERBERT
 
 
 	trainerclass BOARDER
@@ -501,6 +502,7 @@ PLAYER_F EQU __enum__
 	trainerclass TEACHER
 	const LYNN
 	const KINSEY
+	const MARIE
 	
 
 	trainerclass GUITARIST

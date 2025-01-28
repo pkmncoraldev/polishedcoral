@@ -354,83 +354,83 @@
 	map_id ROUTE_20
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 32, SUNKERN		;30%
-	db 32, LEDIAN		;30%
-	db 32, CHERUBI		;20%
-	db 32, CHERRIM		;10%
-	db 32, CHERUBI		;5%
-	db 32, VENONAT		;4%
-	db 32, VENONAT		;1%
+	db 33, SUNKERN		;30%
+	db 33, LEDIAN		;30%
+	db 33, CHERUBI		;20%
+	db 33, CHERRIM		;10%
+	db 33, CHERUBI		;5%
+	db 33, VENONAT		;4%
+	db 33, VENONAT		;1%
 	; day
-	db 32, SUNKERN		;30%
-	db 32, LEDIAN		;30%
-	db 32, CHERUBI		;20%
-	db 32, CHERRIM		;10%
-	db 32, CHERUBI		;5%
-	db 32, VENONAT		;4%
-	db 32, VENONAT		;1%
+	db 33, SUNKERN		;30%
+	db 33, LEDIAN		;30%
+	db 33, CHERUBI		;20%
+	db 33, CHERRIM		;10%
+	db 33, CHERUBI		;5%
+	db 33, VENONAT		;4%
+	db 33, VENONAT		;1%
 	; nite
-	db 32, SUNKERN		;30%
-	db 32, LEDIAN		;30%
-	db 32, CHERUBI		;20%
-	db 32, CHERRIM		;10%
-	db 32, CHERUBI		;5%
-	db 32, VENONAT		;4%
-	db 32, VENONAT		;1%
+	db 33, SUNKERN		;30%
+	db 33, LEDIAN		;30%
+	db 33, CHERUBI		;20%
+	db 33, CHERRIM		;10%
+	db 33, CHERUBI		;5%
+	db 33, VENONAT		;4%
+	db 33, VENONAT		;1%
 	
 	map_id RADIANT_FIELD
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 32, SUNKERN		;30%
-	db 32, LEDIAN		;30%
-	db 32, CHERUBI		;20%
-	db 32, CHERRIM		;10%
-	db 32, CHERUBI		;5%
-	db 32, VENONAT		;4%
-	db 32, VENONAT		;1%
+	db 33, SUNKERN		;30%
+	db 33, LEDIAN		;30%
+	db 33, CHERUBI		;20%
+	db 33, CHERRIM		;10%
+	db 33, CHERUBI		;5%
+	db 33, VENONAT		;4%
+	db 33, VENONAT		;1%
 	; day
-	db 32, SUNKERN		;30%
-	db 32, LEDIAN		;30%
-	db 32, CHERUBI		;20%
-	db 32, CHERRIM		;10%
-	db 32, CHERUBI		;5%
-	db 32, VENONAT		;4%
-	db 32, VENONAT		;1%
+	db 33, SUNKERN		;30%
+	db 33, LEDIAN		;30%
+	db 33, CHERUBI		;20%
+	db 33, CHERRIM		;10%
+	db 33, CHERUBI		;5%
+	db 33, VENONAT		;4%
+	db 33, VENONAT		;1%
 	; nite
-	db 32, SUNKERN		;30%
-	db 32, LEDIAN		;30%
-	db 32, CHERUBI		;20%
-	db 32, CHERRIM		;10%
-	db 32, CHERUBI		;5%
-	db 32, VENONAT		;4%
-	db 32, VENONAT		;1%
+	db 33, SUNKERN		;30%
+	db 33, LEDIAN		;30%
+	db 33, CHERUBI		;20%
+	db 33, CHERRIM		;10%
+	db 33, CHERUBI		;5%
+	db 33, VENONAT		;4%
+	db 33, VENONAT		;1%
 	
 	map_id ROUTE_21
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 32, KOFFING		;30%
-	db 32, MEOWTH		;30%
-	db 32, RATICATE		;20%
-	db 32, RATICATE		;10%
-	db 32, MEOWTH		;5%
-	db 32, MUNCHLAX		;4%
-	db 32, MUNCHLAX		;1%
+	db 33, KOFFING		;30%
+	db 33, MEOWTH		;30%
+	db 33, DROWZEE		;20%
+	db 33, DROWZEE		;10%
+	db 33, MEOWTH		;5%
+	db 33, MUNCHLAX		;4%
+	db 33, MUNCHLAX		;1%
 	; day
-	db 32, KOFFING		;30%
-	db 32, MEOWTH		;30%
-	db 32, RATICATE		;20%
-	db 32, RATICATE		;10%
-	db 32, MEOWTH		;5%
-	db 32, MUNCHLAX		;4%
-	db 32, MUNCHLAX		;1%
+	db 33, KOFFING		;30%
+	db 33, MEOWTH		;30%
+	db 33, DROWZEE		;20%
+	db 33, DROWZEE		;10%
+	db 33, MEOWTH		;5%
+	db 33, MUNCHLAX		;4%
+	db 33, MUNCHLAX		;1%
 	; nite
-	db 32, KOFFING		;30%
-	db 32, MEOWTH		;30%
-	db 32, RATICATE		;20%
-	db 32, RATICATE		;10%
-	db 32, MEOWTH		;5%
-	db 32, MUNCHLAX		;4%
-	db 32, MUNCHLAX		;1%
+	db 33, KOFFING		;30%
+	db 33, MEOWTH		;30%
+	db 33, DROWZEE		;20%
+	db 33, DROWZEE		;10%
+	db 33, MEOWTH		;5%
+	db 33, MUNCHLAX		;4%
+	db 33, MUNCHLAX		;1%
 	
 	map_id ROUTE_23
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -734,7 +734,7 @@
 	; morn
 	db 38, TOGETIC		;30%
 	db 38, PONYTA		;30%
-	db 38, PIDGEOTTO	;20%
+	db 38, WIGGLYTUFF	;20%
 	db 38, RAPIDASH		;10%
 	db 38, DITTO		;5%
 	db 38, DITTO		;4%
@@ -742,7 +742,7 @@
 	; day
 	db 38, TOGETIC		;30%
 	db 38, PONYTA		;30%
-	db 38, PIDGEOTTO	;20%
+	db 38, WIGGLYTUFF	;20%
 	db 38, RAPIDASH		;10%
 	db 38, DITTO		;5%
 	db 38, DITTO		;4%
@@ -750,7 +750,7 @@
 	; nite
 	db 38, TOGETIC		;30%
 	db 38, PONYTA		;30%
-	db 38, PIDGEOTTO	;20%
+	db 38, WIGGLYTUFF	;20%
 	db 38, RAPIDASH		;10%
 	db 38, DITTO		;5%
 	db 38, DITTO		;4%

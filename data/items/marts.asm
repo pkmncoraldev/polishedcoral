@@ -447,10 +447,10 @@ ShimmerCafe:
 PollenMart:
 	db 7 ; # items
 	dbw NUGGET,				 500
-	dbw CHLOROPHIAL,		 100
 	dbw SUNSHINE_TEA,		 100
+	dbw CHLOROPHIAL,		  75
 	dbw BLOSSOM_TEA,		  50
-	dbw SWEET_HONEY,		  50
-	dbw BERRY_JUICE,		  25
+	dbw SWEET_HONEY,		  40
+	dbw BERRY_JUICE,		  30
 	dbw BOTTLE_CAP,			  25
 	db -1

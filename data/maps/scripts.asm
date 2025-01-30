@@ -330,8 +330,6 @@ INCLUDE "maps/RadiantOrphanageLeilanisRoom.asm"
 INCLUDE "maps/RadiantGym.asm"
 INCLUDE "maps/RadiantPokeCenter.asm"
 INCLUDE "maps/RadiantMart.asm"
-INCLUDE "maps/RadiantHouse.asm"
-INCLUDE "maps/Route21Gate.asm"
 INCLUDE "maps/RadiantField.asm"
 
 SECTION "Brillo Town Scripts", ROMX
@@ -343,6 +341,7 @@ INCLUDE "maps/BrilloTradeHouse.asm"
 INCLUDE "maps/BrilloLegendSpeechHouse.asm"
 INCLUDE "maps/BrilloGameCorner.asm"
 INCLUDE "maps/BrilloPoliceStation.asm"
+INCLUDE "maps/RadiantHouse.asm"
 
 SECTION "Train Scripts", ROMX
 
@@ -417,6 +416,7 @@ INCLUDE "maps/Route19DuskGate.asm"
 INCLUDE "maps/Route22Tunnel.asm"
 INCLUDE "maps/BarBackAlley.asm"
 INCLUDE "maps/BarInside.asm"
+INCLUDE "maps/Route21Gate.asm"
 
 SECTION "Komore Village Scripts", ROMX
 INCLUDE "maps/KomoreVillage.asm"

@@ -13,10 +13,18 @@ RadiantOrphanage1F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 11 ; bg events
 	signpost  2,  1, SIGNPOST_READ, RadiantOrphanage1FLeilanisRoomSign
 	signpost  2,  7, SIGNPOST_READ, RadiantOrphanage1FGymRoomSign
 	signpost  2,  8, SIGNPOST_IFSET, RadiantOrphanage1FLockedDoor
+	signpost  3,  4, SIGNPOST_READ, RadiantOrphanage1FFireplace
+	signpost  3,  5, SIGNPOST_READ, RadiantOrphanage1FFireplace
+	signpost  3,  6, SIGNPOST_UP, RadiantOrphanage1FBookshelf
+	signpost  3,  3, SIGNPOST_JUMPTEXT, RadiantOrphanage1FRadio
+	signpost  6,  0, SIGNPOST_JUMPTEXT, RadiantOrphanage1FFlowers
+	signpost  7,  0, SIGNPOST_JUMPTEXT, RadiantOrphanage1FFlowers
+	signpost  6,  9, SIGNPOST_JUMPTEXT, RadiantOrphanage1FFlowers
+	signpost  7,  9, SIGNPOST_JUMPTEXT, RadiantOrphanage1FFlowers
 
 	db 13 ; object events
 	object_event  3,  5, SPRITE_LEILANI_VARIABLE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
@@ -33,7 +41,6 @@ RadiantOrphanage1F_MapScriptHeader:
 	object_event  3,  5, SPRITE_LEILANI_CHAIR_2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, RadiantOrphanage1FChairDusty, EVENT_SAVED_ALL_LOST_GIRLS
 	
 	
-
 	const_def 1 ; object constants
 	const RADIANT_ORPHANAGE_1F_LEILANI_2
 	const RADIANT_ORPHANAGE_1F_LEILANI_CHAIR_2
@@ -50,14 +57,67 @@ RadiantOrphanage1F_MapScriptHeader:
 	const RADIANT_ORPHANAGE_1F_ERIKA
 
 RadiantOrphanage1FCallback:
+	checkevent EVENT_SAVED_ALL_LOST_GIRLS
+	iffalse .fireplace
 	checkevent EVENT_RADIANT_GYM_INACTIVE
 	iftrue .end
 	checkevent EVENT_RADIANT_GYM_ACTIVE
 	iffalse .end
 	changeblock $8, $2, $39
+.fireplace
+	changeblock $4, $2, $9c
+	changeblock $4, $4, $9d
 ;	callasm GenericFinishBridge
 .end
 	return
+	
+RadiantOrphanage1FFlowers:
+	text "Some flowers."
+	
+	para "They remind you"
+	line "of home…"
+	done
+	
+RadiantOrphanage1FRadio:
+	text "A cheap, well-"
+	line "loved radio."
+	done
+	
+RadiantOrphanage1FBookshelf:
+	jumptext RadiantOrphanage1FBookshelfText
+	
+RadiantOrphanage1FBookshelfText:
+	text "A wide variety of"
+	line "books on flowers."
+	done
+	
+RadiantOrphanage1FFireplace:
+	checkevent EVENT_SAVED_ALL_LOST_GIRLS
+	iffalse .dead
+	checkevent EVENT_RADIANT_GYM_INACTIVE
+	iftrue .fire
+	checkevent EVENT_RADIANT_GYM_ACTIVE
+	iffalse .fire
+	jumptext RadiantOrphanage1FFireplaceText1
+.fire
+	jumptext RadiantOrphanage1FFireplaceText2
+.dead
+	jumptext RadiantOrphanage1FFireplaceText3
+
+RadiantOrphanage1FFireplaceText1:
+	text "The embers are"
+	line "still warm."
+	done
+	
+RadiantOrphanage1FFireplaceText2:
+	text "Ah…<WAIT_S>"
+	line "Toasty…"
+	done
+	
+RadiantOrphanage1FFireplaceText3:
+	text "There's no sign of"
+	line "any recent use."
+	done
 
 RadiantOrphanage1FErika:
 	checkevent EVENT_CAN_FIGHT_ERIKA
@@ -205,8 +265,10 @@ RadiantOrphanage1FLeilani:
 	iffalse .no
 .cont
 	closetext
-	applyonemovement PLAYER, step_up
 	spriteface PLAYER, DOWN
+	applyonemovement PLAYER, fix_facing
+	applyonemovement PLAYER, step_up
+	applyonemovement PLAYER, remove_fixed_facing
 	disappear RADIANT_ORPHANAGE_1F_LEILANI_1
 	disappear RADIANT_ORPHANAGE_1F_LEILANI_CHAIR_1
 	spriteface RADIANT_ORPHANAGE_1F_LEILANI_2, RIGHT
@@ -219,9 +281,19 @@ RadiantOrphanage1FLeilani:
 	writetext RadiantOrphanage1FLeilaniText2
 	waitbutton
 	closetext
-	applymovement RADIANT_ORPHANAGE_1F_LEILANI_2, Movement_RadiantOrphanage1FLeilani
-	spriteface RADIANT_ORPHANAGE_1F_LEILANI_2, DOWN
+	applymovement RADIANT_ORPHANAGE_1F_LEILANI_2, Movement_RadiantOrphanage1FLeilani1
 	spriteface PLAYER, RIGHT
+	pause 20
+	playsound SFX_POWDER
+	changeblock $4, $2, $9c
+	changeblock $4, $4, $9d
+	callasm GenericFinishBridge
+	pause 35
+	applymovement RADIANT_ORPHANAGE_1F_LEILANI_2, Movement_RadiantOrphanage1FLeilani2
+	pause 15
+	applyonemovement RADIANT_ORPHANAGE_1F_LEILANI_2, turn_step_down
+	applyonemovement RADIANT_ORPHANAGE_1F_LEILANI_2, remove_fixed_facing
+	pause 10
 	opentext
 	writetext RadiantOrphanage1FLeilaniText3
 	waitbutton
@@ -321,17 +393,20 @@ RadiantOrphanage1FLockedDoor:
 	dw EVENT_RADIANT_GYM_INACTIVE
 	jumptext RadiantOrphanage1FLockedDoorText
 	
-Movement_RadiantOrphanage1FLeilani:
-	slow_step_right
-	slow_step_right
-	slow_step_right
+Movement_RadiantOrphanage1FLeilani1:
 	slow_step_right
 	slow_step_up
+	step_end
+	
+Movement_RadiantOrphanage1FLeilani2:
+	slow_step_right
+	slow_step_right
+	slow_step_right
 	slow_step_up
 	step_end
 	
 Movement_RadiantOrphanage1FGirls2:
-	step_left
+	slow_step_left
 	step_sleep 20
 	turn_step_right
 	step_sleep 20
@@ -343,7 +418,7 @@ Movement_RadiantOrphanage1FGirls2:
 	step_end
 	
 Movement_RadiantOrphanage1FGirls:
-	step_left
+	slow_step_left
 	step_up
 	step_end
 	
@@ -352,12 +427,13 @@ RadiantOrphanage1FLeilanisRoomSignText:
 	done
 	
 RadiantOrphanage1FGymRoomSignText:
-	text "RADIANT TOWN"
-	line "#MON GYM"
-	cont "LEADER: LEILANI"
+	text "A homemade sign"
+	line "adorned with small"
+	cont "flower carvings."
 	
-	para "The ferocious"
-	line "flower."
+	para "“GYM” is written"
+	line "in cursive hand-"
+	cont "writing."
 	done
 	
 RadiantOrphanage1FChairText:
@@ -381,7 +457,7 @@ RadiantOrphanage1FChairDustyText:
 	done
 	
 RadiantOrphanage1FLeilaniTextWrongSide:
-	text "What's that, deary?"
+	text "What's that, dear?"
 	
 	para "Come around and"
 	line "speak into my good"
@@ -392,9 +468,10 @@ RadiantOrphanage1FLeilaniText1:
 	text "You're <PLAYER>,"
 	line "aren't you?"
 	
-	para "ERIKA told me that"
-	line "you're the one who"
-	cont "found the girls."
+	para "Sweet ERIKA told"
+	line "me all about how"
+	cont "you brought my"
+	cont "girls home!"
 	
 	para "Oh bless you,"
 	line "child."
@@ -411,7 +488,7 @@ RadiantOrphanage1FLeilaniText1:
 	done
 	
 RadiantOrphanage1FLeilaniText2:
-	text "Come along, sugar."
+	text "Come along, sweetie."
 	
 	para "We'll battle in the"
 	line "other room."
@@ -424,7 +501,7 @@ RadiantOrphanage1FLeilaniText3:
 	done
 	
 RadiantOrphanage1FLeilaniText4:
-	text "Hello, deary."
+	text "Hello, dear."
 	
 	para "Did you come for"
 	line "another battle?"

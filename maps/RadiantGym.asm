@@ -313,9 +313,9 @@ RadiantGymLeilaniTextTMSpeech:
 	line "the next genera-"
 	cont "tion!"
 	
-	para "Come back and"
-	line "visit GRAMMA again"
-	cont "sometime."
+	para "Come and visit"
+	line "GRAMMA again some-"
+	cont "time, won't you?"
 	
 	para "If you'll battle"
 	line "all the girls,"
@@ -324,7 +324,7 @@ RadiantGymLeilaniTextTMSpeech:
 	done
 	
 RadiantGymLeilaniTextWin:
-	text "Well done, sugar!"
+	text "Well done, dear!"
 	
 	para "Very well done!"
 	
@@ -335,7 +335,7 @@ RadiantGymLeilaniTextWin:
 	done
 	
 RadiantGymLeilaniTextWinRematch:
-	text "Well done, sugar!"
+	text "Well done, dear!"
 	
 	para "Very well done!"
 	

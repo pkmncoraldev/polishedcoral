@@ -5,12 +5,27 @@ RadiantOrphanage2F_MapScriptHeader:
 	callback MAPCALLBACK_TILES, RadiantOrphanage2FCallback
 
 	db 1 ; warp events
-	warp_def  3, 14, 4, RADIANT_ORPHANAGE_1F
+	warp_def  3, 15, 4, RADIANT_ORPHANAGE_1F
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 16 ; bg events
 	signpost  2, 12, SIGNPOST_READ, RadiantOrphanage2FPhoto
+	signpost  2,  6, SIGNPOST_JUMPTEXT, RadiantOrphanage2FRoseBedText
+	signpost  3,  6, SIGNPOST_JUMPTEXT, RadiantOrphanage2FRoseBedText
+	signpost  2,  8, SIGNPOST_JUMPTEXT, RadiantOrphanage2FLilyBedText
+	signpost  3,  8, SIGNPOST_JUMPTEXT, RadiantOrphanage2FLilyBedText
+	signpost  2, 10, SIGNPOST_JUMPTEXT, RadiantOrphanage2FIrisBedText
+	signpost  3, 10, SIGNPOST_JUMPTEXT, RadiantOrphanage2FIrisBedText
+	signpost  6,  6, SIGNPOST_JUMPTEXT, RadiantOrphanage2FPoppyBedText
+	signpost  7,  6, SIGNPOST_JUMPTEXT, RadiantOrphanage2FPoppyBedText
+	signpost  6, 10, SIGNPOST_JUMPTEXT, RadiantOrphanage2FVioletBedText
+	signpost  7, 10, SIGNPOST_JUMPTEXT, RadiantOrphanage2FVioletBedText
+	signpost  6, 12, SIGNPOST_JUMPTEXT, RadiantOrphanage2FCloverBedText
+	signpost  7, 12, SIGNPOST_JUMPTEXT, RadiantOrphanage2FCloverBedText
+	signpost  6,  8, SIGNPOST_JUMPTEXT, RadiantOrphanage2FFeliciaBedText
+	signpost  7,  8, SIGNPOST_JUMPTEXT, RadiantOrphanage2FFeliciaBedText
+	signpost  3,  4, SIGNPOST_UP, RadiantOrphanage2FBookshelf
 
 	db 7 ; object events
 	object_event  7,  2, SPRITE_PIGTAILS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FRose, EVENT_RADIANT_GYM_ACTIVE
@@ -43,6 +58,80 @@ RadiantOrphanage2FCallback:
 	moveperson RADIANT_ORPHANAGE_2F_FELICIA, -5, -5
 .end
 	return
+	
+RadiantOrphanage2FBookshelf:
+	jumptext RadiantOrphanage2FBookshelfText
+	
+RadiantOrphanage2FBookshelfText:
+	text "Children's books."
+	
+	para "Among them is a"
+	line "single automotive"
+	cont "magazine."
+	done
+	
+RadiantOrphanage2FRoseBedText:
+	text "A bed with red"
+	line "sheets."
+	
+	para "The sign over the"
+	line "headboard says"
+	cont "“ROSE”."
+	done
+	
+RadiantOrphanage2FLilyBedText:
+	text "A bed with pink"
+	line "sheets."
+	
+	para "The sign over the"
+	line "headboard says"
+	cont "“LILY”."
+	done
+	
+RadiantOrphanage2FIrisBedText:
+	text "A bed with blue"
+	line "sheets."
+	
+	para "The sign over the"
+	line "headboard says"
+	cont "“IRIS”."
+	done
+
+RadiantOrphanage2FPoppyBedText:
+	text "A bed with brown"
+	line "sheets."
+	
+	para "The sign over the"
+	line "headboard says"
+	cont "“POPPY”."
+	done
+	
+RadiantOrphanage2FVioletBedText:
+	text "A bed with purple"
+	line "sheets."
+	
+	para "The sign over the"
+	line "headboard says"
+	cont "“VIOLET”."
+	done
+	
+RadiantOrphanage2FCloverBedText:
+	text "A bed with green"
+	line "sheets."
+	
+	para "The sign over the"
+	line "headboard says"
+	cont "“CLOVER”."
+	done
+	
+RadiantOrphanage2FFeliciaBedText:
+	text "A bed with teal"
+	line "sheets."
+	
+	para "The sign over the"
+	line "headboard says"
+	cont "“FELICIA”."
+	done
 
 RadiantOrphanage2FRose:
 	jumptextfaceplayer RadiantOrphanage2FRoseText

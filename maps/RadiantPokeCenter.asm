@@ -13,10 +13,42 @@ RadiantPokeCenter_MapScriptHeader:
 
 	db 5 ; object events
 	pc_nurse_event  4, 1
-	pc_chansey_event  5, 1
+	person_event SPRITE_CHANSEY,  1, 5, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantPokeCenterChansey, -1
 	person_event SPRITE_COOL_DUDE,  5,  2, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantPokeCenterNPC1, -1
 	person_event SPRITE_GRAMPS,  3, 11, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantPokeCenterNPC2, -1
 	object_event  9,  6, SPRITE_PONYTAIL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, trade, TRADE_WITH_BEV_FOR_PINECO, -1
+	
+RadiantPokeCenterChansey:
+	opentext
+	writetext RadiantPokeCenterChanseyText1
+	callasm RadiantPokeCenterChanseyCry
+	pause 10
+	killsfx
+	playsound SFX_FAINT
+	writetext RadiantPokeCenterChanseyText2
+	waitbutton
+	closetext
+	end
+	
+RadiantPokeCenterChanseyCry:
+	ld a, CHANSEY
+	jp PlayCry2
+	
+RadiantPokeCenterChanseyText1:
+	text "CHANSEY: Si-"
+	done
+	
+RadiantPokeCenterChanseyText2:
+	text "CHOO!"
+	
+	para "…"
+	
+	para "It sneezed!"
+	
+	para "Poor thing must"
+	line "have a pollen"
+	cont "allergy!"
+	done
 	
 RadiantPokeCenterNPC1:
 	jumptextfaceplayer RadiantPokeCenterNPC1Text

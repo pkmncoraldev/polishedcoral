@@ -230,12 +230,18 @@ LitLampScript:
 	farjumptext LitLampText
 	
 DifficultBookshelfScript:
+	checkcode VAR_FACING
+	ifnotequal UP, WrongSideScript
 	farjumptext DifficultBookshelfText
 
 PictureBookshelfScript:
+	checkcode VAR_FACING
+	ifnotequal UP, WrongSideScript
 	farjumptext PictureBookshelfText
 
 MagazineBookshelfScript:
+	checkcode VAR_FACING
+	ifnotequal UP, WrongSideScript
 	farjumptext MagazineBookshelfText
 
 TeamRocketOathScript:

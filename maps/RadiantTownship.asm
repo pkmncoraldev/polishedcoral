@@ -19,7 +19,7 @@ RadiantTownship_MapScriptHeader:
 
 	db 31 ; bg events
 	signpost 14, 14, SIGNPOST_READ, RadiantTownshipSign
-	signpost 18, 22, SIGNPOST_READ, RadiantMeadowSign
+	signpost -1, -1, SIGNPOST_READ, RadiantMeadowSign
 	signpost 14, 23, SIGNPOST_READ, RadiantTownshipGymSign
 	signpost  6, 34, SIGNPOST_READ, RadiantTownshipRoute21Sign
 	signpost  6,  4, SIGNPOST_READ, RadiantTownshipSolarPanel
@@ -124,7 +124,7 @@ RadiantErikaClearLostGirlsAsm:
 	ret
 
 RadiantTownshipErikaText:
-	text "Oh, <WAIT_S><PLAYER>!"
+	text "Oh, <PLAYER>!"
 	
 	para "It's wonderful!"
 	
@@ -134,7 +134,7 @@ RadiantTownshipErikaText:
 	para "GRAMMA LEILANI is"
 	line "doing better too!"
 	
-	para "Please, <WAIT_M>come"
+	para "Please, come"
 	line "inside!"
 	done
 
@@ -146,12 +146,12 @@ RadiantTownshipSunflowerText:
 	done
 
 RadiantTownshipNPC1:
-;	clearevent EVENT_RADIANT_GYM_ACTIVE
-;	setevent EVENT_RADIANT_GYM_INACTIVE
-;	setevent EVENT_SAVED_ALL_LOST_GIRLS
-;	setevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
-;	setevent EVENT_CAN_GO_TO_DESERT
-;	end
+	clearevent EVENT_RADIANT_GYM_ACTIVE
+	setevent EVENT_RADIANT_GYM_INACTIVE
+	setevent EVENT_SAVED_ALL_LOST_GIRLS
+	setevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
+	setevent EVENT_CAN_GO_TO_DESERT
+	end
 
 	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	iftrue .lostgirls
@@ -214,8 +214,8 @@ RadiantTownshipFlowerShopSign:
 RadiantTownshipSignText:
 	text "RADIANT TOWN"
 	
-	para "A little place"
-	line "among the flowers."
+	para "A spot of green in"
+	line "a sea of flowers."
 	done
 	
 RadiantMeadowSignText:
@@ -224,8 +224,12 @@ RadiantMeadowSignText:
 	
 RadiantTownshipGymSignText:
 	text "RADIANT TOWN"
-	line "ORPHANAGE &"
-	cont "#MON GYM"
+	line "ORPHANAGE & GYM"
+	
+	cont "LEADER: LEILANI"
+	
+	para "The ferocious"
+	line "flower."
 	done
 	
 RadiantTownshipRoute21SignText:
@@ -234,8 +238,11 @@ RadiantTownshipRoute21SignText:
 	done
 	
 RadiantTownshipFlowerShopSignText:
-	text "POLLEN PUFF"
+	text "PUFF PUFF"
 	line "FLOWER SHOP"
+	
+	para "We trade pollen!"
+	line "Inquire inside."
 	done
 	
 RadiantTownshipSolarPanelText:
@@ -290,16 +297,14 @@ RadiantTownshipNPC2Text2:
 	done
 	
 RadiantTownshipNPC3Text1:
-	text "Sigh…"
+	text "I've been thinking"
+	line "of asking out the"
+	cont "girl at the FLOWER"
+	cont "SHOP."
 	
-	para "The girl at the"
-	line "FLOWER SHOP is my"
-	cont "dream girl!"
-	
-	para "I want to ask her"
-	line "out, but what do"
-	cont "you even get a"
-	cont "girl like that?"
+	para "What do you even"
+	cont "get a girl like"
+	cont "that?"
 	
 	para "…<WAIT_L>Flowers?"
 	done
@@ -314,7 +319,8 @@ RadiantTownshipNPC3Text2:
 	line "flowers, right?"
 	
 	para "Maybe check the"
-	line "meadow."
+	line "meadow to the"
+	cont "SOUTH?"
 	done
 	
 RadiantTownshipNPC4Text1:
@@ -338,7 +344,7 @@ RadiantTownshipNPC4Text2:
 	para "It may be hard to"
 	line "believe, but ERIKA"
 	cont "used to be a"
-	cont "troublemaker too!"
+	cont "troublemaker, too!"
 	done
 	
 RadiantTownshipNPC5Text1:

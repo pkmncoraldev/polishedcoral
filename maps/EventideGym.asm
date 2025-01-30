@@ -955,8 +955,7 @@ EventideGymYellowSwitchText:
 	
 EventideGymGuyText:
 	text "Yo!"
-	
-	para "Champ in making!"
+	line "Champ in making!"
 	
 	para "Just a word of"
 	line "warning,"

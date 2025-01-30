@@ -668,8 +668,7 @@ StarglowGymRodneyTextNoRematch:
 	
 StarglowGymGuyText:
 	text "Yo!"
-	
-	para "Champ in making!"
+	line "Champ in making!"
 	
 	para "This GYM is also a"
 	line "tackle shop!"

@@ -325,8 +325,7 @@ RadiantGymLeilaniTextTMSpeech:
 	
 RadiantGymLeilaniTextWin:
 	text "Well done, dear!"
-	
-	para "Very well done!"
+	line "Very well done!"
 	
 	para "You've earned this."
 	
@@ -336,13 +335,12 @@ RadiantGymLeilaniTextWin:
 	
 RadiantGymLeilaniTextWinRematch:
 	text "Well done, dear!"
-	
-	para "Very well done!"
+	line "Very well done!"
+	done
 	
 RadiantGymLeilaniTextLoss:
 	text "Oh, <WAIT_S>sweetie."
-	
-	para "Nice try!"
+	line "Nice try!"
 	done
 	
 RadiantGymLeilaniTextLoop:
@@ -361,7 +359,7 @@ RadiantGymLeilaniTextLoop:
 	
 RadiantGymLeilaniTextNoRematch:
 	text "Don't keep GRAMMA"
-	line "waiting!"
+	line "waiting, now!"
 	done
 	
 Text_ReceivedSixthBadge:
@@ -897,9 +895,8 @@ RadiantGymFeliciaRematchBeatenText:
 	done
 	
 RadiantGymGuyText1:
-	text "Yo!"
-	
-	para "Champ in making!"
+	text "Yo! Yo! Yo!"
+	line "Champ in making!"
 	
 	para "GRAMMA LEILANI"
 	line "is well enough"

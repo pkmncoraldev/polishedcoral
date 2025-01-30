@@ -291,8 +291,7 @@ TwinkleGymGuyScript:
 	
 TwinkleGymGuyText1:
 	text "Yo!"
-	
-	para "Champ in making!"
+	line "Champ in making!"
 	
 	para "You here for some"
 	line "R&R?"

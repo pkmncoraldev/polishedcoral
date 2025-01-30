@@ -842,8 +842,7 @@ LusterGymCheckPlayerXCoord:
 	
 LusterGymGuyText1:
 	text "Yo!"
-	
-	para "Champ in making!"
+	line "Champ in making!"
 	
 	para "The GYM LEADER"
 	line "finally returned!"

@@ -782,8 +782,7 @@ GlintGymStanleyTextNoRematch:
 	
 GlintGymGuyText:
 	text "Yo!"
-	
-	para "Champ in making!"
+	line "Champ in making!"
 	
 	para "This must be your"
 	line "first GYM."

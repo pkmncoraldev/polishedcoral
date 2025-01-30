@@ -298,12 +298,12 @@ RadiantTownshipNPC2Text2:
 	
 RadiantTownshipNPC3Text1:
 	text "I've been thinking"
-	line "of asking out the"
-	cont "girl at the FLOWER"
-	cont "SHOP."
+	line "of asking the girl"
+	cont "at the FLOWER SHOP"
+	cont "out on a date."
 	
 	para "What do you even"
-	cont "get a girl like"
+	line "get a girl like"
 	cont "that?"
 	
 	para "…<WAIT_L>Flowers?"

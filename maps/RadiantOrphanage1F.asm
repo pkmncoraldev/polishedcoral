@@ -79,7 +79,7 @@ RadiantOrphanage1FFlowers:
 	done
 	
 RadiantOrphanage1FRadio:
-	text "A cheap, well-"
+	text "A cheap, but well-"
 	line "loved radio."
 	done
 	
@@ -284,12 +284,18 @@ RadiantOrphanage1FLeilani:
 	applymovement RADIANT_ORPHANAGE_1F_LEILANI_2, Movement_RadiantOrphanage1FLeilani1
 	spriteface PLAYER, RIGHT
 	pause 20
+	applyonemovement RADIANT_ORPHANAGE_1F_LEILANI_2, turn_step_up
+	applyonemovement RADIANT_ORPHANAGE_1F_LEILANI_2, remove_fixed_facing
 	playsound SFX_POWDER
 	changeblock $4, $2, $9c
 	changeblock $4, $4, $9d
 	callasm GenericFinishBridge
-	pause 35
+	pause 25
 	applymovement RADIANT_ORPHANAGE_1F_LEILANI_2, Movement_RadiantOrphanage1FLeilani2
+	pause 10
+	applyonemovement RADIANT_ORPHANAGE_1F_LEILANI_2, turn_step_up
+	applyonemovement RADIANT_ORPHANAGE_1F_LEILANI_2, remove_fixed_facing
+	playsound SFX_WALL_OPEN
 	pause 15
 	applyonemovement RADIANT_ORPHANAGE_1F_LEILANI_2, turn_step_down
 	applyonemovement RADIANT_ORPHANAGE_1F_LEILANI_2, remove_fixed_facing
@@ -301,7 +307,8 @@ RadiantOrphanage1FLeilani:
 	applyonemovement RADIANT_ORPHANAGE_1F_LEILANI_2, slow_step_up
 	disappear RADIANT_ORPHANAGE_1F_LEILANI_2
 	playsound SFX_ENTER_DOOR
-	pause 5
+	waitsfx
+	pause 10
 	disappear RADIANT_ORPHANAGE_1F_ROSE
 	disappear RADIANT_ORPHANAGE_1F_LILY
 	disappear RADIANT_ORPHANAGE_1F_IRIS
@@ -473,7 +480,7 @@ RadiantOrphanage1FLeilaniText1:
 	cont "you brought my"
 	cont "girls home!"
 	
-	para "Oh bless you,"
+	para "Oh, bless you,"
 	line "child."
 	
 	para "Those girls will"
@@ -484,14 +491,15 @@ RadiantOrphanage1FLeilaniText1:
 	line "going on and on!"
 	
 	para "You came for a GYM"
-	line "battle didn't you?"
+	line "battle, didn't you?"
 	done
 	
 RadiantOrphanage1FLeilaniText2:
-	text "Come along, sweetie."
+	text "Come along,"
+	line "sweetie."
 	
-	para "We'll battle in the"
-	line "other room."
+	para "We'll battle in"
+	line "the other room."
 	done
 	
 RadiantOrphanage1FLeilaniText3:

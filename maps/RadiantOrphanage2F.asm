@@ -29,12 +29,12 @@ RadiantOrphanage2F_MapScriptHeader:
 
 	db 7 ; object events
 	object_event  7,  2, SPRITE_PIGTAILS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FRose, EVENT_RADIANT_GYM_ACTIVE
-	object_event  3,  5, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FLily, EVENT_RADIANT_GYM_ACTIVE
+	object_event  9,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FLily, EVENT_RADIANT_GYM_ACTIVE
 	object_event 11,  3, SPRITE_PIGTAILS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FIris, EVENT_RADIANT_GYM_ACTIVE
 	object_event  1,  4, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FPoppy, EVENT_RADIANT_GYM_ACTIVE
 	object_event 11,  7, SPRITE_PIGTAILS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FViolet, EVENT_RADIANT_GYM_ACTIVE
-	object_event  2,  4, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FClover, EVENT_RADIANT_GYM_ACTIVE
-	object_event  9,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FFelicia, EVENT_RADIANT_GYM_ACTIVE
+	object_event  0,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FClover, EVENT_RADIANT_GYM_ACTIVE
+	object_event  3,  4, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, RadiantOrphanage2FFelicia, EVENT_RADIANT_GYM_ACTIVE
 
 
 	const_def 1 ; object constants
@@ -146,13 +146,7 @@ RadiantOrphanage2FRoseText:
 	done
 	
 RadiantOrphanage2FLily:
-	faceplayer 
-	opentext
-	writetext RadiantOrphanage2FLilyText
-	waitbutton
-	closetext
-	spriteface RADIANT_ORPHANAGE_2F_LILY, UP
-	end
+	jumptextfaceplayer RadiantOrphanage2FLilyText
 	
 RadiantOrphanage2FLilyText:
 	text "GRAMMA is feeling"
@@ -206,13 +200,7 @@ RadiantOrphanage2FVioletText:
 	done
 	
 RadiantOrphanage2FClover:
-	faceplayer 
-	opentext
-	writetext RadiantOrphanage2FCloverText
-	waitbutton
-	closetext
-	spriteface RADIANT_ORPHANAGE_2F_CLOVER, RIGHT
-	end
+	jumptextfaceplayer RadiantOrphanage2FCloverText
 	
 RadiantOrphanage2FCloverText:
 	text "I shouldn't act out"
@@ -221,7 +209,13 @@ RadiantOrphanage2FCloverText:
 	done
 	
 RadiantOrphanage2FFelicia:
-	jumptextfaceplayer RadiantOrphanage2FFeliciaText
+	faceplayer 
+	opentext
+	writetext RadiantOrphanage2FFeliciaText
+	waitbutton
+	closetext
+	spriteface RADIANT_ORPHANAGE_2F_FELICIA, UP
+	end
 	
 RadiantOrphanage2FFeliciaText:
 	text "Hehe!"

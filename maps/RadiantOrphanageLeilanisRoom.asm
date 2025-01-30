@@ -10,7 +10,11 @@ RadiantOrphanageLeilanisRoom_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 4 ; bg events
+	signpost  5,  0, SIGNPOST_JUMPTEXT, RadiantOrphanage1FFlowers
+	signpost  5,  5, SIGNPOST_JUMPTEXT, RadiantOrphanage1FFlowers
+	signpost  2,  5, SIGNPOST_JUMPTEXT, RadiantOrphanage1FFlowers
+	signpost  3,  5, SIGNPOST_JUMPTEXT, RadiantOrphanage1FFlowers
 
 	db 10 ; object events
 	object_event  2,  1, SPRITE_ERIKA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantOrphanageLeilanisRoomErika, EVENT_SAVED_ALL_LOST_GIRLS
@@ -350,9 +354,9 @@ RadiantOrphanageLeilanisRoomErikaText5:
 	text " girls"
 	line "that ran off."
 	
-	para "ROSE, <WAIT_S>LILY, <WAIT_S>IRIS,<WAIT_S>"
-	line "POPPY, <WAIT_S>FELICIA,"
-	cont "VIOLET<WAIT_S> and CLOVER."
+	para "ROSE, <WAIT_M>LILY, <WAIT_M>IRIS,<WAIT_M>"
+	line "POPPY, <WAIT_M>FELICIA,"
+	cont "VIOLET<WAIT_M> and CLOVER."
 	
 	para "Could I ask you"
 	line "to keep an eye out"

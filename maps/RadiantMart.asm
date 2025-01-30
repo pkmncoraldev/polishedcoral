@@ -28,5 +28,6 @@ RadiantMartNPC1Text:
 	line "improve the taste."
 	
 	para "Too bad they don't"
-	line "sell it here!"
+	line "sell it at the"
+	cont "#MART!"
 	done

@@ -686,11 +686,10 @@ SunbeamIslandNPC1Text3:
 	done
 	
 SunbeamIslandNPC2Text1:
-	text "EXEGGCUTE found"
-	line "around here can"
-	cont "grow taller than"
-	cont "usual when they"
-	cont "evolve."
+	text "EXEGGCUTE around"
+	line "here are sometimes"
+	cont "taller than usual"
+	cont "after they evolve."
 	
 	para "You can tell which"
 	line "ones will get big"

@@ -29,5 +29,10 @@ FlickerPassOutsideNPCText:
 	para "Watch out if you're"
 	line "on the GLINT CITY"
 	cont "side of ROUTE 3."
+	
+	para "And if you ever"
+	line "find that guy,"
+	cont "give him a good"
+	cont "shove from me!"
 	done
 

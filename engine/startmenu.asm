@@ -1202,7 +1202,6 @@ _MonMenu_StandardSuccess:
 _MonMenu_StandardFail:
 	ld a, $3
 	ret
-; 12e30
 
 MonMenu_Fly: ; 12e30
 	farcall FlyFunction
@@ -1218,6 +1217,8 @@ MonMenu_Fly: ; 12e30
 	ret
 
 MonMenu_Flash: ; 12e55
+	eventflagcheck EVENT_SPOOKHOUSE_DARK
+	jr nz, _MonMenu_AdvancedDarkness
 	farcall OWFlash
 	jr _MonMenu_StandardCheck
 ; 12e6a
@@ -1316,6 +1317,22 @@ MonMenu_Softboiled_MilkDrink: ; 12ee6
 	const MOVESCREEN_DELETER
 	const MOVESCREEN_NEWMOVE
 	const MOVESCREEN_REMINDER
+
+_MonMenu_AdvancedDarkness:
+	ld hl, AdvancedDarknessText
+	call MenuTextBoxBackup
+	jp _MonMenu_StandardFail
+
+AdvancedDarknessText:
+	text "This isn't your"
+	line "average, everyday"
+	cont "darkness…"
+	
+	para "This is…"
+	
+	para "Advanced"
+	line "darkness!"
+	prompt
 
 ChooseMoveToDelete:
 	ld hl, wOptions1

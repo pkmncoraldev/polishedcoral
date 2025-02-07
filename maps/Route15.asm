@@ -4,7 +4,7 @@ Route15_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 47 ; warp events
-	warp_event 36,  7, CONNECTING_CAVERN_ENTRANCE, 1
+	warp_event 46,  7, CONNECTING_CAVERN_ENTRANCE, 1
 	warp_event  6, 22, ROUTE_14_15_UNDERWATER, 17
 	warp_event  7, 22, ROUTE_14_15_UNDERWATER, 18
 	warp_event  6, 23, ROUTE_14_15_UNDERWATER, 19
@@ -57,7 +57,7 @@ Route15_MapScriptHeader:
 	db 0 ; bg events
 
 	db 8 ; object events
-	person_event SPRITE_SAILOR, 15, 45, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute15_1, -1
+	person_event SPRITE_SAILOR, 14, 45, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRoute15_1, -1
 	person_event SPRITE_SWIMMER_GIRL,  6,  8, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute15_2, -1
 	person_event SPRITE_SWIMMER_GIRL, 18,  6, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute15_3, -1
 	person_event SPRITE_SWIMMER_GUY, 16, 17, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute15_4, -1
@@ -70,15 +70,16 @@ TrainerRoute15_1:
 	generictrainer SAILOR, RANDALL, EVENT_BEAT_ROUTE_15_TRAINER_1, .SeenText, .BeatenText
 
 	text "You wouldn't have"
-	line "room on that #-"
+	line "room on your #-"
 	cont "MON for me,"
 	cont "would you?"
 	
 	para "Sigh…"
 	
-	para "Guess I'll be"
-	line "stranded here for"
-	cont "a while longer…"
+	para "I hope my wife in"
+	line "in PORT SHIMMER"
+	cont "doesn't think I've"
+	cont "run off!"
 	done
 
 .SeenText:
@@ -86,8 +87,9 @@ TrainerRoute15_1:
 	line "on this little"
 	cont "island for months!"
 	
-	para "The boat I was on"
-	line "left without me!"
+	para "My wife in PORT"
+	line "SHIMMER must be"
+	cont "worried sick!"
 	done
 
 .BeatenText:

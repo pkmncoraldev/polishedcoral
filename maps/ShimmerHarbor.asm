@@ -121,7 +121,7 @@ ShimmerHarborNPC4:
 ShimmerHarborNPC1Text1:
 	text "The guy that runs"
 	line "the BOAT HOUSE"
-	cont "finally returned."
+	cont "finally showed up."
 	
 	para "About time!"
 	
@@ -131,12 +131,12 @@ ShimmerHarborNPC1Text1:
 	
 ShimmerHarborNPC1Text2:
 	text "The guy that runs"
-	line "the BOAT HOUSE is"
-	cont "gone."
+	line "the BOAT HOUSE"
+	cont "isn't here."
 	
-	para "I've been here for"
-	line "way longer than"
-	cont "five minutes…"
+	para "I bet he's off"
+	line "stuffing his fat"
+	cont "face!"
 	done
 	
 ShimmerHarborNPC2Text:
@@ -146,8 +146,8 @@ ShimmerHarborNPC2Text:
 	para "I miss the boat's"
 	line "constant rocking."
 
-	para "Without it, I"
-	line "think I might"
+	para "Without it,"
+	line "I think I might"
 	cont "get landsick!"
 	
 	para "Is that even a"

@@ -11,5 +11,18 @@ ShimmerHouse2_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	person_event SPRITE_PONYTAIL,  4,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerHouse2NPC, -1
 	
+ShimmerHouse2NPC:
+	jumptextfaceplayer ShimmerHouse2NPCText
+	
+ShimmerHouse2NPCText:
+	text "My husband shipped"
+	line "off one day and"
+	cont "never returned."
+	
+	para "I wonder if he's"
+	line "really out there"
+	cont "somewhere…"
+	done

@@ -12,21 +12,39 @@ ShimmerCafe_MapScriptHeader:
 	db 0 ; bg events
 
 	db 5 ; object events
-	person_event SPRITE_FISHING_GURU,  2,  4, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCafeNPC1, -1
-	person_event SPRITE_SAILOR,  4,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCafeNPC2, -1
-	person_event SPRITE_SAILOR,  6,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCafeNPC3, -1
+	person_event SPRITE_FISHING_GURU,  2,  4, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCafeNPC1, -1
+	person_event SPRITE_SAILOR,  4,  2, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCafeNPC2, -1
+	person_event SPRITE_SAILOR,  6,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCafeNPC3, -1
 	person_event SPRITE_FAT_GUY,  1,  0, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCafeNPC4, EVENT_SHIMMER_BOAT_GUY_AT_WORK
 	person_event SPRITE_PONYTAIL,  3,  7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ShimmerCafeClerk, -1
 	
 	
 ShimmerCafeNPC1:
-	jumptextfaceplayer ShimmerCafeNPC1Text
+	faceplayer
+	opentext
+	writetext ShimmerCafeNPC1Text
+	waitbutton
+	closetext
+	spriteface 1, LEFT
+	end
 	
 ShimmerCafeNPC2:
-	jumptextfaceplayer ShimmerCafeNPC2Text
+	faceplayer
+	opentext
+	writetext ShimmerCafeNPC2Text
+	waitbutton
+	closetext
+	spriteface 2, UP
+	end
 	
 ShimmerCafeNPC3:
-	jumptextfaceplayer ShimmerCafeNPC3Text
+	faceplayer
+	opentext
+	writetext ShimmerCafeNPC3Text
+	waitbutton
+	closetext
+	spriteface 3, UP
+	end
 
 ShimmerCafeNPC4:
 	checkevent EVENT_CAN_TALK_TO_SHIMMER_BOAT_MAN
@@ -115,7 +133,7 @@ Movement_ShimmerCafe2:
 	
 ShimmerCafeNPC1Text:
 	text "When fishing in"
-	line "the ocean, you can"
+	line "the ocean, you'll"
 	cont "sometimes find"
 	cont "CORAL SHARDS."
 	
@@ -129,8 +147,8 @@ ShimmerCafeNPC2Text:
 	text "This place is"
 	line "great!"
 	
-	para "Good drinks, <WAIT_S>good"
-	line "grub, <WAIT_S>and a cutie"
+	para "Good drinks, good"
+	line "grub, and a cutie"
 	cont "at the counter!"
 	done
 	
@@ -141,7 +159,7 @@ ShimmerCafeNPC3Text:
 	cont "over."
 	
 	para "That place is too"
-	line "rowdy and dirty."
+	line "rough and rowdy."
 	done
 	
 ShimmerCafeNPC4Text1:

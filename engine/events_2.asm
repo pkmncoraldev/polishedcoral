@@ -1,7 +1,5 @@
 ReturnFromMapSetupScript:: ; b8000
 	ld a, [wCurrentLandmark]
-	cp DIVE_LANDMARK
-	ret z
 	ld [wPreviousLandmark], a
 	ld a, [wMapGroup]
 	ld b, a

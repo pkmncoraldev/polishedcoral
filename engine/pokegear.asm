@@ -356,8 +356,6 @@ TownMap_InitCursorAndPlayerIconPositions: ; 90d70 (24:4d70)
 	call GetCurrentLandmark
 	cp GATE_LANDMARK
 	jr z, .gate
-	cp DIVE_LANDMARK
-	jr z, .gate
 	cp RESIDENTIAL_DISTRICT
 	jr z, .luster
 	cp SHOPPING_DISTRICT

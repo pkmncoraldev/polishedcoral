@@ -123,7 +123,7 @@ Route10TentNPCText2:
 	cont "named PROF. HILL."
 	
 	para "You should take it"
-	line "to her and see if"
+	line "to him and see if"
 	cont "he knows anything"
 	cont "about it."
 	
@@ -199,7 +199,7 @@ Route10TentNPCText9:
 	cont "named PROF. HILL."
 	
 	para "You should take it"
-	line "to her and see if"
+	line "to him and see if"
 	cont "he knows anything"
 	cont "about it."
 	

@@ -29,7 +29,7 @@ ShimmerLabResearchRoom_MapScriptHeader:
 	signpost  9,  3, SIGNPOST_JUMPTEXT, ShimmerLabArtifactText
 
 	db 5 ; object events
-	person_event SPRITE_SCIENTIST_F,  2,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchRoomProf, -1
+	person_event SPRITE_SPRUCE,  2,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchRoomProf, -1
 	person_event SPRITE_SCIENTIST,  4,  2, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchNPC1, -1
 	person_event SPRITE_SCIENTIST,  7,  0, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchNPC2, -1
 	person_event SPRITE_SCIENTIST,  6,  7, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchNPC3, -1
@@ -53,6 +53,8 @@ ShimmerLabArtifactText:
 ShimmerLabResearchRoomProf:
 	faceplayer
 	opentext
+	checkitem ANCIENT_BALL
+	iftrue .have_ball
 	checkevent EVENT_DESERT_TEMPLE_2_POKE_BALL
 	iftrue .done_desert
 	checkevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
@@ -91,6 +93,35 @@ ShimmerLabResearchRoomProf:
 	pause 6
 .startquest_end
 	writetext ShimmerLabResearchRoomProfText5
+	waitbutton
+	closetext
+	end
+.have_ball
+	checkevent EVENT_TALKED_TO_PROF_HILL_WITH_BALL
+	iftrue .ball_talked
+	writetext ShimmerLabResearchRoomProfText11
+	waitbutton
+	writetext ShimmerLabResearchRoomBallText
+	playsound SFX_LEVEL_UP
+	waitsfx
+	waitbutton
+	closetext
+	spriteface SHIMMER_LAB_RESEARCH_ROOM_PROF, UP
+	pause 15
+	opentext
+	writetext ShimmerLabResearchRoomProfText12
+	waitbutton
+	closetext
+	pause 10
+	setevent EVENT_TALKED_TO_PROF_HILL_WITH_BALL
+	faceplayer
+	opentext
+	writetext ShimmerLabResearchRoomProfText13
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+.ball_talked
+	writetext ShimmerLabResearchRoomProfText14
 	waitbutton
 	closetext
 	end
@@ -166,6 +197,11 @@ ShimmerLabResearchRoomPotText:
 ShimmerLabResearchRoomPearlText:
 	text "<PLAYER> gave over"
 	line "the BLACK PEARL!"
+	done
+	
+ShimmerLabResearchRoomBallText:
+	text "<PLAYER> showed"
+	line "the ANCIENT BALL!"
 	done
 
 ShimmerLabResearchRoomProfText1:
@@ -344,7 +380,7 @@ ShimmerLabResearchRoomProfText9:
 	cont "outside of battle."
 	
 	para "However, you don't"
-	line "a badge."
+	line "need a badge."
 	done
 	
 ShimmerLabResearchRoomProfText10:
@@ -362,6 +398,94 @@ ShimmerLabResearchRoomProfText10:
 	para "If you find any"
 	line "information,"
 	cont "let me know!"
+	done
+	
+ShimmerLabResearchRoomProfText11:
+	text "Hello, <PLAYER>."
+	
+	para "Do you have any"
+	line "new information"
+	cont "for me?"
+	
+	para "…"
+	
+	para "What!?"
+	
+	para "A third temple"
+	line "within a coral"
+	cont "reef deep under"
+	cont "the sea!?"
+	
+	para "And you found an"
+	line "artifact!?"
+	
+	para "Let me see!"
+	done
+	
+ShimmerLabResearchRoomProfText12:
+	text "Fascinating…"
+	
+	para "…"
+	
+	para "It looks just like"
+	line "a modern #BALL!"
+	
+	para "But it predates"
+	line "any record we have"
+	cont "of the creation of"
+	cont "the #BALL!"
+	
+	para "This will change"
+	line "our knowledge of"
+	cont "the relationship"
+	cont "between ancient"
+	cont "man and #MON!"
+	done
+	
+ShimmerLabResearchRoomProfText13:
+	text "You've done it"
+	line "again, <PLAYER>!"
+	
+	para "This is an"
+	line "incredible find!"
+	
+	para "However, we cannot"
+	line "get ahead of"
+	cont "ourselves."
+	
+	para "We must verify"
+	line "that this artifact"
+	cont "is in fact a #-"
+	cont "BALL, and not just"
+	cont "a look-a-like."
+	
+	para "Unfortunately,"
+	line "that is out of my"
+	cont "area of expertise."
+	done
+	
+ShimmerLabResearchRoomProfText14:
+	text "Please, I need you"
+	line "to take this ball"
+	cont "to my colleague"
+	cont "at the MUSEUM in"
+	cont "OBSCURA CITY!"
+	
+	para "Her name is"
+	line "ABIEGAIL."
+	
+	para "She'll know more"
+	line "conclusively what"
+	cont "it was used for."
+	
+	para "I'll let her know"
+	line "you're coming."
+	
+	para "Get the artifact"
+	line "to ABIE!"
+	
+	para "Thank you again"
+	line "for all your help!"
 	done
 	
 ShimmerLabResearchRoomNPC1Text:

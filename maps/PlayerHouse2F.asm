@@ -114,6 +114,7 @@ PlayerHouseDebugPoster:
 	if_equal $1, .tms
 	if_equal $2, .Sfx
 	if_equal $3, .mina
+	if_equal $4, .girls
 	closewindow
 	jump .page1
 .Mons
@@ -379,7 +380,16 @@ PlayerHouseDebugPoster:
 	clearevent EVENT_ROUTE_29_MINA_GONE
 	clearevent EVENT_ROUTE_10_MINA_GONE
 	setevent EVENT_MINA_QUEST_ACTIVATED
-	
+	jump .return
+.girls
+	closewindow
+	writetext PlayerHouseDebug2GirlsText
+	waitbutton
+	clearevent EVENT_RADIANT_GYM_ACTIVE
+	setevent EVENT_RADIANT_GYM_INACTIVE
+	setevent EVENT_SAVED_ALL_LOST_GIRLS
+	setevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
+	setevent EVENT_CAN_GO_TO_DESERT
 	jump .return
 .end
 	closetext
@@ -412,10 +422,11 @@ PlayerHouseDebugPoster:
 
 .MenuData2PlayerHouseDebug2: ; 0x48e04
 	db $80 ; flags
-	db 4 ; items
+	db 5 ; items
 	db "TMs/HMs@"
 	db "SFX TEST@"
 	db "ACTIVATE MINA@"
+	db "RESCUE GIRLS@"
 	db "PAGE 1@"
 	
 PlayerHouseDebug2ItemsText:
@@ -441,6 +452,11 @@ PlayerHouseDebug2TMText:
 PlayerHouseDebug2MinaText:
 	text "MINA quest"
 	line "started."
+	done
+	
+PlayerHouseDebug2GirlsText:
+	text "RADIANT TOWN"
+	line "girls rescued."
 	done
 	
 PlayerRoomSfxTest:

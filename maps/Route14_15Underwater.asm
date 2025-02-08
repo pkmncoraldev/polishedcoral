@@ -7,7 +7,7 @@ Route14_15Underwater_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route14_15UnderwaterCallback
 
-	db 58 ; warp events
+	db 66 ; warp events
 	warp_event 12,  5, ROUTE_14, 1
 	warp_event 13,  5, ROUTE_14, 2
 	warp_event  9,  6, ROUTE_14, 3
@@ -66,6 +66,14 @@ Route14_15Underwater_MapScriptHeader:
 	warp_event 62, 11, ROUTE_15, 41
 	warp_event 63, 11, ROUTE_15, 42
 	warp_event 64, 11, ROUTE_15, 43
+	warp_event 58, 32, ROUTE_15, 48
+	warp_event 59, 32, ROUTE_15, 49
+	warp_event 58, 33, ROUTE_15, 50
+	warp_event 59, 33, ROUTE_15, 51
+	warp_event 66, 22, ROUTE_15, 52
+	warp_event 67, 22, ROUTE_15, 53
+	warp_event 66, 23, ROUTE_15, 54
+	warp_event 67, 23, ROUTE_15, 55
 
 	db 32 ; coord events
 	coord_event 23, 21, 1, Route14_15UnderwaterEasterEggOn

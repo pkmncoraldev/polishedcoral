@@ -46,9 +46,8 @@ SprucePhoneComeToIslandText:
 	cont "sent the #MON"
 	cont "to you children."
 	
-	para "My research keeps"
-	line "me very busy, you"
-	cont "see."
+	para "My work keeps me"
+	line "very busy, you see."
 	
 	para "How has your jour-"
 	line "ney been going so"
@@ -130,9 +129,9 @@ SprucePhoneComeToIsland3Text:
 	line "isn't it?"
 	
 	para "I'd love to help,"
-	line "but my research"
-	cont "has me tied up as"
-	cont "of now."
+	line "but my work has"
+	cont "me tied up as of"
+	cont "right now."
 	
 	para "Ah!"
 	
@@ -154,9 +153,9 @@ SprucePhoneComeToIsland4Text:
 	para "Oh, <PLAYER>!"
 	
 	para "I'd love to help,"
-	line "but my research"
-	cont "has me tied up as"
-	cont "of now."
+	line "but my work has"
+	cont "me tied up as of"
+	cont "right now."
 	
 	para "Perhaps your"
 	line "MOTHER might"
@@ -181,13 +180,12 @@ SprucePhoneOnIslandText:
 	para "That's great to"
 	line "hear!"
 	
-	para "Come see me in my"
-	line "lab."
+	para "I've stepped out"
+	line "of my lab for a"
+	cont "moment."
 	
-	para "It's the big"
-	line "building on the"
-	cont "NORTH side of the"
-	cont "island."
+	para "I am at the"
+	line "#MON CENTER."
 	
 	para "See you soon!"
 	done
@@ -278,3 +276,45 @@ SprucePhoneMoltresText:
 	
 	para "Take care."
 	done
+	
+SprucePhoneAncientBallText:
+	text "<PLAYER>!"
+	
+	para "I heard about the"
+	line "ancient #BALL"
+	cont "you discovered!"
+	
+	para "It's wonderful!"
+	
+	para "Please, come see"
+	line "me at my lab on"
+	cont "SUNBEAM ISLAND."
+	
+	para "I have something"
+	line "I need to show"
+	cont "you in person."
+	done
+	
+	para "How did I hear?"
+	
+	para "Well, you see,"
+	line "DR. ABIEGAIL is"
+	cont "my daughter!"
+	
+	para "That ball was the"
+	line "missing piece to"
+	cont "my life's research!"
+	
+	
+	
+SpruceVoicemailText:
+	text "You have reached"
+	line "the laboratory of"
+	cont "PROF. SPRUCE."
+	
+	para "I can't get to the"
+	line "phone right now."
+	
+	para "My apologies!"
+	done
+	

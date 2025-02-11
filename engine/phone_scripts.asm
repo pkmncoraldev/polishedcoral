@@ -176,9 +176,16 @@ BillPhoneWholePCFull:
 
 SprucePhoneScript: ; 0xbd081
 	checkcode VAR_SPECIALPHONECALL
+	if_equal SPECIALCALL_GAVEANCIENTBALL, .ancientball
 	if_equal SPECIALCALL_SPRUCECALLABOUTBIRD, .bird
 	if_equal SPECIALCALL_COMETOISLAND, .cometoisland
 	if_equal SPECIALCALL_POKERUS, .pokerus
+	
+	checkevent EVENT_SPRUCE_BUSY_SIGNAL
+	iftrue .busy
+	
+	checkevent EVENT_SPRUCE_CAN_RECALL_ABOUT_ANCIENTBALL
+	iftrue .ancientball
 	
 	checkevent EVENT_GOT_POKEFLUTE
 	iftrue .normal
@@ -218,6 +225,15 @@ SprucePhoneScript: ; 0xbd081
 	end
 .onisland
 	farwritetext SprucePhoneOnIslandText
+	end
+.busy
+	farwritetext SpruceVoicemailText
+	end
+.ancientball
+	clearevent EVENT_SPRUCE_BUSY_SIGNAL
+	setevent EVENT_SPRUCE_CAN_GET_MASTER_BALL
+	setevent EVENT_SPRUCE_CAN_RECALL_ABOUT_ANCIENTBALL
+	farwritetext SprucePhoneAncientBallText
 	end
 .bird
 	setevent EVENT_FIRST_BIRD_ACTIVE

@@ -27,18 +27,157 @@ ObscuraMuseumEmployeeRoom_MapScriptHeader:
 	signpost  8,  2, SIGNPOST_UP, ObscuraMuseumKeyboard3
 	signpost  8,  8, SIGNPOST_UP, ObscuraMuseumKeyboard4
 
-	db 7 ; object events
+	db 8 ; object events
 	person_event SPRITE_GENERAL_VARIABLE_1, -5, -5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	person_event SPRITE_SCIENTIST_F,  4,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomAbiegail, -1
 	person_event SPRITE_RECEPTIONIST,  1,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC1, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SCIENTIST,  9, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC2, -1
 	person_event SPRITE_SCIENTIST_F,  3,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC3, -1
 	person_event SPRITE_SCIENTIST,  3, 11, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC4, -1
 	person_event SPRITE_SCIENTIST_F, 11,  0, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC5, -1
-	person_event SPRITE_SCIENTIST,  5,  6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC6, -1
+	person_event SPRITE_SCIENTIST, 12,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC6, -1
 
 
 	const_def 1 ; object constants
 	const OBSCURA_MUSEUM_EMPLOYEE_ROOM_SNARE
+	const OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE
+
+ObscuraMuseumEmployeeRoomAbiegail:
+;	checkevent EVENT_SNARE_AT_MUSEUM
+;	iftrue .snare
+;	checkevent EVENT_TALKED_TO_PROF_HILL_WITH_BALL
+;	iftrue .ball
+;	jumptextfaceplayer ObscuraMuseumEmployeeRoomAbiegailText1
+;.snare
+;	jumptextfaceplayer ObscuraMuseumEmployeeRoomAbiegailText2
+;.ball
+	faceplayer
+	opentext
+	checkevent EVENT_GAVE_ABIE_ANCIENT_BALL
+	iftrue .gave_ball
+	writetext ObscuraMuseumEmployeeRoomAbiegailText3
+	waitbutton
+	writetext ObscuraMuseumEmployeeRoomBallText
+	takeitem ANCIENT_BALL
+	playsound SFX_LEVEL_UP
+	setevent EVENT_GAVE_ABIE_ANCIENT_BALL
+	waitsfx
+	waitbutton
+	closetext
+	checkcode VAR_FACING
+	if_equal DOWN, .YouAreFacingDown
+	spriteface OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, UP
+	jump .cont
+.YouAreFacingDown
+	spriteface OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, DOWN
+.cont
+	pause 15
+	opentext
+	writetext ObscuraMuseumEmployeeRoomAbiegailText4
+	waitbutton
+	closetext
+	pause 20
+	faceplayer
+	pause 10
+	opentext
+	writetext ObscuraMuseumEmployeeRoomAbiegailText5
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	specialphonecall SPECIALCALL_GAVEANCIENTBALL
+	setevent EVENT_SPRUCE_BUSY_SIGNAL
+.gave_ball
+	writetext ObscuraMuseumEmployeeRoomAbiegailText6
+	waitbutton
+	closetext
+	end
+	
+ObscuraMuseumEmployeeRoomBallText:
+	text "<PLAYER> handed"
+	line "over ANCIENT BALL!"
+	done
+	
+ObscuraMuseumEmployeeRoomAbiegailText1:
+	text "My name is"
+	line "DR. ABIEGAIL."
+	
+	para "I'm the head of"
+	line "research here."
+	done
+	
+ObscuraMuseumEmployeeRoomAbiegailText2:
+	text "My name is"
+	line "DR. ABIEGAIL."
+	
+	para "I'm the head of"
+	line "research here."
+	
+	para "These TEAM SNARE"
+	line "goons…"
+	
+	para "What a pain!"
+	done
+	
+ObscuraMuseumEmployeeRoomAbiegailText3:
+	text "My name is"
+	line "DR. ABIEGAIL."
+	
+	para "I'm the head of"
+	line "research here."
+	
+	para "Are you <PLAYER>?"
+	
+	para "PROF. HILL told"
+	line "me you have an"
+	cont "item of interest"
+	cont "for me."
+	
+	para "Well, let's take"
+	line "a look."
+	done
+	
+ObscuraMuseumEmployeeRoomAbiegailText4:
+	text "Hmm…"
+	done
+
+ObscuraMuseumEmployeeRoomAbiegailText5:
+	text "Well, it's the"
+	line "real deal alright."
+	
+	para "This is"
+	line "unbelievable!"
+	done
+	
+ObscuraMuseumEmployeeRoomAbiegailText6:
+	text "My father spent"
+	line "his entire career"
+	cont "trying to prove"
+	cont "the existence of a"
+	cont "#BALL this old."
+	
+	para "There have long"
+	line "been theories of"
+	cont "people training"
+	cont "#MON in ancient"
+	cont "times."
+	
+	para "But there was"
+	line "never solid proof."
+	
+	para "Until now!"
+	
+	para "I've got to call"
+	line "my father and tell"
+	cont "him right away!"
+	
+	para "After that, we'll"
+	line "get this out on"
+	cont "display as soon"
+	cont "as possible."
+	
+	para "Thank you so much"
+	line "for all your help!"
+	done
 
 ObscuraMuseumEmployeeRoomNPC1:
 	checkevent EVENT_MUSEUM_CAN_LOWER_BARRIER

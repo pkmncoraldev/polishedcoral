@@ -1428,11 +1428,15 @@ _SpruceText4::
 
 _SpruceText5::
 	text "I study #MON"
-	line "conservation and"
-	
-	para "how it relates to"
-	line "the expansion of"
+	line "training and how"
+	cont "it relates to the"
+	cont "the expansion of"
 	cont "civilization."
+	
+	para "These days though,"
+	line "I mostly focus on"
+	cont "running a #MON"
+	cont "reserve at my LAB."
 	
 	para "But that's just"
 	line "me."

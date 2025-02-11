@@ -472,7 +472,7 @@ ShimmerLabResearchRoomProfText14:
 	cont "OBSCURA CITY!"
 	
 	para "Her name is"
-	line "ABIEGAIL."
+	line "DR. ABIEGAIL."
 	
 	para "She'll know more"
 	line "conclusively what"

@@ -233,6 +233,7 @@ SprucePhoneScript: ; 0xbd081
 	clearevent EVENT_SPRUCE_BUSY_SIGNAL
 	setevent EVENT_SPRUCE_CAN_GET_MASTER_BALL
 	setevent EVENT_SPRUCE_CAN_RECALL_ABOUT_ANCIENTBALL
+	specialphonecall SPECIALCALL_NONE
 	farwritetext SprucePhoneAncientBallText
 	end
 .bird

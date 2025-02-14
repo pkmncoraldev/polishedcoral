@@ -43,14 +43,14 @@ ObscuraMuseumEmployeeRoom_MapScriptHeader:
 	const OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE
 
 ObscuraMuseumEmployeeRoomAbiegail:
-;	checkevent EVENT_SNARE_AT_MUSEUM
-;	iftrue .snare
-;	checkevent EVENT_TALKED_TO_PROF_HILL_WITH_BALL
-;	iftrue .ball
-;	jumptextfaceplayer ObscuraMuseumEmployeeRoomAbiegailText1
-;.snare
-;	jumptextfaceplayer ObscuraMuseumEmployeeRoomAbiegailText2
-;.ball
+	checkevent EVENT_SNARE_AT_MUSEUM
+	iftrue .snare
+	checkevent EVENT_TALKED_TO_PROF_HILL_WITH_BALL
+	iftrue .ball
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomAbiegailText1
+.snare
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomAbiegailText2
+.ball
 	faceplayer
 	opentext
 	checkevent EVENT_GAVE_ABIE_ANCIENT_BALL

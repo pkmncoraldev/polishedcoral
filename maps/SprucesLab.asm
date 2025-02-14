@@ -47,8 +47,8 @@ SpruceLabUnlockDoor:
 	
 SpruceLabHealMachine:
 	opentext
-	checkevent EVENT_TALKED_TO_SPRUCE
-	iffalse .whats_this
+;	checkevent EVENT_TALKED_TO_SPRUCE
+;	iffalse .whats_this
 	checkcode VAR_PARTYCOUNT
 	if_equal 0, .no_pokemon
 	writetext SpruceLabHealingMachineText
@@ -85,6 +85,12 @@ SpruceLabHealMachine:
 	end
 	
 SpruceLabSpruce:
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue .repeatmasterballspeech
+	checkevent EVENT_NO_ROOM_FOR_MASTER_BALL
+	iftrue .trymasterballagain
+	checkevent EVENT_SPRUCE_CAN_GET_MASTER_BALL
+	iftrue .masterballspeech
 	checkevent EVENT_TALKED_TO_SPRUCE
 	iftrue .alreadytalked
 	setevent EVENT_TALKED_TO_SPRUCE
@@ -128,6 +134,42 @@ SpruceLabSpruce:
 	waitbutton
 	special ProfOaksPCBoot
 	writetext SpruceLabSpruceText9
+	waitbutton
+	closetext
+	end
+.trymasterballagain
+	faceplayer
+	opentext
+	writetext SpruceLabSpruceText17
+	waitbutton
+	jump .getmasterball
+.masterballspeech
+	faceplayer
+	opentext
+	writetext SpruceLabSpruceText14
+	waitbutton
+.getmasterball
+	verbosegiveitem MASTER_BALL
+	iffalse .no_room
+	writetext SpruceLabSpruceText15
+	waitbutton
+	closetext
+	clearevent EVENT_NO_ROOM_FOR_MASTER_BALL
+	clearevent EVENT_SPRUCE_CAN_GET_MASTER_BALL
+	clearevent EVENT_SPRUCE_CAN_RECALL_ABOUT_ANCIENTBALL
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	setevent EVENT_GOT_MASTERBALL
+	end
+.no_room
+	writetext SpruceLabSpruceText16
+	waitbutton
+	closetext
+	setevent EVENT_NO_ROOM_FOR_MASTER_BALL
+	end
+.repeatmasterballspeech
+	faceplayer
+	opentext
+	writetext SpruceLabSpruceText15
 	waitbutton
 	closetext
 	end
@@ -287,8 +329,7 @@ SpruceLabHealingMachineText2:
 	done
 	
 SpruceLabSpruceText1:
-	text "Ah!<WAIT_M>"
-	line "<PLAYER>!"
+	text "Ah! <PLAYER>!"
 	
 	para "You came!"
 	
@@ -454,8 +495,125 @@ SpruceLabSpruceText13:
 	cont "the machine."
 	done
 	
+SpruceLabSpruceText14:
+	text "<PLAYER>!<WAIT_S>"
+	line "It's wonderful!"
+	
+	para "I heard about the"
+	line "ancient #BALL"
+	cont "you discovered!"
+	
+	para "Amazing!"
+	
+	para "…<WAIT_L>What's with that"
+	line "look?"
+	
+	para "Are you confused"
+	line "as to how I heard?"
+	
+	para "Well, you see,"
+	line "DR. ABIEGAIL is"
+	cont "none other than"
+	cont "my daughter!"
+	
+	para "Before my current"
+	line "work with the"
+	cont "#MON reserve,"
+	
+	para "I used to conduct"
+	line "research at the"
+	cont "OBSCURA MUSEUM."
+	
+	para "My focus was on"
+	line "the relationship"
+	cont "between ancient"
+	cont "man and #MON."
+	
+	para "Our contemporary"
+	line "understanding is"
+	cont "that the #BALL"
+	cont "was a relatively"
+	cont "recent invention,"
+	
+	para "and that idea of"
+	line "catching #MON"
+	cont "originated a few"
+	cont "hundred years ago."
+
+	para "My work attempted"
+	line "to prove that this"
+	cont "wasn't the case,"
+	
+	para "and that a device"
+	line "close to a modern"
+	cont "#BALL existed"
+	cont "in ancient times."
+	
+	para "After I retired,"
+	line "ABIE followed in"
+	cont "my footsteps and"
+	cont "carried on my"
+	cont "work."
+	
+	para "That ball of yours"
+	line "was the missing"
+	cont "piece to my life's"
+	cont "research!"
+	
+	para "I don't know how I"
+	line "can thank you,"
+	cont "<PLAYER>."
+	
+	para "I won't take up any"
+	line "more of your time"
+	cont "with my talking,"
+	
+	para "but I do have"
+	line "something to show"
+	cont "my thanks."
+	
+	para "Take it.<WAIT_S>"
+	line "It's yours."
+	done
+	
+SpruceLabSpruceText15:
+	text "The MASTER BALL"
+	line "cannot fail."
+	
+	para "It'll catch any"
+	line "#MON no matter"
+	cont "what."
+	
+	para "It's a very rare"
+	line "and valuable item."
+	
+	para "I can't think"
+	line "of anyone more"
+	cont "deserving of it"
+	cont "than you."
+	done
+	
+SpruceLabSpruceText16:
+	text "You don't have"
+	line "room for my"
+	cont "gift!"
+	
+	para "Please make some"
+	line "room."
+	
+	para "This is important!"
+	done
+	
+SpruceLabSpruceText17:
+	text "Have you made"
+	line "some room?"
+	
+	para "Take it.<WAIT_S>"
+	line "It's yours."
+	done
+	
 SpruceLabDexCheckText:
-	text "Ah, <WAIT_S><PLAYER>!"
+	text "Ah, <PLAYER>!"
 	
 	para "How is your #-"
 	line "DEX coming?"

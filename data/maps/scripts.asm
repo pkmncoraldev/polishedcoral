@@ -187,8 +187,6 @@ INCLUDE "maps/LakeOnwaBoatHouseRight.asm"
 INCLUDE "maps/LakeOnwaBoatHouseLeft.asm"
 INCLUDE "maps/LakeOnwaNameRaterHouse.asm"
 INCLUDE "maps/LakeOnwaItemHouse.asm"
-INCLUDE "maps/SunbeamDodrioHouse.asm"
-INCLUDE "maps/SunbeamSoftSandHouse.asm"
 
 
 SECTION "Sunbeam Island Scripts", ROMX
@@ -198,15 +196,21 @@ INCLUDE "maps/SunbeamBeach.asm"
 INCLUDE "maps/SunbeamBoatHouse.asm"
 INCLUDE "maps/SunbeamSurfShop.asm"
 INCLUDE "maps/SunbeamBikiniContest.asm"
-INCLUDE "maps/SunbeamOldCouplesHouse.asm"
-INCLUDE "maps/SunbeamTradeHouse.asm"
 INCLUDE "maps/SprucesLab.asm"
 INCLUDE "maps/SunbeamReserve.asm"
 INCLUDE "maps/SunbeamJungle.asm"
+
+SECTION "Sunbeam Island Scripts2", ROMX
+
+INCLUDE "maps/SunbeamDodrioHouse.asm"
+INCLUDE "maps/SunbeamSoftSandHouse.asm"
+INCLUDE "maps/SunbeamOldCouplesHouse.asm"
+INCLUDE "maps/SunbeamTradeHouse.asm"
 INCLUDE "maps/SunbeamJungleCave.asm"
 INCLUDE "maps/SunbeamJungleDeep.asm"
 
 SECTION "Eventide Village Scripts", ROMX
+
 INCLUDE "maps/EventideVillage.asm"
 INCLUDE "maps/EventideGymSpeechHouse.asm"
 INCLUDE "maps/EventideSootheBellHouse.asm"

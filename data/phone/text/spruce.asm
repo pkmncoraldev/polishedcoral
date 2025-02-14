@@ -280,32 +280,18 @@ SprucePhoneMoltresText:
 SprucePhoneAncientBallText:
 	text "<PLAYER>!"
 	
-	para "I heard about the"
-	line "ancient #BALL"
-	cont "you discovered!"
+	para "It's PROF. SPRUCE."
+	line "Are you busy?"
 	
-	para "It's wonderful!"
+	para "I have something"
+	line "I need to show you"
+	cont "in person."
 	
 	para "Please, come see"
 	line "me at my lab on"
-	cont "SUNBEAM ISLAND."
-	
-	para "I have something"
-	line "I need to show"
-	cont "you in person."
+	cont "SUNBEAM ISLAND as"
+	cont "soon as possible!"
 	done
-	
-	para "How did I hear?"
-	
-	para "Well, you see,"
-	line "DR. ABIEGAIL is"
-	cont "my daughter!"
-	
-	para "That ball was the"
-	line "missing piece to"
-	cont "my life's research!"
-	
-	
 	
 SpruceVoicemailText:
 	text "You have reached"

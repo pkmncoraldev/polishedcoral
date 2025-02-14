@@ -530,12 +530,13 @@ TwinkleTownSnowman1Text3:
 	done
 	
 TwinkleTownSnowman1Text4:
-	text "You monster!"
+	text "That's that."
 	done
 	
 TwinkleTownSnowman1Text5:
-	text "A snowman with"
-	line "no face…"
+	text "Two snowballs"
+	line "stacked on top"
+	cont "of each other…"
 	done
 	
 TwinkleTownSnowman1TextAreYouSure:

@@ -29,7 +29,7 @@ ShimmerLabResearchRoom_MapScriptHeader:
 	signpost  9,  3, SIGNPOST_JUMPTEXT, ShimmerLabArtifactText
 
 	db 5 ; object events
-	person_event SPRITE_SPRUCE,  2,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchRoomProf, -1
+	person_event SPRITE_HILL,  2,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchRoomProf, -1
 	person_event SPRITE_SCIENTIST,  4,  2, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchNPC1, -1
 	person_event SPRITE_SCIENTIST,  7,  0, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchNPC2, -1
 	person_event SPRITE_SCIENTIST,  6,  7, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabResearchNPC3, -1

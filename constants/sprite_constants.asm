@@ -217,6 +217,7 @@
 	const SPRITE_BIG_CURSOLA
 	const SPRITE_CLEFAIRY_WALK
 	const SPRITE_CLEFABLE_WALK
+	const SPRITE_HILL
 	
 	const_def $ed
 SPRITE_POKEMON EQU const_value

@@ -134,9 +134,6 @@ SpookHouseJournalText1:
 	text "A dusty old"
 	line "journal."
 	
-	para "It's open to a page"
-	line "in the middle."
-	
 	para "Read it?"
 	done
 	

@@ -680,11 +680,11 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, $5
 	call FarCopyWRAM
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_11
-	jp z, .route11
+	cp MAP_ROUTE_12
+	jp z, .route12
 	ld hl, OutsideSkateparkPalette
 	jp LoadTimeofDayBGPal6
-.route11
+.route12
 	ld hl, DiveSpotsPalette
 	jp LoadTimeofDayBGPal6
 	

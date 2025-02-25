@@ -666,7 +666,7 @@ SongText19:
 	
 SongText20:
 	text "and the flags they"
-	line "are the guide!"
+	line "are your guide!"
 	done
 	
 SongText21:
@@ -700,6 +700,7 @@ BrilloCommanderCop:
 	writetext BrilloCommanderCopText1
 	waitbutton
 	closetext
+	pause 10
 	faceplayer
 	opentext
 	writetext BrilloCommanderCopText2
@@ -734,7 +735,11 @@ BrilloTownSignText:
 	done
 	
 BrilloTownPoliceSignText:
-	text "POLICE STATION"
+	text "PUEBLO BRILLO"
+	line "POLICE STATION"
+	
+	para "“Ut Vexare"
+	line "et Impedire”"
 	done
 	
 BrilloGraffitiCopText:
@@ -749,7 +754,7 @@ BrilloGraffitiCopText:
 	done
 	
 BrilloCommanderCopText1:
-	text "Hey! <WAIT_M>New guy!"
+	text "Hey! <WAIT_S>New guy!"
 	
 	para "Less complaining,"
 	line "more scrubbing!"

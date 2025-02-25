@@ -315,6 +315,8 @@ LoadSpecialMapPalette: ; 494ac
 	cp GROUP_DESERT_WASTELAND_OASIS
 	jp nz, .nett2_end
 	ld a, [wMapNumber]
+	cp MAP_ROUTE_17
+	jp z, .desert_barrier
 	cp MAP_BRILLO_TOWN
 	jp z, .brillo
 	cp MAP_ROUTE_18_NORTH
@@ -391,6 +393,10 @@ LoadSpecialMapPalette: ; 494ac
 	call FarCopyWRAM
 	scf
 	ret
+	
+.desert_barrier
+	ld hl, ConstructionPalette
+	jp LoadTimeofDayBGPal3
 	
 .desert_house
 	ld hl, DesertHousePalette
@@ -853,6 +859,20 @@ DiveSpotMapPals:
 	scf
 	ret
 	
+LoadTimeofDayBGPal3:
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld a, $5
+LoadBGPal3:
+	ld de, wUnknBGPals + 3 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
+	
 LoadTimeofDayBGPal6:
 	ld a, [wTimeOfDayPal]
 	and 3
@@ -867,19 +887,12 @@ LoadBGPal6:
 	scf
 	ret
 	
-LoadSevenBGPalettes: ; 494f2
-	ld a, $5
-	ld de, wUnknBGPals
-	ld bc, 7 palettes
-	call FarCopyWRAM
-	scf
-	ret
-	
 LoadSevenTimeOfDayBGPalettes:
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 8 palettes
 	rst AddNTimes
+LoadSevenBGPalettes:
 	ld a, $5
 	ld de, wUnknBGPals
 	ld bc, 7 palettes

@@ -8,24 +8,24 @@
 	db 31, CACNEA		;20%
 	db 31, GLIGAR		;10%
 	db 31, CACNEA		;5%
-	db 31, MARACTUS		;4%
-	db 31, MARACTUS		;1%
+	db 31, CACTURNE		;4%
+	db 31, CACTURNE		;1%
 	; day
 	db 31, NUMEL		;30%
 	db 31, MINCCINO		;30%
 	db 31, CACNEA		;20%
 	db 31, GLIGAR		;10%
 	db 31, CACNEA		;5%
-	db 31, MARACTUS		;4%
-	db 31, MARACTUS		;1%
+	db 31, CACTURNE		;4%
+	db 31, CACTURNE		;1%
 	; nite
 	db 31, NUMEL		;30%
 	db 31, MINCCINO		;30%
 	db 31, CACNEA		;20%
 	db 31, GLIGAR		;10%
 	db 31, CACNEA		;5%
-	db 31, MARACTUS		;4%
-	db 31, MARACTUS		;1%
+	db 31, CACTURNE		;4%
+	db 31, CACTURNE		;1%
 	
 	map_id ROUTE_18
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -35,24 +35,24 @@
 	db 31, CACNEA		;20%
 	db 31, GLIGAR		;10%
 	db 31, CACNEA		;5%
-	db 31, MARACTUS		;4%
-	db 31, MARACTUS		;1%
+	db 31, CACTURNE		;4%
+	db 31, CACTURNE		;1%
 	; day
 	db 31, NUMEL		;30%
 	db 31, MINCCINO		;30%
 	db 31, CACNEA		;20%
 	db 31, GLIGAR		;10%
 	db 31, CACNEA		;5%
-	db 31, MARACTUS		;4%
-	db 31, MARACTUS		;1%
+	db 31, CACTURNE		;4%
+	db 31, CACTURNE		;1%
 	; nite
 	db 31, NUMEL		;30%
 	db 31, MINCCINO		;30%
 	db 31, CACNEA		;20%
 	db 31, GLIGAR		;10%
 	db 31, CACNEA		;5%
-	db 31, MARACTUS		;4%
-	db 31, MARACTUS		;1%
+	db 31, CACTURNE		;4%
+	db 31, CACTURNE		;1%
 	
 	map_id BRILLO_BOAT_HOUSE ; used in desert when stuck in sand
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
@@ -87,24 +87,24 @@
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	
@@ -114,24 +114,24 @@
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 
@@ -141,24 +141,24 @@
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 
@@ -168,24 +168,24 @@
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 
@@ -195,24 +195,24 @@
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 
@@ -222,24 +222,24 @@
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 
@@ -249,24 +249,24 @@
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 
@@ -276,24 +276,24 @@
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 
@@ -303,24 +303,24 @@
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
 	db 31, CACNEA		;20%
-	db 31, NUMEL		;10%
-	db 32, CACTURNE		;5%
+	db 31, MARACTUS		;10%
+	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
 	

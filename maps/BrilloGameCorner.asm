@@ -46,6 +46,7 @@ BrilloGameCorner_MapScriptHeader:
 	const BRILLO_GAME_CORNER_NPC_6
 	
 BrilloGameCornerCallback:
+	setevent EVENT_BEEN_IN_GAME_CORNER
 	readvar VAR_PLAYER_COLOR
 	if_equal 3, .brown
 	setevent EVENT_HIDE_OW_OBJECTS_TEAL

@@ -1,7 +1,8 @@
 Route17_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, Route17Callback
 
 	db 0 ; warp events
 
@@ -9,12 +10,37 @@ Route17_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 6 ; object events
+	person_event SPRITE_OFFICER,  1, 38, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route17Cops, EVENT_ROUTE_17_COPS_GONE
+	person_event SPRITE_OFFICER,  1, 39, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route17Cops, EVENT_ROUTE_17_COPS_GONE
 	person_event SPRITE_OFFICER, 26, 12, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute17_1, -1
 	person_event SPRITE_BLACK_BELT, 18,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute17_2, -1
 	person_event SPRITE_OFFICER,  8, 39, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute17_3, -1
 	person_event SPRITE_BEAUTY,  6, 24, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute17_4, -1
 
+
+Route17Callback:
+	checkevent EVENT_ROUTE_17_COPS_GONE
+	iftrue .doitshraggy
+	return
+.doitshraggy
+	changeblock $28, $0, $2d
+	return
+
+Route17Cops:
+	setevent EVENT_CAN_TALK_TO_POLICE_CAPTAIN
+	jumptext Route17CopsText
+	
+Route17CopsText:
+	text "The road's closed."
+	
+	para "Direct orders from"
+	line "the CAPTAIN."
+	
+	para "You have a problem"
+	line "with that, take it"
+	cont "up with him."
+	done
 
 TrainerRoute17_1:
 	generictrainer OFFICER, SANCHEZ, EVENT_BEAT_ROUTE_17_TRAINER_1, .SeenText, .BeatenText

@@ -147,4 +147,5 @@ MapTriggers::
 	scene_var SKATEPARK,							  wAlways0Trigger
 	scene_var UNDERWATER_TEMPLE_1,					  wUnderwaterTemple1Trigger
 	scene_var UNDERWATER_TEMPLE_2,					  wAlways0Trigger
+	scene_var BRILLO_POLICE_STATION,				  wAlways0Trigger
 	db -1

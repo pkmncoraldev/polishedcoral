@@ -235,3 +235,4 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ea
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; eb
 	tilecoll WALL, WALL, FLOOR, WALL ; ec
+	tilecoll WALL, WALL, DOOR, WALL ; ed

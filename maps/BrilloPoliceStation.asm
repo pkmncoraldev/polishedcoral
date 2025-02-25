@@ -3,28 +3,34 @@ BrilloPoliceStation_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 2 ; warp events
-	warp_event  2,  9, BRILLO_TOWN, 7
-	warp_event  3,  9, BRILLO_TOWN, 8
+	db 3 ; warp events
+	warp_event  2, 15, BRILLO_TOWN, 7
+	warp_event  3, 15, BRILLO_TOWN, 8
+	warp_event 12,  1, ROUTE_1, 1
 
-	db 0 ; coord events
+	db 1 ; coord events
+	coord_event 18,  8, 0, BrilloPoliceStationGuardStopsYou
 
 	db 2 ; bg events
-	signpost  3, 11, SIGNPOST_READ, BrilloPoliceStationPrisoner1
-	bg_event  1,  8, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_BRILLO_TOWN
+	signpost  9, 11, SIGNPOST_READ, BrilloPoliceStationPrisoner1
+	bg_event  1, 14, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_BRILLO_TOWN
 
-	db 12 ; object events
-	person_event SPRITE_SITTING_POKEFANF,  7,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationLady, -1
-	object_event  1,  4, SPRITE_SPA_WORKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCaptain, -1
-	object_event  2,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCop1, -1
-	object_event  4,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCop2, -1
-	object_event  5,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCop3, -1
-	object_event  3,  6, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCop4, -1
-	object_event 11,  3, SPRITE_COP_SCRUB, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner1, -1
-	object_event 14,  2, SPRITE_BURGLAR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner2, -1
-	object_event  8,  7, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner3, -1
-	object_event 14,  7, SPRITE_PONYTAIL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner4, -1
-	person_event SPRITE_SLOWPOKETAIL,  5,  0, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
+	db 16 ; object events
+	person_event SPRITE_SITTING_POKEFANF, 13,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationLady, -1
+	object_event  1, 10, SPRITE_SPA_WORKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCaptain, -1
+	object_event  2, 10, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCop1, -1
+	object_event  4, 10, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCop2, -1
+	object_event  5, 10, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCop3, -1
+	object_event  3, 12, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCop4, -1
+	object_event 19,  7, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationGuard, -1
+	object_event 19,  8, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationGuard, -1
+	object_event 15,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCop1, -1
+	object_event  9,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCop1, -1
+	object_event 11,  9, SPRITE_COP_SCRUB, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner1, -1
+	object_event 14,  8, SPRITE_BURGLAR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner2, -1
+	object_event  8, 13, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner3, -1
+	object_event 14, 13, SPRITE_PONYTAIL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner4, -1
+	person_event SPRITE_SLOWPOKETAIL, 11,  0, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	hiddentape_event 1, 8, MUSIC_BRILLO_TOWN, 1, EVENT_MUSIC_BRILLO_TOWN
 
 	const_def 1 ; object constants
@@ -34,7 +40,50 @@ BrilloPoliceStation_MapScriptHeader:
 	const BRILLO_POLICE_STATION_COP_2
 	const BRILLO_POLICE_STATION_COP_3
 	const BRILLO_POLICE_STATION_COP_4
+	const BRILLO_POLICE_STATION_GUARD_1
+	const BRILLO_POLICE_STATION_GUARD_2
 
+
+BrilloPoliceStationGuardStopsYou:
+	special Special_StopRunning
+	playsound SFX_PAY_DAY
+	spriteface BRILLO_POLICE_STATION_GUARD_2, LEFT
+	showemote EMOTE_SHOCK, BRILLO_POLICE_STATION_GUARD_2, 15
+	pause 7
+	spriteface PLAYER, RIGHT
+	opentext
+	writetext BrilloPoliceStationGuardText2
+	waitbutton
+	closetext
+	follow PLAYER, BRILLO_POLICE_STATION_GUARD_2
+	applyonemovement PLAYER, step_down
+	stopfollow
+	spriteface PLAYER, UP
+	spriteface BRILLO_POLICE_STATION_GUARD_2, DOWN
+	opentext
+	writetext BrilloPoliceStationGuardText1
+	waitbutton
+	closetext
+	applyonemovement BRILLO_POLICE_STATION_GUARD_2, step_right
+	spriteface BRILLO_POLICE_STATION_GUARD_2, UP
+	end
+
+BrilloPoliceStationGuard:
+	faceplayer
+	opentext
+	writetext BrilloPoliceStationGuardText1
+	waitbutton
+	closetext
+	spriteface BRILLO_POLICE_STATION_GUARD_2, UP
+	end
+	
+BrilloPoliceStationGuardText1:
+	text "Move along, kid."
+	done
+	
+BrilloPoliceStationGuardText2:
+	text "Hey!"
+	done
 
 BrilloPoliceStationLady:
 	faceplayer
@@ -110,6 +159,7 @@ BrilloPoliceStationCaptain:
 	writetext BrilloPoliceStationCaptainText7
 	yesorno
 	iffalse .said_no
+.ask_again
 	writetext BrilloPoliceStationCaptainText9
 	yesorno
 	iffalse .refused
@@ -143,8 +193,21 @@ BrilloPoliceStationCaptain:
 	disappear BRILLO_POLICE_STATION_COP_1
 	setevent EVENT_ROUTE_17_COPS_GONE
 	end
-	
 .refused
+	writetext BrilloPoliceStationCaptainText14
+	yesorno
+	iffalse .ask_again
+	writetext BrilloPoliceStationCaptainText15
+	waitbutton
+	closetext
+	follow BRILLO_POLICE_STATION_CAPTAIN, PLAYER
+	applymovement BRILLO_POLICE_STATION_CAPTAIN, Movement_BrilloPoliceStationCaptain2
+	stopfollow
+	playsound SFX_EXIT_BUILDING
+	disappear BRILLO_POLICE_STATION_CAPTAIN
+	applyonemovement PLAYER, step_up
+	warpcheck
+	end
 .said_no
 	writetext BrilloPoliceStationCaptainText8
 	waitbutton
@@ -403,6 +466,23 @@ BrilloPoliceStationCaptainText13:
 	para "Thanks for your"
 	line "cooperation, kid."
 	done
+	
+BrilloPoliceStationCaptainText14:
+	text "So, you've decided"
+	line "not to cooperate."
+	
+	para "Is that right?"
+	done
+	
+BrilloPoliceStationCaptainText15:
+	text "Fine!<WAIT_S>"
+	line "Suit yourself!"
+	
+	para "You're comin' with"
+	line "me!"
+	
+	para "Move it!"
+	done
 
 BrilloPoliceStationCop1Text:
 	text "It just doesn't"
@@ -448,4 +528,41 @@ Movement_BrilloPoliceStationCaptain:
 	step_down
 	step_down
 	step_down
+	step_end
+	
+Movement_BrilloPoliceStationCaptain2:
+	step_down
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_up
+	step_up
+	step_up
+	step_up
+	step_up
+	step_up
+	step_up
+	step_up
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_up
+	step_up
 	step_end

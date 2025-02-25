@@ -62,7 +62,8 @@ Route15_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost  9, 38, SIGNPOST_ITEM + DIVE_BALL, EVENT_ROUTE_15_DIVE_BALL
 
 	db 8 ; object events
 	person_event SPRITE_SAILOR, 14, 45, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRoute15_1, -1

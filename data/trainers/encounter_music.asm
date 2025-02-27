@@ -93,5 +93,6 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_LASS_ENCOUNTER			; clover
 	db MUSIC_NONE					; erika
 	db MUSIC_NONE					; mina
-	db MUSIC_HARDCORE_ENCOUNTER		; ledianranger
+	db MUSIC_NONE					; ledianranger
+	db MUSIC_NONE					; police captain
 	db MUSIC_NONE			 		; towertycoon

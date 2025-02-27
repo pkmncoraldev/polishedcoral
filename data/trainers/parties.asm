@@ -2928,6 +2928,42 @@ OfficerGroup:
 	db -1 ; end
 
 ; ================
+
+	; OFFICER
+	db "JONES@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; OFFICER
+	db "SMITH@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; OFFICER
+	db "ROGERS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; OFFICER
+	db "HARRIS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -6046,6 +6082,20 @@ LedianRangerGroup:
 		db LIGHT_SCREEN, REFLECT, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON, CONFUSE_RAY
 	db 38, LEDIAN, FIVESTARHELM
 		db FIRE_PUNCH, ICE_PUNCH, ROOST, THUNDERPUNCH
+	db -1 ; end
+
+; ================
+; ================================
+
+PoliceCaptainGroup:
+; ================================
+; ================
+
+	; CAPTAIN
+	db "ARMSTRONG@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================

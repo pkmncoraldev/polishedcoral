@@ -124,6 +124,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; erika
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; mina
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; ledianranger
+	db  48, $DD, $BB, $DB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; police captain
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; towertycoon
 
 ; 2715c

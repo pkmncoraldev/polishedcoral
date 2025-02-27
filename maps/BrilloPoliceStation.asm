@@ -6,7 +6,7 @@ BrilloPoliceStation_MapScriptHeader:
 	db 3 ; warp events
 	warp_event  2, 15, BRILLO_TOWN, 7
 	warp_event  3, 15, BRILLO_TOWN, 8
-	warp_event 12,  1, ROUTE_1, 1
+	warp_event 12,  1, BRILLO_POLICE_BACK_ROOM, 2
 
 	db 1 ; coord events
 	coord_event 18,  8, 0, BrilloPoliceStationGuardStopsYou
@@ -106,6 +106,8 @@ BrilloPoliceStationLady:
 	end
 
 BrilloPoliceStationCaptain:
+	checkevent EVENT_ROUTE_17_COPS_GONE
+	iftrue .roadblock_gone
 	checkevent EVENT_TALKED_TO_POLICE_CAPTAIN
 	iftrue .investigating
 	opentext
@@ -192,6 +194,7 @@ BrilloPoliceStationCaptain:
 	playsound SFX_EXIT_BUILDING
 	disappear BRILLO_POLICE_STATION_COP_1
 	setevent EVENT_ROUTE_17_COPS_GONE
+	setevent EVENT_COOPERATED_WITH_BRILLO_POLICE
 	end
 .refused
 	writetext BrilloPoliceStationCaptainText14
@@ -203,8 +206,9 @@ BrilloPoliceStationCaptain:
 	follow BRILLO_POLICE_STATION_CAPTAIN, PLAYER
 	applymovement BRILLO_POLICE_STATION_CAPTAIN, Movement_BrilloPoliceStationCaptain2
 	stopfollow
-	playsound SFX_EXIT_BUILDING
+	playsound SFX_ENTER_DOOR
 	disappear BRILLO_POLICE_STATION_CAPTAIN
+	waitsfx
 	applyonemovement PLAYER, step_up
 	warpcheck
 	end
@@ -214,6 +218,23 @@ BrilloPoliceStationCaptain:
 	closetext
 	spriteface BRILLO_POLICE_STATION_CAPTAIN, UP
 	end
+.roadblock_gone
+	faceplayer
+	opentext
+	checkevent EVENT_COOPERATED_WITH_BRILLO_POLICE
+	iftrue .cooperated
+	writetext BrilloPoliceStationCaptainText16
+	waitbutton
+	closetext
+	spriteface BRILLO_POLICE_STATION_CAPTAIN, UP
+	end
+.cooperated
+	writetext BrilloPoliceStationCaptainText17
+	waitbutton
+	closetext
+	spriteface BRILLO_POLICE_STATION_CAPTAIN, UP
+	end
+	
 	
 BrilloPoliceStationCop1:
 	jumptext BrilloPoliceStationCop1Text
@@ -480,8 +501,26 @@ BrilloPoliceStationCaptainText15:
 	
 	para "You're comin' with"
 	line "me!"
+	done
 	
-	para "Move it!"
+BrilloPoliceStationCaptainText16:
+	text "I thought I told"
+	line "you never to show"
+	cont "your face here"
+	cont "again."
+	
+	para "Outta my sight!"
+	done
+	
+BrilloPoliceStationCaptainText17:
+	text "Thanks to your"
+	line "help, we took down"
+	cont "those crooks and"
+	cont "made PUEBLO BRILLO"
+	cont "a safer place."
+	
+	para "Maybe you aren't"
+	line "so bad, kid."
 	done
 
 BrilloPoliceStationCop1Text:

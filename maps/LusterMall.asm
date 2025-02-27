@@ -321,7 +321,7 @@ LusterMallEscalatorStartBattle:
 	waitsfx
 	winlosstext LusterMallCopWinText, 0
 	setlasttalked LUSTERMALLCOP
-	loadtrainer MALL_COP, PHIL
+	loadtrainer MALL_COP, 1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	special SaveMusic
 	startbattle

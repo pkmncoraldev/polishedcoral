@@ -304,6 +304,10 @@ PLAYER_F EQU __enum__
 	const SANCHEZ
 	const HARTWELL
 	const JOHNSON
+	const JONES
+	const SMITH
+	const ROGERS
+	const HARRIS
 
 
 	trainerclass POKEMANIAC
@@ -616,7 +620,6 @@ PLAYER_F EQU __enum__
 	trainerclass FRANKIE
 	
 	trainerclass MALL_COP
-	const PHIL
 	
 	trainerclass SKATER
 	const TONY
@@ -713,6 +716,8 @@ PLAYER_F EQU __enum__
 	trainerclass MINA
 	
 	trainerclass LEDIAN_RANGER
+	
+	trainerclass POLICE_CAPTAIN
 
 	trainerclass TOWERTYCOON ; 1
 

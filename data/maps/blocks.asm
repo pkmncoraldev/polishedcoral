@@ -142,6 +142,9 @@ BrilloGameCorner_BlockData:
 BrilloPoliceStation_BlockData:
 	INCBIN "maps/BrilloPoliceStation.ablk.lz"
 	
+BrilloPoliceBackRoom_BlockData:
+	INCBIN "maps/BrilloPoliceBackRoom.ablk.lz"
+	
 SECTION "Map Blockdata 1", ROMX
 
 Skatepark_BlockData:

@@ -93,5 +93,6 @@ TrainerPicPointers::
 	dba ErikaPic
 	dba MinaPic
 	dba LedianRangerPic
+	dba PoliceCaptainPic
 	dba TowerTycoonPic
 	

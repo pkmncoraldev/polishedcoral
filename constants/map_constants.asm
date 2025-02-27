@@ -348,6 +348,7 @@ MAP_NONE   EQU 0
 	map_const DESERT_WASTELAND_9,              			   9,  9 ; 21
 	map_const DESERT_WASTELAND_OASIS,          			  11, 11 ; 22
 	map_const DESERT_TEMPLE_OUTSIDE,           			  17, 13 ; 23
+	map_const BRILLO_POLICE_BACK_ROOM,         			   3,  4 ; 24
 	
 	newgroup													 ; 18
 	

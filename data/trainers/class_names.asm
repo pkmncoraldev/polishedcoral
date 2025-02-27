@@ -90,8 +90,9 @@ TrainerClassNames::
 	db "PIGTAILS@"		   ; FELICIA
 	db "PIGTAILS@"		   ; VIOLET
 	db "PIGTAILS@"		   ; CLOVER
-	db "<PK><MN> TRAINER@"     ; ERIKA
+	db "<PK><MN> TRAINER@" ; ERIKA
 	db "PAINTER@"		   ; MINA
 	db "THE LEDIAN@"	   ; LEDIAN_RANGER
+	db "CAPTAIN@"		   ; POLICE_CAPTAIN
 	db "TYCOON@"		   ; TOWERTYCOON
 	

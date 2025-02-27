@@ -95,4 +95,5 @@ TrainerGroups: ; 0x39999
 	dba ErikaGroup
 	dba MinaGroup
 	dba LedianRangerGroup
+	dba PoliceCaptainGroup
 	dba TowerTycoonGroup

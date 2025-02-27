@@ -93,4 +93,5 @@ BTTrainerClassSprites:
 	db SPRITE_ERIKA			; Erika
 	db SPRITE_MINA			; Mina
 	db SPRITE_LEDIAN_RANGER_MASK	; LEDIAN_RANGER
+	db SPRITE_SPA_WORKER	; PoliceCaptain
 	db SPRITE_GOLD_NPC      ; TOWERTYCOON

@@ -96,6 +96,7 @@ CloverPalette:			 INCLUDE "gfx/trainers/clover.pal"
 ErikaPalette:			 INCLUDE "gfx/trainers/erika.pal"
 MinaPalette:			 INCLUDE "gfx/trainers/mina.pal"
 LedianRangerPalette:	 INCLUDE "gfx/trainers/ledian_ranger.pal"
+PoliceCaptainPalette:	 INCLUDE "gfx/trainers/police_captain.pal"
 TowerTycoonPalette:
 
 

@@ -72,3 +72,4 @@
 	tilecoll WALL, WALL, WALL, WALL ; 47
 	tilecoll WALL, WALL, WALL, MART_SHELF ; 48
 	tilecoll FLOOR, MART_SHELF, FLOOR, MART_SHELF ; 49
+	tilecoll WALL, WALL, FLOOR, MART_SHELF ; 4a

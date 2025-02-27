@@ -19,28 +19,43 @@ BrilloMart_MapScriptHeader:
 	signpost  1,  8, SIGNPOST_IFNOTSET, BrilloMartShelf
 	signpost  1,  6, SIGNPOST_UP, BrilloMartCooler
 
-	db 3 ; object events
+	db 5 ; object events
 	object_event  1,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STANDARD, MART_BRILLO, EVENT_BRILLO_CLERK_1_GONE
 	person_event SPRITE_SAILOR,  3,  1, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrilloMartClerk, EVENT_BRILLO_CLERK_2_GONE
+	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STANDARD, MART_BRILLO, EVENT_BRILLO_MART_NORMAL_CLERK_GONE
 	person_event SPRITE_PEEP_HOLE,  0,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	person_event SPRITE_POKEFAN_F,  6,  6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BrilloMartNPC, -1
 
 	const_def 1 ; object constants
 	const BRILLO_MART_CLERK_1
 	const BRILLO_MART_CLERK_2
+	const BRILLO_MART_CLERK_3
 	const BRILLO_MART_DOOR
 	
 	
 BrilloMartCallback:
 	checkevent EVENT_BRILLO_SHELF
 	iffalse .checkdoor
+	checkevent EVENT_COOPERATED_WITH_BRILLO_POLICE
+	iffalse .normal
+	changeblock $8, $0, $4a
+	jump .cont
+.normal
 	changeblock $8, $0, $38
+.cont
 	changeblock $8, $2, $36
 	changeblock $6, $0, $48
 	changeblock $6, $2, $30
 .checkdoor
 	checkevent EVENT_BRILLO_DOOR
 	iffalse .end
+	checkevent EVENT_COOPERATED_WITH_BRILLO_POLICE
+	iffalse .normal2
+	changeblock $8, $0, $4a
+	jump .cont2
+.normal2
 	changeblock $8, $0, $39
+.cont2
 	clearevent EVENT_BRILLO_DOOR
 	dotrigger $1
 .end
@@ -57,6 +72,32 @@ BrilloMartDoorReset:
 ;	callasm GenericFinishBridge
 	dotrigger $0
 	end
+	
+BrilloMartNPC:
+	checkevent EVENT_COOPERATED_WITH_BRILLO_POLICE
+	iftrue .closed
+	jumptextfaceplayer BrilloMartNPCText1
+.closed
+	jumptextfaceplayer BrilloMartNPCText2
+	
+BrilloMartNPCText1:
+	text "You know, this"
+	line "place is pretty"
+	cont "busy for a little"
+	cont "#MART."
+	
+	para "I wonder why."
+	done
+	
+BrilloMartNPCText2:
+	text "Up until recently,"
+	line "this place was"
+	cont "pretty busy."
+	
+	para "Business seems to"
+	line "have died down"
+	cont "for some reason."
+	done
 	
 BrilloMartClerk:
 	opentext
@@ -103,7 +144,13 @@ BrilloMartShelf:
 	waitbutton
 	closetext
 	special FadeOutPalettesBlack
+	checkevent EVENT_COOPERATED_WITH_BRILLO_POLICE
+	iftrue .closed
 	changeblock $8, $0, $38
+	jump .cont
+.closed
+	changeblock $8, $0, $4a
+.cont
 	changeblock $8, $2, $36
 	changeblock $6, $0, $48
 	changeblock $6, $2, $30
@@ -150,6 +197,8 @@ BrilloMartCooler:
 	
 BrilloMartDoor:
 	dw EVENT_BRILLO_DOOR
+	checkevent EVENT_COOPERATED_WITH_BRILLO_POLICE
+	iftrue .closed
 	playsound SFX_PECK
 	appear BRILLO_MART_DOOR
 	pause 1
@@ -193,6 +242,8 @@ BrilloMartDoor:
 	setevent EVENT_BRILLO_DOOR
 	setevent EVENT_SAID_PASSWORD
 	end
+.closed
+	jumptext BrilloMartDoorText5
 	
 .nothing
 	writetext BrilloMartDoorText4
@@ -348,5 +399,9 @@ BrilloMartDoorText3:
 BrilloMartDoorText4:
 	text "<PLAYER> didn't"
 	line "say anything…"
+	done
+	
+BrilloMartDoorText5:
+	text "It's boarded up…"
 	done
 	

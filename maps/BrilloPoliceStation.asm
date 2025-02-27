@@ -11,11 +11,12 @@ BrilloPoliceStation_MapScriptHeader:
 	db 1 ; coord events
 	coord_event 18,  8, 0, BrilloPoliceStationGuardStopsYou
 
-	db 2 ; bg events
+	db 3 ; bg events
 	signpost  9, 11, SIGNPOST_READ, BrilloPoliceStationPrisoner1
+	signpost 12, 11, SIGNPOST_READ, BrilloPoliceStationPrisoner6
 	bg_event  1, 14, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_BRILLO_TOWN
 
-	db 16 ; object events
+	db 18 ; object events
 	person_event SPRITE_SITTING_POKEFANF, 13,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationLady, -1
 	object_event  1, 10, SPRITE_SPA_WORKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCaptain, -1
 	object_event  2, 10, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCop1, -1
@@ -24,12 +25,14 @@ BrilloPoliceStation_MapScriptHeader:
 	object_event  3, 12, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCop4, -1
 	object_event 19,  7, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationGuard, -1
 	object_event 19,  8, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationGuard, -1
-	object_event 15,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCop1, -1
-	object_event  9,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationCop1, -1
+	object_event 15,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  9,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 11,  9, SPRITE_COP_SCRUB, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner1, -1
 	object_event 14,  8, SPRITE_BURGLAR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner2, -1
 	object_event  8, 13, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner3, -1
 	object_event 14, 13, SPRITE_PONYTAIL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner4, -1
+	object_event  8,  8, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner5, EVENT_BRILLO_MART_NORMAL_CLERK_GONE
+	object_event 11, 14, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BrilloPoliceStationPrisoner6, EVENT_BRILLO_MART_NORMAL_CLERK_GONE
 	person_event SPRITE_SLOWPOKETAIL, 11,  0, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	hiddentape_event 1, 8, MUSIC_BRILLO_TOWN, 1, EVENT_MUSIC_BRILLO_TOWN
 
@@ -184,17 +187,16 @@ BrilloPoliceStationCaptain:
 	writetext BrilloPoliceStationCaptainText13
 	waitbutton
 	closetext
-	pause 5
-	follow BRILLO_POLICE_STATION_CAPTAIN, BRILLO_POLICE_STATION_COP_1
-	applymovement BRILLO_POLICE_STATION_CAPTAIN, Movement_BrilloPoliceStationCaptain
-	stopfollow
-	playsound SFX_EXIT_BUILDING
-	disappear BRILLO_POLICE_STATION_CAPTAIN
-	applyonemovement BRILLO_POLICE_STATION_COP_1, step_down
-	playsound SFX_EXIT_BUILDING
-	disappear BRILLO_POLICE_STATION_COP_1
+	pause 10
 	setevent EVENT_ROUTE_17_COPS_GONE
 	setevent EVENT_COOPERATED_WITH_BRILLO_POLICE
+	setevent EVENT_BRILLO_CLERK_1_GONE
+	setevent EVENT_BRILLO_CLERK_2_GONE
+	clearevent EVENT_BRILLO_MART_NORMAL_CLERK_GONE
+	special FadeOutPalettes
+	playsound SFX_EXIT_BUILDING
+	waitsfx
+	warp2 DOWN, BRILLO_TOWN, 35, 11
 	end
 .refused
 	writetext BrilloPoliceStationCaptainText14
@@ -235,14 +237,31 @@ BrilloPoliceStationCaptain:
 	spriteface BRILLO_POLICE_STATION_CAPTAIN, UP
 	end
 	
-	
 BrilloPoliceStationCop1:
-	jumptext BrilloPoliceStationCop1Text
+	checkevent EVENT_COOPERATED_WITH_BRILLO_POLICE
+	iftrue .alt
+	jumptext BrilloPoliceStationCop1Text1
+.alt
+	faceplayer
+	opentext
+	writetext BrilloPoliceStationCop1Text2
+	waitbutton
+	closetext
+	spriteface BRILLO_POLICE_STATION_COP_1, UP
+	end
 
 BrilloPoliceStationCop2:
 	faceplayer
 	opentext
-	writetext BrilloPoliceStationCop2Text
+	checkevent EVENT_COOPERATED_WITH_BRILLO_POLICE
+	iftrue .alt
+	writetext BrilloPoliceStationCop2Text1
+	waitbutton
+	closetext
+	spriteface BRILLO_POLICE_STATION_COP_2, RIGHT
+	end
+.alt
+	writetext BrilloPoliceStationCop2Text2
 	waitbutton
 	closetext
 	spriteface BRILLO_POLICE_STATION_COP_2, RIGHT
@@ -251,14 +270,26 @@ BrilloPoliceStationCop2:
 BrilloPoliceStationCop3:
 	faceplayer
 	opentext
-	writetext BrilloPoliceStationCop3Text
+	checkevent EVENT_COOPERATED_WITH_BRILLO_POLICE
+	iftrue .alt
+	writetext BrilloPoliceStationCop3Text1
+	waitbutton
+	closetext
+	spriteface BRILLO_POLICE_STATION_COP_3, LEFT
+	end
+.alt
+	writetext BrilloPoliceStationCop3Text2
 	waitbutton
 	closetext
 	spriteface BRILLO_POLICE_STATION_COP_3, LEFT
 	end
 
 BrilloPoliceStationCop4:
-	jumptextfaceplayer BrilloPoliceStationCop4Text
+	checkevent EVENT_COOPERATED_WITH_BRILLO_POLICE
+	iftrue .alt
+	jumptextfaceplayer BrilloPoliceStationCop4Text1
+.alt
+	jumptextfaceplayer BrilloPoliceStationCop4Text2
 
 BrilloPoliceStationPrisoner1:
 	jumptext BrilloPoliceStationPrisoner1Text
@@ -271,6 +302,13 @@ BrilloPoliceStationPrisoner3:
 
 BrilloPoliceStationPrisoner4:
 	jumptext BrilloPoliceStationPrisoner4Text
+	
+BrilloPoliceStationPrisoner5:
+	jumptextfaceplayer BrilloPoliceStationPrisoner5Text
+	
+BrilloPoliceStationPrisoner6:
+	spriteface 16, UP
+	jumptext BrilloPoliceStationPrisoner6Text
 
 BrilloPoliceStationPrisoner1Text:
 	text "When's grub?"
@@ -309,6 +347,29 @@ BrilloPoliceStationPrisoner4Text:
 	para "You hear me?"
 	
 	para "NOTHIN'!"
+	done
+	
+BrilloPoliceStationPrisoner5Text:
+	text "What happened?"
+	
+	para "One minute those"
+	line "cops had no idea"
+	cont "about the MARACTUS"
+	cont "ROOM,"
+	
+	para "and the next"
+	line "they're busting"
+	cont "down the door!"
+	done
+
+BrilloPoliceStationPrisoner6Text:
+	text "Someone ratted us"
+	line "out to the cops!"
+	
+	para "Was it you?"
+	
+	para "We'll get you for"
+	line "this!"
 	done
 
 BrilloPoliceStationLadyText1:
@@ -513,32 +574,49 @@ BrilloPoliceStationCaptainText16:
 	done
 	
 BrilloPoliceStationCaptainText17:
-	text "Thanks to your"
-	line "help, we took down"
-	cont "those crooks and"
-	cont "made PUEBLO BRILLO"
-	cont "a safer place."
+	text "With those crooks"
+	line "behind bars,"
+	cont "PUEBLO BRILLO is a"
+	cont "much safer place."
 	
 	para "Maybe you aren't"
 	line "so bad, kid."
 	done
 
-BrilloPoliceStationCop1Text:
+BrilloPoliceStationCop1Text1:
 	text "It just doesn't"
 	line "add up…"
 	
 	para "What are we"
 	line "missing?"
 	done
+	
+BrilloPoliceStationCop1Text2:
+	text "The CAPTAIN won't"
+	line "say it himself,"
+	cont "but he appreciates"
+	cont "your help."
+	
+	para "So, thanks!"
+	done
 
-BrilloPoliceStationCop2Text:
+BrilloPoliceStationCop2Text1:
 	text "Man we are all"
 	line "gonna get it if we"
 	cont "can't figure this"
 	cont "out soon…"
 	done
 	
-BrilloPoliceStationCop3Text:
+BrilloPoliceStationCop2Text2:
+	text "I'm so glad that"
+	line "case is finally"
+	cont "over."
+	
+	para "Our jobs live to"
+	line "see another day!"
+	done
+	
+BrilloPoliceStationCop3Text1:
 	text "The CAPTAIN is"
 	line "extra angry today…"
 	
@@ -546,8 +624,19 @@ BrilloPoliceStationCop3Text:
 	line "stay over here by"
 	cont "the water cooler…"
 	done
+	
+BrilloPoliceStationCop3Text2:
+	text "The CAPTAIN has"
+	line "finally cooled"
+	cont "down."
+	
+	para "I'll still keep"
+	line "to myself at the"
+	cont "water cooler,"
+	cont "however."
+	done
 
-BrilloPoliceStationCop4Text:
+BrilloPoliceStationCop4Text1:
 	text "We're hot on the"
 	line "tail of an illegal"
 	cont "gambling ring!"
@@ -558,6 +647,16 @@ BrilloPoliceStationCop4Text:
 	para "And boy, is the"
 	line "CAPTAIN mad about"
 	cont "it!"
+	done
+	
+BrilloPoliceStationCop4Text2:
+	text "We finally tracked"
+	line "that gambling ring"
+	cont "down!"
+	
+	para "The day is saved"
+	line "again all thanks"
+	cont "to us!"
 	done
 	
 Movement_BrilloPoliceStationCaptain:

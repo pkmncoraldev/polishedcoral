@@ -53,7 +53,15 @@ LusterMallSkateShop_Clerk:
 	closetext
 	end
 .no_board
+	checkevent EVENT_TALKED_SKATESHOP_OWNER
+	iftrue .no_board_talked
+	setevent EVENT_TALKED_SKATESHOP_OWNER
 	writetext LusterMallSkateShop_ClerkText1
+	waitbutton
+	closetext
+	end
+.no_board_talked
+	writetext LusterMallSkateShop_ClerkText8
 	waitbutton
 	closetext
 	end
@@ -177,6 +185,17 @@ LusterMallSkateShop_ClerkText7:
 	para "I can't let you"
 	line "back there by"
 	cont "yourself."
+	done
+	
+LusterMallSkateShop_ClerkText8:
+	text "You get out of"
+	line "my shop,"
+	
+	para "and I won't pummel"
+	line "you into the"
+	cont "ground."
+	
+	para "Sound good to you?"
 	done
 	
 LusterMallSkateShopShelfText:

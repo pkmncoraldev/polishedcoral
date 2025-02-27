@@ -154,6 +154,7 @@ Route18NorthNPC1:
 	special RestoreMusic
 	special DeleteSavedMusic
 	closetext
+	pause 10
 	
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, ROUTE_18_TRAILER_NPC, 15
@@ -182,7 +183,11 @@ Route18NorthNPC2:
 	checkevent EVENT_TALKED_TO_ROUTE_18_NORTH_NPC
 	iftrue .already_talked
 	setevent EVENT_TALKED_TO_ROUTE_18_NORTH_NPC
+	checkevent EVENT_TALKED_TO_BRILLO_RESEARCHER_IN_CENTER
+	iftrue .talked_in_center
 	jumptextfaceplayer Route18NorthNPC2Text1
+.talked_in_center
+	jumptextfaceplayer Route18NorthNPC2Text4
 .already_talked
 	jumptextfaceplayer Route18NorthNPC2Text2
 .got_pearl
@@ -195,11 +200,11 @@ Route18NorthNPC1Text1:
 	
 Route18NorthNPC1Text2:
 	text "he got some sand"
-	line "caught in his eye"
+	line "caught in his eye,"
 	done
 	
 Route18NorthNPC1Text3:
-	text "But he was hungry…"
+	text "but he was hungry…"
 	line "mumble mumble…"
 	done
 	
@@ -286,4 +291,46 @@ Route18NorthNPC2Text3:
 	line "it to PROF. HILL"
 	cont "in PORT SHIMMER"
 	cont "right away!"
+	done
+	
+Route18NorthNPC2Text4:
+	text "Hi, <PLAYER>.>WAIT_S>"
+	line "Remember me?"
+	
+	para "I'm the researcher"
+	line "you met at the"
+	cont "#MON CENTER"
+	cont "back in town!"
+	
+	para "There's reason to"
+	line "believe that there"
+	cont "could be more"
+	cont "ruins around here."
+	
+	para "Unfortunately,"
+	line "we're at a dead"
+	cont "end."
+	
+	para "There is a wicked"
+	line "sandstorm up ahead"
+	cont "and it doesn't show"
+	cont "signs of stopping…"
+	
+	para "In fact, according"
+	line "to the locals, it's"
+	cont "been raging for"
+	cont "one hundred years!"
+	
+	para "Every time we try"
+	line "to brave the sand,"
+	cont "we somehow end up"
+	cont "right back where"
+	cont "we started!"
+	
+	para "It makes no sense…"
+	
+	para "Maybe you could"
+	line "find some more"
+	cont "information back"
+	cont "in town…"
 	done

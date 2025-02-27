@@ -285,8 +285,6 @@ INCLUDE "maps/LusterSkyscraper2_2F.asm"
 INCLUDE "maps/LusterSkyscraper2_3F.asm"
 INCLUDE "maps/LusterSkyscraper2_Elevator.asm"
 INCLUDE "maps/LusterSkyscraperB1F.asm"
-INCLUDE "maps/Route12Gate.asm"
-INCLUDE "maps/AirportGate.asm"
 
 SECTION "Nett Building Scripts", ROMX
 
@@ -300,6 +298,8 @@ INCLUDE "maps/NettBuildingOffice.asm"
 INCLUDE "maps/LusterSkyscraperPorygonRoom.asm"
 INCLUDE "maps/LusterGym.asm"
 INCLUDE "maps/SunsetLighthouseTop.asm"
+INCLUDE "maps/Route12Gate.asm"
+INCLUDE "maps/AirportGate.asm"
 
 SECTION "Route 12 Scripts", ROMX
 INCLUDE "maps/Route12.asm"

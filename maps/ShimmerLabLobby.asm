@@ -16,17 +16,27 @@ ShimmerLabLobby_MapScriptHeader:
 	signpost  3,  6, SIGNPOST_UP, ShimmerLabResearchSign
 	signpost  3, 10, SIGNPOST_UP, ShimmerLabExperimentSign
 
-	db 3 ; object events
+	db 5 ; object events
 	person_event SPRITE_DAISY,  2,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerLabLobbyNPC, -1
-	person_event SPRITE_ROCKER,  -5,  -5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerLabLobbyNPC2, -1
-	object_event -5, -5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, WIGGLYTUFF, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, ShimmerLabLobbyWigglytuff, -1
+	person_event SPRITE_ROCKER,  -5,  -5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerLabLobbyNPC2, EVENT_SHIMMER_FIRST_RESEARCHER_GONE
+	object_event -5, -5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, WIGGLYTUFF, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, ShimmerLabLobbyWigglytuff, EVENT_SHIMMER_FIRST_RESEARCHER_GONE
+	person_event SPRITE_POKEMANIAC,  -5,  -5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerLabLobbyNPC3, EVENT_SHIMMER_SECOND_RESEARCHER_GONE
+	object_event -5, -5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TOUCANNON, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, ShimmerLabLobbyToucannon, EVENT_SHIMMER_SECOND_RESEARCHER_GONE
 
 	const_def 1 ; object constants
 	const SHIMMER_LAB_LOBBY_NPC1
 	const SHIMMER_LAB_LOBBY_NPC2
 	const SHIMMER_LAB_LOBBY_WIGGLYTUFF
+	const SHIMMER_LAB_LOBBY_NPC3
+	const SHIMMER_LAB_LOBBY_TOUCANNON
 
 ShimmerLabLobbyCallback:
+	checkevent EVENT_UNDERWATER_TEMPLE_2_ARTIFACT
+	iffalse .skip
+	setevent EVENT_SHIMMER_FIRST_RESEARCHER_GONE
+	moveperson SHIMMER_LAB_LOBBY_NPC3, 4, 3
+	moveperson SHIMMER_LAB_LOBBY_TOUCANNON, 5, 3
+.skip
 	checkevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
 	iffalse .end
 	moveperson SHIMMER_LAB_LOBBY_NPC2, 4, 3
@@ -61,6 +71,9 @@ ShimmerLabLobbyNPC2:
 	writetext ShimmerLabLobbyNPC2NoRoomText
 	closetext
 	end
+	
+ShimmerLabLobbyNPC3:
+	jumptextfaceplayer ShimmerLabLobbyNPC3Text
 
 ShimmerLabLobbyWigglytuff:
 	opentext
@@ -69,6 +82,19 @@ ShimmerLabLobbyWigglytuff:
 	waitbutton
 	closetext
 	end
+	
+ShimmerLabLobbyToucannon:
+	opentext
+	writetext ShimmerLabLobbyToucannonText
+	cry TOUCANNON
+	waitbutton
+	closetext
+	end
+	
+ShimmerLabLobbyToucannonText:
+	text "TOUCANNON: Tou-"
+	line "CAAAW!"
+	done
 
 ShimmerLabResearchSign:
 	jumptext ShimmerLabResearchSignText
@@ -129,6 +155,30 @@ ShimmerLabLobbyNPC2Text3:
 	para "I haven't seen it"
 	line "since I was pack-"
 	cont "ing up my tent…"
+	done
+	
+ShimmerLabLobbyNPC3Text:
+	text "Hey, how are you"
+	line "doing?"
+	
+	para "Do you remember"
+	line "me?"
+	
+	para "I was one of the"
+	line "researchers from"
+	cont "the desert."
+	
+	para "I'm here wrapping"
+	line "up some stuff from"
+	cont "our expedition."
+	
+	para "I have a feeling"
+	line "I might have left"
+	cont "something behind"
+	cont "at the site…"
+	
+	para "Hope it wasn't"
+	line "too important!"
 	done
 	
 ShimmerLabLobbyNPC2NoRoomText:

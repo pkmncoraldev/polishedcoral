@@ -11,11 +11,25 @@ BrilloPokeCenter_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 4 ; object events
 	pc_nurse_event  4, 1
 	pc_chansey_event  5, 1
 	person_event SPRITE_POKEMANIAC,  5, 9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPokeCenterNPC1, EVENT_ROUTE_17_COPS_GONE
+	object_event  9, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TOUCANNON, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, BrilloPokeCenterToucannon, EVENT_ROUTE_17_COPS_GONE
 	
+	
+BrilloPokeCenterToucannon:
+	opentext
+	writetext BrilloPokeCenterToucannonText
+	cry TOUCANNON
+	waitbutton
+	closetext
+	end
+	
+BrilloPokeCenterToucannonText:
+	text "TOUCANNON: Tou-"
+	line "CAAAW!"
+	done
 	
 BrilloPokeCenterNPC1:
 	checkevent EVENT_TALKED_TO_BRILLO_RESEARCHER_IN_CENTER

@@ -31,11 +31,12 @@ Route18North_MapScriptHeader:
 	signpost  7, 13, SIGNPOST_JUMPTEXT, Route18NorthSign
 	signpost 22,  7, SIGNPOST_JUMPTEXT, Route18NorthUnlitFire
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event  0,  4, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route18NorthCampfire, EVENT_HIDE_OW_OBJECTS_BROWN
 	object_event  0,  4, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Route18NorthCampfire, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event  0,  4, SPRITE_MISC_OVERHEAD, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  7, 14, SPRITE_POKEMANIAC, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route18NorthNPC2, -1
+	tmhmball_event -5, -5, TM_EARTHQUAKE, EVENT_ROUTE_18_NORTH_POKE_BALL_EARTHQUAKE
 	person_event SPRITE_CUEBALL, 32,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	
 	const_def 1 ; object constants
@@ -43,6 +44,7 @@ Route18North_MapScriptHeader:
 	const ROUTE_18_NORTH_FIRE_TEAL
 	const ROUTE_18_NORTH_FIREBOTTOM
 	const ROUTE_18_NORTH_NPC
+	const ROUTE_18_NORTH_EARTHQUAKE
 	
 	
 Route18NorthTrigger0:
@@ -103,6 +105,7 @@ Route18NorthCallback:
 	moveperson ROUTE_18_NORTH_FIRE_TEAL, -5, -5
 	moveperson ROUTE_18_NORTH_FIREBOTTOM, -5, -5
 	moveperson ROUTE_18_NORTH_NPC, -5, -5
+	moveperson ROUTE_18_NORTH_EARTHQUAKE, 7, 19
 	changeblock $4, $10, $0f
 	changeblock $6, $10, $02
 	changeblock $8, $10, $02

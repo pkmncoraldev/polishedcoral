@@ -467,12 +467,10 @@ MAP_NONE   EQU 0
 	map_const INN_VENT,									  18, 10 ; 5
 	map_const ROUTE_23_GATE,                          	   4,  4 ; 6
 	
-	newgroup													 ; 26
-	map_const GLINT_GROVE_UNDERGROUND,					  23, 24 ; 1
-	
 	newgroup													 ; EVO LOCATIONS GROUP
 	map_const ICE_CAVE_ICE_ROCK_ROOM,					   5,  5 ; 1
 	map_const HUNTERS_THICKET_MOSS_ROCK_ROOM,              7,  7 ; 2
+	map_const GLINT_GROVE_UNDERGROUND,					  23, 24 ; 3
 	
 	newgroup													 ; last
 	map_const FAKE_ROUTE_1,                               14, 17 ;  1

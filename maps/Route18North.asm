@@ -42,6 +42,7 @@ Route18North_MapScriptHeader:
 	const ROUTE_18_NORTH_FIRE_BROWN
 	const ROUTE_18_NORTH_FIRE_TEAL
 	const ROUTE_18_NORTH_FIREBOTTOM
+	const ROUTE_18_NORTH_NPC
 	
 	
 Route18NorthTrigger0:
@@ -56,10 +57,17 @@ Route18NorthTrigger2:
 	domaptrigger DESERT_WASTELAND_1, $0
 	callasm KillSandstormSound
 	callasm LoadEmoteGFX
+	checktmhm TM_DIVE
+	iftrue .quest_done
 	dotrigger $0
+	end
+.quest_done
+	dotrigger $3
 	end
 	
 Route18NorthCallback:
+	checktmhm TM_DIVE
+	iftrue .quest_done
 	readvar VAR_PLAYER_COLOR
 	if_equal 3, .brown
 	setevent EVENT_HIDE_OW_OBJECTS_TEAL
@@ -89,6 +97,18 @@ Route18NorthCallback:
 	changeblock $8, $14, $4f
 	changeblock $6, $16, $52
 	changeblock $8, $16, $53
+	jump .skip
+.quest_done
+	moveperson ROUTE_18_NORTH_FIRE_BROWN, -5, -5
+	moveperson ROUTE_18_NORTH_FIRE_TEAL, -5, -5
+	moveperson ROUTE_18_NORTH_FIREBOTTOM, -5, -5
+	moveperson ROUTE_18_NORTH_NPC, -5, -5
+	changeblock $4, $10, $0f
+	changeblock $6, $10, $02
+	changeblock $8, $10, $02
+	changeblock $4, $12, $3e
+	changeblock $6, $12, $02
+	changeblock $8, $12, $02	
 .skip
 	checkevent EVENT_SANDSTORM_HAPPENING
 	iffalse .end

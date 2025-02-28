@@ -149,6 +149,7 @@ ShimmerLabResearchRoomProf:
 	buttonsound
 	clearevent EVENT_MUSEUM_NO_BLACK_PEARL
 	verbosegivetmhm TM_DIVE
+	domaptrigger ROUTE_18_NORTH, $3
 	writetext ShimmerLabResearchRoomProfText9
 	buttonsound
 	farwritetext StdBlankText

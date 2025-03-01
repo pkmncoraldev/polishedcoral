@@ -9,7 +9,8 @@ SunsetCafe_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost  0,  1, SIGNPOST_JUMPTEXT, SunsetCafePoster
 
 	db 3 ; object events
 	person_event SPRITE_FAT_GUY,  4,  3, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SunsetCafeNPC1, -1
@@ -20,6 +21,14 @@ SunsetCafe_MapScriptHeader:
 	const SUNSET_CAFE_NPC1
 	const SUNSET_CAFE_NPC2
 	const SUNSET_CAFE_CLERK
+
+SunsetCafePoster:
+	text "SPECIAL!"
+	line "Today only!"
+	
+	para "Buy 2, Get 1"
+	line "for full price!"
+	done
 
 SunsetCafeClerk:
 	pokemart MARTTYPE_INFORMAL, MART_SUNSET

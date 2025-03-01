@@ -9,7 +9,8 @@ ShimmerCafe_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost  0,  1, SIGNPOST_JUMPTEXT, ShimmerCafePoster
 
 	db 5 ; object events
 	person_event SPRITE_FISHING_GURU,  2,  4, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCafeNPC1, -1
@@ -18,6 +19,15 @@ ShimmerCafe_MapScriptHeader:
 	person_event SPRITE_FAT_GUY,  1,  0, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCafeNPC4, EVENT_SHIMMER_BOAT_GUY_AT_WORK
 	person_event SPRITE_PONYTAIL,  3,  7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ShimmerCafeClerk, -1
 	
+	
+ShimmerCafePoster:
+	text "SPECIAL!"
+	line "Today only!"
+	
+	para "Buy one at 200%"
+	line "markup, get one"
+	cont "completely free!"
+	done
 	
 ShimmerCafeNPC1:
 	faceplayer

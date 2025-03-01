@@ -59,7 +59,7 @@ LusterSkyscraperPorygonRoomComputer:
 	opentext
 	writetext LusterSkyscraperPorygonRoomComputerPasswordText
 	waitbutton
-	
+	special FadeOutPalettes
 	callasm PorygonRoomCheckPassword
 	iffalse .wrong
 	ifequal 2, .nothing

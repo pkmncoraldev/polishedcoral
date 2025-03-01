@@ -213,7 +213,7 @@ BrilloMartDoor:
 	opentext
 	writetext BrilloMartDoorText1
 	waitbutton
-	
+	special FadeOutPalettes
 	callasm BrilloMartDoorAsm
 	callasm BrilloMartCheckPassword
 	iffalse .wrong

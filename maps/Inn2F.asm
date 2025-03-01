@@ -406,6 +406,7 @@ Inn2F201LockedDoor:
 	opentext
 	writetext Inn2F201LockedDoorText1
 	waitbutton
+	special FadeOutPalettes
 	callasm Inn2F201LockedDoorAsm
 	callasm Inn2F201LockedDoorCheckPassword
 	iffalse .wrong

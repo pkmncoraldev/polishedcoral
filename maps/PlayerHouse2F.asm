@@ -301,18 +301,19 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_GOT_SURF
 	setflag ENGINE_GOT_WATERFALL
 	setflag ENGINE_GOT_STRENGTH
-	givetmhm TM_GIGA_DRAIN
+	givetmhm TM_WORK_UP_GROWTH
+	givetmhm TM_CHARM
 	givetmhm TM_CURSE
 	givetmhm TM_HAIL
 	givetmhm TM_ZAP_CANNON
 	givetmhm TM_BRICK_BREAK
-	givetmhm TM_CHARM
 	givetmhm TM_SUNNY_DAY
 	givetmhm TM_BLIZZARD
 	givetmhm TM_HYPER_BEAM
 	givetmhm TM_LIGHT_SCREEN
 	givetmhm TM_PROTECT
 	givetmhm TM_RAIN_DANCE
+	givetmhm TM_GIGA_DRAIN
 	givetmhm TM_SAFEGUARD
 	givetmhm TM_BULLDOZE
 	givetmhm TM_SOLAR_BEAM
@@ -328,7 +329,7 @@ PlayerHouseDebugPoster:
 	givetmhm TM_STEEL_WING
 	givetmhm TM_ROOST
 	givetmhm TM_WILL_O_WISP
-	givetmhm TM_WORK_UP_GROWTH
+	givetmhm TM_ACROBATICS
 	givetmhm TM_GIGA_IMPACT
 	givetmhm TM_SAND_ATTACK_SMOKESCREEN_FLASH
 	givetmhm TM_ANCIENTPOWER
@@ -340,7 +341,6 @@ PlayerHouseDebugPoster:
 	givetmhm HM_SURF
 	givetmhm HM_ROCK_SMASH
 	givetmhm HM_ROCK_CLIMB
-;	givetmhm HM_DIVE
 	givetmhm HM_STRENGTH
 	setflag ENGINE_FLYPOINT_HOME
 	setflag ENGINE_FLYPOINT_SUNSET

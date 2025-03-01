@@ -1,5 +1,5 @@
 TMHMMoves:
-	db DYNAMICPUNCH                        ; TM01
+	db WORK_UP_GROWTH                      ; TM01
 	db CHARM_FEATHER_DANCE                 ; TM02
 	db CURSE                               ; TM03
 	db CALM_MIND                           ; TM04
@@ -32,13 +32,13 @@ TMHMMoves:
 	db METAL_CLAW                          ; TM31
 	db DOUBLE_TEAM                         ; TM32
 	db REFLECT                             ; TM33
-	db DIVE                        ; TM34
+	db DIVE                       		   ; TM34
 	db FLAMETHROWER                        ; TM35
 	db SLUDGE_BOMB                         ; TM36
 	db SANDSTORM                           ; TM37
 	db FIRE_BLAST                          ; TM38
 	db SWIFT                               ; TM39
-	db FAKE_OUT                            ; TM40 (Stanley)
+	db FAKE_OUT                            ; TM40
 	db SUBSTITUTE                          ; TM41
 	db ZAP_CANNON                          ; TM42
 	db BRICK_BREAK                         ; TM43
@@ -60,7 +60,7 @@ TMHMMoves:
 	db DRAGON_PULSE                        ; TM59
 	db DRAIN_PUNCH                         ; TM60
 	db WILL_O_WISP                         ; TM61
-	db WORK_UP_GROWTH                      ; TM62
+	db ACROBATICS	                       ; TM62
 	db TOXIC_SPIKES                        ; TM63
 	db EXPLOSION                           ; TM64
 	db SHADOW_CLAW                         ; TM65
@@ -68,7 +68,7 @@ TMHMMoves:
 	db RAPID_SPIN                          ; TM67
 	db GIGA_IMPACT                         ; TM68
 	db THUNDER_FANG                        ; TM69
-	db SAND_ATTACK_SMOKESCREEN_FLASH                               ; TM70
+	db SAND_ATTACK_SMOKESCREEN_FLASH       ; TM70
 	db STONE_EDGE                          ; TM71
 	db ANCIENTPOWER                        ; TM72
 	db THUNDER_WAVE                        ; TM73

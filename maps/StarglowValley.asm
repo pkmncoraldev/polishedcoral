@@ -925,7 +925,7 @@ StarglowRodneyText3:
 	line "causing trouble"
 	cont "out here?"
 	
-	para "Surely they're not"
+	para "Surely they're not,"
 	line "right?"
 	done
 

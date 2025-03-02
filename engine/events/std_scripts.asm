@@ -1873,7 +1873,7 @@ VendingMachineScript::
 	closewindow
 	ifequal $1, .FreshWater
 	ifequal $2, .SodaPop
-	ifequal $3, .Lemonade
+	ifequal $3, .RageCandyBar
 	endtext
 
 .FreshWater:
@@ -1906,19 +1906,19 @@ VendingMachineScript::
 	itemtotext SODA_POP, $0
 	jump .ExtraItem
 
-.Lemonade:
-	checkmoney $0, 350
+.RageCandyBar:
+	checkmoney $0, 400
 	ifequal $2, .NotEnoughMoney
-	giveitem LEMONADE
+	giveitem RAGECANDYBAR
 	iffalse .NotEnoughSpace
-	takemoney $0, 350
-	itemtotext LEMONADE, $0
+	takemoney $0, 400
+	itemtotext RAGECANDYBAR, $0
 	scall .VendItem
 	random $20
 	ifnotequal $0, .Start
-	giveitem LEMONADE
+	giveitem RAGECANDYBAR
 	iffalse .Start
-	itemtotext LEMONADE, $0
+	itemtotext RAGECANDYBAR, $0
 	jump .ExtraItem
 
 .VendItem:
@@ -1959,7 +1959,7 @@ VendingMachineScript::
 	db 4 ; items
 	db "FRESH WATER  ¥200@"
 	db "SODA POP     ¥300@"
-	db "LEMONADE     ¥350@"
+	db "RAGECANDYBAR ¥400@"
 	db "CANCEL@"
 
 TreeGrottoScript:

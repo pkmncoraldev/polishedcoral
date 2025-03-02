@@ -208,23 +208,21 @@ LusterMallFurniture:
 	db -1
 	
 LusterMallCoffee:
-	db 6 ; # items
+	db 5 ; # items
 	db FRESH_WATER
 	db BERRY_JUICE
 	db SODA_POP
-	db LEMONADE
 	db RAGECANDYBAR
 	db BIG_MALASADA
 	db SWEET_HONEY
 	db -1
 	
 LusterMallCoffee2:
-	db 7 ; # items
+	db 6 ; # items
 	db BLOSSOM_TEA
 	db FRESH_WATER
 	db BERRY_JUICE
 	db SODA_POP
-	db LEMONADE
 	db RAGECANDYBAR
 	db BIG_MALASADA
 	db SWEET_HONEY
@@ -418,22 +416,20 @@ KomoreMart:
 	db -1
 	
 MooMoos1:
-	db 5 ; # items
+	db 4 ; # items
 	db MOOMOO_MILK
 	db FRESH_WATER
 	db BERRY_JUICE
 	db SODA_POP
-	db LEMONADE
 	db -1
 	
 MooMoos2:
-	db 6 ; # items
+	db 5 ; # items
 	db MOOMOO_BREW
 	db MOOMOO_MILK
 	db FRESH_WATER
 	db BERRY_JUICE
 	db SODA_POP
-	db LEMONADE
 	db -1
 	
 ShimmerCafe:
@@ -441,7 +437,7 @@ ShimmerCafe:
 	db BERRY_JUICE
 	db FRESH_WATER 
 	db SODA_POP
-	db LEMONADE
+	db RAGECANDYBAR
 	db -1
 	
 PollenMart:

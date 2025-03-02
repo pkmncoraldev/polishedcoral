@@ -341,11 +341,11 @@ ENDM
 	connection north, Route20, ROUTE_20, 0
 	
 	map_attributes BrilloTown, BRILLO_TOWN, $35, EAST
-	connection east, Route17, ROUTE_17, -7
+	connection east, Route17, ROUTE_17, -6
 	
 	map_attributes Route17, ROUTE_17, $71, NORTH | WEST
 	connection north, Route18, ROUTE_18, 14
-	connection west, BrilloTown, BRILLO_TOWN, 7
+	connection west, BrilloTown, BRILLO_TOWN, 6
 	
 	map_attributes Route18, ROUTE_18, $71, NORTH | SOUTH
 	connection north, Route18North, ROUTE_18_NORTH, 5

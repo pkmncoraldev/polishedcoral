@@ -9,44 +9,52 @@ BrilloTown_MapScriptHeader:
 	callback MAPCALLBACK_TILES, BrilloTownCallback
 
 	db 8 ; warp events
-	warp_event 19, 21, BRILLO_BOAT_HOUSE, 1
-	warp_event 17, 15, BRILLO_ROCK_HOUSE, 1
-	warp_event 29, 17, BRILLO_TRADE_HOUSE, 1
-	warp_event 15,  9, BRILLO_LEGEND_SPEECH_HOUSE, 1
-	warp_event 22, 11, BRILLO_POKECENTER, 1
-	warp_event 29, 11, BRILLO_MART, 1
-	warp_event 35, 10, BRILLO_POLICE_STATION, 1
-	warp_event 36, 10, BRILLO_POLICE_STATION, 2
+	warp_event 19, 23, BRILLO_BOAT_HOUSE, 1
+	warp_event 15, 11, BRILLO_ROCK_HOUSE, 1
+	warp_event 29, 19, BRILLO_TRADE_HOUSE, 1
+	warp_event 17, 17, BRILLO_LEGEND_SPEECH_HOUSE, 1
+	warp_event 22, 13, BRILLO_POKECENTER, 1
+	warp_event 29, 13, BRILLO_MART, 1
+	warp_event 35, 12, BRILLO_POLICE_STATION, 1
+	warp_event 36, 12, BRILLO_POLICE_STATION, 2
 
 	db 4 ; coord events
-	coord_event 31, 12, 0, BrilloMakeSilverGreen
-	coord_event 31, 13, 0, BrilloMakeSilverGreen
-	coord_event 16, 19, 2, BrilloMakeSilverBlue
-	coord_event 17, 19, 2, BrilloMakeSilverBlue
+	coord_event 31, 14, 0, BrilloMakeSilverGreen
+	coord_event 31, 15, 0, BrilloMakeSilverGreen
+	coord_event 16, 21, 2, BrilloMakeSilverBlue
+	coord_event 17, 21, 2, BrilloMakeSilverBlue
 
-	db 5 ; bg events
-	signpost 11, 23, SIGNPOST_READ, BrilloTownPokeCenterSign
-	signpost 11, 30, SIGNPOST_READ, BrilloTownMartSign
-	signpost 17, 15, SIGNPOST_READ, BrilloTownSign
-	signpost 11, 37, SIGNPOST_READ, BrilloTownPoliceSign
-	signpost  9, 34, SIGNPOST_READ, BrilloTownGoP
+	db 8 ; bg events
+	signpost 13, 23, SIGNPOST_READ, BrilloTownPokeCenterSign
+	signpost 13, 30, SIGNPOST_READ, BrilloTownMartSign
+	signpost 19, 15, SIGNPOST_READ, BrilloTownSign
+	signpost 13, 37, SIGNPOST_READ, BrilloTownPoliceSign
+	signpost 11, 34, SIGNPOST_READ, BrilloTownGoP
+	signpost 13, 18, SIGNPOST_READ, BrilloLemonade
+	signpost 13, 19, SIGNPOST_READ, BrilloLemonade
+	signpost 17, 27, SIGNPOST_ITEM + HEAVY_BALL, EVENT_BRILLO_TOWN_HIDDEN_ITEM
 
-	db 14 ; object events
-	object_event 17, 24, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NULL, EVENT_BRILLO_BOATMAN
-	object_event 38, 11, SPRITE_ICESKATER_VARIABLE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloGraffitiCop, -1
-	object_event 39, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloCommanderCop, -1
-	object_event 25, 11, SPRITE_SINGER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloSinger, -1
-	object_event 26, 11, SPRITE_SINGER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrilloSinger, -1
-	object_event 27, 11, SPRITE_SINGER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BrilloSinger, -1
-	object_event 17, 25, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
-	object_event 17, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
-	object_event 16, 26, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
-	object_event 16, 25, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
-;	person_event SPRITE_MALL_SIGN, 11, 23, SPRITEMOVEDATA_PC_SIGN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrilloTownPokeCenterSign, -1
-	object_event 38,  9, SPRITE_MARACTUS_GRAFFITI, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
-	object_event 38, 10, SPRITE_MARACTUS_GRAFFITI, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
-	object_event 39,  9, SPRITE_MARACTUS_GRAFFITI, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
-	object_event 39, 10, SPRITE_MISC_CONE, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
+	db 20 ; object events
+	object_event 17, 26, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NULL, EVENT_BRILLO_BOATMAN
+	object_event 38, 13, SPRITE_ICESKATER_VARIABLE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloGraffitiCop, -1
+	object_event 39, 13, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloCommanderCop, -1
+	object_event 25, 13, SPRITE_SINGER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloSinger, -1
+	object_event 26, 13, SPRITE_SINGER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrilloSinger, -1
+	object_event 27, 13, SPRITE_SINGER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BrilloSinger, -1
+	object_event 17, 13, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloLemonadeCop, -1
+	person_event SPRITE_CHILD, 12, 19, SPRITEMOVEDATA_LEMONADE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 22, 17, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BrilloNPC1, -1
+	object_event 12, 11, SPRITE_PONYTAIL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BrilloNPC2, -1
+	object_event 33, 21, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BrilloNPC3, -1
+	object_event 17, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
+	object_event 17, 28, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
+	object_event 16, 28, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
+	object_event 16, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
+	object_event 38, 11, SPRITE_MARACTUS_GRAFFITI, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
+	object_event 38, 12, SPRITE_MARACTUS_GRAFFITI, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
+	object_event 39, 11, SPRITE_MARACTUS_GRAFFITI, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
+	object_event 39, 12, SPRITE_MISC_CONE, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
+	tmhmball_event 12,  4, TM_SANDSTORM, EVENT_BRILLO_TOWN_SANDSTORM_TM
 
 	const_def 1 ; object constants
 	const BRILLO_BOAT_MAN
@@ -55,6 +63,7 @@ BrilloTown_MapScriptHeader:
 	const BRILLO_SINGER_L
 	const BRILLO_SINGER_M
 	const BRILLO_SINGER_R
+	const BRILLO_LEMONADE_COP
 	
 	
 BrilloTownTrigger0:
@@ -126,6 +135,157 @@ BrilloSingerTextScrollAsm2:
 	ld d, 0
 	predef FlagPredef
 	ret
+	
+BrilloLemonadeCop:
+	faceplayer
+	opentext
+	writetext BrilloLemonadeCopText
+	waitbutton
+	closetext
+	spriteface BRILLO_LEMONADE_COP, RIGHT
+	end
+	
+BrilloLemonadeCopText:
+	text "A kid running a"
+	line "lemonade stand,"
+	cont "huh?"
+	
+	para "I hope he's got"
+	line "a permit!"
+	done
+	
+BrilloLemonade:
+	opentext
+	special PlaceMoneyTopRight
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl
+	writetext BrilloLemonadeText1Boy
+	jump .cont
+.girl
+	writetext BrilloLemonadeText1Girl
+.cont
+	yesorno
+	iftrue .yes
+	writetext BrilloLemonadeText2
+	waitbutton
+	closetext
+	end
+.yes
+	giveitem LEMONADE
+	iffalse .no_room
+	takeitem LEMONADE
+	checkmoney $0, 25
+	if_equal $2, .no_money
+	playsound SFX_TRANSACTION
+	takemoney $0, 25
+	special PlaceMoneyTopRight
+	writetext BrilloLemonadeText3
+	buttonsound
+	verbosegiveitem LEMONADE
+	writetext BrilloLemonadeText4
+	waitbutton
+	closetext
+	end
+.no_money
+	writetext BrilloLemonadeText5
+	waitbutton
+	closetext
+	end
+.no_room
+	writetext BrilloLemonadeText6
+	waitbutton
+	closetext
+	end
+	
+BrilloLemonadeText1Boy:
+	text "Hiya, mister."
+	
+	para "Wanna buy a"
+	line "LEMONADE?"
+	
+	para "Only ¥350!"
+	done
+	
+BrilloLemonadeText1Girl:
+	text "Hiya, ma'am."
+	
+	para "Wanna buy a"
+	line "LEMONADE?"
+	
+	para "Only ¥350!"
+	done
+	
+BrilloLemonadeText2:
+	text "Aww!"
+	done
+	
+BrilloLemonadeText3:
+	text "One LEMONADE!<WAIT_S>"
+	line "Here ya go!"
+	done
+	
+BrilloLemonadeText4:
+	text "Enjoy!"
+	
+	para "Please come"
+	line "again!"
+	done
+	
+BrilloLemonadeText5:
+	text "Sorry, I can't"
+	line "give it away for"
+	cont "free…"
+	done
+	
+BrilloLemonadeText6:
+	text "Sorry, you can't"
+	line "hold anything else…"
+	done
+	
+BrilloNPC1:
+	jumptextfaceplayer BrilloNPC1Text
+	
+BrilloNPC1Text:
+	text "During the day"
+	line "it's blazing hot."
+	
+	para "During the night"
+	line "it's freezing cold."
+	
+	para "This place isn't"
+	line "for the faint of"
+	cont "heart."
+	done
+	
+BrilloNPC2:
+	jumptextfaceplayer BrilloNPC2Text
+	
+BrilloNPC2Text:
+	text "Bandits often hide"
+	line "out in the desert."
+	
+	para "Thank goodness for"
+	line "our brave police"
+	cont "force!"
+	done
+	
+BrilloNPC3:
+	jumptextfaceplayer BrilloNPC3Text
+	
+BrilloNPC3Text:
+	text "Sand in my shoes.<WAIT_S>"
+	line "Sand in my eyes."
+	
+	para "Sand up my nose!"
+	
+	para "I'm sick of it!"
+	done
 	
 BrilloSinger:
 	opentext
@@ -765,9 +925,12 @@ BrilloCommanderCopText2:
 	done
 	
 BrilloTownGoPText:
-	text "“Go-P” is"
+	text "There is graffiti"
 	line "spray-painted on"
 	cont "on the wall."
+	
+	para "“The password is"
+	line "STORM DRAIN.”"
 	
 	para "What could that"
 	line "mean?"
@@ -784,6 +947,9 @@ BrilloSailboatText:
 BrilloJustRodeBoatText:
 	text "Here we are,<WAIT_S>"
 	line "PUEBLO BRILLO."
+	
+	para "That's “BREE-O”,"
+	line "not “BRILL-O”."
 	
 	para "Thanks for riding."
 	

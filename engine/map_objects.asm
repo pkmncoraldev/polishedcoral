@@ -651,6 +651,7 @@ MapObjectMovementPattern:
 	dw .MovementTileHalfwayLeft
 	dw .MovementTileHalfwayRight
 	dw .MovementCursola
+	dw .MovementLemonade
 
 .RandomWalkY:
 	call Random
@@ -1146,6 +1147,10 @@ MapObjectMovementPattern:
 	
 .MovementCardTable4
 	ld a, PERSON_ACTION_CARD_TABLE_4
+	jr ._ActionA_StepType04
+	
+.MovementLemonade
+	ld a, PERSON_ACTION_LEMONADE
 	jr ._ActionA_StepType04
 	
 .MovementDealerDown

@@ -107,6 +107,7 @@ Facings:
 	dw FacingCursola7
 	dw FacingCursola8
 	dw FacingCursola9
+	dw FacingLemonade
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -872,6 +873,13 @@ FacingDealerRight:
 	db  0,  0, 0 | X_FLIP, $08
 	db  8, -8, 2 | X_FLIP, $0b
 	db  8,  0, 2 | X_FLIP, $0a
+	
+FacingLemonade:
+	db 4 ; #
+	db  6, -8, 0, $00
+	db  6,  0, 0, $01
+	db 14, -8, 2, $02
+	db 14,  0, 2, $03
 	
 FacingTileHalfwayLeft:
 	db 4 ; #

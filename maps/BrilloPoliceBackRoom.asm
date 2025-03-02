@@ -219,7 +219,7 @@ BrilloPoliceBackRoomTrigger0:
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
 	waitsfx
-	warpfacing DOWN, BRILLO_TOWN, 35, 11
+	warpfacing DOWN, BRILLO_TOWN, 35, 13
 	end
 	
 BrilloPoliceBackRoomCaptainText1:
@@ -241,8 +241,8 @@ BrilloPoliceBackRoomCaptainText1:
 	
 BrilloPoliceBackRoomCaptainText2:
 	text "These fine"
-	line "officers will"
-	cont "take it from here."
+	line "officers will take"
+	cont "it from here."
 	
 	para "You're gonna learn"
 	line "to cooperate with"

@@ -325,7 +325,7 @@ MAP_NONE   EQU 0
 	
 	newgroup													 ; 17
 	
-	map_const BRILLO_TOWN,								  23, 17 ; 1
+	map_const BRILLO_TOWN,								  23, 18 ; 1
 	map_const ROUTE_18_NORTH,       	           	  	  13, 15 ; 2 HAS TO BE HERE FOR FIRE PAL
 	map_const BRILLO_BOAT_HOUSE,                    	   4,  3 ; 3
 	map_const BRILLO_ROCK_HOUSE,						   4,  4 ; 4

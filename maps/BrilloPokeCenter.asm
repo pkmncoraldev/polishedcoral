@@ -11,11 +11,13 @@ BrilloPokeCenter_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 6 ; object events
 	pc_nurse_event  4, 1
 	pc_chansey_event  5, 1
 	person_event SPRITE_POKEMANIAC,  5, 9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPokeCenterNPC1, EVENT_ROUTE_17_COPS_GONE
 	object_event  9, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TOUCANNON, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, BrilloPokeCenterToucannon, EVENT_ROUTE_17_COPS_GONE
+	person_event SPRITE_COOLTRAINER_F,  4,  2, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BrilloPokeCenterNPC2, -1
+	person_event SPRITE_SUPER_NERD,  4, 11, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BrilloPokeCenterNPC3, -1
 	
 	
 BrilloPokeCenterToucannon:
@@ -90,3 +92,43 @@ BrilloPokeCenterNPC1Text2:
 	line "what to do now."
 	done
 	
+BrilloPokeCenterNPC2:
+	checktime 1<<NITE
+	iftrue .nite
+	checktime 1<<DUSK
+	iftrue .nite
+	jumptextfaceplayer BrilloPokeCenterNPC2Text1
+.nite
+	jumptextfaceplayer BrilloPokeCenterNPC2Text2
+	
+BrilloPokeCenterNPC2Text1:
+	text "I was sweating my"
+	line "butt off outside."
+	
+	para "Boy am I glad the"
+	line "#MON CENTER has"
+	cont "A/C!"
+	done
+	
+BrilloPokeCenterNPC2Text2:
+	text "I was freezing my"
+	line "butt off outside."
+	
+	para "Boy am I glad the"
+	line "#MON CENTER is"
+	cont "heated!"
+	done
+	
+BrilloPokeCenterNPC3:
+	jumptextfaceplayer BrilloPokeCenterNPC3Text
+	
+BrilloPokeCenterNPC3Text:
+	text "Have you heard the"
+	line "BROTHERS 3 sing?"
+	
+	para "I'm their biggest"
+	line "fan!"
+	
+	para "They only sing the"
+	line "one song, though…"
+	done

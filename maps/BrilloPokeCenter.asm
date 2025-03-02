@@ -95,8 +95,6 @@ BrilloPokeCenterNPC1Text2:
 BrilloPokeCenterNPC2:
 	checktime 1<<NITE
 	iftrue .nite
-	checktime 1<<DUSK
-	iftrue .nite
 	jumptextfaceplayer BrilloPokeCenterNPC2Text1
 .nite
 	jumptextfaceplayer BrilloPokeCenterNPC2Text2
@@ -129,6 +127,9 @@ BrilloPokeCenterNPC3Text:
 	para "I'm their biggest"
 	line "fan!"
 	
-	para "They only sing the"
-	line "one song, though…"
+	para "I know all of"
+	line "their songs!"
+	
+	para "They only have the"
+	line "one song…"
 	done

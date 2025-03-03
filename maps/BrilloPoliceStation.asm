@@ -295,7 +295,11 @@ BrilloPoliceStationPrisoner1:
 	jumptext BrilloPoliceStationPrisoner1Text
 
 BrilloPoliceStationPrisoner2:
-	jumptext BrilloPoliceStationPrisoner2Text
+	checkevent EVENT_COOPERATED_WITH_BRILLO_POLICE
+	iftrue .alt
+	jumptext BrilloPoliceStationPrisoner2Text1
+.alt
+	jumptext BrilloPoliceStationPrisoner2Text2
 
 BrilloPoliceStationPrisoner3:
 	jumptext BrilloPoliceStationPrisoner3Text
@@ -320,7 +324,7 @@ BrilloPoliceStationPrisoner1Text:
 	line "eat, too!"
 	done
 
-BrilloPoliceStationPrisoner2Text:
+BrilloPoliceStationPrisoner2Text1:
 	text "Mumble… mumble…"
 	
 	para "Back corner of the"
@@ -330,6 +334,10 @@ BrilloPoliceStationPrisoner2Text:
 	
 	para "They'll never find"
 	line "it…"
+	done
+	
+BrilloPoliceStationPrisoner2Text2:
+	text "He's ignoring you."
 	done
 
 BrilloPoliceStationPrisoner3Text:

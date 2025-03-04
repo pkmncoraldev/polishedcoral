@@ -2423,16 +2423,6 @@ BattleAnim_Confused:
 	anim_wait 96
 	anim_ret
 
-BattleAnim_Slp:
-	anim_1gfx ANIM_GFX_STATUS
-	anim_sound 0, 0, SFX_TAIL_WHIP
-.loop
-	anim_obj ANIM_OBJ_54,   8, 0,  10, 0, $0
-	anim_wait 40
-	anim_loop 3, .loop
-	anim_wait 32
-	anim_ret
-
 BattleAnim_Brn:
 	anim_1gfx ANIM_GFX_FIRE
 .loop
@@ -3840,6 +3830,7 @@ BattleAnim_CalmMindbranch:
 	
 
 BattleAnim_Rest:
+BattleAnim_Slp:
 	anim_1gfx ANIM_GFX_STATUS
 	anim_sound 0, 0, SFX_TAIL_WHIP
 .loop

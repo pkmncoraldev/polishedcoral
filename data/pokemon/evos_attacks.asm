@@ -4763,12 +4763,34 @@ WyrdeerEvosAttacks:
 FlittleEvosAttacks:
 	db EVOLVE_LEVEL, 35, ESPATHRA
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, PECK
+	db 1, GROWL
+	db 5, CONFUSION
+	db 8, CHARM_FEATHER_DANCE
+	db 11, FAIRY_WIND
+	db 15, QUICK_ATTACK
+	db 19, PSYBEAM
+	db 29, AGILITY_ROCK_POLISH
+	db 34, HYPER_VOICE
 	db 0 ; no more level-up moves
 	
 EspathraEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
+	db 1, DRILL_PECK
+	db 1, CHARM_FEATHER_DANCE
+	db 1, PECK
+	db 1, GROWL
+	db 1, TACKLE_SCRATCH_POUND ; LUMINA_CRASH
+	db 5, CONFUSION
+	db 8, CHARM_FEATHER_DANCE
+	db 11, FAIRY_WIND
+	db 15, QUICK_ATTACK
+	db 19, PSYBEAM
+	db 29, AGILITY_ROCK_POLISH
+	db 34, HYPER_VOICE
+	db 43, DAZZLINGLEAM
+	db 49, PSYCHIC_M
+	db 54, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 	
 ClodsireEvosAttacks:

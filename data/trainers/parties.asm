@@ -1412,7 +1412,8 @@ PicnickerGroup:
 	db "SANDY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 41, CINCCINO
+	db 42, WIGGLYTUFF
+	db 42, CINCCINO
 	db -1 ; end
 
 ; ================
@@ -2826,8 +2827,8 @@ PokefanMGroup:
 	db "JASON@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 40, TOGETIC
-	db 40, TOGETIC
+	db 44, TOGETIC
+	db 45, TOGETIC
 	db -1 ; end
 
 ; ================
@@ -3909,7 +3910,7 @@ LadyGroup:
 	db "JUDY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 42, MACHOKE
+	db 43, MACHOKE
 	db -1 ; end
 
 ; ================
@@ -4224,7 +4225,7 @@ ScientistGroup:
 	db "HAROLD@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 40, PORYGON2
+	db 43, PORYGON2
 	db -1 ; end
 
 ; ================
@@ -4242,8 +4243,8 @@ ScientistGroup:
 	db "SAL@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 40, ARCHEN
-	db 40, TIRTOUGA
+	db 44, ARCHEN
+	db 44, TIRTOUGA
 	db -1 ; end
 
 ; ================

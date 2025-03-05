@@ -764,24 +764,24 @@
 	db 38, PIDGEOTTO	;20%
 	db 38, RAPIDASH		;10%
 	db 38, PIDGEOTTO	;5%
-	db 38, ESPARTHA		;4%
-	db 38, ESPARTHA		;1%
+	db 38, ESPATHRA		;4%
+	db 38, ESPATHRA		;1%
 	; day
 	db 38, FLITTLE		;30%
 	db 38, PONYTA		;30%
 	db 38, PIDGEOTTO	;20%
 	db 38, RAPIDASH		;10%
 	db 38, PIDGEOTTO	;5%
-	db 38, ESPARTHA		;4%
-	db 38, ESPARTHA		;1%
+	db 38, ESPATHRA		;4%
+	db 38, ESPATHRA		;1%
 	; nite
 	db 38, FLITTLE		;30%
 	db 38, PONYTA		;30%
 	db 38, PIDGEOTTO	;20%
 	db 38, RAPIDASH		;10%
 	db 38, PIDGEOTTO	;5%
-	db 38, ESPARTHA		;4%
-	db 38, ESPARTHA		;1%
+	db 38, ESPATHRA		;4%
+	db 38, ESPATHRA		;1%
 	
 	map_id ROUTE_14_15_UNDERWATER
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite

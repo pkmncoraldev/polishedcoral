@@ -13,7 +13,7 @@ LusterMallElectronicsShop_MapScriptHeader:
 	bg_event  4,  3, SIGNPOST_READ, LusterMallElectronicsShop_TV
 	bg_event  5,  3, SIGNPOST_READ, LusterMallElectronicsShop_TV
 	bg_event  6,  7, SIGNPOST_READ, LusterMallElectronicsShop_TV
-	bg_event  5,  7, SIGNPOST_READ, LusterMallElectronicsShop_TV2
+	bg_event  5,  7, SIGNPOST_READ, LusterMallElectronicsShop_TV
 	bg_event  5,  5, SIGNPOST_READ, LusterMallElectronicsShop_N64
 	bg_event  6,  5, SIGNPOST_READ, LusterMallElectronicsShop_N64
 	bg_event  3,  7, SIGNPOST_READ, LusterMallElectronicsShop_N64
@@ -112,9 +112,6 @@ LusterMallElectronicsShop_NPC3:
 	
 LusterMallElectronicsShop_TV:
 	jumptext LusterMallElectronicsShop_TVText
-	
-LusterMallElectronicsShop_TV2:
-	jumptext LusterMallElectronicsShop_TV2Text
 
 LusterMallElectronicsShop_Snes:
 	jumptext LusterMallElectronicsShop_SnesText
@@ -150,11 +147,6 @@ LusterMallElectronicsShop_TVText:
 	text "A big screen TV."
 	
 	para "Fancy!"
-	done
-	
-LusterMallElectronicsShop_TV2Text:
-	text "A smaller TV for"
-	line "kids."
 	done
 	
 LusterMallElectronicsShop_SnesText:

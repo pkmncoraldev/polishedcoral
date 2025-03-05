@@ -112,9 +112,9 @@ PlayerHouseDebugPoster:
 	verticalmenu
 	iffalse .end
 	if_equal $1, .tms
-	if_equal $2, .Sfx
-	if_equal $3, .mina
-	if_equal $4, .girls
+	if_equal $2, .deco
+	if_equal $3, .quests
+	if_equal $4, .Sfx
 	closewindow
 	jump .page1
 .Mons
@@ -124,6 +124,15 @@ PlayerHouseDebugPoster:
 	givepoke HYPNO, 99
 	givepoke EEVEE, 99
 	jump .return
+.quests
+	closewindow
+	loadmenu .PlayerHouseDebugQuestMenuData
+	verticalmenu
+	iffalse .end
+	if_equal $1, .mina
+	if_equal $2, .girls
+	closewindow
+	jump .page2
 .Items
 	closewindow
 	writetext PlayerHouseDebug2ItemsText
@@ -364,6 +373,75 @@ PlayerHouseDebugPoster:
 	setevent EVENT_UNLOCKED_SOUTH_FLY_MAP
 	setevent EVENT_CAN_GO_TO_SHIMMER
 	jump .return
+.deco
+	closewindow
+	writetext PlayerHouseDebug2DecoText
+	waitbutton
+	setevent EVENT_DECO_BED_1
+	setevent EVENT_DECO_BED_2
+	setevent EVENT_DECO_BED_3
+	setevent EVENT_DECO_BED_4
+	setevent EVENT_DECO_BED_5
+	setevent EVENT_DECO_BED_6
+	setevent EVENT_DECO_CARPET_1
+	setevent EVENT_DECO_CARPET_2
+	setevent EVENT_DECO_CARPET_3
+	setevent EVENT_DECO_CARPET_4
+	setevent EVENT_DECO_CARPET_5
+	setevent EVENT_DECO_PLANT_1
+	setevent EVENT_DECO_PLANT_2
+	setevent EVENT_DECO_PLANT_3
+	setevent EVENT_DECO_PLANT_4
+	setevent EVENT_DECO_POSTER_1
+	setevent EVENT_DECO_POSTER_2
+	setevent EVENT_DECO_POSTER_3
+	setevent EVENT_DECO_POSTER_4
+	setevent EVENT_DECO_POSTER_5
+	setevent EVENT_DECO_POSTER_6
+	setevent EVENT_DECO_POSTER_7
+	setevent EVENT_DECO_POSTER_8
+	setevent EVENT_DECO_POSTER_9
+	setevent EVENT_DECO_SNES
+	setevent EVENT_DECO_N64
+	setevent EVENT_DECO_BIG_SNORLAX_DOLL
+	setevent EVENT_DECO_BIG_ONIX_DOLL
+	setevent EVENT_DECO_BIG_LAPRAS_DOLL
+	setevent EVENT_DECO_BIG_GYARADOS_DOLL
+	setevent EVENT_DECO_BIG_MAMOSWINE_DOLL
+	setevent EVENT_DECO_BIG_MUK_DOLL
+	setevent EVENT_DECO_PIKACHU_DOLL
+	setevent EVENT_DECO_RAICHU_DOLL
+	setevent EVENT_DECO_SURFING_PIKACHU_DOLL
+	setevent EVENT_DECO_CLEFAIRY_DOLL
+	setevent EVENT_DECO_JIGGLYPUFF_DOLL
+	setevent EVENT_DECO_BULBASAUR_DOLL
+	setevent EVENT_DECO_CHARMANDER_DOLL
+	setevent EVENT_DECO_SQUIRTLE_DOLL
+	setevent EVENT_DECO_CHIKORITA_DOLL
+	setevent EVENT_DECO_CYNDAQUIL_DOLL
+	setevent EVENT_DECO_TOTODILE_DOLL
+	setevent EVENT_DECO_POLIWAG_DOLL
+	setevent EVENT_DECO_MAREEP_DOLL
+	setevent EVENT_DECO_TOGEPI_DOLL
+	setevent EVENT_DECO_MAGIKARP_DOLL
+	setevent EVENT_DECO_ODDISH_DOLL
+	setevent EVENT_DECO_GENGAR_DOLL
+	setevent EVENT_DECO_MARACTUS_DOLL
+	setevent EVENT_DECO_DITTO_DOLL
+	setevent EVENT_DECO_VOLTORB_DOLL
+	setevent EVENT_DECO_GIRAFARIG_DOLL
+	setevent EVENT_DECO_COTTONEE_DOLL
+	setevent EVENT_DECO_GEODUDE_DOLL
+	setevent EVENT_DECO_FLITTLE_DOLL
+	setevent EVENT_DECO_EXEGGCUTE_DOLL
+	setevent EVENT_DECO_TEDDIURSA_DOLL
+	setevent EVENT_DECO_MEOWTH_DOLL
+	setevent EVENT_DECO_BUIZEL_DOLL
+	setevent EVENT_DECO_GROWLITHE_DOLL
+	setevent EVENT_DECO_EEVEE_DOLL
+	setevent EVENT_DECO_GOLD_TROPHY
+	setevent EVENT_DECO_SILVER_TROPHY
+	jump .return
 .Sfx
 	closewindow
 	callasm PlayerRoomSfxTest
@@ -424,10 +502,25 @@ PlayerHouseDebugPoster:
 	db $80 ; flags
 	db 5 ; items
 	db "TMs/HMs@"
+	db "DECORATIONS@"
+	db "QUESTS@"
 	db "SFX TEST@"
+	db "PAGE 1@"
+	
+.PlayerHouseDebugQuestMenuData:
+	db $40 ; flags
+	db 00, 00 ; start coords
+	db 11, 19 ; end coords
+	dw .MenuData2PlayerHouseQuestDebug
+	db 1 ; default option
+; 0x48e04
+	
+.MenuData2PlayerHouseQuestDebug:
+	db $80 ; flags
+	db 3 ; items
 	db "ACTIVATE MINA@"
 	db "RESCUE GIRLS@"
-	db "PAGE 1@"
+	db "BACK@"
 	
 PlayerHouseDebug2ItemsText:
 	text "Obtained"
@@ -447,6 +540,11 @@ PlayerHouseDebug2BadgeText:
 PlayerHouseDebug2TMText:
 	text "Obtained all"
 	line "TMs and HMs."
+	done
+	
+PlayerHouseDebug2DecoText:
+	text "Obtained all"
+	line "DECORATIONS."
 	done
 	
 PlayerHouseDebug2MinaText:
@@ -500,6 +598,7 @@ PlayerRoomSfxTest:
 	jr nz, .down
 	jr .loop
 .end
+	farcall _LoadStandardFont
 	ld a, [wMapMusic]
 	ld e, a
 	ld d, 0
@@ -924,71 +1023,7 @@ GameConsoleMusic:
 	ret
 	
 PlayerHouseRadio:
-	setevent EVENT_DECO_BED_1
-	setevent EVENT_DECO_BED_2
-	setevent EVENT_DECO_BED_3
-	setevent EVENT_DECO_BED_4
-	setevent EVENT_DECO_BED_5
-	setevent EVENT_DECO_BED_6
-	setevent EVENT_DECO_CARPET_1
-	setevent EVENT_DECO_CARPET_2
-	setevent EVENT_DECO_CARPET_3
-	setevent EVENT_DECO_CARPET_4
-	setevent EVENT_DECO_CARPET_5
-	setevent EVENT_DECO_PLANT_1
-	setevent EVENT_DECO_PLANT_2
-	setevent EVENT_DECO_PLANT_3
-	setevent EVENT_DECO_PLANT_4
-	setevent EVENT_DECO_POSTER_1
-	setevent EVENT_DECO_POSTER_2
-	setevent EVENT_DECO_POSTER_3
-	setevent EVENT_DECO_POSTER_4
-	setevent EVENT_DECO_POSTER_5
-	setevent EVENT_DECO_POSTER_6
-	setevent EVENT_DECO_POSTER_7
-	setevent EVENT_DECO_POSTER_8
-	setevent EVENT_DECO_POSTER_9
-	setevent EVENT_DECO_SNES
-	setevent EVENT_DECO_N64
-	setevent EVENT_DECO_BIG_SNORLAX_DOLL
-	setevent EVENT_DECO_BIG_ONIX_DOLL
-	setevent EVENT_DECO_BIG_LAPRAS_DOLL
-	setevent EVENT_DECO_BIG_GYARADOS_DOLL
-	setevent EVENT_DECO_BIG_MAMOSWINE_DOLL
-	setevent EVENT_DECO_BIG_MUK_DOLL
-	setevent EVENT_DECO_PIKACHU_DOLL
-	setevent EVENT_DECO_RAICHU_DOLL
-	setevent EVENT_DECO_SURFING_PIKACHU_DOLL
-	setevent EVENT_DECO_CLEFAIRY_DOLL
-	setevent EVENT_DECO_JIGGLYPUFF_DOLL
-	setevent EVENT_DECO_BULBASAUR_DOLL
-	setevent EVENT_DECO_CHARMANDER_DOLL
-	setevent EVENT_DECO_SQUIRTLE_DOLL
-	setevent EVENT_DECO_CHIKORITA_DOLL
-	setevent EVENT_DECO_CYNDAQUIL_DOLL
-	setevent EVENT_DECO_TOTODILE_DOLL
-	setevent EVENT_DECO_POLIWAG_DOLL
-	setevent EVENT_DECO_MAREEP_DOLL
-	setevent EVENT_DECO_TOGEPI_DOLL
-	setevent EVENT_DECO_MAGIKARP_DOLL
-	setevent EVENT_DECO_ODDISH_DOLL
-	setevent EVENT_DECO_GENGAR_DOLL
-	setevent EVENT_DECO_MARACTUS_DOLL
-	setevent EVENT_DECO_DITTO_DOLL
-	setevent EVENT_DECO_VOLTORB_DOLL
-	setevent EVENT_DECO_GIRAFARIG_DOLL
-	setevent EVENT_DECO_COTTONEE_DOLL
-	setevent EVENT_DECO_GEODUDE_DOLL
-	setevent EVENT_DECO_FLITTLE_DOLL
-	setevent EVENT_DECO_EXEGGCUTE_DOLL
-	setevent EVENT_DECO_TEDDIURSA_DOLL
-	setevent EVENT_DECO_MEOWTH_DOLL
-	setevent EVENT_DECO_BUIZEL_DOLL
-	setevent EVENT_DECO_GROWLITHE_DOLL
-	setevent EVENT_DECO_EEVEE_DOLL
-	setevent EVENT_DECO_GOLD_TROPHY
-	setevent EVENT_DECO_SILVER_TROPHY
-;	jumpstd radio1
+	jumpstd radio1
 	end
 
 PlayerHousePC:

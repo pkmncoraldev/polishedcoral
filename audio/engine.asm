@@ -2397,10 +2397,18 @@ _PlayMusic:: ; e8b30
 
 NiteTempo:
 	ld a, [wMusicID2]
+	ld e, a
 	ld hl, NiteMusic
-	ld de, 1
-	call IsInArray
-	jr nc, .not_nite_music
+.loop
+	ld a, [hli]
+	cp -1
+	jr z, .not_nite_music
+	cp e
+	jr z, .song_has_nite_music
+	inc hl
+	inc hl
+	jr .loop
+.song_has_nite_music
 	ld a, [wTimeOfDay]
 	cp NITE
 	jp nz, .not_nite_music

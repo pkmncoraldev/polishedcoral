@@ -1328,54 +1328,54 @@
 	map_id FLICKER_PASS_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 22, ZUBAT		;30%
+	db 22, MACHOP		;30%
 	db 22, GEODUDE		;30%
 	db 22, ONIX			;20%
 	db 22, SWINUB		;10%
-	db 22, MACHOP		;5%
-	db 22, MACHOP		;4%
-	db 22, MACHOP		;1%
+	db 22, JIGGLYPUFF	;5%
+	db 22, JIGGLYPUFF	;4%
+	db 22, JIGGLYPUFF	;1%
 	; day
-	db 22, ZUBAT		;30%
+	db 22, MACHOP		;30%
 	db 22, GEODUDE		;30%
 	db 22, ONIX			;20%
 	db 22, SWINUB		;10%
-	db 22, MACHOP		;5%
-	db 22, MACHOP		;4%
-	db 22, MACHOP		;1%
+	db 22, JIGGLYPUFF	;5%
+	db 22, JIGGLYPUFF	;4%
+	db 22, JIGGLYPUFF	;1%
 	; nite
-	db 22, ZUBAT		;30%
+	db 22, MACHOP		;30%
 	db 22, GEODUDE		;30%
 	db 22, ONIX			;20%
 	db 22, SWINUB		;10%
-	db 22, MACHOP		;5%
-	db 22, MACHOP		;4%
-	db 22, MACHOP		;1%
+	db 22, JIGGLYPUFF	;5%
+	db 22, JIGGLYPUFF	;4%
+	db 22, JIGGLYPUFF	;1%
 	
 	map_id FLICKER_PASS_2F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 22, ZUBAT		;30%
+	db 22, MACHOP		;30%
 	db 22, GEODUDE		;30%
 	db 22, SWINUB		;20%
-	db 22, MACHOP		;10%
-	db 22, MACHOP		;5%
+	db 22, JIGGLYPUFF	;10%
+	db 22, JIGGLYPUFF	;5%
 	db 22, GOLBAT		;4%
 	db 22, GOLBAT		;1%
 	; day
-	db 22, ZUBAT		;30%
+	db 22, MACHOP		;30%
 	db 22, GEODUDE		;30%
 	db 22, SWINUB		;20%
-	db 22, MACHOP		;10%
-	db 22, MACHOP		;5%
+	db 22, JIGGLYPUFF	;10%
+	db 22, JIGGLYPUFF	;5%
 	db 22, GOLBAT		;4%
 	db 22, GOLBAT		;1%
 	; nite
-	db 22, ZUBAT		;30%
+	db 22, MACHOP		;30%
 	db 22, GEODUDE		;30%
 	db 22, SWINUB		;20%
-	db 22, MACHOP		;10%
-	db 22, MACHOP		;5%
+	db 22, JIGGLYPUFF	;10%
+	db 22, JIGGLYPUFF	;5%
 	db 22, GOLBAT		;4%
 	db 22, GOLBAT		;1%
 	

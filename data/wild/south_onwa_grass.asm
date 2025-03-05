@@ -734,7 +734,7 @@
 	; morn
 	db 38, TOGETIC		;30%
 	db 38, PONYTA		;30%
-	db 38, WIGGLYTUFF	;20%
+	db 38, PIDGEOTTO	;20%
 	db 38, RAPIDASH		;10%
 	db 38, DITTO		;5%
 	db 38, DITTO		;4%
@@ -742,7 +742,7 @@
 	; day
 	db 38, TOGETIC		;30%
 	db 38, PONYTA		;30%
-	db 38, WIGGLYTUFF	;20%
+	db 38, PIDGEOTTO	;20%
 	db 38, RAPIDASH		;10%
 	db 38, DITTO		;5%
 	db 38, DITTO		;4%
@@ -750,11 +750,38 @@
 	; nite
 	db 38, TOGETIC		;30%
 	db 38, PONYTA		;30%
-	db 38, WIGGLYTUFF	;20%
+	db 38, PIDGEOTTO	;20%
 	db 38, RAPIDASH		;10%
 	db 38, DITTO		;5%
 	db 38, DITTO		;4%
 	db 38, DITTO		;1%
+	
+	map_id ROUTE_29
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 38, FLITTLE		;30%
+	db 38, PONYTA		;30%
+	db 38, PIDGEOTTO	;20%
+	db 38, RAPIDASH		;10%
+	db 38, PIDGEOTTO	;5%
+	db 38, ESPARTHA		;4%
+	db 38, ESPARTHA		;1%
+	; day
+	db 38, FLITTLE		;30%
+	db 38, PONYTA		;30%
+	db 38, PIDGEOTTO	;20%
+	db 38, RAPIDASH		;10%
+	db 38, PIDGEOTTO	;5%
+	db 38, ESPARTHA		;4%
+	db 38, ESPARTHA		;1%
+	; nite
+	db 38, FLITTLE		;30%
+	db 38, PONYTA		;30%
+	db 38, PIDGEOTTO	;20%
+	db 38, RAPIDASH		;10%
+	db 38, PIDGEOTTO	;5%
+	db 38, ESPARTHA		;4%
+	db 38, ESPARTHA		;1%
 	
 	map_id ROUTE_14_15_UNDERWATER
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
@@ -944,5 +971,59 @@
 	db 35, NOIBAT		;5%
 	db 37, GALVANTULA	;4%
 	db 37, GALVANTULA	;1%
+	
+	map_id GREEN_GROTTO_1F
+	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
+	; morn
+	db 39, NOIBAT		;30%
+	db 39, CRUSTLE		;30%
+	db 39, RATICATE		;20%
+	db 39, CLODSIRE		;10%
+	db 39, HERACROSS	;5%
+	db 39, CLODSIRE		;4%
+	db 39, CLODSIRE		;1%
+	; day
+	db 39, NOIBAT		;30%
+	db 39, CRUSTLE		;30%
+	db 39, RATICATE		;20%
+	db 39, CLODSIRE		;10%
+	db 39, HERACROSS	;5%
+	db 39, CLODSIRE		;4%
+	db 39, CLODSIRE		;1%
+	; nite
+	db 39, NOIBAT		;30%
+	db 39, CRUSTLE		;30%
+	db 39, RATICATE		;20%
+	db 39, CLODSIRE		;10%
+	db 39, HERACROSS	;5%
+	db 39, CLODSIRE		;4%
+	db 39, CLODSIRE		;1%
+	
+	map_id GREEN_GROTTO_B1F
+	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
+	; morn
+	db 39, NOIBAT		;30%
+	db 39, CRUSTLE		;30%
+	db 39, RATICATE		;20%
+	db 39, CLODSIRE		;10%
+	db 39, HERACROSS	;5%
+	db 39, CLODSIRE		;4%
+	db 39, CLODSIRE		;1%
+	; day
+	db 39, NOIBAT		;30%
+	db 39, CRUSTLE		;30%
+	db 39, RATICATE		;20%
+	db 39, CLODSIRE		;10%
+	db 39, HERACROSS	;5%
+	db 39, CLODSIRE		;4%
+	db 39, CLODSIRE		;1%
+	; nite
+	db 39, NOIBAT		;30%
+	db 39, CRUSTLE		;30%
+	db 39, RATICATE		;20%
+	db 39, CLODSIRE		;10%
+	db 39, HERACROSS	;5%
+	db 39, CLODSIRE		;4%
+	db 39, CLODSIRE		;1%
 	
 	db -1 ; end

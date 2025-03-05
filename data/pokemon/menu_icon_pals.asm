@@ -134,8 +134,6 @@ MenuMonIconColors::
 	iconpal BLUE, PURPLE ; MURKROW
 	iconpal PINK, PURPLE ; SLOWKING
 	iconpal BROWN, BLUE ; GIRAFARIG
-	iconpal GRAY, RED ; PINECO
-	iconpal PURPLE, BROWN ; FORRETRESS
 	iconpal PURPLE, GRAY ; GLIGAR
 	iconpal GRAY, BROWN ; STEELIX
 	iconpal PINK, BLUE ; SNUBBULL
@@ -255,6 +253,8 @@ MenuMonIconColors::
 	iconpal GREEN, BLUE ; DRAKLOAK
 	iconpal GREEN, BLUE ; DRAGAPULT
 	iconpal GRAY, GREEN ; WYRDEER
+	iconpal PINK, GREEN ; FLITTLE
+	iconpal RED, BROWN ; ESPATHRA
 	iconpal BROWN, PURPLE ; CLODSIRE
 	iconpal BROWN, RED ; FARIGIRAF
 	iconpal RED, RED ; UNUSED_1

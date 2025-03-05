@@ -130,8 +130,6 @@ AnimationPointers:
 	dw MurkrowAnimation
 	dw SlowkingAnimation
 	dw GirafarigAnimation
-	dw PinecoAnimation
-	dw ForretressAnimation
 	dw GligarAnimation
 	dw SteelixAnimation
 	dw SnubbullAnimation
@@ -251,6 +249,8 @@ AnimationPointers:
 	dw DrakloakAnimation
 	dw DragapultAnimation
 	dw WyrdeerAnimation
+	dw FlittleAnimation
+	dw EspathraAnimation
 	dw ClodsireAnimation
 	dw FarigirafAnimation
 	dw BulbasaurAnimation

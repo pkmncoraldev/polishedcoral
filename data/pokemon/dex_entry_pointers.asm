@@ -131,8 +131,6 @@
 	dw MurkrowPokedexEntry
 	dw SlowkingPokedexEntry
 	dw GirafarigPokedexEntry
-	dw PinecoPokedexEntry
-	dw ForretressPokedexEntry
 	dw GligarPokedexEntry
 	dw SteelixPokedexEntry
 	dw SnubbullPokedexEntry
@@ -252,5 +250,7 @@
 	dw DrakloakPokedexEntry
 	dw DragapultPokedexEntry
 	dw WyrdeerPokedexEntry
+	dw FlittlePokedexEntry
+	dw EspathraPokedexEntry
 	dw ClodsirePokedexEntry
 	dw FarigirafPokedexEntry

@@ -357,10 +357,10 @@ SlowkingFrontpic:         INCBIN "gfx/pokemon/slowking/front.2bpp.lz"
 SlowkingBackpic:          INCBIN "gfx/pokemon/slowking/back.2bpp.lz"
 GirafarigFrontpic:        INCBIN "gfx/pokemon/girafarig/front.2bpp.lz"
 GirafarigBackpic:         INCBIN "gfx/pokemon/girafarig/back.2bpp.lz"
-PinecoFrontpic:           INCBIN "gfx/pokemon/pineco/front.2bpp.lz"
-PinecoBackpic:            INCBIN "gfx/pokemon/pineco/back.2bpp.lz"
-ForretressFrontpic:       INCBIN "gfx/pokemon/forretress/front.2bpp.lz"
-ForretressBackpic:        INCBIN "gfx/pokemon/forretress/back.2bpp.lz"
+FlittleFrontpic:           INCBIN "gfx/pokemon/flittle/front.2bpp.lz"
+FlittleBackpic:            INCBIN "gfx/pokemon/flittle/back.2bpp.lz"
+EspathraFrontpic:       INCBIN "gfx/pokemon/espathra/front.2bpp.lz"
+EspathraBackpic:        INCBIN "gfx/pokemon/espathra/back.2bpp.lz"
 
 
 SECTION "Pokemon Pics 17", ROMX

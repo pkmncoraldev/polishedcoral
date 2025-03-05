@@ -130,8 +130,6 @@ EvolutionMoves::
 	db NO_MOVE                              ; MURKROW
 	db NO_MOVE                              ; SLOWKING
 	db NO_MOVE                              ; GIRAFARIG
-	db NO_MOVE                              ; PINECO
-	db BODY_SLAM                            ; FORRETRESS
 	db NO_MOVE                              ; GLIGAR
 	db NO_MOVE                              ; STEELIX
 	db NO_MOVE                              ; SNUBBULL
@@ -251,6 +249,8 @@ EvolutionMoves::
 	db DRAGON_PULSE                         ; DRAKLOAK
 	db DRAGON_DARTS                         ; DRAGAPULT
 	db PSYSHOCK                             ; WYRDEER
+	db NO_MOVE                              ; FLITTLE
+	db NO_MOVE	;TODO LUMINA CRASH                            ; ESPATHRA
 	db AMNESIA                              ; CLODSIRE
 	db NO_MOVE                              ; FARIGIRAF
 	db NO_MOVE                              ; EGG

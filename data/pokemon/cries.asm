@@ -147,8 +147,6 @@ CryHeaders::
 	mon_cry CRY_MARILL,     -$01f,  $180 	; Murkrow
 	mon_cry CRY_SLOWKING,    $104,  $200 	; Slowking
 	mon_cry CRY_PORYGON2,    $041,  $200	; Girafarig
-	mon_cry CRY_SLOWKING,    $080,  $100 	; Pineco
-	mon_cry CRY_SLOWKING,    $000,  $180 	; Forretress
 	mon_cry CRY_GLIGAR,     -$102,  $100 	; Gligar
 	mon_cry CRY_TYPHLOSION,  $0ef,  $0f7 	; Steelix
 	mon_cry CRY_SNUBBULL,  	 $112,  $0e8 	; Snubbull
@@ -268,6 +266,8 @@ CryHeaders::
 	mon_cry DRAKLOAK,   DrakloakDEDData		; Drakloak
 	mon_cry DRAGAPULT,  DragapultDEDData	; Dragapult
 	mon_cry WYRDEER,    WyrdeerDEDData		; Wyrdeer
+	mon_cry FLITTLE,    FlittleDEDData 		; Flittle
+	mon_cry ESPATHRA,   EspathraDEDData 	; Espathra
 	mon_cry CLODSIRE,   ClodsireDEDData		; Clodsire
 	mon_cry FARIGIRAF,  FarigirafDEDData	; Farigiraf
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg
@@ -403,8 +403,6 @@ CryHeaders2::
 	mon_cry CRY_MARILL,     -$01f,  $180 	; Murkrow
 	mon_cry CRY_SLOWKING,    $104,  $200 	; Slowking
 	mon_cry CRY_PORYGON2,    $041,  $200	; Girafarig
-	mon_cry CRY_SLOWKING,    $080,  $100 	; Pineco
-	mon_cry CRY_SLOWKING,    $000,  $180 	; Forretress
 	mon_cry CRY_GLIGAR,     -$102,  $100 	; Gligar
 	mon_cry CRY_TYPHLOSION,  $0ef,  $0f7 	; Steelix
 	mon_cry CRY_SNUBBULL,  	 $112,  $0e8 	; Snubbull
@@ -524,6 +522,8 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Drakloak - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Dragapult - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Wyrdeer - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Flittle - PLACEHOLDER
+	mon_cry CRY_BULBASAUR,   $080,  $081 	; Espathra - PLACEHOLDER
 	mon_cry CRY_WOOPER,     -$0c6,  $140 	; Clodsire - PLACEHOLDER
 	mon_cry CRY_PORYGON2,    $041,  $200	; Farigiraf - PLACEHOLDER
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg

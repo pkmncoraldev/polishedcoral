@@ -130,8 +130,6 @@ FramesPointers:
 	dw MurkrowFrames
 	dw SlowkingFrames
 	dw GirafarigFrames
-	dw PinecoFrames
-	dw ForretressFrames
 	dw GligarFrames
 	dw SteelixFrames
 	dw SnubbullFrames
@@ -251,6 +249,8 @@ FramesPointers:
 	dw DrakloakFrames
 	dw DragapultFrames
 	dw WyrdeerFrames
+	dw FlittleFrames
+	dw EspathraFrames
 	dw ClodsireFrames
 	dw FarigirafFrames
 	dw BulbasaurFrames

@@ -69,7 +69,7 @@ DecorationAttributes:
 	decoration DECO_DOLL,     GIRAFARIG,         SET_UP_DOLL,        EVENT_DECO_GIRAFARIG_DOLL,         SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     COTTONEE,             SET_UP_DOLL,        EVENT_DECO_COTTONEE_DOLL,             SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     GEODUDE,           SET_UP_DOLL,        EVENT_DECO_GEODUDE_DOLL,           SPRITE_MON_DOLL_1
-	decoration DECO_DOLL,     PINECO,            SET_UP_DOLL,        EVENT_DECO_PINECO_DOLL,            SPRITE_MON_DOLL_1
+	decoration DECO_DOLL,     FLITTLE,            SET_UP_DOLL,        EVENT_DECO_FLITTLE_DOLL,            SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     EXEGGCUTE,            SET_UP_DOLL,        EVENT_DECO_EXEGGCUTE_DOLL,            SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     TEDDIURSA,         SET_UP_DOLL,        EVENT_DECO_TEDDIURSA_DOLL,         SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     MEOWTH,            SET_UP_DOLL,        EVENT_DECO_MEOWTH_DOLL,            SPRITE_MON_DOLL_1

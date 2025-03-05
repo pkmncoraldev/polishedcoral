@@ -134,8 +134,6 @@ EvosAttacksPointers:: ; 0x425b1
 	dw MurkrowEvosAttacks
 	dw SlowkingEvosAttacks
 	dw GirafarigEvosAttacks
-	dw PinecoEvosAttacks
-	dw ForretressEvosAttacks
 	dw GligarEvosAttacks
 	dw SteelixEvosAttacks
 	dw SnubbullEvosAttacks
@@ -255,6 +253,8 @@ EvosAttacksPointers:: ; 0x425b1
 	dw DrakloakEvosAttacks
 	dw DragapultEvosAttacks
 	dw WyrdeerEvosAttacks
+	dw FlittleEvosAttacks
+	dw EspathraEvosAttacks
 	dw ClodsireEvosAttacks
 	dw FarigirafEvosAttacks
 	dw EggEvosAttacks

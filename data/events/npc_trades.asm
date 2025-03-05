@@ -36,7 +36,7 @@ NPCTrades:
 	dw 50082
 	db "MARTY@@@", $00
 ; TRADE_WITH_BEV_FOR_PINECO in Radiant Town
-	db 7, SUNKERN, PINECO,      "BOOMER@@@@@"
+	db 7, SUNKERN, BULBASAUR,      "BOOMER@@@@@"
 	db $DD, $DD, $DD, HIDDEN_ABILITY | LAX,   MALE,   POKE_BALL,    MACHO_BRACE
 	dw 63426
 	db "BEV@@@@@", $00

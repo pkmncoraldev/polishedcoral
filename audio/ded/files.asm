@@ -25,9 +25,9 @@ ChandelureDEDData:: INCBIN "audio/ded/chandelure.ded"
 ComfeyDEDData:: INCBIN "audio/ded/comfey.ded"
 
 SECTION "DED 6", ROMX
-;
 MedititeDEDData:: INCBIN "audio/ded/meditite.ded"
 MedichamDEDData:: INCBIN "audio/ded/medicham.ded"
+FlittleDEDData:: INCBIN "audio/ded/flittle.ded"
 
 SECTION "DED 7", ROMX
 CarvanhaDEDData:: INCBIN "audio/ded/carvanha.ded"
@@ -173,3 +173,4 @@ FarigirafDEDData:: INCBIN "audio/ded/farigiraf.ded"
 
 SECTION "DED 38", ROMX
 MienfooDEDData::  INCBIN "audio/ded/mienfoo.ded"
+EspathraDEDData::  INCBIN "audio/ded/espathra.ded"

@@ -261,10 +261,6 @@ PicPointers::
 	dba SlowkingBackpic
 	dba GirafarigFrontpic
 	dba GirafarigBackpic
-	dba PinecoFrontpic
-	dba PinecoBackpic
-	dba ForretressFrontpic
-	dba ForretressBackpic
 	dba GligarFrontpic
 	dba GligarBackpic
 	dba SteelixFrontpic
@@ -503,6 +499,10 @@ PicPointers::
 	dba DragapultBackpic
 	dba WyrdeerFrontpic
 	dba WyrdeerBackpic
+	dba FlittleFrontpic
+	dba FlittleBackpic
+	dba EspathraFrontpic
+	dba EspathraBackpic
 	dba ClodsireFrontpic
 	dba ClodsireBackpic
 	dba FarigirafFrontpic

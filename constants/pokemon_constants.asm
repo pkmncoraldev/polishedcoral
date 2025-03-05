@@ -131,8 +131,6 @@
 	const MURKROW
 	const SLOWKING
 	const GIRAFARIG
-	const PINECO
-	const FORRETRESS
 	const GLIGAR
 	const STEELIX
 	const SNUBBULL
@@ -252,6 +250,8 @@
 	const DRAKLOAK
 	const DRAGAPULT
 	const WYRDEER
+	const FLITTLE
+	const ESPATHRA
 	const CLODSIRE
 	const FARIGIRAF
 NUM_POKEMON EQU const_value - 1

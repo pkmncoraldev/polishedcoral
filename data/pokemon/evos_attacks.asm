@@ -2502,17 +2502,6 @@ GirafarigEvosAttacks:
 	db 50, PSYCHIC_M
 	db 0 ; no more level-up moves
 
-PinecoEvosAttacks:
-	db EVOLVE_LEVEL, 31, FORRETRESS
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
-
-ForretressEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE_SCRATCH_POUND
-	db 0 ; no more level-up moves
-
 GligarEvosAttacks:
 	db EVOLVE_HOLDING_NITE, RAZOR_FANG, GLISCOR
 	db 0 ; no more evolutions
@@ -4769,6 +4758,17 @@ WyrdeerEvosAttacks:
 	db 49, SWAGGER
 	db 55, DOUBLE_EDGE
 	db 62, MEGAHORN
+	db 0 ; no more level-up moves
+	
+FlittleEvosAttacks:
+	db EVOLVE_LEVEL, 35, ESPATHRA
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 0 ; no more level-up moves
+	
+EspathraEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
 	db 0 ; no more level-up moves
 	
 ClodsireEvosAttacks:

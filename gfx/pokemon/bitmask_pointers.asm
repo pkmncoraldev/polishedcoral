@@ -130,8 +130,6 @@ BitmasksPointers:
 	dw MurkrowBitmasks
 	dw SlowkingBitmasks
 	dw GirafarigBitmasks
-	dw PinecoBitmasks
-	dw ForretressBitmasks
 	dw GligarBitmasks
 	dw SteelixBitmasks
 	dw SnubbullBitmasks
@@ -251,6 +249,8 @@ BitmasksPointers:
 	dw DrakloakBitmasks
 	dw DragapultBitmasks
 	dw WyrdeerBitmasks
+	dw FlittleBitmasks
+	dw EspathraBitmasks
 	dw ClodsireBitmasks
 	dw FarigirafBitmasks
 	dw BulbasaurBitmasks

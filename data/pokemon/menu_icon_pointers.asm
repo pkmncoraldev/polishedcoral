@@ -131,8 +131,6 @@ IconPointers:
 	dw MurkrowIcon
 	dw SlowkingIcon
 	dw GirafarigIcon
-	dw PinecoIcon
-	dw ForretressIcon
 	dw GligarIcon
 	dw SteelixIcon
 	dw SnubbullIcon
@@ -252,6 +250,8 @@ IconPointers:
 	dw DrakloakIcon
 	dw DragapultIcon
 	dw WyrdeerIcon
+	dw FlittleIcon
+	dw EspathraIcon
 	dw ClodsireIcon
 	dw FarigirafIcon
 	dw EggIcon

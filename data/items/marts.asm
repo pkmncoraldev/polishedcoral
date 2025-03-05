@@ -9,8 +9,8 @@ Marts: ; 160a9
 	dw FlickerMart
 	dw TwinkleMart
 	dw LusterMart
-	dw LusterMallElectronicsTM
 	dw LusterMallElectronics
+	dw LusterMallElectronicsTM
 	dw LusterMallCoffee
 	dw LusterMallCoffee2
 	dw LusterMallAntique

@@ -40,7 +40,7 @@
 	tilecoll UP_WALL, FLOOR, FLOOR, FLOOR ; 27
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 28
 	tilecoll FLOOR, NO_OLLIE, NO_OLLIE, NO_OLLIE ; 29
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2a
+	tilecoll FLOOR, FLOOR, NO_OLLIE, ROCK_CLIMB ; 2a
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2b
 	tilecoll WALL, WALL, WALL, WALL ; 2c
 	tilecoll FLOOR, FLOOR, DOOR, NO_OLLIE ; 2d

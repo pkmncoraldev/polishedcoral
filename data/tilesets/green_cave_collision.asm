@@ -163,3 +163,4 @@
 	tilecoll FLOOR, WALL, WALL, WALL ; a2
 	tilecoll WALL, FLOOR, WALL, WALL ; a3
 	tilecoll UP_WALL, UP_WALL, WALL, WALL ; a4
+	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; a5

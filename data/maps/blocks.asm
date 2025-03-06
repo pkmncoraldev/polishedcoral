@@ -966,3 +966,6 @@ UnderwaterTemple2_BlockData:
 GlintGroveUnderground_BlockData:
 	INCBIN "maps/GlintGroveUnderground.ablk.lz"
 	
+GreenGrotto2F_BlockData:
+	INCBIN "maps/GreenGrotto2F.ablk.lz"
+	

@@ -4,8 +4,9 @@ Route29_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route29Callback
 
-	db 1 ; warp events
-	warp_def  1, -1, 2, GREEN_GROTTO_1F
+	db 2 ; warp events
+	warp_def  7, 66, 2, GREEN_GROTTO_1F
+	warp_def 11, 54, 1, GREEN_GROTTO_2F
 
 	db 0 ; coord events
 

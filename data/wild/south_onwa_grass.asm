@@ -973,7 +973,7 @@
 	db 37, GALVANTULA	;1%
 	
 	map_id GREEN_GROTTO_1F
-	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
 	db 39, NOIBAT		;30%
 	db 39, CRUSTLE		;30%
@@ -1000,7 +1000,34 @@
 	db 39, CLODSIRE		;1%
 	
 	map_id GREEN_GROTTO_B1F
-	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	; morn
+	db 39, NOIBAT		;30%
+	db 39, CRUSTLE		;30%
+	db 39, RATICATE		;20%
+	db 39, CLODSIRE		;10%
+	db 39, HERACROSS	;5%
+	db 39, CLODSIRE		;4%
+	db 39, CLODSIRE		;1%
+	; day
+	db 39, NOIBAT		;30%
+	db 39, CRUSTLE		;30%
+	db 39, RATICATE		;20%
+	db 39, CLODSIRE		;10%
+	db 39, HERACROSS	;5%
+	db 39, CLODSIRE		;4%
+	db 39, CLODSIRE		;1%
+	; nite
+	db 39, NOIBAT		;30%
+	db 39, CRUSTLE		;30%
+	db 39, RATICATE		;20%
+	db 39, CLODSIRE		;10%
+	db 39, HERACROSS	;5%
+	db 39, CLODSIRE		;4%
+	db 39, CLODSIRE		;1%
+	
+	map_id GREEN_GROTTO_2F
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
 	db 39, NOIBAT		;30%
 	db 39, CRUSTLE		;30%

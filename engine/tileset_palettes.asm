@@ -166,6 +166,8 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, [wMapNumber]
 	cp MAP_GREEN_GROTTO_1F
 	jr z, .green_cave_cont
+	cp MAP_GREEN_GROTTO_2F
+	jr z, .green_cave_cont
 	cp MAP_GREEN_GROTTO_B1F
 	jr nz, .pink_cave
 .green_cave_cont

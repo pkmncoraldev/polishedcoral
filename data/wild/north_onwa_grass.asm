@@ -190,6 +190,33 @@
 	db 10, SMEARGLE		;4%
 	db 10, SMEARGLE		;1%
 	
+	map_id GLINT_GROVE_UNDERGROUND
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	; morn
+	db 32, CLEFAIRY		;30%
+	db 32, CLEFAIRY		;30%
+	db 32, CLEFAIRY		;20%
+	db 32, CLEFAIRY		;10%
+	db 32, CLEFAIRY		;5%
+	db 32, CLEFAIRY		;4%
+	db 32, CLEFAIRY		;1%
+	; day
+	db 32, CLEFAIRY		;30%
+	db 32, CLEFAIRY		;30%
+	db 32, CLEFAIRY		;20%
+	db 32, CLEFAIRY		;10%
+	db 32, CLEFAIRY		;5%
+	db 32, CLEFAIRY		;4%
+	db 32, CLEFAIRY		;1%
+	; nite
+	db 32, CLEFAIRY		;30%
+	db 32, CLEFAIRY		;30%
+	db 32, CLEFAIRY		;20%
+	db 32, CLEFAIRY		;10%
+	db 32, CLEFAIRY		;5%
+	db 32, CLEFAIRY		;4%
+	db 32, CLEFAIRY		;1%
+	
 	map_id ROUTE_3
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn

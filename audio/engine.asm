@@ -2407,6 +2407,8 @@ NiteTempo:
 	jr z, .song_has_nite_music
 	inc hl
 	inc hl
+	inc hl
+	inc hl
 	jr .loop
 .song_has_nite_music
 	ld a, [wTimeOfDay]

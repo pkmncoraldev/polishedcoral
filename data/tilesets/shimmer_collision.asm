@@ -23,7 +23,7 @@
 	tilecoll WALL, WALL, WALL, DOOR ; 16
 	tilecoll WALL, WALL, WALL, WALL ; 17
 	tilecoll WALL, WALL, WALL, WALL ; 18
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 19
+	tilecoll SKATE, SKATE, HEADBUTT_TREE, HEADBUTT_TREE ; 19
 	tilecoll WALL, WALL, WALL, WALL ; 1a
 	tilecoll WALL, WALL, WALL, WALL ; 1b
 	tilecoll WALL, WALL, WALL, DOOR ; 1c

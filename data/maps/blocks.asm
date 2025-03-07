@@ -928,13 +928,13 @@ Inn2F_BlockData:
 Inn3F_BlockData:
 	INCBIN "maps/Inn3F.ablk.lz"
 	
+SECTION "Map Blockdata 3", ROMX
+
 InnVent_BlockData:
 	INCBIN "maps/InnVent.ablk.lz"
-	
+
 StarglowCavern3F_BlockData:
 	INCBIN "maps/StarglowCavern3F.ablk.lz"
-	
-SECTION "Map Blockdata 3", ROMX
 	
 ObscuraMuseum1F_BlockData:
 	INCBIN "maps/ObscuraMuseum1F.ablk.lz"

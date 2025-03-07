@@ -106,6 +106,7 @@ ObscuraMuseum1FNPC2:
 	waitbutton
 	closetext
 	spriteface OBSCURA_MUSEUM_1F_NPC2, UP
+	end
 .beat
 	jumptextfaceplayer ObscuraMuseum1FNPC2Text3
 

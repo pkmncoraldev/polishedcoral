@@ -181,7 +181,6 @@ ObscuraMuseum3FDragonStoneScene:
 	special Special_FadeOutMusic
 	waitsfx
 	special Special_FadeInQuickly
-	playmusic MUSIC_SNARE_INVASION
 	setlasttalked OBSCURA_MUSEUM_3F_ROCKY
 	applymovement OBSCURA_MUSEUM_3F_ROCKY, Movement_ObscuraMuseum3FRocky
 	faceplayer
@@ -201,7 +200,8 @@ ObscuraMuseum3FDragonStoneScene:
 	dotrigger $2
 	domaptrigger OBSCURA_CITY, $1
 	clearevent EVENT_OBSCURA_CITY_ROCKY_GONE
-	warpfacing LEFT, OBSCURA_CITY, $11, $0e
+	setevent EVENT_MUSEUM_SNARE_GUY_GONE
+	warpfacing LEFT, OBSCURA_CITY, $17, $0e
 	end
 	
 ObscuraMuseum3FLockeText1:

@@ -10,6 +10,9 @@ Marts: ; 160a9
 	dw TwinkleMart
 	dw LusterMart
 	dw LusterMallElectronics
+	dw LusterMallElectronics2
+	dw LusterMallElectronics3
+	dw LusterMallElectronics4
 	dw LusterMallElectronicsTM
 	dw LusterMallCoffee
 	dw LusterMallCoffee2
@@ -178,6 +181,34 @@ LusterMallElectronics:
 	db 4 ; # items
 	db UP_GRADE
 	db LINK_CABLE
+	db WIDE_LENS
+	db ZOOM_LENS
+	db -1
+	
+LusterMallElectronics2:
+	db 5 ; # items
+	db UP_GRADE
+	db LINK_CABLE
+	db WIDE_LENS
+	db ZOOM_LENS
+	db ELECTIRIZER
+	db -1
+	
+LusterMallElectronics3:
+	db 5 ; # items
+	db UP_GRADE
+	db LINK_CABLE
+	db WIDE_LENS
+	db ZOOM_LENS
+	db MAGMARIZER
+	db -1
+	
+LusterMallElectronics4:
+	db 6 ; # items
+	db UP_GRADE
+	db LINK_CABLE
+	db WIDE_LENS
+	db ZOOM_LENS
 	db ELECTIRIZER
 	db MAGMARIZER
 	db -1

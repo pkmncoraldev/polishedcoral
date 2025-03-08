@@ -26,7 +26,7 @@ LusterMallElectronicsShop_MapScriptHeader:
 	person_event SPRITE_CHILD,  7,  0, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC1, -1
 	person_event SPRITE_SUPER_NERD,  5,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC2, -1
 	person_event SPRITE_CUTE_GIRL,  3,  8, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC3, -1
-	object_event 11,  4, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_COMMAND, pokemart, MARTTYPE_ELECTRONICS, MART_LUSTER_MALL_ELECTRONICS, -1
+	person_event SPRITE_CLERK,  4, 11, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShopClerk, -1
 	object_event  0,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_COMMAND, pokemart, MARTTYPE_DECO, MART_LUSTER_MALL_ELECTRONICS_DECO, -1
 	object_event  7,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_COMMAND, pokemart, MARTTYPE_TM, MART_LUSTER_MALL_ELECTRONICS_TM, -1
 	person_event SPRITE_POLLY,  6, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShopPolly, EVENT_POLLY_NOT_IN_ELECTRONICS
@@ -40,6 +40,74 @@ LusterMallElectronicsShop_MapScriptHeader:
 	const LUSTER_MALL_ELECTRONICS_CLERK2
 	const LUSTER_MALL_ELECTRONICS_POLLY
 	
+	
+LusterMallElectronicsShopClerk:
+	opentext
+	checkevent EVENT_MT_ONWA_B3F_POKE_BALL
+	iftrue .got_elec
+	checkevent EVENT_SUNBEAM_JUNGLE_DEEP_POKE_BALL
+	iftrue .got_mag_no_elec
+	callasm LusterMallElectronicsShopClerkAsm
+	closetext
+	end
+.got_elec
+	checkevent EVENT_SUNBEAM_JUNGLE_DEEP_POKE_BALL
+	iftrue .got_both
+	callasm LusterMallElectronicsShopClerkAsm2
+	closetext
+	end
+.got_mag_no_elec
+	callasm LusterMallElectronicsShopClerkAsm3
+	closetext
+	end
+.got_both
+	callasm LusterMallElectronicsShopClerkAsm4
+	closetext
+	end
+	
+LusterMallElectronicsShopClerkAsm:
+	ld a, MARTTYPE_ELECTRONICS
+	ld c, a
+	ld a, MART_LUSTER_MALL_ELECTRONICS
+	ld e, a
+	ld d, 0
+	ld a, [wScriptBank]
+	ld b, a
+	farcall OpenMartDialog
+	ret
+	
+LusterMallElectronicsShopClerkAsm2:
+	ld a, MARTTYPE_ELECTRONICS
+	ld c, a
+	ld a, MART_LUSTER_MALL_ELECTRONICS_2
+	ld e, a
+	ld d, 0
+	ld a, [wScriptBank]
+	ld b, a
+	farcall OpenMartDialog
+	ret
+	
+LusterMallElectronicsShopClerkAsm3:
+	ld a, MARTTYPE_ELECTRONICS
+	ld c, a
+	ld a, MART_LUSTER_MALL_ELECTRONICS_3
+	ld e, a
+	ld d, 0
+	ld a, [wScriptBank]
+	ld b, a
+	farcall OpenMartDialog
+	ret
+	
+LusterMallElectronicsShopClerkAsm4:
+	ld a, MARTTYPE_ELECTRONICS
+	ld c, a
+	ld a, MART_LUSTER_MALL_ELECTRONICS_4
+	ld e, a
+	ld d, 0
+	ld a, [wScriptBank]
+	ld b, a
+	farcall OpenMartDialog
+	ret
 	
 LusterMallElectronicsShopPolly:
 	faceplayer

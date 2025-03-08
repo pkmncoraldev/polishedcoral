@@ -4961,11 +4961,9 @@ INCLUDE "data/pokemon/names.asm"
 
 
 SECTION "Coral Data 4", ROMX
-INCLUDE "engine/busterscreen.asm"
+
 INCLUDE "engine/events/mom.asm"
-INCLUDE "engine/mart.asm"
 INCLUDE "engine/money.asm"
-INCLUDE "data/items/marts.asm"
 INCLUDE "engine/events/daycare.asm"
 INCLUDE "engine/breeding.asm"
 INCLUDE "data/items/attributes.asm"
@@ -6276,3 +6274,8 @@ Intro_PlacePlayerSprite: ; 61cd
 	db  9 * 8 + 4, 10 * 8, 1
 	db 10 * 8 + 4,  9 * 8, 2
 	db 10 * 8 + 4, 10 * 8, 3
+	
+SECTION "Coral Data 6", ROMX
+	INCLUDE "engine/busterscreen.asm"
+    INCLUDE "engine/mart.asm"
+    INCLUDE "data/items/marts.asm"

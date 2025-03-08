@@ -310,7 +310,7 @@ LoadMapTimeOfDay: ; 104750
 	hlbgcoord 0, 0
 	jp ByteFill
 
-DeferredLoadGraphics:
+DeferredLoadGraphics::
 	call TilesetUnchanged
 	jr z, .done
 	call LoadTilesetHeader

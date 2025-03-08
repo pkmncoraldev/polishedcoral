@@ -375,9 +375,17 @@ ObscuraCitySnare1:
 	opentext
 	writetext ObscuraCitySnare1Text
 	waitbutton
+;	callasm TilesetTest
 	closetext
 	spriteface OBSCURA_CITY_SNARE_1, DOWN
 	end
+	
+TilesetTest:
+	ld a, TILESET_DESERT
+	ld [wTileset], a
+	farcall DeferredLoadGraphics
+	farcall DecompressMetatiles
+	farjp ActivateMapAnims
 	
 ObscuraCitySnare2:
 	faceplayer

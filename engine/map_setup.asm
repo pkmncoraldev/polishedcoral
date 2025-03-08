@@ -347,7 +347,7 @@ ForceMapMusic: ; 15587
 ;.notbiking
 	jp TryRestartMapMusic
 
-DecompressMetatiles:
+DecompressMetatiles::
 	call TilesetUnchanged
 	ret z
 

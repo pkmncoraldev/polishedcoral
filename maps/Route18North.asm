@@ -332,7 +332,7 @@ Route18NorthNPC2Text3:
 	done
 	
 Route18NorthNPC2Text4:
-	text "Hi, <PLAYER>.>WAIT_S>"
+	text "Hi, <PLAYER>.<WAIT_S>"
 	line "Remember me?"
 	
 	para "I'm the researcher"

@@ -188,6 +188,9 @@ BrilloLemonade:
 	writetext BrilloLemonadeText3
 	buttonsound
 	verbosegiveitem LEMONADE
+	writetext BrilloLemonadeText7
+	yesorno
+	iftrue .yes
 	writetext BrilloLemonadeText4
 	waitbutton
 	closetext
@@ -246,6 +249,11 @@ BrilloLemonadeText5:
 BrilloLemonadeText6:
 	text "Sorry, you can't"
 	line "hold anything else…"
+	done
+	
+BrilloLemonadeText7:
+	text "How about another?<WAIT_S>"
+	line "Only ¥350!"
 	done
 	
 BrilloNPC1:

@@ -3092,7 +3092,6 @@ HandleEventsEscapeRope:
 	clearevent EVENT_IN_BUSINESS_DISTRICT
 	clearevent EVENT_DOUBLE_LANDMARK_SIGN
 	clearevent EVENT_BRILLO_MARACTUS_GREEN
-	clearevent EVENT_ROUTE_3_ROCKS_BROWN
 	clearflag ENGINE_ENCOUNTER_HOUSE
 	loadvar wJukeboxSong, 0
 	end

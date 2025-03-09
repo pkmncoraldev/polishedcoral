@@ -100,7 +100,6 @@ WhiteoutHandleEvents:
 	clearevent EVENT_LAKE_ROCKS_BROWN
 	clearevent EVENT_GLINT_GROVE_EAST_ROCKS_BROWN
 	clearevent EVENT_BRILLO_MARACTUS_GREEN
-	clearevent EVENT_ROUTE_3_ROCKS_BROWN
 	clearflag ENGINE_ENCOUNTER_HOUSE
 	loadvar wJukeboxSong, 0
 	checkevent EVENT_SNARE_GONE_FROM_MUSEUM

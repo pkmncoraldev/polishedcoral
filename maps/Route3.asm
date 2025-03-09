@@ -59,6 +59,15 @@ Route3_MapScriptHeader:
 	
 	
 Route3Callback:
+	callasm Route3CallbackCheckXPosAsm
+	iftrue .brown
+	clearevent EVENT_ROUTE_3_ROCKS_BROWN
+	dotrigger $1
+	jump .done_rocks
+.brown
+	setevent EVENT_ROUTE_3_ROCKS_BROWN
+	dotrigger $0
+.done_rocks
 	checkevent EVENT_BEAT_CHARLIE
 	iffalse .skip
 	checkflag ENGINE_GOT_ROCK_CLIMB
@@ -66,6 +75,18 @@ Route3Callback:
 	moveperson ROUTE3WEST_PATCHES, -5, -5
 .skip
 	return
+	
+Route3CallbackCheckXPosAsm:
+	ld a, [wXCoord]
+	cp $19
+	jr nc, .right
+	xor a
+	ld [wScriptVar], a
+	ret
+.right
+	ld a, 1
+	ld [wScriptVar], a
+	ret
 	
 Route3MakeSilverBrown:
 	setevent EVENT_ROUTE_3_ROCKS_BROWN

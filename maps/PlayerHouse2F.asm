@@ -694,6 +694,23 @@ UnlockSongs:
 	ld bc, 31 ; 001-248
 	call ByteFill
 	ld [hl], %00111111 ; 249-254
+	ld a, NUM_TAPE_PLAYER_SONGS
+	ld hl, TAPE_FLAGS_START
+.loop
+	ld [wCurBattleMon], a
+	xor a
+	ld c, a
+	inc hl
+	ld e, l
+	ld d, h
+	ld b, SET_FLAG
+	push hl
+	call EventFlagAction
+	pop hl
+	ld a, [wCurBattleMon]
+	dec a
+	cp -1
+	jr nz, .loop
 	ret
 	
 PlayerHouseDebugText1:

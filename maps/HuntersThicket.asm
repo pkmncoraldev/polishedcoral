@@ -179,6 +179,7 @@ HuntersThicketRanger:
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	waitsfx
 	pause 20
+	setevent EVENT_UNIQUE_ENCOUNTER_LEDIAN_RANGER
 	opentext
 	verbosegiveitem FIVESTARHELM
 	iffalse .NoRoom
@@ -468,6 +469,7 @@ HuntersThicketDisguiseman:
 	waitbutton
 	closetext
 	setevent EVENT_HUNTERS_THICKET_DISGUISEMAN
+	setevent EVENT_UNIQUE_ENCOUNTER_DISGUISE_MASTER_HUNTERS_THICKET
 	end
 
 HuntersThicket_DisguiseMan1Text1:
@@ -507,6 +509,7 @@ HuntersThicketLedian:
 	closetext
 .CaughtLedian
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	setevent EVENT_UNIQUE_ENCOUNTER_LEDIAN_BOSS
 	end
 
 HuntersThicketLedianText:

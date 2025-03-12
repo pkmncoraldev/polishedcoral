@@ -96,6 +96,8 @@ UnderwaterTemple2Cursola2:
 	disappear UNDERWATER_TEMPLE_CORSOLA_2
 	clearevent EVENT_UNDERWATER_TEMPLE_2_CORSOLA_2
 	reloadmapafterbattle
+	playmapmusic
+	loadvar wOWSpriteAnimationTimer, 0
 	setevent EVENT_UNDERWATER_TEMPLE_2_CURSOLA
 	setevent EVENT_UNDERWATER_TEMPLE_2_CORSOLA_2
 	checkcode VAR_MONJUSTCAUGHT
@@ -106,8 +108,7 @@ UnderwaterTemple2Cursola2:
 	closetext
 .CaughtCursola
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	loadvar wOWSpriteAnimationTimer, 0
-	playmapmusic
+	setevent EVENT_UNIQUE_ENCOUNTER_CURSOLA_BOSS
 	end
 	
 UnderwaterTemple2CursolaText:

@@ -64,6 +64,7 @@ MtOnwaB2FDisguiseman1:
 	waitbutton
 	closetext
 	setevent EVENT_MT_ONWA_B2F_POKE_BALL1
+	setevent EVENT_UNIQUE_ENCOUNTER_DISGUISE_MASTER_MT_ONWA
 .end
 	end
 	
@@ -107,6 +108,7 @@ MtOnwaB2FDisguiseman2:
 	waitbutton
 	closetext
 	setevent EVENT_MT_ONWA_B2F_POKE_BALL2
+	setevent EVENT_UNIQUE_ENCOUNTER_DISGUISE_MASTER_MT_ONWA
 .end
 	end
 	
@@ -169,6 +171,7 @@ MtOnwaB2FDisguiseManStopsYou:
 	dotrigger $0
 	setevent EVENT_MT_ONWA_B2F_POKE_BALL1
 	setevent EVENT_MT_ONWA_B2F_POKE_BALL2
+	setevent EVENT_UNIQUE_ENCOUNTER_DISGUISE_MASTER_MT_ONWA
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	end
 	

@@ -624,6 +624,7 @@ LakePlayedFluteForSudowoodo::
 	closetext
 	setevent EVENT_FOUGHT_SUDOWOODO
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	setevent EVENT_UNIQUE_ENCOUNTER_SUDOWOODO_BOSS
 	end
 
 LakeDontUseFlute:

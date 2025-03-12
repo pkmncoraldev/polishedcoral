@@ -37,6 +37,7 @@ SeasideCaveB2FDrakloak:
 	closetext
 .CaughtDrakloak
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	setevent EVENT_UNIQUE_ENCOUNTER_DRAKLOAK_BOSS
 	end
 	
 SeasideCaveB2FDrakloakText:

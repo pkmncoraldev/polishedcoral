@@ -99,6 +99,7 @@ KomoreCommunityCenterPikachu2:
 	reloadmapafterbattle
 	playnewmapmusic
 	setevent EVENT_MIMIKYU_GONE
+	setevent EVENT_UNIQUE_ENCOUNTER_MIMIKYU_BOSS
 	checkcode VAR_MONJUSTCAUGHT
 	if_equal MIMIKYU, .CaughtMimikyu
 	opentext

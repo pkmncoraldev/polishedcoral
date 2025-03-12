@@ -56,6 +56,7 @@ DaybreakPokemonTrainerSchoolTeacher:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_TEACHER
+	setevent EVENT_UNIQUE_ENCOUNTER_TEACHER
 .getquickclaw
 	opentext
 	writetext DaybreakPokemonTrainerSchoolTeacherText4

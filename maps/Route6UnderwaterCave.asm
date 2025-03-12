@@ -40,6 +40,7 @@ Route6UnderwaterCaveLapras:
 	closetext
 .CaughtLapras
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	setevent EVENT_UNIQUE_ENCOUNTER_LAPRAS_BOSS
 	end
 	
 Route6UnderwaterCaveLaprasText:

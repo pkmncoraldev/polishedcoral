@@ -73,6 +73,7 @@ LusterSewersDisguiseman:
 	waitbutton
 	closetext
 	setevent EVENT_LUSTER_SEWERS_B1F_DISGUISEMAN
+	setevent EVENT_UNIQUE_ENCOUNTER_DISGUISE_MASTER_LUSTER_SEWER
 	end
 	
 LusterSewers_DisguiseMan1Text2:

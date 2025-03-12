@@ -265,6 +265,7 @@ RadiantFieldMina:
 	disappear RADIANT_FIELD_MINA
 	setevent EVENT_RADIANT_FIELD_MINA_GONE
 	setevent EVENT_DONE_RADIANT_FIELD_MINA
+	setevent EVENT_UNIQUE_ENCOUNTER_MINA_RADIANT_FIELD
 	setflag ENGINE_MINA_RADIANT_FIELD
 	special Special_FadeOutMusic
 	pause 5

@@ -7,17 +7,19 @@ ObscuraCity_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, ObscuraCityFlyPoint
 	callback MAPCALLBACK_TILES, ObscuraCityCallback
 
-	db 4 ; warp events
+	db 5 ; warp events
 	warp_def 13, 22, 1, OBSCURA_MUSEUM_1F
 	warp_def 13, 23, 2, OBSCURA_MUSEUM_1F
 	warp_def  9, 29, 1, OBSCURA_MUSEUM_EMPLOYEE_ROOM
 	warp_def 10, 29, 2, OBSCURA_MUSEUM_EMPLOYEE_ROOM
+	warp_def 35,  5, 1, OBSCURA_FORTUNE_HOUSE
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	signpost 14, 24, SIGNPOST_JUMPTEXT, ObscuraCityMuseumSign
 	signpost  9, 32, SIGNPOST_JUMPTEXT, ObscuraCityMuseumBackSign
+	signpost 35,  8, SIGNPOST_JUMPTEXT, ObscuraCityFortuneTellerSign
 
 	db 4 ; object events
 	person_event SPRITE_SNARE, 14, 22, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraCitySnare1, EVENT_SNARE_GONE_FROM_MUSEUM
@@ -163,6 +165,12 @@ Movement_ObscuraCityDarcy3:
 	run_step_down
 	run_step_down
 	step_end
+	
+ObscuraCityFortuneTellerSign:
+	text "AUNTIE ENIGMA'S"
+	line "DISCOUNT HOUSE"
+	cont "O' FORTUNES"
+	done
 	
 ObscuraCityRockyText1:
 	text "ROCKY: What did"

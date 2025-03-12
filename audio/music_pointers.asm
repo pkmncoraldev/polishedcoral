@@ -4,7 +4,6 @@ Music:
 	dba Music_SunsetBay
 	dba Music_Mom
 	dba Music_PokemonCenter
-	
 	dba Music_RivalEncounter
 	dba Music_RivalBattle
 	dba Music_Route1

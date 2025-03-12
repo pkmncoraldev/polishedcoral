@@ -1402,6 +1402,7 @@ PorygonEncounterScript:
 	startbattle
 	special FadeOutPalettes
 	setevent EVENT_DONE_PORYGON_ENCOUNTER
+	setevent EVENT_UNIQUE_ENCOUNTER_PORYGON_BOSS
 	setevent EVENT_DOUBLE_LANDMARK_SIGN
 	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
 	clearevent EVENT_IN_SHOPPING_DISTRICT

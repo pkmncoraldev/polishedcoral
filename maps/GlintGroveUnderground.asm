@@ -376,6 +376,7 @@ endr
 .CaughtClefable
 	dotrigger $1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	setevent EVENT_UNIQUE_ENCOUNTER_CLEFABLE_BOSS
 	end
 
 GlintGroveUndergroundClefableText:

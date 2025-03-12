@@ -122,6 +122,7 @@ LusterSewersMukRoomTrigger0:
 	special RestoreMusic
 	setevent EVENT_LUSTER_SEWERS_MUK_ROOM_MUK
 	setevent EVENT_LUSTER_SEWERS_BEAT_MUK
+	setevent EVENT_UNIQUE_ENCOUNTER_MUK_BOSS
 	checkcode VAR_MONJUSTCAUGHT
 	if_equal MUK, .CaughtMuk
 	opentext

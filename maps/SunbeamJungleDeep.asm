@@ -35,12 +35,14 @@ SunbeamJungleDeepElectabuzz:
 	reloadmapafterbattle
 	setevent EVENT_SUNBEAM_JUNGLE_DEEP_ELECTABUZZ_2
 	checkcode VAR_MONJUSTCAUGHT
-	if_equal ELECTABUZZ, .CaughtElecatbuzz
+	if_equal ELECTABUZZ, .CaughtElectabuzz
 	opentext
 	writetext SunbeamJungleDeepElectabuzzTextGone
 	waitbutton
 	closetext
-.CaughtElecatbuzz
+.CaughtElectabuzz
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	setevent EVENT_UNIQUE_ENCOUNTER_ELECTABUZZ_BOSS
 	end
 	
 SunbeamJungleDeepNPC1:

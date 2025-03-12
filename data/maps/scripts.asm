@@ -471,6 +471,7 @@ INCLUDE "maps/ObscuraMuseum3F.asm"
 INCLUDE "maps/ObscuraMuseumEmployeeRoom.asm"
 INCLUDE "maps/ObscuraGym.asm"
 INCLUDE "maps/ObscuraMuseumPhoto.asm"
+INCLUDE "maps/ObscuraFortuneHouse.asm"
 
 SECTION "Aureole Scripts", ROMX
 INCLUDE "maps/AureoleTown.asm"

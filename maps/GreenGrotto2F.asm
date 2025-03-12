@@ -39,6 +39,7 @@ GreenGrotto2FNoivern:
 	closetext
 .CaughtNoivern
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	setevent EVENT_UNIQUE_ENCOUNTER_NOIVERN_BOSS
 	end
 
 GreenGrotto2FNoivernText:

@@ -283,6 +283,7 @@ Route6SouthMinaScene:
 	dotrigger $0
 	setevent EVENT_ROUTE_6_MINA_GONE
 	setevent EVENT_DONE_ROUTE_6_MINA
+	setevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_6
 	setflag ENGINE_MINA_ROUTE_6
 	special Special_FadeOutMusic
 	pause 5

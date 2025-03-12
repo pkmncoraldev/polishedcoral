@@ -170,6 +170,7 @@ Route18Disguiseman:
 	closetext
 	setevent EVENT_ROUTE_18_DISGUISEMAN1
 	setevent EVENT_ROUTE_18_DISGUISEMAN2
+	setevent EVENT_UNIQUE_ENCOUNTER_DISGUISE_MASTER_ROUTE_18
 	end
 	
 Route18_DisguiseMan1Text2:

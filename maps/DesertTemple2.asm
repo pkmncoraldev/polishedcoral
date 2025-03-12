@@ -173,6 +173,7 @@ endr
 	closetext
 .CaughtVolcarona
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	setevent EVENT_UNIQUE_ENCOUNTER_VOLCARONA_BOSS
 	end
 .NormalBall
 	callasm DesertTemple2SetItemAsm

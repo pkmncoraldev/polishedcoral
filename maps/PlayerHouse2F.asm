@@ -120,7 +120,7 @@ PlayerHouseDebugPoster:
 .Mons
 	closewindow
 	waitsfx
-	givepoke CHARIZARD, 30
+	givepoke MUNCHLAX, 30
 	givepoke HYPNO, 99
 	givepoke EEVEE, 99
 	jump .return

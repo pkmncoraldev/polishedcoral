@@ -90,6 +90,7 @@ GlintSecretSmeargle:
 	closetext
 .CaughtSmeargle
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	setevent EVENT_UNIQUE_ENCOUNTER_SMEARGLE_BOSS
 	end
 	
 GlintGroveDeepSmeargleScene:
@@ -207,6 +208,8 @@ GlintGroveDeepSmeargleScene:
 	disappear GLINTSECRET_MINA
 	dotrigger $4
 	clearevent EVENT_MINA_APARTMENT_EMPTY
+	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_JOURNAL
+	setevent EVENT_UNIQUE_ENCOUNTER_MINA_GLINT_GROVE
 	special Special_FadeOutMusic
 	pause 5
 	playmapmusic
@@ -218,6 +221,8 @@ GlintGroveDeepSmeargleScene:
 	clearevent EVENT_RADIANT_FIELD_MINA_GONE
 	clearevent EVENT_ROUTE_29_MINA_GONE
 	clearevent EVENT_ROUTE_10_MINA_GONE
+	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_JOURNAL
+	setevent EVENT_UNIQUE_ENCOUNTER_MINA_GLINT_GROVE
 	setevent EVENT_MINA_QUEST_ACTIVATED
 	jump .return
 	

@@ -288,6 +288,7 @@ _NettSpecs:
 	reloadmapafterbattle
 	playnewmapmusic
 	setevent EVENT_BRIGHTBURG_REVEALED
+	setevent EVENT_UNIQUE_ENCOUNTER_DITTO_BOSS
 	setevent EVENT_BRIGHT_CENTER_MART_EMPTY
 	checkcode VAR_MONJUSTCAUGHT
 	if_equal DITTO, .CaughtDitto

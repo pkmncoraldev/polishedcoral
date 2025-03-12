@@ -133,6 +133,7 @@ Route3StarglowCavernTopPatches:
 	waitbutton
 	verbosegivetmhm TM_SAND_ATTACK_SMOKESCREEN_FLASH
 	setevent EVENT_HAVE_FLASH
+	setevent EVENT_UNIQUE_ENCOUNTER_PATCHES
 	writetext Route3StarglowCavernTopPatchesDoneCaveText3
 	yesorno
 	iffalse .pushthatbitch

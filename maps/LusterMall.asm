@@ -333,6 +333,7 @@ LusterMallEscalatorStartBattle:
 	closetext
 	pause 10
 	setevent EVENT_BEAT_MALL_COP
+	setevent EVENT_UNIQUE_ENCOUNTER_MALL_COP
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
 	waitsfx

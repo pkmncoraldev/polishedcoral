@@ -213,6 +213,7 @@ Route10Mina:
 	dotrigger $4
 	setevent EVENT_ROUTE_10_MINA_GONE
 	setevent EVENT_DONE_ROUTE_10_MINA
+	setevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_11
 	setflag ENGINE_MINA_ROUTE_10
 	special Special_FadeOutMusic
 	pause 5

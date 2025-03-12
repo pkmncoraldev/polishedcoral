@@ -213,6 +213,7 @@ Route29Mina:
 	special Special_UpdatePalsInstant
 	setevent EVENT_ROUTE_29_MINA_GONE
 	setevent EVENT_DONE_ROUTE_29_MINA
+	setevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_29
 	setflag ENGINE_MINA_ROUTE_29
 	special Special_FadeOutMusic
 	pause 5

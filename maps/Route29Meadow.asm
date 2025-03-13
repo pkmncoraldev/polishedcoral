@@ -215,8 +215,9 @@ Route29Mina:
 	setevent EVENT_DONE_ROUTE_29_MINA
 	setevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_29
 	setflag ENGINE_MINA_ROUTE_29
+	pause 10
 	special Special_FadeOutMusic
-	pause 5
+	pause 10
 	playmapmusic
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	end
@@ -353,16 +354,21 @@ Route29MinaText5:
 	para "You're the strong,"
 	line "silent type, huh?"
 	
-	para "Not me! <WAIT_S>I love"
+	para "Not me!"
+	
+	para "You might not be"
+	line "able to tell just"
+	cont "by looking at me,"
+	
+	para "but I love"
 	line "talking!"
 	
 	para "I'll just go on and"
 	line "on if you let me!"
 	
 	para "Just talking about"
-	line "anything that<WAIT_S>@"
-	sound_read
-	text "<SCRL2>comes to mind.<WAIT_M><WAIT_S>"
+	line "anything that"
+	cont "comes to mind.<WAIT_S>"
 	done
 	
 Route29MinaText6:
@@ -458,8 +464,9 @@ Route29MinaText21:
 	line "in the middle of"
 	cont "our conversation."
 	
-	para "Rude! <WAIT_M>"
-	line "But that's OK."
+	para "Rude!"
+	
+	para "But that's OK."
 	
 	para "Inspiration hit,"
 	line "so I just let you"

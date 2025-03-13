@@ -1882,7 +1882,9 @@ VendingMachineScript::
 	ifequal $1, .FreshWater
 	ifequal $2, .SodaPop
 	ifequal $3, .RageCandyBar
-	endtext
+	refreshscreen
+	closetext
+	end
 
 .FreshWater:
 	checkmoney $0, 200

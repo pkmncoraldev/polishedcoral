@@ -38,6 +38,7 @@ LusterMallElectronicsShop_MapScriptHeader:
 	const LUSTER_MALL_ELECTRONICS_NPC3
 	const LUSTER_MALL_ELECTRONICS_CLERK
 	const LUSTER_MALL_ELECTRONICS_CLERK2
+	const LUSTER_MALL_ELECTRONICS_CLERK3
 	const LUSTER_MALL_ELECTRONICS_POLLY
 	
 	
@@ -125,6 +126,9 @@ LusterMallElectronicsShopPolly:
 	end
 .YouAreFacingRight
 	applymovement LUSTER_MALL_ELECTRONICS_POLLY, Movement_LusterMallElectronicsShopPolly2
+	applyonemovement LUSTER_MALL_ELECTRONICS_POLLY, turn_step_down
+	stopfollow
+	pause 5
 	playsound SFX_EXIT_BUILDING
 	disappear LUSTER_MALL_ELECTRONICS_POLLY
 	end
@@ -139,7 +143,6 @@ Movement_LusterMallElectronicsShopPolly2:
 	step_down
 	step_left
 	step_left
-	turn_step_down
 	step_end
 	
 LusterMallElectronicsShopPollyText:

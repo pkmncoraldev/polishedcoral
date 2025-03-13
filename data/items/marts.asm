@@ -22,6 +22,8 @@ Marts: ; 160a9
 	dw LusterMallClothes
 	dw LusterMallBall1
 	dw LusterMallBall2
+	dw LusterMallBall3
+	dw LusterMallBall4
 	dw ShimmerFishMarket
 	dw ShimmerBerryMarket
 	dw ShimmerMart
@@ -178,37 +180,41 @@ LusterMart:
 	db -1
 	
 LusterMallElectronics:
-	db 4 ; # items
+	db 5 ; # items
 	db UP_GRADE
 	db LINK_CABLE
 	db WIDE_LENS
 	db ZOOM_LENS
+	db LIGHT_BALL
 	db -1
 	
 LusterMallElectronics2:
-	db 5 ; # items
-	db UP_GRADE
-	db LINK_CABLE
-	db WIDE_LENS
-	db ZOOM_LENS
-	db ELECTIRIZER
-	db -1
-	
-LusterMallElectronics3:
-	db 5 ; # items
-	db UP_GRADE
-	db LINK_CABLE
-	db WIDE_LENS
-	db ZOOM_LENS
-	db MAGMARIZER
-	db -1
-	
-LusterMallElectronics4:
 	db 6 ; # items
 	db UP_GRADE
 	db LINK_CABLE
 	db WIDE_LENS
 	db ZOOM_LENS
+	db LIGHT_BALL
+	db ELECTIRIZER
+	db -1
+	
+LusterMallElectronics3:
+	db 6 ; # items
+	db UP_GRADE
+	db LINK_CABLE
+	db WIDE_LENS
+	db ZOOM_LENS
+	db LIGHT_BALL
+	db MAGMARIZER
+	db -1
+	
+LusterMallElectronics4:
+	db 7 ; # items
+	db UP_GRADE
+	db LINK_CABLE
+	db WIDE_LENS
+	db ZOOM_LENS
+	db LIGHT_BALL
 	db ELECTIRIZER
 	db MAGMARIZER
 	db -1
@@ -267,8 +273,8 @@ LusterMallAntique:
 	db RAZOR_CLAW
 	db RAZOR_FANG
 	db THICK_CLUB
-	db LIGHT_BALL
 	db PAINTBRUSH
+	db FOCUS_BAND
 	db FOCUS_SASH
 	db -1
 	
@@ -309,7 +315,7 @@ LusterMallClothes:
 	db -1
 	
 LusterMallBall1:
-	db 14
+	db 10
 	dbw POKE_BALL,     400
 	dbw GREAT_BALL,    800
 	dbw ULTRA_BALL,   1000
@@ -320,14 +326,10 @@ LusterMallBall1:
 	dbw FAST_BALL,     800
 	dbw HEAVY_BALL,    800
 	dbw LOVE_BALL,     800
-	dbw HEAL_BALL,     500
-	dbw REPEAT_BALL,  1000
-	dbw TIMER_BALL,   1000
-	dbw DUSK_BALL,    1000
 	db -1
 	
 LusterMallBall2:
-	db 14
+	db 10
 	dbw POKE_BALL,     150
 	dbw GREAT_BALL,    400
 	dbw ULTRA_BALL,    500
@@ -338,9 +340,31 @@ LusterMallBall2:
 	dbw FAST_BALL,     400
 	dbw HEAVY_BALL,    400
 	dbw LOVE_BALL,     400
+	db -1
+	
+LusterMallBall3:
+	db 9
+	dbw HEAL_BALL,     500
+	dbw REPEAT_BALL,  1000
+	dbw TIMER_BALL,   1000
+	dbw NEST_BALL,	  1000
+	dbw NET_BALL,	  1000
+	dbw DIVE_BALL,	  1000
+	dbw LUXURY_BALL,  1000
+	dbw QUICK_BALL,	  1000
+	dbw DUSK_BALL,    1000
+	db -1
+	
+LusterMallBall4:
+	db 9
 	dbw HEAL_BALL,     250
 	dbw REPEAT_BALL,   750
 	dbw TIMER_BALL,    750
+	dbw NEST_BALL,	   750
+	dbw NET_BALL,	   750
+	dbw DIVE_BALL,	   750
+	dbw LUXURY_BALL,   750
+	dbw QUICK_BALL,	   750
 	dbw DUSK_BALL,     750
 	db -1
 	

@@ -155,7 +155,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 9a
 	tilecoll SKATE, WALL, GRIND, GRIND ; 9b
 	tilecoll WALL, WALL, WALL, WALL ; 9c
-	tilecoll WALL, WALL, WALL, DOOR ; 9d
+	tilecoll WALL, WALL, DOOR, WALL ; 9d
 	tilecoll WALL, WALL, SKATE, WALL ; 9e
 	tilecoll WALL, WALL, WALL, WALL ; 9f
 	tilecoll SKATE, SKATE, SKATE, SKATE ; a0
@@ -199,3 +199,20 @@
 	tilecoll COUNTER, WALL, FLOOR, FLOOR ; c6
 	tilecoll GRIND, GRIND, GRIND, GRIND ; c7
 	tilecoll GRIND, GRIND, GRIND, GRIND ; c8
+	tilecoll WALL, WALL, WALL, WALL ; c9
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ca
+	tilecoll WALL, WALL, WALL, WALL ; cb
+	tilecoll WALL, WALL, FLOOR, FLOOR ; cc
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; cd
+	tilecoll WALL, WALL, WALL, WALL ; ce
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cf
+	tilecoll FLOOR, WALL, FLOOR, WALL ; d0
+	tilecoll WALL, WALL, FLOOR, FLOOR ; d1
+	tilecoll WALL, WALL, WALL, WALL ; d2
+	tilecoll FLOOR, WALL, WALL, WALL ; d3
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; d4
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d5
+	tilecoll FLOOR, FLOOR, FLOOR, LEFT_WALL ; d6
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; d7
+	tilecoll WALL, WALL, WALL, WALL ; d8
+	tilecoll WALL, WALL, WALL, WALL ; d9

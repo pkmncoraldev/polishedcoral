@@ -285,7 +285,7 @@ SunsetLighthouseTopFoodText:
 	done
 	
 SecretWord:
-	db "CONVERSION@"
+	db "LINK CABLE@"
 	
 SunsetLighthouseTopTVText:
 	text "It's playing an"

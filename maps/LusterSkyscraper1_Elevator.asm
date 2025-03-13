@@ -1,7 +1,8 @@
 LusterSkyscraper1_Elevator_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, LusterSkyscraper1_ElevatorCallback
 
 	db 2 ; warp events
 	warp_event  1,  3, LUSTER_SKYSCRAPER_1_1F, -1
@@ -14,9 +15,22 @@ LusterSkyscraper1_Elevator_MapScriptHeader:
 
 	db 0 ; object events
 
+LusterSkyscraper1_ElevatorCallback:
+	checkevent EVENT_CAN_GO_TO_SKYCRAPER_BASEMENT
+	iffalse .end
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+.end
+	return
+
 LusterSkyscraper1ElevatorButton:
 	opentext
-	elevator .Floors
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	iftrue .basement
+	elevator .Floors1
+	jump .cont
+.basement
+	elevator .Floors2
+.cont
 	closetext
 	iffalse .Done
 	pause 5
@@ -26,7 +40,14 @@ LusterSkyscraper1ElevatorButton:
 .Done
 	end
 
-.Floors:
+.Floors1:
+	db 3 ; floors
+	elevfloor _1F, 3, LUSTER_SKYSCRAPER_1_1F
+	elevfloor _2F, 1, LUSTER_SKYSCRAPER_1_2F
+	elevfloor _3F, 1, LUSTER_SKYSCRAPER_1_3F
+	db -1 ; end
+	
+.Floors2:
 	db 4 ; floors
 	elevfloor _B1F, 1, LUSTER_SKYSCRAPER_B1F
 	elevfloor _1F, 3, LUSTER_SKYSCRAPER_1_1F

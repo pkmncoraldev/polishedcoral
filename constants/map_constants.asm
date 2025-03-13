@@ -270,7 +270,7 @@ MAP_NONE   EQU 0
 	map_const LUSTER_MALL_BALL_SHOP,					   4,  4 ; 26
 	map_const LUSTER_MALL_CLOTHES_SHOP,					   6,  4 ; 27
 	map_const LUSTER_MALL_FURNITURE,					   6,  6 ; 28
-	map_const LUSTER_MALL_BACK_ROOM,					   6,  7 ; 29
+	map_const LUSTER_MALL_BACK_ROOM,					   7,  8 ; 29
 	map_const LUSTER_SKYSCRAPER_1_1F,					   5,  4 ; 30
 	map_const LUSTER_SKYSCRAPER_1_2F,					   4,  4 ; 31
 	map_const LUSTER_SKYSCRAPER_1_3F,					   4,  4 ; 32 

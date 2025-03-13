@@ -13,8 +13,8 @@ LusterCityShopping_MapScriptHeader:
 	warp_def 33, 13, 2, LUSTER_MALL
 	warp_def 33, 16, 3, LUSTER_MALL
 	warp_def 33, 17, 4, LUSTER_MALL
-	warp_def 19, 18, 3, LUSTER_MALL_BACK_ROOM
 	warp_def 19, 19, 3, LUSTER_MALL_BACK_ROOM
+	warp_def 19, 18, 3, LUSTER_MALL_BACK_ROOM
 
 	db 20 ; coord events
 	xy_trigger 0, 46,  0, 0, LusterShoppingSignThing, 0, 0
@@ -513,8 +513,8 @@ LusterShoppingDeliveryText1:
 	
 	para "Just take them!"
 	
-	para "The shipment is in"
-	line "the back…"
+	para "The shipment is"
+	line "in the back…"
 	done
 	
 LusterShoppingDeliveryText2:
@@ -538,7 +538,7 @@ LusterShoppingDeliveryText2:
 	done
 	
 LusterShoppingDeliveryText3:
-	text "Wow!<WAIT_M>"
+	text "Wow!<WAIT_S>"
 	line"Thanks a lot!"
 	
 	para "Now I can finish"

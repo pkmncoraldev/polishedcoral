@@ -117,7 +117,13 @@ Elevator_AskWhichFloor: ; 134dd
 	ld hl, Elevator_WhichFloorText
 	call PrintText
 	call Elevator_GetCurrentFloorText
+	eventflagcheck EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	jp nz, .basement
 	ld hl, Elevator_MenuDataHeader
+	jr .cont
+.basement
+	ld hl, Elevator_MenuDataHeader2
+.cont
 	call CopyMenuDataHeader
 	call InitScrollingMenu
 	call UpdateSprites
@@ -196,6 +202,13 @@ Elevator_MenuData2: ; 0x13558
 	dba NULL
 	dba NULL
 ; 13568
+
+Elevator_MenuDataHeader2: ; 0x13550
+	db $40 ; flags
+	db 01, 12 ; start coords
+	db 09, 18 ; end coords
+	dw Elevator_MenuData2
+	db 2 ; default option
 
 GetElevatorFlorStrings: ; 13568
 	ld a, [wMenuSelection]

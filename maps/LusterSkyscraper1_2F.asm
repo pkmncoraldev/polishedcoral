@@ -33,6 +33,7 @@ LusterSkyscraper1_2F_NPC1:
 	waitbutton
 	closetext
 	spriteface LUSTER_SKYSCRAPER_1_2F_NPC_1, UP
+	setevent EVENT_CAN_GO_TO_SKYCRAPER_BASEMENT
 	end
 	
 LusterSkyscraper1_2F_NPC2:
@@ -52,11 +53,13 @@ LusterSkyscraper_NPCText:
 	done
 	
 LusterSkyscraper1_2F_NPC1Text:
-	text "I couldn't imagine"
-	line "having an office"
-	cont "job and being a"
-	cont "#MON TRAINER."
+	text "You been down to"
+	line "the basement?"
 	
-	para "There's just not"
-	line "enough time!"
+	para "It's so dark and"
+	line "deserted down"
+	cont "there."
+	
+	para "That place gives"
+	line "me the creeps!"
 	done

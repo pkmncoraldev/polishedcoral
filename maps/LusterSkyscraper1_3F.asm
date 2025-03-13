@@ -82,7 +82,13 @@ LusterSkyscraper1_3F_NPC2:
 LusterSkyscraper1_3F_NPC3:
 	faceplayer
 	opentext
+	checkevent EVENT_DONE_PORYGON_ENCOUNTER
+	iftrue .done
 	writetext LusterSkyscraper1_3F_NPC3Text
+	jump .cont
+.done
+	writetext LusterSkyscraper1_3F_NPC3Text2
+.cont
 	waitbutton
 	closetext
 	spriteface LUSTER_SKYSCRAPER_1_3F_NPC_3, UP
@@ -167,4 +173,19 @@ LusterSkyscraper1_3F_NPC3Text:
 	para "I hope we don't"
 	line "have a computer"
 	cont "virus!"
+	done
+	
+LusterSkyscraper1_3F_NPC3Text2:
+	text "We were having a"
+	line "lot of computer"
+	cont "issues until just"
+	cont "recently."
+	
+	para "They kinda just"
+	line "stopped out of"
+	cont "the blue?"
+	
+	para "Did something"
+	line "happen down in the"
+	cont "server room?"
 	done

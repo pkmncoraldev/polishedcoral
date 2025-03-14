@@ -453,7 +453,7 @@ AirportNpc6Text:
 	done
 	
 AirportNpc7Text:
-	text "So busy and loud!<WAIT_M>"
+	text "So busy and loud!<WAIT_S>"
 	line "I hate airports!"
 	done
 	

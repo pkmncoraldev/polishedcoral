@@ -283,9 +283,8 @@ OnwaIntlAirportNPC3TextNite:
 	done
 	
 OnwaIntlAirportNPC4Text:
-	text "Fly in a plane?"
-	
-	para "No way!"
+	text "Fly in a plane?<WAIT_S>"
+	line "No way!"
 	
 	para "An OLLIE is the"
 	line "highest I want"
@@ -318,6 +317,9 @@ OnwaIntlAirportNPC7Text1:
 OnwaIntlAirportNPC7Text2:
 	text "My XATU is scared"
 	line "of flying!"
+	
+	para "Can you believe"
+	line "that?"
 	done
 	
 OnwaIntlAirportNPC8Text:
@@ -331,7 +333,7 @@ OnwaIntlAirportNPC8Text:
 	line "super crowded,"
 	
 	para "but the pilot sure"
-	line "pretty."
+	line "was pretty."
 	done
 	
 OnwaIntlAirportXatuText1:

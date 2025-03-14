@@ -1464,7 +1464,7 @@ Luster1NPC5Text:
 Luster1NPC6Text:
 	text "There's some cool"
 	line "dudes that hang"
-	cont "out at the PARK"
+	cont "out at the park"
 	cont "to the SOUTH."
 	
 	para "I wish I had a"
@@ -1495,9 +1495,9 @@ Luster1NPC8Text:
 	line "parents."
 	done
 
-Luster1NPC9Text:
-	text "The PARK is down"
-	line "this way."
+Luster1NPC9Text:	;TODO replace
+	text "The ROUTE 12 park"
+	line "is down this way."
 	
 	para "It leads outta"
 	line "the city,"

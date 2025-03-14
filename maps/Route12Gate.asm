@@ -32,7 +32,7 @@ Route12GateOfficer:
 	jumptextfaceplayer Route12GateOfficerText
 
 Route12GateOfficerText:
-	text "The ROUTE 12 PARK"
+	text "The ROUTE 12 park"
 	line "is through those"
 	cont "doors."
 	

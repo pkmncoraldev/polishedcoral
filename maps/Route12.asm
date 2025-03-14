@@ -85,8 +85,8 @@ Route12Trainer2:
 	line "smaller than it"
 	cont "used to be."
 	
-	para "They keep building"
-	line "more and more"
+	para "They keep putting"
+	line "up more and more"
 	cont "buildings!"
 	done
 
@@ -379,9 +379,15 @@ Route12Npc11Text:
 	text "There's an entrance"
 	line "to the SEWERS by"
 	cont "the train station"
-	cont "in the LUSTER CITY"
+	cont "in LUSTER CITY."
 	cont "HOUSING DISTRICT."
 	
-	para "Hm? <WAIT_M> I'm just"
-	line "making small talk…"
+	para "Hm?"
+	
+	para "What does that"
+	line "have to do with"
+	cont "anything?"
+	
+	para "I'm just making"
+	line "small talk…"
 	done

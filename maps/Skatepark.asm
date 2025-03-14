@@ -101,14 +101,14 @@ SkateparkTrigger3:
 	playmapmusic
 	pause 20
 	opentext
-	writetext SkateparkTMNPCText2
+	writetext SkateparkTMNPCText2	;TODO let the player lose
 	waitbutton
 	verbosegivetmhm TM_RAPID_SPIN
 	writetext SkateparkTMNPCText8
 	waitbutton
 	closetext
 	setevent EVENT_DONE_SKATEBOARD_CONTEST_ONCE
-	setevent EVENT_DONE_SKATEBOARD_CONTEST_TODAY
+	setevent EVENT_DONE_SKATEBOARD_CONTEST_TODAY	;TODO daily event
 	dotrigger $0
 	end
 	
@@ -211,7 +211,13 @@ SkateparkNPC4Text:
 	done
 	
 SkateparkNPC5:
-	jumptextfaceplayer SkateparkNPC5Text
+	faceplayer
+	opentext
+	writetext SkateparkNPC5Text
+	waitbutton
+	closetext
+	spriteface 11, RIGHT
+	end
 	
 SkateparkNPC5Text:
 	text "RAPID SPIN are"
@@ -219,7 +225,13 @@ SkateparkNPC5Text:
 	done
 	
 SkateparkNPC6:
-	jumptextfaceplayer SkateparkNPC6Text
+	faceplayer
+	opentext
+	writetext SkateparkNPC6Text
+	waitbutton
+	closetext
+	spriteface 12, LEFT
+	end
 	
 SkateparkNPC6Text:
 	text "You're a skater,"
@@ -273,7 +285,7 @@ SkateparkNPC9Text2:
 	line "RAPID SPIN?"
 	
 	para "As you know,"
-	line "that'sour iconic"
+	line "that's our iconic"
 	cont "greeting!"
 	done
 	
@@ -487,6 +499,17 @@ SkateparkTMNPCText1:
 SkateparkTMNPCText2:
 	text "YOU WIN!"
 	line "PLACEHOLDER TEXT"
+	
+	para "Alright, alright."
+	
+	para "I gotta admit,"
+	line "that wasn't too"
+	cont "bad."
+	
+	para "You seem cool.<WAIT_S>"
+	line "You can hang."
+	
+	para "Here."
 	done
 	
 SkateparkTMNpcText3:
@@ -598,9 +621,13 @@ SkateparkTMNPCText8:
 	text "That TM contains"
 	line "RAPID SPIN."
 	
-	para "Itll do damage and"
-	line "clear the field of"
-	cont "any hazards.."
+	para "It's our signature"
+	line "move!"
+	
+	para "It'll raise your"
+	cont "speed and clear"
+	cont "the field of any"
+	cont "hazards!"
 	
 	para "Come back tomorrow"
 	line "if you want to do"
@@ -619,6 +646,21 @@ SkateparkTMNPCText9:
 	para "You might get"
 	line "something good if"
 	cont "you tear it up!"
+	done
+	
+SkateparkTMNPCText10:
+	text "YOU LOSE"
+	line "PLACEHOLDER TEXT"
+	
+	para "Ha! <WAIT_S> I knew you"
+	line "were a poser."
+	
+	para "Tell you what, I'll"
+	line "give you another"
+	cont "shot."
+	
+	para "Or are you gonna"
+	line "run home to mommy?"
 	done
 	
 SkateparkTMNpcTextNo:

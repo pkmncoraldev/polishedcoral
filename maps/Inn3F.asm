@@ -490,7 +490,7 @@ Inn3FBall5:
 	jump .collect
 	
 Inn3FNettSpecsTextKage:
-	text "KAGE: Hold it!"
+	text "CAGE: Hold it!"
 	done
 	
 ReceivedNettSpecsText1:

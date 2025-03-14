@@ -11,7 +11,9 @@ Route12_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 2 ; bg events
+	signpost 12, 28, SIGNPOST_JUMPTEXT, Route12SignText1
+	signpost 39,  8, SIGNPOST_JUMPTEXT, Route12SignText2
 
 	db 20 ; object events
 	person_event SPRITE_SKATER, 26, 30, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route12Npc1, -1
@@ -47,6 +49,39 @@ Route12_MapScriptHeader:
 	const ROUTE_12_NPC9
 	const ROUTE_12_NPC10
 	const ROUTE_12_NPC11
+	
+Route12SignText1:
+	text "ROUTE 12"
+	
+	para "NORTH:"
+	line "LUSTER CITY"
+	
+	para "EAST:"
+	line "SKATEPARK"
+	
+	para "SOUTH:"
+	line "ONWA INTL AIRPORT"
+	done
+	
+Route12SignText2:
+	text "ROUTE 12"
+	
+	para "NORTH:"
+	line "LUSTER CITY"
+	
+	para "EAST:"
+	line "YOUR MOM"
+	
+	para "SOUTH:"
+	line "ONWA INTL AIRPORT"
+	
+	para "…"
+	
+	para "Unless MOM's at the"
+	line "SKATEPARK, it's"
+	cont "obviously been"
+	cont "vandalized…"
+	done
 	
 Route12Trainer1:
 	generictrainer TEACHER, LYNN, EVENT_BEAT_ROUTE_12_TRAINER_1, .SeenText, .BeatenText

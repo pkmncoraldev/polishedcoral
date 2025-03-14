@@ -303,7 +303,13 @@ OnwaIntlAirportNPC5Text:
 	done
 	
 OnwaIntlAirportNPC6Text:
-	text "UNFINISHED"
+	text "Are you taking the"
+	line "GYM CHALLENGE?"
+	
+	para "I think the only"
+	line "way to the #MON"
+	cont "LEAGUE is by"
+	cont "airplane."
 	done
 	
 OnwaIntlAirportNPC7Text1:

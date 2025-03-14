@@ -93,6 +93,7 @@ BigCursolaSpriteGFX::         	INCBIN "gfx/sprites/big_cursola.2bpp.lz"
 ClefairyWalkSpriteGFX::         INCBIN "gfx/sprites/clefairy_walk.2bpp.lz"
 ClefableWalkSpriteGFX::         INCBIN "gfx/sprites/clefable_walk.2bpp.lz"
 HillSpriteGFX::        			INCBIN "gfx/sprites/hill.2bpp.lz"
+SkaterBossSpriteGFX::        	INCBIN "gfx/sprites/skater_boss.2bpp.lz"
 
 SECTION "Overworld Sprites 3", ROMX
 

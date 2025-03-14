@@ -222,6 +222,7 @@ SpriteHeaders:
 	overworld_sprite ClefairyWalkSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite ClefableWalkSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite HillSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite SkaterBossSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

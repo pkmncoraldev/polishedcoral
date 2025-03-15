@@ -25,15 +25,14 @@ Route28_MapScriptHeader:
 	signpost 13, 31, SIGNPOST_READ, Route28Sign
 	signpost 62, 30, SIGNPOST_READ, GreenGrottoSign
 
-	db 18 ; object events
+	db 19 ; object events
 	person_event SPRITE_PICNICKER, 20, 26, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route28Trainer1, -1
 	person_event SPRITE_SUPER_NERD, 37, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, Route28Trainer2, -1
 	person_event SPRITE_ROCKER, 37, 22, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, Route28Trainer3, -1
 	person_event SPRITE_SCIENTIST, 26, 22, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, Route28Trainer4, -1
-	person_event SPRITE_POKEFAN_M, 45, 28, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, Route28Trainer5, -1
-	person_event SPRITE_SCIENTIST, 28,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route28Trainer6, -1
-	person_event SPRITE_GRANNY, 49, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, Route28Trainer7, -1
-	person_event SPRITE_POKEFAN_M, 16, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route28StrengthMan, -1
+	person_event SPRITE_SCIENTIST, 28,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route28Trainer5, -1
+	person_event SPRITE_GRANNY, 49, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, Route28Trainer6, -1
+	person_event SPRITE_POKEFAN_M, 16, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route28StrengthMan, -1
 	strengthboulder_event 22, 70, EVENT_ROUTE_28_BOULDER_1
 	strengthboulder_event 23, 70, EVENT_ROUTE_28_BOULDER_2
 	person_event SPRITE_BOULDER_ROCK_FOSSIL, -5, -4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route28StrengthMansBoulder, -1
@@ -44,8 +43,8 @@ Route28_MapScriptHeader:
 	person_event SPRITE_REDS_MOM, 50, 26, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route28NPC2, -1
 	itemball_event 33, 38, REVIVE, 1, EVENT_ROUTE_28_POKEBALL_1
 	itemball_event 26, 43, MAX_REVIVE, 1, EVENT_ROUTE_28_POKEBALL_2
-;	fruittree_event 18, 55, FRUITTREE_ROUTE_28_1, PECHA_BERRY
-;	fruittree_event 20, 55, FRUITTREE_ROUTE_28_2, FIGY_BERRY
+	fruittree_event 18, 55, FRUITTREE_ROUTE_28_1, PECHA_BERRY
+	fruittree_event 20, 55, FRUITTREE_ROUTE_28_2, FIGY_BERRY
 	
 	
 	const_def 1 ; object constants
@@ -891,30 +890,7 @@ Route28Trainer4:
 	done
 	
 Route28Trainer5:
-	generictrainer POKEFANM, JASON, EVENT_BEAT_ROUTE_28_TRAINER_5, .SeenText, .BeatenText
-
-	text "What does it truly"
-	line "mean to be a real"
-	cont "#FAN?"
-	
-	para "Is it enough to"
-	line "just be a fan of"
-	cont "#MON?"
-	done
-
-.SeenText:
-	text "I call myself a"
-	line "#FAN, but what"
-	cont "does that mean?"
-	done
-
-.BeatenText:
-	text "Not a fan of"
-	line "that…"
-	done
-	
-Route28Trainer6:
-	generictrainer SCIENTIST, SAL, EVENT_BEAT_ROUTE_28_TRAINER_6, .SeenText, .BeatenText
+	generictrainer SCIENTIST, SAL, EVENT_BEAT_ROUTE_28_TRAINER_5, .SeenText, .BeatenText
 
 	text "Your #MON…"
 	
@@ -936,8 +912,8 @@ Route28Trainer6:
 	para "Thank you!"
 	done
 	
-Route28Trainer7:
-	generictrainer LADY, JUDY, EVENT_BEAT_ROUTE_28_TRAINER_7, .SeenText, .BeatenText
+Route28Trainer6:
+	generictrainer LADY, JUDY, EVENT_BEAT_ROUTE_28_TRAINER_6, .SeenText, .BeatenText
 
 	text "MR. PUSHER…"
 	

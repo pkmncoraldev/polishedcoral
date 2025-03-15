@@ -1271,6 +1271,15 @@ BugCatcherGroup:
 	db -1 ; end
 
 ; ================
+
+	; BUG_CATCHER
+	db "AJ@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2216,6 +2225,24 @@ BirdKeeperGroup:
 	db -1 ; end
 
 ; ================
+
+	; BIRD_KEEPER
+	db "MITCH@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIRD_KEEPER
+	db "KEVIN@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -2827,8 +2854,7 @@ PokefanMGroup:
 	db "JASON@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 44, TOGETIC
-	db 45, TOGETIC
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -4705,6 +4731,15 @@ CooltrainerMGroup:
 	db -1 ; end
 
 ; ================
+
+	; COOLTRAINERM
+	db "KEN@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -4770,6 +4805,15 @@ CooltrainerFGroup:
 	; party
 	db 33, BAYLEEF
 	db 34, MEGANIUM
+	db -1 ; end
+
+; ================
+
+	; COOLTRAINERF
+	db "TAMMY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================

@@ -865,18 +865,49 @@ LighthouseAbnerText7:
 	
 LighthouseAbnerText8:
 	text "ABNER: Ahem…<WAIT_M>"
-	line "As I was saying…"
+	line "I was saying…"
 	done
 	
 LighthouseAbnerText9:
-	text "We don't live"
-	line "close to PROF."
-	cont "SPRUCE's #MON"
-	cont "RESEARCH LAB."
+	text "As I'm sure you're"
+	line "no doubt aware,"
+	
+	para "the #MON LEAGUE"
+	line "INVITATIONAL TOUR-"
+	cont "NAMENT is fast"
+	cont "approaching."
+	
+	para "The tournament is"
+	line "held every 5 years"
+	cont "and is open to the"
+	cont "strongest TRAINERS"
+	cont "across the OWNA"
+	cont "REGION."
+	
+	para "That invitation is"
+	line "also extended to"
+	cont "any TRAINER who"
+	cont "can collect the"
+	cont "8 #MON LEAGUE"
+	cont "GYM BADGES."
+	
+	para "In light of this,"
+	line "you kids have been"
+	cont "chosen by PROF."
+	cont "SPRUCE to each"
+	cont "recieve your own"
+	cont "#MON."
+	
+	para "However, SPRUCE's"
+	line "work keeps him"
+	cont "very busy,"
+	
+	para "and he couldn't be"
+	line "here in person"
+	cont "today."
 	
 	para "Because of this,<WAIT_S>"
-	line "my brother and I"
-	cont "are filling in"
+	line "I am filling in"
 	cont "for him."
 	
 	para "I have in this"
@@ -885,7 +916,7 @@ LighthouseAbnerText9:
 
 	para "They were sent"
 	line "from the PROF.'s"
-	cont "lab <WAIT_S>especially"
+	cont "lab especially"
 	cont "for all of you."
 	
 	para "You only get one,<WAIT_S>"
@@ -1264,8 +1295,8 @@ LighthouseAbner2ndVisitText:
 	line "island?"
 	
 	para "You must be"
-	line "looking for my"
-	cont "brother."
+	line "looking for"
+	cont "CAP'N STRAND."
 	
 	para "He lives on the"
 	line "beach to the SOUTH"
@@ -1282,8 +1313,8 @@ LighthouseAbnerBeenToHouseText:
 	
 	para "I seem to have"
 	line "locked the door to"
-	cont "elevator from the"
-	cont "other side…"
+	cont "the elevator from"
+	cont "the other side…"
 	
 	para "I haven't seen the"
 	line "keys in years so I"

@@ -382,19 +382,25 @@ UnknownText_0x7a850:
 	done
 	
 SunsetMomText1:
-	text "<PLAYER>?<WAIT_M>"
+	text "<PLAYER>?<WAIT_S>"
 	line "You're still here?"
-
 	
-	para "Get down to the"
-	line "docks!"
+	para "You're supposed"
+	line "to be at CAP'N"
+	cont "STRAND's place."
+	
+	para "Don't tell me you"
+	line "forgot."
+	
+	para "He and MR. ABNER"
+	line "are giving you a"
+	cont "#MON today!"
+	
+	para "CAP'N STRAND's"
+	line "house is down on"
+	cont "the dock."
 	
 	para "Hurry! <WAIT_S>You're late!"
-	
-	para "CAP'N STRAND is"
-	line "supposed to give"
-	cont "you your #MON"
-	cont "today!"
 	done
 
 SunsetMomText2::
@@ -408,8 +414,8 @@ SunsetMomText2::
 SunsetMomText3:
 	text "Oh?"
 	
-	para "CAP'N STRAND didn't"
-	line "have your #MON?"
+	para "They weren't at"
+	line "CAP'N STAND's?"
 	
 	para "You'd better hurry"
 	line "down to the light-"
@@ -436,8 +442,8 @@ SunsetMomText4:
 	
 	para "Anyway, since"
 	line "you're going to"
-	cont "challenge the ONWA"
-	cont "#MON LEAGUE,"
+	cont "be taking on the"
+	cont "GYM CHALLENGE,"
 	
 	para "I thought you"
 	line "could use this."

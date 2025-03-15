@@ -266,7 +266,7 @@ TrainerRanch_5:
 	para "My father was a"
 	line "bird TRAINER."
 	
-	para "His father was a"
+	para "HIS father was a"
 	line "bird TRAINER."
 	done
 

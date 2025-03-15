@@ -139,7 +139,6 @@ SECTION "Sunset Bay Scripts", ROMX
 INCLUDE "maps/SunsetBay.asm"
 INCLUDE "maps/SunsetCape.asm"
 INCLUDE "maps/SunsetCaptainsHouse.asm"
-INCLUDE "maps/SunsetLighthouse.asm"
 INCLUDE "maps/SunsetWaterGrassHouse.asm"
 INCLUDE "maps/PlayerHouse1F.asm"
 INCLUDE "maps/PlayerHouse2F.asm"
@@ -156,6 +155,7 @@ INCLUDE "maps/DaybreakVillage.asm"
 INCLUDE "maps/DaybreakMarcusHouse.asm"
 INCLUDE "maps/DaybreakAlexHouse.asm"
 INCLUDE "maps/DaybreakPokemonTrainerSchool.asm"
+INCLUDE "maps/SunsetLighthouse.asm"
 
 
 SECTION "Glint City Scripts", ROMX

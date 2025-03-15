@@ -211,9 +211,9 @@ SunsetCaptainText1_Morn:
 	
 	para "You're late!"
 	
-	para "My brother ABNER"
-	line "took the #MON"
-	cont "to the lighthouse."
+	para "ABNER and the"
+	line "others went to"
+	cont "the lighthouse."
 	
 	para "We weren't going"
 	line "to stand outside"
@@ -225,9 +225,12 @@ SunsetCaptainText1_Morn:
 	line "back to tending"
 	cont "the lighthouse."
 	
-	para "To get there just"
-	line "leave town and"
-	cont "head SOUTH."
+	para "The lighthouse is"
+	line "on the cape EAST"
+	cont "of town."
+	
+	para "You'd better get"
+	line "going!"
 	done
 	
 SunsetCaptainText1_Day:
@@ -235,9 +238,9 @@ SunsetCaptainText1_Day:
 	
 	para "You're late!"
 	
-	para "My brother ABNER"
-	line "took the #MON"
-	cont "to the lighthouse."
+	para "ABNER and the"
+	line "others went to"
+	cont "the lighthouse."
 	
 	para "We weren't going"
 	line "to stand outside"
@@ -249,9 +252,12 @@ SunsetCaptainText1_Day:
 	line "back to tending"
 	cont "the lighthouse."
 	
-	para "To get there just"
-	line "leave town and"
-	cont "head SOUTH."
+	para "The lighthouse is"
+	line "on the cape EAST"
+	cont "of town."
+	
+	para "You'd better get"
+	line "going!"
 	done
 	
 SunsetCaptainText1_Night:
@@ -259,9 +265,9 @@ SunsetCaptainText1_Night:
 	
 	para "You're late!"
 	
-	para "My brother ABNER"
-	line "took the #MON"
-	cont "to the lighthouse."
+	para "ABNER and the"
+	line "others went to"
+	cont "the lighthouse."
 	
 	para "We weren't going"
 	line "to stand outside"
@@ -272,29 +278,53 @@ SunsetCaptainText1_Night:
 	line "back to tending"
 	cont "the lighthouse."
 	
-	para "To get there just"
-	line "leave town and"
-	cont "head SOUTH."
+	para "The lighthouse is"
+	line "on the cape EAST"
+	cont "of town."
+	
+	para "You'd better get"
+	line "going!"
 	done
 	
 SunsetCaptainText2:
 	text "What are you"
 	line "doing?"
 	
-	para "The lighthouse"
-	line "is EAST of town"
+	para "The lighthouse is"
+	line "on the cape EAST"
+	cont "of town."
 	
 	para "Go get your"
 	line "#MON!"
 	done 
 	
 SunsetCaptainText3:
-	text "My brother and"
-	line "I used to be"
-	cont "ship captains."
+	text "ABNER just showed"
+	line "up to SUNSET BAY"
+	cont "one day out of"
+	cont "the blue."
 	
-	para "Nowadays, he runs"
-	line "the lighthouse."
+	para "He doesn't talk"
+	line "much about his"
+	cont "past."
+	
+	para "All anyone knows"
+	line "about his previous"
+	cont "life is that he"
+	cont "was once a rich"
+	cont "and powerful man."
+	
+	para "He gave it all to"
+	line "his son and left"
+	cont "that life behind."
+	
+	para "No one is sure"
+	line "why…"
+	
+	para "Now he lives in"
+	line "the lighthouse"
+	cont "and keeps it in"
+	cont "working order."
 	
 	para "It's an important"
 	line "job for sure."

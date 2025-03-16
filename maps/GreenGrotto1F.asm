@@ -140,15 +140,38 @@ TrainerGreenGrotto1F_2:
 TrainerGreenGrotto1F_3:
 	generictrainer SCIENTIST, BARNES, EVENT_BEAT_GREEN_GROTTO_1F_TRAINER_3, .SeenText, .BeatenText
 
-	text "AFTER"
+	text "Lichen and moss"
+	line "look the same,"
+	
+	para "but they're quite"
+	line "different."
+	
+	para "Moss is simply a"
+	line "plant."
+
+	para "Lichen, meanwhile,"
+	line "is algae and a"
+	cont "fungus together"
+	cont "in a symbiotic"
+	cont "relationship."
+	
+	para "Interesting,"
+	line "isn't it?"
 	done
 
 .SeenText:
-	text "SEEN"
+	text "You may think the"
+	line "walls of this cave"
+	cont "are covered in"
+	cont "moss."
+	
+	para "Well they're not."
+	
+	para "It's lichen!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Facinating…"
 	done
 	
 TrainerGreenGrotto1F_4:

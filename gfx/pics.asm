@@ -573,12 +573,12 @@ ScolipedeFrontpic:        INCBIN "gfx/pokemon/scolipede/front.2bpp.lz"
 ScolipedeBackpic:         INCBIN "gfx/pokemon/scolipede/back.2bpp.lz"
 CottoneeFrontpic:         INCBIN "gfx/pokemon/cottonee/front.2bpp.lz"
 CottoneeBackpic:          INCBIN "gfx/pokemon/cottonee/back.2bpp.lz"
-WhimsicottFrontpic:       INCBIN "gfx/pokemon/whimsicott/front.2bpp.lz"
-WhimsicottBackpic:        INCBIN "gfx/pokemon/whimsicott/back.2bpp.lz"
 
 
 SECTION "Pokemon Pics 25", ROMX
 
+WhimsicottFrontpic:       INCBIN "gfx/pokemon/whimsicott/front.2bpp.lz"
+WhimsicottBackpic:        INCBIN "gfx/pokemon/whimsicott/back.2bpp.lz"
 HorseaFrontpic:           INCBIN "gfx/pokemon/horsea/front.2bpp.lz"
 HorseaBackpic:            INCBIN "gfx/pokemon/horsea/back.2bpp.lz"
 SeadraFrontpic:           INCBIN "gfx/pokemon/seadra/front.2bpp.lz"

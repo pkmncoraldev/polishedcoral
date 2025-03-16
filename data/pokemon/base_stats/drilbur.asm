@@ -7,7 +7,7 @@
 	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
-	dn 5, 5 ; frontpic dimensions
+	dn 6, 6 ; frontpic dimensions
 	db SAND_RUSH ; ability 1
 	db SAND_FORCE ; ability 2
 	db MOLD_BREAKER ; hidden ability

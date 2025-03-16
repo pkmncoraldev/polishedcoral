@@ -1080,7 +1080,7 @@ BuyMenuLoop: ; 15cef
 	jp c, .cancel
 	ld de, wMoney
 	ld bc, hMoneyTemp
-	call CompareMoney
+	farcall CompareMoney
 	jp c, MartMenuLoop_InsufficientFunds
 	ld hl, wNumItems
 	call ReceiveItem
@@ -1093,7 +1093,7 @@ BuyMenuLoop: ; 15cef
 	call FlagAction
 	ld de, wMoney
 	ld bc, hMoneyTemp
-	call TakeMoney
+	farcall TakeMoney
 	
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
@@ -1152,14 +1152,14 @@ BuyMenuCoinsLoop: ; 15cef
 	jr c, .cancel
 	ld de, wCoins
 	ld bc, hMoneyTemp + 1
-	call CheckCoins
+	farcall CheckCoins
 	jp c, MartMenuLoop_InsufficientFunds
 	ld hl, wNumItems
 	call ReceiveItem
 	jp nc, MartMenuLoop_InsufficientBagSpace
 	ld de, wCoins
 	ld bc, hMoneyTemp + 1
-	call TakeCoins
+	farcall TakeCoins
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
@@ -1187,14 +1187,14 @@ BuyMenuPollenLoop: ; 15cef
 	jr c, .cancel
 	ld de, wPollenSteps
 	ld bc, hMoneyTemp + 1
-	call CheckPollen
+	farcall CheckPollen
 	jp c, MartMenuLoop_InsufficientFunds
 	ld hl, wNumItems
 	call ReceiveItem
 	jp nc, MartMenuLoop_InsufficientBagSpace
 	ld de, wPollenSteps
 	ld bc, hMoneyTemp + 1
-	call TakePollen
+	farcall TakePollen
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
@@ -1225,14 +1225,14 @@ BuyRefreshmentsMenuLoop: ; 15cef
 	jr c, .cancel
 	ld de, wMoney
 	ld bc, hMoneyTemp
-	call CompareMoney
+	farcall CompareMoney
 	jp c, MartMenuLoop_InsufficientFunds
 	ld hl, wNumItems
 	call ReceiveItem
 	jp nc, MartMenuLoop_InsufficientBagSpace
 	ld de, wMoney
 	ld bc, hMoneyTemp
-	call TakeMoney
+	farcall TakeMoney
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
@@ -1286,12 +1286,12 @@ BuyTMMenuLoop:
 	jr c, .cancel
 	ld de, wMoney
 	ld bc, hMoneyTemp
-	call CompareMoney
+	farcall CompareMoney
 	jp c, MartMenuLoop_InsufficientFunds
 	call ReceiveTMHM
 	ld de, wMoney
 	ld bc, hMoneyTemp
-	call TakeMoney
+	farcall TakeMoney
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
@@ -1389,12 +1389,12 @@ BuyClothesMenuLoop:
 	jr c, .cancel
 	ld de, wMoney
 	ld bc, hMoneyTemp
-	call CompareMoney
+	farcall CompareMoney
 	jp c, MartMenuLoop_InsufficientFunds
 	call ReceiveClothes
 	ld de, wMoney
 	ld bc, hMoneyTemp
-	call TakeMoney
+	farcall TakeMoney
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
@@ -1428,12 +1428,12 @@ BuyDecoMenuLoop:
 	jr c, .cancel
 	ld de, wMoney
 	ld bc, hMoneyTemp
-	call CompareMoney
+	farcall CompareMoney
 	jp c, MartMenuLoop_InsufficientFunds
 	farcall ReceiveDeco
 	ld de, wMoney
 	ld bc, hMoneyTemp
-	call TakeMoney
+	farcall TakeMoney
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
@@ -1467,11 +1467,11 @@ BuyPokemonMenuLoop: ; 15cef
 	jr c, .cancel
 	ld de, wMoney
 	ld bc, hMoneyTemp
-	call CompareMoney
+	farcall CompareMoney
 	jp c, MartMenuLoop_InsufficientFunds
 	ld de, wMoney
 	ld bc, hMoneyTemp
-	call TakeMoney
+	farcall TakeMoney
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
@@ -2468,7 +2468,7 @@ SellMenu:: ; 15eb3
 	jr c, .declined
 	ld de, wMoney
 	ld bc, hMoneyTemp
-	call GiveMoney
+	farcall GiveMoney
 	ld a, [wMartItemID]
 	ld hl, wNumItems
 	call TossItem

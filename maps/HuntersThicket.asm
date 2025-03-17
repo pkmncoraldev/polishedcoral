@@ -498,8 +498,8 @@ HuntersThicketLedian:
 	loadwildmon LEDIAN, 19
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
-	disappear HUNTERS_THICKET_LEDIAN
 	reloadmapafterbattle
+	disappear HUNTERS_THICKET_LEDIAN
 	setevent EVENT_HUNTERS_THICKET_LEDIAN_GONE
 	checkcode VAR_MONJUSTCAUGHT
 	if_equal LEDIAN, .CaughtLedian

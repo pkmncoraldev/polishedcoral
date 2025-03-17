@@ -350,7 +350,7 @@ SpecialGiveShinyTogepi:
 ; Level 10 Togepi
 	ld a, TOGEPI
 	ld [wCurPartySpecies], a
-	ld a, 10
+	ld a, 16
 	ld [wCurPartyLevel], a
 
 	predef TryAddMonToParty
@@ -363,7 +363,7 @@ SpecialGiveShinyTogepi:
 ; Holding an Lucky Egg.
 	ld hl, wPartyMon1Item
 	call _GetLastPartyMonAttribute
-	ld [hl], LUCKY_EGG
+	ld [hl], RARE_CANDY
 
 ; OT ID. Guaranteed to not be the same as the player's for Masuda method breeding.
 	ld hl, wPartyMon1ID + 1
@@ -431,27 +431,27 @@ endr
 	cp 6
 	jr z, .six_mons
 ;one_mon (shouldn't be possible)
-	ld a, 160
+	ld a, 140
 	ld [wPartyMon1Happiness], a
 	jr .end
 .two_mons
-	ld a, 160
+	ld a, 140
 	ld [wPartyMon2Happiness], a
 	jr .end
 .three_mons
-	ld a, 160
+	ld a, 140
 	ld [wPartyMon3Happiness], a
 	jr .end
 .four_mons
-	ld a, 160
+	ld a, 140
 	ld [wPartyMon4Happiness], a
 	jr .end
 .five_mons
-	ld a, 160
+	ld a, 140
 	ld [wPartyMon5Happiness], a
 	jr .end
 .six_mons
-	ld a, 160
+	ld a, 140
 	ld [wPartyMon6Happiness], a
 .end
 	ret

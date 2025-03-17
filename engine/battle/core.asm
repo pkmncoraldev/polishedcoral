@@ -3418,8 +3418,14 @@ EnemySwitch: ; 3d4e1
 	inc a
 	ld [wEnemyIsSwitching], a
 	call LoadTileMapToTempTileMap
-	jp PlayerSwitch
-; 3d517
+	ld a, [wCurPartyMon]
+	push af
+	ld a, [wCurBattleMon]
+	ld [wCurPartyMon], a
+	call PlayerSwitch
+	pop af
+	ld [wCurPartyMon], a
+	ret
 
 EnemySwitch_SetMode: ; 3d517
 	call ResetEnemyBattleVars
@@ -3618,7 +3624,7 @@ OfferSwitch: ; 3d74b
 	call DelayFrame
 	call _LoadStatusIcons
 	pop af
-;	ld [wCurPartyMon], a
+	ld [wCurPartyMon], a
 	xor a
 	ld [wCurEnemyMove], a
 	ld [wCurPlayerMove], a

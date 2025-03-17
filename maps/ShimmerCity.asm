@@ -133,8 +133,7 @@ ShimmerCityHotDogGuy:
 	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, turn_step_right
 	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, step_end
 	pause 10
-	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, turn_step_down
-	applyonemovement SHIIMER_CITY_HOT_DOG_GUY, step_end
+	faceplayer
 	opentext
 	writetext ShimmerCityHotDogGuy3
 	buttonsound
@@ -620,7 +619,7 @@ ShimmerCityNpc3Text:
 	line "salty sea air!"
 	
 	para "Smell that?<WAIT_M>"
-	line "Smells… <WAIT_L> fishy?"
+	line "Smells… <WAIT_L>fishy?"
 	done
 	
 ShimmerCityNpc4Text1:

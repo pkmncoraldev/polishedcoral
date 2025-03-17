@@ -29,9 +29,8 @@ SprucePhoneComeToIslandText:
 	
 	para "Is this <PLAYER>?"
 	
-	para "Ah!"
-	
-	para "Wonderful!"
+	para "Ah!<WAIT_S>"
+	line "Wonderful!"
 	
 	para "I am PROF. SPRUCE."
 	
@@ -47,7 +46,7 @@ SprucePhoneComeToIslandText:
 	cont "to you children."
 	
 	para "My work keeps me"
-	line "very busy, you see."
+	line "very busy."
 	
 	para "How has your jour-"
 	line "ney been going so"
@@ -73,8 +72,8 @@ SprucePhoneComeToIslandText:
 	
 	para "You can catch a"
 	line "ride at the"
-	cont "BOAT HOUSE at LAKE"
-	cont "ONWA."
+	cont "BOAT HOUSE at"
+	cont "LAKE ONWA."
 	
 	para "It's to the SOUTH"
 	line "of STARGLOW"
@@ -97,8 +96,8 @@ SprucePhoneComeToIsland2Text:
 	
 	para "You can catch a"
 	line "ride at the"
-	cont "BOAT HOUSE at LAKE"
-	cont "ONWA."
+	cont "BOAT HOUSE at"
+	cont "LAKE ONWA."
 	
 	para "It's to the SOUTH"
 	line "of STARGLOW"

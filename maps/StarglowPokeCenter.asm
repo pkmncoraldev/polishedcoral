@@ -161,8 +161,7 @@ StarglowCenterRocketText1:
 	cont "#MON in this"
 	cont "#MON CENTER!"
 	
-	para "Hand 'em over,"
-	line "kid!"
+	para "Hand 'em over!"
 	done
 	
 StarglowCenterRocketText2:

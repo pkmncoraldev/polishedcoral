@@ -46,15 +46,13 @@ StarglowHouse4FishingGuru:
 	end
 	
 StarglowHouse4FishingGuruText1:
-	text "Hey, kid."
-	
-	para "I am the fabulous"
+	text "I am the fabulous"
 	line "FISHING GURU!"
 	
 	para "I'm sure my reputa-"
 	line "tion preceeds me."
 	
-	para "What's that?"
+	para "…"
 	
 	para "You've never heard"
 	line "of me?"
@@ -82,15 +80,12 @@ StarglowHouse4FishingGuruText1:
 	para "I like the look in"
 	line "your eyes, kid."
 	
-	para "So fierce!<WAIT_M>"
-	line "So determined!"
-	
 	para "Reminds me of my-"
 	line "self at your age."
 	
-	para "Tell you what."
+	para "Tell you what,"
 	
-	para "Prove your mettle"
+	para "prove your mettle"
 	line "as a fisherman by"
 	cont "catching me a"
 	cont "MAGIKARP."
@@ -120,7 +115,7 @@ StarglowHouse4FishingGuruText3:
 	para "And it's a beauty,"
 	line "too!"
 	
-	para "Good work, kid!"
+	para "Good work!"
 	
 	para "If I didn't know"
 	line "any better, I'd say"

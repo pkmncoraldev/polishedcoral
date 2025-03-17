@@ -1040,7 +1040,7 @@ GetMoveNameTransform:: ; 34f8
 	call CheckMetronomeUsers
 	jr c, .metronome
 	ld hl, TransformNames
-	ld a, 3
+	ld a, 4
 	jp GetMoveNameDone2
 	
 .transform

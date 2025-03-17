@@ -8,8 +8,9 @@ Route3East_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
 	signpost  8,  7, SIGNPOST_READ, Route3East_sign
+	bg_event  6, 15, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_3_HIDDEN_ITEM
 
 	db 9 ; object events
 	person_event SPRITE_FISHER, 23, 11, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRouteEast3_1, -1

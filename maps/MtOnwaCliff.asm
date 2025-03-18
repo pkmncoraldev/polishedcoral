@@ -17,8 +17,8 @@ MtOnwaCliff_MapScriptHeader:
 	person_event SPRITE_ROCKER, 15, 30, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerMtOnwaOutside_1, -1
 	person_event SPRITE_BIRD_KEEPER, 13, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerMtOnwaOutside_2, -1
 	person_event SPRITE_COOLTRAINER_F, 29, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerMtOnwaOutside_3, -1
-	person_event SPRITE_YOUNGSTER, 8, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, MtOnwaPanNPC, EVENT_MT_ONWA_NPC_1
-	person_event SPRITE_CUTE_GIRL, 8, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, MtOnwaPanNPC, EVENT_MT_ONWA_NPC_2
+	person_event SPRITE_YOUNGSTER, 8, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, MtOnwaPanNPC, EVENT_MT_ONWA_NPC_1
+	person_event SPRITE_CUTE_GIRL, 8, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, MtOnwaPanNPC, EVENT_MT_ONWA_NPC_2
 	person_event SPRITE_PLAYER_CUTSCENE, 8, 16, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_PLAYER_CUTSCENE_SILVER
 
 	const_def 1 ; object constants
@@ -118,24 +118,25 @@ MtOnwaPanNPC:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
 	iftrue .no_heal2
 .ask_heal
+	checkevent EVENT_MT_ONWA_CLIFF_POTION
+	iftrue .no_heal
 	writetext MtOnwaPanNPCText7
-	yesorno
-	iffalse .no_heal
-	closetext	
-	special FadeOutPalettesBlack
-	special HealParty
-	special SaveMusic
-	playmusic MUSIC_HEAL
-	pause 60
-	special RestoreMusic
-	callasm LoadMapPals
-	special FadeInPalettes
-	opentext
+	verbosegiveitem HYPER_POTION
+	iffalse .no_room
+	setevent EVENT_MT_ONWA_CLIFF_POTION
 .no_heal
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
 	iftrue .ask_cutscene
 .no_heal2
 	writetext MtOnwaPanNPCText3
+	waitbutton
+	closetext
+	spriteface MT_ONWA_NPC1, UP
+	spriteface MT_ONWA_NPC2, UP
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
+	end
+.no_room
+	writetext MtOnwaPanNPCText8
 	waitbutton
 	closetext
 	spriteface MT_ONWA_NPC1, UP
@@ -254,10 +255,16 @@ MtOnwaPanNPCText6:
 	done
 	
 MtOnwaPanNPCText7:
-	text "Would you and your"
-	line "#MON like to"
-	cont "rest here for a"
-	cont "while?"
+	text "Here's something"
+	line "to help you on"
+	cont "your way."
+	done
+	
+MtOnwaPanNPCText8:
+	text "Oops."
+	
+	para "You have no"
+	line "room."
 	done
 	
 MtOnwaPanNPCTextYesorNo1:

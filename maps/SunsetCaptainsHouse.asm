@@ -79,12 +79,16 @@ SunsetCaptain2:
 	jumptextfaceplayer SunsetCaptainText3
 	
 SunsetCaptainFirstRidetoIsland:
+	setevent EVENT_CAPTAIN_GIVES_RIDES_TO_ISLAND
 	setevent EVENT_PLAYER_HOUSE_MOM_2
 	clearevent EVENT_PLAYER_HOUSE_MOM_1
 	faceplayer
 	opentext
+	checkevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_STRAND
+	iftrue .ride
 	checkevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
 	iffalse .howdidyouknow
+.ride
 	writetext SunsetCaptainFirstRidetoIslandText1
 	jump CaptainGoToIsland
 .howdidyouknow
@@ -98,7 +102,6 @@ CaptainGoToIsland:
 	end
 .yes
 	setevent EVENT_FIRST_TRIP_TO_ISLAND
-	setevent EVENT_CAPTAIN_GIVES_RIDES_TO_ISLAND
 	clearevent EVENT_CAN_GET_FIRST_RIDE_TO_ISLAND
 	clearevent EVENT_CALLED_SPRUCE_CANT_GET_ON_ISLAND
 	clearevent EVENT_CAN_CALL_SPRUCE_ABOUT_ISLAND
@@ -138,9 +141,8 @@ SunsetCaptainMovementReturn:
 
 
 SunsetCaptainFirstRidetoIslandText1:
-	text "CAP'N STRAND: <WAIT_S>Ah,"
-	line "hello,"
-	cont "<PLAYER>."
+	text "Ah, hello,"
+	line "<PLAYER>."
 	
 	para "Your mother told"
 	line "me that you need"
@@ -150,15 +152,20 @@ SunsetCaptainFirstRidetoIslandText1:
 	para "Of course I can"
 	line "take you there!"
 	
-	para "It's no trouble at"
-	line "all!"
+	para "It might be a long"
+	line "voyage."
+	
+	para "You should take"
+	line "care of anything"
+	cont "you need to before"
+	cont "we go."
 	
 	para "Well, <WAIT_S>are you"
 	line "ready to ship out?"
 	done
 	
 SunsetCaptainFirstRidetoIslandText2:
-	text "Ah, <WAIT_S><PLAYER>!"
+	text "Ah, <PLAYER>!"
 	
 	para "What are you doing"
 	line "here?"
@@ -176,8 +183,13 @@ SunsetCaptainFirstRidetoIslandText2:
 	para "Of course I can"
 	line "take you there!"
 	
-	para "It's no trouble at"
-	line "all!"
+	para "It might be a long"
+	line "voyage."
+	
+	para "You should take"
+	line "care of anything"
+	cont "you need to before"
+	cont "we go."
 	
 	para "Well, <WAIT_S>are you"
 	line "ready to ship out?"

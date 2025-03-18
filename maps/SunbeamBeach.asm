@@ -14,23 +14,21 @@ SunbeamBeach_MapScriptHeader:
 	signpost 23, 10, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SUNBEAM_BEACH_HIDDEN_BOTTLE_CAP_2
 	signpost 29, 15, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SUNBEAM_BEACH_HIDDEN_BOTTLE_CAP_3
 
-	db 18 ; object events
+	db 16 ; object events
 	person_event SPRITE_CANDLE, 31, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, 19, 4, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbatherNite, -1
 	person_event SPRITE_SUNBATHER, 31, 10, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbather, -1
 	person_event SPRITE_TRUNKS, 18, 12, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamBeachTrunks1, -1
 	person_event SPRITE_TRUNKS, 37, 14, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunbeamBeachTrunks2, -1
 	person_event SPRITE_SWIMMER_GIRL_LAND, 24, 12, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SunbeamBeachBikini, -1
-	person_event SPRITE_SCHOOLGIRL, 41,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunbeamBeachGirl, -1
-	person_event SPRITE_CHILD, 42,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamBeachBoy, -1
-	person_event SPRITE_SWIMMER_GIRL_LAND, 41, 13, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamBeachBikini2, -1
+	person_event SPRITE_SCHOOLGIRL, 38,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunbeamBeachGirl, -1
+	person_event SPRITE_CHILD, 39,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamBeachBoy, -1
+	person_event SPRITE_SWIMMER_GIRL_LAND, 42, 13, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamBeachBikini2, -1
 	person_event SPRITE_UMBRELLA, 26, 11, SPRITEMOVEDATA_UMBRELLA_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_UMBRELLA, 26, 12, SPRITEMOVEDATA_UMBRELLA_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_UMBRELLA, 30, 11, SPRITEMOVEDATA_UMBRELLA_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_UMBRELLA, 30, 12, SPRITEMOVEDATA_UMBRELLA_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
-	person_event SPRITE_UMBRELLA, 38, 11, SPRITEMOVEDATA_UMBRELLA_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
-	person_event SPRITE_UMBRELLA, 38, 12, SPRITEMOVEDATA_UMBRELLA_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
-	person_event SPRITE_UMBRELLA, 42, 11, SPRITEMOVEDATA_UMBRELLA_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
-	person_event SPRITE_UMBRELLA, 42, 12, SPRITEMOVEDATA_UMBRELLA_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
+	person_event SPRITE_UMBRELLA, 40, 11, SPRITEMOVEDATA_UMBRELLA_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
+	person_event SPRITE_UMBRELLA, 40, 12, SPRITEMOVEDATA_UMBRELLA_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_SUPER_NERD, 47, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, 0, -1
 	hiddentape_event 10, 29, MUSIC_SUNBEAM_ISLAND, 1, EVENT_MUSIC_SUNBEAM_ISLAND
 
@@ -78,16 +76,17 @@ SunbeamBeachBikini2Text:
 	done
 	
 SunbeamBeachTrunks1Text:
-	text "That girl over"
+	text "I can't hold it"
+	line "in any longer…"
+	
+	para "I've just gotta"
+	line "tell her the"
+	cont "truth…"
+	
+	para "That girl over"
 	line "there…"
 	
-	para "I can't wait any"
-	line "longer…"
-	
-	para "I've just gotta say"
-	line "something to her…"
-	
-	para "She's… <WAIT_M>She's…"
+	para "She's… <WAIT_L>She's…"
 	
 	para "She's got a piece"
 	line "of seaweed stuck"

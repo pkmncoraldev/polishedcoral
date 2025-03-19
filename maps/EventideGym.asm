@@ -259,6 +259,9 @@ EventideGymWendy:
 	iftrue .GotTMFromWendy
 	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_1
 	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_2
+	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_3
+	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_4
+	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_5
 	writetext EventideGymWendyTextAfterBattle
 	buttonsound
 	verbosegivetmhm TM_ROOST

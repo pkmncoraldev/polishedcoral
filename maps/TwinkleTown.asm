@@ -52,7 +52,7 @@ TwinkleTown_MapScriptHeader:
 	person_event SPRITE_SKIER, 19, 36, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 3, TrainerTwinkle_2, -1
 	itemball_event 27, 26, HP_UP, 1, EVENT_TWINKLE_POKE_BALL_HP_UP
 	tmhmball_event 41, 18, TM_DIG, EVENT_TWINKLE_POKE_BALL_DIG
-	hiddentape_event 20, 29, MUSIC_ROUTE_10, 1, EVENT_MUSIC_ROUTE_10
+	hiddentape_event 20, 29, MUSIC_TWINKLE_TOWN, 1, EVENT_MUSIC_TWINKLE_TOWN
 	
 	
 	const_def 1 ; object constants

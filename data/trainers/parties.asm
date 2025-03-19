@@ -2847,8 +2847,8 @@ PokefanMGroup:
 	db "RICK@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 22, CHIKORITA
-	db 21, BAYLEEF
+	db 20, CHIKORITA
+	db 19, BAYLEEF
 	db -1 ; end
 
 ; ================
@@ -4716,7 +4716,8 @@ CooltrainerMGroup:
 	db "ANDY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 25, GASTLY
+	db 25, MACHOP
 	db -1 ; end
 
 ; ================
@@ -4796,7 +4797,9 @@ CooltrainerFGroup:
 	db "MARY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 24, GROWLITHE
+	db 24, COTTONEE
+	db 24, BUIZEL
 	db -1 ; end
 
 ; ================

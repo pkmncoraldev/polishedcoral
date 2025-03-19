@@ -34,7 +34,7 @@ EventideForest_MapScriptHeader:
 	person_event SPRITE_LASS, 21, 19, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, TrainerEventide_2, -1
 	person_event SPRITE_POKEFAN_M, 31, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerEventide_3, -1
 	person_event SPRITE_POKEFAN_F, 62, 29, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 2, TrainerEventide_4, -1
-	person_event SPRITE_POKEFAN_M, 49, 20, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 4, TrainerEventide_5, -1
+	person_event SPRITE_POKEFAN_M, 49, 20, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 4, TrainerEventide_5, -1
 	person_event SPRITE_BUG_CATCHER, 35, 18, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerEventide_6, -1
 	itemball_event 28, 22, SUPER_REPEL, 1, EVENT_FOREST_POKE_BALL_1
 	itemball_event 30, 47, SUPER_POTION, 1, EVENT_FOREST_POKE_BALL_2
@@ -172,7 +172,7 @@ TrainerEventide_5:
 	line "unsuspecting young"
 	cont "TRAINERS, and…"
 	
-	para "… <WAIT_L>BOO!"
+	para "…<WAIT_L>BOO!"
 	done
 
 .BeatenText:

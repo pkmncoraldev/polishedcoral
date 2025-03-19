@@ -1273,29 +1273,29 @@
 	map_id ROUTE_9 ; used on Route 9 when EVENT_ON_DODRIO_RANCH is not set
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 22, COTTONEE		;30%
-	db 22, PIDGEOTTO	;30%
-	db 22, FLAAFFY		;20%
-	db 22, FLAAFFY		;10%
-	db 22, GROWLITHE	;5%
-	db 22, DODUO		;4%
-	db 22, DODUO		;1%
+	db 20, COTTONEE		;30%
+	db 20, PIDGEOTTO	;30%
+	db 20, FLAAFFY		;20%
+	db 20, FLAAFFY		;10%
+	db 20, GROWLITHE	;5%
+	db 20, DODUO		;4%
+	db 20, DODUO		;1%
 	; day
-	db 22, COTTONEE		;30%
-	db 22, PIDGEOTTO	;30%
-	db 22, FLAAFFY		;20%
-	db 22, FLAAFFY		;10%
-	db 22, GROWLITHE	;5%
-	db 22, DODUO		;4%
-	db 22, DODUO		;1%
+	db 20, COTTONEE		;30%
+	db 20, PIDGEOTTO	;30%
+	db 20, FLAAFFY		;20%
+	db 20, FLAAFFY		;10%
+	db 20, GROWLITHE	;5%
+	db 20, DODUO		;4%
+	db 20, DODUO		;1%
 	; nite
-	db 22, COTTONEE		;30%
-	db 22, PIDGEOTTO	;30%
-	db 22, FLAAFFY		;20%
-	db 22, FLAAFFY		;10%
-	db 22, GROWLITHE	;5%
-	db 22, DODUO		;4%
-	db 22, DODUO		;1%
+	db 20, COTTONEE		;30%
+	db 20, PIDGEOTTO	;30%
+	db 20, FLAAFFY		;20%
+	db 20, FLAAFFY		;10%
+	db 20, GROWLITHE	;5%
+	db 20, DODUO		;4%
+	db 20, DODUO		;1%
 	
 	
 	map_id DODRIO_RANCH_RACETRACK ; used on Route 9 when EVENT_ON_DODRIO_RANCH is set
@@ -1355,110 +1355,110 @@
 	map_id FLICKER_PASS_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 22, MACHOP		;30%
-	db 22, GEODUDE		;30%
-	db 22, ONIX			;20%
-	db 22, SWINUB		;10%
-	db 22, JIGGLYPUFF	;5%
-	db 22, JIGGLYPUFF	;4%
-	db 22, JIGGLYPUFF	;1%
+	db 21, MACHOP		;30%
+	db 21, GEODUDE		;30%
+	db 21, ONIX			;20%
+	db 21, SWINUB		;10%
+	db 21, JIGGLYPUFF	;5%
+	db 21, JIGGLYPUFF	;4%
+	db 21, JIGGLYPUFF	;1%
 	; day
-	db 22, MACHOP		;30%
-	db 22, GEODUDE		;30%
-	db 22, ONIX			;20%
-	db 22, SWINUB		;10%
-	db 22, JIGGLYPUFF	;5%
-	db 22, JIGGLYPUFF	;4%
-	db 22, JIGGLYPUFF	;1%
+	db 21, MACHOP		;30%
+	db 21, GEODUDE		;30%
+	db 21, ONIX			;20%
+	db 21, SWINUB		;10%
+	db 21, JIGGLYPUFF	;5%
+	db 21, JIGGLYPUFF	;4%
+	db 21, JIGGLYPUFF	;1%
 	; nite
-	db 22, MACHOP		;30%
-	db 22, GEODUDE		;30%
-	db 22, ONIX			;20%
-	db 22, SWINUB		;10%
-	db 22, JIGGLYPUFF	;5%
-	db 22, JIGGLYPUFF	;4%
-	db 22, JIGGLYPUFF	;1%
+	db 21, MACHOP		;30%
+	db 21, GEODUDE		;30%
+	db 21, ONIX			;20%
+	db 21, SWINUB		;10%
+	db 21, JIGGLYPUFF	;5%
+	db 21, JIGGLYPUFF	;4%
+	db 21, JIGGLYPUFF	;1%
 	
 	map_id FLICKER_PASS_2F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 22, MACHOP		;30%
-	db 22, GEODUDE		;30%
-	db 22, SWINUB		;20%
-	db 22, JIGGLYPUFF	;10%
-	db 22, JIGGLYPUFF	;5%
-	db 22, GOLBAT		;4%
-	db 22, GOLBAT		;1%
+	db 21, MACHOP		;30%
+	db 21, GEODUDE		;30%
+	db 21, SWINUB		;20%
+	db 21, JIGGLYPUFF	;10%
+	db 21, JIGGLYPUFF	;5%
+	db 21, GOLBAT		;4%
+	db 21, GOLBAT		;1%
 	; day
-	db 22, MACHOP		;30%
-	db 22, GEODUDE		;30%
-	db 22, SWINUB		;20%
-	db 22, JIGGLYPUFF	;10%
-	db 22, JIGGLYPUFF	;5%
-	db 22, GOLBAT		;4%
-	db 22, GOLBAT		;1%
+	db 21, MACHOP		;30%
+	db 21, GEODUDE		;30%
+	db 21, SWINUB		;20%
+	db 21, JIGGLYPUFF	;10%
+	db 21, JIGGLYPUFF	;5%
+	db 21, GOLBAT		;4%
+	db 21, GOLBAT		;1%
 	; nite
-	db 22, MACHOP		;30%
-	db 22, GEODUDE		;30%
-	db 22, SWINUB		;20%
-	db 22, JIGGLYPUFF	;10%
-	db 22, JIGGLYPUFF	;5%
-	db 22, GOLBAT		;4%
-	db 22, GOLBAT		;1%
+	db 21, MACHOP		;30%
+	db 21, GEODUDE		;30%
+	db 21, SWINUB		;20%
+	db 21, JIGGLYPUFF	;10%
+	db 21, JIGGLYPUFF	;5%
+	db 21, GOLBAT		;4%
+	db 21, GOLBAT		;1%
 	
 	map_id ROUTE_10 ; used on Route 10 during clear weather
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 23, SNOVER		;30%
-	db 23, SWINUB		;30%
-	db 23, SNOVER		;20%
-	db 23, MEDITITE		;10%
-	db 23, SNORUNT		;5%
-	db 23, SNEASEL		;4%
-	db 23, SNEASEL		;1%
+	db 22, SNOVER		;30%
+	db 22, SWINUB		;30%
+	db 22, SNOVER		;20%
+	db 22, MEDITITE		;10%
+	db 22, SNORUNT		;5%
+	db 22, SNEASEL		;4%
+	db 22, SNEASEL		;1%
 	; day
-	db 23, SNOVER		;30%
-	db 23, SWINUB		;30%
-	db 23, SNOVER		;20%
-	db 23, MEDITITE		;10%
-	db 23, SNORUNT		;5%
-	db 23, SNEASEL		;4%
-	db 23, SNEASEL		;1%
+	db 22, SNOVER		;30%
+	db 22, SWINUB		;30%
+	db 22, SNOVER		;20%
+	db 22, MEDITITE		;10%
+	db 22, SNORUNT		;5%
+	db 22, SNEASEL		;4%
+	db 22, SNEASEL		;1%
 	; nite
-	db 23, SNOVER		;30%
-	db 23, SWINUB		;30%
-	db 23, SNOVER		;20%
-	db 23, MEDITITE		;10%
-	db 23, SNORUNT		;5%
-	db 23, SNEASEL		;4%
-	db 23, SNEASEL		;1%
+	db 22, SNOVER		;30%
+	db 22, SWINUB		;30%
+	db 22, SNOVER		;20%
+	db 22, MEDITITE		;10%
+	db 22, SNORUNT		;5%
+	db 22, SNEASEL		;4%
+	db 22, SNEASEL		;1%
 	
 	map_id ROUTE_10_EAST ; used on Route 10 during snowstorm
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 23, SNORUNT		;30%
-	db 23, SNOVER		;30%
-	db 23, SWINUB		;20%
-	db 23, SNORUNT		;10%
-	db 23, SNEASEL		;5%
-	db 23, SNEASEL		;4%
-	db 23, SNEASEL		;1%
+	db 22, SNORUNT		;30%
+	db 22, SNOVER		;30%
+	db 22, SWINUB		;20%
+	db 22, SNORUNT		;10%
+	db 22, SNEASEL		;5%
+	db 22, SNEASEL		;4%
+	db 22, SNEASEL		;1%
 	; day
-	db 23, SNOVER		;30%
-	db 23, SWINUB		;30%
-	db 23, MACHOP		;20%
-	db 23, MEDITITE		;10%
-	db 23, SNORUNT		;5%
-	db 23, SNEASEL		;4%
-	db 23, SNEASEL		;1%
+	db 22, SNORUNT		;30%
+	db 22, SNOVER		;30%
+	db 22, SWINUB		;20%
+	db 22, SNORUNT		;10%
+	db 22, SNEASEL		;5%
+	db 22, SNEASEL		;4%
+	db 22, SNEASEL		;1%
 	; nite
-	db 23, SNOVER		;30%
-	db 23, SWINUB		;30%
-	db 23, MACHOP		;20%
-	db 23, MEDITITE		;10%
-	db 23, SNORUNT		;5%
-	db 23, SNEASEL		;4%
-	db 23, SNEASEL		;1%
+	db 22, SNORUNT		;30%
+	db 22, SNOVER		;30%
+	db 22, SWINUB		;20%
+	db 22, SNORUNT		;10%
+	db 22, SNEASEL		;5%
+	db 22, SNEASEL		;4%
+	db 22, SNEASEL		;1%
 	
 	map_id ICE_CAVE_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -1652,29 +1652,29 @@
 	map_id ROUTE_11
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
-	db 22, MACHOP		;30%
-	db 22, DWEBBLE		;30%
-	db 22, BUNEARY		;20%
-	db 22, MACHOKE		;10%
-	db 22, BUNEARY		;5%
-	db 22, DWEBBLE		;4%
-	db 22, DWEBBLE		;1%
+	db 20, MACHOP		;30%
+	db 20, DWEBBLE		;30%
+	db 20, DRIFLOON		;20%
+	db 20, MACHOKE		;10%
+	db 20, DRIFLOON		;5%
+	db 20, DWEBBLE		;4%
+	db 20, DWEBBLE		;1%
 	; day
-	db 22, MACHOP		;30%
-	db 22, DWEBBLE		;30%
-	db 22, BUNEARY		;20%
-	db 22, MACHOKE		;10%
-	db 22, BUNEARY		;5%
-	db 22, DWEBBLE		;4%
-	db 22, DWEBBLE		;1%
+	db 20, MACHOP		;30%
+	db 20, DWEBBLE		;30%
+	db 20, DRIFLOON		;20%
+	db 20, MACHOKE		;10%
+	db 20, DRIFLOON		;5%
+	db 20, DWEBBLE		;4%
+	db 20, DWEBBLE		;1%
 	; nite
-	db 22, MACHOP		;30%
-	db 22, DWEBBLE		;30%
-	db 22, BUNEARY		;20%
-	db 22, MACHOKE		;10%
-	db 22, BUNEARY		;5%
-	db 22, DWEBBLE		;4%
-	db 22, DWEBBLE		;1%
+	db 20, MACHOP		;30%
+	db 20, DWEBBLE		;30%
+	db 20, DRIFLOON		;20%
+	db 20, MACHOKE		;10%
+	db 20, DRIFLOON		;5%
+	db 20, DWEBBLE		;4%
+	db 20, DWEBBLE		;1%
 	
 	map_id ROUTE_12
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite

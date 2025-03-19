@@ -216,7 +216,7 @@ EventideVillageNPC3Text1:
 	
 	para "Too bad I can't"
 	line "jump the fence"
-	cont "and catch 'em…"
+	cont "and catch 'em all…"
 	done
 	
 EventideVillageNPC3Text2:

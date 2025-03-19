@@ -442,11 +442,11 @@ FlickerTrainStationRivalText1:
 	line "to waste my time"
 	cont "with you."
 	
-	para "Move aside!"
+	para "I've got an import-"
+	line "ant meeting to"
+	cont "make it to."
 	
-	para "I've got more imp-"
-	line "ortant things to"
-	cont "do right now."
+	para "Move aside!"	
 	done
 	
 FlickerTrainStationRivalText2:

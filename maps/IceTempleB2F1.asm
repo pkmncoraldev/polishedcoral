@@ -20,7 +20,7 @@ IceTempleB2F1_MapScriptHeader:
 	signpost  4,  6, SIGNPOST_READ, IceTempleCampfire5
 	signpost  4,  9, SIGNPOST_READ, IceTempleCampfire6
 
-	db 13 ; object events
+	db 14 ; object events
 	object_event  3,  0, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_TORCH_8_UNLIT
 	object_event  0,  0, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_TORCH_9_UNLIT
 	object_event  6,  4, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, IceTempleCampfire5, EVENT_ICE_TEMPLE_CAMPFIRE_5_UNLIT
@@ -34,6 +34,7 @@ IceTempleB2F1_MapScriptHeader:
 	person_event SPRITE_BIG_MAMOSWINE,  4,  7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, IceTempleMamoswine, EVENT_MAMOSWINE_TEAL
 	person_event SPRITE_BIG_MAMOSWINE,  4,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, IceTempleMamoswine, EVENT_MAMOSWINE_TEAL
 	itemball_event  8,  2, CLAY_POT, 1, EVENT_ICE_TEMPLE_GOT_TREASURE
+	itemball_event  7,  2, ESCAPE_ROPE, 1, EVENT_ICE_TEMPLE_GOT_ESCAPE_ROPE
 	
 	
 	const_def 1 ; object constants

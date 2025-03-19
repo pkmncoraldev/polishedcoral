@@ -569,6 +569,7 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	and a
 	jp z, .nextscene ; don't need to be here if wild
 
+	farcall BattleStart_HideAllSpritesExceptBattleParticipants
 	xor a
 	ld [hBGMapMode], a
 

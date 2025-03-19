@@ -417,8 +417,15 @@ AI_Smart: ; 386be
 	dbw EFFECT_HEX,				  AI_Smart_Hex
 	dbw EFFECT_VENOSHOCK,		  AI_Smart_Venoshock
 	dbw EFFECT_ACROBATICS,		  AI_Smart_Acrobatics
+	dbw EFFECT_BURN,			  AI_Smart_Burn
 	db $ff
 ; 387e3
+
+AI_Smart_Burn:
+	call AI_50_50
+	ret c
+	dec [hl]
+	ret
 
 AI_Smart_Acrobatics:
 	ld hl, wEnemyMonItem

@@ -325,7 +325,8 @@ TwinkleGymGuyText1:
 TwinkleGymGuyText2:
 	text "Great job, kid!"
 	
-	para "Just like I said!"
+	para "Just like I"
+	line "thought!"
 	
 	para "Now if you'll"
 	line "excuse me,"

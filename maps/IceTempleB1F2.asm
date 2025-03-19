@@ -63,11 +63,11 @@ IceTempleCampfire1:
 	pause 20
 	playsound SFX_SQUEAK
 	changeblock $6, $10, $c4
-	reloadmappart
+	callasm GenericFinishBridge
 	pause 20
 	playsound SFX_SQUEAK
 	changeblock $6, $10, $c8
-	reloadmappart
+	callasm GenericFinishBridge
 	pause 20
 	playsound SFX_SQUEAK
 	changeblock $6, $10, $bc
@@ -99,11 +99,11 @@ IceTempleCampfire2:
 	pause 20
 	playsound SFX_SQUEAK
 	changeblock $12, $10, $c5
-	reloadmappart
+	callasm GenericFinishBridge
 	pause 20
 	playsound SFX_SQUEAK
 	changeblock $12, $10, $c9
-	reloadmappart
+	callasm GenericFinishBridge
 	pause 20
 	playsound SFX_SQUEAK
 	changeblock $12, $10, $bd

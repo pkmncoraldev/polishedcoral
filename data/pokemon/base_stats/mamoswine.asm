@@ -2,7 +2,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db ICE, GROUND
-	db 50 ; catch rate
+	db 15 ; catch rate
 	db 207 ; base exp
 	db RAWST_BERRY ; item 1
 	db NEVERMELTICE ; item 2

@@ -444,7 +444,7 @@ FlickerTrainStationRivalText1:
 	
 	para "I've got an import-"
 	line "ant meeting to"
-	cont "make it to."
+	cont "attend."
 	
 	para "Move aside!"	
 	done

@@ -870,7 +870,7 @@ SunbeamTextUseFlute:
 SunbeamFirstContestCharlieText1:
 	text "Looks like you"
 	line "just missed the"
-	cont "show, <WAIT_S>huh?"
+	cont "show."
 	done
 	
 SunbeamFirstContestCharlieText2:
@@ -892,7 +892,7 @@ SunbeamFirstContestCharlieText2:
 	line "from around here,"
 	cont "are you?"
 	
-	para "That's ok, <WAIT_S>I'm not"
+	para "That's ok, I'm not"
 	line "either."
 	
 	para "I'm CHARLIE!"
@@ -916,7 +916,7 @@ SunbeamFirstContestCharlieText3:
 	para "But I'm rambling,"
 	line "aren't I?"
 	
-	para "Well, <WAIT_S>if you ever"
+	para "Well, if you ever"
 	line "find yourself in"
 	cont "TWINKLE TOWN,"
 

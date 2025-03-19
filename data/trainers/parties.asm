@@ -2446,7 +2446,7 @@ GruntMGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 19, TRUMBEAK
-	db 18, ODDISH
+	db 20, ODDISH
 	db -1 ; end
 
 ; ================
@@ -2457,7 +2457,7 @@ GruntMGroup:
 	; party
 	db 20, ZUBAT
 	db 19, WOOPER
-	db 18, ODDISH
+	db 19, ODDISH
 	db -1 ; end
 
 ; ================
@@ -2466,7 +2466,7 @@ GruntMGroup:
 	db "GRUNT@";"SUNBEAMM3@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 18, ZUBAT
+	db 19, ZUBAT
 	db 19, WINGULL
 	db 19, SWABLU
 	db -1 ; end
@@ -2477,7 +2477,7 @@ GruntMGroup:
 	db "GRUNT@";"SUNBEAMM4@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 18, ELEKID
+	db 20, ELEKID
 	db 21, GOLBAT
 	db -1 ; end
 
@@ -2647,7 +2647,7 @@ GruntFGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 18, GLOOM
-	db 18, HORSEA
+	db 21, HORSEA
 	db -1 ; end
 
 ; ================
@@ -2656,7 +2656,7 @@ GruntFGroup:
 	db "GRUNT@";"SUNBEAMF2@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 19, PIKIPEK
+	db 21, PIKIPEK
 	db 19, TRUMBEAK
 	db -1 ; end
 

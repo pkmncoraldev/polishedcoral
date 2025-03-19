@@ -13,7 +13,7 @@ SunbeamJungle_MapScriptHeader:
 	warp_def  5, 11, 1, SUNBEAM_JUNGLE_CAVE
 
 	db 18 ; coord events
-	xy_trigger 1, 17, 11, 0, SunbeamJungleKageScript, 0, 0
+	xy_trigger 1, -6, -6, 0, SunbeamJungleKageScript, 0, 0
 	coord_event  4,  8, 2, JungleMakeSilverBlack
 	coord_event  6, 11, 2, JungleMakeSilverBlack
 	coord_event 17,  7, 2, JungleMakeSilverBlack
@@ -49,7 +49,7 @@ SunbeamJungle_MapScriptHeader:
 	person_event SPRITE_KAGE, 22,  4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SUNBEAM_JUNGLE_CUTSCENE
 	person_event SPRITE_SNARE, 22,  5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SUNBEAM_JUNGLE_CUTSCENE
 	person_event SPRITE_KAGE, 16,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAVED_SUNBEAM
-	person_event SPRITE_SNARE, 17,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAVED_SUNBEAM
+	person_event SPRITE_SNARE, 17, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunbeamJungleKageScript, EVENT_SAVED_SUNBEAM
 	person_event SPRITE_SNARE, 14,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, SunbeamJungleSnare2, EVENT_SAVED_SUNBEAM
 	person_event SPRITE_SNARE_GIRL,  6, 19, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, SunbeamJungleSnare3, EVENT_SAVED_SUNBEAM
 	person_event SPRITE_SNARE, 13, 18, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, SunbeamJungleSnare4, EVENT_SAVED_SUNBEAM
@@ -158,11 +158,11 @@ SunbeamJungleTrigger2:
 	end
 	
 SunbeamJungleKageScript:
-	checkevent EVENT_SAVED_SUNBEAM
-	iftrue .end
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
+;	checkevent EVENT_SAVED_SUNBEAM
+;	iftrue .end
+;	special Special_StopRunning
 	spriteface SUNBEAM_JUNGLE_SNARE_BRIDGE, RIGHT
+	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, SUNBEAM_JUNGLE_SNARE_BRIDGE, 15
 	applymovement SUNBEAM_JUNGLE_SNARE_BRIDGE, MovementSunbeamJungleSnareBridge1
 	opentext
@@ -170,7 +170,6 @@ SunbeamJungleKageScript:
 	waitbutton
 	closetext
 	applymovement SUNBEAM_JUNGLE_SNARE_BRIDGE, MovementSunbeamJungleSnareBridge2
-	applyonemovement SUNBEAM_JUNGLE_SNARE_BRIDGE, run_step_up
 	spriteface SUNBEAM_JUNGLE_SNARE_BRIDGE, LEFT
 	opentext
 	writetext SunbeamJungleSnareBridgeText2
@@ -191,7 +190,7 @@ SunbeamJungleKageScript:
 	waitsfx
 	special SaveMusic
 	winlosstext SunbeamJungleKageWinText, SunbeamJungleKageLoseText
-	setlasttalked SUNBEAM_JUNGLE_KAGE_CUTSCENE
+	setlasttalked SUNBEAM_JUNGLE_KAGE
 	loadtrainer KAGE, SUNBEAM_KAGE
 	startbattle
 	reloadmapafterbattle
@@ -435,7 +434,7 @@ SunbeamJungleKageText3:
 	para "None of the others"
 	line "could handle it?"
 
-	para "Useless!<WAIT_M>"
+	para "Useless!<WAIT_S>"
 	line "All of you!"
 
 	para "I'll take care of"
@@ -651,9 +650,12 @@ MovementSunbeamJungleSnareBridge1:
 	step_end
 	
 MovementSunbeamJungleSnareBridge2:
-	turn_step_up
-	turn_step_up
-	turn_step_up
+	turn_step_left
+	turn_step_left
+	turn_step_left
+	run_step_left
+	run_step_left
+	run_step_up
 	step_end
 	
 MovementSunbeamJungleSnareBridge3:

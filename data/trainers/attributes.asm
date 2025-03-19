@@ -61,9 +61,9 @@ TrainerClassAttributes: ; 3959c
 	dw CONTEXT_USE
 
 ; Charlie
-	db SUPER_POTION, 0 ; items
+	db HYPER_POTION, 0 ; items
 	db 25 ; base reward
-	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw AI_BASIC + AI_SMART + AI_STATUS + AI_SETUP + AI_TYPES
 	dw CONTEXT_USE
 
 ; Polly

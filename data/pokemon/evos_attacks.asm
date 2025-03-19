@@ -2928,6 +2928,7 @@ Porygon2EvosAttacks:
 StantlerEvosAttacks:
 	db EVOLVE_MOVE, PSYSHIELD_BASH,  WYRDEER
 	db 0 ; no more evolutions
+	db 1, PSYSHIELD_BASH
 	db 1, TACKLE_SCRATCH_POUND
 	db 3, LEER_TAIL_WHIP
 	db 7, DISABLE

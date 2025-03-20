@@ -5031,3 +5031,38 @@ SlitherWingEvosAttacks:
 	db 84, LEECH_LIFE
 	db 91, THRASH
 	db 0 ; no more level-up moves
+	
+Rattata_RGEvosAttacks:
+Raticate_RGEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE_SCRATCH_POUND
+	db 1, LEER_TAIL_WHIP
+	db 7, QUICK_ATTACK
+	db 0 ; no more level-up moves
+
+Pidgey_RGEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, GUST
+	db 5, SAND_ATTACK_SMOKESCREEN_FLASH
+	db 0 ; no more level-up moves
+	
+Raichu_RGEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, THUNDERSHOCK
+	db 1, GROWL
+	db 1, THUNDER_WAVE
+	db 0 ; no more level-up moves
+	
+Exeggutor_RGEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db 1, SING_HYPNOSIS
+	db 28, STOMP
+	db 0 ; no more level-up moves
+	
+Gyarados_RGEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, LEER_TAIL_WHIP
+	db 1, DRAGON_RAGE
+	db 1, BITE
+	db 0 ; no more level-up moves

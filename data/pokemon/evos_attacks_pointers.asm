@@ -259,20 +259,20 @@ EvosAttacksPointers:: ; 0x425b1
 	dw FarigirafEvosAttacks
 	dw EggEvosAttacks
 	
-	dw PidgeyEvosAttacks
-	dw RattataEvosAttacks
-	dw RaticateEvosAttacks
+	dw Pidgey_RGEvosAttacks
+	dw Rattata_RGEvosAttacks
+	dw Raticate_RGEvosAttacks
 	dw Raichu_AEvosAttacks
-	dw RaichuEvosAttacks
+	dw Raichu_RGEvosAttacks
 	dw Meowth_AEvosAttacks
 	dw Persian_AEvosAttacks
 	dw Grimer_AEvosAttacks
 	dw Muk_AEvosAttacks
 	dw ExeggcuteEvosAttacks
 	dw Exeggutor_AEvosAttacks
-	dw ExeggutorEvosAttacks
+	dw Exeggutor_RGEvosAttacks
 	dw Marowak_AEvosAttacks
-	dw GyaradosEvosAttacks
+	dw Gyarados_RGEvosAttacks
 	dw SunfloraEvosAttacks
 	dw SunfloraEvosAttacks
 	dw Wooper_PEvosAttacks

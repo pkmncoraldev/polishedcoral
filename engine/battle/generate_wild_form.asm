@@ -43,7 +43,7 @@ WildSpeciesForms:
 	dbw PIDGEY,		.PidgeyForm
 	dbw RATTATA,	.PidgeyForm
 	dbw RATICATE,	.PidgeyForm
-	dbw RAICHU,		.PidgeyForm
+	dbw RAICHU,		.ExeggcuteForm
 	dbw MEOWTH,		.MeowthForm
 	dbw EXEGGCUTE,	.ExeggcuteForm
 	dbw EXEGGUTOR,	.ExeggcuteForm

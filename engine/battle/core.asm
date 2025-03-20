@@ -7839,8 +7839,15 @@ GiveExperiencePoints: ; 3ee3b
 
 	; Boost Experience for legendary mons
 	ld a, [wBattleType]
+	cp BATTLETYPE_PORYGON
+	jr nz, .not_porygon
+	ld a, [wWalkingOnBridge]
+	cp 5
+	jr z, .legendary_boost
+.not_porygon
 	cp BATTLETYPE_LEGENDARY ; or BATTLETYPE_SHINY_LEGENDARY
 	jr c, .not_legendary
+.legendary_boost
 	call BoostExp
 	call BoostExp
 	call BoostExp

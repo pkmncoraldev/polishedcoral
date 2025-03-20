@@ -150,10 +150,11 @@ endc
 	const BATTLETYPE_TRAP
 	const BATTLETYPE_FORCEITEM
 	const BATTLETYPE_SHINY
-	const BATTLETYPE_LEGENDARY
-	const BATTLETYPE_SHINY_LEGENDARY
 	const BATTLETYPE_PORYGON
 	const BATTLETYPE_GEN_1
+	;these have to be last for exp boost
+	const BATTLETYPE_LEGENDARY
+	const BATTLETYPE_SHINY_LEGENDARY
 
 ; attack failure modes, higher gives priority
 ; TODO: complete this functionality

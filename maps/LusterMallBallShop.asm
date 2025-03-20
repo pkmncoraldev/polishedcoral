@@ -36,6 +36,8 @@ LusterMallBallShop_MapScriptHeader:
 	const_def 1 ; object constants
 	const LUSTER_MALL_BALL_SHOP_CLERK
 	const LUSTER_MALL_BALL_SHOP_CLERK_DISCOUNT
+	const LUSTER_MALL_BALL_SHOP_CLERK2
+	const LUSTER_MALL_BALL_SHOP_CLERK2_DISCOUNT
 	const LUSTER_MALL_BALL_SHOP_NPC_1
 	const LUSTER_MALL_BALL_SHOP_NPC_2
 	const LUSTER_MALL_BALL_SHOP_NPC_3
@@ -67,15 +69,11 @@ Movement_LusterMallBallShopPolly1:
 	step_left
 	step_down
 	step_down
-	step_down
-	step_down
 	step_end
 	
 Movement_LusterMallBallShopPolly2:
 	step_down
 	step_left
-	step_down
-	step_down
 	step_down
 	step_end
 	
@@ -133,6 +131,7 @@ LusterMallBallShop_NPC2:
 	
 .saved_delivery
 	appear LUSTER_MALL_BALL_SHOP_CLERK_DISCOUNT
+	appear LUSTER_MALL_BALL_SHOP_CLERK2_DISCOUNT
 	setevent EVENT_DONE_PART_TIME_JOB
 	clearevent EVENT_NO_BALL_SHOP_DISCOUNT
 	faceplayer
@@ -141,6 +140,7 @@ LusterMallBallShop_NPC2:
 	waitbutton
 	closetext
 	disappear LUSTER_MALL_BALL_SHOP_CLERK
+	disappear LUSTER_MALL_BALL_SHOP_CLERK2
 	end
 	
 .finishedjob

@@ -2,7 +2,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db FAIRY, FAIRY
-	db 25 ; catch rate
+	db 15 ; catch rate
 	db 129 ; base exp
 	db LEPPA_BERRY ; item 1
 	db MOON_STONE ; item 2

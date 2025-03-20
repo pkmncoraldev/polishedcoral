@@ -4287,7 +4287,8 @@ ScientistGroup:
 	db "HERBERT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 41, DRAKLOAK
+	db 40, ALTARIA
 	db -1 ; end
 
 ; ================
@@ -4521,7 +4522,7 @@ TeacherGroup:
 	db "MARIE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 42, AGGRON
 	db -1 ; end
 
 ; ================

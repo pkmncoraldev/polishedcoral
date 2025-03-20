@@ -59,29 +59,45 @@ GlintGroveUnderground_MapScriptHeader:
 GlintGroveUndergroundTrainer1:
 	generictrainer TEACHER, MARIE, EVENT_BEAT_GLINT_GROVE_UNDERGROUND_TRAINER_1, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "That CLEFAIRY"
+	line "sure seemed to"
+	cont "be in a rush."
+	
+	para "I hope it was"
+	line "ok!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "A cute little"
+	line "CLEFAIRY hopped"
+	cont "by earlier."
+	
+	para "I wonder where"
+	line "it was going."
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "How fun!"
 	done
 	
 GlintGroveUndergroundTrainer2:
 	generictrainer SCIENTIST, HERBERT, EVENT_BEAT_GLINT_GROVE_UNDERGROUND_TRAINER_2, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "I have to carry"
+	line "DRAGON-types to"
+	cont "protect myself"
+	cont "down here!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "The FAIRY #MON"
+	line "down here are much"
+	cont "stronger than the"
+	cont "ones up above."
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "My DRAGON #MON!"
 	done
 	
 GlintGroveUndergroundMoonStone:

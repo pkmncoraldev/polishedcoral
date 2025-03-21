@@ -3122,13 +3122,19 @@ NoEffect: ; f77d
 .Whiteout
 	farjump Script_OverworldWhiteout
 
-Play_SFX_FULL_HEAL: ; f780
+Play_SFX_FULL_HEAL:
 	push de
 	ld de, SFX_FULL_HEAL
 	call WaitPlaySFX
 	pop de
 	ret
-; f789
+	
+Play_SFX_LEVEL_UP:
+	push de
+	ld de, SFX_LEVEL_UP
+	call WaitPlaySFX
+	pop de
+	ret
 
 UseItemText: ; f789
 	ld hl, UsedItemText
@@ -3588,8 +3594,24 @@ AbilityCap:
 	ld a, [hl]
 	and ABILITY_MASK
 	cp HIDDEN_ABILITY
-	jr z, .no_effect
-
+	jr nz, .normal
+	;hidden ability
+	ld d, h
+	ld e, l
+	push de
+	ld hl, ChangeHiddenAbilityText
+	call PrintText
+	pop de
+	pop hl
+	push hl
+	ld a, MON_SPECIES
+	call GetPartyParamLocation
+	ld a, [hl]
+	ld [wCurSpecies], a
+	call GetBaseData
+	jr .ability_1
+	
+.normal
 	; Check if the ability would change
 	ld d, h
 	ld e, l
@@ -3613,6 +3635,7 @@ AbilityCap:
 	ld a, [wBaseAbility2]
 	ld c, ABILITY_2
 	jr z, .got_new_ability
+.ability_1
 	ld a, [wBaseAbility1]
 	ld c, ABILITY_1
 .got_new_ability
@@ -3637,8 +3660,10 @@ AbilityCap:
 	or c
 	ld [hl], a
 	call UseDisposableItem
+	call Play_SFX_LEVEL_UP
 	ld hl, AbilityChangedText
 	call PrintText
+	call WaitSFX
 .abort
 	jp ClearPalettes
 
@@ -3648,7 +3673,16 @@ AbilityCap:
 .loopnext
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon2
-	jr .loop
+	jp .loop
+
+ChangeHiddenAbilityText:
+	text "This #MON has"
+	line "a HIDDEN ABILITY."
+	
+	para "If changed, it can"
+	line "not be recovered!"
+	prompt
+	
 
 ChangeAbilityToText:
 	text "Change ability to"
@@ -3660,6 +3694,6 @@ ChangeAbilityToText:
 AbilityChangedText:
 	text "The ability was"
 	line "changed!"
-	prompt
+	done
 
 INCLUDE "engine/battle_anims/pokeball_wobble.asm"

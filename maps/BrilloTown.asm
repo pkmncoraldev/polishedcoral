@@ -180,10 +180,10 @@ BrilloLemonade:
 	giveitem LEMONADE
 	iffalse .no_room
 	takeitem LEMONADE
-	checkmoney $0, 25
+	checkmoney $0, 350
 	if_equal $2, .no_money
 	playsound SFX_TRANSACTION
-	takemoney $0, 25
+	takemoney $0, 350
 	special PlaceMoneyTopRight
 	writetext BrilloLemonadeText3
 	buttonsound

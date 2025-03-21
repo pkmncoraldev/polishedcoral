@@ -1,7 +1,7 @@
 	db  75,  86,  67,  60, 106,  67
 	;   hp  atk  def  spd  sat  sdf
 
-	db PSYCHIC, PSYCHIC
+	db GRASS, GRASS
 	db 255 ; catch rate
 	db 161 ; base exp
 	db MIRACLE_SEED ; item 1

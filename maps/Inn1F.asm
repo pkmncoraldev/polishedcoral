@@ -440,6 +440,7 @@ Inn1FFrontDeskDoorText:
 Inn1FSnareSupervisor:
 	checkevent EVENT_BEAT_INN_2F_TRAINER_2
 	iftrue .start
+	setlasttalked INN_1F_LOBBY_SNARE
 	opentext
 	writetext Inn1FSnareSupervisorTextNormal1
 	waitbutton
@@ -945,7 +946,7 @@ Inn1FTrashCanPasswordText:
 	para "“Here is the code"
 	line "for ROOM 201:"
 	
-	para "PASSWORD2"
+	para "“LET ME IN!”"
 	
 	para "Do NOT lose it"
 	line "this time!”"

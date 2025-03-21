@@ -155,7 +155,7 @@ DuskAutoLobbyNPC4Text:
 	done
 	
 SetUpBikeUpgradeStepsAsm:
-	ld a, 4
+	ld a, 3
 	ld [wBikeUpgradeSteps], a
 	ld a, 0
 	ld [wBikeUpgradeSteps + 1], a
@@ -214,6 +214,7 @@ DuskAutoLobbyGuy:
 	takeitem BICYCLE
 	waitsfx
 	writetext DuskAutoLobbyGuyTextSaidYesText
+	waitbutton
 	closetext
 	addcellnum PHONE_AUTO
 	setevent EVENT_GAVE_BIKE_TO_AUTO_GUY

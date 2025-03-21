@@ -102,6 +102,7 @@ RadiantGymLeilanicont:
 	waitsfx
 	setevent EVENT_BEAT_LEILANI_FIRST_TIME
 	setflag ENGINE_SIXTHBADGE
+	setevent EVENT_CAN_FIGHT_ERIKA
 	checkcode VAR_BADGES
 	callasm RadiantGymAutoShopStepsAsm
 	

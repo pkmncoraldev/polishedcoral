@@ -350,7 +350,7 @@ SpecialGiveShinyTogepi:
 ; Level 10 Togepi
 	ld a, TOGEPI
 	ld [wCurPartySpecies], a
-	ld a, 16
+	ld a, 18
 	ld [wCurPartyLevel], a
 
 	predef TryAddMonToParty
@@ -384,7 +384,7 @@ rept 3
 	ld [hli], a
 endr
 ; Shiny with hidden ability.
-	ld a, SHINY_MASK | ABILITY_2 | BASHFUL
+	ld a, SHINY_MASK | HIDDEN_ABILITY | BASHFUL
 	ld [hli], a
 	ld a, MALE
 	ld [hl], a

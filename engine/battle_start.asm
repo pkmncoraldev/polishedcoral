@@ -163,7 +163,7 @@ FlashyTransitionToBattle: ; 8c314
 	dw StartTrainerBattle_Finish ; 20
 	
 	; fake animation
-	dw StartTrainerBattle_LoadPokeBallGraphics ; 21
+	dw StartTrainerBattle_LoadPokeBallGraphics.skip_hide ; 21
 	dw StartTrainerBattle_SetUpBGMap ; 22
 	dw StartTrainerBattle_Flash ; 23
 	dw StartTrainerBattle_Flash ; 24
@@ -570,6 +570,7 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	jp z, .nextscene ; don't need to be here if wild
 
 	farcall BattleStart_HideAllSpritesExceptBattleParticipants
+.skip_hide
 	xor a
 	ld [hBGMapMode], a
 

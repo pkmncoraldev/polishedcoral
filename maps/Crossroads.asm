@@ -233,6 +233,7 @@ CrossroadsCutscene1:
 	closetext
 	disappear CROSSROADS_SNARE_GRUNT_1
 	disappear CROSSROADS_SNARE_GRUNT_2
+	clearevent EVENT_CROSSROADS_CUTSCENE_DONE
 	end
 CrossroadsCutscene2:
 	pause 30

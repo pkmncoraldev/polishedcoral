@@ -11,7 +11,7 @@
 	db HUSTLE ; ability 1
 	db SERENE_GRACE ; ability 2
 	db SUPER_LUCK ; hidden ability
-	db FAST ; growth rate
+	db SLOW ; growth rate
 	dn AVIAN, FAERY ; egg groups
 
 	; ev_yield

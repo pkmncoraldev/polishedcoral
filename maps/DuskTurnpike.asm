@@ -549,10 +549,14 @@ DuskTurnpikeNPC1Text:
 	done
 	
 DuskTurnpikeNPC2Text:
-	text "I heard that the"
-	line "tunnel here con-"
-	cont "nects to a big"
-	cont "underground cave."
+	text "I heard theres a"
+	line "cave nearby that"
+	cont "goes deep under"
+	cont "the ocean."
+	
+	para "Supposedly it"
+	line "connects up to"
+	cont "the NORTH."
 	
 	para "Pretty neat!"
 	done
@@ -574,7 +578,7 @@ DuskTurnpikeNPC4Text:
 	cont "let my SKATEBOARD"
 	cont "on the HIGHWAY!"
 	
-	para "It's got wheels!<WAIT_M>"
+	para "It's got wheels!<WAIT_S>"
 	line "It should count!"
 	done
 	
@@ -592,7 +596,7 @@ DuskTurnpikeNPC6Text:
 	
 	para "You friends with"
 	line "that girl behind"
-	cont "the bar?"
+	cont "the building?"
 	
 	para "She really should"
 	line "not be back there."

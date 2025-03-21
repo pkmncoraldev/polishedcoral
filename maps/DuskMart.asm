@@ -44,6 +44,6 @@ DuskMartNPC2Text:
 	cont "better off at"
 	cont "MOOMOO's."
 	
-	para "You look a little"
-	line "young, though…"
+	para "Though you look a"
+	line "little young…"
 	done

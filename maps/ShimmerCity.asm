@@ -694,7 +694,7 @@ ShimmerCityNpc5Text:
 	
 	para "I'm sure he was"
 	line "just looking for"
-	cont "a pet…"
+	cont "a new pet…"
 	
 	para "…<WAIT_L>right?"
 	done

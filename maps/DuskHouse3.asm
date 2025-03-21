@@ -47,7 +47,9 @@ DuskHouse3NPC2Text:
 	
 	para "Maybe I'll slip on"
 	line "an ice cube and"
-	cont "get workers'"
-	cont "compensation!"
+	cont "break my neck."
+	
+	para "Then I'll get"
+	line "workers' comp!"
 	done
 	

@@ -305,7 +305,7 @@ BarInsideBartenderText1:
 	
 	para "It's MOOMOO MILK"
 	line "with a little"
-	cont "somethin' <WAIT_M>extra…"
+	cont "somethin'… <WAIT_L>extra…"
 	cont "mixed in."
 	
 	para "Anyway, <WAIT_S>enough of"
@@ -436,7 +436,7 @@ BarInsideRegular1Text3:
 	line "that I lost the"
 	cont "cue ball?"
 	
-	para "I don't get it…"
+	para "…<WAIT<L>I don't get it…"
 	done
 	
 BarInsideRegular1WinText:
@@ -775,7 +775,7 @@ BarInsideWaitressText2:
 	text "I'm not a customer,"
 	line "I'm a waitress."
 	
-	para "And no, <WAIT_M>I don't"
+	para "And no, <WAIT_S>I don't"
 	line "want to battle!"
 	done
 	

@@ -11,13 +11,14 @@ DuskPokeCenter_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 6 ; object events
+	db 7 ; object events
 	pc_nurse_event  4, 1
 	pc_chansey_event  5, 1
 	person_event SPRITE_CUTE_GIRL,  3,  2, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, DuskPokeCenterNPC1, -1
 	person_event SPRITE_FAT_GUY,  5,  6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, DuskPokeCenterNPC2, -1
 	person_event SPRITE_COOL_DUDE,  6,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DuskPokeCenterNPC3, -1
 	object_event  8,  6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GRIMER, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_SCRIPT, 0, DuskPokeCenterGrimer, -1
+	person_event SPRITE_SUPER_NERD,  1,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DuskPokeCenterNPC4, -1
 	
 DuskPokeCenterNPC1:
 	jumptextfaceplayer DuskPokeCenterNPC1Text
@@ -27,6 +28,15 @@ DuskPokeCenterNPC2:
 	
 DuskPokeCenterNPC3:
 	jumptextfaceplayer DuskPokeCenterNPC3Text
+
+DuskPokeCenterNPC4:
+	faceplayer
+	opentext
+	writetext DuskPokeCenterNPC4Text
+	waitbutton
+	closetext
+	spriteface 7, DOWN
+	end
 
 DuskPokeCenterGrimer:
 	opentext
@@ -61,18 +71,27 @@ DuskPokeCenterNPC2Text:
 	line "nice little place"
 	cont "be so close to"
 	cont "such a dingy town"
-	cont "like this one?"
+	cont "as this one?"
 	done
 	
 DuskPokeCenterNPC3Text:
 	text "My precious little"
-	line "GRIMER leaves a"
+	line "GRIMER leaves an"
+	cont "adorable little"
 	cont "trail of sludge"
 	cont "everywhere we go."
 	
-	para "I'm glad I'm not the"
-	line "one that has to"
-	cont "mop the floors!"
+	para "Boy, I'm glad I'm"
+	line "not the one that"
+	cont "has to mop up the"
+	cont "floors!"
+	done
+	
+DuskPokeCenterNPC4Text:
+	text "I'm the janitor."
+	
+	para "I don't get paid"
+	line "enough for this…"
 	done
 	
 DuskPokeCenterGrimerText:

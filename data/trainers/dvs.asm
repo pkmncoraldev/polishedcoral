@@ -66,7 +66,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; locke
 	db   8, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; pokefanm
 	db   8, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; pokefanf
-	db  48, $DD, $BB, $DB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; officer
+	db  48, $99, $99, $99, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; officer
 	db  20, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; pokemaniac
 	db  20, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; super nerd
 	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; lass
@@ -124,7 +124,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; erika
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; mina
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; ledianranger
-	db  48, $DD, $BB, $DB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; police captain
+	db 100, $BB, $BB, $BB, ABILITY_2 | QUIRKY, MALE | PLAIN_FORM   ; police captain
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; towertycoon
 
 ; 2715c

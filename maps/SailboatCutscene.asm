@@ -97,7 +97,7 @@ SailboatCutsceneTrigger0:
 	clearevent EVENT_BOAT_GOING_TO_BRILLO
 	domaptrigger BRILLO_TOWN, $1
 	special FadeOutPalettes
-	warpfacing UP, BRILLO_TOWN, 17, 25
+	warpfacing UP, BRILLO_TOWN, 17, 27
 	end
 	
 Movement_SailboatCutsceneRight:

@@ -567,7 +567,7 @@ TrainerClassAttributes: ; 3959c
 ; Police Captain
 	db FULL_RESTORE, FULL_RESTORE ; items
 	db 25 ; base reward
-	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE
 	
 ; TowerTycoon

@@ -2963,16 +2963,22 @@ OfficerGroup:
 	db "JONES@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 35, GROWLITHE
+	db 34, HOUNDOUR
 	db -1 ; end
 
 ; ================
 
 	; OFFICER
 	db "SMITH@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 34, CACNEA
+		db SUCKER_PUNCH, LEECH_SEED, MEGA_DRAIN, WORK_UP_GROWTH
+	db 34, CACNEA
+		db SUCKER_PUNCH, LEECH_SEED, MEGA_DRAIN, WORK_UP_GROWTH
+	db 34, CACNEA
+		db SUCKER_PUNCH, LEECH_SEED, MEGA_DRAIN, WORK_UP_GROWTH
 	db -1 ; end
 
 ; ================
@@ -2981,7 +2987,8 @@ OfficerGroup:
 	db "ROGERS@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 34, GROWLITHE
+	db 35, MARACTUS
 	db -1 ; end
 
 ; ================
@@ -2990,7 +2997,8 @@ OfficerGroup:
 	db "HARRIS@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 35, SNUBBULL
+	db 34, GRANBULL
 	db -1 ; end
 
 ; ================
@@ -4002,8 +4010,8 @@ SwimmerMGroup:
 	db "MARK@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 35, LANTURN
-	db 34, SHARPEDO
+	db 33, LANTURN
+	db 32, SHARPEDO
 	db -1 ; end
 
 ; ================
@@ -4798,8 +4806,8 @@ CooltrainerFGroup:
 	db "MARY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 24, GROWLITHE
 	db 24, COTTONEE
+	db 24, GROWLITHE
 	db 24, BUIZEL
 	db -1 ; end
 
@@ -6160,9 +6168,14 @@ PoliceCaptainGroup:
 
 	; CAPTAIN
 	db "ARMSTRONG@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 36, CACTURNE
+		db SUCKER_PUNCH, LEECH_SEED, MEGA_DRAIN, WORK_UP_GROWTH
+	db 35, HOUNDOOM
+		db BITE, FIRE_FANG, SHARPEN_HOWL_MEDITATE, SWAGGER
+	db 35, HONCHKROW
+		db WING_ATTACK, FEINT_ATTACK, HAZE, PURSUIT
 	db -1 ; end
 
 ; ================

@@ -99,7 +99,8 @@ BrilloSmoothRockHouseNPCText1:
 BrilloSmoothRockHouseNPCText2:
 	text "You should try"
 	line "letting a GROUND-"
-	cont "type #MON!"
+	cont "type #MON hold"
+	cont "it!"
 	done
 	
 BrilloSmoothRockHouseNPCText3:

@@ -1672,7 +1672,16 @@ RareCandy: ; ef14
 
 	farcall UpdatePkmnStats
 	farcall LevelUpHappinessMod
-
+	call IsMonFainted
+	jr nz, .skip_revive
+	push de
+	ld a, 0
+	ld d, a
+	ld a, 1
+	ld e, a
+	call ContinueRevive
+	pop de
+.skip_revive
 	ld a, PARTYMENUTEXT_LEVEL_UP
 	call ItemActionText
 

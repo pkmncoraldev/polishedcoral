@@ -168,7 +168,8 @@ Inn1FKageScene:
 	applyonemovement PLAYER, remove_fixed_facing
 	waitbutton
 	closetext
-	applyonemovement INN_1F_CLERK, turn_step_right
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, INN_1F_CLERK, 15
 	opentext
 	writetext Inn1FClerkBattleinterrupt2
 	closetext
@@ -179,6 +180,13 @@ Inn1FKageScene:
 	writetext Inn1FKageText6
 	waitsfx
 	closetext
+	pause 5
+	applyonemovement INN_1F_CLERK, turn_step_right
+	opentext
+	writetext Inn1FClerkBattleinterrupt3
+	waitbutton
+	closetext
+	pause 5
 	spriteface INN_1F_SNARE_KAGE, DOWN
 	pause 5
 	opentext
@@ -599,6 +607,10 @@ Inn1FClerkBattleinterrupt2:
 	
 	para "No battles in"
 	line "the-<WAIT_S>"
+	done
+	
+Inn1FClerkBattleinterrupt3:
+	text "CLERK: Eep!"
 	done
 	
 Inn1FFakeBattleStart:

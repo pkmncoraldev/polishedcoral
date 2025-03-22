@@ -65,7 +65,6 @@ KomorePokeCenterNPC2Text2:
 KomorePokeCenterMushroomGuy:
 	opentext
 	writetext KomorePokeCenterMushroomGuyText1
-	waitbutton
 	pause 10
 	faceplayer
 	writetext KomorePokeCenterMushroomGuyText2
@@ -146,7 +145,7 @@ CheckItemMushroom:
 	ld [wScriptVar], a
 	
 KomorePokeCenterMushroomGuyText1:
-	text "Munch! <WAIT_M>Scarf!"
+	text "Munch! <WAIT_M>Scarf!<WAIT_M>"
 	done
 	
 KomorePokeCenterMushroomGuyText2:

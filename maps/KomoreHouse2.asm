@@ -12,7 +12,7 @@ KomoreHouse2_MapScriptHeader:
 	db 0 ; bg events
 
 	db 3 ; object events
-	person_event SPRITE_GRAMPS,  4, 7, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, KomoreHouse2WindyMan, -1
+	person_event SPRITE_GRAMPS,  7, 6, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, KomoreHouse2WindyMan, -1
 	person_event SPRITE_REDS_MOM,  4, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, KomoreHouse2NPC1, -1
 	person_event SPRITE_YOUNGSTER,  3, 5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, KomoreHouse2NPC2, -1
 	
@@ -24,13 +24,13 @@ KomoreHouse2WindyMan:
 	writetext KomoreHouse2WindyManText1
 	waitbutton
 	closetext
-	spriteface 1, RIGHT
+	spriteface 1, DOWN
 	end
 .windy
 	writetext KomoreHouse2WindyManText2
 	waitbutton
 	closetext
-	spriteface 1, RIGHT
+	spriteface 1, DOWN
 	end
 	
 KomoreHouse2WindyManAsm:

@@ -197,7 +197,7 @@ FightingDojoMaster:
 	closetext
 	pause 20
 	setlasttalked FIGHTING_DOJO_MASTER
-	winlosstext FightingDojoMasterWinText, 0
+	winlosstext FightingDojoMasterWinText, FightingDojoMasterLoseText
 	loadtrainer DOJO_MASTER, 1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
@@ -554,6 +554,7 @@ FightingDojoMasterWinText:
 	text "…"
 	done
 	
+FightingDojoMasterLoseText:
 FightingDojoMasterTextNo:
 	text "Then begone…"
 	done

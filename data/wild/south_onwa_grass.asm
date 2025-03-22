@@ -433,7 +433,7 @@
 	db 33, MUNCHLAX		;1%
 	
 	map_id ROUTE_23
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, SHROOMISH	;30%
 	db 35, PONYTA		;30%
@@ -460,7 +460,7 @@
 	db 35, HOUNDOUR		;1%
 	
 	map_id ROUTE_24_NORTH
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, SHROOMISH	;30%
 	db 35, LITWICK		;30%
@@ -487,7 +487,7 @@
 	db 35, HOUNDOUR		;1%
 	
 	map_id ROUTE_24_SOUTH
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, SHROOMISH	;30%
 	db 35, LITWICK		;30%
@@ -514,7 +514,7 @@
 	db 35, HOUNDOUR		;1%
 	
 	map_id ROUTE_25
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 37, SHROOMISH	;30%
 	db 37, PONYTA		;30%
@@ -541,7 +541,7 @@
 	db 37, HOUNDOUR		;1%
 	
 	map_id ROUTE_26
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 37, SHROOMISH	;30%
 	db 37, GIRAFARIG	;30%
@@ -568,7 +568,7 @@
 	db 37, LITWICK		;1%
 	
 	map_id ROUTE_23_WINDY ;Used on windy days
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, DRIFLOON		;30%
 	db 35, PONYTA		;30%
@@ -595,7 +595,7 @@
 	db 35, HOUNDOUR		;1%
 	
 	map_id ROUTE_24_NORTH_WINDY ;Used on windy days
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, DRIFLOON		;30%
 	db 35, SHROOMISH	;30%
@@ -622,7 +622,7 @@
 	db 35, HOUNDOUR		;1%
 	
 	map_id ROUTE_24_SOUTH_WINDY ;Used on windy days
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, DRIFLOON		;30%
 	db 35, SHROOMISH	;30%
@@ -649,7 +649,7 @@
 	db 35, HOUNDOUR		;1%
 	
 	map_id ROUTE_25_WINDY ;Used on windy days
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 37, DRIFLOON		;30%
 	db 37, PONYTA		;30%
@@ -676,7 +676,7 @@
 	db 37, HOUNDOUR		;1%
 	
 	map_id ROUTE_26_WINDY ;Used on windy days
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 37, DRIFLOON		;30%
 	db 37, GIRAFARIG	;30%

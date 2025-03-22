@@ -381,12 +381,13 @@ ShimmerBerryMarket:
 	db -1
 	
 ShimmerMart:
-	db 13 ; # items
+	db 14 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
 	db HYPER_POTION
+	db REVIVE
 	db ESCAPE_ROPE
 	db SUPER_REPEL
 	db FULL_HEAL
@@ -398,12 +399,13 @@ ShimmerMart:
 	db -1
 	
 BrilloMart:
-	db 13 ; # items
+	db 14 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
 	db HYPER_POTION
+	db REVIVE
 	db ESCAPE_ROPE
 	db SUPER_REPEL
 	db FULL_HEAL
@@ -420,12 +422,13 @@ CoinsMart:
 	db -1
 	
 RadiantMart:
-	db 13 ; # items
+	db 14 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
 	db HYPER_POTION
+	db REVIVE
 	db ESCAPE_ROPE
 	db SUPER_REPEL
 	db FULL_HEAL
@@ -437,12 +440,13 @@ RadiantMart:
 	db -1
 	
 DuskMart:
-	db 13 ; # items
+	db 14 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
 	db HYPER_POTION
+	db REVIVE
 	db ESCAPE_ROPE
 	db SUPER_REPEL
 	db FULL_HEAL
@@ -454,12 +458,13 @@ DuskMart:
 	db -1
 	
 KomoreMart:
-	db 13 ; # items
+	db 14 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
 	db HYPER_POTION
+	db REVIVE
 	db ESCAPE_ROPE
 	db SUPER_REPEL
 	db FULL_HEAL

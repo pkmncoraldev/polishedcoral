@@ -16,7 +16,7 @@ Route23_MapScriptHeader:
 	coord_event 30, 36, 2, Route23Master4
 	coord_event 31, 36, 2, Route23Master5
 
-	db 10 ; bg events
+	db 11 ; bg events
 	signpost  8, 24, SIGNPOST_JUMPTEXT, Route23SignText
 	signpost 16,  5, SIGNPOST_JUMPTEXT, Route23FightingDojoSignText
 	signpost  2, 21, SIGNPOST_ITEM + GOLD_LEAF, EVENT_ROUTE_23_HIDDEN_GOLD_LEAF_1
@@ -27,15 +27,16 @@ Route23_MapScriptHeader:
 	signpost 47,  6, SIGNPOST_ITEM + SILVER_LEAF, EVENT_ROUTE_23_HIDDEN_SILVER_LEAF_4
 	signpost 34, 32, SIGNPOST_IFNOTSET, Route23FallenTree
 	signpost 35, 32, SIGNPOST_IFNOTSET, Route23FallenTree
+	signpost 32, 14, SIGNPOST_IFNOTSET, Route23Secret
 
 	db 20 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PINK
 	person_event SPRITE_YOUNGSTER, 23, 31, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer1, -1
-	person_event SPRITE_BLACK_BELT, 49, 30, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer2, -1
-	person_event SPRITE_GENTLEMAN, 26, 17, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer3, -1
-	person_event SPRITE_GRANNY, 32, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route23Trainer4, -1
-	person_event SPRITE_SUPER_NERD, 51, 21, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer5, -1
+	person_event SPRITE_BLACK_BELT, 48, 29, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer2, -1
+	person_event SPRITE_GENTLEMAN, 27, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route23Trainer3, -1
+	person_event SPRITE_GRANNY, 32, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, Route23Trainer4, -1
+	person_event SPRITE_SUPER_NERD, 51, 24, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer5, -1
 	person_event SPRITE_BURGLAR, 46, 20, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, Route23Trainer6, -1
 	person_event SPRITE_BATTLE_GIRL, 33,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, Route23Trainer7, -1
 	person_event SPRITE_COOLTRAINER_M, 22, 13, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, Route23Trainer8, -1
@@ -110,6 +111,28 @@ Route23SetUpLeaves:
 	add 100
 	ld [wObject1SpriteX], a
 	ret
+	
+Route23Secret:
+	dw EVENT_GOT_ROUTE_23_SECRET
+	opentext
+	writebyte MIRACLETONIC
+	copybytetovar wScriptVar
+	itemtotext $0, $0
+	writetext .found_text
+	giveitem ITEM_FROM_MEM
+	iffalse .bag_full
+	setevent EVENT_GOT_ROUTE_23_SECRET
+	specialsound
+	itemnotify
+	endtext
+.bag_full
+	buttonsound
+	pocketisfull
+	endtext
+.found_text
+	; found @ !
+	text_jump UnknownText_0x1c0a1c
+	db "@"
 	
 Route23FallenTree:
 	dw EVENT_GOT_HM04_STRENGTH

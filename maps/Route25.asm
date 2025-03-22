@@ -61,8 +61,10 @@ Route25Trainer1:
 	line "have been passing"
 	cont "through here."
 	
+	para "…"
+	
 	para "The fallen tree"
-	line "is gone? <WAIT_M>I see…"
+	line "is gone? I see…"
 	done
 
 .BeatenText:

@@ -623,27 +623,27 @@ CheckAPressOW: ; 96999
 ; 969ac
 
 CheckBPressOW: ; 96999
-	ld a, [wPlayerState]
-	cp PLAYER_BIKE
-	jr nz, .not_on_bike
-	ld a, [hJoyPressed]
-	and B_BUTTON
-	ret z
-	eventflagcheck EVENT_BIKE_UPGRADED
-	ret z
+	; ld a, [wPlayerState]
+	; cp PLAYER_BIKE
+	; jr nz, .not_on_bike
+	; ld a, [hJoyPressed]
+	; and B_BUTTON
+	; ret z
+	; eventflagcheck EVENT_BIKE_UPGRADED
+	; ret z
 	
-	ld de, SFX_SQUEAK
-	call PlaySFX
-	ld hl, wBikeGear
-	bit 0, [hl] ; ENGINE_BIKE_GEAR
-	jr z, .notset
-	res 0, [hl] ; ENGINE_BIKE_GEAR
-	ret
-.notset
-	set 0, [hl] ; ENGINE_BIKE_GEAR
-	ret
+	; ld de, SFX_SQUEAK
+	; call PlaySFX
+	; ld hl, wBikeGear
+	; bit 0, [hl] ; ENGINE_BIKE_GEAR
+	; jr z, .notset
+	; res 0, [hl] ; ENGINE_BIKE_GEAR
+	; ret
+; .notset
+	; set 0, [hl] ; ENGINE_BIKE_GEAR
+	; ret
 
-.not_on_bike
+; .not_on_bike
 	ld a, [wPlayerState]
 	cp PLAYER_SKATEBOARD_MOVING
 	jr z, .on_skateboard

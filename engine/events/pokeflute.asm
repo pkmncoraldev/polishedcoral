@@ -387,6 +387,7 @@ BrightburgDittoDisguiseSpriteAsm:
 BrightburgClearwPlaceBallsYAsm:
 	xor a
 	ld [wPlaceBallsY], a
+	ld [wMapMusic], a
 	ret
 	
 DittoExclamationAsm:

@@ -193,6 +193,8 @@ IceBlockScript:
 AtmScript:
 	checkcode VAR_FACING
 	ifnotequal UP, WrongSideScript
+	callasm CheckPCOff
+	iftrue .PC_Off
 	checkflag ENGINE_TRAINER_CARD
 	iffalse .no_card
 	opentext
@@ -200,6 +202,8 @@ AtmScript:
 	endtext
 .no_card
 	jumptext AtmNoCardText
+.PC_Off
+	jumptext PCOffText
 	
 AtmNoCardText:
 	text "Welcome!"
@@ -309,8 +313,32 @@ PCScript:
 	checkcode VAR_FACING
 	ifnotequal UP, WrongSideScript
 	opentext
+	callasm CheckPCOff
+	iftrue .PC_Off
 	special PokemonCenterPC
 	endtext
+.PC_Off
+	writetext PCOffText
+	waitbutton
+	endtext
+	
+PCOffText:
+	text "The screen is"
+	line "black."
+	
+	para "It's no use…"
+	done
+	
+CheckPCOff:
+	ld a, [wMapMusic]
+	cp MUSIC_NONE
+	ld a, 0
+	jr nz, .not_off
+	ld a, 1
+.not_off
+	ld [wScriptVar], a
+	ret
+	
 
 ElevatorButtonScript:
 	pause 15

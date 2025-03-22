@@ -527,15 +527,15 @@ XAccuracyDesc:
 
 RepelDesc:
 	db   "Repels weak #-"
-	next "mon for 100 steps.@"
+	next "MON for 100 steps.@"
 
 SuperRepelDesc:
 	db   "Repels weak #-"
-	next "mon for 200 steps.@"
+	next "MON for 200 steps.@"
 
 MaxRepelDesc:
 	db   "Repels weak #-"
-	next "mon for 250 steps.@"
+	next "MON for 250 steps.@"
 
 EscapeRopeDesc:
 	db   "Use for escaping"
@@ -546,8 +546,8 @@ PokeDollDesc:
 	next "a wild #MON.@"
 
 AbilityCapDesc:
-	db   "Switches a #-"
-	next "mon's ability.@"
+	db   "Switches a"
+	next "#MON's ability.@"
 
 LeafStoneDesc:
 FireStoneDesc:

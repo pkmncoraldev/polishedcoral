@@ -4474,8 +4474,8 @@ BlackbeltGroup:
 	db "SHINZO@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 40, MEDICHAM
-	db 42, MIENFOO
+	db 37, MEDICHAM
+	db 40, MIENFOO
 	db -1 ; end
 
 ; ================

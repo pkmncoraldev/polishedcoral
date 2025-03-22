@@ -10,5 +10,7 @@ OftenFleeMons:
 	db -1
 
 AlwaysFleeMons:
-	db SQUIRTLE
+	db ARTICUNO
+	db ZAPDOS
+	db MOLTRES
 	db -1

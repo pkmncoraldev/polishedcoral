@@ -792,6 +792,11 @@ Route23MasterText5:
 	line "for anything and"
 	cont "remain vigilant."
 	
+	para "Heed my warning,"
+	line "and make sure you"
+	cont "are well stocked"
+	cont "for the road."
+	
 	para "Until we meet"
 	line "again, child…"
 	

@@ -147,13 +147,13 @@ TrainerClassAttributes: ; 3959c
 ; Camper
 	db 0, 0 ; items
 	db 5 ; base reward
-	dw AI_BASIC + AI_CAUTIOUS + AI_STATUS
+	dw AI_BASIC + AI_TYPES + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE + SWITCH_RARELY
 
 ; Picnicker
 	db 0, 0 ; items
 	db 5 ; base reward
-	dw AI_BASIC + AI_CAUTIOUS + AI_STATUS
+	dw AI_BASIC + AI_TYPES + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE + SWITCH_RARELY
 
 ; Twins

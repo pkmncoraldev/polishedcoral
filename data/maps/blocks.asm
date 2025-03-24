@@ -880,6 +880,9 @@ Route29_BlockData:
 Route29Meadow_BlockData:
 	INCBIN "maps/Route29Meadow.ablk.lz"
 	
+Route30_BlockData:
+	INCBIN "maps/Route30.ablk.lz"
+	
 Route14_15Underwater_BlockData:
 	INCBIN "maps/Route14_15Underwater.ablk.lz"
 	

@@ -773,3 +773,4 @@ ENDM
 	map_attributes ObscuraFortuneHouse, OBSCURA_FORTUNE_HOUSE, $0, 0
 	map_attributes ObscuraPokeCenter, OBSCURA_POKECENTER, $0, 0
 	map_attributes ObscuraMart, OBSCURA_MART, $0, 0
+	map_attributes Route30, ROUTE_30, $fb, 0

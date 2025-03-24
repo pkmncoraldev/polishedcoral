@@ -177,7 +177,7 @@ FieldMovePokepicScript:
 	cry 0
 	waitsfx
 	closepokepic
-	reloadmappart
+;	reloadmappart
 	end
 
 FieldMoveFailed: ; c779
@@ -914,7 +914,7 @@ FlyFunction: ; ca3b
 
 .FlyScript: ; 0xcaa3
 	scall HandleEventsFly
-	reloadmappart
+;	reloadmappart
 ;	callasm HideSprites
 	special UpdateTimePals
 	callasm PrepareOverworldMove

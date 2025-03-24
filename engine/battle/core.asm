@@ -2850,9 +2850,17 @@ IsSnareTrainer:
 	ret
 	
 IsSetOrderTrainerTrainer:
+	ld a, [wOtherTrainerClass]
+	cp DELINQUENT_M
+	jr nz, .not_beau
+	ld a, [wOtherTrainerID]
+	cp BEAU
+	jr nz, .not_beau
+	scf
+	ret
+.not_beau
 	ld hl, SetOrderTrainers
 	push de
-	ld a, [wOtherTrainerClass]
 	ld de, $1
 	call IsInArray
 	pop de

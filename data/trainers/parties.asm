@@ -2388,9 +2388,9 @@ HikerGroup:
 	db "PHILLIP@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 46, DRILBUR
-	db 44, EXCADRILL
-	db 44, CLODSIRE
+	db 44, DRILBUR
+	db 39, EXCADRILL
+	db 41, CLODSIRE
 	db -1 ; end
 
 ; ================
@@ -3090,8 +3090,8 @@ PokemaniacGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 46, GASTLY
-	db 45, HAUNTER
-	db 44, GENGAR
+	db 40, HAUNTER
+	db 40, HAUNTER
 	db -1 ; end
 
 ; ================
@@ -4278,10 +4278,9 @@ ScientistGroup:
 	db "BARNES@"
 	db TRAINERTYPE_ITEM
 	; party
-	db 46, MAGNEMITE, NO_ITEM
-	db 46, MAGNEMITE, NO_ITEM
+	db 45, MAGNEMITE, NO_ITEM
 	db 44, DROWZEE, EVIOLITE
-	db 44, MUK, NO_ITEM
+	db 42, MUK, NO_ITEM
 	db -1 ; end
 
 ; ================
@@ -4522,11 +4521,11 @@ TeacherGroup:
 
 	; TEACHER
 	db "KINSEY@"
-	db TRAINERTYPE_PERSONALITY
+	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
 	; party
-	db 43, EXEGGUTOR, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM
-	db 43, EXEGGUTOR, ABILITY_1 | QUIRKY, FEMALE | ALOLAN_FORM
-	db 45, SUNFLORA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM
+	db 40, EXEGGUTOR, $66, $66, $66, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM
+	db 40, EXEGGUTOR, $66, $66, $66, ABILITY_1 | QUIRKY, FEMALE | ALOLAN_FORM
+	db 42, SUNFLORA, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM
 	db -1 ; end
 
 ; ================
@@ -4580,9 +4579,9 @@ GuitaristGroup:
 	db "MILLER@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 46, NOIBAT
+	db 44, NOIBAT
 		db HYPER_VOICE, ROAR_WHIRLWIND, CRUNCH, 0
-	db 48, NOIVERN
+	db 40, NOIVERN
 		db HYPER_VOICE, ROAR_WHIRLWIND, AIR_SLASH, 0
 	db -1 ; end
 
@@ -5090,9 +5089,7 @@ DelinquentmGroup:
 	db 46, RATTATA
 		db SUCKER_PUNCH, SCREECH, 0, 0
 	db 44, RATICATE
-		db CRUNCH, SCREECH, DOUBLE_EDGE, REVERSAL
-	db 45, TAUROS
-		db THRASH, 0, 0, 0
+		db CRUNCH, SCREECH, TAKE_DOWN, REVERSAL
 	db -1 ; end
 
 ; ================
@@ -5872,9 +5869,9 @@ AromaLadyGroup:
 	db "DIANE@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 46, GLOOM
+	db 43, GLOOM
 		db GIGA_DRAIN, SYNTHESIS_MOONLIGHT_MORNING_SUN, HEAL_BELL, TOXIC
-	db 45, BELLOSSOM
+	db 42, BELLOSSOM
 		db GIGA_DRAIN, SLEEP_POWDER, QUIVER_DANCE, 0
 	db -1 ; end
 

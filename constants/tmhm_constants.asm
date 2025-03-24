@@ -24,10 +24,10 @@ ENDM
 	const_def
 
 	add_tm WORK_UP_GROWTH	; $00
-	add_tm CHARM			; $01
+	add_tm DRAGON_CLAW		; $01
 	add_tm CURSE			; $02
 	add_tm CALM_MIND		; $03
-	add_tm ROAR_WHIRLWIND	; $04
+	add_tm CHARM			; $04
 	add_tm TOXIC			; $05
 	add_tm HAIL				; $06
 	add_tm BULK_UP			; $07

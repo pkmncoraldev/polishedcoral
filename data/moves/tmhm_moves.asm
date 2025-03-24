@@ -1,9 +1,9 @@
 TMHMMoves:
 	db WORK_UP_GROWTH                      ; TM01
-	db CHARM_FEATHER_DANCE                 ; TM02
+	db DRAGON_CLAW			               ; TM02
 	db CURSE                               ; TM03
 	db CALM_MIND                           ; TM04
-	db ROAR_WHIRLWIND                      ; TM05
+	db CHARM_FEATHER_DANCE                 ; TM05
 	db TOXIC                               ; TM06
 	db HAIL                                ; TM07
 	db BULK_UP			                   ; TM08

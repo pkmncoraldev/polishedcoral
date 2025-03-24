@@ -102,6 +102,8 @@ WhiteoutHandleEvents:
 	clearevent EVENT_BRILLO_MARACTUS_GREEN
 	clearflag ENGINE_ENCOUNTER_HOUSE
 	loadvar wJukeboxSong, 0
+	loadvar wRanchRaceFrames, 0
+	loadvar wRanchRaceSeconds, 0
 	checkevent EVENT_SNARE_GONE_FROM_MUSEUM
 	iftrue .skip2
 	clearevent EVENT_MUSEUM_COLBY_GONE

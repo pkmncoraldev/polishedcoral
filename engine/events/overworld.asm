@@ -899,6 +899,9 @@ FlyFunction: ; ca3b
 	ret
 
 .DoFly: ; ca94
+	xor a
+	ld [wRanchRaceFrames], a
+	ld [wRanchRaceSeconds], a
 	ld hl, .FlyScript
 	call QueueScript
 	ld a, $81
@@ -1737,6 +1740,8 @@ Script_DiveFromMenu: ; 0xcb1c
 	special UpdateTimePals
 
 Script_UsedDive: ; 0xcb20
+	loadvar wRanchRaceFrames, 0
+	loadvar wRanchRaceSeconds, 0
 	callasm PrepareOverworldMove
 	writetext .Text_UsedDive
 	waitbutton
@@ -3094,5 +3099,7 @@ HandleEventsEscapeRope:
 	clearevent EVENT_BRILLO_MARACTUS_GREEN
 	clearflag ENGINE_ENCOUNTER_HOUSE
 	loadvar wJukeboxSong, 0
+	loadvar wRanchRaceFrames, 0
+	loadvar wRanchRaceSeconds, 0
 	end
 	

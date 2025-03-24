@@ -1276,7 +1276,8 @@ BugCatcherGroup:
 	db "AJ@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 44, PUPITAR
+	db 43, CRUSTLE
 	db -1 ; end
 
 ; ================
@@ -2232,7 +2233,7 @@ BirdKeeperGroup:
 	db "MITCH@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 48, ESPATHRA
 	db -1 ; end
 
 ; ================
@@ -2241,7 +2242,10 @@ BirdKeeperGroup:
 	db "KEVIN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 47, FLITTLE
+	db 48, FLITTLE
+	db 49, FLITTLE
+	db 50, FLITTLE
 	db -1 ; end
 
 ; ================
@@ -2703,7 +2707,7 @@ GruntFGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 39, RAPIDASH
+	db 38, RAPIDASH
 	db 40, GIRAFARIG
 	db -1 ; end
 
@@ -2859,7 +2863,8 @@ PokefanMGroup:
 	db "JASON@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 42, SLOWBRO
+	db 42, SLOWKING
 	db -1 ; end
 
 ; ================
@@ -2916,7 +2921,7 @@ PokefanFGroup:
 	db "YVONNE@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 45, FARIGIRAF
+	db 41, FARIGIRAF
 		db CRUNCH, DOUBLE_HIT, AGILITY_ROCK_POLISH, TWIN_BEAM
 	db -1 ; end
 
@@ -4088,7 +4093,7 @@ SwimmerMGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 33, MACHOKE
-	db 33, SLOWKING
+	db 33, SLOWBRO
 	db -1 ; end
 
 ; ================
@@ -4761,9 +4766,12 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM
 	db "KEN@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 42, TOUCANNON
+		db DRILL_PECK, ROCK_BLAST, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON, 0
+	db 42, TOUCANNON
+		db DRILL_PECK, BULLET_SEED, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON, 0
 	db -1 ; end
 
 ; ================
@@ -4840,9 +4848,12 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF
 	db "TAMMY@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 42, TOGEKISS
+		db HYPER_VOICE, ANCIENTPOWER, SAFEGUARD, AIR_SLASH
+	db 42, RAPIDASH
+		db AGILITY_ROCK_POLISH, FLAME_BURST, TAKE_DOWN, FIRE_SPIN
 	db -1 ; end
 
 ; ================

@@ -3,19 +3,20 @@ GreenGrotto2F_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 1 ; warp events
-	warp_def 19,  7, 2, ROUTE_29
+	db 2 ; warp events
+	warp_def 21,  7, 2, ROUTE_29
+	warp_def  5, 27, 3, ROUTE_29
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 5 ; object events
-	object_event  7,  3, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, NOIVERN, -1, -1, (1 << 3) | PAL_NPC_PURPLE, PERSONTYPE_SCRIPT, 0, GreenGrotto2FNoivern, EVENT_GREEN_GROTTO_2F_NOIVERN_GONE
-	strengthboulder_event  2, 13, -1
-	strengthboulder_event  3, 12, -1
-	strengthboulder_event 14,  9, -1
-	strengthboulder_event 15,  9, -1
+	object_event  7,  5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, NOIVERN, -1, -1, (1 << 3) | PAL_NPC_PURPLE, PERSONTYPE_SCRIPT, 0, GreenGrotto2FNoivern, EVENT_GREEN_GROTTO_2F_NOIVERN_GONE
+	strengthboulder_event  2, 15, -1
+	strengthboulder_event  3, 14, -1
+	strengthboulder_event 14, 11, -1
+	strengthboulder_event 15, 11, -1
 	
 	
 GreenGrotto2FNoivern:

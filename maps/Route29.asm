@@ -4,22 +4,25 @@ Route29_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route29Callback
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_def  7, 66, 2, GREEN_GROTTO_1F
 	warp_def 11, 54, 1, GREEN_GROTTO_2F
+	warp_def  3, 58, 2, GREEN_GROTTO_2F
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost 12, 68, SIGNPOST_JUMPTEXT, Route29SignText
 
-	db 7 ; object events
+	db 8 ; object events
 	person_event SPRITE_POKEFAN_M, 13, 43, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, Route29Trainer1, -1
 	person_event SPRITE_BIRD_KEEPER, 14,  9, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, Route29Trainer2, -1
 	person_event SPRITE_BUG_CATCHER, 12, 18, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route29Trainer3, -1
-	person_event SPRITE_COOLTRAINER_F, 16, 69, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, Route29Trainer4, -1
+	person_event SPRITE_COOLTRAINER_F, 15, 69, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, Route29Trainer4, -1
 	person_event SPRITE_COOLTRAINER_M, 19, 55, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, Route29Trainer5, -1
 	person_event SPRITE_BIRD_KEEPER, 16, 30, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route29Trainer6, -1
 	fruittree_event 39,  4, FRUITTREE_ROUTE_29, LUM_BERRY
+	tmhmball_event 56,  6, TM_DRAGON_CLAW, EVENT_ROUTE_29_DRAGON_CLAW_TM
 	
 	
 Route29Callback:
@@ -29,6 +32,16 @@ Route29Callback:
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_VALVE_1
 .skip
 	return
+	
+Route29SignText:
+	text "ROUTE 29"
+	
+	para "NORTHEAST:"
+	line "BRIGHTBURG"
+	
+	para "WEST:"
+	line "OBSCURA CITY"
+	done
 	
 Route29Trainer1:
 	generictrainer POKEFANM, JASON, EVENT_BEAT_ROUTE_29_TRAINER_1, .SeenText, .BeatenText

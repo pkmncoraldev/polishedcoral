@@ -32,6 +32,7 @@ Marts: ; 160a9
 	dw RadiantMart
 	dw DuskMart
 	dw KomoreMart
+	dw ObscuraMart
 	dw LusterMallElectronicsDeco
 	dw LusterMallFurniture
 	dw MooMoos1
@@ -472,6 +473,24 @@ DuskMart:
 	db -1
 	
 KomoreMart:
+	db 14 ; # items
+	db POKE_BALL
+	db GREAT_BALL
+	db ULTRA_BALL
+	db SUPER_POTION
+	db HYPER_POTION
+	db REVIVE
+	db ESCAPE_ROPE
+	db SUPER_REPEL
+	db FULL_HEAL
+	db X_ATTACK
+	db X_DEFEND
+	db X_SPEED
+	db X_SPCL_ATK
+	db X_SPCL_DEF
+	db -1
+	
+ObscuraMart:
 	db 14 ; # items
 	db POKE_BALL
 	db GREAT_BALL

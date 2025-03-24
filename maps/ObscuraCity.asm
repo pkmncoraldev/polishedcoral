@@ -7,19 +7,23 @@ ObscuraCity_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, ObscuraCityFlyPoint
 	callback MAPCALLBACK_TILES, ObscuraCityCallback
 
-	db 5 ; warp events
+	db 7 ; warp events
 	warp_def 13, 22, 1, OBSCURA_MUSEUM_1F
 	warp_def 13, 23, 2, OBSCURA_MUSEUM_1F
 	warp_def  9, 29, 1, OBSCURA_MUSEUM_EMPLOYEE_ROOM
 	warp_def 10, 29, 2, OBSCURA_MUSEUM_EMPLOYEE_ROOM
 	warp_def 35,  5, 1, OBSCURA_FORTUNE_HOUSE
+	warp_def 39, 21, 1, OBSCURA_POKECENTER
+	warp_def 37, 31, 2, OBSCURA_MART
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 5 ; bg events
 	signpost 14, 24, SIGNPOST_JUMPTEXT, ObscuraCityMuseumSign
 	signpost  9, 32, SIGNPOST_JUMPTEXT, ObscuraCityMuseumBackSign
 	signpost 35,  8, SIGNPOST_JUMPTEXT, ObscuraCityFortuneTellerSign
+	signpost 32, 33, SIGNPOST_JUMPTEXT, ObscuraCityUnfinishedSign
+	signpost 33, 33, SIGNPOST_JUMPTEXT, ObscuraCityUnfinishedSign
 
 	db 4 ; object events
 	person_event SPRITE_SNARE, 14, 22, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraCitySnare1, EVENT_SNARE_GONE_FROM_MUSEUM
@@ -33,6 +37,33 @@ ObscuraCity_MapScriptHeader:
 	const OBSCURA_CITY_SNARE_2
 	const OBSCURA_CITY_ROCKY
 	const OBSCURA_CITY_DARCY
+	
+ObscuraCityUnfinishedSign:
+	text "PLEASE EXCUSE"
+	line "OUR MESS!"
+	
+	para "This part of the"
+	line "game is still"
+	cont "being made."
+	
+	para "Nothing in this"
+	line "town works except"
+	cont "the CENTER, MART,"
+	cont "and the MUSEUM."
+	
+	para "The NPCs in front"
+	line "of the MUSEUM say"
+	cont "it's closed, but"
+	cont "that's part of"
+	cont "the game."
+	
+	para "You can find a way"
+	line "inside."
+	
+	para "After that, the"
+	line "game is over for"
+	cont "now, though."
+	done
 	
 ObscuraCityTrigger0:
 	end

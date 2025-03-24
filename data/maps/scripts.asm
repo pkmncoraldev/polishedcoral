@@ -17,6 +17,7 @@ INCLUDE "maps/DuskPokeCenter.asm"
 INCLUDE "maps/KomorePokeCenter.asm"
 INCLUDE "maps/BrightPokeCenter.asm"
 INCLUDE "maps/Route28PokeCenter.asm"
+INCLUDE "maps/ObscuraPokeCenter.asm"
 
 
 SECTION "Pokemon Mart Scripts 1", ROMX
@@ -33,6 +34,7 @@ INCLUDE "maps/BrilloMart.asm"
 INCLUDE "maps/DuskMart.asm"
 INCLUDE "maps/KomoreMart.asm"
 INCLUDE "maps/BrightMart.asm"
+INCLUDE "maps/ObscuraMart.asm"
 
 
 SECTION "Dungeon Scripts", ROMX

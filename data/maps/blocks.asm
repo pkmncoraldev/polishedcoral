@@ -17,6 +17,7 @@ DuskPokeCenter_BlockData:
 KomorePokeCenter_BlockData:
 BrightPokeCenter_BlockData:
 Route28PokeCenter_BlockData:
+ObscuraPokeCenter_BlockData:
 	INCBIN "maps/PokeCenter.ablk.lz"
 
 GlintMart_BlockData:
@@ -31,6 +32,7 @@ ShimmerMart_BlockData:
 DuskMart_BlockData:
 KomoreMart_BlockData:
 BrightMart_BlockData:
+ObscuraMart_BlockData:
 GenericMart_BlockData:: ; used by tilesets/palettes.asm:LoadSpecialMapPalette
 	INCBIN "maps/Mart.ablk.lz"
 	

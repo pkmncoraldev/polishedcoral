@@ -241,7 +241,7 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; f0
 	tilecoll WALL, WALL, WALL, WALL ; f1
 	tilecoll WALL, WALL, WALL, WALL ; f2
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f3
+	tilecoll SUNFLOWER, FLOOR, SUNFLOWER, FLOOR ; f3
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f4
 	tilecoll FLOOR, FLOOR, FLOOR, WARP_CARPET_DOWN ; f5
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, FLOOR ; f6

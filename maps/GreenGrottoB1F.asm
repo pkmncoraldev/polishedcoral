@@ -33,6 +33,7 @@ GreenGrottoB1F_MapScriptHeader:
 	
 	
 GreenGrottoB1FCallback:
+	clearevent EVENT_OTTO_TALKS_ABOUT_RIVAL
 	checkevent EVENT_GREEN_GROTTO_BOULDER_1
 	iffalse .skip1
 	changeblock $8, $a, $5a

@@ -15,13 +15,12 @@ Route28_MapScriptHeader:
 	coord_event 28, 55, 0, Route28ColbyStopsYouL
 	coord_event 29, 55, 0, Route28ColbyStopsYou
 
-	db 8 ; bg events
+	db 7 ; bg events
 	signpost 43, 27, SIGNPOST_ITEM + MAX_REVIVE, EVENT_ROUTE_28_HIDDEN_ITEM_1
 	signpost 20, 33, SIGNPOST_ITEM + ELIXIR, EVENT_ROUTE_28_HIDDEN_ITEM_2
 	signpost 39, 33, SIGNPOST_ITEM + MAX_POTION, EVENT_ROUTE_28_HIDDEN_ITEM_3
 	signpost 14, 12, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_28_HIDDEN_ITEM_4
 	signpost 56, 35, SIGNPOST_ITEM + ENERGY_ROOT, EVENT_ROUTE_28_HIDDEN_ITEM_5
-	signpost -5, -4, SIGNPOST_READ, BrightburgPokeCenterSign
 	signpost 13, 31, SIGNPOST_READ, Route28Sign
 	signpost 62, 30, SIGNPOST_READ, GreenGrottoSign
 
@@ -298,6 +297,7 @@ Route28ColbyStopsYou:
 	special Special_FadeOutMusic
 	pause 15
 	setevent EVENT_ROUTE_28_CUTSCENE_DONE
+	setevent EVENT_OTTO_TALKS_ABOUT_RIVAL
 	playmapmusic
 	dotrigger $1
 	end

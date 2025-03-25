@@ -39,6 +39,7 @@ Marts: ; 160a9
 	dw MooMoos2
 	dw ShimmerCafe
 	dw PollenMart
+	dw OttoMart
 MartsEnd:
 
 
@@ -542,4 +543,12 @@ PollenMart:
 	dbw SWEET_HONEY,		  40
 	dbw BERRY_JUICE,		  30
 	dbw BOTTLE_CAP,			  25
+	db -1
+	
+OttoMart:
+	db 4 ; # items
+	db ENERGYPOWDER
+	db ENERGY_ROOT
+	db HEAL_POWDER
+	db REVIVAL_HERB
 	db -1

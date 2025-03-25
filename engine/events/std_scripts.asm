@@ -225,7 +225,23 @@ PokeCenterChanseyText:
 	done
 	
 SunflowerScript:
+	callasm CheckSunflowerOrHerbs
+	ifequal $1, .herbs
 	farjumptext SunflowerText
+.herbs
+	farjumptext HerbsText
+	
+CheckSunflowerOrHerbs:
+	ld a, [wMapGroup]
+	cp GROUP_ROUTE_28
+	jr z, .herbs
+	ld a, 0
+	ld [wScriptVar], a
+	ret
+.herbs
+	ld a, 1
+	ld [wScriptVar], a
+	ret
 	
 DeadLampScript:
 	farjumptext DeadLampText

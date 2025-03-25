@@ -3,6 +3,13 @@ SunflowerText:
 	line "sunflowers!"
 	done
 
+HerbsText:
+	text "Some stinky herbs"
+	line "are growing."
+	
+	para "Yuck!"
+	done
+
 NurseMornText:
 	text "Good morning!"
 	done

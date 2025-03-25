@@ -769,7 +769,7 @@ ENDM
 	map_attributes ObscuraMuseumEmployeeRoom, OBSCURA_MUSEUM_EMPLOYEE_ROOM, $0, 0
 	map_attributes ObscuraGym, OBSCURA_GYM, $0, 0
 	map_attributes ObscuraMuseumPhoto, OBSCURA_MUSEUM_PHOTO, $0, 0
-	map_attributes Route28PokeCenter, ROUTE_28_POKECENTER, $0, 0
+	map_attributes Route28OttosTent, ROUTE_28_OTTOS_TENT, $0, 0
 	map_attributes ObscuraFortuneHouse, OBSCURA_FORTUNE_HOUSE, $0, 0
 	map_attributes ObscuraPokeCenter, OBSCURA_POKECENTER, $0, 0
 	map_attributes ObscuraMart, OBSCURA_MART, $0, 0

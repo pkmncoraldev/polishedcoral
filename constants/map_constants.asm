@@ -443,7 +443,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_25_GATE,                          	   4,  4 ; 7
 	map_const BRIGHTBURG_GATE,							   5,  4 ; 8
 	map_const ROUTE_28,									  20, 38 ; 9
-	map_const ROUTE_28_POKECENTER,                     	   6,  4 ; 10
+	map_const ROUTE_28_OTTOS_TENT,                     	   2,  3 ; 10
 	map_const ROUTE_30,									   7,  5 ; 
 	
 	newgroup													 ; 24

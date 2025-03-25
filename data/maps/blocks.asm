@@ -16,7 +16,6 @@ BrilloPokeCenter_BlockData:
 DuskPokeCenter_BlockData:
 KomorePokeCenter_BlockData:
 BrightPokeCenter_BlockData:
-Route28PokeCenter_BlockData:
 ObscuraPokeCenter_BlockData:
 	INCBIN "maps/PokeCenter.ablk.lz"
 
@@ -974,4 +973,7 @@ GlintGroveUnderground_BlockData:
 	
 GreenGrotto2F_BlockData:
 	INCBIN "maps/GreenGrotto2F.ablk.lz"
+	
+Route28OttosTent_BlockData:
+	INCBIN "maps/Route28OttosTent.ablk.lz"
 	

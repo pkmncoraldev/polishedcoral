@@ -16,7 +16,6 @@ INCLUDE "maps/BrilloPokeCenter.asm"
 INCLUDE "maps/DuskPokeCenter.asm"
 INCLUDE "maps/KomorePokeCenter.asm"
 INCLUDE "maps/BrightPokeCenter.asm"
-INCLUDE "maps/Route28PokeCenter.asm"
 INCLUDE "maps/ObscuraPokeCenter.asm"
 
 
@@ -464,6 +463,7 @@ INCLUDE "maps/Route28.asm"
 INCLUDE "maps/Route29.asm"
 INCLUDE "maps/Route29Meadow.asm"
 INCLUDE "maps/Route30.asm"
+INCLUDE "maps/Route28OttosTent.asm"
 
 SECTION "Obscura Scripts", ROMX
 INCLUDE "maps/ObscuraCity.asm"

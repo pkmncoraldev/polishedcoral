@@ -76,7 +76,8 @@ TilesetStarglowGFX1::
 INCBIN "gfx/tilesets/glint.2bpp.vram1.lz"
 
 TilesetGlintGFX2 EQU 0
-TilesetStarglowGFX2 EQU 0
+TilesetStarglowGFX2::
+INCBIN "gfx/tilesets/glint.2bpp.vram2.lz"
 
 TilesetGlintMeta::
 INCBIN "data/tilesets/glint_metatiles.bin.lz"

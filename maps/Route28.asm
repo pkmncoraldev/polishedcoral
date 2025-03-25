@@ -8,7 +8,7 @@ Route28_MapScriptHeader:
 	db 4 ; warp events
 	warp_event 20, 16, ROUTE_1, 1
 	warp_event 21, 17, ROUTE_1, 1
-	warp_event 31, 57, ROUTE_28_POKECENTER, 1
+	warp_event 33, 57, ROUTE_28_OTTOS_TENT, 1
 	warp_event 18, 65, GREEN_GROTTO_1F, 1
 
 	db 2 ; coord events
@@ -20,8 +20,8 @@ Route28_MapScriptHeader:
 	signpost 20, 33, SIGNPOST_ITEM + ELIXIR, EVENT_ROUTE_28_HIDDEN_ITEM_2
 	signpost 39, 33, SIGNPOST_ITEM + MAX_POTION, EVENT_ROUTE_28_HIDDEN_ITEM_3
 	signpost 14, 12, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_28_HIDDEN_ITEM_4
-	signpost 56, 35, SIGNPOST_ITEM + MAX_REPEL, EVENT_ROUTE_28_HIDDEN_ITEM_5
-	signpost 57, 32, SIGNPOST_READ, BrightburgPokeCenterSign
+	signpost 56, 35, SIGNPOST_ITEM + ENERGY_ROOT, EVENT_ROUTE_28_HIDDEN_ITEM_5
+	signpost -5, -4, SIGNPOST_READ, BrightburgPokeCenterSign
 	signpost 13, 31, SIGNPOST_READ, Route28Sign
 	signpost 62, 30, SIGNPOST_READ, GreenGrottoSign
 
@@ -98,10 +98,6 @@ Route28NPC1Text:
 	para "I've never heard"
 	line "of that!"
 	
-	para "I think there's"
-	line "another #MON"
-	cont "CENTER up ahead."
-	
 	para "Guess I gotta"
 	line "keep moving!"
 	done
@@ -121,8 +117,8 @@ Route28NPC2:
 Route28NPC2Text1:
 	text "I saw a kid with"
 	line "spikey hair go"
-	cont "into the #MON"
-	cont "CENTER ahead."
+	cont "into that tent"
+	cont "up ahead."
 	
 	para "He looked like"
 	line "he was with TEAM"
@@ -166,9 +162,9 @@ Route28ColbyStopsYou:
 	disappear ROUTE_28_COLBY
 	disappear ROUTE_28_SNARE_1
 	disappear ROUTE_28_SNARE_2
-	moveperson ROUTE_28_COLBY, 31, 57
-	moveperson ROUTE_28_SNARE_1, 31, 57
-	moveperson ROUTE_28_SNARE_2, 31, 57
+	moveperson ROUTE_28_COLBY, 33, 57
+	moveperson ROUTE_28_SNARE_1, 33, 57
+	moveperson ROUTE_28_SNARE_2, 33, 57
 	spriteface PLAYER, DOWN
 	playsound SFX_EXIT_BUILDING
 	appear ROUTE_28_SNARE_1
@@ -310,7 +306,7 @@ Route28ColbyStopsYou:
 	end
 	
 Route28ColbyText1:
-	text "Right."
+	text "You."
 	
 	para "I should've known"
 	line "you'd show up at"
@@ -413,9 +409,11 @@ Movement_Route28_Snare_3:
 	step_down
 	step_left
 	step_left
+	step_left
 	step_end
 	
 Movement_Route28_Snare_4:
+	step_left
 	step_left
 	step_down
 	step_down
@@ -439,6 +437,8 @@ Movement_Route28_Colby_2_Left:
 	step_left
 ; fallthrough
 Movement_Route28_Colby_2:
+	step_left
+	step_left
 	step_left
 	step_left
 	step_sleep 10

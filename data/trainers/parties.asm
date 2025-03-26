@@ -2233,7 +2233,7 @@ BirdKeeperGroup:
 	db "MITCH@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 48, ESPATHRA
+	db 46, ESPATHRA
 	db -1 ; end
 
 ; ================

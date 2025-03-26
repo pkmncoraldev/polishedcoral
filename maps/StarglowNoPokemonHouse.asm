@@ -1,8 +1,7 @@
 StarglowNoPokemonHouse_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, StarglowNoPokemonHouseCallback
+	db 0 ; callbacks
 
 	db 2 ; warp events
 	warp_def 7, 3, 2, STARGLOW_VALLEY
@@ -14,19 +13,12 @@ StarglowNoPokemonHouse_MapScriptHeader:
 
 	db 2 ; object events
 	person_event SPRITE_SUPER_NERD, 4, 5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowHouse2NPC, -1
-	tapeball_event  3, 3, MUSIC_STARGLOW_VALLEY, 1, EVENT_MUSIC_STARGLOW_VALLEY
+	tapeball_event  3, 3, MUSIC_TEAM_SNARE_ENCOUNTER, 2, EVENT_MUSIC_TEAM_SNARE_ENCOUNTER
 
 
 	const_def 1 ; object constants
 	const STARGLOW_NO_POKEMON_HOUSE_NPC
 	const STARGLOW_NO_POKEMON_HOUSE_TAPE
-
-StarglowNoPokemonHouseCallback:
-	checkevent EVENT_PUNKS_HAVENT_LEFT_STARGLOW
-	iffalse .end
-	moveperson STARGLOW_NO_POKEMON_HOUSE_TAPE, -1, -1
-.end
-	return
 
 StarglowHouse2NPC:
 	checkevent EVENT_PUNKS_HAVENT_LEFT_STARGLOW

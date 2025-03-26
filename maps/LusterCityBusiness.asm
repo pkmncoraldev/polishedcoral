@@ -27,7 +27,7 @@ LusterCityBusiness_MapScriptHeader:
 	db 1 ; bg events
 	signpost 12, 23, SIGNPOST_READ, NettBuildingSign
 
-	db 12 ; object events
+	db 13 ; object events
 	person_event SPRITE_TRAFFIC_LIGHT, 24, 14, SPRITEMOVEDATA_TILE_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
 	person_event SPRITE_POKEMANIAC, 33, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3NPC1, -1
 	person_event SPRITE_SUPER_NERD, 29, 30, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3NPC2, -1
@@ -40,6 +40,7 @@ LusterCityBusiness_MapScriptHeader:
 	person_event SPRITE_POKEFAN_F, 24, 18, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster3NPC9, -1
 	person_event SPRITE_CHILD, 25, 18, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Luster3NPC10, -1
 	person_event SPRITE_COLBY,  0,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	tapeball_event 43, 13, MUSIC_RIVAL_BATTLE, 2, EVENT_MUSIC_RIVAL_BATTLE
 
 	const_def 1 ; object constants
 	const LUSTERBUSINESS_TRAFFIC_LIGHT

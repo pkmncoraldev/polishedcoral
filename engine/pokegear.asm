@@ -1091,11 +1091,11 @@ TownMap_ConvertLineBreakCharacters2: ; 1de2c5
 	jp PlaceString
 
 TownMap_GetNorthOnwaLandmarkLimits:
-	lb de, ROUTE_15, SUNSET_BAY
+	lb de, ROUTE_16, SUNSET_BAY
 	ret
 
 TownMap_GetSouthOnwaLandmarkLimits: ; 910e8
-	lb de, DESERT_WASTELAND, ROUTE_16
+	lb de, DESERT_WASTELAND, SHIMMER_CITY
 	eventflagcheck EVENT_CAN_GO_TO_DESERT
 	ret nz
 	ld d, OBSCURA_CITY
@@ -2410,10 +2410,16 @@ PokegearMap: ; 91ae1
 .north
 	xor a
 	ld [wWarpNumber], a
+	ld b, CGB_POKEGEAR_PALS
+	call GetCGBLayout
+	call SetPalettes
 	jp FillNorthOnwaMap
 .south
 	ld a, 1
 	ld [wWarpNumber], a
+	ld b, CGB_POKEGEAR_PALS
+	call GetCGBLayout
+	call SetPalettes
 	jp FillSouthOnwaMap
 
 _FlyMap: ; 91af3
@@ -3278,7 +3284,7 @@ endm
 	townmappals 2, 2, 2, 3, 3, 7, 0, 0, 2, 2, 4, 2, 5, 6, 6, 5
 	townmappals 2, 2, 7, 3, 4, 5, 0, 0, 2, 2, 0, 4, 3, 3, 3, 6
 	townmappals 2, 2, 2, 7, 7, 4, 0, 0, 3, 7, 4, 0, 0, 0, 0, 0
-	townmappals 2, 2, 2, 7, 2, 2, 4, 6, 4, 6, 2, 0, 0, 0, 0, 0
+	townmappals 2, 2, 2, 7, 2, 2, 4, 6, 4, 6, 2, 4, 0, 0, 0, 0
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 

@@ -22,8 +22,8 @@ Landmarks: ; 0x1ca8c3
 	landmark  88, 100, Route6Name
 	landmark  76,  92, Route7Name
 	landmark  60,  92, LakeOnwaName
-	landmark  84, 116, SunbeamIslandName
-	landmark  92, 116, SunbeamJungleName
+	landmark  84, 124, SunbeamIslandName
+	landmark  92, 124, SunbeamJungleName
 	landmark  76,  76, Route8Name
 	landmark 116,  76, EventideForestName
 	landmark 124,  84, EventideVillageName
@@ -43,7 +43,7 @@ Landmarks: ; 0x1ca8c3
 	landmark  68, 108, Route13Name
 	landmark  44, 116, Route14Name
 	landmark  64, 124, Route15Name
-	landmark  36,  40, Route16Name
+	landmark  84, 112, Route16Name
 	
 	landmark 116,  68, OldManorName
 	landmark  24,  56, LusterStationName
@@ -55,33 +55,33 @@ Landmarks: ; 0x1ca8c3
 	landmark   0,   0, UnkownPassageName
 	landmark   7,  14, ConnectingCavernName
 	
-	landmark  36,  52, ShimmerName
-	landmark  48,  60, Route19Name
-	landmark  60,  52, SeasideCaveName
-	landmark  52,  72, Route20Name
-	landmark  60,  84, RadiantName
-	landmark  68,  72, Route21Name
-	landmark  68,  60, DuskTurnpikeName
-	landmark  80,  52, Route22Name
-	landmark 100,  52, CrossroadsName
-	landmark   0,   0, Route23Name
-	landmark   0,   0, KomoreVillageName
-	landmark   0,   0, Route24Name
-	landmark   0,   0, Route25Name
-	landmark   0,   0, Route26Name
-	landmark   0,   0, Route27Name
-	landmark   0,   0, BrightburgName
-	landmark   0,   0, Route28Name
-	landmark   0,   0, Route29Name
-	landmark   0,   0, GreenGrottoName
-	landmark   0,   0, ObscuraCityName
-	landmark   0,   0, Route30Name
-	landmark   0,   0, AureoleTownName
+	landmark  36,  44, ShimmerName
+	landmark  52,  52, Route19Name
+	landmark  60,  44, SeasideCaveName
+	landmark  52,  68, Route20Name
+	landmark  60,  76, RadiantName
+	landmark  68,  68, Route21Name
+	landmark  68,  52, DuskTurnpikeName
+	landmark  70,  44, Route22Name
+	landmark 100,  44, CrossroadsName
+	landmark 100,  60, Route23Name
+	landmark 100,  76, KomoreVillageName
+	landmark  84,  68, Route24Name
+	landmark 116,  60, Route25Name
+	landmark 112,  76, Route26Name
+	landmark 116,  80, Route27Name
+	landmark 116,  92, BrightburgName
+	landmark 116, 104, Route28Name
+	landmark 116, 116, GreenGrottoName
+	landmark 104, 116, Route29Name
+	landmark  92, 116, ObscuraCityName
+	landmark 128,  92, Route30Name
+	landmark 140,  68, AureoleTownName
 	
-	landmark  20, 124, BrilloTownName
-	landmark  28, 124, Route17Name
-	landmark  28, 116, Route18Name
-	landmark  28, 108, DesertWastelandName
+	landmark  28, 124, BrilloTownName
+	landmark  40, 124, Route17Name
+	landmark  44, 120, Route18Name
+	landmark  44, 108, DesertWastelandName
 	
 	
 	landmark -16, -16, GateName
@@ -160,7 +160,7 @@ LusterStationName:	   db "LUSTER¯CITY@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"
 ShoppingName:		   db "SHOPPING¯DISTRICT@"
 BusinessName:	 	   db "BUSINESS¯DISTRICT@"
-UnkownPassageName:	   db "UNKNOWN PASSAGE@"
+UnkownPassageName:	   db "UNKNOWN¯PASSAGE@"
 ConnectingCavernName:  db "CONNECTING¯CAVERN@"
 GateName:	 	 	   db "UNKNOWN@"
 DiveName:	 	 	   db "UNDERWATER@"

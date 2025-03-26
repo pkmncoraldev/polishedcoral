@@ -76,8 +76,8 @@ SOUTH_ONWA_LANDMARK EQU const_value
 	const ROUTE_27
 	const BRIGHTBURG
 	const ROUTE_28
-	const ROUTE_29
 	const GREEN_GROTTO
+	const ROUTE_29
 	const OBSCURA_CITY
 	const ROUTE_30
 	const AUREOLE_TOWN

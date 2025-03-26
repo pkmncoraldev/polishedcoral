@@ -2,7 +2,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, FIRE
-	db 15 ; catch rate
+	db 10 ; catch rate
 	db 248 ; base exp
 	db SILVERPOWDER ; item 1
 	db SILVERPOWDER ; item 2

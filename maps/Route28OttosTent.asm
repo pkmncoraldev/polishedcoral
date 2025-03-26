@@ -12,7 +12,7 @@ Route28OttosTent_MapScriptHeader:
 	db 0 ; bg events
 
 	db 2 ; object events
-	person_event SPRITE_ELDER,  3,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route28OttosTentOtto, -1
+	person_event SPRITE_OTTO,  3,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route28OttosTentOtto, -1
 	object_event  1,  3, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TOGEPI, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, Route28OttosTentTogepi, -1
 	
 Route28OttosTentOtto:

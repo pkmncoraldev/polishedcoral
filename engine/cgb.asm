@@ -950,10 +950,10 @@ MartClerkPals:
 	RGB 30, 22, 17
 	RGB 13, 08, 25
 	RGB 00, 00, 00
-;Otto Blue
+;Otto Tan
 	RGB 31, 31, 31
-	RGB 30, 22, 17
-	RGB 07, 07, 17
+	RGB 27, 24, 16
+	RGB 23, 15, 09
 	RGB 00, 00, 00
 
 _CGB_PackPals: ; 93d3

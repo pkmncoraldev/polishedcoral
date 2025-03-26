@@ -219,6 +219,7 @@
 	const SPRITE_CLEFABLE_WALK
 	const SPRITE_HILL
 	const SPRITE_SKATER_BOSS
+	const SPRITE_OTTO
 	
 	const_def $ed
 SPRITE_POKEMON EQU const_value

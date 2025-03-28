@@ -63,6 +63,12 @@ ObscuraCityUnfinishedSign:
 	para "After that, the"
 	line "game is over for"
 	cont "now, though."
+	
+	para "Oh, and there is"
+	line "something to do"
+	cont "in BRIGHTBURG, in"
+	cont "case you missed"
+	cont "that."
 	done
 	
 ObscuraCityTrigger0:
@@ -150,6 +156,10 @@ ObscuraCityTrigger1:
 .girl
 	writetext ObscuraCityDarcyText5_girl
 .cont
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext ObscuraCityDarcyText6
 	waitbutton
 	closetext
 	pause 5
@@ -224,6 +234,8 @@ ObscuraCityRockyText1:
 	para "She's going to be"
 	line "very upset it was"
 	cont "stolen."
+	
+	para "…"
 	
 	para "You know the kid"
 	line "that took it,"
@@ -339,42 +351,24 @@ ObscuraCityDarcyText4:
 	
 ObscuraCityDarcyText5:
 	text "He'd better!"
-	
-	para "Legend or not,"
-	line "you know as well"
-	cont "as I do how impor-"
-	cont "tant that stone is"
-	cont "to our family!"
-	
-	para "To the people of"
-	line "ERROR!!"		;TODO come up with town name
-	
-	para "You do remember"
-	line "ERROR!!"		;TODO come up with town name
-	cont "don't you ROCKY?"
-	
-	para "You were only born"
-	line "and raised there."
-	
-	para "You may not care"
-	line "anymore, but I do,"
-	cont "“ROCKFORD”!"
 	done
 	
 ObscuraCityDarcyText5_girl:
 	text "She'd better!"
+	done
 	
-	para "Legend or not,"
+ObscuraCityDarcyText6:
+	text "Legend or not,"
 	line "you know as well"
 	cont "as I do how impor-"
 	cont "tant that stone is"
 	cont "to our family!"
 	
 	para "To the people of"
-	line "ERROR!!"
+	line "LUMINA TOWN!"		;TODO come up with town name
 	
 	para "You do remember"
-	line "ERROR!!,"
+	line "LUMINA TOWN!"		;TODO come up with town name
 	cont "don't you ROCKY?"
 	
 	para "You were only born"
@@ -384,7 +378,6 @@ ObscuraCityDarcyText5_girl:
 	line "anymore, but I do,"
 	cont "“ROCKFORD”!"
 	done
-	
 	
 ObscuraCityFlyPoint:
 	setflag ENGINE_FLYPOINT_OBSCURA

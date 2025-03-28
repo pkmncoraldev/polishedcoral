@@ -224,6 +224,7 @@ SpriteHeaders:
 	overworld_sprite HillSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SkaterBossSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite OttoSpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite TogepiOwSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

@@ -391,6 +391,7 @@ ObscuraCityFlyPoint:
 	return
 	
 ObscuraCityCallback:
+	setevent EVENT_BRIGHTBURG_PLAYER_DUPE
 	callasm MusuemKeyboardAsm3
 	clearevent EVENT_MUSEUM_FAILED_TERMINAL
 	checkevent EVENT_SNARE_AT_MUSEUM

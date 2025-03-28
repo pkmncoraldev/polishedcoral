@@ -220,6 +220,7 @@
 	const SPRITE_HILL
 	const SPRITE_SKATER_BOSS
 	const SPRITE_OTTO
+	const SPRITE_TOGEPI
 	
 	const_def $ed
 SPRITE_POKEMON EQU const_value

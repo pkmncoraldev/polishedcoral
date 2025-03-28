@@ -3,8 +3,9 @@ Brightburg_MapScriptHeader:
 	scene_script BrightburgTrigger0
 	scene_script BrightburgTrigger1
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, BrightburgFlyPoint
+	callback MAPCALLBACK_TILES, BrightburgCallback
 
 	db 8 ; warp events
 	warp_event 19,  9, BRIGHT_POKECENTER, 1
@@ -32,6 +33,7 @@ Brightburg_MapScriptHeader:
 	person_event SPRITE_BUG_MANIAC, 19, 18, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BrightburgNPC3, EVENT_BRIGHTBURG_REVEALED
 	person_event SPRITE_POKEFAN_F, 12, 20, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BrightburgNPC2, EVENT_BRIGHTBURG_REVEALED
 	person_event SPRITE_CHILD, 12, 21, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BrightburgNPC3, EVENT_BRIGHTBURG_REVEALED
+	person_event SPRITE_PLAYER_CUTSCENE, 1, 1, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BrightburgNPC5, EVENT_BRIGHTBURG_REVEALED
 	person_event SPRITE_YOUNGSTER, 17,  9, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BrightburgNPC4, -1
 	
 
@@ -49,11 +51,19 @@ BrightburgTrigger1:
 	disappear 4
 	disappear 5
 	disappear 6
+	disappear 7
 	dotrigger $0
 	end
 
 BrightburgFlyPoint:
 	setflag ENGINE_FLYPOINT_BRIGHT
+	return
+	
+BrightburgCallback:
+	checkevent EVENT_BRIGHTBURG_PLAYER_DUPE
+	iffalse .end
+	moveperson 7, 17, 12
+.end
 	return
 	
 BrightburgPokeCenterSign:
@@ -86,6 +96,19 @@ BrightburgNPC4:
 	jumptextfaceplayer BrightburgNPC4Text1
 .ditto_gone
 	jumptextfaceplayer BrightburgNPC4Text2
+	
+BrightburgNPC5:
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl
+	jumptextfaceplayer BrightburgNPCMaleText
+.girl
+	jumptextfaceplayer BrightburgNPCFemaleText
 	
 BrightburgNPCMaleText:
 	text "…"

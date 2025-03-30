@@ -1,8 +1,7 @@
 Route29_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, Route29Callback
+	db 0 ; callbacks
 
 	db 3 ; warp events
 	warp_def  7, 66, 2, GREEN_GROTTO_1F
@@ -26,14 +25,6 @@ Route29_MapScriptHeader:
 	tmhmball_event 57,  6, TM_DRAGON_CLAW, EVENT_ROUTE_29_DRAGON_CLAW_TM
 	tapeball_event 11, 21, MUSIC_ROUTE_28, 1, EVENT_MUSIC_ROUTE_28
 	
-	
-Route29Callback:
-	checkevent EVENT_DONE_ROUTE_29_MINA
-	iftrue .skip
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_MINA_GROUND
-	variablesprite SPRITE_DISGUISEMAN, SPRITE_VALVE_1
-.skip
-	return
 	
 Route29SignText:
 	text "ROUTE 29"

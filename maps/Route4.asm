@@ -1,7 +1,8 @@
 Route4_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, Route4Callback
 
 	db 6 ; warp events
 	warp_def 24, 37, 1, ROUTE_4_EVENTIDE_GATE
@@ -48,6 +49,11 @@ Route4_MapScriptHeader:
 	const ROUTE4SNORLAXNPC1
 	const ROUTE4SNORLAXNPC2
 	const ROUTE4SNORLAXNPC3
+	
+Route4Callback:
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
+	return
+	
 	
 Route4Grave:
 	jumptext Route4GraveText

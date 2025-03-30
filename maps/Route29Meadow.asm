@@ -1,7 +1,8 @@
 Route29Meadow_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, Route29MeadowCallback
 
 	db 0 ; warp events
 
@@ -17,6 +18,14 @@ Route29Meadow_MapScriptHeader:
 
 	const_def 1 ; object constants
 	const ROUTE_29_MINA
+
+Route29MeadowCallback:
+	checkevent EVENT_DONE_ROUTE_29_MINA
+	iftrue .skip
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_MINA_GROUND
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_VALVE_1
+.skip
+	return
 
 Route29Mina:
 	checkcode VAR_FACING
@@ -219,7 +228,6 @@ Route29Mina:
 	special Special_FadeOutMusic
 	pause 10
 	playmapmusic
-	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	end
 	
 Route29MinaIndoorPermsAsm1:

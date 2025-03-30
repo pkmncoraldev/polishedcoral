@@ -4943,7 +4943,7 @@ DisguiseGroup:
 ; ================
 
 	; DISGUISE
-	db "MASTER@" ;STARGLOW CAVERN
+	db "DISGUISE@" ;STARGLOW CAVERN
 	db TRAINERTYPE_MOVES
 	; party
 	db 11, VOLTORB
@@ -4953,7 +4953,7 @@ DisguiseGroup:
 ; ================
 
 	; DISGUISE
-	db "MASTER@" ;MT ONWA
+	db "DISGUISE@" ;MT ONWA
 	db TRAINERTYPE_MOVES
 	; party
 	db 19, VOLTORB
@@ -4965,7 +4965,7 @@ DisguiseGroup:
 ; ================
 
 	; DISGUISE
-	db "MASTER@" ;LUSTER SEWER
+	db "DISGUISE@" ;LUSTER SEWER
 	db TRAINERTYPE_MOVES
 	; party
 	db 31, VOLTORB
@@ -4979,7 +4979,7 @@ DisguiseGroup:
 ; ================
 
 	; DISGUISE
-	db "MASTER@" ;ROUTE 18
+	db "DISGUISE@" ;ROUTE 18
 	db TRAINERTYPE_MOVES
 	; party
 	db 34, ELECTRODE
@@ -4993,7 +4993,7 @@ DisguiseGroup:
 ; ================
 
 	; DISGUISE
-	db "MASTER@" ;HUNTERS THICKET
+	db "DISGUISE@" ;HUNTERS THICKET
 	db TRAINERTYPE_MOVES
 	; party
 	db 32, VOLTORB

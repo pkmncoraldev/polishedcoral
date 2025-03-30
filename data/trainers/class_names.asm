@@ -66,7 +66,7 @@ TrainerClassNames::
 	db "TRIO BRO.@"		   ; TRIOBROR
 	db "TRIO BRO.@"		   ; TRIOBROB
 	db "TRIO BRO.@"		   ; TRIOBROY
-	db "DISGUISE@"		   ; DISGUISEMAN
+	db "MASTER OF@"		   ; DISGUISEMAN
 	db "BEACH BEAUTY@"	   ; BIKINIP
 	db "BEACH BEAUTY@"	   ; BIKINIR
 	db "BEACH BEAUTY@"	   ; BIKINIY

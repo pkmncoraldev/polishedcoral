@@ -1339,7 +1339,7 @@ CamperGroup:
 	db "JERRY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 34, NIDOKING
+	db 32, NIDOKING
 	db -1 ; end
 
 ; ================
@@ -3143,9 +3143,9 @@ SuperNerdGroup:
 	db "GREG@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 36, LEDYBA
+	db 39, LEDYBA
 		db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON, 0, 0, 0
-	db 35, LEDIAN
+	db 37, LEDIAN
 		db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON, 0, 0, 0
 	db -1 ; end
 

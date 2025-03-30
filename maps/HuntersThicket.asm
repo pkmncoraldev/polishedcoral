@@ -603,9 +603,8 @@ TrainerHunters_4:
 	line "seem to hang out"
 	cont "around here…"
 	
-	para "What?"
-	
-	para "No, not me!"
+	para "What?<WAIT_S>"
+	line "No, not me!"
 	done
 
 .BeatenText:

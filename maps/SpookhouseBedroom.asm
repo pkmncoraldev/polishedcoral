@@ -11,7 +11,7 @@ SpookhouseBedroom_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 18 ; bg events
+	db 19 ; bg events
 	signpost 2, 11, SIGNPOST_READ, SpookHouseBookshelf
 	signpost 2, 10, SIGNPOST_READ, SpookHouseBookshelf
 	signpost 3, 2, SIGNPOST_READ, SpookHouseBed
@@ -19,7 +19,7 @@ SpookhouseBedroom_MapScriptHeader:
 	signpost 2, 0, SIGNPOST_READ, SpookHouseTrashcan
 	signpost 3, 7, SIGNPOST_READ, SpookHouseJournal
 	signpost  4,  9, SIGNPOST_READ, SpookHouseDiningRoomBelow
-	signpost  5,  3, SIGNPOST_READ, SpookHouseDiningRoomBelow
+	signpost  5,  3, SIGNPOST_READ, SpookHouseDiningRoomRubble
 	signpost  5,  4, SIGNPOST_READ, SpookHouseDiningRoomBelow
 	signpost  5,  6, SIGNPOST_READ, SpookHouseDiningRoomBelow
 	signpost  5,  7, SIGNPOST_READ, SpookHouseDiningRoomBelow
@@ -29,10 +29,11 @@ SpookhouseBedroom_MapScriptHeader:
 	signpost  7, 11, SIGNPOST_READ, SpookHouseDiningRoomBelow
 	signpost  3,  3, SIGNPOST_READ, SpookHouseDiningRoomBelow
 	signpost  3,  4, SIGNPOST_READ, SpookHouseDiningRoomBelow
-	signpost  3,  5, SIGNPOST_READ, SpookHouseDiningRoomBelow
+	signpost  3,  5, SIGNPOST_READ, SpookHouseDiningRoomRubble
+	signpost  2,  4, SIGNPOST_READ, SpookHouseDiningRoomRubble
 
 	db 2 ; object events
-	person_event SPRITE_SCARY_PAINTING,  1,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SpookHouseNPC1, -1
+	person_event SPRITE_SCARY_PAINTING,  1,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SpookHousePainting, -1
 	person_event SPRITE_TWIN,  7,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SpookHouseNPC1, EVENT_ALWAYS_SET
 	
 	const_def 1 ; object constants
@@ -62,6 +63,9 @@ SpookHouseTrashcan:
 	
 SpookHouseDiningRoomBelow:
 	jumptext SpookHouseDiningRoomBelowText
+	
+SpookHouseDiningRoomRubble:
+	jumptext SpookHouseDiningRoomRubbleText
 	
 SpookHouseJournal:
 	appear SPOOKHOUSE_BEDROOM_GIRL
@@ -128,6 +132,16 @@ SpookHouseDiningRoomBelowText:
 	line "dining room below"
 	cont "through the broken"
 	cont "floorboards."
+	done
+	
+SpookHouseDiningRoomRubbleText:
+	text "Some rubble from"
+	line "the ceiling."
+	
+	para "It has knocked"
+	line "some holes in the"
+	cont "floor to the room"
+	cont "below."
 	done
 	
 SpookHouseJournalText1:

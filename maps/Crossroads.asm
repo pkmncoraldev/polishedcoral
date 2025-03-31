@@ -93,6 +93,19 @@ CrossroadsTrigger1:
 	end
 
 CrossroadsCallback:
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .playerfemale
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .playerfemale
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .playerfemale
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .playerfemale
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_POKEMANIAC
+	jump .cont
+.playerfemale
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_PONYTAIL
+.cont
 	checktime 1<<DUSK
 	iftrue .dusk
 	checktime 1<<NITE
@@ -248,7 +261,6 @@ CrossroadsCutscene2:
 	moveperson CROSSROADS_PLAYER_CUTSCENE_PINK, 23, 11
 	spriteface PLAYER, DOWN
 	writecode VAR_MOVEMENT, $fe
-;	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_COLBY
 	callasm MakePlayerColbyAsm
 	writebyte (1 << 7) | (PAL_OW_GREEN << 4)
 	special Special_SetPlayerPalette

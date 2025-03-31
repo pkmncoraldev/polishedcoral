@@ -26,7 +26,7 @@ Inn1F_MapScriptHeader:
 	warp_event 24,  5, INN_1F, 8
 	warp_event 25,  5, INN_1F, 8
 	warp_event 13, 11, INN_ELEVATOR, 1
-	warp_event  6, 18, CROSSROADS, 3
+	warp_event  6, 17, CROSSROADS, 3
 
 	db 4 ; coord events
 	coord_event 13, 23, 2, Inn1FBlockDoor
@@ -34,8 +34,9 @@ Inn1F_MapScriptHeader:
 	coord_event 13, 15, 3, Inn1FKageScene
 	coord_event 14, 15, 3, Inn1FKageScene2
 
-	db 18 ; bg events
-	signpost 20,  7, SIGNPOST_JUMPTEXT, Inn1FLaptopText
+	db 19 ; bg events
+	signpost 19,  7, SIGNPOST_JUMPTEXT, Inn1FLaptopText
+	signpost 21,  7, SIGNPOST_JUMPTEXT, Inn1FPrinterText
 	signpost 16, 12, SIGNPOST_JUMPTEXT, Inn1FWetFloorText
 	signpost 11,  7, SIGNPOST_JUMPTEXT, Inn1FPainting1Text
 	signpost 11, 19, SIGNPOST_JUMPTEXT, Inn1FPainting2Text
@@ -1244,8 +1245,6 @@ Inn1FLemonWater:
 	yesorno
 	iffalse .no
 	callasm Inn1FResertScriptVar
-	writetext Inn1FLemonWaterTextYes
-	waitbutton
 	closetext
 	pause 20
 	opentext
@@ -1280,10 +1279,6 @@ Inn1FLemonWaterText2:
 	
 	para "Better stick to"
 	line "FRESH WATER…"
-	done
-	
-Inn1FLemonWaterTextYes:
-	text "Who wouldn't?"
 	done
 	
 Inn1FLemonWaterNo:
@@ -1354,6 +1349,11 @@ Inn1FLaptopText:
 	
 	para "Looks like someone"
 	line "is making a game!"
+	done
+	
+Inn1FPrinterText:
+	text "A printer/scanner/"
+	line "fax machine combo."
 	done
 	
 Inn1FWetFloorText:

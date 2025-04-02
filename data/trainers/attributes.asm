@@ -182,13 +182,13 @@ TrainerClassAttributes: ; 3959c
 
 ; Gruntm
 	db 0, 0 ; items
-	db 4 ; base reward
+	db 7 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_RARELY
 
 ; Gruntf
 	db 0, 0 ; items
-	db 4 ; base reward
+	db 7 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_RARELY
 	
@@ -201,7 +201,7 @@ TrainerClassAttributes: ; 3959c
 ; Locke
 	db 0, 0 ; items
 	db 15 ; base reward
-	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_RARELY
 
 ; Pokefanm

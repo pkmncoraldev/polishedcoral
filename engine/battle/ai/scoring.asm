@@ -2438,6 +2438,8 @@ AI_Smart_BellyDrum: ; 3913d
 ; Dismiss this move if enemy's attack is higher than +2 or if enemy's HP is below 50%.
 ; Else, discourage this move if enemy's HP is not full.
 
+	dec [hl]
+	dec [hl]
 	ld a, [wEnemyAtkLevel]
 	cp $a
 	jr nc, .asm_3914d
@@ -2445,6 +2447,8 @@ AI_Smart_BellyDrum: ; 3913d
 	call AICheckEnemyMaxHP
 	ret c
 
+	inc [hl]
+	inc [hl]
 	inc [hl]
 
 	call AICheckEnemyHalfHP

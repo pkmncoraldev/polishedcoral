@@ -41,19 +41,16 @@ ObscuraMuseum1F_MapScriptHeader:
 	signpost 16,  8, SIGNPOST_IFSET, ObscuraMuseumLockedDoor
 	signpost 16,  9, SIGNPOST_IFSET, ObscuraMuseumLockedDoor
 
-	db 12 ; object events
+	db 9 ; object events
 	person_event SPRITE_RECEPTIONIST, 12, 11, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FReceptionist1, -1
 	person_event SPRITE_ROCKY,  3,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FRockyScript, EVENT_MUSEUM_1F_ROCKY_SCENE
 	person_event SPRITE_SNARE_GIRL,  3,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MUSEUM_1F_ROCKY_SCENE
 	person_event SPRITE_MATRON,  4, 16, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC1, -1
 	person_event SPRITE_CUTE_GIRL, 13,  1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC2, -1
 	object_event  2, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, BAYLEEF, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FBayleef, -1
-	person_event SPRITE_SNARE,  7, 13, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM
-	person_event SPRITE_SNARE,  6, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, ObscuraMuseum1FSnare2, EVENT_SNARE_GONE_FROM_MUSEUM
-	person_event SPRITE_SNARE,  1,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare3, EVENT_MUSEUM_1F_SNARE_SWAP_2
-	person_event SPRITE_SNARE_GIRL,  6,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, ObscuraMuseum1FSnare4, EVENT_SNARE_GONE_FROM_MUSEUM
-	person_event SPRITE_SNARE_GIRL, 12,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 0, ObscuraMuseum1FSnare5, EVENT_SNARE_GONE_FROM_MUSEUM
-	person_event SPRITE_SNARE,  1,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare3_2, EVENT_MUSEUM_1F_SNARE_SWAP
+	person_event SPRITE_SNARE,  7, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM
+	person_event SPRITE_SNARE,  1,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare2, EVENT_SNARE_GONE_FROM_MUSEUM
+	person_event SPRITE_SNARE_GIRL, 12,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 0, ObscuraMuseum1FSnare3, EVENT_SNARE_GONE_FROM_MUSEUM
 	
 	
 	const_def 1 ; object constants
@@ -320,68 +317,7 @@ ObscuraMuseum1FSnare2:
 	done
 	
 ObscuraMuseum1FSnare3:
-	generictrainer GRUNTM, MUSEUM_GRUNTM_3, EVENT_BEAT_MUSEUM_GRUNT_3, .SeenText, .BeatenText
-
-	text "Well?<WAIT_S> Go on,"
-	line "then."
-	done
-
-.SeenText:
-	text "You aren't getting"
-	line "up to the second"
-	cont "floor."
-	
-	para "Not if I have a"
-	line "say in it!"
-	done
-
-.BeatenText:
-	text "I guess you are!"
-	done
-	
-ObscuraMuseum1FSnare3_2:
-	generictrainer GRUNTM, MUSEUM_GRUNTM_3, EVENT_BEAT_MUSEUM_GRUNT_3, .SeenText, .BeatenText
-
-	text "Well?<WAIT_S> Go on,"
-	line "then."
-	done
-
-.SeenText:
-	text "How did you get"
-	line "past me to the"
-	cont "second floor."
-	
-	para "Well you're not"
-	line "getting back down"
-	cont "here then!"
-	done
-
-.BeatenText:
-	text "I guess you are!"
-	done
-	
-ObscuraMuseum1FSnare4:
-	generictrainer GRUNTF, MUSEUM_GRUNTF_1, EVENT_BEAT_MUSEUM_GRUNT_4, .SeenText, .BeatenText
-
-	text "Ok, ok. So you"
-	line "weren't sneaking."
-	
-	para "Got it."
-	done
-
-.SeenText:
-	text "Ah ah ah!"
-	
-	para "You can't sneak"
-	line "past me!"
-	done
-
-.BeatenText:
-	text "Wowza!"
-	done
-	
-ObscuraMuseum1FSnare5:
-	generictrainer GRUNTF, MUSEUM_GRUNTF_2, EVENT_BEAT_MUSEUM_GRUNT_5, .SeenText, .BeatenText
+	generictrainer GRUNTF, MUSEUM_GRUNTF_1, EVENT_BEAT_MUSEUM_GRUNT_3, .SeenText, .BeatenText
 
 	text "Whatever."
 	

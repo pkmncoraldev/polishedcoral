@@ -53,7 +53,7 @@ ObscuraMuseum2F_MapScriptHeader:
 	db 10 ; object events
 	person_event SPRITE_SNARE,  5, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, ObscuraMuseum2FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE,  7, 16, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, ObscuraMuseum2FSnare2, EVENT_SNARE_GONE_FROM_MUSEUM
-	person_event SPRITE_SNARE,  9,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, ObscuraMuseum2FSnare3, EVENT_MUSEUM_SNARE_GUY_GONE
+	person_event SPRITE_SNARE_GIRL,  9,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, ObscuraMuseum2FSnare3, EVENT_MUSEUM_SNARE_GUY_GONE
 	person_event SPRITE_ROCKY,  9, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FRocky, EVENT_MUSEUM_2F_ROCKY_GONE
 	person_event SPRITE_SNARE_GIRL, 12, 23, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FSnareNPC, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_RECEPTIONIST,  8,  1, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum2FPhotoLady, EVENT_SNARE_AT_MUSEUM
@@ -88,8 +88,6 @@ ObscuraMuseum2FCallback:
 	checkevent EVENT_SNARE_AT_MUSEUM
 	iffalse .end
 	changeblock $4, $6, $80
-	clearevent EVENT_MUSEUM_1F_SNARE_SWAP
-	setevent EVENT_MUSEUM_1F_SNARE_SWAP_2 
 .end
 	return
 	
@@ -374,7 +372,7 @@ ObscuraMuseum2FSnareNPCText:
 	done
 	
 ObscuraMuseum2FSnare1:
-	generictrainer GRUNTM, MUSEUM_GRUNTM_4, EVENT_BEAT_MUSEUM_GRUNT_6, .SeenText, .BeatenText
+	generictrainer GRUNTM, MUSEUM_GRUNTM_3, EVENT_BEAT_MUSEUM_GRUNT_4, .SeenText, .BeatenText
 
 	text "You won't get"
 	line "much further."
@@ -394,7 +392,7 @@ ObscuraMuseum2FSnare1:
 	done
 	
 ObscuraMuseum2FSnare2:
-	generictrainer GRUNTM, MUSEUM_GRUNTM_5, EVENT_BEAT_MUSEUM_GRUNT_7, .SeenText, .BeatenText
+	generictrainer GRUNTM, MUSEUM_GRUNTM_4, EVENT_BEAT_MUSEUM_GRUNT_5, .SeenText, .BeatenText
 
 	text "I've been reading"
 	line "these fossil"
@@ -425,7 +423,7 @@ ObscuraMuseum2FSnare2:
 	done
 	
 ObscuraMuseum2FSnare3:
-	generictrainer GRUNTM, MUSEUM_GRUNTM_6, EVENT_BEAT_MUSEUM_GRUNT_8, .SeenText, .BeatenText
+	generictrainer GRUNTF, MUSEUM_GRUNTF_2, EVENT_BEAT_MUSEUM_GRUNT_6, .SeenText, .BeatenText
 
 	text "I didn't think"
 	line "I'd get to pick"

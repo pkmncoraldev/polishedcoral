@@ -565,7 +565,7 @@ ObscuraMuseumKeyboardDone:
 	iftrue .grunt2
 	checkevent EVENT_DO_TERMINAL_GRUNT_3
 	iftrue .grunt3
-	loadtrainer GRUNTM, MUSEUM_GRUNTM_7
+	loadtrainer GRUNTM, MUSEUM_GRUNTM_5
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	setevent EVENT_DO_TERMINAL_GRUNT_2
 	jump .end
@@ -576,7 +576,7 @@ ObscuraMuseumKeyboardDone:
 	setevent EVENT_DO_TERMINAL_GRUNT_3
 	jump .end
 .grunt3
-	loadtrainer GRUNTM, MUSEUM_GRUNTM_8
+	loadtrainer GRUNTM, MUSEUM_GRUNTM_6
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	clearevent EVENT_DO_TERMINAL_GRUNT_3
 .end

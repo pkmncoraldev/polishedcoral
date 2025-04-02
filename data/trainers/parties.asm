@@ -2563,25 +2563,32 @@ GruntMGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 43, TREVENANT
+	db 42, ABOMASNOW
 	db -1 ; end
 
 ; ================
 
 	; MUSEUM_GRUNTM_2
 	db "GRUNT@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 45, PELIPPER
+		db AIR_SLASH, ROOST, PURSUIT, BUBBLE_BEAM
+	db 44, AMPHAROS
+		db COTTON_GUARD, THUNDERBOLT, CONFUSE_RAY, 0
 	db -1 ; end
 
 ; ================
 
 	; MUSEUM_GRUNTM_3
 	db "GRUNT@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 43, CORSOLA
+		db BUBBLE_BEAM, BARRIER_IRON_DEFENSE_ACID_ARMOR, ROCK_BLAST, 0
+	db 44, MAGCARGO
+		db SOFTBOILED_MILK_DRINK_RECOVER, BODY_SLAM, AMNESIA, FLAME_BURST
 	db -1 ; end
 
 ; ================
@@ -2590,43 +2597,25 @@ GruntMGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 45, DRIFBLIM
 	db -1 ; end
 
 ; ================
 
-	; MUSEUM_GRUNTM_5
+	; MUSEUM_GRUNTM_5		LOOPING GRUNT 1
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 42, GOLBAT
 	db -1 ; end
 
 ; ================
 
-	; MUSEUM_GRUNTM_6
+	; MUSEUM_GRUNTM_6		LOOPING GRUNT 3
 	db "GRUNT@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; MUSEUM_GRUNTM_7		LOOPING GRUNT 1
-	db "GRUNT@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; MUSEUM_GRUNTM_8		LOOPING GRUNT 3
-	db "GRUNT@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
+	db 42, PERSIAN, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM
 	db -1 ; end
 
 ; ================
@@ -2728,16 +2717,19 @@ GruntFGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 48, QUILAVA
+	db 48, CROCONAW
 	db -1 ; end
 
 ; ================
 
 	; MUSEUM_GRUNTF_2
 	db "GRUNT@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 1, BULBASAUR
+	db 47, MAROWAK, ABILITY_1 | HARDY, FEMALE | PLAIN_FORM
+	db 44, GLALIE, ABILITY_1 | HARDY, MALE | PLAIN_FORM
+	db 44, WEAVILE, ABILITY_1 | HARDY, FEMALE | PLAIN_FORM
 	db -1 ; end
 
 ; ================
@@ -2746,7 +2738,7 @@ GruntFGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 42, RATICATE
 	db -1 ; end
 
 ; ================
@@ -2796,7 +2788,7 @@ LockeGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 35, GRAVELER
-	db 36, NIDORINA
+	db 36, HAUNTER
 	db 37, MACHOKE
 	db -1 ; end
 
@@ -2804,9 +2796,16 @@ LockeGroup:
 
 	; MUSEUM_LOCKE
 	db "LOCKE@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_ITEM | TRAINERTYPE_EVS | TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 46, GOLEM, NO_ITEM, 1, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE
+		db BULLDOZE, STONE_EDGE, EXPLOSION, TAKE_DOWN
+	db 43, GENGAR, NO_ITEM, 1, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE
+		db HEX, TOXIC, DARK_PULSE, 0
+	db 47, POLITOED, SITRUS_BERRY, 32, $BB, $B8, $BB, ABILITY_1 | QUIRKY, MALE
+		db MUD_SLAP, BODY_SLAM, BELLY_DRUM, ACROBATICS
+	db 46, MACHAMP, NO_ITEM, 1, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE
+		db THUNDERPUNCH, BULK_UP, KNOCK_OFF, CROSS_CHOP
 	db -1 ; end
 
 ; ================
@@ -3940,7 +3939,7 @@ LadyGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 29, CORSOLA
-	db 28, HAUNTER
+	db 28, NIDORINA
 	db -1 ; end
 
 ; ================
@@ -5622,20 +5621,20 @@ SpaTrainerGroup:
 
 	; SPA_TRAINER
 	db "MAC@"	;3 BADGES
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
 	db 27, QUILAVA
-	db 28, MAROWAK
+	db 28, MAROWAK, ABILITY_1 | HARDY, MALE | PLAIN_FORM
 	db -1 ; end
 
 ; ================
 
 	; SPA_TRAINER
 	db "MAC@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
 	db 27, QUILAVA
-	db 28, MAROWAK
+	db 28, MAROWAK, ABILITY_1 | HARDY, MALE | PLAIN_FORM
 	db -1 ; end
 
 ; ================

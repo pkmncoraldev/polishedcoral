@@ -1,4 +1,4 @@
-	frame 7, 10
+	frame 5, 10
 	frame 0, 08
-	frame 7, 08
+	frame 5, 08
 	endanim

@@ -1,3 +1,4 @@
+	frame 0, 04
 	frame 1, 30
 	frame 2, 22
 	frame 3, 08

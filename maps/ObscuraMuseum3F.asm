@@ -170,7 +170,6 @@ ObscuraMuseum3FDragonStoneScene:
 	disappear OBSCURA_MUSEUM_3F_LOCKE
 	disappear OBSCURA_MUSEUM_3F_CUTSCENE_SNARE_1
 	disappear OBSCURA_MUSEUM_3F_CUTSCENE_SNARE_2
-	setevent EVENT_MUSEUM_1F_SNARE_SWAP
 	checkevent EVENT_MUSEUM_SCENE_2_RIGHT
 	iftrue .right4
 	applyonemovement OBSCURA_MUSEUM_3F_ROCKY, big_step_right
@@ -295,7 +294,7 @@ ObscuraMuseum3FColbyText2:
 	para "All I need now is"
 	line "to offer the stone"
 	cont "at the alter in"
-	cont "ERROR!!"		;TODO come up with town name
+	cont "LUMINA TOWN!"		;TODO come up with town name
 	
 	para "The dragon will"
 	line "recognize me for"
@@ -307,7 +306,7 @@ ObscuraMuseum3FColbyText2:
 	cont "ground!"
 	
 	para "I'll be wating at"
-	line "ERROR!!"		;TODO come up with town name
+	line "LUMINA TOWN!"		;TODO come up with town name
 	
 	para "Just try stop me,"
 	line "<PLAYER>!"

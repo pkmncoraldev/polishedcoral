@@ -63,11 +63,26 @@ ObscuraCityUnfinishedSign:
 	para "After that, the"
 	line "game is over for"
 	cont "now, though."
+	done
 	
+ObscuraCityUnfinishedSign2:
+	text "Actually, that's"
+	line "where the game"
+	cont "ends for now."
+	
+	para "Thanks for playing"
+	line "what's here so far."
+	
+	para "I hope you had"
+	line "fun."
+	
+	para "Let me know what"
+	line "you think."
+
 	para "Oh, and there is"
 	line "something to do"
-	cont "in BRIGHTBURG, in"
-	cont "case you missed"
+	cont "in BRIGHTBURG,"
+	cont "in case you missed"
 	cont "that."
 	done
 	
@@ -184,7 +199,9 @@ ObscuraCityTrigger1:
 	applyonemovement OBSCURA_CITY_ROCKY, step_up
 	playsound SFX_ENTER_DOOR
 	disappear OBSCURA_CITY_ROCKY
+	pause 10
 	dotrigger $0
+	jumptext ObscuraCityUnfinishedSign2
 	end
 	
 Movement_ObscuraCityDarcy1:
@@ -368,7 +385,7 @@ ObscuraCityDarcyText6:
 	line "LUMINA TOWN!"		;TODO come up with town name
 	
 	para "You do remember"
-	line "LUMINA TOWN!"		;TODO come up with town name
+	line "LUMINA TOWN,"		;TODO come up with town name
 	cont "don't you ROCKY?"
 	
 	para "You were only born"

@@ -439,12 +439,12 @@ RegisteredNumber2Text:
 	text "'s number."
 	done
 
-VendingMachineText:
+VendingMachineText::
 	text "A VENDING MACHINE!"
 	line "Here's the menu."
 	done
 
-VendingMachineClangText:
+VendingMachineClangText::
 	text "Clang!"
 
 	para "A @"
@@ -453,7 +453,7 @@ VendingMachineClangText:
 	line "popped out."
 	done
 
-VendingMachineScoreText:
+VendingMachineScoreText::
 	text "Score! An extra"
 
 	line "@"
@@ -462,12 +462,12 @@ VendingMachineScoreText:
 	cont "popped out."
 	done
 
-VendingMachineNoMoneyText:
+VendingMachineNoMoneyText::
 	text "Oops, not enough"
 	line "money…"
 	done
 
-VendingMachineNoSpaceText:
+VendingMachineNoSpaceText::
 	text "There's no more"
 	line "room for stuff…"
 	done

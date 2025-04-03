@@ -22,7 +22,7 @@ ObscuraMuseum1F_MapScriptHeader:
 	coord_event  9,  4, 2, ObscuraMuseum1FRockyScript2
 	coord_event  9,  5, 2, ObscuraMuseum1FRockyScript3
 
-	db 29 ; bg events
+	db 30 ; bg events
 	signpost  1, 10, SIGNPOST_UP, ObscuraMuseumBooks
 	signpost  1, 11, SIGNPOST_UP, ObscuraMuseumBooks
 	signpost  1, 12, SIGNPOST_UP, ObscuraMuseumBooks
@@ -52,6 +52,7 @@ ObscuraMuseum1F_MapScriptHeader:
 	signpost  4, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumCarracostaFossilText
 	signpost  5, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumCarracostaFossilText
 	signpost  6, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumCarracostaFossilText
+	signpost  9, 19, SIGNPOST_UP, ObscuraMuseum1FVendingMachine
 
 	db 9 ; object events
 	person_event SPRITE_RECEPTIONIST, 12, 11, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FReceptionist1, -1
@@ -86,6 +87,160 @@ ObscuraMuseum1FCallback:
 	clearevent EVENT_MUSEUM_FAILED_TERMINAL
 	callasm MusuemKeyboardAsm3
 	return
+	
+ObscuraMuseum1FVendingMachine:
+	opentext
+.Start:
+	special PlaceMoneyTopRight
+	farwritetext VendingMachineText
+	waitbutton
+	checkevent EVENT_ROCK_CANDY_SOLD_OUT
+	iftrue .sold_out
+	loadmenu .MenuData
+	jump .cont
+.sold_out
+	loadmenu .MenuDataSoldOut
+.cont
+	verticalmenu
+	closewindow
+	ifequal $1, .FreshWater
+	ifequal $2, .SodaPop
+	ifequal $3, .RageCandyBar
+	ifequal $4, .RockCandy
+	refreshscreen
+	closetext
+	end
+
+.FreshWater:
+	checkmoney $0, 200
+	ifequal $2, .NotEnoughMoney
+	giveitem FRESH_WATER
+	iffalse .NotEnoughSpace
+	takemoney $0, 200
+	itemtotext FRESH_WATER, $0
+	scall .VendItem
+	random $20
+	ifnotequal $0, .Start
+	giveitem FRESH_WATER
+	iffalse .Start
+	itemtotext FRESH_WATER, $0
+	jump .ExtraItem
+
+.SodaPop:
+	checkmoney $0, 300
+	ifequal $2, .NotEnoughMoney
+	giveitem SODA_POP
+	iffalse .NotEnoughSpace
+	takemoney $0, 300
+	itemtotext SODA_POP, $0
+	scall .VendItem
+	random $20
+	ifnotequal $0, .Start
+	giveitem SODA_POP
+	iffalse .Start
+	itemtotext SODA_POP, $0
+	jump .ExtraItem
+
+.RageCandyBar:
+	checkmoney $0, 400
+	ifequal $2, .NotEnoughMoney
+	giveitem RAGECANDYBAR
+	iffalse .NotEnoughSpace
+	takemoney $0, 400
+	itemtotext RAGECANDYBAR, $0
+	scall .VendItem
+	random $20
+	ifnotequal $0, .Start
+	giveitem RAGECANDYBAR
+	iffalse .Start
+	itemtotext RAGECANDYBAR, $0
+	jump .ExtraItem
+
+.RockCandy
+	checkevent EVENT_ROCK_CANDY_SOLD_OUT
+	iftrue .sold_out2
+	checkmoney $0, 1500
+	ifequal $2, .NotEnoughMoney
+	giveitem ROCK_CANDY
+	iffalse .NotEnoughSpace
+	takemoney $0, 1500
+	itemtotext ROCK_CANDY, $0
+	scall .VendItem
+	setevent EVENT_ROCK_CANDY_SOLD_OUT
+	random $20
+	ifnotequal $0, .Start
+	giveitem ROCK_CANDY
+	iffalse .Start
+	itemtotext ROCK_CANDY, $0
+	jump .ExtraItem
+
+.sold_out2
+	writetext ObscuraMuseum1FSoldOutText
+	waitbutton
+	jump .Start
+
+.VendItem:
+	pause 10
+	playsound SFX_ENTER_DOOR
+	farwritetext VendingMachineClangText
+	buttonsound
+	giveitemnotification
+	end
+
+.ExtraItem:
+	pause 10
+	playsound SFX_ENTER_DOOR
+	farwritetext VendingMachineScoreText
+	buttonsound
+	giveitemnotification
+	jump .Start
+
+.NotEnoughMoney:
+	farwritetext VendingMachineNoMoneyText
+	waitbutton
+	jump .Start
+
+.NotEnoughSpace:
+	farwritetext VendingMachineNoSpaceText
+	waitbutton
+	jump .Start
+
+.MenuData:
+	db $40 ; flags
+	db 02, 00 ; start coords
+	db 13, 19 ; end coords
+	dw .MenuData2
+	db 1 ; default option
+
+.MenuData2:
+	db $80 ; flags
+	db 5 ; items
+	db "FRESH WATER  ¥200@"
+	db "SODA POP     ¥300@"
+	db "RAGECANDYBAR ¥400@"
+	db "ROCK CANDY  ¥1500@"
+	db "CANCEL@"
+	
+.MenuDataSoldOut:
+	db $40 ; flags
+	db 02, 00 ; start coords
+	db 13, 19 ; end coords
+	dw .MenuDataSoldOut2
+	db 1 ; default option
+
+.MenuDataSoldOut2:
+	db $80 ; flags
+	db 5 ; items
+	db "FRESH WATER  ¥200@"
+	db "SODA POP     ¥300@"
+	db "RAGECANDYBAR ¥400@"
+	db "SOLD OUT@"
+	db "CANCEL@"
+	
+ObscuraMuseum1FSoldOutText:
+	text "You got the"
+	line "last one!"
+	done
 	
 ObscuraMuseumArcheopsFossilText:
 	text "This will be a"

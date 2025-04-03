@@ -655,10 +655,6 @@ CheckOpponentContactMove::
 	call CallOpponentTurn
 CheckContactMove::
 ; Check if user's move made contact. Returns nc if it is
-	farcall GetUserItemAfterUnnerve
-	ld a, b
-	cp HELD_PROTECTIVE_PADS
-	jr z, .protective_pads
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
 	cp STRUGGLE
@@ -666,7 +662,6 @@ CheckContactMove::
 	ld hl, ContactMoves
 	ld de, 1
 	call IsInArray
-.protective_pads
 	ccf
 	ret
 

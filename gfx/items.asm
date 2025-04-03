@@ -205,6 +205,7 @@ IceHealIcon:      				INCBIN "gfx/items/antidote.2bpp"
 FullHealIcon:     				INCBIN "gfx/items/full_heal.2bpp"
 ReviveIcon:       				INCBIN "gfx/items/revive.2bpp"
 StarPieceIcon:
+RockCandyIcon:
 MaxReviveIcon:    				INCBIN "gfx/items/max_revive.2bpp"
 EtherIcon:
 MaxEtherIcon:
@@ -348,7 +349,6 @@ LifeOrbIcon:      				INCBIN "gfx/items/1.2bpp"
 LightClayIcon:    				INCBIN "gfx/items/1.2bpp"
 MetronomeIIcon:   				INCBIN "gfx/items/1.2bpp"
 MuscleBandIcon:   				INCBIN "gfx/items/1.2bpp"
-ProtectPadsIcon:  				INCBIN "gfx/items/1.2bpp"
 RockyHelmetIcon:  				INCBIN "gfx/items/1.2bpp"
 SafeGogglesIcon:  				INCBIN "gfx/items/1.2bpp"
 ShedShellIcon:    				INCBIN "gfx/items/1.2bpp"

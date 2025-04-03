@@ -198,7 +198,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; LIGHT_CLAY
 	dw NoEffect         ; METRONOME_I
 	dw NoEffect         ; MUSCLE_BAND
-	dw NoEffect         ; PROTECT_PADS
+	dw ReviveEffect     ; ROCK_CANDY
 	dw NoEffect         ; ROCKY_HELMET
 	dw NoEffect         ; SAFE_GOGGLES
 	dw NoEffect         ; SHED_SHELL

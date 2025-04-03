@@ -183,7 +183,7 @@ ItemDescriptions:
 	dw LightClayDesc
 	dw MetronomeIDesc
 	dw MuscleBandDesc
-	dw ProtectPadsDesc
+	dw RockCandyDesc
 	dw RockyHelmetDesc
 	dw SafeGogglesDesc
 	dw ShedShellDesc
@@ -402,6 +402,7 @@ ReviveDesc:
 	next "#MON to 1/2 HP.@"
 
 MaxReviveDesc:
+RockCandyDesc:
 	db   "Fully restores a"
 	next "fainted #MON.@"
 
@@ -919,10 +920,6 @@ LightClayDesc:
 MetronomeIDesc:
 	db   "Powers up moves"
 	next "used again. (HOLD)@"
-
-ProtectPadsDesc:
-	db   "Protects from"
-	next "contact effects.@"
 
 RockyHelmetDesc:
 	db   "Damages foe on"

@@ -183,7 +183,7 @@ ItemNames::
 	db "LIGHT CLAY@"
 	db "METRONOME@"
 	db "MUSCLE BAND@"
-	db "PROTECT PADS@"
+	db "ROCK CANDY@"
 	db "ROCKY HELMET@"
 	db "SAFETYGOGGLE@"
 	db "SHED SHELL@"

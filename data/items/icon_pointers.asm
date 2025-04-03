@@ -184,7 +184,7 @@ ItemIconPointers:
 	dba LightClayIcon
 	dba MetronomeIIcon
 	dba MuscleBandIcon
-	dba ProtectPadsIcon
+	dba RockCandyIcon
 	dba RockyHelmetIcon
 	dba SafeGogglesIcon
 	dba ShedShellIcon

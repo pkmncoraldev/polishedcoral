@@ -1914,6 +1914,8 @@ CutTreeScript:
 	farjump AskCutTreeScript
 
 VendingMachineScript::
+	checkcode VAR_FACING
+	ifnotequal UP, WrongSideScript
 	opentext
 .Start:
 	special PlaceMoneyTopRight

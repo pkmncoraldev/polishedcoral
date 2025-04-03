@@ -209,7 +209,7 @@
 	const LIGHT_CLAY   ; b6
 	const METRONOME_I  ; b7
 	const MUSCLE_BAND  ; b8
-	const PROTECT_PADS ; b9 - replace
+	const ROCK_CANDY   ; b9
 	const ROCKY_HELMET ; ba
 	const SAFE_GOGGLES ; bb
 	const SHED_SHELL   ; bc
@@ -472,7 +472,7 @@
 	const NAM_PP_MAX       ; af
 	const NAM_PP_UP        ; b0
 	const NAM_PREMIER_BALL ; b1
-	const NAM_PROTECT_PADS ; b2
+	const NAM_ROCK_CANDY ; b2
 	const NAM_BIG_MALASADA ; b3
 	const NAM_PROTEIN      ; b4
 	const NAM_QUICK_BALL   ; b5

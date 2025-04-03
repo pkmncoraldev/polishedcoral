@@ -449,9 +449,9 @@ GetSpeed::
 	; Double speed, but only for Ditto
 	ld a, [hBattleTurn]
 	and a
-	ld hl, wBattleMonSpecies
+	ld hl, wTempBattleMonSpecies
 	jr z, .got_species
-	ld hl, wEnemyMonSpecies
+	ld hl, wTempEnemyMonSpecies
 .got_species
 	ld a, [hl]
 	cp DITTO

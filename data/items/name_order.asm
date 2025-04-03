@@ -152,7 +152,7 @@ ItemNameOrder:
 	db NAM_UNUSED6 ; 5e
 	db NAM_UNUSED7  ; c5
 	db NAM_UNUSED8   ; 5f
-	db NAM_UNUSED9 ; 77
+	db NAM_COMET_SHARD ; 77
 
 	db NAM_PEWTERCRUNCH ; a1
 

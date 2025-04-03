@@ -153,7 +153,7 @@
 	const UNUSED6      ; 83 - replace
 	const UNUSED7      ; 84 - replace
 	const UNUSED8      ; 85 - replace
-	const UNUSED9      ; 86 - replace
+	const COMET_SHARD  ; 86
 
 	const BERRY_JUICE  ; 87
 
@@ -413,7 +413,7 @@
 	const NAM_MACHO_BRACE  ; 74
 	const NAM_MAGMARIZER   ; 75
 	const NAM_MAGNET       ; 76
-	const NAM_UNUSED9 ; 77
+	const NAM_COMET_SHARD  ; 77
 	const NAM_MASTER_BALL  ; 78
 	const NAM_MAX_ELIXIR   ; 79
 	const NAM_MAX_ETHER    ; 7a

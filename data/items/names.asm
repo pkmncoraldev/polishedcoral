@@ -132,7 +132,7 @@ ItemNames::
 	db "UNUSED@"
 	db "UNUSED@"
 	db "UNUSED@"
-	db "UNUSED@"
+	db "COMET SHARD@"
 	db "BERRY JUICE@"
 	db "SILK SCARF@"
 	db "BLACK BELT@"

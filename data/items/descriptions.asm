@@ -132,7 +132,7 @@ ItemDescriptions:
 	dw TeruSamaDesc
 	dw TeruSamaDesc
 	dw TeruSamaDesc
-	dw TeruSamaDesc
+	dw CometShardDesc
 	dw BerryJuiceDesc
 	dw SilkScarfDesc
 	dw BlackBeltDesc
@@ -1116,6 +1116,10 @@ StardustDesc:
 StarPieceDesc:
 	db   "A hunk of red gem."
 	next "Sell very high.@"
+	
+CometShardDesc:
+	db   "A rare blue gem."
+	next "Sell very high!@"
 
 SilverTeaDesc:
 	db   "Self-restore item."

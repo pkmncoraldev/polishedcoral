@@ -133,7 +133,7 @@ ItemIconPointers:
 	dba UnusedItemIcon
 	dba UnusedItemIcon
 	dba UnusedItemIcon
-	dba UnusedItemIcon
+	dba CometShardIcon
 	dba BerryJuiceIcon
 	dba SilkScarfIcon
 	dba BlackBeltIcon

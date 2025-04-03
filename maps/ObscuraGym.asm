@@ -1,8 +1,8 @@
 ObscuraGym_MapScriptHeader:
+	db 0 ; scene scripts
+	
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, ObscuraGymCallback
-
-	db 0 ; callbacks
 
 	db 2 ; warp events
 	warp_def  5,  2, 2, OBSCURA_MUSEUM_2F
@@ -20,4 +20,11 @@ ObscuraGymCallback:
 	return
 	
 ObscuraGymRocky:
+	jumptextfaceplayer ObscuraGymRockyTempText
 	end
+	
+ObscuraGymRockyTempText:
+	text "This fight isn't"
+	line "available in"
+	cont "this version."
+	done

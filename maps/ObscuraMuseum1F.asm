@@ -22,7 +22,7 @@ ObscuraMuseum1F_MapScriptHeader:
 	coord_event  9,  4, 2, ObscuraMuseum1FRockyScript2
 	coord_event  9,  5, 2, ObscuraMuseum1FRockyScript3
 
-	db 17 ; bg events
+	db 29 ; bg events
 	signpost  1, 10, SIGNPOST_UP, ObscuraMuseumBooks
 	signpost  1, 11, SIGNPOST_UP, ObscuraMuseumBooks
 	signpost  1, 12, SIGNPOST_UP, ObscuraMuseumBooks
@@ -40,6 +40,18 @@ ObscuraMuseum1F_MapScriptHeader:
 	bg_event 20,  9, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_MUSEUM_1F_HIDDEN_BOTTLE_CAP
 	signpost 16,  8, SIGNPOST_IFSET, ObscuraMuseumLockedDoor
 	signpost 16,  9, SIGNPOST_IFSET, ObscuraMuseumLockedDoor
+	signpost  6,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumArcheopsFossilText
+	signpost  7,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumArcheopsFossilText
+	signpost  8,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumArcheopsFossilText
+	signpost  6,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumArcheopsFossilText
+	signpost  7,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumArcheopsFossilText
+	signpost  8,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumArcheopsFossilText
+	signpost  4, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumCarracostaFossilText
+	signpost  5, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumCarracostaFossilText
+	signpost  6, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumCarracostaFossilText
+	signpost  4, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumCarracostaFossilText
+	signpost  5, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumCarracostaFossilText
+	signpost  6, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumCarracostaFossilText
 
 	db 9 ; object events
 	person_event SPRITE_RECEPTIONIST, 12, 11, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FReceptionist1, -1
@@ -74,6 +86,18 @@ ObscuraMuseum1FCallback:
 	clearevent EVENT_MUSEUM_FAILED_TERMINAL
 	callasm MusuemKeyboardAsm3
 	return
+	
+ObscuraMuseumArcheopsFossilText:
+	text "This will be a"
+	line "giant ARCHEOPS"
+	cont "fossil."
+	done
+	
+ObscuraMuseumCarracostaFossilText:
+	text "This will be a"
+	line "giant CARRACOSTA"
+	cont "fossil."
+	done
 	
 ObscuraMuseumLockedDoor:
 	dw EVENT_SNARE_AT_MUSEUM

@@ -218,10 +218,6 @@ ObscuraMuseum3FLockeText1:
 	para "And now it's time"
 	line "for me to do the"
 	cont "same."
-	
-	para "You're not getting"
-	line "away without a"
-	cont "fight!"
 	done
 	
 ObscuraMuseum3FLockeText2:

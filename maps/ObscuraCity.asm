@@ -362,7 +362,7 @@ ObscuraCityDarcyText4:
 	para "There's obviously"
 	line "truth to the myth"
 	cont "if a group like"
-	cont "TEAM SNARE wanted"
+	cont "TEAM SNARE wants"
 	cont "the DRAGON STONE!"
 	done
 	

@@ -1465,7 +1465,7 @@ UnknownText_TradeIntroText7::
 	line "GIRAFARIG doll on"
 	cont "the ground near"
 	cont "the abandoned"
-	cont "community center."
+	cont "COMMUNITY CENTER."
 	
 	para "I had never really"
 	line "thought much about"

@@ -10,7 +10,7 @@ GlintGroveDeep_MapScriptHeader:
 	warp_def  9,  7, 2, GLINT_GROVE_DEEP
 	warp_def 31, 21, 5, GLINT_GROVE_DEEP
 	warp_def  9, 21, 4, GLINT_GROVE_DEEP
-	warp_def  7, 16, 7, GLINT_GROVE_DEEP
+	warp_def  7, 14, 7, GLINT_GROVE_DEEP
 	warp_def 28, 12, 6, GLINT_GROVE_DEEP
 
 	db 1 ; coord events
@@ -21,13 +21,13 @@ GlintGroveDeep_MapScriptHeader:
 	bg_event 13, 24, SIGNPOST_ITEM + SUPER_POTION, EVENT_GLINT_DEEP_HIDDEN_ITEM_2
 
 	db 8 ; object events
-	object_event 19,  2, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, SMEARGLE, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, GlintSecretSmeargle, EVENT_GLINT_SECRET_SMEARGLE_GONE
+	itemball_event 17,  6, PAINTBRUSH, 1, EVENT_GLINT_DEEP_POKE_BALL
 	object_event  4,  2, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, SMEARGLE, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_GLINT_SMEARGLES_GONE
 	object_event  5,  2, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, SMEARGLE, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_GLINT_SMEARGLES_GONE
 	person_event SPRITE_MINA,  5,  5, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveDeepMina, EVENT_GLINT_DEEP_MINA_GONE
 	person_event SPRITE_LEAVES,  4,  5, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, GlintGroveDeepEasel, EVENT_GLINT_DEEP_MINA_GONE
 	person_event SPRITE_LEAVES,  4,  5, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, GlintGroveDeepEasel, EVENT_GLINT_DEEP_MINA_GONE
-	itemball_event 17, 26, REVIVE, 1, EVENT_GLINT_DEEP_POKE_BALL
+	itemball_event 17, 26, REVIVE, 1, EVENT_GLINT_DEEP_POKE_BALL_2
 	tapeball_event 20, 31, MUSIC_GLINT_GROVE, 1, EVENT_MUSIC_GLINT_GROVE
 
 	const_def 1 ; object constants
@@ -68,30 +68,6 @@ GlintGroveDeepMina:
 	
 GlintGroveDeepEasel:
 	jumptext GlintGroveDeepEaselText
-	
-GlintSecretSmeargle:
-	opentext
-	writetext GlintSecretSmeargleText
-	cry SMEARGLE
-	waitbutton
-	closetext
-	waitsfx
-	loadwildmon SMEARGLE, 12
-	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY_LEGENDARY
-	startbattle
-	disappear GLINTSECRET_SHINY_SMEARGLE
-	reloadmapafterbattle
-	setevent EVENT_GLINT_SECRET_SMEARGLE_GONE
-	checkcode VAR_MONJUSTCAUGHT
-	if_equal SMEARGLE, .CaughtSmeargle
-	opentext
-	writetext GlintSecretSmeargleTextGone
-	waitbutton
-	closetext
-.CaughtSmeargle
-	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	setevent EVENT_UNIQUE_ENCOUNTER_SMEARGLE_BOSS
-	end
 	
 GlintGroveDeepSmeargleScene:
 	special Special_StopRunning
@@ -168,21 +144,6 @@ GlintGroveDeepSmeargleScene:
 	setflag ENGINE_MINA_GLINT_GROVE_DEEP
 	opentext
 	writetext GlintGroveDeepMinaText7
-	waitbutton
-	verbosegiveitem PAINTBRUSH
-	iffalse .NoRoom
-	setevent EVENT_GOT_MINA_PAINTBRUSH
-	jump .end
-.NoRoom:
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext GlintGroveDeepMinaText8
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-.end
-	writetext GlintGroveDeepMinaText9
 	waitbutton
 	closetext
 	follow PLAYER, GLINTSECRET_MINA
@@ -304,23 +265,10 @@ GlintGroveDeepMinaText7:
 	line "found my spark if"
 	cont "it weren't for you."
 	
-	para "Here, have this"
-	line "as thanks."
-	done
+	para "So, uhh…<WAIT_S>"
+	line "Thanks!"
 	
-GlintGroveDeepMinaText8:
-	text "Oh, <WAIT_S>you can't"
-	line "carry anymore"
-	cont "stuff."
-	
-	para "Oh well, <WAIT_S>I'll"
-	line "give it to you"
-	cont "next time I see"
-	cont "you."
-	done
-	
-GlintGroveDeepMinaText9:
-	text "Anyway, <WAIT_S>I better"
+	para "Anyway, <WAIT_S>I better"
 	line "be going."
 	
 	para "I'm sure we'll"

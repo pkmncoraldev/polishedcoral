@@ -149,7 +149,7 @@ ObscuraFortuneHouseTellerSetupDecosAsm:
 	jr ObscuraFortuneHouseTellerAsm
 	
 ObscuraFortuneHouseTellerSetupUniqueEncountersAsm:
-	ld a, 35 ;number of unique encounters + 1
+	ld a, 34 ;number of unique encounters + 1
 	ld [wCurBattleMon], a
 	ld hl, UNIQUE_ENCOUNTER_FLAGS_START
 ; fallthru
@@ -203,7 +203,7 @@ ObscuraFortuneHouseTellerAsm:
 	jr z, .decos
 	cp NUM_TAPE_PLAYER_SONGS
 	jr z, .tape
-	cp 35 ;number of unique encounters + 1
+	cp 34 ;number of unique encounters + 1
 	jr z, .unique_encounters
 	
 .no_more
@@ -609,7 +609,6 @@ GirafarigDollText:
 TellerUniqueEncounterText:
 	dw UniqueEncounterTeacherText
 	dw UniqueEncounterMinaGlintGroveText
-	dw UniqueEncounterSmeargleBossText
 	dw UniqueEncounterLedianBossText
 	dw UniqueEncounterDisguiseMasterMtOnwaText
 	dw UniqueEncounterMagmarBossText
@@ -649,10 +648,6 @@ UniqueEncounterTeacherText:
 UniqueEncounterMinaGlintGroveText:
 	text "MINA"
 	line "GLINT GROVE"
-	done
-	
-UniqueEncounterSmeargleBossText:
-	text "SMEARGLE BOSS"
 	done
 	
 UniqueEncounterLedianBossText:

@@ -844,9 +844,9 @@ InitRoamMons:
 	ld [wRoamMon3Level], a
 
 ; mon1 starting map
-	ld a, GROUP_ROUTE_1
+	ld a, GROUP_ROUTE_29
 	ld [wRoamMon1MapGroup], a
-	ld a, MAP_ROUTE_1
+	ld a, MAP_ROUTE_29
 	ld [wRoamMon1MapNumber], a
 
 ; hp
@@ -864,6 +864,16 @@ CheckEncounterRoamMon: ; 2a2ce
 	
 	eventflagcheck EVENT_ENCOUNTERED_FIRST_BIRD_ONCE
 	jr nz, .skip
+	ld a, [wMapGroup]
+	ld hl, PossibleRoamMaps
+	ld de, 2
+	call IsInArray
+	jr nc, .DontEncounterRoamMon
+	ld a, [wMapNumber]
+	ld hl, PossibleRoamMaps + 1
+	ld de, 2
+	call IsInArray
+	jr nc, .DontEncounterRoamMon
 	ld a, [wBirdEncounterCounter]
 	cp 50
 	jr nz, .skip

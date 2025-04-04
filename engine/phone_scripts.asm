@@ -246,7 +246,7 @@ SprucePhoneScript: ; 0xbd081
 	iftrue .articuno
 	checkevent EVENT_GOT_CHARMANDER_FROM_SPRUCE
 	iftrue .zapdos
-	checkevent EVENT_GOT_CHARMANDER_FROM_SPRUCE
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_SPRUCE
 	iftrue .zapdos
 ;.moltres
 	farwritetext SprucePhoneMoltresText

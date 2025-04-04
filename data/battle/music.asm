@@ -36,6 +36,10 @@ PlayBattleMusic: ; 2ee6c
 	
 .roaming
 	eventflagset EVENT_ENCOUNTERED_FIRST_BIRD_ONCE
+	ld a, [wMapGroup]
+	ld [wRoamMon1MapGroup], a
+	ld a, [wMapNumber]
+	ld [wRoamMon1MapNumber], a
 	call ResetBirdEncounterCounter
 	ld de, MUSIC_RBY_WILD_BATTLE
 	jr .done
@@ -118,7 +122,13 @@ IncrementBirdEcounterCounter:
 	eventflagcheck EVENT_ENCOUNTERED_FIRST_BIRD_ONCE
 	ret nz
 	ld a, [wBirdEncounterCounter]
+	cp 50
+	jr nc, .set_50
 	inc a
+	ld [wBirdEncounterCounter], a
+	ret
+.set_50
+	ld a, 50
 	ld [wBirdEncounterCounter], a
 	ret
 	

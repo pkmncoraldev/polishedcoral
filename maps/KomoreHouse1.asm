@@ -60,5 +60,6 @@ GiveGirafarigDollText:
 	
 PutAwayGirafarigDollText:
 	text "The DOLL was sent"
-	line "to <PLAYER>'s PC."
+	line "to the PC in"
+	cont "<PLAYER>'s room."
 	done

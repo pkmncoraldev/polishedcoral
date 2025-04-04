@@ -42,8 +42,20 @@ SunsetLighthouseTop_MapScriptHeader:
 	db 3 ; object events
 	object_event  3,  4, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, AMPHAROS, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, SunsetLighthouseTopAmpharos, -1
 	person_event SPRITE_WEIRD_TREE,  3,  0, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	tmhmball_event  0,  1, TM_ZAP_CANNON, EVENT_SUNSET_LIGHTHOUSE_ZAP_CANNON
+	person_event SPRITE_BALL_CUT_FRUIT,  1, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetLighthouseMareepDoll, EVENT_DECO_MAREEP_DOLL
 
+
+SunsetLighthouseMareepDoll:
+	disappear LAST_TALKED
+	setevent EVENT_DECO_MAREEP_DOLL
+	opentext
+	writetext GiveMareepDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwayMareepDollText
+	waitbutton
+	closetext
+	end
 
 SunsetLighthouseTopAmpharos:
 	opentext
@@ -82,12 +94,7 @@ SunsetLighthouseTopAmpharos:
 .full
 	writetext SunsetLighthouseTopAmpharosTextFull
 	waitbutton
-	setevent EVENT_DECO_MAREEP_DOLL
-	writetext GiveMareepDollText
-	playsound SFX_ITEM
-	pause 60
-	writetext PutAwayMareepDollText
-	waitbutton
+	verbosegivetmhm TM_ZAP_CANNON
 	closetext
 	setevent EVENT_SUNSET_LIGHTHOUSE_FED_AMPHAROS
 	end
@@ -182,7 +189,8 @@ GiveMareepDollText:
 	
 PutAwayMareepDollText:
 	text "The DOLL was sent"
-	line "to <PLAYER>'s PC."
+	line "to the PC in"
+	cont "<PLAYER>'s room."
 	done
 	
 SunsetLighthouseTopStoveText:

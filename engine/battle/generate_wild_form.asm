@@ -50,6 +50,7 @@ WildSpeciesForms:
 	dbw GYARADOS,	.PidgeyForm
 	dbw WOOPER,		.WooperForm
 	dbw GRIMER,		.GrimerForm
+	dbw SMEARGLE,	.SmeargleForm
 	dbw 0,			.Default
 
 .CheckGen1: ; used for mons that have an alt for in addition to a gen 1 form
@@ -88,7 +89,11 @@ WildSpeciesForms:
 	cp 20 percent + 1
 	jr nc, .Default
 	jr .AlolanForm
-
+.SmeargleForm
+	ld a, 9
+	call RandomRange
+	inc a
+	ret
 .WooperForm
 	ld hl, WooperLandmarks
 	jr .LandmarkForm

@@ -33,7 +33,7 @@ Route24South_MapScriptHeader:
 	person_event SPRITE_PONYTAIL,  9,  6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route24SouthNPC, -1
 	fruittree_event 31,  0, FRUITTREE_ROUTE_24_1, RAWST_BERRY
 	fruittree_event 33,  4, FRUITTREE_ROUTE_24_2, PERSIM_BERRY
-	tmhmball_event 34, 13, TM_FIRE_BLAST, EVENT_ROUTE_24_FIRE_BLAST
+	itemball_event 34, 13, TWISTEDSPOON, 1, EVENT_ROUTE_24_ITEM
 	
 	
 	const_def 1 ; object constants

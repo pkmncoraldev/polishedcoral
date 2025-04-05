@@ -559,7 +559,7 @@ Route28StrengthMan:
 	jumptextfaceplayer Route28StrengthManText
 .done
 	opentext
-	checktmhm TM_BULK_UP
+	checktmhm TM_SELFDESTRUCT
 	iftrue .end
 	writetext Route28StrengthManText2
 	waitbutton
@@ -606,7 +606,7 @@ Route28StrengthMan:
 	opentext
 	writetext Route28StrengthManText8
 	waitbutton
-	verbosegivetmhm TM_BULK_UP
+	verbosegivetmhm TM_SELFDESTRUCT
 .end
 	writetext Route28StrengthManText9
 	waitbutton
@@ -742,18 +742,22 @@ Route28StrengthManText8:
 	line "seen the look on"
 	cont "your face!"
 	
+	para "You looked like"
+	line "you were about to"
+	cont "explode!"
+	
 	para "Here, <WAIT_S>take this"
 	line "instead."
 	done
 	
 Route28StrengthManText9:
 	text "That TM contains"
-	line "BULK UP."
+	line "SELFDESTRUCT."
 	
-	para "Your #MON will"
-	line "beef up and boost"
-	cont "their ATTACK and"
-	cont "DEFENSE stats."
+	para "That move deals"
+	line "massive damage,"
+	cont "but makes the user"
+	cont "faint too."
 	
 	para "…<WAIT_L>Sorry about that"
 	line "earlier."

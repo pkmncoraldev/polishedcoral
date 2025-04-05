@@ -62,7 +62,7 @@ TMHMMoves:
 	db WILL_O_WISP                         ; TM61
 	db ACROBATICS	                       ; TM62
 	db TOXIC_SPIKES                        ; TM63
-	db EXPLOSION                           ; TM64
+	db SELFDESTRUCT                        ; TM64
 	db SHADOW_CLAW                         ; TM65
 	db POISON_JAB                          ; TM66
 	db RAPID_SPIN                          ; TM67

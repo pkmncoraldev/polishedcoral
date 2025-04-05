@@ -86,7 +86,7 @@ ENDM
 	add_tm WILL_O_WISP		; $3c
 	add_tm ACROBATICS		; $3d
 	add_tm TOXIC_SPIKES		; $3e
-	add_tm EXPLOSION		; $3f
+	add_tm SELFDESTRUCT		; $3f
 	add_tm SHADOW_CLAW		; $40
 	add_tm POISON_JAB		; $41
 	add_tm RAPID_SPIN		; $42

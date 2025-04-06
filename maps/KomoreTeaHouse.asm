@@ -190,7 +190,7 @@ KomoreTeaHouseMasterText1:
 	
 	para "You come seeking"
 	line "enlightenment from"
-	cont "THE MASTER."
+	cont "the MASTER."
 	
 	para "Many have come"
 	line "seeking just such"
@@ -198,7 +198,7 @@ KomoreTeaHouseMasterText1:
 	done
 	
 KomoreTeaHouseMasterText1_2:
-	text "I…<WAIT_L><WAIT_M> am THE MASTER…<WAIT_L><WAIT_L><WAIT_M>'s<WAIT_S>"
+	text "I…<WAIT_L><WAIT_M> am the MASTER…<WAIT_L><WAIT_L><WAIT_M>'s<WAIT_S>"
 	line "brother."
 	done
 	

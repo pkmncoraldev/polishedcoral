@@ -471,7 +471,7 @@ Route23Trainer7:
 	text "Excuse me."
 	
 	para "Are you going to"
-	line "see THE MASTER?"
+	line "see the MASTER?"
 	
 	para "…"
 	
@@ -519,7 +519,8 @@ Route23SignText:
 	done
 	
 Route23FightingDojoSignText:
-	text "FIGHTING DOJO"
+	text "DOJO of"
+	line "the MASTER"
 	done
 	
 Route23Fisher:

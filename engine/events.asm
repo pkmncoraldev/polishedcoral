@@ -111,7 +111,10 @@ HandleMap:
 	ret nz
 
 	call HandleMapObjects
+	eventflagcheck EVENT_TEST_OF_BODY_ACTIVE
+	jr nz, .no_trial_of_body
 	call NextOverworldFrame
+.no_trial_of_body
 	call HandleMapBackground
 	call CheckPlayerState
 	xor a
@@ -492,6 +495,10 @@ CheckTimeEvents: ; 9693a
 .skip_park
 	cp TILESET_RANCH
 	jr nz, .skip_ranch
+	eventflagcheck EVENT_TEST_OF_MIND_ACTIVE
+	jr nz, .trialofmind
+	eventflagcheck EVENT_TEST_OF_BODY_ACTIVE
+	jr nz, .trialofbody
 	ld a, [wRanchRaceSeconds]
 	cp 45 ; time limit
 	jr nc, .ranch_times_up
@@ -519,6 +526,26 @@ CheckTimeEvents: ; 9693a
 .ranch_times_up
 	ld a, BANK(RanchRideRaceTimesUp)
 	ld hl, RanchRideRaceTimesUp
+	call CallScript
+	scf
+	ret
+	
+.trialofmind
+	ld a, [wRanchRaceSeconds]
+	cp 178 ; time limit
+	jr c, .skip_ranch
+	ld a, BANK(TrialOfMindTimesUp)
+	ld hl, TrialOfMindTimesUp
+	call CallScript
+	scf
+	ret
+	
+.trialofbody
+	ld a, [wRanchRaceSeconds]
+	cp 30 ; time limit
+	jr c, .skip_ranch
+	ld a, BANK(TrialOfBodyTimesUp)
+	ld hl, TrialOfBodyTimesUp
 	call CallScript
 	scf
 	ret
@@ -576,8 +603,49 @@ SkateparkEndContestScript:
 	scf
 	ret
 
-OWPlayerInput: ; 96974
+ThrowPunch:
+	ld a, [wPlayerState]
+	cp PLAYER_PHOTO_3
+	jr z, .set
+	ld a, PLAYER_PHOTO_3
+	ld [wPlayerState], a
+	jp ReplaceKrisSprite
+.set
+	ld a, PLAYER_PHOTO_2
+	ld [wPlayerState], a
+	jp ReplaceKrisSprite
 
+OWPlayerInput: ; 96974
+	eventflagcheck EVENT_TEST_OF_MIND_ACTIVE
+	jr z, .no_trial_of_mind
+	ld a, [hJoyDown]
+	cp 0
+	jr z, .no_trial_of_mind
+	ld a, 1
+	ld [wAlways0Trigger], a
+	ret
+.no_trial_of_mind
+	eventflagcheck EVENT_TEST_OF_BODY_ACTIVE
+	jr z, .no_trial_of_body
+	ld a, [hJoyPressed]
+	and A_BUTTON
+	jr z, .NoAction
+	call ThrowPunch
+	ld a, [wCurrentAirportBaggage]
+	inc a
+	cp 200
+	jr z, .finish_trial_of_body
+	ld [wCurrentAirportBaggage], a
+	ld de, SFX_BURN
+	call PlaySFX
+	farcall ShakeScreenOnce
+	jr .NoAction
+.finish_trial_of_body
+	ld a, 2
+	ld [wAlways0Trigger], a
+	ret
+	
+.no_trial_of_body
 	call PlayerMovement
 	ret c
 	and a

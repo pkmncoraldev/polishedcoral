@@ -2555,7 +2555,22 @@ SplashPuddle2:
 .puddle_data2
 	db $80, PAL_OW_SILVER, SPRITEMOVEDATA_PUDDLE
 
-ShakeScreen: ; 5565
+ShakeScreenOnce::
+	push bc
+	push af
+	ld de, .ScreenShakeObject
+	call CopyTempObjectData
+	pop af
+	ld a, 2
+	ld [wTempObjectCopyRange], a
+	call InitTempObject
+	pop bc
+	ret
+	
+.ScreenShakeObject:
+	db $80, PAL_OW_SILVER, SPRITEMOVEDATA_SCREENSHAKE
+
+ShakeScreen::
 	push bc
 	push af
 	ld de, .ScreenShakeObject
@@ -2568,7 +2583,6 @@ ShakeScreen: ; 5565
 
 .ScreenShakeObject:
 	db $80, PAL_OW_SILVER, SPRITEMOVEDATA_SCREENSHAKE
-; 5579
 
 DespawnEmote: ; 5579
 	push bc

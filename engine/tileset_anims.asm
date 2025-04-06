@@ -897,6 +897,10 @@ AnimateFlowerTile: ; fc56d
 	farcall AddSkateparkScore
 .skip_score
 	ld [wSkateparkComboTimer], a
+	eventflagcheck EVENT_TEST_OF_MIND_ACTIVE
+	jr nz, .timer
+	eventflagcheck EVENT_TEST_OF_BODY_ACTIVE
+	jr nz, .timer
 	eventflagcheck EVENT_SKATEPARK_CONTEST_TIMER
 	jr nz, .timer
 	eventflagcheck EVENT_DODRIO_RANCH_TIMER

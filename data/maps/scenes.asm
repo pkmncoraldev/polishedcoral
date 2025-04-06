@@ -149,4 +149,5 @@ MapTriggers::
 	scene_var UNDERWATER_TEMPLE_2,					  wAlways0Trigger
 	scene_var BRILLO_POLICE_STATION,				  wAlways0Trigger
 	scene_var BRILLO_POLICE_BACK_ROOM,				  wAlways0Trigger
+	scene_var FIGHTING_DOJO,						  wAlways0Trigger
 	db -1

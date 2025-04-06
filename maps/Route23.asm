@@ -797,6 +797,11 @@ Route23MasterText5:
 	cont "are well stocked"
 	cont "for the road."
 	
+	para "Return to my DOJO"
+	line "if you wish to"
+	cont "resume your"
+	cont "training."
+
 	para "Until we meet"
 	line "again, child…"
 	

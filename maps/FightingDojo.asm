@@ -12,9 +12,10 @@ FightingDojo_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	signpost  2,  3, SIGNPOST_UP, FightingDojoSign1
 	signpost  2,  4, SIGNPOST_UP, FightingDojoSign2
+	signpost  1,  6, SIGNPOST_JUMPTEXT, FightingDojoDoorText
 
 	db 5 ; object events
 	person_event SPRITE_MASTER,  2,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, FightingDojoMaster, EVENT_FIGHTING_DOJO_MASTER_GONE
@@ -1033,5 +1034,9 @@ FightingDojoMasterCountdown1:
 	
 FightingDojoMasterCountdownBegin:
 	text "Begin."
+	done
+	
+FightingDojoDoorText:
+	text "An ornate shoji."
 	done
 	

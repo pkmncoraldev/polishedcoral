@@ -3163,7 +3163,7 @@ PrintTempMonStats: ; 50b7b
 rept 8
 	inc hl
 endr
-	predef PrintNatureIndicators
+;	predef PrintNatureIndicators
 	pop hl
 	pop bc
 

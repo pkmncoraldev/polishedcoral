@@ -740,14 +740,13 @@ LakeNpc1Text:
 	done
 
 LakeNpc2Text:
-	text "I love this quiet"
-	line "little town."
+	text "This place is"
+	line "growing fast."
 	
-	para "Can it even be"
-	line "considered a town?"
-	
-	para "We don't even have"
-	line "a GYM or #MART."
+	para "Until recently, we"
+	line "didn't even have a"
+	cont "#MON CENTER or"
+	cont "#MART."
 	done
 
 LakeNpc3Text:
@@ -863,7 +862,7 @@ LakeRivalText1:
 	
 	para "Give it a rest!"
 	
-	para "A whimp like you"
+	para "A wimp like you"
 	line "will never get"
 	cont "ahead!"
 	

@@ -2759,6 +2759,8 @@ GrowthUsers:
 	db CACNEA
 	db CACTURNE
 	db MARACTUS
+	db CHERUBI
+	db CHERRIM
 	db -1
 	
 HealBellUsers:

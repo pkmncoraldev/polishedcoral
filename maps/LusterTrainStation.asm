@@ -64,6 +64,7 @@ LusterTrainStationCallback:
 	pause 5
 	earthquake 5
 	pause 35
+	special Special_EnableInput
 	opentext
 	writetext LusterTrainStationText1
 	waitbutton

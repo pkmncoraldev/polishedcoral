@@ -31,6 +31,7 @@ WestTrainCabooseCallback:
 	return
 
 WestTrainCabooseTrigger0:
+	special Special_DisableInput
 	setevent EVENT_BEAT_TRAIN_CABIN_1_SNARE_1
 	applyonemovement PLAYER, remove_fixed_facing
 	applyonemovement PLAYER, step_right
@@ -38,6 +39,7 @@ WestTrainCabooseTrigger0:
 	appear WEST_TRAIN_CABOOSE_SNARE_OFFICER
 	pause 1
 	pause 9
+	special Special_EnableInput
 	opentext
 	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
 	writetext WestTrainCabooseSnareGruntText1

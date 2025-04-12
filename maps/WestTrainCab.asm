@@ -175,6 +175,7 @@ WestTrainCabLocke:
 	writetext WestTrainCabEngineerText8
 	waitbutton
 	closetext
+	special Special_DisableInput
 	special FadeOutPalettes
 	special Special_MakePlayerInvisible
 	domaptrigger LUSTER_TRAIN_STATION, $1

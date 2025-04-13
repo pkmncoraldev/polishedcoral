@@ -131,6 +131,7 @@ Route3StarglowCavernTopPatches:
 	setflag ENGINE_POKEDEX
 	writetext Route3StarglowCavernTopPatchesDoneCaveText2
 	waitbutton
+	blackoutmod GLINT_CITY
 	verbosegivetmhm TM_SAND_ATTACK_SMOKESCREEN_FLASH
 	setevent EVENT_HAVE_FLASH
 	setevent EVENT_UNIQUE_ENCOUNTER_PATCHES

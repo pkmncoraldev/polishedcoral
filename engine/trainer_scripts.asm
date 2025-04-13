@@ -38,6 +38,7 @@ AirportGuardScript:
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
 	waitsfx
+	loadvar wOtherTrainerClass, 0
 	domaptrigger ONWA_INTL_AIRPORT, $1
 	warpfacing DOWN, ONWA_INTL_AIRPORT, $0d, $00
 	end

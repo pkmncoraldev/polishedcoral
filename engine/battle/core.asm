@@ -8913,7 +8913,7 @@ StartBattle: ; 3f4c1
 ; the effects of this check.
 	ld a, [wPartyCount]
 	and a
-	ret z
+	jr z, .no_mons
 
 .skip_0_mon_check
 	ld a, [wTimeOfDayPal]
@@ -8925,8 +8925,11 @@ StartBattle: ; 3f4c1
 	ld [wTimeOfDayPal], a
 	scf
 	ret
-; 3f4d9
 
+.no_mons
+	xor a
+	ld [wOtherTrainerClass], a
+	ret
 
 BattleIntro: ; 3f4dd
 	call LoadTrainerOrWildMonPic

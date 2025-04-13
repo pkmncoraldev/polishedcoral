@@ -174,17 +174,51 @@ Route18Disguiseman:
 	end
 	
 Route18_DisguiseMan1Text2:
-	text "TEXT 2"
+	text "I donned my"
+	line "costume way too"
+	cont "late."
+	
+	para "I never thought"
+	line "you'd take the"
+	cont "bait."
+	
+	para "You saw my face,"
+	line "and yet in spite,"
+	
+	para "you still came by"
+	line "to pick a fight,"
+	
+	para "even though I'd"
+	line "blown my cover."
+	
+	para "Are your just a"
+	line "battle lover?"
+	
+	para "Well, without"
+	line "further ado,"
+	
+	para "it's time for me"
+	line "to scrap with you!"
 	done
 	
 Route18_DisguiseMan1Text3:
-	text "TEXT 3"
+	text "I could say I was"
+	line "caught off guard,"
+	
+	para "but I would never"
+	line "play that card."
+	
+	para "Next time I won't"
+	line "be so surprised,"
+	
+	para "for I'm the MASTER"
+	line "OF DISGUISE!"
 	done
 
 Route18DisguisemanBeatenText:
-	text "And that's it! You"
-	line "win, of course."
+	text "You won that one,"
+	line "there is no doubt."
 	
-	para "What an awesome"
-	line "show of force!"
+	para "I will not cry."
+	line "I will not pout."
 	done

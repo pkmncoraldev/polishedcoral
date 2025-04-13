@@ -472,20 +472,40 @@ HuntersThicketDisguiseman:
 	setevent EVENT_UNIQUE_ENCOUNTER_DISGUISE_MASTER_HUNTERS_THICKET
 	end
 
-HuntersThicket_DisguiseMan1Text1:
-	text "TEXT 1"
-	done
-
 HuntersThicket_DisguiseMan1Text2:
-	text "TEXT 2"
+	text "We meet again! I'll"
+	line "keep this short."
+	
+	para "There is no need"
+	line "for a retort."
+	
+	para "To speak in rhymes"
+	line "is really hard,"
+	
+	para "so now I'll simply"
+	line "say “En garde!”"
 	done
 
 HuntersThicket_DisguiseMan1Text3:
-	text "TEXT 3"
+	text "You shut me down"
+	line "so nice and quick."
+	
+	para "Do you grow tired"
+	line "of my schtick?"
+	
+	para "Too bad! We'll find"
+	line "no compromise,"
+	
+	para "for I'm the MASTER"
+	line "OF DISGUISE!"
 	done
 
 HuntersThicketDisguisemanBeatenText:
-	text "YOU WIN!"
+	text "And that's it! You"
+	line "win, of course."
+	
+	para "What an awesome"
+	line "show of force!"
 	done
 
 HuntersThicketLedian:

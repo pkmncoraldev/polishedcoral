@@ -2222,6 +2222,8 @@ AutoRockSmashScript:
 	earthquake 84
 	applymovement2 MovementData_0xcf55
 	disappear -2
+	checkevent EVENT_GLINT_GROVE_MINA_GONE
+	iftrue .end
 	callasm MinaRockSmash
 	iffalse .end
 	playsound SFX_PAY_DAY

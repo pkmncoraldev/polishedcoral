@@ -161,7 +161,7 @@
 	tilecoll WALL, WALL, NO_OLLIE, NO_OLLIE ; a0
 	tilecoll WALL, SKATE, WALL, SKATE ; a1
 	tilecoll WALL, WALL, SKATE, SKATE ; a2
-	tilecoll SKATE, SKATE, SKATE, WALL ; a3
+	tilecoll SKATE, WALL, SKATE, WALL ; a3
 	tilecoll WALL, WALL, WALL, WALL ; a4
 	tilecoll WALL, WALL, WALL, WALL ; a5
 	tilecoll WALL, WALL, WALL, WALL ; a6

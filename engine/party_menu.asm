@@ -381,6 +381,8 @@ PlacePartyMonEvoStoneCompatibility:
 	
 	; d = party index
 	ld d, b
+	ld a, b
+	ld [wTempMon], a
 	; e = species
 	ld a, d
 	ld hl, wPartyMon1Species
@@ -468,13 +470,18 @@ PlacePartyMonEvoStoneCompatibility:
 	cp EVOLVE_TRADE
 	jr nz, .loop2
 ; trade
-	ld a, b
-	cp EVERSTONE
-	jr z, .loop2
-	ld a, [wCurItem]
-	cp LINK_CABLE
-	jr nz, .loop2
-	ld a, b
+
+	push hl
+	push bc
+	ld a, [wTempMon]
+	ld hl, wPartyMon1Item
+	ld bc, PARTYMON_STRUCT_LENGTH
+	rst AddNTimes
+	ld a, [hl]
+;	cp EVERSTONE
+	pop bc
+	pop hl
+
 	jr .checkHeldItem
 .checkItemMale
 	ld a, c

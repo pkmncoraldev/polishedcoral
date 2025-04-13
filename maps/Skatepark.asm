@@ -625,7 +625,7 @@ SkateparkTMNPCText8:
 	line "move!"
 	
 	para "It'll raise your"
-	cont "speed and clear"
+	line "speed and clear"
 	cont "the field of any"
 	cont "hazards!"
 	

@@ -134,7 +134,7 @@ HuntersThicketRanger:
 	startbattle
 	spriteface HUNTERS_THICKET_LEDIAN_RANGER, DOWN
 	dontrestartmapmusic
-	reloadmap
+	reloadmapafterbattle
 	playmusic MUSIC_ENCOUNTER_GYM_LEADER
 	scall LedianRangerPoseStart
 	opentext

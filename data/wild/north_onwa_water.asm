@@ -69,6 +69,16 @@
 	db 31, AZUMARILL	;5%
 	db 31, AZUMARILL	;4%
 	db 31, AZUMARILL	;1%
+	
+	map_id GLINT_GROVE_EAST
+	db 8 percent ; encounter rate
+	db 31, POLIWHIRL	;30%
+	db 31, POLIWHIRL	;30%
+	db 31, AZUMARILL	;20%
+	db 31, AZUMARILL	;10%
+	db 31, AZUMARILL	;5%
+	db 31, AZUMARILL	;4%
+	db 31, AZUMARILL	;1%
 
 	map_id ROUTE_3
 	db 15 percent ; encounter rate

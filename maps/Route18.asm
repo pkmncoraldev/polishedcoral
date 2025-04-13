@@ -3,7 +3,8 @@ Route18_MapScriptHeader:
 	scene_script Route18Trigger0
 	scene_script Route18Trigger1
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, Route18Callback
 
 	db 0 ; warp events
 
@@ -30,6 +31,10 @@ Route18Trigger0:
 	
 Route18Trigger1:
 	end
+
+Route18Callback:
+	changeblock $c, $24, $2d
+	return
 
 Route18ChangeDisguiseman1:
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT

@@ -398,7 +398,7 @@ ENDM
 	map_attributes DesertTempleOutside, DESERT_TEMPLE_OUTSIDE, $02, SOUTH
 	connection south, DesertWasteland9, DESERT_WASTELAND_9, 4
 	
-	map_attributes Route21, ROUTE_21, 0, NORTH
+	map_attributes Route21, ROUTE_21, $30, NORTH
 	connection north, DuskTurnpike, DUSK_TURNPIKE, -1
 	
 	map_attributes DuskTurnpike, DUSK_TURNPIKE, $30, SOUTH | EAST

@@ -14,23 +14,23 @@ DoBattleAnimFrame: ; ccfbe
 
 .Jumptable:
 	dw BattleAnimFunction_Null ; 00
-	dw BattleAnimFunction_01 ; 01
-	dw BattleAnimFunction_02 ; 02
-	dw BattleAnimFunction_03 ; 03
-	dw BattleAnimFunction_04 ; 04
-	dw BattleAnimFunction_ThrowFromPlayerToEnemy ; 05
-	dw BattleAnimFunction_ThrowFromPlayerToEnemyAndDisappear ; 06
-	dw BattleAnimFunction_07 ; 07
-	dw BattleAnimFunction_08 ; 08
-	dw BattleAnimFunction_09 ; 09
-	dw BattleAnimFunction_0A ; 0a
+	dw BattleAnimFunction_MoveFromUserToTarget ; 01
+	dw BattleAnimFunction_MoveFromUserToTargetAndDisappear ; 02
+	dw BattleAnimFunction_MoveInCircle ; 03
+	dw BattleAnimFunction_MoveWaveToTarget ; 04
+	dw BattleAnimFunction_ThrowFromUserToTarget ; 05
+	dw BattleAnimFunction_ThrowFromUserToTargetAndDisappear ; 06
+	dw BattleAnimFunction_Drop ; 07
+	dw BattleAnimFunction_MoveFromUserToTargetSpinAround ; 08
+	dw BattleAnimFunction_Shake ; 09
+	dw BattleAnimFunction_FireBlast ; 0a
 	dw BattleAnimFunction_RazorLeaf ; 0b
-	dw BattleAnimFunction_0C ; 0c
-	dw BattleAnimFunction_0D ; 0d
-	dw BattleAnimFunction_0E ; 0e
-	dw BattleAnimFunction_0F ; 0f
-	dw BattleAnimFunction_10 ; 10
-	dw BattleAnimFunction_11 ; 11
+	dw BattleAnimFunction_Bubble ; 0c
+	dw BattleAnimFunction_Surf ; 0d
+	dw BattleAnimFunction_Sing ; 0e
+	dw BattleAnimFunction_WaterGun ; 0f
+	dw BattleAnimFunction_Ember ; 10
+	dw BattleAnimFunction_Powder ; 11
 	dw BattleAnimFunction_PokeBall ; 12
 	dw BattleAnimFunction_PokeBallBlocked ; 13
 	dw BattleAnimFunction_14 ; 14
@@ -102,23 +102,24 @@ DoBattleAnimFrame: ; ccfbe
 	dw BattleAnimFunction_5d
 	dw BattleAnimFunction_RadialMoveOut
 	dw BattleAnimFunction_RadialMoveOut_Slow
+	dw BattleAnimFunction_FallAndStop
 
 BattleAnimFunction_Null: ; cd06e (33:506e)
 	call BattleAnim_AnonJumptable
 .anon_dw
-	dw .zero
+	dw DoNothingFunction
 	dw .one
 .one
 	call DeinitBattleAnimation
-.zero
+DoNothingFunction:
 	ret
 
-BattleAnimFunction_ThrowFromPlayerToEnemyAndDisappear: ; cd079 (33:5079)
-	call BattleAnimFunction_ThrowFromPlayerToEnemy
+BattleAnimFunction_ThrowFromUserToTargetAndDisappear: ; cd079 (33:5079)
+	call BattleAnimFunction_ThrowFromUserToTarget
 	ret c
 	jp DeinitBattleAnimation
 
-BattleAnimFunction_ThrowFromPlayerToEnemy: ; cd081 (33:5081)
+BattleAnimFunction_ThrowFromUserToTarget: ; cd081 (33:5081)
 	; If x coord at $88 or beyond, abort.
 	ld hl, BATTLEANIMSTRUCT_XCOORD
 	add hl, bc
@@ -133,7 +134,7 @@ BattleAnimFunction_ThrowFromPlayerToEnemy: ; cd081 (33:5081)
 	add hl, bc
 	dec [hl]
 	; Decrease ??? and hold onto its previous value (argument of the sine function)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	dec [hl]
@@ -150,7 +151,7 @@ BattleAnimFunction_ThrowFromPlayerToEnemy: ; cd081 (33:5081)
 	scf
 	ret
 
-BattleAnimFunction_04: ; cd0a6 (33:50a6)
+BattleAnimFunction_MoveWaveToTarget: ; cd0a6 (33:50a6)
 	ld hl, BATTLEANIMSTRUCT_XCOORD
 	add hl, bc
 	ld a, [hl]
@@ -164,7 +165,7 @@ BattleAnimFunction_04: ; cd0a6 (33:50a6)
 	ld hl, BATTLEANIMSTRUCT_YCOORD
 	add hl, bc
 	dec [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 rept 4
@@ -189,7 +190,7 @@ endr
 	ld [hl], a
 	ret
 
-BattleAnimFunction_03: ; cd0e3 (33:50e3)
+BattleAnimFunction_MoveInCircle: ; cd0e3 (33:50e3)
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw .zero
@@ -203,7 +204,7 @@ BattleAnimFunction_03: ; cd0e3 (33:50e3)
 	jr z, .asm_cd0f9
 	ld a, $20
 .asm_cd0f9
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], a
 	ld hl, BATTLEANIMSTRUCT_0B
@@ -212,7 +213,7 @@ BattleAnimFunction_03: ; cd0e3 (33:50e3)
 	and $7f
 	ld [hl], a
 .one
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	ld hl, BATTLEANIMSTRUCT_0B
@@ -230,12 +231,12 @@ BattleAnimFunction_03: ; cd0e3 (33:50e3)
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	inc [hl]
 	ret
 
-BattleAnimFunction_01: ; cd12a (33:512a)
+BattleAnimFunction_MoveFromUserToTarget: ; cd12a (33:512a)
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw .zero
@@ -254,7 +255,7 @@ BattleAnimFunction_01: ; cd12a (33:512a)
 	ld a, [hl]
 	jp Functionce70a
 
-BattleAnimFunction_02: ; cd146 (33:5146)
+BattleAnimFunction_MoveFromUserToTargetAndDisappear: ; cd146 (33:5146)
 	ld hl, BATTLEANIMSTRUCT_XCOORD
 	add hl, bc
 	ld a, [hl]
@@ -273,14 +274,14 @@ BattleAnimFunction_PokeBall: ; cd15c (33:515c)
 .anon_dw
 	dw .zero
 	dw .one
-	dw .two
+	dw DoNothingFunction
 	dw .three
 	dw .four
-	dw .five
+	dw DoNothingFunction
 	dw .six
 	dw .seven
 	dw .eight
-	dw .nine
+	dw DoNothingFunction
 	dw .ten
 	dw .eleven
 .zero ; init
@@ -288,7 +289,7 @@ BattleAnimFunction_PokeBall: ; cd15c (33:515c)
 	jp BattleAnim_IncAnonJumptableIndex
 
 .one
-	call BattleAnimFunction_ThrowFromPlayerToEnemy
+	call BattleAnimFunction_ThrowFromUserToTarget
 	ret c
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
@@ -305,13 +306,13 @@ BattleAnimFunction_PokeBall: ; cd15c (33:515c)
 	call BattleAnim_IncAnonJumptableIndex
 	ld a, BATTLEANIMFRAMESET_09
 	call ReinitBattleAnimFrameset
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $0
 	inc hl
 	ld [hl], $10
 .four
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hli]
 	ld d, [hl]
@@ -319,7 +320,7 @@ BattleAnimFunction_PokeBall: ; cd15c (33:515c)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	dec a
@@ -327,7 +328,7 @@ BattleAnimFunction_PokeBall: ; cd15c (33:515c)
 	and $1f
 	ret nz
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	sub $4
@@ -343,9 +344,6 @@ BattleAnimFunction_PokeBall: ; cd15c (33:515c)
 	ld hl, BATTLEANIMSTRUCT_ANON_JT_INDEX
 	add hl, bc
 	dec [hl]
-.two
-.five
-.nine
 	ret
 
 .seven
@@ -353,12 +351,12 @@ BattleAnimFunction_PokeBall: ; cd15c (33:515c)
 	ld a, BATTLEANIMFRAMESET_0A
 	call ReinitBattleAnimFrameset
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], $20
 .eight
 .ten
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hli]
 	ld d, [hl]
@@ -366,7 +364,7 @@ BattleAnimFunction_PokeBall: ; cd15c (33:515c)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	dec a
@@ -396,7 +394,7 @@ BattleAnimFunction_PokeBallBlocked: ; cd212 (33:5212)
 	ld a, [hl]
 	cp $70
 	jr nc, .next
-	jp BattleAnimFunction_ThrowFromPlayerToEnemy
+	jp BattleAnimFunction_ThrowFromUserToTarget
 
 .next
 	call BattleAnim_IncAnonJumptableIndex
@@ -423,7 +421,7 @@ GetBallAnimPal: ; cd249 (33:5249)
 	ld [hl], PAL_BATTLE_OB_RED
 	ret
 
-BattleAnimFunction_10: ; cd284 (33:5284)
+BattleAnimFunction_Ember: ; cd284 (33:5284)
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw .zero
@@ -463,20 +461,20 @@ BattleAnimFunction_10: ; cd284 (33:5284)
 .four
 	ret
 
-BattleAnimFunction_07: ; cd2be (33:52be)
+BattleAnimFunction_Drop: ; cd2be (33:52be)
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw .zero
 	dw .one
 .zero
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $30
 	inc hl
 	ld [hl], $48
 .one
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hli]
 	ld d, [hl]
@@ -484,16 +482,16 @@ BattleAnimFunction_07: ; cd2be (33:52be)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	inc [hl]
 	ld a, [hl]
 	and $3f
 	ret nz
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $20
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	ld hl, BATTLEANIMSTRUCT_0B
@@ -501,7 +499,7 @@ BattleAnimFunction_07: ; cd2be (33:52be)
 	sub [hl]
 	jr z, .done
 	jr c, .done
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], a
 	ret
@@ -509,7 +507,7 @@ BattleAnimFunction_07: ; cd2be (33:52be)
 .done
 	jp DeinitBattleAnimation
 
-BattleAnimFunction_08: ; cd306 (33:5306)
+BattleAnimFunction_MoveFromUserToTargetSpinAround: ; cd306 (33:5306)
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw .zero
@@ -528,16 +526,16 @@ BattleAnimFunction_08: ; cd306 (33:5306)
 	call BattleAnim_IncAnonJumptableIndex
 .one
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $0
 .two
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	cp $40
 	jr nc, .loop_back
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	ld d, $18
@@ -547,7 +545,7 @@ BattleAnimFunction_08: ; cd306 (33:5306)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	ld d, $18
@@ -559,7 +557,7 @@ BattleAnimFunction_08: ; cd306 (33:5306)
 	add hl, bc
 	ld a, [hl]
 	and $f
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	add [hl]
 	ld [hl], a
@@ -614,7 +612,7 @@ BattleAnimFunction_08: ; cd306 (33:5306)
 	jr nz, .loop
 	ret
 
-BattleAnimFunction_09: ; cd3ae (33:53ae)
+BattleAnimFunction_Shake: ; cd3ae (33:53ae)
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw .zero
@@ -622,7 +620,7 @@ BattleAnimFunction_09: ; cd3ae (33:53ae)
 	dw .two
 .zero
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $0
 	ld hl, BATTLEANIMSTRUCT_0B
@@ -633,7 +631,7 @@ BattleAnimFunction_09: ; cd3ae (33:53ae)
 	add hl, bc
 	ld [hl], a
 .one
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -647,7 +645,7 @@ BattleAnimFunction_09: ; cd3ae (33:53ae)
 	ld a, [hl]
 	swap a
 	and $f
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], a
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
@@ -661,7 +659,7 @@ BattleAnimFunction_09: ; cd3ae (33:53ae)
 .two
 	jp DeinitBattleAnimation
 
-BattleAnimFunction_0A: ; cd3f2 (33:53f2)
+BattleAnimFunction_FireBlast: ; cd3f2 (33:53f2)
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw .zero
@@ -670,10 +668,10 @@ BattleAnimFunction_0A: ; cd3f2 (33:53f2)
 	dw .three
 	dw .four
 	dw .five
-	dw .six
+	dw DoNothingFunction
 	dw .seven
 	dw .eight
-	dw .nine
+	dw DoNothingFunction
 .zero
 	ld hl, BATTLEANIMSTRUCT_0B
 	add hl, bc
@@ -704,7 +702,7 @@ BattleAnimFunction_0A: ; cd3f2 (33:53f2)
 	ld a, BATTLEANIMFRAMESET_10
 	call ReinitBattleAnimFrameset
 .eight
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	ld d, $10
@@ -720,13 +718,10 @@ BattleAnimFunction_0A: ; cd3f2 (33:53f2)
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	inc [hl]
 	ret
-
-.nine
-	jp DeinitBattleAnimation
 
 .one
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
@@ -752,7 +747,6 @@ BattleAnimFunction_0A: ; cd3f2 (33:53f2)
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	inc [hl]
-.six
 	ret
 
 BattleAnimFunction_RazorLeaf: ; cd478 (33:5478)
@@ -769,18 +763,18 @@ BattleAnimFunction_RazorLeaf: ; cd478 (33:5478)
 	dw .eight
 .zero
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $40
 .one
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	cp $30
 	jr nc, .sine_cosine
 	call BattleAnim_IncAnonJumptableIndex
 	xor a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hli], a
 	ld [hl], a
@@ -801,7 +795,7 @@ BattleAnimFunction_RazorLeaf: ; cd478 (33:5478)
 	ld a, [hl]
 	and $3f
 	ld d, a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	dec [hl]
@@ -810,7 +804,7 @@ BattleAnimFunction_RazorLeaf: ; cd478 (33:5478)
 	add hl, bc
 	ld [hl], a
 	call Functioncd557
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	ld hl, BATTLEANIMSTRUCT_XCOORD
@@ -823,7 +817,7 @@ BattleAnimFunction_RazorLeaf: ; cd478 (33:5478)
 	ld hl, BATTLEANIMSTRUCT_XCOORD
 	add hl, bc
 	ld [hl], d
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], e
 	ret
@@ -837,7 +831,7 @@ BattleAnimFunction_RazorLeaf: ; cd478 (33:5478)
 	jp DeinitBattleAnimation
 
 .sine_cosine_2
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	ld d, $10
@@ -849,18 +843,18 @@ BattleAnimFunction_RazorLeaf: ; cd478 (33:5478)
 	add hl, bc
 	bit 6, [hl]
 	jr nz, .decrease
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	inc [hl]
 	jr .finish
 
 .decrease
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	dec [hl]
 .finish
 	ld de, $80
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
@@ -873,7 +867,7 @@ BattleAnimFunction_RazorLeaf: ; cd478 (33:5478)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], d
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], e
 	ret
@@ -962,11 +956,11 @@ BattleAnimFunction_54_2:
 	ld [hl], a
 .after_frameset
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $40
 .one
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	cp $30
@@ -976,7 +970,7 @@ BattleAnimFunction_54_2:
 	ld a, [hl]
 	and $3f
 	ld d, a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	dec [hl]
@@ -985,7 +979,7 @@ BattleAnimFunction_54_2:
 	add hl, bc
 	ld [hl], a
 	call Functioncd557
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	ld hl, BATTLEANIMSTRUCT_XCOORD
@@ -998,7 +992,7 @@ BattleAnimFunction_54_2:
 	ld hl, BATTLEANIMSTRUCT_XCOORD
 	add hl, bc
 	ld [hl], d
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], e
 	ret
@@ -1020,11 +1014,11 @@ BattleAnimFunction_4E: ; cd58a (33:558a)
 	add hl, bc
 	ld [hl], a
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $40
 .one
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	cp $30
@@ -1037,7 +1031,7 @@ BattleAnimFunction_4E: ; cd58a (33:558a)
 	ld a, [hl]
 	and $3f
 	ld d, a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	dec [hl]
@@ -1046,7 +1040,7 @@ BattleAnimFunction_4E: ; cd58a (33:558a)
 	add hl, bc
 	ld [hl], a
 	call Functioncd557
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	ld hl, BATTLEANIMSTRUCT_XCOORD
@@ -1059,12 +1053,12 @@ BattleAnimFunction_4E: ; cd58a (33:558a)
 	ld hl, BATTLEANIMSTRUCT_XCOORD
 	add hl, bc
 	ld [hl], d
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], e
 	ret
 
-BattleAnimFunction_0C: ; cd5e9 (33:55e9)
+BattleAnimFunction_Bubble: ; cd5e9 (33:55e9)
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw .zero
@@ -1072,11 +1066,11 @@ BattleAnimFunction_0C: ; cd5e9 (33:55e9)
 	dw .two
 .zero
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $c
 .one
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -1089,7 +1083,7 @@ BattleAnimFunction_0C: ; cd5e9 (33:55e9)
 
 .next
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $0
 	ld a, BATTLEANIMFRAMESET_22
@@ -1100,7 +1094,7 @@ BattleAnimFunction_0C: ; cd5e9 (33:55e9)
 	ld a, [hl]
 	cp $98
 	jr nc, .okay
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	ld hl, BATTLEANIMSTRUCT_XCOORD
@@ -1111,7 +1105,7 @@ BattleAnimFunction_0C: ; cd5e9 (33:55e9)
 	add hl, de
 	ld e, l
 	ld d, h
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], e
 	ld hl, BATTLEANIMSTRUCT_XCOORD
@@ -1129,7 +1123,7 @@ BattleAnimFunction_0C: ; cd5e9 (33:55e9)
 	and $f0
 	ld e, a
 	ld d, $ff
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	ld hl, BATTLEANIMSTRUCT_YCOORD
@@ -1139,7 +1133,7 @@ BattleAnimFunction_0C: ; cd5e9 (33:55e9)
 	add hl, de
 	ld e, l
 	ld d, h
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], e
 	ld hl, BATTLEANIMSTRUCT_YCOORD
@@ -1147,12 +1141,12 @@ BattleAnimFunction_0C: ; cd5e9 (33:55e9)
 	ld [hl], d
 	ret
 
-BattleAnimFunction_0D: ; cd66a (33:566a)
+BattleAnimFunction_Surf: ; cd66a (33:566a)
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw .zero
 	dw .one
-	dw .two
+	dw DoNothingFunction
 	dw .three
 	dw .four
 .zero
@@ -1173,16 +1167,16 @@ BattleAnimFunction_0D: ; cd66a (33:566a)
 	add hl, bc
 	ld a, [hl]
 	cp e
-	jr nc, .asm_cd69b
+	jr nc, .move
 	call BattleAnim_IncAnonJumptableIndex
 	xor a
 	ld [hLYOverrideStart], a
 	ret
 
-.asm_cd69b
+.move
 	dec a
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	ld d, $10
@@ -1202,11 +1196,10 @@ BattleAnimFunction_0D: ; cd66a (33:566a)
 	inc a
 	and $7
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	inc [hl]
 	inc [hl]
-.two
 	ret
 
 .three
@@ -1231,7 +1224,7 @@ asm_cd6da: ; cd6da (33:56da)
 	ld [hLYOverrideStart], a
 	ret
 
-BattleAnimFunction_0E: ; cd6e3 (33:56e3)
+BattleAnimFunction_Sing: ; cd6e3 (33:56e3)
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw Functioncd6ea
@@ -1254,7 +1247,7 @@ Functioncd6f7: ; cd6f7 (33:56f7)
 .asm_cd704
 	ld a, $2
 	call Functionce70a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	dec [hl]
@@ -1265,7 +1258,7 @@ Functioncd6f7: ; cd6f7 (33:56f7)
 	ld [hl], a
 	ret
 
-BattleAnimFunction_0F: ; cd71a (33:571a)
+BattleAnimFunction_WaterGun: ; cd71a (33:571a)
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw Functioncd725
@@ -1282,7 +1275,7 @@ Functioncd728: ; cd728 (33:5728)
 	jr c, .asm_cd747
 	ld a, $2
 	call Functionce70a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	dec [hl]
@@ -1324,7 +1317,7 @@ Functioncd763: ; cd763 (33:5763)
 Functioncd776: ; cd776 (33:5776)
 	ret
 
-BattleAnimFunction_11: ; cd777 (33:5777)
+BattleAnimFunction_Powder: ; cd777 (33:5777)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld a, [hl]
@@ -1334,7 +1327,7 @@ BattleAnimFunction_11: ; cd777 (33:5777)
 
 .asm_cd784
 	ld a, [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld l, [hl]
 	ld h, a
@@ -1342,7 +1335,7 @@ BattleAnimFunction_11: ; cd777 (33:5777)
 	add hl, de
 	ld e, l
 	ld d, h
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], e
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
@@ -1366,7 +1359,7 @@ Functioncd7ab: ; cd7ab (33:57ab)
 	add hl, bc
 	ld a, [hl]
 	and $f0
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], a
 	ld hl, BATTLEANIMSTRUCT_0B
@@ -1376,14 +1369,14 @@ Functioncd7ab: ; cd7ab (33:57ab)
 	sla a
 	sla a
 	sla a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], a
 	ld hl, BATTLEANIMSTRUCT_0B
 	add hl, bc
 	ld [hl], $1
 Functioncd7d2: ; cd7d2 (33:57d2)
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -1391,11 +1384,11 @@ Functioncd7d2: ; cd7d2 (33:57d2)
 	jp DeinitBattleAnimation
 
 .asm_cd7de
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld d, [hl]
 	push af
@@ -1416,7 +1409,7 @@ Functioncd7d2: ; cd7d2 (33:57d2)
 	xor $1
 	ld [hl], a
 	ret z
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	dec [hl]
 	ret
@@ -1424,19 +1417,15 @@ Functioncd7d2: ; cd7d2 (33:57d2)
 BattleAnimFunction_15: ; cd80c (33:580c)
 	call BattleAnim_AnonJumptable
 .anon_dw
-	dw Functioncd81f
-	dw Functioncd817
-	dw Functioncd81f
-	dw Functioncd820
-Functioncd817: ; cd817 (33:5817)
+	dw DoNothingFunction
+	dw .one
+	dw DoNothingFunction
+	dw DeinitBattleAnimation
+
+.one
 	call BattleAnim_IncAnonJumptableIndex
 	ld a, BATTLEANIMFRAMESET_35
-	call ReinitBattleAnimFrameset
-Functioncd81f: ; cd81f (33:581f)
-	ret
-
-Functioncd820: ; cd820 (33:5820)
-	jp DeinitBattleAnimation
+	jp ReinitBattleAnimFrameset
 
 BattleAnimFunction_16: ; cd824 (33:5824)
 	call BattleAnim_AnonJumptable
@@ -1453,20 +1442,20 @@ Functioncd835: ; cd835 (33:5835)
 	ld hl, BATTLEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld a, [hl]
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], a
 	ld hl, BATTLEANIMSTRUCT_0B
 	add hl, bc
 	bit 7, [hl]
 	jr nz, .asm_cd852
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $10
 	jr .asm_cd858
 
 .asm_cd852
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $30
 .asm_cd858
@@ -1476,7 +1465,7 @@ Functioncd835: ; cd835 (33:5835)
 	and $7f
 	ld [hl], a
 Functioncd860: ; cd860 (33:5860)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	ld hl, BATTLEANIMSTRUCT_0B
@@ -1488,19 +1477,19 @@ Functioncd860: ; cd860 (33:5860)
 	ld [hl], a
 	bit 7, a
 	jr nz, .load_no_inc
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	inc a
 	jr .reinit
 
 .load_no_inc
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 .reinit
 	call ReinitBattleAnimFrameset
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	inc [hl]
 	ld a, [hl]
@@ -1531,13 +1520,13 @@ Functioncd8ab: ; cd8ab (33:58ab)
 	add hl, bc
 	bit 7, [hl]
 	jr nz, .asm_cd8be
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $10
 	jr .asm_cd8c4
 
 .asm_cd8be
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $30
 .asm_cd8c4
@@ -1547,7 +1536,7 @@ Functioncd8ab: ; cd8ab (33:58ab)
 	and $7f
 	ld [hl], a
 Functioncd8cc: ; cd8cc (33:58cc)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	ld hl, BATTLEANIMSTRUCT_0B
@@ -1566,7 +1555,7 @@ Functioncd8cc: ; cd8cc (33:58cc)
 	ld a, $3c
 .asm_cd8e8
 	call ReinitBattleAnimFrameset
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	inc [hl]
 	inc [hl]
@@ -1589,7 +1578,7 @@ BattleAnimFunction_18: ; cd900 (33:5900)
 	dw Functioncd913
 Functioncd907: ; cd907 (33:5907)
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $28
 	inc hl
@@ -1598,7 +1587,7 @@ Functioncd913: ; cd913 (33:5913)
 	ld hl, BATTLEANIMSTRUCT_0B
 	add hl, bc
 	ld a, [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld d, [hl]
 	push af
@@ -1613,23 +1602,23 @@ Functioncd913: ; cd913 (33:5913)
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	and a
 	jr z, .asm_cd950
 	ld d, a
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld e, [hl]
 	ld hl, hPushOAM ; $ff80
 	add hl, de
 	ld e, l
 	ld d, h
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], e
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], d
 	ret
@@ -1684,7 +1673,7 @@ asm_cd988: ; cd988 (33:5988)
 
 Functioncd99a: ; cd99a (33:599a)
 	call Functioncd9f4
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	push af
@@ -1706,7 +1695,7 @@ Functioncd99a: ; cd99a (33:599a)
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	sub $8
@@ -1723,14 +1712,14 @@ Functioncd99a: ; cd99a (33:599a)
 	ld [hl], a
 	and $7
 	ret nz
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	inc [hl]
 	ret
 
 .asm_cd9e2
 	xor a
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], a
 	ld hl, BATTLEANIMSTRUCT_0B
@@ -1743,7 +1732,7 @@ Functioncd99a: ; cd99a (33:599a)
 	ret
 
 Functioncd9f4: ; cd9f4 (33:59f4)
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld e, [hl]
 	ld d, 0
@@ -1797,7 +1786,7 @@ Functioncda3a: ; cda3a (33:5a3a)
 	inc a
 	call ReinitBattleAnimFrameset
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $8
 Functioncda4c: ; cda4c (33:5a4c)
@@ -1813,13 +1802,13 @@ BattleAnimFunction_LeechSeed: ; cda4d (33:5a4d)
 
 .zero: ; cda58 (33:5a58)
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], $40
 	ret
 
 .one: ; cda62 (33:5a62)
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	cp $20
@@ -1833,7 +1822,7 @@ BattleAnimFunction_LeechSeed: ; cda4d (33:5a4d)
 	jp BattleAnim_IncAnonJumptableIndex
 
 .two: ; cda7a (33:5a7a)
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -1859,7 +1848,7 @@ Functioncda8d: ; cda8d (33:5a8d)
 	ld a, [hl]
 	add $2
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld e, [hl]
 	ld hl, BATTLEANIMSTRUCT_XCOORD
@@ -1879,13 +1868,13 @@ Functioncda8d: ; cda8d (33:5a8d)
 	add hl, de
 	ld e, l
 	ld d, h
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], e
 	ld hl, BATTLEANIMSTRUCT_XCOORD
 	add hl, bc
 	ld [hl], d
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	and $1
@@ -1903,13 +1892,13 @@ BattleAnimFunction_3F: ; cdad6 (33:5ad6)
 	dw Functioncdaf9
 Functioncdadf: ; cdadf (33:5adf)
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], $40
 	ret
 
 Functioncdae9: ; cdae9 (33:5ae9)
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	cp $20
@@ -1922,8 +1911,8 @@ Functioncdaf9: ; cdaf9 (33:5af9)
 	ret
 
 BattleAnimFunction_1A: ; cdafa (33:5afa)
-	call BattleAnimFunction_03
-	ld hl, BATTLEANIMSTRUCT_0F
+	call BattleAnimFunction_MoveInCircle
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	add $f
@@ -1984,7 +1973,7 @@ Functioncdb28: ; cdb28 (33:5b28)
 
 Functioncdb50: ; cdb50 (33:5b50)
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $2c
 	ld hl, BATTLEANIMSTRUCT_FRAME
@@ -2001,7 +1990,7 @@ Functioncdb65: ; cdb65 (33:5b65)
 	ret nc
 	inc [hl]
 	inc [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
@@ -2030,7 +2019,7 @@ BattleAnimFunction_1D: ; cdb80 (33:5b80)
 	dw Functioncdc57
 	dw Functioncdc74
 Functioncdb9f: ; cdb9f (33:5b9f)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $28
 	inc hl
@@ -2071,7 +2060,7 @@ Functioncdbcf: ; cdbcf (33:5bcf)
 	jr nc, .asm_cdbe6
 	and $f
 	jr nz, asm_cdbfa
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], $10
 	jp BattleAnim_IncAnonJumptableIndex
@@ -2082,7 +2071,7 @@ Functioncdbcf: ; cdbcf (33:5bcf)
 	ret
 
 Functioncdbeb: ; cdbeb (33:5beb)
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -2101,7 +2090,7 @@ asm_cdbfa: ; cdbfa (33:5bfa)
 	ld hl, BATTLEANIMSTRUCT_YCOORD
 	add hl, bc
 	ld d, [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld e, [hl]
 	ld hl, hPushOAM ; $ff80
@@ -2111,7 +2100,7 @@ asm_cdbfa: ; cdbfa (33:5bfa)
 	ld hl, BATTLEANIMSTRUCT_YCOORD
 	add hl, bc
 	ld [hl], d
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], e
 	ret
@@ -2125,7 +2114,7 @@ Functioncdc1e: ; cdc1e (33:5c1e)
 	jp BattleAnim_IncAnonJumptableIndex
 
 Functioncdc27: ; cdc27 (33:5c27)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
@@ -2149,13 +2138,13 @@ Functioncdc48: ; cdc48 (33:5c48)
 	ld a, BATTLEANIMFRAMESET_4F
 	call ReinitBattleAnimFrameset
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $40
 	ret
 
 Functioncdc57: ; cdc57 (33:5c57)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	ld d, $20
@@ -2163,7 +2152,7 @@ Functioncdc57: ; cdc57 (33:5c57)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	cp $30
@@ -2177,7 +2166,7 @@ Functioncdc74: ; cdc74 (33:5c74)
 	ret
 
 Functioncdc75: ; cdc75 (33:5c75)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hli]
 	ld d, [hl]
@@ -2185,23 +2174,23 @@ Functioncdc75: ; cdc75 (33:5c75)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	inc [hl]
 	ld a, [hl]
 	and $3f
 	ret nz
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $20
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	sub $8
 	ld [hl], a
 	ret nz
 	xor a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hli], a
 	ld [hl], a
@@ -2245,7 +2234,7 @@ Functioncdcca: ; cdcca (33:5cca)
 	ld [hl], a
 .asm_cdcd9
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $8
 	ld hl, BATTLEANIMSTRUCT_0B
@@ -2255,7 +2244,7 @@ Functioncdcca: ; cdcca (33:5cca)
 	jp ReinitBattleAnimFrameset
 
 Functioncdced: ; cdced (33:5ced)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -2267,7 +2256,7 @@ Functioncdced: ; cdced (33:5ced)
 	jp DeinitBattleAnimation
 
 Functioncdcfe: ; cdcfe (33:5cfe)
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
@@ -2310,7 +2299,7 @@ Functioncdd31: ; cdd31 (33:5d31)
 	add hl, bc
 	ld a, [hl]
 	and $3f
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], a
 	ld hl, BATTLEANIMSTRUCT_0B
@@ -2328,7 +2317,7 @@ Functioncdd4f: ; cdd4f (33:5d4f)
 	ld a, [hl]
 	swap a
 	ld d, a
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
@@ -2349,7 +2338,7 @@ Functioncdd4f: ; cdd4f (33:5d4f)
 	ld a, [hl]
 	cp $80
 	ret nc
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	and $3
@@ -2375,7 +2364,7 @@ Functioncdd97: ; cdd97 (33:5d97)
 	ld hl, BATTLEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld a, [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], a
 	ld hl, BATTLEANIMSTRUCT_0B
@@ -2383,7 +2372,7 @@ Functioncdd97: ; cdd97 (33:5d97)
 	ld a, [hl]
 	and $80
 	rlca
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	add [hl]
 	call ReinitBattleAnimFrameset
@@ -2419,14 +2408,14 @@ Functioncddbc: ; cddbc (33:5dbc)
 	jr z, .asm_cddf0
 	and $1f
 	ret nz
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	inc a
 	jr .asm_cddf5
 
 .asm_cddf0
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 .asm_cddf5
@@ -2466,7 +2455,7 @@ Unknown_cde25: ; cde25
 	db $ec, $f8, $00
 ; cde28
 BattleAnimFunction_25: ; cde28 (33:5e28)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
@@ -2479,7 +2468,7 @@ BattleAnimFunction_25: ; cde28 (33:5e28)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld d, [hl]
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld e, [hl]
 	ld hl, $ffa0
@@ -2489,13 +2478,13 @@ BattleAnimFunction_25: ; cde28 (33:5e28)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], d
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], e
 	ret
 
 BattleAnimFunction_26: ; cde54 (33:5e54)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	dec [hl]
@@ -2538,7 +2527,7 @@ BattleAnimFunction_28: ; cde89 (33:5e89)
 	dw Functioncdebf
 Functioncde90: ; cde90 (33:5e90)
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $0
 	ld hl, BATTLEANIMSTRUCT_0B
@@ -2568,7 +2557,7 @@ Functioncde90: ; cde90 (33:5e90)
 	jp ReinitBattleAnimFrameset
 
 Functioncdebf: ; cdebf (33:5ebf)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -2580,7 +2569,7 @@ Functioncdebf: ; cdebf (33:5ebf)
 	ld hl, BATTLEANIMSTRUCT_0B
 	add hl, bc
 	ld a, [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], a
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
@@ -2592,7 +2581,7 @@ Functioncdebf: ; cdebf (33:5ebf)
 	ret
 
 BattleAnimFunction_SpiralDescent: ; cdedd (33:5edd)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	ld d, $18
@@ -2602,7 +2591,7 @@ BattleAnimFunction_SpiralDescent: ; cdedd (33:5edd)
 	sra a
 	sra a
 	sra a
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	add [hl]
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
@@ -2614,13 +2603,13 @@ BattleAnimFunction_SpiralDescent: ; cdedd (33:5edd)
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	inc [hl]
 	ld a, [hl]
 	and $7
 	ret nz
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	cp $28
@@ -2632,7 +2621,7 @@ BattleAnimFunction_SpiralDescent: ; cdedd (33:5edd)
 	jp DeinitBattleAnimation
 
 BattleAnimFunction_2D: ; cdf1b (33:5f1b)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	ld d, $18
@@ -2642,7 +2631,7 @@ BattleAnimFunction_2D: ; cdf1b (33:5f1b)
 	sra a
 	sra a
 	sra a
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	add [hl]
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
@@ -2654,13 +2643,13 @@ BattleAnimFunction_2D: ; cdf1b (33:5f1b)
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	inc [hl]
 	ld a, [hl]
 	and $3
 	ret nz
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	cp $28
@@ -2683,7 +2672,7 @@ Functioncdf60: ; cdf60 (33:5f60)
 	cp $84
 	jr nc, .next
 	inc [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
@@ -2716,7 +2705,7 @@ BattleAnimFunction_34: ; cdf8c (33:5f8c)
 	sra a
 	sra a
 	sra a
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	add [hl]
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
@@ -2735,7 +2724,7 @@ BattleAnimFunction_34: ; cdf8c (33:5f8c)
 	ld a, [hl]
 	and $7
 	ret nz
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	cp $e8
@@ -2757,7 +2746,7 @@ BattleAnimFunction_3C: ; cdfcb (33:5fcb)
 	sra a
 	sra a
 	sra a
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	add [hl]
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
@@ -2776,7 +2765,7 @@ BattleAnimFunction_3C: ; cdfcb (33:5fcb)
 	ld a, [hl]
 	and $3
 	ret nz
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	cp $d0
@@ -2796,10 +2785,10 @@ BattleAnimFunction_35: ; ce00b (33:600b)
 	dw Functionce05f
 Functionce014: ; ce014 (33:6014)
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $34
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], $10
 Functionce023: ; ce023 (33:6023)
@@ -2813,10 +2802,10 @@ Functionce023: ; ce023 (33:6023)
 .asm_ce02d
 	ld a, $2
 	call Functionce70a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld d, [hl]
 	call Sine
@@ -2828,7 +2817,7 @@ Functionce023: ; ce023 (33:6023)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	sub $4
@@ -2836,7 +2825,7 @@ Functionce023: ; ce023 (33:6023)
 	and $1f
 	cp $20
 	ret nz
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	srl [hl]
 	ret
@@ -2862,7 +2851,7 @@ BattleAnimFunction_Horn: ; ce063 (33:6063)
 	ld hl, BATTLEANIMSTRUCT_YCOORD
 	add hl, bc
 	ld a, [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], a
 	ret
@@ -2877,7 +2866,7 @@ BattleAnimFunction_Horn: ; ce063 (33:6063)
 	jp Functionce70a
 
 .two: ; ce091 (33:6091)
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	cp $20
@@ -2885,7 +2874,7 @@ BattleAnimFunction_Horn: ; ce063 (33:6063)
 	jp DeinitBattleAnimation
 
 Functionce09e: ; ce09e (33:609e)
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	ld d, $8
@@ -2896,13 +2885,13 @@ Functionce09e: ; ce09e (33:609e)
 	sra a
 	cpl
 	inc a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	add [hl]
 	ld hl, BATTLEANIMSTRUCT_YCOORD
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	add $8
@@ -2927,7 +2916,7 @@ Functionce0ce: ; ce0ce (33:60ce)
 	ret
 
 Functionce0dd: ; ce0dd (33:60dd)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	ld d, $10
@@ -2938,7 +2927,7 @@ Functionce0dd: ; ce0dd (33:60dd)
 	jr z, .asm_ce0f0
 	ld [hl], a
 .asm_ce0f0
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	sub $4
@@ -2964,18 +2953,18 @@ BattleAnimFunction_2E: ; ce10e (33:610e)
 	dw Functionce12a
 Functionce115: ; ce115 (33:6115)
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $28
 	ld hl, BATTLEANIMSTRUCT_YCOORD
 	add hl, bc
 	ld a, [hl]
 	sub $28
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], a
 Functionce12a: ; ce12a (33:612a)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hli]
 	ld d, [hl]
@@ -2983,7 +2972,7 @@ Functionce12a: ; ce12a (33:612a)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	ld hl, BATTLEANIMSTRUCT_0B
@@ -2994,13 +2983,13 @@ Functionce12a: ; ce12a (33:612a)
 	add hl, bc
 	dec [hl]
 .asm_ce149
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	inc [hl]
 	ld a, [hl]
 	and $3f
 	ret nz
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $20
 	inc hl
@@ -3011,7 +3000,7 @@ BattleAnimFunction_2F: ; ce15c (33:615c)
 	ld hl, BATTLEANIMSTRUCT_0B
 	add hl, bc
 	ld a, [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld d, [hl]
 	push af
@@ -3048,7 +3037,7 @@ BattleAnimFunction_2F: ; ce15c (33:615c)
 	ld hl, BATTLEANIMSTRUCT_XCOORD
 	add hl, bc
 	ld a, [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	cp $5a
 	jr nc, .asm_ce1aa
@@ -3070,7 +3059,7 @@ BattleAnimFunction_42: ; ce1b0 (33:61b0)
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld d, [hl]
 	push af
@@ -3085,11 +3074,11 @@ BattleAnimFunction_42: ; ce1b0 (33:61b0)
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	cp $40
 	jr nc, .asm_ce1df
@@ -3113,7 +3102,7 @@ Functionce1ee: ; ce1ee (33:61ee)
 	ld hl, BATTLEANIMSTRUCT_YCOORD
 	add hl, bc
 	ld a, [hl]
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], a
 Functionce1fb: ; ce1fb (33:61fb)
@@ -3122,7 +3111,7 @@ Functionce1fb: ; ce1fb (33:61fb)
 	ld a, [hl]
 	ld d, $30
 	call Sine
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	add [hl]
 	ld hl, BATTLEANIMSTRUCT_YCOORD
@@ -3165,7 +3154,7 @@ Functionce22d: ; ce22d (33:622d)
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], $f
 Functionce254: ; ce254 (33:6254)
@@ -3189,7 +3178,7 @@ Functionce260: ; ce260 (33:6260)
 .asm_ce26c
 	ld a, $cc
 .asm_ce26e
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], a
 	ret
@@ -3221,7 +3210,7 @@ Functionce289: ; ce289 (33:6289)
 	jp DeinitBattleAnimation
 
 Functionce29f: ; ce29f (33:629f)
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	and $7
@@ -3232,7 +3221,7 @@ Functionce29f: ; ce29f (33:629f)
 	ld hl, Unknown_ce2c4
 	add hl, de
 	ld a, [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	and [hl]
 	ld [wOBP0], a
@@ -3252,7 +3241,7 @@ BattleAnimFunction_33: ; ce2cc (33:62cc)
 	sra a
 	sra a
 	sra a
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	add [hl]
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
@@ -3267,7 +3256,7 @@ BattleAnimFunction_33: ; ce2cc (33:62cc)
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	dec [hl]
 	dec [hl]
@@ -3286,14 +3275,14 @@ Functionce306: ; ce306 (33:6306)
 	cp $e0
 	jr nz, .asm_ce319
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $2
 	ret
 
 .asm_ce319
 	ld d, a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld e, [hl]
 	ld hl, hPushOAM ; $ff80
@@ -3303,13 +3292,13 @@ Functionce306: ; ce306 (33:6306)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], d
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], e
 	ret
 
 Functionce330: ; ce330 (33:6330)
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -3319,7 +3308,7 @@ Functionce330: ; ce330 (33:6330)
 
 .asm_ce33a
 	ld [hl], $4
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	cpl
@@ -3380,13 +3369,13 @@ BattleAnimFunction_38: ; ce389 (33:6389)
 	dw Functionce3ae
 Functionce392: ; ce392 (33:6392)
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $c
 	ret
 
 Functionce39c: ; ce39c (33:639c)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -3405,7 +3394,7 @@ Functionce3ae: ; ce3ae (33:63ae)
 	ret
 
 BattleAnimFunction_39: ; ce3b4 (33:63b4)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
@@ -3503,7 +3492,7 @@ BattleAnimFunction_3E: ; ce43a (33:643a)
 	dw Functionce490
 Functionce443: ; ce443 (33:6443)
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $28
 	ld hl, BATTLEANIMSTRUCT_0B
@@ -3521,7 +3510,7 @@ Functionce443: ; ce443 (33:6443)
 	or $8
 	ld [hl], a
 Functionce465: ; ce465 (33:6465)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -3550,7 +3539,7 @@ Functionce465: ; ce465 (33:6465)
 	ld [hl], $10
 	call BattleAnim_IncAnonJumptableIndex
 Functionce490: ; ce490 (33:6490)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	dec [hl]
@@ -3577,7 +3566,7 @@ Functionce4b0: ; ce4b0 (33:64b0)
 	cp $38
 	jr nc, .asm_ce4d8
 	inc [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
@@ -3606,7 +3595,7 @@ BattleAnimFunction_41: ; ce4dc (33:64dc)
 	and a
 	ret z
 	ld d, a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
@@ -3619,7 +3608,7 @@ BattleAnimFunction_41: ; ce4dc (33:64dc)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	and $1f
@@ -3630,7 +3619,7 @@ BattleAnimFunction_41: ; ce4dc (33:64dc)
 	ret
 
 BattleAnimFunction_43: ; ce508 (33:6508)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	cp $10
@@ -3662,7 +3651,7 @@ BattleAnimFunction_44: ; ce532 (33:6532)
 	ld hl, BATTLEANIMSTRUCT_0B
 	add hl, bc
 	ld e, [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld d, [hl]
 	ld a, e
@@ -3703,11 +3692,11 @@ Functionce564: ; ce564 (33:6564)
 
 Functionce56e: ; ce56e (33:656e)
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $18
 Functionce577: ; ce577 (33:6577)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	cp $80
@@ -3764,7 +3753,7 @@ BattleAnimFunction_47: ; ce5b4 (33:65b4)
 	call Sine
 	sra a
 	sra a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	add [hl]
 	inc [hl]
@@ -3908,7 +3897,7 @@ BattleAnimFunction_4B: ; ce688 (33:6688)
 	ld hl, BATTLEANIMSTRUCT_XCOORD
 	add hl, bc
 	ld d, [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld e, [hl]
 	ld hl, BATTLEANIMSTRUCT_0B
@@ -3930,7 +3919,7 @@ BattleAnimFunction_4B: ; ce688 (33:6688)
 	ld hl, BATTLEANIMSTRUCT_XCOORD
 	add hl, bc
 	ld [hl], d
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], e
 	ret
@@ -3945,7 +3934,7 @@ BattleAnimFunction_4C: ; ce6b3 (33:66b3)
 
 BattleAnimFunction_4F: ; ce6bf (33:66bf)
 	ld d, $18
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
@@ -3956,7 +3945,7 @@ BattleAnimFunction_4F: ; ce6bf (33:66bf)
 	jp Functionce6f1
 
 BattleAnimFunction_4D: ; ce6d2 (33:66d2)
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	cp $20
@@ -4047,7 +4036,7 @@ BattleAnimFunction_50:
 	ret
 
 .two
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	ld d, $10
@@ -4058,7 +4047,7 @@ BattleAnimFunction_50:
 	jr z, .skip
 	ld [hl], a
 .skip
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	sub 4
@@ -4083,13 +4072,13 @@ BattleAnimFunction_52:
 
 .zero
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $30
 	inc hl
 	ld [hl], $48
 .one
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hli]
 	ld d, [hl]
@@ -4097,7 +4086,7 @@ BattleAnimFunction_52:
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	inc [hl]
 	ld a, [hl]
@@ -4124,11 +4113,11 @@ BattleAnimFunction_55:
 
 .one
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], 24
 .two
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	cp 160
@@ -4149,7 +4138,7 @@ BattleAnimFunction_57:
 
 .zero
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $28
 	inc hl
@@ -4158,7 +4147,7 @@ BattleAnimFunction_57:
 	ld hl, BATTLEANIMSTRUCT_0B
 	add hl, bc
 	ld a, [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld d, [hl]
 	push af
@@ -4173,7 +4162,7 @@ BattleAnimFunction_57:
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hli]
 	ld d, a
@@ -4183,7 +4172,7 @@ BattleAnimFunction_57:
 	jp nc, DeinitBattleAnimation
 	ld e, l
 	ld d, h
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, e
 	ld [hld], a
@@ -4204,14 +4193,14 @@ BattleAnimFunction_58:
 	cp -1
 	jr nz, .not_done_climbing
 	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], 2
 	ret
 
 .not_done_climbing
 	ld d, a
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld e, [hl]
 	ld hl, -$80
@@ -4221,13 +4210,13 @@ BattleAnimFunction_58:
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], d
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], e
 	ret
 
 .one
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -4237,7 +4226,7 @@ BattleAnimFunction_58:
 
 .delay_done
 	ld [hl], 4
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	cpl
@@ -4270,7 +4259,7 @@ BattleAnimFunction_5d:
 	ld hl, BATTLEANIMSTRUCT_YCOORD
 	add hl, bc
 	dec [hl]
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
@@ -4303,14 +4292,14 @@ BattleAnimFunction_RadialMoveOut:
 	dw .step
 
 .initialize
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	xor a
 	ld [hld], a
 	ld [hl], a ; initial position = 0
 	call BattleAnim_IncAnonJumptableIndex
 .step
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	push hl
 	ld a, [hli]
@@ -4349,14 +4338,14 @@ BattleAnimFunction_RadialMoveOut_Slow:
 	dw .step
 
 .initialize
-	ld hl, BATTLEANIMSTRUCT_10
+	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	xor a
 	ld [hld], a
 	ld [hl], a ; initial position = 0
 	call BattleAnim_IncAnonJumptableIndex
 .step
-	ld hl, BATTLEANIMSTRUCT_0F
+	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	push hl
 	ld a, [hli]
@@ -4387,4 +4376,34 @@ BattleAnimFunction_RadialMoveOut_Slow:
 	add hl, bc
 	ld [hl], a
 	ret
-	
+
+BattleAnimFunction_FallAndStop:
+	call BattleAnim_AnonJumptable
+
+	dw .zero
+	dw .one
+	dw DoNothingFunction
+
+.zero
+	call BattleAnim_IncAnonJumptableIndex
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, $30
+	ld [hli], a
+	ld [hl], $48
+.one
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hli]
+	ld d, [hl]
+	call Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	inc [hl]
+	ld a, [hl]
+	and $3f
+	ret nz
+	jp BattleAnim_IncAnonJumptableIndex

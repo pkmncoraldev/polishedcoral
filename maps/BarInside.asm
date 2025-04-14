@@ -436,7 +436,7 @@ BarInsideRegular1Text3:
 	line "that I lost the"
 	cont "cue ball?"
 	
-	para "…<WAIT<L>I don't get it…"
+	para "…<WAIT_L>I don't get it…"
 	done
 	
 BarInsideRegular1WinText:

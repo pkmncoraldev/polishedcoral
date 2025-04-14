@@ -574,7 +574,7 @@ RadiantFieldTrainer4:
 .SeenText:
 	text "If you can beat me"
 	line "I'll tell you an"
-	cont "intersting fact"
+	cont "interesting fact"
 	cont "about sunflowers!"
 	done
 

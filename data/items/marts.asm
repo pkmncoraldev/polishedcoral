@@ -28,6 +28,7 @@ Marts: ; 160a9
 	dw ShimmerBerryMarket
 	dw ShimmerMart
 	dw BrilloMart
+	dw BrilloMart
 	dw CoinsMart
 	dw RadiantMart
 	dw DuskMart

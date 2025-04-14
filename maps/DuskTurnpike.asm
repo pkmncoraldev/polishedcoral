@@ -657,7 +657,7 @@ DuskTurnpikeMartSign:
 DuskTurnpikeSign:
 	text "DUSK TURNPIKE"
 	
-	para "A breif pit-stop"
+	para "A brief pit-stop"
 	line "along the road."
 	done
 	

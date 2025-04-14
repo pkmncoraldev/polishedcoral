@@ -84,7 +84,7 @@ BattleAnimOAMData: ; ceeae
 	dbbw $01, 10, .OAMData_51 ; 51
 	dbbw $01,  6, .OAMData_51 ; 52
 	dbbw $00,  9, .OAMData_01 ; 53
-	dbbw $12, 16, .OAMData_54 ; 54
+	dbbw $04,  4, .OAMData_02 ; 54
 	dbbw $05,  4, .OAMData_02 ; 55
 	dbbw $00,  2, .OAMData_56 ; 56
 	dbbw $02,  2, .OAMData_56 ; 57
@@ -1195,21 +1195,3 @@ BattleAnimOAMData: ; ceeae
 	dsprite   0, 0,   0, 0, $03, $0
 	dsprite   1, 0,  -1, 0, $04, $0
 	dsprite   1, 0,   0, 0, $05, $0
-
-.OAMData_54
-	dbsprite  -2,  -1, 0, 0, $00, $0
-	dbsprite  -1,  -1, 0, 0, $02, X_FLIP | Y_FLIP
-	dbsprite  -2,   0, 0, 0, $02, $0
-	dbsprite  -1,   0, 0, 0, $01, $0
-	dbsprite   0,  -1, 0, 0, $02, Y_FLIP
-	dbsprite   1,  -1, 0, 0, $00, X_FLIP
-	dbsprite   0,   0, 0, 0, $01, $0
-	dbsprite   1,   0, 0, 0, $02, X_FLIP
-	dbsprite  -2,   1, 0, 0, $02, Y_FLIP
-	dbsprite  -1,   1, 0, 0, $01, $0
-	dbsprite  -2,   2, 0, 0, $00, Y_FLIP
-	dbsprite  -1,   2, 0, 0, $02, X_FLIP
-	dbsprite   0,   1, 0, 0, $01, $0
-	dbsprite   1,   1, 0, 0, $02, X_FLIP | Y_FLIP
-	dbsprite   0,   2, 0, 0, $02, $0
-	dbsprite   1,   2, 0, 0, $00, X_FLIP | Y_FLIP

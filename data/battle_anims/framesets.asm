@@ -207,7 +207,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_ec
 	dw .Frameset_ed
 	dw .Frameset_f3 ; BATTLEANIMFRAMESET_F3
-	dw .Frameset_BigRedX
+	dw .Frameset_block
 	dw .Frameset_dragondarts
 
 	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
@@ -667,7 +667,7 @@ BattleAnimFrameData: ; ce85e
 .Frameset_44:
 	db -3, $14
 	db BATTLEANIMOAMSET_55, $28
-	db BATTLEANIMOAMSET_06, $28
+	db BATTLEANIMOAMSET_54, $28
 	db BATTLEANIMOAMSET_53, $14
 	db -3, $04
 	db BATTLEANIMOAMSET_53, $04
@@ -1301,20 +1301,20 @@ BattleAnimFrameData: ; ce85e
 	dorestart
 
 .Frameset_c1:
-	frame BATTLEANIMOAMSET_06, 40
+	frame BATTLEANIMOAMSET_54, 40
 	endanim
 	
 .Frameset_c3:
 	frame BATTLEANIMOAMSET_1E,  3
 	frame BATTLEANIMOAMSET_55,  3
-	frame BATTLEANIMOAMSET_06,  3
+	frame BATTLEANIMOAMSET_54,  3
 	frame BATTLEANIMOAMSET_53,  3
 	delanim
 	
 .Frameset_c4:
 	frame BATTLEANIMOAMSET_1E,  4
 	frame BATTLEANIMOAMSET_55,  8
-	frame BATTLEANIMOAMSET_06,  20
+	frame BATTLEANIMOAMSET_54,  20
 	delanim
 	
 .Frameset_c7:
@@ -1375,7 +1375,7 @@ BattleAnimFrameData: ; ce85e
 	delanim
 	
 .Frameset_e9:
-	frame BATTLEANIMOAMSET_06,  1
+	frame BATTLEANIMOAMSET_54,  1
 	frame BATTLEANIMOAMSET_EF,  1
 	dorestart
 	
@@ -1430,21 +1430,12 @@ BattleAnimFrameData: ; ce85e
 	frame BATTLEANIMOAMSET_00,  8
 	endanim
 
-.Frameset_BigRedX
-	frame BATTLEANIMOAMSET_54,  32
-	frame BATTLEANIMOAMSET_54,  16
-	db -3, 4
-	frame BATTLEANIMOAMSET_54,  6
-	db -3, 4
-	frame BATTLEANIMOAMSET_54,  6
-	delanim
-
 .Frameset_c2:
 	db BATTLEANIMOAMSET_D8, $20
 	delanim
 
 .Frameset_ba:
-	db BATTLEANIMOAMSET_06,  1
+	db BATTLEANIMOAMSET_54,  1
 	db BATTLEANIMOAMSET_53,  1
 	db -2
 

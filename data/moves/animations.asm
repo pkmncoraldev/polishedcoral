@@ -309,12 +309,20 @@ BattleAnim_TwinBeam:
 	anim_ret
 
 BattleAnim_Block:
-	anim_1gfx ANIM_GFX_OBJECTS
-	anim_sound 0, 1, SFX_MEGA_PUNCH
-	anim_obj ANIM_OBJ_BLOCK, 132, 48, $20
-	anim_wait 48
-	anim_sound 0, 1, SFX_WRONG
-	anim_wait 20
+	anim_1gfx ANIM_GFX_RED_X
+	anim_obj ANIM_OBJ_BLOCK2,  16, 4,   7, 0, $40
+	anim_wait 14
+	anim_sound 0, 0, SFX_GLASS_TING_2
+	anim_wait 30
+	anim_obj ANIM_OBJ_BLOCK,   16, 4,   7, 0, $40
+	anim_sound 6, 6, SFX_GLASS_TING
+	anim_wait 22
+.loop
+	anim_clearobjs
+	anim_wait 1
+	anim_obj ANIM_OBJ_BLOCK,   16, 4,   7, 0, $40
+	anim_wait 1
+	anim_loop 3, .loop
 	anim_ret
 
 BattleAnim_FieryDance:

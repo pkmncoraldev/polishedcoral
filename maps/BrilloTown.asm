@@ -260,15 +260,17 @@ BrilloNPC1:
 	jumptextfaceplayer BrilloNPC1Text
 	
 BrilloNPC1Text:
-	text "During the day"
-	line "it's blazing hot."
+	text "If you move too"
+	line "quickly across"
+	cont "the sand dunes,"
+	cont "you'll sink in."
 	
-	para "During the night"
-	line "it's freezing cold."
+	para "Then you'll have"
+	line "to fight your"
+	cont "way out."
 	
-	para "This place isn't"
-	line "for the faint of"
-	cont "heart."
+	para "Trust me, take"
+	line "it slow!"
 	done
 	
 BrilloNPC2:

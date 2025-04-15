@@ -2498,6 +2498,8 @@ FuryAttackUsers:
 	db TRUMBEAK
 	db TOUCANNON
 	db SKARMORY
+	db SWABLU
+	db ALTARIA
 	db -1
 
 BarrageUsers:

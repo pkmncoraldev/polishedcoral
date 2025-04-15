@@ -1375,8 +1375,8 @@ ChanseyEvosAttacks:
 HorseaEvosAttacks:
 	db EVOLVE_LEVEL, 32, SEADRA
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
 	db 1, LEER_TAIL_WHIP
+	db 1, WATER_GUN
 	db 7, SAND_ATTACK_SMOKESCREEN_FLASH
 	db 10, TWISTER
 	db 16, FOCUS_ENERGY
@@ -1393,8 +1393,8 @@ HorseaEvosAttacks:
 SeadraEvosAttacks:
 	db EVOLVE_TRADE, DRAGON_SCALE, KINGDRA
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
 	db 1, LEER_TAIL_WHIP
+	db 1, WATER_GUN
 	db 7, SAND_ATTACK_SMOKESCREEN_FLASH
 	db 10, TWISTER
 	db 16, FOCUS_ENERGY
@@ -2847,8 +2847,8 @@ HoundoomEvosAttacks:
 
 KingdraEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
 	db 1, LEER_TAIL_WHIP
+	db 1, WATER_GUN
 	db 7, SAND_ATTACK_SMOKESCREEN_FLASH
 	db 10, TWISTER
 	db 16, FOCUS_ENERGY

@@ -5844,13 +5844,13 @@ ChooseGender_UpdateCursorOAM:
 	
 ChooseGender_OAM01:
 ;y pos, x pos, tile, palette
-	dsprite  4,  4, 6,  0, $09, $0 | BEHIND_BG
-	dsprite  4,  4, 7,  0, $0a, $0 | BEHIND_BG
+	dsprite  4,  4, 6,  0, $09, $0 | PRIORITY
+	dsprite  4,  4, 7,  0, $0a, $0 | PRIORITY
 	
 ChooseGender_OAM02:
 ;y pos, x pos, tile, palette
-	dsprite  4,  4, 15,  0, $09, $0 | BEHIND_BG
-	dsprite  4,  4, 16,  0, $0a, $0 | BEHIND_BG
+	dsprite  4,  4, 15,  0, $09, $0 | PRIORITY
+	dsprite  4,  4, 16,  0, $0a, $0 | PRIORITY
 	
 PlayerIntroPaletteWhite:
 	RGB 31, 31, 31

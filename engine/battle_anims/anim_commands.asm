@@ -788,7 +788,7 @@ BattleAnimCmd_IncObj: ; cc4c0 (33:44c0)
 	ret
 
 .found
-	ld hl, BATTLEANIMSTRUCT_ANON_JT_INDEX
+	ld hl, BATTLEANIMSTRUCT_JUMPTABLE_INDEX
 	add hl, bc
 	inc [hl]
 	ret
@@ -839,7 +839,7 @@ BattleAnimCmd_SetObj: ; cc506 (33:4506)
 
 .found
 	call GetBattleAnimByte
-	ld hl, BATTLEANIMSTRUCT_ANON_JT_INDEX
+	ld hl, BATTLEANIMSTRUCT_JUMPTABLE_INDEX
 	add hl, bc
 	ld [hl], a
 	ret
@@ -1497,54 +1497,17 @@ BattleAnim_SetBGPals: ; cc91a
 	ld [rBGP], a
 	ld a, [rSVBK]
 	push af
-	ld a, $5
+	ld a, BANK(wBGPals)
 	ld [rSVBK], a
-if !DEF(MONOCHROME)
-	ld a, b
-	cp $1b
-	ld a, [rBGP]
-	jr z, .is_1b
-	cp $1b
-	jr nz, .not_1b
-.is_1b
-	ld c, 7 palettes
-	ld hl, wUnknBGPals
-.loop_UnknBGPals
-	ld a, [hl]
-	ld b, a
-	ld a, $ff
-	sub b
-	ld [hli], a
-	dec c
-	jr nz, .loop_UnknBGPals
-	ld c, 2 palettes
-	ld hl, wUnknOBPals
-.loop_UnknOBPals
-	ld a, [hl]
-	ld b, a
-	ld a, $ff
-	sub b
-	ld [hli], a
-	dec c
-	jr nz, .loop_UnknOBPals
-	ld a, $e4
-.not_1b
-	push af
-else
-	ld a, [rBGP]
-endc
 	ld hl, wBGPals
 	ld de, wUnknBGPals
+	ld a, [rBGP]
 	ld b, a
 	ld c, 7
 	call CopyPals
 	ld hl, wOBPals
 	ld de, wUnknOBPals
-if !DEF(MONOCHROME)
-	pop af
-else
 	ld a, [rBGP]
-endc
 	ld b, a
 	ld c, 2
 	call CopyPals

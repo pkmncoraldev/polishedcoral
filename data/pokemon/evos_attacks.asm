@@ -3648,7 +3648,7 @@ MunchlaxEvosAttacks:
 	db 20, SCREECH
 	db 25, BODY_SLAM
 	db 28, REST
-	db 28, SNORE
+	db 28, MEAN_LOOK_BLOCK_SPIDER_WEB
 	db 33, WORK_UP_GROWTH
 	db 35, FLAIL
 	db 36, ROLLOUT

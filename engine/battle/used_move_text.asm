@@ -2,8 +2,8 @@
 MoveTable:
 ;	db ROCK_CLIMB
 ;	db LOW_KICK
-	db WISH
-	db BONE_CLUB
+;	db WISH
+;	db BONE_CLUB
 	db DRAGON_CLAW
 	db PAY_DAY
 	db FIRE_PUNCH

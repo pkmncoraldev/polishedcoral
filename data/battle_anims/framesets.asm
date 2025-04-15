@@ -173,7 +173,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_ab ; ab
 	dw .Frameset_ac ; ac
 	dw .Frameset_ad ; ad
-	dw .Frameset_ae ; ae
+	dw .Frameset_ae ; ae ; UNUSED
 	dw .Frameset_af ; af
 	dw .Frameset_b0 ; b0
 	dw .Frameset_b1 ; b1
@@ -210,6 +210,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_BigRedX
 	dw .Frameset_dragondarts
 	dw .Frameset_CosmicPowerBG           ; BATTLEANIMFRAMESET_COSMIC_POWER_BG
+	dw .Frameset_ClawTear                ; BATTLEANIMFRAMESET_CLAW_TEAR
 
 	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
 .Frameset_00:
@@ -1159,7 +1160,7 @@ BattleAnimFrameData: ; ce85e
 
 .Frameset_a3:
 	db BATTLEANIMOAMSET_BD, $0b
-	db BATTLEANIMOAMSET_BE, $0b
+	db BATTLEANIMOAMSET_BA, $0b
 	db BATTLEANIMOAMSET_1B, $0b
 	db -4
 
@@ -1463,4 +1464,8 @@ BattleAnimFrameData: ; ce85e
 
 .Frameset_CosmicPowerBG:
 	frame BATTLEANIMOAMSET_EF,  1
+	endanim
+
+.Frameset_ClawTear:
+	frame BATTLEANIMOAMSET_BE, 16
 	endanim

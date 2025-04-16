@@ -6007,7 +6007,25 @@ RoseGroup:
 ; ================
 
 	; ROSE
-	db "ROSE@"
+	db "ROSE@" ;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 40, CHERUBI
+	db -1 ; end
+
+; ================
+
+	; ROSE
+	db "ROSE@" ;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 40, CHERUBI
+	db -1 ; end
+
+; ================
+
+	; ROSE
+	db "ROSE@" ;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 40, CHERUBI
@@ -6021,7 +6039,25 @@ LilyGroup:
 ; ================
 
 	; LILY
-	db "LILY@"
+	db "LILY@" ;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 40, EXEGGCUTE
+	db -1 ; end
+
+; ================
+
+	; LILY
+	db "LILY@" ;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 40, EXEGGCUTE
+	db -1 ; end
+
+; ================
+
+	; LILY
+	db "LILY@" ;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 40, EXEGGCUTE
@@ -6035,7 +6071,25 @@ IrisGroup:
 ; ================
 
 	; IRIS
-	db "IRIS@"
+	db "IRIS@" ;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 40, ODDISH
+	db -1 ; end
+
+; ================
+
+	; IRIS
+	db "IRIS@" ;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 40, ODDISH
+	db -1 ; end
+
+; ================
+
+	; IRIS
+	db "IRIS@" ;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 40, ODDISH
@@ -6049,7 +6103,25 @@ PoppyGroup:
 ; ================
 
 	; POPPY
-	db "POPPY@"
+	db "POPPY@" ;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 40, CACNEA
+	db -1 ; end
+
+; ================
+
+	; POPPY
+	db "POPPY@" ;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 40, CACNEA
+	db -1 ; end
+
+; ================
+
+	; POPPY
+	db "POPPY@" ;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 40, CACNEA
@@ -6063,7 +6135,25 @@ FeliciaGroup:
 ; ================
 
 	; FELICIA
-	db "FELICIA@"
+	db "FELICIA@" ;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 40, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; FELICIA
+	db "FELICIA@" ;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 40, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; FELICIA
+	db "FELICIA@" ;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 40, BULBASAUR
@@ -6077,7 +6167,25 @@ VioletGroup:
 ; ================
 
 	; VIOLET
-	db "VIOLET@"
+	db "VIOLET@" ;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 40, PHANTUMP
+	db -1 ; end
+
+; ================
+
+	; VIOLET
+	db "VIOLET@" ;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 40, PHANTUMP
+	db -1 ; end
+
+; ================
+
+	; VIOLET
+	db "VIOLET@" ;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 40, PHANTUMP
@@ -6091,7 +6199,25 @@ CloverGroup:
 ; ================
 
 	; CLOVER
-	db "CLOVER@"
+	db "CLOVER@" ;6 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 40, CHIKORITA
+	db -1 ; end
+
+; ================
+
+	; CLOVER
+	db "CLOVER@" ;7 BADGES
+	db TRAINERTYPE_NORMAL
+	; party
+	db 40, CHIKORITA
+	db -1 ; end
+
+; ================
+
+	; CLOVER
+	db "CLOVER@" ;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 40, CHIKORITA

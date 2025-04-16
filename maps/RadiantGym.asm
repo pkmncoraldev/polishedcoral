@@ -408,13 +408,13 @@ RadiantGymRoseRematch:
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
-	loadtrainer ROSE, 2
+	loadtrainer ROSE, 1
 	jump .cont
 .sevenbadges
-	loadtrainer ROSE, 3
+	loadtrainer ROSE, 2
 	jump .cont
 .eightbadges
-	loadtrainer ROSE, 4
+	loadtrainer ROSE, 3
 .cont
 	startbattle
 	dontrestartmapmusic
@@ -479,13 +479,13 @@ RadiantGymLilyRematch:
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
-	loadtrainer LILY, 2
+	loadtrainer LILY, 1
 	jump .cont
 .sevenbadges
-	loadtrainer LILY, 3
+	loadtrainer LILY, 2
 	jump .cont
 .eightbadges
-	loadtrainer LILY, 4
+	loadtrainer LILY, 3
 .cont
 	startbattle
 	dontrestartmapmusic
@@ -553,13 +553,13 @@ RadiantGymIrisRematch:
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
-	loadtrainer IRIS, 2
+	loadtrainer IRIS, 1
 	jump .cont
 .sevenbadges
-	loadtrainer IRIS, 3
+	loadtrainer IRIS, 2
 	jump .cont
 .eightbadges
-	loadtrainer IRIS, 4
+	loadtrainer IRIS, 3
 .cont
 	startbattle
 	dontrestartmapmusic
@@ -627,13 +627,13 @@ RadiantGymPoppyRematch:
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
-	loadtrainer POPPY, 2
+	loadtrainer POPPY, 1
 	jump .cont
 .sevenbadges
-	loadtrainer POPPY, 3
+	loadtrainer POPPY, 2
 	jump .cont
 .eightbadges
-	loadtrainer POPPY, 4
+	loadtrainer POPPY, 3
 .cont
 	startbattle
 	dontrestartmapmusic
@@ -701,13 +701,13 @@ RadiantGymVioletRematch:
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
-	loadtrainer VIOLET, 2
+	loadtrainer VIOLET, 1
 	jump .cont
 .sevenbadges
-	loadtrainer VIOLET, 3
+	loadtrainer VIOLET, 2
 	jump .cont
 .eightbadges
-	loadtrainer VIOLET, 4
+	loadtrainer VIOLET, 3
 .cont
 	startbattle
 	dontrestartmapmusic
@@ -777,13 +777,13 @@ RadiantGymCloverRematch:
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
-	loadtrainer CLOVER, 2
+	loadtrainer CLOVER, 1
 	jump .cont
 .sevenbadges
-	loadtrainer CLOVER, 3
+	loadtrainer CLOVER, 2
 	jump .cont
 .eightbadges
-	loadtrainer CLOVER, 4
+	loadtrainer CLOVER, 3
 .cont
 	startbattle
 	dontrestartmapmusic
@@ -855,13 +855,13 @@ RadiantGymFeliciaRematch:
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
 	ifequal 7, .sevenbadges
-	loadtrainer FELICIA, 2
+	loadtrainer FELICIA, 1
 	jump .cont
 .sevenbadges
-	loadtrainer FELICIA, 3
+	loadtrainer FELICIA, 2
 	jump .cont
 .eightbadges
-	loadtrainer FELICIA, 4
+	loadtrainer FELICIA, 3
 .cont
 	startbattle
 	dontrestartmapmusic

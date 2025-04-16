@@ -53,7 +53,7 @@ Landmarks: ; 0x1ca8c3
 	landmark  52,  92, Route1Name
 	landmark  92,  76, StarglowDepthsName
 	landmark   0,   0, UnkownPassageName
-	landmark   7,  14, ConnectingCavernName
+	landmark -16, -16, ConnectingCavernName
 	
 	landmark  36,  44, ShimmerName
 	landmark  52,  52, Route19Name

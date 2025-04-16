@@ -1099,6 +1099,9 @@ BuyMenuLoop: ; 15cef
 	call LoadBuyMenuText
 	call PlayTransactionSound
 	hlcoord 12, 0
+	lb bc, 1, 8
+	call ClearBox
+	hlcoord 12, 0
 	ld de, wMoney
 	lb bc, PRINTNUM_MONEY | 3, 7
 	call PrintNum
@@ -1163,6 +1166,9 @@ BuyMenuCoinsLoop: ; 15cef
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
+;	hlcoord 12, 0
+;	lb bc, 1, 8
+;	call ClearBox
 	farcall Special_DisplayCoinCaseBalance
 	call JoyWaitAorB
 .cancel
@@ -1198,6 +1204,9 @@ BuyMenuPollenLoop: ; 15cef
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
+	hlcoord 12, 0
+	lb bc, 1, 8
+	call ClearBox
 	farcall Special_DisplayPollenPouchBalance
 	call JoyWaitAorB
 .cancel
@@ -1236,6 +1245,9 @@ BuyRefreshmentsMenuLoop: ; 15cef
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
+	hlcoord 12, 0
+	lb bc, 1, 8
+	call ClearBox
 	hlcoord 12, 0
 	ld de, wMoney
 	lb bc, PRINTNUM_MONEY | 3, 7
@@ -1295,6 +1307,9 @@ BuyTMMenuLoop:
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
+	hlcoord 12, 0
+	lb bc, 1, 8
+	call ClearBox
 	hlcoord 12, 0
 	ld de, wMoney
 	lb bc, PRINTNUM_MONEY | 3, 7
@@ -1399,6 +1414,9 @@ BuyClothesMenuLoop:
 	call LoadBuyMenuText
 	call PlayTransactionSound
 	hlcoord 12, 0
+	lb bc, 1, 8
+	call ClearBox
+	hlcoord 12, 0
 	ld de, wMoney
 	lb bc, PRINTNUM_MONEY | 3, 7
 	call PrintNum
@@ -1438,6 +1456,9 @@ BuyDecoMenuLoop:
 	call LoadBuyMenuText
 	call PlayTransactionSound
 	hlcoord 12, 0
+	lb bc, 1, 8
+	call ClearBox
+	hlcoord 12, 0
 	ld de, wMoney
 	lb bc, PRINTNUM_MONEY | 3, 7
 	call PrintNum
@@ -1475,6 +1496,9 @@ BuyPokemonMenuLoop: ; 15cef
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
+	hlcoord 12, 0
+	lb bc, 1, 8
+	call ClearBox
 	hlcoord 12, 0
 	ld de, wMoney
 	lb bc, PRINTNUM_MONEY | 3, 7

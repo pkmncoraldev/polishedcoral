@@ -898,24 +898,16 @@ PlaceBattlePointsTopRight:
 .BPString:
 	db " BP@"
 
-Special_DisplayCoinCaseBalance: ; 24b25
-	; Place a text box of size 1x7 at 11, 0.
-	hlcoord 11, 0
-	lb bc, 1, 7
-	call TextBox
-	hlcoord 12, 0
+Special_DisplayCoinCaseBalance:
+	hlcoord 8, 0
 	ld de, CoinString
 	call PlaceString
 	ld de, wCoins
-	lb bc, 2, 5
-	hlcoord 13, 1
+	lb bc, PRINTNUM_LEFTALIGN | 2, 4
+	hlcoord 15, 0
 	jp PrintNum
 
 Special_DisplayPollenPouchBalance: ; 24b25
-	; Place a text box of size 1x7 at 11, 0.
-;	hlcoord 11, 0
-;	lb bc, 1, 7
-;	call TextBox
 	hlcoord 9, 0
 	ld de, PuffString
 	call PlaceString
@@ -946,7 +938,7 @@ Special_DisplayMoneyAndCoinBalance: ; 24b4e
 MoneyString: ; 24b83
 	db "MONEY@"
 CoinString: ; 24b89
-	db "COINs@"
+	db "COINs ×@"
 PuffString:
 	db "PUFFs ×@"
 

@@ -1166,9 +1166,9 @@ BuyMenuCoinsLoop: ; 15cef
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call PlayTransactionSound
-;	hlcoord 12, 0
-;	lb bc, 1, 8
-;	call ClearBox
+	hlcoord 12, 0
+	lb bc, 1, 8
+	call ClearBox
 	farcall Special_DisplayCoinCaseBalance
 	call JoyWaitAorB
 .cancel

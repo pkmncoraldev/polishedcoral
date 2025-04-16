@@ -431,7 +431,7 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 	call z, TownMapSouthOnwaFlips
 	ld a, [wJumptableIndex]
 	cp 7 ; Orange
-	call z, TownMapOrangeFlips
+	call z, TownMapSouthOnwaFlips
 .cont
 	ld a, [wcf65]
 	and a

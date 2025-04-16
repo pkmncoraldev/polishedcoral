@@ -24,7 +24,7 @@ WendyVoicemailText:
 	para "I'm probably a"
 	line "mile in the sky"
 	cont "and can't get to"
-	line "the phone right"
+	cont "the phone right"
 	cont "now!"
 	
 	para "Leave a message!"

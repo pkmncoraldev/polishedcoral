@@ -4289,78 +4289,59 @@ BattleAnimFunction_5d:
 BattleAnimFunction_RadialMoveOut:
 	call BattleAnim_AnonJumptable
 
-	dw .initialize
-	dw .step
-
-.initialize
-	ld hl, BATTLEANIMSTRUCT_VAR2
-	add hl, bc
-	xor a
-	ld [hld], a
-	ld [hl], a ; initial position = 0
-	call BattleAnim_IncAnonJumptableIndex
-.step
-	ld hl, BATTLEANIMSTRUCT_VAR1
-	add hl, bc
-	push hl
-	ld a, [hli]
-	ld e, [hl]
-	ld d, a
-	ld hl, 6.0 >> 8 ; speed
-	add hl, de
-	ld a, h
-	ld e, l
-	pop hl
-	ld [hli], a
-	ld [hl], e
-	cp 80 ; final position
-	jp nc, DeinitBattleAnimation
-	ld hl, BATTLEANIMSTRUCT_PARAM
-	add hl, bc
-	ld e, [hl]
-	push de
-	ld a, e
-	call Sine
-	ld hl, BATTLEANIMSTRUCT_YOFFSET
-	add hl, bc
-	ld [hl], a
-	pop de
-	ld a, e
-	call Cosine
-	ld hl, BATTLEANIMSTRUCT_XOFFSET
-	add hl, bc
-	ld [hl], a
-	ret
+	dw InitRadial
+	dw Step
 
 BattleAnimFunction_RadialMoveOut_Slow:
 	call BattleAnim_AnonJumptable
 
-	dw .initialize
-	dw .step
+	dw InitRadial
+	dw Step_Slow
 
-.initialize
+InitRadial:
 	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	xor a
 	ld [hld], a
 	ld [hl], a ; initial position = 0
 	call BattleAnim_IncAnonJumptableIndex
-.step
+
+Step:
+	call Get_Rad_Pos
+	ld hl, 6.0 >> 8 ; speed
+	call Set_Rad_Pos
+	cp 80 ; final position
+	jp nc, DeinitBattleAnimation
+	jr Rad_Move
+
+
+Step_Slow:
+	call Get_Rad_Pos
+	ld hl, 1.5 >> 8 ; speed
+	call Set_Rad_Pos
+	cp 120 ; final position
+	jp nc, DeinitBattleAnimation
+	jr Rad_Move
+
+Get_Rad_Pos:
 	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
-	push hl
 	ld a, [hli]
 	ld e, [hl]
 	ld d, a
-	ld hl, 1.5 >> 8 ; speed
+	ret 
+
+Set_Rad_Pos:
 	add hl, de
 	ld a, h
 	ld e, l
-	pop hl
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
 	ld [hli], a
 	ld [hl], e
-	cp 120 ; final position
-	jp nc, DeinitBattleAnimation
+	ret
+
+Rad_Move:
 	ld hl, BATTLEANIMSTRUCT_PARAM
 	add hl, bc
 	ld e, [hl]

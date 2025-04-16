@@ -173,7 +173,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_ab ; ab
 	dw .Frameset_ac ; ac
 	dw .Frameset_ad ; ad
-	dw .Frameset_ae ; ae ; UNUSED
+	dw .Frameset_ae ; ae ; UNUSED 
 	dw .Frameset_af ; af
 	dw .Frameset_b0 ; b0
 	dw .Frameset_b1 ; b1
@@ -198,8 +198,8 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_d2
 	dw .Frameset_d3
 	dw .Frameset_dc
-	dw .Frameset_e2
-	dw .Frameset_e5
+	dw .Frameset_Vortex                  ; BATTLEANIMFRAMESET_VORTEX
+	dw .Frameset_StoneEdge               ; BATTLEANIMFRAMESET_STONE_EDGE
 	dw .Frameset_e6
 	dw .Frameset_e7
 	dw .Frameset_e9
@@ -954,7 +954,7 @@ BattleAnimFrameData: ; ce85e
 
 .Frameset_73:
 	db BATTLEANIMOAMSET_1B, $07
-	db BATTLEANIMOAMSET_94, $07
+	db BATTLEANIMOAMSET_7E, $07
 	db -2
 
 .Frameset_74:
@@ -1294,7 +1294,7 @@ BattleAnimFrameData: ; ce85e
 
 .Frameset_b9:
 	frame BATTLEANIMOAMSET_1B,  20
-	frame BATTLEANIMOAMSET_94,  10
+	frame BATTLEANIMOAMSET_7E,  10
 	dorestart
 
 .Frameset_be:
@@ -1354,13 +1354,14 @@ BattleAnimFrameData: ; ce85e
 	frame BATTLEANIMOAMSET_14, 30
 	delanim
 	
-.Frameset_e2:
-	frame BATTLEANIMOAMSET_E9,  2
-	frame BATTLEANIMOAMSET_EA,  2
-	frame BATTLEANIMOAMSET_EB,  2
+.Frameset_Vortex:
+	frame BATTLEANIMOAMSET_FA,  1
+	frame BATTLEANIMOAMSET_FB,  1
+	frame BATTLEANIMOAMSET_FC,  1
+	frame BATTLEANIMOAMSET_FD,  1
 	dorestart
 	
-.Frameset_e5:
+.Frameset_StoneEdge:
 	frame BATTLEANIMOAMSET_EC,  50
 	delanim
 	

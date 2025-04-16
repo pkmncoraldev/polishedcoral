@@ -2238,6 +2238,7 @@ AutoRockSmashScript:
 	checkevent EVENT_TALKED_TO_MINA_ONCE
 	iftrue .talked
 	playmusic MUSIC_MINA
+	callasm HasRockSmash
 	callasm MinaRockSmashGetMonName
 	opentext
 	writetext MinaRockSmashText2
@@ -2261,6 +2262,7 @@ AutoRockSmashScript:
 	playmapmusic
 	end
 .talked
+	callasm HasRockSmash
 	callasm MinaRockSmashGetMonName
 	opentext
 	writetext MinaRockSmashText2
@@ -2377,7 +2379,7 @@ MinaRockSmash:
 	ret
 	
 MinaRockSmashGetMonName:
-	ld a, [wCurSpecies]
+	ld a, [wCurPartySpecies]
 	ld [wd265], a
 	call GetPokemonName
 	ret

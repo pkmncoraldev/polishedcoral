@@ -1,8 +1,7 @@
 Route29Meadow_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, Route29MeadowCallback
+	db 0 ; callbacks
 
 	db 0 ; warp events
 
@@ -12,20 +11,12 @@ Route29Meadow_MapScriptHeader:
 
 	db 3 ; object events
 	person_event SPRITE_GENERAL_VARIABLE_1, 10, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route29Mina, -1
-	person_event SPRITE_DISGUISEMAN,  8, 22, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Route29Easel, -1
+	person_event SPRITE_ICESKATER_VARIABLE,  8, 22, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Route29Easel, -1
 	person_event SPRITE_LEAVES,  8, 22, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route29Easel, -1
 
 
 	const_def 1 ; object constants
 	const ROUTE_29_MINA
-
-Route29MeadowCallback:
-	checkevent EVENT_DONE_ROUTE_29_MINA
-	iftrue .skip
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_MINA_GROUND
-	variablesprite SPRITE_DISGUISEMAN, SPRITE_VALVE_1
-.skip
-	return
 
 Route29Mina:
 	checkcode VAR_FACING
@@ -138,7 +129,7 @@ Route29Mina:
 	closetext
 	pause 40
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_MINA
-	variablesprite SPRITE_DISGUISEMAN, SPRITE_PAINTINGS
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_PAINTINGS
 	disappear ROUTE_29_MINA
 	moveperson ROUTE_29_MINA, $16, $09
 	appear ROUTE_29_MINA

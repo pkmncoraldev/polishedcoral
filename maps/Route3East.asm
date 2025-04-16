@@ -6,7 +6,8 @@ Route3East_MapScriptHeader:
 	db 1 ; warp events
 	warp_def  7,  4, 2, STARGLOW_CAVERN_1F
 
-	db 0 ; coord events
+	db 1 ; coord events
+	coord_event 14, 10, 0, Route3EastFisherStopsYou
 
 	db 2 ; bg events
 	signpost  8,  7, SIGNPOST_READ, Route3East_sign
@@ -124,6 +125,22 @@ TrainerRouteEast3_4:
 	line "Itchy…"
 	done
 
+Route3EastFisherStopsYou:
+	checkevent EVENT_GOT_OLD_ROD ;TODO this was just here for demo to avoid update weirdness. remove after demo
+	iffalse .cont  ;TODO this was just here for demo to avoid update weirdness. remove after demo
+	dotrigger $1  ;TODO this was just here for demo to avoid update weirdness. remove after demo
+	end  ;TODO this was just here for demo to avoid update weirdness. remove after demo
+.cont  ;TODO this was just here for demo to avoid update weirdness. remove after demo
+	special Special_StopRunning
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, ROUTE3EAST_RODMAN, 15
+	setlasttalked ROUTE3EAST_RODMAN
+	spriteface PLAYER, DOWN
+	faceplayer
+	opentext
+	writetext Route3RodmanText6
+	jump Route3Rodman.jump
+
 Route3Rodman:
 	checkevent EVENT_GOT_OLD_ROD
 	iffalse .donthaverod
@@ -138,6 +155,7 @@ Route3Rodman:
 	faceplayer
 	opentext
 	writetext Route3RodmanText1
+.jump
 	yesorno
 	iffalse .norod
 	writetext Route3RodmanText5
@@ -148,6 +166,7 @@ Route3Rodman:
 	spriteface ROUTE3EAST_RODMAN, DOWN
 	setevent EVENT_GOT_OLD_ROD
 	closetext
+	dotrigger $1
 	end
 .norod
 	writetext Route3RodmanText4
@@ -204,6 +223,20 @@ Route3RodmanText4:
 
 Route3RodmanText5:
 	text "Fine. <WAIT_M>Here."
+	done
+	
+Route3RodmanText6:
+	text "Do you mind?"
+	
+	para "Your footsteps are"
+	line "scaring the WATER"
+	cont "#MON away."
+	
+	para "…<WAIT_L>Look."
+	
+	para "If I give you"
+	line "something will you"
+	cont "leave?"
 	done
 	
 Route3East_sign:

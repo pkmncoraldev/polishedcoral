@@ -150,4 +150,5 @@ MapTriggers::
 	scene_var BRILLO_POLICE_STATION,				  wAlways0Trigger
 	scene_var BRILLO_POLICE_BACK_ROOM,				  wAlways0Trigger
 	scene_var FIGHTING_DOJO,						  wAlways0Trigger
+	scene_var ROUTE_3_EAST,						  	  wRoute3EastTrigger
 	db -1

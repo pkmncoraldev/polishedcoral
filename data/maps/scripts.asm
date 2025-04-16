@@ -113,7 +113,6 @@ INCLUDE "maps/Route7.asm"
 INCLUDE "maps/Route8.asm"
 INCLUDE "maps/Route14.asm"
 INCLUDE "maps/Route15.asm"
-INCLUDE "maps/FakeRoute1.asm"
 
 
 SECTION "Routes Scripts2", ROMX
@@ -133,6 +132,7 @@ INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route16.asm"
 INCLUDE "maps/Route21.asm"
 INCLUDE "maps/Route22.asm"
+INCLUDE "maps/FakeRoute1.asm"
 
 
 SECTION "Sunset Bay Scripts", ROMX

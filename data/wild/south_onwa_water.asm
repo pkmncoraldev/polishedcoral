@@ -59,6 +59,16 @@
 	db 36, MARILL		;5%
 	db 36, MARILL		;4%
 	db 36, MARILL		;1%
+	
+	map_id KOMORE_VILLAGE
+	db 10 percent ; encounter rate
+	db 36, POLIWHIRL	;30%
+	db 36, QUAGSIRE		;30%
+	db 36, CARVANHA		;20%
+	db 36, MARILL		;10%
+	db 36, MARILL		;5%
+	db 36, MARILL		;4%
+	db 36, MARILL		;1%
 
 	map_id ROUTE_24_NORTH
 	db 8 percent ; encounter rate

@@ -93,7 +93,7 @@ KomoreTeaHouseMaster:
 	checkitem SILVER_LEAF
 	iffalse .silver_three
 	takeitem SILVER_LEAF
-	writetext KomoreTeaHouseMasterTextGiveGold
+	writetext KomoreTeaHouseMasterTextGiveSilver
 	playsound SFX_LEVEL_UP 
 	waitsfx
 	writetext KomoreTeaHouseMasterText2

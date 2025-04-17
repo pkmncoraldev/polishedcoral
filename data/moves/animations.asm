@@ -370,28 +370,30 @@ BattleAnim_ClearSmog:
 	anim_ret
 
 BattleAnim_CosmicPower:
-	anim_2gfx ANIM_GFX_STARS, ANIM_GFX_SPEED
+	anim_2gfx ANIM_GFX_STARS, ANIM_GFX_COSMIC_POWER
+	anim_clearenemyhud
 	anim_bgp $1b
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $0, $0
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-.loop
-	anim_sound 0, 0, SFX_MOONLIGHT
-	anim_obj ANIM_OBJ_COSMIC_POWER, 48, 104, $0
-	anim_call BattleAnim_CosmicPowerCharge
-	anim_wait 2
-	anim_loop 4, .loop
-	anim_wait 32
+	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
+	anim_sound 0, 0, SFX_GAME_FREAK_LOGO_GS
+	anim_obj ANIM_OBJ_COSMIC_POWER_BG, 61, 75, $30
+	anim_wait 64
 	anim_sound 0, 0, SFX_METRONOME
-.loop2
-	anim_obj ANIM_OBJ_COSMIC_POWER_2, 61, 75, $5c
-	anim_wait 2
-	anim_obj ANIM_OBJ_COSMIC_POWER_2, 36, 81, $d8
-	anim_wait 2
-	anim_obj ANIM_OBJ_COSMIC_POWER_2, 36, 106, $d0
-	anim_wait 2
-	anim_obj ANIM_OBJ_COSMIC_POWER_2, 56, 100, $50
-	anim_wait 2
-	anim_loop 5, .loop2
+.loop
+	anim_obj ANIM_OBJ_COSMIC_POWER, 56, 88, $32
+	anim_wait 4
+	anim_obj ANIM_OBJ_COSMIC_POWER, 40, 88, $2c
+	anim_wait 4
+	anim_obj ANIM_OBJ_COSMIC_POWER, 60, 104, $34
+	anim_wait 4
+	anim_obj ANIM_OBJ_COSMIC_POWER, 36, 104, $2e
+	anim_wait 4
+	anim_loop 3, .loop
 	anim_wait 32
+	anim_clearobjs
+	anim_wait 1
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
 	anim_ret
 
 BattleAnim_RockWrecker:
@@ -1542,11 +1544,11 @@ BattleAnim_NightSlash:
 	anim_call BattleAnim_AuraSphereLines
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $08, $2, $0
 	anim_sound 0, 1, SFX_CUT
-	anim_obj ANIM_OBJ_NIGHT_SLASH_2, 112, 38, $0
+	anim_obj ANIM_OBJ_CUT_LEFT, 112, 48, $0
 	anim_wait 40
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $08, $2, $0
 	anim_sound 0, 1, SFX_CUT
-	anim_obj ANIM_OBJ_NIGHT_SLASH, 152, 42, $0
+	anim_obj ANIM_OBJ_CUT_RIGHT, 152, 52, $0
 	anim_wait 32
 	anim_ret
 	
@@ -3549,7 +3551,7 @@ BattleAnim_FocusEnergy:
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 .loop
 	anim_sound 0, 0, SFX_SWORDS_DANCE
-	anim_call BattleAnim_CosmicPowerCharge
+	anim_call BattleAnim_Focus
 	anim_wait 2
 	anim_loop 3, .loop
 	anim_wait 8
@@ -4170,16 +4172,22 @@ BattleAnim_Disguise:
 
 BattleAnim_PetalDance:
 BattleAnim_PetalBlizzard:
-	anim_sound 0, 0, SFX_MENU
 	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_HIT
+	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+	anim_battlergfx_2row
+	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
 .loop
-	anim_obj ANIM_OBJ_PETAL_DANCE,   6, 0,   7, 0, $0
+	anim_obj ANIM_OBJ_PETAL_DANCE, 48, 56, $1
 	anim_wait 11
 	anim_loop 8, .loop
-	anim_wait 128
-	anim_wait 64
-	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, -15, 0,   7, 0, $0
+	anim_wait 88
+	anim_incbgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $0, $0
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_call BattleAnim_Pursuit.hit
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_clearobjs
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_wait 16
 	anim_ret
 
@@ -4795,7 +4803,7 @@ BattleAnim_Curse:
 	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT, $0, $1, $40
 .loop
 	anim_sound 0, 0, SFX_SWORDS_DANCE
-	anim_call BattleAnim_CosmicPowerCharge
+	anim_call BattleAnim_Focus
 	anim_wait 2
 	anim_loop 3, .loop
 	anim_wait 8
@@ -5297,7 +5305,7 @@ BattleAnim_Endure:
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 .loop
 	anim_sound 0, 0, SFX_SWORDS_DANCE
-	anim_call BattleAnim_CosmicPowerCharge
+	anim_call BattleAnim_Focus
 	anim_wait 2
 	anim_loop 5, .loop
 	anim_wait 8
@@ -5707,6 +5715,7 @@ BattleAnim_Encore:
 
 BattleAnim_Pursuit:
 	anim_1gfx ANIM_GFX_HIT
+.hit
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj ANIM_OBJ_HIT_YFIX, -15, 0,   7, 0, $0
 	anim_wait 16
@@ -6476,7 +6485,7 @@ BattleAnim_IncObj1to9:
 	anim_incobj  9
 	anim_ret
 	
-BattleAnim_CosmicPowerCharge:
+BattleAnim_Focus:
 	anim_obj ANIM_OBJ_FOCUS,   5, 4,  13, 4, $6
 	anim_wait 2
 	anim_obj ANIM_OBJ_FOCUS,   4, 4,  13, 4, $6

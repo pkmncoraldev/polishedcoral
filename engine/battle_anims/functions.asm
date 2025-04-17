@@ -2621,6 +2621,7 @@ BattleAnimFunction_SpiralDescent: ; cdedd (33:5edd)
 	jp DeinitBattleAnimation
 
 BattleAnimFunction_2D: ; cdf1b (33:5f1b)
+; Object moves downwards in a spiral around the user. Object disappears at y coord $30
 	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
@@ -2652,13 +2653,15 @@ BattleAnimFunction_2D: ; cdf1b (33:5f1b)
 	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
-	cp $28
-	jr nc, .asm_cdf55
+	cp $30
+	jr nc, .end
+	inc [hl]
 	inc [hl]
 	ret
 
-.asm_cdf55
-	jp DeinitBattleAnimation
+.end
+	call DeinitBattleAnimation
+	ret
 
 BattleAnimFunction_PoisonGas: ; cdf59 (33:5f59)
 	call BattleAnim_AnonJumptable

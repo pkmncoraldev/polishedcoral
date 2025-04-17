@@ -4188,6 +4188,7 @@ ScraftyEvosAttacks:
 	db 38, CRUNCH
 	db 48, DOUBLE_EDGE
 	db 52, SUPERPOWER
+	db 0 ; no more level-up moves
 	
 TirtougaEvosAttacks:
 	db EVOLVE_LEVEL, 37, CARRACOSTA

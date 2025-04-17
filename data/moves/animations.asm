@@ -711,18 +711,18 @@ BattleAnim_Bulldoze:
 	anim_call BattleAnim_ShowMon_0
 	anim_wait 1
 .loop
-	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $08, $2, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $08, $2, $0
 	anim_sound 0, 1, SFX_SPARK
 	anim_wait 8
 	anim_loop 6, .loop
-	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $40, $2, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $40, $2, $0
 .loop2
 	anim_sound 0, 1, SFX_SPARK
 	
 	anim_wait 4
 	anim_loop 12, .loop2
 	anim_wait 48
-	anim_incbgeffect ANIM_BG_SHAKE_SCREEN_X
+	anim_incbgeffect ANIM_BG_SHAKE_SCREEN_Y
 	anim_ret
 	
 BattleAnim_WoodHammer:
@@ -1878,32 +1878,32 @@ BattleAnim_DoubleHit:
 	anim_ret
 	
 BattleAnim_CottonGuard:
-	anim_obp0 $54
-	anim_1gfx ANIM_GFX_MISC
-	anim_sound 0, 1, SFX_SWEET_SCENT_2
-.loop
-	anim_obj ANIM_OBJ_COTTON_SPORE, 48, 64, $0
-	anim_wait 8
-	anim_loop 5, .loop
-	anim_wait 96
-	anim_clearobjs
+	anim_1gfx ANIM_GFX_COTTON
 	anim_sound 0, 1, SFX_SWEET_SCENT
-	anim_obj ANIM_OBJ_COTTON_GUARD, 36, 88, $0
-	anim_wait 4
-	anim_sound 0, 1, SFX_SWEET_SCENT
-	anim_obj ANIM_OBJ_COTTON_GUARD, 62, 90, $0
-	anim_wait 4
-	anim_sound 0, 1, SFX_SWEET_SCENT
-	anim_obj ANIM_OBJ_COTTON_GUARD, 48, 92, $0
-	anim_wait 4
-	anim_sound 0, 1, SFX_SWEET_SCENT
-	anim_obj ANIM_OBJ_COTTON_GUARD, 40, 98, $0
-	anim_wait 4
-	anim_sound 0, 1, SFX_SWEET_SCENT
-	anim_obj ANIM_OBJ_COTTON_GUARD, 56, 94, $0
-	anim_wait 4
-	anim_sound 0, 1, SFX_SWEET_SCENT
-	anim_obj ANIM_OBJ_COTTON_GUARD, 48, 86, $0
+	anim_obj ANIM_OBJ_COTTON_GUARD, 52, 84, $38
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_obj ANIM_OBJ_COTTON_GUARD, 36, 92, $20
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_obj ANIM_OBJ_COTTON_GUARD, 60, 98, $8
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_obj ANIM_OBJ_COTTON_GUARD, 52, 104, $10
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_obj ANIM_OBJ_COTTON_GUARD, 38, 80, $28
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_obj ANIM_OBJ_COTTON_GUARD, 64, 82, $0
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_obj ANIM_OBJ_COTTON_GUARD, 44, 102, $18
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_obj ANIM_OBJ_COTTON_GUARD, 54, 72, $30
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
 	anim_wait 48
 	anim_ret
 	
@@ -2537,28 +2537,48 @@ BattleAnim_Shake:
 	anim_ret
 
 BattleAnim_Acrobatics:
-	anim_1gfx ANIM_GFX_HIT
-	anim_sound 0, 0, SFX_KINESIS
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $1, $0
-	anim_bgeffect ANIM_BG_FADE_MON_TO_WHITE_WAIT_FADE_BACK, $0, $1, $20
-	anim_wait 2
-	anim_sound 0, 0, SFX_KINESIS
-	anim_wait 2
-	anim_sound 0, 0, SFX_KINESIS
-	anim_wait 16
-	anim_sound 0, 1, SFX_DOUBLE_SLAP
-	anim_obj ANIM_OBJ_HIT_YFIX, 120, 32, $0
+	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_HIT
+	anim_battlergfx_1row
+	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, $0, $0
+	anim_wait 1
+	anim_bgeffect ANIM_BG_SHAKE_MON_X, $0, $11, $4
+.loop
+	anim_sound 0, 0, SFX_SQUEAK
 	anim_wait 8
-	anim_sound 0, 1, SFX_DOUBLE_SLAP
-	anim_obj ANIM_OBJ_HIT_YFIX, 152, 40, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_DOUBLE_SLAP
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 48, $0
-	anim_wait 32
-	anim_incbgeffect ANIM_BG_FADE_MON_TO_WHITE_WAIT_FADE_BACK
-	anim_call BattleAnim_ShowMon_0
+	anim_loop 3, .loop
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_incbgeffect ANIM_BG_SHAKE_MON_X
+	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
+	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
+	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
+	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
+	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
+	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+	anim_wait 12
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_wait 12
+	anim_clearobjs
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT_YFIX, 140, 44, $0
 	anim_wait 4
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT_YFIX, 124, 60, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT_YFIX, 140, 60, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT_YFIX, 124, 44, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT_YFIX, 132, 52, $0
+	anim_wait 8
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $a, $0
+	anim_wait 8
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 16
 	anim_ret
 
 BattleAnim_DoubleSlap:

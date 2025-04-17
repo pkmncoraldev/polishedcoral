@@ -129,6 +129,7 @@ BattleBGEffects: ; c805a (32:405a)
 	dw BattleBGEffect_VibrateMon
 	dw BattleBGEffect_WobblePlayer
 	dw BattleBGEffect_WobbleScreen
+	dw BattleBGEffect_ShakeMonX
 
 
 BattleBGEffect_End: ; c80c6 (32:40c6)
@@ -1980,6 +1981,73 @@ BattleBGEffect_ShakeScreenX: ; c8cf9 (32:4cf9)
 	xor a
 .skip
 	ld [hSCX], a
+	ret
+
+BattleBGEffect_ShakeMonX:
+; Oscillates a mon between -x and +x pixels in the X axis, where x is
+; the argument given to BG_EFFEECT_STRUCT_PARAM.
+; Note that the oscillation distance is different from ShakeMonY.
+	call BattleBGEffects_AnonJumptable
+.anon_dw
+	dw .zero
+	dw .one
+	dw BattleAnim_ResetLCDStatCustom
+
+.zero
+	call BattleBGEffects_IncrementJumptable
+	call BattleBGEffects_ClearLYOverrides
+	ld hl, rIE
+	set LCD_STAT, [hl]
+	ld a, LOW(rSCX)
+	call BattleBGEffect_SetLCDStatCustoms2
+	ldh a, [hLYOverrideEnd]
+	inc a
+	ldh [hLYOverrideEnd], a
+	jr .reset_duration
+
+.reload_distance
+	; Toggles between sides.
+	ld hl, BG_EFFECT_STRUCT_03
+	add hl, bc
+	ld a, [hl]
+	cpl
+	inc a
+	ld [hl], a
+.reset_duration
+	; (Re)set shake duration.
+	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
+	add hl, bc
+	ld a, [hl]
+	and $f0
+	ld [hl], a
+	swap a
+	or [hl]
+	ld [hl], a
+	ret
+
+.one
+	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
+	add hl, bc
+	dec [hl]
+	ld a, [hli]
+	and $f
+	call z, .reload_distance
+
+	ld hl, BG_EFFECT_STRUCT_03
+	add hl, bc
+	ld a, [hl]
+	ld e, a
+	ldh a, [hLYOverrideStart]
+	ld l, a
+	ldh a, [hLYOverrideEnd]
+	sub l
+	ld h, HIGH(wLYOverridesBackup)
+	ld d, a
+	ld a, e
+.loop
+	ld [hli], a
+	dec d
+	jr nz, .loop
 	ret
 
 BattleBGEffect_ShakeScreenY: ; c8d02 (32:4d02)

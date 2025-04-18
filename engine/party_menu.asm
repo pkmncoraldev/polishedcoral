@@ -471,6 +471,9 @@ PlacePartyMonEvoStoneCompatibility:
 	jr nz, .loop2
 ; trade
 
+	ld a, [wCurItem]
+	cp LINK_CABLE
+	jr nz, .loop2
 	push hl
 	push bc
 	ld a, [wTempMon]

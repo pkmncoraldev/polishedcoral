@@ -1183,16 +1183,19 @@ RecoilText: ; 0x8134d
 	prompt
 
 NoRecoilRockHeadText:
-	text "<USER>'s"
-	line "ROCK HEAD"
-	cont "prevents recoil!"
+	text "ROCK HEAD"
+	line "prevents recoil!"
 	prompt
 	
 NoRecoilMagicGuardText:
-	text "<USER>'s"
-	line "MAGIC GUARD"
-	cont "prevents recoil!"
+	text "MAGIC GUARD"
+	line "prevents recoil!"
 	prompt
+	
+RunAwayActivatedText:
+	text "RUN AWAY"
+	line "activated!"
+	done
 
 MadeSubstituteText: ; 0x81362
 	text "<USER>"

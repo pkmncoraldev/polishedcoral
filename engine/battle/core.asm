@@ -5919,7 +5919,10 @@ CheckRunSpeed:
 	cp RUN_AWAY
 	jr nz, .no_flee_ability
 	call SetPlayerTurn
-	farcall ShowAbilityActivation
+	push hl
+	ld hl, RunAwayActivatedText
+	call StdBattleTextBox
+	pop hl
 	jp .can_escape
 .no_flee_ability
 	push hl

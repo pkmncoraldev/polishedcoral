@@ -428,6 +428,7 @@ WrongNumber: ; 90233
 ; 90241
 
 Script_ReceivePhoneCall: ; 0x90241
+	special Special_StopRunning
 	refreshscreen
 	callasm RingTwice_StartCall
 	ptcall wPhoneScriptPointer

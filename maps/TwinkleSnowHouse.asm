@@ -27,7 +27,7 @@ TwinkleSnowHouseNpc1Text:
 	cont "yard."
 	
 	para "She says it's why"
-	line "her friends dont"
+	line "her friends don't"
 	cont "come to visit!"
 	
 	para "I think it's cuz"

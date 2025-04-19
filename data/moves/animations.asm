@@ -993,7 +993,7 @@ BattleAnim_DragonClaw:
 	anim_ret
 	
 BattleAnim_AuraSphere:
-	anim_2gfx ANIM_GFX_LEAF_STORM, ANIM_GFX_WIND
+	anim_2gfx ANIM_GFX_VORTEX, ANIM_GFX_WIND
 	anim_call BattleAnim_AuraSphereLines
 	anim_sound 6, 2, SFX_OUTRAGE
 	anim_obj ANIM_OBJ_VORTEX_BLUE, 48, 96, $30

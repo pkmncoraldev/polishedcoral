@@ -402,13 +402,13 @@ BattleBGEffect_BattlerObj_1Row: ; c8214 (32:4214)
 	push bc
 	call BGEffect_CheckBattleTurn
 	jr nz, .player_turn
-	ld a, ANIM_OBJ_PLAYERFEETFOLLOW
+	ld a, ANIM_OBJ_ENEMYFEET_1ROW
 	ld [wBattleAnimTemp0], a
 	ld a, 16 * 8 + 4
 	jr .okay
 
 .player_turn
-	ld a, ANIM_OBJ_ENEMYFEETFOLLOW
+	ld a, ANIM_OBJ_PLAYERHEAD_1ROW
 	ld [wBattleAnimTemp0], a
 	ld a, 6 * 8
 .okay
@@ -468,13 +468,13 @@ BattleBGEffect_BattlerObj_2Row: ; c8281 (32:4281)
 	push bc
 	call BGEffect_CheckBattleTurn
 	jr nz, .player_turn
-	ld a, ANIM_OBJ_BA
+	ld a, ANIM_OBJ_ENEMYFEET_2ROW
 	ld [wBattleAnimTemp0], a
 	ld a, 16 * 8 + 4
 	jr .okay
 
 .player_turn
-	ld a, ANIM_OBJ_BB
+	ld a, ANIM_OBJ_PLAYERHEAD_2ROW
 	ld [wBattleAnimTemp0], a
 	ld a, 6 * 8
 .okay

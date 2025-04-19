@@ -526,37 +526,37 @@ BattleAnim_Shockwave:
 	anim_wait 4
 .loop
 	anim_sound 0, 0, SFX_ZAP_CANNON
-	anim_obj ANIM_OBJ_SHOCK_WAVE, 48, 88, $30
+	anim_obj ANIM_OBJ_SHOCK_WAVE_UP, 48, 88, $30
 	anim_wait 2
 	anim_loop 5, .loop
 	anim_wait 2
 .loop2
 	anim_sound 0, 0, SFX_ZAP_CANNON
-	anim_obj ANIM_OBJ_SHOCK_WAVE_2, 64, 0, $10
+	anim_obj ANIM_OBJ_SHOCK_WAVE_DOWN, 64, 0, $10
 	anim_wait 2
 	anim_loop 5, .loop2
 	anim_wait 2
 .loop3
 	anim_sound 0, 0, SFX_ZAP_CANNON
-	anim_obj ANIM_OBJ_SHOCK_WAVE, 80, 72, $30
+	anim_obj ANIM_OBJ_SHOCK_WAVE_UP, 80, 72, $30
 	anim_wait 2
 	anim_loop 5, .loop3
 	anim_wait 2
 .loop4
 	anim_sound 0, 0, SFX_ZAP_CANNON
-	anim_obj ANIM_OBJ_SHOCK_WAVE_2, 96, 0, $10
+	anim_obj ANIM_OBJ_SHOCK_WAVE_DOWN, 96, 0, $10
 	anim_wait 2
 	anim_loop 5, .loop4
 	anim_wait 2
 .loop5
 	anim_sound 0, 0, SFX_ZAP_CANNON
-	anim_obj ANIM_OBJ_SHOCK_WAVE, 112, 72, $30
+	anim_obj ANIM_OBJ_SHOCK_WAVE_UP, 112, 72, $30
 	anim_wait 2
 	anim_loop 5, .loop5
 	anim_wait 8
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
 	anim_sound 0, 1, SFX_THUNDER
-	anim_obj ANIM_OBJ_SHOCK_WAVE_3, 136, 0, $0
+	anim_obj ANIM_OBJ_SHOCK_WAVE_STRIKE, 136, 0, $0
 	anim_wait 6
 	anim_obj ANIM_OBJ_THUNDER_CENTER, 136, 68, $0
 	anim_wait 48
@@ -879,25 +879,25 @@ BattleAnim_PowerGem:
 	anim_obj ANIM_OBJ_POWER_GEM, 72, 82, $0
 	anim_wait 80
 	anim_sound 0, 1, SFX_SHINE
-	anim_incobj  5
+	anim_incobj  8
+	anim_wait 2
+	anim_incobj  7
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
+	anim_incobj  6
+	anim_wait 4
+	anim_sound 0, 1, SFX_SHINE
+	anim_incobj  4
 	anim_wait 2
 	anim_incobj  1
 	anim_wait 2
 	anim_sound 0, 1, SFX_SHINE
 	anim_incobj  3
-	anim_wait 4
-	anim_sound 0, 1, SFX_SHINE
-	anim_incobj  8
 	anim_wait 2
+	anim_incobj  5
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
 	anim_incobj  2
-	anim_wait 2
-	anim_sound 0, 1, SFX_SHINE
-	anim_incobj  4
-	anim_wait 2
-	anim_incobj  6
-	anim_wait 2
-	anim_sound 0, 1, SFX_SHINE
-	anim_incobj  7
 	anim_wait 2
 	anim_wait 32
 	anim_ret
@@ -1115,16 +1115,16 @@ BattleAnim_HyperVoice:
 	anim_cry $0
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $30, $2, $0
-	anim_obj ANIM_OBJ_LEECH_SEED, 64, 76, $0
-	anim_obj ANIM_OBJ_LEECH_SEED, 64, 88, $1
-	anim_obj ANIM_OBJ_LEECH_SEED, 64, 100, $2
-	anim_obj ANIM_OBJ_ECHOED_VOICE, 64, 88, $2
+	anim_obj ANIM_OBJ_SOUND, 64, 76, $0
+	anim_obj ANIM_OBJ_SOUND, 64, 88, $1
+	anim_obj ANIM_OBJ_SOUND, 64, 100, $2
+	anim_obj ANIM_OBJ_BIG_WAVE, 64, 88, $2
 	anim_wait 2
-	anim_obj ANIM_OBJ_ECHOED_VOICE, 64, 88, $2
+	anim_obj ANIM_OBJ_BIG_WAVE, 64, 88, $2
 	anim_wait 28
-	anim_obj ANIM_OBJ_LEECH_SEED, 64, 76, $0
-	anim_obj ANIM_OBJ_LEECH_SEED, 64, 88, $1
-	anim_obj ANIM_OBJ_LEECH_SEED, 64, 100, $2
+	anim_obj ANIM_OBJ_SOUND, 64, 76, $0
+	anim_obj ANIM_OBJ_SOUND, 64, 88, $1
+	anim_obj ANIM_OBJ_SOUND, 64, 100, $2
 	anim_wait 28
 	anim_loop 2, .loop
 	anim_wait 8
@@ -1144,7 +1144,6 @@ BattleAnim_BugBuzz:
 	anim_sound 6, 2, SFX_TINGLE
 	anim_obj ANIM_OBJ_BUG_BUZZ_L, 32, 84, $28
 	anim_obj ANIM_OBJ_BUG_BUZZ_R, 64, 84, $38
-	anim_obj ANIM_OBJ_ECHOED_VOICE, 64, 88, $2
 	anim_wait 2
 	anim_sound 6, 2, SFX_TINGLE
 	anim_wait 2
@@ -1153,6 +1152,7 @@ BattleAnim_BugBuzz:
 	anim_sound 6, 2, SFX_SUPERSONIC
 	anim_wait 6
 	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_wait 1
 	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
 	anim_wait 64
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
@@ -1964,21 +1964,21 @@ BattleAnim_Psyshock:
 	anim_sound 0, 1, SFX_PSYCHIC
 	anim_bgeffect ANIM_BG_TELEPORT, $0, $0, $0
 .loop
-	anim_obj ANIM_OBJ_PSYSHOCK, 136, 56, $38
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 56, $38
 	anim_wait 4
-	anim_obj ANIM_OBJ_PSYSHOCK, 136, 56, $20
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 56, $20
 	anim_wait 4
-	anim_obj ANIM_OBJ_PSYSHOCK, 136, 56, $8
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 56, $8
 	anim_wait 4
-	anim_obj ANIM_OBJ_PSYSHOCK, 136, 56, $10
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 56, $10
 	anim_wait 4
-	anim_obj ANIM_OBJ_PSYSHOCK, 136, 56, $28
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 56, $28
 	anim_wait 4
-	anim_obj ANIM_OBJ_PSYSHOCK, 136, 56, $0
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 56, $0
 	anim_wait 4
-	anim_obj ANIM_OBJ_PSYSHOCK, 136, 56, $18
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 56, $18
 	anim_wait 4
-	anim_obj ANIM_OBJ_PSYSHOCK, 136, 56, $30
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 56, $30
 	anim_wait 4
 	anim_loop 2, .loop
 	anim_wait 32
@@ -2969,13 +2969,13 @@ BattleAnim_VineWhip:
 BattleAnim_LeechSeed:
 	anim_1gfx ANIM_GFX_PLANT
 	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_obj ANIM_OBJ_BIND2,   6, 0,  10, 0, $20
+	anim_obj ANIM_OBJ_LEECH_SEED,   6, 0,  10, 0, $20
 	anim_wait 8
 	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_obj ANIM_OBJ_BIND2,   6, 0,  10, 0, $30
+	anim_obj ANIM_OBJ_LEECH_SEED,   6, 0,  10, 0, $30
 	anim_wait 8
 	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_obj ANIM_OBJ_BIND2,   6, 0,  10, 0, $28
+	anim_obj ANIM_OBJ_LEECH_SEED,   6, 0,  10, 0, $28
 	anim_wait 32
 	anim_sound 0, 1, SFX_CHARGE
 	anim_wait 128
@@ -3671,7 +3671,7 @@ BattleAnim_Supersonic:
 	anim_1gfx ANIM_GFX_PSYCHIC
 .loop
 	anim_sound 6, 2, SFX_SUPERSONIC
-	anim_obj ANIM_OBJ_SOUND,   8, 0,  11, 0, $2
+	anim_obj ANIM_OBJ_WAVE,   8, 0,  11, 0, $2
 	anim_wait 4
 	anim_loop 10, .loop
 	anim_wait 64
@@ -3682,7 +3682,7 @@ BattleAnim_Screech:
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $8, $1, $20
 	anim_sound 6, 2, SFX_SCREECH
 .loop
-	anim_obj ANIM_OBJ_SOUND,   8, 0,  11, 0, $2
+	anim_obj ANIM_OBJ_WAVE,   8, 0,  11, 0, $2
 	anim_wait 2
 	anim_loop 2, .loop
 	anim_wait 64
@@ -3962,8 +3962,8 @@ BattleAnim_Hypnosis:
 	anim_1gfx ANIM_GFX_PSYCHIC
 .loop
 	anim_sound 6, 2, SFX_SUPERSONIC
-	anim_obj ANIM_OBJ_SOUND,   8, 0,  11, 0, $2
-	anim_obj ANIM_OBJ_SOUND,   7, 0,  10, 0, $2
+	anim_obj ANIM_OBJ_WAVE,   8, 0,  11, 0, $2
+	anim_obj ANIM_OBJ_WAVE,   7, 0,  10, 0, $2
 	anim_wait 8
 	anim_loop 3, .loop
 	anim_wait 56
@@ -4378,7 +4378,7 @@ BattleAnim_Psybeam:
 	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
 .loop
 	anim_sound 6, 2, SFX_PSYBEAM
-	anim_obj ANIM_OBJ_SOUND,   8, 0,  11, 0, $4
+	anim_obj ANIM_OBJ_WAVE,   8, 0,  11, 0, $4
 	anim_wait 4
 	anim_loop 10, .loop
 	anim_wait 48
@@ -4430,13 +4430,13 @@ BattleAnim_Psywave:
 	anim_bgeffect ANIM_BG_PSYCHIC, $0, $0, $0
 .loop
 	anim_sound 6, 2, SFX_PSYCHIC
-	anim_obj ANIM_OBJ_SOUND,   8, 0,  10, 0, $2
+	anim_obj ANIM_OBJ_WAVE,   8, 0,  10, 0, $2
 	anim_wait 8
 	anim_sound 6, 2, SFX_PSYCHIC
-	anim_obj ANIM_OBJ_SOUND,   8, 0,  11, 0, $3
+	anim_obj ANIM_OBJ_WAVE,   8, 0,  11, 0, $3
 	anim_wait 8
 	anim_sound 6, 2, SFX_PSYCHIC
-	anim_obj ANIM_OBJ_SOUND,   8, 0,  12, 0, $4
+	anim_obj ANIM_OBJ_WAVE,   8, 0,  12, 0, $4
 	anim_wait 8
 	anim_loop 3, .loop
 	anim_wait 32
@@ -4700,7 +4700,7 @@ BattleAnim_PsychicM:
 	anim_bgeffect ANIM_BG_PSYCHIC, $0, $0, $0
 .loop
 	anim_sound 6, 2, SFX_PSYCHIC
-	anim_obj ANIM_OBJ_SOUND,   8, 0,  11, 0, $2
+	anim_obj ANIM_OBJ_WAVE,   8, 0,  11, 0, $2
 	anim_wait 8
 	anim_loop 8, .loop
 	anim_wait 96
@@ -6135,9 +6135,9 @@ BattleAnim_Selfdestruct_branch_cbb8f:
 	anim_ret
 
 BattleAnimSub_Sound:
-	anim_obj ANIM_OBJ_LEECH_SEED,   8, 0,   9, 4, $0
-	anim_obj ANIM_OBJ_LEECH_SEED,   8, 0,  11, 0, $1
-	anim_obj ANIM_OBJ_LEECH_SEED,   8, 0,  12, 4, $2
+	anim_obj ANIM_OBJ_SOUND,   8, 0,   9, 4, $0
+	anim_obj ANIM_OBJ_SOUND,   8, 0,  11, 0, $1
+	anim_obj ANIM_OBJ_SOUND,   8, 0,  12, 4, $2
 	anim_ret
 
 BattleAnim_FirePunch_branch_cbbcc:

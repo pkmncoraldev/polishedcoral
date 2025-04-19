@@ -2,12 +2,12 @@
 MoveTable:
 	db ROCK_CLIMB
 	db LOW_KICK
-	db WISH
+	db WISH                                    ; needs update
 	db BONE_CLUB
-	db DRAGON_CLAW
+	db DRAGON_CLAW                             ; needs update
 	db PAY_DAY
-	db FIRE_PUNCH
-	db ICE_PUNCH
+	db FIRE_PUNCH                              ; needs update
+	db ICE_PUNCH                               ; needs update
 	db THUNDERPUNCH
 	db FLAME_CHARGE
 	db X_SCISSOR
@@ -17,21 +17,21 @@ MoveTable:
 	db CUT
 	db GUST
 	db WING_ATTACK
-	db SUCKER_PUNCH
+	db SUCKER_PUNCH                            ; needs update
 	db FLY
-	db DAZZLINGLEAM
+	db DAZZLINGLEAM                            ; needs update
 	db FLAIL
 	db VINE_WHIP
 	db STOMP
-	db HEX
-	db FLARE_BLITZ
+	db HEX                                     ; needs update
+	db FLARE_BLITZ                             ; needs update
 	db STONE_EDGE
-	db FOCUS_BLAST
-	db BULLET_SEED
+	db FOCUS_BLAST                             ; needs update
+	db BULLET_SEED                             ; needs update
 	db HEADBUTT
 	db HORN_ATTACK
-	db FIRE_FANG
-	db ICE_FANG
+	db FIRE_FANG                               ; needs update
+	db ICE_FANG                                ; needs update
 	db THUNDER_FANG
 	db TACKLE_SCRATCH_POUND
 	db BODY_SLAM
@@ -39,8 +39,8 @@ MoveTable:
 	db TAKE_DOWN
 	db THRASH
 	db DOUBLE_EDGE
-	db HAIL
-	db POISON_STING
+	db HAIL                                    ; needs update
+	db POISON_STING                            ; needs update
 	db PIN_MISSILE
 	db LEER_TAIL_WHIP
 	db BITE
@@ -48,54 +48,54 @@ MoveTable:
 	db ROAR_WHIRLWIND
 	db SING_HYPNOSIS
 	db SUPERSONIC
-	db WEATHER_BALL
+	db WEATHER_BALL                            ; needs update
 	db DISABLE
-	db ACID
-	db EMBER
-	db FLAMETHROWER
-	db CALM_MIND
-	db WATER_GUN
-	db HYDRO_PUMP
+	db ACID                                    ; needs update
+	db EMBER                                   ; needs update
+	db FLAMETHROWER                            ; needs update
+	db CALM_MIND                               ; needs update
+	db WATER_GUN                               ; needs update
+	db HYDRO_PUMP                              ; needs update
 	db SURF
-	db ICE_BEAM
-	db BLIZZARD
+	db ICE_BEAM                                ; needs update
+	db BLIZZARD                                ; needs update
 	db PSYBEAM
-	db BUBBLE_BEAM
-	db AURORA_BEAM
+	db BUBBLE_BEAM                             ; needs update
+	db AURORA_BEAM                             ; needs update
 	db HYPER_BEAM
 	db PECK
-	db DRILL_PECK
-	db SHADOW_BONE
+	db DRILL_PECK                              ; needs update
+	db SHADOW_BONE                             ; needs update
 	db NIGHT_SLASH
 	db SHOCK_WAVE
-	db SEISMIC_TOSS
+	db SEISMIC_TOSS                            ; needs update
 	db STRENGTH
-	db ABSORB
-	db MEGA_DRAIN
-	db LEECH_SEED
-	db COSMIC_POWER
+	db ABSORB                                  ; needs update
+	db MEGA_DRAIN                              ; needs update
+	db LEECH_SEED                              ; needs update
+	db COSMIC_POWER                            ; needs update
 	db RAZOR_LEAF
-	db SOLAR_BEAM
-	db POISONPOWDER
-	db STUN_SPORE
+	db SOLAR_BEAM                              ; needs update
+	db POISONPOWDER                            ; needs update
+	db STUN_SPORE                              ; needs update
 	db SLEEP_POWDER
-	db PETAL_DANCE
-	db TAUNT
-	db DRAGON_RAGE
-	db FIRE_SPIN
+	db PETAL_DANCE                             ; needs update
+	db TAUNT                                   ; needs update
+	db DRAGON_RAGE                             ; needs update
+	db FIRE_SPIN                               ; needs update
 	db THUNDERSHOCK
-	db THUNDERBOLT
+	db THUNDERBOLT                             ; needs update
 	db THUNDER_WAVE
 	db THUNDER
 	db ROCK_THROW
 	db EARTHQUAKE
-	db FAIRY_WIND
+	db FAIRY_WIND                              ; needs update
 	db DIG
-	db TOXIC
+	db TOXIC                                   ; needs update
 	db CONFUSION
 	db PSYCHIC_M
-	db DRAGONHAMMER
-	db SIGNAL_BEAM
+	db DRAGONHAMMER                            ; needs update
+	db SIGNAL_BEAM                             ; needs update
 	db AGILITY_ROCK_POLISH
 	db QUICK_ATTACK
 	db RAGE

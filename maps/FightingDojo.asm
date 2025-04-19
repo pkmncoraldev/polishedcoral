@@ -43,9 +43,7 @@ FightingDojoTrigger1:
 	clearevent EVENT_TEST_OF_MIND_ACTIVE
 	callasm LoadMapPals
 	special FadeInPalettes
-	loadvar wRanchRaceFrames, 0
-	loadvar wRanchRaceSeconds, 0
-	loadvar wCurrentAirportBaggage, 0
+	scall FightingDojoZeroOutCounters
 	opentext
 	writetext FightingDojoMasterTestFailedText
 	waitbutton
@@ -65,9 +63,7 @@ FightingDojoTrigger2:
 	playmusic MUSIC_DOJO
 	clearevent EVENT_TEST_OF_BODY_ACTIVE
 	setevent EVENT_FINISHED_TRIAL_OF_BODY
-	loadvar wRanchRaceFrames, 0
-	loadvar wRanchRaceSeconds, 0
-	loadvar wCurrentAirportBaggage, 0
+	scall FightingDojoZeroOutCounters
 	pause 10
 	opentext
 	writetext FightingDojoMasterTestOverText
@@ -111,6 +107,12 @@ FightingDojoTrigger2:
 	closetext
 	dotrigger $0
 	end	
+	
+FightingDojoZeroOutCounters:
+	loadvar wRanchRaceFrames, 0
+	loadvar wRanchRaceSeconds, 0
+	loadvar wCurrentAirportBaggage, 0
+	end
 	
 FightingDojoMaster:
 	opentext
@@ -392,9 +394,7 @@ FightingDojoMaster:
 	pause 25
 	closetext
 	special FadeOutPalettesBlack
-	loadvar wRanchRaceFrames, 0
-	loadvar wRanchRaceSeconds, 0
-	loadvar wCurrentAirportBaggage, 0
+	scall FightingDojoZeroOutCounters
 	callasm TestOfMindAsm
 	setevent EVENT_TEST_OF_MIND_ACTIVE
 	end
@@ -449,9 +449,7 @@ FightingDojoMaster:
 	pause 25
 	closetext
 	playmusic MUSIC_GSC_GAME_CORNER
-	loadvar wRanchRaceFrames, 0
-	loadvar wRanchRaceSeconds, 0
-	loadvar wCurrentAirportBaggage, 0
+	scall FightingDojoZeroOutCounters
 	callasm TestOfMindAsm
 	setevent EVENT_TEST_OF_BODY_ACTIVE
 	end
@@ -482,9 +480,7 @@ TrialOfMindTimesUp::
 	callasm LoadMapPals
 	special FadeInPalettes
 	setevent EVENT_FINISHED_TRIAL_OF_MIND
-	loadvar wRanchRaceFrames, 0
-	loadvar wRanchRaceSeconds, 0
-	loadvar wCurrentAirportBaggage, 0
+	scall FightingDojoZeroOutCounters
 	pause 10
 	opentext
 	writetext FightingDojoMasterTestOverText
@@ -517,13 +513,13 @@ TrialOfBodyTimesUp::
 	callasm TestOfMindAsm2
 	playmusic MUSIC_DOJO
 	clearevent EVENT_TEST_OF_BODY_ACTIVE
-	loadvar wRanchRaceFrames, 0
-	loadvar wRanchRaceSeconds, 0
-	loadvar wCurrentAirportBaggage, 0
+	scall FightingDojoZeroOutCounters
 	opentext
 	writetext FightingDojoMasterTestFailedText
 	waitbutton
 	closetext
+	loadvar wPlayerState, PLAYER_NORMAL
+	callasm ReplaceKrisSprite
 	pause 10
 	playsound SFX_WATER_GUN
 	spriteface FIGHTING_DOJO_BAG, UP

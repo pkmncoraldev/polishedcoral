@@ -170,6 +170,7 @@ LusterTrainStationCallback:
 	setevent EVENT_MET_MR_NETT
 	clearevent EVENT_TRAIN_GOING_EAST
 	clearevent EVENT_TRAIN_GOING_WEST
+	blackoutmod LUSTER_CITY_RESIDENTIAL
 	dotrigger $0
 	jump .end
 .met_nett

@@ -1152,6 +1152,7 @@ ApplySpeedAbilities:
 	cp QUICK_FEET
 	ret nz
 	ld a, BATTLE_VARS_STATUS
+	call GetBattleVar
 	and a
 	ret z
 	ld a, $32

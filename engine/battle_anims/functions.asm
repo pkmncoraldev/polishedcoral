@@ -104,6 +104,7 @@ DoBattleAnimFrame: ; ccfbe
 	dw BattleAnimFunction_RadialMoveOut_Slow
 	dw BattleAnimFunction_FallAndStop
 	dw BattleAnimFunction_RadialMoveIn_Slow_Stay
+	dw BattleAnimFunction_RadialMoveOut_Delay
 
 BattleAnimFunction_Null: ; cd06e (33:506e)
 	call BattleAnim_AnonJumptable
@@ -4293,7 +4294,14 @@ BattleAnimFunction_5d:
 	
 BattleAnimFunction_RadialMoveOut:
 	call BattleAnim_AnonJumptable
+	
+	dw InitRadial
+	dw Step
 
+BattleAnimFunction_RadialMoveOut_Delay:
+	call BattleAnim_AnonJumptable
+	
+	dw DoNothingFunction
 	dw InitRadial
 	dw Step
 

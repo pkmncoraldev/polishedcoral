@@ -1925,19 +1925,19 @@ BattleAnim_BulletSeed:
 	anim_2gfx ANIM_GFX_PLANT, ANIM_GFX_HIT    
 	anim_sound 0, 1, SFX_BONE_CLUB
 .loop
-	anim_obj ANIM_OBJ_BULLET_SEED, 64, 90, $14
+	anim_obj ANIM_OBJ_BULLET_SEED, 64, 90, $6
 	anim_wait 7
-	anim_obj ANIM_OBJ_BULLET_SEED, 64, 90, $14
+	anim_obj ANIM_OBJ_BULLET_SEED, 64, 90, $6
 	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
 	anim_wait 7
-	anim_obj ANIM_OBJ_BULLET_SEED, 64, 90, $14
+	anim_obj ANIM_OBJ_BULLET_SEED, 64, 90, $6
 	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
 	anim_wait 7
 	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
-	anim_loop 3, .loop
+	anim_loop 2, .loop
 	anim_wait 16
 	anim_ret
 
@@ -5542,16 +5542,20 @@ BattleAnim_Safeguard:
 	anim_ret
 
 BattleAnim_FakeOut:
-	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_HIT
-	anim_obj ANIM_OBJ_ENCORE_HAND, 136, 46, $e0
-	anim_obj ANIM_OBJ_ENCORE_HAND, 136, 46, $40
-	anim_wait 16
+	anim_1gfx ANIM_GFX_OBJECTS
+	anim_obj ANIM_OBJ_FAKE_OUT_L, 112, 48, $0
+	anim_obj ANIM_OBJ_FAKE_OUT_R, 158, 48, $20
+	anim_wait 32
 	anim_sound 0, 0, SFX_DOUBLE_SLAP
+	anim_incobj 1
+	anim_incobj 2
+	anim_wait 4
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $2
 	anim_clearobjs
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 46, $0
 	anim_wait 1
 	anim_sound 0, 0, SFX_RAGE
+	anim_obj ANIM_OBJ_FAKE_OUT_L, 112, 48, $0
+	anim_obj ANIM_OBJ_FAKE_OUT_R, 158, 48, $0
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
 	anim_wait 32
 	anim_ret

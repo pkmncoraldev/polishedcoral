@@ -5956,14 +5956,18 @@ BattleAnim_Ancientpower:
 	anim_ret
 
 BattleAnim_ShadowBall:
-	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_SMOKE
+	anim_2gfx ANIM_GFX_GLOW, ANIM_GFX_SMOKE
 	anim_bgp $1b
+	anim_obj ANIM_OBJ_GROWING_BALL, 64, 92, $0
+.loop
+	anim_sound 6, 3, SFX_WARP_TO
+	anim_wait 8
+	anim_loop 6, .loop
 	anim_sound 6, 2, SFX_SLUDGE_BOMB
-	anim_obj ANIM_OBJ_SHADOW_BALL,   8, 0,  11, 4, $2
+	anim_obj ANIM_OBJ_SHADOW_BALL, 64, 92, $2
 	anim_wait 32
-	anim_obj ANIM_OBJ_BALL_POOF, -16, 4,   7, 0, $10
+	anim_obj ANIM_OBJ_BALL_POOF, 132, 56, $10
 	anim_wait 24
-	anim_bgp $e4
 	anim_ret
 
 BattleAnim_FutureSight:
@@ -5989,24 +5993,23 @@ BattleAnim_FutureSight:
 BattleAnim_RockSmash:
 	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_SPARK
-	anim_obj ANIM_OBJ_HIT_YFIX,  16, 0,   7, 0, $0
-.jump
+	anim_obj ANIM_OBJ_HIT_YFIX, 128, 56, $0
 	anim_sound 0, 1, SFX_SPARK
-	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $28
-	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $5c
+	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $28
+	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $5c
 	anim_sound 0, 1, SFX_SPARK
-	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $10
-	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $e8
+	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $10
+	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $e8
 	anim_sound 0, 1, SFX_SPARK
-	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $9c
-	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $d0
+	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $9c
+	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $d0
 	anim_wait 6
 	anim_sound 0, 1, SFX_SPARK
-	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $1c
-	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $50
+	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $1c
+	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $50
 	anim_sound 0, 1, SFX_SPARK
-	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $dc
-	anim_obj ANIM_OBJ_ROCK_SMASH,  16, 0,   8, 0, $90
+	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $dc
+	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $90
 	anim_wait 32
 	anim_ret
 

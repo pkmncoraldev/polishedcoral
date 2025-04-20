@@ -45,7 +45,7 @@ AnimObjGFX:
 	anim_obj_gfx 38, AnimObjShineGFX
 	anim_obj_gfx 35, AnimObjAngelsGFX
 	anim_obj_gfx  5, AnimObjCosmicPowerGFX
-	anim_obj_gfx 24, AnimObjAeroblastGFX
+	anim_obj_gfx 10, AnimObjGlowGFX
 	anim_obj_gfx  6, AnimObjStarsGFX
 	anim_obj_gfx  5, AnimObjHeartsGFX
 	anim_obj_gfx  9, AnimObjBugBuzzGFX

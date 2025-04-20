@@ -5,7 +5,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_Punch                   ; BATTLEANIMFRAMESET_PUNCH
 	dw .Frameset_Kick                    ; BATTLEANIMFRAMESET_KICK
 	dw .Frameset_Palm                    ; BATTLEANIMFRAMESET_PALM
-	dw .Frameset_06                      ; BATTLEANIMFRAMESET_TINY_GLOW
+	dw .Frameset_TinyGlow                ; BATTLEANIMFRAMESET_TINY_GLOW
 	dw .Frameset_PunchShake              ; BATTLEANIMFRAMESET_PUNCH_SHAKE
 	dw .Frameset_BallPoof                ; BATTLEANIMFRAMESET_BALL_POOF
 	dw .Frameset_PokeBall1               ; BATTLEANIMFRAMESET_POKE_BALL_1
@@ -173,7 +173,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_RapidSpin               ; BATTLEANIMFRAMESET_RAPID_SPIN
 	dw .Frameset_Swagger                 ; BATTLEANIMFRAMESET_SWAGGER
 	dw .Frameset_MeanLook                ; BATTLEANIMFRAMESET_MEAN_LOOK
-	dw .Frameset_UpsideDownPunch         ; BATTLEANIMFRAMESET_UPSIDE_DOWN_PUNCH ; UNUSED
+	dw .Frameset_GrowingBall             ; BATTLEANIMFRAMESET_GROWING_BALL
 	dw .Frameset_GrowingSparkle          ; BATTLEANIMFRAMESET_GROWING_SPARKLE
 	dw .Frameset_Rain                    ; BATTLEANIMFRAMESET_RAIN
 	dw .Frameset_PsychUp                 ; BATTLEANIMFRAMESET_PSYCH_UP                 
@@ -237,7 +237,7 @@ BattleAnimFrameData: ; ce85e
 	db BATTLEANIMOAMSET_05, $06
 	db -4
 
-.Frameset_06:
+.Frameset_TinyGlow:
 	db BATTLEANIMOAMSET_06,  1
 	db BATTLEANIMOAMSET_65,  1
 	db -2
@@ -1472,3 +1472,24 @@ BattleAnimFrameData: ; ce85e
 .Frameset_ClawTear:
 	frame BATTLEANIMOAMSET_BE, 16
 	endanim
+
+.Frameset_GrowingBall:
+	frame BATTLEANIMOAMSET_1F,  2
+	frame BATTLEANIMOAMSET_1E,  2
+	frame BATTLEANIMOAMSET_1F,  2
+	frame BATTLEANIMOAMSET_1E,  2
+	frame BATTLEANIMOAMSET_1F,  2
+	frame BATTLEANIMOAMSET_1E,  2
+	frame BATTLEANIMOAMSET_06,  2
+	frame BATTLEANIMOAMSET_1E,  2
+	frame BATTLEANIMOAMSET_06,  2
+	frame BATTLEANIMOAMSET_1E,  2
+	frame BATTLEANIMOAMSET_06,  2
+	frame BATTLEANIMOAMSET_55,  2
+	frame BATTLEANIMOAMSET_06,  2
+	frame BATTLEANIMOAMSET_1E,  2
+	frame BATTLEANIMOAMSET_06,  2
+	frame BATTLEANIMOAMSET_55,  2
+	frame BATTLEANIMOAMSET_06,  2
+	frame BATTLEANIMOAMSET_55,  2
+	delanim

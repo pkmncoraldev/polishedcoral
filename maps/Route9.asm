@@ -137,7 +137,7 @@ Route9NPC1:
 	
 Route9NPC1Text:
 	text "If your #MON"
-	line "knows HEABUTT,"
+	line "knows HEADBUTT,"
 	cont "try having them"
 	cont "use it on a tree."
 	

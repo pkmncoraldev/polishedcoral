@@ -242,6 +242,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret c
 	call .CheckWarp
 	ret c
+	ld a, -1
+	ld [wWalkingDirection], a
+	call .BumpSound
 	jp .NotMoving
 	
 .SkatingOffRoad
@@ -828,6 +831,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	call ReplaceKrisSprite
 	ld a, 1
 	ld [wSkateboardGrinding], a
+	ld a, [wPlaceBallsY]
+	ld [wWalkingDirection], a
 	ret
 .grindcont
 	ld a, [wPlaceBallsY]
@@ -1233,6 +1238,13 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp STANDING
 	jr z, .DontOllie
 .TryOllie2
+	ld a, [wSkateboardGrinding]
+	cp 1
+	jr z, .grinding
+	ld a, [wSkateboardSteps]
+	cp 0
+	jr z, .DontOllie
+.grinding
 	call .CheckNPCFarAhead
 	and a
 	jr z, .DontOllieSound

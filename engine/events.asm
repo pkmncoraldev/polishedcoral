@@ -730,6 +730,9 @@ CheckBPressOW: ; 96999
 	ld a, [hJoyReleased]
 	and B_BUTTON
 	jp z, .not_on_skateboard
+	ld a, [wSkateboardGrinding]
+	cp 0
+	jr nz, .not_on_skateboard
 	ld a, 2
 	ld [wSkateboardOllie], a
 	xor a

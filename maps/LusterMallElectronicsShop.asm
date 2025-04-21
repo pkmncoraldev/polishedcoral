@@ -27,7 +27,8 @@ LusterMallElectronicsShop_MapScriptHeader:
 	person_event SPRITE_SUPER_NERD,  5,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC2, -1
 	person_event SPRITE_CUTE_GIRL,  3,  8, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShop_NPC3, -1
 	person_event SPRITE_CLERK,  4, 11, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShopClerk, -1
-	object_event  0,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_COMMAND, pokemart, MARTTYPE_DECO, MART_LUSTER_MALL_ELECTRONICS_DECO, -1
+	person_event SPRITE_CLERK,  5, 0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShopClerk2, -1
+;	object_event  0,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_COMMAND, pokemart, MARTTYPE_DECO, MART_LUSTER_MALL_ELECTRONICS_DECO, -1
 	object_event  7,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_COMMAND, pokemart, MARTTYPE_TM, MART_LUSTER_MALL_ELECTRONICS_TM, -1
 	person_event SPRITE_POLLY,  6, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallElectronicsShopPolly, EVENT_POLLY_NOT_IN_ELECTRONICS
 	hiddentape_event  9,  3, MUSIC_LUSTER_CITY, 1, EVENT_MUSIC_LUSTER_CITY
@@ -43,6 +44,7 @@ LusterMallElectronicsShop_MapScriptHeader:
 	
 	
 LusterMallElectronicsShopClerk:
+	faceplayer
 	opentext
 	checkevent EVENT_MT_ONWA_B3F_POKE_BALL
 	iftrue .got_elec
@@ -65,6 +67,15 @@ LusterMallElectronicsShopClerk:
 	callasm LusterMallElectronicsShopClerkAsm4
 	closetext
 	end
+	
+LusterMallElectronicsShopClerk2:
+	jumptextfaceplayer LusterMallElectronicsShopClerk2Text
+	
+LusterMallElectronicsShopClerk2Text:
+	text "This counter isn't"
+	line "open in this"
+	cont "version, sorry."
+	done
 	
 LusterMallElectronicsShopClerkAsm:
 	ld a, MARTTYPE_ELECTRONICS

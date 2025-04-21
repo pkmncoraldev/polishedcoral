@@ -848,13 +848,11 @@ LusterMall_PaperText:
 	done
 	
 LusterMall_GymSignText:
-	text "LUSTER GYM"
+	text "LUSTER CITY"
+	line "#MON GYM"
+	cont "LEADER: POLLY"
 	
-	para "Closed for"
-	line "construction."
-	
-	para "Come back in"
-	line "the final game."
+	para "The toxic prodigy."
 	done
 	
 LusterMall_CopText:

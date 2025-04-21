@@ -41,11 +41,16 @@ LusterMallPokeCenterCroagunk:
 	end
 	
 LusterMallPokeCenterNPC1Text:
-	text "I'm here to"
-	line "challenge the GYM."
+	text "They say the GYM"
+	line "here is full of"
+	cont "chicks!"
 	
-	para "I'm working up the"
-	line "courage."
+	para "…"
+	
+	para "I'm still trying"
+	line "to work up the"
+	cont "courage to step"
+	cont "inside…"
 	done
 	
 LusterMallPokeCenterNPC2Text:
@@ -71,12 +76,11 @@ LusterMallPokeCenterNPC3Text:
 	
 LusterMallPokeCenterNPC4Text:
 	text "I'm supposed to be"
-	line "meeting a guy"
+	line "meeting someone"
 	cont "upstairs."
 	
-	para "I'm kinda having"
-	line "second thoughts,"
-	cont "though…"
+	para "I'm totally blowing"
+	line "them off!"
 	done
 	
 LusterMallPokeCenterCroagunkText:

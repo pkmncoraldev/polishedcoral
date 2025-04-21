@@ -140,7 +140,7 @@ CoffeeShopAsm2:
 	ret
 	
 LusterMallCoffeeShop_Cook:
-	jumptextfaceplayer LusterMallCoffeeShop_CookText
+	jump LusterMallElectronicsShopClerk2
 
 	faceplayer
 	opentext

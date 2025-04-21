@@ -615,6 +615,7 @@ LakePlayedFluteForSudowoodo::
 	loadwildmon SUDOWOODO, 25
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
+	if_equal $1, .lose
 	if_equal $2, DidntBeatLakeSudowoodo
 	disappear LAKESUDOWOODO
 	reloadmapafterbattle
@@ -625,6 +626,10 @@ LakePlayedFluteForSudowoodo::
 	setevent EVENT_FOUGHT_SUDOWOODO
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	setevent EVENT_UNIQUE_ENCOUNTER_SUDOWOODO_BOSS
+	end
+.lose
+	clearevent EVENT_FOUGHT_SUDOWOODO
+	reloadmapafterbattle
 	end
 
 LakeDontUseFlute:

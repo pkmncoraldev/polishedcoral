@@ -1471,6 +1471,7 @@ PorygonEncounterScript:
 	loadwildmon RATTATA, 5
 	writecode VAR_BATTLETYPE, BATTLETYPE_PORYGON
 	startbattle
+	if_equal $1, .lose
 	special FadeOutPalettes
 	setevent EVENT_DONE_PORYGON_ENCOUNTER
 	setevent EVENT_UNIQUE_ENCOUNTER_PORYGON_BOSS
@@ -1480,6 +1481,9 @@ PorygonEncounterScript:
 	setevent EVENT_IN_BUSINESS_DISTRICT
 	domaptrigger LUSTER_SKYSCRAPER_PORYGON_ROOM, $1
 	warp2 UP, LUSTER_SKYSCRAPER_PORYGON_ROOM, $2, $3
+	end
+.lose
+	reloadmapafterbattle
 	end
 	
 DoPlayerEvent: ; 96beb

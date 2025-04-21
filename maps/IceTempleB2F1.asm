@@ -134,7 +134,7 @@ IceTempleMamoswineCutscene:
 	loadwildmon MAMOSWINE, 38
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
-	if_equal $1, .cont
+	if_equal $1, .lose
 	disappear ICE_TEMPLE_B2F_1_MAMOSWINEP1
 	disappear ICE_TEMPLE_B2F_1_MAMOSWINEP2
 	disappear ICE_TEMPLE_B2F_1_MAMOSWINEP3
@@ -147,11 +147,18 @@ IceTempleMamoswineCutscene:
 	setevent EVENT_UNIQUE_ENCOUNTER_MAMOSWINE_BOSS
 	clearevent EVENT_ICE_TEMPLE_CAMPFIRE_5_UNLIT
 	clearevent EVENT_ICE_TEMPLE_CAMPFIRE_6_UNLIT
-.cont
 	reloadmapafterbattle
 	playmapmusic
 	clearevent EVENT_MAMOSWINE_CUTSCENE
 .end
+	end
+.lose
+	clearevent EVENT_MAMOSWINE_CUTSCENE
+	setevent EVENT_ICE_TEMPLE_CAMPFIRE_5_UNLIT
+	callasm ForceTorchOutAsm
+	clearevent EVENT_TORCH_LIT
+	loadvar wTimeOfDayPalFlags, $40 | 0
+	reloadmapafterbattle
 	end
 	
 IceTempleTorch8:

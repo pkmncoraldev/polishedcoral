@@ -26,6 +26,7 @@ SeasideCaveB2FDrakloak:
 	loadwildmon DRAKLOAK, 46
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
+	if_equal $1, .lose
 	disappear SEASIDE_CAVE_B2F_DRAKLOAK
 	reloadmapafterbattle
 	setevent EVENT_SEASIDE_CAVE_B2F_DRAKLOAK_GONE
@@ -38,6 +39,10 @@ SeasideCaveB2FDrakloak:
 .CaughtDrakloak
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	setevent EVENT_UNIQUE_ENCOUNTER_DRAKLOAK_BOSS
+	end
+.lose
+	clearevent EVENT_SEASIDE_CAVE_B2F_DRAKLOAK_GONE
+	reloadmapafterbattle
 	end
 	
 SeasideCaveB2FDrakloakText:

@@ -29,6 +29,7 @@ Route6UnderwaterCaveLapras:
 	loadwildmon LAPRAS, 43
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
+	if_equal $1, .lose
 	disappear ROUTE_6_UNDERWATER_CAVE_LAPRAS
 	reloadmapafterbattle
 	setevent EVENT_ROUTE_6_UNDERWATER_CAVE_LAPRAS_GONE
@@ -41,6 +42,10 @@ Route6UnderwaterCaveLapras:
 .CaughtLapras
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	setevent EVENT_UNIQUE_ENCOUNTER_LAPRAS_BOSS
+	end
+.lose
+	clearevent EVENT_ROUTE_6_UNDERWATER_CAVE_LAPRAS_GONE
+	reloadmapafterbattle
 	end
 	
 Route6UnderwaterCaveLaprasText:

@@ -95,6 +95,7 @@ KomoreCommunityCenterPikachu2:
 	loadwildmon MIMIKYU, 47
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
+	if_equal $1, .lose
 	disappear 1
 	reloadmapafterbattle
 	playnewmapmusic
@@ -110,6 +111,15 @@ KomoreCommunityCenterPikachu2:
 	spriteface 1, LEFT
 .CaughtMimikyu
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	end
+.lose
+	clearevent EVENT_MIMIKYU_WILL_GO_LEFT
+	clearevent EVENT_MIMIKYU_WILL_GO_RIGHT
+	clearevent EVENT_MIMIKYU_LEFT
+	clearevent EVENT_MIMIKYU_MIDDLE
+	setevent EVENT_MIMIKYU_RIGHT
+	clearevent EVENT_MIMIKYU_GONE
+	reloadmapafterbattle
 	end
 
 KomoreCommunityCenterWooperText:

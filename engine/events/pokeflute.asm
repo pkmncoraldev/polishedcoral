@@ -284,6 +284,7 @@ _NettSpecs:
 	loadwildmon DITTO, 50
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
+	if_equal $1, .lose
 	callasm ForceGhostTownAsm
 	reloadmapafterbattle
 	playnewmapmusic
@@ -308,6 +309,10 @@ _NettSpecs:
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	dotrigger $1
 	callasm BrightburgClearwPlaceBallsYAsm
+	end
+.lose
+	clearevent EVENT_BRIGHTBURG_REVEALED
+	reloadmapafterbattle
 	end
 	
 .youngster_script

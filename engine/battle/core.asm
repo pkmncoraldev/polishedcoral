@@ -9974,7 +9974,7 @@ ForcePlayBattleAnim:
 	ld a, [wOptions1]
 	push af
 	ld hl, wOptions1
-	set MON_ANIMATIONS, [hl]
+	set BATTLE_EFFECTS, [hl]
 	call Call_PlayBattleAnim
 	pop af
 	ld [wOptions1], a

@@ -5839,10 +5839,12 @@ BattleCommand_statdown: ; 362e3
 	ld a, c
 	and a ; cp ATTACK
 	jr z, .ability_failed
+	jr .no_relevant_ability
 .def
 	ld a, c
 	cp DEFENSE
 	jr z, .ability_failed
+	jr .no_relevant_ability
 .acc
 	ld a, c
 	cp ACCURACY

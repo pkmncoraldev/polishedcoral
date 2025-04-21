@@ -149,6 +149,7 @@ rept 2
 	applymovement DESERT_TEMPLE_2_VOLCARONA_2, Movement_DesertTemple2ShadowPlayerFall2
 endr
 	pause 60
+	setlasttalked DESERT_TEMPLE_2_VOLCARONA_2
 	opentext
 	writetext DesertTemple2VolcaronaText
 	cry VOLCARONA

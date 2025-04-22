@@ -380,7 +380,7 @@
 	db 30, JOLTIK		;1%
 	
 	map_id ROUTE_5
-	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 12, SHROOMISH	;30%
 	db 12, JOLTIK		;30%
@@ -731,7 +731,7 @@
 	db 15, MUNCHLAX		;1%
 	
 	map_id SUNBEAM_JUNGLE
-	db 9 percent, 9 percent, 9 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 17, TRUMBEAK		;30%
 	db 17, ODDISH		;30%
@@ -758,7 +758,7 @@
 	db 18, GLOOM		;1%
 	
 	map_id SUNBEAM_JUNGLE_CAVE
-	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, ZUBAT		;30%
 	db 18, ONIX			;30%
@@ -785,7 +785,7 @@
 	db 18, ZUBAT		;1%
 	
 	map_id SUNBEAM_JUNGLE_DEEP
-	db 9 percent, 9 percent, 9 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, TRUMBEAK		;30%
 	db 18, MARILL		;30%
@@ -866,7 +866,7 @@
 	db 18, RATTATA		;1%
 	
 	map_id ROUTE_4
-	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, NIDORINA		;30%
 	db 19, PIDGEOTTO	;30%
@@ -920,7 +920,7 @@
 	db 19, RATICATE		;1%
 	
 	map_id SPOOKY_FOREST_1
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -947,7 +947,7 @@
 	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_2
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -974,7 +974,7 @@
 	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_3
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -1001,7 +1001,7 @@
 	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_4
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -1028,7 +1028,7 @@
 	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_5
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -1055,7 +1055,7 @@
 	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_6
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -1082,7 +1082,7 @@
 	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_7
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -1109,7 +1109,7 @@
 	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_8
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -1136,7 +1136,7 @@
 	db 19, STANTLER		;1%
 	
 	map_id SPOOKY_FOREST_ESCORT
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -1407,7 +1407,7 @@
 	db 21, GOLBAT		;1%
 	
 	map_id ROUTE_10 ; used on Route 10 during clear weather
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
 	; morn
 	db 22, SNOVER		;30%
 	db 22, SWINUB		;30%
@@ -1434,7 +1434,7 @@
 	db 22, SNEASEL		;1%
 	
 	map_id ROUTE_10_EAST ; used on Route 10 during snowstorm
-	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
 	db 22, SNORUNT		;30%
 	db 22, SNOVER		;30%
@@ -1650,7 +1650,7 @@
 	db 30, RATTATA		;1%
 	
 	map_id ROUTE_11
-	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, MACHOP		;30%
 	db 20, DWEBBLE		;30%
@@ -1677,7 +1677,7 @@
 	db 20, DWEBBLE		;1%
 	
 	map_id ROUTE_12
-	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, WHIRLIPEDE	;30%
 	db 30, WOOPER		;30%

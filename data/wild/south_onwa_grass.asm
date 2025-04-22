@@ -82,7 +82,7 @@
 	db 32, DWEBBLE		;1%
 	
 	map_id DESERT_WASTELAND_1
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
@@ -109,7 +109,7 @@
 	db 32, LARVESTA		;1%
 	
 	map_id DESERT_WASTELAND_2
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
@@ -136,7 +136,7 @@
 	db 32, LARVESTA		;1%
 
 	map_id DESERT_WASTELAND_3
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
@@ -163,7 +163,7 @@
 	db 32, LARVESTA		;1%
 
 	map_id DESERT_WASTELAND_4
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
@@ -190,7 +190,7 @@
 	db 32, LARVESTA		;1%
 
 	map_id DESERT_WASTELAND_5
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
@@ -217,7 +217,7 @@
 	db 32, LARVESTA		;1%
 
 	map_id DESERT_WASTELAND_6
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
@@ -244,7 +244,7 @@
 	db 32, LARVESTA		;1%
 
 	map_id DESERT_WASTELAND_7
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
@@ -271,7 +271,7 @@
 	db 32, LARVESTA		;1%
 
 	map_id DESERT_WASTELAND_8
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
@@ -298,7 +298,7 @@
 	db 32, LARVESTA		;1%
 
 	map_id DESERT_WASTELAND_9
-	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
 	db 31, NUMEL		;30%
@@ -379,7 +379,7 @@
 	db 33, VENONAT		;1%
 	
 	map_id RADIANT_FIELD
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 33, SUNKERN		;30%
 	db 33, LEDIAN		;30%
@@ -1000,7 +1000,7 @@
 	db 37, MIMIKYU		;1%
 	
 	map_id INN_VENT
-	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, RATTATA		;30%
 	db 35, JOLTIK		;30%

@@ -43,7 +43,7 @@ AnimObjGFX:
 	anim_obj_gfx 48, AnimObjShapesGFX
 	anim_obj_gfx 25, AnimObjObjectsGFX
 	anim_obj_gfx 38, AnimObjShineGFX
-	anim_obj_gfx 35, AnimObjAngelsGFX
+	anim_obj_gfx 19, AnimObjAngelsGFX
 	anim_obj_gfx  5, AnimObjCosmicPowerGFX
 	anim_obj_gfx 10, AnimObjGlowGFX
 	anim_obj_gfx  6, AnimObjStarsGFX
@@ -59,6 +59,8 @@ AnimObjGFX:
 	anim_obj_gfx  9, AnimObjTearGFX
 	anim_obj_gfx 32, AnimObjVortexGFX
 	anim_obj_gfx  4, AnimObjCottonGFX
+	anim_obj_gfx 18, AnimObjObjects2GFX
+	anim_obj_gfx 24, AnimObjSwirlGFX
 	anim_obj_gfx 10, AnimObjPokeBall2GFX
 	anim_obj_gfx 10, AnimObjPokeBall3GFX
 	anim_obj_gfx  6, AnimObjDreepyBackGFX

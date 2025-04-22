@@ -2,12 +2,12 @@
 MoveTable:
 ;	db ROCK_CLIMB
 ;	db LOW_KICK
-;	db WISH                                    ; needs update
+;	db WISH
 ;	db BONE_CLUB
-;	db DRAGON_CLAW                             ; needs update
+;	db DRAGON_CLAW
 ;	db PAY_DAY
-;	db FIRE_PUNCH                              ; needs update
-;	db ICE_PUNCH                               ; needs update
+;	db FIRE_PUNCH
+;	db ICE_PUNCH
 ;	db THUNDERPUNCH
 ;	db FLAME_CHARGE
 ;	db X_SCISSOR
@@ -17,237 +17,237 @@ MoveTable:
 ;	db CUT
 ;	db GUST
 ;	db WING_ATTACK
-;	db SUCKER_PUNCH                            ; needs update
+	db SUCKER_PUNCH                            ; needs CORRECTION
 ;	db FLY
-;	db DAZZLINGLEAM                            ; needs update
+;	db DAZZLINGLEAM
 ;	db FLAIL
 ;	db VINE_WHIP
 ;	db STOMP
-;	db HEX                                     ; needs update
-;	db FLARE_BLITZ                             ; needs update
+;	db HEX
+;	db FLARE_BLITZ
 ;	db STONE_EDGE
-;	db FOCUS_BLAST                             ; needs update
-;	db BULLET_SEED
-;	db HEADBUTT
-;	db HORN_ATTACK
-;	db FIRE_FANG                               ; needs update
-;	db ICE_FANG                                ; needs update
-;	db THUNDER_FANG
-;	db TACKLE_SCRATCH_POUND
-;	db BODY_SLAM
-;	db WOOD_HAMMER
-;	db TAKE_DOWN
-;	db THRASH
-;	db DOUBLE_EDGE
-;	db HAIL                                    ; needs update
-;	db POISON_STING                            ; needs update
-;	db PIN_MISSILE
-;	db LEER_TAIL_WHIP
-;	db BITE
-;	db GROWL
-;	db ROAR_WHIRLWIND
-;	db SING_HYPNOSIS
-;	db SUPERSONIC
-;	db WEATHER_BALL                            ; needs update
-;	db DISABLE
-;	db ACID                                    ; needs update
-;	db EMBER                                   ; needs update
-;	db FLAMETHROWER                            ; needs update
-;	db CALM_MIND                               ; needs update
-;	db WATER_GUN                               ; needs update
-;	db HYDRO_PUMP                              ; needs update
-;	db SURF
-;	db ICE_BEAM                                ; needs update
-;	db BLIZZARD                                ; needs update
-;	db PSYBEAM
-;	db BUBBLE_BEAM                             ; needs update
-;	db AURORA_BEAM                             ; needs update
-;	db HYPER_BEAM
-;	db PECK
-;	db DRILL_PECK                              ; needs update
-;	db SHADOW_BONE                             ; needs update
-;	db NIGHT_SLASH
-;	db SHOCK_WAVE
-;	db SEISMIC_TOSS                            ; needs update
-;	db STRENGTH
-;	db ABSORB                                  ; needs update
-;	db MEGA_DRAIN                              ; needs update
-;	db LEECH_SEED                              ; needs update
-;	db COSMIC_POWER                            ; needs update
-;	db RAZOR_LEAF
-;	db SOLAR_BEAM                              ; needs update
-;	db POISONPOWDER                            ; needs update
-;	db STUN_SPORE                              ; needs update
-;	db SLEEP_POWDER
-;	db PETAL_DANCE                             ; needs update
-;	db TAUNT                                   ; needs update
-;	db DRAGON_RAGE                             ; needs update
-;	db FIRE_SPIN                               ; needs update
-;	db THUNDERSHOCK
-;	db THUNDERBOLT                             ; needs update
-;	db THUNDER_WAVE
-;	db THUNDER
-;	db ROCK_THROW
-;	db EARTHQUAKE
-;	db FAIRY_WIND                              ; needs update
-;	db DIG
-;	db TOXIC                                   ; needs update
-;	db CONFUSION
-;	db PSYCHIC_M
-;	db DRAGONHAMMER                            ; needs update
-;	db SIGNAL_BEAM                             ; needs update
-;	db AGILITY_ROCK_POLISH
-;	db QUICK_ATTACK
-;	db RAGE
-;	db TELEPORT
-;	db NIGHT_SHADE
-;	db DRAGON_PULSE
-;	db SCREECH
-;	db DOUBLE_TEAM
-;	db BULLDOZE
-;	db ROCK_BLAST
-;	db MINIMIZE
-;	db SAND_ATTACK_SMOKESCREEN_FLASH
-;	db CONFUSE_RAY
-;	db AQUA_TAIL
-;	db DEFENSE_CURL_HARDEN_WITHDRAW
-;	db BARRIER_IRON_DEFENSE_ACID_ARMOR
-;	db LIGHT_SCREEN
-;	db HAZE
-;	db REFLECT
-;	db FOCUS_ENERGY
-;	db FLASH_CANNON
-;	db DRAGON_DARTS
-;	db SCALD
-;	db SELFDESTRUCT
-;	db COTTON_GUARD
-;	db JUMP_KICK
-;	db PSYSHOCK
-;	db VENOSHOCK
-;	db EARTH_POWER
-;	db FIRE_BLAST
-;	db WATERFALL
-;	db ICICLE_CRASH
-;	db SWIFT
-;	db MIRROR_MOVE
-;	db ROCK_WRECKER
-;	db WORK_UP_GROWTH
-;	db AMNESIA
-;	db ROOST
-;	db SOFTBOILED_MILK_DRINK_RECOVER
-;	db HI_JUMP_KICK
-;	db FIERY_DANCE
-;	db DREAM_EATER
-;	db POISON_JAB
-;	db BULLET_PUNCH
-;	db LEECH_LIFE
-;	db DOUBLE_HIT
-;	db BRAVE_BIRD
-;	db TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
-;	db TOXIC_SPIKES
-;	db POISON_FANG
-;	db SPORE
-;	db UNUSED
-;	db LOCK_ON_MIND_READER
-;	db CLEAR_SMOG
-;	db DRAGON_DANCE
-;	db OMINOUS_WIND
-;	db EXPLOSION
-;	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
-;	db BONEMERANG
-;	db REST
-;	db ROCK_SLIDE
-;	db HORN_LEECH
-;	db BULK_UP
-;	db CONVERSION
-;	db TRI_ATTACK
-;	db SHARPEN_HOWL_MEDITATE
-;	db SLASH
-;	db SUBSTITUTE
-;	db GIGA_IMPACT
-;	db TWIN_BEAM
-;	db DRAIN_PUNCH
-;	db ACROBATICS
-;	db WILL_O_WISP
-;	db ZEN_HEADBUTT
-;	db BRICK_BREAK
-;	db FLAME_BURST
-;	db HYPER_VOICE
-;	db CURSE
-;	db GYRO_BALL
-;	db ENERGY_BALL
-;	db PSYSHIELD_BASH
-;	db GUNK_SHOT
-;	db REVERSAL
-;	db SLUDGE
-;	db ICE_SHARD
-;	db PROTECT
-;	db MACH_PUNCH
-;	db SCARY_FACE_COTTON_SPORE_STRING_SHOT
-;	db FEINT_ATTACK
-;	db DIVE
-;	db BELLY_DRUM
-;	db SLUDGE_BOMB
-;	db MUD_SLAP
-;	db SHELL_SMASH
-;	db SPIKES
-;	db ZAP_CANNON
-;	db FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
-;	db DESTINY_BOND
-;	db PERISH_SONG
-;	db ICY_WIND
-;	db POWER_GEM
-;	db WILD_CHARGE
-;	db PETAL_BLIZZARD
-;	db OUTRAGE
-;	db SANDSTORM
-;	db GIGA_DRAIN
-;	db ENDURE
-;	db CHARM_FEATHER_DANCE
-;	db ROLLOUT
-;	db FALSE_SWIPE
-;	db SWAGGER
-;	db TWISTER
-;	db SPARK
-;	db ELECTRO_BALL
-;	db STEEL_WING
-;	db MEAN_LOOK_BLOCK_SPIDER_WEB
-;	db ATTRACT
-;	db SNORE
-;	db HEAL_BELL
-;	db RETURN
-;	db QUIVER_DANCE
-;	db BUG_BUZZ
-;	db SAFEGUARD
-;	db FURY_CUTTER
-;	db FAKE_OUT
-;	db MAGNITUDE
-;	db DYNAMICPUNCH
-;	db MEGAHORN
-;	db DRAGONBREATH
-;	db BATON_PASS
-;	db ENCORE
-;	db PURSUIT
-;	db RAPID_SPIN
-;	db SHADOW_CLAW
-;	db IRON_TAIL
-;	db METAL_CLAW
-;	db AURA_SPHERE
-;	db SYNTHESIS_MOONLIGHT_MORNING_SUN
-;	db HURRICANE
-;	db KNOCK_OFF
-;	db SUPERPOWER
-;	db CROSS_CHOP
-;	db AQUA_JET
-;	db RAIN_DANCE
-;	db SUNNY_DAY
-;	db CRUNCH
-;	db DOUBLE_KICK
-;	db NASTY_PLOT
-;	db EXTREMESPEED
-;	db ANCIENTPOWER
-;	db SHADOW_BALL
-;	db FUTURE_SIGHT
+	db FOCUS_BLAST                             ; needs update
+	db BULLET_SEED
+	db HEADBUTT
+	db HORN_ATTACK
+	db FIRE_FANG                               ; needs update
+	db ICE_FANG                                ; needs update
+	db THUNDER_FANG
+	db TACKLE_SCRATCH_POUND
+	db BODY_SLAM
+	db WOOD_HAMMER
+	db TAKE_DOWN
+	db THRASH
+	db DOUBLE_EDGE
+	db HAIL                                    ; needs update
+	db POISON_STING                            ; needs update
+	db PIN_MISSILE
+	db LEER_TAIL_WHIP
+	db BITE
+	db GROWL
+	db ROAR_WHIRLWIND
+	db SING_HYPNOSIS
+	db SUPERSONIC
+	db WEATHER_BALL                            ; needs update
+	db DISABLE
+	db ACID                                    ; needs update
+	db EMBER                                   ; needs update
+	db FLAMETHROWER                            ; needs update
+	db CALM_MIND                               ; needs update
+	db WATER_GUN                               ; needs update
+	db HYDRO_PUMP                              ; needs update
+	db SURF
+	db ICE_BEAM                                ; needs update
+	db BLIZZARD                                ; needs update
+	db PSYBEAM
+	db BUBBLE_BEAM                             ; needs update
+	db AURORA_BEAM                             ; needs update
+	db HYPER_BEAM
+	db PECK
+	db DRILL_PECK                              ; needs update
+	db SHADOW_BONE                             ; needs update
+	db NIGHT_SLASH
+	db SHOCK_WAVE
+	db SEISMIC_TOSS                            ; needs update
+	db STRENGTH
+	db ABSORB                                  ; needs update
+	db MEGA_DRAIN                              ; needs update
+	db LEECH_SEED                              ; needs update
+	db COSMIC_POWER                            ; needs update
+	db RAZOR_LEAF
+	db SOLAR_BEAM                              ; needs update
+	db POISONPOWDER                            ; needs update
+	db STUN_SPORE                              ; needs update
+	db SLEEP_POWDER
+	db PETAL_DANCE                             ; needs update
+	db TAUNT                                   ; needs update
+	db DRAGON_RAGE                             ; needs update
+	db FIRE_SPIN                               ; needs update
+	db THUNDERSHOCK
+	db THUNDERBOLT                             ; needs update
+	db THUNDER_WAVE
+	db THUNDER
+	db ROCK_THROW
+	db EARTHQUAKE
+	db FAIRY_WIND                              ; needs update
+	db DIG
+	db TOXIC                                   ; needs update
+	db CONFUSION
+	db PSYCHIC_M
+	db DRAGONHAMMER                            ; needs update
+	db SIGNAL_BEAM                             ; needs update
+	db AGILITY_ROCK_POLISH
+	db QUICK_ATTACK
+	db RAGE
+	db TELEPORT
+	db NIGHT_SHADE
+	db DRAGON_PULSE
+	db SCREECH
+	db DOUBLE_TEAM
+	db BULLDOZE
+	db ROCK_BLAST
+	db MINIMIZE
+	db SAND_ATTACK_SMOKESCREEN_FLASH
+	db CONFUSE_RAY
+	db AQUA_TAIL
+	db DEFENSE_CURL_HARDEN_WITHDRAW
+	db BARRIER_IRON_DEFENSE_ACID_ARMOR
+	db LIGHT_SCREEN
+	db HAZE
+	db REFLECT
+	db FOCUS_ENERGY
+	db FLASH_CANNON
+	db DRAGON_DARTS
+	db SCALD
+	db SELFDESTRUCT
+	db COTTON_GUARD
+	db JUMP_KICK
+	db PSYSHOCK
+	db VENOSHOCK
+	db EARTH_POWER
+	db FIRE_BLAST
+	db WATERFALL
+	db ICICLE_CRASH
+	db SWIFT
+	db MIRROR_MOVE
+	db ROCK_WRECKER
+	db WORK_UP_GROWTH
+	db AMNESIA
+	db ROOST
+	db SOFTBOILED_MILK_DRINK_RECOVER
+	db HI_JUMP_KICK
+	db FIERY_DANCE
+	db DREAM_EATER
+	db POISON_JAB
+	db BULLET_PUNCH
+	db LEECH_LIFE
+	db DOUBLE_HIT
+	db BRAVE_BIRD
+	db TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
+	db TOXIC_SPIKES
+	db POISON_FANG
+	db SPORE
+	db UNUSED
+	db LOCK_ON_MIND_READER
+	db CLEAR_SMOG
+	db DRAGON_DANCE
+	db OMINOUS_WIND
+	db EXPLOSION
+	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
+	db BONEMERANG
+	db REST
+	db ROCK_SLIDE
+	db HORN_LEECH
+	db BULK_UP
+	db CONVERSION
+	db TRI_ATTACK
+	db SHARPEN_HOWL_MEDITATE
+	db SLASH
+	db SUBSTITUTE
+	db GIGA_IMPACT
+	db TWIN_BEAM
+	db DRAIN_PUNCH
+	db ACROBATICS
+	db WILL_O_WISP
+	db ZEN_HEADBUTT
+	db BRICK_BREAK
+	db FLAME_BURST
+	db HYPER_VOICE
+	db CURSE
+	db GYRO_BALL
+	db ENERGY_BALL
+	db PSYSHIELD_BASH
+	db GUNK_SHOT
+	db REVERSAL
+	db SLUDGE
+	db ICE_SHARD
+	db PROTECT
+	db MACH_PUNCH
+	db SCARY_FACE_COTTON_SPORE_STRING_SHOT
+	db FEINT_ATTACK
+	db DIVE
+	db BELLY_DRUM
+	db SLUDGE_BOMB
+	db MUD_SLAP
+	db SHELL_SMASH
+	db SPIKES
+	db ZAP_CANNON
+	db FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
+	db DESTINY_BOND
+	db PERISH_SONG
+	db ICY_WIND
+	db POWER_GEM
+	db WILD_CHARGE
+	db PETAL_BLIZZARD
+	db OUTRAGE
+	db SANDSTORM
+	db GIGA_DRAIN
+	db ENDURE
+	db CHARM_FEATHER_DANCE
+	db ROLLOUT
+	db FALSE_SWIPE
+	db SWAGGER
+	db TWISTER
+	db SPARK
+	db ELECTRO_BALL
+	db STEEL_WING
+	db MEAN_LOOK_BLOCK_SPIDER_WEB
+	db ATTRACT
+	db SNORE
+	db HEAL_BELL
+	db RETURN
+	db QUIVER_DANCE
+	db BUG_BUZZ
+	db SAFEGUARD
+	db FURY_CUTTER
+	db FAKE_OUT
+	db MAGNITUDE
+	db DYNAMICPUNCH
+	db MEGAHORN
+	db DRAGONBREATH
+	db BATON_PASS
+	db ENCORE
+	db PURSUIT
+	db RAPID_SPIN
+	db SHADOW_CLAW
+	db IRON_TAIL
+	db METAL_CLAW
+	db AURA_SPHERE
+	db SYNTHESIS_MOONLIGHT_MORNING_SUN
+	db HURRICANE
+	db KNOCK_OFF
+	db SUPERPOWER
+	db CROSS_CHOP
+	db AQUA_JET
+	db RAIN_DANCE
+	db SUNNY_DAY
+	db CRUNCH
+	db DOUBLE_KICK
+	db NASTY_PLOT
+	db EXTREMESPEED
+	db ANCIENTPOWER
+	db SHADOW_BALL
+	db FUTURE_SIGHT
 	db ROCK_SMASH
 	db EGG_BOMB
 	db DARK_PULSE

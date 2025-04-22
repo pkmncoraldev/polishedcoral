@@ -57,8 +57,8 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_ThunderBoltCore         ; BATTLEANIMFRAMESET_THUNDERBOLT_CORE
 	dw .Frameset_ThunderShockSparks      ; BATTLEANIMFRAMESET_THUNDERSHOCK_SPARKS
 	dw .Frameset_ThunderShockCore        ; BATTLEANIMFRAMESET_THUNDERSHOCK_CORE
-	dw .Frameset_Clamp                   ; BATTLEANIMFRAMESET_CLAMP                    
-	dw .Frameset_ClampFlipped            ; BATTLEANIMFRAMESET_CLAMP_FLIPPED            
+	dw .Frameset_SuckerPunchL            ; BATTLEANIMFRAMESET_SUCKER_PUNCH_L
+	dw .Frameset_SuckerPunchR            ; BATTLEANIMFRAMESET_SUCKER_PUNCH_R
 	dw .Frameset_Bite1                   ; BATTLEANIMFRAMESET_BITE_1
 	dw .Frameset_Bite2                   ; BATTLEANIMFRAMESET_BITE_2
 	dw .Frameset_CutDownLeft             ; BATTLEANIMFRAMESET_CUT_DOWN_LEFT
@@ -155,7 +155,6 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_ItemBagSidewaysPunch    ; BATTLEANIMFRAMESET_ITEM_BAG_SIDEWAYS_PUNCH  
 	dw .Frameset_SpiderWeb               ; BATTLEANIMFRAMESET_SPIDER_WEB
 	dw .Frameset_9b                      ; BATTLEANIMFRAMESET_9B                       
-	dw .Frameset_Imp                     ; BATTLEANIMFRAMESET_IMP                      
 	dw .Frameset_ImpFlipped              ; BATTLEANIMFRAMESET_IMP_FLIPPED
 	dw .Frameset_Cherub                  ; BATTLEANIMFRAMESET_CHERUB                   
 	dw .Frameset_Pencil                  ; BATTLEANIMFRAMESET_PENCIL
@@ -175,10 +174,8 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_MeanLook                ; BATTLEANIMFRAMESET_MEAN_LOOK
 	dw .Frameset_GrowingBall             ; BATTLEANIMFRAMESET_GROWING_BALL
 	dw .Frameset_GrowingSparkle          ; BATTLEANIMFRAMESET_GROWING_SPARKLE
-	dw .Frameset_Rain                    ; BATTLEANIMFRAMESET_RAIN
-	dw .Frameset_PsychUp                 ; BATTLEANIMFRAMESET_PSYCH_UP                 
+	dw .Frameset_Rain                    ; BATTLEANIMFRAMESET_RAIN            
 	dw .Frameset_b2                      ; BATTLEANIMFRAMESET_B2                       
-	dw .Frameset_AeroBlast               ; BATTLEANIMFRAMESET_AEROBLAST
 	dw .Frameset_Sandstorm               ; BATTLEANIMFRAMESET_SANDSTORM
 	dw .Frameset_EnemyFeet1Row           ; BATTLEANIMFRAMESET_ENEMYFEET_1ROW
 	dw .Frameset_PlayerHead1Row          ; BATTLEANIMFRAMESET_PLAYERHEAD_1ROW
@@ -211,6 +208,8 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_DragonDarts             ; BATTLEANIMFRAMESET_DRAGON_DARTS
 	dw .Frameset_CosmicPowerBG           ; BATTLEANIMFRAMESET_COSMIC_POWER_BG
 	dw .Frameset_ClawTear                ; BATTLEANIMFRAMESET_CLAW_TEAR
+	dw .Frameset_Swirl                   ; BATTLEANIMFRAMESET_SWIRL
+	dw .Frameset_SwirlShort              ; BATTLEANIMFRAMESET_SWIRL_SHORT
 
 	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
 .Frameset_HitBig:
@@ -638,13 +637,13 @@ BattleAnimFrameData: ; ce85e
 	db -3, $02
 	db -2
 
-.Frameset_Clamp:
-	db BATTLEANIMOAMSET_48, $08
-	db -1
+.Frameset_SuckerPunchL:
+	frame BATTLEANIMOAMSET_93,  8
+	endanim
 
-.Frameset_ClampFlipped:
-	db BATTLEANIMOAMSET_48, $48
-	db -1
+.Frameset_SuckerPunchR:
+	frame BATTLEANIMOAMSET_93,  8, OAM_X_FLIP
+	endanim
 
 .Frameset_Bite1:
 	db BATTLEANIMOAMSET_49, $08
@@ -1130,12 +1129,8 @@ BattleAnimFrameData: ; ce85e
 	db BATTLEANIMOAMSET_1B, $20
 	db -1
 
-.Frameset_Imp:
-	db BATTLEANIMOAMSET_B8, $20
-	db -1
-
 .Frameset_ImpFlipped:
-	db BATTLEANIMOAMSET_B8, $60
+	db BATTLEANIMOAMSET_A3, $60
 	db -1
 
 .Frameset_Cherub:
@@ -1251,26 +1246,12 @@ BattleAnimFrameData: ; ce85e
 	db BATTLEANIMOAMSET_CC, $20
 	db -1
 
-.Frameset_PsychUp:
-	db BATTLEANIMOAMSET_7F, $02
-	db BATTLEANIMOAMSET_25, $02
-	db BATTLEANIMOAMSET_80, $02
-	db BATTLEANIMOAMSET_25, $02
-	db -2
-
 .Frameset_b2:
 	db BATTLEANIMOAMSET_CD, $04
 	db BATTLEANIMOAMSET_CE, $04
 	db BATTLEANIMOAMSET_CD, $c4
 	db BATTLEANIMOAMSET_CE, $c4
 	db -2
-
-.Frameset_AeroBlast:
-	db BATTLEANIMOAMSET_CF, $04
-	db BATTLEANIMOAMSET_D0, $04
-	db BATTLEANIMOAMSET_D1, $04
-	db BATTLEANIMOAMSET_D2, $04
-	db -4
 
 .Frameset_Sandstorm:
 	db BATTLEANIMOAMSET_D3, $20
@@ -1493,3 +1474,26 @@ BattleAnimFrameData: ; ce85e
 	frame BATTLEANIMOAMSET_06,  2
 	frame BATTLEANIMOAMSET_55,  2
 	delanim
+
+.Frameset_Swirl:
+	frame BATTLEANIMOAMSET_CF,  1
+	frame BATTLEANIMOAMSET_D0,  1
+	frame BATTLEANIMOAMSET_D1,  1
+	frame BATTLEANIMOAMSET_D2,  1
+	frame BATTLEANIMOAMSET_CF,  1, OAM_X_FLIP, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_D0,  1, OAM_X_FLIP, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_D1,  1, OAM_X_FLIP, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_D2,  1, OAM_X_FLIP, OAM_Y_FLIP
+	dorestart
+
+.Frameset_SwirlShort:
+	frame BATTLEANIMOAMSET_CF,  1
+	frame BATTLEANIMOAMSET_D0,  1
+	frame BATTLEANIMOAMSET_D1,  1
+	frame BATTLEANIMOAMSET_D2,  1
+	frame BATTLEANIMOAMSET_CF,  1, OAM_X_FLIP, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_D0,  1, OAM_X_FLIP, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_D1,  1, OAM_X_FLIP, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_D2,  1, OAM_X_FLIP, OAM_Y_FLIP
+	delanim
+

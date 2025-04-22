@@ -105,6 +105,7 @@ DoBattleAnimFrame: ; ccfbe
 	dw BattleAnimFunction_FallAndStop
 	dw BattleAnimFunction_RadialMoveIn_Slow_Stay
 	dw BattleAnimFunction_RadialMoveOut_Delay
+	dw BattleAnimFunction_RadialMoveOut_CP_BG
 
 BattleAnimFunction_Null: ; cd06e (33:506e)
 	call BattleAnim_AnonJumptable
@@ -4298,6 +4299,12 @@ BattleAnimFunction_RadialMoveOut:
 	dw InitRadial
 	dw Step
 
+BattleAnimFunction_RadialMoveOut_CP_BG:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_CP_BG
+
 BattleAnimFunction_RadialMoveOut_Delay:
 	call BattleAnim_AnonJumptable
 	
@@ -4327,6 +4334,13 @@ Step:
 	jp nc, DeinitBattleAnimation
 	jr Rad_Move
 
+Step_CP_BG:
+	call Get_Rad_Pos
+	ld hl, 0.08 >> 8 ; speed
+	call Set_Rad_Pos
+	cp 120 ; final position
+	jp nc, DeinitBattleAnimation
+	jr Rad_Move
 
 Step_Slow:
 	call Get_Rad_Pos

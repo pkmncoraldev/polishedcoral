@@ -23,12 +23,16 @@ SECTION "rst10", ROM0
 	ld [MBC3RomBank], a
 	ret
 
-SECTION "rst18", ROM0
-	jp _AddNTimes
-
 _de_::
 	push de
 	ret
+
+SECTION "rst18", ROM0
+	jp _AddNTimes
+
+FarCopyColorWRAM::
+	ld a, BANK("GBC Video")
+	; fallthrough
 
 FarCopyWRAM::
 	call StackCallInWRAMBankA

@@ -204,6 +204,8 @@ Inn1FKageScene:
 	setlasttalked INN_1F_SNARE_KAGE
 	loadtrainer KAGE, INN_1F_KAGE
 	startbattle
+	if_equal $1, .lose
+	special FadeOutPalettes
 	appear INN_1F_SNARE_1
 	appear INN_1F_SNARE_2
 	reloadmapafterbattle
@@ -256,8 +258,13 @@ Inn1FKageScene:
 	setevent EVENT_INN_1F_LOBBY_SNARE
 	setevent EVENT_INN_1F_ROOM_SNARE
 	setevent EVENT_INN_1F_SNARE_GIRL
+	setevent EVENT_ALWAYS_SET
 	spriteface INN_1F_CUSTOMER_1, DOWN
 	dotrigger $0
+	end
+.lose
+	setevent EVENT_ALWAYS_SET
+	reloadmapafterbattle
 	end
 	
 Inn1FFallOverASM:

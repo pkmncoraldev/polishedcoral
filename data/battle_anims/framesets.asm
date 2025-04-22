@@ -20,7 +20,6 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_Blizzard                ; BATTLEANIMFRAMESET_BLIZZARD
 	dw .Frameset_Ice                     ; BATTLEANIMFRAMESET_ICE
 	dw .Frameset_IceBeam                 ; BATTLEANIMFRAMESET_ICE_BEAM
-	dw .Frameset_PowderSnow              ; BATTLEANIMFRAMESET_POWDER_SNOW              
 	dw .Frameset_RazorLeaf1              ; BATTLEANIMFRAMESET_RAZOR_LEAF_1
 	dw .Frameset_RazorLeaf2              ; BATTLEANIMFRAMESET_RAZOR_LEAF_2
 	dw .Frameset_Explosion               ; BATTLEANIMFRAMESET_EXPLOSION
@@ -43,8 +42,8 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_WaterGun3               ; BATTLEANIMFRAMESET_WATER_GUN_3
 	dw .Frameset_HydroPump               ; BATTLEANIMFRAMESET_HYDRO_PUMP
 	dw .Frameset_Powder                  ; BATTLEANIMFRAMESET_POWDER
-	dw .Frameset_LongPuncham             ; BATTLEANIMFrameset_LongPunchAM
-	dw .Frameset_LongPunchamTip          ; BATTLEANIMFrameset_LongPunchAM_TIP
+	dw .Frameset_Beam             ; BATTLEANIMFrameset_Beam
+	dw .Frameset_BeamTip          ; BATTLEANIMFrameset_Beam_TIP
 	dw .Frameset_IceBuildup              ; BATTLEANIMFRAMESET_ICE_BUILDUP
 	dw .Frameset_Frozen                  ; BATTLEANIMFRAMESET_FROZEN
 	dw .Frameset_CirclingSparkle         ; BATTLEANIMFRAMESET_CIRCLING_SPARKLE
@@ -115,7 +114,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_Horn                    ; BATTLEANIMFRAMESET_HORN
 	dw .Frameset_Needle                  ; BATTLEANIMFRAMESET_NEEDLE
 	dw .Frameset_Flower                  ; BATTLEANIMFRAMESET_FLOWER
-	dw .Frameset_FocusBlastrrageBall     ; BATTLEANIMFrameset_FocusBlastRRAGE_BALL
+	dw .Frameset_BarrageBall             ; BATTLEANIMFRAMESET_BARRAGE_BALL
 	dw .Frameset_PayDay                  ; BATTLEANIMFRAMESET_PAY_DAY
 	dw .Frameset_Heart                   ; BATTLEANIMFRAMESET_HEART
 	dw .Frameset_SprinningBone           ; BATTLEANIMFRAMESET_SPINNING_BONE
@@ -141,7 +140,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_Spike                   ; BATTLEANIMFRAMESET_SPIKE
 	dw .Frameset_AngerVein               ; BATTLEANIMFRAMESET_ANGER_VEIN
 	dw .Frameset_HealBell                ; BATTLEANIMFRAMESET_HEAL_BELL
-	dw .Frameset_FocusBlasttonPass       ; BATTLEANIMFrameset_FocusBlastTON_PASS
+	dw .Frameset_BatonPass               ; BATTLEANIMFRAMESET_BATON_PASS
 	dw .Frameset_LockOn1                 ; BATTLEANIMFRAMESET_LOCK_ON_1
 	dw .Frameset_LockOn2                 ; BATTLEANIMFRAMESET_LOCK_ON_2
 	dw .Frameset_LockOn3                 ; BATTLEANIMFRAMESET_LOCK_ON_3
@@ -152,11 +151,8 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_MindReader4             ; BATTLEANIMFRAMESET_MIND_READER_4
 	dw .Frameset_Safeguard               ; BATTLEANIMFRAMESET_SAFEGUARD
 	dw .Frameset_Feather                 ; BATTLEANIMFRAMESET_FEATHER
-	dw .Frameset_ItemBagSidewaysPunch    ; BATTLEANIMFRAMESET_ITEM_BAG_SIDEWAYS_PUNCH  
 	dw .Frameset_SpiderWeb               ; BATTLEANIMFRAMESET_SPIDER_WEB
-	dw .Frameset_9b                      ; BATTLEANIMFRAMESET_9B                       
 	dw .Frameset_ImpFlipped              ; BATTLEANIMFRAMESET_IMP_FLIPPED
-	dw .Frameset_Cherub                  ; BATTLEANIMFRAMESET_CHERUB                   
 	dw .Frameset_Pencil                  ; BATTLEANIMFRAMESET_PENCIL
 	dw .Frameset_EncoreHand              ; BATTLEANIMFRAMESET_ENCORE_HAND
 	dw .Frameset_EncoreHandFlipped       ; BATTLEANIMFRAMESET_ENCORE_HAND_FLIPPED
@@ -174,8 +170,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_MeanLook                ; BATTLEANIMFRAMESET_MEAN_LOOK
 	dw .Frameset_GrowingBall             ; BATTLEANIMFRAMESET_GROWING_BALL
 	dw .Frameset_GrowingSparkle          ; BATTLEANIMFRAMESET_GROWING_SPARKLE
-	dw .Frameset_Rain                    ; BATTLEANIMFRAMESET_RAIN            
-	dw .Frameset_b2                      ; BATTLEANIMFRAMESET_B2                       
+	dw .Frameset_Rain                    ; BATTLEANIMFRAMESET_RAIN
 	dw .Frameset_Sandstorm               ; BATTLEANIMFRAMESET_SANDSTORM
 	dw .Frameset_EnemyFeet1Row           ; BATTLEANIMFRAMESET_ENEMYFEET_1ROW
 	dw .Frameset_PlayerHead1Row          ; BATTLEANIMFRAMESET_PLAYERHEAD_1ROW
@@ -199,7 +194,6 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_StoneEdge               ; BATTLEANIMFRAMESET_STONE_EDGE
 	dw .Frameset_BugBuzzL                ; BATTLEANIMFRAMESET_BUG_BUZZ_L
 	dw .Frameset_BugBuzzR                ; BATTLEANIMFRAMESET_BUG_BUZZ_R
-	dw .Frameset_e9                      ; BATTLEANIMFRAMESET_E9                       
 	dw .Frameset_ShockWaveSparks         ; BATTLEANIMFRAMESET_SHOCK_WAVE_SPARKS
 	dw .Frameset_CutRight                ; BATTLEANIMFRAMESET_CUT_RIGHT
 	dw .Frameset_CutLeft                 ; BATTLEANIMFRAMESET_CUT_LEFT
@@ -409,11 +403,6 @@ BattleAnimFrameData: ; ce85e
 	db BATTLEANIMOAMSET_13, $14
 	db -4
 
-.Frameset_PowderSnow:
-	db BATTLEANIMOAMSET_10, $01
-	db BATTLEANIMOAMSET_0F, $01
-	db -2
-
 .Frameset_RazorLeaf1:
 	db BATTLEANIMOAMSET_14, $08
 	db -1
@@ -547,12 +536,12 @@ BattleAnimFrameData: ; ce85e
 	db BATTLEANIMOAMSET_15, $01
 	db -2
 
-.Frameset_LongPuncham:
+.Frameset_Beam:
 	db BATTLEANIMOAMSET_2F, $04
 	db BATTLEANIMOAMSET_30, $28
 	db -4
 
-.Frameset_LongPunchamTip:
+.Frameset_BeamTip:
 	db BATTLEANIMOAMSET_31, $08
 	db -1
 
@@ -956,7 +945,7 @@ BattleAnimFrameData: ; ce85e
 	db BATTLEANIMOAMSET_7E, $07
 	db -2
 
-.Frameset_FocusBlastrrageBall:
+.Frameset_BarrageBall:
 	db BATTLEANIMOAMSET_95, $08
 	db -1
 
@@ -1073,7 +1062,7 @@ BattleAnimFrameData: ; ce85e
 	db BATTLEANIMOAMSET_B1, $47
 	db -2
 
-.Frameset_FocusBlasttonPass:
+.Frameset_BatonPass:
 	db BATTLEANIMOAMSET_B2, $08
 	db -1
 
@@ -1117,24 +1106,12 @@ BattleAnimFrameData: ; ce85e
 	db BATTLEANIMOAMSET_6B, $08
 	db -1
 
-.Frameset_ItemBagSidewaysPunch:
-	db BATTLEANIMOAMSET_B6, $08
-	db -1
-
 .Frameset_SpiderWeb:
 	db BATTLEANIMOAMSET_B7, $20
 	db -1
 
-.Frameset_9b:
-	db BATTLEANIMOAMSET_1B, $20
-	db -1
-
 .Frameset_ImpFlipped:
 	db BATTLEANIMOAMSET_A3, $60
-	db -1
-
-.Frameset_Cherub:
-	db BATTLEANIMOAMSET_B9, $20
 	db -1
 
 .Frameset_Pencil:
@@ -1246,13 +1223,6 @@ BattleAnimFrameData: ; ce85e
 	db BATTLEANIMOAMSET_CC, $20
 	db -1
 
-.Frameset_b2:
-	db BATTLEANIMOAMSET_CD, $04
-	db BATTLEANIMOAMSET_CE, $04
-	db BATTLEANIMOAMSET_CD, $c4
-	db BATTLEANIMOAMSET_CE, $c4
-	db -2
-
 .Frameset_Sandstorm:
 	db BATTLEANIMOAMSET_D3, $20
 	db -1
@@ -1357,12 +1327,7 @@ BattleAnimFrameData: ; ce85e
 	frame BATTLEANIMOAMSET_EE,  4, OAM_X_FLIP
 	frame BATTLEANIMOAMSET_ED,  4, OAM_X_FLIP
 	delanim
-	
-.Frameset_e9:
-	frame BATTLEANIMOAMSET_06,  1
-	frame BATTLEANIMOAMSET_65,  1
-	dorestart
-	
+
 .Frameset_ShockWaveSparks:
 	frame BATTLEANIMOAMSET_82,  8
 	endanim
@@ -1430,9 +1395,9 @@ BattleAnimFrameData: ; ce85e
 	delanim
 
 .Frameset_FocusBlast:
-	db BATTLEANIMOAMSET_06,  1
-	db BATTLEANIMOAMSET_53,  1
-	db -2
+	frame BATTLEANIMOAMSET_00,  1
+	frame BATTLEANIMOAMSET_07,  1
+	dorestart
 
 .Frameset_InkBlast:
 	db BATTLEANIMOAMSET_D9,  8
@@ -1496,4 +1461,3 @@ BattleAnimFrameData: ; ce85e
 	frame BATTLEANIMOAMSET_D1,  1, OAM_X_FLIP, OAM_Y_FLIP
 	frame BATTLEANIMOAMSET_D2,  1, OAM_X_FLIP, OAM_Y_FLIP
 	delanim
-

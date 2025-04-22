@@ -17,7 +17,7 @@ MoveTable:
 ;	db CUT
 ;	db GUST
 ;	db WING_ATTACK
-	db SUCKER_PUNCH                            ; needs CORRECTION
+;	db SUCKER_PUNCH
 ;	db FLY
 ;	db DAZZLINGLEAM
 ;	db FLAIL
@@ -26,8 +26,8 @@ MoveTable:
 ;	db HEX
 ;	db FLARE_BLITZ
 ;	db STONE_EDGE
-	db FOCUS_BLAST                             ; needs update
-	db BULLET_SEED
+;	db FOCUS_BLAST
+;	db BULLET_SEED
 	db HEADBUTT
 	db HORN_ATTACK
 	db FIRE_FANG                               ; needs update

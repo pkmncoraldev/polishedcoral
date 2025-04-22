@@ -1059,10 +1059,10 @@ BattleAnim_SuckerPunch:
 	anim_call BattleAnimSub_QuickAttack
 	anim_wait 12
 	anim_sound 0, 1, SFX_COMET_PUNCH
-	;anim_obj ANIM_OBJ_SUCKER_PUNCH_R, 182, 32, $20
+	anim_obj ANIM_OBJ_SUCKER_PUNCH_R, 182, 32, $20
 	anim_wait 32
 	anim_sound 0, 1, SFX_COMET_PUNCH
-	;anim_obj ANIM_OBJ_SUCKER_PUNCH_L, 94, 48, $0
+	anim_obj ANIM_OBJ_SUCKER_PUNCH_L, 94, 48, $0
 	anim_wait 6
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
 	anim_sound 0, 1, SFX_KARATE_CHOP
@@ -2672,6 +2672,7 @@ BattleAnimSub_FocusBlast:
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GLOW_YELLOW
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_RED
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GLOW_YELLOW
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_GLOW_YELLOW
 	anim_3gfx ANIM_GFX_VORTEX, ANIM_GFX_WIND, ANIM_GFX_SWIRL
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_call BattleAnim_AuraSphereLines
@@ -2684,16 +2685,22 @@ BattleAnimSub_FocusBlast:
 	anim_wait 64
 	anim_clearobjs
 	anim_wait 1
-	anim_2gfx ANIM_GFX_BIG_GLOW_CLEAR, ANIM_GFX_FOCUS_BLAST
+	anim_2gfx ANIM_GFX_EXPLOSION, ANIM_GFX_FOCUS_BLAST
 	anim_sound 0, 1, SFX_MEGA_PUNCH
 .loop2
 	anim_obj ANIM_OBJ_FOCUS_BLAST, 64, 88, $12
 	anim_wait 32
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $10
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $2, $0
-	anim_sound 0, 1, SFX_EGG_BOMB
-	;anim_obj ANIM_OBJ_BIG_GLOW_CLEAR, 136, 48, $0
-	anim_wait 40
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_EXPLOSION2, 128, 48, $0
+	anim_wait 5
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_EXPLOSION2, 144, 46, $0
+	anim_wait 5
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_EXPLOSION2, 136, 64, $0
+	anim_wait 16
 	anim_ret
 
 BattleAnim_Ember:

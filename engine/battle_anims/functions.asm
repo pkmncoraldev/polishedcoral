@@ -1273,18 +1273,19 @@ Functioncd6f7: ; cd6f7 (33:56f7)
 BattleAnimFunction_WaterGun: ; cd71a (33:571a)
 	call BattleAnim_AnonJumptable
 .anon_dw
-	dw Functioncd725
-	dw Functioncd728
-	dw Functioncd763
-	dw Functioncd776
-Functioncd725: ; cd725 (33:5725)
+	dw .zero
+	dw .one
+	dw .two
+	dw DoNothingFunction
+
+.zero:
 	call BattleAnim_IncAnonJumptableIndex
-Functioncd728: ; cd728 (33:5728)
+.one:
 	ld hl, BATTLEANIMSTRUCT_YCOORD
 	add hl, bc
 	ld a, [hl]
 	cp $30
-	jr c, .asm_cd747
+	jr c, .run_down
 	ld a, $2
 	call Functionce70a
 	ld hl, BATTLEANIMSTRUCT_VAR1
@@ -1298,7 +1299,7 @@ Functioncd728: ; cd728 (33:5728)
 	ld [hl], a
 	ret
 
-.asm_cd747
+.run_down
 	call BattleAnim_IncAnonJumptableIndex
 	ld a, BATTLEANIMFRAMESET_WATER_GUN_2
 	call ReinitBattleAnimFrameset
@@ -1313,21 +1314,19 @@ Functioncd728: ; cd728 (33:5728)
 	ld a, [hl]
 	and $1
 	ld [hl], a
-Functioncd763: ; cd763 (33:5763)
+.two:
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld a, [hl]
-	cp $18
-	jr nc, .asm_cd76e
+	cp $10
+	jr nc, .splash
 	inc [hl]
 	ret
 
-.asm_cd76e
+.splash
 	call BattleAnim_IncAnonJumptableIndex
 	ld a, BATTLEANIMFRAMESET_WATER_GUN_3
-	call ReinitBattleAnimFrameset
-Functioncd776: ; cd776 (33:5776)
-	ret
+	jp ReinitBattleAnimFrameset
 
 BattleAnimFunction_Powder: ; cd777 (33:5777)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET

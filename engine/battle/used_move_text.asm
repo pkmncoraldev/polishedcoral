@@ -50,11 +50,11 @@ MoveTable:
 ;	db SUPERSONIC
 ;	db WEATHER_BALL
 ;	db DISABLE
-	db ACID                                    ; needs update
-	db EMBER                                   ; needs update
-	db FLAMETHROWER                            ; needs update
+;	db ACID
+;	db EMBER
+;	db FLAMETHROWER
 	db CALM_MIND                               ; needs update
-	db WATER_GUN                               ; needs update
+	db WATER_GUN
 	db HYDRO_PUMP                              ; needs update
 	db SURF
 	db ICE_BEAM                                ; needs update

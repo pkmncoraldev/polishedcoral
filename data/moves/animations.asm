@@ -2706,6 +2706,7 @@ BattleAnimSub_FocusBlast:
 	anim_ret
 
 BattleAnim_Ember:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
 	anim_1gfx ANIM_GFX_FIRE
 	anim_sound 6, 2, SFX_EMBER
 	anim_obj ANIM_OBJ_EMBER,   8, 0,  12, 0, $12
@@ -2778,6 +2779,7 @@ BattleAnim_DragonRage:
 	anim_ret
 
 BattleAnim_Flamethrower:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
 	anim_1gfx ANIM_GFX_FIRE
 	anim_sound 6, 2, SFX_EMBER
 	anim_obj ANIM_OBJ_FLAMETHROWER,   8, 0,  11, 4, $3
@@ -2905,6 +2907,7 @@ BattleAnim_BubbleBeam:
 	anim_ret
 
 BattleAnim_WaterGun:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
 	anim_bgeffect ANIM_BG_START_WATER, $0, $0, $0
 	anim_1gfx ANIM_GFX_WATER
 	anim_call BattleAnim_FollowPlayerHead_1

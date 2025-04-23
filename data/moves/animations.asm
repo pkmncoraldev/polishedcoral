@@ -1001,7 +1001,7 @@ BattleAnim_AuraSphere:
 	anim_2gfx ANIM_GFX_VORTEX, ANIM_GFX_WIND
 	anim_call BattleAnim_AuraSphereLines
 	anim_sound 6, 2, SFX_OUTRAGE
-	anim_obj ANIM_OBJ_VORTEX_BLUE, 48, 96, $30
+	anim_obj ANIM_OBJ_VORTEX, 48, 96, $30
 	anim_wait 63
 	anim_clearobjs
 	anim_wait 1
@@ -3209,9 +3209,19 @@ BattleAnim_Explosion:
 	anim_ret
 
 BattleAnim_Acid:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_ACID
 	anim_1gfx ANIM_GFX_POISON
 	anim_call BattleAnimSub_Acid
-	anim_wait 64
+	anim_obj ANIM_OBJ_POISON_DROPLET, 128, 36, $11
+	anim_wait 4
+	anim_obj ANIM_OBJ_POISON_DROPLET, 144, 36, $0f
+	anim_wait 4
+	anim_obj ANIM_OBJ_POISON_DROPLET, 124, 36, $11
+	anim_wait 4
+	anim_obj ANIM_OBJ_POISON_DROPLET, 148, 36, $0f
+	anim_wait 4
+	anim_obj ANIM_OBJ_POISON_DROPLET, 120, 36, $11
+	anim_wait 48
 	anim_ret
 
 BattleAnim_RockThrow:

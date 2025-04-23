@@ -49,7 +49,7 @@ MoveTable:
 ;	db SING_HYPNOSIS
 ;	db SUPERSONIC
 ;	db WEATHER_BALL
-	db DISABLE
+;	db DISABLE
 	db ACID                                    ; needs update
 	db EMBER                                   ; needs update
 	db FLAMETHROWER                            ; needs update

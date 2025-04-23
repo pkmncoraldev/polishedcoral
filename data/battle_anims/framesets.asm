@@ -120,7 +120,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_Heart                   ; BATTLEANIMFRAMESET_HEART
 	dw .Frameset_SprinningBone           ; BATTLEANIMFRAMESET_SPINNING_BONE
 	dw .Frameset_Star                    ; BATTLEANIMFRAMESET_STAR
-	dw .Frameset_Spoon                   ; BATTLEANIMFRAMESET_SPOON                    
+	dw .Frameset_PoisonDroplet           ; BATTLEANIMFRAMESET_POISON_DROPLET
 	dw .Frameset_Sparkle                 ; BATTLEANIMFRAMESET_SPARKLE
 	dw .Frameset_SkyAttack               ; BATTLEANIMFRAMESET_SKY_ATTACK
 	dw .Frameset_Lick                    ; BATTLEANIMFRAMESET_LICK                     
@@ -1470,3 +1470,7 @@ BattleAnimFrameData: ; ce85e
 .Frameset_WeatherBall:
 	frame BATTLEANIMOAMSET_48,  8
 	endanim
+
+.Frameset_PoisonDroplet:
+	frame BATTLEANIMOAMSET_17, 24
+	delanim

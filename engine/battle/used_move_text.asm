@@ -28,27 +28,27 @@ MoveTable:
 ;	db STONE_EDGE
 ;	db FOCUS_BLAST
 ;	db BULLET_SEED
-	db HEADBUTT
-	db HORN_ATTACK
-	db FIRE_FANG                               ; needs update
-	db ICE_FANG                                ; needs update
-	db THUNDER_FANG
-	db TACKLE_SCRATCH_POUND
-	db BODY_SLAM
-	db WOOD_HAMMER
-	db TAKE_DOWN
-	db THRASH
-	db DOUBLE_EDGE
-	db HAIL                                    ; needs update
-	db POISON_STING                            ; needs update
-	db PIN_MISSILE
-	db LEER_TAIL_WHIP
-	db BITE
-	db GROWL
-	db ROAR_WHIRLWIND
-	db SING_HYPNOSIS
-	db SUPERSONIC
-	db WEATHER_BALL                            ; needs update
+;	db HEADBUTT
+;	db HORN_ATTACK
+;	db FIRE_FANG
+;	db ICE_FANG
+;	db THUNDER_FANG
+;	db TACKLE_SCRATCH_POUND
+;	db BODY_SLAM
+;	db WOOD_HAMMER
+;	db TAKE_DOWN
+;	db THRASH
+;	db DOUBLE_EDGE
+;	db HAIL
+;	db POISON_STING
+;	db PIN_MISSILE
+;	db LEER_TAIL_WHIP
+;	db BITE
+;	db GROWL
+;	db ROAR_WHIRLWIND
+;	db SING_HYPNOSIS
+;	db SUPERSONIC
+;	db WEATHER_BALL
 	db DISABLE
 	db ACID                                    ; needs update
 	db EMBER                                   ; needs update

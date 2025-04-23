@@ -91,7 +91,7 @@ DoBattleAnimFrame: ; ccfbe
 	dw BattleAnimFunction_4B ; 4b
 	dw BattleAnimFunction_4C ; 4c
 	dw BattleAnimFunction_4D ; 4d
-	dw BattleAnimFunction_4E ; 4e
+	dw BattleAnimFunction_RockSmash ; 4e
 	dw BattleAnimFunction_4F ; 4f
 	dw BattleAnimFunction_50
 	dw BattleAnimFunction_52
@@ -107,6 +107,7 @@ DoBattleAnimFrame: ; ccfbe
 	dw BattleAnimFunction_RadialMoveOut_Delay
 	dw BattleAnimFunction_RadialMoveOut_CP_BG
 	dw BattleAnimFunction_RadialMoveOut_Fast
+	dw BattleAnimFunction_BubbleSplash
 
 BattleAnimFunction_Null: ; cd06e (33:506e)
 	call BattleAnim_AnonJumptable
@@ -1001,7 +1002,13 @@ BattleAnimFunction_54_2:
 	ld [hl], e
 	ret
 
-BattleAnimFunction_4E: ; cd58a (33:558a)
+BattleAnimFunction_BubbleSplash:
+	call BattleAnim_AnonJumptable
+
+	dw BattleAnimFunction_RockSmash.after_frameset
+	dw BattleAnimFunction_RockSmash.one
+
+BattleAnimFunction_RockSmash: ; cd58a (33:558a)
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw .zero
@@ -1017,6 +1024,7 @@ BattleAnimFunction_4E: ; cd58a (33:558a)
 	ld hl, BATTLEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld [hl], a
+.after_frameset
 	call BattleAnim_IncAnonJumptableIndex
 	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc

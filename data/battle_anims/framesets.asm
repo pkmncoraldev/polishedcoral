@@ -20,6 +20,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_Blizzard                ; BATTLEANIMFRAMESET_BLIZZARD
 	dw .Frameset_Ice                     ; BATTLEANIMFRAMESET_ICE
 	dw .Frameset_IceBeam                 ; BATTLEANIMFRAMESET_ICE_BEAM
+	dw .Frameset_PowderSnow              ; BATTLEANIMFRAMESET_POWDER_SNOW
 	dw .Frameset_RazorLeaf1              ; BATTLEANIMFRAMESET_RAZOR_LEAF_1
 	dw .Frameset_RazorLeaf2              ; BATTLEANIMFRAMESET_RAZOR_LEAF_2
 	dw .Frameset_Explosion               ; BATTLEANIMFRAMESET_EXPLOSION
@@ -28,7 +29,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_Strength                ; BATTLEANIMFRAMESET_STRENGTH
 	dw .Frameset_SkullCrossbone          ; BATTLEANIMFRAMESET_SKULL_CROSSBONE
 	dw .Frameset_Acid                    ; BATTLEANIMFRAMESET_ACID
-	dw .Frameset_1e                      ; BATTLEANIMFRAMESET_1E
+	dw .Frameset_WeatherBall             ; BATTLEANIMFRAMESET_WEATHER_BALL
 	dw .Frameset_SludgeBubble            ; BATTLEANIMFRAMESET_SLUDGE_BUBBLE
 	dw .Frameset_SludgeBubbleBurst       ; BATTLEANIMFRAMESET_SLUDGE_BUBBLE_BURST
 	dw .Frameset_SmallBubble             ; BATTLEANIMFRAMESET_SMALL_BUBBLE
@@ -42,8 +43,8 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_WaterGun3               ; BATTLEANIMFRAMESET_WATER_GUN_3
 	dw .Frameset_HydroPump               ; BATTLEANIMFRAMESET_HYDRO_PUMP
 	dw .Frameset_Powder                  ; BATTLEANIMFRAMESET_POWDER
-	dw .Frameset_Beam             ; BATTLEANIMFrameset_Beam
-	dw .Frameset_BeamTip          ; BATTLEANIMFrameset_Beam_TIP
+	dw .Frameset_Beam                    ; BATTLEANIMFRAMESET_BEAM
+	dw .Frameset_BeamTip                 ; BATTLEANIMFRAMESET_BEAM_TIP
 	dw .Frameset_IceBuildup              ; BATTLEANIMFRAMESET_ICE_BUILDUP
 	dw .Frameset_Frozen                  ; BATTLEANIMFRAMESET_FROZEN
 	dw .Frameset_CirclingSparkle         ; BATTLEANIMFRAMESET_CIRCLING_SPARKLE
@@ -70,7 +71,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_Gust                    ; BATTLEANIMFRAMESET_GUST
 	dw .Frameset_VineWhip1               ; BATTLEANIMFRAMESET_VINE_WHIP_1
 	dw .Frameset_VineWhip2               ; BATTLEANIMFRAMESET_VINE_WHIP_2
-	dw .Frameset_RazorWind1              ; BATTLEANIMFRAMESET_RAZOR_WIND_1             
+	dw .Frameset_ClawTear                ; BATTLEANIMFRAMESET_CLAW_TEAR
 	dw .Frameset_RazorWind2              ; BATTLEANIMFRAMESET_RAZOR_WIND_2
 	dw .Frameset_SonicboomJP             ; BATTLEANIMFRAMESET_SONICBOOM_JP             
 	dw .Frameset_Warp                    ; BATTLEANIMFRAMESET_WARP
@@ -201,7 +202,6 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_BigRedX                 ; BATTLEANIMFRAMESET_BIG_RED_X
 	dw .Frameset_DragonDarts             ; BATTLEANIMFRAMESET_DRAGON_DARTS
 	dw .Frameset_CosmicPowerBG           ; BATTLEANIMFRAMESET_COSMIC_POWER_BG
-	dw .Frameset_ClawTear                ; BATTLEANIMFRAMESET_CLAW_TEAR
 	dw .Frameset_Swirl                   ; BATTLEANIMFRAMESET_SWIRL
 	dw .Frameset_SwirlShort              ; BATTLEANIMFRAMESET_SWIRL_SHORT
 
@@ -402,6 +402,11 @@ BattleAnimFrameData: ; ce85e
 .Frameset_IceBeam:
 	db BATTLEANIMOAMSET_13, $14
 	db -4
+
+.Frameset_PowderSnow:
+	frame BATTLEANIMOAMSET_10,  1
+	frame BATTLEANIMOAMSET_0F,  1
+	dorestart
 
 .Frameset_RazorLeaf1:
 	db BATTLEANIMOAMSET_14, $08
@@ -1461,3 +1466,7 @@ BattleAnimFrameData: ; ce85e
 	frame BATTLEANIMOAMSET_D1,  1, OAM_X_FLIP, OAM_Y_FLIP
 	frame BATTLEANIMOAMSET_D2,  1, OAM_X_FLIP, OAM_Y_FLIP
 	delanim
+
+.Frameset_WeatherBall:
+	frame BATTLEANIMOAMSET_48,  8
+	endanim

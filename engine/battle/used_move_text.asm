@@ -24,7 +24,7 @@ MoveTable:
 ;	db VINE_WHIP
 ;	db STOMP
 ;	db HEX
-;	db FLARE_BLITZ
+	db FLARE_BLITZ
 ;	db STONE_EDGE
 ;	db FOCUS_BLAST
 ;	db BULLET_SEED
@@ -53,26 +53,26 @@ MoveTable:
 ;	db ACID
 ;	db EMBER
 ;	db FLAMETHROWER
-	db CALM_MIND                               ; needs update
-	db WATER_GUN
-	db HYDRO_PUMP                              ; needs update
-	db SURF
-	db ICE_BEAM                                ; needs update
-	db BLIZZARD                                ; needs update
-	db PSYBEAM
-	db BUBBLE_BEAM                             ; needs update
-	db AURORA_BEAM                             ; needs update
-	db HYPER_BEAM
-	db PECK
-	db DRILL_PECK                              ; needs update
-	db SHADOW_BONE                             ; needs update
-	db NIGHT_SLASH
-	db SHOCK_WAVE
-	db SEISMIC_TOSS                            ; needs update
-	db STRENGTH
-	db ABSORB                                  ; needs update
-	db MEGA_DRAIN                              ; needs update
-	db LEECH_SEED                              ; needs update
+;	db CALM_MIND                               ; needs update
+;	db WATER_GUN
+;	db HYDRO_PUMP
+;	db SURF
+;	db ICE_BEAM
+;	db BLIZZARD
+;	db PSYBEAM
+;	db BUBBLE_BEAM
+;	db AURORA_BEAM
+;	db HYPER_BEAM
+;	db PECK
+;	db DRILL_PECK
+;	db SHADOW_BONE
+;	db NIGHT_SLASH
+;	db SHOCK_WAVE
+;	db SEISMIC_TOSS
+;	db STRENGTH
+;	db ABSORB
+;	db MEGA_DRAIN
+;	db LEECH_SEED
 	db COSMIC_POWER                            ; needs update
 	db RAZOR_LEAF
 	db SOLAR_BEAM                              ; needs update

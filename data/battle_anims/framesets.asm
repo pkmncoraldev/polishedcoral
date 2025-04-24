@@ -200,10 +200,10 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_CutLeft                 ; BATTLEANIMFRAMESET_CUT_LEFT
 	dw .Frameset_RockWreckerGrow         ; BATTLEANIMFRAMESET_ROCK_WRECKER_GROW
 	dw .Frameset_BigRedX                 ; BATTLEANIMFRAMESET_BIG_RED_X
-	dw .Frameset_DragonDarts             ; BATTLEANIMFRAMESET_DRAGON_DARTS
 	dw .Frameset_CosmicPowerBG           ; BATTLEANIMFRAMESET_COSMIC_POWER_BG
 	dw .Frameset_Swirl                   ; BATTLEANIMFRAMESET_SWIRL
 	dw .Frameset_SwirlShort              ; BATTLEANIMFRAMESET_SWIRL_SHORT
+	dw .Frameset_WaterBall               ; BATTLEANIMFRAMESET_WATER_BALL
 
 	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
 .Frameset_HitBig:
@@ -1411,10 +1411,6 @@ BattleAnimFrameData: ; ce85e
 .Frameset_MediumHorn:
 	frame BATTLEANIMOAMSET_DA,  9
 	delanim
-	
-.Frameset_DragonDarts:
-	db BATTLEANIMOAMSET_93, $08
-	db -1
 
 .Frameset_CosmicPowerBG:
 	frame BATTLEANIMOAMSET_EF,  1
@@ -1474,3 +1470,11 @@ BattleAnimFrameData: ; ce85e
 .Frameset_PoisonDroplet:
 	frame BATTLEANIMOAMSET_17, 24
 	delanim
+
+.Frameset_WaterBall:
+	frame BATTLEANIMOAMSET_1B,  2
+	frame BATTLEANIMOAMSET_7F,  2
+	frame BATTLEANIMOAMSET_1B,  2
+	frame BATTLEANIMOAMSET_7F,  2
+	frame BATTLEANIMOAMSET_01,  2 ; HIT
+	dorestart

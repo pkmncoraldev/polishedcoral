@@ -130,6 +130,7 @@ BattleBGEffects: ; c805a (32:405a)
 	dw BattleBGEffect_WobblePlayer
 	dw BattleBGEffect_WobbleScreen
 	dw BattleBGEffect_ShakeMonX
+	dw BattleBGEffect_CycleOBPalsGrayAndYellowFullShift
 
 
 BattleBGEffect_End: ; c80c6 (32:40c6)
@@ -289,6 +290,19 @@ BattleBGEffect_CycleOBPalsGrayAndYellow: ; c8171 (32:4171)
 	db %10010000
 	db -2
 ; c818b
+
+BattleBGEffect_CycleOBPalsGrayAndYellowFullShift:
+	ld de, .PalsCGB
+	call BattleBGEffect_GetNthDMGPal
+	ld [wOBP0], a
+	ret
+
+.PalsCGB:
+	db %11100100
+	db %10010011
+	db %01001110
+	db %00111001
+	db -2
 
 BattleBGEffect_CycleMidOBPalsGrayAndYellow: ; c818b (32:418b)
 	ld de, .PalsCGB

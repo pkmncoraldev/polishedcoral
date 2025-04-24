@@ -953,8 +953,8 @@ NUM_ANIM_OBJECTS EQU 10 ; see wActiveAnimObjects
 	const_def
 	const PAL_BATTLE_BG_PLAYER     ; 0
 	const PAL_BATTLE_BG_ENEMY      ; 1
-	const PAL_BATTLE_BG_PLAYER_HP  ; 2
-	const PAL_BATTLE_BG_ENEMY_HP   ; 3
+	const PAL_BATTLE_BG_ENEMY_HP   ; 2
+	const PAL_BATTLE_BG_PLAYER_HP  ; 3
 	const PAL_BATTLE_BG_EXP_GENDER ; 4
 	const PAL_BATTLE_BG_STATUS     ; 5
 	const PAL_BATTLE_BG_TYPE_CAT   ; 6

@@ -96,53 +96,53 @@ MoveTable:
 ;	db PSYCHIC_M
 	db DRAGONHAMMER                            ; needs update
 	db SIGNAL_BEAM                             ; needs update
-	db AGILITY_ROCK_POLISH
+	db AGILITY_ROCK_POLISH                     ; needs update?
 	db QUICK_ATTACK
 	db RAGE
 	db TELEPORT
 	db NIGHT_SHADE
-	db DRAGON_PULSE
+	db DRAGON_PULSE                            ; needs update
 	db SCREECH
 	db DOUBLE_TEAM
-	db BULLDOZE
+	db BULLDOZE                                ; needs update
 	db ROCK_BLAST
-	db MINIMIZE
+	db MINIMIZE                                ; needs update
 	db SAND_ATTACK_SMOKESCREEN_FLASH
 	db CONFUSE_RAY
-	db AQUA_TAIL
+	db AQUA_TAIL                               ; needs update
 	db DEFENSE_CURL_HARDEN_WITHDRAW
-	db BARRIER_IRON_DEFENSE_ACID_ARMOR
-	db LIGHT_SCREEN
+	db BARRIER_IRON_DEFENSE_ACID_ARMOR         ; needs update
+	db LIGHT_SCREEN                            ; needs update
 	db HAZE
-	db REFLECT
+	db REFLECT                                 ; needs update
 	db FOCUS_ENERGY
-	db FLASH_CANNON
-	db DRAGON_DARTS
-	db SCALD
-	db SELFDESTRUCT
+	db FLASH_CANNON                            ; needs update
+	db DRAGON_DARTS                            ; needs update
+	db SCALD                                   ; needs update
+	db SELFDESTRUCT                            ; needs update
 	db COTTON_GUARD
 	db JUMP_KICK
-	db PSYSHOCK
+	db PSYSHOCK                                ; needs update
 	db VENOSHOCK
 	db EARTH_POWER
-	db FIRE_BLAST
-	db WATERFALL
-	db ICICLE_CRASH
+	db FIRE_BLAST                              ; needs update
+	db WATERFALL                               ; needs update
+	db ICICLE_CRASH                            ; needs update
 	db SWIFT
 	db MIRROR_MOVE
 	db ROCK_WRECKER
 	db WORK_UP_GROWTH
 	db AMNESIA
-	db ROOST
+	db ROOST                                   ; needs update
 	db SOFTBOILED_MILK_DRINK_RECOVER
 	db HI_JUMP_KICK
-	db FIERY_DANCE
-	db DREAM_EATER
-	db POISON_JAB
+	db FIERY_DANCE                             ; needs update
+	db DREAM_EATER                             ; needs update
+	db POISON_JAB                              ; needs update
 	db BULLET_PUNCH
-	db LEECH_LIFE
-	db DOUBLE_HIT
-	db BRAVE_BIRD
+	db LEECH_LIFE                              ; needs update
+	db DOUBLE_HIT                              ; needs update
+	db BRAVE_BIRD                              ; needs update
 	db TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	db TOXIC_SPIKES
 	db POISON_FANG

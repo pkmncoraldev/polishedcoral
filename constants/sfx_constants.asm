@@ -210,17 +210,18 @@
 	const SFX_TWINKLE                     ; ce
 
 	const SFX_PUDDLE                      ; cf
-	
-	const SFX_BUMP_SNOWSTORM			  ; d0
-	const SFX_SNOWSTORM_INTRO			  ; d1
-	const SFX_SNOWSTORM 				  ; d2
-	const SFX_GRIND						  ; d3
-	const SFX_SCREAM					  ; d4
-	const SFX_NEWTON					  ; d5
-	const SFX_FOSSIL_MACHINE			  ; d6
-	const SFX_ITEM_FAKE					  ; d7
-	const SFX_GRASS_WHISTLE				  ; d8
-	const SFX_TEMPLE_RUMBLE	     		  ; d9
-	const SFX_GRIND_2					  ; da
-	
+
+	const SFX_BUMP_SNOWSTORM              ; d0
+	const SFX_SNOWSTORM_INTRO             ; d1
+	const SFX_SNOWSTORM                   ; d2
+	const SFX_GRIND                       ; d3
+	const SFX_SCREAM                      ; d4
+	const SFX_NEWTON                      ; d5
+	const SFX_FOSSIL_MACHINE              ; d6
+	const SFX_ITEM_FAKE                   ; d7
+	const SFX_GRASS_WHISTLE               ; d8
+	const SFX_TEMPLE_RUMBLE               ; d9
+	const SFX_GRIND_2                     ; da
+	const SFX_THUNDERBOLT                 ; db
+
 NUM_SFX EQU const_value - 1

@@ -4,7 +4,7 @@ MoveTable:
 ;	db LOW_KICK
 ;	db WISH
 ;	db BONE_CLUB
-;	db DRAGON_CLAW
+	db DRAGON_CLAW
 ;	db PAY_DAY
 ;	db FIRE_PUNCH
 ;	db ICE_PUNCH
@@ -24,7 +24,7 @@ MoveTable:
 ;	db VINE_WHIP
 ;	db STOMP
 ;	db HEX
-	db FLARE_BLITZ
+;	db FLARE_BLITZ
 ;	db STONE_EDGE
 ;	db FOCUS_BLAST
 ;	db BULLET_SEED
@@ -73,27 +73,27 @@ MoveTable:
 ;	db ABSORB
 ;	db MEGA_DRAIN
 ;	db LEECH_SEED
-	db COSMIC_POWER                            ; needs update
-	db RAZOR_LEAF
-	db SOLAR_BEAM                              ; needs update
-	db POISONPOWDER                            ; needs update
-	db STUN_SPORE                              ; needs update
-	db SLEEP_POWDER
-	db PETAL_DANCE                             ; needs update
-	db TAUNT                                   ; needs update
-	db DRAGON_RAGE                             ; needs update
-	db FIRE_SPIN                               ; needs update
-	db THUNDERSHOCK
-	db THUNDERBOLT                             ; needs update
-	db THUNDER_WAVE
-	db THUNDER
-	db ROCK_THROW
-	db EARTHQUAKE
-	db FAIRY_WIND                              ; needs update
-	db DIG
-	db TOXIC                                   ; needs update
-	db CONFUSION
-	db PSYCHIC_M
+;	db COSMIC_POWER
+;	db RAZOR_LEAF
+;	db SOLAR_BEAM
+;	db POISONPOWDER
+;	db STUN_SPORE
+;	db SLEEP_POWDER
+;	db PETAL_DANCE                             ; needs update
+;	db TAUNT
+;	db DRAGON_RAGE
+;	db FIRE_SPIN
+;	db THUNDERSHOCK
+;	db THUNDERBOLT
+;	db THUNDER_WAVE
+;	db THUNDER
+;	db ROCK_THROW
+;	db EARTHQUAKE
+;	db FAIRY_WIND
+;	db DIG
+;	db TOXIC
+;	db CONFUSION
+;	db PSYCHIC_M
 	db DRAGONHAMMER                            ; needs update
 	db SIGNAL_BEAM                             ; needs update
 	db AGILITY_ROCK_POLISH

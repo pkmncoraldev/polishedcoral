@@ -1,5 +1,5 @@
 MartClerks::
-	ld a, [wPlaceBallsY]
+	ld a, [wCurMoveNum]
 	ld hl, MartClerkPics
 	ld e, a
 	ld d, 0

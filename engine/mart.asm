@@ -10,7 +10,7 @@ OpenMartDialog::
 	ld a, c
 	ld [wEngineBuffer1], a
 	ld a, e
-	ld [wPlaceBallsY], a
+	ld [wCurMoveNum], a
 	call GetMart
 	call LoadMartPointer
 	ld a, [wEngineBuffer1]

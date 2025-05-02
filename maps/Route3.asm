@@ -14,8 +14,8 @@ Route3_MapScriptHeader:
 	coord_event 37, 17, 0, Route3MakeSilverBrown
 	coord_event 34, 17, 1, Route3MakeSilverGreen
 	coord_event 34, 16, 1, Route3MakeSilverGreen
-	coord_event 47, 30, 0, Route3MakeSilverBrown
-	coord_event 47, 31, 0, Route3MakeSilverBrown
+	coord_event 34,  4, 0, Route3MakeSilverBrown
+	coord_event 34,  5, 0, Route3MakeSilverBrown
 	coord_event 34, 19, 1, Route3MakeSilverGreen
 	coord_event 34, 20, 1, Route3MakeSilverGreen
 
@@ -62,11 +62,11 @@ Route3Callback:
 	callasm Route3CallbackCheckXPosAsm
 	iftrue .brown
 	clearevent EVENT_ROUTE_3_ROCKS_BROWN
-	dotrigger $1
+	dotrigger $0
 	jump .done_rocks
 .brown
 	setevent EVENT_ROUTE_3_ROCKS_BROWN
-	dotrigger $0
+	dotrigger $1
 .done_rocks
 	checkevent EVENT_BEAT_CHARLIE
 	iffalse .skip
@@ -78,7 +78,7 @@ Route3Callback:
 	
 Route3CallbackCheckXPosAsm:
 	ld a, [wXCoord]
-	cp $19
+	cp $1f
 	jr nc, .right
 	xor a
 	ld [wScriptVar], a

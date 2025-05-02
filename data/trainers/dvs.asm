@@ -98,7 +98,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; triobrob
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; triobroy
 	db  24, $99, $99, $99, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; disguiseman
-	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bikinip
+	db  40, $9B, $9B, $B9, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bikinip
 	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bikinir
 	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bikiniy
 	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; delinquentm

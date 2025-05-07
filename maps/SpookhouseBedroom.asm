@@ -68,6 +68,8 @@ SpookHouseDiningRoomRubble:
 	jumptext SpookHouseDiningRoomRubbleText
 	
 SpookHouseJournal:
+	checkevent EVENT_SPOOKHOUSE_BEATEN
+	iftrue .no_scary
 	appear SPOOKHOUSE_BEDROOM_GIRL
 	opentext
 	writetext SpookHouseJournalText1
@@ -99,6 +101,31 @@ SpookHouseJournal:
 	spriteface SPOOKHOUSE_BEDROOM_PAINTING, UP
 	pause 2
 	disappear SPOOKHOUSE_BEDROOM_GIRL
+	end
+.no_scary
+	opentext
+	writetext SpookHouseJournalText1
+	yesorno
+	iffalse SpookHouseJournalNo
+	writetext SpookHouseJournalText3
+	yesorno
+	iffalse SpookHouseJournalNo
+	writetext SpookHouseJournalText4
+	yesorno
+	iffalse SpookHouseJournalNo
+	writetext SpookHouseJournalText5
+	yesorno
+	iffalse SpookHouseJournalNo
+	writetext SpookHouseJournalText6
+	yesorno
+	iffalse SpookHouseJournalNo
+	writetext SpookHouseJournalText7
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext SpookHouseJournalText8
+	waitbutton
+	closetext
 	end
 	
 SpookHouseJournalNo:
@@ -228,7 +255,7 @@ SpookHouseJournalText4:
 	done
 	
 SpookHouseJournalText5:
-	text "DAY:X/0    MONTH:X"
+	text "DAY:X/O    MONTH:X"
 	
 	para "I saw her…"
 	
@@ -267,20 +294,18 @@ SpookHouseJournalText5:
 SpookHouseJournalText6:
 	text "DAY:X/X    MONTH:X"
 	
-	para "The incidents have"
-	line "gotten worse."
-	
 	para "My old journal"
 	line "turned up."
 	
 	para "The one that I"
-	line "burned…"
+	line "burned."
 	
 	para "Inside it were"
 	line "entries I'm sure"
 	cont "I never wrote."
 	
-	para "…"
+	para "The incidents have"
+	line "also gotten worse."
 	
 	para "I've seen her many"
 	line "times these past"
@@ -314,8 +339,8 @@ SpookHouseJournalText7:
 	para "REBECCA FOREVER"
 	line "AND EVER."
 	
-	para "WE'LL NEVER LEAVE"
-	line "HER AGAIN."
+	para "WE WILL NEVER"
+	line "LEAVE HER AGAIN."
 	
 	para "SHE WILL NEVER"
 	line "BE ALONE AGAIN."

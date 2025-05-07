@@ -642,6 +642,22 @@ LoadSpecialMapPalette: ; 494ac
 	ld bc, 1 palettes
 	ld a, $5
 	call FarCopyWRAM
+	ld a, [wMapGroup]
+	cp GROUP_FLICKER_TRAIN_GRAVEYARD
+	jr nz, .not_train_grave
+	ld a, [wMapNumber]
+	cp MAP_FLICKER_TRAIN_GRAVEYARD
+	jr nz, .not_train_grave
+	ld hl, TrainGraveyardPalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld de, wUnknBGPals + 4 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+.not_train_grave
 	scf
 	ret
 
@@ -1192,3 +1208,6 @@ INCLUDE "maps/palettes/bgpals/obscurayellow.pal"
 
 UnderwaterBrownPalette::
 INCLUDE "maps/palettes/bgpals/underwaterbrown.pal"
+
+TrainGraveyardPalette::
+INCLUDE "maps/palettes/bgpals/traingraveyardwindows.pal"

@@ -693,9 +693,9 @@ CheckForHiddenItems: ; b8172
 
 TreeItemEncounter:
 	call Random
-	cp 15 percent
+	cp 5 percent
 	jr c, .gold_leaf
-	cp 50 percent
+	cp 20 percent
 	jr c, .silver_leaf
 	ld a, NO_ITEM
 	jr .item

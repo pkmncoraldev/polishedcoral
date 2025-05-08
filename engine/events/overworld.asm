@@ -1693,6 +1693,8 @@ TryHeadbuttOW:: ; cec9
 	ret
 
 AskHeadbuttScript: ; 0xcedc
+	checkevent EVENT_CANT_HEADBUTT
+	iftrue .not_now
 	checkflag ENGINE_HEADBUTT_ACTIVE
 	iftrue AutoHeadbuttScript
 	opentext
@@ -1700,6 +1702,16 @@ AskHeadbuttScript: ; 0xcedc
 	yesorno
 	iftrue HeadbuttScript
 	endtext
+.not_now
+	opentext
+	writetext HeadbuttNotNowText
+	waitbutton
+	endtext
+	
+HeadbuttNotNowText:
+	text "Now's not the"
+	line "time!"
+	done
 
 UnknownText_0xcee6: ; 0xcee6
 	; A #MON could be in this tree. Want to HEADBUTT it?

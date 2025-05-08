@@ -434,6 +434,7 @@ SkateparkTMNpc:
 	special Special_FadeOutMusic
 	special FadeOutPalettes
 	special Special_ForceSkateboard
+	setevent EVENT_CANT_HEADBUTT
 	setevent EVENT_SKATEPARK_NPCS_GONE
 	setevent EVENT_SKATEPARK_GUARDS_GONE
 	dotrigger $1
@@ -468,6 +469,7 @@ SkateparkTimesUp::
 	special FadeOutPalettes
 	special Special_ForceSkateboard
 	clearevent EVENT_SKATEPARK_NPCS_GONE
+	clearevent EVENT_CANT_HEADBUTT
 	dotrigger $3	
 	warp2 UP, SKATEPARK, $10, $19
 	end

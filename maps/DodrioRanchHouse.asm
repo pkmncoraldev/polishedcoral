@@ -36,6 +36,7 @@ RanchHouseDodrioGirl:
 	writecode VAR_MOVEMENT, PLAYER_DODRIO
 	domaptrigger DODRIO_RANCH_RACETRACK, $3
 	waitsfx
+	setevent EVENT_CANT_HEADBUTT
 	warpfacing DOWN, DODRIO_RANCH_RACETRACK, 8, 14
 	end
 .no

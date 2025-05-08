@@ -487,6 +487,7 @@ RanchRideReturnGirl:
 	special Special_FadeBlackQuickly
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
 	waitsfx
+	clearevent EVENT_CANT_HEADBUTT
 	warpfacing UP, DODRIO_RANCH_HOUSE, $2, $4
 	end
 .no

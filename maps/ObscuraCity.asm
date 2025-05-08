@@ -12,7 +12,7 @@ ObscuraCity_MapScriptHeader:
 	warp_def 13, 23, 2, OBSCURA_MUSEUM_1F
 	warp_def  9, 29, 1, OBSCURA_MUSEUM_EMPLOYEE_ROOM
 	warp_def 10, 29, 2, OBSCURA_MUSEUM_EMPLOYEE_ROOM
-	warp_def 35,  5, 1, OBSCURA_FORTUNE_HOUSE
+	warp_def 33, 17, 1, OBSCURA_FORTUNE_HOUSE
 	warp_def 39, 21, 1, OBSCURA_POKECENTER
 	warp_def 37, 31, 2, OBSCURA_MART
 
@@ -22,11 +22,11 @@ ObscuraCity_MapScriptHeader:
 	signpost 35, 28, SIGNPOST_JUMPTEXT, ObscuraCitySign
 	signpost 14, 24, SIGNPOST_JUMPTEXT, ObscuraCityMuseumSign
 	signpost  9, 32, SIGNPOST_JUMPTEXT, ObscuraCityMuseumBackSign
-	signpost 35,  8, SIGNPOST_JUMPTEXT, ObscuraCityFortuneTellerSign
+	signpost 34, 19, SIGNPOST_JUMPTEXT, ObscuraCityFortuneTellerSign
 	signpost 39, 22, SIGNPOST_READ, ObscuraPokeCenterSign
 	signpost 37, 32, SIGNPOST_READ, ObscuraMartSign
-	signpost 32, 33, SIGNPOST_JUMPTEXT, ObscuraCityUnfinishedSign
 	signpost 33, 33, SIGNPOST_JUMPTEXT, ObscuraCityUnfinishedSign
+	signpost 32, 33, SIGNPOST_JUMPTEXT, ObscuraCityUnfinishedSign
 	
 
 	db 9 ; object events

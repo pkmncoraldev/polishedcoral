@@ -36,6 +36,9 @@ StarglowCavernDepths:
 	return
 
 StarglowCavernDepthsTrigger0:
+	end
+	
+StarglowCavernDepthsTrigger1:
 	pause 20
 	opentext
 	writetext StarglowCavernDepthsPatchesText1
@@ -51,11 +54,8 @@ StarglowCavernDepthsTrigger0:
 	waitbutton
 	closetext
 	pause 15
-	dotrigger $1
+	dotrigger $0
 	special Special_StartLandmarkTimer
-	end
-	
-StarglowCavernDepthsTrigger1:
 	end
 	
 StarglowCavernDepthsBag:

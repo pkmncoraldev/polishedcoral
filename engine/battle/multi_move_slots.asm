@@ -2456,6 +2456,9 @@ IronDefenseUsers:
 	db LARVITAR
 	db PUPITAR
 	db TYRANITAR
+	db ARON
+	db LAIRON
+	db AGGRON
 	db -1
 	
 AcidArmorUsers:

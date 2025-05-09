@@ -1535,7 +1535,7 @@ LoadMapPals::
 	cp MAP_ROUTE_9
 	jr z, .ranchcont
 	cp MAP_DODRIO_RANCH_RACETRACK
-	jr z, .ranchcont
+	jr z, .park
 	cp MAP_FLICKER_PASS_OUTSIDE
 	jr z, .ranchcont
 	jp .hangar

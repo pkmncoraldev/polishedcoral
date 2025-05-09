@@ -51,15 +51,13 @@ DodrioRanchRaceTrack_MapScriptHeader:
 	xy_trigger 1, 10, 27, 0, RanchRideRaceOffTrack, 0, 0
 	xy_trigger 1, 25, 27, 0, RanchRideRaceOffTrack, 0, 0
 
-	db 8 ; bg events
-	signpost 18, 16, SIGNPOST_READ, RanchRideRaceLogs
+	db 6 ; bg events
 	signpost 18, 13, SIGNPOST_READ, RanchRideRaceLogs
 	signpost 17, 12, SIGNPOST_READ, RanchRideRaceLogs
 	signpost 12, 17, SIGNPOST_READ, RanchRideRaceLogs
 	signpost 11, 18, SIGNPOST_READ, RanchRideRaceLogs
 	signpost 11, 19, SIGNPOST_READ, RanchRideRaceLogs
 	signpost 10, 18, SIGNPOST_READ, RanchRideRaceLogs
-	signpost 6, 17, SIGNPOST_READ, RanchRideRaceLogs
 
 	db 12 ; object events
 	person_event SPRITE_SNES,  7,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchRideScarecrow, -1

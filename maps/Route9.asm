@@ -38,8 +38,7 @@ Route9_MapScriptHeader:
 	xy_trigger 1, 26, 16, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 27, 16, 0, Route9MapSignThing, 0, 0
 
-	db 11 ; bg events
-	signpost 22, 28, SIGNPOST_READ, RanchLogs
+	db 10 ; bg events
 	signpost 22, 25, SIGNPOST_READ, RanchLogs
 	signpost 21, 24, SIGNPOST_READ, RanchLogs
 	signpost 16, 29, SIGNPOST_READ, RanchLogs
@@ -323,6 +322,9 @@ RanchScarecrow:
 RanchLogs:
 	jumptext RanchLogsText
 	
+RanchHay:
+	jumptext RanchHayText
+	
 RanchSign:
 	jumptext RanchSignText
 	
@@ -392,6 +394,14 @@ RanchScarecrowText:
 RanchLogsText:
 	text "Some logs are"
 	line "stacked neatly."
+	done
+	
+RanchHayText:
+	text "Big, fluffy"
+	line "haystacks."
+	
+	para "Not a needle"
+	line "in site!"
 	done
 	
 RanchSignText:

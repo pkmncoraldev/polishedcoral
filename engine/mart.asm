@@ -2462,6 +2462,7 @@ SellMenu:: ; 15eb3
 	dw .try_sell
 	dw .try_sell
 	dw .try_sell
+	dw .try_sell
 ; 15efc
 
 .try_sell ; 15efd

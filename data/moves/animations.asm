@@ -3691,7 +3691,7 @@ BattleAnim_Howl:
 	anim_jump BattleAnim_ShowMon_0
 
 BattleAnim_Roar:
-	anim_jumpif $2, BattleAnim_Whirlwind
+	anim_jumpif $1, BattleAnim_Whirlwind
 	anim_1gfx ANIM_GFX_NOISE
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_cry $0

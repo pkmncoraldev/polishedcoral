@@ -2014,10 +2014,9 @@ CheckRoarThing::
 .got_user_species
 	farcall CheckWhirlwindUsers2
 	jr nc, .not_whirlwind
-	ld a, $2
+	ld a, $1
 	ret
 .not_whirlwind
-	ld a, $1
 	ret
 	
 CheckSandAttackThing::

@@ -6597,6 +6597,7 @@ BattleCommand_forceswitch: ; 3680f
 	ld [hl], a
 	call UpdateOpponentInParty
 	farcall CheckRoarThing
+	ld [wKickCounter], a
 	call AnimateCurrentMove
 	ld c, $14
 	call DelayFrames

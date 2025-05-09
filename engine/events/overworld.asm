@@ -2515,7 +2515,7 @@ FishFunction: ; cf8e
 .skip_lava
 	call GetFacingTileCoord
 	cp COLL_FISHING
-	jr z, .coll_fishing
+	jr z, .facingwater
 	call GetTileCollision
 	cp $1
 	jr z, .facingwater
@@ -2529,8 +2529,6 @@ FishFunction: ; cf8e
 	jr nz, .goodtofish
 	ld a, $4
 	ret
-.coll_fishing
-	ld a, $1
 .goodtofish
 	ld d, a
 	ld a, [wBuffer2]

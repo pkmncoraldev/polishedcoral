@@ -106,17 +106,6 @@ endr
 
 GetFishGroupIndex: ; 9245b
 ; Return the index of fishgroup d in de.
-
-	ld a, [wMapGroup]
-	cp GROUP_ROUTE_3
-	jp nz, .not_route_3
-	ld a, [wMapNumber]
-	cp MAP_ROUTE_3
-	jp nz, .not_route_3
-	eventflagcheck EVENT_ROUTE_3_ROCKS_BROWN
-	jp nz, .not_route_3
-	ld d, FISHGROUP_ROUTE_3_POND
-.not_route_3
 	dec d
 	ld e, d
 	ld d, 0

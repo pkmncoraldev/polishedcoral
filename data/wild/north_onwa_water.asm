@@ -81,14 +81,14 @@
 	db 31, AZUMARILL	;1%
 
 	map_id ROUTE_3
-	db 15 percent ; encounter rate
-	db 31, DRATINI		;30%
-	db 31, DRATINI		;30%
-	db 31, DRATINI		;20%
-	db 31, DRATINI		;10%
-	db 31, DRATINI		;5%
-	db 31, DRATINI		;4%
-	db 31, DRATINI		;1%
+	db 6 percent ; encounter rate
+	db 31, POLIWHIRL	;30%
+	db 31, CARVANHA		;30%
+	db 31, FLOATZEL		;20%
+	db 31, POLIWHIRL	;10%
+	db 31, CARVANHA		;5%
+	db 31, FLOATZEL		;4%
+	db 31, FLOATZEL		;1%
 	
 	map_id STARGLOW_CAVERN_1F
 	db 6 percent ; encounter rate

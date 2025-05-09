@@ -204,6 +204,8 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_Swirl                   ; BATTLEANIMFRAMESET_SWIRL
 	dw .Frameset_SwirlShort              ; BATTLEANIMFRAMESET_SWIRL_SHORT
 	dw .Frameset_WaterBall               ; BATTLEANIMFRAMESET_WATER_BALL
+	dw .Frameset_ShrinkingRingSmall      ; BATTLEANIMFRAMESET_SHRINKING_RING_SMALL
+	dw .Frameset_ShrinkingRingBig        ; BATTLEANIMFRAMESET_SHRINKING_RING_BIG
 
 	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
 .Frameset_HitBig:
@@ -1478,3 +1480,13 @@ BattleAnimFrameData: ; ce85e
 	frame BATTLEANIMOAMSET_7F,  2
 	frame BATTLEANIMOAMSET_01,  2 ; HIT
 	dorestart
+
+.Frameset_ShrinkingRingSmall:
+	frame BATTLEANIMOAMSET_B8,  2
+	frame BATTLEANIMOAMSET_06,  2
+	delanim
+
+.Frameset_ShrinkingRingBig:
+	frame BATTLEANIMOAMSET_B9,  2
+	frame BATTLEANIMOAMSET_E9,  2
+	delanim

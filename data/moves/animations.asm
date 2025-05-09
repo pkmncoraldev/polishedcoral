@@ -3887,26 +3887,23 @@ BattleAnim_MindReader:
 	anim_ret
 
 BattleAnim_CalmMind:
-	anim_1gfx ANIM_GFX_MISC
+	anim_3gfx ANIM_GFX_BIG_RINGS, ANIM_GFX_RINGS, ANIM_GFX_GLOW
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GLOW_LUSTER
 	anim_bgp $1b
-	anim_call BattleAnimSub_BGCycleOBPalsGrayAndYellow_2
-	anim_sound 0, 0, SFX_GAME_FREAK_LOGO_GS
-.loop
-	anim_call BattleAnim_CalmMindbranch
-	anim_wait 8
-	anim_call BattleAnim_CalmMindbranch
-	anim_wait 42
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj ANIM_OBJ_SMALL_GLOW, 48, 96, $0
+	anim_wait 32
 	anim_clearobjs
-	anim_loop 2, .loop
+	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+.loop
+	anim_obj ANIM_OBJ_SHRINKING_RING_BIG, 48, 96, $0
+	anim_wait 4
+	anim_obj ANIM_OBJ_SHRINKING_RING_SMALL, 48, 96, $0
+	anim_wait 16
+	anim_loop 4, .loop
+	anim_wait 16
 	anim_ret
-
-BattleAnim_CalmMindbranch:
-	anim_obj ANIM_OBJ_MIND_READER, 48, 88, $3
-	anim_obj ANIM_OBJ_MIND_READER, 48, 88, $12
-	anim_obj ANIM_OBJ_MIND_READER, 48, 88, $20
-	anim_obj ANIM_OBJ_MIND_READER, 48, 88, $31
-	anim_ret
-	
 
 BattleAnim_Rest:
 BattleAnim_Slp:

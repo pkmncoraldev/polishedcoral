@@ -4,7 +4,7 @@ MoveTable:
 ;	db LOW_KICK
 ;	db WISH
 ;	db BONE_CLUB
-	db DRAGON_CLAW
+;	db DRAGON_CLAW
 ;	db PAY_DAY
 ;	db FIRE_PUNCH
 ;	db ICE_PUNCH
@@ -53,7 +53,7 @@ MoveTable:
 ;	db ACID
 ;	db EMBER
 ;	db FLAMETHROWER
-;	db CALM_MIND                               ; needs update
+	db CALM_MIND                               ; needs update
 ;	db WATER_GUN
 ;	db HYDRO_PUMP
 ;	db SURF
@@ -79,7 +79,7 @@ MoveTable:
 ;	db POISONPOWDER
 ;	db STUN_SPORE
 ;	db SLEEP_POWDER
-;	db PETAL_DANCE                             ; needs update
+	db PETAL_DANCE                             ; needs update
 ;	db TAUNT
 ;	db DRAGON_RAGE
 ;	db FIRE_SPIN

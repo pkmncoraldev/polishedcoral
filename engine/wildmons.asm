@@ -861,7 +861,8 @@ InitRoamMons:
 
 CheckEncounterRoamMon: ; 2a2ce
 	push hl
-	
+	eventflagcheck EVENT_YOU_CHEATED
+	jr nz, .DontEncounterRoamMon
 	eventflagcheck EVENT_ENCOUNTERED_FIRST_BIRD_ONCE
 	jr nz, .skip
 	ld a, [wMapGroup]

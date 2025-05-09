@@ -217,7 +217,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_10,									  29, 26 ; 1
 	map_const ROUTE_10_EAST,							  12, 17 ; 2
 	map_const ROUTE_10_TENT,							   2,  3 ; 3
-	map_const TWINKLE_TOWN,								  24, 28 ; 4
+	map_const TWINKLE_TOWN,								  26, 28 ; 4
 	map_const TWINKLE_ROCK_HOUSE,						   4,  5 ; 5
 	map_const TWINKLE_TRADE_HOUSE,						   4,  5 ; 6
 	map_const TWINKLE_SNOW_HOUSE,						   4,  5 ; 7

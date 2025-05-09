@@ -8,50 +8,50 @@ TwinkleTown_MapScriptHeader:
 	callback MAPCALLBACK_TILES, TwinkleTownCallback
 
 	db 7 ; warp events
-	warp_def 47, 11, 1, TWINKLE_POKECENTER
-	warp_def 41, 17, 2, TWINKLE_MART
-	warp_def 31, 17, 1, ROUTE_10_MOVE_REMINDER_HOUSE
-	warp_def 39,  7, 1, TWINKLE_TRADE_HOUSE
-	warp_def 49, 21, 1, TWINKLE_SNOW_HOUSE
-	warp_def  5, 34, 1, ICE_CAVE_B1F
-	warp_def 21, 10, 1, TWINKLE_GYM_ENTRY
+	warp_def 47, 15, 1, TWINKLE_POKECENTER
+	warp_def 41, 21, 2, TWINKLE_MART
+	warp_def 31, 21, 1, ROUTE_10_MOVE_REMINDER_HOUSE
+	warp_def 39, 11, 1, TWINKLE_TRADE_HOUSE
+	warp_def 49, 25, 1, TWINKLE_SNOW_HOUSE
+	warp_def  5, 38, 1, ICE_CAVE_B1F
+	warp_def 21, 14, 1, TWINKLE_GYM_ENTRY
 
 	db 0 ; coord events
 
 	db 17 ; bg events
-	signpost 44,  8, SIGNPOST_READ, TwinkleTownSign
-	signpost 22, 12, SIGNPOST_READ, TwinkleTownGymSign
-	signpost 47, 12, SIGNPOST_READ, TwinkleTownPokeCenterSign
-	signpost 41, 18, SIGNPOST_READ, TwinkleTownMartSign
-	signpost 41, 15, SIGNPOST_READ, TwinkleTownSnowman1
-	signpost 22,  8, SIGNPOST_READ, TwinkleTownSnowman2
-	signpost 30, 15, SIGNPOST_READ, TwinkleTownSnowman3
-	signpost 49, 19, SIGNPOST_READ, TwinkleTownWood
-	signpost 48, 19, SIGNPOST_READ, TwinkleTownWood
-	signpost 39, 10, SIGNPOST_READ, TwinkleTownWood
-	signpost 38, 10, SIGNPOST_READ, TwinkleTownWood
-	signpost 31, 20, SIGNPOST_READ, TwinkleTownWood
-	signpost 30, 20, SIGNPOST_READ, TwinkleTownWood
-	signpost 32, 18, SIGNPOST_READ, Route10MoveRelearnerSign
-	bg_event 20, 29, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_TWINKLE_TOWN
-	bg_event 22, 55, SIGNPOST_ITEM + REVIVE, EVENT_TWINKLE_HIDDEN_REVIVE
-	bg_event 27, 25, SIGNPOST_ITEM + PP_UP, EVENT_TWINKLE_HIDDEN_PP_UP
+	signpost 44, 12, SIGNPOST_READ, TwinkleTownSign
+	signpost 22, 16, SIGNPOST_READ, TwinkleTownGymSign
+	signpost 47, 16, SIGNPOST_READ, TwinkleTownPokeCenterSign
+	signpost 41, 22, SIGNPOST_READ, TwinkleTownMartSign
+	signpost 41, 19, SIGNPOST_READ, TwinkleTownSnowman1
+	signpost 22, 12, SIGNPOST_READ, TwinkleTownSnowman2
+	signpost 30, 19, SIGNPOST_READ, TwinkleTownSnowman3
+	signpost 49, 23, SIGNPOST_READ, TwinkleTownWood
+	signpost 48, 23, SIGNPOST_READ, TwinkleTownWood
+	signpost 39, 14, SIGNPOST_READ, TwinkleTownWood
+	signpost 38, 14, SIGNPOST_READ, TwinkleTownWood
+	signpost 31, 24, SIGNPOST_READ, TwinkleTownWood
+	signpost 30, 24, SIGNPOST_READ, TwinkleTownWood
+	signpost 32, 22, SIGNPOST_READ, Route10MoveRelearnerSign
+	bg_event 24, 29, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_TWINKLE_TOWN
+	bg_event 26, 55, SIGNPOST_ITEM + REVIVE, EVENT_TWINKLE_HIDDEN_REVIVE
+	bg_event 31, 25, SIGNPOST_ITEM + PP_UP, EVENT_TWINKLE_HIDDEN_PP_UP
 	
 	db 15 ; object events
-	person_event SPRITE_SNOWGIRL_SMALL, 31, 15, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC1, EVENT_TWINKLE_SNOWMAN_3_1
-	person_event SPRITE_SNOWGIRL_SMALL, 30, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC2, EVENT_TWINKLE_SNOWMAN_3_1
-	person_event SPRITE_ICESKATER_VARIABLE, 29, 35, SPRITEMOVEDATA_ICESKATER, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC3, -1
-	person_event SPRITE_BOARDER, 29, 38, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC4, -1
-	person_event SPRITE_SNOWGIRL, 34, 35, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC5, -1
-	person_event SPRITE_BOARDER, 34, 36, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC6, -1
-	person_event SPRITE_SNOWGIRL, 40, 22, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC7, -1
-	person_event SPRITE_BOARDER, 50,  9, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC8, -1
-	person_event SPRITE_BOARDER, 37, 14, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC9, -1
-	person_event SPRITE_SNOWGIRL_SMALL, 39, 31, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC10, -1
-	person_event SPRITE_BOARDER, 15, 41, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerTwinkle_1, -1
-	person_event SPRITE_SKIER, 19, 36, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 3, TrainerTwinkle_2, -1
-	itemball_event 27, 26, HP_UP, 1, EVENT_TWINKLE_POKE_BALL_HP_UP
-	tmhmball_event 41, 18, TM_DIG, EVENT_TWINKLE_POKE_BALL_DIG
+	person_event SPRITE_SNOWGIRL_SMALL, 31, 19, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC1, EVENT_TWINKLE_SNOWMAN_3_1
+	person_event SPRITE_SNOWGIRL_SMALL, 30, 18, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC2, EVENT_TWINKLE_SNOWMAN_3_1
+	person_event SPRITE_ICESKATER_VARIABLE, 29, 39, SPRITEMOVEDATA_ICESKATER, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC3, -1
+	person_event SPRITE_BOARDER, 29, 42, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC4, -1
+	person_event SPRITE_SNOWGIRL, 34, 39, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC5, -1
+	person_event SPRITE_BOARDER, 34, 40, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC6, -1
+	person_event SPRITE_SNOWGIRL, 40, 26, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC7, -1
+	person_event SPRITE_BOARDER, 50, 13, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC8, -1
+	person_event SPRITE_BOARDER, 37, 18, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC9, -1
+	person_event SPRITE_SNOWGIRL_SMALL, 39, 35, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC10, -1
+	person_event SPRITE_BOARDER, 15, 45, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerTwinkle_1, -1
+	person_event SPRITE_SKIER, 19, 40, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 3, TrainerTwinkle_2, -1
+	itemball_event 31, 26, HP_UP, 1, EVENT_TWINKLE_POKE_BALL_HP_UP
+	tmhmball_event 45, 18, TM_DIG, EVENT_TWINKLE_POKE_BALL_DIG
 	hiddentape_event 20, 29, MUSIC_TWINKLE_TOWN, 1, EVENT_MUSIC_TWINKLE_TOWN
 	
 	
@@ -101,30 +101,30 @@ TwinkleTownCallback:
 .snowman1
 	checkevent EVENT_TWINKLE_SNOWMAN_1_2
 	iffalse .no1
-	changeblock $e, $28, $b3
+	changeblock $12, $28, $b3
 	jump .snowman2
 .no1
 	checkevent EVENT_TWINKLE_SNOWMAN_1_1
 	iffalse .snowman2
-	changeblock $e, $28, $b0
+	changeblock $12, $28, $b0
 .snowman2
 	checkevent EVENT_TWINKLE_SNOWMAN_2_2
 	iffalse .no2
-	changeblock $8, $16, $b5
+	changeblock $c, $16, $b5
 	jump .snowman3
 .no2
 	checkevent EVENT_TWINKLE_SNOWMAN_2_1
 	iffalse .snowman3
-	changeblock $8, $16, $b2
+	changeblock $c, $16, $b2
 .snowman3
 	checkevent EVENT_TWINKLE_SNOWMAN_3_2
 	iffalse .no3
-	changeblock $e, $1e, $b4
+	changeblock $12, $1e, $b4
 	jump .snowmandone
 .no3
 	checkevent EVENT_TWINKLE_SNOWMAN_3_1
 	iffalse .snowmandone
-	changeblock $e, $1e, $b1
+	changeblock $12, $1e, $b1
 .snowmandone
 	checkevent EVENT_BEAT_CHARLIE_REMATCH
 	iffalse .skip
@@ -164,7 +164,6 @@ TwinkleTownTrigger0:
 	checktime 1<<DAY
 	iffalse .end
 .morn_day
-	changeblock $14, $28, $b6
 	callasm CheckLandmarkSignTimer
 	iffalse .end
 	clearflag ENGINE_STREETLIGHTS
@@ -246,7 +245,7 @@ TwinkleTownSnowman1:
 	closetext
 	giveitem BOTTLE_CAP
 	iffalse TwinkleSnowmanNoRoom
-	changeblock $e, $28, $b0
+	changeblock $12, $28, $b0
 	opentext
 	verbosegiveitem BOTTLE_CAP
 	writetext TwinkleTownSnowman1Text2
@@ -264,7 +263,7 @@ TwinkleTownSnowman1:
 	closetext
 	giveitem BOTTLE_CAP
 	iffalse TwinkleSnowmanNoRoom
-	changeblock $e, $28, $b3
+	changeblock $12, $28, $b3
 	opentext
 	verbosegiveitem BOTTLE_CAP
 	writetext TwinkleTownSnowman1Text4
@@ -298,7 +297,7 @@ TwinkleTownSnowman2:
 	closetext
 	giveitem BOTTLE_CAP
 	iffalse TwinkleSnowmanNoRoom
-	changeblock $8, $16, $b2
+	changeblock $c, $16, $b2
 	opentext
 	verbosegiveitem BOTTLE_CAP
 	writetext TwinkleTownSnowman1Text2
@@ -314,7 +313,7 @@ TwinkleTownSnowman2:
 	yesorno
 	iffalse .no
 	closetext
-	changeblock $8, $16, $b5
+	changeblock $c, $16, $b5
 	giveitem BOTTLE_CAP
 	iffalse TwinkleSnowmanNoRoom
 	opentext
@@ -348,7 +347,7 @@ TwinkleTownSnowman3:
 	yesorno
 	iffalse .no
 	closetext
-	changeblock $e, $1e, $b1
+	changeblock $12, $1e, $b1
 	giveitem BOTTLE_CAP
 	iffalse TwinkleSnowmanNoRoom
 	opentext
@@ -376,7 +375,7 @@ TwinkleTownSnowman3:
 	yesorno
 	iffalse .no
 	closetext
-	changeblock $e, $1e, $b4
+	changeblock $12, $1e, $b4
 	giveitem BOTTLE_CAP
 	iffalse TwinkleSnowmanNoRoom
 	opentext

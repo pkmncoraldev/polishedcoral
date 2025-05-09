@@ -179,7 +179,7 @@ ENDM
 	connection west, EventideVillage, EVENTIDE_VILLAGE, 15
 	
 	map_attributes Route10, ROUTE_10, $71, NORTH | EAST
-	connection north, TwinkleTown, TWINKLE_TOWN, 5
+	connection north, TwinkleTown, TWINKLE_TOWN, 3
 	connection east, Route10East, ROUTE_10_EAST, -1
 	
 	map_attributes Route10East, ROUTE_10_EAST, 5, WEST
@@ -285,7 +285,7 @@ ENDM
 	connection east, SpookhouseHallway1, SPOOKHOUSE_HALLWAY_1, 0
 	
 	map_attributes TwinkleTown, TWINKLE_TOWN, 5, SOUTH
-	connection south, Route10, ROUTE_10, -5
+	connection south, Route10, ROUTE_10, -3
 	
 	map_attributes LusterCityResidential, LUSTER_CITY_RESIDENTIAL, 0, EAST
 	connection east, LusterCityShopping, LUSTER_CITY_SHOPPING, 0

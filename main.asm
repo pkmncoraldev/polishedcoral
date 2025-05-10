@@ -4552,6 +4552,21 @@ SECTION "Effect Commands", ROMX
 INCLUDE "engine/battle/effect_commands.asm"
 
 
+SECTION "Move Animation Pointers", ROMX
+
+INCLUDE "data/moves/animation_pointers.asm"
+
+
+SECTION "Move Animations 1", ROMX
+
+INCLUDE "data/moves/animations.asm"
+
+
+SECTION "Move Animations 2", ROMX
+
+INCLUDE "data/moves/animations_2.asm"
+
+
 SECTION "Battle Animations", ROMX
 
 INCLUDE "engine/battle_anims/anim_commands.asm"
@@ -4953,16 +4968,12 @@ INCLUDE "engine/battle/effect_commands/mimic.asm"
 
 SECTION "Coral Data 2", ROMX
 
-INCLUDE "data/moves/animations.asm"
-
-SECTION "Coral Data 3", ROMX
-
 INCLUDE "engine/titlescreen_cutscene.asm"
 INCLUDE "engine/trainer_card.asm"
 INCLUDE "data/pokemon/names.asm"
 
 
-SECTION "Coral Data 4", ROMX
+SECTION "Coral Data 3", ROMX
 
 INCLUDE "engine/events/mom.asm"
 INCLUDE "engine/money.asm"

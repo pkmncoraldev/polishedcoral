@@ -1556,6 +1556,8 @@ wSurfWaveBGEffect:: ds $32
 wBattleAnimEnd::
 	ds $e
 wSurfWaveBGEffectEnd::
+wBattleAnimBank:: ds 1
+wBattleAnimParentBank:: ds 1
 
 
 SECTION "WRAM 6", WRAMX

@@ -299,7 +299,7 @@ anim_loop: macro
 	enum anim_call_command ; fe
 anim_call: macro
 	db anim_call_command
-	dw \1 ; address
+	dba \1 ; address
 	endm
 
 	enum anim_ret_command ; ff

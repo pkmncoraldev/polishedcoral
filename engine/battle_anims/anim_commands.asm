@@ -461,9 +461,13 @@ BattleAnimCmd_Ret: ; cc305 (33:4305)
 	ld [hl], e
 	inc hl
 	ld [hl], d
+	ld a, [wBattleAnimParentBank]
+	ld [wBattleAnimBank], a
 	ret
 
 BattleAnimCmd_Call: ; cc317 (33:4317)
+	call GetBattleAnimByte
+	push af
 	call GetBattleAnimByte
 	ld e, a
 	call GetBattleAnimByte
@@ -477,11 +481,15 @@ BattleAnimCmd_Call: ; cc317 (33:4317)
 	ld [hl], e
 	inc hl
 	ld [hl], d
+	ld a, [wBattleAnimBank]
+	ld [wBattleAnimParentBank], a
 	pop de
+	pop af
 	ld hl, wBattleAnimAddress
 	ld [hl], e
 	inc hl
 	ld [hl], d
+	ld [wBattleAnimBank], a
 	ld hl, wBattleAnimFlags
 	set 1, [hl]
 	ret
@@ -1567,6 +1575,7 @@ ClearBattleAnims: ; cc8d3
 	inc hl
 	ld d, [hl]
 	ld hl, BattleAnimations
+	add hl, de
 	add hl, de
 	add hl, de
 	call GetBattleAnimPointer

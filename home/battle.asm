@@ -482,6 +482,7 @@ ContactMoves::
 	db BRICK_BREAK
 	db SUPERPOWER
 	db NIGHT_SLASH
+	db DOUBLE_KICK
 	db -1
 
 PowderMoves::

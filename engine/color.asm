@@ -2014,7 +2014,6 @@ LightUpPlayerPal:
 	bit 0, a
 	ret z
 	ld a, [wPlayerPalette]
-	and 3
 	ld bc, 1 palettes
 	ld hl, MapObjectPals
 	call AddNTimes
@@ -2032,7 +2031,6 @@ LightUpPlayerPalTimeOfDay:
 	bit 0, a
 	ret z
 	ld a, [wPlayerPalette]
-	and 3
 	ld bc, 1 palettes
 	ld hl, MapObjectPals
 	call AddNTimes

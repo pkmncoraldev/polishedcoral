@@ -5647,14 +5647,12 @@ BattleCommand_evasionup2: ; 361e0
 	ld a, [hBattleTurn]
 	and a
 	jr z, .PlayerTurn
-	xor a
 	ld [wEnemyMinimized], a
 	jr .cont
 .PlayerTurn
-	xor a
 	ld [wPlayerMinimized], a
 .cont
-	ld b, $10 | EVASION
+	ld b, EVASION
 	; fallthrough
 
 BattleCommand_statup: ; 361e4

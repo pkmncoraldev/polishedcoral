@@ -944,6 +944,8 @@ GetBattleAnimPointer:: ; 3ae1
 	rst Bankswitch
 
 	ld a, [hli]
+	ld [wBattleAnimBank], a
+	ld a, [hli]
 	ld [wBattleAnimAddress], a
 	ld a, [hl]
 	ld [wBattleAnimAddress + 1], a
@@ -958,6 +960,10 @@ GetBattleAnimByte:: ; 3af0
 
 	push hl
 	push de
+	ldh a, [hROMBank]
+	push af
+	ld a, [wBattleAnimBank]
+	rst Bankswitch
 
 	ld hl, wBattleAnimAddress
 ;	ld e, [hl]
@@ -966,8 +972,8 @@ GetBattleAnimByte:: ; 3af0
 	ld d, [hl]
 	ld e, a
 
-	ld a, BANK(BattleAnimations)
-	rst Bankswitch
+	; ld a, BANK(BattleAnimations)
+	; rst Bankswitch
 
 	ld a, [de]
 	ld [wBattleAnimByte], a
@@ -981,6 +987,9 @@ GetBattleAnimByte:: ; 3af0
 	ld a, d
 	ld [hld], a
 	ld [hl], e
+
+	pop af
+	rst Bankswitch
 
 	pop de
 	pop hl

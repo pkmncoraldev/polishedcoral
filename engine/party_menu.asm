@@ -311,6 +311,8 @@ PlacePartyMonStatus: ; 501b2
 ; 501e0
 
 PlacePartyMonTMHMCompatibility: ; 501e0
+	ld a, 0
+	ld [wCurPartyMon], a
 	ld a, [wPartyCount]
 	and a
 	ret z
@@ -329,12 +331,21 @@ PlacePartyMonTMHMCompatibility: ; 501e0
 	add hl, de
 	ld a, [hl]
 	ld [wCurPartySpecies], a
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Form
+	call GetPartyLocation
+	ld a, [hl]
+	and FORM_MASK
+	ld [wCurForm], a
 	predef CanLearnTMHMMove
 	pop hl
 	call .PlaceAbleNotAble
 	call PlaceString
 
 .next
+	ld a, [wCurPartyMon]
+	inc a
+	ld [wCurPartyMon], a
 	pop hl
 	ld de, SCREEN_WIDTH * 2
 	add hl, de

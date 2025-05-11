@@ -2003,7 +2003,7 @@ RunPostBattleAbilities::
 	call GetItemName
 	ld hl, wStringBuffer1
 	ld de, wStringBuffer2
-	ld bc, PKMN_NAME_LENGTH
+	ld bc, ITEM_NAME_LENGTH
 	rst CopyBytes
 	pop de
 	pop bc
@@ -2013,7 +2013,13 @@ RunPostBattleAbilities::
 	call GetPartyParamLocation
 	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
+	call ClearTileMap
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
+	call SetPalettes
 	call GetPokemonName
+	ld c, 10
+	call DelayFrames
 	ld hl, BattleText_PickedUpItem
 	call StdBattleTextBox
 	pop de

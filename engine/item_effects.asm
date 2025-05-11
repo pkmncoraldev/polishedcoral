@@ -1559,14 +1559,15 @@ VitaminEffect: ; ee3d
 NoEffectMessage: ; ee83
 	ld hl, WontHaveAnyEffectText
 	call PrintText
-	jp ClearPalettes
-; ee8c
+	call ClearPalettes
+	jp ClearTileMap
 
 
 RareCandy_StatBooster_ExitMenu: ; ee9f
 	xor a
 	ld [wItemEffectSucceeded], a
-	jp ClearPalettes
+	call ClearPalettes
+	jp ClearTileMap
 ; eea6
 
 
@@ -2290,7 +2291,8 @@ StatusHealer_ExitMenu: ; f29e (3:729e)
 	xor a
 	ld [wItemEffectSucceeded], a
 StatusHealer_ClearPalettes: ; f2a2 (3:72a2)
-	jp ClearPalettes
+	call ClearPalettes
+	jp ClearTileMap
 
 IsItemUsedOnBattleMon: ; f2a6 (3:72a6)
 	ld a, [wBattleMode]
@@ -2689,8 +2691,9 @@ XItemEffect: ; f4c5
 	ld a, [wCurBattleMon]
 	ld [wCurPartyMon], a
 	ld c, HAPPINESS_USEDXITEM
-	farjp ChangeHappiness
-; f504
+	farcall ChangeHappiness
+	call ClearPalettes
+	jp ClearTileMap
 
 
 ;BlueCard: ; f58f
@@ -3674,7 +3677,8 @@ AbilityCap:
 	call PrintText
 	call WaitSFX
 .abort
-	jp ClearPalettes
+	call ClearPalettes
+	jp ClearTileMap
 
 .no_effect
 	call WontHaveAnyEffectMessage

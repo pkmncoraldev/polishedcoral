@@ -687,6 +687,8 @@ BattleAnimCmd_Obj: ; cc41f (33:441f)
 	call GetBattleAnimByte
 	ld [wBattleAnimTemp0], a
 	call GetBattleAnimByte
+	ld [wBattleAnimTemp0 + 1], a
+	call GetBattleAnimByte
 	ld [wBattleAnimTemp1], a
 	call GetBattleAnimByte
 	ld [wBattleAnimTemp2], a

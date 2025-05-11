@@ -68,6 +68,13 @@ AnimObjGFX:
 	anim_obj_gfx  9, AnimObjHit2GFX
 	anim_obj_gfx  6, AnimObjRingsGFX
 	anim_obj_gfx 13, AnimObjBigRingsGFX
+	anim_obj_gfx 13, AnimObjBigGlowClearGFX
+	anim_obj_gfx 10, AnimObjBeamSolarGFX
+	anim_obj_gfx  4, AnimObjPetalsGFX
+	anim_obj_gfx  9, AnimObjSmokePuffGFX
+	anim_obj_gfx  6, AnimObjRockPolishGFX
+	anim_obj_gfx  5, AnimObjMisc2GFX
+	anim_obj_gfx 12, AnimObjDragonDartsGFX
 	anim_obj_gfx 10, AnimObjPokeBall2GFX
 	anim_obj_gfx 10, AnimObjPokeBall3GFX
 	anim_obj_gfx  1, NULL

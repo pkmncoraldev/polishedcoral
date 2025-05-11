@@ -130,6 +130,7 @@ BattleBGEffects: ; c805a (32:405a)
 	dw BattleBGEffect_WobblePlayer
 	dw BattleBGEffect_WobbleScreen
 	dw BattleBGEffect_ShakeMonX
+	dw BattleBGEffect_ShakeMonY
 	dw BattleBGEffect_CycleOBPalsGrayAndYellowFullShift
 
 
@@ -2076,6 +2077,63 @@ BattleBGEffect_ShakeMonX:
 	jr nz, .loop
 	ret
 
+BattleBGEffect_ShakeMonY:
+; Oscillates a mon between +1 and +x+1 pixels in the Y axis, where x is
+; the argument given to BG_EFFEECT_STRUCT_PARAM.
+	call BattleBGEffects_AnonJumptable
+.anon_dw
+	dw .zero
+	dw .one
+	dw BattleAnim_ResetLCDStatCustom
+
+.zero
+	call BattleBGEffects_IncrementJumptable
+	call BattleBGEffects_ClearLYOverrides
+	ld hl, rIE
+	set LCD_STAT, [hl]
+	ld a, LOW(rSCY)
+	call BattleBGEffect_SetLCDStatCustoms2
+	ldh a, [hLYOverrideEnd]
+	inc a
+	ldh [hLYOverrideEnd], a
+	jr .reset_duration
+
+.reload_distance
+	; Toggles between distances.
+	ld hl, BG_EFFECT_STRUCT_03
+	add hl, bc
+	ld a, $80
+	xor [hl]
+	ld [hl], a
+.reset_duration
+	; (Re)set shake duration.
+	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
+	add hl, bc
+	ld a, [hl]
+	and $f0
+	ld [hl], a
+	swap a
+	or [hl]
+	ld [hl], a
+	ret
+
+.one
+	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
+	add hl, bc
+	dec [hl]
+	ld a, [hl]
+	and $f
+	call z, .reload_distance
+
+	ld hl, BG_EFFECT_STRUCT_03
+	add hl, bc
+	ld a, [hl]
+	bit 7, a
+	jr z, .got_distance
+	xor a
+.got_distance
+	jp BGEffect_DisplaceLYOverridesBackup
+
 BattleBGEffect_ShakeScreenY: ; c8d02 (32:4d02)
 	call Functionc8d0b
 	jr nc, .skip
@@ -2577,18 +2635,21 @@ BGEffect_DisplaceLYOverridesBackup: ; c901b (32:501b)
 	; e = a; d = [hLYOverrideEnd] - [hLYOverrideStart] - a
 	push af
 	ld e, a
-	ld a, [hLYOverrideStart]
+	ldh a, [hLYOverrideStart]
 	ld l, a
-	ld a, [hLYOverrideEnd]
+	ldh a, [hLYOverrideEnd]
 	sub l
 	sub e
 	ld d, a
-	ld h, wLYOverridesBackup / $100
-	ld a, [hLYOverrideStart]
+	ld h, HIGH(wLYOverridesBackup)
+	ldh a, [hLYOverrideStart]
 	ld l, a
 	ld a, $90
+	inc e
+	jr .first_iteration
 .loop
 	ld [hli], a
+.first_iteration
 	dec e
 	jr nz, .loop
 	pop af

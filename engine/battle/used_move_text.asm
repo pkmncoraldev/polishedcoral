@@ -53,7 +53,7 @@ MoveTable:
 ;	db ACID
 ;	db EMBER
 ;	db FLAMETHROWER
-	db CALM_MIND                               ; needs update
+;	db CALM_MIND
 ;	db WATER_GUN
 ;	db HYDRO_PUMP
 ;	db SURF
@@ -79,7 +79,7 @@ MoveTable:
 ;	db POISONPOWDER
 ;	db STUN_SPORE
 ;	db SLEEP_POWDER
-	db PETAL_DANCE                             ; needs update
+;	db PETAL_DANCE
 ;	db TAUNT
 ;	db DRAGON_RAGE
 ;	db FIRE_SPIN
@@ -94,30 +94,30 @@ MoveTable:
 ;	db TOXIC
 ;	db CONFUSION
 ;	db PSYCHIC_M
-	db DRAGONHAMMER                            ; needs update
-	db SIGNAL_BEAM                             ; needs update
-	db AGILITY_ROCK_POLISH                     ; needs update?
-	db QUICK_ATTACK
-	db RAGE
-	db TELEPORT
-	db NIGHT_SHADE
-	db DRAGON_PULSE                            ; needs update
-	db SCREECH
-	db DOUBLE_TEAM
-	db BULLDOZE                                ; needs update
-	db ROCK_BLAST
-	db MINIMIZE                                ; needs update
-	db SAND_ATTACK_SMOKESCREEN_FLASH
-	db CONFUSE_RAY
-	db AQUA_TAIL                               ; needs update
-	db DEFENSE_CURL_HARDEN_WITHDRAW
-	db BARRIER_IRON_DEFENSE_ACID_ARMOR         ; needs update
-	db LIGHT_SCREEN                            ; needs update
-	db HAZE
-	db REFLECT                                 ; needs update
-	db FOCUS_ENERGY
-	db FLASH_CANNON                            ; needs update
-	db DRAGON_DARTS                            ; needs update
+;	db DRAGONHAMMER
+;	db SIGNAL_BEAM
+;	db AGILITY_ROCK_POLISH
+;	db QUICK_ATTACK
+;	db RAGE
+;	db TELEPORT
+;	db NIGHT_SHADE
+;	db DRAGON_PULSE
+;	db SCREECH
+;	db DOUBLE_TEAM
+;	db BULLDOZE
+;	db ROCK_BLAST
+;	db MINIMIZE
+;	db SAND_ATTACK_SMOKESCREEN_FLASH
+;	db CONFUSE_RAY
+;	db AQUA_TAIL
+;	db DEFENSE_CURL_HARDEN_WITHDRAW
+;	db BARRIER_IRON_DEFENSE_ACID_ARMOR
+;	db LIGHT_SCREEN
+;	db HAZE
+;	db REFLECT
+;	db FOCUS_ENERGY
+;	db FLASH_CANNON
+	db DRAGON_DARTS
 	db SCALD                                   ; needs update
 	db SELFDESTRUCT                            ; needs update
 	db COTTON_GUARD

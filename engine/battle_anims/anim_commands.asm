@@ -992,14 +992,14 @@ BattleAnimCmd_Transform: ; cc5dc (33:45dc)
 	ret
 
 BattleAnimCmd_UpdateActorPic: ; cc622 (33:4622)
-	ld a, [wTileDown]
-	cp BATTLETYPE_PORYGON
-	ret z
 	ld de, VTiles0 tile $00
 	ld a, [hBattleTurn]
 	and a
 	jr z, .player
 
+	ld a, [wTileDown]
+	cp BATTLETYPE_PORYGON
+	ret z
 	ld hl, VTiles2 tile $00
 	lb bc, 0, $31
 	jp Request2bpp

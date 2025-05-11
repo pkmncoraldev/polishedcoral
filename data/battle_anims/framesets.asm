@@ -1390,12 +1390,12 @@ BattleAnimFrameData: ; ce85e
 	endanim
 
 .Frameset_BigRedX
-	frame BATTLEANIMOAMSET_54,  32
-	frame BATTLEANIMOAMSET_54,  16
+	frame BATTLEANIMOAMSET_E6,  32
+	frame BATTLEANIMOAMSET_E6,  16
 	db -3, 4
-	frame BATTLEANIMOAMSET_54,  6
+	frame BATTLEANIMOAMSET_E6,  6
 	db -3, 4
-	frame BATTLEANIMOAMSET_54,  6
+	frame BATTLEANIMOAMSET_E6,  6
 	delanim
 
 .Frameset_IcicleCrash:

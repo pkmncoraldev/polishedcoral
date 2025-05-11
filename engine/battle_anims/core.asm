@@ -17,20 +17,15 @@ QueueBattleAnimation: ; cc9a1 (33:49a1)
 	ld b, h
 	ld hl, wNumActiveBattleAnims
 	inc [hl]
-	jp InitBattleAnimation
-
-DeinitBattleAnimation: ; cc9bd
-	ld hl, BATTLEANIMSTRUCT_INDEX
-	add hl, bc
-	ld [hl], $0
-	ret
+	; fallthrough
 
 ; cc9c4
 
 InitBattleAnimation: ; cc9c4 (33:49c4)
-	ld a, [wBattleAnimTemp0]
+	ld hl, wBattleAnimTemp0
+	ld a, [hli]
 	ld e, a
-	ld d, 0
+	ld d, [hl]
 	ld hl, BattleAnimObjects
 rept 6
 	add hl, de
@@ -76,6 +71,12 @@ endr
 	ld [hli], a ; 0e
 	ld [hli], a ; 0f
 	ld [hl], a  ; 10
+	ret
+
+DeinitBattleAnimation:
+	ld hl, BATTLEANIMSTRUCT_INDEX
+	add hl, bc
+	ld [hl], $0
 	ret
 
 BattleAnimOAMUpdate: ; cca09

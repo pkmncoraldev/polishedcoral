@@ -1089,26 +1089,6 @@ BattleCommand_doturn:
 	jr nz, .no_overflow
 	dec [hl]
 .no_overflow
-	ld a, [wLinkMode]
-	and a
-	jr nz, .skip_double_pp_use
-	ld a, [hBattleTurn]
-	and a
-	jr z, .skip_double_pp_use
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_HEAL
-	jr z, .healing_effect
-	cp EFFECT_WISH
-	jr z, .healing_effect
-	cp EFFECT_HEALING_LIGHT
-	jr nz, .skip_double_pp_use
-.healing_effect
-	; Consume PP
-	call BattleConsumePP
-;	ret nz
-
-.skip_double_pp_use
 	; Consume PP
 	call BattleConsumePP
 	ret nz
@@ -1193,6 +1173,25 @@ BattleConsumePP:
 	ld a, [hl]
 	and $3f
 	ret z
+	ld a, [hBattleTurn]
+	and a
+	jr z, .done_heal
+	push hl
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	pop hl
+	cp EFFECT_HEAL
+	jr z, .heal
+	cp EFFECT_WISH
+	jr z, .heal
+	cp EFFECT_HEALING_LIGHT
+	jr nz, .done_heal
+.heal
+	ld a, [hl]
+	cp 1
+	jr z, .done_heal
+	dec [hl]
+.done_heal
 	dec [hl]
 	ld a, BATTLE_VARS_SUBSTATUS2
 	call GetBattleVar

@@ -793,6 +793,7 @@ LusterTrashcanAsm:
 	ret
 	
 LusterTrashcanAsmBattle:
+	call WaitSFX
 	farcall TrashMonEncounter
 	ld a, BANK(LusterTrashcanWildBattleScript)
 	ld hl, LusterTrashcanWildBattleScript

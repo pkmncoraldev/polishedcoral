@@ -481,6 +481,7 @@ DuskTurnpikeTrashcan:
 	jumptext DuskTurnpikeTrashcanTextOnlyTrash
 
 DuskTurnpikeTrashcanAsm:
+	call WaitSFX
 	farcall TrashMonEncounter
 	ld a, BANK(LusterTrashcanWildBattleScript)
 	ld hl, LusterTrashcanWildBattleScript

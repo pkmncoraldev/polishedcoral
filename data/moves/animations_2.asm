@@ -486,7 +486,6 @@ BattleAnim_Minimize:
 	anim_wait 12
 	anim_ret
 
-
 BattleAnim_Haze:
 	anim_1gfx ANIM_GFX_HAZE
 	anim_sound 0, 1, SFX_SURF
@@ -511,6 +510,103 @@ BattleAnim_DragonDarts:
 	anim_obj ANIM_OBJ_HIT_BIG, 128, 48, $0
 	anim_wait 16
 	anim_ret
+	anim_ret
+
+BattleAnim_Scald:
+	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_MISC, ANIM_GFX_SMOKE_PUFF
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_VERY_BRIGHT
+	anim_bgp $90
+	anim_sound 0, 1, SFX_SURF
+	anim_obj ANIM_OBJ_SCALD, 64, 88, $4
+	anim_wait 4
+	anim_obj ANIM_OBJ_SCALD, 64, 88, $4
+	anim_wait 4
+	anim_obj ANIM_OBJ_SCALD, 64, 88, $4
+	anim_wait 4
+.loop
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 52, $0
+	anim_obj ANIM_OBJ_SCALD, 64, 88, $4
+	anim_obj ANIM_OBJ_SCALD_STEAM, 120, 46, $30
+	anim_wait 1
+	anim_obj ANIM_OBJ_SCALD_STEAM, 144, 34, $30
+	anim_wait 3
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 52, $0
+	anim_obj ANIM_OBJ_SCALD, 64, 88, $4
+	anim_wait 4
+	anim_loop 7, .loop
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 52, $0
+	anim_obj ANIM_OBJ_SCALD_STEAM, 120, 46, $30
+	anim_wait 1
+	anim_obj ANIM_OBJ_SCALD_STEAM, 144, 34, $30
+	anim_wait 3
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 52, $0
+	anim_wait 4
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 52, $0
+	anim_wait 4
+	anim_obj ANIM_OBJ_SCALD_STEAM, 120, 46, $30
+	anim_wait 1
+	anim_obj ANIM_OBJ_SCALD_STEAM, 144, 34, $30
+	anim_wait 7
+	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_FIRE
+	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
+	anim_sound 0, 1, SFX_POISON_STING
+.loop2
+	anim_obj ANIM_OBJ_SCALD_STEAM, 120, 46, $30
+	anim_wait 1
+	anim_obj ANIM_OBJ_SCALD_STEAM, 144, 34, $30
+	anim_wait 8
+	anim_loop 6, .loop2
+	anim_wait 8
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING
+	anim_ret
+
+BattleAnim_Waterfall:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BUBBLE
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_BUBBLE
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_RISING_BUBBLE, 64, 104, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_RISING_BUBBLE, 32, 104, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_RISING_BUBBLE, 48, 104, $0
+	anim_wait 32
+	anim_clearobjs
+	anim_wait 1
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect ANIM_BG_BODY_SLAM, $0, $1, $0
+	anim_wait 16
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_wait 4
+	anim_clearobjs
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
+	anim_sound 0, 1, SFX_BUBBLE_BEAM
+	anim_wait 8
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 64, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $50
+	anim_wait 3
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $50
+	anim_wait 3
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 48, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 48, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 48, $50
+	anim_wait 3
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 40, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 40, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 40, $50
+	anim_wait 3
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 32, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 32, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 32, $50
+	anim_wait 8
 	anim_ret
 
 BattleAnim_TargetObj_1Row_1:

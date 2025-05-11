@@ -55,7 +55,7 @@ AnimObjGFX:
 	anim_obj_gfx 13, AnimObjTauntGFX
 	anim_obj_gfx 18, AnimObjWoodGFX
 	anim_obj_gfx 16, AnimObjHugeRockGFX
-	anim_obj_gfx  6, AnimObjIcicleGFX
+	anim_obj_gfx  6, AnimObjIcicleCrashGFX
 	anim_obj_gfx  9, AnimObjTearGFX
 	anim_obj_gfx 32, AnimObjVortexGFX
 	anim_obj_gfx  4, AnimObjCottonGFX

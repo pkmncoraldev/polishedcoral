@@ -117,20 +117,20 @@ MoveTable:
 ;	db REFLECT
 ;	db FOCUS_ENERGY
 ;	db FLASH_CANNON
-	db DRAGON_DARTS
-	db SCALD                                   ; needs update
-	db SELFDESTRUCT                            ; needs update
-	db COTTON_GUARD
-	db JUMP_KICK
-	db PSYSHOCK                                ; needs update
-	db VENOSHOCK
-	db EARTH_POWER
-	db FIRE_BLAST                              ; needs update
-	db WATERFALL                               ; needs update
-	db ICICLE_CRASH                            ; needs update
-	db SWIFT
-	db MIRROR_MOVE
-	db ROCK_WRECKER
+;	db DRAGON_DARTS
+;	db SCALD
+;	db SELFDESTRUCT
+;	db COTTON_GUARD
+;	db JUMP_KICK
+;	db PSYSHOCK
+;	db VENOSHOCK
+;	db EARTH_POWER
+;	db FIRE_BLAST
+;	db WATERFALL
+;	db ICICLE_CRASH
+;	db SWIFT
+;	db MIRROR_MOVE
+	db ROCK_WRECKER                            ; needs update
 	db WORK_UP_GROWTH
 	db AMNESIA
 	db ROOST                                   ; needs update

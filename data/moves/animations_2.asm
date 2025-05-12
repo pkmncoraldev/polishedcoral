@@ -324,20 +324,22 @@ BattleAnim_BugBuzz:
 	anim_ret
 	
 BattleAnim_DrainPunch:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PEACH
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_CHARGE
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $8, $2, $0
 	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_obj ANIM_OBJ_LONG_PUNCH, 136, 52, $0
 	anim_wait 16
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $6, $0
 .loop
 	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_DREAM_EATER, 128, 48, $2
+	anim_obj ANIM_OBJ_ABSORB, 128, 48, $2
 	anim_wait 3
 	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_DREAM_EATER, 136, 64, $3
+	anim_obj ANIM_OBJ_ABSORB, 136, 64, $3
 	anim_wait 4
 	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_DREAM_EATER, 136, 32, $4
+	anim_obj ANIM_OBJ_ABSORB, 136, 32, $4
 	anim_wait 3
 	anim_loop 6, .loop
 	anim_wait 32
@@ -704,6 +706,64 @@ BattleAnim_TriAttack:
 	anim_sound 0, 1, SFX_THUNDER
 	anim_obj ANIM_OBJ_THUNDER_RIGHT, 152, 68, $0
 	anim_wait 16
+	anim_ret
+
+BattleAnim_TwinBeam:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PSYCHO_BOOST_2
+	anim_1gfx ANIM_GFX_BEAM
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW_FULL_SHIFT, $0, $2, $0
+	anim_incbgeffect ANIM_BG_ALTERNATE_HUES
+	anim_sound 6, 2, SFX_LEER
+	anim_obj ANIM_OBJ_LEER, 72, 84, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_LEER, 88, 76, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_LEER, 104, 68, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_LEER, 120, 60, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_LEER_TIP, 130, 54, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $8, $2, $0
+	anim_wait 24
+	anim_clearobjs
+	anim_sound 6, 2, SFX_LEER
+	anim_obj ANIM_OBJ_LEER, 64, 80, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_LEER, 80, 72, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_LEER, 96, 64, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_LEER, 112, 56, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_LEER_TIP, 122, 50, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $8, $2, $0
+	anim_wait 24
+	anim_ret
+
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PSYCHO_BOOST_2
+	anim_1gfx ANIM_GFX_POISON
+	anim_call BattleAnim_FollowEnemyFeet_1
+	anim_bgeffect ANIM_BG_BLACK_HUES, $0, $8, $0
+	anim_sound 6, 2, SFX_SLUDGE_BOMB
+	anim_obj ANIM_OBJ_ACID, 64, 92, $10
+	anim_wait 36
+	anim_sound 0, 1, SFX_THUNDER
+	anim_wait 8
+	anim_bgp $1b
+.loop
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 132, 72, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 116, 72, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 148, 72, $0
+	anim_wait 8
+	anim_loop 4, .loop
+	anim_wait 24
+	anim_call BattleAnim_ShowMon_1
 	anim_ret
 
 BattleAnim_TargetObj_1Row_1:

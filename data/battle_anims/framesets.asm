@@ -240,6 +240,8 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_BulkUp                  ; BATTLEANIMFRAMESET_BULK_UP
 	dw .Frameset_SpinningTriangle        ; BATTLEANIMFRAMESET_SPINNING_TRIANGLE
 	dw .Frameset_SpinningTriangleSlow    ; BATTLEANIMFRAMESET_SPINNING_TRIANGLE_SLOW
+	dw .Frameset_GyroBall                ; BATTLEANIMFRAMESET_GYRO_BALL
+	
 
 	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
 .Frameset_HitBig:
@@ -1730,4 +1732,15 @@ BattleAnimFrameData: ; ce85e
 	frame BATTLEANIMOAMSET_101,  2
 	frame BATTLEANIMOAMSET_100,  2, OAM_Y_FLIP
 	frame BATTLEANIMOAMSET_101,  2, OAM_X_FLIP
+	dorestart
+
+.Frameset_GyroBall:
+	frame BATTLEANIMOAMSET_102,  1
+	frame BATTLEANIMOAMSET_48,   1
+	frame BATTLEANIMOAMSET_10E,  1
+	frame BATTLEANIMOAMSET_10F,  1
+	frame BATTLEANIMOAMSET_102,  1, OAM_X_FLIP, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_48,   1, OAM_X_FLIP, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_10E,  1, OAM_X_FLIP, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_10F,  1, OAM_X_FLIP, OAM_Y_FLIP
 	dorestart

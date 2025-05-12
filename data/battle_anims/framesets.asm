@@ -236,6 +236,10 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_PoisonJabW              ; BATTLEANIMFRAMESET_POISON_JAB_W
 	dw .Frameset_PoisonJabNW             ; BATTLEANIMFRAMESET_POISON_JAB_NW
 	dw .Frameset_BouncingMushroom        ; BATTLEANIMFRAMESET_BOUNCING_MUSHROOM
+	dw .Frameset_ClearSmog               ; BATTLEANIMFRAMESET_CLEAR_SMOG
+	dw .Frameset_BulkUp                  ; BATTLEANIMFRAMESET_BULK_UP
+	dw .Frameset_SpinningTriangle        ; BATTLEANIMFRAMESET_SPINNING_TRIANGLE
+	dw .Frameset_SpinningTriangleSlow    ; BATTLEANIMFRAMESET_SPINNING_TRIANGLE_SLOW
 
 	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
 .Frameset_HitBig:
@@ -1701,3 +1705,29 @@ BattleAnimFrameData: ; ce85e
 .Frameset_PoisonJabNW:
 	frame BATTLEANIMOAMSET_6D,  32, OAM_X_FLIP
 	endanim
+
+.Frameset_ClearSmog:
+	frame BATTLEANIMOAMSET_20,  2
+	frame BATTLEANIMOAMSET_21,  2
+	frame BATTLEANIMOAMSET_1B,  2
+	endanim
+
+.Frameset_BulkUp:
+	frame BATTLEANIMOAMSET_FE,  32
+	frame BATTLEANIMOAMSET_FF,  24
+	frame BATTLEANIMOAMSET_FF,  24
+	endanim
+
+.Frameset_SpinningTriangle:
+	frame BATTLEANIMOAMSET_100,  0
+	frame BATTLEANIMOAMSET_101,  0
+	frame BATTLEANIMOAMSET_100,  0, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_101,  0, OAM_X_FLIP
+	dorestart
+
+.Frameset_SpinningTriangleSlow:
+	frame BATTLEANIMOAMSET_100,  2
+	frame BATTLEANIMOAMSET_101,  2
+	frame BATTLEANIMOAMSET_100,  2, OAM_Y_FLIP
+	frame BATTLEANIMOAMSET_101,  2, OAM_X_FLIP
+	dorestart

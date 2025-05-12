@@ -71,14 +71,14 @@ DoBattleAnimFrame: ; ccfbe
 	dw BattleAnimFunction_31 ; 31
 	dw BattleAnimFunction_32 ; 32
 	dw BattleAnimFunction_33 ; 33
-	dw BattleAnimFunction_34 ; 34
+	dw BattleAnimFunction_SmokeFlameWheel ; 34
 	dw BattleAnimFunction_35 ; 35
 	dw BattleAnimFunction_36 ; 36
 	dw BattleAnimFunction_37 ; 37
 	dw BattleAnimFunction_38 ; 38
 	dw BattleAnimFunction_39 ; 39
 	dw BattleAnimFunction_3A ; 3a
-	dw BattleAnimFunction_3B ; 3b
+	dw BattleAnimFunction_Agility ; 3b
 	dw BattleAnimFunction_SacredFire ; 3c
 	dw BattleAnimFunction_3D ; 3d
 	dw BattleAnimFunction_3E ; 3e
@@ -2719,7 +2719,7 @@ Functioncdf60: ; cdf60 (33:5f60)
 .next
 	jp BattleAnim_IncAnonJumptableIndex
 
-BattleAnimFunction_34: ; cdf8c (33:5f8c)
+BattleAnimFunction_SmokeFlameWheel: ; cdf8c (33:5f8c)
 	ld hl, BATTLEANIMSTRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
@@ -3467,7 +3467,7 @@ BattleAnimFunction_3A: ; ce3d2 (33:63d2)
 	inc [hl]
 	ret
 
-BattleAnimFunction_3B: ; ce3ff (33:63ff)
+BattleAnimFunction_Agility: ; ce3ff (33:63ff)
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw Functionce406

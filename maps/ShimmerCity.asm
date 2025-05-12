@@ -553,7 +553,7 @@ ShimmerCityHorseaKidAsm:
 	farcall SelectTradeOrDaycareMon
 	jr c, .cancel
 	ld a, [wCurPartySpecies]
-	cp BULBASAUR ;TODO
+	cp HORSEA
 	jr z, .yes
 	ld a, FALSE
 	ld [wScriptVar], a
@@ -644,7 +644,7 @@ ShimmerCityNpc4Text2:
 	done
 	
 ShimmerCityNpc4Text3:
-	text "Oh thank you!<WAIT_M>"
+	text "Oh, thank you!<WAIT_S>"
 	line "Thank you!"
 	done
 	
@@ -670,7 +670,7 @@ ShimmerCityNpc4Text7:
 	done
 	
 ShimmerCityNpc4Text8:
-	text "Thank you!<WAIT_M>"
+	text "Thank you!<WAIT_S>"
 	line "Thank you!"
 	
 	para "I love my HORSEA!"

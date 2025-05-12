@@ -104,37 +104,6 @@ LoadBuyMonIcon::
 	ld [wPlaceBallsX], a
 	ret
 .clear
-	ld a, [wPlaceBallsX]
-	cp 0
-	jr z, .first2
-	cp 1
-	jr z, .second2
-	cp 2
-	jr z, .third2
-	cp 3
-	jr z, .forth2
-	jr .fifth2
-.first2
-	ld de, NoItemIcon
-	lb bc, BANK(NoItemIcon), 4
-	ld hl, VTiles0 tile $68
-	call Get2bpp
-.second2
-	ld de, NoItemIcon
-	lb bc, BANK(NoItemIcon), 4
-	ld hl, VTiles0 tile $6c
-	call Get2bpp
-.third2
-	ld de, NoItemIcon
-	lb bc, BANK(NoItemIcon), 4
-	ld hl, VTiles0 tile $70
-	call Get2bpp
-.forth2
-	ld de, NoItemIcon
-	lb bc, BANK(NoItemIcon), 4
-	ld hl, VTiles0 tile $74
-	call Get2bpp
-.fifth2
 	ld de, NoItemIcon
 	lb bc, BANK(NoItemIcon), 4
 	ld hl, VTiles0 tile $78

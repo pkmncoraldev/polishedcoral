@@ -70,9 +70,9 @@ BuyMonDescriptions::
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
+	dw HorseaBuyMonDesc
 	dw NoBuyMonDesc
-	dw NoBuyMonDesc
-	dw NoBuyMonDesc
+	dw StaryuBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
 	dw NoBuyMonDesc
@@ -273,3 +273,11 @@ ChinchouBuyMonDesc:
 CarvanhaBuyMonDesc:
 	db   "SAVAGE #MON"
 	next "TYPE: WATER/DARK@"
+	
+HorseaBuyMonDesc:
+	db   "DRAGON #MON"
+	next "TYPE: WATER@"
+	
+StaryuBuyMonDesc:
+	db   "STARSHAPE #MON"
+	next "TYPE: WATER@"

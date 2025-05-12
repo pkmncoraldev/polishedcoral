@@ -53,7 +53,7 @@ MartDialog:
 	jp StandardMart
 
 BerryMarket:
-	call FarReadMart
+	call FarReadTMMart
 	call LoadStandardMenuDataHeader
 	ld hl, Text_BerryMarket_Intro
 	call MartTextBox

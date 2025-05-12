@@ -7,6 +7,7 @@ EvolvePokemon:
 	ld b, SET_FLAG
 	call EvoFlagAction
 EvolveAfterBattle:
+	call Load1bppFont
 	xor a
 	ld [wMonTriedToEvolve], a
 	dec a

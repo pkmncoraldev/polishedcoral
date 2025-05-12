@@ -130,24 +130,24 @@ MoveTable:
 ;	db ICICLE_CRASH
 ;	db SWIFT
 ;	db MIRROR_MOVE
-	db ROCK_WRECKER                            ; needs update
-	db WORK_UP_GROWTH
-	db AMNESIA
-	db ROOST                                   ; needs update
-	db SOFTBOILED_MILK_DRINK_RECOVER
-	db HI_JUMP_KICK
-	db FIERY_DANCE                             ; needs update
-	db DREAM_EATER                             ; needs update
-	db POISON_JAB                              ; needs update
-	db BULLET_PUNCH
-	db LEECH_LIFE                              ; needs update
-	db DOUBLE_HIT                              ; needs update
-	db BRAVE_BIRD                              ; needs update
-	db TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
-	db TOXIC_SPIKES
-	db POISON_FANG
-	db SPORE
-	db UNUSED
+;	db ROCK_WRECKER
+;	db WORK_UP_GROWTH
+;	db AMNESIA
+;	db ROOST
+;	db SOFTBOILED_MILK_DRINK_RECOVER
+;	db HI_JUMP_KICK
+;	db FIERY_DANCE
+;	db DREAM_EATER
+;	db POISON_JAB
+;	db BULLET_PUNCH
+;	db LEECH_LIFE
+;	db DOUBLE_HIT
+;	db BRAVE_BIRD
+;	db TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
+;	db TOXIC_SPIKES
+;	db POISON_FANG
+;	db SPORE
+;	db UNUSED
 	db LOCK_ON_MIND_READER
 	db CLEAR_SMOG
 	db DRAGON_DANCE

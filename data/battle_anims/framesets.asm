@@ -226,6 +226,16 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_SlowGrowingGlow         ; BATTLEANIMFRAMESET_SLOW_GROWING_GLOW
 	dw .Frameset_FlashCannonSparks       ; BATTLEANIMFRAMESET_FLASH_CANNON_SPARKS
 	dw .Frameset_DragonDarts             ; BATTLEANIMFRAMESET_DRAGON_DARTS
+	dw .Frameset_EnergyOrbTinyLong       ; BATTLEANIMFRAMESET_ENERGY_ORB_TINY_LONG
+	dw .Frameset_PoisonJabN              ; BATTLEANIMFRAMESET_POISON_JAB_N
+	dw .Frameset_PoisonJabNE             ; BATTLEANIMFRAMESET_POISON_JAB_NE
+	dw .Frameset_PoisonJabE              ; BATTLEANIMFRAMESET_POISON_JAB_E
+	dw .Frameset_PoisonJabSE             ; BATTLEANIMFRAMESET_POISON_JAB_SE
+	dw .Frameset_PoisonJabS              ; BATTLEANIMFRAMESET_POISON_JAB_S
+	dw .Frameset_PoisonJabSW             ; BATTLEANIMFRAMESET_POISON_JAB_SW
+	dw .Frameset_PoisonJabW              ; BATTLEANIMFRAMESET_POISON_JAB_W
+	dw .Frameset_PoisonJabNW             ; BATTLEANIMFRAMESET_POISON_JAB_NW
+	dw .Frameset_BouncingMushroom        ; BATTLEANIMFRAMESET_BOUNCING_MUSHROOM
 
 	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
 .Frameset_HitBig:
@@ -1130,8 +1140,8 @@ BattleAnimFrameData: ; ce85e
 	db -1
 
 .Frameset_Feather:
-	db BATTLEANIMOAMSET_6B, $08
-	db -1
+	frame BATTLEANIMOAMSET_6B, $08
+	endanim
 
 .Frameset_SpiderWeb:
 	db BATTLEANIMOAMSET_B7, $20
@@ -1216,7 +1226,7 @@ BattleAnimFrameData: ; ce85e
 	db -2
 
 .Frameset_CurseNail:
-	db BATTLEANIMOAMSET_C4, $20
+	db BATTLEANIMOAMSET_6D, $20
 	db -1
 
 .Frameset_ForesightShine:
@@ -1646,4 +1656,48 @@ BattleAnimFrameData: ; ce85e
 
 .Frameset_DragonDarts:
 	frame BATTLEANIMOAMSET_CE,  8
+	endanim
+
+.Frameset_EnergyOrbTinyLong:
+	frame BATTLEANIMOAMSET_20,  8
+	dorestart
+
+.Frameset_PoisonJabN:
+	frame BATTLEANIMOAMSET_6C,  32, OAM_Y_FLIP
+	endanim
+
+.Frameset_PoisonJabNE:
+	frame BATTLEANIMOAMSET_6D,  32
+	endanim
+
+.Frameset_PoisonJabE:
+	frame BATTLEANIMOAMSET_6B,  32
+	endanim
+
+.Frameset_PoisonJabSE:
+	frame BATTLEANIMOAMSET_6D,  32, OAM_Y_FLIP
+	endanim
+
+.Frameset_PoisonJabS:
+	frame BATTLEANIMOAMSET_6C,  32
+	endanim
+
+.Frameset_PoisonJabSW:
+	frame BATTLEANIMOAMSET_6D,  32, OAM_X_FLIP, OAM_Y_FLIP
+	endanim
+
+.Frameset_BouncingMushroom:
+	frame BATTLEANIMOAMSET_MUSHROOM_2, 16
+	frame BATTLEANIMOAMSET_MUSHROOM_3, 16
+	frame BATTLEANIMOAMSET_MUSHROOM_2,  4
+	frame BATTLEANIMOAMSET_MUSHROOM_1,  2
+	frame BATTLEANIMOAMSET_MUSHROOM_2, 32
+	endanim
+
+.Frameset_PoisonJabW:
+	frame BATTLEANIMOAMSET_6B,  32, OAM_X_FLIP
+	delanim
+
+.Frameset_PoisonJabNW:
+	frame BATTLEANIMOAMSET_6D,  32, OAM_X_FLIP
 	endanim

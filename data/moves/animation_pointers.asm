@@ -280,3 +280,4 @@ BattleAnimations::
 	dba BattleAnim_Shake
 	dba BattleAnim_HitConfusion
 	dba BattleAnim_Sharpen
+	dba BattleAnim_HeldItemTrigger

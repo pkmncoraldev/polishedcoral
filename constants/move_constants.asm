@@ -283,6 +283,7 @@
 	const ANIM_SHAKE             ; $115
 	const ANIM_HIT_CONFUSION     ; $116
 	const ANIM_SHARPEN           ; $117
+	const ANIM_HELD_ITEM_TRIGGER ; $118
 
 ; wNumHits uses offsets from ANIM_MISS
 	const_def

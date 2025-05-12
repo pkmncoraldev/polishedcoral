@@ -75,6 +75,8 @@ AnimObjGFX:
 	anim_obj_gfx  6, AnimObjRockPolishGFX
 	anim_obj_gfx  5, AnimObjMisc2GFX
 	anim_obj_gfx 12, AnimObjDragonDartsGFX
+	anim_obj_gfx  4, AnimObjWindBGGFX
+	anim_obj_gfx 18, AnimObjMushroomGFX
 	anim_obj_gfx 10, AnimObjPokeBall2GFX
 	anim_obj_gfx 10, AnimObjPokeBall3GFX
 	anim_obj_gfx  1, NULL

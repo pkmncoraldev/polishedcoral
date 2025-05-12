@@ -4694,7 +4694,7 @@ ItemRecoveryAnim::
 	xor a
 	ld [wKickCounter], a
 	call EmptyBattleTextBox
-	ld a, SOFTBOILED_MILK_DRINK_RECOVER
+	ld a, ANIM_HELD_ITEM_TRIGGER
 	ld [wFXAnimIDLo], a
 	xor a
 	ld [wNumHits], a

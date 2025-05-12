@@ -105,8 +105,13 @@ BattleAnim_DragonClaw:
 	anim_ret
 	
 BattleAnim_AuraSphere:
-	anim_2gfx ANIM_GFX_VORTEX, ANIM_GFX_WIND
-	anim_call BattleAnimSub_AgilitySmall
+	anim_2gfx ANIM_GFX_VORTEX, ANIM_GFX_WIND_BG
+	anim_obj ANIM_OBJ_AGILITY, 8, 24, $10
+	anim_obj ANIM_OBJ_AGILITY, 8, 48, $2
+	anim_wait 4
+	anim_obj ANIM_OBJ_AGILITY, 8, 56, $c
+	anim_obj ANIM_OBJ_AGILITY, 8, 80, $4
+	anim_obj ANIM_OBJ_AGILITY, 8, 104, $e
 	anim_sound 6, 2, SFX_OUTRAGE
 	anim_obj ANIM_OBJ_VORTEX, 48, 96, $30
 	anim_wait 63
@@ -445,7 +450,7 @@ BattleAnim_StoneEdge:
 	anim_ret
 
 BattleAnim_NightSlash:
-	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_WIND
+	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_WIND_BG
 	anim_bgp $1b
 	anim_obp0 $c0
 	anim_obj ANIM_OBJ_AGILITY, 8, 24, $10
@@ -607,6 +612,60 @@ BattleAnim_Waterfall:
 	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 32, $d0
 	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 32, $50
 	anim_wait 8
+	anim_ret
+
+BattleAnim_FieryDance:
+	anim_2gfx ANIM_GFX_CHARGE, ANIM_GFX_FIRE
+	anim_call BattleAnim_TargetObj_1Row_1
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_FIRE
+	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_FIRE
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+	anim_sound 0, 1, SFX_SWORDS_DANCE
+	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+	anim_bgeffect ANIM_BG_FLAIL, $0, $1, $0
+.loop
+	anim_obj ANIM_OBJ_TINY_RISING_ORB, 56, 90, $30
+	anim_wait 4
+	anim_obj ANIM_OBJ_TINY_RISING_ORB, 40, 90, $20
+	anim_wait 4
+	anim_obj ANIM_OBJ_TINY_RISING_ORB, 60, 106, $10
+	anim_wait 4
+	anim_obj ANIM_OBJ_TINY_RISING_ORB, 36, 106, $0
+	anim_wait 4
+	anim_loop 2, .loop
+	anim_wait 32
+	anim_incbgeffect ANIM_BG_FLAIL
+	anim_call BattleAnim_ShowMon_0_1
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+	anim_wait 1
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_FIRE
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_YELLOW
+	anim_setbgpal PAL_BATTLE_BG_PLAYER, PAL_BTLCUSTOM_HEAT_BG
+	anim_setbgpal PAL_BATTLE_BG_ENEMY, PAL_BTLCUSTOM_HEAT_BG
+	anim_setbgpal PAL_BATTLE_BG_ENEMY_HP, PAL_BTLCUSTOM_HEAT_BG
+	anim_setbgpal PAL_BATTLE_BG_PLAYER_HP, PAL_BTLCUSTOM_HEAT_BG
+	anim_setbgpal PAL_BATTLE_BG_EXP_GENDER, PAL_BTLCUSTOM_HEAT_BG
+	anim_setbgpal PAL_BATTLE_BG_STATUS, PAL_BTLCUSTOM_HEAT_BG
+	anim_setbgpal PAL_BATTLE_BG_TYPE_CAT, PAL_BTLCUSTOM_HEAT_BG
+	anim_setbgpal PAL_BATTLE_BG_TEXT, PAL_BTLCUSTOM_HEAT_BG
+	anim_sound 0, 1, SFX_EMBER
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $6, $0
+	anim_obj ANIM_OBJ_GRUDGE, 132, 36, $0
+	anim_wait 16
+	anim_obj ANIM_OBJ_FIERY_DANCE_FLAME, 132, 62, $0
+	anim_wait 16
+	anim_obj ANIM_OBJ_GRUDGE, 132, 54, $0
+	anim_wait 16
+	anim_obj ANIM_OBJ_FIERY_DANCE_FLAME, 132, 48, $0
+	anim_wait 16
+	anim_obj ANIM_OBJ_GRUDGE, 132, 64, $0
+	anim_wait 16
+	anim_obj ANIM_OBJ_FIERY_DANCE_FLAME, 132, 36, $0
+	anim_wait 16
+	anim_obj ANIM_OBJ_GRUDGE, 132, 38, $0
+	anim_wait 16
+	anim_obj ANIM_OBJ_FIERY_DANCE_FLAME, 132, 64, $0
+	anim_wait 32
 	anim_ret
 
 BattleAnim_TargetObj_1Row_1:

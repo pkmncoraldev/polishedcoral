@@ -79,7 +79,7 @@ DoBattleAnimFrame: ; ccfbe
 	dw BattleAnimFunction_39 ; 39
 	dw BattleAnimFunction_3A ; 3a
 	dw BattleAnimFunction_3B ; 3b
-	dw BattleAnimFunction_3C ; 3c
+	dw BattleAnimFunction_SacredFire ; 3c
 	dw BattleAnimFunction_3D ; 3d
 	dw BattleAnimFunction_3E ; 3e
 	dw BattleAnimFunction_3F ; 3f
@@ -88,7 +88,7 @@ DoBattleAnimFrame: ; ccfbe
 	dw BattleAnimFunction_42 ; 42
 	dw BattleAnimFunction_43 ; 43
 	dw BattleAnimFunction_44 ; 44
-	dw BattleAnimFunction_45 ; 45
+	dw BattleAnimFunction_HiddenPower ; 45
 	dw BattleAnimFunction_46 ; 46
 	dw BattleAnimFunction_47 ; 47
 	dw BattleAnimFunction_48 ; 48
@@ -115,6 +115,10 @@ DoBattleAnimFrame: ; ccfbe
 	dw BattleAnimFunction_RadialMoveOut_Fast
 	dw BattleAnimFunction_BubbleSplash
 	dw BattleAnimFunction_LastResort
+	dw BattleAnimFunction_Roost
+	dw BattleAnimFunction_RadialMoveIn
+	dw BattleAnimFunction_DarkPulse
+	dw BattleAnimFunction_RadialMoveOut_Spore
 
 BattleAnimFunction_Null: ; cd06e (33:506e)
 	call BattleAnim_AnonJumptable
@@ -2756,7 +2760,7 @@ BattleAnimFunction_34: ; cdf8c (33:5f8c)
 .asm_cdfc7
 	jp FarDeinitBattleAnimation
 
-BattleAnimFunction_3C: ; cdfcb (33:5fcb)
+BattleAnimFunction_SacredFire: ; cdfcb (33:5fcb)
 	ld hl, BATTLEANIMSTRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
@@ -3698,7 +3702,7 @@ BattleAnimFunction_44: ; ce532 (33:6532)
 	ld [hl], a
 	ret
 
-BattleAnimFunction_45: ; ce55b (33:655b)
+BattleAnimFunction_HiddenPower: ; ce55b (33:655b)
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw Functionce564
@@ -3735,7 +3739,7 @@ Functionce577: ; ce577 (33:6577)
 	jp FarDeinitBattleAnimation
 
 asm_ce58f: ; ce58f (33:658f)
-	jp Functionce6f1
+	jp BattleAnim_StepCircle
 
 BattleAnimFunction_46: ; ce593 (33:6593)
 	call BattleAnim_AnonJumptable
@@ -3952,7 +3956,7 @@ BattleAnimFunction_4C: ; ce6b3 (33:66b3)
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
-	jp Functionce6f1
+	jp BattleAnim_StepCircle
 
 BattleAnimFunction_4F: ; ce6bf (33:66bf)
 	ld d, $18
@@ -3964,7 +3968,7 @@ BattleAnimFunction_4F: ; ce6bf (33:66bf)
 	ld hl, BATTLEANIMSTRUCT_PARAM
 	add hl, bc
 	add [hl]
-	jp Functionce6f1
+	jp BattleAnim_StepCircle
 
 BattleAnimFunction_4D: ; ce6d2 (33:66d2)
 	ld hl, BATTLEANIMSTRUCT_VAR1
@@ -3987,7 +3991,7 @@ BattleAnimFunction_4D: ; ce6d2 (33:66d2)
 .asm_ce6ed
 	jp FarDeinitBattleAnimation
 
-Functionce6f1: ; ce6f1 (33:66f1)
+BattleAnim_StepCircle: ; ce6f1 (33:66f1)
 	push af
 	push de
 	call Sine
@@ -4339,6 +4343,12 @@ BattleAnimFunction_RadialMoveOut_Fast:
 	dw InitRadial
 	dw Step_Fast
 
+BattleAnimFunction_RadialMoveOut_Spore:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_Spore
+
 InitRadial:
 	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
@@ -4352,6 +4362,14 @@ Step:
 	ld hl, 6.0 >> 8 ; speed
 	call Set_Rad_Pos
 	cp 80 ; final position
+	jp nc, FarDeinitBattleAnimation
+	jr Rad_Move
+
+Step_Spore:
+	call Get_Rad_Pos
+	ld hl, 3.0 >> 8 ; speed
+	call Set_Rad_Pos
+	cp 40 ; final position
 	jp nc, FarDeinitBattleAnimation
 	jr Rad_Move
 
@@ -4540,3 +4558,109 @@ BattleAnimFunction_LastResort:
 	and a
 	ret nz
 	jp FarDeinitBattleAnimation
+
+BattleAnimFunction_Roost:
+; Moves object in a circle where the height is 1/8 the width, while also moving downward 1 pixel per frame
+; Obj Param: Defines where the object starts in the circle
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	ld d, $18
+	call Sine
+	sra a
+	sra a
+	sra a
+	ld hl, BATTLEANIMSTRUCT_VAR2
+	add hl, bc
+	add [hl]
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	inc [hl]
+	ld d, $18
+	call Cosine
+	ld hl, BATTLEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	inc [hl]
+	ld a, [hl]
+	and $7
+	ret nz
+	ld hl, BATTLEANIMSTRUCT_VAR2
+	add hl, bc
+	ld a, [hl]
+	cp $1e
+	jp nc, FarDeinitBattleAnimation
+	inc [hl]
+	inc [hl]
+	ret
+
+BattleAnimFunction_RadialMoveIn:
+	call BattleAnim_AnonJumptable
+
+	dw .zero
+	dw .one
+
+.zero
+	call BattleAnim_IncAnonJumptableIndex
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, 40
+	ld [hli], a
+	ld [hl], 0
+.one
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld d, [hl]
+	push af
+	push de
+	call Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	pop de
+	pop af
+	call Cosine
+	ld hl, BATTLEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+	ld hl, -4.5 >> 8
+	add hl, de
+	jp nc, FarDeinitBattleAnimation
+	ld e, l
+	ld d, h
+	ld hl, BATTLEANIMSTRUCT_VAR2
+	add hl, bc
+	ld a, e
+	ld [hld], a
+	ld [hl], d
+	ret
+
+BattleAnimFunction_DarkPulse:
+; Expands object out in a ring around position at 1 pixel at a time for 13 frames and then disappears
+; Obj Param: Defines starting position in circle
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	cp $80
+	jp nc, FarDeinitBattleAnimation
+	ld d, a
+	add $2
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	jp BattleAnim_StepCircle

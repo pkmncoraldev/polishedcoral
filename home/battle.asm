@@ -588,9 +588,6 @@ CheckIfUserIsFlyingType::
 CheckIfUserIsPoisonType::
 	ld a, POISON
 	jr CheckIfUserIsSomeType
-CheckIfUserIsGhostType::
-	ld a, GHOST
-	jr CheckIfUserIsSomeType
 CheckIfUserIsGroundType::
 	ld a, GROUND
 	jr CheckIfUserIsSomeType

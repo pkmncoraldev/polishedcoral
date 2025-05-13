@@ -6469,9 +6469,6 @@ CheckIfTrappedByAbility:
 .CheckOpponentTrap:
 	call CallOpponentTurn
 .CheckTrap:
-	; Ghost types are immune to all trapping abilities
-	call CheckIfUserIsGhostType
-	jr z, .not_trapped
 	ld a, BATTLE_VARS_ABILITY_OPP
 	call GetBattleVar
 	cp MAGNET_PULL
@@ -6978,12 +6975,6 @@ BattleCommand_traptarget: ; 36c2d
 	ret nz
 	call CheckSubstituteOpp
 	ret nz
-	push bc
-	push de
-	call CheckIfTargetIsGhostType
-	pop de
-	pop bc
-	ret z
 	push bc
 	push de
 	push hl
@@ -8269,10 +8260,6 @@ BattleCommand_arenatrap: ; 37517
 	call GetBattleVarAddr
 	bit SUBSTATUS_CANT_RUN, [hl]
 	jr nz, .failed
-
-	; Don't trap Ghost types
-	call CheckIfTargetIsGhostType
-	jr z, .immune
 
 	; Otherwise trap the opponent.
 	set SUBSTATUS_CANT_RUN, [hl]

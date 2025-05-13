@@ -33,13 +33,6 @@ AI_SwitchOrTryItem: ; 38000
 	ld a, b
 	ld [hBattleTurn], a
 	jr z, DontSwitch
-	call SetEnemyTurn
-	push bc
-	call CheckIfUserIsGhostType
-	pop bc
-	ld a, b
-	ld [hBattleTurn], a
-	jr z, .can_switch
 
 	ld a, [wPlayerSubStatus2]
 	bit SUBSTATUS_CANT_RUN, a

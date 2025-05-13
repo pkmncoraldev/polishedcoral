@@ -894,6 +894,7 @@ BattlePack: ; 10493
 	ld [wCurrPocket], a
 	call ClearPocketList
 	call ClearSprites
+	call DrawPocketName
 	xor a
 	ld [hBGMapMode], a
 	call WaitBGMap_DrawPackGFX
@@ -1238,6 +1239,7 @@ InitPocket: ; 10762 (4:4762)
 	call ClearPocketList
 	call Pack_ClearOBPalettes
 	call ClearSprites
+	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
 	jp WaitBGMap_DrawPackGFX
 

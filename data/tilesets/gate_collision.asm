@@ -97,7 +97,7 @@
 	tilecoll WALL, WALL, COUNTER, SKATE ; 60
 	tilecoll WALL, WALL, SKATE, SKATE ; 61
 	tilecoll WALL, SKATE, WALL, FLOOR ; 62
-	tilecoll SKATE, SKATE, WALL, FLOOR ; 63
+	tilecoll SKATE, SKATE, COUNTER, FLOOR ; 63
 	tilecoll SKATE, FLOOR, WALL, WALL ; 64
 	tilecoll FLOOR, SKATE, WALL, WALL ; 65
 	tilecoll WALL, SKATE, WALL, WALL ; 66

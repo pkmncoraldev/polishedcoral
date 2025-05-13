@@ -253,13 +253,13 @@ UnderwaterTemple1CorsolaTextGone:
 	
 UnderwaterTemple1MakeSilverBrown:
 	clearevent EVENT_UNDERWATER_TEMPLE_GREEN
-	loadvar wTimeOfDayPalFlags, $40 | 1
+	loadvar wTimeOfDayPalFlags, $40 | 0
 	dotrigger $0
 	end
 	
 UnderwaterTemple1MakeSilverGreen:
 	setevent EVENT_UNDERWATER_TEMPLE_GREEN
-	loadvar wTimeOfDayPalFlags, $40 | 0
+	loadvar wTimeOfDayPalFlags, $40 | 1
 	dotrigger $1
 	end
 	

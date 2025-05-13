@@ -4694,12 +4694,12 @@ ItemRecoveryAnim::
 	xor a
 	ld [wKickCounter], a
 	call EmptyBattleTextBox
-	ld a, ANIM_HELD_ITEM_TRIGGER
+	ld de, ANIM_HELD_ITEM_TRIGGER
 	ld [wFXAnimIDLo], a
 	xor a
 	ld [wNumHits], a
 	ld [wFXAnimIDHi], a
-	predef PlayBattleAnim
+	call Call_PlayBattleAnim
 	pop bc
 	pop de
 	pop hl

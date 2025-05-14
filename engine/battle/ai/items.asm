@@ -713,7 +713,12 @@ AI_TrySwitch: ; 3844b
 ; 3846c
 
 AI_Switch:
-	farjp EnemyMonEntrance
+	ld a, [wCurPartyMon]
+	push af
+	farcall EnemyMonEntrance
+	pop af
+	ld [wCurPartyMon], a
+	ret
 
 AI_HealStatus: ; 384e0
 	ld a, [wCurOTMon]

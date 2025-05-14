@@ -717,9 +717,8 @@ RunContactAbilities:
 	ret
 
 CursedBodyAbility:
-	ld a, 10
-	call BattleRandomRange
-	cp 3
+	call BattleRandom
+	cp 1 + 30 percent
 	ret nc
 	call DisableAnimations
 	; this runs ShowAbilityActivation when relevant

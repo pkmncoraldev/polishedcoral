@@ -1138,6 +1138,7 @@ ClearBattleRAM: ; 2ef18
 	ld [wBattleParticipantsNotFainted], a
 	ld [wCurBattleMon], a
 	ld [wTimeOfDayPal], a
+	ld [wTotalBattleTurns], a
 	ld [wPlayerTurnsTaken], a
 	ld [wEnemyTurnsTaken], a
 	ld [wEvolvableFlags], a

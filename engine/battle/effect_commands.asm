@@ -4,6 +4,9 @@ DoPlayerTurn: ; 34000
 	call CheckUserIsSwitching
 	jr nz, .skip
 	
+	ld hl, wTotalBattleTurns
+	inc [hl]
+	
 	ld hl, wPlayerTurnsTaken
 	inc [hl]
 	

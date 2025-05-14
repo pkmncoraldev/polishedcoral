@@ -358,14 +358,6 @@ PokeBallEffect: ; e8a2
 
 	ld a, [wEnemyMonCatchRate]
 	ld b, a
-	ld a, [wBattleType]
-	cp BATTLETYPE_TRAP
-	jr z, .half
-	cp BATTLETYPE_LEGENDARY
-	jr nz, .skip_half
-.half
-	srl b
-.skip_half
 	ld a, [wCurItem]
 	cp MASTER_BALL
 	jp z, .catch_without_fail
@@ -379,14 +371,28 @@ PokeBallEffect: ; e8a2
 	jp .fail_to_catch
 .normal
 	ld a, [wCurItem]
+	ld c, a
 	ld hl, BallMultiplierFunctionTable
-	call BattleJumptable
 
-	ld a, [wCurItem]
-	cp LEVEL_BALL
-	ld a, b
-	jp z, .skip_hp_calc
+.get_multiplier_loop
+	ld a, [hli]
+	cp $ff
+	jr z, .skip_or_return_from_ball_fn
+	cp c
+	jr z, .call_ball_function
+	inc hl
+	inc hl
+	jr .get_multiplier_loop
 
+.call_ball_function
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld de, .skip_or_return_from_ball_fn
+	push de
+	jp hl
+
+.skip_or_return_from_ball_fn
 	ld a, b
 	ld [hMultiplicand + 2], a
 
@@ -461,13 +467,22 @@ PokeBallEffect: ; e8a2
 .addstatus
 	ld a, b
 	add c
-	jr nc, .max_1
+	jr nc, .skip_hp_calc
 	ld a, $ff
-.max_1
 
 .skip_hp_calc
 	ld b, a
+	ld a, [wBattleType]
+	cp BATTLETYPE_TRAP
+	jr z, .half
+	cp BATTLETYPE_LEGENDARY
+	jr nz, .skip_half
+.half
+	srl b
+.skip_half
+	ld a, b
 	ld [wBuffer1], a
+	ld [wSunsetBayTrigger], a		;Used this for debug
 	call Random
 
 	cp b
@@ -1211,7 +1226,7 @@ RepeatBallMultiplier:
 
 TimerBallMultiplier:
 ; multiply catch rate by 1 + (turns passed * 3) / 10, capped at 4
-	ld a, [wPlayerTurnsTaken]
+	ld a, [wTotalBattleTurns]
 	cp 10
 	jr nc, .nocap
 	ld a, 10
@@ -1229,6 +1244,8 @@ TimerBallMultiplier:
 	ld [hMultiplicand + 1], a
 	ld a, b
 	ld [hMultiplicand + 2], a
+
+	push bc
 
 	; hProduct = catch rate * (turns passed * 3)
 	call Multiply
@@ -1252,10 +1269,21 @@ TimerBallMultiplier:
 	ld b, 4
 	call Divide
 
-	; b = hQuotient = catch rate * (turns passed * 3) / 10
-	ld a, [hQuotient + 2]
-	ld b, a
+	pop bc
 
+	ld a, [hQuotient + 1]
+	and a
+	jr nz, .max
+
+	; a = b + hQuotient = catch rate * (1 + (turns passed * 3) / 10)
+	ld a, [hQuotient + 2]
+	add b
+	jr nc, .nomax
+
+.max
+	ld a, $ff
+.nomax
+	ld b, a
 	ret
 
 NestBallMultiplier:
@@ -1324,35 +1352,23 @@ NetBallMultiplier:
 	ret
 
 DiveBallMultiplier:
-; multiply catch rate by 3.5 if surfing or fishing
+; multiply catch rate by 4 if surfing or fishing
 	ld a, [wPlayerState]
-	cp PLAYER_SURF
-	jr z, .water
 	cp PLAYER_DIVE
-	jr z, .water
-
-	ld a, [wBattleType]
-	cp BATTLETYPE_FISH
-	jr z, .water
-
-	ret
+	ret nz
 
 .water
-	ld a, b
-	srl a
-rept 3
-	add b
+	sla b
 	jr c, .max
-endr
-	ret
-
+	sla b
+	ret nc
 .max
 	ld b, $ff
 	ret
 
 QuickBallMultiplier:
 ; multiply catch rate by 5 on first turn
-	ld a, [wPlayerTurnsTaken]
+	ld a, [wTotalBattleTurns]
 	and a
 	ret nz
 
@@ -1372,28 +1388,25 @@ QuickBallMultiplier:
 	ret
 
 DuskBallMultiplier:
-; multiply catch rate by 3.5 at night or in caves
+; multiply catch rate by 3 at night or in caves
 	ld a, [wPermission]
 	cp CAVE
-	jr z, .dusk
+	jr z, .nite
 
 	ld a, [wTimeOfDay]
-	cp 1 << NITE
-	jr z, .dusk
-
-	ret
-
-.dusk
+	cp NITE
+	ret nz
+.nite
 	ld a, b
-	srl a
-rept 3
-	add b
+	add a
 	jr c, .max
-endr
-	ret
 
+	add b
+	jr nc, .done
 .max
-	ld b, $ff
+	ld a, $ff
+.done
+	ld b, a
 	ret
 
 Text_NoShake: ; 0xedb5

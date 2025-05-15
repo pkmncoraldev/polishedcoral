@@ -2715,34 +2715,20 @@ GetFailureResultText: ; 350e4
 	cp EFFECT_JUMP_KICK
 	ret nz
 
-	ld a, [wTypeModifier]
-	and a
-	ret z
+	farcall GetHalfMaxHP
 
 	ld hl, wCurDamage
-	ld a, [hli]
-	ld b, [hl]
-rept 3
-	srl a
-	rr b
-endr
-	ld [hl], b
-	dec hl
+	ld a, b
 	ld [hli], a
-	or b
-	jr nz, .do_at_least_1_damage
-	inc a
-	ld [hl], a
-.do_at_least_1_damage
+	ld [hl], c
+	
 	ld hl, CrashedText
 	call StdBattleTextBox
 	ld a, $1
 	ld [wKickCounter], a
 	call LoadMoveAnim
 	ld c, $1
-	call SwitchTurn
-	call TakeDamage
-	jp SwitchTurn
+	jp TakeOpponentDamage
 
 FailText_CheckOpponentProtect: ; 35157
 ; Print an appropriate failure message, usually wAttackMissed.

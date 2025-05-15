@@ -879,8 +879,8 @@ CottonGuardDescription:
 
 HiJumpKickDescription:
 JumpKickDescription:
-	db   "May miss and hurt"
-	next "the user.@"
+	db   "Heavy recoil if"
+	next "user misses!@"
 
 DreamEaterDescription:
 	db   "Steals HP from a"

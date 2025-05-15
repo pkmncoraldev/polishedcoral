@@ -1880,8 +1880,6 @@ BattleCommand_checkhit:
 	ret z
 	cp EFFECT_CLEAR_SMOG
 	ret z
-	cp EFFECT_ROAR
-	ret z
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	cp STRUGGLE
@@ -6512,6 +6510,10 @@ BattleCommand_forceswitch: ; 3680f
 	ld a, [wBattleType]
 	cp BATTLETYPE_TRAP ; or BATTLETYPE_FORCEITEM, BATTLETYPE_SHINY, BATTLETYPE_LEGENDARY
 	jr nc, .but_it_failed
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVar
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_UNDERWATER
+	jr nz, .but_it_failed
 	call GetOpponentAbilityAfterMoldBreaker
 	cp SUCTION_CUPS
 	ld a, ATKFAIL_ABILITY

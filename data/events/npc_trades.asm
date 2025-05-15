@@ -35,8 +35,8 @@ NPCTrades:
 	db $DD, $DD, $DD, ABILITY_2 | LONELY, MALE, POKE_BALL,    BLACK_BELT
 	dw 50082
 	db "MARTY@@@", $00
-; TRADE_WITH_BEV_FOR_PINECO in Radiant Town
-	db 7, SUNKERN, BULBASAUR,      "BOOMER@@@@@"
+; TRADE_WITH_BEV_FOR_VOLTORB in Radiant Town
+	db 7, SUNKERN, VOLTORB,      "BOOMER@@@@@"
 	db $DD, $DD, $DD, HIDDEN_ABILITY | LAX,   MALE,   POKE_BALL,    MACHO_BRACE
 	dw 63426
 	db "BEV@@@@@", $00

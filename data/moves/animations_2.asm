@@ -243,8 +243,11 @@ BattleAnim_SuckerPunch:
 	anim_ret
 
 BattleAnim_EnergyBall:
-	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_CHARGE
-	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_LIME
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_LIME
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_LIME
+	anim_4gfx ANIM_GFX_ENERGY_BALL, ANIM_GFX_GLOW, ANIM_GFX_HIT, ANIM_GFX_BUBBLE
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
 	anim_obj ANIM_OBJ_ABSORB_CENTER, 44, 88, $0
 	anim_obj ANIM_OBJ_CHARGE, 44, 88, $30
 	anim_obj ANIM_OBJ_CHARGE, 44, 88, $31
@@ -258,19 +261,26 @@ BattleAnim_EnergyBall:
 	anim_sound 0, 0, SFX_WARP_TO
 	anim_wait 16
 	anim_loop 4, .loop
-	anim_wait 32
+	anim_wait 16
+	anim_sound 0, 1, SFX_PRESENT
+	anim_wait 48
 	anim_clearobjs
 	anim_sound 0, 1, SFX_SWEET_SCENT
 	anim_obj ANIM_OBJ_SIGNAL_BEAM_R, 64, 92, $2
 	anim_wait 32
 	anim_sound 0, 1, SFX_TOXIC
-	anim_obj ANIM_OBJ_HIT, 128, 40, $0
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 4
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $6, $1, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $5c
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $e8
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $50
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_HIT_YFIX, 144, 48, $0
 	anim_wait 4
 	anim_sound 0, 1, SFX_TOXIC
-	anim_obj ANIM_OBJ_HIT, 144, 48, $0
-	anim_wait 4
-	anim_sound 0, 1, SFX_TOXIC
-	anim_obj ANIM_OBJ_HIT, 136, 56, $0
+	anim_obj ANIM_OBJ_HIT_YFIX, 128, 40, $0
 	anim_wait 16
 	anim_ret
 	
@@ -763,7 +773,57 @@ BattleAnim_TwinBeam:
 	anim_wait 8
 	anim_loop 4, .loop
 	anim_wait 24
-	anim_call BattleAnim_ShowMon_1
+	anim_jump BattleAnim_ShowMon_1
+
+BattleAnim_Dive:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_MISC_2
+	anim_jumpif $0, .hit
+	anim_jumpif $2, .fail
+	anim_call BattleAnim_TargetObj_2Row_1
+	anim_bgeffect ANIM_BG_BOUNCE_DOWN, $0, $1, $0
+	anim_sound 0, 0, SFX_WATER_GUN
+	anim_wait 16
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_wait 8
+	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
+	anim_obj ANIM_OBJ_DROPLET_R, 64, 92, $3b
+	anim_obj ANIM_OBJ_DROPLET_L, 44, 92, $24
+	anim_call BattleAnim_ShowMon_0_1
+	anim_wait 40
+	anim_ret
+.hit
+	anim_3gfx ANIM_GFX_HIT, ANIM_GFX_BUBBLE, ANIM_GFX_MISC_2
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BUBBLE
+	anim_sound 0, 1, SFX_BUBBLE_BEAM
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $50
+	anim_wait 3
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 48, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 48, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 48, $50
+	anim_wait 3
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 40, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 40, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 40, $50
+	anim_wait 3
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 32, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 32, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 32, $50
+	anim_wait 3
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 24, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 24, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 24, $50
+	anim_wait 8
+.fail
+	anim_bgeffect ANIM_BG_ENTER_MON, $0, $1, $0
+	anim_wait 8
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+	anim_obj ANIM_OBJ_DROPLET_R, 64, 92, $3b
+	anim_obj ANIM_OBJ_DROPLET_L, 44, 92, $24
+	anim_wait 16
 	anim_ret
 
 BattleAnim_TargetObj_1Row_1:

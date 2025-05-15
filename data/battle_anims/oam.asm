@@ -244,17 +244,26 @@ BattleAnimOAMData: ; ceeae
 	dbbw $00,  9, .OAMData_100           ; BATTLEANIMOAMSET_100
 	dbbw $06,  9, .OAMData_101           ; BATTLEANIMOAMSET_101
 	dbbw $00, 14, .OAMData_102           ; BATTLEANIMOAMSET_102
-;	dbbw $00,  1, .OAMData_103           ; BATTLEANIMOAMSET_103
-;	dbbw $00,  2, .OAMData_103           ; BATTLEANIMOAMSET_104
-;	dbbw $00,  3, .OAMData_103           ; BATTLEANIMOAMSET_105
-;	dbbw $00,  4, .OAMData_103           ; BATTLEANIMOAMSET_106
-;	dbbw $04,  2, .OAMData_107           ; BATTLEANIMOAMSET_107
-;	dbbw $04,  4, .OAMData_107           ; BATTLEANIMOAMSET_108
-;	dbbw $04,  6, .OAMData_107           ; BATTLEANIMOAMSET_109
-;	dbbw $02,  1, .OAMData_10a           ; BATTLEANIMOAMSET_10A
-;	dbbw $02,  2, .OAMData_10a           ; BATTLEANIMOAMSET_10B
-;	dbbw $02,  3, .OAMData_10a           ; BATTLEANIMOAMSET_10C
-;	dbbw $02,  4, .OAMData_10a           ; BATTLEANIMOAMSET_10D
+	dbbw $0a,  9, .OAMData_103           ; BATTLEANIMOAMSET_103
+	dbbw $02,  2, .OAMData_104           ; BATTLEANIMOAMSET_104
+
+
+
+
+
+
+
+;	dbbw $00,  1, .OAMData_103           ; BATTLEANIMOAMSET_103                ; needs correcting
+;	dbbw $00,  2, .OAMData_103           ; BATTLEANIMOAMSET_104                ; needs correcting
+;	dbbw $00,  3, .OAMData_103           ; BATTLEANIMOAMSET_105                ; needs correcting
+;	dbbw $00,  4, .OAMData_103           ; BATTLEANIMOAMSET_106                ; needs correcting
+;	dbbw $04,  2, .OAMData_107           ; BATTLEANIMOAMSET_107                ; needs correcting
+;	dbbw $04,  4, .OAMData_107           ; BATTLEANIMOAMSET_108                ; needs correcting
+;	dbbw $04,  6, .OAMData_107           ; BATTLEANIMOAMSET_109                ; needs correcting
+;	dbbw $02,  1, .OAMData_10a           ; BATTLEANIMOAMSET_10A                ; needs correcting
+;	dbbw $02,  2, .OAMData_10a           ; BATTLEANIMOAMSET_10B                ; needs correcting
+;	dbbw $02,  3, .OAMData_10a           ; BATTLEANIMOAMSET_10C                ; needs correcting
+;	dbbw $02,  4, .OAMData_10a           ; BATTLEANIMOAMSET_10D                ; needs correcting
 
 
 
@@ -1365,20 +1374,6 @@ BattleAnimOAMData: ; ceeae
 	dbsprite   1,  -1, 0, 7, $07, X_FLIP | Y_FLIP
 	dbsprite   0,  -1, 0, 7, $08, X_FLIP | Y_FLIP
 
-.OAMData_103:
-	dbsprite  -2,   0, 0, -2, $00, $0
-	dbsprite  -1,   0, 0, -2, $01, $0
-	dbsprite   0,  -1, 0,  3, $01, X_FLIP | Y_FLIP
-	dbsprite   1,  -1, 0,  3, $00, X_FLIP | Y_FLIP
-
-.OAMData_107:
-	dbsprite  -1,   1, 4, -4, $01, $0
-	dbsprite  -2,   1, 4, -4, $00, $0
-	dbsprite   0,   0, 4, -4, $01, $0
-	dbsprite  -1,   0, 4, -4, $00, $0
-	dbsprite   1,  -1, 4, -4, $01, $0
-	dbsprite   0,  -1, 4, -4, $00, $0
-
 .OAMData_Mushroom1:
 	dbsprite  -2,  -2, 4, 4, $00, $0
 	dbsprite  -1,  -2, 4, 4, $01, $0
@@ -1495,12 +1490,6 @@ BattleAnimOAMData: ; ceeae
 	dbsprite   0,   1, 0, 0, $0c, $0
 	dbsprite   1,   1, 0, 0, $0d, $0
 
-.OAMData_10a:
-	dbsprite  -2,   1, 6, -1, $00, X_FLIP | Y_FLIP
-	dbsprite  -1,   0, 6,  0, $00, $0
-	dbsprite  -1,  -1, 6,  0, $01, $0
-	dbsprite  -1,  -2, 6,  0, $00, X_FLIP | Y_FLIP
-
 .OAMData_dd:
 	dbsprite  -2,  -2, 0, 0, $00, $0
 	dbsprite  -1,  -2, 0, 0, $01, $0
@@ -1518,3 +1507,18 @@ BattleAnimOAMData: ; ceeae
 	dbsprite   0,   0, 0, 0, $05, X_FLIP
 	dbsprite   1,   1, 0, 0, $06, X_FLIP
 	dbsprite   0,   1, 0, 0, $07, X_FLIP
+
+.OAMData_103:
+	dsprite  -2, 4,  -2, 4, $00, $0
+	dsprite  -2, 4,  -1, 4, $03, $0
+	dsprite  -2, 4,   0, 4, $06, $0
+	dsprite  -1, 4,  -2, 4, $01, $0
+	dsprite  -1, 4,  -1, 4, $04, $0
+	dsprite  -1, 4,   0, 4, $07, $0
+	dsprite   0, 4,  -2, 4, $02, $0
+	dsprite   0, 4,  -1, 4, $05, $0
+	dsprite   0, 4,   0, 4, $08, $0
+
+.OAMData_104:
+	dbsprite  -1,  -1, 4, 4, $00, $0
+	dbsprite   0,   0, 2, 2, $00, $0

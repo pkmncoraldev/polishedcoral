@@ -239,6 +239,10 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_SpinningTriangle        ; BATTLEANIMFRAMESET_SPINNING_TRIANGLE
 	dw .Frameset_SpinningTriangleSlow    ; BATTLEANIMFRAMESET_SPINNING_TRIANGLE_SLOW
 	dw .Frameset_GyroBall                ; BATTLEANIMFRAMESET_GYRO_BALL
+	dw .Frameset_GunkShot                ; BATTLEANIMFRAMESET_GUNK_SHOT
+	dw .Frameset_DropletR                ; BATTLEANIMFRAMESET_DROPLET_R
+	dw .Frameset_DropletL                ; BATTLEANIMFRAMESET_DROPLET_L
+	dw .Frameset_SparkleLong             ; BATTLEANIMFRAMESET_SPARKLE_LONG
 	
 
 	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
@@ -1741,4 +1745,30 @@ BattleAnimFrameData: ; ce85e
 	frame BATTLEANIMOAMSET_DB,   1, OAM_X_FLIP, OAM_Y_FLIP
 	frame BATTLEANIMOAMSET_48,   1, OAM_X_FLIP, OAM_Y_FLIP
 	frame BATTLEANIMOAMSET_DC,   1, OAM_X_FLIP, OAM_Y_FLIP
+	dorestart
+
+.Frameset_GunkShot:
+	db -3, 20
+	frame BATTLEANIMOAMSET_1F,  20
+	frame BATTLEANIMOAMSET_D9,  20
+	frame BATTLEANIMOAMSET_103, 10
+	db -3, 4
+	frame BATTLEANIMOAMSET_103, 4
+	db -3, 4
+	frame BATTLEANIMOAMSET_103, 4
+	db -3, 4
+	frame BATTLEANIMOAMSET_103, 4
+	delanim
+
+.Frameset_DropletR:
+	frame BATTLEANIMOAMSET_104,  16
+	delanim
+
+.Frameset_DropletL:
+	frame BATTLEANIMOAMSET_104,  16, OAM_X_FLIP
+	delanim
+
+.Frameset_SparkleLong:
+	frame BATTLEANIMOAMSET_14,  3
+	frame BATTLEANIMOAMSET_15,  3
 	dorestart

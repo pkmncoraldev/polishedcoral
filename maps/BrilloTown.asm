@@ -44,7 +44,7 @@ BrilloTown_MapScriptHeader:
 	object_event 17, 13, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloLemonadeCop, -1
 	person_event SPRITE_CHILD, 12, 19, SPRITEMOVEDATA_LEMONADE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 22, 17, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BrilloNPC1, -1
-	object_event 12, 11, SPRITE_PONYTAIL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BrilloNPC2, -1
+	object_event 14, 15, SPRITE_PONYTAIL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, BrilloNPC2, -1
 	object_event 33, 21, SPRITE_BIRD_KEEPER, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BrilloNPC3, -1
 	object_event 17, 27, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
 	object_event 17, 28, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, BrilloSailboat, -1
@@ -147,8 +147,7 @@ BrilloLemonadeCop:
 	
 BrilloLemonadeCopText:
 	text "A kid running a"
-	line "lemonade stand,"
-	cont "huh?"
+	line "lemonade stand?"
 	
 	para "I hope he's got"
 	line "a permit!"
@@ -180,10 +179,10 @@ BrilloLemonade:
 	giveitem LEMONADE
 	iffalse .no_room
 	takeitem LEMONADE
-	checkmoney $0, 350
+	checkmoney $0, 375
 	if_equal $2, .no_money
 	playsound SFX_TRANSACTION
-	takemoney $0, 350
+	takemoney $0, 375
 	special PlaceMoneyTopRight
 	writetext BrilloLemonadeText3
 	buttonsound
@@ -212,7 +211,7 @@ BrilloLemonadeText1Boy:
 	para "Wanna buy a"
 	line "LEMONADE?"
 	
-	para "Only ¥350!"
+	para "Only ¥375!"
 	done
 	
 BrilloLemonadeText1Girl:
@@ -221,7 +220,7 @@ BrilloLemonadeText1Girl:
 	para "Wanna buy a"
 	line "LEMONADE?"
 	
-	para "Only ¥350!"
+	para "Only ¥375!"
 	done
 	
 BrilloLemonadeText2:
@@ -253,7 +252,7 @@ BrilloLemonadeText6:
 	
 BrilloLemonadeText7:
 	text "How about another?<WAIT_S>"
-	line "Only ¥350!"
+	line "Only ¥375!"
 	done
 	
 BrilloNPC1:

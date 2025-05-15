@@ -73,7 +73,7 @@ DoBattleAnimFrame: ; ccfbe
 	dw BattleAnimFunction_33 ; 33
 	dw BattleAnimFunction_SmokeFlameWheel ; 34
 	dw BattleAnimFunction_35 ; 35
-	dw BattleAnimFunction_36 ; 36
+	dw BattleAnimFunction_StrengthSeismicToss ; 36
 	dw BattleAnimFunction_37 ; 37
 	dw BattleAnimFunction_38 ; 38
 	dw BattleAnimFunction_39 ; 39
@@ -3289,25 +3289,25 @@ BattleAnimFunction_33: ; ce2cc (33:62cc)
 	dec [hl]
 	ret
 
-BattleAnimFunction_36: ; ce2fd (33:62fd)
+BattleAnimFunction_StrengthSeismicToss: ; ce2fd (33:62fd)
 	call BattleAnim_AnonJumptable
 .anon_dw
-	dw Functionce306
-	dw Functionce330
-	dw Functionce34c
-Functionce306: ; ce306 (33:6306)
+	dw .zero
+	dw .one
+	dw .two
+.zero: ; ce306 (33:6306)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld a, [hl]
 	cp $e0
-	jr nz, .asm_ce319
+	jr nz, .move_up
 	call BattleAnim_IncAnonJumptableIndex
 	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld [hl], $2
 	ret
 
-.asm_ce319
+.move_up
 	ld d, a
 	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
@@ -3324,16 +3324,16 @@ Functionce306: ; ce306 (33:6306)
 	ld [hl], e
 	ret
 
-Functionce330: ; ce330 (33:6330)
+.one: ; ce330 (33:6330)
 	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr z, .asm_ce33a
+	jr z, .switch_position
 	dec [hl]
 	ret
 
-.asm_ce33a
+.switch_position
 	ld [hl], $4
 	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
@@ -3347,7 +3347,7 @@ Functionce330: ; ce330 (33:6330)
 	ld [hl], a
 	ret
 
-Functionce34c: ; ce34c (33:634c)
+.two: ; ce34c (33:634c)
 	ld hl, BATTLEANIMSTRUCT_XCOORD
 	add hl, bc
 	ld a, [hl]

@@ -195,43 +195,43 @@ MoveTable:
 ;	db FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 ;	db DESTINY_BOND
 ;	db PERISH_SONG
-	db ICY_WIND                                ; NEEDS UPDATE
-	db POWER_GEM                               ; NEEDS UPDATE
-	db WILD_CHARGE                             ; NEEDS UPDATE
-	db PETAL_BLIZZARD                          ; NEEDS UPDATE
-	db OUTRAGE                                 ; NEEDS UPDATE
-	db SANDSTORM
-	db GIGA_DRAIN
-	db ENDURE
-	db CHARM_FEATHER_DANCE                     ; NEEDS UPDATE
-	db ROLLOUT
-	db FALSE_SWIPE
-	db SWAGGER
-	db TWISTER
-	db SPARK                                   ; NEEDS UPDATE
-	db ELECTRO_BALL                            ; NEEDS UPDATE
-	db STEEL_WING
-	db MEAN_LOOK_BLOCK_SPIDER_WEB
-	db ATTRACT
-	db SNORE
-	db HEAL_BELL
-	db RETURN
-	db QUIVER_DANCE                            ; NEEDS UPDATE
-	db BUG_BUZZ                                ; NEEDS UPDATE
-	db SAFEGUARD
-	db FURY_CUTTER
-	db FAKE_OUT
-	db MAGNITUDE
-	db DYNAMICPUNCH
-	db MEGAHORN                                ; NEEDS UPDATE
-	db DRAGONBREATH                            ; NEEDS UPDATE
-	db BATON_PASS
-	db ENCORE
-	db PURSUIT
-	db RAPID_SPIN
-	db SHADOW_CLAW
-	db IRON_TAIL
-	db METAL_CLAW
+;	db ICY_WIND
+;	db POWER_GEM
+;	db WILD_CHARGE
+;	db PETAL_BLIZZARD
+;	db OUTRAGE
+;	db SANDSTORM
+;	db GIGA_DRAIN
+;	db ENDURE
+;	db CHARM_FEATHER_DANCE
+;	db ROLLOUT
+;	db FALSE_SWIPE
+;	db SWAGGER
+;	db TWISTER
+;	db SPARK
+;	db ELECTRO_BALL
+;	db STEEL_WING
+;	db MEAN_LOOK_BLOCK_SPIDER_WEB
+;	db ATTRACT
+;	db SNORE
+;	db HEAL_BELL
+;	db RETURN
+;	db QUIVER_DANCE
+;	db BUG_BUZZ
+;	db SAFEGUARD
+;	db FURY_CUTTER
+;	db FAKE_OUT
+;	db MAGNITUDE
+;	db DYNAMICPUNCH
+;	db MEGAHORN
+;	db DRAGONBREATH
+;	db BATON_PASS
+;	db ENCORE
+;	db PURSUIT
+;	db RAPID_SPIN
+;	db SHADOW_CLAW
+;	db IRON_TAIL
+;	db METAL_CLAW
 	db AURA_SPHERE                             ; NEEDS UPDATE
 	db SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db HURRICANE                               ; NEEDS UPDATE

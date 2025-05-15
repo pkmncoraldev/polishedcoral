@@ -243,6 +243,7 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_DropletR                ; BATTLEANIMFRAMESET_DROPLET_R
 	dw .Frameset_DropletL                ; BATTLEANIMFRAMESET_DROPLET_L
 	dw .Frameset_SparkleLong             ; BATTLEANIMFRAMESET_SPARKLE_LONG
+	dw .Frameset_MidGlowShrinking        ; BATTLEANIMFRAMESET_MID_GLOW_SHRINKING
 	
 
 	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
@@ -1298,7 +1299,8 @@ BattleAnimFrameData: ; ce85e
 	dorestart
 
 .Frameset_PowerGem:
-	frame BATTLEANIMOAMSET_06, 40
+	frame BATTLEANIMOAMSET_20, 8
+	frame BATTLEANIMOAMSET_06, 8
 	endanim
 	
 .Frameset_DragonPulse:
@@ -1772,3 +1774,8 @@ BattleAnimFrameData: ; ce85e
 	frame BATTLEANIMOAMSET_14,  3
 	frame BATTLEANIMOAMSET_15,  3
 	dorestart
+
+.Frameset_MidGlowShrinking:
+	frame BATTLEANIMOAMSET_105,  1
+	frame BATTLEANIMOAMSET_106,  1
+	delanim

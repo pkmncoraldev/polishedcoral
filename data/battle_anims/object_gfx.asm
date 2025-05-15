@@ -81,6 +81,7 @@ AnimObjGFX:
 	anim_obj_gfx 12, AnimObjTriangleGFX
 	anim_obj_gfx 55, AnimObjGyroBallGFX
 	anim_obj_gfx 10, AnimObjEnergyBallGFX
+	anim_obj_gfx  9, AnimObjMidGlowClearGFX
 	anim_obj_gfx 10, AnimObjPokeBall2GFX
 	anim_obj_gfx 10, AnimObjPokeBall3GFX
 	anim_obj_gfx  1, NULL

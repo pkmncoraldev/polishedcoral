@@ -7,7 +7,7 @@ ENDM
 AnimObjGFX:
 ; entries correspond to ANIM_GFX_* constants
 	anim_obj_gfx  0, AnimObj00GFX
-	anim_obj_gfx 36, AnimObjHitGFX
+	anim_obj_gfx 32, AnimObjHitGFX
 	anim_obj_gfx  7, AnimObjCutGFX
 	anim_obj_gfx  6, AnimObjFireGFX
 	anim_obj_gfx 20, AnimObjWaterGFX
@@ -82,6 +82,11 @@ AnimObjGFX:
 	anim_obj_gfx 55, AnimObjGyroBallGFX
 	anim_obj_gfx 10, AnimObjEnergyBallGFX
 	anim_obj_gfx  9, AnimObjMidGlowClearGFX
+	anim_obj_gfx 16, AnimObjAuraSphereGFX
+	anim_obj_gfx 18, AnimObjHurricaneGFX
+	anim_obj_gfx  8, AnimObjChopGFX
+	anim_obj_gfx 28, AnimObjAquaJetGFX
+	anim_obj_gfx 10, AnimObjGlowShadowGFX
 	anim_obj_gfx 10, AnimObjPokeBall2GFX
 	anim_obj_gfx 10, AnimObjPokeBall3GFX
 	anim_obj_gfx  1, NULL

@@ -184,7 +184,6 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_IcicleCrash             ; BATTLEANIMFRAMESET_ICICLE_CRASH
 	dw .Frameset_DragonPulse             ; BATTLEANIMFRAMESET_DRAGON_PULSE
 	dw .Frameset_EnergyOrbLong           ; BATTLEANIMFRAMESET_ENERGY_ORB_LONG
-	dw .Frameset_VerticleChop            ; BATTLEANIMFRAMESET_VERTICAL_CHOP
 	dw .Frameset_BigWave                 ; BATTLEANIMFRAMESET_BIG_WAVE
 	dw .Frameset_BulletPunch             ; BATTLEANIMFRAMESET_BULLET_PUNCH
 	dw .Frameset_WoodHammer              ; BATTLEANIMFRAMESET_WOOD_HAMMER
@@ -244,7 +243,9 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_DropletL                ; BATTLEANIMFRAMESET_DROPLET_L
 	dw .Frameset_SparkleLong             ; BATTLEANIMFRAMESET_SPARKLE_LONG
 	dw .Frameset_MidGlowShrinking        ; BATTLEANIMFRAMESET_MID_GLOW_SHRINKING
-	
+	dw .Frameset_Hurricane               ; BATTLEANIMFRAMESET_HURRICANE
+	dw .Frameset_AquaJet                 ; BATTLEANIMFRAMESET_AQUA_JET
+
 
 	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
 .Frameset_HitBig:
@@ -1193,40 +1194,12 @@ BattleAnimFrameData: ; ce85e
 	db -4
 
 .Frameset_CrossChop1:
-	db BATTLEANIMOAMSET_4B, $02
-	db BATTLEANIMOAMSET_4C, $02
-	db BATTLEANIMOAMSET_4D, $20
-	db BATTLEANIMOAMSET_4D, $20
-	db BATTLEANIMOAMSET_4D, $20
-	db BATTLEANIMOAMSET_4F, $01
-	db BATTLEANIMOAMSET_50, $01
-	db BATTLEANIMOAMSET_51, $01
-	db BATTLEANIMOAMSET_52, $02
-	db -3, $02
-	db BATTLEANIMOAMSET_52, $02
-	db -3, $02
-	db BATTLEANIMOAMSET_52, $02
-	db -3, $02
-	db BATTLEANIMOAMSET_52, $02
-	db -4
+	frame BATTLEANIMOAMSET_21, 8
+	endanim
 
 .Frameset_CrossChop2:
-	db BATTLEANIMOAMSET_4B, $c2
-	db BATTLEANIMOAMSET_4C, $c2
-	db BATTLEANIMOAMSET_4D, $e0
-	db BATTLEANIMOAMSET_4D, $e0
-	db BATTLEANIMOAMSET_4D, $e0
-	db BATTLEANIMOAMSET_4F, $c1
-	db BATTLEANIMOAMSET_50, $c1
-	db BATTLEANIMOAMSET_51, $c1
-	db BATTLEANIMOAMSET_52, $c2
-	db -3, $02
-	db BATTLEANIMOAMSET_52, $c2
-	db -3, $02
-	db BATTLEANIMOAMSET_52, $c2
-	db -3, $02
-	db BATTLEANIMOAMSET_52, $c2
-	db -4
+	frame BATTLEANIMOAMSET_21, 8, OAM_X_FLIP
+	endanim
 
 .Frameset_ZapCannon:
 	db BATTLEANIMOAMSET_C3, $01
@@ -1309,17 +1282,13 @@ BattleAnimFrameData: ; ce85e
 	frame BATTLEANIMOAMSET_06,  3
 	frame BATTLEANIMOAMSET_53,  3
 	delanim
-	
+
 .Frameset_EnergyOrbLong:
 	frame BATTLEANIMOAMSET_1E,  4
 	frame BATTLEANIMOAMSET_55,  8
 	frame BATTLEANIMOAMSET_06,  20
 	delanim
-	
-.Frameset_VerticleChop:
-	frame BATTLEANIMOAMSET_E0,  8
-	endanim
-	
+
 .Frameset_BigWave:
 	frame BATTLEANIMOAMSET_18,  0
 	frame BATTLEANIMOAMSET_70,  0
@@ -1330,13 +1299,13 @@ BattleAnimFrameData: ; ce85e
 	delanim
 	
 .Frameset_BulletPunch:
-	frame BATTLEANIMOAMSET_E2,  4
+	frame BATTLEANIMOAMSET_E0,  4
 	frame BATTLEANIMOAMSET_02,  1
-	frame BATTLEANIMOAMSET_E2,  4
+	frame BATTLEANIMOAMSET_E0,  4
 	frame BATTLEANIMOAMSET_02,  1
-	frame BATTLEANIMOAMSET_E2,  4
+	frame BATTLEANIMOAMSET_E0,  4
 	frame BATTLEANIMOAMSET_02,  1
-	frame BATTLEANIMOAMSET_E2,  4
+	frame BATTLEANIMOAMSET_E0,  4
 	frame BATTLEANIMOAMSET_02,  1
 	delanim
 	
@@ -1778,4 +1747,16 @@ BattleAnimFrameData: ; ce85e
 .Frameset_MidGlowShrinking:
 	frame BATTLEANIMOAMSET_105,  1
 	frame BATTLEANIMOAMSET_106,  1
+	delanim
+
+.Frameset_Hurricane:
+	frame BATTLEANIMOAMSET_107, 2
+	frame BATTLEANIMOAMSET_107, 2, OAM_X_FLIP
+	dorestart
+
+.Frameset_AquaJet:
+	frame BATTLEANIMOAMSET_108,  1
+	frame BATTLEANIMOAMSET_109,  1
+	frame BATTLEANIMOAMSET_10A,  1
+	frame BATTLEANIMOAMSET_10B,  1
 	delanim

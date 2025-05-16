@@ -219,7 +219,6 @@ BattleAnimOAMData: ; ceeae
 	dbbw $00, 16, .OAMData_dd            ; BATTLEANIMOAMSET_DD
 	dbbw $1b,  4, .OAMData_03            ; BATTLEANIMOAMSET_E0
 	dbbw $07, 10, .OAMData_e1            ; BATTLEANIMOAMSET_E1
-	dbbw $1f,  4, .OAMData_03            ; BATTLEANIMOAMSET_E2
 	dbbw $12, 16, .OAMData_e6            ; BATTLEANIMOAMSET_E6
 	dbbw $09, 16, .OAMData_00            ; BATTLEANIMOAMSET_E9
 	dbbw $06,  9, .OAMData_Mushroom1     ; BATTLEANIMOAMSET_MUSHROOM_2
@@ -248,8 +247,12 @@ BattleAnimOAMData: ; ceeae
 	dbbw $02,  2, .OAMData_104           ; BATTLEANIMOAMSET_104
 	dbbw $00, 20, .OAMData_105           ; BATTLEANIMOAMSET_105
 	dbbw $05, 16, .OAMData_106           ; BATTLEANIMOAMSET_106
-
-
+	dbbw $00, 18, .OAMData_107           ; BATTLEANIMOAMSET_107
+	dbbw $00, 12, .OAMData_108           ; BATTLEANIMOAMSET_108
+	dbbw $06, 16, .OAMData_109           ; BATTLEANIMOAMSET_109
+	dbbw $0e, 16, .OAMData_109           ; BATTLEANIMOAMSET_10A
+	dbbw $16, 12, .OAMData_108           ; BATTLEANIMOAMSET_10B
+	dbbw $00, 12, .OAMData_10c           ; BATTLEANIMOAMSET_10C
 
 
 
@@ -1564,3 +1567,69 @@ BattleAnimOAMData: ; ceeae
 	dbsprite   0,   0, 0, 7, $01, X_FLIP | Y_FLIP
 	dbsprite   1,  -1, 0, 7, $02, X_FLIP | Y_FLIP
 	dbsprite   0,  -1, 0, 7, $03, X_FLIP | Y_FLIP
+
+.OAMData_107:
+	dbsprite  -2,  -4, 4, 0, $00, $0
+	dbsprite  -1,  -4, 4, 0, $01, $0
+	dbsprite   0,  -4, 4, 0, $02, $0
+	dbsprite  -2,  -3, 4, 0, $03, $0
+	dbsprite  -1,  -3, 4, 0, $04, $0
+	dbsprite   0,  -3, 4, 0, $05, $0
+	dbsprite  -2,  -2, 4, 0, $06, $0
+	dbsprite  -1,  -2, 4, 0, $07, $0
+	dbsprite   0,  -2, 4, 0, $08, $0
+	dbsprite  -2,  -1, 4, 0, $09, $0
+	dbsprite  -1,  -1, 4, 0, $0a, $0
+	dbsprite   0,  -1, 4, 0, $0b, $0
+	dbsprite  -2,   0, 4, 0, $0c, $0
+	dbsprite  -1,   0, 4, 0, $0d, $0
+	dbsprite   0,   0, 4, 0, $0e, $0
+	dbsprite  -2,   1, 4, 0, $0f, $0
+	dbsprite  -1,   1, 4, 0, $10, $0
+	dbsprite   0,   1, 4, 0, $11, $0
+
+.OAMData_108:
+	dbsprite  -2,  -1, 0, 0, $00, $0
+	dbsprite  -1,  -1, 0, 0, $01, $0
+	dbsprite   0,  -1, 0, 0, $01, X_FLIP
+	dbsprite   1,  -1, 0, 0, $00, X_FLIP
+	dbsprite  -2,   0, 0, 0, $02, $0
+	dbsprite  -1,   0, 0, 0, $03, $0
+	dbsprite   0,   0, 0, 0, $03, X_FLIP
+	dbsprite   1,   0, 0, 0, $02, X_FLIP
+	dbsprite  -2,   1, 0, 0, $04, $0
+	dbsprite  -1,   1, 0, 0, $05, $0
+	dbsprite   0,   1, 0, 0, $05, X_FLIP
+	dbsprite   1,   1, 0, 0, $04, X_FLIP
+
+.OAMData_109:
+	dbsprite  -2,  -2, 0, 0, $00, $0
+	dbsprite  -1,  -2, 0, 0, $01, $0
+	dbsprite   0,  -2, 0, 0, $01, X_FLIP
+	dbsprite   1,  -2, 0, 0, $00, X_FLIP
+	dbsprite  -2,  -1, 0, 0, $02, $0
+	dbsprite  -1,  -1, 0, 0, $03, $0
+	dbsprite   0,  -1, 0, 0, $03, X_FLIP
+	dbsprite   1,  -1, 0, 0, $02, X_FLIP
+	dbsprite  -2,   0, 0, 0, $04, $0
+	dbsprite  -1,   0, 0, 0, $05, $0
+	dbsprite   0,   0, 0, 0, $05, X_FLIP
+	dbsprite   1,   0, 0, 0, $04, X_FLIP
+	dbsprite  -2,   1, 0, 0, $06, $0
+	dbsprite  -1,   1, 0, 0, $07, $0
+	dbsprite   0,   1, 0, 0, $07, X_FLIP
+	dbsprite   1,   1, 0, 0, $06, X_FLIP
+
+.OAMData_10c:
+	dbsprite  -2,  -2, 0, 0, $00, $0
+	dbsprite  -1,  -2, 0, 0, $01, $0
+	dbsprite  -2,  -1, 0, 0, $02, $0
+	dbsprite   0,  -2, 0, 0, $01, X_FLIP
+	dbsprite   1,  -2, 0, 0, $00, X_FLIP
+	dbsprite   1,  -1, 0, 0, $02, X_FLIP
+	dbsprite  -2,   0, 0, 0, $02, Y_FLIP
+	dbsprite  -2,   1, 0, 0, $00, Y_FLIP
+	dbsprite  -1,   1, 0, 0, $01, Y_FLIP
+	dbsprite   1,   0, 0, 0, $02, X_FLIP | Y_FLIP
+	dbsprite   0,   1, 0, 0, $01, X_FLIP | Y_FLIP
+	dbsprite   1,   1, 0, 0, $00, X_FLIP | Y_FLIP

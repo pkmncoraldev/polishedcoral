@@ -49,7 +49,7 @@ DoBattleAnimFrame: ; ccfbe
 	dw BattleAnimFunction_1B ; 1b
 	dw BattleAnimFunction_1C ; 1c
 	dw BattleAnimFunction_1D ; 1d
-	dw BattleAnimFunction_1E ; 1e
+	dw BattleAnimFunction_MoveUp ; 1e
 	dw BattleAnimFunction_1F ; 1f
 	dw BattleAnimFunction_LeechSeed ; 20
 	dw BattleAnimFunction_21 ; 21
@@ -121,6 +121,7 @@ DoBattleAnimFrame: ; ccfbe
 	dw BattleAnimFunction_RadialMoveOut_Spore
 	dw BattleAnimFunction_RadialMoveOut_VerySlow
 	dw BattleAnimFunction_SpiralDescent_Fast
+	dw BattleAnimFunction_HiddenPower_Fast
 
 BattleAnimFunction_Null: ; cd06e (33:506e)
 	call BattleAnim_AnonJumptable
@@ -2220,7 +2221,7 @@ Functioncdc75: ; cdc75 (33:5c75)
 	ld [hl], a
 	jp BattleAnim_IncAnonJumptableIndex
 
-BattleAnimFunction_1E: ; cdca6 (33:5ca6)
+BattleAnimFunction_MoveUp: ; cdca6 (33:5ca6)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld a, [hl]
@@ -4319,6 +4320,8 @@ BattleAnimFunction_RadialMoveOut:
 	
 	dw InitRadial
 	dw Step
+	dw Step_VerySlow ; for Cross Chop
+	dw Step_Short ; for Cross Chop
 
 BattleAnimFunction_RadialMoveOut_CP_BG:
 	call BattleAnim_AnonJumptable
@@ -4387,6 +4390,14 @@ Step_Spore:
 	ld hl, 1.5 >> 8 ; speed
 	call Set_Rad_Pos
 	cp 40 ; final position
+	jp nc, FarDeinitBattleAnimation
+	jr Rad_Move
+
+Step_Short:
+	call Get_Rad_Pos
+	ld hl, 6.0 >> 8 ; speed
+	call Set_Rad_Pos
+	cp 60 ; final position
 	jp nc, FarDeinitBattleAnimation
 	jr Rad_Move
 
@@ -4724,3 +4735,44 @@ BattleAnimFunction_SpiralDescent_Fast:
 	inc [hl]
 	inc [hl]
 	ret
+
+BattleAnimFunction_HiddenPower_Fast:
+	call BattleAnim_AnonJumptable
+.anon_dw
+	dw .zero
+	dw .one
+	dw .two
+
+.zero:
+	ld d, $18
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	inc [hl] ; increased rotation speed
+	inc [hl]
+	jr .step_circle
+
+.one:
+	call BattleAnim_IncAnonJumptableIndex
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld [hl], $18
+.two:
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	cp $80
+	jr nc, .done
+	ld d, a
+	add $8
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	jr .step_circle
+
+.done
+	jp FarDeinitBattleAnimation
+
+.step_circle:
+	jp BattleAnim_StepCircle

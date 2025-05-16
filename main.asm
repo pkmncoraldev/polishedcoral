@@ -4578,6 +4578,11 @@ INCLUDE "data/battle_anims/oam.asm"
 INCLUDE "data/battle_anims/object_gfx.asm"
 
 
+SECTION "Ball Colors", ROMX
+
+INCLUDE "data/battle_anims/ball_colors.asm"
+
+
 SECTION "Battle Functions", ROMX
 
 INCLUDE "engine/battle_anims/functions.asm"

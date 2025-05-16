@@ -1,5 +1,7 @@
 BattleAnim_MirrorMove:
 BattleAnim_0:
+BattleAnim_GyroBall:
+BattleAnim_ElectroBall:
 	anim_ret
 
 BattleAnim_HeldItemTrigger:
@@ -433,42 +435,6 @@ BattleAnim_GigaImpact:
 	anim_wait 20
 	anim_loop 3, .loop2
 	anim_wait 16
-	anim_ret
-
-BattleAnim_GyroBall:
-	anim_1gfx ANIM_GFX_GYRO_BALL, 
-	anim_battlergfx_2row
-	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
-	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_GRAY
-	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BRIGHT
-	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BRIGHT
-	anim_sound 0, 0, SFX_OUTRAGE
-	anim_obj ANIM_OBJ_GYRO_BALL, 44, 96, $0
-	anim_wait 64
-	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
-	anim_clearobjs
-	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $0, $0
-	anim_wait 6
-	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
-	anim_wait 12
-	anim_wait 1
-	anim_incobj 1
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
-	anim_wait 1
-	anim_clearobjs
-	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_WIND
-	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
-	anim_sound 0, 0, SFX_KARATE_CHOP
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
-	anim_wait 8
-	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_DEFAULT
-	anim_sound 0, 0, SFX_GRAVITY
-.loop
-	anim_obj ANIM_OBJ_RAPID_SPIN, 136, 72, $0
-	anim_wait 2
-	anim_loop 5, .loop
-	anim_wait 62
 	anim_ret
 
 BattleAnim_Bulldoze:
@@ -983,58 +949,57 @@ BattleAnim_DazzlinGleam:
 	anim_ret
 
 BattleAnim_RockPolish:
-;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
-;	anim_2gfx ANIM_GFX_ROCK_POLISH, ANIM_GFX_SPEED
-;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-;	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK, $0, $1, $40
-;	anim_sound 0, 1, SFX_SHINE
-;	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_R_YFLIP, 52, 88, $0
-;	anim_wait 6
-;	anim_sound 0, 1, SFX_SHINE
-;	anim_obj ANIM_OBJ_ROCK_POLISH_5DEG_L_YFLIP, 40, 100, $0
-;	anim_wait 6
-;	anim_sound 0, 1, SFX_SHINE
-;	anim_obj ANIM_OBJ_ROCK_POLISH_45DEG_R, 48, 96, $0
-;	anim_wait 6
-;	anim_sound 0, 1, SFX_SHINE
-;	anim_obj ANIM_OBJ_ROCK_POLISH_5DEG_L, 56, 96, $0
-;	anim_wait 6
-;	anim_sound 0, 1, SFX_SHINE
-;	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_L_YFLIP, 36, 84, $0
-;	anim_wait 6
-;	anim_sound 0, 1, SFX_SHINE
-;	anim_obj ANIM_OBJ_ROCK_POLISH_45DEG_R_YFLIP, 60, 96, $0
-;	anim_wait 6
-;	anim_sound 0, 1, SFX_SHINE
-;	anim_obj ANIM_OBJ_ROCK_POLISH_5DEG_R, 52, 88, $0
-;	anim_wait 6
-;	anim_sound 0, 1, SFX_SHINE
-;	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_R, 40, 100, $0
-;	anim_wait 6
-;	anim_sound 0, 1, SFX_SHINE
-;	anim_obj ANIM_OBJ_ROCK_POLISH_45DEG_L, 48, 96, $0
-;	anim_wait 6
-;	anim_sound 0, 1, SFX_SHINE
-;	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_L, 56, 96, $0
-;	anim_wait 6
-;	anim_sound 0, 1, SFX_SHINE
-;	anim_obj ANIM_OBJ_ROCK_POLISH_5DEG_R_YFLIP, 36, 84, $0
-;	anim_wait 6
-;	anim_sound 0, 1, SFX_SHINE
-;	anim_obj ANIM_OBJ_ROCK_POLISH_45DEG_L_YFLIP, 60, 96, $0
-;	anim_wait 8
-;	anim_sound 0, 0, SFX_METRONOME
-;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 32, 72, $0
-;	anim_wait 5
-;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 64, 104, $0
-;	anim_wait 5
-;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 32, 104, $0
-;	anim_wait 5
-;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 64, 72, $0
-;	anim_wait 5
-;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 48, 88, $0
-;	anim_wait 5
-;	anim_wait 16
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
+	anim_2gfx ANIM_GFX_ROCK_POLISH, ANIM_GFX_SPEED
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK, $0, $1, $40
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_R_YFLIP, 52, 88, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_L_YFLIP, 40, 100, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_R, 48, 96, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_L, 56, 96, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_L_YFLIP, 36, 84, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_R_YFLIP, 60, 96, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_R, 52, 88, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_R, 40, 100, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_L, 48, 96, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_L, 56, 96, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_R_YFLIP, 36, 84, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_L_YFLIP, 60, 96, $0
+	anim_wait 8
+	anim_sound 0, 0, SFX_METRONOME
+	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 32, 72, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 64, 104, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 32, 104, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 64, 72, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 48, 88, $0
+	anim_wait 24
 	anim_ret
 
 ;BattleAnim_RockPolish:
@@ -4137,6 +4102,51 @@ BattleAnim_Agility:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+;BattleAnim_Aromatherapy: ;---------- TO BE ADDED
+;	anim_3gfx ANIM_GFX_FLOWER, ANIM_GFX_SPEED, ANIM_GFX_SHINE
+;	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_REFRESH
+;	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_REFRESH
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
+;.loop
+;	anim_obj ANIM_OBJ_AROMATHERAPY, 148, 88, $22
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_WIND_SPARKLE, 148, 88, $21
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_WIND_SPARKLE, 148, 88, $23
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_AROMATHERAPY, 148, 88, $1f
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_WIND_SPARKLE, 148, 88, $20
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_WIND_SPARKLE, 148, 88, $21
+;	anim_wait 8
+;	anim_loop 2, .loop
+;	anim_wait 64
+;	anim_jump BattleAnim_Sub_Glimmer
+
+;BattleAnim_GrassWhistle: ;---------- TO BE ADDED
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GRASSWHISTLE
+;	anim_2gfx ANIM_GFX_NOISE, ANIM_GFX_PLANT
+;	anim_sound 16, 2, SFX_GRASS_WHISTLE
+;.loop
+;	anim_obj ANIM_OBJ_GRASS_WHISTLE_LEAF, 64, 92, $3e
+;	anim_obj ANIM_OBJ_SING, 64, 92, $0
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_SING, 64, 92, $1
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_GRASS_WHISTLE_LEAF, 64, 92, $1
+;	anim_obj ANIM_OBJ_SING, 64, 92, $2
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_SING, 64, 92, $1
+;	anim_wait 8
+;	anim_loop 4, .loop
+;	anim_wait 64
+;	anim_ret
+;	anim_ret
+
 BattleAnim_Barrier:
 	anim_jumpif $1, BattleAnim_IronDefense
 	anim_jumpif $2, BattleAnim_AcidArmor
@@ -4564,32 +4574,6 @@ BattleAnim_ZapCannon:
 	anim_obj ANIM_OBJ_THUNDERBOLT_SPARKS, 132, 52, $0
 	anim_wait 80
 	anim_ret
-
-BattleAnim_ElectroBall:
-	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_CHARGE
-	anim_call BattleAnimSub_BGCycleOBPalsGrayAndYellow_2
-	anim_obj ANIM_OBJ_CHARGE, 44, 90, $30
-	anim_obj ANIM_OBJ_CHARGE, 44, 90, $31
-	anim_obj ANIM_OBJ_CHARGE, 44, 90, $32
-	anim_obj ANIM_OBJ_CHARGE, 44, 90, $33
-	anim_obj ANIM_OBJ_CHARGE, 44, 90, $34
-	anim_obj ANIM_OBJ_CHARGE, 44, 90, $35
-	anim_obj ANIM_OBJ_CHARGE, 44, 90, $36
-	anim_obj ANIM_OBJ_CHARGE, 44, 90, $37
-.loop
-	anim_sound 0, 0, SFX_SWORDS_DANCE
-	anim_wait 8
-	anim_loop 4, .loop
-	anim_wait 60
-	anim_sound 6, 2, SFX_ZAP_CANNON
-	anim_obj ANIM_OBJ_ELECTRO_BALL, 48, 88, $4
-	anim_wait 20
-	anim_call BattleAnim_FollowEnemyFeet_1
-	anim_sound 0, 0, SFX_THUNDERSHOCK
-	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
-	anim_obj ANIM_OBJ_THUNDERSHOCK_SPARKS, 132, 46, $0
-	anim_wait 48
-	anim_jump BattleAnim_ShowMon_1
 
 BattleAnim_Foresight:
 	anim_jumpif $1, BattleAnim_OdorSleuth

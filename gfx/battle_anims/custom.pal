@@ -77,11 +77,6 @@ if !DEF(MONOCHROME)
 	RGB 19, 31, 31
 	RGB 00, 28, 15
 	RGB 00, 00, 00
-; skillswap
-	RGB 31, 31, 31
-	RGB 01, 22, 25
-	RGB 26, 28, 00
-	RGB 31, 30, 13
 ; will-o-wisp
 	RGB 31, 31, 31
 	RGB 00, 22, 29
@@ -242,6 +237,16 @@ if !DEF(MONOCHROME)
 	RGB 31, 31, 07
 	RGB 31, 16, 01
 	RGB 07, 27, 27
+; refresh
+	RGB 31, 31, 31
+	RGB 17, 31, 10
+	RGB 00, 25, 19
+	RGB 00, 00, 00
+; grasswhistle
+	RGB 31, 31, 31
+	RGB 12, 25, 01
+	RGB 12, 25, 01
+	RGB 12, 25, 01
 else
 rept NUM_CUSTOM_BATTLE_PALETTES - 6
 	MONOCHROME_RGB_FOUR

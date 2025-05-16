@@ -495,6 +495,7 @@ BattleAnimCmd_Call: ; cc317 (33:4317)
 	ret
 
 BattleAnimCmd_Jump: ; cc339 (33:4339)
+Do_Jump:
 	call GetBattleAnimByte
 	ld e, a
 	call GetBattleAnimByte
@@ -522,48 +523,23 @@ BattleAnimCmd_Loop: ; cc348 (33:4348)
 	jr z, .return_from_loop
 	dec [hl]
 .perpetual
-	call GetBattleAnimByte
-	ld e, a
-	call GetBattleAnimByte
-	ld d, a
-	ld hl, wBattleAnimAddress
-	ld [hl], e
-	inc hl
-	ld [hl], d
-	ret
+	jp Do_Jump
 
 .return_from_loop
 	ld hl, wBattleAnimFlags
 	res 2, [hl]
-	ld hl, wBattleAnimAddress
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	inc de
-	inc de
-	ld [hl], d
-	dec hl
-	ld [hl], e
-	ret
+	jr Dont_Jump
 
 BattleAnimCmd_JumpUntil: ; cc383 (33:4383)
 	ld hl, wBattleAnimParam
 	ld a, [hl]
 	and a
-	jr z, .dont_jump
+	jr z, Dont_Jump
 
 	dec [hl]
-	call GetBattleAnimByte
-	ld e, a
-	call GetBattleAnimByte
-	ld d, a
-	ld hl, wBattleAnimAddress
-	ld [hl], e
-	inc hl
-	ld [hl], d
-	ret
+	jr Do_Jump
 
-.dont_jump
+Dont_Jump:
 	ld hl, wBattleAnimAddress
 	ld e, [hl]
 	inc hl
@@ -589,57 +565,17 @@ BattleAnimCmd_IfVarEqual: ; cc3b2 (33:43b2)
 	call GetBattleAnimByte
 	ld hl, wBattleAnimVar
 	cp [hl]
-	jr z, .jump
+	jr z, Do_Jump
 
-	ld hl, wBattleAnimAddress
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	inc de
-	inc de
-	ld [hl], d
-	dec hl
-	ld [hl], e
-	ret
-
-.jump
-	call GetBattleAnimByte
-	ld e, a
-	call GetBattleAnimByte
-	ld d, a
-	ld hl, wBattleAnimAddress
-	ld [hl], e
-	inc hl
-	ld [hl], d
-	ret
+	jr Dont_Jump
 
 BattleAnimCmd_IfParamEqual: ; cc3d6 (33:43d6)
 	call GetBattleAnimByte
 	ld hl, wBattleAnimParam
 	cp [hl]
-	jr z, .jump
+	jr z, Do_Jump
 
-	ld hl, wBattleAnimAddress
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	inc de
-	inc de
-	ld [hl], d
-	dec hl
-	ld [hl], e
-	ret
-
-.jump
-	call GetBattleAnimByte
-	ld e, a
-	call GetBattleAnimByte
-	ld d, a
-	ld hl, wBattleAnimAddress
-	ld [hl], e
-	inc hl
-	ld [hl], d
-	ret
+	jr Dont_Jump
 	
 BattleAnimCmd_CheckTurn: ; cc3d6 (33:43d6)
 	ld a, [hBattleTurn]
@@ -659,28 +595,9 @@ BattleAnimCmd_IfParamAnd: ; cc3fa (33:43fa)
 	ld e, a
 	ld a, [wBattleAnimParam]
 	and e
-	jr nz, .jump
+	jp nz, Do_Jump
 
-	ld hl, wBattleAnimAddress
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	inc de
-	inc de
-	ld [hl], d
-	dec hl
-	ld [hl], e
-	ret
-.jump
-	call GetBattleAnimByte
-	ld e, a
-	call GetBattleAnimByte
-	ld d, a
-	ld hl, wBattleAnimAddress
-	ld [hl], e
-	inc hl
-	ld [hl], d
-	ret
+	jr Dont_Jump
 
 BattleAnimCmd_Obj: ; cc41f (33:441f)
 ; index, x, y, param

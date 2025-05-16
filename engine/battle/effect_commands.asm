@@ -7524,7 +7524,7 @@ BattleCommand_disable: ; 36fed
 	and a
 	ld a, 4
 	jr z, .got_duration
-	ld a, 2
+	ld a, 3
 .got_duration
 	inc c
 	swap c
@@ -7564,6 +7564,11 @@ BattleCommand_disable: ; 36fed
 	jp CheckOpponentMentalHerb
 
 .failed
+	ld a, BATTLE_VARS_LAST_COUNTER_MOVE
+	call GetBattleVar
+	and a
+	cp DISABLE
+	ret nz
 	jp FailDisable
 
 ; 3705c

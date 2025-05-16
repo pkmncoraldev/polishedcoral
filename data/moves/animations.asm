@@ -572,7 +572,7 @@ BattleAnim_Taunt:
 	anim_ret
 
 BattleAnim_BrickBreak:
-	anim_1gfx ANIM_GFX_HIT
+	anim_2gfx ANIM_GFX_HIT_2, ANIM_GFX_CHOP
 	anim_sound 6, 2, SFX_SHINE
 	anim_obj ANIM_OBJ_VERTICAL_CHOP_STILL, 136, 24, $30
 	anim_wait 16
@@ -657,6 +657,7 @@ BattleAnim_PowerGem:
 	anim_ret
 
 BattleAnim_EarthPower:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
 	anim_2gfx ANIM_GFX_FIRE, ANIM_GFX_ROCKS
 	anim_sound 0, 0, SFX_EGG_BOMB
 	anim_bgp $1b
@@ -1035,7 +1036,35 @@ BattleAnim_RockPolish:
 ;	anim_wait 5
 ;	anim_wait 16
 	anim_ret
-	
+
+;BattleAnim_RockPolish:
+;	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_SHINE
+;	anim_bgeffect ANIM_BG_07, $0, $0, $0
+;.loop
+;	anim_sound 0, 1, SFX_SHINE
+;	anim_obj ANIM_OBJ_POLISH_1, 32, 88, $0
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_SHINE
+;	anim_obj ANIM_OBJ_POLISH_1, 48, 104, $0
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_SHINE
+;	anim_obj ANIM_OBJ_POLISH_2, 48, 72, $0
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_SHINE
+;	anim_obj ANIM_OBJ_POLISH_2, 32, 88, $0
+;	anim_wait 8
+;	anim_loop 2, .loop
+;	anim_bgeffect ANIM_BG_17, $0, $1, $40
+;	anim_wait 8
+;	anim_sound 0, 0, SFX_SHINE
+;	anim_obj ANIM_OBJ_FORESIGHT, 58, 74, $0
+;	anim_wait 16
+;	anim_sound 0, 0, SFX_SHINE
+;	anim_obj ANIM_OBJ_FORESIGHT, 38, 94, $0
+;	anim_wait 32
+;	anim_incbgeffect ANIM_BG_17
+;	anim_ret
+
 BattleAnim_KnockOff:
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 3, 0, SFX_RAZOR_WIND
@@ -3884,7 +3913,7 @@ BattleAnim_DreamEater:
 
 BattleAnim_LeechLife:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_GRAY
-	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PEACH
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_RED
 	anim_3gfx ANIM_GFX_HORN, ANIM_GFX_HIT, ANIM_GFX_CHARGE
 	anim_call BattleAnim_PoisonSting.hit
 .loop
@@ -5790,7 +5819,7 @@ BattleAnim_Twister:
 	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 8
 	anim_loop 4, .loop3
-	anim_obj ANIM_OBJ_HIT_YFIX, 144, 64, $18
+	anim_obj ANIM_OBJ_HIT_YFIX, 128, 32, $18
 .loop4
 	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 8

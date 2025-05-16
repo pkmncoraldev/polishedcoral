@@ -109,7 +109,7 @@ LusterMallStoneShop_NPC1Text:
 	
 LusterMallStoneShop_NPC2Text:
 	text "The prices here"
-	line "are outragious!"
+	line "are outrageous!"
 	
 	para "I guess you get"
 	line "what you pay for,"

@@ -263,7 +263,7 @@ DEF MAP_NONE   EQU 0
 	map_const LUSTER_MALL_ELECTRONICS_SHOP,				   6,  4 ; 19
 	map_const LUSTER_MALL_COFFEE_SHOP,					   5,  4 ; 20
 	map_const LUSTER_MALL_SKATE_SHOP,					   4,  3 ; 21
-	map_const LUSTER_MALL_SKATE_TEST,					   9,  7 ; 22
+	map_const LUSTER_MALL_SKATE_TEST,					  10,  7 ; 22
 	map_const LUSTER_MALL_ANTIQUE_SHOP,					   4,  4 ; 23
 	map_const LUSTER_MALL_HERB_SHOP,					   4,  3 ; 24
 	map_const LUSTER_MALL_STONE_SHOP,					   4,  4 ; 25
@@ -295,7 +295,7 @@ DEF MAP_NONE   EQU 0
 	map_const CONNECTING_CAVERN,						  20, 24 ; 8
 	
 	newgroup													 ; 15
-	map_const SKATEPARK,								  15, 32 ; 2
+	map_const SKATEPARK,								  16, 32 ; 2
 	map_const ROUTE_12_GATE,							   4,  4 ; 3
 	map_const AIRPORT_GATE,								   4,  4 ; 4
 	map_const ROUTE_11,									  16, 16 ; 5

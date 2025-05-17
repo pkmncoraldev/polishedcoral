@@ -264,5 +264,10 @@ LusterApartment2_2FShelfText:
 LusterApartment2_2FFlowersText:
 	text "Some pretty"
 	line "flowers."
+	
+	para "Almost as pretty"
+	line "as MOM's back home."
+	
+	para "Almost…"
 	done
 	

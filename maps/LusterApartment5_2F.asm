@@ -8,13 +8,35 @@ LusterApartment5_2F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 7 ; bg events
+	signpost  3,  4, SIGNPOST_JUMPTEXT, LusterApartment5_2F_FlowersText
+	signpost  3,  5, SIGNPOST_JUMPTEXT, LusterApartment5_2F_FlowersText
+	signpost  6,  0, SIGNPOST_JUMPTEXT, LusterApartment5_2F_FlowersText
+	signpost  7,  0, SIGNPOST_JUMPTEXT, LusterApartment5_2F_FlowersText
+	signpost  6,  7, SIGNPOST_JUMPTEXT, LusterApartment5_2F_FlowersText
+	signpost  7,  7, SIGNPOST_JUMPTEXT, LusterApartment5_2F_FlowersText
+	signpost  6,  4, SIGNPOST_JUMPTEXT, LusterApartment5_2F_BookText
 
 	db 4 ; object events
 	person_event SPRITE_HEX_MANIAC,  6,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterApartment5_2F_NPC1, -1
 	person_event SPRITE_DELINQUENT_F,  3,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterApartment5_2F_NPC2, -1
 	person_event SPRITE_COSPLAYER,  5,  0, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterApartment5_2F_NPC3, -1
 	person_event SPRITE_CANDLE,  5,  3, SPRITEMOVEDATA_CANDLE, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	
+LusterApartment5_2F_FlowersText:
+	text "Some eerie"
+	line "flowers."
+	
+	para "They don't smell"
+	line "like MOM's at all!"
+	done
+	
+LusterApartment5_2F_BookText:
+	text "It's all written"
+	line "in an odd language"
+	cont "you've never seen"
+	cont "before."
+	done
 	
 LusterApartment5_2F_NPC1:
 	faceplayer
@@ -92,11 +114,8 @@ LusterApartment5_2F_NPC2Text:
 	para "Can you not get"
 	line "so close?"
 	
-	para "Your vibrations"
-	line "are totally off."
-	
-	para "It's interrupting"
-	line "my dark energy…"
+	para "Your aura is"
+	line "totally off…"
 	done
 	
 LusterApartment5_2F_NPC3Text:

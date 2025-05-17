@@ -182,8 +182,8 @@ Route8FlowersText:
 	text "Some pretty"
 	line "flowers."
 	
-	para "They smell really"
-	line "good!"
+	para "They remind you"
+	line "of MOM's back home…"
 	done
 	
 Route8FlowerHouseSignText:

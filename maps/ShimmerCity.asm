@@ -594,7 +594,8 @@ ShimmerFlowersText:
 	line "good."
 	
 	para "Not as good as"
-	line "MOM's, though."
+	line "MOM's back home,"
+	cont "though…"
 	done
 	
 ShimmerCityNpc1Text:

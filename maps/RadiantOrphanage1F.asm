@@ -72,10 +72,11 @@ RadiantOrphanage1FCallback:
 	return
 	
 RadiantOrphanage1FFlowers:
-	text "Some flowers."
+	text "Some pretty"
+	line "flowers."
 	
 	para "They remind you"
-	line "of home…"
+	line "of MOM's back home…"
 	done
 	
 RadiantOrphanage1FRadio:

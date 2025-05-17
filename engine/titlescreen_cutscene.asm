@@ -133,9 +133,9 @@ TitleScreenCutscene1:
 	and %011111
 	jr nz, .cont
 	
-	ld a, [hSCY]
+	ldh a, [hSCY]
 	inc a
-	ld [hSCY], a
+	ldh [hSCY], a
 	
 	ld a, [wNumHits]
 	inc a
@@ -196,9 +196,9 @@ TitleScreenCutscene2:
 	and %000111
 	jr nz, .cont
 	
-	ld a, [hSCY]
+	ldh a, [hSCY]
 	inc a
-	ld [hSCY], a
+	ldh [hSCY], a
 	
 	ld a, [wNumHits]
 	inc a
@@ -293,9 +293,9 @@ TitleScreenCutscene3:
 	and %000001
 	jr nz, .cont
 	
-	ld a, [hSCY]
+	ldh a, [hSCY]
 	inc a
-	ld [hSCY], a
+	ldh [hSCY], a
 
 	ld a, [wNumHits]
 	inc a
@@ -491,7 +491,7 @@ TitleScreenSkipToEnd:
 	
 TitleScreenFlash:
 ;	ld a, $88
-;	ld [hWY], a
+;	ldh [hWY], a
 	
 	ld c, 10
 	call DelayFrames
@@ -531,7 +531,7 @@ TitleScreenFlash:
 	ldh [hSCY], a
 	
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 	
 ;flavor blast the 2 lighthouse tiles (very frame specific)
 ;	hlbgcoord $2, $1a
@@ -563,7 +563,7 @@ TitleScreenTimer1: ; 62f6
 	ld [hl], d
 	
 	ld a, 0
-	ld [hSCY], a
+	ldh [hSCY], a
 	ret
 
 TitleScreenTimer2: ; 62f6

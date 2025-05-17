@@ -10,10 +10,10 @@ _AnimateTileset:: ; fc000
 	ld a, [wTilesetAnim + 1]
 	ld d, a
 
-	ld a, [hTileAnimFrame]
+	ldh a, [hTileAnimFrame]
 	ld l, a
 	inc a
-	ld [hTileAnimFrame], a
+	ldh [hTileAnimFrame], a
 
 	ld h, 0
 	add hl, hl
@@ -573,7 +573,7 @@ TilesetHauntedTVAnim::
 DoneTileAnimation: ; fc2fb
 ; Reset the animation command loop.
 	xor a
-	ld [hTileAnimFrame], a
+	ldh [hTileAnimFrame], a
 
 WaitTileAnimation: ; fc2fe
 ; Do nothing this frame.
@@ -584,7 +584,7 @@ WaitTileAnimationOrphanage:
 	cp MAP_RADIANT_GYM
 	ret z
 	xor a
-	ld [hTileAnimFrame], a
+	ldh [hTileAnimFrame], a
 	ret
 
 JukeboxColors:
@@ -942,7 +942,7 @@ AnimateFlowerTile: ; fc56d
 	ld e, a
 
 ; CGB has different color mappings for flowers.
-;	ld a, [hCGB]
+;	ldh a, [hCGB]
 	ld a, [wMapGroup]
 	cp GROUP_FAKE_ROUTE_1
 	jr nz, .dmg
@@ -987,7 +987,7 @@ AnimateConveyorTile: ; fc56d
 	ld e, a
 
 ; CGB has different color mappings for flowers.
-	ld a, [hCGB]
+	ldh a, [hCGB]
 	and 1
 
 	add e
@@ -1633,12 +1633,12 @@ TileAnimationPaletteStarglow: ; fc6d7
 	ret z
 
 ; No palette changes on DMG.
-	ld a, [hCGB]
+	ldh a, [hCGB]
 	and a
 	ret z
 
 ; We don't want to mess with non-standard palettes.
-	ld a, [rBGP] ; BGP
+	ldh a, [rBGP] ; BGP
 	cp %11100100
 	ret nz
 
@@ -1650,12 +1650,12 @@ TileAnimationPaletteStarglow: ; fc6d7
 
 ; Ready for BGPD input...
 	ld a, %10010100 ; auto increment, index $18 (pal 3 color 0)
-	ld [rBGPI], a
+	ldh [rBGPI], a
 
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, 5 ; wra5: gfx
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 ; Update color 0 in order 0 1 2 1
 
@@ -1675,37 +1675,37 @@ TileAnimationPaletteStarglow: ; fc6d7
 .color1
 	ld hl, wUnknBGPals + $14 ; pal 3 color 1
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	jr .end
 
 .color0
 	ld hl, wUnknBGPals + $04 ; pal 3 color 0
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	jr .end
 
 .color3
 	ld hl, wUnknBGPals + $02 ; pal 3 color 0
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	jr .end
 	
 .color2
 	ld hl, wUnknBGPals + $32 ; pal 3 color 2
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 
 .end
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 ; fc71e
 
@@ -1713,12 +1713,12 @@ TileAnimationPalette: ; fc6d7
 ; Transition between color values 0-2 for color 0 in palette 3.
 
 ; No palette changes on DMG.
-	ld a, [hCGB]
+	ldh a, [hCGB]
 	and a
 	ret z
 
 ; We don't want to mess with non-standard palettes.
-	ld a, [rBGP] ; BGP
+	ldh a, [rBGP] ; BGP
 	cp %11100100
 	ret nz
 
@@ -1730,12 +1730,12 @@ TileAnimationPalette: ; fc6d7
 
 ; Ready for BGPD input...
 	ld a, %10011000 ; auto increment, index $18 (pal 3 color 0)
-	ld [rBGPI], a
+	ldh [rBGPI], a
 
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, 5 ; wra5: gfx
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 ; Update color 0 in order 0 1 2 1
 
@@ -1750,40 +1750,40 @@ TileAnimationPalette: ; fc6d7
 .color1
 	ld hl, wUnknBGPals + $1a ; pal 3 color 1
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	jr .end
 
 .color0
 	ld hl, wUnknBGPals + $18 ; pal 3 color 0
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	jr .end
 
 .color2
 	ld hl, wUnknBGPals + $1c ; pal 3 color 2
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 
 .end
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 ; fc71e
 
 
 FlickeringCaveEntrancePalette: ; fc71e
 ; No palette changes on DMG.
-	ld a, [hCGB]
+	ldh a, [hCGB]
 	and a
 	ret z
 ; We don't want to mess with non-standard palettes.
-	ld a, [rBGP]
+	ldh a, [rBGP]
 	cp %11100100
 	ret nz
 ; We only want to be here if we're in a dark cave.
@@ -1791,14 +1791,14 @@ FlickeringCaveEntrancePalette: ; fc71e
 	cp $ff ; 3,3,3,3
 	ret nz
 
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, 5 ; wra5: gfx
-	ld [rSVBK], a
+	ldh [rSVBK], a
 ; Ready for BGPD input...
 	ld a, %10100000 ; auto-increment, index $20 (pal 4 color 0)
-	ld [rBGPI], a
-	ld a, [hVBlankCounter]
+	ldh [rBGPI], a
+	ldh a, [hVBlankCounter]
 	and %00000010
 	jr nz, .bit1set
 	ld hl, wUnknBGPals + $20 ; pal 4 color 0
@@ -1809,22 +1809,22 @@ FlickeringCaveEntrancePalette: ; fc71e
 
 .okay
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 ; fc750
 
 FlickeringTVPalette: ; fc71e
 ; No palette changes on DMG.
-	ld a, [hCGB]
+	ldh a, [hCGB]
 	and a
 	ret z
 ; We don't want to mess with non-standard palettes.
-	ld a, [rBGP]
+	ldh a, [rBGP]
 	cp %11100100
 	ret nz
 ; We only want to be here if we're in a dark cave.
@@ -1832,14 +1832,14 @@ FlickeringTVPalette: ; fc71e
 ;	cp $ff ; 3,3,3,3
 ;	ret nz
 
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, 5 ; wra5: gfx
-	ld [rSVBK], a
+	ldh [rSVBK], a
 ; Ready for BGPD input...
 	ld a, %10100000 ; auto-increment, index $20 (pal 4 color 0)
-	ld [rBGPI], a
-	ld a, [hVBlankCounter]
+	ldh [rBGPI], a
+	ldh a, [hVBlankCounter]
 	and %00000010
 	jr nz, .bit1set
 	ld hl, wUnknBGPals + $20 ; pal 4 color 0
@@ -1850,36 +1850,36 @@ FlickeringTVPalette: ; fc71e
 
 .okay
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 ; fc750
 
 FlickeringLightbulbPalette:
 ; No palette changes on DMG.
-	ld a, [hCGB]
+	ldh a, [hCGB]
 	and a
 	ret z
 ; We don't want to mess with non-standard palettes.
-	ld a, [rBGP]
+	ldh a, [rBGP]
 	cp %11100100
 	ret nz
 
-	ld a, [hVBlankCounter]
+	ldh a, [hVBlankCounter]
 	and %00000100
 	ret nz
 	
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, 5 ; wra5: gfx
-	ld [rSVBK], a
+	ldh [rSVBK], a
 ; Ready for BGPD input...
 	ld a, %10100000 ; auto-increment, index $20 (pal 4 color 0)
-	ld [rBGPI], a
+	ldh [rBGPI], a
 	call Random
 	cp $cf ; 75 percent
 	jr c, .on
@@ -1891,66 +1891,66 @@ FlickeringLightbulbPalette:
 
 .okay
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 	
 FlickeringSignPalette:
 ; No palette changes on DMG.
-	ld a, [hCGB]
+	ldh a, [hCGB]
 	and a
 	ret z
 ; We don't want to mess with non-standard palettes.
-	ld a, [rBGP]
+	ldh a, [rBGP]
 	cp %11100100
 	ret nz
 
-	ld a, [hVBlankCounter]
+	ldh a, [hVBlankCounter]
 	and %00000100
 	ret nz
 	
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, 5 ; wra5: gfx
-	ld [rSVBK], a
+	ldh [rSVBK], a
 ; Ready for BGPD input...
 	ld a, %10100000 ; auto-increment, index $20 (pal 4 color 0)
-	ld [rBGPI], a
+	ldh [rBGPI], a
 	call Random
 	cp 75 percent
 	jr nc, .on
 	ld hl, wUnknBGPals + $20 ; pal 4 color 0
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, %10100010 ; auto-increment, index $20 (pal 4 color 1)
-	ld [rBGPI], a
+	ldh [rBGPI], a
 	ld hl, wUnknBGPals + $22 ; pal 4 color 0
 	jr .okay
 
 .on
 	ld hl, wUnknBGPals + $24 ; pal 4 color 2
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, %10100010 ; auto-increment, index $20 (pal 4 color 1)
-	ld [rBGPI], a
+	ldh [rBGPI], a
 	ld hl, wUnknBGPals + $26 ; pal 4 color 2
 
 .okay
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 	
 TileAnimationPaletteCasino: ; fc6d7
@@ -1959,12 +1959,12 @@ TileAnimationPaletteCasino: ; fc6d7
 	ret nz
 
 ; No palette changes on DMG.
-	ld a, [hCGB]
+	ldh a, [hCGB]
 	and a
 	ret z
 
 ; We don't want to mess with non-standard palettes.
-	ld a, [rBGP] ; BGP
+	ldh a, [rBGP] ; BGP
 	cp %11100100
 	ret nz
 
@@ -1976,12 +1976,12 @@ TileAnimationPaletteCasino: ; fc6d7
 
 ; Ready for BGPD input...
 	ld a, %10010000 ; auto increment, index $18 (pal 3 color 0)
-	ld [rBGPI], a
+	ldh [rBGPI], a
 
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, 5 ; wra5: gfx
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 ; Update color 0 in order 0 1 2 1
 
@@ -1996,21 +1996,21 @@ TileAnimationPaletteCasino: ; fc6d7
 .color1
 	ld hl, wUnknBGPals + $0e ; pal 3 color 1
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	jr .end
 
 .color0
 	ld hl, wUnknBGPals + $10 ; pal 3 color 0
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, [hli]
-	ld [rBGPD], a
+	ldh [rBGPD], a
 
 .end
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 
 SproutPillarTilePointer1:  dw VTiles2 tile $2c, SproutPillarTile1

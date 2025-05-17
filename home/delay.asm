@@ -4,13 +4,13 @@ ClearBGPalettes::
 
 ApplyAttrAndTilemapInVBlank::
 	ld a, 2
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call Delay2
 
 ApplyTilemapInVBlank::
 ; Tell VBlank to update BG Map
 	ld a, 1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 
 SFXDelay2::
 Delay2::
@@ -27,8 +27,8 @@ DelayFrames::
 SFXDelayFrame::
 DelayFrame::
 ; Wait for one frame
-	ld a, [rLY]
-	ld [hDelayFrameLY], a
+	ldh a, [rLY]
+	ldh [hDelayFrameLY], a
 	ld a, 1
 	ld [wVBlankOccurred], a
 

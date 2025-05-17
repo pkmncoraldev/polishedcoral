@@ -1,9 +1,9 @@
 Special_BattleTower_FindChallengeLevel: ; 1700b0
 	; e = maximum party level [1-100]
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $1
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld hl, wPartyMon1Level
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld a, [wPartyCount]
@@ -20,7 +20,7 @@ Special_BattleTower_FindChallengeLevel: ; 1700b0
 	ld a, d
 	jr nz, .loop
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	; wBTChoiceOfLvlGroup = (e + 9) / 10 [1-10]
 	ld a, 9
@@ -28,15 +28,15 @@ Special_BattleTower_FindChallengeLevel: ; 1700b0
 	ld c, 10
 	call SimpleDivide
 
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $3
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld a, b
 	ld [wBTChoiceOfLvlGroup], a
 	ld [wScriptVar], a
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 ; 1700ba
 
@@ -176,10 +176,10 @@ ReadBTTrainerParty: ; 1702b7
 
 CopyBTTrainerToTemp: ; 1704a2
 ; copy the BattleTower-Trainer data that lies at 'wBT_OTTrainer' to 'wBT_OTTemp'
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBT_OTTrainer)
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	ld hl, wBT_OTTrainer ; $d100
 	ld de, wBT_OTTemp ; wMisc
@@ -187,7 +187,7 @@ CopyBTTrainerToTemp: ; 1704a2
 	rst CopyBytes
 
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	ld a, BANK(sBattleTowerChallengeState)
 	call GetSRAMBank
@@ -250,27 +250,27 @@ Special_BattleTower_MarkNewSaveFile: ; 170788 (5c:4788)
 Special_BattleTower_SaveLevelGroup: ; 170868 (5c:4868)
 	ld a, BANK(sBTChoiceOfLevelGroup)
 	call GetSRAMBank
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $3
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld a, [wBTChoiceOfLvlGroup]
 	ld [sBTChoiceOfLevelGroup], a
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	jp CloseSRAM
 
 Special_BattleTower_LoadLevelGroup: ; 170881 (5c:4881)
 	ld a, BANK(sBTChoiceOfLevelGroup)
 	call GetSRAMBank
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $3
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld a, [sBTChoiceOfLevelGroup]
 	ld [wBTChoiceOfLvlGroup], a
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	jp CloseSRAM
 
 Special_BattleTower_CheckSaveFileExistsAndIsYours: ; 17089a
@@ -303,17 +303,17 @@ Special_BattleTower_BeginChallenge: ; 170a9c (5c:4a9c)
 
 Special_BattleTower_LoadOpponentTrainerAndPokemonsWithOTSprite: ; 0x170b44
 	farcall Function_LoadOpponentTrainer
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBT_OTTrainerClass)
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld hl, wBT_OTTrainerClass
 	ld a, [hl]
 	dec a
 	ld c, a
 	ld b, $0
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld hl, BTTrainerClassSprites
 	add hl, bc
 	ld a, [hl]
@@ -323,9 +323,9 @@ Special_BattleTower_LoadOpponentTrainerAndPokemonsWithOTSprite: ; 0x170b44
 ; because s/he is chosen randomly and appears out of nowhere
 	ld a, [wBTTempOTSprite]
 	ld [wMap1ObjectSprite], a
-	ld [hUsedSpriteIndex], a
+	ldh [hUsedSpriteIndex], a
 	ld a, 24
-	ld [hUsedSpriteTile], a
+	ldh [hUsedSpriteTile], a
 	farjp GetUsedSprite
 ; 170b90
 

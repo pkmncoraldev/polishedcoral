@@ -10,39 +10,39 @@ _PlayDEDCry::
 	ld c, DED_RATE_FAINTED
 .notfainted
 	call WaitSFX
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wDEDTempSamp)
-	ld [rSVBK], a
-	ld a, [rIE]
+	ldh [rSVBK], a
+	ldh a, [rIE]
 	push af
 	xor a
-	ld [rIF], a
+	ldh [rIF], a
 	ld a, 1 << VBLANK | 1 << TIMER
-	ld [rIE], a
-	ld a, [rNR50]
+	ldh [rIE], a
+	ldh a, [rNR50]
 	push af
-	ld a, [rNR51]
+	ldh a, [rNR51]
 	push af
-	ld a, [hVBlank]
+	ldh a, [hVBlank]
 	push af
 	ld a, $77 ; full volume
-	ld [rNR50], a
+	ldh [rNR50], a
 	xor a
-	ld [rNR51], a
-	ld [rNR30], a
+	ldh [rNR51], a
+	ldh [rNR30], a
 	ld a, $20
-	ld [rNR32], a
-	ld a, [rTIMA]
+	ldh [rNR32], a
+	ldh a, [rTIMA]
 	push af
 	xor a
 	sub c
-	ld [rTMA], a
-	ld [rTIMA], a
+	ldh [rTMA], a
+	ldh [rTIMA], a
 	xor a
 	sla c
 	sub c
-	ld [rNR33], a
+	ldh [rNR33], a
 	ld c, %01000100 ; ch3 only
 	ld a, [wOptions1]
 	bit 5, a ; stereo
@@ -54,48 +54,48 @@ _PlayDEDCry::
 	ld c, a
 .mono
 	ld a, c
-	ld [hDEDNR51Mask], a
+	ldh [hDEDNR51Mask], a
 	di
 	xor a
-	ld [hDEDCryFlag], a
+	ldh [hDEDCryFlag], a
 	ld [wDEDCryRuntimeDuration], a
 	ld a, 7
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	call PlayDEDSamples
 	xor a
-	ld [rNR51], a
-	ld [rNR30], a
-	ld [rTMA], a
+	ldh [rNR51], a
+	ldh [rNR30], a
+	ldh [rTMA], a
 	ld a, [wDEDCryRuntimeDuration]
 	and a
 	jr z, .noMusicToSkip
 	ld b, a
-	ld a, [rNR52]
+	ldh a, [rNR52]
 	push af
 	xor a
-	ld [rNR52], a
+	ldh [rNR52], a
 .skipMusicLoop
 	call UpdateSound
 	dec b
 	jr nz, .skipMusicLoop
 	pop af
-	ld [rNR52], a
+	ldh [rNR52], a
 .noMusicToSkip
 	ei
 	pop af
-	ld [rTIMA], a
+	ldh [rTIMA], a
 	ld a, (1 << rTAC_ON) | rTAC_65536_HZ
-	ld [rTAC], a
+	ldh [rTAC], a
 	pop af
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	pop af
-	ld [rNR51], a
+	ldh [rNR51], a
 	pop af
-	ld [rNR50], a
+	ldh [rNR50], a
 	pop af
-	ld [rIE], a
+	ldh [rIE], a
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	scf
 	ret
 

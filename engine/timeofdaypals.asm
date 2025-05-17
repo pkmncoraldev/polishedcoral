@@ -47,11 +47,11 @@ _TimeOfDayPals:: ; 8c011
 	ld hl, wUnknBGPals palette 7
 
 ; save wram bank
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	ld b, a
 ; wram bank 5
 	ld a, 5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 ; push palette
 	ld c, 4 ; NUM_PAL_COLORS
@@ -66,7 +66,7 @@ _TimeOfDayPals:: ; 8c011
 
 ; restore wram bank
 	ld a, b
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 
 ; update cgb pals
@@ -78,11 +78,11 @@ _TimeOfDayPals:: ; 8c011
 	ld hl, wUnknBGPals palette 7 + 1 palettes - 1 ; last byte in UnknBGPals
 
 ; save wram bank
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	ld d, a
 ; wram bank 5
 	ld a, 5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 ; pop palette
 	ld e, 4 ; NUM_PAL_COLORS
@@ -97,7 +97,7 @@ _TimeOfDayPals:: ; 8c011
 
 ; restore wram bank
 	ld a, d
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 ; update palettes
 	farcall OWFadePalettesInit
@@ -123,10 +123,10 @@ FadeInPalettesSign::
 	xor a
 	ld [wLandmarkSignTimer], a
 	ld a, $90
-	ld [rWY], a
-	ld [hWY], a
+	ldh [rWY], a
+	ldh [hWY], a
 	xor a
-	ld [hLCDCPointer], a
+	ldh [hLCDCPointer], a
 	call GetMapPermission
 	cp GATE
 	jr z, .cont
@@ -192,10 +192,10 @@ Special_FadeBlackQuickly: ; 8c0b6
 
 
 FillWhiteBGColor: ; 8c0c1
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	ld hl, wUnknBGPals
 	ld a, [hli]
@@ -216,7 +216,7 @@ endr
 	jr nz, .loop
 
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 ; 8c0e5
 

@@ -21,7 +21,7 @@ TrainerCard: ; 25105
 	ld a, [wJumptableIndex]
 	bit 7, a
 	jr nz, .quit
-	ld a, [hJoyLast]
+	ldh a, [hJoyLast]
 	cp SELECT
 	jr z, .phrase
 	and B_BUTTON
@@ -464,7 +464,7 @@ TrainerCard_PrintTopHalfOfCard: ; 25299 (9:5299)
 	hlcoord 14, 1
 	lb bc, 5, 7
 	xor a
-	ld [hGraphicStartTile], a
+	ldh [hGraphicStartTile], a
 	predef PlaceGraphic
 	
 	hlcoord 18, 1
@@ -633,7 +633,7 @@ TrainerCard_Page2_PrintGameTime: ; 25415 (9:5415)
 	ld de, wGameTimeMinutes
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
 	call PrintNum
-	ld a, [hVBlankCounter]
+	ldh a, [hVBlankCounter]
 	and $1f
 	ret nz
 	hlcoord 15, 12
@@ -865,7 +865,7 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	db $6c, $6d, $6e, $ff
 
 TrainerCard_Page3_3_AnimateBadges: ; 25438 (9:5438)
-	ld a, [hVBlankCounter]
+	ldh a, [hVBlankCounter]
 	and $7
 	ret nz
 	ld a, [wcf64]

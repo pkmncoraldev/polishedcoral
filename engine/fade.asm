@@ -1,11 +1,11 @@
 OWFadePalettesInit::
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	push hl
 	push de
 	push bc
 	ld a, BANK(wBGPals)
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld a, 15
 	ld [wPalFadeDelayFrames], a
 	xor a
@@ -14,14 +14,14 @@ OWFadePalettesInit::
 	pop de
 	pop hl
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 
 OWFadePalettesStep::
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBGPals)
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	ld a, [wPalFadeDelayFrames]
 	and a
@@ -50,7 +50,7 @@ OWFadePalettesStep::
 	and a
 	jr nz, .no_upload
 	ld a, 1
-	ld [hCGBPalUpdate], a
+	ldh [hCGBPalUpdate], a
 	ld hl, wPalFadeDelayFrames
 	dec [hl]
 .no_upload
@@ -61,7 +61,7 @@ OWFadePalettesStep::
 
 .end_early
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 
 _DoFadePalettes::
@@ -69,14 +69,14 @@ _DoFadePalettes::
 ; wUnkn(BG|OB)Pals: Palettes we're fading towards
 ; c: Fade duration
 ; wPalFadeMode can be 0 (fade everything), 1 (fade BG), 2 (fade OBJ)
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	push hl
 	push de
 .restart_dofade
 	push bc
 	ld a, BANK(wBGPals)
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	
 	call FadePalettesInit
 	jr c, .done
@@ -98,7 +98,7 @@ _DoFadePalettes::
 	pop de
 	pop hl
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 
 .FadeDelay:
@@ -120,7 +120,7 @@ _DoFadePalettes::
 	ld [hl], a
 .delay_finished
 	ld c, b
-	ld [hCGBPalUpdate], a
+	ldh [hCGBPalUpdate], a
 	jp DelayFrames
 
 FadePalettesInit:

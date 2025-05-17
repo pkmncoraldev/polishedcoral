@@ -218,7 +218,7 @@ Slots_WaitStart: ; 928c6 (24:68c6)
 .proceed
 	call Slots_Next
 	xor a
-	ld [hJoypadSum], a
+	ldh [hJoypadSum], a
 	ret
 
 Slots_WaitReel1: ; 928d6 (24:68d6)
@@ -240,7 +240,7 @@ Slots_WaitStopReel1: ; 928e6 (24:68e6)
 	call Slots_LoadReelState
 	call Slots_Next
 	xor a
-	ld [hJoypadSum], a
+	ldh [hJoypadSum], a
 Slots_WaitReel2: ; 92900 (24:6900)
 	ld hl, hJoypadSum ; $ffa5
 	ld a, [hl]
@@ -260,7 +260,7 @@ Slots_WaitStopReel2: ; 92910 (24:6910)
 	call Slots_LoadReelState
 	call Slots_Next
 	xor a
-	ld [hJoypadSum], a
+	ldh [hJoypadSum], a
 Slots_WaitReel3: ; 9292a (24:692a)
 	ld hl, hJoypadSum ; $ffa5
 	ld a, [hl]
@@ -280,7 +280,7 @@ Slots_WaitStopReel3: ; 9293a (24:693a)
 	call Slots_LoadReelState
 	call Slots_Next
 	xor a
-	ld [hJoypadSum], a
+	ldh [hJoypadSum], a
 	ret
 
 Slots_FlashIfWin: ; 92955 (24:6955)
@@ -303,7 +303,7 @@ Slots_FlashScreen: ; 9296b (24:696b)
 	srl a
 	ret z
 
-	ld a, [rOBP0]
+	ldh a, [rOBP0]
 	cpl
 	ld e, a
 	ld d, a
@@ -1912,7 +1912,7 @@ SlotMachine_AnimateGolem: ; 9321d (24:721d)
 	cpl
 	inc a
 	ld [hl], a
-	ld [hSCY], a
+	ldh [hSCY], a
 	ret
 
 .restart
@@ -1920,7 +1920,7 @@ SlotMachine_AnimateGolem: ; 9321d (24:721d)
 	add hl, bc
 	xor a
 	ld [hl], a
-	ld [hSCY], a
+	ldh [hSCY], a
 	ret
 
 Slots_AnimateNumel: ; 932ac (24:72ac)

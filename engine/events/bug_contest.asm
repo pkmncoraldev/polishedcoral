@@ -261,9 +261,9 @@ BugContest_JudgeContestants: ; 13819
 	ld [hli], a
 	ld a, [wContestMon]
 	ld [hli], a
-	ld a, [hProduct]
+	ldh a, [hProduct]
 	ld [hli], a
-	ld a, [hProduct + 1]
+	ldh a, [hProduct + 1]
 	ld [hl], a
 	jp DetermineContestWinners
 ; 13833
@@ -387,8 +387,8 @@ ContestScore: ; 13900
 ; Determine the player's score in the Bug Catching Contest.
 
 	xor a
-	ld [hProduct], a
-	ld [hMultiplicand], a
+	ldh [hProduct], a
+	ldh [hMultiplicand], a
 
 	ld a, [wContestMonSpecies] ; Species
 	and a

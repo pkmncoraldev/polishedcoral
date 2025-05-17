@@ -56,7 +56,7 @@ WritePartyMenuTilemap: ; 0x5005f
 	push af
 	set NO_TEXT_SCROLL, [hl] ; Disable text delay
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	ld a, " "
@@ -682,14 +682,14 @@ InitPartyMenuGFX: ; 503e0
 	ret z
 	ld c, a
 	xor a
-	ld [hObjectStructIndexBuffer], a
+	ldh [hObjectStructIndexBuffer], a
 .loop
 	push bc
 	push hl
 	farcall LoadPartyMenuMonIcon
-	ld a, [hObjectStructIndexBuffer]
+	ldh a, [hObjectStructIndexBuffer]
 	inc a
-	ld [hObjectStructIndexBuffer], a
+	ldh [hObjectStructIndexBuffer], a
 	pop hl
 	pop bc
 	dec c
@@ -774,7 +774,7 @@ PartyMenuSelect: ; 0x50457
 	cp b
 	jr z, .exitmenu ; CANCEL
 	ld [wPartyMenuCursor], a
-	ld a, [hJoyLast]
+	ldh a, [hJoyLast]
 	ld b, a
 	bit B_BUTTON_F, b
 	jr nz, .exitmenu ; B button

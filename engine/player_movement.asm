@@ -14,7 +14,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp 0
 	ld a, 0
 	jr nz, .force_stand
-	ld a, [hJoyDown]
+	ldh a, [hJoyDown]
 .force_stand
 	ld [wCurInput], a
 
@@ -580,7 +580,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, [wWalkingTile]
 	cp $ff
 	jp z, .bump
-	ld a, [hJoypadDown]
+	ldh a, [hJoypadDown]
 	and B_BUTTON
 	cp B_BUTTON
 	jr z, .debug_skip
@@ -854,7 +854,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp 3
 	jr z, .left_right2
 .up_down2
-	ld a, [hJoyDown]
+	ldh a, [hJoyDown]
 	and D_LEFT
 	jr z, .skip_left
 	ld a, [wTileLeft]
@@ -871,7 +871,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	farcall IncreaseSkateboardCombo
 	jr .grindcont
 .skip_left
-	ld a, [hJoyDown]
+	ldh a, [hJoyDown]
 	and D_RIGHT
 	jr z, .check_stop_grinding
 	ld a, [wTileRight]
@@ -890,7 +890,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	
 	
 .left_right2
-	ld a, [hJoyDown]
+	ldh a, [hJoyDown]
 	and D_UP
 	jr z, .skip_up
 	ld a, [wTileUp]
@@ -907,7 +907,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	farcall IncreaseSkateboardCombo
 	jp .grindcont
 .skip_up
-	ld a, [hJoyDown]
+	ldh a, [hJoyDown]
 	and D_DOWN
 	jr z, .check_stop_grinding
 	ld a, [wTileDown]
@@ -928,7 +928,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld a, [wSkateboardOllie]
 	cp 0
 	jr z, .stop_grinding
-	ld a, [hJoyDown]
+	ldh a, [hJoyDown]
 	and B_BUTTON
 	jr nz, .stop_grinding
 	call .TryOllie2
@@ -1626,7 +1626,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	bit 0, [hl] ; ENGINE_BIKE_GEAR
 	jr nz, .is_npc ;set
 	xor a
-	ld [hMapObjectIndexBuffer], a
+	ldh [hMapObjectIndexBuffer], a
 ; Load the next X coordinate into d
 	ld a, [wPlayerStandingMapX]
 	ld d, a
@@ -1668,7 +1668,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	bit 0, [hl]
 	jr nz, .is_npc ;set
 	xor a
-	ld [hMapObjectIndexBuffer], a
+	ldh [hMapObjectIndexBuffer], a
 	
 	ld a, [wFacingDirection]
 	cp FACE_UP
@@ -2026,7 +2026,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	cp PLAYER_RUN
 	ret nz
 .continueruncheck
-	ld a, [hJoypadDown]
+	ldh a, [hJoypadDown]
 	and B_BUTTON
 	cp B_BUTTON
 	ret

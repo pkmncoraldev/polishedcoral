@@ -353,7 +353,7 @@ CalcSecsMinsHoursDaysSince: ; 115db
 	inc hl
 	inc hl
 	inc hl
-	ld a, [hSeconds]
+	ldh a, [hSeconds]
 	ld c, a
 	sub [hl]
 	jr nc, .skip
@@ -364,7 +364,7 @@ CalcSecsMinsHoursDaysSince: ; 115db
 	ld [wSecondsSince], a ; seconds since
 
 _CalcMinsHoursDaysSince: ; 115eb
-	ld a, [hMinutes]
+	ldh a, [hMinutes]
 	ld c, a
 	sbc [hl]
 	jr nc, .skip
@@ -375,7 +375,7 @@ _CalcMinsHoursDaysSince: ; 115eb
 	ld [wMinutesSince], a ; minutes since
 
 _CalcHoursDaysSince: ; 115f8
-	ld a, [hHours]
+	ldh a, [hHours]
 	ld c, a
 	sbc [hl]
 	jr nc, .skip
@@ -400,11 +400,11 @@ _CalcDaysSince:
 CopyDayHourMinSecToHL: ; 11613
 	ld a, [wCurDay]
 	ld [hli], a
-	ld a, [hHours]
+	ldh a, [hHours]
 	ld [hli], a
-	ld a, [hMinutes]
+	ldh a, [hMinutes]
 	ld [hli], a
-	ld a, [hSeconds]
+	ldh a, [hSeconds]
 	ld [hli], a
 	ret
 ; 11621
@@ -418,9 +418,9 @@ CopyDayToHL: ; 11621
 CopyDayHourMinToHL: ; 1162e
 	ld a, [wCurDay]
 	ld [hli], a
-	ld a, [hHours]
+	ldh a, [hHours]
 	ld [hli], a
-	ld a, [hMinutes]
+	ldh a, [hMinutes]
 	ld [hli], a
 	ret
 ; 11639

@@ -625,7 +625,7 @@ Route28WalkAwayAsm:
 .loop
 	call DelayFrame
 	call GetJoypad
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	cp D_DOWN
 	jr z, .down
 	cp D_LEFT

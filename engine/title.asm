@@ -6,7 +6,7 @@ _TitleScreen: ; 10ed67
 
 ; Turn BG Map update off
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 
 ; Reset timing variables
 	ld hl, wJumptableIndex
@@ -19,11 +19,11 @@ _TitleScreen: ; 10ed67
 	call DisableLCD
 
 	ld a, $90
-	ld [hWY], a
+	ldh [hWY], a
 	
 ; VRAM bank 1
 	ld a, 1
-	ld [rVBK], a
+	ldh [rVBK], a
 
 
 ; Decompress background
@@ -98,7 +98,7 @@ _TitleScreen: ; 10ed67
 	
 ; Back to VRAM bank 0
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 	
 ; Decompress logo
 	ld hl, TitleLighthouseGFX
@@ -147,15 +147,15 @@ _TitleScreen: ; 10ed67
 	call DrawTitleGraphic
 
 ; Save WRAM bank
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 ; WRAM bank 5
 	ld a, 5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 ; Restore WRAM bank
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	
 ; Reset audio
 ;	call ChannelsOff
@@ -166,10 +166,10 @@ _TitleScreen: ; 10ed67
 	ldh [rLCDC], a
 
 	ld a, $1
-	ld [hCGBPalUpdate], a
+	ldh [hCGBPalUpdate], a
 
 ; Update BG Map 0 (bank 0)
-;	ld [hBGMapMode], a
+;	ldh [hBGMapMode], a
 
 	xor a
 	ld [wUnknBGPals palette 0 + 2], a

@@ -1,6 +1,6 @@
 RefreshScreen:: ; 2dba
 	call ClearWindowData
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	ld a, BANK(ReanchorBGMap_NoOAMUpdate) ; BANK(LoadFonts_NoOAMUpdate)
 	rst Bankswitch
@@ -20,15 +20,15 @@ RefreshScreenFast::
 	farjp ReanchorBGMap_NoOAMUpdate_NoDelay
 
 CloseText:: ; 2dcf
-	ld a, [hOAMUpdate]
+	ldh a, [hOAMUpdate]
 	push af
 	ld a, $1
-	ld [hOAMUpdate], a
+	ldh [hOAMUpdate], a
 
 	call .CloseText
 
 	pop af
-	ld [hOAMUpdate], a
+	ldh [hOAMUpdate], a
 	ld hl, wVramState
 	res 6, [hl]
 	ret
@@ -37,25 +37,25 @@ CloseText:: ; 2dcf
 .CloseText: ; 2de2
 	call ClearWindowData
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call LoadMapPart
 	call BGMapAnchorTopLeft
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call SafeUpdateSprites
 	farcall ReloadVisibleSprites
 	ld a, $90
-	ld [hWY], a
+	ldh [hWY], a
 ;	call ReplaceKrisSprite
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ret
 ;	farjp ReturnFromMapSetupScript
 ; 2e08
 
 OpenText:: ; 2e08
 	call ClearWindowData
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	ld a, BANK(ReanchorBGMap_NoOAMUpdate) ; and BANK(LoadFonts_NoOAMUpdate)
 	rst Bankswitch
@@ -88,38 +88,38 @@ BGMapAnchorTopLeft::
 	call DelayFrame
 
 	di
-	ld a, [rVBK]
+	ldh a, [rVBK]
 	push af
 	ld a, $1
-	ld [rVBK], a
+	ldh [rVBK], a
 	ld hl, wScratchAttrMap
 	call HDMATransfer_Wait123Scanlines_toBGMap
 	ld a, $0
-	ld [rVBK], a
+	ldh [rVBK], a
 	ld hl, wScratchTileMap
 	call HDMATransfer_Wait123Scanlines_toBGMap
 	pop af
-	ld [rVBK], a
+	ldh [rVBK], a
 	ei
 	ret
 
 SafeUpdateSprites:: ; 2e31
-	ld a, [hOAMUpdate]
+	ldh a, [hOAMUpdate]
 	push af
-	ld a, [hBGMapMode]
+	ldh a, [hBGMapMode]
 	push af
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld a, $1
-	ld [hOAMUpdate], a
+	ldh [hOAMUpdate], a
 	call UpdateSprites
 	xor a
-	ld [hOAMUpdate], a
+	ldh [hOAMUpdate], a
 	call DelayFrame
 	pop af
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	pop af
-	ld [hOAMUpdate], a
+	ldh [hOAMUpdate], a
 	ret
 ; 2e4e
 
@@ -127,9 +127,9 @@ HDMATransfer_Wait127Scanlines_toBGMap: ; 1041ad (41:41ad)
 ; HDMA transfer from hl to [hBGMapAddress]
 ; hBGMapAddress -> de
 ; 2 * SCREEN_HEIGHT -> c
-	ld a, [hBGMapAddress + 1]
+	ldh a, [hBGMapAddress + 1]
 	ld d, a
-	ld a, [hBGMapAddress]
+	ldh a, [hBGMapAddress]
 	ld e, a
 	ld c, 2 * SCREEN_HEIGHT
 	jr HDMATransfer_Wait127Scanlines
@@ -139,9 +139,9 @@ HDMATransfer_Wait123Scanlines_toBGMap: ; 1041b7 (41:41b7)
 ; hBGMapAddress -> de
 ; 2 * SCREEN_HEIGHT -> c
 ; $7b --> b
-	ld a, [hBGMapAddress + 1]
+	ldh a, [hBGMapAddress + 1]
 	ld d, a
-	ld a, [hBGMapAddress]
+	ldh a, [hBGMapAddress]
 	ld e, a
 	ld c, 2 * SCREEN_HEIGHT
 	jr HDMATransfer_Wait123Scanlines
@@ -151,25 +151,25 @@ HDMATransfer_NoDI: ; 1041c1
 ; HDMA transfer from hl to [hBGMapAddress]
 ; [hBGMapAddress] --> de
 ; 2 * SCREEN_HEIGHT --> c
-	ld a, [hBGMapAddress + 1]
+	ldh a, [hBGMapAddress + 1]
 	ld d, a
-	ld a, [hBGMapAddress]
+	ldh a, [hBGMapAddress]
 	ld e, a
 	ld c, 2 * SCREEN_HEIGHT
 
 	; [rHDMA1, rHDMA2] = hl & $fff0
 	ld a, h
-	ld [rHDMA1], a
+	ldh [rHDMA1], a
 	ld a, l
 	and $f0
-	ld [rHDMA2], a
+	ldh [rHDMA2], a
 	; [rHDMA3, rHDMA4] = de & $1ff0
 	ld a, d
 	and $1f
-	ld [rHDMA3], a
+	ldh [rHDMA3], a
 	ld a, e
 	and $f0
-	ld [rHDMA4], a
+	ldh [rHDMA4], a
 	; b = c | %10000000
 	ld a, c
 	dec c
@@ -181,19 +181,19 @@ HDMATransfer_NoDI: ; 1041c1
 	ld d, a
 	; while [rLY] >= d: pass
 .loop1
-	ld a, [rLY]
+	ldh a, [rLY]
 	cp d
 	jr nc, .loop1
 	; while not [rSTAT] & 3: pass
 .loop2
-	ld a, [rSTAT]
+	ldh a, [rSTAT]
 	and $3
 	jr z, .loop2
 	; load the 5th byte of HDMA
 	ld a, b
-	ld [rHDMA5], a
+	ldh [rHDMA5], a
 	; wait until rLY advances (c + 1) times
-	ld a, [rLY]
+	ldh a, [rLY]
 	inc c
 	ld hl, rLY
 .loop3
@@ -218,17 +218,17 @@ _continue_HDMATransfer:
 ; a lot of waiting around for hardware registers
 	; [rHDMA1, rHDMA2] = hl & $fff0
 	ld a, h
-	ld [rHDMA1], a
+	ldh [rHDMA1], a
 	ld a, l
 	and $f0 ; high nybble
-	ld [rHDMA2], a
+	ldh [rHDMA2], a
 	; [rHDMA3, rHDMA4] = de & $1ff0
 	ld a, d
 	and $1f ; lower 5 bits
-	ld [rHDMA3], a
+	ldh [rHDMA3], a
 	ld a, e
 	and $f0 ; high nybble
-	ld [rHDMA4], a
+	ldh [rHDMA4], a
 	; e = c | %10000000
 	ld a, c
 	dec c
@@ -240,26 +240,26 @@ _continue_HDMATransfer:
 	ld d, a
 	; while [rLY] >= d: pass
 .ly_loop
-	ld a, [rLY]
+	ldh a, [rLY]
 	cp d
 	jr nc, .ly_loop
 
 	di
 	; while [rSTAT] & 3: pass
 .rstat_loop_1
-	ld a, [rSTAT]
+	ldh a, [rSTAT]
 	and $3
 	jr nz, .rstat_loop_1
 	; while not [rSTAT] & 3: pass
 .rstat_loop_2
-	ld a, [rSTAT]
+	ldh a, [rSTAT]
 	and $3
 	jr z, .rstat_loop_2
 	; load the 5th byte of HDMA
 	ld a, e
-	ld [rHDMA5], a
+	ldh [rHDMA5], a
 	; wait until rLY advances (c + 1) times
-	ld a, [rLY]
+	ldh a, [rLY]
 	inc c
 	ld hl, rLY
 .final_ly_loop
@@ -284,10 +284,10 @@ CutAndPasteAttrMap: ; 104263 (41:4263)
 
 CutAndPasteMap: ; 104265 (41:4265)
 ; back up the value of c to hMapObjectIndexBuffer
-	ld a, [hMapObjectIndexBuffer]
+	ldh a, [hMapObjectIndexBuffer]
 	push af
 	ld a, c
-	ld [hMapObjectIndexBuffer], a
+	ldh [hMapObjectIndexBuffer], a
 
 ; for each row on the screen
 	ld c, SCREEN_HEIGHT
@@ -303,7 +303,7 @@ CutAndPasteMap: ; 104265 (41:4265)
 	jr nz, .loop2
 
 ; load the original value of c into hl 12 times
-	ld a, [hMapObjectIndexBuffer]
+	ldh a, [hMapObjectIndexBuffer]
 	ld b, BG_MAP_WIDTH - SCREEN_WIDTH
 .loop3
 	ld [hli], a
@@ -315,34 +315,34 @@ CutAndPasteMap: ; 104265 (41:4265)
 
 ; restore the original value of hMapObjectIndexBuffer
 	pop af
-	ld [hMapObjectIndexBuffer], a
+	ldh [hMapObjectIndexBuffer], a
 	ret
 	
 CallInSafeGFXMode: ; 104177
-	ld a, [hBGMapMode]
+	ldh a, [hBGMapMode]
 	push af
-	ld a, [hMapAnims]
+	ldh a, [hMapAnims]
 	push af
 	xor a
-	ld [hBGMapMode], a
-	ld [hMapAnims], a
-	ld a, [rSVBK]
+	ldh [hBGMapMode], a
+	ldh [hMapAnims], a
+	ldh a, [rSVBK]
 	push af
 	ld a, $6
-	ld [rSVBK], a
-	ld a, [rVBK]
+	ldh [rSVBK], a
+	ldh a, [rVBK]
 	push af
 
 	call ._hl_
 
 	pop af
-	ld [rVBK], a
+	ldh [rVBK], a
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	pop af
-	ld [hMapAnims], a
+	ldh [hMapAnims], a
 	pop af
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ret
 ; 10419c
 

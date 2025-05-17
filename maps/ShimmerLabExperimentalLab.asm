@@ -808,10 +808,10 @@ ShimmerLabExperimentalLabFlashAsm:
 	jr nz, .palette_loop
 	ret
 .FlashPalettes:
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	ld hl, wOBPals palette PAL_OW_SILVER
 	ld a, [hli]
@@ -843,7 +843,7 @@ ShimmerLabExperimentalLabFlashAsm:
 	ld [hl], a
 
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld a, $1
-	ld [hCGBPalUpdate], a
+	ldh [hCGBPalUpdate], a
 	ret

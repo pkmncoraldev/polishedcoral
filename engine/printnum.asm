@@ -51,9 +51,9 @@ _PrintNum:: ; c4c7
 .do_it
 	push bc
 	xor a
-	ld [hPrintNum1], a
-	ld [hPrintNum2], a
-	ld [hPrintNum3], a
+	ldh [hPrintNum1], a
+	ldh [hPrintNum2], a
+	ldh [hPrintNum3], a
 	ld a, b
 	and $f
 	dec a
@@ -63,17 +63,17 @@ _PrintNum:: ; c4c7
 ; maximum 3 bytes
 .long
 	ld a, [de]
-	ld [hPrintNum2], a
+	ldh [hPrintNum2], a
 	inc de
 
 .word
 	ld a, [de]
-	ld [hPrintNum3], a
+	ldh [hPrintNum3], a
 	inc de
 
 .byte
 	ld a, [de]
-	ld [hPrintNum4], a
+	ldh [hPrintNum4], a
 
 	push de
 
@@ -101,51 +101,51 @@ _PrintNum:: ; c4c7
 
 ; seven
 	ld a, 1000000 / $10000 % $100
-	ld [hPrintNum5], a
+	ldh [hPrintNum5], a
 	ld a, 1000000 / $100 % $100
-	ld [hPrintNum6], a
+	ldh [hPrintNum6], a
 	ld a, 1000000 % $100
-	ld [hPrintNum7], a
+	ldh [hPrintNum7], a
 	call .PrintDigit
 	call .AdvancePointer
 
 .six
 	ld a, 100000 / $10000 % $100
-	ld [hPrintNum5], a
+	ldh [hPrintNum5], a
 	ld a, 100000 / $100 % $100
-	ld [hPrintNum6], a
+	ldh [hPrintNum6], a
 	ld a, 100000 % $100
-	ld [hPrintNum7], a
+	ldh [hPrintNum7], a
 	call .PrintDigit
 	call .AdvancePointer
 
 .five
 	xor a
-	ld [hPrintNum5], a
+	ldh [hPrintNum5], a
 	ld a, 10000 / $100
-	ld [hPrintNum6], a
+	ldh [hPrintNum6], a
 	ld a, 10000 % $100
-	ld [hPrintNum7], a
+	ldh [hPrintNum7], a
 	call .PrintDigit
 	call .AdvancePointer
 
 .four
 	xor a
-	ld [hPrintNum5], a
+	ldh [hPrintNum5], a
 	ld a, 1000 / $100
-	ld [hPrintNum6], a
+	ldh [hPrintNum6], a
 	ld a, 1000 % $100
-	ld [hPrintNum7], a
+	ldh [hPrintNum7], a
 	call .PrintDigit
 	call .AdvancePointer
 
 .three
 	xor a
-	ld [hPrintNum5], a
+	ldh [hPrintNum5], a
 	xor a
-	ld [hPrintNum6], a
+	ldh [hPrintNum6], a
 	ld a, 100
-	ld [hPrintNum7], a
+	ldh [hPrintNum7], a
 	call .PrintDigit
 	call .AdvancePointer
 
@@ -153,11 +153,11 @@ _PrintNum:: ; c4c7
 	dec e
 	jr nz, .two_skip
 	ld a, "0"
-	ld [hPrintNum1], a
+	ldh [hPrintNum1], a
 .two_skip
 
 	ld c, 0
-	ld a, [hPrintNum4]
+	ldh a, [hPrintNum4]
 	jr .handleLoop
 .mod_10
 	sub 10
@@ -168,7 +168,7 @@ _PrintNum:: ; c4c7
 .modded_10
 
 	ld b, a
-	ld a, [hPrintNum1]
+	ldh a, [hPrintNum1]
 	or c
 	jr nz, .money
 	call .PrintLeadingZero
@@ -181,7 +181,7 @@ _PrintNum:: ; c4c7
 	add c
 	ld [hl], a
 	pop af
-	ld [hPrintNum1], a
+	ldh [hPrintNum1], a
 	inc e
 	dec e
 	jr nz, .money_leading_zero
@@ -201,7 +201,7 @@ _PrintNum:: ; c4c7
 
 .PrintYen: ; c5ba
 	push af
-	ld a, [hPrintNum1]
+	ldh a, [hPrintNum1]
 	and a
 	jr nz, .stop
 	bit PRINTNUM_MONEY_F, d
@@ -218,68 +218,68 @@ _PrintNum:: ; c4c7
 	dec e
 	jr nz, .ok
 	ld a, "0"
-	ld [hPrintNum1], a
+	ldh [hPrintNum1], a
 .ok
 	ld c, 0
 .loop
-	ld a, [hPrintNum5]
+	ldh a, [hPrintNum5]
 	ld b, a
-	ld a, [hPrintNum2]
-	ld [hPrintNum8], a
+	ldh a, [hPrintNum2]
+	ldh [hPrintNum8], a
 	cp b
 	jr c, .skip1
 	sub b
-	ld [hPrintNum2], a
-	ld a, [hPrintNum6]
+	ldh [hPrintNum2], a
+	ldh a, [hPrintNum6]
 	ld b, a
-	ld a, [hPrintNum3]
-	ld [hPrintNum9], a
+	ldh a, [hPrintNum3]
+	ldh [hPrintNum9], a
 	cp b
 	jr nc, .skip2
-	ld a, [hPrintNum2]
+	ldh a, [hPrintNum2]
 	and a
 	jr z, .skip3
 	dec a
-	ld [hPrintNum2], a
-	ld a, [hPrintNum3]
+	ldh [hPrintNum2], a
+	ldh a, [hPrintNum3]
 .skip2
 	sub b
-	ld [hPrintNum3], a
-	ld a, [hPrintNum7]
+	ldh [hPrintNum3], a
+	ldh a, [hPrintNum7]
 	ld b, a
-	ld a, [hPrintNum4]
-	ld [hPrintNum10], a
+	ldh a, [hPrintNum4]
+	ldh [hPrintNum10], a
 	cp b
 	jr nc, .skip4
-	ld a, [hPrintNum3]
+	ldh a, [hPrintNum3]
 	and a
 	jr nz, .skip5
-	ld a, [hPrintNum2]
+	ldh a, [hPrintNum2]
 	and a
 	jr z, .skip6
 	dec a
-	ld [hPrintNum2], a
+	ldh [hPrintNum2], a
 	xor a
 .skip5
 	dec a
-	ld [hPrintNum3], a
-	ld a, [hPrintNum4]
+	ldh [hPrintNum3], a
+	ldh a, [hPrintNum4]
 .skip4
 	sub b
-	ld [hPrintNum4], a
+	ldh [hPrintNum4], a
 	inc c
 	jr .loop
 .skip6
-	ld a, [hPrintNum9]
-	ld [hPrintNum3], a
+	ldh a, [hPrintNum9]
+	ldh [hPrintNum3], a
 .skip3
-	ld a, [hPrintNum8]
-	ld [hPrintNum2], a
+	ldh a, [hPrintNum8]
+	ldh [hPrintNum2], a
 .skip1
-	ld a, [hPrintNum1]
+	ldh a, [hPrintNum1]
 	or c
 	jr z, .PrintLeadingZero
-	ld a, [hPrintNum1]
+	ldh a, [hPrintNum1]
 	and a
 	jr nz, .done
 	bit PRINTNUM_MONEY_F, d
@@ -291,7 +291,7 @@ _PrintNum:: ; c4c7
 	ld a, "0"
 	add c
 	ld [hl], a
-	ld [hPrintNum1], a
+	ldh [hPrintNum1], a
 	inc e
 	dec e
 	ret nz
@@ -313,7 +313,7 @@ _PrintNum:: ; c4c7
 	jr nz, .inc
 	bit PRINTNUM_LEFTALIGN_F, d ; left alignment or right alignment?
 	jr z, .inc
-	ld a, [hPrintNum1]
+	ldh a, [hPrintNum1]
 	and a
 	ret z
 .inc

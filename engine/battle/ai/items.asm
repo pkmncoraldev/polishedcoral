@@ -25,13 +25,13 @@ AI_SwitchOrTryItem: ; 38000
 	jr z, .can_switch
 
 	; check if we're trapped by an ability
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	push af
 	call SetEnemyTurn
 	farcall CheckIfTrappedByAbility
 	pop bc
 	ld a, b
-	ld [hBattleTurn], a
+	ldh [hBattleTurn], a
 	jr z, DontSwitch
 
 	ld a, [wPlayerSubStatus2]
@@ -540,7 +540,7 @@ AIUpdateHUD: ; 38387
 	call UpdateEnemyMonInParty
 	farcall UpdateEnemyHUD
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld hl, wEnemyItemState
 	dec [hl]
 	scf

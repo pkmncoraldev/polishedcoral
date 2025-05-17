@@ -10,11 +10,11 @@ GetFrontpic: ; 51077
 	ld [wCurSpecies], a
 	call IsAPokemon
 	ret c
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	call _GetFrontpic
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	jp CloseSRAM
 
 FrontpicPredef: ; 5108b
@@ -22,18 +22,18 @@ FrontpicPredef: ; 5108b
 	ld [wCurSpecies], a
 	call IsAPokemon
 	ret c
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call _GetFrontpic
 	ld a, BANK(VTiles3)
-	ld [rVBK], a
+	ldh [rVBK], a
 	call GetAnimatedFrontpic
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	jp CloseSRAM
 
 _GetFrontpic: ; 510a5
@@ -47,7 +47,7 @@ _GetFrontpic: ; 510a5
 	push bc
 	call GetFrontpicPointer
 	ld a, BANK(wDecompressScratch)
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld a, b
 	ld de, wDecompressScratch
 	call FarDecompress
@@ -66,7 +66,7 @@ _GetFrontpic: ; 510a5
 	push hl
 	ld de, sScratch + 1 tiles
 	ld c, 7 * 7
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	ld b, a
 	call Get2bpp
 	pop hl
@@ -97,11 +97,11 @@ GetFrontpicPointer: ; 510d7
 
 GetAnimatedFrontpic: ; 51103
 	ld a, $1
-	ld [rVBK], a
+	ldh [rVBK], a
 	push hl
 	ld de, sScratch + 1 tiles
 	ld c, 7 * 7
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	ld b, a
 	call Get2bpp
 	pop hl
@@ -134,7 +134,7 @@ GetAnimatedFrontpic: ; 51103
 	pop bc
 	pop hl
 	ld de, wDecompressScratch
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	ld b, a
 ; Improved routine by pfero
 ; https://gitgud.io/pfero/axyllagame/commit/486f4ed432ca49e5d1305b6402cc5540fe9d3aaa
@@ -150,7 +150,7 @@ GetAnimatedFrontpic: ; 51103
 	; Then move up a bit and load the rest
 	ld de, wDecompressScratch + (127 - 7 * 7) tiles
 	ld hl, VTiles4
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	ld b, a
 	ld a, [sScratch]
 	ld c, a
@@ -197,10 +197,10 @@ GetBackpic: ; 5116c
 	ld b, a
 	ld a, [wCurForm]
 	ld c, a
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $6
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	push de
 	ld a, b
 	push bc
@@ -229,11 +229,11 @@ GetBackpic: ; 5116c
 	call FixBackpicAlignment
 	pop hl
 	ld de, wDecompressScratch
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	ld b, a
 	call Get2bpp
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 
 GetTrainerPic: ; 5120d
@@ -244,16 +244,16 @@ GetTrainerPic: ; 5120d
 	ret nc
 	call ApplyTilemapInVBlank
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld hl, TrainerPicPointers
 	ld a, [wTrainerClass]
 	dec a
 	ld bc, 3
 	rst AddNTimes
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $6
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	push de
 	ld a, BANK(TrainerPicPointers)
 	call GetFarByte
@@ -268,29 +268,29 @@ _Decompress7x7Pic:
 	pop hl
 	ld de, wDecompressScratch
 	ld c, 7 * 7
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	ld b, a
 	call Get2bpp
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	call ApplyTilemapInVBlank
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ret
 
 GetPaintingPic:
 	ld a, [wTrainerClass]
 	call ApplyTilemapInVBlank
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld hl, PaintingPicPointers
 	ld a, [wTrainerClass]
 	ld bc, 3
 	rst AddNTimes
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $6
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	push de
 	ld a, BANK(PaintingPicPointers)
 	call GetFarByte
@@ -304,10 +304,10 @@ GetPaintingPic:
 DecompressPredef: ; 5125d
 ; Decompress lz data from b:hl to scratch space at 6:d000, then copy it to address de.
 
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, 6
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	push de
 	push bc
@@ -317,12 +317,12 @@ DecompressPredef: ; 5125d
 	pop bc
 	ld de, wDecompressScratch
 	pop hl
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	ld b, a
 	call Get2bpp
 
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 
 FixBackpicAlignment: ; 5127c

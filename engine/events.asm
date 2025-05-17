@@ -80,13 +80,13 @@ EnterMap: ; 9673e
 	farcall RunMapSetupScript
 	call DisableEvents
 
-	ld a, [hMapEntryMethod]
+	ldh a, [hMapEntryMethod]
 	cp MAPSETUP_CONNECTION
 	jr nz, .dont_enable
 	call EnableEvents
 .dont_enable
 
-	ld a, [hMapEntryMethod]
+	ldh a, [hMapEntryMethod]
 	cp MAPSETUP_RELOADMAP
 	jr nz, .dontresetpoison
 	xor a
@@ -94,7 +94,7 @@ EnterMap: ; 9673e
 .dontresetpoison
 
 	xor a ; end map entry
-	ld [hMapEntryMethod], a
+	ldh [hMapEntryMethod], a
 	ld a, 2 ; HandleMap
 	ld [wMapStatus], a
 	jp DeleteSavedMusic
@@ -135,11 +135,11 @@ NextOverworldFrame:
 	ld a, [wOverworldDelaySkip]
 	and a
 	jr nz, .done
-	ld a, [hDelayFrameLY]
+	ldh a, [hDelayFrameLY]
 	inc a
 	jp nz, LoadGraphicsAndDelay
 	xor a
-	ld [hDelayFrameLY], a
+	ldh [hDelayFrameLY], a
 .done
 	ld a, [wOverworldDelaySkip]
 	and a
@@ -618,7 +618,7 @@ ThrowPunch:
 OWPlayerInput: ; 96974
 	eventflagcheck EVENT_TEST_OF_MIND_ACTIVE
 	jr z, .no_trial_of_mind
-	ld a, [hJoyDown]
+	ldh a, [hJoyDown]
 	cp 0
 	jr z, .no_trial_of_mind
 	ld a, 1
@@ -627,7 +627,7 @@ OWPlayerInput: ; 96974
 .no_trial_of_mind
 	eventflagcheck EVENT_TEST_OF_BODY_ACTIVE
 	jr z, .no_trial_of_body
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	and A_BUTTON
 	jr z, .NoAction
 	call ThrowPunch
@@ -677,7 +677,7 @@ OWPlayerInput: ; 96974
 ; 96999
 
 CheckAPressOW: ; 96999
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	and A_BUTTON
 	ret z
 	call TryObjectEvent
@@ -694,7 +694,7 @@ CheckBPressOW: ; 96999
 	; ld a, [wPlayerState]
 	; cp PLAYER_BIKE
 	; jr nz, .not_on_bike
-	; ld a, [hJoyPressed]
+	; ldh a, [hJoyPressed]
 	; and B_BUTTON
 	; ret z
 	; eventflagcheck EVENT_BIKE_UPGRADED
@@ -721,13 +721,13 @@ CheckBPressOW: ; 96999
 	jr nz, .not_on_skateboard
 
 .on_skateboard
-	ld a, [hJoyDown]
+	ldh a, [hJoyDown]
 	and B_BUTTON
 	jp nz, .ollie_1
 	ld a, [wSkateboardOllie]
 	cp 1
 	jr nz, .not_on_skateboard
-	ld a, [hJoyReleased]
+	ldh a, [hJoyReleased]
 	and B_BUTTON
 	jp z, .not_on_skateboard
 	ld a, [wSkateboardGrinding]
@@ -772,14 +772,14 @@ TryObjectEvent: ; 969b5
 	ret nc
 
 	call PlayTalkObject
-	ld a, [hObjectStructIndexBuffer]
+	ldh a, [hObjectStructIndexBuffer]
 	call GetObjectStruct
 	ld hl, OBJECT_MAP_OBJECT_INDEX
 	add hl, bc
 	ld a, [hl]
-	ld [hLastTalked], a
+	ldh [hLastTalked], a
 
-	ld a, [hLastTalked]
+	ldh a, [hLastTalked]
 	call GetMapObject
 	ld hl, MAPOBJECT_COLOR
 	add hl, bc
@@ -1129,9 +1129,9 @@ CheckMenuOW: ; 96b30
 	jr z, .NoMenu
 
 	xor a
-	ld [hMenuReturn], a
-	ld [hMenuReturn + 1], a
-	ld a, [hJoyPressed]
+	ldh [hMenuReturn], a
+	ldh [hMenuReturn + 1], a
+	ldh a, [hJoyPressed]
 
 	bit 2, a ; SELECT
 	jr nz, .Select
@@ -1358,9 +1358,9 @@ DoPollenStep:
 	jr nz, .no
 .yes
 	ld a, 1
-	ld [hMoneyTemp + 1], a
+	ldh [hMoneyTemp + 1], a
 	ld a, 0
-	ld [hMoneyTemp], a
+	ldh [hMoneyTemp], a
 	ld bc, hMoneyTemp
 	farcall GivePollen
 .no
@@ -1875,7 +1875,7 @@ _TryWildEncounter_BugContest: ; 97d23
 	ld c, a
 	inc c
 	call Random
-	ld a, [hRandomAdd]
+	ldh a, [hRandomAdd]
 	call SimpleDivide
 	add d
 .GotLevel:
@@ -1899,7 +1899,7 @@ TryWildEncounter_BugContest: ; 97d64
 	farcall ApplyMusicEffectOnEncounterRate
 	farcall ApplyCleanseTagEffectOnEncounterRate
 	call Random
-	ld a, [hRandomAdd]
+	ldh a, [hRandomAdd]
 	cp b
 	ret c
 	ld a, 1
@@ -1928,7 +1928,7 @@ HandleCmdQueue:: ; 97e08
 	ld hl, wCmdQueue
 	xor a
 .loop
-	ld [hMapObjectIndexBuffer], a
+	ldh [hMapObjectIndexBuffer], a
 	ld a, [hl]
 	and a
 	jr z, .skip
@@ -1941,7 +1941,7 @@ HandleCmdQueue:: ; 97e08
 .skip
 	ld de, CMDQUEUE_ENTRY_SIZE
 	add hl, de
-	ld a, [hMapObjectIndexBuffer]
+	ldh a, [hMapObjectIndexBuffer]
 	inc a
 	cp CMDQUEUE_CAPACITY
 	jr nz, .loop

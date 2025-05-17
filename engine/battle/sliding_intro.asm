@@ -1,18 +1,18 @@
 BattleIntroSlidingPics: ; 4e980
 	ld hl, rIE
 	set LCD_STAT, [hl]
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	call .subfunction1
 	ld a, rSCX - $ff00
-	ld [hLCDCPointer], a
+	ldh [hLCDCPointer], a
 	call .subfunction2
 	xor a
-	ld [hLCDCPointer], a
+	ldh [hLCDCPointer], a
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld hl, rIE
 	res LCD_STAT, [hl]
 	ret
@@ -21,7 +21,7 @@ BattleIntroSlidingPics: ; 4e980
 .subfunction1 ; 4e998
 	call .subfunction4
 	ld a, $90
-	ld [hSCX], a
+	ldh [hSCX], a
 	ld a, %11100100
 	call DmgToCgbBGPals
 	lb de, %11100100, %11100100
@@ -35,11 +35,11 @@ BattleIntroSlidingPics: ; 4e980
 .loop1
 	push af
 .loop2
-	ld a, [rLY]
+	ldh a, [rLY]
 	cp $60
 	jr c, .loop2
 	ld a, d
-	ld [hSCX], a
+	ldh [hSCX], a
 	call .subfunction5
 	inc e
 	inc e

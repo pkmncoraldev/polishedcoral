@@ -1,9 +1,9 @@
 _ReplaceKrisSprite:: ; 14135
 	call GetPlayerSprite
 	ld a, [wPlayerSprite]
-	ld [hUsedSpriteIndex], a
+	ldh [hUsedSpriteIndex], a
 	xor a
-	ld [hUsedSpriteTile], a
+	ldh [hUsedSpriteTile], a
 	ld hl, wSpriteFlags
 	res 5, [hl]
 	jp GetUsedSpritePlayer
@@ -282,7 +282,7 @@ ReloadVisibleSprites::
 	push bc
 	call GetPlayerSprite
 	xor a
-	ld [hUsedSpriteIndex], a
+	ldh [hUsedSpriteIndex], a
 	call ReloadSpriteIndex
 	call LoadEmoteGFX
 	pop bc
@@ -295,12 +295,12 @@ ReloadSpriteIndex::
 ; Used to reload variable sprites
 	ld hl, wObjectStructs
 	ld de, OBJECT_STRUCT_LENGTH
-	ld a, [hUsedSpriteIndex]
+	ldh a, [hUsedSpriteIndex]
 	ld b, a
 	xor a
 	ld [wMoogoo], a
 .loop
-	ld [hObjectStructIndexBuffer], a
+	ldh [hObjectStructIndexBuffer], a
 	ld a, [hl]
 	and a
 	jr z, .done
@@ -342,7 +342,7 @@ ReloadSpriteIndex::
 	ld a, [wMoogoo]
 	inc a
 	ld [wMoogoo], a
-	ld a, [hObjectStructIndexBuffer]
+	ldh a, [hObjectStructIndexBuffer]
 	inc a
 	cp NUM_OBJECT_STRUCTS
 	jr nz, .loop
@@ -352,7 +352,7 @@ GetSpriteVTilePlayer:: ; 180e
 	push hl
 	push de
 	push bc
-	ld [hUsedSpriteIndex], a
+	ldh [hUsedSpriteIndex], a
 	push bc
 	farcall GetSpritePlayer
 	pop bc
@@ -361,8 +361,8 @@ GetSpriteVTilePlayer:: ; 180e
 	; SPRITE_BIG_GYARADOS and SPRITE_SAILBOAT use the last object_struct
 	; (SPRITE_BIG_GYARADOS has more than 12 tiles, and SPRITE_SAILBOAT
 	; needs to be in VRAM1)
-	ld a, [hUsedSpriteIndex]
-	ld a, [hObjectStructIndexBuffer]
+	ldh a, [hUsedSpriteIndex]
+	ldh a, [hObjectStructIndexBuffer]
 	cp FIRST_VRAM1_OBJECT_STRUCT
 	jr c, .continue
 	set 5, [hl]
@@ -373,7 +373,7 @@ GetSpriteVTilePlayer:: ; 180e
 	ld d, a
 	add a, d
 	add a, d
-	ld [hUsedSpriteTile], a
+	ldh [hUsedSpriteTile], a
 	push af
 	farcall GetUsedSpritePlayer
 	pop af
@@ -487,9 +487,9 @@ GetSprite:: ; 1423c
 	ret
 
 GetUsedSpritePlayer:: ; 143c8
-	ld a, [hUsedSpriteIndex]
+	ldh a, [hUsedSpriteIndex]
 	call SafeGetSpritePlayer
-	ld a, [hUsedSpriteTile]
+	ldh a, [hUsedSpriteTile]
 	call .GetTileAddr
 	push bc
 	push hl
@@ -528,7 +528,7 @@ endr
 	bit 6, a
 	ret nz
 
-	ld a, [hUsedSpriteIndex]
+	ldh a, [hUsedSpriteIndex]
 	call _DoesSpriteHaveFacings
 	ret c
 
@@ -542,7 +542,7 @@ endr
 	ld h, a
 
 .CopyToVram:
-	ld a, [rVBK]
+	ldh a, [rVBK]
 	push af
 	ld a, [wSpriteFlags]
 	bit 5, a
@@ -550,13 +550,13 @@ endr
 	jr z, .bankswitch
 	inc a
 .bankswitch
-	ld [rVBK], a
+	ldh [rVBK], a
 	
-	ld a, [hUsedSpriteTile]
+	ldh a, [hUsedSpriteTile]
 	and a
 	jr nz, .noLYCheck
 
-	ld a, [rLCDC]
+	ldh a, [rLCDC]
 	bit rLCDC_ENABLE, a
 	jr z, .noLYCheck
 
@@ -567,7 +567,7 @@ endr
 ; check a few LYs earlier to be safe
 ; i.e. [60 - 12 - 4, 76)
 ; assumes that only one copy will happen per frame
-; 	ld a, [rLY]
+; 	ldh a, [rLY]
 ; 	cp (60 - 6 - 12) ; 42
 ; 	jr c, .noLYCheck
 
@@ -577,13 +577,13 @@ endr
 	jr nz, .noLYCheck
 ; otherwise, we must wait until we pass LY=76
 .lyWaitLoop
-	ld a, [rLY]
+	ldh a, [rLY]
 	cp 76
 	jr c, .lyWaitLoop
 .noLYCheck	
 	call Request2bppInWRA6
 	pop af
-	ld [rVBK], a
+	ldh [rVBK], a
 	ret
 
 .GetTileAddr:
@@ -819,9 +819,9 @@ _GetSpritePalette:: ; 142c4
 
 
 GetUsedSprite:: ; 143c8
-	ld a, [hUsedSpriteIndex]
+	ldh a, [hUsedSpriteIndex]
 	call SafeGetSprite
-	ld a, [hUsedSpriteTile]
+	ldh a, [hUsedSpriteTile]
 	call .GetTileAddr
 	push bc
 	push hl
@@ -860,7 +860,7 @@ endr
 	bit 6, a
 	ret nz
 
-	ld a, [hUsedSpriteIndex]
+	ldh a, [hUsedSpriteIndex]
 	call _DoesSpriteHaveFacings
 	ret c
 
@@ -874,7 +874,7 @@ endr
 	ld h, a
 
 .CopyToVram:
-	ld a, [rVBK]
+	ldh a, [rVBK]
 	push af
 	ld a, [wSpriteFlags]
 	bit 5, a
@@ -882,13 +882,13 @@ endr
 	jr z, .bankswitch
 	inc a
 .bankswitch
-	ld [rVBK], a
+	ldh [rVBK], a
 	
-	ld a, [hUsedSpriteTile]
+	ldh a, [hUsedSpriteTile]
 	and a
 	jr nz, .noLYCheck
 
-	ld a, [rLCDC]
+	ldh a, [rLCDC]
 	bit rLCDC_ENABLE, a
 	jr z, .noLYCheck
 
@@ -899,7 +899,7 @@ endr
 ; check a few LYs earlier to be safe
 ; i.e. [60 - 12 - 4, 76)
 ; assumes that only one copy will happen per frame
-; 	ld a, [rLY]
+; 	ldh a, [rLY]
 ; 	cp (60 - 6 - 12) ; 42
 ; 	jr c, .noLYCheck
 
@@ -909,13 +909,13 @@ endr
 	jr nz, .noLYCheck
 ; otherwise, we must wait until we pass LY=76
 .lyWaitLoop
-	ld a, [rLY]
+	ldh a, [rLY]
 	cp 76
 	jr c, .lyWaitLoop
 .noLYCheck	
 	call Request2bppInWRA6
 	pop af
-	ld [rVBK], a
+	ldh [rVBK], a
 	ret
 
 .GetTileAddr:

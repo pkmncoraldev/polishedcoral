@@ -26,7 +26,7 @@ CoralDevScreen:
 	farcall FarCopyWRAM
 	
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 	
 	call ApplyAttrAndTilemapInVBlank
 	

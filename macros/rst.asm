@@ -21,7 +21,7 @@ macro farjp ; bank, address
 endm
 
 macro homecall ; bank, address
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 if _NARG == 2
 	ld a, \2

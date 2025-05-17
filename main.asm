@@ -16,7 +16,7 @@ LoadPushOAM:: ; 4031
 
 PushOAMCode: ; 403f
 	ld a, wSprites / $100
-	ld [rDMA], a
+	ldh [rDMA], a
 	ld a, 40
 .loop
 	dec a
@@ -25,102 +25,102 @@ PushOAMCode: ; 403f
 PushOAMCodeEnd:
 
 ReanchorBGMap_NoOAMUpdate:: ; 6454
-	ld a, [hOAMUpdate]
+	ldh a, [hOAMUpdate]
 	push af
 
 	ld a, $1
-	ld [hOAMUpdate], a
-	ld a, [hBGMapMode]
+	ldh [hOAMUpdate], a
+	ldh a, [hBGMapMode]
 	push af
 
 	xor a
-	ld [hBGMapMode], a
-	ld [hLCDCPointer], a
+	ldh [hBGMapMode], a
+	ldh [hLCDCPointer], a
 	ld a, $90
-	ld [hWY], a
+	ldh [hWY], a
 	call LoadMapPart
 
 	ld a, VBGMap1 / $100
-	ld [hBGMapAddress + 1], a
+	ldh [hBGMapAddress + 1], a
 	xor a
-	ld [hBGMapAddress], a
+	ldh [hBGMapAddress], a
 	call BGMapAnchorTopLeft
 	farcall LoadBlindingFlashPalette
 	farcall ApplyPals
 	xor a
-	ld [hBGMapMode], a
-	ld [hWY], a
-	ld [hBGMapAddress], a
+	ldh [hBGMapMode], a
+	ldh [hWY], a
+	ldh [hBGMapAddress], a
 	ld [wBGMapAnchor], a
-	ld [hSCX], a
-	ld [hSCY], a
+	ldh [hSCX], a
+	ldh [hSCY], a
 	inc a
-	ld [hCGBPalUpdate], a
+	ldh [hCGBPalUpdate], a
 	ld a, VBGMap0 / $100 ; overworld
-	ld [hBGMapAddress + 1], a
+	ldh [hBGMapAddress + 1], a
 	ld [wBGMapAnchor + 1], a
 	call ApplyBGMapAnchorToObjects
 
 	pop af
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	pop af
-	ld [hOAMUpdate], a
+	ldh [hOAMUpdate], a
 	ld hl, wVramState
 	set 6, [hl]
 	ret
 
 LoadFonts_NoOAMUpdate:: ; 64bf
-	ld a, [hOAMUpdate]
+	ldh a, [hOAMUpdate]
 	push af
 	ld a, $1
-	ld [hOAMUpdate], a
+	ldh [hOAMUpdate], a
 
 	call LoadFontsExtra
 	ld a, $90
-	ld [hWY], a
+	ldh [hWY], a
 	call SafeUpdateSprites
 	call LoadStandardFont
 
 	pop af
-	ld [hOAMUpdate], a
+	ldh [hOAMUpdate], a
 	ret
 
 ReanchorBGMap_NoOAMUpdate_NoDelay::
-	ld a, [hOAMUpdate]
+	ldh a, [hOAMUpdate]
 	push af
 
 	ld a, $1
-	ld [hOAMUpdate], a
-	ld a, [hBGMapMode]
+	ldh [hOAMUpdate], a
+	ldh a, [hBGMapMode]
 	push af
 
 	xor a
-	ld [hBGMapMode], a
-	ld [hLCDCPointer], a
+	ldh [hBGMapMode], a
+	ldh [hLCDCPointer], a
 	ld a, $90
-	ld [hWY], a
+	ldh [hWY], a
 	call LoadMapPart
 
 	ld a, VBGMap1 / $100
-	ld [hBGMapAddress + 1], a
+	ldh [hBGMapAddress + 1], a
 	xor a
-	ld [hBGMapAddress], a
+	ldh [hBGMapAddress], a
 	call CopyTilemapAtOnce
 	xor a
-	ld [hWY], a
-	ld [hBGMapAddress], a
+	ldh [hWY], a
+	ldh [hBGMapAddress], a
 	ld [wBGMapAnchor], a
-	ld [hSCX], a
-	ld [hSCY], a
+	ldh [hSCX], a
+	ldh [hSCY], a
 	inc a
-	ld [hCGBPalUpdate], a
+	ldh [hCGBPalUpdate], a
 	ld a, VBGMap0 / $100 ; overworld
-	ld [hBGMapAddress + 1], a
+	ldh [hBGMapAddress + 1], a
 	ld [wBGMapAnchor + 1], a
 	pop af
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	pop af
-	ld [hOAMUpdate], a
+	ldh [hOAMUpdate], a
 	ld hl, wVramState
 	set 6, [hl]
 	ld b, 0
@@ -1089,7 +1089,7 @@ ShowLinkBattleParticipants: ; 2ee18
 
 FindFirstAliveMonAndStartBattle: ; 2ee2f
 	xor a
-	ld [hMapAnims], a
+	ldh [hMapAnims], a
 	call DelayFrame
 	ld b, 6
 	ld hl, wPartyMon1HP
@@ -1111,14 +1111,14 @@ FindFirstAliveMonAndStartBattle: ; 2ee2f
 	predef Predef_StartBattle
 	farcall _LoadBattleFontsHPBar
 	ld a, 1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call ClearSprites
 	call ClearTileMap
 	xor a
-	ld [hBGMapMode], a
-	ld [hWY], a
-	ld [rWY], a
-	ld [hMapAnims], a
+	ldh [hBGMapMode], a
+	ldh [hWY], a
+	ldh [rWY], a
+	ldh [hMapAnims], a
 	ret
 
 ClearBattleRAM: ; 2ef18
@@ -1202,7 +1202,7 @@ PlaceGraphic: ; 2ef6e
 	and a
 	jr nz, .right
 
-	ld a, [hGraphicStartTile]
+	ldh a, [hGraphicStartTile]
 .x1
 	push bc
 	push hl
@@ -1229,7 +1229,7 @@ PlaceGraphic: ; 2ef6e
 	add hl, bc
 	pop bc
 
-	ld a, [hGraphicStartTile]
+	ldh a, [hGraphicStartTile]
 .x2
 	push bc
 	push hl
@@ -1527,34 +1527,34 @@ DisplayDexEntry:
 Mul16:
 	;[hTmpd][hTmpe]hl = bc * de
 	xor a
-	ld [hTmpd], a
-	ld [hTmpe], a
+	ldh [hTmpd], a
+	ldh [hTmpe], a
 	ld hl, 0
 	ld a, 16
-	ld [hProduct], a
+	ldh [hProduct], a
 .loop
 	sla l
 	rl h
-	ld a, [hTmpe]
+	ldh a, [hTmpe]
 	rla
-	ld [hTmpe], a
-	ld a, [hTmpd]
+	ldh [hTmpe], a
+	ldh a, [hTmpd]
 	rla
-	ld [hTmpd], a
+	ldh [hTmpd], a
 	sla e
 	rl d
 	jr nc, .noadd
 	add hl, bc
-	ld a, [hTmpe]
+	ldh a, [hTmpe]
 	adc 0
-	ld [hTmpe], a
-	ld a, [hTmpd]
+	ldh [hTmpe], a
+	ldh a, [hTmpd]
 	adc 0
-	ld [hTmpd], a
+	ldh [hTmpd], a
 .noadd
-	ld a, [hProduct]
+	ldh a, [hProduct]
 	dec a
-	ld [hProduct], a
+	ldh [hProduct], a
 	jr nz, .loop
 	ret
 
@@ -1815,18 +1815,18 @@ AskRememberPassword: ; 4ae12
 	ret
 
 Buena_ExitMenu: ; 4ae5e
-	ld a, [hOAMUpdate]
+	ldh a, [hOAMUpdate]
 	push af
 	call ExitMenu
 	call UpdateSprites
 	xor a
-	ld [hOAMUpdate], a
+	ldh [hOAMUpdate], a
 	call DelayFrame
 	ld a, $1
-	ld [hOAMUpdate], a
+	ldh [hOAMUpdate], a
 	call ApplyTilemap
 	pop af
-	ld [hOAMUpdate], a
+	ldh [hOAMUpdate], a
 	ret
 
 PackGFX:
@@ -2764,8 +2764,8 @@ CatchTutorial:: ; 4e554
 	call .LoadDudeData
 
 	xor a
-	ld [hJoyDown], a
-	ld [hJoyPressed], a
+	ldh [hJoyDown], a
+	ldh [hJoyPressed], a
 
 	ld hl, .AutoInput
 	ld a, BANK(.AutoInput)
@@ -2826,8 +2826,8 @@ InitDisplayForHallOfFame: ; 4e881
 	xor a
 	call ByteFill
 	xor a
-	ld [hSCY], a
-	ld [hSCX], a
+	ldh [hSCY], a
+	ldh [hSCX], a
 	call EnableLCD
 	ld hl, .SavingRecordDontTurnOff
 	call PrintText
@@ -2871,17 +2871,17 @@ endc
 	dec c
 	jr nz, .load_white_palettes
 	xor a
-	ld [hSCY], a
-	ld [hSCX], a
+	ldh [hSCY], a
+	ldh [hSCX], a
 	call EnableLCD
 	call ApplyAttrAndTilemapInVBlank
 	jp SetPalettes
 
 ResetDisplayBetweenHallOfFameMons: ; 4e906
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $6
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld hl, wScratchTileMap
 	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
 	ld a, " "
@@ -2891,7 +2891,7 @@ ResetDisplayBetweenHallOfFameMons: ; 4e906
 	lb bc, $0, $40
 	call Request2bpp
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 
 INCLUDE "engine/battle/sliding_intro.asm"
@@ -3895,15 +3895,15 @@ CalcLevel: ; 50e1b
 	call CalcExpAtLevel
 	push hl
 	ld hl, wTempMonExp + 2
-	ld a, [hProduct + 3]
+	ldh a, [hProduct + 3]
 	ld c, a
 	ld a, [hld]
 	sub c
-	ld a, [hProduct + 2]
+	ldh a, [hProduct + 2]
 	ld c, a
 	ld a, [hld]
 	sbc c
-	ld a, [hProduct + 1]
+	ldh a, [hProduct + 1]
 	ld c, a
 	ld a, [hl]
 	sbc c
@@ -3921,10 +3921,10 @@ CalcExpAtLevel: ; 50e47
 	jr nz, .UseExpFormula
 ; Pokémon have 0 experience at level 1
 	xor a
-	ld [hProduct], a
-	ld [hProduct + 1], a
-	ld [hProduct + 2], a
-	ld [hProduct + 3], a
+	ldh [hProduct], a
+	ldh [hProduct + 1], a
+	ldh [hProduct + 2], a
+	ldh [hProduct + 3], a
 	ret
 .UseExpFormula
 	ld a, [wBaseGrowthRate]
@@ -3937,121 +3937,121 @@ CalcExpAtLevel: ; 50e47
 ; Cube the level
 	call .LevelSquared
 	ld a, d
-	ld [hMultiplier], a
+	ldh [hMultiplier], a
 	call Multiply
 
 ; Multiply by a
 	ld a, [hl]
 	and $f0
 	swap a
-	ld [hMultiplier], a
+	ldh [hMultiplier], a
 	call Multiply
 ; Divide by b
 	ld a, [hli]
 	and $f
-	ld [hDivisor], a
+	ldh [hDivisor], a
 	ld b, 4
 	call Divide
 ; Push the cubic term to the stack
-	ld a, [hQuotient + 0]
+	ldh a, [hQuotient + 0]
 	push af
-	ld a, [hQuotient + 1]
+	ldh a, [hQuotient + 1]
 	push af
-	ld a, [hQuotient + 2]
+	ldh a, [hQuotient + 2]
 	push af
 ; Square the level and multiply by the lower 7 bits of c
 	call .LevelSquared
 	ld a, [hl]
 	and $7f
-	ld [hMultiplier], a
+	ldh [hMultiplier], a
 	call Multiply
 ; Push the absolute value of the quadratic term to the stack
-	ld a, [hProduct + 1]
+	ldh a, [hProduct + 1]
 	push af
-	ld a, [hProduct + 2]
+	ldh a, [hProduct + 2]
 	push af
-	ld a, [hProduct + 3]
+	ldh a, [hProduct + 3]
 	push af
 	ld a, [hli]
 	push af
 ; Multiply the level by d
 	xor a
-	ld [hMultiplicand + 0], a
-	ld [hMultiplicand + 1], a
+	ldh [hMultiplicand + 0], a
+	ldh [hMultiplicand + 1], a
 	ld a, d
-	ld [hMultiplicand + 2], a
+	ldh [hMultiplicand + 2], a
 	ld a, [hli]
-	ld [hMultiplier], a
+	ldh [hMultiplier], a
 	call Multiply
 ; Subtract e
 	ld b, [hl]
-	ld a, [hProduct + 3]
+	ldh a, [hProduct + 3]
 	sub b
-	ld [hMultiplicand + 2], a
+	ldh [hMultiplicand + 2], a
 	ld b, $0
-	ld a, [hProduct + 2]
+	ldh a, [hProduct + 2]
 	sbc b
-	ld [hMultiplicand + 1], a
-	ld a, [hProduct + 1]
+	ldh [hMultiplicand + 1], a
+	ldh a, [hProduct + 1]
 	sbc b
-	ld [hMultiplicand], a
+	ldh [hMultiplicand], a
 ; If bit 7 of c is set, c is negative; otherwise, it's positive
 	pop af
 	and $80
 	jr nz, .subtract
 ; Add c*n**2 to (d*n - e)
 	pop bc
-	ld a, [hProduct + 3]
+	ldh a, [hProduct + 3]
 	add b
-	ld [hMultiplicand + 2], a
+	ldh [hMultiplicand + 2], a
 	pop bc
-	ld a, [hProduct + 2]
+	ldh a, [hProduct + 2]
 	adc b
-	ld [hMultiplicand + 1], a
+	ldh [hMultiplicand + 1], a
 	pop bc
-	ld a, [hProduct + 1]
+	ldh a, [hProduct + 1]
 	adc b
-	ld [hMultiplicand], a
+	ldh [hMultiplicand], a
 	jr .done_quadratic
 
 .subtract
 ; Subtract c*n**2 from (d*n - e)
 	pop bc
-	ld a, [hProduct + 3]
+	ldh a, [hProduct + 3]
 	sub b
-	ld [hMultiplicand + 2], a
+	ldh [hMultiplicand + 2], a
 	pop bc
-	ld a, [hProduct + 2]
+	ldh a, [hProduct + 2]
 	sbc b
-	ld [hMultiplicand + 1], a
+	ldh [hMultiplicand + 1], a
 	pop bc
-	ld a, [hProduct + 1]
+	ldh a, [hProduct + 1]
 	sbc b
-	ld [hMultiplicand], a
+	ldh [hMultiplicand], a
 
 .done_quadratic
 ; Add (a/b)*n**3 to (d*n - e +/- c*n**2)
 	pop bc
-	ld a, [hProduct + 3]
+	ldh a, [hProduct + 3]
 	add b
-	ld [hMultiplicand + 2], a
+	ldh [hMultiplicand + 2], a
 	pop bc
-	ld a, [hProduct + 2]
+	ldh a, [hProduct + 2]
 	adc b
-	ld [hMultiplicand + 1], a
+	ldh [hMultiplicand + 1], a
 	pop bc
-	ld a, [hProduct + 1]
+	ldh a, [hProduct + 1]
 	adc b
-	ld [hMultiplicand], a
+	ldh [hMultiplicand], a
 	ret
 
 .LevelSquared: ; 50eed
 	xor a
-	ld [hMultiplicand + 0], a
-	ld [hMultiplicand + 1], a
+	ldh [hMultiplicand + 0], a
+	ldh [hMultiplicand + 1], a
 	ld a, d
-	ld [hMultiplicand + 2], a
-	ld [hMultiplier], a
+	ldh [hMultiplicand + 2], a
+	ldh [hMultiplier], a
 	jp Multiply
 
 INCLUDE "data/growth_rates.asm"
@@ -4637,9 +4637,9 @@ ComputeTrainerReward: ; 3991b (e:591b)
 	ld hl, wBattleReward
 	xor a
 	ld [hli], a
-	ld a, [hProduct + 2]
+	ldh a, [hProduct + 2]
 	ld [hli], a
-	ld a, [hProduct + 3]
+	ldh a, [hProduct + 3]
 	ld [hl], a
 	ret
 
@@ -5541,7 +5541,7 @@ ProfSpruceSpeech: ; 0x5f99
 	
 .genderloop
 	call JoyTextDelay
-	ld a, [hJoyLast]
+	ldh a, [hJoyLast]
 	and A_BUTTON
 	jr nz, .got_gender
 	call ChooseGender_HandleJoypad
@@ -6080,7 +6080,7 @@ INCLUDE "data/default_player_names.asm"
 
 ShrinkPlayer: ; 610f
 
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 
 	ld a, 0 << 7 | 32 ; fade out
@@ -6194,7 +6194,7 @@ ShrinkFrame: ; 61b4
 	predef DecompressPredef
 FinishPrepIntroPic:
 	xor a
-	ld [hGraphicStartTile], a
+	ldh [hGraphicStartTile], a
 	hlcoord 6, 4
 	lb bc, 7, 7
 	predef PlaceGraphic
@@ -6206,7 +6206,7 @@ FinishPrepIntroPicBoy:
 	ld de, VTiles2
 	farcall GetTrainerPic
 	xor a
-	ld [hGraphicStartTile], a
+	ldh [hGraphicStartTile], a
 	hlcoord 2, 4
 	lb bc, 7, 7
 	predef PlaceGraphic
@@ -6218,7 +6218,7 @@ FinishPrepIntroPicGirl:
 	ld de, VTiles2 tile 49
 	farcall GetTrainerPic
 	ld a, 49
-	ld [hGraphicStartTile], a
+	ldh [hGraphicStartTile], a
 	hlcoord 11, 4
 	lb bc, 7, 7
 	predef PlaceGraphic

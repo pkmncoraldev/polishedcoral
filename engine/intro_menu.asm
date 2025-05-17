@@ -59,7 +59,7 @@ PrintDayOfWeek: ; 5b05
 
 NewGame_ClearTileMapEtc: ; 5b44
 	xor a
-	ld [hMapAnims], a
+	ldh [hMapAnims], a
 	call ClearTileMap
 	call Load1bppFrame
 	call Load1bppFont
@@ -72,14 +72,14 @@ OptionsMenu: ; 5b64
 
 NewGamePlus:
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	farcall TryLoadSaveFile
 	ret c
 	jr _NewGame_FinishSetup
 
 NewGame: ; 5b6b
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call ResetWRAM_NotPlus
 _NewGame_FinishSetup:
 	call ResetWRAM
@@ -109,7 +109,7 @@ _NewGame_FinishSetup:
 	ld [wDefaultSpawnpoint], a
 
 	ld a, MAPSETUP_WARP
-	ld [hMapEntryMethod], a
+	ldh [hMapEntryMethod], a
 	jp FinishContinueFunction
 ; 5b8f
 
@@ -168,15 +168,15 @@ ResetWRAM: ; 5ba7
 	call ByteFill
 
 	call Random
-	ld a, [rLY]
-	ld [hSecondsBackup], a
+	ldh a, [rLY]
+	ldh [hSecondsBackup], a
 	call DelayFrame
-	ld a, [hRandomSub]
+	ldh a, [hRandomSub]
 	ld [wPlayerID], a
-	ld a, [rLY]
-	ld [hSecondsBackup], a
+	ldh a, [rLY]
+	ldh [hSecondsBackup], a
 	call DelayFrame
-	ld a, [hRandomAdd]
+	ldh a, [hRandomAdd]
 	ld [wPlayerID + 1], a
 
 	call Random
@@ -379,7 +379,7 @@ Continue: ; 5d65
 	call LoadStandardMenuDataHeader
 	call DisplaySaveInfoOnContinue
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld c, 20
 	call DelayFrames
 	call ConfirmContinue
@@ -411,7 +411,7 @@ Continue: ; 5d65
 	cp SPAWN_LANCE
 	jr z, .SpawnAfterE4
 	ld a, MAPSETUP_CONTINUE
-	ld [hMapEntryMethod], a
+	ldh [hMapEntryMethod], a
 	jp FinishContinueFunction
 
 .SpawnAfterE4:
@@ -430,7 +430,7 @@ PostCreditsSpawn: ; 5de7
 	xor a
 	ld [wSpawnAfterChampion], a
 	ld a, MAPSETUP_WARP
-	ld [hMapEntryMethod], a
+	ldh [hMapEntryMethod], a
 	ret
 ; 5df0
 
@@ -521,7 +521,7 @@ DisplayContinueDataWithRTCError: ; 5eaf
 
 Continue_LoadMenuHeader: ; 5ebf
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld hl, .MenuDataHeader_Dex
 	ld a, [wStatusFlags]
 	bit 0, a ; pokedex
@@ -657,14 +657,14 @@ CrystalIntroSequence: ; 620b
 StartTitleScreen: ; 6219
 	ld hl, rIE
 	set LCD_STAT, [hl]
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
-;	ld a, [hVBlank]
+	ldh [rSVBK], a
+;	ldh a, [hVBlank]
 ;	push af
 ;	ld a, $1
-;	ld [hVBlank], a
+;	ldh [hVBlank], a
 
 	farcall _TitleScreen
 	call DelayFrame
@@ -677,9 +677,9 @@ StartTitleScreen: ; 6219
 	call ClearBGPalettes
 
 ;	pop af
-;	ld [hVBlank], a
+;	ldh [hVBlank], a
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	ld hl, rIE
 	res LCD_STAT, [hl]
@@ -688,13 +688,13 @@ StartTitleScreen: ; 6219
 	call ClearScreen
 	call ApplyAttrAndTilemapInVBlank
 	xor a
-	ld [hLCDCPointer], a
-	ld [hSCX], a
-	ld [hSCY], a
+	ldh [hLCDCPointer], a
+	ldh [hSCX], a
+	ldh [hSCY], a
 	ld a, $7
-	ld [hWX], a
+	ldh [hWX], a
 	ld a, $90
-	ld [hWY], a
+	ldh [hWY], a
 	ld b, CGB_DIPLOMA
 	call GetCGBLayout
 	call UpdateTimePals
@@ -1001,7 +1001,7 @@ CoralSplashScreen:
 	
 ; set PRESS A TO CONTINUE palette
 	ld a, 1
-	ld [rVBK], a
+	ldh [rVBK], a
 	
 	hlcoord 0, 0, wAttrMap
 	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
@@ -1014,12 +1014,12 @@ CoralSplashScreen:
 	call ByteFill
 	
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 	ret
 	
 ClearSplashScreenPalettes:
 	ld a, 1
-	ld [rVBK], a
+	ldh [rVBK], a
 	
 	hlbgcoord 0, 15
 	ld bc, SCREEN_WIDTH
@@ -1032,7 +1032,7 @@ ClearSplashScreenPalettes:
 	call ByteFill
 	
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 	ret
 	
 BusterScreenTilemapAndAttrMap::
@@ -1042,7 +1042,7 @@ BusterScreenTilemapAndAttrMap::
 	rst CopyBytes
 	
 	ld a, 1
-	ld [rVBK], a
+	ldh [rVBK], a
 	
 	ld hl, CoralDevScreenAttrmap
 	decoord 0, 0, wAttrMap
@@ -1078,14 +1078,14 @@ GameInit:: ; 642e
 	call ClearBGPalettes
 	call ClearTileMap
 	ld a, VBGMap0 / $100
-	ld [hBGMapAddress + 1], a
+	ldh [hBGMapAddress + 1], a
 	xor a
-	ld [hBGMapAddress], a
-	ld [hJoyDown], a
-	ld [hSCX], a
-	ld [hSCY], a
+	ldh [hBGMapAddress], a
+	ldh [hJoyDown], a
+	ldh [hSCX], a
+	ldh [hSCY], a
 	ld a, $90
-	ld [hWY], a
+	ldh [hWY], a
 	call ApplyTilemapInVBlank
 	jp CrystalIntroSequence
 ; 6454

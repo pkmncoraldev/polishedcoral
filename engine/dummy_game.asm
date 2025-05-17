@@ -28,14 +28,14 @@ _DummyGame: ; e1e5b (38:5e5b)
 	xor a
 	call ByteFill
 	xor a
-	ld [hSCY], a
-	ld [hSCX], a
-	ld [rWY], a
+	ldh [hSCY], a
+	ldh [hSCX], a
+	ldh [rWY], a
 	ld [wJumptableIndex], a
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld a, %11100011
-	ld [rLCDC], a
+	ldh [rLCDC], a
 	ld a, $e4
 	call DmgToCgbBGPals
 	ld a, $e0
@@ -198,7 +198,7 @@ endr
 	ret
 
 .RevealAll:
-	ld a, [hJoypadPressed]
+	ldh a, [hJoypadPressed]
 	and A_BUTTON
 	ret z
 	xor a

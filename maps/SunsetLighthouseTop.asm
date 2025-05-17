@@ -167,10 +167,10 @@ SunsetLighthouseTopTV:
 	jumptext SunsetLighthouseTopTVText
 	
 SunsetLighthouseTopTVAsm:
-	ld a, [hMinutes]
+	ldh a, [hMinutes]
 	cp 33
 	jr nz, .no
-	ld a, [hHours]
+	ldh a, [hHours]
 	cp 3
 	jr nz, .no
 .yes

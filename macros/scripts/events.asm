@@ -13,25 +13,25 @@ macro farscall
 	endm
 
 	enum ptcall_command
-macro ptcall
+macro {ptcall}
 	db ptcall_command
 	dw \1 ; pointer
 	endm
 
 	enum jump_command
-macro jump
+macro {jump}
 	db jump_command
 	dw \1 ; pointer
 	endm
 
 	enum farjump_command
-macro farjump
+macro {farjump}
 	db farjump_command
 	dba \1
 	endm
 
 	enum ptjump_command
-macro ptjump
+macro {ptjump}
 	db ptjump_command
 	dw \1 ; pointer
 	endm
@@ -101,7 +101,7 @@ macro special
 	endm
 
 	enum ptcallasm_command
-macro ptcallasm
+macro {ptcallasm}
 	db ptcallasm_command
 	dw \1 ; asm
 	endm
@@ -131,13 +131,13 @@ macro setscene
 	endm
 
 	enum writebyte_command
-macro writebyte
+macro {writebyte}
 	db writebyte_command
 	db \1 ; value
 	endm
 
 	enum addvar_command
-macro addvar
+macro {addvar}
 	db addvar_command
 	db \1 ; value
 	endm
@@ -149,13 +149,13 @@ macro random
 	endm
 
 	enum copybytetovar_command
-macro copybytetovar
+macro {copybytetovar}
 	db copybytetovar_command
 	dw \1 ; address
 	endm
 
 	enum copyvartobyte_command
-macro copyvartobyte
+macro {copyvartobyte}
 	db copyvartobyte_command
 	dw \1 ; address
 	endm
@@ -168,13 +168,13 @@ macro loadvar
 	endm
 
 	enum checkcode_command
-macro checkcode
+macro {checkcode}
 	db checkcode_command
 	db \1 ; variable_id
 	endm
 
 	enum writevarcode_command
-macro writevarcode
+macro {writevarcode}
 	db writevarcode_command
 	db \1 ; variable_id
 	endm
@@ -318,13 +318,13 @@ macro giveegg
 	endm
 
 	enum givepokeitem_command
-macro givepokeitem
+macro {givepokeitem}
 	db givepokeitem_command
 	dw \1 ; pointer
 	endm
 
 	enum checkpokeitem_command
-macro checkpokeitem
+macro {checkpokeitem}
 	db checkpokeitem_command
 	dw \1 ; pointer
 	endm
@@ -404,13 +404,13 @@ macro readmoney
 	endm
 
 	enum readcoins_command
-macro readcoins
+macro {readcoins}
 	db readcoins_command
 	db \1 ; memory
 	endm
 
 	enum RAM2MEM_command
-macro RAM2MEM
+macro {RAM2MEM}
 	db RAM2MEM_command
 	db \1 ; memory
 	endm
@@ -430,7 +430,7 @@ macro itemtotext
 	endm
 
 	enum mapnametotext_command
-macro mapnametotext
+macro {mapnametotext}
 	db mapnametotext_command
 	db \1 ; memory
 	endm
@@ -660,7 +660,7 @@ macro applymovement
 	endm
 
 	enum applymovement2_command
-macro applymovement2
+macro {applymovement2}
 	db applymovement2_command
 	dw \1 ; data
 	endm
@@ -717,7 +717,7 @@ macro moveobject
 	endm
 
 	enum writepersonxy_command
-macro writepersonxy
+macro {writepersonxy}
 	db writepersonxy_command
 	db \1 ; person
 	endm
@@ -848,7 +848,7 @@ macro specialsound
 	endm
 
 	enum passtoengine_command
-macro passtoengine
+macro {passtoengine}
 	db passtoengine_command
 	db \1 ; data_pointer
 	endm
@@ -872,7 +872,7 @@ macro deactivatefacing
 	endm
 
 	enum priorityjump_command
-macro priorityjump
+macro {priorityjump}
 	db priorityjump_command
 	dw \1 ; pointer
 	endm
@@ -883,7 +883,7 @@ macro warpcheck
 	endm
 
 	enum ptpriorityjump_command
-macro ptpriorityjump
+macro {ptpriorityjump}
 	db ptpriorityjump_command
 	dw \1 ; pointer
 	endm
@@ -981,7 +981,7 @@ endc
 	endm
 
 	enum verbosegiveitem2_command
-macro verbosegiveitem2
+macro {verbosegiveitem2}
 	db verbosegiveitem2_command
 	db \1 ; item
 	db \2 ; var

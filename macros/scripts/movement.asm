@@ -302,12 +302,12 @@ macro fix_facing
 	endm
 
 	enum movement_show_person
-macro show_person
+macro {show_person}
 	db movement_show_person ; $3c
 	endm
 
 	enum movement_hide_person
-macro hide_person
+macro {hide_person}
 	db movement_hide_person ; $3d
 	endm
 
@@ -368,7 +368,7 @@ macro step_resume
 	endm
 
 	enum movement_remove_person
-macro remove_person
+macro {remove_person}
 	db movement_remove_person ; $49
 	endm
 

@@ -85,9 +85,9 @@ DEF SIGNPOST_ITEM EQU const_value
 
 ; see engine/events.asm:TryObjectEvent.pointers
 	const_def
-	const PERSONTYPE_SCRIPT         ; 0
+	const {PERSONTYPE_SCRIPT}       ; 0
 	const PERSONTYPE_POKEBALL       ; 1
-	const PERSONTYPE_TRAINER        ; 2
+	const {PERSONTYPE_TRAINER}      ; 2
 	const PERSONTYPE_GENERICTRAINER ; 3
 	const PERSONTYPE_POKEMON        ; 4
 	const PERSONTYPE_COMMAND        ; 5

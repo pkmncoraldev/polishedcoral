@@ -8,7 +8,7 @@ DEF cont   EQUS "db \"<CONT>\","  ; Scroll to the next line.
 DEF done   EQUS "db \"<DONE>\""   ; End a text box.
 DEF prompt EQUS "db \"<PROMPT>\"" ; Prompt the player to end a text box (initiating some other event).
 
-macro text_from_ram
+macro {text_from_ram}
 	db "<RAM>"
 	dw \1
 endm
@@ -42,17 +42,17 @@ macro text_scroll
 	db "<SCROLL>"
 endm
 
-macro start_asm
+macro {start_asm}
 	db "<ASM>"
 endm
 
-macro deciram
+macro {deciram}
 	db "<NUM>"
 	dw \1 ; address
 	dn \2, \3 ; bytes, digits
 endm
 
-macro interpret_data
+macro {interpret_data}
 	db "<EXIT>"
 endm
 
@@ -60,12 +60,12 @@ macro sound_dex_fanfare_50_79
 	db "<DEX2>"
 endm
 
-macro limited_interpret_data
+macro {limited_interpret_data}
 	db "<DOTS>"
 	db \1
 endm
 
-macro link_wait_button
+macro {link_wait_button}
 	db "<LINK>"
 endm
 
@@ -106,11 +106,11 @@ macro text_buffer
 	db \1
 endm
 
-macro current_day
+macro {current_day}
 	db "<DAY>"
 endm
 
-MACRO text_jump
+MACRO {text_jump}
 	db "<FAR>"
 	dw \1
 	db BANK(\1)

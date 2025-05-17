@@ -84,12 +84,12 @@ macro anim_incbgeffect
 	endm
 
 	enum anim_enemyfeetobj_command ; d9
-macro anim_enemyfeetobj
+macro {anim_enemyfeetobj}
 	db anim_enemyfeetobj_command
 	endm
 
 	enum anim_playerheadobj_command ; da
-macro anim_playerheadobj
+macro {anim_playerheadobj}
 	db anim_playerheadobj_command
 	endm
 
@@ -232,7 +232,7 @@ macro anim_obp1
 	endm
 
 	enum anim_clearsprites_command ; f4
-macro anim_clearsprites
+macro {anim_clearsprites}
 	db anim_clearsprites_command
 	endm
 

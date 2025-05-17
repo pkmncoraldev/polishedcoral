@@ -3,7 +3,7 @@
 ;	dw \1, \2, \3
 ;ENDM
 
-mon_cry: MACRO
+MACRO mon_cry
 IF _NARG == 3
 	db \1
 	dw \2, \3

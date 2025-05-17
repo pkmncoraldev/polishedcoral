@@ -1,8 +1,8 @@
-flag_array: MACRO
+MACRO flag_array
 	ds ((\1) + 7) / 8
 ENDM
 
-box_struct: MACRO
+MACRO box_struct
 \1Species::        db
 \1Item::           db
 \1Moves::          ds NUM_MOVES
@@ -40,7 +40,7 @@ box_struct: MACRO
 \1End::
 ENDM
 
-party_struct: MACRO
+MACRO party_struct
 	box_struct \1
 \1Status::         db
 \1Unused::         db
@@ -55,7 +55,7 @@ party_struct: MACRO
 \1StatsEnd::
 ENDM
 
-battle_struct: MACRO
+MACRO battle_struct
 \1Species::        db
 \1Item::           db
 \1Moves::          ds NUM_MOVES
@@ -92,7 +92,7 @@ battle_struct: MACRO
 \1StructEnd::
 ENDM
 
-box: MACRO
+MACRO box
 \1::
 \1Count::           ds 1
 \1Species::         ds MONS_PER_BOX + 1
@@ -106,7 +106,7 @@ box: MACRO
 ENDM
 
 
-channel_struct: MACRO
+MACRO channel_struct
 ; Addreses are wChannel1 (c101).
 \1MusicID::           dw
 \1MusicBank::         db
@@ -153,7 +153,7 @@ channel_struct: MACRO
                       ds 1 ; c132
 ENDM
 
-battle_tower_struct: MACRO
+MACRO battle_tower_struct
 \1Name:: ds NAME_LENGTH +- 1
 \1TrainerClass:: ds 1
 \1Pkmn1:: party_struct \1Pkmn1
@@ -169,7 +169,7 @@ battle_tower_struct: MACRO
 \1TrainerEnd::
 endm
 
-mailmsg: MACRO
+MACRO mailmsg
 \1Message:: ds MAIL_MSG_LENGTH
 \1MessageEnd:: ds 1
 \1Author:: ds PLAYER_NAME_LENGTH
@@ -180,7 +180,7 @@ mailmsg: MACRO
 \1End::
 endm
 
-hof_mon: MACRO
+MACRO hof_mon
 \1Species:: ds 1
 \1ID:: ds 2
 \1Personality:: ds 2
@@ -189,7 +189,7 @@ hof_mon: MACRO
 \1End::
 endm
 
-roam_struct: MACRO
+MACRO roam_struct
 \1Species::     db
 \1Level::       db
 \1MapGroup::    db
@@ -200,13 +200,13 @@ roam_struct: MACRO
 \1End::
 ENDM
 
-bugcontestwinner: macro
+macro bugcontestwinner
 \1PersonID:: ds 1
 \1Mon:: ds 1
 \1Score:: ds 2
 endm
 
-hall_of_fame: MACRO
+MACRO hall_of_fame
 \1::
 \1WinCount:: ds 1
 \1Mon1:: hof_mon \1Mon1
@@ -218,7 +218,7 @@ hall_of_fame: MACRO
 \1End:: ds 1
 ENDM
 
-trademon: MACRO
+MACRO trademon
 \1Species:: ds 1 ; wc6d0 | wc702
 \1SpeciesName:: ds PKMN_NAME_LENGTH ; wc6d1 | wc703
 \1Nickname:: ds PKMN_NAME_LENGTH ; wc6dc | wc70e
@@ -241,7 +241,7 @@ trademon: MACRO
 \1End::
 ENDM
 
-move_struct: MACRO
+MACRO move_struct
 \1Animation:: ds 1
 \1Effect:: ds 1
 \1Power:: ds 1
@@ -252,7 +252,7 @@ move_struct: MACRO
 \1Category:: ds 1
 endm
 
-slot_reel: MACRO
+MACRO slot_reel
 \1ReelAction::   db
 \1TilemapAddr::  dw
 \1Position::     db
@@ -269,7 +269,7 @@ slot_reel: MACRO
 \1Slot0f::       ds 1
 endm
 
-object_struct: MACRO
+MACRO object_struct
 \1Struct::
 \1Sprite:: ds 1
 \1MapObjectIndex:: ds 1
@@ -306,7 +306,7 @@ object_struct: MACRO
 \1StructEnd::
 ENDM
 
-map_object: MACRO
+MACRO map_object
 \1Object::
 \1ObjectStructID::  ds 1
 \1ObjectSprite::    ds 1
@@ -322,7 +322,7 @@ map_object: MACRO
 \1ObjectEventFlag:: ds 2
 endm
 
-sprite_anim_struct: MACRO
+MACRO sprite_anim_struct
 \1Index:: ds 1          ; 0
 \1FramesetID:: ds 1     ; 1
 \1AnimSeqID:: ds 1      ; 2
@@ -341,7 +341,7 @@ sprite_anim_struct: MACRO
 \1Sprite0f:: ds 1
 ENDM
 
-battle_anim_struct: MACRO
+MACRO battle_anim_struct
 ; Placeholder until we can figure out what it all means
 \1_Index::  ds 1
 \1_Anim01:: ds 1
@@ -369,7 +369,7 @@ battle_anim_struct: MACRO
 \1_Anim17:: ds 1
 endm
 
-battle_bg_effect: MACRO
+MACRO battle_bg_effect
 \1_Function:: ds 1
 \1_01:: ds 1
 \1_02:: ds 1

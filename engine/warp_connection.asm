@@ -266,7 +266,7 @@ LoadMapTimeOfDay: ; 104750
 	call .copy
 	decoord 0, 0, wAttrMap
 	ld a, $1
-	ld [rVBK], a
+	ldh [rVBK], a
 .copy
 	hlbgcoord 0, 0
 	lb bc, SCREEN_HEIGHT, SCREEN_WIDTH
@@ -284,7 +284,7 @@ LoadMapTimeOfDay: ; 104750
 	dec b
 	jr nz, .row
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 	ret
 
 .ClearBGMap: ; 104770 (41:4770)
@@ -292,19 +292,19 @@ LoadMapTimeOfDay: ; 104750
 	ld [wBGMapAnchor + 1], a
 	xor a
 	ld [wBGMapAnchor], a
-	ld [hSCY], a
-	ld [hSCX], a
+	ldh [hSCY], a
+	ldh [hSCX], a
 	farcall ApplyBGMapAnchorToObjects
-	ld a, [rVBK]
+	ldh a, [rVBK]
 	push af
 	ld a, $1
-	ld [rVBK], a
+	ldh [rVBK], a
 	xor a
 	ld bc, VBGMap1 - VBGMap0
 	hlbgcoord 0, 0
 	call ByteFill
 	pop af
-	ld [rVBK], a
+	ldh [rVBK], a
 	ld a, "<BLACK>"
 	ld bc, VBGMap1 - VBGMap0
 	hlbgcoord 0, 0
@@ -323,8 +323,8 @@ DeferredLoadGraphics::
 .skip_roof
 	farcall LoadEmoteGFX
 	xor a
-	ld [hMapAnims], a
-	ld [hTileAnimFrame], a
+	ldh [hMapAnims], a
+	ldh [hTileAnimFrame], a
 	ret
 
 LoadGraphics:
@@ -332,8 +332,8 @@ LoadGraphics:
 	call LoadTileset
 .done
 	xor a
-	ld [hMapAnims], a
-	ld [hTileAnimFrame], a
+	ldh [hMapAnims], a
+	ldh [hTileAnimFrame], a
 	farjp ReloadVisibleSprites
 
 LoadMapPalettes: ; 1047eb
@@ -344,7 +344,7 @@ LoadMapPalettes: ; 1047eb
 RefreshMapSprites: ; 1047f0
 	call ClearSprites
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 
 	farcall ReturnFromMapSetupScript
 	call GetMovementPermissions

@@ -17,13 +17,13 @@ FarDecompress::
 ; Decompress graphics data from a:hl to de.
 	call StackCallInBankA
 Decompress::
-	ld a, [hVBlank]
+	ldh a, [hVBlank]
 	push af
 	ld a, 2 ; sound only XXX use constants for vblank modes
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	call _Decompress
 	pop af
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	ret
 
 _Decompress:
@@ -33,46 +33,46 @@ _Decompress:
 ; This function decompresses lz-compressed data from hl to de.
 
 
-LZ_END EQU $ff ; Compressed data is terminated with $ff.
+DEF LZ_END EQU $ff ; Compressed data is terminated with $ff.
 
 
 ; A typical control command consists of:
 
-LZ_CMD EQU %11100000 ; command id (bits 5-7)
-LZ_LEN EQU %00011111 ; length n   (bits 0-4)
+DEF LZ_CMD EQU %11100000 ; command id (bits 5-7)
+DEF LZ_LEN EQU %00011111 ; length n   (bits 0-4)
 
 ; Additional parameters are read during command execution.
 
 
 ; Commands:
 
-LZ_DATA          EQU 0 << 5 ; Read literal data for n bytes.
-LZ_REPEAT_1      EQU 1 << 5 ; Write the same byte for n bytes.
-LZ_REPEAT_2      EQU 2 << 5 ; Alternate two bytes for n bytes.
-LZ_ZERO          EQU 3 << 5 ; Write 0 for n bytes.
+DEF LZ_DATA          EQU 0 << 5 ; Read literal data for n bytes.
+DEF LZ_REPEAT_1      EQU 1 << 5 ; Write the same byte for n bytes.
+DEF LZ_REPEAT_2      EQU 2 << 5 ; Alternate two bytes for n bytes.
+DEF LZ_ZERO          EQU 3 << 5 ; Write 0 for n bytes.
 
 
 ; Another class of commands reuses data from the decompressed output.
-LZ_COPY          EQU 7 ; bit
+DEF LZ_COPY          EQU 7 ; bit
 
 ; These commands take a signed offset to start copying from.
 ; Wraparound is simulated.
 ; Positive offsets (15-bit) are added to the start address.
 ; Negative offsets (7-bit) are subtracted from the current position.
 
-LZ_COPY_NORMAL   EQU 4 << 5 ; Repeat n bytes from the offset.
-LZ_COPY_FLIPPED  EQU 5 << 5 ; Repeat n bitflipped bytes.
-LZ_COPY_REVERSED EQU 6 << 5 ; Repeat n bytes in reverse.
+DEF LZ_COPY_NORMAL   EQU 4 << 5 ; Repeat n bytes from the offset.
+DEF LZ_COPY_FLIPPED  EQU 5 << 5 ; Repeat n bitflipped bytes.
+DEF LZ_COPY_REVERSED EQU 6 << 5 ; Repeat n bytes in reverse.
 
 
 ; If the value in the count needs to be larger than 5 bits,
 ; LZ_LONG can be used to expand the count to 10 bits.
-LZ_LONG          EQU 7 << 5
+DEF LZ_LONG          EQU 7 << 5
 
 ; A new control command is read in bits 2-4.
 ; The top two bits of the length are bits 0-1.
 ; Another byte is read containing the bottom 8 bits.
-LZ_LONG_HI       EQU %00000011
+DEF LZ_LONG_HI       EQU %00000011
 
 ; In other words, the structure of the command becomes
 ; 111xxxyy yyyyyyyy
@@ -88,9 +88,9 @@ LZ_LONG_HI       EQU %00000011
 	; Save the output address
 	; for rewrite commands.
 	ld a, l
-	ld [hLZAddress], a
+	ldh [hLZAddress], a
 	ld a, h
-	ld [hLZAddress + 1], a
+	ldh [hLZAddress + 1], a
 
 .Main
 	ld a, [de]
@@ -114,7 +114,7 @@ LZ_LONG_HI       EQU %00000011
 
 ; This is our new control code.
 	and LZ_CMD
-	ld [hBuffer], a
+	ldh [hBuffer], a
 
 	ld a, [de]
 	inc de
@@ -130,7 +130,7 @@ LZ_LONG_HI       EQU %00000011
 
 
 .short
-	ld [hBuffer], a
+	ldh [hBuffer], a
 
 	ld a, [de]
 	inc de
@@ -149,7 +149,7 @@ LZ_LONG_HI       EQU %00000011
 	jr z, .multiple_of_256
 	inc b
 .multiple_of_256
-	ld a, [hBuffer]
+	ldh a, [hBuffer]
 
 	bit LZ_COPY, a
 	jr nz, .copy
@@ -191,10 +191,10 @@ LZ_LONG_HI       EQU %00000011
 	ld a, [de]
 	inc de
 	push de
-	ld [hBuffer], a
+	ldh [hBuffer], a
 	ld a, [de]
 	ld e, a
-	ld a, [hBuffer]
+	ldh a, [hBuffer]
 	ld d, a
 ; d = byte 1
 ; e = byte 2
@@ -250,9 +250,9 @@ LZ_LONG_HI       EQU %00000011
 	inc de
 	ld a, [de]
 	ld l, a
-	ld a, [hLZAddress]
+	ldh a, [hLZAddress]
 	ld e, a
-	ld a, [hLZAddress + 1]
+	ldh a, [hLZAddress + 1]
 	ld d, a
 
 .ok
@@ -263,7 +263,7 @@ LZ_LONG_HI       EQU %00000011
 
 ; Determine the kind of copy.
 ; Note that [hBuffer] could also contain LZ_LONG, but that's an error in the command stream, as of now unhandled.
-	ld a, [hBuffer]
+	ldh a, [hBuffer]
 
 	cp LZ_COPY_FLIPPED
 	jr z, .flipped

@@ -1,116 +1,116 @@
-text   EQUS "db \"<START>\"," ; Start writing text.
-next   EQUS "db \"<NL>\","    ; Move a line down.
-next1  EQUS "db \"<LNBRK>\"," ; Move a line down (without line spacing)
-line   EQUS "db \"<LINE>\","  ; Start writing at the bottom line.
-page   EQUS "db \"@\","       ; Start a new Pokedex page.
-para   EQUS "db \"<PARA>\","  ; Start a new paragraph.
-cont   EQUS "db \"<CONT>\","  ; Scroll to the next line.
-done   EQUS "db \"<DONE>\""   ; End a text box.
-prompt EQUS "db \"<PROMPT>\"" ; Prompt the player to end a text box (initiating some other event).
+DEF text   EQUS "db \"<START>\"," ; Start writing text.
+DEF next   EQUS "db \"<NL>\","    ; Move a line down.
+DEF next1  EQUS "db \"<LNBRK>\"," ; Move a line down (without line spacing)
+DEF line   EQUS "db \"<LINE>\","  ; Start writing at the bottom line.
+DEF page   EQUS "db \"@\","       ; Start a new Pokedex page.
+DEF para   EQUS "db \"<PARA>\","  ; Start a new paragraph.
+DEF cont   EQUS "db \"<CONT>\","  ; Scroll to the next line.
+DEF done   EQUS "db \"<DONE>\""   ; End a text box.
+DEF prompt EQUS "db \"<PROMPT>\"" ; Prompt the player to end a text box (initiating some other event).
 
-text_from_ram: macro
+macro {text_from_ram}
 	db "<RAM>"
 	dw \1
 endm
 
-text_bcd: macro
+macro text_bcd
 	db "<BCD>"
 	dw \1
 	db \2
 endm
 
-text_move: macro
+macro text_move
 	db "<MOVE>"
 	dw \1
 endm
 
-text_box: macro
+macro text_box
 	db "<BOX>"
 	dw \1
 	db \2, \3
 ENDM
 
-text_low: macro
+macro text_low
 	db "<LOW>"
 endm
 
-text_waitbutton: macro
+macro text_waitbutton
 	db "<WAIT>"
 endm
 
-text_scroll: macro
+macro text_scroll
 	db "<SCROLL>"
 endm
 
-start_asm: macro
+macro {start_asm}
 	db "<ASM>"
 endm
 
-deciram: macro
+macro {deciram}
 	db "<NUM>"
 	dw \1 ; address
 	dn \2, \3 ; bytes, digits
 endm
 
-interpret_data: macro
+macro {interpret_data}
 	db "<EXIT>"
 endm
 
-sound_dex_fanfare_50_79: macro
+macro sound_dex_fanfare_50_79
 	db "<DEX2>"
 endm
 
-limited_interpret_data: macro
+macro {limited_interpret_data}
 	db "<DOTS>"
 	db \1
 endm
 
-link_wait_button: macro
+macro {link_wait_button}
 	db "<LINK>"
 endm
 
-sound_dex_fanfare_20_49: macro
+macro sound_dex_fanfare_20_49
 	db "<DEX1>"
 endm
 
-sound_item: macro
+macro sound_item
 	db "<ITEM>"
 endm
 
-sound_caught_mon: macro
+macro sound_caught_mon
 	db "<CAUGHT>"
 endm
 
-sound_dex_fanfare_80_109: macro
+macro sound_dex_fanfare_80_109
 	db "<DEX3>"
 endm
 
-sound_fanfare: macro
+macro sound_fanfare
 	db "<BEEP>"
 endm
 
-sound_slot_machine_start: macro
+macro sound_slot_machine_start
 	db "<SLOTS>"
 endm
 
-sound_read: macro
+macro sound_read
 	db "<SOUND>"
 endm
 
-sound_knock: macro
+macro sound_knock
 	db "<KNOCK>"
 endm
 
-text_buffer: macro
+macro text_buffer
 	db "<BUFFER>"
 	db \1
 endm
 
-current_day: macro
+macro {current_day}
 	db "<DAY>"
 endm
 
-text_jump: MACRO
+MACRO {text_jump}
 	db "<FAR>"
 	dw \1
 	db BANK(\1)

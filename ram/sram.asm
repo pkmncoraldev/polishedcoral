@@ -1,5 +1,5 @@
-SRAM_Begin EQU $a000
-SRAM_End   EQU $c000
+DEF SRAM_Begin EQU $a000
+DEF SRAM_End   EQU $c000
 EXPORT SRAM_Begin, SRAM_End
 
 
@@ -113,7 +113,7 @@ sLinkBattleWins::   ds 2
 sLinkBattleLosses:: ds 2
 sLinkBattleDraws::  ds 2
 
-link_battle_record: MACRO
+MACRO link_battle_record
 \1Name:: ds NAME_LENGTH +- 1
 \1ID:: ds 2
 \1Wins:: ds 2

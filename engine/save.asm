@@ -238,10 +238,10 @@ SavedTheGame: ; 14be6
 
 
 SaveGameData:: ; 14c10
-	ld a, [hVBlank]
+	ldh a, [hVBlank]
 	push af
 	ld a, 2
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	dec a ; ld a, TRUE
 	ld [wSaveFileExists], a
 	farcall StageRTCTimeForSave
@@ -268,7 +268,7 @@ SaveGameData:: ; 14c10
 .ok
 	call CloseSRAM
 	pop af
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	ret
 ; 14c6b
 

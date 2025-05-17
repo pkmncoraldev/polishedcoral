@@ -1,6 +1,6 @@
 BattleStart_TrainerHuds: ; 2c000
 	ld a, $e4
-	ld [rOBP0], a
+	ldh [rOBP0], a
 	call LoadBallIconGFX
 	ld a, [wPartyCount]
 	cp 0
@@ -15,7 +15,7 @@ BattleStart_TrainerHuds: ; 2c000
 
 EnemySwitch_TrainerHud: ; 2c012
 	ld a, $e4
-	ld [rOBP0], a
+	ldh [rOBP0], a
 	call LoadBallIconGFX
 	jp ShowOTTrainerMonsRemaining
 ; 2c01c
@@ -259,5 +259,5 @@ _ShowLinkBattleParticipants: ; 2c1b2
 	call GetCGBLayout
 	call SetPalettes
 	ld a, $e4
-	ld [rOBP0], a
+	ldh [rOBP0], a
 	ret

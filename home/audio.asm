@@ -7,10 +7,10 @@ MapSetup_Sound_Off:: ; 3b4e
 	push bc
 	push af
 
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	ld a, BANK(_MapSetup_Sound_Off)
-;	ld [hROMBank], a
+;	ldh [hROMBank], a
 ;	ld [MBC3RomBank], a
 	rst Bankswitch
 
@@ -25,10 +25,10 @@ UpdateSound:: ; 3b6a
 	push bc
 	push af
 
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	ld a, BANK(_UpdateSound)
-;	ld [hROMBank], a
+;	ldh [hROMBank], a
 ;	ld [MBC3RomBank], a
 	rst Bankswitch
 
@@ -39,7 +39,7 @@ UpdateSound:: ; 3b6a
 
 _LoadMusicByte:: ; 3b86
 ; wCurMusicByte = [a:de]
-;	ld [hROMBank], a
+;	ldh [hROMBank], a
 ;	ld [MBC3RomBank], a
 	rst Bankswitch
 
@@ -47,7 +47,7 @@ _LoadMusicByte:: ; 3b86
 	ld [wCurMusicByte], a
 	ld a, BANK(LoadMusicByte)
 
-;	ld [hROMBank], a
+;	ldh [hROMBank], a
 ;	ld [MBC3RomBank], a
 	rst Bankswitch
 	ret
@@ -72,10 +72,10 @@ PlayMusic:: ; 3b97
 	push bc
 	push af
 
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	ld a, BANK(_PlayMusic) ; and BANK(_MapSetup_Sound_Off)
-;	ld [hROMBank], a
+;	ldh [hROMBank], a
 ;	ld [MBC3RomBank], a
 	rst Bankswitch
 
@@ -92,7 +92,7 @@ PlayMusic:: ; 3b97
 .end
 PopAFBankThenAFBCDEHL:
 	pop af
-;	ld [hROMBank], a
+;	ldh [hROMBank], a
 ;	ld [MBC3RomBank], a
 	rst Bankswitch
 
@@ -123,10 +123,10 @@ PlaySFX:: ; 3c23
 	jr c, _PopAFBCDEHL
 
 .play
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	ld a, BANK(_PlaySFX)
-;	ld [hROMBank], a
+;	ldh [hROMBank], a
 ;	ld [MBC3RomBank], a
 	rst Bankswitch
 
@@ -147,7 +147,7 @@ PlayCryHeader:: ; 3be3
 
 .Function:
 
-;	ld [hROMBank], a
+;	ldh [hROMBank], a
 ;	ld [MBC3RomBank], a
 
 ;	ld hl, CryHeaders
@@ -176,13 +176,13 @@ PlayCryHeader:: ; 3be3
 	ld [wCryLength + 1], a
 
 ;	ld a, BANK(_PlayCryHeader)
-;	ld [hROMBank], a
+;	ldh [hROMBank], a
 ;	ld [MBC3RomBank], a
 
 ;	call _PlayCryHeader
 
 ;	pop af
-;	ld [hROMBank], a
+;	ldh [hROMBank], a
 ;	ld [MBC3RomBank], a
 	farjp _PlayCryHeader
 .ded
@@ -269,12 +269,12 @@ FadeInMusic:: ; 3cae
 
 SkipMusic::
 ; Skip a frames of music.
-	ld [hBuffer], a
+	ldh [hBuffer], a
 	ld a, [wMusicPlaying]
 	push af
 	xor a
 	ld [wMusicPlaying], a
-	ld a, [hBuffer]
+	ldh a, [hBuffer]
 .loop
 	call UpdateSound
 	dec a
@@ -420,11 +420,11 @@ TerminateExpBarSound:: ; 3dfe
 	xor a
 	ld [wChannel5Flags], a
 	ld [wSoundInput], a
-	ld [rNR10], a
-	ld [rNR11], a
-	ld [rNR12], a
-	ld [rNR13], a
-	ld [rNR14], a
+	ldh [rNR10], a
+	ldh [rNR11], a
+	ldh [rNR12], a
+	ldh [rNR13], a
+	ldh [rNR14], a
 	ret
 ; 3e10
 

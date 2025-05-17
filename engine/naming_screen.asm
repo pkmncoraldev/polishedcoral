@@ -1,8 +1,8 @@
-NAMINGSCREEN_BORDER EQU $60
-NAMINGSCREEN_CURSOR EQU $7e
+DEF NAMINGSCREEN_BORDER EQU $60
+DEF NAMINGSCREEN_CURSOR EQU $7e
 
-NAMINGSCREEN_MIDDLELINE EQU "↑"
-NAMINGSCREEN_UNDERLINE  EQU "↓"
+DEF NAMINGSCREEN_MIDDLELINE EQU "↑"
+DEF NAMINGSCREEN_UNDERLINE  EQU "↓"
 
 _NamingScreen:: ; 0x116b7
 	call DisableSpriteUpdates
@@ -25,23 +25,23 @@ NamingScreen: ; 116c1
 	ld a, [hl]
 	push af
 	set NO_TEXT_SCROLL, [hl]
-	ld a, [hMapAnims]
+	ldh a, [hMapAnims]
 	push af
 	xor a
-	ld [hMapAnims], a
-	ld a, [hInMenu]
+	ldh [hMapAnims], a
+	ldh a, [hInMenu]
 	push af
 	ld a, $1
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	call SetUpNamingScreen
 	call DelayFrame
 .loop
 	call NamingScreenJoypadLoop
 	jr nc, .loop
 	pop af
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	pop af
-	ld [hMapAnims], a
+	ldh [hMapAnims], a
 	pop af
 	ld [wOptions1], a
 	jp ClearJoypad
@@ -56,7 +56,7 @@ SetUpNamingScreen: ; 116f8
 	call LoadNamingScreenGFX
 	call NamingScreen_InitText
 	ld a, %11100011
-	ld [rLCDC], a
+	ldh [rLCDC], a
 	call .GetNamingScreenSetup
 	call ApplyTilemapInVBlank
 	call WaitTop
@@ -443,8 +443,8 @@ NamingScreenJoypadLoop: ; 11915
 	farcall ClearSpriteAnims
 ;	call ClearSprites
 	xor a
-	ld [hSCX], a
-	ld [hSCY], a
+	ldh [hSCX], a
+	ldh [hSCY], a
 	scf
 	ret
 
@@ -452,7 +452,7 @@ NamingScreenJoypadLoop: ; 11915
 
 .UpdateStringEntry: ; 11940
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 1, 5
 	call NamingScreen_IsTargetBox
 	jr nz, .got_coords
@@ -471,7 +471,7 @@ NamingScreenJoypadLoop: ; 11915
 	ld l, a
 	call PlaceString
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ret
 
 ; 11968
@@ -1014,16 +1014,16 @@ LoadNamingScreenGFX: ; 11c51
 	ld [hli], a
 	ld [hl], NAMINGSCREEN_CURSOR
 	xor a
-	ld [hSCY], a
+	ldh [hSCY], a
 	ld [wGlobalAnimYOffset], a
-	ld [hSCX], a
+	ldh [hSCX], a
 	ld [wGlobalAnimXOffset], a
 	ld [wJumptableIndex], a
 	ld [wcf64], a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld [wNamingScreenCurrNameLength], a
 	ld a, $7
-	ld [hWX], a
+	ldh [hWX], a
 	ret
 
 ; 11cb7
@@ -1048,14 +1048,14 @@ _ComposeMailMessage: ; 11e75 (mail?)
 	ld [hl], e
 	inc hl
 	ld [hl], d
-	ld a, [hMapAnims]
+	ldh a, [hMapAnims]
 	push af
 	xor a
-	ld [hMapAnims], a
-	ld a, [hInMenu]
+	ldh [hMapAnims], a
+	ldh a, [hInMenu]
 	push af
 	ld a, $1
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	call .InitBlankMail
 	call DelayFrame
 
@@ -1064,9 +1064,9 @@ _ComposeMailMessage: ; 11e75 (mail?)
 	jr nc, .loop
 
 	pop af
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	pop af
-	ld [hMapAnims], a
+	ldh [hMapAnims], a
 	ret
 
 .InitBlankMail: ; 11e9a (4:5e9a)
@@ -1093,7 +1093,7 @@ _ComposeMailMessage: ; 11e75 (mail?)
 	ld [hl], $0
 	call .InitCharset
 	ld a, %11100011
-	ld [rLCDC], a
+	ldh [rLCDC], a
 	call .initwNamingScreenMaxNameLength
 	ld b, CGB_DIPLOMA
 	call GetCGBLayout
@@ -1176,14 +1176,14 @@ INCBIN "gfx/icons/mail2.2bpp"
 	farcall ClearSpriteAnims
 	call ClearSprites
 	xor a
-	ld [hSCX], a
-	ld [hSCY], a
+	ldh [hSCX], a
+	ldh [hSCY], a
 	scf
 	ret
 
 .Update: ; 11feb (4:5feb)
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 1, 1
 	lb bc, 4, 18
 	call ClearBox
@@ -1194,7 +1194,7 @@ INCBIN "gfx/icons/mail2.2bpp"
 	hlcoord 2, 2
 	call PlaceString
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ret
 
 .DoJumptable: ; 12008 (4:6008)

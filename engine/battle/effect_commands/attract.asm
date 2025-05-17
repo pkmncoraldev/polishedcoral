@@ -78,7 +78,7 @@ BattleCommand_attract: ; 377ce
 .destiny_knot_done
 	; Speed check to see whose side is cured first, in case both
 	; got infatuated
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	push af
 	call SetPlayerTurn
 	call CheckSpeed
@@ -87,7 +87,7 @@ BattleCommand_attract: ; 377ce
 	call SwitchTurn
 	call .do_it
 	pop af
-	ld [hBattleTurn], a
+	ldh [hBattleTurn], a
 	ret
 
 .do_it
@@ -124,7 +124,7 @@ CheckMentalHerb:
 	set 1, b
 
 	; Also remove other encore vars
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld hl, wPlayerEncoreCount
 	jr z, .got_encorecount
@@ -135,7 +135,7 @@ CheckMentalHerb:
 
 .encore_done
 	; Check Disable
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld de, wPlayerDisableCount
 	ld hl, wDisabledMove

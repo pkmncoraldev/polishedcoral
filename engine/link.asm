@@ -6,8 +6,8 @@ LinkCommunications: ; 28000
 	call ClearSprites
 	call UpdateSprites
 	xor a
-	ld [hSCX], a
-	ld [hSCY], a
+	ldh [hSCX], a
+	ldh [hSCY], a
 	ld c, 80
 	call DelayFrames
 	call ClearScreen
@@ -38,24 +38,24 @@ Gen2ToGen2LinkComms: ; 28177
 	ld a, [wScriptVar]
 	and a
 	jp z, LinkTimeout
-	ld a, [hSerialConnectionStatus]
+	ldh a, [hSerialConnectionStatus]
 	cp USING_INTERNAL_CLOCK
 	jr nz, .Player1
 	ld c, 3
 	call DelayFrames
 	xor a
-	ld [hSerialSend], a
+	ldh [hSerialSend], a
 	ld a, $1
-	ld [rSC], a
+	ldh [rSC], a
 	ld a, START_TRANSFER_INTERNAL_CLOCK
-	ld [rSC], a
+	ldh [rSC], a
 	call DelayFrame
 	xor a
-	ld [hSerialSend], a
+	ldh [hSerialSend], a
 	ld a, $1
-	ld [rSC], a
+	ldh [rSC], a
 	ld a, START_TRANSFER_INTERNAL_CLOCK
-	ld [rSC], a
+	ldh [rSC], a
 
 .Player1:
 	ld de, MUSIC_NONE
@@ -63,9 +63,9 @@ Gen2ToGen2LinkComms: ; 28177
 	ld c, 3
 	call DelayFrames
 	xor a
-	ld [rIF], a
+	ldh [rIF], a
 	ld a, %01000
-	ld [rIE], a
+	ldh [rIE], a
 	ld hl, wLinkBuffer
 	ld de, wLinkBufferEnd
 	ld bc, 17
@@ -92,9 +92,9 @@ Gen2ToGen2LinkComms: ; 28177
 
 .not_trading
 	xor a
-	ld [rIF], a
+	ldh [rIF], a
 	ld a, %11001
-	ld [rIE], a
+	ldh [rIE], a
 	ld de, MUSIC_NONE
 	call PlayMusic
 	call Link_CopyRandomNumbers
@@ -241,7 +241,7 @@ Gen2ToGen2LinkComms: ; 28177
 	rst CopyBytes
 	ld de, MUSIC_NONE
 	call PlayMusic
-	ld a, [hSerialConnectionStatus]
+	ldh a, [hSerialConnectionStatus]
 	cp USING_INTERNAL_CLOCK
 	ld c, 66
 	call z, DelayFrames
@@ -262,26 +262,26 @@ Gen2ToGen2LinkComms: ; 28177
 	ld bc, NAME_LENGTH
 	rst CopyBytes
 	call ReturnToMapFromSubmenu
-	ld a, [rIE]
+	ldh a, [rIE]
 	push af
-	ld a, [rIF]
+	ldh a, [rIF]
 	push af
 	xor a
-	ld [rIF], a
-	ld a, [rIE]
+	ldh [rIF], a
+	ldh a, [rIE]
 	set 1, a
-	ld [rIE], a
+	ldh [rIE], a
 	pop af
-	ld [rIF], a
+	ldh [rIF], a
 	predef StartBattle
-	ld a, [rIF]
+	ldh a, [rIF]
 	ld h, a
 	xor a
-	ld [rIF], a
+	ldh [rIF], a
 	pop af
-	ld [rIE], a
+	ldh [rIE], a
 	ld a, h
-	ld [rIF], a
+	ldh [rIF], a
 	pop af
 	ld [wOptions2], a
 	farcall LoadPokemonData
@@ -304,7 +304,7 @@ LinkTimeout: ; 283b2
 	xor a
 	ld [hld], a
 	ld [hl], a
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	push de
 	hlcoord 0, 12
 	lb bc, 4, 18
@@ -330,10 +330,10 @@ LinkTimeout: ; 283b2
 
 Function283f2: ; 283f2
 	ld a, $1
-	ld [hSerialIgnoringInitialData], a
+	ldh [hSerialIgnoringInitialData], a
 .loop
 	ld a, [hl]
-	ld [hSerialSend], a
+	ldh [hSerialSend], a
 	call Serial_ExchangeByte
 	push bc
 	ld b, a
@@ -342,14 +342,14 @@ Function283f2: ; 283f2
 .delay_cycles
 	dec a
 	jr nz, .delay_cycles
-	ld a, [hSerialIgnoringInitialData]
+	ldh a, [hSerialIgnoringInitialData]
 	and a
 	ld a, b
 	pop bc
 	jr z, .load
 	dec hl
 	xor a
-	ld [hSerialIgnoringInitialData], a
+	ldh [hSerialIgnoringInitialData], a
 	jr .loop
 
 .load
@@ -592,7 +592,7 @@ Link_CopyOTData: ; 2879e
 ; 287ab
 
 Link_CopyRandomNumbers: ; 287ab
-	ld a, [hSerialConnectionStatus]
+	ldh a, [hSerialConnectionStatus]
 	cp USING_INTERNAL_CLOCK
 	ret z
 	ld hl, wLinkBufferEnd
@@ -704,7 +704,7 @@ PlaceTradePartnerNamesAndParty: ; fb60d
 	push de
 	push hl
 	ld a, c
-	ld [hProduct], a
+	ldh [hProduct], a
 	call GetPokemonName
 	pop hl
 	call PlaceString
@@ -886,18 +886,18 @@ LinkTradePartiesMenuMasterLoop: ; 2891c
 LinkTradeMenu: ; 16d70c
 	ld hl, w2DMenuFlags2
 	res 7, [hl]
-	ld a, [hBGMapMode]
+	ldh a, [hBGMapMode]
 	push af
 	call .loop
 	pop af
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 .GetJoypad: ; 16d713
 	push bc
 	push af
-	ld a, [hJoyLast]
+	ldh a, [hJoyLast]
 	and D_PAD
 	ld b, a
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	and BUTTONS
 	or b
 	ld b, a
@@ -927,15 +927,15 @@ LinkTradeMenu: ; 16d70c
 ; 16d759
 
 .UpdateBGMapAndOAM: ; 16d759
-	ld a, [hOAMUpdate]
+	ldh a, [hOAMUpdate]
 	push af
 	ld a, $1
-	ld [hOAMUpdate], a
+	ldh [hOAMUpdate], a
 	call ApplyTilemapInVBlank
 	pop af
-	ld [hOAMUpdate], a
+	ldh [hOAMUpdate], a
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ret
 
 .loop2
@@ -1303,7 +1303,7 @@ Function28ade: ; 28ade
 	ldcoord_a 9, 17
 .loop2
 	call JoyTextDelay
-	ld a, [hJoyLast]
+	ldh a, [hJoyLast]
 	and a
 	jr z, .loop2
 	bit A_BUTTON_F, a
@@ -1340,12 +1340,12 @@ Function28b22: ; 28b22
 	call GetCGBLayout
 	call ApplyAttrAndTilemapInVBlank
 	xor a
-	ld [rSB], a
-	ld [hSerialSend], a
+	ldh [rSB], a
+	ldh [hSerialSend], a
 	ld a, $1
-	ld [rSC], a
+	ldh [rSC], a
 	ld a, START_TRANSFER_INTERNAL_CLOCK
-	ld [rSC], a
+	ldh [rSC], a
 	ret
 ; 28b42
 
@@ -1617,7 +1617,7 @@ LinkTrade: ; 28b87
 	call LoadFontsBattleExtra
 	ld b, CGB_DIPLOMA
 	call GetCGBLayout
-	ld a, [hSerialConnectionStatus]
+	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .player_2
 	predef TradeAnimation
@@ -1809,46 +1809,46 @@ WaitForOtherPlayerToExit: ; 29c92
 	ld c, 3
 	call DelayFrames
 	ld a, CONNECTION_NOT_ESTABLISHED
-	ld [hSerialConnectionStatus], a
+	ldh [hSerialConnectionStatus], a
 	xor a
-	ld [rSB], a
-	ld [hSerialReceive], a
+	ldh [rSB], a
+	ldh [hSerialReceive], a
 	ld a, $1
-	ld [rSC], a
+	ldh [rSC], a
 	ld a, START_TRANSFER_INTERNAL_CLOCK
-	ld [rSC], a
+	ldh [rSC], a
 	ld c, 3
 	call DelayFrames
 	xor a
-	ld [rSB], a
-	ld [hSerialReceive], a
+	ldh [rSB], a
+	ldh [hSerialReceive], a
 	xor a ; redundant?
-	ld [rSC], a
+	ldh [rSC], a
 	ld a, START_TRANSFER_EXTERNAL_CLOCK
-	ld [rSC], a
+	ldh [rSC], a
 	ld c, 3
 	call DelayFrames
 	xor a
-	ld [rSB], a
-	ld [hSerialReceive], a
-	ld [rSC], a
+	ldh [rSB], a
+	ldh [hSerialReceive], a
+	ldh [rSC], a
 	ld c, 3
 	call DelayFrames
 	ld a, CONNECTION_NOT_ESTABLISHED
-	ld [hSerialConnectionStatus], a
-	ld a, [rIF]
+	ldh [hSerialConnectionStatus], a
+	ldh a, [rIF]
 	push af
 	xor a
-	ld [rIF], a
+	ldh [rIF], a
 	ld a, %01011
-	ld [rIE], a
+	ldh [rIE], a
 	pop af
-	ld [rIF], a
+	ldh [rIF], a
 	ld hl, wLinkTimeoutFrames
 	xor a
 	ld [hli], a
 	ld [hl], a
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	ld [wLinkMode], a
 	ret
 ; 29ce8
@@ -1872,13 +1872,13 @@ Special_WaitForLinkedFriend: ; 29d11
 	and a
 	jr z, .no_link_action
 	ld a, $2
-	ld [rSB], a
+	ldh [rSB], a
 	xor a
-	ld [hSerialReceive], a
+	ldh [hSerialReceive], a
 	xor a ; redundant?
-	ld [rSC], a
+	ldh [rSC], a
 	ld a, START_TRANSFER_EXTERNAL_CLOCK
-	ld [rSC], a
+	ldh [rSC], a
 	call DelayFrame
 	call DelayFrame
 	call DelayFrame
@@ -1889,21 +1889,21 @@ Special_WaitForLinkedFriend: ; 29d11
 	ld a, SERIAL_PATCH_LIST_PART_TERMINATOR
 	ld [wLinkTimeoutFrames], a
 .loop
-	ld a, [hSerialConnectionStatus]
+	ldh a, [hSerialConnectionStatus]
 	cp USING_INTERNAL_CLOCK
 	jr z, .connected
 	cp USING_EXTERNAL_CLOCK
 	jr z, .connected
 	ld a, CONNECTION_NOT_ESTABLISHED
-	ld [hSerialConnectionStatus], a
+	ldh [hSerialConnectionStatus], a
 	ld a, $2
-	ld [rSB], a
+	ldh [rSB], a
 	xor a
-	ld [hSerialReceive], a
+	ldh [hSerialReceive], a
 	xor a ; redundant?
-	ld [rSC], a
+	ldh [rSC], a
 	ld a, START_TRANSFER_EXTERNAL_CLOCK
-	ld [rSC], a
+	ldh [rSC], a
 	ld a, [wLinkTimeoutFrames]
 	dec a
 	ld [wLinkTimeoutFrames], a
@@ -1915,11 +1915,11 @@ Special_WaitForLinkedFriend: ; 29d11
 
 .not_done
 	ld a, $1
-	ld [rSB], a
+	ldh [rSB], a
 	ld a, $1
-	ld [rSC], a
+	ldh [rSC], a
 	ld a, START_TRANSFER_INTERNAL_CLOCK
-	ld [rSC], a
+	ldh [rSC], a
 	call DelayFrame
 	jr .loop
 
@@ -1949,12 +1949,12 @@ Special_CheckLinkTimeout: ; 29d92
 	ld [hl], a
 	call ApplyTilemapInVBlank
 	ld a, $2
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	call DelayFrame
 	call DelayFrame
 	call Link_CheckCommunicationError
 	xor a
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	ld a, [wScriptVar]
 	and a
 	ret nz
@@ -1971,7 +1971,7 @@ Function29dba: ; 29dba
 	ld [hl], a
 	call ApplyTilemapInVBlank
 	ld a, $2
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	call DelayFrame
 	call DelayFrame
 	call Link_CheckCommunicationError
@@ -2005,13 +2005,13 @@ Function29dba: ; 29dba
 
 .vblank
 	xor a
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	ret
 ; 29e0c
 
 Link_CheckCommunicationError: ; 29e0c
 	xor a
-	ld [hSerialReceivedNewData], a
+	ldh [hSerialReceivedNewData], a
 	ld a, [wLinkTimeoutFrames]
 	ld h, a
 	ld a, [wLinkTimeoutFrames + 1]
@@ -2105,7 +2105,7 @@ Special_CheckBothSelectedSameRoom: ; 29e82
 	inc a
 	ld [wLinkMode], a
 	xor a
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	ld a, $1
 	ld [wScriptVar], a
 	ret
@@ -2129,7 +2129,7 @@ _Special_LinkCommunications:
 	call LinkCommunications
 	call EnableSpriteUpdates
 	xor a
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	ret
 ; 29eee
 
@@ -2152,12 +2152,12 @@ Link_ResetSerialRegistersAfterLinkClosure: ; 29f04
 	ld c, 3
 	call DelayFrames
 	ld a, CONNECTION_NOT_ESTABLISHED
-	ld [hSerialConnectionStatus], a
+	ldh [hSerialConnectionStatus], a
 	ld a, $2
-	ld [rSB], a
+	ldh [rSB], a
 	xor a
-	ld [hSerialReceive], a
-	ld [rSC], a
+	ldh [hSerialReceive], a
+	ldh [rSC], a
 	ret
 ; 29f17
 
@@ -2166,7 +2166,7 @@ Link_EnsureSync: ; 29f17
 	ld [wPlayerLinkAction], a
 	ld [wcf57], a
 	ld a, $2
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	call DelayFrame
 	call DelayFrame
 .receive_loop
@@ -2184,14 +2184,14 @@ Link_EnsureSync: ; 29f17
 
 .done
 	xor a
-	ld [hVBlank], a
+	ldh [hVBlank], a
 	ld a, b
 	and $f
 	ret
 ; 29f47
 
 Special_CableClubCheckWhichChris: ; 29f47
-	ld a, [hSerialConnectionStatus]
+	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	ld a, $1
 	jr z, .yes
@@ -2286,13 +2286,13 @@ DetermineLinkBattleResult: ; 2b930
 	jr z, .next
 	dec hl
 	xor a
-	ld [hDividend + 0], a
+	ldh [hDividend + 0], a
 	ld a, [hli]
-	ld [hDividend + 1], a
+	ldh [hDividend + 1], a
 	ld a, [hli]
-	ld [hDividend + 2], a
+	ldh [hDividend + 2], a
 	xor a
-	ld [hDividend + 3], a
+	ldh [hDividend + 3], a
 	ld a, [hli]
 	ld b, a
 	ld a, [hld]
@@ -2300,13 +2300,13 @@ DetermineLinkBattleResult: ; 2b930
 	rr a
 	srl b
 	rr a
-	ld [hDivisor], a
+	ldh [hDivisor], a
 	ld b, $4
 	call Divide
-	ld a, [hQuotient + 2]
+	ldh a, [hQuotient + 2]
 	add e
 	ld e, a
-	ld a, [hQuotient + 1]
+	ldh a, [hQuotient + 1]
 	adc d
 	ld d, a
 	dec hl

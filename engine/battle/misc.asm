@@ -1,7 +1,7 @@
 _DisappearUser:: ; fbd54
 	xor a
-	ld [hBGMapMode], a
-	ld a, [hBattleTurn]
+	ldh [hBGMapMode], a
+	ldh a, [hBattleTurn]
 	and a
 	jr z, .player
 	call GetEnemyFrontpicCoords
@@ -21,8 +21,8 @@ _AppearUserLowerSub: ; fbd71 (3e:7d71)
 
 AppearUser: ; fbd77 (3e:7d77)
 	xor a
-	ld [hBGMapMode], a
-	ld a, [hBattleTurn]
+	ldh [hBGMapMode], a
+	ldh a, [hBattleTurn]
 	and a
 	jr z, .player
 	call GetEnemyFrontpicCoords
@@ -32,11 +32,11 @@ AppearUser: ; fbd77 (3e:7d77)
 	call GetPlayerBackpicCoords
 	ld a, $31
 .okay
-	ld [hGraphicStartTile], a
+	ldh [hGraphicStartTile], a
 	predef PlaceGraphic
 FinishAppearDisappearUser: ; fbd91 (3e:7d91)
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ret
 
 GetEnemyFrontpicCoords: ; fbd96 (3e:7d96)

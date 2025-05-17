@@ -1,6 +1,6 @@
 ; Maps that roaming monsters can be on, and possible maps they can jump to..
 
-roam_map: MACRO
+MACRO roam_map
 	map_id \1
 	db _NARG - 1
 rept _NARG +- 1
@@ -66,4 +66,4 @@ PossibleRoamMaps:
 	map_id ROUTE_29
 	db -1
 
-NUM_ROAMMON_MAPS EQU 25
+DEF NUM_ROAMMON_MAPS EQU 25

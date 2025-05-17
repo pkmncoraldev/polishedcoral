@@ -22,7 +22,7 @@ _OptionsMenu:: ; e41d0
 
 .joypad_loop
 	call JoyTextDelay
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	and START | B_BUTTON
 	jr nz, .ExitOptions
 	call OptionsControl
@@ -41,19 +41,19 @@ _OptionsMenu:: ; e41d0
 	call PlaySFX
 	call WaitSFX
 	pop af
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	ret
 ; e4241
 
 OptionsMenu_LoadOptions:
 	xor a
 	ld [wJumptableIndex], a
-	ld [hJoyPressed], a
+	ldh [hJoyPressed], a
 	ld c, $7 ; number of items on the menu minus 1 (for done)
 .print_text_loop ; this next will display the settings of each option when the menu is opened
 	push bc
 	xor a
-	ld [hJoyLast], a
+	ldh [hJoyLast], a
 	call GetOptionPointer
 	pop bc
 	ld hl, wJumptableIndex
@@ -64,7 +64,7 @@ OptionsMenu_LoadOptions:
 	and a
 	call z, UpdateFrame
 	ld a, 1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	jp ApplyTilemapInVBlank
 
 StringOptions1: ; e4241
@@ -177,7 +177,7 @@ Options_TextSpeed: ; e42f5
 
 Options_BattleEffects: ; e4365
 	ld hl, wOptions1
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	and D_LEFT | D_RIGHT
 	jr nz, .Toggle
 	bit BATTLE_EFFECTS, [hl]
@@ -206,7 +206,7 @@ Options_BattleEffects: ; e4365
 
 Options_MonAnimations: ; e4365
 	ld hl, wOptions2
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	and D_LEFT | D_RIGHT
 	jr nz, .Toggle
 	bit MON_ANIMATIONS, [hl]
@@ -235,7 +235,7 @@ Options_MonAnimations: ; e4365
 
 Options_BattleStyle:
 	ld hl, wOptions2
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
@@ -274,7 +274,7 @@ Options_BattleStyle:
 
 Options_Frame: ; e44fa
 	ld hl, wTextBoxFrame
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
@@ -311,7 +311,7 @@ UpdateFrame: ; e4512
 
 
 Options_MusicPlayer:
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	and A_BUTTON
 	jr nz, .gotomusicplayer
 	and a
@@ -334,7 +334,7 @@ Options_MusicPlayer:
 	
 
 Options_Done: ; e4520
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	and A_BUTTON
 	jr nz, .Exit
 	and a
@@ -348,7 +348,7 @@ Options_Done: ; e4520
 
 Options_DebugMode: ; e4365
 	ld hl, wOptions1
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	and D_LEFT | D_RIGHT
 	jr nz, .Toggle
 	bit DEBUG_MODE, [hl]
@@ -377,7 +377,7 @@ Options_DebugMode: ; e4365
 
 OptionsControl: ; e452a
 	ld hl, wJumptableIndex
-	ld a, [hJoyLast]
+	ldh a, [hJoyLast]
 	cp D_DOWN
 	jr z, .DownPressed
 	cp D_UP

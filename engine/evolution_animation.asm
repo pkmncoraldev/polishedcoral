@@ -4,11 +4,11 @@ EvolutionAnimation: ; 4e5e1
 	push bc
 	ld a, [wCurSpecies]
 	push af
-	ld a, [rOBP0]
+	ldh a, [rOBP0]
 	push af
 	call .EvolutionAnimation
 	pop af
-	ld [rOBP0], a
+	ldh [rOBP0], a
 	pop af
 	ld [wCurSpecies], a
 	pop bc
@@ -25,7 +25,7 @@ EvolutionAnimation: ; 4e5e1
 
 .EvolutionAnimation: ; 4e607
 	ld a, %11100100
-	ld [rOBP0], a
+	ldh [rOBP0], a
 
 	ld de, MUSIC_NONE
 	call PlayMusic
@@ -41,7 +41,7 @@ EvolutionAnimation: ; 4e5e1
 	ld [wLowHealthAlarm], a
 	call ApplyTilemapInVBlank
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld a, [wEvolutionOldSpecies]
 	ld [wPlayerHPPal], a
 
@@ -53,13 +53,13 @@ EvolutionAnimation: ; 4e5e1
 	call .PlaceFrontpic
 	
 	ld a, $1
-	ld [rVBK], a
+	ldh [rVBK], a
 	ld de, .GFXBlank
 	ld hl, VTiles2 tile $7f
 	lb bc, BANK(.GFXBlank), 1
 	call Request2bpp
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 	
 	ld de, VTiles2
 	ld hl, VTiles2 tile $31
@@ -78,7 +78,7 @@ EvolutionAnimation: ; 4e5e1
 	ld [wCurSpecies], a
 
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call .check_statused
 	jr c, .skip_cry
 
@@ -210,7 +210,7 @@ EvolutionAnimation: ; 4e5e1
 .ReplaceFrontpic: ; 4e755
 	push bc
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 7, 2
 	lb bc, 7, 7
 	ld de, SCREEN_WIDTH - 7
@@ -227,7 +227,7 @@ EvolutionAnimation: ; 4e5e1
 	dec b
 	jr nz, .loop1
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call ApplyTilemapInVBlank
 	pop bc
 	ret
@@ -237,7 +237,7 @@ EvolutionAnimation: ; 4e5e1
 	call DelayFrame
 	push bc
 	call JoyTextDelay
-	ld a, [hJoyDown]
+	ldh a, [hJoyDown]
 	pop bc
 	and B_BUTTON
 	jr nz, .pressed_b
@@ -336,7 +336,7 @@ EvolutionAnimation: ; 4e5e1
 	push bc
 	farcall PlaySpriteAnimations
 	; a = (([hVBlankCounter] + 4) / 2) % NUM_PALETTES
-	ld a, [hVBlankCounter]
+	ldh a, [hVBlankCounter]
 	and %1110
 	srl a
 	inc a

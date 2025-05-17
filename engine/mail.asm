@@ -383,7 +383,7 @@ MailboxPC: ; 0x44806
 	ld hl, .TopMenuDataHeader
 	call CopyMenuDataHeader
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call InitScrollingMenu
 	call UpdateSprites
 

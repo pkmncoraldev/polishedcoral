@@ -92,10 +92,10 @@ ReturnFromMapSetupScript:: ; b8000
 	ld a, [wCurrentLandmark]
 	ld [wPreviousLandmark], a
 	ld a, $90
-	ld [rWY], a
-	ld [hWY], a
+	ldh [rWY], a
+	ldh [hWY], a
 	xor a
-	ld [hLCDCPointer], a
+	ldh [hLCDCPointer], a
 	ret
 ; b8064
 
@@ -160,7 +160,7 @@ PlaceMapNameSign:: ; b8098 (2e:4098)
 	ld a, [wPlayerState]
 	cp PLAYER_FALLING
 	jp z, .end
-	ld a, [hLCDTrain]
+	ldh a, [hLCDTrain]
 	and a
 	ret nz
 	; Sign is slightly delayed to move it away from the map connection setup
@@ -212,11 +212,11 @@ PlaceMapNameSign:: ; b8098 (2e:4098)
 	sub b
 	pop bc
 .got_value
-	ld [rWY], a
-	ld [hWY], a
+	ldh [rWY], a
+	ldh [hWY], a
 	sub $98 ;$90
 	ret nz
-	ld [hLCDCPointer], a
+	ldh [hLCDCPointer], a
 	
 	ld a, [wScriptRunning]
 	and a
@@ -987,45 +987,45 @@ GetTreeScore: ; b8443
 	add hl, bc
 
 	ld a, h
-	ld [hDividend], a
+	ldh [hDividend], a
 	ld a, l
-	ld [hDividend + 1], a
+	ldh [hDividend + 1], a
 	ld a, 5
-	ld [hDivisor], a
+	ldh [hDivisor], a
 	ld b, 2
 	call Divide
 
-	ld a, [hQuotient + 1]
-	ld [hDividend], a
-	ld a, [hQuotient + 2]
-	ld [hDividend + 1], a
+	ldh a, [hQuotient + 1]
+	ldh [hDividend], a
+	ldh a, [hQuotient + 2]
+	ldh [hDividend + 1], a
 	ld a, 10
-	ld [hDivisor], a
+	ldh [hDivisor], a
 	ld b, 2
 	call Divide
 
-	ld a, [hQuotient + 3]
+	ldh a, [hQuotient + 3]
 	ret
 ; b849d
 
 .OTIDScore: ; b849d
 	ld a, [wPlayerID]
-	ld [hDividend], a
+	ldh [hDividend], a
 	ld a, [wPlayerID + 1]
-	ld [hDividend + 1], a
+	ldh [hDividend + 1], a
 	ld a, 10
-	ld [hDivisor], a
+	ldh [hDivisor], a
 	ld b, 2
 	call Divide
-	ld a, [hQuotient + 3]
+	ldh a, [hQuotient + 3]
 	ret
 ; b84b3
 
 LoadFishingGFX: ; b84b3
-	ld a, [rVBK]
+	ldh a, [rVBK]
 	push af
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 
 	ld de, FishingGFX
 	ld a, [wPlayerGender]
@@ -1044,7 +1044,7 @@ LoadFishingGFX: ; b84b3
 	call .LoadGFX
 
 	pop af
-	ld [rVBK], a
+	ldh [rVBK], a
 	ret
 ; b84e3
 

@@ -1,6 +1,6 @@
 ; script vars
-PLAYER      EQU  0
-LAST_TALKED EQU -2
+DEF PLAYER      EQU  0
+DEF LAST_TALKED EQU -2
 
 
 	const_def
@@ -39,11 +39,11 @@ LAST_TALKED EQU -2
 	const VAR_SCRIPT_VAR	   ; 20
 	const VAR_MONJUSTCAUGHT	   ; 21
 	const VAR_RANCHRACESECONDS ; 22
-NUM_VARS EQU const_value
+DEF NUM_VARS EQU const_value
 
-RETVAR_STRBUF2 EQU (0 << 6)
-RETVAR_ADDR_DE EQU (1 << 6)
-RETVAR_EXECUTE EQU (2 << 6)
+DEF RETVAR_STRBUF2 EQU (0 << 6)
+DEF RETVAR_ADDR_DE EQU (1 << 6)
+DEF RETVAR_EXECUTE EQU (2 << 6)
 
 
 ; see engine/events.asm:PlayerEventScriptPointers
@@ -62,7 +62,7 @@ RETVAR_EXECUTE EQU (2 << 6)
 	const PLAYEREVENT_TMHMBALL
 	const PLAYEREVENT_DIVE_WARP
 	const PLAYEREVENT_TAPEBALL
-NUM_PLAYER_EVENTS EQU const_value
+DEF NUM_PLAYER_EVENTS EQU const_value
 
 
 ; see engine/events.asm:TryReadSign.signs
@@ -81,23 +81,23 @@ NUM_PLAYER_EVENTS EQU const_value
 ; use type SIGNPOST_ITEM + (item id) to save space.
 ; Note that this requires SIGNPOST_ITEM + (item id) <= $ff, so currently most
 ; of the mail items cannot be hidden.
-SIGNPOST_ITEM EQU const_value
+DEF SIGNPOST_ITEM EQU const_value
 
 ; see engine/events.asm:TryObjectEvent.pointers
 	const_def
-	const PERSONTYPE_SCRIPT         ; 0
+	const {PERSONTYPE_SCRIPT}       ; 0
 	const PERSONTYPE_POKEBALL       ; 1
-	const PERSONTYPE_TRAINER        ; 2
+	const {PERSONTYPE_TRAINER}      ; 2
 	const PERSONTYPE_GENERICTRAINER ; 3
 	const PERSONTYPE_POKEMON        ; 4
 	const PERSONTYPE_COMMAND        ; 5
-NUM_PERSONTYPES EQU const_value
+DEF NUM_PERSONTYPES EQU const_value
 
 
-CMDQUEUE_ENTRY_SIZE EQU 6
-CMDQUEUE_CAPACITY EQU 4
-CMDQUEUE_ADDR EQU 1 ; offsets 0, 3, 4, and 5 are unused
-CMDQUEUE_STONETABLE EQU 2 ; types 0, 1, 3, and 4 are unused
+DEF CMDQUEUE_ENTRY_SIZE EQU 6
+DEF CMDQUEUE_CAPACITY EQU 4
+DEF CMDQUEUE_ADDR EQU 1 ; offsets 0, 3, 4, and 5 are unused
+DEF CMDQUEUE_STONETABLE EQU 2 ; types 0, 1, 3, and 4 are unused
 
 
 ; elevator floors
@@ -137,7 +137,7 @@ CMDQUEUE_STONETABLE EQU 2 ; types 0, 1, 3, and 4 are unused
 	const EMOTE_SHAKING_SNOW  ; 13
 	const EMOTE_PUDDLE_SPLASH_2
 	const EMOTE_POLLEN_PUFF
-EMOTE_MEM EQU -1
+DEF EMOTE_MEM EQU -1
 
 ; fruit trees
 ; see engine/events/fruit_trees.asm
@@ -178,7 +178,7 @@ EMOTE_MEM EQU -1
 	const FRUITTREE_ROUTE_28_1
 	const FRUITTREE_ROUTE_28_2
 	const FRUITTREE_ROUTE_29
-NUM_FRUIT_TREES EQU const_value +- 1
+DEF NUM_FRUIT_TREES EQU const_value +- 1
 
 ; hidden grottoes
 ; see engine/hidden_grottoes.asm:HiddenGrottoData
@@ -206,7 +206,7 @@ NUM_FRUIT_TREES EQU const_value +- 1
 	const HIDDENGROTTO_15                 ; 15
 	const HIDDENGROTTO_16                 ; 16
 	const HIDDENGROTTO_17                 ; 17
-NUM_HIDDEN_GROTTOES EQU const_value +- 1
+DEF NUM_HIDDEN_GROTTOES EQU const_value +- 1
 
 ; swarm arguments
 ; StoreSwarmMapIndices arguments
@@ -230,4 +230,4 @@ NUM_HIDDEN_GROTTOES EQU const_value +- 1
 	const OMANYTE_PUZZLE
 	const AERODACTYL_PUZZLE
 	const HO_OH_PUZZLE
-NUM_PAINTINGS EQU const_value
+DEF NUM_PAINTINGS EQU const_value

@@ -88,11 +88,11 @@ LusterTrainThing:
 	ld hl, rIE
 	set LCD_STAT, [hl]
 	ld a, 7
-	ld [hWX], a
+	ldh [hWX], a
 	ld a, 64
-	ld [hWY], a
+	ldh [hWY], a
 	ld a, 1
-	ld [hLCDTrain], a
+	ldh [hLCDTrain], a
 	hlcoord 0, 8
 	decoord 0, 0
 	ld bc, 4 * BG_MAP_WIDTH
@@ -108,9 +108,9 @@ LusterTrainThing2:
 	ld hl, rIE
     res LCD_STAT, [hl]
     xor a
-    ld [hLCDTrain], a
+    ldh [hLCDTrain], a
     ld a, $B0
-    ld [hWY], a
+    ldh [hWY], a
 	ld a, 7
-    ld [hWX], a
+    ldh [hWX], a
 	ret

@@ -12,7 +12,7 @@ BattleCommand_lockon:
 	call GetBattleVarAddr
 	set SUBSTATUS_LOCK_ON, [hl]
 	
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species

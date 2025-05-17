@@ -1,14 +1,14 @@
 ; Syntactic sugar macros
 
-lb: MACRO ; r, hi, lo
+MACRO lb ; r, hi, lo
 	ld \1, ((\2) & $ff) << 8 | ((\3) & $ff)
 ENDM
 
-ln: MACRO ; r, hi, lo
+MACRO ln ; r, hi, lo
 	ld \1, ((\2) & $f) << 4 | ((\3) & $f)
 ENDM
 
-ldpixel: MACRO
+MACRO ldpixel
 if _NARG >= 5
 	lb \1, \2 * 8 + \4, \3 * 8 + \5
 else
@@ -16,13 +16,13 @@ else
 endc
 ENDM
 
-depixel EQUS "ldpixel de,"
-bcpixel EQUS "ldpixel bc,"
+DEF depixel EQUS "ldpixel de,"
+DEF bcpixel EQUS "ldpixel bc,"
 
 
 ; Design patterns
 
-jumptable: MACRO
+MACRO jumptable
 	ld a, [\2]
 	ld e, a
 	ld d, 0
@@ -35,26 +35,26 @@ jumptable: MACRO
 	jp hl
 ENDM
 
-eventflagset   EQUS "flagset wEventFlags,"
-eventflagreset EQUS "flagreset wEventFlags,"
-eventflagcheck EQUS "flagcheck wEventFlags,"
+DEF eventflagset   EQUS "flagset wEventFlags,"
+DEF eventflagreset EQUS "flagreset wEventFlags,"
+DEF eventflagcheck EQUS "flagcheck wEventFlags,"
 
-flagset: MACRO
+MACRO flagset
 	ld hl, \1 + (\2 >> 3)
 	set (\2 & $7), [hl]
 ENDM
 
-flagreset: MACRO
+MACRO flagreset
 	ld hl, \1 + (\2 >> 3)
 	res (\2 & $7), [hl]
 ENDM
 
-flagcheck: MACRO
+MACRO flagcheck
 	ld hl, \1 + (\2 >> 3)
 	bit (\2 & $7), [hl]
 ENDM
 
-changebridgeblock: macro
+macro changebridgeblock
 	; lb de, \1 + 4, \2 + 4
 	; call GetBlockLocation
 	ld hl, wOverworldMap + (\2 / 2 + 3) * (\4_WIDTH + 6) + \1 / 2 + 3

@@ -56,7 +56,7 @@ MimicCommand::
 	farcall CopyName1
 	
 	
-	ld a, [hBattleTurn] ; Get user move name information. wStringBuffer1
+	ldh a, [hBattleTurn] ; Get user move name information. wStringBuffer1
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species2

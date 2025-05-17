@@ -94,7 +94,7 @@ endr
 	ret
 
 OakRatings: ; 0x2667f
-oakrating: MACRO
+MACRO oakrating
 	db \1
 	dw \2, \3
 endm

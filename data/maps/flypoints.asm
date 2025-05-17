@@ -1,4 +1,4 @@
-flypoint: MACRO
+MACRO flypoint
 	const FLY_\1
 	db \2, SPAWN_\1
 ENDM
@@ -17,7 +17,7 @@ Flypoints:
 	flypoint TWINKLE,			TWINKLE_TOWN
 	flypoint LUSTER,			LUSTER_CITY
 	
-SOUTH_ONWA_FLYPOINT EQU const_value
+DEF SOUTH_ONWA_FLYPOINT EQU const_value
 	
 	flypoint SHIMMER,			SHIMMER_CITY
 	flypoint BRILLO,			BRILLO_TOWN

@@ -316,7 +316,7 @@ CutDownGrass: ; c810
 	ld a, [wBuffer5] ; ReplacementTile
 	ld [hl], a
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call LoadMapPart
 	call UpdateSprites
 	call DelayFrame
@@ -382,7 +382,7 @@ AutoCutTreeScript:
 
 CutDownTree:
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call LoadMapPart
 	call UpdateSprites
 	call DelayFrame
@@ -869,7 +869,7 @@ FlyFunction: ; ca3b
 	jr nz, .indoors
 .outdoors
 	xor a
-	ld [hMapAnims], a
+	ldh [hMapAnims], a
 	call LoadStandardMenuDataHeader
 	call ClearSprites
 	farcall _FlyMap
@@ -2178,12 +2178,12 @@ GetFacingObject:: ; cf0d
 	farcall CheckFacingObject
 	jr nc, .fail
 
-	ld a, [hObjectStructIndexBuffer]
+	ldh a, [hObjectStructIndexBuffer]
 	call GetObjectStruct
 	ld hl, OBJECT_MAP_OBJECT_INDEX
 	add hl, bc
 	ld a, [hl]
-	ld [hLastTalked], a
+	ldh [hLastTalked], a
 	call GetMapObject
 	ld hl, MAPOBJECT_MOVEMENT
 	add hl, bc
@@ -2200,12 +2200,12 @@ GetFacingObjectSprite:: ; cf0d
 	farcall CheckFacingObject
 	jr nc, .fail
 
-	ld a, [hObjectStructIndexBuffer]
+	ldh a, [hObjectStructIndexBuffer]
 	call GetObjectStruct
 	ld hl, OBJECT_MAP_OBJECT_INDEX
 	add hl, bc
 	ld a, [hl]
-	ld [hLastTalked], a
+	ldh [hLastTalked], a
 	call GetMapObject
 	ld hl, MAPOBJECT_SPRITE
 	add hl, bc
@@ -2703,7 +2703,7 @@ MovementData_0xd093: ; d093
 
 PutTheRodAway: ; d095
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld a, $1
 	ld [wPlayerAction], a
 	call UpdateSprites

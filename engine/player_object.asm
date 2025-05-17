@@ -1,7 +1,7 @@
 BlankScreen: ; 8000
 	call DisableSpriteUpdates
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call ClearBGPalettes
 	call ClearSprites
 	hlcoord 0, 0
@@ -75,9 +75,9 @@ SpawnPlayer: ; 8029
 .ok
 	ld [hl], e
 	xor a
-	ld [hMapObjectIndexBuffer], a
+	ldh [hMapObjectIndexBuffer], a
 	ld bc, wMapObjects
-	ld [hObjectStructIndexBuffer], a
+	ldh [hObjectStructIndexBuffer], a
 	ld de, wObjectStructs
 	call CopyMapObjectToObjectStruct
 	ld a, PLAYER
@@ -126,7 +126,7 @@ WritePersonXY:: ; 80a1
 	ld hl, OBJECT_NEXT_MAP_Y
 	add hl, bc
 	ld e, [hl]
-	ld a, [hMapObjectIndexBuffer]
+	ldh a, [hMapObjectIndexBuffer]
 	ld b, a
 	call CopyDECoordsToMapObject
 	and a
@@ -170,12 +170,12 @@ CopyObjectStruct:: ; 80e7
 	ld a, 1
 	ld de, OBJECT_STRUCT_LENGTH
 .loop
-	ld [hObjectStructIndexBuffer], a
+	ldh [hObjectStructIndexBuffer], a
 	ld a, [hl]
 	and a
 	jr z, .done
 	add hl, de
-	ld a, [hObjectStructIndexBuffer]
+	ldh a, [hObjectStructIndexBuffer]
 	inc a
 	cp NUM_OBJECT_STRUCTS
 	jr nz, .loop
@@ -196,12 +196,12 @@ CopyObjectStruct:: ; 80e7
 	ret
 
 CopyMapObjectToObjectStruct: ; 8116
-	ld a, [hObjectStructIndexBuffer]
+	ldh a, [hObjectStructIndexBuffer]
 	ld hl, MAPOBJECT_OBJECT_STRUCT_ID
 	add hl, bc
 	ld [hl], a
 
-	ld a, [hMapObjectIndexBuffer]
+	ldh a, [hMapObjectIndexBuffer]
 	ld [wTempObjectCopyMapObjectIndex], a
 
 	ld hl, MAPOBJECT_SPRITE
@@ -257,7 +257,7 @@ InitializeVisibleSprites: ; 8177
 	ld bc, wMapObjects + OBJECT_LENGTH
 	ld a, 1
 .loop
-	ld [hMapObjectIndexBuffer], a
+	ldh [hMapObjectIndexBuffer], a
 	ld hl, MAPOBJECT_SPRITE
 	add hl, bc
 	ld a, [hl]
@@ -305,7 +305,7 @@ InitializeVisibleSprites: ; 8177
 	add hl, bc
 	ld b, h
 	ld c, l
-	ld a, [hMapObjectIndexBuffer]
+	ldh a, [hMapObjectIndexBuffer]
 	inc a
 	cp NUM_OBJECTS
 	jr nz, .loop
@@ -340,7 +340,7 @@ CheckObjectEnteringVisibleRange:: ; 81ca
 	ld bc, wMapObjects + OBJECT_LENGTH
 	ld a, 1
 .loop_v
-	ld [hMapObjectIndexBuffer], a
+	ldh [hMapObjectIndexBuffer], a
 	ld hl, MAPOBJECT_SPRITE
 	add hl, bc
 	ld a, [hl]
@@ -375,7 +375,7 @@ CheckObjectEnteringVisibleRange:: ; 81ca
 	add hl, bc
 	ld b, h
 	ld c, l
-	ld a, [hMapObjectIndexBuffer]
+	ldh a, [hMapObjectIndexBuffer]
 	inc a
 	cp NUM_OBJECTS
 	jr nz, .loop_v
@@ -396,7 +396,7 @@ CheckObjectEnteringVisibleRange:: ; 81ca
 	ld bc, wMapObjects + OBJECT_LENGTH
 	ld a, 1
 .loop_h
-	ld [hMapObjectIndexBuffer], a
+	ldh [hMapObjectIndexBuffer], a
 	ld hl, MAPOBJECT_SPRITE
 	add hl, bc
 	ld a, [hl]
@@ -431,7 +431,7 @@ CheckObjectEnteringVisibleRange:: ; 81ca
 	add hl, bc
 	ld b, h
 	ld c, l
-	ld a, [hMapObjectIndexBuffer]
+	ldh a, [hMapObjectIndexBuffer]
 	inc a
 	cp NUM_OBJECTS
 	jr nz, .loop_h
@@ -542,11 +542,11 @@ CopyTempObjectToObjectStruct: ; 8286
 	ret
 
 TrainerWalkToPlayer: ; 831e
-	ld a, [hLastTalked]
+	ldh a, [hLastTalked]
 	call InitMovementBuffer
 	ld a, movement_step_sleep_1
 	call AppendToMovementBuffer
-	ld a, [hLastTalked]
+	ldh a, [hLastTalked]
 	ld b, a
 	ld c, PLAYER
 	ld d, 1
@@ -698,7 +698,7 @@ FollowNotExact:: ; 839e
 	ld hl, OBJECT_SPRITE_Y
 	add hl, de
 	ld [hl], a
-	ld a, [hObjectStructIndexBuffer]
+	ldh a, [hObjectStructIndexBuffer]
 	ld hl, OBJECT_RANGE
 	add hl, de
 	ld [hl], a

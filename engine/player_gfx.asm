@@ -117,7 +117,7 @@ INCBIN "gfx/battle/pippi_back.6x6.2bpp.lz"
 HOF_LoadTrainerFrontpic: ; 88840
 	call ApplyTilemapInVBlank
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld e, 0
 	ld a, [wPlayerGender]
 	bit 0, a
@@ -145,5 +145,5 @@ HOF_LoadTrainerFrontpic: ; 88840
 	call Get2bpp
 	call ApplyTilemapInVBlank
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ret

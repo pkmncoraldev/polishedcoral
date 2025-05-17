@@ -1,4 +1,4 @@
-variconpal: MACRO
+MACRO variconpal
 	db \1, \2
 	dn PAL_OW_\3, PAL_OW_\4
 ENDM

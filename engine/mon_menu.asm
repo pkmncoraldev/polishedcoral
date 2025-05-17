@@ -2,7 +2,7 @@ INCLUDE "data/mon_menu.asm"
 
 MonSubmenu: ; 24d19
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call GetMonSubmenuItems
 	farcall FreezeMonIcons
 	ld hl, .MenuDataHeader
@@ -11,7 +11,7 @@ MonSubmenu: ; 24d19
 	call PopulateMonMenu
 
 	ld a, 1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call MonMenuLoop
 	ld [wMenuSelection], a
 
@@ -51,7 +51,7 @@ MonMenuLoop: ; 24d59
 	call DoMenuJoypadLoop
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	bit 0, a ; A
 	jr nz, .select
 	bit 1, a ; B

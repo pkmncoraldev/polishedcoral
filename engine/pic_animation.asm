@@ -1,11 +1,11 @@
 ; Pic animation arrangement.
 
-POKEANIM: MACRO
+MACRO POKEANIM
 	rept _NARG
 
 ; Workaround for a bug where macro args can't come after the start of a symbol
 if !def(\1_POKEANIM)
-\1_POKEANIM equs "PokeAnim_\1_"
+def \1_POKEANIM equs "PokeAnim_\1_"
 endc
 
 	db (\1_POKEANIM - PokeAnim_SetupCommands) / 2
@@ -43,7 +43,7 @@ AnimateFrontpic: ; d008e
 	ret c
 	call LoadMonAnimation
 	ld a, 2
-	ld [hDEDVBlankMode], a
+	ldh [hDEDVBlankMode], a
 .loop
 ;	call SetUpPokeAnim
 ;	push af
@@ -51,10 +51,10 @@ AnimateFrontpic: ; d008e
 	callba HDMATransferTileMapToWRAMBank3
 ;	pop af
 ;	jr nc, .loop
-	ld a, [hDEDCryFlag]
+	ldh a, [hDEDCryFlag]
 	and a
 	call nz, _PlayCry
-	ld a, [hDEDVBlankMode]
+	ldh a, [hDEDVBlankMode]
 	and a
 	jr nz, .loop
 	ret
@@ -72,10 +72,10 @@ LoadMonAnimation: ; d00a3
 	ld c, a
 	pop hl
 
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $2
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	push bc
 	push de
@@ -130,7 +130,7 @@ LoadMonAnimation: ; d00a3
 	ld [wPokeAnimFrontpicHeight], a
 
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 ; d0228
 
@@ -163,10 +163,10 @@ ConvertTileMapAddrToBGMap:
 
 
 SetUpPokeAnim:: ; d00b4
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $2
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld a, [wPokeAnimSceneIndex]
 	ld c, a
 	ld b, 0
@@ -181,7 +181,7 @@ SetUpPokeAnim:: ; d00b4
 	ld a, [wPokeAnimSceneIndex]
 	ld c, a
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld a, c
 	and $80
 	ret z
@@ -190,7 +190,7 @@ SetUpPokeAnim:: ; d00b4
 ; d00da
 
 PokeAnim_SetupCommands: ; d00da
-setup_command: macro
+macro setup_command
 \1_: dw \1
 endm
 	setup_command PokeAnim_Finish
@@ -290,7 +290,7 @@ PokeAnim_Finish: ; d0171
 	ld hl, wPokeAnimSceneIndex
 	set 7, [hl]
 	xor a
-	ld [hDEDVBlankMode], a
+	ldh [hDEDVBlankMode], a
 	ret
 ; d017a
 
@@ -302,7 +302,7 @@ PokeAnim_Cry: ; d017a
 	call _PlayCry
 	jr .done
 .dedCry
-	ld [hDEDCryFlag], a
+	ldh [hDEDCryFlag], a
 .done
 	ld a, [wPokeAnimSceneIndex]
 	inc a
@@ -318,7 +318,7 @@ PokeAnim_CryNoWait: ; d0188
 	call PlayCry2
 	jr .done
 .dedCry
-	ld [hDEDCryFlag], a
+	ldh [hDEDCryFlag], a
 .done
 	ld a, [wPokeAnimSceneIndex]
 	inc a
@@ -336,7 +336,7 @@ PokeAnim_StereoCry: ; d0196
 	call PlayStereoCry2
 	jr .done
 .dedCry
-	ld [hDEDCryFlag], a
+	ldh [hDEDCryFlag], a
 .done
 	ld a, [wPokeAnimSceneIndex]
 	inc a
@@ -345,10 +345,10 @@ PokeAnim_StereoCry: ; d0196
 ; d01a9
 
 PokeAnim_DeinitFrames: ; d01a9
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $2
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	call PokeAnim_PlaceGraphic
 ;	farcall HDMATransferTileMapToWRAMBank3
 	farcall HDMAHBlankTransferTileMap_DuringDI
@@ -356,7 +356,7 @@ PokeAnim_DeinitFrames: ; d01a9
 ;	farcall HDMATransferAttrMapToWRAMBank3
 	farcall HDMAHBlankTransferTileMap_DuringDI
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 ; d01c6
 
@@ -375,10 +375,10 @@ AnimateMon_CheckIfPokemon: ; d01c6
 ; d01d6
 
 PokeAnim_InitAnim: ; d0228
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $2
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	push bc
 	ld hl, wPokeAnimExtraFlag
 	ld bc, wPokeAnimStructEnd - wPokeAnimExtraFlag
@@ -393,13 +393,13 @@ PokeAnim_InitAnim: ; d0228
 	call GetMonFramesPointer
 	call GetMonBitmaskPointer
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 ; d0250
 
 PokeAnim_DoAnimScript: ; d0250
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 
 .loop: ; d0253
 	ld a, [wPokeAnimJumptableIndex]
@@ -733,15 +733,15 @@ PokeAnim_ConvertAndApplyBitmask: ; d036b
 	ret
 ; d042f
 
-poke_anim_box: MACRO
-y = 7
+MACRO poke_anim_box
+DEF y = 7
 rept \1
-x = 7 +- \1
+DEF x = 7 +- \1
 rept \1
 	db x + y
-x = x + 1
+DEF x = x + 1
 endr
-y = y + 7
+DEF y = y + 7
 endr
 endm
 
@@ -869,17 +869,17 @@ PokeAnim_PlaceGraphic: ; d04bd
 ; d0504
 
 PokeAnim_SetVBank1: ; d0504
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $2
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call .SetFlag
 ;	farcall HDMATransferAttrMapToWRAMBank3
 	farcall HDMAHBlankTransferAttrMap_DuringDI
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 ; d051b
 
@@ -974,10 +974,10 @@ GetMonAnimPointer: ; d055c
 ; d05b4
 
 PokeAnim_GetFrontpicDims: ; d05b4
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $1
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
 	call GetBaseData
@@ -985,7 +985,7 @@ PokeAnim_GetFrontpicDims: ; d05b4
 	and $f
 	ld c, a
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 ; d05ce
 

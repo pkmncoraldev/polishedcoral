@@ -1,53 +1,44 @@
 ; Enumerate variables
 
-enum_start: MACRO
+MACRO enum_start
 if _NARG >= 1
-__enum__ = \1
+DEF __enum__ = \1
 else
-__enum__ = 0
+DEF __enum__ = 0
 endc
 if _NARG >= 2
-__enumdir__ = \2
+DEF __enumdir__ = \2
 else
-__enumdir__ = +1
+DEF __enumdir__ = +1
 endc
 ENDM
 
-enum: MACRO
-\1 = __enum__
-__enum__ = __enum__ + __enumdir__
+MACRO enum
+DEF \1 = __enum__
+DEF __enum__ = __enum__ + __enumdir__
 ENDM
 
-enum_set: MACRO
-__enum__ = \1
+MACRO enum_set
+DEF __enum__ = \1
 ENDM
 
 
 ; Enumerate constants
 
-const_def: MACRO
+MACRO const_def
 if _NARG >= 1
-const_value = \1
+DEF const_value = \1
 else
-const_value = 0
+DEF const_value = 0
 endc
 ENDM
 
-const: MACRO
-\1 EQU const_value
-const_value = const_value + 1
+MACRO const
+DEF \1 EQU const_value
+DEF const_value = const_value + 1
 ENDM
 
-shift_const: MACRO
-\1 EQU (1 << const_value)
-const_value = const_value + 1
-ENDM
-
-
-; Enumerate strings
-
-define: MACRO
-if !def(\1)
-\1 equs \2
-endc
+MACRO shift_const
+DEF \1 EQU (1 << const_value)
+DEF const_value = const_value + 1
 ENDM

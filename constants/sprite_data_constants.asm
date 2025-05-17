@@ -14,7 +14,7 @@
 	const SPRITEHEADER_BANK
 	const SPRITEHEADER_TYPE
 	const SPRITEHEADER_PALETTE
-NUM_SPRITEHEADER_FIELDS EQU const_value
+DEF NUM_SPRITEHEADER_FIELDS EQU const_value
 
 ; sprite palettes
 	const_def

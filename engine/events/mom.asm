@@ -1,8 +1,8 @@
 Special_BankOfMom: ; 16218
-	ld a, [hInMenu]
+	ldh a, [hInMenu]
 	push af
 	ld a, $1
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	xor a
 	ld [wJumptableIndex], a
 .loop
@@ -14,7 +14,7 @@ Special_BankOfMom: ; 16218
 
 .done
 	pop af
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	ret
 ; 16233
 
@@ -385,7 +385,7 @@ Mom_SetUpDepositMenu: ; 16517
 Mom_ContinueMenuSetup: ; 1651a
 	push de
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 0, 0
 	lb bc, 6, 18
 	call TextBox
@@ -424,7 +424,7 @@ BankCard_SetUpDepositMenu: ; 16517
 BankCard_ContinueMenuSetup: ; 1651a
 	push de
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 2, 4
 	ld de, Mom_SavedString
 	call PlaceString
@@ -470,7 +470,7 @@ BankCard_WithdrawDepositMenuJoypad: ; 16571
 	jr nz, Mom_WithdrawDepositMenuJoypad.pressedA
 	call Mom_WithdrawDepositMenuJoypad.dpadaction
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 10, 9
 	ld bc, 8
 	ld a, " "
@@ -479,7 +479,7 @@ BankCard_WithdrawDepositMenuJoypad: ; 16571
 	ld de, wStringBuffer2
 	lb bc, PRINTNUM_MONEY | PRINTNUM_LEADINGZEROS | 3, 7
 	call PrintNum
-	ld a, [hVBlankCounter]
+	ldh a, [hVBlankCounter]
 	and $10
 	jr nz, .skip
 	hlcoord 11, 9
@@ -504,7 +504,7 @@ Mom_WithdrawDepositMenuJoypad: ; 16571
 	jr nz, .pressedA
 	call .dpadaction
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 11, 6
 	ld bc, 8
 	ld a, " "
@@ -513,7 +513,7 @@ Mom_WithdrawDepositMenuJoypad: ; 16571
 	ld de, wStringBuffer2
 	lb bc, PRINTNUM_MONEY | PRINTNUM_LEADINGZEROS | 3, 7
 	call PrintNum
-	ld a, [hVBlankCounter]
+	ldh a, [hVBlankCounter]
 	and $10
 	jr nz, .skip
 	hlcoord 12, 6

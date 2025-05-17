@@ -559,10 +559,10 @@ PlayerHouseDebug2GirlsText:
 	
 PlayerRoomSfxTest:
 	call WaitSFX
-	ld a, [hInMenu]
+	ldh a, [hInMenu]
 	push af
 	ld a, $1
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	ld de, MUSIC_NONE
 	call PlayMusic
 	
@@ -606,7 +606,7 @@ PlayerRoomSfxTest:
 	xor a
 	ld [wPlaceBallsX], a
 	pop af
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	ret
 .A
 	farcall CheckSFX

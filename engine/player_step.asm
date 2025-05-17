@@ -39,12 +39,12 @@ ScrollScreen:: ; d4d2 (3:54d2)
 	ld d, a
 	ld a, [wPlayerStepVectorY]
 	ld e, a
-	ld a, [hSCX]
+	ldh a, [hSCX]
 	add d
-	ld [hSCX], a
-	ld a, [hSCY]
+	ldh [hSCX], a
+	ldh a, [hSCY]
 	add e
-	ld [hSCY], a
+	ldh [hSCY], a
 	ret
 
 HandlePlayerStep: ; d4e5 (3:54e5)
@@ -320,7 +320,7 @@ ScrollMapDown:: ; 272a
 	ld d, a
 	call UpdateBGMapRow
 	ld a, $1
-	ld [hBGMapUpdate], a
+	ldh [hBGMapUpdate], a
 	ret
 ; 2748
 
@@ -345,7 +345,7 @@ ScrollMapUp:: ; 2748
 	ld d, a
 	call UpdateBGMapRow
 	ld a, $1
-	ld [hBGMapUpdate], a
+	ldh [hBGMapUpdate], a
 	ret
 ; 2771
 
@@ -362,7 +362,7 @@ ScrollMapRight:: ; 2771
 	ld d, a
 	call UpdateBGMapColumn
 	ld a, $1
-	ld [hBGMapUpdate], a
+	ldh [hBGMapUpdate], a
 	ret
 ; 278f
 
@@ -386,7 +386,7 @@ ScrollMapLeft:: ; 278f
 	ld d, a
 	call UpdateBGMapColumn
 	ld a, $1
-	ld [hBGMapUpdate], a
+	ldh [hBGMapUpdate], a
 	ret
 ; 27b7
 
@@ -450,7 +450,7 @@ UpdateBGMapRow:: ; 27d3
 	dec c
 	jr nz, .loop
 	ld a, SCREEN_WIDTH
-	ld [hBGMapTileCount], a
+	ldh [hBGMapTileCount], a
 	ret
 ; 27f8
 
@@ -477,6 +477,6 @@ UpdateBGMapColumn:: ; 27f8
 	dec c
 	jr nz, .loop
 	ld a, SCREEN_HEIGHT
-	ld [hBGMapTileCount], a
+	ldh [hBGMapTileCount], a
 	ret
 ; 2816

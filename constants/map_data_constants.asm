@@ -55,7 +55,7 @@
 
 
 ; see engine/spawn_points.asm:SpawnPoints
-const_value = -1
+DEF const_value = -1
 	const SPAWN_N_A
 
 	const SPAWN_HOME
@@ -84,4 +84,4 @@ const_value = -1
 	
 	const SPAWN_LASTFLYPOINT
 	const SPAWN_KANTO
-NUM_SPAWNS EQU const_value
+DEF NUM_SPAWNS EQU const_value

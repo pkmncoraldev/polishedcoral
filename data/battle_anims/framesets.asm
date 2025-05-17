@@ -236,6 +236,9 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_RockPolish85DegL        ; BATTLEANIMFRAMESET_ROCK_POLISH_85DEG_L
 	dw .Frameset_RockPolish85DegRYFlip   ; BATTLEANIMFRAMESET_ROCK_POLISH_85DEG_R_Y_FLIP
 	dw .Frameset_RockPolish85DegLYFlip   ; BATTLEANIMFRAMESET_ROCK_POLISH_85DEG_L_Y_FLIP
+	dw .Frameset_SpikeShield_NNE         ; BATTLEANIMFRAMESET_SPIKE_SHIELD_NNE
+	dw .Frameset_SpikeShield_NE          ; BATTLEANIMFRAMESET_SPIKE_SHIELD_NE
+	dw .Frameset_SpikeShield_E           ; BATTLEANIMFRAMESET_SPIKE_SHIELD_E
 
 
 	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
@@ -1688,3 +1691,15 @@ BattleAnimFrameData: ; ce85e
 	frame BATTLEANIMOAMSET_10E,  1, OAM_X_FLIP, OAM_Y_FLIP
 	frame BATTLEANIMOAMSET_10F,  4, OAM_X_FLIP, OAM_Y_FLIP
 	delanim
+
+.Frameset_SpikeShield_NNE
+	frame BATTLEANIMOAMSET_21,  8
+	endanim
+
+.Frameset_SpikeShield_NE
+	frame BATTLEANIMOAMSET_9A,  8
+	endanim
+
+.Frameset_SpikeShield_E
+	frame BATTLEANIMOAMSET_7F,  8, OAM_Y_FLIP
+	endanim

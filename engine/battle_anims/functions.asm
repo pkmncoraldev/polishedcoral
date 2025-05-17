@@ -75,7 +75,7 @@ DoBattleAnimFrame: ; ccfbe
 	dw BattleAnimFunction_35 ; 35
 	dw BattleAnimFunction_StrengthSeismicToss ; 36
 	dw BattleAnimFunction_37 ; 37
-	dw BattleAnimFunction_38 ; 38
+	dw BattleAnimFunction_Sludge ; 38
 	dw BattleAnimFunction_39 ; 39
 	dw BattleAnimFunction_3A ; 3a
 	dw BattleAnimFunction_Agility ; 3b
@@ -3389,7 +3389,7 @@ Functionce375: ; ce375 (33:6375)
 	dec [hl]
 	ret
 
-BattleAnimFunction_38: ; ce389 (33:6389)
+BattleAnimFunction_Sludge: ; ce389 (33:6389)
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw Functionce392

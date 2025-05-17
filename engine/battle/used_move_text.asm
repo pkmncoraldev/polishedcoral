@@ -1,5 +1,4 @@
-
-MoveTable:
+;MoveTable: ; - for debugging
 ;	db ROCK_CLIMB
 ;	db LOW_KICK
 ;	db WISH
@@ -96,7 +95,7 @@ MoveTable:
 ;	db PSYCHIC_M
 ;	db DRAGONHAMMER
 ;	db SIGNAL_BEAM
-	db AGILITY_ROCK_POLISH                               ; NEEDS UPDATE
+;	db AGILITY_ROCK_POLISH
 ;	db QUICK_ATTACK
 ;	db RAGE
 ;	db TELEPORT
@@ -254,29 +253,29 @@ MoveTable:
 ;	db MOONBLAST
 ;	db PLAY_ROUGH
 ;	db CONVERSION2
-	db 0
+;	db 0
 
 DisplayUsedMoveText:
-	;jr .do_it ; comment this out for testing all move animations
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVarAddr
-	ld de, MoveTable
-.loop
-	ld a, [de]
-	inc de
-	and a
-	ret z
-	ld [hl], a
-	push hl
-	push de
-	farcall UpdateMoveData
-	call .do_it
-	farcall AnimateCurrentMove
-	pop de
-	pop hl
-	jr .loop
-
-.do_it
+;	;jr .do_it ; comment this out for testing all move animations
+;	ld a, BATTLE_VARS_MOVE
+;	call GetBattleVarAddr
+;	ld de, MoveTable
+;.loop
+;	ld a, [de]
+;	inc de
+;	and a
+;	ret z
+;	ld [hl], a
+;	push hl
+;	push de
+;	farcall UpdateMoveData
+;	call .do_it
+;	farcall AnimateCurrentMove
+;	pop de
+;	pop hl
+;	jr .loop
+;
+;.do_it
 ; battle command 03
 
 	ld a, [hBattleTurn]

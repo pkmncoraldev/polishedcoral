@@ -86,6 +86,7 @@ AnimObjGFX:
 	anim_obj_gfx  8, AnimObjChopGFX
 	anim_obj_gfx 28, AnimObjAquaJetGFX
 	anim_obj_gfx 10, AnimObjGlowShadowGFX
+	anim_obj_gfx 16, AnimObjSpikeShieldGFX
 	anim_obj_gfx 10, AnimObjPokeBall2GFX
 	anim_obj_gfx 10, AnimObjPokeBall3GFX
 	anim_obj_gfx  1, NULL

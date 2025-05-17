@@ -85,6 +85,7 @@ PlayDEDSamples::
 	xor	a ; reset carry
 .haltLoop
 	halt ; wait until timer interrupt hits
+	nop
 	jr nc, .haltLoop
 	di
 	ldh [rNR51], a

@@ -559,4 +559,4 @@
 	const PURPLE_CLOTHES ; 5
 	const TEAL_CLOTHES ; 6
 	const PINK_CLOTHES ; 7
-NUM_CLOTHES EQU const_value +- 1
+DEF NUM_CLOTHES EQU const_value +- 1

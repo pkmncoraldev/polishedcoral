@@ -1,15 +1,15 @@
-LD_A_FFXX_OP EQU $f0
-JR_C_OP	  EQU $38
-JP_C_OP	  EQU $da
-LD_B_XX_OP   EQU $06
-RET_OP	   EQU $c9
-RET_C_OP	 EQU $d8
+DEF LD_A_FFXX_OP EQU $f0
+DEF JR_C_OP	  EQU $38
+DEF JP_C_OP	  EQU $da
+DEF LD_B_XX_OP   EQU $06
+DEF RET_OP	   EQU $c9
+DEF RET_C_OP	 EQU $d8
 
-DEC_C_OP	 EQU $0d
-JR_NZ_OP	 EQU $20
-LD_A_HLI_OP  EQU $2a
-LD_C_XX_OP   EQU $0e
-ADD_A_OP	 EQU $87
+DEF DEC_C_OP	 EQU $0d
+DEF JR_NZ_OP	 EQU $20
+DEF LD_A_HLI_OP  EQU $2a
+DEF LD_C_XX_OP   EQU $0e
+DEF ADD_A_OP	 EQU $87
 
 LoadDEDCryHeader::
 	ld a, [hli]
@@ -91,11 +91,11 @@ PlayDEDSamples::
 	ld [rNR30], a
 	push hl
 	ld hl, wDEDTempSamp
-CUR_WAVE = rWAVE
+DEF CUR_WAVE = rWAVE
 rept 16
 	ld a, [hli]
 	ld [CUR_WAVE], a
-CUR_WAVE = CUR_WAVE + 1
+DEF CUR_WAVE = CUR_WAVE + 1
 endr
 	ld a, $80
 	ld [rNR30], a

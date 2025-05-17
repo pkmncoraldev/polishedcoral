@@ -1,6 +1,6 @@
-puzcoord EQUS "* 6 +"
-PUZZLE_BORDER EQU $ee
-PUZZLE_VOID   EQU $ef
+DEF puzcoord EQUS "* 6 +"
+DEF PUZZLE_BORDER EQU $ee
+DEF PUZZLE_VOID   EQU $ef
 
 UnownPuzzle: ; e1190
 	ld a, [hInMenu]
@@ -751,10 +751,10 @@ ConvertLoadedPuzzlePieces: ; e1631
 
 .EnlargedTiles: ; e16b7
 
-x = 0
+DEF x = 0
 rept 16
 	db ((x & %1000) * %11000) + ((x & %0100) * %1100) + ((x & %0010) * %110) + ((x & %0001) * %11)
-x = x + 1
+DEF x = x + 1
 endr
 ; e16c7
 

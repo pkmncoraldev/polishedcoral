@@ -1,20 +1,20 @@
 MACRO newgroup
-const_value = const_value + 1
+DEF const_value = const_value + 1
 	enum_start 1
 ENDM
 
 MACRO map_const
-GROUP_\1 EQU const_value
+DEF GROUP_\1 EQU const_value
 	enum MAP_\1
-\1_WIDTH  EQU \2
-\1_HEIGHT EQU \3
+DEF \1_WIDTH  EQU \2
+DEF \1_HEIGHT EQU \3
 ENDM
 
-GROUP_N_A  EQU -1
-MAP_N_A    EQU -1
+DEF GROUP_N_A  EQU -1
+DEF MAP_N_A    EQU -1
 
-GROUP_NONE EQU 0
-MAP_NONE   EQU 0
+DEF GROUP_NONE EQU 0
+DEF MAP_NONE   EQU 0
 
 ; map group ids
 	const_def

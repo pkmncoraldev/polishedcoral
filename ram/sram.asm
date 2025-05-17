@@ -1,5 +1,5 @@
-SRAM_Begin EQU $a000
-SRAM_End   EQU $c000
+DEF SRAM_Begin EQU $a000
+DEF SRAM_End   EQU $c000
 EXPORT SRAM_Begin, SRAM_End
 
 

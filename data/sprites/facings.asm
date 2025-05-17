@@ -110,7 +110,7 @@ Facings:
 	dw FacingLemonade
 FacingsEnd: dw 0
 
-NUM_FACINGS EQU (FacingsEnd - Facings) / 2
+DEF NUM_FACINGS EQU (FacingsEnd - Facings) / 2
 
 
 ; Tables used as a reference to transform OAM data.

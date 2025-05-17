@@ -3286,9 +3286,9 @@ ApplyBGMapAnchorToObjects: ; 5958
 ; 5991
 
 InitSprites: ; 5991
-PRIORITY_LOW  EQU $10
-PRIORITY_NORM EQU $20
-PRIORITY_HIGH EQU $30
+DEF PRIORITY_LOW  EQU $10
+DEF PRIORITY_NORM EQU $20
+DEF PRIORITY_HIGH EQU $30
 	call .DeterminePriorities
 	ld c, PRIORITY_HIGH
 	call .InitSpritesByPriority

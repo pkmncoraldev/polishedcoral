@@ -1,18 +1,18 @@
 MACRO trainerclass
 	enum \1
-const_value = 1
+DEF const_value = 1
 ENDM
 
 ; trainer groups
 	enum_start
-PLAYER_M EQU __enum__
+DEF PLAYER_M EQU __enum__
 	trainerclass TRAINER_NONE ; 0
 	const PHONECONTACT_MOM
 	const PHONECONTACT_SPRUCE
 	const PHONECONTACT_WENDY
 	const PHONECONTACT_AUTO
 
-PLAYER_F EQU __enum__
+DEF PLAYER_F EQU __enum__
 
 	trainerclass PLAYER_CORY
 
@@ -726,4 +726,4 @@ PLAYER_F EQU __enum__
 
 
 
-NUM_TRAINER_CLASSES EQU __enum__
+DEF NUM_TRAINER_CLASSES EQU __enum__

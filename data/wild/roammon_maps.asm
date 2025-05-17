@@ -66,4 +66,4 @@ PossibleRoamMaps:
 	map_id ROUTE_29
 	db -1
 
-NUM_ROAMMON_MAPS EQU 25
+DEF NUM_ROAMMON_MAPS EQU 25

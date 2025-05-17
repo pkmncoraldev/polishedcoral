@@ -52,10 +52,10 @@ MainMenu: ; 49cdc
 ;	dw MainMenu_MusicPlayer
 ; 0x49d6c
 
-CONTINUE       EQU 0
-NEW_GAME       EQU 1
-NEW_GAME_PLUS  EQU 2
-OPTION         EQU 3
+DEF CONTINUE       EQU 0
+DEF NEW_GAME       EQU 1
+DEF NEW_GAME_PLUS  EQU 2
+DEF OPTION         EQU 3
 ;MUSIC_PLAYER   EQU 4
 
 MainMenuItems:

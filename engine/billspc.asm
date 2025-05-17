@@ -2320,10 +2320,10 @@ _ChangeBox_menudataheader: ; 0xe35f1
 
 .boxes ; e3609
 	db NUM_BOXES
-x = 1
+DEF x = 1
 rept NUM_BOXES
 	db x
-x = x + 1
+DEF x = x + 1
 endr
 	db -1
 ; e3619

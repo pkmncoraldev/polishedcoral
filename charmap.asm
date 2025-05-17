@@ -92,7 +92,7 @@
 
 ; Battle characters
 
-BATTLEEXTRA_GFX_START EQU $5f
+DEF BATTLEEXTRA_GFX_START EQU $5f
 
 	charmap "<BALL>",   $5f
 	charmap "<MALE>",   $60

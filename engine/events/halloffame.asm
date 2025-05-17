@@ -1,4 +1,4 @@
-HOF_MASTER_COUNT EQU 200
+DEF HOF_MASTER_COUNT EQU 200
 
 HallOfFame:: ; 0x8640e
 	call HallOfFame_FadeOutMusic

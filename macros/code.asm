@@ -16,8 +16,8 @@ else
 endc
 ENDM
 
-depixel EQUS "ldpixel de,"
-bcpixel EQUS "ldpixel bc,"
+DEF depixel EQUS "ldpixel de,"
+DEF bcpixel EQUS "ldpixel bc,"
 
 
 ; Design patterns
@@ -35,9 +35,9 @@ MACRO jumptable
 	jp hl
 ENDM
 
-eventflagset   EQUS "flagset wEventFlags,"
-eventflagreset EQUS "flagreset wEventFlags,"
-eventflagcheck EQUS "flagcheck wEventFlags,"
+DEF eventflagset   EQUS "flagset wEventFlags,"
+DEF eventflagreset EQUS "flagreset wEventFlags,"
+DEF eventflagcheck EQUS "flagcheck wEventFlags,"
 
 MACRO flagset
 	ld hl, \1 + (\2 >> 3)

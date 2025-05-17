@@ -5,7 +5,7 @@ MACRO POKEANIM
 
 ; Workaround for a bug where macro args can't come after the start of a symbol
 if !def(\1_POKEANIM)
-\1_POKEANIM equs "PokeAnim_\1_"
+def \1_POKEANIM equs "PokeAnim_\1_"
 endc
 
 	db (\1_POKEANIM - PokeAnim_SetupCommands) / 2
@@ -734,14 +734,14 @@ PokeAnim_ConvertAndApplyBitmask: ; d036b
 ; d042f
 
 MACRO poke_anim_box
-y = 7
+DEF y = 7
 rept \1
-x = 7 +- \1
+DEF x = 7 +- \1
 rept \1
 	db x + y
-x = x + 1
+DEF x = x + 1
 endr
-y = y + 7
+DEF y = y + 7
 endr
 endm
 

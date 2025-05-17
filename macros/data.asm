@@ -1,6 +1,6 @@
 ; Value macros
 
-percent EQUS "* $ff / 100"
+DEF percent EQUS "* $ff / 100"
 
 
 ; Constant data (db, dw, dl) macros
@@ -54,10 +54,10 @@ MACRO dn
 ENDM
 
 MACRO dx
-x = 8 * ((\1) - 1)
+DEF x = 8 * ((\1) - 1)
 	rept \1
 	db ((\2) >> x) & $ff
-x = x + -8
+DEF x = x + -8
 	endr
 ENDM
 
@@ -121,11 +121,11 @@ ENDM
 MACRO sine_wave
 ; \1: amplitude
 
-x = 0
+DEF x = 0
 	rept $20
 	; Round up.
 	dw (sin(x) + (sin(x) & $ff)) >> 8
-x = x + (\1) * $40000
+DEF x = x + (\1) * $40000
 	endr
 ENDM
 

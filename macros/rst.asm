@@ -1,9 +1,9 @@
-FarCall    EQU $08
-Bankswitch EQU $10
-AddNTimes  EQU $18
-CopyBytes  EQU $20
-JumpTable  EQU $28
-Predef     EQU $30
+DEF FarCall    EQU $08
+DEF Bankswitch EQU $10
+DEF AddNTimes  EQU $18
+DEF CopyBytes  EQU $20
+DEF JumpTable  EQU $28
+DEF Predef     EQU $30
 
 macro anonbankpush
 	call AnonBankPush

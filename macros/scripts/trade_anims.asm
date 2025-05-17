@@ -19,7 +19,7 @@ macro tradeanim_enter_link_tube
 	db tradeanim_enter_link_tube_command ; 03
 endm
 
-__enum__ = $5
+DEF __enum__ = $5
 
 	enum tradeanim_exit_link_tube_command
 macro tradeanim_exit_link_tube
@@ -31,14 +31,14 @@ macro tradeanim_tube_to_ot
 	db tradeanim_tube_to_ot_command ; 06
 endm
 
-__enum__ = $e
+DEF __enum__ = $e
 
 	enum tradeanim_tube_to_player_command
 macro tradeanim_tube_to_player
 	db tradeanim_tube_to_player_command ; 0e
 endm
 
-__enum__ = $16
+DEF __enum__ = $16
 
 	enum tradeanim_sent_to_ot_text_command
 macro tradeanim_sent_to_ot_text
@@ -90,7 +90,7 @@ macro tradeanim_scroll_out_right
 	db tradeanim_scroll_out_right_command ; 1f
 endm
 
-__enum__ = $21
+DEF __enum__ = $21
 
 	enum tradeanim_wait_80_command
 macro tradeanim_wait_80
@@ -117,7 +117,7 @@ macro tradeanim_wait_anim
 	db tradeanim_wait_anim_command ; 25
 endm
 
-__enum__ = $27
+DEF __enum__ = $27
 
 	enum tradeanim_poof_command
 macro tradeanim_poof

@@ -129,7 +129,7 @@ ResetWRAM_NotPlus:
 	call _ResetWRAM_InitList
 	call CloseSRAM
 
-START_MONEY EQU 3000
+DEF START_MONEY EQU 3000
 	ld hl, wMoney
 	ld [hl], START_MONEY / $10000
 	inc hl
@@ -249,7 +249,7 @@ endr
 
 	ld [wWhichMomItem], a
 
-START_ITEM_TRIGGER_BALANCE EQU 2300
+DEF START_ITEM_TRIGGER_BALANCE EQU 2300
 	ld hl, wMomItemTriggerBalance
 	ld [hl], START_ITEM_TRIGGER_BALANCE / $10000
 	inc hl

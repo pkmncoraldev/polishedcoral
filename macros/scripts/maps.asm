@@ -42,7 +42,7 @@ endc
 ENDM
 
 MACRO object_event
-PERSON_EVENT_NARG = _NARG
+DEF PERSON_EVENT_NARG = _NARG
 	db \3 ; sprite
 	db \2 + 4 ; y
 	db \1 + 4 ; x

@@ -2,10 +2,10 @@
 
 MACRO frame
 	db \1
-x = \2
+DEF x = \2
 if _NARG > 2
 rept _NARG +- 2
-x = x | (1 << (\3 + 1))
+DEF x = x | (1 << (\3 + 1))
 	shift
 endr
 endc
@@ -36,7 +36,7 @@ MACRO endanim
 	db endanim_command
 ENDM
 
-__enum__ = $fe
+DEF __enum__ = $fe
 
 	enum dorestart_command ; $fe
 MACRO dorestart ; used for oam

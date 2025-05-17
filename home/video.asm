@@ -125,7 +125,7 @@ WaitTop::
 	ld [hBGMapMode], a
 	ret
 
-HALF_HEIGHT EQU SCREEN_HEIGHT / 2
+DEF HALF_HEIGHT EQU SCREEN_HEIGHT / 2
 
 UpdateBGMap:: ; 164c
 ; Update the BG Map, in halves, from wTileMap and wAttrMap.

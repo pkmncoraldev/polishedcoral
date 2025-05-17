@@ -1,6 +1,6 @@
 ; pic + oam animations
 
-frame: MACRO
+MACRO frame
 	db \1
 x = \2
 if _NARG > 2
@@ -15,30 +15,30 @@ ENDM
 	enum_start $fc
 
 	enum delanim_command ; $fc
-delanim: MACRO ; used for oam
+MACRO delanim ; used for oam
 	db delanim_command
 ENDM
 
 	enum dorepeat_command ; $fd
-dorepeat: MACRO
+MACRO dorepeat
 	db dorepeat_command
 	db \1 ; #
 ENDM
 
 	enum setrepeat_command ; $fe
-setrepeat: MACRO
+MACRO setrepeat
 	db setrepeat_command
 	db \1 ; #
 ENDM
 
 	enum endanim_command ; $ff
-endanim: MACRO
+MACRO endanim
 	db endanim_command
 ENDM
 
 __enum__ = $fe
 
 	enum dorestart_command ; $fe
-dorestart: MACRO ; used for oam
+MACRO dorestart ; used for oam
 	db dorestart_command
 ENDM

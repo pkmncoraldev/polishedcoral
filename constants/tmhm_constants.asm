@@ -1,4 +1,4 @@
-add_tm: MACRO
+MACRO add_tm
 if !DEF(TM01)
 TM01 = const_value
 	enum_start 1
@@ -8,7 +8,7 @@ endc
 	enum \1_TMNUM
 ENDM
 
-add_hm: MACRO
+MACRO add_hm
 if !DEF(HM01)
 HM01 = const_value
 endc
@@ -17,7 +17,7 @@ endc
 	enum \1_TMNUM
 ENDM
 
-add_mt: MACRO
+MACRO add_mt
 	enum \1_TMNUM
 ENDM
 

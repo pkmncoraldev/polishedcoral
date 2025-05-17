@@ -1,4 +1,4 @@
-flypoint: MACRO
+MACRO flypoint
 	const FLY_\1
 	db \2, SPAWN_\1
 ENDM

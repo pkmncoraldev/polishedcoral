@@ -1,4 +1,4 @@
-loadmapblock: MACRO
+MACRO loadmapblock
 	ld a, [de]
 	inc de
 	and a
@@ -7,13 +7,13 @@ loadmapblock: MACRO
 .notMapBorderBlock\@
 ENDM
 
-nocarry: MACRO
+MACRO nocarry
 	jr nc, .noCarry\@
 	dec h
 .noCarry\@
 ENDM
 
-addmapwidthoffset: MACRO
+MACRO addmapwidthoffset
 	ld a, [hMapWidthPlus6]
 	add e
 	ld e, a
@@ -57,7 +57,7 @@ _LoadMapPart::
 	ld [rSVBK], a
 	ret
 
-function_macro: MACRO
+MACRO function_macro
 .Function\1:
 	ld a, b
 	and a

@@ -24,7 +24,7 @@ PartyMenuQualityPointers: ; 503b2
 	dw .Default
 ; 503c6
 
-placepartymon: macro
+macro placepartymon
 rept _NARG
 	db PLACE_PARTYMON_\1
 shift

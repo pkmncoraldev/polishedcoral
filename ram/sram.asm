@@ -113,7 +113,7 @@ sLinkBattleWins::   ds 2
 sLinkBattleLosses:: ds 2
 sLinkBattleDraws::  ds 2
 
-link_battle_record: MACRO
+MACRO link_battle_record
 \1Name:: ds NAME_LENGTH +- 1
 \1ID:: ds 2
 \1Wins:: ds 2

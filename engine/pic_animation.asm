@@ -1,6 +1,6 @@
 ; Pic animation arrangement.
 
-POKEANIM: MACRO
+MACRO POKEANIM
 	rept _NARG
 
 ; Workaround for a bug where macro args can't come after the start of a symbol
@@ -190,7 +190,7 @@ SetUpPokeAnim:: ; d00b4
 ; d00da
 
 PokeAnim_SetupCommands: ; d00da
-setup_command: macro
+macro setup_command
 \1_: dw \1
 endm
 	setup_command PokeAnim_Finish
@@ -733,7 +733,7 @@ PokeAnim_ConvertAndApplyBitmask: ; d036b
 	ret
 ; d042f
 
-poke_anim_box: MACRO
+MACRO poke_anim_box
 y = 7
 rept \1
 x = 7 +- \1

@@ -1,4 +1,4 @@
-trainerclass: MACRO
+MACRO trainerclass
 	enum \1
 const_value = 1
 ENDM

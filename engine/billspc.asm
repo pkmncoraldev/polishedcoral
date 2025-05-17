@@ -1436,7 +1436,7 @@ BillsPC_RefreshTextboxes: ; e2c2c (38:6c2c)
 	db "-----@"
 ; e2d30
 
-copy_box_data: MACRO
+MACRO copy_box_data
 .loop\@
 	ld a, [hl]
 	cp -1

@@ -335,7 +335,7 @@ StartTrainerBattle_SetUpForSpinOutro: ; 8c43d (23:443d)
 	ld [wcf64], a
 	ret
 
-spintable_entry: MACRO
+MACRO spintable_entry
 	db \1
 	dw .wedge\2
 	dwcoord \3, \4
@@ -849,7 +849,7 @@ WipeLYOverrides: ; 8c6d8
 ; 8c6f7
 
 
-zoombox: macro
+macro zoombox
 ; width, height, start y, start x
 	db \1, \2
 	dwcoord \3, \4

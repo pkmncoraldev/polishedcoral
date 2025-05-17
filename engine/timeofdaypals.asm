@@ -220,7 +220,7 @@ endr
 	ret
 ; 8c0e5
 
-brightlevel: MACRO
+MACRO brightlevel
 	db (\1 << 6) | (\2 << 4) | (\3 << 2) | \4
 ENDM
 

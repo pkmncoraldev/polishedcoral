@@ -1,4 +1,4 @@
-RGB: MACRO
+MACRO RGB
 rept _NARG / 3
 if DEF(NOIR)
 x = (299 * \1 + 587 * \2 + 114 * \3) / 1000

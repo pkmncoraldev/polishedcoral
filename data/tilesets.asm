@@ -1,7 +1,7 @@
 INCLUDE "constants.asm"
 
 
-tilecoll: MACRO
+MACRO tilecoll
 	db COLL_\1, COLL_\2, COLL_\3, COLL_\4
 ENDM
 
@@ -814,7 +814,7 @@ INCLUDE "data/tilesets/south_buildings_collision.asm"
 
 SECTION "Tileset Headers", ROMX
 
-tileset: macro
+macro tileset
 	dba \1GFX0
 	dw \1GFX1, \1GFX2
 	dba \1Meta, \1Coll, \1Attr

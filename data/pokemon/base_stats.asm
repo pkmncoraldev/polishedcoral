@@ -1,9 +1,9 @@
-ev_yield: MACRO
+MACRO ev_yield
 	db (\1 << 6) | (\2 << 4) | (\3 << 2) | \4
 	db (\5 << 6) | (\6 << 4)
 ENDM
 
-tmhm: MACRO
+MACRO tmhm
 tms1_24 = 0
 tms25_48 = 0
 tms49_72 = 0

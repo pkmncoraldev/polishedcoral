@@ -3118,7 +3118,7 @@ GetMapMusic::
 	ret
 	
 SpecialMusicMaps::
-music_map: MACRO
+MACRO music_map
 	map_id \1
 	dw \2
 ENDM

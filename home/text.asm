@@ -172,7 +172,7 @@ NextChar::
 CheckDict::
 	cp $60
 	jp nc, .notDict
-dict: macro
+macro dict
 if \1 == 0
 	and a
 else
@@ -181,7 +181,7 @@ endc
 	jp z, \2
 endm
 
-dict2: macro
+macro dict2
 	cp \1
 	jr nz, ._\@
 	ld a, \2
@@ -242,7 +242,7 @@ endm
 	call PrintLetterDelay
 	jp NextChar
 
-print_name: macro
+macro print_name
 	push de
 	ld de, \1
 	jp PlaceCommandCharacter

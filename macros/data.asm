@@ -119,13 +119,12 @@ ENDM
 
 
 MACRO sine_wave
-; \1: amplitude
+; \1: entries
 
 DEF x = 0
-	rept $20
-	; Round up.
-	dw (sin(x) + (sin(x) & $ff)) >> 8
-DEF x = x + (\1) * $40000
+	rept \1
+	dw sin(x * 0.5 / (\1))
+DEF x = x + 1
 	endr
 ENDM
 

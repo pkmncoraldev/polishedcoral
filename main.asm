@@ -1742,6 +1742,10 @@ CheckCanLearnMoveTutorMove: ; 492b9
 	jr nc, .not_multi_move_slot
 	pop de
 	pop hl
+	push af
+	ld a, [wTempMonSpecies]
+	ld [wCurPartySpecies], a
+	pop af
 	farcall GetMultiMoveSlotName2
 	jr .done_multi_move
 .not_multi_move_slot

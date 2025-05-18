@@ -17,8 +17,25 @@ LusterApartment2_1F_MapScriptHeader:
 	
 	
 LusterApartment2_1F_NPC:
+	checkevent EVENT_MINA_APARTMENT_EMPTY
+	iftrue .empty
+	jumptextfaceplayer LusterApartment2_1F_NPCText2
+.empty
 	jumptextfaceplayer LusterApartment2_1F_NPCText1
 	
 LusterApartment2_1F_NPCText1:
-	text "TODO"
+	text "Living alone is"
+	line "ok, but I wouldn't"
+	cont "mind a roommate."
+	
+	para "Maybe a cute girl…"
+	done
+	
+LusterApartment2_1F_NPCText2:
+	text "The girl upstairs"
+	line "isn't here much."
+	
+	para "I think she's a"
+	line "painter or"
+	cont "something."
 	done

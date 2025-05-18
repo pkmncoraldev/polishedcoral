@@ -1450,19 +1450,6 @@ MakePalFinished:
 	ldh [hCGBPalUpdate], a
 	ret
 	
-MakeCheckMarkGreen::
-	ld hl, CheckMarkPalette
-	ld de, wBGPals + 7 palettes
-	ld bc, 8
-	ld a, $5
-	call FarCopyWRAM
-	ld a, $1
-	ldh [hCGBPalUpdate], a
-	ret
-	
-CheckMarkPalette:
-INCLUDE "maps/palettes/bgpals/checkmark.pal"
-	
 StandardGrassPalette:
 INCLUDE "maps/palettes/bgpals/grass/standard.pal"
 

@@ -866,31 +866,31 @@
 	db 18, RATTATA		;1%
 	
 	map_id ROUTE_4
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 1 percent, 1 percent, 1 percent ; encounter rates: morn/day/nite
 	; morn
-	db 19, NIDORINA		;30%
-	db 19, PIDGEOTTO	;30%
-	db 19, NIDORINO		;20%
-	db 19, WOOPER		;10%
-	db 19, WOOPER		;5%
-	db 19, WOOPER		;4%
-	db 19, WOOPER		;1%
+	db 31, PHANTUMP		;30%
+	db 31, DRIFLOON		;30%
+	db 31, PHANTUMP		;20%
+	db 31, DRIFLOON		;10%
+	db 31, DRIFLOON		;5%
+	db 31, DRIFLOON		;4%
+	db 31, DRIFLOON		;1%
 	; day
-	db 19, NIDORINA		;30%
-	db 19, PIDGEOTTO	;30%
-	db 19, NIDORINO		;20%
-	db 19, WOOPER		;10%
-	db 19, WOOPER		;5%
-	db 19, WOOPER		;4%
-	db 19, WOOPER		;1%
+	db 31, PHANTUMP		;30%
+	db 31, DRIFLOON		;30%
+	db 31, PHANTUMP		;20%
+	db 31, DRIFLOON		;10%
+	db 31, DRIFLOON		;5%
+	db 31, DRIFLOON		;4%
+	db 31, DRIFLOON		;1%
 	; nite
-	db 19, NIDORINA		;30%
-	db 19, PIDGEOTTO	;30%
-	db 19, NIDORINO		;20%
-	db 19, WOOPER		;10%
-	db 19, WOOPER		;5%
-	db 19, WOOPER		;4%
-	db 19, WOOPER		;1%
+	db 31, PHANTUMP		;30%
+	db 31, DRIFLOON		;30%
+	db 31, PHANTUMP		;20%
+	db 31, DRIFLOON		;10%
+	db 31, DRIFLOON		;5%
+	db 31, DRIFLOON		;4%
+	db 31, DRIFLOON		;1%
 	
 	map_id EVENTIDE_FOREST
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite

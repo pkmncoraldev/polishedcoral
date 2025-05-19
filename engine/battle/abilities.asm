@@ -2619,8 +2619,8 @@ RevertFlowerGift:
 	and $ff - FORM_MASK
 	or b
 	ld [wEnemyMonForm], a
-	call ChangeEnemyFormAnimation
 	call ResetEnemyFlowerGift
+	call ChangeEnemyFormAnimation
 .end
 	ld hl, FlowerGiftTransformedText
 	jp StdBattleTextBox

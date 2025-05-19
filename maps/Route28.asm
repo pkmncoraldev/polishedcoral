@@ -855,7 +855,7 @@ Route28Trainer3:
 
 .SeenText:
 	text "I broke a guitar"
-	line "guitar string!"
+	line "string!"
 	
 	para "We'll battle while"
 	line "my guitar gently"

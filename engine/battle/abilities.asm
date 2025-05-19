@@ -526,6 +526,10 @@ ForewarnAbility:
 	jr nc, .not_multi_move_slot
 	pop de
 	pop hl
+	push af
+	ld a, [wEnemyMonSpecies]
+	ld [wCurPartySpecies], a
+	pop af
 	farcall GetMultiMoveSlotName2
 	jr .done_multi_move
 .not_multi_move_slot

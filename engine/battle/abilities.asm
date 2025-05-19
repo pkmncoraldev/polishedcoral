@@ -2230,7 +2230,7 @@ HandleFormRevertsAfterBattle:
 	ld a, b
 	cp e
 	jr nz, .skip1
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wPartyMon1Form]
 	and $ff - FORM_MASK
@@ -2245,7 +2245,7 @@ HandleFormRevertsAfterBattle:
 	ld a, b
 	cp e
 	jr nz, .skip2
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wPartyMon2Form]
 	and $ff - FORM_MASK
@@ -2260,7 +2260,7 @@ HandleFormRevertsAfterBattle:
 	ld a, b
 	cp e
 	jr nz, .skip3
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wPartyMon3Form]
 	and $ff - FORM_MASK
@@ -2275,7 +2275,7 @@ HandleFormRevertsAfterBattle:
 	ld a, b
 	cp e
 	jr nz, .skip4
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wPartyMon4Form]
 	and $ff - FORM_MASK
@@ -2290,7 +2290,7 @@ HandleFormRevertsAfterBattle:
 	ld a, b
 	cp e
 	jr nz, .skip5
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wPartyMon5Form]
 	and $ff - FORM_MASK
@@ -2305,7 +2305,7 @@ HandleFormRevertsAfterBattle:
 	ld a, b
 	cp e
 	ret nz
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wPartyMon6Form]
 	and $ff - FORM_MASK
@@ -2486,7 +2486,7 @@ ResetEnemyFlowerGift:
 	ld a, b
 	cp FLOWER_GIFT
 	jr nz, .skip1
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wOTPartyMon1Form]
 	and $ff - FORM_MASK
@@ -2501,7 +2501,7 @@ ResetEnemyFlowerGift:
 	ld a, b
 	cp FLOWER_GIFT
 	jr nz, .skip2
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wOTPartyMon2Form]
 	and $ff - FORM_MASK
@@ -2516,7 +2516,7 @@ ResetEnemyFlowerGift:
 	ld a, b
 	cp FLOWER_GIFT
 	jr nz, .skip3
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wOTPartyMon3Form]
 	and $ff - FORM_MASK
@@ -2531,12 +2531,12 @@ ResetEnemyFlowerGift:
 	ld a, b
 	cp FLOWER_GIFT
 	jr nz, .skip4
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wOTPartyMon4Form]
 	and $ff - FORM_MASK
 	or b
-	ld hl, wPartyMon4Form
+	ld hl, wOTPartyMon4Form
 	ld [hl], a
 .skip4
 	ld hl, wOTPartyMon5Personality
@@ -2546,7 +2546,7 @@ ResetEnemyFlowerGift:
 	ld a, b
 	cp FLOWER_GIFT
 	jr nz, .skip5
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wOTPartyMon5Form]
 	and $ff - FORM_MASK
@@ -2561,7 +2561,7 @@ ResetEnemyFlowerGift:
 	ld a, b
 	cp FLOWER_GIFT
 	ret nz
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wOTPartyMon6Form]
 	and $ff - FORM_MASK

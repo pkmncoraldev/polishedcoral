@@ -2642,7 +2642,7 @@ PlayMonAnimAfterFormChange:
 	ld a, OTPARTYMON
 .finish
 	ld [wMonType], a
-	call CopyPkmnToTempMon2
+	farcall CopyPkmnToTempMon2
 	farcall GetMonFrontpic
 	eventflagcheck EVENT_SILENT_BATTLE_ANIMATION
 	lb de, $0, ANIM_MON_EGG1

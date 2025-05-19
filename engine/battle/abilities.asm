@@ -2652,6 +2652,7 @@ PlayMonAnimAfterFormChange:
 	ld bc, wTempEnemyMonSpecies
 	hlcoord 12, 0
 	predef AnimateFrontpic
+	farcall BattleAnimRestoreHuds
 	eventflagreset EVENT_SILENT_BATTLE_ANIMATION
 	ret
 .cry_no_anim

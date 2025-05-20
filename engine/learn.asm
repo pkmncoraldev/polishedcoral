@@ -58,6 +58,10 @@ LearnMove: ; 6508
 	jr nc, .not_multi_move_slot
 	pop de
 	pop hl
+	push af
+	ld a, [wTempMonSpecies]
+	ld [wCurPartySpecies], a
+	pop af
 	farcall GetMultiMoveSlotName2
 	jr .done
 .not_multi_move_slot

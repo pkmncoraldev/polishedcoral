@@ -3080,7 +3080,6 @@ UnknownText_0xd1d0: ; 0xd1d0
 HandleEventsFly:
 	clearevent EVENT_LAKE_ROCKS_BROWN
 HandleEventsEscapeRope:
-	clearevent EVENT_GLINT_GROVE_EAST_ROCKS_BROWN
 	clearevent EVENT_ROUTE_20_GRASS_YELLOW
 	clearevent EVENT_SNOWSTORM_HAPPENING
 	clearevent EVENT_SANDSTORM_HAPPENING

@@ -98,7 +98,6 @@ WhiteoutHandleEvents:
 	clearevent EVENT_IN_BUSINESS_DISTRICT
 	clearevent EVENT_DOUBLE_LANDMARK_SIGN
 	clearevent EVENT_LAKE_ROCKS_BROWN
-	clearevent EVENT_GLINT_GROVE_EAST_ROCKS_BROWN
 	clearevent EVENT_BRILLO_MARACTUS_GREEN
 	clearflag ENGINE_ENCOUNTER_HOUSE
 	loadvar wJukeboxSong, 0

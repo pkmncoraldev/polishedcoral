@@ -865,16 +865,15 @@ CheckEncounterRoamMon: ; 2a2ce
 	jr nz, .DontEncounterRoamMon
 	eventflagcheck EVENT_ENCOUNTERED_FIRST_BIRD_ONCE
 	jr nz, .skip
-	ld a, [wMapGroup]
-	ld hl, PossibleRoamMaps
-	ld de, 2
-	call IsInArray
-	jr nc, .DontEncounterRoamMon
-	ld a, [wMapNumber]
-	ld hl, PossibleRoamMaps + 1
-	ld de, 2
-	call IsInArray
-	jr nc, .DontEncounterRoamMon
+	
+	ld a, [wPlayerState]
+	cp PLAYER_SURF
+	jr z, .DontEncounterRoamMon
+	
+	ld a, [wPermission]
+	cp ROUTE
+	jr nz, .DontEncounterRoamMon
+	
 	ld a, [wBirdEncounterCounter]
 	cp 50
 	jr nz, .skip

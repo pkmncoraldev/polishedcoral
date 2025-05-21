@@ -1036,7 +1036,7 @@ GlintGymBookText7:
 	
 	para "This is what they"
 	line "used before #-"
-	cont "DEXS."
+	cont "DEXES."
 	done
 	
 GlintGymBookText8:

@@ -675,6 +675,15 @@ InitScrollingMenu:: ; 352f
 	jp TextBox
 ; 354b
 
+SetDefaultBGPAndOBP::
+	push de
+	ld a, %11100100
+	call DmgToCgbBGPals
+	lb de, %11100100, %11100100
+	call DmgToCgbObjPals
+	pop de
+	ret
+
 JoyTextDelay_ForcehJoyDown:: ; 354b joypad
 	call DelayFrame
 

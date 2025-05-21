@@ -1548,7 +1548,7 @@ UnknownText_TradeCancelText8::
 	done
 
 UnknownText_TradeWrongText8::
-	text "That's not@"
+	text "That's not @"
 	text_from_ram wStringBuffer1
 	text "!"
 	

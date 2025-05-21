@@ -1,7 +1,7 @@
 ; Functions dealing with VRAM.
 
 PushOAM::
-	ld a, [hOAMUpdate]
+	ldh a, [hOAMUpdate]
 	and a
 	ret nz
 ForcePushOAM:
@@ -12,17 +12,17 @@ ForcePushOAM:
 DMATransfer:: ; 15d8
 ; Return carry if the transfer is completed.
 
-	ld a, [hDMATransfer]
+	ldh a, [hDMATransfer]
 	and a
 	ret z
 
 ; Start transfer
-	ld [rHDMA5], a
+	ldh [rHDMA5], a
 
 ; Execution is halted until the transfer is complete.
 
 	xor a
-	ld [hDMATransfer], a
+	ldh [hDMATransfer], a
 	scf
 	ret
 ; 15e3
@@ -36,11 +36,11 @@ UpdateBGMapBuffer:: ; 15e3
 
 ; Return carry on success.
 
-	ld a, [hBGMapUpdate]
+	ldh a, [hBGMapUpdate]
 	and a
 	ret z
 
-	ld a, [rVBK]
+	ldh a, [rVBK]
 	push af
 	ld [hSPBuffer], sp
 
@@ -62,7 +62,7 @@ rept 2
 
 ; Palettes
 	ld a, 1
-	ld [rVBK], a
+	ldh [rVBK], a
 
 	ld a, [hli]
 	ld [bc], a
@@ -73,7 +73,7 @@ rept 2
 
 ; Tiles
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 
 	ld a, [de]
 	inc de
@@ -85,10 +85,10 @@ rept 2
 endr
 
 ; We've done 2 16x8 blocks
-	ld a, [hBGMapTileCount]
+	ldh a, [hBGMapTileCount]
 	dec a
 	dec a
-	ld [hBGMapTileCount], a
+	ldh [hBGMapTileCount], a
 
 	jr nz, .next
 
@@ -98,10 +98,10 @@ endr
 	ld sp, hl
 
 	pop af
-	ld [rVBK], a
+	ldh [rVBK], a
 
 	xor a
-	ld [hBGMapUpdate], a
+	ldh [hBGMapUpdate], a
 	scf
 	ret
 ; 163a
@@ -110,27 +110,27 @@ endr
 WaitTop::
 ; Wait until the top half of the BG Map is being updated.
 
-	ld a, [hBGMapMode]
+	ldh a, [hBGMapMode]
 	and a
 	jr nz, .handleLoop
 	ret
 .loop
 	call DelayFrame
 .handleLoop
-	ld a, [hBGMapHalf]
+	ldh a, [hBGMapHalf]
 	and a
 	jr nz, .loop
 
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ret
 
-HALF_HEIGHT EQU SCREEN_HEIGHT / 2
+DEF HALF_HEIGHT EQU SCREEN_HEIGHT / 2
 
 UpdateBGMap:: ; 164c
 ; Update the BG Map, in halves, from wTileMap and wAttrMap.
 
-	ld a, [hBGMapMode]
+	ldh a, [hBGMapMode]
 	and $7f
 	ret z
 
@@ -155,10 +155,10 @@ UpdateBGMap:: ; 164c
 	ret nz
 	coord bc, 0, 0, wAttrMap
 	ld a, 1
-	ld [rVBK], a
+	ldh [rVBK], a
 	call .DoCustomSourceTiles
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 	ret
 
 .DoCustomSourceTiles
@@ -166,7 +166,7 @@ UpdateBGMap:: ; 164c
 	xor a
 	ld h, a
 	ld d, a
-	ld a, [hBGMapHalf] ; multiply by 20 to get the tilemap offset
+	ldh a, [hBGMapHalf] ; multiply by 20 to get the tilemap offset
 	ld l, a
 	ld e, a
 	add hl, hl ; hl = hl * 2
@@ -176,7 +176,7 @@ UpdateBGMap:: ; 164c
 	add hl, hl ; hl = (5*hl)*4
 	add hl, bc
 	ld sp, hl
-	ld a, [hBGMapHalf] ; multiply by 32 to get the bg map offset
+	ldh a, [hBGMapHalf] ; multiply by 32 to get the bg map offset
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -184,33 +184,33 @@ UpdateBGMap:: ; 164c
 	add hl, hl
 	add hl, hl
 	add hl, hl
-	ld a, [hBGMapAddress]
+	ldh a, [hBGMapAddress]
 	add l
 	ld l, a
-	ld a, [hBGMapAddress + 1]
+	ldh a, [hBGMapAddress + 1]
 	adc h
 	ld h, a
-	ld a, [hTilesPerCycle]
+	ldh a, [hTilesPerCycle]
 	jr .startCustomCopy
 
 .DoAttributes
-	ld a, [hBGMapAddress + 1]
+	ldh a, [hBGMapAddress + 1]
 	ld h, a
-	ld a, [hBGMapAddress]
+	ldh a, [hBGMapAddress]
 	ld l, a
 .DoBGMap1Attributes
 	ld a, 1
-	ld [rVBK], a
+	ldh [rVBK], a
 	call .CopyAttributes
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 	ret
 
 .CopyAttributes
 	ld [hSPBuffer], sp
 
 ; Which half?
-	ld a, [hBGMapHalf]
+	ldh a, [hBGMapHalf]
 	and a ; 0
 	jr z, .AttributeMapTop
 ; bottom row
@@ -226,15 +226,15 @@ UpdateBGMap:: ; 164c
 	jr .AttributeMapTopContinue
 
 .DoTiles
-	ld a, [hBGMapAddress + 1]
+	ldh a, [hBGMapAddress + 1]
 	ld h, a
-	ld a, [hBGMapAddress]
+	ldh a, [hBGMapAddress]
 	ld l, a
 
 .DoBGMap1Tiles
 	ld [hSPBuffer], sp
 ; Which half?
-	ld a, [hBGMapHalf]
+	ldh a, [hBGMapHalf]
 	and a ; 0
 	jr z, .TileMapTop
 ; bottom row
@@ -251,7 +251,7 @@ UpdateBGMap:: ; 164c
 	inc a
 .startCopy
 ; Which half to update next time
-	ld [hBGMapHalf], a
+	ldh [hBGMapHalf], a
 ; Rows of tiles in a half
 	ld a, SCREEN_HEIGHT / 2
 .startCustomCopy
@@ -275,9 +275,9 @@ UpdateBGMap:: ; 164c
 	dec a
 	jr nz, .row
 
-	ld a, [hSPBuffer]
+	ldh a, [hSPBuffer]
 	ld l, a
-	ld a, [hSPBuffer + 1]
+	ldh a, [hSPBuffer + 1]
 	ld h, a
 	ld sp, hl
 	ret
@@ -285,20 +285,20 @@ UpdateBGMap:: ; 164c
 Serve1bppRequest:: ; 170a
 ; Only call during the first fifth of VBlank
 
-	ld a, [hRequested1bpp]
+	ldh a, [hRequested1bpp]
 	and a
 	ret z
 
 	ld b, a
 ; Back out if we're too far into VBlank
-	ld a, [rLY]
+	ldh a, [rLY]
 	cp 144
 	ret c
 	cp 146
 	ret nc
 
 	xor a
-	ld [hRequested1bpp], a
+	ldh [hRequested1bpp], a
 
 _Serve1bppRequest::
 ; Copy [hRequested1bpp] 1bpp tiles from [hRequestedVTileSource] to [hRequestedVTileDest]
@@ -316,7 +316,7 @@ _Serve1bppRequest::
 	ld sp, hl
 	ld h, d
 	ld l, e
-	ld a, [hRequestOpaque1bpp]
+	ldh a, [hRequestOpaque1bpp]
 	dec a
 	jr z, .nextopaque
 
@@ -351,32 +351,32 @@ _Serve1bppRequest::
 	jp WriteVTileSourceAndDestinationAndReturn
 
 LYOverrideStackCopy::
-	ld a, [hLYOverrideStackCopyAmount]
+	ldh a, [hLYOverrideStackCopyAmount]
 	and a
 	ret z
 	ld b, a
 	xor a
-	ld [hLYOverrideStackCopyAmount], a
+	ldh [hLYOverrideStackCopyAmount], a
 	jr _Serve2bppRequest
 
 Serve2bppRequest::
 ; Only call during the first fifth of VBlank
 
-	ld a, [hRequested2bpp]
+	ldh a, [hRequested2bpp]
 	and a
 	ret z
 
 	ld b, a ; save tile count for later
 
 ; Back out if we're too far into VBlank
-	ld a, [rLY]
+	ldh a, [rLY]
 	cp 144
 	ret c
 	cp 146
 	ret nc
 
 	xor a
-	ld [hRequested2bpp], a
+	ldh [hRequested2bpp], a
 
 _Serve2bppRequest::
 ; Copy [hRequested2bpp] 2bpp tiles from [hRequestedVTileSource] to [hRequestedVTileDest]
@@ -412,35 +412,35 @@ WriteVTileSourceAndDestinationAndReturn:
 	ld sp, hl
 	ld [hRequestedVTileDest], sp
 
-	ld a, [hSPBuffer]
+	ldh a, [hSPBuffer]
 	ld l, a
-	ld a, [hSPBuffer + 1]
+	ldh a, [hSPBuffer + 1]
 	ld h, a
 	ld sp, hl
 	ret
 
 AnimateTileset::
 ; Only call during the first fifth of VBlank
-	ld a, [hMapAnims]
+	ldh a, [hMapAnims]
 	and a
 	ret z
 
 ; Back out if we're too far into VBlank
-	ld a, [rLY]
+	ldh a, [rLY]
 	cp 144
 	ret c
 	cp 151
 	ret nc
 
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 
-	ld a, [rVBK]
+	ldh a, [rVBK]
 	push af
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 	inc a
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	ld a, BANK(_AnimateTileset)
 	call Bankswitch
@@ -448,7 +448,7 @@ AnimateTileset::
 	call _AnimateTileset
 
 	pop af
-	ld [rVBK], a
+	ldh [rVBK], a
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret

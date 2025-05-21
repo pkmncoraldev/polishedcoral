@@ -1,4 +1,4 @@
-engine_flag: MACRO
+MACRO engine_flag
 	dwb \1 + (\2 / 8), 1 << (\2 % 8)
 ENDM
 

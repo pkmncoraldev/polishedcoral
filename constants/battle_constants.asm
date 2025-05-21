@@ -1,16 +1,16 @@
-MAX_LEVEL EQU 100
-MIN_LEVEL EQU 2
-EGG_LEVEL EQU 1
-NUM_MOVES EQU 4
+DEF MAX_LEVEL EQU 100
+DEF MIN_LEVEL EQU 2
+DEF EGG_LEVEL EQU 1
+DEF NUM_MOVES EQU 4
 
-REST_TURNS EQU 2
-MAX_STAT_LEVEL EQU 13
-BASE_STAT_LEVEL EQU 7
+DEF REST_TURNS EQU 2
+DEF MAX_STAT_LEVEL EQU 13
+DEF BASE_STAT_LEVEL EQU 7
 
 ; matchups, baseline is $10 for better doubling/halving
-SUPER_EFFECTIVE    EQU $20
-NOT_VERY_EFFECTIVE EQU $08
-NO_EFFECT          EQU $00
+DEF SUPER_EFFECTIVE    EQU $20
+DEF NOT_VERY_EFFECTIVE EQU $08
+DEF NO_EFFECT          EQU $00
 
 	const_def
 	const ATTACK
@@ -21,7 +21,7 @@ NO_EFFECT          EQU $00
 	const ACCURACY
 	const EVASION
 	const MULTIPLE_STATS ; used by Curse
-NUM_LEVEL_STATS EQU const_value
+DEF NUM_LEVEL_STATS EQU const_value
 
 ; move struct
 	const_def
@@ -43,90 +43,90 @@ NUM_LEVEL_STATS EQU const_value
 	const STAT_SPD
 	const STAT_SATK
 	const STAT_SDEF
-NUM_STATS EQU const_value
+DEF NUM_STATS EQU const_value
 
-STAT_MIN_NORMAL EQU 5
-STAT_MIN_HP EQU 10
+DEF STAT_MIN_NORMAL EQU 5
+DEF STAT_MIN_HP EQU 10
 
 ; $00 is used instead of $ff for DVs because $ff is the end-of-trainer marker
 ; ReadTrainerParty converts $00 to $ff when reading DVs
 
-PERFECT_DVS      EQUS "$ff, $ff, $ff"
-FAKE_PERFECT_DVS EQUS "$00, $00, $00"
+DEF PERFECT_DVS      EQUS "$ff, $ff, $ff"
+DEF FAKE_PERFECT_DVS EQUS "$00, $00, $00"
 
 ; Hidden Power DVs ($00 is converted to $ff in regular trainer sets)
 ; Chosen for stat importance: Speed > * > Atk
 if DEF(FAITHFUL)
-DVS_HP_FIGHTING EQUS "$00, $ee, $ee"
-DVS_HP_FLYING   EQUS "$ee, $ef, $ee"
-DVS_HP_POISON   EQUS "$00, $ef, $ee"
-DVS_HP_GROUND   EQUS "$00, $00, $ee"
-DVS_HP_ROCK     EQUS "$00, $ee, $fe"
-DVS_HP_BUG      EQUS "$fe, $ef, $fe"
-DVS_HP_GHOST    EQUS "$fe, $00, $fe"
-DVS_HP_STEEL    EQUS "$00, $00, $fe"
-DVS_HP_FIRE     EQUS "$fe, $fe, $ef"
-DVS_HP_WATER    EQUS "$fe, $ef, $ef"
-DVS_HP_GRASS    EQUS "$fe, $00, $ef"
-DVS_HP_ELECTRIC EQUS "$00, $00, $ef"
-DVS_HP_PSYCHIC  EQUS "$fe, $fe, $00"
-DVS_HP_ICE      EQUS "$fe, $ef, $00"
-DVS_HP_DRAGON   EQUS "$fe, $00, $00"
-DVS_HP_DARK     EQUS "$00, $00, $00"
+DEF DVS_HP_FIGHTING EQUS "$00, $ee, $ee"
+DEF DVS_HP_FLYING   EQUS "$ee, $ef, $ee"
+DEF DVS_HP_POISON   EQUS "$00, $ef, $ee"
+DEF DVS_HP_GROUND   EQUS "$00, $00, $ee"
+DEF DVS_HP_ROCK     EQUS "$00, $ee, $fe"
+DEF DVS_HP_BUG      EQUS "$fe, $ef, $fe"
+DEF DVS_HP_GHOST    EQUS "$fe, $00, $fe"
+DEF DVS_HP_STEEL    EQUS "$00, $00, $fe"
+DEF DVS_HP_FIRE     EQUS "$fe, $fe, $ef"
+DEF DVS_HP_WATER    EQUS "$fe, $ef, $ef"
+DEF DVS_HP_GRASS    EQUS "$fe, $00, $ef"
+DEF DVS_HP_ELECTRIC EQUS "$00, $00, $ef"
+DEF DVS_HP_PSYCHIC  EQUS "$fe, $fe, $00"
+DEF DVS_HP_ICE      EQUS "$fe, $ef, $00"
+DEF DVS_HP_DRAGON   EQUS "$fe, $00, $00"
+DEF DVS_HP_DARK     EQUS "$00, $00, $00"
 else
-DVS_HP_FIGHTING EQUS "$00, $ee, $ee"
-DVS_HP_FLYING   EQUS "$00, $fe, $ee"
-DVS_HP_POISON   EQUS "$00, $ef, $ee"
-DVS_HP_GROUND   EQUS "$00, $00, $ee"
-DVS_HP_ROCK     EQUS "$00, $ee, $fe"
-DVS_HP_BUG      EQUS "$00, $fe, $fe"
-DVS_HP_GHOST    EQUS "$00, $ef, $fe"
-DVS_HP_STEEL    EQUS "$00, $00, $fe"
-DVS_HP_FIRE     EQUS "$00, $ee, $ef"
-DVS_HP_WATER    EQUS "$00, $fe, $ef"
-DVS_HP_GRASS    EQUS "$00, $ef, $ef"
-DVS_HP_ELECTRIC EQUS "$00, $00, $ef"
-DVS_HP_PSYCHIC  EQUS "$00, $ee, $00"
-DVS_HP_ICE      EQUS "$00, $fe, $00"
-DVS_HP_DRAGON   EQUS "$00, $ef, $00"
-DVS_HP_DARK     EQUS "$fe, $00, $00"
+DEF DVS_HP_FIGHTING EQUS "$00, $ee, $ee"
+DEF DVS_HP_FLYING   EQUS "$00, $fe, $ee"
+DEF DVS_HP_POISON   EQUS "$00, $ef, $ee"
+DEF DVS_HP_GROUND   EQUS "$00, $00, $ee"
+DEF DVS_HP_ROCK     EQUS "$00, $ee, $fe"
+DEF DVS_HP_BUG      EQUS "$00, $fe, $fe"
+DEF DVS_HP_GHOST    EQUS "$00, $ef, $fe"
+DEF DVS_HP_STEEL    EQUS "$00, $00, $fe"
+DEF DVS_HP_FIRE     EQUS "$00, $ee, $ef"
+DEF DVS_HP_WATER    EQUS "$00, $fe, $ef"
+DEF DVS_HP_GRASS    EQUS "$00, $ef, $ef"
+DEF DVS_HP_ELECTRIC EQUS "$00, $00, $ef"
+DEF DVS_HP_PSYCHIC  EQUS "$00, $ee, $00"
+DEF DVS_HP_ICE      EQUS "$00, $fe, $00"
+DEF DVS_HP_DRAGON   EQUS "$00, $ef, $00"
+DEF DVS_HP_DARK     EQUS "$fe, $00, $00"
 endc
 
 ; battle tower hidden power dvs ($ff instead of $00)
 if DEF(FAITHFUL)
-BTDVS_HP_FIGHTING EQUS "$ff, $ee, $ee"
-BTDVS_HP_FLYING   EQUS "$ee, $ef, $ee"
-BTDVS_HP_POISON   EQUS "$ff, $ef, $ee"
-BTDVS_HP_GROUND   EQUS "$ff, $ff, $ee"
-BTDVS_HP_ROCK     EQUS "$ff, $ee, $fe"
-BTDVS_HP_BUG      EQUS "$fe, $ef, $fe"
-BTDVS_HP_GHOST    EQUS "$fe, $ff, $fe"
-BTDVS_HP_STEEL    EQUS "$ff, $ff, $fe"
-BTDVS_HP_FIRE     EQUS "$fe, $fe, $ef"
-BTDVS_HP_WATER    EQUS "$fe, $ef, $ef"
-BTDVS_HP_GRASS    EQUS "$fe, $ff, $ef"
-BTDVS_HP_ELECTRIC EQUS "$ff, $ff, $ef"
-BTDVS_HP_PSYCHIC  EQUS "$fe, $fe, $ff"
-BTDVS_HP_ICE      EQUS "$fe, $ef, $ff"
-BTDVS_HP_DRAGON   EQUS "$fe, $ff, $ff"
-BTDVS_HP_DARK     EQUS "$ff, $ff, $ff"
+DEF BTDVS_HP_FIGHTING EQUS "$ff, $ee, $ee"
+DEF BTDVS_HP_FLYING   EQUS "$ee, $ef, $ee"
+DEF BTDVS_HP_POISON   EQUS "$ff, $ef, $ee"
+DEF BTDVS_HP_GROUND   EQUS "$ff, $ff, $ee"
+DEF BTDVS_HP_ROCK     EQUS "$ff, $ee, $fe"
+DEF BTDVS_HP_BUG      EQUS "$fe, $ef, $fe"
+DEF BTDVS_HP_GHOST    EQUS "$fe, $ff, $fe"
+DEF BTDVS_HP_STEEL    EQUS "$ff, $ff, $fe"
+DEF BTDVS_HP_FIRE     EQUS "$fe, $fe, $ef"
+DEF BTDVS_HP_WATER    EQUS "$fe, $ef, $ef"
+DEF BTDVS_HP_GRASS    EQUS "$fe, $ff, $ef"
+DEF BTDVS_HP_ELECTRIC EQUS "$ff, $ff, $ef"
+DEF BTDVS_HP_PSYCHIC  EQUS "$fe, $fe, $ff"
+DEF BTDVS_HP_ICE      EQUS "$fe, $ef, $ff"
+DEF BTDVS_HP_DRAGON   EQUS "$fe, $ff, $ff"
+DEF BTDVS_HP_DARK     EQUS "$ff, $ff, $ff"
 else
-BTDVS_HP_FIGHTING EQUS "$ff, $ee, $ee"
-BTDVS_HP_FLYING   EQUS "$ff, $fe, $ee"
-BTDVS_HP_POISON   EQUS "$ff, $ef, $ee"
-BTDVS_HP_GROUND   EQUS "$ff, $ff, $ee"
-BTDVS_HP_ROCK     EQUS "$ff, $ee, $fe"
-BTDVS_HP_BUG      EQUS "$ff, $fe, $fe"
-BTDVS_HP_GHOST    EQUS "$ff, $ef, $fe"
-BTDVS_HP_STEEL    EQUS "$ff, $ff, $fe"
-BTDVS_HP_FIRE     EQUS "$ff, $ee, $ef"
-BTDVS_HP_WATER    EQUS "$ff, $fe, $ef"
-BTDVS_HP_GRASS    EQUS "$ff, $ef, $ef"
-BTDVS_HP_ELECTRIC EQUS "$ff, $ff, $ef"
-BTDVS_HP_PSYCHIC  EQUS "$ff, $ee, $ff"
-BTDVS_HP_ICE      EQUS "$ff, $fe, $ff"
-BTDVS_HP_DRAGON   EQUS "$ff, $ef, $ff"
-BTDVS_HP_DARK     EQUS "$fe, $ff, $ff"
+DEF BTDVS_HP_FIGHTING EQUS "$ff, $ee, $ee"
+DEF BTDVS_HP_FLYING   EQUS "$ff, $fe, $ee"
+DEF BTDVS_HP_POISON   EQUS "$ff, $ef, $ee"
+DEF BTDVS_HP_GROUND   EQUS "$ff, $ff, $ee"
+DEF BTDVS_HP_ROCK     EQUS "$ff, $ee, $fe"
+DEF BTDVS_HP_BUG      EQUS "$ff, $fe, $fe"
+DEF BTDVS_HP_GHOST    EQUS "$ff, $ef, $fe"
+DEF BTDVS_HP_STEEL    EQUS "$ff, $ff, $fe"
+DEF BTDVS_HP_FIRE     EQUS "$ff, $ee, $ef"
+DEF BTDVS_HP_WATER    EQUS "$ff, $fe, $ef"
+DEF BTDVS_HP_GRASS    EQUS "$ff, $ef, $ef"
+DEF BTDVS_HP_ELECTRIC EQUS "$ff, $ff, $ef"
+DEF BTDVS_HP_PSYCHIC  EQUS "$ff, $ee, $ff"
+DEF BTDVS_HP_ICE      EQUS "$ff, $fe, $ff"
+DEF BTDVS_HP_DRAGON   EQUS "$ff, $ef, $ff"
+DEF BTDVS_HP_DARK     EQUS "$fe, $ff, $ff"
 endc
 
 ; battle classes
@@ -194,7 +194,7 @@ endc
 	const BATTLE_VARS_LAST_MOVE_OPP
 
 ; status
-SLP EQU %111 ; max 7 turns
+DEF SLP EQU %111 ; max 7 turns
 	const_def 3
 	const PSN ; 3
 	const BRN ; 4
@@ -202,7 +202,7 @@ SLP EQU %111 ; max 7 turns
 	const PAR ; 6
 	const TOX ; 7
 
-ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | (1 << TOX) | SLP
+DEF ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | (1 << TOX) | SLP
 
 ; substatus
 	enum_start 7, -1
@@ -246,12 +246,12 @@ ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | (1 << TOX) | 
 	enum SUBSTATUS_CURLED ; formely in its own substatus
 
 ; environmental, things that stack are bitmasks
-SCREENS_REFLECT      EQU 0 ; %00000001
-SCREENS_LIGHT_SCREEN EQU 1 ; %00000010
-SCREENS_SAFEGUARD    EQU 2 ; %00000100
-SCREENS_WISH         EQU 3 ; %00001000
-SCREENS_SPIKES       EQU     %00110000
-SCREENS_TOXIC_SPIKES EQU     %11000000
+DEF SCREENS_REFLECT      EQU 0 ; %00000001
+DEF SCREENS_LIGHT_SCREEN EQU 1 ; %00000010
+DEF SCREENS_SAFEGUARD    EQU 2 ; %00000100
+DEF SCREENS_WISH         EQU 3 ; %00001000
+DEF SCREENS_SPIKES       EQU     %00110000
+DEF SCREENS_TOXIC_SPIKES EQU     %11000000
 
 ; weather
 	const_def

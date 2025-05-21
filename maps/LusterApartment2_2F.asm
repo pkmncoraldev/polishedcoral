@@ -130,7 +130,6 @@ LusterApartment2_2FJournal:
 	end
 	
 LoadCheckMarkAsm:
-	farcall MakeCheckMarkGreen
 	farjp _LoadCheckMark
 	
 LusterApartment2_2FJournalText1:
@@ -144,11 +143,11 @@ LusterApartment2_2FJournalText2:
 	
 	para "…"
 	
-	para "♥MINA's JOURNAL♥"
-	line "!!NOT!! a diary!"
+	para "★MINA's JOURNAL★"
+	line "!NOT! a diary!"
 	
-	para "★List of spots to"
-	line "visit in ONWA★"
+	para "♥List of spots to"
+	line "visit in ONWA♥"
 	
 	para "✓A pretty pink"
 	line "grove."
@@ -264,5 +263,10 @@ LusterApartment2_2FShelfText:
 LusterApartment2_2FFlowersText:
 	text "Some pretty"
 	line "flowers."
+	
+	para "Almost as pretty"
+	line "as MOM's back home."
+	
+	para "Almost…"
 	done
 	

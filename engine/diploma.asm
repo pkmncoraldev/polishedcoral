@@ -122,7 +122,7 @@ _VBAScreen:
 	rst CopyBytes
 	
 	ld a, 1
-	ld [rVBK], a
+	ldh [rVBK], a
 	; Apply logo gradient:
 ; line 0
 	hlbgcoord 0, 0
@@ -155,7 +155,7 @@ _VBAScreen:
 	ld a, 5
 	call ByteFill
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 	
 	call EnableLCD
 	ld hl, VBAScreenPalettes
@@ -258,7 +258,7 @@ _DeveloperMessage:
 	call FarCopyWRAM
 	
 	ld a, 1
-	ld [rVBK], a
+	ldh [rVBK], a
 	
 	ld hl, DeveloperMessageAttrmap
 	decoord 0, 0, wAttrMap
@@ -266,7 +266,7 @@ _DeveloperMessage:
 	rst CopyBytes
 	
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 	
 	call ApplyAttrAndTilemapInVBlank
 	

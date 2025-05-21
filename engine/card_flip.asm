@@ -1,6 +1,6 @@
-CARDFLIP_LIGHT_OFF EQU $f3
-CARDFLIP_LIGHT_ON  EQU $f4
-CARDFLIP_DECK_SIZE EQU 4 * 6
+DEF CARDFLIP_LIGHT_OFF EQU $f3
+DEF CARDFLIP_LIGHT_ON  EQU $f4
+DEF CARDFLIP_DECK_SIZE EQU 4 * 6
 
 _CardFlip: ; e00ee (38:40ee)
 	ld hl, wOptions1
@@ -153,10 +153,10 @@ _CardFlip: ; e00ee (38:40ee)
 	ld de, SFX_TRANSACTION
 	call PlaySFX
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call CardFlip_PrintCoinBalance
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call WaitSFX
 	jp .Increment
 ; e0212
@@ -169,7 +169,7 @@ _CardFlip: ; e00ee (38:40ee)
 
 .ChooseACard: ; e0217
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 0, 0
 	lb bc, 12, 9
 	call CardFlip_FillGreenBox
@@ -179,13 +179,13 @@ _CardFlip: ; e00ee (38:40ee)
 	rst AddNTimes
 	ld [hl], CARDFLIP_LIGHT_ON
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld c, 20
 	call DelayFrames
 	hlcoord 2, 0
 	call PlaceCardFaceDown
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld c, 20
 	call DelayFrames
 	hlcoord 2, 6
@@ -197,7 +197,7 @@ _CardFlip: ; e00ee (38:40ee)
 	ld [wCardFlipWhichCard], a
 .loop
 	call JoyTextDelay
-	ld a, [hJoyLast]
+	ldh a, [hJoyLast]
 	and A_BUTTON
 	jr nz, .next
 	ld de, SFX_KINESIS
@@ -250,7 +250,7 @@ _CardFlip: ; e00ee (38:40ee)
 	call CardFlip_UpdateCoinBalanceDisplay
 .betloop
 	call JoyTextDelay
-	ld a, [hJoyLast]
+	ldh a, [hJoyLast]
 	and A_BUTTON
 	jr nz, .betdone
 	call ChooseCard_HandleJoypad
@@ -270,7 +270,7 @@ _CardFlip: ; e00ee (38:40ee)
 
 .CheckTheCard: ; e02da
 	xor a
-	ld [hVBlankCounter], a
+	ldh [hVBlankCounter], a
 	call CardFlip_UpdateCursorOAM
 	call WaitSFX
 	ld de, SFX_CHOOSE_A_CARD
@@ -319,7 +319,7 @@ _CardFlip: ; e00ee (38:40ee)
 	jr c, .KeepTheCurrentDeck
 	call CardFlip_InitTilemap
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call CardFlip_ShuffleDeck
 	ld hl, .CardsShuffledText
 	call PrintText
@@ -408,7 +408,7 @@ GetCoordsOfChosenCard: ; e03ac
 
 PlaceCardFaceDown: ; e03c1
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld de, .FaceDownCardTilemap
 	lb bc, 6, 5
 	jp CardFlip_CopyToBox
@@ -424,7 +424,7 @@ PlaceCardFaceDown: ; e03c1
 
 PlaceCardMoogooBorderSingle:
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld de, .Tilemap
 	lb bc, 5, 4
 	jp CardFlip_CopyToBox
@@ -438,7 +438,7 @@ PlaceCardMoogooBorderSingle:
 	
 PlaceCardMoogooBorderLeft:
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld de, .Tilemap
 	lb bc, 5, 4
 	jp CardFlip_CopyToBox
@@ -452,7 +452,7 @@ PlaceCardMoogooBorderLeft:
 	
 PlaceCardMoogooBorderMiddle:
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld de, .Tilemap
 	lb bc, 5, 4
 	jp CardFlip_CopyToBox
@@ -466,7 +466,7 @@ PlaceCardMoogooBorderMiddle:
 	
 PlaceCardMoogooBorderRight:
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld de, .Tilemap
 	lb bc, 5, 4
 	jp CardFlip_CopyToBox
@@ -490,7 +490,7 @@ PlaceCardMoogooSuit:
 	
 PlaceCardMoogoo1: ; e03c1
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld de, .Tilemap
 	lb bc, 2, 2
 	jp CardFlip_CopyToBox
@@ -501,7 +501,7 @@ PlaceCardMoogoo1: ; e03c1
 	
 PlaceCardMoogoo2: ; e03c1
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld de, .Tilemap
 	lb bc, 2, 2
 	jp CardFlip_CopyToBox
@@ -512,7 +512,7 @@ PlaceCardMoogoo2: ; e03c1
 	
 PlaceCardMoogoo3: ; e03c1
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld de, .Tilemap
 	lb bc, 2, 2
 	jp CardFlip_CopyToBox
@@ -523,7 +523,7 @@ PlaceCardMoogoo3: ; e03c1
 	
 PlaceCardMoogoo4: ; e03c1
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld de, .Tilemap
 	lb bc, 2, 2
 	jp CardFlip_CopyToBox
@@ -534,7 +534,7 @@ PlaceCardMoogoo4: ; e03c1
 	
 PlaceCardMoogoo5: ; e03c1
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld de, .Tilemap
 	lb bc, 2, 2
 	jp CardFlip_CopyToBox
@@ -545,7 +545,7 @@ PlaceCardMoogoo5: ; e03c1
 
 CardFlip_DisplayCardFaceUp: ; e03ec
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	push hl
 	push hl
 	; Flip the card face up.
@@ -648,7 +648,7 @@ CardFlip_PrintCoinBalance: ; e049c
 
 CardFlip_InitTilemap: ; e04c1 (38:44c1)
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 0, 0
 	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
 	ld a, $07
@@ -664,7 +664,7 @@ CardFlip_InitTilemap: ; e04c1 (38:44c1)
 
 MoogooMankey_InitTilemap:
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld hl, MoogooMankeyTilemap
 	decoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
@@ -735,7 +735,7 @@ CardFlip_CopyOAM: ; e0509
 
 CardFlip_BlankDiscardedCardSlot: ; e0534
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld a, [wCardFlipFaceUpCard]
 	ld e, a
 	ld d, 0
@@ -1495,7 +1495,7 @@ CardFlip_UpdateCursorOAM: ; e0960
 ; e0981
 
 .OAMData: ; e0981
-cardflip_cursor: MACRO
+MACRO cardflip_cursor
 if _NARG >= 5
 	dbpixel \1, \2, \3, \4
 	dw \5
@@ -1737,16 +1737,16 @@ CardFlip_InitAttrPals: ; e0c37 (38:4c37)
 	ld a, $1
 	call CardFlip_FillBox
 
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld hl, .palettes
 	ld de, wUnknBGPals
 	ld bc, 9 palettes
 	rst CopyBytes
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 ; e0c93 (38:4c93)
 
@@ -1897,16 +1897,16 @@ MoogooMankey_InitAttrPals:
 	ld a, 6
 	call CardFlip_FillBox
 	
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld hl, .palettes
 	ld de, wUnknBGPals
 	ld bc, 9 palettes
 	rst CopyBytes
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 ; e0c93 (38:4c93)
 
@@ -2048,7 +2048,7 @@ _MoogooMankey:
 	ld [wCardFlipCursorX], a
 	
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 ;	ld c, 20
 ;	call DelayFrames
 ;	hlcoord 0, 0
@@ -2168,7 +2168,7 @@ _MoogooMankey:
 .betskiploop
 	call PlaceString
 	call JoyTextDelay
-	ld a, [hJoyLast]
+	ldh a, [hJoyLast]
 	and A_BUTTON
 	jr z, .betskiploop
 	ld de, SFX_READ_TEXT
@@ -2217,7 +2217,7 @@ _MoogooMankey:
 .betloop2
 	call PlaceString
 	call JoyTextDelay
-	ld a, [hJoyLast]
+	ldh a, [hJoyLast]
 	and A_BUTTON
 	jr nz, .PlaceBetCont
 	jr .betloop2
@@ -2231,7 +2231,7 @@ _MoogooMankey:
 	call DelayFrames
 .betloop
 	call JoyTextDelay
-	ld a, [hJoyLast]
+	ldh a, [hJoyLast]
 	and A_BUTTON
 	jr nz, .dobet
 	call ChooseSurvivor_HandleJoypad
@@ -2353,7 +2353,7 @@ endr
 	jr nz, .loop
 	
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld c, 20
 	call DelayFrames
 	ld de, SFX_GRASS_RUSTLE
@@ -2438,7 +2438,7 @@ endr
 	call DelayFrames
 .playcardloop
 	call JoyTextDelay
-	ld a, [hJoyLast]
+	ldh a, [hJoyLast]
 	and A_BUTTON
 	jr nz, .playcard_done
 	call ChooseSurvivor_HandleJoypad
@@ -3160,7 +3160,7 @@ PlaceChip:
 .return
 	lb bc, 1, 1
 	ld a, $7d
-	ld [hGraphicStartTile], a
+	ldh [hGraphicStartTile], a
 	predef PlaceGraphic
 	ret
 .player

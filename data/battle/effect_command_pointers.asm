@@ -1,12 +1,12 @@
-command: macro
+macro command
 	enum \1_command
-\1 equs "db \1_command"
+def \1 equs "db \1_command"
 	dw BattleCommand_\1
 endm
 
-commandonly: macro
+macro commandonly
 	enum \1_command
-\1 equs "db \1_command"
+def \1 equs "db \1_command"
 endm
 
 	enum_start 1

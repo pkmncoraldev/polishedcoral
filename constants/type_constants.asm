@@ -1,5 +1,5 @@
 	const_def
-MOVE_TYPES EQU const_value
+DEF MOVE_TYPES EQU const_value
 	; Type order matters for Hidden Power
 	const NORMAL    ; 0
 	const FIGHTING  ; 1
@@ -21,12 +21,12 @@ MOVE_TYPES EQU const_value
 	const FAIRY     ; 17
 	const UNKNOWN_T ; 18
 
-TYPES_END EQU const_value
+DEF TYPES_END EQU const_value
 
 	const_def
-MOVE_CATEGORIES EQU const_value
+DEF MOVE_CATEGORIES EQU const_value
 	const PHYSICAL
 	const SPECIAL
 	const STATUS
 
-CATEGORIES_END EQU const_value
+DEF CATEGORIES_END EQU const_value

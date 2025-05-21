@@ -24,15 +24,15 @@ AskSerial:: ; 2063
 
 ; handshake
 	ld a, $88
-	ld [rSB], a
+	ldh [rSB], a
 
 ; switch to internal clock
 	ld a, $1
-	ld [rSC], a
+	ldh [rSC], a
 
 ; start transfer
 	ld a, START_TRANSFER_INTERNAL_CLOCK
-	ld [rSC], a
+	ldh [rSC], a
 
 	ret
 ; 208a

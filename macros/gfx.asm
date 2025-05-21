@@ -1,7 +1,7 @@
-RGB: MACRO
+MACRO RGB
 rept _NARG / 3
 if DEF(NOIR)
-x = (299 * \1 + 587 * \2 + 114 * \3) / 1000
+DEF x = (299 * \1 + 587 * \2 + 114 * \3) / 1000
 	dw palred x + palgreen x + palblue x
 else
 	dw palred (\1) + palgreen (\2) + palblue (\3)
@@ -12,12 +12,12 @@ endc
 endr
 ENDM
 
-palred   EQUS "(1 << 0) *"
-palgreen EQUS "(1 << 5) *"
-palblue  EQUS "(1 << 10) *"
+DEF palred   EQUS "(1 << 0) *"
+DEF palgreen EQUS "(1 << 5) *"
+DEF palblue  EQUS "(1 << 10) *"
 
-palettes EQUS "* 8"
-palette  EQUS "+ 8 *"
+DEF palettes EQUS "* 8"
+DEF palette  EQUS "+ 8 *"
 
-tiles EQUS "* $10"
-tile  EQUS "+ $10 *"
+DEF tiles EQUS "* $10"
+DEF tile  EQUS "+ $10 *"

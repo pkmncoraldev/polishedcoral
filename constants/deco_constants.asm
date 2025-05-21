@@ -1,4 +1,4 @@
-const_value = 1
+DEF const_value = 1
 	const DECO_PLANT
 	const DECO_BED
 	const DECO_CARPET
@@ -6,7 +6,7 @@ const_value = 1
 	const DECO_DOLL
 	const DECO_BIGDOLL
 
-const_value = 1
+DEF const_value = 1
 	const PUT_IT_AWAY
 	const MAGNAPLANT
 	const TROPICPLANT
@@ -38,7 +38,7 @@ const_value = 1
 	const MINAS_PAINTING
 	const MUSEUM_PHOTO
 
-const_value = 1
+DEF const_value = 1
 	const SET_UP_BED
 	const PUT_AWAY_BED
 	const SET_UP_CARPET
@@ -56,13 +56,13 @@ const_value = 1
 	const SET_UP_ORNAMENT
 	const PUT_AWAY_ORNAMENT
 
-deco: MACRO
+MACRO deco
 	const DECO_\1
 	enum DECOFLAG_\1
 endm
 
-const_value = 1
-__enum__ = 0
+DEF const_value = 1
+DEF __enum__ = 0
 	const BEDS
 	deco  FEATHERY_BED
 	deco  PINK_BED

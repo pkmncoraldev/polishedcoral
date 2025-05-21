@@ -50,7 +50,7 @@ INCLUDE "home/restore_music.asm"
 DisableSpriteUpdates:: ; 0x2ed3
 ; disables overworld sprite updating?
 	xor a
-	ld [hMapAnims], a
+	ldh [hMapAnims], a
 	ld [wSpriteUpdatesEnabled], a
 	ld a, [wVramState]
 	res 0, a
@@ -61,7 +61,7 @@ DisableSpriteUpdates:: ; 0x2ed3
 EnableSpriteUpdates:: ; 2ee4
 	ld a, $1
 	ld [wSpriteUpdatesEnabled], a
-	ld [hMapAnims], a
+	ldh [hMapAnims], a
 	ld a, [wVramState]
 	set 0, a
 	ld [wVramState], a
@@ -130,10 +130,10 @@ LoadTileMapToTempTileMap:: ; 309d
 
 Call_LoadTempTileMapToTileMap:: ; 30b4
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call LoadTempTileMapToTileMap
 	ld a, 1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ret
 ; 30bf
 
@@ -190,7 +190,7 @@ PrintLetterDelay:: ; 313d
 	and %11
 	ret z
 	ld a, $1
-	ld [hBGMapHalf], a
+	ldh [hBGMapHalf], a
 .forceFastScroll
 	push hl
 	push de
@@ -214,7 +214,7 @@ PrintLetterDelay:: ; 313d
 	call DelayFrame
 	call GetJoypad
 ; Finish execution if A or B is pressed
-	ld a, [hJoyDown]
+	ldh a, [hJoyDown]
 	and A_BUTTON | B_BUTTON
 	jr z, .textDelayLoop
 .done
@@ -229,7 +229,7 @@ PrintNum:: ; 3198
 
 QueueScript:: ; 31cd
 ; Push pointer hl in the current bank to wQueuedScriptBank.
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 
 FarQueueScript:: ; 31cf
 ; Push pointer a:hl to wQueuedScriptBank.
@@ -317,7 +317,7 @@ endc
 
 ; Request palette update
 	ld a, 1
-	ld [hCGBPalUpdate], a
+	ldh [hCGBPalUpdate], a
 	ret
 ; 333e
 
@@ -399,7 +399,7 @@ NamesPointers:: ; 33ab
 GetName:: ; 33c3
 ; Return name wCurSpecies from name list wNamedObjectTypeBuffer in wStringBuffer1.
 
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -632,7 +632,7 @@ GetTapeName:: ; 3468
 
 ScrollingMenu:: ; 350c
 	call CopyMenuData2
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 
 	ld a, BANK(_ScrollingMenu)
@@ -687,18 +687,18 @@ SetDefaultBGPAndOBP::
 JoyTextDelay_ForcehJoyDown:: ; 354b joypad
 	call DelayFrame
 
-	ld a, [hInMenu]
+	ldh a, [hInMenu]
 	push af
 	ld a, $1
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	call JoyTextDelay
 	pop af
-	ld [hInMenu], a
+	ldh [hInMenu], a
 
-	ld a, [hJoyLast]
+	ldh a, [hJoyLast]
 	and D_RIGHT + D_LEFT + D_UP + D_DOWN
 	ld c, a
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	and A_BUTTON + B_BUTTON + SELECT + START
 	or c
 	ld c, a
@@ -706,7 +706,7 @@ JoyTextDelay_ForcehJoyDown:: ; 354b joypad
 ; 3567
 
 HandleStoneQueue:: ; 3567
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 
 	call SwitchToMapScriptHeaderBank
@@ -847,7 +847,7 @@ HandleStoneQueue:: ; 3567
 
 CheckTrainerBattle2:: ; 3600
 
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 
 	call SwitchToMapScriptHeaderBank
@@ -946,7 +946,7 @@ CheckTrainerBattle:: ; 360d
 .startbattle
 	pop de
 	pop af
-	ld [hLastTalked], a
+	ldh [hLastTalked], a
 	ld a, b
 	ld [wEngineBuffer2], a
 	ld a, c
@@ -964,7 +964,7 @@ LoadTrainer_continue:: ; 367e
 	ld a, [wMapScriptHeaderBank]
 	ld [wEngineBuffer1], a
 
-	ld a, [hLastTalked]
+	ldh a, [hLastTalked]
 	call GetMapObject
 
 	ld hl, MAPOBJECT_COLOR
@@ -1048,7 +1048,7 @@ _PrepMonFrontpic:: ; 378b
 	predef GetFrontpic
 	pop hl
 	xor a
-	ld [hGraphicStartTile], a
+	ldh [hGraphicStartTile], a
 	lb bc, 7, 7
 	predef PlaceGraphic
 	xor a
@@ -1245,7 +1245,7 @@ HomePopHlDeBc:
 GetSpeciesAndFormIndex::
 ; input: c = species, b = form
 ; output: bc = extended index
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	ld a, BANK(VariantSpeciesAndFormTable)
 	rst Bankswitch
@@ -1421,22 +1421,22 @@ FloorBC::
 
 PushLYOverrides:: ; 3b0c
 
-	ld a, [hLCDCPointer]
+	ldh a, [hLCDCPointer]
 	and a
 	ret z
 
 	ld a, wLYOverridesBackup % $100
-	ld [hRequestedVTileSource], a
+	ldh [hRequestedVTileSource], a
 	ld a, wLYOverridesBackup / $100
-	ld [hRequestedVTileSource + 1], a
+	ldh [hRequestedVTileSource + 1], a
 
 	ld a, wLYOverrides % $100
-	ld [hRequestedVTileDest], a
+	ldh [hRequestedVTileDest], a
 	ld a, wLYOverrides / $100
-	ld [hRequestedVTileDest + 1], a
+	ldh [hRequestedVTileDest + 1], a
 
 	ld a, (wLYOverridesEnd - wLYOverrides) / 16
-	ld [hLYOverrideStackCopyAmount], a
+	ldh [hLYOverrideStackCopyAmount], a
 	ret
 ; 3b2a
 
@@ -1445,7 +1445,7 @@ INCLUDE "home/audio.asm"
 INCLUDE "home/ded.asm"
 
 CheckExtendedSpace::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	ld a, BANK(ExtendedSpaceString)
 	rst Bankswitch

@@ -42,7 +42,7 @@ RestoreMusic::
 	and a
 	jr nz, .copy
 	ld a, $1
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	call PlayMapMusic
 	jr HomeRestoreMusic_PopAFBCDEHL
 

@@ -223,7 +223,7 @@
 	const SPRITE_TOGEPI
 	
 	const_def $ed
-SPRITE_POKEMON EQU const_value
+DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_MON_ICON ; ed
 	const SPRITE_MON_DOLL_1 ; ee
 	const SPRITE_MON_DOLL_2 ; ef
@@ -231,7 +231,7 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_DAYCARE_MON_2 ; f1
 	const SPRITE_GROTTO_MON ; f2
 
-SPRITE_VARS EQU const_value
+DEF SPRITE_VARS EQU const_value
 	const SPRITE_DISGUISEMAN ; f3
 	const SPRITE_PLAYER_CUTSCENE ; f4
 	const SPRITE_BATHER_VARIABLE_1 ; f5
@@ -246,7 +246,7 @@ SPRITE_VARS EQU const_value
 	const SPRITE_BIG_DOLL
 	const SPRITE_MINA_PAINTING
 	
-const_value = 1
+DEF const_value = 1
 	const PLAYER_SPRITE_CORY
 	const PLAYER_SPRITE_CORY_BIKE
 	const PLAYER_SPRITE_CORY_SURF

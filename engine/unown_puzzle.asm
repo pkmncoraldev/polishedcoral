@@ -1,17 +1,17 @@
-puzcoord EQUS "* 6 +"
-PUZZLE_BORDER EQU $ee
-PUZZLE_VOID   EQU $ef
+DEF puzcoord EQUS "* 6 +"
+DEF PUZZLE_BORDER EQU $ee
+DEF PUZZLE_VOID   EQU $ef
 
 UnownPuzzle: ; e1190
-	ld a, [hInMenu]
+	ldh a, [hInMenu]
 	push af
 	ld a, $1
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	call ClearBGPalettes
 	call ClearTileMap
 	call ClearSprites
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call DisableLCD
 	ld hl, wMisc
 	ld bc, wMiscEnd - wMisc
@@ -37,15 +37,15 @@ UnownPuzzle: ; e1190
 	call UnownPuzzle_UpdateTilemap
 	call PlaceStartCancelBox
 	xor a
-	ld [hSCY], a
-	ld [hSCX], a
-	ld [rWY], a
+	ldh [hSCY], a
+	ldh [hSCX], a
+	ldh [rWY], a
 	ld [wJumptableIndex], a
 	ld [wHoldingUnownPuzzlePiece], a
 	ld [wUnownPuzzleCursorPosition], a
 	ld [wUnownPuzzleHeldPiece], a
 	ld a, %10010011
-	ld [rLCDC], a
+	ldh [rLCDC], a
 	call ApplyTilemapInVBlank
 	ld b, CGB_UNOWN_PUZZLE
 	call GetCGBLayout
@@ -65,7 +65,7 @@ UnownPuzzle: ; e1190
 	ld a, [wHoldingUnownPuzzlePiece]
 	and a
 	jr nz, .holding_piece
-	ld a, [hVBlankCounter]
+	ldh a, [hVBlankCounter]
 	and $10
 	jr z, .clear
 .holding_piece
@@ -80,12 +80,12 @@ UnownPuzzle: ; e1190
 
 .quit
 	pop af
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	call ClearBGPalettes
 	call ClearTileMap
 	call ClearSprites
 	ld a, %11100011
-	ld [rLCDC], a
+	ldh [rLCDC], a
 	ret
 ; e124e
 
@@ -112,7 +112,7 @@ InitUnownPuzzlePiecePositions: ; e124e
 ; e126d
 
 .PuzzlePieceInitialPositions: ; e126d
-initpuzcoord: macro
+macro initpuzcoord
 rept _NARG / 2
 	db \1 puzcoord \2
 	shift
@@ -191,10 +191,10 @@ UnownPuzzleJumptable: ; e12ca
 ; e12db
 
 .Function: ; e12db
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	and START
 	jp nz, UnownPuzzle_Quit
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	and A_BUTTON
 	jp nz, UnownPuzzle_A
 	ld hl, hJoyLast
@@ -595,7 +595,7 @@ RedrawUnownPuzzlePieces: ; e14d9
 
 UnownPuzzleCoordData: ; e1559
 
-puzzle_coords: macro
+macro puzzle_coords
 	dbpixel \1, \2, \3, \4
 	dwcoord \5, \6
 	db \7
@@ -751,10 +751,10 @@ ConvertLoadedPuzzlePieces: ; e1631
 
 .EnlargedTiles: ; e16b7
 
-x = 0
+DEF x = 0
 rept 16
 	db ((x & %1000) * %11000) + ((x & %0100) * %1100) + ((x & %0010) * %110) + ((x & %0001) * %11)
-x = x + 1
+DEF x = x + 1
 endr
 ; e16c7
 

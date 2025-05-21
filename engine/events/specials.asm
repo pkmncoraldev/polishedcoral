@@ -460,7 +460,7 @@ BillBoxSwitch::
 
 Special_StopRunning:
 	xor a
-	ld [hJoyDown], a
+	ldh [hJoyDown], a
 	ld a, [wPlayerState]
 	cp PLAYER_SKATEBOARD_MOVING
 	jr nz, .not_skating
@@ -479,7 +479,7 @@ Special_StopRunning:
 	
 Special_ForceSkateboard:
 	xor a
-	ld [hJoyDown], a
+	ldh [hJoyDown], a
 	ld a, 1
 	ld [wOnSkateboard], a
 	ld a, PLAYER_SKATEBOARD
@@ -511,11 +511,11 @@ Special_UpdatePalsInstant:
 	ld hl, wUnknBGPals palette 7
 
 ; save wram bank
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	ld b, a
 ; wram bank 5
 	ld a, 5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 ; push palette
 	ld c, 4 ; NUM_PAL_COLORS
@@ -530,7 +530,7 @@ Special_UpdatePalsInstant:
 
 ; restore wram bank
 	ld a, b
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 
 ; update cgb pals
@@ -541,11 +541,11 @@ Special_UpdatePalsInstant:
 	ld hl, wUnknBGPals palette 7 + 1 palettes - 1 ; last byte in UnknBGPals
 
 ; save wram bank
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	ld d, a
 ; wram bank 5
 	ld a, 5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 ; pop palette
 	ld e, 4 ; NUM_PAL_COLORS
@@ -560,7 +560,7 @@ Special_UpdatePalsInstant:
 
 ; restore wram bank
 	ld a, d
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	ld a, [wTileset]
 	cp TILESET_PLAYER_HOUSE

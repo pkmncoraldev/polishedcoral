@@ -1,23 +1,21 @@
-add_tm: MACRO
+MACRO add_tm
 if !DEF(TM01)
-TM01 = const_value
+DEF TM01 = const_value
 	enum_start 1
 endc
-	define _\@_1, "TM_\1"
-	const _\@_1
+	const TM_\1
 	enum \1_TMNUM
 ENDM
 
-add_hm: MACRO
+MACRO add_hm
 if !DEF(HM01)
-HM01 = const_value
+DEF HM01 = const_value
 endc
-	define _\@_1, "HM_\1"
-	const _\@_1
+	const HM_\1
 	enum \1_TMNUM
 ENDM
 
-add_mt: MACRO
+MACRO add_mt
 	enum \1_TMNUM
 ENDM
 
@@ -101,7 +99,7 @@ ENDM
 	add_tm THUNDERPUNCH		; $4b
 	add_tm FIRE_PUNCH		; $4c
 	add_tm ICE_PUNCH		; $4d
-NUM_TMS = const_value - TM01
+DEF NUM_TMS = const_value - TM01
 
 	add_hm CUT			; $4e
 	add_hm FLY			; $4f
@@ -112,7 +110,7 @@ NUM_TMS = const_value - TM01
 	add_hm WATERFALL	; $54
 	add_hm ROCK_CLIMB	; $55
 	
-NUM_HMS = const_value - HM01
+DEF NUM_HMS = const_value - HM01
 
 	add_mt SLOT_1	; $56
 	add_mt SLOT_2	; $57
@@ -141,4 +139,4 @@ NUM_HMS = const_value - HM01
 	add_mt SLOT_25	; $6e
 	add_mt SLOT_26	; $6f
 
-NUM_TMHMS EQU __enum__ +- 1
+DEF NUM_TMHMS EQU __enum__ +- 1

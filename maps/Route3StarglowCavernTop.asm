@@ -49,6 +49,7 @@ Route3StarglowCavernTopPatches:
 	callasm PatchesSwapPokemonAsm
 	callasm PatchesTurnOnPatchesModeAsm
 	setevent EVENT_PATCHES_MODE
+	domaptrigger STARGLOW_CAVERN_DEPTHS, $1
 	clearflag ENGINE_TRAINER_CARD
 	clearflag ENGINE_POKEDEX
 	wait 10

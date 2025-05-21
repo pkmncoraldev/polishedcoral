@@ -7,6 +7,7 @@ EvolvePokemon:
 	ld b, SET_FLAG
 	call EvoFlagAction
 EvolveAfterBattle:
+	call Load1bppFont
 	xor a
 	ld [wMonTriedToEvolve], a
 	dec a
@@ -361,13 +362,13 @@ endr
 	call DelayFrames
 
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 0, 0
 	lb bc, 12, 20
 	call ClearBox
 
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call ClearSprites
 
 	farcall EvolutionAnimation
@@ -868,7 +869,7 @@ ClearTileMapEvo:
 	call ByteFill
 
 	; Update the BG Map.
-	ld a, [rLCDC]
+	ldh a, [rLCDC]
 	bit 7, a
 	ret z
 	jp ApplyTilemapInVBlank

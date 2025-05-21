@@ -299,7 +299,7 @@ _CGB_Radio:
 	call ApplyAttrMap
 	call ApplyPals
 	ld a, $1
-	ld [hCGBPalUpdate], a
+	ldh [hCGBPalUpdate], a
 	ret
 
 _CGB_BankCard:
@@ -317,7 +317,7 @@ _CGB_BankCard:
 	
 	call ApplyPals
 	ld a, $1
-	ld [hCGBPalUpdate], a
+	ldh [hCGBPalUpdate], a
 	ret
 
 _CGB_PokegearPals: ; 8eb9
@@ -393,7 +393,7 @@ _CGB_PokegearPals: ; 8eb9
 ;	call FarCopyWRAM
 	call ApplyPals
 	ld a, $1
-	ld [hCGBPalUpdate], a
+	ldh [hCGBPalUpdate], a
 	ret
 ; 8edb
 
@@ -424,7 +424,7 @@ _CGB_PokedexAreaPals:
 
 	call ApplyPals
 	ld a, $1
-	ld [hCGBPalUpdate], a
+	ldh [hCGBPalUpdate], a
 	ret
 
 .InvertedGrayPalette:
@@ -1385,10 +1385,10 @@ _CGB_UnownPuzzle: ; 925e
 	ld hl, .UnownPuzzlePalette
 	call LoadHLPaletteIntoDE
 
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld hl, wUnknOBPals
 if DEF(NOIR)
 	ld a, (palred 9 + palgreen 9 + palblue 9) % $100
@@ -1408,7 +1408,7 @@ else
 	ld [hl], a
 endc
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	call WipeAttrMap
 	jp ApplyAttrMap
@@ -1597,7 +1597,7 @@ _CGB_FinishLayout:
 	call ApplyAttrMap
 	call ApplyPals
 	ld a, $1
-	ld [hCGBPalUpdate], a
+	ldh [hCGBPalUpdate], a
 	ret
 
 _CGB_PippiScreen: ; 91ad

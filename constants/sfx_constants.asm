@@ -223,4 +223,4 @@
 	const SFX_TEMPLE_RUMBLE	     		  ; d9
 	const SFX_GRIND_2					  ; da
 	
-NUM_SFX EQU const_value - 1
+DEF NUM_SFX EQU const_value - 1

@@ -25,5 +25,5 @@
 	const SASSY
 	const CAREFUL
 	const QUIRKY
-NUM_NATURES EQU const_value
-NO_NATURE   EQU const_value
+DEF NUM_NATURES EQU const_value
+DEF NO_NATURE   EQU const_value

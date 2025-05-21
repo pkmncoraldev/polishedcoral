@@ -52,7 +52,7 @@ ApplyHPBarPals:
 	ld a, $5
 	call FarCopyWRAM
 	ld a, $1
-	ld [hCGBPalUpdate], a
+	ldh [hCGBPalUpdate], a
 	ret
 
 .PartyMenu:
@@ -251,10 +251,10 @@ LoadStatsScreenPals:
 	ld b, 0
 	add hl, bc
 	add hl, bc
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld a, [hli]
 	ld [wUnknBGPals palette 0], a
 	ld [wUnknBGPals palette 2], a
@@ -262,7 +262,7 @@ LoadStatsScreenPals:
 	ld [wUnknBGPals palette 0 + 1], a
 	ld [wUnknBGPals palette 2 + 1], a
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	call ApplyPals
 	ld a, $1
 	ret
@@ -284,10 +284,10 @@ LoadMailPalettes:
 	jp ApplyAttrMap
 
 LoadHLPaletteIntoDE:
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld c, $8
 .loop
 	ld a, [hli]
@@ -296,7 +296,7 @@ LoadHLPaletteIntoDE:
 	dec c
 	jr nz, .loop
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 
 LoadOnePalette:
@@ -320,10 +320,10 @@ LoadPalettes:
 	ret
 
 LoadPalette_White_Col1_Col2_Black:
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 if !DEF(MONOCHROME)
 	ld a, (palred 31 + palgreen 31 + palblue 31) % $100
@@ -365,7 +365,7 @@ else
 endc
 
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 
 FillBoxCGB:
@@ -390,10 +390,10 @@ ResetBGPals:
 	push de
 	push hl
 
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	ld hl, wUnknBGPals
 	ld c, 8
@@ -412,7 +412,7 @@ ResetBGPals:
 	jr nz, .loop
 
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	pop hl
 	pop de
@@ -426,10 +426,10 @@ Reset7BGPals:
 	push de
 	push hl
 
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	ld hl, wUnknBGPals
 	ld c, 7
@@ -448,7 +448,7 @@ Reset7BGPals:
 	jr nz, .loop
 
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	pop hl
 	pop de
@@ -470,14 +470,14 @@ ApplyPals:
 	jp FarCopyWRAM
 
 ApplyAttrMap:
-	ld a, [rLCDC]
+	ldh a, [rLCDC]
 	bit 7, a
 	jr nz, ApplyAttrMapVBank0
 	hlcoord 0, 0, wAttrMap
 	debgcoord 0, 0
 	ld b, SCREEN_HEIGHT
 	ld a, 1
-	ld [rVBK], a
+	ldh [rVBK], a
 .row
 	ld c, SCREEN_WIDTH
 .col
@@ -495,17 +495,17 @@ ApplyAttrMap:
 	dec b
 	jr nz, .row
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 	ret
 
 ApplyAttrMapVBank0::
-	ld a, [hBGMapMode]
+	ldh a, [hBGMapMode]
 	push af
 	ld a, 2
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call Delay2
 	pop af
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ret
 
 ApplyPartyMenuHPPals: ; 96f3
@@ -748,57 +748,57 @@ LoadPaintingPalette:
 
 InitCGBPals::
 	ld a, $1
-	ld [rVBK], a
+	ldh [rVBK], a
 	ld hl, VTiles0
 	ld bc, $200 tiles
 	xor a
 	call ByteFill
 	xor a
-	ld [rVBK], a
+	ldh [rVBK], a
 	ld a, $80
-	ld [rBGPI], a
+	ldh [rBGPI], a
 	ld c, 4 * 8
 .bgpals_loop
 if !DEF(MONOCHROME)
 	ld a, (palred 31 + palgreen 31 + palblue 31) % $100
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, (palred 31 + palgreen 31 + palblue 31) / $100
-	ld [rBGPD], a
+	ldh [rBGPD], a
 else
 	ld a, PAL_MONOCHROME_WHITE % $100
-	ld [rBGPD], a
+	ldh [rBGPD], a
 	ld a, PAL_MONOCHROME_WHITE / $100
-	ld [rBGPD], a
+	ldh [rBGPD], a
 endc
 	dec c
 	jr nz, .bgpals_loop
 	ld a, $80
-	ld [rOBPI], a
+	ldh [rOBPI], a
 	ld c, 4 * 8
 .obpals_loop
 if !DEF(MONOCHROME)
 	ld a, (palred 31 + palgreen 31 + palblue 31) % $100
-	ld [rOBPD], a
+	ldh [rOBPD], a
 	ld a, (palred 31 + palgreen 31 + palblue 31) / $100
-	ld [rOBPD], a
+	ldh [rOBPD], a
 else
 	ld a, PAL_MONOCHROME_WHITE % $100
-	ld [rOBPD], a
+	ldh [rOBPD], a
 	ld a, PAL_MONOCHROME_WHITE / $100
-	ld [rOBPD], a
+	ldh [rOBPD], a
 endc
 	dec c
 	jr nz, .obpals_loop
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld hl, wUnknBGPals
 	call .LoadWhitePals
 	ld hl, wBGPals
 	call .LoadWhitePals
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 
 .LoadWhitePals:
@@ -870,10 +870,10 @@ LoadMapPals::
 	ld e, l
 	ld d, h
 	; Switch to palettes WRAM bank
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld hl, wUnknBGPals
 	ld b, 7
 .outer_loop
@@ -902,7 +902,7 @@ LoadMapPals::
 	dec b
 	jr nz, .outer_loop
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 .got_pals
 	farcall LoadSpecialMapPalette
@@ -1555,7 +1555,7 @@ LoadMapPals::
 	cp MAP_ROUTE_9
 	jr z, .ranchcont
 	cp MAP_DODRIO_RANCH_RACETRACK
-	jr z, .ranchcont
+	jr z, .park
 	cp MAP_FLICKER_PASS_OUTSIDE
 	jr z, .ranchcont
 	jp .hangar
@@ -2034,7 +2034,6 @@ LightUpPlayerPal:
 	bit 0, a
 	ret z
 	ld a, [wPlayerPalette]
-	and 3
 	ld bc, 1 palettes
 	ld hl, MapObjectPals
 	call AddNTimes
@@ -2052,7 +2051,6 @@ LightUpPlayerPalTimeOfDay:
 	bit 0, a
 	ret z
 	ld a, [wPlayerPalette]
-	and 3
 	ld bc, 1 palettes
 	ld hl, MapObjectPals
 	call AddNTimes

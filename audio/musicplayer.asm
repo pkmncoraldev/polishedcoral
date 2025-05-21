@@ -4,9 +4,9 @@
 INCLUDE "constants.asm"
 
 
-MP_METER0 EQU $20
-MP_METER8 EQU $28
-MP_DUTY0 EQU $29
+DEF MP_METER0 EQU $20
+DEF MP_METER8 EQU $28
+DEF MP_DUTY0 EQU $29
 
 
 SECTION "Music Player Graphics", ROMX
@@ -23,21 +23,21 @@ INCBIN "gfx/music_player/waveforms.2bpp"
 
 SECTION "Music Player", ROMX
 
-jrbutton: macro
+macro jrbutton
 ; assumes hl == hJoyPressed
 	ld a, [hl]
 	and \1
 	jr nz, \2
 endm
 
-jpbutton: macro
+macro jpbutton
 ; assumes hl == hJoyPressed
 	ld a, [hl]
 	and \1
 	jp nz, \2
 endm
 
-jrheldbutton: macro
+macro jrheldbutton
 ; assumes hl == hJoyDown
 	ld a, [wTextDelayFrames]
 	and a
@@ -51,7 +51,7 @@ jrheldbutton: macro
 .no\@:
 endm
 
-jpheldbutton: macro
+macro jpheldbutton
 ; assumes hl == hJoyDown
 	ld a, [wTextDelayFrames]
 	and a
@@ -115,10 +115,10 @@ MusicPlayer::
 ; Load palette
 	ld hl, rIE
 	set LCD_STAT, [hl]
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wUnknBGPals)
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	ld hl, MusicPlayerPals
 	ld de, wUnknBGPals
@@ -131,7 +131,7 @@ MusicPlayer::
 	rst CopyBytes
 
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 ; Apply palettes
 	xor a
@@ -149,11 +149,11 @@ MusicPlayer::
 
 	farcall ApplyAttrMapVBank0
 	ld a, $1
-	ld [hCGBPalUpdate], a
+	ldh [hCGBPalUpdate], a
 
 	; refresh top two portions
 	xor a
-	ld [hBGMapHalf], a
+	ldh [hBGMapHalf], a
 	call DelayFrame
 
 ; Load graphics
@@ -200,10 +200,10 @@ MusicPlayer::
 	call ByteFill
 
 ; Clear wMPNotes
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wMPNotes)
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	xor a
 	ld hl, wMPNotes
@@ -211,7 +211,7 @@ MusicPlayer::
 	call ByteFill
 
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 ; fallthrough
 
 RenderMusicPlayer:
@@ -226,7 +226,7 @@ RenderMusicPlayer:
 	rst CopyBytes
 	call DelayFrame
 	xor a
-	ld [hOAMUpdate], a ; we will manually do it in LCD interrupt
+	ldh [hOAMUpdate], a ; we will manually do it in LCD interrupt
 
 	ld hl, wChannelSelectorSwitches
 	ld a, NUM_MUSIC_CHANS - 1
@@ -243,8 +243,8 @@ RenderMusicPlayer:
 
 	call DelayFrame
 	
-	ld a, [rSVBK]
-	ld [hMPBuffer], a
+	ldh a, [rSVBK]
+	ldh [hMPBuffer], a
 	
 	ld c, 5
 	farcall FadeInPalettes
@@ -269,7 +269,7 @@ _RedrawMusicPlayer:
 
 MusicPlayerLoop:
 	ld a, BANK(wMPNotes)
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	call MPUpdateUIAndGetJoypad
 	ld hl, hJoyDown
@@ -285,7 +285,7 @@ MusicPlayerLoop:
 
 	; prioritize refreshing the note display
 	ld a, 2
-	ld [hBGMapHalf], a
+	ldh [hBGMapHalf], a
 	jr MusicPlayerLoop
 
 .left:
@@ -372,10 +372,10 @@ MusicPlayerLoop:
 .b:
 ; exit music player
 	xor a
-	ld [hMPState], a
-	ld [hVBlank], a
-	ld a, [hMPBuffer]
-	ld [rSVBK], a
+	ldh [hMPState], a
+	ldh [hVBlank], a
+	ldh a, [hMPBuffer]
+	ldh [rSVBK], a
 	call ClearSprites
 	ld hl, rLCDC
 	res 2, [hl] ; 8x8 sprites
@@ -389,9 +389,9 @@ MusicPlayerLoop:
 .start:
 ; open song selector
 	xor a
-	ld [hMPState], a
-	ld a, [hMPBuffer]
-	ld [rSVBK], a
+	ldh [hMPState], a
+	ldh a, [hMPBuffer]
+	ldh [rSVBK], a
 	call SongSelector
 	jp RenderMusicPlayer
 
@@ -409,7 +409,7 @@ SongEditor:
 
 	; prioritize refreshing the note display
 	ld a, 2
-	ld [hBGMapHalf], a
+	ldh [hBGMapHalf], a
 	jr SongEditor
 
 .left:
@@ -618,7 +618,7 @@ SongEditor:
 	call DrawPitchTransposition
 	; refresh top two portions
 	xor a
-	ld [hBGMapHalf], a
+	ldh [hBGMapHalf], a
 	jp DelayFrame
 
 AdjustTempo:
@@ -630,7 +630,7 @@ AdjustTempo:
 	call DrawChannelSelector
 	; refresh top two portions
 	xor a
-	ld [hBGMapHalf], a
+	ldh [hBGMapHalf], a
 	call DelayFrame
 
 .loop:
@@ -647,7 +647,7 @@ AdjustTempo:
 
 	; prioritize refreshing the note display
 	ld a, 2
-	ld [hBGMapHalf], a
+	ldh [hBGMapHalf], a
 	jr .loop
 
 .up:
@@ -695,7 +695,7 @@ AdjustTempo:
 	call DrawTempoAdjustment
 	; refresh top two portions
 	xor a
-	ld [hBGMapHalf], a
+	ldh [hBGMapHalf], a
 	call DelayFrame
 	jp .loop
 
@@ -719,7 +719,7 @@ AdjustTempo:
 	call DrawTempoAdjustment
 	; refresh top two portions
 	xor a
-	ld [hBGMapHalf], a
+	ldh [hBGMapHalf], a
 	call DelayFrame
 	jp SongEditor
 
@@ -736,7 +736,7 @@ DrawPianoRollOverlay:
 	; if this takes too long, don't let the user see blank fields blink in
 	; disable copying the map during vblank
 	ld a, 2
-	ld [hVBlank], a
+	ldh [hVBlank], a
 
 	ld a, " "
 	hlcoord 0, 0
@@ -747,11 +747,11 @@ DrawPianoRollOverlay:
 	call DrawChannelSelector
 
 	ld a, 5
-	ld [hVBlank], a
+	ldh [hVBlank], a
 
 	; refresh top two portions
 	xor a
-	ld [hBGMapHalf], a
+	ldh [hBGMapHalf], a
 	jp DelayFrame
 
 DrawPitchTransposition:
@@ -1122,17 +1122,17 @@ DrawNotes:
 	call DrawNote
 	call CheckForVolumeBarReset
 
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wMPNotes)
-	ld [rSVBK], a
-	ld a, [hMPState]
+	ldh [rSVBK], a
+	ldh a, [hMPState]
 	inc a
-	ld [hMPState], a
+	ldh [hMPState], a
 	cp PIANO_ROLL_HEIGHT_PX + 1 + 1
 	jr c, .skip
 	ld a, 1
-	ld [hMPState], a
+	ldh [hMPState], a
 .skip
 	dec a
 	push af
@@ -1141,7 +1141,7 @@ DrawNotes:
 	add PIANO_ROLL_HEIGHT_PX
 	call nc, .CopyNotes
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 
 .CopyNotes:
@@ -1200,7 +1200,7 @@ CheckChannelOn:
 	ld a, [wTmpCh]
 	cp 2
 	jr nz, .notch3 ; NR32 does something different
-	ld a, [rNR32]
+	ldh a, [rNR32]
 	and $60
 	jr z, _NoteEnded ; 0% volume
 	jr .still_going

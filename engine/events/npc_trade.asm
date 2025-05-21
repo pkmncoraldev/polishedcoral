@@ -42,6 +42,7 @@ NPCTrade:: ; fcba8
 
 	ld hl, TradedForText
 	call PrintText
+	call WaitSFX
 	
 	ld e, TRADE_DIALOG
 	call GetTradeAttribute

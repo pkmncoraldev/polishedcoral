@@ -1,20 +1,20 @@
-newgroup: MACRO
-const_value = const_value + 1
+MACRO newgroup
+DEF const_value = const_value + 1
 	enum_start 1
 ENDM
 
-map_const: MACRO
-GROUP_\1 EQU const_value
+MACRO map_const
+DEF GROUP_\1 EQU const_value
 	enum MAP_\1
-\1_WIDTH  EQU \2
-\1_HEIGHT EQU \3
+DEF \1_WIDTH  EQU \2
+DEF \1_HEIGHT EQU \3
 ENDM
 
-GROUP_N_A  EQU -1
-MAP_N_A    EQU -1
+DEF GROUP_N_A  EQU -1
+DEF MAP_N_A    EQU -1
 
-GROUP_NONE EQU 0
-MAP_NONE   EQU 0
+DEF GROUP_NONE EQU 0
+DEF MAP_NONE   EQU 0
 
 ; map group ids
 	const_def
@@ -217,7 +217,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_10,									  29, 26 ; 1
 	map_const ROUTE_10_EAST,							  12, 17 ; 2
 	map_const ROUTE_10_TENT,							   2,  3 ; 3
-	map_const TWINKLE_TOWN,								  24, 28 ; 4
+	map_const TWINKLE_TOWN,								  26, 28 ; 4
 	map_const TWINKLE_ROCK_HOUSE,						   4,  5 ; 5
 	map_const TWINKLE_TRADE_HOUSE,						   4,  5 ; 6
 	map_const TWINKLE_SNOW_HOUSE,						   4,  5 ; 7
@@ -263,7 +263,7 @@ MAP_NONE   EQU 0
 	map_const LUSTER_MALL_ELECTRONICS_SHOP,				   6,  4 ; 19
 	map_const LUSTER_MALL_COFFEE_SHOP,					   5,  4 ; 20
 	map_const LUSTER_MALL_SKATE_SHOP,					   4,  3 ; 21
-	map_const LUSTER_MALL_SKATE_TEST,					   9,  7 ; 22
+	map_const LUSTER_MALL_SKATE_TEST,					  10,  7 ; 22
 	map_const LUSTER_MALL_ANTIQUE_SHOP,					   4,  4 ; 23
 	map_const LUSTER_MALL_HERB_SHOP,					   4,  3 ; 24
 	map_const LUSTER_MALL_STONE_SHOP,					   4,  4 ; 25
@@ -295,7 +295,7 @@ MAP_NONE   EQU 0
 	map_const CONNECTING_CAVERN,						  20, 24 ; 8
 	
 	newgroup													 ; 15
-	map_const SKATEPARK,								  15, 32 ; 2
+	map_const SKATEPARK,								  16, 32 ; 2
 	map_const ROUTE_12_GATE,							   4,  4 ; 3
 	map_const AIRPORT_GATE,								   4,  4 ; 4
 	map_const ROUTE_11,									  16, 16 ; 5
@@ -447,7 +447,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_30,									   7,  5 ; 
 	
 	newgroup													 ; 24
-	map_const OBSCURA_CITY,								  19, 26 ; 1
+	map_const OBSCURA_CITY,								  19, 27 ; 1
 	map_const OBSCURA_GATE,								   5,  4 ; 2
 	map_const OBSCURA_MUSEUM_1F,						  13,  8 ; 3
 	map_const OBSCURA_MUSEUM_2F,						  13,  7 ; 4

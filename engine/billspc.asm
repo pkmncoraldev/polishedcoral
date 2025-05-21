@@ -7,12 +7,12 @@ _DepositPKMN: ; e2391 (38:6391)
 	push af
 	xor a
 	ld [wVramState], a
-	ld a, [hInMenu]
+	ldh a, [hInMenu]
 	push af
 	ld a, $1
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	xor a
-	ld [hMapAnims], a
+	ldh [hMapAnims], a
 	call BillsPC_InitRAM
 	xor a
 	ld [wBillsPC_LoadedBox], a
@@ -28,7 +28,7 @@ _DepositPKMN: ; e2391 (38:6391)
 .done
 	call ClearSprites
 	pop af
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	pop af
 	ld [wVramState], a
 	pop af
@@ -52,7 +52,7 @@ _DepositPKMN: ; e2391 (38:6391)
 
 .Init: ; e23e9 (38:63e9)
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call ClearSprites
 	call CopyBoxmonSpecies
 	call BillsPC_BoxName
@@ -84,12 +84,12 @@ _DepositPKMN: ; e2391 (38:6391)
 	ret z
 	call BillsPC_UpdateSelectionCursor
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call BillsPC_RefreshTextboxes
 	call PCMonInfo
 	call BillsPC_PrintBoxCountAndCapacityInsideBox
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call DelayFrame
 	jp DelayFrame
 
@@ -116,7 +116,7 @@ _DepositPKMN: ; e2391 (38:6391)
 
 .WhatsUp: ; e245d (38:645d)
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call ClearSprites
 	call BillsPC_GetSelectedPokemonSpecies
 	ld [wCurPartySpecies], a
@@ -252,12 +252,12 @@ _WithdrawPKMN: ; e2583 (38:6583)
 	push af
 	xor a
 	ld [wVramState], a
-	ld a, [hInMenu]
+	ldh a, [hInMenu]
 	push af
 	ld a, $1
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	xor a
-	ld [hMapAnims], a
+	ldh [hMapAnims], a
 	call BillsPC_InitRAM
 	ld a, NUM_BOXES + 1
 	ld [wBillsPC_LoadedBox], a
@@ -273,7 +273,7 @@ _WithdrawPKMN: ; e2583 (38:6583)
 .done
 	call ClearSprites
 	pop af
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	pop af
 	ld [wVramState], a
 	pop af
@@ -299,7 +299,7 @@ _WithdrawPKMN: ; e2583 (38:6583)
 	ld a, NUM_BOXES + 1
 	ld [wBillsPC_LoadedBox], a
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call ClearSprites
 	call CopyBoxmonSpecies
 	call BillsPC_BoxName
@@ -331,12 +331,12 @@ _WithdrawPKMN: ; e2583 (38:6583)
 	ret z
 	call BillsPC_UpdateSelectionCursor
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call BillsPC_RefreshTextboxes
 	call PCMonInfo
 	call BillsPC_PrintBoxCountAndCapacityInsideBox
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call DelayFrame
 	jp DelayFrame
 
@@ -358,7 +358,7 @@ _WithdrawPKMN: ; e2583 (38:6583)
 
 .PrepSubmenu: ; e2655 (38:6655)
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call ClearSprites
 	call BillsPC_GetSelectedPokemonSpecies
 	ld [wCurPartySpecies], a
@@ -489,12 +489,12 @@ _MovePKMNWithoutMail: ; e2759
 	push af
 	xor a
 	ld [wVramState], a
-	ld a, [hInMenu]
+	ldh a, [hInMenu]
 	push af
 	ld a, $1
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	xor a
-	ld [hMapAnims], a
+	ldh [hMapAnims], a
 	call BillsPC_InitRAM
 	ld a, [wCurBox]
 	and $f
@@ -513,7 +513,7 @@ _MovePKMNWithoutMail: ; e2759
 .asm_e2793
 	call ClearSprites
 	pop af
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	pop af
 	ld [wVramState], a
 	pop af
@@ -541,7 +541,7 @@ _MovePKMNWithoutMail: ; e2759
 
 .Init: ; e27ba
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call ClearSprites
 	call CopyBoxmonSpecies
 	ld de, PCString_ChooseaPKMN
@@ -575,12 +575,12 @@ _MovePKMNWithoutMail: ; e2759
 	ret z
 	call BillsPC_UpdateSelectionCursor
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call BillsPC_RefreshTextboxes
 	call PCMonInfo
 	call BillsPC_PrintBoxCountAndCapacityInsideBox
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call DelayFrame
 	jp DelayFrame
 
@@ -609,7 +609,7 @@ _MovePKMNWithoutMail: ; e2759
 
 .PrepSubmenu: ; e283d
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call ClearSprites
 	call BillsPC_GetSelectedPokemonSpecies
 	ld [wCurPartySpecies], a
@@ -698,7 +698,7 @@ _MovePKMNWithoutMail: ; e2759
 
 .PrepInsertCursor: ; e28df
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call CopyBoxmonSpecies
 	ld de, PCString_MoveToWhere
 	call BillsPC_PlaceString
@@ -726,10 +726,10 @@ _MovePKMNWithoutMail: ; e2759
 	ret z
 	call BillsPC_UpdateInsertCursor
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call BillsPC_RefreshTextboxes
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call DelayFrame
 	jp DelayFrame
 
@@ -1436,7 +1436,7 @@ BillsPC_RefreshTextboxes: ; e2c2c (38:6c2c)
 	db "-----@"
 ; e2d30
 
-copy_box_data: MACRO
+MACRO copy_box_data
 .loop\@
 	ld a, [hl]
 	cp -1
@@ -2271,7 +2271,7 @@ _ChangeBox: ; e35aa (38:75aa)
 	call BillsPC_ClearTilemap
 .loop
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call BillsPC_PrintBoxName
 	call BillsPC_PlaceChooseABoxString
 	ld hl, _ChangeBox_menudataheader
@@ -2293,7 +2293,7 @@ _ChangeBox: ; e35aa (38:75aa)
 
 BillsPC_ClearTilemap: ; e35e2 (38:75e2)
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	ld a, " "
@@ -2320,10 +2320,10 @@ _ChangeBox_menudataheader: ; 0xe35f1
 
 .boxes ; e3609
 	db NUM_BOXES
-x = 1
+DEF x = 1
 rept NUM_BOXES
 	db x
-x = x + 1
+DEF x = x + 1
 endr
 	db -1
 ; e3619
@@ -2599,5 +2599,5 @@ BillsPC_PlaceChangeBoxString: ; e37e3 (38:77e3)
 	hlcoord 1, 16
 	call PlaceString
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ret

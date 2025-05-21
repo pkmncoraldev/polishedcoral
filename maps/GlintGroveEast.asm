@@ -7,7 +7,7 @@ GlintGroveEast_MapScriptHeader:
 	warp_def 13,  6, 1, GLINT_GROVE_DEEP
 	warp_def 37, 13, 1, GLINT_GROVE_UNDERGROUND
 
-	db 10 ; coord events
+	db 12 ; coord events
 	coord_event 12, 22, 0, GlintGroveEastMakeSilverBrown
 	coord_event 13, 22, 0, GlintGroveEastMakeSilverBrown
 	coord_event  8, 22, 0, GlintGroveEastMakeSilverBrown
@@ -16,8 +16,10 @@ GlintGroveEast_MapScriptHeader:
 	coord_event  9, 23, 0, GlintGroveEastMakeSilverBrown
 	coord_event 14, 17, 1, GlintGroveEastMakeSilverGreen
 	coord_event 15, 17, 1, GlintGroveEastMakeSilverGreen
-	coord_event  8, 19, 1, GlintGroveEastMakeSilverGreen
-	coord_event  9, 19, 1, GlintGroveEastMakeSilverGreen
+	coord_event  8,  9, 1, GlintGroveEastMakeSilverGreen
+	coord_event  9,  9, 1, GlintGroveEastMakeSilverGreen
+	coord_event  8, 10, 1, GlintGroveEastMakeSilverGreen
+	coord_event  9, 10, 1, GlintGroveEastMakeSilverGreen
 
 	db 0 ; bg events
 

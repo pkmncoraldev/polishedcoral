@@ -1,6 +1,6 @@
 ; Maps that roaming monsters can be on, and possible maps they can jump to..
 
-roam_map: MACRO
+MACRO roam_map
 	map_id \1
 	db _NARG - 1
 rept _NARG +- 1
@@ -37,33 +37,5 @@ RoamMaps:
 	roam_map ROUTE_28, ROUTE_27, ROUTE_29
 	roam_map ROUTE_29, ROUTE_28
 	db -1
-	
-PossibleRoamMaps:
-	map_id ROUTE_1
-	map_id ROUTE_2
-	map_id GLINT_GROVE
-	map_id ROUTE_3
-	map_id ROUTE_3_EAST
-	map_id ROUTE_4
-	map_id ROUTE_5
-	map_id ROUTE_6
-	map_id ROUTE_7
-	map_id HUNTERS_THICKET
-	map_id EVENTIDE_FOREST
-	map_id ROUTE_9
-	map_id ROUTE_11
-	map_id ROUTE_10
-	map_id ROUTE_19
-	map_id ROUTE_20
-	map_id ROUTE_21
-	map_id ROUTE_23
-	map_id ROUTE_24_SOUTH
-	map_id ROUTE_24_NORTH
-	map_id ROUTE_25
-	map_id ROUTE_26
-	map_id ROUTE_27
-	map_id ROUTE_28
-	map_id ROUTE_29
-	db -1
 
-NUM_ROAMMON_MAPS EQU 25
+DEF NUM_ROAMMON_MAPS EQU 25

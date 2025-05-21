@@ -64,11 +64,11 @@ FlickerStationPlayerSeatAsm:
 	ld hl, rIE
     res LCD_STAT, [hl]
     xor a
-    ld [hLCDTrain], a
+    ldh [hLCDTrain], a
     ld a, $B0
-    ld [hWY], a
+    ldh [hWY], a
 	ld a, 7
-    ld [hWX], a
+    ldh [hWX], a
 	ld a, PLAYER_SITTING
 	ld [wPlayerState], a
 	call ReplaceKrisSprite

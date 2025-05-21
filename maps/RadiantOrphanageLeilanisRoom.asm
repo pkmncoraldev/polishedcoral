@@ -80,7 +80,7 @@ RadiantOrphanageLeilanisRoomRose:
 	jumptextfaceplayer RadiantOrphanageLeilanisRoomRoseText
 	
 RadiantOrphanageLeilanisRoomRoseText:
-	text "FELICIA said some-"
+	text "LILY said some-"
 	line "thing about the"
 	cont "beach before she"
 	cont "ran off."
@@ -100,9 +100,9 @@ RadiantOrphanageLeilanisRoomIris:
 	jumptextfaceplayer RadiantOrphanageLeilanisRoomIrisText
 	
 RadiantOrphanageLeilanisRoomIrisText:
-	text "I think LILY ran"
-	line "off toward DUSK"
-	cont "TURNPIKE."
+	text "I think FELICIA"
+	line "ran off toward"
+	cont "DUSK TURNPIKE."
 	done
 	
 RadiantOrphanageLeilanisRoomPoppy:

@@ -6,12 +6,12 @@ LusterMallSkateShop_MapScriptHeader:
 	db 3 ; warp events
 	warp_def  5,  3, 11, LUSTER_MALL
 	warp_def  5,  4, 12, LUSTER_MALL
-	warp_def  0,  5, 1, LUSTER_MALL_SKATE_TEST
+	warp_def -1, -1, 1, LUSTER_MALL_SKATE_TEST
 
 	db 1 ; coord events
-	coord_event 5, 1, -1, LusterMallSkateShopStop
+	coord_event -1, -1, -1, LusterMallSkateShopStop
 
-	db 8 ; bg events
+	db 9 ; bg events
 	signpost  1,  7, SIGNPOST_JUMPTEXT, LusterMallSkateShopShelfText
 	signpost  4,  7, SIGNPOST_JUMPTEXT, LusterMallSkateShopShelfText
 	signpost  5,  7, SIGNPOST_JUMPTEXT, LusterMallSkateShopShelfText
@@ -20,6 +20,7 @@ LusterMallSkateShop_MapScriptHeader:
 	signpost  0,  6, SIGNPOST_JUMPTEXT, LusterMallSkateShopSkateboardText
 	signpost  5,  1, SIGNPOST_JUMPTEXT, LusterMallSkateShopSkateboardText
 	signpost  5,  0, SIGNPOST_JUMPTEXT, LusterMallSkateShopSkateboardText
+	signpost  0,  5, SIGNPOST_JUMPTEXT, LusterMallSkateShopDoorText
 
 	db 3 ; object events
 	person_event SPRITE_BIRD_KEEPER,  1,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallSkateShop_Clerk, -1
@@ -207,5 +208,12 @@ LusterMallSkateShopShelfText:
 LusterMallSkateShopSkateboardText:
 	text "A variety of cool"
 	line "skateboard decks."
+	done
+	
+LusterMallSkateShopDoorText:
+	text "It's locked."
+	
+	para "The sign says"
+	line "“WAREHOUSE”."
 	done
 	

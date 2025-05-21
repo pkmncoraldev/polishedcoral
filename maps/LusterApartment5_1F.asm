@@ -21,16 +21,17 @@ LusterApartment5_1F_NPC:
 LusterApartment5_1F_NPCText:
 	text "Gah!"
 	
-	para "My roommate is so"
-	line "weird!"
+	para "My roommate is a"
+	line "total weirdo!"
 	
-	para "She thinks she's a"
-	line "witch or something"
-	cont "like that."
+	para "She thinks her"
+	line "and her friends"
+	cont "are witches or"
+	cont "something."
 	
 	para "She's always trying"
 	line "to cast curses and"
-	cont "hexes on people!"
+	cont "hexes on me!"
 	
 	para "I have GOT to find"
 	line "a new place…"

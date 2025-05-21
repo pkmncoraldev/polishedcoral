@@ -9,8 +9,8 @@ Route4_MapScriptHeader:
 	warp_def 25, 37, 2, ROUTE_4_EVENTIDE_GATE
 	warp_def  7, 12, 1, HUNTERS_THICKET
 	warp_def  7, 13, 2, HUNTERS_THICKET
-	warp_def  1, 44, 3, HUNTERS_THICKET
-	warp_def  1, 45, 4, HUNTERS_THICKET
+	warp_def  1, 42, 3, HUNTERS_THICKET
+	warp_def  1, 43, 4, HUNTERS_THICKET
 
 	db 0 ; coord events
 

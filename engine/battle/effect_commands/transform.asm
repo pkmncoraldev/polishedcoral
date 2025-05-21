@@ -18,7 +18,7 @@ BattleCommand_transform:
 	bit SUBSTATUS_TRANSFORMED, [hl]
 	jp nz, BattleEffect_ButItFailed
 
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld hl, wEnemyMonSpecies
 	ld de, wEnemyMonItem
@@ -60,7 +60,7 @@ BattleCommand_transform:
 	call ResetActorDisable
 	ld hl, wBattleMonSpecies
 	ld de, wEnemyMonSpecies
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jr nz, .got_mon_species
 	ld hl, wEnemyMonSpecies
@@ -139,7 +139,7 @@ BattleCommand_transform:
 ;	call _CheckBattleEffects
 	call CheckBattleEffects
 	jr c, .mimic_anims
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wPlayerMinimized]
 	jr z, .got_byte
@@ -169,7 +169,7 @@ BattleCommand_transform:
 	call StdBattleTextBox
 
 	; Update revealed moves if player transformed: the AI knows what its own moves are...
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jr nz, .move_reveal_done
 	ld hl, wBattleMonMoves
@@ -179,7 +179,7 @@ BattleCommand_transform:
 
 .move_reveal_done
 	; Copy ability
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jr nz, .copy_player_ability
 	ld a, [wEnemyAbility]
@@ -233,7 +233,7 @@ BattleCommand_sketch: ; 35a74
 	ld e, l
 ; Get the battle move structs.
 	ld hl, wBattleMonMoves
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jr z, .get_last_move
 	ld hl, wEnemyMonMoves
@@ -282,7 +282,7 @@ BattleCommand_sketch: ; 35a74
 	ld [hl], a
 	pop bc
 
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jr z, .user_trainer
 	ld a, [wBattleMode]
@@ -314,7 +314,7 @@ BattleCommand_sketch: ; 35a74
 	add hl, de
 	ld [hl], a
 .done_copy
-	ld a, [hBattleTurn] ; Get opponent move name information. wStringBuffer2
+	ldh a, [hBattleTurn] ; Get opponent move name information. wStringBuffer2
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species
@@ -333,7 +333,7 @@ BattleCommand_sketch: ; 35a74
 	call CopyName1
 	
 	
-	ld a, [hBattleTurn] ; Get user move name information. wStringBuffer1
+	ldh a, [hBattleTurn] ; Get user move name information. wStringBuffer1
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species2

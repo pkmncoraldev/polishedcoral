@@ -1,9 +1,9 @@
 InitClock: ; 90672 (24:4672)
 ; Ask the player to set the time.
-	ld a, [hInMenu]
+	ldh a, [hInMenu]
 	push af
 	ld a, $1
-	ld [hInMenu], a
+	ldh [hInMenu], a
 
 	xor a
 	ld [wSpriteUpdatesEnabled], a
@@ -22,7 +22,7 @@ InitClock: ; 90672 (24:4672)
 	ld b, CGB_DIPLOMA
 	call GetCGBLayout
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call Load1bppFont
 	call Load1bppFrame
 	ld de, TimesetBackgroundGFX
@@ -111,22 +111,22 @@ endc
 	call PrintText
 	call WaitPressAorB_BlinkCursor
 	pop af
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	ret
 
 .ClearScreen: ; 90783 (24:4783)
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 0, 0
 	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
 	xor a
 	call ByteFill
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ret
 
 SetHour: ; 90795 (24:4795)
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	and A_BUTTON
 	jr nz, .Confirm
 
@@ -192,7 +192,7 @@ DisplayHourOClock: ; 907de (24:47de)
 ; 907f1 (24:47f1)
 
 SetMinutes: ; 90810 (24:4810)
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	and A_BUTTON
 	jr nz, .a_button
 	ld hl, hJoyLast
@@ -357,12 +357,12 @@ TimesetBackgroundGFX: ; 908fb
 INCBIN "gfx/new_game/timeset_bg.1bpp"
 
 Special_SetDayOfWeek: ; 90913
-	ld a, [hInMenu]
+	ldh a, [hInMenu]
 	push af
 	xor a
 	ld [wTempDayOfWeek], a
 	inc a
-	ld [hInMenu], a
+	ldh [hInMenu], a
 .loop
 	hlcoord 0, 12
 	lb bc, 4, 18
@@ -397,12 +397,12 @@ Special_SetDayOfWeek: ; 90913
 	call SetDayOfWeek
 	call LoadStandardFont
 	pop af
-	ld [hInMenu], a
+	ldh [hInMenu], a
 	ret
 ; 90993
 
 .GetJoypadAction: ; 90993
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 	and A_BUTTON
 	jr z, .not_A
 	scf
@@ -445,7 +445,7 @@ Special_SetDayOfWeek: ; 90913
 
 .finish_dpad
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 10, 4
 	lb bc, 2, 9
 	call ClearBox
@@ -524,9 +524,9 @@ Special_InitialSetDSTFlag: ; 90a54
 .Text: ; 90a6c
 	start_asm
 	call UpdateTime
-	ld a, [hHours]
+	ldh a, [hHours]
 	ld b, a
-	ld a, [hMinutes]
+	ldh a, [hMinutes]
 	ld c, a
 	decoord 1, 14
 	call PrintHoursMins
@@ -554,9 +554,9 @@ Special_InitialClearDSTFlag: ; 90a88
 .Text: ; 90aa0
 	start_asm
 	call UpdateTime
-	ld a, [hHours]
+	ldh a, [hHours]
 	ld b, a
-	ld a, [hMinutes]
+	ldh a, [hMinutes]
 	ld c, a
 	decoord 1, 14
 	call PrintHoursMins

@@ -52,10 +52,10 @@ MainMenu: ; 49cdc
 ;	dw MainMenu_MusicPlayer
 ; 0x49d6c
 
-CONTINUE       EQU 0
-NEW_GAME       EQU 1
-NEW_GAME_PLUS  EQU 2
-OPTION         EQU 3
+DEF CONTINUE       EQU 0
+DEF NEW_GAME       EQU 1
+DEF NEW_GAME_PLUS  EQU 2
+DEF OPTION         EQU 3
 ;MUSIC_PLAYER   EQU 4
 
 MainMenuItems:
@@ -136,7 +136,7 @@ MainMenu_PrintCurrentTimeAndDay: ; 49e09
 	and a
 	jr z, .nofile
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call .PlaceBox
 	ld hl, wOptions1
 	ld a, [hl]
@@ -146,7 +146,7 @@ MainMenu_PrintCurrentTimeAndDay: ; 49e09
 	pop af
 	ld [wOptions1], a
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ret
 
 .nofile
@@ -195,7 +195,7 @@ endc
 	call .PlaceCurrentDay
 	call .VersionNumberPrint
 	decoord 4, 16
-	ld a, [hHours]
+	ldh a, [hHours]
 	ld c, a
 	farcall PrintHour
 	ld [hl], ":"
@@ -253,7 +253,7 @@ endc
 
 Function49ed0: ; 49ed0
 	xor a
-	ld [hMapAnims], a
+	ldh [hMapAnims], a
 	call ClearTileMap
 	call LoadFontsExtra
 	call LoadStandardFont

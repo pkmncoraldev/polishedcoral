@@ -106,18 +106,18 @@ INCLUDE "maps/Route3FriendshipHouse.asm"
 INCLUDE "maps/Route4.asm"
 INCLUDE "maps/Route5.asm"
 INCLUDE "maps/Route5Deep.asm"
-INCLUDE "maps/Route5Gate1F.asm"
-INCLUDE "maps/Route5Gate2F.asm"
 INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route7.asm"
 INCLUDE "maps/Route8.asm"
+INCLUDE "maps/Route8Gate.asm"
+INCLUDE "maps/Route8EncounterHouse.asm"
 INCLUDE "maps/Route14.asm"
 INCLUDE "maps/Route15.asm"
 
 
 SECTION "Routes Scripts2", ROMX
-INCLUDE "maps/Route8Gate.asm"
-INCLUDE "maps/Route8EncounterHouse.asm"
+INCLUDE "maps/Route5Gate1F.asm"
+INCLUDE "maps/Route5Gate2F.asm"
 INCLUDE "maps/Route8Garden.asm"
 INCLUDE "maps/Route10East.asm"
 INCLUDE "maps/Route10Tent.asm"
@@ -253,14 +253,10 @@ INCLUDE "maps/LusterCityShopping.asm"
 INCLUDE "maps/LusterCityBusiness.asm"
 INCLUDE "maps/LusterApartment1_1F.asm"
 INCLUDE "maps/LusterApartment1_2F.asm"
-
-
 INCLUDE "maps/LusterApartment3_1F.asm"
 INCLUDE "maps/LusterApartment3_2F.asm"
 INCLUDE "maps/LusterApartment4_1F.asm"
 INCLUDE "maps/LusterApartment4_2F.asm"
-INCLUDE "maps/LusterApartment5_1F.asm"
-INCLUDE "maps/LusterApartment5_2F.asm"
 INCLUDE "maps/LusterApartment6_1F.asm"
 INCLUDE "maps/LusterApartment6_2F.asm"
 
@@ -278,6 +274,8 @@ INCLUDE "maps/LusterMallBallShop.asm"
 INCLUDE "maps/LusterMallClothesShop.asm"
 INCLUDE "maps/LusterMallFurniture.asm"
 INCLUDE "maps/LusterSkyscraperB1F.asm"
+INCLUDE "maps/LusterApartment5_1F.asm"
+INCLUDE "maps/LusterApartment5_2F.asm"
 
 SECTION "Nett Building Scripts", ROMX
 

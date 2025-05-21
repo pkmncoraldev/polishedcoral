@@ -86,7 +86,7 @@ endr
 .Nickname:
 	db "Masuda@"
 
-KIRK_BUFFY_ID EQU 00518
+DEF KIRK_BUFFY_ID EQU 00518
 
 SpecialGiveWobbuffet: ; 7305
 

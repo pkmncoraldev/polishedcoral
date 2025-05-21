@@ -23,7 +23,7 @@ INCBIN "gfx/overworld/headbutt_tree_snow.2bpp"
 
 HideHeadbuttTree: ; 8c913
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld a, [wPlayerDirection]
 	and %00001100
 	srl a
@@ -52,7 +52,7 @@ HideHeadbuttTree: ; 8c913
 	ld [hld], a
 	call ApplyTilemapInVBlank
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ret
 ; 8c938
 
@@ -161,7 +161,7 @@ Cut_SpawnAnimateLeaves: ; 8ca3c (23:4a3c)
 
 Cut_StartWaiting: ; 8ca5c (23:4a5c)
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 ; Cut_WaitAnimSFX
 	ld hl, wJumptableIndex
 	inc [hl]

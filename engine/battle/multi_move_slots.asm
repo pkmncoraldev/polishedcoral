@@ -1,5 +1,5 @@
 GetTackleName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -34,7 +34,7 @@ GetTackleName::
 	jp GetMoveNameDone
 
 GetMoveNameTackle:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -59,7 +59,7 @@ GetMoveNameTackle:: ; 34f8
 	jp GetMoveNameDone2
 
 GetDefenseCurlName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -94,7 +94,7 @@ GetDefenseCurlName::
 	jp GetMoveNameDone
 
 GetMoveNameDefenseCurl:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -119,7 +119,7 @@ GetMoveNameDefenseCurl:: ; 34f8
 	jp GetMoveNameDone2
 	
 GetLeerName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -144,7 +144,7 @@ GetLeerName::
 	jp GetMoveNameDone
 	
 GetMoveNameLeer:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -162,7 +162,7 @@ GetMoveNameLeer:: ; 34f8
 	jp GetMoveNameDone2
 	
 GetBarrierName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -197,7 +197,7 @@ GetBarrierName::
 	jp GetMoveNameDone
 	
 GetMoveNameBarrier:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -222,7 +222,7 @@ GetMoveNameBarrier:: ; 34f8
 	jp GetMoveNameDone2
 	
 GetLockOnName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -247,7 +247,7 @@ GetLockOnName::
 	jp GetMoveNameDone
 	
 GetMoveNameLockOn:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -265,7 +265,7 @@ GetMoveNameLockOn:: ; 34f8
 	jp GetMoveNameDone2
 	
 GetSharpenName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -300,7 +300,7 @@ GetSharpenName::
 	jp GetMoveNameDone
 
 GetMoveNameSharpen:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -325,7 +325,7 @@ GetMoveNameSharpen:: ; 34f8
 	jp GetMoveNameDone2
 	
 GetFurySwipesName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -390,7 +390,7 @@ GetFurySwipesName::
 	jp GetMoveNameDone
 	
 GetMoveNameFurySwipes:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -436,7 +436,7 @@ GetMoveNameFurySwipes:: ; 34f8
 	jp GetMoveNameDone2
 	
 GetSynthesisName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -471,7 +471,7 @@ GetSynthesisName::
 	jp GetMoveNameDone
 
 GetMoveNameSynthesis:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -496,7 +496,7 @@ GetMoveNameSynthesis:: ; 34f8
 	jp GetMoveNameDone2
 	
 GetMeanLookName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -531,7 +531,7 @@ GetMeanLookName::
 	jp GetMoveNameDone
 
 GetMoveNameMeanLook:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -556,7 +556,7 @@ GetMoveNameMeanLook:: ; 34f8
 	jp GetMoveNameDone2
 	
 GetCharmName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -581,7 +581,7 @@ GetCharmName::
 	jp GetMoveNameDone
 	
 GetMoveNameCharm:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -599,7 +599,7 @@ GetMoveNameCharm:: ; 34f8
 	jp GetMoveNameDone2
 	
 GetScaryFaceName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -634,7 +634,7 @@ GetScaryFaceName::
 	jp GetMoveNameDone
 	
 GetMoveNameScaryFace:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -658,7 +658,7 @@ GetMoveNameScaryFace:: ; 34f8
 	jp GetMoveNameDone2
 	
 GetRoarName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -683,7 +683,7 @@ GetRoarName::
 	jp GetMoveNameDone
 	
 GetMoveNameRoar:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -700,7 +700,7 @@ GetMoveNameRoar:: ; 34f8
 	jp GetMoveNameDone2
 	
 GetSandAttackName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -735,7 +735,7 @@ GetSandAttackName::
 	jp GetMoveNameDone
 	
 GetMoveNameSandAttack:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -759,7 +759,7 @@ GetMoveNameSandAttack:: ; 34f8
 	jp GetMoveNameDone2
 	
 GetSoftboiledName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -794,7 +794,7 @@ GetSoftboiledName::
 	jp GetMoveNameDone
 
 GetMoveNameSoftboiled:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -819,7 +819,7 @@ GetMoveNameSoftboiled:: ; 34f8
 	jp GetMoveNameDone2
 	
 GetForesightName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -854,7 +854,7 @@ GetForesightName::
 	jp GetMoveNameDone
 
 GetMoveNameForesight:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -879,7 +879,7 @@ GetMoveNameForesight:: ; 34f8
 	jp GetMoveNameDone2
 	
 GetAgilityName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -904,7 +904,7 @@ GetAgilityName::
 	jp GetMoveNameDone
 	
 GetMoveNameAgility:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -922,7 +922,7 @@ GetMoveNameAgility:: ; 34f8
 	jp GetMoveNameDone2
 	
 GetWorkUpName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -947,7 +947,7 @@ GetWorkUpName::
 	jp GetMoveNameDone
 
 GetMoveNameWorkUp:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -966,7 +966,7 @@ GetMoveNameWorkUp:: ; 34f8
 	
 	
 GetTransformName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -1025,7 +1025,7 @@ GetTransformName::
 	jp GetMoveNameDone
 	
 GetMoveNameTransform:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -1065,7 +1065,7 @@ GetMoveNameTransform:: ; 34f8
 
 	
 GetSingName::
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -1090,7 +1090,7 @@ GetSingName::
 	jp GetMoveNameDone
 	
 GetMoveNameSing:: ; 34f8
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	push af
 	push hl
 	push bc
@@ -1130,7 +1130,7 @@ GetMoveNameDone2:
 CheckDitto:
 	cp DITTO
 	ret nz
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	ret z
@@ -1574,7 +1574,7 @@ CheckTackleThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species1
@@ -1582,7 +1582,7 @@ CheckTackleThing::
 	jr .got_user_species1
 	
 .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species1
@@ -1599,7 +1599,7 @@ CheckTackleThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species2
@@ -1607,7 +1607,7 @@ CheckTackleThing::
 	jr .got_user_species2
 
 .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species2
@@ -1630,7 +1630,7 @@ CheckFuryStrikesThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species1
@@ -1638,7 +1638,7 @@ CheckFuryStrikesThing::
 	jr .got_user_species1
 	
 .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species1
@@ -1655,7 +1655,7 @@ CheckFuryStrikesThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species2
@@ -1663,7 +1663,7 @@ CheckFuryStrikesThing::
 	jr .got_user_species2
 	
 .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species2
@@ -1680,7 +1680,7 @@ CheckFuryStrikesThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip3
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species3
@@ -1688,7 +1688,7 @@ CheckFuryStrikesThing::
 	jr .got_user_species3
 	
 .skip3
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species3
@@ -1705,7 +1705,7 @@ CheckFuryStrikesThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip4
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species4
@@ -1713,7 +1713,7 @@ CheckFuryStrikesThing::
 	jr .got_user_species4
 	
 .skip4
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species4
@@ -1730,7 +1730,7 @@ CheckFuryStrikesThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip5
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species4
@@ -1738,7 +1738,7 @@ CheckFuryStrikesThing::
 	jr .got_user_species5
 	
 .skip5
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species5
@@ -1760,7 +1760,7 @@ CheckDefenseCurlThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species1
@@ -1768,7 +1768,7 @@ CheckDefenseCurlThing::
 	jr .got_user_species1
 	
 .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species1
@@ -1782,7 +1782,7 @@ CheckDefenseCurlThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species2
@@ -1790,7 +1790,7 @@ CheckDefenseCurlThing::
 	jr .got_user_species2
 	
 .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species2
@@ -1807,7 +1807,7 @@ CheckLeerThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species
@@ -1815,7 +1815,7 @@ CheckLeerThing::
 	jr .got_user_species
 	
 .skip
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species
@@ -1832,7 +1832,7 @@ CheckBarrierThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species1
@@ -1840,7 +1840,7 @@ CheckBarrierThing::
 	jr .got_user_species1
 	
 .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species1
@@ -1854,7 +1854,7 @@ CheckBarrierThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species2
@@ -1862,7 +1862,7 @@ CheckBarrierThing::
 	jr .got_user_species2
 	
 .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species2
@@ -1879,7 +1879,7 @@ CheckSharpenThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species1
@@ -1887,7 +1887,7 @@ CheckSharpenThing::
 	jr .got_user_species1
 	
 .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species1
@@ -1901,7 +1901,7 @@ CheckSharpenThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species2
@@ -1909,7 +1909,7 @@ CheckSharpenThing::
 	jr .got_user_species2
 	
 .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species2
@@ -1926,7 +1926,7 @@ CheckCharmThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species
@@ -1934,7 +1934,7 @@ CheckCharmThing::
 	jr .got_user_species
 	
 .skip
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species
@@ -1951,7 +1951,7 @@ CheckScaryFaceThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species1
@@ -1959,7 +1959,7 @@ CheckScaryFaceThing::
 	jr .got_user_species1
 	
 .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species1
@@ -1973,7 +1973,7 @@ CheckScaryFaceThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species2
@@ -1981,7 +1981,7 @@ CheckScaryFaceThing::
 	jr .got_user_species2
 	
 .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species2
@@ -1998,7 +1998,7 @@ CheckRoarThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species
@@ -2006,7 +2006,7 @@ CheckRoarThing::
 	jr .got_user_species
 	
 .skip
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species
@@ -2014,17 +2014,16 @@ CheckRoarThing::
 .got_user_species
 	farcall CheckWhirlwindUsers2
 	jr nc, .not_whirlwind
-	ld a, $2
+	ld a, $1
 	ret
 .not_whirlwind
-	ld a, $1
 	ret
 	
 CheckSandAttackThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species1
@@ -2032,7 +2031,7 @@ CheckSandAttackThing::
 	jr .got_user_species1
 	
 .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species1
@@ -2046,7 +2045,7 @@ CheckSandAttackThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species2
@@ -2054,7 +2053,7 @@ CheckSandAttackThing::
 	jr .got_user_species2
 	
 .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species2
@@ -2071,7 +2070,7 @@ CheckSoftboiledThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species1
@@ -2079,7 +2078,7 @@ CheckSoftboiledThing::
 	jr .got_user_species1
 	
 .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species1
@@ -2093,7 +2092,7 @@ CheckSoftboiledThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species2
@@ -2101,7 +2100,7 @@ CheckSoftboiledThing::
 	jr .got_user_species2
 	
 .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species2
@@ -2118,7 +2117,7 @@ CheckForesightThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species1
@@ -2126,7 +2125,7 @@ CheckForesightThing::
 	jr .got_user_species1
 	
 .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species1
@@ -2140,7 +2139,7 @@ CheckForesightThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species2
@@ -2148,7 +2147,7 @@ CheckForesightThing::
 	jr .got_user_species2
 	
 .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species2
@@ -2165,7 +2164,7 @@ CheckAgilityThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species
@@ -2173,7 +2172,7 @@ CheckAgilityThing::
 	jr .got_user_species
 	
 .skip
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species
@@ -2190,7 +2189,7 @@ CheckWorkUpThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species
@@ -2198,7 +2197,7 @@ CheckWorkUpThing::
 	jr .got_user_species
 	
 .skip
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species
@@ -2215,7 +2214,7 @@ CheckTransformThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species1
@@ -2223,7 +2222,7 @@ CheckTransformThing::
 	jr .got_user_species1
 	
 .skip1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species1
@@ -2237,7 +2236,7 @@ CheckTransformThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species2
@@ -2245,7 +2244,7 @@ CheckTransformThing::
 	jr .got_user_species2
 	
 .skip2
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species2
@@ -2259,7 +2258,7 @@ CheckTransformThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip3
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species3
@@ -2267,7 +2266,7 @@ CheckTransformThing::
 	jr .got_user_species3
 	
 .skip3
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species3
@@ -2281,7 +2280,7 @@ CheckTransformThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip4
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species4
@@ -2289,7 +2288,7 @@ CheckTransformThing::
 	jr .got_user_species4
 	
 .skip4
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species4
@@ -2308,7 +2307,7 @@ CheckSingThing::
 	ld a, [wMirrorMoveUsed]
 	and a
 	jr z, .skip
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr z, .got_user_species
@@ -2316,7 +2315,7 @@ CheckSingThing::
 	jr .got_user_species
 	
 .skip
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
 	jr z, .got_user_species
@@ -2457,6 +2456,9 @@ IronDefenseUsers:
 	db LARVITAR
 	db PUPITAR
 	db TYRANITAR
+	db ARON
+	db LAIRON
+	db AGGRON
 	db -1
 	
 AcidArmorUsers:

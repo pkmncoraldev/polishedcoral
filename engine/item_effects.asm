@@ -321,7 +321,7 @@ PokeBallEffect: ; e8a2
 	ld a, BLOSSOM_TEA
 	ld [wBattleAnimParam], a
 	xor a
-	ld [hBattleTurn], a
+	ldh [hBattleTurn], a
 	ld [wNumHits], a
 	predef PlayBattleAnim
 	ld hl, wOptions1
@@ -358,14 +358,6 @@ PokeBallEffect: ; e8a2
 
 	ld a, [wEnemyMonCatchRate]
 	ld b, a
-	ld a, [wBattleType]
-	cp BATTLETYPE_TRAP
-	jr z, .half
-	cp BATTLETYPE_LEGENDARY
-	jr nz, .skip_half
-.half
-	srl b
-.skip_half
 	ld a, [wCurItem]
 	cp MASTER_BALL
 	jp z, .catch_without_fail
@@ -379,16 +371,30 @@ PokeBallEffect: ; e8a2
 	jp .fail_to_catch
 .normal
 	ld a, [wCurItem]
+	ld c, a
 	ld hl, BallMultiplierFunctionTable
-	call BattleJumptable
 
-	ld a, [wCurItem]
-	cp LEVEL_BALL
-	ld a, b
-	jp z, .skip_hp_calc
+.get_multiplier_loop
+	ld a, [hli]
+	cp $ff
+	jr z, .skip_or_return_from_ball_fn
+	cp c
+	jr z, .call_ball_function
+	inc hl
+	inc hl
+	jr .get_multiplier_loop
 
+.call_ball_function
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld de, .skip_or_return_from_ball_fn
+	push de
+	jp hl
+
+.skip_or_return_from_ball_fn
 	ld a, b
-	ld [hMultiplicand + 2], a
+	ldh [hMultiplicand + 2], a
 
 	ld hl, wEnemyMonHP
 	ld b, [hl]
@@ -430,20 +436,20 @@ PokeBallEffect: ; e8a2
 	push bc
 	ld a, b
 	sub c
-	ld [hMultiplier], a
+	ldh [hMultiplier], a
 	xor a
-	ld [hDividend + 0], a
-	ld [hMultiplicand + 0], a
-	ld [hMultiplicand + 1], a
+	ldh [hDividend + 0], a
+	ldh [hMultiplicand + 0], a
+	ldh [hMultiplicand + 1], a
 	call Multiply
 	pop bc
 
 	ld a, b
-	ld [hDivisor], a
+	ldh [hDivisor], a
 	ld b, 4
 	call Divide
 
-	ld a, [hQuotient + 2]
+	ldh a, [hQuotient + 2]
 	and a
 	jr nz, .statuscheck
 	ld a, 1
@@ -461,13 +467,22 @@ PokeBallEffect: ; e8a2
 .addstatus
 	ld a, b
 	add c
-	jr nc, .max_1
+	jr nc, .skip_hp_calc
 	ld a, $ff
-.max_1
 
 .skip_hp_calc
 	ld b, a
+	ld a, [wBattleType]
+	cp BATTLETYPE_TRAP
+	jr z, .half
+	cp BATTLETYPE_LEGENDARY
+	jr nz, .skip_half
+.half
+	srl b
+.skip_half
+	ld a, b
 	ld [wBuffer1], a
+	ld [wSunsetBayTrigger], a		;Used this for debug
 	call Random
 
 	cp b
@@ -492,7 +507,7 @@ PokeBallEffect: ; e8a2
 	ld a, d
 	ld [wFXAnimIDHi], a
 	xor a
-	ld [hBattleTurn], a
+	ldh [hBattleTurn], a
 	ld [wBuffer2], a
 	ld [wNumHits], a
 	predef PlayBattleAnim
@@ -1211,7 +1226,7 @@ RepeatBallMultiplier:
 
 TimerBallMultiplier:
 ; multiply catch rate by 1 + (turns passed * 3) / 10, capped at 4
-	ld a, [wPlayerTurnsTaken]
+	ld a, [wTotalBattleTurns]
 	cp 10
 	jr nc, .nocap
 	ld a, 10
@@ -1221,41 +1236,54 @@ TimerBallMultiplier:
 	add c
 
 	; hMultiplier = turns passed * 3
-	ld [hMultiplier], a
+	ldh [hMultiplier], a
 
 	; hMultiplicand = catch rate
 	xor a
-	ld [hMultiplicand + 0], a
-	ld [hMultiplicand + 1], a
+	ldh [hMultiplicand + 0], a
+	ldh [hMultiplicand + 1], a
 	ld a, b
-	ld [hMultiplicand + 2], a
+	ldh [hMultiplicand + 2], a
+
+	push bc
 
 	; hProduct = catch rate * (turns passed * 3)
 	call Multiply
 
 	; hDividend = hProduct = catch rate * (turns passed * 3)
 	ld hl, hDividend
-	ld a, [hProduct + 0]
+	ldh a, [hProduct + 0]
 	ld [hli], a
-	ld a, [hProduct + 1]
+	ldh a, [hProduct + 1]
 	ld [hli], a
-	ld a, [hProduct + 2]
+	ldh a, [hProduct + 2]
 	ld [hli], a
-	ld a, [hProduct + 3]
+	ldh a, [hProduct + 3]
 	ld [hl], a
 
 	; hDivisor = 10
 	ld a, 10
-	ld [hDivisor], a
+	ldh [hDivisor], a
 
 	; hQuotient = catch rate * (turns passed * 3) / 10
 	ld b, 4
 	call Divide
 
-	; b = hQuotient = catch rate * (turns passed * 3) / 10
-	ld a, [hQuotient + 2]
-	ld b, a
+	pop bc
 
+	ldh a, [hQuotient + 1]
+	and a
+	jr nz, .max
+
+	; a = b + hQuotient = catch rate * (1 + (turns passed * 3) / 10)
+	ldh a, [hQuotient + 2]
+	add b
+	jr nc, .nomax
+
+.max
+	ld a, $ff
+.nomax
+	ld b, a
 	ret
 
 NestBallMultiplier:
@@ -1271,28 +1299,28 @@ NestBallMultiplier:
 	pop bc
 
 	; hMultiplier = 41 - level
-	ld [hMultiplier], a
+	ldh [hMultiplier], a
 
 	; hMultiplicand = catch rate
 	xor a
-	ld [hMultiplicand + 0], a
-	ld [hMultiplicand + 1], a
+	ldh [hMultiplicand + 0], a
+	ldh [hMultiplicand + 1], a
 	ld a, b
-	ld [hMultiplicand + 2], a
+	ldh [hMultiplicand + 2], a
 
 	; hProduct = catch rate * (41 - level)
 	call Multiply
 
 	; hDivisor = 5
 	ld a, 5
-	ld [hDivisor], a
+	ldh [hDivisor], a
 
 	; hQuotient = catch rate * (41 - level) / 5
 	ld b, 4
 	call Divide
 
 	; b = hQuotient = catch rate * (41 - level) / 5
-	ld a, [hQuotient + 2]
+	ldh a, [hQuotient + 2]
 	ld b, a
 
 	ret
@@ -1324,35 +1352,23 @@ NetBallMultiplier:
 	ret
 
 DiveBallMultiplier:
-; multiply catch rate by 3.5 if surfing or fishing
+; multiply catch rate by 4 if surfing or fishing
 	ld a, [wPlayerState]
-	cp PLAYER_SURF
-	jr z, .water
 	cp PLAYER_DIVE
-	jr z, .water
-
-	ld a, [wBattleType]
-	cp BATTLETYPE_FISH
-	jr z, .water
-
-	ret
+	ret nz
 
 .water
-	ld a, b
-	srl a
-rept 3
-	add b
+	sla b
 	jr c, .max
-endr
-	ret
-
+	sla b
+	ret nc
 .max
 	ld b, $ff
 	ret
 
 QuickBallMultiplier:
 ; multiply catch rate by 5 on first turn
-	ld a, [wPlayerTurnsTaken]
+	ld a, [wTotalBattleTurns]
 	and a
 	ret nz
 
@@ -1372,28 +1388,25 @@ QuickBallMultiplier:
 	ret
 
 DuskBallMultiplier:
-; multiply catch rate by 3.5 at night or in caves
+; multiply catch rate by 3 at night or in caves
 	ld a, [wPermission]
 	cp CAVE
-	jr z, .dusk
+	jr z, .nite
 
 	ld a, [wTimeOfDay]
-	cp 1 << NITE
-	jr z, .dusk
-
-	ret
-
-.dusk
+	cp NITE
+	ret nz
+.nite
 	ld a, b
-	srl a
-rept 3
-	add b
+	add a
 	jr c, .max
-endr
-	ret
 
+	add b
+	jr nc, .done
 .max
-	ld b, $ff
+	ld a, $ff
+.done
+	ld b, a
 	ret
 
 Text_NoShake: ; 0xedb5
@@ -1559,14 +1572,15 @@ VitaminEffect: ; ee3d
 NoEffectMessage: ; ee83
 	ld hl, WontHaveAnyEffectText
 	call PrintText
-	jp ClearPalettes
-; ee8c
+	call ClearPalettes
+	jp ClearTileMap
 
 
 RareCandy_StatBooster_ExitMenu: ; ee9f
 	xor a
 	ld [wItemEffectSucceeded], a
-	jp ClearPalettes
+	call ClearPalettes
+	jp ClearTileMap
 ; eea6
 
 
@@ -1653,11 +1667,11 @@ RareCandy: ; ef14
 	ld a, MON_EXP
 	call GetPartyParamLocation
 
-	ld a, [hMultiplicand]
+	ldh a, [hMultiplicand]
 	ld [hli], a
-	ld a, [hMultiplicand + 1]
+	ldh a, [hMultiplicand + 1]
 	ld [hli], a
-	ld a, [hMultiplicand + 2]
+	ldh a, [hMultiplicand + 2]
 	ld [hl], a
 
 	push bc
@@ -1994,7 +2008,7 @@ PersimBerry: ; f16a
 
 	res SUBSTATUS_CONFUSED, [hl]
 	xor a
-	ld [hBattleTurn], a
+	ldh [hBattleTurn], a
 	call UseItemText
 
 	ld hl, ConfusedNoMoreText
@@ -2269,7 +2283,7 @@ ItemActionText: ; f24a (3:724a)
 
 ItemActionTextWaitButton: ; f279 (3:7279)
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 0, 0
 	ld bc, wTileMapEnd - wTileMap
 	ld a, " "
@@ -2277,7 +2291,7 @@ ItemActionTextWaitButton: ; f279 (3:7279)
 	ld a, [wPartyMenuActionText]
 	call ItemActionText
 	ld a, $1
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld c, 50
 	call DelayFrames
 	jp WaitPressAorB_BlinkCursor
@@ -2290,7 +2304,8 @@ StatusHealer_ExitMenu: ; f29e (3:729e)
 	xor a
 	ld [wItemEffectSucceeded], a
 StatusHealer_ClearPalettes: ; f2a2 (3:72a2)
-	jp ClearPalettes
+	call ClearPalettes
+	jp ClearTileMap
 
 IsItemUsedOnBattleMon: ; f2a6 (3:72a6)
 	ld a, [wBattleMode]
@@ -2447,16 +2462,16 @@ GetOneFifthMaxHP: ; f378 (3:7378)
 	ld a, MON_MAXHP
 	call GetPartyParamLocation
 	ld a, [hli]
-	ld [hDividend + 0], a
+	ldh [hDividend + 0], a
 	ld a, [hl]
-	ld [hDividend + 1], a
+	ldh [hDividend + 1], a
 	ld a, 5
-	ld [hDivisor], a
+	ldh [hDivisor], a
 	ld b, 2
 	call Divide
-	ld a, [hQuotient + 1]
+	ldh a, [hQuotient + 1]
 	ld d, a
-	ld a, [hQuotient + 2]
+	ldh a, [hQuotient + 2]
 	ld e, a
 	pop bc
 	ret
@@ -2677,7 +2692,7 @@ XItemEffect: ; f4c5
 	ld b, a
 
 	xor a
-	ld [hBattleTurn], a
+	ldh [hBattleTurn], a
 	ld [wAttackMissed], a
 	ld [wEffectFailed], a
 	farcall CheckIfStatCanBeRaised
@@ -2689,8 +2704,9 @@ XItemEffect: ; f4c5
 	ld a, [wCurBattleMon]
 	ld [wCurPartyMon], a
 	ld c, HAPPINESS_USEDXITEM
-	farjp ChangeHappiness
-; f504
+	farcall ChangeHappiness
+	call ClearPalettes
+	jp ClearTileMap
 
 
 ;BlueCard: ; f58f
@@ -3168,7 +3184,7 @@ UseBallInTrainerBattle: ; f7a0
 	ld [wFXAnimIDHi], a
 	xor a
 	ld [wBattleAnimParam], a
-	ld [hBattleTurn], a
+	ldh [hBattleTurn], a
 	ld [wNumHits], a
 	predef PlayBattleAnim
 	ld hl, BlockedTheBallText
@@ -3418,13 +3434,13 @@ ComputeMaxPP: ; f881
 	push bc
 	; Divide the base PP by 5.
 	ld a, [de]
-	ld [hDividend + 3], a
+	ldh [hDividend + 3], a
 	xor a
-	ld [hDividend], a
-	ld [hDividend + 1], a
-	ld [hDividend + 2], a
+	ldh [hDividend], a
+	ldh [hDividend + 1], a
+	ldh [hDividend + 2], a
 	ld a, 5
-	ld [hDivisor], a
+	ldh [hDivisor], a
 	ld b, 4
 	call Divide
 	; Get the number of PP, which are bits 6 and 7 of the PP value stored in RAM.
@@ -3444,7 +3460,7 @@ ComputeMaxPP: ; f881
 	; Since this would overflow into bit 6, we prevent that from happening
 	; by decreasing the extra amount of PP each PP Up provides, resulting
 	; in a maximum of 61.
-	ld a, [hQuotient + 2]
+	ldh a, [hQuotient + 2]
 	cp $8
 	jr c, .okay
 	ld a, $7
@@ -3674,7 +3690,8 @@ AbilityCap:
 	call PrintText
 	call WaitSFX
 .abort
-	jp ClearPalettes
+	call ClearPalettes
+	jp ClearTileMap
 
 .no_effect
 	call WontHaveAnyEffectMessage

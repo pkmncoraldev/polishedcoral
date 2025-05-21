@@ -12,10 +12,10 @@ Skatepark_MapScriptHeader:
 	warp_def 41,  1, 7, FLICKER_STATION
 
 	db 34 ; coord events
-	coord_event 15, 28, 2, SkateparkFountain
-	coord_event 18, 28, 2, SkateparkFountain
-	coord_event 15, 31, 2, SkateparkFountain
-	coord_event 18, 31, 2, SkateparkFountain
+	coord_event 15, 30, 2, SkateparkFountain
+	coord_event 18, 30, 2, SkateparkFountain
+	coord_event 15, 33, 2, SkateparkFountain
+	coord_event 18, 33, 2, SkateparkFountain
 	coord_event  5, 48, 2, SkateparkRail1
 	coord_event  5, 54, 2, SkateparkRail1
 	coord_event  8, 51, 2, SkateparkRail2
@@ -32,31 +32,31 @@ Skatepark_MapScriptHeader:
 	coord_event 20, 60, 2, SkateparkFlowerBed1
 	coord_event 12, 38, 2, SkateparkFlowerBed2
 	coord_event 15, 38, 2, SkateparkFlowerBed2
-	coord_event 10, 32, 2, SkateparkFlowerBed3
-	coord_event 10, 35, 2, SkateparkFlowerBed3
-	coord_event 10, 26, 2, SkateparkFlowerBed4
-	coord_event 10, 29, 2, SkateparkFlowerBed4
-	coord_event 23, 32, 2, SkateparkFlowerBed5
-	coord_event 23, 35, 2, SkateparkFlowerBed5
-	coord_event 23, 26, 2, SkateparkFlowerBed6
-	coord_event 23, 29, 2, SkateparkFlowerBed6
-	coord_event 10, 23, 2, SkateparkFlowerBed7
-	coord_event 13, 23, 2, SkateparkFlowerBed7
-	coord_event 15, 23, 2, SkateparkFlowerBed7
-	coord_event 18, 23, 2, SkateparkFlowerBed7
-	coord_event 20, 23, 2, SkateparkFlowerBed7
-	coord_event 23, 23, 2, SkateparkFlowerBed7
+	coord_event 10, 30, 2, SkateparkFlowerBed3
+	coord_event 10, 33, 2, SkateparkFlowerBed3
+	coord_event  4, 17, 2, SkateparkFlowerBed4
+	coord_event  4, 17, 2, SkateparkFlowerBed4
+	coord_event 23, 30, 2, SkateparkFlowerBed5
+	coord_event 23, 33, 2, SkateparkFlowerBed5
+	coord_event  6, 17, 2, SkateparkFlowerBed6
+	coord_event  6, 17, 2, SkateparkFlowerBed6
+	coord_event 10, 25, 2, SkateparkFlowerBed7
+	coord_event 13, 25, 2, SkateparkFlowerBed7
+	coord_event 15, 25, 2, SkateparkFlowerBed7
+	coord_event 18, 25, 2, SkateparkFlowerBed7
+	coord_event 20, 25, 2, SkateparkFlowerBed7
+	coord_event 23, 25, 2, SkateparkFlowerBed7
 
 	db 0 ; bg events
 
-	db 15 ; object events
+	db 17 ; object events
 	person_event SPRITE_VALVE_2, 42,  9, SPRITEMOVEDATA_HALFPIPE_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_VALVE_2, 42, 15, SPRITEMOVEDATA_HALFPIPE_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_SKATER_BOSS, 24, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SkateparkTMNpc, EVENT_SKATEPARK_NPCS_GONE
+	person_event SPRITE_SKATER_BOSS, 26, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SkateparkTMNpc, EVENT_SKATEPARK_NPCS_GONE
 	person_event SPRITE_SKATER, 42, 18, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SkateparkGuard, EVENT_SKATEPARK_GUARDS_GONE
 	person_event SPRITE_SKATER, 42, 20, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SkateparkGuard, EVENT_SKATEPARK_GUARDS_GONE
 	person_event SPRITE_SKATER, 48, 11, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SkateparkNPC1, EVENT_SKATEPARK_NPCS_GONE
-	person_event SPRITE_SKATER, 53, 22, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SkateparkNPC2, EVENT_SKATEPARK_NPCS_GONE
+	person_event SPRITE_SKATER, 53, 23, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SkateparkNPC2, EVENT_SKATEPARK_NPCS_GONE
 	person_event SPRITE_SKATER, 59, 18, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SkateparkNPC3, EVENT_SKATEPARK_NPCS_GONE
 	person_event SPRITE_SKATER, 51,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SkateparkNPC4, EVENT_SKATEPARK_NPCS_GONE
 	person_event SPRITE_SKATER, 50, 19, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SKATEPARK_NPCS_GONE
@@ -64,7 +64,9 @@ Skatepark_MapScriptHeader:
 	person_event SPRITE_PONYTAIL, 58,  7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SkateparkNPC6, EVENT_SKATEPARK_NPCS_GONE
 	person_event SPRITE_SKATER, 35, 13, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SkateparkNPC7, EVENT_SKATEPARK_NPCS_GONE
 	person_event SPRITE_SKATER, 29, 19, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SkateparkNPC8, EVENT_SKATEPARK_NPCS_GONE
-	person_event SPRITE_SKATER, 34, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SkateparkNPC9, EVENT_SKATEPARK_NPCS_GONE
+	person_event SPRITE_SKATER, 36, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SkateparkNPC9, EVENT_SKATEPARK_NPCS_GONE
+	person_event SPRITE_REDS_MOM, 43, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SkateparkNPC10, EVENT_SKATEPARK_NPCS_GONE
+	person_event SPRITE_SKATER, 44, 25, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SkateparkNPC11, EVENT_SKATEPARK_NPCS_GONE
 	
 	
 SkateparkCallback:
@@ -289,6 +291,35 @@ SkateparkNPC9Text2:
 	cont "greeting!"
 	done
 	
+SkateparkNPC10:
+	jumptext SkateparkNPC10Text
+	
+SkateparkNPC10Text:
+	text "Be careful,"
+	line "sweetie."
+	
+	para "Don't forget to"
+	line "wear your elbow"
+	cont "and knee pads."
+	
+	para "Oh, don't you just"
+	line "look precious in"
+	cont "your little skater"
+	cont "outfit?"
+	done
+	
+SkateparkNPC11:
+	jumptext SkateparkNPC11Text
+	
+SkateparkNPC11Text:
+	text "Aw, come on,"
+	line "MOM!"
+	
+	para "You're embarrassing"
+	line "me in front of the"
+	cont "other guys!"
+	done
+	
 SkateparkRail1:
 	callasm SkateparkRail1Asm
 	end
@@ -434,6 +465,7 @@ SkateparkTMNpc:
 	special Special_FadeOutMusic
 	special FadeOutPalettes
 	special Special_ForceSkateboard
+	setevent EVENT_CANT_HEADBUTT
 	setevent EVENT_SKATEPARK_NPCS_GONE
 	setevent EVENT_SKATEPARK_GUARDS_GONE
 	dotrigger $1
@@ -468,6 +500,7 @@ SkateparkTimesUp::
 	special FadeOutPalettes
 	special Special_ForceSkateboard
 	clearevent EVENT_SKATEPARK_NPCS_GONE
+	clearevent EVENT_CANT_HEADBUTT
 	dotrigger $3	
 	warp2 UP, SKATEPARK, $10, $19
 	end

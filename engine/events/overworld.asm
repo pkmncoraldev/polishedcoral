@@ -316,7 +316,7 @@ CutDownGrass: ; c810
 	ld a, [wBuffer5] ; ReplacementTile
 	ld [hl], a
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call LoadMapPart
 	call UpdateSprites
 	call DelayFrame
@@ -382,7 +382,7 @@ AutoCutTreeScript:
 
 CutDownTree:
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call LoadMapPart
 	call UpdateSprites
 	call DelayFrame
@@ -869,7 +869,7 @@ FlyFunction: ; ca3b
 	jr nz, .indoors
 .outdoors
 	xor a
-	ld [hMapAnims], a
+	ldh [hMapAnims], a
 	call LoadStandardMenuDataHeader
 	call ClearSprites
 	farcall _FlyMap
@@ -1693,6 +1693,8 @@ TryHeadbuttOW:: ; cec9
 	ret
 
 AskHeadbuttScript: ; 0xcedc
+	checkevent EVENT_CANT_HEADBUTT
+	iftrue .not_now
 	checkflag ENGINE_HEADBUTT_ACTIVE
 	iftrue AutoHeadbuttScript
 	opentext
@@ -1700,6 +1702,16 @@ AskHeadbuttScript: ; 0xcedc
 	yesorno
 	iftrue HeadbuttScript
 	endtext
+.not_now
+	opentext
+	writetext HeadbuttNotNowText
+	waitbutton
+	endtext
+	
+HeadbuttNotNowText:
+	text "Now's not the"
+	line "time!"
+	done
 
 UnknownText_0xcee6: ; 0xcee6
 	; A #MON could be in this tree. Want to HEADBUTT it?
@@ -2166,12 +2178,12 @@ GetFacingObject:: ; cf0d
 	farcall CheckFacingObject
 	jr nc, .fail
 
-	ld a, [hObjectStructIndexBuffer]
+	ldh a, [hObjectStructIndexBuffer]
 	call GetObjectStruct
 	ld hl, OBJECT_MAP_OBJECT_INDEX
 	add hl, bc
 	ld a, [hl]
-	ld [hLastTalked], a
+	ldh [hLastTalked], a
 	call GetMapObject
 	ld hl, MAPOBJECT_MOVEMENT
 	add hl, bc
@@ -2188,12 +2200,12 @@ GetFacingObjectSprite:: ; cf0d
 	farcall CheckFacingObject
 	jr nc, .fail
 
-	ld a, [hObjectStructIndexBuffer]
+	ldh a, [hObjectStructIndexBuffer]
 	call GetObjectStruct
 	ld hl, OBJECT_MAP_OBJECT_INDEX
 	add hl, bc
 	ld a, [hl]
-	ld [hLastTalked], a
+	ldh [hLastTalked], a
 	call GetMapObject
 	ld hl, MAPOBJECT_SPRITE
 	add hl, bc
@@ -2503,7 +2515,7 @@ FishFunction: ; cf8e
 .skip_lava
 	call GetFacingTileCoord
 	cp COLL_FISHING
-	jr z, .coll_fishing
+	jr z, .facingwater
 	call GetTileCollision
 	cp $1
 	jr z, .facingwater
@@ -2517,8 +2529,6 @@ FishFunction: ; cf8e
 	jr nz, .goodtofish
 	ld a, $4
 	ret
-.coll_fishing
-	ld a, $1
 .goodtofish
 	ld d, a
 	ld a, [wBuffer2]
@@ -2693,7 +2703,7 @@ MovementData_0xd093: ; d093
 
 PutTheRodAway: ; d095
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld a, $1
 	ld [wPlayerAction], a
 	call UpdateSprites
@@ -3070,7 +3080,6 @@ UnknownText_0xd1d0: ; 0xd1d0
 HandleEventsFly:
 	clearevent EVENT_LAKE_ROCKS_BROWN
 HandleEventsEscapeRope:
-	clearevent EVENT_GLINT_GROVE_EAST_ROCKS_BROWN
 	clearevent EVENT_ROUTE_20_GRASS_YELLOW
 	clearevent EVENT_SNOWSTORM_HAPPENING
 	clearevent EVENT_SANDSTORM_HAPPENING

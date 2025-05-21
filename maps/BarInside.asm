@@ -185,7 +185,7 @@ BarInsideFightText7:
 	text "I ain't got time"
 	line "for this!"
 	
-	para "I gotta go pummle"
+	para "I gotta go pummel"
 	line "that other guy!"
 	done
 	
@@ -501,14 +501,14 @@ BarInsideRegular2Text2:
 	cont "was lettin' on."
 	
 	para "Am I gettin'"
-	line "hussled?"
+	line "hustled?"
 	done
 	
 BarInsideRegular2Text3:
 	text "First this guy,"
 	line "and now you."
 	
-	para "I'm gettin' hussled"
+	para "I'm gettin' hustled"
 	line "left and right!"
 	done
 	

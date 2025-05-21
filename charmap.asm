@@ -92,7 +92,7 @@
 
 ; Battle characters
 
-BATTLEEXTRA_GFX_START EQU $5f
+DEF BATTLEEXTRA_GFX_START EQU $5f
 
 	charmap "<BALL>",   $5f
 	charmap "<MALE>",   $60
@@ -258,7 +258,7 @@ BATTLEEXTRA_GFX_START EQU $5f
 	charmap "…",        $f0
 	charmap "<PHONE>",  $f1
 	charmap "<BLACK>",  $f2
-	charmap "<NONO>",   $f3
+	charmap "<SHINY>",  $f3
 	charmap "′",        $f4
 	charmap "″",        $f5
 	charmap "✓",        $f5

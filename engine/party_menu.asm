@@ -56,7 +56,7 @@ WritePartyMenuTilemap: ; 0x5005f
 	push af
 	set NO_TEXT_SCROLL, [hl] ; Disable text delay
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	hlcoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	ld a, " "
@@ -311,6 +311,8 @@ PlacePartyMonStatus: ; 501b2
 ; 501e0
 
 PlacePartyMonTMHMCompatibility: ; 501e0
+	ld a, 0
+	ld [wCurPartyMon], a
 	ld a, [wPartyCount]
 	and a
 	ret z
@@ -329,12 +331,21 @@ PlacePartyMonTMHMCompatibility: ; 501e0
 	add hl, de
 	ld a, [hl]
 	ld [wCurPartySpecies], a
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Form
+	call GetPartyLocation
+	ld a, [hl]
+	and FORM_MASK
+	ld [wCurForm], a
 	predef CanLearnTMHMMove
 	pop hl
 	call .PlaceAbleNotAble
 	call PlaceString
 
 .next
+	ld a, [wCurPartyMon]
+	inc a
+	ld [wCurPartyMon], a
 	pop hl
 	ld de, SCREEN_WIDTH * 2
 	add hl, de
@@ -620,11 +631,11 @@ PlacePartyMonRemindable: ; 501e0
 ; 50221
 
 .string_able ; 50221
-	db "Able@"
+	db "ABLE@"
 ; 50226
 
 .string_not_able ; 50226
-	db "Not able@"
+	db "NOT ABLE@"
 ; 5022f
 
 
@@ -671,14 +682,14 @@ InitPartyMenuGFX: ; 503e0
 	ret z
 	ld c, a
 	xor a
-	ld [hObjectStructIndexBuffer], a
+	ldh [hObjectStructIndexBuffer], a
 .loop
 	push bc
 	push hl
 	farcall LoadPartyMenuMonIcon
-	ld a, [hObjectStructIndexBuffer]
+	ldh a, [hObjectStructIndexBuffer]
 	inc a
-	ld [hObjectStructIndexBuffer], a
+	ldh [hObjectStructIndexBuffer], a
 	pop hl
 	pop bc
 	dec c
@@ -763,7 +774,7 @@ PartyMenuSelect: ; 0x50457
 	cp b
 	jr z, .exitmenu ; CANCEL
 	ld [wPartyMenuCursor], a
-	ld a, [hJoyLast]
+	ldh a, [hJoyLast]
 	ld b, a
 	bit B_BUTTON_F, b
 	jr nz, .exitmenu ; B button

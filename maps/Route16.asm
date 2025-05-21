@@ -271,6 +271,7 @@ Route6SouthMinaScene:
 	pause 25
 	playsound SFX_SWITCH_POCKETS
 	disappear 6
+	disappear 7
 	pause 25
 	spriteface 4, LEFT
 	pause 10

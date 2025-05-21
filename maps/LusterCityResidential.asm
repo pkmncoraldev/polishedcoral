@@ -521,6 +521,10 @@ LusterPunkLeader:
 	waitbutton
 	closetext
 	pause 10
+	applyonemovement LUSTERPUNKLEADER, step_left
+	pause 2
+	spriteface LUSTERPUNKLEADER, DOWN
+	pause 10
 	
 	special FadeOutPalettesBlack
 	applyonemovement PLAYER, step_right
@@ -793,6 +797,7 @@ LusterTrashcanAsm:
 	ret
 	
 LusterTrashcanAsmBattle:
+	call WaitSFX
 	farcall TrashMonEncounter
 	ld a, BANK(LusterTrashcanWildBattleScript)
 	ld hl, LusterTrashcanWildBattleScript
@@ -943,7 +948,7 @@ LusterPunkLeaderText2:
 	done
 	
 LusterPunkLeaderText3:
-	text "You got this, kid."
+	text "You got this."
 	
 	para "I hope…"
 	done
@@ -1009,6 +1014,10 @@ LusterPunkLeaderText7:
 	
 	para "What are you"
 	line "waiting for?"
+	
+	para "My associate is"
+	line "somewhere in the"
+	cont "neighborhood."
 	done
 	
 LusterPunkLeaderText8:
@@ -1095,9 +1104,6 @@ LusterPunkLeaderText9_4:
 	
 	para "It's NASTY!"
 	
-	para "Even worse than"
-	line "usual…"
-	
 	para "My #MON won't"
 	line "get near it!"
 	
@@ -1113,8 +1119,7 @@ LusterPunkLeaderText9_4:
 	para "I'll make it worth"
 	line "your while."
 	
-	para "What do ya say,"
-	line "kid?"
+	para "What do ya say?"
 	done
 	
 LusterPunkLeaderText10:
@@ -1123,7 +1128,7 @@ LusterPunkLeaderText10:
 	cont "do it for"
 	cont "“THE NIDOKINGS”!"
 
-	para "You got this, kid."
+	para "You got this."
 	
 	para "I hope…"
 	done
@@ -1347,7 +1352,7 @@ LusterPunk2Text6:
 	done
 	
 LusterPunk2Text7:
-	text "You got this!"
+	text "Go get 'em!"
 	done
 	
 LusterPunk2Text8:

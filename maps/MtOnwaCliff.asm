@@ -121,7 +121,7 @@ MtOnwaPanNPC:
 	checkevent EVENT_MT_ONWA_CLIFF_POTION
 	iftrue .no_heal
 	writetext MtOnwaPanNPCText7
-	verbosegiveitem HYPER_POTION
+	verbosegiveitem REVIVE
 	iffalse .no_room
 	setevent EVENT_MT_ONWA_CLIFF_POTION
 .no_heal

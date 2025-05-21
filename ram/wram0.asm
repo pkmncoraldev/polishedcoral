@@ -553,7 +553,7 @@ wPayDayMoney:: ds 3
 wSafariMonAngerCount:: ds 1
 wSafariMonEating:: ds 1
 
-	ds 1
+wTotalBattleTurns:: ds 1
 
 ; used when enemy is transformed
 wEnemyBackupDVs:: ds 3

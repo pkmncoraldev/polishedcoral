@@ -1,7 +1,7 @@
 INCLUDE "constants.asm"
 
 
-tilecoll: MACRO
+MACRO tilecoll
 	db COLL_\1, COLL_\2, COLL_\3, COLL_\4
 ENDM
 
@@ -10,9 +10,9 @@ SECTION "Tileset Data - player_room", ROMX
 TilesetPlayerRoomGFX0::
 INCBIN "gfx/tilesets/player_room.2bpp.lz"
 
-TilesetPlayerRoomGFX1 EQU 0
+DEF TilesetPlayerRoomGFX1 EQU 0
 
-TilesetPlayerRoomGFX2 EQU 0
+DEF TilesetPlayerRoomGFX2 EQU 0
 
 TilesetPlayerRoomMeta::
 INCBIN "data/tilesets/player_room_metatiles.bin.lz"
@@ -32,7 +32,7 @@ INCBIN "gfx/tilesets/playerhouse.2bpp.vram0.lz"
 TilesetPlayerHouseGFX1::
 INCBIN "gfx/tilesets/playerhouse.2bpp.vram1.lz"
 
-TilesetPlayerHouseGFX2 EQU 0
+DEF TilesetPlayerHouseGFX2 EQU 0
 
 TilesetPlayerHouseMeta::
 INCBIN "data/tilesets/playerhouse_metatiles.bin.lz"
@@ -75,7 +75,7 @@ TilesetGlintGFX1::
 TilesetStarglowGFX1::
 INCBIN "gfx/tilesets/glint.2bpp.vram1.lz"
 
-TilesetGlintGFX2 EQU 0
+DEF TilesetGlintGFX2 EQU 0
 TilesetStarglowGFX2::
 INCBIN "gfx/tilesets/glint.2bpp.vram2.lz"
 
@@ -151,7 +151,7 @@ INCBIN "gfx/tilesets/pokecenter.2bpp.vram0.lz"
 TilesetPokeCenterGFX1::
 INCBIN "gfx/tilesets/pokecenter.2bpp.vram1.lz"
 
-TilesetPokeCenterGFX2 EQU 0
+DEF TilesetPokeCenterGFX2 EQU 0
 
 TilesetPokeCenterMeta::
 INCBIN "data/tilesets/pokecenter_metatiles.bin.lz"
@@ -171,7 +171,7 @@ INCBIN "gfx/tilesets/lighthouse.2bpp.vram0.lz"
 TilesetLighthouseGFX1::
 INCBIN "gfx/tilesets/lighthouse.2bpp.vram1.lz"
 
-TilesetLighthouseGFX2 EQU 0
+DEF TilesetLighthouseGFX2 EQU 0
 
 TilesetLighthouseMeta::
 INCBIN "data/tilesets/lighthouse_metatiles.bin.lz"
@@ -268,7 +268,7 @@ INCBIN "gfx/tilesets/grove.2bpp.vram0.lz"
 TilesetGroveGFX1::
 INCBIN "gfx/tilesets/grove.2bpp.vram1.lz"
 
-TilesetGroveGFX2 EQU 0
+DEF TilesetGroveGFX2 EQU 0
 
 TilesetGroveMeta::
 INCBIN "data/tilesets/grove_metatiles.bin.lz"
@@ -288,7 +288,7 @@ INCBIN "gfx/tilesets/mart.2bpp.vram0.lz"
 TilesetMartGFX1::
 INCBIN "gfx/tilesets/mart.2bpp.vram1.lz"
 
-TilesetMartGFX2 EQU 0
+DEF TilesetMartGFX2 EQU 0
 
 TilesetMartMeta::
 INCBIN "data/tilesets/mart_metatiles.bin.lz"
@@ -308,7 +308,7 @@ INCBIN "gfx/tilesets/mountain.2bpp.vram0.lz"
 TilesetMountainGFX1::
 INCBIN "gfx/tilesets/mountain.2bpp.vram1.lz"
 
-TilesetMountainGFX2 EQU 0
+DEF TilesetMountainGFX2 EQU 0
 
 TilesetMountainMeta::
 INCBIN "data/tilesets/mountain_metatiles.bin.lz"
@@ -349,7 +349,7 @@ INCBIN "gfx/tilesets/spooky.2bpp.vram0.lz"
 TilesetSpookyGFX1::
 INCBIN "gfx/tilesets/spooky.2bpp.vram1.lz"
 
-TilesetSpookyGFX2 EQU 0
+DEF TilesetSpookyGFX2 EQU 0
 
 TilesetSpookyMeta::
 INCBIN "data/tilesets/spooky_metatiles.bin.lz"
@@ -438,7 +438,7 @@ INCBIN "gfx/tilesets/snow.2bpp.vram0.lz"
 TilesetSnowGFX1::
 INCBIN "gfx/tilesets/snow.2bpp.vram1.lz"
 
-TilesetSnowGFX2 EQU 0
+DEF TilesetSnowGFX2 EQU 0
 
 TilesetSnowMeta::
 INCBIN "data/tilesets/snow_metatiles.bin.lz"
@@ -521,7 +521,7 @@ INCBIN "gfx/tilesets/sewer.2bpp.vram0.lz"
 TilesetSewerGFX1::
 INCBIN "gfx/tilesets/sewer.2bpp.vram1.lz"
 
-TilesetSewerGFX2 EQU 0
+DEF TilesetSewerGFX2 EQU 0
 
 TilesetSewerMeta::
 INCBIN "data/tilesets/sewer_metatiles.bin.lz"
@@ -541,7 +541,7 @@ INCBIN "gfx/tilesets/train.2bpp.vram0.lz"
 TilesetTrainGFX1::
 INCBIN "gfx/tilesets/train.2bpp.vram1.lz"
 
-TilesetTrainGFX2 EQU 0
+DEF TilesetTrainGFX2 EQU 0
 
 TilesetTrainMeta::
 INCBIN "data/tilesets/train_metatiles.bin.lz"
@@ -719,9 +719,9 @@ SECTION "Tileset Data - bar", ROMX
 TilesetBarGFX0::
 INCBIN "gfx/tilesets/bar.2bpp.lz"
 
-TilesetBarGFX1 EQU 0
+DEF TilesetBarGFX1 EQU 0
 
-TilesetBarGFX2 EQU 0
+DEF TilesetBarGFX2 EQU 0
 
 TilesetBarMeta::
 INCBIN "data/tilesets/bar_metatiles.bin.lz"
@@ -814,7 +814,7 @@ INCLUDE "data/tilesets/south_buildings_collision.asm"
 
 SECTION "Tileset Headers", ROMX
 
-tileset: macro
+macro tileset
 	dba \1GFX0
 	dw \1GFX1, \1GFX2
 	dba \1Meta, \1Coll, \1Attr

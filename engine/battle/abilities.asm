@@ -1,5 +1,5 @@
 CheckChlorophialshine:
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld hl, wBattleMonSpecies
 	jr z, .got_species3
@@ -116,7 +116,7 @@ HealStatusAbility:
 	ld [hl], a
 	ld hl, BecameHealthyText
 	call StdBattleTextBox
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jp z, UpdateBattleMonInParty
 	jp UpdateEnemyMonInParty
@@ -164,7 +164,7 @@ FlowerGiftAbility:
 	call GetWeatherAfterCloudNine
 	cp WEATHER_SUN
 	ret nz
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jr nz, .enemy
 	ld a, [wBattleMonForm]
@@ -317,7 +317,7 @@ DownloadAbility:
 	call ShowAbilityActivation
 	call DisableAnimations
 	ld hl, wEnemyMonDefense
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jr z, .ok
 	ld hl, wBattleMonDefense
@@ -327,7 +327,7 @@ DownloadAbility:
 	ld a, [hl]
 	ld c, a
 	ld hl, wEnemyMonSpclDef + 1
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jr z, .ok2
 	ld hl, wBattleMonSpclDef + 1
@@ -365,7 +365,7 @@ AnticipationAbility:
 ; whatever type they are listed as (e.g. HP is Normal). It will also (as of 5gen)
 ; treat Counter/Mirror Coat (and Metal Burst) as attacking moves of their type.
 ; It also ignores Pixilate.
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld hl, wEnemyMonMoves
 	jr z, .got_move_ptr
@@ -390,7 +390,7 @@ AnticipationAbility:
 	ld hl, Moves
 	ld bc, MOVE_LENGTH
 	rst AddNTimes
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld de, wPlayerMoveStruct
 	jr z, .got_move_struct
@@ -427,7 +427,7 @@ AnticipationAbility:
 	ld hl, Moves
 	ld bc, MOVE_LENGTH
 	rst AddNTimes
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld de, wPlayerMoveStruct
 	jr z, .got_move_struct2
@@ -441,7 +441,7 @@ ForewarnAbility:
 ; A note on moves with non-regular damage: Bulbapedia and Showdown has conflicting info on
 ; what power these moves actually have. I am using Showdown numbers here which assigns
 ; 160 to counter moves and 80 to everything else with nonstandard base power.
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld hl, wEnemyMonMoves
 	jr z, .got_move_ptr
@@ -526,6 +526,10 @@ ForewarnAbility:
 	jr nc, .not_multi_move_slot
 	pop de
 	pop hl
+	push af
+	ld a, [wEnemyMonSpecies]
+	ld [wCurPartySpecies], a
+	pop af
 	farcall GetMultiMoveSlotName2
 	jr .done_multi_move
 .not_multi_move_slot
@@ -717,9 +721,8 @@ RunContactAbilities:
 	ret
 
 CursedBodyAbility:
-	ld a, 10
-	call BattleRandomRange
-	cp 3
+	call BattleRandom
+	cp 1 + 30 percent
 	ret nc
 	call DisableAnimations
 	; this runs ShowAbilityActivation when relevant
@@ -997,7 +1000,7 @@ JustifiedAbility:
 	jr AttackUpAbility
 MoxieAbility:
 	; Don't run if battle is over
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jr nz, .enemy
 	ld a, [wBattleMode]
@@ -1362,7 +1365,7 @@ CudChewAbility:
 	call RegainItemByAbility
 
 	; For the player, update backup items
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ret nz
 	jp SetBackupItem
@@ -1403,7 +1406,7 @@ RegainItemByAbility:
 	pop hl
 	call StdBattleTextBox
 	pop bc
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1Item
@@ -1428,7 +1431,7 @@ MoodyAbility:
 
 	; First, check how many stats aren't maxed out
 	ld hl, wPlayerStatLevels
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jr z, .got_stat_levels
 	ld hl, wEnemyStatLevels
@@ -1676,7 +1679,7 @@ AnalyticAbility:
 ; 130% damage if opponent went first
 	ld a, [wEnemyGoesFirst] ; 0 = player goes first
 	ld b, a
-	ld a, [hBattleTurn] ; 0 = player's turn
+	ldh a, [hBattleTurn] ; 0 = player's turn
 	xor b ; nz if opponent went first
 	ret z
 	ld a, $da
@@ -1909,7 +1912,7 @@ RegeneratorAbility:
 	call ShowAbilityActivation
 	farcall GetThirdMaxHP
 	farcall RestoreHP
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jp z, UpdateBattleMonInParty
 	jp UpdateEnemyMonInParty
@@ -2003,7 +2006,7 @@ RunPostBattleAbilities::
 	call GetItemName
 	ld hl, wStringBuffer1
 	ld de, wStringBuffer2
-	ld bc, PKMN_NAME_LENGTH
+	ld bc, ITEM_NAME_LENGTH
 	rst CopyBytes
 	pop de
 	pop bc
@@ -2013,7 +2016,13 @@ RunPostBattleAbilities::
 	call GetPartyParamLocation
 	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
+	call ClearTileMap
+	ld b, CGB_BATTLE_COLORS
+	call GetCGBLayout
+	call SetPalettes
 	call GetPokemonName
+	ld c, 10
+	call DelayFrames
 	ld hl, BattleText_PickedUpItem
 	call StdBattleTextBox
 	pop de
@@ -2113,7 +2122,7 @@ DisguiseAbility::
 	xor a
 	ret
 .cont
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jr z, .enemy
 	ld a, [wBattleMonForm]
@@ -2221,7 +2230,7 @@ HandleFormRevertsAfterBattle:
 	ld a, b
 	cp e
 	jr nz, .skip1
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wPartyMon1Form]
 	and $ff - FORM_MASK
@@ -2236,7 +2245,7 @@ HandleFormRevertsAfterBattle:
 	ld a, b
 	cp e
 	jr nz, .skip2
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wPartyMon2Form]
 	and $ff - FORM_MASK
@@ -2251,7 +2260,7 @@ HandleFormRevertsAfterBattle:
 	ld a, b
 	cp e
 	jr nz, .skip3
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wPartyMon3Form]
 	and $ff - FORM_MASK
@@ -2266,7 +2275,7 @@ HandleFormRevertsAfterBattle:
 	ld a, b
 	cp e
 	jr nz, .skip4
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wPartyMon4Form]
 	and $ff - FORM_MASK
@@ -2281,7 +2290,7 @@ HandleFormRevertsAfterBattle:
 	ld a, b
 	cp e
 	jr nz, .skip5
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wPartyMon5Form]
 	and $ff - FORM_MASK
@@ -2296,7 +2305,7 @@ HandleFormRevertsAfterBattle:
 	ld a, b
 	cp e
 	ret nz
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wPartyMon6Form]
 	and $ff - FORM_MASK
@@ -2477,7 +2486,7 @@ ResetEnemyFlowerGift:
 	ld a, b
 	cp FLOWER_GIFT
 	jr nz, .skip1
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wOTPartyMon1Form]
 	and $ff - FORM_MASK
@@ -2492,7 +2501,7 @@ ResetEnemyFlowerGift:
 	ld a, b
 	cp FLOWER_GIFT
 	jr nz, .skip2
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wOTPartyMon2Form]
 	and $ff - FORM_MASK
@@ -2507,7 +2516,7 @@ ResetEnemyFlowerGift:
 	ld a, b
 	cp FLOWER_GIFT
 	jr nz, .skip3
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wOTPartyMon3Form]
 	and $ff - FORM_MASK
@@ -2522,12 +2531,12 @@ ResetEnemyFlowerGift:
 	ld a, b
 	cp FLOWER_GIFT
 	jr nz, .skip4
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wOTPartyMon4Form]
 	and $ff - FORM_MASK
 	or b
-	ld hl, wPartyMon4Form
+	ld hl, wOTPartyMon4Form
 	ld [hl], a
 .skip4
 	ld hl, wOTPartyMon5Personality
@@ -2537,7 +2546,7 @@ ResetEnemyFlowerGift:
 	ld a, b
 	cp FLOWER_GIFT
 	jr nz, .skip5
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wOTPartyMon5Form]
 	and $ff - FORM_MASK
@@ -2552,7 +2561,7 @@ ResetEnemyFlowerGift:
 	ld a, b
 	cp FLOWER_GIFT
 	ret nz
-	ld a, DISGUISED_FORM
+	ld a, PLAIN_FORM
 	ld b, a
 	ld a, [wOTPartyMon6Form]
 	and $ff - FORM_MASK
@@ -2578,7 +2587,7 @@ RevertFlowerGiftAfterWeather:
 	jp SwitchTurn
 	
 RevertFlowerGift:
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jr nz, .enemy
 	ld a, [wBattleMonForm]
@@ -2614,8 +2623,8 @@ RevertFlowerGift:
 	and $ff - FORM_MASK
 	or b
 	ld [wEnemyMonForm], a
-	call ChangeEnemyFormAnimation
 	call ResetEnemyFlowerGift
+	call ChangeEnemyFormAnimation
 .end
 	ld hl, FlowerGiftTransformedText
 	jp StdBattleTextBox
@@ -2637,7 +2646,7 @@ PlayMonAnimAfterFormChange:
 	ld a, OTPARTYMON
 .finish
 	ld [wMonType], a
-	call CopyPkmnToTempMon2
+	farcall CopyPkmnToTempMon2
 	farcall GetMonFrontpic
 	eventflagcheck EVENT_SILENT_BATTLE_ANIMATION
 	lb de, $0, ANIM_MON_EGG1
@@ -2647,6 +2656,7 @@ PlayMonAnimAfterFormChange:
 	ld bc, wTempEnemyMonSpecies
 	hlcoord 12, 0
 	predef AnimateFrontpic
+	farcall BattleAnimRestoreHuds
 	eventflagreset EVENT_SILENT_BATTLE_ANIMATION
 	ret
 .cry_no_anim
@@ -2667,21 +2677,21 @@ DoGoldTea::
 	ret
 
 CopyBackpic: ; 3fc30
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $6
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld hl, VTiles0
 	ld de, VTiles2 tile $31
-	ld a, [hROMBank]
+	ldh a, [hROMBank]
 	ld b, a
 	ld c, 7 * 7
 	call Get2bpp
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	call .LoadTrainerBackpicAsOAM
 	ld a, $31
-	ld [hGraphicStartTile], a
+	ldh [hGraphicStartTile], a
 	hlcoord 2, 6
 	lb bc, 6, 6
 	predef PlaceGraphic
@@ -2691,7 +2701,7 @@ CopyBackpic: ; 3fc30
 .LoadTrainerBackpicAsOAM: ; 3fc5b
 	ld hl, wSprites
 	xor a
-	ld [hMapObjectIndexBuffer], a
+	ldh [hMapObjectIndexBuffer], a
 	ld b, $6
 	ld e, 21 * 8
 .outer_loop
@@ -2702,10 +2712,10 @@ CopyBackpic: ; 3fc30
 	inc hl
 	ld [hl], e
 	inc hl
-	ld a, [hMapObjectIndexBuffer]
+	ldh a, [hMapObjectIndexBuffer]
 	ld [hli], a
 	inc a
-	ld [hMapObjectIndexBuffer], a
+	ldh [hMapObjectIndexBuffer], a
 	ld a, $1
 	ld [hli], a
 	ld a, d
@@ -2713,9 +2723,9 @@ CopyBackpic: ; 3fc30
 	ld d, a
 	dec c
 	jr nz, .inner_loop
-	ld a, [hMapObjectIndexBuffer]
+	ldh a, [hMapObjectIndexBuffer]
 	add $3
-	ld [hMapObjectIndexBuffer], a
+	ldh [hMapObjectIndexBuffer], a
 	ld a, e
 	add $8
 	ld e, a

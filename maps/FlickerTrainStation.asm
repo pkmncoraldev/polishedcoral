@@ -516,6 +516,9 @@ FlickerTrainStationFlowersText:
 	text "Some pretty"
 	line "flowers."
 	
+	para "Almost like MOM's"
+	line "back home."
+	
 	para "They smell like…"
 	
 	para "Plastic?"

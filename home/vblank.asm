@@ -13,13 +13,13 @@ VBlank::
 	push de
 	push hl
 
-	ld a, [hBuffer]
+	ldh a, [hBuffer]
 	push af
 
-	ld a, [hROMBank]
-	ld [hROMBankBackup], a
+	ldh a, [hROMBank]
+	ldh [hROMBankBackup], a
 
-	ld a, [hVBlank]
+	ldh a, [hVBlank]
 	cp 7
 	jr z, .skipToGameTime
 	and 7
@@ -43,13 +43,13 @@ VBlank::
 	ld [hl], 0
 	jr nz, .noVBlankLeak
 	ld a, $ff
-	ld [hDelayFrameLY], a
+	ldh [hDelayFrameLY], a
 .noVBlankLeak
 
 	pop af
-	ld [hBuffer], a
+	ldh [hBuffer], a
 
-	ld a, [hROMBankBackup]
+	ldh a, [hROMBankBackup]
 	rst Bankswitch
 
 	pop hl
@@ -59,11 +59,11 @@ VBlank::
 	reti
 
 .skipToGameTime
-	ld a, [hROMBank]
-	ld [hROMBankBackup], a
+	ldh a, [hROMBank]
+	ldh [hROMBankBackup], a
 	ld hl, wDEDCryRuntimeDuration
 	inc [hl]
-	ld a, [hDEDVBlankMode]
+	ldh a, [hDEDVBlankMode]
 	and a
 	jr z, .tryDoMapAnims
 	dec a
@@ -76,22 +76,22 @@ VBlank::
 	jr .doGameTime
 
 .doGrowlOrRoarAnim
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	call hPushOAM
 
 	ld a, BANK(CopyGrowlOrRoarPals)
 	call Bankswitch
 
-	ld a, [hCGBPalUpdate]
+	ldh a, [hCGBPalUpdate]
 	and a
 	call nz, CopyGrowlOrRoarPals
 	call RunOneFrameOfGrowlOrRoarAnim
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	jr .doGameTime
 
 .doPokeAnim
@@ -126,14 +126,14 @@ VBlank0::
 ; joypad
 ; sound
 
-	ld a, [hSCX]
-	ld [rSCX], a
-	ld a, [hSCY]
-	ld [rSCY], a
-	ld a, [hWY]
-	ld [rWY], a
-	ld a, [hWX]
-	ld [rWX], a
+	ldh a, [hSCX]
+	ldh [rSCX], a
+	ldh a, [hSCY]
+	ldh [rSCY], a
+	ldh a, [hWY]
+	ldh [rWY], a
+	ldh a, [hWX]
+	ldh [rWX], a
 
 	; There's only time to call one of these in one vblank.
 	; Calls are in order of priority.
@@ -174,8 +174,8 @@ VBlank0::
 .noDelay2
 	call Joypad
 
-	ld a, [hSeconds]
-	ld [hSecondsBackup], a
+	ldh a, [hSeconds]
+	ldh [hSecondsBackup], a
 	; fallthrough
 
 VBlankUpdateSound::
@@ -226,10 +226,10 @@ VBlank1::
 ; tiles
 ; oam
 ; sound / lcd stat
-	ld a, [hSCX]
-	ld [rSCX], a
-	ld a, [hSCY]
-	ld [rSCY], a
+	ldh a, [hSCX]
+	ldh [rSCX], a
+	ldh a, [hSCY]
+	ldh [rSCY], a
 
 	call UpdateCGBPals
 	jr c, VBlank1EntryPoint
@@ -247,10 +247,10 @@ VBlank3::
 ; tiles
 ; oam
 ; sound / lcd stat
-	ld a, [hSCX]
-	ld [rSCX], a
-	ld a, [hSCY]
-	ld [rSCY], a
+	ldh a, [hSCX]
+	ldh [rSCX], a
+	ldh a, [hSCY]
+	ldh [rSCY], a
 
 	call UpdateCGBPals
 	jr c, VBlank1EntryPoint
@@ -263,35 +263,35 @@ VBlank1EntryPoint:
 	call PushOAM
 
 	; get requested ints
-	ld a, [rIE]
+	ldh a, [rIE]
 	push af
-	ld a, [rIF]
+	ldh a, [rIF]
 	push af
 	xor a
-	ld [rIF], a
+	ldh [rIF], a
 	ld a, 1 << LCD_STAT
-	ld [rIE], a
-	ld [rIF], a
+	ldh [rIE], a
+	ldh [rIF], a
 
 	ei
 	call VBlankUpdateSound
 	di
 
 	; get requested ints
-	ld a, [rIF]
+	ldh a, [rIF]
 	ld b, a
 	; discard requested ints
 	pop af
 	or b
 	ld b, a
 	xor a
-	ld [rIF], a
+	ldh [rIF], a
 	; enable ints besides joypad
 	pop af
-	ld [rIE], a
+	ldh [rIE], a
 	; rerequest ints
 	ld a, b
-	ld [rIF], a
+	ldh [rIF], a
 	ret
 
 VBlank7::
@@ -309,8 +309,8 @@ VBlank5::
 ; tiles
 ; joypad
 ; sound
-	ld a, [hSCX]
-	ld [rSCX], a
+	ldh a, [hSCX]
+	ldh [rSCX], a
 
 	call UpdateCGBPals
 	jr c, .done
@@ -322,21 +322,21 @@ VBlank5::
 	call Joypad
 
 	xor a
-	ld [rIF], a
-	ld a, [rIE]
+	ldh [rIF], a
+	ldh a, [rIE]
 	push af
 	ld a, 1 << LCD_STAT ; lcd stat
-	ld [rIE], a
+	ldh [rIE], a
 	; request lcd stat
-	ld [rIF], a
+	ldh [rIF], a
 
 	ei
 	call VBlankUpdateSound
 	di
 
 	xor a
-	ld [rIF], a
+	ldh [rIF], a
 	; enable ints besides joypad
 	pop af
-	ld [rIE], a
+	ldh [rIE], a
 	ret

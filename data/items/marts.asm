@@ -371,15 +371,24 @@ LusterMallBall4:
 	db -1
 	
 ShimmerFishMarket:
-	db 3 ; # items
-	dbw MAGIKARP, 	200
-	dbw CHINCHOU, 	200
-	dbw CARVANHA, 	200
+	db 5 ; # items
+	dbw MAGIKARP, 	500
+	dbw CHINCHOU, 	3000
+	dbw HORSEA, 	5000
+	dbw CARVANHA, 	5000
+	dbw STARYU, 	3000
 	db -1
 	
 ShimmerBerryMarket:
-	db 1 ; # items
-	db ORAN_BERRY
+	db 8 ; # items
+	dbw ORAN_BERRY, 200
+	dbw SITRUS_BERRY, 600
+	dbw CHERI_BERRY, 600
+	dbw CHESTO_BERRY, 500
+	dbw PECHA_BERRY, 500
+	dbw RAWST_BERRY, 500
+	dbw ASPEAR_BERRY, 500
+	dbw PERSIM_BERRY, 700
 	db -1
 	
 ShimmerMart:

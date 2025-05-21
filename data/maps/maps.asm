@@ -1,4 +1,4 @@
-map: MACRO
+MACRO map
 	; label, tileset, permission, location, music, phone service flag, time of day, fishing group
 \1_MapHeader:
 	db BANK(\1_SecondMapHeader), \2, \3

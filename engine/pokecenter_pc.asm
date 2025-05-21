@@ -13,7 +13,7 @@ PokemonCenterPC: ; 1559a
 	call LoadMenuDataHeader
 .loop
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call .ChooseWhichPCListToUse
 	ld [wWhichIndexSet], a
 	call DoNthMenu
@@ -261,13 +261,13 @@ KrissPCMenuData: ; 0x15736
 .TurnOff:      db "TURN OFF@"
 .LogOff:       db "LOG OFF@"
 
-WITHDRAW_ITEM EQU 0
-DEPOSIT_ITEM  EQU 1
-TOSS_ITEM     EQU 2
-MAIL_BOX      EQU 3
-DECORATION    EQU 4
-TURN_OFF      EQU 5
-LOG_OFF       EQU 6
+DEF WITHDRAW_ITEM EQU 0
+DEF DEPOSIT_ITEM  EQU 1
+DEF TOSS_ITEM     EQU 2
+DEF MAIL_BOX      EQU 3
+DEF DECORATION    EQU 4
+DEF TURN_OFF      EQU 5
+DEF LOG_OFF       EQU 6
 
 .KrissPCMenuList1:
 	db 4
@@ -365,7 +365,7 @@ KrisWithdrawItemMenu: ; 0x157d1
 	ld hl, .WithdrewText
 	call MenuTextBox
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	jp ExitMenu
 
 .PackFull:

@@ -1,7 +1,7 @@
 DisplayUsedMoveText: ; 105db0
 ; battle command 03
 
-	ld a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 	and a
 	jr nz, .start
 

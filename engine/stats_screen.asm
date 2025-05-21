@@ -1,9 +1,9 @@
 StatsScreenInit: ; 4dc8a
 	ld hl, StatsScreenMain
-	ld a, [hMapAnims]
+	ldh a, [hMapAnims]
 	push af
 	xor a
-	ld [hMapAnims], a ; disable overworld tile animations
+	ldh [hMapAnims], a ; disable overworld tile animations
 	ld a, [wBoxAlignment] ; whether sprite is to be mirrorred
 	push af
 	ld a, [wJumptableIndex]
@@ -31,7 +31,7 @@ StatsScreenInit: ; 4dc8a
 	pop af
 	ld [wBoxAlignment], a
 	pop af
-	ld [hMapAnims], a
+	ldh [hMapAnims], a
 	ret
 ; 0x4dcd2
 
@@ -76,11 +76,11 @@ StatsScreen_WaitAnim: ; 4dd3a (13:5d3a)
 ;	jr nc, .finish
 
 	farcall SetUpPokeAnim
-	ld a, [hDEDCryFlag]
+	ldh a, [hDEDCryFlag]
 	and a
 	jr nz, .playDEDCry
 .checkForPicAnim
-	ld a, [hDEDVBlankMode]
+	ldh a, [hDEDVBlankMode]
 	and a
 	jr nz, .finishFrame
 	ld hl, wcf64
@@ -108,12 +108,12 @@ StatsScreen_Exit: ; 4dd6c (13:5d6c)
 	ld hl, wJumptableIndex
 	set 7, [hl]
 	xor a
-	ld [hDEDVBlankMode], a
+	ldh [hDEDVBlankMode], a
 	ret
 
 MonStatsInit: ; 4dd72 (13:5d72)
 	xor a
-	ld [hDEDVBlankMode], a
+	ldh [hDEDVBlankMode], a
 	ld hl, wcf64
 	res 6, [hl]
 	call ClearBGPalettes
@@ -230,7 +230,7 @@ StatsScreen_GetJoypad: ; 4de2c (13:5e2c)
 	jr .clear_flags
 
 .notbreedmon
-	ld a, [hJoyPressed]
+	ldh a, [hJoyPressed]
 .clear_flags
 	and a
 	ret
@@ -337,7 +337,7 @@ StatsScreen_JoypadAction: ; 4de54 (13:5e54)
 StatsScreen_InitUpperHalf: ; 4deea (13:5eea)
 	call .PlaceHPBar
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld a, [wCurPartySpecies]
 	ld [wd265], a
 	ld [wCurSpecies], a
@@ -428,7 +428,7 @@ StatsScreen_PlaceShinyIcon: ; 4dfa6 (13:5fa6)
 	farcall CheckShininess
 	ret nc
 	hlcoord 19, 0
-	ld [hl], "★"
+	ld [hl], "<SHINY>"
 	ret
 
 StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
@@ -438,7 +438,7 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 	ld hl, wTempMonForm
 	predef GetVariant
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	call .ClearBox
 	call .LoadPokeBall
 	call .PageTilemap
@@ -597,15 +597,15 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 	farcall CalcExpAtLevel
 	ld hl, wTempMonExp + 2
 	ld hl, wTempMonExp + 2
-	ld a, [hQuotient + 2]
+	ldh a, [hQuotient + 2]
 	sub [hl]
 	dec hl
 	ld [wBuffer3], a
-	ld a, [hQuotient + 1]
+	ldh a, [hQuotient + 1]
 	sbc [hl]
 	dec hl
 	ld [wBuffer2], a
-	ld a, [hQuotient]
+	ldh a, [hQuotient]
 	sbc [hl]
 	ld [wBuffer1], a
 	ret
@@ -1026,8 +1026,8 @@ StatsScreen_PlaceFrontpic: ; 4e226 (13:6226)
 ;	coord hl, 0, 0
 ;	call _PrepMonFrontpic
 ;	ld a, 1
-;	ld [hCGBPalUpdate], a
-;	ld [hBGMapMode], a
+;	ldh [hCGBPalUpdate], a
+;	ldh [hBGMapMode], a
 ;	ld c, 3
 ;	call DelayFrames
 ;	ld a, [wCurPartySpecies]
@@ -1035,7 +1035,7 @@ StatsScreen_PlaceFrontpic: ; 4e226 (13:6226)
 	ld hl, wcf64
 	set 6, [hl]
 	ld a, 2
-	ld [hDEDVBlankMode], a
+	ldh [hDEDVBlankMode], a
 	ret
 
 StatsScreen_GetAnimationParam: ; 4e2ad (13:62ad)
@@ -1108,16 +1108,16 @@ StatsScreen_LoadTextBoxSpaceGFX: ; 4e307 (13:6307)
 	push bc
 	push af
 	call DelayFrame
-	ld a, [rVBK]
+	ldh a, [rVBK]
 	push af
 	ld a, $1
-	ld [rVBK], a
+	ldh [rVBK], a
 	ld de, TextBoxSpace1bppGFX
 	lb bc, BANK(TextBoxSpace1bppGFX), 1
 	ld hl, VTiles2 tile $7f
 	call Get1bpp
 	pop af
-	ld [rVBK], a
+	ldh [rVBK], a
 	pop af
 	pop bc
 	pop de
@@ -1127,7 +1127,7 @@ StatsScreen_LoadTextBoxSpaceGFX: ; 4e307 (13:6307)
 
 EggStatsScreen: ; 4e33a
 	xor a
-	ld [hBGMapMode], a
+	ldh [hBGMapMode], a
 	ld hl, wCurHPPal
 	call SetHPPal
 	ld b, CGB_STATS_SCREEN_HP_PALS

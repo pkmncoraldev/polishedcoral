@@ -1,6 +1,6 @@
 BattleStart_TrainerHuds: ; 2c000
 	ld a, $e4
-	ld [rOBP0], a
+	ldh [rOBP0], a
 	call LoadBallIconGFX
 	ld a, [wPartyCount]
 	cp 0
@@ -15,7 +15,7 @@ BattleStart_TrainerHuds: ; 2c000
 
 EnemySwitch_TrainerHud: ; 2c012
 	ld a, $e4
-	ld [rOBP0], a
+	ldh [rOBP0], a
 	call LoadBallIconGFX
 	jp ShowOTTrainerMonsRemaining
 ; 2c01c
@@ -161,12 +161,6 @@ DrawEnemyHUDBorder: ; 2c0c5
 	ld [hl], "<BALL>"
 	ret
 
-.nuzlocke
-	hlcoord 1, 1
-	ld [hl], "<NONO>"
-	ret
-; 2c0f1
-
 PlaceHUDBorderTiles: ; 2c0f1
 	ld a, [wTrainerHUDTiles]
 	ld [hl], a
@@ -265,5 +259,5 @@ _ShowLinkBattleParticipants: ; 2c1b2
 	call GetCGBLayout
 	call SetPalettes
 	ld a, $e4
-	ld [rOBP0], a
+	ldh [rOBP0], a
 	ret

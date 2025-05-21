@@ -179,10 +179,10 @@ DoPoisonStep:: ; 505da
 ; 506b7
 
 LoadPoisonBGPals: ; cbcdd
-	ld a, [rSVBK]
+	ldh a, [rSVBK]
 	push af
 	ld a, $5
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld hl, wBGPals
 	ld c, 8 * 4
 .loop
@@ -206,9 +206,9 @@ endc
 	dec c
 	jr nz, .loop
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ld a, $1
-	ld [hCGBPalUpdate], a
+	ldh [hCGBPalUpdate], a
 	ld c, 4
 	call DelayFrames
 	farjp _UpdateTimePals

@@ -410,7 +410,18 @@ ShimmerCityNpc10:
 	jumptextfaceplayer ShimmerCityNpc10Text
 	
 ShimmerCityNpc10Text:
-	text "TEXT"
+	text "Have you been to"
+	line "a town called"
+	cont "STARGLOW VALLEY?"
+	
+	para "There's a special"
+	line "spot I used to"
+	cont "visit near there."
+	
+	para "You'll find it if"
+	line "you travel up the"
+	cont "river EAST of the"
+	cont "town."
 	done
 	
 ShimmerCityNpc11:
@@ -553,7 +564,7 @@ ShimmerCityHorseaKidAsm:
 	farcall SelectTradeOrDaycareMon
 	jr c, .cancel
 	ld a, [wCurPartySpecies]
-	cp BULBASAUR ;TODO
+	cp HORSEA
 	jr z, .yes
 	ld a, FALSE
 	ld [wScriptVar], a
@@ -594,7 +605,8 @@ ShimmerFlowersText:
 	line "good."
 	
 	para "Not as good as"
-	line "MOM's, though."
+	line "MOM's back home,"
+	cont "though…"
 	done
 	
 ShimmerCityNpc1Text:
@@ -644,7 +656,7 @@ ShimmerCityNpc4Text2:
 	done
 	
 ShimmerCityNpc4Text3:
-	text "Oh thank you!<WAIT_M>"
+	text "Oh, thank you!<WAIT_S>"
 	line "Thank you!"
 	done
 	
@@ -670,7 +682,7 @@ ShimmerCityNpc4Text7:
 	done
 	
 ShimmerCityNpc4Text8:
-	text "Thank you!<WAIT_M>"
+	text "Thank you!<WAIT_S>"
 	line "Thank you!"
 	
 	para "I love my HORSEA!"

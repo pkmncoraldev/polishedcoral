@@ -11,14 +11,14 @@ FlickerTrainGraveyard_MapScriptHeader:
 
 	db 3 ; coord events
 	xy_trigger 0, 28, 18, 0, FlickerTrainGraveyard3Girls, 0, 0
-	xy_trigger 1, 28, 14, 0, FlickerTrainGraveyard3GirlsExtra, 0, 0
-	xy_trigger 1, 29, 14, 0, FlickerTrainGraveyard3GirlsExtra, 0, 0
+	xy_trigger 1, 28, 13, 0, FlickerTrainGraveyard3GirlsExtra, 0, 0
+	xy_trigger 1, 29, 13, 0, FlickerTrainGraveyard3GirlsExtra, 0, 0
 
 	db 6 ; bg events
 	signpost 21, 10, SIGNPOST_UP, FlickerTrainDoor
 	signpost 21,  7, SIGNPOST_UP, FlickerTrainDoor
-	signpost 18,  8, SIGNPOST_UP, FlickerTrainDoor
-	signpost 18,  5, SIGNPOST_UP, FlickerTrainDoor
+	signpost 18, 12, SIGNPOST_UP, FlickerTrainDoor
+	signpost 18,  9, SIGNPOST_UP, FlickerTrainDoor
 	signpost 15, 10, SIGNPOST_UP, FlickerTrainDoor
 	signpost 15,  7, SIGNPOST_UP, FlickerTrainDoor
 

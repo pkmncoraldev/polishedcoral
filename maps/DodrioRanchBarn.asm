@@ -10,11 +10,11 @@ DodrioRanchBarn_MapScriptHeader:
 	db 0 ; coord events
 
 	db 5 ; bg events
-	signpost  6,  0, SIGNPOST_READ, RanchLogs
-	signpost  7,  1, SIGNPOST_READ, RanchLogs
-	signpost  7,  7, SIGNPOST_READ, RanchLogs
-	signpost  7,  8, SIGNPOST_READ, RanchLogs
-	signpost  7,  9, SIGNPOST_READ, RanchLogs
+	signpost  6,  0, SIGNPOST_READ, RanchHay
+	signpost  7,  1, SIGNPOST_READ, RanchHay
+	signpost  7,  7, SIGNPOST_READ, RanchHay
+	signpost  7,  8, SIGNPOST_READ, RanchHay
+	signpost  7,  9, SIGNPOST_READ, RanchHay
 
 	db 5 ; object events
 	object_event 8, 5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODRIO, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio2, -1

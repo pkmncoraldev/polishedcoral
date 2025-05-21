@@ -303,6 +303,9 @@ RemoveItemFromPocket: ; d2ff
 	jr c, .nope
 	
 	push af
+	push hl
+	eventflagcheck EVENT_IN_PLAYERS_PC
+	jr nz, .skip2
 	ld a, [wCurItem]
 	cp RARE_CANDY
 	jr nz, .skip2
@@ -310,6 +313,7 @@ RemoveItemFromPocket: ; d2ff
 	sub b
 	ld [wUnknownRC], a
 .skip2
+	pop hl
 	pop af
 	
 	ld [hl], a

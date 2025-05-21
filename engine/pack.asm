@@ -1106,6 +1106,7 @@ InitPackBuffers: ; 1068a
 DepositSellInitPackBuffers: ; 106a5
 	xor a
 	ldh [hBGMapMode], a
+	ld [wPlaceBallsX], a
 	ld [wJumptableIndex], a
 	ld [wcf64], a
 	ld [wCurrPocket], a

@@ -13,6 +13,7 @@ PokemonCenterPC: ; 1559a
 	call LoadMenuDataHeader
 .loop
 	xor a
+	ld [wFlowerPileFlags], a
 	ldh [hBGMapMode], a
 	call .ChooseWhichPCListToUse
 	ld [wWhichIndexSet], a
@@ -217,6 +218,8 @@ Function15715: ; 15715
 	call LoadMenuDataHeader
 .asm_15722
 	call UpdateTimePals
+	ld a, [wFlowerPileFlags]
+	ld [wMenuCursorBuffer], a
 	call DoNthMenu
 	jr c, .asm_15731
 	call MenuJumptable
@@ -305,9 +308,15 @@ UnknownText_0x157cc: ; 0x157cc
 ; 0x157d1
 
 KrisWithdrawItemMenu: ; 0x157d1
+	farcall FadeOutPalettes
+	ld a, [wMenuCursorY]
+	ld [wFlowerPileFlags], a
 	call LoadStandardMenuDataHeader
 	farcall ClearPCItemScreen
 	eventflagset EVENT_IN_PLAYERS_PC
+	farcall LoadBlindingFlashPalette
+	call ApplyAttrAndTilemapInVBlank
+	call SetPalettes
 .loop
 	call PCItemsJoypad
 	jr c, .quit
@@ -316,6 +325,7 @@ KrisWithdrawItemMenu: ; 0x157d1
 
 .quit
 	eventflagreset EVENT_IN_PLAYERS_PC
+	call WaitSFX
 	call CloseSubmenu
 	xor a
 	ret
@@ -354,13 +364,6 @@ KrisWithdrawItemMenu: ; 0x157d1
 	ld [wCurItemQuantity], a
 	ld hl, wNumPCItems
 	call TossItem
-	ld a, [wCurItem]
-	cp RARE_CANDY
-	jr nz, .skip
-	ld a, [wUnknownRC]
-	inc a
-	ld [wUnknownRC], a
-.skip
 	predef PartyMonItemName
 	ld hl, .WithdrewText
 	call MenuTextBox
@@ -385,8 +388,15 @@ KrisWithdrawItemMenu: ; 0x157d1
 	db "@"
 
 KrisTossItemMenu: ; 0x1585f
+	farcall FadeOutPalettes
+	ld a, [wMenuCursorY]
+	ld [wFlowerPileFlags], a
 	call LoadStandardMenuDataHeader
 	farcall ClearPCItemScreen
+	eventflagset EVENT_IN_PLAYERS_PC
+	farcall LoadBlindingFlashPalette
+	call ApplyAttrAndTilemapInVBlank
+	call SetPalettes
 .loop
 	call PCItemsJoypad
 	jr c, .quit
@@ -395,12 +405,16 @@ KrisTossItemMenu: ; 0x1585f
 	jr .loop
 
 .quit
+	eventflagreset EVENT_IN_PLAYERS_PC
+	call WaitSFX
 	call CloseSubmenu
 	xor a
 	ret
 ; 0x1587d
 
 KrisDecorationMenu: ; 0x1587d
+	ld a, [wMenuCursorY]
+	ld [wFlowerPileFlags], a
 	farcall _KrisDecorationMenu
 	ld a, c
 	and a
@@ -411,11 +425,15 @@ KrisDecorationMenu: ; 0x1587d
 
 KrisLogOffMenu: ; 0x15888
 	xor a
+	ld [wFlowerPileFlags], a
 	scf
 	ret
 ; 0x1588b
 
 KrisDepositItemMenu: ; 0x1588b
+	farcall FadeOutPalettes
+	ld a, [wMenuCursorY]
+	ld [wFlowerPileFlags], a
 	call .CheckItemsInBag
 	jr c, .nope
 	call DisableSpriteUpdates
@@ -431,6 +449,7 @@ KrisDepositItemMenu: ; 0x1588b
 	jr .loop
 
 .close
+	call WaitSFX
 	call CloseSubmenu
 
 .nope

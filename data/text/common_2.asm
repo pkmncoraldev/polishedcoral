@@ -1013,8 +1013,8 @@ _KrissPCNoRoomDepositText::
 
 UnknownText_0x1c144d::
 	text "<PLAYER> turned on"
-	line "the PC."
-	done
+	line "the PC.<WAIT_L>"
+	prompt
 
 UnknownText_0x1c1462::
 	text "Access whose PC?"

@@ -227,3 +227,5 @@ SFX:
 	dba Sfx_GrassWhistle
 	dba Sfx_TempleRumble
 	dba Sfx_Grind2
+	dba Sfx_Thunderbolt
+	dba Sfx_Gravity

@@ -4354,56 +4354,6 @@ INCLUDE "data/text/battle.asm"
 SECTION "Code 15", ROMX
 
 INCLUDE "gfx/battle_anims.asm"
-INCLUDE "engine/events/halloffame.asm"
-INCLUDE "engine/copy_tilemap_at_once.asm"
-
-PrintAbility:
-; Print ability b at hl.
-	ld l, b
-	ld h, 0
-	ld bc, AbilityNames
-	add hl, hl
-	add hl, bc
-	ld a, [hli]
-	ld d, [hl]
-	ld e, a
-	hlcoord 3, 13
-	jp PlaceString
-
-BufferAbility:
-; Buffer name for b into wStringBuffer1
-	ld l, b
-	ld h, 0
-	ld bc, AbilityNames
-	add hl, hl
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld de, wStringBuffer1
-.loop
-	ld a, [hli]
-	ld [de], a
-	inc de
-	cp "@"
-	ret z
-	jr .loop
-
-PrintAbilityDescription:
-; Print ability description for b
-; we can't use PlaceString, because it would linebreak with an empty line inbetween
-	ld l, b
-	ld h, 0
-	ld bc, AbilityDescriptions
-	add hl, hl
-	add hl, bc
-	ld a, [hli]
-	ld d, [hl]
-	ld e, a
-	hlcoord 1, 15
-	jp PlaceString
-
-INCLUDE "data/abilities.asm"
 
 
 SECTION "Code 16", ROMX
@@ -4503,6 +4453,59 @@ INCLUDE "engine/player_step.asm"
 INCLUDE "engine/load_map_part.asm"
 ; end linked section
 
+SECTION "Code 26", ROMX
+
+INCLUDE "engine/events/halloffame.asm"
+INCLUDE "engine/copy_tilemap_at_once.asm"
+
+PrintAbility:
+; Print ability b at hl.
+	ld l, b
+	ld h, 0
+	ld bc, AbilityNames
+	add hl, hl
+	add hl, bc
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	hlcoord 3, 13
+	jp PlaceString
+
+BufferAbility:
+; Buffer name for b into wStringBuffer1
+	ld l, b
+	ld h, 0
+	ld bc, AbilityNames
+	add hl, hl
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld de, wStringBuffer1
+.loop
+	ld a, [hli]
+	ld [de], a
+	inc de
+	cp "@"
+	ret z
+	jr .loop
+
+PrintAbilityDescription:
+; Print ability description for b
+; we can't use PlaceString, because it would linebreak with an empty line inbetween
+	ld l, b
+	ld h, 0
+	ld bc, AbilityDescriptions
+	add hl, hl
+	add hl, bc
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	hlcoord 1, 15
+	jp PlaceString
+
+INCLUDE "data/abilities.asm"
+
 
 SECTION "Introduction", ROMX
 
@@ -4546,16 +4549,40 @@ SECTION "Effect Commands", ROMX
 INCLUDE "engine/battle/effect_commands.asm"
 
 
+SECTION "Move Animation Pointers", ROMX
+
+INCLUDE "data/moves/animation_pointers.asm"
+
+
+SECTION "Move Animations 1", ROMX
+
+INCLUDE "data/moves/animations.asm"
+
+
+SECTION "Move Animations 2", ROMX
+
+INCLUDE "data/moves/animations_2.asm"
+
+
 SECTION "Battle Animations", ROMX
 
 INCLUDE "engine/battle_anims/anim_commands.asm"
 INCLUDE "engine/battle_anims/core.asm"
 INCLUDE "data/battle_anims/objects.asm"
 INCLUDE "engine/growl_roar_ded_vblank_hook.asm"
-INCLUDE "engine/battle_anims/functions.asm"
 INCLUDE "engine/battle_anims/helpers.asm"
 INCLUDE "data/battle_anims/oam.asm"
 INCLUDE "data/battle_anims/object_gfx.asm"
+
+
+SECTION "Ball Colors", ROMX
+
+INCLUDE "data/battle_anims/ball_colors.asm"
+
+
+SECTION "Battle Functions", ROMX
+
+INCLUDE "engine/battle_anims/functions.asm"
 
 
 SECTION "Battle Graphics", ROMX
@@ -4947,17 +4974,12 @@ INCLUDE "engine/battle/effect_commands/mimic.asm"
 
 SECTION "Coral Data 2", ROMX
 
-INCLUDE "data/moves/animations.asm"
-
-
-SECTION "Coral Data 3", ROMX
-
 INCLUDE "engine/titlescreen_cutscene.asm"
 INCLUDE "engine/trainer_card.asm"
 INCLUDE "data/pokemon/names.asm"
 
 
-SECTION "Coral Data 4", ROMX
+SECTION "Coral Data 3", ROMX
 
 INCLUDE "engine/events/mom.asm"
 INCLUDE "engine/money.asm"
@@ -5841,13 +5863,13 @@ ChooseGender_UpdateCursorOAM:
 	
 ChooseGender_OAM01:
 ;y pos, x pos, tile, palette
-	dsprite  4,  4, 6,  0, $09, $0 | BEHIND_BG
-	dsprite  4,  4, 7,  0, $0a, $0 | BEHIND_BG
+	dsprite  4,  4, 6,  0, $09, $0 | PRIORITY
+	dsprite  4,  4, 7,  0, $0a, $0 | PRIORITY
 	
 ChooseGender_OAM02:
 ;y pos, x pos, tile, palette
-	dsprite  4,  4, 15,  0, $09, $0 | BEHIND_BG
-	dsprite  4,  4, 16,  0, $0a, $0 | BEHIND_BG
+	dsprite  4,  4, 15,  0, $09, $0 | PRIORITY
+	dsprite  4,  4, 16,  0, $0a, $0 | PRIORITY
 	
 PlayerIntroPaletteWhite:
 	RGB 31, 31, 31

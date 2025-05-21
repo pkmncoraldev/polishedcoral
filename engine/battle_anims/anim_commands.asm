@@ -461,9 +461,13 @@ BattleAnimCmd_Ret: ; cc305 (33:4305)
 	ld [hl], e
 	inc hl
 	ld [hl], d
+	ld a, [wBattleAnimParentBank]
+	ld [wBattleAnimBank], a
 	ret
 
 BattleAnimCmd_Call: ; cc317 (33:4317)
+	call GetBattleAnimByte
+	push af
 	call GetBattleAnimByte
 	ld e, a
 	call GetBattleAnimByte
@@ -477,16 +481,21 @@ BattleAnimCmd_Call: ; cc317 (33:4317)
 	ld [hl], e
 	inc hl
 	ld [hl], d
+	ld a, [wBattleAnimBank]
+	ld [wBattleAnimParentBank], a
 	pop de
+	pop af
 	ld hl, wBattleAnimAddress
 	ld [hl], e
 	inc hl
 	ld [hl], d
+	ld [wBattleAnimBank], a
 	ld hl, wBattleAnimFlags
 	set 1, [hl]
 	ret
 
 BattleAnimCmd_Jump: ; cc339 (33:4339)
+Do_Jump:
 	call GetBattleAnimByte
 	ld e, a
 	call GetBattleAnimByte
@@ -514,48 +523,23 @@ BattleAnimCmd_Loop: ; cc348 (33:4348)
 	jr z, .return_from_loop
 	dec [hl]
 .perpetual
-	call GetBattleAnimByte
-	ld e, a
-	call GetBattleAnimByte
-	ld d, a
-	ld hl, wBattleAnimAddress
-	ld [hl], e
-	inc hl
-	ld [hl], d
-	ret
+	jp Do_Jump
 
 .return_from_loop
 	ld hl, wBattleAnimFlags
 	res 2, [hl]
-	ld hl, wBattleAnimAddress
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	inc de
-	inc de
-	ld [hl], d
-	dec hl
-	ld [hl], e
-	ret
+	jr Dont_Jump
 
 BattleAnimCmd_JumpUntil: ; cc383 (33:4383)
 	ld hl, wBattleAnimParam
 	ld a, [hl]
 	and a
-	jr z, .dont_jump
+	jr z, Dont_Jump
 
 	dec [hl]
-	call GetBattleAnimByte
-	ld e, a
-	call GetBattleAnimByte
-	ld d, a
-	ld hl, wBattleAnimAddress
-	ld [hl], e
-	inc hl
-	ld [hl], d
-	ret
+	jr Do_Jump
 
-.dont_jump
+Dont_Jump:
 	ld hl, wBattleAnimAddress
 	ld e, [hl]
 	inc hl
@@ -581,57 +565,17 @@ BattleAnimCmd_IfVarEqual: ; cc3b2 (33:43b2)
 	call GetBattleAnimByte
 	ld hl, wBattleAnimVar
 	cp [hl]
-	jr z, .jump
+	jr z, Do_Jump
 
-	ld hl, wBattleAnimAddress
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	inc de
-	inc de
-	ld [hl], d
-	dec hl
-	ld [hl], e
-	ret
-
-.jump
-	call GetBattleAnimByte
-	ld e, a
-	call GetBattleAnimByte
-	ld d, a
-	ld hl, wBattleAnimAddress
-	ld [hl], e
-	inc hl
-	ld [hl], d
-	ret
+	jr Dont_Jump
 
 BattleAnimCmd_IfParamEqual: ; cc3d6 (33:43d6)
 	call GetBattleAnimByte
 	ld hl, wBattleAnimParam
 	cp [hl]
-	jr z, .jump
+	jr z, Do_Jump
 
-	ld hl, wBattleAnimAddress
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	inc de
-	inc de
-	ld [hl], d
-	dec hl
-	ld [hl], e
-	ret
-
-.jump
-	call GetBattleAnimByte
-	ld e, a
-	call GetBattleAnimByte
-	ld d, a
-	ld hl, wBattleAnimAddress
-	ld [hl], e
-	inc hl
-	ld [hl], d
-	ret
+	jr Dont_Jump
 	
 BattleAnimCmd_CheckTurn: ; cc3d6 (33:43d6)
 	ldh a, [hBattleTurn]
@@ -651,33 +595,16 @@ BattleAnimCmd_IfParamAnd: ; cc3fa (33:43fa)
 	ld e, a
 	ld a, [wBattleAnimParam]
 	and e
-	jr nz, .jump
+	jp nz, Do_Jump
 
-	ld hl, wBattleAnimAddress
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	inc de
-	inc de
-	ld [hl], d
-	dec hl
-	ld [hl], e
-	ret
-.jump
-	call GetBattleAnimByte
-	ld e, a
-	call GetBattleAnimByte
-	ld d, a
-	ld hl, wBattleAnimAddress
-	ld [hl], e
-	inc hl
-	ld [hl], d
-	ret
+	jr Dont_Jump
 
 BattleAnimCmd_Obj: ; cc41f (33:441f)
 ; index, x, y, param
 	call GetBattleAnimByte
 	ld [wBattleAnimTemp0], a
+	call GetBattleAnimByte
+	ld [wBattleAnimTemp0 + 1], a
 	call GetBattleAnimByte
 	ld [wBattleAnimTemp1], a
 	call GetBattleAnimByte
@@ -786,7 +713,7 @@ BattleAnimCmd_IncObj: ; cc4c0 (33:44c0)
 	ret
 
 .found
-	ld hl, BATTLEANIMSTRUCT_ANON_JT_INDEX
+	ld hl, BATTLEANIMSTRUCT_JUMPTABLE_INDEX
 	add hl, bc
 	inc [hl]
 	ret
@@ -837,7 +764,7 @@ BattleAnimCmd_SetObj: ; cc506 (33:4506)
 
 .found
 	call GetBattleAnimByte
-	ld hl, BATTLEANIMSTRUCT_ANON_JT_INDEX
+	ld hl, BATTLEANIMSTRUCT_JUMPTABLE_INDEX
 	add hl, bc
 	ld [hl], a
 	ret
@@ -1571,6 +1498,7 @@ ClearBattleAnims: ; cc8d3
 	ld hl, BattleAnimations
 	add hl, de
 	add hl, de
+	add hl, de
 	call GetBattleAnimPointer
 	call BattleAnimAssignPals
 	jp DelayFrame
@@ -1597,54 +1525,17 @@ BattleAnim_SetBGPals: ; cc91a
 	ldh [rBGP], a
 	ldh a, [rSVBK]
 	push af
-	ld a, $5
-	ldh [rSVBK], a
-if !DEF(MONOCHROME)
-	ld a, b
-	cp $1b
-	ldh a, [rBGP]
-	jr z, .is_1b
-	cp $1b
-	jr nz, .not_1b
-.is_1b
-	ld c, 7 palettes
-	ld hl, wUnknBGPals
-.loop_UnknBGPals
-	ld a, [hl]
-	ld b, a
-	ld a, $ff
-	sub b
-	ld [hli], a
-	dec c
-	jr nz, .loop_UnknBGPals
-	ld c, 2 palettes
-	ld hl, wUnknOBPals
-.loop_UnknOBPals
-	ld a, [hl]
-	ld b, a
-	ld a, $ff
-	sub b
-	ld [hli], a
-	dec c
-	jr nz, .loop_UnknOBPals
-	ld a, $e4
-.not_1b
-	push af
-else
-	ldh a, [rBGP]
-endc
+	ld a, BANK(wBGPals)
+	ld [rSVBK], a
 	ld hl, wBGPals
 	ld de, wUnknBGPals
+	ld a, [rBGP]
 	ld b, a
 	ld c, 7
 	call CopyPals
 	ld hl, wOBPals
 	ld de, wUnknOBPals
-if !DEF(MONOCHROME)
-	pop af
-else
-	ldh a, [rBGP]
-endc
+	ld a, [rBGP]
 	ld b, a
 	ld c, 2
 	call CopyPals
@@ -1687,7 +1578,7 @@ BattleAnim_UpdateOAM_All: ; cc96e
 	ld b, h
 	push hl
 	push de
-	call DoBattleAnimFrame
+	farcall DoBattleAnimFrame
 	call BattleAnimOAMUpdate
 	pop de
 	pop hl

@@ -319,6 +319,26 @@ LoadPalettes:
 	ldh [rSVBK], a
 	ret
 
+LoadOnePalette:
+; Loads a single palette from hl to de in GBC Video WRAMX
+	ld c, 1 palettes
+	; fallthrough
+LoadPalettes:
+; Load c palette bytes from hl to de in GBC Video WRAMX
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK("GBC Video")
+	ldh [rSVBK], a
+.loop
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .loop
+	pop af
+	ldh [rSVBK], a
+	ret
+
 LoadPalette_White_Col1_Col2_Black:
 	ldh a, [rSVBK]
 	push af

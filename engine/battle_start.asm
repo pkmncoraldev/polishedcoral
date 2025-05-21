@@ -605,7 +605,7 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	ld bc, wAttrMap - wTileMap
 	add hl, bc
 	ld a, [hl]
-	and $f9 ^ (X_FLIP | Y_FLIP | BEHIND_BG)
+	and $f9 ^ (X_FLIP | Y_FLIP | PRIORITY)
 	or PAL_BG_TEXT
 	ld [hl], a
 	pop bc

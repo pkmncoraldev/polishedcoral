@@ -431,7 +431,7 @@ InitMapNameFrame:: ; b80d3
 	add hl, de
 	; top row
 rept 3
-	ld a, BEHIND_BG | PAL_BG_TEXT
+	ld a, PRIORITY | PAL_BG_TEXT
 	ld bc, SCREEN_WIDTH
 	call ByteFill
 	ld [hli], a
@@ -505,7 +505,7 @@ InitMapNameFrame2:: ; b80d3
 	ld de, wAttrMap - wTileMap
 	add hl, de
 	; top row
-	ld a, BEHIND_BG | PAL_BG_TEXT
+	ld a, PRIORITY | PAL_BG_TEXT
 	ld bc, SCREEN_WIDTH - 1
 	call ByteFill
 	or X_FLIP

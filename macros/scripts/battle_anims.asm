@@ -11,16 +11,10 @@ endc
 MACRO anim_obj
 	db anim_obj_command
 if _NARG <= 4
-	db \1 ; object
+	dw \1 ; object
 	db \2 ; x
 	db \3 ; y
 	db \4 ; param
-else
-; LEGACY: Support the tile+offset format
-	db \1 ; object
-	db (\2) * 8 + (\3) ; x_tile, x
-	db (\4) * 8 + (\5) ; y_tile, y
-	db \6 ; param
 endc
 ENDM
 
@@ -299,7 +293,7 @@ macro anim_loop
 	enum anim_call_command ; fe
 macro anim_call
 	db anim_call_command
-	dw \1 ; address
+	dba \1 ; address
 	endm
 
 	enum anim_ret_command ; ff

@@ -1537,7 +1537,7 @@ wBattleAnimVar:: ds 1
 wBattleAnimByte:: ds 1
 wBattleAnimOAMPointerLo:: ds 1
 wBattleAnimTempOAMFlags::
-wBattleAnimTemp0:: ds 1
+wBattleAnimTemp0:: ds 2
 wBattleAnimTemp1:: ds 1
 wBattleAnimTempTileID::
 wBattleAnimTemp2:: ds 1
@@ -1557,6 +1557,8 @@ wSurfWaveBGEffect:: ds $32
 wBattleAnimEnd::
 	ds $e
 wSurfWaveBGEffectEnd::
+wBattleAnimBank:: ds 1
+wBattleAnimParentBank:: ds 1
 
 
 SECTION "WRAM 6", WRAMX

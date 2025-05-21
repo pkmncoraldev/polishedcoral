@@ -424,6 +424,11 @@ Sfx_Thundershock: ; f0ae5
 	musicheader 1, 8, Sfx_Thundershock_Ch8
 ; f0aee
 
+Sfx_Thunderbolt:
+	musicheader 3, 5, Sfx_Thunderbolt_Ch5
+	musicheader 1, 6, Sfx_Thunderbolt_Ch6
+	musicheader 1, 8, Sfx_Thunderbolt_Ch8
+
 Sfx_Psychic: ; f0aee
 	musicheader 3, 5, Sfx_Psychic_Ch5
 	musicheader 1, 6, Sfx_Psychic_Ch6
@@ -5007,6 +5012,8 @@ Sfx_Charge_branch_f2385: ; f2385
 	endchannel
 ; f2396
 
+Sfx_Thunderbolt_Ch5:
+	tone $0020
 Sfx_Thundershock_Ch5: ; f2396
 Sfx_Thundershock_branch_f2396: ; f2396
 	sound_duty 3, 2, 2, 0
@@ -5016,6 +5023,8 @@ Sfx_Thundershock_branch_f2396: ; f2396
 	endchannel
 ; f23a5
 
+Sfx_Thunderbolt_Ch6:
+	tone $0020
 Sfx_Thundershock_Ch6: ; f23a5
 Sfx_Thundershock_branch_f23a5: ; f23a5
 	sound_duty 3, 0, 3, 2
@@ -5025,6 +5034,8 @@ Sfx_Thundershock_branch_f23a5: ; f23a5
 	endchannel
 ; f23b4
 
+Sfx_Thunderbolt_Ch8:
+	tone $0020
 Sfx_Thundershock_Ch8: ; f23b4
 Sfx_Thundershock_branch_f23b4: ; f23b4
 	noise __,  5, $ff, $43
@@ -5601,3 +5612,15 @@ Sfx_GlassTing2_Ch6: ; f2780
 	sound C_,  1, $d1, $07dd
 	endchannel
 ; f2787
+
+Sfx_Gravity:
+	channel_count 1
+	channel 8, Sfx_Gravity_Ch8
+
+Sfx_Gravity_Ch8:
+	noise_note 11, 14, -2, 89
+	noise_note 11, 14, -2, 105
+	noise_note 11, 14, -2, 106
+	noise_note 11, 14, -2, 107
+	noise_note 11, 14, 1, 108
+	sound_ret

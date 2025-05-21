@@ -308,7 +308,7 @@ ObscuraCityRockyText4:
 	line "was I supposed to"
 	cont "know some wackos"
 	cont "who believe in"
-	cont "fairytales would"
+	cont "fairy tales would"
 	cont "come take it?"
 	done
 	
@@ -382,8 +382,8 @@ ObscuraCityDarcyText3:
 	done
 	
 ObscuraCityDarcyText4:
-	text "They aren't"
-	line "fairytales, ROCKY!"
+	text "They aren't fairy"
+	line "tales, ROCKY!"
 	
 	para "There's obviously"
 	line "truth to the myth"

@@ -207,7 +207,7 @@ ObscuraMuseum3FLockeText1:
 	text "As much as I'm"
 	line "not thrilled about"
 	cont "taking orders from"
-	cont "from a child,"
+	cont "a child,"
 	
 	para "I've gotta hand"
 	line "it to him."
@@ -381,7 +381,7 @@ ObscuraMuseum3FRockyText1:
 	line "way!"
 	
 	para "You guys can't"
-	line "just come on here"
+	line "just come in here"
 	cont "and take whatever"
 	cont "you want!"
 	done

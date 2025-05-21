@@ -1330,8 +1330,8 @@ CheckStringShotUsers::
 	ld a, [wCurPartySpecies]
 	call CheckDitto
 CheckStringShotUsers2::
-	ld hl, CottonSporeUsers
-	ld de, 2
+	ld hl, StringShotUsers
+	ld de, 1
 	call IsInArray
 	ret
 	

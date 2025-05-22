@@ -1766,89 +1766,88 @@ BTMartMenuPals:
 
 
 MalePackPals: ; 9439
+; text
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+; cursor
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 00, 00
+	RGB 00, 00, 00
+; bag
+	RGB 31, 31, 31
+	RGB 07, 19, 07
+	RGB 00, 00, 00
+	RGB 31, 00, 00
+; unused
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+; unused
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+; unused
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+; unused
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
 ; blue bg
 	RGB 31, 31, 31
 	RGB 15, 15, 31
 	RGB 00, 00, 31
 	RGB 00, 00, 00
-; green pocket gfx, red cursor
+; 9469
+
+FemalePackPals: ; 9469
+; text
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+; cursor
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 00, 00
+	RGB 00, 00, 00
+; bag
 	RGB 31, 31, 31
 	RGB 07, 19, 07
 	RGB 00, 00, 00
 	RGB 31, 00, 00
-; Items + Meds
-	RGB 31, 31, 31
-	RGB 03, 21, 26
-	RGB 18, 24, 07
-	RGB 00, 00, 00
-; Balls + Meds
-	RGB 31, 31, 31
-	RGB 31, 21, 07
-	RGB 18, 24, 07
-	RGB 00, 00, 00
-; Balls + TM/HM
-	RGB 31, 31, 31
-	RGB 31, 21, 07
-	RGB 20, 11, 29
-	RGB 00, 00, 00
-; Berries + TM/HM
-	RGB 31, 31, 31
-	RGB 31, 28, 15
-	RGB 20, 11, 29
-	RGB 00, 00, 00
-; Berries + Key
-	RGB 31, 31, 31
-	RGB 31, 28, 15
-	RGB 31, 12, 12
-	RGB 00, 00, 00
-; item icon
+; unused
 	RGB 31, 31, 31
 	RGB 31, 31, 31
 	RGB 31, 31, 31
-	RGB 00, 00, 00
-; 9469
-
-
-FemalePackPals: ; 9469
+	RGB 31, 31, 31
+; unused
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+; unused
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+; unused
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 31, 31, 31
 ; pink bg
 	RGB 31, 31, 31
 	RGB 31, 14, 31
 	RGB 31, 07, 31
-	RGB 00, 00, 00
-; green pocket gfx, red cursor
-	RGB 31, 31, 31
-	RGB 07, 19, 07
-	RGB 00, 00, 00
-	RGB 31, 00, 00
-; Items + Meds
-	RGB 31, 31, 31
-	RGB 03, 21, 26
-	RGB 18, 24, 07
-	RGB 00, 00, 00
-; Balls + Meds
-	RGB 31, 31, 31
-	RGB 31, 21, 07
-	RGB 18, 24, 07
-	RGB 00, 00, 00
-; Balls + TM/HM
-	RGB 31, 31, 31
-	RGB 31, 21, 07
-	RGB 20, 11, 29
-	RGB 00, 00, 00
-; Berries + TM/HM
-	RGB 31, 31, 31
-	RGB 31, 28, 15
-	RGB 20, 11, 29
-	RGB 00, 00, 00
-; Berries + Key
-	RGB 31, 31, 31
-	RGB 31, 28, 15
-	RGB 31, 12, 12
-	RGB 00, 00, 00
-; item icon
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
 	RGB 00, 00, 00
 ; 9499
 

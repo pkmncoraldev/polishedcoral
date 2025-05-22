@@ -1469,7 +1469,7 @@ WaitBGMap_DrawPackGFX: ; 1089a (4:489a)
 	call ApplyTilemapInVBlank
 DrawPackGFX: ; 1089d
 	; place top row
-	call Load1bppFont
+	farcall LoadPackFont
 	call Load1bppFrame
 	ld a, [wCurrPocket]
 	and $7

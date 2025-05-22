@@ -985,36 +985,7 @@ _CGB_PackPals: ; 93d3
 	ld a, $5
 	call FarCopyWRAM
 	
-;temp
-;	ld hl, MalePackPals
-;	ld de, wUnknOBPals
-;	ld bc, 8 palettes
-;	ld a, $5
-;	call FarCopyWRAM
-;temp
-
 	call WipeAttrMap
-
-	hlcoord 0, 0, wAttrMap
-	ld a, $2
-rept 6
-	ld [hli], a
-endr
-	inc a
-rept 3
-	ld [hli], a
-endr
-	inc a
-rept 4
-	ld [hli], a
-endr
-	inc a
-rept 5
-	ld [hli], a
-endr
-	inc a
-	ld [hli], a
-	ld [hl], a
 
 	ld a, $1
 	hlcoord 7, 2, wAttrMap
@@ -1027,18 +998,18 @@ endr
 	ld [hl], a
 	hlcoord 7, 10, wAttrMap
 	ld [hl], a
-;	hlcoord 0, 3, wAttrMap
-;	lb bc, 3, 5
-;	call FillBoxCGB
+
+	hlcoord 0, 1, wAttrMap
+	lb bc, 11, 5
+	ld a, $7
+	call FillBoxCGB
 
 	hlcoord 0, 3, wAttrMap
 	lb bc, 7, 5
-	ld a, $1
+	ld a, $2
 	call FillBoxCGB
 
 	jp _CGB_FinishLayout
-; 9439
-
 
 _CGB_TrainerCard:
 	call LoadFirstTwoTrainerCardPals

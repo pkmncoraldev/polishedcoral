@@ -44,6 +44,9 @@ INCBIN "gfx/frames/9.1bpp"
 
 ; Various misc graphics here.
 
+PackArrowsGFX:
+INCBIN "gfx/font/pack.2bpp"
+
 BattleExtrasGFX:
 INCBIN "gfx/battle/hpexpbars.2bpp"
 
@@ -160,6 +163,26 @@ LoadStandardFontPointer::
 	dw FontUnown
 	dw FontNormal
 	dw FontNormal
+	
+LoadPackFont::
+	xor a
+	call LoadStandardFontPointer
+	ld d, h
+	ld e, l
+	ld hl, VTiles0 tile "A"
+	ld de, FontNormal
+	lb bc, BANK(FontNormal), 107
+	call Get2bpp
+	ld de, PackArrowsGFX
+	ld hl, VTiles0 tile "▲"
+	lb bc, BANK(PackArrowsGFX), 15
+	jp Get2bpp
+
+_LoadFontsPackArrows:: ; fb4be
+	ld hl, VTiles0 tile "▲"
+	ld de, PackArrowsGFX
+	lb bc, BANK(PackArrowsGFX), 12
+	jp Get2bpp
 
 _LoadFontsBattleExtra:: ; fb4be
 	call LoadStandardFontPointer

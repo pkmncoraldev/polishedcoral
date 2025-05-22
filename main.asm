@@ -607,7 +607,6 @@ PlaceMenuItemName:
 ; places a star near the name if registered
 	push de
 	dec de
-	dec de
 	ld a, " "
 	ld [de], a
 	ld a, [wMenuSelection]
@@ -626,7 +625,7 @@ PlaceMenuItemName:
 	jr z, .registered
 	ld a, [hli]
 	cp b
-	ld c, "▶"
+	ld c, "<PHONE>"
 	jr z, .registered
 	ld a, [hli]
 	cp b

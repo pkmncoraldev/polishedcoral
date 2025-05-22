@@ -7,7 +7,7 @@
 	db NO_ITEM ; item 1
 	db ORAN_BERRY ; item 2
 	dn FEMALE_50, 1 ; gender, step cycles to hatch
-	dn 7, 7 ; frontpic dimensions
+	dn 5, 5 ; frontpic dimensions
 	db STATIC ; ability 1
 	db STATIC ; ability 2
 	db LIGHTNING_ROD ; hidden ability

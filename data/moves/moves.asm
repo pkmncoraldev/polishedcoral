@@ -214,7 +214,7 @@ Moves:: ; 41afb
 	move GIGA_DRAIN,               EFFECT_LEECH_HIT,          75, GRASS,     100, 10,   0, SPECIAL
 	move ENDURE,                   EFFECT_ENDURE,              0, NORMAL,    100, 10,   0, STATUS
 	move CHARM_FEATHER_DANCE,      EFFECT_ATTACK_DOWN_2,       0, NORMAL,    100, 20,   0, STATUS
-	move ROLLOUT,                  EFFECT_ROLLOUT,            30, ROCK,       90, 20,   0, PHYSICAL
+	move ROLLOUT,                  EFFECT_ROLLOUT,            30, ROCK,       85, 20,   0, PHYSICAL
 	move FALSE_SWIPE,              EFFECT_FALSE_SWIPE,        40, NORMAL,    100, 40,   0, PHYSICAL
 	move SWAGGER,                  EFFECT_SWAGGER,             0, NORMAL,     85, 15, 100, STATUS
 	move TWISTER,                  EFFECT_TWISTER,            40, DRAGON,    100, 20,  20, STATUS
@@ -229,7 +229,7 @@ Moves:: ; 41afb
 	move QUIVER_DANCE,             EFFECT_QUIVER_DANCE,        0, BUG,       100, 20, 100, STATUS
 	move BUG_BUZZ,                 EFFECT_SP_DEF_DOWN_HIT,    90, BUG,       100, 10,   0, SPECIAL
 	move SAFEGUARD,                EFFECT_SAFEGUARD,           0, NORMAL,    100, 25,   0, STATUS
-	move FURY_CUTTER,              EFFECT_FURY_CUTTER,        40, BUG,        95, 20,   0, PHYSICAL
+	move FURY_CUTTER,              EFFECT_FURY_CUTTER,        20, BUG,        95, 20,   0, PHYSICAL
 	move FAKE_OUT,                 EFFECT_FAKE_OUT,           40, NORMAL,    100, 10, 100, PHYSICAL
 	move MAGNITUDE,                EFFECT_MAGNITUDE,           1, GROUND,    100, 30,   0, PHYSICAL
 	move DYNAMICPUNCH,             EFFECT_CONFUSE_HIT,       100, FIGHTING,   50,  5, 100, PHYSICAL

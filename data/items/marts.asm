@@ -19,6 +19,7 @@ Marts: ; 160a9
 	dw LusterMallAntique
 	dw LusterMallHerb
 	dw LusterMallStone
+	dw LusterMallStone2
 	dw LusterMallClothes
 	dw LusterMallBall1
 	dw LusterMallBall2
@@ -292,6 +293,19 @@ LusterMallHerb:
 	db -1
 	
 LusterMallStone:
+	db 9 ; # items
+	db LEAF_STONE
+	db FIRE_STONE
+	db WATER_STONE
+	db THUNDERSTONE
+	db MOON_STONE
+	db SUN_STONE
+	db DUSK_STONE
+	db DAWN_STONE
+	db EVERSTONE
+	db -1
+	
+LusterMallStone2:
 	db 10 ; # items
 	db LEAF_STONE
 	db FIRE_STONE
@@ -300,8 +314,8 @@ LusterMallStone:
 	db MOON_STONE
 	db SUN_STONE
 	db DUSK_STONE
-	db SHINY_STONE
 	db DAWN_STONE
+	db SHINY_STONE
 	db EVERSTONE
 	db -1
 	

@@ -1,7 +1,8 @@
 LusterMallStoneShop_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, LusterMallStoneShopCallback
 
 	db 2 ; warp events
 	warp_def  7,  4, 17, LUSTER_MALL
@@ -22,8 +23,9 @@ LusterMallStoneShop_MapScriptHeader:
 	signpost  1,  3, SIGNPOST_JUMPTEXT, LusterMallStoneShopPosterText
 	signpost  1,  4, SIGNPOST_JUMPTEXT, LusterMallStoneShopPosterText
 
-	db 4 ; object events
-	object_event  6,  2, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STONE, MART_LUSTER_MALL_STONE, -1
+	db 5 ; object events
+	object_event  6,  2, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STONE, MART_LUSTER_MALL_STONE_1, EVENT_GLINT_GROVE_EAST_POKE_BALL_4
+	object_event  -5,  -5, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STONE, MART_LUSTER_MALL_STONE_2, -1
 	person_event SPRITE_GENTLEMAN,  4,  1, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallStoneShop_NPC1, -1
 	person_event SPRITE_POKEFAN_F,  5,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMallStoneShop_NPC2, -1
 	person_event SPRITE_POLLY,  5,  3, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallStoneShopPolly, EVENT_POLLY_NOT_IN_SHINY_SHARDS
@@ -31,9 +33,17 @@ LusterMallStoneShop_MapScriptHeader:
 	
 	const_def 1 ; object constants
 	const LUSTER_MALL_STONE_SHOP_CLERK
+	const LUSTER_MALL_STONE_SHOP_CLERK2
 	const LUSTER_MALL_STONE_SHOP_NPC1
 	const LUSTER_MALL_STONE_SHOP_NPC2
 	const LUSTER_MALL_STONE_SHOP_POLLY
+	
+LusterMallStoneShopCallback:
+	checkevent EVENT_GLINT_GROVE_EAST_POKE_BALL_4
+	iffalse .skip
+	moveperson LUSTER_MALL_STONE_SHOP_CLERK2, 6, 2
+.skip
+	return
 	
 LusterMallStoneShopPolly:
 	faceplayer

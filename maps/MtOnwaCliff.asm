@@ -10,8 +10,7 @@ MtOnwaCliff_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event 15, 32, SIGNPOST_ITEM + SHINY_STONE, EVENT_MT_ONWA_CLIFF_HIDDEN_SHINY_STONE
+	db 0 ; bg events
 
 	db 6 ; object events
 	person_event SPRITE_ROCKER, 15, 30, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerMtOnwaOutside_1, -1

@@ -23,7 +23,7 @@ GlintGroveEast_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 8 ; object events
+	db 10 ; object events
 	person_event SPRITE_MINA, 30,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveEastMina, EVENT_GLINT_GROVE_MINA_GONE
 	itemball_event  8, 37, SUPER_POTION, 1, EVENT_GLINT_GROVE_EAST_POKE_BALL_1
 	itemball_event  4, 12, REPEL, 1, EVENT_GLINT_GROVE_EAST_POKE_BALL_2
@@ -32,6 +32,8 @@ GlintGroveEast_MapScriptHeader:
 	smashrock_event  9, 36
 	itemball_event  2,  7, RARE_CANDY, 1, EVENT_GLINT_GROVE_EAST_POKE_BALL_3
 	itemball_event 10, 44, SHINY_STONE, 1, EVENT_GLINT_GROVE_EAST_POKE_BALL_4
+	strengthboulder_event 12, 41, EVENT_GLINT_GROVE_EAST_BOULDER_1
+	strengthboulder_event 13, 42, EVENT_GLINT_GROVE_EAST_BOULDER_2
 	
 	const_def 1 ; object constants
 	const GLINT_GROVE_EAST_MINA

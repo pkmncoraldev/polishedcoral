@@ -109,8 +109,8 @@ AI_Redundant: ; 2c41a
 .FakeOut:
 	ld a, [wEnemyTurnsTaken]
 	cp 0
-	jr nz, .Redundant
-	jr .NotRedundant
+	jp nz, .Redundant
+	jp .NotRedundant
 
 .Reflect:
 	ld a, [wEnemyScreens]
@@ -194,6 +194,22 @@ AI_Redundant: ; 2c41a
 
 .BatonPass:
 	farcall CheckAnyOtherAliveMons
+	jr z, .Redundant
+	ld a, [wEnemySubStatus3]
+	bit SUBSTATUS_CONFUSED, a
+	jr nz, .Redundant
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jr nz, .NotRedundant
+	ld hl, wEnemyAtkLevel
+	ld c, $8
+.stat_level_loop
+	dec c
+	jr z, .Redundant
+	ld a, [hli]
+	cp $9
+	jr c, .stat_level_loop
+	jr .NotRedundant
 .InvertZero:
 	jr z, .Redundant
 .NotRedundant:

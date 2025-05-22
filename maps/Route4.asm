@@ -14,11 +14,10 @@ Route4_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 3 ; bg events
 	signpost 15,  2, SIGNPOST_READ, Route4Sign
 	signpost 23, 36, SIGNPOST_READ, Route4ForestSign
 	signpost 14, 53, SIGNPOST_READ, Route4Grave
-	bg_event 15, 12, SIGNPOST_ITEM + MOON_STONE, EVENT_ROUTE_4_HIDDEN_MOON_STONE
 
 	db 15 ; object events
 	person_event SPRITE_BIG_SNORLAX, 18, 20, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route4Snorlax, EVENT_FOUGHT_SNORLAX_ROUTE_4

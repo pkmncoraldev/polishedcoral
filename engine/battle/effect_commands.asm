@@ -3010,7 +3010,6 @@ ConsumeUserItem::
 	ld a, [wItemAttributeParamBuffer]
 	cp MEDICINE
 	jr z, .meds
-	cp BERRIES
 	jr nz, .apply_unburden
 .meds
 	call GetBackupItemAddr

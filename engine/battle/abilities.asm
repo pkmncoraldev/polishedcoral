@@ -1345,12 +1345,12 @@ CudChewAbility:
 	push bc
 	push de
 	push hl
-	farcall CheckItemPocket
+	farcall CheckItemBerry
 	pop hl
 	pop de
 	pop bc
 	ld a, [wItemAttributeParamBuffer]
-	cp BERRIES
+	cp 1
 	ret nz
 
 	; Kill the used item

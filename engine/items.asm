@@ -597,3 +597,32 @@ CountItemInPocket:
 .next
 	inc hl
 	jr .loop
+
+CheckItemBerry::
+	ld a, [wCurItem]
+	ld hl, BerryItems
+	ld de, 1
+	call IsInArray
+	jr nc, .not_berry
+	ld a, 1
+	ld [wItemAttributeParamBuffer], a
+	ret
+	
+.not_berry
+	xor a
+	ld [wItemAttributeParamBuffer], a
+	ret
+	
+BerryItems:
+	db CHERI_BERRY
+	db CHESTO_BERRY
+	db PECHA_BERRY
+	db RAWST_BERRY
+	db ASPEAR_BERRY
+	db LEPPA_BERRY
+	db ORAN_BERRY
+	db PERSIM_BERRY
+	db LUM_BERRY
+	db SITRUS_BERRY
+	db FIGY_BERRY
+	db -1

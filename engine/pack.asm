@@ -156,7 +156,7 @@ Pack: ; 10000
 
 .TMHMPocketMenu: ; 100e8 (4:40e8)
 	farcall TMHMPocket
-	lb bc, $5, $9 ; Balls, Berries
+	lb bc, $5, $b ; Balls, KeyItems
 	call Pack_InterpretJoypad
 	ret c
 	ld hl, .MenuDataHeader1
@@ -268,7 +268,7 @@ Pack: ; 10000
 	ld [wKeyItemsPocketScrollPosition], a
 	ld a, [wMenuCursorY]
 	ld [wKeyItemsPocketCursor], a
-	lb bc, $9, $1 ; Berries, Items
+	lb bc, $7, $1 ; TMHM, Items
 	call Pack_InterpretJoypad
 	ret c
 	; fallthrough
@@ -1610,13 +1610,25 @@ Pack_InitGFX: ; 10955
 	call ClearBox
 ; ◀▶ POCKET       ▼▲ ITEMS
 	hlcoord 0, 0
-	ld a, $28
-	ld c, SCREEN_WIDTH
+	ld bc, SCREEN_WIDTH
+	ld a, $25
+	call ByteFill
+	hlcoord 1, 0
+	ld a, $26
+	ld c, 6
 .loop
 	ld [hli], a
 	inc a
 	dec c
 	jr nz, .loop
+	hlcoord 13, 0
+	ld a, $2c
+	ld c, 6
+.loop2
+	ld [hli], a
+	inc a
+	dec c
+	jr nz, .loop2
 	call DrawPocketName
 	call PlacePackGFX
 ; Place the textbox for displaying the item description

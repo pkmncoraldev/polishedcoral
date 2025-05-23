@@ -1826,8 +1826,7 @@ ChikoritaEvosAttacks:
 	db 19, LIGHT_SCREEN
 	db 22, BULLET_SEED
 	db 26, STUN_SPORE
-	db 29, LEECH_SEED
-	db 32, BODY_SLAM
+	db 30, BODY_SLAM
 	db 36, SAFEGUARD
 	db 39, HEAL_BELL
 	db 42, SOLAR_BEAM
@@ -1846,7 +1845,6 @@ BayleefEvosAttacks:
 	db 19, LIGHT_SCREEN
 	db 25, BULLET_SEED
 	db 30, STUN_SPORE
-	db 34, LEECH_SEED
 	db 40, BODY_SLAM
 	db 45, SAFEGUARD
 	db 49, HEAL_BELL
@@ -1856,7 +1854,6 @@ BayleefEvosAttacks:
 MeganiumEvosAttacks:
 	db  0 ; no more evolutions
 	db 1, CALM_MIND
-	db 1, LEECH_SEED
 	db 1, GIGA_DRAIN
 	db 1, MEGA_DRAIN
 	db 1, TACKLE_SCRATCH_POUND

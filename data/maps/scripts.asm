@@ -200,7 +200,6 @@ INCLUDE "maps/SunbeamSurfShop.asm"
 INCLUDE "maps/SunbeamBikiniContest.asm"
 INCLUDE "maps/SprucesLab.asm"
 INCLUDE "maps/SunbeamReserve.asm"
-INCLUDE "maps/SunbeamJungle.asm"
 
 SECTION "Sunbeam Island Scripts2", ROMX
 
@@ -210,6 +209,7 @@ INCLUDE "maps/SunbeamOldCouplesHouse.asm"
 INCLUDE "maps/SunbeamTradeHouse.asm"
 INCLUDE "maps/SunbeamJungleCave.asm"
 INCLUDE "maps/SunbeamJungleDeep.asm"
+INCLUDE "maps/SunbeamJungle.asm"
 
 SECTION "Eventide Village Scripts", ROMX
 

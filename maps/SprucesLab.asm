@@ -128,15 +128,11 @@ SpruceLabSpruce:
 	warpcheck
 	end
 .alreadytalked
-	faceplayer
-	opentext
-	writetext SpruceLabDexCheckText
-	waitbutton
-	special ProfOaksPCBoot
-	writetext SpruceLabSpruceText9
-	waitbutton
-	closetext
-	end
+	checkevent EVENT_SAVED_SUNBEAM
+	iftrue .sunbeam_done
+	jumptextfaceplayer SpruceLabSpruceText18
+.sunbeam_done
+	jumptextfaceplayer SpruceLabSpruceText8
 .trymasterballagain
 	faceplayer
 	opentext
@@ -271,9 +267,6 @@ SpruceLabComeBackInside:
 	pause 5
 	opentext
 	writetext SpruceLabSpruceText8
-	waitbutton
-	special ProfOaksPCBoot
-	writetext SpruceLabSpruceText9
 	waitbutton
 	closetext
 	setevent EVENT_SUNBEAM_SPRUCE_GONE
@@ -433,10 +426,9 @@ SpruceLabSpruceText8:
 	para "Do call me if you"
 	line "need anything."
 	
-	para "While you're here,"
-	line "why don't I take a"
-	cont "look at your #-"
-	cont "DEX?"
+	para "Good luck on the"
+	line "rest of your"
+	cont "adventure."
 	done
 	
 SpruceLabSpruceText9:
@@ -612,13 +604,25 @@ SpruceLabSpruceText17:
 	line "It's yours."
 	done
 	
-SpruceLabDexCheckText:
-	text "Ah, <PLAYER>!"
+SpruceLabSpruceText18:
+	text "That #FLUTE…"
 	
-	para "How is your #-"
-	line "DEX coming?"
-
-	para "Let's see…"
+	para "A song played on"
+	line "this will wake any"
+	cont "#MON from even"
+	cont "the deepest"
+	cont "slumber."
+	
+	para "Strangely though,"
+	line "some people say"
+	cont "that the soothing"
+	cont "sound actually"
+	cont "makes them MORE"
+	cont "sleepy!"
+	
+	para "It truly is a"
+	line "mysterious instru-"
+	cont "ment!"
 	done
 	
 SpruceLabPokeFluteText1:

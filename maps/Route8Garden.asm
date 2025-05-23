@@ -13,7 +13,8 @@ Route8Garden_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	tapeball_event 21, 2, MUSIC_WILD_BATTLE, 2, EVENT_MUSIC_WILD_BATTLE
 
 Route8GardenCallback:
 	checkflag ENGINE_DAILY_ROUTE_GARDEN

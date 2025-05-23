@@ -497,13 +497,13 @@ ZubatEvosAttacks:
 	db 13, SCREECH
 	db 17, CONFUSE_RAY
 	db 20, WING_ATTACK
-	db 23, ACROBATICS
-	db 25, POISON_FANG
+	db 23, AIR_SLASH
+	db 25, VENOSHOCK
 	db 29, MEAN_LOOK_BLOCK_SPIDER_WEB
 	db 31, LEECH_LIFE
 	db 35, HAZE
-	db 37, VENOSHOCK
-	db 41, AIR_SLASH
+	db 37, POISON_FANG
+	db 41, ACROBATICS
 	db 0 ; no more level-up moves
 
 GolbatEvosAttacks:
@@ -517,13 +517,13 @@ GolbatEvosAttacks:
 	db 1, SCREECH
 	db 1, CONFUSE_RAY
 	db 1, WING_ATTACK
-	db 24, ACROBATICS
-	db 27, POISON_FANG
+	db 24, AIR_SLASH
+	db 27, VENOSHOCK
 	db 32, MEAN_LOOK_BLOCK_SPIDER_WEB
 	db 35, LEECH_LIFE
 	db 40, HAZE
-	db 43, VENOSHOCK
-	db 48, AIR_SLASH
+	db 43, POISON_FANG
+	db 48, ACROBATICS
 	db 0 ; no more level-up moves
 
 OddishEvosAttacks:
@@ -2050,13 +2050,13 @@ CrobatEvosAttacks:
 	db 1, SCREECH
 	db 1, CONFUSE_RAY
 	db 1, WING_ATTACK
-	db 24, ACROBATICS
-	db 27, POISON_FANG
+	db 24, AIR_SLASH
+	db 27, VENOSHOCK
 	db 32, MEAN_LOOK_BLOCK_SPIDER_WEB
 	db 35, LEECH_LIFE
 	db 40, HAZE
-	db 43, VENOSHOCK
-	db 48, AIR_SLASH
+	db 43, POISON_FANG
+	db 48, ACROBATICS
 	db  0 ; no more level-up moves
 
 ChinchouEvosAttacks:

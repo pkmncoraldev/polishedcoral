@@ -14,10 +14,11 @@ IceCaveB1F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 4 ; object events
 	person_event SPRITE_HIKER,  6, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, IceCaveB1FNPC1, -1
-	person_event SPRITE_HIKER,  5, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, IceCaveB1FNPC2, -1
+	person_event SPRITE_HIKER,  3, 20, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, IceCaveB1FNPC2, -1
 	person_event SPRITE_BALL_CUT_FRUIT,  9, 20, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, IceCaveB1FPokeballRockClimb, EVENT_GOT_HM08_ROCK_CLIMB
+	tmhmball_event 23,  5, TM_ICE_PUNCH, EVENT_ICE_CAVE_ICE_PUNCH
 	
 	
 IceCaveB1FStopSnowstorm:
@@ -55,7 +56,7 @@ IceCaveB1FNPC1Text:
 	done
 	
 IceCaveB1FNPC2Text:
-	text "Just down this"
+	text "Just down that"
 	line "ledge is TWINKLE"
 	cont "TOWN."
 	

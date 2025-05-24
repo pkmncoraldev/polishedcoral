@@ -1071,7 +1071,7 @@ TMHMTypes:
 	db ICE      ; HAIL
 	db FIGHTING	; BULK UP
 	db POISON   ; VENOSHOCK
-	db NORMAL   ; HIDDEN_POWER
+	db GROUND   ; MUD SLAP
 	db FIRE     ; SUNNY_DAY
 	db DARK	    ; TAUNT
 	db ICE      ; ICE_BEAM

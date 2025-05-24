@@ -156,7 +156,7 @@ DEF MAP_NONE   EQU 0
 	map_const SPRUCES_LAB, 								   5,  4 ; 12
 	map_const SUNBEAM_RESERVE,                            25, 11 ; 13
 	map_const SUNBEAM_JUNGLE,  			             	  16, 16 ; 14
-	map_const SUNBEAM_JUNGLE_CAVE,  			           9,  6 ; 15
+	map_const SUNBEAM_JUNGLE_CAVE,  			          12,  6 ; 15
 	map_const SUNBEAM_JUNGLE_DEEP,  			          20, 17 ; 16
 	map_const ROUTE_13,                            		  31, 10 ; 17
 	

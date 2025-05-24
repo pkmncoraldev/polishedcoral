@@ -8,7 +8,7 @@ TMHMMoves:
 	db HAIL                                ; TM07
 	db BULK_UP			                   ; TM08
 	db VENOSHOCK                           ; TM09
-	db SUPERPOWER                          ; TM10
+	db MUD_SLAP	                           ; TM10
 	db SUNNY_DAY                           ; TM11
 	db TAUNT	                           ; TM12
 	db ICE_BEAM                            ; TM13

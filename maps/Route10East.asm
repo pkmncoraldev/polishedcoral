@@ -36,10 +36,9 @@ Route10East_MapScriptHeader:
 	signpost 20,  9, SIGNPOST_READ, Route10EastWood
 	signpost 21,  9, SIGNPOST_READ, Route10EastWood
 
-	db 4 ; object events
+	db 3 ; object events
 	object_event 11, 24, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route10EastCampfire, EVENT_HIDE_OW_OBJECTS_BROWN
 	object_event 11, 24, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Route10EastCampfire, EVENT_HIDE_OW_OBJECTS_TEAL
-	tmhmball_event 20, 20, TM_HAIL, EVENT_ROUTE_10_EAST_POKE_BALL_HAIL
 	tmhmball_event 11, 21, TM_BLIZZARD, EVENT_ROUTE_10_EAST_POKE_BALL_BLIZZARD
 
 	const_def 1 ; object constants

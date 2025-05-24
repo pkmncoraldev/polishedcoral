@@ -30,12 +30,22 @@ SunbeamSurfShopTrigger1:
 	opentext 
 	writetext SunbeamIslandSurfShopNPC1Text5
 	waitbutton
+	checkevent EVENT_BIKINI_CONTEST_GOT_CHARM
+	iffalse .get_charm
 	checkevent EVENT_BIKINIP
 	iffalse .lilacwon
 	checkevent EVENT_BIKINIBL
 	iffalse .asterwon
 	checkevent EVENT_BIKINIBR
 	iffalse .hazelwon
+.get_charm
+	setevent EVENT_BIKINI_CONTEST_GOT_CHARM
+	verbosegivetmhm TM_CHARM
+	writetext SunbeamIslandSurfShopNPC1Text9
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	jump .end
 .lilacwon
 	verbosegiveitem RARE_CANDY
 	jump .end
@@ -248,6 +258,9 @@ SunbeamIslandSurfShopNPC1Text6:
 	line "back tomorrow to"
 	cont "judge the next"
 	cont "contest!"	
+	
+	para "You could win"
+	line "another prize!"
 	done
 	
 SunbeamIslandSurfShopNPC1Text7:
@@ -281,6 +294,18 @@ SunbeamIslandSurfShopNPC1Text8_girl:
 	para "I'm going to have"
 	line "to ask you to"
 	cont "leave."
+	done
+	
+SunbeamIslandSurfShopNPC1Text9:
+	text "That TM contains"
+	line "the move CHARM."
+	
+	para "CHARM will put the"
+	line "moves on your foe,"
+	cont "harshly lowering"
+	cont "their ATTACK."
+	
+	para "It's really great."
 	done
 	
 SunbeamIslandSurfShopNPC2Text1:

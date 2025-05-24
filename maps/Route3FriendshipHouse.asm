@@ -31,11 +31,21 @@ Route3FriendshipHouseNPC:
 	jumpopenedtext FriendshipHateText
 	
 .Happiest:
+	checkevent EVENT_GOT_RETURN_TM
+	iffalse .tm
 	writetext FriendshipHappiestText
 	waitbutton
 	closetext
 	end
-	
+.tm
+	writetext FriendshipHappiestText
+	waitbutton
+	verbosegivetmhm TM_RETURN
+	writetext FriendshipHappiestTextReturn
+	waitbutton
+	closetext
+	setevent EVENT_GOT_RETURN_TM
+	end
 .Happy:
 	jumpopenedtext FriendshipHappyText
 	
@@ -108,4 +118,17 @@ FriendshipHateText:
 	para "What have you done"
 	line "to this poor"
 	cont "#MON?"
+	done
+	
+FriendshipHappiestTextReturn:
+	text "That TM contains"
+	line "the move RETURN."
+	
+	para "RETURN gains more"
+	line "power the more the"
+	cont "user likes its"
+	cont "TRAINER."
+
+	para "It's perfect for"
+	line "you!"
 	done

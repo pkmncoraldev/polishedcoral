@@ -276,7 +276,7 @@ BrilloPoliceBackRoomCaptainText7:
 	done
 	
 BrilloPoliceBackRoomCaptainText4:
-	text "What is happening,"
+	text "What is happening"
 	line "right now?"
 	
 	para "You've embarassed"

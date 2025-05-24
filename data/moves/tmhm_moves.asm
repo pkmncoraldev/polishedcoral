@@ -48,13 +48,13 @@ TMHMMoves:
 	db STEEL_WING                          ; TM47
 	db ROCK_SLIDE                          ; TM48
 	db DAZZLINGLEAM                        ; TM49
-	db LEECH_LIFE                          ; TM50
-	db ROOST                               ; TM51
-	db FOCUS_BLAST                         ; TM52
+	db THUNDERPUNCH                        ; TM50
+	db FIRE_PUNCH                          ; TM51
+	db ICE_PUNCH	                       ; TM52
 	db ENERGY_BALL                         ; TM53
 	db FALSE_SWIPE                         ; TM54
 	db SCALD                               ; TM55
-	db X_SCISSOR                           ; TM56
+	db ROOST	                           ; TM56
 	db DARK_PULSE                          ; TM57
 	db ENDURE                              ; TM58
 	db DRAGON_PULSE                        ; TM59
@@ -67,16 +67,16 @@ TMHMMoves:
 	db POISON_JAB                          ; TM66
 	db RAPID_SPIN                          ; TM67
 	db GIGA_IMPACT                         ; TM68
-	db THUNDER_FANG                        ; TM69
+	db ANCIENTPOWER                        ; TM69
 	db SAND_ATTACK_SMOKESCREEN_FLASH       ; TM70
 	db STONE_EDGE                          ; TM71
-	db ANCIENTPOWER                        ; TM72
+	db THUNDER_FANG                        ; TM72
 	db THUNDER_WAVE                        ; TM73
 	db GYRO_BALL                           ; TM74
 	db SWORDS_DANCE                        ; TM75
-	db THUNDERPUNCH
-	db FIRE_PUNCH
-	db ICE_PUNCH
+	db LEECH_LIFE
+	db X_SCISSOR
+	db FOCUS_BLAST
 	
 	db CUT                                 ; HM01
 	db FLY                                 ; HM02

@@ -54,7 +54,7 @@ ENDM
 	add_tm METAL_CLAW		; $1e
 	add_tm DOUBLE_TEAM		; $1f
 	add_tm REFLECT			; $20
-	add_tm DIVE		; $21
+	add_tm DIVE				; $21
 	add_tm FLAMETHROWER		; $22
 	add_tm SLUDGE_BOMB		; $23
 	add_tm SANDSTORM		; $24
@@ -70,13 +70,13 @@ ENDM
 	add_tm STEEL_WING		; $2e
 	add_tm ROCK_SLIDE		; $2f
 	add_tm DAZZLINGLEAM		; $30
-	add_tm LEECH_LIFE		; $31
-	add_tm ROOST			; $32
-	add_tm FOCUS_BLAST		; $33
+	add_tm THUNDERPUNCH		; $31
+	add_tm FIRE_PUNCH		; $32
+	add_tm ICE_PUNCH		; $33
 	add_tm ENERGY_BALL		; $34
 	add_tm FALSE_SWIPE		; $35
 	add_tm SCALD			; $36
-	add_tm X_SCISSOR		; $37
+	add_tm ROOST			; $37
 	add_tm DARK_PULSE		; $38
 	add_tm ENDURE			; $39
 	add_tm DRAGON_PULSE		; $3a
@@ -89,16 +89,16 @@ ENDM
 	add_tm POISON_JAB		; $41
 	add_tm RAPID_SPIN		; $42
 	add_tm GIGA_IMPACT		; $43
-	add_tm FIRE_FANG		; $44
+	add_tm ANCIENTPOWER		; $44
 	add_tm SAND_ATTACK_SMOKESCREEN_FLASH			; $45
 	add_tm STONE_EDGE		; $46
-	add_tm ANCIENTPOWER		; $47
+	add_tm FIRE_FANG		; $47
 	add_tm THUNDER_WAVE		; $48
 	add_tm GYRO_BALL		; $49
 	add_tm SWORDS_DANCE		; $4a
-	add_tm THUNDERPUNCH		; $4b
-	add_tm FIRE_PUNCH		; $4c
-	add_tm ICE_PUNCH		; $4d
+	add_tm LEECH_LIFE		; $4b
+	add_tm X_SCISSOR		; $4c
+	add_tm FOCUS_BLAST		; $4d
 DEF NUM_TMS = const_value - TM01
 
 	add_hm CUT			; $4e

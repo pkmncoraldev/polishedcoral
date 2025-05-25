@@ -8,8 +8,8 @@ DesertTemple1_MapScriptHeader:
 	callback MAPCALLBACK_TILES, DesertTemple1Callback
 
 	db 12 ; warp events
-	warp_event 16, 37, DESERT_TEMPLE_OUTSIDE, 1
-	warp_event 17, 37, DESERT_TEMPLE_OUTSIDE, 2
+	warp_event 14, 37, DESERT_TEMPLE_OUTSIDE, 1
+	warp_event 15, 37, DESERT_TEMPLE_OUTSIDE, 2
 	warp_event  8, 10, DESERT_TEMPLE_LOWER_LEFT, 1
 	warp_event  8, 11, DESERT_TEMPLE_LOWER_LEFT, 2
 	warp_event 17, 10, DESERT_TEMPLE_LOWER_RIGHT, 1
@@ -57,6 +57,17 @@ DesertTemple1Callback:
 	setevent EVENT_ALWAYS_SET
 	domaptrigger DESERT_TEMPLE_LOWER_LEFT, $0
 	callasm DesertTemple1ClearTimerAsm
+	ifequal 1, .right
+	ifequal 2, .left
+	jump .cont
+.right
+	callasm SpawnPlayer
+	spriteface PLAYER, RIGHT
+	jump .cont
+.left
+	callasm SpawnPlayer
+	spriteface PLAYER, LEFT
+.cont
 	clearevent EVENT_SANDSTORM_HAPPENING
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	domaptrigger DESERT_WASTELAND_1, $0
@@ -115,6 +126,20 @@ DesertTemple1Trigger2:
 	end
 
 DesertTemple1ClearTimerAsm:
+	ld a, [wXCoord]
+	cp $08
+	jr z, .right
+	cp $11
+	jr z, .left
+	ld a, 0
+	jr .cont
+.right
+	ld a, 1
+	jr .cont
+.left
+	ld a, 2
+.cont
+	ld [wScriptVar], a
 	ld hl, wStatusFlags2
 	res 2, [hl] ; ENGINE_BUG_CONTEST_TIMER
 	xor a ;clear time

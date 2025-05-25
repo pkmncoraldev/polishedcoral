@@ -15,7 +15,7 @@ BlankScreen: ; 8000
 	call ApplyAttrAndTilemapInVBlank
 	jp SetPalettes
 
-SpawnPlayer: ; 8029
+SpawnPlayer:: ; 8029
 	ld a, -1
 	ld [wObjectFollow_Leader], a
 	ld [wObjectFollow_Follower], a

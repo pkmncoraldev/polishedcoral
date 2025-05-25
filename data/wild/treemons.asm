@@ -9,6 +9,7 @@ TreeMons:
 	dw TreeMonsTwinkle
 	dw TreeMonsLuster
 	dw TreeMonsShimmer
+	dw TreeMonsOasis
 	dw TreeMonsRadiant
 	dw TreeMonsKomore
 	dw TreeMonsBright
@@ -170,6 +171,23 @@ TreeMonsShimmer:
 	db 10, MUNCHLAX,	35
 	db  5, MUNCHLAX,	35
 	db  5, MURKROW,		35
+	db -1
+	
+TreeMonsOasis:
+	db 50, EXEGGCUTE,	33
+	db 15, TOUCANNON,	33
+	db 15, HERACROSS,	33
+	db 10, HERACROSS,	33
+	db  5, HERACROSS,	33
+	db  5, TOUCANNON,	33
+	db -1
+	; rare
+	db 50, EXEGGCUTE,	38
+	db 15, TOUCANNON,	38
+	db 15, HERACROSS,	38
+	db 10, HERACROSS,	38
+	db  5, HERACROSS,	38
+	db  5, TOUCANNON,	38
 	db -1
 	
 TreeMonsRadiant:

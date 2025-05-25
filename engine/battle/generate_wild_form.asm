@@ -106,6 +106,8 @@ WildSpeciesForms:
 .ExeggcuteForm:
 	ld hl, ExeggcuteLandmarks
 	ld a, [wCurrentLandmark]
+	cp DESERT_WASTELAND
+	jr z, .AlolanForm
 	ld de, 1
 	call IsInArray
 	jr nc, .CheckGen1

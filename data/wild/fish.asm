@@ -12,6 +12,7 @@ FishGroups: ; 92488
 	dbwww 75 percent + 1, .Sewer_Old,  			 .Sewer_Good, 			 .Sewer_Super
 	dbwww 75 percent + 1, .Temple_Old,  		 .Temple_Good, 			 .Temple_Super
 	dbwww 75 percent + 1, .Autumn_Old,  		 .Autumn_Good, 			 .Autumn_Super
+	dbwww 75 percent + 1, .Oasis_Old,  			 .Oasis_Good, 			 .Oasis_Super
 	
 .Glint_Old:
 	db  70 percent, MAGIKARP,   10	;70%
@@ -147,15 +148,30 @@ FishGroups: ; 92488
 	db  85 percent, MAGIKARP,   25	;15%
 	db 100 percent, MAGIKARP,   25	;15%
 .Autumn_Good:
-	db  40 percent, AZUMARILL,  34	;40%
-	db  70 percent, POLIWHIRL,  34	;30%
-	db  90 percent, POLIWHIRL, 	34	;20%
-	db 100 percent, LAPRAS, 	34	;10%
+	db  40 percent, AZUMARILL,  30	;40%
+	db  70 percent, POLIWHIRL,  30	;30%
+	db  90 percent, POLIWHIRL, 	30	;20%
+	db 100 percent, POLIWHIRL, 	30	;10%
 .Autumn_Super:
 	db  40 percent, AZUMARILL,  34	;40%
 	db  70 percent, POLIWHIRL,  34	;30%
 	db  90 percent, POLIWHIRL, 	34	;20%
 	db 100 percent, LAPRAS, 	34	;10%
+	
+.Oasis_Old:
+	db  70 percent, MAGIKARP,   10	;70%
+	db  85 percent, MAGIKARP,   10	;15%
+	db 100 percent, MAGIKARP,   10	;15%
+.Oasis_Good:
+	db  40 percent, POLIWHIRL,  30	;40%
+	db  70 percent, SLOWPOKE,  	30	;30%
+	db  90 percent, SLOWPOKE,  	30	;20%
+	db 100 percent, POLIWHIRL, 	30	;10%
+.Oasis_Super:
+	db  40 percent, POLIWHIRL,  34	;40%
+	db  70 percent, SLOWPOKE,  	34	;30%
+	db  90 percent, SLOWPOKE,   34	;20%
+	db 100 percent, POLIWHIRL, 	34	;10%
 
 FishItems:
 	db PEARL

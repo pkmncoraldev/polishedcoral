@@ -4,25 +4,25 @@
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, NUMEL		;30%
-	db 31, MINCCINO		;30%
+	db 31, DWEBBLE		;30%
 	db 31, CACNEA		;20%
-	db 31, GLIGAR		;10%
+	db 31, MINCCINO		;10%
 	db 31, CACNEA		;5%
 	db 31, CACTURNE		;4%
 	db 31, CACTURNE		;1%
 	; day
 	db 31, NUMEL		;30%
-	db 31, MINCCINO		;30%
+	db 31, DWEBBLE		;30%
 	db 31, CACNEA		;20%
-	db 31, GLIGAR		;10%
+	db 31, MINCCINO		;10%
 	db 31, CACNEA		;5%
 	db 31, CACTURNE		;4%
 	db 31, CACTURNE		;1%
 	; nite
 	db 31, NUMEL		;30%
-	db 31, MINCCINO		;30%
+	db 31, DWEBBLE		;30%
 	db 31, CACNEA		;20%
-	db 31, GLIGAR		;10%
+	db 31, MINCCINO		;10%
 	db 31, CACNEA		;5%
 	db 31, CACTURNE		;4%
 	db 31, CACTURNE		;1%
@@ -31,25 +31,25 @@
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, NUMEL		;30%
-	db 31, MINCCINO		;30%
+	db 31, DWEBBLE		;30%
 	db 31, CACNEA		;20%
-	db 31, GLIGAR		;10%
+	db 31, MINCCINO		;10%
 	db 31, CACNEA		;5%
 	db 31, CACTURNE		;4%
 	db 31, CACTURNE		;1%
 	; day
 	db 31, NUMEL		;30%
-	db 31, MINCCINO		;30%
+	db 31, DWEBBLE		;30%
 	db 31, CACNEA		;20%
-	db 31, GLIGAR		;10%
+	db 31, MINCCINO		;10%
 	db 31, CACNEA		;5%
 	db 31, CACTURNE		;4%
 	db 31, CACTURNE		;1%
 	; nite
 	db 31, NUMEL		;30%
-	db 31, MINCCINO		;30%
+	db 31, DWEBBLE		;30%
 	db 31, CACNEA		;20%
-	db 31, GLIGAR		;10%
+	db 31, MINCCINO		;10%
 	db 31, CACNEA		;5%
 	db 31, CACTURNE		;4%
 	db 31, CACTURNE		;1%
@@ -323,6 +323,33 @@
 	db 32, MARACTUS		;5%
 	db 32, LARVESTA		;4%
 	db 32, LARVESTA		;1%
+	
+	map_id DESERT_WASTELAND_OASIS
+	db 25 percent, 25 percent, 25 percent ; encounter rates: morn/day/nite
+	; morn
+	db 32, MINCCINO		;30%
+	db 32, PHANPY		;30%
+	db 32, TOUCANNON	;20%
+	db 32, DONPHAN		;10%
+	db 32, DONPHAN		;5%
+	db 32, CHANSEY		;4%
+	db 32, CHANSEY		;1%
+	; day
+	db 32, MINCCINO		;30%
+	db 32, PHANPY		;30%
+	db 32, TOUCANNON	;20%
+	db 32, DONPHAN		;10%
+	db 32, DONPHAN		;5%
+	db 32, CHANSEY		;4%
+	db 32, CHANSEY		;1%
+	; nite
+	db 32, MINCCINO		;30%
+	db 32, PHANPY		;30%
+	db 32, TOUCANNON	;20%
+	db 32, DONPHAN		;10%
+	db 32, DONPHAN		;5%
+	db 32, CHANSEY		;4%
+	db 32, CHANSEY		;1%
 	
 	map_id ROUTE_19
 	db 25 percent, 25 percent, 25 percent ; encounter rates: morn/day/nite
@@ -1033,7 +1060,7 @@
 	db 39, CRUSTLE		;30%
 	db 39, RATICATE		;20%
 	db 39, CLODSIRE		;10%
-	db 39, HERACROSS	;5%
+	db 39, RATICATE		;5%
 	db 39, CLODSIRE		;4%
 	db 39, CLODSIRE		;1%
 	; day
@@ -1041,7 +1068,7 @@
 	db 39, CRUSTLE		;30%
 	db 39, RATICATE		;20%
 	db 39, CLODSIRE		;10%
-	db 39, HERACROSS	;5%
+	db 39, RATICATE		;5%
 	db 39, CLODSIRE		;4%
 	db 39, CLODSIRE		;1%
 	; nite
@@ -1049,7 +1076,7 @@
 	db 39, CRUSTLE		;30%
 	db 39, RATICATE		;20%
 	db 39, CLODSIRE		;10%
-	db 39, HERACROSS	;5%
+	db 39, RATICATE		;5%
 	db 39, CLODSIRE		;4%
 	db 39, CLODSIRE		;1%
 	
@@ -1060,7 +1087,7 @@
 	db 39, CRUSTLE		;30%
 	db 39, RATICATE		;20%
 	db 39, CLODSIRE		;10%
-	db 39, HERACROSS	;5%
+	db 39, RATICATE		;5%
 	db 39, CLODSIRE		;4%
 	db 39, CLODSIRE		;1%
 	; day
@@ -1068,7 +1095,7 @@
 	db 39, CRUSTLE		;30%
 	db 39, RATICATE		;20%
 	db 39, CLODSIRE		;10%
-	db 39, HERACROSS	;5%
+	db 39, RATICATE		;5%
 	db 39, CLODSIRE		;4%
 	db 39, CLODSIRE		;1%
 	; nite
@@ -1076,7 +1103,7 @@
 	db 39, CRUSTLE		;30%
 	db 39, RATICATE		;20%
 	db 39, CLODSIRE		;10%
-	db 39, HERACROSS	;5%
+	db 39, RATICATE		;5%
 	db 39, CLODSIRE		;4%
 	db 39, CLODSIRE		;1%
 	

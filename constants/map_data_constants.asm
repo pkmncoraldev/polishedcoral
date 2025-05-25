@@ -32,6 +32,7 @@
 	const FISHGROUP_SEWER
 	const FISHGROUP_TEMPLE
 	const FISHGROUP_AUTUMN
+	const FISHGROUP_OASIS
 
 	const_def
 	const EAST_F

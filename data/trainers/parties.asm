@@ -4517,7 +4517,7 @@ TeacherGroup:
 	db "LYNN@"
 	db TRAINERTYPE_MOVES
 	; party
-	db 29, RAICHU
+	db 32, RAICHU
 		db THUNDERBOLT, THUNDER_WAVE, QUICK_ATTACK, 0
 	db -1 ; end
 

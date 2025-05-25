@@ -91,7 +91,7 @@ SailboatCutsceneTrigger0:
 	clearevent EVENT_BOAT_GOING_TO_SHIMMER
 	domaptrigger SHIMMER_HARBOR, $1
 	special FadeOutPalettes
-	warpfacing LEFT, SHIMMER_HARBOR, 15, 8
+	warpfacing LEFT, SHIMMER_HARBOR, 15, 6
 	end
 .brillo
 	clearevent EVENT_BOAT_GOING_TO_BRILLO

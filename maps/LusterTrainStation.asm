@@ -15,7 +15,7 @@ LusterTrainStation_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 9 ; object events
+	db 13 ; object events
 	person_event SPRITE_OFFICER,  4, 26, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterTrainStationConductor, EVENT_MET_MR_NETT
 	person_event SPRITE_REPORTER, 11, 24, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterTrainStationReporter, EVENT_MET_MR_NETT
 	person_event SPRITE_CAMERAMAN, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterTrainStationCameraman, EVENT_MET_MR_NETT
@@ -25,6 +25,10 @@ LusterTrainStation_MapScriptHeader:
 	person_event SPRITE_ROCKER, 13, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
 	person_event SPRITE_FAT_GUY, 10, 21, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
 	person_event SPRITE_OFFICER,  6, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterTrainStationConductor, -1
+	person_event SPRITE_FAT_GUY, 10, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterTrainStationNPC1, EVENT_HAVENT_BEEN_TO_LUSTER_CITY
+	person_event SPRITE_POKEFAN_F, 12, 18, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterTrainStationNPC2, EVENT_HAVENT_BEEN_TO_LUSTER_CITY
+	person_event SPRITE_CUTE_GIRL, 13, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterTrainStationNPC3, EVENT_HAVENT_BEEN_TO_LUSTER_CITY
+	person_event SPRITE_SUPER_NERD, 10, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterTrainStationNPC4, EVENT_HAVENT_BEEN_TO_LUSTER_CITY
 
 	
 	const_def 1 ; object constants
@@ -37,6 +41,10 @@ LusterTrainStation_MapScriptHeader:
 	const LUSTER_TRAIN_STATION_CROWD3
 	const LUSTER_TRAIN_STATION_CROWD4
 	const LUSTER_TRAIN_STATION_OFFICER
+	const LUSTER_TRAIN_STATION_NPC_1
+	const LUSTER_TRAIN_STATION_NPC_2
+	const LUSTER_TRAIN_STATION_NPC_3
+	const LUSTER_TRAIN_STATION_NPC_4
 	
 LusterTrainStationTrigger0:
 	end
@@ -168,6 +176,7 @@ LusterTrainStationCallback:
 	pause 10
 	playmapmusic
 	setevent EVENT_MET_MR_NETT
+	clearevent EVENT_HAVENT_BEEN_TO_LUSTER_CITY
 	clearevent EVENT_TRAIN_GOING_EAST
 	clearevent EVENT_TRAIN_GOING_WEST
 	blackoutmod LUSTER_CITY_RESIDENTIAL
@@ -566,4 +575,78 @@ Movement_LusterStationTrainCamera:
 	slow_step_up
 	slow_step_right
 	step_end
+	
+LusterTrainStationNPC1:
+	faceplayer
+	opentext
+	writetext LusterTrainStationNPC1Text
+	waitbutton
+	closetext
+	spriteface LUSTER_TRAIN_STATION_NPC_1, DOWN
+	end
+	
+LusterTrainStationNPC2:
+	faceplayer
+	opentext
+	writetext LusterTrainStationNPC2Text
+	waitbutton
+	closetext
+	spriteface LUSTER_TRAIN_STATION_NPC_2, DOWN
+	end
+	
+LusterTrainStationNPC3:
+	jumptextfaceplayer LusterTrainStationNPC3Text
+	
+LusterTrainStationNPC4:
+	faceplayer
+	opentext
+	writetext LusterTrainStationNPC4Text
+	waitbutton
+	closetext
+	spriteface LUSTER_TRAIN_STATION_NPC_4, DOWN
+	end
+	
+LusterTrainStationNPC1Text:
+	text "Taking the train"
+	line "is nice, but I"
+	cont "wish I could FLY"
+	cont "around on my"
+	cont "#MON!"
+	
+	para "I've heard there's a"
+	line "ranch to the EAST"
+	cont "that can make that"
+	cont "happen."
+	done
+	
+LusterTrainStationNPC2Text:
+	text "I wonder if it's"
+	line "really safe to"
+	cont "take the train…"
+	done
+	
+LusterTrainStationNPC3Text:
+	text "Can I help you?<WAIT_S>"
+	line "You're staring."
+	
+	para "In LUSTER CITY,"
+	line "you'll be better"
+	cont "off keeping your"
+	cont "eyes to yourself."
+	done
+	
+LusterTrainStationNPC4Text:
+	text "If you're planning"
+	line "on frequently tra-"
+	cont "velling by train,"
+	
+	para "you'd better get"
+	line "a TRAIN PASS."
+	
+	para "I don't think I"
+	line "could afford to"
+	cont "travel if I had to"
+	cont "buy a ticket each"
+	cont "time!"
+	done
 	

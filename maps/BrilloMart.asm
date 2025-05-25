@@ -173,7 +173,7 @@ BrilloMartShelfRightText:
 	line "seems kinda loose."
 	
 	para "Maybe you could"
-	line "push it from the"
+	line "slide it from the"
 	cont "other side…"
 	done
 	
@@ -181,7 +181,7 @@ BrilloMartShelfUpText1:
 	text "The shelf here"
 	line "seems kinda loose."
 	
-	para "Push it?"
+	para "Slide it?"
 	done
 	
 BrilloMartShelfYesText:

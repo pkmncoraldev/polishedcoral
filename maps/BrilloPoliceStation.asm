@@ -512,15 +512,17 @@ BrilloPoliceStationCaptainText8:
 BrilloPoliceStationCaptainText9:
 	text "Great!"
 	
-	para "Now spit it out"
-	line "and we'll take 'em"
-	cont "down!"
+	para "Now spit it out!"
+	
+	para "If you tell me,"
+	line "we'll go shut them"
+	cont "down permanently."
 	
 	para "That place'll be"
 	line "gone for good!"
 	
-	para "Well? <WAIT_S>You gonna"
-	line "tell me?"
+	para "So, we gonna do"
+	line "this?"
 	done
 	
 BrilloPoliceStationCaptainText10:

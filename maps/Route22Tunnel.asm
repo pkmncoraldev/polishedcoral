@@ -15,7 +15,7 @@ Route22Tunnel_MapScriptHeader:
 	warp_event -1, -1, SEASIDE_CAVE_1F, 4
 	warp_event  5, 21, ROUTE_19, 4
 
-	db 82 ; coord events
+	db 84 ; coord events
 	xy_trigger 0, 13, 28, 0, Route22TunnelLightEntrance, 0, 0
 	xy_trigger 0, 14, 28, 0, Route22TunnelLightEntrance, 0, 0
 	xy_trigger 0, 15, 28, 0, Route22TunnelLightEntrance, 0, 0
@@ -51,6 +51,8 @@ Route22Tunnel_MapScriptHeader:
 	xy_trigger 1, 16,  6, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 17,  4, 0, Route22TunnelDark2, 0, 0
 	xy_trigger 1, 17,  5, 0, Route22TunnelDark3, 0, 0
+	xy_trigger 0, 17,  4, 0, Route22TunnelDark2, 0, 0
+	xy_trigger 0, 17,  5, 0, Route22TunnelDark3, 0, 0
 	xy_trigger 1, 18,  4, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 18,  5, 0, Route22TunnelDark, 0, 0
 	xy_trigger 1, 16, 12, 0, Route22TunnelDark, 0, 0
@@ -316,6 +318,7 @@ Route22TunnelDark3:
 	checkevent EVENT_BEAT_ROUTE_22_TUNNEL_TRAINER_4
 	iftrue .end
 	special Special_StopRunning
+	loadvar wLandmarkSignTimer, 0
 	special SaveMusic
 	playmusic MUSIC_HIKER_ENCOUNTER
 	checkevent EVENT_HIDE_OW_OBJECTS_BLUE

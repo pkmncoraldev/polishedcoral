@@ -11,13 +11,19 @@ LusterSewersThroneRoom_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 6 ; object events
+	db 12 ; object events
 	person_event SPRITE_FRANKIE,  2,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_LUSTER_SEWERS
 	person_event SPRITE_KAGE,  4,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_LUSTER_SEWERS
 	person_event SPRITE_DELINQUENT_M,  7,  4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterSewerThroneRoomGrunt1, EVENT_CLEARED_LUSTER_SEWERS
 	person_event SPRITE_DELINQUENT_M,  6,  4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_LUSTER_SEWERS
 	person_event SPRITE_DELINQUENT_M,  7,  6, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterSewerThroneRoomGrunt2, EVENT_CLEARED_LUSTER_SEWERS
 	person_event SPRITE_PLAYER_CUTSCENE,  7,  5, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_PLAYER_CUTSCENE_SILVER
+	person_event SPRITE_NIDOKING_LEADER,  2,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterSewerThroneRoomNidokingLeader, EVENT_LUSTER_PUNKS_NOT_IN_APARTMENT
+	person_event SPRITE_NIDOKING_F,  4,  4, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterSewerThroneRoomNidokingGirl, EVENT_LUSTER_PUNKS_NOT_IN_APARTMENT
+	person_event SPRITE_NIDOKING_M,  6,  6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterSewerThroneRoomNidokingGuy, EVENT_LUSTER_PUNKS_NOT_IN_APARTMENT
+	person_event SPRITE_DELINQUENT_M,  8,  3, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterSewerThroneRoomNidokingPunk1, EVENT_LUSTER_PUNKS_NOT_IN_APARTMENT
+	person_event SPRITE_DELINQUENT_F, 11,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterSewerThroneRoomNidokingPunk2, EVENT_LUSTER_PUNKS_NOT_IN_APARTMENT
+	person_event SPRITE_BURGLAR,  9,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterSewerThroneRoomNidokingPunk3, EVENT_LUSTER_PUNKS_NOT_IN_APARTMENT
 
 	
 	const_def 1 ; object constants
@@ -27,7 +33,92 @@ LusterSewersThroneRoom_MapScriptHeader:
 	const LUSTERSEWERSTHRONEROOM_GRUNT2
 	const LUSTERSEWERSTHRONEROOM_GRUNT3
 	const LUSTERSEWERSTHRONEROOM_CUTSCENE
+	const LUSTERSEWERSTHRONEROOM_NIDO_LEADER
 
+	
+LusterSewerThroneRoomNidokingLeader:
+	faceplayer
+	opentext
+	writetext LusterSewerThroneRoomNidokingLeaderText
+	waitbutton
+	closetext
+	spriteface LUSTERSEWERSTHRONEROOM_NIDO_LEADER, DOWN
+	end
+	
+LusterSewerThroneRoomNidokingLeaderText:
+	text "Ya showed up!"
+	
+	para "Make yourself at"
+	line "home!"
+	
+	para "You're one of us"
+	line "now, kid!"
+	
+	para "I'm sure those"
+	line "BUNEARYS are"
+	cont "plottin' their"
+	cont "revenge as we"
+	cont "speak."
+	
+	para "We'll need to be"
+	line "ready when they"
+	cont "show their faces"
+	cont "again."
+	done
+	
+LusterSewerThroneRoomNidokingGirl:
+	jumptextfaceplayer LusterSewerThroneRoomNidokingGirlText
+	
+LusterSewerThroneRoomNidokingGirlText:
+	text "You really did us"
+	line "a huge favor by"
+	cont "kickin' those"
+	cont "jerks out."
+	
+	para "This is our turf"
+	line "again!"
+	done
+	
+LusterSewerThroneRoomNidokingGuy:
+	jumptextfaceplayer LusterSewerThroneRoomNidokingGuyText
+	
+LusterSewerThroneRoomNidokingGuyText:
+	text "You helped us out,"
+	line "so the boss likes"
+	cont "you."
+	
+	para "That means you're"
+	line "ok by me!"
+	done
+	
+LusterSewerThroneRoomNidokingPunk1:
+	jumptextfaceplayer LusterSewerThroneRoomNidokingPunk1Text
+	
+LusterSewerThroneRoomNidokingPunk1Text:
+	text "We gotta get a"
+	line "TV down here or"
+	cont "somethin'!"
+	done
+	
+LusterSewerThroneRoomNidokingPunk2:
+	jumptextfaceplayer LusterSewerThroneRoomNidokingPunk2Text
+	
+LusterSewerThroneRoomNidokingPunk2Text:
+	text "All is well in"
+	line "the world now!"
+	done
+	
+LusterSewerThroneRoomNidokingPunk3:
+	jumptextfaceplayer LusterSewerThroneRoomNidokingPunk3Text
+	
+LusterSewerThroneRoomNidokingPunk3Text:
+	text "You know, I've"
+	line "been thinking…"
+	
+	para "Is a sewer really"
+	line "the best place to"
+	cont "hang out?"
+	done
 	
 LusterSewerThroneRoomGrunt1:
 	faceplayer

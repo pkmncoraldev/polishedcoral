@@ -65,7 +65,6 @@ INCLUDE "maps/GlintGroveDeep.asm"
 INCLUDE "maps/StarglowCavernFossilRoom.asm"
 INCLUDE "maps/MtOnwa1F.asm"
 INCLUDE "maps/MtOnwa2F.asm"
-INCLUDE "maps/LusterSewersThroneRoom.asm"
 INCLUDE "maps/FlickerPass1F.asm"
 INCLUDE "maps/FlickerPass2F.asm"
 INCLUDE "maps/IceCaveB1F.asm"
@@ -86,6 +85,7 @@ INCLUDE "maps/StarglowCavernDepths.asm"
 
 SECTION "Dungeon Scripts3", ROMX
 
+INCLUDE "maps/LusterSewersThroneRoom.asm"
 INCLUDE "maps/LusterSewersMukRoom.asm"
 INCLUDE "maps/Route6UnderwaterCave.asm"
 INCLUDE "maps/IceCaveIceRockRoom.asm"

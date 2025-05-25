@@ -2810,7 +2810,7 @@ _Area: ; 91d11
 	ldh a, [hJoypadDown]
 	and SELECT
 	jr nz, .select
-	call .LeftRightInput
+	call .UpDownInput
 	call .BlinkNestIcons
 	jr .next
 
@@ -2830,16 +2830,16 @@ _Area: ; 91d11
 
 ; 91d9b
 
-.LeftRightInput: ; 91d9b
+.UpDownInput: ; 91d9b
 	ld a, [hl]
-	and D_LEFT
-	jr nz, .left
+	and D_UP
+	jr nz, .up
 	ld a, [hl]
-	and D_RIGHT
-	jr nz, .right
+	and D_DOWN
+	jr nz, .down
 	ret
 
-.left
+.up
 	ld a, [wTownMapCursorLandmark]
 	and a ; cp NORTH_ONWA ; min
 	ret z
@@ -2848,22 +2848,12 @@ _Area: ; 91d11
 	ld [wTownMapCursorLandmark], a
 	jr .update
 
-.right
+.down
 	ld a, [wTownMapCursorLandmark]
-	cp ORANGE_REGION ; max
-	ret z
 	cp SOUTH_ONWA_REGION
-	jr z, .check_seen_orange_island
-	ld a, [wStatusFlags]
-	bit 6, a ; ENGINE_CREDITS_SKIP
 	ret z
-	jr .go_right
-.check_seen_orange_island
-	ld a, [wStatusFlags2]
-	bit 3, a ; ENGINE_SEEN_SHAMOUTI_ISLAND
+	eventflagcheck EVENT_MADE_IT_TO_SOUTH_ONWA
 	ret z
-.go_right
-
 	ld a, [wTownMapCursorLandmark]
 	inc a
 	ld [wTownMapCursorLandmark], a

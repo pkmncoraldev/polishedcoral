@@ -301,7 +301,7 @@ DEF MAP_NONE   EQU 0
 	map_const ROUTE_11,									  16, 16 ; 5
 	map_const ONWA_INTL_AIRPORT,						  28, 11 ; 6
 	map_const AIRPORT_RUNWAY,							  28,  8 ; 7
-	map_const AIRPORT,									   7, 10 ; 8
+	map_const AIRPORT,									   7, 11 ; 8
 	
 	newgroup													 ; 16
 	

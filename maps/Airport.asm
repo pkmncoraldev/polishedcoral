@@ -7,8 +7,8 @@ Airport_MapScriptHeader:
 	callback MAPCALLBACK_TILES, AirportCallback
 
 	db 2 ; warp events
-	warp_event  4, 19, ONWA_INTL_AIRPORT, 3
-	warp_event  5, 19, ONWA_INTL_AIRPORT, 4
+	warp_event  4, 21, ONWA_INTL_AIRPORT, 3
+	warp_event  5, 21, ONWA_INTL_AIRPORT, 4
 
 	db 4 ; coord events
 	coord_event  7,  9, 0, AirportStopYou
@@ -17,19 +17,19 @@ Airport_MapScriptHeader:
 	coord_event  3,  8, 1, AirportXRay
 
 	db 2 ; bg events
-	signpost 17,  4, SIGNPOST_READ, AirportNpcSign
+	signpost 19,  4, SIGNPOST_READ, AirportNpcSign
 	signpost 13, 13, SIGNPOST_IFNOTSET, AirportPokeballSurf
 
 	db 12 ; object events
-	person_event SPRITE_RECEPTIONIST, 14,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportReceptionist, -1
+	person_event SPRITE_RECEPTIONIST, 16,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportReceptionist, -1
 	person_event SPRITE_RECEPTIONIST,  1,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportGateGirl, -1
 	person_event SPRITE_RECEPTIONIST,  9,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportXRayGirl, -1
-	person_event SPRITE_GRANNY, 16,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, AirportNpc1, -1
+	person_event SPRITE_GRANNY, 18,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, AirportNpc1, -1
 	person_event SPRITE_PONYTAIL, 15, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, AirportNpc2, -1
-	person_event SPRITE_GENTLEMAN, 18,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, AirportNpc3, -1
-	person_event SPRITE_CUTE_GIRL, 19,  4, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, AirportNpc4, -1
+	person_event SPRITE_GENTLEMAN, 20,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, AirportNpc3, -1
+	person_event SPRITE_CUTE_GIRL, 21,  4, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, AirportNpc4, -1
 	person_event SPRITE_BEAUTY, 11, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, AirportNpc5, -1
-	person_event SPRITE_CHILD, 16,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, AirportNpc6, -1
+	person_event SPRITE_CHILD, 18,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, AirportNpc6, -1
 	person_event SPRITE_FAT_GUY, 11,  6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, AirportNpc7, -1
 	object_event 11,  8, SPRITE_BAGGAGE, SPRITEMOVEDATA_BAGGAGE, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_BALL_CUT_FRUIT, 13, 13, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, AirportPokeballSurf, EVENT_GOT_HM03_SURF

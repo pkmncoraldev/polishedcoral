@@ -251,17 +251,13 @@ SunbeamReserveSpruceText5:
 	done
 	
 SunbeamReserveSpruceText6:
-	text "Recently, I've"
-	line "been letting"
-	cont "TRAINERS catch"
-	cont "#MON here."
+	text "No matter what may"
+	line "happen outside of"
+	cont "this place,"
 	
-	para "It lets me see how"
-	line "they react to"
-	cont "being trained."
-	
-	para "Feel free to catch"
-	line "a few yourself."
+	para "the #MON here"
+	line "will be safe and"
+	cont "taken care of."
 	done
 	
 SunbeamReserveSpruceText7:

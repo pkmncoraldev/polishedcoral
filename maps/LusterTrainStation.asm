@@ -142,6 +142,11 @@ LusterTrainStationCallback:
 	disappear LUSTER_TRAIN_STATION_CROWD2
 	disappear LUSTER_TRAIN_STATION_CROWD3
 	disappear LUSTER_TRAIN_STATION_CROWD4
+	appear LUSTER_TRAIN_STATION_NPC_1
+	appear LUSTER_TRAIN_STATION_NPC_2
+	appear LUSTER_TRAIN_STATION_NPC_3
+	appear LUSTER_TRAIN_STATION_NPC_4
+	applyonemovement LUSTER_TRAIN_STATION_NETT, remove_fixed_facing
 	changeblock $16, $8, $59
 	changeblock $16, $a, $5a
 	changeblock $14, $a, $56

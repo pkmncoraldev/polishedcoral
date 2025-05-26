@@ -249,135 +249,135 @@
 	; morn
 	db  7, GEODUDE		;30%
 	db  7, ZUBAT		;30%
-	db  7, DWEBBLE		;20%
+	db  7, RATTATA		;20%
 	db  7, RATTATA		;10%
 	db  7, WOOPER		;5%
-	db  7, ONIX			;4%
-	db  7, ONIX			;1%
+	db  7, WOOPER		;4%
+	db  7, WOOPER		;1%
 	; day
 	db  7, GEODUDE		;30%
 	db  7, ZUBAT		;30%
-	db  7, DWEBBLE		;20%
+	db  7, RATTATA		;20%
 	db  7, RATTATA		;10%
 	db  7, WOOPER		;5%
-	db  7, ONIX			;4%
-	db  7, ONIX			;1%
+	db  7, WOOPER		;4%
+	db  7, WOOPER		;1%
 	; nite
 	db  7, GEODUDE		;30%
 	db  7, ZUBAT		;30%
-	db  7, DWEBBLE		;20%
+	db  7, RATTATA		;20%
 	db  7, RATTATA		;10%
 	db  7, WOOPER		;5%
-	db  7, ONIX			;4%
-	db  7, ONIX			;1%
+	db  7, WOOPER		;4%
+	db  7, WOOPER		;1%
 	
 	map_id STARGLOW_CAVERN_2F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db  7, GEODUDE		;30%
-	db  7, DWEBBLE		;30%
-	db  7, ZUBAT		;20%
-	db  7, WOOPER		;10%
-	db  7, RATTATA		;5%
-	db  7, ONIX			;4%
-	db  7, ONIX			;1%
+	db  7, ZUBAT		;30%
+	db  7, RATTATA		;20%
+	db  7, RATTATA		;10%
+	db  7, WOOPER		;5%
+	db  7, WOOPER		;4%
+	db  7, WOOPER		;1%
 	; day
 	db  7, GEODUDE		;30%
-	db  7, DWEBBLE		;30%
-	db  7, ZUBAT		;20%
-	db  7, WOOPER		;10%
-	db  7, RATTATA		;5%
-	db  7, ONIX			;4%
-	db  7, ONIX			;1%
+	db  7, ZUBAT		;30%
+	db  7, RATTATA		;20%
+	db  7, RATTATA		;10%
+	db  7, WOOPER		;5%
+	db  7, WOOPER		;4%
+	db  7, WOOPER		;1%
 	; nite
 	db  7, GEODUDE		;30%
-	db  7, DWEBBLE		;30%
-	db  7, ZUBAT		;20%
-	db  7, WOOPER		;10%
-	db  7, RATTATA		;5%
-	db  7, ONIX			;4%
-	db  7, ONIX			;1%
+	db  7, ZUBAT		;30%
+	db  7, RATTATA		;20%
+	db  7, RATTATA		;10%
+	db  7, WOOPER		;5%
+	db  7, WOOPER		;4%
+	db  7, WOOPER		;1%
 	
 	map_id ROUTE_3_EAST
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
 	db 9, NIDORAN_M		;30%
-	db 9, MAREEP		;30%
+	db 9, WOOPER		;30%
 	db 9, NIDORAN_F		;20%
-	db 9, PIDGEY		;10%
-	db 9, WOOPER		;5%
-	db 9, WOOPER		;4%
-	db 9, WOOPER		;1%
+	db 9, MAREEP		;10%
+	db 9, MAREEP		;5%
+	db 9, MAREEP		;4%
+	db 9, MAREEP		;1%
 	; day
 	db 9, NIDORAN_M		;30%
-	db 9, MAREEP		;30%
+	db 9, WOOPER		;30%
 	db 9, NIDORAN_F		;20%
-	db 9, PIDGEY		;10%
-	db 9, WOOPER		;5%
-	db 9, WOOPER		;4%
-	db 9, WOOPER		;1%
+	db 9, MAREEP		;10%
+	db 9, MAREEP		;5%
+	db 9, MAREEP		;4%
+	db 9, MAREEP		;1%
 	; nite
 	db 9, NIDORAN_M		;30%
-	db 9, MAREEP		;30%
+	db 9, WOOPER		;30%
 	db 9, NIDORAN_F		;20%
-	db 9, PIDGEY		;10%
-	db 9, WOOPER		;5%
-	db 9, WOOPER		;4%
-	db 9, WOOPER		;1%
+	db 9, MAREEP		;10%
+	db 9, MAREEP		;5%
+	db 9, MAREEP		;4%
+	db 9, MAREEP		;1%
 	
 	map_id HUNTERS_THICKET
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
 	; morn
 	db 10, LEDYBA		;30%
-	db 10, PIKIPEK		;30%
-	db 10, SHROOMISH	;20%
+	db 10, SHROOMISH	;30%
+	db 10, JOLTIK		;20%
 	db 10, PIKACHU		;10%
-	db 10, JOLTIK		;5%
-	db 10, JOLTIK		;4%
-	db 10, JOLTIK		;1%
+	db 10, PIKACHU		;5%
+	db 10, PIKACHU		;4%
+	db 10, PIKACHU		;1%
 	; day
 	db 10, LEDYBA		;30%
-	db 10, PIKIPEK		;30%
-	db 10, SHROOMISH	;20%
+	db 10, SHROOMISH	;30%
+	db 10, JOLTIK		;20%
 	db 10, PIKACHU		;10%
-	db 10, JOLTIK		;5%
-	db 10, JOLTIK		;4%
-	db 10, JOLTIK		;1%
+	db 10, PIKACHU		;5%
+	db 10, PIKACHU		;4%
+	db 10, PIKACHU		;1%
 	; nite
 	db 10, LEDYBA		;30%
-	db 10, PIKIPEK		;30%
-	db 10, SHROOMISH	;20%
+	db 10, SHROOMISH	;30%
+	db 10, JOLTIK		;20%
 	db 10, PIKACHU		;10%
-	db 10, JOLTIK		;5%
-	db 10, JOLTIK		;4%
-	db 10, JOLTIK		;1%
+	db 10, PIKACHU		;5%
+	db 10, PIKACHU		;4%
+	db 10, PIKACHU		;1%
 	
 	map_id HUNTERS_THICKET_MOSS_ROCK_ROOM
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, LEDIAN		;30%
-	db 30, TRUMBEAK		;30%
-	db 30, SHROOMISH	;20%
+	db 30, SHROOMISH	;30%
+	db 30, JOLTIK		;20%
 	db 30, PIKACHU		;10%
-	db 30, JOLTIK		;5%
-	db 30, JOLTIK		;4%
-	db 30, JOLTIK		;1%
+	db 30, PIKACHU		;5%
+	db 30, PIKACHU		;4%
+	db 30, PIKACHU		;1%
 	; day
 	db 30, LEDIAN		;30%
-	db 30, TRUMBEAK		;30%
-	db 30, SHROOMISH	;20%
+	db 30, SHROOMISH	;30%
+	db 30, JOLTIK		;20%
 	db 30, PIKACHU		;10%
-	db 30, JOLTIK		;5%
-	db 30, JOLTIK		;4%
-	db 30, JOLTIK		;1%
+	db 30, PIKACHU		;5%
+	db 30, PIKACHU		;4%
+	db 30, PIKACHU		;1%
 	; nite
 	db 30, LEDIAN		;30%
-	db 30, TRUMBEAK		;30%
-	db 30, SHROOMISH	;20%
+	db 30, SHROOMISH	;30%
+	db 30, JOLTIK		;20%
 	db 30, PIKACHU		;10%
-	db 30, JOLTIK		;5%
-	db 30, JOLTIK		;4%
-	db 30, JOLTIK		;1%
+	db 30, PIKACHU		;5%
+	db 30, PIKACHU		;4%
+	db 30, PIKACHU		;1%
 	
 	map_id ROUTE_5
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -706,27 +706,27 @@
 	map_id SUNBEAM_RESERVE
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
-	db 15, BUNEARY		;30%
-	db 15, PHANPY		;30%
+	db 15, NIDORINO		;30%
+	db 15, NIDORINA		;30%
 	db 15, TEDDIURSA	;20%
-	db 15, MAGBY		;10%
-	db 15, ELEKID		;5%
+	db 15, BUNEARY		;10%
+	db 15, PHANPY		;5%
 	db 15, MUNCHLAX		;4%
 	db 15, MUNCHLAX		;1%
 	; day
-	db 15, BUNEARY		;30%
-	db 15, PHANPY		;30%
+	db 15, NIDORINO		;30%
+	db 15, NIDORINA		;30%
 	db 15, TEDDIURSA	;20%
-	db 15, MAGBY		;10%
-	db 15, ELEKID		;5%
+	db 15, BUNEARY		;10%
+	db 15, PHANPY		;5%
 	db 15, MUNCHLAX		;4%
 	db 15, MUNCHLAX		;1%
 	; nite
-	db 15, BUNEARY		;30%
-	db 15, PHANPY		;30%
+	db 15, NIDORINO		;30%
+	db 15, NIDORINA		;30%
 	db 15, TEDDIURSA	;20%
-	db 15, MAGBY		;10%
-	db 15, ELEKID		;5%
+	db 15, BUNEARY		;10%
+	db 15, PHANPY		;5%
 	db 15, MUNCHLAX		;4%
 	db 15, MUNCHLAX		;1%
 	
@@ -924,25 +924,31 @@
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	
@@ -951,25 +957,31 @@
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	
@@ -978,25 +990,31 @@
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	
@@ -1005,25 +1023,31 @@
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	
@@ -1032,25 +1056,31 @@
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	
@@ -1059,25 +1089,31 @@
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	
@@ -1086,25 +1122,31 @@
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	
@@ -1113,23 +1155,27 @@
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
@@ -1140,25 +1186,31 @@
 	; morn
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
-	db 19, GASTLY		;20%
+	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
+	db 19, STANTLER		;4%
+	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	
@@ -1273,57 +1325,84 @@
 	map_id ROUTE_9 ; used on Route 9 when EVENT_ON_DODRIO_RANCH is not set
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 20, COTTONEE		;30%
-	db 20, PIDGEOTTO	;30%
-	db 20, FLAAFFY		;20%
-	db 20, FLAAFFY		;10%
-	db 20, GROWLITHE	;5%
-	db 20, DODUO		;4%
-	db 20, DODUO		;1%
+	db 21, COTTONEE		;30%
+	db 21, PIDGEOTTO	;30%
+	db 21, FLAAFFY		;20%
+	db 21, FLAAFFY		;10%
+	db 21, GROWLITHE	;5%
+	db 21, DODUO		;4%
+	db 21, DODUO		;1%
 	; day
-	db 20, COTTONEE		;30%
-	db 20, PIDGEOTTO	;30%
-	db 20, FLAAFFY		;20%
-	db 20, FLAAFFY		;10%
-	db 20, GROWLITHE	;5%
-	db 20, DODUO		;4%
-	db 20, DODUO		;1%
+	db 21, COTTONEE		;30%
+	db 21, PIDGEOTTO	;30%
+	db 21, FLAAFFY		;20%
+	db 21, FLAAFFY		;10%
+	db 21, GROWLITHE	;5%
+	db 21, DODUO		;4%
+	db 21, DODUO		;1%
 	; nite
-	db 20, COTTONEE		;30%
-	db 20, PIDGEOTTO	;30%
-	db 20, FLAAFFY		;20%
-	db 20, FLAAFFY		;10%
-	db 20, GROWLITHE	;5%
-	db 20, DODUO		;4%
-	db 20, DODUO		;1%
+	db 21, COTTONEE		;30%
+	db 21, PIDGEOTTO	;30%
+	db 21, FLAAFFY		;20%
+	db 21, FLAAFFY		;10%
+	db 21, GROWLITHE	;5%
+	db 21, DODUO		;4%
+	db 21, DODUO		;1%
 	
 	
 	map_id DODRIO_RANCH_RACETRACK ; used on Route 9 when EVENT_ON_DODRIO_RANCH is set
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 22, DODUO		;30%
-	db 22, DODUO		;30%
-	db 22, PIDGEOTTO	;20%
-	db 22, RATICATE		;10%
-	db 22, GROWLITHE	;5%
-	db 22, RATICATE		;4%
-	db 28, DODRIO		;1%
+	db 21, DODUO		;30%
+	db 21, DODUO		;30%
+	db 21, PIDGEOTTO	;20%
+	db 21, RATICATE		;10%
+	db 21, GROWLITHE	;5%
+	db 21, RATICATE		;4%
+	db 26, DODRIO		;1%
 	; day
-	db 22, DODUO		;30%
-	db 22, DODUO		;30%
-	db 22, PIDGEOTTO	;20%
-	db 22, RATICATE		;10%
-	db 22, GROWLITHE	;5%
-	db 22, RATICATE		;4%
-	db 28, DODRIO		;1%
+	db 21, DODUO		;30%
+	db 21, DODUO		;30%
+	db 21, PIDGEOTTO	;20%
+	db 21, RATICATE		;10%
+	db 21, GROWLITHE	;5%
+	db 21, RATICATE		;4%
+	db 26, DODRIO		;1%
 	; nite
-	db 22, DODUO		;30%
-	db 22, DODUO		;30%
-	db 22, PIDGEOTTO	;20%
-	db 22, RATICATE		;10%
-	db 22, GROWLITHE	;5%
-	db 22, RATICATE		;4%
-	db 28, DODRIO		;1%
+	db 21, DODUO		;30%
+	db 21, DODUO		;30%
+	db 21, PIDGEOTTO	;20%
+	db 21, RATICATE		;10%
+	db 21, GROWLITHE	;5%
+	db 21, RATICATE		;4%
+	db 26, DODRIO		;1%
+	
+	map_id ROUTE_11
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 21, MACHOP		;30%
+	db 21, DWEBBLE		;30%
+	db 21, DRIFLOON		;20%
+	db 21, MACHOKE		;10%
+	db 21, DRIFLOON		;5%
+	db 21, DWEBBLE		;4%
+	db 21, DWEBBLE		;1%
+	; day
+	db 21, MACHOP		;30%
+	db 21, DWEBBLE		;30%
+	db 21, DRIFLOON		;20%
+	db 21, MACHOKE		;10%
+	db 21, DRIFLOON		;5%
+	db 21, DWEBBLE		;4%
+	db 21, DWEBBLE		;1%
+	; nite
+	db 21, MACHOP		;30%
+	db 21, DWEBBLE		;30%
+	db 21, DRIFLOON		;20%
+	db 21, MACHOKE		;10%
+	db 21, DRIFLOON		;5%
+	db 21, DWEBBLE		;4%
+	db 21, DWEBBLE		;1%
 	
 	map_id FLICKER_PASS_OUTSIDE
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
@@ -1648,33 +1727,6 @@
 	db 30, RATTATA		;5%
 	db 30, RATTATA		;4%
 	db 30, RATTATA		;1%
-	
-	map_id ROUTE_11
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	db 20, MACHOP		;30%
-	db 20, DWEBBLE		;30%
-	db 20, DRIFLOON		;20%
-	db 20, MACHOKE		;10%
-	db 20, DRIFLOON		;5%
-	db 20, DWEBBLE		;4%
-	db 20, DWEBBLE		;1%
-	; day
-	db 20, MACHOP		;30%
-	db 20, DWEBBLE		;30%
-	db 20, DRIFLOON		;20%
-	db 20, MACHOKE		;10%
-	db 20, DRIFLOON		;5%
-	db 20, DWEBBLE		;4%
-	db 20, DWEBBLE		;1%
-	; nite
-	db 20, MACHOP		;30%
-	db 20, DWEBBLE		;30%
-	db 20, DRIFLOON		;20%
-	db 20, MACHOKE		;10%
-	db 20, DRIFLOON		;5%
-	db 20, DWEBBLE		;4%
-	db 20, DWEBBLE		;1%
 	
 	map_id ROUTE_12
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

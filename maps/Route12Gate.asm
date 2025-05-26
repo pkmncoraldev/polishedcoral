@@ -10,15 +10,18 @@ Route12Gate_MapScriptHeader:
 	warp_event  3,  7, ROUTE_12, 1
 	warp_event  4,  7, ROUTE_12, 2
 
-	db 0 ; coord events
+	db 1 ; coord events
+	coord_event  3,  7, 0, Route12GateOfficerStopsYou
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	person_event SPRITE_OFFICER, 4, 0, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route12GateOfficer, -1
+	db 2 ; object events
+	person_event SPRITE_OFFICER,  3,  0, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route12GateOfficer, -1
+	person_event SPRITE_OFFICER,  7,  4, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route12GateNettOfficer, EVENT_NETT_OFFICE_CUTSCENE_DONE
 
 	const_def 1 ; object constants
 	const ROUTE_12_GATE_OFFICER
+	const ROUTE_12_GATE_OFFICER2
 
 
 Route12GateCallback:
@@ -44,3 +47,46 @@ Route12GateOfficerText:
 	para "Plenty of TRAINERS"
 	line "will want a fight!"
 	done
+	
+Route12GateNettOfficer:
+	faceplayer
+	opentext
+	writetext Route12GateNettOfficerText
+	waitbutton
+	closetext
+	spriteface ROUTE_12_GATE_OFFICER2, UP
+	end
+	
+Route12GateNettOfficerText:
+	text "You're <PLAYER>,"
+	line "right?"
+	
+	para "MR. NETT wanted"
+	line "to see you."
+	
+	para "You shouldn't keep"
+	line "someone important"
+	cont "like him waiting."
+	
+	para "The NETT BUILDING"
+	line "is in the BUSINESS"
+	cont "DISTRICT on the"
+	cont "EAST side of town."
+	done
+	
+Route12GateOfficerStopsYou:
+	special Special_StopRunning
+	playsound SFX_PAY_DAY
+	spriteface ROUTE_12_GATE_OFFICER2, LEFT
+	showemote EMOTE_SHOCK, ROUTE_12_GATE_OFFICER2, 15
+	spriteface PLAYER, RIGHT
+	opentext
+	writetext Route12GateNettOfficerText
+	waitbutton
+	closetext
+	follow PLAYER, ROUTE_12_GATE_OFFICER2
+	applyonemovement PLAYER, step_up
+	stopfollow
+	applyonemovement ROUTE_12_GATE_OFFICER2, step_right
+	spriteface ROUTE_12_GATE_OFFICER2, UP
+	end

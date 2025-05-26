@@ -151,4 +151,5 @@ MapTriggers::
 	scene_var BRILLO_POLICE_BACK_ROOM,				  wAlways0Trigger
 	scene_var FIGHTING_DOJO,						  wAlways0Trigger
 	scene_var ROUTE_3_EAST,						  	  wRoute3EastTrigger
+	scene_var ROUTE_12_GATE,						  wNettBuildingOfficeTrigger
 	db -1

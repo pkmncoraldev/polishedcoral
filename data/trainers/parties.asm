@@ -1939,9 +1939,9 @@ BirdKeeperGroup:
 	db "RICKY@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 26, PIDGEOTTO
-	db 28, DODUO
-	db 27, TRUMBEAK
+	db 30, PIDGEOTTO
+	db 32, DODUO
+	db 31, TRUMBEAK
 	db -1 ; end
 
 ; ================
@@ -1950,9 +1950,9 @@ BirdKeeperGroup:
 	db "RICKY@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 26, PIDGEOTTO
-	db 28, DODUO
-	db 27, TRUMBEAK
+	db 30, PIDGEOTTO
+	db 32, DODUO
+	db 31, TRUMBEAK
 	db -1 ; end
 
 ; ================
@@ -1997,8 +1997,8 @@ BirdKeeperGroup:
 	db "VERN@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 28, NATU
-	db 28, SWABLU
+	db 32, NATU
+	db 32, SWABLU
 	db -1 ; end
 
 ; ================
@@ -2007,8 +2007,8 @@ BirdKeeperGroup:
 	db "VERN@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 28, NATU
-	db 28, SWABLU
+	db 32, NATU
+	db 32, SWABLU
 	db -1 ; end
 
 ; ================
@@ -2053,9 +2053,9 @@ BirdKeeperGroup:
 	db "ROY@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 27, WINGULL
-	db 27, WINGULL
-	db 27, TRUMBEAK
+	db 31, WINGULL
+	db 31, WINGULL
+	db 31, TRUMBEAK
 	db -1 ; end
 
 ; ================
@@ -2064,9 +2064,9 @@ BirdKeeperGroup:
 	db "ROY@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 27, WINGULL
-	db 27, WINGULL
-	db 27, TRUMBEAK
+	db 31, WINGULL
+	db 31, WINGULL
+	db 31, TRUMBEAK
 	db -1 ; end
 
 ; ================
@@ -2111,7 +2111,7 @@ BirdKeeperGroup:
 	db "CHANCE@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 29, PELIPPER
+	db 33, PELIPPER
 	db -1 ; end
 
 ; ================
@@ -2120,7 +2120,7 @@ BirdKeeperGroup:
 	db "CHANCE@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 29, PELIPPER
+	db 33, PELIPPER
 	db -1 ; end
 
 ; ================
@@ -2165,9 +2165,9 @@ BirdKeeperGroup:
 	db "CALEB@"	;3 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 27, NATU
-	db 27, NATU
-	db 27, PIDGEOTTO
+	db 31, NATU
+	db 31, NATU
+	db 31, PIDGEOTTO
 	db -1 ; end
 
 ; ================
@@ -2176,9 +2176,9 @@ BirdKeeperGroup:
 	db "CALEB@"	;4 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
-	db 27, NATU
-	db 27, NATU
-	db 27, PIDGEOTTO
+	db 31, NATU
+	db 31, NATU
+	db 31, PIDGEOTTO
 	db -1 ; end
 
 ; ================

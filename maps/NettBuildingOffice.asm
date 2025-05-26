@@ -383,13 +383,16 @@ NettBuildingOfficeNettText6:
 	done
 	
 NettBuildingOfficeNettText7:
-	text "You've done a great"
+	text "When you came to"
+	line "the rescue on that"
+	cont "train,"
+	
+	para "you did a great"
 	line "deed for this city"
 	cont "and her people."
 	
-	para "And for that, you"
-	line "have my sincere"
-	cont "thanks."
+	para "For that, you have"
+	line "my sincere thanks."
 	
 	para "I want you to have"
 	line "this as a token of"

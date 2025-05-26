@@ -59,55 +59,55 @@
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
 	db 4, CUBONE		;30%
-	db 4, GEODUDE		;30%
+	db 4, ZUBAT			;30%
 	db 4, MACHOP		;20%
 	db 4, ZUBAT			;10%
 	db 4, MACHOP		;5%
 	db 4, ZUBAT			;4%
-	db 4, MACHOP		;1%
+	db 4, ZUBAT			;1%
 	; day
 	db 4, CUBONE		;30%
-	db 4, GEODUDE		;30%
+	db 4, ZUBAT			;30%
 	db 4, MACHOP		;20%
 	db 4, ZUBAT			;10%
 	db 4, MACHOP		;5%
 	db 4, ZUBAT			;4%
-	db 4, MACHOP		;1%
+	db 4, ZUBAT			;1%
 	; nite
 	db 4, CUBONE		;30%
-	db 4, GEODUDE		;30%
+	db 4, ZUBAT			;30%
 	db 4, MACHOP		;20%
 	db 4, ZUBAT			;10%
 	db 4, MACHOP		;5%
 	db 4, ZUBAT			;4%
-	db 4, MACHOP		;1%
+	db 4, ZUBAT			;1%
 	
 	map_id DAYBREAK_GROTTO_2
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
 	db 4, CUBONE		;30%
-	db 4, GEODUDE		;30%
+	db 4, ZUBAT			;30%
 	db 4, MACHOP		;20%
 	db 4, ZUBAT			;10%
 	db 4, MACHOP		;5%
 	db 4, ZUBAT			;4%
-	db 4, MACHOP		;1%
+	db 4, ZUBAT			;1%
 	; day
 	db 4, CUBONE		;30%
-	db 4, GEODUDE		;30%
+	db 4, ZUBAT			;30%
 	db 4, MACHOP		;20%
 	db 4, ZUBAT			;10%
 	db 4, MACHOP		;5%
 	db 4, ZUBAT			;4%
-	db 4, MACHOP		;1%
+	db 4, ZUBAT			;1%
 	; nite
 	db 4, CUBONE		;30%
-	db 4, GEODUDE		;30%
+	db 4, ZUBAT			;30%
 	db 4, MACHOP		;20%
 	db 4, ZUBAT			;10%
 	db 4, MACHOP		;5%
 	db 4, ZUBAT			;4%
-	db 4, MACHOP		;1%
+	db 4, ZUBAT			;1%
 	
 	map_id GLINT_GROVE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -521,7 +521,7 @@
 	db 14, ZUBAT		;30%
 	db 14, GEODUDE		;20%
 	db 14, ONIX			;10%
-	db 14, LARVITAR		;5%
+	db 14, ZUBAT		;5%
 	db 14, ONIX			;4%
 	db 14, ONIX			;1%
 	; day
@@ -529,7 +529,7 @@
 	db 14, ZUBAT		;30%
 	db 14, GEODUDE		;20%
 	db 14, ONIX			;10%
-	db 14, LARVITAR		;5%
+	db 14, ZUBAT		;5%
 	db 14, ONIX			;4%
 	db 14, ONIX			;1%
 	; nite
@@ -537,7 +537,7 @@
 	db 14, ZUBAT		;30%
 	db 14, GEODUDE		;20%
 	db 14, ONIX			;10%
-	db 14, LARVITAR		;5%
+	db 14, ZUBAT		;5%
 	db 14, ONIX			;4%
 	db 14, ONIX			;1%
 	
@@ -545,26 +545,26 @@
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 14, ARON			;30%
-	db 14, GEODUDE		;30%
-	db 14, ZUBAT		;20%
+	db 14, ZUBAT		;30%
+	db 14, GEODUDE		;20%
 	db 14, ONIX			;10%
-	db 14, LARVITAR		;5%
+	db 14, ZUBAT		;5%
 	db 14, ONIX			;4%
 	db 14, ONIX			;1%
 	; day
 	db 14, ARON			;30%
-	db 14, GEODUDE		;30%
-	db 14, ZUBAT		;20%
+	db 14, ZUBAT		;30%
+	db 14, GEODUDE		;20%
 	db 14, ONIX			;10%
-	db 14, LARVITAR		;5%
+	db 14, ZUBAT		;5%
 	db 14, ONIX			;4%
 	db 14, ONIX			;1%
 	; nite
 	db 14, ARON			;30%
-	db 14, GEODUDE		;30%
-	db 14, ZUBAT		;20%
+	db 14, ZUBAT		;30%
+	db 14, GEODUDE		;20%
 	db 14, ONIX			;10%
-	db 14, LARVITAR		;5%
+	db 14, ZUBAT		;5%
 	db 14, ONIX			;4%
 	db 14, ONIX			;1%
 	
@@ -575,7 +575,7 @@
 	db 16, NUMEL		;30%
 	db 16, ONIX			;20%
 	db 16, ARON			;10%
-	db 16, LARVITAR		;5%
+	db 16, ARON			;5%
 	db 15, MAGBY		;4%
 	db 16, MAGBY		;1%
 	; day
@@ -583,7 +583,7 @@
 	db 16, NUMEL		;30%
 	db 16, ONIX			;20%
 	db 16, ARON			;10%
-	db 16, LARVITAR		;5%
+	db 16, ARON			;5%
 	db 15, MAGBY		;4%
 	db 16, MAGBY		;1%
 	; nite
@@ -591,22 +591,22 @@
 	db 16, NUMEL		;30%
 	db 16, ONIX			;20%
 	db 16, ARON			;10%
-	db 16, LARVITAR		;5%
+	db 16, ARON			;5%
 	db 15, MAGBY		;4%
 	db 16, MAGBY		;1%
 	
 	map_id MT_ONWA_B2F
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 16, LARVITAR		;30%
+	db 16, ARON			;30%
 	db 16, ONIX			;30%
 	db 16, MAGBY		;20%
-	db 16, ONIX		;10%
+	db 16, ONIX			;10%
 	db 16, NUMEL		;5%
 	db 16, ARON			;4%
 	db 16, ARON			;1%
 	; day
-	db 16, LARVITAR		;30%
+	db 16, ARON			;30%
 	db 16, ONIX			;30%
 	db 16, MAGBY		;20%
 	db 16, ONIX			;10%
@@ -614,7 +614,7 @@
 	db 16, ARON			;4%
 	db 16, ARON			;1%
 	; nite
-	db 16, LARVITAR		;30%
+	db 16, ARON			;30%
 	db 16, ONIX			;30%
 	db 16, MAGBY		;20%
 	db 16, ONIX			;10%
@@ -629,7 +629,7 @@
 	db 16, NUMEL		;30%
 	db 16, SLUGMA		;20%
 	db 16, ARON			;10%
-	db 16, LARVITAR		;5%
+	db 16, ARON			;5%
 	db 16, ARON			;4%
 	db 16, ARON			;1%
 	; day
@@ -637,7 +637,7 @@
 	db 16, NUMEL		;30%
 	db 16, SLUGMA		;20%
 	db 16, ARON			;10%
-	db 16, LARVITAR		;5%
+	db 16, ARON			;5%
 	db 16, ARON			;4%
 	db 16, ARON			;1%
 	; nite
@@ -645,7 +645,7 @@
 	db 16, NUMEL		;30%
 	db 16, SLUGMA		;20%
 	db 16, ARON			;10%
-	db 16, LARVITAR		;5%
+	db 16, ARON			;5%
 	db 16, ARON			;4%
 	db 16, ARON			;1%
 	
@@ -656,7 +656,7 @@
 	db 14, NATU			;30%
 	db 14, SWABLU		;20%
 	db 14, MAGBY		;10%
-	db 14, LARVITAR		;5%
+	db 14, MAGBY		;5%
 	db 14, SWABLU		;4%
 	db 20, XATU			;1%
 	; day
@@ -664,7 +664,7 @@
 	db 14, NATU			;30%
 	db 14, SWABLU		;20%
 	db 14, MAGBY		;10%
-	db 14, LARVITAR		;5%
+	db 14, MAGBY		;5%
 	db 14, SWABLU		;4%
 	db 20, XATU			;1%
 	; nite
@@ -672,7 +672,7 @@
 	db 14, NATU			;30%
 	db 14, SWABLU		;20%
 	db 14, MAGBY		;10%
-	db 14, LARVITAR		;5%
+	db 14, MAGBY		;5%
 	db 14, SWABLU		;4%
 	db 20, XATU			;1%
 	
@@ -683,7 +683,7 @@
 	db 15, NATU			;30%
 	db 15, SWABLU		;20%
 	db 15, MAGBY		;10%
-	db 15, LARVITAR		;5%
+	db 15, MAGBY		;5%
 	db 15, SWABLU		;4%
 	db 20, XATU			;1%
 	; day
@@ -691,7 +691,7 @@
 	db 15, NATU			;30%
 	db 15, SWABLU		;20%
 	db 15, MAGBY		;10%
-	db 15, LARVITAR		;5%
+	db 15, MAGBY		;5%
 	db 15, SWABLU		;4%
 	db 20, XATU			;1%
 	; nite
@@ -699,7 +699,7 @@
 	db 15, NATU			;30%
 	db 15, SWABLU		;20%
 	db 15, MAGBY		;10%
-	db 15, LARVITAR		;5%
+	db 15, MAGBY		;5%
 	db 15, SWABLU		;4%
 	db 20, XATU			;1%
 	

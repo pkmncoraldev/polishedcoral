@@ -143,7 +143,7 @@
 	db 8, JIGGLYPUFF	;30%
 	db 8, SNUBBULL		;20%
 	db 8, CHERUBI		;10%
-	db 8, TOGEPI		;5%
+	db 8, PIKACHU		;5%
 	db 8, PIKACHU		;4%
 	db 8, PIKACHU		;1%
 	; day
@@ -151,7 +151,7 @@
 	db 8, JIGGLYPUFF	;30%
 	db 8, SNUBBULL		;20%
 	db 8, CHERUBI		;10%
-	db 8, TOGEPI		;5%
+	db 8, PIKACHU		;5%
 	db 8, PIKACHU		;4%
 	db 8, PIKACHU		;1%
 	; nite
@@ -159,7 +159,7 @@
 	db 8, JIGGLYPUFF	;30%
 	db 8, SNUBBULL		;20%
 	db 8, CHERUBI		;10%
-	db 8, TOGEPI		;5%
+	db 8, PIKACHU		;5%
 	db 8, PIKACHU		;4%
 	db 8, PIKACHU		;1%
 	
@@ -431,7 +431,7 @@
 	db 13, LEDYBA		;10%
 	db 13, PIDGEY		;5%
 	db 13, SCYTHER		;4%
-	db 13, GASTLY		;1%
+	db 13, SCYTHER		;1%
 	
 	map_id ROUTE_6
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite

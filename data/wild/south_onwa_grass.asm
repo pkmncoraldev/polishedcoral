@@ -383,27 +383,27 @@
 	; morn
 	db 33, SUNKERN		;30%
 	db 33, LEDIAN		;30%
-	db 33, CHERUBI		;20%
-	db 33, CHERRIM		;10%
-	db 33, CHERUBI		;5%
-	db 33, VENONAT		;4%
-	db 33, VENONAT		;1%
+	db 33, VENONAT		;20%
+	db 33, CHERUBI		;10%
+	db 33, VENONAT		;5%
+	db 33, CHERRIM		;4%
+	db 33, CHERRIM		;1%
 	; day
 	db 33, SUNKERN		;30%
 	db 33, LEDIAN		;30%
-	db 33, CHERUBI		;20%
-	db 33, CHERRIM		;10%
-	db 33, CHERUBI		;5%
-	db 33, VENONAT		;4%
-	db 33, VENONAT		;1%
+	db 33, VENONAT		;20%
+	db 33, CHERUBI		;10%
+	db 33, VENONAT		;5%
+	db 33, CHERRIM		;4%
+	db 33, CHERRIM		;1%
 	; nite
 	db 33, SUNKERN		;30%
 	db 33, LEDIAN		;30%
-	db 33, CHERUBI		;20%
-	db 33, CHERRIM		;10%
-	db 33, CHERUBI		;5%
-	db 33, VENONAT		;4%
-	db 33, VENONAT		;1%
+	db 33, VENONAT		;20%
+	db 33, CHERUBI		;10%
+	db 33, VENONAT		;5%
+	db 33, CHERRIM		;4%
+	db 33, CHERRIM		;1%
 	
 	map_id RADIANT_FIELD
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
@@ -735,53 +735,53 @@
 	db 37, BUNEARY		;30%
 	db 37, DITTO		;30%
 	db 37, DITTO		;20%
-	db 37, PERSIAN		;10%
-	db 37, PERSIAN		;5%
-	db 37, PERSIAN		;4%
-	db 37, PERSIAN		;1%
+	db 37, TEDDIURSA	;10%
+	db 37, TEDDIURSA	;5%
+	db 37, TEDDIURSA	;4%
+	db 37, TEDDIURSA	;1%
 	; day
 	db 37, BUNEARY		;30%
 	db 37, DITTO		;30%
 	db 37, DITTO		;20%
-	db 37, PERSIAN		;10%
-	db 37, PERSIAN		;5%
-	db 37, PERSIAN		;4%
-	db 37, PERSIAN		;1%
+	db 37, TEDDIURSA	;10%
+	db 37, TEDDIURSA	;5%
+	db 37, TEDDIURSA	;4%
+	db 37, TEDDIURSA	;1%
 	; nite
 	db 37, BUNEARY		;30%
 	db 37, DITTO		;30%
 	db 37, DITTO		;20%
-	db 37, PERSIAN		;10%
-	db 37, PERSIAN		;5%
-	db 37, PERSIAN		;4%
-	db 37, PERSIAN		;1%
+	db 37, TEDDIURSA	;10%
+	db 37, TEDDIURSA	;5%
+	db 37, TEDDIURSA	;4%
+	db 37, TEDDIURSA	;1%
 	
 	map_id ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 38, TOGETIC		;30%
+	db 38, PIDGEOTTO	;30%
 	db 38, PONYTA		;30%
-	db 38, PIDGEOTTO	;20%
+	db 38, PONYTA		;20%
 	db 38, RAPIDASH		;10%
-	db 38, DITTO		;5%
-	db 38, DITTO		;4%
-	db 38, DITTO		;1%
+	db 38, TOGETIC		;5%
+	db 38, TOGETIC		;4%
+	db 38, TOGETIC		;1%
 	; day
-	db 38, TOGETIC		;30%
+	db 38, PIDGEOTTO	;30%
 	db 38, PONYTA		;30%
-	db 38, PIDGEOTTO	;20%
+	db 38, PONYTA		;20%
 	db 38, RAPIDASH		;10%
-	db 38, DITTO		;5%
-	db 38, DITTO		;4%
-	db 38, DITTO		;1%
+	db 38, TOGETIC		;5%
+	db 38, TOGETIC		;4%
+	db 38, TOGETIC		;1%
 	; nite
-	db 38, TOGETIC		;30%
+	db 38, PIDGEOTTO	;30%
 	db 38, PONYTA		;30%
-	db 38, PIDGEOTTO	;20%
+	db 38, PONYTA		;20%
 	db 38, RAPIDASH		;10%
-	db 38, DITTO		;5%
-	db 38, DITTO		;4%
-	db 38, DITTO		;1%
+	db 38, TOGETIC		;5%
+	db 38, TOGETIC		;4%
+	db 38, TOGETIC		;1%
 	
 	map_id ROUTE_29
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
@@ -919,111 +919,111 @@
 	db 32, LANTURN		;1%
 	
 	map_id KOMORE_COMMUNITY_CENTER
-	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 37, NOIBAT		;30%
 	db 37, RATICATE		;30%
 	db 37, LITWICK		;20%
-	db 37, LAMPENT		;10%
+	db 37, RATICATE		;10%
 	db 37, LAMPENT		;5%
-	db 37, LITWICK		;4%
+	db 37, NOIBAT		;4%
 	db 37, MIMIKYU		;1%
 	; day
 	db 37, NOIBAT		;30%
 	db 37, RATICATE		;30%
 	db 37, LITWICK		;20%
-	db 37, LAMPENT		;10%
+	db 37, RATICATE		;10%
 	db 37, LAMPENT		;5%
-	db 37, LITWICK		;4%
+	db 37, NOIBAT		;4%
 	db 37, MIMIKYU		;1%
 	; nite
 	db 37, NOIBAT		;30%
 	db 37, RATICATE		;30%
 	db 37, LITWICK		;20%
-	db 37, LAMPENT		;10%
+	db 37, RATICATE		;10%
 	db 37, LAMPENT		;5%
-	db 37, LITWICK		;4%
+	db 37, NOIBAT		;4%
 	db 37, MIMIKYU		;1%
 	
 	map_id KOMORE_COMMUNITY_CENTER_LEFT
-	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 37, NOIBAT		;30%
 	db 37, RATICATE		;30%
 	db 37, LITWICK		;20%
-	db 37, LAMPENT		;10%
+	db 37, RATICATE		;10%
 	db 37, LAMPENT		;5%
-	db 37, LITWICK		;4%
+	db 37, NOIBAT		;4%
 	db 37, MIMIKYU		;1%
 	; day
 	db 37, NOIBAT		;30%
 	db 37, RATICATE		;30%
 	db 37, LITWICK		;20%
-	db 37, LAMPENT		;10%
+	db 37, RATICATE		;10%
 	db 37, LAMPENT		;5%
-	db 37, LITWICK		;4%
+	db 37, NOIBAT		;4%
 	db 37, MIMIKYU		;1%
 	; nite
 	db 37, NOIBAT		;30%
 	db 37, RATICATE		;30%
 	db 37, LITWICK		;20%
-	db 37, LAMPENT		;10%
+	db 37, RATICATE		;10%
 	db 37, LAMPENT		;5%
-	db 37, LITWICK		;4%
+	db 37, NOIBAT		;4%
 	db 37, MIMIKYU		;1%
 	
 	map_id KOMORE_COMMUNITY_CENTER_MIDDLE
-	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 37, NOIBAT		;30%
 	db 37, RATICATE		;30%
 	db 37, LITWICK		;20%
-	db 37, LAMPENT		;10%
+	db 37, RATICATE		;10%
 	db 37, LAMPENT		;5%
-	db 37, LITWICK		;4%
+	db 37, NOIBAT		;4%
 	db 37, MIMIKYU		;1%
 	; day
 	db 37, NOIBAT		;30%
 	db 37, RATICATE		;30%
 	db 37, LITWICK		;20%
-	db 37, LAMPENT		;10%
+	db 37, RATICATE		;10%
 	db 37, LAMPENT		;5%
-	db 37, LITWICK		;4%
+	db 37, NOIBAT		;4%
 	db 37, MIMIKYU		;1%
 	; nite
 	db 37, NOIBAT		;30%
 	db 37, RATICATE		;30%
 	db 37, LITWICK		;20%
-	db 37, LAMPENT		;10%
+	db 37, RATICATE		;10%
 	db 37, LAMPENT		;5%
-	db 37, LITWICK		;4%
+	db 37, NOIBAT		;4%
 	db 37, MIMIKYU		;1%
 	
 	map_id KOMORE_COMMUNITY_CENTER_RIGHT
-	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 37, NOIBAT		;30%
 	db 37, RATICATE		;30%
 	db 37, LITWICK		;20%
-	db 37, LAMPENT		;10%
+	db 37, RATICATE		;10%
 	db 37, LAMPENT		;5%
-	db 37, LITWICK		;4%
+	db 37, NOIBAT		;4%
 	db 37, MIMIKYU		;1%
 	; day
 	db 37, NOIBAT		;30%
 	db 37, RATICATE		;30%
 	db 37, LITWICK		;20%
-	db 37, LAMPENT		;10%
+	db 37, RATICATE		;10%
 	db 37, LAMPENT		;5%
-	db 37, LITWICK		;4%
+	db 37, NOIBAT		;4%
 	db 37, MIMIKYU		;1%
 	; nite
 	db 37, NOIBAT		;30%
 	db 37, RATICATE		;30%
 	db 37, LITWICK		;20%
-	db 37, LAMPENT		;10%
+	db 37, RATICATE		;10%
 	db 37, LAMPENT		;5%
-	db 37, LITWICK		;4%
+	db 37, NOIBAT		;4%
 	db 37, MIMIKYU		;1%
 	
 	map_id INN_VENT

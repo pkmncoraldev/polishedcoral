@@ -67,12 +67,12 @@ FishGroups: ; 92488
 	db  40 percent, STARYU,     16	;40%
 	db  70 percent, HORSEA,  	16	;30%
 	db  90 percent, HORSEA,   	16	;20%
-	db 100 percent, CORSOLA, 	16	;10%
+	db 100 percent, STARYU, 	16	;10%
 .Sunbeam_Super:
 	db  40 percent, STARYU,     34	;40%
 	db  70 percent, MAREANIE,  	34	;30%
 	db  90 percent, MAREANIE,   34	;20%
-	db 100 percent, CORSOLA, 	34	;10%
+	db 100 percent, STARYU, 	34	;10%
 	
 .Cave_Old:
 	db  70 percent, MAGIKARP,   10	;70%

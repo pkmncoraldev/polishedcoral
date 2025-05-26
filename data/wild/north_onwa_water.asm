@@ -2,23 +2,23 @@
 
 	map_id SUNSET_BAY
 	db 6 percent ; encounter rate
-	db 31, STARYU		;30%
+	db 31, WINGULL		;30%
 	db 31, WINGULL		;30%
 	db 31, HORSEA		;20%
-	db 31, MAREANIE		;10%
+	db 31, HORSEA		;10%
 	db 31, CORSOLA		;5%
-	db 31, CHINCHOU		;4%
-	db 31, CHINCHOU		;1%
+	db 31, MAREANIE		;4%
+	db 31, MAREANIE		;1%
 
 	map_id SUNSET_CAPE
 	db 6 percent ; encounter rate
-	db 31, STARYU		;30%
+	db 31, WINGULL		;30%
 	db 31, WINGULL		;30%
 	db 31, HORSEA		;20%
-	db 31, MAREANIE		;10%
+	db 31, HORSEA		;10%
 	db 31, CORSOLA		;5%
-	db 31, CHINCHOU		;4%
-	db 31, CHINCHOU		;1%
+	db 31, MAREANIE		;4%
+	db 31, MAREANIE		;1%
 	
 	map_id DAYBREAK_VILLAGE
 	db 15 percent ; encounter rate
@@ -152,23 +152,23 @@
 	
 	map_id ROUTE_6
 	db 6 percent ; encounter rate
-	db 31, STARYU		;30%
+	db 31, WINGULL		;30%
 	db 31, WINGULL		;30%
 	db 31, HORSEA		;20%
-	db 31, MAREANIE		;10%
+	db 31, HORSEA		;10%
 	db 31, CORSOLA		;5%
-	db 31, CHINCHOU		;4%
-	db 31, CHINCHOU		;1%
+	db 31, MAREANIE		;4%
+	db 31, MAREANIE		;1%
 	
 	map_id ROUTE_6_SOUTH
 	db 6 percent ; encounter rate
-	db 31, STARYU		;30%
+	db 31, WINGULL		;30%
 	db 31, WINGULL		;30%
 	db 31, HORSEA		;20%
-	db 31, MAREANIE		;10%
+	db 31, HORSEA		;10%
 	db 31, CORSOLA		;5%
-	db 31, CHINCHOU		;4%
-	db 31, CHINCHOU		;1%
+	db 31, MAREANIE		;4%
+	db 31, MAREANIE		;1%
 	
 	map_id LAKE_ONWA
 	db 8 percent ; encounter rate
@@ -213,32 +213,32 @@
 	map_id SUNBEAM_ISLAND
 	db 6 percent ; encounter rate
 	db 31, WINGULL		;30%
-	db 31, STARYU		;30%
+	db 31, WINGULL		;30%
 	db 31, MAREANIE		;20%
-	db 31, CORSOLA		;10%
-	db 31, WINGULL		;5%
+	db 31, MAREANIE		;10%
+	db 31, MAREANIE		;5%
 	db 31, CORSOLA		;4%
 	db 31, CORSOLA		;1%
 	
 	map_id SUNBEAM_BEACH
 	db 6 percent ; encounter rate
 	db 31, WINGULL		;30%
-	db 31, STARYU		;30%
+	db 31, WINGULL		;30%
 	db 31, MAREANIE		;20%
-	db 31, CORSOLA		;10%
-	db 31, WINGULL		;5%
+	db 31, MAREANIE		;10%
+	db 31, MAREANIE		;5%
 	db 31, CORSOLA		;4%
 	db 31, CORSOLA		;1%
 	
 	map_id SUNBEAM_RESERVE
 	db 6 percent ; encounter rate
 	db 31, SLOWPOKE		;30%
-	db 31, CORSOLA		;30%
+	db 31, SLOWPOKE		;30%
 	db 31, SLOWPOKE		;20%
-	db 31, CORSOLA		;10%
-	db 31, CORSOLA		;5%
-	db 31, CORSOLA		;4%
-	db 31, CORSOLA		;1%
+	db 31, SLOWPOKE		;10%
+	db 31, SLOWPOKE		;5%
+	db 31, SLOWPOKE		;4%
+	db 31, SLOWPOKE		;1%
 	
 	map_id SUNBEAM_JUNGLE
 	db 6 percent ; encounter rate
@@ -312,40 +312,40 @@
 
 	map_id ROUTE_13
 	db 6 percent ; encounter rate
-	db 30, STARYU		;30%
-	db 30, WINGULL		;30%
-	db 30, HORSEA		;20%
-	db 30, MAREANIE		;10%
-	db 30, CORSOLA		;5%
-	db 30, CHINCHOU		;4%
-	db 30, CHINCHOU		;1%
+	db 31, WINGULL		;30%
+	db 31, WINGULL		;30%
+	db 31, HORSEA		;20%
+	db 31, HORSEA		;10%
+	db 31, CORSOLA		;5%
+	db 31, MAREANIE		;4%
+	db 31, MAREANIE		;1%
 
 	map_id ROUTE_14
 	db 6 percent ; encounter rate
-	db 30, STARYU		;30%
-	db 30, WINGULL		;30%
-	db 30, HORSEA		;20%
-	db 30, MAREANIE		;10%
-	db 30, CORSOLA		;5%
-	db 30, CHINCHOU		;4%
-	db 30, CHINCHOU		;1%
+	db 31, WINGULL		;30%
+	db 31, WINGULL		;30%
+	db 31, HORSEA		;20%
+	db 31, HORSEA		;10%
+	db 31, CORSOLA		;5%
+	db 31, MAREANIE		;4%
+	db 31, MAREANIE		;1%
 
 	map_id ROUTE_15
 	db 6 percent ; encounter rate
-	db 30, STARYU		;30%
-	db 30, WINGULL		;30%
-	db 30, HORSEA		;20%
-	db 30, MAREANIE		;10%
-	db 30, CORSOLA		;5%
-	db 30, CHINCHOU		;4%
-	db 30, CHINCHOU		;1%
+	db 31, WINGULL		;30%
+	db 31, WINGULL		;30%
+	db 31, HORSEA		;20%
+	db 31, HORSEA		;10%
+	db 31, CORSOLA		;5%
+	db 31, MAREANIE		;4%
+	db 31, MAREANIE		;1%
 
 	map_id ROUTE_6_UNDERWATER_CAVE
 	db 5 percent ; encounter rate
-	db 31, STARYU		;30%
 	db 31, HORSEA		;30%
-	db 31, STARYU		;20%
-	db 31, HORSEA		;10%
+	db 31, CHINCHOU		;30%
+	db 31, HORSEA		;20%
+	db 31, CHINCHOU		;10%
 	db 31, LAPRAS		;5%
 	db 31, LAPRAS		;4%
 	db 31, LAPRAS		;1%

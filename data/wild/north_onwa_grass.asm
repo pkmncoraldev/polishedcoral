@@ -929,8 +929,6 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -939,16 +937,12 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	
@@ -962,8 +956,6 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -972,16 +964,12 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	
@@ -995,8 +983,6 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -1005,16 +991,12 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	
@@ -1028,8 +1010,6 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -1038,16 +1018,12 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	
@@ -1061,8 +1037,6 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -1071,16 +1045,12 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	
@@ -1094,8 +1064,6 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -1104,16 +1072,12 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	
@@ -1127,8 +1091,6 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -1137,16 +1099,12 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	
@@ -1160,16 +1118,12 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	; nite
@@ -1191,8 +1145,6 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; day
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
@@ -1201,16 +1153,12 @@
 	db 19, ZUBAT		;5%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	; nite
 	db 19, DRIFLOON		;30%
 	db 19, PHANTUMP		;30%
 	db 19, ZUBAT		;20%
 	db 19, ZUBAT		;10%
 	db 19, ZUBAT		;5%
-	db 19, STANTLER		;4%
-	db 19, STANTLER		;1%
 	db 19, STANTLER		;4%
 	db 19, STANTLER		;1%
 	

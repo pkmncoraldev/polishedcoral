@@ -303,7 +303,7 @@ _CGB_Radio:
 	ret
 
 _CGB_BankCard:
-	ld hl, RadioPals
+	ld hl, PokegearPals
 	ld de, wUnknBGPals
 	ld bc, 8 palettes
 	ld a, $5

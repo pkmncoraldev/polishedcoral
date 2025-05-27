@@ -680,7 +680,7 @@ PokegearBank_Init:
 	ret
 	
 .Welcome:
-	db "Welcome to your<LNBRK>     ATM!@"
+	db "Welcome to your<LNBRK>   account!@"
 	
 .Withdraw:
 	db "WITHDRAW@"
@@ -1366,14 +1366,13 @@ PokegearPhone_Init: ; 91156 (24:5156)
 	call InitPokegearTilemap
 	call Load1bppFont
 	call Load1bppFrame
+	ld b, CGB_POKEGEAR_PALS
+	call GetCGBLayout
+	call SetPalettes
 	ld hl, PokegearText_WhomToCall
 	jp PrintText
 
 PokegearPhone_Joypad: ; 91171 (24:5171)
-	ld b, CGB_POKEGEAR_PALS
-	call GetCGBLayout
-	call SetPalettes
-
 	ld hl, hJoyPressed
 	ld a, [hl]
 	and B_BUTTON

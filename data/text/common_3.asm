@@ -857,8 +857,7 @@ NoUseText::
 	done
 
 UnknownText_0x1c5847::
-	text "Whom do you want"
-	line "to call?"
+	text "Who to call?"
 	done
 
 UnknownText_0x1c5862::

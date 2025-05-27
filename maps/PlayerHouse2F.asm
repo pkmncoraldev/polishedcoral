@@ -240,6 +240,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_PHONE_CARD
 	setflag ENGINE_MAP_CARD
 	setflag ENGINE_RADIO_CARD
+	setflag ENGINE_BANK_CARD
 	setevent EVENT_RUNNING_SHOES
 	setevent EVENT_BIKE_UPGRADED
 	addcellnum PHONE_MOM

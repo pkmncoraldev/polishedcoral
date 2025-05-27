@@ -7117,14 +7117,22 @@ LoadEnemyMon: ; 3e8eb
 .got_nature
 	ld b, a
 
-	; Random ability
-	; 5% hidden ability, otherwise 50% either main ability
+	; Force Hidden Ability while Patches mode is active
+	; Prevents Magnemite from having Magnet Pull
+	push hl
+	ld hl, wStatusFlags2
+	bit 6, [hl] ; ENGINE_PATCHES_MODE
+	pop hl
+	jr nz, .hidden_ability
+	; Find set ability for Wild Boss mons
 	ld a, [wBattleType]
 	cp BATTLETYPE_LEGENDARY
 	jr nz, .skip_boss
 	push hl
 	farcall FindBossWildAbility
 	pop hl
+	; Random ability
+	; 5% hidden ability, otherwise 50% either main ability
 	ld a, [wBuffer1]
 	jr .got_ability
 .skip_boss

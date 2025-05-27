@@ -489,21 +489,6 @@ _ChooseWildEncounter:
 	ld a, b
 	ld [wTempWildMonSpecies], a
 
-;	ld a, [wMapGroup]
-;	cp GROUP_SOUL_HOUSE_B1F ; Soul House or Lavender Radio Tower
-;	jr nz, .not_ghost
-;	ld a, [wMapNumber]
-;	cp MAP_SOUL_HOUSE_B1F ; first Ghost map in its group
-;	jr c, .not_ghost
-;	ld a, SILPHSCOPE2
-;	ld [wCurItem], a
-;	ld hl, wNumKeyItems
-;	call CheckItem
-;	jr c, .not_ghost
-;	ld a, BATTLETYPE_GHOST
-;	ld [wBattleType], a
-;.not_ghost
-
 .startwildbattle
 	xor a
 	ret
@@ -525,93 +510,6 @@ CheckRepelEffect::
 	ret
 
 ApplyAbilityEffectsOnEncounterMon:
-; Consider making the abilities more useful in non-faithful
-	call GetLeadAbility
-	ret z
-	ld hl, .AbilityEffects
-	jp BattleJumptable
-
-.AbilityEffects:
-	dbw ARENA_TRAP,   .ArenaTrap
-	dbw HUSTLE,       .Hustle
-	dbw ILLUMINATE,   .Illuminate
-	dbw INTIMIDATE,   .Intimidate
-	dbw KEEN_EYE,     .KeenEye
-	dbw MAGNET_PULL,  .MagnetPull
-	dbw NO_GUARD,     .NoGuard
-	dbw PRESSURE,     .Pressure
-	dbw QUICK_FEET,   .QuickFeet
-	dbw STATIC,       .Static
-	dbw STENCH,       .Stench
-	dbw SWARM,        .Swarm
-	dbw VITAL_SPIRIT, .VitalSpirit
-	dbw -1, -1
-
-.ArenaTrap:
-.Illuminate:
-.double_encounter_rate
-	sla b
-	jr .avoid_rate_overflow
-
-.NoGuard:
-.Swarm:
-.semidouble_encounter_rate
-	ld a, b
-	srl b
-	add b
-	ld b, a
-.avoid_rate_overflow
-	ret nc
-	ld b, $ff
-	ret
-
-.QuickFeet:
-.Stench:
-.halve_encounter_rate
-	srl b
-.avoid_rate_underflow
-	ld a, b
-	and a
-	ret nz
-	ld b, 1
-	ret
-
-.Hustle:
-.Pressure:
-.VitalSpirit:
-; Vanilla 3gen+: 50% to force upper bound in a level range
-; Since we don't have level ranges, 50% to increase level by 1/8 (min 1)
-	call Random
-	rrca
-	ret c
-	ld a, c
-	cp 100
-	ret nc
-	inc c
-	ret
-
-.Intimidate:
-.KeenEye:
-; Halve encounter rate if enemy is 5+ levels below leading nonfainted mon
-	ld a, [wCurPartyLevel]
-	add 5
-	cp c
-	ret nc
-	jr .halve_encounter_rate
-
-.MagnetPull:
-	push bc
-	ld c, STEEL
-	jr .force_wildtype
-.Static:
-	push bc
-	ld c, ELECTRIC
-.force_wildtype
-	; Force type (if we can) 50% of the time
-	call Random
-	and 1
-	call z, _ChooseWildEncounter
-	pop bc
 	ret
 
 LoadWildMonDataPointer: ; 2a200

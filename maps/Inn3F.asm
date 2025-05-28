@@ -74,7 +74,7 @@ Inn3F_MapScriptHeader:
 	person_event SPRITE_BALL_CUT_FRUIT,  3,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn3FBall2, EVENT_INN_3F_POKEBALL_2
 	person_event SPRITE_BALL_CUT_FRUIT,  5,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn3FBall3, EVENT_INN_3F_POKEBALL_3
 	person_event SPRITE_BALL_CUT_FRUIT,  2,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn3FBall4, EVENT_INN_3F_POKEBALL_4
-	person_event SPRITE_BALL_CUT_FRUIT,  3, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn3FBall5, EVENT_INN_3F_POKEBALL_5
+	person_event SPRITE_BALL_CUT_FRUIT,  3, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Inn3FBall5, EVENT_INN_3F_POKEBALL_5
 	person_event SPRITE_SNARE,  4, 19, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn3FSnareNPC2, EVENT_INN_SNARE_GONE
 	person_event SPRITE_SNARE,  4, 17, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn3FSnareNPC3, EVENT_INN_SNARE_GONE
 	person_event SPRITE_KAGE,  2, 18, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn3FKage, EVENT_INN_SNARE_GONE
@@ -134,7 +134,7 @@ Inn3FKageStop:
 	pause 5
 	special SaveMusic
 	special Special_FadeOutMusic
-	pause 25
+	pause 75
 	opentext
 	writetext Inn3FKageText3
 	buttonsound
@@ -150,11 +150,11 @@ Inn3FKageStop:
 	
 Inn3FKageText1:
 	text "CAGE: Who are you?<WAIT_S>"
-	line "The new recruit?"
+	line "A new recruit?"
 	
 	para "You say you got"
 	line "orders to fetch"
-	cont "the NETT SPECS?"
+	cont "this HM?"
 	
 	para "…<WAIT_L>Well?<WAIT_S>"
 	line "Get a move on!"
@@ -193,7 +193,7 @@ Inn3FKageText1_2:
 Inn3FKageText6:
 	text "You say you got"
 	line "orders to fetch"
-	cont "the NETT SPECS?"
+	cont "this HM?"
 	
 	para "…<WAIT_L>Well?<WAIT_S>"
 	line "Get a move on!"
@@ -459,13 +459,9 @@ Inn3FBall5:
 	pause 5
 	disappear INN_3F_POKEBALL_5
 	opentext
-	writetext ReceivedNettSpecsText1
-	waitsfx
-	giveitem NETT_SPECS
-	specialsound
-	waitbutton
-	writetext ReceivedNettSpecsText2
-	waitbutton
+	verbosegivetmhm HM_WATERFALL
+	setevent EVENT_GOT_HM07_WATERFALL
+	setflag ENGINE_GOT_WATERFALL
 	closetext
 	setevent EVENT_INN_3F_POKEBALL_5
 	callasm Inn1FResertScriptVar
@@ -491,17 +487,6 @@ Inn3FBall5:
 	
 Inn3FNettSpecsTextKage:
 	text "CAGE: Hold it!"
-	done
-	
-ReceivedNettSpecsText1:
-	text "<PLAYER> found"
-	line "NETT SPECS!"
-	done
-	
-ReceivedNettSpecsText2:
-	text "<PLAYER> put the"
-	line "NETT SPECS in"
-	cont "the KEY POCKET."
 	done
 	
 Inn3FCustomer1:

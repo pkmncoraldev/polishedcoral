@@ -299,7 +299,7 @@ Inn1FKageText2:
 	line "from SUNBEAM!"
 	
 	para "You ain't leavin'"
-	line "with those SPECS!"
+	line "with that HM!"
 	done
 	
 Inn1FKageText3:
@@ -338,10 +338,17 @@ Inn1FKageText7:
 	
 Inn1FKageText8:
 	text "Fine. <WAIT_M>Keep the"
-	line "NETT SPECS."
+	line "stupid HM!"
 	
-	para "We don't need 'em"
-	line "anymore anyway."
+	para "You can't use it"
+	line "outside of battle"
+	cont "without a BADGE"
+	cont "from LUMINA TOWN,"		;TODO come up with town name
+	cont "anyway."
+	
+	para "And you aren't"
+	line "gettin' there any"
+	cont "time soon!"
 	
 	para "You're a serious"
 	line "thorn in our side,"

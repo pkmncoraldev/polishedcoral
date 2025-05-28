@@ -311,6 +311,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_GOT_SURF
 	setflag ENGINE_GOT_WATERFALL
 	setflag ENGINE_GOT_STRENGTH
+	setflag ENGINE_GOT_DIVE
 	givetmhm TM_WORK_UP_GROWTH
 	givetmhm TM_CHARM
 	givetmhm TM_CURSE
@@ -331,7 +332,6 @@ PlayerHouseDebugPoster:
 	givetmhm TM_DIG
 	givetmhm TM_METAL_CLAW
 	givetmhm TM_REFLECT
-	givetmhm TM_DIVE
 	givetmhm TM_FIRE_BLAST
 	givetmhm TM_FAKE_OUT
 	givetmhm TM_SUBSTITUTE
@@ -349,9 +349,11 @@ PlayerHouseDebugPoster:
 	givetmhm HM_CUT
 	givetmhm HM_FLY
 	givetmhm HM_SURF
-	givetmhm HM_ROCK_SMASH
-	givetmhm HM_ROCK_CLIMB
 	givetmhm HM_STRENGTH
+	givetmhm HM_DIVE
+	givetmhm HM_ROCK_SMASH
+	givetmhm HM_WATERFALL
+	givetmhm HM_ROCK_CLIMB
 	setflag ENGINE_FLYPOINT_HOME
 	setflag ENGINE_FLYPOINT_SUNSET
 	setflag ENGINE_FLYPOINT_DAYBREAK

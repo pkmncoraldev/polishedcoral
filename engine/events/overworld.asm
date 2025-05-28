@@ -1888,7 +1888,15 @@ DebugDive:
 	
 HasDive: ; cf7c
 	ld d, DIVE
-	call CheckPartyMove
+	call CheckPartyCanLearnMove
+	jr c, .no
+	
+	ld de, ENGINE_GOT_DIVE
+	call CheckEngineFlag
+	jr c, .no
+	
+	ld de, ENGINE_SEVENTHBADGE
+	call CheckEngineFlag
 	jr c, .no
 	
 .yes

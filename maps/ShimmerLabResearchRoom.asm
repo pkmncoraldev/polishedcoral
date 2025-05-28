@@ -148,7 +148,7 @@ ShimmerLabResearchRoomProf:
 	writetext ShimmerLabResearchRoomProfText8
 	buttonsound
 	clearevent EVENT_MUSEUM_NO_BLACK_PEARL
-	verbosegivetmhm TM_DIVE
+	verbosegivetmhm HM_DIVE
 	clearevent EVENT_ROUTE_18_NORTH_POKE_BALL_EARTHQUAKE
 	domaptrigger ROUTE_18_NORTH, $3
 	writetext ShimmerLabResearchRoomProfText9

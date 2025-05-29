@@ -53,8 +53,6 @@ ShimmerLabArtifactText:
 ShimmerLabResearchRoomProf:
 	faceplayer
 	opentext
-	checkitem ANCIENT_BALL
-	iftrue .have_ball
 	checkevent EVENT_DESERT_TEMPLE_2_POKE_BALL
 	iftrue .done_desert
 	checkevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
@@ -96,42 +94,13 @@ ShimmerLabResearchRoomProf:
 	waitbutton
 	closetext
 	end
-.have_ball
-	checkevent EVENT_TALKED_TO_PROF_HILL_WITH_BALL
-	iftrue .ball_talked
-	writetext ShimmerLabResearchRoomProfText11
-	waitbutton
-	writetext ShimmerLabResearchRoomBallText
-	playsound SFX_LEVEL_UP
-	waitsfx
-	waitbutton
-	closetext
-	spriteface SHIMMER_LAB_RESEARCH_ROOM_PROF, UP
-	pause 15
-	opentext
-	writetext ShimmerLabResearchRoomProfText12
-	waitbutton
-	closetext
-	pause 10
-	setevent EVENT_TALKED_TO_PROF_HILL_WITH_BALL
-	faceplayer
-	opentext
-	writetext ShimmerLabResearchRoomProfText13
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-.ball_talked
-	writetext ShimmerLabResearchRoomProfText14
-	waitbutton
-	closetext
-	end
 .done_desert
-	checkitem BLACK_PEARL
-	iffalse .gave_pearl
+	checkevent EVENT_SHOWED_HILL_BLACK_PEARL
+	iftrue .showed_pearl
+	setevent EVENT_SHOWED_HILL_BLACK_PEARL
 	writetext ShimmerLabResearchRoomProfText6
 	waitbutton
 	writetext ShimmerLabResearchRoomPearlText
-	takeitem BLACK_PEARL
 	playsound SFX_LEVEL_UP
 	waitsfx
 	waitbutton
@@ -146,17 +115,11 @@ ShimmerLabResearchRoomProf:
 	faceplayer
 	opentext
 	writetext ShimmerLabResearchRoomProfText8
-	buttonsound
-	clearevent EVENT_MUSEUM_NO_BLACK_PEARL
-	verbosegivetmhm HM_DIVE
-	clearevent EVENT_ROUTE_18_NORTH_POKE_BALL_EARTHQUAKE
-	domaptrigger ROUTE_18_NORTH, $3
+	waitbutton
+	closetext
+	end
+.showed_pearl
 	writetext ShimmerLabResearchRoomProfText9
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-.gave_pearl
-	writetext ShimmerLabResearchRoomProfText10
 	waitbutton
 	closetext
 	end
@@ -197,7 +160,7 @@ ShimmerLabResearchRoomPotText:
 	done
 	
 ShimmerLabResearchRoomPearlText:
-	text "<PLAYER> gave over"
+	text "<PLAYER> showed"
 	line "the BLACK PEARL!"
 	done
 	
@@ -315,9 +278,7 @@ ShimmerLabResearchRoomProfText6:
 	para "Did you find any"
 	line "information?"
 	
-	para "…"
-	
-	para "What!?"
+	para "…<WAIT_L>What!?"
 	
 	para "You found a temple"
 	line "in the desert?"
@@ -361,133 +322,42 @@ ShimmerLabResearchRoomProfText8:
 	line "connection between"
 	cont "the two locations?"
 	
-	para "…<WAIT_L>Well, regardless,"
-	line "I should reward"
-	cont "you for your"
-	cont "assistance."
-	done
+	para "…<WAIT_L>I'm afraid I"
+	line "must ask for your"
+	cont "assistance again."
 	
-ShimmerLabResearchRoomProfText9:
-	text "That TM contains"
-	line "the move DIVE."
+	para "An identical pearl"
+	line "is on display at"
+	cont "the MUSEUM in"
+	cont "OBSCURA CITY."
 	
-	para "It allows you to"
-	line "dive underwater"
-	cont "at certain spots."
-	
-	para "Since it isn't an"
-	line "HM, you do need to"
-	cont "teach it to your"
-	cont "#MON to use it"
-	cont "outside of battle."
-	
-	para "However, you don't"
-	line "need a badge."
-	done
-	
-ShimmerLabResearchRoomProfText10:
-	text "If you use DIVE to"
-	line "explore the water"
-	cont "to the NORTH,"
-	cont "keep a look out."
-	
-	para "There could be a"
-	line "connection between"
-	cont "the desert temple"
-	cont "and the PEARLs"
-	cont "found there."
-	
-	para "If you find any"
-	line "information,"
-	cont "let me know!"
-	done
-	
-ShimmerLabResearchRoomProfText11:
-	text "Hello, <PLAYER>."
-	
-	para "Do you have any"
-	line "new information"
-	cont "for me?"
-	
-	para "…"
-	
-	para "What!?"
-	
-	para "A third temple"
-	line "within a coral"
-	cont "reef deep under"
-	cont "the sea!?"
-	
-	para "And you found an"
-	line "artifact!?"
-	
-	para "Let me see!"
-	done
-	
-ShimmerLabResearchRoomProfText12:
-	text "Fascinating…"
-	
-	para "…"
-	
-	para "It looks just like"
-	line "a modern #BALL!"
-	
-	para "But it predates"
-	line "any record we have"
-	cont "of the creation of"
-	cont "the #BALL!"
-	
-	para "This will change"
-	line "our knowledge of"
-	cont "the relationship"
-	cont "between ancient"
-	cont "man and #MON!"
-	done
-	
-ShimmerLabResearchRoomProfText13:
-	text "You've done it"
-	line "again, <PLAYER>!"
-	
-	para "This is an"
-	line "incredible find!"
-	
-	para "However, we cannot"
-	line "get ahead of"
-	cont "ourselves."
-	
-	para "We must verify"
-	line "that this artifact"
-	cont "is in fact a #-"
-	cont "BALL, and not just"
-	cont "a look-a-like."
-	
-	para "Unfortunately,"
-	line "that is out of my"
-	cont "area of expertise."
-	done
-	
-ShimmerLabResearchRoomProfText14:
-	text "Please, I need you"
-	line "to take this ball"
-	cont "to my colleague"
-	cont "at the MUSEUM in"
-	cont "OBSCURA CITY!"
+	para "Please, take yours"
+	line "there and show it"
+	cont "to my colleague."
 	
 	para "Her name is"
 	line "DR. ABIEGAIL."
 	
-	para "She'll know more"
-	line "conclusively what"
-	cont "it was used for."
+	para "She will be able"
+	line "to verify if they"
+	cont "are truly related."
 	
 	para "I'll let her know"
 	line "you're coming."
 	
-	para "Get the artifact"
-	line "to ABIE!"
+	para "Thank you again"
+	line "for all your help."
+	done
+	
+ShimmerLabResearchRoomProfText9:
+	text "Take that pearl"
+	line "to DR. ABIEGAIL!"
+	
+	para "I'll let her know"
+	line "you're coming."
 	
 	para "Thank you again"
-	line "for all your help!"
+	line "for all your help."
 	done
 	
 ShimmerLabResearchRoomNPC1Text:

@@ -31,20 +31,23 @@ ShimmerLabLobby_MapScriptHeader:
 	const SHIMMER_LAB_LOBBY_TOUCANNON
 
 ShimmerLabLobbyCallback:
-	checkevent EVENT_UNDERWATER_TEMPLE_2_ARTIFACT
-	iffalse .skip
-	setevent EVENT_SHIMMER_FIRST_RESEARCHER_GONE
-	moveperson SHIMMER_LAB_LOBBY_NPC3, 4, 3
-	moveperson SHIMMER_LAB_LOBBY_TOUCANNON, 5, 3
-.skip
-	checkevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
+	checkevent EVENT_DESERT_TEMPLE_2_POKE_BALL
 	iffalse .end
+	checktmhm TM_BLIZZARD
+	iftrue .earthquake
 	moveperson SHIMMER_LAB_LOBBY_NPC2, 4, 3
 	moveperson SHIMMER_LAB_LOBBY_WIGGLYTUFF, 5, 3
 	domaptrigger ROUTE_10_EAST, $2
-	checktmhm TM_BLIZZARD
-	iftrue .end
 	clearevent EVENT_ROUTE_10_EAST_POKE_BALL_BLIZZARD
+	return
+.earthquake
+	checktmhm TM_EARTHQUAKE
+	iftrue .end
+	setevent EVENT_SHIMMER_FIRST_RESEARCHER_GONE
+	moveperson SHIMMER_LAB_LOBBY_NPC3, 4, 3
+	moveperson SHIMMER_LAB_LOBBY_TOUCANNON, 5, 3
+	domaptrigger ROUTE_18_NORTH, $3
+	clearevent EVENT_ROUTE_18_NORTH_POKE_BALL_EARTHQUAKE
 .end
 	return
 

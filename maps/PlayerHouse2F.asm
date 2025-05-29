@@ -131,6 +131,9 @@ PlayerHouseDebugPoster:
 	iffalse .end
 	if_equal $1, .mina
 	if_equal $2, .girls
+	if_equal $3, .pearl_1
+	if_equal $4, .pearl_2
+	if_equal $5, .ancient_ball
 	closewindow
 	jump .page2
 .Items
@@ -472,6 +475,31 @@ PlayerHouseDebugPoster:
 	setevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
 	setevent EVENT_CAN_GO_TO_DESERT
 	jump .return
+.pearl_1
+	closewindow
+	writetext PlayerHouseDebug2Pearl1Text
+	waitbutton
+	setevent EVENT_DESERT_TEMPLE_2_POKE_BALL
+	giveitem BLACK_PEARL
+	jump .return
+.pearl_2
+	closewindow
+	writetext PlayerHouseDebug2Pearl2Text
+	waitbutton
+	setevent EVENT_DESERT_TEMPLE_2_POKE_BALL
+	setevent EVENT_SHOWED_HILL_BLACK_PEARL
+	clearevent EVENT_SNARE_AT_MUSEUM
+	giveitem BLACK_PEARL
+	jump .return
+.ancient_ball
+	closewindow
+	writetext PlayerHouseDebug2AncientBallText
+	waitbutton
+	setevent EVENT_DESERT_TEMPLE_2_POKE_BALL
+	setevent EVENT_SHOWED_HILL_BLACK_PEARL
+	clearevent EVENT_SNARE_AT_MUSEUM
+	giveitem ANCIENT_BALL
+	jump .return
 .end
 	closetext
 	end
@@ -520,9 +548,12 @@ PlayerHouseDebugPoster:
 	
 .MenuData2PlayerHouseQuestDebug:
 	db $80 ; flags
-	db 3 ; items
+	db 6 ; items
 	db "ACTIVATE MINA@"
 	db "RESCUE GIRLS@"
+	db "BLACK PEARL 1@"
+	db "BLACK PEARL 2@"
+	db "ANCIENT BALL@"
 	db "BACK@"
 	
 PlayerHouseDebug2ItemsText:
@@ -558,6 +589,24 @@ PlayerHouseDebug2MinaText:
 PlayerHouseDebug2GirlsText:
 	text "RADIANT TOWN"
 	line "girls rescued."
+	done
+	
+PlayerHouseDebug2Pearl1Text:
+	text "BLACK PEARL"
+	line "collected from"
+	cont "DESERT TEMPLE."
+	done
+	
+PlayerHouseDebug2Pearl2Text:
+	text "BLACK PEARL"
+	line "shown to PROF."
+	cont "HILL."
+	done
+	
+PlayerHouseDebug2AncientBallText:
+	text "ANCIENT BALL"
+	line "collected from"
+	cont "UNDERWATER TEMPLE."
 	done
 	
 PlayerRoomSfxTest:

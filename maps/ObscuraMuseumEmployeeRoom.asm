@@ -29,7 +29,7 @@ ObscuraMuseumEmployeeRoom_MapScriptHeader:
 
 	db 8 ; object events
 	person_event SPRITE_GENERAL_VARIABLE_1, -5, -5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
-	person_event SPRITE_SCIENTIST_F,  4,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomAbiegail, -1
+	person_event SPRITE_SCIENTIST_F,  6,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomAbiegail, EVENT_MUSEUM_ABIE_GONE
 	person_event SPRITE_RECEPTIONIST,  1,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC1, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SCIENTIST,  9, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC2, -1
 	person_event SPRITE_SCIENTIST_F,  3,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseumEmployeeRoomNPC3, -1
@@ -43,24 +43,30 @@ ObscuraMuseumEmployeeRoom_MapScriptHeader:
 	const OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE
 
 ObscuraMuseumEmployeeRoomAbiegail:
+	checkevent EVENT_GOT_MASTERBALL
+	iftrue .got_masterball
 	checkevent EVENT_SNARE_AT_MUSEUM
 	iftrue .snare
-	checkevent EVENT_TALKED_TO_PROF_HILL_WITH_BALL
+	checkitem ANCIENT_BALL
 	iftrue .ball
+	checkevent EVENT_SHOWED_HILL_BLACK_PEARL
+	iftrue .pearl
 	jumptextfaceplayer ObscuraMuseumEmployeeRoomAbiegailText1
 .snare
 	jumptextfaceplayer ObscuraMuseumEmployeeRoomAbiegailText2
-.ball
+.got_masterball
+	jumptextfaceplayer ObscuraMuseumEmployeeRoomAbiegailText13
+.pearl
 	faceplayer
 	opentext
-	checkevent EVENT_GAVE_ABIE_ANCIENT_BALL
-	iftrue .gave_ball
+	checkevent EVENT_GAVE_ABIE_BLACK_PEARL
+	iftrue .gave_pearl
 	writetext ObscuraMuseumEmployeeRoomAbiegailText3
 	waitbutton
-	writetext ObscuraMuseumEmployeeRoomBallText
-	takeitem ANCIENT_BALL
+	writetext ObscuraMuseumEmployeeRoomPearlText
+	takeitem BLACK_PEARL
 	playsound SFX_LEVEL_UP
-	setevent EVENT_GAVE_ABIE_ANCIENT_BALL
+	setevent EVENT_GAVE_ABIE_BLACK_PEARL
 	waitsfx
 	waitbutton
 	closetext
@@ -82,15 +88,83 @@ ObscuraMuseumEmployeeRoomAbiegail:
 	opentext
 	writetext ObscuraMuseumEmployeeRoomAbiegailText5
 	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	specialphonecall SPECIALCALL_GAVEANCIENTBALL
-	setevent EVENT_SPRUCE_BUSY_SIGNAL
-.gave_ball
+	verbosegivetmhm HM_DIVE
+.gave_pearl
 	writetext ObscuraMuseumEmployeeRoomAbiegailText6
 	waitbutton
 	closetext
 	end
+.ball
+	faceplayer
+	opentext
+	writetext ObscuraMuseumEmployeeRoomAbiegailText7
+	waitbutton
+	writetext ObscuraMuseumEmployeeRoomBallText
+	takeitem ANCIENT_BALL
+	playsound SFX_LEVEL_UP
+	setevent EVENT_GAVE_ABIE_ANCIENT_BALL
+	waitsfx
+	waitbutton
+	closetext
+	checkcode VAR_FACING
+	if_equal DOWN, .YouAreFacingDown2
+	spriteface OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, UP
+	jump .cont2
+.YouAreFacingDown2
+	spriteface OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, DOWN
+.cont2
+	pause 15
+	opentext
+	writetext ObscuraMuseumEmployeeRoomAbiegailText8
+	waitbutton
+	closetext
+	pause 20
+	applymovement OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, Movement_Abie_1
+	applyonemovement OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, remove_fixed_facing
+	pause 10
+	opentext
+	writetext ObscuraMuseumEmployeeRoomAbiegailText9
+	waitbutton
+	closetext
+	pause 10
+	applymovement OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, Movement_Abie_2
+	applyonemovement OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, remove_fixed_facing
+	pause 10
+	opentext
+	writetext ObscuraMuseumEmployeeRoomAbiegailText10
+	waitbutton
+	closetext
+	pause 10
+	applymovement OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, Movement_Abie_3
+	applyonemovement OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, remove_fixed_facing
+	pause 10
+	opentext
+	writetext ObscuraMuseumEmployeeRoomAbiegailText11
+	waitbutton
+	closetext
+	pause 20
+	faceplayer
+	opentext
+	writetext ObscuraMuseumEmployeeRoomAbiegailText12
+	waitbutton
+	closetext
+	specialphonecall SPECIALCALL_GAVEANCIENTBALL
+	setevent EVENT_SPRUCE_BUSY_SIGNAL
+	checkcode VAR_FACING
+	if_equal UP, .YouAreFacingUp
+	applymovement OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, Movement_Abie_4
+	jump .cont3
+.YouAreFacingUp
+	applymovement OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, Movement_Abie_5
+.cont3
+	playsound SFX_EXIT_BUILDING
+	disappear OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE
+	end	
+	
+ObscuraMuseumEmployeeRoomPearlText:
+	text "<PLAYER> handed"
+	line "over BLACK PEARL!"
+	done
 	
 ObscuraMuseumEmployeeRoomBallText:
 	text "<PLAYER> handed"
@@ -138,18 +212,135 @@ ObscuraMuseumEmployeeRoomAbiegailText3:
 	
 ObscuraMuseumEmployeeRoomAbiegailText4:
 	text "Hmm…"
+	
+	para "Well, it certainly"
+	line "seems the same as"
+	cont "the one on display"
+	cont "here…"
+	
+	para "And you said you"
+	line "found this in the"
+	cont "ruins of a temple"
+	cont "in the desert?"
 	done
 
 ObscuraMuseumEmployeeRoomAbiegailText5:
-	text "Well, it's the"
-	line "real deal alright."
-	
-	para "This is"
+	text "This is"
 	line "unbelievable!"
+	
+	para "Ours was found in"
+	line "the deep water"
+	cont "to the NORTH of"
+	cont "PORT SHIMMER."
+	
+	para "This could suggest"
+	line "a connection bet-"
+	cont "ween that area and"
+	cont "the ancient people"
+	cont "of the desert."
+	
+	para "More investigation"
+	line "must be done."
+	
+	para "Seeing as you have"
+	line "been so heavily"
+	cont "involved so far,"
+	
+	para "I must ask for"
+	line "your assitance"
+	cont "one more time."
+	
+	para "Here, take this."
 	done
 	
 ObscuraMuseumEmployeeRoomAbiegailText6:
-	text "My father spent"
+	text "That HM will let"
+	line "you dive under the"
+	cont "water at certain"
+	cont "spots."
+	
+	para "However, you will"
+	line "need a GYM BADGE"
+	cont "from our very own"
+	cont "ROCKY to use it."
+	
+	para "With it, I want"
+	line "you to explore the"
+	cont "waters NORTH of"
+	cont "PORT SHIMMER."
+	
+	para "If my hunch is"
+	line "correct, you just"
+	cont "might find signs"
+	cont "of ancient civili-"
+	cont "ization nearby."
+	
+	para "Who knows what new"
+	line "information such a"
+	cont "discovery could"
+	cont "bring to light!"
+	
+	para "I'm counting on"
+	line "you, <PLAYER>."
+	
+	para "If you find any"
+	line "information,"
+	cont "let me know!"
+	done
+	
+ObscuraMuseumEmployeeRoomAbiegailText7:
+	text "<PLAYER>!<WAIT_S>"
+	line "What's the news?"
+	
+	para "…<WAIT_L>You're kidding!"
+	
+	para "Yet more ruins?"
+	
+	para "Then my hunch was"
+	line "spot on!"
+	
+	para "And you say you"
+	line "found an artifact?"
+	
+	para "Well let's see!"
+	done
+	
+ObscuraMuseumEmployeeRoomAbiegailText8:
+	text "Hmm…"
+	done
+	
+ObscuraMuseumEmployeeRoomAbiegailText9:
+	text "Unbelievable!"
+	done
+	
+ObscuraMuseumEmployeeRoomAbiegailText10:
+	text "Extraordinary!!"
+	done
+	
+ObscuraMuseumEmployeeRoomAbiegailText11:
+	text "Absolutely"
+	line "astonishing!!!"
+	done
+	
+ObscuraMuseumEmployeeRoomAbiegailText12:
+	text "It looks just like"
+	line "a modern #BALL!"
+	
+	para "But it predates"
+	line "any record we have"
+	cont "of the creation of"
+	cont "the #BALL!"
+	
+	para "This will change"
+	line "our knowledge of"
+	cont "the relationship"
+	cont "between ancient"
+	cont "man and #MON!"
+	
+	para "This is an"
+	line "incredible find!"
+	
+	para "My father spent"
 	line "his entire career"
 	cont "trying to prove"
 	cont "the existence of a"
@@ -178,6 +369,70 @@ ObscuraMuseumEmployeeRoomAbiegailText6:
 	para "Thank you so much"
 	line "for all your help!"
 	done
+	
+ObscuraMuseumEmployeeRoomAbiegailText13:
+	text "ABIE: You've done"
+	line "more for my father"
+	cont "than you'll ever"
+	cont "know, <PLAYER>."
+	
+	para "He told me that"
+	line "you were one of"
+	cont "the kids that was"
+	cont "sent one of his"
+	cont "starter #MON."
+	
+	para "And now look at"
+	line "you!"
+	
+	para "I'm sure you know"
+	line "this, but you've"
+	cont "really made the"
+	cont "old man proud!"
+	done
+	
+Movement_Abie_1:
+	turn_step_left
+	turn_step_left
+	turn_step_left
+	step_end
+	
+Movement_Abie_2:
+	turn_step_right
+	turn_step_right
+	turn_step_right
+	step_end
+	
+Movement_Abie_3:
+	turn_step_up
+	turn_step_up
+	turn_step_up
+	step_end
+	
+Movement_Abie_4:
+	turn_step_down
+	turn_step_down
+	turn_step_down
+	run_step_down
+	run_step_down
+	run_step_down
+	run_step_down
+	run_step_down
+	run_step_down
+	step_end
+	
+Movement_Abie_5:
+	turn_step_right
+	turn_step_right
+	turn_step_right
+	run_step_right
+	run_step_down
+	run_step_down
+	run_step_down
+	run_step_down
+	run_step_down
+	run_step_down
+	step_end
 
 ObscuraMuseumEmployeeRoomNPC1:
 	checkevent EVENT_MUSEUM_CAN_LOWER_BARRIER

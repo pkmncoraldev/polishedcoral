@@ -155,6 +155,7 @@ SpruceLabSpruce:
 	clearevent EVENT_SPRUCE_CAN_RECALL_ABOUT_ANCIENTBALL
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_GOT_MASTERBALL
+	clearevent EVENT_MUSEUM_ABIE_GONE
 	end
 .no_room
 	writetext SpruceLabSpruceText16

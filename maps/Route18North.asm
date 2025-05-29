@@ -61,7 +61,7 @@ Route18NorthTrigger2:
 	domaptrigger DESERT_WASTELAND_1, $0
 	callasm KillSandstormSound
 	callasm LoadEmoteGFX
-	checktmhm HM_DIVE
+	checktmhm TM_BLIZZARD
 	iftrue .quest_done
 	dotrigger $0
 	end
@@ -70,7 +70,7 @@ Route18NorthTrigger2:
 	end
 	
 Route18NorthCallback:
-	checktmhm HM_DIVE
+	checktmhm TM_BLIZZARD
 	iftrue .quest_done
 	readvar VAR_PLAYER_COLOR
 	if_equal 3, .brown

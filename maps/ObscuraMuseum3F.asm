@@ -55,7 +55,7 @@ ObscuraMuseum3FCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
 	clearevent EVENT_HIDE_OW_OBJECTS_RED
-	jump .cont
+	return
 .purple
 	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
 	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
@@ -63,12 +63,6 @@ ObscuraMuseum3FCallback:
 	setevent EVENT_HIDE_OW_OBJECTS_PURPLE
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
 	clearevent EVENT_HIDE_OW_OBJECTS_RED
-.cont
-	checkevent EVENT_MUSEUM_NO_BLACK_PEARL
-	iffalse .skip
-	moveperson OBSCURA_MUSEUM_3F_BLACK_PEARL_PURPLE, -5, -5
-	moveperson OBSCURA_MUSEUM_3F_BLACK_PEARL_TEAL, -5, -5
-.skip
 	return
 
 ObscuraMuseum3FDragonStoneSceneR:
@@ -492,11 +486,7 @@ ObscuraMuseumClayPotSign:
 	jumptext ObscuraMuseumEmptyExhibitText
 	
 ObscuraMuseumBlackPearlSign:
-	checkevent EVENT_MUSEUM_NO_BLACK_PEARL
-	iftrue .no_black_pearl
 	jumptext ObscuraMuseumBlackPearlSignText
-.no_black_pearl
-	jumptext ObscuraMuseumEmptyExhibitText
 	
 ObscuraMuseumEmptyExhibitText:
 	text "New exhibit:"

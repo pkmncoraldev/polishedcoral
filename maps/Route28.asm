@@ -22,7 +22,7 @@ Route28_MapScriptHeader:
 	signpost 14, 12, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_28_HIDDEN_ITEM_4
 	signpost 56, 35, SIGNPOST_ITEM + ENERGY_ROOT, EVENT_ROUTE_28_HIDDEN_ITEM_5
 	signpost 13, 31, SIGNPOST_READ, Route28Sign
-	signpost 62, 30, SIGNPOST_READ, GreenGrottoSign
+	signpost 62, 26, SIGNPOST_READ, GreenGrottoSign
 
 	db 19 ; object events
 	person_event SPRITE_PICNICKER, 20, 26, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route28Trainer1, -1

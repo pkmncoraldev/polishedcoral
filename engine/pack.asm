@@ -904,7 +904,7 @@ BattlePack: ; 10493
 
 .TMHMPocketMenu: ; 10581 (4:4581)
 	farcall TMHMPocket
-	lb bc, $5, $9 ; Balls, Berries
+	lb bc, $5, $b ; Balls, KeyItems
 	call Pack_InterpretJoypad
 	ret c
 	xor a
@@ -963,7 +963,7 @@ BattlePack: ; 10493
 	ld [wKeyItemsPocketScrollPosition], a
 	ld a, [wMenuCursorY]
 	ld [wKeyItemsPocketCursor], a
-	lb bc, $9, $1 ; Berries, Items
+	lb bc, $7, $1 ; TMHM, Items
 	call Pack_InterpretJoypad
 	ret c
 	; fallthrough

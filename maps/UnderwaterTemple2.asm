@@ -23,13 +23,17 @@ UnderwaterTemple2_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 5 ; object events
+	db 10 ; object events
 	person_event SPRITE_GENERAL_VARIABLE_1, 15,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, UnderwaterTemple2Corsola, EVENT_UNDERWATER_TEMPLE_2_CORSOLA
 	person_event SPRITE_GENERAL_VARIABLE_1, 8, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, UnderwaterTemple2Cursola, EVENT_UNDERWATER_TEMPLE_2_CORSOLA_2
 	person_event SPRITE_BIG_CURSOLA,  8, 25, SPRITEMOVEDATA_CURSOLA, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_UNDERWATER_TEMPLE_2_CURSOLA
-	itemball_event 27, 30, CORAL_SHARD, 1, EVENT_UNDERWATER_TEMPLE_2_POKEBALL
+	itemball_event 21, 29, CORAL_SHARD, 1, EVENT_UNDERWATER_TEMPLE_2_POKEBALL
+	itemball_event  4, 22, CORAL_SHARD, 1, EVENT_UNDERWATER_TEMPLE_2_POKEBALL2
 	itemball_event 25,  5, ANCIENT_BALL, 1, EVENT_UNDERWATER_TEMPLE_2_ARTIFACT
-
+	strengthboulder_event  4, 24, -1
+	strengthboulder_event  5, 24, -1
+	smashrock_event 18, 24
+	smashrock_event 17, 25
 
 	const_def 1 ; object constants
 	const UNDERWATER_TEMPLE_CORSOLA

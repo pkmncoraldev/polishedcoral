@@ -108,6 +108,10 @@ WhiteoutHandleEvents:
 	clearevent EVENT_MUSEUM_COLBY_GONE
 	domaptrigger OBSCURA_MUSEUM_3F, $0
 .skip2
+	checkevent EVENT_SAVED_FELICIA
+	iftrue .skip3
+	clearevent EVENT_BACK_ALLEY_TRASHCAN_2
+.skip3
 	end
 	
 OverworldWhiteoutFade:

@@ -175,6 +175,7 @@ BarBackAlleyFelicia:
 	closetext
 	waitsfx
 	setevent EVENT_ALWAYS_SET
+	setevent EVENT_BACK_ALLEY_TRASHCAN_2
 	loadwildmon MEOWTH, 35
 	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
@@ -211,7 +212,6 @@ BarBackAlleyFelicia:
 	disappear BAR_BACK_ALLEY_FELICIA
 	disappear BAR_BACK_ALLEY_FELICIA2
 	setevent EVENT_SAVED_FELICIA
-	setevent EVENT_BACK_ALLEY_TRASHCAN_2
 	callasm FeliciaSetNameAsm
 	special Special_SaveLostGirl
 	end

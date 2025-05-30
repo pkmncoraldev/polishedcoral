@@ -1312,6 +1312,7 @@ UseAnotherRepelScript:
 	yesorno
 	iffalse_endtext
 	callasm DoItemEffect
+	loadvar wScriptVar, 0
 	endtext
 
 .text:

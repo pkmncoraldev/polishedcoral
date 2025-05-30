@@ -82,6 +82,7 @@ RadiantFieldMina:
 	pause 40
 	opentext
 	writetext RadiantFieldMinaText3
+	buttonsound
 	spriteface RADIANT_FIELD_MINA, DOWN
 	farwritetext StdBlankText
 	pause 6

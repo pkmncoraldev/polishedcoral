@@ -1540,11 +1540,11 @@ _CheckTypeMatchup: ; 347d3
 	pop hl
 	push hl
 	ld a, [hli]
-	cp GRASS
-	jp z, .Immune
+;	cp GRASS
+;	jp z, .Immune
 	ld a, [hl]
-	cp GRASS
-	jp z, .Immune
+;	cp GRASS
+;	jp z, .Immune
 	call GetOpponentAbilityAfterMoldBreaker
 	cp OVERCOAT
 	jp z, .AbilImmune
@@ -1855,9 +1855,6 @@ BattleCommand_checkhit:
 	call .PursuitCheck
 	ret z
 
-	call .PoisonTypeUsingToxic
-	ret z
-
 	call .NoGuardCheck
 	ret z
 
@@ -2081,16 +2078,6 @@ BattleCommand_checkhit:
 .LockedOn:
 	ld a, 1
 	and a
-	ret
-
-
-.PoisonTypeUsingToxic:
-; Return z if we are a Poison-type using Toxic.
-	call CheckIfUserIsPoisonType
-	ret nz
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	cp TOXIC
 	ret
 
 .PursuitCheck:

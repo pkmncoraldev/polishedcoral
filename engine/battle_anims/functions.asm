@@ -4371,7 +4371,7 @@ InitRadial:
 
 Step:
 	call Get_Rad_Pos
-	ld hl, 6.0 >> 8 ; speed
+	ld hl, 6.0 ; speed
 	call Set_Rad_Pos
 	cp 80 ; final position
 	jp nc, FarDeinitBattleAnimation
@@ -4379,7 +4379,7 @@ Step:
 
 Step_VerySlow:
 	call Get_Rad_Pos
-	ld hl, 0.5 >> 8 ; speed
+	ld hl, 0.5 ; speed
 	call Set_Rad_Pos
 	cp 120 ; final position
 	jp nc, FarDeinitBattleAnimation
@@ -4387,7 +4387,7 @@ Step_VerySlow:
 
 Step_Spore:
 	call Get_Rad_Pos
-	ld hl, 1.5 >> 8 ; speed
+	ld hl, 1.5 ; speed
 	call Set_Rad_Pos
 	cp 40 ; final position
 	jp nc, FarDeinitBattleAnimation
@@ -4395,7 +4395,7 @@ Step_Spore:
 
 Step_Short:
 	call Get_Rad_Pos
-	ld hl, 6.0 >> 8 ; speed
+	ld hl, 6.0 ; speed
 	call Set_Rad_Pos
 	cp 60 ; final position
 	jp nc, FarDeinitBattleAnimation
@@ -4403,7 +4403,7 @@ Step_Short:
 
 Step_CP_BG:
 	call Get_Rad_Pos
-	ld hl, 0.08 >> 8 ; speed
+	ld hl, 0.06 ; speed
 	call Set_Rad_Pos
 	cp 120 ; final position
 	jp nc, FarDeinitBattleAnimation
@@ -4411,7 +4411,7 @@ Step_CP_BG:
 
 Step_Slow:
 	call Get_Rad_Pos
-	ld hl, 1.5 >> 8 ; speed
+	ld hl, 1.5 ; speed
 	call Set_Rad_Pos
 	cp 120 ; final position
 	jp nc, FarDeinitBattleAnimation
@@ -4419,7 +4419,7 @@ Step_Slow:
 
 Step_Fast:
 	call Get_Rad_Pos
-	ld hl, 10.0 >> 8 ; speed
+	ld hl, 10.0 ; speed
 	call Set_Rad_Pos
 	cp 160 ; final position
 	jp nc, FarDeinitBattleAnimation

@@ -2091,7 +2091,7 @@ BattleBGEffect_ShakeMonY:
 	call BattleBGEffects_ClearLYOverrides
 	ld hl, rIE
 	set LCD_STAT, [hl]
-	ld a, LOW(rSCY)
+	ld a, $42
 	call BattleBGEffect_SetLCDStatCustoms2
 	ldh a, [hLYOverrideEnd]
 	inc a

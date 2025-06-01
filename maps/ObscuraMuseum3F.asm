@@ -183,6 +183,9 @@ ObscuraMuseum3FDragonStoneScene:
 .cont5
 	opentext
 	writetext ObscuraMuseum3FRockyText3
+	buttonsound
+	verbosegiveitem NETT_SPECS
+	writetext ObscuraMuseum3FRockyText4
 	waitbutton
 	closetext
 	pause 10
@@ -278,15 +281,10 @@ ObscuraMuseum3FColbyText2:
 	para "That's right!<WAIT_S>"
 	line "It means I win!"
 	
-	para "You can't beat me"
-	line "again!"
+	para "Now that I have"
+	line "this stone,"
 	
-	para "All I need now is"
-	line "to offer the stone"
-	cont "at the alter in"
-	cont "LUMINA TOWN!"		;TODO come up with town name
-	
-	para "The dragon will"
+	para "the dragon will"
 	line "recognize me for"
 	cont "who I am and show"
 	cont "itself."
@@ -294,9 +292,6 @@ ObscuraMuseum3FColbyText2:
 	para "And then we'll"
 	line "finally be on even"
 	cont "ground!"
-	
-	para "I'll be wating at"
-	line "LUMINA TOWN!"		;TODO come up with town name
 	
 	para "Just try stop me,"
 	line "<PLAYER>!"
@@ -308,9 +303,7 @@ ObscuraMuseum3FColbyText3:
 	para "Distract him!"
 	
 	para "Make sure he can't"
-	line "interrupt me"
-	cont "summoning the"
-	cont "dragon!"
+	line "follow me."
 	done
 	
 ObscuraMuseum3FColbyText3_girl:
@@ -319,9 +312,7 @@ ObscuraMuseum3FColbyText3_girl:
 	para "Distract her!"
 	
 	para "Make sure she can't"
-	line "interrupt me"
-	cont "summoning the"
-	cont "dragon!"
+	line "follow me."
 	done
 	
 Movement_ObscuraMuseum3FLocke:
@@ -417,12 +408,25 @@ ObscuraMuseum3FRockyText3:
 	line "they were just one"
 	cont "step ahead."
 	
-	para "Oh, she's never"
+	para "Oh man, she's never"
 	line "going to let me"
 	cont "hear the end of"
 	cont "this…"
 	
-	para "Anyway, let's head"
+	para "Anyway, one of"
+	line "the goons dropped"
+	cont "something on their"
+	cont "way out."
+	
+	para "Looks like a weird"
+	line "pair of glasses or"
+	cont "something."
+	
+	para "Take a look."
+	done
+	
+ObscuraMuseum3FRockyText4:
+	text "Anyway, let's head"
 	line "outside for now."
 	done
 	

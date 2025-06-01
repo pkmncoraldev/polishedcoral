@@ -275,13 +275,13 @@ ObscuraCityRockyText1:
 	cont "it seriously."
 	
 	para "She's going to be"
-	line "very upset it was"
-	cont "stolen."
+	line "really upset that"
+	cont "it was stolen."
 	
 	para "…"
 	
-	para "You know the kid"
-	line "that took it,"
+	para "…<WAIT_L>You know the"
+	line "kid that took it,"
 	cont "right?"
 	
 	para "Maybe there's a"
@@ -315,9 +315,8 @@ ObscuraCityRockyText4:
 ObscuraCityRockyText5:
 	text "Relax, DARCY."
 	
-	para "We know where the"
-	line "one who took it"
-	cont "is heading."
+	para "We know the kid"
+	cont "took it."
 	
 	para "He thinks he can"
 	line "use it to awaken"

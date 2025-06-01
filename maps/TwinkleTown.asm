@@ -28,8 +28,8 @@ TwinkleTown_MapScriptHeader:
 	signpost 30, 19, SIGNPOST_READ, TwinkleTownSnowman3
 	signpost 49, 23, SIGNPOST_READ, TwinkleTownWood
 	signpost 48, 23, SIGNPOST_READ, TwinkleTownWood
-	signpost 39, 14, SIGNPOST_READ, TwinkleTownWood
-	signpost 38, 14, SIGNPOST_READ, TwinkleTownWood
+	signpost 40, 12, SIGNPOST_READ, TwinkleTownWood
+	signpost 40, 13, SIGNPOST_READ, TwinkleTownWood
 	signpost 31, 24, SIGNPOST_READ, TwinkleTownWood
 	signpost 30, 24, SIGNPOST_READ, TwinkleTownWood
 	signpost 32, 22, SIGNPOST_READ, Route10MoveRelearnerSign

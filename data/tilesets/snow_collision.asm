@@ -199,3 +199,4 @@
 	tilecoll WATER, WATER, WATER, WATER ; c6
 	tilecoll WATER, WATER, WATER, WATER ; c7
 	tilecoll UP_WALL, UP_WALL, FLOOR, WARP_CARPET_DOWN ; c8
+	tilecoll WALL, WALL, FLOOR, FLOOR ; c9

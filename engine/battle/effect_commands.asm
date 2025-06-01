@@ -1748,24 +1748,9 @@ BattleCommand_damagevariation: ; 34cfd
 	ret
 
 BattleCommand_bounceback:
-; Possibly bounce back an attack with Magic Bounce, or don't do anything if opponent is
-; immune due to Prankster.
+; Possibly bounce back an attack with Magic Bounce
 	ld a, BATTLE_VARS_ABILITY
 	call GetBattleVar
-	cp PRANKSTER
-	jr nz, .prankster_done
-	call CheckIfTargetIsDarkType
-	jr nz, .prankster_done
-	xor a
-	ld [wTypeMatchup], a
-	ld [wTypeModifier], a
-	ld hl, wAttackMissed
-	or [hl]
-	ret nz
-	inc [hl]
-	ret
-
-.prankster_done
 	call GetOpponentAbilityAfterMoldBreaker
 	cp MAGIC_BOUNCE
 	ret nz
@@ -5023,7 +5008,7 @@ CanBurnTarget:
 	jr CanStatusTarget
 CanParalyzeTarget:
 	ld a, b
-	lb bc, ELECTRIC, ELECTRIC
+	lb bc, -1, -1
 	lb de, LIMBER, HELD_PREVENT_PARALYZE
 	ld h, 1 << PAR
 	jr CanStatusTarget
@@ -5433,6 +5418,16 @@ BattleCommand_paralyzetarget:
 	ld b, 1
 	call CanParalyzeTarget
 	ret nz
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp ELECTRIC
+	jr nz, .not_electric
+	push bc
+	ld a, ELECTRIC
+	call CheckIfTargetIsSomeType
+	pop bc
+	ret z
+.not_electric
 	ld a, [wTypeModifier]
 	and a
 	ret z
@@ -6209,17 +6204,17 @@ BattleCommand_burnflinchtarget:
 BattleCommand_freezeflinchtarget:
 	call BattleRandom
 	cp 1 + (50 percent)
-	jr c, .burn
+	jr c, .freeze
 	jp BattleCommand_flinchtarget
-.burn
+.freeze
 	jp BattleCommand_freezetarget
 	
 BattleCommand_paralyzeflinchtarget:
 	call BattleRandom
 	cp 1 + (50 percent)
-	jr c, .burn
+	jr c, .para
 	jp BattleCommand_flinchtarget
-.burn
+.para
 	jp BattleCommand_paralyzetarget
 
 

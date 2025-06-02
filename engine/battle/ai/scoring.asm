@@ -91,6 +91,7 @@ AI_Setup: ; 385e0
 ; 50% chance to greatly encourage stat-up moves during the first turn of enemy's Pokemon.
 ; 50% chance to greatly encourage stat-down moves during the first turn of player's Pokemon.
 ; Almost 90% chance to greatly discourage stat-modifying moves otherwise.
+; Also 50% change to greatly encourage Leech Seed if it is either the player or enemy Pokemon's first turn in battle and the player isn't grasss type.
 
 	ld hl, wBuffer1 - 1
 	ld de, wEnemyMonMoves
@@ -109,6 +110,10 @@ AI_Setup: ; 385e0
 
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 
+	cp EFFECT_LEECH_SEED
+	jr z, .leech_seed
+	cp EFFECT_DEFENSE_CURL
+	jr z, .statup
 	cp EFFECT_DRAGON_DANCE
 	jr z, .statup
 	cp EFFECT_COSMIC_POWER
@@ -137,6 +142,19 @@ AI_Setup: ; 385e0
 
 	jr .checkmove
 
+.leech_seed
+	ld a, [wPlayerTurnsTaken]
+	cp 0
+	jr z, .check_player_type
+	ld a, [wEnemyTurnsTaken]
+	cp 0
+	jr z, .check_player_type
+	jr .checkmove
+.check_player_type
+	call CheckIfTargetIsGrassType
+	jr nz, .encourage
+	jr .checkmove
+
 .statup
 	ld a, [wEnemyTurnsTaken]
 	and a
@@ -155,12 +173,14 @@ AI_Setup: ; 385e0
 
 	dec [hl]
 	dec [hl]
+	dec [hl]
 	jr .checkmove
 
 .discourage
 	call Random
 	cp 30
 	jr c, .checkmove
+	inc [hl]
 	inc [hl]
 	inc [hl]
 	jr .checkmove

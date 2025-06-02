@@ -239,14 +239,13 @@ macro anim_clearenemyhud
 	db anim_clearenemyhud_command
 ENDM
 
-	enum anim_0xf6_command ; f6
-macro anim_0xf6
-	db anim_0xf6_command
+	enum anim_jumpif2_command ; f6
+macro anim_jumpif2
+	db anim_jumpif2_command
+	db \1 ; value
+	dw \2 ; address
 	endm
 
-;	enum anim_0xf7_command ; f7
-;anim_0xf7: macro
-;	db anim_0xf7_command
 	enum anim_clearfirstbgeffect_command ; f7
 macro anim_clearfirstbgeffect
 	db anim_clearfirstbgeffect_command

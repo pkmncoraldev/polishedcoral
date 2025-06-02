@@ -2369,11 +2369,11 @@ BattleCommand_hittargetnosub: ; 34f60
 .multihit
 .conversion
 .doublehit
-	ld a, [wKickCounter]
+.fury_attack
+	ld a, [wcf64]
 	and 1
 	xor 1
-	ld [wKickCounter], a
-.fury_attack
+	ld [wcf64], a
 	ld a, [de]
 	cp $1
 	push af

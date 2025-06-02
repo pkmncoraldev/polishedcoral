@@ -1931,7 +1931,7 @@ BattleAnim_Acrobatics:
 BattleAnim_DoubleSlap:
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_DOUBLE_SLAP
-	anim_jumpif $1, .alternate
+	anim_jumpif2 $1, .alternate
 	anim_obj ANIM_OBJ_PALM, 144, 48, $0
 	anim_wait 6
 	anim_obj ANIM_OBJ_HIT_YFIX, 144, 48, $0
@@ -2706,7 +2706,7 @@ BattleAnim_FuryStrikes:
 	anim_jumpif $2, BattleAnim_FuryAttack
 BattleAnim_FurySwipes:
 	anim_1gfx ANIM_GFX_CUT
-	anim_jumpif $1, .alternate
+	anim_jumpif2 $1, .alternate
 	anim_jump BattleAnim_Scratch.hit
 	anim_ret
 
@@ -5649,7 +5649,7 @@ BattleAnim_SpiderWeb:
 BattleAnim_CometPunch:
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_jumpif $1, .alternate
+	anim_jumpif2 $1, .alternate
 	anim_obj ANIM_OBJ_PUNCH, 144, 48, $0
 	anim_wait 6
 	anim_obj ANIM_OBJ_HIT_YFIX, 144, 48, $0

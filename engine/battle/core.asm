@@ -6283,7 +6283,8 @@ MoveSelectionScreen2:
 	add hl, bc
 	ld a, [hl]
 	ld [wCurPlayerMove], a
-	xor a	
+	xor a
+	ld [wcf64], a
 	ret
 
 .move_disabled

@@ -429,8 +429,7 @@ BattleAnimCommands:: ; cc2a4 (33:42a4)
 	dw BattleAnimCmd_OBP1
 	dw BattleAnimCmd_ClearSprites
 	dw ClearEnemyHud    ; f5
-	dw BattleAnimCmd_F6 ; dummy
-;	dw BattleAnimCmd_F7 ; dummy
+	dw BattleAnimCmd_IfParamEqual2
 	dw BattleAnimCmd_ClearFirstBGEffect
 	dw BattleAnimCmd_IfParamEqual
 	dw BattleAnimCmd_SetVar
@@ -572,6 +571,14 @@ BattleAnimCmd_IfVarEqual: ; cc3b2 (33:43b2)
 BattleAnimCmd_IfParamEqual: ; cc3d6 (33:43d6)
 	call GetBattleAnimByte
 	ld hl, wBattleAnimParam
+	cp [hl]
+	jr z, Do_Jump
+
+	jr Dont_Jump
+	
+BattleAnimCmd_IfParamEqual2:
+	call GetBattleAnimByte
+	ld hl, wcf64
 	cp [hl]
 	jr z, Do_Jump
 

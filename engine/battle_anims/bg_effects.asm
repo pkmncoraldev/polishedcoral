@@ -205,7 +205,7 @@ BattleBGEffect_FlashContinue: ; c80fb (32:40fb)
 	ld hl, BG_EFFECT_STRUCT_JT_INDEX
 	add hl, bc
 	ld [hl], a
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -566,7 +566,7 @@ BattleBGEffect_RemoveMon: ; c82f5 (32:42f5)
 .user
 	ld a, $8
 .okay
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld [hl], a
 	ret
@@ -620,7 +620,7 @@ BattleBGEffect_RemoveMon: ; c82f5 (32:42f5)
 	ld a, $1
 	ldh [hBGMapMode], a
 	call BattleBGEffects_IncrementJumptable
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	dec [hl]
 	ret
@@ -628,7 +628,7 @@ BattleBGEffect_RemoveMon: ; c82f5 (32:42f5)
 .four
 	xor a
 	ldh [hBGMapMode], a
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -714,7 +714,7 @@ BattleBGEffect_RunPicResizeScript: ; c83ed (32:43ed)
 
 
 .zero
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld e, [hl]
 	ld d, $0
@@ -1002,7 +1002,7 @@ BattleBGEffect_StartWater: ; c85c2 (32:45c2)
 	jp EndBattleBGEffect
 
 BattleBGEffect_Water: ; c85ce (32:45ce)
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	ld e, a
@@ -1055,13 +1055,13 @@ BattleBGEffect_Psychic: ; c8607 (32:4607)
 	ldh [hLYOverrideEnd], a
 	lb de, 6, 5
 	call Functionc8f2e
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld [hl], $0
 	ret
 
 .one
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
@@ -1107,7 +1107,7 @@ BattleBGEffect_NightShade: ; c8662 (32:4662)
 	call BattleBGEffects_ClearLYOverrides
 	ld a, $42
 	call BattleBGEffect_SetLCDStatCustoms1
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld e, [hl]
 	ld d, 2
@@ -1144,7 +1144,7 @@ BattleBGEffect_DoubleTeam: ; c8689 (32:4689)
 	ret
 
 .one
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	cp $10
@@ -1153,7 +1153,7 @@ BattleBGEffect_DoubleTeam: ; c8689 (32:4689)
 	jp .UpdateLYOverrides
 
 .three
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	cp $ff
@@ -1170,7 +1170,7 @@ BattleBGEffect_DoubleTeam: ; c8689 (32:4689)
 	ld a, [hl]
 	ld d, $2
 	call Sine
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	add [hl]
 	call .UpdateLYOverrides
@@ -1222,7 +1222,7 @@ BattleBGEffect_AcidArmor: ; c8709 (32:4709)
 	call BattleBGEffects_ClearLYOverrides
 	ld a, $42
 	call BattleBGEffect_SetLCDStatCustoms1
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld e, [hl]
 	ld d, 2
@@ -1293,7 +1293,7 @@ BattleBGEffect_Withdraw: ; c8761 (32:4761)
 	ret
 
 .one
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	and $3f
@@ -1304,7 +1304,7 @@ BattleBGEffect_Withdraw: ; c8761 (32:4761)
 	cp d
 	ret nc
 	call BGEffect_DisplaceLYOverridesBackup
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	rlca
@@ -1339,13 +1339,13 @@ BattleBGEffect_Dig: ; c87a7 (32:47a7)
 	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
 	add hl, bc
 	ld [hl], $2
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld [hl], $0
 	ret
 
 .one
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -1402,7 +1402,7 @@ BattleBGEffect_Tackle: ; c8805 (32:4805)
 	ldh a, [hLYOverrideEnd]
 	inc a
 	ldh [hLYOverrideEnd], a
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld [hl], $0
 	call BGEffect_CheckBattleTurn
@@ -1436,7 +1436,7 @@ BattleBGEffect_BodySlam: ; c8837 (32:4837)
 	ldh a, [hLYOverrideEnd]
 	inc a
 	ldh [hLYOverrideEnd], a
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld [hl], $0
 	call BGEffect_CheckBattleTurn
@@ -1454,7 +1454,7 @@ BattleBGEffect_BodySlam: ; c8837 (32:4837)
 	jp BattleAnim_ResetLCDStatCustom
 
 Tackle_BGEffect25_2d_one:
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	cp -8
@@ -1468,14 +1468,14 @@ Tackle_BGEffect25_2d_one:
 	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
 	add hl, bc
 	ld a, [hl]
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	add [hl]
 	ld [hl], a
 	ret
 
 Tackle_BGEffect25_2d_two:
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -1488,7 +1488,7 @@ Tackle_BGEffect25_2d_two:
 	ld a, [hl]
 	cpl
 	inc a
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	add [hl]
 	ld [hl], a
@@ -1554,7 +1554,7 @@ BGEffect2d_2f_zero:
 	ldh a, [hLYOverrideEnd]
 	inc a
 	ldh [hLYOverrideEnd], a
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld [hl], $0
 	call BGEffect_CheckBattleTurn
@@ -1598,19 +1598,19 @@ BattleBGEffect_WobbleMon: ; c892a (32:492a)
 	ldh a, [hLYOverrideEnd]
 	inc a
 	ldh [hLYOverrideEnd], a
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld [hl], $0
 	ret
 
 .one
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	ld d, $8
 	call Sine
 	call BGEffect_FillLYOverridesBackup
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	add $4
@@ -1644,7 +1644,7 @@ BattleBGEffect_Flail: ; c8964 (32:4964)
 	ret
 
 .one
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	ld d, $6
@@ -1664,7 +1664,7 @@ BattleBGEffect_Flail: ; c8964 (32:4964)
 	ld a, [hl]
 	add $8
 	ld [hl], a
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	add $2
@@ -1689,7 +1689,7 @@ BattleBGEffect_WaveDeformMon: ; c89b5 (32:49b5)
 	jp BattleBGEffect_SetLCDStatCustoms1
 
 .one
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	cp $20
@@ -1700,7 +1700,7 @@ BattleBGEffect_WaveDeformMon: ; c89b5 (32:49b5)
 	jp Functionc8f2e
 
 .two
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -1732,7 +1732,7 @@ BattleBGEffect_BounceDown: ; c89ee (32:49ee)
 	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
 	add hl, bc
 	ld [hl], $1
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld [hl], $20
 	ret
@@ -1744,7 +1744,7 @@ BattleBGEffect_BounceDown: ; c89ee (32:49ee)
 	cp $38
 	ret nc
 	push af
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	ld d, $10
@@ -1754,7 +1754,7 @@ BattleBGEffect_BounceDown: ; c89ee (32:49ee)
 	pop af
 	add d
 	call BGEffect_DisplaceLYOverridesBackup
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	inc [hl]
 	inc [hl]
@@ -1774,13 +1774,13 @@ BattleBGEffect_FadeMonsToBlackRepeating: ; c8b00 (32:4b00)
 	dw .cgb_two
 .cgb_zero
 	call BattleBGEffects_IncrementJumptable
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld [hl], $0
 	ret
 
 .cgb_one
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
@@ -1919,13 +1919,13 @@ BattleBGEffect_VibrateMon: ; c8c61 (32:4c61)
 	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
 	add hl, bc
 	ld [hl], $1
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld [hl], $20
 	ret
 
 .one ; c8c85 (32:4c85)
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -1961,13 +1961,13 @@ BattleBGEffect_WobblePlayer: ; c8ca2 (32:4ca2)
 	ldh [hLYOverrideStart], a
 	ld a, $37
 	ldh [hLYOverrideEnd], a
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld [hl], $0
 	ret
 
 .one ; c8cc3 (32:4cc3)
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	cp $40
@@ -1975,7 +1975,7 @@ BattleBGEffect_WobblePlayer: ; c8ca2 (32:4ca2)
 	ld d, $6
 	call Sine
 	call BGEffect_FillLYOverridesBackup
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	add $2
@@ -2034,7 +2034,7 @@ BattleBGEffect_ShakeMonX:
 
 .reload_distance
 	; Toggles between sides.
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	cpl
@@ -2060,7 +2060,7 @@ BattleBGEffect_ShakeMonX:
 	and $f
 	call z, .reload_distance
 
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	ld e, a
@@ -2091,7 +2091,7 @@ BattleBGEffect_ShakeMonY:
 	call BattleBGEffects_ClearLYOverrides
 	ld hl, rIE
 	set LCD_STAT, [hl]
-	ld a, $42
+	ld a, LOW(rSCY)
 	call BattleBGEffect_SetLCDStatCustoms2
 	ldh a, [hLYOverrideEnd]
 	inc a
@@ -2100,7 +2100,7 @@ BattleBGEffect_ShakeMonY:
 
 .reload_distance
 	; Toggles between distances.
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, $80
 	xor [hl]
@@ -2125,7 +2125,7 @@ BattleBGEffect_ShakeMonY:
 	and $f
 	call z, .reload_distance
 
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	bit 7, a
@@ -2154,7 +2154,7 @@ Functionc8d0b: ; c8d0b (32:4d0b)
 
 .okay
 	dec [hl]
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	and $f
@@ -2181,7 +2181,7 @@ Functionc8d0b: ; c8d0b (32:4d0b)
 	ret
 
 BattleBGEffect_WobbleScreen: ; c8d3a (32:4d3a)
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	cp $40
@@ -2189,7 +2189,7 @@ BattleBGEffect_WobbleScreen: ; c8d3a (32:4d3a)
 	ld d, $6
 	call Sine
 	ldh [hSCX], a
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	add $2
@@ -2208,7 +2208,7 @@ BattleBGEffect_GetNthDMGPal: ; c8d57 (32:4d57)
 	and a
 	jr z, .zero
 	dec [hl]
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	jp BattleBGEffect_GetNextDMGPal
@@ -2244,7 +2244,7 @@ BGEffect_RapidCyclePals: ; c8d77 (32:4d77)
 	call BattleBGEffects_IncrementJumptable
 .player_turn_cgb
 	call BattleBGEffects_IncrementJumptable
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	ld [hl], $0
@@ -2272,7 +2272,7 @@ BGEffect_RapidCyclePals: ; c8d77 (32:4d77)
 	jp BGEffects_LoadBGPal0_OBPal1
 
 .okay_2_cgb
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	dec [hl]
 	ret
@@ -2301,7 +2301,7 @@ BGEffect_RapidCyclePals: ; c8d77 (32:4d77)
 	jp BGEffects_LoadBGPal1_OBPal0
 
 .okay_4_cgb
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	dec [hl]
 	ret
@@ -2373,7 +2373,7 @@ BGEffects_LoadBGPal1_OBPal0: ; c8e7f (32:4e7f)
 	ret
 
 BattleBGEffect_GetFirstDMGPal: ; c8eac (32:4eac)
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
@@ -2387,7 +2387,7 @@ BattleBGEffect_GetNextDMGPal: ; c8eb2 (32:4eb2)
 	cp -2
 	jr nz, .repeat
 	ld a, [de]
-	ld hl, BG_EFFECT_STRUCT_03
+	ld hl, BG_EFFECT_STRUCT_PARAM
 	add hl, bc
 	ld [hl], $0
 .repeat
@@ -2664,8 +2664,8 @@ BGEffect_CheckBattleTurn: ; c9038 (32:5038)
 	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
 	add hl, bc
 	ldh a, [hBattleTurn]
-	and $1
 	xor [hl]
+	and $1
 	ret
 
 BGEffect_CheckFlyDigStatus: ; c9042 (32:5042)

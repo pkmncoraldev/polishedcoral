@@ -302,7 +302,7 @@ BattleAnim_EnergyBall:
 BattleAnim_HyperVoice:
 	anim_2gfx ANIM_GFX_NOISE, ANIM_GFX_PSYCHIC
 .loop
-	anim_cry $0
+	anim_sound 0, 0, SFX_BOAT
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $30, $2, $0
 	anim_obj ANIM_OBJ_SOUND, 64, 76, $0
@@ -857,7 +857,7 @@ BattleAnim_PetalBlizzard:
 	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_PINK
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PINK
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_PINK
-	anim_4gfx ANIM_GFX_CHARGE, ANIM_GFX_FLOWER, ANIM_GFX_HIT, ANIM_GFX_WIND_BG
+	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_CHARGE, ANIM_GFX_FLOWER
 	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
 	anim_battlergfx_2row
 	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20

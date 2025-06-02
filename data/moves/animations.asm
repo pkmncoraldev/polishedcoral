@@ -1347,7 +1347,7 @@ BattleAnim_Psyshock:
 	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_CHARGE
 	anim_call BattleAnim_FollowEnemyFeet_1
 	anim_sound 0, 0, SFX_RAGE
-	anim_obj ANIM_OBJ_GLIMMER, 44, 96, $0
+	anim_obj ANIM_OBJ_GLIMMER, 44, 88, $0
 	anim_wait 32
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
 	anim_sound 0, 1, SFX_PSYCHIC

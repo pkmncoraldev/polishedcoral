@@ -41,16 +41,20 @@ LusterSkyscraper1ElevatorButton:
 	end
 
 .Floors1:
-	db 3 ; floors
+	db 5 ; floors
 	elevfloor _1F, 3, LUSTER_SKYSCRAPER_1_1F
 	elevfloor _2F, 1, LUSTER_SKYSCRAPER_1_2F
 	elevfloor _3F, 1, LUSTER_SKYSCRAPER_1_3F
+	elevfloor _4F, 1, LUSTER_SKYSCRAPER_1_4F
+	elevfloor _5F, 1, LUSTER_SKYSCRAPER_1_5F
 	db -1 ; end
 	
 .Floors2:
-	db 4 ; floors
+	db 6 ; floors
 	elevfloor _B1F, 1, LUSTER_SKYSCRAPER_B1F
 	elevfloor _1F, 3, LUSTER_SKYSCRAPER_1_1F
 	elevfloor _2F, 1, LUSTER_SKYSCRAPER_1_2F
 	elevfloor _3F, 1, LUSTER_SKYSCRAPER_1_3F
+	elevfloor _4F, 1, LUSTER_SKYSCRAPER_1_4F
+	elevfloor _5F, 1, LUSTER_SKYSCRAPER_1_5F
 	db -1 ; end

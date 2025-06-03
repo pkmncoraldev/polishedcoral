@@ -402,8 +402,8 @@ LusterSkyscraper2_1F_BlockData:
 	
 LusterSkyscraper1_2F_BlockData:
 LusterSkyscraper1_3F_BlockData:
-LusterSkyscraper2_2F_BlockData:
-LusterSkyscraper2_3F_BlockData:
+LusterSkyscraper1_4F_BlockData:
+LusterSkyscraper1_5F_BlockData:
 	INCBIN "maps/LusterSkyscraper2F.ablk.lz"
 	
 LusterSkyscraper1_Elevator_BlockData:

@@ -667,10 +667,10 @@ ENDM
 	map_attributes LusterSkyscraper1_1F, LUSTER_SKYSCRAPER_1_1F, 0, 0
 	map_attributes LusterSkyscraper1_2F, LUSTER_SKYSCRAPER_1_2F, 0, 0
 	map_attributes LusterSkyscraper1_3F, LUSTER_SKYSCRAPER_1_3F, 0, 0
+	map_attributes LusterSkyscraper1_4F, LUSTER_SKYSCRAPER_1_4F, 0, 0
+	map_attributes LusterSkyscraper1_5F, LUSTER_SKYSCRAPER_1_5F, 0, 0
 	map_attributes LusterSkyscraper1_Elevator, LUSTER_SKYSCRAPER_1_ELEVATOR, 0, 0
 	map_attributes LusterSkyscraper2_1F, LUSTER_SKYSCRAPER_2_1F, 0, 0
-	map_attributes LusterSkyscraper2_2F, LUSTER_SKYSCRAPER_2_2F, 0, 0
-	map_attributes LusterSkyscraper2_3F, LUSTER_SKYSCRAPER_2_3F, 0, 0
 	map_attributes LusterSkyscraper2_Elevator, LUSTER_SKYSCRAPER_2_ELEVATOR, 0, 0
 	map_attributes LusterSkyscraperB1F, LUSTER_SKYSCRAPER_B1F, 0, 0
 	map_attributes LusterSkyscraperPorygonRoom, LUSTER_SKYSCRAPER_PORYGON_ROOM, 0, 0

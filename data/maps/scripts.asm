@@ -295,10 +295,10 @@ INCLUDE "maps/LusterMallBackRoom.asm"
 INCLUDE "maps/LusterSkyscraper1_1F.asm"
 INCLUDE "maps/LusterSkyscraper1_2F.asm"
 INCLUDE "maps/LusterSkyscraper1_3F.asm"
+INCLUDE "maps/LusterSkyscraper1_4F.asm"
+INCLUDE "maps/LusterSkyscraper1_5F.asm"
 INCLUDE "maps/LusterSkyscraper1_Elevator.asm"
 INCLUDE "maps/LusterSkyscraper2_1F.asm"
-INCLUDE "maps/LusterSkyscraper2_2F.asm"
-INCLUDE "maps/LusterSkyscraper2_3F.asm"
 INCLUDE "maps/LusterSkyscraper2_Elevator.asm"
 
 SECTION "Route 12 Scripts", ROMX

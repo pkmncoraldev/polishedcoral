@@ -15,8 +15,8 @@ LusterSkyscraper1_1F_MapScriptHeader:
 
 	db 3 ; object events
 	person_event SPRITE_RECEPTIONIST, 3, 2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterSkyscraper1_1F_NPC1, -1
-	person_event SPRITE_GENTLEMAN, 5, 8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterSkyscraper1_1F_NPC2, -1
-	person_event SPRITE_POKEFAN_M, 2, 6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterSkyscraper1_1F_NPC3, -1
+	person_event SPRITE_GENTLEMAN, 2, 6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterSkyscraper1_1F_NPC2, -1
+	person_event SPRITE_PONYTAIL, 5, 9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterSkyscraper1_1F_NPC3, -1
 
 	const_def 1 ; object constants
 	const LUSTER_SKYSCRAPER_1_1F_NPC_1
@@ -27,18 +27,6 @@ LusterSkyscraper1_1F_MapScriptHeader:
 LusterSkyscraper1_1F_NPC1:
 	jumptextfaceplayer LusterSkyscraper1_1F_NPC1Text
 	
-LusterSkyscraper1_1F_NPC2:
-	faceplayer
-	opentext
-	writetext LusterSkyscraper1_1F_NPC2Text
-	waitbutton
-	closetext
-	spriteface LUSTER_SKYSCRAPER_1_1F_NPC_2, DOWN
-	end
-	
-LusterSkyscraper1_1F_NPC3:
-	jumptextfaceplayer LusterSkyscraper1_1F_NPC3Text
-	
 LusterSkyscraper1_1F_NPC1Text:
 	text "Welcome to our"
 	line "building."
@@ -47,6 +35,15 @@ LusterSkyscraper1_1F_NPC1Text:
 	line "appointment with"
 	cont "us today?"
 	done
+	
+LusterSkyscraper1_1F_NPC2:
+	faceplayer
+	opentext
+	writetext LusterSkyscraper1_1F_NPC2Text
+	waitbutton
+	closetext
+	spriteface LUSTER_SKYSCRAPER_1_1F_NPC_2, DOWN
+	end
 	
 LusterSkyscraper1_1F_NPC2Text:
 	text "I'm just here for"
@@ -57,15 +54,61 @@ LusterSkyscraper1_1F_NPC2Text:
 	cont "yesterday."
 	done
 	
-LusterSkyscraper1_1F_NPC3Text:
-	text "Man, these"
-	line "buildings are"
-	cont "huge."
+LusterSkyscraper1_1F_NPC3:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_PINK_BOW
+	iftrue .got_item
+	writetext LusterSkyscraper1_1F_NPC3Text1
+	waitbutton
+	verbosegiveitem PINK_BOW
+	iffalse .NoRoom
+	writetext LusterSkyscraper1_1F_NPC3Text2
+	waitbutton
+	closetext
+	spriteface LUSTER_SKYSCRAPER_1_1F_NPC_3, DOWN
+	setevent EVENT_GOT_PINK_BOW
+	end
+.got_item
+	writetext LusterSkyscraper1_1F_NPC3Text2
+	jump .end
+.NoRoom
+	writetext LusterSkyscraper1_1F_NPC3NoRoomText
+.end
+	waitbutton
+	closetext
+	spriteface LUSTER_SKYSCRAPER_1_1F_NPC_3, DOWN
+	end
 	
-	para "So many floors…"
+LusterSkyscraper1_1F_NPC3Text1:
+	text "I'm waiting for an"
+	line "interview!"
 	
-	para "Which one do I"
-	line "work on again?"
+	para "I can't wait to get"
+	line "a job!"
+	
+	para "Here, why don't you"
+	line "take this?"
+	done
+	
+LusterSkyscraper1_1F_NPC3Text2:
+	text "Give that to your"
+	line "#MON to power"
+	cont "their FAIRY-type"
+	cont "moves up."
+	
+	para "I don't need it"
+	line "anymore."
+	
+	para "It's not part of"
+	line "the dress code…"
+	done
+	
+LusterSkyscraper1_1F_NPC3NoRoomText:
+	text "Oh!"
+	
+	para "You seem to be"
+	line "carrying too much!"
 	done
 	
 Skyscraper1FSign:
@@ -77,6 +120,12 @@ Skyscraper2FSign:
 Skyscraper3FSign:
 	jumptext Skyscraper3FSignText
 	
+Skyscraper4FSign:
+	jumptext Skyscraper4FSignText
+	
+Skyscraper5FSign:
+	jumptext Skyscraper5FSignText
+	
 Skyscraper1FSignText:
 	text "1st Floor"
 	done
@@ -87,4 +136,12 @@ Skyscraper2FSignText:
 	
 Skyscraper3FSignText:
 	text "3rd Floor"
+	done
+	
+Skyscraper4FSignText:
+	text "4th Floor"
+	done
+	
+Skyscraper5FSignText:
+	text "5th Floor"
 	done

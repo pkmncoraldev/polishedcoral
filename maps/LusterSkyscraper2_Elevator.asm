@@ -15,20 +15,20 @@ LusterSkyscraper2_Elevator_MapScriptHeader:
 	db 0 ; object events
 
 LusterSkyscraper2ElevatorButton:
-	opentext
-	elevator .Floors
-	closetext
-	iffalse .Done
-	pause 5
-	playsound SFX_ELEVATOR
-	earthquake 60
-	waitsfx
-.Done
+	; opentext
+	; elevator .Floors
+	; closetext
+	; iffalse .Done
+	; pause 5
+	; playsound SFX_ELEVATOR
+	; earthquake 60
+	; waitsfx
+; .Done
 	end
 
-.Floors:
-	db 3 ; floors
-	elevfloor _1F, 3, LUSTER_SKYSCRAPER_2_1F
-	elevfloor _2F, 1, LUSTER_SKYSCRAPER_2_2F
-	elevfloor _3F, 1, LUSTER_SKYSCRAPER_2_3F
-	db -1 ; end
+; .Floors:
+	; db 3 ; floors
+	; elevfloor _1F, 3, LUSTER_SKYSCRAPER_2_1F
+	; elevfloor _2F, 1, LUSTER_SKYSCRAPER_2_2F
+	; elevfloor _3F, 1, LUSTER_SKYSCRAPER_2_3F
+	; db -1 ; end

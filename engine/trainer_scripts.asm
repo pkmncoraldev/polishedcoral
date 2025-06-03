@@ -9,7 +9,10 @@ TalkToTrainerScript:: ; 0xbe66a
 	jump StartBattleWithMapTrainerScript
 	
 TalkToAirportGuardScript:
+	clearevent EVENT_AIRPORT_FENCE
 	faceobject PLAYER, LAST_TALKED
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, LAST_TALKED, 30
 	opentext
 	trainertext $0
 	waitbutton
@@ -20,7 +23,7 @@ TalkToAirportGuardScript:
 	waitsfx
 	loadvar wOtherTrainerClass, 0
 	domaptrigger ONWA_INTL_AIRPORT, $1
-	warpfacing DOWN, ONWA_INTL_AIRPORT, $0d, $00
+	warp2 DOWN, ONWA_INTL_AIRPORT, $0d, $00
 	end
 
 SeenByTrainerScript:: ; 0xbe675
@@ -57,7 +60,7 @@ SeenByAirportGuardScript:
 	waitsfx
 	loadvar wOtherTrainerClass, 0
 	domaptrigger ONWA_INTL_AIRPORT, $1
-	warpfacing DOWN, ONWA_INTL_AIRPORT, $0d, $00
+	warp2 DOWN, ONWA_INTL_AIRPORT, $0d, $00
 	end
 	
 StartBattleWithMapTrainerScript: ; 0xbe68a

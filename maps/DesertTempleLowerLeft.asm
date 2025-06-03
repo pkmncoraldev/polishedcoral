@@ -43,16 +43,6 @@ DesertTempleRockSmash:
 	setevent EVENT_TEMPLE_RUMBLING
 	end
 	
-DesertTempleLowerLeftKeepShakingGoingAsm:
-	ld a, FALSE
-	ld [wScriptVar], a
-	ld a, [wObject1StepDuration]
-	cp 0
-	ret nz
-	ld a, TRUE
-	ld [wScriptVar], a
-	ret
-	
 DesertTempleShakeSfxAsm:
 	farcall CheckSFX
 	ret c
@@ -162,5 +152,5 @@ DesertTempleLowerLeftSwitchPressedAlreadyText:
 DesertTempleLowerLeftSetTimerAsm:
 	ld hl, wStatusFlags2
 	set 2, [hl] ; ENGINE_BUG_CONTEST_TIMER
-	ld a, 60 ;time
+	ld a, 32 ;time
 	farjp StartTempleTimer

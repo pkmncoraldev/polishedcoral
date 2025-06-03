@@ -424,7 +424,17 @@ RadioTowerRocketsScript:
 	end
 
 TempleTimerEndScript:
-	special ClearBGPalettes
+	special FadeOutPalettes
+	killsfx
+	playsound SFX_THUNDER
+	waitsfx
+	opentext
+	writetext TempleRoofCollapseText
+	waitbutton
+	closetext
+	waitsfx
+	special Special_FadeOutMusic
+	pause 5
 	special Special_ForcePlayerStateNormal
 	clearflag ENGINE_BUG_CONTEST_TIMER
 	clearevent EVENT_TEMPLE_RUMBLING
@@ -449,8 +459,13 @@ TempleTimerEndScript:
 	end
 .lower_left
 	clearevent EVENT_DESERT_TEMPLE_SWITCH_3
-	warpfacing LEFT, DESERT_TEMPLE_LOWER_LEFT, 9, 8
+	warpfacing LEFT, DESERT_TEMPLE_LOWER_LEFT, 27, 10
 	end
+	
+TempleRoofCollapseText:
+	text "The roof"
+	line "collapsed!"
+	done
 	
 CheckTempleMapAsm:
 	ld a, [wMapNumber]

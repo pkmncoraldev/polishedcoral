@@ -52,5 +52,5 @@ DesertTempleLowerRightSwitch:
 DesertTempleLowerRightSetTimerAsm:
 	ld hl, wStatusFlags2
 	set 2, [hl] ; ENGINE_BUG_CONTEST_TIMER
-	ld a, 15 ;time
+	ld a, 12 ;time
 	farjp StartTempleTimer

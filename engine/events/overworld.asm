@@ -2430,12 +2430,13 @@ UnknownText_0xcf58: ; 0xcf58
 	text_jump UnknownText_0x1c08f0
 	db "@"
 
-AskRockSmashScript: ; 0xcf5d
+AskRockSmashScript:
+	playsound SFX_READ_TEXT_2
+AskRockSmashScript2::
 	checkdebugmode
 	iftrue .debugrocksmash
 	callasm HasRockSmash
 	ifequal 1, .no
-	playsound SFX_READ_TEXT_2
 	checkflag ENGINE_ROCK_SMASH_ACTIVE
 	iftrue AutoRockSmashScript
 	opentext
@@ -2447,7 +2448,6 @@ AskRockSmashScript: ; 0xcf5d
 	end
 	
 .debugrocksmash
-	playsound SFX_READ_TEXT_2
 	opentext
 	writetext DebugFieldMoveText
 	closetext

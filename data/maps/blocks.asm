@@ -924,6 +924,8 @@ GreenGrotto1F_BlockData:
 GreenGrottoB1F_BlockData:
 	INCBIN "maps/GreenGrottoB1F.ablk.lz"
 	
+SECTION "Map Blockdata 3", ROMX
+
 Inn1F_BlockData:
 	INCBIN "maps/Inn1F.ablk.lz"
 	
@@ -932,8 +934,6 @@ Inn2F_BlockData:
 	
 Inn3F_BlockData:
 	INCBIN "maps/Inn3F.ablk.lz"
-	
-SECTION "Map Blockdata 3", ROMX
 
 InnVent_BlockData:
 	INCBIN "maps/InnVent.ablk.lz"

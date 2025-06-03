@@ -2220,6 +2220,7 @@ StepType14: ; 4f33
 	add hl, bc
 	dec [hl]
 	jr z, .ok
+.return
 	ld a, [hl]
 	call .GetSign
 	ld hl, OBJECT_29
@@ -2232,6 +2233,14 @@ StepType14: ; 4f33
 	ret
 
 .ok
+	push bc
+	push hl
+	push de
+	eventflagcheck EVENT_TEMPLE_RUMBLING
+	pop de
+	pop hl
+	pop bc
+	jr nz, .return
 	jp DeleteMapObject
 
 .GetSign:

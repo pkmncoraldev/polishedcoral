@@ -356,7 +356,7 @@ DEF MAP_NONE   EQU 0
 	map_const DESERT_TEMPLE_1,							  11, 19 ; 1
 	map_const DESERT_TEMPLE_TOP_LEFT,					   6, 11 ; 2
 	map_const DESERT_TEMPLE_TOP_RIGHT,					  18, 14 ; 3
-	map_const DESERT_TEMPLE_LOWER_LEFT,					   5,  5 ; 4
+	map_const DESERT_TEMPLE_LOWER_LEFT,					  14, 10 ; 4
 	map_const DESERT_TEMPLE_LOWER_RIGHT,				  12, 11 ; 5
 	map_const DESERT_TEMPLE_2,							   5,  9 ; 6
 	

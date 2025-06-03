@@ -52,5 +52,5 @@ DesertTempleTopLeftSwitch:
 DesertTempleTopLeftSetTimerAsm:
 	ld hl, wStatusFlags2
 	set 2, [hl] ; ENGINE_BUG_CONTEST_TIMER
-	ld a, 17 ;time
+	ld a, 16 ;time
 	farjp StartTempleTimer

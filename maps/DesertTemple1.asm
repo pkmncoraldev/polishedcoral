@@ -115,13 +115,13 @@ DesertTemple1Trigger1:
 DesertTemple1Trigger2:
 	checkevent EVENT_TEMPLE_RUMBLING
 	iffalse .skip
+	clearevent EVENT_TEMPLE_RUMBLING
 	playsound SFX_THUNDER
 	earthquake 20
 	opentext
 	writetext DesertTemple1CollapseText2
 	waitbutton
 	closetext
-	clearevent EVENT_TEMPLE_RUMBLING
 .skip
 	end
 

@@ -237,13 +237,13 @@ IsFieldMove: ; 24e52
 	farcall CheckSoftboiledUsers
 	jr c, .yes
 	pop de
-	jr .next
+	ret
 .flash
 	push de
 	farcall CheckFlashUsers
 	jr c, .yes
 	pop de
-	jr .next
+	ret
 .yes
 	pop de
 	ld a, d

@@ -32,8 +32,8 @@ Route11ChangeBlocks:
 	checkevent EVENT_ROUTE_11_BRIDGE_BUILT
 	iffalse .end
 	changemap Route11Bridge_BlockData
-	moveperson 10, $0c, $15
-	moveperson 11, $0c, $14
+	moveperson 9, $0c, $15
+	moveperson 10, $0c, $14
 .end
 	return
 	

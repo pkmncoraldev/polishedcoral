@@ -375,6 +375,8 @@ CrossroadsCutscene2:
 	special Special_FadeOutMusic
 	pause 15
 	setevent EVENT_CROSSROADS_CUTSCENE_DONE
+	setevent EVENT_ROUTE_11_BRIDGE_BUILT
+	clearevent EVENT_ROUTE_11_BRIDGE_NOT_BUILT
 	playnewmapmusic
 	dotrigger $1
 	end

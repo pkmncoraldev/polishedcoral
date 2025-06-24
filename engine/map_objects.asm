@@ -652,6 +652,7 @@ MapObjectMovementPattern:
 	dw .MovementTileHalfwayRight
 	dw .MovementCursola
 	dw .MovementLemonade
+	dw .MovementTrackPlayer
 
 .RandomWalkY:
 	call Random
@@ -947,6 +948,30 @@ MapObjectMovementPattern:
 	ld hl, OBJECT_ACTION
 	add hl, bc
 	ld [hl], PERSON_ACTION_STAND
+	ret
+
+.MovementTrackPlayer
+	ld hl, OBJECT_MAP_X
+	add hl, bc
+	ld a, [hl]
+	sub 4
+	ld e, a
+	ld a, [wXCoord]
+	cp e
+	jr z, .down
+	cp e
+	jr nc, .right
+	ld a, OW_LEFT
+	jr .cont
+.right
+	ld a, OW_RIGHT
+	jr .cont
+.down
+	ld a, OW_DOWN
+.cont
+	ld hl, OBJECT_FACING
+	add hl, bc
+	ld [hl], a
 	ret
 
 .MovementBigStanding:

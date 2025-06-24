@@ -90,7 +90,7 @@ AirportTrigger2:
 	clearevent EVENT_AIRPORT_LUGGAGE_4
 	clearevent EVENT_AIRPORT_SLOWPOKE
 	special Special_UpdatePalsInstant
-	variablesprite SPRITE_BAGGAGE, SPRITE_MALL_SIGN
+	variablesprite SPRITE_BAGGAGE, SPRITE_BACKPACK
 	jump .end
 .change3
 	clearevent EVENT_AIRPORT_LUGGAGE_1

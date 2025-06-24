@@ -82,8 +82,8 @@ TalkToBankCardGirlScript::
 	writetext BankCardNPCText5
 	waitbutton
 	closetext
-	applymovement 17, Movement_BankGirl2
-	disappear 17
+	applymovement 13, Movement_BankGirl2
+	disappear 13
 	pause 10
 	spriteface PLAYER, DOWN
 	opentext
@@ -338,8 +338,8 @@ SeenByBankCardGirlScript:
 	writetext BankCardNPCText5
 	waitbutton
 	closetext
-	applymovement 17, Movement_BankGirl1
-	disappear 17
+	applymovement 13, Movement_BankGirl1
+	disappear 13
 	pause 10
 	spriteface PLAYER, DOWN
 	opentext
@@ -360,16 +360,18 @@ SeenByBankCardGirlScript:
 	if_equal 18, .right_2
 	end
 .left_1
-	applymovement 17, Movement_BankGirl3
-	end
+	applymovement 13, Movement_BankGirl3
+	jump .step_end
 .left_2
-	applyonemovement 17, step_right
-	end
+	applyonemovement 13, step_right
+	jump .step_end
 .right_1
-	applyonemovement 17, step_left
-	end
+	applyonemovement 13, step_left
+	jump .step_end
 .right_2
-	applymovement 17, Movement_BankGirl4
+	applymovement 13, Movement_BankGirl4
+.step_end
+	applyonemovement 13, step_sleep_1
 	end
 .JumpstdReceiveItem:
 	jumpstd receiveitem

@@ -286,6 +286,16 @@ CheckEventFlag::
 	ret
 
 CheckTrainerBattle3: ; 96867
+	ld a, [wMapGroup]
+	cp GROUP_LUSTER_CITY_SHOPPING
+	jr nz, .not_bank_girl
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_CITY_SHOPPING
+	jr nz, .not_bank_girl
+	ld a, [wYCoord]
+	cp 34
+	jr nz, .nope
+.not_bank_girl
 	call CheckTrainerBattle2
 	jr nc, .nope
 

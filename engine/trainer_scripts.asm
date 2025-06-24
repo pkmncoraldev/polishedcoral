@@ -5,6 +5,7 @@ TalkToTrainerScript:: ; 0xbe66a
 	loadmemtrainer
 	callasm CheckTrainerClass
 	if_equal PLAYER_CORY, TalkToAirportGuardScript
+	if_equal PLAYER_CORA, TalkToBankCardGirlScript
 	encountermusic
 	jump StartBattleWithMapTrainerScript
 	
@@ -25,6 +26,230 @@ TalkToAirportGuardScript:
 	domaptrigger ONWA_INTL_AIRPORT, $1
 	warp2 DOWN, ONWA_INTL_AIRPORT, $0d, $00
 	end
+	
+TalkToBankCardGirlScript::
+	faceobject PLAYER, LAST_TALKED
+	opentext
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
+	iftrue .talking_again2
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
+	iftrue .talking_again
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
+	writetext BankCardNPCText1
+	jump .cont
+.talking_again
+	writetext BankCardNPCText1_2
+.cont
+	yesorno
+	iffalse .no
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
+	writetext BankCardNPCText2
+	jump .cont2
+.talking_again2
+	writetext BankCardNPCText2_2
+.cont2
+	yesorno
+	iffalse .no
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl
+	writetext BankCardNPCText3_boy
+	jump .cont3
+.girl
+	writetext BankCardNPCText3_girl
+.cont3
+	playsound SFX_LEVEL_UP
+	waitsfx
+	waitbutton
+	closetext
+	pause 15
+	opentext
+	writetext BankCardNPCText4
+	waitbutton
+	stringtotext BankCardName, $1
+	scall .JumpstdReceiveItem
+	setflag ENGINE_BANK_CARD
+	writetext GotBankCardText
+	waitbutton
+	closetext
+	pause 5
+	opentext
+	writetext BankCardNPCText5
+	waitbutton
+	closetext
+	applymovement 17, Movement_BankGirl2
+	disappear 17
+	pause 10
+	spriteface PLAYER, DOWN
+	opentext
+	writetext BankCardNPCText6
+	waitbutton
+	closetext
+	loadvar wOtherTrainerClass, 0
+	end
+.no
+	writetext BankCardNPCTextNo
+	waitbutton
+	closetext
+	loadvar wOtherTrainerClass, 0
+	end
+.JumpstdReceiveItem:
+	jumpstd receiveitem
+	end
+	
+BankCardNPCText1:
+	text "Hiiiiii!<WAIT_S>"
+	line "(smile, smile)"
+	
+	para "Can I have just a"
+	line "moment of your"
+	cont "time? <WAIT_S>(smile)<WAIT_S>"
+	done
+	
+BankCardNPCText1_2:
+	text "Hiiiiii!<WAIT_S>"
+	line "(smile, smile)"
+	
+	para "Change your mind?<WAIT_S>"
+	line "(smile, smile)"
+	
+	para "Can I have just a"
+	line "moment of your"
+	cont "time? <WAIT_S>(smile)<WAIT_S>"
+	done
+	
+BankCardNPCText2:
+	text "I'm out here giving"
+	line "away good stuff to"
+	cont "make people happy!"
+	
+	para "You wanna be happy"
+	line "too, right?"
+	
+	para "Of course ya do!<WAIT_S>"
+	line "(smile, smile)"
+	
+	para "All I need is a"
+	line "little bit of your"
+	cont "information."
+	
+	para "Nothing big, just"
+	line "your name, home"
+	cont "address, and your"
+	cont "#GEAR number."
+	
+	para "If you'll write all"
+	line "that down for me,"
+	cont "I'll give you a"
+	cont "special gift!"
+	
+	para "A BANK CARD for"
+	line "your #GEAR!"
+	
+	para "Whad'ya say?<WAIT_S>"
+	line "(smile, smile)<WAIT_S>"
+	done
+	
+BankCardNPCText2_2:
+	text "Hiiiiii!<WAIT_S>"
+	line "(smile, smile)"
+	
+	para "Change your mind?<WAIT_S>"
+	line "(smile, smile)"
+	
+	para "If you give me"
+	line "your name, home"
+	cont "address, and your"
+	cont "#GEAR number,"
+	
+	para "I'll give you a"
+	line "BANK CARD for"
+	cont "your #GEAR."
+	
+	para "Whad'ya say?<WAIT_S>"
+	line "(smile, smile)<WAIT_S>"
+	done
+	
+BankCardNPCText3_boy:
+	text "<PLAYER> gave the"
+	line "lady his info…"
+	done
+	
+BankCardNPCText3_girl:
+	text "<PLAYER> gave the"
+	line "lady her info…"
+	done
+	
+BankCardNPCText4:
+	text "Thank you!!!<WAIT_M>"
+	line "Here's your gift!"
+	done
+	
+BankCardNPCText5:
+	text "I'm finally done!<WAIT_S>"
+	line "I met my quota!"
+	
+	para "Yippee!!!"
+	
+	para "See ya later!"
+	done
+	
+BankCardNPCText6:
+	text "Was that really"
+	line "such a good idea?"
+	done
+	
+BankCardNPCTextNo:
+	text "Oh boo!<WAIT_S>"
+	line "(pout, pout)"
+	done
+	
+GotBankCardText:
+	text "<PLAYER>'s #GEAR"
+	line "can now function"
+	cont "as an ATM!"
+	done
+	
+BankCardName:
+	db "BANK CARD@"
+	
+Movement_BankGirl1:
+	turn_step_down
+	turn_step_down
+	turn_step_down
+	run_step_down
+	run_step_right
+	run_step_right
+	run_step_right
+	run_step_right
+	run_step_right
+	step_end
+
+Movement_BankGirl2:
+	turn_step_right
+	turn_step_right
+	turn_step_right
+	run_step_right
+	run_step_right
+	run_step_right
+	run_step_right
+	run_step_right
+	step_end
+	
+Movement_BankGirl3:
+	step_right
+	step_right
+	step_end
+	
+Movement_BankGirl4:
+	step_left
+	step_left
+	step_end
 
 SeenByTrainerScript:: ; 0xbe675
 	special Special_StopRunning
@@ -32,6 +257,7 @@ SeenByTrainerScript:: ; 0xbe675
 	loadmemtrainer
 	callasm CheckTrainerClass
 	if_equal PLAYER_CORY, SeenByAirportGuardScript
+	if_equal PLAYER_CORA, SeenByBankCardGirlScript
 	encountermusic
 	showemote EMOTE_SHOCK, LAST_TALKED, 30
 	callasm TrainerWalkToPlayer
@@ -61,6 +287,92 @@ SeenByAirportGuardScript:
 	loadvar wOtherTrainerClass, 0
 	domaptrigger ONWA_INTL_AIRPORT, $1
 	warp2 DOWN, ONWA_INTL_AIRPORT, $0d, $00
+	end
+	
+SeenByBankCardGirlScript:
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, LAST_TALKED, 30
+	callasm TrainerWalkToPlayer
+	pause 1
+	applymovement2 wMovementBuffer
+	writepersonxy LAST_TALKED
+	faceobject PLAYER, LAST_TALKED
+	opentext
+	writetext BankCardNPCText1
+	yesorno
+	iffalse .no
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
+	writetext BankCardNPCText2
+	yesorno
+	iffalse .no
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl
+	writetext BankCardNPCText3_boy
+	jump .cont
+.girl
+	writetext BankCardNPCText3_girl
+.cont
+	playsound SFX_LEVEL_UP
+	waitsfx
+	waitbutton
+	closetext
+	pause 15
+	opentext
+	writetext BankCardNPCText4
+	waitbutton
+	stringtotext BankCardName, $1
+	scall .JumpstdReceiveItem
+	setflag ENGINE_BANK_CARD
+	writetext GotBankCardText
+	waitbutton
+	closetext
+	pause 5
+	opentext
+	writetext BankCardNPCText5
+	waitbutton
+	closetext
+	applymovement 17, Movement_BankGirl1
+	disappear 17
+	pause 10
+	spriteface PLAYER, DOWN
+	opentext
+	writetext BankCardNPCText6
+	waitbutton
+	closetext
+	loadvar wOtherTrainerClass, 0
+	end
+.no
+	writetext BankCardNPCTextNo
+	waitbutton
+	closetext
+	loadvar wOtherTrainerClass, 0
+	checkcode VAR_XCOORD
+	if_equal 12, .left_1
+	if_equal 13, .left_2
+	if_equal 17, .right_1
+	if_equal 18, .right_2
+	end
+.left_1
+	applymovement 17, Movement_BankGirl3
+	end
+.left_2
+	applyonemovement 17, step_right
+	end
+.right_1
+	applyonemovement 17, step_left
+	end
+.right_2
+	applymovement 17, Movement_BankGirl4
+	end
+.JumpstdReceiveItem:
+	jumpstd receiveitem
 	end
 	
 StartBattleWithMapTrainerScript: ; 0xbe68a

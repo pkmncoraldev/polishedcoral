@@ -11,7 +11,7 @@ SpookhouseBedroom_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 19 ; bg events
+	db 17 ; bg events
 	signpost 2, 11, SIGNPOST_READ, SpookHouseBookshelf
 	signpost 2, 10, SIGNPOST_READ, SpookHouseBookshelf
 	signpost 3, 2, SIGNPOST_READ, SpookHouseBed
@@ -27,17 +27,17 @@ SpookhouseBedroom_MapScriptHeader:
 	signpost  7,  9, SIGNPOST_READ, SpookHouseDiningRoomBelow
 	signpost  7, 10, SIGNPOST_READ, SpookHouseDiningRoomBelow
 	signpost  7, 11, SIGNPOST_READ, SpookHouseDiningRoomBelow
-	signpost  3,  3, SIGNPOST_READ, SpookHouseDiningRoomBelow
 	signpost  3,  4, SIGNPOST_READ, SpookHouseDiningRoomBelow
 	signpost  3,  5, SIGNPOST_READ, SpookHouseDiningRoomRubble
-	signpost  2,  4, SIGNPOST_READ, SpookHouseDiningRoomRubble
 
-	db 2 ; object events
-	person_event SPRITE_SCARY_PAINTING,  1,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SpookHousePainting, -1
+	db 3 ; object events
+	person_event SPRITE_SCARY_PAINTING,  1,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SpookHousePainting, EVENT_SCARY_PAINTING_GONE
+	person_event SPRITE_SCARY_PAINTING_2,  1,  4, SPRITEMOVEDATA_TRACK_PLAYER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SpookHousePainting2, EVENT_SCARY_PAINTING_GONE_2
 	person_event SPRITE_TWIN,  7,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SpookHouseNPC1, EVENT_ALWAYS_SET
 	
 	const_def 1 ; object constants
 	const SPOOKHOUSE_BEDROOM_PAINTING
+	const SPOOKHOUSE_BEDROOM_PAINTING_2
 	const SPOOKHOUSE_BEDROOM_GIRL
 	
 SpookhouseBedroomCallback:
@@ -67,10 +67,59 @@ SpookHouseDiningRoomBelow:
 SpookHouseDiningRoomRubble:
 	jumptext SpookHouseDiningRoomRubbleText
 	
+SpookHousePainting2:
+	opentext
+	writetext SpookHousePainting2Text
+	playsound SFX_THIEF_2
+	waitsfx
+	waitbutton
+	closetext
+	callasm PaintingPoison
+	end
+	
+SpookHousePainting2Text:
+	text "The painting"
+	line "exudes an ominous"
+	cont "aura."
+	
+	para "Looking at it"
+	line "makes you sick to"
+	cont "your stomach."
+	done
+	
+PaintingPoison:
+	ld a, [wPartyCount]
+	ld e, a
+	xor a
+	ld [wCurPartyMon], a
+	jr .skip
+.loop
+	ld a, [wCurPartyMon]
+	inc a
+	ld [wCurPartyMon], a
+.skip
+	ld a, e
+	cp -1
+	ret z
+	dec e
+	ld a, MON_STATUS
+	call GetPartyParamLocation
+	ld a, [hl]
+	and 1 << PSN
+	jr nz, .loop
+	
+	ld a, 1 << PSN
+	ld [hl], a
+	ret
+	
 SpookHouseJournal:
 	checkevent EVENT_SPOOKHOUSE_BEATEN
 	iftrue .no_scary
+	checkevent EVENT_SCARY_PAINTING_GONE
+	iftrue .no_scary
 	appear SPOOKHOUSE_BEDROOM_GIRL
+	appear SPOOKHOUSE_BEDROOM_PAINTING_2
+	spriteface SPOOKHOUSE_BEDROOM_PAINTING_2, UP
 	opentext
 	writetext SpookHouseJournalText1
 	yesorno
@@ -84,9 +133,9 @@ SpookHouseJournal:
 	writetext SpookHouseJournalText5
 	yesorno
 	iffalse SpookHouseJournalNo
-	spriteface SPOOKHOUSE_BEDROOM_PAINTING, DOWN
-	pause 1
 	spriteface SPOOKHOUSE_BEDROOM_PAINTING, UP
+	pause 1
+	spriteface SPOOKHOUSE_BEDROOM_PAINTING, DOWN
 	writetext SpookHouseJournalText6
 	yesorno
 	iffalse SpookHouseJournalNo
@@ -95,12 +144,13 @@ SpookHouseJournal:
 	farwritetext StdBlankText
 	pause 6
 	spriteface SPOOKHOUSE_BEDROOM_PAINTING, RIGHT
+	spriteface SPOOKHOUSE_BEDROOM_PAINTING_2, RIGHT
 	writetext SpookHouseJournalText8
 	waitbutton
 	closetext
-	spriteface SPOOKHOUSE_BEDROOM_PAINTING, UP
 	pause 2
 	disappear SPOOKHOUSE_BEDROOM_GIRL
+	disappear SPOOKHOUSE_BEDROOM_PAINTING
 	end
 .no_scary
 	opentext
@@ -132,6 +182,10 @@ SpookHouseJournalNo:
 	farwritetext BetterNotText
 	waitbutton
 	disappear SPOOKHOUSE_BEDROOM_GIRL
+	checkevent EVENT_SCARY_PAINTING_GONE
+	iftrue .skip
+	disappear SPOOKHOUSE_BEDROOM_PAINTING_2
+.skip
 	closetext
 	end
 	

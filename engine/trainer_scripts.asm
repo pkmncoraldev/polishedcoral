@@ -228,12 +228,16 @@ Movement_BankGirl1:
 	run_step_right
 	run_step_right
 	run_step_right
+	run_step_right
+	run_step_right
 	step_end
 
 Movement_BankGirl2:
 	turn_step_right
 	turn_step_right
 	turn_step_right
+	run_step_right
+	run_step_down
 	run_step_right
 	run_step_right
 	run_step_right

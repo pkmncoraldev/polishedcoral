@@ -445,7 +445,6 @@ DEF PLAYER_F EQU __enum__
 	const GARY
 	const DEVIN
 	const IAN
-	const DEON
 	const RICH
 	const DAVY
 

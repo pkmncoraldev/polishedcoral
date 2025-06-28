@@ -65,14 +65,13 @@ Route15_MapScriptHeader:
 	db 1 ; bg events
 	signpost  9, 38, SIGNPOST_ITEM + DIVE_BALL, EVENT_ROUTE_15_DIVE_BALL
 
-	db 8 ; object events
+	db 7 ; object events
 	person_event SPRITE_SAILOR, 14, 45, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRoute15_1, -1
 	person_event SPRITE_SWIMMER_GIRL,  6,  8, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute15_2, -1
 	person_event SPRITE_SWIMMER_GIRL, 18,  6, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute15_3, -1
 	person_event SPRITE_SWIMMER_GUY, 16, 17, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute15_4, -1
 	person_event SPRITE_SWIMMER_GUY, 15, 67, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute15_5, -1
-	person_event SPRITE_SWIMMER_GUY, 28, 19, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute15_6, -1
-	person_event SPRITE_SWIMMER_GIRL, 19, 79, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute15_7, -1
+	person_event SPRITE_SWIMMER_GIRL, 28, 19, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute15_6, -1
 	tapeball_event 60, 18, MUSIC_UNDERWATER, 1, EVENT_MUSIC_UNDERWATER
 	
 TrainerRoute15_1:
@@ -202,35 +201,7 @@ TrainerRoute15_5:
 	done
 	
 TrainerRoute15_6:
-	generictrainer SWIMMERM, DEON, EVENT_BEAT_ROUTE_15_TRAINER_6, .SeenText, .BeatenText
-
-	text "The entrance to"
-	line "the cave is on"
-	cont "the neaby island."
-	
-	para "It apparently goes"
-	line "into a big under-"
-	cont "water cavern."
-	
-	para "I bet it gets real"
-	line "dark down there…"
-	done
-
-.SeenText:
-	text "There's apparently"
-	line "a cave nearby."
-	
-	para "Beat me and I'll"
-	line "tell you more!"
-	done
-
-.BeatenText:
-	text "Alright, <WAIT_S>I'll"
-	line "tell you!"
-	done
-	
-TrainerRoute15_7:
-	generictrainer SWIMMERF, CONNIE, EVENT_BEAT_ROUTE_15_TRAINER_7, .SeenText, .BeatenText
+	generictrainer SWIMMERF, CONNIE, EVENT_BEAT_ROUTE_15_TRAINER_6, .SeenText, .BeatenText
 
 	text "I've gotta get"
 	line "to the shore and"

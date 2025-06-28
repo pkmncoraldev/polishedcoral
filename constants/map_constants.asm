@@ -389,7 +389,7 @@ DEF MAP_NONE   EQU 0
 	map_const ROUTE_22_TUNNEL,							  20, 12 ; 11
 	map_const SEASIDE_CAVE_1F,							  12, 19 ; 12
 	map_const DUSK_HOUSE_2,     	             		   4,  4 ; 
-	map_const SEASIDE_CAVE_B1F,							  13, 18 ; 13
+	map_const SEASIDE_CAVE_B1F,							  13, 21 ; 13
 	map_const SEASIDE_CAVE_B2F,							   8, 10 ; 14
 	map_const BAR_BACK_ALLEY,							  10,  6 ; 15
 	map_const BAR_INSIDE,								   8,  5 ; 16

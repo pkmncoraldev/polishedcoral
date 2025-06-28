@@ -146,7 +146,7 @@
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; 91
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; 92
 	tilecoll WALL, FLOOR, WALL, WALL ; 93
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 94
+	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; 94
 	tilecoll FLOOR, FLOOR, PUDDLE, PUDDLE ; 95
 	tilecoll FLOOR, LEDGE_DOWN, WALL, WALL ; 96
 	tilecoll WALL, LEDGE_DOWN, WALL, WALL ; 97
@@ -233,7 +233,7 @@
 	tilecoll WATER, WATER, PUDDLE, PUDDLE ; e8
 	tilecoll WALL, WALL, FLOOR, FLOOR ; e9
 	tilecoll FLOOR, FLOOR, WALL, WALL ; ea
-	tilecoll PUDDLE, WATER, CURRENT_LEFT, CURRENT_LEFT ; eb
+	tilecoll PUDDLE, PUDDLE, CURRENT_LEFT, CURRENT_LEFT ; eb
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; ec
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; ed
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; ee

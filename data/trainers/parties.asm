@@ -4067,17 +4067,6 @@ SwimmerMGroup:
 ; ================
 
 	; SWIMMERM
-	db "DEON@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 35, CHINCHOU
-	db 33, LANTURN
-	db 33, SEADRA
-	db -1 ; end
-
-; ================
-
-	; SWIMMERM
 	db "RICH@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -4160,8 +4149,9 @@ SwimmerFGroup:
 	db "CONNIE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 34, MAREANIE
-	db 35, MAREANIE
+	db 35, CHINCHOU
+	db 33, LANTURN
+	db 33, SEADRA
 	db -1 ; end
 
 ; ================

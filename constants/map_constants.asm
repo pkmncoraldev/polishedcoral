@@ -24,7 +24,7 @@ DEF MAP_NONE   EQU 0
 	map_const PLAYER_HOUSE_2F,                            10, 12 ;  2
 	map_const DAYBREAK_GROTTO_1,                           9,  7 ;  3
 	map_const DAYBREAK_GROTTO_2,                          10, 11 ;  4
-	map_const DAYBREAK_GROTTO_3,                           9, 29 ;  5
+	map_const DAYBREAK_GROTTO_3,                           9, 20 ;  5
 	map_const GLINT_GROVE,                                20, 30 ;  6
 	map_const GLINT_GROVE_EAST,                           10, 25 ;  7
 	map_const GLINT_GROVE_DEEP,							  12, 18 ;  8

@@ -2480,9 +2480,11 @@ Pokedex_LoadUnownFont: ; 41a2c
 NewPokedexEntry: ; fb877
 	ldh a, [hMapAnims]
 	push af
+	ld a, [wPokedexDataEnd]
+	push af
 	ld a, [wCurForm]
 	and $f ; Take the lower nybble only.
-	push af
+	ld [wPokedexDataEnd], a
 	ld a, 1
 	ld [wCurForm], a
 	ld a, [wEnemyBackupShiny]
@@ -2514,10 +2516,11 @@ NewPokedexEntry: ; fb877
 	ldh a, [hSCX]
 	add -5
 	ldh [hSCX], a
-	
-	pop af
+	ld a, [wPokedexDataEnd]
 	ld [wCurForm], a
 	call .ReturnFromDexRegistration
+	pop af
+	ld [wPokedexDataEnd], a
 	pop af
 	ldh [hMapAnims], a
 	ret

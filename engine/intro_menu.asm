@@ -797,7 +797,7 @@ CoralSplashScreen:
 	call Request2bpp
 	ld de, DisclaimerScreenGFX2
 	ld hl, VTiles2 tile $00
-	lb bc, BANK(DisclaimerScreenGFX2), $7f
+	lb bc, BANK(DisclaimerScreenGFX2), $80
 	call Request2bpp
 	
 	hlcoord 7, 1

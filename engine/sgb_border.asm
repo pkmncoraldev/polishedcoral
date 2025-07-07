@@ -55,9 +55,9 @@ SGBDelayCycles:
 	ret
 
 InitSGBBorder::
-	ldh a, [hCGB]
-	and a
-	ret nz
+	; ldh a, [hCGB]
+	; and a
+	; ret nz
 
 	di
 	ld hl, MaskEnFreezePacket
@@ -104,7 +104,7 @@ CopyGfxToSuperNintendoVRAM:
 	jr .next
 .notCopyingTileData
 	ld bc, $1000
-	call CopyData
+	call CopySGBBorderData
 .next
 	ld hl, VBGMap0
 	ld de, $c
@@ -127,6 +127,17 @@ CopyGfxToSuperNintendoVRAM:
 	xor a
 	ldh [rBGP], a
 	ei
+	ret
+
+CopySGBBorderData:
+; copy bc bytes of data from hl to de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec bc
+	ld a, c
+	or b
+	jr nz, CopySGBBorderData
 	ret
 
 CopySGBBorderTiles:

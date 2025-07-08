@@ -784,7 +784,14 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, [wMapGroup]
 	cp GROUP_OBSCURA_MUSEUM_2F
 	jp nz, .do_nothing
+	ld a, [wMapNumber]
+	cp MAP_OBSCURA_MUSEUM_1F
+	jr z, .museum_1f
 	ld hl, MuseumPalette
+	jp LoadBGPal6
+	jp .do_nothing
+.museum_1f
+	ld hl, MuseumPalette2
 	jp LoadBGPal6
 	jr .do_nothing
 	
@@ -1043,6 +1050,9 @@ INCLUDE "maps/palettes/bgpals/fossillab.pal"
 
 MuseumPalette::
 INCLUDE "maps/palettes/bgpals/museum.pal"
+
+MuseumPalette2::
+INCLUDE "maps/palettes/bgpals/museum2.pal"
 
 AirportPalette:
 INCLUDE "maps/palettes/bgpals/airport.pal"

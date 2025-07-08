@@ -226,6 +226,7 @@ SpriteHeaders:
 	overworld_sprite OttoSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite TogepiOwSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite ScaryPainting2SpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite FossilDisplaysSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

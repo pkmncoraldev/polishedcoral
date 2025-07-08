@@ -222,6 +222,7 @@
 	const SPRITE_OTTO
 	const SPRITE_TOGEPI
 	const SPRITE_SCARY_PAINTING_2
+	const SPRITE_FOSSIL_DISPLAYS
 	
 	const_def $ed
 DEF SPRITE_POKEMON EQU const_value

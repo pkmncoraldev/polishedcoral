@@ -40,30 +40,34 @@ ObscuraMuseum1F_MapScriptHeader:
 	bg_event 20,  9, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_MUSEUM_1F_HIDDEN_BOTTLE_CAP
 	signpost 16,  8, SIGNPOST_IFSET, ObscuraMuseumLockedDoor
 	signpost 16,  9, SIGNPOST_IFSET, ObscuraMuseumLockedDoor
-	signpost  6,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumArcheopsFossilText
-	signpost  7,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumArcheopsFossilText
+	signpost  6,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumMassiveFossilText
+	signpost  7,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumMassiveFossilText
 	signpost  8,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumArcheopsFossilText
-	signpost  6,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumArcheopsFossilText
-	signpost  7,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumArcheopsFossilText
+	signpost  6,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumMassiveFossilText
+	signpost  7,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumMassiveFossilText
 	signpost  8,  9, SIGNPOST_JUMPTEXT, ObscuraMuseumArcheopsFossilText
-	signpost  4, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumCarracostaFossilText
-	signpost  5, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumCarracostaFossilText
+	signpost  4, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumMassiveFossilText
+	signpost  5, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumMassiveFossilText
 	signpost  6, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumCarracostaFossilText
-	signpost  4, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumCarracostaFossilText
-	signpost  5, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumCarracostaFossilText
+	signpost  4, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumMassiveFossilText
+	signpost  5, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumMassiveFossilText
 	signpost  6, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumCarracostaFossilText
 	signpost  9, 19, SIGNPOST_UP, ObscuraMuseum1FVendingMachine
 
-	db 9 ; object events
+	db 13 ; object events
 	person_event SPRITE_RECEPTIONIST, 12, 11, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FReceptionist1, -1
 	person_event SPRITE_ROCKY,  3,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FRockyScript, EVENT_MUSEUM_1F_ROCKY_SCENE
 	person_event SPRITE_SNARE_GIRL,  3,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MUSEUM_1F_ROCKY_SCENE
 	person_event SPRITE_MATRON,  4, 16, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC1, -1
 	person_event SPRITE_CUTE_GIRL, 13,  1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC2, -1
 	object_event  2, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, BAYLEEF, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FBayleef, -1
-	person_event SPRITE_SNARE,  7, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM
+	person_event SPRITE_SNARE,  7, 12, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, ObscuraMuseum1FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE,  1,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare2, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE_GIRL, 12,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 0, ObscuraMuseum1FSnare3, EVENT_SNARE_GONE_FROM_MUSEUM
+	person_event SPRITE_FOSSIL_DISPLAYS,  6,  8, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_FOSSIL_DISPLAYS,  6,  9, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_FOSSIL_DISPLAYS,  4, 12, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_FOSSIL_DISPLAYS,  4, 13, SPRITEMOVEDATA_TILE_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	
 	
 	const_def 1 ; object constants
@@ -242,16 +246,44 @@ ObscuraMuseum1FSoldOutText:
 	line "last one!"
 	done
 	
+ObscuraMuseumMassiveFossilText:
+	text "A massive #MON"
+	line "skeleton."
+	done
+	
 ObscuraMuseumArcheopsFossilText:
-	text "This will be a"
-	line "giant ARCHEOPS"
-	cont "fossil."
+	text "ARCHEOPS was a"
+	line "fierce hunter."
+	
+	para "Despite its large"
+	line "wing plummage,"
+	cont "it was far more"
+	cont "adept at running"
+	cont "than flying."
+	
+	para "As such, it mostly"
+	line "hunted grounded"
+	cont "prey."
 	done
 	
 ObscuraMuseumCarracostaFossilText:
-	text "This will be a"
-	line "giant CARRACOSTA"
-	cont "fossil."
+	text "CARRACOSTA's jaw"
+	line "was incredibly"
+	cont "powerful."
+	
+	para "Its bite had"
+	line "enough power to"
+	cont "crush steel beams."
+	
+	para "Rather than search"
+	line "for prey that was"
+	cont "out in the open,"
+	
+	para "it would scoop up"
+	line "rocks and chew"
+	cont "them whole, along"
+	cont "with the prey"
+	cont "hiding underneath."
 	done
 	
 ObscuraMuseumLockedDoor:

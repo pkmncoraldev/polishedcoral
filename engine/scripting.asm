@@ -1346,6 +1346,13 @@ Script_showemote:
 	jp ScriptCall
 	
 .indoor
+	ld a, [wMapGroup]
+	cp GROUP_OBSCURA_MUSEUM_1F
+	jr nz, .cont
+	ld a, [wMapNumber]
+	cp MAP_OBSCURA_MUSEUM_1F
+	jr z, .no_color_change
+.cont
 	call GetScriptByte
 	ld [wScriptDelay], a
 	ld b, BANK(ShowEmoteIndoorScript)

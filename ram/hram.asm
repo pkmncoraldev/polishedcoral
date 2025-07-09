@@ -146,6 +146,7 @@ DEF hBattleTurn        EQU $ffe4 ; Which trainers turn is it? 0: Player, 1: Oppo
 
 DEF hCGBPalUpdate      EQU $ffe5
 DEF hCGB               EQU $ffe6
+DEF hSGB               EQU $ffe7
 
 DEF hDMATransfer       EQU $ffe8
 

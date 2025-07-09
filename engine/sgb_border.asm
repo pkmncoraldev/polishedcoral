@@ -60,74 +60,171 @@ InitSGBBorder::
 	; ret nz
 
 	di
-	ld hl, MaskEnFreezePacket
-	call SendSGBPacket
-	ei
-
-	ld a, TRUE
-	ld [wCopyingSGBTileData], a
-	ld de, ChrTrnPacket
-	ld hl, SGBBorderGraphics
-	call CopyGfxToSuperNintendoVRAM
+	ld a, [wInputFlags]
+	push af
+	set 7, a
+	ld [wInputFlags], a
 
 	xor a
-	ld [wCopyingSGBTileData], a
-	ld de, PctTrnPacket
-	ld hl, SGBBorderMap
-	call CopyGfxToSuperNintendoVRAM
-
-	xor a
-	ld [wCopyingSGBTileData], a
-	ld de, PalTrnPacket
-	ld hl, SGBBorderMap ; not SGBBorderPalettes
-	call CopyGfxToSuperNintendoVRAM
-
-	ld hl, VTiles0
-	ld bc, VRAM_End - VTiles0
-	xor a
-	call ByteFill
-
+	ldh [rJOYP], a
+	ldh [hSGB], a
+	call PushSGBBorderPalsAndWait
+	jr nc, .skip
+	ld a, $1
+	ldh [hSGB], a
+	call _InitSGBBorderPals
+;	call SGBBorder_PushBGPals
+	call SGBDelayCycles
+	call SGB_ClearVRAM
+	call PushSGBBorder
+	call SGBDelayCycles
+	call SGB_ClearVRAM
 	ld hl, MaskEnCancelPacket
-	jp SendSGBPacket
+	call _PushSGBPals
 
-CopyGfxToSuperNintendoVRAM:
-	di
-	push de
-	call DisableLCD
-	ld a, $e4
-	ldh [rBGP], a
-	ld de, VTiles1
-	ld a, [wCopyingSGBTileData]
-	and a
-	jr z, .notCopyingTileData
-	call CopySGBBorderTiles
-	jr .next
-.notCopyingTileData
-	ld bc, $1000
-	call CopySGBBorderData
-.next
-	ld hl, VBGMap0
-	ld de, $c
-	ld a, $80
-	ld c, $d
-.loop
-	ld b, $14
-.innerLoop
-	ld [hli], a
-	inc a
-	dec b
-	jr nz, .innerLoop
-	add hl, de
-	dec c
-	jr nz, .loop
-	ld a, $e3
-	ldh [rLCDC], a ; enables LCD
-	pop hl
-	call SendSGBPacket
-	xor a
-	ldh [rBGP], a
+.skip
+	pop af
+	ld [wInputFlags], a
 	ei
 	ret
+
+_PushSGBPals:
+	ld a, [hl]
+	and $7
+	ret z
+	ld b, a
+.loop
+	push bc
+	xor a
+	ldh [rJOYP], a
+	ld a, $30
+	ldh [rJOYP], a
+	ld b, $10
+.loop2
+	ld e, $8
+	ld a, [hli]
+	ld d, a
+.loop3
+	bit 0, d
+	ld a, $10
+	jr nz, .okay
+	ld a, $20
+.okay
+	ldh [rJOYP], a
+	ld a, $30
+	ldh [rJOYP], a
+	rr d
+	dec e
+	jr nz, .loop3
+	dec b
+	jr nz, .loop2
+	ld a, $20
+	ldh [rJOYP], a
+	ld a, $30
+	ldh [rJOYP], a
+	call SGBDelayCycles
+	pop bc
+	dec b
+	jr nz, .loop
+	ret
+	
+_InitSGBBorderPals:
+	ld hl, .PacketPointerTable
+	ld c, 9
+.loop
+	push bc
+	ld a, [hli]
+	push hl
+	ld h, [hl]
+	ld l, a
+	call _PushSGBPals
+	pop hl
+	inc hl
+	pop bc
+	dec c
+	jr nz, .loop
+	ret
+
+.PacketPointerTable:
+	dw MaskEnFreezePacket
+	dw DataSndPacket1
+	dw DataSndPacket2
+	dw DataSndPacket3
+	dw DataSndPacket4
+	dw DataSndPacket5
+	dw DataSndPacket6
+	dw DataSndPacket7
+	dw DataSndPacket8	
+	
+PushSGBBorder:
+	call .LoadSGBBorderPointers
+	push de
+	call SGBBorder_YetMorePalPushing
+	pop hl
+	call SGBBorder_MorePalPushing
+	ret
+
+.LoadSGBBorderPointers:
+	ld hl, SGBBorderGFX
+	ld de, SGBBorderMapAndPalettes
+	ret
+	
+SGB_ClearVRAM:
+	ld hl, STARTOF(VRAM)
+	ld bc, SIZEOF(VRAM)
+	xor a
+	call ByteFill
+	ret
+	
+PushSGBBorderPalsAndWait:
+	ld hl, MltReq2Packet
+	call _PushSGBPals
+	call SGBDelayCycles
+	ldh a, [rJOYP]
+	and $3
+	cp $3
+	jr nz, .carry
+	ld a, $20
+	ldh [rJOYP], a
+	ldh a, [rJOYP]
+	ldh a, [rJOYP]
+	call SGBDelayCycles
+	call SGBDelayCycles
+	ld a, $30
+	ldh [rJOYP], a
+	call SGBDelayCycles
+	call SGBDelayCycles
+	ld a, $10
+	ldh [rJOYP], a
+rept 6
+	ldh a, [rJOYP]
+endr
+	call SGBDelayCycles
+	call SGBDelayCycles
+	ld a, $30
+	ldh [rJOYP], a
+	ldh a, [rJOYP]
+	ldh a, [rJOYP]
+	ldh a, [rJOYP]
+	call SGBDelayCycles
+	call SGBDelayCycles
+	ldh a, [rJOYP]
+	and $3
+	cp $3
+	jr nz, .carry
+	call .FinalPush
+	and a
+	ret
+
+.carry
+	call .FinalPush
+	scf
+	ret
+
+.FinalPush:
+	ld hl, MltReq1Packet
+	call _PushSGBPals
+	jp SGBDelayCycles
 
 CopySGBBorderData:
 ; copy bc bytes of data from hl to de
@@ -139,52 +236,129 @@ CopySGBBorderData:
 	or b
 	jr nz, CopySGBBorderData
 	ret
-
-CopySGBBorderTiles:
-; SGB tile data is stored in a 4BPP planar format.
-; Each tile is 32 bytes. The first 16 bytes contain bit planes 1 and 2, while
-; the second 16 bytes contain bit planes 3 and 4.
-; This function converts 2BPP planar data into this format by mapping
-; 2BPP colors 0-3 to 4BPP colors 0-3. 4BPP colors 4-15 are not used.
-	ld b, 128
-.tileLoop
-; Copy bit planes 1 and 2 of the tile data.
-	ld c, 16
-.copyLoop
-	ld a, [hli]
-	ld [de], a
-	inc de
-	dec c
-	jr nz, .copyLoop
-; Zero bit planes 3 and 4.
-	ld c, 16
+	
+ClearSGBBorderBytes: ; 0x9a5b
+; clear bc bytes of data starting from de
 	xor a
-.zeroLoop
 	ld [de], a
 	inc de
-	dec c
-	jr nz, .zeroLoop
+	dec bc
+	ld a, c
+	or b
+	jr nz, ClearSGBBorderBytes
+	ret
+	
+; SGBBorder_PushBGPals:
+	; ret
+	; call DisableLCD
+	; ld a, %11100100
+	; ldh [rBGP], a
+	; ld hl, PredefPals
+	; ld de, VTiles1
+	; ld bc, $100 tiles
+	; call CopySGBBorderData
+	; call DrawDefaultTiles
+	; ld a, LCDC_DEFAULT
+	; ldh [rLCDC], a
+	; ld hl, PalTrnPacket
+	; call _PushSGBPals
+	; xor a
+	; ldh [rBGP], a
+	; ret
+	
+SGBBorder_MorePalPushing:
+	call DisableLCD
+	ld a, $e4
+	ldh [rBGP], a
+	ld de, VTiles1
+	ld bc, (6 + SCREEN_WIDTH + 6) * 5 * 2
+	call CopySGBBorderData
+	ld b, SCREEN_HEIGHT
+.loop
+	push bc
+	ld bc, 6 * 2
+	call CopySGBBorderData
+	ld bc, SCREEN_WIDTH * 2
+	call ClearSGBBorderBytes
+	ld bc, 6 * 2
+	call CopySGBBorderData
+	pop bc
 	dec b
-	jr nz, .tileLoop
+	jr nz, .loop
+	ld bc, (6 + SCREEN_WIDTH + 6) * 5 * 2
+	call CopySGBBorderData
+	ld bc, $100
+	call ClearSGBBorderBytes
+	ld bc, 16 palettes
+	call CopySGBBorderData
+	call DrawDefaultTiles
+	ld a, LCDC_DEFAULT
+	ldh [rLCDC], a
+	ld hl, PctTrnPacket
+	call _PushSGBPals
+	xor a
+	ldh [rBGP], a
 	ret
 
-MaskEnFreezePacket:
-	db $b9, $01, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-MaskEnCancelPacket:
-	db $b9, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+SGBBorder_YetMorePalPushing:
+	call DisableLCD
+	ld a, %11100100
+	ldh [rBGP], a
+	ld de, VTiles1
+	ld b, $80
+.loop
+	push bc
+    ld bc, 1 tiles
+    call CopySGBBorderData
+    ld bc, 1 tiles
+    call CopySGBBorderData
+	pop bc
+	dec b
+	jr nz, .loop
+	call DrawDefaultTiles
+	ld a, LCDC_DEFAULT
+	ldh [rLCDC], a
+	ld hl, ChrTrnPacket
+	call _PushSGBPals
+	xor a
+	ldh [rBGP], a
+	ret
 
-PalTrnPacket:
-	db $59, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-ChrTrnPacket:
-	db $99, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PctTrnPacket:
-	db $a1, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+DrawDefaultTiles:
+; Draw 240 tiles (2/3 of the screen) from tiles in VRAM
+	hlbgcoord 0, 0 ; BG Map 0
+	ld de, BG_MAP_WIDTH - SCREEN_WIDTH
+	ld a, $80 ; starting tile
+	ld c, 12 + 1
+.line
+	ld b, 20
+.tile
+	ld [hli], a
+	inc a
+	dec b
+	jr nz, .tile
+; next line
+	add hl, de
+	dec c
+	jr nz, .line
+	ret
 
-SGBBorderMap:
-INCBIN "gfx/sgb/sgb_border.bin"
 
-SGBBorderPalettes:
-INCLUDE "gfx/sgb/sgb_border.pal"
 
-SGBBorderGraphics:
-INCBIN "gfx/sgb/sgb_border.2bpp"
+INCLUDE "gfx/sgb/blk_packets.asm"
+INCLUDE "gfx/sgb/pal_packets.asm"
+INCLUDE "data/sgb_ctrl_packets.asm"
+
+;PredefPals:
+
+;INCLUDE "gfx/sgb/predef.pal"
+
+
+SGBBorderMapAndPalettes:
+; interleaved tile ids and palette ids, without the center 20x18 screen area
+INCBIN "gfx/sgb/sgb_border.sgb.tilemap"
+; four SGB palettes of 16 colors each; only the first 4 colors are used
+INCBIN "gfx/sgb/sgb_border.pal.bin"
+
+SGBBorderGFX:
+INCBIN "gfx/sgb/sgb_border.4bpp"

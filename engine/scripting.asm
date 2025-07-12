@@ -583,6 +583,12 @@ Script_verticalmenu:
 	xor a
 .ok
 	ld [wScriptVar], a
+	eventflagcheck EVENT_OBSCURA_QUIZ_ACTIVE
+	ret z
+	ld a, [wRanchRaceSeconds]
+	cp $69
+	ret nz
+	ld [wScriptVar], a
 	ret
 
 Script__2dmenu:

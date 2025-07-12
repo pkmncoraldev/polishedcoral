@@ -87,6 +87,8 @@ ObscuraMuseum1FCallback:
 	checkevent EVENT_SNARE_AT_MUSEUM
 	iffalse .skip
 	changeblock $8, $e, $93
+	changeblock $a, $6, $75
+	changeblock $e, $8, $74
 .skip
 	clearevent EVENT_MUSEUM_FAILED_TERMINAL
 	callasm MusuemKeyboardAsm3
@@ -272,7 +274,7 @@ ObscuraMuseumCarracostaFossilText:
 	cont "powerful."
 	
 	para "Its bite had"
-	line "enough power to"
+	line "enough force to"
 	cont "crush steel beams."
 	
 	para "Rather than search"

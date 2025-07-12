@@ -41,7 +41,6 @@ TilesetPokeCenterAnim::
 TilesetLibraryAnim::
 TilesetMall2Anim::
 TilesetIceCaveAnim::
-TilesetSouthBuildingsAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -469,6 +468,7 @@ TilesetAirportAnim::
 	
 TilesetLusterAnim::
 TilesetRanchAnim::
+TilesetSouthBuildingsAnim::
 	dw NULL,  StandingTileFrame
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -897,6 +897,8 @@ AnimateFlowerTile: ; fc56d
 	farcall AddSkateparkScore
 .skip_score
 	ld [wSkateparkComboTimer], a
+	eventflagcheck EVENT_OBSCURA_QUIZ_ACTIVE
+	jr nz, .display
 	eventflagcheck EVENT_TEST_OF_MIND_ACTIVE
 	jr nz, .timer
 	eventflagcheck EVENT_TEST_OF_BODY_ACTIVE
@@ -906,6 +908,26 @@ AnimateFlowerTile: ; fc56d
 	eventflagcheck EVENT_DODRIO_RANCH_TIMER
 	jr z, .skip
 	
+.display
+	ld a, [wCurrentAirportBaggage]
+	ld b, a
+	ld a, [wRanchRaceSeconds]
+	cp QUIZ_TIME_LIMIT + 1
+	jr z, .skip
+	ld c, a
+	ld a, QUIZ_TIME_LIMIT
+	sub c
+	ld [wCurrentAirportBaggage], a
+	cp b
+	jr z, .timer
+	and 1 ; odd
+	jr z, .odd_sfx
+	ld de, SFX_UNKNOWN_61
+	jr .display_cont
+.odd_sfx
+	ld de, SFX_SWITCH_POCKETS
+.display_cont
+	call PlaySFX
 .timer
 	ld hl, wRanchRaceFrames
 	ld a, [hl]

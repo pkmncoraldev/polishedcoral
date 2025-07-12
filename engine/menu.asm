@@ -256,9 +256,57 @@ MenuJoypadLoop:
 	ret
 ; 24249
 
+CheckMenuQuizInterrupt:
+
+CheckQuizActive:
+	ld a, [wMapGroup]
+	cp GROUP_OBSCURA_GYM
+	jr nz, .no
+	ld a, [wMapNumber]
+	cp MAP_OBSCURA_GYM
+	jr nz, .no
+	eventflagcheck EVENT_OBSCURA_QUIZ_ACTIVE
+	jr z, .no
+	scf
+	ret
+.no
+	xor a
+	ret
+	
+QuizUpdateTimer:
+	ldh a, [hOAMUpdate]
+	push af
+	ld a, $1
+	ldh [hOAMUpdate], a
+	ldh [hBGMapMode], a
+	hlcoord 16, 1
+	ld de, wCurrentAirportBaggage
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
+	call PrintNum
+	pop af
+	ldh [hOAMUpdate], a
+	xor a
+	ldh [hBGMapMode], a
+	ld a, [wRanchRaceSeconds]
+	cp QUIZ_TIME_LIMIT + 1
+	jr z, .end
+	scf
+	ret
+.end
+	ld a, $69
+	ld [wRanchRaceSeconds], a
+	xor a
+	ret
+
 Do2DMenuRTCJoypad: ; 24249
 	jr .handleLoop
 .loopRTC
+	call CheckQuizActive
+	jr nc, .no_quiz
+	call QuizUpdateTimer
+	ret nc
+	jr .handleLoop
+.no_quiz
 	call DelayFrame
 .handleLoop
 	call RTC
@@ -269,7 +317,7 @@ Do2DMenuRTCJoypad: ; 24249
 	jr z, .loopRTC
 	and a
 	ret
-; 24259
+	
 
 Menu_WasButtonPressed: ; 24259
 	ld a, [w2DMenuFlags1]

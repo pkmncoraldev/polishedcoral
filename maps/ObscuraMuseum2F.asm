@@ -87,7 +87,7 @@ ObscuraMuseum2FCallback:
 .skip3
 	checkevent EVENT_SNARE_AT_MUSEUM
 	iffalse .end
-	changeblock $4, $6, $80
+;	changeblock $4, $6, $80
 .end
 	return
 	
@@ -461,3 +461,4 @@ ObscuraMuseumBarrierText:
 	text "A barrier blocks"
 	line "the way."
 	done
+

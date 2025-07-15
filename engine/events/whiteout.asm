@@ -112,6 +112,20 @@ WhiteoutHandleEvents:
 	iftrue .skip3
 	clearevent EVENT_BACK_ALLEY_TRASHCAN_2
 .skip3
+	checkevent EVENT_OBSCURA_GYM_ROPES_2
+	iftrue .skip4
+	clearevent EVENT_OBSCURA_GYM_LOCKED
+	clearevent EVENT_OBSCURA_GYM_ROPES_1
+	clearevent EVENT_OBSCURA_QUIZ_1_FINISHED
+	clearevent EVENT_OBSCURA_QUIZ_1_PASSED
+	clearevent EVENT_OBSCURA_QUIZ_2_FINISHED
+	clearevent EVENT_OBSCURA_QUIZ_2_PASSED
+	clearevent EVENT_OBSCURA_QUIZ_3_FINISHED
+	clearevent EVENT_OBSCURA_QUIZ_3_PASSED
+	clearevent EVENT_OBSCURA_QUIZ_4_FINISHED
+	clearevent EVENT_OBSCURA_QUIZ_4_PASSED
+	loadvar wObscuraQuizzesDone, 0
+.skip4
 	end
 	
 OverworldWhiteoutFade:

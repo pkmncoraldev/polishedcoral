@@ -912,6 +912,7 @@ wMomSavingMoney:: ds 1
 
 wPollenSteps::	ds 2
 
+wMuseumQuizQuestionNumber::
 wMuseumTerminalInputs::
 wLostGirls:: ds 1
 
@@ -991,6 +992,7 @@ wRanchRaceSeconds:: ds 1
 wCurrentAirportBaggage:: ds 1
 
 ; map triggers
+wObscuraQuizzesDone::
 wAlways0Trigger:: ds 1
 wPlayerHouse1FTrigger:: ds 1
 wPlayerHouse2FTrigger:: ds 1

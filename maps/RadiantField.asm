@@ -54,7 +54,7 @@ RadiantFieldMina:
 	pause 5
 	playmusic MUSIC_MINA
 	applyonemovement RADIANT_FIELD_MINA, turn_step_up
-	opentext
+	opentext TEXTBOX_MINA
 	writetext RadiantFieldMinaText1
 	waitbutton
 	closetext
@@ -62,7 +62,7 @@ RadiantFieldMina:
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, RADIANT_FIELD_MINA, 15
 	faceplayer
-	opentext
+	opentext TEXTBOX_MINA
 	writetext RadiantFieldMinaText2
 	waitbutton
 	closetext
@@ -80,7 +80,7 @@ RadiantFieldMina:
 .cont
 	stopfollow
 	pause 40
-	opentext
+	opentext TEXTBOX_MINA
 	writetext RadiantFieldMinaText3
 	buttonsound
 	spriteface RADIANT_FIELD_MINA, DOWN
@@ -92,7 +92,7 @@ RadiantFieldMina:
 	pause 40
 	faceplayer
 	spriteface PLAYER, LEFT
-	opentext
+	opentext TEXTBOX_MINA
 	writetext RadiantFieldMinaText5
 	yesorno
 	iftrue .yes
@@ -108,7 +108,7 @@ RadiantFieldMina:
 	pause 5
 	spriteface RADIANT_FIELD_MINA, DOWN
 	pause 5
-	opentext
+	opentext TEXTBOX_MINA
 	writetext RadiantFieldMinaText7
 	waitbutton
 	closetext
@@ -122,7 +122,7 @@ RadiantFieldMina:
 	closetext
 	spriteface RADIANT_FIELD_MINA, DOWN
 	pause 10
-	opentext
+	opentext TEXTBOX_MINA
 	writetext RadiantFieldMinaText8
 	pause 20
 	closetext
@@ -140,7 +140,7 @@ RadiantFieldMina:
 	closetext
 	spriteface RADIANT_FIELD_MINA, DOWN
 	pause 10
-	opentext
+	opentext TEXTBOX_MINA
 	writetext RadiantFieldMinaText9
 	pause 20
 	closetext
@@ -156,7 +156,7 @@ RadiantFieldMina:
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_MINA_GROUND
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	pause 20
-	opentext
+	opentext TEXTBOX_MINA
 	writetext RadiantFieldMinaText10
 	waitbutton
 	closetext
@@ -167,7 +167,7 @@ RadiantFieldMina:
 	pause 20
 	closetext
 	pause 40
-	opentext
+	opentext TEXTBOX_MINA
 	writetext RadiantFieldMinaText11
 	waitbutton
 	closetext
@@ -206,7 +206,7 @@ RadiantFieldMina:
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_MINA
 	playsound SFX_JUMP_OVER_LEDGE
 	applymovement RADIANT_FIELD_MINA, Movement_Radiant_Mina_jump
-	opentext
+	opentext TEXTBOX_MINA
 	writetext RadiantFieldMinaText14
 	waitbutton
 	closetext
@@ -216,7 +216,7 @@ RadiantFieldMina:
 	pause 10
 	applyonemovement RADIANT_FIELD_MINA, step_right
 	pause 5
-	opentext
+	opentext TEXTBOX_MINA
 	writetext RadiantFieldMinaText15
 	waitbutton
 	closetext
@@ -228,7 +228,7 @@ RadiantFieldMina:
 	dontrestartmapmusic
 	reloadmap
 	playmusic MUSIC_MINA
-	opentext
+	opentext TEXTBOX_MINA
 	writetext RadiantFieldMinaText16
 	waitbutton
 	closetext
@@ -258,7 +258,7 @@ RadiantFieldMina:
 	applyonemovement RADIANT_FIELD_MINA, step_down
 	spriteface RADIANT_FIELD_MINA, LEFT
 	pause 10
-	opentext
+	opentext TEXTBOX_MINA
 	special Special_MinaGoodbye
 	waitbutton
 	closetext
@@ -589,7 +589,7 @@ RadiantFieldRose:
 	jumptextfaceplayer RadiantFieldRoseText1
 .time_to_save
 	faceplayer
-	opentext
+	opentext TEXTBOX_ROSE
 	writetext RadiantFieldRoseText2
 	waitbutton
 	closetext	
@@ -623,7 +623,7 @@ RadiantFieldIris:
 	jumptextfaceplayer RadiantFieldIrisText1
 .time_to_save
 	faceplayer
-	opentext
+	opentext TEXTBOX_IRIS
 	writetext RadiantFieldIrisText2
 	waitbutton
 	closetext
@@ -660,13 +660,13 @@ RadiantFieldViolet:
 	writetext RadiantFieldVioletText1
 	farwritetext StdBlankText
 	pause 6
-	writetext RadiantFieldVioletText3
+	writetext RadiantFieldVioletText2
 	waitbutton
 	closetext
 	end
 .time_to_save
 	faceplayer
-	opentext
+	opentext TEXTBOX_VIOLET
 	writetext RadiantFieldVioletText2
 	farwritetext StdBlankText
 	pause 6
@@ -700,7 +700,7 @@ RadiantFieldRoseText1:
 	done
 	
 RadiantFieldRoseText2:
-	text "ROSE: I just love"
+	text "I just love"
 	line "the sunflowers!"
 	
 	para "They're so pretty!"
@@ -722,7 +722,7 @@ RadiantFieldIrisText1:
 	done
 	
 RadiantFieldIrisText2:
-	text "IRIS: La <WAIT_S>la <WAIT_S>la!"
+	text "La <WAIT_S>la <WAIT_S>la!"
 	
 	para "I'm collecting"
 	line "flowers for GRAMMA"
@@ -746,12 +746,7 @@ RadiantFieldVioletText1:
 	done
 	
 RadiantFieldVioletText2:	
-	text "VIOLET: I love the"
-	line "smell of these"
-	cont "flowers!"
-	
-	para "I wish I could"
-	line "smell them forev-<WAIT_S>"
+	text "Ah…<WAIT_M> AH!<WAIT_L> …CHOO!"
 	done
 	
 RadiantFieldVioletText3:

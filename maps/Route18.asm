@@ -148,12 +148,12 @@ Route18Disguiseman:
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_DISGUISE_MASTER
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	applymovement ROUTE_18_DISGUISEMAN2, Movement_StarglowCavern_DisguiseMan1
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext StarglowCavern_DisguiseMan1Text1
 	waitbutton
 	closetext
 	faceplayer
-	opentext
+	opentext TEXTBOX_DISGUISEMAN
 	writetext Route18_DisguiseMan1Text2
 	waitbutton
 	closetext
@@ -163,13 +163,13 @@ Route18Disguiseman:
 	loadtrainer DISGUISE, MASTER_4
 	startbattle
 	reloadmapafterbattle
-	opentext
+	opentext TEXTBOX_DISGUISEMAN
 	writetext Route18_DisguiseMan1Text3
 	waitbutton
 	closetext
 	applymovement ROUTE_18_DISGUISEMAN2, Movement_StarglowCavern_DisguiseMan2
 	disappear ROUTE_18_DISGUISEMAN2
-	opentext
+	opentext TEXTBOX_DISGUISEMAN
 	writetext StarglowCavern_DisguiseMan1Text4
 	waitbutton
 	closetext

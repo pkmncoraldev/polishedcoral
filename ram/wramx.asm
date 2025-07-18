@@ -1273,9 +1273,9 @@ wPartyMonNicknamesEnd::
 	
 wEncounterHouseMon:: ds 1
 
-	ds 2 ; unused
+wTextBoxSpeaker:: ds 1
 
-;	ds 22 ; unused
+	ds 1 ; unused
 
 wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::

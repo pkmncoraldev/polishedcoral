@@ -1,16 +1,6 @@
 FontTiles::
 FontNormal:
 INCBIN "gfx/font/normal.2bpp"
-FontNarrow:
-INCBIN "gfx/font/narrow.1bpp"
-FontBold:
-INCBIN "gfx/font/bold.1bpp"
-FontItalic:
-INCBIN "gfx/font/italic.1bpp"
-FontSerif:
-INCBIN "gfx/font/serif.1bpp"
-FontUnown:
-INCBIN "gfx/font/unown.1bpp"
 FontCommon:
 INCBIN "gfx/font/common.2bpp"
 FontNormal1bpp:
@@ -120,7 +110,7 @@ _LoadStandardMaybeOpaqueFont:
 	ret nz
 	ld de, FontCommon
 	ld hl, VTiles0 tile "▷"
-	lb bc, BANK(FontCommon), 11
+	lb bc, BANK(FontCommon), 10
 	jp Get2bpp
 	
 _Load1bppFont::
@@ -130,7 +120,7 @@ _Load1bppFont::
 	call Get1bpp
 	ld de, FontCommon1bpp
 	ld hl, VTiles0 tile "▷"
-	lb bc, BANK(FontCommon1bpp), 11
+	lb bc, BANK(FontCommon1bpp), 10
 	jp Get1bpp
 
 _LoadHexFont::
@@ -155,13 +145,6 @@ LoadStandardFontPointer::
 	ret
 
 .FontPointers:
-	dw FontNormal
-	dw FontNarrow
-	dw FontBold
-	dw FontItalic
-	dw FontSerif
-	dw FontUnown
-	dw FontNormal
 	dw FontNormal
 	
 LoadPackFont::
@@ -209,7 +192,7 @@ LoadFrame:: ; fb4cc
 	rst AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, VTiles0 tile "┌"
+	ld hl, VTiles0 tile "<UPDN>"
 	lb bc, BANK(Frames), TILES_PER_FRAME
 	call Get2bpp
 	ld hl, VTiles2 tile " "
@@ -231,7 +214,7 @@ LoadFrame1bpp:: ; fb4cc
 	rst AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, VTiles0 tile "┌"
+	ld hl, VTiles0 tile "<UPDN>"
 	lb bc, BANK(FramesBattle), TILES_PER_FRAME
 	call Get1bpp
 	ld hl, VTiles2 tile " "

@@ -194,7 +194,7 @@ Route28ColbyStopsYou:
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, ROUTE_28_COLBY, 15
 	applymovement ROUTE_28_COLBY, Movement_Route28_Colby_3
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext Route28ColbyText1
 	waitbutton
 	closetext
@@ -266,7 +266,7 @@ Route28ColbyStopsYou:
 	reloadmapafterbattle
 .afterbattle
 	playmusic MUSIC_RIVAL_AFTER
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext Route28ColbyText2
 	waitbutton
 	closetext
@@ -282,13 +282,13 @@ Route28ColbyStopsYou:
 	applyonemovement ROUTE_28_COLBY, turn_step_down
 	applyonemovement ROUTE_28_COLBY, remove_fixed_facing
 	playsound SFX_TALLY
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext Route28ColbyText3
 	waitbutton
 	closetext
 	pause 5
 	applyonemovement ROUTE_28_COLBY, turn_step_up
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext Route28ColbyText4
 	waitbutton
 	closetext
@@ -300,9 +300,6 @@ Route28ColbyStopsYou:
 	setevent EVENT_OTTO_TALKS_ABOUT_RIVAL
 	playmapmusic
 	dotrigger $1
-	end
-;	disappear ROUTE_28_SNARE_1
-;	disappear ROUTE_28_SNARE_2
 	end
 	
 Route28ColbyText1:
@@ -556,11 +553,24 @@ Route28StrengthMan:
 	faceplayer
 	checkevent EVENT_ROUTE_28_BOULDER_PUSHED
 	iftrue .done
-	jumptextfaceplayer Route28StrengthManText
+	setevent EVENT_TALKED_TO_PUSHER
+	jumptextfaceplayer TEXTBOX_PUSHER, Route28StrengthManText
 .done
-	opentext
+	checkevent EVENT_TALKED_TO_PUSHER
+	iftrue .talked
+	setevent EVENT_TALKED_TO_PUSHER
+	opentext TEXTBOX_UNKNOWN
+	writetext Route28StrengthManText10
+	buttonsound
+	changetextboxspeaker TEXTBOX_PUSHER
+	farwritetext StdBlankText
+	pause 6
+	jump .cont3
+.talked
+	opentext TEXTBOX_PUSHER
 	checktmhm TM_SELFDESTRUCT
 	iftrue .end
+.cont3
 	writetext Route28StrengthManText2
 	waitbutton
 	writetext Route28StrengthManText3
@@ -581,7 +591,7 @@ Route28StrengthMan:
 	if_equal 1, .down
 	if_equal 2, .left
 	playsound SFX_READ_TEXT
-	opentext
+	opentext TEXTBOX_PUSHER
 	jump .loop
 .down
 	applyonemovement PLAYER, turn_step_down
@@ -590,7 +600,7 @@ Route28StrengthMan:
 	applyonemovement PLAYER, turn_step_left
 .cont
 	playmusic MUSIC_ROUTE_28
-	opentext
+	opentext TEXTBOX_PUSHER
 	writetext Route28StrengthManText7
 	waitbutton
 	closetext
@@ -603,10 +613,12 @@ Route28StrengthMan:
 	spriteface PLAYER, RIGHT
 .cont2
 	pause 10
-	opentext
+	opentext TEXTBOX_PUSHER
 	writetext Route28StrengthManText8
 	waitbutton
+	changetextboxspeaker
 	verbosegivetmhm TM_SELFDESTRUCT
+	changetextboxspeaker TEXTBOX_PUSHER
 .end
 	writetext Route28StrengthManText9
 	waitbutton
@@ -660,6 +672,11 @@ Route28TextScrollAsm2:
 	xor a
 	ld [wPlaceBallsX], a
 	ret
+	
+Route28StrengthManText10:
+	text "They call me"
+	line "MR. PUSHER!"
+	done
 	
 Route28StrengthManText:
 	text "They call me"

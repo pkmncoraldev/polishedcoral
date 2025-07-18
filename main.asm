@@ -6297,3 +6297,4 @@ SECTION "Coral Data 6", ROMX
 	INCLUDE "engine/busterscreen.asm"
     INCLUDE "engine/mart.asm"
     INCLUDE "data/items/marts.asm"
+	INCLUDE "data/text/textbox_names.asm"

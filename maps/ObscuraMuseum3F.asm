@@ -76,7 +76,7 @@ ObscuraMuseum3FDragonStoneScene:
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	pause 5
 	applyonemovement OBSCURA_MUSEUM_3F_COLBY, turn_step_right
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext ObscuraMuseum3FColbyText1
 	waitbutton
 	closetext
@@ -94,7 +94,7 @@ ObscuraMuseum3FDragonStoneScene:
 	applymovement OBSCURA_MUSEUM_3F_COLBY, Movement_ObscuraMuseum3FColby
 	spriteface OBSCURA_MUSEUM_3F_COLBY, DOWN
 .cont
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext ObscuraMuseum3FColbyText2
 	waitbutton
 	closetext
@@ -107,7 +107,7 @@ ObscuraMuseum3FDragonStoneScene:
 .right2
 	applyonemovement OBSCURA_MUSEUM_3F_COLBY, turn_step_up
 .cont2
-	opentext
+	opentext TEXTBOX_RIVAL
 	checkevent EVENT_PLAYER_IS_CORA
 	iftrue .girl
 	checkevent EVENT_PLAYER_IS_PIPPI
@@ -140,7 +140,7 @@ ObscuraMuseum3FDragonStoneScene:
 .right3
 	applyonemovement OBSCURA_MUSEUM_3F_LOCKE, step_down
 .cont4
-	opentext
+	opentext TEXTBOX_LOCKE
 	writetext ObscuraMuseum3FLockeText1
 	waitbutton
 	closetext
@@ -153,7 +153,7 @@ ObscuraMuseum3FDragonStoneScene:
 	startbattle
 	reloadmapafterbattle
 	special RestoreMusic
-	opentext
+	opentext TEXTBOX_LOCKE
 	writetext ObscuraMuseum3FLockeText2
 	waitbutton
 	closetext
@@ -181,10 +181,12 @@ ObscuraMuseum3FDragonStoneScene:
 	iffalse .cont5
 	spriteface PLAYER, LEFT
 .cont5
-	opentext
+	opentext TEXTBOX_ROCKY
 	writetext ObscuraMuseum3FRockyText3
 	buttonsound
+	changetextboxspeaker
 	verbosegiveitem NETT_SPECS
+	changetextboxspeaker TEXTBOX_ROCKY
 	writetext ObscuraMuseum3FRockyText4
 	waitbutton
 	closetext
@@ -245,7 +247,7 @@ ObscuraMuseum3FLockeLoseText:
 	done
 	
 ObscuraMuseum3FColbyText1:
-	text "<RIVAL>: Good job.<WAIT_S>"
+	text "Good job.<WAIT_S>"
 	line "We got it!"
 	
 	para "Not even that"
@@ -332,7 +334,7 @@ ObscuraMuseum3FStopYou:
 	special Special_StopRunning
 	pause 5
 	applyonemovement OBSCURA_MUSEUM_3F_ROCKY, turn_step_up
-	opentext
+	opentext TEXTBOX_ROCKY
 	writetext ObscuraMuseum3FRockyText1
 	waitbutton
 	closetext
@@ -348,7 +350,7 @@ ObscuraMuseum3FStopYou:
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, OBSCURA_MUSEUM_3F_ROCKY, 15
 	spriteface OBSCURA_MUSEUM_3F_ROCKY, DOWN
-	opentext
+	opentext TEXTBOX_ROCKY
 	writetext ObscuraMuseum3FRockyText2
 	waitbutton
 	closetext
@@ -362,8 +364,7 @@ Movement_ObscuraMuseum3FStopYouR:
 	step_end
 	
 ObscuraMuseum3FRockyText1:
-	text "ROCKY: Outta the"
-	line "way!"
+	text "Outta the way!"
 	
 	para "You guys can't"
 	line "just come in here"
@@ -439,7 +440,7 @@ Movement_ObscuraMuseum3FRocky:
 	
 ObscuraMuseum3FRocky:
 	faceplayer
-	opentext
+	opentext TEXTBOX_ROCKY
 	writetext ObscuraMuseum3FRockyText
 	waitbutton
 	closetext

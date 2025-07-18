@@ -287,7 +287,7 @@ CrossroadsCutscene2:
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	applyonemovement PLAYER, show_person
 	pause 10
-	opentext
+	opentext TEXTBOX_RIVAL
 	disappear CROSSROADS_PLAYER_CUTSCENE_RED
 	disappear CROSSROADS_PLAYER_CUTSCENE_BLUE
 	disappear CROSSROADS_PLAYER_CUTSCENE_GREEN
@@ -366,7 +366,7 @@ CrossroadsCutscene2:
 	reloadmapafterbattle
 .afterbattle
 	playmusic MUSIC_RIVAL_AFTER
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext CrossroadsCutsceneColbyText2
 	waitbutton
 	closetext
@@ -454,7 +454,7 @@ CrossroadsCutsceneGruntText3:
 	done
 	
 CrossroadsCutsceneColbyText1:
-	text "<RIVAL>: What's up,"
+	text "What's up,"
 	line "<PLAYER>?"
 	
 	para "Surprised to see"

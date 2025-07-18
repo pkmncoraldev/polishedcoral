@@ -66,10 +66,6 @@ StarglowHouse4FishingGuruText1:
 	cont "heard of my many"
 	cont "exploits!"
 	
-	para "Of all the fisher-"
-	line "men in this town"
-	cont "I am the best!"
-	
 	para "There's not man nor"
 	line "mon out there that"
 	cont "could ever best my"

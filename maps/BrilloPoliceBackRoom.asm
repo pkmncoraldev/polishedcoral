@@ -30,7 +30,7 @@ BrilloPoliceBackRoom_MapScriptHeader:
 BrilloPoliceBackRoomTrigger0:
 	applyonemovement PLAYER, remove_fixed_facing
 	applymovement PLAYER, Movement_BrilloPoliceBackRoom_Player
-	opentext
+	opentext TEXTBOX_CAPTAIN
 	writetext BrilloPoliceBackRoomCaptainText1
 	waitbutton
 	closetext
@@ -57,7 +57,7 @@ BrilloPoliceBackRoomTrigger0:
 	playsound SFX_ENTER_DOOR
 	appear BRILLO_POLICE_BACKROOM_COP_4
 	applymovement BRILLO_POLICE_BACKROOM_COP_4, Movement_BrilloPoliceBackRoom_Cop_4
-	opentext
+	opentext TEXTBOX_CAPTAIN
 	writetext BrilloPoliceBackRoomCaptainText2
 	waitbutton
 	closetext
@@ -171,7 +171,7 @@ BrilloPoliceBackRoomTrigger0:
 	playsound SFX_ENTER_DOOR
 	appear BRILLO_POLICE_BACKROOM_CAPTAIN
 	applymovement BRILLO_POLICE_BACKROOM_CAPTAIN, Movement_BrilloPoliceBackRoom_Captain_2
-	opentext
+	opentext TEXTBOX_CAPTAIN
 	writetext BrilloPoliceBackRoomCaptainText3
 	buttonsound
 	farwritetext StdBlankText
@@ -190,7 +190,7 @@ BrilloPoliceBackRoomTrigger0:
 	reloadmapafterbattle
 	special RestoreMusic
 
-	opentext
+	opentext TEXTBOX_CAPTAIN
 	writetext BrilloPoliceBackRoomCaptainText4
 	waitbutton
 	closetext
@@ -200,7 +200,7 @@ BrilloPoliceBackRoomTrigger0:
 	pause 10
 	playsound SFX_TALLY
 	pause 10
-	opentext
+	opentext TEXTBOX_CAPTAIN
 	writetext BrilloPoliceBackRoomCaptainText5
 	waitbutton
 	closetext
@@ -209,7 +209,7 @@ BrilloPoliceBackRoomTrigger0:
 	pause 25
 	applyonemovement BRILLO_POLICE_BACKROOM_CAPTAIN, turn_step_down
 	applyonemovement BRILLO_POLICE_BACKROOM_CAPTAIN, remove_fixed_facing
-	opentext
+	opentext TEXTBOX_CAPTAIN
 	writetext BrilloPoliceBackRoomCaptainText6
 	waitbutton
 	closetext

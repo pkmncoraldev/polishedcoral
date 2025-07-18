@@ -50,7 +50,7 @@ DuskAutoGaragePoppy:
 	jumptextfaceplayer DuskAutoGaragePoppyText1
 .time_to_save
 	faceplayer
-	opentext
+	opentext TEXTBOX_POPPY
 	writetext DuskAutoGaragePoppyText2
 	waitbutton
 	closetext
@@ -118,7 +118,7 @@ DuskAutoGaragePoppyText1:
 	done
 	
 DuskAutoGaragePoppyText2:
-	text "POPPY: Yaaay!<WAIT_M>"
+	text "Yaaay!<WAIT_M>"
 	line "Look at the cars!"
 	
 	para "I wanna fix cars"

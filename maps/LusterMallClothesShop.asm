@@ -35,8 +35,13 @@ LusterMallClothesShop_MapScriptHeader:
 LusterMallClothesShopPolly:
 	setevent EVENT_MET_POLLY
 	faceplayer
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext LusterMallClothesShopPollyText
+	buttonsound
+	changetextboxspeaker TEXTBOX_POLLY
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterMallClothesShopPollyText2
 	waitbutton
 	closetext
 	setevent EVENT_POLLY_NOT_IN_BOUTIQUE
@@ -60,8 +65,10 @@ LusterMallClothesShopPollyText:
 	
 	para "Maybe I am, <WAIT_S>what"
 	line "about it?"
+	done
 	
-	para "A battle?<WAIT_S>"
+LusterMallClothesShopPollyText2:
+	text "A battle?<WAIT_S>"
 	line "Like, <WAIT_S>no way!"
 	
 	para "Can't you see"

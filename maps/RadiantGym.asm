@@ -50,7 +50,7 @@ RadiantGymLeilani:
 	spriteface RADIANT_GYM_LEILANI_2, DOWN
 RadiantGymLeilanicont:
 	setevent EVENT_ALWAYS_SET
-	opentext
+	opentext TEXTBOX_LEILANI
 	checkevent EVENT_BEAT_LEILANI
 	iftrue .FightDone
 	writetext RadiantGymLeilaniTextBeforeBattle1
@@ -84,7 +84,7 @@ RadiantGymLeilanicont:
 	spriteface PLAYER, UP
 	
 .cont
-	opentext
+	opentext TEXTBOX_LEILANI
 	writetext RadiantGymLeilaniTextBeforeBattle2
 	waitbutton
 	closetext
@@ -105,6 +105,7 @@ RadiantGymLeilanicont:
 	setevent EVENT_CAN_FIGHT_ERIKA
 	checkcode VAR_BADGES
 	callasm RadiantGymAutoShopStepsAsm
+	changetextboxspeaker TEXTBOX_LEILANI
 	
 .FightDone:	
 	checkevent EVENT_GOT_TM_FROM_LEILANI
@@ -118,8 +119,10 @@ RadiantGymLeilanicont:
 	setevent EVENT_BEAT_RADIANT_GYM_FELICIA
 	writetext RadiantGymLeilaniTextAfterBattle
 	buttonsound
+	changetextboxspeaker
 	verbosegivetmhm TM_WEATHER_BALL
 	setevent EVENT_GOT_TM_FROM_LEILANI
+	changetextboxspeaker TEXTBOX_LEILANI
 	writetext RadiantGymLeilaniTextTMSpeech
 	waitbutton
 	closetext
@@ -189,7 +192,7 @@ RadiantGymLeilaniRematch:
 	spriteface PLAYER, UP
 	
 .cont
-	opentext
+	opentext TEXTBOX_LEILANI
 	writetext RadiantGymLeilaniTextBeforeBattle2
 	waitbutton
 	closetext
@@ -208,7 +211,7 @@ RadiantGymLeilaniRematch:
 .cont2
 	startbattle
 	reloadmapafterbattle
-	opentext
+	opentext TEXTBOX_LEILANI
 	writetext RadiantGymLeilaniTextLoop
 	waitbutton
 	closetext

@@ -73,7 +73,7 @@ LusterTrainStationCallback:
 	earthquake 5
 	pause 35
 	special Special_EnableInput
-	opentext
+	opentext TEXTBOX_PA
 	writetext LusterTrainStationText1
 	waitbutton
 	callasm LusterTrainThing2
@@ -90,7 +90,7 @@ LusterTrainStationCallback:
 	checkevent EVENT_MET_MR_NETT
 	iftrue .met_nett
 	applymovement PLAYER, Movement_LusterTrainArrives4
-	opentext
+	opentext TEXTBOX_CONDUCTOR
 	writetext LusterTrainStationConductorText1
 	waitbutton
 	closetext
@@ -102,24 +102,24 @@ LusterTrainStationCallback:
 	applymovement LUSTER_TRAIN_STATION_OFFICER, Movement_LusterStationOfficer2
 	pause 30
 	applyonemovement LUSTER_TRAIN_STATION_REPORTER, turn_step_left
-	opentext
+	opentext TEXTBOX_REPORTER
 	writetext LusterTrainStationReporterText1
 	waitbutton
 	closetext
 	spriteface LUSTER_TRAIN_STATION_REPORTER, UP
-	opentext
+	opentext TEXTBOX_REPORTER
 	writetext LusterTrainStationReporterText2
 	waitbutton
 	closetext
 	spriteface LUSTER_TRAIN_STATION_CONDUCTOR, DOWN
-	opentext
+	opentext TEXTBOX_CONDUCTOR
 	writetext LusterTrainStationConductorText2
 	waitbutton
 	closetext
 	applyonemovement LUSTER_TRAIN_STATION_CAMERAMAN, run_step_up
 	spriteface LUSTER_TRAIN_STATION_CAMERAMAN, RIGHT
 	spriteface LUSTER_TRAIN_STATION_CONDUCTOR, LEFT
-	opentext
+	opentext TEXTBOX_CONDUCTOR
 	writetext LusterTrainStationConductorText3
 	waitbutton
 	closetext
@@ -127,7 +127,7 @@ LusterTrainStationCallback:
 	spriteface LUSTER_TRAIN_STATION_CAMERAMAN, RIGHT
 	spriteface LUSTER_TRAIN_STATION_REPORTER, LEFT
 	applyonemovement LUSTER_TRAIN_STATION_REPORTER, turn_step_left
-	opentext
+	opentext TEXTBOX_REPORTER
 	writetext LusterTrainStationReporterText3
 	waitbutton
 	closetext
@@ -160,7 +160,7 @@ LusterTrainStationCallback:
 	applyonemovement LUSTER_TRAIN_STATION_NETT, step_left
 	spriteface LUSTER_TRAIN_STATION_NETT, UP
 	spriteface PLAYER, DOWN
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext LusterStationNettText1
 	waitbutton
 	closetext
@@ -171,6 +171,11 @@ LusterTrainStationCallback:
 	applyonemovement LUSTER_TRAIN_STATION_NETT, step_up
 	opentext
 	writetext LusterStationNettText2
+	buttonsound
+	changetextboxspeaker TEXTBOX_NETT
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterStationNettText3
 	waitbutton
 	closetext
 	applymovement LUSTER_TRAIN_STATION_NETT, Movement_LusterStationNett
@@ -218,7 +223,7 @@ LusterTrainStationConductor:
 	playsound SFX_ENTER_DOOR
 	applyonemovement PLAYER, hide_person
 	waitsfx
-	opentext
+	opentext TEXTBOX_PA
 	writetext LusterStationAllAboardText
 	waitbutton
 	closetext
@@ -287,7 +292,6 @@ LusterStationAllAboardText:
 	cont "now departing!"
 	done
 	
-	
 LusterTrainStationText1:
 	text "We've arrived at"
 	line "LUSTER CITY!"
@@ -298,9 +302,8 @@ LusterTrainStationText1:
 	done
 	
 LusterTrainStationReporterText1:
-	text "This is JACKIE"
-	line "VALENTINE with"
-	cont "ONWA NEWS!"
+	text "This is ONWA NEWS,"
+	line "on the scene!"
 	
 	para "A train hijacked"
 	line "by the notorious"
@@ -328,9 +331,9 @@ LusterTrainStationReporterText3:
 	line "all thanks to this"
 	cont "brave hero!"
 	
-	para "For ONWA NEWS,"
-	line "this is JACKIE"
-	cont "VALENTINE."
+	para "This has been"
+	line "ONWA NEWS, on"
+	cont "the scene!"
 	
 	para "Signing off!"
 	done
@@ -340,8 +343,7 @@ LusterTrainStationConductorText1:
 	done
 	
 LusterTrainStationConductorText2:
-	text "Of course I can,"
-	line "JACKIE!"
+	text "Of course I can!"
 	done
 	
 LusterTrainStationConductorText3:
@@ -458,8 +460,10 @@ LusterStationNettText2:
 	
 	para "PRESIDENT and CEO"
 	line "of NETT CORP."
+	done
 	
-	para "Remember to stop"
+LusterStationNettText3:
+	text "Remember to stop"
 	line "by and tell them I"
 	cont "sent you."
 	done

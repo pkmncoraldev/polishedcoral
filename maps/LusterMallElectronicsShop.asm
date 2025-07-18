@@ -123,7 +123,7 @@ LusterMallElectronicsShopClerkAsm4:
 	
 LusterMallElectronicsShopPolly:
 	faceplayer
-	opentext
+	opentext TEXTBOX_POLLY
 	writetext LusterMallElectronicsShopPollyText
 	waitbutton
 	closetext

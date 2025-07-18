@@ -96,7 +96,7 @@ SpruceLabSpruce:
 	setevent EVENT_TALKED_TO_SPRUCE
 	setevent EVENT_SPRUCELAB_SPRUCE1_GONE
 	faceplayer
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText1
 	waitbutton
 	closetext
@@ -116,7 +116,7 @@ SpruceLabSpruce:
 	playsound SFX_WALL_OPEN
 	pause 7
 	faceplayer
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText2
 	waitbutton
 	closetext
@@ -130,23 +130,25 @@ SpruceLabSpruce:
 .alreadytalked
 	checkevent EVENT_SAVED_SUNBEAM
 	iftrue .sunbeam_done
-	jumptextfaceplayer SpruceLabSpruceText18
+	jumptextfaceplayer TEXTBOX_SPRUCE, SpruceLabSpruceText18
 .sunbeam_done
-	jumptextfaceplayer SpruceLabSpruceText8
+	jumptextfaceplayer TEXTBOX_SPRUCE, SpruceLabSpruceText8
 .trymasterballagain
 	faceplayer
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText17
 	waitbutton
 	jump .getmasterball
 .masterballspeech
 	faceplayer
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText14
 	waitbutton
 .getmasterball
+	changetextboxspeaker
 	verbosegiveitem MASTER_BALL
 	iffalse .no_room
+	changetextboxspeaker TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText15
 	waitbutton
 	closetext
@@ -158,6 +160,7 @@ SpruceLabSpruce:
 	clearevent EVENT_MUSEUM_ABIE_GONE
 	end
 .no_room
+	changetextboxspeaker TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText16
 	waitbutton
 	closetext
@@ -165,7 +168,7 @@ SpruceLabSpruce:
 	end
 .repeatmasterballspeech
 	faceplayer
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText15
 	waitbutton
 	closetext
@@ -183,7 +186,7 @@ SpruceLabComeBackInside:
 	spriteface PLAYER, DOWN
 	spriteface SPRUCELAB_SPRUCE2, UP
 	
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText3
 	waitbutton
 	closetext
@@ -196,7 +199,7 @@ SpruceLabComeBackInside:
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, SPRUCELAB_SPRUCE2, 15
 	pause 7
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText4
 	waitbutton
 	closetext
@@ -205,7 +208,7 @@ SpruceLabComeBackInside:
 	stopfollow
 	spriteface SPRUCELAB_SPRUCE2, RIGHT
 	pause 5
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText5
 	waitbutton
 	closetext
@@ -244,21 +247,22 @@ SpruceLabComeBackInside:
 	spriteface PLAYER, DOWN
 	spriteface SPRUCELAB_SPRUCE2, UP
 	pause 5
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText6
 	waitbutton
 	closetext
 	pause 10
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText11
 	waitbutton
 	closetext
 	spriteface SPRUCELAB_SPRUCE2, DOWN
 	pause 70
 	spriteface SPRUCELAB_SPRUCE2, UP
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText7
 	waitbutton
+	changetextboxspeaker
 	verbosegiveitem POKE_FLUTE
 	closetext
 	follow SPRUCELAB_SPRUCE2, PLAYER
@@ -266,7 +270,7 @@ SpruceLabComeBackInside:
 	spriteface SPRUCELAB_SPRUCE2, DOWN
 	stopfollow
 	pause 5
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText8
 	waitbutton
 	closetext

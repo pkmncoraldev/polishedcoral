@@ -163,7 +163,7 @@ FlickerTrainStationClerk:
 	pause 20
 	applymovement FLICKER_TRAIN_STATION_RIVAL, Movement_FlickerStationRival1
 	spriteface PLAYER, LEFT
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext FlickerTrainStationRivalText1
 	waitbutton
 	closetext
@@ -175,7 +175,7 @@ FlickerTrainStationClerk:
 	waitbutton
 	closetext
 	pause 5
-	opentext
+	opentext TEXTBOX_CLERK
 	writetext FlickerTrainStationClerkText9
 	waitbutton
 	closetext
@@ -184,7 +184,7 @@ FlickerTrainStationClerk:
 	spriteface FLICKER_TRAIN_STATION_CLERK, LEFT
 	pause 5
 	spriteface FLICKER_TRAIN_STATION_RIVAL, RIGHT
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext FlickerTrainStationRivalText3
 	waitbutton
 	closetext
@@ -424,8 +424,7 @@ FlickerTrainStationClerkText11:
 	done
 	
 FlickerTrainStationRivalText1:
-	text "<RIVAL>: You"
-	line "again?"
+	text "You again?"
 	
 	para "What's that?"
 	

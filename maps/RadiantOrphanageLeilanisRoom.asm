@@ -77,7 +77,7 @@ RadiantOrphanageLeilanisRoomCallback:
 	return
 
 RadiantOrphanageLeilanisRoomRose:
-	jumptextfaceplayer RadiantOrphanageLeilanisRoomRoseText
+	jumptextfaceplayer TEXTBOX_ROSE, RadiantOrphanageLeilanisRoomRoseText
 	
 RadiantOrphanageLeilanisRoomRoseText:
 	text "LILY said some-"
@@ -87,7 +87,7 @@ RadiantOrphanageLeilanisRoomRoseText:
 	done
 	
 RadiantOrphanageLeilanisRoomLily:
-	jumptextfaceplayer RadiantOrphanageLeilanisRoomLilyText
+	jumptextfaceplayer TEXTBOX_LILY, RadiantOrphanageLeilanisRoomLilyText
 	
 RadiantOrphanageLeilanisRoomLilyText:
 	text "CLOVER was with me"
@@ -97,7 +97,7 @@ RadiantOrphanageLeilanisRoomLilyText:
 	done
 	
 RadiantOrphanageLeilanisRoomIris:
-	jumptextfaceplayer RadiantOrphanageLeilanisRoomIrisText
+	jumptextfaceplayer TEXTBOX_IRIS, RadiantOrphanageLeilanisRoomIrisText
 	
 RadiantOrphanageLeilanisRoomIrisText:
 	text "I think FELICIA"
@@ -106,7 +106,7 @@ RadiantOrphanageLeilanisRoomIrisText:
 	done
 	
 RadiantOrphanageLeilanisRoomPoppy:
-	jumptextfaceplayer RadiantOrphanageLeilanisRoomPoppyText
+	jumptextfaceplayer TEXTBOX_POPPY, RadiantOrphanageLeilanisRoomPoppyText
 	
 RadiantOrphanageLeilanisRoomPoppyText:
 	text "IRIS said she was"
@@ -116,7 +116,7 @@ RadiantOrphanageLeilanisRoomPoppyText:
 	done
 	
 RadiantOrphanageLeilanisRoomViolet:
-	jumptextfaceplayer RadiantOrphanageLeilanisRoomVioletText
+	jumptextfaceplayer TEXTBOX_VIOLET, RadiantOrphanageLeilanisRoomVioletText
 	
 RadiantOrphanageLeilanisRoomVioletText:
 	text "POPPY told me she"
@@ -126,7 +126,7 @@ RadiantOrphanageLeilanisRoomVioletText:
 	done
 	
 RadiantOrphanageLeilanisRoomClover:
-	jumptextfaceplayer RadiantOrphanageLeilanisRoomCloverText
+	jumptextfaceplayer TEXTBOX_CLOVER, RadiantOrphanageLeilanisRoomCloverText
 	
 RadiantOrphanageLeilanisRoomCloverText:
 	text "VIOLET loves the"
@@ -136,7 +136,7 @@ RadiantOrphanageLeilanisRoomCloverText:
 	done
 	
 RadiantOrphanageLeilanisRoomFelicia:
-	jumptextfaceplayer RadiantOrphanageLeilanisRoomFeliciaText
+	jumptextfaceplayer TEXTBOX_FELICIA, RadiantOrphanageLeilanisRoomFeliciaText
 	
 RadiantOrphanageLeilanisRoomFeliciaText:
 	text "ROSE probably went"
@@ -158,25 +158,30 @@ RadiantOrphanageLeilanisRoomErika:
 	iftrue .talked_once
 	setevent EVENT_LOST_GIRLS_QUEST_ACTIVE
 	domaptrigger SHIMMER_UNDER_BOARDWALK, $1
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext RadiantOrphanageLeilanisRoomErikaText1
 	waitbutton
 	closetext
 	pause 30
 	faceplayer
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext RadiantOrphanageLeilanisRoomErikaText2
+	buttonsound
+	changetextboxspeaker TEXTBOX_ERIKA
+	farwritetext StdBlankText
+	pause 6
+	writetext RadiantOrphanageLeilanisRoomErikaText6
 	waitbutton
 	closetext
 	spriteface RADIANT_ORPHANAGE_LEILANIS_ROOM_ERIKA, LEFT
 	pause 30
-	opentext
+	opentext TEXTBOX_ERIKA
 	writetext RadiantOrphanageLeilanisRoomErikaText3
 	waitbutton
 	closetext
 	pause 40
 	faceplayer
-	opentext
+	opentext TEXTBOX_ERIKA
 	writetext RadiantOrphanageLeilanisRoomErikaText4
 	waitbutton
 	closetext
@@ -184,7 +189,7 @@ RadiantOrphanageLeilanisRoomErika:
 	pause 70
 .talked_once
 	faceplayer
-	opentext
+	opentext TEXTBOX_ERIKA
 	writetext RadiantOrphanageLeilanisRoomErikaText5
 	waitbutton
 	closetext
@@ -192,7 +197,7 @@ RadiantOrphanageLeilanisRoomErika:
 	end
 .saved_one
 	faceplayer
-	opentext
+	opentext TEXTBOX_ERIKA
 	writetext RadiantOrphanageLeilanisRoomErikaSavedOneText
 	waitbutton
 	closetext
@@ -200,24 +205,24 @@ RadiantOrphanageLeilanisRoomErika:
 	end
 .saved_some
 	faceplayer
-	opentext
+	opentext TEXTBOX_ERIKA
 	writetext RadiantOrphanageLeilanisRoomErikaSavedSomeText
 	waitbutton
 	closetext
 	spriteface RADIANT_ORPHANAGE_LEILANIS_ROOM_ERIKA, LEFT
-	opentext
+	opentext TEXTBOX_ERIKA
 	writetext RadiantOrphanageLeilanisRoomErikaSavedSomeText2
 	waitbutton
 	closetext
 	end
 .saved_almost_all
 	faceplayer
-	opentext
+	opentext TEXTBOX_ERIKA
 	writetext RadiantOrphanageLeilanisRoomErikaSavedAlmostAllText
 	waitbutton
 	closetext
 	spriteface RADIANT_ORPHANAGE_LEILANIS_ROOM_ERIKA, LEFT
-	opentext
+	opentext TEXTBOX_ERIKA
 	writetext RadiantOrphanageLeilanisRoomErikaSavedAlmostAllText2
 	waitbutton
 	closetext
@@ -308,8 +313,10 @@ RadiantOrphanageLeilanisRoomErikaText2:
 	text "Ah, excuse me…"
 	
 	para "My name is ERIKA."
+	done
 	
-	para "If you're here for"
+RadiantOrphanageLeilanisRoomErikaText6:
+	text "If you're here for"
 	line "a GYM BATTLE, now's"
 	cont "not a good time…"
 	
@@ -365,4 +372,8 @@ RadiantOrphanageLeilanisRoomErikaText5:
 	
 	para "I would really"
 	line "appreciate it."
+	
+	para "I wonder if anyone"
+	line "in town saw where"
+	cont "they ran off to…"
 	done

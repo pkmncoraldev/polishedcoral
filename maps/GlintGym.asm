@@ -66,7 +66,7 @@ GlintGymTrigger1:
 	
 GlintGymStanley:
 	faceplayer
-	opentext
+	opentext TEXTBOX_STANLEY
 	checkevent EVENT_BEAT_STANLEY
 	iftrue .FightDone
 	writetext GlintGymStanleyTextBeforeBattle1
@@ -76,7 +76,7 @@ GlintGymStanley:
 	spriteface PLAYER, RIGHT
 	applymovement GLINTGYM_STANLEY, Movement_GlintGymMoveStanley
 	faceplayer
-	opentext
+	opentext TEXTBOX_STANLEY
 	writetext GlintGymStanleyTextBeforeBattle2
 	waitbutton
 	closetext
@@ -93,7 +93,7 @@ GlintGymStanley:
 	waitsfx
 	setflag ENGINE_FIRSTBADGE
 	checkcode VAR_BADGES
-	
+	changetextboxspeaker TEXTBOX_STANLEY
 	
 .FightDone:	
 	checkevent EVENT_GOT_TM_FROM_STANLEY
@@ -102,9 +102,11 @@ GlintGymStanley:
 	setevent EVENT_BEAT_GLINT_GYM_TRAINER_2
 	writetext GlintGymStanleyTextAfterBattle
 	buttonsound
+	changetextboxspeaker
 	verbosegivetmhm TM_FAKE_OUT
 	setevent EVENT_GOT_TM_FROM_STANLEY
 	setevent EVENT_GLINT_BIRDS
+	changetextboxspeaker TEXTBOX_STANLEY
 	writetext GlintGymStanleyTextTMSpeech
 	waitbutton
 	closetext
@@ -133,7 +135,7 @@ GlintGymStanleyRematch:
 	spriteface PLAYER, RIGHT
 	applymovement GLINTGYM_STANLEY, Movement_GlintGymMoveStanley
 	faceplayer
-	opentext
+	opentext TEXTBOX_STANLEY
 	writetext GlintGymStanleyTextBeforeBattle2
 	waitbutton
 	closetext
@@ -172,7 +174,7 @@ GlintGymStanleyRematch:
 .cont
 	startbattle
 	reloadmapafterbattle
-	opentext
+	opentext TEXTBOX_STANLEY
 	writetext GlintGymStanleyTextLoop
 	waitbutton
 	closetext

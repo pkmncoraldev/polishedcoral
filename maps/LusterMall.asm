@@ -133,9 +133,9 @@ LusterMallEscalator1:
 	checkevent EVENT_ON_ESCALATOR
 	iffalse .end
 	applyonemovement PLAYER, step_down
-	opentext
 	checkevent EVENT_BEAT_MALL_COP
 	iftrue LusterMallEscalatorBeatCop
+	opentext TEXTBOX_UNKNOWN
 	writetext LusterMallCopText1
 	waitbutton
 	closetext
@@ -145,7 +145,7 @@ LusterMallEscalator1:
 	appear LUSTERMALLCOP
 	applymovement LUSTERMALLCOP, Movement_LusterMallCop1
 	pause 5
-	opentext
+	opentext TEXTBOX_MALL_COP
 	checkevent EVENT_KICKED_OUT_OF_MALL_3
 	iftrue LusterMallEscalatorStartBattle
 	checkevent EVENT_KICKED_OUT_OF_MALL_2
@@ -178,9 +178,9 @@ LusterMallEscalator2:
 	checkevent EVENT_ON_ESCALATOR
 	iffalse .end
 	applyonemovement PLAYER, step_down
-	opentext
 	checkevent EVENT_BEAT_MALL_COP
 	iftrue LusterMallEscalatorBeatCop
+	opentext TEXTBOX_UNKNOWN
 	writetext LusterMallCopText1
 	waitbutton
 	closetext
@@ -190,7 +190,7 @@ LusterMallEscalator2:
 	appear LUSTERMALLCOP
 	applymovement LUSTERMALLCOP, Movement_LusterMallCop2
 	pause 5
-	opentext
+	opentext TEXTBOX_MALL_COP
 	checkevent EVENT_KICKED_OUT_OF_MALL_3
 	iftrue LusterMallEscalatorStartBattle
 	checkevent EVENT_KICKED_OUT_OF_MALL_2
@@ -223,9 +223,9 @@ LusterMallEscalator3:
 	checkevent EVENT_ON_ESCALATOR
 	iffalse .end
 	applyonemovement PLAYER, step_up
-	opentext
 	checkevent EVENT_BEAT_MALL_COP
 	iftrue LusterMallEscalatorBeatCop
+	opentext TEXTBOX_UNKNOWN
 	writetext LusterMallCopText1
 	waitbutton
 	closetext
@@ -236,7 +236,7 @@ LusterMallEscalator3:
 	applymovement LUSTERMALLCOP, Movement_LusterMallCop3
 	spriteface LUSTERMALLCOP, DOWN
 	pause 5
-	opentext
+	opentext TEXTBOX_MALL_COP
 	checkevent EVENT_KICKED_OUT_OF_MALL_3
 	iftrue LusterMallEscalatorStartBattle
 	checkevent EVENT_KICKED_OUT_OF_MALL_2
@@ -270,9 +270,9 @@ LusterMallEscalator4:
 	checkevent EVENT_ON_ESCALATOR
 	iffalse .end
 	applyonemovement PLAYER, step_up
-	opentext
 	checkevent EVENT_BEAT_MALL_COP
 	iftrue LusterMallEscalatorBeatCop
+	opentext TEXTBOX_UNKNOWN
 	writetext LusterMallCopText1
 	waitbutton
 	closetext
@@ -284,7 +284,7 @@ LusterMallEscalator4:
 	applyonemovement LUSTERMALLCOP, step_right
 	spriteface LUSTERMALLCOP, DOWN
 	pause 5
-	opentext
+	opentext TEXTBOX_MALL_COP
 	checkevent EVENT_KICKED_OUT_OF_MALL_3
 	iftrue LusterMallEscalatorStartBattle
 	checkevent EVENT_KICKED_OUT_OF_MALL_2
@@ -327,7 +327,7 @@ LusterMallEscalatorStartBattle:
 	startbattle
 	reloadmapafterbattle
 	special RestoreMusic
-	opentext
+	opentext TEXTBOX_MALL_COP
 	writetext LusterMallCopText6
 	waitbutton
 	closetext
@@ -349,6 +349,7 @@ LusterMallEscalatorStartBattle:
 	end
 	
 LusterMallEscalatorBeatCop:
+	opentext
 	writetext LusterMallCopText8
 	waitbutton
 	closetext

@@ -17,7 +17,9 @@ Route28OttosTent_MapScriptHeader:
 	
 Route28OttosTentOtto:
 	faceplayer
-	opentext
+	checkevent EVENT_OTTO_TALKS_ABOUT_RIVAL
+	iftrue .talk_about_rival
+	opentext TEXTBOX_OTTO
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	iftrue .just_shopped
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
@@ -27,8 +29,6 @@ Route28OttosTentOtto:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 	checkevent EVENT_TALKED_TO_OTTO
 	iftrue .normal
-	checkevent EVENT_OTTO_TALKS_ABOUT_RIVAL
-	iftrue .talk_about_rival
 	writetext Route28OttosTentOttoText3
 	jump .cont
 .just_shopped
@@ -43,7 +43,13 @@ Route28OttosTentOtto:
 	writetext Route28OttosTentOttoText1
 	jump .cont
 .talk_about_rival
+	opentext TEXTBOX_UNKNOWN
 	writetext Route28OttosTentOttoText5
+	buttonsound
+	changetextboxspeaker TEXTBOX_OTTO
+	farwritetext StdBlankText
+	pause 6
+	writetext Route28OttosTentOttoText12
 .cont
 	buttonsound
 	farwritetext StdBlankText
@@ -92,6 +98,7 @@ Route28OttosTentOtto:
 	writetext Route28OttosTentOttoText6
 	waitbutton
 	callasm OttoAsm
+	changetextboxspeaker TEXTBOX_OTTO
 	writetext Route28OttosTentOttoText2
 	waitbutton
 	closetext
@@ -193,8 +200,10 @@ Route28OttosTentOttoText5:
 	
 	para "Anyway, the name's"
 	line "OTTO."
+	done
 	
-	para "My travels bring"
+Route28OttosTentOttoText12:
+	text "My travels bring"
 	line "me all over the"
 	cont "place, man."
 	
@@ -268,6 +277,8 @@ Route28OttosTentOttoText11:
 	done
 
 OttoAsm:
+	xor a
+	ld [wPlaceBallsX], a
 	ld a, MARTTYPE_BARTENDER
 	ld c, a
 	ld a, MART_OTTO

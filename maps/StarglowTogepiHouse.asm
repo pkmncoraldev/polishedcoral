@@ -59,12 +59,12 @@ StarglowHouse1RocketEvent:
 	playsound SFX_ENTER_DOOR
 	applymovement STARGLOWHOUSE1_LITTLEGIRL, Movement_StarglowHouse1LittleGirl
 	spriteface STARGLOWHOUSE1_LITTLEGIRL, RIGHT
-	opentext
+	opentext TEXTBOX_LADY
 	writetext StarglowHouse1MommyText1
 	waitbutton
 	closetext
 	pause 5
-	opentext
+	opentext TEXTBOX_PUNK
 	writetext StarglowHouse1RocketText1
 	waitbutton
 	closetext
@@ -73,13 +73,13 @@ StarglowHouse1RocketEvent:
 	applymovement STARGLOWHOUSE1_MOMMY, Movement_StarglowHouse1Mommy
 	applymovement STARGLOWHOUSE1_LITTLEGIRL, Movement_StarglowHouse1LittleGirl2
 	spriteface STARGLOWHOUSE1_LITTLEGIRL, UP
-	opentext
+	opentext TEXTBOX_GIRL
 	writetext StarglowHouse1LittleGirlText1
 	waitbutton
 	closetext
 	pause 5
 	spriteface STARGLOWHOUSE1_ROCKET, DOWN
-	opentext
+	opentext TEXTBOX_PUNK
 	writetext StarglowHouse1RocketText2
 	waitbutton
 	closetext
@@ -89,7 +89,7 @@ StarglowHouse1RocketEvent:
 	applymovement STARGLOWHOUSE1_LITTLEGIRL, Movement_StarglowHouse1LittleGirl3
 	spriteface STARGLOWHOUSE1_LITTLEGIRL, UP
 	spriteface PLAYER, DOWN
-	opentext
+	opentext TEXTBOX_GIRL
 	writetext StarglowHouse1LittleGirlText2
 	waitbutton
 	closetext
@@ -100,7 +100,7 @@ StarglowHouse1GirlStopsYou1:
 	special Special_StopRunning
 	spriteface STARGLOWHOUSE1_LITTLEGIRL, DOWN
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_GIRL
 	writetext StarglowHouse1LittleGirlText2
 	waitbutton
 	closetext
@@ -113,7 +113,7 @@ StarglowHouse1GirlStopsYou2:
 	special Special_StopRunning
 	spriteface STARGLOWHOUSE1_LITTLEGIRL, DOWN
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_GIRL
 	writetext StarglowHouse1LittleGirlText2
 	waitbutton
 	closetext
@@ -153,7 +153,7 @@ StarglowHouse1LittleGirl:
 	checkevent EVENT_GOT_TOGEPI
 	iftrue .gottogepi
 	faceplayer
-	opentext
+	opentext TEXTBOX_GIRL
 	writetext StarglowHouse1LittleGirlText3
 	waitbutton
 	closetext
@@ -169,7 +169,7 @@ StarglowHouse1LittleGirl:
 	pause 10
 	spriteface STARGLOWHOUSE1_LITTLEGIRL3, LEFT
 	pause 15
-	opentext
+	opentext TEXTBOX_GIRL
 	writetext StarglowHouse1LittleGirlText4
 	waitbutton
 	closetext
@@ -185,7 +185,7 @@ StarglowHouse1LittleGirl:
 	setlasttalked STARGLOWHOUSE1_LITTLEGIRL3
 	faceplayer
 	pause 10
-	opentext
+	opentext TEXTBOX_GIRL
 	writetext StarglowHouse1LittleGirlText5
 	yesorno
 	iffalse .end
@@ -193,18 +193,20 @@ StarglowHouse1LittleGirl:
 	ifequal PARTY_LENGTH, .PartyFull
 	special SpecialGiveShinyTogepi
 	disappear STARGLOWHOUSE1_TOGEPI2
+	changetextboxspeaker
 	writetext StarglowHouse1GotTogepiText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	setevent EVENT_GOT_TOGEPI
 	clearevent EVENT_DIDNT_TAKE_TOGEPI
+	changetextboxspeaker TEXTBOX_GIRL
 	writetext StarglowHouse1LittleGirlText6
 	waitbutton
 	closetext
 	end
 .didnttaketogepi
 	faceplayer
-	opentext
+	opentext TEXTBOX_GIRL
 	writetext StarglowHouse1LittleGirlText7
 	yesorno
 	iffalse .end
@@ -244,7 +246,7 @@ StarglowHouse1LittleGirl:
 	
 StarglowHouse1Rocket:
 	faceplayer
-	opentext
+	opentext TEXTBOX_PUNK
 	writetext StarglowHouse1RocketText3
 	buttonsound
 	special SaveMusic
@@ -260,7 +262,7 @@ StarglowHouse1Rocket:
 	startbattle
 	reloadmapafterbattle
 	special RestoreMusic
-	opentext
+	opentext TEXTBOX_PUNK
 	writetext StarglowHouse1RocketText4
 	waitbutton
 	closetext
@@ -269,7 +271,7 @@ StarglowHouse1Rocket:
 	applymovement STARGLOWHOUSE1_ROCKET, Movement_StarglowHouse1Rocket3
 	spriteface STARGLOWHOUSE1_ROCKET, LEFT
 	spriteface STARGLOWHOUSE1_LITTLEGIRL, RIGHT
-	opentext
+	opentext TEXTBOX_PUNK
 	writetext StarglowHouse1RocketText5
 	waitbutton
 	closetext
@@ -280,7 +282,7 @@ StarglowHouse1Rocket:
 	pause 10
 	playmapmusic
 	applymovement STARGLOWHOUSE1_MOMMY, Movement_StarglowHouse1Mommy2
-	opentext
+	opentext TEXTBOX_LADY
 	writetext StarglowHouse1MommyText3
 	waitbutton
 	closetext
@@ -288,12 +290,12 @@ StarglowHouse1Rocket:
 	spriteface STARGLOWHOUSE1_LITTLEGIRL, UP
 	spriteface PLAYER, DOWN
 	appear STARGLOWHOUSE1_LITTLEGIRL2
-	opentext
+	opentext TEXTBOX_GIRL
 	writetext StarglowHouse1LittleGirlText3
 	waitbutton
 	closetext
 	spriteface PLAYER, RIGHT
-	opentext
+	opentext TEXTBOX_LADY
 	writetext StarglowHouse1MommyText4
 	waitbutton
 	closetext
@@ -309,7 +311,7 @@ StarglowHouse1Rocket:
 	applymovement STARGLOWHOUSE1_ROCKET, Movement_StarglowHouse1Rocket4
 	spriteface STARGLOWHOUSE1_ROCKET, LEFT
 	spriteface STARGLOWHOUSE1_LITTLEGIRL, RIGHT
-	opentext
+	opentext TEXTBOX_PUNK
 	writetext StarglowHouse1RocketText5
 	waitbutton
 	closetext
@@ -324,19 +326,19 @@ StarglowHouse1Rocket:
 	appear STARGLOWHOUSE1_MOMMY2
 	spriteface PLAYER, UP
 	disappear STARGLOWHOUSE1_MOMMY
-	opentext
+	opentext TEXTBOX_LADY
 	writetext StarglowHouse1MommyText3
 	waitbutton
 	closetext
 	applymovement STARGLOWHOUSE1_LITTLEGIRL, Movement_StarglowHouse1LittleGirl4
 	spriteface PLAYER, LEFT
 	spriteface STARGLOWHOUSE1_LITTLEGIRL, RIGHT
-	opentext
+	opentext TEXTBOX_GIRL
 	writetext StarglowHouse1LittleGirlText3
 	waitbutton
 	closetext
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_LADY
 	writetext StarglowHouse1MommyText4
 	waitbutton
 	closetext
@@ -442,7 +444,7 @@ StarglowHouse1GotTogepiText:
 	done
 	
 StarglowHouse1MommyText1:
-	text "LADY: Please don't"
+	text "Please don't"
 	line "hurt us!"
 	
 	para "You can't have my"
@@ -505,14 +507,13 @@ StarglowHouse1TogepiText:
 	done
 	
 StarglowHouse1RocketText1:
-	text "PUNK: I don't"
-	line "care!"
+	text "I don't care!"
 	
 	para "Hand it over!"
 	done
 	
 StarglowHouse1RocketText2:
-	text "PUNK: Scram, kid!"
+	text "Scram, kid!"
 	done
 	
 StarglowHouse1RocketText3:
@@ -555,7 +556,7 @@ StarglowHouse1RocketText4:
 	done
 	
 StarglowHouse1RocketText5:
-	text "PUNK: Today's your"
+	text "Today's your"
 	line "lucky day, kid."
 	done
 	

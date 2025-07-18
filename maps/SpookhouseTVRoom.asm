@@ -96,7 +96,7 @@ SpookHouseTVScaryDoorCont:
 	end
 	
 SpookHouseNPC3:
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext SpookHouseGhostText9
 	closetext
 	disappear SPOOKHOUSE_TVROOM_NPC5
@@ -135,7 +135,7 @@ SpookHouseNPC3:
 	reloadmap
 	applyonemovement PLAYER, show_person
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext SpookHouseGhostText2
 	playsound SFX_EMBER
 	earthquake 60
@@ -181,7 +181,7 @@ SpookHouseTVRoomMenuData: ; 49d14
 	end
 	
 SpookHouseNPC2:
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext SpookHouseGhostText1
 	waitbutton
 	closetext

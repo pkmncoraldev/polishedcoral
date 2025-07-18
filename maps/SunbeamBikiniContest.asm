@@ -37,7 +37,7 @@ SunbeamBikiniContestTrigger0:
 	setevent EVENT_BIKINIBL
 	setevent EVENT_BIKINIP
 	pause 7
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText1
 	waitbutton
 	closetext
@@ -61,7 +61,7 @@ SunbeamBikiniContestTrigger0:
 	spriteface SUNBEAMCONTESTCROWD2, UP
 	pause 10
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText12
 	waitbutton
 	closetext
@@ -69,7 +69,7 @@ SunbeamBikiniContestTrigger0:
 	appear SUNBEAMCONTESTBIKINIBR
 	playsound SFX_EXIT_BUILDING
 	applymovement SUNBEAMCONTESTBIKINIBR, Movement_SunbeamContestBikini1
-	opentext
+	opentext TEXTBOX_HAZEL
 	writetext SunBeamContestBikiniBrText1
 	waitbutton
 	closetext
@@ -80,7 +80,7 @@ SunbeamBikiniContestTrigger0:
 	startbattle
 	reloadmapafterbattle
 	playmusic MUSIC_GSC_GAME_CORNER
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText2
 	waitbutton
 	closetext
@@ -106,7 +106,7 @@ SunbeamBikiniContestTrigger0:
 	
 	
 	pause 7
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText3
 	waitbutton
 	closetext
@@ -114,7 +114,7 @@ SunbeamBikiniContestTrigger0:
 	appear SUNBEAMCONTESTBIKINIBL
 	playsound SFX_EXIT_BUILDING
 	applymovement SUNBEAMCONTESTBIKINIBL, Movement_SunbeamContestBikini1
-	opentext
+	opentext TEXTBOX_ASTER
 	writetext SunBeamContestBikiniBLText1
 	waitbutton
 	closetext
@@ -125,7 +125,7 @@ SunbeamBikiniContestTrigger0:
 	startbattle
 	reloadmapafterbattle
 	playmusic MUSIC_GSC_GAME_CORNER
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText4
 	waitbutton
 	closetext
@@ -150,7 +150,7 @@ SunbeamBikiniContestTrigger0:
 	playsound SFX_ENTER_DOOR
 	
 	pause 7
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText5
 	waitbutton
 	closetext
@@ -158,7 +158,7 @@ SunbeamBikiniContestTrigger0:
 	appear SUNBEAMCONTESTBIKINIP
 	playsound SFX_EXIT_BUILDING
 	applymovement SUNBEAMCONTESTBIKINIP, Movement_SunbeamContestBikini1
-	opentext
+	opentext TEXTBOX_LILAC
 	writetext SunBeamContestBikiniPText1
 	waitbutton
 	closetext
@@ -169,7 +169,7 @@ SunbeamBikiniContestTrigger0:
 	startbattle
 	reloadmapafterbattle
 	playmusic MUSIC_GSC_GAME_CORNER
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText6
 	waitbutton
 	closetext
@@ -194,7 +194,7 @@ SunbeamBikiniContestTrigger0:
 	playsound SFX_ENTER_DOOR
 	
 	pause 7
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText7
 	waitbutton
 	closetext
@@ -214,25 +214,25 @@ SunbeamBikiniContestTrigger0:
 	spriteface SUNBEAMCONTESTBIKINIP, LEFT
 	pause 7
 	spriteface SUNBEAMCONTESTBIKINIP, DOWN
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText8
 	waitbutton
 	closetext
 	pause 7
 	applymovement SUNBEAMCONTESTBIKINIBR, Movement_SunbeamContestBikini6
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText9
 	waitbutton
 	closetext
 	pause 7
 	applymovement SUNBEAMCONTESTBIKINIBL, Movement_SunbeamContestBikini6
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText10
 	waitbutton
 	closetext
 	pause 7
 	applymovement SUNBEAMCONTESTBIKINIP, Movement_SunbeamContestBikini6
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText11
 	waitbutton
 	closetext
@@ -251,7 +251,7 @@ SunbeamBikiniContestTrigger0:
 	playsound SFX_ENTER_DOOR
 	
 	pause 7
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText13
 	waitbutton
 	playmusic MUSIC_NONE
@@ -279,7 +279,7 @@ SunbeamBikiniContestTrigger0:
 	playsound SFX_EXIT_BUILDING
 	applymovement SUNBEAMCONTESTBIKINIBR, Movement_SunbeamContestBikini4
 	spriteface SUNBEAMCONTESTBIKINIBR, DOWN
-	opentext
+	opentext TEXTBOX_LILAC
 	writetext SunBeamContestBikiniBrText2
 	waitbutton
 	closetext
@@ -304,7 +304,7 @@ SunbeamBikiniContestTrigger0:
 	disappear SUNBEAMCONTESTBIKINIBR
 	playsound SFX_ENTER_DOOR
 	pause 14
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText18
 	waitbutton
 	closetext
@@ -329,7 +329,7 @@ SunbeamBikiniContestTrigger0:
 	playsound SFX_EXIT_BUILDING
 	applymovement SUNBEAMCONTESTBIKINIBL, Movement_SunbeamContestBikini4
 	spriteface SUNBEAMCONTESTBIKINIBL, DOWN
-	opentext
+	opentext TEXTBOX_ASTER
 	writetext SunBeamContestBikiniBLText2
 	waitbutton
 	closetext
@@ -354,7 +354,7 @@ SunbeamBikiniContestTrigger0:
 	disappear SUNBEAMCONTESTBIKINIBL
 	playsound SFX_ENTER_DOOR
 	pause 14
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText18
 	waitbutton
 	closetext
@@ -379,7 +379,7 @@ SunbeamBikiniContestTrigger0:
 	playsound SFX_EXIT_BUILDING
 	applymovement SUNBEAMCONTESTBIKINIP, Movement_SunbeamContestBikini4
 	spriteface SUNBEAMCONTESTBIKINIP, DOWN
-	opentext
+	opentext TEXTBOX_HAZEL
 	writetext SunBeamContestBikiniPText2
 	waitbutton
 	closetext
@@ -404,7 +404,7 @@ SunbeamBikiniContestTrigger0:
 	disappear SUNBEAMCONTESTBIKINIP
 	playsound SFX_ENTER_DOOR
 	pause 14
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText18
 	waitbutton
 	closetext
@@ -460,7 +460,7 @@ SunbeamContestText1:
 	done
 	
 SunbeamContestText2:
-	text "PA: Wonderful!"
+	text "Wonderful!"
 	
 	para "What a battle!"
 	
@@ -476,7 +476,7 @@ SunbeamContestText3:
 	done
 	
 SunbeamContestText4:
-	text "PA: Excellent!"
+	text "Excellent!"
 	
 	para "A great battle"
 	line "from both sides!"
@@ -503,8 +503,8 @@ SunbeamContestText6:
 	done
 	
 SunbeamContestText7:
-	text "PA: Before we get"
-	line "to the results,"
+	text "Before we get to"
+	line "the results,"
 	
 	para "let's get all of"
 	line "our contestants"
@@ -534,7 +534,7 @@ SunbeamContestText11:
 	done
 	
 SunbeamContestText12:
-	text "PA: Alright!"
+	text "Alright!"
 	
 	para "Without further"
 	line "ado,"
@@ -584,7 +584,7 @@ SunbeamContestText18:
 	done
 	
 SunbeamContestCrowdText:
-	text "Crowd: WOOO!!<WAIT_S>"
+	text "WOOO!!<WAIT_S>"
 	line "YEAH!!"
 	done
 	

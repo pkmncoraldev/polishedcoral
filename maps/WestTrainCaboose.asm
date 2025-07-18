@@ -40,7 +40,7 @@ WestTrainCabooseTrigger0:
 	pause 1
 	pause 9
 	special Special_EnableInput
-	opentext
+	opentext TEXTBOX_GRUNT
 	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
 	writetext WestTrainCabooseSnareGruntText1
 	waitbutton
@@ -52,7 +52,7 @@ WestTrainCabooseTrigger0:
 	applyonemovement PLAYER, step_right
 	stopfollow
 	applyonemovement PLAYER, remove_fixed_facing
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext WestTrainCabooseSnareOfficerText1
 	waitbutton
 	closetext
@@ -62,7 +62,7 @@ WestTrainCabooseTrigger0:
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	waitsfx
 	pause 10
-	opentext
+	opentext TEXTBOX_GRUNT_B
 	writetext WestTrainCabooseSnareOfficerText2
 	waitbutton
 	closetext
@@ -75,7 +75,7 @@ WestTrainCabooseTrigger0:
 	startbattle
 	reloadmapafterbattle
 	special RestoreMusic
-	opentext
+	opentext TEXTBOX_GRUNT_B
 	writetext WestTrainCabooseSnareOfficerText3
 	waitbutton
 	closetext
@@ -83,7 +83,7 @@ WestTrainCabooseTrigger0:
 	disappear WEST_TRAIN_CABOOSE_SNARE_OFFICER
 	playsound SFX_ENTER_DOOR
 	spriteface PLAYER, RIGHT
-	opentext
+	opentext TEXTBOX_GRUNT
 	writetext WestTrainCabooseSnareGruntText2
 	waitbutton
 	closetext
@@ -96,7 +96,7 @@ WestTrainCabooseTrigger0:
 	startbattle
 	reloadmapafterbattle
 	special RestoreMusic
-	opentext
+	opentext TEXTBOX_GRUNT
 	writetext WestTrainCabooseSnareGruntText3
 	waitbutton
 	closetext
@@ -114,7 +114,7 @@ WestTrainCabooseTrigger0:
 	special Special_FadeOutMusic
 	pause 40
 	playsound SFX_ELEVATOR_END
-	opentext
+	opentext TEXTBOX_PA
 	writetext WestTrainCaboosePAText1
 	buttonsound
 	writetext WestTrainCaboosePAText4
@@ -150,7 +150,7 @@ WestTrainCabooseTrigger1:
 	end
 	
 WestTrainCaboosePAText1:
-	text "PA: Ding<WAIT_S>-dong!"
+	text "Ding<WAIT_S>-dong!"
 	
 	para "This is your"
 	line "CONDUCTOR."

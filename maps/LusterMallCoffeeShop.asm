@@ -42,7 +42,7 @@ LusterMallCoffeeShop_MapScriptHeader:
 	
 LusterMallCoffeeShopPolly:
 	faceplayer
-	opentext
+	opentext TEXTBOX_POLLY
 	writetext LusterMallCoffeeShopPollyText
 	waitbutton
 	closetext

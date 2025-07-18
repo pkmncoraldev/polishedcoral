@@ -45,7 +45,7 @@ SunbeamPokecenterNPC3:
 	
 SunbeamPokecenterSpruce:
 	setevent EVENT_MET_SPRUCE_AT_CENTER
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext SunbeamPokecenterSpruceText1
 	waitbutton
 	closetext
@@ -54,8 +54,13 @@ SunbeamPokecenterSpruce:
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, SUNBEAM_POKECENTER_SPRUCE, 15
 	pause 7
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext SunbeamPokecenterSpruceText2
+	buttonsound
+	changetextboxspeaker TEXTBOX_SPRUCE
+	farwritetext StdBlankText
+	pause 6
+	writetext SunbeamPokecenterSpruceText3
 	waitbutton
 	closetext
 	checkcode VAR_FACING
@@ -94,7 +99,7 @@ SunbeamPokecenterNPC3Text:
 	done
 	
 SunbeamPokecenterSpruceText1:
-	text "???: Of course."
+	text "Of course."
 	
 	para "Same time next"
 	line "week."
@@ -120,8 +125,10 @@ SunbeamPokecenterSpruceText2:
 	para "I was sure of it!"
 	
 	para "I'm PROF. SPRUCE."
+	done
 	
-	para "I'm so glad you"
+SunbeamPokecenterSpruceText3:
+	text "I'm so glad you"
 	line "made it!"
 	
 	para "Please, come to my"

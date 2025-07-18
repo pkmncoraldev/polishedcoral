@@ -80,7 +80,7 @@ TrainCabin1Trigger0:
 	applyonemovement PLAYER, remove_fixed_facing
 	pause 20
 	playsound SFX_ELEVATOR_END
-	opentext
+	opentext TEXTBOX_PA
 	checkevent EVENT_TRAIN_GOING_EAST
 	iffalse .luster
 	writetext TrainCabin1ArrivingSoonText2
@@ -408,7 +408,7 @@ TrainCabin1PlayersSeat:
 	clearflag ENGINE_PUNKS_IN_STARGLOW
 	special Special_MakePlayerInvisible
 	playsound SFX_ELEVATOR_END
-	opentext
+	opentext TEXTBOX_PA
 	checkevent EVENT_TRAIN_GOING_EAST
 	iffalse .luster
 	writetext TrainCabin1PlayersSeatArriveTextFlicker
@@ -449,14 +449,14 @@ TrainCabin1PlayersSeat:
 	appear TRAIN_CABIN_1_SNARE_OFFICER
 ;	applymovement TRAIN_CABIN_1_SNARE_OFFICER, Movement_TrainCabin1SnareOfficer
 	spriteface TRAIN_CABIN_1_SNARE_OFFICER, UP
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext TrainCabin1SnareOfficerText1
 	waitbutton
 	closetext
 	pause 20
 	special FadeInTextboxPalettes
 	pause 20
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext WestTrainCaboosePAText4
 	writetext TrainCabin1SnareOfficerText2
 	waitbutton
@@ -472,7 +472,7 @@ TrainCabin1PlayersSeat:
 	spriteface TRAIN_CABIN_1_SNARE_OFFICER, DOWN
 	spriteface PLAYER, UP
 	pause 5
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext TrainCabin1SnareOfficerText3
 	waitbutton
 	changeblock $e, $4, $14
@@ -524,7 +524,7 @@ TrainCabin1OfficerCabooseText:
 	done
 	
 TrainCabin1ArrivingSoonText:
-	text "PA: Ding<WAIT_S>-dong!"
+	text "Ding<WAIT_S>-dong!"
 	
 	para "This is your"
 	line "CONDUCTOR."
@@ -538,7 +538,7 @@ TrainCabin1ArrivingSoonText:
 	done
 	
 TrainCabin1ArrivingSoonText2:
-	text "PA: Ding<WAIT_S>-dong!"
+	text "Ding<WAIT_S>-dong!"
 	
 	para "This is your"
 	line "CONDUCTOR."
@@ -854,14 +854,14 @@ TrainCabin1Snare1WinText:
 	done
 	
 TrainCabin1PlayersSeatArriveTextLuster:
-	text "PA: Ding<WAIT_S>-dong!"
+	text "Ding<WAIT_S>-dong!"
 	
 	para "Now arriving in"
 	line "LUSTER CITY."
 	done
 	
 TrainCabin1PlayersSeatArriveTextFlicker:
-	text "PA: Ding<WAIT_S>-dong!"
+	text "Ding<WAIT_S>-dong!"
 	
 	para "Now arriving at"
 	line "FLICKER STATION."

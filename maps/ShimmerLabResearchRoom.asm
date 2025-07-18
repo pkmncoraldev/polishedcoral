@@ -52,7 +52,7 @@ ShimmerLabArtifactText:
 	
 ShimmerLabResearchRoomProf:
 	faceplayer
-	opentext
+	opentext TEXTBOX_HILL
 	checkevent EVENT_DESERT_TEMPLE_2_POKE_BALL
 	iftrue .done_desert
 	checkevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
@@ -68,6 +68,7 @@ ShimmerLabResearchRoomProf:
 .startquest
 	writetext ShimmerLabResearchRoomProfText2
 	waitbutton
+	changetextboxspeaker
 	writetext ShimmerLabResearchRoomPotText
 	takeitem CLAY_POT
 	playsound SFX_LEVEL_UP
@@ -78,13 +79,13 @@ ShimmerLabResearchRoomProf:
 	closetext
 	spriteface SHIMMER_LAB_RESEARCH_ROOM_PROF, UP
 	pause 15
-	opentext
+	opentext TEXTBOX_HILL
 	writetext ShimmerLabResearchRoomProfText3
 	waitbutton
 	closetext
 	pause 10
 	faceplayer
-	opentext
+	opentext TEXTBOX_HILL
 	writetext ShimmerLabResearchRoomProfText4
 	buttonsound
 	farwritetext StdBlankText
@@ -100,6 +101,7 @@ ShimmerLabResearchRoomProf:
 	setevent EVENT_SHOWED_HILL_BLACK_PEARL
 	writetext ShimmerLabResearchRoomProfText6
 	waitbutton
+	changetextboxspeaker
 	writetext ShimmerLabResearchRoomPearlText
 	playsound SFX_LEVEL_UP
 	waitsfx
@@ -107,13 +109,13 @@ ShimmerLabResearchRoomProf:
 	closetext
 	spriteface SHIMMER_LAB_RESEARCH_ROOM_PROF, UP
 	pause 15
-	opentext
+	opentext TEXTBOX_HILL
 	writetext ShimmerLabResearchRoomProfText7
 	waitbutton
 	closetext
 	pause 10
 	faceplayer
-	opentext
+	opentext TEXTBOX_HILL
 	writetext ShimmerLabResearchRoomProfText8
 	waitbutton
 	closetext

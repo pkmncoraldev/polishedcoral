@@ -134,7 +134,7 @@ RadiantOrphanage2FFeliciaBedText:
 	done
 
 RadiantOrphanage2FRose:
-	jumptextfaceplayer RadiantOrphanage2FRoseText
+	jumptextfaceplayer TEXTBOX_ROSE, RadiantOrphanage2FRoseText
 	
 RadiantOrphanage2FRoseText:
 	text "MS. ERIKA told me"
@@ -146,7 +146,7 @@ RadiantOrphanage2FRoseText:
 	done
 	
 RadiantOrphanage2FLily:
-	jumptextfaceplayer RadiantOrphanage2FLilyText
+	jumptextfaceplayer TEXTBOX_LILY, RadiantOrphanage2FLilyText
 	
 RadiantOrphanage2FLilyText:
 	text "GRAMMA is feeling"
@@ -158,7 +158,7 @@ RadiantOrphanage2FLilyText:
 	done
 	
 RadiantOrphanage2FIris:
-	jumptextfaceplayer RadiantOrphanage2FIrisText
+	jumptextfaceplayer TEXTBOX_IRIS, RadiantOrphanage2FIrisText
 	
 RadiantOrphanage2FIrisText:
 	text "La <WAIT_S>la <WAIT_S>la!"
@@ -170,7 +170,7 @@ RadiantOrphanage2FIrisText:
 	
 RadiantOrphanage2FPoppy:
 	faceplayer 
-	opentext
+	opentext TEXTBOX_POPPY
 	writetext RadiantOrphanage2FPoppyText
 	waitbutton
 	closetext
@@ -185,7 +185,7 @@ RadiantOrphanage2FPoppyText:
 	done
 	
 RadiantOrphanage2FViolet:
-	jumptextfaceplayer RadiantOrphanage2FVioletText
+	jumptextfaceplayer TEXTBOX_VIOLET, RadiantOrphanage2FVioletText
 	
 RadiantOrphanage2FVioletText:
 	text "I love to sniff"
@@ -200,7 +200,7 @@ RadiantOrphanage2FVioletText:
 	done
 	
 RadiantOrphanage2FClover:
-	jumptextfaceplayer RadiantOrphanage2FCloverText
+	jumptextfaceplayer TEXTBOX_CLOVER, RadiantOrphanage2FCloverText
 	
 RadiantOrphanage2FCloverText:
 	text "I shouldn't act out"
@@ -210,7 +210,7 @@ RadiantOrphanage2FCloverText:
 	
 RadiantOrphanage2FFelicia:
 	faceplayer 
-	opentext
+	opentext TEXTBOX_FELICIA
 	writetext RadiantOrphanage2FFeliciaText
 	waitbutton
 	closetext

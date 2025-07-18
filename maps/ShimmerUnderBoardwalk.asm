@@ -132,7 +132,7 @@ ShimmerUnderBoardwalkLilyCutsceneL3:
 ShimmerUnderBoardwalkLilyCutscene:
 	dotrigger $0
 	scall ShimmerUnderBoardwalkBulliesThrowing
-	opentext
+	opentext TEXTBOX_PUNK
 	writetext ShimmerUnderBoardwalkBulliesText
 	waitbutton
 	closetext
@@ -141,12 +141,12 @@ ShimmerUnderBoardwalkLilyCutscene:
 	spriteface SHIMMER_UNDER_BOARDWALK_LILY, RIGHT
 	wait 7
 	spriteface SHIMMER_UNDER_BOARDWALK_LILY, DOWN
-	jumptext ShimmerUnderBoardwalkLilyText4
+	jumptextspeaker TEXTBOX_LILY, ShimmerUnderBoardwalkLilyText4
 	end
 	
 ShimmerUnderBoardwalkLilyCutsceneStart:
 	spriteface SHIMMER_UNDER_BOARDWALK_LILY, RIGHT
-	opentext
+	opentext TEXTBOX_LILY
 	writetext ShimmerUnderBoardwalkLilyText3
 	waitbutton
 	closetext
@@ -163,10 +163,10 @@ ShimmerUnderBoardwalkLily:
 .being_bullied
 	scall ShimmerUnderBoardwalkBulliesThrowing
 .helping
-	jumptextfaceplayer ShimmerUnderBoardwalkLilyText2
+	jumptextfaceplayer TEXTBOX_LILY, ShimmerUnderBoardwalkLilyText2
 .saved
 	faceplayer
-	opentext
+	opentext TEXTBOX_LILY
 	writetext ShimmerUnderBoardwalkLilyText5
 	waitbutton
 	closetext
@@ -304,7 +304,7 @@ ShimmerUnderBoardwalkLilyText4:
 	done
 	
 ShimmerUnderBoardwalkLilyText5:
-	text "LILY: Sniff…"
+	text "Sniff…"
 	
 	para "Thank you for"
 	line "helping me…"

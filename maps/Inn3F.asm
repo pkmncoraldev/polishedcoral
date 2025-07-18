@@ -102,7 +102,7 @@ Inn3F_MapScriptHeader:
 Inn3FKage:
 	checkevent EVENT_INN_3F_TALKED_TO_KAGE
 	iftrue .done
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext Inn3FKageText1_2
 	waitbutton
 	closetext
@@ -111,12 +111,12 @@ Inn3FKage:
 	end
 .done
 	callasm Inn1FResertScriptVar
-	jumptextfaceplayer Inn3FKageText7
+	jumptextfaceplayer TEXTBOX_CAGE, Inn3FKageText7
 	
 Inn3FKageStop:
 	dotrigger $0
 	applyonemovement INN_3F_KAGE, turn_step_down
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext Inn3FNettSpecsTextKage
 	waitbutton
 	closetext
@@ -125,7 +125,7 @@ Inn3FKageStop:
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, PLAYER, 15
 	pause 25
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext Inn3FKageText2
 	waitbutton
 	closetext
@@ -135,7 +135,7 @@ Inn3FKageStop:
 	special SaveMusic
 	special Special_FadeOutMusic
 	pause 75
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext Inn3FKageText3
 	buttonsound
 	special RestoreMusic
@@ -149,7 +149,7 @@ Inn3FKageStop:
 	end
 	
 Inn3FKageText1:
-	text "CAGE: Who are you?<WAIT_S>"
+	text "Who are you?<WAIT_S>"
 	line "A new recruit?"
 	
 	para "You say you got"
@@ -161,7 +161,7 @@ Inn3FKageText1:
 	done
 	
 Inn3FKageText2:
-	text "CAGE: Come here"
+	text "Come here"
 	line "for a sec, newbie."
 	done
 	
@@ -186,7 +186,7 @@ Inn3FKageText4:
 	done
 	
 Inn3FKageText1_2:
-	text "CAGE: Who are you?<WAIT_S>"
+	text "Who are you?<WAIT_S>"
 	line "The new recruit?"
 	done
 	
@@ -440,7 +440,7 @@ Inn3FBall5:
 	iftrue .talked
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, INN_3F_KAGE, 15
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext Inn3FNettSpecsTextKage
 	waitbutton
 	closetext
@@ -448,7 +448,7 @@ Inn3FBall5:
 	spriteface PLAYER, UP
 	setlasttalked INN_3F_KAGE
 	dotrigger $1
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext Inn3FKageText1
 	waitbutton
 	closetext
@@ -469,7 +469,7 @@ Inn3FBall5:
 .talked
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, INN_3F_KAGE, 15
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext Inn3FNettSpecsTextKage
 	waitbutton
 	closetext
@@ -477,7 +477,7 @@ Inn3FBall5:
 	spriteface PLAYER, UP
 	setlasttalked INN_3F_KAGE
 	dotrigger $1
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext Inn3FKageText6
 	waitbutton
 	closetext
@@ -486,7 +486,7 @@ Inn3FBall5:
 	jump .collect
 	
 Inn3FNettSpecsTextKage:
-	text "CAGE: Hold it!"
+	text "Hold it!"
 	done
 	
 Inn3FCustomer1:

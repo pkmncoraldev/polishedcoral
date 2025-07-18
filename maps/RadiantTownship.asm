@@ -107,7 +107,7 @@ RadiantTownshipCallback:
 	
 RadiantTownshipErika:
 	faceplayer
-	opentext
+	opentext TEXTBOX_ERIKA
 	writetext RadiantTownshipErikaText
 	waitbutton
 	closetext

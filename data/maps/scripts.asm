@@ -467,6 +467,7 @@ INCLUDE "maps/ObscuraCity.asm"
 INCLUDE "maps/ObscuraGate.asm"
 INCLUDE "maps/ObscuraFortuneHouse.asm"
 INCLUDE "maps/ObscuraGym.asm"
+INCLUDE "maps/FightingDojo.asm"
 
 SECTION "Obscura Museum Scripts", ROMX
 INCLUDE "maps/ObscuraMuseum1F.asm"
@@ -484,4 +485,4 @@ INCLUDE "maps/InnElevator.asm"
 INCLUDE "maps/InnVent.asm"
 INCLUDE "maps/Crossroads.asm"
 INCLUDE "maps/Route23Gate.asm"
-INCLUDE "maps/FightingDojo.asm"
+

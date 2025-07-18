@@ -101,15 +101,15 @@ BarBackAlleyFelicia:
 	end
 .time_to_save
 	faceplayer
-	opentext
-	writetext BarBackAlleyFeliciaText2
+	opentext TEXTBOX_FELICIA
+	writetext BarBackAlleyFeliciaText1
 	waitbutton
 	closetext
 	setlasttalked BAR_BACK_ALLEY_MEOWTH
 	spriteface BAR_BACK_ALLEY_FELICIA, DOWN
 	pause 7
 	appear BAR_BACK_ALLEY_FELICIA2
-	opentext
+	opentext TEXTBOX_FELICIA
 	writetext BarBackAlleyFeliciaText3
 	waitbutton
 	closetext
@@ -126,7 +126,7 @@ BarBackAlleyFelicia:
 	pause 30
 	cry MEOWTH
 	pause 7
-	opentext
+	opentext TEXTBOX_FELICIA
 	writetext BarBackAlleyFeliciaText4
 	waitbutton
 	closetext
@@ -194,7 +194,7 @@ BarBackAlleyFelicia:
 	ifequal RIGHT, .YouAreFacingRight2
 	applymovement BAR_BACK_ALLEY_FELICIA2, Movement_BarBackAlleyFelicia3
 	faceplayer
-	opentext
+	opentext TEXTBOX_FELICIA
 	writetext BarBackAlleyFeliciaText5
 	waitbutton
 	closetext
@@ -203,7 +203,7 @@ BarBackAlleyFelicia:
 .YouAreFacingRight2
 	applymovement BAR_BACK_ALLEY_FELICIA2, Movement_BarBackAlleyFelicia4
 	faceplayer
-	opentext
+	opentext TEXTBOX_FELICIA
 	writetext BarBackAlleyFeliciaText5
 	waitbutton
 	closetext
@@ -259,21 +259,6 @@ BarBackAlleyJunkText:
 	
 BarBackAlleyFeliciaText1:
 	text "Oh, hi."
-	
-	para "I know I'm not"
-	line "supposed to be"
-	cont "here."
-	
-	para "I saw a kitty-cat"
-	line "back here earlier."
-	
-	para "It was so cute!"
-	
-	para "I wanna pet it!"
-	done
-	
-BarBackAlleyFeliciaText2:
-	text "FELICIA: Oh, hi."
 	
 	para "I know I'm not"
 	line "supposed to be"

@@ -189,6 +189,11 @@ OnwaIntlAirportWendy:
 	showemote EMOTE_SHOCK, ONWA_INTL_AIRPORT_WENDY, 15
 	opentext
 	writetext OnwaIntlAirportWendyText5
+	buttonsound
+	changetextboxspeaker TEXTBOX_WENDY
+	farwritetext StdBlankText
+	pause 6
+	writetext OnwaIntlAirportWendyText6
 	waitbutton
 	closetext
 	clearevent EVENT_PLAYER_CUTSCENE_SILVER
@@ -199,7 +204,7 @@ OnwaIntlAirportWendy:
 	applymovement PLAYER, Movement_OnwaIntlAirportCutscene0
 	appear ONWA_INTL_AIRPORT_NPC2
 	pause 25
-	opentext
+	opentext TEXTBOX_WENDY
 	writetext OnwaIntlAirportWendyText2
 	waitbutton
 	closetext
@@ -214,7 +219,7 @@ OnwaIntlAirportWendy:
 	callasm LoadMapPals
 	special FadeInPalettes
 	pause 25
-	opentext
+	opentext TEXTBOX_WENDY
 	writetext OnwaIntlAirportWendyText3
 	waitbutton
 	closetext
@@ -226,7 +231,7 @@ OnwaIntlAirportWendy:
 	spriteface ONWA_INTL_AIRPORT_WENDY, DOWN
 	callasm LoadMapPals
 	special FadeInPalettes
-	opentext
+	opentext TEXTBOX_WENDY
 	writetext OnwaIntlAirportWendyText4
 	waitbutton
 	closetext
@@ -430,8 +435,10 @@ OnwaIntlAirportWendyText5:
 	
 	para "GYM LEADER from"
 	line "EVENTIDE VILLAGE!"
+	done
 	
-	para "This place is"
+OnwaIntlAirportWendyText6:
+	text "This place is"
 	line "amazing, isnt it?"
 	
 	para "I work here as a"

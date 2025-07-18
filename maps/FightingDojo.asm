@@ -44,7 +44,7 @@ FightingDojoTrigger1:
 	callasm LoadMapPals
 	special FadeInPalettes
 	scall FightingDojoZeroOutCounters
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterTestFailedText
 	waitbutton
 	closetext
@@ -55,7 +55,7 @@ FightingDojoTrigger2:
 	playmusic MUSIC_NONE
 	playsound SFX_SUPER_EFFECTIVE
 	callasm TestOfMindAsm2
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterTestOverText2
 	pause 30
 	closetext
@@ -65,7 +65,7 @@ FightingDojoTrigger2:
 	setevent EVENT_FINISHED_TRIAL_OF_BODY
 	scall FightingDojoZeroOutCounters
 	pause 10
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterTestOverText
 	waitbutton
 	closetext
@@ -86,7 +86,7 @@ FightingDojoTrigger2:
 	applymovement PLAYER, Movement_FightingDojoPlayerReturn
 	spriteface PLAYER, UP
 	pause 5
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterTestofBodyPassedText
 	waitbutton
 	verbosegivetmhm TM_BULK_UP
@@ -115,7 +115,7 @@ FightingDojoZeroOutCounters:
 	end
 	
 FightingDojoMaster:
-	opentext
+	opentext TEXTBOX_MASTER
 	checkevent EVENT_GOT_HM04_STRENGTH
 	iftrue .got_strength
 	writetext FightingDojoMasterText1
@@ -133,7 +133,7 @@ FightingDojoMaster:
 	special RestoreMusic
 	callasm LoadMapPals
 	special FadeInPalettes
-	opentext
+	opentext TEXTBOX_MASTER
 .no_rest
 	writetext FightingDojoMasterText3
 	waitbutton
@@ -169,7 +169,7 @@ FightingDojoMaster:
 	scall FightingDojoOpponentLeave
 	pause 15
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterText4
 	waitbutton
 	closetext
@@ -195,7 +195,7 @@ FightingDojoMaster:
 	scall FightingDojoOpponentLeave
 	pause 15
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterText4
 	waitbutton
 	closetext
@@ -221,7 +221,7 @@ FightingDojoMaster:
 	scall FightingDojoOpponentLeave
 	pause 15
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterText4
 	waitbutton
 	closetext
@@ -248,7 +248,7 @@ FightingDojoMaster:
 	
 	pause 15
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterText5
 	waitbutton
 	closetext
@@ -281,7 +281,7 @@ FightingDojoMaster:
 	pause 20
 	spriteface PLAYER, RIGHT
 	pause 20
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterText6	
 	waitbutton
 	closetext
@@ -293,14 +293,14 @@ FightingDojoMaster:
 	startbattle
 	reloadmapafterbattle
 	playmusic MUSIC_DOJO
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterText7
 	waitbutton
 	closetext
 	playsound SFX_FULL_HEAL
 	waitsfx
 	pause 10
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterText10
 	special HealParty
 	waitbutton
@@ -334,7 +334,7 @@ FightingDojoMaster:
 	special RestoreMusic
 	callasm LoadMapPals
 	special FadeInPalettes
-	opentext
+	opentext TEXTBOX_MASTER
 .no_rest2
 	checkevent EVENT_FINISHED_TRIAL_OF_MIND
 	iftrue .testofbody
@@ -383,7 +383,7 @@ FightingDojoMaster:
 	pause 10
 	special Special_FadeOutMusic
 	pause 20
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterCountdown3
 	pause 25
 	writetext FightingDojoMasterCountdown2
@@ -438,7 +438,7 @@ FightingDojoMaster:
 	pause 10
 	disappear FIGHTING_DOJO_BAG_APPEAR
 	pause 20
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterCountdown3
 	pause 25
 	writetext FightingDojoMasterCountdown2
@@ -482,14 +482,14 @@ TrialOfMindTimesUp::
 	setevent EVENT_FINISHED_TRIAL_OF_MIND
 	scall FightingDojoZeroOutCounters
 	pause 10
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterTestOverText
 	waitbutton
 	closetext
 	applymovement PLAYER, Movement_FightingDojoPlayerReturn
 	spriteface PLAYER, UP
 	pause 5
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterTestofMindPassedText
 	waitbutton
 	verbosegivetmhm TM_CALM_MIND
@@ -514,7 +514,7 @@ TrialOfBodyTimesUp::
 	playmusic MUSIC_DOJO
 	clearevent EVENT_TEST_OF_BODY_ACTIVE
 	scall FightingDojoZeroOutCounters
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterTestFailedText
 	waitbutton
 	closetext

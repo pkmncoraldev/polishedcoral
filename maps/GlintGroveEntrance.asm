@@ -150,7 +150,7 @@ GlintRival_L:
 	applymovement PLAYER, Movement_GlintRivalBump
 	playmusic MUSIC_RIVAL_AFTER
 	applymovement GLINT_RIVAL, Movement_GlintRivalBump2
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext GlintRivalText1
 	waitbutton
 	closetext
@@ -229,7 +229,7 @@ GlintRival_L:
 	
 .afterbattle
 	playmusic MUSIC_RIVAL_AFTER
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext GlintRivalText2
 	waitbutton
 	closetext

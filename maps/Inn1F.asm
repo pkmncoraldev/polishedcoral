@@ -95,7 +95,7 @@ Inn1FKageScene:
 	disappear INN_1F_SNARE_1
 	disappear INN_1F_SNARE_2
 	disappear INN_1F_SNARE_KAGE
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext Inn3FNettSpecsTextKage
 	waitbutton
 	closetext
@@ -122,14 +122,14 @@ Inn1FKageScene:
 	appear INN_1F_SNARE_2
 	playsound SFX_EXIT_BUILDING
 	applymovement INN_1F_SNARE_2, Movement_Inn1FSnare2
-	opentext
+	opentext TEXTBOX_CAGE
 	playsound SFX_THUNDER
 	earthquake 5
 	writetext Inn1FKageText1
 	waitsfx
 	closetext
 	applyonemovement INN_1F_SNARE_KAGE, step_down
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext Inn1FKageText2
 	waitbutton
 	closetext
@@ -149,7 +149,7 @@ Inn1FKageScene:
 	pause 10
 	spriteface PLAYER, UP
 	applymovement INN_1F_SNARE_KAGE, Movement_Inn1FKageStepDown2
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext Inn1FKageText3
 	waitbutton
 	closetext
@@ -157,25 +157,25 @@ Inn1FKageScene:
 	applyonemovement PLAYER, fix_facing
 	follow PLAYER, INN_1F_SNARE_KAGE
 	applyonemovement PLAYER, slow_step_down
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext Inn1FKageText4
 	waitbutton
 	closetext
 	pause 5
 	applyonemovement PLAYER, slow_step_down
 	stopfollow
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext Inn1FKageText5
 	applyonemovement PLAYER, remove_fixed_facing
 	waitbutton
 	closetext
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, INN_1F_CLERK, 15
-	opentext
+	opentext TEXTBOX_CLERK
 	writetext Inn1FClerkBattleinterrupt2
 	closetext
 	spriteface INN_1F_SNARE_KAGE, LEFT
-	opentext
+	opentext TEXTBOX_CAGE
 	playsound SFX_THUNDER
 	earthquake 5
 	writetext Inn1FKageText6
@@ -183,14 +183,14 @@ Inn1FKageScene:
 	closetext
 	pause 5
 	applyonemovement INN_1F_CLERK, turn_step_right
-	opentext
+	opentext TEXTBOX_CLERK
 	writetext Inn1FClerkBattleinterrupt3
 	waitbutton
 	closetext
 	pause 5
 	spriteface INN_1F_SNARE_KAGE, DOWN
 	pause 5
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext Inn1FKageText7
 	waitbutton
 	closetext
@@ -211,7 +211,7 @@ Inn1FKageScene:
 	reloadmapafterbattle
 	special RestoreMusic
 	
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext Inn1FKageText8
 	waitbutton
 	closetext	
@@ -222,7 +222,7 @@ Inn1FKageScene:
 	playsound SFX_EXIT_BUILDING
 	disappear INN_1F_SNARE_KAGE
 	pause 40
-	opentext
+	opentext TEXTBOX_CAGE
 	playsound SFX_THUNDER
 	earthquake 5
 	writetext Inn1FKageText9
@@ -230,12 +230,12 @@ Inn1FKageScene:
 	closetext
 	
 	applymovement INN_1F_SNARE_2, Movement_Inn1FSnareLeave
-	opentext
+	opentext TEXTBOX_GRUNT_A
 	writetext Inn1FKageText10
 	waitbutton
 	closetext
 	applymovement INN_1F_SNARE_1, Movement_Inn1FSnareLeave
-	opentext
+	opentext TEXTBOX_GRUNT_B
 	writetext Inn1FKageText11
 	waitbutton
 	closetext
@@ -287,7 +287,7 @@ Inn1FKageLoseText:
 	done
 	
 Inn1FKageText1:
-	text "CAGE: YOU!"
+	text "YOU!"
 	done
 	
 Inn1FKageText2:
@@ -327,7 +327,7 @@ Inn1FKageText5:
 	done
 	
 Inn1FKageText6:
-	text "CAGE: Shut it!"
+	text "Shut it!"
 	done
 	
 Inn1FKageText7:
@@ -371,7 +371,7 @@ Inn1FKageText8:
 	done
 	
 Inn1FKageText9:
-	text "CAGE: MOVE IT,"
+	text "MOVE IT,"
 	line "YOU CLOWNS!"
 	done
 	
@@ -498,7 +498,7 @@ Inn1FSnareSupervisor:
 	applyonemovement INN_1F_CLERK, big_step_right
 	spriteface PLAYER, LEFT
 	spriteface INN_1F_LOBBY_SNARE, LEFT
-	opentext
+	opentext TEXTBOX_CLERK
 	writetext Inn1FClerkBattleinterrupt
 	waitbutton
 	closetext
@@ -618,14 +618,14 @@ Inn1FClerkBattleinterrupt:
 	done
 	
 Inn1FClerkBattleinterrupt2:
-	text "CLERK: Hey!"
+	text "Hey!"
 	
 	para "No battles in"
 	line "the-<WAIT_S>"
 	done
 	
 Inn1FClerkBattleinterrupt3:
-	text "CLERK: Eep!"
+	text "Eep!"
 	done
 	
 Inn1FFakeBattleStart:

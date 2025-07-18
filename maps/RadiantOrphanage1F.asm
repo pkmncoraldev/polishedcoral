@@ -134,7 +134,7 @@ RadiantOrphanage1FErika:
 	jumptextfaceplayer RadiantOrphanage1FErikaText4
 .battle
 	faceplayer
-	opentext
+	opentext TEXTBOX_ERIKA
 	writetext RadiantOrphanage1FErikaText3
 	yesorno
 	iffalse .no
@@ -149,7 +149,7 @@ RadiantOrphanage1FErika:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ERIKA
 	setevent EVENT_UNIQUE_ENCOUNTER_ERIKA
-	jumptextfaceplayer RadiantOrphanage1FErikaText4
+	jumptextfaceplayer TEXTBOX_ERIKA, RadiantOrphanage1FErikaText4
 .no
 	writetext RadiantOrphanage1FErikaNoText
 	waitbutton
@@ -244,7 +244,7 @@ RadiantOrphanage1FLeilani:
 	spriteface RADIANT_ORPHANAGE_1F_LEILANI_1, DOWN
 	checkcode VAR_FACING
 	if_equal LEFT, .YouAreFacingLeft
-	opentext
+	opentext TEXTBOX_LEILANI
 	writetext RadiantOrphanage1FLeilaniTextWrongSide
 	waitbutton
 	closetext
@@ -255,7 +255,7 @@ RadiantOrphanage1FLeilani:
 	setevent EVENT_ALWAYS_SET
 	setevent EVENT_RADIANT_GYM_ACTIVE
 	clearevent EVENT_RADIANT_GYM_INACTIVE
-	opentext
+	opentext TEXTBOX_LEILANI
 	checkevent EVENT_BEAT_LEILANI
 	iftrue .rematch
 	writetext RadiantOrphanage1FLeilaniText1
@@ -279,7 +279,7 @@ RadiantOrphanage1FLeilani:
 	playsound SFX_JUMP_OVER_LEDGE
 	applyonemovement RADIANT_ORPHANAGE_1F_LEILANI_2, slow_step_right
 	spriteface RADIANT_ORPHANAGE_1F_LEILANI_2, UP
-	opentext
+	opentext TEXTBOX_LEILANI
 	writetext RadiantOrphanage1FLeilaniText2
 	waitbutton
 	closetext
@@ -302,7 +302,7 @@ RadiantOrphanage1FLeilani:
 	applyonemovement RADIANT_ORPHANAGE_1F_LEILANI_2, turn_step_down
 	applyonemovement RADIANT_ORPHANAGE_1F_LEILANI_2, remove_fixed_facing
 	pause 10
-	opentext
+	opentext TEXTBOX_LEILANI
 	writetext RadiantOrphanage1FLeilaniText3
 	waitbutton
 	closetext
@@ -318,7 +318,7 @@ RadiantOrphanage1FLeilani:
 	disappear RADIANT_ORPHANAGE_1F_VIOLET
 	disappear RADIANT_ORPHANAGE_1F_CLOVER
 	disappear RADIANT_ORPHANAGE_1F_FELICIA
-	opentext
+	opentext TEXTBOX_GIRLS
 	writetext RadiantOrphanage1FGirlsText
 	waitbutton
 	closetext

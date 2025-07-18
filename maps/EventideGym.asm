@@ -236,7 +236,7 @@ EventideGymNoSwitchScript:
 EventideGymWendy:
 	setevent EVENT_MET_WENDY
 	faceplayer
-	opentext
+	opentext TEXTBOX_WENDY
 	checkevent EVENT_BEAT_WENDY
 	iftrue .FightDone
 	writetext EventideGymWendyTextBeforeBattle
@@ -253,7 +253,8 @@ EventideGymWendy:
 	writetext Text_ReceivedThirdBadge
 	playsound SFX_GET_BADGE
 	waitsfx
-	setflag ENGINE_THIRDBADGE	
+	setflag ENGINE_THIRDBADGE
+	changetextboxspeaker TEXTBOX_WENDY
 .FightDone:	
 	checkevent EVENT_GOT_TM_FROM_WENDY
 	iftrue .GotTMFromWendy
@@ -264,8 +265,10 @@ EventideGymWendy:
 	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_5
 	writetext EventideGymWendyTextAfterBattle
 	buttonsound
+	changetextboxspeaker
 	verbosegivetmhm TM_ROOST
 	setevent EVENT_GOT_TM_FROM_WENDY
+	changetextboxspeaker TEXTBOX_WENDY
 	writetext EventideGymWendyTextTMSpeech
 	waitbutton
 	closetext
@@ -328,7 +331,7 @@ EventideGymWendyRematch:
 .cont
 	startbattle
 	reloadmapafterbattle
-	opentext
+	opentext TEXTBOX_WENDY
 	writetext EventideGymWendyTextLoop
 	waitbutton
 	closetext

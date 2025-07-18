@@ -26,7 +26,7 @@ TwinkleGymRedRoom_MapScriptHeader:
 	
 TwinkleGymCharlie:
 	faceplayer
-	opentext
+	opentext TEXTBOX_CHARLIE
 	checkevent EVENT_BEAT_CHARLIE
 	iftrue .FightDone
 	writetext TwinkleGymCharlieTextBeforeBattle
@@ -44,7 +44,7 @@ TwinkleGymCharlie:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_FOURTHBADGE
-	
+	changetextboxspeaker TEXTBOX_CHARLIE
 	
 .FightDone:	
 	checkevent EVENT_GOT_TM_FROM_CHARLIE
@@ -58,8 +58,10 @@ TwinkleGymCharlie:
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2
 	writetext TwinkleGymCharlieTextAfterBattle
 	buttonsound
+	changetextboxspeaker
 	verbosegivetmhm TM_SUNNY_DAY
 	setevent EVENT_GOT_TM_FROM_CHARLIE
+	changetextboxspeaker TEXTBOX_CHARLIE
 	writetext TwinkleGymCharlieTextTMSpeech
 	waitbutton
 	closetext
@@ -126,7 +128,7 @@ TwinkleGymCharlieRematch:
 .cont
 	startbattle
 	reloadmapafterbattle
-	opentext
+	opentext TEXTBOX_CHARLIE
 	writetext TwinkleGymCharlieTextLoop
 	waitbutton
 	closetext
@@ -144,7 +146,7 @@ Text_ReceivedFourthBadge:
 	done
 
 TwinkleGymCharlieTextBeforeBattle:
-	text "CHARLIE: Aha!"
+	text "Aha!"
 	
 	para "You're that kid I"
 	line "met on SUNBEAM"

@@ -580,20 +580,20 @@ TrainerGlintGrove_6:
 
 GlintGroveStanley:
 	setevent EVENT_GLINT_GROVE_STANLEY
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext GlintGroveStanleyText1
 	waitbutton
 	closetext
 	pause 10
 	faceplayer
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext GlintGroveStanleyText2
 	waitbutton
 	closetext
 	spriteface GLINTGROVE_STANLEY, DOWN
 	pause 40
 	faceplayer
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext GlintGroveStanleyText3
 	buttonsound
 	verbosegiveitem LIBRARY_CARD

@@ -180,7 +180,7 @@ Route6SouthMinaScene:
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, 4, 15
 	playmusic MUSIC_MINA
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route6SouthMinaSceneText4
 	waitbutton
 	closetext
@@ -188,7 +188,7 @@ Route6SouthMinaScene:
 	spriteface PLAYER, DOWN
 	pause 2
 	special Special_ForcePlayerStateNormal
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route6SouthMinaSceneText5
 	waitbutton
 	closetext
@@ -199,7 +199,7 @@ Route6SouthMinaScene:
 	spriteface 4, LEFT
 	spriteface PLAYER, UP
 	pause 40
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route6SouthMinaSceneText6
 	spriteface 4, DOWN
 	farwritetext StdBlankText
@@ -211,7 +211,7 @@ Route6SouthMinaScene:
 	spriteface 4, LEFT
 	spriteface PLAYER, RIGHT
 	pause 20
-	opentext
+	opentext TEXTBOX_MINA
 	checkcode VAR_MONJUSTCAUGHT
 	if_equal $1, .Nothing2
 	if_equal $2, .Smile2
@@ -238,7 +238,7 @@ Route6SouthMinaScene:
 	closetext
 	pause 10
 	spriteface PLAYER, RIGHT
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route6SouthMinaSceneText9
 	yesorno
 	iffalse .no
@@ -257,7 +257,7 @@ Route6SouthMinaScene:
 	dontrestartmapmusic
 	reloadmap
 	playmusic MUSIC_MINA
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route6SouthMinaSceneText12
 	waitbutton
 	closetext
@@ -275,7 +275,7 @@ Route6SouthMinaScene:
 	pause 25
 	spriteface 4, LEFT
 	pause 10
-	opentext
+	opentext TEXTBOX_MINA
 	special Special_MinaGoodbye
 	waitbutton
 	closetext
@@ -368,8 +368,8 @@ Route6SouthMinaSceneText3:
 	done
 	
 Route6SouthMinaSceneText4:
-	text "MINA: Wait, who"
-	line "the heck?"
+	text "Wait, who the"
+	line "heck?"
 	
 	para "<PLAYER>!?"
 	

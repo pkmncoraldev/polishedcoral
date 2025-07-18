@@ -52,11 +52,16 @@ GlintGroveEastMakeSilverGreen:
 	
 GlintGroveEastMina:
 	faceplayer
-	opentext
 	checkevent EVENT_TALKED_TO_MINA_ONCE
 	iftrue .talked
+	opentext TEXTBOX_UNKNOWN
 	playmusic MUSIC_MINA
 	writetext GlintGroveEastMinaText1
+	buttonsound
+	changetextboxspeaker TEXTBOX_MINA
+	farwritetext StdBlankText
+	pause 6
+	writetext GlintGroveEastMinaText3
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
@@ -69,6 +74,7 @@ GlintGroveEastMina:
 	playmapmusic
 	end
 .talked
+	opentext TEXTBOX_MINA
 	writetext GlintGroveEastMinaText2
 	waitbutton
 	closetext
@@ -84,8 +90,10 @@ GlintGroveEastMinaText1:
 	
 	para "Well anyway,<WAIT_S>"
 	line "my name is MINA."
+	done
 	
-	para "I'm a painter."
+GlintGroveEastMinaText3:
+	text "I'm a painter."
 	
 	para "I'm always on the"
 	line "lookout for my"

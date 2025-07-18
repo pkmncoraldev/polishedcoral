@@ -39,7 +39,7 @@ SunbeamReserveTrigger0:
 	domaptrigger SPRUCES_LAB, $2
 	applymovement SUNBEAM_SPRUCE, Movement_SunbeamSpruce1
 	spriteface SUNBEAM_SPRUCE, DOWN
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SunbeamReserveSpruceText1
 	waitbutton
 	closetext
@@ -48,15 +48,16 @@ SunbeamReserveTrigger0:
 	stopfollow
 	spriteface SUNBEAM_SPRUCE, RIGHT
 	spriteface PLAYER, RIGHT
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SunbeamReserveSpruceText2
 	waitbutton
 	closetext
 	applymovement SUNBEAM_SPRUCE, Movement_SunbeamSpruce3
 	spriteface SUNBEAM_SPRUCE, DOWN
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SunbeamReserveSpruceText3
 	waitbutton
+	changetextboxspeaker
 	writetext SunbeamReserveDonphanText
 	cry DONPHAN
 	waitbutton
@@ -67,14 +68,15 @@ SunbeamReserveTrigger0:
 	stopfollow
 	spriteface SUNBEAM_SPRUCE, UP
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SunbeamReserveSpruceText4
 	waitbutton
 	closetext
 	applymovement SUNBEAM_SPRUCE, Movement_SunbeamSpruce6
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SunbeamReserveSpruceText5
 	waitbutton
+	changetextboxspeaker
 	writetext SunbeamReserveNidoqueenText
 	cry NIDOQUEEN
 	waitbutton
@@ -84,7 +86,7 @@ SunbeamReserveTrigger0:
 	applymovement SUNBEAM_SPRUCE, Movement_SunbeamSpruce8
 	stopfollow
 	spriteface SUNBEAM_SPRUCE, LEFT
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SunbeamReserveSpruceText6
 	waitbutton
 	closetext
@@ -92,7 +94,7 @@ SunbeamReserveTrigger0:
 	applymovement SUNBEAM_SPRUCE, Movement_SunbeamSpruce9
 	stopfollow
 	spriteface SUNBEAM_SPRUCE, LEFT
-	opentext
+	opentext TEXTBOX_SPRUCE
 	writetext SunbeamReserveSpruceText7
 	waitbutton
 	closetext

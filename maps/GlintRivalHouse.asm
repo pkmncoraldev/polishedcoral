@@ -20,24 +20,28 @@ GlintRivalHouse_MapScriptHeader:
 	
 GlintRivalHouseMom:
 	faceplayer
-	opentext
+	opentext TEXTBOX_RIVALS_MOM
 	checkitem RIVAL_POKEDEX
 	iffalse .GlintRivalHouseMomLoop
 	domaptrigger GLINT_GROVE_ENTRANCE, $1
 	takeitem RIVAL_POKEDEX
 	writetext GlintRivalMomText1
 	waitbutton
+	changetextboxspeaker
 	writetext GlintRivalMomTextGiveDex
 	playsound SFX_LEVEL_UP 
 	waitsfx
 ;	waitbutton
+	changetextboxspeaker TEXTBOX_RIVALS_MOM
 	writetext GlintRivalMomText4
 	buttonsound
 	stringtotext .mapcardname, $1
 	scall .JumpstdReceiveItem
 	setflag ENGINE_MAP_CARD
+	changetextboxspeaker
 	writetext GotMapCardText
 	buttonsound
+	changetextboxspeaker TEXTBOX_RIVALS_MOM
 	writetext GlintRivalMomText2
 	waitbutton
 	closetext

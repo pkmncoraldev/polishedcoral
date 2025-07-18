@@ -48,7 +48,7 @@ Route19Clover:
 	jumptextfaceplayer Route19CloverText1
 .time_to_save
 	faceplayer
-	opentext
+	opentext TEXTBOX_CLOVER
 	writetext Route19CloverText2
 	waitbutton
 	closetext
@@ -242,7 +242,7 @@ Route19CloverText1:
 	done
 	
 Route19CloverText2:
-	text "CLOVER: Hehe…"
+	text "Hehe…"
 	
 	para "Me and the other"
 	line "girls ran away"

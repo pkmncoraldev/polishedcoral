@@ -113,7 +113,7 @@ BrilloPoliceStationCaptain:
 	iftrue .roadblock_gone
 	checkevent EVENT_TALKED_TO_POLICE_CAPTAIN
 	iftrue .investigating
-	opentext
+	opentext TEXTBOX_CAPTAIN
 	writetext BrilloPoliceStationCaptainText1
 	waitbutton
 	closetext
@@ -121,7 +121,7 @@ BrilloPoliceStationCaptain:
 	playsound SFX_MOVE_PUZZLE_PIECE
 	earthquake 5
 	waitsfx
-	opentext
+	opentext TEXTBOX_CAPTAIN
 	writetext BrilloPoliceStationCaptainText2
 	waitbutton
 	closetext
@@ -131,7 +131,7 @@ BrilloPoliceStationCaptain:
 .start_captain
 	pause 15
 	faceplayer
-	opentext
+	opentext TEXTBOX_CAPTAIN
 	writetext BrilloPoliceStationCaptainText3
 	buttonsound
 	farwritetext StdBlankText
@@ -148,7 +148,7 @@ BrilloPoliceStationCaptain:
 	checkevent EVENT_BEEN_IN_GAME_CORNER
 	iftrue .finish_investigation
 	faceplayer
-	opentext
+	opentext TEXTBOX_CAPTAIN
 	writetext BrilloPoliceStationCaptainText4
 	yesorno
 	iftrue .reexplain
@@ -160,7 +160,7 @@ BrilloPoliceStationCaptain:
 .finish_investigation
 	faceplayer
 	spriteface BRILLO_POLICE_STATION_COP_1, LEFT
-	opentext
+	opentext TEXTBOX_CAPTAIN
 	writetext BrilloPoliceStationCaptainText7
 	yesorno
 	iffalse .said_no
@@ -168,22 +168,24 @@ BrilloPoliceStationCaptain:
 	writetext BrilloPoliceStationCaptainText9
 	yesorno
 	iffalse .refused
+	changetextboxspeaker
 	writetext BrilloPoliceStationCaptainText10
 	playsound SFX_LEVEL_UP
 	waitsfx
 	waitbutton
+	changetextboxspeaker TEXTBOX_CAPTAIN
 	writetext BrilloPoliceStationCaptainText11
 	waitbutton
 	closetext
 	pause 5
 	spriteface BRILLO_POLICE_STATION_CAPTAIN, RIGHT
-	opentext
+	opentext TEXTBOX_CAPTAIN
 	writetext BrilloPoliceStationCaptainText12
 	waitbutton
 	closetext
 	pause 20
 	faceplayer
-	opentext
+	opentext TEXTBOX_CAPTAIN
 	writetext BrilloPoliceStationCaptainText13
 	waitbutton
 	closetext
@@ -222,7 +224,7 @@ BrilloPoliceStationCaptain:
 	end
 .roadblock_gone
 	faceplayer
-	opentext
+	opentext TEXTBOX_CAPTAIN
 	checkevent EVENT_COOPERATED_WITH_BRILLO_POLICE
 	iftrue .cooperated
 	writetext BrilloPoliceStationCaptainText16
@@ -422,7 +424,7 @@ BrilloPoliceStationCaptainText2:
 	done
 	
 BrilloPoliceStationCaptainText3:
-	text "CAPTAIN: What?<WAIT_S>"
+	text "What?<WAIT_S>"
 	line "What do you want?"
 	
 	para "Can't you see we're"

@@ -162,7 +162,7 @@ JustRodeBoatSunbeamStrand:
 	spriteface SUNBEAM_NPC4, UP
 	special Special_StopRunning
 	special Special_StopLandmarkTimer
-	opentext
+	opentext TEXTBOX_STRAND
 	writetext SunbeamJustRodeBoatText
 	waitbutton
 	closetext
@@ -233,7 +233,7 @@ JustRodeBoatSunbeamStrand2:
 	spriteface SUNBEAM_NPC4, UP
 	special Special_StopRunning
 	special Special_StopLandmarkTimer
-	opentext
+	opentext TEXTBOX_STRAND
 	writetext SunbeamJustRodeBoatText
 	waitbutton
 	closetext
@@ -282,7 +282,7 @@ SunbeamFirstContest1:
 	moveperson SUNBEAM_NPC4, $1c, $2c
 	appear SUNBEAM_NPC4
 	playmusic MUSIC_GSC_GAME_CORNER
-	opentext
+	opentext TEXTBOX_CROWD
 	writetext SunbeamContestCrowdText
 	waitbutton
 	closetext
@@ -296,7 +296,7 @@ SunbeamFirstContest2:
 	moveperson SUNBEAM_NPC4, $1c, $2c
 	appear SUNBEAM_NPC4
 	playmusic MUSIC_GSC_GAME_CORNER
-	opentext
+	opentext TEXTBOX_CROWD
 	writetext SunbeamContestCrowdText
 	waitbutton
 	closetext
@@ -310,7 +310,7 @@ SunbeamFirstContest3:
 	moveperson SUNBEAM_NPC4, $1c, $2c
 	appear SUNBEAM_NPC4
 	playmusic MUSIC_GSC_GAME_CORNER
-	opentext
+	opentext TEXTBOX_CROWD
 	writetext SunbeamContestCrowdText
 	waitbutton
 	closetext
@@ -324,7 +324,7 @@ SunbeamFirstContest4:
 	moveperson SUNBEAM_NPC4, $1c, $2c
 	appear SUNBEAM_NPC4
 	playmusic MUSIC_GSC_GAME_CORNER
-	opentext
+	opentext TEXTBOX_CROWD
 	writetext SunbeamContestCrowdText
 	waitbutton
 	closetext
@@ -333,7 +333,7 @@ SunbeamFirstContest4:
 	applymovement PLAYER, Movement_SunbeamFirstContest1_4
 SunbeamFirstContest:
 	pause 7
-	opentext
+	opentext TEXTBOX_PA
 	writetext SunbeamContestText18
 	waitbutton
 	closetext
@@ -350,20 +350,25 @@ SunbeamFirstContest:
 	special FadeInPalettes
 	pause 7
 	spriteface SUNBEAM_NPC4, LEFT
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext SunbeamFirstContestCharlieText1
 	waitbutton
 	closetext
 	spriteface PLAYER, RIGHT
 	pause 7
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext SunbeamFirstContestCharlieText2
+	buttonsound
+	changetextboxspeaker TEXTBOX_CHARLIE
+	farwritetext StdBlankText
+	pause 6
+	writetext SunbeamFirstContestCharlieText2_2
 	waitbutton
 	closetext
 	spriteface SUNBEAM_NPC4, DOWN
 	pause 40
 	spriteface SUNBEAM_NPC4, LEFT
-	opentext
+	opentext TEXTBOX_CHARLIE
 	writetext SunbeamFirstContestCharlieText3
 	waitbutton
 	closetext
@@ -896,8 +901,10 @@ SunbeamFirstContestCharlieText2:
 	line "either."
 	
 	para "I'm CHARLIE!"
+	done
 	
-	para "I run the GYM in"
+SunbeamFirstContestCharlieText2_2:
+	text "I run the GYM in"
 	line "TWINKLE TOWN."
 	done
 	

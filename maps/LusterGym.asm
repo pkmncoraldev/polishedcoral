@@ -86,7 +86,7 @@ LusterGymCallbackText:
 	
 LusterGymPolly:
 	faceplayer
-	opentext
+	opentext TEXTBOX_POLLY
 	checkevent EVENT_BEAT_POLLY
 	iftrue .FightDone
 	writetext LusterGymPollyTextBeforeBattle
@@ -105,7 +105,7 @@ LusterGymPolly:
 	waitsfx
 	setflag ENGINE_FIFTHBADGE
 	checkcode VAR_BADGES
-	
+	changetextboxspeaker TEXTBOX_POLLY
 	
 .FightDone:	
 	checkevent EVENT_GOT_TM_FROM_POLLY
@@ -118,8 +118,10 @@ LusterGymPolly:
 	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_6
 	writetext LusterGymPollyTextAfterBattle
 	buttonsound
+	changetextboxspeaker
 	verbosegivetmhm TM_VENOSHOCK
 	setevent EVENT_GOT_TM_FROM_POLLY
+	changetextboxspeaker TEXTBOX_POLLY
 	writetext LusterGymPollyTextTMSpeech
 	waitbutton
 	closetext
@@ -173,7 +175,7 @@ LusterGymPollyRematch:
 .cont
 	startbattle
 	reloadmapafterbattle
-	opentext
+	opentext TEXTBOX_POLLY
 	writetext LusterGymPollyTextLoop
 	waitbutton
 	closetext

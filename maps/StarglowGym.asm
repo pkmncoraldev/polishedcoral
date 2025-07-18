@@ -28,7 +28,7 @@ StarglowGym_MapScriptHeader:
 
 StarglowGymRodneyScript:
 	faceplayer
-	opentext
+	opentext TEXTBOX_RODNEY
 	checkevent EVENT_BEAT_RODNEY
 	iftrue .FightDone
 	writetext StarglowGymRodneyTextBeforeBattle
@@ -46,6 +46,7 @@ StarglowGymRodneyScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_SECONDBADGE
+	changetextboxspeaker TEXTBOX_RODNEY
 	
 .FightDone:	
 	checkevent EVENT_GOT_TM_FROM_RODNEY
@@ -57,8 +58,10 @@ StarglowGymRodneyScript:
 	setevent EVENT_DAYBREAK_GROTTO_HIKER
 	writetext StarglowGymRodneyTextAfterBattle
 	buttonsound
+	changetextboxspeaker
 	verbosegivetmhm TM_RAIN_DANCE
 	setevent EVENT_GOT_TM_FROM_RODNEY
+	changetextboxspeaker TEXTBOX_RODNEY
 	writetext StarglowGymRodneyTextTMSpeech
 	waitbutton
 	closetext
@@ -121,7 +124,7 @@ StarglowGymRodneyRematch:
 .cont
 	startbattle
 	reloadmapafterbattle
-	opentext
+	opentext TEXTBOX_RODNEY
 	writetext StarglowGymRodneyTextLoop
 	waitbutton
 	closetext

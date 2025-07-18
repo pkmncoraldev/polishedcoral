@@ -35,7 +35,7 @@ SunsetCaptainsHouseTrigger0Event:
 	pause 7
 	applymovement SUNSET_CAPTAINS_HOUSE_CAPTAIN, SunsetCaptainMovement
 	spriteface SUNSET_CAPTAINS_HOUSE_CAPTAIN, DOWN
-	opentext
+	opentext TEXTBOX_STRAND
 	checktime 1<<MORN
 	iftrue .morn
 	checktime 1<<DAY
@@ -69,7 +69,7 @@ SunsetCaptain:
 	checkevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	iftrue SunsetCaptain2
 	faceplayer
-	opentext
+	opentext TEXTBOX_STRAND
 	writetext SunsetCaptainText2
 	waitbutton
 	closetext
@@ -83,7 +83,7 @@ SunsetCaptainFirstRidetoIsland:
 	setevent EVENT_PLAYER_HOUSE_MOM_2
 	clearevent EVENT_PLAYER_HOUSE_MOM_1
 	faceplayer
-	opentext
+	opentext TEXTBOX_STRAND
 	checkevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_STRAND
 	iftrue .ride
 	checkevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
@@ -122,7 +122,7 @@ CaptainGoToIsland:
 	
 SunsetCaptainRidetoIsland:
 	faceplayer
-	opentext
+	opentext TEXTBOX_STRAND
 	writetext SunsetCaptainRidetoIslandText
 	jump CaptainGoToIsland
 	
@@ -219,9 +219,8 @@ SunsetCaptainRidetoIslandTextNo:
 	done
 	
 SunsetCaptainText1_Morn:
-	text "CAP'N STRAND: <WAIT_S>Oh!"
-	
-	para "You're late!"
+	text "Oh!<WAIT_S>"
+	line "You're late!"
 	
 	para "ABNER and the"
 	line "others went to"
@@ -246,9 +245,8 @@ SunsetCaptainText1_Morn:
 	done
 	
 SunsetCaptainText1_Day:
-	text "CAP'N STRAND: <WAIT_S>Oh!"
-	
-	para "You're late!"
+	text "Oh!<WAIT_S>"
+	line "You're late!"
 	
 	para "ABNER and the"
 	line "others went to"
@@ -273,9 +271,8 @@ SunsetCaptainText1_Day:
 	done
 	
 SunsetCaptainText1_Night:
-	text "CAP'N STRAND: Oh!"
-	
-	para "You're late!"
+	text "Oh!<WAIT_S>"
+	line "You're late!"
 	
 	para "ABNER and the"
 	line "others went to"

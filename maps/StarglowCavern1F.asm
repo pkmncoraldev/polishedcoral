@@ -141,25 +141,25 @@ StarglowCavern1FNPC1:
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	applymovement STARGLOWCAVERN_TRAINER4_POKEBALL, Movement_StarglowCavern_DisguiseMan2
 	disappear STARGLOWCAVERN_TRAINER4_POKEBALL
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext StarglowCavern_DisguiseMan1Text4
 	waitbutton
 	closetext
 	appear STARGLOWCAVERN_DISGUISEMAN3
 	applymovement STARGLOWCAVERN_DISGUISEMAN3, Movement_StarglowCavern_DisguiseMan1
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext StarglowCavern_DisguiseMan1Text5
 	waitbutton
 	closetext
 	spriteface STARGLOWCAVERN_DISGUISEMAN3, UP
 	spriteface PLAYER, DOWN
-	opentext
+	opentext TEXTBOX_DISGUISEMAN
 	writetext StarglowCavern_DisguiseMan1Text6
 	waitbutton
 	closetext
 	applymovement STARGLOWCAVERN_DISGUISEMAN3, Movement_StarglowCavern_DisguiseMan2
 	disappear STARGLOWCAVERN_DISGUISEMAN3
-	opentext
+	opentext TEXTBOX_DISGUISEMAN
 	writetext StarglowCavern_DisguiseMan1Text4
 	waitbutton
 	closetext
@@ -195,13 +195,13 @@ StarglowCavern1FNPC2:
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	applymovement STARGLOWCAVERN_TRAINER4_POKEBALL, Movement_StarglowCavern_DisguiseMan1
 	appear STARGLOWCAVERN_DISGUISEMAN
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext StarglowCavern_DisguiseMan1Text1
 	waitbutton
 	closetext
 	disappear STARGLOWCAVERN_TRAINER4_POKEBALL
 	spriteface STARGLOWCAVERN_DISGUISEMAN, RIGHT
-	opentext
+	opentext TEXTBOX_DISGUISEMAN
 	writetext StarglowCavern_DisguiseMan1Text2
 	waitbutton
 	closetext
@@ -216,7 +216,7 @@ StarglowCavern1FNPC2:
 	loadtrainer DISGUISE, MASTER_1
 	startbattle
 	reloadmapafterbattle
-	opentext
+	opentext TEXTBOX_DISGUISEMAN
 	checkevent EVENT_PLAYER_IS_CORA
 	iftrue .girl
 	checkevent EVENT_PLAYER_IS_PIPPI
@@ -234,7 +234,7 @@ StarglowCavern1FNPC2:
 	closetext
 	applymovement STARGLOWCAVERN_DISGUISEMAN, Movement_StarglowCavern_DisguiseMan2
 	disappear STARGLOWCAVERN_DISGUISEMAN
-	opentext
+	opentext TEXTBOX_DISGUISEMAN
 	writetext StarglowCavern_DisguiseMan1Text4
 	waitbutton
 	closetext

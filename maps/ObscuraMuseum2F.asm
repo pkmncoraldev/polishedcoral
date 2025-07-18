@@ -318,9 +318,9 @@ ObscuraMuseum2FRocky:
 	appear OBSCURA_MUSEUM_2F_SNARE_3
 	changeblock $8, $8, $4b
 	changeblock $10, $8, $75
-	jumptextfaceplayer ObscuraMuseum2FRockyText1
+	jumptextfaceplayer TEXTBOX_ROCKY, ObscuraMuseum2FRockyText1
 .talked
-	jumptextfaceplayer ObscuraMuseum2FRockyText2
+	jumptextfaceplayer TEXTBOX_ROCKY, ObscuraMuseum2FRockyText2
 	
 ObscuraMuseum2FRockyText1:
 	text "Darn!<WAIT_S> They put up"

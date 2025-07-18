@@ -51,18 +51,19 @@ ObscuraMuseumEmployeeRoomAbiegail:
 	iftrue .ball
 	checkevent EVENT_SHOWED_HILL_BLACK_PEARL
 	iftrue .pearl
-	jumptextfaceplayer ObscuraMuseumEmployeeRoomAbiegailText1
+	jumptextfaceplayer TEXTBOX_ABIE, ObscuraMuseumEmployeeRoomAbiegailText1
 .snare
-	jumptextfaceplayer ObscuraMuseumEmployeeRoomAbiegailText2
+	jumptextfaceplayer TEXTBOX_ABIE, ObscuraMuseumEmployeeRoomAbiegailText2
 .got_masterball
-	jumptextfaceplayer ObscuraMuseumEmployeeRoomAbiegailText13
+	jumptextfaceplayer TEXTBOX_ABIE, ObscuraMuseumEmployeeRoomAbiegailText13
 .pearl
 	faceplayer
-	opentext
+	opentext TEXTBOX_ABIE
 	checkevent EVENT_GAVE_ABIE_BLACK_PEARL
 	iftrue .gave_pearl
 	writetext ObscuraMuseumEmployeeRoomAbiegailText3
 	waitbutton
+	changetextboxspeaker
 	writetext ObscuraMuseumEmployeeRoomPearlText
 	takeitem BLACK_PEARL
 	playsound SFX_LEVEL_UP
@@ -78,27 +79,30 @@ ObscuraMuseumEmployeeRoomAbiegail:
 	spriteface OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, DOWN
 .cont
 	pause 15
-	opentext
+	opentext TEXTBOX_ABIE
 	writetext ObscuraMuseumEmployeeRoomAbiegailText4
 	waitbutton
 	closetext
 	pause 20
 	faceplayer
 	pause 10
-	opentext
+	opentext TEXTBOX_ABIE
 	writetext ObscuraMuseumEmployeeRoomAbiegailText5
 	buttonsound
+	changetextboxspeaker
 	verbosegivetmhm HM_DIVE
 .gave_pearl
+	changetextboxspeaker TEXTBOX_ABIE
 	writetext ObscuraMuseumEmployeeRoomAbiegailText6
 	waitbutton
 	closetext
 	end
 .ball
 	faceplayer
-	opentext
+	opentext TEXTBOX_ABIE
 	writetext ObscuraMuseumEmployeeRoomAbiegailText7
 	waitbutton
+	changetextboxspeaker
 	writetext ObscuraMuseumEmployeeRoomBallText
 	takeitem ANCIENT_BALL
 	playsound SFX_LEVEL_UP
@@ -114,7 +118,7 @@ ObscuraMuseumEmployeeRoomAbiegail:
 	spriteface OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, DOWN
 .cont2
 	pause 15
-	opentext
+	opentext TEXTBOX_ABIE
 	writetext ObscuraMuseumEmployeeRoomAbiegailText8
 	waitbutton
 	closetext
@@ -122,7 +126,7 @@ ObscuraMuseumEmployeeRoomAbiegail:
 	applymovement OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, Movement_Abie_1
 	applyonemovement OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, remove_fixed_facing
 	pause 10
-	opentext
+	opentext TEXTBOX_ABIE
 	writetext ObscuraMuseumEmployeeRoomAbiegailText9
 	waitbutton
 	closetext
@@ -130,7 +134,7 @@ ObscuraMuseumEmployeeRoomAbiegail:
 	applymovement OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, Movement_Abie_2
 	applyonemovement OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, remove_fixed_facing
 	pause 10
-	opentext
+	opentext TEXTBOX_ABIE
 	writetext ObscuraMuseumEmployeeRoomAbiegailText10
 	waitbutton
 	closetext
@@ -138,13 +142,13 @@ ObscuraMuseumEmployeeRoomAbiegail:
 	applymovement OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, Movement_Abie_3
 	applyonemovement OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE, remove_fixed_facing
 	pause 10
-	opentext
+	opentext TEXTBOX_ABIE
 	writetext ObscuraMuseumEmployeeRoomAbiegailText11
 	waitbutton
 	closetext
 	pause 20
 	faceplayer
-	opentext
+	opentext TEXTBOX_ABIE
 	writetext ObscuraMuseumEmployeeRoomAbiegailText12
 	waitbutton
 	closetext
@@ -371,10 +375,9 @@ ObscuraMuseumEmployeeRoomAbiegailText12:
 	done
 	
 ObscuraMuseumEmployeeRoomAbiegailText13:
-	text "ABIE: You've done"
-	line "more for my father"
-	cont "than you'll ever"
-	cont "know, <PLAYER>."
+	text "You've done more"
+	line "for my father than"
+	cont "you'll ever know."
 	
 	para "He told me that"
 	line "you were one of"

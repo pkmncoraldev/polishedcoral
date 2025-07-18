@@ -105,7 +105,7 @@ TextBoxBorder::
 	call .PlaceChars
 	ld [hl], "┘"
 
-	ret
+	farjp WriteTextboxName
 
 .PlaceChars:
 ; Place char a c times.

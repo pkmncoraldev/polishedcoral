@@ -32,7 +32,7 @@ Route8EncounterHouse_MapScriptHeader:
 
 Route8EncounterHouseLady:
 	faceplayer
-	opentext
+	opentext TEXTBOX_DAHLIA
 	checkflag ENGINE_DAILY_ROUTE_GARDEN
 	iftrue .alreadytalked
 	writetext Route8EncounterHouseLadyText1

@@ -213,7 +213,7 @@ Route23Master1:
 	special Special_FadeOutMusic
 	pause 40
 	playmusic MUSIC_DOJO
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext Route23MasterText1
 	waitbutton
 	closetext
@@ -235,7 +235,7 @@ Route23Master1:
 	spriteface ROUTE_23_BLACKBELT, UP
 	spriteface PLAYER, UP
 	pause 10
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext Route23MasterText2
 	waitbutton
 	closetext
@@ -285,7 +285,7 @@ endr
 	closetext
 	pause 20
 	playmusic MUSIC_DOJO
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext Route23MasterText3
 	waitbutton
 	closetext
@@ -299,12 +299,14 @@ endr
 	disappear ROUTE_23_BLACKBELT
 	applyonemovement PLAYER, step_right
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_MASTER
 	writetext Route23MasterText4
 	buttonsound
+	changetextboxspeaker
 	verbosegivetmhm HM_STRENGTH
 	setevent EVENT_GOT_HM04_STRENGTH
 	setflag ENGINE_GOT_STRENGTH
+	changetextboxspeaker TEXTBOX_MASTER
 	writetext Route23MasterText5
 	waitbutton
 	closetext
@@ -717,18 +719,16 @@ Route23BlackBeltText13:
 	done
 	
 Route23MasterText1:
-	text "???: You are a"
-	line "failure only if"
-	cont "you choose to let"
-	cont "your failures own"
-	cont "you…"
+	text "You are a failure"
+	line "only if you choose"
+	cont "to let your past"
+	cont "failures own you…"
 	done
 	
 Route23MasterText2:
-	text "MASTER: Your heart"
-	line "is troubled and"
-	cont "your mind is"
-	cont "clouded…"
+	text "Your heart is"
+	line "troubled and your"
+	cont "mind is clouded…"
 	
 	para "Have you forgotten"
 	line "my teachings so"
@@ -747,7 +747,7 @@ Route23MasterText2:
 	done
 	
 Route23MasterText3:
-	text "MASTER: Excellent…"
+	text "Excellent…"
 	
 	para "You have done"
 	line "well…"

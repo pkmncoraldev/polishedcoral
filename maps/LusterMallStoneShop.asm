@@ -47,7 +47,7 @@ LusterMallStoneShopCallback:
 	
 LusterMallStoneShopPolly:
 	faceplayer
-	opentext
+	opentext TEXTBOX_POLLY
 	writetext LusterMallStoneShopPollyText
 	waitbutton
 	closetext

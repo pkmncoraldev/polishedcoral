@@ -47,7 +47,7 @@ LusterMallBallShop_MapScriptHeader:
 	
 LusterMallBallShopPolly:
 	faceplayer
-	opentext
+	opentext TEXTBOX_POLLY
 	writetext LusterMallBallShopPollyText
 	waitbutton
 	closetext

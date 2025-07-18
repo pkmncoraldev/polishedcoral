@@ -265,9 +265,9 @@ DEF BATTLEEXTRA_GFX_START EQU $5f
 	charmap "★",        $f6
 	charmap "↑",        $f7
 	charmap "↓",        $f8
-	charmap "<UPDN>",   $f9
 
 ; frame:
+	charmap "<UPDN>",   $f9
 	charmap "┌",        $fa
 	charmap "─",        $fb
 	charmap "┐",        $fc

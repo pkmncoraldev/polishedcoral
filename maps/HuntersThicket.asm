@@ -93,38 +93,38 @@ HuntersThicketRanger:
 	waitsfx
 	playmusic MUSIC_ENCOUNTER_GYM_LEADER
 	scall LedianRangerPoseStart
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext HuntersThicketRangerText1
 	waitbutton
 	closetext
 	scall LedianRangerPoseEnd
 	spriteface HUNTERS_THICKET_LEDIAN_RANGER, UP
 	pause 10
-	opentext
+	opentext TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText2
 	waitbutton
 	closetext
 	pause 10
 	faceplayer
-	opentext
+	opentext TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText3
 	waitbutton
 	closetext
 	spriteface HUNTERS_THICKET_LEDIAN_RANGER, UP
 	pause 10
-	opentext
+	opentext TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText4
 	waitbutton
 	closetext
 	pause 10
 	faceplayer
-	opentext
+	opentext TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText5
 	waitbutton
 	closetext
 	pause 10
 	scall LedianRangerPoseStart
-	opentext
+	opentext TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText1
 	waitbutton
 	closetext	
@@ -137,7 +137,7 @@ HuntersThicketRanger:
 	reloadmapafterbattle
 	playmusic MUSIC_ENCOUNTER_GYM_LEADER
 	scall LedianRangerPoseStart
-	opentext
+	opentext TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText6
 	waitbutton
 	closetext
@@ -145,13 +145,13 @@ HuntersThicketRanger:
 	pause 10
 	clearevent EVENT_GOT_FIVESTARHELM
 	faceplayer
-	opentext
+	opentext TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText12
 	waitbutton
 	closetext
 	spriteface HUNTERS_THICKET_LEDIAN_RANGER, UP
 	pause 10
-	opentext
+	opentext TEXTBOX_LEDIAN_RANGER
 	checkevent EVENT_PLAYER_IS_CORA
 	iftrue .girl
 	checkevent EVENT_PLAYER_IS_PIPPI
@@ -169,7 +169,7 @@ HuntersThicketRanger:
 	closetext
 	pause 10
 	faceplayer
-	opentext
+	opentext TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText8
 	waitbutton
 	closetext
@@ -184,24 +184,25 @@ HuntersThicketRanger:
 	verbosegiveitem FIVESTARHELM
 	iffalse .NoRoom
 	setevent EVENT_GOT_FIVESTARHELM
+	changetextboxspeaker TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText9
 	waitbutton
 	closetext
 	spriteface HUNTERS_THICKET_LEDIAN_RANGER, UP
 	pause 10
-	opentext
+	opentext TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText10
 	waitbutton
 	closetext
 	pause 10
 	faceplayer
-	opentext
+	opentext TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText11
 	waitbutton
 	closetext
 	pause 10
 	scall LedianRangerPoseStart2
-	opentext
+	opentext TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText1
 	waitbutton
 	closetext
@@ -214,6 +215,7 @@ HuntersThicketRanger:
 	playmapmusic
 	end
 .NoRoom
+	changetextboxspeaker TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerNoRoomText
 	buttonsound
 	writetext HuntersThicketRangerText9
@@ -221,19 +223,19 @@ HuntersThicketRanger:
 	closetext
 	spriteface HUNTERS_THICKET_LEDIAN_RANGER, UP
 	pause 10
-	opentext
+	opentext TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText10
 	waitbutton
 	closetext
 	pause 10
 	faceplayer
-	opentext
+	opentext TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText11
 	waitbutton
 	closetext
 	pause 10
 	scall LedianRangerPoseStart2
-	opentext
+	opentext TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText1
 	waitbutton
 	closetext
@@ -397,7 +399,8 @@ HuntersThicketRangerText9:
 	
 	para "I have plenty of"
 	line "those back at my"
-	cont "apartme- <WAIT_M>err…<WAIT_L><SCRL2>back at HQ!"
+	cont "apartme- <WAIT_M>err…"
+	cont "back at HQ!"
 	done
 	
 HuntersThicketRangerText10:
@@ -443,12 +446,12 @@ HuntersThicketDisguiseman:
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_DISGUISE_MASTER
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	applymovement HUNTERS_THICKET_DISGUISEMAN, Movement_StarglowCavern_DisguiseMan1
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext StarglowCavern_DisguiseMan1Text1
 	waitbutton
 	closetext
 	faceplayer
-	opentext
+	opentext TEXTBOX_DISGUISEMAN
 	writetext HuntersThicket_DisguiseMan1Text2
 	waitbutton
 	closetext
@@ -458,13 +461,13 @@ HuntersThicketDisguiseman:
 	loadtrainer DISGUISE, MASTER_5
 	startbattle
 	reloadmapafterbattle
-	opentext
+	opentext TEXTBOX_DISGUISEMAN
 	writetext HuntersThicket_DisguiseMan1Text3
 	waitbutton
 	closetext
 	applymovement HUNTERS_THICKET_DISGUISEMAN, Movement_StarglowCavern_DisguiseMan2
 	disappear HUNTERS_THICKET_DISGUISEMAN
-	opentext
+	opentext TEXTBOX_DISGUISEMAN
 	writetext StarglowCavern_DisguiseMan1Text4
 	waitbutton
 	closetext

@@ -74,7 +74,7 @@ GlintGroveDeepSmeargleScene:
 	spriteface GLINTSECRET_MINA, LEFT
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, GLINTSECRET_MINA, 15
-	opentext
+	opentext TEXTBOX_MINA
 	writetext GlintGroveDeepMinaText1
 	pause 8
 	closetext
@@ -92,7 +92,7 @@ GlintGroveDeepSmeargleScene:
 	clearevent EVENT_GLINT_SMEARGLES_GONE
 	spriteface GLINTSECRET_MINA, UP
 	pause 20
-	opentext
+	opentext TEXTBOX_MINA
 	writetext GlintGroveDeepMinaText2
 	waitbutton
 	closetext
@@ -100,7 +100,7 @@ GlintGroveDeepSmeargleScene:
 	spriteface GLINTSECRET_MINA, LEFT
 	spriteface PLAYER, RIGHT
 	playmusic MUSIC_MINA
-	opentext
+	opentext TEXTBOX_MINA
 	writetext GlintGroveDeepMinaText3
 	waitbutton
 	closetext
@@ -110,7 +110,7 @@ GlintGroveDeepSmeargleScene:
 	spriteface GLINTSECRET_MINA, LEFT
 	spriteface PLAYER, UP
 	pause 40
-	opentext
+	opentext TEXTBOX_MINA
 	writetext GlintGroveDeepMinaText4
 	pause 10
 	spriteface GLINTSECRET_MINA, DOWN
@@ -123,7 +123,7 @@ GlintGroveDeepSmeargleScene:
 	spriteface GLINTSECRET_MINA, LEFT
 	spriteface PLAYER, RIGHT
 	pause 20
-	opentext
+	opentext TEXTBOX_MINA
 	writetext GlintGroveDeepMinaText6
 	waitbutton
 	closetext
@@ -142,7 +142,7 @@ GlintGroveDeepSmeargleScene:
 	setevent EVENT_GLINT_SMEARGLES_GONE
 	setevent EVENT_DONE_GLINT_DEEP_MINA
 	setflag ENGINE_MINA_GLINT_GROVE_DEEP
-	opentext
+	opentext TEXTBOX_MINA
 	writetext GlintGroveDeepMinaText7
 	waitbutton
 	closetext
@@ -159,7 +159,7 @@ GlintGroveDeepSmeargleScene:
 	pause 25
 	spriteface GLINTSECRET_MINA, LEFT
 	pause 10
-	opentext
+	opentext TEXTBOX_MINA
 	special Special_MinaGoodbye
 	waitbutton
 	closetext

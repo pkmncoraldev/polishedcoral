@@ -29,7 +29,7 @@ Route29Mina:
 	waitsfx
 	special Special_FadeOutMusic
 	playmusic MUSIC_MINA
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route29MinaText1
 	waitbutton
 	closetext
@@ -52,7 +52,7 @@ Route29Mina:
 	faceplayer
 	playsound SFX_THROW_BALL
 	applymovement ROUTE_29_MINA, Movement_Route29_Mina_jump
-	opentext
+	opentext TEXTBOX_MINA
 	checktime 1<<NITE
 	iftrue .nite
 	writetext Route29MinaText2
@@ -81,19 +81,19 @@ Route29Mina:
 	pause 25
 	spriteface ROUTE_29_MINA, UP
 	pause 25
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route29MinaText3
 	waitbutton
 	closetext
 	pause 80
 	spriteface ROUTE_29_MINA, DOWN
 	pause 20
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route29MinaText4
 	yesorno
 	closetext
 	pause 50
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route29MinaText5
 	playsound SFX_READ_TEXT
 	writetext Route29MinaText6
@@ -150,7 +150,7 @@ Route29Mina:
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, ROUTE_29_MINA, 15
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route29MinaText21
 	waitbutton
 	closetext
@@ -161,7 +161,7 @@ Route29Mina:
 	spriteface ROUTE_29_MINA, RIGHT
 	spriteface PLAYER, UP
 	pause 40
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route29MinaText22
 	spriteface ROUTE_29_MINA, DOWN
 	farwritetext StdBlankText
@@ -174,7 +174,7 @@ Route29Mina:
 	spriteface PLAYER, LEFT
 	pause 20
 	
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route29MinaText24
 	waitbutton
 	closetext
@@ -186,7 +186,7 @@ Route29Mina:
 	dontrestartmapmusic
 	reloadmap
 	playmusic MUSIC_MINA
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route29MinaText25
 	waitbutton
 	closetext
@@ -203,7 +203,7 @@ Route29Mina:
 	pause 25
 	spriteface ROUTE_29_MINA, RIGHT
 	pause 10
-	opentext
+	opentext TEXTBOX_MINA
 	special Special_MinaGoodbye
 	waitbutton
 	closetext
@@ -269,7 +269,7 @@ Movement_Route29MinaLeave:
 	step_end
 	
 Route29MinaText1:
-	text "MINA: Y<WAIT_S>a<WAIT_S>a<WAIT_S>a<WAIT_S>a<WAIT_S>aawn…"
+	text "Y<WAIT_S>a<WAIT_S>a<WAIT_S>a<WAIT_S>a<WAIT_S>aawn…"
 	done
 	
 Route29MinaText2:

@@ -42,7 +42,7 @@ WestTrainCabEngineerStopsYou:
 	spriteface WEST_TRAIN_CAB_ENGINEER, DOWN
 	showemote EMOTE_SHOCK, WEST_TRAIN_CAB_ENGINEER, 15
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_CONDUCTOR
 	writetext WestTrainCabEngineerText1
 	waitbutton
 	closetext
@@ -51,17 +51,17 @@ WestTrainCabEngineerStopsYou:
 	showemote EMOTE_SHOCK, WEST_TRAIN_CAB_LOCKE, 15
 	spriteface WEST_TRAIN_CAB_ENGINEER, LEFT
 	spriteface PLAYER, LEFT
-	opentext
+	opentext TEXTBOX_LOCKE
 	writetext WestTrainCabLockeText1
 	waitbutton
 	closetext
 	pause 5
 	spriteface WEST_TRAIN_CAB_ENGINEER, DOWN
 	spriteface PLAYER, UP
-	jumptext WestTrainCabEngineerText2
+	jumptextspeaker TEXTBOX_CONDUCTOR, WestTrainCabEngineerText2
 	
 WestTrainCabEngineer:
-	jumptextfaceplayer WestTrainCabEngineerText2
+	jumptextfaceplayer TEXTBOX_CONDUCTOR, WestTrainCabEngineerText2
 	
 WestTrainCabSnare1:
 	jumptext WestTrainCabSnare1Text
@@ -70,7 +70,7 @@ WestTrainCabSnare2:
 	jumptext WestTrainCabSnare2Text
 	
 WestTrainCabLocke:
-	opentext
+	opentext TEXTBOX_LOCKE
 	writetext WestTrainCabLockeText2
 	waitbutton
 	closetext
@@ -78,7 +78,7 @@ WestTrainCabLocke:
 	pause 5
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, WEST_TRAIN_CAB_LOCKE, 15
-	opentext
+	opentext TEXTBOX_LOCKE
 	writetext WestTrainCabLockeText3
 	waitbutton
 	closetext
@@ -90,13 +90,13 @@ WestTrainCabLocke:
 	startbattle
 	reloadmapafterbattle
 	special RestoreMusic
-	opentext
+	opentext TEXTBOX_LOCKE
 	writetext WestTrainCabLockeText4
 	waitbutton
 	closetext
 	spriteface WEST_TRAIN_CAB_LOCKE, LEFT
 	pause 5
-	opentext
+	opentext TEXTBOX_LOCKE
 	writetext WestTrainCabLockeTextMove
 	waitbutton
 	closetext
@@ -111,13 +111,13 @@ WestTrainCabLocke:
 	applyonemovement WEST_TRAIN_CAB_SNARE_DRIVER, remove_fixed_facing
 	pause 5
 	playsound SFX_ELEVATOR_END
-	opentext
+	opentext TEXTBOX_PA
 	writetext WestTrainCabLockeText5
 	waitbutton
 	closetext
 	spriteface WEST_TRAIN_CAB_LOCKE, RIGHT
 	pause 5
-	opentext
+	opentext TEXTBOX_LOCKE
 	writetext WestTrainCabLockeText6
 	waitbutton
 	closetext
@@ -143,26 +143,26 @@ WestTrainCabLocke:
 	applyonemovement WEST_TRAIN_CAB_ENGINEER, step_left
 	spriteface WEST_TRAIN_CAB_ENGINEER, DOWN
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_CONDUCTOR
 	writetext WestTrainCabEngineerText3
 	waitbutton
 	closetext
 	applymovement WEST_TRAIN_CAB_ENGINEER, Movement_West_Train_Cab
 	applyonemovement PLAYER, step_left
 	changeblock $2, $2, $1a
-	opentext
+	opentext TEXTBOX_CONDUCTOR
 	writetext WestTrainCabEngineerText4
 	waitbutton
 	closetext
 	pause 5
 	playsound SFX_ELEVATOR_END
-	opentext
+	opentext TEXTBOX_PA
 	writetext WestTrainCabEngineerText5
 	waitbutton
 	closetext
 	spriteface WEST_TRAIN_CAB_ENGINEER, RIGHT
 	pause 5
-	opentext
+	opentext TEXTBOX_CONDUCTOR
 	writetext WestTrainCabEngineerText6
 ;	waitbutton
 ;	verbosegiveitem TRAIN_PASS
@@ -171,7 +171,7 @@ WestTrainCabLocke:
 	closetext
 	spriteface WEST_TRAIN_CAB_ENGINEER, LEFT
 	pause 5
-	opentext
+	opentext TEXTBOX_CONDUCTOR
 	writetext WestTrainCabEngineerText8
 	waitbutton
 	closetext
@@ -189,8 +189,6 @@ WestTrainCabEngineerText1:
 	
 	para "Keep your voice"
 	line "down!"
-	
-	para "I'm the CONDUCTOR!"
 	
 	para "Those goons broke"
 	line "in and took over"
@@ -352,7 +350,7 @@ WestTrainCabLockeText4:
 	done
 	
 WestTrainCabLockeText5:
-	text "PA: Ding<WAIT_S>-dong!"
+	text "Ding<WAIT_S>-dong!"
 	
 	para "Attention TEAM"
 	line "SNARE!"

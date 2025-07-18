@@ -146,19 +146,19 @@ LusterSewersThroneRoomFrankieCutscene:
 	playmusic MUSIC_POKEMANIAC_ENCOUNTER
 	applyonemovement LUSTERSEWERSTHRONEROOM_GRUNT2, fast_step_right
 	spriteface LUSTERSEWERSTHRONEROOM_GRUNT2, DOWN
-	opentext
+	opentext TEXTBOX_PUNK
 	writetext LusterSewersThroneRoomFrankieCutsceneText1
 	waitbutton
 	closetext
 	pause 32
 	playmusic MUSIC_NONE
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterSewersThroneRoomFrankieCutsceneText2
 	waitbutton
 	closetext
 	pause 20
 	applyonemovement LUSTERSEWERSTHRONEROOM_FAKE_FRANKIE, step_down
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterSewersThroneRoomFrankieCutsceneText3
 	waitbutton
 	closetext
@@ -166,7 +166,7 @@ LusterSewersThroneRoomFrankieCutscene:
 	showemote EMOTE_SHOCK, LUSTERSEWERSTHRONEROOM_GRUNT2, 15
 	pause 7
 	spriteface LUSTERSEWERSTHRONEROOM_GRUNT2, UP
-	opentext
+	opentext TEXTBOX_PUNK
 	writetext LusterSewersThroneRoomFrankieCutsceneText4
 	waitbutton
 	closetext
@@ -175,32 +175,32 @@ LusterSewersThroneRoomFrankieCutscene:
 	pause 5
 	applyonemovement LUSTERSEWERSTHRONEROOM_FAKE_FRANKIE, step_down
 	pause 10
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterSewersThroneRoomFrankieCutsceneText5
 	waitbutton
 	closetext
 	pause 10
 	applyonemovement LUSTERSEWERSTHRONEROOM_FAKE_FRANKIE, slow_step_up
 	pause 10
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterSewersThroneRoomFrankieCutsceneText6
 	waitbutton
 	closetext
 	pause 16
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterSewersThroneRoomFrankieCutsceneText7
 	waitbutton
 	closetext
 	pause 48
 	playmusic MUSIC_HARDCORE_ENCOUNTER
 	applyonemovement LUSTERSEWERSTHRONEROOM_FAKE_FRANKIE, fast_step_down
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterSewersThroneRoomFrankieCutsceneText8
 	waitbutton
 	closetext
 	pause 32
 	playmusic MUSIC_NONE
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext LusterSewersThroneRoomFrankieCutsceneText2
 	waitbutton
 	closetext
@@ -216,7 +216,7 @@ LusterSewersThroneRoomFrankieCutscene:
 	pause 32
 	applymovement PLAYER, Movement_LusterSewerThroneRoomPlayerCutscene
 	pause 32
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext LusterSewersThroneRoomFrankieCutsceneText9
 	waitbutton
 	closetext
@@ -224,7 +224,7 @@ LusterSewersThroneRoomFrankieCutscene:
 	
 	applyonemovement LUSTERSEWERSTHRONEROOM_FAKE_FRANKIE, turn_step_up
 
-	opentext
+	opentext TEXTBOX_BRUTUS
 	writetext LusterSewersThroneRoomFrankieCutsceneText10
 	waitbutton
 	closetext
@@ -240,7 +240,7 @@ LusterSewersThroneRoomFrankieCutscene:
 	pause 10
 	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, turn_step_up
 	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, remove_fixed_facing
-	opentext
+	opentext TEXTBOX_FRANKIE
 	writetext LusterSewersThroneRoomFrankieCutsceneText11
 	waitbutton
 	closetext
@@ -248,7 +248,7 @@ LusterSewersThroneRoomFrankieCutscene:
 	playmusic MUSIC_LASS_ENCOUNTER
 	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, turn_step_down
 	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, remove_fixed_facing
-	opentext
+	opentext TEXTBOX_FRANKIE
 	writetext LusterSewersThroneRoomFrankieCutsceneText12
 	yesorno
 	iftrue .saidyes
@@ -267,7 +267,7 @@ LusterSewersThroneRoomFrankieCutscene:
 	pause 64
 	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, turn_step_down
 	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, remove_fixed_facing
-	opentext
+	opentext TEXTBOX_FRANKIE
 	playsound SFX_THUNDER
 	earthquake 5
 	writetext LusterSewersThroneRoomFrankieCutsceneText15
@@ -292,7 +292,7 @@ LusterSewersThroneRoomFrankieCutscene:
 	startbattle
 	reloadmapafterbattle
 	playmapmusic
-	opentext
+	opentext TEXTBOX_FRANKIE
 	writetext LusterSewersThroneRoomFrankieCutsceneText18
 	waitbutton
 	closetext
@@ -301,14 +301,14 @@ LusterSewersThroneRoomFrankieCutscene:
 	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, turn_step_down
 	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, remove_fixed_facing
 	pause 5
-	opentext
+	opentext TEXTBOX_FRANKIE
 	writetext LusterSewersThroneRoomFrankieCutsceneText19
 	waitbutton
 	closetext
 	pause 5
 	applymovement LUSTERSEWERSTHRONEROOM_FAKE_FRANKIE, Movement_LusterSewerThroneRoomFakeFrankie3
 	spriteface LUSTERSEWERSTHRONEROOM_FAKE_FRANKIE, UP
-	opentext
+	opentext TEXTBOX_BRUTUS
 	writetext LusterSewersThroneRoomFrankieCutsceneText20
 	waitbutton
 	closetext
@@ -316,7 +316,7 @@ LusterSewersThroneRoomFrankieCutscene:
 	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, turn_step_up
 	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, remove_fixed_facing
 	pause 10
-	opentext
+	opentext TEXTBOX_FRANKIE
 	writetext LusterSewersThroneRoomFrankieCutsceneText21
 	waitbutton
 	closetext
@@ -333,7 +333,7 @@ LusterSewersThroneRoomFrankieCutscene:
 	pause 10
 	applyonemovement LUSTERSEWERSTHRONEROOM_FRANKIE, step_down
 	pause 10
-	opentext
+	opentext TEXTBOX_FRANKIE
 	writetext LusterSewersThroneRoomFrankieCutsceneText22
 	waitbutton
 	closetext

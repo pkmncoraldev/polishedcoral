@@ -463,6 +463,11 @@ macro pocketisfull
 	enum opentext_command
 macro opentext
 	db opentext_command
+if _NARG == 1
+	db \1 ; speaker
+else
+	db 0 ; no speaker
+endc
 	endm
 
 	enum refreshscreen_command
@@ -513,7 +518,13 @@ macro closewindow
 	enum jumptextfaceplayer_command
 macro jumptextfaceplayer
 	db jumptextfaceplayer_command
+if _NARG == 2
+	db \1 ; speaker
+	dw \2 ; text_pointer
+else
+	db 0 ; no speaker
 	dw \1 ; text_pointer
+endc
 	endm
 
 	enum farjumptext_command
@@ -1303,6 +1314,33 @@ macro playnewmapmusic
 	enum strengthtree_command
 macro strengthtree
 	db strengthtree_command
+	endm
+	
+	enum opentext2_command
+macro opentext2
+	db opentext2_command
+	endm
+	
+	enum changetextboxspeaker_command
+macro changetextboxspeaker
+	db changetextboxspeaker_command
+if _NARG == 1
+	db \1 ; speaker
+else
+	db 0 ; no speaker
+endc
+	endm
+	
+	enum jumptextspeaker_command
+macro jumptextspeaker
+	db jumptextspeaker_command
+if _NARG == 2
+	db \1 ; speaker
+	dw \2 ; text_pointer
+else
+	db 0 ; no speaker
+	dw \1 ; text_pointer
+endc
 	endm
 	
 macro thisasm

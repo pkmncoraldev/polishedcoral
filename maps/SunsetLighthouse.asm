@@ -70,7 +70,7 @@ LighthouseStartGetStarterScene:
 	playmusic MUSIC_SPRUCE
 	applymovement PLAYER, Movement_EnterLighthouse
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_ABNER
 	writetext LighthouseAbnerText1
 	waitbutton
 	closetext
@@ -80,42 +80,42 @@ LighthouseStartGetStarterScene:
 	moveperson LIGHTHOUSE_RIVAL, 5, 9
 	appear LIGHTHOUSE_RIVAL
 	applymovement LIGHTHOUSE_RIVAL, Movement_LighthouseRivalEnters
-	opentext
+	opentext TEXTBOX_ABNER
 	writetext LighthouseAbnerText7
 	waitbutton
 	closetext
 	pause 10
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext LighthouseRivalEntersText
 	waitbutton
 	closetext
 	pause 10
-	opentext
+	opentext TEXTBOX_ABNER
 	writetext LighthouseAbnerText10
 	waitbutton
 	closetext
 	
 	spriteface LIGHTHOUSE_RIVAL, LEFT
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext LighthouseRivalEntersText2
 	waitbutton
 	closetext
 	pause 10
 	playmusic MUSIC_SPRUCE
-	opentext
+	opentext TEXTBOX_ABNER
 	writetext LighthouseAbnerText8
 	waitbutton
 	closetext
 	pause 5
 	spriteface LIGHTHOUSE_RIVAL, UP
-	opentext
+	opentext TEXTBOX_ABNER
 	writetext LighthouseAbnerText9
 	waitbutton
 	closetext
 	
 	applymovement LIGHTHOUSE_ABNER, Movement_AbnerLighthouseWalk1
 	spriteface LIGHTHOUSE_ABNER, DOWN
-	opentext
+	opentext TEXTBOX_ABNER
 	writetext PickStarterText
 	waitbutton
 	
@@ -305,6 +305,7 @@ LighthouseGetStarterScene_part2:
 ;	waitbutton
 ;	closetext
 	applyonemovement LIGHTHOUSE_RIVAL, turn_step_up
+	opentext TEXTBOX_RIVAL
 	checkevent EVENT_GOT_SQUIRTLE_FROM_SPRUCE
 	iftrue .RivalSquirtleText
 	checkevent EVENT_GOT_BULBASAUR_FROM_SPRUCE
@@ -315,7 +316,6 @@ LighthouseGetStarterScene_part2:
 	iftrue .RivalTotodileText
 	checkevent EVENT_GOT_CHIKORITA_FROM_SPRUCE
 	iftrue .RivalChikoritaText
-	opentext
 	writetext RivalPicksTotodileText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -323,7 +323,6 @@ LighthouseGetStarterScene_part2:
 	closetext
 	jump .continueLighthouseGetStarterScene_part2
 .RivalSquirtleText
-	opentext
 	writetext RivalPicksChikoritaText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -331,7 +330,6 @@ LighthouseGetStarterScene_part2:
 	closetext
 	jump .continueLighthouseGetStarterScene_part2
 .RivalBulbasaurText
-	opentext
 	writetext RivalPicksCyndaquilText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -339,7 +337,6 @@ LighthouseGetStarterScene_part2:
 	closetext
 	jump .continueLighthouseGetStarterScene_part2
 .RivalCyndaquilText
-	opentext
 	writetext RivalPicksSquirtleText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -347,7 +344,6 @@ LighthouseGetStarterScene_part2:
 	closetext
 	jump .continueLighthouseGetStarterScene_part2
 .RivalTotodileText
-	opentext
 	writetext RivalPicksBulbasaurText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -355,7 +351,6 @@ LighthouseGetStarterScene_part2:
 	closetext
 	jump .continueLighthouseGetStarterScene_part2
 .RivalChikoritaText
-	opentext
 	writetext RivalPicksCharmanderText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -369,6 +364,7 @@ LighthouseGetStarterScene_part2:
 ;	waitbutton
 ;	closetext
 	applyonemovement LIGHTHOUSE_KID1, turn_step_up
+	opentext TEXTBOX_GIRL
 	checkevent EVENT_GOT_SQUIRTLE_FROM_SPRUCE
 	iftrue .Kid1SquirtleText
 	checkevent EVENT_GOT_BULBASAUR_FROM_SPRUCE
@@ -379,7 +375,6 @@ LighthouseGetStarterScene_part2:
 	iftrue .Kid1TotodileText
 	checkevent EVENT_GOT_CHIKORITA_FROM_SPRUCE
 	iftrue .Kid1ChikoritaText
-	opentext
 	writetext Kid1PicksBulbasaurText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -388,7 +383,6 @@ LighthouseGetStarterScene_part2:
 	jump .continue2LighthouseGetStarterScene_part2
 	
 .Kid1SquirtleText
-	opentext
 	writetext Kid1PicksCharmanderText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -397,7 +391,6 @@ LighthouseGetStarterScene_part2:
 	jump .continue2LighthouseGetStarterScene_part2
 	
 .Kid1BulbasaurText
-	opentext
 	writetext Kid1PicksSquirtleText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -405,7 +398,6 @@ LighthouseGetStarterScene_part2:
 	closetext
 	jump .continue2LighthouseGetStarterScene_part2
 .Kid1CyndaquilText
-	opentext
 	writetext Kid1PicksChikoritaText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -413,7 +405,6 @@ LighthouseGetStarterScene_part2:
 	closetext
 	jump .continue2LighthouseGetStarterScene_part2
 .Kid1TotodileText
-	opentext
 	writetext Kid1PicksCyndaquilText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -421,7 +412,6 @@ LighthouseGetStarterScene_part2:
 	closetext
 	jump .continue2LighthouseGetStarterScene_part2
 .Kid1ChikoritaText
-	opentext
 	writetext Kid1PicksTotodileText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -435,6 +425,7 @@ LighthouseGetStarterScene_part2:
 ;	waitbutton
 ;	closetext
 	applyonemovement LIGHTHOUSE_KID2, turn_step_up
+	opentext TEXTBOX_BOY
 	checkevent EVENT_GOT_SQUIRTLE_FROM_SPRUCE
 	iftrue .Kid2SquirtleText
 	checkevent EVENT_GOT_BULBASAUR_FROM_SPRUCE
@@ -445,7 +436,6 @@ LighthouseGetStarterScene_part2:
 	iftrue .Kid2TotodileText
 	checkevent EVENT_GOT_CHIKORITA_FROM_SPRUCE
 	iftrue .Kid2ChikoritaText
-	opentext
 	writetext Kid2PicksCyndaquilText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -454,7 +444,6 @@ LighthouseGetStarterScene_part2:
 	jump .continue3LighthouseGetStarterScene_part2
 	
 .Kid2SquirtleText
-	opentext
 	writetext Kid2PicksTotodileText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -463,7 +452,6 @@ LighthouseGetStarterScene_part2:
 	jump .continue3LighthouseGetStarterScene_part2
 	
 .Kid2BulbasaurText
-	opentext
 	writetext Kid2PicksChikoritaText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -471,7 +459,6 @@ LighthouseGetStarterScene_part2:
 	closetext
 	jump .continue3LighthouseGetStarterScene_part2
 .Kid2CyndaquilText
-	opentext
 	writetext Kid2PicksCharmanderText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -479,7 +466,6 @@ LighthouseGetStarterScene_part2:
 	closetext
 	jump .continue3LighthouseGetStarterScene_part2
 .Kid2TotodileText
-	opentext
 	writetext Kid2PicksSquirtleText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -487,7 +473,6 @@ LighthouseGetStarterScene_part2:
 	closetext
 	jump .continue3LighthouseGetStarterScene_part2
 .Kid2ChikoritaText
-	opentext
 	writetext Kid2PicksBulbasaurText
 	playsound SFX_LEVEL_UP 
 	waitsfx
@@ -496,18 +481,18 @@ LighthouseGetStarterScene_part2:
 .continue3LighthouseGetStarterScene_part2
 	applymovement LIGHTHOUSE_ABNER, Movement_AbnerLighthouseReturn
 	spriteface LIGHTHOUSE_ABNER, DOWN
-	opentext
+	opentext TEXTBOX_ABNER
 	writetext LighthouseAbnerText2
 	waitbutton
 	closetext
 	spriteface LIGHTHOUSE_RIVAL, RIGHT
 	spriteface PLAYER, LEFT
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext LighthouseRivalText1
 	waitbutton
 	closetext
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_ABNER
 	writetext LighthouseAbnerText3
 	waitbutton
 	closetext
@@ -516,7 +501,7 @@ LighthouseGetStarterScene_part2:
 	appear LIGHTHOUSE_KID1_2
 	appear LIGHTHOUSE_KID2_2
 	spriteface PLAYER, LEFT
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext LighthouseRivalText2
 	waitbutton
 	closetext
@@ -604,7 +589,7 @@ LighthouseGetStarterScene_part2:
 	
 .LighthouseAfterVictorious:
 	playmusic MUSIC_RIVAL_AFTER
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext LighthouseRivalText_YouWon
 	waitbutton
 	closetext
@@ -612,7 +597,7 @@ LighthouseGetStarterScene_part2:
 
 .LighthouseAfterYourDefeat:
 	playmusic MUSIC_RIVAL_AFTER
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext LighthouseRivalText_YouLost
 	waitbutton
 	closetext
@@ -627,21 +612,24 @@ LighthouseGetStarterScene_part2:
 	applymovement LIGHTHOUSE_ABNER, Movement_AbnerLighthouseWalk1
 	spriteface LIGHTHOUSE_ABNER, DOWN
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_ABNER
 	writetext LighthouseAbnerText4
 	waitbutton
 	closetext
 	pause 10
-	opentext
+	opentext TEXTBOX_ABNER
 	writetext LighthouseAbnerTextGiveDex
 	waitbutton
+	changetextboxspeaker
 	writetext Lighthouse_GetDexText
 	playsound SFX_ITEM
 	waitsfx
 	setflag ENGINE_POKEDEX
+	changetextboxspeaker TEXTBOX_ABNER
 	writetext LighthouseAbnerText5
 	buttonsound
 	giveitem RIVAL_POKEDEX
+	changetextboxspeaker
 	writetext LighthouseGotRivalDexText
 	playsound SFX_KEY_ITEM
 	waitsfx
@@ -649,6 +637,7 @@ LighthouseGetStarterScene_part2:
 	buttonsound
 	writetext LighthousePutAwayRivalDexText
 	waitbutton
+	changetextboxspeaker TEXTBOX_ABNER
 	writetext LighthouseAbnerText6
 	waitbutton
 	closetext
@@ -669,11 +658,11 @@ LighthouseAbner:
 	iftrue LighthouseAbnerPostPokeGear
 	jumptextfaceplayer LighthouseAbnerText
 .second_visit
-	jumptextfaceplayer LighthouseAbner2ndVisitText
+	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbner2ndVisitText
 .beentoisland
-	jumptextfaceplayer LighthouseAbnerBeenToHouseText
+	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbnerBeenToHouseText
 .elevator_unlocked
-	jumptextfaceplayer LighthouseAbnerElevatorUnlockedText
+	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbnerElevatorUnlockedText
 	
 LighthouseRival:
 	end
@@ -699,7 +688,7 @@ LighthouseKid2:
 	end
 	
 LighthouseAbnerPostPokeGear:
-	jumptextfaceplayer LighthouseAbnerTextPostPokeGear
+	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbnerTextPostPokeGear
 	
 Movement_EnterLighthouse:
 	step_up
@@ -764,7 +753,7 @@ Lighthouse_GetDexText:
 	done
 	
 LighthouseAbnerText1:
-	text "ABNER: <PLAYER>!"
+	text "<PLAYER>!"
 	
 	para "So nice of you to"
 	line "finally join us."
@@ -790,7 +779,7 @@ LighthouseAbnerText1:
 	done
 	
 LighthouseAbnerText2:
-	text "ABNER: Congrats!"
+	text "Congrats!"
 	
 	para "You are all now"
 	line "#MON trainers!"
@@ -801,15 +790,13 @@ LighthouseAbnerText2:
 	done
 	
 LighthouseAbnerText3:
-	text "ABNER: That's a"
-	line "great idea,"
-	cont "<RIVAL>."
+	text "That's a great"
+	line "idea, <RIVAL>."
 	done
 	
 LighthouseAbnerText4:
-	text "ABNER: Oh,<WAIT_S>"
-	line "don't worry about"
-	cont "<RIVAL>, <WAIT_S><PLAYER>."
+	text "Oh, don't worry"
+	line "about <RIVAL>."
 	
 	para "Some people are"
 	line "overcompetitive."
@@ -855,7 +842,7 @@ LighthouseAbnerText6:
 	done
 	
 LighthouseAbnerText7:
-	text "ABNER: <RIVAL>!"
+	text "<RIVAL>!"
 	
 	para "Late as usual."
 	
@@ -864,7 +851,7 @@ LighthouseAbnerText7:
 	done
 	
 LighthouseAbnerText8:
-	text "ABNER: Ahem…<WAIT_M>"
+	text "Ahem…<WAIT_M>"
 	line "I was saying…"
 	done
 	
@@ -942,7 +929,7 @@ LighthouseAbnerText9:
 	done
 	
 LighthouseAbnerText10:
-	text "ABNER: Right."
+	text "Right."
 	
 	para "Didn't think so."
 	
@@ -973,9 +960,9 @@ LighthouseAbnerTextPostPokeGear:
 	done	
 
 LighthouseRivalText1:
-	text "<RIVAL>: Your"
-	line "#MON looks"
-	cont "weak, <PLAYER>."
+	text "Your #MON"
+	line "looks weak,"
+	cont "<PLAYER>."
 	
 	para "I bet mine could"
 	line "wipe the floor"
@@ -987,21 +974,20 @@ LighthouseRivalText1:
 	done
 	
 LighthouseRivalText2:
-	text "<RIVAL>: This is"
-	line "gonna be a piece"
-	cont "of cake!"
+	text "This is gonna be"
+	line "a piece of cake!"
 	done
 	
 LighthouseRivalEntersText:
-	text "<RIVAL>: …"
+	text "…"
 	done
 	
 LighthouseRivalEntersText2:
-	text "<RIVAL>: Tch!"
+	text "Tch!"
 	done
 	
 LighthouseRivalText_YouWon:
-	text "<RIVAL>: Whatever!"
+	text "Whatever!"
 	
 	para "I'm going to go"
 	line "train my #MON."
@@ -1011,8 +997,7 @@ LighthouseRivalText_YouWon:
 	done
 	
 LighthouseRivalText_YouLost:
-	text "<RIVAL>: I knew"
-	line "I'd win."
+	text "I knew I'd win."
 	
 	para "You'd better stay"
 	line "out of my way if"
@@ -1021,8 +1006,8 @@ LighthouseRivalText_YouLost:
 	done
 	
 RivalPicksCharmanderText:
-	text "<RIVAL>: <PLAYER>"
-	line "picked CHIKORITA,"
+	text "<PLAYER> picked"
+	line "CHIKORITA,"
 	
 	para "so I'll pick"
 	line "CHARMANDER!"
@@ -1032,8 +1017,8 @@ RivalPicksCharmanderText:
 	done
 	
 RivalPicksSquirtleText:
-	text "<RIVAL>: <PLAYER>"
-	line "picked CYNDAQUIL,"
+	text "<PLAYER> picked"
+	line "CYNDAQUIL,"
 	
 	para "so I'll pick"
 	line "SQUIRTLE!"
@@ -1043,8 +1028,8 @@ RivalPicksSquirtleText:
 	done
 	
 RivalPicksBulbasaurText:
-	text "<RIVAL>: <PLAYER>"
-	line "picked TOTODILE,"
+	text "<PLAYER> picked"
+	line "TOTODILE,"
 	
 	para "so I'll pick"
 	line "BULBASAUR!"
@@ -1055,8 +1040,8 @@ RivalPicksBulbasaurText:
 	
 	
 RivalPicksCyndaquilText:
-	text "<RIVAL>: <PLAYER>"
-	line "picked BULBASAUR,"
+	text "<PLAYER> picked"
+	line "BULBASAUR,"
 	
 	para "so I'll pick"
 	line "CYNDAQUIL!"
@@ -1066,8 +1051,8 @@ RivalPicksCyndaquilText:
 	done
 	
 RivalPicksTotodileText:
-	text "<RIVAL>: <PLAYER>"
-	line "picked CHARMANDER,"
+	text "<PLAYER> picked"
+	line "CHARMANDER,"
 	
 	para "so I'll pick"
 	line "TOTODILE!"
@@ -1077,8 +1062,8 @@ RivalPicksTotodileText:
 	done
 	
 RivalPicksChikoritaText:
-	text "<RIVAL>: <PLAYER>"
-	line "picked SQUIRTLE,"
+	text "<PLAYER> picked"
+	line "SQUIRTLE,"
 	
 	para "so I'll pick"
 	line "CHIKORITA!"
@@ -1088,49 +1073,49 @@ RivalPicksChikoritaText:
 	done
 	
 Kid1PicksCharmanderText:
-	text "GIRL: Oh!"
+	text "Oh!"
 	
 	para "I want CHARMANDER!"
 	line "It's so cute!"
 	done
 	
 Kid1PicksSquirtleText:
-	text "GIRL: Oh!"
+	text "Oh!"
 	
 	para "I want SQUIRTLE!"
 	line "It's so cute!"
 	done
 	
 Kid1PicksBulbasaurText:
-	text "GIRL: Oh!"
+	text "Oh!"
 	
 	para "I want BULBASAUR!"
 	line "It's so cute!"
 	done
 	
 Kid1PicksCyndaquilText:
-	text "GIRL: Oh!"
+	text "Oh!"
 	
 	para "I want CYNDAQUIL!"
 	line "It's so cute!"
 	done
 	
 Kid1PicksTotodileText:
-	text "GIRL: Oh!"
+	text "Oh!"
 	
 	para "I want TOTODILE!"
 	line "It's so cute!"
 	done
 	
 Kid1PicksChikoritaText:
-	text "GIRL: Oh!"
+	text "Oh!"
 	
 	para "I want CHIKORITA!"
 	line "It's so cute!"
 	done
 	
 Kid2PicksCharmanderText:
-	text "BOY: Yes!"
+	text "Yes!"
 	
 	para "No one took"
 	line "CHARMANDER!"
@@ -1139,7 +1124,7 @@ Kid2PicksCharmanderText:
 	done
 	
 Kid2PicksSquirtleText:
-	text "BOY: Yes!"
+	text "Yes!"
 	
 	para "No one took"
 	line "SQUIRTLE!"
@@ -1148,7 +1133,7 @@ Kid2PicksSquirtleText:
 	done
 	
 Kid2PicksBulbasaurText:
-	text "BOY: Yes!"
+	text "Yes!"
 	
 	para "No one took"
 	line "BULBASAUR!"
@@ -1157,7 +1142,7 @@ Kid2PicksBulbasaurText:
 	done
 	
 Kid2PicksCyndaquilText:
-	text "BOY: Yes!"
+	text "Yes!"
 	
 	para "No one took"
 	line "CYNDAQUIL!"
@@ -1166,7 +1151,7 @@ Kid2PicksCyndaquilText:
 	done
 	
 Kid2PicksTotodileText:
-	text "BOY: Yes!"
+	text "Yes!"
 	
 	para "No one took"
 	line "TOTODILE!"
@@ -1175,7 +1160,7 @@ Kid2PicksTotodileText:
 	done
 	
 Kid2PicksChikoritaText:
-	text "BOY: Yes!"
+	text "Yes!"
 	
 	para "No one took"
 	line "CHIKORITA!"

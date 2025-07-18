@@ -105,7 +105,7 @@ SunbeamJungleTrigger0:
 	special Special_StopRunning
 	special Special_StopLandmarkTimer
 	applyonemovement PLAYER, step_up
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext SunbeamJungleKageText1
 	waitbutton
 	closetext
@@ -113,7 +113,7 @@ SunbeamJungleTrigger0:
 	spriteface SUNBEAM_JUNGLE_KAGE_CUTSCENE, DOWN
 	spriteface SUNBEAM_JUNGLE_SNARE_CUTSCENE, DOWN
 	showemote EMOTE_SHOCK, SUNBEAM_JUNGLE_KAGE_CUTSCENE, 15
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext SunbeamJungleKageText2
 	waitbutton
 	closetext
@@ -127,7 +127,7 @@ SunbeamJungleTrigger0:
 .endwalking
 	special SaveMusic
 	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
-	opentext
+	opentext TEXTBOX_GRUNT
 	writetext SunbeamJungleSnare1Text1
 	waitbutton
 	closetext
@@ -139,7 +139,7 @@ SunbeamJungleTrigger0:
 	startbattle
 	reloadmapafterbattle
 	special RestoreMusic
-	opentext
+	opentext TEXTBOX_GRUNT
 	writetext SunbeamJungleSnare1Text2
 	waitbutton
 	closetext
@@ -165,25 +165,25 @@ SunbeamJungleKageScript:
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, SUNBEAM_JUNGLE_SNARE_BRIDGE, 15
 	applymovement SUNBEAM_JUNGLE_SNARE_BRIDGE, MovementSunbeamJungleSnareBridge1
-	opentext
+	opentext TEXTBOX_GRUNT
 	writetext SunbeamJungleSnareBridgeText1
 	waitbutton
 	closetext
 	applymovement SUNBEAM_JUNGLE_SNARE_BRIDGE, MovementSunbeamJungleSnareBridge2
 	spriteface SUNBEAM_JUNGLE_SNARE_BRIDGE, LEFT
-	opentext
+	opentext TEXTBOX_GRUNT
 	writetext SunbeamJungleSnareBridgeText2
 	waitbutton
 	closetext
 	wait 5
 	spriteface SUNBEAM_JUNGLE_KAGE, RIGHT
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext SunbeamJungleKageText3
 	waitbutton
 	closetext
 	playmusic MUSIC_SNARE_THEME
 	applymovement SUNBEAM_JUNGLE_KAGE, Movement_SunbeamJungleKage2
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext SunbeamJungleKageText4
 	waitbutton
 	closetext
@@ -195,7 +195,7 @@ SunbeamJungleKageScript:
 	startbattle
 	reloadmapafterbattle
 	special RestoreMusic
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext SunbeamJungleKageText5
 	waitbutton
 	closetext
@@ -203,30 +203,30 @@ SunbeamJungleKageScript:
 	playsound SFX_BUMP
 	applymovement PLAYER, Movement_SunbeamJunglePlayerPushed
 	applymovement SUNBEAM_JUNGLE_KAGE, Movement_SunbeamJungleKage4
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext SunbeamJungleKageText6
 	waitbutton
 	closetext
 	applymovement SUNBEAM_JUNGLE_KAGE, Movement_SunbeamJungleKage5
 	special Special_FadeOutMusic
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext SunbeamJungleKageText7
 	waitbutton
 	closetext
 	applymovement SUNBEAM_JUNGLE_KAGE, Movement_SunbeamJungleKage6
 	playsound SFX_LICK
 	applyonemovement SUNBEAM_JUNGLE_KAGE, turn_away_right
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext SunbeamJungleKageText8
 	waitbutton
 	closetext
 	applymovement SUNBEAM_JUNGLE_KAGE, Movement_SunbeamJungleKage8_2
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext SunbeamJungleKageText9
 	waitbutton
 	closetext
 	applymovement SUNBEAM_JUNGLE_KAGE, Movement_SunbeamJungleKage8
-	opentext
+	opentext TEXTBOX_CAGE
 	writetext SunbeamJungleKageText10
 	wait 5
 	closetext
@@ -241,7 +241,7 @@ SunbeamJungleKageScript:
 	disappear SUNBEAM_JUNGLE_KAGE_WATER
 	applymovement SUNBEAM_JUNGLE_SNARE_BRIDGE, MovementSunbeamJungleSnareBridge3
 	spriteface SUNBEAM_JUNGLE_SNARE_BRIDGE, DOWN
-	opentext
+	opentext TEXTBOX_GRUNT
 	writetext SunbeamJungleSnareBridgeText3
 	waitbutton
 	closetext
@@ -445,7 +445,7 @@ SunbeamJungleKageText3:
 SunbeamJungleKageText4:
 	text "You just don't"
 	line "know when to give"
-	cont "up, huh punk?"
+	cont "up, huh?"
 
 	para "Well you're in over"
 	line "your head now."
@@ -523,7 +523,7 @@ SunbeamJungleSnare1Text1:
 
 SunbeamJungleSnare1Text2:
 	text "Not good at all!"
-
+	
 	para "BOSS!"
 	done
 
@@ -535,6 +535,9 @@ SunbeamJungleSnareBridgeText1:
 	text "Uh oh…"
 	
 	para "It's the kid again!"
+	
+	para "You're gonna have to"
+	line "deal with CAGE now!"
 	done
 	
 SunbeamJungleSnareBridgeText2:

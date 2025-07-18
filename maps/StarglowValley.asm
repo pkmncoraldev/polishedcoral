@@ -343,7 +343,7 @@ StarglowSnare3:
 	setevent EVENT_MET_RODNEY
 	callasm .MetRodney
 	faceplayer
-	opentext
+	opentext TEXTBOX_PUNK
 	writetext StarglowSnare3Text2
 	pause 20
 	closetext
@@ -363,13 +363,13 @@ StarglowSnare3:
 	spriteface PLAYER, RIGHT
 	pause 16
 	spriteface PLAYER, LEFT
-	opentext
+	opentext TEXTBOX_PUNK
 	writetext StarglowSnare3Text3
 	waitbutton
 	closetext
 	pause 32
 	playmusic MUSIC_NONE
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext StarglowRodneyText1
 	waitbutton
 	closetext
@@ -377,7 +377,7 @@ StarglowSnare3:
 	spriteface STARGLOWSNARE3_2, UP
 	showemote EMOTE_SHOCK, STARGLOWSNARE3_2, 15
 	pause 7
-	opentext
+	opentext TEXTBOX_PUNK
 	writetext StarglowSnare3Text4
 	playmusic MUSIC_ENCOUNTER_GYM_LEADER
 	pause 48
@@ -386,13 +386,13 @@ StarglowSnare3:
 	playsound SFX_EXIT_BUILDING
 	applymovement STARGLOWSNARE3_2, Movement_StarglowSnare3
 	applymovement STARGLOWRODNEY, Movement_StarglowSnare3
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext StarglowRodneyText2
 	waitbutton
 	closetext
 	pause 16
 	spriteface STARGLOWRODNEY, RIGHT
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext StarglowRodneyText3
 	waitbutton
 	spriteface STARGLOWRODNEY, DOWN
@@ -401,7 +401,7 @@ StarglowSnare3:
 	spriteface STARGLOWSNARE3_2, UP
 	showemote EMOTE_SHOCK, STARGLOWSNARE3_2, 15
 	pause 7
-	opentext
+	opentext TEXTBOX_PUNK
 	writetext StarglowSnare3Text5
 	waitbutton
 	closetext
@@ -410,7 +410,7 @@ StarglowSnare3:
 	spriteface STARGLOWSNARE3_2, UP
 	pause 20
 	spriteface STARGLOWSNARE3_2, RIGHT
-	opentext
+	opentext TEXTBOX_PUNK
 	writetext StarglowSnare3Text6
 	waitbutton
 	closetext
@@ -419,7 +419,7 @@ StarglowSnare3:
 	disappear STARGLOWSNARE1
 	disappear STARGLOWSNARE4
 	spriteface STARGLOWSNARE3_2, UP
-	opentext
+	opentext TEXTBOX_PUNK
 	writetext StarglowSnare3Text7
 	waitbutton
 	closetext
@@ -434,8 +434,13 @@ StarglowSnare3:
 	pause 10
 	playnewmapmusic
 	spriteface STARGLOWRODNEY, RIGHT
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext StarglowRodneyText4
+	buttonsound
+	opentext TEXTBOX_RODNEY
+	farwritetext StdBlankText
+	pause 6
+	writetext StarglowRodneyText5
 	waitbutton
 	closetext
 	applymovement STARGLOWRODNEY, Movement_StarglowRodney
@@ -875,8 +880,7 @@ StarglowSnare3Text4:
 	done
 	
 StarglowSnare3Text5:
-	text "PUNK: A GYM"
-	line "LEADER?"
+	text "A GYM LEADER?"
 	done
 
 StarglowSnare3Text6:
@@ -910,13 +914,13 @@ StarglowSnare3Text8:
 	done
 	
 StarglowRodneyText1:
-	text "???: Now hold on"
-	line "just one second."
+	text "Now hold on just"
+	line "one second."
 	done
 	
 StarglowRodneyText2:
-	text "???: Three on one"
-	line "is hardly fair,"
+	text "Three on one is"
+	line "hardly fair,"
 	cont "wouldn't you say?"
 	done
 	
@@ -936,8 +940,10 @@ StarglowRodneyText4:
 	cont "introduce myself."
 	
 	para "I'm RODNEY."
+	done
 	
-	para "I'm the GYM LEADER"
+StarglowRodneyText5:
+	text "I'm the GYM LEADER"
 	line "here in STARGLOW"
 	cont "VALLEY."
 	

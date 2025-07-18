@@ -66,7 +66,7 @@ NettBuildingOfficeNettCutsceneR:
 	spriteface PLAYER, UP
 NettBuildingOfficeNettCutscene:
 	pause 10
-	opentext
+	opentext TEXTBOX_NETT
 	writetext NettBuildingOfficeNettText1
 	waitbutton
 	closetext
@@ -85,20 +85,20 @@ NettBuildingOfficeNettCutscene:
 	pause 20
 	applyonemovement NETT_OFFICE_NETT, slow_step_up
 	pause 20
-	opentext
+	opentext TEXTBOX_NETT
 	writetext NettBuildingOfficeNettText2
 	waitbutton
 	closetext
 	pause 10
 	spriteface NETT_OFFICE_NETT, RIGHT
 	pause 10
-	opentext
+	opentext TEXTBOX_NETT
 	writetext NettBuildingOfficeNettText3
 	waitbutton
 	closetext
 	pause 20
 	applyonemovement NETT_OFFICE_NETT, slow_step_down
-	opentext
+	opentext TEXTBOX_NETT
 	writetext NettBuildingOfficeNettText4
 	waitbutton
 	closetext
@@ -110,7 +110,7 @@ NettBuildingOfficeNettCutscene:
 	changeblock $6, $4, $36
 	callasm GenericFinishBridge
 	pause 40
-	opentext
+	opentext TEXTBOX_NETT
 	writetext NettBuildingOfficeNettText5
 	waitbutton
 	closetext
@@ -136,7 +136,7 @@ NettBuildingOfficeNettCutscene:
 	applyonemovement PLAYER, show_person
 	pause 10
 	disappear NETT_OFFICE_PLAYER_CUTSCENE
-	opentext
+	opentext TEXTBOX_NETT
 	writetext NettBuildingOfficeNettText6
 	buttonsound
 	farwritetext StdBlankText
@@ -145,8 +145,6 @@ NettBuildingOfficeNettCutscene:
 	writetext NettBuildingOfficeNettText7
 	buttonsound
 	verbosegiveitem TRAIN_PASS
-;	setevent EVENT_GOT_HM03_SURF
-;	setflag ENGINE_GOT_SURF
 	writetext NettBuildingOfficeNettText8
 	waitbutton
 	closetext
@@ -243,7 +241,7 @@ NettBuildingOfficeNewton:
 	spriteface NETT_OFFICE_NETT, RIGHT
 	changeblock $4, $2, $ae
 	callasm GenericFinishBridge
-	opentext
+	opentext TEXTBOX_NETT
 	writetext NettBuildingOfficeNewtonText3
 	waitbutton
 	closetext
@@ -259,7 +257,7 @@ NettBuildingOfficeNett:
 	if_equal RIGHT, .youarefacingright
 	if_equal DOWN, .youarefacingdown
 .cont
-	opentext
+	opentext TEXTBOX_NETT
 	writetext NettBuildingOfficeNettText9
 	waitbutton
 	closetext
@@ -278,7 +276,7 @@ NettBuildingOfficeNett:
 	callasm GenericFinishBridge
 	jump .cont
 .youarefacingdown
-	opentext
+	opentext TEXTBOX_NETT
 	writetext NettBuildingOfficeNettText10
 	waitbutton
 	closetext

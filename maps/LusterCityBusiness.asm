@@ -122,7 +122,7 @@ LusterCityBusinessRival:
 	wait 15
 	applymovement LUSTERBUSINESS_RIVAL, Movement_LusterCityBusinessRival1
 	spriteface PLAYER, RIGHT
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext LusterCityBusinessRivalText1
 	waitbutton
 	closetext
@@ -200,7 +200,7 @@ LusterCityBusinessRival:
 	
 .afterbattle
 	playmusic MUSIC_RIVAL_AFTER
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext LusterCityBusinessRivalText2
 	waitbutton
 	closetext	

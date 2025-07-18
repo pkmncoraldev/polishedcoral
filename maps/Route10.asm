@@ -138,7 +138,7 @@ Route10Mina:
 	callasm Route10MinaIndoorPermsAsm2
 	faceplayer
 	playmusic MUSIC_MINA
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route10MinaText3
 	waitbutton
 	closetext
@@ -149,7 +149,7 @@ Route10Mina:
 	pause 30
 	faceplayer
 	pause 30
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route10MinaText4
 	waitbutton
 	closetext
@@ -159,7 +159,7 @@ Route10Mina:
 	spriteface 3, LEFT
 	spriteface PLAYER, UP
 	pause 40
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route10MinaText5
 	spriteface 3, DOWN
 	farwritetext StdBlankText
@@ -171,7 +171,7 @@ Route10Mina:
 	spriteface 3, LEFT
 	spriteface PLAYER, RIGHT
 	pause 20
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route10MinaText7
 	waitbutton
 	closetext
@@ -183,7 +183,7 @@ Route10Mina:
 	dontrestartmapmusic
 	reloadmap
 	playmusic MUSIC_MINA
-	opentext
+	opentext TEXTBOX_MINA
 	writetext Route10MinaText8
 	waitbutton
 	closetext
@@ -200,7 +200,7 @@ Route10Mina:
 	pause 25
 	spriteface 3, LEFT
 	pause 10
-	opentext
+	opentext TEXTBOX_MINA
 	special Special_MinaGoodbye
 	waitbutton
 	closetext

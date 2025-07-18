@@ -395,7 +395,7 @@ LusterPunkLeader:
 	showemote EMOTE_SHOCK, LUSTERPUNKLEADER, 15
 	pause 7
 	faceplayer
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterPunkLeaderText4
 	waitbutton
 	closetext
@@ -407,32 +407,32 @@ LusterPunkLeader:
 	pause 10
 	spriteface LUSTERPUNK1, RIGHT
 	applyonemovement LUSTERPUNK1, step_right
-	opentext
+	opentext TEXTBOX_PUNK_A
 	writetext LusterPunk1Text2
 	waitbutton
 	closetext
 	pause 10
 	spriteface LUSTERPUNK2, RIGHT
 	applyonemovement LUSTERPUNK2, step_right
-	opentext
+	opentext TEXTBOX_PUNK_B
 	writetext LusterPunk2Text2
 	waitbutton
 	closetext
 	pause 25
 	spriteface LUSTERPUNK1, UP
-	opentext
+	opentext TEXTBOX_PUNK_A
 	writetext LusterPunk1Text3
 	waitbutton
 	closetext
 	pause 15
 	spriteface LUSTERPUNK2, DOWN
-	opentext
+	opentext TEXTBOX_PUNK_B
 	writetext LusterPunk2Text3
 	waitbutton
 	closetext
 	pause 15
 	spriteface LUSTERPUNKLEADER, LEFT
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterPunkLeaderText5
 	waitbutton
 	closetext
@@ -441,7 +441,7 @@ LusterPunkLeader:
 	pause 10
 	spriteface LUSTERPUNK1, RIGHT
 	spriteface LUSTERPUNK2, RIGHT
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterPunkLeaderText6
 	waitbutton
 	closetext
@@ -449,7 +449,7 @@ LusterPunkLeader:
 	applyonemovement LUSTERPUNKLEADER, step_left
 	pause 10
 	spriteface LUSTERPUNK2, DOWN
-	opentext
+	opentext TEXTBOX_PUNK_B
 	writetext LusterPunk2Text4
 	waitbutton
 	closetext
@@ -457,7 +457,7 @@ LusterPunkLeader:
 	applyonemovement LUSTERPUNK2, step_left
 	spriteface LUSTERPUNK2, DOWN
 	spriteface LUSTERPUNK1, UP
-	opentext
+	opentext TEXTBOX_PUNK_A
 	writetext LusterPunk1Text4
 	waitbutton
 	closetext
@@ -468,7 +468,7 @@ LusterPunkLeader:
 	end
 .gogetpackage
 	faceplayer
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterPunkLeaderText7
 	waitbutton
 	closetext
@@ -476,7 +476,7 @@ LusterPunkLeader:
 	end
 .takethething
 	faceplayer
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterPunkLeaderText2
 	waitbutton
 	writetext LusterPunkLeaderTextGiveThing
@@ -485,34 +485,34 @@ LusterPunkLeader:
 	closetext
 	pause 10
 	spriteface LUSTERPUNKLEADER, LEFT
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterPunkLeaderText8
 	waitbutton
 	closetext
 	pause 30
 	spriteface LUSTERPUNKLEADER, RIGHT
 	pause 10
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterPunkLeaderText9
 	waitbutton
 	closetext
 	applyonemovement LUSTERPUNK2, step_right
 	spriteface LUSTERPUNK2, DOWN
 	spriteface PLAYER, UP
-	opentext
+	opentext TEXTBOX_PUNK_B
 	writetext LusterPunkLeaderText9_2
 	waitbutton
 	closetext
 	applyonemovement LUSTERPUNK1, step_right
 	spriteface LUSTERPUNK1, UP
 	spriteface PLAYER, DOWN
-	opentext
+	opentext TEXTBOX_PUNK_A
 	writetext LusterPunkLeaderText9_3
 	waitbutton
 	closetext
 	spriteface PLAYER, LEFT
 	applyonemovement LUSTERPUNKLEADER, turn_step_right
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterPunkLeaderText9_4
 .yesnoloop
 	yesorno
@@ -556,7 +556,7 @@ LusterPunkLeader:
 	pause 20
 	special FadeInTextboxPalettes
 	pause 10
-	jumptext LusterPunkLeaderText10
+	jumptextfaceplayer TEXTBOX_PUNK_BOSS, LusterPunkLeaderText10
 .speechloop
 	jumptextfaceplayer LusterPunkLeaderText3
 .saidno
@@ -567,19 +567,19 @@ LusterPunkLeader:
 	if_equal LEFT, .clearedsewersright
 	applymovement LUSTERPUNKLEADER, Movement_LusterResidentialPunkLeader1
 	pause 5
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterPunkLeaderText11
 	waitbutton
 	closetext
 	applymovement LUSTERPUNK2, Movement_LusterResidentialPunks1
 	spriteface LUSTERPUNK2, DOWN
-	opentext
+	opentext TEXTBOX_PUNK_B
 	writetext LusterPunk2Text8
 	waitbutton
 	closetext
 	applymovement LUSTERPUNK1, Movement_LusterResidentialPunks1
 	spriteface LUSTERPUNK1, UP
-	opentext
+	opentext TEXTBOX_PUNK_A
 	writetext LusterPunk1Text8
 	yesorno
 	iffalse .saidno2
@@ -598,19 +598,19 @@ LusterPunkLeader:
 .clearedsewersright
 	applymovement LUSTERPUNKLEADER, Movement_LusterResidentialPunkLeader2
 	pause 5
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterPunkLeaderText11
 	waitbutton
 	closetext
 	applymovement LUSTERPUNK2, Movement_LusterResidentialPunks2
 	spriteface LUSTERPUNK2, DOWN
-	opentext
+	opentext TEXTBOX_PUNK_B
 	writetext LusterPunk2Text8
 	waitbutton
 	closetext
 	applymovement LUSTERPUNK1, Movement_LusterResidentialPunks2
 	spriteface LUSTERPUNK1, UP
-	opentext
+	opentext TEXTBOX_PUNK_A
 	writetext LusterPunk1Text8
 	yesorno
 	iffalse .saidno2
@@ -626,10 +626,12 @@ LusterPunkLeader:
 	pause 20
 	spriteface LUSTERPUNKLEADER, RIGHT
 .clearedsewersfinish
-	opentext
+	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterPunkLeaderText12
 	waitbutton
+	changetextboxspeaker
 	verbosegiveitem SKATEBOARD
+	changetextboxspeaker TEXTBOX_PUNK_BOSS
 	writetext LusterPunkLeaderText13
 	waitbutton
 	closetext
@@ -647,6 +649,7 @@ LusterPunkLeader:
 	clearevent EVENT_LUSTER_PUNKS_NOT_IN_APARTMENT
 	end
 .saidno2
+	changetextboxspeaker TEXTBOX_PUNK_BOSS
 	writetext LusterPunk1Text14
 	yesorno
 	iffalse .saidno2

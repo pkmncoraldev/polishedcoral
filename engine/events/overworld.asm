@@ -2249,7 +2249,13 @@ AutoRockSmashScript:
 	playsound SFX_PAY_DAY
 	spriteface 1, UP
 	showemote EMOTE_SHOCK, 1, 15
-	opentext
+	checkevent EVENT_TALKED_TO_MINA_ONCE
+	iftrue .noquestionmarks1
+	opentext TEXTBOX_UNKNOWN
+	jump .cont
+.noquestionmarks1
+	opentext TEXTBOX_MINA
+.cont
 	writetext MinaRockSmashText1
 	waitbutton
 	closetext
@@ -2260,12 +2266,17 @@ AutoRockSmashScript:
 	playmusic MUSIC_MINA
 	callasm HasRockSmash
 	callasm MinaRockSmashGetMonName
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext MinaRockSmashText2
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
 	writetext MinaRockSmashText4
+	buttonsound
+	changetextboxspeaker TEXTBOX_MINA
+	farwritetext StdBlankText
+	pause 6
+	writetext MinaRockSmashText5
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
@@ -2284,12 +2295,8 @@ AutoRockSmashScript:
 .talked
 	callasm HasRockSmash
 	callasm MinaRockSmashGetMonName
-	opentext
+	opentext TEXTBOX_MINA
 	writetext MinaRockSmashText2
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-	writetext MinaRockSmashText4
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
@@ -2335,8 +2342,10 @@ MinaRockSmashText4:
 	
 	para "Well anyway,<WAIT_S>"
 	line "my name is MINA."
+	done
 	
-	para "I'm a painter."
+MinaRockSmashText5:
+	text "I'm a painter."
 	
 	para "I'm always on the"
 	line "lookout for my"

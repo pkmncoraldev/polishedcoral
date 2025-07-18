@@ -383,13 +383,13 @@ ObscuraMuseum1FRockyScript3:
 ;fallthru
 ObscuraMuseum1FRockyScript:
 	applyonemovement OBSCURA_MUSEUM_1F_ROCKY, turn_step_left
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext ObscuraMuseum1FRockyText1
 	waitbutton
 	closetext
 	pause 10
 	applyonemovement OBSCURA_MUSEUM_1F_SNARE_NPC, turn_step_right
-	opentext
+	opentext TEXTBOX_GRUNT
 	writetext ObscuraMuseum1FSnareNPCText
 	waitbutton
 	closetext
@@ -398,8 +398,18 @@ ObscuraMuseum1FRockyScript:
 	pause 10
 	setlasttalked OBSCURA_MUSEUM_1F_ROCKY
 	faceplayer
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext ObscuraMuseum1FRockyText2
+	buttonsound
+	changetextboxspeaker TEXTBOX_ROCKY
+	farwritetext StdBlankText
+	pause 6
+	writetext ObscuraMuseum1FRockyText3
+	buttonsound
+	changetextboxspeaker TEXTBOX_ROCKFORD
+	farwritetext StdBlankText
+	pause 6
+	writetext ObscuraMuseum1FRockyText4
 	waitbutton
 	closetext
 	applymovement OBSCURA_MUSEUM_1F_ROCKY, Movement_ObscuraMuseum1FRocky
@@ -413,7 +423,7 @@ ObscuraMuseum1FSnareNPCText:
 	done
 	
 ObscuraMuseum1FRockyText1:
-	text "???: You guys are"
+	text "You guys are"
 	line "all talk."
 	
 	para "You think you can"
@@ -437,8 +447,10 @@ ObscuraMuseum1FRockyText2:
 	line "but I kinda have"
 	cont "my hands full at"
 	cont "the moment."
+	done
 	
-	para "…"
+ObscuraMuseum1FRockyText3:
+	text "…"
 	
 	para "ROCKY?<WAIT_M>"
 	line "No, I'm not ROCKY!"
@@ -451,8 +463,10 @@ ObscuraMuseum1FRockyText2:
 	
 	para "Not ROCKY,<WAIT_S>"
 	line "ROCKFORD!"
+	done
 	
-	para "…<WAIT_S>sigh…"
+ObscuraMuseum1FRockyText4:
+	text "…<WAIT_S>sigh…"
 	
 	para "Well anyway, you"
 	line "seem like you can"

@@ -270,6 +270,9 @@ ScriptCommandTable:
 	dw Script_variablesprite2
 	dw Script_playnewmapmusic
 	dw Script_strengthtree
+	dw Script_opentext2
+	dw Script_changetextboxspeaker
+	dw Script_jumptextspeaker
 
 StartScript:
 	ld hl, wScriptFlags
@@ -340,6 +343,8 @@ Script_iffalse_jumptextfaceplayer:
 Script_jumptextfaceplayer:
 ; parameters:
 ;     text_pointer (RawTextPointerLabelParam)
+	call GetScriptByte
+	ld [wTextBoxSpeaker], a
 	call _GetTextPointer
 	jr _Do_textfaceplayer
 
@@ -365,10 +370,18 @@ Script_iffalse_jumptext:
 	and a
 	jp nz, SkipTwoScriptBytes
 ; fallthrough
-
+	
 Script_jumptext:
 ; parameters:
 ;     text_pointer (RawTextPointerLabelParam)
+	xor a
+	ld [wTextBoxSpeaker], a
+	call _GetTextPointer
+	jr _Do_jumptext
+	
+Script_jumptextspeaker:
+	call GetScriptByte
+	ld [wTextBoxSpeaker], a
 	call _GetTextPointer
 	jr _Do_jumptext
 
@@ -411,7 +424,7 @@ _Do_jumpopenedtext:
 JumpTextFacePlayerScript:
 	faceplayer
 JumpTextScript:
-	opentext
+	opentext2
 JumpOpenedTextScript:
 	repeattext -1, -1
 	waitendtext
@@ -2783,6 +2796,9 @@ Script_reloadandreturn:
 	jp Script_end
 
 Script_opentext::
+	call GetScriptByte
+	ld [wTextBoxSpeaker], a
+Script_opentext2::
 	ld a, [wPlayerState]
 	cp PLAYER_RUN
 	jr nz, .cont
@@ -2791,6 +2807,11 @@ Script_opentext::
 	call ReplaceKrisSprite
 .cont
 	jp OpenText
+
+Script_changetextboxspeaker::
+	call GetScriptByte
+	ld [wTextBoxSpeaker], a
+	farjp ChangeTextboxName
 
 Script_refreshscreen:
 	jp RefreshScreen

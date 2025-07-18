@@ -65,7 +65,7 @@ SunsetMomStopsYou:
 	playmusic MUSIC_MOM
 	showemote EMOTE_SHOCK, PLAYERHOUSE1F_MOM1, 15
 	applymovement PLAYERHOUSE1F_MOM1, SunsetMomStopsYouMovement
-	opentext
+	opentext TEXTBOX_MOM
 	writetext SunsetMomText1
 	waitbutton
 	closetext
@@ -87,7 +87,7 @@ SunsetMomScript:
 	iftrue SunsetMomGotAPokemon
 	checkevent EVENT_TALKED_TO_MAN_IN_SHACK
 	iftrue SunsetMomGoToLighthouse
-	jumptextfaceplayer SunsetMomText2
+	jumptextfaceplayer TEXTBOX_MOM, SunsetMomText2
 	
 SunsetMomRetellsYouAboutStrand:
 	checkevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_STRAND
@@ -95,7 +95,7 @@ SunsetMomRetellsYouAboutStrand:
 	checkevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
 	iffalse .howdidyouknow
 	faceplayer
-	opentext
+	opentext TEXTBOX_MOM
 	writetext SunsetMomTextGivePass1
 	waitbutton
 	closetext
@@ -106,7 +106,7 @@ SunsetMomRetellsYouAboutStrand:
 	end
 .howdidyouknow
 	faceplayer
-	opentext
+	opentext TEXTBOX_MOM
 	writetext SunsetMomTextGivePass2
 	waitbutton
 	closetext
@@ -117,7 +117,7 @@ SunsetMomRetellsYouAboutStrand:
 	end
 .islandmomtalkloop
 	faceplayer
-	opentext
+	opentext TEXTBOX_MOM
 	writetext SunsetMomTextGivePass3
 	waitbutton
 	closetext
@@ -126,7 +126,7 @@ SunsetMomRetellsYouAboutStrand:
 	
 SunsetMomSpeech:
 	faceplayer
-	opentext
+	opentext TEXTBOX_MOM
 	writetext SunsetMomText6
 	waitbutton
 	closetext
@@ -135,7 +135,7 @@ SunsetMomSpeech:
 	
 SunsetMomGotPokeGear:
 	faceplayer
-	opentext
+	opentext TEXTBOX_MOM
 	writetext SunsetMomText5
 	waitbutton
 	closetext
@@ -144,7 +144,7 @@ SunsetMomGotPokeGear:
 	
 SunsetMomGoToLighthouse:
 	faceplayer
-	opentext
+	opentext TEXTBOX_MOM
 	writetext SunsetMomText3
 	waitbutton
 	closetext
@@ -153,7 +153,7 @@ SunsetMomGoToLighthouse:
 	
 SunsetMomGotAPokemon:
 	faceplayer
-	opentext
+	opentext TEXTBOX_MOM
 	writetext SunsetMomText4
 	waitbutton
 	stringtotext GearName, $1

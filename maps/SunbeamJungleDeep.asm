@@ -24,7 +24,7 @@ SunbeamJungleDeep_MapScriptHeader:
 	const SUNBEAM_JUNGLE_DEEP_ELECTABUZZ
 	
 SunbeamJungleDeepElectabuzz:
-	opentext
+	opentext TEXTBOX_POKEMON, ELECTABUZZ
 	writetext SunbeamJungleDeepElectabuzzText
 	cry ELECTABUZZ
 	waitbutton

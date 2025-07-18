@@ -272,7 +272,6 @@ ScriptCommandTable:
 	dw Script_strengthtree
 	dw Script_opentext2
 	dw Script_changetextboxspeaker
-	dw Script_jumptextspeaker
 
 StartScript:
 	ld hl, wScriptFlags
@@ -345,6 +344,8 @@ Script_jumptextfaceplayer:
 ;     text_pointer (RawTextPointerLabelParam)
 	call GetScriptByte
 	ld [wTextBoxSpeaker], a
+	call GetScriptByte
+	ld [wd265], a
 	call _GetTextPointer
 	jr _Do_textfaceplayer
 
@@ -375,12 +376,6 @@ Script_jumptext:
 ; parameters:
 ;     text_pointer (RawTextPointerLabelParam)
 	xor a
-	ld [wTextBoxSpeaker], a
-	call _GetTextPointer
-	jr _Do_jumptext
-	
-Script_jumptextspeaker:
-	call GetScriptByte
 	ld [wTextBoxSpeaker], a
 	call _GetTextPointer
 	jr _Do_jumptext
@@ -2798,6 +2793,8 @@ Script_reloadandreturn:
 Script_opentext::
 	call GetScriptByte
 	ld [wTextBoxSpeaker], a
+	call GetScriptByte
+	ld [wd265], a
 Script_opentext2::
 	ld a, [wPlayerState]
 	cp PLAYER_RUN
@@ -2811,6 +2808,8 @@ Script_opentext2::
 Script_changetextboxspeaker::
 	call GetScriptByte
 	ld [wTextBoxSpeaker], a
+	call GetScriptByte
+	ld [wd265], a
 	farjp ChangeTextboxName
 
 Script_refreshscreen:

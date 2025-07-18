@@ -157,11 +157,12 @@ OnwaIntlAirportNPC8:
 	jumptextfaceplayer OnwaIntlAirportNPC8Text
 	
 OnwaIntlAirportXatu:
-	opentext
+	opentext TEXTBOX_POKEMON, XATU
 	writetext OnwaIntlAirportXatuText1
 	cry XATU
 	waitsfx
 	buttonsound
+	changetextboxspeaker
 	writetext OnwaIntlAirportXatuText2
 	waitbutton
 	closetext
@@ -348,7 +349,7 @@ OnwaIntlAirportNPC8Text:
 	done
 	
 OnwaIntlAirportXatuText1:
-	text "XATU: <WAIT_S>Tu… <WAIT_S>Tu…"
+	text "<WAIT_S>Tu… <WAIT_S>Tu…"
 	done
 	
 OnwaIntlAirportXatuText2:

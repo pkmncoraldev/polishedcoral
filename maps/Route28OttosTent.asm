@@ -290,7 +290,7 @@ OttoAsm:
 	ret
 
 Route28OttosTentTogepi:
-	opentext
+	opentext  TEXTBOX_POKEMON, TOGEPI
 	writetext Route28OttosTentTogepiText
 	cry TOGEPI
 	waitbutton
@@ -298,7 +298,7 @@ Route28OttosTentTogepi:
 	end
 
 Route28OttosTentTogepiText:
-	text "TOGEPI: Prrrrri!"
+	text "Prrrrri!"
 	done
 	
 Movement_Route28OttosTent1:

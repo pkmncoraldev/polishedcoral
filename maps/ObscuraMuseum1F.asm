@@ -351,7 +351,7 @@ ObscuraMuseum1FNPC2Text3:
 	done
 	
 ObscuraMuseum1FBayleef:
-	opentext
+	opentext TEXTBOX_POKEMON, BAYLEEF
 	writetext ObscuraMuseum1FBayleefText
 	cry BAYLEEF
 	waitbutton
@@ -359,7 +359,7 @@ ObscuraMuseum1FBayleef:
 	end
 	
 ObscuraMuseum1FBayleefText:
-	text "BAYLEEF: Bay lee?"
+	text "Bay lee?"
 	done
 
 ObscuraMuseum1FRockyScript1:

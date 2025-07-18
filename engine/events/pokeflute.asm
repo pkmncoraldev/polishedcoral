@@ -327,11 +327,12 @@ _NettSpecs:
 .chansey_script
 	checkevent EVENT_BRIGHTBURG_REVEALED
 	iffalse .ditto_script
-	opentext
+	opentext TEXTBOX_POKEMON, CHANSEY
 	writetext NettSpecsChanseyText1
 	cry CHANSEY
 	waitsfx
 	buttonsound
+	changetextboxspeaker
 	writetext NettSpecsChanseyText2
 	waitbutton
 	closetext
@@ -504,7 +505,7 @@ NettSpecsNurseText:
 	done
 	
 NettSpecsChanseyText1:
-	text "CHANSEY: …Sii?"
+	text "…Sii?"
 	done
 	
 NettSpecsChanseyText2:

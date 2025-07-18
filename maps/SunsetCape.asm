@@ -94,7 +94,7 @@ SunsetCapeNpc1:
 	end
 	
 SunsetCapeNpc2:
-	opentext
+	opentext TEXTBOX_POKEMON, RAICHU
 	writetext SunsetCapeNpc2Text
 	cry RAICHU
 	waitbutton
@@ -151,8 +151,7 @@ SunsetCapeNpc1Text:
 	done
 	
 SunsetCapeNpc2Text:
-	text "RAICHU: CHU! <WAIT_S>CHU!"
-	line "<WAIT_S>RAI!"
+	text "CHU!<WAIT_S> CHU!<WAIT_S> RAI!"
 	done
 	
 SunsetCapeNpc3Text:

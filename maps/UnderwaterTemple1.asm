@@ -124,7 +124,7 @@ UnderwaterTemple1Callback:
 	return
 	
 UnderwaterTemple1Corsola1:
-	opentext
+	opentext TEXTBOX_POKEMON, CORSOLA
 	writetext UnderwaterTemple1CorsolaText
 	cry CORSOLA
 	waitbutton
@@ -147,7 +147,7 @@ UnderwaterTemple1Corsola1:
 	end
 	
 UnderwaterTemple1Corsola2:
-	opentext
+	opentext TEXTBOX_POKEMON, CORSOLA
 	writetext UnderwaterTemple1CorsolaText
 	cry CORSOLA
 	waitbutton
@@ -170,7 +170,7 @@ UnderwaterTemple1Corsola2:
 	end
 	
 UnderwaterTemple1Corsola3:
-	opentext
+	opentext TEXTBOX_POKEMON, CORSOLA
 	writetext UnderwaterTemple1CorsolaText
 	cry CORSOLA
 	waitbutton
@@ -193,7 +193,7 @@ UnderwaterTemple1Corsola3:
 	end
 	
 UnderwaterTemple1Corsola4:
-	opentext
+	opentext TEXTBOX_POKEMON, CORSOLA
 	writetext UnderwaterTemple1CorsolaText
 	cry CORSOLA
 	waitbutton
@@ -216,7 +216,7 @@ UnderwaterTemple1Corsola4:
 	end
 	
 UnderwaterTemple1Corsola5:
-	opentext
+	opentext TEXTBOX_POKEMON, CORSOLA
 	writetext UnderwaterTemple1CorsolaText
 	cry CORSOLA
 	waitbutton
@@ -236,7 +236,7 @@ UnderwaterTemple1Corsola5:
 	end
 	
 UnderwaterTemple1CorsolaText:
-	text "CORSOLA: Sola!"
+	text "Sola!"
 	done
 	
 UnderwaterTemple1CorsolaText2:

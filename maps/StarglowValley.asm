@@ -221,11 +221,12 @@ StarglowLass2:
 	jumptextfaceplayer StarglowLass2Text
 	
 StarglowPoliwhirl:
-	opentext
+	opentext TEXTBOX_POKEMON, POLIWHIRL
 	writetext StarglowPoliwhirlText1
 	cry POLIWHIRL
 	waitsfx
 	buttonsound
+	changetextboxspeaker
 	writetext StarglowPoliwhirlText2
 	waitbutton
 	closetext
@@ -742,7 +743,7 @@ StarglowLass2Text:
 	done
 	
 StarglowPoliwhirlText1:
-	text "POLIWHIRL: Poli…"
+	text "Poli…"
 	done
 	
 StarglowPoliwhirlText2:

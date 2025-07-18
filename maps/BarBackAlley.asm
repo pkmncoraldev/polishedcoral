@@ -164,10 +164,11 @@ BarBackAlleyFelicia:
 	waitbutton
 	closetext
 	pause 15
-	opentext
+	opentext TEXTBOX_POKEMON, MEOWTH
 	writetext BarBackAlleyMeowthText2
 	cry MEOWTH
 	buttonsound
+	changetextboxspeaker
 	farwritetext StdBlankText
 	pause 6
 	writetext BarBackAlleyMeowthText3
@@ -305,8 +306,7 @@ BarBackAlleyMeowthText1:
 	done
 	
 BarBackAlleyMeowthText2:
-	text "MEOWTH: Mee!<WAIT_S>"
-	line "Owth!"
+	text "Mee!<WAIT_S> Owth!"
 	done
 	
 BarBackAlleyMeowthText3:

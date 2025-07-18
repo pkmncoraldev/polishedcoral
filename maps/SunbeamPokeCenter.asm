@@ -35,7 +35,7 @@ SunbeamPokecenterNPC2:
 	jumptextfaceplayer SunbeamPokecenterNPC2Text
 	
 SunbeamPokecenterNPC3:
-	opentext
+	opentext TEXTBOX_POKEMON, MEOWTH
 	writetext SunbeamPokecenterNPC3Text
 	cry MEOWTH
 	waitsfx
@@ -94,8 +94,7 @@ SunbeamPokecenterNPC2Text:
 	done
 	
 SunbeamPokecenterNPC3Text:
-	text "MEOWTH: OWTH!<WAIT_S>"
-	line "ME<WAIT_S>-OWTH!"
+	text "OWTH!<WAIT_S> ME<WAIT_S>-OWTH!"
 	done
 	
 SunbeamPokecenterSpruceText1:

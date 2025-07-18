@@ -409,7 +409,7 @@ Route6Lass2:
 	end
 	
 Route6Raticate:
-	opentext
+	opentext TEXTBOX_POKEMON, RATICATE
 	writetext Route6RaticateText
 	cry RATICATE
 	waitbutton
@@ -481,8 +481,7 @@ Route6Lass2Text:
 	done
 	
 Route6RaticateText:
-	text "RATICATE: Rati-"
-	line "ra!"
+	text "Rati- ra!"
 	done
 	
 Route6Lass3Text:

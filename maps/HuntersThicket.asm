@@ -512,7 +512,7 @@ HuntersThicketDisguisemanBeatenText:
 	done
 
 HuntersThicketLedian:
-	opentext
+	opentext TEXTBOX_POKEMON, LEDIAN
 	writetext HuntersThicketLedianText
 	cry LEDIAN
 	waitbutton

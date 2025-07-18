@@ -160,7 +160,7 @@ StarglowHouse1LittleGirl:
 	pause 10
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, STARGLOWHOUSE1_TOGEPI2, 15
-	opentext
+	opentext TEXTBOX_EGGY
 	writetext StarglowHouse1TogepiText
 	cry TOGEPI
 	waitsfx
@@ -176,7 +176,7 @@ StarglowHouse1LittleGirl:
 	pause 5
 	playsound SFX_PAY_DAY
 	showemote EMOTE_HAPPY, STARGLOWHOUSE1_TOGEPI2, 25
-	opentext
+	opentext TEXTBOX_EGGY
 	writetext StarglowHouse1TogepiText
 	cry TOGEPI
 	waitsfx
@@ -352,7 +352,7 @@ StarglowHouse1Rocket:
 	end
 	
 StarglowHouse1Togepi:
-	opentext
+	opentext TEXTBOX_EGGY
 	writetext StarglowHouse1TogepiText
 	cry TOGEPI
 	waitbutton

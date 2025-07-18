@@ -38,7 +38,7 @@ Route11ChangeBlocks:
 	return
 	
 Route11Machoke:
-	opentext
+	opentext TEXTBOX_POKEMON, MACHOKE
 	writetext Route11MachokeText
 	cry MACHOKE
 	waitbutton
@@ -46,8 +46,7 @@ Route11Machoke:
 	end
 	
 Route11MachokeText:
-	text "MACHOKE: CHO!"
-	line "CHO!"
+	text "CHO! CHOKE!"
 	done
 	
 Route11NPC1:

@@ -85,7 +85,7 @@ UnderwaterTemple2Cursola:
 	
 UnderwaterTemple2Cursola2:
 	pause 40
-	opentext
+	opentext TEXTBOX_POKEMON, CURSOLA
 	writetext UnderwaterTemple2CursolaText3
 	special Special_EnableInput
 	cry CURSOLA
@@ -130,7 +130,7 @@ UnderwaterTemple2CursolaText2:
 	done
 	
 UnderwaterTemple2CursolaText3:
-	text "CURSOLA: SOLAAAA!"
+	text "SOLAAAA!"
 	done
 	
 UnderwaterTemple2CursolaTextGone:
@@ -145,7 +145,7 @@ UnderwaterTemple2Corsola:
 	iffalse .no
 	closetext
 	pause 40
-	opentext
+	opentext TEXTBOX_POKEMON, CORSOLA
 	writetext UnderwaterTemple2CorsolaText
 	cry CORSOLA
 	waitbutton
@@ -173,7 +173,7 @@ UnderwaterTemple2Corsola:
 	end
 	
 UnderwaterTemple2CorsolaText:
-	text "CORSOLA: …<WAIT_S>S<WAIT_S>o<WAIT_S>l<WAIT_S>…"
+	text "…<WAIT_S>S<WAIT_S>o<WAIT_S>l<WAIT_S>…"
 	done
 	
 UnderwaterTemple2CorsolaTextGone:

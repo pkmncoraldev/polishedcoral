@@ -107,7 +107,7 @@ LusterSewersMukRoomTrigger0:
 	applymovement LUSTER_SEWERS_MUK, Movement_LusterSewersMukRoomMuk3
 	pause 20
 	disappear LUSTER_SEWERS_MUK_CUTSCENE
-	opentext
+	opentext TEXTBOX_POKEMON, MUK
 	writetext LusterSewersMukRoomMukText2
 	cry MUK
 	waitsfx
@@ -125,7 +125,7 @@ LusterSewersMukRoomTrigger0:
 	setevent EVENT_UNIQUE_ENCOUNTER_MUK_BOSS
 	checkcode VAR_MONJUSTCAUGHT
 	if_equal MUK, .CaughtMuk
-	opentext
+	opentext TEXTBOX_POKEMON, MUK
 	writetext LusterSewersMukRoomMukText2
 	waitbutton
 	closetext
@@ -206,7 +206,7 @@ AsmCheckPlayerXCoord:
 	
 LusterSewersMukRoomGrimer1:
 	appear LUSTER_SEWERS_GRIMER_1_2
-	opentext
+	opentext TEXTBOX_POKEMON, GRIMER
 	writetext LusterSewersMukRoomGrimerText
 	cry GRIMER
 	waitbutton
@@ -226,7 +226,7 @@ LusterSewersMukRoomGrimer1:
 	
 LusterSewersMukRoomGrimer2:
 	appear LUSTER_SEWERS_GRIMER_2_2
-	opentext
+	opentext TEXTBOX_POKEMON, GRIMER
 	writetext LusterSewersMukRoomGrimerText
 	cry GRIMER
 	waitbutton
@@ -246,7 +246,7 @@ LusterSewersMukRoomGrimer2:
 	
 LusterSewersMukRoomGrimer3:
 	appear LUSTER_SEWERS_GRIMER_3_2
-	opentext
+	opentext TEXTBOX_POKEMON, GRIMER
 	writetext LusterSewersMukRoomGrimerText
 	cry GRIMER
 	waitbutton
@@ -266,7 +266,7 @@ LusterSewersMukRoomGrimer3:
 	
 LusterSewersMukRoomGrimer4:
 	appear LUSTER_SEWERS_GRIMER_4_2
-	opentext
+	opentext TEXTBOX_POKEMON, GRIMER
 	writetext LusterSewersMukRoomGrimerText
 	cry GRIMER
 	waitbutton
@@ -289,12 +289,11 @@ LusterSewersMukRoomMukText1:
 	done
 	
 LusterSewersMukRoomMukText2:
-	text "MUK: GRAAAAAAAH!"
+	text "GRAAAAAAAH!"
 	done
 	
 LusterSewersMukRoomGrimerText:
-	text "GRIMER: RAI AI!"
-	line "MER!"
+	text "RAI AI! MER!"
 	done
 	
 Movement_LusterSewersMukRoomPlayer1:

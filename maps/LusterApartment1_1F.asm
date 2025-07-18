@@ -24,7 +24,7 @@ LusterApartment1_1F_NPC2:
 	jumptextfaceplayer LusterApartment1_1F_NPC2Text
 	
 LusterApartment1_1F_NPC3:
-	opentext
+	opentext TEXTBOX_POKEMON, SNUBBULL
 	writetext LusterApartment1_1F_NPC3Text1
 	cry SNUBBULL
 	waitsfx
@@ -58,7 +58,7 @@ LusterApartment1_1F_NPC2Text:
 	done
 	
 LusterApartment1_1F_NPC3Text1:
-	text "SNUBBULL: <WAIT_S>Snub…"
+	text "…<WAIT_S>Snub…"
 	done
 	
 LusterApartment1_1F_NPC3Text2:

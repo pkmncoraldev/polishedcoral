@@ -58,11 +58,12 @@ SunsetLighthouseMareepDoll:
 	end
 
 SunsetLighthouseTopAmpharos:
-	opentext
+	opentext TEXTBOX_POKEMON, AMPHAROS
 	writetext SunsetLighthouseTopAmpharosText1
 	cry AMPHAROS
 	waitsfx
 	buttonsound
+	changetextboxspeaker
 	checkevent EVENT_SUNSET_LIGHTHOUSE_FED_AMPHAROS
 	iftrue .done
 	readmem wAmpharosFood
@@ -216,8 +217,7 @@ SunsetLighthouseTopFlowerText:
 	done
 	
 SunsetLighthouseTopAmpharosText1:
-	text "AMPHAROS: Far!<WAIT_S>"
-	line "Faro!"
+	text "Far!<WAIT_S> Faro!"
 	done
 	
 SunsetLighthouseTopAmpharosText2:

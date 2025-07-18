@@ -77,7 +77,7 @@ Route10TentNPC:
 	end
 	
 Route10TentWigglytuff:
-	opentext
+	opentext TEXTBOX_POKEMON, WIGGLYTUFF
 	writetext Route10TentWigglytuffText
 	cry WIGGLYTUFF
 	waitbutton
@@ -229,6 +229,5 @@ Route10TentNPCNoRoomText:
 	done
 	
 Route10TentWigglytuffText:
-	text "WIGGLYTUFF: Tuff!"
-	line "Tuff!"
+	text "Tuff! Tuff!"
 	done

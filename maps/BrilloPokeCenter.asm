@@ -21,7 +21,7 @@ BrilloPokeCenter_MapScriptHeader:
 	
 	
 BrilloPokeCenterToucannon:
-	opentext
+	opentext TEXTBOX_POKEMON, TOUCANNON
 	writetext BrilloPokeCenterToucannonText
 	cry TOUCANNON
 	waitbutton
@@ -29,8 +29,7 @@ BrilloPokeCenterToucannon:
 	end
 	
 BrilloPokeCenterToucannonText:
-	text "TOUCANNON: Tou-"
-	line "CAAAW!"
+	text "Tou- CAAAW!"
 	done
 	
 BrilloPokeCenterNPC1:

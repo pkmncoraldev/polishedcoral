@@ -28,7 +28,7 @@ SunbeamIslandHouse4NPC2:
 	jumptextfaceplayer SunbeamIslandHouse4NPC2Text
 	
 SunbeamIslandHouse4NPC3:
-	opentext
+	opentext TEXTBOX_POKEMON, DODUO
 	writetext SunbeamIslandHouse4NPC3Text
 	cry DODUO
 	waitsfx
@@ -56,6 +56,5 @@ SunbeamIslandHouse4NPC2Text:
 	done
 	
 SunbeamIslandHouse4NPC3Text:
-	text "DODUO: DEWO! <WAIT_S>DEWO!<WAIT_S>"
-	line "DEWO!"
+	text "DEWO! <WAIT_S>DEWO!<WAIT_S> DEWO!"
 	done

@@ -122,7 +122,7 @@ Route18NorthCallback:
 	return
 	
 Route18NorthToucannon:
-	opentext
+	opentext TEXTBOX_POKEMON, TOUCANNON
 	writetext Route18NorthToucannonText
 	cry TOUCANNON
 	waitbutton
@@ -130,8 +130,7 @@ Route18NorthToucannon:
 	end
 	
 Route18NorthToucannonText:
-	text "TOUCANNON: Tou-"
-	line "CAAAW!"
+	text "Tou- CAAAW!"
 	done
 	
 Route18NorthCampfire:

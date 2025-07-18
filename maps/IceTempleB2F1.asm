@@ -125,7 +125,7 @@ IceTempleMamoswineCutscene:
 	playsound SFX_EMBER
 	earthquake 60
 	pause 40
-	opentext
+	opentext TEXTBOX_POKEMON, MAMOSWINE
 	writetext IceTempleMamoswineText4
 	cry MAMOSWINE
 	waitbutton

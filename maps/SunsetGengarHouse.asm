@@ -24,16 +24,24 @@ SunsetGengarHouse_MapScriptHeader:
 
 	
 SunsetGengarHouseNPC1:
+	setevent EVENT_HEARD_BUTTERCUPS_NAME
 	jumptextfaceplayer SunsetGengarHouseNPC1Text
 
 SunsetGengarHouseNPC2:
 	jumptextfaceplayer SunsetGengarHouseNPC2Text
 	
 SunsetGengarHouseGengar:
-	opentext
+	checkevent EVENT_HEARD_BUTTERCUPS_NAME
+	iftrue .buttercup
+	opentext TEXTBOX_POKEMON, GENGAR
+	jump .cont
+.buttercup
+	opentext TEXTBOX_BUTTERCUP
+.cont
 	writetext SunsetGengarHouseGengarText1
 	cry GENGAR
 	buttonsound
+	changetextboxspeaker
 	writetext SunsetGengarHouseGengarText2
 	waitbutton
 	closetext
@@ -106,7 +114,7 @@ SunsetGengarHouseNPC2Text:
 	done
 
 SunsetGengarHouseGengarText1:
-	text "BUTTERCUP: Ga gan!"
+	text "Ga gan!"
 	done
 	
 SunsetGengarHouseGengarText2:

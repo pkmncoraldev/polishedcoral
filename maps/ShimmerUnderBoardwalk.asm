@@ -141,7 +141,10 @@ ShimmerUnderBoardwalkLilyCutscene:
 	spriteface SHIMMER_UNDER_BOARDWALK_LILY, RIGHT
 	wait 7
 	spriteface SHIMMER_UNDER_BOARDWALK_LILY, DOWN
-	jumptextspeaker TEXTBOX_LILY, ShimmerUnderBoardwalkLilyText4
+	opentext TEXTBOX_LILY
+	writetext ShimmerUnderBoardwalkLilyText4
+	waitbutton
+	closetext
 	end
 	
 ShimmerUnderBoardwalkLilyCutsceneStart:

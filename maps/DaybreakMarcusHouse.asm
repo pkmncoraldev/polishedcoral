@@ -22,7 +22,7 @@ DaybreakMarcusMom:
 	jumptextfaceplayer DaybreakMarcusMomText
 	
 DaybreakMarcusHouseBreloom:
-	opentext
+	opentext TEXTBOX_POKEMON, BRELOOM
 	writetext DaybreakMarcusHouseBreloomText
 	cry BRELOOM
 	waitbutton
@@ -48,5 +48,5 @@ DaybreakMarcusMomText:
 	done
 
 DaybreakMarcusHouseBreloomText:
-	text "BRELOOM: Loo lum?"
+	text "Loo lum?"
 	done

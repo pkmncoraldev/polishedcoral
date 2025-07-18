@@ -132,6 +132,8 @@ INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route16.asm"
 INCLUDE "maps/Route21.asm"
 INCLUDE "maps/Route22.asm"
+
+SECTION "Routes Scripts3", ROMX
 INCLUDE "maps/FakeRoute1.asm"
 
 

@@ -280,9 +280,9 @@ Luster1NPC8:
 	
 Luster1NPC9:
 	jumptextfaceplayer Luster1NPC9Text
-		
+	
 Luster1NPC10:
-	opentext
+	opentext TEXTBOX_POKEMON, MEOWTH
 	writetext Luster1NPC10Text
 	cry MEOWTH
 	waitbutton
@@ -290,7 +290,7 @@ Luster1NPC10:
 	end
 	
 Luster1NPC11:
-	opentext
+	opentext TEXTBOX_POKEMON, PIKACHU
 	writetext Luster1NPC11Text
 	cry PIKACHU
 	waitbutton
@@ -1515,12 +1515,11 @@ Luster1NPC9Text:	;TODO replace
 	done
 
 Luster1NPC10Text:
-	text "MEOWTH: Mee!<WAIT_S>"
-	line "Owth!"
+	text "Mee!<WAIT_S> Owth!"
 	done
 
 Luster1NPC11Text:
-	text "PIKACHU: Chu!<WAIT_S>"
+	text "Chu!<WAIT_S>"
 	line "Pika-chu!"
 	done
 

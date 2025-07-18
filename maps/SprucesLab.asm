@@ -235,11 +235,12 @@ SpruceLabComeBackInside:
 	closetext
 	wait 5
 	disappear SPRUCELAB_MUNCHLAX1
-	opentext
+	opentext TEXTBOX_POKEMON, MUNCHLAX
 	writetext SpruceLabMunchlaxText2
 	cry MUNCHLAX
 	waitsfx
 	buttonsound
+	changetextboxspeaker
 	writetext SpruceLabPokeFluteText3
 	waitbutton
 	closetext
@@ -653,8 +654,7 @@ SpruceLabMunchlaxText1:
 	done
 	
 SpruceLabMunchlaxText2:
-	text "MUNCHLAX: Lax!"
-	line "Lax!"
+	text "Lax! Lax!"
 	done
 	
 SpruceLabDoorText1:

@@ -125,7 +125,7 @@ RanchRideScarecrow:
 ;	itemball FULL_RESTORE
 	
 RanchRideDodrio:
-	opentext
+	opentext TEXTBOX_POKEMON, DODRIO
 	writetext RanchRideDodrioText
 	cry DODRIO
 	waitbutton
@@ -133,7 +133,7 @@ RanchRideDodrio:
 	end
 	
 RanchRideDoduo:
-	opentext
+	opentext TEXTBOX_POKEMON, DODUO
 	writetext RanchRideDoduoText
 	cry DODUO
 	waitbutton
@@ -707,11 +707,11 @@ RanchRideRaceBerryText:
 	done
 	
 RanchRideDodrioText:
-	text "DODRIO: DRRREEEO!"
+	text "DRRREEEO!"
 	done
 	
 RanchRideDoduoText:
-	text "DODUO: DEWO! DEWO!"
+	text "DEWO! DEWO!"
 	done
 	
 RanchRideReturnGirlText1:

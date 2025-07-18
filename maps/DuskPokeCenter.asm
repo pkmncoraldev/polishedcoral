@@ -39,7 +39,7 @@ DuskPokeCenterNPC4:
 	end
 
 DuskPokeCenterGrimer:
-	opentext
+	opentext TEXTBOX_POKEMON, GRIMER
 	writetext DuskPokeCenterGrimerText
 	cry GRIMER
 	waitbutton
@@ -95,6 +95,6 @@ DuskPokeCenterNPC4Text:
 	done
 	
 DuskPokeCenterGrimerText:
-	text "GRIMER: Rai ai ai!"
+	text "Rai ai ai!"
 	done
 	

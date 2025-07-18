@@ -30,11 +30,12 @@ EventidePokeCenterNPC3:
 	jumptextfaceplayer EventidePokeCenterNPC3Text
 	
 EventidePokeCenterLitwick:
-	opentext
+	opentext TEXTBOX_POKEMON, LITWICK
 	writetext EventidePokeCenterLitwickText1
 	cry LITWICK
 	waitsfx
 	buttonsound
+	changetextboxspeaker
 	writetext EventidePokeCenterLitwickText2
 	waitbutton
 	closetext
@@ -67,7 +68,7 @@ EventidePokeCenterNPC3Text:
 	done
 	
 EventidePokeCenterLitwickText1:
-	text "LITWICK: Whi! Whi!"
+	text "Whi! Whi!"
 	done
 	
 EventidePokeCenterLitwickText2:

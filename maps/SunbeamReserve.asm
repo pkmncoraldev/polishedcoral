@@ -57,7 +57,7 @@ SunbeamReserveTrigger0:
 	opentext TEXTBOX_SPRUCE
 	writetext SunbeamReserveSpruceText3
 	waitbutton
-	changetextboxspeaker
+	changetextboxspeaker  TEXTBOX_POKEMON, DONPHAN
 	writetext SunbeamReserveDonphanText
 	cry DONPHAN
 	waitbutton
@@ -76,7 +76,7 @@ SunbeamReserveTrigger0:
 	opentext TEXTBOX_SPRUCE
 	writetext SunbeamReserveSpruceText5
 	waitbutton
-	changetextboxspeaker
+	changetextboxspeaker  TEXTBOX_POKEMON, NIDOQUEEN
 	writetext SunbeamReserveNidoqueenText
 	cry NIDOQUEEN
 	waitbutton
@@ -108,7 +108,7 @@ SunbeamReserveTrigger1:
 	end
 	
 SunbeamReserveNidoqueen:
-	opentext
+	opentext TEXTBOX_POKEMON, NIDOQUEEN
 	writetext SunbeamReserveNidoqueenText
 	cry NIDOQUEEN
 	waitbutton
@@ -116,7 +116,7 @@ SunbeamReserveNidoqueen:
 	end
 	
 SunbeamReserveNidoranM:
-	opentext
+	opentext TEXTBOX_POKEMON, NIDORAN_M
 	writetext SunbeamReserveNidoranMText
 	cry NIDORAN_M
 	waitbutton
@@ -124,7 +124,7 @@ SunbeamReserveNidoranM:
 	end
 	
 SunbeamReserveNidoranF:
-	opentext
+	opentext TEXTBOX_POKEMON, NIDORAN_F
 	writetext SunbeamReserveNidoranFText
 	cry NIDORAN_F
 	waitbutton
@@ -132,7 +132,7 @@ SunbeamReserveNidoranF:
 	end
 	
 SunbeamReserveSlowpoke:
-	opentext
+	opentext TEXTBOX_POKEMON, SLOWPOKE
 	writetext SunbeamReserveSlowpokeText
 	cry SLOWPOKE
 	waitbutton
@@ -140,7 +140,7 @@ SunbeamReserveSlowpoke:
 	end
 	
 SunbeamReserveLopunny:
-	opentext
+	opentext TEXTBOX_POKEMON, LOPUNNY
 	writetext SunbeamReserveLopunnyText
 	cry LOPUNNY
 	waitbutton
@@ -148,7 +148,7 @@ SunbeamReserveLopunny:
 	end
 	
 SunbeamReserveAltaria:
-	opentext
+	opentext TEXTBOX_POKEMON, ALTARIA
 	writetext SunbeamReserveAltariaText
 	cry ALTARIA
 	waitbutton
@@ -156,7 +156,7 @@ SunbeamReserveAltaria:
 	end
 	
 SunbeamReserveDonphan:
-	opentext
+	opentext TEXTBOX_POKEMON, DONPHAN
 	writetext SunbeamReserveDonphanText
 	cry DONPHAN
 	waitbutton
@@ -164,7 +164,7 @@ SunbeamReserveDonphan:
 	end
 	
 SunbeamReserveMagmar:
-	opentext
+	opentext TEXTBOX_POKEMON, MAGMAR
 	writetext SunbeamReserveMagmarText
 	cry MAGMAR
 	waitbutton
@@ -172,7 +172,7 @@ SunbeamReserveMagmar:
 	end
 	
 SunbeamReserveElectabuzz:
-	opentext
+	opentext TEXTBOX_POKEMON, ELECTABUZZ
 	writetext SunbeamReserveElectabuzzText
 	cry ELECTABUZZ
 	waitbutton
@@ -180,43 +180,40 @@ SunbeamReserveElectabuzz:
 	end
 	
 SunbeamReserveNidoqueenText:
-	text "NIDOQUEEN: Nido!"
+	text "Nido!"
 	done
 	
 SunbeamReserveNidoranMText:
-	text "NIDORAN♂: Ran!"
+	text "Ran!"
 	done
 	
 SunbeamReserveNidoranFText:
-	text "NIDORAN♀: Ran…<WAIT_S>"
-	line "Ran…"
+	text "Ran…<WAIT_S> Ran…"
 	done
 	
 SunbeamReserveSlowpokeText:
-	text "SLOWPOKE: <WAIT_S>S<WAIT_S>l<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>w<WAIT_S>…<WAIT_L><WAIT_L><WAIT_M>"
+	text "<WAIT_S>S<WAIT_S>l<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>w<WAIT_S>…<WAIT_L><WAIT_L><WAIT_M>"
 	line "…poke?"
 	done
 	
 SunbeamReserveLopunnyText:
-	text "LOPUNNY: Lop! <WAIT_S>Lop!"
+	text "Lop! <WAIT_S>Lop!"
 	done
 	
 SunbeamReserveAltariaText:
-	text "ALTARIA: …<WAIT_M>Taria?"
+	text "…<WAIT_M>Taria?"
 	done
 	
 SunbeamReserveDonphanText:
-	text "DONPHAN: Phan…"
+	text "Phan…"
 	done
 	
 SunbeamReserveMagmarText:
-	text "MAGMAR: MAG!<WAIT_S>"
-	line "MAR!"
+	text "MAG!<WAIT_S> MAR!"
 	done
 	
 SunbeamReserveElectabuzzText:
-	text "ELECTABUZZ: BUZZ!<WAIT_S>"
-	line "LECTA!"
+	text "BUZZ!<WAIT_S> LECTA!"
 	done
 	
 SunbeamReserveSpruceText1:

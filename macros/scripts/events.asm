@@ -463,10 +463,15 @@ macro pocketisfull
 	enum opentext_command
 macro opentext
 	db opentext_command
-if _NARG == 1
+if _NARG >= 1
 	db \1 ; speaker
 else
 	db 0 ; no speaker
+endc
+if _NARG == 2
+	db \2 ; species
+else
+	db 0 ; no species
 endc
 	endm
 
@@ -518,12 +523,23 @@ macro closewindow
 	enum jumptextfaceplayer_command
 macro jumptextfaceplayer
 	db jumptextfaceplayer_command
-if _NARG == 2
-	db \1 ; speaker
-	dw \2 ; text_pointer
-else
-	db 0 ; no speaker
+if _NARG == 1
+	db 0
+	db 0
 	dw \1 ; text_pointer
+else
+	db \1 ; speaker
+	if _NARG == 2
+		db 0
+		dw \2 ; text_pointer
+	else
+		db \2 ; species
+		if _NARG == 3
+			dw \3 ; text_pointer
+		else
+			db 0
+		endc
+	endc
 endc
 	endm
 
@@ -1324,22 +1340,15 @@ macro opentext2
 	enum changetextboxspeaker_command
 macro changetextboxspeaker
 	db changetextboxspeaker_command
-if _NARG == 1
+if _NARG >= 1
 	db \1 ; speaker
 else
 	db 0 ; no speaker
 endc
-	endm
-	
-	enum jumptextspeaker_command
-macro jumptextspeaker
-	db jumptextspeaker_command
 if _NARG == 2
-	db \1 ; speaker
-	dw \2 ; text_pointer
+	db \2 ; species
 else
-	db 0 ; no speaker
-	dw \1 ; text_pointer
+	db 0 ; no species
 endc
 	endm
 	

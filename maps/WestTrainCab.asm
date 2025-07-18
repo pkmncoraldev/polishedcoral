@@ -58,7 +58,11 @@ WestTrainCabEngineerStopsYou:
 	pause 5
 	spriteface WEST_TRAIN_CAB_ENGINEER, DOWN
 	spriteface PLAYER, UP
-	jumptextspeaker TEXTBOX_CONDUCTOR, WestTrainCabEngineerText2
+	opentext TEXTBOX_CONDUCTOR
+	writetext WestTrainCabEngineerText2
+	waitbutton
+	closetext
+	end
 	
 WestTrainCabEngineer:
 	jumptextfaceplayer TEXTBOX_CONDUCTOR, WestTrainCabEngineerText2

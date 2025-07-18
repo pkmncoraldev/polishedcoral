@@ -38,7 +38,7 @@ EventideSootheBellHouseNPC:
 	end
 	
 EventideSootheBellHouseTogetic:
-	opentext
+	opentext TEXTBOX_POKEMON, TOGETIC
 	writetext EventideSootheBellHouseTogeticText
 	cry TOGETIC
 	waitsfx
@@ -84,7 +84,6 @@ EventideSootheBellHouseNPCText3:
 	done
 	
 EventideSootheBellHouseTogeticText:
-	text "TOGETIC: Geh…"
-	line "Tic!"
+	text "Geh…<WAIT_S> Tic!"
 	done
 	

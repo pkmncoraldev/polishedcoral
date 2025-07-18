@@ -28,7 +28,7 @@ GlintEvoHouseNPC2:
 	jumptextfaceplayer GlintEvoHouseNPC2Text
 	
 GlintEvoHouseCubone:
-	opentext
+	opentext TEXTBOX_POKEMON, CUBONE
 	writetext GlintEvoHouseCuboneText
 	cry CUBONE
 	waitbutton
@@ -54,6 +54,6 @@ GlintEvoHouseNPC2Text:
 	done
 	
 GlintEvoHouseCuboneText:
-	text "CUBONE: Bone"
-	line "kew bone?"
+	text "Bone kew"
+	line "bone?"
 	done

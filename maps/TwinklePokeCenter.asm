@@ -35,11 +35,12 @@ TwinklePokeCenterGirl:
 	jumptextfaceplayer TwinklePokeCenterGirlText
 	
 TwinklePokeCenterGloom:
-	opentext
+	opentext TEXTBOX_POKEMON, GLOOM
 	writetext TwinklePokeCenterGloomText1
 	cry GLOOM
 	waitsfx
 	buttonsound
+	changetextboxspeaker
 	writetext TwinklePokeCenterGloomText2
 	waitbutton
 	closetext
@@ -82,7 +83,7 @@ TwinklePokeCenterGirlText:
 	done
 	
 TwinklePokeCenterGloomText1:
-	text "GLOOM: L-<WAIT_S>l-<WAIT_S>loom…"
+	text "L-<WAIT_S>l-<WAIT_S>loom…"
 	done
 	
 TwinklePokeCenterGloomText2:

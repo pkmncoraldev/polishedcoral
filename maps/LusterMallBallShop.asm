@@ -156,7 +156,7 @@ LusterMallBallShop_NPC3:
 	end
 	
 LusterMallBallShop_Slowking:
-	opentext
+	opentext TEXTBOX_POKEMON, SLOWKING
 	writetext LusterMallBallShop_SlowkingText1
 	cry SLOWKING
 	waitsfx
@@ -167,7 +167,7 @@ LusterMallBallShop_Slowking:
 	end
 	
 LusterMallBallShop_SlowkingText1:
-	text "SLOWKING: <WAIT_S>S<WAIT_S>l<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>w<WAIT_S>…"
+	text "<WAIT_S>S<WAIT_S>l<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>o<WAIT_S>w<WAIT_S>…"
 	done
 	
 LusterMallBallShop_SlowkingText2:

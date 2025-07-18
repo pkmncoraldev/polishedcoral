@@ -79,7 +79,7 @@ ShimmerLabLobbyNPC3:
 	jumptextfaceplayer ShimmerLabLobbyNPC3Text
 
 ShimmerLabLobbyWigglytuff:
-	opentext
+	opentext TEXTBOX_POKEMON, WIGGLYTUFF
 	writetext ShimmerLabLobbyWigglytuffText
 	cry WIGGLYTUFF
 	waitbutton
@@ -87,7 +87,7 @@ ShimmerLabLobbyWigglytuff:
 	end
 	
 ShimmerLabLobbyToucannon:
-	opentext
+	opentext TEXTBOX_POKEMON, TOUCANNON
 	writetext ShimmerLabLobbyToucannonText
 	cry TOUCANNON
 	waitbutton
@@ -95,8 +95,7 @@ ShimmerLabLobbyToucannon:
 	end
 	
 ShimmerLabLobbyToucannonText:
-	text "TOUCANNON: Tou-"
-	line "CAAAW!"
+	text "Tou-CAAAW!"
 	done
 
 ShimmerLabResearchSign:
@@ -194,8 +193,7 @@ ShimmerLabLobbyNPC2NoRoomText:
 	done
 	
 ShimmerLabLobbyWigglytuffText:
-	text "WIGGLYTUFF: Tuff!"
-	line "Tuff!"
+	text "Tuff! Tuff!"
 	done
 	
 ShimmerLabResearchSignText:

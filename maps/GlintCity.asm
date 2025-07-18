@@ -227,7 +227,7 @@ GlintNPC7:
 	end
 	
 GlintDoggo:
-	opentext
+	opentext TEXTBOX_POKEMON, GROWLITHE
 	writetext GlintDoggoText
 	cry GROWLITHE
 	waitbutton
@@ -235,7 +235,7 @@ GlintDoggo:
 	end
 	
 GlintBirb:
-	opentext
+	opentext TEXTBOX_POKEMON, PIKIPEK
 	writetext GlintBirbText
 	cry PIKIPEK
 	waitbutton
@@ -367,11 +367,9 @@ GlintNPC7Text2:
 	done
 	
 GlintDoggoText:
-	text "GROWLITHE: BARK!"
-	line "BARK!"
+	text "BARK! BARK!"
 	done
 	
 GlintBirbText:
-	text "PIKIPEK: PIKI!"
-	line "PIKI!"
+	text "PIKI! PIKI!"
 	done

@@ -30,10 +30,17 @@ DaybreakPokeCenterNPC1:
 	jumptextfaceplayer DaybreakPokeCenterNPC1Text
 
 DaybreakPokeCenterNPC2:
+	setevent EVENT_HEARD_CRUSHERS_NAME
 	jumptextfaceplayer DaybreakPokeCenterNPC2Text
 
 DaybreakPokeCenterLedyba:
-	opentext
+	checkevent EVENT_HEARD_CRUSHERS_NAME
+	iftrue .crusher
+	opentext TEXTBOX_POKEMON, LEDYBA
+	jump .cont
+.crusher
+	opentext TEXTBOX_CRUSHER
+.cont
 	writetext DaybreakPokeCenterLedybaText
 	cry LEDYBA
 	waitbutton
@@ -68,5 +75,5 @@ DaybreakPokeCenterNPC2Text:
 	done
 	
 DaybreakPokeCenterLedybaText:
-	text "CRUSHER: <WAIT_M>…LEDY?"
+	text "<WAIT_M>…LEDY?"
 	done

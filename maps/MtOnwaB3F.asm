@@ -27,7 +27,7 @@ MtOnwaB3F_MapScriptHeader:
 
 	
 LavaCaveBF3Magmar:
-	opentext
+	opentext TEXTBOX_POKEMON, MAGMAR
 	writetext LavaCaveBF3MagmarText
 	cry MAGMAR
 	waitbutton

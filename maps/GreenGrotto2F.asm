@@ -20,7 +20,7 @@ GreenGrotto2F_MapScriptHeader:
 	
 	
 GreenGrotto2FNoivern:
-	opentext
+	opentext TEXTBOX_POKEMON, NOIVERN
 	writetext GreenGrotto2FNoivernText
 	cry NOIVERN
 	waitbutton

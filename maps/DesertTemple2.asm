@@ -150,7 +150,7 @@ rept 2
 endr
 	pause 60
 	setlasttalked DESERT_TEMPLE_2_VOLCARONA_2
-	opentext
+	opentext TEXTBOX_POKEMON, VOLCARONA
 	writetext DesertTemple2VolcaronaText
 	cry VOLCARONA
 	waitbutton

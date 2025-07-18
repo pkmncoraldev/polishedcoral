@@ -58,6 +58,9 @@ TextBoxSpeakers:
 	dw TextBoxBoy
 	dw TextBoxStrand
 	dw TextBoxAbner
+	dw TextBoxEggy
+	dw TextBoxCrusher
+	dw TextBoxButtercup
 	
 TextBoxUnknown:			db "<UPDN>???@"
 TextBoxMom:				db "<UPDN>MOM@"
@@ -117,6 +120,9 @@ TextBoxCharlie:			db "<UPDN>CHARLIE@"
 TextBoxBoy:				db "<UPDN>BOY@"
 TextBoxStrand:			db "<UPDN>CAP'N STRAND@"
 TextBoxAbner:			db "<UPDN>ABNER@"
+TextBoxEggy:			db "<UPDN>EGGY@"
+TextBoxCrusher:			db "<UPDN>CRUSHER@"
+TextBoxButtercup:		db "<UPDN>BUTTERCUP@"
 	
 ChangeTextboxName::
 	call ClearTextboxName
@@ -135,6 +141,8 @@ ClearTextboxName::
 	
 WriteTextboxName::
 	ld a, [wTextBoxSpeaker]
+	cp $ff
+	jr z, WriteTextboxPokemonName
 	cp 0
 	ret z
 	ld e, a
@@ -147,3 +155,16 @@ WriteTextboxName::
 	ld e, a
 	hlcoord 0, 12
 	jp PlaceString
+	
+WriteTextboxPokemonName:
+	ld de, .TopLeft
+	hlcoord 0, 12
+	call PlaceString
+	ld a, [wd265]
+	call GetPokemonName
+	ld de, wStringBuffer1
+	hlcoord 1, 12
+	jp PlaceString
+
+.TopLeft:
+	db "<UPDN>@"

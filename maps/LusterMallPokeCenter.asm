@@ -33,7 +33,7 @@ LusterMallPokeCenterNPC4:
 	jumptextfaceplayer LusterMallPokeCenterNPC4Text
 	
 LusterMallPokeCenterCroagunk:
-	opentext
+	opentext TEXTBOX_POKEMON, CROAGUNK
 	writetext LusterMallPokeCenterCroagunkText
 	cry CROAGUNK
 	waitbutton
@@ -84,5 +84,5 @@ LusterMallPokeCenterNPC4Text:
 	done
 	
 LusterMallPokeCenterCroagunkText:
-	text "CROAGUNK: Gu-gunk!"
+	text "Gu-gunk!"
 	done

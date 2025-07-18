@@ -213,7 +213,7 @@ AtmNoCardText:
 	done
 	
 PokeCenterChanseyScript:
-	opentext
+	opentext TEXTBOX_POKEMON, CHANSEY
 	writetext PokeCenterChanseyText
 	cry CHANSEY
 	waitbutton
@@ -221,7 +221,7 @@ PokeCenterChanseyScript:
 	end
 	
 PokeCenterChanseyText:
-	text "CHANSEY: Sii!"
+	text "Sii!"
 	done
 	
 SunflowerScript:

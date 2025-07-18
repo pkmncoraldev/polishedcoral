@@ -20,7 +20,7 @@ Route6UnderwaterCave_MapScriptHeader:
 	const ROUTE_6_UNDERWATER_CAVE_LAPRAS
 
 Route6UnderwaterCaveLapras:
-	opentext
+	opentext TEXTBOX_POKEMON, LAPRAS
 	writetext Route6UnderwaterCaveLaprasText
 	cry LAPRAS
 	waitbutton
@@ -49,7 +49,7 @@ Route6UnderwaterCaveLapras:
 	end
 	
 Route6UnderwaterCaveLaprasText:
-	text "LAPRAS: ROOOAAGH!"
+	text "ROOOAAGH!"
 	done
 	
 Route6UnderwaterCaveLaprasTextGone:

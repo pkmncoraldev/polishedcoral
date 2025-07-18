@@ -118,7 +118,7 @@ EventideVillageNPC3:
 	end
 	
 EventideVillageMiltank:
-	opentext
+	opentext TEXTBOX_POKEMON, MILTANK
 	writetext EventideVillageMiltankText
 	cry MILTANK
 	waitbutton
@@ -126,7 +126,7 @@ EventideVillageMiltank:
 	end
 	
 EventideVillageTauros:
-	opentext
+	opentext TEXTBOX_POKEMON, TAUROS
 	writetext EventideVillageTaurosText
 	cry TAUROS
 	waitbutton
@@ -290,11 +290,11 @@ EventideVillageBiplaneText:
 	done
 	
 EventideVillageMiltankText:
-	text "MILTANK: Mooo!"
+	text "Mooo!"
 	done
 	
 EventideVillageTaurosText:
-	text "TAUROS: Raurs!"
+	text "Raurs!"
 	done
 	
 EventideVillageSignText:

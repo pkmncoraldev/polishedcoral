@@ -329,17 +329,18 @@ RanchSign:
 	jumptext RanchSignText
 	
 RanchDodrio1:
-	opentext
+	opentext TEXTBOX_POKEMON, DODRIO
 	writetext RanchDodrioText1
 	cry DODRIO
 	buttonsound
+	changetextboxspeaker
 	writetext RanchDodrioText2
 	waitbutton
 	closetext
 	end
 	
 RanchDodrio2:
-	opentext
+	opentext TEXTBOX_POKEMON, DODRIO
 	writetext RanchDodrioText1
 	cry DODRIO
 	waitbutton
@@ -347,7 +348,7 @@ RanchDodrio2:
 	end
 	
 RanchDoduo:
-	opentext
+	opentext TEXTBOX_POKEMON, DODUO
 	writetext RanchDoduoText
 	cry DODUO
 	waitbutton
@@ -372,7 +373,7 @@ Route9Sign2Text:
 	done
 	
 RanchDodrioText1:
-	text "DODRIO: DRRREEEO!"
+	text "DRRREEEO!"
 	done
 	
 RanchDodrioText2:
@@ -381,7 +382,7 @@ RanchDodrioText2:
 	done
 	
 RanchDoduoText:
-	text "DODUO: DEWO! <WAIT_S>DEWO!"
+	text "DEWO! <WAIT_S>DEWO!"
 	done
 	
 RanchScarecrowText:

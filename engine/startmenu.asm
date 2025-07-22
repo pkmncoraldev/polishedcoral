@@ -1,4 +1,6 @@
 StartMenu:: ; 125cd
+	xor a
+	ld [wTextBoxSpeaker], a
 	ld a, [wPlayerState]
 	cp PLAYER_RUN
 	jr nz, .cont

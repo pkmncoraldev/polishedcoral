@@ -383,7 +383,7 @@ ObscuraGymClerk2:
 	iftrue .ropesdone
 	opentext
 	writetext ObscuraGymClerk2Text1
-	waitbutton
+	wait 6
 	callasm ObscuraGymCheckCounterAsm
 	if_equal 4, .done_all
 	writetext ObscuraGymClerk2Text2
@@ -412,7 +412,7 @@ ObscuraGymClerk2:
 	waitsfx
 	winlosstext ObscuraGymClerk2WinText, 0
 	setlasttalked OBSCURA_GYM_CLERK_2
-	loadtrainer YOUNGSTER, JOEY
+	loadtrainer MUSEUM_GUIDE_2, 1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
@@ -493,7 +493,7 @@ ObscuraGymClerk2Text5:
 	
 ObscuraGymClerk2Text6:
 	text "Ok!<WAIT_S> I'll move the"
-	line " rope."
+	line "rope."
 	
 	para "…<WAIT_L><WAIT_L>But first one"
 	line "more question!"
@@ -658,7 +658,7 @@ ObscuraGymQuizLady1:
 	waitsfx
 	winlosstext ObscuraQuiz1WinText, 0
 	setlasttalked OBSCURA_GYM_QUIZ_LADY_1
-	loadtrainer YOUNGSTER, JOEY
+	loadtrainer MUSEUM_GUIDE, 1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
@@ -819,7 +819,7 @@ ObscuraGymQuizLady2:
 	waitsfx
 	winlosstext ObscuraQuiz2WinText, 0
 	setlasttalked OBSCURA_GYM_QUIZ_LADY_2
-	loadtrainer YOUNGSTER, JOEY
+	loadtrainer MUSEUM_GUIDE, 1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
@@ -979,7 +979,7 @@ ObscuraGymQuizLady3:
 	waitsfx
 	winlosstext ObscuraQuiz3WinText, 0
 	setlasttalked OBSCURA_GYM_QUIZ_LADY_3
-	loadtrainer YOUNGSTER, JOEY
+	loadtrainer MUSEUM_GUIDE, 1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
@@ -1139,7 +1139,7 @@ ObscuraGymQuizLady4:
 	waitsfx
 	winlosstext ObscuraQuiz4WinText, 0
 	setlasttalked OBSCURA_GYM_QUIZ_LADY_4
-	loadtrainer YOUNGSTER, JOEY
+	loadtrainer MUSEUM_GUIDE, 1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle

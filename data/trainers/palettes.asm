@@ -97,6 +97,8 @@ ErikaPalette:			 INCLUDE "gfx/trainers/erika.pal"
 MinaPalette:			 INCLUDE "gfx/trainers/mina.pal"
 LedianRangerPalette:	 INCLUDE "gfx/trainers/ledian_ranger.pal"
 PoliceCaptainPalette:	 INCLUDE "gfx/trainers/police_captain.pal"
+MuseuemGuidePalette:	 INCLUDE "gfx/trainers/museum_guide.pal"
+MuseuemGuide2Palette:	 INCLUDE "gfx/trainers/museum_guide_2.pal"
 TowerTycoonPalette:
 
 

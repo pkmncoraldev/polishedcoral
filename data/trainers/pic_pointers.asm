@@ -94,5 +94,7 @@ TrainerPicPointers::
 	dba MinaPic
 	dba LedianRangerPic
 	dba PoliceCaptainPic
+	dba MuseumGuidePic
+	dba MuseumGuide2Pic
 	dba TowerTycoonPic
 	

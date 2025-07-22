@@ -96,4 +96,6 @@ TrainerGroups: ; 0x39999
 	dba MinaGroup
 	dba LedianRangerGroup
 	dba PoliceCaptainGroup
+	dba MuseumGuideGroup
+	dba MuseumGuide2Group
 	dba TowerTycoonGroup

@@ -94,5 +94,7 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_NONE					; erika
 	db MUSIC_NONE					; mina
 	db MUSIC_NONE					; ledianranger
-	db MUSIC_NONE					; police captain
+	db MUSIC_NONE					; policecaptain
+	db MUSIC_NONE					; museumguide
+	db MUSIC_NONE					; museumguide2
 	db MUSIC_NONE			 		; towertycoon

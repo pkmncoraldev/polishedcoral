@@ -720,6 +720,10 @@ DEF PLAYER_F EQU __enum__
 	trainerclass LEDIAN_RANGER
 	
 	trainerclass POLICE_CAPTAIN
+	
+	trainerclass MUSEUM_GUIDE
+	
+	trainerclass MUSEUM_GUIDE_2
 
 	trainerclass TOWERTYCOON ; 1
 

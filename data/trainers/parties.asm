@@ -6309,6 +6309,106 @@ PoliceCaptainGroup:
 ; ================
 ; ================================
 
+MuseumGuideGroup:
+; ================================
+; ================
+
+	; MUSEUM_GUIDE
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_GUIDE
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_GUIDE
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_GUIDE
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_GUIDE
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_GUIDE
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_GUIDE
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_GUIDE
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+MuseumGuide2Group:
+; ================================
+; ================
+
+	; MUSEUM_GUIDE_2
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; MUSEUM_GUIDE_2
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
 TowerTycoonGroup:
 ; ================================
 ; ================

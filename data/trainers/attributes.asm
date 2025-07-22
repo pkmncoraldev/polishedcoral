@@ -570,6 +570,18 @@ TrainerClassAttributes: ; 3959c
 	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE
 	
+; Museum Guide
+	db 0, 0 ; items
+	db 20 ; base reward
+	dw AI_BASIC + AI_OFFENSIVE + AI_CAUTIOUS + AI_STATUS
+	dw CONTEXT_USE + SWITCH_RARELY
+	
+; Museum Guide 2
+	db 0, 0 ; items
+	db 20 ; base reward
+	dw AI_BASIC + AI_OFFENSIVE + AI_CAUTIOUS + AI_STATUS
+	dw CONTEXT_USE + SWITCH_RARELY
+	
 ; TowerTycoon
 	db FULL_HEAL, FULL_RESTORE ; items
 	db 25 ; base reward

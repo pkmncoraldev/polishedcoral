@@ -775,6 +775,8 @@ DisguiseManPic:			  INCBIN "gfx/trainers/disguiseman.2bpp.lz"
 BikiniBRPic:			  INCBIN "gfx/trainers/bikinibr.2bpp.lz"
 BikiniBLPic:			  INCBIN "gfx/trainers/bikinibl.2bpp.lz"
 BikiniPPic:				  INCBIN "gfx/trainers/bikinip.2bpp.lz"
+MuseumGuidePic:
+MuseumGuide2Pic:		  INCBIN "gfx/trainers/museum_guide.2bpp.lz"
 
 
 SECTION "Trainer Pics 5", ROMX

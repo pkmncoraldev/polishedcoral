@@ -124,11 +124,12 @@ GlintGroveUndergroundRootsText:
 	
 GlintGroveUndergroundClefairy:
 	faceplayer
-	opentext
+	opentext TEXTBOX_POKEMON, CLEFAIRY
 	writetext GlintGroveUndergroundClefairyText1
 	cry CLEFAIRY
 	waitsfx
 	buttonsound
+	changetextboxspeaker
 	writetext GlintGroveUndergroundClefairyText2
 	waitbutton
 	closetext
@@ -137,7 +138,7 @@ GlintGroveUndergroundClefairy:
 	end
 	
 GlintGroveUndergroundClefairyText1:
-	text "CLEFAIRY: Pii!"
+	text "Pii!"
 	done
 	
 GlintGroveUndergroundClefairyText2:
@@ -369,7 +370,7 @@ endr
 	stopfollow
 	disappear GLINT_GROVE_UNDERGROUND_PLAYER_CUTSCENE_2
 	pause 20
-	opentext
+	opentext TEXTBOX_POKEMON, CLEFABLE
 	writetext GlintGroveUndergroundClefableText
 	cry CLEFABLE
 	waitsfx
@@ -377,7 +378,7 @@ endr
 	closetext
 	waitsfx
 	setlasttalked GLINT_GROVE_UNDERGROUND_CLEFABLE
-	loadwildmon CLEFABLE, 45
+	loadwildmon CLEFABLE, 47
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	disappear GLINT_GROVE_UNDERGROUND_CLEFABLE
@@ -399,7 +400,7 @@ endr
 	end
 
 GlintGroveUndergroundClefableText:
-	text "CLEFABLE: Piii!"
+	text "Piii!"
 	done
 
 GlintGroveUndergroundClefableText2:

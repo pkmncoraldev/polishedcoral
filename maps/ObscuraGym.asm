@@ -12,14 +12,19 @@ ObscuraGym_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 7 ; object events
+	db 12 ; object events
 	person_event SPRITE_ROCKY,  2, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraGymRocky, -1
 	person_event SPRITE_RECEPTIONIST, 17, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymClerk1, -1
-	person_event SPRITE_RECEPTIONIST,  8, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraGymClerk2, -1
-	person_event SPRITE_RECEPTIONIST,  6,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady1, -1
-	person_event SPRITE_RECEPTIONIST,  6, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady2, -1
-	person_event SPRITE_RECEPTIONIST, 15,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady3, -1
-	person_event SPRITE_RECEPTIONIST, 15, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady4, -1
+	person_event SPRITE_RECEPTIONIST,  8, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraGymClerk2, EVENT_BEAT_ROCKY
+	person_event SPRITE_RECEPTIONIST,  6,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady1, EVENT_BEAT_ROCKY
+	person_event SPRITE_RECEPTIONIST,  6, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady2, EVENT_BEAT_ROCKY
+	person_event SPRITE_RECEPTIONIST, 15,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady3, EVENT_BEAT_ROCKY
+	person_event SPRITE_RECEPTIONIST, 15, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady4, EVENT_BEAT_ROCKY
+	person_event SPRITE_RECEPTIONIST,  8, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraGymTrainerRematch5, EVENT_HAVENT_BEAT_ROCKY
+	person_event SPRITE_RECEPTIONIST,  6,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymTrainerRematch1, EVENT_HAVENT_BEAT_ROCKY
+	person_event SPRITE_RECEPTIONIST,  6, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymTrainerRematch2, EVENT_HAVENT_BEAT_ROCKY
+	person_event SPRITE_RECEPTIONIST, 15,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymTrainerRematch3, EVENT_HAVENT_BEAT_ROCKY
+	person_event SPRITE_RECEPTIONIST, 15, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymTrainerRematch4, EVENT_HAVENT_BEAT_ROCKY
 
 	
 	const_def 1 ; object constants
@@ -49,7 +54,137 @@ ObscuraGymCallback:
 	return
 	
 ObscuraGymRocky:
+	faceplayer
+	opentext TEXTBOX_ROCKY
+	checkevent EVENT_BEAT_ROCKY
+	iftrue .FightDone
+	writetext ObscuraGymRockyTextBeforeBattle
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext ObscuraGymRockyTextWin, ObscuraGymRockyTextLoss
+	loadtrainer ROCKY, 1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ROCKY
+	clearevent EVENT_HAVENT_BEAT_ROCKY
+	clearevent EVENT_OBSCURA_GYM_LOCKED
+	setevent EVENT_OBSCURA_GYM_ROPES_1
+	setevent EVENT_OBSCURA_GYM_ROPES_2
+	opentext
+	writetext Text_ReceivedSeventhBadge
+	playsound SFX_GET_BADGE
+	waitsfx
+	setflag ENGINE_SEVENTHBADGE
+	checkcode VAR_BADGES
+	changetextboxspeaker TEXTBOX_ROCKY
+	
+.FightDone:
+	checkevent EVENT_GOT_TM_FROM_ROCKY
+	iftrue .GotTMFromRocky
+	writetext ObscuraGymRockyTextAfterBattle
+	buttonsound
+	changetextboxspeaker
+	verbosegivetmhm TM_VENOSHOCK
+	setevent EVENT_GOT_TM_FROM_ROCKY
+	changetextboxspeaker TEXTBOX_ROCKY
+	writetext ObscuraGymRockyTextTMSpeech
+	waitbutton
+	closetext
+	spriteface OBSCURA_GYM_ROCKY, DOWN
 	end
+
+.GotTMFromRocky:
+	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_1_REMATCH
+	iffalse RockyTextLoop
+	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_2_REMATCH
+	iffalse RockyTextLoop
+	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_3_REMATCH
+	iffalse RockyTextLoop
+	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_4_REMATCH
+	iffalse RockyTextLoop
+	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_5_REMATCH
+	iftrue ObscuraGymRockyRematch
+RockyTextLoop:
+	writetext ObscuraGymRockyTextLoop
+	waitbutton
+	closetext
+	end
+	
+ObscuraGymRockyRematch:
+	checkevent EVENT_BEAT_ROCKY_REMATCH
+	iftrue RockyTextLoop
+	writetext ObscuraGymRockyTextBeforeBattleRematch
+	yesorno
+	iffalse .end
+	writetext ObscuraGymRockyTextBeforeBattle
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext ObscuraGymRockyTextWinRematch, ObscuraGymRockyTextLoss
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	loadtrainer ROCKY, 1
+	jump .cont
+.eightbadges
+	loadtrainer ROCKY, 2
+.cont
+	startbattle
+	reloadmapafterbattle
+	opentext TEXTBOX_ROCKY
+	writetext ObscuraGymRockyTextLoop
+	waitbutton
+	closetext
+	setevent EVENT_BEAT_ROCKY_REMATCH
+	spriteface OBSCURA_GYM_ROCKY, DOWN
+	end
+.end
+	writetext ObscuraGymRockyTextNoRematch
+	waitbutton
+	closetext
+	end
+	
+ObscuraGymRockyTextBeforeBattle:
+	text "BEFORE BATTLE"
+	done
+	
+ObscuraGymRockyTextAfterBattle:
+	text "AFTER BATTLE"
+	done
+	
+ObscuraGymRockyTextTMSpeech:
+	text "TM SPEECH"
+	done
+	
+ObscuraGymRockyTextLoop:
+	text "TEXT LOOP"
+	done
+	
+Text_ReceivedSeventhBadge:
+	text "<PLAYER> received"
+	line "the GEOBADGE."
+	done
+	
+ObscuraGymRockyTextBeforeBattleRematch:
+	text "BEFORE BATTLE"
+	line "REMATCH"
+	done
+	
+ObscuraGymRockyTextNoRematch:
+	text "NO REMATCH"
+	done
+	
+ObscuraGymRockyTextWin:
+	text "YOU WIN"
+	done
+	
+ObscuraGymRockyTextLoss:
+	text "YOU LOSE"
+	done
+	
+ObscuraGymRockyTextWinRematch:
+	text "YOU WIN REMATCH"
+	done
 	
 ObscuraGymClerk1:
 	opentext
@@ -248,7 +383,7 @@ ObscuraGymClerk2:
 	iftrue .ropesdone
 	opentext
 	writetext ObscuraGymClerk2Text1
-	pause 15
+	waitbutton
 	callasm ObscuraGymCheckCounterAsm
 	if_equal 4, .done_all
 	writetext ObscuraGymClerk2Text2
@@ -261,6 +396,28 @@ ObscuraGymClerk2:
 	playsound SFX_LEVEL_UP
 	waitsfx
 	wait 2
+	writetext ObscuraGymClerk2Text6
+	loadmenu .FinalQustionMenuData
+	verticalmenu
+	closewindow
+	if_equal 1, .rocky
+;.rockford
+	writetext ObscuraGymClerk2Text7
+	jump .cont
+.rocky
+	writetext ObscuraGymClerk2Text8
+.cont
+	waitbutton
+	closetext
+	waitsfx
+	winlosstext ObscuraGymClerk2WinText, 0
+	setlasttalked OBSCURA_GYM_CLERK_2
+	loadtrainer YOUNGSTER, JOEY
+	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	startbattle
+	reloadmapafterbattle
+	playmapmusic
+	opentext
 	writetext ObscuraGymClerk2Text4
 	waitbutton
 	closetext
@@ -283,9 +440,24 @@ ObscuraGymClerk2:
 	spriteface OBSCURA_GYM_CLERK_2, DOWN
 	end
 	
+.FinalQustionMenuData:
+	db $40 ; flags
+	db 06, 00 ; start coords
+	db 11, 10 ; end coords
+	dw .FinalQustionMenuData2
+	db 1 ; default option
+
+.FinalQustionMenuData2:
+	db $80 ; flags
+	db 2 ; items
+	db "ROCKY@"
+	db "ROCKFORD@"
+	db "12@"
+	db "4@"
+	
 ObscuraGymClerk2Text1:
-	text "If you see the"
-	line "GYM LEADER,"
+	text "If you want to see"
+	line "the GYM LEADER,"
 	
 	para "you'll need to"
 	line "have finished all"
@@ -302,35 +474,103 @@ ObscuraGymClerk2Text2:
 	done
 	
 ObscuraGymClerk2Text3:
-	text "<WAIT_L>Ok!"
-	
-	para "All 4 quizzes are"
+	text "<WAIT_L>All 4 quizzes are"
 	line "done!"
 	done
 	
 ObscuraGymClerk2Text4:
-	text "I'll move the rope."
+	text "Alright, no more"
+	line "quizzes."
+	
+	para "I'll move the rope"
+	line "for real now."
 	done
 	
 ObscuraGymClerk2Text5:
-	text "Good luck against"
-	line "the GYM LEADER."
+	text "Say hi to ROCKY"
+	line "for me."
 	done
 	
+ObscuraGymClerk2Text6:
+	text "Ok!<WAIT_S> I'll move the"
+	line " rope."
+	
+	para "…<WAIT_L><WAIT_L>But first one"
+	line "more question!"
+	
+	para "Sorry, he made"
+	line "me do this…"
+	
+	para "Here we go."
+	line "Last question:"
+	
+	para "What is our GYM"
+	line "LEADER's name?"
+	done
+	
+ObscuraGymClerk2Text7:
+	text "The answer is…<WAIT_L>"
+	line "ROCKY!"
+	
+	para "He insists that"
+	line "everyone call him"
+	cont "“ROCKFORD”, but"
+	cont "no one does that!"
+	
+	para "So that means it's"
+	line "battle time!"
+	
+	para "Sorry!"
+	done
+	
+ObscuraGymClerk2Text8:
+	text "The answer is…<WAIT_L>"
+	line "ROCKFORD!"
+	
+	para "He desparately"
+	line "wants people to"
+	cont "call him by his"
+	cont "full name."
+	
+	para "“It's a matter of"
+	line "respect”, he says."
+	
+	para "“Don't let them"
+	line "pass unless they"
+	cont "call me ROCKFORD”."
+	
+	para "So that means it's"
+	line "battle time!"
+	
+	para "Sorry!"
+	done
+	
+ObscuraGymClerk2WinText:
+	text "Well done."
+	done
+	
+ObscuraGymQuizLadyGymDone:
+	jumptextfaceplayer ObscuraGymTrainer1RematchRegularText
+	
 ObscuraGymQuizLady1:
+	checkevent EVENT_BEAT_ROCKY
+	iftrue ObscuraGymQuizLadyGymDone
 	checkevent EVENT_OBSCURA_QUIZ_1_FINISHED
 	iftrue ObscuraGymQuizAlreadyDone
 	opentext
 	writetext ObscuraGymQuiz1YesOrNoText
 	yesorno
 	iffalse .no
-;question 1
-	writetext ObscuraGymQ1Q1Text
 	loadvar wMuseumQuizQuestionNumber, 1
 	loadvar wRanchRaceFrames, 2
 	loadvar wRanchRaceSeconds, 0
 	loadvar wCurrentAirportBaggage, QUIZ_TIME_LIMIT
+	writetext ObscuraGymFirstQuestionText
+	playmusic MUSIC_EVOLUTION
+	wait 5
+;question 1
 	callasm ObscuraGymSetupTimerBoxAsm
+	writetext ObscuraGymQ1Q1Text
 	setevent EVENT_OBSCURA_QUIZ_ACTIVE
 	loadmenu .Q1Q1MenuData
 	verticalmenu
@@ -371,7 +611,8 @@ ObscuraGymQuizLady1:
 	playsound SFX_CAUGHT_MON
 	writetext ObscuraGymQuiz1PassedText
 	waitsfx
-	closetext
+	playmapmusic
+	scall ObscuraGymQuizDone
 	end
 .no
 	writetext ObscuraGymQuizNoText
@@ -419,14 +660,11 @@ ObscuraGymQuizLady1:
 	setlasttalked OBSCURA_GYM_QUIZ_LADY_1
 	loadtrainer YOUNGSTER, JOEY
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	special SaveMusic
 	startbattle
 	reloadmapafterbattle
-	special RestoreMusic
+	playmapmusic
 	opentext
-	writetext ObscuraQuiz1PostBattleText
-	waitbutton
-	closetext
+	scall ObscuraGymBattleDone
 	setevent EVENT_OBSCURA_QUIZ_1_FINISHED
 	end
 	
@@ -440,10 +678,10 @@ ObscuraGymQuizLady1:
 .Q1Q1MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "WRONG@"
-	db "WRONG@"
-	db "CORRECT@"
-	db "WRONG@"
+	db "3@"
+	db "16@"
+	db "12@"
+	db "4@"
 	
 .Q1Q2MenuData:
 	db $40 ; flags
@@ -455,10 +693,10 @@ ObscuraGymQuizLady1:
 .Q1Q2MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "WRONG@"
-	db "CORRECT@"
-	db "WRONG@"
-	db "WRONG@"
+	db "BLUE@"
+	db "RED@"
+	db "GREEN@"
+	db "YELLOW@"
 	
 .Q1Q3MenuData:
 	db $40 ; flags
@@ -470,25 +708,30 @@ ObscuraGymQuizLady1:
 .Q1Q3MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "CORRECT@"
-	db "WRONG@"
-	db "WRONG@"
-	db "WRONG@"
+	db "PLANT@"
+	db "BOOKSHELF@"
+	db "TRASH CAN@"
+	db "FLOOR MAT@"
 
 ObscuraGymQuizLady2:
+	checkevent EVENT_BEAT_ROCKY
+	iftrue ObscuraGymQuizLadyGymDone
 	checkevent EVENT_OBSCURA_QUIZ_2_FINISHED
 	iftrue ObscuraGymQuizAlreadyDone
 	opentext
 	writetext ObscuraGymQuiz2YesOrNoText
 	yesorno
 	iffalse .no
-;question 1
-	writetext ObscuraGymQ2Q1Text
 	loadvar wMuseumQuizQuestionNumber, 1
 	loadvar wRanchRaceFrames, 2
 	loadvar wRanchRaceSeconds, 0
 	loadvar wCurrentAirportBaggage, QUIZ_TIME_LIMIT
+	writetext ObscuraGymFirstQuestionText
+	playmusic MUSIC_EVOLUTION
+	wait 5
+;question 1
 	callasm ObscuraGymSetupTimerBoxAsm
+	writetext ObscuraGymQ2Q1Text
 	setevent EVENT_OBSCURA_QUIZ_ACTIVE
 	loadmenu .Q2Q1MenuData
 	verticalmenu
@@ -518,7 +761,7 @@ ObscuraGymQuizLady2:
 	verticalmenu
 	closewindow
 	if_equal $69, .Question3TimesUp
-	if_not_equal 1, .Question3Wrong
+	if_not_equal 4, .Question3Wrong
 	scall ObscuraGymCorrect
 	writetext ObscuraGymQ2Q3CorrectText
 	waitbutton
@@ -529,7 +772,8 @@ ObscuraGymQuizLady2:
 	playsound SFX_CAUGHT_MON
 	writetext ObscuraGymQuiz2PassedText
 	waitsfx
-	closetext
+	playmapmusic
+	scall ObscuraGymQuizDone
 	end
 .no
 	writetext ObscuraGymQuizNoText
@@ -577,14 +821,10 @@ ObscuraGymQuizLady2:
 	setlasttalked OBSCURA_GYM_QUIZ_LADY_2
 	loadtrainer YOUNGSTER, JOEY
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	special SaveMusic
 	startbattle
 	reloadmapafterbattle
-	special RestoreMusic
-	opentext
-	writetext ObscuraQuiz2PostBattleText
-	waitbutton
-	closetext
+	playmapmusic
+	scall ObscuraGymBattleDone
 	setevent EVENT_OBSCURA_QUIZ_2_FINISHED
 	end
 	
@@ -598,10 +838,10 @@ ObscuraGymQuizLady2:
 .Q2Q1MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "WRONG@"
-	db "WRONG@"
-	db "CORRECT@"
-	db "WRONG@"
+	db "4@"
+	db "2@"
+	db "3@"
+	db "255@"
 	
 .Q2Q2MenuData:
 	db $40 ; flags
@@ -613,10 +853,10 @@ ObscuraGymQuizLady2:
 .Q2Q2MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "WRONG@"
-	db "CORRECT@"
-	db "WRONG@"
-	db "WRONG@"
+	db "LEMONADE@"
+	db "ROCK CANDY@"
+	db "SUNSHINE TEA@"
+	db "POTATO CHIPS@"
 	
 .Q2Q3MenuData:
 	db $40 ; flags
@@ -628,31 +868,36 @@ ObscuraGymQuizLady2:
 .Q2Q3MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "CORRECT@"
-	db "WRONG@"
-	db "WRONG@"
-	db "WRONG@"
+	db "ROCKY@"
+	db "WOODY@"
+	db "SUDOWOODO@"
+	db "PETRO@"
 
 ObscuraGymQuizLady3:
+	checkevent EVENT_BEAT_ROCKY
+	iftrue ObscuraGymQuizLadyGymDone
 	checkevent EVENT_OBSCURA_QUIZ_3_FINISHED
 	iftrue ObscuraGymQuizAlreadyDone
 	opentext
 	writetext ObscuraGymQuiz3YesOrNoText
 	yesorno
 	iffalse .no
-;question 1
-	writetext ObscuraGymQ3Q1Text
 	loadvar wMuseumQuizQuestionNumber, 1
 	loadvar wRanchRaceFrames, 2
 	loadvar wRanchRaceSeconds, 0
 	loadvar wCurrentAirportBaggage, QUIZ_TIME_LIMIT
+	writetext ObscuraGymFirstQuestionText
+	playmusic MUSIC_EVOLUTION
+	wait 5
+;question 1
 	callasm ObscuraGymSetupTimerBoxAsm
+	writetext ObscuraGymQ3Q1Text
 	setevent EVENT_OBSCURA_QUIZ_ACTIVE
 	loadmenu .Q3Q1MenuData
 	verticalmenu
 	closewindow
 	if_equal $69, .Question1TimesUp
-	if_not_equal 3, .Question1Wrong
+	if_not_equal 4, .Question1Wrong
 	scall ObscuraGymCorrect
 	writetext ObscuraGymQ3Q1CorrectText
 	waitbutton
@@ -687,7 +932,8 @@ ObscuraGymQuizLady3:
 	playsound SFX_CAUGHT_MON
 	writetext ObscuraGymQuiz3PassedText
 	waitsfx
-	closetext
+	playmapmusic
+	scall ObscuraGymQuizDone
 	end
 .no
 	writetext ObscuraGymQuizNoText
@@ -731,18 +977,14 @@ ObscuraGymQuizLady3:
 	closetext
 .battle
 	waitsfx
-	winlosstext ObscuraQuiz1WinText, 0
+	winlosstext ObscuraQuiz3WinText, 0
 	setlasttalked OBSCURA_GYM_QUIZ_LADY_3
 	loadtrainer YOUNGSTER, JOEY
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	special SaveMusic
 	startbattle
 	reloadmapafterbattle
-	special RestoreMusic
-	opentext
-	writetext ObscuraQuiz3PostBattleText
-	waitbutton
-	closetext
+	playmapmusic
+	scall ObscuraGymBattleDone
 	setevent EVENT_OBSCURA_QUIZ_3_FINISHED
 	end
 	
@@ -756,10 +998,10 @@ ObscuraGymQuizLady3:
 .Q3Q1MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "WRONG@"
-	db "WRONG@"
-	db "CORRECT@"
-	db "WRONG@"
+	db "FOOTPRINT IN ROCK@"
+	db "DNA SAMPLE@"
+	db "INSECT IN AMBER@"
+	db "ALL ARE FOSSILS@"
 	
 .Q3Q2MenuData:
 	db $40 ; flags
@@ -771,10 +1013,10 @@ ObscuraGymQuizLady3:
 .Q3Q2MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "WRONG@"
-	db "CORRECT@"
-	db "WRONG@"
-	db "WRONG@"
+	db "PRESERVED WOOD@"
+	db "WOOD-SHAPED STONE@"
+	db "HARDWOOD@"
+	db "FRIGHTENED WOOD@"
 	
 .Q3Q3MenuData:
 	db $40 ; flags
@@ -786,25 +1028,30 @@ ObscuraGymQuizLady3:
 .Q3Q3MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "CORRECT@"
-	db "WRONG@"
-	db "WRONG@"
-	db "WRONG@"
+	db "243 MILLION YEARS@"
+	db "621 MILLION YEARS@"
+	db "432 MILLION YEARS@"
+	db "234 MILLION YEARS@"
 
 ObscuraGymQuizLady4:
+	checkevent EVENT_BEAT_ROCKY
+	iftrue ObscuraGymQuizLadyGymDone
 	checkevent EVENT_OBSCURA_QUIZ_4_FINISHED
 	iftrue ObscuraGymQuizAlreadyDone
 	opentext
 	writetext ObscuraGymQuiz4YesOrNoText
 	yesorno
 	iffalse .no
-;question 1
-	writetext ObscuraGymQ4Q1Text
 	loadvar wMuseumQuizQuestionNumber, 1
 	loadvar wRanchRaceFrames, 2
 	loadvar wRanchRaceSeconds, 0
 	loadvar wCurrentAirportBaggage, QUIZ_TIME_LIMIT
+	writetext ObscuraGymFirstQuestionText
+	playmusic MUSIC_EVOLUTION
+	wait 5
+;question 1	
 	callasm ObscuraGymSetupTimerBoxAsm
+	writetext ObscuraGymQ4Q1Text
 	setevent EVENT_OBSCURA_QUIZ_ACTIVE
 	loadmenu .Q4Q1MenuData
 	verticalmenu
@@ -845,7 +1092,8 @@ ObscuraGymQuizLady4:
 	playsound SFX_CAUGHT_MON
 	writetext ObscuraGymQuiz4PassedText
 	waitsfx
-	closetext
+	playmapmusic
+	scall ObscuraGymQuizDone
 	end
 .no
 	writetext ObscuraGymQuizNoText
@@ -893,14 +1141,10 @@ ObscuraGymQuizLady4:
 	setlasttalked OBSCURA_GYM_QUIZ_LADY_4
 	loadtrainer YOUNGSTER, JOEY
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	special SaveMusic
 	startbattle
 	reloadmapafterbattle
-	special RestoreMusic
-	opentext
-	writetext ObscuraQuiz4PostBattleText
-	waitbutton
-	closetext
+	playmapmusic
+	scall ObscuraGymBattleDone
 	setevent EVENT_OBSCURA_QUIZ_4_FINISHED
 	end
 	
@@ -914,10 +1158,10 @@ ObscuraGymQuizLady4:
 .Q4Q1MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "WRONG@"
-	db "WRONG@"
-	db "CORRECT@"
-	db "WRONG@"
+	db "FAST RUNNER@"
+	db "FIERCE HUNTER@"
+	db "GRACEFUL FLYER@"
+	db "IT WAS ALL 3@"
 	
 .Q4Q2MenuData:
 	db $40 ; flags
@@ -929,10 +1173,10 @@ ObscuraGymQuizLady4:
 .Q4Q2MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "WRONG@"
-	db "CORRECT@"
-	db "WRONG@"
-	db "WRONG@"
+	db "HUGE WINGS@"
+	db "STRONG JAW@"
+	db "POWERFUL LEGS@"
+	db "POTENT VENOM@"
 	
 .Q4Q3MenuData:
 	db $40 ; flags
@@ -944,10 +1188,10 @@ ObscuraGymQuizLady4:
 .Q4Q3MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "CORRECT@"
-	db "WRONG@"
-	db "WRONG@"
-	db "WRONG@"
+	db "STRONG LEGS@"
+	db "LESS FUR@"
+	db "SMALL WINGS@"
+	db "MORE EYES@"
 	
 ObscuraGymIncQuizCounterAsm:
 	ld a, [wObscuraQuizzesDone]
@@ -993,6 +1237,52 @@ ObscuraGymSetupTimerBoxAsm:
 .QuestionString:
 	db "QUESTION 1/3@"
 	
+ObscuraGymQuizDone:
+	callasm ObscuraGymCheckCounterAsm
+	if_equal 1, .one
+	if_equal 2, .two
+	if_equal 3, .three
+;.four
+	writetext ObscuraGymQuiz4PassedText2
+	jump .done
+.one
+	writetext ObscuraGymQuiz1PassedText2
+	jump .done
+.two
+	writetext ObscuraGymQuiz2PassedText2
+	jump .done
+.three
+	writetext ObscuraGymQuiz3PassedText2
+.done
+	waitbutton
+	closetext
+	end
+	
+ObscuraGymBattleDone:
+	opentext
+	writetext ObscuraGymPostBattleText
+	playsound SFX_LEVEL_UP
+	waitsfx
+	callasm ObscuraGymCheckCounterAsm
+	if_equal 1, .one
+	if_equal 2, .two
+	if_equal 3, .three
+;.four
+	writetext ObscuraQuiz4PostBattleText
+	jump .done
+.one
+	writetext ObscuraQuiz1PostBattleText
+	jump .done
+.two
+	writetext ObscuraQuiz2PostBattleText
+	jump .done
+.three
+	writetext ObscuraQuiz3PostBattleText
+.done
+	waitbutton
+	closetext
+	end
+	
 ObscuraQuizCleanUp:
 	clearevent EVENT_OBSCURA_QUIZ_ACTIVE
 	loadvar wMuseumQuizQuestionNumber, 0
@@ -1015,7 +1305,9 @@ ObscuraGymWrong:
 	playsound SFX_WRONG
 	writetext ObscuraGymWrongText
 	waitsfx
-	wait 8
+	wait 1
+	playsound SFX_QUIT_SLOTS
+	waitsfx
 	end
 	
 QuizTimesUp:
@@ -1023,272 +1315,636 @@ QuizTimesUp:
 	playsound SFX_WRONG
 	writetext ObscuraGymTimesUpText
 	waitsfx
-	wait 8
+	wait 1
+	playsound SFX_QUIT_SLOTS
+	waitsfx
 	end
 	
 ObscuraGymQuizAlreadyDone:
-	jumptextfaceplayer ObscuraGymQuizAlreadyDoneText
+	callasm ObscuraGymCheckCounterAsm
+	if_equal 1, .one
+	if_equal 2, .two
+	if_equal 3, .three
+;.four
+	jumptextfaceplayer ObscuraQuiz4PostBattleText
+.one
+	jumptextfaceplayer ObscuraGymQuiz1PassedText2
+.two
+	jumptextfaceplayer ObscuraGymQuiz2PassedText2
+.three
+	jumptextfaceplayer ObscuraGymQuiz3PassedText2
 	
 ObscuraGymQuiz1YesOrNoText:
-	text "Start quiz 1?"
+	text "This quiz is:"
+	line "“EYE FOR DETAILS”."
+	
+	para "How well are you"
+	line "aware of your"
+	cont "surroundings?"
+	
+	para "Shall we get"
+	line "started?"
 	done
 	
 ObscuraGymQ1Q1Text:
-	text "Quiz 1"
-	line "Question 1"
+	text "How many total"
+	line "questions are"
+	cont "there to answer"
+	cont "in this GYM?"
 	done
 	
 ObscuraGymQ1Q1CorrectText:
-	text "Q1Q1"
-	line "Correct!"
+	text "12 questions!"
+	
+	para "Next question:"
 	done
 	
 ObscuraGymQ1Q1WrongText:
-	text "Q1Q1"
-	line "Wrong!"
+	text "4 quizzes with"
+	line "3 questions each."
+	
+	para "That's a total"
+	line "of 12 questions!"
+	
+	para "Sorry, that means"
+	line "it's battle time!"
 	done
 	
 ObscuraGymQ1Q2Text:
-	text "Quiz 1"
-	line "Question 2"
+	text "What color is"
+	line "lady by the rope"
+	cont "barrier wearing?"
 	done
 	
 ObscuraGymQ1Q2CorrectText:
-	text "Q1Q2"
-	line "Correct!"
+	text "Red really suits"
+	line "her, don't you"
+	cont "think?"
+	
+	para "Ok, last question"
+	line "for this quiz:"
 	done
 	
 ObscuraGymQ1Q2WrongText:
-	text "Q1Q2"
-	line "Wrong!"
+	text "She wears red!"
+	
+	para "Sorry, that means"
+	line "it's battle time!"
 	done
 	
 ObscuraGymQ1Q3Text:
-	text "Quiz 1"
-	line "Question 3"
+	text "What is missing"
+	line "from my station"
+	cont "that all of the"
+	cont "others have?"
 	done
 	
 ObscuraGymQ1Q3CorrectText:
-	text "Q1Q3"
-	line "Correct!"
+	text "I don't keep"
+	line "a plant at my"
+	cont "station because"
+	cont "kept knocking"
+	cont "it over…"
 	done
 	
 ObscuraGymQ1Q3WrongText:
-	text "Q1Q3"
-	line "Wrong!"
+	text "Everyone but me"
+	line "keeps a plant at"
+	cont "their station."
+	
+	para "Sorry, that means"
+	line "it's battle time!"
 	done
 	
 ObscuraQuiz1WinText:
-	text "Q1 YOU WIN!"
+	text "Good job!"
 	done
 	
 ObscuraQuiz1PostBattleText:
-	text "Q1 Battle done."
+	text "3 more to go!"
 	done
 	
 ObscuraGymQuiz1PassedText:
-	text "Q1 Passed!"
+	text "Quiz complete!"
+	done
+	
+ObscuraGymQuiz1PassedText2:
+	text "Good job!"
+	
+	para "That's one quiz"
+	line "down!"
+	
+	para "3 more to go!"
 	done
 
 ObscuraGymQuiz2YesOrNoText:
-	text "Start quiz 2?"
+	text "This quiz is:"
+	line "“MUSEUM TRIVIA”."
+	
+	para "How well do you"
+	line "remember your trip"
+	cont "to the MUSEUM?"
+	
+	para "Shall we get"
+	line "started?"
 	done
 	
 ObscuraGymQ2Q1Text:
-	text "Quiz 2"
-	line "Question 1"
+	text "How many floors"
+	line "does the MUSEUM"
+	cont "have?"
 	done
 	
 ObscuraGymQ2Q1CorrectText:
-	text "Q2Q1"
-	line "Correct!"
+	text "The MUSEUM has"
+	line "3 floors."
+	
+	para "Next question:"
 	done
 	
 ObscuraGymQ2Q1WrongText:
-	text "Q2Q1"
-	line "Wrong!"
+	text "The MUSEUM has"
+	line "3 floors."
+	
+	para "Sorry, that means"
+	line "it's battle time!"
 	done
 	
 ObscuraGymQ2Q2Text:
-	text "Quiz 2"
-	line "Question 2"
+	text "What unique item"
+	line "is sold in the"
+	cont "VENDING MACHINE on"
+	cont "the first floor?"
 	done
 	
 ObscuraGymQ2Q2CorrectText:
-	text "Q2Q2"
-	line "Correct!"
+	text "The ROCK CANDY"
+	line "sold here is so"
+	cont "popular, we have"
+	cont "trouble keeping"
+	cont "it in stock."
+	
+	para "Ok, last question"
+	line "for this quiz:"
 	done
 	
 ObscuraGymQ2Q2WrongText:
-	text "Q2Q2"
-	line "Wrong!"
+	text "The answer is"
+	line "ROCK CANDY."
+	
+	para "Sorry, that means"
+	line "it's battle time!"
 	done
 	
 ObscuraGymQ2Q3Text:
-	text "Quiz 2"
-	line "Question 3"
+	text "What is the name"
+	line "of the MUSEUM's"
+	cont "mascot?"
 	done
 	
 ObscuraGymQ2Q3CorrectText:
-	text "Q2Q3"
-	line "Correct!"
+	text "Our cute little"
+	line "SUDOWOODO mascot"
+	cont "is “PETRO”!"
 	done
 	
 ObscuraGymQ2Q3WrongText:
-	text "Q2Q3"
-	line "Wrong!"
+	text "The answer is"
+	line "“PETRO”."
+	
+	para "Sorry, that means"
+	line "it's battle time!"
 	done
 	
 ObscuraQuiz2WinText:
-	text "Q2 YOU WIN!"
+	text "Nice job!"
 	done
 
 ObscuraQuiz2PostBattleText:
-	text "Q2 Battle done."
+	text "Halfway there!"
 	done
 
 ObscuraGymQuiz2PassedText:
-	text "Q2 Passed!"
+	text "Quiz complete!"
+	done
+	
+ObscuraGymQuiz2PassedText2:
+	text "Nice work!"
+	
+	para "Halfway there!"
 	done
 
 ObscuraGymQuiz3YesOrNoText:
-	text "Start quiz 3?"
+	text "This quiz is:"
+	line "“FOSSIL FACTS”."
+	
+	para "How well do you"
+	line "know your stuff"
+	cont "when it comes to"
+	cont "fossils?"
+	
+	para "Shall we get"
+	line "started?"
 	done
 	
 ObscuraGymQ3Q1Text:
-	text "Quiz 3"
-	line "Question 1"
+	text "Which of the"
+	line "following is"
+	cont "NOT considered"
+	cont "a fossil?"
 	done
 	
 ObscuraGymQ3Q1CorrectText:
-	text "Q3Q1"
-	line "Correct!"
+	text "All of those"
+	line "are fossils!"
+	
+	para "Next question:"
 	done
 	
 ObscuraGymQ3Q1WrongText:
-	text "Q3Q1"
-	line "Wrong!"
+	text "Fossils are any"
+	line "trace of ancient"
+	cont "organisms that are"
+	cont "preserved to the"
+	cont "modern day."
+	
+	para "Sorry, that means"
+	line "it's battle time!"
 	done
 	
 ObscuraGymQ3Q2Text:
-	text "Quiz 3"
-	line "Question 2"
+	text "Petrified wood is:"
 	done
 	
 ObscuraGymQ3Q2CorrectText:
-	text "Q3Q2"
-	line "Correct!"
+	text "Petrified wood"
+	line "isn't actually"
+	cont "wood at all!"
+	
+	para "Ok, last question"
+	line "for this quiz:"
 	done
 	
 ObscuraGymQ3Q2WrongText:
-	text "Q3Q2"
-	line "Wrong!"
+	text "Petrified wood is"
+	line "stone that is in"
+	cont "the shape of wood."
+	
+	para "Sorry, that means"
+	line "it's battle time!"
 	done
 	
 ObscuraGymQ3Q3Text:
-	text "Quiz 3"
-	line "Question 3"
+	text "The oldest known"
+	line "dinosaur fossil"
+	cont "is how old?"
 	done
 	
 ObscuraGymQ3Q3CorrectText:
-	text "Q3Q3"
-	line "Correct!"
+	text "It's about 243"
+	line "million years old,"
+	cont "and comes from the"
+	cont "Triassic Period."
 	done
 	
 ObscuraGymQ3Q3WrongText:
-	text "Q3Q3"
-	line "Wrong!"
+	text "It's about 243"
+	line "million years old,"
+	cont "and comes from the"
+	cont "Triassic Period."
+	
+	para "Sorry, that means"
+	line "it's battle time!"
 	done
 	
 ObscuraQuiz3WinText:
-	text "Q3 YOU WIN!"
+	text "Great job!"
 	done
 
 ObscuraQuiz3PostBattleText:
-	text "Q3 Battle done."
+	text "Only one more"
+	line "to go."
 	done
 
 ObscuraGymQuiz3PassedText:
-	text "Q3 Passed!"
+	text "Quiz complete!"
+	done
+	
+ObscuraGymQuiz3PassedText2:
+	text "Great!"
+	
+	para "Only one more"
+	line "to go."
 	done
 
 ObscuraGymQuiz4YesOrNoText:
-	text "Start quiz 4?"
+	text "This quiz is:"
+	line "“ANCIENT #MON”."
+	
+	para "How well do you"
+	line "know about #MON"
+	cont "of the past?"
+	
+	para "Shall we get"
+	line "started?"
 	done
 	
 ObscuraGymQ4Q1Text:
-	text "Quiz 4"
-	line "Question 1"
+	text "ARCHEOPS was NOT"
+	line "known for being:"
 	done
 	
 ObscuraGymQ4Q1CorrectText:
-	text "Q4Q1"
-	line "Correct!"
+	text "Despite its wings,"
+	line "ARCHEOPS was very"
+	cont "clumsy in the air."
+	
+	para "Next question:"
 	done
 	
 ObscuraGymQ4Q1WrongText:
-	text "Q4Q1"
-	line "Wrong!"
+	text "Despite its wings,"
+	line "ARCHEOPS was very"
+	cont "clumsy in the air."
+	
+	para "Sorry, that means"
+	line "it's battle time!"
 	done
 	
 ObscuraGymQ4Q2Text:
-	text "Quiz 4"
-	line "Question 2"
+	text "CARRACOSTA hunted"
+	line "prey with its:"
 	done
 	
 ObscuraGymQ4Q2CorrectText:
-	text "Q4Q2"
-	line "Correct!"
+	text "It used it's jaw"
+	line "to crush rocks"
+	cont "and prey."
+	
+	para "Ok, last question"
+	line "for this quiz:"
 	done
 	
 ObscuraGymQ4Q2WrongText:
-	text "Q4Q2"
-	line "Wrong!"
+	text "It used it's jaw"
+	line "to crush rocks"
+	cont "and prey."
+	
+	para "Sorry, that means"
+	line "it's battle time!"
 	done
 	
 ObscuraGymQ4Q3Text:
-	text "Quiz 4"
-	line "Question 3"
+	text "VOLCARONA's ancient"
+	line "ancestor had:"
 	done
 	
 ObscuraGymQ4Q3CorrectText:
-	text "Q4Q3"
-	line "Correct!"
+	text "Ancient VOLCARONA"
+	line "was a quadruped"
+	cont "with strong legs."
 	done
 	
 ObscuraGymQ4Q3WrongText:
-	text "Q4Q3"
-	line "Wrong!"
+	text "Ancient VOLCARONA"
+	line "was a quadruped"
+	cont "with strong legs."
+	
+	para "Sorry, that means"
+	line "it's battle time!"
 	done
 	
 ObscuraQuiz4WinText:
-	text "Q4 YOU WIN!"
+	text "Excellent job!"
 	done
 	
 ObscuraQuiz4PostBattleText:
-	text "Q4 Battle done."
+	text "That means you"
+	line "are done with all"
+	cont "4 quizzes!"
+	
+	para "Go talk to the"
+	line "lady by the rope"
+	cont "barrier."
 	done
 	
 ObscuraGymQuiz4PassedText:
-	text "Q4 Passed!"
+	text "Quiz complete!"
+	done
+	
+ObscuraGymQuiz4PassedText2:
+	text "You did it!"
+	
+	para "That means you"
+	line "are done with all"
+	cont "4 quizzes!"
+	
+	para "Go talk to the"
+	line "lady by the rope"
+	cont "barrier."
 	done
 	
 ObscuraGymQuizNoText:
-	text "Next time then."
+	text "Let me know when"
+	line "you're ready."
 	done
-
+	
 ObscuraGymCorrectText:
 	text "Correct!"
 	done
-
+	
 ObscuraGymWrongText:
 	text "Wrong!"
 	done
-
+	
 ObscuraGymTimesUpText:
 	text "Time's up!"
 	done
 	
-ObscuraGymQuizAlreadyDoneText:
-	text "Already done."
+ObscuraGymPostBattleText:
+	text "Beating me in"
+	line "battle means"
+	cont "you've passed"
+	cont "my quiz."
+	done
+	
+ObscuraGymFirstQuestionText:
+	text "Alright!"
+	
+	para "First question:"
+	done
+	
+ObscuraGymTrainerRematch1:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_1_REMATCH
+	iftrue .FightDone
+	writetext ObscuraGymTrainer1RematchSeenText
+	yesorno
+	iffalse .no
+	closetext
+	waitsfx
+	winlosstext ObscuraQuiz1WinText, 0
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	loadtrainer LASS, KATHY_7
+	jump .cont
+.eightbadges
+	loadtrainer LASS, KATHY_8
+.cont
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmapmusic
+	setevent EVENT_BEAT_OBSCURA_GYM_TRAINER_1_REMATCH
+	end
+.FightDone
+	writetext ObscuraGymTrainer1RematchRegularText
+	waitbutton
+.no
+	closetext
+	end
+	
+ObscuraGymTrainerRematch2:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_2_REMATCH
+	iftrue .FightDone
+	writetext ObscuraGymTrainer1RematchSeenText
+	yesorno
+	iffalse .no
+	closetext
+	waitsfx
+	winlosstext ObscuraQuiz2WinText, 0
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	loadtrainer LASS, KATHY_7
+	jump .cont
+.eightbadges
+	loadtrainer LASS, KATHY_8
+.cont
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmapmusic
+	setevent EVENT_BEAT_OBSCURA_GYM_TRAINER_2_REMATCH
+	end
+.FightDone
+	writetext ObscuraGymTrainer1RematchRegularText
+	waitbutton
+.no
+	closetext
+	end
+	
+ObscuraGymTrainerRematch3:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_3_REMATCH
+	iftrue .FightDone
+	writetext ObscuraGymTrainer1RematchSeenText
+	yesorno
+	iffalse .no
+	closetext
+	waitsfx
+	winlosstext ObscuraQuiz3WinText, 0
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	loadtrainer LASS, KATHY_7
+	jump .cont
+.eightbadges
+	loadtrainer LASS, KATHY_8
+.cont
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmapmusic
+	setevent EVENT_BEAT_OBSCURA_GYM_TRAINER_3_REMATCH
+	end
+.FightDone
+	writetext ObscuraGymTrainer1RematchRegularText
+	waitbutton
+.no
+	closetext
+	end
+	
+ObscuraGymTrainerRematch4:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_4_REMATCH
+	iftrue .FightDone
+	writetext ObscuraGymTrainer1RematchSeenText
+	yesorno
+	iffalse .no
+	closetext
+	waitsfx
+	winlosstext ObscuraQuiz4WinText, 0
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	loadtrainer LASS, KATHY_7
+	jump .cont
+.eightbadges
+	loadtrainer LASS, KATHY_8
+.cont
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmapmusic
+	setevent EVENT_BEAT_OBSCURA_GYM_TRAINER_4_REMATCH
+	end
+.FightDone
+	writetext ObscuraGymTrainer1RematchRegularText
+	waitbutton
+.no
+	closetext
+	end
+	
+ObscuraGymTrainerRematch5:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_5_REMATCH
+	iftrue .FightDone
+	writetext ObscuraGymTrainer5RematchSeenText
+	yesorno
+	iffalse .no
+	closetext
+	waitsfx
+	winlosstext ObscuraGymClerk2WinText, 0
+	checkcode VAR_BADGES
+	ifequal 8, .eightbadges
+	loadtrainer LASS, KATHY_7
+	jump .cont
+.eightbadges
+	loadtrainer LASS, KATHY_8
+.cont
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmapmusic
+	setevent EVENT_BEAT_OBSCURA_GYM_TRAINER_5_REMATCH
+	end
+.FightDone
+	writetext ObscuraGymClerk2Text5
+	waitbutton
+.no
+	closetext
+	end
+	
+ObscuraGymTrainer1RematchSeenText:
+	text "No quiz this time."
+	line "Only a battle!"
+	
+	para "You ready?"
+	done
+	
+ObscuraGymTrainer1RematchRegularText:
+	text "Enjoy the rest of"
+	line "your MUSEUM visit."
+	done
+
+ObscuraGymTrainer5RematchSeenText:
+	text "Back for a rematch"
+	line "with ROCKY?"
+	
+	para "Ready for battle"
+	line "time once again?"
 	done

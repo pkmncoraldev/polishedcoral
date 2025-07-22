@@ -17,13 +17,13 @@ SeasideCaveB2F_MapScriptHeader:
 	const SEASIDE_CAVE_B2F_DRAKLOAK
 
 SeasideCaveB2FDrakloak:
-	opentext
+	opentext TEXTBOX_POKEMON, DRAKLOAK
 	writetext SeasideCaveB2FDrakloakText
 	cry DRAKLOAK
 	waitbutton
 	closetext
 	waitsfx
-	loadwildmon DRAKLOAK, 46
+	loadwildmon DRAKLOAK, 50
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	if_equal $1, .lose

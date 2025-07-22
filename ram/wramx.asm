@@ -992,7 +992,6 @@ wRanchRaceSeconds:: ds 1
 wCurrentAirportBaggage:: ds 1
 
 ; map triggers
-wObscuraQuizzesDone::
 wAlways0Trigger:: ds 1
 wPlayerHouse1FTrigger:: ds 1
 wPlayerHouse2FTrigger:: ds 1
@@ -1274,8 +1273,7 @@ wPartyMonNicknamesEnd::
 wEncounterHouseMon:: ds 1
 
 wTextBoxSpeaker:: ds 1
-
-	ds 1 ; unused
+wObscuraQuizzesDone:: ds 1
 
 wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::

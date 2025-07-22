@@ -449,7 +449,7 @@ DEF MAP_NONE   EQU 0
 	newgroup													 ; 24
 	map_const OBSCURA_CITY,								  19, 27 ; 1
 	map_const OBSCURA_GATE,								   5,  4 ; 2
-	map_const OBSCURA_MUSEUM_1F,						  13,  8 ; 3
+	map_const OBSCURA_MUSEUM_1F,						  12,  8 ; 3
 	map_const OBSCURA_MUSEUM_2F,						  14,  8 ; 4
 	map_const OBSCURA_MUSEUM_3F,						   9,  8 ; 5
 	map_const OBSCURA_MUSEUM_EMPLOYEE_ROOM,				   7,  7 ; 6

@@ -25,7 +25,6 @@ ObscuraMuseum2F_MapScriptHeader:
 	signpost  8, 18, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 	signpost  8, 19, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 	signpost  9, 18, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
-	signpost  9, 19, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 	signpost  5, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 	signpost  5, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 	signpost 14,  8, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
@@ -47,6 +46,7 @@ ObscuraMuseum2F_MapScriptHeader:
 	signpost  9, 15, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodText
 	signpost  5, 16, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilFactText
 	signpost  9, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumWoodFactText
+	signpost  9, 19, SIGNPOST_JUMPTEXT, ObscuraMuseumTriassicFactText
 	signpost  4,  8, SIGNPOST_JUMPTEXT, ObscuraMuseum2FSign
 	signpost  6, 22, SIGNPOST_JUMPTEXT, ObscuraMuseum2FSign
 	signpost  7,  6, SIGNPOST_JUMPTEXT, ObscuraMuseumGymSign
@@ -95,7 +95,7 @@ ObscuraMuseum2FCallback:
 .skip3
 	checkevent EVENT_SNARE_AT_MUSEUM
 	iffalse .end
-;	changeblock $4, $6, $80					;FOR DEBUGGING. UNCOMMENT WHEN DONE.
+	changeblock $4, $6, $80
 .end
 	return
 	

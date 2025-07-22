@@ -141,9 +141,9 @@ ClearTextboxName::
 	
 WriteTextboxName::
 	ld a, [wTextBoxSpeaker]
-	cp $ff
+	cp TEXTBOX_POKEMON
 	jr z, WriteTextboxPokemonName
-	cp 0
+	cp TEXTBOX_NONE
 	ret z
 	ld e, a
 	ld d, 0

@@ -587,8 +587,9 @@ ObscuraMuseumFossilFactText:
 	para "a fossil can"
 	line "actually be any"
 	cont "trace of ancient"
-	cont "life preserved to"
-	cont "the modern day."
+	cont "organisms that is"
+	cont "preserved to the"
+	cont "modern day."
 	
 	para "Bones can indeed"
 	line "be fossils, but a"
@@ -626,6 +627,28 @@ ObscuraMuseumWoodFactText:
 	cont "but made entirely"
 	cont "of stone."
 	done
+	
+ObscuraMuseumTriassicFactText:
+	text "The oldest dinosaur"
+	line "fossil ever found"
+	cont "is believed to be"
+	cont "around 243 million"
+	cont "years old."
+	
+	para "It comes from the"
+	line "middle of the"
+	cont "Triassic Period"
+	cont "in a time known as"
+	cont "the Anisian Era."
+	
+	para "This would put it"
+	line "at 10-15 million"
+	cont "years older than"
+	cont "the previous"
+	cont "oldest fossil from"
+	cont "the Carnian Era."
+	done
+	
 	
 ObscuraMuseum3FRainbowWing:
 	jumptext ObscuraMuseum3FRainbowWingText

@@ -126,9 +126,7 @@ PlayerHouseDebugPoster:
 	jump .return
 .quests
 	closewindow
-	loadmenu .PlayerHouseDebugQuestMenuData
-	verticalmenu
-	iffalse .end
+	callasm QuestScrollingMenuAsm
 	if_equal $1, .mina
 	if_equal $2, .girls
 	if_equal $3, .pearl_1
@@ -537,24 +535,6 @@ PlayerHouseDebugPoster:
 	db "QUESTS@"
 	db "SFX TEST@"
 	db "PAGE 1@"
-	
-.PlayerHouseDebugQuestMenuData:
-	db $40 ; flags
-	db 00, 00 ; start coords
-	db 11, 19 ; end coords
-	dw .MenuData2PlayerHouseQuestDebug
-	db 1 ; default option
-; 0x48e04
-	
-.MenuData2PlayerHouseQuestDebug:
-	db $80 ; flags
-	db 6 ; items
-	db "ACTIVATE MINA@"
-	db "RESCUE GIRLS@"
-	db "BLACK PEARL 1@"
-	db "BLACK PEARL 2@"
-	db "ANCIENT BALL@"
-	db "BACK@"
 	
 PlayerHouseDebug2ItemsText:
 	text "Obtained"
@@ -1035,6 +1015,111 @@ PlayerHouseCheckConsoleAsm:
 	ld a, 2
 	ld [wScriptVar], a
 	ret
+
+QuestScrollingMenuAsm:
+	ld a, [wLostGirls]
+	push af
+	xor a
+	ld [wScriptVar], a
+	ld a, 5
+	ld [wLostGirls], a
+	call LoadStandardMenuDataHeader
+	ld hl, QuestScrollingMenuDataHeader
+	call CopyMenuDataHeader
+	call InitScrollingMenu
+	call UpdateSprites
+	xor a
+	ld [wMenuScrollPosition], a
+	call ScrollingMenu
+;	call CloseWindow
+	ld a, [wMenuJoypad]
+	cp B_BUTTON
+	jr z, .cancel
+	ld a, [wScrollingMenuCursorPosition]
+	inc a
+	ld [wScriptVar], a
+	xor a
+	ld [wPlaceBallsX], a
+	pop af
+	ld [wLostGirls], a
+	ret
+
+.cancel
+	xor a
+	ld [wPlaceBallsX], a
+	pop af
+	ld [wLostGirls], a
+	scf
+	ret
+	
+QuestScrollingMenuDataHeader: ; 0x13550
+	db $40 ; flags
+	db 01, 01 ; start coords
+	db 10, 18 ; end coords
+	dw QuestScrollingMenuDataHeader2
+	db 1 ; default option
+; 0x13558
+
+QuestScrollingMenuDataHeader2: ; 0x13558
+	db $10 ; flags
+	db 4, 0 ; rows, columns
+	db 1 ; horizontal spacing
+	dbw 0, wLostGirls
+	dba GetQuestScrollingMenuStrings
+	dba NULL
+	dba NULL
+	
+GetQuestScrollingMenuStrings:
+	ld a, 1
+	ld [wPlaceBallsX], a
+	ld a, [wLostGirls]
+	ld c, a
+	ld a, [wScrollingMenuCursorPosition]
+	cp c
+	jr nz, .placestring
+	call .placestring
+	xor a
+	ld [wPlaceBallsX], a
+	ret
+.placestring
+	push de
+	call GetString
+	ld d, h
+	ld e, l
+	pop hl
+	jp PlaceString
+
+GetString: ; 13575
+	push de
+	ld e, a
+	ld d, 0
+	ld hl, QuestStrings
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	pop de
+	ret
+	
+QuestStrings:
+	dw .Mina
+	dw .Girls
+	dw .BlackPearl1
+	dw .BlackPearl2
+	dw .AncientBall
+	dw .Back
+	dw .Back
+	dw .Back
+	dw .Back
+	dw .Back
+	
+.Mina:			db "ACTIVATE MINA@"
+.Girls:			db "RESCUE GIRLS@"
+.BlackPearl1:	db "BLACK PEARL 1@"
+.BlackPearl2:	db "BLACK PEARL 2@"
+.AncientBall:	db "ANCIENT BALL@"
+.Back:			db "BACK@"
 
 PlayerHouseBookshelf:
 	jumpstd picturebookshelf

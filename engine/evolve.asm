@@ -247,7 +247,7 @@ EvolveAfterBattle_MasterLoop:
 .location_specific
 	ld a, [wMapGroup]
 	cp GROUP_ICE_CAVE_ICE_ROCK_ROOM		;first map in location evo specific map group
-	jp nz, .dont_evolve_3
+	jp nz, .dont_evolve_2
 ;fallthru
 .location
 	ld a, [wMapGroup]

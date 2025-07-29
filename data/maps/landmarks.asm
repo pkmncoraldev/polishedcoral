@@ -76,6 +76,7 @@ Landmarks: ; 0x1ca8c3
 	landmark 104, 116, Route29Name
 	landmark  92, 116, ObscuraCityName
 	landmark 128,  92, Route30Name
+	landmark   0,   0, Route32Name
 	landmark 140,  68, AureoleTownName
 	
 	landmark  28, 124, BrilloTownName
@@ -154,6 +155,7 @@ Route29Name:		   db "ROUTE 29@"
 GreenGrottoName:	   db "GREEN¯GROTTO@"
 ObscuraCityName:	   db "OBSCURA¯CITY@"
 Route30Name:		   db "ROUTE 30@"
+Route32Name:		   db "ROUTE 32@"
 AureoleTownName:	   db "AUREOLE¯TOWN@"
 
 LusterStationName:	   db "LUSTER¯CITY@"

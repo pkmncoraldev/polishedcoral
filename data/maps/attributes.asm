@@ -173,9 +173,8 @@ ENDM
 	connection south, LakeOnwa, LAKE_ONWA, -6
 	connection east, StarglowValley, STARGLOW_VALLEY, 0
 	
-	map_attributes Route9, ROUTE_9, $d1, NORTH | SOUTH | WEST
+	map_attributes Route9, ROUTE_9, $d1, NORTH | WEST
 	connection north, FlickerStation, FLICKER_STATION, 5
-	connection south, Route11, ROUTE_11, -5
 	connection west, EventideVillage, EVENTIDE_VILLAGE, 15
 	
 	map_attributes Route10, ROUTE_10, $71, NORTH | EAST
@@ -300,8 +299,10 @@ ENDM
 	map_attributes Route12, ROUTE_12, $02, EAST
 	connection east, Skatepark, SKATEPARK, -4
 	
-	map_attributes Route11, ROUTE_11, $02, NORTH
-	connection north, Route9, ROUTE_9, 5
+	map_attributes Route11, ROUTE_11, $30, 0
+	
+	map_attributes Route11_2, ROUTE_11_2, $30, SOUTH
+	connection south, Route32, ROUTE_32, 4
 	
 	map_attributes OnwaIntlAirport, ONWA_INTL_AIRPORT, $c4, NORTH
 	connection north, AirportRunway, AIRPORT_RUNWAY, 0
@@ -401,7 +402,7 @@ ENDM
 	map_attributes Route21, ROUTE_21, $30, NORTH
 	connection north, DuskTurnpike, DUSK_TURNPIKE, -1
 	
-	map_attributes DuskTurnpike, DUSK_TURNPIKE, $30, SOUTH | EAST
+	map_attributes DuskTurnpike, DUSK_TURNPIKE, $71, SOUTH | EAST
 	connection south, Route21, ROUTE_21, 1
 	connection east, Route22, ROUTE_22, 4
 	
@@ -483,6 +484,9 @@ ENDM
 	
 	map_attributes UnderwaterTempleOutside, UNDERWATER_TEMPLE_OUTSIDE, $7d, WEST
 	connection west, CoralReef, CORAL_REEF, 4
+	
+	map_attributes Route32, ROUTE_32, $02, NORTH
+	connection north, Route11_2, ROUTE_11_2, -4
 	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0
@@ -724,6 +728,7 @@ ENDM
 	map_attributes RadiantPokeCenter, RADIANT_POKECENTER, $0, 0
 	map_attributes RadiantMart, RADIANT_MART, $0, 0
 	map_attributes Route21Gate, ROUTE_21_GATE, $0, 0
+	map_attributes Route11Gate, ROUTE_11_GATE, $0, 0
 	map_attributes RadiantHouse, RADIANT_HOUSE, $0, 0
 	map_attributes RadiantField, RADIANT_FIELD, $59, 0
 	map_attributes DuskPokeCenter, DUSK_POKECENTER, $0, 0

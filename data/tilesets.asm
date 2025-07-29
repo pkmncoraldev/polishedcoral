@@ -694,6 +694,26 @@ INCBIN "data/tilesets/highway_attributes.bin.lz"
 TilesetHighwayColl::
 INCLUDE "data/tilesets/highway_collision.asm"
 
+SECTION "Tileset Data - highway2", ROMX
+
+TilesetHighway2GFX0::
+INCBIN "gfx/tilesets/highway2.2bpp.vram0.lz"
+
+TilesetHighway2GFX1::
+INCBIN "gfx/tilesets/highway2.2bpp.vram1.lz"
+
+TilesetHighway2GFX2::
+INCBIN "gfx/tilesets/highway2.2bpp.vram2.lz"
+
+TilesetHighway2Meta::
+INCBIN "data/tilesets/highway2_metatiles.bin.lz"
+
+TilesetHighway2Attr::
+INCBIN "data/tilesets/highway2_attributes.bin.lz"
+
+TilesetHighway2Coll::
+INCLUDE "data/tilesets/highway2_collision.asm"
+
 SECTION "Tileset Data - dive", ROMX
 
 TilesetDiveGFX0::
@@ -857,6 +877,7 @@ Tilesets::
 	tileset TilesetAirport
 	tileset TilesetOrphanage
 	tileset TilesetHighway
+	tileset TilesetHighway2
 	tileset TilesetDive
 	tileset TilesetBar
 	tileset TilesetAutumn

@@ -54,6 +54,8 @@ Route12Gate_BlockData:
 AirportGate_BlockData:
 Route23Gate_BlockData:
 Route25Gate_BlockData:
+Route21Gate_BlockData:
+Route11Gate_BlockData:
 	INCBIN "maps/NorthSouthGate.ablk.lz"
 	
 Route5Gate1F_BlockData:
@@ -751,9 +753,6 @@ RadiantPokeCenter_BlockData:
 RadiantMart_BlockData:
 	INCBIN "maps/Mart.ablk.lz"
 	
-Route21Gate_BlockData:
-	INCBIN "maps/NorthSouthGate.ablk.lz"
-	
 RadiantField_BlockData:
 	INCBIN "maps/RadiantField.ablk.lz"
 	
@@ -909,8 +908,8 @@ KomoreCommunityCenterMiddle_BlockData:
 KomoreCommunityCenterRight_BlockData:
 	INCBIN "maps/KomoreCommunityCenterRight.ablk.lz"
 	
-Route11Bridge_BlockData:
-	INCBIN "maps/Route11Bridge.ablk.lz"
+Route11_2_BlockData:
+	INCBIN "maps/Route11_2.ablk.lz"
 	
 ObscuraCity_BlockData:
 	INCBIN "maps/ObscuraCity.ablk.lz"
@@ -976,4 +975,7 @@ GreenGrotto2F_BlockData:
 	
 Route28OttosTent_BlockData:
 	INCBIN "maps/Route28OttosTent.ablk.lz"
+	
+Route32_BlockData:
+	INCBIN "maps/Route32.ablk.lz"
 	

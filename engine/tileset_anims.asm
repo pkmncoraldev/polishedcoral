@@ -307,6 +307,7 @@ TilesetSunsetAnim::
 	dw NULL,  DoneTileAnimation
 	
 TilesetHighwayAnim::
+TilesetHighway2Anim::
 TilesetGroveAnim::
 	dw VTiles2 tile $00, WriteTileToBuffer
 	dw NULL,  WaitTileAnimation

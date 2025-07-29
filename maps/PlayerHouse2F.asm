@@ -5,7 +5,7 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 22 ; warp events
+	db 23 ; warp events
 	warp_event  9,  0, PLAYER_HOUSE_1F, 3
 	warp_event  5, 10, SUNSET_BAY, 1
 	warp_event  7, 10, DAYBREAK_VILLAGE, 1
@@ -28,11 +28,12 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event 11, 18, BRIGHTBURG, 1
 	warp_event 13, 18, OBSCURA_CITY, 1
 	warp_event 15, 18, UNDERWATER_TEMPLE_2, 1
+	warp_event 17, 18, ROUTE_32, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
 
-	db 28 ; bg events
+	db 29 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
 	bg_event  5,  1, SIGNPOST_READ, PlayerHouseRadio
 	bg_event -1, -1, SIGNPOST_READ, PlayerHouseBookshelf
@@ -62,6 +63,7 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event 10, 18, SIGNPOST_JUMPTEXT, PlayerHouseBright
 	bg_event 12, 18, SIGNPOST_JUMPTEXT, PlayerHouseObscura
 	bg_event 14, 18, SIGNPOST_JUMPTEXT, PlayerHouseUnderwaterTemple
+	bg_event 16, 18, SIGNPOST_JUMPTEXT, PlayerHouseRoute32
 
 	db 7 ; object events
 	object_event  6,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_KRISS_HOUSE_2F_CONSOLE
@@ -132,6 +134,7 @@ PlayerHouseDebugPoster:
 	if_equal $3, .pearl_1
 	if_equal $4, .pearl_2
 	if_equal $5, .ancient_ball
+	if_equal $6, .bridge
 	closewindow
 	jump .page2
 .Items
@@ -498,6 +501,14 @@ PlayerHouseDebugPoster:
 	clearevent EVENT_SNARE_AT_MUSEUM
 	giveitem ANCIENT_BALL
 	jump .return
+.bridge
+	closewindow
+	writetext PlayerHouseDebug2BridgeText
+	waitbutton
+	setevent EVENT_CROSSROADS_CUTSCENE_DONE
+	setevent EVENT_ROUTE_11_BRIDGE_BUILT
+	clearevent EVENT_ROUTE_11_BRIDGE_NOT_BUILT
+	jump .return
 .end
 	closetext
 	end
@@ -587,6 +598,11 @@ PlayerHouseDebug2AncientBallText:
 	text "ANCIENT BALL"
 	line "collected from"
 	cont "UNDERWATER TEMPLE."
+	done
+	
+PlayerHouseDebug2BridgeText:
+	text "ROUTE 11 bridge"
+	line "built."
 	done
 	
 PlayerRoomSfxTest:
@@ -857,6 +873,10 @@ PlayerHouseUnderwaterTemple:
 	text "UNDERWATER TEMPLE"
 	done
 	
+PlayerHouseRoute32:
+	text "ROUTE 32"
+	done
+	
 PlayerHouse2FInitializeRoom:
 	special ToggleDecorationsVisibility
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
@@ -1021,7 +1041,7 @@ QuestScrollingMenuAsm:
 	push af
 	xor a
 	ld [wScriptVar], a
-	ld a, 5
+	ld a, 6
 	ld [wLostGirls], a
 	call LoadStandardMenuDataHeader
 	ld hl, QuestScrollingMenuDataHeader
@@ -1108,18 +1128,16 @@ QuestStrings:
 	dw .BlackPearl1
 	dw .BlackPearl2
 	dw .AncientBall
-	dw .Back
-	dw .Back
-	dw .Back
-	dw .Back
+	dw .Route11Bridge
 	dw .Back
 	
-.Mina:			db "ACTIVATE MINA@"
-.Girls:			db "RESCUE GIRLS@"
-.BlackPearl1:	db "BLACK PEARL 1@"
-.BlackPearl2:	db "BLACK PEARL 2@"
-.AncientBall:	db "ANCIENT BALL@"
-.Back:			db "BACK@"
+.Mina:				db "ACTIVATE MINA@"
+.Girls:				db "RESCUE GIRLS@"
+.BlackPearl1:		db "BLACK PEARL 1@"
+.BlackPearl2:		db "BLACK PEARL 2@"
+.AncientBall:		db "ANCIENT BALL@"
+.Route11Bridge:		db "ROUTE 11 BRIDGE@"
+.Back:				db "BACK@"
 
 PlayerHouseBookshelf:
 	jumpstd picturebookshelf

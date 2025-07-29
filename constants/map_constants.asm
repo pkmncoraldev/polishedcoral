@@ -302,6 +302,7 @@ DEF MAP_NONE   EQU 0
 	map_const ONWA_INTL_AIRPORT,						  28, 11 ; 6
 	map_const AIRPORT_RUNWAY,							  28,  8 ; 7
 	map_const AIRPORT,									   7, 11 ; 8
+	map_const ROUTE_11_GATE,							   4,  4 ; 9
 	
 	newgroup													 ; 16
 	
@@ -322,6 +323,8 @@ DEF MAP_NONE   EQU 0
 	map_const ROUTE_4,                                    31, 16 ; 10
 	map_const ROUTE_12,									  20, 25 ; 11
 	map_const ROUTE_19,									  24, 26 ; 12
+	map_const ROUTE_11_2,								  16, 15 ; 13
+	map_const ROUTE_32,									  13, 16 ; 14
 	
 	
 	newgroup													 ; 17
@@ -461,8 +464,8 @@ DEF MAP_NONE   EQU 0
 	
 	newgroup													 ; 25
 	map_const AUREOLE_TOWN,								  20, 23 ; 1
-	map_const ROUTE_29,									  38, 12 ; 6
-	map_const ROUTE_29_MEADOW,							  18, 10 ; 7
+	map_const ROUTE_29,									  38, 12 ; 2
+	map_const ROUTE_29_MEADOW,							  18, 10 ; 3
 	
 	newgroup													 ; 26
 	map_const INN_1F,									  13, 12 ; 1

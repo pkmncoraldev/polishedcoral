@@ -312,6 +312,9 @@ INCLUDE "maps/Airport.asm"
 INCLUDE "maps/LusterApartment2_2F.asm"
 INCLUDE "maps/LusterApartment2_1F.asm"
 INCLUDE "maps/Skatepark.asm"
+INCLUDE "maps/Route11_2.asm"
+INCLUDE "maps/Route32.asm"
+INCLUDE "maps/Route11Gate.asm"
 
 SECTION "Shimmer City Scripts", ROMX
 

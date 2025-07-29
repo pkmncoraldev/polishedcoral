@@ -11,8 +11,8 @@ Route1Gate_MapScriptHeader:
 	db 4 ; warp events
 	warp_event  3,  0, ROUTE_1, 1
 	warp_event  4,  0, ROUTE_1, 2
-	warp_event  3,  7, SUNSET_CAPE, 2
 	warp_event  4,  7, SUNSET_CAPE, 2
+	warp_event  3,  7, SUNSET_CAPE, 2
 
 	db 2 ; coord events
 	coord_event  3,  1, 0, SunsetOfficerStopsYou1

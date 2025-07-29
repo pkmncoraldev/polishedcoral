@@ -147,6 +147,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .mart
 	cp TILESET_HIGHWAY
 	jp z, .highway
+	cp TILESET_HIGHWAY_2
+	jp z, .highway2
 	cp TILESET_DIVE
 	jr z, .underwater
 	cp TILESET_BAR
@@ -247,9 +249,6 @@ LoadSpecialMapPalette: ; 494ac
 	jp LoadSevenBGPalettes
 	
 .highway
-	ld a, [wMapNumber]
-	cp MAP_CROSSROADS
-	jr z, .crossroads
 	cp MAP_ROUTE_22_TUNNEL
 	jr z, .highway_tunnel
 	cp MAP_BAR_BACK_ALLEY
@@ -265,7 +264,10 @@ LoadSpecialMapPalette: ; 494ac
 	call FarCopyWRAM
 	scf
 	ret
-.crossroads
+.highway2
+	ld a, [wMapNumber]
+	cp MAP_CROSSROADS
+	jp nz, .ranch
 	ld hl, CrossroadsPalette
 	ld a, [wTimeOfDayPal]
 	and 3
@@ -317,8 +319,6 @@ LoadSpecialMapPalette: ; 494ac
 	cp GROUP_DESERT_WASTELAND_OASIS
 	jp nz, .nett2_end
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_17
-	jp z, .desert_barrier
 	cp MAP_BRILLO_TOWN
 	jp z, .brillo
 	cp MAP_ROUTE_18_NORTH
@@ -395,10 +395,6 @@ LoadSpecialMapPalette: ; 494ac
 	call FarCopyWRAM
 	scf
 	ret
-	
-.desert_barrier
-	ld hl, ConstructionPalette
-	jp LoadTimeofDayBGPal3
 	
 .desert_house
 	ld hl, DesertHousePalette
@@ -611,8 +607,6 @@ LoadSpecialMapPalette: ; 494ac
 	
 .autumn
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_27
-	jr z, .construction2
 	cp MAP_ROUTE_26
 	jr z, .komore
 	cp MAP_KOMORE_VILLAGE
@@ -620,16 +614,6 @@ LoadSpecialMapPalette: ; 494ac
 .komore
 	ld hl, AutumnPalette
 	jr .ranch_finish
-.construction2
-	ld hl, ConstructionPalette
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 1 palettes
-	rst AddNTimes
-	ld de, wUnknBGPals + 3 palettes
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
 .ranch
 	ld hl, OutsideRanchPalette
 	
@@ -713,21 +697,9 @@ LoadSpecialMapPalette: ; 494ac
 	jp LoadTimeofDayBGPal6
 	
 .airport
-	ld a, [wMapNumber]
-	cp MAP_ONWA_INTL_AIRPORT
-	jp z, .airport_cont
-	cp MAP_AIRPORT_RUNWAY
-	jp nz, .construction
-.airport_cont
 	ld hl, OutsideLusterPalette
 	call LoadSevenTimeOfDayBGPalettes
 	ld hl, AirportFencePalette
-	jp LoadTimeofDayBGPal6
-	
-.construction
-	ld hl, OutsideLusterPalette
-	call LoadSevenTimeOfDayBGPalettes
-	ld hl, ConstructionPalette
 	jp LoadTimeofDayBGPal6
 	
 .mall
@@ -1167,9 +1139,6 @@ INCLUDE "maps/palettes/bgpals/brillo.pal"
 
 AirportFencePalette:
 INCLUDE "maps/palettes/bgpals/airportfence.pal"
-
-ConstructionPalette:
-INCLUDE "maps/palettes/bgpals/construction.pal"
 
 HighwayPalette:
 INCLUDE "maps/palettes/bgpals/highway.pal"

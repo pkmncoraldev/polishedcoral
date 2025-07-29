@@ -80,6 +80,7 @@ DEF SOUTH_ONWA_LANDMARK EQU const_value
 	const ROUTE_29
 	const OBSCURA_CITY
 	const ROUTE_30
+	const ROUTE_32
 	const AUREOLE_TOWN
 	
 	const BRILLO_TOWN		 ; 31

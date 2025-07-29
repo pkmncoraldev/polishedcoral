@@ -4,10 +4,12 @@ Route9_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route9Callback
 
-	db 3 ; warp events
+	db 5 ; warp events
 	warp_def 23, 21, 1, DODRIO_RANCH_HOUSE
 	warp_def 11, 30, 1, DODRIO_RANCH_BARN
 	warp_def 11, 31, 2, DODRIO_RANCH_BARN
+	warp_def 75, 19, 1, ROUTE_11_GATE
+	warp_def 75, 20, 2, ROUTE_11_GATE
 
 	db 27 ; coord events
 	xy_trigger 0, 24, 18, 0, DodrioRanchMapSignThing, 0, 0

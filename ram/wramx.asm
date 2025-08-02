@@ -1093,7 +1093,8 @@ wObscuraMuseum3FTrigger:: ds 1
 wUnderwaterTemple1Trigger:: ds 1
 wGlintGroveUndergroundTrigger:: ds 1
 wRoute3EastTrigger:: ds 1
-ds 14
+wRoute11Trigger:: ds 1
+ds 13
 
 wAmpharosFood:: ds 1
 

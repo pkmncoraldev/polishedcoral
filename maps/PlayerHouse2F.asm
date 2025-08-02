@@ -28,7 +28,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event 11, 18, BRIGHTBURG, 1
 	warp_event 13, 18, OBSCURA_CITY, 1
 	warp_event 15, 18, UNDERWATER_TEMPLE_2, 1
-	warp_event 17, 18, ROUTE_32, 1
+	warp_event 17, 18, ROUTE_11_2, 2
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
@@ -874,7 +874,7 @@ PlayerHouseUnderwaterTemple:
 	done
 	
 PlayerHouseRoute32:
-	text "ROUTE 32"
+	text "ROUTE 11 BRIDGE"
 	done
 	
 PlayerHouse2FInitializeRoom:

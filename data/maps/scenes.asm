@@ -152,4 +152,5 @@ MapTriggers::
 	scene_var FIGHTING_DOJO,						  wAlways0Trigger
 	scene_var ROUTE_3_EAST,						  	  wRoute3EastTrigger
 	scene_var ROUTE_12_GATE,						  wNettBuildingOfficeTrigger
+	scene_var ROUTE_11_2,					 	 	  wRoute11Trigger
 	db -1

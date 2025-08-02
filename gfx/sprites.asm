@@ -133,6 +133,7 @@ CoraPhoto4SpriteGFX::          INCBIN "gfx/sprites/cora_photo_4.2bpp.lz"
 PicnicSpriteGFX::         	   INCBIN "gfx/sprites/picnic.2bpp.lz"
 OttoSpriteGFX::         	   INCBIN "gfx/sprites/otto.2bpp.lz"
 FossilDisplaysSpriteGFX::      INCBIN "gfx/sprites/fossil_displays.2bpp.lz"
+FloatingBallSpriteGFX::   	   INCBIN "gfx/sprites/floating_ball.2bpp.lz"
 
 
 SECTION "Overworld Sprites 4", ROMX

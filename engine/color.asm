@@ -976,6 +976,8 @@ LoadMapPals::
 	jp z, .lab
 	cp TILESET_HIGHWAY
 	jp z, .highway
+	cp TILESET_HIGHWAY_2
+	jp z, .highway2
 	cp TILESET_HAUNTED
 	jp z, .haunted
 	cp TILESET_DIVE
@@ -1286,7 +1288,13 @@ LoadMapPals::
 	call AddNTimes
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
-	
+.highway2
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_11_2
+	jp nz, .highway
+	ld a, [wYCoord]
+	cp $25
+	jp c, .highway
 .computer
 	call .normal
 	ld hl, MapObjectPalsComputer

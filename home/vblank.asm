@@ -152,8 +152,9 @@ VBlank0::
 	call Serve2bppRequest
 	call LYOverrideStackCopy
 	call Serve1bppRequest
-	call AnimateTileset
+;	call AnimateTileset
 .done
+	call AnimateTileset
 
 	call PushOAM
 	; vblank-sensitive operations are done

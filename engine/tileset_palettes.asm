@@ -271,10 +271,10 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, CrossroadsPalette
 	ld a, [wTimeOfDayPal]
 	and 3
-	ld bc, 4 palettes
+	ld bc, 5 palettes
 	rst AddNTimes
-	ld de, wUnknBGPals + 3 palettes
-	ld bc, 4 palettes
+	ld de, wUnknBGPals + 2 palettes
+	ld bc, 5 palettes
 	ld a, $5
 	call FarCopyWRAM
 	scf

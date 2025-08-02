@@ -135,6 +135,11 @@
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 00, 00, 00
+;27 - Route 32
+	RGB 21, 15, 08
+	RGB 10, 09, 08
+	RGB 29, 28, 31
+	RGB 11, 09, 25
 ;last - Evo Locations
 	RGB 00, 00, 00
 	RGB 00, 00, 00

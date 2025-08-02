@@ -323,8 +323,6 @@ DEF MAP_NONE   EQU 0
 	map_const ROUTE_4,                                    31, 16 ; 10
 	map_const ROUTE_12,									  20, 25 ; 11
 	map_const ROUTE_19,									  24, 26 ; 12
-	map_const ROUTE_11_2,								  16, 15 ; 13
-	map_const ROUTE_32,									  13, 16 ; 14
 	
 	
 	newgroup													 ; 17
@@ -474,6 +472,10 @@ DEF MAP_NONE   EQU 0
 	map_const INN_ELEVATOR,								   2,  2 ; 4
 	map_const INN_VENT,									  18, 10 ; 5
 	map_const ROUTE_23_GATE,                          	   4,  4 ; 6
+	
+	newgroup
+	map_const ROUTE_11_2,								  15, 31 ; 1
+	map_const ROUTE_32,									   5,  5 ; 2
 	
 	newgroup													 ; EVO LOCATIONS GROUP
 	map_const ICE_CAVE_ICE_ROCK_ROOM,					   5,  5 ; 1

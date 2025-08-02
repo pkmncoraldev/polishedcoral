@@ -1,13 +1,14 @@
 Route11Gate_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, Route11GateCallback
 
 	db 4 ; warp events
 	warp_event  3,  0, ROUTE_9, 4
 	warp_event  4,  0, ROUTE_9, 5
-	warp_event  3,  7, ROUTE_11_2, 1
-	warp_event  4,  7, ROUTE_11_2, 1
+	warp_def  7,  3, 255, ROUTE_11
+	warp_def  7,  4, 255, ROUTE_11
 
 	db 0 ; coord events
 
@@ -19,6 +20,14 @@ Route11Gate_MapScriptHeader:
 	const_def 1 ; object constants
 	const ROUTE_11_GATE_OFFICER
 
+Route11GateCallback:
+	checkevent EVENT_ROUTE_11_BRIDGE_BUILT
+	iffalse .no_bridge
+	warpmod 1, ROUTE_11_2
+	return
+.no_bridge
+	warpmod 1, ROUTE_11
+	return
 	
 Route11GateOfficer:
 	jumptextfaceplayer Route11GateOfficerText

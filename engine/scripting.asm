@@ -272,6 +272,7 @@ ScriptCommandTable:
 	dw Script_strengthtree
 	dw Script_opentext2
 	dw Script_changetextboxspeaker
+	dw Script_priority
 
 StartScript:
 	ld hl, wScriptFlags
@@ -1233,6 +1234,26 @@ Script_variablesprite2:
 	pop de
 	ld [hl], a
 	farjp ReloadSpriteIndex
+
+Script_priority:
+	; parameters:
+;     person (SingleByteParam)
+	call GetScriptByte
+	ldh [hMapObjectIndexBuffer], a
+	call GetMapObject
+	ld l, c
+	ld h, b
+	ld a, [hl]
+	push af
+	call GetObjectStruct
+	pop af
+	dec a
+	ld bc, OBJECT_STRUCT_LENGTH
+	ld hl, wObject1Flags + 1
+	rst AddNTimes
+	call GetScriptByte
+	ld [hl], a
+	ret
 
 Script_appear:
 ; parameters:

@@ -1352,6 +1352,17 @@ else
 endc
 	endm
 	
+	enum priority_command
+macro priority
+	db priority_command
+	db \1 ; person
+if _NARG >= 2
+	db \2 ; priority
+else
+	db 2 ; high priority
+endc
+	endm
+	
 macro thisasm
 	callasm .asm\@
 	end

@@ -123,6 +123,7 @@ ObscuraMuseum3FDragonStoneScene:
 .cont3
 	waitbutton
 	closetext
+	priority OBSCURA_MUSEUM_3F_COLBY, HIGH_PRIORITY
 	playsound SFX_WARP_FROM
 	applyonemovement OBSCURA_MUSEUM_3F_COLBY, teleport_from
 	

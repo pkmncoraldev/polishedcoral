@@ -62,7 +62,7 @@ ObscuraMuseum1F_MapScriptHeader:
 	person_event SPRITE_SNARE_GIRL,  3,  4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MUSEUM_1F_ROCKY_SCENE
 	person_event SPRITE_MATRON,  4, 16, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC1, -1
 	person_event SPRITE_CUTE_GIRL, 13,  1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC2, -1
-	object_event  2, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, BAYLEEF, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FBayleef, -1
+	person_event SPRITE_ROCKER, 11, 15, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC3, -1
 	person_event SPRITE_SNARE,  7, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, ObscuraMuseum1FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE,  5,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare2, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE_GIRL, 12,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 0, ObscuraMuseum1FSnare3, EVENT_SNARE_GONE_FROM_MUSEUM
@@ -365,6 +365,13 @@ ObscuraMuseum1FNPC2:
 	end
 .beat
 	jumptextfaceplayer ObscuraMuseum1FNPC2Text3
+	
+ObscuraMuseum1FNPC3:
+	checkevent EVENT_SNARE_AT_MUSEUM
+	iftrue .snare
+	jumptextfaceplayer ObscuraMuseum1FNPC3Text1
+.snare
+	jumptextfaceplayer ObscuraMuseum1FNPC3Text2
 
 ObscuraMuseum1FNPC1Text1:
 	text "TEXT 1"
@@ -385,7 +392,7 @@ ObscuraMuseum1FNPC2Text2:
 	text "NO!"
 	
 	para "I won't give you"
-	line "my BAYLEEF!"
+	line "my #MON!"
 	done
 	
 ObscuraMuseum1FNPC2Text3:
@@ -394,6 +401,22 @@ ObscuraMuseum1FNPC2Text3:
 	cont "#MON!"
 	
 	para "That's messed up!"
+	done
+	
+ObscuraMuseum1FNPC3Text1:
+	text "TEXT 1"
+	done
+	
+ObscuraMuseum1FNPC3Text2:
+	text "Those guys took"
+	line "over so fast!"
+	
+	para "Before I knew what"
+	line "was going on, they"
+	cont "locked the doors."
+	
+	para "I had no time to"
+	line "make an escape!"
 	done
 	
 ObscuraMuseum1FBayleef:

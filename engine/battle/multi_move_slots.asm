@@ -2593,6 +2593,8 @@ WhirlwindUsers:
 	db PIDGEY
 	db PIDGEOTTO
 	db PIDGEOT
+	db WINGULL
+	db PELIPPER
 	db NOIBAT
 	db NOIVERN
 	db VOLCARONA

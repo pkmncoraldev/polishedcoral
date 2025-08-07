@@ -603,7 +603,7 @@ PokeFluteDesc:
 	next "awakens #MON.@"
 
 TheThingDesc:
-	db   "A shady package."
+	db   "A shady briefcase."
 	next "Best not to ask…@"
 
 TorchDesc:

@@ -226,7 +226,7 @@ DEF MAP_NONE   EQU 0
 	map_const TWINKLE_GYM_ENTRY,						   7,  7 ; 10
 	map_const TWINKLE_GYM_BLUE_ROOM,					   7,  9 ; 11
 	map_const TWINKLE_GYM_YELLOW_ROOM,					   8, 11 ; 12
-	map_const TWINKLE_GYM_RED_ROOM,						  24, 28 ; 13
+	map_const TWINKLE_GYM_RED_ROOM,						  26, 28 ; 13
 	map_const ROUTE_10_REST_HOUSE,						   4,  5 ; 14
 	map_const ROUTE_10_MOVE_REMINDER_HOUSE,				   4,  5 ; 15
 	map_const ROUTE_18_TRAILER,							   3,  2 ; 16

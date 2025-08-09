@@ -108,9 +108,9 @@ ItemIconPointers:
 	dba NettSpecsIcon
 	dba Room104KeyIcon
 	dba ServiceKeyIcon
-	dba UnusedItemIcon
-	dba ShinyCharmIcon
-	dba UnusedItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
 	dba FlowerPetalIcon
 	dba BlossomTeaIcon
 	dba PaintbrushIcon
@@ -125,14 +125,14 @@ ItemIconPointers:
 	dba LumBerryIcon
 	dba SitrusBerryIcon
 	dba FigyBerryIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
 	dba CometShardIcon
 	dba BerryJuiceIcon
 	dba SilkScarfIcon
@@ -208,12 +208,12 @@ ItemIconPointers:
 	dba ToxicOrbIcon
 	dba BlackSludgeIcon
 	dba MachoBraceIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
 	dba DragonScaleIcon
 	dba UpGradeIcon
 	dba DubiousDiscIcon
@@ -225,9 +225,9 @@ ItemIconPointers:
 	dba ChlorophialIcon
 	dba NuggetIcon
 	dba BigNuggetIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
 	dba PearlIcon
 	dba BigPearlIcon
 	dba BlackPearlIcon
@@ -244,14 +244,14 @@ ItemIconPointers:
 	dba MiracleTonicIcon
 	dba SunshineTeaIcon
 	dba SweetHoneyItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
-	dba UnusedItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
 	dba NoItemIcon

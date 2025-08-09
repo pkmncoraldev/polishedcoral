@@ -126,7 +126,7 @@
 	const ROOM_104_KEY ; 6b
 	const SERVICE_KEY  ; 6c
 	const OLD_SEA_MAP  ; 6d - replace
-	const SHINY_CHARM  ; 6e
+	const SHINY_CHARM  ; 6e - replace
 	const OVAL_CHARM   ; 6f - replace
 	const FLOWER_PETAL ; 70
 	const BLOSSOM_TEA  ; 71

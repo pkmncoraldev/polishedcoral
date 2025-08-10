@@ -603,7 +603,7 @@ GetQuantityInBag:
 
 INCLUDE "data/items/icon_pointers.asm"
 
-PlaceMenuItemName:
+PlaceMenuItemName::
 ; places a star near the name if registered
 	push de
 	dec de
@@ -656,7 +656,8 @@ PlaceMenuItemName:
 	call nz, GetItemName
 	pop hl
 	call PlaceString
-	
+;fallthrough
+GetItemIconTiles::
 	ld a, [wCurSpecies]
 	cp a, -1
 	jr z, .clear
@@ -682,7 +683,10 @@ PlaceMenuItemName:
 	jr z, .third
 	cp 3
 	jr z, .forth
+	cp 7
+	jr z, .eighth
 	jr .fifth
+.eighth
 .first
 	ld hl, VTiles0 tile $68
 	jr .finish

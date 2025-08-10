@@ -118,6 +118,12 @@ PlayerHouseDebugPoster:
 	if_equal $3, .quests
 	if_equal $4, .Sfx
 	closewindow
+.page3
+	loadmenu .PlayerHouseDebugMenu3Data
+	verticalmenu
+	iffalse .end
+	if_equal $1, .item_icon
+	closewindow
 	jump .page1
 .Mons
 	closewindow
@@ -453,6 +459,11 @@ PlayerHouseDebugPoster:
 	closewindow
 	callasm PlayerRoomSfxTest
 	jump .return
+.item_icon
+	closewindow
+	callasm PlayerRoomItemIconTest
+	special Special_UpdatePalsInstant
+	jump .return
 .mina
 	closewindow
 	writetext PlayerHouseDebug2MinaText
@@ -545,6 +556,20 @@ PlayerHouseDebugPoster:
 	db "DECORATIONS@"
 	db "QUESTS@"
 	db "SFX TEST@"
+	db "PAGE 3@"
+	
+.PlayerHouseDebugMenu3Data: ; 0x48dfc
+	db $40 ; flags
+	db 00, 00 ; start coords
+	db 11, 19 ; end coords
+	dw .MenuData2PlayerHouseDebug3
+	db 1 ; default option
+; 0x48e04
+
+.MenuData2PlayerHouseDebug3: ; 0x48e04
+	db $80 ; flags
+	db 2 ; items
+	db "ITEM ICON TEST@"
 	db "PAGE 1@"
 	
 PlayerHouseDebug2ItemsText:
@@ -604,6 +629,113 @@ PlayerHouseDebug2BridgeText:
 	text "ROUTE 11 bridge"
 	line "built."
 	done
+	
+PlayerRoomItemIconTest::
+	call Load1bppFont
+	call Load1bppFrame
+	ldh a, [hInMenu]
+	push af
+	ld a, $1
+	ldh [hInMenu], a
+	ld [wCurSpecies], a
+	
+	
+	xor a
+	ld [wPlaceBallsX], a	
+	jp .drawicon
+.loop
+	call JoyTextDelay
+	ld hl, hJoyPressed
+	ld a, [hl]
+	and B_BUTTON
+	jr nz, .end
+	ld hl, hJoyLast
+	ld a, [hl]
+	and D_UP
+	jr nz, .up
+	ld a, [hl]
+	and D_DOWN
+	jr nz, .down
+	jr .loop
+.end
+	xor a
+	ld [wCurSpecies], a
+	ld [wPlaceBallsX], a
+	pop af
+	ldh [hInMenu], a
+	call LoadStandardFont
+	call LoadFontsExtra
+	ret
+.up
+	ld a, [wCurSpecies]
+	cp $fe
+	jr nz, .cont_up
+	ld a, 1
+	ld [wCurSpecies], a
+	jr .drawicon
+.cont_up
+	inc a
+	ld [wCurSpecies], a
+	jr .drawicon
+.down
+	ld a, [wCurSpecies]
+	cp 1
+	jr nz, .cont_down
+	ld a, $fe
+	ld [wCurSpecies], a
+	jr .drawicon
+.cont_down
+	dec a
+	ld [wCurSpecies], a
+;fallthrough
+.drawicon
+	hlcoord 1, 14
+	ld de, .ClearTextString
+	call PlaceString
+	hlcoord 1, 16
+	ld de, PlayerRoomSfxTestString2
+	call PlaceString
+	ld a, [wCurSpecies]
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	hlcoord 6, 14
+	call PlaceString
+	ld a, 7
+	ld [wPlaceBallsX], a
+	farcall GetItemIconTiles
+	ld hl, .SpriteData
+	bcpixel 15, 3
+;copy oam
+	ld de, wSprites + 16
+	ld a, [hli]
+.loop2
+	push af
+	ld a, [hli]
+	add b
+	ld [de], a
+	inc de
+	ld a, [hli]
+	add c
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	pop af
+	dec a
+	jr nz, .loop2
+	jp .loop
+.SpriteData:
+	db 4
+	dsprite 0, 4, 0, 0, $68, $7
+	dsprite 0, 4, 1, 0, $69, $7
+	dsprite 1, 4, 0, 0, $6a, $7
+	dsprite 1, 4, 1, 0, $6b, $7
+.ClearTextString:
+	db "↑  ↓             @"
 	
 PlayerRoomSfxTest:
 	call WaitSFX
@@ -1401,3 +1533,107 @@ SetPlayerPalKrisHouse:
 	ld [wPlayerInitialPalette], a
 	jp ReplaceKrisSprite
 	
+	
+Bruh:
+	call Load1bppFont
+	call Load1bppFrame
+	ldh a, [hInMenu]
+	push af
+	ld a, $1
+	ldh [hInMenu], a
+	ld [wCurSpecies], a
+	hlcoord 0, 12
+	lb bc, 4, 18
+	call TextBox
+	hlcoord 1, 14
+	ld de, PlayerRoomSfxTestString
+	call PlaceString
+	hlcoord 1, 16
+	ld de, PlayerRoomSfxTestString2
+	call PlaceString
+	ld a, $1
+.loop
+	ld [wNamedObjectIndexBuffer], a
+	call JoyTextDelay
+	ld hl, hJoyPressed
+	ld a, [hl]
+	and B_BUTTON
+	jr nz, .end
+	ld hl, hJoyLast
+	ld a, [hl]
+	and D_UP
+	jr nz, .up
+	ld a, [hl]
+	and D_DOWN
+	jr nz, .down
+	jr .drawicon
+.up
+	ld a, [wCurSpecies]
+	cp $fe
+	jr nz, .cont_up
+	xor a
+	ld [wCurSpecies], a
+	jr .drawicon
+.cont_up
+	inc a
+	ld [wCurSpecies], a
+	jr .drawicon
+.down
+	ld a, [wCurSpecies]
+	cp 0
+	jr nz, .cont_down
+	ld a, $fe
+	ld [wCurSpecies], a
+	jr .drawicon
+.cont_down
+	dec a
+	ld [wCurSpecies], a
+;	jr .loop
+.drawicon
+
+	ld a, 7
+	ld [wPlaceBallsX], a
+	farcall GetItemIconTiles
+	ld hl, .SpriteData
+	bcpixel 15, 9
+;copy oam
+	ld de, wSprites + 16
+	ld a, [hli]
+.loop2
+	push af
+	ld a, [hli]
+	add b
+	ld [de], a
+	inc de
+	ld a, [hli]
+	add c
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	pop af
+	dec a
+	jr nz, .loop2
+	jp .loop
+	
+.end
+	xor a
+	ld [wCurSpecies], a
+	pop af
+	ldh [hInMenu], a
+	call LoadStandardFont
+	call LoadFontsExtra
+	ret
+.SpriteData:
+	db 4
+	dsprite 0, 4, 0, 0, $68, $7
+	dsprite 0, 4, 1, 0, $69, $7
+	dsprite 1, 4, 0, 0, $6a, $7
+	dsprite 1, 4, 1, 0, $6b, $7
+	
+.PointsString:
+	db " Pts@"

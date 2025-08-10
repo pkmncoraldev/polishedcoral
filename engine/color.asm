@@ -158,6 +158,8 @@ LoadItemIconPalette:
 	jr z, .third
 	cp 3
 	jr z, .forth
+	cp 7
+	jr z, .eighth
 	jr .fifth
 .first
 	ld de, wUnknOBPals palette 0 + 2
@@ -170,6 +172,9 @@ LoadItemIconPalette:
 	jr .cont
 .forth
 	ld de, wUnknOBPals palette 3 + 2
+	jr .cont
+.eighth
+	ld de, wUnknOBPals palette 7 + 2
 	jr .cont
 .fifth
 	ld de, wUnknOBPals palette 4 + 2

@@ -308,6 +308,14 @@ LoadTradeAnimationMonIcon:
 	ld [wCurIconTile], a
 	jp GetMemIconGFX
 
+LoadDebugMonIcon::
+	call SetMenuMonIconColor
+	ld a, [wd265]
+	ld [wCurIcon], a
+	ld a, $68
+	ld [wCurIconTile], a
+	jp GetMemIconGFX
+
 InitPartyMenuIcon:
 	ld a, [wCurIconTile]
 	push af

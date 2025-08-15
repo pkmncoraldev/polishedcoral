@@ -1,3 +1,5 @@
+DEF NUM_DEBUG_QUEST_MENU_OPTIONS EQU 7
+
 PlayerHouse2F_MapScriptHeader:
 	db 0 ; scene scripts
 
@@ -116,123 +118,32 @@ PlayerHouseDebugPoster:
 	if_equal $1, .deco
 	if_equal $2, .quests
 	if_equal $3, .Sfx
-	if_equal $4, .item_icon
+	if_equal $4, .flags
 	closewindow
 	jump .page1
 .Mons
 	closewindow
-	waitsfx
-	givepoke CHARIZARD, 99
-	givepoke HYPNO, 99
-	givepoke EEVEE, 99
+.Mons2
+	callasm PlayerRoomGiveMonAsm
+	special Special_UpdatePalsInstant
 	jump .return
 .quests
 	closewindow
 	callasm QuestScrollingMenuAsm
 	if_equal $1, .mina
-	if_equal $2, .girls
-	if_equal $3, .pearl_1
-	if_equal $4, .pearl_2
-	if_equal $5, .ancient_ball
-	if_equal $6, .bridge
+	if_equal $2, .boy
+	if_equal $3, .girls
+	if_equal $4, .pearl_1
+	if_equal $5, .pearl_2
+	if_equal $6, .ancient_ball
+	if_equal $7, .bridge
 	closewindow
 	jump .page2
 .Items
 	closewindow
-	writetext PlayerHouseDebug2ItemsText
-	waitbutton
-	giveitem CORAL_SHARD, 99
-	giveitem GOLD_TEA, 99
-	giveitem SILVER_TEA, 99
-	giveitem GOLD_LEAF, 99
-	giveitem SILVER_LEAF, 99
-	giveitem MAGMARIZER, 99
-	giveitem ELECTIRIZER, 99
-	giveitem NUGGET, 99
-	giveitem BIG_NUGGET, 99
-	giveitem MOOMOO_BREW, 99
-	giveitem RARE_CANDY, 99
-	giveitem FIVESTARHELM, 1
-	giveitem SWEET_HONEY, 1
-	giveitem BLOSSOM_TEA, 3
-	giveitem SUNSHINE_TEA, 99
-	giveitem PEARL, 99
-	giveitem BIG_PEARL, 99
-	giveitem LEAF_STONE, 99
-	giveitem FIRE_STONE, 99
-	giveitem WATER_STONE, 99
-	giveitem THUNDERSTONE, 99
-	giveitem MOON_STONE, 99
-	giveitem POKE_DOLL, 99
-	giveitem STARDUST, 99
-	giveitem FRESH_WATER, 99
-	giveitem SODA_POP, 99
-	giveitem LEMONADE, 99
-	giveitem MOOMOO_MILK, 99
-	giveitem BOTTLE_CAP, 99
-	giveitem RAGECANDYBAR, 99
-	giveitem LUCKY_EGG, 99
-	giveitem HP_UP, 99
-	giveitem PROTEIN, 99
-	giveitem IRON, 99
-	giveitem CARBOS, 99
-	giveitem CALCIUM, 99
-	giveitem ZINC, 99
-	giveitem PP_UP, 99
-	giveitem PP_MAX, 99
-	giveitem ETHER, 99
-	giveitem MAX_ETHER, 99
-	giveitem ELIXIR, 99
-	giveitem MAX_ELIXIR, 99
-	giveitem REVIVE, 99
-	giveitem MAX_REVIVE, 99
-	giveitem FULL_HEAL, 99
-	giveitem ANTIDOTE, 99
-	giveitem BURN_HEAL, 99
-	giveitem PARALYZEHEAL, 99
-	giveitem AWAKENING, 99
-	giveitem ICE_HEAL, 99
-	giveitem FULL_RESTORE, 99
-	giveitem MAX_POTION, 99
-	giveitem POTION, 99
-	giveitem SUPER_POTION, 99
-	giveitem HYPER_POTION, 99
-	giveitem REPEL, 99
-	giveitem SUPER_REPEL, 99
-	giveitem MAX_REPEL, 99
-	giveitem AMULET_COIN, 1
-	giveitem BIG_MALASADA, 1
-	giveitem BERRY_JUICE, 1
-	giveitem FLOWER_PETAL, 6
-	giveitem BLOSSOM_TEA, 3
-	giveitem SUNSHINE_TEA, 99
-	giveitem PAINTBRUSH, 99
-	
-	giveitem MASTER_BALL, 99
-	giveitem POKE_BALL, 99
-	giveitem GREAT_BALL, 99
-	giveitem ULTRA_BALL, 99
-;	giveitem SAFARI_BALL, 99
-	giveitem LEVEL_BALL, 99
-	giveitem LURE_BALL, 99
-	giveitem MOON_BALL, 99
-	giveitem FRIEND_BALL, 99
-	giveitem FAST_BALL, 99
-	giveitem HEAVY_BALL, 99
-	giveitem LOVE_BALL, 99
-;	giveitem PARK_BALL, 99
-	giveitem REPEAT_BALL, 99
-	giveitem TIMER_BALL, 99
-	giveitem NEST_BALL, 99
-	giveitem NET_BALL, 99
-	giveitem DIVE_BALL, 99
-	giveitem LUXURY_BALL, 99
-	giveitem HEAL_BALL, 99
-	giveitem QUICK_BALL, 99
-	giveitem DUSK_BALL, 99
-	giveitem PREMIER_BALL, 99
-	giveitem CHERISH_BALL, 99
-
+	farwritetext StdBlankText
+	callasm PlayerRoomItemIconTest
+	special Special_UpdatePalsInstant
 	setflag ENGINE_TRAINER_CARD
 	setflag ENGINE_POKEDEX
 	setflag ENGINE_PHONE_CARD
@@ -246,37 +157,12 @@ PlayerHouseDebugPoster:
 	addcellnum PHONE_WENDY
 	addcellnum PHONE_AUTO
 	setevent EVENT_MOM_GOT_POKEGEAR
-	giveitem TAPE_PLAYER
-	giveitem SKATEBOARD
-	giveitem BICYCLE
-	giveitem BLACK_PEARL
-	giveitem B_ROOM_KEY
-	giveitem R_ROOM_KEY
-	giveitem Y_ROOM_KEY
-	giveitem ANCIENT_BALL
-	giveitem ITEMFINDER
-	giveitem POLLEN_POUCH
-	giveitem LIBRARY_CARD
-	giveitem POKE_FLUTE
-	giveitem OLD_ROD
-	giveitem GOOD_ROD
-	giveitem RIVAL_POKEDEX
-	giveitem OVAL_CHARM
-	giveitem COIN_CASE
-	giveitem TRAIN_TICKET
-	giveitem TRAIN_PASS
-	giveitem TORCH
-	giveitem CLAY_POT
-	giveitem NETT_SPECS
-	giveitem COVER_FOSSIL
-	giveitem PLUME_FOSSIL
 	givecoins 20
 	setevent EVENT_KNOW_OLLIE
 	setevent EVENT_KNOW_GRIND
 	callasm FillPokedex
 	special InitRoamMoltres
 	callasm UnlockSongs
-	setevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
 	jump .return
 .badges
 	closewindow
@@ -450,11 +336,10 @@ PlayerHouseDebugPoster:
 	farwritetext StdBlankText
 	callasm PlayerRoomSfxTest
 	jump .return
-.item_icon
+.flags
 	closewindow
 	farwritetext StdBlankText
-	callasm PlayerRoomItemIconTest
-	special Special_UpdatePalsInstant
+	callasm PlayerRoomEventFlagTest
 	jump .return
 .mina
 	closewindow
@@ -468,6 +353,14 @@ PlayerHouseDebugPoster:
 	clearevent EVENT_ROUTE_29_MINA_GONE
 	clearevent EVENT_ROUTE_10_MINA_GONE
 	setevent EVENT_MINA_QUEST_ACTIVATED
+	jump .return
+.boy
+	closewindow
+	writetext PlayerHouseDebug2BoyText
+	waitbutton
+	domaptrigger EVENTIDE_VILLAGE, $2
+	setevent EVENT_SAVED_BIKESHOP_OWNERS_SON
+	clearevent EVENT_HAVENT_SAVED_BIKESHOP_OWNERS_SON
 	jump .return
 .girls
 	closewindow
@@ -543,16 +436,12 @@ PlayerHouseDebugPoster:
 
 .MenuData2PlayerHouseDebug2: ; 0x48e04
 	db $a0 ; flags
-	db 4 ; items
+	db 5 ; items
 	db "DECORATIONS@"
 	db "QUESTS@"
 	db "SFX TEST@"
-	db "ITEM ICON TEST@"
-	
-PlayerHouseDebug2ItemsText:
-	text "Obtained"
-	line "ITEMS."
-	done
+	db "EVENT FLAGS@"
+	db "PAGE 1@"
 	
 PlayerHouseDebug2BadgeText:
 	text "Obtained all"
@@ -572,6 +461,11 @@ PlayerHouseDebug2DecoText:
 PlayerHouseDebug2MinaText:
 	text "MINA quest"
 	line "started."
+	done
+	
+PlayerHouseDebug2BoyText:
+	text "EVENTIDE VILLAGE"
+	line "boy found."
 	done
 	
 PlayerHouseDebug2GirlsText:
@@ -602,7 +496,562 @@ PlayerHouseDebug2BridgeText:
 	line "built."
 	done
 	
-PlayerRoomItemIconTest::
+PlayerRoomEventFlagTest:
+	ldh a, [hInMenu]
+	push af
+	ld a, $1
+	ldh [hInMenu], a
+	farcall _LoadHexFont
+	xor a
+	ld [wTempMonHPEV], a
+	ld [wTempMonAtkEV], a
+	ld [wTempMonDefEV], a
+	ld [wTempMonSpdEV], a
+	ld [wMenuCursorX], a
+	ld [wPlaceBallsX], a
+	ld de, wTempMonHPEV
+.loop
+	call JoyTextDelay
+	ld hl, hJoyPressed
+	ld a, [hl]
+	and SELECT
+	jp nz, .select
+	ld a, [hl]
+	and A_BUTTON
+	jp nz, .A
+	ld a, [hl]
+	and B_BUTTON
+	jp nz, .end
+	ld hl, hJoyLast
+	ld a, [hl]
+	and D_LEFT
+	jr nz, .left
+	ld a, [hl]
+	and D_RIGHT
+	jr nz, .right
+	ld a, [hl]
+	and D_UP
+	jr nz, .up
+	ld a, [hl]
+	and D_DOWN
+	jr nz, .down
+	push de
+	hlcoord 1, 14
+	ld a, [wPlaceBallsX]
+	cp 0
+	jr nz, .clear_string
+	ld de, .PlayerRoomEventFlagTestSetString
+	jr .got_string
+.clear_string
+	ld de, .PlayerRoomEventFlagTestClearString
+.got_string
+	call PlaceString
+	hlcoord 1, 16
+	ld de, .PlayerRoomEventFlagTestSwapString
+	call PlaceString
+	call .load_flag
+	jr c, .X
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	hlcoord 17, 14
+	jr z, .flag_not_set
+	ld a, "!"
+	ld [hl], a
+	pop de
+	jr .draw_numbers
+.flag_not_set
+	ld a, "…"
+	ld [hl], a
+	pop de
+	jr .draw_numbers
+.X
+	hlcoord 17, 14
+	ld a, "X"
+	ld [hl], a
+	pop de
+	jr .draw_numbers
+.left
+	ld a, [wMenuCursorX]
+	cp 0
+	jr z, .draw_numbers
+	dec a
+	ld [wMenuCursorX], a
+	ld h, d
+	ld l, e
+	dec hl
+	ld d, h
+	ld e, l
+	jr .draw_numbers
+.right
+	ld a, [wMenuCursorX]
+	cp 3
+	jr z, .draw_numbers
+	inc a
+	ld [wMenuCursorX], a
+	ld h, d
+	ld l, e
+	inc hl
+	ld d, h
+	ld e, l
+	jr .draw_numbers
+.up
+	ld h, d
+	ld l, e
+	ld a, [hl]
+	inc a
+	and $f
+	ld [hl], a
+	jr .draw_numbers
+.down
+	ld h, d
+	ld l, e
+	ld a, [hl]
+	dec a
+	and $f
+	ld [hl], a
+.draw_numbers
+	push de
+	
+	hlcoord 12, 13
+	ld a, [wMenuCursorX]
+	cp 3
+	jr z, .cursor_3
+	cp 2
+	jr z, .cursor_2
+	cp 1
+	jr z, .cursor_1
+	ld a, $f8
+	ld [hli], a
+	ld bc, 3
+	ld a, " "
+	call ByteFill
+	jr .done_cursor
+.cursor_1
+	ld a, " "
+	ld [hli], a
+	ld a, $f8
+	ld [hli], a
+	ld bc, 2
+	ld a, " "
+	call ByteFill
+	jr .done_cursor
+.cursor_2
+	ld bc, 2
+	ld a, " "
+	call ByteFill
+	ld a, $f8
+	ld [hli], a
+	ld a, " "
+	ld [hl], a
+	jr .done_cursor
+.cursor_3
+	ld bc, 3
+	ld a, " "
+	call ByteFill
+	ld a, $f8
+	ld [hl], a
+	
+.done_cursor
+	hlcoord 12, 14
+	ld de, wTempMonHPEV
+	ld a, [de]
+	call .place_tile
+	hlcoord 13, 14
+	ld de, wTempMonAtkEV
+	ld a, [de]
+	call .place_tile
+	hlcoord 14, 14
+	ld de, wTempMonDefEV
+	ld a, [de]
+	call .place_tile
+	hlcoord 15, 14
+	ld de, wTempMonSpdEV
+	ld a, [de]
+	call .place_tile
+	
+	pop de
+	jp .loop
+	
+.place_tile
+	and $f
+	add $e0
+	ld [hl], a
+	ret
+.select
+	ld a, [wPlaceBallsX]
+	inc a
+	and 1
+	ld [wPlaceBallsX], a
+	jp .loop
+.A
+	push de
+	call .load_flag
+	jr c, .invalid
+	ld a, [wPlaceBallsX]
+	cp 0
+	jr nz, .clear
+;.set
+	ld b, SET_FLAG
+	call EventFlagAction
+	ld d, 0
+	ld e, SFX_TALLY
+	call PlaySFX
+	pop de
+	jp .loop
+.clear
+	ld b, RESET_FLAG
+	call EventFlagAction
+	ld d, 0
+	ld e, SFX_WALL_OPEN
+	call PlaySFX
+	pop de
+	jp .loop
+.invalid
+	ld d, 0
+	ld e, SFX_WRONG
+	call PlaySFX
+	pop de
+	jp .loop
+.load_flag
+	ld a, [wTempMonHPEV]
+	sla a
+	sla a
+	sla a
+	sla a
+	ld d, a
+	ld a, [wTempMonAtkEV]
+	add d
+	ld d, a
+	
+	ld a, [wTempMonDefEV]
+	sla a
+	sla a
+	sla a
+	sla a
+	ld e, a
+	ld a, [wTempMonSpdEV]
+	add e
+	ld e, a
+	
+	ld hl, NUM_EVENTS
+    ld a, h
+    cp d
+    jr nz, .high_done
+    ld a, l
+	dec a
+    cp e
+
+.high_done:
+    ret c
+
+    xor a
+	ret
+	
+.end
+	pop af
+	ldh [hInMenu], a
+	call LoadStandardFont
+	ret
+.PlayerRoomEventFlagTestSetString
+	db "A: SET  @"
+.PlayerRoomEventFlagTestClearString
+	db "A: CLEAR@"
+.PlayerRoomEventFlagTestSwapString
+	db "SELECT: SWAP@"
+	
+PlayerRoomGiveMonAsm:
+	call HideSprites
+	ldh a, [hInMenu]
+	push af
+	ld a, $1
+	ldh [hInMenu], a
+	xor a
+	ld [wPlaceBallsX], a
+	ld [wMenuCursorY], a
+	ld [wGiveMonForceAbility], a
+	hlcoord 0, 0
+	lb bc, 16, 18
+	call TextBox
+	call Load1bppFont
+	call Load1bppFrame
+	ld a, ABILITY_1
+	ld [wGiveMonForceAbility], a
+	ld a, 1
+	ld [wCurPartySpecies], a
+	ld [wSkipAskNickname], a
+	ld a, 1
+	ld [wCurForm], a
+	ld a, 1
+	ld [wCurPartyLevel], a
+	ld a, NO_ITEM
+	ld [wCurItem], a	
+	jp .drawmenu
+.loop
+	ld a, [wPlaceBallsX]
+	inc a
+	ld [wPlaceBallsX], a
+	call JoyTextDelay
+	ld hl, hJoyPressed
+	ld a, [hl]
+	and A_BUTTON
+	jp nz, .obtain
+	ld a, [hl]
+	and B_BUTTON
+	jp nz, .end
+	ld hl, hJoyLast
+	ld a, [hl]
+	and D_RIGHT
+	jr nz, .right
+	ld a, [hl]
+	and D_LEFT
+	jr nz, .left
+	ld a, [hl]
+	and D_UP
+	jr nz, .up
+	ld a, [hl]
+	and D_DOWN
+	jr nz, .down
+	jp .drawmenu
+.up
+	ld a, [wMenuCursorY]
+	cp 0
+	jr z, .loop
+	dec a
+	ld [wMenuCursorY], a
+	jr .loop
+.down
+	ld a, [wMenuCursorY]
+	cp 3
+	jr z, .loop
+	inc a
+	ld [wMenuCursorY], a
+	jr .loop
+.right
+	ld a, [wMenuCursorY]
+	cp 1
+	jr z, .right_lvl
+	cp 2
+	jr z, .right_ability
+	cp 3
+	jr z, .right_form
+;.right_mon
+	ld a, [wCurPartySpecies]
+	inc a
+	cp 0
+	jr nz, .right_mon_finish
+	inc a
+.right_mon_finish
+	ld [wCurPartySpecies], a
+	jr .loop
+.right_lvl
+	ld a, [wCurPartyLevel]
+	inc a
+	ld [wCurPartyLevel], a
+	jr .loop
+.right_ability
+	ld a, [wGiveMonForceAbility]
+	cp $60
+	jr z, .right_ability_loop
+	add $20
+	jr .right_ability_finish
+.right_ability_loop
+	ld a, $20
+.right_ability_finish
+	ld [wGiveMonForceAbility], a
+	jp .loop
+.right_form
+	ld a, [wCurForm]
+	inc a
+	ld [wCurForm], a
+	jp .loop
+.left
+	ld a, [wMenuCursorY]
+	cp 1
+	jr z, .left_lvl
+	cp 2
+	jr z, .left_ability
+	cp 3
+	jr z, .left_form
+;.left_mon
+	ld a, [wCurPartySpecies]
+	dec a
+	cp 0
+	jr nz, .left_mon_finish
+	dec a
+.left_mon_finish
+	ld [wCurPartySpecies], a
+	jp .loop
+.left_lvl
+	ld a, [wCurPartyLevel]
+	dec a
+	ld [wCurPartyLevel], a
+	jp .loop
+.left_ability
+	ld a, [wGiveMonForceAbility]
+	cp $20
+	jr z, .left_ability_loop
+	sub $20
+	jr .left_ability_finish
+.left_ability_loop
+	ld a, $60
+.left_ability_finish
+	ld [wGiveMonForceAbility], a
+	jp .loop
+.left_form
+	ld a, [wCurForm]
+	dec a
+	ld [wCurForm], a
+	jp .loop
+.obtain
+	ld d, 0
+	ld e, SFX_LEVEL_UP
+	call PlaySFX
+	ld a, 1
+	ld [wSkipAskNickname], a
+	ld a, NO_ITEM
+	ld [wCurItem], a
+	ld a, 0
+	and a
+	ld b, a
+	farcall GivePoke
+.drawmenu
+	push hl
+	hlcoord 3, 2
+	ld de, .PlayerRoomGiveMonMonString
+	call PlaceString
+	hlcoord 3, 4
+	ld de, .PlayerRoomGiveMonLevelString
+	call PlaceString
+	hlcoord 3, 6
+	ld de, .PlayerRoomGiveMonAbilityString
+	call PlaceString
+	hlcoord 3, 8
+	ld de, .PlayerRoomGiveMonFormString
+	call PlaceString
+	hlcoord 3, 2
+	ld a, [wMenuCursorY]
+	cp 0
+	jr z, .done_cursor_loop
+	ld e, a
+.cursor_loop_outer
+	ld a, 40
+.cursor_loop_inner
+	inc hl
+	dec a
+	cp 0
+	jr nz, .cursor_loop_inner
+	ld a, e
+	cp 0
+	dec e
+	jr nz, .cursor_loop_outer
+.done_cursor_loop
+	ld [hl], "▶"
+	pop hl
+	ld a, [wCurPartySpecies]
+	ld [wCurSpecies], a
+	ld [wd265], a
+	farcall LoadDebugMonIcon
+	hlcoord 9, 2
+	ld de, .ClearTextString
+	call PlaceString
+	call GetPokemonName
+	hlcoord 9, 2
+	call PlaceString
+	hlcoord 9, 4
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	ld de, wCurPartyLevel
+	call PrintNum
+	
+	ld a, [wGiveMonForceAbility]
+	sra a
+	sra a
+	sra a
+	sra a
+	sra a
+	ld [wSkipAskNickname], a
+	hlcoord 13, 6
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
+	ld de, wSkipAskNickname
+	call PrintNum
+	
+	hlcoord 10, 8
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	ld de, wCurForm
+	call PrintNum
+	call BGMapAnchorTopLeft
+	ld hl, .SpriteData
+	ld a, [wPlaceBallsX]
+	and 4
+	cp 2
+	jr c, .got_sprite_frame
+	ld hl, .SpriteData2
+.got_sprite_frame
+	bcpixel 3, 2
+;copy oam
+	ld de, wSprites
+	ld a, [hli]
+.loop2
+	push af
+	ld a, [hli]
+	add b
+	ld [de], a
+	inc de
+	ld a, [hli]
+	add c
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	pop af
+	dec a
+	jr nz, .loop2
+	jp .loop
+.SpriteData:
+	db 4
+	dsprite 0, 4, 0, 0, $68, $0
+	dsprite 0, 4, 1, 0, $69, $0
+	dsprite 1, 4, 0, 0, $6a, $0
+	dsprite 1, 4, 1, 0, $6b, $0
+	
+.SpriteData2:
+	db 4
+	dsprite 0, 4, 0, 0, $6c, $0
+	dsprite 0, 4, 1, 0, $6d, $0
+	dsprite 1, 4, 0, 0, $6e, $0
+	dsprite 1, 4, 1, 0, $6f, $0
+.ClearTextString
+	db "          @"
+.PlayerRoomGiveMonMonString
+	db " MON:@"
+.PlayerRoomGiveMonLevelString
+	db " LVL:@"
+.PlayerRoomGiveMonAbilityString
+	db " ABILITY:@"
+.PlayerRoomGiveMonFormString
+	db " FORM:@"
+.end
+	call LoadStandardFont
+	call LoadFontsExtra
+	ld b, BANK(StdBlankText)
+	ld hl, StdBlankText
+	call MapTextbox
+	xor a
+	ld [wCurItem], a
+	ld [wPlaceBallsX], a
+	ld [wGiveMonForceAbility], a
+	ld [wSkipAskNickname], a
+	pop af
+	ldh [hInMenu], a
+	call RefreshScreen
+	ret
+	
+PlayerRoomItemIconTest:
 	call Load1bppFont
 	call Load1bppFrame
 	farcall _LoadHexFont
@@ -610,7 +1059,8 @@ PlayerRoomItemIconTest::
 	push af
 	ld a, $1
 	ldh [hInMenu], a
-	ld [wCurSpecies], a
+	ld [wCurItem], a
+	ld [wItemQuantityChangeBuffer], a
 	
 	
 	xor a
@@ -618,7 +1068,17 @@ PlayerRoomItemIconTest::
 	jp .drawicon
 .loop
 	call JoyTextDelay
+	ld hl, hJoyReleased
+	ld a, [hl]
+	and SELECT
+	jp nz, .drawicon
 	ld hl, hJoyPressed
+	ld a, [hl]
+	and SELECT
+	jp nz, .drawicon
+	ld a, [hl]
+	and A_BUTTON
+	jr nz, .obtain
 	ld a, [hl]
 	and B_BUTTON
 	jr nz, .end
@@ -636,12 +1096,19 @@ PlayerRoomItemIconTest::
 	and D_DOWN
 	jr nz, .down
 	jr .loop
+.obtain
+	ld hl, wNumItems
+	call ReceiveItem
+	ld d, 0
+	ld e, SFX_LEVEL_UP
+	call PlaySFX
+	jr .loop
 .end
 	ld b, BANK(StdBlankText)
 	ld hl, StdBlankText
 	call MapTextbox
 	xor a
-	ld [wCurSpecies], a
+	ld [wCurItem], a
 	ld [wPlaceBallsX], a
 	pop af
 	ldh [hInMenu], a
@@ -649,42 +1116,71 @@ PlayerRoomItemIconTest::
 	call LoadFontsExtra
 	ret
 .right
-	ld a, [wCurSpecies]
+	ld a, [wCurItem]
 	add 10
-	ld [wCurSpecies], a
+	ld [wCurItem], a
 	jr .drawicon
 .left
-	ld a, [wCurSpecies]
+	ld a, [wCurItem]
 	sub 10
-	ld [wCurSpecies], a
+	ld [wCurItem], a
 	jr .drawicon
 .up
-	ld a, [wCurSpecies]
+	ld hl, hJoyDown
+	ld a, [hl]
+	and SELECT
+	jr z, .up_cont
+	ld a, [wItemQuantityChangeBuffer]
 	inc a
-	ld [wCurSpecies], a
+	ld [wItemQuantityChangeBuffer], a
+	jr .drawicon
+.up_cont
+	ld a, [wCurItem]
+	inc a
+	ld [wCurItem], a
 	jr .drawicon
 .down
-	ld a, [wCurSpecies]
+	ld hl, hJoyDown
+	ld a, [hl]
+	and SELECT
+	jr z, .down_cont
+	ld a, [wItemQuantityChangeBuffer]
 	dec a
-	ld [wCurSpecies], a
+	ld [wItemQuantityChangeBuffer], a
+	jr .drawicon
+.down_cont
+	ld a, [wCurItem]
+	dec a
+	ld [wCurItem], a
 ;fallthrough
 .drawicon
-	ld a, [wCurSpecies]
-	cp 0
-	call z, .set_fe
-	cp $ff
-	call z, .set_one
+	call .item_bounds
+	call .amount_bounds
 	hlcoord 1, 14
 	ld de, .ClearTextString
 	call PlaceString
 	hlcoord 1, 16
-	ld de, PlayerRoomSfxTestString2
+	ld de, PlayerRoomItemIconTestString
 	call PlaceString
-	ld a, [wCurSpecies]
+	ld hl, hJoyDown
+	ld a, [hl]
+	and SELECT
+	jr z, .name
+	hlcoord 6, 14
+	ld a, "×"
+	ld [hl], a
+	hlcoord 7, 14
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
+	ld de, wItemQuantityChangeBuffer
+	call PrintNum
+	jr .done_name
+.name
+	ld a, [wCurItem]
 	ld [wNamedObjectIndexBuffer], a
 	call GetItemName
 	hlcoord 6, 14
 	call PlaceString
+.done_name
 	call .drawnumbers
 	ld a, 7
 	ld [wPlaceBallsX], a
@@ -715,12 +1211,12 @@ PlayerRoomItemIconTest::
 	jr nz, .loop2
 	jp .loop
 .drawnumbers
-	hlcoord 12, 16
+	hlcoord 12, 12
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
 	ld de, wNamedObjectIndexBuffer
 	call PrintNum
 	
-	hlcoord 16, 16
+	hlcoord 16, 12
 	ld de, wNamedObjectIndexBuffer
 	inc hl
 	ld a, [de]
@@ -732,14 +1228,35 @@ PlayerRoomItemIconTest::
 	add $e0
 	ld [hld], a
 	ret
-.set_one
+.item_bounds
+	ld a, [wCurItem]
+	cp 0
+	jr z, .set_item_one
+	cp $ff
+	ret nz
 	ld a, 1
-	ld [wCurSpecies], a
+	ld [wCurItem], a
 	ret
-.set_fe
+.set_item_one
 	ld a, $fe
-	ld [wCurSpecies], a
+	ld [wCurItem], a
 	ret
+	
+.amount_bounds
+	ld a, [wItemQuantityChangeBuffer]
+	cp 100
+	jr nc, .set_amount_one
+	cp 0
+	ret nz
+.set_amount_99
+	ld a, 99
+	ld [wItemQuantityChangeBuffer], a
+	ret
+.set_amount_one
+	ld a, 1
+	ld [wItemQuantityChangeBuffer], a
+	ret
+	
 .SpriteData:
 	db 4
 	dsprite 0, 4, 0, 0, $68, $7
@@ -748,6 +1265,9 @@ PlayerRoomItemIconTest::
 	dsprite 1, 4, 1, 0, $6b, $7
 .ClearTextString:
 	db "↑  ↓             @"
+	
+PlayerRoomItemIconTestString:
+	db "A:Get   SEL:Amount@"
 	
 PlayerRoomSfxTest:
 	call WaitSFX
@@ -770,7 +1290,7 @@ PlayerRoomSfxTest:
 	call PlaceString
 	hlcoord 1, 16
 	ld de, PlayerRoomSfxTestString2
-	call PlaceString	
+	call PlaceString
 	jp .drawnumbers
 .loop
 	call JoyTextDelay
@@ -1205,7 +1725,7 @@ QuestScrollingMenuAsm:
 	push af
 	xor a
 	ld [wScriptVar], a
-	ld a, 6
+	ld a, NUM_DEBUG_QUEST_MENU_OPTIONS
 	ld [wLostGirls], a
 	call LoadStandardMenuDataHeader
 	ld hl, QuestScrollingMenuDataHeader
@@ -1288,6 +1808,7 @@ GetString: ; 13575
 	
 QuestStrings:
 	dw .Mina
+	dw .Boy
 	dw .Girls
 	dw .BlackPearl1
 	dw .BlackPearl2
@@ -1296,6 +1817,7 @@ QuestStrings:
 	dw .Back
 	
 .Mina:				db "ACTIVATE MINA@"
+.Boy:				db "RESCUE BOY@"
 .Girls:				db "RESCUE GIRLS@"
 .BlackPearl1:		db "BLACK PEARL 1@"
 .BlackPearl2:		db "BLACK PEARL 2@"

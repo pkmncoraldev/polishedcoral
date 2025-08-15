@@ -273,6 +273,9 @@ endr
 .got_nature
 	ld b, a
 
+	ld a, [wGiveMonForceAbility]
+	cp 0
+	jr nz, .got_ability
 ; Random ability
 ; 5% hidden ability, otherwise 50% either main ability
 	call Random
@@ -2103,11 +2106,16 @@ GivePoke:: ; e277
 	ld [wCurItem], a
 	farcall SetCaughtData
 .set_caught_data
+	ld a, [wSkipAskNickname]
+	cp 0
+	jr nz, .skip_ask_nickname
 	farcall GiveANickname_YesNo
 	pop de
 	jr c, .skip_nickname
 	call InitNickname
-
+	jr .skip_nickname
+.skip_ask_nickname
+	pop de
 .skip_nickname
 	pop bc
 	pop de

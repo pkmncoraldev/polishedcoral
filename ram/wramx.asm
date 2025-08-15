@@ -400,7 +400,10 @@ wBGMapAnchor:: ds 2
 wOldTileset:: ds 1
 
 wTreeAnimationFrame:: ds 1
-	ds 62 ; unused
+
+wGiveMonForceAbility:: ds 1
+wSkipAskNickname:: ds 1
+	ds 60 ; unused
 
 wOverworldMapAnchor:: ds 2
 wMetatileStandingY:: ds 1

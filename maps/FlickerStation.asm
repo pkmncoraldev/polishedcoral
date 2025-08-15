@@ -28,7 +28,8 @@ FlickerStation_MapScriptHeader:
 	signpost 15,  8, SIGNPOST_READ, FlickerMartSign
 	signpost 32, 12, SIGNPOST_READ, FlickerSign
 
-	db 11 ; object events
+	db 12 ; object events
+	person_event SPRITE_OFFICER,  8, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationCop, EVENT_GOT_BIKE
 	person_event SPRITE_FAT_GUY, 33, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 31, 13, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationNPC2, -1
 	person_event SPRITE_CHILD, 18, 22, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC3, -1
@@ -37,12 +38,13 @@ FlickerStation_MapScriptHeader:
 	person_event SPRITE_COOL_DUDE, 27, 16, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, FlickerStationNPC6, -1
 	person_event SPRITE_HIKER, 13, 20, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC7, -1
 	person_event SPRITE_SNARE, 32, 17, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
-	person_event SPRITE_DISGUISEMAN, 1, 1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	person_event SPRITE_DISGUISEMAN,  1,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	itemball_event 18, 32, TRAIN_TICKET, 1, EVENT_FLICKER_STATION_TRAIN_TICKET
 	itemball_event 17, 10, MAX_REVIVE, 1, EVENT_FLICKER_STATION_POKEBALL
 
 
 	const_def 1 ; object constants
+	const FLICKER_STATION_COP
 	const FLICKER_STATION_NPC1
 	const FLICKER_STATION_NPC2
 	const FLICKER_STATION_NPC3
@@ -84,6 +86,30 @@ FlickerStationCallback:
 	setevent EVENT_FLICKER_STATION_GIRL_STEP_ASIDE
 .end
 	return
+	
+FlickerStationCop:
+	faceplayer
+	opentext
+	writetext FlickerStationCopText
+	waitbutton
+	closetext
+	spriteface FLICKER_STATION_COP, DOWN
+	end
+	
+FlickerStationCopText:
+	text "I'm sorry, but I"
+	line "can't let you pass."
+	
+	para "We've had a report"
+	line "that a child from"
+	cont "EVENTIDE VILLAGE"
+	cont "has gone missing."
+	
+	para "Once he is home"
+	line "safe and sound, "
+	cont "travel will be"
+	cont "allowed again."
+	done
 	
 FlickerStationSnare1:
 	moveperson FLICKER_STATION_SNARE, $0f, $23

@@ -63,8 +63,8 @@ EventidePokeCenterNPC3Text:
 	para "The GYM LEADER"
 	line "here is no joke!"
 	
-	para "I might not be"
-	line "ready for her…"
+	para "Maybe I should"
+	line "move on for now…"
 	done
 	
 EventidePokeCenterLitwickText1:

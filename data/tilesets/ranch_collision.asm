@@ -26,7 +26,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 19
 	tilecoll DODRIO_JUMP, DODRIO_JUMP, FLOOR, FLOOR ; 1a
 	tilecoll WALL, WALL, WALL, WALL ; 1b
-	tilecoll TALL_GRASS, TALL_GRASS, WALL, TALL_GRASS ; 1c
+	tilecoll WALL, WALL, WALL, WALL ; 1c
 	tilecoll COUNTER, WALL, TALL_GRASS, SKATE ; 1d
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 1e
 	tilecoll FLOOR, WALL, SKATE, WALL ; 1f
@@ -89,7 +89,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 58
 	tilecoll FLOOR, DOWN_WALL, NO_OLLIE, DOOR ; 59
 	tilecoll SKATE_LEDGE_DOWN, SKATE, WALL, SKATE ; 5a
-	tilecoll NO_OLLIE, FLOOR, NO_OLLIE, NO_OLLIE ; 5b
+	tilecoll SKATE, SKATE, WARP_CARPET_DOWN, WALL ; 5b
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 5c
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, FLOOR, FLOOR ; 5d
 	tilecoll WALL, WALL, WALL, DOOR ; 5e
@@ -181,7 +181,7 @@
 	tilecoll SKATE, SKATE_LEDGE_DOWN, FLOOR, WALL ; b4
 	tilecoll NO_OLLIE, FLOOR, NO_OLLIE, FLOOR ; b5
 	tilecoll FLOOR, FLOOR, ROCK_CLIMB, NO_OLLIE ; b6
-	tilecoll SKATE, SKATE, WARP_CARPET_DOWN, WALL ; b7
+	tilecoll WALL, WALL, WALL, WALL ; b7
 	tilecoll WALL, WALL, WALL, WALL ; b8
 	tilecoll WALL, WALL, WALL, WALL ; b9
 	tilecoll FLOOR, NO_OLLIE, FLOOR, NO_OLLIE ; ba

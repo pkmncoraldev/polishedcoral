@@ -16,9 +16,11 @@ EventideVillage_MapScriptHeader:
 	warp_event 31, 37, EVENTIDE_GYM, 1
 	warp_event 32, 37, EVENTIDE_GYM, 2
 
-	db 2 ; coord events
+	db 4 ; coord events
 	coord_event 11, 31, 0, EventideMakeYellowEvent
 	coord_event 11, 29, 1, EventideMakeGrayEvent
+	coord_event 25, 16, 2, EventideBikeshopStop1
+	coord_event 25, 17, 2, EventideBikeshopStop2
 
 	db 9 ; bg events
 	bg_event 24, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
@@ -31,7 +33,8 @@ EventideVillage_MapScriptHeader:
 	signpost 17, 14, SIGNPOST_READ, EventideVillagePokeCenterSign
 	signpost 25, 24, SIGNPOST_READ, EventideVillageMartSign
 
-	db 17 ; object events
+	db 18 ; object events
+	person_event SPRITE_BREEDER, 14, 23, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EventideVllageBikeShopOwner, EVENT_GOT_BIKE
 	person_event SPRITE_COWGIRL, 34, 20, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EventideVillageMilkGirl, -1
 	person_event SPRITE_ROCKER, 20, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageNPC1, -1
 	person_event SPRITE_CUTE_GIRL, 15, 30, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideVillageNPC2, -1
@@ -52,6 +55,7 @@ EventideVillage_MapScriptHeader:
 
 	
 	const_def 1 ; object constants
+	const EVENTIDE_VILLAGE_BIKE_SHOP_OWNER
 	const EVENTIDE_VILLAGE_MILK_GIRL
 	const EVENTIDE_VILLAGE_NPC1
 	const EVENTIDE_VILLAGE_NPC2
@@ -89,6 +93,77 @@ EventideMakeGrayEvent:
 	special Special_UpdatePalsInstant
 	dotrigger $0
 	end
+	
+EventideVllageBikeShopOwner:
+	checkevent EVENT_SAVED_BIKESHOP_OWNERS_SON
+	iffalse EventideBikeShopOwnerNpc
+	scall EventideBikeShopOwner
+	spriteface EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, UP
+	pause 5
+	applyonemovement EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, step_up
+	playsound SFX_ENTER_DOOR
+	disappear EVENTIDE_VILLAGE_BIKE_SHOP_OWNER
+	end
+	
+EventideBikeshopStop1:
+	special Special_StopRunning
+	playsound SFX_PAY_DAY
+	spriteface EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, DOWN
+	showemote EMOTE_SHOCK, EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, 15
+	spriteface PLAYER, LEFT
+	opentext TEXTBOX_LADY
+	writetext EventideBikeshopStopText1
+	waitbutton
+	closetext
+	applymovement PLAYER, Movement_EventideBikeshopStop1
+	pause 5
+	scall EventideBikeShopOwner
+	spriteface EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, UP
+	pause 5
+	applyonemovement EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, step_up
+	playsound SFX_ENTER_DOOR
+	disappear EVENTIDE_VILLAGE_BIKE_SHOP_OWNER
+	end
+	
+EventideBikeshopStop2:
+	special Special_StopRunning
+	playsound SFX_PAY_DAY
+	spriteface EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, DOWN
+	showemote EMOTE_SHOCK, EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, 15
+	spriteface PLAYER, LEFT
+	opentext TEXTBOX_LADY
+	writetext EventideBikeshopStopText1
+	waitbutton
+	closetext
+	applymovement PLAYER, Movement_EventideBikeshopStop2
+	pause 5
+	scall EventideBikeShopOwner
+	spriteface EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, UP
+	pause 5
+	applyonemovement EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, step_up
+	playsound SFX_ENTER_DOOR
+	disappear EVENTIDE_VILLAGE_BIKE_SHOP_OWNER
+	end
+	
+EventideBikeshopStopText1:
+	text "Excuse me!"
+	
+	para "Please come here"
+	line "for a second."
+	done
+	
+Movement_EventideBikeshopStop1:
+	step_left
+	step_left
+	step_up
+	step_end
+	
+Movement_EventideBikeshopStop2:
+	step_left
+	step_left
+	step_up
+	step_up
+	step_end
 	
 EventideVillagePokeCenterSign:
 	jumpstd pokecentersign

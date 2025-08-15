@@ -72,6 +72,7 @@ SpookyForestKidStopsYou:
 	end
 
 SpookyForestSavedKidLeft:
+	domaptrigger EVENTIDE_VILLAGE, $2
 	setevent EVENT_SAVED_BIKESHOP_OWNERS_SON
 	clearevent EVENT_HAVENT_SAVED_BIKESHOP_OWNERS_SON
 	clearflag ENGINE_HAVE_FOLLOWER
@@ -92,6 +93,7 @@ SpookyForestSavedKidLeft:
 	end
 	
 SpookyForestSavedKidRight:
+	domaptrigger EVENTIDE_VILLAGE, $2
 	setevent EVENT_SAVED_BIKESHOP_OWNERS_SON
 	clearevent EVENT_HAVENT_SAVED_BIKESHOP_OWNERS_SON
 	clearflag ENGINE_HAVE_FOLLOWER

@@ -27,6 +27,8 @@ EventideBikeShopOwner:
 	writetext  EventideBikeShopOwnerGiveBikeText2
 	waitbutton
 	closetext
+	setevent EVENT_GOT_BIKE
+	domaptrigger EVENTIDE_VILLAGE, $0
 	end
 .havebike
 	writetext  EventideBikeShopOwnerGiveBikeText3

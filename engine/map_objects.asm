@@ -653,6 +653,7 @@ MapObjectMovementPattern:
 	dw .MovementCursola
 	dw .MovementLemonade
 	dw .MovementTrackPlayer
+	dw .MovementJukebox
 
 .RandomWalkY:
 	call Random
@@ -1128,7 +1129,7 @@ MapObjectMovementPattern:
 	
 .MovementBigMuk3:
 	ld a, PERSON_ACTION_BIG_MUK_3
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementStall:
 	ld a, PERSON_ACTION_STALL
@@ -1176,6 +1177,10 @@ MapObjectMovementPattern:
 	
 .MovementLemonade
 	ld a, PERSON_ACTION_LEMONADE
+	jr ._ActionA_StepType04
+	
+.MovementJukebox
+	ld a, PERSON_ACTION_JUKEBOX
 	jr ._ActionA_StepType04
 	
 .MovementDealerDown

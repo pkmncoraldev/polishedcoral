@@ -108,6 +108,7 @@ Facings:
 	dw FacingCursola8
 	dw FacingCursola9
 	dw FacingLemonade
+	dw FacingJukebox
 FacingsEnd: dw 0
 
 DEF NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -911,10 +912,16 @@ FacingFlower1:
 	db 2 ; #
 	db  8,  0, 4, $7d
 	db  8,  8, Y_FLIP | X_FLIP, $7d
-; 426a
+
 
 FacingFlower2:
 	db 2 ; #
 	db  9, -1, Y_FLIP | X_FLIP, $7d
 	db  9,  9, 4, $7d
-; 4273
+
+FacingJukebox:
+	db 4 ; #
+	db  -64,  16, 0, $08
+	db  -64,  24, 0, $09
+	db  -56,  16, 2, $0a
+	db  -56,  24, 2, $0b

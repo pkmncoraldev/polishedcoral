@@ -81,6 +81,7 @@ Pointers445f: ; 445f
 	dw SetFacingTileHalfwayRight,      SetFacingTileHalfwayRight  ; PERSON_ACTION_TILE_HALFWAY_RIGHT
 	dw SetFacingCursola, 			   SetFacingCursola			  ; PERSON_ACTION_CURSOLA
 	dw SetFacingLemonade,    		   SetFacingLemonade		  ; PERSON_ACTION_LEMONADE
+	dw SetFacingJukebox,    		   SetFacingJukebox			  ; PERSON_ACTION_JUKEBOX
 	
 ; 44a3
 
@@ -674,6 +675,10 @@ SetFacingCardTable4:
 	
 SetFacingLemonade:
 	ld a, FACING_LEMONADE
+	jp SetFixedFacing
+	
+SetFacingJukebox:
+	ld a, FACING_JUKEBOX
 	jp SetFixedFacing
 	
 SetFacingDealerDown:

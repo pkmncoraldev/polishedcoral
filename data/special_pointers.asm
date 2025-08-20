@@ -199,5 +199,6 @@ SpecialsPointers::
 	add_special InitRoamZapdos
 	add_special InitRoamMoltres
 	add_special Special_ForceSkateboard
+	add_special Special_IncSecretCounter
 
 	add_special SpecialNone

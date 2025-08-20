@@ -115,8 +115,7 @@ Route23SetUpLeaves:
 Route23Secret:
 	dw EVENT_GOT_ROUTE_23_SECRET
 	opentext
-	writebyte MIRACLETONIC
-	copybytetovar wScriptVar
+	loadvar wScriptVar, MIRACLETONIC
 	itemtotext $0, $0
 	writetext .found_text
 	giveitem ITEM_FROM_MEM
@@ -125,6 +124,7 @@ Route23Secret:
 	specialsound
 	itemnotify
 	endtext
+	special Special_IncSecretCounter
 .bag_full
 	buttonsound
 	pocketisfull

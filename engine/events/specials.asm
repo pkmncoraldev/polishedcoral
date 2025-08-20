@@ -782,3 +782,9 @@ Special_EnableInput:
 	ld [wForceStand], a
 	ret
 	
+Special_IncSecretCounter:
+	ld a, [wSecrets]
+	inc a
+	ld [wSecrets], a
+	ret
+	

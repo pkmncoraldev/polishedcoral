@@ -51,7 +51,11 @@ DesertTemple1_MapScriptHeader:
 	signpost  5, 18, SIGNPOST_IFSET, DesertTemple1Collapse4
 
 	db 1 ; object events
-	itemball_event  1,  7, MIRACLETONIC, 1, EVENT_GOT_MIRACLETONIC_2
+	person_event SPRITE_BALL_CUT_FRUIT,  7, 1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DesertTemple1Tonic, EVENT_GOT_DESERT_TEMPLE_SECRET
+	
+	
+	const_def 1 ; object constants
+	const DESERT_TEMPLE_TONIC
 
 DesertTemple1Callback:
 	setevent EVENT_ALWAYS_SET
@@ -123,6 +127,16 @@ DesertTemple1Trigger2:
 	waitbutton
 	closetext
 .skip
+	end
+
+DesertTemple1Tonic:
+	loadvar wCurItemBallQuantity, 1
+	loadvar wCurItemBallContents, MIRACLETONIC
+	farscall FindItemInBallScript
+	iffalse .end
+	disappear DESERT_TEMPLE_TONIC
+	special Special_IncSecretCounter
+.end
 	end
 
 DesertTemple1ClearTimerAsm:

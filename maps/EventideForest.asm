@@ -27,7 +27,7 @@ EventideForest_MapScriptHeader:
 	signpost 67, 37, SIGNPOST_READ, EventideForestSign2
 	bg_event 37, 17, SIGNPOST_ITEM + DUSK_STONE, EVENT_EVENTIDE_FOREST_HIDDEN_DUSK_STONE
 
-	db 13 ; object events
+	db 14 ; object events
 	person_event SPRITE_TWIN, 11, 31, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_FOREST_GHOST_GIRL_GONE
 	person_event SPRITE_TWIN,  5, 34, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_FOREST_GHOST_GIRL_GONE2
 	person_event SPRITE_YOUNGSTER, 12,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerEventide_1, -1
@@ -36,11 +36,12 @@ EventideForest_MapScriptHeader:
 	person_event SPRITE_POKEFAN_F, 62, 29, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 2, TrainerEventide_4, -1
 	person_event SPRITE_POKEFAN_M, 49, 20, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 4, TrainerEventide_5, -1
 	person_event SPRITE_BUG_CATCHER, 35, 18, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerEventide_6, -1
-	itemball_event 28, 22, SUPER_REPEL, 1, EVENT_FOREST_POKE_BALL_1
-	itemball_event 30, 47, SUPER_POTION, 1, EVENT_FOREST_POKE_BALL_2
+	itemball_event 29, 22, SUPER_REPEL, 1, EVENT_FOREST_POKE_BALL_1
+	itemball_event 33, 46, SUPER_POTION, 1, EVENT_FOREST_POKE_BALL_2
 	fruittree_event 27, 14, FRUITTREE_EVENTIDE_FOREST, PECHA_BERRY
-	cuttree_event 32, 22, EVENT_EVENTIDE_FOREST_CUT_TREE_1
+	cuttree_event 33, 22, EVENT_EVENTIDE_FOREST_CUT_TREE_1
 	cuttree_event 33, 16, EVENT_EVENTIDE_FOREST_CUT_TREE_2
+	person_event SPRITE_BALL_CUT_FRUIT, 61,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideForestTonic, EVENT_GOT_EVENTIDE_FOREST_SECRET
 
 	const_def 1 ; object constants
 	const FORESTGHOSTGIRL
@@ -53,6 +54,16 @@ EventideForestTrigger1:
 	end
 	
 EventideForestTrigger2:
+	end
+	
+EventideForestTonic:
+	loadvar wCurItemBallQuantity, 1
+	loadvar wCurItemBallContents, MIRACLETONIC
+	farscall FindItemInBallScript
+	iffalse .end
+	disappear 14
+	special Special_IncSecretCounter
+.end
 	end
 	
 EventideForestSign:

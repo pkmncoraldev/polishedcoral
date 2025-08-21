@@ -82,8 +82,8 @@ FindTMHMInBallScript::
 	disappear LAST_TALKED
 	opentext
 	writetext .text_found
-	playsound SFX_ITEM
-	pause 60
+	playsound SFX_GET_TM
+	waitsfx
 	tmhmnotify
 	closetext
 	end

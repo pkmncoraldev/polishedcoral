@@ -62,14 +62,14 @@ ObscuraMuseum1F_MapScriptHeader:
 	person_event SPRITE_SNARE_GIRL,  3,  4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MUSEUM_1F_ROCKY_SCENE
 	person_event SPRITE_MATRON,  4, 16, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC1, -1
 	person_event SPRITE_CUTE_GIRL, 13,  1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC2, -1
-	person_event SPRITE_ROCKER, 11, 15, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC3, -1
+	person_event SPRITE_ROCKER, 11, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC3, -1
+	person_event SPRITE_GRANNY,  3,  1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC4, -1
 	person_event SPRITE_SNARE,  7, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, ObscuraMuseum1FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE,  5,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare2, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE_GIRL, 12,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 0, ObscuraMuseum1FSnare3, EVENT_SNARE_GONE_FROM_MUSEUM
-	person_event SPRITE_FOSSIL_DISPLAYS,  6,  6, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_FOSSIL_DISPLAYS,  6,  7, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_FOSSIL_DISPLAYS,  4, 10, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_FOSSIL_DISPLAYS,  4, 11, SPRITEMOVEDATA_TILE_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_FOSSIL_DISPLAYS,  6,  6, SPRITEMOVEDATA_FOSSIL_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_FOSSIL_DISPLAYS,  6,  7, SPRITEMOVEDATA_FOSSIL_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_CORAL_STAR,  4, 11, SPRITEMOVEDATA_FOSSIL_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	
 	
 	const_def 1 ; object constants
@@ -78,6 +78,8 @@ ObscuraMuseum1F_MapScriptHeader:
 	const OBSCURA_MUSEUM_1F_SNARE_NPC
 	const OBSCURA_MUSEUM_1F_NPC1
 	const OBSCURA_MUSEUM_1F_NPC2
+	const OBSCURA_MUSEUM_1F_NPC3
+	const OBSCURA_MUSEUM_1F_NPC4
 	
 ObscuraMuseum1FTrigger0:
 ObscuraMuseum1FTrigger1:
@@ -322,7 +324,7 @@ ObscuraMuseumVolcaronaFossilText:
 	cont "its modern-day"
 	cont "counterpart."
 	
-	para "This specimin is"
+	para "This specimen is"
 	line "preserved in a"
 	cont "huge piece of"
 	cont "amber."
@@ -372,6 +374,13 @@ ObscuraMuseum1FNPC3:
 	jumptextfaceplayer ObscuraMuseum1FNPC3Text1
 .snare
 	jumptextfaceplayer ObscuraMuseum1FNPC3Text2
+	
+ObscuraMuseum1FNPC4:
+	checkevent EVENT_SNARE_AT_MUSEUM
+	iftrue .snare
+	jumptextfaceplayer ObscuraMuseum1FNPC4Text1
+.snare
+	jumptextfaceplayer ObscuraMuseum1FNPC4Text2
 
 ObscuraMuseum1FNPC1Text1:
 	text "TEXT 1"
@@ -417,6 +426,20 @@ ObscuraMuseum1FNPC3Text2:
 	
 	para "I had no time to"
 	line "make an escape!"
+	done
+	
+ObscuraMuseum1FNPC4Text1:
+	text "TEXT 1"
+	done
+	
+ObscuraMuseum1FNPC4Text2:
+	text "What has the world"
+	line "come to?"
+	
+	para "I can't even"
+	line "visit the museum"
+	cont "without fear of"
+	cont "violence!"
 	done
 	
 ObscuraMuseum1FBayleef:

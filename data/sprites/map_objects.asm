@@ -118,3 +118,5 @@ SpriteMovementData::
 	sprite_movement_data SPRITEMOVEFN_LEMONADE,         	 DOWN,   PERSON_ACTION_LEMONADE,         	$7c,    $02,    %0000 ; SPRITEMOVEDATA_LEMONADE
 	sprite_movement_data SPRITEMOVEFN_TRACK_PLAYER,          DOWN,   PERSON_ACTION_STAND,           	$00,    $00,    %0000 ; SPRITEMOVEDATA_TRACK_PLAYER
 	sprite_movement_data SPRITEMOVEFN_JUKEBOX,               LEFT,   PERSON_ACTION_JUKEBOX,           	$00,    $00,    %0000 ; SPRITEMOVEDATA_JUKEBOX
+	sprite_movement_data SPRITEMOVEFN_FOSSIL_1,   			 DOWN,   PERSON_ACTION_FOSSIL_1,  			$00,    $00,    %0000 ; SPRITEMOVEDATA_FOSSIL_1
+	sprite_movement_data SPRITEMOVEFN_FOSSIL_2,   			 DOWN,   PERSON_ACTION_FOSSIL_2,  			$00,    $00,    %0000 ; SPRITEMOVEDATA_FOSSIL_2

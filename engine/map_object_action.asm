@@ -82,6 +82,8 @@ Pointers445f: ; 445f
 	dw SetFacingCursola, 			   SetFacingCursola			  ; PERSON_ACTION_CURSOLA
 	dw SetFacingLemonade,    		   SetFacingLemonade		  ; PERSON_ACTION_LEMONADE
 	dw SetFacingJukebox,    		   SetFacingJukebox			  ; PERSON_ACTION_JUKEBOX
+	dw SetFacingFossil1,		       SetFacingFossil1	  		  ; PERSON_ACTION_FOSSIL_1
+	dw SetFacingFossil2,		       SetFacingFossil2	  		  ; PERSON_ACTION_FOSSIL_2
 	
 ; 44a3
 
@@ -679,6 +681,14 @@ SetFacingLemonade:
 	
 SetFacingJukebox:
 	ld a, FACING_JUKEBOX
+	jp SetFixedFacing
+	
+SetFacingFossil1:
+	ld a, FACING_FOSSIL_1
+	jp SetFixedFacing
+	
+SetFacingFossil2:
+	ld a, FACING_FOSSIL_2
 	jp SetFixedFacing
 	
 SetFacingDealerDown:

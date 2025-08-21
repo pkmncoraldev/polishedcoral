@@ -654,6 +654,8 @@ MapObjectMovementPattern:
 	dw .MovementLemonade
 	dw .MovementTrackPlayer
 	dw .MovementJukebox
+	dw .MovementFossil1
+	dw .MovementFossil2
 
 .RandomWalkY:
 	call Random
@@ -1133,11 +1135,11 @@ MapObjectMovementPattern:
 	
 .MovementStall:
 	ld a, PERSON_ACTION_STALL
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementBinoculars1:
 	ld a, PERSON_ACTION_BINOCULARS_1
-	jr ._ActionA_StepType04
+	jp ._ActionA_StepType04
 	
 .MovementBinoculars2:
 	ld a, PERSON_ACTION_BINOCULARS_2
@@ -1181,6 +1183,14 @@ MapObjectMovementPattern:
 	
 .MovementJukebox
 	ld a, PERSON_ACTION_JUKEBOX
+	jr ._ActionA_StepType04
+	
+.MovementFossil1
+	ld a, PERSON_ACTION_FOSSIL_1
+	jr ._ActionA_StepType04
+	
+.MovementFossil2
+	ld a, PERSON_ACTION_FOSSIL_2
 	jr ._ActionA_StepType04
 	
 .MovementDealerDown

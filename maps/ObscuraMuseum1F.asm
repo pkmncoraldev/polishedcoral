@@ -56,7 +56,7 @@ ObscuraMuseum1F_MapScriptHeader:
 	signpost  8, 15, SIGNPOST_JUMPTEXT, ObscuraMuseumVolcaronaFossilText
 	signpost  9, 19, SIGNPOST_UP, ObscuraMuseum1FVendingMachine
 
-	db 13 ; object events
+	db 20 ; object events
 	person_event SPRITE_RECEPTIONIST, 12, 11, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FReceptionist1, -1
 	person_event SPRITE_ROCKY,  3,  5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FRockyScript, EVENT_MUSEUM_1F_ROCKY_SCENE
 	person_event SPRITE_SNARE_GIRL,  3,  4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MUSEUM_1F_ROCKY_SCENE
@@ -64,6 +64,13 @@ ObscuraMuseum1F_MapScriptHeader:
 	person_event SPRITE_CUTE_GIRL, 13,  1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC2, -1
 	person_event SPRITE_ROCKER, 11, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC3, -1
 	person_event SPRITE_GRANNY,  3,  1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC4, -1
+	person_event SPRITE_CHILD,  3,  6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC5, EVENT_SNARE_AT_MUSEUM
+	person_event SPRITE_SUPER_NERD,  8,  2, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC6, EVENT_SNARE_AT_MUSEUM
+	person_event SPRITE_REDS_MOM,  8, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC7, EVENT_SNARE_AT_MUSEUM
+	person_event SPRITE_PONYTAIL,  8, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC8, EVENT_SNARE_AT_MUSEUM
+	person_event SPRITE_COOL_DUDE,  2, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC9, EVENT_SNARE_AT_MUSEUM
+	person_event SPRITE_TWIN,  7,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC10, EVENT_SNARE_AT_MUSEUM
+	object_event  2, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, BAYLEEF, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FBayleef, -1
 	person_event SPRITE_SNARE,  7, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, ObscuraMuseum1FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE,  5,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare2, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE_GIRL, 12,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 0, ObscuraMuseum1FSnare3, EVENT_SNARE_GONE_FROM_MUSEUM
@@ -80,6 +87,12 @@ ObscuraMuseum1F_MapScriptHeader:
 	const OBSCURA_MUSEUM_1F_NPC2
 	const OBSCURA_MUSEUM_1F_NPC3
 	const OBSCURA_MUSEUM_1F_NPC4
+	const OBSCURA_MUSEUM_1F_NPC5
+	const OBSCURA_MUSEUM_1F_NPC6
+	const OBSCURA_MUSEUM_1F_NPC7
+	const OBSCURA_MUSEUM_1F_NPC8
+	const OBSCURA_MUSEUM_1F_NPC9
+	const OBSCURA_MUSEUM_1F_NPC10
 	
 ObscuraMuseum1FTrigger0:
 ObscuraMuseum1FTrigger1:
@@ -92,7 +105,11 @@ ObscuraMuseum1FCallback:
 	iffalse .skip
 	changeblock $8, $e, $93
 	changeblock $8, $6, $75
+	changeblock $0, $8, $74
+	changeblock $2, $8, $74
+	changeblock $4, $8, $74
 	changeblock $c, $8, $74
+	changeblock $10, $8, $74
 .skip
 	clearevent EVENT_MUSEUM_FAILED_TERMINAL
 	callasm MusuemKeyboardAsm3
@@ -244,7 +261,7 @@ ObscuraMuseum1FVendingMachine:
 	db "FRESH WATER  ¥200@"
 	db "SODA POP     ¥300@"
 	db "RAGECANDYBAR ¥400@"
-	db "SOLD OUT@"
+	db "SOLD OUT!@"
 	db "CANCEL@"
 	
 ObscuraMuseum1FSoldOutText:
@@ -273,7 +290,7 @@ ObscuraMuseumArcheopsFossilText:
 	cont "adept at running"
 	cont "than flying."
 	
-	para "It needed a large"
+	para "It needed a big"
 	line "running start when"
 	cont "taking off, which"
 	cont "made airborne"
@@ -308,32 +325,23 @@ ObscuraMuseumVolcaronaFossilText:
 	text "Ancient VOLCARONA"
 	line "was very different"
 	cont "than the VOLCARONA"
-	cont "of today."
+	cont "we know today."
 	
 	para "It was covered in"
 	line "thick fur, and had"
-	cont "developed legs"
-	cont "that allowed it to"
-	cont "walk around as a"
-	cont "quadruped."
+	cont "developed legs,"
+	cont "letting it travel"
+	cont "as a quadruped."
 	
 	para "Despite this,"
 	line "it had wings that"
-	cont "rival or even"
 	cont "surpass those of"
 	cont "its modern-day"
 	cont "counterpart."
 	
-	para "This specimen is"
-	line "preserved in a"
-	cont "huge piece of"
-	cont "amber."
-	
-	para "This implies the"
-	line "existence of giant"
-	cont "megaflora in the"
-	cont "prehistoric ONWA"
-	cont "region."
+	para "Its FIRE abilities"
+	line "were less refined,"
+	cont "however."
 	done
 	
 ObscuraMuseumLockedDoor:
@@ -376,44 +384,100 @@ ObscuraMuseum1FNPC3:
 	jumptextfaceplayer ObscuraMuseum1FNPC3Text2
 	
 ObscuraMuseum1FNPC4:
-	checkevent EVENT_SNARE_AT_MUSEUM
-	iftrue .snare
-	jumptextfaceplayer ObscuraMuseum1FNPC4Text1
-.snare
-	jumptextfaceplayer ObscuraMuseum1FNPC4Text2
+	jumptextfaceplayer ObscuraMuseum1FNPC4Text
+	
+ObscuraMuseum1FNPC5:
+	jumptextfaceplayer ObscuraMuseum1FNPC5Text
+	
+ObscuraMuseum1FNPC6:
+	jumptextfaceplayer ObscuraMuseum1FNPC6Text
+	
+ObscuraMuseum1FNPC7:
+	faceplayer
+	opentext
+	writetext ObscuraMuseum1FNPC7Text
+	waitbutton
+	closetext
+	spriteface OBSCURA_MUSEUM_1F_NPC7, UP
+	end
+	
+ObscuraMuseum1FNPC8:
+	faceplayer
+	opentext
+	writetext ObscuraMuseum1FNPC8Text
+	waitbutton
+	closetext
+	spriteface OBSCURA_MUSEUM_1F_NPC8, UP
+	end
+	
+ObscuraMuseum1FNPC9:
+	faceplayer
+	opentext
+	writetext ObscuraMuseum1FNPC9Text
+	waitbutton
+	closetext
+	spriteface OBSCURA_MUSEUM_1F_NPC9, UP
+	end
+	
+ObscuraMuseum1FNPC10:
+	faceplayer
+	opentext
+	writetext ObscuraMuseum1FNPC10Text
+	waitbutton
+	closetext
+	spriteface OBSCURA_MUSEUM_1F_NPC10, RIGHT
+	end
 
 ObscuraMuseum1FNPC1Text1:
-	text "TEXT 1"
+	text "Thank goodness"
+	line "all the commontion"
+	cont "is over."
+	
+	para "Now I can go back"
+	line "to learning fun"
+	cont "fossil facts!"
 	done
 	
 ObscuraMuseum1FNPC1Text2:
-	text "Who are these"
-	line "people?"
+	text "Oh no! It's"
+	line "TEAM SNARE!"
 	
 	para "What do they want?"
 	done
 	
 ObscuraMuseum1FNPC2Text1:
-	text "TEXT 1"
+	text "My BAYLEEF loves"
+	line "visiting the"
+	cont "museum."
+	
+	para "We might have to"
+	line "stop coming for"
+	cont "her own safety…"
 	done
 	
 ObscuraMuseum1FNPC2Text2:
 	text "NO!"
 	
 	para "I won't give you"
-	line "my #MON!"
+	line "my BAYLEEF!"
 	done
 	
 ObscuraMuseum1FNPC2Text3:
 	text "This jerk was"
 	line "trying to take my"
-	cont "#MON!"
+	cont "BAYLEEF!"
 	
 	para "That's messed up!"
 	done
 	
 ObscuraMuseum1FNPC3Text1:
-	text "TEXT 1"
+	text "What did TEAM"
+	line "SNARE want from"
+	cont "the museum?"
+	
+	para "They didn't seem"
+	line "to be here for"
+	cont "people's #MON…"
 	done
 	
 ObscuraMuseum1FNPC3Text2:
@@ -428,11 +492,7 @@ ObscuraMuseum1FNPC3Text2:
 	line "make an escape!"
 	done
 	
-ObscuraMuseum1FNPC4Text1:
-	text "TEXT 1"
-	done
-	
-ObscuraMuseum1FNPC4Text2:
+ObscuraMuseum1FNPC4Text:
 	text "What has the world"
 	line "come to?"
 	
@@ -440,6 +500,51 @@ ObscuraMuseum1FNPC4Text2:
 	line "visit the museum"
 	cont "without fear of"
 	cont "violence!"
+	done
+	
+ObscuraMuseum1FNPC5Text:
+	text "The ROCK CANDY"
+	line "they sell here"
+	cont "looks like amber."
+	
+	para "Luckily it doesn't"
+	line "have any big ol'"
+	cont "bugs inside!"
+	done
+	
+ObscuraMuseum1FNPC6Text:
+	text "This museum is all"
+	line "rocks and fossils."
+	
+	para "I wish there was"
+	line "a space exhibit!"
+	done
+	
+ObscuraMuseum1FNPC7Text:
+	text "Ancient #MON"
+	line "are so cool!"
+	done
+	
+ObscuraMuseum1FNPC8Text:
+	text "Look at how big"
+	line "they are!"
+	
+	para "Amazing!"
+	done
+	
+ObscuraMuseum1FNPC9Text:
+	text "I don't get it…"
+	
+	para "Who comes to a"
+	line "museum to read"
+	cont "books?"
+	done
+	
+ObscuraMuseum1FNPC10Text:
+	text "This guy looks"
+	line "silly."
+	
+	para "I like him!"
 	done
 	
 ObscuraMuseum1FBayleef:

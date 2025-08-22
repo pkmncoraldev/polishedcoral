@@ -224,7 +224,7 @@
 	tilecoll SKATE, SKATE, WALL, SKATE ; df
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, DOOR, NO_OLLIE ; e0
 	tilecoll WALL, WALL, FLOOR, FLOOR ; e1
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e2
+	tilecoll WALL, FLOOR, WALL, FLOOR ; e2
 	tilecoll FLOOR, WALL, FLOOR, WALL ; e3
 	tilecoll FLOOR, FLOOR, NO_OLLIE, NO_OLLIE ; e4
 	tilecoll LEDGE_DOWN, FLOOR, WALL, NO_OLLIE ; e5

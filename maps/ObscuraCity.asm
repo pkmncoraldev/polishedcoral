@@ -18,28 +18,20 @@ ObscuraCity_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 8 ; bg events
+	db 6 ; bg events
 	signpost 35, 28, SIGNPOST_JUMPTEXT, ObscuraCitySign
 	signpost 14, 24, SIGNPOST_JUMPTEXT, ObscuraCityMuseumSign
 	signpost  9, 32, SIGNPOST_JUMPTEXT, ObscuraCityMuseumBackSign
 	signpost 34, 19, SIGNPOST_JUMPTEXT, ObscuraCityFortuneTellerSign
 	signpost 39, 22, SIGNPOST_READ, ObscuraPokeCenterSign
 	signpost 37, 32, SIGNPOST_READ, ObscuraMartSign
-	signpost 33, 33, SIGNPOST_JUMPTEXT, ObscuraCityUnfinishedSign
-	signpost 32, 33, SIGNPOST_JUMPTEXT, ObscuraCityUnfinishedSign
 	
 
-	db 9 ; object events
+	db 4 ; object events
 	person_event SPRITE_SNARE, 14, 22, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraCitySnare1, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE_GIRL, 14, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraCitySnare2, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_ROCKY, 14, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_OBSCURA_CITY_ROCKY_GONE
 	person_event SPRITE_DARCY, 19, 22, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
-	
-	person_event SPRITE_INVISIBLE, 31, 29, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraLockedDoor, -1
-	person_event SPRITE_INVISIBLE, 33, 17, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraLockedDoor, -1
-	person_event SPRITE_INVISIBLE, 35,  5, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraLockedDoor, -1
-	person_event SPRITE_INVISIBLE, 39, 13, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraLockedDoor, -1
-	person_event SPRITE_INVISIBLE, 47, 17, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraLockedDoor, -1
 	
 	
 	const_def 1 ; object constants
@@ -47,64 +39,6 @@ ObscuraCity_MapScriptHeader:
 	const OBSCURA_CITY_SNARE_2
 	const OBSCURA_CITY_ROCKY
 	const OBSCURA_CITY_DARCY
-	
-ObscuraLockedDoor:
-	jumptext ObscuraLockedDoorText
-	
-ObscuraLockedDoorText:
-	text "It's locked."
-	
-	para "It'll be open in"
-	line "the final version."
-	done
-	
-ObscuraCityUnfinishedSign:
-	text "PLEASE EXCUSE"
-	line "OUR MESS!"
-	
-	para "This part of the"
-	line "game is still"
-	cont "being made."
-	
-	para "Nothing in this"
-	line "town works except"
-	cont "the CENTER, MART,"
-	cont "and the MUSEUM."
-	
-	para "The NPCs in front"
-	line "of the MUSEUM say"
-	cont "it's closed, but"
-	cont "that's part of"
-	cont "the game."
-	
-	para "You can find a way"
-	line "inside."
-	
-	para "After that, the"
-	line "game is over for"
-	cont "now, though."
-	done
-	
-ObscuraCityUnfinishedSign2:
-	text "Actually, that's"
-	line "where the game"
-	cont "ends for now."
-	
-	para "Thanks for playing"
-	line "what's here so far."
-	
-	para "I hope you had"
-	line "fun."
-	
-	para "Let me know what"
-	line "you think."
-
-	para "Oh, and there is"
-	line "something to do"
-	cont "in BRIGHTBURG,"
-	cont "in case you missed"
-	cont "that."
-	done
 	
 ObscuraCityTrigger0:
 	end
@@ -221,7 +155,6 @@ ObscuraCityTrigger1:
 	disappear OBSCURA_CITY_ROCKY
 	pause 10
 	dotrigger $0
-	jumptext ObscuraCityUnfinishedSign2
 	end
 	
 Movement_ObscuraCityDarcy1:
@@ -277,8 +210,6 @@ ObscuraCityRockyText1:
 	para "She's going to be"
 	line "really upset that"
 	cont "it was stolen."
-	
-	para "…"
 	
 	para "…<WAIT_L>You know the"
 	line "kid that took it,"

@@ -630,8 +630,8 @@ ObscuraMuseumWoodFactText:
 	done
 	
 ObscuraMuseumTriassicFactText:
-	text "The oldest dinosaur"
-	line "fossil ever found"
+	text "The oldest known"
+	line "dinosaur fossil"
 	cont "is believed to be"
 	cont "around 243 million"
 	cont "years old."

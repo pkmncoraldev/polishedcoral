@@ -19,20 +19,9 @@ smalls - Additional Graphics
 Pik - Additional Graphics
 Sanqui and dannye/pokered-crysaudio - RBY Music Conversion
 
-Snak - Wingull Menu Sprite
-Gargoyle - Pelipper Menu Sprite
-Molk - Carvanha Menu Sprite
-Kedöshim - Meditite and Medicham Menu Sprites
-Internet_Goblin - Sharpedo, Trevenant, and Abomasnow Menu Sprites
-Sadfish - Cacturne, and A-Raichu Menu Sprites
-Turner - Snover Menu Sprite
-EeVeeEe - Drilbur, Excadrill, and Maractus Menu Sprites
-peach-n-key - Venipede Menu Sprites
-CuervoTerras - Scolipede Menu Sprites
-Goose - Phantump, Litwick, Lampent, and Chandelure Menu Sprite
-Ayinai - Noibat and Noivern Menu Sprites
-Megaman-Omega - Menu Sprites
-Soloo993 - Menu Sprites
+LuigiTKO - Menu Sprites
+Chamber - Additional Menu Sprites
+Soloo993 - Additional Menu Sprites
 DrunkenRobot - Testing
 Shlotz - Testing
 Nuuk - Testing

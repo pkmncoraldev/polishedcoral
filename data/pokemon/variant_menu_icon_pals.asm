@@ -13,5 +13,5 @@ VariantMenuMonIconColorsTable:
 	variconpal EXEGGUTOR, ALOLAN_FORM, GREEN, RED
 	variconpal WOOPER, PALDEAN_FORM, BROWN, BLUE
 	variconpal CORSOLA, GALARIAN_FORM, GRAY, PURPLE
-	variconpal CHERRIM, SUNNY_FORM, RED, PURPLE
+	variconpal CHERRIM, SUNNY_FORM, PINK, RED
 	db -1

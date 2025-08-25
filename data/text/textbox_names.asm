@@ -145,7 +145,6 @@ WriteTextboxName::
 	jr z, WriteTextboxPokemonName
 	cp TEXTBOX_NONE
 	ret z
-	call DelayFrame
 	ld e, a
 	ld d, 0
 	ld hl, TextBoxSpeakers
@@ -158,7 +157,6 @@ WriteTextboxName::
 	jp PlaceString
 	
 WriteTextboxPokemonName:
-	call DelayFrame
 	ld de, .TopLeft
 	hlcoord 0, 12
 	call PlaceString

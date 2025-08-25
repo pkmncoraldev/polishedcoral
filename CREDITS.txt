@@ -22,6 +22,7 @@ Sanqui and dannye/pokered-crysaudio - RBY Music Conversion
 LuigiTKO - Menu Sprites
 Chamber - Additional Menu Sprites
 Soloo993 - Additional Menu Sprites
+EeVeeEe - Additional Menu Sprites
 DrunkenRobot - Testing
 Shlotz - Testing
 Nuuk - Testing

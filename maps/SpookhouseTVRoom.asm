@@ -108,6 +108,7 @@ SpookHouseNPC3:
 	callasm GenericFinishBridge
 	playsound SFX_SCREAM
 	closetext
+	changetextboxspeaker TEXTBOX_NONE
 	waitsfx
 	setevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
 	callasm SpookHouseMenuAsm1
@@ -135,6 +136,8 @@ SpookHouseNPC3:
 	reloadmap
 	applyonemovement PLAYER, show_person
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
+	checkcode VAR_MONJUSTCAUGHT
+	if_equal SPIRITOMB, .CaughtSpiritomb
 	opentext TEXTBOX_UNKNOWN
 	writetext SpookHouseGhostText2
 	playsound SFX_EMBER
@@ -147,6 +150,32 @@ SpookHouseNPC3:
 	setevent EVENT_SPOOKHOUSE_BEATEN
 	setevent EVENT_SCARY_PAINTING_GONE_2
 	setevent EVENT_UNIQUE_ENCOUNTER_SPIRITOMB_BOSS
+	clearevent EVENT_SPOOKHOUSE_NOT_LOCKED
+	clearevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
+	clearevent EVENT_SCARY_DOOR_LEFT
+	clearevent EVENT_SPOOKHOUSE_DARK
+	clearevent EVENT_SCARY_PAINTING_GONE
+	warp OLD_MANOR_EXTERIOR, 14, 10
+	end
+.CaughtSpiritomb
+	pause 15
+	playsound SFX_METRONOME
+	special FadeOutPalettes
+	waitsfx
+	pause 20
+	opentext TEXTBOX_UNKNOWN
+	writetext SpookHouseGhostText12
+	pause 60
+	special FadeOutPalettes
+	closetext
+	pause 30
+	setevent EVENT_SPOOKHOUSE_GHOSTBEGONE
+	setevent EVENT_SPOOKHOUSE_BEATEN
+	setevent EVENT_SCARY_PAINTING_GONE_2
+	setevent EVENT_UNIQUE_ENCOUNTER_SPIRITOMB_BOSS
+	setevent EVENT_CAUGHT_SPIRITOMB
+	clearevent EVENT_CLEANSE_TAG_GONE
+	clearevent EVENT_SPOOKHOUSE_NOT_LOCKED
 	clearevent EVENT_SPOOKHOUSE_SHITSBOUTAGODOWN
 	clearevent EVENT_SCARY_DOOR_LEFT
 	clearevent EVENT_SPOOKHOUSE_DARK
@@ -168,7 +197,7 @@ SpookHouseNPC3:
 SpookHouseTVRoomMenuData: ; 49d14
 	db $40 ; flags
 	db 00, 00 ; start coords
-	db 07, 16 ; end coords
+	db 05, 16 ; end coords
 	dw .MenuData2
 	db 1 ; default option
 ; 49d1c
@@ -311,6 +340,10 @@ SpookHouseGhostText10:
 	
 SpookHouseGhostText11:
 	text "and ever and"
+	done
+	
+SpookHouseGhostText12:
+	text "<WAIT_L><WAIT_L>Thank you…"
 	done
 	
 SpookHouseTVTextOn:

@@ -64,9 +64,8 @@ GlintMart: ; 160f3
 	db -1
 
 StarglowMart: ; 160fa
-	db 8 ; # items
+	db 7 ; # items
 	db POKE_BALL
-	db REPEAT_BALL
 	db POTION
 	db ESCAPE_ROPE
 	db REPEL

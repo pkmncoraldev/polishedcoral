@@ -424,7 +424,7 @@ LakeRivalB:
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	pause 10
 	applymovement LAKERIVAL, Movement_Lake_Rival_2
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext LakeRivalText1
 	waitbutton
 	closetext
@@ -502,7 +502,7 @@ LakeRivalB:
 	
 .afterbattle
 	playmusic MUSIC_RIVAL_AFTER
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext LakeRivalText2
 	waitbutton
 	closetext

@@ -2744,13 +2744,48 @@ BattleStart_HideAllSpritesExceptBattleParticipants: ; 5602, called at battle sta
 	ld a, [wBattleScriptFlags]
 	bit 7, a
 	jr z, .ok
+	eventflagcheck EVENT_BIG_OW_MON_BATTLE
+	jr nz, .big_and_round
 	ldh a, [hLastTalked]
 	and a
 	jr z, .ok
 	call RespawnObject ; respawn opponent
 .ok
 	jp _UpdateSprites
-	
+.big_and_round ; expects all 32x32 OW battles to have all sprites as the first 4 in the map script
+	call CheckMamoswine ; STUPID STUPID STUPID hardcoded bullshit idk how else to do this better. i dont even care
+	jr c, .mamoswine_teal
+	xor a
+.loop
+	inc a
+	cp 5
+	jr z, .ok
+	push af
+	call RespawnObject ; respawn opponent
+	pop af
+	jr .loop
+.mamoswine_teal
+	ld a, 8
+.loop2
+	inc a
+	cp 13
+	jr z, .ok
+	push af
+	call RespawnObject ; respawn opponent
+	pop af
+	jr .loop2
+
+CheckMamoswine:
+	ld a, [wTileset]
+	cp TILESET_ICE_CAVE
+	ret nz
+	eventflagcheck EVENT_MAMOSWINE_PURPLE
+	jr nz, .teal
+	xor a
+	ret
+.teal
+	scf
+	ret
 
 ReturnFromFly_SpawnOnlyPlayer: ; 561d
 	call MaskAllObjectStructs ; clear sprites

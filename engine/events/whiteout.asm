@@ -66,6 +66,7 @@ WhiteoutHandleEvents:
 	giveitem TRAIN_TICKET
 .skip
 	setevent EVENT_ALWAYS_SET
+	clearevent EVENT_BIG_OW_MON_BATTLE
 	clearevent EVENT_ROUTE_20_GRASS_YELLOW
 	clearevent EVENT_TRAIN_GOING_EAST
 	clearevent EVENT_TRAIN_GOING_WEST

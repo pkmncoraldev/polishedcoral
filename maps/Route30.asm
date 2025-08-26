@@ -46,6 +46,7 @@ Route30PlayedFluteForSnorlax::
 	waitbutton
 	closetext
 	waitsfx
+	setevent EVENT_BIG_OW_MON_BATTLE
 	loadwildmon SNORLAX, 25
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
@@ -53,6 +54,7 @@ Route30PlayedFluteForSnorlax::
 	disappear 2
 	disappear 3
 	disappear 4
+	clearevent EVENT_BIG_OW_MON_BATTLE
 	setevent EVENT_FOUGHT_SNORLAX_ROUTE_30
 	reloadmapafterbattle
 	checkcode VAR_MONJUSTCAUGHT

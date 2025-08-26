@@ -85,7 +85,11 @@ _PokeFlute: ; 50730
 	if_equal 3, .sunbeam_sleepy_snare_script
 	if_equal 4, .sunbeam_sleeping_beauty_script
 .snorlax_script
+	checkcode VAR_MAPNUMBER
+	if_equal MAP_ROUTE_30, .route30
 	farjump Route4PlayedFluteForSnorlax
+.route30
+	farjump Route30PlayedFluteForSnorlax
 .sudowoodo_script
 	farjump LakePlayedFluteForSudowoodo
 .sunbeam_sleepy_snare_script

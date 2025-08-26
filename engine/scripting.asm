@@ -1583,6 +1583,8 @@ Script_loadtrainer:
 	ret
 
 Script_startbattle:
+	xor a
+	ld [wTextBoxSpeaker], a
 	call BufferScreen
 	predef StartBattle
 	ld a, [wBattleResult]

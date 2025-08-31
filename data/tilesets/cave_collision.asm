@@ -132,19 +132,19 @@
 	tilecoll LEDGE_DOWN_RIGHT, WALL, WALL, WALL ; 83
 	tilecoll WATER, DIVE, WATER, DIVE ; 84
 	tilecoll DIVE, WATER, DIVE, WATER ; 85
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 86
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 87
+	tilecoll CURRENT_DOWN, CURRENT_DOWN, CURRENT_DOWN, CURRENT_DOWN ; 86
+	tilecoll WALL, WALL, WALL, WALL ; 87
 	tilecoll WALL, FLOOR, WALL, WALL ; 88
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 89
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8a
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8b
-	tilecoll WALL, WALL, DOOR, DOOR ; 8c
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 8a
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 8b
+	tilecoll WATER, WATER, WATER, WATER ; 8c
 	tilecoll WALL, WALL, WALL, WALL ; 8d
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 8e
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 8f
-	tilecoll WALL, UP_WALL, WALL, FLOOR ; 90
-	tilecoll WALL, UP_WALL, WALL, FLOOR ; 91
-	tilecoll UP_WALL, WALL, FLOOR, WALL ; 92
+	tilecoll WATER, WATER, WATER, WATER ; 90
+	tilecoll WATER, WATER, WATER, WATER ; 91
+	tilecoll WATER, WATER, WATER, WATER ; 92
 	tilecoll WALL, FLOOR, WALL, WALL ; 93
 	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; 94
 	tilecoll FLOOR, FLOOR, PUDDLE, PUDDLE ; 95

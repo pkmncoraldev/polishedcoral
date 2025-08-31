@@ -4916,7 +4916,7 @@ MoveReminderNoMovesText:
 	text "Sorry… There isn't"
 	line "any move I can"
 
-	para "make that #mon"
+	para "make that #MON"
 	line "remember."
 	done
 	

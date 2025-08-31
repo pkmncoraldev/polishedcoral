@@ -745,3 +745,12 @@ UnknownText_0x90664: ; 0x90664
 	text_jump UnknownText_0x1c55ac
 	db "@"
 ; 0x90669
+
+CheckStandingOnEntrance:
+	ld a, [wPlayerStandingTile]
+	cp COLL_DOOR
+	ret z
+	cp COLL_STAIRCASE
+	ret z
+	cp COLL_CAVE
+	ret

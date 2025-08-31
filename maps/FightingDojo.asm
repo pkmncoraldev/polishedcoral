@@ -41,6 +41,7 @@ FightingDojoTrigger1:
 	applyonemovement PLAYER, remove_fixed_facing
 	playmusic MUSIC_DOJO
 	clearevent EVENT_TEST_OF_MIND_ACTIVE
+	clearevent EVENT_TIMER_ACTIVE
 	callasm LoadMapPals
 	special FadeInPalettes
 	scall FightingDojoZeroOutCounters
@@ -62,6 +63,7 @@ FightingDojoTrigger2:
 	pause 20
 	playmusic MUSIC_DOJO
 	clearevent EVENT_TEST_OF_BODY_ACTIVE
+	clearevent EVENT_TIMER_ACTIVE
 	setevent EVENT_FINISHED_TRIAL_OF_BODY
 	scall FightingDojoZeroOutCounters
 	pause 10
@@ -397,6 +399,7 @@ FightingDojoMaster:
 	scall FightingDojoZeroOutCounters
 	callasm TestOfMindAsm
 	setevent EVENT_TEST_OF_MIND_ACTIVE
+	setevent EVENT_TIMER_ACTIVE
 	end
 .testofbody
 	checkevent EVENT_FINISHED_TRIAL_OF_BODY
@@ -452,6 +455,7 @@ FightingDojoMaster:
 	scall FightingDojoZeroOutCounters
 	callasm TestOfMindAsm
 	setevent EVENT_TEST_OF_BODY_ACTIVE
+	setevent EVENT_TIMER_ACTIVE
 	end
 .said_no
 	writetext FightingDojoMasterTextNo2
@@ -476,6 +480,7 @@ FightingDojoMaster:
 TrialOfMindTimesUp::
 	playmusic MUSIC_DOJO
 	clearevent EVENT_TEST_OF_MIND_ACTIVE
+	clearevent EVENT_TIMER_ACTIVE
 	callasm TestOfMindAsm2
 	callasm LoadMapPals
 	special FadeInPalettes
@@ -513,6 +518,7 @@ TrialOfBodyTimesUp::
 	callasm TestOfMindAsm2
 	playmusic MUSIC_DOJO
 	clearevent EVENT_TEST_OF_BODY_ACTIVE
+	clearevent EVENT_TIMER_ACTIVE
 	scall FightingDojoZeroOutCounters
 	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterTestFailedText

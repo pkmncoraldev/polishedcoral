@@ -153,4 +153,5 @@ MapTriggers::
 	scene_var ROUTE_3_EAST,						  	  wRoute3EastTrigger
 	scene_var ROUTE_12_GATE,						  wNettBuildingOfficeTrigger
 	scene_var ROUTE_11_2,					 	 	  wRoute11Trigger
+	scene_var RIVER_RAPIDS,							  wAlways0Trigger
 	db -1

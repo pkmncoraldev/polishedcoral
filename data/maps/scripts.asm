@@ -482,6 +482,8 @@ INCLUDE "maps/ObscuraMuseumPhoto.asm"
 
 SECTION "Misc Map Scripts", ROMX
 INCLUDE "maps/ObscuraGym.asm"
+INCLUDE "maps/RiverRapidsEntrance.asm"
+INCLUDE "maps/RiverRapids.asm"
 
 SECTION "Aureole Scripts", ROMX
 INCLUDE "maps/AureoleTown.asm"

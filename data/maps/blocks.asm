@@ -979,3 +979,9 @@ Route28OttosTent_BlockData:
 Route32_BlockData:
 	INCBIN "maps/Route32.ablk.lz"
 	
+RiverRapidsEntrance_BlockData:
+	INCBIN "maps/RiverRapidsEntrance.ablk.lz"
+	
+RiverRapids_BlockData:
+	INCBIN "maps/RiverRapids.ablk.lz"
+	

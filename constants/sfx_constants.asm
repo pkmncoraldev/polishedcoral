@@ -223,6 +223,7 @@
 	const SFX_TEMPLE_RUMBLE               ; d9
 	const SFX_GRIND_2                     ; da
 	const SFX_THUNDERBOLT                 ; db
-	const SFX_GRAVITY                     ; de
+	const SFX_GRAVITY                     ; dc
+	const SFX_FINISH_RIVER_RAPIDS		  ; dd
 
 DEF NUM_SFX EQU const_value - 1

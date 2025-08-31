@@ -314,8 +314,8 @@ wMailboxItems:: ds MAILBOX_CAPACITY
 wMailboxEnd:: ds 1
 ENDU
 
-	ds 2 
-
+wButtonPressedFrameCooldownActive::	ds 1 
+wButtonPressedFrameCooldown:: ds 1
 wMonJustCaught:: ds 1
 
 wTapePlayerActive::	ds 1

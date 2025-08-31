@@ -23,6 +23,9 @@ GameTimer:: ; 209e
 	ldh [rSVBK], a
 
 	call UpdateGameTimer
+	call GetJoypad2
+
+.skip
 
 	pop af
 	ldh [rSVBK], a

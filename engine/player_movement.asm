@@ -408,14 +408,14 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ret
 
 .not_whirlpool
+	cp $33 ; waterfall
+	jr z, .waterfall
 	and $f0
-	cp $30 ; moving water
-	jr z, .water
 	cp $70 ; warps
 	jr z, .warps
 	jr .no_walk
 
-.water
+.waterfall
 	ld a, c
 	and 3
 	ld c, a
@@ -1090,6 +1090,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 .spin
 	ld de, SFX_SQUEAK
 	call PlaySFX
+.spin2
 	ld a, STEP_SPIN
 	call .DoStep
 	scf
@@ -1133,6 +1134,10 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 
 	and a
 	jr nz, .ExitWater
+	
+	ld a, [wSpinning]
+	and a
+	jp nz, .spin2
 
 	ld a, [wOWState]
 	set OWSTATE_SURF, a
@@ -1153,6 +1158,7 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 
 .surf_bump
 	xor a
+	ld [wSpinning], a
 	ret
 ; 801f3
 
@@ -2169,6 +2175,8 @@ CheckSpinning::
 	jr z, .start_spin
 	cp COLL_STOP_SPIN
 	jr z, .stop_spin
+	cp COLL_WATER
+	jr z, .stop_spin
 	ld a, [wSpinning]
 	and a
 	ret
@@ -2183,6 +2191,34 @@ CheckSpinning::
 .stop_spin
 	xor a
 	ld [wSpinning], a
+	ret
+	
+CheckSpinTile:
+	cp COLL_SPIN_UP
+	ld c, UP
+	ret z
+	cp COLL_SPIN_DOWN
+	ld c, DOWN
+	ret z
+	cp COLL_SPIN_LEFT
+	ld c, LEFT
+	ret z
+	cp COLL_SPIN_RIGHT
+	ld c, RIGHT
+	ret z
+	cp COLL_CURRENT_UP
+	ld c, UP
+	ret z
+	cp COLL_CURRENT_DOWN
+	ld c, DOWN
+	ret z
+	cp COLL_CURRENT_LEFT
+	ld c, LEFT
+	ret z
+	cp COLL_CURRENT_RIGHT
+	ld c, RIGHT
+	ret z
+	ld c, STANDING
 	ret
 
 StopPlayerForEvent:: ; 80422

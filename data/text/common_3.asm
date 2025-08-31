@@ -1438,3 +1438,19 @@ TorchWentOutText::
 BetterNotText::
 	text "Better not…"
 	done
+
+TextCountdown3::
+	text "3…"
+	done
+	
+TextCountdown2::
+	text "2…"
+	done
+	
+TextCountdown1::
+	text "1…"
+	done
+	
+TextCountdownGo::
+	text "GO!"
+	done

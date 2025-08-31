@@ -1678,6 +1678,65 @@ Sfx_1stPlace_Ch8: ; f1054
 
 	togglesfx
 
+Sfx_FinishRiverRapids:
+	musicheader 4, 5, Sfx_FinishRiverRapids_Ch5
+	musicheader 1, 6, Sfx_FinishRiverRapids_Ch6
+	musicheader 1, 7, Sfx_FinishRiverRapids_Ch7
+	musicheader 1, 8, Sfx_FinishRiverRapids_Ch8
+	
+Sfx_FinishRiverRapids_Ch5:
+	togglesfx
+	tempo 152
+	volume $77
+	dutycycle $3
+	notetype $6, $a4
+	note __, 8
+	callchannel Sfx_ChooseACard_Ch5_2
+	endchannel
+	
+Sfx_FinishRiverRapids_Ch6:
+	togglesfx
+	dutycycle $3
+	notetype $6, $b4
+	note __, 8
+	callchannel Sfx_ChooseACard_Ch6_2
+	endchannel
+	
+Sfx_FinishRiverRapids_Ch7:
+	togglesfx
+	notetype $6, $25
+	octave 3
+	note __, 8
+	callchannel Sfx_ChooseACard_Ch7_2
+	endchannel
+	
+Sfx_FinishRiverRapids_Ch8:
+	noise __,  3, $f4, $44
+	noise __,  3, $f4, $14
+	noise __, 16, $f1, $32
+	togglesfx
+	sfxtogglenoise $4
+	notetype $6
+	note __, 4
+	note D_, 2
+	note C#, 2
+	note B_, 4
+	note D_, 2
+	note C#, 2
+	note B_, 4
+	note D_, 2
+	note C#, 2
+	note D_, 1
+	note C#, 1
+	note D_, 1
+	note C#, 1
+	note D_, 2
+	note C#, 2
+	note C#, 2
+	note D_, 2
+	note B_, 16
+	endchannel
+
 Sfx_ChooseACard: ; f1069
 	musicheader 4, 5, Sfx_ChooseACard_Ch5
 	musicheader 1, 6, Sfx_ChooseACard_Ch6
@@ -1691,6 +1750,7 @@ Sfx_ChooseACard_Ch5: ; f1075
 	volume $77
 	dutycycle $3
 	notetype $6, $a4
+Sfx_ChooseACard_Ch5_2:
 	octave 3
 	note E_, 1
 	note __, 1
@@ -1736,6 +1796,7 @@ Sfx_ChooseACard_Ch6: ; f10a9
 	togglesfx
 	dutycycle $3
 	notetype $6, $b4
+Sfx_ChooseACard_Ch6_2:
 	octave 3
 	note A_, 1
 	note __, 1
@@ -1768,6 +1829,7 @@ Sfx_ChooseACard_Ch6: ; f10a9
 Sfx_ChooseACard_Ch7: ; f10c9
 	togglesfx
 	notetype $6, $25
+Sfx_ChooseACard_Ch7_2:
 	octave 3
 	note C#, 1
 	note __, 1

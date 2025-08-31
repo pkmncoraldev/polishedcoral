@@ -4,25 +4,25 @@ Route3East_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 1 ; warp events
-	warp_def  7,  4, 2, STARGLOW_CAVERN_1F
+	warp_def  3,  4, 2, STARGLOW_CAVERN_1F
 
 	db 1 ; coord events
-	coord_event 14, 10, 0, Route3EastFisherStopsYou
+	coord_event 14,  6, 0, Route3EastFisherStopsYou
 
 	db 2 ; bg events
-	signpost  8,  7, SIGNPOST_READ, Route3East_sign
-	bg_event  6, 15, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_3_HIDDEN_ITEM
+	signpost  4,  7, SIGNPOST_READ, Route3East_sign
+	bg_event  6, 11, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_3_HIDDEN_ITEM
 
 	db 9 ; object events
-	person_event SPRITE_FISHER, 23, 11, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRouteEast3_1, -1
-	person_event SPRITE_CAMPER, 17, 27, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerRouteEast3_2, -1
-	person_event SPRITE_PICNICKER,  8, 29, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRouteEast3_3, -1
-	person_event SPRITE_LASS, 21, 32, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerRouteEast3_4, -1
-	person_event SPRITE_FISHER, 11, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route3Rodman, -1
-	itemball_event 28,  8, GREAT_BALL, 1, EVENT_ROUTE_3_GREAT_BALL
-	itemball_event  4, 14, SUPER_POTION, 1, EVENT_ROUTE_3_SUPER_POTION
-	itemball_event 18, 17, PARALYZEHEAL, 1, EVENT_ROUTE_3_PARALYZEHEAL
-	fruittree_event 35,  8, FRUITTREE_ROUTE_3_2, LEPPA_BERRY
+	person_event SPRITE_FISHER, 19, 11, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRouteEast3_1, -1
+	person_event SPRITE_CAMPER, 13, 27, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerRouteEast3_2, -1
+	person_event SPRITE_PICNICKER,  4, 29, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRouteEast3_3, -1
+	person_event SPRITE_LASS, 17, 32, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerRouteEast3_4, -1
+	person_event SPRITE_FISHER,  7, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route3Rodman, -1
+	itemball_event 28,  4, GREAT_BALL, 1, EVENT_ROUTE_3_GREAT_BALL
+	itemball_event  4, 10, SUPER_POTION, 1, EVENT_ROUTE_3_SUPER_POTION
+	itemball_event 18, 13, PARALYZEHEAL, 1, EVENT_ROUTE_3_PARALYZEHEAL
+	fruittree_event 35,  4, FRUITTREE_ROUTE_3_2, LEPPA_BERRY
 	
 	const_def 1 ; object constants
 	const ROUTE3EAST_TRAINER1

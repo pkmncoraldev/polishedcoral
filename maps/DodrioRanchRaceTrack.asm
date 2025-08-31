@@ -187,6 +187,7 @@ RanchRideRaceFinishLine:
 	end
 .lap3
 	clearevent EVENT_DODRIO_RANCH_TIMER
+	clearevent EVENT_TIMER_ACTIVE
 	clearevent EVENT_RANCH_RACE_CHECKPOINT1
 	clearevent EVENT_RANCH_RACE_CHECKPOINT2
 	clearevent EVENT_RANCH_RACE_CHECKPOINT3
@@ -194,9 +195,7 @@ RanchRideRaceFinishLine:
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_2
 	dotrigger $0
 	playmusic MUSIC_NONE
-	playsound SFX_RAZOR_WIND
-	waitsfx
-	playsound SFX_CHOOSE_A_CARD
+	playsound SFX_FINISH_RIVER_RAPIDS
 	waitsfx
 	pause 10
 	spriteface RANCHRACENPC1, RIGHT
@@ -314,6 +313,7 @@ RanchRideRaceFinishLine:
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_1
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_2
 	clearevent EVENT_DODRIO_RANCH_TIMER
+	clearevent EVENT_TIMER_ACTIVE
 	callasm DodrioRanchRaceTrackResetTimerAsm
 	dotrigger $2
 	playmusic MUSIC_NONE
@@ -338,6 +338,7 @@ RanchRideRaceBackwards:
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_1
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_2
 	clearevent EVENT_DODRIO_RANCH_TIMER
+	clearevent EVENT_TIMER_ACTIVE
 	callasm DodrioRanchRaceTrackResetTimerAsm
 	playmusic MUSIC_NONE
 	playsound SFX_WRONG
@@ -359,6 +360,7 @@ RanchRideRaceOffTrack:
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_1
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_2
 	clearevent EVENT_DODRIO_RANCH_TIMER
+	clearevent EVENT_TIMER_ACTIVE
 	callasm DodrioRanchRaceTrackResetTimerAsm
 	playmusic MUSIC_NONE
 	playsound SFX_WRONG
@@ -379,6 +381,7 @@ RanchRideRaceTimesUp::
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_1
 	clearevent EVENT_RANCH_RACE_FINISHED_LAP_2
 	clearevent EVENT_DODRIO_RANCH_TIMER
+	clearevent EVENT_TIMER_ACTIVE
 	callasm DodrioRanchRaceTrackResetTimerAsm
 	playmusic MUSIC_NONE
 	playsound SFX_WRONG
@@ -450,21 +453,22 @@ RanchRideRaceGuy:
 	spriteface RANCHRACENPC1, RIGHT
 	playmusic MUSIC_NONE
 	opentext
-	writetext RanchRideRaceCountdown3
+	farwritetext TextCountdown3
 	playsound SFX_TALLY
 	pause 25
-	writetext RanchRideRaceCountdown2
+	farwritetext TextCountdown2
 	playsound SFX_TALLY
 	pause 25
-	writetext RanchRideRaceCountdown1
+	farwritetext TextCountdown1
 	playsound SFX_TALLY
 	pause 25
-	writetext RanchRideRaceCountdownGo
+	farwritetext TextCountdownGo
 	playsound SFX_THROW_BALL
 	pause 25
 	closetext
 	playmusic MUSIC_DODRIO_RACE
 	setevent EVENT_DODRIO_RANCH_TIMER
+	setevent EVENT_TIMER_ACTIVE
 	end
 .pickednoranchrace
 	writetext RanchRideRaceText2
@@ -663,22 +667,6 @@ RanchRideRaceTimesUpText:
 	
 	para "Do you want to"
 	line "try again?"
-	done
-	
-RanchRideRaceCountdown3:
-	text "3…"
-	done
-	
-RanchRideRaceCountdown2:
-	text "2…"
-	done
-	
-RanchRideRaceCountdown1:
-	text "1…"
-	done
-	
-RanchRideRaceCountdownGo:
-	text "GO!"
 	done
 	
 RanchRideGotDoduoText:

@@ -333,22 +333,22 @@ TilesetGroveAnim::
 TilesetGlintAnim::
 TilesetStarglowAnim::
 TilesetSouthTownsAnim::
+	dw VTiles2 tile $1c, ScrollTileDown
 	dw VTiles2 tile $00, WriteTileToBuffer
-	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw NULL,  WaitTileAnimation
 	dw VTiles2 tile $00, WriteTileFromBuffer
 	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $1c, ScrollTileDown
 	dw WaterfallFrames, AnimateWaterfallTiles
 	dw Waterfall2Frames, AnimateWaterfallTiles
 	dw Waterfall3Frames, AnimateWaterfallTiles
 	dw VTiles2 tile $36, AnimateTopofWaterfall
-	dw NULL,  WaitTileAnimation
 	dw WaterFrames, AnimateWaterfallTiles2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $1c, ScrollTileDown
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -526,7 +526,7 @@ TilesetGreenCaveAnim::
 	dw VTiles2 tile $14, WriteTileFromBuffer
 	dw VTiles2 tile $5e, ScrollTileDown
 	dw VTiles2 tile $5f, ScrollTileRight
-	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateFlowerTile
 	dw ShorelineFrames,  AnimateWaterfallTiles2
 	dw CaveWaterFrames, AnimateWaterfallTiles2
 	dw NULL,  DoneTileAnimation
@@ -898,18 +898,11 @@ AnimateFlowerTile: ; fc56d
 	farcall AddSkateparkScore
 .skip_score
 	ld [wSkateparkComboTimer], a
+	eventflagcheck EVENT_TIMER_ACTIVE
+	jr nz, .timer
 	eventflagcheck EVENT_OBSCURA_QUIZ_ACTIVE
-	jr nz, .display
-	eventflagcheck EVENT_TEST_OF_MIND_ACTIVE
-	jr nz, .timer
-	eventflagcheck EVENT_TEST_OF_BODY_ACTIVE
-	jr nz, .timer
-	eventflagcheck EVENT_SKATEPARK_CONTEST_TIMER
-	jr nz, .timer
-	eventflagcheck EVENT_DODRIO_RANCH_TIMER
-	jr z, .skip
-	
-.display
+	jr z, .skip	
+;.display
 	ld a, [wCurrentAirportBaggage]
 	ld b, a
 	ld a, [wRanchRaceSeconds]
@@ -947,6 +940,8 @@ AnimateFlowerTile: ; fc56d
 ; +1 second
 	ld hl, wRanchRaceSeconds
 	ld a, [hl]
+	cp $ff
+	jr z, .skip
 	inc a	
 	ld [hl], a
 

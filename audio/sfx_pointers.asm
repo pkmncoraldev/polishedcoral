@@ -229,3 +229,4 @@ SFX:
 	dba Sfx_Grind2
 	dba Sfx_Thunderbolt
 	dba Sfx_Gravity
+	dba Sfx_FinishRiverRapids

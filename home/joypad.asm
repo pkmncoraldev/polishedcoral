@@ -98,6 +98,17 @@ endr
 ; 984
 
 
+GetJoypad2::
+	ld a, [wButtonPressedFrameCooldownActive]
+	cp 0
+	ret z
+	ld a, [wButtonPressedFrameCooldown]
+	and $f
+	jr z, GetJoypad
+	ld a, [wButtonPressedFrameCooldown]
+	dec a
+	ld [wButtonPressedFrameCooldown], a
+
 GetJoypad:: ; 984
 ; Update mirror joypad input from hJoypadDown (real input)
 
@@ -141,10 +152,16 @@ GetJoypad:: ; 984
 	ld a, d
 	and b
 	ldh [hJoyPressed], a
+	cp 0
+	jr z, .skip
+	ld a, [wButtonPressedFrameCooldownActive]
+	cp 0
+	jr z, .skip
+	ld a, [hJoyPressed]
+	add 7
+	ld [wButtonPressedFrameCooldown], a
 
-; It looks like the collective presses got commented out here.
-	ld c, a
-
+.skip
 ; Currently pressed:
 	ld a, b
 	ldh [hJoyDown], a ; frame input

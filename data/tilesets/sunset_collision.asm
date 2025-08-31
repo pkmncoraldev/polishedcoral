@@ -192,7 +192,7 @@
 	tilecoll WALL, WALL, WALL, FLOOR ; bf
 	tilecoll WALL, WALL, WALL, WALL ; c0
 	tilecoll WALL, WALL, WALL, WALL ; c1
-	tilecoll FLOOR, WALL, FLOOR, WALL ; c2
+	tilecoll WATER, WATER, WATER, WATER ; c2
 	tilecoll DIVE, DIVE, WATER, WATER ; c3
 	tilecoll SKATE, SKATE, WALL, WALL ; c4
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, NO_OLLIE, NO_OLLIE ; c5

@@ -12,7 +12,7 @@ ObscuraFortuneHouse_MapScriptHeader:
 	db 0 ; bg events
 
 	db 2 ; object events
-	person_event SPRITE_POKEFAN_F, 4, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraFortuneHouseTeller, -1
+	person_event SPRITE_BREEDER, 4, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraFortuneHouseTeller, -1
 	tapeball_event  2,  2, MUSIC_TITLE, 1, EVENT_MUSIC_TITLE
 	
 ObscuraFortuneHouseTeller:

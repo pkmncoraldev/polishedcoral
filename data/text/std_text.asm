@@ -3,7 +3,7 @@ SunflowerText:
 	line "sunflowers!"
 	done
 
-HerbsText:
+HerbsText::
 	text "Some stinky herbs"
 	line "are growing."
 	

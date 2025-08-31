@@ -159,32 +159,6 @@ GetTileCollision:: ; 185d
 	ld a, WATERTILE
 	jr .return
 
-CheckSpinTile::
-	cp COLL_SPIN_UP
-	ld c, UP
-	ret z
-	cp COLL_SPIN_DOWN
-	ld c, DOWN
-	ret z
-	cp COLL_SPIN_LEFT
-	ld c, LEFT
-	ret z
-	cp COLL_SPIN_RIGHT
-	ld c, RIGHT
-	ret z
-	ld c, STANDING
-	ret
-
-CheckStandingOnEntrance:: ; 18c3
-	ld a, [wPlayerStandingTile]
-	cp COLL_DOOR
-	ret z
-	cp COLL_STAIRCASE
-	ret z
-	cp COLL_CAVE
-	ret
-; 18d2
-
 GetMapObject:: ; 18d2
 ; Return the location of map object a in bc.
 	ld hl, wMapObjects

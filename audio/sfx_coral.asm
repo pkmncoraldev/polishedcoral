@@ -234,3 +234,4 @@ Sfx_TempleRumble_Ch8:
 	noise __,  5, $d8, $6f
 	loopchannel 0, Sfx_TempleRumble_Ch8
 	endchannel
+	

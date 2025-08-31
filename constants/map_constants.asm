@@ -76,6 +76,8 @@ DEF MAP_NONE   EQU 0
 	map_const SUNSET_LIGHTHOUSE_BASEMENT,				   4,  5 ; 12
 	map_const SUNSET_LIGHTHOUSE_ELEVATOR,				   2,  2 ; 13
 	map_const SUNSET_LIGHTHOUSE_TOP,					  10,  5 ; 14
+	map_const RIVER_RAPIDS_ENTRANCE,       		          13, 11 ; 10
+	map_const RIVER_RAPIDS,			       		          13, 44 ; 11
 
 	newgroup                                                     ;  3
 
@@ -111,7 +113,7 @@ DEF MAP_NONE   EQU 0
 
 	newgroup                                                     ;  5
 
-	map_const ROUTE_3_EAST,                		          22, 16 ;  1
+	map_const ROUTE_3_EAST,                		          22, 14 ;  1
 	map_const STARGLOW_VALLEY,                            19, 17 ;  2
 	map_const STARGLOW_TOGEPI_HOUSE,                       4,  4 ;  3
 	map_const STARGLOW_NO_POKEMON_HOUSE,                   4,  4 ;  4

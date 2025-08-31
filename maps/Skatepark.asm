@@ -97,6 +97,7 @@ SkateparkTrigger1:
 	dotrigger $2
 	playmusic MUSIC_GSC_GAME_CORNER
 	setevent EVENT_SKATEPARK_CONTEST_TIMER
+	setevent EVENT_TIMER_ACTIVE
 	end
 	
 SkateparkTrigger3:
@@ -490,6 +491,7 @@ SkateparkTMNpc:
 	
 SkateparkTimesUp::
 	clearevent EVENT_SKATEPARK_CONTEST_TIMER
+	clearevent EVENT_TIMER_ACTIVE
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	opentext
 	writetext SkateparkDoneText

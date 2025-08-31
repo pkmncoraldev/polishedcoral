@@ -224,6 +224,8 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, [wMapGroup]
 	cp GROUP_SEASIDE_CAVE_1F
 	jp z, .do_nothing
+	cp GROUP_RIVER_RAPIDS
+	jp z, .do_nothing
 	cp GROUP_CONNECTING_CAVERN
 	jp z, .starglow_cavern
 	ld de, wUnknBGPals + 3 palettes

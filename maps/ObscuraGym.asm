@@ -61,6 +61,7 @@ ObscuraGymRocky:
 	writetext ObscuraGymRockyTextBeforeBattle
 	waitbutton
 	closetext
+	clearevent EVENT_OBSCURA_GYM_LOCKED
 	waitsfx
 	winlosstext ObscuraGymRockyTextWin, ObscuraGymRockyTextLoss
 	loadtrainer ROCKY, 1
@@ -68,9 +69,9 @@ ObscuraGymRocky:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ROCKY
 	clearevent EVENT_HAVENT_BEAT_ROCKY
-	clearevent EVENT_OBSCURA_GYM_LOCKED
 	setevent EVENT_OBSCURA_GYM_ROPES_1
 	setevent EVENT_OBSCURA_GYM_ROPES_2
+	setevent EVENT_OBSCURA_GYM_FIRST_LADY_SPEECH_LOOP
 	opentext
 	writetext Text_ReceivedSeventhBadge
 	playsound SFX_GET_BADGE
@@ -188,6 +189,8 @@ ObscuraGymRockyTextWinRematch:
 	
 ObscuraGymClerk1:
 	opentext
+	checkevent EVENT_OBSCURA_GYM_FIRST_LADY_SPEECH_LOOP
+	iftrue .enjoy
 	checkevent EVENT_OBSCURA_GYM_LOCKED
 	iftrue .quizstarted
 	checkevent EVENT_OBSCURA_GYM_CLERK_1_TALKED_ONCE
@@ -230,6 +233,11 @@ ObscuraGymClerk1:
 	end
 .quizstarted
 	writetext ObscuraGymClerk1Text5
+	waitbutton
+	closetext
+	end
+.enjoy
+	writetext ObscuraGymTrainer1RematchRegularText
 	waitbutton
 	closetext
 	end
@@ -579,7 +587,8 @@ ObscuraGymQuizLady1:
 	if_not_equal 3, .Question1Wrong
 	scall ObscuraGymCorrect
 	writetext ObscuraGymQ1Q1CorrectText
-	waitbutton
+	playmusic MUSIC_EVOLUTION
+	wait 5
 ;question 2
 	callasm ObscuraGymPrintQuestionNumberAsm
 	writetext ObscuraGymQ1Q2Text
@@ -591,7 +600,8 @@ ObscuraGymQuizLady1:
 	if_not_equal 2, .Question2Wrong
 	scall ObscuraGymCorrect
 	writetext ObscuraGymQ1Q2CorrectText
-	waitbutton
+	playmusic MUSIC_EVOLUTION
+	wait 5
 ;question 3
 	callasm ObscuraGymPrintQuestionNumberAsm
 	writetext ObscuraGymQ1Q3Text
@@ -740,7 +750,8 @@ ObscuraGymQuizLady2:
 	if_not_equal 3, .Question1Wrong
 	scall ObscuraGymCorrect
 	writetext ObscuraGymQ2Q1CorrectText
-	waitbutton
+	playmusic MUSIC_EVOLUTION
+	wait 5
 ;question 2
 	callasm ObscuraGymPrintQuestionNumberAsm
 	writetext ObscuraGymQ2Q2Text
@@ -752,7 +763,8 @@ ObscuraGymQuizLady2:
 	if_not_equal 2, .Question2Wrong
 	scall ObscuraGymCorrect
 	writetext ObscuraGymQ2Q2CorrectText
-	waitbutton
+	playmusic MUSIC_EVOLUTION
+	wait 5
 ;question 3
 	callasm ObscuraGymPrintQuestionNumberAsm
 	writetext ObscuraGymQ2Q3Text
@@ -900,7 +912,8 @@ ObscuraGymQuizLady3:
 	if_not_equal 4, .Question1Wrong
 	scall ObscuraGymCorrect
 	writetext ObscuraGymQ3Q1CorrectText
-	waitbutton
+	playmusic MUSIC_EVOLUTION
+	wait 5
 ;question 2
 	callasm ObscuraGymPrintQuestionNumberAsm
 	writetext ObscuraGymQ3Q2Text
@@ -912,7 +925,8 @@ ObscuraGymQuizLady3:
 	if_not_equal 2, .Question2Wrong
 	scall ObscuraGymCorrect
 	writetext ObscuraGymQ3Q2CorrectText
-	waitbutton
+	playmusic MUSIC_EVOLUTION
+	wait 5
 ;question 3
 	callasm ObscuraGymPrintQuestionNumberAsm
 	writetext ObscuraGymQ3Q3Text
@@ -1060,7 +1074,8 @@ ObscuraGymQuizLady4:
 	if_not_equal 3, .Question1Wrong
 	scall ObscuraGymCorrect
 	writetext ObscuraGymQ4Q1CorrectText
-	waitbutton
+	playmusic MUSIC_EVOLUTION
+	wait 5
 ;question 2
 	callasm ObscuraGymPrintQuestionNumberAsm
 	writetext ObscuraGymQ4Q2Text
@@ -1072,7 +1087,8 @@ ObscuraGymQuizLady4:
 	if_not_equal 2, .Question2Wrong
 	scall ObscuraGymCorrect
 	writetext ObscuraGymQ4Q2CorrectText
-	waitbutton
+	playmusic MUSIC_EVOLUTION
+	wait 5
 ;question 3
 	callasm ObscuraGymPrintQuestionNumberAsm
 	writetext ObscuraGymQ4Q3Text

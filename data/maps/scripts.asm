@@ -128,11 +128,11 @@ INCLUDE "maps/Route3StarglowCavernTop.asm"
 INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route20.asm"
 INCLUDE "maps/Route13.asm"
+
+SECTION "Routes Scripts3", ROMX
 INCLUDE "maps/Route16.asm"
 INCLUDE "maps/Route21.asm"
 INCLUDE "maps/Route22.asm"
-
-SECTION "Routes Scripts3", ROMX
 INCLUDE "maps/FakeRoute1.asm"
 
 
@@ -256,10 +256,6 @@ INCLUDE "maps/LusterApartment1_1F.asm"
 INCLUDE "maps/LusterApartment1_2F.asm"
 INCLUDE "maps/LusterApartment3_1F.asm"
 INCLUDE "maps/LusterApartment3_2F.asm"
-INCLUDE "maps/LusterApartment4_1F.asm"
-INCLUDE "maps/LusterApartment4_2F.asm"
-INCLUDE "maps/LusterApartment6_1F.asm"
-INCLUDE "maps/LusterApartment6_2F.asm"
 
 SECTION "Luster City Scripts2", ROMX
 
@@ -275,8 +271,6 @@ INCLUDE "maps/LusterMallBallShop.asm"
 INCLUDE "maps/LusterMallClothesShop.asm"
 INCLUDE "maps/LusterMallFurniture.asm"
 INCLUDE "maps/LusterSkyscraperB1F.asm"
-INCLUDE "maps/LusterApartment5_1F.asm"
-INCLUDE "maps/LusterApartment5_2F.asm"
 
 SECTION "Nett Building Scripts", ROMX
 
@@ -336,9 +330,6 @@ INCLUDE "maps/RadiantOrphanage1F.asm"
 INCLUDE "maps/RadiantOrphanage2F.asm"
 INCLUDE "maps/RadiantOrphanageLeilanisRoom.asm"
 INCLUDE "maps/RadiantGym.asm"
-INCLUDE "maps/RadiantPokeCenter.asm"
-INCLUDE "maps/RadiantMart.asm"
-INCLUDE "maps/RadiantField.asm"
 
 SECTION "Brillo Town Scripts", ROMX
 
@@ -424,8 +415,6 @@ INCLUDE "maps/DuskAutoGarage.asm"
 INCLUDE "maps/Route19DuskGate.asm"
 INCLUDE "maps/Route22Tunnel.asm"
 INCLUDE "maps/BarBackAlley.asm"
-INCLUDE "maps/BarInside.asm"
-INCLUDE "maps/Route21Gate.asm"
 
 SECTION "Komore Village Scripts", ROMX
 INCLUDE "maps/KomoreVillage.asm"
@@ -477,13 +466,29 @@ SECTION "Obscura Museum Scripts", ROMX
 INCLUDE "maps/ObscuraMuseum1F.asm"
 INCLUDE "maps/ObscuraMuseum2F.asm"
 INCLUDE "maps/ObscuraMuseum3F.asm"
-INCLUDE "maps/ObscuraMuseumEmployeeRoom.asm"
 INCLUDE "maps/ObscuraMuseumPhoto.asm"
 
 SECTION "Misc Map Scripts", ROMX
 INCLUDE "maps/ObscuraGym.asm"
 INCLUDE "maps/RiverRapidsEntrance.asm"
 INCLUDE "maps/RiverRapids.asm"
+INCLUDE "maps/LusterApartment4_1F.asm"
+INCLUDE "maps/LusterApartment4_2F.asm"
+INCLUDE "maps/LusterApartment5_1F.asm"
+INCLUDE "maps/LusterApartment5_2F.asm"
+INCLUDE "maps/LusterApartment6_1F.asm"
+INCLUDE "maps/LusterApartment6_2F.asm"
+INCLUDE "maps/RadiantPokeCenter.asm"
+INCLUDE "maps/RadiantMart.asm"
+
+SECTION "Misc Map Scripts 2", ROMX
+INCLUDE "maps/BarInside.asm"
+INCLUDE "maps/Route21Gate.asm"
+INCLUDE "maps/RadiantField.asm"
+
+SECTION "Misc Map Scripts 3", ROMX
+
+INCLUDE "maps/ObscuraMuseumEmployeeRoom.asm"
 
 SECTION "Aureole Scripts", ROMX
 INCLUDE "maps/AureoleTown.asm"

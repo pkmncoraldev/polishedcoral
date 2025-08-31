@@ -213,28 +213,6 @@ endm
 	dict "<WAIT_L>", PauseTextLong
 	dict "<P-P-PLAYER>", PrintPlayerLetter
 	dict "#",        PlacePoke
-	dict "le",       PlaceLe
-	dict "ng",       PlaceNg
-	dict "te",       PlaceTe
-	dict "as",       PlaceAs
-	dict "or",       PlaceOr
-	dict "ou",       PlaceOu
-	dict "re",       PlaceRe
-	dict "in",       PlaceIn
-	dict "er",       PlaceEr
-	dict "on",       PlaceOn
-	dict "th",       PlaceTh
-	dict "and",      PlaceAnd
-	dict "the",      PlaceThe
-	dict "you",      PlaceYou
-;	dict "#mon",     PlacePokemon
-	dict "to",       PlaceTo
-	dict "have",     PlaceHave
-	dict "that",     PlaceThat
-	dict "for",      PlaceFor
-	dict "with",     PlaceWith
-	dict "an",       PlaceAn
-	dict "ing",      PlaceIng
 	dict2 "¯", " "
 
 .notDict
@@ -255,74 +233,8 @@ PrintRivalName:    print_name wRivalName
 PrintTrendyPhrase: print_name wTrendyPhrase
 PrintBackupName: print_name wBackupName
 
-PlaceLe: print_name .LeText
-.LeText: db "l", "e", "@"
-
-PlaceNg: print_name .NgText
-.NgText: db "n", "g", "@"
-
-PlaceTe: print_name .TeText
-.TeText: db "t", "e", "@"
-
-PlaceAs: print_name .AsText
-.AsText: db "a", "s", "@"
-
-PlaceOr: print_name .OrText
-.OrText: db "o", "r", "@"
-
-PlaceOu: print_name .OuText
-.OuText: db "o", "u", "@"
-
-PlaceRe: print_name .ReText
-.ReText: db "r", "e", "@"
-
-PlaceIn: print_name .InText
-.InText: db "i", "n", "@"
-
-PlaceEr: print_name .ErText
-.ErText: db "e", "r", "@"
-
-PlaceOn: print_name .OnText
-.OnText: db "o", "n", "@"
-
-PlaceTh: print_name .ThText
-.ThText: db "t", "h", "@"
-
-PlaceAnd: print_name .AndText
-.AndText: db "a", "n", "d", "@"
-
 PlacePoke: print_name .PokeText
 .PokeText: db "POKé@"
-
-PlaceThe: print_name .TheText
-.TheText: db "t", "h", "e", "@"
-
-PlaceYou: print_name .YouText
-.YouText: db "y", "o", "u", "@"
-
-;PlacePokemon: print_name .PokemonText
-;.PokemonText: db "POKéMON@"
-
-PlaceTo: print_name .ToText
-.ToText: db "t", "o", "@"
-
-PlaceHave: print_name .HaveText
-.HaveText: db "h", "a", "v", "e", "@"
-
-PlaceThat: print_name .ThatText
-.ThatText: db "t", "h", "a", "t", "@"
-
-PlaceFor: print_name .ForText
-.ForText: db "f", "o", "r", "@"
-
-PlaceWith: print_name .WithText
-.WithText: db "w", "i", "t", "h", "@"
-
-PlaceAn: print_name .AnText
-.AnText: db "a", "n", "@"
-
-PlaceIng: print_name .IngText
-.IngText: db "i", "n", "g", "@"
 
 PlaceMoveTargetsName::
 	ldh a, [hBattleTurn]

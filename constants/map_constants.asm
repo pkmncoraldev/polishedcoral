@@ -77,7 +77,6 @@ DEF MAP_NONE   EQU 0
 	map_const SUNSET_LIGHTHOUSE_ELEVATOR,				   2,  2 ; 13
 	map_const SUNSET_LIGHTHOUSE_TOP,					  10,  5 ; 14
 	map_const RIVER_RAPIDS_ENTRANCE,       		          13, 11 ; 10
-	map_const RIVER_RAPIDS,			       		          13, 44 ; 11
 
 	newgroup                                                     ;  3
 
@@ -408,6 +407,7 @@ DEF MAP_NONE   EQU 0
 	map_const UNDERWATER_TEMPLE_OUTSIDE,				  13, 24 ; 5
 	map_const UNDERWATER_TEMPLE_1,						  17, 22 ; 6
 	map_const UNDERWATER_TEMPLE_2,						  15, 17 ; 7
+	map_const RIVER_RAPIDS,			       		          13, 44 ; 8
 	
 	newgroup													 ; 22
 	

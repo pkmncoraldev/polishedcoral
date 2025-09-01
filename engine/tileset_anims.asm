@@ -940,11 +940,23 @@ AnimateFlowerTile: ; fc56d
 ; +1 second
 	ld hl, wRanchRaceSeconds
 	ld a, [hl]
-	cp $ff
+	cp 60
+	jr z, .minute
+	inc a	
+	ld [hl], a
+	jr .skip
+
+.minute
+	xor a
+	ld [hl], a
+	
+; +1 minute
+	ld hl, wRanchRaceMinutes
+	ld a, [hl]
+	cp 99
 	jr z, .skip
 	inc a	
 	ld [hl], a
-
 .skip
 
 ; No parameters.

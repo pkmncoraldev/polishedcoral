@@ -118,7 +118,16 @@ wPoisonStepFlagSum:: ds 1
 wPoisonStepPartyFlags:: ds PARTY_LENGTH
 wPoisonStepDataEnd::
 
-	ds 48
+wCentisecondsHelper:: ds 1
+wMinigameCentiseconds:: ds 1
+
+wRiverRapidsScoreCentiseconds:: ds 1
+wRiverRapidsScoreSeconds:: ds 1
+wRiverRapidsScoreMinutes:: ds 1
+wRiverRapidsRecordCentiseconds:: ds 1
+wRiverRapidsRecordSeconds:: ds 1
+wRiverRapidsRecordMinutes:: ds 1
+	ds 40
 
 UNION
 ; engine buffers
@@ -968,7 +977,7 @@ wMinaFlags::
 	; 5 - route 10
 	ds 1
 
-ds 6
+ds 5
 
 wPokegearFlags::
 ; bit 0: map
@@ -992,6 +1001,7 @@ wPokedexWindowColor:: ds 1
 
 wRanchRaceFrames:: ds 1
 wRanchRaceSeconds:: ds 1
+wRanchRaceMinutes:: ds 1
 wCurrentAirportBaggage:: ds 1
 
 ; map triggers

@@ -1094,6 +1094,9 @@ LoadMapPals::
 	ld a, $5 ; BANK(UnknOBPals)
 	jp FarCopyWRAM
 .cave
+	ld a, [wMapGroup]
+	cp GROUP_RIVER_RAPIDS
+	jp z, .umbrella
 	ld a, [wTimeOfDayPal]
 	cp 3
 	jp nz, .rockscheck3

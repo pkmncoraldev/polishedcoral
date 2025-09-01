@@ -225,11 +225,25 @@ LoadSpecialMapPalette: ; 494ac
 	cp GROUP_SEASIDE_CAVE_1F
 	jp z, .do_nothing
 	cp GROUP_RIVER_RAPIDS
-	jp z, .do_nothing
+	jp z, .rapids
 	cp GROUP_CONNECTING_CAVERN
 	jp z, .starglow_cavern
 	ld de, wUnknBGPals + 3 palettes
 	ld hl, StarglowCavernPalette + 3 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
+	
+.rapids
+	ld hl, OutsideJunglePalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals + 4 palettes
 	ld bc, 1 palettes
 	ld a, $5
 	call FarCopyWRAM

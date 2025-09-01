@@ -28,9 +28,9 @@ RiverRapidsEntrance_MapScriptHeader:
 RiverRapidsEntranceCallback:
 	checkevent EVENT_RIVER_RAPIDS
 	iffalse .end
-	callasm SpawnPlayer
-	spriteface PLAYER, UP
+	domaptrigger RIVER_RAPIDS, $0
 	clearevent EVENT_RIVER_RAPIDS
+	playnewmapmusic
 .end
 	return
 	

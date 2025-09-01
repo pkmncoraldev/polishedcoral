@@ -67,6 +67,7 @@ _GetVarAction:: ; 80648 (20:4648)
 	dwb wScriptVar,						RETVAR_ADDR_DE
 	dwb wMonJustCaught,					RETVAR_ADDR_DE
 	dwb wRanchRaceSeconds,   		    RETVAR_STRBUF2
+	dwb wMinigameCentiseconds,   		RETVAR_STRBUF2
 	dwb NULL,                           RETVAR_STRBUF2
 ; 806c5
 

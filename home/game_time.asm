@@ -24,14 +24,40 @@ GameTimer:: ; 209e
 
 	call UpdateGameTimer
 	call GetJoypad2
-
-.skip
-
+	call CountCentiseconds
+	
 	pop af
 	ldh [rSVBK], a
 	ret
-; 20ad
 
+CountCentiseconds:	;rough estimation. need to x2. only used for minigame time
+	ld a, [wCentisecondsHelper]
+	cp 0
+	jr z, .cont
+	dec a
+	ld [wCentisecondsHelper], a
+	ret
+.cont
+	ld a, [wMinigameCentiseconds]
+	and $0f
+	cp 2
+	call z, .set
+	cp 4
+	call z, .set
+	cp 6
+	call z, .set
+	ld a, [wMinigameCentiseconds]
+	inc a
+	cp 50
+	jr nz, .reset
+	xor a
+.reset
+	ld [wMinigameCentiseconds], a
+	ret
+.set
+	ld a, 1
+	ld [wCentisecondsHelper], a
+	ret
 
 UpdateGameTimer:: ; 20ad
 ; Increment the game timer by one frame.

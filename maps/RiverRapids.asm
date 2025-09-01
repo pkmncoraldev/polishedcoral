@@ -311,8 +311,6 @@ RiverRapidsRockLeft:
 	applyonemovement PLAYER, turn_away_left
 	end
 .left
-	checkcode VAR_MONJUSTCAUGHT
-	iftrue .left2
 	scall RiverRapidsGood
 	applyonemovement PLAYER, turn_away_left
 	end
@@ -325,8 +323,6 @@ RiverRapidsRockLeft:
 	applyonemovement PLAYER, turn_in_left
 	end
 .right
-	checkcode VAR_MONJUSTCAUGHT
-	iftrue .right2
 	scall RiverRapidsGood
 	applymovement PLAYER, Movement_RiverRapidsRockRight
 	end
@@ -351,8 +347,6 @@ RiverRapidsRockRight:
 	applyonemovement PLAYER, turn_away_right
 	end
 .left
-	checkcode VAR_MONJUSTCAUGHT
-	iftrue .left2
 	scall RiverRapidsGood
 	applymovement PLAYER, Movement_RiverRapidsRockLeft
 	end
@@ -365,8 +359,6 @@ RiverRapidsRockRight:
 	applymovement PLAYER, Movement_RiverRapidsRockLeft2
 	end
 .right
-	checkcode VAR_MONJUSTCAUGHT
-	iftrue .right2
 	scall RiverRapidsGood
 	applyonemovement PLAYER, turn_away_right
 	end
@@ -391,8 +383,6 @@ RiverRapidsRockUp:
 	applyonemovement PLAYER, turn_away_up
 	end
 .up
-	checkcode VAR_MONJUSTCAUGHT
-	iftrue .up2
 	scall RiverRapidsGood
 	applyonemovement PLAYER, turn_away_up
 	end
@@ -405,8 +395,6 @@ RiverRapidsRockUp:
 	applyonemovement PLAYER, turn_in_up
 	end
 .down
-	checkcode VAR_MONJUSTCAUGHT
-	iftrue .down2
 	scall RiverRapidsGood
 	applymovement PLAYER, Movement_RiverRapidsRockDown
 	end
@@ -431,8 +419,6 @@ RiverRapidsRockDown:
 	applyonemovement PLAYER, turn_away_down
 	end
 .up
-	checkcode VAR_MONJUSTCAUGHT
-	iftrue .up2
 	scall RiverRapidsGood
 	applymovement PLAYER, Movement_RiverRapidsRockUp
 	end
@@ -445,8 +431,6 @@ RiverRapidsRockDown:
 	applymovement PLAYER, Movement_RiverRapidsRockUp2
 	end
 .down
-	checkcode VAR_MONJUSTCAUGHT
-	iftrue .down2
 	scall RiverRapidsGood
 	applyonemovement PLAYER, turn_away_down
 	end

@@ -61,6 +61,7 @@ TextBoxSpeakers:
 	dw TextBoxEggy
 	dw TextBoxCrusher
 	dw TextBoxButtercup
+	dw TextBoxDarcy
 	
 TextBoxUnknown:			db "<UPDN>???@"
 TextBoxMom:				db "<UPDN>MOM@"
@@ -123,6 +124,7 @@ TextBoxAbner:			db "<UPDN>ABNER@"
 TextBoxEggy:			db "<UPDN>EGGY@"
 TextBoxCrusher:			db "<UPDN>CRUSHER@"
 TextBoxButtercup:		db "<UPDN>BUTTERCUP@"
+TextBoxDarcy:			db "<UPDN>DARCY@"
 	
 ChangeTextboxName::
 	call ClearTextboxName

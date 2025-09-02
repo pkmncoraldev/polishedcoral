@@ -44,13 +44,13 @@ ObscuraCityTrigger0:
 	end
 	
 ObscuraCityTrigger1:
-	opentext
+	opentext TEXTBOX_ROCKY
 	writetext ObscuraCityRockyText1
 	waitbutton
 	closetext
 	special Special_FadeOutMusic
 	pause 10
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext ObscuraCityDarcyText1
 	playmusic MUSIC_ENCOUNTER_GYM_LEADER
 	pause 48
@@ -58,21 +58,21 @@ ObscuraCityTrigger1:
 	appear OBSCURA_CITY_DARCY
 	applymovement OBSCURA_CITY_DARCY, Movement_ObscuraCityDarcy1
 	pause 10
-	opentext
+	opentext TEXTBOX_ROCKY
 	writetext ObscuraCityRockyText2
 	waitbutton
 	closetext
 	pause 2
 	applyonemovement OBSCURA_CITY_ROCKY, turn_step_down
 	applyonemovement OBSCURA_CITY_ROCKY, remove_fixed_facing
-	opentext
+	opentext TEXTBOX_ROCKY
 	writetext ObscuraCityRockyText3
 	waitbutton
 	closetext
 	applyonemovement OBSCURA_CITY_DARCY, fix_facing
 	applymovement OBSCURA_CITY_DARCY, Movement_ObscuraCityDarcy2
 	playsound SFX_TACKLE
-	opentext
+	opentext TEXTBOX_DARCY
 	writetext ObscuraCityDarcyText2
 	waitbutton
 	closetext
@@ -83,35 +83,35 @@ ObscuraCityTrigger1:
 	applymovement OBSCURA_CITY_DARCY, Movement_ObscuraCityDarcy2
 	playsound SFX_TACKLE
 	applyonemovement OBSCURA_CITY_DARCY, remove_fixed_facing
-	opentext
+	opentext TEXTBOX_DARCY
 	writetext ObscuraCityDarcyText3
 	waitbutton
 	closetext
 	pause 5
 	applyonemovement OBSCURA_CITY_ROCKY, turn_step_down
 	applyonemovement OBSCURA_CITY_ROCKY, remove_fixed_facing
-	opentext
+	opentext TEXTBOX_ROCKY
 	writetext ObscuraCityRockyText4
 	waitbutton
 	closetext
 	pause 5
 	applyonemovement OBSCURA_CITY_DARCY, turn_step_up
 	applyonemovement OBSCURA_CITY_DARCY, remove_fixed_facing
-	opentext
+	opentext TEXTBOX_DARCY
 	writetext ObscuraCityDarcyText4
 	waitbutton
 	closetext
 	pause 5
 	applyonemovement OBSCURA_CITY_ROCKY, turn_step_down
 	applyonemovement OBSCURA_CITY_ROCKY, remove_fixed_facing
-	opentext
+	opentext TEXTBOX_ROCKY
 	writetext ObscuraCityRockyText5
 	waitbutton
 	closetext
 	pause 5
 	applyonemovement OBSCURA_CITY_DARCY, turn_step_up
 	applyonemovement OBSCURA_CITY_DARCY, remove_fixed_facing
-	opentext
+	opentext TEXTBOX_DARCY
 	checkevent EVENT_PLAYER_IS_CORA
 	iftrue .girl
 	checkevent EVENT_PLAYER_IS_PIPPI
@@ -136,7 +136,7 @@ ObscuraCityTrigger1:
 	disappear OBSCURA_CITY_DARCY
 	applyonemovement OBSCURA_CITY_ROCKY, turn_step_down
 	applyonemovement OBSCURA_CITY_ROCKY, remove_fixed_facing
-	opentext
+	opentext TEXTBOX_ROCKY
 	writetext ObscuraCityRockyText6
 	waitbutton
 	closetext
@@ -145,7 +145,7 @@ ObscuraCityTrigger1:
 	playmapmusic
 	applyonemovement OBSCURA_CITY_ROCKY, turn_step_right
 	applyonemovement OBSCURA_CITY_ROCKY, remove_fixed_facing
-	opentext
+	opentext TEXTBOX_ROCKY
 	writetext ObscuraCityRockyText7
 	waitbutton
 	closetext
@@ -190,8 +190,8 @@ ObscuraCityFortuneTellerSign:
 	done
 	
 ObscuraCityRockyText1:
-	text "ROCKY: What did"
-	line "that kid say?"
+	text "What did that"
+	line "kid say?"
 	
 	para "Summoning the"
 	line "dragon?"
@@ -247,7 +247,7 @@ ObscuraCityRockyText5:
 	text "Relax, DARCY."
 	
 	para "We know the kid"
-	cont "took it."
+	line "took it."
 	
 	para "He thinks he can"
 	line "use it to awaken"
@@ -272,8 +272,7 @@ ObscuraCityRockyText7:
 	line "a deal's a deal."
 	
 	para "You helped me out"
-	line "with those"
-	cont "TEAM SNARE goons,"
+	line "with those goons,"
 	cont "so I'll give you"
 	cont "your GYM BATTLE."
 	
@@ -283,12 +282,12 @@ ObscuraCityRockyText7:
 	done
 	
 ObscuraCityDarcyText1:
-	text "???: ROOOCKYYY!!!"
+	text "ROOOCKYYY!!!"
 	done
 	
 ObscuraCityDarcyText2:
-	text "DARCY: Don't you"
-	line "“hello, DARCY” me!"
+	text "Don't you “hello,"
+	line "DARCY” me!"
 	done
 	
 ObscuraCityDarcyText3:

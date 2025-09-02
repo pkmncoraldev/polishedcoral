@@ -1053,8 +1053,8 @@ PursuitDescription:
 	next "switching #MON.@"
 
 RapidSpinDescription:
-	db   "Spins to remove"
-	next "hazards.@"
+	db   "Ups speed and"
+	next "removes hazards.@"
 
 HealingLightDescription:
 	db   "Restores HP based"

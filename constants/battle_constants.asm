@@ -154,7 +154,7 @@ endc
 	const BATTLETYPE_GEN_1
 	;these have to be last for exp boost
 	const BATTLETYPE_LEGENDARY
-	const BATTLETYPE_SHINY_LEGENDARY
+	const BATTLETYPE_LEGENDARY_2 ; same as above but forces item2 instead of item1
 
 ; attack failure modes, higher gives priority
 ; TODO: complete this functionality

@@ -19,7 +19,7 @@ PlayBattleMusic: ; 2ee6c
 	ld a, [wBattleType]
 	cp BATTLETYPE_LEGENDARY
 	jr z, .legendary
-	cp BATTLETYPE_SHINY_LEGENDARY
+	cp BATTLETYPE_LEGENDARY_2
 	jr z, .legendary
 	cp BATTLETYPE_SHINY
 	jr z, .legendary

@@ -185,7 +185,7 @@ Route4PlayedFluteForSnorlax::
 	closetext
 	waitsfx
 	setevent EVENT_BIG_OW_MON_BATTLE
-	loadwildmon SNORLAX, 25
+	loadwildmon SNORLAX, FIRST_BATTLE, 25
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	disappear ROUTE4SNORLAX1

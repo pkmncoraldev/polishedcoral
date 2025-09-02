@@ -423,7 +423,7 @@ _ChooseWildEncounter:
 	ld a, [wBattleType]
 	cp BATTLETYPE_LEGENDARY
 	jr z, .ok
-	cp BATTLETYPE_SHINY_LEGENDARY
+	cp BATTLETYPE_LEGENDARY_2
 	jr z, .ok
 	pop bc
 ;	jr nz, .ok

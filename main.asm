@@ -5245,7 +5245,7 @@ CheckUniqueWildMove:
 	ld a, [wBattleType]
 	cp BATTLETYPE_LEGENDARY
 	jp z, .boss
-	cp BATTLETYPE_SHINY_LEGENDARY
+	cp BATTLETYPE_LEGENDARY_2
 	jp z, .boss
 	cp BATTLETYPE_PORYGON
 	jp z, .boss
@@ -5292,6 +5292,9 @@ CheckUniqueWildMove:
 .boss
 	ld a, [wTempEnemyMonSpecies]
 	ld c, a
+	ld a, [wEnemyMonForm]
+	and FORM_MASK
+	ld b, a
 	ld hl, BossWildMoves
 .loop2
 	ld a, [hli] ; species
@@ -5299,6 +5302,10 @@ CheckUniqueWildMove:
 	ret z
 	cp c
 	jr nz, .inc4andloop2
+	ld a, [hli] ; form
+	and FORM_MASK
+	cp b
+	jr nz, .inc3andloop2
 	ld a, [hli] ; move
 	ld b, a
 	push hl
@@ -5331,6 +5338,8 @@ CheckUniqueWildMove:
 	ret
 
 .inc4andloop2
+	inc hl
+.inc3andloop2
 	inc hl
 	inc hl
 	inc hl

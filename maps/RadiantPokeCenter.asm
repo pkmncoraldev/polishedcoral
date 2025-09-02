@@ -4,16 +4,16 @@ RadiantPokeCenter_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  4,  7, RADIANT_TOWNSHIP, 5
 	warp_event  5,  7, RADIANT_TOWNSHIP, 5
+	warp_event  6,  7, RADIANT_TOWNSHIP, 5
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 5 ; object events
-	pc_nurse_event  4, 1
-	person_event SPRITE_CHANSEY,  1, 5, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantPokeCenterChansey, -1
+	pc_nurse_event  5, 1
+	person_event SPRITE_CHANSEY,  1, 6, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantPokeCenterChansey, -1
 	person_event SPRITE_COOL_DUDE,  5,  2, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantPokeCenterNPC1, -1
 	person_event SPRITE_GRAMPS,  3, 11, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantPokeCenterNPC2, -1
 	object_event  9,  6, SPRITE_PONYTAIL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, trade, TRADE_WITH_BEV_FOR_VOLTORB, -1

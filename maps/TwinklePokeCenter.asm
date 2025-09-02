@@ -4,16 +4,16 @@ TwinklePokeCenter_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 4, 1, TWINKLE_TOWN
 	warp_def 7, 5, 1, TWINKLE_TOWN
+	warp_def 7, 6, 1, TWINKLE_TOWN
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 6 ; object events
-	pc_nurse_event  4, 1
-	pc_chansey_event  5, 1
+	pc_nurse_event  5, 1
+	pc_chansey_event  6, 1
 	object_event  2,  4, SPRITE_FISHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinklePokeCenterFisher, -1
 	object_event  9,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, TwinklePokeCenterGirl, -1
 	object_event  9,  5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GLOOM, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinklePokeCenterGloom, -1

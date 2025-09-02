@@ -4,18 +4,18 @@ LakeOnwaPokeCenter_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 4, 6, LAKE_ONWA
 	warp_def 7, 5, 6, LAKE_ONWA
+	warp_def 7, 6, 6, LAKE_ONWA
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 4 ; object events
-	pc_nurse_event  4, 1
-	pc_chansey_event  5, 1
+	pc_nurse_event  5, 1
+	pc_chansey_event  6, 1
 	person_event SPRITE_COOLTRAINER_F, 3, 9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeOwnaCenterNPC1, -1
-	person_event SPRITE_YOUNGSTER, 5, 1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LakeOwnaCenterNPC2, -1
+	person_event SPRITE_YOUNGSTER, 5, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LakeOwnaCenterNPC2, -1
 
 
 	const_def 1 ; object constants

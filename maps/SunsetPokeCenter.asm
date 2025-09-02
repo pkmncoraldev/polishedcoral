@@ -4,16 +4,16 @@ SunsetPokeCenter_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
+	warp_event 6, 7, SUNSET_BAY, 2
 	warp_event 5, 7, SUNSET_BAY, 2
-	warp_event 4, 7, SUNSET_BAY, 2
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 5 ; object events
-	pc_nurse_event  4, 1
-	pc_chansey_event  5, 1
+	pc_nurse_event  5, 1
+	pc_chansey_event  6, 1
 	object_event  3,  3, SPRITE_CHILD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SunsetPokeCenterYoungin, -1
 	object_event  9,  6, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetPokeCenterFireGuy, -1
 	object_event 10,  3, SPRITE_CUTE_GIRL, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunsetPokeCenterFairyGirl, -1

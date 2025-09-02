@@ -4,16 +4,16 @@ EventidePokeCenter_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  4,  7, EVENTIDE_VILLAGE, 3
 	warp_event  5,  7, EVENTIDE_VILLAGE, 3
+	warp_event  6,  7, EVENTIDE_VILLAGE, 3
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 6 ; object events
-	pc_nurse_event  4, 1
-	pc_chansey_event  5, 1
+	pc_nurse_event  5, 1
+	pc_chansey_event  6, 1
 	person_event SPRITE_GRANNY, 7, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, EventidePokeCenterNPC1, -1
 	person_event SPRITE_SCHOOLGIRL, 5, 9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventidePokeCenterNPC2, -1
 	person_event SPRITE_PICNICKER, 4, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EventidePokeCenterNPC3, -1

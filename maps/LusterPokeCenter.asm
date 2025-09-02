@@ -4,16 +4,16 @@ LusterPokeCenter_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 4, 3, LUSTER_CITY_RESIDENTIAL
 	warp_def 7, 5, 3, LUSTER_CITY_RESIDENTIAL
+	warp_def 7, 6, 3, LUSTER_CITY_RESIDENTIAL
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 5 ; object events
-	pc_nurse_event  4, 1
-	pc_chansey_event  5, 1
+	pc_nurse_event  5, 1
+	pc_chansey_event  6, 1
 	person_event SPRITE_NURSE, 6, 9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterPokeCenterNPC1, -1
 	person_event SPRITE_COOL_DUDE, 4, 2, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterPokeCenterNPC2, -1
 	object_event 9, 5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, CHANSEY, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, LusterPokeCenterChansey, -1

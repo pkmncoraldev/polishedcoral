@@ -6,8 +6,8 @@ StarglowPokeCenter_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 4, 5, STARGLOW_VALLEY
 	warp_def 7, 5, 5, STARGLOW_VALLEY
+	warp_def 7, 6, 5, STARGLOW_VALLEY
 
 	db 2 ; coord events
 	xy_trigger 1, 7, 4, 0, StarglowCenterRocketStopsYouL, 0, 0
@@ -16,10 +16,10 @@ StarglowPokeCenter_MapScriptHeader:
 	db 0 ; bg events
 
 	db 6 ; object events
-	person_event SPRITE_BOWING_NURSE, 1, 4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, StarglowCenterNurse, -1
-	pc_chansey_event  5, 1
+	person_event SPRITE_BOWING_NURSE, 1, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, StarglowCenterNurse, -1
+	pc_chansey_event  6, 1
 	person_event SPRITE_GAMEBOY_KID, 5, 9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowCenterGameboyKid, -1
-	person_event SPRITE_GENTLEMAN, 5, 1, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowCenterGramps, -1
+	person_event SPRITE_GENTLEMAN, 5, 2, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowCenterGramps, -1
 	person_event SPRITE_TEACHER, 2, 9, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, StarglowCenterGirl, -1
 	person_event SPRITE_SNARE, -6, -6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, -1, -1
 

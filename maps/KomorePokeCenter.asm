@@ -4,16 +4,16 @@ KomorePokeCenter_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  4,  7, KOMORE_VILLAGE, 6
 	warp_event  5,  7, KOMORE_VILLAGE, 6
+	warp_event  6,  7, KOMORE_VILLAGE, 6
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 5 ; object events
-	pc_nurse_event  4, 1
-	pc_chansey_event  5, 1
+	pc_nurse_event  5, 1
+	pc_chansey_event  6, 1
 	person_event SPRITE_FAT_GUY,  7, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, KomorePokeCenterMushroomGuy, -1
 	person_event SPRITE_CUTE_GIRL,  6, 9, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, KomorePokeCenterNPC1, -1
 	person_event SPRITE_YOUNGSTER,  4, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, KomorePokeCenterNPC2, -1

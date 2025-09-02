@@ -4,16 +4,16 @@ LusterMallPokeCenter_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 4, 5, LUSTER_MALL
-	warp_def 7, 5, 6, LUSTER_MALL
+	warp_def 7, 5, 5, LUSTER_MALL
+	warp_def 7, 6, 6, LUSTER_MALL
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 7 ; object events
-	pc_nurse_event  4, 1
-	pc_chansey_event  5, 1
+	pc_nurse_event  5, 1
+	pc_chansey_event  6, 1
 	person_event SPRITE_COOLTRAINER_M, 4, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallPokeCenterNPC1, -1
 	person_event SPRITE_YOUNGSTER, 6, 9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMallPokeCenterNPC2, -1
 	person_event SPRITE_SUPER_NERD, 4, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallPokeCenterNPC3, -1

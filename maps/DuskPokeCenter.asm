@@ -4,16 +4,16 @@ DuskPokeCenter_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  4,  7, DUSK_TURNPIKE, 11
 	warp_event  5,  7, DUSK_TURNPIKE, 11
+	warp_event  6,  7, DUSK_TURNPIKE, 11
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 7 ; object events
-	pc_nurse_event  4, 1
-	pc_chansey_event  5, 1
+	pc_nurse_event  5, 1
+	pc_chansey_event  6, 1
 	person_event SPRITE_CUTE_GIRL,  3,  2, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, DuskPokeCenterNPC1, -1
 	person_event SPRITE_FAT_GUY,  5,  6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, DuskPokeCenterNPC2, -1
 	person_event SPRITE_COOL_DUDE,  6,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DuskPokeCenterNPC3, -1

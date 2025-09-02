@@ -4,18 +4,18 @@ GlintPokeCenter_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
+	warp_def 7, 6, 1, GLINT_CITY
 	warp_def 7, 5, 1, GLINT_CITY
-	warp_def 7, 4, 1, GLINT_CITY
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 6 ; object events
-	pc_nurse_event  4, 1
-	pc_chansey_event  5, 1
+	pc_nurse_event  5, 1
+	pc_chansey_event  6, 1
 	person_event SPRITE_FISHING_GURU, 5, 6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintPokeCenterNpc1, -1
-	person_event SPRITE_GENTLEMAN, 4, 1, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintPokeCenterNpc2, -1
+	person_event SPRITE_POKEFAN_M, 4, 2, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintPokeCenterNpc2, -1
 	person_event SPRITE_SCHOOLBOY,  2,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintPokeCenterNpc3, -1
 	person_event SPRITE_GRANNY,  6,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintPokeCenterTeaLady, -1
 

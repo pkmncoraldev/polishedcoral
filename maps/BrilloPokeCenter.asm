@@ -4,16 +4,16 @@ BrilloPokeCenter_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  4,  7, BRILLO_TOWN, 5
 	warp_event  5,  7, BRILLO_TOWN, 5
+	warp_event  6,  7, BRILLO_TOWN, 5
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 6 ; object events
-	pc_nurse_event  4, 1
-	pc_chansey_event  5, 1
+	pc_nurse_event  5, 1
+	pc_chansey_event  6, 1
 	person_event SPRITE_POKEMANIAC,  5, 9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, BrilloPokeCenterNPC1, EVENT_ROUTE_17_COPS_GONE
 	object_event  9, 6, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TOUCANNON, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, BrilloPokeCenterToucannon, EVENT_ROUTE_17_COPS_GONE
 	person_event SPRITE_COOLTRAINER_F,  4,  2, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, BrilloPokeCenterNPC2, -1

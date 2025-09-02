@@ -4,19 +4,19 @@ SunbeamPokeCenter_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 4, 2, SUNBEAM_ISLAND
 	warp_def 7, 5, 2, SUNBEAM_ISLAND
+	warp_def 7, 6, 2, SUNBEAM_ISLAND
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 6 ; object events
-	pc_nurse_event  4, 1
-	pc_chansey_event  5, 1
+	pc_nurse_event  5, 1
+	pc_chansey_event  6, 1
 	person_event SPRITE_SUPER_NERD, 3, 8, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunbeamPokecenterNPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 5, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunbeamPokecenterNPC2, -1
-	object_event 1, 5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MEOWTH, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamPokecenterNPC3, -1
+	object_event 2, 4, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MEOWTH, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamPokecenterNPC3, -1
 	person_event SPRITE_SPRUCE, 3, 4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamPokecenterSpruce, EVENT_MET_SPRUCE_AT_CENTER
 
 	

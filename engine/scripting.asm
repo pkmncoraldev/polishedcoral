@@ -584,6 +584,8 @@ Script_closepokepic:
 	farjp ClosePokepic
 
 Script_verticalmenu:
+	xor a
+	ld [wTextBoxSpeaker], a
 	ld a, [wScriptBank]
 	ld hl, VerticalMenu
 	call FarCall_hl

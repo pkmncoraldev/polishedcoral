@@ -14,3 +14,5 @@ SpecialPhoneCallList:
 	specialcall SpecialCallWhereverYouAre, PHONE_MOM,	   MomPhoneScript       ; SPECIALCALL_MOMCALLABOUTTEAMSNARE
 	specialcall SpecialCallWhereverYouAre, PHONE_SPRUCE,   SprucePhoneScript    ; SPECIALCALL_SPRUCECALLABOUTBIRD
 	specialcall SpecialCallOnlyWhenOutside, PHONE_SPRUCE,  SprucePhoneScript    ; SPECIALCALL_GAVEANCIENTBALL
+	specialcall SpecialCallWhereverYouAre, PHONE_UNKNOWN,   SpamCallPhoneScript    ; SPECIALCALL_SPAMCALL
+	specialcall SpecialCallOnlyWhenOutside, PHONE_MOM,	   MomPhoneScript       ; SPECIALCALL_MOMCALLABOUTBANKCARD

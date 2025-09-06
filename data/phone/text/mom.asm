@@ -12,13 +12,13 @@ MomPhoneNormalText:
 	
 	para "Good luck out"
 	line "there!"
-	done
+	prompt
 
 MomPhoneBeginningText:
 	text "You can hear the"
 	line "phone ringing"
 	cont "downstairs."
-	done
+	prompt
 
 MomPhoneGoToIsland1Text:
 	text "Hello?"
@@ -79,7 +79,7 @@ MomPhoneGoToIsland1Text:
 	
 	para "See you soon,"
 	line "honey!"
-	done
+	prompt
 	
 MomPhoneGoToIsland2Text:
 	text "Hello?"
@@ -108,7 +108,7 @@ MomPhoneGoToIsland2Text:
 	
 	para "See you soon,"
 	line "honey!"
-	done
+	prompt
 	
 MomPhoneComeGetTrainerCard1Text:
 	text "<PLAYER>!"
@@ -137,7 +137,7 @@ MomPhoneComeGetTrainerCard1Text:
 	
 	para "See you soon,"
 	line "honey!"
-	done
+	prompt
 	
 MomPhoneComeGetTrainerCard2Text:
 	text "Hello?"
@@ -155,7 +155,7 @@ MomPhoneComeGetTrainerCard2Text:
 	
 	para "See you soon,"
 	line "honey!"
-	done
+	prompt
 	
 MomTeamSnareText:
 	text "Hi, sweetie!"
@@ -180,5 +180,35 @@ MomTeamSnareText:
 	
 	para "Stay safe out"
 	line "there, OK honey?"
-	done
+	prompt
+	
+MomPhoneComeGetBankCardText:
+	text "Hi, sweetie!"
+	line "It's MOM!"
+	
+	para "You doing ok?"
+	
+	para "You got something"
+	line "in the mail!"
+	
+	para "I think it's"
+	line "something for your"
+	cont "#GEAR."
+	
+	para "Come home and get"
+	line "it when you can,"
+	cont "ok?"
+	
+	para "See you soon,"
+	line "honey!"
+	prompt
+	
+MomPhoneComeGetBankCardText2:
+	text "<PLAYER>?"
+	
+	para "What's wrong?"
+	
+	para "We'll talk when you"
+	line "get home."
+	prompt
 	

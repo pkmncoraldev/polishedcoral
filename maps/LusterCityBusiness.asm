@@ -24,8 +24,9 @@ LusterCityBusiness_MapScriptHeader:
 	coord_event 14, 28, 0, LusterCityBusinessRival7
 	coord_event 14, 29, 0, LusterCityBusinessRival8
 
-	db 1 ; bg events
+	db 2 ; bg events
 	signpost 12, 23, SIGNPOST_READ, NettBuildingSign
+	signpost 25, 20, SIGNPOST_READ, BankBuildingSign
 
 	db 13 ; object events
 	person_event SPRITE_TRAFFIC_LIGHT, 24, 14, SPRITEMOVEDATA_TILE_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
@@ -73,6 +74,9 @@ BusinessCallback:
 	
 NettBuildingSign:
 	jumptext NettBuildingSignText
+	
+BankBuildingSign:
+	jumptext BankBuildingSignText
 	
 LusterCityBusinessRival1:
 	moveperson LUSTERBUSINESS_RIVAL, $f, $15
@@ -526,4 +530,12 @@ NettBuildingSignText:
 	
 	para "“To Capture a"
 	line "Better Tomorrow”"
+	done
+	
+BankBuildingSignText:
+	text "FRIENDLY SOLUTIONS"
+	line "LLC"
+	para "Coorperate Offices"
+	
+	para "NO SOLICITING!"
 	done

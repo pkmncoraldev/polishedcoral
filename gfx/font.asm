@@ -9,6 +9,8 @@ FontCommon1bpp:
 INCBIN "gfx/font/common.1bpp"
 FontCheckMark:
 INCBIN "gfx/font/check.2bpp"
+FontChinese:
+INCBIN "gfx/font/chinese_text.2bpp"
 
 Frames:
 INCBIN "gfx/frames/1.2bpp"
@@ -94,6 +96,12 @@ _LoadCheckMark::
 	ld de, FontCheckMark
 	ld hl, VTiles0 tile "″"
 	lb bc, BANK(FontCheckMark), 1
+	jp Get2bpp
+
+_LoadChineseFont::
+	ld de, FontChinese + 1 tiles
+	ld hl, VTiles0 tile $97
+	lb bc, BANK(FontChinese), $55
 	jp Get2bpp
 
 _LoadStandardFont::

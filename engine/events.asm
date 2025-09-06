@@ -1228,6 +1228,9 @@ CountStep: ; 96b79
 	
 	call DoBikeUpgradeStep
 	jr c, .doscript
+	
+	call DoSpamCallStep
+	jr c, .doscript
 
 	; Count the step for poison and total steps
 	ld hl, wPoisonStepCount
@@ -1377,32 +1380,14 @@ DoPollenStep:
 .no
 	xor a
 	ret
-	
+		
 DoBikeUpgradeStep:
-	ld a, [wBikeUpgradeSteps]
-	cp $ff
-	ret z
 	ld hl, wBikeUpgradeSteps
 	ld a, [hli]
-	ld d, a
-	ld e, [hl]
-	cp 0
-	jr nz, .dec
-	ld a, e
-	cp 0
-	jr z, .script
-.dec
-	dec de
-	ld [hl], e
-	dec hl
-	ld [hl], d
-	ld a, d
-	cp 0
+	cp $ff
+	ret z
+	call Dec2ByteStepCounters
 	ret nc
-.script
-	ld a, $ff
-	ld [wBikeUpgradeSteps], a
-	ld [wBikeUpgradeSteps + 1], a
 	ld a, BANK(AutoShopSpecialCallScript)
 	ld hl, AutoShopSpecialCallScript
 	call CallScript
@@ -1422,6 +1407,64 @@ AutoShopSpecialCallScript:
 .bird
 	specialphonecall SPECIALCALL_SPRUCECALLABOUTBIRD
 	end
+	
+DoSpamCallStep:
+	ld a, [wSpamCalls]
+	cp $ff
+	ret z
+	ld hl, wSpamCallSteps
+	ld a, [hli]
+	cp $ff
+	ret z
+	call Dec2ByteStepCounters
+	ret nc
+	ld a, [wSpamCalls]
+	cp 0
+	jr nz, .spam
+	eventflagcheck EVENT_MOM_CALLED_ABOUT_BANK_CARD
+	jp nz, .spam
+	ld a, BANK(MomBankCardSpecialCallScript)
+	ld hl, MomBankCardSpecialCallScript
+	call CallScript
+	scf
+	ret
+.spam
+	ld a, BANK(SpamCallSpecialCallScript)
+	ld hl, SpamCallSpecialCallScript
+	call CallScript
+	scf
+	ret
+	
+SpamCallSpecialCallScript:
+	specialphonecall SPECIALCALL_SPAMCALL
+	end
+	
+MomBankCardSpecialCallScript:
+	specialphonecall SPECIALCALL_MOMCALLABOUTBANKCARD
+	end
+
+Dec2ByteStepCounters:
+	ld d, a
+	ld e, [hl]
+	cp 0
+	jr nz, .dec
+	ld a, e
+	cp 0
+	jr nz, .dec
+;.script
+	ld a, $ff
+	dec hl
+	ld [hli], a
+	ld [hl], a
+	scf
+	ret
+.dec
+	dec de
+	ld [hl], e
+	dec hl
+	ld [hl], d
+	xor a
+	ret
 	
 DoTorchStep: ; 96bd7
 	ld a, [wMapGroup]

@@ -1,6 +1,6 @@
 ClearSpeechBox::
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
-	lb bc, TEXTBOX_INNERH - 1, TEXTBOX_INNERW
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY - 1
+	lb bc, TEXTBOX_INNERH, TEXTBOX_INNERW
 ClearBox::
 ; Fill a c*b box at hl with blank tiles.
 	ld a, " "

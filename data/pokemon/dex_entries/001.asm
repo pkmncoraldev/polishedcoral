@@ -2,9 +2,9 @@
 	db "SEED@" ; species name
 	dw 204, 150 ; height, width
 
-	db   "While it is young,"
-	next "it uses the"
-	next "nutrients that are"
-	page "stored in the"
-	next "seeds on its back"
-	next "in order to grow.@"
+	db   "Once thought only"
+	next "to be found in the"
+	next "MAESA REGION,"
+	page "contact with bones"
+	next "actually causes"
+	next "this evolition.@"

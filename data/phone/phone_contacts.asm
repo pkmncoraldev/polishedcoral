@@ -13,4 +13,5 @@ PhoneContacts:
 	phone TRAINER_NONE, PHONECONTACT_SPRUCE,   SPRUCES_LAB,		          7, SprucePhoneScript,  0, UnusedPhoneScript
 	phone TRAINER_NONE, PHONECONTACT_WENDY,    EVENTIDE_GYM,    		  7, WendyPhoneScript,  0, UnusedPhoneScript
 	phone TRAINER_NONE, PHONECONTACT_AUTO,	   DUSK_AUTO_LOBBY,    		  7, AutoPhoneScript,  0, UnusedPhoneScript
+	phone TRAINER_NONE, PHONECONTACT_UNKNOWN,  N_A, 			   		  7, UnusedPhoneScript,  0, UnusedPhoneScript
 ;	phone SCHOOLBOY,    JACK1,                 NATIONAL_PARK,             7, JackPhoneScript1,    7, JackPhoneScript2

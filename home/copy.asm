@@ -23,6 +23,9 @@ LoadFontsExtra:: ; e5f
 Load1bppFrame::
 	farjp LoadFrame1bpp
 
+LoadChineseFont::
+	farjp _LoadChineseFont
+
 ApplyTilemap::
 ; Tell VBlank to update BG Map
 	ld a, 1

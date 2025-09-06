@@ -21,7 +21,7 @@ SprucePhoneNormalText2:
 	para "Good luck on the"
 	line "rest of your"
 	cont "adventure."
-	done
+	prompt
 	
 	
 SprucePhoneComeToIslandText:
@@ -84,7 +84,7 @@ SprucePhoneComeToIslandText:
 	cont "you in person."
 	
 	para "Goodbye, now."
-	done
+	prompt
 	
 SprucePhoneComeToIsland2Text:
 	text "Hello?"
@@ -108,7 +108,7 @@ SprucePhoneComeToIsland2Text:
 	cont "you in person."
 	
 	para "Goodbye, now."
-	done
+	prompt
 	
 SprucePhoneComeToIsland3Text:
 	text "Hello?"
@@ -144,7 +144,7 @@ SprucePhoneComeToIsland3Text:
 	cont "be going."
 	
 	para "Goodbye, for now."
-	done
+	prompt
 	
 SprucePhoneComeToIsland4Text:
 	text "Hello?"
@@ -166,7 +166,7 @@ SprucePhoneComeToIsland4Text:
 	cont "be going."
 	
 	para "Goodbye, for now."
-	done
+	prompt
 	
 SprucePhoneOnIslandText:
 	text "Hello?"
@@ -187,7 +187,7 @@ SprucePhoneOnIslandText:
 	line "#MON CENTER."
 	
 	para "See you soon!"
-	done
+	prompt
 	
 SprucePhoneArticunoText:
 	text "Hello, <PLAYER>."
@@ -216,7 +216,7 @@ SprucePhoneArticunoText:
 	cont "#DEX."
 	
 	para "Take care."
-	done
+	prompt
 	
 SprucePhoneZapdosText:
 	text "Hello, <PLAYER>."
@@ -245,7 +245,7 @@ SprucePhoneZapdosText:
 	cont "#DEX."
 	
 	para "Take care."
-	done
+	prompt
 	
 SprucePhoneMoltresText:
 	text "Hello, <PLAYER>."
@@ -274,7 +274,7 @@ SprucePhoneMoltresText:
 	cont "#DEX."
 	
 	para "Take care."
-	done
+	prompt
 	
 SprucePhoneAncientBallText:
 	text "<PLAYER>!"
@@ -290,7 +290,7 @@ SprucePhoneAncientBallText:
 	line "me at my lab on"
 	cont "SUNBEAM ISLAND as"
 	cont "soon as possible!"
-	done
+	prompt
 	
 SpruceVoicemailText:
 	text "You have reached"
@@ -301,5 +301,5 @@ SpruceVoicemailText:
 	line "phone right now."
 	
 	para "My apologies!"
-	done
+	prompt
 	

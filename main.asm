@@ -4763,65 +4763,31 @@ SECTION "Standard Text", ROMX
 INCLUDE "data/text/std_text.asm"
 
 
-SECTION "Phone Scripts", ROMX
-
-INCLUDE "engine/more_phone_scripts.asm"
-INCLUDE "engine/buena_phone_scripts.asm"
+SECTION "Unused 1", ROMX
 
 
-SECTION "Phone Text 1", ROMX
 
-INCLUDE "data/phone/text/anthony_overworld.asm"
-INCLUDE "data/phone/text/todd_overworld.asm"
-INCLUDE "data/phone/text/gina_overworld.asm"
-INCLUDE "data/phone/text/irwin_overworld.asm"
-INCLUDE "data/phone/text/arnie_overworld.asm"
-INCLUDE "data/phone/text/alan_overworld.asm"
-INCLUDE "data/phone/text/dana_overworld.asm"
-INCLUDE "data/phone/text/chad_overworld.asm"
-INCLUDE "data/phone/text/derek_overworld.asm"
-INCLUDE "data/phone/text/tully_overworld.asm"
-INCLUDE "data/phone/text/brent_overworld.asm"
-INCLUDE "data/phone/text/tiffany_overworld.asm"
-INCLUDE "data/phone/text/vance_overworld.asm"
-INCLUDE "data/phone/text/wilton_overworld.asm"
-INCLUDE "data/phone/text/kenji_overworld.asm"
-INCLUDE "data/phone/text/parry_overworld.asm"
-INCLUDE "data/phone/text/erin_overworld.asm"
+SECTION "Unused 2", ROMX
 
 
-SECTION "Phone Text 2", ROMX
 
-INCLUDE "data/phone/text/jack_overworld.asm"
-INCLUDE "data/phone/text/beverly_overworld.asm"
-INCLUDE "data/phone/text/huey_overworld.asm"
-INCLUDE "data/phone/text/gaven_overworld.asm"
-INCLUDE "data/phone/text/beth_overworld.asm"
-INCLUDE "data/phone/text/jose_overworld.asm"
-INCLUDE "data/phone/text/reena_overworld.asm"
-INCLUDE "data/phone/text/joey_overworld.asm"
-INCLUDE "data/phone/text/wade_overworld.asm"
-INCLUDE "data/phone/text/ralph_overworld.asm"
+SECTION "Unused 3", ROMX
 
 
-SECTION "Phone Text 3", ROMX
+
+SECTION "Unused 4", ROMX
+
+
+
+SECTION "Unused 5", ROMX
+
+
+
+SECTION "Phone Text", ROMX
 
 INCLUDE "data/phone/text/mom.asm"
-INCLUDE "data/phone/text/bill.asm"
 INCLUDE "data/phone/text/spruce.asm"
-INCLUDE "data/phone/text/trainers1.asm"
-INCLUDE "data/phone/text/liz_overworld.asm"
-
-
-SECTION "Phone Text 4", ROMX
-
 INCLUDE "data/phone/text/extra.asm"
-INCLUDE "data/phone/text/lyra.asm"
-
-
-SECTION "Phone Text 5", ROMX
-
-INCLUDE "data/phone/text/extra2.asm"
 
 
 SECTION "Item Text", ROMX

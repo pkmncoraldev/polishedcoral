@@ -230,6 +230,8 @@ endr
 	ld [wRoamMon3MapNumber], a
 	ld [wBikeUpgradeSteps], a
 	ld [wBikeUpgradeSteps + 1], a
+	ld [wSpamCallSteps], a
+	ld [wSpamCallSteps + 1], a
 
 	call LoadOrRegenerateLuckyIDNumber
 ;	call InitializeMagikarpHouse

@@ -428,11 +428,11 @@ WrongNumber: ; 90233
 ; 90241
 
 Script_ReceivePhoneCall: ; 0x90241
+	changetextboxspeaker
 	special Special_StopRunning
 	refreshscreen
 	callasm RingTwice_StartCall
 	ptcall wPhoneScriptPointer
-	waitbutton
 	playsound SFX_HANG_UP
 	callasm HangUp
 	closetext
@@ -501,7 +501,7 @@ Phone_NoSignal: ; 902e3 (24:42e3)
 
 HangUp:: ; 902eb
 	call HangUp_Beep
-	call HangUp_Wait20Frames
+;	call HangUp_Wait20Frames
 Phone_CallEnd:
 	call HangUp_BoopOn
 	call HangUp_Wait20Frames
@@ -520,7 +520,9 @@ Phone_CallEnd:
 HangUp_Beep: ; 9031d
 	ld hl, UnknownText_0x9032a
 	call PrintText
-	ld de, SFX_HANG_UP
+	call ApplyTilemap
+	call WaitSFX
+	ld de, SFX_NO_SIGNAL
 	jp PlaySFX
 ; 9032a
 
@@ -672,7 +674,7 @@ NonTrainerCallerNames: ; 903d6
 	dw .spruce
 	dw .wendy
 	dw .auto
-;	dw .lyra
+	dw .unknown
 ;	dw .buena
 
 .none db "@"
@@ -680,7 +682,7 @@ NonTrainerCallerNames: ; 903d6
 .spruce db "PROF.SPRUCE:<LNBRK>   #MON PROF.@"
 .wendy db "WENDY:<LNBRK>     GYM LEADER@"
 .auto db "DUSK AUTO SHOP@"
-; 90423
+.unknown db "UNKNOWN CALLER@"
 
 Phone_GetTrainerName: ; 90423 (24:4423)
 	push hl

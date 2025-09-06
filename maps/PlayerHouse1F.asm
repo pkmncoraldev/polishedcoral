@@ -21,14 +21,16 @@ PlayerHouse1F_MapScriptHeader:
 	bg_event  2,  1, SIGNPOST_JUMPTEXT, FridgeText
 	bg_event  4,  1, SIGNPOST_UP, TVScript
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunsetMomScript, EVENT_PLAYER_HOUSE_MOM_1
 	object_event  2,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunsetMomScript, EVENT_PLAYER_HOUSE_MOM_2
+	object_event  4,  3, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunsetMomScript, EVENT_PLAYER_HOUSE_MOM_3
 	tapeball_event  0,  6, MUSIC_MOM, 1, EVENT_MUSIC_MOM
 	
 	const_def 1 ; object constants
 	const PLAYERHOUSE1F_MOM1
 	const PLAYERHOUSE1F_MOM2
+	const PLAYERHOUSE1F_MOM3
 	
 PlayerHouse1FTrigger0:
 	end
@@ -77,6 +79,8 @@ SunsetMomStopsYou:
 	end
 
 SunsetMomScript:
+	checkevent EVENT_MOM_CAN_GET_BANK_CARD
+	iftrue .bank_card
 	checkevent EVENT_CAN_CALL_MOM_ABOUT_ISLAND
 	iftrue SunsetMomRetellsYouAboutStrand
 	checkevent EVENT_MOM_SPEECH_LOOP
@@ -88,6 +92,29 @@ SunsetMomScript:
 	checkevent EVENT_TALKED_TO_MAN_IN_SHACK
 	iftrue SunsetMomGoToLighthouse
 	jumptextfaceplayer TEXTBOX_MOM, SunsetMomText2
+.bank_card
+	faceplayer
+	opentext TEXTBOX_MOM
+	writetext SunsetMomTextBankCard1
+	waitbutton
+	stringtotext BankCardName, $1
+	scall .JumpstdReceiveItem
+	setflag ENGINE_BANK_CARD
+	writetext GotBankCardText
+	waitbutton
+	changetextboxspeaker TEXTBOX_MOM
+	writetext SunsetMomTextBankCard2
+	waitbutton
+	closetext
+	clearevent EVENT_MOM_CAN_GET_BANK_CARD
+	clearevent EVENT_PLAYER_HOUSE_MOM_1
+	setevent EVENT_PLAYER_HOUSE_MOM_3
+	spriteface PLAYERHOUSE1F_MOM3, UP
+	end
+	
+.JumpstdReceiveItem:
+	jumpstd receiveitem
+	end
 	
 SunsetMomRetellsYouAboutStrand:
 	checkevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_STRAND
@@ -157,7 +184,7 @@ SunsetMomGotAPokemon:
 	writetext SunsetMomText4
 	waitbutton
 	stringtotext GearName, $1
-	scall UnknownScript_0x7a57e
+	scall .JumpstdReceiveItem
 	setflag ENGINE_TRAINER_CARD
 	setevent EVENT_MOM_GOT_POKEGEAR
 ;	addcellnum PHONE_MOM
@@ -179,6 +206,7 @@ SunsetMomGotAPokemon:
 ;	yesorno
 ;	iffalse UnknownScript_0x7a519
 ;UnknownScript_0x7a531:
+	changetextboxspeaker TEXTBOX_MOM
 	writetext UnknownText_0x7a763
 	waitbutton
 	closetext
@@ -187,11 +215,15 @@ SunsetMomGotAPokemon:
 	domaptrigger SUNSET_BAY, $2
 	domaptrigger ROUTE_1_GATE, $2
 	end
+.JumpstdReceiveItem:
+	jumpstd receiveitem
+	end
 	
 GearName:
 	db "TRAINER CARD@"
 
 UnknownScript_0x7a57e:
+	changetextboxspeaker
 	jumpstd receiveitem
 	end
 
@@ -212,6 +244,65 @@ SunsetMomStopsYouReturn:
 	step_left
 	step_left
 	step_end
+
+GotBankCardText:
+	text "<PLAYER>'s #GEAR"
+	line "can now function"
+	cont "as an ATM!"
+	done
+
+BankCardName:
+	db "BANK CARD@"
+
+SunsetMomTextBankCard1:
+	text "Welcome home,"
+	line "honey."
+	
+	para "Are you doing ok?"
+	
+	para "Here's that thing"
+	line "that came for you"
+	cont "in the mail!"
+	done
+	
+SunsetMomTextBankCard2:
+	text "It was sent from"
+	line "a company called"
+	cont "FRIENDLY SOLUTIONS"
+	cont "LLC."
+	
+	para "Why would they"
+	line "send you something"
+	cont "like this, anyway?"
+	
+	para "…<WAIT_M>You didn't give"
+	line "your info out to"
+	cont "any strangers,"
+	cont "did you?"
+	
+	para "Oh, <PLAYER>…"
+	
+	para "I'll bet you are"
+	line "getting spam phone"
+	cont "calls, too…"
+	
+	para "It seems like they"
+	line "put you on a"
+	cont "call list."
+	
+	para "It says here that"
+	line "their corporate"
+	cont "offices are in"
+	cont "LUSTER CITY."
+	
+	para "If you want the"
+	line "calls to stop,"
+	
+	para "you should go"
+	line "there and get your"
+	cont "name taken out of"
+	cont "their records."
+	done
 
 SunsetMomTextGivePass1:
 	text "<PLAYER>!"

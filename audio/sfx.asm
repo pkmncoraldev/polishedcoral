@@ -5587,12 +5587,13 @@ Sfx_HangUp_Ch5: ; f26f1
 	sound __,  5, $b8, $077b
 	sound __,  3, $21, $077b
 	sound C_,  1, $0, 0
-Sfx_HangUp_branch_f26ff: ; f26ff
-Sfx_NoSignal_Ch5: ; f26ff
+	endchannel
+
+Sfx_NoSignal_Ch5:
 	dutycycle $2
 	sound C_,  5, $e8, $070b
 	sound C_, 13, $0, 0
-	loopchannel 3, Sfx_HangUp_branch_f26ff
+	loopchannel 3, Sfx_NoSignal_Ch5
 	endchannel
 ; f270e
 

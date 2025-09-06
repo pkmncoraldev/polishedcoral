@@ -71,16 +71,6 @@ TalkToBankCardGirlScript::
 	opentext
 	writetext BankCardNPCText4
 	waitbutton
-	stringtotext BankCardName, $1
-	scall .JumpstdReceiveItem
-	setflag ENGINE_BANK_CARD
-	writetext GotBankCardText
-	waitbutton
-	closetext
-	pause 5
-	opentext
-	writetext BankCardNPCText5
-	waitbutton
 	closetext
 	applymovement 13, Movement_BankGirl2
 	disappear 13
@@ -91,15 +81,15 @@ TalkToBankCardGirlScript::
 	waitbutton
 	closetext
 	loadvar wOtherTrainerClass, 0
+	loadvar wSpamCalls, 7
+	loadvar wSpamCallSteps, 2
+	loadvar wSpamCallSteps+1, 0
 	end
 .no
 	writetext BankCardNPCTextNo
 	waitbutton
 	closetext
 	loadvar wOtherTrainerClass, 0
-	end
-.JumpstdReceiveItem:
-	jumpstd receiveitem
 	end
 	
 BankCardNPCText1:
@@ -177,27 +167,43 @@ BankCardNPCText2_2:
 	
 BankCardNPCText3_boy:
 	text "<PLAYER> gave the"
-	line "lady his info…"
+	line "odd lady his info…"
 	done
 	
 BankCardNPCText3_girl:
 	text "<PLAYER> gave the"
-	line "lady her info…"
+	line "odd lady her info…"
 	done
 	
 BankCardNPCText4:
-	text "Thank you!!!<WAIT_M>"
-	line "Here's your gift!"
-	done
+	text "Thank you!!!<WAIT_S>"
+	line "I'm finally done!"
 	
-BankCardNPCText5:
-	text "I'm finally done!<WAIT_S>"
-	line "I met my quota!"
+	para "I met my quota!"
 	
 	para "Yippee!!!"
 	
+	para "Huh?<WAIT_S> Your gift?"
+	
+	para "It'll be in the"
+	line "mail."
+	
+	para "…<WAIT_M>I think."
+	
+	para "Oh well, not my"
+	line "problem."
+	
 	para "See ya later!"
 	done
+	
+; BankCardNPCText5:
+	; text "I'm finally done!<WAIT_S>"
+	; line "I met my quota!"
+	
+	; para "Yippee!!!"
+	
+	; para "See ya later!"
+	; done
 	
 BankCardNPCText6:
 	text "Was that really"
@@ -208,15 +214,6 @@ BankCardNPCTextNo:
 	text "Oh boo!<WAIT_S>"
 	line "(pout, pout)"
 	done
-	
-GotBankCardText:
-	text "<PLAYER>'s #GEAR"
-	line "can now function"
-	cont "as an ATM!"
-	done
-	
-BankCardName:
-	db "BANK CARD@"
 	
 Movement_BankGirl1:
 	turn_step_down
@@ -331,16 +328,6 @@ SeenByBankCardGirlScript:
 	opentext
 	writetext BankCardNPCText4
 	waitbutton
-	stringtotext BankCardName, $1
-	scall .JumpstdReceiveItem
-	setflag ENGINE_BANK_CARD
-	writetext GotBankCardText
-	waitbutton
-	closetext
-	pause 5
-	opentext
-	writetext BankCardNPCText5
-	waitbutton
 	closetext
 	applymovement 13, Movement_BankGirl1
 	disappear 13
@@ -351,6 +338,9 @@ SeenByBankCardGirlScript:
 	waitbutton
 	closetext
 	loadvar wOtherTrainerClass, 0
+	loadvar wSpamCalls, 7
+	loadvar wSpamCallSteps, 2
+	loadvar wSpamCallSteps+1, 0
 	end
 .no
 	writetext BankCardNPCTextNo
@@ -376,9 +366,6 @@ SeenByBankCardGirlScript:
 	applymovement 13, Movement_BankGirl4
 .step_end
 	applyonemovement 13, step_sleep_1
-	end
-.JumpstdReceiveItem:
-	jumpstd receiveitem
 	end
 	
 StartBattleWithMapTrainerScript: ; 0xbe68a

@@ -1311,11 +1311,13 @@ wTapePlayerBacklite:: ds 1
 wBirdEncounterCounter:: ds 1
 
 wBikeUpgradeSteps:: ds 2
+wSpamCallSteps:: ds 2
+
+wSpamCalls:: ds 1
 
 wEncounterHouseMonForm:: ds 1
 
-	ds 6 ; unused
-wUnlockedUnowns:: ds 1
+	ds 4 ; unused
 
 wFirstUnownSeen:: ds 1
 wFirstMagikarpSeen:: ds 1

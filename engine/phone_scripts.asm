@@ -1,6 +1,127 @@
 UnusedPhoneScript: ; 0xbcea5
-	farwritetext UnusedPhoneText
 	end
+	
+SpamCallPhoneScript:
+	specialphonecall SPECIALCALL_NONE
+	callasm DecSpamCall
+	random $7
+	ifequal $0, .one
+	ifequal $1, .two
+	ifequal $2, .three
+	ifequal $3, .four
+	ifequal $4, .five
+	farwritetext SpamPhoneText6
+	callasm ChineseSpamCall
+	end
+.one
+	farwritetext SpamPhoneText1
+	end
+.two
+	farwritetext SpamPhoneText2
+	end
+.three
+	farwritetext SpamPhoneText3
+	end
+.four
+	farwritetext SpamPhoneText4
+	end
+.five
+	farwritetext SpamPhoneText5
+	end
+	
+ChineseSpamCall:
+	ld a, [wTextBoxFlags]
+	push af
+	ld a, 3
+	ld [wTextBoxFlags], a
+	call LoadChineseFont
+	ld de, .ChineseString1
+	call PlaceChineseString
+	ld de, .ChineseString2
+	call PlaceChineseString
+	ld de, .ChineseString3
+	call PlaceChineseString
+	call ClearSpeechBox
+	call LoadStandardFont
+	pop af
+	ld [wTextBoxFlags], a
+	ret
+	
+.ChineseString1:
+	db $99, $9a, $97, $9b, $9c, $9d, $9e, $9f, $a0, $a1, $98, $fe
+	db $a1, $a2, $a3, $a4, $a5, $a6, $a7, $ff
+	
+.ChineseString2:
+	db $9a, $97, $a8, $a9, $aa, $9c, $9d, $ab, $ac, $ad, $ae, $98, $ff
+	
+.ChineseString3
+	db $af, $b0, $b1, $b2, $97, $b3, $b4, $b5, $b6, $b7, $b8, $b9, $98, $fe
+	db $ba, $ac, $ab, $bb, $aa, $bc, $bd, $a0, $be, $bf, $c0, $98, $a4, $a6, $a7, $ff
+	
+PlaceChineseString:
+	hlcoord 1, 13
+	ld b, 0
+	ld c, SCREEN_WIDTH
+.loop
+	push af
+	call PrintLetterDelay
+	pop af
+	ld a, [de]
+	cp $ff
+	jr z, .next_page
+	cp $fe
+	jr z, .next_line
+	cp $99
+	jr c, .punct
+	ld [hl], a
+	add a, $28
+.finish_character
+	push hl
+	add hl, bc	
+	ld [hl], a
+	pop hl
+	inc de
+	inc hl
+	jr .loop
+.punct
+	push af
+	ld a, " "
+	ld [hl], a
+	pop af
+	jr .finish_character
+.next_line
+	inc de
+	hlcoord 1, 15
+	jr .loop
+.next_page
+	call LoadBlinkingCursor
+	call Text_WaitBGMap
+	call ButtonSound
+	call ClearSpeechBox
+	call UnloadBlinkingCursor
+	ld c, 12
+	call DelayFrames
+	ret
+	
+	ld c, 255
+	call DelayFrames
+	jp LoadStandardFont
+
+DecSpamCall:
+	call Random
+	ld a, $3
+	call RandomRange
+	add 1
+	ld [wSpamCallSteps], a
+	ld a, $50
+	call RandomRange
+	ld [wSpamCallSteps+1], a
+	ld a, [wSpamCalls]
+	cp 0
+	ret z
+	dec a
+	ld [wSpamCalls], a
+	ret
 
 WendyPhoneScript:
 	checkevent EVENT_MADE_IT_TO_SOUTH_ONWA
@@ -12,10 +133,10 @@ WendyPhoneScript:
 	end
 
 AutoPhoneScript:
-	checkitem BICYCLE
-	iftrue .normal
 	checkcode VAR_SPECIALPHONECALL
 	if_equal SPECIALCALL_COMEGETUPGRADEDBIKE, .comegetupgradedbike
+	checkitem BICYCLE
+	iftrue .normal
 	checkevent EVENT_CAN_PICK_UP_BIKE
 	iffalse .cantgetbikeyet
 	farwritetext AutoPhoneComeGetBikeText2
@@ -48,10 +169,13 @@ CallingMomCheckPlayerRoomAsm:
 
 MomPhoneScript: ; 0xbceaa
 	checkcode VAR_SPECIALPHONECALL
+	if_equal SPECIALCALL_MOMCALLABOUTBANKCARD, .comegetbankcard
 	if_equal SPECIALCALL_MOMCOMEGETTRAINERCARD, .comegettrainercard1
 	if_equal SPECIALCALL_MOMCALLABOUTTEAMSNARE, .teamsnare
 	callasm CallingMomCheckPlayerRoomAsm
 	iftrue .upstairs
+	checkevent EVENT_MOM_CAN_GET_BANK_CARD
+	iffalse .bankcard2
 	checkevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	iffalse .gogetmon
 	checkevent EVENT_CAN_CALL_TRAINER_CARD
@@ -72,6 +196,10 @@ MomPhoneScript: ; 0xbceaa
 
 .gogetmon
 	farwritetext SunsetMomText2
+	end
+	
+.bankcard2
+	farwritetext MomPhoneComeGetBankCardText2
 	end
 	
 .teamsnare
@@ -101,75 +229,15 @@ MomPhoneScript: ; 0xbceaa
 	farwritetext MomPhoneComeGetTrainerCard2Text
 	end
 	
-; Bill
-
-BillPhoneScript1: ; 0xbcfc5
-	checktime 1 << DAY
-	iftrue .daygreet
-	checktime 1 << NITE
-	iftrue .nitegreet
-	farwritetext BillPhoneMornGreetingText
-	buttonsound
-	jump .main
-
-.daygreet ; 0xbcfd7
-	farwritetext BillPhoneDayGreetingText
-	buttonsound
-	jump .main
-
-.nitegreet ; 0xbcfdf
-	farwritetext BillPhoneNiteGreetingText
-	buttonsound
-	jump .main
-
-.main ; 0xbcfe7
-	farwritetext BillPhoneGenericText
-	buttonsound
-	checkcode VAR_BOXSPACE
-	RAM2MEM $0
-	ifequal $0, .full
-	ifless $6, .nearlyfull
-	farwritetext BillPhoneNotFullText
-	end
-
-.nearlyfull ; 0xbcffd
-	farwritetext BillPhoneNearlyFullText
-	end
-
-.full ; 0xbd002
-	farwritetext BillPhoneFullText
-	jump BillPhoneScriptCheckForBoxes
-
-BillPhoneScript2: ; 0xbd007
-	ret
-;	checkcode VAR_SPECIALPHONECALL
-;	ifequal SPECIALCALL_SECONDBADGE, BillPhoneScriptSecondBadge
-;	farwritetext BillPhoneNewlyFullText
-BillPhoneScriptCheckForBoxes:
-	ret
-;	special BillBoxSwitchCheck
-;	ifequal 0, BillPhoneWholePCFull
-;	farwritetext BillWantNextBox
-;	farwritetext UnknownText_0x1c462a
-;	yesorno
-;	iffalse .refused
-;	special BillBoxSwitch
-;	jump .hang_up
-
-.refused
-	farwritetext BillCallMeToSwitch
-.hang_up
-	farwritetext BillThankYouText
-	end
-
-BillPhoneScriptSecondBadge:
-	farwritetext BillPhoneSecondBadgeText
+.comegetbankcard
+	farwritetext MomPhoneComeGetBankCardText
+	setevent EVENT_MOM_CALLED_ABOUT_BANK_CARD
+	setevent EVENT_MOM_CAN_GET_BANK_CARD
+	setevent EVENT_PLAYER_HOUSE_MOM_1
+	setevent EVENT_PLAYER_HOUSE_MOM_2
+	clearevent EVENT_PLAYER_HOUSE_MOM_3
 	specialphonecall SPECIALCALL_NONE
-	end
-
-BillPhoneWholePCFull:
-	farwritetext BillWholePCFullText
-	waitbutton
+	callasm DecSpamCall
 	end
 
 ; Spruce

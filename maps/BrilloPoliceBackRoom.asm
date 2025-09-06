@@ -198,14 +198,13 @@ BrilloPoliceBackRoomTrigger0:
 	applyonemovement BRILLO_POLICE_BACKROOM_CAPTAIN, turn_step_up
 	applyonemovement BRILLO_POLICE_BACKROOM_CAPTAIN, remove_fixed_facing
 	pause 10
-	playsound SFX_TALLY
+	playsound SFX_HANG_UP
 	pause 10
 	opentext TEXTBOX_CAPTAIN
 	writetext BrilloPoliceBackRoomCaptainText5
 	waitbutton
 	closetext
-	pause 10
-	playsound SFX_TALLY
+	playsound SFX_HANG_UP
 	pause 25
 	applyonemovement BRILLO_POLICE_BACKROOM_CAPTAIN, turn_step_down
 	applyonemovement BRILLO_POLICE_BACKROOM_CAPTAIN, remove_fixed_facing

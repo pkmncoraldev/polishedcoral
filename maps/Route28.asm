@@ -281,11 +281,12 @@ Route28ColbyStopsYou:
 	pause 2
 	applyonemovement ROUTE_28_COLBY, turn_step_down
 	applyonemovement ROUTE_28_COLBY, remove_fixed_facing
-	playsound SFX_TALLY
+	playsound SFX_HANG_UP
 	opentext TEXTBOX_RIVAL
 	writetext Route28ColbyText3
 	waitbutton
 	closetext
+	playsound SFX_HANG_UP
 	pause 5
 	applyonemovement ROUTE_28_COLBY, turn_step_up
 	opentext TEXTBOX_RIVAL

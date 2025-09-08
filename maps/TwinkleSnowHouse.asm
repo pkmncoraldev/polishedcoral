@@ -9,7 +9,10 @@ TwinkleSnowHouse_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 3 ; bg events
+	signpost  3, 5, SIGNPOST_JUMPTEXT, TwinkleHouseFireplaceText
+	signpost  3, 6, SIGNPOST_JUMPTEXT, TwinkleHouseFireplaceText
+	signpost  3, 7, SIGNPOST_JUMPTEXT, TwinkleTownWoodText
 
 	db 2 ; object events
 	person_event SPRITE_POKEFAN_M, 5, 6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, TwinkleSnowHouseNpc1, -1

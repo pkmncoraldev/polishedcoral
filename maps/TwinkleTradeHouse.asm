@@ -9,7 +9,10 @@ TwinkleTradeHouse_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 3 ; bg events
+	signpost  3, 5, SIGNPOST_JUMPTEXT, TwinkleHouseFireplaceText
+	signpost  3, 6, SIGNPOST_JUMPTEXT, TwinkleHouseFireplaceText
+	signpost  3, 7, SIGNPOST_JUMPTEXT, TwinkleTownWoodText
 
 	db 2 ; object events
 	object_event  5,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, trade, TRADE_WITH_ALICE_FOR_GLIGAR, -1

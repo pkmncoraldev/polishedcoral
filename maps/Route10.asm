@@ -14,7 +14,7 @@ Route10_MapScriptHeader:
 	warp_def 35, 13, 3, FLICKER_PASS_2F
 	warp_def 47,  7, 4, FLICKER_PASS_2F
 	warp_def 31, 11, 1, ROUTE_10_REST_HOUSE
-	warp_def  3, 33, 1, TWINKLE_ROCK_HOUSE
+	warp_def  3, 33, 2, TWINKLE_ROCK_HOUSE
 	warp_def 47, 27, 1, ICE_CAVE_ICE_ROCK_ROOM
 
 	db 48 ; coord events

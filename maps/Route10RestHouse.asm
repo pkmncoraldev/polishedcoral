@@ -9,7 +9,10 @@ Route10RestHouse_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 3 ; bg events
+	signpost  3, 5, SIGNPOST_JUMPTEXT, TwinkleHouseFireplaceText
+	signpost  3, 6, SIGNPOST_JUMPTEXT, TwinkleHouseFireplaceText
+	signpost  3, 7, SIGNPOST_JUMPTEXT, TwinkleTownWoodText
 
 	db 1 ; object events
 	object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Route10RestHouseNPC, -1

@@ -124,10 +124,7 @@ wMinigameCentiseconds:: ds 1
 wRiverRapidsScoreCentiseconds:: ds 1
 wRiverRapidsScoreSeconds:: ds 1
 wRiverRapidsScoreMinutes:: ds 1
-wRiverRapidsRecordCentiseconds:: ds 1
-wRiverRapidsRecordSeconds:: ds 1
-wRiverRapidsRecordMinutes:: ds 1
-	ds 40
+	ds 43
 
 UNION
 ; engine buffers
@@ -1168,7 +1165,11 @@ wFlowerPileFlags:: ds 1
 wForceStand:: ds 1
 wSecrets:: ds 1
 
-	ds 47 ;unused
+wRiverRapidsRecordCentiseconds:: ds 1
+wRiverRapidsRecordSeconds:: ds 1
+wRiverRapidsRecordMinutes:: ds 1
+
+	ds 44 ; unused
 	
 wSkateparkCurTrick:: ds 1
 wSkateparkComboTimer:: ds 1

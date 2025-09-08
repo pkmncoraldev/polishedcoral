@@ -109,6 +109,7 @@ DEF MAP_NONE   EQU 0
 	map_const ROUTE_8_GARDEN,                             31, 20 ; 16
 	map_const ROUTE_8_GATE,                                4,  4 ; 17
 	map_const ROUTE_3_STARGLOW_CAVERN_TOP,				  10, 13 ; 18
+	map_const ROUTE_28,									  20, 38 ; 9
 
 	newgroup                                                     ;  5
 
@@ -231,6 +232,7 @@ DEF MAP_NONE   EQU 0
 	map_const ROUTE_10_REST_HOUSE,						   4,  5 ; 14
 	map_const ROUTE_10_MOVE_REMINDER_HOUSE,				   4,  5 ; 15
 	map_const ROUTE_18_TRAILER,							   3,  2 ; 16
+	map_const RIVER_RAPIDS_HOUSE,						   4,  5 ; 17
 	
 	newgroup													 ; 12
 	
@@ -445,7 +447,7 @@ DEF MAP_NONE   EQU 0
 	map_const BRIGHT_HOUSE_3,     	             		   4,  4 ; 6
 	map_const ROUTE_25_GATE,                          	   4,  4 ; 7
 	map_const BRIGHTBURG_GATE,							   5,  4 ; 8
-	map_const ROUTE_28,									  20, 38 ; 9
+	
 	map_const ROUTE_28_OTTOS_TENT,                     	   2,  3 ; 10
 	map_const ROUTE_30,									  21, 21 ; 11
 	

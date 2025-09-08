@@ -5,7 +5,7 @@ RiverRapidsEntrance_MapScriptHeader:
 	callback MAPCALLBACK_TILES, RiverRapidsEntranceCallback
 
 	db 1 ; warp events
-	warp_def  9, 19, 1, RIVER_RAPIDS
+	warp_def  9, 19, 2, RIVER_RAPIDS_HOUSE
 
 	db 0 ; coord events
 
@@ -64,7 +64,13 @@ RiverRapidsEntranceBowlsText:
 	done
 	
 RiverRapidsEntranceEevee:
+	checkevent EVENT_TALKED_TO_RIVER_RAPIDS_LADY_ONCE
+	iftrue .talked
 	opentext TEXTBOX_POKEMON, EEVEE
+	jump .cont
+.talked
+	opentext TEXTBOX_JUNIPER
+.cont
 	writetext RiverRapidsEntranceEeveeText1
 	cry EEVEE
 	waitsfx
@@ -85,7 +91,13 @@ RiverRapidsEntranceEeveeText2:
 	done
 	
 RiverRapidsEntranceAzumarill:
+	checkevent EVENT_TALKED_TO_RIVER_RAPIDS_LADY_ONCE
+	iftrue .talked
 	opentext TEXTBOX_POKEMON, AZUMARILL
+	jump .cont
+.talked
+	opentext TEXTBOX_RAINDROP
+.cont
 	writetext RiverRapidsEntranceAzumarillText1
 	cry AZUMARILL
 	waitsfx
@@ -106,7 +118,13 @@ RiverRapidsEntranceAzumarillText2:
 	done
 	
 RiverRapidsEntranceMagby:
+	checkevent EVENT_TALKED_TO_RIVER_RAPIDS_LADY_ONCE
+	iftrue .talked
 	opentext TEXTBOX_POKEMON, MAGBY
+	jump .cont
+.talked
+	opentext TEXTBOX_SPIRIT
+.cont
 	writetext RiverRapidsEntranceMagbyText1
 	cry MAGBY
 	waitsfx
@@ -123,12 +141,44 @@ RiverRapidsEntranceMagbyText1:
 	
 RiverRapidsEntranceMagbyText2:
 	text "It keeps glancing"
-	line "at the charcoal"
-	cont "kiln."
+	line "at the fireplace."
+	done
+	
+RiverRapidsEntranceSwablu:
+	checkevent EVENT_TALKED_TO_RIVER_RAPIDS_LADY_ONCE
+	iftrue .talked
+	opentext TEXTBOX_POKEMON, SWABLU
+	jump .cont
+.talked
+	opentext TEXTBOX_BLISS
+.cont
+	writetext RiverRapidsEntranceSwabluText1
+	cry SWABLU
+	waitsfx
+	buttonsound
+	changetextboxspeaker
+	writetext RiverRapidsEntranceSwabluText2
+	waitbutton
+	closetext
+	end
+	
+RiverRapidsEntranceSwabluText1:
+	text "Lu lu luuu!"
+	done
+	
+RiverRapidsEntranceSwabluText2:
+	text "It's whistling a"
+	line "happy tune."
 	done
 	
 RiverRapidsEntranceSlowpoke:
+	checkevent EVENT_TALKED_TO_RIVER_RAPIDS_LADY_ONCE
+	iftrue .talked
 	opentext TEXTBOX_POKEMON, SLOWPOKE
+	jump .cont
+.talked
+	opentext TEXTBOX_FLOWER
+.cont
 	writetext RiverRapidsEntranceSlowpokeText1
 	cry SLOWPOKE
 	waitsfx
@@ -148,7 +198,7 @@ RiverRapidsEntranceSlowpokeText2:
 	text "There's a sign"
 	line "around its neck:"
 	
-	para "RIVER RAPIDS RUSH"
+	para "LAKE's RIVER RUSH"
 	
 	para "Inquire ahead."
 	done

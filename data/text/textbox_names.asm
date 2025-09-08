@@ -62,6 +62,12 @@ TextBoxSpeakers:
 	dw TextBoxCrusher
 	dw TextBoxButtercup
 	dw TextBoxDarcy
+	dw TextBoxLake
+	dw TextBoxRaindrop
+	dw TextBoxBliss
+	dw TextBoxSpirit
+	dw TextBoxJuniper
+	dw TextBoxFlower
 	
 TextBoxUnknown:			db "<UPDN>???@"
 TextBoxMom:				db "<UPDN>MOM@"
@@ -125,6 +131,13 @@ TextBoxEggy:			db "<UPDN>EGGY@"
 TextBoxCrusher:			db "<UPDN>CRUSHER@"
 TextBoxButtercup:		db "<UPDN>BUTTERCUP@"
 TextBoxDarcy:			db "<UPDN>DARCY@"
+TextBoxLake:			db "<UPDN>LAKE@"
+TextBoxRaindrop:		db "<UPDN>RAINDROP@"
+TextBoxBliss:			db "<UPDN>BLISS@"
+TextBoxSpirit:			db "<UPDN>SPIRIT@"
+TextBoxJuniper:			db "<UPDN>JUNIPER@"
+TextBoxFlower:			db "<UPDN>FLOWER@"
+
 	
 ChangeTextboxName::
 	call ClearTextboxName

@@ -129,6 +129,7 @@ TwinkleTradeHouse_BlockData:
 TwinkleSnowHouse_BlockData:
 Route10RestHouse_BlockData:
 Route10MoveReminderHouse_BlockData:
+RiverRapidsHouse_BlockData:
 	INCBIN "maps/TwinkleHouse.ablk.lz"
 
 SunsetCaptainsHouse_BlockData:

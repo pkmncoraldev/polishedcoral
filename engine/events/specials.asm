@@ -317,11 +317,12 @@ SpecialCheckPokerus: ; c419
 	jp ScriptReturnCarry
 ; c422
 
-Special_ResetLuckyNumberShowFlag: ; c422
-	farcall RestartLuckyNumberCountdown
-	ld hl, wLuckyNumberShowFlag
-	res 0, [hl]
-	farjp LoadOrRegenerateLuckyIDNumber
+ Special_ResetLuckyNumberShowFlag: ; c422
+	ret
+	; farcall RestartLuckyNumberCountdown
+	; ld hl, wLuckyNumberShowFlag
+	; res 0, [hl]
+	; farjp LoadOrRegenerateLuckyIDNumber
 ; c434
 
 Special_CheckLuckyNumberShowFlag: ; c434

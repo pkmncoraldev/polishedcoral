@@ -784,3 +784,4 @@ ENDM
 	map_attributes ObscuraMart, OBSCURA_MART, $0, 0
 	map_attributes Route30, ROUTE_30, $fb, 0
 	map_attributes RiverRapids, RIVER_RAPIDS, 2, 0
+	map_attributes RiverRapidsHouse, RIVER_RAPIDS_HOUSE, 0, 0

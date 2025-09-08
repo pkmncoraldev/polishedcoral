@@ -947,14 +947,14 @@ BenFernText3B:
 	db "@"
 
 LuckyNumberShow1:
-	call StartRadioStation
-	farcall Special_CheckLuckyNumberShowFlag
-	jr nc, .dontreset
-	farcall Special_ResetLuckyNumberShowFlag
-.dontreset
-	ld hl, LC_Text1
-	ld a, LUCKY_NUMBER_SHOW_2
-	jp NextRadioLine
+	; call StartRadioStation
+	; farcall Special_CheckLuckyNumberShowFlag
+	; jr nc, .dontreset
+	; farcall Special_ResetLuckyNumberShowFlag
+; .dontreset
+	; ld hl, LC_Text1
+	; ld a, LUCKY_NUMBER_SHOW_2
+	; jp NextRadioLine
 
 LuckyNumberShow2:
 	ld hl, LC_Text2

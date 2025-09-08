@@ -34,7 +34,17 @@ RiverRapids_MapScriptHeader:
 
 
 RiverRapidsTrigger0:
+	pause 22
+	playsound SFX_DEX_FANFARE_170_199
+	loadvar wCenteredObject, 1
+	applymovement PLAYER, Movement_RiverRapidsGetIntoPlace
+	applyonemovement PLAYER, show_person
+	applymovement PLAYER, Movement_RiverRapidsStart
+	loadvar wCenteredObject, PLAYER
+	applyonemovement PLAYER, show_person
 	loadvar wButtonPressedFrameCooldownActive, 1
+	waitsfx
+	pause 15
 	opentext
 	farwritetext TextCountdown3
 	playsound SFX_TALLY
@@ -84,7 +94,7 @@ RiverRapidsEnd:
 	waitbutton
 	special FadeOutPalettes
 	loadvar wCenteredObject, PLAYER
-	warp2 DOWN, RIVER_RAPIDS_ENTRANCE, $13, $a
+	warp2 UP, RIVER_RAPIDS_HOUSE, $2, $5
 	end
 	
 RiverRapidsStoreScore:
@@ -212,7 +222,24 @@ RiverRapidsDisplayScore:
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
 	ld de, wRiverRapidsRecordCentiseconds
 	call PrintNum
+	ld a, [wRiverRapidsScoreMinutes]
+	cp 1
+	jr c, .goal
 	call RiverRapidsDisplayScoreSfx
+	ld a, 1
+	ld [wAlways0Trigger], a
+	ret
+.goal
+	call BGMapAnchorTopLeft
+	push de
+	ld d, 0
+	ld e, SFX_LEVEL_UP
+	call PlaySFX
+	ld c, 40
+	call DelayFrames
+	pop de
+	ld a, 2
+	ld [wAlways0Trigger], a
 	ret
 .new_record
 	hlcoord 4, 12
@@ -223,6 +250,8 @@ RiverRapidsDisplayScore:
 	ld e, SFX_CAUGHT_MON
 	call PlaySFX
 	call WaitSFX
+	ld a, 3
+	ld [wAlways0Trigger], a
 	ret
 .ResultsString
 	db "RESULTS@"
@@ -257,17 +286,22 @@ RiverRapidsHiScoreStuff:
 	ld a, [wRiverRapidsRecordMinutes]
 	cp e
 	ret c
+	jr nz, .yes
 	ld a, [wRiverRapidsScoreSeconds]
 	ld e, a
 	ld a, [wRiverRapidsRecordSeconds]
 	cp e
 	ret c
+	jr nz, .yes
 	ld a, [wRiverRapidsScoreCentiseconds]
 	ld e, a
 	ld a, [wRiverRapidsRecordCentiseconds]
 	cp e
-	jr z, .scf
 	ret c
+	jr nz, .yes
+	scf
+	ret
+.yes
 	ld a, [wRiverRapidsScoreMinutes]
 	ld [wRiverRapidsRecordMinutes], a
 	ld a, [wRiverRapidsScoreSeconds]
@@ -275,9 +309,6 @@ RiverRapidsHiScoreStuff:
 	ld a, [wRiverRapidsScoreCentiseconds]
 	ld [wRiverRapidsRecordCentiseconds], a
 	xor a
-	ret
-.scf
-	scf
 	ret
 
 	
@@ -520,18 +551,21 @@ Movement_RiverRapidsRockUp2:
 	turn_in_up
 	step_end
 	
+Movement_RiverRapidsFinish:
+	turn_in_down
+Movement_RiverRapidsStart:
+	turn_in_down
+	turn_in_down
+	turn_in_down
 Movement_RiverRapidsRockDown2:
 	turn_in_down
 	turn_in_down
 	step_end
 	
-Movement_RiverRapidsFinish:
-	turn_in_down
-	turn_in_down
-	turn_in_down
-	turn_in_down
-	turn_in_down
-	turn_in_down
+Movement_RiverRapidsGetIntoPlace:
+	big_step_up
+	big_step_up
+	big_step_up
 	step_end
 	
 RiverRapidsCheckJoyPressedAsm:

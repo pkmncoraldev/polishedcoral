@@ -217,10 +217,6 @@ rept ((NUM_TMS + NUM_HMS) + 7) / 8
 	ld [hli], a
 endr
 
-	xor a
-	ld [wRoamMon1Species], a
-	ld [wRoamMon2Species], a
-	ld [wRoamMon3Species], a
 	ld a, -1
 	ld [wRoamMon1MapGroup], a
 	ld [wRoamMon2MapGroup], a
@@ -232,8 +228,7 @@ endr
 	ld [wBikeUpgradeSteps + 1], a
 	ld [wSpamCallSteps], a
 	ld [wSpamCallSteps + 1], a
-
-	call LoadOrRegenerateLuckyIDNumber
+;	call LoadOrRegenerateLuckyIDNumber
 ;	call InitializeMagikarpHouse
 
 	xor a
@@ -250,6 +245,15 @@ endr
 	ld [wRegisteredItems + 3], a
 
 	ld [wWhichMomItem], a
+	
+	ld [wRoamMon1Species], a
+	ld [wRoamMon2Species], a
+	ld [wRoamMon3Species], a
+	
+	ld [wRiverRapidsRecordSeconds], a
+	ld [wRiverRapidsRecordCentiseconds], a
+	ld a, 1
+	ld [wRiverRapidsRecordMinutes], a
 
 DEF START_ITEM_TRIGGER_BALANCE EQU 2300
 	ld hl, wMomItemTriggerBalance
@@ -347,31 +351,31 @@ InitializeNPCNames: ; 5ce9
 
 ; 5d33
 
-LoadOrRegenerateLuckyIDNumber: ; 5d33
-	ld a, BANK(sLuckyIDNumber)
-	call GetSRAMBank
-	ld a, [wCurDay]
-	inc a
-	ld b, a
-	ld a, [sLuckyNumberDay]
-	cp b
-	ld a, [sLuckyIDNumber + 1]
-	ld c, a
-	ld a, [sLuckyIDNumber]
-	jr z, .skip
-	ld a, b
-	ld [sLuckyNumberDay], a
-	call Random
-	ld c, a
-	call Random
+; LoadOrRegenerateLuckyIDNumber: ; 5d33
+	; ld a, BANK(sLuckyIDNumber)
+	; call GetSRAMBank
+	; ld a, [wCurDay]
+	; inc a
+	; ld b, a
+	; ld a, [sLuckyNumberDay]
+	; cp b
+	; ld a, [sLuckyIDNumber + 1]
+	; ld c, a
+	; ld a, [sLuckyIDNumber]
+	; jr z, .skip
+	; ld a, b
+	; ld [sLuckyNumberDay], a
+	; call Random
+	; ld c, a
+	; call Random
 
-.skip
-	ld [wLuckyIDNumber], a
-	ld [sLuckyIDNumber], a
-	ld a, c
-	ld [wLuckyIDNumber + 1], a
-	ld [sLuckyIDNumber + 1], a
-	jp CloseSRAM
+; .skip
+	; ld [wLuckyIDNumber], a
+	; ld [sLuckyIDNumber], a
+	; ld a, c
+	; ld [wLuckyIDNumber + 1], a
+	; ld [sLuckyIDNumber + 1], a
+	; jp CloseSRAM
 ; 5d65
 
 Continue: ; 5d65

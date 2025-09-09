@@ -450,6 +450,7 @@ Script_SpecialBillCall:: ; 0x90255
 ; 90261
 
 RingTwice_StartCall: ; 9026f
+	farcall _LoadPhoneTile
 	call .Ring
 .Ring: ; 9027c (24:427c)
 	call Phone_StartRinging

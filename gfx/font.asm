@@ -104,6 +104,12 @@ _LoadChineseFont::
 	lb bc, BANK(FontChinese), $55
 	jp Get2bpp
 
+_LoadPhoneTile::
+	ld de, FontCommon + 10 tiles
+	ld hl, VTiles0 tile "<PHONE>"
+	lb bc, BANK(FontCommon), 1
+	jp Get2bpp
+
 _LoadStandardFont::
 	xor a
 _LoadStandardMaybeOpaqueFont:
@@ -200,7 +206,7 @@ LoadFrame:: ; fb4cc
 	rst AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, VTiles0 tile "<UPDN>"
+	ld hl, VTiles0 tile $f9
 	lb bc, BANK(Frames), TILES_PER_FRAME
 	call Get2bpp
 	ld hl, VTiles2 tile " "
@@ -222,7 +228,7 @@ LoadFrame1bpp:: ; fb4cc
 	rst AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, VTiles0 tile "<UPDN>"
+	ld hl, VTiles0 tile $f9
 	lb bc, BANK(FramesBattle), TILES_PER_FRAME
 	call Get1bpp
 	ld hl, VTiles2 tile " "

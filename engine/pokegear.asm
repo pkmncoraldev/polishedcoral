@@ -1016,23 +1016,6 @@ PokegearMap_UpdateLandmarkName: ; 910b4
 ;	hlcoord 9, 1
 ;	ld [hl], "<UPDN>"
 	ret
-	
-PokegearMap_UpdateLandmarkName2: ; 910b4
-	push af
-	hlcoord 8, 0
-	lb bc, 2, 12
-	call ClearBox
-	pop af
-	ld e, a
-	push de
-	farcall GetLandmarkName
-	pop de
-	call TownMap_ConvertLineBreakCharacters2
-;	hlcoord 9, 1
-;	ld [hl], "<UPDN>"
-	ret
-
-; 910d4
 
 PokegearMap_UpdateCursorPosition: ; 910d4
 	push bc
@@ -1067,27 +1050,6 @@ TownMap_ConvertLineBreakCharacters: ; 1de2c5
 .end
 	ld de, wStringBuffer1
 	hlcoord 9, 1
-	jp PlaceString
-	
-TownMap_ConvertLineBreakCharacters2: ; 1de2c5
-	ld hl, wStringBuffer1
-.loop
-	ld a, [hl]
-	cp "@"
-	jr z, .end
-	cp "<NEXT>"
-	jr z, .line_break
-	cp "¯"
-	jr z, .line_break
-	inc hl
-	jr .loop
-
-.line_break
-	ld [hl], "<LNBRK>"
-
-.end
-	ld de, wStringBuffer1
-	hlcoord 8, 0
 	jp PlaceString
 
 TownMap_GetNorthOnwaLandmarkLimits:
@@ -2357,8 +2319,16 @@ _TownMap: ; 9191c
 	push de
 
 .next
+	hlcoord 2, 1
+	ld bc, 16
+	ld a, " "
+	call ByteFill
 	ld a, [wTownMapCursorLandmark]
-	call PokegearMap_UpdateLandmarkName2
+	ld e, a
+	farcall GetLandmarkName
+	hlcoord 2, 1
+	ld de, wStringBuffer1
+	call PlaceString
 	ld a, [wTownMapCursorObjectPointer]
 	ld c, a
 	ld a, [wTownMapCursorObjectPointer + 1]
@@ -2370,28 +2340,24 @@ _TownMap: ; 9191c
 ; 91a04
 
 .InitTilemap: ; 91a04
-	farcall PokegearMap
-	ld a, $7
-	ld bc, 6
-	hlcoord 1, 0
-	call ByteFill
+	call LoadTownMapGFX	
+	call FillNorthOnwaMap
+	call TownMapNorthOnwaFlips
 	hlcoord 0, 0
-	ld [hl], $6
-	hlcoord 7, 0
-	ld [hl], $17
-	hlcoord 7, 1
-	ld [hl], $16
-	hlcoord 7, 2
-	ld [hl], $26
-	ld a, $7
-	ld bc, NAME_LENGTH
-	hlcoord 8, 2
+	ld bc, SCREEN_WIDTH * 2
+	ld a, " "
 	call ByteFill
-	hlcoord 19, 2
+	hlcoord 0, 2
+	ld a, $6
+	ld [hli], a
+	ld bc, SCREEN_WIDTH - 2
+	ld a, $7
+	call ByteFill
 	ld [hl], $17
-	ld a, [wTownMapCursorLandmark]
-	call PokegearMap_UpdateLandmarkName2
 	call TownMapPals
+
+	hlcoord 18, 1
+	ld [hl], "<UPDN>"
 
 	ld a, [wTownMapPlayerIconLandmark]
 	cp SHAMOUTI_LANDMARK
@@ -2571,7 +2537,17 @@ FlyMapScroll: ; 91b73
 
 TownMapBubble: ; 91bb5
 ; Draw the bubble containing the location text in the town map HUD
-
+	eventflagcheck EVENT_UNLOCKED_SOUTH_FLY_MAP
+	jr z, .cant_switch
+	hlcoord $1, $10
+	ld a, [wWarpNumber]
+	cp 1
+	jr nz, .place_sel
+	hlcoord $0e, $10
+.place_sel
+	ld de, .String_Select
+	call PlaceString
+.cant_switch
 	hlcoord 0, 0
 ;	ld a, $30
 ;	ld [hli], a
@@ -2605,6 +2581,9 @@ TownMapBubble: ; 91bb5
 	hlcoord 18, 1
 	ld [hl], "<UPDN>"
 	ret
+
+.String_Select:
+	db "SEL:<UPDN>@"
 
 .Where:
 	db "Where to?@"
@@ -2920,10 +2899,10 @@ _Area: ; 91d11
 
 .PlaceString_MonsNest: ; 91de9
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH
+	ld bc, SCREEN_WIDTH * 2
 	ld a, " "
 	call ByteFill
-	hlcoord 0, 1
+	hlcoord 0, 2
 	ld a, $6
 	ld [hli], a
 	ld bc, SCREEN_WIDTH - 2
@@ -2931,7 +2910,7 @@ _Area: ; 91d11
 	call ByteFill
 	ld [hl], $17
 	call GetPokemonName
-	hlcoord 2, 0
+	hlcoord 2, 1
 	call PlaceString
 	ld h, b
 	ld l, c
@@ -3273,7 +3252,7 @@ endm
 	townmappals 2, 2, 2, 3, 3, 7, 0, 0, 2, 2, 4, 2, 5, 6, 6, 5
 	townmappals 2, 2, 7, 3, 4, 5, 0, 0, 2, 2, 0, 4, 3, 3, 3, 6
 	townmappals 2, 2, 2, 7, 7, 4, 0, 0, 3, 7, 4, 0, 0, 0, 0, 0
-	townmappals 2, 2, 2, 7, 2, 2, 4, 6, 4, 6, 2, 4, 0, 0, 0, 0
+	townmappals 2, 6, 2, 7, 2, 2, 4, 6, 4, 6, 3, 4, 0, 0, 0, 0
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 

@@ -223,25 +223,26 @@ DEF BATTLEEXTRA_GFX_START EQU $5f
 	charmap "¥",        $ea
 
 	charmap "▲",        $eb
-	charmap "▼",        $ec
-	charmap "◀",        $ed
-	charmap "▶",        $ee
+	charmap "▼",		$ec
+	charmap "◀",		$ed
+	charmap "▶",		$ee
 
 ; common font:
-	charmap "▷",        $ef
+	charmap "▷",		$ef
 	charmap "…",        $f0
 	charmap "<PHONE>",  $f1
+	charmap "<UPDN>",   $f1
 	charmap "<BLACK>",  $f2
 	charmap "<SHINY>",  $f3
 	charmap "′",        $f4
 	charmap "″",        $f5
-	charmap "✓",        $f5
-	charmap "★",        $f6
+	charmap "✓",		$f5
+	charmap "★",		$f6
 	charmap "↑",        $f7
 	charmap "↓",        $f8
 
 ; frame:
-	charmap "<UPDN>",   $f9
+	charmap "『",		$f9
 	charmap "┌",        $fa
 	charmap "─",        $fb
 	charmap "┐",        $fc

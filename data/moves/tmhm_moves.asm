@@ -32,7 +32,7 @@ TMHMMoves:
 	db METAL_CLAW                          ; TM31
 	db DOUBLE_TEAM                         ; TM32
 	db REFLECT                             ; TM33
-	db FLASH_CANNON                		   ; TM34
+	db SHOCK_WAVE                		   ; TM34
 	db FLAMETHROWER                        ; TM35
 	db SLUDGE_BOMB                         ; TM36
 	db SANDSTORM                           ; TM37

@@ -113,7 +113,7 @@ DEF MAP_NONE   EQU 0
 
 	newgroup                                                     ;  5
 
-	map_const ROUTE_3_EAST,                		          22, 14 ;  1
+	map_const ROUTE_3_EAST,                		          22, 19 ;  1
 	map_const STARGLOW_VALLEY,                            19, 17 ;  2
 	map_const STARGLOW_TOGEPI_HOUSE,                       4,  4 ;  3
 	map_const STARGLOW_NO_POKEMON_HOUSE,                   4,  4 ;  4

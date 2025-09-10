@@ -54,7 +54,7 @@ ENDM
 	add_tm METAL_CLAW		; $1e
 	add_tm DOUBLE_TEAM		; $1f
 	add_tm REFLECT			; $20
-	add_tm FLASH_CANNON				; $21
+	add_tm SHOCK_WAVE		; $21
 	add_tm FLAMETHROWER		; $22
 	add_tm SLUDGE_BOMB		; $23
 	add_tm SANDSTORM		; $24

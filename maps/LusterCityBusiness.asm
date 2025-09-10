@@ -11,8 +11,8 @@ LusterCityBusiness_MapScriptHeader:
 	warp_event 17, 13, LUSTER_SKYSCRAPER_1_1F, 2
 	warp_event 22, 25, LUSTER_SKYSCRAPER_2_1F, 1
 	warp_event 23, 25, LUSTER_SKYSCRAPER_2_1F, 2
-	warp_event 24, 11, NETT_BUILDING_1F, 1
-	warp_event 25, 11, NETT_BUILDING_1F, 2
+	warp_event 30, 11, NETT_BUILDING_1F, 1
+	warp_event 31, 11, NETT_BUILDING_1F, 2
 
 	db 8 ; coord events
 	coord_event 13, 26, 0, LusterCityBusinessRival1
@@ -24,22 +24,29 @@ LusterCityBusiness_MapScriptHeader:
 	coord_event 14, 28, 0, LusterCityBusinessRival7
 	coord_event 14, 29, 0, LusterCityBusinessRival8
 
-	db 2 ; bg events
-	signpost 12, 23, SIGNPOST_READ, NettBuildingSign
+	db 3 ; bg events
+	signpost 12, 32, SIGNPOST_READ, NettBuildingSign
 	signpost 25, 20, SIGNPOST_READ, BankBuildingSign
+	signpost 13, 19, SIGNPOST_READ, GenericBuildingSign
 
-	db 13 ; object events
+	db 19 ; object events
 	person_event SPRITE_TRAFFIC_LIGHT, 24, 14, SPRITEMOVEDATA_TILE_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
-	person_event SPRITE_POKEMANIAC, 33, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3NPC1, -1
-	person_event SPRITE_SUPER_NERD, 29, 30, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3NPC2, -1
+	person_event SPRITE_SUPER_NERD, 33, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3NPC1, -1
+	person_event SPRITE_SUPER_NERD, 29, 33, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3NPC2, -1
 	person_event SPRITE_BEAUTY, 19, 36, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Luster3NPC3, -1
 	person_event SPRITE_SUPER_NERD, 16, 15, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3NPC4, -1
-	person_event SPRITE_LADY, 17, 25, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster3NPC5, -1
-	person_event SPRITE_ROCKER, 17, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Luster3NPC6, -1
-	person_event SPRITE_POKEMANIAC, 26, 24, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3NPC7, -1
-	person_event SPRITE_SUPER_NERD, 13, 26, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster3NPC8, -1
+	person_event SPRITE_LADY, 17, 31, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Luster3NPC5, -1
+	person_event SPRITE_ROCKER, 17, 30, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Luster3NPC6, -1
+	person_event SPRITE_SUPER_NERD, 26, 26, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3NPC7, -1
+	person_event SPRITE_POKEMANIAC, 13, 29, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster3NPC8, -1
 	person_event SPRITE_POKEFAN_F, 24, 18, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Luster3NPC9, -1
 	person_event SPRITE_CHILD, 25, 18, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Luster3NPC10, -1
+	person_event SPRITE_SUPER_NERD, 20, 14, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3GenericNPC, -1
+	person_event SPRITE_BEAUTY, 21, 14, SPRITEMOVEDATA_STANDING_UP, 2, 2, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3GenericNPC, -1
+	person_event SPRITE_SUPER_NERD, 29, 22, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3GenericNPC, -1
+	person_event SPRITE_BEAUTY, 29, 21, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3GenericNPC, -1
+	person_event SPRITE_SUPER_NERD, 14, 22, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3GenericNPC, -1
+	person_event SPRITE_BEAUTY, 14, 23, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Luster3GenericNPC, -1
 	person_event SPRITE_COLBY,  0,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	tapeball_event 43, 13, MUSIC_RIVAL_BATTLE, 2, EVENT_MUSIC_RIVAL_BATTLE
 
@@ -55,6 +62,12 @@ LusterCityBusiness_MapScriptHeader:
 	const LUSTERBUSINESS_NPC8
 	const LUSTERBUSINESS_NPC9
 	const LUSTERBUSINESS_NPC10
+	const LUSTERBUSINESS_GENERIC_NPC1
+	const LUSTERBUSINESS_GENERIC_NPC2
+	const LUSTERBUSINESS_GENERIC_NPC3
+	const LUSTERBUSINESS_GENERIC_NPC4
+	const LUSTERBUSINESS_GENERIC_NPC5
+	const LUSTERBUSINESS_GENERIC_NPC6
 	const LUSTERBUSINESS_RIVAL
 	
 	
@@ -77,6 +90,9 @@ NettBuildingSign:
 	
 BankBuildingSign:
 	jumptext BankBuildingSignText
+	
+GenericBuildingSign:
+	jumptext GenericBuildingSignText
 	
 LusterCityBusinessRival1:
 	moveperson LUSTERBUSINESS_RIVAL, $f, $15
@@ -524,6 +540,13 @@ Luster3NPC10Text:
 	text "The light is NEVER"
 	line "gonna change…"
 	done
+	
+Luster3GenericNPC:
+	jumptext Luster3GenericNPCText
+	
+Luster3GenericNPCText:
+	text "Mumble… <WAIT_S>mumble…"
+	done
 
 NettBuildingSignText:
 	text "NETT CORP."
@@ -532,10 +555,17 @@ NettBuildingSignText:
 	line "Better Tomorrow”"
 	done
 	
+GenericBuildingSignText:
+	text "GENERICON"
+	line "ENTERPRISES"
+	
+	para "“Business is Our"
+	line "Business”"
+	done
+	
 BankBuildingSignText:
-	text "FRIENDLY SOLUTIONS"
-	line "LLC"
-	para "Coorperate Offices"
+	text "FRIENDLY CO. LLC."
+	line "Coorperate Offices"
 	
 	para "NO SOLICITING!"
 	done

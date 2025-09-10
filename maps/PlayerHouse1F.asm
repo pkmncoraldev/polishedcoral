@@ -268,8 +268,7 @@ SunsetMomTextBankCard1:
 SunsetMomTextBankCard2:
 	text "It was sent from"
 	line "a company called"
-	cont "FRIENDLY SOLUTIONS"
-	cont "LLC."
+	cont "FRIENDLY CO. LLC."
 	
 	para "Why would they"
 	line "send you something"

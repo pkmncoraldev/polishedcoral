@@ -4,7 +4,7 @@ GreenGrotto1F_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_CMDQUEUE, GreenGrotto1FRocksCallback
 
-	db 8 ; warp events
+	db 9 ; warp events
 	warp_event 29, 27, ROUTE_28, 4
 	warp_event  3, 19, ROUTE_29, 1
 	warp_event 11, 13, GREEN_GROTTO_B1F, 1
@@ -13,6 +13,7 @@ GreenGrotto1F_MapScriptHeader:
 	warp_event 16, 11, GREEN_GROTTO_B1F, 4
 	warp_event 34,  7, GREEN_GROTTO_B1F, 5
 	warp_event 42, 21, GREEN_GROTTO_B1F, 6
+	warp_event 31, 24, ROUTE_1, 1
 
 	db 0 ; coord events
 

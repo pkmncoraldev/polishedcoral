@@ -58,7 +58,7 @@ DEF MAP_NONE   EQU 0
 	map_const ROUTE_6_UNDERWATER_CAVE,					   6,  8 ; 36
 	map_const GREEN_GROTTO_1F,							  23, 15 ; 37
 	map_const GREEN_GROTTO_B1F,							  20, 13 ; 38
-	map_const GREEN_GROTTO_2F,							  15, 12 ; 39
+	map_const GREEN_GROTTO_2F,							  20, 13 ; 39
 
 	newgroup                                                     ;  2
 

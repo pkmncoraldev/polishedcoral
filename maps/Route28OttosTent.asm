@@ -261,16 +261,22 @@ Route28OttosTentOttoText11:
 	line "that crazy town"
 	cont "up NORTH."
 	
-	para "BRIGHTBURG."
+	para "I came here to"
+	line "see a friend who"
+	cont "lives nearby."
 	
-	para "Those people may"
-	line "just seem rude,"
-	cont "but it's more than"
-	cont "that…"
+	para "Chick named LAKE."
 	
-	para "I'm telling you,"
-	line "all isn't what it"
-	cont "seems…"
+	para "She's kinda spacey,"
+	line "but she's good"
+	cont "people."
+	
+	para "Not like those"
+	line "BRIGHTBURG folks."
+	
+	para "They may just"
+	line "seem rude, but it's"
+	cont "more than that…"
 	
 	para "That place freaks"
 	line "me out, man!"

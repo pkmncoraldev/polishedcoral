@@ -133,13 +133,9 @@ ENDM
 	map_attributes Route3StarglowCavernTop, ROUTE_3_STARGLOW_CAVERN_TOP, $71, SOUTH
 	connection south, Route3, ROUTE_3, -10
 	
-	map_attributes Route3East, ROUTE_3_EAST, $71, NORTH | SOUTH | WEST
-	connection north, RiverRapidsEntrance, RIVER_RAPIDS_ENTRANCE, 5
+	map_attributes Route3East, ROUTE_3_EAST, $71, SOUTH | WEST
 	connection south, StarglowValley, STARGLOW_VALLEY, 10
 	connection west, Route3, ROUTE_3, -2
-	
-	map_attributes RiverRapidsEntrance, RIVER_RAPIDS_ENTRANCE, $71, SOUTH
-	connection south, Route3East, ROUTE_3_EAST, -5
 	
 	map_attributes StarglowValley, STARGLOW_VALLEY, $d4, NORTH | EAST | WEST
 	connection north, Route3East, ROUTE_3_EAST, -10
@@ -489,6 +485,12 @@ ENDM
 	map_attributes UnderwaterTempleOutside, UNDERWATER_TEMPLE_OUTSIDE, $7d, WEST
 	connection west, CoralReef, CORAL_REEF, 4
 	
+	map_attributes Route30, ROUTE_30, $fb, NORTH
+	connection north, RiverRapidsEntrance, RIVER_RAPIDS_ENTRANCE, 6
+	
+	map_attributes RiverRapidsEntrance, RIVER_RAPIDS_ENTRANCE, $71, SOUTH
+	connection south, Route30, ROUTE_30, -6
+	
 	map_attributes Route32, ROUTE_32, $02, NORTH
 	connection north, Route11_2, ROUTE_11_2, -4
 	
@@ -782,6 +784,5 @@ ENDM
 	map_attributes ObscuraFortuneHouse, OBSCURA_FORTUNE_HOUSE, $0, 0
 	map_attributes ObscuraPokeCenter, OBSCURA_POKECENTER, $0, 0
 	map_attributes ObscuraMart, OBSCURA_MART, $0, 0
-	map_attributes Route30, ROUTE_30, $fb, 0
 	map_attributes RiverRapids, RIVER_RAPIDS, 2, 0
 	map_attributes RiverRapidsHouse, RIVER_RAPIDS_HOUSE, 0, 0

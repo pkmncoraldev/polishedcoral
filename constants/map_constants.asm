@@ -76,7 +76,7 @@ DEF MAP_NONE   EQU 0
 	map_const SUNSET_LIGHTHOUSE_BASEMENT,				   4,  5 ; 12
 	map_const SUNSET_LIGHTHOUSE_ELEVATOR,				   2,  2 ; 13
 	map_const SUNSET_LIGHTHOUSE_TOP,					  10,  5 ; 14
-	map_const RIVER_RAPIDS_ENTRANCE,       		          13, 11 ; 10
+	map_const RIVER_RAPIDS_ENTRANCE,       		          13, 13 ; 10
 
 	newgroup                                                     ;  3
 

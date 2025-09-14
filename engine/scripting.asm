@@ -795,7 +795,7 @@ Script_trade:
 ; parameters:
 ;     trade_id (SingleByteParam)
 	call Script_faceplayer
-	call Script_opentext
+	call Script_opentext2
 	call GetScriptByte
 	ld e, a
 	farcall NPCTrade

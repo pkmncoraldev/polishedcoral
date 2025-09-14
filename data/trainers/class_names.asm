@@ -96,5 +96,6 @@ TrainerClassNames::
 	db "CAPTAIN@"		   ; POLICE_CAPTAIN
 	db "MUSEUM GUIDE@"	   ; MUSEUM_GUIDE
 	db "MUSEUM GUIDE@"	   ; MUSEUM_GUIDE_2
+	db "BUSINESSMAN@"	   ; BUSINESSMAN
 	db "TYCOON@"		   ; TOWERTYCOON
 	

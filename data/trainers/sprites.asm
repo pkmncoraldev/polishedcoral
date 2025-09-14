@@ -96,4 +96,5 @@ BTTrainerClassSprites:
 	db SPRITE_SPA_WORKER	; PoliceCaptain
 	db SPRITE_RECEPTIONIST	; MuseumGuide
 	db SPRITE_RECEPTIONIST	; MuseumGuide2
+	db SPRITE_SUPER_NERD	; Businessman
 	db SPRITE_GOLD_NPC      ; TOWERTYCOON

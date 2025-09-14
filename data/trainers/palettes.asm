@@ -99,6 +99,7 @@ LedianRangerPalette:	 INCLUDE "gfx/trainers/ledian_ranger.pal"
 PoliceCaptainPalette:	 INCLUDE "gfx/trainers/police_captain.pal"
 MuseuemGuidePalette:	 INCLUDE "gfx/trainers/museum_guide.pal"
 MuseuemGuide2Palette:	 INCLUDE "gfx/trainers/museum_guide_2.pal"
+BusinessmanPalette:	 	 INCLUDE "gfx/trainers/businessman.pal"
 TowerTycoonPalette:
 
 

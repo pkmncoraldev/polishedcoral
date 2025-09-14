@@ -96,5 +96,6 @@ TrainerPicPointers::
 	dba PoliceCaptainPic
 	dba MuseumGuidePic
 	dba MuseumGuide2Pic
+	dba BusinessmanPic
 	dba TowerTycoonPic
 	

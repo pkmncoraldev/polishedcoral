@@ -725,6 +725,12 @@ DEF PLAYER_F EQU __enum__
 	trainerclass MUSEUM_GUIDE
 	
 	trainerclass MUSEUM_GUIDE_2
+	
+	trainerclass BUSINESSMAN
+	const BUSINESSMAN_1
+	const BUSINESSMAN_2
+	const BUSINESSMAN_3
+	const BUSINESSMAN_4
 
 	trainerclass TOWERTYCOON ; 1
 

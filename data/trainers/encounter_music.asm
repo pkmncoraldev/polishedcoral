@@ -97,4 +97,5 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_NONE					; policecaptain
 	db MUSIC_NONE					; museumguide
 	db MUSIC_NONE					; museumguide2
+	db MUSIC_HIKER_ENCOUNTER		; businessman
 	db MUSIC_NONE			 		; towertycoon

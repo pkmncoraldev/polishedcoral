@@ -127,6 +127,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db 100, $BB, $BB, $BB, ABILITY_2 | QUIRKY, MALE | PLAIN_FORM   ; policecaptain
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM   ; museumguide
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM   ; museumguide2
+	db  48, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; businessman
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; towertycoon
 
 ; 2715c

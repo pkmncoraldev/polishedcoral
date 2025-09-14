@@ -6409,6 +6409,47 @@ MuseumGuide2Group:
 ; ================
 ; ================================
 
+BusinessmanGroup:
+; ================================
+; ================
+
+	; BUSINESSMAN
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BUSINESSMAN
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BUSINESSMAN
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BUSINESSMAN
+	db "UNUSED@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
 TowerTycoonGroup:
 ; ================================
 ; ================
